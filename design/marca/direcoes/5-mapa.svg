@@ -16,10 +16,27 @@
     svg[data-tema="escuro"] .acento { fill: #7fa6dc; }
     svg[data-tema="escuro"] .acento-t { stroke: #7fa6dc; }
     svg[data-tema="escuro"] .acento-costura { fill: #7fa6dc; stroke: #7fa6dc; }
-    /* A simplificação de 32 e 16 px: a mesma forma, com o que morre tirado. */
+    /* A simplificação de 32 e 16 px: a mesma forma, com o que morre tirado.
+       O seletor é de FIM DE CADEIA e não de igualdade, porque a quarta adenda
+       trouxe uma forma composta: «maskable-favicon», que é o sinal pequeno
+       dentro do círculo seguro. As sete vozes precisam dela, porque nelas o
+       sinal grande é a palavra e o `maskable` do Android desenha-se a 108 px. */
     .sinal-favicon { display: none; }
-    svg[data-forma="favicon"] .sinal { display: none; }
-    svg[data-forma="favicon"] .sinal-favicon { display: block; }
+    svg[data-forma$="favicon"] .sinal { display: none; }
+    svg[data-forma$="favicon"] .sinal-favicon { display: block; }
+    /* E UM TERCEIRO DESENHO, QUE AS SETE VOZES OBRIGARAM A CRIAR.
+       Nas onze primeiras havia dois: o sinal, até aos 60 px, e a simplificação,
+       dos 32 para baixo. Nas sete vozes o sinal grande é a PALAVRA e o sinal do
+       telemóvel é a LETRA, e são coisas diferentes: com dois grupos só, a cela
+       de 180 px acabava a mostrar a letra engrossada do favicon, ou seja a voz
+       já sem a voz. A Didone dava contraste 1,9 aos 180 px, quando o desenho
+       dela é 6,55. Com três grupos, a cela de 180 mostra a letra tal como ela
+       está dentro da palavra, e a simplificação fica onde devia estar, aos 32.
+       O grupo está vazio nas direções que não o usam, e essas seguem a regra
+       da casa sem mudar nada. */
+    .sinal-letra { display: none; }
+    svg[data-forma*="letra"] .sinal { display: none; }
+    svg[data-forma*="letra"] .sinal-letra { display: block; }
     /* O `maskable` do Android: o campo fica, o sinal encolhe para dentro do
        círculo seguro de raio 40 %.
 
@@ -31,7 +48,7 @@
        enquadradas saíam com o sinal fora do sítio: a G dava 233 px de lado em
        512 em vez de 281, e a I saía cortada em cima. Num grupo de fora, que não
        tem atributo nenhum, as duas transformações compõem-se. */
-    svg[data-forma="maskable"] .reducao {
+    svg[data-forma^="maskable"] .reducao {
       transform: scale(0.78);
       transform-origin: 256.0px 256.0px;
       transform-box: view-box;

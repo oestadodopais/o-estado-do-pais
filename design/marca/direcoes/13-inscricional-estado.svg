@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Voz 2 · inscricional">
+  <title>Voz 2 · inscricional</title>
+  <desc>As versais do cinzel, e a linha do livro-razão como faixa incisa.</desc>
+  <style>
+    .campo { fill: #7a5300; }
+    .tinta { fill: #f6f7f4; }
+    .tinta-t { fill: none; stroke: #f6f7f4; }
+    .acento { fill: #f6f7f4; }
+    .acento-t { fill: none; stroke: #f6f7f4; }
+    /* A costura: uma silhueta feita de distritos encostados fica com fios de
+       papel entre eles quando se enche sem traço. O traço da mesma cor fecha-os. */
+    .acento-costura { fill: #f6f7f4; stroke: #f6f7f4; stroke-width: 2; }
+    svg[data-tema="escuro"] .campo { fill: #7a5300; }
+    svg[data-tema="escuro"] .tinta { fill: #f6f7f4; }
+    svg[data-tema="escuro"] .tinta-t { stroke: #f6f7f4; }
+    svg[data-tema="escuro"] .acento { fill: #f6f7f4; }
+    svg[data-tema="escuro"] .acento-t { stroke: #f6f7f4; }
+    svg[data-tema="escuro"] .acento-costura { fill: #f6f7f4; stroke: #f6f7f4; }
+    /* A simplificação de 32 e 16 px: a mesma forma, com o que morre tirado.
+       O seletor é de FIM DE CADEIA e não de igualdade, porque a quarta adenda
+       trouxe uma forma composta: «maskable-favicon», que é o sinal pequeno
+       dentro do círculo seguro. As sete vozes precisam dela, porque nelas o
+       sinal grande é a palavra e o `maskable` do Android desenha-se a 108 px. */
+    .sinal-favicon { display: none; }
+    svg[data-forma$="favicon"] .sinal { display: none; }
+    svg[data-forma$="favicon"] .sinal-favicon { display: block; }
+    /* E UM TERCEIRO DESENHO, QUE AS SETE VOZES OBRIGARAM A CRIAR.
+       Nas onze primeiras havia dois: o sinal, até aos 60 px, e a simplificação,
+       dos 32 para baixo. Nas sete vozes o sinal grande é a PALAVRA e o sinal do
+       telemóvel é a LETRA, e são coisas diferentes: com dois grupos só, a cela
+       de 180 px acabava a mostrar a letra engrossada do favicon, ou seja a voz
+       já sem a voz. A Didone dava contraste 1,9 aos 180 px, quando o desenho
+       dela é 6,55. Com três grupos, a cela de 180 mostra a letra tal como ela
+       está dentro da palavra, e a simplificação fica onde devia estar, aos 32.
+       O grupo está vazio nas direções que não o usam, e essas seguem a regra
+       da casa sem mudar nada. */
+    .sinal-letra { display: none; }
+    svg[data-forma*="letra"] .sinal { display: none; }
+    svg[data-forma*="letra"] .sinal-letra { display: block; }
+    /* O `maskable` do Android: o campo fica, o sinal encolhe para dentro do
+       círculo seguro de raio 40 %.
+
+       A REDUÇÃO TEM DE ESTAR NUM GRUPO SÓ SEU, e isto foi corrigido a 28.08
+       depois de se medir a caixa de tinta nos PNG: `transform` de CSS e
+       `transform` de atributo são a MESMA propriedade, e o CSS ganha. Enquanto
+       esta regra apanhava `.sinal` directamente, o `scale` substituía o
+       enquadramento de `enquadra()` em vez de se compor com ele, e as direções
+       enquadradas saíam com o sinal fora do sítio: a G dava 233 px de lado em
+       512 em vez de 281, e a I saía cortada em cima. Num grupo de fora, que não
+       tem atributo nenhum, as duas transformações compõem-se. */
+    svg[data-forma^="maskable"] .reducao {
+      transform: scale(0.78);
+      transform-origin: 256.0px 256.0px;
+      transform-box: view-box;
+    }
+  </style>
+  <rect class="campo" x="0" y="0" width="512" height="512"/>
+  <g class="reducao">
+    <g class="sinal" transform="translate(76 199.6) scale(0.24)">
+    <!-- «ESTADO» em versais do cinzel. Haste 0,125 H, fino 0,082 H, contraste
+         1,52. Remates em cunha. A palavra mede 1512 x 348
+         = 5.04:1, que é a mais larga das sete, porque uma versal
+         romana é larga por definição. -->
+    <path class="tinta" d="M0 100L37.5 100L37.5 400L0 400Z"/>
+    <path class="tinta" d="M0 100L198 100L198 124.6L0 124.6Z"/>
+    <path class="tinta" d="M0 375.4L198 375.4L198 400L0 400Z"/>
+    <path class="tinta" d="M198 89.67L198 134.93L164.79 124.6L164.79 100Z"/>
+    <path class="tinta" d="M198 365.07L198 410.33L164.79 400L164.79 375.4Z"/>
+    <path class="tinta" d="M-15.75 100L53.25 100L37.5 119.68L0 119.68Z"/>
+    <path class="tinta" d="M-15.75 400L53.25 400L37.5 380.32L0 380.32Z"/>
+    <path class="tinta" d="M0 237.7L150 237.7L150 262.3L0 262.3Z"/>
+    <path class="tinta" d="M150 227.37L150 272.63L116.79 262.3L116.79 237.7Z"/>
+    <path class="tinta" d="M392.16 164.96L391.76 157.48L390.87 149.98L389.55 142.87L387.82 136.14L385.66 129.8L383.1 123.86L380.13 118.34L376.75 113.24L372.97 108.59L368.81 104.43L364.28 100.8L359.42 97.74L354.26 95.28L348.86 93.47L343.3 92.33L337.64 91.87L331.96 92.09L326.32 92.97L320.78 94.49L315.38 96.61L310.16 99.32L305.15 102.57L300.37 106.35L295.83 110.62L291.55 115.39L288.11 119.86L284.81 123.81L281.29 128.57L278.06 133.51L275.14 138.6L272.51 143.83L270.21 149.19L268.22 154.67L266.57 160.25L265.25 165.92L264.28 171.66L263.67 177.46L263.43 183.29L263.56 189.16L264.08 195.03L264.99 200.88L266.31 206.7L268.04 212.46L270.18 218.15L272.74 223.72L275.72 229.18L279.12 234.48L282.95 239.6L287.19 244.53L291.84 249.25L296.89 253.73L302.17 257.83L307.12 261.38L311.44 264.61L315.52 267.82L319.38 271.01L323 274.18L326.39 277.34L329.55 280.49L332.47 283.63L335.17 286.76L337.65 289.88L339.9 293.01L341.95 296.15L343.79 299.31L345.43 302.51L346.88 305.74L348.15 309.04L349.23 312.41L350.14 315.88L350.86 319.47L351.4 323.19L351.76 327.06L351.91 331.09L351.87 335.3L351.62 339.7L351.15 344.31L350.53 348.68L349.4 353.42L348.02 357.74L346.44 361.58L344.69 364.95L342.79 367.9L340.79 370.45L338.67 372.64L336.46 374.5L334.14 376.07L331.69 377.36L329.11 378.39L326.38 379.17L323.47 379.68L320.39 379.91L317.14 379.84L313.73 379.45L310.16 378.73L306.47 377.65L302.66 376.21L298.76 374.38L294.81 372.17L290.81 369.55L286.81 366.53L282.81 363.1L278.85 359.26L274.66 354.69L253.35 373.31L257.86 378.7L262.86 383.96L268.05 388.78L273.41 393.15L278.92 397.06L284.56 400.51L290.33 403.49L296.2 405.98L302.16 407.98L308.19 409.45L314.26 410.39L320.35 410.77L326.43 410.57L332.45 409.78L338.37 408.36L344.14 406.33L349.69 403.67L354.98 400.4L359.94 396.53L364.53 392.1L368.71 387.13L372.45 381.67L375.73 375.74L378.55 369.38L380.89 362.59L382.77 355.32L383.87 348.78L384.62 342.76L385.09 336.85L385.27 331.03L385.17 325.3L384.77 319.66L384.08 314.12L383.09 308.68L381.81 303.34L380.23 298.12L378.37 293.02L376.23 288.04L373.83 283.19L371.16 278.46L368.25 273.87L365.11 269.4L361.73 265.05L358.15 260.81L354.35 256.67L350.35 252.64L346.16 248.69L341.77 244.81L337.2 241L332.44 237.25L327.5 233.55L322.78 230.17L318.9 227.16L315.54 224.19L312.51 221.14L309.8 218.01L307.39 214.8L305.27 211.53L303.42 208.2L301.83 204.81L300.5 201.37L299.41 197.87L298.57 194.32L297.96 190.72L297.6 187.09L297.46 183.43L297.56 179.74L297.89 176.04L298.45 172.33L299.24 168.63L300.26 164.95L301.5 161.29L302.96 157.69L304.65 154.14L306.55 150.66L308.67 147.26L310.99 143.96L314.04 140.14L317.01 136.07L319.46 133.19L321.92 130.73L324.36 128.67L326.75 127L329.07 125.68L331.29 124.69L333.43 124L335.47 123.58L337.42 123.4L339.32 123.44L341.18 123.71L343.05 124.22L344.93 124.99L346.84 126.05L348.79 127.45L350.76 129.23L352.73 131.43L354.66 134.08L356.52 137.2L358.26 140.82L359.85 144.95L361.25 149.59L362.41 154.75L363.31 160.43L363.95 167.04Z"/>
+    <path class="tinta" d="M536.31 100L573.81 100L573.81 400L536.31 400Z"/>
+    <path class="tinta" d="M444.06 100L666.06 100L666.06 124.6L444.06 124.6Z"/>
+    <path class="tinta" d="M444.06 63.1L444.06 161.5L490.8 124.6L490.8 100Z"/>
+    <path class="tinta" d="M666.06 63.1L666.06 161.5L619.32 124.6L619.32 100Z"/>
+    <path class="tinta" d="M499.41 372.94L610.71 372.94L610.71 400L499.41 400Z"/>
+    <path class="tinta" d="M807.03 100L834.09 100L797.16 400L757.8 400Z"/>
+    <path class="tinta" d="M803.68 100L837.43 100L899.61 400L850.86 400Z"/>
+    <path class="tinta" d="M753.36 310L892.56 310L892.56 334.6L753.36 334.6Z"/>
+    <path class="tinta" d="M725.82 375.4L811.92 375.4L811.92 400L725.82 400Z"/>
+    <path class="tinta" d="M832.11 375.4L918.36 375.4L918.36 400L832.11 400Z"/>
+    <path class="tinta" d="M979.92 100L1017.42 100L1017.42 400L979.92 400Z"/>
+    <path class="tinta" fill-rule="evenodd" d="M998.67 100A190.5 150 0 0 1 998.67 400ZM998.67 124.6A153 125.4 0 0 1 998.67 375.4Z"/>
+    <path class="tinta" d="M964.17 100L1033.17 100L1017.42 119.68L979.92 119.68Z"/>
+    <path class="tinta" d="M964.17 400L1033.17 400L1017.42 380.32L979.92 380.32Z"/>
+    <path class="tinta" fill-rule="evenodd" d="M1242.42 250A135 150 0 1 1 1512.42 250A135 150 0 1 1 1242.42 250ZM1279.92 250A97.5 125.4 0 1 1 1474.92 250A97.5 125.4 0 1 1 1279.92 250Z"/>
+    </g>
+    <g class="sinal-favicon" transform="translate(146.07 94.33) scale(1.08)">
+    <!-- 32 e 16 px: a haste e o fino engrossam de 0,125 e 0,082 para 0,175 e
+         0,135 H, porque um fino de 0,082 H a 16 px dá 0,92 px. O sulco fica, e
+         fica sem se ver: a este tamanho mede menos de um píxel. -->
+    <path class="tinta" d="M0 0L52.5 0L52.5 300L0 300Z"/>
+    <path class="tinta" d="M0 0L204 0L204 40.5L0 40.5Z"/>
+    <path class="tinta" d="M0 259.5L204 259.5L204 300L0 300Z"/>
+    <path class="tinta" d="M204 -17.01L204 57.51L149.33 40.5L149.33 0Z"/>
+    <path class="tinta" d="M204 242.49L204 317.01L149.33 300L149.33 259.5Z"/>
+    <path class="tinta" d="M-22.05 0L74.55 0L52.5 32.4L0 32.4Z"/>
+    <path class="tinta" d="M-22.05 300L74.55 300L52.5 267.6L0 267.6Z"/>
+    <path class="tinta" d="M0 117.75L156 117.75L156 182.25L0 182.25Z"/>
+    <path class="tinta" d="M156 100.74L156 199.26L101.32 182.25L101.32 117.75Z"/>
+    <path class="campo" d="M28.88 140.7L131.7 140.7L131.7 159.3L28.88 159.3Z"/>
+    </g>
+    <g class="sinal-letra" transform="translate(144.86 87.6) scale(1.12)">
+    <!-- 180, 120 e 60 px: o «E» do cinzel com a linha do livro-razão INCISA. O
+         braço do meio é uma faixa de 0.215 H com um sulco de 0.062 H
+         do próprio campo cortado a meio. É a única das sete em que a segunda
+         leitura não gasta uma segunda cor. -->
+    <path class="tinta" d="M0 0L37.5 0L37.5 300L0 300Z"/>
+    <path class="tinta" d="M0 0L198 0L198 24.6L0 24.6Z"/>
+    <path class="tinta" d="M0 275.4L198 275.4L198 300L0 300Z"/>
+    <path class="tinta" d="M198 -10.33L198 34.93L164.79 24.6L164.79 0Z"/>
+    <path class="tinta" d="M198 265.07L198 310.33L164.79 300L164.79 275.4Z"/>
+    <path class="tinta" d="M-15.75 0L53.25 0L37.5 19.68L0 19.68Z"/>
+    <path class="tinta" d="M-15.75 300L53.25 300L37.5 280.32L0 280.32Z"/>
+    <path class="tinta" d="M0 117.75L150 117.75L150 182.25L0 182.25Z"/>
+    <path class="tinta" d="M150 107.42L150 192.58L116.79 182.25L116.79 117.75Z"/>
+    <path class="campo" d="M20.62 140.7L135.24 140.7L135.24 159.3L20.62 159.3Z"/>
+    </g>
+  </g>
+</svg>

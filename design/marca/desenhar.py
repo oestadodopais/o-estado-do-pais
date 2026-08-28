@@ -59,6 +59,7 @@ TINTA_ESCURA = "#eceeea"
 COBALTO = "#1f4e8c"          # 7,73:1 sobre papel claro
 COBALTO_CLARO = "#7fa6dc"    # 7,18:1 sobre papel escuro (`--cobalt-palavra`)
 AMBAR = "#e0a21a"            # 2,09:1 sobre papel claro; 8,00:1 sobre papel escuro
+OCRE = "#7a5300"             # 6,37:1 sobre papel claro; falha sobre papel escuro (2,62:1)
 
 CAMPO = 512
 CENTRO = CAMPO / 2
@@ -337,25 +338,73 @@ def caminhos(partes, indent="    "):
 # ---------------------------------------------------------------------------
 # O ESQUELETO DE UM SVG
 # ---------------------------------------------------------------------------
-ESTILO = f"""
-    .campo {{ fill: {PAPEL}; }}
-    .tinta {{ fill: {TINTA}; }}
-    .tinta-t {{ fill: none; stroke: {TINTA}; }}
-    .acento {{ fill: {COBALTO}; }}
-    .acento-t {{ fill: none; stroke: {COBALTO}; }}
+# A PALETA DE UMA DIREÇÃO, E PORQUE É QUE ELA PASSOU A SER UM ARGUMENTO.
+#
+# As onze primeiras direções tinham todas o mesmo campo: papel. A quarta adenda
+# pede o contrário, e por uma razão medida na maqueta do ecrã principal: um campo
+# pálido com tinta fina é o único ícone do ecrã a que o leitor tem de se chegar.
+# Cada uma das sete vozes traz por isso a sua decisão de campo, e a decisão é
+# tão parte do desenho como a letra. As classes dos «path» não mudam («campo»,
+# «tinta», «acento»): o que muda é o que cada uma quer dizer nesta direção.
+PALETA_CASA = {
+    "claro": {"campo": PAPEL, "tinta": TINTA, "acento": COBALTO},
+    "escuro": {"campo": PAPEL_ESCURO, "tinta": TINTA_ESCURA, "acento": COBALTO_CLARO},
+}
+
+
+def paleta(campo, letra, acento, campo_escuro=None, letra_escura=None, acento_escuro=None):
+    """A paleta de uma direção, em claro e em escuro.
+
+    Quando o campo já é escuro, o tema escuro NÃO troca papel com tinta: um
+    ícone de campo de tinta que se invertesse em escuro passava a ser outro
+    ícone. O que ele faz é mudar para os símbolos escuros da folha de estilos
+    (`#15171a` e `#eceeea`), que é a mesma leitura com os valores do tema.
+    """
+    return {"claro": {"campo": campo, "tinta": letra, "acento": acento},
+            "escuro": {"campo": campo_escuro or campo,
+                       "tinta": letra_escura or letra,
+                       "acento": acento_escuro or acento}}
+
+
+def estilo(p=None):
+    p = p or PALETA_CASA
+    c, e = p["claro"], p["escuro"]
+    return f"""
+    .campo {{ fill: {c["campo"]}; }}
+    .tinta {{ fill: {c["tinta"]}; }}
+    .tinta-t {{ fill: none; stroke: {c["tinta"]}; }}
+    .acento {{ fill: {c["acento"]}; }}
+    .acento-t {{ fill: none; stroke: {c["acento"]}; }}
     /* A costura: uma silhueta feita de distritos encostados fica com fios de
        papel entre eles quando se enche sem traço. O traço da mesma cor fecha-os. */
-    .acento-costura {{ fill: {COBALTO}; stroke: {COBALTO}; stroke-width: 2; }}
-    svg[data-tema="escuro"] .campo {{ fill: {PAPEL_ESCURO}; }}
-    svg[data-tema="escuro"] .tinta {{ fill: {TINTA_ESCURA}; }}
-    svg[data-tema="escuro"] .tinta-t {{ stroke: {TINTA_ESCURA}; }}
-    svg[data-tema="escuro"] .acento {{ fill: {COBALTO_CLARO}; }}
-    svg[data-tema="escuro"] .acento-t {{ stroke: {COBALTO_CLARO}; }}
-    svg[data-tema="escuro"] .acento-costura {{ fill: {COBALTO_CLARO}; stroke: {COBALTO_CLARO}; }}
-    /* A simplificação de 32 e 16 px: a mesma forma, com o que morre tirado. */
+    .acento-costura {{ fill: {c["acento"]}; stroke: {c["acento"]}; stroke-width: 2; }}
+    svg[data-tema="escuro"] .campo {{ fill: {e["campo"]}; }}
+    svg[data-tema="escuro"] .tinta {{ fill: {e["tinta"]}; }}
+    svg[data-tema="escuro"] .tinta-t {{ stroke: {e["tinta"]}; }}
+    svg[data-tema="escuro"] .acento {{ fill: {e["acento"]}; }}
+    svg[data-tema="escuro"] .acento-t {{ stroke: {e["acento"]}; }}
+    svg[data-tema="escuro"] .acento-costura {{ fill: {e["acento"]}; stroke: {e["acento"]}; }}
+    /* A simplificação de 32 e 16 px: a mesma forma, com o que morre tirado.
+       O seletor é de FIM DE CADEIA e não de igualdade, porque a quarta adenda
+       trouxe uma forma composta: «maskable-favicon», que é o sinal pequeno
+       dentro do círculo seguro. As sete vozes precisam dela, porque nelas o
+       sinal grande é a palavra e o `maskable` do Android desenha-se a 108 px. */
     .sinal-favicon {{ display: none; }}
-    svg[data-forma="favicon"] .sinal {{ display: none; }}
-    svg[data-forma="favicon"] .sinal-favicon {{ display: block; }}
+    svg[data-forma$="favicon"] .sinal {{ display: none; }}
+    svg[data-forma$="favicon"] .sinal-favicon {{ display: block; }}
+    /* E UM TERCEIRO DESENHO, QUE AS SETE VOZES OBRIGARAM A CRIAR.
+       Nas onze primeiras havia dois: o sinal, até aos 60 px, e a simplificação,
+       dos 32 para baixo. Nas sete vozes o sinal grande é a PALAVRA e o sinal do
+       telemóvel é a LETRA, e são coisas diferentes: com dois grupos só, a cela
+       de 180 px acabava a mostrar a letra engrossada do favicon, ou seja a voz
+       já sem a voz. A Didone dava contraste 1,9 aos 180 px, quando o desenho
+       dela é 6,55. Com três grupos, a cela de 180 mostra a letra tal como ela
+       está dentro da palavra, e a simplificação fica onde devia estar, aos 32.
+       O grupo está vazio nas direções que não o usam, e essas seguem a regra
+       da casa sem mudar nada. */
+    .sinal-letra {{ display: none; }}
+    svg[data-forma*="letra"] .sinal {{ display: none; }}
+    svg[data-forma*="letra"] .sinal-letra {{ display: block; }}
     /* O `maskable` do Android: o campo fica, o sinal encolhe para dentro do
        círculo seguro de raio 40 %.
 
@@ -367,12 +416,15 @@ ESTILO = f"""
        enquadradas saíam com o sinal fora do sítio: a G dava 233 px de lado em
        512 em vez de 281, e a I saía cortada em cima. Num grupo de fora, que não
        tem atributo nenhum, as duas transformações compõem-se. */
-    svg[data-forma="maskable"] .reducao {{
+    svg[data-forma^="maskable"] .reducao {{
       transform: scale({ESCALA_MASKABLE});
       transform-origin: {CENTRO}px {CENTRO}px;
       transform-box: view-box;
     }}
 """
+
+
+ESTILO = estilo()
 
 
 def enquadra(caixa, alvo=SINAL):
@@ -393,12 +445,13 @@ def enquadra(caixa, alvo=SINAL):
     return f' transform="translate({n(dx)} {n(dy)}) scale({n(k)})"'
 
 
-def svg(titulo, corpo, favicon, nota="", caixa=None, caixa_favicon=None):
+def svg(titulo, corpo, favicon, nota="", caixa=None, caixa_favicon=None, cores=None,
+        letra=None, caixa_letra=None):
     return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {CAMPO} {CAMPO}" \
 width="{CAMPO}" height="{CAMPO}" role="img" aria-label="{titulo}">
   <title>{titulo}</title>
   <desc>{nota}</desc>
-  <style>{ESTILO}  </style>
+  <style>{estilo(cores)}  </style>
   <rect class="campo" x="0" y="0" width="{CAMPO}" height="{CAMPO}"/>
   <g class="reducao">
     <g class="sinal"{enquadra(caixa) if caixa else ""}>
@@ -406,7 +459,10 @@ width="{CAMPO}" height="{CAMPO}" role="img" aria-label="{titulo}">
     </g>
     <g class="sinal-favicon"{enquadra(caixa_favicon) if caixa_favicon else ""}>
 {favicon}
-    </g>
+    </g>{("""
+    <g class="sinal-letra"%s>
+%s
+    </g>""" % (enquadra(caixa_letra) if caixa_letra else "", letra)) if letra else ""}
   </g>
 </svg>
 """
@@ -1037,6 +1093,1068 @@ def direcao_j2():
                caixa_favicon=(0.0, mf["yc"], mf["La"], mf["yb"]))
 
 
+# ===========================================================================
+# AS SETE VOZES (a quarta adenda)
+# ===========================================================================
+# O QUE MUDA, E O QUE NÃO MUDA. O conceito não mexe: a palavra é «Estado», o
+# sinal pequeno é a letra dela. O que muda é a VOZ, ou seja três coisas ao mesmo
+# tempo: a anatomia da letra (contraste, remate, eixo), a largura, e o campo.
+#
+# As onze primeiras direções partilhavam uma grelha só (haste 0,233 H, fino
+# 0,100 H, remate cortado a direito) e um campo só (papel). A maqueta do ecrã
+# principal mostrou o preço disso: com 19,8 % de mancha num campo de papel, o
+# nosso é o ícone a que o leitor se tem de chegar. Cada voz traz por isso a sua
+# decisão de campo, e ela conta tanto como a letra.
+#
+# A LETRA É DESENHADA, E ISSO CONTINUA A SER A REGRA. Nenhuma destas sete
+# compõe um glifo de um tipo e chama-lhe marca. O que aqui se usa dos ficheiros
+# da casa são MEDIDAS (a altura de x e a de maiúscula do Spectral, a haste do
+# Bitter) e, na marca horizontal, o artigo e o «do País» compostos, que é o que
+# a §1 das NOTAS já descreve como um documento feito com o tipo.
+#
+# A FERRAMENTA NOVA É UMA PENA. As onze primeiras são feitas de rectângulos,
+# circunferências e arcos, porque a grelha da casa é de remates a direito. Estas
+# não podem ser: um «s», um «a» de dois andares e um «E» de escrita são traços
+# de grossura variável sobre um esqueleto. O que está aqui em baixo é isso: um
+# esqueleto amostrado, e duas penas a passar por cima dele.
+#   · `pena_ponteada`  a grossura varia ao longo do traço, medida na NORMAL ao
+#                      esqueleto. É a pena de bico, e é ela que dá o contraste
+#                      vertical do Didone e a espinha de um «s».
+#   · `pena_larga`     a grossura é fixa mas o BICO tem um ângulo fixo: o traço
+#                      fica grosso onde é perpendicular ao bico e fino onde lhe
+#                      é paralelo. É a pena de aparo largo, e é ela que faz a
+#                      voz caligráfica sem imitar uma caligrafia com curvas
+#                      desenhadas à mão.
+
+import math
+
+
+def _cubica(p0, p1, p2, p3, k):
+    """Uma cúbica de Bézier amostrada em k+1 pontos."""
+    fora = []
+    for i in range(k + 1):
+        u = i / k
+        m = 1.0 - u
+        fora.append((m * m * m * p0[0] + 3 * m * m * u * p1[0]
+                     + 3 * m * u * u * p2[0] + u * u * u * p3[0],
+                     m * m * m * p0[1] + 3 * m * m * u * p1[1]
+                     + 3 * m * u * u * p2[1] + u * u * u * p3[1]))
+    return fora
+
+
+def espinha(plana, por_troco=26):
+    """O esqueleto de um traço, amostrado.
+
+    `plana` é [p0, c1, c2, p1, c1, c2, p2, ...]: o ponto de partida e depois
+    três pontos por cúbica, como um «path» de SVG. O que sai é a linha do meio
+    do traço, ponto a ponto, que é sobre o que as penas trabalham.
+    """
+    pts = [plana[0]]
+    for i in range(1, len(plana), 3):
+        pts.extend(_cubica(plana[i - 1], plana[i], plana[i + 1], plana[i + 2],
+                           por_troco)[1:])
+    return pts
+
+
+def _poligono(pontos):
+    return "M" + "L".join(f"{n(x)} {n(y)}" for x, y in pontos) + "Z"
+
+
+def _caixa(pontos):
+    xs = [p[0] for p in pontos]
+    ys = [p[1] for p in pontos]
+    return (min(xs), min(ys), max(xs), max(ys))
+
+
+def pena_ponteada(pts, larg):
+    """A pena de bico: a grossura varia ao longo do traço, na normal.
+
+    `larg` é uma função de u (0 no princípio, 1 no fim) que devolve a grossura
+    TOTAL naquele ponto. Uma grossura que vai a zero nas pontas dá o remate em
+    bico de um Didone; uma grossura constante dá um traço de grossura fixa.
+    """
+    k = len(pts)
+    esq, dir_ = [], []
+    for i, (x, y) in enumerate(pts):
+        u = i / (k - 1)
+        if i == 0:
+            tx, ty = pts[1][0] - x, pts[1][1] - y
+        elif i == k - 1:
+            tx, ty = x - pts[-2][0], y - pts[-2][1]
+        else:
+            tx, ty = pts[i + 1][0] - pts[i - 1][0], pts[i + 1][1] - pts[i - 1][1]
+        m = math.hypot(tx, ty) or 1.0
+        nx, ny = -ty / m, tx / m
+        h = larg(u) / 2.0
+        esq.append((x + nx * h, y + ny * h))
+        dir_.append((x - nx * h, y - ny * h))
+    poli = esq + dir_[::-1]
+    return _poligono(poli), _caixa(poli)
+
+
+def pena_larga(pts, angulo, meia):
+    """A pena de aparo largo: o bico tem um ângulo fixo e uma largura fixa.
+
+    O traço sai grosso onde o esqueleto é perpendicular ao bico e fino onde lhe
+    é paralelo. É a mecânica de uma pena a sério, e é ela que faz o contraste da
+    voz caligráfica ser uma consequência do gesto e não um desenho de grossuras.
+    `angulo` em graus, medido do horizontal para cima.
+    """
+    a = math.radians(angulo)
+    dx, dy = math.cos(a) * meia, -math.sin(a) * meia
+    esq = [(x + dx, y + dy) for x, y in pts]
+    dir_ = [(x - dx, y - dy) for x, y in pts]
+    poli = esq + dir_[::-1]
+    return _poligono(poli), _caixa(poli)
+
+
+def pena_larga_fechada(pts, angulo, meia, centro):
+    """A mesma pena, sobre um esqueleto FECHADO (um «o», um bojo).
+
+    Num esqueleto fechado os dois lados do traço não são «esquerda» e «direita»:
+    são «fora» e «dentro». O que decide qual é qual é a distância ao centro, e
+    é isso que se faz aqui, ponto a ponto. Sai um anel de grossura variável, com
+    o eixo grosso na perpendicular ao bico, que é o «o» de uma pena.
+    """
+    a = math.radians(angulo)
+    dx, dy = math.cos(a) * meia, -math.sin(a) * meia
+    cx, cy = centro
+    fora, dentro = [], []
+    for x, y in pts:
+        p, q = (x + dx, y + dy), (x - dx, y - dy)
+        if math.hypot(p[0] - cx, p[1] - cy) >= math.hypot(q[0] - cx, q[1] - cy):
+            fora.append(p)
+            dentro.append(q)
+        else:
+            fora.append(q)
+            dentro.append(p)
+    return _poligono(fora) + _poligono(dentro), _caixa(fora)
+
+
+def elipse(cx, cy, rx, ry):
+    """Uma elipse exata, em dois arcos."""
+    return (f"M{n(cx - rx)} {n(cy)}A{n(rx)} {n(ry)} 0 1 1 {n(cx + rx)} {n(cy)}"
+            f"A{n(rx)} {n(ry)} 0 1 1 {n(cx - rx)} {n(cy)}Z")
+
+
+def anel(cx, cy, rx, ry, grossa, fina):
+    """Um anel de contraste vertical: `grossa` nos lados, `fina` em cima e em baixo.
+
+    É o «o» de uma serifada e de uma geométrica ao mesmo tempo: com
+    `grossa == fina` sai um anel de grossura constante, que é o «o» geométrico.
+    """
+    return (elipse(cx, cy, rx, ry)
+            + elipse(cx, cy, max(rx - grossa, 1.0), max(ry - fina, 1.0)))
+
+
+def _pt(cx, cy, r, ang):
+    a = math.radians(ang)
+    return (cx + r * math.cos(a), cy - r * math.sin(a))
+
+
+def banda_de_arco(cx, cy, r_ext, r_int, a1, a2):
+    """Uma banda entre dois raios, de `a1` a `a2` graus (sentido directo).
+
+    É com isto que se corta uma fração de uma circunferência: o «e» da sétima
+    voz é uma banda destas mais uma barra, e mais nada.
+    """
+    grande = 1 if (a2 - a1) % 360 > 180 else 0
+    p1 = _pt(cx, cy, r_ext, a1)
+    p2 = _pt(cx, cy, r_ext, a2)
+    p3 = _pt(cx, cy, r_int, a2)
+    p4 = _pt(cx, cy, r_int, a1)
+    return (f"M{n(p1[0])} {n(p1[1])}"
+            f"A{n(r_ext)} {n(r_ext)} 0 {grande} 0 {n(p2[0])} {n(p2[1])}"
+            f"L{n(p3[0])} {n(p3[1])}"
+            f"A{n(r_int)} {n(r_int)} 0 {grande} 1 {n(p4[0])} {n(p4[1])}Z")
+
+
+def une(caixas):
+    x0 = min(c[0] for c in caixas)
+    y0 = min(c[1] for c in caixas)
+    x1 = max(c[2] for c in caixas)
+    y1 = max(c[3] for c in caixas)
+    return (x0, y0, x1, y1)
+
+
+def cx_rect(x0, y0, x1, y1):
+    return rect(x0, y0, x1, y1), (x0, y0, x1, y1)
+
+
+# ---------------------------------------------------------------------------
+# O ALFABETO PARAMÉTRICO
+# ---------------------------------------------------------------------------
+# Cinco letras minúsculas («s», «t», «a», «d», «o») e uma maiúscula («E»),
+# construídas sobre o MESMO esqueleto e com os mesmos números a mudar de voz
+# para voz. É isso que faz destas sete vozes uma comparação: o que se compara é
+# a anatomia, e não seis desenhos sem relação uns com os outros.
+#
+# O QUE CADA NÚMERO FAZ:
+#   xh        altura de x, em altura de maiúscula. Mede-se no Spectral da casa
+#             (0,688) e muda de voz para voz de propósito: uma Didone tem a
+#             altura de x baixa, uma grotesca condensada tem-na alta.
+#   T, t      haste e fino, em altura de maiúscula. T/t é o contraste, e é o
+#             número que mais separa uma voz da outra.
+#   larg      o factor de largura: 1,0 é normal, 0,62 é condensado.
+#   serifa    None, «laje» (o rectângulo cheio da Bitter), «fio» (a laje sem
+#             colo e da grossura do fino, que é a Didone) ou «cunha» (o remate
+#             em triângulo do cinzel).
+#   a_tipo    «duplo» (o «a» de dois andares das serifadas) ou «simples» (o «a»
+#             de um andar das geométricas e da caligráfica).
+def voz(H=300.0, xh=0.68, asc=1.02, T=0.20, t=0.09, larg=1.0, serifa=None,
+        a_tipo="duplo", espaco=0.05, bola=0.0, nib=None, meia_nib=0.0,
+        e_haste=None, e_braco=None, e_curto=None, e_fino=None):
+    """Os números de uma voz. `H` é a altura de maiúscula; tudo o resto é em H."""
+    v = dict(H=H, xh=xh * H, asc=asc * H, T=T * H, t=t * H, larg=larg,
+             serifa=serifa, a_tipo=a_tipo, espaco=espaco * H, bola=bola * H,
+             nib=nib, meia_nib=meia_nib * H)
+    v["e_haste"] = (e_haste if e_haste is not None else T) * H
+    v["e_braco"] = (e_braco if e_braco is not None else 0.62) * H
+    v["e_curto"] = (e_curto if e_curto is not None else 0.50) * H
+    v["e_fino"] = (e_fino if e_fino is not None else t) * H
+    return v
+
+
+def _serifa_pe(v, x0, x1, y, para_cima):
+    """A serifa de um pé ou de um topo de haste, na gramática da voz."""
+    if v["serifa"] is None:
+        return []
+    if v["serifa"] == "cunha":
+        # a cunha de uma haste romana sai a 0,42 da haste para cada lado: o pé
+        # fica com 1,84 vezes a largura da haste, que é a proporção da pedra. A
+        # 1,1 do FINO (que foi a primeira versão) dava 2,4 vezes, e a letra lia-se
+        # como um laço e não como um «E».
+        h, saliencia = v["t"] * 0.80, v["T"] * 0.42
+    else:
+        h = v["t"] if v["serifa"] == "fio" else v["t"] * 1.15
+        saliencia = v["t"] * (1.5 if v["serifa"] == "fio" else 1.1)
+    a, b = x0 - saliencia, x1 + saliencia
+    if v["serifa"] == "cunha":
+        # a cunha do cinzel: a ponta ALARGA e volta a estreitar, e não é um
+        # rectângulo pousado. É o que um cinzel deixa: a largura máxima está no
+        # extremo, e o alargamento apaga-se ao fim de pouco mais de um fino.
+        if para_cima:
+            return [(f"M{n(a)} {n(y)}L{n(b)} {n(y)}L{n(x1)} {n(y + h)}"
+                     f"L{n(x0)} {n(y + h)}Z")]
+        return [(f"M{n(a)} {n(y)}L{n(b)} {n(y)}L{n(x1)} {n(y - h)}"
+                 f"L{n(x0)} {n(y - h)}Z")]
+    return [rect(a, y, b, y + h) if para_cima else rect(a, y - h, b, y)]
+
+
+def _cunha_de_braco(x_fim, y0, y1, comp, flare):
+    """A cunha na ponta de um braço horizontal: alarga para fora, em «V» deitado.
+
+    `y0` e `y1` são as duas faces do braço; a cunha sai `flare` para cada lado no
+    extremo e volta à grossura do braço ao fim de `comp`. É esta a forma que um
+    cinzel deixa, e é ela que separa a segunda voz de uma serifada de imprensa.
+    """
+    return (f"M{n(x_fim)} {n(y0 - flare)}L{n(x_fim)} {n(y1 + flare)}"
+            f"L{n(x_fim - comp)} {n(y1)}L{n(x_fim - comp)} {n(y0)}Z")
+
+
+def largura_o(v, altura=None):
+    """A largura do «o» da voz. É a régua horizontal de todas as minúsculas.
+
+    Existe como função porque o «t» e o «s» a usam para se medirem: uma letra
+    tem de caber no seu avanço, e a maneira de garantir isso é medir tudo à
+    mesma régua em vez de dar a cada letra uma fórmula sua. Foi por não ser
+    assim que a voz condensada saía com o «t» a entrar no «a».
+    """
+    return 0.78 * (altura or v["xh"]) * 2 * v["larg"] / 1.28
+
+
+def voz_o(v, x, base, largura=None, altura=None):
+    """O «o»: um anel de contraste vertical, grosso nos lados e fino em cima."""
+    xh = altura or v["xh"]
+    w = largura if largura is not None else largura_o(v, xh)
+    rx, ry = w / 2.0, xh / 2.0
+    cx, cy = x + rx, base - ry
+    if v["nib"]:
+        pts = espinha_de_elipse(cx, cy, rx - v["meia_nib"] * 0.4, ry - v["meia_nib"] * 0.4)
+        d, cx_ = pena_larga_fechada(pts, v["nib"], v["meia_nib"], (cx, cy))
+        return [("evenodd", "tinta", d)], (cx_[0], cx_[1], cx_[2], cx_[3]), w
+    d = anel(cx, cy, rx, ry, v["T"], v["t"])
+    return [("evenodd", "tinta", d)], (cx - rx, cy - ry, cx + rx, cy + ry), w
+
+
+def espinha_de_elipse(cx, cy, rx, ry, k=88):
+    return [(cx + rx * math.cos(2 * math.pi * i / k),
+             cy + ry * math.sin(2 * math.pi * i / k)) for i in range(k + 1)]
+
+
+def voz_d(v, x, base):
+    """O «d»: o bojo do «o» com a haste subida à ascendente."""
+    partes, caixa, w = voz_o(v, x, base)
+    hx = x + w - v["T"]
+    partes = list(partes)
+    partes.append(("nonzero", "tinta", rect(hx, base - v["asc"], x + w, base)))
+    caixas = [caixa, (hx, base - v["asc"], x + w, base)]
+    for d in _serifa_pe(v, hx, x + w, base - v["asc"], True):
+        partes.append(("nonzero", "tinta", d))
+        caixas.append((hx - v["t"] * 1.5, base - v["asc"], x + w + v["t"] * 1.5,
+                       base - v["asc"] + v["t"] * 1.2))
+    # a saliência da serifa entra no avanço: se não entrasse, o «d» encostava-se
+    # ao «o» que vem a seguir
+    caixa = une(caixas)
+    return partes, caixa, max(w, caixa[2] - x)
+
+
+def voz_a(v, x, base):
+    """O «a»: de dois andares nas serifadas, de um andar nas geométricas.
+
+    O de dois andares é bojo em baixo, haste à direita e um arco por cima; o de
+    um andar é o bojo do «o» com a haste à direita, à altura de x. A escolha não
+    é de gosto: um «a» de um andar numa Didone lê-se como itálico, e um «a» de
+    dois andares numa geométrica pesada fecha-se a 60 px.
+    """
+    xh = v["xh"]
+    if v["a_tipo"] == "simples":
+        partes, caixa, w = voz_o(v, x, base)
+        hx = x + w - v["T"]
+        partes = list(partes) + [("nonzero", "tinta", rect(hx, base - xh, x + w, base))]
+        return partes, une([caixa, (hx, base - xh, x + w, base)]), w
+    w = 0.72 * xh * 2 * v["larg"] / 1.28
+    hx = x + w - v["T"]
+    partes = [("nonzero", "tinta", rect(hx, base - xh, x + w, base))]
+    caixas = [(hx, base - xh, x + w, base)]
+    # o bojo de baixo: um anel sentado na linha de base, com a haste a fechá-lo
+    hb = 0.58 * xh
+    rx, ry = (w - v["t"] * 0.4) / 2.0, hb / 2.0
+    cx, cy = x + rx, base - ry
+    partes.append(("evenodd", "tinta", anel(cx, cy, rx, ry, v["T"] * 0.92, v["t"])))
+    caixas.append((cx - rx, cy - ry, cx + rx, cy + ry))
+    # o arco de cima: sai da haste, sobe e cai para a esquerda
+    arco = espinha([(hx + v["T"] * 0.2, base - xh + v["t"] * 0.2),
+                    (hx - w * 0.16, base - xh - v["t"] * 1.5),
+                    (x + w * 0.20, base - xh - v["t"] * 1.2),
+                    (x + v["T"] * 0.42, base - xh * 0.74)])
+    d, cxa = pena_ponteada(arco, lambda u: v["t"] + (v["T"] * 0.72 - v["t"]) * u)
+    partes.append(("nonzero", "tinta", d))
+    caixas.append(cxa)
+    if v["bola"]:
+        bx = x + v["T"] * 0.42
+        partes.append(("nonzero", "tinta", elipse(bx, base - xh * 0.74, v["bola"], v["bola"])))
+        caixas.append((bx - v["bola"], base - xh * 0.74 - v["bola"],
+                       bx + v["bola"], base - xh * 0.74 + v["bola"]))
+    return partes, une(caixas), w
+
+
+def voz_t(v, x, base):
+    """O «t»: haste que passa a altura de x, travessão, e um pé cortado.
+
+    A LARGURA SAI DA HASTE E DO TRAVESSÃO, e não de uma fração da altura de x.
+    Com a segunda (que era a primeira versão) uma voz condensada dava um avanço
+    de 86,8 e uma haste que acabava aos 93,5: o «t» entrava no «a» que vinha a
+    seguir. Aqui o avanço é, por construção, o que a letra ocupa.
+    """
+    xh = v["xh"]
+    T = v["T"]
+    wo = largura_o(v)
+    esq, dir_ = wo * 0.10, wo * 0.18
+    w = esq + T + dir_
+    hx = x + esq
+    topo = base - xh * 1.30
+    partes = [("nonzero", "tinta", rect(hx, topo, hx + T, base - v["t"] * 0.2))]
+    caixas = [(hx, topo, hx + T, base)]
+    partes.append(("nonzero", "tinta",
+                   rect(x, base - xh, x + w, base - xh + v["t"] * 1.05)))
+    caixas.append((x, base - xh, x + w, base - xh + v["t"]))
+    if v["serifa"]:
+        # o pé do «t» vira à direita, como numa serifada
+        partes.append(("nonzero", "tinta",
+                       rect(hx, base - v["t"] * 1.1, hx + T + v["t"] * 1.6, base)))
+        caixas.append((hx, base - v["t"] * 1.1, hx + T + v["t"] * 1.6, base))
+    return partes, une(caixas), w
+
+
+def voz_s(v, x, base, altura=None, perfil=None):
+    """O «s»: uma espinha em S, e a pena por cima.
+
+    É por causa desta letra que a pena existe. A grelha das onze primeiras não
+    dá um «s» (a regra do remate cortado a direito não o permite, e está dito na
+    §4 das NOTAS); um esqueleto com uma grossura que varia dá.
+    """
+    xh = altura or v["xh"]
+    T, t = v["T"], v["t"]
+    if altura:                      # um «S» de maiúscula pesa como a maiúscula
+        T, t = v["e_haste"] * 0.92, v["e_fino"] * 1.15
+    # A ESPINHA É A LINHA DO MEIO DO TRAÇO, e por isso não pode ir de ponta a
+    # ponta do avanço: meia grossura fica de fora de cada lado. O avanço é o
+    # corpo do «s» mais uma haste inteira, e a espinha desenha-se no que sobra.
+    w = 0.66 * (largura_o(v, xh) if not altura else 0.72 * xh) + T
+    x, w = x + T / 2.0, w - T
+    pts = espinha([
+        (x + 0.90 * w, base - 0.78 * xh),
+        (x + 0.88 * w, base - 0.99 * xh), (x + 0.55 * w, base - 1.03 * xh),
+        (x + 0.36 * w, base - 0.90 * xh),
+        (x + 0.16 * w, base - 0.79 * xh), (x + 0.15 * w, base - 0.62 * xh),
+        (x + 0.44 * w, base - 0.52 * xh),
+        (x + 0.74 * w, base - 0.42 * xh), (x + 0.88 * w, base - 0.32 * xh),
+        (x + 0.82 * w, base - 0.16 * xh),
+        (x + 0.74 * w, base + 0.02 * xh), (x + 0.36 * w, base + 0.03 * xh),
+        (x + 0.10 * w, base - 0.12 * xh),
+    ])
+    p = perfil or (lambda u: t + (T - t) * math.sin(math.pi * u) ** 0.85)
+    d, caixa = pena_ponteada(pts, p)
+    partes = [("nonzero", "tinta", d)]
+    caixas = [caixa]
+    if v["bola"]:
+        for pp in (pts[0], pts[-1]):
+            partes.append(("nonzero", "tinta", elipse(pp[0], pp[1], v["bola"], v["bola"])))
+            caixas.append((pp[0] - v["bola"], pp[1] - v["bola"],
+                           pp[0] + v["bola"], pp[1] + v["bola"]))
+    return partes, une(caixas), w + T
+
+
+def maiuscula_e(v, x, base, linha=None, classe_linha="acento"):
+    """O «E» da voz: haste, três braços, e o remate que a voz mandar.
+
+    `linha` é a grossura da linha do valor no braço do meio, em altura de
+    maiúscula; a `None` o braço do meio é da voz, como os outros dois.
+    """
+    H = v["H"]
+    T, t = v["e_haste"], v["e_fino"]
+    La, Lm = v["e_braco"], v["e_curto"]
+    topo, pe = base - H, base
+    tm = (linha * H) if linha else t
+    partes = [("nonzero", "tinta", rect(x, topo, x + T, pe)),
+              ("nonzero", "tinta", rect(x, topo, x + La, topo + t)),
+              ("nonzero", "tinta", rect(x, pe - t, x + La, pe))]
+    caixas = [(x, topo, x + La, pe)]
+    meio = [(classe_linha if linha else "tinta",
+             rect(x, base - H / 2 - tm / 2, x + Lm, base - H / 2 + tm / 2))]
+    if v["serifa"] == "fio":
+        # a Didone: lajes finas, sem colo, nas pontas dos braços e no pé da haste
+        s = t * 2.6
+        for d in (rect(x + La - t, topo, x + La, topo + s),
+                  rect(x + La - t, pe - s, x + La, pe)):
+            partes.append(("nonzero", "tinta", d))
+        meio.append((classe_linha if linha else "tinta",
+                     rect(x + Lm - t, base - H / 2 - tm / 2 - t * 0.9,
+                          x + Lm, base - H / 2 + tm / 2 + t * 0.9)))
+    elif v["serifa"] == "laje":
+        # a laje: na ponta do braço, um remate que DESCE (ou sobe) para dentro da
+        # letra; na haste, um esporão para fora. Uma laje que passasse a linha de
+        # maiúscula fazia a letra crescer para fora do quadrado do sinal, e foi
+        # esse o erro da primeira versão: 0,216 H de laje contra 0,148 H de braço.
+        lq = t * 0.62          # o quanto a laje desce, para dentro da letra
+        lw = t * 0.85          # a largura da laje
+        for d in (rect(x + La - lw, topo, x + La, topo + t + lq),
+                  rect(x + La - lw, pe - t - lq, x + La, pe),
+                  rect(x - lw, topo, x, topo + t),
+                  rect(x - lw, pe - t, x, pe)):
+            partes.append(("nonzero", "tinta", d))
+        caixas.append((x - lw, topo, x + La, pe))
+        # A LINHA DO VALOR NÃO LEVA LAJE. Uma laje é o remate de um braço de
+        # letra; a linha do valor não é um braço, é outro objeto metido dentro da
+        # letra, e um objeto que acaba a direito é o que uma linha de livro-razão
+        # faz. Com laje (a primeira versão punha-lhe 0,55 de lq de cada lado) a
+        # barra de cobalto ficava 133 unidades de alta contra 63 de grossura, e
+        # lia-se como um martelo.
+        if not linha:
+            meio.append(("tinta", rect(x + Lm - lw, base - H / 2 - tm / 2 - lq * 0.5,
+                                       x + Lm, base - H / 2 + tm / 2 + lq * 0.5)))
+    elif v["serifa"] == "cunha":
+        # o cinzel: cunhas nas pontas dos três braços, e a haste com pé e cabeça
+        comp, flare = t * 1.35, t * 0.42
+        partes.append(("nonzero", "tinta", _cunha_de_braco(x + La, topo, topo + t, comp, flare)))
+        partes.append(("nonzero", "tinta", _cunha_de_braco(x + La, pe - t, pe, comp, flare)))
+        caixas.append((x, topo - flare, x + La, pe + flare))
+        for d in _serifa_pe(v, x, x + T, topo, True) + _serifa_pe(v, x, x + T, pe, False):
+            partes.append(("nonzero", "tinta", d))
+        meio.append((classe_linha if linha else "tinta",
+                     _cunha_de_braco(x + Lm, base - H / 2 - tm / 2,
+                                     base - H / 2 + tm / 2, comp, flare)))
+    partes += [("nonzero", c, d) for c, d in meio]
+    caixas.append((x, base - H / 2 - tm / 2, x + Lm, base - H / 2 + tm / 2))
+    return partes, une(caixas), La
+
+
+def compoe_letras(v, x, base, letras):
+    """Letras umas a seguir às outras, com o espaço medido na TINTA e não no avanço.
+
+    O AVANÇO DE UMA LETRA NÃO CHEGA PARA A ESPACEJAR, e isto foi medido: uma
+    serifa que sai, o travessão de um «t» ou o arco de um «a» ficam fora dele, e
+    foi por isso que a voz condensada e a de laje saíram com o «t» encostado ao
+    «a». Aqui cada letra é desenhada DUAS VEZES: a primeira na origem, só para
+    se lhe medir a caixa de tinta, e a segunda no sítio em que essa caixa fica à
+    distância pedida da tinta da letra anterior. Custa o dobro do desenho e não
+    custa nada a correr, porque isto não corre na construção do sítio.
+    """
+    partes, caixas = [], []
+    cursor, direita = x, None
+    for fn in letras:
+        _, c0, _ = fn(v, 0.0, base)
+        xi = cursor if direita is None else max(cursor, direita + v["espaco"] - c0[0])
+        p, c, ww = fn(v, xi, base)
+        partes += p
+        caixas.append(c)
+        direita = c[2]
+        cursor = xi + ww + v["espaco"]
+    caixa = une(caixas)
+    return partes, caixa, caixa[2] - x
+
+
+def palavra_da_voz(v, x, base, linha=None):
+    """«Estado» na voz: o «E» e as cinco minúsculas, todas desenhadas."""
+    return compoe_letras(v, x, base, [
+        lambda vv, xx, bb: maiuscula_e(vv, xx, bb, linha=linha),
+        voz_s, voz_t, voz_a, voz_d, voz_o])
+
+
+# ---------------------------------------------------------------------------
+# AS MAIÚSCULAS DO CINZEL (a segunda voz)
+# ---------------------------------------------------------------------------
+# «ESTADO» em versais. A lógica é a da pedra e não a da imprensa: a haste é
+# LEVE (0,125 da altura), o fino é quase tão grosso quanto ela (contraste 1,5,
+# contra os 4,9 da Didone), a letra é LARGA, e o remate é uma cunha e não uma
+# laje, porque um cinzel não corta um rectângulo, corta um «V».
+#
+# O que aqui NÃO se faz, e é uma regra da adenda: nada disto imita a tipografia
+# do Governo nem da Assembleia. As versais romanas são património comum, estão
+# em qualquer pelourinho e em qualquer fachada de escola primária do Estado
+# Novo ou de antes dele, e não são insígnia de ninguém. O que seria imitação é o
+# escudo, a esfera armilar e as cores da bandeira, e nenhuma delas está aqui.
+def cap_t(v, x, base):
+    H, T, t = v["H"], v["e_haste"], v["e_fino"]
+    w = 0.74 * H
+    hx = x + w / 2 - T / 2
+    partes = [("nonzero", "tinta", rect(hx, base - H, hx + T, base)),
+              ("nonzero", "tinta", rect(x, base - H, x + w, base - H + t))]
+    cu = t * 1.5
+    for lado in (x, x + w):
+        s = 1 if lado == x else -1
+        partes.append(("nonzero", "tinta",
+                       f"M{n(lado)} {n(base - H - cu)}L{n(lado)} {n(base - H + t + cu)}"
+                       f"L{n(lado + s * t * 1.9)} {n(base - H + t)}"
+                       f"L{n(lado + s * t * 1.9)} {n(base - H)}Z"))
+    partes.append(("nonzero", "tinta", rect(hx - t * 1.5, base - t * 1.1,
+                                            hx + T + t * 1.5, base)))
+    return partes, (x, base - H - cu, x + w, base), w
+
+
+def cap_a(v, x, base):
+    """O «A» romano: a diagonal da esquerda fina, a da direita grossa, ápice em bico."""
+    H, T, t = v["H"], v["e_haste"], v["e_fino"]
+    w = 0.80 * H
+    ap = x + w / 2
+    partes = [("nonzero", "tinta",
+               f"M{n(ap - t * 0.55)} {n(base - H)}L{n(ap + t * 0.55)} {n(base - H)}"
+               f"L{n(x + w * 0.30 + t)} {n(base)}L{n(x + w * 0.30 - t * 0.6)} {n(base)}Z"),
+              ("nonzero", "tinta",
+               f"M{n(ap - T * 0.45)} {n(base - H)}L{n(ap + T * 0.45)} {n(base - H)}"
+               f"L{n(x + w * 0.72 + T * 0.7)} {n(base)}L{n(x + w * 0.72 - T * 0.6)} {n(base)}Z"),
+              ("nonzero", "tinta", rect(x + w * 0.22, base - H * 0.30,
+                                        x + w * 0.80, base - H * 0.30 + t))]
+    # os pés, cortados a direito na horizontal, como na pedra
+    partes.append(("nonzero", "tinta", rect(x + w * 0.30 - t * 1.9, base - t * 1.0,
+                                            x + w * 0.30 + t * 1.6, base)))
+    partes.append(("nonzero", "tinta", rect(x + w * 0.72 - T * 1.1, base - t * 1.0,
+                                            x + w * 0.72 + T * 1.2, base)))
+    return partes, (x + w * 0.30 - t * 1.9, base - H, x + w * 0.72 + T * 1.2, base), w
+
+
+def cap_d(v, x, base):
+    H, T, t = v["H"], v["e_haste"], v["e_fino"]
+    w = 0.76 * H
+    partes = [("nonzero", "tinta", rect(x, base - H, x + T, base))]
+    rx, ry = w - T * 0.5, H / 2
+    cy = base - ry
+    partes.append(("evenodd", "tinta",
+                   (f"M{n(x + T * 0.5)} {n(base - H)}"
+                    f"A{n(rx - T * 0.5)} {n(ry)} 0 0 1 {n(x + T * 0.5)} {n(base)}Z")
+                   + (f"M{n(x + T * 0.5)} {n(base - H + t)}"
+                      f"A{n(rx - T * 0.5 - T)} {n(ry - t)} 0 0 1 "
+                      f"{n(x + T * 0.5)} {n(base - t)}Z")))
+    for y, para_cima in ((base - H, True), (base, False)):
+        partes += [("nonzero", "tinta", d)
+                   for d in _serifa_pe(v, x, x + T, y, para_cima)]
+    return partes, (x - t * 1.1, base - H, x + rx, base), w
+
+
+def cap_o(v, x, base):
+    H, T, t = v["H"], v["e_haste"], v["e_fino"]
+    w = 0.90 * H
+    rx, ry = w / 2, H / 2
+    cx, cy = x + rx, base - ry
+    return ([("evenodd", "tinta", anel(cx, cy, rx, ry, T, t))],
+            (cx - rx, cy - ry, cx + rx, cy + ry), w)
+
+
+def palavra_versais(v, x, base, linha=None):
+    """«ESTADO» em versais do cinzel."""
+    return compoe_letras(v, x, base, [
+        lambda vv, xx, bb: maiuscula_e(vv, xx, bb, linha=linha),
+        lambda vv, xx, bb: voz_s(vv, xx, bb, altura=vv["H"]),
+        cap_t, cap_a, cap_d, cap_o])
+
+
+# ---------------------------------------------------------------------------
+# A VOZ CALIGRÁFICA: TUDO SAI DE UM APARO A 32 GRAUS
+# ---------------------------------------------------------------------------
+# Aqui não há grossuras desenhadas: há um esqueleto e um aparo. O contraste é o
+# que a inclinação do aparo produz, como numa mão a sério, e é por isso que esta
+# é a única das sete em que o grosso e o fino não são escolhas separadas.
+NIB = 32.0            # a inclinação do aparo, em graus
+MEIA_NIB = 0.062      # meia largura do aparo, em altura de maiúscula
+
+
+def _traco(pts, meia=None, v=None):
+    return pena_larga(pts, v["nib"], meia if meia is not None else v["meia_nib"])
+
+
+def cali_e(v, x, base):
+    """O «E» de escrita: um traço só, com a cintura a voltar para trás.
+
+    É o «E» de uma assinatura: entra em cima à direita, dá a volta por cima,
+    desce pela esquerda, faz a cintura para a direita e volta, e sai em baixo à
+    direita. Um traço, sem levantar o aparo, que é o que a adenda pede.
+    """
+    H = v["H"]
+    w = 0.62 * H
+    # O LADO ESQUERDO É QUASE A PRUMO, e não é enfeite: com a espinha a fazer
+    # duas barrigas (a primeira versão punha-a em 0,13 e 0,09 de w) a letra lia-se
+    # como um «épsilon» ou como um «3» ao contrário. Com o lado esquerdo a
+    # aprumar-se entre 0,10 e 0,12 de w, e com o braço de cima e o de baixo a
+    # esticarem para a direita, volta a ler-se um «E» com uma cintura.
+    # O TRAÇO É O QUE A MÃO FAZ SEM LEVANTAR O APARO, e por esta ordem: o braço
+    # de cima da direita para a esquerda, a volta para baixo, a cintura para a
+    # direita e de volta, e o braço de baixo da esquerda para a direita. É o «E»
+    # de uma mão inglesa, e a única coisa que se afinou foi a esquadria: com as
+    # voltas moles (a primeira versão) lia-se um «épsilon»; com o braço de cima e
+    # o de baixo quase horizontais e o lado esquerdo a prumo, lê-se um «E».
+    pts = espinha([
+        (x + 1.00 * w, base - 0.99 * H),
+        (x + 0.72 * w, base - 1.055 * H), (x + 0.30 * w, base - 1.055 * H),
+        (x + 0.15 * w, base - 0.97 * H),
+        (x + 0.07 * w, base - 0.90 * H), (x + 0.07 * w, base - 0.70 * H),
+        (x + 0.30 * w, base - 0.615 * H),
+        (x + 0.50 * w, base - 0.565 * H), (x + 0.64 * w, base - 0.535 * H),
+        (x + 0.42 * w, base - 0.49 * H),
+        (x + 0.24 * w, base - 0.455 * H), (x + 0.07 * w, base - 0.38 * H),
+        (x + 0.07 * w, base - 0.14 * H),
+        (x + 0.08 * w, base - 0.02 * H), (x + 0.42 * w, base + 0.045 * H),
+        (x + 1.00 * w, base - 0.055 * H),
+    ], por_troco=34)
+    d, caixa = _traco(pts, v=v)
+    return [("nonzero", "tinta", d)], caixa, w
+
+
+def cali_o(v, x, base, altura=None, largura=None):
+    xh = altura or v["xh"]
+    w = largura or 0.86 * xh
+    rx, ry = w / 2 - v["meia_nib"] * 0.5, xh / 2 - v["meia_nib"] * 0.5
+    cx, cy = x + w / 2, base - xh / 2
+    d, caixa = pena_larga_fechada(espinha_de_elipse(cx, cy, rx, ry),
+                                  v["nib"], v["meia_nib"], (cx, cy))
+    return [("evenodd", "tinta", d)], caixa, w
+
+
+def cali_a(v, x, base):
+    partes, caixa, w = cali_o(v, x, base)
+    pts = espinha([(x + w - v["meia_nib"] * 0.4, base - v["xh"] * 1.02),
+                   (x + w + v["meia_nib"] * 0.5, base - v["xh"] * 0.6),
+                   (x + w - v["meia_nib"] * 0.6, base - v["xh"] * 0.3),
+                   (x + w + v["meia_nib"] * 1.4, base + v["xh"] * 0.02)])
+    d, c2 = _traco(pts, v=v)
+    return list(partes) + [("nonzero", "tinta", d)], une([caixa, c2]), w + v["meia_nib"]
+
+
+def cali_d(v, x, base):
+    partes, caixa, w = cali_o(v, x, base)
+    pts = espinha([(x + w - v["meia_nib"] * 0.2, base - v["asc"]),
+                   (x + w + v["meia_nib"] * 0.4, base - v["asc"] * 0.55),
+                   (x + w - v["meia_nib"] * 0.6, base - v["xh"] * 0.3),
+                   (x + w + v["meia_nib"] * 1.6, base + v["xh"] * 0.02)])
+    d, c2 = _traco(pts, v=v)
+    return list(partes) + [("nonzero", "tinta", d)], une([caixa, c2]), w + v["meia_nib"]
+
+
+def cali_t(v, x, base):
+    w = 0.46 * v["xh"]
+    hx = x + w * 0.42
+    pts = espinha([(hx, base - v["xh"] * 1.32),
+                   (hx + v["meia_nib"] * 0.4, base - v["xh"] * 0.7),
+                   (hx - v["meia_nib"] * 0.5, base - v["xh"] * 0.25),
+                   (hx + w * 0.9, base + v["xh"] * 0.02)])
+    d, caixa = _traco(pts, v=v)
+    barra = espinha([(x - w * 0.16, base - v["xh"] * 1.02),
+                     (x + w * 0.3, base - v["xh"] * 1.06),
+                     (x + w * 0.7, base - v["xh"] * 1.02),
+                     (x + w * 1.06, base - v["xh"] * 1.00)])
+    d2, c2 = _traco(barra, meia=v["meia_nib"] * 0.86, v=v)
+    return ([("nonzero", "tinta", d), ("nonzero", "tinta", d2)],
+            une([caixa, c2]), w + v["meia_nib"] * 1.2)
+
+
+def cali_s(v, x, base):
+    xh = v["xh"]
+    w = 0.60 * xh
+    pts = espinha([
+        (x + 0.88 * w, base - 0.80 * xh),
+        (x + 0.84 * w, base - 0.99 * xh), (x + 0.50 * w, base - 1.02 * xh),
+        (x + 0.33 * w, base - 0.88 * xh),
+        (x + 0.16 * w, base - 0.76 * xh), (x + 0.18 * w, base - 0.60 * xh),
+        (x + 0.46 * w, base - 0.50 * xh),
+        (x + 0.74 * w, base - 0.40 * xh), (x + 0.86 * w, base - 0.29 * xh),
+        (x + 0.78 * w, base - 0.14 * xh),
+        (x + 0.70 * w, base + 0.02 * xh), (x + 0.34 * w, base + 0.03 * xh),
+        (x + 0.10 * w, base - 0.11 * xh),
+    ], por_troco=30)
+    d, caixa = _traco(pts, v=v)
+    return [("nonzero", "tinta", d)], caixa, w
+
+
+def palavra_caligrafica(v, x, base):
+    return compoe_letras(v, x, base,
+                         [cali_e, cali_s, cali_t, cali_a, cali_d, cali_o])
+
+
+# ---------------------------------------------------------------------------
+# O «e» MINÚSCULO: UMA CIRCUNFERÊNCIA CORTADA E UMA BARRA (a sétima voz)
+# ---------------------------------------------------------------------------
+# A ideia é do diretor, e o que ela tem de próprio é ser as duas letras ao mesmo
+# tempo: a circunferência é o «O» de «O Estado» e a barra faz dela o «e» de
+# «Estado». Um «e» minúsculo é, por construção, um anel com uma barra e uma
+# abertura; tirar a barra dá um «o». É a única das sete em que as duas letras do
+# nome são a mesma forma.
+def e_minusculo(cx, cy, r, grossura, abertura=(-58.0, -8.0), barra=0.0,
+                sai=0.0, barra_classe="tinta"):
+    """A banda, e a barra que faz dela um «e».
+
+    `abertura` são os dois ângulos onde a circunferência está cortada (0 graus é
+    a direita, e o ângulo cresce para cima). `barra` é a grossura da travessa;
+    `sai` é o quanto ela passa para fora do anel, de cada lado, em raios: a 0
+    fica dentro, como num «e» de tipo; acima de 0 atravessa, como a linha de uma
+    régua.
+    """
+    r_int = r - grossura
+    d = banda_de_arco(cx, cy, r, r_int, abertura[1], abertura[0])
+    x0 = cx - r - sai * r
+    x1 = cx + r * math.cos(math.radians(abertura[1])) + sai * r
+    barra_d = rect(x0, cy - barra / 2, x1, cy + barra / 2)
+    return ([("nonzero", "tinta", d), ("nonzero", barra_classe, barra_d)],
+            (min(x0, cx - r), cy - r, max(x1, cx + r), cy + r))
+
+
+# ---------------------------------------------------------------------------
+# AS SETE DIREÇÕES
+# ---------------------------------------------------------------------------
+BASE = 400.0          # a linha de base do desenho da palavra, em coordenadas cómodas
+
+
+def _com(texto):
+    return "    <!-- " + texto.replace("\n", "\n         ") + " -->\n"
+
+
+# 12 · EDITORIAL DE CONTRASTE ALTO (a Didone)
+VOZ_12 = voz(H=300.0, xh=0.60, asc=1.05, T=0.158, t=0.030, serifa="fio",
+             a_tipo="duplo", espaco=0.060, bola=0.026,
+             e_haste=0.262, e_braco=0.64, e_curto=0.50, e_fino=0.040)
+VOZ_12_16 = voz(H=300.0, T=0.155, t=0.032, serifa=None,
+                e_haste=0.245, e_braco=0.62, e_curto=0.50, e_fino=0.128)
+PALETA_12 = paleta(TINTA, PAPEL, PAPEL, campo_escuro=PAPEL_ESCURO,
+                   letra_escura=TINTA_ESCURA, acento_escuro=TINTA_ESCURA)
+
+
+def direcao_12():
+    """A voz do jornal: haste grossa, fino de cabelo, e o campo de tinta.
+
+    É a anatomia do Didot e do Bodoni, que é a que o Público e o Le Monde usam
+    no cabeçalho, e é a única das sete que joga tudo no CONTRASTE: 4,9 para 1
+    entre a haste e o fino, contra os 2,33 da grelha da casa. O campo é de
+    tinta, com a letra em papel, e essa decisão é da maqueta: a 180 px, uma
+    mancha cheia lê-se de longe e uma letra fina em campo pálido não.
+    """
+    partes, caixa, larg = palavra_da_voz(VOZ_12, 0.0, BASE)
+    corpo = _com(
+        f"«Estado» na voz editorial de contraste alto. Haste 0,155 H, fino 0,032 H\n"
+        f"nas minúsculas; no «E», haste 0,235 H e fino 0,048 H, contraste 4,9.\n"
+        f"Serifas em fio, sem colo, da grossura do fino. O «a» é de dois andares e\n"
+        f"o «s» é um traço de grossura variável sobre uma espinha (a pena de bico).\n"
+        f"A palavra mede {larg:.0f} x {caixa[3] - caixa[1]:.0f}.") + caminhos(partes)
+    pl, cl, _ = maiuscula_e(VOZ_12, 0.0, 300.0)
+    letra = _com(
+        "180, 120 e 60 px: fica o «E» DA PALAVRA, com os mesmos números. A esta\n"
+        "escala o fino dá 1,7 px a 60 px, e é isso que a voz é: contraste 6,55.") + caminhos(pl)
+    pf, cf, _ = maiuscula_e(VOZ_12_16, 0.0, 300.0)
+    favicon = _com(
+        "32 e 16 px: o fino sobe de 0,040 para 0,128 H e as serifas saem, porque\n"
+        "a 16 px um fino de 0,040 H dá 0,45 px e o braço abre. O contraste cai de\n"
+        "6,55 para 1,9, e com ele cai a voz: é o preço medido desta direção, e\n"
+        "está dito nas NOTAS.") + caminhos(pf)
+    return svg("Voz 1 · editorial de contraste alto", corpo, favicon,
+               "A Didone: hastes grossas, finos de cabelo, campo de tinta.",
+               caixa=caixa, caixa_favicon=cf, cores=PALETA_12,
+               letra=letra, caixa_letra=cl)
+
+
+# 13 · INSCRICIONAL (as versais do cinzel)
+VOZ_13 = voz(H=300.0, T=0.125, t=0.082, serifa="cunha", espaco=0.115,
+             e_haste=0.125, e_braco=0.66, e_curto=0.50, e_fino=0.082)
+VOZ_13_16 = voz(H=300.0, T=0.175, t=0.135, serifa="cunha", espaco=0.10,
+                e_haste=0.175, e_braco=0.68, e_curto=0.52, e_fino=0.135)
+PALETA_13 = paleta(OCRE, PAPEL, PAPEL, campo_escuro=OCRE,
+                   letra_escura=PAPEL, acento_escuro=PAPEL)
+INCISAO = 0.215       # a faixa do braço do meio
+GROOVE = 0.062        # o sulco do cinzel dentro dela
+
+
+def _e_incisa(v, x, base, cheia=INCISAO, sulco=GROOVE):
+    """O «E» do cinzel com a linha do livro-razão INCISA no braço do meio.
+
+    A linha não é uma cor pousada: é uma faixa mais grossa do que os outros dois
+    braços, com um sulco do campo cortado a meio. Num campo de pedra é isso que
+    uma linha gravada é, e é também a razão de esta ser a única das sete em que
+    a segunda leitura não gasta uma segunda cor.
+    """
+    partes, caixa, w = maiuscula_e(v, x, base, linha=cheia, classe_linha="tinta")
+    H, Lm = v["H"], v["e_curto"]
+    cy = base - H / 2
+    partes.append(("nonzero", "campo",
+                   rect(x + v["e_haste"] * 0.55, cy - sulco * H / 2,
+                        x + Lm - v["e_fino"] * 0.6, cy + sulco * H / 2)))
+    return partes, caixa, w
+
+
+def direcao_13():
+    """As versais romanas, como estão cortadas em pedra por este país todo.
+
+    Largas, de contraste baixo (1,5 para 1, contra 4,9 da Didone), com a cunha
+    do cinzel no remate em vez da laje da imprensa. Nada disto é insígnia de
+    ninguém: o escudo, a esfera armilar e as cores da bandeira ficaram de fora,
+    como a adenda manda, e o que fica é uma tradição de lapidação que está em
+    qualquer pelourinho. A palavra vai em VERSAIS, que é como se corta na pedra.
+    """
+    partes, caixa, larg = palavra_versais(VOZ_13, 0.0, BASE, linha=None)
+    corpo = _com(
+        f"«ESTADO» em versais do cinzel. Haste 0,125 H, fino 0,082 H, contraste\n"
+        f"1,52. Remates em cunha. A palavra mede {larg:.0f} x {caixa[3] - caixa[1]:.0f}\n"
+        f"= {larg / 300:.2f}:1, que é a mais larga das sete, porque uma versal\n"
+        f"romana é larga por definição.") + caminhos(partes)
+    pl, cl, _ = _e_incisa(VOZ_13, 0.0, 300.0)
+    letra = _com(
+        f"180, 120 e 60 px: o «E» do cinzel com a linha do livro-razão INCISA. O\n"
+        f"braço do meio é uma faixa de {INCISAO:.3f} H com um sulco de {GROOVE:.3f} H\n"
+        f"do próprio campo cortado a meio. É a única das sete em que a segunda\n"
+        f"leitura não gasta uma segunda cor.") + caminhos(pl)
+    pf, cf, _ = _e_incisa(VOZ_13_16, 0.0, 300.0)
+    favicon = _com(
+        f"32 e 16 px: a haste e o fino engrossam de 0,125 e 0,082 para 0,175 e\n"
+        f"0,135 H, porque um fino de 0,082 H a 16 px dá 0,92 px. O sulco fica, e\n"
+        f"fica sem se ver: a este tamanho mede menos de um píxel.") + caminhos(pf)
+    return svg("Voz 2 · inscricional", corpo, favicon,
+               "As versais do cinzel, e a linha do livro-razão como faixa incisa.",
+               caixa=caixa, caixa_favicon=cf, cores=PALETA_13,
+               letra=letra, caixa_letra=cl)
+
+
+# 14 · GEOMÉTRICA PESADA (o registo do «B» da Bloomberg)
+VOZ_14 = voz(H=300.0, xh=0.74, asc=1.00, T=0.255, t=0.255, serifa=None,
+             a_tipo="simples", espaco=0.062,
+             e_haste=0.275, e_braco=0.70, e_curto=0.58, e_fino=0.275)
+VOZ_14_16 = voz(H=300.0, T=0.26, t=0.26, serifa=None,
+                e_haste=0.285, e_braco=0.72, e_curto=0.60, e_fino=0.285)
+PALETA_14_AMBAR = paleta(AMBAR, TINTA, TINTA)
+PALETA_14_COBALTO = paleta(COBALTO, PAPEL, PAPEL, campo_escuro=COBALTO,
+                           letra_escura=PAPEL, acento_escuro=PAPEL)
+
+
+def _geometrica(cores, nome, titulo):
+    partes, caixa, larg = palavra_da_voz(VOZ_14, 0.0, BASE)
+    corpo = _com(
+        f"«Estado» numa geométrica pesada: uma grossura só (0,255 H nas\n"
+        f"minúsculas, 0,275 H no «E»), sem serifa, sem contraste. O «a» é de um\n"
+        f"andar, porque um «a» de dois andares nesta grossura fecha-se.\n"
+        f"A palavra mede {larg:.0f} x {caixa[3] - caixa[1]:.0f}.") + caminhos(partes)
+    pl, cl, _ = maiuscula_e(VOZ_14, 0.0, 300.0)
+    letra = _com(
+        "180, 120 e 60 px: fica o «E» da palavra, com os mesmos números.") + caminhos(pl)
+    pf, cf, _ = maiuscula_e(VOZ_14_16, 0.0, 300.0)
+    favicon = _com(
+        "32 e 16 px: não muda quase nada, e é isso que esta voz tem de seu, uma\n"
+        "letra sem finos não tem nada que morra ao encolher. A grossura sobe de\n"
+        "0,275 para 0,285 H e o braço de 0,70 para 0,72 H, para encher o campo.") + caminhos(pf)
+    return svg(titulo, corpo, favicon, nome,
+               caixa=caixa, caixa_favicon=cf, cores=cores,
+               letra=letra, caixa_letra=cl)
+
+
+def direcao_14():
+    """A geométrica pesada em campo âmbar, com a letra a tinta.
+
+    O registo é o do «B» da Bloomberg: uma grossura só, sem serifas, a letra a
+    encher o campo. A decisão de cor não é de gosto e está medida em
+    `tokens.css`: papel sobre âmbar mede 2,09:1 e não serve para objeto nenhum;
+    tinta sobre âmbar mede 7,85:1. Por isso a letra em campo âmbar é de TINTA, e
+    a versão de papel é a de campo cobalto, que está ao lado (14b).
+    """
+    return _geometrica(PALETA_14_AMBAR, "A geométrica pesada, campo âmbar.",
+                       "Voz 3 · geométrica pesada, campo âmbar")
+
+
+def direcao_14b():
+    """A mesma letra em campo cobalto, com a letra em papel.
+
+    Existe para a pergunta da adenda ser respondida a olhar e não a supor: qual
+    dos dois campos é ownable ao lado dos órgãos portugueses da folha.
+    """
+    return _geometrica(PALETA_14_COBALTO, "A geométrica pesada, campo cobalto.",
+                       "Voz 3b · geométrica pesada, campo cobalto")
+
+
+# 15 · LAJE DE INSTRUMENTO (a Bitter da casa, engrossada)
+VOZ_15 = voz(H=300.0, xh=0.72, asc=1.02, T=0.235, t=0.148, serifa="laje",
+             a_tipo="duplo", espaco=0.072,
+             e_haste=0.255, e_braco=0.62, e_curto=0.50, e_fino=0.148)
+VOZ_15_16 = voz(H=300.0, T=0.235, t=0.148, serifa="laje",
+                e_haste=0.265, e_braco=0.64, e_curto=0.52, e_fino=0.165)
+PALETA_15 = paleta(PAPEL, TINTA, COBALTO, campo_escuro=PAPEL_ESCURO,
+                   letra_escura=TINTA_ESCURA, acento_escuro=COBALTO_CLARO)
+LINHA_15 = 0.21
+
+
+def direcao_15():
+    """A laje: a letra como peça de instrumento, carimbada.
+
+    A Bitter é o tipo que o sítio já usa nos instrumentos (é ela que está nos
+    eixos e nos números), e esta voz é a lógica dela levada ao peso de uma
+    marca: laje sem colo, contraste baixo (1,72), remate mecânico. É a única das
+    sete que fala a língua que o sítio já fala nos gráficos, e é a única em que
+    a linha do valor em cobalto não é um acrescento: é o braço do meio.
+    """
+    partes, caixa, larg = palavra_da_voz(VOZ_15, 0.0, BASE, linha=LINHA_15)
+    corpo = _com(
+        f"«Estado» em laje de instrumento. Haste 0,235 H, fino 0,148 H,\n"
+        f"contraste 1,59; no «E», haste 0,255 H. As serifas são lajes cheias, da\n"
+        f"grossura da haste, sem colo. O braço do meio é a linha do valor, em\n"
+        f"cobalto e a {LINHA_15:.2f} H, que é mais grossa do que os braços de tinta.\n"
+        f"A palavra mede {larg:.0f} x {caixa[3] - caixa[1]:.0f}.") + caminhos(partes)
+    pl, cl, _ = maiuscula_e(VOZ_15, 0.0, 300.0, linha=LINHA_15)
+    letra = _com(
+        "180, 120 e 60 px: fica o «E» da palavra, com a linha do valor.") + caminhos(pl)
+    pf, cf, _ = maiuscula_e(VOZ_15_16, 0.0, 300.0, linha=LINHA_15)
+    favicon = _com(
+        "32 e 16 px: o fino sobe de 0,148 para 0,165 H e as lajes FICAM, porque\n"
+        "nesta voz a laje é a letra: sem elas fica uma grotesca qualquer.") + caminhos(pf)
+    return svg("Voz 4 · laje de instrumento", corpo, favicon,
+               "A laje da Bitter, engrossada, com a linha do valor em cobalto.",
+               caixa=caixa, caixa_favicon=cf, cores=PALETA_15,
+               letra=letra, caixa_letra=cl)
+
+
+# 16 · GROTESCA CONDENSADA (a voz do cartaz de jornal)
+VOZ_16 = voz(H=300.0, xh=0.78, asc=1.02, T=0.225, t=0.195, larg=0.62,
+             serifa=None, a_tipo="duplo", espaco=0.062,
+             e_haste=0.235, e_braco=0.45, e_curto=0.37, e_fino=0.205)
+VOZ_16_16 = voz(H=300.0, T=0.225, t=0.195, larg=0.62, serifa=None,
+                e_haste=0.245, e_braco=0.47, e_curto=0.39, e_fino=0.215)
+PALETA_16 = paleta(TINTA, PAPEL, AMBAR, campo_escuro=PAPEL_ESCURO,
+                   letra_escura=TINTA_ESCURA, acento_escuro=AMBAR)
+LINHA_16 = 0.24
+
+
+def direcao_16():
+    """A condensada: alta e estreita, a voz do cartaz de jornal à porta do quiosque.
+
+    O factor de largura é 0,62, e é ele que faz a voz: a mesma altura de
+    maiúscula ocupa dois terços da largura, e por isso a palavra inteira cabe
+    onde as outras não cabem. O campo é de tinta, a letra é de papel, e o único
+    acento é o âmbar no braço do meio, que é a cor que o sítio usa para «fora do
+    limiar».
+    """
+    partes, caixa, larg = palavra_da_voz(VOZ_16, 0.0, BASE, linha=LINHA_16)
+    corpo = _com(
+        f"«Estado» em grotesca condensada. Factor de largura 0,62; haste 0,225 H,\n"
+        f"fino 0,195 H, contraste 1,15, que é o mais baixo das sete. O braço do\n"
+        f"meio leva o âmbar a {LINHA_16:.2f} H. A palavra mede {larg:.0f} x\n"
+        f"{caixa[3] - caixa[1]:.0f} = {larg / 300:.2f}:1, a mais estreita das sete.")
+    corpo += caminhos(partes)
+    pl, cl, _ = maiuscula_e(VOZ_16, 0.0, 300.0, linha=LINHA_16)
+    letra = _com(
+        "180, 120 e 60 px: fica o «E» da palavra, estreito. É o sinal com menos\n"
+        "largura das sete, e por isso é o que deixa mais campo de tinta à volta.")
+    letra += caminhos(pl)
+    pf, cf, _ = maiuscula_e(VOZ_16_16, 0.0, 300.0, linha=LINHA_16)
+    favicon = _com("32 e 16 px: a mesma letra, 4 % mais grossa.") + caminhos(pf)
+    return svg("Voz 5 · grotesca condensada", corpo, favicon,
+               "A condensada de cartaz, campo de tinta, acento âmbar.",
+               caixa=caixa, caixa_favicon=cf, cores=PALETA_16,
+               letra=letra, caixa_letra=cl)
+
+
+# 17 · CALIGRÁFICA (o aparo do guarda-livros)
+VOZ_17 = voz(H=300.0, xh=0.62, asc=1.12, nib=NIB, meia_nib=MEIA_NIB,
+             serifa=None, a_tipo="simples", espaco=0.042)
+PALETA_17 = paleta(PAPEL, TINTA, COBALTO, campo_escuro=PAPEL_ESCURO,
+                   letra_escura=TINTA_ESCURA, acento_escuro=COBALTO_CLARO)
+
+
+def direcao_17():
+    """O aparo: a única humanista das sete, e a única em que o contraste é um gesto.
+
+    Um aparo largo a 32 graus, meia largura 0,062 H, passado por cima de
+    esqueletos. O grosso e o fino não são escolhidos: são o que a inclinação do
+    aparo produz em cada sítio da curva. É a mão de quem escreve um livro-razão,
+    que é a imagem que o sítio tem de si próprio.
+    """
+    partes, caixa, larg = palavra_caligrafica(VOZ_17, 0.0, BASE)
+    corpo = _com(
+        f"«Estado» de aparo largo, a {NIB:.0f} graus, meia largura {MEIA_NIB:.3f} H.\n"
+        f"O «E» é UM traço só, sem levantar o aparo: entra em cima à direita, dá a\n"
+        f"volta, faz a cintura e sai em baixo. A palavra mede {larg:.0f} x\n"
+        f"{caixa[3] - caixa[1]:.0f}.") + caminhos(partes)
+    pl, cl, _ = cali_e(VOZ_17, 0.0, 300.0)
+    letra = _com(
+        "180, 120 e 60 px: fica o «E» da palavra, com o mesmo aparo.") + caminhos(pl)
+    pf, cf, _ = cali_e(voz(H=300.0, nib=NIB, meia_nib=MEIA_NIB * 1.18), 0.0, 300.0)
+    favicon = _com(
+        "32 e 16 px: o aparo engrossa 18 % (de 0,062 para 0,073 H de meia\n"
+        "largura), porque o fino de um aparo a 32 graus é o sítio onde o traço\n"
+        "desaparece primeiro.") + caminhos(pf)
+    return svg("Voz 6 · caligráfica", corpo, favicon,
+               "O aparo largo do guarda-livros: a única humanista.",
+               caixa=caixa, caixa_favicon=cf, cores=PALETA_17,
+               letra=letra, caixa_letra=cl)
+
+
+# 18 · O «e» MINÚSCULO (a ideia do diretor)
+R_E = 150.0           # o raio de fora da circunferência
+G_E = 46.0            # a grossura da banda
+BARRA_E = 42.0        # a grossura da barra
+ABERTURA_E = (-56.0, -6.0)
+SAI_E = 0.30          # o quanto a barra passa para fora do anel, em raios
+PALETA_18 = paleta(TINTA, AMBAR, AMBAR, campo_escuro=PAPEL_ESCURO,
+                   letra_escura=AMBAR, acento_escuro=AMBAR)
+
+
+def direcao_18():
+    """O «e» minúsculo: uma circunferência cortada e uma barra.
+
+    O que esta forma tem e nenhuma das outras seis tem: é as DUAS letras do nome
+    ao mesmo tempo. Sem a barra é o «O» de «O Estado»; com a barra é o «e» de
+    «Estado». A barra atravessa para fora do anel, e aí deixa de ser só a
+    travessa de um «e» e passa a ser a linha de uma régua.
+    """
+    partes, caixa = e_minusculo(CENTRO, CENTRO, R_E, G_E, abertura=ABERTURA_E,
+                                barra=BARRA_E, sai=SAI_E)
+    corpo = _com(
+        f"O «e»: banda de {G_E:.0f} num raio de {R_E:.0f} (grossura 0,31 do raio),\n"
+        f"cortada entre {ABERTURA_E[0]:.0f} e {ABERTURA_E[1]:.0f} graus, e uma barra de\n"
+        f"{BARRA_E:.0f} que sai {SAI_E:.2f} raios para fora de cada lado. Sem a barra é\n"
+        f"um «O»; com ela é um «e», e o que sai para fora é a linha da régua.")
+    corpo += caminhos(partes)
+    pf, cf = e_minusculo(CENTRO, CENTRO, R_E, G_E * 1.16, abertura=(-52.0, -10.0),
+                         barra=BARRA_E * 1.14, sai=SAI_E)
+    favicon = _com(
+        "32 e 16 px: a mesma forma, com a banda e a barra 15 % mais grossas e a\n"
+        "abertura mais fechada, porque a 16 px a abertura de 50 graus dá 1,4 px e\n"
+        "some-se contra o campo.") + caminhos(pf)
+    return svg("Voz 7 · o «e» minúsculo", corpo, favicon,
+               "Uma circunferência cortada e uma barra: o «O» e o «e» na mesma forma.",
+               caixa=caixa, caixa_favicon=cf, cores=PALETA_18)
+
+
 DIRECOES = [
     ("1-ligadura-oe", direcao_a),
     ("2-o-acento", direcao_b),
@@ -1049,6 +2167,15 @@ DIRECOES = [
     ("9-selo-no-e", direcao_i),
     ("10-palavra-estado", direcao_j),
     ("11-estado-linha", direcao_j2),
+    # as sete vozes da quarta adenda
+    ("12-didone-estado", direcao_12),
+    ("13-inscricional-estado", direcao_13),
+    ("14-geometrica-ambar", direcao_14),
+    ("14b-geometrica-cobalto", direcao_14b),
+    ("15-laje-instrumento", direcao_15),
+    ("16-condensada-estado", direcao_16),
+    ("17-caligrafica-estado", direcao_17),
+    ("18-e-minuscula", direcao_18),
 ]
 
 
@@ -1205,10 +2332,103 @@ FICHA = {
     },
 }
 
+FICHA.update({
+    "12-didone-estado": {
+        "letra": "voz 1", "nome": "editorial de contraste alto",
+        "tenta": "A anatomia do Didot: haste de 0,262 H, fino de 0,040 H, contraste "
+                 "4,9 para 1, serifas em fio sem colo. É a voz do cabeçalho do Público "
+                 "e do Le Monde. O campo é de tinta e a letra é de papel, porque a "
+                 "maqueta mostrou que uma letra fina em campo pálido não segura a cela.",
+        "arrisca": "Um «E» serifado claro sobre campo de cor é EXATAMENTE o ícone do "
+                   "Expresso e o do Economist, e os dois estão na mesma folha. A única "
+                   "distância é o campo ser preto e não azul-petróleo nem vermelho, e "
+                   "isso é pouco. E a 16 px o contraste cai de 4,9 para 1,9, que é o "
+                   "mesmo que dizer que a voz não chega ao favicon.",
+    },
+    "13-inscricional-estado": {
+        "letra": "voz 2", "nome": "inscricional",
+        "tenta": "As versais romanas cortadas em pedra: largas, contraste 1,52, "
+                 "remates em cunha. A palavra vai em versais, que é como se corta na "
+                 "pedra. O braço do meio do «E» é a linha do livro-razão INCISA: uma "
+                 "faixa mais grossa com um sulco do campo cortado a meio, que é a "
+                 "única das sete em que a segunda leitura não gasta uma segunda cor.",
+        "arrisca": "A pedra é a língua do Estado tanto quanto a do país, e uma versal "
+                   "romana num sítio que se chama «O Estado do País» empurra a leitura "
+                   "para a instituição, que é o lado onde não se quer o leitor. E o "
+                   "sulco fecha-se a 32 px: a 16 px a faixa incisa é uma mancha.",
+    },
+    "14-geometrica-ambar": {
+        "letra": "voz 3", "nome": "geométrica pesada, campo âmbar",
+        "tenta": "Uma grossura só, sem serifas, o «E» a encher o campo: o registo do "
+                 "«B» da Bloomberg. O campo é âmbar e a letra é de tinta, e a troca "
+                 "não é de gosto: papel sobre âmbar mede 2,09:1 e tinta sobre âmbar "
+                 "mede 7,85:1 (`tokens.css`, e conferido aqui).",
+        "arrisca": "O âmbar é, no sítio, a cor de «fora do limiar». Uma marca âmbar diz "
+                   "ao leitor, antes de ele ler nada, que o país está fora do limiar, e "
+                   "isso é uma afirmação que a marca não pode fazer. E o laranja do "
+                   "Poder360 está na mesma folha, a duas celas de distância.",
+    },
+    "14b-geometrica-cobalto": {
+        "letra": "voz 3b", "nome": "a mesma, em campo cobalto",
+        "tenta": "A mesma letra, o outro campo que a adenda mandou experimentar: "
+                 "cobalto com a letra em papel (7,73:1). Existe para a pergunta se "
+                 "responder a olhar, e não a supor.",
+        "arrisca": "Campo azul escuro com letra branca É o Expresso, e o «E» ainda por "
+                   "cima é a mesma letra. Na maqueta do ecrã principal as duas celas "
+                   "ficam a três de distância e leem-se como do mesmo dono.",
+    },
+    "15-laje-instrumento": {
+        "letra": "voz 4", "nome": "laje de instrumento",
+        "tenta": "A lógica da Bitter, que é o tipo que o sítio já usa nos instrumentos, "
+                 "levada ao peso de uma marca: laje sem colo, contraste 1,59, remate "
+                 "mecânico. O braço do meio é a linha do valor, em cobalto, a 0,21 H.",
+        "arrisca": "É a única das sete com campo de papel e letra de tinta, que é "
+                   "exatamente a receita que a maqueta anterior reprovou. Aqui a letra "
+                   "é muito mais pesada (26,8 % da cela contra 19,8 % da J2), e a "
+                   "pergunta é se isso chega.",
+    },
+    "16-condensada-estado": {
+        "letra": "voz 5", "nome": "grotesca condensada",
+        "tenta": "Factor de largura 0,62: a mesma altura de maiúscula em dois terços da "
+                 "largura. É a voz do cartaz à porta do quiosque, e é a única das sete "
+                 "em que a PALAVRA inteira ainda se lê numa cela de 180 px. Campo de "
+                 "tinta, letra de papel, e o âmbar no braço do meio.",
+        "arrisca": "Uma condensada não tem nada de português nem de instrumento: é a "
+                   "voz do cartaz, e o sítio não é um cartaz. E o âmbar volta a dizer "
+                   "«fora do limiar», ainda que num traço só.",
+    },
+    "17-caligrafica-estado": {
+        "letra": "voz 6", "nome": "caligráfica",
+        "tenta": "Um aparo largo a 32 graus passado por cima de esqueletos: o grosso e "
+                 "o fino não são escolhidos, são o que a inclinação do aparo produz. O "
+                 "«E» é UM traço só, sem levantar o aparo, como a mão de quem assina um "
+                 "livro-razão. É a única humanista das sete.",
+        "arrisca": "O «E» de escrita lê-se como «épsilon» antes de se ler como «E», e a "
+                   "medição confirma o que se vê: 9,1 % da cela, que é metade da J2 e "
+                   "duas vezes a palavra que a maqueta reprovou. É o ícone mais fraco "
+                   "das sete num ecrã principal.",
+    },
+    "18-e-minuscula": {
+        "letra": "voz 7", "nome": "o «e» minúsculo",
+        "tenta": "Uma circunferência de grossura igual, uma fração cortada em baixo à "
+                 "direita, e uma barra que atravessa. Sem a barra é o «O» de «O "
+                 "Estado»; com a barra é o «e» de «Estado»: é a única das sete em que "
+                 "as duas letras do nome são a mesma forma. A barra sai para fora do "
+                 "anel, e aí é a linha de uma régua.",
+        "arrisca": "Um «e» minúsculo redondo tem donos, e o mais gasto deles é o "
+                   "navegador da Microsoft; o «e» concêntrico verde do Eco está na "
+                   "folha. E o âmbar é a cor com que o sítio escreve «fora do limiar»: "
+                   "uma marca nessa cor mistura-se com a semântica da régua.",
+    },
+})
+
 ORDEM = ["1-ligadura-oe", "2-o-acento", "3-selo", "4-azulejo",
          "5-mapa", "6-regua", "7-selo-no-o",
          "8-e-livro-razao", "9-selo-no-e", "10-palavra-estado",
          "11-estado-linha"]
+VOZES_ORDEM = ["12-didone-estado", "13-inscricional-estado", "14-geometrica-ambar",
+               "14b-geometrica-cobalto", "15-laje-instrumento", "16-condensada-estado",
+               "17-caligrafica-estado", "18-e-minuscula"]
 
 # As referências que mais perto passam de alguma destas direções.
 VIZINHOS = [
@@ -1247,7 +2467,7 @@ def tira_de_vizinhanca():
     """
     from PIL import Image
     cel, alto_r, alto_t = 76, 96, 22
-    itens = [(f"EXPORT/{s}/{s}-60.png", FICHA[s]["letra"]) for s in ORDEM]
+    itens = [(f"EXPORT/{s}/{s}-60.png", FICHA[s]["letra"]) for s in ORDEM + VOZES_ORDEM]
     itens += [(f"referencias/{f}", r) for f, r in VIZINHOS]
     por_linha = 12
     linhas = (len(itens) + por_linha - 1) // por_linha
@@ -1344,6 +2564,98 @@ def lockup_da_palavra(classe, acento, altura=100.0, menor=0.66, espaco=0.26, val
             + "\n".join(pecas) + "\n</svg>")
 
 
+def reescala(v, H):
+    """A mesma voz noutra altura de maiúscula.
+
+    Serve a marca horizontal: o desenho do ícone está feito a H = 300, e o
+    cabeçalho quer a palavra a 22 ou a 45 px de maiúscula. Escalar a voz e
+    redesenhar dá o MESMO desenho noutro tamanho; escalar o SVG depois de feito
+    dava o mesmo, mas escondia a medida, e aqui as medidas ficam à vista.
+    """
+    k = H / v["H"]
+    novo = dict(v)
+    for chave in ("H", "xh", "asc", "T", "t", "espaco", "bola", "meia_nib",
+                  "e_haste", "e_braco", "e_curto", "e_fino"):
+        novo[chave] = v[chave] * k
+    return novo
+
+
+# Por voz: os números, a função que compõe a palavra, a grossura da linha do
+# valor (se houver) e o tipo em que se compõem o artigo e o «do País».
+VOZ_FICHA = {
+    "12-didone-estado": (VOZ_12, palavra_da_voz, None, "spectral"),
+    "13-inscricional-estado": (VOZ_13, palavra_versais, None, "sc"),
+    "14-geometrica-ambar": (VOZ_14, palavra_da_voz, None, "spectral"),
+    "14b-geometrica-cobalto": (VOZ_14, palavra_da_voz, None, "spectral"),
+    "15-laje-instrumento": (VOZ_15, palavra_da_voz, LINHA_15, "spectral"),
+    "16-condensada-estado": (VOZ_16, palavra_da_voz, LINHA_16, "spectral"),
+    "17-caligrafica-estado": (VOZ_17, lambda v, x, b, linha=None: palavra_caligrafica(v, x, b),
+                              None, "spectral"),
+}
+
+
+def lockup_da_voz(slug, classe, acento, altura=100.0, menor=0.66, espaco=0.26):
+    """«O Estado do País» na voz: a palavra desenhada, o resto composto.
+
+    É a mesma regra da J e da J2, e a §1 das NOTAS já a cobre: a palavra é
+    desenhada aqui, letra a letra; o artigo e o «do País» são compostos em
+    Spectral (ou em Spectral SC, na voz do cinzel, que é versal). Desenhar
+    também «do País» obrigava a um «P», um «í» com acento e um «s», e o «s» é
+    justamente a letra que custou doze construções na ronda anterior.
+    """
+    sys.path.insert(0, AQUI)
+    from glifos import contorno
+    v0, fn, linha, tipo = VOZ_FICHA[slug]
+    ficheiro = SPECTRAL_SC if tipo == "sc" else SPECTRAL_RG
+    h2 = menor * altura
+    d_o, larg_o, _, _ = contorno(ficheiro, "O", h2)
+    d_dp, larg_dp, _, _ = contorno(ficheiro, "do País", h2)
+    partes, caixa, largura = fn(reescala(v0, altura), 0.0, 0.0, linha)
+    x1 = larg_o + espaco * altura
+    x2 = x1 + largura + espaco * altura
+    corpo = (caminhos(partes, indent="    ")
+             .replace('class="tinta"', f'class="{classe}"')
+             .replace('class="acento"', f'class="{acento}"')
+             .replace('class="campo"', 'class="campo-prancha"'))
+    pecas = [f'  <g><path class="{classe}" d="{d_o}"/></g>',
+             f'  <g transform="translate({n(x1)} 0)">', corpo, '  </g>',
+             f'  <g transform="translate({n(x2)} 0)"><path class="{classe}" d="{d_dp}"/></g>']
+    topos = [caixa[1]]
+    for d in (d_o, d_dp):
+        topos.append(caixa_do_caminho(d)[1])
+    topo = min(topos)
+    baixo = max(0.0, caixa[3])
+    cx = (0.0, topo, x2 + larg_dp, baixo)
+    vb = f"{n(cx[0])} {n(cx[1])} {n(cx[2] - cx[0])} {n(cx[3] - cx[1])}"
+    return (f'<svg viewBox="{vb}" role="img" aria-label="O Estado do País">\n'
+            + "\n".join(pecas) + "\n</svg>")
+
+
+def lockup_do_e(classe, acento, altura=100.0, minusculas=False):
+    """A marca horizontal da sétima voz: o «e» ao lado do nome.
+
+    Duas leituras, e a adenda pede as duas: o nome com as maiúsculas que a casa
+    lhe dá («O Estado do País»), e o nome todo em minúsculas («o estado do
+    país»), que é o que a forma do sinal sugere.
+    """
+    sys.path.insert(0, AQUI)
+    from glifos import contorno
+    texto = "o estado do país" if minusculas else "O Estado do País"
+    d, largura, _, _ = contorno(SPECTRAL_RG, texto, altura)
+    x0, y0, x1, y1 = caixa_do_caminho(d)
+    r = altura * 0.62
+    partes, cxe = e_minusculo(r, -altura * 0.5, r, r * (G_E / R_E),
+                              abertura=ABERTURA_E, barra=r * (BARRA_E / R_E), sai=SAI_E)
+    corpo = (caminhos(partes, indent="    ")
+             .replace('class="tinta"', f'class="{acento}"'))
+    dx = cxe[2] - cxe[0] + altura * 0.30
+    vb = (f"{n(cxe[0])} {n(min(cxe[1], y0))} {n(dx + largura - cxe[0])} "
+          f"{n(max(cxe[3], y1) - min(cxe[1], y0))}")
+    return (f'<svg viewBox="{vb}" role="img" aria-label="O Estado do País">\n'
+            + corpo + f'\n  <g transform="translate({n(dx)} 0)">'
+            f'<path class="{classe}" d="{d}"/></g>\n</svg>')
+
+
 CSS_PRANCHA = f"""
   :root {{ color-scheme: light; }}
   * {{ box-sizing: border-box; }}
@@ -1382,6 +2694,17 @@ CSS_PRANCHA = f"""
   .lockup.escuro {{ background: {PAPEL_ESCURO}; border-color: #3a3f3c; }}
   .lockup img {{ width: 46px; height: 46px; border-radius: 22.37%; }}
   .lockup svg {{ height: 27px; }}
+  /* A COR DO «e» DA SÉTIMA VOZ NA MARCA HORIZONTAL, E A REGRA VEM DO SÍTIO.
+     O âmbar sobre papel claro mede 2,09:1 e não serve; sobre papel escuro mede
+     8,00:1 e serve. É exatamente o que `tokens.css` já faz com a palavra do
+     estado: em claro escreve-a a ocre `#7a5300` (6,37:1) e em escuro troca-a
+     pelo próprio âmbar. A marca horizontal segue a folha de estilos do sítio, e
+     não uma decisão nova. No ÍCONE o problema não existe, porque lá o campo é de
+     tinta e o âmbar mede 7,85:1 contra ele. */
+  .ocre-claro {{ fill: {OCRE}; }}
+  .ocre-escuro {{ fill: {AMBAR}; }}
+  .campo-prancha {{ fill: {PAPEL}; }}
+  .lockup.escuro .campo-prancha {{ fill: {PAPEL_ESCURO}; }}
   .nome-claro {{ fill: {TINTA}; }}
   .nome-escuro {{ fill: {TINTA_ESCURA}; }}
   .acento-claro {{ fill: {COBALTO}; }}
@@ -1404,7 +2727,12 @@ CSS_PRANCHA = f"""
 def bloco_direcao(slug):
     f = FICHA[slug]
     p = lambda nome: _png(slug, nome)  # noqa: E731
-    if slug in ("10-palavra-estado", "11-estado-linha"):
+    if slug in VOZ_FICHA:
+        # As sete vozes têm marca horizontal própria, cada uma na sua voz.
+        lock = lockup_da_voz(slug, "%s", "%a")
+    elif slug == "18-e-minuscula":
+        lock = lockup_do_e("%s", "%o")
+    elif slug in ("10-palavra-estado", "11-estado-linha"):
         # A J e a J2 têm marca horizontal própria: a palavra é desenhada, e só o
         # artigo e o «do País» é que são compostos.
         lock = lockup_da_palavra("%s", "%a",
@@ -1414,13 +2742,20 @@ def bloco_direcao(slug):
         vb = f"{n(nx0)} {n(ny0)} {n(nx1 - nx0)} {n(ny1 - ny0)}"
         lock = (f'<svg viewBox="{vb}" role="img" aria-label="O Estado do País">'
                 f'<path class="%s" d="{dn}"/></svg>')
+    palavra = ""
+    if slug in VOZ_FICHA:
+        palavra = (f'<figure><span class="chao"><img src="{p("180-palavra")}" width="180" '
+                   f'height="180" alt=""></span><figcaption>180 com a PALAVRA<br>'
+                   f'(o que a cela não segura)</figcaption></figure>')
+    rotulo = "DIREÇÃO" if slug in ORDEM else "QUARTA ADENDA ·"
     return f"""
   <section class="dir" id="{slug}">
-    <p class="marca-letra">DIREÇÃO {f["letra"]}</p>
+    <p class="marca-letra">{rotulo} {f["letra"]}</p>
     <h2>{f["nome"]}</h2>
     <p>{f["tenta"]}</p>
     <div class="fila">
       <figure><span class="chao"><img src="{p('180')}" width="180" height="180" alt=""></span><figcaption>180 · claro<br>apple-touch-icon</figcaption></figure>
+      {palavra}
       <figure><span class="chao"><img class="ios" src="{p('180')}" width="180" height="180" alt=""></span><figcaption>180 · como o iPhone<br>arredonda</figcaption></figure>
       <figure><span class="chao"><img src="{p('120')}" width="120" height="120" alt=""></span><figcaption>120</figcaption></figure>
       <figure><span class="chao"><img src="{p('60')}" width="60" height="60" alt=""></span><figcaption>60 · o juízo</figcaption></figure>
@@ -1442,8 +2777,8 @@ def bloco_direcao(slug):
       <figure><span class="chao lupa"><img class="px" src="{p('32-escuro')}" width="128" height="128" alt=""></span><figcaption>32 escuro, 4x</figcaption></figure>
     </div>
     <div class="fila">
-      <div class="lockup"><img src="{p('180')}" alt="">{lock.replace('%s', 'nome-claro').replace('%a', 'acento-claro')}</div>
-      <div class="lockup escuro"><img src="{p('180-escuro')}" alt="">{lock.replace('%s', 'nome-escuro').replace('%a', 'acento-escuro')}</div>
+      <div class="lockup"><img src="{p('180')}" alt="">{lock.replace('%s', 'nome-claro').replace('%a', 'acento-claro').replace('%o', 'ocre-claro')}</div>
+      <div class="lockup escuro"><img src="{p('180-escuro')}" alt="">{lock.replace('%s', 'nome-escuro').replace('%a', 'acento-escuro').replace('%o', 'ocre-escuro')}</div>
     </div>
     <p class="risco fina"><strong>O que arrisca.</strong> {f["arrisca"]}</p>
   </section>"""
@@ -1534,15 +2869,131 @@ devolveu ficheiros pequenos (Pordata, 48 px; Poder360, 57 px), e foram ampliados
 </div>"""
 
 
+def _amostra_e(campo, letra, com_contorno=False, r=R_E, g=G_E, barra=BARRA_E,
+               sai=SAI_E, abertura=ABERTURA_E, px=130):
+    """Um «e» num par de cores, em SVG de cores explícitas.
+
+    SEM `<style>`, e de propósito: dentro de um documento de HTML os `<style>`
+    de vários SVG são todos do documento, e o último ganha. Foi assim que a
+    primeira folha de pré-visualização saiu com as sete vozes todas em âmbar
+    sobre tinta. Aqui as cores vão no atributo, e cada amostra é dela.
+    """
+    partes, caixa = e_minusculo(CENTRO, CENTRO, r, g, abertura=abertura,
+                                barra=barra, sai=sai)
+    t = enquadra(caixa)
+    traco = f' stroke="{TINTA}" stroke-width="13" stroke-linejoin="round"' if com_contorno else ""
+    corpo = "".join(f'<path d="{d}" fill="{letra}"{traco}/>' for _, _, d in partes)
+    return (f'<svg viewBox="0 0 {CAMPO} {CAMPO}" width="{px}" height="{px}">'
+            f'<rect width="{CAMPO}" height="{CAMPO}" fill="{campo}"/>'
+            f'<g{t}>{corpo}</g></svg>')
+
+
+def bloco_voz7():
+    """A folha da sétima voz: as quatro cores, as três aberturas, as duas barras."""
+    def cel(svg_txt, legenda):
+        return (f'<figure><span class="chao">{svg_txt}</span>'
+                f'<figcaption>{legenda}</figcaption></figure>')
+    cores = [
+        (TINTA, AMBAR, False, "(a) «e» âmbar<br>em campo de tinta", AMBAR, TINTA),
+        (AMBAR, TINTA, False, "(b) «e» de tinta<br>em campo âmbar", TINTA, AMBAR),
+        (PAPEL, AMBAR, True, "(c) «e» âmbar em papel,<br>com o contorno de tokens.css", AMBAR, PAPEL),
+        (PAPEL, OCRE, False, "(d) «e» ocre<br>em papel", OCRE, PAPEL),
+    ]
+    linhas_cor = []
+    for campo, letra, ct, leg, ca, cb in cores:
+        r = contraste(ca, cb)
+        marca = "passa 3:1 e 4,5:1" if r >= 4.5 else ("passa 3:1" if r >= 3 else "FALHA 3:1")
+        extra = " (o contorno de tinta sobre papel mede 16,39:1, e é ele que segura a forma)" if ct else ""
+        linhas_cor.append(cel(_amostra_e(campo, letra, ct),
+                              f'{leg}<br>{r:.2f}:1 · {marca}{extra}'))
+    aberturas = [((-58.0, -6.0), "a de sempre<br>52 graus cortados"),
+                 ((-90.0, 10.0), "100 graus<br>(a abertura larga)"),
+                 ((-36.0, -12.0), "24 graus<br>(quase fechada)")]
+    linhas_ab = [cel(_amostra_e(TINTA, AMBAR, abertura=a), leg) for a, leg in aberturas]
+    barras = [cel(_amostra_e(TINTA, AMBAR, sai=SAI_E), "a barra ATRAVESSA<br>(a linha da régua)"),
+              cel(_amostra_e(TINTA, AMBAR, sai=0.0), "a barra fica DENTRO<br>(a travessa de um «e»)"),
+              cel(_amostra_e(TINTA, AMBAR, sai=0.0, barra=BARRA_E * 1.35),
+                  "dentro e mais grossa<br>(a linha do valor)")]
+    eco = _b64_png(os.path.join(AQUI, "referencias", "eco.sapo.pt.png"))
+    lock_a = lockup_do_e("nome-claro", "ocre-claro")
+    lock_b = lockup_do_e("nome-claro", "ocre-claro", minusculas=True)
+    return f"""
+<hr class="fio">
+<h3>A sétima voz, por dentro: a cor, a abertura, a barra</h3>
+<p class="fina">A adenda manda experimentar quatro pares de cor e medir o contraste de
+cada um. Está medido aqui, pela fórmula da WCAG, contado no programa e não copiado de
+lado nenhum. O limiar de 3:1 é o de um objeto gráfico; o de 4,5:1 é o de texto.</p>
+<div class="fila">{"".join(linhas_cor)}</div>
+<p class="fina"><strong>O que os números dizem.</strong> Só o par (c) falha, e falha nos dois
+limiares: âmbar sobre papel mede 2,09:1. É por isso que <code>tokens.css</code> obriga o
+marcador âmbar a levar contorno de tinta, e é por isso que a amostra (c) o traz. Os outros três
+passam os dois limiares: 7,85:1 nos dois pares com âmbar e tinta, 6,37:1 no ocre sobre papel.</p>
+
+<h3>A fração cortada</h3>
+<div class="fila">{"".join(linhas_ab)}</div>
+
+<h3>A barra: dentro, ou a atravessar</h3>
+<div class="fila">{"".join(barras)}</div>
+
+<h3>Os vizinhos com «e» minúsculo</h3>
+<div class="fila">
+  <figure><span class="chao"><img src="{eco}" width="120" height="120" alt=""></span><figcaption>Eco (SAPO), da folha<br>o ficheiro deles, a 120</figcaption></figure>
+  <figure><span class="chao"><img class="px" src="{eco}" width="60" height="60" alt=""></span><figcaption>o mesmo, a 60</figcaption></figure>
+  <figure><span class="chao">{_amostra_e(TINTA, AMBAR, px=120)}</span><figcaption>o nosso, a 120</figcaption></figure>
+  <figure><span class="chao">{_amostra_e(TINTA, AMBAR, px=60)}</span><figcaption>o nosso, a 60</figcaption></figure>
+</div>
+<p class="fina"><strong>O «e» do navegador da Microsoft não está desenhado aqui, e é uma
+escolha.</strong> A adenda deixava desenhá-lo de memória, rotulado como tal. Um desenho de
+memória de uma marca de outrem não é prova de nada: ou se confere no ficheiro deles, e não há
+rede, ou não se põe na folha a fingir que é uma medição. O que se pode dizer sem inventar é a
+diferença de construção, e é isto: aquela marca é um «e» INCLINADO, com um anel ou uma faixa em
+órbita à volta dele, em azul; este é um «e» a prumo, de grossura igual, sem órbita nenhuma, com
+a abertura em baixo à direita e uma barra recta que atravessa. Pelo mesmo critério não se
+desenha aqui a marca da Ecosia: não se conferiu, e sem rede não se confere.</p>
+<p class="fina">O Eco, esse, está na folha e vê-se: é um «e» feito de arcos CONCÊNTRICOS num
+campo verde, e a 60 px lê-se como um alvo. O nosso é uma banda só, e o campo é de tinta. A
+distância existe, e é de construção e de cor.</p>
+
+<h3>A marca horizontal da sétima voz, nas duas leituras</h3>
+<div class="fila">
+  <div class="lockup"><span style="width:46px;height:46px;display:inline-block">{_amostra_e(TINTA, AMBAR, px=46)}</span>{lock_a}</div>
+</div>
+<div class="fila">
+  <div class="lockup"><span style="width:46px;height:46px;display:inline-block">{_amostra_e(TINTA, AMBAR, px=46)}</span>{lock_b}</div>
+</div>
+<p class="fina">Em cima, o nome com as maiúsculas que a casa lhe dá. Em baixo, o nome todo em
+minúsculas, que é o que a forma do sinal sugere. A decisão não é de desenho: «o estado do país»
+em minúsculas tira a maiúscula de «Estado», e é justamente a maiúscula que faz a palavra ler-se
+como a instituição. Quem escrever o nome em minúsculas está a escolher a condição contra a
+instituição, e a fazê-lo com ortografia e não com desenho.</p>"""
+
+
+def bloco_ecra_vozes():
+    caminho = os.path.join(AQUI, "ECRA-VOZES.png")
+    if not os.path.exists(caminho):
+        return '<p class="fina">falta <code>ECRA-VOZES.png</code>: corra <code>desenhar.py vozes</code></p>'
+    from PIL import Image
+    w, h = Image.open(caminho).size
+    return f"""
+<hr class="fio">
+<h3>As sete vozes no ecrã principal, à mesma escala</h3>
+<p class="fina">É a folha que a quarta adenda pede: cada voz na sua cela de 180 px (60 pt a 3×),
+entre os mesmos oito ícones, em ecrã claro. Só ecrã claro, e de propósito: a pergunta desta ronda
+é a do campo, e um ecrã escuro daria vantagem a quem já tem campo escuro. O ficheiro está a 3×
+em <code>design/marca/ECRA-VOZES.png</code>; aqui está reduzido para caber.</p>
+<img class="larga" src="{_b64_png(caminho)}" width="{w // 4}" height="{h // 4}" alt="">"""
+
+
 def prancha():
     tira, tira_tam = tira_de_vizinhanca()
     folha, folha_tam = folha_embebida()
     blocos = "\n".join(bloco_direcao(s) for s in ORDEM)
+    blocos_vozes = "\n".join(bloco_direcao(s) for s in VOZES_ORDEM)
     html = f"""<!doctype html>
 <html lang="pt-PT">
 <head>
 <meta charset="utf-8">
-<title>A marca · onze direções · O Estado do País</title>
+<title>A marca · onze direções e sete vozes · O Estado do País</title>
 <style>{CSS_PRANCHA}</style>
 </head>
 <body>
@@ -1550,10 +3001,12 @@ def prancha():
   <h1>«O Estado do País» · a marca e o ícone do telemóvel</h1>
   <p class="fina">Prancha de exploração, 28.08.2026, ramo <code>marca-2026-08-28</code>.
   Nada disto está no sítio: não há ficheiro em <code>public/</code>, não há linha no
-  <code>&lt;head&gt;</code> e não há manifesto. São onze direções para a direção
-  escolher uma e iterá-la: as sete de 28.08 de manhã, as três que a terceira adenda
-  pediu sobre a palavra «Estado» (H, I e J), e a J2, que é a J com a linha do valor
-  dentro do «E», depois de o diretor ter escolhido a palavra.</p>
+  <code>&lt;head&gt;</code> e não há manifesto. São <strong>onze direções e sete
+  vozes</strong>: as sete de 28.08 de manhã, as três que a terceira adenda pediu sobre a
+  palavra «Estado» (H, I e J), a J2 (a J com a linha do valor dentro do «E»), e as sete
+  vozes da quarta adenda, que vêm depois de o diretor ter dito que a palavra ao tamanho
+  de um ícone «pode não funcionar, por causa do tamanho» e que não encontrou nenhum
+  desenho de que gostasse. Nas sete vozes o conceito não mudou: mudou a voz.</p>
   <p class="fina">Tudo o que se vê aqui está dentro deste ficheiro: as imagens são
   PNG embebidos, e o nome é contorno e não texto composto. A prancha abre sem rede.</p>
   <p class="fina"><strong>Como se lê.</strong> A coluna dos 60 px é a que decide, porque é a esse
@@ -1588,6 +3041,18 @@ def prancha():
 </table>
 
 <hr class="fio">
+<h3>As sete vozes (a quarta adenda)</h3>
+<p class="fina">A mesma palavra e a mesma letra, em sete personalidades tipográficas
+diferentes, e cada uma com a sua decisão de campo. A palavra é o sinal do ficheiro de
+512 e da marca horizontal; o «E» dela, sozinho, é o sinal de 180 px para baixo, que é a
+cela do telemóvel. Cada voz mostra as duas coisas na primeira fila, lado a lado.</p>
+{blocos_vozes}
+
+{bloco_ecra_vozes()}
+{bloco_voz7()}
+
+<hr class="fio">
+<h3>As onze primeiras direções (as três primeiras adendas)</h3>
 {blocos}
 
 {bloco_cabecalho()}
@@ -1595,7 +3060,7 @@ def prancha():
 
 <hr class="fio">
 <h3>A vizinhança a 60 px</h3>
-<p class="fina">As onze direções e dezasseis das referências, todas reduzidas ao mesmo
+<p class="fina">As dezanove direções e dezasseis das referências, todas reduzidas ao mesmo
 tamanho. É aqui que se vê o que cada uma tem de seu e onde é que já está alguém.</p>
 <img class="larga" src="{tira}" width="{tira_tam[0]}" height="{tira_tam[1]}" alt="">
 
@@ -1739,8 +3204,227 @@ def ecras():
         print(f"escrito design/marca/ECRA-{letra}.png  ({folha.size[0]} x {folha.size[1]})")
 
 
+"""
+`python3 design/marca/desenhar.py vozes` escreve `design/marca/ECRA-VOZES.png`.
+
+É a folha que a quarta adenda pede: as sete vozes (mais o campo alternativo da
+terceira, que a adenda manda experimentar) no MESMO ecrã principal, ao mesmo
+tamanho, em ecrã claro, com o rótulo por baixo. Uma folha só, para o diretor
+decidir a olhar e de uma vez, e não a saltar entre oito ficheiros.
+
+O ecrã claro e não os dois: a pergunta desta ronda é a do campo, e um ecrã
+escuro dá vantagem a quem tem campo escuro, o que enviesava a comparação.
+"""
+
+VOZES_NA_FOLHA = [
+    ("12-didone-estado", "1 · editorial, contraste alto", "campo tinta, letra papel"),
+    ("13-inscricional-estado", "2 · inscricional", "campo ocre, versais, faixa incisa"),
+    ("14-geometrica-ambar", "3 · geométrica pesada", "campo âmbar, letra tinta"),
+    ("14b-geometrica-cobalto", "3b · a mesma, campo cobalto", "campo cobalto, letra papel"),
+    ("15-laje-instrumento", "4 · laje de instrumento", "campo papel, linha do valor cobalto"),
+    ("16-condensada-estado", "5 · grotesca condensada", "campo tinta, acento âmbar"),
+    ("17-caligrafica-estado", "6 · caligráfica", "campo papel, aparo largo"),
+    ("18-e-minuscula", "7 · o «e» minúsculo", "campo tinta, «e» âmbar"),
+]
+FOLHA_COLUNAS = 4
+FOLHA_GAP = 46
+
+
+def ecras_vozes():
+    from PIL import Image, ImageDraw, ImageFont
+    grande = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", 36)
+    pequena = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", 28)
+    peles = []
+    for slug, titulo, nota in VOZES_NA_FOLHA:
+        # a cela do telemóvel leva SEMPRE o sinal pequeno: é o que a adenda pede
+        # («o "E" dela sozinho para 180») e é a lição da maqueta anterior.
+        nosso = os.path.join(AQUI, "EXPORT", slug, f"{slug}-180.png")
+        peles.append((compoe_ecra(nosso, "claro"), titulo, nota))
+    lp, ap = peles[0][0].size
+    filas = (len(peles) + FOLHA_COLUNAS - 1) // FOLHA_COLUNAS
+    rodape = 104
+    larg = FOLHA_COLUNAS * lp + (FOLHA_COLUNAS + 1) * FOLHA_GAP
+    alto = filas * (ap + rodape) + (filas + 1) * FOLHA_GAP
+    folha = Image.new("RGB", (larg, alto), (128, 133, 127))
+    d = ImageDraw.Draw(folha)
+    for i, (pele, titulo, nota) in enumerate(peles):
+        x = FOLHA_GAP + (i % FOLHA_COLUNAS) * (lp + FOLHA_GAP)
+        y = FOLHA_GAP + (i // FOLHA_COLUNAS) * (ap + rodape + FOLHA_GAP)
+        folha.paste(pele, (x, y))
+        d.text((x + 4, y + ap + 18), titulo, font=grande, fill=(16, 18, 16))
+        d.text((x + 4, y + ap + 62), nota, font=pequena, fill=(46, 50, 46))
+    saida = os.path.join(AQUI, "ECRA-VOZES.png")
+    folha.save(saida, optimize=True)
+    print(f"escrito design/marca/ECRA-VOZES.png  ({folha.size[0]} x {folha.size[1]})")
+
+
 if len(sys.argv) > 1 and sys.argv[1] == "ecras":
     ecras()
+
+
+if len(sys.argv) > 1 and sys.argv[1] == "vozes":
+    ecras_vozes()
+
+
+# ===========================================================================
+# A MEDIÇÃO
+# ===========================================================================
+"""
+`python3 design/marca/desenhar.py medir [tamanho]` lê os PNG de `EXPORT/` e
+imprime, por direção, o que se pode contar em vez de estimar.
+
+O QUE MUDOU COM A QUARTA ADENDA, e é preciso dizê-lo antes dos números. Até
+aqui todas as direções tinham campo de papel, e por isso «tinta da cela»
+(píxeis escuros) e «mancha do sinal» (píxeis que não são o campo) eram a mesma
+coisa. Deixaram de ser: numa direção de campo de tinta com letra de papel, a
+cela está 100 % escura e o sinal é o que está CLARO lá dentro. Por isso são
+duas colunas, e as duas contam:
+
+  · TINTA   quanto da cela está escuro (cinzento abaixo de 200). É o número que
+            diz se o ícone é uma mancha no ecrã principal ou um vazio. É este o
+            número que a maqueta anterior mediu, e é ele que compara com os 4,7 %
+            da palavra e os 19,8 % da letra da J2.
+  · SINAL   quanto da cela é diferente do campo, seja o campo claro ou escuro.
+            É a letra, e é o número que diz se ela tem massa suficiente para se
+            ler de longe.
+
+As ilhas e as corridas contam-se sobre o SINAL, e não sobre a tinta, pela mesma
+razão: o que o olho tem de juntar é a letra.
+"""
+
+
+def _le(caminho):
+    from PIL import Image
+    return Image.open(caminho).convert("RGB")
+
+
+def _mascaras(im):
+    """(escuro, sinal): dois mapas de booleanos do tamanho da imagem.
+
+    O campo é a cor do canto superior esquerdo, que é onde nenhuma das direções
+    põe sinal nenhum. «Sinal» é tudo o que se afaste dele mais do que 40 de
+    distância de Manhattan, que é folga bastante para o suavizado das bordas não
+    contar como forma.
+    """
+    px = im.load()
+    w, h = im.size
+    campo = px[0, 0]
+    escuro = [[False] * w for _ in range(h)]
+    sinal = [[False] * w for _ in range(h)]
+    for y in range(h):
+        for x in range(w):
+            r, g, b = px[x, y]
+            escuro[y][x] = (0.299 * r + 0.587 * g + 0.114 * b) < 200
+            sinal[y][x] = (abs(r - campo[0]) + abs(g - campo[1]) + abs(b - campo[2])) > 40
+    return escuro, sinal
+
+
+def _ilhas(mapa):
+    h, w = len(mapa), len(mapa[0])
+    visto = [[False] * w for _ in range(h)]
+    conta = 0
+    for y in range(h):
+        for x in range(w):
+            if mapa[y][x] and not visto[y][x]:
+                conta += 1
+                pilha = [(x, y)]
+                visto[y][x] = True
+                while pilha:
+                    cx, cy = pilha.pop()
+                    for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                        nx, ny = cx + dx, cy + dy
+                        if 0 <= nx < w and 0 <= ny < h and mapa[ny][nx] and not visto[ny][nx]:
+                            visto[ny][nx] = True
+                            pilha.append((nx, ny))
+    return conta
+
+
+def _corridas(mapa):
+    """As corridas de sinal em linha e em coluna: a mínima é a peça mais frágil."""
+    h, w = len(mapa), len(mapa[0])
+    fora = []
+    for y in range(h):
+        c = 0
+        for x in range(w):
+            if mapa[y][x]:
+                c += 1
+            elif c:
+                fora.append(c)
+                c = 0
+        if c:
+            fora.append(c)
+    for x in range(w):
+        c = 0
+        for y in range(h):
+            if mapa[y][x]:
+                c += 1
+            elif c:
+                fora.append(c)
+                c = 0
+        if c:
+            fora.append(c)
+    fora.sort()
+    if not fora:
+        return 0, 0
+    return fora[0], fora[len(fora) // 2]
+
+
+def medir(tamanhos=("60", "180", "16")):
+    pasta = os.path.join(AQUI, "EXPORT")
+    for slug in sorted(os.listdir(pasta)):
+        if not os.path.isdir(os.path.join(pasta, slug)):
+            continue
+        linhas = []
+        for t in tamanhos:
+            f = os.path.join(pasta, slug, f"{slug}-{t}.png")
+            if not os.path.exists(f):
+                continue
+            im = _le(f)
+            escuro, sinal = _mascaras(im)
+            total = im.size[0] * im.size[1]
+            pe = sum(sum(l) for l in escuro) / total * 100
+            ps = sum(sum(l) for l in sinal) / total * 100
+            mini, med = _corridas(sinal)
+            linhas.append(f"{t}: tinta {pe:.1f} % · sinal {ps:.1f} % · "
+                          f"ilhas {_ilhas(sinal)} · corrida min {mini} med {med}")
+        print(f"{slug}\n  " + "\n  ".join(linhas))
+
+
+def _lum(c):
+    def f(v):
+        v /= 255.0
+        return v / 12.92 if v <= 0.04045 else ((v + 0.055) / 1.055) ** 2.4
+    r, g, b = (int(c[i:i + 2], 16) for i in (1, 3, 5))
+    return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b)
+
+
+def contraste(a, b):
+    """O contraste entre duas cores, pela fórmula da WCAG. Não é copiado: é contado."""
+    la, lb = _lum(a), _lum(b)
+    hi, lo = max(la, lb), min(la, lb)
+    return (hi + 0.05) / (lo + 0.05)
+
+
+if len(sys.argv) > 1 and sys.argv[1] == "medir":
+    medir(tuple(sys.argv[2:]) or ("60", "180", "16"))
+
+
+if len(sys.argv) > 1 and sys.argv[1] == "contrastes":
+    print("Os pares da sétima voz, medidos pela fórmula da WCAG:")
+    for nome, a, b in (("(a) âmbar sobre tinta", AMBAR, TINTA),
+                       ("(b) tinta sobre âmbar", TINTA, AMBAR),
+                       ("(c) âmbar sobre papel", AMBAR, PAPEL),
+                       ("(d) ocre sobre papel", OCRE, PAPEL),
+                       ("    papel sobre ocre", PAPEL, OCRE),
+                       ("    papel sobre tinta", PAPEL, TINTA),
+                       ("    papel sobre cobalto", PAPEL, COBALTO),
+                       ("    tinta sobre papel", TINTA, PAPEL),
+                       ("    âmbar sobre papel escuro", AMBAR, PAPEL_ESCURO),
+                       ("    ocre sobre papel escuro", OCRE, PAPEL_ESCURO)):
+        r = contraste(a, b)
+        print(f"  {nome:34s} {a} sobre {b}: {r:.2f}:1 "
+              f"[{'passa' if r >= 3 else 'FALHA'} 3:1] "
+              f"[{'passa' if r >= 4.5 else 'FALHA'} 4,5:1]")
 
 
 if len(sys.argv) > 1 and sys.argv[1] == "prancha":
