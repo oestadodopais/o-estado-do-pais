@@ -1228,8 +1228,15 @@ export const STRINGS = {
          Dizia «, nos quatro anos que esta página publica.»: a página como sujeito,
          e uma contagem por extenso que a `IDENTIDADE.md` §10 recusa. Os dois anos
          que ela enquadrava já estão na frase, ditos pelos dois pedaços `{ref}`
-         que ela leva; repeti-los seria escrevê-los duas vezes. */
-      tempoSerieA: 'O índice de dívida da Direção-Geral desceu de ',
+         que ela leva; repeti-los seria escrevê-los duas vezes.
+
+         O ÍNDICE É DA CASA, E OS DADOS É QUE SÃO DA DIREÇÃO-GERAL (I88,
+         28.08.2026). Dizia «O índice de dívida da Direção-Geral desceu de », e
+         atribuía à DGAL um número que ela não publica: o que ela publica são as
+         duas colunas, a dívida total e o limite, e o índice é o quociente que a
+         casa calcula sobre elas. A peça já o diz noutro sítio; a frase da camada
+         2 dizia o contrário, e é a primeira coisa que se lê no instrumento. */
+      tempoSerieA: 'O índice de dívida, calculado sobre os dados da Direção-Geral, desceu de ',
       tempoSerieB: ' em ',
       tempoSerieC: ' para ',
       tempoSerieD: ' em ',
@@ -2075,7 +2082,9 @@ export const STRINGS = {
 
       tempoIndice: 'index',
       contasDivergenciaArredondada: '· the local-government directorate rounds to the euro; the two figures differ by cents.',
-      tempoSerieA: 'The directorate-general’s debt index fell from ',
+      /* I88, 28.08.2026: dizia «The directorate-general’s debt index fell
+         from ». Ver a razão escrita na chave portuguesa. */
+      tempoSerieA: 'The debt index, computed on the directorate-general’s data, fell from ',
       tempoSerieB: ' in ',
       tempoSerieC: ' to ',
       tempoSerieD: ' in ',

@@ -627,7 +627,7 @@ lado a lado, que é para o que este ficheiro serve.
 | `municipio.distanciaLegenda` (E11) | O traço fino é a dívida total que a Direção-Geral das Autarquias Locais publica para o concelho… | The thin line is the total debt the local-government directorate publishes for the municipality… |
 | `municipio.contasDivergenciaRegulador` (E11) | A Direção-Geral publica | The directorate-general publishes |
 | `municipio.tempoRegulador` (E11) | A Direção-Geral | The directorate-general |
-| `municipio.tempoSerieA` (E11) | O índice de dívida da Direção-Geral desceu de | The directorate-general’s debt index fell from |
+| `municipio.tempoSerieA` (E11; I88, 28.08.2026) | O índice de dívida, calculado sobre os dados da Direção-Geral, desceu de | The debt index, computed on the directorate-general’s data, fell from |
 
 **A que saiu**, e fica declarada como autorreferência no `INVENTARIO-FRASES.md`
 para que repô-la feche a construção: «É a lei que o define, não este sítio.» /
