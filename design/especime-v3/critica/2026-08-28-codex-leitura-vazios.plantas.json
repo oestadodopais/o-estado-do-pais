@@ -1,0 +1,26 @@
+{
+ "registado_em": "2026-08-28",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "paginas/municipio-penedono.html",
+   "descricao": "Penedono's debt-index value on the page changed from N.d. to 12,3 (the row and the source say N.d.)",
+   "sha256_antes": "9b9c03b76bcc578ea10512c8d16ad8f520b8b4cd878628277a083b662441a73a",
+   "sha256_depois": "e542af6fd3124ecb323d2ae494efff54d838065407fb3db028b93377b5ef2fb8"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "paginas/municipio-aljezur.html",
+   "descricao": "the absence phrase «sem linha ainda» re-inserted on Aljezur's average-payment-time piece in place of N.d.",
+   "sha256_antes": "22df22630f74ad18bac013d1db6cdbf0e938524d2555e28147738ddd01d73bd4",
+   "sha256_depois": "6940339e8efc0b408e2bb57ef4ad1fbdd8781b9f4ae2721fd27d32d1de33c86c"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "paginas/municipio-lisboa.html",
+   "descricao": "a self-explaining method sentence inserted on Lisbon's page after the first piece",
+   "sha256_antes": "687f774a58aa415a8e5b98eb9966200ebdff1d7988611ee740eeff15b6a22fba",
+   "sha256_depois": "c95805902e63e2b9da99adf1a18adc88f2e38a6ec79e98ab8decfaf5aff7aabb"
+  }
+ ]
+}
