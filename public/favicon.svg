@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="O Estado do País">
+  <title>O Estado do País</title>
+  <!-- FICHEIRO GERADO por design/marca/exportar.mjs app, do sinal de
+       design/marca/direcoes-e2/e2-unida-28.svg. Não se edita à mão.
+       O campo do original fica de fora: um favicon desenha-se sobre o
+       separador do navegador, e a cor dele é do cliente e não do sítio. -->
+  <style>
+    .tinta { fill: #17191b; }
+    @media (prefers-color-scheme: dark) { .tinta { fill: #f6f7f4; } }
+  </style>
+  <g transform="translate(-51.2 -51.2) scale(1.2)">
+    <path class="tinta" d="M404.52 277A150 150 0 1 0 377.28 344.27L343.32 319.55A108 108 0 1 1 362.94 271.12Z"/>
+    <path class="tinta" d="M107.48 235L404.52 235L404.52 277L107.48 277Z"/>
+  </g>
+</svg>
