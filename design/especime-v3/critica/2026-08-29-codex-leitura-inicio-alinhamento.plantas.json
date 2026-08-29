@@ -1,0 +1,30 @@
+{
+ "registado_em": "2026-08-29",
+ "copia": "pacote copiado do worktree wt-alinhamento em 17de55a (fonte, dist, capturas); as plantas so no pacote, na fonte",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "fonte/src/styles/inicio.css (o bloco ≥1280)",
+   "descricao": "the map's grid item spans two rows instead of three: it would end at the names, not at the legend, contradicting the comment above it, the built page and the report",
+   "sha256_antes": "30a2dfa353461705c4040064bfae631c92672e7d8556246d8931779f5f44afdd",
+   "sha256_depois": "43f3a3f80d383ddfa87d2f63f9647890a36a66f934b83bdbaf3042a60d45cc84",
+   "contexto": "    grid-row: 1 / span 3;"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "fonte/src/components/inicio/LegendaDoMapa.astro",
+   "descricao": "the data-mapa-legenda attribute removed from the legend: the map ruler's R6 would no longer find the CAOP seal on the landing page",
+   "sha256_antes": "2b18ab7f50807640925932ea1d35f24bc928a9adedf4c62f5d110179b278fe4b",
+   "sha256_depois": "afe1c389b5ca8123461d475b7e34430be23ba4f6d6575582a4858676147cf3cb",
+   "contexto": "<div class=\"mapa-legenda mapa-linha\" data-mapa-ficha data-mapa-legenda>"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "fonte/design/especime-v3/medicoes/inicio-alinhamento-construtor.md",
+   "descricao": "the map's width at 1280 changed from 518 to 581 px in the table while the column is 518 (an overflow the text says does not happen)",
+   "sha256_antes": "682ec591f41d4daf327670d9b678dcfe6bdda581b9bd0a577edb50bd54a5ec84",
+   "sha256_depois": "8ae74cf4aeb2b0cb9952e43fb777a4966eb1fa12a6428a667c3f06131f81f2d0",
+   "contexto": "| mapa (svg) | 423 a 1069, 490 px de largura | **423 a 1120**, 518 px de largura, na coluna de 518 |"
+  }
+ ]
+}
