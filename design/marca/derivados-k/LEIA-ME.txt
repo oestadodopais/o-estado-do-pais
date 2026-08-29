@@ -1,0 +1,28 @@
+DERIVADOS DA DIREÇÃO K · não são do diretor
+
+Os sete ficheiros do diretor estão em `direcoes-k/` tal como vieram e não se
+tocam. O que está aqui é desenhado por esta ronda, e existe por uma razão só:
+as comparações que a ADENDA 8 manda medir precisam de peças que os sete
+ficheiros não têm. Cada uma diz no próprio ficheiro de onde saiu.
+
+favicon-regra-escuro.svg
+    O `favicon.svg` do diretor com a regra `prefers-color-scheme: dark`, que é
+    a que `public/favicon.svg` já tem hoje e a que `exportar.mjs` escreve. As
+    barras passam a papel-claro e o valor a cobalto-claro, que são as cores que
+    o próprio LEIA-ME dá para campo escuro. Geometria intocada.
+
+glifo-menu.svg
+    O botão de menu, três linhas iguais, MARCADOR. Não é a marca de ninguém: é
+    o glifo genérico, desenhado na grelha da própria marca K (mesma margem
+    esquerda, mesma altura de linha 72, mesmo intervalo 48, mesmo comprimento
+    340). É de propósito que ele use a grelha da K e não outra: assim a única
+    diferença entre os dois desenhos é a que a marca reivindica como sua, e a
+    colisão mede-se sem a grelha a interferir.
+
+glifo-alinhar-esquerda.svg
+    O glifo de alinhar à esquerda, quatro linhas alternadas, MARCADOR. Mesma
+    grelha, mesmos 340 e 197 de comprimento que a K usa, quatro linhas em vez de
+    três (4 × 72 + 3 × 48 = 432, centradas nos 512).
+
+Os dois glifos levam `fill="currentColor"`, que é a forma da casa (`estado.py`):
+um desenho só serve campo claro e campo escuro.

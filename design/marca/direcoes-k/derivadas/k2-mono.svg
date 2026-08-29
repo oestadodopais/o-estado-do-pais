@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" role="img" aria-label="O Estado do País, monocromático">
+  <title>K2 · o valor encostado à direita · monocromático</title>
+  <!-- DERIVADA, 29.08.2026, ADENDA 8. A prova de monocromia: as três barras
+       na mesma tinta, sem cobalto. É onde se vê o que resta da distinção
+       quando a cor sai (impressão a uma cor, alto contraste do sistema, um
+       separador que pinta o favicon de uma cor só). mesmo comprimento (197) e mesma altura (72); a barra do meio passa a encostar na direita das de fora (x 86 → 229, que é 426 − 197). A silhueta deixa de ser a do botão de menu alinhado à esquerda. -->
+  <rect x="86" y="100" width="340" height="72"/>
+  <rect x="229" y="220" width="197" height="72"/>
+  <rect x="86" y="340" width="340" height="72"/>
+</svg>

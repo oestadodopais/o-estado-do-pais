@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="O Estado do País">
+  <title>O Estado do País</title>
+  <!-- DERIVADO de design/marca/direcoes-k/favicon.svg, que é do diretor e não se
+       toca. O que se acrescenta é a regra do esquema do cliente, que é a que
+       public/favicon.svg já tem hoje e a que design/marca/exportar.mjs escreve.
+       As cores de campo escuro são as do LEIA-ME do diretor. -->
+  <style>
+    .registo { fill: #17191B; }
+    .valor { fill: #1F4E8C; }
+    @media (prefers-color-scheme: dark) {
+      .registo { fill: #ECEEEA; }
+      .valor { fill: #7FA6DC; }
+    }
+  </style>
+  <rect class="registo" x="86" y="100" width="340" height="72"/>
+  <rect class="valor" x="86" y="220" width="197" height="72"/>
+  <rect class="registo" x="86" y="340" width="340" height="72"/>
+</svg>

@@ -1,0 +1,57 @@
+DERIVADAS DA MARCA DO DIRETOR · 29.08.2026 (ADENDA 8, pedido do lugar de direção)
+
+Os sete ficheiros do diretor estão um andar acima, em `direcoes-k/`, tal como
+vieram, e não se toca em nenhum. Estas treze são desenhadas por esta ronda a
+pedido: «sugestões de diferenças na marca dele», tiradas da geometria dele e não
+de outra. A grelha é a mesma (512), as linhas de fora são as mesmas
+(340 × 72, em x 86, y 100 e y 340), o comprimento do valor é o mesmo (197) e as
+cores são as do LEIA-ME dele (tinta #17191B, cobalto #1F4E8C; sobre tinta,
+papel-claro #ECEEEA e cobalto-claro #7FA6DC).
+
+CADA VARIANTE MUDA UMA COISA SÓ, e é essa a regra: com duas coisas mudadas de
+cada vez, a medição deixa de dizer qual delas fez a diferença.
+
+K2 · o valor encostado à direita
+    A barra do meio mantém o comprimento (197) e a altura (72), e passa a
+    encostar na direita das de fora: x 86 → 229, que é 426 − 197. A silhueta
+    deixa de ser a de um botão de menu alinhado à esquerda, e passa a ser a de
+    uma linha de livro-razão, onde a coluna do valor alinha à direita.
+
+K3 · o valor mais fino
+    Mesmo x, mesmo comprimento; a altura desce de 72 para 40, centrada no mesmo
+    eixo (y 256, que é o centro da marca). Em monocromia o valor passa a
+    distinguir-se por PESO e não só por comprimento.
+
+K4 · o valor mais pesado
+    Mesmo x, mesmo comprimento; a altura sobe de 72 para 100, centrada no mesmo
+    eixo. Os intervalos de 48 encolhem para 34 de cada lado e continuam a
+    existir. Em monocromia é a barra que não se pode confundir com nenhuma
+    outra.
+
+K5 · o valor a 70 %
+    Mesmo x, mesma altura (72); o comprimento sobe de 197 para 238, que é 70 %
+    exactos dos 340 das de fora. É o ponto entre a leitura de livro-razão do
+    diretor (58 %) e o braço do meio de um «E» de tipo, que anda perto dos 80 %
+    dos outros dois. Existe porque o diretor disse que a marca «lembra o E de
+    estado»: se a leitura de letra é uma qualidade e não um acaso, há um número
+    que a governa, e é este.
+
+A CAIXA DE TINTA DAS CINCO É A MESMA: 340 × 312, de x 86 a 426 e de y 100 a
+412. É de propósito, e tem uma consequência medida: no cabeçalho as cinco
+entram exactamente com o mesmo tamanho e a mesma altura de `.masthead`, e por
+isso a medição do cabeçalho da K1 vale para as quatro sem se repetir.
+
+OS FICHEIROS, três por variante:
+    kN-favicon.svg           campo TRANSPARENTE, barras de tinta e valor cobalto.
+                             É o paralelo exacto do `favicon.svg` dele.
+    kN-icone-telemovel.svg   campo de tinta com os cantos do aparelho (rx 114) e
+                             a mesma redução dele (translate 97 97, scale 0,62).
+    kN-mono.svg              as três barras na mesma tinta, sem cobalto, em
+                             `currentColor`. É a prova de monocromia.
+
+E `k1-mono.svg`, que é o CONTROLO: a marca do diretor sem uma vírgula mudada, só
+sem cor. Sem ele a prova de monocromia media três desenhos contra nada.
+
+A REGRA `prefers-color-scheme` NÃO ESTÁ AQUI, e é de propósito: ela troca cores e
+não mexe na silhueta, e por isso o que ela faz a uma variante faz às quatro. Está
+medida uma vez, na K1, em `derivados-k/favicon-regra-escuro.svg`.

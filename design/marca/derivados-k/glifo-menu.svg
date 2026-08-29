@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" role="img" aria-label="marcador: botão de menu">
+  <title>marcador · botão de menu (três linhas iguais)</title>
+  <!-- MARCADOR, não é marca de ninguém. Na grelha da direção K: margem 86,
+       altura de linha 72, intervalo 48, comprimento 340 nas três. -->
+  <rect x="86" y="100" width="340" height="72"/>
+  <rect x="86" y="220" width="340" height="72"/>
+  <rect x="86" y="340" width="340" height="72"/>
+</svg>
