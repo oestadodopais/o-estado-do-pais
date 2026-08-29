@@ -68,6 +68,14 @@
  *      preto sai preto sem ninguém dar por isso. Contam-se os píxeis com alfa
  *      abaixo de 255, e o número é zero.
  *
+ *      E a célula imprime, sem julgar, a MANCHA da cela: a percentagem de
+ *      píxeis que não são o campo. A §6 quinquies das NOTAS mediu que os ícones
+ *      que a casa aceitou pintam entre 19,8 e 29,9 % da cela, e que a palavra
+ *      recusada pintava 4,7 %. O número fica à vista para que uma marca que
+ *      desaparece numa grelha de ícones se veja aqui e não só num telemóvel. A
+ *      banda é decisão de direção, e por isso o número sai na prova e não na
+ *      condição.
+ *
  * A5 · OS DOIS FAVICONS. O ICO lê-se pelo seu DIRETÓRIO — seis bytes de cabeça e
  *      dezasseis por entrada — e tem de trazer os dois tamanhos, 32 e 16, cada
  *      um com os bytes que a entrada promete. O SVG tem de trazer os TRÊS
@@ -572,18 +580,40 @@ function mediuOIconeDoIPhone() {
     if (imagem.rgba[i] < minimo) minimo = imagem.rgba[i];
   }
   const medida = imagem.largura === 180 && imagem.altura === 180;
+  /* A MANCHA DA CELA, que não é uma condição mas um número que a casa passou a
+     ler (NOTAS §6 quinquies): quantos píxeis da cela NÃO são o campo. É o que
+     separa um ícone que segura o seu lugar numa grelha de ícones de um que
+     desaparece nela, e o 180 é o tamanho a que isso se vê. Sai na prova e fica
+     nas medidas; não entra na condição, porque a banda aceitável é uma decisão
+     de direção e não de régua. O limiar de 8 níveis é o mesmo da célula A3. */
+  const campo = [imagem.rgba[0], imagem.rgba[1], imagem.rgba[2]];
+  let doSinal = 0;
+  for (let i = 0; i < imagem.rgba.length; i += 4) {
+    const diferenca = Math.max(
+      Math.abs(imagem.rgba[i] - campo[0]),
+      Math.abs(imagem.rgba[i + 1] - campo[1]),
+      Math.abs(imagem.rgba[i + 2] - campo[2]),
+    );
+    if (diferenca > 8) doSinal++;
+  }
+  const pixeis = imagem.largura * imagem.altura;
+  const mancha = (100 * doSinal) / pixeis;
   medidas.apple_touch_icon = {
     largura: imagem.largura,
     altura: imagem.altura,
-    pixeis: imagem.largura * imagem.altura,
+    pixeis,
     pixeis_com_alfa_abaixo_de_255: transparentes,
     alfa_minimo: minimo,
+    campo: `#${campo.map((c) => c.toString(16).padStart(2, '0')).join('')}`,
+    pixeis_de_sinal: doSinal,
+    mancha_por_cento: +mancha.toFixed(2),
   };
   conta(
     'A4 · o apple-touch-icon é opaco e mede 180',
     medida && transparentes === 0,
-    `${imagem.largura}×${imagem.altura} · ${imagem.largura * imagem.altura} píxeis · ` +
-      `alfa mínimo ${minimo} · ${transparentes} abaixo de 255`,
+    `${imagem.largura}×${imagem.altura} · ${pixeis} píxeis · ` +
+      `alfa mínimo ${minimo} · ${transparentes} abaixo de 255 · ` +
+      `mancha ${doSinal} px, ${mancha.toFixed(1)} % da cela`,
   );
 }
 
