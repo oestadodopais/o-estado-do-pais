@@ -64,7 +64,7 @@
  */
 import { getClaim, provenienciaIncompleta, eDerivada, POR_VERIFICAR } from '../lib/ledger.mjs';
 import { caminhoDaLinha } from '../lib/livro.mjs';
-import { studyLabel } from '../data/studies.mjs';
+import { studyLabel, linguaDoTitulo } from '../data/studies.mjs';
 import { t } from '../i18n/strings.mjs';
 
 const { id, lang, ancora = null } = Astro.props;
@@ -111,6 +111,27 @@ const estudo = studyLabel(claim.study, lang);
 /* A etiqueta desta linha, e é uma cadeia só: é ela que vai no atributo, no
    `title` e no texto oculto, e é ela que o portão reconstrói do livro-razão. */
 const etiqueta = `${derivada ? `${s.prov.calculado} · ` : ''}${estudo}`;
+
+/**
+ * A LÍNGUA DO NOME DO TRABALHO, NO TEXTO QUE SÓ SE OUVE (I91, 29.08.2026).
+ *
+ * O texto oculto do selo repetia «Avaliação Económica Regional de Portugal 2026»
+ * dentro de uma página inglesa, sem dizer em que língua está: 382 ocorrências
+ * medidas em `dist/en`. À vista, o mesmo título já levava a marca há dois dias,
+ * por `TituloDeTrabalho`; aqui não, porque o oculto é uma cadeia composta e não
+ * um título sozinho. **Uma superfície não deixa de ser superfície por não se
+ * ver** — é ela que um leitor de ecrã lê, e é ele quem esta marca serve.
+ *
+ * SÓ O NOME LEVA A MARCA. A palavra «calculated» e o separador são prosa da casa
+ * na língua da página, e marcá-los português era trocar um defeito por outro. O
+ * texto rendido não muda um carácter, e o portão continua a compará-lo com
+ * `seloDaLinha()`: `textoTranscrito()` junta os pedaços SEM separador, e por
+ * isso um `<span>` a mais por dentro não mexe na cadeia que ele lê.
+ *
+ * O `title` e o `data-selo-etiqueta` levam a mesma cadeia e ficam como estão: um
+ * atributo não tem onde pendurar uma marca de língua.
+ */
+const linguaDoEstudo = linguaDoTitulo(estudo, lang);
 ---
 
 <a
@@ -142,6 +163,6 @@ const etiqueta = `${derivada ? `${s.prov.calculado} · ` : ''}${estudo}`;
       o selo já escreve à vista.
       ---------------------------------------------------------------------- */}
   <span class="src-chip-texto">{s.prov.selo}</span>
-  <span class="vh"> · {etiqueta}</span>
+  <span class="vh"> · {derivada && `${s.prov.calculado} · `}<span lang={linguaDoEstudo}>{estudo}</span></span>
   {incompleta && <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>}
 </a>
