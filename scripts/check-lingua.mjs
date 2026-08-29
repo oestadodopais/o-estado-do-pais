@@ -38,7 +38,11 @@
  *        dentro, e marcar esse pedaço obrigava a casa a partir uma cadeia que
  *        ela transcreve carácter a carácter. O número fica impresso: escondê-lo
  *        seria pior do que não o poder baixar;
- *   L6 · em `dist/en`, nenhum título de estudo português sem a marca;
+ *   L6 · em `dist/en`, nenhum título de estudo português sem a marca — **à
+ *        vista e no oculto**. O texto oculto de um selo de proveniência (`.vh`)
+ *        é o que um leitor de ecrã ouve, e repetia o título português do estudo
+ *        sem dizer em que língua ele está: uma superfície não deixa de ser
+ *        superfície por não se ver;
  *   L8 · nenhum elemento com o MESMO atributo escrito duas vezes. Nasceu de uma
  *        leitura do lugar de direção que viu «lang="pt-PT" lang="pt-PT"» numa
  *        página de área; era um falso positivo — a cadeia procurada é também o
@@ -355,11 +359,14 @@ const contas = {
   leis_en_em_transcricao: 0,
   estudos_pt_en: 0,
   estudos_pt_en_sem_marca: 0,
+  estudos_pt_ocultos: 0,
+  estudos_pt_ocultos_sem_marca: 0,
   elementos_com_atributo_repetido: 0,
   repetidos_em_documento_alojado: 0,
 };
 const achados = {
   repetidos: new Map(),
+  ocultos: new Map(),
   unidades: new Map(),
   titulos: new Map(),
   localizadores: new Map(),
@@ -459,6 +466,30 @@ for (const ficheiro of paginasDe(DIST)) {
     }
   }
 
+  /* --- L6b · o mesmo título, no texto que só um leitor de ecrã ouve --- */
+  if (lang === 'en') {
+    for (const el of root.querySelectorAll('.vh')) {
+      const anda = (n) => {
+        if (!n) return;
+        if (n.nodeType === NodeType.TEXT_NODE) {
+          const t = norm(n.rawText);
+          if (!t) return;
+          for (const titulo of TITULOS_DE_ESTUDO_PT) {
+            if (!t.includes(titulo)) continue;
+            contas.estudos_pt_ocultos++;
+            if (langDe(n.parentNode) !== 'pt-PT') {
+              contas.estudos_pt_ocultos_sem_marca++;
+              anota(achados.ocultos, titulo, rel);
+            }
+          }
+          return;
+        }
+        for (const f of n.childNodes ?? []) anda(f);
+      };
+      anda(el);
+    }
+  }
+
   /* --- L6 · os títulos de estudo portugueses, na edição inglesa --- */
   if (lang === 'en') {
     for (const el of root.querySelectorAll('[data-nonledger="titulo-de-estudo"]')) {
@@ -551,6 +582,14 @@ for (const [texto, x] of achados.leis) {
       `(${x.n} ocorrência(s), ex.: ${x.onde}).`,
   );
 }
+for (const [texto, x] of achados.ocultos) {
+  erros.push(
+    `título de estudo português sem lang="pt-PT" no TEXTO OCULTO de um selo, na edição ` +
+      `inglesa: «${texto}» (${x.n} ocorrência(s), ex.: ${x.onde}).\n` +
+      `      É o que um leitor de ecrã ouve, e uma superfície não deixa de ser superfície por ` +
+      `não se ver.`,
+  );
+}
 for (const [texto, x] of achados.estudos) {
   erros.push(
     `título de estudo português sem lang="pt-PT" na edição inglesa: «${texto}» ` +
@@ -595,7 +634,8 @@ console.log(
       `${contas.localizadores_en_com_marca} com marca · ` +
       `leis em «en»: ${contas.leis_en_com_marca} com marca, ` +
       `${contas.leis_en_em_transcricao} dentro de transcrição do motor · ` +
-      `títulos de estudo portugueses em «en»: ${contas.estudos_pt_en}, todos com marca · ` +
+      `títulos de estudo portugueses em «en»: ${contas.estudos_pt_en} à vista e ` +
+      `${contas.estudos_pt_ocultos} no oculto, todos com marca · ` +
       `atributos repetidos: nenhum`,
   ),
 );

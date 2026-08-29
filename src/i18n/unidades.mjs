@@ -65,13 +65,15 @@ export const UNIDADES = {
   /* 310 linhas. A casa: `concelhos.mjs`, medida «pmp», Dias → Days. */
   dias: 'days',
   /* 309 linhas. O poder de compra concelhio do INE, com Portugal na base 100.
-     «índice» é «index»; o parêntesis é um nome próprio e um algarismo. */
+     Dicionário: «índice» é «index»; o parêntesis é um nome próprio e um
+     algarismo, e não se traduz. */
   'índice (Portugal = 100)': 'index (Portugal = 100)',
   /* 308 linhas. A casa: `concelhos.mjs`, medida «empresas», Empresas →
      Enterprises. */
   empresas: 'enterprises',
-  /* 12 linhas. A distância de cada região à média da UE-27, em pontos do
-     índice. */
+  /* 12 linhas. A distância de cada região à média da UE-27. Dicionário:
+     «pontos de índice» é «index points». São linhas calculadas, sem excerto: não
+     há inglês da fonte. */
   'pontos de índice': 'index points',
   /* 12 linhas. O símbolo não muda de língua. */
   '%': '%',
@@ -89,12 +91,16 @@ export const UNIDADES = {
   /* 6 linhas. A fonte: «Percentage of gross domestic product (GDP)», no excerto
      de `despesa-em-id-2024` e das outras cinco. */
   '% do PIB': '% of GDP',
-  /* 3 linhas. */
+  /* 3 linhas. Dicionário: «população» é «population». A fonte escreve
+     «Percentage of total population» nas três, e a entrada NÃO segue a fonte
+     aqui: a cadeia do livro-razão não diz «total», e o rótulo diz o que a linha
+     guarda. Quem quiser «total» muda a linha, não a tradução dela. */
   '% da população': '% of the population',
   /* 3 linhas. A fonte: «Percentage of population in the labour force», no
      excerto de `taxa-de-desemprego-2025` e das outras duas. */
   '% da população ativa': '% of the labour force',
-  /* 2 linhas. */
+  /* 2 linhas (`evora-contas-2024-votos-favor` e `-contra`). Dicionário: «votos»
+     é «votes». O excerto é a acta em português. */
   votos: 'votes',
   /* 2 linhas. A fonte: «Percentage change (t/t-3)», no excerto de
      `custo-unitario-do-trabalho-2025`. */
@@ -107,9 +113,13 @@ export const UNIDADES = {
   /* 2 linhas. A fonte: «Percentage of stocks (closing balance sheet)», no
      excerto de `fluxo-de-credito-as-empresas-2025`. */
   '% do stock no final do período anterior': '% of the stock at the end of the previous period',
-  /* 2 linhas. */
+  /* 2 linhas (`evora-execucao-da-receita-2021` e `-2025`). Dicionário:
+     «orçamento» é «budget». O excerto das duas é o quadro da prestação de
+     contas em português, e não traz inglês nenhum de onde tirar a palavra. */
   '% do orçamento': '% of the budget',
-  /* 2 linhas. */
+  /* 2 linhas (`evora-prr-execucao-2026` e `evora-prr-vencido-quota-2026`).
+     Dicionário: «valor aprovado» é «approved amount». As duas são linhas
+     calculadas, sem documento e sem excerto: não há inglês do organismo. */
   '% do valor aprovado': '% of the approved amount',
   /* 1 linha. A fonte: «Percentage point change (t-(t-3))», no excerto de
      `taxa-de-actividade-2025`. */
@@ -126,22 +136,30 @@ export const UNIDADES = {
      `licencas-de-construcao-2025`. O símbolo do metro quadrado não muda. */
   'm² por 1000 habitantes': 'm² per 1000 inhabitants',
   /* 1 linha. A fonte: «Chain linked volumes (2015), euro per capita», no
-     excerto de `pib-real-per-capita-2025`. */
+     excerto de `pib-real-per-capita-2025`, e são as palavras dela que a entrada
+     usa. Escrevia «euros per inhabitant», que é a tradução literal do português
+     e não o que o Eurostat imprime: onde a fonte tem inglês próprio, é o dela. */
   'euros por habitante · volumes encadeados (2015)':
-    'euros per inhabitant · chain linked volumes (2015)',
-  /* 1 linha. */
+    'euro per capita · chain linked volumes (2015)',
+  /* 1 linha (`edicoes-publicadas`). A casa: `strings.mjs`, `stubEdicoes`,
+     escreve «Editions» na edição inglesa para a mesma coisa. */
   edições: 'editions',
-  /* 1 linha. */
+  /* 1 linha (`correcoes-publicadas`). A casa: a rota inglesa do registo é
+     `/en/corrections` (`src/lib/routes.mjs`). */
   correções: 'corrections',
-  /* 1 linha. */
+  /* 1 linha (`ciclo-substituicao-condutas`). Dicionário: «anos» é «years». A
+     linha tem documento e excerto «[a verificar]», e por isso não há inglês da
+     fonte; a palavra, essa, não depende de fonte nenhuma. */
   anos: 'years',
   /* 1 linha. A fonte: «Percentage of individuals», no excerto de
      `competencias-digitais-2025`. */
   '% dos indivíduos': '% of individuals',
   /* 1 linha. A fonte: «Percentage of OECD and non-OECD EU countries total -
-     3-year change», no excerto de `desempenho-das-exportacoes-2025`. */
+     3-year change», no excerto de `desempenho-das-exportacoes-2025`. A entrada
+     deixava cair «countries», e o total é de PAÍSES: sem a palavra, «the OECD
+     and non-OECD EU total» podia ler-se como um total de outra coisa. */
   '% do total OCDE e UE não-OCDE, variação em três anos':
-    '% of the OECD and non-OECD EU total, three-year change',
+    '% of the OECD and non-OECD EU countries total, three-year change',
   /* 1 linha. A fonte: «Percentage of GDP - three-year average», no excerto de
      `saldo-da-balanca-corrente-2025`. */
   '% do PIB (média de três anos)': '% of GDP (three-year average)',
