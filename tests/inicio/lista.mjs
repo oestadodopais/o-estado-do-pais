@@ -829,10 +829,15 @@ const PLANTAS = [
     estrago: comFolha('.mapa-ilhas-lista a{min-width:0 !important;padding-inline:0 !important}'),
   },
   {
-    nome: 'o mapa solto do fundo da legenda, a 1280 (o item deixa de esticar)',
-    celulas: ['L11'],
+    nome: 'o mapa solto do fundo da legenda, a 1280 (o item deixa de esticar e a tela volta a ser dimensionada pela largura)',
+    celulas: ['L11', 'L13'],
+    /* A tela a 70 % da coluna, e não a 100 %: com as margens da segunda
+       construção, um mapa dimensionado pela largura inteira da coluna acaba a
+       4 px do fundo da legenda, que é a tolerância da L11, e o estrago passava
+       por forma (visto no corredor de 29.08 à noite). O que se quer provar é que
+       a célula vê um mapa que não chega ao fundo, e a 70 % não chega. */
     estrago: comFolha(
-      '@media (min-width:1280px){.cabeca-inst{align-self:start !important;height:auto !important;min-height:0 !important}.cabeca-inst .mapa-tela{height:auto !important;width:100% !important}}',
+      '@media (min-width:1280px){.cabeca-inst{align-self:start !important;height:auto !important;min-height:0 !important}.cabeca-inst .mapa-tela{height:auto !important;width:70% !important}.cabeca-inst .mapa-svg{width:100% !important;height:auto !important}}',
     ),
   },
   {
