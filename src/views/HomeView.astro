@@ -43,7 +43,9 @@ import Portas from '../components/inicio/Portas.astro';
 import Cabeca from '../components/inicio/Cabeca.astro';
 import Pesquisa from '../components/inicio/Pesquisa.astro';
 import MapaRespira from '../components/inicio/MapaRespira.astro';
+import ListaDosNomes from '../components/inicio/ListaDosNomes.astro';
 import ListaSocial from '../components/inicio/ListaSocial.astro';
+import ValorDaProva from '../components/ValorDaProva.astro';
 import { FIGURAS_PDM, FIGURAS_SOCIAL, comparacaoComOLimiar, ladosDoLimiar } from '../data/figuras.mjs';
 import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
 import { estadoDaMedida } from '../lib/estado.mjs';
@@ -244,6 +246,21 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
             muda é que a pesquisa deixou de estar atrás de um comando.
             ---------------------------------------------------------------- */}
       </div>
+
+      {/* ------------------------------------------------------------------
+          OS NOMES DAS 29, IRMÃOS DA CABEÇA E DO INSTRUMENTO (29.08.2026)
+          ------------------------------------------------------------------
+          Estavam dentro de `MapaRespira`, por baixo do mapa, e por isso viviam
+          na coluna do instrumento: a 1280 eram 815 px de nomes à direita com a
+          coluna esquerda vazia por baixo da manchete. A decisão do diretor
+          põe-nos na coluna esquerda, onde havia papel a mais.
+
+          O BLOCO É FILHO DA GRELHA, e é isso que torna a colocação possível sem
+          uma segunda rendição: uma lista dentro do mapa não muda de coluna, e
+          duas listas seriam 58 ligações para 29 páginas. Quem decide a coluna é
+          a folha, pelo mesmo `.cabeca-grelha` que já coloca as outras duas.
+          ------------------------------------------------------------------ */}
+      <ListaDosNomes s={s} lang={lang} />
     </div>
 
     {/* A REGUA DA REGIÃO SAIU DA PRIMEIRA PÁGINA (bloco A, itens A2 e A3).
@@ -265,6 +282,30 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
       desse lugar. A regra da cabeça continua de pé — o portão vê tudo o que o
       leitor pode ver —, e o que ela governa agora é a densidade. */}
   <section id="painel">
+    {/* ------------------------------------------------------------------
+        AS PEÇAS GRANDES PASSAM A TER NOME (decisão do diretor, 29.08.2026)
+        ------------------------------------------------------------------
+        As treze peças vinham sem nome nenhum, e o painel de baixo vinha com
+        nome: o par lia-se como uma corrida de cartões seguida de uma lista com
+        título, e nada dizia que são dois painéis de duas instituições. A linha
+        é a mesma nos dois, na forma de `h2.social-titulo`.
+
+        O NOME É O DA FONTE E A CONTAGEM VEM DA PROVA. `painel_com_limiar` conta
+        as medidas do painel cujo quadro publica um limiar, e é a chave que o
+        portão de HTML reconta por conta própria: nenhum algarismo desta linha é
+        escrito à mão, aqui ou nas cadeias.
+
+        O FIO É O MESMO QUE JÁ ESTAVA. `.painel` abria com `border-top`, e essa
+        regra passa para o nome, que é agora quem abre o bloco: a folha desliga-a
+        na grelha que vem logo a seguir a um nome, e as outras duas páginas que
+        rendem `.painel` (o concelho e a região) ficam como estavam.
+        ------------------------------------------------------------------ */}
+    <h2 class="painel-nome">
+      {s.inicio.painel.nomeA}
+      <ValorDaProva chave="painel_com_limiar" item={p.painel_com_limiar} lang={lang} />
+      {s.inicio.painel.nomeFim}
+    </h2>
+
     <div class="painel" data-painel="pais">
       {
         medidas.map((f) => (
@@ -322,7 +363,7 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
         têm nem um nem outro». Não há outro âmbito: o painel social é sempre do
         país, e uma marca que nunca esconde nada é um mecanismo a fingir que ainda
         serve. O script deixou de a procurar no mesmo commit. */}
-    <ListaSocial s={s} lang={lang} medidas={sociais} porta={routePath('livro', lang)} />
+    <ListaSocial s={s} lang={lang} p={p} medidas={sociais} porta={routePath('livro', lang)} />
 
     {/* ------------------------------------------------------------------
         A LINHA DA RECONFERÊNCIA SAIU DA PRIMEIRA PÁGINA (Emenda 15)

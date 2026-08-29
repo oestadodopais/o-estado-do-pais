@@ -1,0 +1,133 @@
+---
+/**
+ * OS NOMES DAS 29 UNIDADES, AO LADO DO MAPA E A RESPONDER-LHE.
+ *
+ * ---------------------------------------------------------------------------
+ * O QUE ESTE BLOCO É, E DE ONDE VEIO
+ * ---------------------------------------------------------------------------
+ * Era o fim de `MapaRespira.astro`: a rede de alvos da Emenda 20c (os nomes por
+ * baixo da moldura onde uma ilha não chega aos 44 px), alargada pela I81 a todas
+ * as parcelas. Ficava por baixo do mapa, uma ligação por linha, e a mesma lista
+ * servia todas as larguras: a 1280 eram 29 linhas na coluna direita, uns 815 px
+ * de nomes com a coluna esquerda vazia por baixo da manchete, e a 390 uma pilha
+ * de 1 238 px. Medido a 29.08.2026 sobre `a76f829`, e está no relatório.
+ *
+ * SAI DO MAPA E PASSA A SER FILHO DA GRELHA DA CABEÇA, e a razão é a colocação:
+ * a decisão do diretor de 29.08 é que os nomes vivem na coluna esquerda, por
+ * baixo da manchete, onde havia papel a mais. Uma lista dentro do mapa não pode
+ * ir para a outra coluna sem ser rendida uma segunda vez, e duas rendições dos
+ * mesmos 29 nomes seriam 58 ligações para 29 páginas. É um bloco irmão da cabeça
+ * e do instrumento, e quem o coloca é a folha.
+ *
+ * ---------------------------------------------------------------------------
+ * O PAR DE ESTADO, NOS DOIS SENTIDOS, SEM UMA LINHA DE GUIÃO
+ * ---------------------------------------------------------------------------
+ * «Passar o rato por um nome contorna o distrito no mapa; passar o rato por um
+ * distrito marca o nome na lista. O mesmo com o teclado.»
+ *
+ * O MECANISMO É `:has()`, E AS REGRAS SAEM DO ARTEFACTO. Não há maneira de o CSS
+ * dizer «o elemento cujo atributo vale o mesmo que o daquele»: um par pede uma
+ * regra por unidade, e as unidades são 29. As 29 regras não se escrevem à mão em
+ * `inicio.css`, porque isso seria uma segunda lista de nomes ao lado da do motor,
+ * que é o que a fronteira proíbe: compõem-se aqui, do mesmo `paisDoMapa()` que
+ * desenha as áreas, e o que vai para a página é o que o artefacto tem dentro.
+ *
+ * O QUE ISTO CUSTA, MEDIDO E NÃO ESTIMADO: está no relatório, em bytes de HTML,
+ * ao lado do que custaria a alternativa, que era um guião. O guião foi recusado
+ * por duas razões e nenhuma é o peso: um par de estado que só existe com
+ * JavaScript é um par que não existe para quem o desliga, e o guião da primeira
+ * página vive em `public/js/`, que este bloco não toca.
+ *
+ * A MARCA NÃO É COR. Do lado do mapa é o contorno de 1 px que passa a 3 px, que
+ * é a mesma distinção que `.uni-porta:hover .uni` já usa (Emenda 20b: «o que
+ * muda ao passar o rato ou ao chegar pelo teclado é o contorno, e só ele»). Do
+ * lado da lista é o mesmo 1 px para 3 px, no sublinhado: o nome já vem
+ * sublinhado, porque é uma ligação, e o que a marca engrossa é o traço que ele
+ * já tem. As duas coisas são a mesma grandeza vista nos dois sítios.
+ *
+ * ---------------------------------------------------------------------------
+ * A LISTA É UMA SÓ, E É DE TODAS AS PARCELAS
+ * ---------------------------------------------------------------------------
+ * Rendia-se só onde `precisaDaLista` era verdade, porque era só a rede de alvos.
+ * Passa a render-se sempre, e para as três parcelas: no ecrã largo é o índice do
+ * mapa, e um índice do mapa não desaparece porque as ilhas de uma parcela
+ * ficaram grandes. A pergunta dos 44 px continua a decidir uma coisa, e agora
+ * di-la em vez de a esconder: `data-alvo-abaixo-de` leva, por grupo, a largura
+ * de mapa abaixo da qual aquela parcela deixa de ter todas as unidades como
+ * alvo. É a declaração que a régua confronta com o que o navegador mede.
+ */
+import { paisDoMapa, parcelasDoMapa } from '../../lib/mapa.mjs';
+import { routePath } from '../../lib/routes.mjs';
+
+const { s, lang } = Astro.props;
+
+const parcelas = parcelasDoMapa();
+
+/* Os nomes de lugar das três parcelas, na língua da edição. São as mesmas
+   cadeias que o mapa põe por cima das molduras: entram pela chave da parcela e
+   pelo nome da moldura, e não por uma segunda lista. */
+const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.mapa.acores };
+const NOME_DA_PARCELA = { continente: s.inicio.mapa.continente };
+
+/* ---------------------------------------------------------------------------
+ * AS 58 REGRAS DO PAR, COMPOSTAS DAS 29 UNIDADES DO ARTEFACTO
+ * ---------------------------------------------------------------------------
+ * Duas famílias, uma por sentido, cada uma com um bloco de declarações só e 29
+ * selectores. Escrever 58 blocos seria 58 vezes as mesmas duas declarações.
+ *
+ * O SUJEITO É `.cabeca-grelha`, que é o antepassado comum dos dois lados: o mapa
+ * está na coluna do instrumento e a lista é irmã dela. Abaixo de 640 a folha
+ * dissolve a grelha (`display: contents`), e isso não muda nada aqui, porque um
+ * selector lê a árvore e não a caixa.
+ */
+const alvos = paisDoMapa().unidades.map((u) => u.slug);
+const paraOMapa = alvos
+  .map(
+    (slug) =>
+      `.cabeca-grelha:has([data-lista-porta="${slug}"]:is(:hover,:focus-visible)) .uni[data-unidade="${slug}"]`,
+  )
+  .join(',');
+const paraALista = alvos
+  .map(
+    (slug) =>
+      `.cabeca-grelha:has([data-uni-porta="${slug}"]:is(:hover,:focus-visible)) [data-lista-porta="${slug}"]`,
+  )
+  .join(',');
+const parDeEstado =
+  `${paraOMapa}{stroke-width:3}` +
+  `${paraALista}{text-decoration-thickness:3px;text-decoration-color:currentColor}`;
+---
+
+<div class="mapa-ilhas" data-mapa-ilhas>
+  {
+    parcelas.map((p) => (
+      <div
+        class="mapa-ilhas-grupo"
+        data-parcela-lista={p.chave}
+        data-alvo-abaixo-de={p.larguraMinimaPx}
+      >
+        {/* O nome da parcela é o de um lugar e não uma frase da casa: leva
+            `data-lugar`, como o nome de um concelho leva. */}
+        <p class="mapa-ilhas-k" data-lugar>
+          {NOME_DA_PARCELA[p.chave] ?? NOME_DA_MOLDURA[p.nome] ?? p.nome ?? p.chave}
+        </p>
+        <ul class="mapa-ilhas-lista">
+          {p.unidades.map((u) => (
+            <li>
+              <a href={routePath('distrito', lang, { slug: u.slug })} data-lista-porta={u.slug}>
+                {u.nome}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</div>
+{/* A folha das 29 regras vai no documento, e não em `inicio.css`, porque os
+    nomes que ela leva são do artefacto: numa folha estática eles teriam de ser
+    escritos à mão, e uma segunda lista dos 29 slugs é exactamente o que a
+    fronteira do mapa proíbe. `is:inline` para que o empacotador a deixe em paz;
+    o portão de HTML não varre texto dentro de `<style>`, e não há aqui número
+    nenhum para varrer. */}
+<style is:inline set:html={parDeEstado}></style>

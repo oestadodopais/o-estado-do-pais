@@ -82,7 +82,7 @@ import FonteDaCarta from '../FonteDaCarta.astro';
 import { FRAMES, FIELD_W, FIELD_H } from '../../data/caop-centroids.mjs';
 import { getClaim } from '../../lib/ledger.mjs';
 import { routePath } from '../../lib/routes.mjs';
-import { paisDoMapa, parcelasDoMapa } from '../../lib/mapa.mjs';
+import { paisDoMapa } from '../../lib/mapa.mjs';
 
 /* AS DUAS PROPRIEDADES QUE A PÁGINA DE CONCELHO PEDIU (ISSUES I45, etapa 2m).
  *
@@ -167,7 +167,6 @@ const caop = getClaim('municipios-portugal-caop-2025');
  * `viewBox` é o campo desse ficheiro e mais nada. Ver `src/lib/mapa.mjs`.
  */
 const doPais = postura === 'inteiro' ? paisDoMapa() : null;
-const parcelas = postura === 'inteiro' ? parcelasDoMapa() : [];
 
 /* A ESCALA ENTRE OS DOIS CAMPOS, para que o rótulo de uma moldura se leia do
    mesmo tamanho nos dois desenhos à mesma largura. O rótulo do mapa de pontos
@@ -180,10 +179,10 @@ const CORPO_DO_ARQ = Math.round(13 * uDoCampo);
 /* O nome de cada moldura na língua da edição. A caixa e a escala são do
    artefacto; o nome é uma cadeia da casa, e as duas já existem. */
 const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.mapa.acores };
-/* O nome de uma parcela sem moldura. A Carta chama-lhe «continente», e é o nome
-   de um lugar como os dois de cima: entra pela chave da parcela e não por uma
-   segunda lista de nomes. */
-const NOME_DA_PARCELA = { continente: s.inicio.mapa.continente };
+/* `NOME_DA_PARCELA` SAIU COM A LISTA (29.08.2026). Era o nome do continente, a
+   parcela sem moldura, e servia só o rótulo daquele grupo: mudou-se com ele para
+   `ListaDosNomes.astro`. O que fica aqui é o nome das duas molduras, que é o que
+   este desenho escreve por cima delas. */
 ---
 
 <figure
@@ -471,57 +470,22 @@ const NOME_DA_PARCELA = { continente: s.inicio.mapa.continente };
   </div>
 
   {/* --------------------------------------------------------------------------
-      OS NOMES DE UMA PARCELA POR BAIXO DO MAPA (Emenda 20c, alargada pela I81)
+      OS NOMES DAS UNIDADES SAÍRAM DAQUI (29.08.2026)
       --------------------------------------------------------------------------
-      «Onde uma ilha não chegar aos 44 px na moldura, os nomes das ilhas dessa
-      moldura ficam por baixo dela como ligações, uma por linha.»
+      Era a rede de alvos da Emenda 20c, alargada pela I81 a todas as parcelas:
+      os nomes por baixo do mapa, uma ligação por linha, para as unidades que não
+      chegam aos 44 px. A decisão do diretor de 29.08 muda-lhe o lugar e não a
+      razão: os nomes vão para a coluna esquerda, por baixo da manchete, onde
+      havia papel a mais, e de lá respondem ao mapa e o mapa responde-lhes.
 
-      A REGRA PASSA DA MOLDURA PARA A PARCELA (27.08.2026, I81). A emenda escreve
-      a rede na forma em que ela primeiro fez falta, a das ilhas; o continente não
-      tem moldura, e por isso não tinha rede. Medido: Viana do Castelo chega aos
-      44 px por 0,5 px numa janela de 390, e numa janela de 320 nenhuma unidade do
-      continente ficava protegida por regra nenhuma. A condição é agora da
-      parcela, e a forma é a mesma.
-
-      A CONDIÇÃO É MEDIDA NA CONSTRUÇÃO E NÃO ADIVINHADA. `parcelasDoMapa()`
-      calcula, para cada parcela, o maior lado da caixa de cada unidade em píxeis
-      nas quatro larguras que a folha dá ao mapa, e responde à pergunta dos 44. É
-      a única maneira: uma construção estática serve o mesmo HTML a todas as
-      larguras, e nenhuma largura é conhecida quando ele se escreve.
-
-      A LISTA É DAS UNIDADES DA PARCELA, e não só das que não chegam. É o que a
-      emenda escreve para as ilhas, e é o que se lê melhor: uma lista com
-      dezasseis nomes de dezoito deixa o leitor a adivinhar quais são os dois que
-      faltam.
-
-      A ÁREA DE CADA UNIDADE CONTINUA A SER UMA LIGAÇÃO, e por isso um nome desta
-      lista não é uma segunda porta para um sítio que não tinha nenhuma: é a
-      porta que se pode tocar, para a mesma página. */}
-  {postura === 'inteiro' &&
-    parcelas.some((p) => p.precisaDaLista) && (
-      <div class="mapa-ilhas" data-mapa-ilhas>
-        {parcelas
-          .filter((p) => p.precisaDaLista)
-          .map((p) => (
-            <div class="mapa-ilhas-grupo" data-parcela-lista={p.chave}>
-              {/* O nome da parcela é o de um lugar e não uma frase da casa: leva
-                  `data-lugar`, como o nome de um concelho leva. */}
-              <p class="mapa-ilhas-k" data-lugar>
-                {NOME_DA_PARCELA[p.chave] ?? NOME_DA_MOLDURA[p.nome] ?? p.nome ?? p.chave}
-              </p>
-              <ul class="mapa-ilhas-lista">
-                {p.unidades.map((u) => (
-                  <li>
-                    <a href={routePath('distrito', lang, { slug: u.slug })} data-lista-porta={u.slug}>
-                      {u.nome}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-      </div>
-    )}
+      UMA LISTA DENTRO DO MAPA NÃO PODE MUDAR DE COLUNA. O mapa vive na coluna do
+      instrumento, e a colocação é da folha: para os nomes ficarem na outra
+      coluna sem uma segunda rendição, o bloco tem de ser irmão das duas. Vive
+      agora em `src/components/inicio/ListaDosNomes.astro`, rendido por
+      `HomeView` como filho de `.cabeca-grelha`, com as mesmas marcas
+      (`data-mapa-ilhas`, `data-parcela-lista`, `data-lista-porta`) e as mesmas
+      ligações. A condição dos 44 px continua medida na construção, em
+      `parcelasDoMapa()`, e é lá que ela se lê. */}
 
     {/* O TEXTO DO CARTÃO SÓ SE CONSTRÓI ONDE ELE SE VÊ (Emenda 19a, 26.08.2026).
         A folha escondia-o na postura inteira (`[data-postura='inteiro']
