@@ -51,10 +51,23 @@
  * Rendia-se só onde `precisaDaLista` era verdade, porque era só a rede de alvos.
  * Passa a render-se sempre, e para as três parcelas: no ecrã largo é o índice do
  * mapa, e um índice do mapa não desaparece porque as ilhas de uma parcela
- * ficaram grandes. A pergunta dos 44 px continua a decidir uma coisa, e agora
- * di-la em vez de a esconder: `data-alvo-abaixo-de` leva, por grupo, a largura
- * de mapa abaixo da qual aquela parcela deixa de ter todas as unidades como
- * alvo. É a declaração que a régua confronta com o que o navegador mede.
+ * ficaram grandes.
+ *
+ * ---------------------------------------------------------------------------
+ * NENHUM GRUPO SE ESCONDE, E POR ISSO NÃO HÁ NÚMERO NENHUM NA MARCAÇÃO (I101)
+ * ---------------------------------------------------------------------------
+ * Houve aqui, durante um dia, um `data-alvo-abaixo-de` por grupo: a largura de
+ * mapa abaixo da qual aquela parcela deixa de ter todas as unidades como alvo,
+ * calculada da CAIXA de cada unidade. Saiu por decisão do lugar de direção, e a
+ * razão é dupla: ninguém o lia, e a medida que ele carregava não é a da casa. O
+ * alvo de uma área mede-se pelo QUADRADO INSCRITO desde a I82, e por essa medida
+ * nenhuma das três parcelas chega aos 44 px em largura nenhuma de telemóvel; a
+ * caixa dizia o contrário para o continente. Bytes que nenhum leitor usa não
+ * ficam na página, que é a disciplina da Emenda 19a.
+ *
+ * A REGRA QUE FICA É UMA SÓ, e a régua mede-a às sete larguras: abaixo de 1024 a
+ * rede mostra-se sempre, em linha; a partir de 1024 mostra-se a lista da coluna
+ * esquerda. Nenhuma largura mostra as duas formas, e nenhuma esconde a lista.
  */
 import { paisDoMapa, parcelasDoMapa } from '../../lib/mapa.mjs';
 import { routePath } from '../../lib/routes.mjs';
@@ -101,11 +114,7 @@ const parDeEstado =
 <div class="mapa-ilhas" data-mapa-ilhas>
   {
     parcelas.map((p) => (
-      <div
-        class="mapa-ilhas-grupo"
-        data-parcela-lista={p.chave}
-        data-alvo-abaixo-de={p.larguraMinimaPx}
-      >
+      <div class="mapa-ilhas-grupo" data-parcela-lista={p.chave}>
         {/* O nome da parcela é o de um lugar e não uma frase da casa: leva
             `data-lugar`, como o nome de um concelho leva. */}
         <p class="mapa-ilhas-k" data-lugar>

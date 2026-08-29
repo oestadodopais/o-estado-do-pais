@@ -227,6 +227,31 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
 
     <div class="cabeca-grelha" data-grelha>
       <Cabeca s={s} lang={lang} p={p} blocos={blocos} ambito="pais" lede={lede} />
+      {/* ------------------------------------------------------------------
+          OS NOMES DAS 29, IRMÃOS DA CABEÇA E DO INSTRUMENTO (29.08.2026)
+          ------------------------------------------------------------------
+          Estavam dentro de `MapaRespira`, por baixo do mapa, e por isso viviam
+          na coluna do instrumento: a 1280 eram 815 px de nomes à direita com a
+          coluna esquerda vazia por baixo da manchete. A decisão do diretor
+          põe-nos na coluna esquerda, onde havia papel a mais.
+
+          O BLOCO É FILHO DA GRELHA, e é isso que torna a colocação possível sem
+          uma segunda rendição: uma lista dentro do mapa não muda de coluna, e
+          duas listas seriam 58 ligações para 29 páginas. Quem decide a coluna é
+          a folha, pelo mesmo `.cabeca-grelha` que já coloca as outras duas.
+
+          E VEM ANTES DO MAPA NO DOCUMENTO (leitura cruzada de 29.08.2026). A
+          lista estava depois, e acima de 1024 ela está à esquerda e o mapa à
+          direita: quem percorre a página pelo teclado ou com um leitor de ecrã
+          encontrava as 29 áreas do mapa antes dos 29 nomes, que é o contrário
+          do que vê quem olha. A lista é o índice do mapa e a ordem do documento
+          passa a dizê-lo. Abaixo de 1024 a folha inverte a ordem no ecrã, com
+          `order`, porque ali o mapa é a coisa e os nomes são a rede dele; é a
+          única largura em que as duas ordens divergem, e a folha escreve
+          porquê.
+          ------------------------------------------------------------------ */}
+      <ListaDosNomes s={s} lang={lang} />
+
       <div class="cabeca-inst" data-coluna-instrumento>
         <MapaRespira s={s} lang={lang} p={p} concelhos={cs} />
 
@@ -247,20 +272,6 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
             ---------------------------------------------------------------- */}
       </div>
 
-      {/* ------------------------------------------------------------------
-          OS NOMES DAS 29, IRMÃOS DA CABEÇA E DO INSTRUMENTO (29.08.2026)
-          ------------------------------------------------------------------
-          Estavam dentro de `MapaRespira`, por baixo do mapa, e por isso viviam
-          na coluna do instrumento: a 1280 eram 815 px de nomes à direita com a
-          coluna esquerda vazia por baixo da manchete. A decisão do diretor
-          põe-nos na coluna esquerda, onde havia papel a mais.
-
-          O BLOCO É FILHO DA GRELHA, e é isso que torna a colocação possível sem
-          uma segunda rendição: uma lista dentro do mapa não muda de coluna, e
-          duas listas seriam 58 ligações para 29 páginas. Quem decide a coluna é
-          a folha, pelo mesmo `.cabeca-grelha` que já coloca as outras duas.
-          ------------------------------------------------------------------ */}
-      <ListaDosNomes s={s} lang={lang} />
     </div>
 
     {/* A REGUA DA REGIÃO SAIU DA PRIMEIRA PÁGINA (bloco A, itens A2 e A3).
