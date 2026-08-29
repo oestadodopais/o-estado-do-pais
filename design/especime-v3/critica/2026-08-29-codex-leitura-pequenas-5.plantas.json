@@ -1,0 +1,29 @@
+{
+ "registado_em": "2026-08-29",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "paginas/en-area-financas.html",
+   "descricao": "the unit of the public-debt row on the English Finanças page changed from «% of GDP» to «% of GNP» (a wrong translation of «% do PIB»)",
+   "sha256_antes": "73e55028577f87b97e4ca550f1192268c0f9a8b88a4c99ff7764939c11a8db3e",
+   "sha256_depois": "b6727cdaad6ba8045d238fe24f7480b9130e0eac196777244463d120fb17048d",
+   "contexto": "data-linha-campo=\"unit\">% of GDP<"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "paginas/en-ledger-evora-divida.html",
+   "descricao": "the language mark removed from the DGAL document title on the English ledger page of Évora's debt row",
+   "sha256_antes": "eee74d7c1f1e505ec234e98b41b29cb5dd80c09428775208cb4ff7af929916ad",
+   "sha256_depois": "a79b68f0fc66b476cd60b875020865068d6a4025357518742c09dd1c86c8c2e7",
+   "contexto": "lang=\"pt-PT\" data-linha-claim=\"evora-divida-dgal-2024\" data-linha-campo=\"document.title\""
+  },
+  {
+   "id": "P3",
+   "ficheiro": "dados/unidades.mjs",
+   "descricao": "the dictionary entry «dias» changed from 'days' to 'hours' (a false dictionary fact; the pages in the package still say days)",
+   "sha256_antes": "2164a59b26d60e4de04b2ab17c52ecab20c86039459740276329820fbee1795c",
+   "sha256_depois": "0220ce1803c47de8ea539c4ebfc62fbff27695747770bdcc69a4ef06abb0eeda",
+   "contexto": "  dias: 'days',"
+  }
+ ]
+}
