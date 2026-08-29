@@ -1,0 +1,9 @@
+{
+ "registado_em": "2026-08-29",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/wt-codex-tipo (worktree destacado de tipografia-2026-08-29 em 91c3b46)",
+ "plantas": [
+  {"id": "P1", "ficheiro": "TABELA-2.md (linha 10)", "descricao": "Ledger's median ink in a 1 px run changed from 0.540 to 0.450, which would make it third on measure 2 while ORDEM-2 and the notes keep it first", "sha256_antes": "bcdc6ea98b27f3a5a2f2705aa83cd1995b5d94f2f9fd2a150c26309559692c9e", "sha256_depois": "be519c17c43a0a65ad339f96480f1705a7590df5ef05d6bc83f47a52dd84187c", "contexto": "| 2 · tinta mediana numa corrida de 1 px (35 células) | 0.317 | 0.323 | 0.421 | 0.358 | 0.540 |"},
+  {"id": "P2", "ficheiro": "ORDEM-2.md (prose table, Literata row)", "descricao": "Literata's weighted sum changed from 33 to 31 while its bracket still reads 5·3 + 3·4 + 2·1 + 1·4", "sha256_antes": "ec7124eafb086f8b117dbe72599393491345f5b60538bbee97da2fbf57d3ebf6", "sha256_depois": "7eb608b4890b1e2d7a922a5295d34afe12c8a4def00a746f41098157fc0fc84f", "contexto": "| Literata | 3.º · 0.358 | — · — | 4.º · 907 | 1.º · 8.626 | 4.º · 549200 | **33** (5·3 + 3·4 + 2·1 + 1·4) |"},
+  {"id": "P3", "ficheiro": "NOTAS.md (linha 501)", "descricao": "the density spread between first and last prose changed from 7,7 % to 17,7 %; 977 against 907 is 7,7 %", "sha256_antes": "a9ddc17462172bc69134e4aed7553322ee3d0d70b1b637ca591bd8adab2fa473", "sha256_depois": "e3ea69353f56eb42ebf49525bba80c71601ec15b9efe61f055f8574429068c14", "contexto": "entre a primeira e a última é de 7,7%, e não dos 23% que a primeira ronda"}
+ ]
+}
