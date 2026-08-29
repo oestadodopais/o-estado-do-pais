@@ -1,15 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="O Estado do País">
   <title>O Estado do País</title>
-  <!-- FICHEIRO GERADO por design/marca/exportar.mjs app, do sinal de
-       design/marca/direcoes-e2/e2-unida-28.svg. Não se edita à mão.
-       O campo do original fica de fora: um favicon desenha-se sobre o
-       separador do navegador, e a cor dele é do cliente e não do sítio. -->
+  <!-- FICHEIRO GERADO por design/marca/exportar.mjs app, das barras de
+       design/marca/direcoes-k/favicon.svg, com a paleta escura de
+       marca-cheia-escuro.svg. Não se edita à mão.
+       O ficheiro do diretor já é sem campo, e é essa a razão de ser este e
+       não a cela que aqui entra: um favicon desenha-se sobre o separador do
+       navegador, e a cor desse separador é do cliente e não do sítio. Daí a
+       única regra que aqui se acrescenta, a da preferência de esquema. -->
   <style>
-    .tinta { fill: #17191b; }
-    @media (prefers-color-scheme: dark) { .tinta { fill: #f6f7f4; } }
+    .tinta { fill: #17191B; }
+    .valor { fill: #1F4E8C; }
+    @media (prefers-color-scheme: dark) {
+      .tinta { fill: #ECEEEA; }
+      .valor { fill: #7FA6DC; }
+    }
   </style>
-  <g transform="translate(-51.2 -51.2) scale(1.2)">
-    <path class="tinta" d="M404.52 277A150 150 0 1 0 377.28 344.27L343.32 319.55A108 108 0 1 1 362.94 271.12Z"/>
-    <path class="tinta" d="M107.48 235L404.52 235L404.52 277L107.48 277Z"/>
-  </g>
+  <path class="tinta" d="M86 100H426V172H86Z"/>
+  <path class="valor" d="M86 220H283V292H86Z"/>
+  <path class="tinta" d="M86 340H426V412H86Z"/>
 </svg>

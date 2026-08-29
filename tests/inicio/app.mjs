@@ -70,10 +70,20 @@
  *
  * A5 · OS DOIS FAVICONS. O ICO lê-se pelo seu DIRETÓRIO — seis bytes de cabeça e
  *      dezasseis por entrada — e tem de trazer os dois tamanhos, 32 e 16, cada
- *      um com os bytes que a entrada promete. O SVG tem de trazer os dois
+ *      um com os bytes que a entrada promete. O SVG tem de trazer os TRÊS
  *      caminhos do sinal e a regra do esquema escuro, e não pode trazer campo:
  *      um favicon é desenhado sobre o separador do navegador, e um quadrado
  *      opaco numa barra de separadores é uma mancha e não uma marca.
+ *
+ *      E «os três caminhos» não é uma contagem, é uma COMPARAÇÃO: cada um tem
+ *      de ser, carácter a carácter, a barra correspondente de
+ *      `design/marca/direcoes-k/favicon.svg`, que é a marca que o diretor
+ *      entregou a 29.08.2026, e as duas cores do esquema escuro têm de ser as
+ *      de `marca-cheia-escuro.svg`, que é a paleta escura que ele desenhou para
+ *      o mesmo desenho. É a única maneira de dizer que o favicon é a marca e
+ *      não uma coisa parecida com ela. A conversão de `<rect>` para `<path>` é
+ *      refeita AQUI, com o leitor desta régua: uma conferência que usasse a do
+ *      exportador confirmava-se a si própria.
  *
  * A6 · AS LIGAÇÕES NA CABEÇA DE TODAS AS ROTAS CONSTRUÍDAS DAS DUAS EDIÇÕES.
  *      Não numa amostra: em todas. Uma ligação que existe em 1357 páginas e
@@ -599,30 +609,101 @@ function mediuOsFavicons() {
 
   const svg = textoDoDist('/favicon.svg');
   if (svg === null) {
-    conta('A5b · o favicon.svg é o sinal, sem campo, com a regra do escuro', false, 'não foi construído');
+    conta(
+      'A5b · o favicon.svg são as três barras do diretor, sem campo, com a regra do escuro',
+      false,
+      'não foi construído',
+    );
     return;
   }
-  const caminhos = [...svg.matchAll(/<path class="tinta" d="([^"]+)"\s*\/>/g)].map((m) => m[1]);
+  const caminhos = [...svg.matchAll(/<path class="([a-z-]+)" d="([^"]+)"\s*\/>/g)].map((m) => ({
+    classe: m[1],
+    d: m[2],
+  }));
   const temRegra = /@media\s*\(prefers-color-scheme:\s*dark\)/.test(svg);
   const temCampo = /class="campo"/.test(svg) || /<rect\b/.test(svg);
-  /* O mesmo desenho da direção escolhida: os caminhos têm de ser, carácter a
-     carácter, os do grupo do sinal de `e2-unida-28.svg`. É a única maneira de
-     dizer que o favicon é a marca e não uma coisa parecida com ela. */
-  const fonte = fs.readFileSync(
-    path.join(RAIZ, 'design', 'marca', 'direcoes-e2', 'e2-unida-28.svg'),
-    'utf8',
-  );
-  const grupo = /<g class="sinal" transform="[^"]+">([\s\S]*?)<\/g>/.exec(fonte);
-  const daFonte = [...(grupo?.[1] ?? '').matchAll(/<path class="tinta" d="([^"]+)"\s*\/>/g)].map(
-    (m) => m[1],
-  );
-  const iguais = daFonte.length === 2 && caminhos.length === 2 && caminhos.every((d, i) => d === daFonte[i]);
-  medidas.favicon_svg = { caminhos: caminhos.length, regra_do_escuro: temRegra, campo: temCampo };
+
+  /* As barras dos ficheiros do diretor, lidas com a régua desta régua: um
+     `<rect>` de cada vez, atributo a atributo, sem presumir a ordem em que eles
+     estão escritos. E o retângulo vira caminho AQUI, para que a comparação
+     valha alguma coisa: se a conversão fosse pedida ao exportador, o que se
+     media era o exportador a concordar consigo próprio. */
+  const MARCA_K = path.join(RAIZ, 'design', 'marca', 'direcoes-k');
+  const barrasDe = (ficheiro) =>
+    [...fs.readFileSync(ficheiro, 'utf8').matchAll(/<rect\b[^>]*>/g)]
+      .map((m) => {
+        const atr = (n) => (new RegExp(`\\b${n}="([^"]*)"`).exec(m[0]) ?? [])[1] ?? null;
+        return {
+          x: atr('x'),
+          y: atr('y'),
+          largura: atr('width'),
+          altura: atr('height'),
+          cor: (atr('fill') ?? '').toUpperCase() || null,
+        };
+      })
+      /* O campo de um ficheiro de cela não tem `x` nem `y`; as barras têm. */
+      .filter((b) => b.x !== null && b.y !== null);
+  const caminhoDa = (b) => {
+    const x = Number(b.x);
+    const y = Number(b.y);
+    return `M${x} ${y}H${x + Number(b.largura)}V${y + Number(b.altura)}H${x}Z`;
+  };
+  const daFonte = barrasDe(path.join(MARCA_K, 'favicon.svg'));
+  const doEscuro = barrasDe(path.join(MARCA_K, 'marca-cheia-escuro.svg'));
+
+  /* As duas classes, pela ordem em que a COR aparece e não pela posição da
+     barra: as duas linhas de registo partilham uma regra, a do valor tem a
+     dela. É a ordem que o exportador usa, escrita aqui outra vez. */
+  const CLASSES = ['tinta', 'valor'];
+  const ordem = [];
+  for (const b of daFonte) if (!ordem.includes(b.cor)) ordem.push(b.cor);
+  const classeDa = (b) => CLASSES[ordem.indexOf(b.cor)];
+
+  /* As cores declaradas: as claras antes da regra do escuro, as escuras dentro
+     dela. O corte é o índice do `@media`, que é onde uma acaba e a outra
+     começa. */
+  const iEscuro = svg.indexOf('@media');
+  const iFimDoEstilo = svg.indexOf('</style>');
+  const noClaro = iEscuro > 0 ? svg.slice(0, iEscuro) : svg;
+  const noEscuro = iEscuro > 0 && iFimDoEstilo > iEscuro ? svg.slice(iEscuro, iFimDoEstilo) : '';
+  const corDe = (texto, classe) =>
+    ((new RegExp(`\\.${classe}\\s*\\{\\s*fill:\\s*(#[0-9A-Fa-f]{6})`).exec(texto) ?? [])[1] ?? '')
+      .toUpperCase() || null;
+
+  const asFormas =
+    daFonte.length === 3 &&
+    caminhos.length === daFonte.length &&
+    caminhos.every((c, i) => c.d === caminhoDa(daFonte[i]) && c.classe === classeDa(daFonte[i]));
+  const aPaleta =
+    ordem.length === 2 &&
+    doEscuro.length === daFonte.length &&
+    daFonte.every(
+      (b, i) =>
+        b.x === doEscuro[i].x &&
+        b.y === doEscuro[i].y &&
+        b.largura === doEscuro[i].largura &&
+        b.altura === doEscuro[i].altura,
+    ) &&
+    ordem.every((cor, i) => corDe(noClaro, CLASSES[i]) === cor) &&
+    daFonte.every((b, i) => corDe(noEscuro, classeDa(b)) === doEscuro[i].cor);
+
+  medidas.favicon_svg = {
+    caminhos: caminhos.length,
+    regra_do_escuro: temRegra,
+    campo: temCampo,
+    fonte: 'design/marca/direcoes-k/favicon.svg',
+    claro: ordem,
+    escuro: [...new Set(doEscuro.map((b) => b.cor))],
+    formas_iguais: asFormas,
+    paleta_igual: aPaleta,
+  };
   conta(
-    'A5b · o favicon.svg é o sinal, sem campo, com a regra do escuro',
-    caminhos.length === 2 && temRegra && !temCampo && iguais,
+    'A5b · o favicon.svg são as três barras do diretor, sem campo, com a regra do escuro',
+    caminhos.length === 3 && temRegra && !temCampo && asFormas && aPaleta,
     `${caminhos.length} caminho(s) · prefers-color-scheme: ${temRegra} · campo: ${temCampo} · ` +
-      `iguais aos de e2-unida-28.svg: ${iguais}`,
+      `iguais às barras de direcoes-k/favicon.svg: ${asFormas} · ` +
+      `paleta ${ordem.join(' e ')} → ${[...new Set(doEscuro.map((b) => b.cor))].join(' e ')} ` +
+      `(de marca-cheia-escuro.svg): ${aPaleta}`,
   );
 }
 
@@ -871,6 +952,36 @@ const PLANTAS = [
       caminho === '/favicon.svg'
         ? Buffer.from(buf.toString('utf8').replace(/@media[^}]+\}[^}]*\}/, ''))
         : buf,
+  },
+  {
+    /* Um píxel de deslocação numa barra. É o estrago que a comparação carácter
+       a carácter existe para apanhar, e nasceu com ela: sem esta planta, «os
+       caminhos são os do diretor» era uma frase que ninguém tinha visto falhar.
+       A mudança faz-se sobre o NÚMERO que lá está, e não sobre um número
+       escrito aqui, para que a planta continue a plantar se a marca mudar. */
+    nome: 'uma coordenada mudada num caminho do favicon.svg',
+    celulas: ['A5b'],
+    bytes: (caminho, buf) =>
+      caminho === '/favicon.svg'
+        ? Buffer.from(buf.toString('utf8').replace(/d="M(\d+) /, (_, n) => `d="M${Number(n) + 1} `))
+        : buf,
+  },
+  {
+    /* A cor do valor trocada pela da tinta na regra do escuro: o cobalto claro
+       do diretor desaparece e a barra do meio passa a papel. É um favicon que
+       continua a ler-se e que já não é a marca. */
+    nome: 'a cor do valor trocada na regra do escuro do favicon.svg',
+    celulas: ['A5b'],
+    bytes: (caminho, buf) => {
+      if (caminho !== '/favicon.svg') return buf;
+      const texto = buf.toString('utf8');
+      const i = texto.indexOf('@media');
+      if (i < 0) return buf;
+      return Buffer.from(
+        texto.slice(0, i) +
+          texto.slice(i).replace(/\.valor\s*\{\s*fill:\s*#[0-9A-Fa-f]{6}/, '.valor { fill: #ECEEEA'),
+      );
+    },
   },
 
 
