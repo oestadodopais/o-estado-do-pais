@@ -725,6 +725,7 @@ function main(argv) {
     }
   }
 
+  const rotulos = confereRotulos(regsDeLinhas, erros);
   const ficheirosCruzados = confereFicheiros(regsDeFicheiros, erros);
   confereRegistoDaTravessia(regsDeFicheiros, erros);
   const itensDaAgenda = confereInvariantes(erros);
@@ -734,6 +735,12 @@ function main(argv) {
     cinza(
       `  cruzamentos · ${total} linha(s) de origem externa em ${ficheiros} registo(s)` +
         (origem ? ` · ${origem.lidos} conferida(s) contra o motor` : ''),
+    ),
+  );
+  console.log(
+    cinza(
+      `  rótulos da fonte · ${rotulos.comRotulo} de ${rotulos.ficheiros} linha(s) com "name", ` +
+        `todas vindas do motor · ${rotulos.plantas} planta(s) vista(s)`,
     ),
   );
   if (regsDeFicheiros.length) {
@@ -773,6 +780,101 @@ function main(argv) {
   );
   console.log('');
   return 0;
+}
+
+/**
+ * ---------------------------------------------------------------------------
+ * O RÓTULO DA FONTE É ORIGEM, E NÃO PROSA DA CASA (29.08.2026)
+ * ---------------------------------------------------------------------------
+ *
+ * `name` é o rótulo com que o publicador imprime a figura, e `name_source` diz
+ * onde no ficheiro alojado ele foi lido. Os dois entram pelo exportador do
+ * motor e por mais lado nenhum.
+ *
+ * Para as linhas que atravessaram, a conferência já existia e não muda: o
+ * resumo dos bytes do ficheiro contra o resumo que o registo declara. Um rótulo
+ * alterado à mão numa linha cruzada muda os bytes, e o resumo desmente-o com a
+ * mensagem que já lá está.
+ *
+ * O que faltava é o outro lado, e é este: **uma linha que NÃO atravessou não
+ * pode trazer rótulo.** Sem isto, o campo era uma porta aberta para escrever um
+ * nome por cima de um número numa linha da casa — que é exactamente o que a
+ * regra proíbe, e o que o `ItemDoLivro.astro` dizia por escrito antes de o
+ * campo existir: «escrever um nome por cima de cada linha seria inventar
+ * conteúdo que a fonte não publicou».
+ *
+ * A régua é sobre o registo da travessia, como as outras: uma linha com rótulo
+ * cujo id não está em nenhum mapa `rows` fecha a construção.
+ */
+
+/** Os ids que atravessaram, de todos os registos de linhas. */
+function idsQueAtravessaram(regsDeLinhas) {
+  const ids = new Set();
+  for (const { dados } of regsDeLinhas) for (const id of Object.keys(dados.rows ?? {})) ids.add(id);
+  return ids;
+}
+
+/**
+ * As linhas com rótulo que não atravessaram. Uma função pura sobre duas listas,
+ * para que a planta lhe possa passar um caso feito à mão.
+ */
+function rotulosSemTravessia(linhas, cruzadas) {
+  return linhas.filter((l) => l.temRotulo && !cruzadas.has(l.id)).map((l) => l.id);
+}
+
+function confereRotulos(regsDeLinhas, erros) {
+  /* A PLANTA, ANTES DE QUALQUER CONTAGEM. Três casos: uma linha com rótulo que
+     atravessou (verde), uma com rótulo que não atravessou (vermelho), e uma sem
+     rótulo que não atravessou (verde, que é o estado de 1 049 linhas da casa e
+     não pode ser confundido com o defeito). */
+  const plantas = [
+    { nome: 'linha com rótulo que atravessou', linhas: [{ id: 'a', temRotulo: true }], cruzadas: new Set(['a']), espera: 0 },
+    { nome: 'linha com rótulo que NÃO atravessou', linhas: [{ id: 'b', temRotulo: true }], cruzadas: new Set(), espera: 1 },
+    { nome: 'linha da casa, sem rótulo', linhas: [{ id: 'c', temRotulo: false }], cruzadas: new Set(), espera: 0 },
+  ];
+  for (const p of plantas) {
+    const achado = rotulosSemTravessia(p.linhas, p.cruzadas);
+    if (achado.length !== p.espera) {
+      erros.push(
+        `a prova da régua dos rótulos falhou no caso "${p.nome}": esperavam-se ${p.espera} ` +
+          `e encontraram-se ${achado.length}. A contagem abaixo deixou de valer.`,
+      );
+    }
+  }
+
+  const cruzadas = idsQueAtravessaram(regsDeLinhas);
+  const linhas = [];
+  let ficheiros = 0;
+  for (const nome of fs.readdirSync(DIR_CLAIMS).sort()) {
+    if (!nome.endsWith('.yml')) continue;
+    ficheiros++;
+    let doc;
+    try {
+      doc = load(fs.readFileSync(path.join(DIR_CLAIMS, nome), 'utf8'));
+    } catch {
+      /* Um YAML inválido é defeito de outra régua (`npm run ledger:check`), e
+         dizê-lo duas vezes só faz duas mensagens para um erro. */
+      continue;
+    }
+    const rot = doc?.name;
+    linhas.push({
+      id: nome.slice(0, -4),
+      temRotulo: rot !== null && rot !== undefined && String(rot) !== '',
+    });
+  }
+
+  const semTravessia = rotulosSemTravessia(linhas, cruzadas);
+  if (semTravessia.length) {
+    erros.push(
+      `${semTravessia.length} linha(s) trazem "name" e não atravessaram: ` +
+        `${semTravessia.slice(0, 6).join(', ')}${semTravessia.length > 6 ? ', …' : ''}.\n` +
+        `        O rótulo é o que a FONTE imprime por cima da figura, copiado do ficheiro ` +
+        `alojado pelo leitor que leu o valor. Não se escreve neste repositório: um nome escrito ` +
+        `aqui é a casa a nomear um número que a fonte não nomeou.\n` +
+        `        Entra por ResearchHub/publisher/export_site_rows.py --write, ou não entra.`,
+    );
+  }
+  return { ficheiros, comRotulo: linhas.filter((l) => l.temRotulo).length, plantas: plantas.length };
 }
 
 /** O resumo da linha do motor: JSON canónico, chaves ordenadas, sem espaços. */

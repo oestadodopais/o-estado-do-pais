@@ -428,6 +428,7 @@ for (const c of CAMPOS_PUBLICADOS) {
 
 const linhasDoLivro = allClaims();
 let conjuntoConferido = 0;
+let rotulosNoConjunto = 0;
 
 const brutoConjunto = leDoDist(CONJUNTO.csv);
 if (brutoConjunto) {
@@ -453,6 +454,26 @@ if (brutoConjunto) {
     const iId = cabecalho.indexOf('id');
     const iValor = cabecalho.indexOf('value');
     const iLido = cabecalho.indexOf('access_date');
+    /* O RÓTULO DA FONTE VAI NO FICHEIRO, E É EXIGIDO AQUI (29.08.2026).
+       As duas colunas entram sozinhas, porque o cabeçalho se compõe de
+       `CAMPOS_PUBLICADOS` e não de uma segunda lista — e é exactamente por isso
+       que uma conferência que se contentasse com o cabeçalho não conferia nada:
+       comparava a lista com ela própria. O que se exige é o conteúdo. Quem
+       descarrega o conjunto leva o nome com que cada fonte publica cada figura,
+       e onde no ficheiro ele foi lido, ou não leva o livro-razão. */
+    const iNome = cabecalho.indexOf('name');
+    const iOndeNome = cabecalho.indexOf('name_source');
+    for (const [coluna, i] of [
+      ['name', iNome],
+      ['name_source', iOndeNome],
+    ]) {
+      if (i < 0) {
+        err(
+          `${CONJUNTO.csv}: não traz a coluna "${coluna}". O rótulo com que a fonte publica ` +
+            `cada figura é um campo publicado do livro-razão, e o conjunto é o livro-razão.`,
+        );
+      }
+    }
     for (let n = 0; n < dados.length; n++) {
       const c = linhasDoLivro[n];
       const r = dados[n];
@@ -460,6 +481,8 @@ if (brutoConjunto) {
         ['id', iId, c.id],
         ['value', iValor, c.value],
         ['access_date', iLido, c.access_date ?? null],
+        ['name', iNome, c.name ?? null],
+        ['name_source', iOndeNome, c.name_source ?? null],
       ]) {
         if (i < 0) continue;
         const noFicheiro = r[i] ?? '';
@@ -473,6 +496,21 @@ if (brutoConjunto) {
       }
       conjuntoConferido++;
     }
+    /* E a contagem, dos dois lados: quantas linhas do ficheiro trazem rótulo,
+       contra quantas linhas do livro-razão o trazem. Uma coluna presente e
+       vazia passaria a conferência campo a campo linha a linha se o gerador a
+       esvaziasse toda; não passa esta. */
+    const comRotuloNoFicheiro = iNome < 0 ? 0 : dados.filter((r) => (r[iNome] ?? '') !== '').length;
+    const comRotuloNoLivro = linhasDoLivro.filter(
+      (c) => c.name !== null && c.name !== undefined && String(c.name) !== '',
+    ).length;
+    if (comRotuloNoFicheiro !== comRotuloNoLivro) {
+      err(
+        `${CONJUNTO.csv}: ${comRotuloNoFicheiro} registo(s) com "name" e o livro-razão tem ` +
+          `${comRotuloNoLivro} linha(s) com rótulo da fonte.`,
+      );
+    }
+    rotulosNoConjunto = comRotuloNoFicheiro;
   }
 }
 
@@ -580,7 +618,8 @@ console.log(cinza(`  dados descarregáveis · ${Object.keys(DADOS).length} fiche
 console.log(cinza(`  ficheiros alojados · ${alojadas.length} linha(s) com document.hosted · ${recontadas} recontada(s)`));
 console.log(
   cinza(
-    `  conjunto de dados · ${conjuntoConferido} registos no CSV · ${porLinhaConferidas} ficheiros de linha · ` +
+    `  conjunto de dados · ${conjuntoConferido} registos no CSV · ${rotulosNoConjunto} com o rótulo da fonte · ` +
+      `${porLinhaConferidas} ficheiros de linha · ` +
       `licença ${LICENCA ? LICENCA.nome : 'por decidir'} · ${paginasQueLigam.size} endereço(s) ligado(s)`,
   ),
 );

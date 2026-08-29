@@ -1914,6 +1914,19 @@ function verificaTexto({ rota, root, err }) {
 const CAMPOS_DA_LINHA = new Set([
   'unit',
   'source',
+  /**
+   * O rótulo com que a fonte publica a figura, e onde no ficheiro alojado ele
+   * foi lido (29.08.2026).
+   *
+   * Confere-se como qualquer outro campo — carácter a carácter contra o
+   * livro-razão — e é o que torna o campo publicável: a página mostra o nome
+   * que a fonte imprime, e o portão prova que é esse e não outro. Não está em
+   * `CAMPOS_DA_LINHA_POR_LINGUA`, e é de propósito: um rótulo está na língua da
+   * FONTE e é o mesmo nas duas edições. O que muda com a edição é a marca de
+   * língua que o embrulha, e essa é de `scripts/check-lingua.mjs`.
+   */
+  'name',
+  'name_source',
   'document.title',
   'document.edition',
   'document.locator',
