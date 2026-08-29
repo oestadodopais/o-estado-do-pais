@@ -94,6 +94,29 @@ export const FAMILIAS = {
     smcp: true,
   },
 
+  /**
+   * ACRESCENTADA PELO LUGAR DE DIREÇÃO DEPOIS DA ADENDA 2, e é a única
+   * candidata do estudo que não é variável.
+   *
+   * `peso: '400'` não é uma escolha: é tudo o que o ficheiro tem. O sítio compõe
+   * a prosa a 400, 500, 600 e 700 (as quatro estão na folha construída) e usa
+   * itálico em 209 sítios das páginas. A Ledger traz um só ficheiro, regular e
+   * direito. Declarar aqui `100 900` seria dizer ao navegador que o ficheiro
+   * tem pesos que não tem; declarar `400` deixa o navegador fazer o que faz
+   * quando lhe falta um peso, que é engordar o desenho ele próprio, e é isso
+   * que as pranchas mostram. A falta não se emenda no interruptor: mede-se.
+   */
+  ledger: {
+    papel: 'prosa',
+    rotulo: 'Ledger',
+    css: 'Ledger',
+    peso: '400',
+    ficheiros: { normal: 'ledger/Ledger-latin.woff2' },
+    /* Sem `smcp` na GSUB (medido em `MEDIDAS-2-tipo.json`): as versais ficam na
+       Spectral SC, como na Newsreader. */
+    smcp: false,
+  },
+
   publicsans: {
     papel: 'instrumento',
     rotulo: 'Public Sans',
