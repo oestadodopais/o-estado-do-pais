@@ -66,6 +66,7 @@ import {
 import { caminhoDaLinha, caminhoDoLivro, tituloDaLinha, descricaoDaLinha } from '../lib/livro.mjs';
 import { studyTitle } from '../data/studies.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
+import { linguaDoTituloDoDocumento } from '../i18n/lingua-dos-titulos.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import { LICENCA } from '../data/licenca.mjs';
@@ -261,12 +262,34 @@ const ficha = [
     k: ehSerieDeDados ? s.prov.serie : s.prov.documento,
     campo: 'document.title',
     valor: claim.document?.title ?? null,
+    /* O TÍTULO DE UM DOCUMENTO É UM NOME (I91, segunda metade, 29.08.2026): não
+       se traduz, e diz em que língua está. A tabela é
+       `src/i18n/lingua-dos-titulos.mjs`. */
+    lingua: linguaDoTituloDoDocumento(claim.document?.title ?? null, lang),
   },
   { k: s.prov.edicao, campo: 'document.edition', valor: claim.document?.edition ?? null },
   /* Onde no documento está o excerto. Opcional: a maior parte das fontes é uma
      página só e não há para onde apontar; quando há, é o que separa «está neste
      relatório» de «está nesta página deste relatório». */
-  { k: s.prov.localizacao, campo: 'document.locator', valor: claim.document?.locator ?? null },
+  {
+    k: s.prov.localizacao,
+    campo: 'document.locator',
+    valor: claim.document?.locator ?? null,
+    /**
+     * O LOCALIZADOR ESTÁ NA LÍNGUA DO DOCUMENTO QUE ELE LOCALIZA (I91,
+     * 29.08.2026), e por isso leva a marca do título.
+     *
+     * «linha de ÁGUEDA, coluna (5) do quadro — Dívida total (Exclui dívidas não
+     * orçamentais, exceções previstas na Lei n.º 73/2013, no OE/2024 e FAM)» é
+     * português, e é onde vivem 928 das ocorrências do nome daquela lei na
+     * edição inglesa. Não é uma suposição: os 2 216 localizadores do
+     * livro-razão pertencem, TODOS, a linhas cujo documento está declarado
+     * português, e `scripts/check-lingua.mjs` fecha a construção no dia em que
+     * um localizador aparecer numa linha de documento inglês — que é o dia em
+     * que esta regra deixa de valer e alguém tem de decidir.
+     */
+    lingua: linguaDoTituloDoDocumento(claim.document?.title ?? null, lang),
+  },
   { k: s.prov.lido, campo: 'access_date', valor: claim.access_date },
   { k: s.prov.referencia, campo: 'reference_date', valor: claim.reference_date },
 ].filter((l) => l.valor !== null && l.valor !== undefined);
@@ -312,7 +335,12 @@ const unidade = unidadeDaLinha(claim.unit, lang);
 const atribuicaoPecas = [
   presente(claim.source) ? { k: s.livro.linha.publicadoPor, campo: 'source', valor: claim.source } : null,
   presente(claim.document?.title)
-    ? { k: s.livro.linha.publicadoEm, campo: 'document.title', valor: claim.document.title }
+    ? {
+        k: s.livro.linha.publicadoEm,
+        campo: 'document.title',
+        valor: claim.document.title,
+        lingua: linguaDoTituloDoDocumento(claim.document.title, lang),
+      }
     : null,
   presente(claim.document?.edition)
     ? { k: null, campo: 'document.edition', valor: claim.document.edition, entreParenteses: true }

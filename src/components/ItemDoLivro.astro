@@ -49,6 +49,7 @@ import CampoDaLinha from './CampoDaLinha.astro';
 import { provenienciaIncompleta } from '../lib/ledger.mjs';
 import { t } from '../i18n/strings.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
+import { linguaDoTituloDoDocumento } from '../i18n/lingua-dos-titulos.mjs';
 
 /* `...resto` deixa quem chama pendurar as suas marcas no item sem que este
    componente saiba o que elas são: é assim que a página de uma área lhe põe
@@ -96,7 +97,14 @@ const unidade = unidadeDaLinha(c.unit, lang);
       {documento && c.document?.title !== null && c.document?.title !== undefined && (
         <span class="livro-item-campo">
           <span class="livro-item-k">{s.prov.documento}</span>{' '}
-          <CampoDaLinha id={c.id} campo="document.title" valor={c.document.title} lang={lang} />
+          {/* O TÍTULO É UM NOME, E DIZ EM QUE LÍNGUA ESTÁ (I91, 29.08.2026). */}
+          <CampoDaLinha
+            id={c.id}
+            campo="document.title"
+            valor={c.document.title}
+            lang={lang}
+            lingua={linguaDoTituloDoDocumento(c.document.title, lang)}
+          />
         </span>
       )}
       {c.access_date !== null && c.access_date !== undefined && (
