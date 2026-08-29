@@ -239,22 +239,66 @@ const pontosDaSerie = serieAnos.map((r, i) => ({
 }));
 if (temTempo) SERIE.yTecto = alturaDe(tectoIndice);
 
-/* A frase da camada 2 do instrumento: o que a série mede, e nada mais. */
+/**
+ * A frase da camada 2 do instrumento: o que a série mede, e nada mais.
+ *
+ * ---------------------------------------------------------------------------
+ * O VERBO SAI DOS DOIS VALORES, E NÃO DA CADEIA (I89, 29.08.2026)
+ * ---------------------------------------------------------------------------
+ * Até aqui o verbo vivia dentro de `tempoSerieA` («desceu de », «fell from »), e
+ * a vista limitava-se a pendurar os números nos pedaços entre eles. Era
+ * verdadeiro na única página que hoje rende a frase, porque em Évora o índice
+ * desce; **num concelho cuja série subisse, a página escrevia uma falsidade**, e
+ * nenhuma régua do sítio a apanhava, porque nenhuma comparava a palavra com os
+ * números que ela descreve.
+ *
+ * A escolha faz-se aqui, sobre os MESMOS valores que a frase cita, lidos do
+ * livro-razão pela mesma função que os rende. Três sentidos e três formas:
+ *
+ *   · o segundo menor  → «desceu de A em ano1 para B em ano2.»
+ *   · o segundo maior  → «subiu de A em ano1 para B em ano2.»
+ *   · os dois iguais   → «manteve-se em A em ano1 e em ano2.»
+ *
+ * A FORMA DA IGUALDADE PERDE O «DE … PARA …», e não é uma abreviatura: não há
+ * de onde nem para onde, e escrever «de 105,5% para 105,5%» era descrever uma
+ * mudança que não houve. O valor diz-se uma vez, com o seu selo, e os dois anos
+ * ficam nomeados.
+ *
+ * A GUARDA É `tests/municipio/serie.mjs`, e mede o que se lê e não o que se
+ * escreveu: lê as páginas construídas, tira de cada frase o verbo e os dois
+ * valores, e confere que a palavra e os números dizem a mesma coisa. Vê primeiro
+ * um estrago plantado (a frase «desceu» com o segundo valor maior) e só depois
+ * conta zero.
+ */
 const primeiro = serieAnos[0];
 const ultimo = serieAnos[serieAnos.length - 1];
-const indiceSeriePartes = temTempo
-  ? [
-      s.municipio.tempoSerieA,
-      { claim: primeiro.indice, sufixo: '%' },
-      s.municipio.tempoSerieB,
-      { ref: primeiro.ref },
-      s.municipio.tempoSerieC,
-      { claim: ultimo.indice, sufixo: '%' },
-      s.municipio.tempoSerieD,
-      { ref: ultimo.ref },
-      s.municipio.tempoSerieE,
-    ]
+const indiceDoAno = (r) => parsePtNumber(getClaim(r.indice).value);
+const sobeOuDesce = temTempo
+  ? Math.sign(indiceDoAno(ultimo) - indiceDoAno(primeiro))
   : null;
+const indiceSeriePartes = !temTempo
+  ? null
+  : sobeOuDesce === 0
+    ? [
+        s.municipio.tempoSerieManteve,
+        { claim: primeiro.indice, sufixo: '%' },
+        s.municipio.tempoSerieB,
+        { ref: primeiro.ref },
+        s.municipio.tempoSerieIgualD,
+        { ref: ultimo.ref },
+        s.municipio.tempoSerieE,
+      ]
+    : [
+        sobeOuDesce > 0 ? s.municipio.tempoSerieSubiu : s.municipio.tempoSerieDesceu,
+        { claim: primeiro.indice, sufixo: '%' },
+        s.municipio.tempoSerieB,
+        { ref: primeiro.ref },
+        s.municipio.tempoSerieC,
+        { claim: ultimo.indice, sufixo: '%' },
+        s.municipio.tempoSerieD,
+        { ref: ultimo.ref },
+        s.municipio.tempoSerieE,
+      ];
 
 /**
  * A BANDA DOS MANDATOS (v2, IDENTIDADE.md §11; `design/DECISAO.md`, «Município»).

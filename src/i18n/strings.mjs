@@ -1296,11 +1296,26 @@ export const STRINGS = {
          atribuía à DGAL um número que ela não publica: o que ela publica são as
          duas colunas, a dívida total e o limite, e o índice é o quociente que a
          casa calcula sobre elas. A peça já o diz noutro sítio; a frase da camada
-         2 dizia o contrário, e é a primeira coisa que se lê no instrumento. */
-      tempoSerieA: 'O índice de dívida, calculado sobre os dados da Direção-Geral, desceu de ',
+         2 dizia o contrário, e é a primeira coisa que se lê no instrumento.
+
+         O VERBO PASSOU A SER DECIDIDO PELOS DOIS VALORES (I89, 29.08.2026). Dizia
+         «desceu» dentro da cadeia, e os pedaços seguintes eram só o que vai entre
+         os números: o sítio não escolhia entre subida e descida. Era verdadeiro na
+         única página que hoje rende a frase, Évora, onde o índice vai de 242,6% em
+         2014 a 105,5% em 2024; num concelho cuja série subisse, a mesma cadeia
+         escrevia uma falsidade, e nenhuma régua a apanhava. São três formas, uma
+         por sentido, e a vista escolhe pelos dois valores. A forma da igualdade
+         perde o «de … para …», porque não há de onde nem para onde: diz o valor
+         uma vez e nomeia os dois anos. */
+      tempoSerieDesceu: 'O índice de dívida, calculado sobre os dados da Direção-Geral, desceu de ',
+      tempoSerieSubiu: 'O índice de dívida, calculado sobre os dados da Direção-Geral, subiu de ',
+      tempoSerieManteve: 'O índice de dívida, calculado sobre os dados da Direção-Geral, manteve-se em ',
       tempoSerieB: ' em ',
       tempoSerieC: ' para ',
       tempoSerieD: ' em ',
+      /* O pedaço entre os dois anos da forma da igualdade, no lugar do « para »
+         que a frase da mudança leva. */
+      tempoSerieIgualD: ' e em ',
       tempoSerieE: '.',
       tempoK: 'Quem administrou, e o que as contas registaram',
       /* A banda dos mandatos: o rótulo do desenho e o rótulo da legenda que
@@ -2164,10 +2179,15 @@ export const STRINGS = {
       contasDivergenciaArredondada: '· the local-government directorate rounds to the euro; the two figures differ by cents.',
       /* I88, 28.08.2026: dizia «The directorate-general’s debt index fell
          from ». Ver a razão escrita na chave portuguesa. */
-      tempoSerieA: 'The debt index, computed on the directorate-general’s data, fell from ',
+      /* I89, 29.08.2026: o verbo era fixo em «fell from». Ver a razão escrita nas
+         chaves portuguesas. */
+      tempoSerieDesceu: 'The debt index, computed on the directorate-general’s data, fell from ',
+      tempoSerieSubiu: 'The debt index, computed on the directorate-general’s data, rose from ',
+      tempoSerieManteve: 'The debt index, computed on the directorate-general’s data, stayed at ',
       tempoSerieB: ' in ',
       tempoSerieC: ' to ',
       tempoSerieD: ' in ',
+      tempoSerieIgualD: ' and in ',
       tempoSerieE: '.',
       tempoK: 'Who governed, and what the accounts recorded',
       tempoBandaK: 'Terms, in time',
