@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" role="img" aria-label="marcador: alinhar à esquerda">
+  <title>marcador · alinhar à esquerda (quatro linhas alternadas)</title>
+  <!-- MARCADOR, não é marca de ninguém. Na grelha da direção K: margem 86,
+       altura de linha 72, intervalo 48, comprimentos 340 e 197 alternados.
+       Quatro linhas dão 4 × 72 + 3 × 48 = 432, centradas nos 512 (topo a 40). -->
+  <rect x="86" y="40" width="340" height="72"/>
+  <rect x="86" y="160" width="197" height="72"/>
+  <rect x="86" y="280" width="340" height="72"/>
+  <rect x="86" y="400" width="197" height="72"/>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="O Estado do País">
+  <title>K4 · o valor mais pesado</title>
+  <!-- DERIVADA, 29.08.2026, ADENDA 8. Não é ficheiro do diretor: os sete dele
+     estão em design/marca/direcoes-k/ e não se tocam. Sai da geometria dele
+     (grelha 512, linhas 340 × 72 em x 86, intervalo 48, valor 197) com UMA
+     coisa mudada, e o LEIA-ME desta pasta diz qual e porquê.
+     K4 · o valor mais pesado -->
+  <rect x="86" y="100" width="340" height="72" fill="#17191B"/>
+  <rect x="86" y="206" width="197" height="100" fill="#1F4E8C"/>
+  <rect x="86" y="340" width="340" height="72" fill="#17191B"/>
+</svg>

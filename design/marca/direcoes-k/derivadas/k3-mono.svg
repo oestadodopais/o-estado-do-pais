@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" role="img" aria-label="O Estado do País, monocromático">
+  <title>K3 · o valor mais fino · monocromático</title>
+  <!-- DERIVADA, 29.08.2026, ADENDA 8. A prova de monocromia: as três barras
+       na mesma tinta, sem cobalto. É onde se vê o que resta da distinção
+       quando a cor sai (impressão a uma cor, alto contraste do sistema, um
+       separador que pinta o favicon de uma cor só). mesmo x e mesmo comprimento (197); a altura desce de 72 para 40, centrada no mesmo eixo (y 256), que é o centro da marca. Em monocromia o valor passa a distinguir-se por PESO e não só por comprimento. -->
+  <rect x="86" y="100" width="340" height="72"/>
+  <rect x="86" y="236" width="197" height="40"/>
+  <rect x="86" y="340" width="340" height="72"/>
+</svg>
