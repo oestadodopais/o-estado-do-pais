@@ -1238,8 +1238,10 @@ Cerca de **270 mil símbolos** na sexta sessão, a do «e» explorado. Foram tr�
 2. **A ideia do diretor, desenhada à letra, não dá um «e».** Isso não se vê em números: as ilhas dizem «sinal em duas peças», e uma peça a mais podia ser só uma peça a mais. O que a captura de 60 px mostra é o que essas duas peças fazem juntas, que é um traço horizontal dentro de um anel, ou seja o sinal de menos. A medição diz o que mudou; olhar diz o que passou a estar lá.
 3. **A oitava linha da grelha não foi pedida, e é a melhor resposta à primeira pista.** Ao ver as três linhas de barra presa à esquerda ao lado das de barra unida, o que salta é que o entalhe e o corte comem o mesmo lado. A correção é uma linha de código e mudou a recomendação; sem a folha cruzada, as sete linhas pedidas tinham sido entregues e a oitava não existia.
 
-Cerca de **330 mil símbolos** na sétima sessão, a da palavra «estado» em
-minúsculas. Foram quatro correções, e as quatro vieram de olhar:
+Cerca de **460 mil símbolos** na sétima sessão, a da palavra «estado» em
+minúsculas, e o número é maior do que o das anteriores por uma razão que não é
+de desenho: a adenda mudou duas vezes com a ronda a meio, e cada mudança obrigou
+a refazer o que já estava rendido. Foram quatro correções, e as quatro vieram de olhar:
 
 1. **A régua do texto composto media a caixa de LINHA e não a de tinta.** O «e» do
    Spectral, enquadrado por `Range.getBoundingClientRect()`, saía com metade do
