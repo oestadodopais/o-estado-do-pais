@@ -1,0 +1,6919 @@
+{
+  "gerado_em": "2026-08-29T15:37:53.897Z",
+  "positivos_conhecidos": {
+    "B-KP1a_alvo_estreito": {
+      "descricao": "alvo com largura insuficiente (a dimensão que a M11 não testava)",
+      "esperado": "Beja com largura < 44px, mínimo da largura da janela < 44",
+      "obtido": {
+        "larguraBeja": 16,
+        "minimoW": 16
+      },
+      "passou": true
+    },
+    "B-KP1b_alvos_sobrepostos": {
+      "descricao": "dois alvos deslocados para a mesma caixa de ecrã",
+      "esperado": "o par [beja,braga] aparece na lista de sobreposições",
+      "obtido": [
+        [
+          "beja",
+          "braga"
+        ]
+      ],
+      "passou": true
+    },
+    "B-KP2_pontuacao": {
+      "descricao": "::after{content:\".\"} injectado nos itens da lista",
+      "esperado": "pelo menos um item com ::before/::after de conteúdo real",
+      "obtido": [
+        {
+          "tag": "LI",
+          "antes": "none",
+          "depois": "\".\""
+        },
+        {
+          "tag": "LI",
+          "antes": "none",
+          "depois": "\".\""
+        },
+        {
+          "tag": "LI",
+          "antes": "none",
+          "depois": "\".\""
+        }
+      ],
+      "passou": true
+    },
+    "B-KP4_atributo_presente": {
+      "descricao": "data-alvo-abaixo-de injectado num grupo (a régua conta 1, não 0)",
+      "esperado": 1,
+      "obtido": 1,
+      "passou": true
+    },
+    "B-KP5_ordem_documento": {
+      "descricao": "compareDocumentPosition, testado nos dois sentidos com marcação sintética",
+      "esperado": [
+        "lista_antes_do_mapa",
+        "mapa_antes_da_lista"
+      ],
+      "obtido": [
+        "lista_antes_do_mapa",
+        "mapa_antes_da_lista"
+      ],
+      "passou": true
+    }
+  },
+  "medicoes": {
+    "novo": {
+      "pt": {
+        "320": {
+          "altura": 7785,
+          "janela": 320,
+          "nomes": [
+            {
+              "slug": "aveiro",
+              "w": 54.109375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1594.171875,
+                "right": 72.109375,
+                "bottom": 1638.171875,
+                "left": 18
+              }
+            },
+            {
+              "slug": "beja",
+              "w": 44,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1594.171875,
+                "right": 128.109375,
+                "bottom": 1638.171875,
+                "left": 84.109375
+              }
+            },
+            {
+              "slug": "braga",
+              "w": 49.484375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1594.171875,
+                "right": 189.59375,
+                "bottom": 1638.171875,
+                "left": 140.109375
+              }
+            },
+            {
+              "slug": "braganca",
+              "w": 72.921875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1594.171875,
+                "right": 274.515625,
+                "bottom": 1638.171875,
+                "left": 201.59375
+              }
+            },
+            {
+              "slug": "castelo-branco",
+              "w": 108.515625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1638.171875,
+                "right": 126.515625,
+                "bottom": 1682.171875,
+                "left": 18
+              }
+            },
+            {
+              "slug": "coimbra",
+              "w": 67.734375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1638.171875,
+                "right": 206.25,
+                "bottom": 1682.171875,
+                "left": 138.515625
+              }
+            },
+            {
+              "slug": "evora",
+              "w": 48.828125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1638.171875,
+                "right": 267.078125,
+                "bottom": 1682.171875,
+                "left": 218.25
+              }
+            },
+            {
+              "slug": "faro",
+              "w": 44,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1682.171875,
+                "right": 62,
+                "bottom": 1726.171875,
+                "left": 18
+              }
+            },
+            {
+              "slug": "guarda",
+              "w": 60.125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1682.171875,
+                "right": 134.125,
+                "bottom": 1726.171875,
+                "left": 74
+              }
+            },
+            {
+              "slug": "leiria",
+              "w": 49.03125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1682.171875,
+                "right": 195.15625,
+                "bottom": 1726.171875,
+                "left": 146.125
+              }
+            },
+            {
+              "slug": "lisboa",
+              "w": 54.1875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1682.171875,
+                "right": 261.34375,
+                "bottom": 1726.171875,
+                "left": 207.15625
+              }
+            },
+            {
+              "slug": "portalegre",
+              "w": 79.78125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1726.171875,
+                "right": 97.78125,
+                "bottom": 1770.171875,
+                "left": 18
+              }
+            },
+            {
+              "slug": "porto",
+              "w": 47.28125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1726.171875,
+                "right": 157.0625,
+                "bottom": 1770.171875,
+                "left": 109.78125
+              }
+            },
+            {
+              "slug": "santarem",
+              "w": 76.0625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1726.171875,
+                "right": 245.125,
+                "bottom": 1770.171875,
+                "left": 169.0625
+              }
+            },
+            {
+              "slug": "setubal",
+              "w": 61.40625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1770.171875,
+                "right": 79.40625,
+                "bottom": 1814.171875,
+                "left": 18
+              }
+            },
+            {
+              "slug": "viana-do-castelo",
+              "w": 118.90625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1770.171875,
+                "right": 210.3125,
+                "bottom": 1814.171875,
+                "left": 91.40625
+              }
+            },
+            {
+              "slug": "vila-real",
+              "w": 67.796875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1770.171875,
+                "right": 290.109375,
+                "bottom": 1814.171875,
+                "left": 222.3125
+              }
+            },
+            {
+              "slug": "viseu",
+              "w": 48.28125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1814.171875,
+                "right": 66.28125,
+                "bottom": 1858.171875,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-da-madeira",
+              "w": 112.109375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1884.96875,
+                "right": 130.109375,
+                "bottom": 1928.96875,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-de-porto-santo",
+              "w": 134.484375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1884.96875,
+                "right": 276.59375,
+                "bottom": 1928.96875,
+                "left": 142.109375
+              }
+            },
+            {
+              "slug": "ilha-da-graciosa",
+              "w": 115.984375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1955.765625,
+                "right": 133.984375,
+                "bottom": 1999.765625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-das-flores",
+              "w": 105.375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1955.765625,
+                "right": 251.359375,
+                "bottom": 1999.765625,
+                "left": 145.984375
+              }
+            },
+            {
+              "slug": "ilha-de-santa-maria",
+              "w": 136.375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1999.765625,
+                "right": 154.375,
+                "bottom": 2043.765625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-de-sao-jorge",
+              "w": 119.171875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1999.765625,
+                "right": 285.546875,
+                "bottom": 2043.765625,
+                "left": 166.375
+              }
+            },
+            {
+              "slug": "ilha-de-sao-miguel",
+              "w": 130.3125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 2043.765625,
+                "right": 148.3125,
+                "bottom": 2087.765625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-do-corvo",
+              "w": 97.421875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 2043.765625,
+                "right": 257.734375,
+                "bottom": 2087.765625,
+                "left": 160.3125
+              }
+            },
+            {
+              "slug": "ilha-do-faial",
+              "w": 90.0625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 2087.765625,
+                "right": 108.0625,
+                "bottom": 2131.765625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-do-pico",
+              "w": 86.625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 2087.765625,
+                "right": 206.6875,
+                "bottom": 2131.765625,
+                "left": 120.0625
+              }
+            },
+            {
+              "slug": "ilha-terceira",
+              "w": 93.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 2131.765625,
+                "right": 111.265625,
+                "bottom": 2175.765625,
+                "left": 18
+              }
+            }
+          ],
+          "minW": 44,
+          "minH": 44,
+          "sobrepostos": [],
+          "pontuacao": [],
+          "gaps": [
+            {
+              "parcela": "continente",
+              "columnGap": "12px"
+            },
+            {
+              "parcela": "madeira",
+              "columnGap": "12px"
+            },
+            {
+              "parcela": "acores",
+              "columnGap": "12px"
+            }
+          ],
+          "ordemDom": "lista_antes_do_mapa",
+          "listaRect": {
+            "x": 18,
+            "y": 1571.375,
+            "width": 284,
+            "height": 604.390625,
+            "top": 1571.375,
+            "right": 302,
+            "bottom": 2175.765625,
+            "left": 18
+          },
+          "figuraRect": {
+            "x": 18,
+            "y": 1034.25,
+            "width": 284,
+            "height": 511.125,
+            "top": 1034.25,
+            "right": 302,
+            "bottom": 1545.375,
+            "left": 18
+          },
+          "ordemCss": {
+            "lista": "5",
+            "instrumento": "4",
+            "col": "1"
+          },
+          "numListas": 3,
+          "alvoAbaixoDeContagem": 0,
+          "familiasTotal": {
+            "mapa": 29,
+            "lista": 29
+          }
+        },
+        "360": {
+          "altura": 7411,
+          "janela": 360,
+          "nomes": [
+            {
+              "slug": "aveiro",
+              "w": 54.109375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1539.546875,
+                "right": 72.109375,
+                "bottom": 1583.546875,
+                "left": 18
+              }
+            },
+            {
+              "slug": "beja",
+              "w": 44,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1539.546875,
+                "right": 128.109375,
+                "bottom": 1583.546875,
+                "left": 84.109375
+              }
+            },
+            {
+              "slug": "braga",
+              "w": 49.484375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1539.546875,
+                "right": 189.59375,
+                "bottom": 1583.546875,
+                "left": 140.109375
+              }
+            },
+            {
+              "slug": "braganca",
+              "w": 72.921875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1539.546875,
+                "right": 274.515625,
+                "bottom": 1583.546875,
+                "left": 201.59375
+              }
+            },
+            {
+              "slug": "castelo-branco",
+              "w": 108.515625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1583.546875,
+                "right": 126.515625,
+                "bottom": 1627.546875,
+                "left": 18
+              }
+            },
+            {
+              "slug": "coimbra",
+              "w": 67.734375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1583.546875,
+                "right": 206.25,
+                "bottom": 1627.546875,
+                "left": 138.515625
+              }
+            },
+            {
+              "slug": "evora",
+              "w": 48.828125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1583.546875,
+                "right": 267.078125,
+                "bottom": 1627.546875,
+                "left": 218.25
+              }
+            },
+            {
+              "slug": "faro",
+              "w": 44,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1583.546875,
+                "right": 323.078125,
+                "bottom": 1627.546875,
+                "left": 279.078125
+              }
+            },
+            {
+              "slug": "guarda",
+              "w": 60.125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1627.546875,
+                "right": 78.125,
+                "bottom": 1671.546875,
+                "left": 18
+              }
+            },
+            {
+              "slug": "leiria",
+              "w": 49.03125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1627.546875,
+                "right": 139.15625,
+                "bottom": 1671.546875,
+                "left": 90.125
+              }
+            },
+            {
+              "slug": "lisboa",
+              "w": 54.1875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1627.546875,
+                "right": 205.34375,
+                "bottom": 1671.546875,
+                "left": 151.15625
+              }
+            },
+            {
+              "slug": "portalegre",
+              "w": 79.78125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1627.546875,
+                "right": 297.125,
+                "bottom": 1671.546875,
+                "left": 217.34375
+              }
+            },
+            {
+              "slug": "porto",
+              "w": 47.28125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1671.546875,
+                "right": 65.28125,
+                "bottom": 1715.546875,
+                "left": 18
+              }
+            },
+            {
+              "slug": "santarem",
+              "w": 76.0625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1671.546875,
+                "right": 153.34375,
+                "bottom": 1715.546875,
+                "left": 77.28125
+              }
+            },
+            {
+              "slug": "setubal",
+              "w": 61.40625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1671.546875,
+                "right": 226.75,
+                "bottom": 1715.546875,
+                "left": 165.34375
+              }
+            },
+            {
+              "slug": "viana-do-castelo",
+              "w": 118.90625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1715.546875,
+                "right": 136.90625,
+                "bottom": 1759.546875,
+                "left": 18
+              }
+            },
+            {
+              "slug": "vila-real",
+              "w": 67.796875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1715.546875,
+                "right": 216.703125,
+                "bottom": 1759.546875,
+                "left": 148.90625
+              }
+            },
+            {
+              "slug": "viseu",
+              "w": 48.28125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1715.546875,
+                "right": 276.984375,
+                "bottom": 1759.546875,
+                "left": 228.703125
+              }
+            },
+            {
+              "slug": "ilha-da-madeira",
+              "w": 112.109375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1786.34375,
+                "right": 130.109375,
+                "bottom": 1830.34375,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-de-porto-santo",
+              "w": 134.484375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1786.34375,
+                "right": 276.59375,
+                "bottom": 1830.34375,
+                "left": 142.109375
+              }
+            },
+            {
+              "slug": "ilha-da-graciosa",
+              "w": 115.984375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1857.140625,
+                "right": 133.984375,
+                "bottom": 1901.140625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-das-flores",
+              "w": 105.375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1857.140625,
+                "right": 251.359375,
+                "bottom": 1901.140625,
+                "left": 145.984375
+              }
+            },
+            {
+              "slug": "ilha-de-santa-maria",
+              "w": 136.375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1901.140625,
+                "right": 154.375,
+                "bottom": 1945.140625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-de-sao-jorge",
+              "w": 119.171875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1901.140625,
+                "right": 285.546875,
+                "bottom": 1945.140625,
+                "left": 166.375
+              }
+            },
+            {
+              "slug": "ilha-de-sao-miguel",
+              "w": 130.3125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1945.140625,
+                "right": 148.3125,
+                "bottom": 1989.140625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-do-corvo",
+              "w": 97.421875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1945.140625,
+                "right": 257.734375,
+                "bottom": 1989.140625,
+                "left": 160.3125
+              }
+            },
+            {
+              "slug": "ilha-do-faial",
+              "w": 90.0625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1989.140625,
+                "right": 108.0625,
+                "bottom": 2033.140625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-do-pico",
+              "w": 86.625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1989.140625,
+                "right": 206.6875,
+                "bottom": 2033.140625,
+                "left": 120.0625
+              }
+            },
+            {
+              "slug": "ilha-terceira",
+              "w": 93.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1989.140625,
+                "right": 311.953125,
+                "bottom": 2033.140625,
+                "left": 218.6875
+              }
+            }
+          ],
+          "minW": 44,
+          "minH": 44,
+          "sobrepostos": [],
+          "pontuacao": [],
+          "gaps": [
+            {
+              "parcela": "continente",
+              "columnGap": "12px"
+            },
+            {
+              "parcela": "madeira",
+              "columnGap": "12px"
+            },
+            {
+              "parcela": "acores",
+              "columnGap": "12px"
+            }
+          ],
+          "ordemDom": "lista_antes_do_mapa",
+          "listaRect": {
+            "x": 18,
+            "y": 1516.75,
+            "width": 324,
+            "height": 516.390625,
+            "top": 1516.75,
+            "right": 342,
+            "bottom": 2033.140625,
+            "left": 18
+          },
+          "figuraRect": {
+            "x": 18,
+            "y": 926.890625,
+            "width": 324,
+            "height": 563.859375,
+            "top": 926.890625,
+            "right": 342,
+            "bottom": 1490.75,
+            "left": 18
+          },
+          "ordemCss": {
+            "lista": "5",
+            "instrumento": "4",
+            "col": "1"
+          },
+          "numListas": 3,
+          "alvoAbaixoDeContagem": 0,
+          "familiasTotal": {
+            "mapa": 29,
+            "lista": 29
+          }
+        },
+        "390": {
+          "altura": 7383,
+          "janela": 390,
+          "nomes": [
+            {
+              "slug": "aveiro",
+              "w": 54.109375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1550.921875,
+                "right": 72.109375,
+                "bottom": 1594.921875,
+                "left": 18
+              }
+            },
+            {
+              "slug": "beja",
+              "w": 44,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1550.921875,
+                "right": 128.109375,
+                "bottom": 1594.921875,
+                "left": 84.109375
+              }
+            },
+            {
+              "slug": "braga",
+              "w": 49.484375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1550.921875,
+                "right": 189.59375,
+                "bottom": 1594.921875,
+                "left": 140.109375
+              }
+            },
+            {
+              "slug": "braganca",
+              "w": 72.921875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1550.921875,
+                "right": 274.515625,
+                "bottom": 1594.921875,
+                "left": 201.59375
+              }
+            },
+            {
+              "slug": "castelo-branco",
+              "w": 108.515625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1594.921875,
+                "right": 126.515625,
+                "bottom": 1638.921875,
+                "left": 18
+              }
+            },
+            {
+              "slug": "coimbra",
+              "w": 67.734375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1594.921875,
+                "right": 206.25,
+                "bottom": 1638.921875,
+                "left": 138.515625
+              }
+            },
+            {
+              "slug": "evora",
+              "w": 48.828125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1594.921875,
+                "right": 267.078125,
+                "bottom": 1638.921875,
+                "left": 218.25
+              }
+            },
+            {
+              "slug": "faro",
+              "w": 44,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1594.921875,
+                "right": 323.078125,
+                "bottom": 1638.921875,
+                "left": 279.078125
+              }
+            },
+            {
+              "slug": "guarda",
+              "w": 60.125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1638.921875,
+                "right": 78.125,
+                "bottom": 1682.921875,
+                "left": 18
+              }
+            },
+            {
+              "slug": "leiria",
+              "w": 49.03125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1638.921875,
+                "right": 139.15625,
+                "bottom": 1682.921875,
+                "left": 90.125
+              }
+            },
+            {
+              "slug": "lisboa",
+              "w": 54.1875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1638.921875,
+                "right": 205.34375,
+                "bottom": 1682.921875,
+                "left": 151.15625
+              }
+            },
+            {
+              "slug": "portalegre",
+              "w": 79.78125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1638.921875,
+                "right": 297.125,
+                "bottom": 1682.921875,
+                "left": 217.34375
+              }
+            },
+            {
+              "slug": "porto",
+              "w": 47.28125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1638.921875,
+                "right": 356.40625,
+                "bottom": 1682.921875,
+                "left": 309.125
+              }
+            },
+            {
+              "slug": "santarem",
+              "w": 76.0625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1682.921875,
+                "right": 94.0625,
+                "bottom": 1726.921875,
+                "left": 18
+              }
+            },
+            {
+              "slug": "setubal",
+              "w": 61.40625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1682.921875,
+                "right": 167.46875,
+                "bottom": 1726.921875,
+                "left": 106.0625
+              }
+            },
+            {
+              "slug": "viana-do-castelo",
+              "w": 118.90625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1682.921875,
+                "right": 298.375,
+                "bottom": 1726.921875,
+                "left": 179.46875
+              }
+            },
+            {
+              "slug": "vila-real",
+              "w": 67.796875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1726.921875,
+                "right": 85.796875,
+                "bottom": 1770.921875,
+                "left": 18
+              }
+            },
+            {
+              "slug": "viseu",
+              "w": 48.28125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1726.921875,
+                "right": 146.078125,
+                "bottom": 1770.921875,
+                "left": 97.796875
+              }
+            },
+            {
+              "slug": "ilha-da-madeira",
+              "w": 112.109375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1797.71875,
+                "right": 130.109375,
+                "bottom": 1841.71875,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-de-porto-santo",
+              "w": 134.484375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1797.71875,
+                "right": 276.59375,
+                "bottom": 1841.71875,
+                "left": 142.109375
+              }
+            },
+            {
+              "slug": "ilha-da-graciosa",
+              "w": 115.984375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1868.515625,
+                "right": 133.984375,
+                "bottom": 1912.515625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-das-flores",
+              "w": 105.375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1868.515625,
+                "right": 251.359375,
+                "bottom": 1912.515625,
+                "left": 145.984375
+              }
+            },
+            {
+              "slug": "ilha-de-santa-maria",
+              "w": 136.375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1912.515625,
+                "right": 154.375,
+                "bottom": 1956.515625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-de-sao-jorge",
+              "w": 119.171875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1912.515625,
+                "right": 285.546875,
+                "bottom": 1956.515625,
+                "left": 166.375
+              }
+            },
+            {
+              "slug": "ilha-de-sao-miguel",
+              "w": 130.3125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1956.515625,
+                "right": 148.3125,
+                "bottom": 2000.515625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-do-corvo",
+              "w": 97.421875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1956.515625,
+                "right": 257.734375,
+                "bottom": 2000.515625,
+                "left": 160.3125
+              }
+            },
+            {
+              "slug": "ilha-do-faial",
+              "w": 90.0625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1956.515625,
+                "right": 359.796875,
+                "bottom": 2000.515625,
+                "left": 269.734375
+              }
+            },
+            {
+              "slug": "ilha-do-pico",
+              "w": 86.625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 2000.515625,
+                "right": 104.625,
+                "bottom": 2044.515625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-terceira",
+              "w": 93.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 2000.515625,
+                "right": 209.890625,
+                "bottom": 2044.515625,
+                "left": 116.625
+              }
+            }
+          ],
+          "minW": 44,
+          "minH": 44,
+          "sobrepostos": [],
+          "pontuacao": [],
+          "gaps": [
+            {
+              "parcela": "continente",
+              "columnGap": "12px"
+            },
+            {
+              "parcela": "madeira",
+              "columnGap": "12px"
+            },
+            {
+              "parcela": "acores",
+              "columnGap": "12px"
+            }
+          ],
+          "ordemDom": "lista_antes_do_mapa",
+          "listaRect": {
+            "x": 18,
+            "y": 1528.125,
+            "width": 354,
+            "height": 516.390625,
+            "top": 1528.125,
+            "right": 372,
+            "bottom": 2044.515625,
+            "left": 18
+          },
+          "figuraRect": {
+            "x": 18,
+            "y": 898.703125,
+            "width": 354,
+            "height": 603.421875,
+            "top": 898.703125,
+            "right": 372,
+            "bottom": 1502.125,
+            "left": 18
+          },
+          "ordemCss": {
+            "lista": "5",
+            "instrumento": "4",
+            "col": "1"
+          },
+          "numListas": 3,
+          "alvoAbaixoDeContagem": 0,
+          "familiasTotal": {
+            "mapa": 29,
+            "lista": 29
+          }
+        },
+        "430": {
+          "altura": 7173,
+          "janela": 430,
+          "nomes": [
+            {
+              "slug": "aveiro",
+              "w": 54.109375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1497.109375,
+                "right": 72.109375,
+                "bottom": 1541.109375,
+                "left": 18
+              }
+            },
+            {
+              "slug": "beja",
+              "w": 44,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1497.109375,
+                "right": 128.109375,
+                "bottom": 1541.109375,
+                "left": 84.109375
+              }
+            },
+            {
+              "slug": "braga",
+              "w": 49.484375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1497.109375,
+                "right": 189.59375,
+                "bottom": 1541.109375,
+                "left": 140.109375
+              }
+            },
+            {
+              "slug": "braganca",
+              "w": 72.921875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1497.109375,
+                "right": 274.515625,
+                "bottom": 1541.109375,
+                "left": 201.59375
+              }
+            },
+            {
+              "slug": "castelo-branco",
+              "w": 108.515625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1497.109375,
+                "right": 395.03125,
+                "bottom": 1541.109375,
+                "left": 286.515625
+              }
+            },
+            {
+              "slug": "coimbra",
+              "w": 67.734375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1541.109375,
+                "right": 85.734375,
+                "bottom": 1585.109375,
+                "left": 18
+              }
+            },
+            {
+              "slug": "evora",
+              "w": 48.828125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1541.109375,
+                "right": 146.5625,
+                "bottom": 1585.109375,
+                "left": 97.734375
+              }
+            },
+            {
+              "slug": "faro",
+              "w": 44,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1541.109375,
+                "right": 202.5625,
+                "bottom": 1585.109375,
+                "left": 158.5625
+              }
+            },
+            {
+              "slug": "guarda",
+              "w": 60.125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1541.109375,
+                "right": 274.6875,
+                "bottom": 1585.109375,
+                "left": 214.5625
+              }
+            },
+            {
+              "slug": "leiria",
+              "w": 49.03125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1541.109375,
+                "right": 335.71875,
+                "bottom": 1585.109375,
+                "left": 286.6875
+              }
+            },
+            {
+              "slug": "lisboa",
+              "w": 54.1875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1541.109375,
+                "right": 401.90625,
+                "bottom": 1585.109375,
+                "left": 347.71875
+              }
+            },
+            {
+              "slug": "portalegre",
+              "w": 79.78125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1585.109375,
+                "right": 97.78125,
+                "bottom": 1629.109375,
+                "left": 18
+              }
+            },
+            {
+              "slug": "porto",
+              "w": 47.28125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1585.109375,
+                "right": 157.0625,
+                "bottom": 1629.109375,
+                "left": 109.78125
+              }
+            },
+            {
+              "slug": "santarem",
+              "w": 76.0625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1585.109375,
+                "right": 245.125,
+                "bottom": 1629.109375,
+                "left": 169.0625
+              }
+            },
+            {
+              "slug": "setubal",
+              "w": 61.40625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1585.109375,
+                "right": 318.53125,
+                "bottom": 1629.109375,
+                "left": 257.125
+              }
+            },
+            {
+              "slug": "viana-do-castelo",
+              "w": 118.90625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1629.109375,
+                "right": 136.90625,
+                "bottom": 1673.109375,
+                "left": 18
+              }
+            },
+            {
+              "slug": "vila-real",
+              "w": 67.796875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1629.109375,
+                "right": 216.703125,
+                "bottom": 1673.109375,
+                "left": 148.90625
+              }
+            },
+            {
+              "slug": "viseu",
+              "w": 48.28125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1629.109375,
+                "right": 276.984375,
+                "bottom": 1673.109375,
+                "left": 228.703125
+              }
+            },
+            {
+              "slug": "ilha-da-madeira",
+              "w": 112.109375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1699.90625,
+                "right": 130.109375,
+                "bottom": 1743.90625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-de-porto-santo",
+              "w": 134.484375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1699.90625,
+                "right": 276.59375,
+                "bottom": 1743.90625,
+                "left": 142.109375
+              }
+            },
+            {
+              "slug": "ilha-da-graciosa",
+              "w": 115.984375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1770.703125,
+                "right": 133.984375,
+                "bottom": 1814.703125,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-das-flores",
+              "w": 105.375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1770.703125,
+                "right": 251.359375,
+                "bottom": 1814.703125,
+                "left": 145.984375
+              }
+            },
+            {
+              "slug": "ilha-de-santa-maria",
+              "w": 136.375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1770.703125,
+                "right": 399.734375,
+                "bottom": 1814.703125,
+                "left": 263.359375
+              }
+            },
+            {
+              "slug": "ilha-de-sao-jorge",
+              "w": 119.171875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1814.703125,
+                "right": 137.171875,
+                "bottom": 1858.703125,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-de-sao-miguel",
+              "w": 130.3125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1814.703125,
+                "right": 279.484375,
+                "bottom": 1858.703125,
+                "left": 149.171875
+              }
+            },
+            {
+              "slug": "ilha-do-corvo",
+              "w": 97.421875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1814.703125,
+                "right": 388.90625,
+                "bottom": 1858.703125,
+                "left": 291.484375
+              }
+            },
+            {
+              "slug": "ilha-do-faial",
+              "w": 90.0625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1858.703125,
+                "right": 108.0625,
+                "bottom": 1902.703125,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-do-pico",
+              "w": 86.625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1858.703125,
+                "right": 206.6875,
+                "bottom": 1902.703125,
+                "left": 120.0625
+              }
+            },
+            {
+              "slug": "ilha-terceira",
+              "w": 93.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1858.703125,
+                "right": 311.953125,
+                "bottom": 1902.703125,
+                "left": 218.6875
+              }
+            }
+          ],
+          "minW": 44,
+          "minH": 44,
+          "sobrepostos": [],
+          "pontuacao": [],
+          "gaps": [
+            {
+              "parcela": "continente",
+              "columnGap": "12px"
+            },
+            {
+              "parcela": "madeira",
+              "columnGap": "12px"
+            },
+            {
+              "parcela": "acores",
+              "columnGap": "12px"
+            }
+          ],
+          "ordemDom": "lista_antes_do_mapa",
+          "listaRect": {
+            "x": 18,
+            "y": 1474.3125,
+            "width": 394,
+            "height": 428.390625,
+            "top": 1474.3125,
+            "right": 412,
+            "bottom": 1902.703125,
+            "left": 18
+          },
+          "figuraRect": {
+            "x": 18,
+            "y": 792.15625,
+            "width": 394,
+            "height": 656.15625,
+            "top": 792.15625,
+            "right": 412,
+            "bottom": 1448.3125,
+            "left": 18
+          },
+          "ordemCss": {
+            "lista": "5",
+            "instrumento": "4",
+            "col": "1"
+          },
+          "numListas": 3,
+          "alvoAbaixoDeContagem": 0,
+          "familiasTotal": {
+            "mapa": 29,
+            "lista": 29
+          }
+        },
+        "768": {
+          "altura": 5188,
+          "janela": 768,
+          "nomes": [
+            {
+              "slug": "aveiro",
+              "w": 54.109375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1112.796875,
+                "right": 84.828125,
+                "bottom": 1156.796875,
+                "left": 30.71875
+              }
+            },
+            {
+              "slug": "beja",
+              "w": 44,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1112.796875,
+                "right": 140.828125,
+                "bottom": 1156.796875,
+                "left": 96.828125
+              }
+            },
+            {
+              "slug": "braga",
+              "w": 49.484375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1112.796875,
+                "right": 202.3125,
+                "bottom": 1156.796875,
+                "left": 152.828125
+              }
+            },
+            {
+              "slug": "braganca",
+              "w": 72.921875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1112.796875,
+                "right": 287.234375,
+                "bottom": 1156.796875,
+                "left": 214.3125
+              }
+            },
+            {
+              "slug": "castelo-branco",
+              "w": 108.515625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1112.796875,
+                "right": 407.75,
+                "bottom": 1156.796875,
+                "left": 299.234375
+              }
+            },
+            {
+              "slug": "coimbra",
+              "w": 67.734375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1112.796875,
+                "right": 487.484375,
+                "bottom": 1156.796875,
+                "left": 419.75
+              }
+            },
+            {
+              "slug": "evora",
+              "w": 48.828125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1112.796875,
+                "right": 548.3125,
+                "bottom": 1156.796875,
+                "left": 499.484375
+              }
+            },
+            {
+              "slug": "faro",
+              "w": 44,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1112.796875,
+                "right": 604.3125,
+                "bottom": 1156.796875,
+                "left": 560.3125
+              }
+            },
+            {
+              "slug": "guarda",
+              "w": 60.125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1112.796875,
+                "right": 676.4375,
+                "bottom": 1156.796875,
+                "left": 616.3125
+              }
+            },
+            {
+              "slug": "leiria",
+              "w": 49.03125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1156.796875,
+                "right": 79.75,
+                "bottom": 1200.796875,
+                "left": 30.71875
+              }
+            },
+            {
+              "slug": "lisboa",
+              "w": 54.1875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1156.796875,
+                "right": 145.9375,
+                "bottom": 1200.796875,
+                "left": 91.75
+              }
+            },
+            {
+              "slug": "portalegre",
+              "w": 79.78125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1156.796875,
+                "right": 237.71875,
+                "bottom": 1200.796875,
+                "left": 157.9375
+              }
+            },
+            {
+              "slug": "porto",
+              "w": 47.28125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1156.796875,
+                "right": 297,
+                "bottom": 1200.796875,
+                "left": 249.71875
+              }
+            },
+            {
+              "slug": "santarem",
+              "w": 76.0625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1156.796875,
+                "right": 385.0625,
+                "bottom": 1200.796875,
+                "left": 309
+              }
+            },
+            {
+              "slug": "setubal",
+              "w": 61.40625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1156.796875,
+                "right": 458.46875,
+                "bottom": 1200.796875,
+                "left": 397.0625
+              }
+            },
+            {
+              "slug": "viana-do-castelo",
+              "w": 118.90625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1156.796875,
+                "right": 589.375,
+                "bottom": 1200.796875,
+                "left": 470.46875
+              }
+            },
+            {
+              "slug": "vila-real",
+              "w": 67.796875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1156.796875,
+                "right": 669.171875,
+                "bottom": 1200.796875,
+                "left": 601.375
+              }
+            },
+            {
+              "slug": "viseu",
+              "w": 48.28125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1156.796875,
+                "right": 729.453125,
+                "bottom": 1200.796875,
+                "left": 681.171875
+              }
+            },
+            {
+              "slug": "ilha-da-madeira",
+              "w": 112.109375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1227.59375,
+                "right": 142.828125,
+                "bottom": 1271.59375,
+                "left": 30.71875
+              }
+            },
+            {
+              "slug": "ilha-de-porto-santo",
+              "w": 134.484375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1227.59375,
+                "right": 289.3125,
+                "bottom": 1271.59375,
+                "left": 154.828125
+              }
+            },
+            {
+              "slug": "ilha-da-graciosa",
+              "w": 115.984375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1298.390625,
+                "right": 146.703125,
+                "bottom": 1342.390625,
+                "left": 30.71875
+              }
+            },
+            {
+              "slug": "ilha-das-flores",
+              "w": 105.375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1298.390625,
+                "right": 264.078125,
+                "bottom": 1342.390625,
+                "left": 158.703125
+              }
+            },
+            {
+              "slug": "ilha-de-santa-maria",
+              "w": 136.375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1298.390625,
+                "right": 412.453125,
+                "bottom": 1342.390625,
+                "left": 276.078125
+              }
+            },
+            {
+              "slug": "ilha-de-sao-jorge",
+              "w": 119.171875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1298.390625,
+                "right": 543.625,
+                "bottom": 1342.390625,
+                "left": 424.453125
+              }
+            },
+            {
+              "slug": "ilha-de-sao-miguel",
+              "w": 130.3125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1298.390625,
+                "right": 685.9375,
+                "bottom": 1342.390625,
+                "left": 555.625
+              }
+            },
+            {
+              "slug": "ilha-do-corvo",
+              "w": 97.421875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1342.390625,
+                "right": 128.140625,
+                "bottom": 1386.390625,
+                "left": 30.71875
+              }
+            },
+            {
+              "slug": "ilha-do-faial",
+              "w": 90.0625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1342.390625,
+                "right": 230.203125,
+                "bottom": 1386.390625,
+                "left": 140.140625
+              }
+            },
+            {
+              "slug": "ilha-do-pico",
+              "w": 86.625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1342.390625,
+                "right": 328.828125,
+                "bottom": 1386.390625,
+                "left": 242.203125
+              }
+            },
+            {
+              "slug": "ilha-terceira",
+              "w": 93.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1342.390625,
+                "right": 434.09375,
+                "bottom": 1386.390625,
+                "left": 340.828125
+              }
+            }
+          ],
+          "minW": 44,
+          "minH": 44,
+          "sobrepostos": [],
+          "pontuacao": [],
+          "gaps": [
+            {
+              "parcela": "continente",
+              "columnGap": "12px"
+            },
+            {
+              "parcela": "madeira",
+              "columnGap": "12px"
+            },
+            {
+              "parcela": "acores",
+              "columnGap": "12px"
+            }
+          ],
+          "ordemDom": "lista_antes_do_mapa",
+          "listaRect": {
+            "x": 30.71875,
+            "y": 1090,
+            "width": 706.5625,
+            "height": 296.390625,
+            "top": 1090,
+            "right": 737.28125,
+            "bottom": 1386.390625,
+            "left": 30.71875
+          },
+          "figuraRect": {
+            "x": 30.71875,
+            "y": 619.65625,
+            "width": 706.5625,
+            "height": 438.34375,
+            "top": 619.65625,
+            "right": 737.28125,
+            "bottom": 1058,
+            "left": 30.71875
+          },
+          "ordemCss": {
+            "lista": "2",
+            "instrumento": "1",
+            "col": "0"
+          },
+          "numListas": 3,
+          "alvoAbaixoDeContagem": 0,
+          "familiasTotal": {
+            "mapa": 29,
+            "lista": 29
+          }
+        },
+        "1024": {
+          "altura": 3901,
+          "janela": 1024,
+          "nomes": [
+            {
+              "slug": "aveiro",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 667.5625,
+                "right": 140.21875,
+                "bottom": 711.5625,
+                "left": 40.953125
+              }
+            },
+            {
+              "slug": "beja",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 711.5625,
+                "right": 140.21875,
+                "bottom": 755.5625,
+                "left": 40.953125
+              }
+            },
+            {
+              "slug": "braga",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 755.5625,
+                "right": 140.21875,
+                "bottom": 799.5625,
+                "left": 40.953125
+              }
+            },
+            {
+              "slug": "braganca",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 799.5625,
+                "right": 140.21875,
+                "bottom": 843.5625,
+                "left": 40.953125
+              }
+            },
+            {
+              "slug": "castelo-branco",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 843.5625,
+                "right": 140.21875,
+                "bottom": 887.5625,
+                "left": 40.953125
+              }
+            },
+            {
+              "slug": "coimbra",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 887.5625,
+                "right": 140.21875,
+                "bottom": 931.5625,
+                "left": 40.953125
+              }
+            },
+            {
+              "slug": "evora",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 931.5625,
+                "right": 140.21875,
+                "bottom": 975.5625,
+                "left": 40.953125
+              }
+            },
+            {
+              "slug": "faro",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 975.5625,
+                "right": 140.21875,
+                "bottom": 1019.5625,
+                "left": 40.953125
+              }
+            },
+            {
+              "slug": "guarda",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1019.5625,
+                "right": 140.21875,
+                "bottom": 1063.5625,
+                "left": 40.953125
+              }
+            },
+            {
+              "slug": "leiria",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 667.5625,
+                "right": 259.96875,
+                "bottom": 711.5625,
+                "left": 160.703125
+              }
+            },
+            {
+              "slug": "lisboa",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 711.5625,
+                "right": 259.96875,
+                "bottom": 755.5625,
+                "left": 160.703125
+              }
+            },
+            {
+              "slug": "portalegre",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 755.5625,
+                "right": 259.96875,
+                "bottom": 799.5625,
+                "left": 160.703125
+              }
+            },
+            {
+              "slug": "porto",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 799.5625,
+                "right": 259.96875,
+                "bottom": 843.5625,
+                "left": 160.703125
+              }
+            },
+            {
+              "slug": "santarem",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 843.5625,
+                "right": 259.96875,
+                "bottom": 887.5625,
+                "left": 160.703125
+              }
+            },
+            {
+              "slug": "setubal",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 887.5625,
+                "right": 259.96875,
+                "bottom": 931.5625,
+                "left": 160.703125
+              }
+            },
+            {
+              "slug": "viana-do-castelo",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 931.5625,
+                "right": 259.96875,
+                "bottom": 975.5625,
+                "left": 160.703125
+              }
+            },
+            {
+              "slug": "vila-real",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 975.5625,
+                "right": 259.96875,
+                "bottom": 1019.5625,
+                "left": 160.703125
+              }
+            },
+            {
+              "slug": "viseu",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1019.5625,
+                "right": 259.96875,
+                "bottom": 1063.5625,
+                "left": 160.703125
+              }
+            },
+            {
+              "slug": "ilha-da-madeira",
+              "w": 113.734375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 667.5625,
+                "right": 394.15625,
+                "bottom": 711.5625,
+                "left": 280.421875
+              }
+            },
+            {
+              "slug": "ilha-de-porto-santo",
+              "w": 113.734375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 711.5625,
+                "right": 394.15625,
+                "bottom": 755.5625,
+                "left": 280.421875
+              }
+            },
+            {
+              "slug": "ilha-da-graciosa",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 667.5625,
+                "right": 530.125,
+                "bottom": 711.5625,
+                "left": 414.625
+              }
+            },
+            {
+              "slug": "ilha-das-flores",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 711.5625,
+                "right": 530.125,
+                "bottom": 755.5625,
+                "left": 414.625
+              }
+            },
+            {
+              "slug": "ilha-de-santa-maria",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 755.5625,
+                "right": 530.125,
+                "bottom": 799.5625,
+                "left": 414.625
+              }
+            },
+            {
+              "slug": "ilha-de-sao-jorge",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 799.5625,
+                "right": 530.125,
+                "bottom": 843.5625,
+                "left": 414.625
+              }
+            },
+            {
+              "slug": "ilha-de-sao-miguel",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 843.5625,
+                "right": 530.125,
+                "bottom": 887.5625,
+                "left": 414.625
+              }
+            },
+            {
+              "slug": "ilha-do-corvo",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 887.5625,
+                "right": 530.125,
+                "bottom": 931.5625,
+                "left": 414.625
+              }
+            },
+            {
+              "slug": "ilha-do-faial",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 931.5625,
+                "right": 530.125,
+                "bottom": 975.5625,
+                "left": 414.625
+              }
+            },
+            {
+              "slug": "ilha-do-pico",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 975.5625,
+                "right": 530.125,
+                "bottom": 1019.5625,
+                "left": 414.625
+              }
+            },
+            {
+              "slug": "ilha-terceira",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1019.5625,
+                "right": 530.125,
+                "bottom": 1063.5625,
+                "left": 414.625
+              }
+            }
+          ],
+          "minW": 99.265625,
+          "minH": 44,
+          "sobrepostos": [],
+          "pontuacao": [],
+          "gaps": [
+            {
+              "parcela": "continente",
+              "columnGap": "20.48px"
+            },
+            {
+              "parcela": "madeira",
+              "columnGap": "normal"
+            },
+            {
+              "parcela": "acores",
+              "columnGap": "normal"
+            }
+          ],
+          "ordemDom": "lista_antes_do_mapa",
+          "listaRect": {
+            "x": 40.953125,
+            "y": 644.765625,
+            "width": 582,
+            "height": 418.796875,
+            "top": 644.765625,
+            "right": 622.953125,
+            "bottom": 1063.5625,
+            "left": 40.953125
+          },
+          "figuraRect": {
+            "x": 642.953125,
+            "y": 409.90625,
+            "width": 340.09375,
+            "height": 515.609375,
+            "top": 409.90625,
+            "right": 983.046875,
+            "bottom": 925.515625,
+            "left": 642.953125
+          },
+          "ordemCss": {
+            "lista": "0",
+            "instrumento": "0",
+            "col": "0"
+          },
+          "numListas": 3,
+          "alvoAbaixoDeContagem": 0,
+          "familiasTotal": {
+            "mapa": 29,
+            "lista": 29
+          }
+        },
+        "1280": {
+          "altura": 4003,
+          "janela": 1280,
+          "nomes": [
+            {
+              "slug": "aveiro",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 757.828125,
+                "right": 193.265625,
+                "bottom": 801.828125,
+                "left": 94
+              }
+            },
+            {
+              "slug": "beja",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 801.828125,
+                "right": 193.265625,
+                "bottom": 845.828125,
+                "left": 94
+              }
+            },
+            {
+              "slug": "braga",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 845.828125,
+                "right": 193.265625,
+                "bottom": 889.828125,
+                "left": 94
+              }
+            },
+            {
+              "slug": "braganca",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 889.828125,
+                "right": 193.265625,
+                "bottom": 933.828125,
+                "left": 94
+              }
+            },
+            {
+              "slug": "castelo-branco",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 933.828125,
+                "right": 193.265625,
+                "bottom": 977.828125,
+                "left": 94
+              }
+            },
+            {
+              "slug": "coimbra",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 977.828125,
+                "right": 193.265625,
+                "bottom": 1021.828125,
+                "left": 94
+              }
+            },
+            {
+              "slug": "evora",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1021.828125,
+                "right": 193.265625,
+                "bottom": 1065.828125,
+                "left": 94
+              }
+            },
+            {
+              "slug": "faro",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1065.828125,
+                "right": 193.265625,
+                "bottom": 1109.828125,
+                "left": 94
+              }
+            },
+            {
+              "slug": "guarda",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1109.828125,
+                "right": 193.265625,
+                "bottom": 1153.828125,
+                "left": 94
+              }
+            },
+            {
+              "slug": "leiria",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 757.828125,
+                "right": 318.125,
+                "bottom": 801.828125,
+                "left": 218.859375
+              }
+            },
+            {
+              "slug": "lisboa",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 801.828125,
+                "right": 318.125,
+                "bottom": 845.828125,
+                "left": 218.859375
+              }
+            },
+            {
+              "slug": "portalegre",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 845.828125,
+                "right": 318.125,
+                "bottom": 889.828125,
+                "left": 218.859375
+              }
+            },
+            {
+              "slug": "porto",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 889.828125,
+                "right": 318.125,
+                "bottom": 933.828125,
+                "left": 218.859375
+              }
+            },
+            {
+              "slug": "santarem",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 933.828125,
+                "right": 318.125,
+                "bottom": 977.828125,
+                "left": 218.859375
+              }
+            },
+            {
+              "slug": "setubal",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 977.828125,
+                "right": 318.125,
+                "bottom": 1021.828125,
+                "left": 218.859375
+              }
+            },
+            {
+              "slug": "viana-do-castelo",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1021.828125,
+                "right": 318.125,
+                "bottom": 1065.828125,
+                "left": 218.859375
+              }
+            },
+            {
+              "slug": "vila-real",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1065.828125,
+                "right": 318.125,
+                "bottom": 1109.828125,
+                "left": 218.859375
+              }
+            },
+            {
+              "slug": "viseu",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1109.828125,
+                "right": 318.125,
+                "bottom": 1153.828125,
+                "left": 218.859375
+              }
+            },
+            {
+              "slug": "ilha-da-madeira",
+              "w": 113.734375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 757.828125,
+                "right": 457.453125,
+                "bottom": 801.828125,
+                "left": 343.71875
+              }
+            },
+            {
+              "slug": "ilha-de-porto-santo",
+              "w": 113.734375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 801.828125,
+                "right": 457.453125,
+                "bottom": 845.828125,
+                "left": 343.71875
+              }
+            },
+            {
+              "slug": "ilha-da-graciosa",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 757.828125,
+                "right": 598.546875,
+                "bottom": 801.828125,
+                "left": 483.046875
+              }
+            },
+            {
+              "slug": "ilha-das-flores",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 801.828125,
+                "right": 598.546875,
+                "bottom": 845.828125,
+                "left": 483.046875
+              }
+            },
+            {
+              "slug": "ilha-de-santa-maria",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 845.828125,
+                "right": 598.546875,
+                "bottom": 889.828125,
+                "left": 483.046875
+              }
+            },
+            {
+              "slug": "ilha-de-sao-jorge",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 889.828125,
+                "right": 598.546875,
+                "bottom": 933.828125,
+                "left": 483.046875
+              }
+            },
+            {
+              "slug": "ilha-de-sao-miguel",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 933.828125,
+                "right": 598.546875,
+                "bottom": 977.828125,
+                "left": 483.046875
+              }
+            },
+            {
+              "slug": "ilha-do-corvo",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 977.828125,
+                "right": 598.546875,
+                "bottom": 1021.828125,
+                "left": 483.046875
+              }
+            },
+            {
+              "slug": "ilha-do-faial",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1021.828125,
+                "right": 598.546875,
+                "bottom": 1065.828125,
+                "left": 483.046875
+              }
+            },
+            {
+              "slug": "ilha-do-pico",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1065.828125,
+                "right": 598.546875,
+                "bottom": 1109.828125,
+                "left": 483.046875
+              }
+            },
+            {
+              "slug": "ilha-terceira",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1109.828125,
+                "right": 598.546875,
+                "bottom": 1153.828125,
+                "left": 483.046875
+              }
+            }
+          ],
+          "minW": 99.265625,
+          "minH": 44,
+          "sobrepostos": [],
+          "pontuacao": [],
+          "gaps": [
+            {
+              "parcela": "continente",
+              "columnGap": "25.6px"
+            },
+            {
+              "parcela": "madeira",
+              "columnGap": "normal"
+            },
+            {
+              "parcela": "acores",
+              "columnGap": "normal"
+            }
+          ],
+          "ordemDom": "lista_antes_do_mapa",
+          "listaRect": {
+            "x": 94,
+            "y": 735.03125,
+            "width": 582,
+            "height": 418.796875,
+            "top": 735.03125,
+            "right": 676,
+            "bottom": 1153.828125,
+            "left": 94
+          },
+          "figuraRect": {
+            "x": 696,
+            "y": 423.296875,
+            "width": 490,
+            "height": 713.265625,
+            "top": 423.296875,
+            "right": 1186,
+            "bottom": 1136.5625,
+            "left": 696
+          },
+          "ordemCss": {
+            "lista": "0",
+            "instrumento": "0",
+            "col": "0"
+          },
+          "numListas": 3,
+          "alvoAbaixoDeContagem": 0,
+          "familiasTotal": {
+            "mapa": 29,
+            "lista": 29
+          }
+        }
+      },
+      "en": {
+        "320": {
+          "altura": 7749,
+          "janela": 320,
+          "nomes": [
+            {
+              "slug": "aveiro",
+              "w": 54.109375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1562.8125,
+                "right": 72.109375,
+                "bottom": 1606.8125,
+                "left": 18
+              }
+            },
+            {
+              "slug": "beja",
+              "w": 44,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1562.8125,
+                "right": 128.109375,
+                "bottom": 1606.8125,
+                "left": 84.109375
+              }
+            },
+            {
+              "slug": "braga",
+              "w": 49.484375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1562.8125,
+                "right": 189.59375,
+                "bottom": 1606.8125,
+                "left": 140.109375
+              }
+            },
+            {
+              "slug": "braganca",
+              "w": 72.921875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1562.8125,
+                "right": 274.515625,
+                "bottom": 1606.8125,
+                "left": 201.59375
+              }
+            },
+            {
+              "slug": "castelo-branco",
+              "w": 108.515625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1606.8125,
+                "right": 126.515625,
+                "bottom": 1650.8125,
+                "left": 18
+              }
+            },
+            {
+              "slug": "coimbra",
+              "w": 67.734375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1606.8125,
+                "right": 206.25,
+                "bottom": 1650.8125,
+                "left": 138.515625
+              }
+            },
+            {
+              "slug": "evora",
+              "w": 48.828125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1606.8125,
+                "right": 267.078125,
+                "bottom": 1650.8125,
+                "left": 218.25
+              }
+            },
+            {
+              "slug": "faro",
+              "w": 44,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1650.8125,
+                "right": 62,
+                "bottom": 1694.8125,
+                "left": 18
+              }
+            },
+            {
+              "slug": "guarda",
+              "w": 60.125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1650.8125,
+                "right": 134.125,
+                "bottom": 1694.8125,
+                "left": 74
+              }
+            },
+            {
+              "slug": "leiria",
+              "w": 49.03125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1650.8125,
+                "right": 195.15625,
+                "bottom": 1694.8125,
+                "left": 146.125
+              }
+            },
+            {
+              "slug": "lisboa",
+              "w": 54.1875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1650.8125,
+                "right": 261.34375,
+                "bottom": 1694.8125,
+                "left": 207.15625
+              }
+            },
+            {
+              "slug": "portalegre",
+              "w": 79.78125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1694.8125,
+                "right": 97.78125,
+                "bottom": 1738.8125,
+                "left": 18
+              }
+            },
+            {
+              "slug": "porto",
+              "w": 47.28125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1694.8125,
+                "right": 157.0625,
+                "bottom": 1738.8125,
+                "left": 109.78125
+              }
+            },
+            {
+              "slug": "santarem",
+              "w": 76.0625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1694.8125,
+                "right": 245.125,
+                "bottom": 1738.8125,
+                "left": 169.0625
+              }
+            },
+            {
+              "slug": "setubal",
+              "w": 61.40625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1738.8125,
+                "right": 79.40625,
+                "bottom": 1782.8125,
+                "left": 18
+              }
+            },
+            {
+              "slug": "viana-do-castelo",
+              "w": 118.90625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1738.8125,
+                "right": 210.3125,
+                "bottom": 1782.8125,
+                "left": 91.40625
+              }
+            },
+            {
+              "slug": "vila-real",
+              "w": 67.796875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1738.8125,
+                "right": 290.109375,
+                "bottom": 1782.8125,
+                "left": 222.3125
+              }
+            },
+            {
+              "slug": "viseu",
+              "w": 48.28125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1782.8125,
+                "right": 66.28125,
+                "bottom": 1826.8125,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-da-madeira",
+              "w": 112.109375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1853.609375,
+                "right": 130.109375,
+                "bottom": 1897.609375,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-de-porto-santo",
+              "w": 134.484375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1853.609375,
+                "right": 276.59375,
+                "bottom": 1897.609375,
+                "left": 142.109375
+              }
+            },
+            {
+              "slug": "ilha-da-graciosa",
+              "w": 115.984375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1924.40625,
+                "right": 133.984375,
+                "bottom": 1968.40625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-das-flores",
+              "w": 105.375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1924.40625,
+                "right": 251.359375,
+                "bottom": 1968.40625,
+                "left": 145.984375
+              }
+            },
+            {
+              "slug": "ilha-de-santa-maria",
+              "w": 136.375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1968.40625,
+                "right": 154.375,
+                "bottom": 2012.40625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-de-sao-jorge",
+              "w": 119.171875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1968.40625,
+                "right": 285.546875,
+                "bottom": 2012.40625,
+                "left": 166.375
+              }
+            },
+            {
+              "slug": "ilha-de-sao-miguel",
+              "w": 130.3125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 2012.40625,
+                "right": 148.3125,
+                "bottom": 2056.40625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-do-corvo",
+              "w": 97.421875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 2012.40625,
+                "right": 257.734375,
+                "bottom": 2056.40625,
+                "left": 160.3125
+              }
+            },
+            {
+              "slug": "ilha-do-faial",
+              "w": 90.0625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 2056.40625,
+                "right": 108.0625,
+                "bottom": 2100.40625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-do-pico",
+              "w": 86.625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 2056.40625,
+                "right": 206.6875,
+                "bottom": 2100.40625,
+                "left": 120.0625
+              }
+            },
+            {
+              "slug": "ilha-terceira",
+              "w": 93.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 2100.40625,
+                "right": 111.265625,
+                "bottom": 2144.40625,
+                "left": 18
+              }
+            }
+          ],
+          "minW": 44,
+          "minH": 44,
+          "sobrepostos": [],
+          "pontuacao": [],
+          "gaps": [
+            {
+              "parcela": "continente",
+              "columnGap": "12px"
+            },
+            {
+              "parcela": "madeira",
+              "columnGap": "12px"
+            },
+            {
+              "parcela": "acores",
+              "columnGap": "12px"
+            }
+          ],
+          "ordemDom": "lista_antes_do_mapa",
+          "listaRect": {
+            "x": 18,
+            "y": 1540.015625,
+            "width": 284,
+            "height": 604.390625,
+            "top": 1540.015625,
+            "right": 302,
+            "bottom": 2144.40625,
+            "left": 18
+          },
+          "figuraRect": {
+            "x": 18,
+            "y": 1002.890625,
+            "width": 284,
+            "height": 511.125,
+            "top": 1002.890625,
+            "right": 302,
+            "bottom": 1514.015625,
+            "left": 18
+          },
+          "ordemCss": {
+            "lista": "5",
+            "instrumento": "4",
+            "col": "1"
+          },
+          "numListas": 3,
+          "alvoAbaixoDeContagem": 0,
+          "familiasTotal": {
+            "mapa": 29,
+            "lista": 29
+          }
+        },
+        "360": {
+          "altura": 7508,
+          "janela": 360,
+          "nomes": [
+            {
+              "slug": "aveiro",
+              "w": 54.109375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1539.546875,
+                "right": 72.109375,
+                "bottom": 1583.546875,
+                "left": 18
+              }
+            },
+            {
+              "slug": "beja",
+              "w": 44,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1539.546875,
+                "right": 128.109375,
+                "bottom": 1583.546875,
+                "left": 84.109375
+              }
+            },
+            {
+              "slug": "braga",
+              "w": 49.484375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1539.546875,
+                "right": 189.59375,
+                "bottom": 1583.546875,
+                "left": 140.109375
+              }
+            },
+            {
+              "slug": "braganca",
+              "w": 72.921875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1539.546875,
+                "right": 274.515625,
+                "bottom": 1583.546875,
+                "left": 201.59375
+              }
+            },
+            {
+              "slug": "castelo-branco",
+              "w": 108.515625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1583.546875,
+                "right": 126.515625,
+                "bottom": 1627.546875,
+                "left": 18
+              }
+            },
+            {
+              "slug": "coimbra",
+              "w": 67.734375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1583.546875,
+                "right": 206.25,
+                "bottom": 1627.546875,
+                "left": 138.515625
+              }
+            },
+            {
+              "slug": "evora",
+              "w": 48.828125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1583.546875,
+                "right": 267.078125,
+                "bottom": 1627.546875,
+                "left": 218.25
+              }
+            },
+            {
+              "slug": "faro",
+              "w": 44,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1583.546875,
+                "right": 323.078125,
+                "bottom": 1627.546875,
+                "left": 279.078125
+              }
+            },
+            {
+              "slug": "guarda",
+              "w": 60.125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1627.546875,
+                "right": 78.125,
+                "bottom": 1671.546875,
+                "left": 18
+              }
+            },
+            {
+              "slug": "leiria",
+              "w": 49.03125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1627.546875,
+                "right": 139.15625,
+                "bottom": 1671.546875,
+                "left": 90.125
+              }
+            },
+            {
+              "slug": "lisboa",
+              "w": 54.1875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1627.546875,
+                "right": 205.34375,
+                "bottom": 1671.546875,
+                "left": 151.15625
+              }
+            },
+            {
+              "slug": "portalegre",
+              "w": 79.78125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1627.546875,
+                "right": 297.125,
+                "bottom": 1671.546875,
+                "left": 217.34375
+              }
+            },
+            {
+              "slug": "porto",
+              "w": 47.28125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1671.546875,
+                "right": 65.28125,
+                "bottom": 1715.546875,
+                "left": 18
+              }
+            },
+            {
+              "slug": "santarem",
+              "w": 76.0625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1671.546875,
+                "right": 153.34375,
+                "bottom": 1715.546875,
+                "left": 77.28125
+              }
+            },
+            {
+              "slug": "setubal",
+              "w": 61.40625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1671.546875,
+                "right": 226.75,
+                "bottom": 1715.546875,
+                "left": 165.34375
+              }
+            },
+            {
+              "slug": "viana-do-castelo",
+              "w": 118.90625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1715.546875,
+                "right": 136.90625,
+                "bottom": 1759.546875,
+                "left": 18
+              }
+            },
+            {
+              "slug": "vila-real",
+              "w": 67.796875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1715.546875,
+                "right": 216.703125,
+                "bottom": 1759.546875,
+                "left": 148.90625
+              }
+            },
+            {
+              "slug": "viseu",
+              "w": 48.28125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1715.546875,
+                "right": 276.984375,
+                "bottom": 1759.546875,
+                "left": 228.703125
+              }
+            },
+            {
+              "slug": "ilha-da-madeira",
+              "w": 112.109375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1786.34375,
+                "right": 130.109375,
+                "bottom": 1830.34375,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-de-porto-santo",
+              "w": 134.484375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1786.34375,
+                "right": 276.59375,
+                "bottom": 1830.34375,
+                "left": 142.109375
+              }
+            },
+            {
+              "slug": "ilha-da-graciosa",
+              "w": 115.984375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1857.140625,
+                "right": 133.984375,
+                "bottom": 1901.140625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-das-flores",
+              "w": 105.375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1857.140625,
+                "right": 251.359375,
+                "bottom": 1901.140625,
+                "left": 145.984375
+              }
+            },
+            {
+              "slug": "ilha-de-santa-maria",
+              "w": 136.375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1901.140625,
+                "right": 154.375,
+                "bottom": 1945.140625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-de-sao-jorge",
+              "w": 119.171875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1901.140625,
+                "right": 285.546875,
+                "bottom": 1945.140625,
+                "left": 166.375
+              }
+            },
+            {
+              "slug": "ilha-de-sao-miguel",
+              "w": 130.3125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1945.140625,
+                "right": 148.3125,
+                "bottom": 1989.140625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-do-corvo",
+              "w": 97.421875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1945.140625,
+                "right": 257.734375,
+                "bottom": 1989.140625,
+                "left": 160.3125
+              }
+            },
+            {
+              "slug": "ilha-do-faial",
+              "w": 90.0625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1989.140625,
+                "right": 108.0625,
+                "bottom": 2033.140625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-do-pico",
+              "w": 86.625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1989.140625,
+                "right": 206.6875,
+                "bottom": 2033.140625,
+                "left": 120.0625
+              }
+            },
+            {
+              "slug": "ilha-terceira",
+              "w": 93.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1989.140625,
+                "right": 311.953125,
+                "bottom": 2033.140625,
+                "left": 218.6875
+              }
+            }
+          ],
+          "minW": 44,
+          "minH": 44,
+          "sobrepostos": [],
+          "pontuacao": [],
+          "gaps": [
+            {
+              "parcela": "continente",
+              "columnGap": "12px"
+            },
+            {
+              "parcela": "madeira",
+              "columnGap": "12px"
+            },
+            {
+              "parcela": "acores",
+              "columnGap": "12px"
+            }
+          ],
+          "ordemDom": "lista_antes_do_mapa",
+          "listaRect": {
+            "x": 18,
+            "y": 1516.75,
+            "width": 324,
+            "height": 516.390625,
+            "top": 1516.75,
+            "right": 342,
+            "bottom": 2033.140625,
+            "left": 18
+          },
+          "figuraRect": {
+            "x": 18,
+            "y": 926.890625,
+            "width": 324,
+            "height": 563.859375,
+            "top": 926.890625,
+            "right": 342,
+            "bottom": 1490.75,
+            "left": 18
+          },
+          "ordemCss": {
+            "lista": "5",
+            "instrumento": "4",
+            "col": "1"
+          },
+          "numListas": 3,
+          "alvoAbaixoDeContagem": 0,
+          "familiasTotal": {
+            "mapa": 29,
+            "lista": 29
+          }
+        },
+        "390": {
+          "altura": 7357,
+          "janela": 390,
+          "nomes": [
+            {
+              "slug": "aveiro",
+              "w": 54.109375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1519.5625,
+                "right": 72.109375,
+                "bottom": 1563.5625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "beja",
+              "w": 44,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1519.5625,
+                "right": 128.109375,
+                "bottom": 1563.5625,
+                "left": 84.109375
+              }
+            },
+            {
+              "slug": "braga",
+              "w": 49.484375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1519.5625,
+                "right": 189.59375,
+                "bottom": 1563.5625,
+                "left": 140.109375
+              }
+            },
+            {
+              "slug": "braganca",
+              "w": 72.921875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1519.5625,
+                "right": 274.515625,
+                "bottom": 1563.5625,
+                "left": 201.59375
+              }
+            },
+            {
+              "slug": "castelo-branco",
+              "w": 108.515625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1563.5625,
+                "right": 126.515625,
+                "bottom": 1607.5625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "coimbra",
+              "w": 67.734375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1563.5625,
+                "right": 206.25,
+                "bottom": 1607.5625,
+                "left": 138.515625
+              }
+            },
+            {
+              "slug": "evora",
+              "w": 48.828125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1563.5625,
+                "right": 267.078125,
+                "bottom": 1607.5625,
+                "left": 218.25
+              }
+            },
+            {
+              "slug": "faro",
+              "w": 44,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1563.5625,
+                "right": 323.078125,
+                "bottom": 1607.5625,
+                "left": 279.078125
+              }
+            },
+            {
+              "slug": "guarda",
+              "w": 60.125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1607.5625,
+                "right": 78.125,
+                "bottom": 1651.5625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "leiria",
+              "w": 49.03125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1607.5625,
+                "right": 139.15625,
+                "bottom": 1651.5625,
+                "left": 90.125
+              }
+            },
+            {
+              "slug": "lisboa",
+              "w": 54.1875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1607.5625,
+                "right": 205.34375,
+                "bottom": 1651.5625,
+                "left": 151.15625
+              }
+            },
+            {
+              "slug": "portalegre",
+              "w": 79.78125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1607.5625,
+                "right": 297.125,
+                "bottom": 1651.5625,
+                "left": 217.34375
+              }
+            },
+            {
+              "slug": "porto",
+              "w": 47.28125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1607.5625,
+                "right": 356.40625,
+                "bottom": 1651.5625,
+                "left": 309.125
+              }
+            },
+            {
+              "slug": "santarem",
+              "w": 76.0625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1651.5625,
+                "right": 94.0625,
+                "bottom": 1695.5625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "setubal",
+              "w": 61.40625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1651.5625,
+                "right": 167.46875,
+                "bottom": 1695.5625,
+                "left": 106.0625
+              }
+            },
+            {
+              "slug": "viana-do-castelo",
+              "w": 118.90625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1651.5625,
+                "right": 298.375,
+                "bottom": 1695.5625,
+                "left": 179.46875
+              }
+            },
+            {
+              "slug": "vila-real",
+              "w": 67.796875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1695.5625,
+                "right": 85.796875,
+                "bottom": 1739.5625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "viseu",
+              "w": 48.28125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1695.5625,
+                "right": 146.078125,
+                "bottom": 1739.5625,
+                "left": 97.796875
+              }
+            },
+            {
+              "slug": "ilha-da-madeira",
+              "w": 112.109375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1766.359375,
+                "right": 130.109375,
+                "bottom": 1810.359375,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-de-porto-santo",
+              "w": 134.484375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1766.359375,
+                "right": 276.59375,
+                "bottom": 1810.359375,
+                "left": 142.109375
+              }
+            },
+            {
+              "slug": "ilha-da-graciosa",
+              "w": 115.984375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1837.15625,
+                "right": 133.984375,
+                "bottom": 1881.15625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-das-flores",
+              "w": 105.375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1837.15625,
+                "right": 251.359375,
+                "bottom": 1881.15625,
+                "left": 145.984375
+              }
+            },
+            {
+              "slug": "ilha-de-santa-maria",
+              "w": 136.375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1881.15625,
+                "right": 154.375,
+                "bottom": 1925.15625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-de-sao-jorge",
+              "w": 119.171875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1881.15625,
+                "right": 285.546875,
+                "bottom": 1925.15625,
+                "left": 166.375
+              }
+            },
+            {
+              "slug": "ilha-de-sao-miguel",
+              "w": 130.3125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1925.15625,
+                "right": 148.3125,
+                "bottom": 1969.15625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-do-corvo",
+              "w": 97.421875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1925.15625,
+                "right": 257.734375,
+                "bottom": 1969.15625,
+                "left": 160.3125
+              }
+            },
+            {
+              "slug": "ilha-do-faial",
+              "w": 90.0625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1925.15625,
+                "right": 359.796875,
+                "bottom": 1969.15625,
+                "left": 269.734375
+              }
+            },
+            {
+              "slug": "ilha-do-pico",
+              "w": 86.625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1969.15625,
+                "right": 104.625,
+                "bottom": 2013.15625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-terceira",
+              "w": 93.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1969.15625,
+                "right": 209.890625,
+                "bottom": 2013.15625,
+                "left": 116.625
+              }
+            }
+          ],
+          "minW": 44,
+          "minH": 44,
+          "sobrepostos": [],
+          "pontuacao": [],
+          "gaps": [
+            {
+              "parcela": "continente",
+              "columnGap": "12px"
+            },
+            {
+              "parcela": "madeira",
+              "columnGap": "12px"
+            },
+            {
+              "parcela": "acores",
+              "columnGap": "12px"
+            }
+          ],
+          "ordemDom": "lista_antes_do_mapa",
+          "listaRect": {
+            "x": 18,
+            "y": 1496.765625,
+            "width": 354,
+            "height": 516.390625,
+            "top": 1496.765625,
+            "right": 372,
+            "bottom": 2013.15625,
+            "left": 18
+          },
+          "figuraRect": {
+            "x": 18,
+            "y": 867.34375,
+            "width": 354,
+            "height": 603.421875,
+            "top": 867.34375,
+            "right": 372,
+            "bottom": 1470.765625,
+            "left": 18
+          },
+          "ordemCss": {
+            "lista": "5",
+            "instrumento": "4",
+            "col": "1"
+          },
+          "numListas": 3,
+          "alvoAbaixoDeContagem": 0,
+          "familiasTotal": {
+            "mapa": 29,
+            "lista": 29
+          }
+        },
+        "430": {
+          "altura": 7176,
+          "janela": 430,
+          "nomes": [
+            {
+              "slug": "aveiro",
+              "w": 54.109375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1497.109375,
+                "right": 72.109375,
+                "bottom": 1541.109375,
+                "left": 18
+              }
+            },
+            {
+              "slug": "beja",
+              "w": 44,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1497.109375,
+                "right": 128.109375,
+                "bottom": 1541.109375,
+                "left": 84.109375
+              }
+            },
+            {
+              "slug": "braga",
+              "w": 49.484375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1497.109375,
+                "right": 189.59375,
+                "bottom": 1541.109375,
+                "left": 140.109375
+              }
+            },
+            {
+              "slug": "braganca",
+              "w": 72.921875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1497.109375,
+                "right": 274.515625,
+                "bottom": 1541.109375,
+                "left": 201.59375
+              }
+            },
+            {
+              "slug": "castelo-branco",
+              "w": 108.515625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1497.109375,
+                "right": 395.03125,
+                "bottom": 1541.109375,
+                "left": 286.515625
+              }
+            },
+            {
+              "slug": "coimbra",
+              "w": 67.734375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1541.109375,
+                "right": 85.734375,
+                "bottom": 1585.109375,
+                "left": 18
+              }
+            },
+            {
+              "slug": "evora",
+              "w": 48.828125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1541.109375,
+                "right": 146.5625,
+                "bottom": 1585.109375,
+                "left": 97.734375
+              }
+            },
+            {
+              "slug": "faro",
+              "w": 44,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1541.109375,
+                "right": 202.5625,
+                "bottom": 1585.109375,
+                "left": 158.5625
+              }
+            },
+            {
+              "slug": "guarda",
+              "w": 60.125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1541.109375,
+                "right": 274.6875,
+                "bottom": 1585.109375,
+                "left": 214.5625
+              }
+            },
+            {
+              "slug": "leiria",
+              "w": 49.03125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1541.109375,
+                "right": 335.71875,
+                "bottom": 1585.109375,
+                "left": 286.6875
+              }
+            },
+            {
+              "slug": "lisboa",
+              "w": 54.1875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1541.109375,
+                "right": 401.90625,
+                "bottom": 1585.109375,
+                "left": 347.71875
+              }
+            },
+            {
+              "slug": "portalegre",
+              "w": 79.78125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1585.109375,
+                "right": 97.78125,
+                "bottom": 1629.109375,
+                "left": 18
+              }
+            },
+            {
+              "slug": "porto",
+              "w": 47.28125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1585.109375,
+                "right": 157.0625,
+                "bottom": 1629.109375,
+                "left": 109.78125
+              }
+            },
+            {
+              "slug": "santarem",
+              "w": 76.0625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1585.109375,
+                "right": 245.125,
+                "bottom": 1629.109375,
+                "left": 169.0625
+              }
+            },
+            {
+              "slug": "setubal",
+              "w": 61.40625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1585.109375,
+                "right": 318.53125,
+                "bottom": 1629.109375,
+                "left": 257.125
+              }
+            },
+            {
+              "slug": "viana-do-castelo",
+              "w": 118.90625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1629.109375,
+                "right": 136.90625,
+                "bottom": 1673.109375,
+                "left": 18
+              }
+            },
+            {
+              "slug": "vila-real",
+              "w": 67.796875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1629.109375,
+                "right": 216.703125,
+                "bottom": 1673.109375,
+                "left": 148.90625
+              }
+            },
+            {
+              "slug": "viseu",
+              "w": 48.28125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1629.109375,
+                "right": 276.984375,
+                "bottom": 1673.109375,
+                "left": 228.703125
+              }
+            },
+            {
+              "slug": "ilha-da-madeira",
+              "w": 112.109375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1699.90625,
+                "right": 130.109375,
+                "bottom": 1743.90625,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-de-porto-santo",
+              "w": 134.484375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1699.90625,
+                "right": 276.59375,
+                "bottom": 1743.90625,
+                "left": 142.109375
+              }
+            },
+            {
+              "slug": "ilha-da-graciosa",
+              "w": 115.984375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1770.703125,
+                "right": 133.984375,
+                "bottom": 1814.703125,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-das-flores",
+              "w": 105.375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1770.703125,
+                "right": 251.359375,
+                "bottom": 1814.703125,
+                "left": 145.984375
+              }
+            },
+            {
+              "slug": "ilha-de-santa-maria",
+              "w": 136.375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1770.703125,
+                "right": 399.734375,
+                "bottom": 1814.703125,
+                "left": 263.359375
+              }
+            },
+            {
+              "slug": "ilha-de-sao-jorge",
+              "w": 119.171875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1814.703125,
+                "right": 137.171875,
+                "bottom": 1858.703125,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-de-sao-miguel",
+              "w": 130.3125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1814.703125,
+                "right": 279.484375,
+                "bottom": 1858.703125,
+                "left": 149.171875
+              }
+            },
+            {
+              "slug": "ilha-do-corvo",
+              "w": 97.421875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1814.703125,
+                "right": 388.90625,
+                "bottom": 1858.703125,
+                "left": 291.484375
+              }
+            },
+            {
+              "slug": "ilha-do-faial",
+              "w": 90.0625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1858.703125,
+                "right": 108.0625,
+                "bottom": 1902.703125,
+                "left": 18
+              }
+            },
+            {
+              "slug": "ilha-do-pico",
+              "w": 86.625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1858.703125,
+                "right": 206.6875,
+                "bottom": 1902.703125,
+                "left": 120.0625
+              }
+            },
+            {
+              "slug": "ilha-terceira",
+              "w": 93.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1858.703125,
+                "right": 311.953125,
+                "bottom": 1902.703125,
+                "left": 218.6875
+              }
+            }
+          ],
+          "minW": 44,
+          "minH": 44,
+          "sobrepostos": [],
+          "pontuacao": [],
+          "gaps": [
+            {
+              "parcela": "continente",
+              "columnGap": "12px"
+            },
+            {
+              "parcela": "madeira",
+              "columnGap": "12px"
+            },
+            {
+              "parcela": "acores",
+              "columnGap": "12px"
+            }
+          ],
+          "ordemDom": "lista_antes_do_mapa",
+          "listaRect": {
+            "x": 18,
+            "y": 1474.3125,
+            "width": 394,
+            "height": 428.390625,
+            "top": 1474.3125,
+            "right": 412,
+            "bottom": 1902.703125,
+            "left": 18
+          },
+          "figuraRect": {
+            "x": 18,
+            "y": 792.15625,
+            "width": 394,
+            "height": 656.15625,
+            "top": 792.15625,
+            "right": 412,
+            "bottom": 1448.3125,
+            "left": 18
+          },
+          "ordemCss": {
+            "lista": "5",
+            "instrumento": "4",
+            "col": "1"
+          },
+          "numListas": 3,
+          "alvoAbaixoDeContagem": 0,
+          "familiasTotal": {
+            "mapa": 29,
+            "lista": 29
+          }
+        },
+        "768": {
+          "altura": 5281,
+          "janela": 768,
+          "nomes": [
+            {
+              "slug": "aveiro",
+              "w": 54.109375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1170.390625,
+                "right": 84.828125,
+                "bottom": 1214.390625,
+                "left": 30.71875
+              }
+            },
+            {
+              "slug": "beja",
+              "w": 44,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1170.390625,
+                "right": 140.828125,
+                "bottom": 1214.390625,
+                "left": 96.828125
+              }
+            },
+            {
+              "slug": "braga",
+              "w": 49.484375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1170.390625,
+                "right": 202.3125,
+                "bottom": 1214.390625,
+                "left": 152.828125
+              }
+            },
+            {
+              "slug": "braganca",
+              "w": 72.921875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1170.390625,
+                "right": 287.234375,
+                "bottom": 1214.390625,
+                "left": 214.3125
+              }
+            },
+            {
+              "slug": "castelo-branco",
+              "w": 108.515625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1170.390625,
+                "right": 407.75,
+                "bottom": 1214.390625,
+                "left": 299.234375
+              }
+            },
+            {
+              "slug": "coimbra",
+              "w": 67.734375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1170.390625,
+                "right": 487.484375,
+                "bottom": 1214.390625,
+                "left": 419.75
+              }
+            },
+            {
+              "slug": "evora",
+              "w": 48.828125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1170.390625,
+                "right": 548.3125,
+                "bottom": 1214.390625,
+                "left": 499.484375
+              }
+            },
+            {
+              "slug": "faro",
+              "w": 44,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1170.390625,
+                "right": 604.3125,
+                "bottom": 1214.390625,
+                "left": 560.3125
+              }
+            },
+            {
+              "slug": "guarda",
+              "w": 60.125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1170.390625,
+                "right": 676.4375,
+                "bottom": 1214.390625,
+                "left": 616.3125
+              }
+            },
+            {
+              "slug": "leiria",
+              "w": 49.03125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1214.390625,
+                "right": 79.75,
+                "bottom": 1258.390625,
+                "left": 30.71875
+              }
+            },
+            {
+              "slug": "lisboa",
+              "w": 54.1875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1214.390625,
+                "right": 145.9375,
+                "bottom": 1258.390625,
+                "left": 91.75
+              }
+            },
+            {
+              "slug": "portalegre",
+              "w": 79.78125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1214.390625,
+                "right": 237.71875,
+                "bottom": 1258.390625,
+                "left": 157.9375
+              }
+            },
+            {
+              "slug": "porto",
+              "w": 47.28125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1214.390625,
+                "right": 297,
+                "bottom": 1258.390625,
+                "left": 249.71875
+              }
+            },
+            {
+              "slug": "santarem",
+              "w": 76.0625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1214.390625,
+                "right": 385.0625,
+                "bottom": 1258.390625,
+                "left": 309
+              }
+            },
+            {
+              "slug": "setubal",
+              "w": 61.40625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1214.390625,
+                "right": 458.46875,
+                "bottom": 1258.390625,
+                "left": 397.0625
+              }
+            },
+            {
+              "slug": "viana-do-castelo",
+              "w": 118.90625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1214.390625,
+                "right": 589.375,
+                "bottom": 1258.390625,
+                "left": 470.46875
+              }
+            },
+            {
+              "slug": "vila-real",
+              "w": 67.796875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1214.390625,
+                "right": 669.171875,
+                "bottom": 1258.390625,
+                "left": 601.375
+              }
+            },
+            {
+              "slug": "viseu",
+              "w": 48.28125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1214.390625,
+                "right": 729.453125,
+                "bottom": 1258.390625,
+                "left": 681.171875
+              }
+            },
+            {
+              "slug": "ilha-da-madeira",
+              "w": 112.109375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1285.1875,
+                "right": 142.828125,
+                "bottom": 1329.1875,
+                "left": 30.71875
+              }
+            },
+            {
+              "slug": "ilha-de-porto-santo",
+              "w": 134.484375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1285.1875,
+                "right": 289.3125,
+                "bottom": 1329.1875,
+                "left": 154.828125
+              }
+            },
+            {
+              "slug": "ilha-da-graciosa",
+              "w": 115.984375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1355.984375,
+                "right": 146.703125,
+                "bottom": 1399.984375,
+                "left": 30.71875
+              }
+            },
+            {
+              "slug": "ilha-das-flores",
+              "w": 105.375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1355.984375,
+                "right": 264.078125,
+                "bottom": 1399.984375,
+                "left": 158.703125
+              }
+            },
+            {
+              "slug": "ilha-de-santa-maria",
+              "w": 136.375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1355.984375,
+                "right": 412.453125,
+                "bottom": 1399.984375,
+                "left": 276.078125
+              }
+            },
+            {
+              "slug": "ilha-de-sao-jorge",
+              "w": 119.171875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1355.984375,
+                "right": 543.625,
+                "bottom": 1399.984375,
+                "left": 424.453125
+              }
+            },
+            {
+              "slug": "ilha-de-sao-miguel",
+              "w": 130.3125,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1355.984375,
+                "right": 685.9375,
+                "bottom": 1399.984375,
+                "left": 555.625
+              }
+            },
+            {
+              "slug": "ilha-do-corvo",
+              "w": 97.421875,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1399.984375,
+                "right": 128.140625,
+                "bottom": 1443.984375,
+                "left": 30.71875
+              }
+            },
+            {
+              "slug": "ilha-do-faial",
+              "w": 90.0625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1399.984375,
+                "right": 230.203125,
+                "bottom": 1443.984375,
+                "left": 140.140625
+              }
+            },
+            {
+              "slug": "ilha-do-pico",
+              "w": 86.625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1399.984375,
+                "right": 328.828125,
+                "bottom": 1443.984375,
+                "left": 242.203125
+              }
+            },
+            {
+              "slug": "ilha-terceira",
+              "w": 93.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1399.984375,
+                "right": 434.09375,
+                "bottom": 1443.984375,
+                "left": 340.828125
+              }
+            }
+          ],
+          "minW": 44,
+          "minH": 44,
+          "sobrepostos": [],
+          "pontuacao": [],
+          "gaps": [
+            {
+              "parcela": "continente",
+              "columnGap": "12px"
+            },
+            {
+              "parcela": "madeira",
+              "columnGap": "12px"
+            },
+            {
+              "parcela": "acores",
+              "columnGap": "12px"
+            }
+          ],
+          "ordemDom": "lista_antes_do_mapa",
+          "listaRect": {
+            "x": 30.71875,
+            "y": 1147.59375,
+            "width": 706.5625,
+            "height": 296.390625,
+            "top": 1147.59375,
+            "right": 737.28125,
+            "bottom": 1443.984375,
+            "left": 30.71875
+          },
+          "figuraRect": {
+            "x": 30.71875,
+            "y": 677.25,
+            "width": 706.5625,
+            "height": 438.34375,
+            "top": 677.25,
+            "right": 737.28125,
+            "bottom": 1115.59375,
+            "left": 30.71875
+          },
+          "ordemCss": {
+            "lista": "2",
+            "instrumento": "1",
+            "col": "0"
+          },
+          "numListas": 3,
+          "alvoAbaixoDeContagem": 0,
+          "familiasTotal": {
+            "mapa": 29,
+            "lista": 29
+          }
+        },
+        "1024": {
+          "altura": 3860,
+          "janela": 1024,
+          "nomes": [
+            {
+              "slug": "aveiro",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 667.5625,
+                "right": 140.21875,
+                "bottom": 711.5625,
+                "left": 40.953125
+              }
+            },
+            {
+              "slug": "beja",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 711.5625,
+                "right": 140.21875,
+                "bottom": 755.5625,
+                "left": 40.953125
+              }
+            },
+            {
+              "slug": "braga",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 755.5625,
+                "right": 140.21875,
+                "bottom": 799.5625,
+                "left": 40.953125
+              }
+            },
+            {
+              "slug": "braganca",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 799.5625,
+                "right": 140.21875,
+                "bottom": 843.5625,
+                "left": 40.953125
+              }
+            },
+            {
+              "slug": "castelo-branco",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 843.5625,
+                "right": 140.21875,
+                "bottom": 887.5625,
+                "left": 40.953125
+              }
+            },
+            {
+              "slug": "coimbra",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 887.5625,
+                "right": 140.21875,
+                "bottom": 931.5625,
+                "left": 40.953125
+              }
+            },
+            {
+              "slug": "evora",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 931.5625,
+                "right": 140.21875,
+                "bottom": 975.5625,
+                "left": 40.953125
+              }
+            },
+            {
+              "slug": "faro",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 975.5625,
+                "right": 140.21875,
+                "bottom": 1019.5625,
+                "left": 40.953125
+              }
+            },
+            {
+              "slug": "guarda",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1019.5625,
+                "right": 140.21875,
+                "bottom": 1063.5625,
+                "left": 40.953125
+              }
+            },
+            {
+              "slug": "leiria",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 667.5625,
+                "right": 259.96875,
+                "bottom": 711.5625,
+                "left": 160.703125
+              }
+            },
+            {
+              "slug": "lisboa",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 711.5625,
+                "right": 259.96875,
+                "bottom": 755.5625,
+                "left": 160.703125
+              }
+            },
+            {
+              "slug": "portalegre",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 755.5625,
+                "right": 259.96875,
+                "bottom": 799.5625,
+                "left": 160.703125
+              }
+            },
+            {
+              "slug": "porto",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 799.5625,
+                "right": 259.96875,
+                "bottom": 843.5625,
+                "left": 160.703125
+              }
+            },
+            {
+              "slug": "santarem",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 843.5625,
+                "right": 259.96875,
+                "bottom": 887.5625,
+                "left": 160.703125
+              }
+            },
+            {
+              "slug": "setubal",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 887.5625,
+                "right": 259.96875,
+                "bottom": 931.5625,
+                "left": 160.703125
+              }
+            },
+            {
+              "slug": "viana-do-castelo",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 931.5625,
+                "right": 259.96875,
+                "bottom": 975.5625,
+                "left": 160.703125
+              }
+            },
+            {
+              "slug": "vila-real",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 975.5625,
+                "right": 259.96875,
+                "bottom": 1019.5625,
+                "left": 160.703125
+              }
+            },
+            {
+              "slug": "viseu",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1019.5625,
+                "right": 259.96875,
+                "bottom": 1063.5625,
+                "left": 160.703125
+              }
+            },
+            {
+              "slug": "ilha-da-madeira",
+              "w": 113.734375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 667.5625,
+                "right": 394.15625,
+                "bottom": 711.5625,
+                "left": 280.421875
+              }
+            },
+            {
+              "slug": "ilha-de-porto-santo",
+              "w": 113.734375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 711.5625,
+                "right": 394.15625,
+                "bottom": 755.5625,
+                "left": 280.421875
+              }
+            },
+            {
+              "slug": "ilha-da-graciosa",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 667.5625,
+                "right": 530.125,
+                "bottom": 711.5625,
+                "left": 414.625
+              }
+            },
+            {
+              "slug": "ilha-das-flores",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 711.5625,
+                "right": 530.125,
+                "bottom": 755.5625,
+                "left": 414.625
+              }
+            },
+            {
+              "slug": "ilha-de-santa-maria",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 755.5625,
+                "right": 530.125,
+                "bottom": 799.5625,
+                "left": 414.625
+              }
+            },
+            {
+              "slug": "ilha-de-sao-jorge",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 799.5625,
+                "right": 530.125,
+                "bottom": 843.5625,
+                "left": 414.625
+              }
+            },
+            {
+              "slug": "ilha-de-sao-miguel",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 843.5625,
+                "right": 530.125,
+                "bottom": 887.5625,
+                "left": 414.625
+              }
+            },
+            {
+              "slug": "ilha-do-corvo",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 887.5625,
+                "right": 530.125,
+                "bottom": 931.5625,
+                "left": 414.625
+              }
+            },
+            {
+              "slug": "ilha-do-faial",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 931.5625,
+                "right": 530.125,
+                "bottom": 975.5625,
+                "left": 414.625
+              }
+            },
+            {
+              "slug": "ilha-do-pico",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 975.5625,
+                "right": 530.125,
+                "bottom": 1019.5625,
+                "left": 414.625
+              }
+            },
+            {
+              "slug": "ilha-terceira",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1019.5625,
+                "right": 530.125,
+                "bottom": 1063.5625,
+                "left": 414.625
+              }
+            }
+          ],
+          "minW": 99.265625,
+          "minH": 44,
+          "sobrepostos": [],
+          "pontuacao": [],
+          "gaps": [
+            {
+              "parcela": "continente",
+              "columnGap": "20.48px"
+            },
+            {
+              "parcela": "madeira",
+              "columnGap": "normal"
+            },
+            {
+              "parcela": "acores",
+              "columnGap": "normal"
+            }
+          ],
+          "ordemDom": "lista_antes_do_mapa",
+          "listaRect": {
+            "x": 40.953125,
+            "y": 644.765625,
+            "width": 582,
+            "height": 418.796875,
+            "top": 644.765625,
+            "right": 622.953125,
+            "bottom": 1063.5625,
+            "left": 40.953125
+          },
+          "figuraRect": {
+            "x": 642.953125,
+            "y": 409.90625,
+            "width": 340.09375,
+            "height": 515.609375,
+            "top": 409.90625,
+            "right": 983.046875,
+            "bottom": 925.515625,
+            "left": 642.953125
+          },
+          "ordemCss": {
+            "lista": "0",
+            "instrumento": "0",
+            "col": "0"
+          },
+          "numListas": 3,
+          "alvoAbaixoDeContagem": 0,
+          "familiasTotal": {
+            "mapa": 29,
+            "lista": 29
+          }
+        },
+        "1280": {
+          "altura": 3987,
+          "janela": 1280,
+          "nomes": [
+            {
+              "slug": "aveiro",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 757.828125,
+                "right": 193.265625,
+                "bottom": 801.828125,
+                "left": 94
+              }
+            },
+            {
+              "slug": "beja",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 801.828125,
+                "right": 193.265625,
+                "bottom": 845.828125,
+                "left": 94
+              }
+            },
+            {
+              "slug": "braga",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 845.828125,
+                "right": 193.265625,
+                "bottom": 889.828125,
+                "left": 94
+              }
+            },
+            {
+              "slug": "braganca",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 889.828125,
+                "right": 193.265625,
+                "bottom": 933.828125,
+                "left": 94
+              }
+            },
+            {
+              "slug": "castelo-branco",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 933.828125,
+                "right": 193.265625,
+                "bottom": 977.828125,
+                "left": 94
+              }
+            },
+            {
+              "slug": "coimbra",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 977.828125,
+                "right": 193.265625,
+                "bottom": 1021.828125,
+                "left": 94
+              }
+            },
+            {
+              "slug": "evora",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1021.828125,
+                "right": 193.265625,
+                "bottom": 1065.828125,
+                "left": 94
+              }
+            },
+            {
+              "slug": "faro",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1065.828125,
+                "right": 193.265625,
+                "bottom": 1109.828125,
+                "left": 94
+              }
+            },
+            {
+              "slug": "guarda",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1109.828125,
+                "right": 193.265625,
+                "bottom": 1153.828125,
+                "left": 94
+              }
+            },
+            {
+              "slug": "leiria",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 757.828125,
+                "right": 318.125,
+                "bottom": 801.828125,
+                "left": 218.859375
+              }
+            },
+            {
+              "slug": "lisboa",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 801.828125,
+                "right": 318.125,
+                "bottom": 845.828125,
+                "left": 218.859375
+              }
+            },
+            {
+              "slug": "portalegre",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 845.828125,
+                "right": 318.125,
+                "bottom": 889.828125,
+                "left": 218.859375
+              }
+            },
+            {
+              "slug": "porto",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 889.828125,
+                "right": 318.125,
+                "bottom": 933.828125,
+                "left": 218.859375
+              }
+            },
+            {
+              "slug": "santarem",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 933.828125,
+                "right": 318.125,
+                "bottom": 977.828125,
+                "left": 218.859375
+              }
+            },
+            {
+              "slug": "setubal",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 977.828125,
+                "right": 318.125,
+                "bottom": 1021.828125,
+                "left": 218.859375
+              }
+            },
+            {
+              "slug": "viana-do-castelo",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1021.828125,
+                "right": 318.125,
+                "bottom": 1065.828125,
+                "left": 218.859375
+              }
+            },
+            {
+              "slug": "vila-real",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1065.828125,
+                "right": 318.125,
+                "bottom": 1109.828125,
+                "left": 218.859375
+              }
+            },
+            {
+              "slug": "viseu",
+              "w": 99.265625,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1109.828125,
+                "right": 318.125,
+                "bottom": 1153.828125,
+                "left": 218.859375
+              }
+            },
+            {
+              "slug": "ilha-da-madeira",
+              "w": 113.734375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 757.828125,
+                "right": 457.453125,
+                "bottom": 801.828125,
+                "left": 343.71875
+              }
+            },
+            {
+              "slug": "ilha-de-porto-santo",
+              "w": 113.734375,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 801.828125,
+                "right": 457.453125,
+                "bottom": 845.828125,
+                "left": 343.71875
+              }
+            },
+            {
+              "slug": "ilha-da-graciosa",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 757.828125,
+                "right": 598.546875,
+                "bottom": 801.828125,
+                "left": 483.046875
+              }
+            },
+            {
+              "slug": "ilha-das-flores",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 801.828125,
+                "right": 598.546875,
+                "bottom": 845.828125,
+                "left": 483.046875
+              }
+            },
+            {
+              "slug": "ilha-de-santa-maria",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 845.828125,
+                "right": 598.546875,
+                "bottom": 889.828125,
+                "left": 483.046875
+              }
+            },
+            {
+              "slug": "ilha-de-sao-jorge",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 889.828125,
+                "right": 598.546875,
+                "bottom": 933.828125,
+                "left": 483.046875
+              }
+            },
+            {
+              "slug": "ilha-de-sao-miguel",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 933.828125,
+                "right": 598.546875,
+                "bottom": 977.828125,
+                "left": 483.046875
+              }
+            },
+            {
+              "slug": "ilha-do-corvo",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 977.828125,
+                "right": 598.546875,
+                "bottom": 1021.828125,
+                "left": 483.046875
+              }
+            },
+            {
+              "slug": "ilha-do-faial",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1021.828125,
+                "right": 598.546875,
+                "bottom": 1065.828125,
+                "left": 483.046875
+              }
+            },
+            {
+              "slug": "ilha-do-pico",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1065.828125,
+                "right": 598.546875,
+                "bottom": 1109.828125,
+                "left": 483.046875
+              }
+            },
+            {
+              "slug": "ilha-terceira",
+              "w": 115.5,
+              "h": 44,
+              "visivel": true,
+              "rect": {
+                "top": 1109.828125,
+                "right": 598.546875,
+                "bottom": 1153.828125,
+                "left": 483.046875
+              }
+            }
+          ],
+          "minW": 99.265625,
+          "minH": 44,
+          "sobrepostos": [],
+          "pontuacao": [],
+          "gaps": [
+            {
+              "parcela": "continente",
+              "columnGap": "25.6px"
+            },
+            {
+              "parcela": "madeira",
+              "columnGap": "normal"
+            },
+            {
+              "parcela": "acores",
+              "columnGap": "normal"
+            }
+          ],
+          "ordemDom": "lista_antes_do_mapa",
+          "listaRect": {
+            "x": 94,
+            "y": 735.03125,
+            "width": 582,
+            "height": 418.796875,
+            "top": 735.03125,
+            "right": 676,
+            "bottom": 1153.828125,
+            "left": 94
+          },
+          "figuraRect": {
+            "x": 696,
+            "y": 423.296875,
+            "width": 490,
+            "height": 713.265625,
+            "top": 423.296875,
+            "right": 1186,
+            "bottom": 1136.5625,
+            "left": 696
+          },
+          "ordemCss": {
+            "lista": "0",
+            "instrumento": "0",
+            "col": "0"
+          },
+          "numListas": 3,
+          "alvoAbaixoDeContagem": 0,
+          "familiasTotal": {
+            "mapa": 29,
+            "lista": 29
+          }
+        }
+      }
+    },
+    "antigo_beja_faro": {
+      "320": {
+        "beja": {
+          "w": 27.75,
+          "h": 44
+        },
+        "faro": {
+          "w": 29.03125,
+          "h": 44
+        }
+      },
+      "360": {
+        "beja": {
+          "w": 27.75,
+          "h": 44
+        },
+        "faro": {
+          "w": 29.03125,
+          "h": 44
+        }
+      },
+      "390": {
+        "beja": {
+          "w": 27.75,
+          "h": 44
+        },
+        "faro": {
+          "w": 29.03125,
+          "h": 44
+        }
+      },
+      "430": {
+        "beja": {
+          "w": 27.75,
+          "h": 44
+        },
+        "faro": {
+          "w": 29.03125,
+          "h": 44
+        }
+      },
+      "768": {
+        "beja": {
+          "w": 27.75,
+          "h": 44
+        },
+        "faro": {
+          "w": 29.03125,
+          "h": 44
+        }
+      }
+    },
+    "par29": {
+      "totalUnidades": 29,
+      "totalCasos": 116,
+      "casosCertos": 116,
+      "detalhe": {
+        "aveiro": {
+          "slug": "aveiro",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "aveiro"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "aveiro"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "aveiro"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "aveiro"
+            ]
+          }
+        },
+        "beja": {
+          "slug": "beja",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "beja"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "beja"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "beja"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "beja"
+            ]
+          }
+        },
+        "braga": {
+          "slug": "braga",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "braga"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "braga"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "braga"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "braga"
+            ]
+          }
+        },
+        "braganca": {
+          "slug": "braganca",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "braganca"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "braganca"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "braganca"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "braganca"
+            ]
+          }
+        },
+        "castelo-branco": {
+          "slug": "castelo-branco",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "castelo-branco"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "castelo-branco"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "castelo-branco"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "castelo-branco"
+            ]
+          }
+        },
+        "coimbra": {
+          "slug": "coimbra",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "coimbra"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "coimbra"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "coimbra"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "coimbra"
+            ]
+          }
+        },
+        "evora": {
+          "slug": "evora",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "evora"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "evora"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "evora"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "evora"
+            ]
+          }
+        },
+        "faro": {
+          "slug": "faro",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "faro"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "faro"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "faro"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "faro"
+            ]
+          }
+        },
+        "guarda": {
+          "slug": "guarda",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "guarda"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "guarda"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "guarda"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "guarda"
+            ]
+          }
+        },
+        "leiria": {
+          "slug": "leiria",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "leiria"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "leiria"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "leiria"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "leiria"
+            ]
+          }
+        },
+        "lisboa": {
+          "slug": "lisboa",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "lisboa"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "lisboa"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "lisboa"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "lisboa"
+            ]
+          }
+        },
+        "portalegre": {
+          "slug": "portalegre",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "portalegre"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "portalegre"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "portalegre"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "portalegre"
+            ]
+          }
+        },
+        "porto": {
+          "slug": "porto",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "porto"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "porto"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "porto"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "porto"
+            ]
+          }
+        },
+        "santarem": {
+          "slug": "santarem",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "santarem"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "santarem"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "santarem"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "santarem"
+            ]
+          }
+        },
+        "setubal": {
+          "slug": "setubal",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "setubal"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "setubal"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "setubal"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "setubal"
+            ]
+          }
+        },
+        "viana-do-castelo": {
+          "slug": "viana-do-castelo",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "viana-do-castelo"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "viana-do-castelo"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "viana-do-castelo"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "viana-do-castelo"
+            ]
+          }
+        },
+        "vila-real": {
+          "slug": "vila-real",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "vila-real"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "vila-real"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "vila-real"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "vila-real"
+            ]
+          }
+        },
+        "viseu": {
+          "slug": "viseu",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "viseu"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "viseu"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "viseu"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "viseu"
+            ]
+          }
+        },
+        "ilha-da-madeira": {
+          "slug": "ilha-da-madeira",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "ilha-da-madeira"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "ilha-da-madeira"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "ilha-da-madeira"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "ilha-da-madeira"
+            ]
+          }
+        },
+        "ilha-de-porto-santo": {
+          "slug": "ilha-de-porto-santo",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "ilha-de-porto-santo"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "ilha-de-porto-santo"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "ilha-de-porto-santo"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "ilha-de-porto-santo"
+            ]
+          }
+        },
+        "ilha-da-graciosa": {
+          "slug": "ilha-da-graciosa",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "ilha-da-graciosa"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "ilha-da-graciosa"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "ilha-da-graciosa"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "ilha-da-graciosa"
+            ]
+          }
+        },
+        "ilha-das-flores": {
+          "slug": "ilha-das-flores",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "ilha-das-flores"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "ilha-das-flores"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "ilha-das-flores"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "ilha-das-flores"
+            ]
+          }
+        },
+        "ilha-de-santa-maria": {
+          "slug": "ilha-de-santa-maria",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "ilha-de-santa-maria"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "ilha-de-santa-maria"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "ilha-de-santa-maria"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "ilha-de-santa-maria"
+            ]
+          }
+        },
+        "ilha-de-sao-jorge": {
+          "slug": "ilha-de-sao-jorge",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "ilha-de-sao-jorge"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "ilha-de-sao-jorge"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "ilha-de-sao-jorge"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "ilha-de-sao-jorge"
+            ]
+          }
+        },
+        "ilha-de-sao-miguel": {
+          "slug": "ilha-de-sao-miguel",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "ilha-de-sao-miguel"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "ilha-de-sao-miguel"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "ilha-de-sao-miguel"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "ilha-de-sao-miguel"
+            ]
+          }
+        },
+        "ilha-do-corvo": {
+          "slug": "ilha-do-corvo",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "ilha-do-corvo"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "ilha-do-corvo"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "ilha-do-corvo"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "ilha-do-corvo"
+            ]
+          }
+        },
+        "ilha-do-faial": {
+          "slug": "ilha-do-faial",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "ilha-do-faial"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "ilha-do-faial"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "ilha-do-faial"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "ilha-do-faial"
+            ]
+          }
+        },
+        "ilha-do-pico": {
+          "slug": "ilha-do-pico",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "ilha-do-pico"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "ilha-do-pico"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "ilha-do-pico"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "ilha-do-pico"
+            ]
+          }
+        },
+        "ilha-terceira": {
+          "slug": "ilha-terceira",
+          "hoverNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "ilha-terceira"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "focoNome": {
+            "areaAntes": "1px",
+            "areaDepois": "3px",
+            "areaCorAntes": "rgb(23, 25, 27)",
+            "areaCorDepois": "rgb(23, 25, 27)",
+            "areasQueMudaram": [
+              "ilha-terceira"
+            ],
+            "areasCorQueMudaram": []
+          },
+          "hoverArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "corAntes": "rgb(127, 134, 129)",
+            "corDepois": "rgb(23, 25, 27)",
+            "nomesQueMudaram": [
+              "ilha-terceira"
+            ]
+          },
+          "focoArea": {
+            "espessuraAntes": "1px",
+            "espessuraDepois": "3px",
+            "nomesQueMudaram": [
+              "ilha-terceira"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

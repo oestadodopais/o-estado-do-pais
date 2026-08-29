@@ -1,0 +1,9 @@
+{
+ "registado_em": "2026-08-29",
+ "copia": "pacote copiado do worktree wt-inicio-lista em 5b4fc7f (fonte e dist); as plantas estão só nas páginas construídas do pacote",
+ "plantas": [
+  {"id": "P1", "ficheiro": "paginas/index.html", "descricao": "the Braga list item duplicated: two links to /distritos/braga in the names list (30 links, 29 slugs)", "sha256_antes": "5e9c5cd706e51b813ecf0acd9e02ba14d4df7ee02fa05323361834edda6f2698", "sha256_depois": "9a620b76f8bc36187a593532e7d605b33fb811ea27806b99dc8f3d4fe0a3a0a9", "contexto": "<li><a href=\"/distritos/braga\" data-lista-porta=\"braga\">Braga</a></li>"},
+  {"id": "P2", "ficheiro": "paginas/en-index.html", "descricao": "the panel name line's count changed from 13 to 12 while the page still renders 13 cards", "sha256_antes": "a6d437f3e414efff3fa57b00825a4acb4a593ab697130755ce91ec42677a5b02", "sha256_depois": "d79d87276443aa14e1d151c1cb5f7e7f1df677074a0324dde849e531d51d718f", "contexto": ">13</a> measures with a threshold"},
+  {"id": "P3", "ficheiro": "paginas/index.html (inline <style>)", "descricao": "the pairing rule from Beja's map area to its name points at data-lista-porta=\"beja-x\": hovering the area no longer marks the name (one direction broken for one unit)", "sha256_antes": "5e9c5cd706e51b813ecf0acd9e02ba14d4df7ee02fa05323361834edda6f2698", "sha256_depois": "9a620b76f8bc36187a593532e7d605b33fb811ea27806b99dc8f3d4fe0a3a0a9", "contexto": ".cabeca-grelha:has([data-uni-porta=\"beja\"]:is(:hover,:focus-visible)) [data-lista-porta=\"beja\"]"}
+ ]
+}
