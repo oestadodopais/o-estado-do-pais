@@ -1,0 +1,1860 @@
+{
+  "escrito": "2026-08-29T08:12:54.715Z",
+  "rubrica": "design/tipografia/RUBRICA.md",
+  "combinacoes": [
+    "spectral+bitter",
+    "newsreader+bitter",
+    "sourceserif4+bitter",
+    "literata+bitter",
+    "spectral+publicsans"
+  ],
+  "grelha": {
+    "larguras": [
+      320,
+      360,
+      390,
+      430,
+      768,
+      1024,
+      1280
+    ],
+    "densidades": [
+      1,
+      2,
+      3
+    ],
+    "paginas": [
+      "primeira",
+      "concelho",
+      "regiao",
+      "linha",
+      "leitura"
+    ],
+    "celulas_medidas": 525
+  },
+  "provas_dos_detetores": {
+    "medida_2_e_3": "design/tipografia/programa/pixeis.mjs, treze casos conhecidos, corre e pára se algum falhar",
+    "medida_4_no_ficheiro": {
+      "caso": "Newsreader com o subconjunto feito sem features OpenType",
+      "esperado": "a medida 4 exclui (sem `tnum`)",
+      "visto_tnum_no_vermelho": false,
+      "visto_tnum_no_verde": true,
+      "veredicto": "o detetor da medida 4 distingue os dois"
+    },
+    "medida_4_na_pagina": {
+      "spectral+bitter": "a régua distingue com e sem tabulares no mesmo tipo (o vermelho foi visto)",
+      "newsreader+bitter": "a régua distingue com e sem tabulares no mesmo tipo (o vermelho foi visto)",
+      "sourceserif4+bitter": "a régua distingue com e sem tabulares no mesmo tipo (o vermelho foi visto)",
+      "literata+bitter": "a régua distingue com e sem tabulares no mesmo tipo (o vermelho foi visto)",
+      "spectral+publicsans": "a régua distingue com e sem tabulares no mesmo tipo (o vermelho foi visto)"
+    }
+  },
+  "familias": [
+    {
+      "familia": "Spectral",
+      "papel": "prosa",
+      "medida1": {
+        "do_ficheiro_x_em": 0.45,
+        "x_a_17px": 7.65,
+        "x_a_15px": 6.75,
+        "no_navegador_17px": 7.65,
+        "no_navegador_15px": 6.75
+      },
+      "medida2": {
+        "recortes": 10,
+        "traco_mais_fino_px": 1,
+        "pico_mediano_1px": 0.3157,
+        "fracao_corridas_palidas": 0.1688,
+        "desaparece": true,
+        "por_recorte": [
+          {
+            "pagina": "primeira",
+            "largura": 390,
+            "pico_mediano_1px": 0.2801,
+            "desaparece": true
+          },
+          {
+            "pagina": "primeira",
+            "largura": 1280,
+            "pico_mediano_1px": 0.3445,
+            "desaparece": true
+          },
+          {
+            "pagina": "concelho",
+            "largura": 390,
+            "pico_mediano_1px": 0.349,
+            "desaparece": true
+          },
+          {
+            "pagina": "concelho",
+            "largura": 1280,
+            "pico_mediano_1px": 0.3023,
+            "desaparece": true
+          },
+          {
+            "pagina": "regiao",
+            "largura": 390,
+            "pico_mediano_1px": 0.1207,
+            "desaparece": true
+          },
+          {
+            "pagina": "regiao",
+            "largura": 1280,
+            "pico_mediano_1px": 0.1207,
+            "desaparece": true
+          },
+          {
+            "pagina": "linha",
+            "largura": 390,
+            "pico_mediano_1px": 0.5216,
+            "desaparece": false
+          },
+          {
+            "pagina": "linha",
+            "largura": 1280,
+            "pico_mediano_1px": 0.4511,
+            "desaparece": true
+          },
+          {
+            "pagina": "leitura",
+            "largura": 390,
+            "pico_mediano_1px": 0.4095,
+            "desaparece": true
+          },
+          {
+            "pagina": "leitura",
+            "largura": 1280,
+            "pico_mediano_1px": 0.2576,
+            "desaparece": true
+          }
+        ]
+      },
+      "medida3": {
+        "peso_medido": 400,
+        "a_17px_1x": {
+          "e": null,
+          "a": null,
+          "s": null,
+          "o": null
+        },
+        "a_17px_3x": {
+          "e": 1.667,
+          "a": 1,
+          "s": 1
+        },
+        "a_17px_12x": {
+          "e": 2.25,
+          "a": 1.306,
+          "s": 1.361,
+          "c": 3.917,
+          "o": null
+        }
+      },
+      "medida3_pela_regua": {
+        "a_17px_1x": {
+          "e": null,
+          "a": null,
+          "s": null,
+          "o": null
+        },
+        "a_17px_3x_em_px_de_css": {
+          "e": 1.67,
+          "a": 1,
+          "s": 1,
+          "o": null
+        },
+        "cru": {
+          "e_1x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 19,
+              "x1": 20,
+              "y1": 26,
+              "largura": 6,
+              "altura": 8
+            }
+          },
+          "a_1x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 19,
+              "x1": 21,
+              "y1": 26,
+              "largura": 7,
+              "altura": 8
+            }
+          },
+          "s_1x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 19,
+              "x1": 19,
+              "y1": 26,
+              "largura": 5,
+              "altura": 8
+            }
+          },
+          "o_1x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 19,
+              "x1": 21,
+              "y1": 26,
+              "largura": 7,
+              "altura": 8
+            }
+          },
+          "e_3x": {
+            "abertura_px": 5,
+            "raio_que_fecha_px": 3,
+            "pixeis_selados": 16,
+            "caixa_da_tinta": {
+              "x0": 44,
+              "y0": 57,
+              "x1": 63,
+              "y1": 80,
+              "largura": 20,
+              "altura": 24
+            }
+          },
+          "a_3x": {
+            "abertura_px": 3,
+            "raio_que_fecha_px": 2,
+            "pixeis_selados": 15,
+            "caixa_da_tinta": {
+              "x0": 44,
+              "y0": 57,
+              "x1": 66,
+              "y1": 80,
+              "largura": 23,
+              "altura": 24
+            }
+          },
+          "s_3x": {
+            "abertura_px": 3,
+            "raio_que_fecha_px": 2,
+            "pixeis_selados": 13,
+            "caixa_da_tinta": {
+              "x0": 45,
+              "y0": 57,
+              "x1": 60,
+              "y1": 80,
+              "largura": 16,
+              "altura": 24
+            }
+          },
+          "o_3x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 44,
+              "y0": 57,
+              "x1": 66,
+              "y1": 80,
+              "largura": 23,
+              "altura": 24
+            }
+          }
+        }
+      },
+      "medida4_na_pagina_nao_se_aplica": "os algarismos das páginas compõem-se em `--f-instr`; nesta construção são da Bitter",
+      "medida4": {
+        "tem_feature_tnum": true,
+        "variancia_do_ficheiro_15px_padrao": 0,
+        "variancia_do_ficheiro_15px_tnum": 0,
+        "variancia_na_pagina_15px": null,
+        "vermelho_sem_tabulares_15px": null,
+        "celulas": 0,
+        "excluida": false
+      },
+      "medida5": {
+        "tem_smcp": true,
+        "tem_c2sc": true,
+        "como": "feature `smcp` no próprio ficheiro; o interruptor declara uma família irmã com o descritor `font-feature-settings`"
+      },
+      "medida6": {
+        "corpo": "17.5px",
+        "entrelinha": "28px",
+        "linhas_no_ecra": 27,
+        "caracteres_no_ecra": 977,
+        "caracteres_por_linha": 36.19,
+        "caracteres_por_linha_do_primeiro_paragrafo": 42
+      },
+      "medida7": {
+        "ficheiros": [
+          {
+            "ficheiro": "spectral/Spectral-Regular-latin.woff2",
+            "bytes": 47976
+          },
+          {
+            "ficheiro": "spectral/Spectral-Italic-latin.woff2",
+            "bytes": 49676
+          },
+          {
+            "ficheiro": "spectral/Spectral-Medium-latin.woff2",
+            "bytes": 50568
+          },
+          {
+            "ficheiro": "spectral/Spectral-SemiBold-latin.woff2",
+            "bytes": 50728
+          },
+          {
+            "ficheiro": "spectral/Spectral-Bold-latin.woff2",
+            "bytes": 50864
+          },
+          {
+            "ficheiro": "spectral-sc/SpectralSC-Regular-latin.woff2",
+            "bytes": 48192
+          },
+          {
+            "ficheiro": "spectral-sc/SpectralSC-SemiBold-latin.woff2",
+            "bytes": 50840
+          }
+        ],
+        "total_bytes": 348844,
+        "razao": "cinco estáticos da prosa mais dois das versais: a Spectral não é variável",
+        "total_do_sitio_com_bitter_bytes": 415008
+      },
+      "medida8": "fase do lugar de direção: as pranchas ficam feitas, a leitura não é minha",
+      "nota": "controlo: o sítio de hoje"
+    },
+    {
+      "familia": "Newsreader",
+      "papel": "prosa",
+      "medida1": {
+        "do_ficheiro_x_em": 0.426,
+        "x_a_17px": 7.242,
+        "x_a_15px": 6.39,
+        "no_navegador_17px": 7.3638,
+        "no_navegador_15px": 6.7125
+      },
+      "medida2": {
+        "recortes": 10,
+        "traco_mais_fino_px": 1,
+        "pico_mediano_1px": 0.3201,
+        "fracao_corridas_palidas": 0.1842,
+        "desaparece": true,
+        "por_recorte": [
+          {
+            "pagina": "primeira",
+            "largura": 390,
+            "pico_mediano_1px": 0.3139,
+            "desaparece": true
+          },
+          {
+            "pagina": "primeira",
+            "largura": 1280,
+            "pico_mediano_1px": 0.2936,
+            "desaparece": true
+          },
+          {
+            "pagina": "concelho",
+            "largura": 390,
+            "pico_mediano_1px": 0.3892,
+            "desaparece": true
+          },
+          {
+            "pagina": "concelho",
+            "largura": 1280,
+            "pico_mediano_1px": 0.3567,
+            "desaparece": true
+          },
+          {
+            "pagina": "regiao",
+            "largura": 390,
+            "pico_mediano_1px": 0.3834,
+            "desaparece": true
+          },
+          {
+            "pagina": "regiao",
+            "largura": 1280,
+            "pico_mediano_1px": 0.3474,
+            "desaparece": true
+          },
+          {
+            "pagina": "linha",
+            "largura": 390,
+            "pico_mediano_1px": 0.2592,
+            "desaparece": true
+          },
+          {
+            "pagina": "linha",
+            "largura": 1280,
+            "pico_mediano_1px": 0.2727,
+            "desaparece": true
+          },
+          {
+            "pagina": "leitura",
+            "largura": 390,
+            "pico_mediano_1px": 0.3374,
+            "desaparece": true
+          },
+          {
+            "pagina": "leitura",
+            "largura": 1280,
+            "pico_mediano_1px": 0.2476,
+            "desaparece": true
+          }
+        ]
+      },
+      "medida3": {
+        "peso_medido": 400,
+        "a_17px_1x": {
+          "e": 1,
+          "a": null,
+          "s": null,
+          "o": 1
+        },
+        "a_17px_3x": {
+          "e": 2.333,
+          "a": 1,
+          "s": 0.556
+        },
+        "a_17px_12x": {
+          "e": 2.583,
+          "a": 1.528,
+          "s": 1.028,
+          "c": 4.028,
+          "o": null
+        }
+      },
+      "medida3_pela_regua": {
+        "a_17px_1x": {
+          "e": 1,
+          "a": null,
+          "s": null,
+          "o": 1
+        },
+        "a_17px_3x_em_px_de_css": {
+          "e": 2.33,
+          "a": 1,
+          "s": 0.56,
+          "o": null
+        },
+        "cru": {
+          "e_1x": {
+            "abertura_px": 1,
+            "raio_que_fecha_px": 1,
+            "pixeis_selados": 3,
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 18,
+              "x1": 20,
+              "y1": 25,
+              "largura": 6,
+              "altura": 8
+            }
+          },
+          "a_1x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 18,
+              "x1": 20,
+              "y1": 25,
+              "largura": 6,
+              "altura": 8
+            }
+          },
+          "s_1x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 18,
+              "x1": 19,
+              "y1": 25,
+              "largura": 5,
+              "altura": 8
+            }
+          },
+          "o_1x": {
+            "abertura_px": 1,
+            "raio_que_fecha_px": 1,
+            "pixeis_selados": 8,
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 18,
+              "x1": 21,
+              "y1": 25,
+              "largura": 7,
+              "altura": 8
+            }
+          },
+          "e_3x": {
+            "abertura_px": 7,
+            "raio_que_fecha_px": 4,
+            "pixeis_selados": 10,
+            "caixa_da_tinta": {
+              "x0": 44,
+              "y0": 55,
+              "x1": 62,
+              "y1": 77,
+              "largura": 19,
+              "altura": 23
+            }
+          },
+          "a_3x": {
+            "abertura_px": 3,
+            "raio_que_fecha_px": 2,
+            "pixeis_selados": 13,
+            "caixa_da_tinta": {
+              "x0": 44,
+              "y0": 55,
+              "x1": 64,
+              "y1": 77,
+              "largura": 21,
+              "altura": 23
+            }
+          },
+          "s_3x": {
+            "abertura_px": 1.667,
+            "raio_que_fecha_px": 1.333,
+            "pixeis_selados": 16,
+            "caixa_da_tinta": {
+              "x0": 44,
+              "y0": 55,
+              "x1": 58,
+              "y1": 77,
+              "largura": 15,
+              "altura": 23
+            }
+          },
+          "o_3x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 44,
+              "y0": 55,
+              "x1": 66,
+              "y1": 77,
+              "largura": 23,
+              "altura": 23
+            }
+          }
+        }
+      },
+      "medida4_na_pagina_nao_se_aplica": "os algarismos das páginas compõem-se em `--f-instr`; nesta construção são da Bitter",
+      "medida4": {
+        "tem_feature_tnum": true,
+        "variancia_do_ficheiro_15px_padrao": 0,
+        "variancia_do_ficheiro_15px_tnum": 0,
+        "variancia_na_pagina_15px": null,
+        "vermelho_sem_tabulares_15px": null,
+        "celulas": 0,
+        "excluida": false
+      },
+      "medida5": {
+        "tem_smcp": false,
+        "tem_c2sc": false,
+        "como": "sem `smcp` e sem família irmã: as versais ficam na Spectral SC"
+      },
+      "medida6": {
+        "corpo": "17.5px",
+        "entrelinha": "28px",
+        "linhas_no_ecra": 31,
+        "caracteres_no_ecra": 1118,
+        "caracteres_por_linha": 36.06,
+        "caracteres_por_linha_do_primeiro_paragrafo": 42
+      },
+      "medida7": {
+        "ficheiros": [
+          {
+            "ficheiro": "newsreader/Newsreader-latin.woff2",
+            "bytes": 196732
+          },
+          {
+            "ficheiro": "newsreader/Newsreader-Italic-latin.woff2",
+            "bytes": 219412
+          },
+          {
+            "ficheiro": "spectral-sc/SpectralSC-Regular-latin.woff2",
+            "bytes": 48192
+          },
+          {
+            "ficheiro": "spectral-sc/SpectralSC-SemiBold-latin.woff2",
+            "bytes": 50840
+          }
+        ],
+        "total_bytes": 515176,
+        "razao": "um variável e o itálico; as versais continuam a ser a Spectral SC, porque a Newsreader não tem `smcp`",
+        "total_do_sitio_com_bitter_bytes": 581340
+      },
+      "medida8": "fase do lugar de direção: as pranchas ficam feitas, a leitura não é minha"
+    },
+    {
+      "familia": "Source Serif 4",
+      "papel": "prosa",
+      "medida1": {
+        "do_ficheiro_x_em": 0.475,
+        "x_a_17px": 8.075,
+        "x_a_15px": 7.125,
+        "no_navegador_17px": 8.2153,
+        "no_navegador_15px": 7.3313
+      },
+      "medida2": {
+        "recortes": 10,
+        "traco_mais_fino_px": 1,
+        "pico_mediano_1px": 0.4421,
+        "fracao_corridas_palidas": 0.1392,
+        "desaparece": true,
+        "por_recorte": [
+          {
+            "pagina": "primeira",
+            "largura": 390,
+            "pico_mediano_1px": 0.3509,
+            "desaparece": true
+          },
+          {
+            "pagina": "primeira",
+            "largura": 1280,
+            "pico_mediano_1px": 0.2353,
+            "desaparece": true
+          },
+          {
+            "pagina": "concelho",
+            "largura": 390,
+            "pico_mediano_1px": 0.3995,
+            "desaparece": true
+          },
+          {
+            "pagina": "concelho",
+            "largura": 1280,
+            "pico_mediano_1px": 0.4208,
+            "desaparece": true
+          },
+          {
+            "pagina": "regiao",
+            "largura": 390,
+            "pico_mediano_1px": 0.4871,
+            "desaparece": true
+          },
+          {
+            "pagina": "regiao",
+            "largura": 1280,
+            "pico_mediano_1px": 0.4736,
+            "desaparece": true
+          },
+          {
+            "pagina": "linha",
+            "largura": 390,
+            "pico_mediano_1px": 0.604,
+            "desaparece": false
+          },
+          {
+            "pagina": "linha",
+            "largura": 1280,
+            "pico_mediano_1px": 0.6211,
+            "desaparece": false
+          },
+          {
+            "pagina": "leitura",
+            "largura": 390,
+            "pico_mediano_1px": 0.4691,
+            "desaparece": true
+          },
+          {
+            "pagina": "leitura",
+            "largura": 1280,
+            "pico_mediano_1px": 0.36,
+            "desaparece": true
+          }
+        ]
+      },
+      "medida3": {
+        "peso_medido": 400,
+        "a_17px_1x": {
+          "e": 1,
+          "a": null,
+          "s": null,
+          "o": null
+        },
+        "a_17px_3x": {
+          "e": 1.667,
+          "a": 1,
+          "s": 1
+        },
+        "a_17px_12x": {
+          "e": 1.917,
+          "a": 1.361,
+          "s": 1.306,
+          "c": 3.417,
+          "o": null
+        }
+      },
+      "medida3_pela_regua": {
+        "a_17px_1x": {
+          "e": 1,
+          "a": null,
+          "s": null,
+          "o": null
+        },
+        "a_17px_3x_em_px_de_css": {
+          "e": 1.67,
+          "a": 1,
+          "s": 1,
+          "o": null
+        },
+        "cru": {
+          "e_1x": {
+            "abertura_px": 1,
+            "raio_que_fecha_px": 1,
+            "pixeis_selados": 3,
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 19,
+              "x1": 21,
+              "y1": 27,
+              "largura": 7,
+              "altura": 9
+            }
+          },
+          "a_1x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 19,
+              "x1": 22,
+              "y1": 27,
+              "largura": 8,
+              "altura": 9
+            }
+          },
+          "s_1x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 19,
+              "x1": 20,
+              "y1": 27,
+              "largura": 6,
+              "altura": 9
+            }
+          },
+          "o_1x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 19,
+              "x1": 22,
+              "y1": 27,
+              "largura": 8,
+              "altura": 9
+            }
+          },
+          "e_3x": {
+            "abertura_px": 5,
+            "raio_que_fecha_px": 3,
+            "pixeis_selados": 21,
+            "caixa_da_tinta": {
+              "x0": 44,
+              "y0": 58,
+              "x1": 66,
+              "y1": 84,
+              "largura": 23,
+              "altura": 27
+            }
+          },
+          "a_3x": {
+            "abertura_px": 3,
+            "raio_que_fecha_px": 2,
+            "pixeis_selados": 20,
+            "caixa_da_tinta": {
+              "x0": 44,
+              "y0": 58,
+              "x1": 68,
+              "y1": 84,
+              "largura": 25,
+              "altura": 27
+            }
+          },
+          "s_3x": {
+            "abertura_px": 3,
+            "raio_que_fecha_px": 2,
+            "pixeis_selados": 17,
+            "caixa_da_tinta": {
+              "x0": 44,
+              "y0": 58,
+              "x1": 62,
+              "y1": 84,
+              "largura": 19,
+              "altura": 27
+            }
+          },
+          "o_3x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 44,
+              "y0": 58,
+              "x1": 68,
+              "y1": 84,
+              "largura": 25,
+              "altura": 27
+            }
+          }
+        }
+      },
+      "medida4_na_pagina_nao_se_aplica": "os algarismos das páginas compõem-se em `--f-instr`; nesta construção são da Bitter",
+      "medida4": {
+        "tem_feature_tnum": true,
+        "variancia_do_ficheiro_15px_padrao": 0,
+        "variancia_do_ficheiro_15px_tnum": 0,
+        "variancia_na_pagina_15px": null,
+        "vermelho_sem_tabulares_15px": null,
+        "celulas": 0,
+        "excluida": false
+      },
+      "medida5": {
+        "tem_smcp": true,
+        "tem_c2sc": true,
+        "como": "feature `smcp` no próprio ficheiro; o interruptor declara uma família irmã com o descritor `font-feature-settings`"
+      },
+      "medida6": {
+        "corpo": "17.5px",
+        "entrelinha": "28px",
+        "linhas_no_ecra": 28,
+        "caracteres_no_ecra": 940,
+        "caracteres_por_linha": 33.57,
+        "caracteres_por_linha_do_primeiro_paragrafo": 31.5
+      },
+      "medida7": {
+        "ficheiros": [
+          {
+            "ficheiro": "sourceserif4/SourceSerif4-latin.woff2",
+            "bytes": 243292
+          },
+          {
+            "ficheiro": "sourceserif4/SourceSerif4-Italic-latin.woff2",
+            "bytes": 207416
+          }
+        ],
+        "total_bytes": 450708,
+        "razao": "um variável e o itálico; as versais saem do mesmo ficheiro pelo `smcp`, e não pesam nada",
+        "total_do_sitio_com_bitter_bytes": 516872
+      },
+      "medida8": "fase do lugar de direção: as pranchas ficam feitas, a leitura não é minha"
+    },
+    {
+      "familia": "Literata",
+      "papel": "prosa",
+      "medida1": {
+        "do_ficheiro_x_em": 0.507,
+        "x_a_17px": 8.619,
+        "x_a_15px": 7.605,
+        "no_navegador_17px": 8.6262,
+        "no_navegador_15px": 7.6088
+      },
+      "medida2": {
+        "recortes": 10,
+        "traco_mais_fino_px": 1,
+        "pico_mediano_1px": 0.3119,
+        "fracao_corridas_palidas": 0.1399,
+        "desaparece": true,
+        "por_recorte": [
+          {
+            "pagina": "primeira",
+            "largura": 390,
+            "pico_mediano_1px": 0.3014,
+            "desaparece": true
+          },
+          {
+            "pagina": "primeira",
+            "largura": 1280,
+            "pico_mediano_1px": 0.2408,
+            "desaparece": true
+          },
+          {
+            "pagina": "concelho",
+            "largura": 390,
+            "pico_mediano_1px": 0.4304,
+            "desaparece": true
+          },
+          {
+            "pagina": "concelho",
+            "largura": 1280,
+            "pico_mediano_1px": 0.4388,
+            "desaparece": true
+          },
+          {
+            "pagina": "regiao",
+            "largura": 390,
+            "pico_mediano_1px": 0.1207,
+            "desaparece": true
+          },
+          {
+            "pagina": "regiao",
+            "largura": 1280,
+            "pico_mediano_1px": 0.1207,
+            "desaparece": true
+          },
+          {
+            "pagina": "linha",
+            "largura": 390,
+            "pico_mediano_1px": 0.3897,
+            "desaparece": true
+          },
+          {
+            "pagina": "linha",
+            "largura": 1280,
+            "pico_mediano_1px": 0.2608,
+            "desaparece": true
+          },
+          {
+            "pagina": "leitura",
+            "largura": 390,
+            "pico_mediano_1px": 0.4227,
+            "desaparece": true
+          },
+          {
+            "pagina": "leitura",
+            "largura": 1280,
+            "pico_mediano_1px": 0.3925,
+            "desaparece": true
+          }
+        ]
+      },
+      "medida3": {
+        "peso_medido": 400,
+        "a_17px_1x": {
+          "e": null,
+          "a": null,
+          "s": null,
+          "o": null
+        },
+        "a_17px_3x": {
+          "e": 1.667,
+          "a": 1,
+          "s": 1
+        },
+        "a_17px_12x": {
+          "e": 2.083,
+          "a": 1.417,
+          "s": 1.306,
+          "c": 3.583,
+          "o": null
+        }
+      },
+      "medida3_pela_regua": {
+        "a_17px_1x": {
+          "e": null,
+          "a": null,
+          "s": null,
+          "o": null
+        },
+        "a_17px_3x_em_px_de_css": {
+          "e": 1.67,
+          "a": 1,
+          "s": 1,
+          "o": null
+        },
+        "cru": {
+          "e_1x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 21,
+              "x1": 21,
+              "y1": 29,
+              "largura": 7,
+              "altura": 9
+            }
+          },
+          "a_1x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 21,
+              "x1": 22,
+              "y1": 29,
+              "largura": 8,
+              "altura": 9
+            }
+          },
+          "s_1x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 21,
+              "x1": 20,
+              "y1": 29,
+              "largura": 6,
+              "altura": 9
+            }
+          },
+          "o_1x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 21,
+              "x1": 22,
+              "y1": 29,
+              "largura": 8,
+              "altura": 9
+            }
+          },
+          "e_3x": {
+            "abertura_px": 5,
+            "raio_que_fecha_px": 3,
+            "pixeis_selados": 25,
+            "caixa_da_tinta": {
+              "x0": 44,
+              "y0": 63,
+              "x1": 66,
+              "y1": 90,
+              "largura": 23,
+              "altura": 28
+            }
+          },
+          "a_3x": {
+            "abertura_px": 3,
+            "raio_que_fecha_px": 2,
+            "pixeis_selados": 28,
+            "caixa_da_tinta": {
+              "x0": 44,
+              "y0": 63,
+              "x1": 68,
+              "y1": 90,
+              "largura": 25,
+              "altura": 28
+            }
+          },
+          "s_3x": {
+            "abertura_px": 3,
+            "raio_que_fecha_px": 2,
+            "pixeis_selados": 46,
+            "caixa_da_tinta": {
+              "x0": 44,
+              "y0": 63,
+              "x1": 63,
+              "y1": 90,
+              "largura": 20,
+              "altura": 28
+            }
+          },
+          "o_3x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 44,
+              "y0": 63,
+              "x1": 69,
+              "y1": 90,
+              "largura": 26,
+              "altura": 28
+            }
+          }
+        }
+      },
+      "medida4_na_pagina_nao_se_aplica": "os algarismos das páginas compõem-se em `--f-instr`; nesta construção são da Bitter",
+      "medida4": {
+        "tem_feature_tnum": true,
+        "variancia_do_ficheiro_15px_padrao": 0.43440525000000024,
+        "variancia_do_ficheiro_15px_tnum": 0,
+        "variancia_na_pagina_15px": null,
+        "vermelho_sem_tabulares_15px": null,
+        "celulas": 0,
+        "excluida": false
+      },
+      "medida5": {
+        "tem_smcp": true,
+        "tem_c2sc": true,
+        "como": "feature `smcp` no próprio ficheiro; o interruptor declara uma família irmã com o descritor `font-feature-settings`"
+      },
+      "medida6": {
+        "corpo": "17.5px",
+        "entrelinha": "28px",
+        "linhas_no_ecra": 30,
+        "caracteres_no_ecra": 907,
+        "caracteres_por_linha": 30.23,
+        "caracteres_por_linha_do_primeiro_paragrafo": 31.5
+      },
+      "medida7": {
+        "ficheiros": [
+          {
+            "ficheiro": "literata/Literata-latin.woff2",
+            "bytes": 241260
+          },
+          {
+            "ficheiro": "literata/Literata-Italic-latin.woff2",
+            "bytes": 241776
+          }
+        ],
+        "total_bytes": 483036,
+        "razao": "um variável e o itálico; as versais saem do mesmo ficheiro pelo `smcp`",
+        "total_do_sitio_com_bitter_bytes": 549200
+      },
+      "medida8": "fase do lugar de direção: as pranchas ficam feitas, a leitura não é minha"
+    },
+    {
+      "familia": "Parnaso Standard",
+      "papel": "prosa",
+      "vazio": "o pacote de teste não existe: só o diretor o pode pedir"
+    },
+    {
+      "familia": "Parnaso Small",
+      "papel": "prosa",
+      "vazio": "o pacote de teste não existe: só o diretor o pode pedir"
+    },
+    {
+      "familia": "Bitter",
+      "papel": "instrumento",
+      "medida1": {
+        "do_ficheiro_x_em": 0.522,
+        "x_a_17px": 8.874,
+        "x_a_15px": 7.83,
+        "no_navegador_17px": 9.0384,
+        "no_navegador_15px": 7.9751
+      },
+      "medida2": {
+        "recortes": 8,
+        "traco_mais_fino_px": 1,
+        "pico_mediano_1px": 0.3204,
+        "fracao_corridas_palidas": 0.0647,
+        "desaparece": true,
+        "por_recorte": [
+          {
+            "pagina": "primeira",
+            "largura": 390,
+            "pico_mediano_1px": 0.0866,
+            "desaparece": true
+          },
+          {
+            "pagina": "primeira",
+            "largura": 1280,
+            "pico_mediano_1px": 0.1397,
+            "desaparece": true
+          },
+          {
+            "pagina": "concelho",
+            "largura": 390,
+            "pico_mediano_1px": 0.1267,
+            "desaparece": true
+          },
+          {
+            "pagina": "concelho",
+            "largura": 1280,
+            "pico_mediano_1px": 0.1114,
+            "desaparece": true
+          },
+          {
+            "pagina": "regiao",
+            "largura": 390,
+            "pico_mediano_1px": 0.2046,
+            "desaparece": true
+          },
+          {
+            "pagina": "regiao",
+            "largura": 1280,
+            "pico_mediano_1px": 0.4984,
+            "desaparece": true
+          },
+          {
+            "pagina": "linha",
+            "largura": 390,
+            "pico_mediano_1px": 0.6977,
+            "desaparece": false
+          },
+          {
+            "pagina": "linha",
+            "largura": 1280,
+            "pico_mediano_1px": 0.6977,
+            "desaparece": false
+          }
+        ]
+      },
+      "medida3": {
+        "peso_medido": 600,
+        "a_17px_1x": {
+          "e": null,
+          "a": null,
+          "s": null,
+          "o": null
+        },
+        "a_17px_3x": {
+          "e": 1.667,
+          "a": 1,
+          "s": 1
+        },
+        "a_17px_12x": {
+          "e": 1.917,
+          "a": 1.139,
+          "s": 1.361,
+          "c": 3.75,
+          "o": null
+        }
+      },
+      "medida3_pela_regua": {
+        "a_17px_1x": {
+          "e": 1,
+          "a": null,
+          "s": 1,
+          "o": null
+        },
+        "a_17px_3x_em_px_de_css": {
+          "e": 2.33,
+          "a": 1,
+          "s": 1.44,
+          "o": null
+        },
+        "cru": {
+          "e_1x": {
+            "abertura_px": 1,
+            "raio_que_fecha_px": 1,
+            "pixeis_selados": 3,
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 19,
+              "x1": 21,
+              "y1": 27,
+              "largura": 7,
+              "altura": 9
+            }
+          },
+          "a_1x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 19,
+              "x1": 22,
+              "y1": 27,
+              "largura": 8,
+              "altura": 9
+            }
+          },
+          "s_1x": {
+            "abertura_px": 1,
+            "raio_que_fecha_px": 1,
+            "pixeis_selados": 3,
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 19,
+              "x1": 20,
+              "y1": 27,
+              "largura": 6,
+              "altura": 9
+            }
+          },
+          "o_1x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 19,
+              "x1": 22,
+              "y1": 27,
+              "largura": 8,
+              "altura": 9
+            }
+          },
+          "e_3x": {
+            "abertura_px": 7,
+            "raio_que_fecha_px": 4,
+            "pixeis_selados": 8,
+            "caixa_da_tinta": {
+              "x0": 44,
+              "y0": 56,
+              "x1": 67,
+              "y1": 83,
+              "largura": 24,
+              "altura": 28
+            }
+          },
+          "a_3x": {
+            "abertura_px": 3,
+            "raio_que_fecha_px": 2,
+            "pixeis_selados": 38,
+            "caixa_da_tinta": {
+              "x0": 44,
+              "y0": 56,
+              "x1": 68,
+              "y1": 83,
+              "largura": 25,
+              "altura": 28
+            }
+          },
+          "s_3x": {
+            "abertura_px": 4.333,
+            "raio_que_fecha_px": 2.667,
+            "pixeis_selados": 39,
+            "caixa_da_tinta": {
+              "x0": 45,
+              "y0": 56,
+              "x1": 63,
+              "y1": 83,
+              "largura": 19,
+              "altura": 28
+            }
+          },
+          "o_3x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 44,
+              "y0": 56,
+              "x1": 68,
+              "y1": 83,
+              "largura": 25,
+              "altura": 28
+            }
+          }
+        }
+      },
+      "medida4": {
+        "tem_feature_tnum": true,
+        "variancia_do_ficheiro_15px_padrao": 1.14455025,
+        "variancia_do_ficheiro_15px_tnum": 0,
+        "variancia_na_pagina_15px": 0,
+        "vermelho_sem_tabulares_15px": 0.74253,
+        "celulas": 105,
+        "excluida": false
+      },
+      "medida5": {
+        "tem_smcp": true,
+        "tem_c2sc": true,
+        "como": "feature `smcp` no próprio ficheiro; o interruptor declara uma família irmã com o descritor `font-feature-settings`"
+      },
+      "medida6_nao_se_aplica": "a densidade de leitura é da prosa; este lugar é o do instrumento",
+      "medida6": null,
+      "medida7": {
+        "ficheiros": [
+          {
+            "ficheiro": "bitter/Bitter-latin.woff2",
+            "bytes": 66164
+          }
+        ],
+        "total_bytes": 66164,
+        "razao": "um variável, todos os pesos"
+      },
+      "medida8": "fase do lugar de direção: as pranchas ficam feitas, a leitura não é minha",
+      "nota": "controlo: o sítio de hoje"
+    },
+    {
+      "familia": "Public Sans",
+      "papel": "instrumento",
+      "medida1": {
+        "do_ficheiro_x_em": 0.517,
+        "x_a_17px": 8.789,
+        "x_a_15px": 7.755,
+        "no_navegador_17px": 8.789,
+        "no_navegador_15px": 7.755
+      },
+      "medida2": {
+        "recortes": 8,
+        "traco_mais_fino_px": 1,
+        "pico_mediano_1px": 0.3308,
+        "fracao_corridas_palidas": 0.0553,
+        "desaparece": true,
+        "por_recorte": [
+          {
+            "pagina": "primeira",
+            "largura": 390,
+            "pico_mediano_1px": 0.1529,
+            "desaparece": true
+          },
+          {
+            "pagina": "primeira",
+            "largura": 1280,
+            "pico_mediano_1px": 0.1442,
+            "desaparece": true
+          },
+          {
+            "pagina": "concelho",
+            "largura": 390,
+            "pico_mediano_1px": 0.1069,
+            "desaparece": true
+          },
+          {
+            "pagina": "concelho",
+            "largura": 1280,
+            "pico_mediano_1px": 0.1033,
+            "desaparece": true
+          },
+          {
+            "pagina": "regiao",
+            "largura": 390,
+            "pico_mediano_1px": 0.1182,
+            "desaparece": true
+          },
+          {
+            "pagina": "regiao",
+            "largura": 1280,
+            "pico_mediano_1px": 0.6259,
+            "desaparece": false
+          },
+          {
+            "pagina": "linha",
+            "largura": 390,
+            "pico_mediano_1px": 0.6977,
+            "desaparece": false
+          },
+          {
+            "pagina": "linha",
+            "largura": 1280,
+            "pico_mediano_1px": 0.6977,
+            "desaparece": false
+          }
+        ]
+      },
+      "medida3": {
+        "peso_medido": 600,
+        "a_17px_1x": {
+          "e": null,
+          "a": null,
+          "s": null,
+          "o": null
+        },
+        "a_17px_3x": {
+          "e": 1,
+          "a": 0.556,
+          "s": 0.556
+        },
+        "a_17px_12x": {
+          "e": 1.083,
+          "a": 0.917,
+          "s": 1.25,
+          "c": 2.75,
+          "o": null
+        }
+      },
+      "medida3_pela_regua": {
+        "a_17px_1x": {
+          "e": null,
+          "a": null,
+          "s": 1,
+          "o": null
+        },
+        "a_17px_3x_em_px_de_css": {
+          "e": 1,
+          "a": 1,
+          "s": 1,
+          "o": null
+        },
+        "cru": {
+          "e_1x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 19,
+              "x1": 22,
+              "y1": 27,
+              "largura": 8,
+              "altura": 9
+            }
+          },
+          "a_1x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 19,
+              "x1": 21,
+              "y1": 27,
+              "largura": 7,
+              "altura": 9
+            }
+          },
+          "s_1x": {
+            "abertura_px": 1,
+            "raio_que_fecha_px": 1,
+            "pixeis_selados": 3,
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 19,
+              "x1": 21,
+              "y1": 27,
+              "largura": 7,
+              "altura": 9
+            }
+          },
+          "o_1x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 15,
+              "y0": 19,
+              "x1": 22,
+              "y1": 27,
+              "largura": 8,
+              "altura": 9
+            }
+          },
+          "e_3x": {
+            "abertura_px": 3,
+            "raio_que_fecha_px": 2,
+            "pixeis_selados": 35,
+            "caixa_da_tinta": {
+              "x0": 44,
+              "y0": 57,
+              "x1": 68,
+              "y1": 83,
+              "largura": 25,
+              "altura": 27
+            }
+          },
+          "a_3x": {
+            "abertura_px": 3,
+            "raio_que_fecha_px": 2,
+            "pixeis_selados": 20,
+            "caixa_da_tinta": {
+              "x0": 44,
+              "y0": 57,
+              "x1": 66,
+              "y1": 83,
+              "largura": 23,
+              "altura": 27
+            }
+          },
+          "s_3x": {
+            "abertura_px": 3,
+            "raio_que_fecha_px": 2,
+            "pixeis_selados": 22,
+            "caixa_da_tinta": {
+              "x0": 44,
+              "y0": 57,
+              "x1": 65,
+              "y1": 83,
+              "largura": 22,
+              "altura": 27
+            }
+          },
+          "o_3x": {
+            "abertura_px": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)",
+            "caixa_da_tinta": {
+              "x0": 44,
+              "y0": 57,
+              "x1": 68,
+              "y1": 83,
+              "largura": 25,
+              "altura": 27
+            }
+          }
+        }
+      },
+      "medida4": {
+        "tem_feature_tnum": true,
+        "variancia_do_ficheiro_15px_padrao": 0.9174155625000003,
+        "variancia_do_ficheiro_15px_tnum": 0,
+        "variancia_na_pagina_15px": 0,
+        "vermelho_sem_tabulares_15px": 0.993856,
+        "celulas": 105,
+        "excluida": false
+      },
+      "medida5": {
+        "tem_smcp": false,
+        "tem_c2sc": false,
+        "como": "sem `smcp` e sem família irmã: as versais ficam na Spectral SC"
+      },
+      "medida6_nao_se_aplica": "a densidade de leitura é da prosa; este lugar é o do instrumento",
+      "medida6": null,
+      "medida7": {
+        "ficheiros": [
+          {
+            "ficheiro": "publicsans/PublicSans-latin.woff2",
+            "bytes": 34244
+          }
+        ],
+        "total_bytes": 34244,
+        "razao": "um variável, todos os pesos"
+      },
+      "medida8": "fase do lugar de direção: as pranchas ficam feitas, a leitura não é minha"
+    },
+    {
+      "familia": "IBM Plex Sans",
+      "papel": "instrumento",
+      "medida1": {
+        "do_ficheiro_x_em": 0.516,
+        "x_a_17px": 8.772,
+        "x_a_15px": 7.74,
+        "no_navegador_17px": null,
+        "no_navegador_15px": null
+      },
+      "medida2": null,
+      "medida3": {
+        "peso_medido": 600,
+        "a_17px_1x": {
+          "e": null,
+          "a": null,
+          "s": null,
+          "o": null
+        },
+        "a_17px_3x": {
+          "e": 1,
+          "a": 1,
+          "s": 0.556
+        },
+        "a_17px_12x": {
+          "e": 1.083,
+          "a": 1.25,
+          "s": 1.194,
+          "c": 3.083,
+          "o": null
+        }
+      },
+      "medida4": {
+        "tem_feature_tnum": false,
+        "variancia_do_ficheiro_15px_padrao": 0,
+        "variancia_do_ficheiro_15px_tnum": null,
+        "variancia_na_pagina_15px": null,
+        "vermelho_sem_tabulares_15px": null,
+        "celulas": 0,
+        "excluida": true
+      },
+      "medida5": {
+        "tem_smcp": false,
+        "tem_c2sc": false,
+        "como": "sem `smcp` e sem família irmã: as versais ficam na Spectral SC"
+      },
+      "medida6_nao_se_aplica": "a densidade de leitura é da prosa; este lugar é o do instrumento",
+      "medida6": null,
+      "medida7": {
+        "ficheiros": [
+          {
+            "ficheiro": "ibmplexsans/IBMPlexSans-latin.woff2",
+            "bytes": 100636
+          }
+        ],
+        "total_bytes": 100636,
+        "razao": "um variável; não entra, ver linha 4"
+      },
+      "medida8": "fase do lugar de direção: as pranchas ficam feitas, a leitura não é minha",
+      "excluida_porque": "a medida 4: sem `tnum` no ficheiro de montante"
+    },
+    {
+      "familia": "Sebenta",
+      "papel": "instrumento",
+      "vazio": "o pacote de teste não existe: só o diretor o pode pedir"
+    }
+  ],
+  "por_combinacao": {
+    "spectral+bitter": {
+      "fichas": {
+        "prosa": "\"Spectral\", Georgia, \"Times New Roman\", serif",
+        "instr": "\"Bitter\", \"Rockwell\", \"Roboto Slab\", Georgia, serif",
+        "versal": "\"Spectral SC\", \"Spectral\", Georgia, \"Times New Roman\", serif",
+        "papel": "#f6f7f4",
+        "tinta": "#17191b"
+      },
+      "celulas": 105,
+      "medida6_390": [
+        {
+          "pagina": "primeira",
+          "linhas": 0,
+          "caracteres": 0,
+          "cpl": 43
+        },
+        {
+          "pagina": "concelho",
+          "linhas": 0,
+          "caracteres": 0,
+          "cpl": 36.8
+        },
+        {
+          "pagina": "regiao",
+          "linhas": 7,
+          "caracteres": 228,
+          "cpl": 32.57
+        },
+        {
+          "pagina": "linha",
+          "linhas": 10,
+          "caracteres": 298,
+          "cpl": 21.67
+        },
+        {
+          "pagina": "leitura",
+          "linhas": 27,
+          "caracteres": 977,
+          "cpl": 42
+        }
+      ]
+    },
+    "newsreader+bitter": {
+      "fichas": {
+        "prosa": "'Newsreader',Georgia, 'Times New Roman', serif",
+        "instr": "\"Bitter\", \"Rockwell\", \"Roboto Slab\", Georgia, serif",
+        "versal": "\"Spectral SC\", \"Spectral\", Georgia, \"Times New Roman\", serif",
+        "papel": "#f6f7f4",
+        "tinta": "#17191b"
+      },
+      "celulas": 105,
+      "medida6_390": [
+        {
+          "pagina": "primeira",
+          "linhas": 0,
+          "caracteres": 0,
+          "cpl": 43
+        },
+        {
+          "pagina": "concelho",
+          "linhas": 0,
+          "caracteres": 0,
+          "cpl": 23
+        },
+        {
+          "pagina": "regiao",
+          "linhas": 9,
+          "caracteres": 228,
+          "cpl": 25.33
+        },
+        {
+          "pagina": "linha",
+          "linhas": 10,
+          "caracteres": 298,
+          "cpl": 21.67
+        },
+        {
+          "pagina": "leitura",
+          "linhas": 31,
+          "caracteres": 1118,
+          "cpl": 42
+        }
+      ]
+    },
+    "sourceserif4+bitter": {
+      "fichas": {
+        "prosa": "'Source Serif 4',Georgia, 'Times New Roman', serif",
+        "instr": "\"Bitter\", \"Rockwell\", \"Roboto Slab\", Georgia, serif",
+        "versal": "'Source Serif 4 SC','Source Serif 4',Georgia, 'Times New Roman', serif",
+        "papel": "#f6f7f4",
+        "tinta": "#17191b"
+      },
+      "celulas": 105,
+      "medida6_390": [
+        {
+          "pagina": "primeira",
+          "linhas": 0,
+          "caracteres": 0,
+          "cpl": 43
+        },
+        {
+          "pagina": "concelho",
+          "linhas": 0,
+          "caracteres": 0,
+          "cpl": 36.8
+        },
+        {
+          "pagina": "regiao",
+          "linhas": 7,
+          "caracteres": 228,
+          "cpl": 32.57
+        },
+        {
+          "pagina": "linha",
+          "linhas": 10,
+          "caracteres": 298,
+          "cpl": 21.67
+        },
+        {
+          "pagina": "leitura",
+          "linhas": 28,
+          "caracteres": 940,
+          "cpl": 31.5
+        }
+      ]
+    },
+    "literata+bitter": {
+      "fichas": {
+        "prosa": "'Literata',Georgia, 'Times New Roman', serif",
+        "instr": "\"Bitter\", \"Rockwell\", \"Roboto Slab\", Georgia, serif",
+        "versal": "'Literata SC','Literata',Georgia, 'Times New Roman', serif",
+        "papel": "#f6f7f4",
+        "tinta": "#17191b"
+      },
+      "celulas": 105,
+      "medida6_390": [
+        {
+          "pagina": "primeira",
+          "linhas": 0,
+          "caracteres": 0,
+          "cpl": 43
+        },
+        {
+          "pagina": "concelho",
+          "linhas": 0,
+          "caracteres": 0,
+          "cpl": 20.44
+        },
+        {
+          "pagina": "regiao",
+          "linhas": 9,
+          "caracteres": 228,
+          "cpl": 25.33
+        },
+        {
+          "pagina": "linha",
+          "linhas": 10,
+          "caracteres": 298,
+          "cpl": 21.67
+        },
+        {
+          "pagina": "leitura",
+          "linhas": 30,
+          "caracteres": 907,
+          "cpl": 31.5
+        }
+      ]
+    },
+    "spectral+publicsans": {
+      "fichas": {
+        "prosa": "\"Spectral\", Georgia, \"Times New Roman\", serif",
+        "instr": "'Public Sans','Rockwell', 'Roboto Slab', Georgia, serif",
+        "versal": "\"Spectral SC\", \"Spectral\", Georgia, \"Times New Roman\", serif",
+        "papel": "#f6f7f4",
+        "tinta": "#17191b"
+      },
+      "celulas": 105,
+      "medida6_390": [
+        {
+          "pagina": "primeira",
+          "linhas": 0,
+          "caracteres": 0,
+          "cpl": 43
+        },
+        {
+          "pagina": "concelho",
+          "linhas": 0,
+          "caracteres": 0,
+          "cpl": 36.8
+        },
+        {
+          "pagina": "regiao",
+          "linhas": 7,
+          "caracteres": 228,
+          "cpl": 32.57
+        },
+        {
+          "pagina": "linha",
+          "linhas": 9,
+          "caracteres": 256,
+          "cpl": 21.67
+        },
+        {
+          "pagina": "leitura",
+          "linhas": 27,
+          "caracteres": 977,
+          "cpl": 42
+        }
+      ]
+    }
+  }
+}
