@@ -44,7 +44,7 @@ números está escrito aqui, no sítio de cada número e não numa adenda.*
 | `30a7ebf` | os travessões saem da prosa nova destas três correções |
 | `609abd1` | L4d e L4e recusam a marca a mais, e deixam de passar em vazio |
 | `f4bb0a1` | o corredor dos estragos da régua das áreas deixa de aceitar deteção parcial |
-| `4065e29` | o feixe do desenho passa a medir o que afirma |
+| `deefd7b` | o feixe do desenho passa a medir o que afirma |
 
 Todos com caminhos explícitos no `git add`, nunca `-A` nem `.`. Todos com os
 dois trailers. `DECISIONS.md` não foi tocado, `public/` não foi tocado, o
