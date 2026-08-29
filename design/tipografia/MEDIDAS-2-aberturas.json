@@ -1,0 +1,2320 @@
+{
+  "ronda": 2,
+  "motor": {
+    "nome": "Chromium (Playwright)",
+    "versao": "148.0.7778.96",
+    "plataforma": "darwin"
+  },
+  "corpo_px": 17,
+  "escala_de_tinta": {
+    "papel": 246.5708,
+    "tinta": 24.7192
+  },
+  "nota": "o corpo é sempre 17 px; o que sobe é a densidade, para o `opsz` das candidatas ficar em 17 e a letra ser a mesma em todas as leituras. A ordem da segunda ronda usa só a linha de 1×.",
+  "familias": {
+    "Spectral": {
+      "papel": "prosa",
+      "peso": 400,
+      "ficheiro": "/publico/spectral/Spectral-Regular.woff2",
+      "por_densidade": {
+        "1x": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "3x": {
+          "e": {
+            "px_do_ecra": 5,
+            "px_de_css": 1.667
+          },
+          "a": {
+            "px_do_ecra": 3,
+            "px_de_css": 1
+          },
+          "s": {
+            "px_do_ecra": 3,
+            "px_de_css": 1
+          },
+          "c": {
+            "px_do_ecra": 11,
+            "px_de_css": 3.667
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "6x": {
+          "e": {
+            "px_do_ecra": 13,
+            "px_de_css": 2.167
+          },
+          "a": {
+            "px_do_ecra": 7,
+            "px_de_css": 1.167
+          },
+          "s": {
+            "px_do_ecra": 7,
+            "px_de_css": 1.167
+          },
+          "c": {
+            "px_do_ecra": 23,
+            "px_de_css": 3.833
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "12x": {
+          "e": {
+            "px_do_ecra": 27,
+            "px_de_css": 2.25
+          },
+          "a": {
+            "px_do_ecra": 15.666,
+            "px_de_css": 1.306
+          },
+          "s": {
+            "px_do_ecra": 16.333,
+            "px_de_css": 1.361
+          },
+          "c": {
+            "px_do_ecra": 47,
+            "px_de_css": 3.917
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        }
+      },
+      "a_1x_por_largura": {
+        "320": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "360": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "390": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "430": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "768": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "1024": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "1280": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        }
+      },
+      "identica_nas_sete_larguras": true,
+      "assinaturas_distintas_nas_sete_larguras": 1
+    },
+    "Newsreader": {
+      "papel": "prosa",
+      "peso": 400,
+      "ficheiro": "/estudo/newsreader/Newsreader-latin.woff2",
+      "por_densidade": {
+        "1x": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          }
+        },
+        "3x": {
+          "e": {
+            "px_do_ecra": 7,
+            "px_de_css": 2.333
+          },
+          "a": {
+            "px_do_ecra": 3,
+            "px_de_css": 1
+          },
+          "s": {
+            "px_do_ecra": 1.667,
+            "px_de_css": 0.556
+          },
+          "c": {
+            "px_do_ecra": 11,
+            "px_de_css": 3.667
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "6x": {
+          "e": {
+            "px_do_ecra": 15,
+            "px_de_css": 2.5
+          },
+          "a": {
+            "px_do_ecra": 8.333,
+            "px_de_css": 1.389
+          },
+          "s": {
+            "px_do_ecra": 5.667,
+            "px_de_css": 0.945
+          },
+          "c": {
+            "px_do_ecra": 23.667,
+            "px_de_css": 3.945
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "12x": {
+          "e": {
+            "px_do_ecra": 31,
+            "px_de_css": 2.583
+          },
+          "a": {
+            "px_do_ecra": 18.333,
+            "px_de_css": 1.528
+          },
+          "s": {
+            "px_do_ecra": 12.333,
+            "px_de_css": 1.028
+          },
+          "c": {
+            "px_do_ecra": 48.333,
+            "px_de_css": 4.028
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        }
+      },
+      "a_1x_por_largura": {
+        "320": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          }
+        },
+        "360": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          }
+        },
+        "390": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          }
+        },
+        "430": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          }
+        },
+        "768": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          }
+        },
+        "1024": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          }
+        },
+        "1280": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          }
+        }
+      },
+      "identica_nas_sete_larguras": true,
+      "assinaturas_distintas_nas_sete_larguras": 1
+    },
+    "Source Serif 4": {
+      "papel": "prosa",
+      "peso": 400,
+      "ficheiro": "/estudo/sourceserif4/SourceSerif4-latin.woff2",
+      "por_densidade": {
+        "1x": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "3x": {
+          "e": {
+            "px_do_ecra": 5,
+            "px_de_css": 1.667
+          },
+          "a": {
+            "px_do_ecra": 3,
+            "px_de_css": 1
+          },
+          "s": {
+            "px_do_ecra": 3,
+            "px_de_css": 1
+          },
+          "c": {
+            "px_do_ecra": 9,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "6x": {
+          "e": {
+            "px_do_ecra": 11,
+            "px_de_css": 1.833
+          },
+          "a": {
+            "px_do_ecra": 7,
+            "px_de_css": 1.167
+          },
+          "s": {
+            "px_do_ecra": 7,
+            "px_de_css": 1.167
+          },
+          "c": {
+            "px_do_ecra": 21,
+            "px_de_css": 3.5
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "12x": {
+          "e": {
+            "px_do_ecra": 23,
+            "px_de_css": 1.917
+          },
+          "a": {
+            "px_do_ecra": 16.333,
+            "px_de_css": 1.361
+          },
+          "s": {
+            "px_do_ecra": 15.666,
+            "px_de_css": 1.306
+          },
+          "c": {
+            "px_do_ecra": 41,
+            "px_de_css": 3.417
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        }
+      },
+      "a_1x_por_largura": {
+        "320": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "360": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "390": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "430": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "768": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "1024": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "1280": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        }
+      },
+      "identica_nas_sete_larguras": true,
+      "assinaturas_distintas_nas_sete_larguras": 1
+    },
+    "Literata": {
+      "papel": "prosa",
+      "peso": 400,
+      "ficheiro": "/estudo/literata/Literata-latin.woff2",
+      "por_densidade": {
+        "1x": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "3x": {
+          "e": {
+            "px_do_ecra": 5,
+            "px_de_css": 1.667
+          },
+          "a": {
+            "px_do_ecra": 3,
+            "px_de_css": 1
+          },
+          "s": {
+            "px_do_ecra": 3,
+            "px_de_css": 1
+          },
+          "c": {
+            "px_do_ecra": 11,
+            "px_de_css": 3.667
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "6x": {
+          "e": {
+            "px_do_ecra": 11,
+            "px_de_css": 1.833
+          },
+          "a": {
+            "px_do_ecra": 7,
+            "px_de_css": 1.167
+          },
+          "s": {
+            "px_do_ecra": 7,
+            "px_de_css": 1.167
+          },
+          "c": {
+            "px_do_ecra": 21,
+            "px_de_css": 3.5
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "12x": {
+          "e": {
+            "px_do_ecra": 25,
+            "px_de_css": 2.083
+          },
+          "a": {
+            "px_do_ecra": 17,
+            "px_de_css": 1.417
+          },
+          "s": {
+            "px_do_ecra": 15.666,
+            "px_de_css": 1.306
+          },
+          "c": {
+            "px_do_ecra": 43,
+            "px_de_css": 3.583
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        }
+      },
+      "a_1x_por_largura": {
+        "320": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "360": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "390": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "430": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "768": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "1024": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "1280": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        }
+      },
+      "identica_nas_sete_larguras": true,
+      "assinaturas_distintas_nas_sete_larguras": 1
+    },
+    "Ledger": {
+      "papel": "prosa",
+      "peso": 400,
+      "ficheiro": "/estudo/ledger/Ledger-latin.woff2",
+      "por_densidade": {
+        "1x": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          }
+        },
+        "3x": {
+          "e": {
+            "px_do_ecra": 5,
+            "px_de_css": 1.667
+          },
+          "a": {
+            "px_do_ecra": 3,
+            "px_de_css": 1
+          },
+          "s": {
+            "px_do_ecra": 1.667,
+            "px_de_css": 0.556
+          },
+          "c": {
+            "px_do_ecra": 7,
+            "px_de_css": 2.333
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "6x": {
+          "e": {
+            "px_do_ecra": 9,
+            "px_de_css": 1.5
+          },
+          "a": {
+            "px_do_ecra": 6.333,
+            "px_de_css": 1.056
+          },
+          "s": {
+            "px_do_ecra": 6.333,
+            "px_de_css": 1.056
+          },
+          "c": {
+            "px_do_ecra": 17,
+            "px_de_css": 2.833
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "12x": {
+          "e": {
+            "px_do_ecra": 19,
+            "px_de_css": 1.583
+          },
+          "a": {
+            "px_do_ecra": 13.666,
+            "px_de_css": 1.139
+          },
+          "s": {
+            "px_do_ecra": 14.333,
+            "px_de_css": 1.194
+          },
+          "c": {
+            "px_do_ecra": 35,
+            "px_de_css": 2.917
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        }
+      },
+      "a_1x_por_largura": {
+        "320": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          }
+        },
+        "360": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          }
+        },
+        "390": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          }
+        },
+        "430": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          }
+        },
+        "768": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          }
+        },
+        "1024": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          }
+        },
+        "1280": {
+          "e": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": 3,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": 1,
+            "px_de_css": 1
+          }
+        }
+      },
+      "identica_nas_sete_larguras": true,
+      "assinaturas_distintas_nas_sete_larguras": 1
+    },
+    "Bitter": {
+      "papel": "instrumento",
+      "peso": 600,
+      "ficheiro": "/publico/bitter/Bitter%5Bwght%5D.woff2",
+      "por_densidade": {
+        "1x": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "3x": {
+          "e": {
+            "px_do_ecra": 5,
+            "px_de_css": 1.667
+          },
+          "a": {
+            "px_do_ecra": 3,
+            "px_de_css": 1
+          },
+          "s": {
+            "px_do_ecra": 3,
+            "px_de_css": 1
+          },
+          "c": {
+            "px_do_ecra": 11,
+            "px_de_css": 3.667
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "6x": {
+          "e": {
+            "px_do_ecra": 11,
+            "px_de_css": 1.833
+          },
+          "a": {
+            "px_do_ecra": 6.333,
+            "px_de_css": 1.056
+          },
+          "s": {
+            "px_do_ecra": 7.667,
+            "px_de_css": 1.278
+          },
+          "c": {
+            "px_do_ecra": 23,
+            "px_de_css": 3.833
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "12x": {
+          "e": {
+            "px_do_ecra": 23,
+            "px_de_css": 1.917
+          },
+          "a": {
+            "px_do_ecra": 13.667,
+            "px_de_css": 1.139
+          },
+          "s": {
+            "px_do_ecra": 16.333,
+            "px_de_css": 1.361
+          },
+          "c": {
+            "px_do_ecra": 45,
+            "px_de_css": 3.75
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        }
+      },
+      "a_1x_por_largura": {
+        "320": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "360": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "390": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "430": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "768": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "1024": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "1280": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        }
+      },
+      "identica_nas_sete_larguras": true,
+      "assinaturas_distintas_nas_sete_larguras": 1
+    },
+    "Public Sans": {
+      "papel": "instrumento",
+      "peso": 600,
+      "ficheiro": "/estudo/publicsans/PublicSans-latin.woff2",
+      "por_densidade": {
+        "1x": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "3x": {
+          "e": {
+            "px_do_ecra": 3,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": 1.667,
+            "px_de_css": 0.556
+          },
+          "s": {
+            "px_do_ecra": 1.667,
+            "px_de_css": 0.556
+          },
+          "c": {
+            "px_do_ecra": 7,
+            "px_de_css": 2.333
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "6x": {
+          "e": {
+            "px_do_ecra": 7,
+            "px_de_css": 1.167
+          },
+          "a": {
+            "px_do_ecra": 5,
+            "px_de_css": 0.833
+          },
+          "s": {
+            "px_do_ecra": 6.333,
+            "px_de_css": 1.056
+          },
+          "c": {
+            "px_do_ecra": 17,
+            "px_de_css": 2.833
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "12x": {
+          "e": {
+            "px_do_ecra": 13,
+            "px_de_css": 1.083
+          },
+          "a": {
+            "px_do_ecra": 11,
+            "px_de_css": 0.917
+          },
+          "s": {
+            "px_do_ecra": 15,
+            "px_de_css": 1.25
+          },
+          "c": {
+            "px_do_ecra": 33,
+            "px_de_css": 2.75
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        }
+      },
+      "a_1x_por_largura": {
+        "320": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "360": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "390": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "430": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "768": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "1024": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "1280": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        }
+      },
+      "identica_nas_sete_larguras": true,
+      "assinaturas_distintas_nas_sete_larguras": 1
+    },
+    "IBM Plex Sans": {
+      "papel": "instrumento",
+      "peso": 600,
+      "ficheiro": "/estudo/ibmplexsans/IBMPlexSans-latin.woff2",
+      "por_densidade": {
+        "1x": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "3x": {
+          "e": {
+            "px_do_ecra": 3,
+            "px_de_css": 1
+          },
+          "a": {
+            "px_do_ecra": 3,
+            "px_de_css": 1
+          },
+          "s": {
+            "px_do_ecra": 1.667,
+            "px_de_css": 0.556
+          },
+          "c": {
+            "px_do_ecra": 9,
+            "px_de_css": 3
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "6x": {
+          "e": {
+            "px_do_ecra": 5,
+            "px_de_css": 0.833
+          },
+          "a": {
+            "px_do_ecra": 6.333,
+            "px_de_css": 1.056
+          },
+          "s": {
+            "px_do_ecra": 6.333,
+            "px_de_css": 1.056
+          },
+          "c": {
+            "px_do_ecra": 17,
+            "px_de_css": 2.833
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "12x": {
+          "e": {
+            "px_do_ecra": 13,
+            "px_de_css": 1.083
+          },
+          "a": {
+            "px_do_ecra": 15,
+            "px_de_css": 1.25
+          },
+          "s": {
+            "px_do_ecra": 14.333,
+            "px_de_css": 1.194
+          },
+          "c": {
+            "px_do_ecra": 37,
+            "px_de_css": 3.083
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        }
+      },
+      "a_1x_por_largura": {
+        "320": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "360": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "390": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "430": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "768": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "1024": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        },
+        "1280": {
+          "e": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "a": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "s": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "c": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          },
+          "o": {
+            "px_do_ecra": null,
+            "px_de_css": null,
+            "razao": "nada se selou: a letra não tem garganta aberta (contraforma fechada ou nenhuma)"
+          }
+        }
+      },
+      "identica_nas_sete_larguras": true,
+      "assinaturas_distintas_nas_sete_larguras": 1
+    }
+  }
+}

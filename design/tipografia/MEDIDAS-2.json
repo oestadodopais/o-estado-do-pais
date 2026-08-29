@@ -1,0 +1,3140 @@
+{
+  "ronda": 2,
+  "rubrica": "design/tipografia/RUBRICA.md",
+  "adenda": "design/tipografia/ADENDA-2-segunda-ronda.md",
+  "motor": {
+    "nome": "Chromium (Playwright)",
+    "versao": "148.0.7778.96",
+    "plataforma": "darwin"
+  },
+  "combinacoes": [
+    "spectral+bitter",
+    "newsreader+bitter",
+    "sourceserif4+bitter",
+    "literata+bitter",
+    "ledger+bitter",
+    "spectral+publicsans"
+  ],
+  "grelha": {
+    "larguras": [
+      320,
+      360,
+      390,
+      430,
+      768,
+      1024,
+      1280
+    ],
+    "densidades": [
+      1,
+      2,
+      3
+    ],
+    "paginas": [
+      "primeira",
+      "concelho",
+      "regiao",
+      "linha",
+      "leitura"
+    ],
+    "celulas_medidas": 630,
+    "celulas_da_medida_2": 378
+  },
+  "provas_dos_detetores": {
+    "todas": "design/tipografia/programa/provas.mjs, corrido pela régua antes de medir e pelo `correr.sh` antes de tudo",
+    "medida_2_e_3": "design/tipografia/programa/pixeis.mjs, treze casos conhecidos",
+    "medida_4_no_ficheiro": {
+      "caso": "Newsreader com o subconjunto feito sem features OpenType",
+      "esperado": "a medida 4 exclui (sem `tnum`)",
+      "visto_tnum_no_vermelho": false,
+      "visto_tnum_no_verde": true,
+      "veredicto": "o detetor da medida 4 distingue os dois"
+    },
+    "medida_4_na_pagina": {
+      "spectral+bitter": "a régua distingue com e sem tabulares no mesmo tipo (o vermelho foi visto)",
+      "newsreader+bitter": "a régua distingue com e sem tabulares no mesmo tipo (o vermelho foi visto)",
+      "sourceserif4+bitter": "a régua distingue com e sem tabulares no mesmo tipo (o vermelho foi visto)",
+      "literata+bitter": "a régua distingue com e sem tabulares no mesmo tipo (o vermelho foi visto)",
+      "ledger+bitter": "a régua distingue com e sem tabulares no mesmo tipo (o vermelho foi visto)",
+      "spectral+publicsans": "a régua distingue com e sem tabulares no mesmo tipo (o vermelho foi visto)"
+    }
+  },
+  "familias": [
+    {
+      "familia": "Spectral",
+      "papel": "prosa",
+      "medida1": {
+        "lida_na_celula": {
+          "pagina": "leitura",
+          "largura": 390,
+          "densidade": 1
+        },
+        "no_navegador_17px": 7.65,
+        "no_navegador_15px": 6.75,
+        "no_navegador_13_5px": 6.075,
+        "largura_do_x_17px": 8.432,
+        "altura_do_X_17px": 11.22,
+        "x_em_no_ecra_17px": 0.45,
+        "x_em_no_ecra_15px": 0.45,
+        "x_em_do_ficheiro": 0.45,
+        "do_ficheiro_x_a_17px": 7.65,
+        "diferenca_ficheiro_menos_ecra_17px": 0,
+        "tem_eixo_optico": false
+      },
+      "medida2": {
+        "celulas": 35,
+        "larguras": [
+          320,
+          360,
+          390,
+          430,
+          768,
+          1024,
+          1280
+        ],
+        "paginas": [
+          "primeira",
+          "concelho",
+          "regiao",
+          "linha",
+          "leitura"
+        ],
+        "traco_mais_fino_px": 1,
+        "pico_mediano_1px": 0.3174,
+        "pico_pior": 0.1207,
+        "pico_melhor": 0.5216,
+        "corridas_de_1px": 21368,
+        "fracao_corridas_palidas": 0.0935,
+        "celulas_que_desaparecem": 32,
+        "por_celula": [
+          {
+            "pagina": "primeira",
+            "largura": 320,
+            "pico_mediano_1px": 0.2801,
+            "corridas_de_1px": 139,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-primeira-320-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 360,
+            "pico_mediano_1px": 0.2801,
+            "corridas_de_1px": 147,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-primeira-360-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 390,
+            "pico_mediano_1px": 0.2801,
+            "corridas_de_1px": 147,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-primeira-390-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 430,
+            "pico_mediano_1px": 0.2801,
+            "corridas_de_1px": 214,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-primeira-430-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 768,
+            "pico_mediano_1px": 0.2849,
+            "corridas_de_1px": 400,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-primeira-768-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 1024,
+            "pico_mediano_1px": 0.3174,
+            "corridas_de_1px": 216,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-primeira-1024-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 1280,
+            "pico_mediano_1px": 0.3445,
+            "corridas_de_1px": 247,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-primeira-1280-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 320,
+            "pico_mediano_1px": 0.3319,
+            "corridas_de_1px": 420,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-concelho-320-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 360,
+            "pico_mediano_1px": 0.3319,
+            "corridas_de_1px": 603,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-concelho-360-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 390,
+            "pico_mediano_1px": 0.349,
+            "corridas_de_1px": 632,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-concelho-390-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 430,
+            "pico_mediano_1px": 0.349,
+            "corridas_de_1px": 641,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-concelho-430-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 768,
+            "pico_mediano_1px": 0.2769,
+            "corridas_de_1px": 1002,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-concelho-768-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 1024,
+            "pico_mediano_1px": 0.3023,
+            "corridas_de_1px": 956,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-concelho-1024-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 1280,
+            "pico_mediano_1px": 0.3023,
+            "corridas_de_1px": 951,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-concelho-1280-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 320,
+            "pico_mediano_1px": 0.1207,
+            "corridas_de_1px": 677,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-regiao-320-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 360,
+            "pico_mediano_1px": 0.1207,
+            "corridas_de_1px": 761,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-regiao-360-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 390,
+            "pico_mediano_1px": 0.1207,
+            "corridas_de_1px": 823,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-regiao-390-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 430,
+            "pico_mediano_1px": 0.3789,
+            "corridas_de_1px": 555,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-regiao-430-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 768,
+            "pico_mediano_1px": 0.2891,
+            "corridas_de_1px": 815,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-regiao-768-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 1024,
+            "pico_mediano_1px": 0.1207,
+            "corridas_de_1px": 1698,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-regiao-1024-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 1280,
+            "pico_mediano_1px": 0.1207,
+            "corridas_de_1px": 1769,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-regiao-1280-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 320,
+            "pico_mediano_1px": 0.5006,
+            "corridas_de_1px": 370,
+            "desaparece": false,
+            "recorte": "capturas-2/spectral+bitter/recorte-linha-320-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 360,
+            "pico_mediano_1px": 0.4007,
+            "corridas_de_1px": 406,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-linha-360-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 390,
+            "pico_mediano_1px": 0.5216,
+            "corridas_de_1px": 567,
+            "desaparece": false,
+            "recorte": "capturas-2/spectral+bitter/recorte-linha-390-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 430,
+            "pico_mediano_1px": 0.5006,
+            "corridas_de_1px": 601,
+            "desaparece": false,
+            "recorte": "capturas-2/spectral+bitter/recorte-linha-430-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 768,
+            "pico_mediano_1px": 0.4488,
+            "corridas_de_1px": 608,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-linha-768-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 1024,
+            "pico_mediano_1px": 0.4781,
+            "corridas_de_1px": 623,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-linha-1024-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 1280,
+            "pico_mediano_1px": 0.4511,
+            "corridas_de_1px": 618,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-linha-1280-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 320,
+            "pico_mediano_1px": 0.4668,
+            "corridas_de_1px": 424,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-leitura-320-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 360,
+            "pico_mediano_1px": 0.4691,
+            "corridas_de_1px": 430,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-leitura-360-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 390,
+            "pico_mediano_1px": 0.4095,
+            "corridas_de_1px": 479,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-leitura-390-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 430,
+            "pico_mediano_1px": 0.4691,
+            "corridas_de_1px": 597,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-leitura-430-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 768,
+            "pico_mediano_1px": 0.2386,
+            "corridas_de_1px": 734,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-leitura-768-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 1024,
+            "pico_mediano_1px": 0.2576,
+            "corridas_de_1px": 543,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-leitura-1024-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 1280,
+            "pico_mediano_1px": 0.2576,
+            "corridas_de_1px": 555,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-leitura-1280-prosa.png"
+          }
+        ]
+      },
+      "medida3": {
+        "peso_medido": 400,
+        "a_17px_1x": {
+          "e": null,
+          "a": null,
+          "s": null,
+          "c": 3,
+          "o": null
+        },
+        "contexto_fora_da_ordem": {
+          "a_17px_3x": {
+            "e": 1.667,
+            "a": 1,
+            "s": 1,
+            "c": 3.667
+          },
+          "a_17px_12x": {
+            "e": 2.25,
+            "a": 1.306,
+            "s": 1.361,
+            "c": 3.917
+          }
+        }
+      },
+      "medida3_pela_regua": {
+        "e": null,
+        "a": null,
+        "s": null,
+        "o": null
+      },
+      "medida4_na_pagina_nao_se_aplica": "os algarismos das páginas compõem-se em `--f-instr`; nesta construção são da Bitter",
+      "medida4": {
+        "tem_feature_tnum": true,
+        "variancia_do_ficheiro_15px_padrao": 0,
+        "variancia_do_ficheiro_15px_tnum": 0,
+        "variancia_na_pagina_13_5px": null,
+        "vermelho_sem_tabulares_13_5px": null,
+        "variancia_na_pagina_15px": null,
+        "celulas": 0,
+        "excluida_do_instrumento": false
+      },
+      "medida5": {
+        "tem_smcp": true,
+        "tem_c2sc": true,
+        "como": "feature `smcp` no próprio ficheiro; o interruptor declara uma família irmã com o descritor `font-feature-settings`"
+      },
+      "medida6": {
+        "corpo": "17.5px",
+        "entrelinha": "28px",
+        "linhas_no_ecra": 26,
+        "linhas_totais": 517,
+        "caracteres_no_ecra": 942,
+        "caracteres_por_linha": 36.23,
+        "paragrafos_medidos": 41
+      },
+      "medida6_instrumento_nao_se_aplica": "a ficha do aparelho compõe os valores em `--f-instr`; este lugar é o da prosa",
+      "medida6_instrumento": null,
+      "medida7": {
+        "ficheiros": [
+          {
+            "ficheiro": "spectral/Spectral-Regular-latin.woff2",
+            "bytes": 47976
+          },
+          {
+            "ficheiro": "spectral/Spectral-Italic-latin.woff2",
+            "bytes": 49676
+          },
+          {
+            "ficheiro": "spectral/Spectral-Medium-latin.woff2",
+            "bytes": 50568
+          },
+          {
+            "ficheiro": "spectral/Spectral-SemiBold-latin.woff2",
+            "bytes": 50728
+          },
+          {
+            "ficheiro": "spectral/Spectral-Bold-latin.woff2",
+            "bytes": 50864
+          },
+          {
+            "ficheiro": "spectral-sc/SpectralSC-Regular-latin.woff2",
+            "bytes": 48192
+          },
+          {
+            "ficheiro": "spectral-sc/SpectralSC-SemiBold-latin.woff2",
+            "bytes": 50840
+          }
+        ],
+        "total_bytes": 348844,
+        "razao": "quatro estáticos (400, 500, 600, 700), o itálico e dois de versais: a Spectral não é variável",
+        "carrega_a_mais": "nada: cada ficheiro serve um estilo que o sítio pede",
+        "total_do_sitio_com_bitter_bytes": 415008
+      },
+      "medida8": "fase do lugar de direção: as pranchas ficam feitas, a leitura não é minha",
+      "nota": "controlo: o sítio de hoje"
+    },
+    {
+      "familia": "Newsreader",
+      "papel": "prosa",
+      "medida1": {
+        "lida_na_celula": {
+          "pagina": "leitura",
+          "largura": 390,
+          "densidade": 1
+        },
+        "no_navegador_17px": 7.3638,
+        "no_navegador_15px": 6.7125,
+        "no_navegador_13_5px": 6.1864,
+        "largura_do_x_17px": 8.41,
+        "altura_do_X_17px": 11.4425,
+        "x_em_no_ecra_17px": 0.4332,
+        "x_em_no_ecra_15px": 0.4475,
+        "x_em_do_ficheiro": 0.426,
+        "do_ficheiro_x_a_17px": 7.242,
+        "diferenca_ficheiro_menos_ecra_17px": -0.1218,
+        "tem_eixo_optico": true
+      },
+      "medida2": {
+        "celulas": 35,
+        "larguras": [
+          320,
+          360,
+          390,
+          430,
+          768,
+          1024,
+          1280
+        ],
+        "paginas": [
+          "primeira",
+          "concelho",
+          "regiao",
+          "linha",
+          "leitura"
+        ],
+        "traco_mais_fino_px": 1,
+        "pico_mediano_1px": 0.3229,
+        "pico_pior": 0.2421,
+        "pico_melhor": 0.3905,
+        "corridas_de_1px": 18770,
+        "fracao_corridas_palidas": 0.113,
+        "celulas_que_desaparecem": 35,
+        "por_celula": [
+          {
+            "pagina": "primeira",
+            "largura": 320,
+            "pico_mediano_1px": 0.3139,
+            "corridas_de_1px": 186,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-primeira-320-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 360,
+            "pico_mediano_1px": 0.3139,
+            "corridas_de_1px": 187,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-primeira-360-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 390,
+            "pico_mediano_1px": 0.3139,
+            "corridas_de_1px": 187,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-primeira-390-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 430,
+            "pico_mediano_1px": 0.3332,
+            "corridas_de_1px": 261,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-primeira-430-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 768,
+            "pico_mediano_1px": 0.3229,
+            "corridas_de_1px": 491,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-primeira-768-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 1024,
+            "pico_mediano_1px": 0.2849,
+            "corridas_de_1px": 257,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-primeira-1024-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 1280,
+            "pico_mediano_1px": 0.2936,
+            "corridas_de_1px": 319,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-primeira-1280-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 320,
+            "pico_mediano_1px": 0.3802,
+            "corridas_de_1px": 345,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-concelho-320-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 360,
+            "pico_mediano_1px": 0.3532,
+            "corridas_de_1px": 485,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-concelho-360-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 390,
+            "pico_mediano_1px": 0.3892,
+            "corridas_de_1px": 507,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-concelho-390-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 430,
+            "pico_mediano_1px": 0.3757,
+            "corridas_de_1px": 532,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-concelho-430-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 768,
+            "pico_mediano_1px": 0.3892,
+            "corridas_de_1px": 803,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-concelho-768-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 1024,
+            "pico_mediano_1px": 0.3905,
+            "corridas_de_1px": 846,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-concelho-1024-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 1280,
+            "pico_mediano_1px": 0.3567,
+            "corridas_de_1px": 832,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-concelho-1280-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 320,
+            "pico_mediano_1px": 0.3514,
+            "corridas_de_1px": 524,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-regiao-320-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 360,
+            "pico_mediano_1px": 0.3834,
+            "corridas_de_1px": 549,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-regiao-360-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 390,
+            "pico_mediano_1px": 0.3834,
+            "corridas_de_1px": 593,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-regiao-390-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 430,
+            "pico_mediano_1px": 0.3834,
+            "corridas_de_1px": 691,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-regiao-430-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 768,
+            "pico_mediano_1px": 0.2576,
+            "corridas_de_1px": 1011,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-regiao-768-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 1024,
+            "pico_mediano_1px": 0.2978,
+            "corridas_de_1px": 938,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-regiao-1024-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 1280,
+            "pico_mediano_1px": 0.3474,
+            "corridas_de_1px": 922,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-regiao-1280-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 320,
+            "pico_mediano_1px": 0.3146,
+            "corridas_de_1px": 308,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-linha-320-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 360,
+            "pico_mediano_1px": 0.2592,
+            "corridas_de_1px": 318,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-linha-360-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 390,
+            "pico_mediano_1px": 0.2592,
+            "corridas_de_1px": 318,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-linha-390-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 430,
+            "pico_mediano_1px": 0.2801,
+            "corridas_de_1px": 464,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-linha-430-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 768,
+            "pico_mediano_1px": 0.2801,
+            "corridas_de_1px": 535,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-linha-768-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 1024,
+            "pico_mediano_1px": 0.2824,
+            "corridas_de_1px": 526,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-linha-1024-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 1280,
+            "pico_mediano_1px": 0.2727,
+            "corridas_de_1px": 530,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-linha-1280-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 320,
+            "pico_mediano_1px": 0.3699,
+            "corridas_de_1px": 367,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-leitura-320-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 360,
+            "pico_mediano_1px": 0.3374,
+            "corridas_de_1px": 360,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-leitura-360-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 390,
+            "pico_mediano_1px": 0.3374,
+            "corridas_de_1px": 465,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-leitura-390-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 430,
+            "pico_mediano_1px": 0.3384,
+            "corridas_de_1px": 528,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-leitura-430-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 768,
+            "pico_mediano_1px": 0.2421,
+            "corridas_de_1px": 936,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-leitura-768-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 1024,
+            "pico_mediano_1px": 0.2444,
+            "corridas_de_1px": 799,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-leitura-1024-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 1280,
+            "pico_mediano_1px": 0.2476,
+            "corridas_de_1px": 850,
+            "desaparece": true,
+            "recorte": "capturas-2/newsreader+bitter/recorte-leitura-1280-prosa.png"
+          }
+        ]
+      },
+      "medida3": {
+        "peso_medido": 400,
+        "a_17px_1x": {
+          "e": 1,
+          "a": null,
+          "s": null,
+          "c": null,
+          "o": 1
+        },
+        "contexto_fora_da_ordem": {
+          "a_17px_3x": {
+            "e": 2.333,
+            "a": 1,
+            "s": 0.556,
+            "c": 3.667
+          },
+          "a_17px_12x": {
+            "e": 2.583,
+            "a": 1.528,
+            "s": 1.028,
+            "c": 4.028
+          }
+        }
+      },
+      "medida3_pela_regua": {
+        "e": 1,
+        "a": null,
+        "s": null,
+        "o": 1
+      },
+      "medida4_na_pagina_nao_se_aplica": "os algarismos das páginas compõem-se em `--f-instr`; nesta construção são da Bitter",
+      "medida4": {
+        "tem_feature_tnum": true,
+        "variancia_do_ficheiro_15px_padrao": 0,
+        "variancia_do_ficheiro_15px_tnum": 0,
+        "variancia_na_pagina_13_5px": null,
+        "vermelho_sem_tabulares_13_5px": null,
+        "variancia_na_pagina_15px": null,
+        "celulas": 0,
+        "excluida_do_instrumento": false
+      },
+      "medida5": {
+        "tem_smcp": false,
+        "tem_c2sc": false,
+        "como": "sem `smcp` e sem família irmã: as versais ficam na Spectral SC, e o sítio passa a compor duas letras"
+      },
+      "medida6": {
+        "corpo": "17.5px",
+        "entrelinha": "28px",
+        "linhas_no_ecra": 27,
+        "linhas_totais": 518,
+        "caracteres_no_ecra": 977,
+        "caracteres_por_linha": 36.19,
+        "paragrafos_medidos": 41
+      },
+      "medida6_instrumento_nao_se_aplica": "a ficha do aparelho compõe os valores em `--f-instr`; este lugar é o da prosa",
+      "medida6_instrumento": null,
+      "medida7": {
+        "ficheiros": [
+          {
+            "ficheiro": "newsreader/Newsreader-latin.woff2",
+            "bytes": 196732
+          },
+          {
+            "ficheiro": "newsreader/Newsreader-Italic-latin.woff2",
+            "bytes": 219412
+          },
+          {
+            "ficheiro": "spectral-sc/SpectralSC-Regular-latin.woff2",
+            "bytes": 48192
+          },
+          {
+            "ficheiro": "spectral-sc/SpectralSC-SemiBold-latin.woff2",
+            "bytes": 50840
+          }
+        ],
+        "total_bytes": 515176,
+        "razao": "um variável para os quatro pesos, o itálico variável, e as versais na Spectral SC porque não tem `smcp`",
+        "carrega_a_mais": "os pesos 200 a 800 e o eixo `opsz`, quando o sítio pede quatro pesos",
+        "total_do_sitio_com_bitter_bytes": 581340
+      },
+      "medida8": "fase do lugar de direção: as pranchas ficam feitas, a leitura não é minha"
+    },
+    {
+      "familia": "Source Serif 4",
+      "papel": "prosa",
+      "medida1": {
+        "lida_na_celula": {
+          "pagina": "leitura",
+          "largura": 390,
+          "densidade": 1
+        },
+        "no_navegador_17px": 8.2153,
+        "no_navegador_15px": 7.3313,
+        "no_navegador_13_5px": 6.6538,
+        "largura_do_x_17px": 9.3075,
+        "altura_do_X_17px": 11.39,
+        "x_em_no_ecra_17px": 0.4833,
+        "x_em_no_ecra_15px": 0.4888,
+        "x_em_do_ficheiro": 0.475,
+        "do_ficheiro_x_a_17px": 8.075,
+        "diferenca_ficheiro_menos_ecra_17px": -0.1403,
+        "tem_eixo_optico": true
+      },
+      "medida2": {
+        "celulas": 35,
+        "larguras": [
+          320,
+          360,
+          390,
+          430,
+          768,
+          1024,
+          1280
+        ],
+        "paginas": [
+          "primeira",
+          "concelho",
+          "regiao",
+          "linha",
+          "leitura"
+        ],
+        "traco_mais_fino_px": 1,
+        "pico_mediano_1px": 0.4208,
+        "pico_pior": 0.2353,
+        "pico_melhor": 0.6301,
+        "corridas_de_1px": 16234,
+        "fracao_corridas_palidas": 0.0934,
+        "celulas_que_desaparecem": 27,
+        "por_celula": [
+          {
+            "pagina": "primeira",
+            "largura": 320,
+            "pico_mediano_1px": 0.3374,
+            "corridas_de_1px": 107,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-primeira-320-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 360,
+            "pico_mediano_1px": 0.3509,
+            "corridas_de_1px": 144,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-primeira-360-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 390,
+            "pico_mediano_1px": 0.3509,
+            "corridas_de_1px": 144,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-primeira-390-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 430,
+            "pico_mediano_1px": 0.3509,
+            "corridas_de_1px": 144,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-primeira-430-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 768,
+            "pico_mediano_1px": 0.2588,
+            "corridas_de_1px": 469,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-primeira-768-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 1024,
+            "pico_mediano_1px": 0.2408,
+            "corridas_de_1px": 270,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-primeira-1024-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 1280,
+            "pico_mediano_1px": 0.2353,
+            "corridas_de_1px": 323,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-primeira-1280-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 320,
+            "pico_mediano_1px": 0.4208,
+            "corridas_de_1px": 363,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-concelho-320-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 360,
+            "pico_mediano_1px": 0.4018,
+            "corridas_de_1px": 478,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-concelho-360-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 390,
+            "pico_mediano_1px": 0.3995,
+            "corridas_de_1px": 516,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-concelho-390-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 430,
+            "pico_mediano_1px": 0.404,
+            "corridas_de_1px": 577,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-concelho-430-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 768,
+            "pico_mediano_1px": 0.404,
+            "corridas_de_1px": 881,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-concelho-768-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 1024,
+            "pico_mediano_1px": 0.3954,
+            "corridas_de_1px": 823,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-concelho-1024-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 1280,
+            "pico_mediano_1px": 0.4208,
+            "corridas_de_1px": 814,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-concelho-1280-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 320,
+            "pico_mediano_1px": 0.5728,
+            "corridas_de_1px": 303,
+            "desaparece": false,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-regiao-320-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 360,
+            "pico_mediano_1px": 0.4432,
+            "corridas_de_1px": 342,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-regiao-360-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 390,
+            "pico_mediano_1px": 0.4871,
+            "corridas_de_1px": 375,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-regiao-390-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 430,
+            "pico_mediano_1px": 0.4601,
+            "corridas_de_1px": 458,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-regiao-430-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 768,
+            "pico_mediano_1px": 0.3509,
+            "corridas_de_1px": 691,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-regiao-768-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 1024,
+            "pico_mediano_1px": 0.4398,
+            "corridas_de_1px": 686,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-regiao-1024-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 1280,
+            "pico_mediano_1px": 0.4736,
+            "corridas_de_1px": 645,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-regiao-1280-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 320,
+            "pico_mediano_1px": 0.6022,
+            "corridas_de_1px": 388,
+            "desaparece": false,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-linha-320-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 360,
+            "pico_mediano_1px": 0.6301,
+            "corridas_de_1px": 405,
+            "desaparece": false,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-linha-360-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 390,
+            "pico_mediano_1px": 0.604,
+            "corridas_de_1px": 384,
+            "desaparece": false,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-linha-390-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 430,
+            "pico_mediano_1px": 0.6211,
+            "corridas_de_1px": 635,
+            "desaparece": false,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-linha-430-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 768,
+            "pico_mediano_1px": 0.5818,
+            "corridas_de_1px": 667,
+            "desaparece": false,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-linha-768-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 1024,
+            "pico_mediano_1px": 0.6211,
+            "corridas_de_1px": 654,
+            "desaparece": false,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-linha-1024-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 1280,
+            "pico_mediano_1px": 0.6211,
+            "corridas_de_1px": 650,
+            "desaparece": false,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-linha-1280-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 320,
+            "pico_mediano_1px": 0.4646,
+            "corridas_de_1px": 260,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-leitura-320-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 360,
+            "pico_mediano_1px": 0.4646,
+            "corridas_de_1px": 295,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-leitura-360-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 390,
+            "pico_mediano_1px": 0.4691,
+            "corridas_de_1px": 320,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-leitura-390-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 430,
+            "pico_mediano_1px": 0.4911,
+            "corridas_de_1px": 396,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-leitura-430-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 768,
+            "pico_mediano_1px": 0.36,
+            "corridas_de_1px": 646,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-leitura-768-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 1024,
+            "pico_mediano_1px": 0.3699,
+            "corridas_de_1px": 487,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-leitura-1024-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 1280,
+            "pico_mediano_1px": 0.36,
+            "corridas_de_1px": 494,
+            "desaparece": true,
+            "recorte": "capturas-2/sourceserif4+bitter/recorte-leitura-1280-prosa.png"
+          }
+        ]
+      },
+      "medida3": {
+        "peso_medido": 400,
+        "a_17px_1x": {
+          "e": 1,
+          "a": null,
+          "s": null,
+          "c": 3,
+          "o": null
+        },
+        "contexto_fora_da_ordem": {
+          "a_17px_3x": {
+            "e": 1.667,
+            "a": 1,
+            "s": 1,
+            "c": 3
+          },
+          "a_17px_12x": {
+            "e": 1.917,
+            "a": 1.361,
+            "s": 1.306,
+            "c": 3.417
+          }
+        }
+      },
+      "medida3_pela_regua": {
+        "e": 1,
+        "a": null,
+        "s": null,
+        "o": null
+      },
+      "medida4_na_pagina_nao_se_aplica": "os algarismos das páginas compõem-se em `--f-instr`; nesta construção são da Bitter",
+      "medida4": {
+        "tem_feature_tnum": true,
+        "variancia_do_ficheiro_15px_padrao": 0,
+        "variancia_do_ficheiro_15px_tnum": 0,
+        "variancia_na_pagina_13_5px": null,
+        "vermelho_sem_tabulares_13_5px": null,
+        "variancia_na_pagina_15px": null,
+        "celulas": 0,
+        "excluida_do_instrumento": false
+      },
+      "medida5": {
+        "tem_smcp": true,
+        "tem_c2sc": true,
+        "como": "feature `smcp` no próprio ficheiro; o interruptor declara uma família irmã com o descritor `font-feature-settings`"
+      },
+      "medida6": {
+        "corpo": "17.5px",
+        "entrelinha": "28px",
+        "linhas_no_ecra": 28,
+        "linhas_totais": 532,
+        "caracteres_no_ecra": 940,
+        "caracteres_por_linha": 33.57,
+        "paragrafos_medidos": 41
+      },
+      "medida6_instrumento_nao_se_aplica": "a ficha do aparelho compõe os valores em `--f-instr`; este lugar é o da prosa",
+      "medida6_instrumento": null,
+      "medida7": {
+        "ficheiros": [
+          {
+            "ficheiro": "sourceserif4/SourceSerif4-latin.woff2",
+            "bytes": 243292
+          },
+          {
+            "ficheiro": "sourceserif4/SourceSerif4-Italic-latin.woff2",
+            "bytes": 207416
+          }
+        ],
+        "total_bytes": 450708,
+        "razao": "um variável para os quatro pesos e o itálico variável; as versais saem do mesmo ficheiro pelo `smcp`",
+        "carrega_a_mais": "os pesos 200 a 900 e o eixo `opsz`",
+        "total_do_sitio_com_bitter_bytes": 516872
+      },
+      "medida8": "fase do lugar de direção: as pranchas ficam feitas, a leitura não é minha"
+    },
+    {
+      "familia": "Literata",
+      "papel": "prosa",
+      "medida1": {
+        "lida_na_celula": {
+          "pagina": "leitura",
+          "largura": 390,
+          "densidade": 1
+        },
+        "no_navegador_17px": 8.6262,
+        "no_navegador_15px": 7.6088,
+        "no_navegador_13_5px": 6.8462,
+        "largura_do_x_17px": 9.6295,
+        "altura_do_X_17px": 11.9356,
+        "x_em_no_ecra_17px": 0.5074,
+        "x_em_no_ecra_15px": 0.5073,
+        "x_em_do_ficheiro": 0.507,
+        "do_ficheiro_x_a_17px": 8.619,
+        "diferenca_ficheiro_menos_ecra_17px": -0.0072,
+        "tem_eixo_optico": true
+      },
+      "medida2": {
+        "celulas": 35,
+        "larguras": [
+          320,
+          360,
+          390,
+          430,
+          768,
+          1024,
+          1280
+        ],
+        "paginas": [
+          "primeira",
+          "concelho",
+          "regiao",
+          "linha",
+          "leitura"
+        ],
+        "traco_mais_fino_px": 1,
+        "pico_mediano_1px": 0.3583,
+        "pico_pior": 0.1207,
+        "pico_melhor": 0.4601,
+        "corridas_de_1px": 17176,
+        "fracao_corridas_palidas": 0.1317,
+        "celulas_que_desaparecem": 35,
+        "por_celula": [
+          {
+            "pagina": "primeira",
+            "largura": 320,
+            "pico_mediano_1px": 0.2978,
+            "corridas_de_1px": 79,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-primeira-320-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 360,
+            "pico_mediano_1px": 0.3014,
+            "corridas_de_1px": 98,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-primeira-360-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 390,
+            "pico_mediano_1px": 0.3014,
+            "corridas_de_1px": 98,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-primeira-390-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 430,
+            "pico_mediano_1px": 0.3014,
+            "corridas_de_1px": 98,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-primeira-430-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 768,
+            "pico_mediano_1px": 0.2341,
+            "corridas_de_1px": 375,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-primeira-768-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 1024,
+            "pico_mediano_1px": 0.2368,
+            "corridas_de_1px": 204,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-primeira-1024-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 1280,
+            "pico_mediano_1px": 0.2408,
+            "corridas_de_1px": 225,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-primeira-1280-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 320,
+            "pico_mediano_1px": 0.4172,
+            "corridas_de_1px": 437,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-concelho-320-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 360,
+            "pico_mediano_1px": 0.415,
+            "corridas_de_1px": 530,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-concelho-360-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 390,
+            "pico_mediano_1px": 0.4304,
+            "corridas_de_1px": 622,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-concelho-390-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 430,
+            "pico_mediano_1px": 0.4437,
+            "corridas_de_1px": 676,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-concelho-430-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 768,
+            "pico_mediano_1px": 0.4346,
+            "corridas_de_1px": 1026,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-concelho-768-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 1024,
+            "pico_mediano_1px": 0.4346,
+            "corridas_de_1px": 1053,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-concelho-1024-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 1280,
+            "pico_mediano_1px": 0.4388,
+            "corridas_de_1px": 1043,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-concelho-1280-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 320,
+            "pico_mediano_1px": 0.1207,
+            "corridas_de_1px": 529,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-regiao-320-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 360,
+            "pico_mediano_1px": 0.4185,
+            "corridas_de_1px": 273,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-regiao-360-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 390,
+            "pico_mediano_1px": 0.1207,
+            "corridas_de_1px": 623,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-regiao-390-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 430,
+            "pico_mediano_1px": 0.4005,
+            "corridas_de_1px": 307,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-regiao-430-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 768,
+            "pico_mediano_1px": 0.3429,
+            "corridas_de_1px": 563,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-regiao-768-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 1024,
+            "pico_mediano_1px": 0.1207,
+            "corridas_de_1px": 1440,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-regiao-1024-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 1280,
+            "pico_mediano_1px": 0.1207,
+            "corridas_de_1px": 1579,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-regiao-1280-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 320,
+            "pico_mediano_1px": 0.3257,
+            "corridas_de_1px": 304,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-linha-320-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 360,
+            "pico_mediano_1px": 0.3583,
+            "corridas_de_1px": 314,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-linha-360-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 390,
+            "pico_mediano_1px": 0.3897,
+            "corridas_de_1px": 278,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-linha-390-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 430,
+            "pico_mediano_1px": 0.2698,
+            "corridas_de_1px": 459,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-linha-430-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 768,
+            "pico_mediano_1px": 0.2743,
+            "corridas_de_1px": 482,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-linha-768-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 1024,
+            "pico_mediano_1px": 0.2743,
+            "corridas_de_1px": 493,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-linha-1024-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 1280,
+            "pico_mediano_1px": 0.2608,
+            "corridas_de_1px": 492,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-linha-1280-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 320,
+            "pico_mediano_1px": 0.4601,
+            "corridas_de_1px": 278,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-leitura-320-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 360,
+            "pico_mediano_1px": 0.4335,
+            "corridas_de_1px": 318,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-leitura-360-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 390,
+            "pico_mediano_1px": 0.4227,
+            "corridas_de_1px": 349,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-leitura-390-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 430,
+            "pico_mediano_1px": 0.4227,
+            "corridas_de_1px": 416,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-leitura-430-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 768,
+            "pico_mediano_1px": 0.3925,
+            "corridas_de_1px": 403,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-leitura-768-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 1024,
+            "pico_mediano_1px": 0.3657,
+            "corridas_de_1px": 355,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-leitura-1024-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 1280,
+            "pico_mediano_1px": 0.3925,
+            "corridas_de_1px": 357,
+            "desaparece": true,
+            "recorte": "capturas-2/literata+bitter/recorte-leitura-1280-prosa.png"
+          }
+        ]
+      },
+      "medida3": {
+        "peso_medido": 400,
+        "a_17px_1x": {
+          "e": null,
+          "a": null,
+          "s": null,
+          "c": null,
+          "o": null
+        },
+        "contexto_fora_da_ordem": {
+          "a_17px_3x": {
+            "e": 1.667,
+            "a": 1,
+            "s": 1,
+            "c": 3.667
+          },
+          "a_17px_12x": {
+            "e": 2.083,
+            "a": 1.417,
+            "s": 1.306,
+            "c": 3.583
+          }
+        }
+      },
+      "medida3_pela_regua": {
+        "e": null,
+        "a": null,
+        "s": null,
+        "o": null
+      },
+      "medida4_na_pagina_nao_se_aplica": "os algarismos das páginas compõem-se em `--f-instr`; nesta construção são da Bitter",
+      "medida4": {
+        "tem_feature_tnum": true,
+        "variancia_do_ficheiro_15px_padrao": 0.43440525000000024,
+        "variancia_do_ficheiro_15px_tnum": 0,
+        "variancia_na_pagina_13_5px": null,
+        "vermelho_sem_tabulares_13_5px": null,
+        "variancia_na_pagina_15px": null,
+        "celulas": 0,
+        "excluida_do_instrumento": false
+      },
+      "medida5": {
+        "tem_smcp": true,
+        "tem_c2sc": true,
+        "como": "feature `smcp` no próprio ficheiro; o interruptor declara uma família irmã com o descritor `font-feature-settings`"
+      },
+      "medida6": {
+        "corpo": "17.5px",
+        "entrelinha": "28px",
+        "linhas_no_ecra": 30,
+        "linhas_totais": 544,
+        "caracteres_no_ecra": 907,
+        "caracteres_por_linha": 30.23,
+        "paragrafos_medidos": 41
+      },
+      "medida6_instrumento_nao_se_aplica": "a ficha do aparelho compõe os valores em `--f-instr`; este lugar é o da prosa",
+      "medida6_instrumento": null,
+      "medida7": {
+        "ficheiros": [
+          {
+            "ficheiro": "literata/Literata-latin.woff2",
+            "bytes": 241260
+          },
+          {
+            "ficheiro": "literata/Literata-Italic-latin.woff2",
+            "bytes": 241776
+          }
+        ],
+        "total_bytes": 483036,
+        "razao": "um variável para os quatro pesos e o itálico variável; as versais saem do mesmo ficheiro pelo `smcp`",
+        "carrega_a_mais": "os pesos 200 a 900 e o eixo `opsz`",
+        "total_do_sitio_com_bitter_bytes": 549200
+      },
+      "medida8": "fase do lugar de direção: as pranchas ficam feitas, a leitura não é minha"
+    },
+    {
+      "familia": "Ledger",
+      "papel": "prosa",
+      "medida1": {
+        "lida_na_celula": {
+          "pagina": "leitura",
+          "largura": 390,
+          "densidade": 1
+        },
+        "no_navegador_17px": 8.245,
+        "no_navegador_15px": 7.275,
+        "no_navegador_13_5px": 6.5475,
+        "largura_do_x_17px": 10.37,
+        "altura_do_X_17px": 12.75,
+        "x_em_no_ecra_17px": 0.485,
+        "x_em_no_ecra_15px": 0.485,
+        "x_em_do_ficheiro": 0.487,
+        "do_ficheiro_x_a_17px": 8.279,
+        "diferenca_ficheiro_menos_ecra_17px": 0.034,
+        "tem_eixo_optico": false
+      },
+      "medida2": {
+        "celulas": 35,
+        "larguras": [
+          320,
+          360,
+          390,
+          430,
+          768,
+          1024,
+          1280
+        ],
+        "paginas": [
+          "primeira",
+          "concelho",
+          "regiao",
+          "linha",
+          "leitura"
+        ],
+        "traco_mais_fino_px": 1,
+        "pico_mediano_1px": 0.5399,
+        "pico_pior": 0.3445,
+        "pico_melhor": 0.6301,
+        "corridas_de_1px": 19849,
+        "fracao_corridas_palidas": 0.1094,
+        "celulas_que_desaparecem": 10,
+        "por_celula": [
+          {
+            "pagina": "primeira",
+            "largura": 320,
+            "pico_mediano_1px": 0.5728,
+            "corridas_de_1px": 139,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-primeira-320-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 360,
+            "pico_mediano_1px": 0.5728,
+            "corridas_de_1px": 175,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-primeira-360-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 390,
+            "pico_mediano_1px": 0.575,
+            "corridas_de_1px": 186,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-primeira-390-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 430,
+            "pico_mediano_1px": 0.575,
+            "corridas_de_1px": 186,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-primeira-430-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 768,
+            "pico_mediano_1px": 0.3928,
+            "corridas_de_1px": 651,
+            "desaparece": true,
+            "recorte": "capturas-2/ledger+bitter/recorte-primeira-768-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 1024,
+            "pico_mediano_1px": 0.3532,
+            "corridas_de_1px": 346,
+            "desaparece": true,
+            "recorte": "capturas-2/ledger+bitter/recorte-primeira-1024-prosa.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 1280,
+            "pico_mediano_1px": 0.3567,
+            "corridas_de_1px": 417,
+            "desaparece": true,
+            "recorte": "capturas-2/ledger+bitter/recorte-primeira-1280-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 320,
+            "pico_mediano_1px": 0.3532,
+            "corridas_de_1px": 449,
+            "desaparece": true,
+            "recorte": "capturas-2/ledger+bitter/recorte-concelho-320-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 360,
+            "pico_mediano_1px": 0.3454,
+            "corridas_de_1px": 536,
+            "desaparece": true,
+            "recorte": "capturas-2/ledger+bitter/recorte-concelho-360-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 390,
+            "pico_mediano_1px": 0.3454,
+            "corridas_de_1px": 536,
+            "desaparece": true,
+            "recorte": "capturas-2/ledger+bitter/recorte-concelho-390-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 430,
+            "pico_mediano_1px": 0.3454,
+            "corridas_de_1px": 657,
+            "desaparece": true,
+            "recorte": "capturas-2/ledger+bitter/recorte-concelho-430-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 768,
+            "pico_mediano_1px": 0.3445,
+            "corridas_de_1px": 1035,
+            "desaparece": true,
+            "recorte": "capturas-2/ledger+bitter/recorte-concelho-768-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 1024,
+            "pico_mediano_1px": 0.3454,
+            "corridas_de_1px": 952,
+            "desaparece": true,
+            "recorte": "capturas-2/ledger+bitter/recorte-concelho-1024-prosa.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 1280,
+            "pico_mediano_1px": 0.3454,
+            "corridas_de_1px": 990,
+            "desaparece": true,
+            "recorte": "capturas-2/ledger+bitter/recorte-concelho-1280-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 320,
+            "pico_mediano_1px": 0.5728,
+            "corridas_de_1px": 436,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-regiao-320-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 360,
+            "pico_mediano_1px": 0.5946,
+            "corridas_de_1px": 522,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-regiao-360-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 390,
+            "pico_mediano_1px": 0.6004,
+            "corridas_de_1px": 570,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-regiao-390-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 430,
+            "pico_mediano_1px": 0.6004,
+            "corridas_de_1px": 607,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-regiao-430-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 768,
+            "pico_mediano_1px": 0.5354,
+            "corridas_de_1px": 1010,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-regiao-768-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 1024,
+            "pico_mediano_1px": 0.5637,
+            "corridas_de_1px": 1009,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-regiao-1024-prosa.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 1280,
+            "pico_mediano_1px": 0.5946,
+            "corridas_de_1px": 949,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-regiao-1280-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 320,
+            "pico_mediano_1px": 0.5354,
+            "corridas_de_1px": 430,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-linha-320-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 360,
+            "pico_mediano_1px": 0.5399,
+            "corridas_de_1px": 447,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-linha-360-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 390,
+            "pico_mediano_1px": 0.5264,
+            "corridas_de_1px": 429,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-linha-390-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 430,
+            "pico_mediano_1px": 0.5399,
+            "corridas_de_1px": 430,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-linha-430-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 768,
+            "pico_mediano_1px": 0.5174,
+            "corridas_de_1px": 772,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-linha-768-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 1024,
+            "pico_mediano_1px": 0.5309,
+            "corridas_de_1px": 763,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-linha-1024-prosa.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 1280,
+            "pico_mediano_1px": 0.5309,
+            "corridas_de_1px": 759,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-linha-1280-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 320,
+            "pico_mediano_1px": 0.5818,
+            "corridas_de_1px": 284,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-leitura-320-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 360,
+            "pico_mediano_1px": 0.5818,
+            "corridas_de_1px": 318,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-leitura-360-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 390,
+            "pico_mediano_1px": 0.5861,
+            "corridas_de_1px": 320,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-leitura-390-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 430,
+            "pico_mediano_1px": 0.6075,
+            "corridas_de_1px": 368,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-leitura-430-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 768,
+            "pico_mediano_1px": 0.6301,
+            "corridas_de_1px": 758,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-leitura-768-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 1024,
+            "pico_mediano_1px": 0.6301,
+            "corridas_de_1px": 661,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-leitura-1024-prosa.png"
+          },
+          {
+            "pagina": "leitura",
+            "largura": 1280,
+            "pico_mediano_1px": 0.6301,
+            "corridas_de_1px": 752,
+            "desaparece": false,
+            "recorte": "capturas-2/ledger+bitter/recorte-leitura-1280-prosa.png"
+          }
+        ]
+      },
+      "medida3": {
+        "peso_medido": 400,
+        "a_17px_1x": {
+          "e": 1,
+          "a": null,
+          "s": null,
+          "c": 3,
+          "o": 1
+        },
+        "contexto_fora_da_ordem": {
+          "a_17px_3x": {
+            "e": 1.667,
+            "a": 1,
+            "s": 0.556,
+            "c": 2.333
+          },
+          "a_17px_12x": {
+            "e": 1.583,
+            "a": 1.139,
+            "s": 1.194,
+            "c": 2.917
+          }
+        }
+      },
+      "medida3_pela_regua": {
+        "e": 1,
+        "a": null,
+        "s": null,
+        "o": 1
+      },
+      "medida4_na_pagina_nao_se_aplica": "os algarismos das páginas compõem-se em `--f-instr`; nesta construção são da Bitter",
+      "medida4": {
+        "tem_feature_tnum": false,
+        "variancia_do_ficheiro_15px_padrao": 0.25349399999999983,
+        "variancia_do_ficheiro_15px_tnum": null,
+        "variancia_na_pagina_13_5px": null,
+        "vermelho_sem_tabulares_13_5px": null,
+        "variancia_na_pagina_15px": null,
+        "celulas": 0,
+        "excluida_do_instrumento": false
+      },
+      "medida5": {
+        "tem_smcp": false,
+        "tem_c2sc": false,
+        "como": "sem `smcp` e sem família irmã: as versais ficam na Spectral SC, e o sítio passa a compor duas letras"
+      },
+      "medida6": {
+        "corpo": "17.5px",
+        "entrelinha": "28px",
+        "linhas_no_ecra": 30,
+        "linhas_totais": 566,
+        "caracteres_no_ecra": 907,
+        "caracteres_por_linha": 30.23,
+        "paragrafos_medidos": 41
+      },
+      "medida6_instrumento_nao_se_aplica": "a ficha do aparelho compõe os valores em `--f-instr`; este lugar é o da prosa",
+      "medida6_instrumento": null,
+      "medida7": {
+        "ficheiros": [
+          {
+            "ficheiro": "ledger/Ledger-latin.woff2",
+            "bytes": 14656
+          },
+          {
+            "ficheiro": "spectral-sc/SpectralSC-Regular-latin.woff2",
+            "bytes": 48192
+          },
+          {
+            "ficheiro": "spectral-sc/SpectralSC-SemiBold-latin.woff2",
+            "bytes": 50840
+          }
+        ],
+        "total_bytes": 113688,
+        "razao": "um estático, que é o único peso que a família tem; as versais ficam na Spectral SC porque não tem `smcp`",
+        "carrega_a_mais": "nada, e falta: os pesos 500, 600 e 700 e o itálico não existem no ficheiro e ficam por conta do navegador, que os fabrica engordando e inclinando o regular",
+        "total_do_sitio_com_bitter_bytes": 179852
+      },
+      "medida8": "fase do lugar de direção: as pranchas ficam feitas, a leitura não é minha",
+      "nota": "acrescentada pelo lugar de direção depois da adenda 2"
+    },
+    {
+      "familia": "Parnaso Standard",
+      "papel": "prosa",
+      "vazio": "o pacote de teste não existe: só o diretor o pode pedir"
+    },
+    {
+      "familia": "Parnaso Small",
+      "papel": "prosa",
+      "vazio": "o pacote de teste não existe: só o diretor o pode pedir"
+    },
+    {
+      "familia": "Bitter",
+      "papel": "instrumento",
+      "medida1": {
+        "lida_na_celula": {
+          "pagina": "leitura",
+          "largura": 390,
+          "densidade": 1
+        },
+        "no_navegador_17px": 9.0384,
+        "no_navegador_15px": 7.9751,
+        "no_navegador_13_5px": 7.1776,
+        "largura_do_x_17px": 9.418,
+        "altura_do_X_17px": 11.866,
+        "x_em_no_ecra_17px": 0.5317,
+        "x_em_no_ecra_15px": 0.5317,
+        "x_em_do_ficheiro": 0.522,
+        "do_ficheiro_x_a_17px": 8.874,
+        "diferenca_ficheiro_menos_ecra_17px": -0.1644,
+        "tem_eixo_optico": false
+      },
+      "medida2": {
+        "celulas": 28,
+        "larguras": [
+          320,
+          360,
+          390,
+          430,
+          768,
+          1024,
+          1280
+        ],
+        "paginas": [
+          "primeira",
+          "concelho",
+          "regiao",
+          "linha"
+        ],
+        "traco_mais_fino_px": 1,
+        "pico_mediano_1px": 0.1835,
+        "pico_pior": 0.0763,
+        "pico_melhor": 0.6977,
+        "corridas_de_1px": 2755,
+        "fracao_corridas_palidas": 0.0509,
+        "celulas_que_desaparecem": 21,
+        "por_celula": [
+          {
+            "pagina": "primeira",
+            "largura": 320,
+            "pico_mediano_1px": 0.0815,
+            "corridas_de_1px": 20,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-primeira-320-numeros.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 360,
+            "pico_mediano_1px": 0.0763,
+            "corridas_de_1px": 10,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-primeira-360-numeros.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 390,
+            "pico_mediano_1px": 0.0866,
+            "corridas_de_1px": 18,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-primeira-390-numeros.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 430,
+            "pico_mediano_1px": 0.0967,
+            "corridas_de_1px": 16,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-primeira-430-numeros.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 768,
+            "pico_mediano_1px": 0.1397,
+            "corridas_de_1px": 21,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-primeira-768-numeros.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 1024,
+            "pico_mediano_1px": 0.1244,
+            "corridas_de_1px": 22,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-primeira-1024-numeros.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 1280,
+            "pico_mediano_1px": 0.1397,
+            "corridas_de_1px": 19,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-primeira-1280-numeros.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 320,
+            "pico_mediano_1px": 0.1529,
+            "corridas_de_1px": 85,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-concelho-320-numeros.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 360,
+            "pico_mediano_1px": 0.1624,
+            "corridas_de_1px": 74,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-concelho-360-numeros.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 390,
+            "pico_mediano_1px": 0.1267,
+            "corridas_de_1px": 70,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-concelho-390-numeros.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 430,
+            "pico_mediano_1px": 0.1463,
+            "corridas_de_1px": 74,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-concelho-430-numeros.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 768,
+            "pico_mediano_1px": 0.1114,
+            "corridas_de_1px": 86,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-concelho-768-numeros.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 1024,
+            "pico_mediano_1px": 0.1069,
+            "corridas_de_1px": 81,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-concelho-1024-numeros.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 1280,
+            "pico_mediano_1px": 0.1114,
+            "corridas_de_1px": 88,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-concelho-1280-numeros.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 320,
+            "pico_mediano_1px": 0.3026,
+            "corridas_de_1px": 7,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-regiao-320-numeros.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 360,
+            "pico_mediano_1px": 0.2046,
+            "corridas_de_1px": 10,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-regiao-360-numeros.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 390,
+            "pico_mediano_1px": 0.2046,
+            "corridas_de_1px": 10,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-regiao-390-numeros.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 430,
+            "pico_mediano_1px": 0.2046,
+            "corridas_de_1px": 10,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-regiao-430-numeros.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 768,
+            "pico_mediano_1px": 0.3622,
+            "corridas_de_1px": 91,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-regiao-768-numeros.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 1024,
+            "pico_mediano_1px": 0.4523,
+            "corridas_de_1px": 69,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-regiao-1024-numeros.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 1280,
+            "pico_mediano_1px": 0.4984,
+            "corridas_de_1px": 71,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+bitter/recorte-regiao-1280-numeros.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 320,
+            "pico_mediano_1px": 0.6977,
+            "corridas_de_1px": 272,
+            "desaparece": false,
+            "recorte": "capturas-2/spectral+bitter/recorte-linha-320-numeros.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 360,
+            "pico_mediano_1px": 0.6977,
+            "corridas_de_1px": 272,
+            "desaparece": false,
+            "recorte": "capturas-2/spectral+bitter/recorte-linha-360-numeros.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 390,
+            "pico_mediano_1px": 0.6977,
+            "corridas_de_1px": 272,
+            "desaparece": false,
+            "recorte": "capturas-2/spectral+bitter/recorte-linha-390-numeros.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 430,
+            "pico_mediano_1px": 0.6977,
+            "corridas_de_1px": 271,
+            "desaparece": false,
+            "recorte": "capturas-2/spectral+bitter/recorte-linha-430-numeros.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 768,
+            "pico_mediano_1px": 0.6977,
+            "corridas_de_1px": 217,
+            "desaparece": false,
+            "recorte": "capturas-2/spectral+bitter/recorte-linha-768-numeros.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 1024,
+            "pico_mediano_1px": 0.6977,
+            "corridas_de_1px": 248,
+            "desaparece": false,
+            "recorte": "capturas-2/spectral+bitter/recorte-linha-1024-numeros.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 1280,
+            "pico_mediano_1px": 0.6977,
+            "corridas_de_1px": 251,
+            "desaparece": false,
+            "recorte": "capturas-2/spectral+bitter/recorte-linha-1280-numeros.png"
+          }
+        ]
+      },
+      "medida3": {
+        "peso_medido": 600,
+        "a_17px_1x": {
+          "e": null,
+          "a": null,
+          "s": null,
+          "c": null,
+          "o": null
+        },
+        "contexto_fora_da_ordem": {
+          "a_17px_3x": {
+            "e": 1.667,
+            "a": 1,
+            "s": 1,
+            "c": 3.667
+          },
+          "a_17px_12x": {
+            "e": 1.917,
+            "a": 1.139,
+            "s": 1.361,
+            "c": 3.75
+          }
+        }
+      },
+      "medida3_pela_regua": {
+        "e": 1,
+        "a": null,
+        "s": 1,
+        "o": null
+      },
+      "medida4": {
+        "tem_feature_tnum": true,
+        "variancia_do_ficheiro_15px_padrao": 1.14455025,
+        "variancia_do_ficheiro_15px_tnum": 0,
+        "variancia_na_pagina_13_5px": 0,
+        "vermelho_sem_tabulares_13_5px": 0.60143,
+        "variancia_na_pagina_15px": 0,
+        "celulas": 105,
+        "excluida_do_instrumento": false
+      },
+      "medida5": {
+        "tem_smcp": true,
+        "tem_c2sc": true,
+        "como": "feature `smcp` no próprio ficheiro; o interruptor declara uma família irmã com o descritor `font-feature-settings`"
+      },
+      "medida6_nao_se_aplica": "a densidade de leitura é da prosa; este lugar é o do instrumento",
+      "medida6": null,
+      "medida6_instrumento": {
+        "seletor": ".aparelho-ficha",
+        "pares": 7,
+        "altura_total_px": 416.8,
+        "pares_no_ecra": 7,
+        "caracteres_no_ecra": 215
+      },
+      "medida7": {
+        "ficheiros": [
+          {
+            "ficheiro": "bitter/Bitter-latin.woff2",
+            "bytes": 66164
+          }
+        ],
+        "total_bytes": 66164,
+        "razao": "um variável, todos os pesos",
+        "carrega_a_mais": "os pesos 100 a 900"
+      },
+      "medida8": "fase do lugar de direção: as pranchas ficam feitas, a leitura não é minha",
+      "nota": "controlo: o sítio de hoje"
+    },
+    {
+      "familia": "Public Sans",
+      "papel": "instrumento",
+      "medida1": {
+        "lida_na_celula": {
+          "pagina": "leitura",
+          "largura": 390,
+          "densidade": 1
+        },
+        "no_navegador_17px": 8.789,
+        "no_navegador_15px": 7.755,
+        "no_navegador_13_5px": 6.9795,
+        "largura_do_x_17px": 9.5944,
+        "altura_do_X_17px": 12.291,
+        "x_em_no_ecra_17px": 0.517,
+        "x_em_no_ecra_15px": 0.517,
+        "x_em_do_ficheiro": 0.517,
+        "do_ficheiro_x_a_17px": 8.789,
+        "diferenca_ficheiro_menos_ecra_17px": 0,
+        "tem_eixo_optico": false
+      },
+      "medida2": {
+        "celulas": 28,
+        "larguras": [
+          320,
+          360,
+          390,
+          430,
+          768,
+          1024,
+          1280
+        ],
+        "paginas": [
+          "primeira",
+          "concelho",
+          "regiao",
+          "linha"
+        ],
+        "traco_mais_fino_px": 1,
+        "pico_mediano_1px": 0.1227,
+        "pico_pior": 0.0866,
+        "pico_melhor": 0.6977,
+        "corridas_de_1px": 2080,
+        "fracao_corridas_palidas": 0.0465,
+        "celulas_que_desaparecem": 19,
+        "por_celula": [
+          {
+            "pagina": "primeira",
+            "largura": 320,
+            "pico_mediano_1px": 0.1272,
+            "corridas_de_1px": 23,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+publicsans/recorte-primeira-320-numeros.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 360,
+            "pico_mediano_1px": 0.0898,
+            "corridas_de_1px": 17,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+publicsans/recorte-primeira-360-numeros.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 390,
+            "pico_mediano_1px": 0.1529,
+            "corridas_de_1px": 23,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+publicsans/recorte-primeira-390-numeros.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 430,
+            "pico_mediano_1px": 0.1507,
+            "corridas_de_1px": 12,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+publicsans/recorte-primeira-430-numeros.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 768,
+            "pico_mediano_1px": 0.1069,
+            "corridas_de_1px": 16,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+publicsans/recorte-primeira-768-numeros.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 1024,
+            "pico_mediano_1px": 0.0866,
+            "corridas_de_1px": 16,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+publicsans/recorte-primeira-1024-numeros.png"
+          },
+          {
+            "pagina": "primeira",
+            "largura": 1280,
+            "pico_mediano_1px": 0.1442,
+            "corridas_de_1px": 9,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+publicsans/recorte-primeira-1280-numeros.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 320,
+            "pico_mediano_1px": 0.1033,
+            "corridas_de_1px": 42,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+publicsans/recorte-concelho-320-numeros.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 360,
+            "pico_mediano_1px": 0.0921,
+            "corridas_de_1px": 50,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+publicsans/recorte-concelho-360-numeros.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 390,
+            "pico_mediano_1px": 0.1069,
+            "corridas_de_1px": 41,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+publicsans/recorte-concelho-390-numeros.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 430,
+            "pico_mediano_1px": 0.1169,
+            "corridas_de_1px": 45,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+publicsans/recorte-concelho-430-numeros.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 768,
+            "pico_mediano_1px": 0.1051,
+            "corridas_de_1px": 52,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+publicsans/recorte-concelho-768-numeros.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 1024,
+            "pico_mediano_1px": 0.1033,
+            "corridas_de_1px": 60,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+publicsans/recorte-concelho-1024-numeros.png"
+          },
+          {
+            "pagina": "concelho",
+            "largura": 1280,
+            "pico_mediano_1px": 0.1033,
+            "corridas_de_1px": 53,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+publicsans/recorte-concelho-1280-numeros.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 320,
+            "pico_mediano_1px": 0.1182,
+            "corridas_de_1px": 1,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+publicsans/recorte-regiao-320-numeros.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 360,
+            "pico_mediano_1px": 0.1182,
+            "corridas_de_1px": 1,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+publicsans/recorte-regiao-360-numeros.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 390,
+            "pico_mediano_1px": 0.1182,
+            "corridas_de_1px": 1,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+publicsans/recorte-regiao-390-numeros.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 430,
+            "pico_mediano_1px": 0.1182,
+            "corridas_de_1px": 1,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+publicsans/recorte-regiao-430-numeros.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 768,
+            "pico_mediano_1px": 0.4614,
+            "corridas_de_1px": 61,
+            "desaparece": true,
+            "recorte": "capturas-2/spectral+publicsans/recorte-regiao-768-numeros.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 1024,
+            "pico_mediano_1px": 0.5763,
+            "corridas_de_1px": 49,
+            "desaparece": false,
+            "recorte": "capturas-2/spectral+publicsans/recorte-regiao-1024-numeros.png"
+          },
+          {
+            "pagina": "regiao",
+            "largura": 1280,
+            "pico_mediano_1px": 0.6259,
+            "corridas_de_1px": 51,
+            "desaparece": false,
+            "recorte": "capturas-2/spectral+publicsans/recorte-regiao-1280-numeros.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 320,
+            "pico_mediano_1px": 0.6977,
+            "corridas_de_1px": 227,
+            "desaparece": false,
+            "recorte": "capturas-2/spectral+publicsans/recorte-linha-320-numeros.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 360,
+            "pico_mediano_1px": 0.6977,
+            "corridas_de_1px": 226,
+            "desaparece": false,
+            "recorte": "capturas-2/spectral+publicsans/recorte-linha-360-numeros.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 390,
+            "pico_mediano_1px": 0.6977,
+            "corridas_de_1px": 226,
+            "desaparece": false,
+            "recorte": "capturas-2/spectral+publicsans/recorte-linha-390-numeros.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 430,
+            "pico_mediano_1px": 0.6977,
+            "corridas_de_1px": 227,
+            "desaparece": false,
+            "recorte": "capturas-2/spectral+publicsans/recorte-linha-430-numeros.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 768,
+            "pico_mediano_1px": 0.6977,
+            "corridas_de_1px": 177,
+            "desaparece": false,
+            "recorte": "capturas-2/spectral+publicsans/recorte-linha-768-numeros.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 1024,
+            "pico_mediano_1px": 0.6977,
+            "corridas_de_1px": 187,
+            "desaparece": false,
+            "recorte": "capturas-2/spectral+publicsans/recorte-linha-1024-numeros.png"
+          },
+          {
+            "pagina": "linha",
+            "largura": 1280,
+            "pico_mediano_1px": 0.6977,
+            "corridas_de_1px": 186,
+            "desaparece": false,
+            "recorte": "capturas-2/spectral+publicsans/recorte-linha-1280-numeros.png"
+          }
+        ]
+      },
+      "medida3": {
+        "peso_medido": 600,
+        "a_17px_1x": {
+          "e": null,
+          "a": null,
+          "s": null,
+          "c": null,
+          "o": null
+        },
+        "contexto_fora_da_ordem": {
+          "a_17px_3x": {
+            "e": 1,
+            "a": 0.556,
+            "s": 0.556,
+            "c": 2.333
+          },
+          "a_17px_12x": {
+            "e": 1.083,
+            "a": 0.917,
+            "s": 1.25,
+            "c": 2.75
+          }
+        }
+      },
+      "medida3_pela_regua": {
+        "e": null,
+        "a": null,
+        "s": 1,
+        "o": null
+      },
+      "medida4": {
+        "tem_feature_tnum": true,
+        "variancia_do_ficheiro_15px_padrao": 0.9174155625000003,
+        "variancia_do_ficheiro_15px_tnum": 0,
+        "variancia_na_pagina_13_5px": 0,
+        "vermelho_sem_tabulares_13_5px": 0.80432,
+        "variancia_na_pagina_15px": 0,
+        "celulas": 105,
+        "excluida_do_instrumento": false
+      },
+      "medida5": {
+        "tem_smcp": false,
+        "tem_c2sc": false,
+        "como": "sem `smcp` e sem família irmã: as versais ficam na Spectral SC, e o sítio passa a compor duas letras"
+      },
+      "medida6_nao_se_aplica": "a densidade de leitura é da prosa; este lugar é o do instrumento",
+      "medida6": null,
+      "medida6_instrumento": {
+        "seletor": ".aparelho-ficha",
+        "pares": 7,
+        "altura_total_px": 416.8,
+        "pares_no_ecra": 7,
+        "caracteres_no_ecra": 215
+      },
+      "medida7": {
+        "ficheiros": [
+          {
+            "ficheiro": "publicsans/PublicSans-latin.woff2",
+            "bytes": 34244
+          }
+        ],
+        "total_bytes": 34244,
+        "razao": "um variável, todos os pesos",
+        "carrega_a_mais": "os pesos 100 a 900"
+      },
+      "medida8": "fase do lugar de direção: as pranchas ficam feitas, a leitura não é minha"
+    },
+    {
+      "familia": "IBM Plex Sans",
+      "papel": "instrumento",
+      "medida1": {
+        "lida_na_celula": null,
+        "no_navegador_17px": null,
+        "no_navegador_15px": null,
+        "no_navegador_13_5px": null,
+        "largura_do_x_17px": null,
+        "altura_do_X_17px": null,
+        "x_em_no_ecra_17px": null,
+        "x_em_no_ecra_15px": null,
+        "x_em_do_ficheiro": 0.516,
+        "do_ficheiro_x_a_17px": 8.772,
+        "diferenca_ficheiro_menos_ecra_17px": null,
+        "tem_eixo_optico": false
+      },
+      "medida2": null,
+      "medida3": {
+        "peso_medido": 600,
+        "a_17px_1x": {
+          "e": null,
+          "a": null,
+          "s": null,
+          "c": null,
+          "o": null
+        },
+        "contexto_fora_da_ordem": {
+          "a_17px_3x": {
+            "e": 1,
+            "a": 1,
+            "s": 0.556,
+            "c": 3
+          },
+          "a_17px_12x": {
+            "e": 1.083,
+            "a": 1.25,
+            "s": 1.194,
+            "c": 3.083
+          }
+        }
+      },
+      "medida4": {
+        "tem_feature_tnum": false,
+        "variancia_do_ficheiro_15px_padrao": 0,
+        "variancia_do_ficheiro_15px_tnum": null,
+        "variancia_na_pagina_13_5px": null,
+        "vermelho_sem_tabulares_13_5px": null,
+        "variancia_na_pagina_15px": null,
+        "celulas": 0,
+        "excluida_do_instrumento": true
+      },
+      "medida5": {
+        "tem_smcp": false,
+        "tem_c2sc": false,
+        "como": "sem `smcp` e sem família irmã: as versais ficam na Spectral SC, e o sítio passa a compor duas letras"
+      },
+      "medida6_nao_se_aplica": "a densidade de leitura é da prosa; este lugar é o do instrumento",
+      "medida6": null,
+      "medida6_instrumento": null,
+      "medida7": {
+        "ficheiros": [
+          {
+            "ficheiro": "ibmplexsans/IBMPlexSans-latin.woff2",
+            "bytes": 100636
+          }
+        ],
+        "total_bytes": 100636,
+        "razao": "um variável; não entra, ver linha 4",
+        "carrega_a_mais": "os eixos `wght` e `wdth`"
+      },
+      "medida8": "fase do lugar de direção: as pranchas ficam feitas, a leitura não é minha",
+      "excluida_porque": "a medida 4: sem `tnum` no ficheiro de montante"
+    },
+    {
+      "familia": "Sebenta",
+      "papel": "instrumento",
+      "vazio": "o pacote de teste não existe: só o diretor o pode pedir"
+    }
+  ],
+  "por_combinacao": {
+    "spectral+bitter": {
+      "fichas": {
+        "prosa": "\"Spectral\", Georgia, \"Times New Roman\", serif",
+        "instr": "\"Bitter\", \"Rockwell\", \"Roboto Slab\", Georgia, serif",
+        "versal": "\"Spectral SC\", \"Spectral\", Georgia, \"Times New Roman\", serif",
+        "papel": "#f6f7f4",
+        "tinta": "#17191b"
+      },
+      "celulas": 105,
+      "medida6_390": [
+        {
+          "pagina": "primeira",
+          "linhas": 3,
+          "caracteres": 129,
+          "cpl": 43
+        },
+        {
+          "pagina": "concelho",
+          "linhas": 31,
+          "caracteres": 1112,
+          "cpl": 35.87
+        },
+        {
+          "pagina": "regiao",
+          "linhas": 5,
+          "caracteres": 206,
+          "cpl": 41.2
+        },
+        {
+          "pagina": "linha",
+          "linhas": 22,
+          "caracteres": 1085,
+          "cpl": 49.32
+        },
+        {
+          "pagina": "leitura",
+          "linhas": 26,
+          "caracteres": 942,
+          "cpl": 36.23
+        }
+      ]
+    },
+    "newsreader+bitter": {
+      "fichas": {
+        "prosa": "'Newsreader',Georgia, 'Times New Roman', serif",
+        "instr": "\"Bitter\", \"Rockwell\", \"Roboto Slab\", Georgia, serif",
+        "versal": "\"Spectral SC\", \"Spectral\", Georgia, \"Times New Roman\", serif",
+        "papel": "#f6f7f4",
+        "tinta": "#17191b"
+      },
+      "celulas": 105,
+      "medida6_390": [
+        {
+          "pagina": "primeira",
+          "linhas": 3,
+          "caracteres": 129,
+          "cpl": 43
+        },
+        {
+          "pagina": "concelho",
+          "linhas": 36,
+          "caracteres": 1086,
+          "cpl": 30.17
+        },
+        {
+          "pagina": "regiao",
+          "linhas": 5,
+          "caracteres": 206,
+          "cpl": 41.2
+        },
+        {
+          "pagina": "linha",
+          "linhas": 23,
+          "caracteres": 1085,
+          "cpl": 47.17
+        },
+        {
+          "pagina": "leitura",
+          "linhas": 27,
+          "caracteres": 977,
+          "cpl": 36.19
+        }
+      ]
+    },
+    "sourceserif4+bitter": {
+      "fichas": {
+        "prosa": "'Source Serif 4',Georgia, 'Times New Roman', serif",
+        "instr": "\"Bitter\", \"Rockwell\", \"Roboto Slab\", Georgia, serif",
+        "versal": "'Source Serif 4 SC','Source Serif 4',Georgia, 'Times New Roman', serif",
+        "papel": "#f6f7f4",
+        "tinta": "#17191b"
+      },
+      "celulas": 105,
+      "medida6_390": [
+        {
+          "pagina": "primeira",
+          "linhas": 3,
+          "caracteres": 129,
+          "cpl": 43
+        },
+        {
+          "pagina": "concelho",
+          "linhas": 32,
+          "caracteres": 1088,
+          "cpl": 34
+        },
+        {
+          "pagina": "regiao",
+          "linhas": 5,
+          "caracteres": 206,
+          "cpl": 41.2
+        },
+        {
+          "pagina": "linha",
+          "linhas": 23,
+          "caracteres": 1001,
+          "cpl": 43.52
+        },
+        {
+          "pagina": "leitura",
+          "linhas": 28,
+          "caracteres": 940,
+          "cpl": 33.57
+        }
+      ]
+    },
+    "literata+bitter": {
+      "fichas": {
+        "prosa": "'Literata',Georgia, 'Times New Roman', serif",
+        "instr": "\"Bitter\", \"Rockwell\", \"Roboto Slab\", Georgia, serif",
+        "versal": "'Literata SC','Literata',Georgia, 'Times New Roman', serif",
+        "papel": "#f6f7f4",
+        "tinta": "#17191b"
+      },
+      "celulas": 105,
+      "medida6_390": [
+        {
+          "pagina": "primeira",
+          "linhas": 3,
+          "caracteres": 129,
+          "cpl": 43
+        },
+        {
+          "pagina": "concelho",
+          "linhas": 38,
+          "caracteres": 1086,
+          "cpl": 28.58
+        },
+        {
+          "pagina": "regiao",
+          "linhas": 5,
+          "caracteres": 206,
+          "cpl": 41.2
+        },
+        {
+          "pagina": "linha",
+          "linhas": 23,
+          "caracteres": 1001,
+          "cpl": 43.52
+        },
+        {
+          "pagina": "leitura",
+          "linhas": 30,
+          "caracteres": 907,
+          "cpl": 30.23
+        }
+      ]
+    },
+    "ledger+bitter": {
+      "fichas": {
+        "prosa": "'Ledger',Georgia, 'Times New Roman', serif",
+        "instr": "\"Bitter\", \"Rockwell\", \"Roboto Slab\", Georgia, serif",
+        "versal": "\"Spectral SC\", \"Spectral\", Georgia, \"Times New Roman\", serif",
+        "papel": "#f6f7f4",
+        "tinta": "#17191b"
+      },
+      "celulas": 105,
+      "medida6_390": [
+        {
+          "pagina": "primeira",
+          "linhas": 3,
+          "caracteres": 129,
+          "cpl": 43
+        },
+        {
+          "pagina": "concelho",
+          "linhas": 34,
+          "caracteres": 1136,
+          "cpl": 33.41
+        },
+        {
+          "pagina": "regiao",
+          "linhas": 5,
+          "caracteres": 206,
+          "cpl": 41.2
+        },
+        {
+          "pagina": "linha",
+          "linhas": 23,
+          "caracteres": 1001,
+          "cpl": 43.52
+        },
+        {
+          "pagina": "leitura",
+          "linhas": 30,
+          "caracteres": 907,
+          "cpl": 30.23
+        }
+      ]
+    },
+    "spectral+publicsans": {
+      "fichas": {
+        "prosa": "\"Spectral\", Georgia, \"Times New Roman\", serif",
+        "instr": "'Public Sans','Rockwell', 'Roboto Slab', Georgia, serif",
+        "versal": "\"Spectral SC\", \"Spectral\", Georgia, \"Times New Roman\", serif",
+        "papel": "#f6f7f4",
+        "tinta": "#17191b"
+      },
+      "celulas": 105,
+      "medida6_390": [
+        {
+          "pagina": "primeira",
+          "linhas": 3,
+          "caracteres": 129,
+          "cpl": 43
+        },
+        {
+          "pagina": "concelho",
+          "linhas": 30,
+          "caracteres": 1088,
+          "cpl": 36.27
+        },
+        {
+          "pagina": "regiao",
+          "linhas": 5,
+          "caracteres": 206,
+          "cpl": 41.2
+        },
+        {
+          "pagina": "linha",
+          "linhas": 22,
+          "caracteres": 1085,
+          "cpl": 49.32
+        },
+        {
+          "pagina": "leitura",
+          "linhas": 26,
+          "caracteres": 942,
+          "cpl": 36.23
+        }
+      ]
+    }
+  }
+}
