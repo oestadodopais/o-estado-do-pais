@@ -106,9 +106,22 @@ const portaLegal = [LEI_ORGANICA.diplomaCurto, ...area.pecas.artigos].join(' · 
   title={`${nome} · ${s.areas.metaCauda}`}
   description={descricao}
 >
+  {/* O NOME DA ÁREA LEVA A MARCA DO NOME DECLARADO (29.08.2026). `data-nome` diz
+      «este texto é o nome de uma entrada de um ficheiro de dados, e não prosa que
+      a casa escreveu», e o valor nomeia o ficheiro: `src/data/areas.mjs`, cuja
+      fonte é a página do Governo lida a 28.08.2026 (`FONTE_DOS_NOMES`). A régua
+      da voz tira-o do inventário e CONFERE que o texto rendido é, carácter a
+      carácter, o nome que aquele ficheiro publica; sem a marca, o nome de cada
+      área custava duas linhas do inventário e a descrição do `<head>` composta
+      com ele outras duas, e com as dezasseis áreas do Governo seriam sessenta e
+      quatro linhas, que é a lista dos ministérios escrita outra vez.
+
+      NÃO É `data-lugar`, e a marca dos lugares tem escrito o que marca: o nome de
+      um concelho e a etiqueta que a Carta Administrativa lhe dá. Uma área de
+      governo não é um lugar. */}
   <div class="linha-cabeca area-cabeca">
     <p class="eyebrow">{s.areas.eyebrow}</p>
-    <h1>{nome}</h1>
+    <h1 data-nome="areas">{nome}</h1>
     <p class="area-tipo">{s.areas.tipo}</p>
   </div>
 
@@ -202,7 +215,7 @@ const portaLegal = [LEI_ORGANICA.diplomaCurto, ...area.pecas.artigos].join(' · 
           não dependa da edição em que a página é construída. */}
       <div class="prov area-lei">
         <div class="prov-row">
-          <span class="prov-study">{nome}</span>
+          <span class="prov-study" data-nome="areas">{nome}</span>
           <span class="prov-vals">
             <a
               class="ligacao-externa"
