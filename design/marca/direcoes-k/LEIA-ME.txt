@@ -1,0 +1,22 @@
+A MARCA · O ESTADO DO PAÍS
+Três linhas, a do meio mais curta: registo, valor, registo.
+Alinhadas à esquerda, lê-se «E» sem letra desenhada.
+
+FICHEIROS
+marca-cheia-claro.svg   — peso cheio, sobre papel/fundos claros
+marca-cheia-escuro.svg  — peso cheio, sobre tinta/fundos escuros
+marca-fina-claro.svg    — peso fino (valor cheio), só em grande (≥60 px)
+marca-fina-escuro.svg   — idem, sobre escuro
+icone-telemovel.svg     — a cela do ecrã principal (campo de tinta, cantos do aparelho)
+favicon.svg             — o cheio, campo transparente
+
+REGRA DOS PESOS
+Cheia onde há barulho e pouco espaço: ícone, favicon, interfaces, lockup pequeno.
+Fina onde há papel e silêncio: capas, cabeçalhos de estudo, timbrado. Nunca abaixo de 60 px.
+
+GEOMETRIA (grelha 512)
+linhas 340 × 72 · intervalo 48 · valor 197 (58%) · fio da fina 7
+
+CORES
+Tinta #17191B · Cobalto #1F4E8C · Papel #F6F7F4
+Sobre tinta: Papel-claro #ECEEEA · Cobalto-claro #7FA6DC
