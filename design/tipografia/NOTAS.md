@@ -1,3 +1,5 @@
+> **Aviso do lugar de direção (29.08.2026, depois da leitura cruzada).** Esta é a primeira ronda do estudo e não é de decisão: a leitura cruzada (`LEITURA-CODEX-2026-08-29.md`) mostrou que a rubrica não foi aplicada à letra (a medida 3 a 12× e não a 1×, a medida 2 só a duas larguras, a medida 1 das unidades do tipo, a medida 8 por fazer) e que a ordem de preferência foi decidida depois de medir. As eliminatórias e os números ficam; a ordem não. A segunda ronda corre com as fontes de teste comerciais, a rubrica à letra e a ponderação fixada antes.
+
 # NOTAS · o estudo tipográfico, o que se mediu e o que se viu
 
 *Escrito a 29.08.2026 pelo construtor (Claude Opus 5), ramo `tipografia-2026-08-29`,

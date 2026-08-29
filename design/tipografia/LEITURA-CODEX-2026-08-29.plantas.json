@@ -1,0 +1,21 @@
+{
+ "registado_em": "2026-08-29",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "TABELA.md",
+   "descricao": "measure 2 (median ink in a 1 px run): the values of Spectral (0.316) and Source Serif 4 (0.442) swapped, so the table contradicts the notes' ranking",
+   "sha256_antes": "7fae77d329fde7c3100b11837f5441779b29bfcd5dd340e5b87302fd56bfa87e",
+   "sha256_depois": "ff14c67148b4118c6356c7a16933bb9c16f3fbfb034b966b20f6dba91dd69c4a",
+   "contexto": "| 2 · tinta mediana numa corrida de 1 px | 0.442 | 0.320 | 0.316 | 0.312 | — | — | 0.320 | 0.331 | — | — |"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "NOTAS.md",
+   "descricao": "a sentence planted under the Newsreader heading claiming it has its own small caps, contradicting the table's «não · Spectral SC»",
+   "sha256_antes": "1f662ed0b507e9085db93776d4c7c4c70143d89de70c3a447c0db778fed7c3d8",
+   "sha256_depois": "3df1a54c64b14166908980cc787ac3114aa338d43b2c1a2fddecc9f652d566eb",
+   "contexto": "### Newsreader + the planted line"
+  }
+ ]
+}
