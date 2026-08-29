@@ -293,9 +293,14 @@ function r6(m) {
       continue;
     }
 
-    /* (a) o selo, que abre a linha da Carta. */
-    const selos = figura
-      .querySelectorAll('a.src-chip')
+    /* (a) o selo, que abre a linha da Carta. NA PRIMEIRA PÁGINA A LEGENDA É IRMÃ
+       DA FIGURA (29.08.2026, a emenda do alinhamento à §1.84): a linha dos 308
+       com o seu selo saiu da `<figure>` para `[data-mapa-legenda]`, filha da
+       grelha da cabeça, para poder ficar por baixo dos nomes a partir de 1280.
+       «Onde o mapa está» passa a ser a figura ou a legenda dela, na mesma página;
+       na página de distrito continua a ser a figura. */
+    const legenda = pg.tipo === 'inicio' ? pg.root.querySelector('[data-mapa-legenda]') : null;
+    const selos = [...figura.querySelectorAll('a.src-chip'), ...(legenda ? legenda.querySelectorAll('a.src-chip') : [])]
       .map((a) => (a.getAttribute('href') ?? '').split('#')[0]);
     if (!selos.includes(portaDaLinha(pg.lang))) {
       erros.push(
@@ -507,10 +512,11 @@ const ESTRAGOS = {
   },
   R6: (m) => {
     const pg = m.paginas.find((p) => p.tipo === 'inicio');
-    for (const a of pg.root.querySelector('[data-mapa-raiz]').querySelectorAll('a.src-chip')) {
-      a.remove();
+    for (const raiz of ['[data-mapa-raiz]', '[data-mapa-legenda]']) {
+      const bloco = pg.root.querySelector(raiz);
+      if (bloco) for (const a of bloco.querySelectorAll('a.src-chip')) a.remove();
     }
-    return 'o selo da Carta retirado da figura do mapa da primeira página';
+    return 'o selo da Carta retirado da figura e da legenda do mapa da primeira página';
   },
   /* A MENÇÃO ESCRITA NA PRIMEIRA PÁGINA (Emenda 20e). É a metade nova da regra e
      é a que a licença obriga: o nome da entidade proprietária, ao pé do mapa

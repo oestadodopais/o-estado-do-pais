@@ -1,0 +1,41 @@
+---
+/**
+ * A LEGENDA DO MAPA, IRMÃ DA CABEÇA, DOS NOMES E DO INSTRUMENTO (29.08.2026)
+ *
+ * Duas linhas que viviam dentro do `<figure>` do mapa: a linha da Emenda 17
+ * («308 concelhos · CAOP 2025 ■ fonte», com o selo no fim e o ano lido do
+ * `reference_date` da própria linha do livro-razão) e a menção da fonte da
+ * Emenda 20e (a atribuição da Carta, que é a única obrigação da licença e não
+ * se cumpre por hiperligação). Saem do mapa por uma decisão do diretor sobre o
+ * alinhamento da cabeça (a emenda de 29.08 à §1.84): a partir de 1280 px o mapa
+ * ocupa a coluna direita do topo da manchete ao fundo da legenda, e a legenda
+ * fica na coluna esquerda, por baixo dos nomes, alinhada à esquerda com eles e
+ * ao fundo com o mapa. Quem decide a coluna é a folha, pelo `.cabeca-grelha`
+ * que coloca as outras três; abaixo de 1280 a legenda fica por baixo do mapa,
+ * como estava, e no telemóvel entre o mapa e os nomes.
+ *
+ * É um bloco só no documento, rendido uma vez, com as mesmas cadeias, o mesmo
+ * selo e a mesma atribuição; o `check:mapa` continua a conferir que as três
+ * cadeias do manifesto estão nas duas superfícies. Não é `<figcaption>` porque
+ * já não está dentro de uma `<figure>`.
+ */
+import Claim from '../Claim.astro';
+import Provenance from '../Provenance.astro';
+import FonteDaCarta from '../FonteDaCarta.astro';
+import { getClaim } from '../../lib/ledger.mjs';
+
+const { s, lang } = Astro.props;
+const caop = getClaim('municipios-portugal-caop-2025');
+---
+
+<div class="mapa-legenda mapa-linha" data-mapa-ficha data-mapa-legenda>
+  <p class="mapa-linha-fonte">
+    <Claim id="municipios-portugal-caop-2025" lang={lang} />
+    {s.inicio.mapa.linha}
+    <span data-nonledger="data-de-referencia">{caop.reference_date}</span>{' '}
+    <Provenance id="municipios-portugal-caop-2025" lang={lang} />
+  </p>
+  <p class="mapa-fonte">
+    <FonteDaCarta />
+  </p>
+</div>

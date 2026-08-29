@@ -77,10 +77,7 @@
  * `node design/especime-v3/medicoes/2026-08-21-etapa-2m-distancias.mjs`.
  */
 import Claim from '../Claim.astro';
-import Provenance from '../Provenance.astro';
-import FonteDaCarta from '../FonteDaCarta.astro';
 import { FRAMES, FIELD_W, FIELD_H } from '../../data/caop-centroids.mjs';
-import { getClaim } from '../../lib/ledger.mjs';
 import { routePath } from '../../lib/routes.mjs';
 import { paisDoMapa } from '../../lib/mapa.mjs';
 
@@ -146,7 +143,7 @@ const pontos = concelhos.map((c) => ({ ...c, r: RAIO }));
  * edição e o selo que abre a linha. O ano é o `reference_date` da própria linha,
  * marcado com o motivo que já existe.
  */
-const caop = getClaim('municipios-portugal-caop-2025');
+/* `caop` (a linha dos 308) lê-se agora em `LegendaDoMapa.astro`. */
 
 /* ---------------------------------------------------------------------------
  * A POSTURA INTEIRA PASSA A DESENHAR AS 29 UNIDADES (Emenda 20, 27.08.2026)
@@ -564,31 +561,11 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
       ali não existem. A primeira página constrói-se sempre em `inteiro` e é o
       script que lhe troca a postura, por isso não perde nada: o que sai é o que
       nunca foi verdade fora dela. */}
-  {postura === 'inteiro' && (
-  <figcaption class="mapa-linha" data-mapa-ficha>
-    <p class="mapa-linha-fonte">
-      <Claim id="municipios-portugal-caop-2025" lang={lang} />
-      {s.inicio.mapa.linha}
-      <span data-nonledger="data-de-referencia">{caop.reference_date}</span>{' '}
-      <Provenance id="municipios-portugal-caop-2025" lang={lang} />
-    </p>
-
-
-    {/* --------------------------------------------------------------------
-        A PORTA DO CSV SAIU (Emenda 15; ISSUES I34, fechado)
-        --------------------------------------------------------------------
-        Ficava aqui contra a Emenda 15 por uma razão de conferência e não de
-        desenho: `scripts/check-dados.mjs` exigia que as DUAS edições da
-        primeira página ligassem os dois ficheiros de dados. O commit 3-0 mudou
-        a conferência de objecto — a rota de cada ficheiro passou a ser uma
-        declaração, e a do ficheiro dos 308 é a página dos 308 —, e por isso a
-        porta sai daqui sem afrouxar nada: quem quer os 308 em ficheiro está na
-        página deles, que é onde a relocação R10 a pôs. A promessa continua a
-        ser «nas duas edições, ou não são», e continua conferida
-        (`npm run check:dados`).
-        -------------------------------------------------------------------- */}
-  </figcaption>
-  )}
+  {/* A LINHA DOS 308 E A MENÇÃO DA FONTE SAÍRAM DAQUI (29.08.2026, a emenda
+      do alinhamento à §1.84): vivem em `LegendaDoMapa.astro`, irmã desta
+      figura na grelha da cabeça, para que a folha as possa pôr por baixo dos
+      nomes a partir de 1280 px. Os comentários da Emenda 17 e da etapa 2m
+      acima descrevem de onde vieram. */}
 
   {/* --------------------------------------------------------------------------
       A MENÇÃO DA FONTE, POR BAIXO DO MAPA (Emenda 20e, 27.08.2026)
@@ -612,11 +589,6 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
       É O MESMO BLOCO que a página de uma unidade rende, e o `check:mapa` confere
       que as três cadeias do manifesto estão nas duas superfícies.
       -------------------------------------------------------------------------- */}
-  {postura === 'inteiro' && (
-  <p class="mapa-fonte">
-    <FonteDaCarta />
-  </p>
-  )}
 
   {/* ------------------------------------------------------------------------
       O RODAPÉ DO MAPA SAIU DA PRIMEIRA PÁGINA (Emenda 20, 27.08.2026)
