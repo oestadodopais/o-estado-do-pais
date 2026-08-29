@@ -300,22 +300,28 @@ const MARCAS = {
     /**
      * A ESCALA DAS BARRAS NO `maskable`, E A MEDIÇÃO QUE A DECIDE.
      *
-     * O ficheiro do diretor põe as barras em `translate(97 97) scale(0.62)`, o
-     * que dá uma caixa de tinta de 210,80 por 193,44 px num campo de 512,
-     * centrada em 255,72 quando o campo está centrado em 256. O canto da caixa
-     * mais afastado do centro do campo fica a hipot(105,68; 97,00) = 143,45 px,
-     * e o círculo seguro do Android tem 204,8 px de raio (40 % de 512): sobram
-     * 61,35 px. Não é preciso encolher nada, e por isso a escala é 1.
+     * Ao enquadramento do `favicon.svg` (barras de 340 numa grelha de 512) a
+     * caixa das barras mede 340 por 312, centrada em 256, e a meia-diagonal
+     * dela dá hipot(170; 156) = 230,73 px. O círculo seguro do Android tem
+     * 204,8 px de raio (40 % de 512), e 230,73 não cabe lá: ao contrário do
+     * enquadramento antigo, este `maskable` TEM de encolher.
      *
-     * E ficar em 1 não é preguiça, é a regra da §6 bis das NOTAS: o `maskable`
-     * mostra a marca ao MESMO tamanho das outras três celas, porque uma marca
-     * com `maskable` de escala própria são duas marcas.
+     * 0,85 põe a meia-diagonal em 196,12 px, que deixa 8,68 px de folga. As
+     * escalas vizinhas dizem porque é esta: 0,90 dá 207,66 e fica FORA; 0,88 dá
+     * 203,04 e passa com 1,76 px, que é menos do que o suavizado de um bordo.
+     * 0,80 daria 20,22 px de folga e um `maskable` visivelmente mais pequeno do
+     * que os outros três ícones. 0,85 é a maior das escalas que passa com folga
+     * que se veja.
+     *
+     * E o encolhimento é SÓ do `maskable`: os três ícones «any» ficam ao
+     * enquadramento cheio, porque é o Android que lhes recorta a forma e não o
+     * ficheiro.
      *
      * O número não fica por conta desta conta. `tests/inicio/app.mjs`, célula
      * A3, mede-o nos píxeis do PNG escrito, que é onde uma transformação de
      * folha de estilos deixa de ser uma intenção.
      */
-    escalaDoMaskable: 1,
+    escalaDoMaskable: 0.85,
   },
   e2: {
     nome: 'o «e» unido, corte de 28 (design/marca/direcoes-e2/, 28.08.2026)',
@@ -359,33 +365,67 @@ function barrasDoDiretor(fonte, deOnde) {
 }
 
 /**
- * A CELA DO TELEMÓVEL, DERIVADA DA CELA DO DIRETOR.
+ * A CELA DO TELEMÓVEL, DERIVADA DE DOIS FICHEIROS DO DIRETOR.
  *
- * Duas coisas mudam, e mais nenhuma:
+ * O ENQUADRAMENTO É O DO `favicon.svg` DELE, e não o da cela. Isto mudou a
+ * 29.08.2026, depois da medição da §6 quinquies das NOTAS: dentro da cela de
+ * 512, a marca com o `translate(97 97) scale(0.62)` do ficheiro da cela pinta
+ * 9,4 % da cela, contra 19,8 a 29,9 % de todos os ícones que a casa aceitou, e
+ * contra 4,7 % da palavra que ela recusou. A mesma marca enquadrada como o
+ * `favicon.svg` dele a enquadra, com as barras de 340 em 512, pinta 23,6 %, que
+ * é dentro da banda. Um ícone que não segura o seu lugar numa grelha de ícones
+ * não é um ícone pequeno, é um ícone que não está lá.
+ *
+ * Daí a composição: a GEOMETRIA vem do `favicon.svg`, a PALETA vem da cela (o
+ * papel-claro e o cobalto-claro que ele desenhou para fundos de tinta), e a
+ * ronda confere barra a barra que os dois ficheiros trazem o mesmo desenho.
+ * Nenhum dos dois é editado.
+ *
+ * E duas coisas mais mudam, e nenhuma outra:
  *
  * 1. O CAMPO PASSA A QUADRADO. Os cantos são do aparelho, e a razão longa está
  *    na cabeça desta secção. O ficheiro dele fica como está.
  *
- * 2. AS BARRAS ENCOLHEM PARA O `maskable`, SE PRECISAREM. Com a marca K não
- *    precisam, e `MARCAS.k.escalaDoMaskable` traz a conta que o diz.
+ * 2. AS BARRAS ENCOLHEM PARA O `maskable`. Ao enquadramento cheio a caixa das
+ *    barras mede 340 por 312 e a meia-diagonal dela dá 230,73 px, que passa os
+ *    204,8 px do círculo seguro do Android: ao enquadramento do favicon o
+ *    `maskable` TEM de encolher, e `MARCAS.k.escalaDoMaskable` traz a conta.
+ *    Só o `maskable`; os três ícones «any» ficam ao enquadramento cheio.
  *
- * A redução, quando existe, vai num grupo DE FORA e não no grupo do diretor: o
- * dele já leva `transform`, e escrever outro por cima substituía-o em vez de se
- * compor com ele. É o mesmo erro que a §9 das NOTAS conta ter apanhado a 28.08,
- * do outro lado (lá era o CSS a ganhar ao atributo); num grupo de fora as duas
- * transformações compõem-se, que é o que se quer.
+ * A redução vai num grupo de fora das barras, e não num atributo escrito por
+ * cima de outro: é o mesmo cuidado que a §9 das NOTAS conta ter aprendido a
+ * 28.08, quando um `transform` substituiu outro em vez de se compor com ele.
  */
-function celaDoDiretor(fonte, deOnde, escala) {
-  const campo = K_CAMPO.exec(fonte);
+function celaDoDiretor(fonteDaCela, fonteDoSinal, deOnde, deOndeSinal, escala) {
+  const campo = K_CAMPO.exec(fonteDaCela);
   if (!campo) throw new Error(`${deOnde}: não encontrei o campo, o <rect> de 512 com cantos`);
-  const grupo = K_GRUPO.exec(fonte);
+  const grupo = K_GRUPO.exec(fonteDaCela);
   if (!grupo) throw new Error(`${deOnde}: não encontrei o grupo das barras`);
-  const barras = barrasDoDiretor(grupo[2], deOnde);
-  const dentro = `<g transform="${grupo[1]}">${barras.map((b) => b.texto).join('')}</g>`;
+  const aPaleta = barrasDoDiretor(grupo[2], deOnde);
+  const oEnquadramento = barrasDoDiretor(fonteDoSinal, deOndeSinal);
+  for (let i = 0; i < oEnquadramento.length; i++) {
+    const a = oEnquadramento[i];
+    const b = aPaleta[i];
+    if (a.x !== b.x || a.y !== b.y || a.largura !== b.largura || a.altura !== b.altura) {
+      throw new Error(
+        `${deOnde}: a barra ${i + 1} mede ${b.largura}×${b.altura} em (${b.x},${b.y}) e a mesma ` +
+          `barra de ${path.basename(deOndeSinal)} mede ${a.largura}×${a.altura} em (${a.x},${a.y}). ` +
+          `A cela toma o enquadramento de um ficheiro e a paleta do outro: se o desenho não ` +
+          `for o mesmo, isto não é uma cela, é uma colagem.`,
+      );
+    }
+  }
+  const barras = oEnquadramento
+    .map(
+      (b, i) =>
+        `<rect x="${b.x}" y="${b.y}" width="${b.largura}" height="${b.altura}" ` +
+        `fill="${aPaleta[i].cor}"/>`,
+    )
+    .join('');
   const corpo =
     escala === 1
-      ? dentro
-      : `<g transform="translate(256 256) scale(${escala}) translate(-256 -256)">${dentro}</g>`;
+      ? barras
+      : `<g transform="translate(256 256) scale(${escala}) translate(-256 -256)">${barras}</g>`;
   return (
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">` +
     `<rect x="0" y="0" width="512" height="512" fill="${campo[2]}"/>` +
@@ -688,15 +728,18 @@ async function app(qual = 'k') {
   console.log(`a marca: ${marca.nome}`);
 
   const svgDaCela = await readFile(marca.cela, 'utf8');
+  /* O ficheiro do sinal entra DUAS vezes na marca do diretor: dá o favicon e dá
+     o enquadramento das celas. Lê-se uma vez. */
+  const svgDoSinal = await readFile(marca.sinal, 'utf8');
   const svgDoFavicon =
     marca.compor === 'barras'
       ? componFaviconDasBarras(
-          await readFile(marca.sinal, 'utf8'),
+          svgDoSinal,
           await readFile(marca.escuro, 'utf8'),
           marca.sinal,
           marca.escuro,
         )
-      : componFaviconDoE(await readFile(marca.sinal, 'utf8'), marca.sinal);
+      : componFaviconDoE(svgDoSinal, marca.sinal);
   await writeFile(path.join(PUBLIC, 'favicon.svg'), svgDoFavicon, 'utf8');
   console.log(`favicon.svg: o sinal de ${path.basename(marca.sinal)}, sem campo`);
 
@@ -717,7 +760,9 @@ async function app(qual = 'k') {
           ? paginaDoSvg(
               celaDoDiretor(
                 svgDaCela,
+                svgDoSinal,
                 marca.cela,
+                marca.sinal,
                 forma === 'maskable' ? marca.escalaDoMaskable : 1,
               ),
               px,
