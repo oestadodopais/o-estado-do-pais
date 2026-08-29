@@ -1550,7 +1550,7 @@ silêncio.*
 *DEZOITO LINHAS SAEM E UMA ENTRA. As dezoito são os nomes das nove áreas nas duas
 edições, e **saem do ficheiro em vez de ficarem `retirada`**: uma linha `retirada`
 diz «a casa tirou esta frase e ela não pode voltar», e estes nomes não foram
-tirados de lado nenhum — continuam na cabeça de cada página, onde sempre
+tirados de lado nenhum, e continuam na cabeça de cada página, onde sempre
 estiveram. O que mudou foi quem os conta. A que entra é a descrição do `<head>`
 de uma página de área, que é o nome da área e mais nada: com a substituição, ela
 conta-se uma vez, com `<nome>` no lugar do nome, e não uma por área e por edição.

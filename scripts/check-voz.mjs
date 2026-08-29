@@ -121,8 +121,8 @@ if (!voz.rotulos_em_span) {
 /* 9 · O NOME DECLARADO É CONFERIDO CONTRA O FICHEIRO DE ONDE DIZ VIR (29.08.2026).
  *
  * `data-nome` tira do inventário o nome de uma coisa que vem de um ficheiro de
- * dados — hoje o nome de uma área de governo, dezoito linhas de tabela que eram a
- * lista dos ministérios escrita outra vez. Uma marca que dispensa um texto da
+ * dados (hoje o nome de uma área de governo, dezoito linhas de tabela que eram a
+ * lista dos ministérios escrita outra vez). Uma marca que dispensa um texto da
  * declaração tem de trazer a sua própria verificação, ou troca uma lista por um
  * buraco: `data-lugar`, que é a marca irmã, exclui e não confere, e por isso um
  * nome trocado sai do inventário sem que ninguém o veja.
