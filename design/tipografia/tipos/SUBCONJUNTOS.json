@@ -1,0 +1,150 @@
+{
+  "unicodes": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD,U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "ferramenta": "fontTools.subset (pyftsubset) 4.61.1, brotli para o WOFF2",
+  "ficheiros": [
+    {
+      "familia": "newsreader",
+      "papel": "prosa",
+      "entrada": "design/tipografia/tipos/newsreader/Newsreader[opsz,wght].ttf",
+      "entrada_bytes": 451664,
+      "saida": "design/tipografia/tipos/newsreader/Newsreader-latin.woff2",
+      "bytes": 196732,
+      "sha256": "71f5d0db4c1b8368fc67d3f2993a9308f20f5fc66dc903e981ec8eaf97e87d69"
+    },
+    {
+      "familia": "newsreader",
+      "papel": "prosa",
+      "entrada": "design/tipografia/tipos/newsreader/Newsreader-Italic[opsz,wght].ttf",
+      "entrada_bytes": 495684,
+      "saida": "design/tipografia/tipos/newsreader/Newsreader-Italic-latin.woff2",
+      "bytes": 219412,
+      "sha256": "fcfa9674b8b42ea74565e1047d7e8c9a33f0bc3c4905b5adf39730d9136d50ba"
+    },
+    {
+      "familia": "sourceserif4",
+      "papel": "prosa",
+      "entrada": "design/tipografia/tipos/sourceserif4/SourceSerif4[opsz,wght].ttf",
+      "entrada_bytes": 1209508,
+      "saida": "design/tipografia/tipos/sourceserif4/SourceSerif4-latin.woff2",
+      "bytes": 243292,
+      "sha256": "3d8a91bea61f916647d4dbad05e11c58750ae089832f1168573269fd81831876"
+    },
+    {
+      "familia": "sourceserif4",
+      "papel": "prosa",
+      "entrada": "design/tipografia/tipos/sourceserif4/SourceSerif4-Italic[opsz,wght].ttf",
+      "entrada_bytes": 855432,
+      "saida": "design/tipografia/tipos/sourceserif4/SourceSerif4-Italic-latin.woff2",
+      "bytes": 207416,
+      "sha256": "15c986e5f45068d51fa14db721c5a46a477f48c18e382859f840058a5f12d340"
+    },
+    {
+      "familia": "literata",
+      "papel": "prosa",
+      "entrada": "design/tipografia/tipos/literata/Literata[opsz,wght].ttf",
+      "entrada_bytes": 955132,
+      "saida": "design/tipografia/tipos/literata/Literata-latin.woff2",
+      "bytes": 241260,
+      "sha256": "0e483f27e1963de8c5bd0e853e762967b4ecbc54070d7bd2110189e3ad866011"
+    },
+    {
+      "familia": "literata",
+      "papel": "prosa",
+      "entrada": "design/tipografia/tipos/literata/Literata-Italic[opsz,wght].ttf",
+      "entrada_bytes": 902728,
+      "saida": "design/tipografia/tipos/literata/Literata-Italic-latin.woff2",
+      "bytes": 241776,
+      "sha256": "20ace45d933141337a67c3264436bda8f34e933fd595876f56f63d40d9a9c9b4"
+    },
+    {
+      "familia": "publicsans",
+      "papel": "instrumento",
+      "entrada": "design/tipografia/tipos/publicsans/PublicSans[wght].ttf",
+      "entrada_bytes": 103316,
+      "saida": "design/tipografia/tipos/publicsans/PublicSans-latin.woff2",
+      "bytes": 34244,
+      "sha256": "9314c4f1bdf8e6693eeb4662333301b4b1e307319500037e9353d0855314cc55"
+    },
+    {
+      "familia": "ibmplexsans",
+      "papel": "instrumento",
+      "entrada": "design/tipografia/tipos/ibmplexsans/IBMPlexSans[wdth,wght].ttf",
+      "entrada_bytes": 537244,
+      "saida": "design/tipografia/tipos/ibmplexsans/IBMPlexSans-latin.woff2",
+      "bytes": 100636,
+      "sha256": "d44c383e99b2adea2c2f25a637806f8721a9d793cc4ef359cad8134b4926900d"
+    },
+    {
+      "familia": "spectral",
+      "papel": "prosa",
+      "entrada": "public/tipos/spectral/Spectral-Regular.woff2",
+      "entrada_bytes": 80084,
+      "saida": "design/tipografia/tipos/spectral/Spectral-Regular-latin.woff2",
+      "bytes": 47976,
+      "sha256": "41a4b6e50296e216a76cf7a8f375c1c0ee06e9c1e500f4c42c034fbe873ac393"
+    },
+    {
+      "familia": "spectral",
+      "papel": "prosa",
+      "entrada": "public/tipos/spectral/Spectral-Italic.woff2",
+      "entrada_bytes": 83140,
+      "saida": "design/tipografia/tipos/spectral/Spectral-Italic-latin.woff2",
+      "bytes": 49676,
+      "sha256": "c2312e755df5f135b3921e24ca77c9b67d60009369a58f4f37d47eeb11d55044"
+    },
+    {
+      "familia": "spectral",
+      "papel": "prosa",
+      "entrada": "public/tipos/spectral/Spectral-Medium.woff2",
+      "entrada_bytes": 88008,
+      "saida": "design/tipografia/tipos/spectral/Spectral-Medium-latin.woff2",
+      "bytes": 50568,
+      "sha256": "df9248643bf258099032750e0ab52fe26b99b30780c4e1abcf1616c0cd65f848"
+    },
+    {
+      "familia": "spectral",
+      "papel": "prosa",
+      "entrada": "public/tipos/spectral/Spectral-SemiBold.woff2",
+      "entrada_bytes": 88800,
+      "saida": "design/tipografia/tipos/spectral/Spectral-SemiBold-latin.woff2",
+      "bytes": 50728,
+      "sha256": "d4c35c8b515aa4acb8ed5d6832836bca521f64645a926bd2480f73c4c5de46a6"
+    },
+    {
+      "familia": "spectral",
+      "papel": "prosa",
+      "entrada": "public/tipos/spectral/Spectral-Bold.woff2",
+      "entrada_bytes": 88664,
+      "saida": "design/tipografia/tipos/spectral/Spectral-Bold-latin.woff2",
+      "bytes": 50864,
+      "sha256": "c1ec89bb4162ac32e1ecb9134878fcc1ed029fd308ab569c377f2aac93f902ff"
+    },
+    {
+      "familia": "spectral-sc",
+      "papel": "versal",
+      "entrada": "public/tipos/spectral-sc/SpectralSC-Regular.woff2",
+      "entrada_bytes": 79864,
+      "saida": "design/tipografia/tipos/spectral-sc/SpectralSC-Regular-latin.woff2",
+      "bytes": 48192,
+      "sha256": "238a0d965f257d4bb9dea7d8b91831636b11ac069a5ec7279910c6f3e60ded4d"
+    },
+    {
+      "familia": "spectral-sc",
+      "papel": "versal",
+      "entrada": "public/tipos/spectral-sc/SpectralSC-SemiBold.woff2",
+      "entrada_bytes": 88908,
+      "saida": "design/tipografia/tipos/spectral-sc/SpectralSC-SemiBold-latin.woff2",
+      "bytes": 50840,
+      "sha256": "fc35e74c7e0016461db828640efad430eb8c9601f6dcee3200c6a8da6e864df6"
+    },
+    {
+      "familia": "bitter",
+      "papel": "instrumento",
+      "entrada": "public/tipos/bitter/Bitter[wght].woff2",
+      "entrada_bytes": 113960,
+      "saida": "design/tipografia/tipos/bitter/Bitter-latin.woff2",
+      "bytes": 66164,
+      "sha256": "93d70e4ed7f75f973f2f3ea6d005606be05741fd0f3fab1f4647036e40bdab40"
+    }
+  ]
+}
