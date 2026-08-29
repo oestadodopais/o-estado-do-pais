@@ -1858,7 +1858,7 @@ export function validateLedger() {
              mesmo dia, pelo mesmo caminho e com o mesmo resultado são a mesma
              releitura escrita duas vezes, e inflam a contagem que a página
              publica. */
-          const chave = [v.date, v.path, v.by, v.result].join(' ');
+          const chave = [v.date, v.path, v.by, v.result].join('\u0000');
           if (vistas.has(chave)) {
             errors.push(
               `${rot}: repete a entrada de ${v.date} sobre "${String(v.path).slice(0, 60)}" ` +

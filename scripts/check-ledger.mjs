@@ -552,3 +552,154 @@ console.log(
     verde('✓') +
     ' cada texto no ar tem uma decisão registada que o governa, e cada frase que a constituição lhe cita está lá.',
 );
+
+/* ===========================================================================
+ * OS BYTES DE CONTROLO DOS FICHEIROS QUE ESTA RÉGUA LÊ (I37)
+ * ===========================================================================
+ *
+ * A I37 esteve aberta oito dias por uma razão pequena e cara: `src/lib/ledger.mjs`
+ * levava um byte NUL escrito como carácter dentro de uma cadeia
+ * (`[…].join(<o byte>)`), e um ficheiro com um byte NUL é, para o `grep`, um
+ * ficheiro binário. `grep -n "eDerivada" src/lib/ledger.mjs` não imprimia nada e
+ * `grep -an` imprimia duas linhas: quem procurasse uma coisa naquele ficheiro
+ * levava um zero por resposta, e um zero que vem de um ficheiro ilegível tem a
+ * mesma cara de um zero que vem de uma ausência.
+ *
+ * O byte saiu a 29.08.2026. Isto é o que impede que volte, e não só ali: os
+ * ficheiros que esta régua já lê são os que ela sabe nomear, e um byte de
+ * controlo em qualquer deles fecha a construção com o deslocamento onde ele
+ * está.
+ *
+ * O QUE CONTA COMO BYTE DE CONTROLO: tudo abaixo de 0x20 que não seja
+ * tabulação, mudança de linha ou retorno, mais o 0x7F. O NUL não é o único byte
+ * que faz isto, e uma régua escrita só contra ele fechava a porta que se abriu
+ * e deixava as outras abertas.
+ *
+ * QUEM ESCREVE UM NUL DE PROPÓSITO escreve a sua sequência de escape, que é a
+ * mesma cadeia para o motor de JavaScript e um ficheiro de texto para todas as
+ * ferramentas que o leem. Foi essa a correção, e o resto do ficheiro ficou
+ * igual byte a byte.
+ */
+
+/** Os ficheiros desta régua que não podem levar bytes de controlo. */
+const SEM_BYTES_DE_CONTROLO = {
+  'src/lib/ledger.mjs': path.join(RAIZ, 'src', 'lib', 'ledger.mjs'),
+  ...Object.fromEntries(
+    Object.values(TEXTOS).map((f) => [path.relative(RAIZ, f).split(path.sep).join('/'), f]),
+  ),
+};
+
+/**
+ * Os deslocamentos dos bytes de controlo de um bloco de bytes.
+ *
+ * Uma função sobre BYTES, e não sobre uma cadeia: a leitura em UTF-8 devolve o
+ * caractere de substituição onde os bytes não formam um caractere, e a régua
+ * deixava de ver o que lá está.
+ */
+function bytesDeControlo(bytes) {
+  const achados = [];
+  for (let i = 0; i < bytes.length; i++) {
+    const b = bytes[i];
+    if ((b < 0x20 && b !== 0x09 && b !== 0x0a && b !== 0x0d) || b === 0x7f) {
+      achados.push({ deslocamento: i, byte: b });
+    }
+  }
+  return achados;
+}
+
+/** A linha de um deslocamento, contada como o `grep -n` a conta. */
+function linhaDoDeslocamento(bytes, deslocamento) {
+  let n = 1;
+  for (let i = 0; i < deslocamento; i++) if (bytes[i] === 0x0a) n++;
+  return n;
+}
+
+/* A PLANTA, ANTES DE QUALQUER ZERO. O detetor vê um vermelho de cada uma das
+   duas espécies — o NUL que a I37 nomeia, escrito como a linha o tinha, e um
+   byte de controlo que não é o NUL — e um verde num bloco com tabulação,
+   mudança de linha e retorno, que são os três que passam. Sem isto, «nenhum
+   byte de controlo» é uma frase que um detetor partido diz com a mesma
+   facilidade que um detetor inteiro.
+
+   As plantas compõem-se por código do byte e não se escrevem à mão: escrever
+   um byte de controlo dentro deste ficheiro era plantar nele o defeito que ele
+   recusa, e a régua fechava-se a si própria na primeira corrida. */
+const errosDosBytes = [];
+{
+  const NUL = String.fromCharCode(0x00);
+  const CAMPAINHA = String.fromCharCode(0x07);
+  const plantas = [
+    {
+      nome: 'o NUL da I37, escrito como carácter dentro de uma cadeia',
+      bytes: Buffer.from("const chave = [v.date, v.path].join('" + NUL + "');\n", 'utf8'),
+      espera: 1,
+    },
+    {
+      nome: 'um byte de controlo que não é o NUL',
+      bytes: Buffer.from('uma linha' + CAMPAINHA + 'com campainha\n', 'utf8'),
+      espera: 1,
+    },
+    {
+      nome: 'texto com tabulação, mudança de linha e retorno',
+      bytes: Buffer.from('uma\tlinha\r\noutra linha\n', 'utf8'),
+      espera: 0,
+    },
+  ];
+  for (const p of plantas) {
+    const achado = bytesDeControlo(p.bytes);
+    if (achado.length !== p.espera) {
+      errosDosBytes.push(
+        `a prova do detetor de bytes de controlo falhou no caso "${p.nome}": ` +
+          `esperavam-se ${p.espera} e encontraram-se ${achado.length}.\n` +
+          `        O detetor mudou de maneira que a contagem de baixo deixou de valer.`,
+      );
+    }
+  }
+}
+
+let ficheirosLimpos = 0;
+for (const [rel, ficheiro] of Object.entries(SEM_BYTES_DE_CONTROLO)) {
+  let bytes;
+  try {
+    bytes = fs.readFileSync(ficheiro);
+  } catch (err) {
+    errosDosBytes.push(`${rel}: não consegui ler o ficheiro (${err.message}).`);
+    continue;
+  }
+  const achados = bytesDeControlo(bytes);
+  if (!achados.length) {
+    ficheirosLimpos++;
+    continue;
+  }
+  for (const a of achados.slice(0, 5)) {
+    errosDosBytes.push(
+      `${rel}: byte de controlo 0x${a.byte.toString(16).padStart(2, '0')} no deslocamento ` +
+        `${a.deslocamento}, linha ${linhaDoDeslocamento(bytes, a.deslocamento)}.\n` +
+        `        Um ficheiro com um byte de controlo é um ficheiro binário para o \`grep\`, e ` +
+        `quem o procurar leva um zero por resposta, com a cara de uma ausência (I37).\n` +
+        `        Um NUL de propósito escreve-se pela sua sequência de escape.`,
+    );
+  }
+}
+
+console.log('');
+console.log(
+  cinza(
+    `  bytes de controlo · ${ficheirosLimpos} de ${Object.keys(SEM_BYTES_DE_CONTROLO).length} ` +
+      `ficheiro(s) sem nenhum · 3 planta(s) vista(s)`,
+  ),
+);
+if (errosDosBytes.length) {
+  console.log('');
+  console.error(
+    vermelho(`  UM FICHEIRO DESTA RÉGUA NÃO É TEXTO · ${errosDosBytes.length} erro(s):`),
+  );
+  console.error('');
+  for (const e of errosDosBytes) console.error('    ' + vermelho('✗') + ' ' + e);
+  console.error('');
+  process.exit(1);
+}
+console.log(
+  '  ' + verde('✓') + ' os ficheiros desta régua leem-se como texto, do primeiro byte ao último.',
+);
+console.log('');
