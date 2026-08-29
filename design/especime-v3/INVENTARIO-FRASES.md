@@ -1468,3 +1468,67 @@ um CAMPO de uma linha, e não uma afirmação sobre o que este sítio cobre.*
 | conteudo | combate à pobreza e de promoção da inclusão social | areas | viva | — |
 | conteudo | apoio à família, crianças | areas | viva | — |
 | conteudo | água | areas | viva | — |
+
+
+## Bloco «Correções pequenas, quarta passagem» · os rótulos em `<span>` · 29.08.2026
+
+*A RÉGUA PASSOU A VER O QUE JÁ ESTAVA NA PÁGINA, e estas treze linhas são o que
+ela viu. A medida 8 mede blocos de texto, e um bloco é uma etiqueta de uma lista
+fechada (`p`, `li`, `h1`, `h2`, …): um `<span>` não está nela, e o elemento à
+volta da cabeça de uma página é um `<div>`, que também não. O rótulo da cabeça de
+dezasseis vistas do sítio vivia exactamente aí, entre as duas coisas que a régua
+não olha, e passava por baixo dela sem ninguém o ver. A medição cega de 28.08 é
+que o encontrou, nas páginas das áreas, com vinte rendições e nenhuma linha.*
+
+*A ESCOLHA FOI MEXER NA RÉGUA E NÃO NAS PÁGINAS, e a razão é o que cada uma das
+duas resolve. Pôr o rótulo de cada vista num `<p>`, que foi o que o bloco das
+áreas fez nas suas duas, corrige as páginas de hoje e deixa a régua como estava:
+o próximo rótulo escrito num `<span>` volta a passar por baixo dela. `medir-defeitos.mjs`
+passa a medir os `<span>` de uma lista declarada de classes de rótulo
+(`CLASSES_DE_ROTULO`, hoje só `.eyebrow`), e um rótulo em `<span>` não
+inventariado é um bloco POR CLASSIFICAR como qualquer outro. Medido: o portão da
+voz fechou a construção com 1 328 queixas em treze cadeias distintas, que são
+estas.*
+
+*A CLASSE É `navegacao`, e é a do positivo conhecido. «Relance» e «At a glance»
+são o mesmo rótulo, com a mesma classe, escritos num `<h2>`, e estão declarados
+como `navegacao` desde sempre; «Áreas de governo» e «Government areas» entraram
+assim a 28.08. Um antetítulo de cabeça nomeia em que família de páginas o leitor
+está, e é isso que ele faz aqui: «Município» por cima do nome de um concelho,
+«Livro-razão» por cima do índice das linhas.*
+
+*E A RÉGUA PROVA, EM CADA CONSTRUÇÃO, QUE AINDA VÊ. Uma lista de classes é uma
+dependência de uma folha de estilos: renomear `.eyebrow` deixava a régua cega com
+a contagem de «nada por classificar» a dizer zero, que é o defeito que ela veio
+fechar. `check:voz` conta as ocorrências de cada classe declarada em `dist/` e
+fecha a construção quando uma delas for a zero.*
+
+*DUAS ROTAS TÊM O MESMO RÓTULO E NÃO ENTRAM AQUI, e não é um esquecimento: a
+página de uma linha do livro-razão («Linha do livro-razão», «Ledger row», 2 602
+rendições por edição) e a página do marcador («O marcador», «The marker») não
+estão em `ROTAS_DO_INVENTARIO`. A régua vê-lhes o rótulo desde hoje; o que as
+mantém fora da conta é a lista das rotas medidas, que é outra regra e cresce no
+commit em que cada página é reconstruída. O antetítulo da obra citada
+(`/estudos/<slug>/documento`) também não entra, porque a régua salta essa rota
+inteira: é a obra de outrem.*
+
+*TRÊS CADEIAS NÃO TRAZEM LINHA NOVA porque já estavam declaradas por outra
+rendição, e a tabela mapeia por texto: «Correções» e «Corrections» (declaradas
+desde antes de 26.08) e «Documento alojado» e «Document hosted» (do bloco da
+grelha da voz).*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | Livro-razão | pequenas-4 | viva | — |
+| navegacao | Ledger | pequenas-4 | viva | — |
+| navegacao | Município | pequenas-4 | viva | — |
+| navegacao | Municipality | pequenas-4 | viva | — |
+| navegacao | Municípios | pequenas-4 | viva | — |
+| navegacao | Municipalities | pequenas-4 | viva | — |
+| navegacao | Distritos e ilhas | pequenas-4 | viva | — |
+| navegacao | Districts and islands | pequenas-4 | viva | — |
+| navegacao | Regiões | pequenas-4 | viva | — |
+| navegacao | Regions | pequenas-4 | viva | — |
+| navegacao | Agenda | pequenas-4 | viva | — |
+| navegacao | Documento do estudo · texto | pequenas-4 | viva | — |
+| navegacao | Study document · text | pequenas-4 | viva | — |

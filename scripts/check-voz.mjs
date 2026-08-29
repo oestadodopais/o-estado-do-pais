@@ -11,7 +11,7 @@
  * «É a lei que o define, não este sítio.» viveu em 616 páginas.
  *
  * Este passo entra na cadeia do `build` e do `verify`, e fecha a construção em
- * quatro casos:
+ * oito casos:
  *
  *   1. **o tripwire** · uma frase da casa com um marcador de
  *      `design/especime-v3/VOZ-MARCADORES.md` que não está declarada como
@@ -34,7 +34,12 @@
  *      em rota nenhuma, ou uma linha `retirada` que voltou a render-se. É a rede
  *      que faltava nos dois sentidos: o inventário tinha 58 linhas declaradas
  *      que já não se rendiam em página nenhuma, e uma frase corrigida podia
- *      voltar em silêncio por continuar declarada.
+ *      voltar em silêncio por continuar declarada;
+ *   8. **o positivo conhecido das classes de rótulo** (29.08.2026) · uma classe
+ *      de `CLASSES_DE_ROTULO` que não se renda em página nenhuma de `dist/`. A
+ *      régua da voz passou a medir os rótulos que vivem num `<span>` por essa
+ *      lista, e uma classe renomeada deixava-a cega com a contagem de «nada por
+ *      classificar» a dizer zero.
  *
  * A varredura não é feita aqui: é a da régua, corrida com `--json`, que é a
  * mesma que a matriz já usa. Duas implementações da mesma definição diriam a
@@ -75,6 +80,38 @@ const erros = [];
 
 /* 4 · o ficheiro dos marcadores */
 for (const e of voz.erros) erros.push(`${voz.ficheiro}: ${e}`);
+
+/* 8 · O POSITIVO CONHECIDO DAS CLASSES DE RÓTULO (29.08.2026).
+ *
+ * A régua da voz passou a medir os rótulos que vivem num `<span>`, e reconhece-os
+ * por uma lista de classes declarada em `medir-defeitos.mjs`. Uma lista de
+ * classes é uma dependência de uma folha de estilos, e uma folha de estilos muda:
+ * o dia em que `.eyebrow` for renomeada, a régua fica cega para dezasseis vistas
+ * e a contagem de «nada por classificar» continua a dizer zero, que é
+ * exactamente o defeito que ela veio fechar.
+ *
+ * Por isso a régua conta, em cada construção, quantas vezes cada classe
+ * declarada se rende em `dist/`, e um zero fecha a construção. É a regra 14 da
+ * casa a correr a cada construção em vez de uma vez: um detector vê um positivo
+ * conhecido antes de a sua contagem de zero valer alguma coisa. Uma classe que
+ * saia do sítio de propósito sai também da lista, com a razão escrita ao lado
+ * dela, e isso é uma linha de código e não um silêncio. */
+for (const [classe, n] of Object.entries(voz.rotulos_em_span ?? {})) {
+  if (n > 0) continue;
+  erros.push(
+    `a classe de rótulo «${classe}» não se rende em página nenhuma de dist/. ` +
+      `A régua da voz mede os rótulos em «span» por esta lista, e uma classe a zero ` +
+      `deixa-a cega em silêncio: ou a classe mudou de nome e a lista de ` +
+      `CLASSES_DE_ROTULO tem de a acompanhar, ou o sítio deixou de a usar e ela sai ` +
+      `da lista com a razão escrita.`,
+  );
+}
+if (!voz.rotulos_em_span) {
+  erros.push(
+    `a régua não devolveu a contagem das classes de rótulo, e é o positivo conhecido ` +
+      `de que a medida dos rótulos em «span» depende.`,
+  );
+}
 
 /* 1 · o tripwire */
 for (const a of voz.achados) {
@@ -288,7 +325,10 @@ console.log(
     `${voz.frases_varridas} frases distintas, ${voz.ocorrencias_varridas} ocorrências em ${rotas.length} rotas · ` +
     `autorreferência 0 · nada por classificar · ${inventario.linhas.length} linhas do inventário com bloco ` +
     `(${casa.declaracoes?.vivas ?? '?'} vivas, todas rendidas; ${casa.declaracoes?.retiradas ?? '?'} retiradas, nenhuma rendida) · ` +
-    `lida contra a Emenda ${lidaContra} (a mais alta da voz é a ${emendaMaisAlta})`,
+    `lida contra a Emenda ${lidaContra} (a mais alta da voz é a ${emendaMaisAlta}) · ` +
+    `rótulos em span: ${Object.entries(voz.rotulos_em_span ?? {})
+      .map(([c, n]) => `.${c} ${n}`)
+      .join(', ')}`,
 );
 if (blocosPorLer.length) {
   console.log(cinza(`        ${blocosPorLer.length} bloco(s) do inventário por ler, e o registo di-lo:`));
