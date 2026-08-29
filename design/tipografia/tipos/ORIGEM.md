@@ -16,11 +16,32 @@ da mesma pasta e no mesmo commit.
 | Literata | `ofl/literata/Literata[opsz,wght].ttf` e o itálico | `opsz`, `wght` | SIL OFL 1.1 · Copyright 2017 The Literata Project Authors (TypeTogether, github.com/googlefonts/literata) |
 | Public Sans | `ofl/publicsans/PublicSans[wght].ttf` | `wght` | SIL OFL 1.1 · Copyright 2015 The Public Sans Project Authors (USWDS, github.com/uswds/public-sans) |
 | IBM Plex Sans | `ofl/ibmplexsans/IBMPlexSans[wdth,wght].ttf` | `wdth`, `wght` | SIL OFL 1.1 · Copyright © 2017 IBM Corp., com o nome reservado «Plex» |
+| Ledger | `ofl/ledger/Ledger-Regular.ttf` | nenhum (estática) | SIL OFL 1.1 · Copyright (c) 2012, Denis Masharov, com o nome reservado «Ledger» |
 
 As três serifas de prosa trazem o eixo `opsz`, que foi a condição da §3 do
 brief. O itálico da Public Sans e o da IBM Plex Sans não foram descarregados: o
 sítio usa itálico quase em lado nenhum, e nenhuma regra pede itálico ao
 instrumento.
+
+## A Ledger, acrescentada depois
+
+A Ledger foi pedida pelo **lugar de direção depois da adenda 2**, com esta razão:
+de entre as livres, é a que declara o propósito mais próximo do Parnaso. A
+descrição que o `google/fonts` publica com ela (`ofl/ledger/DESCRIPTION.en_us.html`,
+no mesmo commit) diz, palavra por palavra: «The letter forms are distinguished by
+a large x-height, sufficient stroke contrast, robust but elegant wedge-like serifs
+and terminals. These features have been specially designed to reach maximum of
+quality and readability when used in unfavorable print and display processes,
+such as in newspapers, laser printed documents and on low resolution screens.»
+Serifas em cunha e ecrãs de baixa resolução são exatamente a pergunta deste
+estudo.
+
+O que ela traz é um ficheiro e não uma família: **um só peso (400), sem itálico e
+sem versaletes**. Entrou pelo mesmo caminho de todas as outras, com o mesmo
+intervalo de subconjunto e as mesmas bandeiras, e o que lhe falta está medido nas
+linhas 4, 5 e 7 da tabela em vez de emendado no interruptor. O `METADATA.pb` de
+montante, guardado ao lado, declara `designer: "Denis Masharov"`,
+`category: "SERIF"` e um só ficheiro, `Ledger-Regular.ttf`.
 
 ## Os controlos, não descarregados
 

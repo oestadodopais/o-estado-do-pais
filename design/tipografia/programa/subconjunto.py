@@ -59,6 +59,11 @@ TRABALHO = [
      "Literata-latin.woff2", "prosa"),
     ("literata", TIPOS / "literata" / "Literata-Italic[opsz,wght].ttf",
      "Literata-Italic-latin.woff2", "prosa"),
+    # ACRESCENTADA PELO LUGAR DE DIREÇÃO DEPOIS DA ADENDA 2. Estática, um só
+    # peso e sem itálico: entra pelo mesmo caminho e com o mesmo intervalo, e o
+    # que lhe falta diz-se na tabela em vez de se emendar aqui.
+    ("ledger", TIPOS / "ledger" / "Ledger-Regular.ttf",
+     "Ledger-latin.woff2", "prosa"),
     ("publicsans", TIPOS / "publicsans" / "PublicSans[wght].ttf",
      "PublicSans-latin.woff2", "instrumento"),
     ("ibmplexsans", TIPOS / "ibmplexsans" / "IBMPlexSans[wdth,wght].ttf",

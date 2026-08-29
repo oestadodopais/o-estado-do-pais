@@ -38,6 +38,7 @@ ALVOS = [
     ("Newsreader", "newsreader/Newsreader-latin.woff2", "prosa"),
     ("Source Serif 4", "sourceserif4/SourceSerif4-latin.woff2", "prosa"),
     ("Literata", "literata/Literata-latin.woff2", "prosa"),
+    ("Ledger", "ledger/Ledger-latin.woff2", "prosa"),
     ("Spectral", "spectral/Spectral-Regular-latin.woff2", "prosa (controlo)"),
     ("Spectral SC", "spectral-sc/SpectralSC-Regular-latin.woff2", "versal (controlo)"),
     ("Bitter", "bitter/Bitter-latin.woff2", "instrumento (controlo)"),
@@ -197,7 +198,9 @@ def main() -> int:
               f"var15(tnum)={'—' if vt is None else format(vt, '.6f')} "
               f"eixos={','.join(d['eixos']) or '—'}")
 
-    ficha = RAIZ / "design" / "tipografia" / "MEDIDAS-tipo.json"
+    # SEGUNDA RONDA: escreve-se ao lado e não por cima. O ficheiro da primeira
+    # ronda é o que a leitura cruzada leu, e apagá-lo era apagar a prova.
+    ficha = RAIZ / "design" / "tipografia" / "MEDIDAS-2-tipo.json"
     ficha.write_text(json.dumps(fora, ensure_ascii=False, indent=2) + "\n",
                      encoding="utf-8")
     print(f"\nescrito {ficha.relative_to(RAIZ)}")

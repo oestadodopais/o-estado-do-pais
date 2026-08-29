@@ -57,6 +57,15 @@
       "sha256": "20ace45d933141337a67c3264436bda8f34e933fd595876f56f63d40d9a9c9b4"
     },
     {
+      "familia": "ledger",
+      "papel": "prosa",
+      "entrada": "design/tipografia/tipos/ledger/Ledger-Regular.ttf",
+      "entrada_bytes": 62148,
+      "saida": "design/tipografia/tipos/ledger/Ledger-latin.woff2",
+      "bytes": 14656,
+      "sha256": "ea41c35f601de18aeb8d2eb7dd77cc0a3a90583fcd417011ba59c848de0ca005"
+    },
+    {
       "familia": "publicsans",
       "papel": "instrumento",
       "entrada": "design/tipografia/tipos/publicsans/PublicSans[wght].ttf",
