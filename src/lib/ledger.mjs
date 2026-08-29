@@ -88,6 +88,35 @@ export const CAMPOS = [
   'id',
   'value',
   'unit',
+  /**
+   * -------------------------------------------------------------------------
+   * `name` e `name_source`: o rótulo com que a FONTE publica esta figura
+   * -------------------------------------------------------------------------
+   *
+   * Uma linha do livro-razão nunca teve nome. O que a nomeava era o
+   * identificador — «evora-pagamentos-em-atraso-2025» — mais os cinco campos de
+   * proveniência, e escrever um nome por cima dela era inventar conteúdo que a
+   * fonte não publicou. A regra continua inteira: o que entra aqui **não é um
+   * nome que a casa escreve**, é o rótulo que o publicador imprime por cima do
+   * número, copiado carácter a carácter do ficheiro alojado, na língua dele.
+   * `name_source` diz onde nesse ficheiro foi lido, na forma dos outros
+   * localizadores («p.4, linha 10, campo 1», `IndicadorDsg`).
+   *
+   * Os dois campos são opcionais e andam sempre juntos. Onde a fonte não
+   * imprime rótulo nenhum, a linha não os traz e a página mostra o título do
+   * documento, como mostrava antes de eles existirem. Das 2 536 linhas que
+   * atravessam, 1 553 trazem-nos e 983 não: um rótulo que não está impresso não
+   * se compõe de duas linhas do ficheiro nem se completa com o cabeçalho de uma
+   * coluna vizinha.
+   *
+   * ENTRAM PELO MOTOR E POR MAIS LADO NENHUM. `scripts/check-cruzamento.mjs`
+   * recusa uma linha que traga rótulo sem ter atravessado, e prende os bytes
+   * das que atravessaram: um rótulo escrito à mão neste repositório fecha a
+   * construção. É o que separa «a fonte chama-lhe isto» de «a casa chama-lhe
+   * isto», e a diferença não pode viver só num comentário.
+   */
+  'name',
+  'name_source',
   'source',
   'document',
   'source_url',
@@ -917,6 +946,9 @@ export function validateLedger() {
   let porVerificar = 0;
   let derivadas = 0;
   let verificadas = 0;
+  /* Quantas linhas trazem o rótulo com que a fonte as publica. Contado aqui, e
+     não numa segunda varredura: é a contagem que se compara com a do motor. */
+  let comRotulo = 0;
 
   if (claims.size === 0) errors.push('livro-razão: não há nenhuma afirmação em ledger/claims/.');
 
@@ -955,6 +987,95 @@ export function validateLedger() {
       );
     }
     if (ausente(c.unit)) errors.push(`${onde} falta "unit".`);
+
+    /* -----------------------------------------------------------------------
+     * 3b — o rótulo da fonte, e as quatro maneiras de ele deixar de ser um
+     * -----------------------------------------------------------------------
+     *
+     * As mesmas quatro recusas que o motor impõe antes de escrever (`core`,
+     * `printed_label()`), escritas outra vez deste lado. É uma cópia de
+     * propósito, e pela razão de sempre: uma conferência de aceitação que
+     * confiasse no produtor seria o produtor a assinar por si próprio.
+     *
+     *   · um rótulo sem localizador é uma cadeia que ninguém pode ir conferir;
+     *   · um localizador sem rótulo aponta para nada;
+     *   · um rótulo com a almofada de uma disposição em colunas (duas ou mais
+     *     brancas seguidas, ou branco nas pontas) não é a cadeia que a fonte
+     *     imprime: é a cadeia mais o espaçamento da extração;
+     *   · um rótulo com uma quebra de linha por dentro é duas linhas do ficheiro
+     *     juntas, que é uma terceira cadeia que o ficheiro não imprime.
+     *
+     * E mais duas, que são desta casa: um rótulo não é um número, e não é o
+     * marcador. Um número por cima de um número é a coluna a ser lida onde o
+     * valor está; e uma figura cujo rótulo não se sabe não traz o campo — o
+     * marcador diz «este campo está por confirmar», e um rótulo por confirmar é
+     * um rótulo que não existe.
+     */
+    {
+      const temNome = !ausente(c.name);
+      const temOnde = !ausente(c.name_source);
+      if (temNome) comRotulo++;
+      if (c.name !== null && c.name !== undefined && typeof c.name !== 'string') {
+        errors.push(
+          `${onde} "name" é ${JSON.stringify(c.name)}. O rótulo com que a fonte publica a ` +
+            `figura é uma cadeia, copiada do ficheiro alojado — nunca um número.`,
+        );
+      } else if (temNome) {
+        const rotulo = String(c.name);
+        if (/[\r\n]/.test(rotulo)) {
+          errors.push(
+            `${onde} "name" tem uma quebra de linha. Um rótulo composto de duas linhas do ` +
+              `ficheiro é uma terceira cadeia, que o ficheiro não imprime.`,
+          );
+        }
+        if (rotulo !== rotulo.trim() || /\s{2,}/.test(rotulo)) {
+          errors.push(
+            `${onde} "name" ("${rotulo}") traz a almofada de uma disposição em colunas. ` +
+              `O rótulo é a cadeia que a fonte imprime, sem o espaçamento da extração.`,
+          );
+        }
+        if (rotulo === POR_VERIFICAR) {
+          errors.push(
+            `${onde} "name" é "${POR_VERIFICAR}". Uma figura cujo rótulo não se conhece não ` +
+              `traz o campo, e a página mostra o título do documento.`,
+          );
+        } else if (marcaDoValor(rotulo) !== null) {
+          errors.push(
+            `${onde} "name" é a marca "${rotulo}", que é uma coisa que a fonte escreve no lugar ` +
+              `de um VALOR. Um rótulo é o que ela escreve por CIMA dele.`,
+          );
+        } else if (!/\p{L}/u.test(rotulo)) {
+          errors.push(
+            `${onde} "name" ("${rotulo}") não tem nenhuma letra. Um rótulo feito só de ` +
+              `algarismos e sinais é uma data ou um número lido no lugar do cabeçalho: a DGAL ` +
+              `imprime "31/12/2025" por cima da coluna e "PMP (N.º dias)" por cima do grupo, e ` +
+              `o rótulo é o segundo. O primeiro diz quando, e não o quê.`,
+          );
+        }
+      }
+      if (c.name_source !== null && c.name_source !== undefined && !temOnde) {
+        errors.push(
+          `${onde} "name_source" está vazio. É o localizador de onde o rótulo foi lido, na ` +
+            `forma dos outros ("p.4, linha 10, campo 1").`,
+        );
+      } else if (temOnde && typeof c.name_source !== 'string') {
+        errors.push(
+          `${onde} "name_source" é ${JSON.stringify(c.name_source)}, e tem de ser uma cadeia: ` +
+            `onde no ficheiro o rótulo foi lido.`,
+        );
+      }
+      if (temNome && !temOnde) {
+        errors.push(
+          `${onde} tem "name" e não tem "name_source". Um rótulo sem localizador é uma cadeia ` +
+            `que ninguém pode ir conferir ao ficheiro.`,
+        );
+      }
+      if (!temNome && temOnde) {
+        errors.push(
+          `${onde} tem "name_source" e não tem "name". Um localizador sem rótulo aponta para nada.`,
+        );
+      }
+    }
 
     // 4 — proveniência
     const derivada = Array.isArray(c.derived_from) && c.derived_from.length > 0;
@@ -1942,6 +2063,7 @@ export function validateLedger() {
       derivadas,
       verificadas,
       porVerificar,
+      comRotulo,
     },
   };
 }
