@@ -255,3 +255,103 @@ que o Método diga, numa linha, de onde vem a letra. A frase está rascunhada no
 plano §12 («A letra») e espera a palavra da direção; nenhum byte de
 `src/data/metodo.mjs` mexeu nesta etapa. Até lá, este ficheiro é o único sítio
 onde a origem está escrita, e não é público.
+
+## 8. O subconjunto (29.08.2026) — e a §3 deixou de valer
+
+A §3 deste ficheiro diz «Sem subconjunto, sem tirar um glifo». **Isso foi verdade
+de 20.08.2026 a 29.08.2026 e deixou de ser.** Os oito ficheiros estão cortados, e
+esta secção é o registo do corte: o que entrou, o que saiu, e a prova de que
+nada que o sítio use se perdeu. A §3 fica onde está porque descreve a conversão
+que trouxe os bytes para cá, e essa conversão continua a ser a que foi; o que
+mudou depois dela está aqui.
+
+**A razão.** O estudo tipográfico de 29.08.2026 (`design/tipografia/NOTAS.md`,
+ramo `tipografia-2026-08-29`) mediu que estes oito ficheiros pesam 694,8 KiB
+inteiros e 405,3 KiB cortados ao latim com as features todas, e escreveu que é o
+único resultado do estudo que não precisa de decisão nenhuma: **289,5 KiB por
+leitor, sem mudar uma letra.**
+
+**A ferramenta e a entrada.** `scripts/subconjunto-tipos.py`, que corre o
+`fontTools.subset` (`pyftsubset`) 4.61.1 com `brotli` para o WOFF2. A entrada são
+os próprios WOFF2 de `public/tipos/`, que é o que este repositório tem: não há
+TTF de montante aqui e nenhum foi buscado à rede. É a mesma entrada que o estudo
+usou para estas três famílias. Os três `OFL.txt` não foram tocados: cortar um
+tipo não muda a licença dele.
+
+**O intervalo, e porque não é «o latim».** `latin` + `latin-ext` do Google Fonts,
+mais **todos os caracteres que o sítio construído põe à frente de alguém** — 160
+distintos, lidos das 6606 páginas de `dist/` e dos 580 cartões de partilha. A
+segunda metade não é zelo, e foi medida: **cortar ao latim e mais nada tirava
+nove glifos que este sítio usa**, entre eles a seta «→», que ele rende **30 505
+vezes** em todas as suas portas. O corte «só latim» foi feito numa pasta à parte
+e passado pela mesma célula de prova, que o recusou com os nove nomeados:
+U+0394 «Δ», U+2153 «⅓», U+2154 «⅔», U+215B «⅛», U+2192 «→», U+2197 «↗»,
+U+2248 «≈», U+2260 «≠», U+2264 «≤». Custa 2,8 KiB no total dos oito ficheiros
+tê-los, e é o preço de nenhum leitor ver uma caixa.
+
+`--layout-features='*'` guarda todas as features OpenType. Sem essa bandeira o
+`pyftsubset` deixa cair o `tnum` e o `smcp`, que são as duas coisas que este
+sítio pede à letra em 143 regras e em 22.
+
+### Os bytes, por ficheiro
+
+| Ficheiro | Antes | Depois | SHA-256 depois |
+| --- | ---: | ---: | --- |
+| `public/tipos/spectral/Spectral-Regular.woff2` | 80 084 | 48 328 | `3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43` |
+| `public/tipos/spectral/Spectral-Italic.woff2` | 83 140 | 50 156 | `4ba15b4bda78df3e8b755f0f12168c23c562707c921f74944e8ce638ee5ac7f1` |
+| `public/tipos/spectral/Spectral-Medium.woff2` | 88 008 | 50 808 | `34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2` |
+| `public/tipos/spectral/Spectral-SemiBold.woff2` | 88 800 | 51 192 | `91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d` |
+| `public/tipos/spectral/Spectral-Bold.woff2` | 88 664 | 51 252 | `8710bb6e834a4ec2aa7a7b24a76e63ead0ba6649c81881aedf615cf37724664f` |
+| `public/tipos/spectral-sc/SpectralSC-Regular.woff2` | 79 864 | 48 316 | `afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8` |
+| `public/tipos/spectral-sc/SpectralSC-SemiBold.woff2` | 88 908 | 51 108 | `b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2` |
+| `public/tipos/bitter/Bitter[wght].woff2` | 113 960 | 66 732 | `b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0` |
+| **total** | **711 428** | **417 892** | 286,7 KiB a menos |
+
+694,8 KiB passam a 408,1 KiB. O corte «só latim» do estudo daria 405,3 KiB —
+reproduzido aqui ao décimo, e é a prova de que a régua é a mesma — e perderia a
+seta.
+
+Os `OFL.txt` não mudaram e os seus resumos são os da §4.
+
+### A prova de que nada se perdeu
+
+`tests/tipos/subconjunto.mjs`, uma célula como as de `tests/inicio/`: lê `dist/`
+inteiro (as duas edições, o `<title>`, a descrição do `<head>`, o corpo, os
+atributos que se rendem com letra, e a cópia de cada cartão de partilha, que é
+texto desenhado nos píxeis) e compara a `cmap` de cada ficheiro cortado com a do
+mesmo ficheiro inteiro, guardada em `tests/tipos/COBERTURA-DE-REFERENCIA.json`
+antes do corte.
+
+**O que se exige não é «tem glifo»**, e a diferença importa: oito dos 160
+caracteres já não tinham glifo em nenhuma destas famílias antes do corte — o
+espaço fino de milhares (U+202F) e sete sinais dos documentos alojados (U+21C4,
+U+2208, U+2318, U+23CE, U+2534, U+26A0, U+2715) — e o navegador já os ia buscar
+a uma letra do sistema. Exigir-lhes glifo era exigir ao corte que acrescentasse
+o que a letra nunca teve. O que se exige é que **nada que havia antes falte
+depois**, ficheiro a ficheiro.
+
+Resultado: 152 dos 160 nas sete famílias de Spectral e Spectral SC, 151 nos 160
+na Bitter, **exactamente os mesmos números de antes do corte**, com 544 e 566
+glifos nos ficheiros contra 878 e 977.
+
+A célula viu dois vermelhos antes de dar este verde:
+
+* `node tests/tipos/subconjunto.mjs --plantar U+2192` finge que a seta perdeu o
+  glifo e sai a **1**, nomeando-a nos oito ficheiros;
+* o corte «só latim», feito a sério numa pasta à parte, sai a **1** com os nove
+  glifos perdidos nomeados por ficheiro. Este é o vermelho que interessa: não é
+  uma planta, é o corte que o estudo recomendava.
+
+### As features, medidas depois do corte
+
+Lidas nos ficheiros (`GSUB`/`GPOS`): `tnum`, `smcp`, `onum`, `kern` e `liga`
+presentes nos oito, 28 features nas sete de Spectral e 26 na Bitter, e o eixo
+`wght` da Bitter intacto (100 · 100 · 900, nove instâncias, `usWeightClass` 100,
+idênticos aos de antes).
+
+E medidas num navegador com a régua da casa, `node scripts/medir-tipos.mjs`,
+sobre a construção com os ficheiros cortados: a Bitter a 400 e a 600 continua a
+alinhar «1111111» e «0000000» em 441 px com `tabular-nums` (contra 284,4 e 448,9
+sem a feature), e os algarismos antigos continuam a mudar a largura nos três
+pares proporcionais. As features não sobreviveram só na tabela: sobreviveram no
+ecrã.
