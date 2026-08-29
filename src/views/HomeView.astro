@@ -44,6 +44,7 @@ import Cabeca from '../components/inicio/Cabeca.astro';
 import Pesquisa from '../components/inicio/Pesquisa.astro';
 import MapaRespira from '../components/inicio/MapaRespira.astro';
 import ListaDosNomes from '../components/inicio/ListaDosNomes.astro';
+import LegendaDoMapa from '../components/inicio/LegendaDoMapa.astro';
 import ListaSocial from '../components/inicio/ListaSocial.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
 import { FIGURAS_PDM, FIGURAS_SOCIAL, comparacaoComOLimiar, ladosDoLimiar } from '../data/figuras.mjs';
@@ -271,6 +272,11 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
             muda é que a pesquisa deixou de estar atrás de um comando.
             ---------------------------------------------------------------- */}
       </div>
+
+      {/* A legenda do mapa (a linha dos 308 e a menção da Carta) é a quarta
+          filha da grelha: a folha põe-na por baixo dos nomes a partir de 1280,
+          alinhada ao fundo do mapa, e por baixo do mapa antes disso. */}
+      <LegendaDoMapa s={s} lang={lang} />
 
     </div>
 

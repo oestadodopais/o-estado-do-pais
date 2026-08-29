@@ -485,6 +485,17 @@
     margin-top: 26px;
     gap: 0 clamp(18px, 2vw, 30px);
   }
+  /* A legenda por baixo do mapa entre 1024 e 1279, como estava. Partilha a
+     célula do mapa (as duas filas) e desce exactamente a altura dele: o mapa
+     tem a largura da coluna e a razão 790/600 do seu campo, e uma margem em
+     percentagem resolve-se contra a largura da célula, por isso a conta é
+     exacta sem escrever uma altura em píxeis. */
+  .mapa-legenda {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: start;
+    margin-top: calc(100% * 790 / 600 + 8px);
+  }
   /* A forma em linha é da largura pequena: aqui a fila desfaz-se e cada nome
      volta a ter a sua linha, com a largura da coluna em que está. */
   .mapa-ilhas-lista {
@@ -627,12 +638,8 @@
     grid-column: 1;
     grid-row: 1;
   }
-  .mapa-linha {
-    grid-column: 1;
-    grid-row: 1;
-    align-self: end;
-    margin-left: 45%;
-  }
+  /* A legenda saiu da figura (29.08.2026): a regra do canto das ilhas, que a
+     punha na célula do desenho com `margin-left: 45%`, saiu com ela. */
   /* -------------------------------------------------------------------------
      A LEITURA DO MAPA SAI DA COLUNA E FICA POR CIMA DO AR QUE JÁ LÁ ESTAVA
      (bloco A, item A8)
@@ -701,6 +708,78 @@
 [data-postura='localizador'] .mapa-linha,
 [data-postura='localizador'] .mapa-rodape {
   display: none;
+}
+
+/* ---------------------------------------------------------------------------
+ * A CABEÇA ALINHADA A PARTIR DE 1280 (29.08.2026, a emenda do alinhamento à §1.84)
+ * ---------------------------------------------------------------------------
+ * O diretor viu a cabeça no ar: o mapa começava no topo da manchete e acabava
+ * 85 px acima do fim dos nomes, e a legenda ficava pendurada por baixo dele.
+ * Pediu o fundo partilhado e o mapa a subir até ao topo da manchete, a encher o
+ * lado direito. Medido na maqueta antes de escrever: com a coluna esquerda a
+ * 550 px e as linhas dos nomes a 32 px, a coluna esquerda mede 683 px a 1280
+ * (manchete 286, nomes 311, legenda 52) e o mapa, com a razão 600/790 do seu
+ * campo, cabe em 518 px de largura do topo da manchete ao fundo da legenda.
+ *
+ * O MAPA É DIMENSIONADO PELA ALTURA e não pela largura, e é isso que faz o fundo
+ * partilhado: o item da grelha estica-se às três filas (`align-self: stretch`)
+ * sem contribuir para a altura delas (`height: 0; min-height: 100%`, que é o
+ * que impede o mapa de decidir a altura da grelha e deixa a coluna esquerda
+ * decidi-la), e a tela toma a altura toda com `aspect-ratio`; a largura segue.
+ * Onde a coluna é mais estreita do que a largura que a altura pede, a tela
+ * fica presa a `max-width: 100%` e o fundo do mapa sobe uns píxeis; a 1280 e a
+ * 1440 não acontece, e `tests/inicio/alinhamento.mjs` mede-o.
+ *
+ * OS 32 PX são a decisão do lugar de direção para o ecrã com rato: os 44 px
+ * são a regra do toque (Emenda 20c), e a partir de 1024 a lista é o índice do
+ * mapa e não a rede dele; `tests/inicio/mapa-distritos.mjs` (M1c) e
+ * `tests/inicio/alinhamento.mjs` medem os dois números.
+ */
+@media (min-width: 1280px) {
+  .cabeca-grelha {
+    grid-template-columns: 550px minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    column-gap: 24px;
+  }
+  .cabeca-inst {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    align-self: stretch;
+    height: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .cabeca-inst .mapa {
+    height: 100%;
+    display: block;
+  }
+  .cabeca-inst .mapa-tela {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    aspect-ratio: 600 / 790;
+  }
+  .cabeca-inst .mapa-svg {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+  }
+  .mapa-legenda {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: end;
+    margin-top: 18px;
+  }
+  .mapa-legenda .mapa-linha-fonte,
+  .mapa-legenda .mapa-fonte {
+    text-align: left;
+    justify-content: flex-start;
+  }
+  .mapa-ilhas-lista a {
+    min-height: 32px;
+    line-height: 32px;
+  }
 }
 [data-postura='localizador'] .mapa-cartao {
   grid-column: 1 / -1;
@@ -1582,8 +1661,11 @@ a.porta:hover .porta-abrir {
      viviam dentro dele. A grelha da cabeça dissolve-se nesta largura, e por isso
      este bloco é item desta coluna como os outros quatro: sem número, a ordem
      do documento punha-o antes do comando. */
-  [data-inicio] .mapa-ilhas {
+  [data-inicio] .mapa-legenda {
     order: 5;
+  }
+  [data-inicio] .mapa-ilhas {
+    order: 6;
   }
 
   /* A linha dos 308 encosta-se à pesquisa em vez de flutuar: é a legenda dela. */

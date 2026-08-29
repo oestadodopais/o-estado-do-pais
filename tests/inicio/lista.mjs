@@ -173,8 +173,13 @@ async function pagina(rota, largura) {
 }
 
 const ALVO = 44;
-const LARGURAS = [320, 360, 390, 430, 768, 1024, 1280];
+const LARGURAS = [320, 360, 390, 430, 768, 1024, 1280, 1440];
 const LIMIAR_DA_COLUNA = 1024;
+/* O ALVO NO ECRÃ COM RATO (29.08.2026, a emenda do alinhamento à §1.84): a
+   partir de 1024 a lista é o índice do mapa e não a rede dele, e a linha de um
+   nome mede 32 px; os 44 px são a regra do toque e ficam abaixo de 1024. */
+const ALVO_PONTEIRO = 32;
+const alvoEm = (w) => (w >= LIMIAR_DA_COLUNA ? ALVO_PONTEIRO : ALVO);
 const EDICOES = [
   { rota: '/', chave: 'pt' },
   { rota: '/en', chave: 'en' },
@@ -272,6 +277,12 @@ const LEITURA = () => {
     instrumento: cx(document.querySelector('.cabeca-inst')),
     grelha: cx(document.querySelector('.cabeca-grelha')),
     tela: cx(document.querySelector('.mapa-tela')),
+    svg: cx(document.querySelector('.cabeca-inst .mapa-svg')),
+    legenda: cx(document.querySelector('.mapa-legenda')),
+    legendaAlinhamento: (() => {
+      const e = document.querySelector('.mapa-legenda .mapa-linha-fonte');
+      return e ? getComputedStyle(e).textAlign : null;
+    })(),
     lista: cx(lista),
     grupos,
     nomes,
@@ -320,7 +331,7 @@ const intersecta = (a, b) =>
 
 async function correTudo(soEstas) {
   const precisa = (c) => !soEstas || soEstas.includes(c);
-  const daPagina = ['L1', 'L2', 'L3', 'L4', 'L5', 'L8', 'L9', 'L10'].filter(precisa);
+  const daPagina = ['L1', 'L2', 'L3', 'L4', 'L5', 'L8', 'L9', 'L10', 'L11', 'L12', 'L13'].filter(precisa);
   const daMao = ['L6', 'L7'].filter(precisa);
 
   const lido = {};
@@ -329,6 +340,7 @@ async function correTudo(soEstas) {
     for (const c of daPagina) {
       if (['L4', 'L5', 'L9', 'L10'].includes(c)) for (const w of LARGURAS) larguras.add(w);
       if (c === 'L2') larguras.add(1024);
+      if (['L11', 'L12', 'L13'].includes(c)) for (const w of [1024, 1280, 1440]) larguras.add(w);
       if (['L1', 'L2', 'L3', 'L8'].includes(c)) larguras.add(1280);
     }
     for (const e of EDICOES) {
@@ -426,8 +438,9 @@ async function correTudo(soEstas) {
       for (const w of LARGURAS) {
         const r = lido[`${e.chave}_${w}`];
         const vistos = r.nomes.filter((n) => n.visivel);
-        const baixos = vistos.filter((n) => n.caixa.h < ALVO);
-        const estreitos = vistos.filter((n) => n.caixa.w < ALVO);
+        const alvo = alvoEm(w);
+        const baixos = vistos.filter((n) => n.caixa.h < alvo);
+        const estreitos = vistos.filter((n) => n.caixa.w < alvo);
         let colisoes = 0;
         for (let i = 0; i < vistos.length; i++) {
           for (let j = i + 1; j < vistos.length; j++) {
@@ -437,11 +450,58 @@ async function correTudo(soEstas) {
         const menorAlto = vistos.length ? Math.min(...vistos.map((n) => n.caixa.h)) : 0;
         const menorLargo = vistos.length ? Math.min(...vistos.map((n) => n.caixa.w)) : 0;
         conta(
-          `L5·${e.chave}·${w} · cada nome é um alvo de ${ALVO} × ${ALVO} px, e nenhum se interseta`,
+          `L5·${e.chave}·${w} · cada nome é um alvo de ${alvo} × ${alvo} px, e nenhum se interseta`,
           vistos.length === 29 && baixos.length === 0 && estreitos.length === 0 && colisoes === 0,
           `${vistos.length}/29 à vista · o mais baixo ${menorAlto.toFixed(1)} px, o mais estreito ${menorLargo.toFixed(1)} px · ` +
-            `${baixos.length} sob ${ALVO} de altura, ${estreitos.length} sob ${ALVO} de largura, ${colisoes} interseção(ões)`,
+            `${baixos.length} sob ${alvo} de altura, ${estreitos.length} sob ${alvo} de largura, ${colisoes} interseção(ões)`,
         );
+      }
+    }
+  }
+
+  /* ------------------------------------------------------------ L11 a L13 */
+  /* A CABEÇA ALINHADA (29.08.2026, a emenda do alinhamento à §1.84): a partir de
+     1280 o mapa começa no topo da manchete e acaba no fundo da legenda, a legenda
+     fica por baixo dos nomes e alinhada à esquerda com eles, e o mapa cabe na
+     coluna e enche-a em altura; a 1024 a legenda fica por baixo do mapa, na
+     coluna dele. As três medem caixas do navegador, não a folha. */
+  if (precisa('L11') || precisa('L12') || precisa('L13')) {
+    for (const e of EDICOES) {
+      for (const w of [1024, 1280, 1440]) {
+        const r = lido[`${e.chave}_${w}`];
+        if (!r || !r.svg || !r.legenda) {
+          conta(`L11·${e.chave}·${w} · o mapa e a legenda existem na página`, false, 'sem svg ou sem legenda');
+          continue;
+        }
+        if (w >= 1280) {
+          if (precisa('L11')) {
+            conta(
+              `L11·${e.chave}·${w} · o mapa começa no topo da manchete e acaba no fundo da legenda`,
+              Math.abs(r.svg.y - r.cabeca.y) <= 2 && Math.abs(r.svg.fundo - r.legenda.fundo) <= 4,
+              `mapa de ${r.svg.y} a ${r.svg.fundo} · manchete desde ${r.cabeca.y} · legenda até ${r.legenda.fundo}`,
+            );
+          }
+          if (precisa('L12')) {
+            conta(
+              `L12·${e.chave}·${w} · a legenda por baixo dos nomes, alinhada à esquerda com eles`,
+              Math.abs(r.legenda.x - r.lista.x) <= 1 && r.legenda.y >= r.lista.fundo - 0.5 && r.legendaAlinhamento === 'left',
+              `legenda x ${r.legenda.x} y ${r.legenda.y} · lista x ${r.lista.x} fundo ${r.lista.fundo} · text-align ${r.legendaAlinhamento}`,
+            );
+          }
+          if (precisa('L13')) {
+            conta(
+              `L13·${e.chave}·${w} · o mapa cabe na coluna e enche-a em altura`,
+              r.svg.x + r.svg.w <= r.instrumento.x + r.instrumento.w + 1 && r.svg.h >= r.grelha.h - 12,
+              `mapa ${r.svg.w} × ${r.svg.h} px em x ${r.svg.x} · coluna x ${r.instrumento.x} w ${r.instrumento.w} · grelha h ${r.grelha.h}`,
+            );
+          }
+        } else if (precisa('L12')) {
+          conta(
+            `L12·${e.chave}·${w} · a legenda por baixo do mapa, na coluna dele`,
+            r.legenda.y >= r.svg.fundo - 1 && Math.abs(r.legenda.x - r.instrumento.x) <= 1,
+            `legenda x ${r.legenda.x} y ${r.legenda.y} · mapa fundo ${r.svg.fundo} · coluna x ${r.instrumento.x}`,
+          );
+        }
       }
     }
   }
@@ -752,6 +812,25 @@ const PLANTAS = [
     nome: 'um alvo com menos de 44 px de largura (a largura mínima retirada)',
     celulas: ['L5'],
     estrago: comFolha('.mapa-ilhas-lista a{min-width:0 !important;padding-inline:0 !important}'),
+  },
+  {
+    nome: 'o mapa solto do fundo da legenda, a 1280 (o item deixa de esticar)',
+    celulas: ['L11'],
+    estrago: comFolha(
+      '@media (min-width:1280px){.cabeca-inst{align-self:start !important;height:auto !important;min-height:0 !important}.cabeca-inst .mapa-tela{height:auto !important;width:100% !important}}',
+    ),
+  },
+  {
+    nome: 'a legenda de volta para a coluna do mapa, a 1280',
+    celulas: ['L12'],
+    estrago: comFolha('@media (min-width:1280px){.mapa-legenda{grid-column:2 !important}}'),
+  },
+  {
+    nome: 'o mapa mais largo do que a coluna, a 1280',
+    celulas: ['L13'],
+    estrago: comFolha(
+      '@media (min-width:1280px){.cabeca-inst .mapa-tela{max-width:none !important;width:900px !important;height:auto !important}.cabeca-inst .mapa-svg{width:100% !important;height:auto !important}}',
+    ),
   },
   {
     nome: 'o rato num nome sem resposta do mapa (a folha do par retirada)',

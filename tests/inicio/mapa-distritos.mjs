@@ -164,6 +164,10 @@ async function pagina(rota, largura) {
 }
 
 const ALVO = 44;
+/* No ecrã com rato (a partir de 1024) a lista dos nomes é o índice do mapa e a
+   linha de um nome mede 32 px (29.08.2026, a emenda do alinhamento à §1.84); os
+   44 px são a regra do toque e ficam nas larguras de telemóvel. */
+const ALVO_PONTEIRO = 32;
 
 /* Os pontos representativos, lidos do artefacto uma vez. É o mesmo ficheiro em
    que a célula M6 vai buscar o alvo dos seus cliques, e o mesmo ponto: o que a
@@ -324,7 +328,8 @@ async function mediuOPais(largura, id) {
   const chegam = r.areas.filter((a) => a.inscrito >= ALVO);
   const naoChegam = r.areas.filter((a) => a.inscrito < ALVO);
   const semRede = naoChegam.filter((a) => !r.naLista.includes(a.slug));
-  const listaCurta = r.alvosDaLista.filter((a) => a.h < ALVO);
+  const alvoDaLista = largura >= 1024 ? ALVO_PONTEIRO : ALVO;
+  const listaCurta = r.alvosDaLista.filter((a) => a.h < alvoDaLista);
   const porCaixa = r.areas.filter((a) => a.lado >= ALVO);
   const foraDoPonto = r.areas.filter((a) => !a.dentro);
 
@@ -363,11 +368,11 @@ async function mediuOPais(largura, id) {
       : `sem rede: ${semRede.map((a) => `${a.nome} ${a.inscrito}px`).join(', ')}`,
   );
   conta(
-    `${id}c · a ${largura}, cada nome da lista é um alvo de ${ALVO} px`,
+    `${id}c · a ${largura}, cada nome da lista é um alvo de ${alvoDaLista} px`,
     r.naLista.length > 0 && listaCurta.length === 0,
     listaCurta.length === 0
       ? `${r.alvosDaLista.length} nomes, o mais baixo ${Math.min(...r.alvosDaLista.map((a) => a.h)).toFixed(0)} px de altura`
-      : `${listaCurta.length} abaixo de ${ALVO}`,
+      : `${listaCurta.length} abaixo de ${alvoDaLista}`,
   );
   conta(
     `${id}d · a ${largura}, o ponto representativo cai dentro da sua área`,
