@@ -2687,6 +2687,21 @@ a.badge-porta:hover {
   color: var(--ink);
   overflow-wrap: anywhere;
 }
+/* O NOME DA MEDIDA, ONDE A FONTE O IMPRIME (29.08.2026).
+   Ocupa o lugar do identificador e não se compõe como ele: um identificador é
+   uma cadeia técnica e vai no tipo do instrumento; um nome é uma cadeia que se
+   lê, e vai no tipo da prosa. O corpo é o mesmo da linha de baixo mais dois
+   pontos, para que o nome encabece sem gritar. `overflow-wrap` porque os
+   rótulos do INE têm 170 caracteres e uma cadeia que não parta empurra a
+   grelha. */
+.livro-item-nome {
+  display: block;
+  font-family: var(--f-prosa);
+  font-size: 14px;
+  line-height: 1.35;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
 
 /* --------------------------------------------- histórico de uma linha */
 

@@ -115,6 +115,12 @@ export const STRINGS = {
       documento: 'Documento',
       edicao: 'Edição',
       localizacao: 'Onde no documento',
+      /* O RÓTULO COM QUE A FONTE PUBLICA A FIGURA, e onde no ficheiro alojado
+         ele foi lido (29.08.2026). O rótulo do campo é da casa e diz-se na
+         língua da página; o rótulo em si é da fonte, não se traduz, e leva a
+         marca da sua língua. */
+      rotuloDaFonte: 'Nome na fonte',
+      rotuloOnde: 'Onde no ficheiro',
       endereco: 'Endereço',
       excerto: 'Excerto',
       derivacao: 'Aritmética',
@@ -1565,6 +1571,8 @@ export const STRINGS = {
       documento: 'Document',
       edicao: 'Edition',
       localizacao: 'Where in the document',
+      rotuloDaFonte: 'Name at the source',
+      rotuloOnde: 'Where in the file',
       endereco: 'Address',
       excerto: 'Excerpt',
       derivacao: 'Arithmetic',
