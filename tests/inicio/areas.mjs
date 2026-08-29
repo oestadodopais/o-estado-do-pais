@@ -634,7 +634,17 @@ async function mediuOProvisorio() {
 /* =========================================================================== */
 /* Os quatro que o brief nomeia: uma área sem peças, uma peça fantasma, um nome
    trocado e uma frase de cobertura. Cada um é uma transformação do HTML no
-   caminho entre o ficheiro e o navegador, e nada é escrito em disco. */
+   caminho entre o ficheiro e o navegador, e nada é escrito em disco.
+
+   CADA ESTRAGO DIZ QUE CÉLULAS TEM DE PÔR VERMELHAS, E POR EDIÇÃO (leitura
+   cruzada do Codex, 29.08.2026). O corredor aceitava deteção parcial: bastava
+   uma das células tocadas ficar vermelha para o estrago contar como apanhado, e
+   por isso o estrago do `data-nome`, que estraga as duas edições, passava com
+   uma delas por detetar. `celulas` continua a dizer que medições correr;
+   `vermelhas` diz o resultado exigido, e é a lista exacta: as que lá estão têm
+   de ficar vermelhas, e as outras que a medição produziu têm de ficar verdes.
+   Um estrago que estrague mais do que declara é uma declaração errada, e uma
+   declaração errada esconde o que o estrago não está a provar. */
 
 const PRIMEIRA = () => `/areas/${SLUGS[0]}`;
 
@@ -642,6 +652,8 @@ const PLANTAS = [
   {
     nome: 'uma área sem peças',
     celulas: ['M2'],
+    /* Só a edição portuguesa: o estrago cai na primeira área de `/areas/`. */
+    vermelhas: ['M2·pt'],
     estrago: (html, rota) =>
       rota.replace(/\/index\.html$/, '') === PRIMEIRA()
         ? html.replace(/data-area-peca="[a-z]+"/g, 'data-peca-apagada="sim"')
@@ -650,6 +662,7 @@ const PLANTAS = [
   {
     nome: 'uma peça fantasma, com porta para uma página que não existe',
     celulas: ['M2'],
+    vermelhas: ['M2·pt'],
     estrago: (html, rota) =>
       rota.replace(/\/index\.html$/, '') === PRIMEIRA()
         ? html.replace(
@@ -662,6 +675,7 @@ const PLANTAS = [
   {
     nome: 'um nome trocado na página de uma área',
     celulas: ['M3'],
+    vermelhas: ['M3·pt'],
     estrago: (html, rota) =>
       rota.replace(/\/index\.html$/, '') === PRIMEIRA()
         ? html.replace(/<h1([^>]*)>[\s\S]*?<\/h1>/, '<h1$1>Atlântida</h1>')
@@ -670,6 +684,8 @@ const PLANTAS = [
   {
     nome: 'a palavra do provisório apagada de uma medida que a devia ter',
     celulas: ['M8'],
+    /* Este cai nas duas edições, e as duas têm de o ver. */
+    vermelhas: ['M8·pt', 'M8·en'],
     estrago: (html, rota) =>
       rota.startsWith('/areas/economia') || rota.startsWith('/en/areas/economia')
         ? html.replace('<span class="claim-provisorio">', '<span class="claim-apagada">')
@@ -678,6 +694,7 @@ const PLANTAS = [
   {
     nome: 'uma frase de cobertura no índice das áreas',
     celulas: ['M4'],
+    vermelhas: ['M4·pt'],
     estrago: (html, rota) =>
       rota.replace(/\/index\.html$/, '') === '/areas'
         ? html.replace(
@@ -694,6 +711,9 @@ const PLANTAS = [
        escrita à mão aqui dentro. */
     nome: 'a marca `data-nome` retirada da página de uma área',
     celulas: ['M4'],
+    /* As nove páginas de área das DUAS edições, e é este que apanhava o
+       corredor antigo com uma edição por detetar. */
+    vermelhas: ['M4·pt', 'M4·en'],
     estrago: (html, rota) =>
       rota.startsWith('/areas/') || rota.startsWith('/en/areas/')
         ? html.replace(/data-nome="/g, 'data-marca-apagada="')
@@ -737,6 +757,16 @@ if (!VERMELHOS) {
 }
 
 console.log('');
+/**
+ * Um alvo é «M4» (as duas edições) ou «M4·pt» (uma só). O nome de uma célula
+ * abre pelo prefixo e fecha pela edição, e é assim que os dois se casam.
+ */
+function casaComOAlvo(nomeDaCelula, alvo) {
+  const [prefixo, edicao] = alvo.split('·');
+  if (!nomeDaCelula.startsWith(prefixo)) return false;
+  return edicao ? nomeDaCelula.endsWith(`· ${edicao}`) : true;
+}
+
 let todosVermelhos = true;
 for (const planta of PLANTAS) {
   celulas = [];
@@ -746,10 +776,31 @@ for (const planta of PLANTAS) {
   if (planta.celulas.includes('M4')) await mediuAVoz();
   if (planta.celulas.includes('M8')) await mediuOProvisorio();
   const tocadas = celulas.filter((c) => planta.celulas.some((n) => c.nome.startsWith(n)));
-  const apanhou = tocadas.some((c) => !c.passa);
+
+  /* TODAS AS DECLARADAS TÊM DE FICAR VERMELHAS, e cada alvo tem de casar com
+     alguma célula: um alvo escrito à mão que não case com nada era um alvo que
+     ninguém verificava. */
+  const queixas = [];
+  for (const alvo of planta.vermelhas) {
+    const casadas = tocadas.filter((c) => casaComOAlvo(c.nome, alvo));
+    if (!casadas.length) queixas.push(`o alvo «${alvo}» não casa com nenhuma célula corrida`);
+    else for (const c of casadas.filter((x) => x.passa)) queixas.push(`${c.nome} ficou VERDE`);
+  }
+  /* E AS OUTRAS TÊM DE FICAR VERDES: um estrago que estrague mais do que declara
+     está a ser creditado por um vermelho que não é o dele. */
+  for (const c of tocadas) {
+    if (planta.vermelhas.some((alvo) => casaComOAlvo(c.nome, alvo))) continue;
+    if (!c.passa) queixas.push(`${c.nome} ficou vermelha e o estrago não a declara`);
+  }
+
+  const apanhou = queixas.length === 0;
   if (!apanhou) todosVermelhos = false;
-  console.log(`  ${apanhou ? verde('vermelho ✓') : vermelho('NÃO APANHOU ✗')}  ${planta.nome}`);
+  console.log(
+    `  ${apanhou ? verde('vermelho ✓') : vermelho('NÃO APANHOU ✗')}  ${planta.nome}` +
+      cinza(`  [${planta.vermelhas.join(', ')}]`),
+  );
   for (const c of tocadas.filter((x) => !x.passa)) console.log(cinza(`      ${c.nome} · ${c.prova}`));
+  for (const q of queixas) console.log(vermelho(`      ${q}`));
 }
 ESTRAGO = null;
 console.log('');
