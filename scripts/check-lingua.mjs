@@ -4,8 +4,8 @@
  * O PORTÃO DA LÍNGUA · o que é português numa página inglesa diz que o é
  * ---------------------------------------------------------------------------
  *
- * Duas linhas de `design/especime-v3/ISSUES.md` fecham aqui, e são a mesma
- * pergunta feita sobre duas espécies de cadeia:
+ * Três linhas de `design/especime-v3/ISSUES.md` fecham aqui, e são a mesma
+ * pergunta feita sobre espécies diferentes de cadeia:
  *
  *   · **I91, segunda metade** — o título de um documento é um NOME. Não se
  *     traduz; diz em que língua está. A tabela é
@@ -15,18 +15,38 @@
  *   · **I92** — a unidade de uma linha é um RÓTULO. Traduz-se onde há um facto
  *     de dicionário (`src/i18n/unidades.mjs`), e onde não há rende-se em
  *     português com a marca da língua.
+ *   · **I97** — o nome do ORGANISMO que publica (`source`) e a EDIÇÃO do
+ *     documento (`document.edition`) são nomes, e valem-lhes as regras do
+ *     título. A edição trouxe uma resposta que as outras cadeias não precisavam
+ *     de dar: um ano, uma data e um código de série não estão em língua
+ *     nenhuma, declaram-se `null`, e `null` escrito não é o mesmo que a chave em
+ *     falta.
  *
  * ---------------------------------------------------------------------------
- * SETE CONFERÊNCIAS, E AS DUAS PRIMEIRAS SÃO AS QUE IMPEDEM O SILÊNCIO
+ * ONZE CONFERÊNCIAS, E AS QUATRO PRIMEIRAS SÃO AS QUE IMPEDEM O SILÊNCIO
  * ---------------------------------------------------------------------------
  *   L1 · toda a unidade do livro-razão tem entrada no dicionário OU na lista
  *        das que ficam em português, e nenhuma tem as duas. Uma unidade nova
  *        fecha a construção em vez de se render em português por omissão;
  *   L2 · todo o `document.title` do livro-razão tem língua declarada. Um título
  *        novo fecha a construção em vez de ficar sem marca em silêncio;
+ *   L2b · todo o `name` (o rótulo com que a fonte imprime a figura) tem língua
+ *        declarada;
+ *   L2c · todo o `source` (o nome do organismo que publica) tem língua
+ *        declarada. São dezassete valores e um deles é o marcador, que não
+ *        entra: 930 linhas só na DGAL, e um nome de organismo sem marca é lido
+ *        com a fonética errada em toda a edição inglesa;
+ *   L2d · toda a `document.edition` tem língua declarada, e aqui a declaração
+ *        tem três respostas: «pt», «en» e `null` para a que não está em língua
+ *        nenhuma. Uma edição em falta fecha a construção; uma declarada `null`
+ *        está decidida e não leva marca;
  *   L3 · em `dist/en`, nenhuma unidade em português sem `lang="pt-PT"`;
  *   L4 · nas duas edições, nenhum título de documento na língua errada e sem a
  *        marca da sua;
+ *   L4d · nas duas edições, nenhum nome de organismo na língua errada e sem a
+ *        marca da sua;
+ *   L4e · nas duas edições, nenhuma edição de documento na língua errada e sem
+ *        a marca da sua;
  *   L5 · em `dist/en`, nenhum nome de lei portuguesa em prosa da casa sem a
  *        marca. Os nomes que aparecem DENTRO de um texto transcrito — um campo
  *        do livro-razão (`data-linha-campo`), uma nota do registo da agenda
@@ -92,6 +112,10 @@ import {
   linguaDoTituloDoDocumento,
   LINGUA_DOS_ROTULOS,
   linguaDoRotuloDaFonte,
+  LINGUA_DAS_FONTES,
+  linguaDaFonte,
+  LINGUA_DAS_EDICOES,
+  linguaDaEdicao,
 } from '../src/i18n/lingua-dos-titulos.mjs';
 import { WORKS, linguaDoTitulo } from '../src/data/studies.mjs';
 import { matchPath } from '../src/lib/routes.mjs';
@@ -213,6 +237,68 @@ for (const r of Object.keys(LINGUA_DOS_ROTULOS)) {
   if (!rotulosDoLivro.has(r)) {
     erros.push(
       `a declaração de língua nomeia o rótulo «${r.slice(0, 90)}», que nenhuma linha do ` +
+        `livro-razão traz. A tabela declara o que existe.`,
+    );
+  }
+}
+
+/* ==================================================================== L2c · */
+/* os nomes de organismo do livro-razão, contra a declaração de língua        */
+
+const fontesDoLivro = new Map();
+for (const c of claims) {
+  const f = c.source;
+  if (f === null || f === undefined || String(f) === '') continue;
+  const s = String(f);
+  /* O marcador não é um organismo: declarar a língua de um buraco não diz nada. */
+  if (s === POR_VERIFICAR) continue;
+  fontesDoLivro.set(s, (fontesDoLivro.get(s) ?? 0) + 1);
+}
+for (const [f] of fontesDoLivro) {
+  if (!Object.prototype.hasOwnProperty.call(LINGUA_DAS_FONTES, f)) {
+    erros.push(
+      `o organismo «${f.slice(0, 90)}» (${fontesDoLivro.get(f)} linha(s)) não tem língua ` +
+        `declarada em src/i18n/lingua-dos-titulos.mjs.\n` +
+        `      O nome de quem publica é um nome: não se traduz, e diz em que língua está. ` +
+        `Nem para os que têm nome inglês oficial — a linha guarda um nome, e é esse que se rende.`,
+    );
+  }
+}
+for (const f of Object.keys(LINGUA_DAS_FONTES)) {
+  if (!fontesDoLivro.has(f)) {
+    erros.push(
+      `a declaração de língua nomeia o organismo «${f.slice(0, 90)}», que nenhuma linha do ` +
+        `livro-razão traz. A tabela declara o que existe.`,
+    );
+  }
+}
+
+/* ==================================================================== L2d · */
+/* as edições de documento, contra a declaração de língua                     */
+
+const edicoesDoLivro = new Map();
+for (const c of claims) {
+  const e = c.document?.edition;
+  if (e === null || e === undefined || String(e) === '') continue;
+  const s = String(e);
+  if (s === POR_VERIFICAR) continue;
+  edicoesDoLivro.set(s, (edicoesDoLivro.get(s) ?? 0) + 1);
+}
+for (const [e] of edicoesDoLivro) {
+  if (!Object.prototype.hasOwnProperty.call(LINGUA_DAS_EDICOES, e)) {
+    erros.push(
+      `a edição «${e.slice(0, 90)}» (${edicoesDoLivro.get(e)} linha(s)) não tem língua declarada ` +
+        `em src/i18n/lingua-dos-titulos.mjs.\n` +
+        `      Uma edição declara-se «pt», «en», ou «null» quando não está em língua nenhuma — um ` +
+        `ano, uma data, um código de série. «null» ESCRITO é uma decisão; a chave em falta é ` +
+        `ninguém ter olhado.`,
+    );
+  }
+}
+for (const e of Object.keys(LINGUA_DAS_EDICOES)) {
+  if (!edicoesDoLivro.has(e)) {
+    erros.push(
+      `a declaração de língua nomeia a edição «${e.slice(0, 90)}», que nenhuma linha do ` +
         `livro-razão traz. A tabela declara o que existe.`,
     );
   }
@@ -387,6 +473,15 @@ const contas = {
   rotulos: 0,
   rotulos_com_marca: 0,
   rotulos_sem_marca: 0,
+  fontes: 0,
+  fontes_a_marcar: 0,
+  fontes_com_marca: 0,
+  fontes_sem_marca: 0,
+  edicoes: 0,
+  edicoes_a_marcar: 0,
+  edicoes_com_marca: 0,
+  edicoes_sem_marca: 0,
+  edicoes_sem_lingua: 0,
   localizadores: 0,
   localizadores_en_com_marca: 0,
   localizadores_en_sem_marca: 0,
@@ -407,6 +502,8 @@ const achados = {
   unidades: new Map(),
   titulos: new Map(),
   rotulos: new Map(),
+  fontes: new Map(),
+  edicoes: new Map(),
   localizadores: new Map(),
   leis: new Map(),
   estudos: new Map(),
@@ -501,6 +598,43 @@ for (const ficheiro of paginasDe(DIST)) {
     else {
       contas.rotulos_sem_marca++;
       anota(achados.rotulos, `${esperada} · ${texto}`, rel);
+    }
+  }
+
+  /* --- L4d · o nome do organismo, nas duas edições (I97) --- */
+  for (const el of root.querySelectorAll('[data-linha-campo="source"]')) {
+    const texto = norm(el.text);
+    if (texto === POR_VERIFICAR) continue;
+    contas.fontes++;
+    const esperada = linguaDaFonte(texto, lang);
+    if (esperada === null) continue;
+    contas.fontes_a_marcar++;
+    if (langDe(el) === esperada) contas.fontes_com_marca++;
+    else {
+      contas.fontes_sem_marca++;
+      anota(achados.fontes, `${esperada} · ${texto}`, rel);
+    }
+  }
+
+  /* --- L4e · a edição do documento, nas duas edições (I97) --- */
+  for (const el of root.querySelectorAll('[data-linha-campo="document.edition"]')) {
+    const texto = norm(el.text);
+    if (texto === POR_VERIFICAR) continue;
+    contas.edicoes++;
+    const esperada = linguaDaEdicao(texto, lang);
+    if (esperada === null) {
+      /* Ou é a língua da página, ou a edição não tem língua nenhuma. As que não
+         têm contam-se à parte: um zero sobre elas é um zero que não prova nada,
+         e um dia alguém há de perguntar quantas são. */
+      if (!Object.prototype.hasOwnProperty.call(LINGUA_DAS_EDICOES, texto)) continue;
+      if (LINGUA_DAS_EDICOES[texto] === null) contas.edicoes_sem_lingua++;
+      continue;
+    }
+    contas.edicoes_a_marcar++;
+    if (langDe(el) === esperada) contas.edicoes_com_marca++;
+    else {
+      contas.edicoes_sem_marca++;
+      anota(achados.edicoes, `${esperada} · ${texto}`, rel);
     }
   }
 
@@ -618,6 +752,16 @@ for (const [chave, x] of achados.rotulos) {
     `rótulo da fonte sem a marca da sua língua: ${chave} (${x.n} ocorrência(s), ex.: ${x.onde}).`,
   );
 }
+for (const [chave, x] of achados.fontes) {
+  erros.push(
+    `nome de organismo sem a marca da sua língua: ${chave} (${x.n} ocorrência(s), ex.: ${x.onde}).`,
+  );
+}
+for (const [chave, x] of achados.edicoes) {
+  erros.push(
+    `edição de documento sem a marca da sua língua: ${chave} (${x.n} ocorrência(s), ex.: ${x.onde}).`,
+  );
+}
 for (const [chave, x] of achados.repetidos) {
   erros.push(
     `elemento com o mesmo atributo escrito duas vezes: ${chave}\n` +
@@ -682,7 +826,14 @@ console.log(
     `${Object.values(LINGUA_DOS_TITULOS).filter((l) => l === 'en').length} en) · ` +
     `${rotulosDoLivro.size} rótulo(s) da fonte com língua declarada ` +
     `(${Object.values(LINGUA_DOS_ROTULOS).filter((l) => l === 'pt').length} pt, ` +
-    `${Object.values(LINGUA_DOS_ROTULOS).filter((l) => l === 'en').length} en)`,
+    `${Object.values(LINGUA_DOS_ROTULOS).filter((l) => l === 'en').length} en) · ` +
+    `${fontesDoLivro.size} organismo(s) com língua declarada ` +
+    `(${Object.values(LINGUA_DAS_FONTES).filter((l) => l === 'pt').length} pt, ` +
+    `${Object.values(LINGUA_DAS_FONTES).filter((l) => l === 'en').length} en) · ` +
+    `${edicoesDoLivro.size} edição(ões) com língua declarada ` +
+    `(${Object.values(LINGUA_DAS_EDICOES).filter((l) => l === 'pt').length} pt, ` +
+    `${Object.values(LINGUA_DAS_EDICOES).filter((l) => l === 'en').length} en, ` +
+    `${Object.values(LINGUA_DAS_EDICOES).filter((l) => l === null).length} sem língua)`,
 );
 console.log(
   cinza(
@@ -690,7 +841,11 @@ console.log(
       `(${contas.unidades_en_traduzidas} traduzidas, ${contas.unidades_en_em_portugues} em português, ` +
       `todas com marca) · títulos com marca de língua: ${contas.titulos_com_marca} de ` +
       `${contas.titulos} rendidos · rótulos da fonte com marca de língua: ` +
-      `${contas.rotulos_com_marca} de ${contas.rotulos} rendidos · localizadores em «en»: ` +
+      `${contas.rotulos_com_marca} de ${contas.rotulos} rendidos · organismos rendidos: ` +
+      `${contas.fontes} (${contas.fontes_a_marcar} a marcar, ${contas.fontes_com_marca} com marca) · ` +
+      `edições rendidas: ${contas.edicoes} (${contas.edicoes_a_marcar} a marcar, ` +
+      `${contas.edicoes_com_marca} com marca, ${contas.edicoes_sem_lingua} sem língua nenhuma) · ` +
+      `localizadores em «en»: ` +
       `${contas.localizadores_en_com_marca} com marca · ` +
       `leis em «en»: ${contas.leis_en_com_marca} com marca, ` +
       `${contas.leis_en_em_transcricao} dentro de transcrição do motor · ` +
