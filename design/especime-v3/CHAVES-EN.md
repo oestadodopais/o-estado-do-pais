@@ -627,7 +627,7 @@ lado a lado, que é para o que este ficheiro serve.
 | `municipio.distanciaLegenda` (E11) | O traço fino é a dívida total que a Direção-Geral das Autarquias Locais publica para o concelho… | The thin line is the total debt the local-government directorate publishes for the municipality… |
 | `municipio.contasDivergenciaRegulador` (E11) | A Direção-Geral publica | The directorate-general publishes |
 | `municipio.tempoRegulador` (E11) | A Direção-Geral | The directorate-general |
-| `municipio.tempoSerieA` (E11; I88, 28.08.2026) | O índice de dívida, calculado sobre os dados da Direção-Geral, desceu de | The debt index, computed on the directorate-general’s data, fell from |
+| `municipio.tempoSerieA` (E11; I88, 28.08.2026; **a chave saiu com a I89 a 29.08.2026**, e o que ela dizia é hoje a `municipio.tempoSerieDesceu`) | O índice de dívida, calculado sobre os dados da Direção-Geral, desceu de | The debt index, computed on the directorate-general’s data, fell from |
 
 **A que saiu**, e fica declarada como autorreferência no `INVENTARIO-FRASES.md`
 para que repô-la feche a construção: «É a lei que o define, não este sítio.» /
@@ -978,3 +978,24 @@ compara (`home.instr1.h2` e `home.instr1.significadoV`) estavam declaradas
 primeira página «até haver a página das regiões». A página existe. O texto delas
 não muda uma letra: muda o estado e o bloco, que é o que a coluna do estado serve
 para deixar ver.
+
+### Passagem de correções pequenas 4 (29.08.2026)
+
+**Quatro chaves novas, e uma que sai.** A I89 tirou o verbo de dentro da cadeia
+da frase da série: `municipio.tempoSerieA` trazia «desceu de» e «fell from», e o
+sítio não escolhia entre uma subida e uma descida. A chave sai, e no lugar dela
+ficam três, uma por sentido, mais o pedaço que a forma da igualdade leva entre os
+dois anos. A vista escolhe pelos dois valores que a própria frase cita.
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `municipio.tempoSerieDesceu` | O índice de dívida, calculado sobre os dados da Direção-Geral, desceu de | The debt index, computed on the directorate-general’s data, fell from | é a cadeia que a `tempoSerieA` tinha, com o nome que diz o que ela é |
+| `municipio.tempoSerieSubiu` | O índice de dívida, calculado sobre os dados da Direção-Geral, subiu de | The debt index, computed on the directorate-general’s data, rose from | chave nova |
+| `municipio.tempoSerieManteve` | O índice de dívida, calculado sobre os dados da Direção-Geral, manteve-se em | The debt index, computed on the directorate-general’s data, stayed at | chave nova. A forma da igualdade perde o «de … para …»: não há de onde nem para onde, e o valor diz-se uma vez |
+| `municipio.tempoSerieIgualD` | ` e em ` | ` and in ` | chave nova, o pedaço entre os dois anos da forma da igualdade, no lugar do ` para ` / ` to ` da frase da mudança |
+
+**As três formas foram lidas construídas, e não só escritas.** Com a série de
+Évora invertida à mão, a página passou a dizer «subiu de 105,5% em 2014 para
+242,6% em 2024» e «rose from … to …»; com a série achatada, «manteve-se em 105,5%
+em 2014 e em 2024» e «stayed at 105,5% in 2014 and in 2024». Os dados foram
+repostos e a construção final é a real, com «desceu» e «fell from».
