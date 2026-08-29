@@ -118,6 +118,28 @@ const manifesto = lang === 'pt' ? '/manifest.webmanifest' : '/en/manifest.webman
 const cartaoOg = urlDoCartao({ ...cartao, ...DIM_OG });
 const cartaoTwitter = urlDoCartao({ ...cartao, ...DIM_TWITTER });
 
+/**
+ * ---------------------------------------------------------------------------
+ * O INTERRUPTOR DO ESTUDO TIPOGRÁFICO (29.08.2026, ramo `tipografia-2026-08-29`)
+ * ---------------------------------------------------------------------------
+ * ESTAS TRÊS LINHAS SÃO A ÚNICA COISA QUE O ESTUDO MUDOU FORA DA SUA PASTA, e o
+ * ramo existe para as mostrar. Sem `TIPOS_ESTUDO` no ambiente, `folhaDoEstudo()`
+ * devolve a cadeia vazia e `precargasDoEstudo()` devolve as mesmas duas cadeias
+ * que estavam escritas à mão aqui: a construção por defeito é a de antes, e é
+ * essa que o `npm run build` inteiro tem de passar. O que o interruptor troca,
+ * quando está ligado, são as três fichas de família e o conjunto de
+ * `@font-face`, e mais nada. A razão de cada escolha está no ficheiro.
+ *
+ * Nada disto vai para `main`: é uma cópia, e a decisão de comprar vem depois.
+ */
+import {
+  folha as folhaDoEstudo,
+  precargas as precargasDoEstudo,
+} from '../../design/tipografia/programa/interruptor.mjs';
+
+const folhaTipos = folhaDoEstudo();
+const [precargaProsa, precargaInstr] = precargasDoEstudo();
+
 ---
 
 <!doctype html>
@@ -146,20 +168,17 @@ const cartaoTwitter = urlDoCartao({ ...cartao, ...DIM_TWITTER });
          O endereço é, carácter a carácter, o que `tokens.css` escreve, com os
          parênteses retos do nome de montante codificados. */
     }
-    <link
-      rel="preload"
-      href="/tipos/spectral/Spectral-Regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="/tipos/bitter/Bitter%5Bwght%5D.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
+    <link rel="preload" href={precargaProsa} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={precargaInstr} as="font" type="font/woff2" crossorigin />
+
+    {
+      /* O interruptor do estudo tipográfico, e nada quando está desligado. Vem
+         DEPOIS das folhas do sítio na ordem do documento e mesmo assim escreve
+         `:root:root`, porque a ordem em que o Astro coloca as etiquetas não é
+         uma coisa de que este bloco queira depender. Ver
+         `design/tipografia/programa/interruptor.mjs`. */
+      folhaTipos && <style is:inline set:html={folhaTipos} />
+    }
 
     {
       /* ------------------------------------------------------------------
