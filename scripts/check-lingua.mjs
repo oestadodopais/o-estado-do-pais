@@ -39,6 +39,16 @@
  *        ela transcreve carácter a carácter. O número fica impresso: escondê-lo
  *        seria pior do que não o poder baixar;
  *   L6 · em `dist/en`, nenhum título de estudo português sem a marca;
+ *   L8 · nenhum elemento com o MESMO atributo escrito duas vezes. Nasceu de uma
+ *        leitura do lugar de direção que viu «lang="pt-PT" lang="pt-PT"» numa
+ *        página de área; era um falso positivo — a cadeia procurada é também o
+ *        fim de «hreflang="pt-PT" lang="pt-PT"», que é o par certo de um
+ *        comutador de língua (a língua da página ligada e a língua do texto da
+ *        ligação). A régua fica na mesma, e a razão é a regra da casa: um
+ *        atributo repetido é silencioso, o navegador fica com o primeiro e
+ *        deita o segundo fora, e uma marca de língua duplicada por um gabarito
+ *        que a acrescenta duas vezes passava despercebida. Vale para qualquer
+ *        nome de atributo, e não só para `lang`: é mais barato e apanha mais;
  *   L7 · nenhum localizador de documento numa linha cujo documento seja inglês.
  *        O localizador está na língua do documento que localiza, e é dele que
  *        recebe a marca: no dia em que houver um localizador dentro de um
@@ -254,6 +264,69 @@ function langDe(no) {
   return null;
 }
 
+/**
+ * OS NOMES DE ATRIBUTO DE UMA ETIQUETA DE ABERTURA, PELA ORDEM EM QUE ESTÃO.
+ *
+ * Tokenizador próprio, e é de propósito: `parse()` normaliza os atributos num
+ * mapa e **apaga a repetição em silêncio**, que é exactamente o defeito que L8
+ * procura. Uma régua que lesse o mapa dizia sempre zero.
+ */
+function atributosDaEtiqueta(tag) {
+  const nomes = [];
+  let i = 0;
+  /* saltar «<nome» */
+  while (i < tag.length && !/\s/.test(tag[i]) && tag[i] !== '>' && tag[i] !== '/') i++;
+  while (i < tag.length) {
+    while (i < tag.length && /\s/.test(tag[i])) i++;
+    if (i >= tag.length || tag[i] === '>' || tag[i] === '/') break;
+    const inicio = i;
+    while (i < tag.length && !/[\s=>/]/.test(tag[i])) i++;
+    const nome = tag.slice(inicio, i);
+    if (nome) nomes.push(nome.toLowerCase());
+    while (i < tag.length && /\s/.test(tag[i])) i++;
+    if (tag[i] === '=') {
+      i++;
+      while (i < tag.length && /\s/.test(tag[i])) i++;
+      const aspa = tag[i];
+      if (aspa === '"' || aspa === "'") {
+        i++;
+        while (i < tag.length && tag[i] !== aspa) i++;
+        i++;
+      } else {
+        while (i < tag.length && !/[\s>]/.test(tag[i])) i++;
+      }
+    }
+  }
+  return nomes;
+}
+
+/**
+ * Os elementos de um documento com um atributo repetido.
+ *
+ * O CONTEÚDO DE `<script>` E `<style>` SAI PRIMEIRO, e não é um detalhe: sem
+ * isso, `for(var i=0;i<b.length-1;i++)` dentro de um script parece a etiqueta
+ * `<b.length-1;i++)…` com «var» escrito duas vezes, e a régua acusa dez
+ * elementos que não existem em nenhuma página. Foi medido.
+ */
+function atributosRepetidos(html) {
+  const semCodigo = html.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1\s*>/gi, (m) =>
+    m.slice(0, m.indexOf('>') + 1),
+  );
+  const out = [];
+  const re = /<([A-Za-z][-\w:]*)((?:[^>"']|"[^"]*"|'[^']*')*)>/g;
+  let m;
+  while ((m = re.exec(semCodigo)) !== null) {
+    const vistos = new Set();
+    const dup = new Set();
+    for (const n of atributosDaEtiqueta(m[0])) {
+      if (vistos.has(n)) dup.add(n);
+      vistos.add(n);
+    }
+    if (dup.size) out.push({ tag: m[0].slice(0, 120), dup: [...dup] });
+  }
+  return out;
+}
+
 function paginasDe(dir) {
   const out = [];
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -282,8 +355,11 @@ const contas = {
   leis_en_em_transcricao: 0,
   estudos_pt_en: 0,
   estudos_pt_en_sem_marca: 0,
+  elementos_com_atributo_repetido: 0,
+  repetidos_em_documento_alojado: 0,
 };
 const achados = {
+  repetidos: new Map(),
   unidades: new Map(),
   titulos: new Map(),
   localizadores: new Map(),
@@ -309,9 +385,27 @@ for (const ficheiro of paginasDe(DIST)) {
    */
   const caminho = '/' + path.relative(DIST, ficheiro).split(path.sep).join('/');
   const rota = matchPath(caminho.replace(/index\.html$/, ''));
+  const cru = fs.readFileSync(ficheiro, 'utf8');
+  const rel0 = path.relative(RAIZ, ficheiro);
+
+  /* --- L8 · um atributo escrito duas vezes no mesmo elemento --- */
+  for (const r of atributosRepetidos(cru)) {
+    contas.elementos_com_atributo_repetido++;
+    if (rota?.key === 'documento') {
+      /* Num documento alojado tal como está, um atributo repetido é do
+         documento e não da casa: conta-se e imprime-se, e não fecha nada. */
+      contas.repetidos_em_documento_alojado++;
+      continue;
+    }
+    const chave = `${r.dup.join(', ')} · ${r.tag}`;
+    const x = achados.repetidos.get(chave) ?? { n: 0, onde: rel0 };
+    x.n++;
+    achados.repetidos.set(chave, x);
+  }
+
   if (rota?.key === 'documento') continue;
 
-  const root = parse(fs.readFileSync(ficheiro, 'utf8'));
+  const root = parse(cru);
   const html = root.querySelector('html');
   const lingua = html?.getAttribute('lang') ?? '';
   /* A edição, lida do documento e não do caminho: é o `lang` do `<html>` que o
@@ -437,6 +531,14 @@ for (const [texto, x] of achados.unidades) {
 for (const [chave, x] of achados.titulos) {
   erros.push(`título sem a marca da sua língua: ${chave} (${x.n} ocorrência(s), ex.: ${x.onde}).`);
 }
+for (const [chave, x] of achados.repetidos) {
+  erros.push(
+    `elemento com o mesmo atributo escrito duas vezes: ${chave}\n` +
+      `      (${x.n} ocorrência(s), ex.: ${x.onde}). O navegador fica com o primeiro e deita o ` +
+      `segundo fora, em silêncio: ou o gabarito acrescenta a marca a um elemento que já a tinha, ` +
+      `ou o elemento recebe o atributo estático e o calculado.`,
+  );
+}
 for (const [texto, x] of achados.localizadores) {
   erros.push(
     `localizador em português sem lang="pt-PT" na edição inglesa: «${texto}…» ` +
@@ -493,9 +595,18 @@ console.log(
       `${contas.localizadores_en_com_marca} com marca · ` +
       `leis em «en»: ${contas.leis_en_com_marca} com marca, ` +
       `${contas.leis_en_em_transcricao} dentro de transcrição do motor · ` +
-      `títulos de estudo portugueses em «en»: ${contas.estudos_pt_en}, todos com marca`,
+      `títulos de estudo portugueses em «en»: ${contas.estudos_pt_en}, todos com marca · ` +
+      `atributos repetidos: nenhum`,
   ),
 );
+if (contas.repetidos_em_documento_alojado > 0) {
+  console.log(
+    cinza(
+      `        ${contas.repetidos_em_documento_alojado} elemento(s) com atributo repetido dentro ` +
+        `de um documento de estudo alojado tal como está: é do documento, e não da casa.`,
+    ),
+  );
+}
 if (contas.leis_en_em_transcricao > 0) {
   console.log(
     cinza(
