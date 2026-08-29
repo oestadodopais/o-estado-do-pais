@@ -59,7 +59,7 @@
  * ---------------------------------------------------------------------------
  * Não entrou por ser um portão de gosto: entrou porque estava vermelha havia
  * dias e ninguém dava por isso. O feixe morria na primeira leitura de uma regra
- * que já não existia (`.movel-selo`), e por trás dessa havia mais nove — a peça
+ * que já não existia (`.movel-selo`), e por trás dessa havia mais nove: a peça
  * sem limiar, o valor provisório e o antetítulo que mudaram de página, o
  * marcador que passou de `span` a âncora, a banda das regiões que deixou de
  * render, o mapa de pontos que a Emenda 20 trocou por áreas, e um `@import`
@@ -146,7 +146,7 @@ for (const nome of FOLHAS) {
  * As folhas passaram a partir-se: `inicio.css` abre com `@import './mapa.css'`,
  * que é a língua do mapa partilhada com as páginas de distrito. Embutida tal
  * como está, essa linha é um PEDIDO PARA FORA dentro de um cartão que se tem de
- * bastar a si próprio, e a conferência do fim reprovava-a — nove dos vinte
+ * bastar a si próprio, e a conferência do fim reprovava-a, nove dos vinte
  * cartões, pela mesma linha. A folha importada entra no lugar do `@import`, com
  * o nome do ficheiro escrito ao lado para que quem desenha saiba de onde veio.
  *
@@ -360,8 +360,8 @@ const LARGURA_INVOLUCRO = daFolha('site', /\.wrap\s*\{[^}]*?max-width:\s*([^;]+)
  * ---------------------------------------------------------------------------
  * O MAPA NO TELEMÓVEL, E O SELO QUE JÁ NÃO EXISTE (I98, 29.08.2026)
  * ---------------------------------------------------------------------------
- * Estavam aqui três leituras de `.movel-selo` — largura, altura e a consulta de
- * meios que o mostrava —, e esta corrida morria na primeira delas desde que o
+ * Estavam aqui três leituras de `.movel-selo` (largura, altura e a consulta de
+ * meios que o mostrava), e esta corrida morria na primeira delas desde que o
  * seletor saiu da folha. Não era o feixe atrasado sobre uma regra legítima: o
  * seletor não existe em `src/styles/inicio.css`, não existe em `src/` nenhum, e
  * não existe em `dist/index.html`. Nada o usa, e uma leitura de uma regra que
@@ -560,7 +560,7 @@ function peca(rota, seletor, { indice = 0, filtro = null, raiz = null } = {}) {
  * A resposta é a que o cartão do selo já usava para o selo a tracejado: uma
  * lista de rotas candidatas, a primeira que tenha a peça, e o cartão a IMPRIMIR
  * de onde ela veio. Uma peça que desapareça de todas as candidatas continua a
- * parar a corrida, que é o comportamento certo — o que deixa de parar é uma peça
+ * parar a corrida, que é o comportamento certo; o que deixa de parar é uma peça
  * que apenas se mudou de casa.
  */
 /* As páginas onde uma peça do painel pode viver, pela ordem em que se procuram.
@@ -1462,8 +1462,8 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
    * Esta corrida contava `circle.mun` em `dist/index.html` e morria a zero. Não
    * era um defeito da página: a Emenda 20 trocou os 308 pontos pelas 29 unidades
    * da Carta, cada uma a porta da sua página, e o cartão continuava a retratar o
-   * mapa anterior. Os pontos não desapareceram do sítio — vivem no cartão
-   * localizador da página de um concelho, que é o que a Emenda 20d manda —, e é
+   * mapa anterior. Os pontos não desapareceram do sítio: vivem no cartão
+   * localizador da página de um concelho, que é o que a Emenda 20d manda, e é
    * de lá que a secção deles passa a sair.
    */
   const casaMapa = arvore('index.html');
@@ -1542,7 +1542,7 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   <section class="ds-bloco">
     <h2>O mapa inteiro, na primeira página</h2>
     <div class="ds-mostra ds-mostra-larga">${mapa}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/index.html</code> · ${unidades} unidades, todas com a mesma classe e o mesmo desenho de traço e enchimento (conferido nesta corrida), nenhuma destacada. Cada uma é uma ligação para a sua página — ${portas} portas para ${unidades} unidades —, e por baixo do mapa estão os ${nomes} nomes, um por unidade, que são a rede da Emenda 20c. Não há preenchimento de cobertura e não há capital: nem a do país, nem as de distrito.</p>
+    <p class="ds-nota"><code class="ds-mono">dist/index.html</code> · ${unidades} unidades, todas com a mesma classe e o mesmo desenho de traço e enchimento (conferido nesta corrida), nenhuma destacada. Cada uma é uma ligação para a sua página, ${portas} portas para ${unidades} unidades, e por baixo do mapa estão os ${nomes} nomes, um por unidade, que são a rede da Emenda 20c. Não há preenchimento de cobertura e não há capital: nem a do país, nem as de distrito.</p>
     <div class="ds-mostra">${linha}</div>
     <p class="ds-nota">A única linha por baixo do mapa, e é a da Emenda 17.</p>
   </section>
@@ -1563,13 +1563,13 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   <section class="ds-bloco">
     <h2>Um lugar escolhido é um anel</h2>
     <div class="ds-mostra ds-mostra-larga">${localizador}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/municipios/evora/index.html</code> · o cartão localizador, que é onde os pontos vivem desde a Emenda 20d: ${pontos} pontos e ${aneis} anel. Os dois desenhos têm campos diferentes — o dos pontos não guarda os polígonos —, e por isso são dois e não um. Na primeira página nenhum lugar vem escolhido; aqui o anel é posto na construção, porque a página é de um concelho.</p>
+    <p class="ds-nota"><code class="ds-mono">dist/municipios/evora/index.html</code> · o cartão localizador, que é onde os pontos vivem desde a Emenda 20d: ${pontos} pontos e ${aneis} anel. Os dois desenhos têm campos diferentes, porque o dos pontos não guarda os polígonos, e por isso são dois e não um. Na primeira página nenhum lugar vem escolhido; aqui o anel é posto na construção, porque a página é de um concelho.</p>
   </section>
 
   <section class="ds-bloco">
     <h2>O mapa no telemóvel, e o selo que saiu</h2>
     <p class="ds-nota">É o mesmo HTML das larguras de cima: o mapa não muda de marcação, muda de caixa. Dentro de <code class="ds-mono">${escapa(MAPA_MOVEL_MEDIA)}</code> a folha põe <code class="ds-mono">[data-inicio] .mapa-tela</code> a <code class="ds-mono">width: ${escapa(MAPA_MOVEL_LARGURA)}</code> com <code class="ds-mono">margin-inline: ${escapa(MAPA_MOVEL_MARGEM)}</code>, que é a goteira devolvida: a tela toma a largura da JANELA e não a da coluna, e as molduras e a lista dos nomes seguem-na. As duas medidas e a consulta são lidas de <code class="ds-mono">src/styles/inicio.css</code>.</p>
-    <p class="ds-nota">Até 27.08.2026 esta secção retratava outra coisa: <code class="ds-mono">.movel-selo</code>, o selo que a Emenda 18 punha no lugar do mapa por baixo de 640, quando o mapa era de pontos e nenhum ponto se tocava. A Emenda 20c devolveu o mapa ao telemóvel — «${escapa(EMENDA_20C)}» — e o selo saiu com a forma que o justificava. Esta corrida procura-o em <code class="ds-mono">dist/index.html</code> e em <code class="ds-mono">dist/en/index.html</code>, e pára se o encontrar.</p>
+    <p class="ds-nota">Até 27.08.2026 esta secção retratava outra coisa: <code class="ds-mono">.movel-selo</code>, o selo que a Emenda 18 punha no lugar do mapa por baixo de 640, quando o mapa era de pontos e nenhum ponto se tocava. A Emenda 20c devolveu o mapa ao telemóvel («${escapa(EMENDA_20C)}») e o selo saiu com a forma que o justificava. Esta corrida procura-o em <code class="ds-mono">dist/index.html</code> e em <code class="ds-mono">dist/en/index.html</code>, e pára se o encontrar.</p>
   </section>`;
 
   regista(
