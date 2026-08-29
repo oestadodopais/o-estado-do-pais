@@ -1,6 +1,27 @@
 /**
  * A RÉGUA DO ESTUDO TIPOGRÁFICO: as medidas 1 a 6 nas páginas reais do sítio.
  *
+ * SEGUNDA RONDA (ADENDA-2-segunda-ronda.md). Este ficheiro é o da primeira
+ * ronda corrigido, e não um ficheiro novo. O que mudou, e porquê:
+ *
+ *   · a medida 2 corre a 1× nas SETE larguras da rubrica, e não só a 390 e a
+ *     1280. A leitura cruzada apontou que a rubrica pede as sete e que a
+ *     primeira ronda só entregou duas;
+ *   · a medida 1 é lida no navegador com o detetor de `provas.mjs`, que se
+ *     recusa a dar um número quando o tipo pedido não pesou na composição. A
+ *     tabela da primeira ronda trazia `sxHeight / unitsPerEm` do ficheiro, que
+ *     é outra coisa: num tipo com eixo ótico a razão do ecrã muda com o corpo;
+ *   · a medida 4 mede também a 13,5 px, além dos 15 px da rubrica e do corpo
+ *     que a página herda;
+ *   · a medida 6 mede também o lugar do INSTRUMENTO, na ficha do aparelho da
+ *     linha do livro-razão, que é a tabela que essa página compõe em `--f-instr`;
+ *   · o motor e a versão ficam escritos no ficheiro de medidas, e o carimbo de
+ *     relógio sai: regenerar tem de dar o mesmo ficheiro.
+ *
+ * Os resultados da segunda ronda vão para `medidas-2/` e `capturas-2/`. Os da
+ * primeira ficam onde estão, intactos: foram o que a leitura cruzada leu, e
+ * apagá-los era apagar a prova de que a segunda ronda foi precisa.
+ *
  * Corre-se com a construção de uma combinação já feita em `dist/`:
  *
  *   TIPOS_ESTUDO=literata+bitter npx astro build
@@ -8,6 +29,9 @@
  *
  * O que faz, por esta ordem:
  *
+ *   0. corre TODAS as provas dos detetores (`provas.mjs`) e pára se alguma
+ *      falhar: nenhum número sai daqui sem que o detetor que o deu tenha visto
+ *      o seu vermelho;
  *   1. levanta um servidor estático sobre `dist/`, com `/tipos-estudo/` mapeado
  *      para `design/tipografia/tipos/`. É assim que as candidatas chegam ao
  *      navegador sem um único byte entrar em `public/tipos`;
@@ -16,12 +40,9 @@
  *      janela: a página é a mesma, o que muda é o ecrã, que é o que a rubrica
  *      pede;
  *   3. em cada célula tira a captura e lê as medidas 1, 4 e 6;
- *   4. a 1×, recorta o corpo da prosa e um bloco de algarismos, volta a abrir os
- *      PNG no navegador e passa os píxeis pelo `pixeis.mjs` (medidas 2 e 3).
- *
- * NENHUM DETETOR DIZ VERDE SEM TER VISTO O SEU VERMELHO. O `pixeis.mjs` planta
- * os seus; a medida 4 planta o dela aqui, em `provaDosTabulares`, com o mesmo
- * tipo medido duas vezes, uma com `tabular-nums` e outra sem.
+ *   4. a 1×, em cada uma das sete larguras, recorta o corpo da prosa e os blocos
+ *      de algarismos, volta a abrir os PNG no navegador e passa os píxeis pelo
+ *      `pixeis.mjs` (medida 2).
  */
 import { chromium } from 'playwright';
 import fs from 'node:fs';
@@ -29,12 +50,27 @@ import http from 'node:http';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { traçoMaisFino, abertura } from './pixeis.mjs';
+import {
+  exigeAsProvas, DETETOR_ALTURA_X, DETETOR_DIGITOS, DETETOR_LINHAS, DETETOR_TABELA,
+} from './provas.mjs';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
 const RAIZ = path.resolve(AQUI, '..', '..', '..');
 const DIST = path.join(RAIZ, 'dist');
 const TIPOS = path.join(RAIZ, 'design', 'tipografia', 'tipos');
-const CAPTURAS = path.join(RAIZ, 'design', 'tipografia', 'capturas');
+const CAPTURAS = path.join(RAIZ, 'design', 'tipografia', 'capturas-2');
+
+/**
+ * A TABELA DO INSTRUMENTO, e é uma medida e não uma escolha de gosto.
+ *
+ * A adenda pede a medida 6 «para o instrumento (uma tabela de linha do
+ * livro-razão)». A página `/livro-razao/…` não tem `<table>` nenhuma: o que
+ * tem é a ficha do aparelho, `dl.aparelho-ficha`, sete pares de rótulo e valor
+ * em que o rótulo é `--f-versal` e o VALOR é `--f-instr`. É a única tabela
+ * dessa página cuja altura muda quando o instrumento muda, e por isso é a que
+ * responde à pergunta.
+ */
+const TABELA_DO_INSTRUMENTO = '.aparelho-ficha';
 
 /** As cinco páginas da rubrica, e o nome curto com que entram nos ficheiros. */
 export const PAGINAS = [
@@ -130,7 +166,14 @@ function servidor() {
  * herda-se tudo o que ele herda, e medem-se as larguras de «0» a «9» com um
  * `Range`. É o que o leitor vê, e não uma reconstrução do que devia ver.
  */
-const DENTRO_DA_PAGINA = () => {
+const DENTRO_DA_PAGINA = (D) => {
+  /* OS DETETORES SÃO OS QUE LEVARAM O VERMELHO. Chegam aqui em texto, vindos de
+     `provas.mjs`, e não copiados: se o texto mudasse dum lado e não do outro, o
+     que corre nas páginas deixava de ser o que a prova aprovou. */
+  const alturaDeX = eval(D.alturaX);
+  const larguraDosDigitos = eval(D.digitos);
+  const contaLinhas = eval(D.linhas);
+  const leTabela = eval(D.tabela);
   const R = {};
   const raiz = getComputedStyle(document.documentElement);
   R.fichas = {
@@ -153,6 +196,24 @@ const DENTRO_DA_PAGINA = () => {
   paragrafos.sort((a, b) => b.textContent.length - a.textContent.length);
   const limpos = paragrafos.filter((p) => !p.querySelector('strong,b,em,i,a'));
   const prosa = limpos[0] || paragrafos[0] || document.body;
+
+  /**
+   * A POSIÇÃO EM QUE SE MEDE, E PORQUE TEM DE SER DEFINIDA.
+   *
+   * A régua percorre as sete larguras sem voltar a navegar, e a leitura de cada
+   * largura acabava por rolar a página para o alvo que mediu. A largura
+   * seguinte era portanto medida ONDE A ANTERIOR A TINHA DEIXADO, e a medida 6
+   * («linhas por ecrã») contava as linhas visíveis numa posição herdada. Duas
+   * corridas do mesmo programa podiam dar contagens diferentes, e deram: numa
+   * prova de regeneração, a primeira página a 1280 leu 11 linhas numa corrida e
+   * 13 noutra.
+   *
+   * Agora cada célula começa por pôr o parágrafo de prosa no meio do ecrã, e é
+   * aí que tudo se mede. É uma posição definida e é a certa para a pergunta: a
+   * densidade de leitura é quantas linhas de texto corrido cabem num ecrã onde
+   * se está a ler, e não quantas cabem por cima de um título.
+   */
+  if (prosa && prosa.scrollIntoView) prosa.scrollIntoView({ block: 'center' });
 
   /**
    * O ELEMENTO DE ALGARISMOS, e é uma FIGURA e não uma tabela inteira.
@@ -194,105 +255,77 @@ const DENTRO_DA_PAGINA = () => {
   const numerosTodos = folhasNum.slice(0, 24);
 
   /**
-   * Larguras de «0» a «9» dentro de um elemento, com um `Range`.
+   * MEDIDA 1 · a altura de x, LIDA NO NAVEGADOR, a 17 px, a 15 px e a 13,5 px.
    *
-   * `corpo` força o tamanho em píxeis. A rubrica pede a medida 4 A 15 PX, e a
-   * tabela que a página compõe não está a 15 px: está ao tamanho que a folha
-   * lhe deu, que na linha do livro-razão é 13,5. Mede-se as duas coisas, e cada
-   * uma diz o que é: a herdada é o que o leitor vê, a de 15 px é a da rubrica.
-   * A variância cresce com o quadrado do corpo, e comparar 13,5 com 15 entre
-   * famílias seria comparar tamanhos e chamar-lhe desenho.
+   * O detetor vem de `provas.mjs` e traz a guarda que lá levou o vermelho: se o
+   * primeiro nome da pilha não pesou na composição, a célula fica a `null` em
+   * vez de trazer a altura de x da Georgia com o nome de outra letra.
+   *
+   * Os três corpos, e a razão de serem três: 17 px é o da prosa na rubrica, 15
+   * px é o das tabelas na rubrica, e 13,5 px é o corpo que a adenda fixa para os
+   * algarismos. Num tipo com eixo ótico os três dão razões x/em diferentes, que
+   * é exatamente por isto que a rubrica manda ler no navegador.
    */
-  const larguraDosDigitos = (hospedeiro, forcarNormal, corpo) => {
-    if (!hospedeiro) return null;
-    const s = document.createElement('span');
-    s.style.whiteSpace = 'pre';
-    if (corpo) s.style.fontSize = corpo + 'px';
-    if (forcarNormal) s.style.fontVariantNumeric = 'normal';
-    hospedeiro.appendChild(s);
-    const larguras = [];
-    for (const d of '0123456789') {
-      s.textContent = d;
-      const r = document.createRange();
-      r.selectNodeContents(s);
-      larguras.push(+r.getBoundingClientRect().width.toFixed(4));
-    }
-    const cs = getComputedStyle(s);
-    const ficha = { fonte: cs.font, tamanho: cs.fontSize, variante: cs.fontVariantNumeric };
-    s.remove();
-    const media = larguras.reduce((a, b) => a + b, 0) / larguras.length;
-    const variancia = larguras.reduce((a, b) => a + (b - media) ** 2, 0) / larguras.length;
-    return { larguras, media: +media.toFixed(4), variancia: +variancia.toFixed(6), ficha };
-  };
-
-  /* MEDIDA 1 · a altura de x, do tipo carregado, a 17 px e a 15 px. */
-  const alturaDeX = (familia, corpo) => {
-    const c = document.createElement('canvas').getContext('2d');
-    c.font = `${corpo}px ${familia}`;
-    const m = c.measureText('x');
-    const mx = c.measureText('X');
-    return {
-      x: +(m.actualBoundingBoxAscent + Math.min(0, m.actualBoundingBoxDescent)).toFixed(4),
-      X: +mx.actualBoundingBoxAscent.toFixed(4),
-      largura_x: +m.width.toFixed(4),
-      fonte_pedida: c.font,
-    };
-  };
-
   R.medida1 = {
     prosa_17: alturaDeX(R.fichas.prosa, 17),
     prosa_15: alturaDeX(R.fichas.prosa, 15),
-    instr_15: alturaDeX(R.fichas.instr, 15),
+    prosa_13_5: alturaDeX(R.fichas.prosa, 13.5),
     instr_17: alturaDeX(R.fichas.instr, 17),
+    instr_15: alturaDeX(R.fichas.instr, 15),
+    instr_13_5: alturaDeX(R.fichas.instr, 13.5),
   };
 
-  /* MEDIDA 4 · os tabulares no caminho real, com o vermelho ao lado. */
+  /**
+   * MEDIDA 4 · os tabulares no caminho real, com o vermelho ao lado.
+   *
+   * `corpo` força o tamanho em píxeis. A rubrica pede a medida 4 A 15 PX, e a
+   * página não compõe a 15 px: compõe ao tamanho que a folha lhe deu. Medem-se
+   * três coisas, e cada uma diz o que é: a herdada é o que o leitor vê, a de 15
+   * px é a da rubrica, a de 13,5 px é a que a adenda fixa. A variância cresce
+   * com o quadrado do corpo, e comparar 13,5 com 15 entre famílias seria
+   * comparar tamanhos e chamar-lhe desenho.
+   */
   R.medida4 = numeros ? {
     seletor: numeros.tagName.toLowerCase() + (numeros.className ? '.' + String(numeros.className).split(/\s+/)[0] : ''),
     com_tabulares: larguraDosDigitos(numeros, false),
     vermelho_sem_tabulares: larguraDosDigitos(numeros, true),
     com_tabulares_15px: larguraDosDigitos(numeros, false, 15),
     vermelho_sem_tabulares_15px: larguraDosDigitos(numeros, true, 15),
+    com_tabulares_13_5px: larguraDosDigitos(numeros, false, 13.5),
+    vermelho_sem_tabulares_13_5px: larguraDosDigitos(numeros, true, 13.5),
   } : null;
 
-  /* MEDIDA 6 · linhas por ecrã e o que cabe nelas. */
-  const caixasDeLinha = (el) => {
-    const r = document.createRange();
-    r.selectNodeContents(el);
-    const rects = [...r.getClientRects()].filter((x) => x.height > 0 && x.width > 0);
-    const linhas = [];
-    for (const x of rects) {
-      const j = linhas.find((l) => Math.abs(l.top - x.top) < 1.5);
-      if (j) { j.largura += x.width; } else linhas.push({ top: x.top, largura: x.width });
-    }
-    return linhas;
-  };
-  const colunas = [...document.querySelectorAll('p')]
-    .filter((p) => p.textContent.trim().length > 120 && p.getClientRects().length);
-  let linhasNoEcra = 0, caracteresNoEcra = 0;
-  const alto = window.innerHeight;
-  for (const p of colunas) {
-    const cs = getComputedStyle(p);
-    const lh = parseFloat(cs.lineHeight);
-    const linhas = caixasDeLinha(p);
-    const texto = p.textContent.replace(/\s+/g, ' ').trim();
-    const porLinha = linhas.length ? texto.length / linhas.length : 0;
-    for (const l of linhas) {
-      if (l.top >= 0 && l.top + lh <= alto) { linhasNoEcra++; caracteresNoEcra += porLinha; }
-    }
-  }
-  const p0 = colunas[0];
+  /* MEDIDA 6 · a densidade de leitura da PROSA: linhas por ecrã e o que cabe
+     nelas, com o contador que levou o vermelho de um parágrafo maior do que a
+     janela. */
+  const conta = contaLinhas('p');
+  const p0 = [...document.querySelectorAll('p')]
+    .filter((p) => p.textContent.trim().length > 120 && p.getClientRects().length)[0];
   R.medida6 = p0 ? {
     janela: { largura: window.innerWidth, altura: window.innerHeight },
     corpo: getComputedStyle(p0).fontSize,
     entrelinha: getComputedStyle(p0).lineHeight,
-    linhas_no_ecra: linhasNoEcra,
-    caracteres_no_ecra: Math.round(caracteresNoEcra),
-    caracteres_por_linha: +(caixasDeLinha(p0).length
-      ? p0.textContent.replace(/\s+/g, ' ').trim().length / caixasDeLinha(p0).length
-      : 0).toFixed(2),
-    paragrafos_medidos: colunas.length,
+    linhas_no_ecra: conta.linhas_no_ecra,
+    linhas_totais: conta.linhas_totais,
+    caracteres_no_ecra: conta.caracteres_no_ecra,
+    caracteres_por_linha: conta.linhas_no_ecra
+      ? +(conta.caracteres_no_ecra / conta.linhas_no_ecra).toFixed(2) : null,
+    paragrafos_medidos: conta.paragrafos,
   } : null;
+
+  /**
+   * MEDIDA 6 · a densidade do INSTRUMENTO, na tabela da linha do livro-razão.
+   *
+   * Só a página da linha tem esta tabela, e nas outras a célula fica a `null`
+   * com a razão escrita. Não se substitui por outra: uma medida que só existe
+   * numa página mede-se nessa página ou não se mede.
+   */
+  const t = leTabela(D.tabelaDoInstrumento, window.innerHeight);
+  R.medida6_instrumento = t ? {
+    seletor: D.tabelaDoInstrumento,
+    janela: { largura: window.innerWidth, altura: window.innerHeight },
+    ...t,
+  } : { seletor: D.tabelaDoInstrumento, razao: 'esta página não compõe a ficha do aparelho' };
 
   /**
    * AS CAIXAS DOS RECORTES DE PÍXEIS, E PORQUE SÃO LINHAS E NÃO BLOCOS.
@@ -484,6 +517,12 @@ async function principal() {
   console.log(`servidor em 127.0.0.1:${porto}, dist=${DIST}`);
 
   const navegador = await chromium.launch();
+  /* A PORTA. Todos os detetores desta ronda veem o seu vermelho antes de a
+     régua escrever um número, e não só os das medidas 2 e 3 como na primeira
+     ronda. Se algum falhar, isto atira e nada é medido. */
+  await exigeAsProvas(navegador);
+  const versaoDoMotor = navegador.version();
+  console.log(`\nmotor das medidas: Chromium ${versaoDoMotor}\n`);
   const celulas = [];
   const destino = path.join(CAPTURAS, combinacao);
   fs.mkdirSync(destino, { recursive: true });
@@ -505,7 +544,11 @@ async function principal() {
         await pagina.setViewportSize({ width: w, height: alturaPara(w) });
         await pagina.evaluate(() => document.fonts.ready);
         await pagina.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))));
-        const lido = await pagina.evaluate(DENTRO_DA_PAGINA);
+        const lido = await pagina.evaluate(DENTRO_DA_PAGINA, {
+          alturaX: DETETOR_ALTURA_X, digitos: DETETOR_DIGITOS,
+          linhas: DETETOR_LINHAS, tabela: DETETOR_TABELA,
+          tabelaDoInstrumento: TABELA_DO_INSTRUMENTO,
+        });
         if (!escala) {
           escala = {
             papel: await luminancia(pagina, lido.fichas.papel),
@@ -516,18 +559,33 @@ async function principal() {
         const nome = `${pag.nome}-${w}-${dsf}x.png`;
         const capturar = !soMedidas && deveCapturar(pag.nome, w, dsf);
         if (capturar) {
+          /**
+           * A CAPTURA É DO TOPO DA PÁGINA, E NÃO DE ONDE A MEDIÇÃO A DEIXOU.
+           *
+           * A leitura de dentro da página rola os alvos para o meio do ecrã
+           * antes de lhes medir a caixa, e a posição em que fica depende do
+           * sítio onde a letra desta família calhou pôr esse alvo. Na primeira
+           * ronda o retrato era tirado nessa posição, e o resultado é que cada
+           * coluna da prancha mostrava um pedaço diferente da mesma página: uma
+           * comparação em que o que muda não é só a letra não é uma comparação.
+           * Repõe-se o topo, espera-se um par de quadros, e só então se retrata.
+           */
+          await pagina.evaluate(() => { window.scrollTo(0, 0); });
+          await pagina.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))));
           await pagina.screenshot({ path: path.join(destino, nome), animations: 'disabled' });
         }
         celulas.push({
           combinacao, pagina: pag.nome, rota: pag.rota, largura: w, densidade: dsf,
-          captura: capturar ? `capturas/${combinacao}/${nome}` : null,
+          captura: capturar ? `capturas-2/${combinacao}/${nome}` : null,
           medida1: lido.medida1, medida4: lido.medida4, medida6: lido.medida6,
+          medida6_instrumento: lido.medida6_instrumento,
           fichas: lido.fichas,
         });
 
-        /* MEDIDA 2 · só a 1×, que é o que a rubrica pede, e nas larguras
-           que as pranchas usam. */
-        if (dsf === 1 && (w === 390 || w === 1280)) {
+        /* MEDIDA 2 · a 1×, que é a densidade que a rubrica pede, e nas SETE
+           larguras dela. A primeira ronda corria só a 390 e a 1280, e a leitura
+           cruzada apontou-o: a rubrica escreve sete larguras e sete são. */
+        if (dsf === 1) {
           for (const qual of ['prosa', 'numeros']) {
             /* Rola-se outra vez para o alvo desta volta: as duas caixas vieram
                da mesma leitura, mas cada uma foi medida com o seu elemento no
@@ -596,7 +654,7 @@ async function principal() {
               if (!imgs.length) continue;
               recortesDePixeis.push({
                 combinacao, pagina: pag.nome, largura: w, alvo: qual,
-                recorte: `capturas/${combinacao}/recorte-${pag.nome}-${w}-numeros.png`,
+                recorte: `capturas-2/${combinacao}/recorte-${pag.nome}-${w}-numeros.png`,
                 caixa: caixas[0],
                 ...traçoMaisFino(imgs, escala),
               });
@@ -611,7 +669,7 @@ async function principal() {
             const img = await pixeisDoPng(pagina, buf);
             recortesDePixeis.push({
               combinacao, pagina: pag.nome, largura: w, alvo: qual,
-              recorte: `capturas/${combinacao}/${nomeRecorte}`,
+              recorte: `capturas-2/${combinacao}/${nomeRecorte}`,
               caixa: cx,
               ...traçoMaisFino(img, escala),
             });
@@ -659,7 +717,15 @@ async function principal() {
   const prova = provaDosTabulares(celulas);
   const fora = {
     combinacao,
-    quando: new Date().toISOString(),
+    /* O MOTOR E A VERSÃO, ESCRITOS. A leitura cruzada apontou que a primeira
+       ronda não os declarava: tudo o que aqui está é este Chromium, e uma
+       decisão que dependa do caminho tem de o confirmar noutros motores.
+       Não há carimbo de relógio neste ficheiro de propósito: regenerar com a
+       mesma construção tem de dar o mesmo ficheiro, byte a byte. */
+    motor: { nome: 'Chromium (Playwright)', versao: versaoDoMotor, plataforma: process.platform },
+    ronda: 2,
+    rubrica: 'design/tipografia/RUBRICA.md',
+    adenda: 'design/tipografia/ADENDA-2-segunda-ronda.md',
     fichas,
     escala_de_tinta: escala,
     prova_do_detetor_dos_tabulares: prova,
@@ -668,7 +734,7 @@ async function principal() {
     medida2: recortesDePixeis,
     celulas,
   };
-  const ficheiro = path.join(RAIZ, 'design', 'tipografia', 'medidas', `${combinacao}.json`);
+  const ficheiro = path.join(RAIZ, 'design', 'tipografia', 'medidas-2', `${combinacao}.json`);
   fs.mkdirSync(path.dirname(ficheiro), { recursive: true });
   fs.writeFileSync(ficheiro, JSON.stringify(fora, null, 2) + '\n');
   console.log(`\n${combinacao}: ${celulas.length} células, ${recortesDePixeis.length} recortes de píxeis`);
