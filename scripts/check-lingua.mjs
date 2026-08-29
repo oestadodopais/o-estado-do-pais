@@ -33,20 +33,26 @@
  *   L2b · todo o `name` (o rótulo com que a fonte imprime a figura) tem língua
  *        declarada;
  *   L2c · todo o `source` (o nome do organismo que publica) tem língua
- *        declarada. São dezassete valores e um deles é o marcador, que não
- *        entra: 930 linhas só na DGAL, e um nome de organismo sem marca é lido
- *        com a fonética errada em toda a edição inglesa;
+ *        declarada, e declarada «pt» ou «en» e mais nada. São dezassete valores
+ *        e um deles é o marcador, que não entra: 930 linhas só na DGAL, e um
+ *        nome de organismo sem marca é lido com a fonética errada em toda a
+ *        edição inglesa;
  *   L2d · toda a `document.edition` tem língua declarada, e aqui a declaração
- *        tem três respostas: «pt», «en» e `null` para a que não está em língua
- *        nenhuma. Uma edição em falta fecha a construção; uma declarada `null`
- *        está decidida e não leva marca;
+ *        tem três respostas e só três: «pt», «en» e `null` para a que não está
+ *        em língua nenhuma. Uma edição em falta fecha a construção; uma
+ *        declarada `null` está decidida e não leva marca; uma declarada com
+ *        outra coisa qualquer fecha a construção também, porque a casa só sabe
+ *        render aquelas três;
  *   L3 · em `dist/en`, nenhuma unidade em português sem `lang="pt-PT"`;
  *   L4 · nas duas edições, nenhum título de documento na língua errada e sem a
  *        marca da sua;
- *   L4d · nas duas edições, nenhum nome de organismo na língua errada e sem a
- *        marca da sua;
- *   L4e · nas duas edições, nenhuma edição de documento na língua errada e sem
- *        a marca da sua;
+ *   L4d · nas duas edições, a língua efectiva de cada nome de organismo é a que
+ *        a tabela declara. **Nos dois sentidos**: a marca que falta e a marca a
+ *        mais são o mesmo defeito visto de dois lados, e as duas mandam ler a
+ *        cadeia na língua errada;
+ *   L4e · o mesmo para cada edição de documento, com o caso que só ela tem: uma
+ *        edição sem língua não leva marca nenhuma, e uma marca posta num código
+ *        de série é uma afirmação falsa sobre a cadeia;
  *   L5 · em `dist/en`, nenhum nome de lei portuguesa em prosa da casa sem a
  *        marca. Os nomes que aparecem DENTRO de um texto transcrito — um campo
  *        do livro-razão (`data-linha-campo`), uma nota do registo da agenda
@@ -95,6 +101,15 @@
  *   · `OEDP_LEDGER_DIR` — um livro-razão de mentira, com uma unidade inventada
  *     ou um título novo, para ver L1 e L2 vermelhas;
  *   · `OEDP_DIST` — uma cópia de `dist/` com uma marca tirada, para ver L3 a L6.
+ *
+ * As conferências dos dois sentidos veem-se na mesma cópia, e são cinco casos:
+ * a marca posta onde não devia (no Eurostat numa página inglesa, num organismo
+ * português numa página portuguesa, num código de série que não tem língua) e a
+ * varredura esvaziada (todo o `source` ou toda a edição tirados da cópia, para
+ * ver os mínimos positivos de L4d e L4e). O valor de tabela fora de «pt», «en» e
+ * «null» prova-se na própria tabela, porque ela é importada e não tem porta de
+ * ambiente: planta-se, corre-se, repõe-se, e a reposição confere-se pelo sha256
+ * e pelo diff antes de qualquer construção.
  *
  * Uso:  node scripts/check-lingua.mjs
  */
@@ -271,6 +286,17 @@ for (const f of Object.keys(LINGUA_DAS_FONTES)) {
         `livro-razão traz. A tabela declara o que existe.`,
     );
   }
+  /* E O VALOR TEM DE SER UM DOS DOIS. Uma língua que a casa não sabe render sai
+     de `linguaDaFonte()` como uma marca inventada, ou não sai de todo: nos dois
+     casos a página fica errada e a régua ficava calada. */
+  const v = LINGUA_DAS_FONTES[f];
+  if (v !== 'pt' && v !== 'en') {
+    erros.push(
+      `o organismo «${f.slice(0, 90)}» está declarado «${String(v)}», e um organismo só pode ` +
+        `estar declarado «pt» ou «en». Um nome de organismo está sempre numa língua: não há aqui ` +
+        `o «sem língua» que as edições têm.`,
+    );
+  }
 }
 
 /* ==================================================================== L2d · */
@@ -300,6 +326,14 @@ for (const e of Object.keys(LINGUA_DAS_EDICOES)) {
     erros.push(
       `a declaração de língua nomeia a edição «${e.slice(0, 90)}», que nenhuma linha do ` +
         `livro-razão traz. A tabela declara o que existe.`,
+    );
+  }
+  const v = LINGUA_DAS_EDICOES[e];
+  if (v !== 'pt' && v !== 'en' && v !== null) {
+    erros.push(
+      `a edição «${e.slice(0, 90)}» está declarada «${String(v)}», e uma edição só pode estar ` +
+        `declarada «pt», «en» ou «null». São as três respostas que a casa sabe render; uma quarta ` +
+        `sai desta tabela como uma marca que ninguém escreveu.`,
     );
   }
 }
@@ -376,6 +410,53 @@ function decodeEntities(s) {
 }
 
 const norm = (s) => decodeEntities(String(s)).replace(/\s+/g, ' ').trim();
+
+/**
+ * ---------------------------------------------------------------------------
+ * A REGRA DA MARCA É NOS DOIS SENTIDOS (leitura cruzada do Codex, 29.08.2026)
+ * ---------------------------------------------------------------------------
+ * A primeira versão de L4d e L4e só sabia exigir a marca que falta: quando a
+ * tabela dizia que a cadeia estava na língua da página, ou que não estava em
+ * língua nenhuma, a conferência passava adiante. Assim, `lang="pt-PT"` posto no
+ * Eurostat numa página inglesa, `lang="en"` posto num organismo português numa
+ * página portuguesa, e qualquer marca posta num código como `edat_lfse_14`
+ * passavam todos.
+ *
+ * **A marca que falta e a marca a mais são o mesmo defeito visto dos dois
+ * lados**, e os dois mandam um leitor de ecrã ler a cadeia na língua errada. O
+ * que a régua compara passa a ser a LÍNGUA EFECTIVA do elemento contra a que a
+ * tabela manda, e não a presença de um atributo.
+ *
+ * A língua efectiva que se espera é uma só, e sai da declaração:
+ *
+ *   · declarada `pt`   → `pt-PT`, venha ela do elemento ou da página;
+ *   · declarada `en`   → `en`, o mesmo;
+ *   · declarada `null` → a língua da PÁGINA, e sem atributo próprio nenhum: uma
+ *     cadeia que não está em língua nenhuma não ganha uma.
+ */
+function efetivaEsperada(declarada, linguaDaPagina) {
+  if (declarada === 'pt') return 'pt-PT';
+  if (declarada === 'en') return 'en';
+  return linguaDaPagina;
+}
+
+/**
+ * O motivo de uma marca errada, dito pelo que ele é e não por «sem marca».
+ *
+ * São três casos e a mensagem separa-os, porque a correcção de cada um é
+ * diferente: falta a marca, está lá a marca de outra língua, ou está lá uma
+ * marca onde a cadeia já estava na língua da página.
+ */
+function motivo(efetiva, esperada, declarada, langDaPagina) {
+  if (declarada !== langDaPagina && efetiva !== esperada && (efetiva === 'pt-PT' || efetiva === 'en')) {
+    /* Herdou a página, ou levou a marca errada. Distinguem-se pelo que se leu. */
+    return `esperava lang="${esperada}" e a língua efectiva é "${efetiva}"`;
+  }
+  if (declarada === langDaPagina) {
+    return `marca a mais: está na língua da página e a língua efectiva é "${efetiva}"`;
+  }
+  return `esperava lang="${esperada}" e a língua efectiva é "${efetiva}"`;
+}
 
 /** A língua efectiva de um nó: o `lang` do ancestral mais próximo que o tenha. */
 function langDe(no) {
@@ -475,13 +556,17 @@ const contas = {
   rotulos_sem_marca: 0,
   fontes: 0,
   fontes_a_marcar: 0,
+  fontes_a_marcar_em_pt: 0,
+  fontes_a_marcar_em_en: 0,
   fontes_com_marca: 0,
-  fontes_sem_marca: 0,
+  fontes_erradas: 0,
   edicoes: 0,
   edicoes_a_marcar: 0,
+  edicoes_a_marcar_em_pt: 0,
+  edicoes_a_marcar_em_en: 0,
   edicoes_com_marca: 0,
-  edicoes_sem_marca: 0,
   edicoes_sem_lingua: 0,
+  edicoes_erradas: 0,
   localizadores: 0,
   localizadores_en_com_marca: 0,
   localizadores_en_sem_marca: 0,
@@ -606,14 +691,23 @@ for (const ficheiro of paginasDe(DIST)) {
     const texto = norm(el.text);
     if (texto === POR_VERIFICAR) continue;
     contas.fontes++;
-    const esperada = linguaDaFonte(texto, lang);
-    if (esperada === null) continue;
-    contas.fontes_a_marcar++;
-    if (langDe(el) === esperada) contas.fontes_com_marca++;
-    else {
-      contas.fontes_sem_marca++;
-      anota(achados.fontes, `${esperada} · ${texto}`, rel);
+    if (!Object.prototype.hasOwnProperty.call(LINGUA_DAS_FONTES, texto)) continue;
+    const declarada = LINGUA_DAS_FONTES[texto];
+    const efetiva = efetivaEsperada(declarada, lingua);
+    if (declarada !== lang) {
+      contas.fontes_a_marcar++;
+      contas[lang === 'pt' ? 'fontes_a_marcar_em_pt' : 'fontes_a_marcar_em_en']++;
     }
+    if (langDe(el) === efetiva) {
+      if (declarada !== lang) contas.fontes_com_marca++;
+      continue;
+    }
+    contas.fontes_erradas++;
+    anota(
+      achados.fontes,
+      `${motivo(langDe(el), efetiva, declarada, lang)} · «${texto}» (declarado ${declarada})`,
+      rel,
+    );
   }
 
   /* --- L4e · a edição do documento, nas duas edições (I97) --- */
@@ -621,21 +715,46 @@ for (const ficheiro of paginasDe(DIST)) {
     const texto = norm(el.text);
     if (texto === POR_VERIFICAR) continue;
     contas.edicoes++;
-    const esperada = linguaDaEdicao(texto, lang);
-    if (esperada === null) {
-      /* Ou é a língua da página, ou a edição não tem língua nenhuma. As que não
-         têm contam-se à parte: um zero sobre elas é um zero que não prova nada,
-         e um dia alguém há de perguntar quantas são. */
-      if (!Object.prototype.hasOwnProperty.call(LINGUA_DAS_EDICOES, texto)) continue;
-      if (LINGUA_DAS_EDICOES[texto] === null) contas.edicoes_sem_lingua++;
+    if (!Object.prototype.hasOwnProperty.call(LINGUA_DAS_EDICOES, texto)) continue;
+    const declarada = LINGUA_DAS_EDICOES[texto];
+
+    /* UMA EDIÇÃO SEM LÍNGUA NÃO LEVA MARCA NENHUMA, e é aqui que a conferência
+       recusa a marca a mais: um ano, uma data ou um código de série herdam a
+       língua da página e nada mais. Uma marca própria neles é uma afirmação
+       falsa sobre a cadeia, e um ancestral que lhes imponha outra língua é a
+       mesma falsidade escrita mais acima. */
+    if (declarada === null) {
+      contas.edicoes_sem_lingua++;
+      const propria = el.getAttribute('lang') ?? null;
+      if (propria !== null) {
+        contas.edicoes_erradas++;
+        anota(achados.edicoes, `marca a mais (lang="${propria}") · «${texto}» (sem língua)`, rel);
+      } else if (langDe(el) !== lingua) {
+        contas.edicoes_erradas++;
+        anota(
+          achados.edicoes,
+          `um ancestral impõe lang="${langDe(el)}" · «${texto}» (sem língua)`,
+          rel,
+        );
+      }
       continue;
     }
-    contas.edicoes_a_marcar++;
-    if (langDe(el) === esperada) contas.edicoes_com_marca++;
-    else {
-      contas.edicoes_sem_marca++;
-      anota(achados.edicoes, `${esperada} · ${texto}`, rel);
+
+    const efetiva = efetivaEsperada(declarada, lingua);
+    if (declarada !== lang) {
+      contas.edicoes_a_marcar++;
+      contas[lang === 'pt' ? 'edicoes_a_marcar_em_pt' : 'edicoes_a_marcar_em_en']++;
     }
+    if (langDe(el) === efetiva) {
+      if (declarada !== lang) contas.edicoes_com_marca++;
+      continue;
+    }
+    contas.edicoes_erradas++;
+    anota(
+      achados.edicoes,
+      `${motivo(langDe(el), efetiva, declarada, lang)} · «${texto}» (declarado ${declarada})`,
+      rel,
+    );
   }
 
   /* --- L4b · o localizador, que fala a língua do seu documento --- */
@@ -754,12 +873,12 @@ for (const [chave, x] of achados.rotulos) {
 }
 for (const [chave, x] of achados.fontes) {
   erros.push(
-    `nome de organismo sem a marca da sua língua: ${chave} (${x.n} ocorrência(s), ex.: ${x.onde}).`,
+    `nome de organismo com a língua errada: ${chave} (${x.n} ocorrência(s), ex.: ${x.onde}).`,
   );
 }
 for (const [chave, x] of achados.edicoes) {
   erros.push(
-    `edição de documento sem a marca da sua língua: ${chave} (${x.n} ocorrência(s), ex.: ${x.onde}).`,
+    `edição de documento com a língua errada: ${chave} (${x.n} ocorrência(s), ex.: ${x.onde}).`,
   );
 }
 for (const [chave, x] of achados.repetidos) {
@@ -795,6 +914,75 @@ for (const [texto, x] of achados.estudos) {
     `título de estudo português sem lang="pt-PT" na edição inglesa: «${texto}» ` +
       `(${x.n} ocorrência(s), ex.: ${x.onde}).`,
   );
+}
+
+/* ---------------------------------------------------------------------------
+ * OS POSITIVOS CONHECIDOS DE L4d E L4e (leitura cruzada do Codex, 29.08.2026)
+ * ---------------------------------------------------------------------------
+ * As duas conferências passavam em VAZIO. A única guarda era a global das
+ * páginas lidas, e por isso tirar todo o `source` rendido, ou toda a edição,
+ * deixava-as verdes a zero: um zero de uma varredura que não encontrou o que
+ * procura não é a mesma coisa que um zero de uma varredura que encontrou tudo
+ * certo, e as duas imprimiam-se igual.
+ *
+ * Cada uma passa a exigir um MÍNIMO POSITIVO, e o mínimo não é um número
+ * escrito: sai da própria tabela. Se a tabela declara um organismo português,
+ * então a edição inglesa tem de render pelo menos um organismo de língua
+ * contrária, porque as páginas do livro-razão constroem-se nas duas edições; e
+ * ao contrário. O mesmo para as edições de documento, mais o caso que só elas
+ * têm: se a tabela declara uma edição sem língua, a varredura tem de ter visto
+ * pelo menos uma.
+ * ------------------------------------------------------------------------- */
+const valoresDasFontes = Object.values(LINGUA_DAS_FONTES);
+const valoresDasEdicoes = Object.values(LINGUA_DAS_EDICOES);
+
+const positivos = [
+  {
+    quando: valoresDasFontes.includes('pt'),
+    conta: contas.fontes_a_marcar_em_en,
+    o: 'organismo de língua contrária em `dist/en`',
+    porque:
+      'a tabela declara pelo menos um organismo português, e as páginas do livro-razão ' +
+      'constroem-se nas duas edições: um deles tem de se render numa página inglesa. Zero aqui ' +
+      'quer dizer que L4d não olhou para nada, e o verde dela não prova coisa nenhuma.',
+  },
+  {
+    quando: valoresDasFontes.includes('en'),
+    conta: contas.fontes_a_marcar_em_pt,
+    o: 'organismo de língua contrária em `dist/pt`',
+    porque:
+      'a tabela declara pelo menos um organismo inglês, e ele tem de se render numa página ' +
+      'portuguesa. Zero aqui quer dizer que L4d não olhou para nada desse lado.',
+  },
+  {
+    quando: valoresDasEdicoes.includes('pt'),
+    conta: contas.edicoes_a_marcar_em_en,
+    o: 'caso de edição de língua contrária em `dist/en`',
+    porque:
+      'a tabela declara pelo menos uma edição portuguesa, e ela tem de se render numa página ' +
+      'inglesa. Zero aqui quer dizer que L4e não olhou para nada.',
+  },
+  {
+    quando: valoresDasEdicoes.includes('en'),
+    conta: contas.edicoes_a_marcar_em_pt,
+    o: 'caso de edição de língua contrária em `dist/pt`',
+    porque:
+      'a tabela declara pelo menos uma edição inglesa, e ela tem de se render numa página ' +
+      'portuguesa.',
+  },
+  {
+    quando: valoresDasEdicoes.includes(null),
+    conta: contas.edicoes_sem_lingua,
+    o: 'caso de edição sem língua nenhuma, em qualquer das duas edições',
+    porque:
+      'a tabela declara pelo menos uma edição sem língua, e é sobre essas que L4e recusa a marca ' +
+      'a mais. Sem nenhuma vista, essa metade da conferência não correu.',
+  },
+];
+for (const pos of positivos) {
+  if (!pos.quando) continue;
+  if (pos.conta > 0) continue;
+  erros.push(`a varredura não viu um único ${pos.o}.\n      ${pos.porque}`);
 }
 
 /* O positivo conhecido da varredura: se nenhuma unidade traduzida se rendeu, a
@@ -842,9 +1030,13 @@ console.log(
       `todas com marca) · títulos com marca de língua: ${contas.titulos_com_marca} de ` +
       `${contas.titulos} rendidos · rótulos da fonte com marca de língua: ` +
       `${contas.rotulos_com_marca} de ${contas.rotulos} rendidos · organismos rendidos: ` +
-      `${contas.fontes} (${contas.fontes_a_marcar} a marcar, ${contas.fontes_com_marca} com marca) · ` +
-      `edições rendidas: ${contas.edicoes} (${contas.edicoes_a_marcar} a marcar, ` +
-      `${contas.edicoes_com_marca} com marca, ${contas.edicoes_sem_lingua} sem língua nenhuma) · ` +
+      `${contas.fontes} (${contas.fontes_a_marcar} de língua contrária: ` +
+      `${contas.fontes_a_marcar_em_en} em «en» e ${contas.fontes_a_marcar_em_pt} em «pt», ` +
+      `${contas.fontes_com_marca} com a marca certa) · ` +
+      `edições rendidas: ${contas.edicoes} (${contas.edicoes_a_marcar} de língua contrária: ` +
+      `${contas.edicoes_a_marcar_em_en} em «en» e ${contas.edicoes_a_marcar_em_pt} em «pt», ` +
+      `${contas.edicoes_com_marca} com a marca certa, ${contas.edicoes_sem_lingua} sem língua ` +
+      `nenhuma e sem marca) · ` +
       `localizadores em «en»: ` +
       `${contas.localizadores_en_com_marca} com marca · ` +
       `leis em «en»: ${contas.leis_en_com_marca} com marca, ` +
