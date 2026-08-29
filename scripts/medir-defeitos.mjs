@@ -42,6 +42,11 @@ import { parse, NodeType } from 'node-html-parser';
 
 import { loadClaims } from '../src/lib/ledger.mjs';
 import { matchPath, routePath } from '../src/lib/routes.mjs';
+/* Os dois ficheiros de dados que podem sustentar um `data-nome`. A régua lê-os
+   para conferir que o texto marcado é o que eles publicam: ver a razão escrita
+   ao lado de `NOME_DECLARADO`. */
+import { AREAS } from '../src/data/areas.mjs';
+import { REGIOES } from '../src/data/regioes.mjs';
 import { leMarcadores, analisa, leInventario, FICHEIRO_DOS_MARCADORES } from './voz.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -402,6 +407,66 @@ const COBERTURA_DECLARADA = '[data-cobertura]';
  */
 const LUGAR_DECLARADO = '[data-lugar]';
 
+/**
+ * ---------------------------------------------------------------------------
+ * O NOME DE UMA COISA DE UM FICHEIRO DE DADOS TAMBÉM NÃO É UMA FRASE DA CASA
+ * ---------------------------------------------------------------------------
+ * `data-nome` é a marca IRMÃ de `data-lugar`, e entra a 29.08.2026 com a dívida
+ * de forma que o bloco das áreas de governo nomeou duas vezes sem a pagar.
+ *
+ * O PROBLEMA, MEDIDO. O nome de cada área de governo custava duas linhas do
+ * inventário (uma por edição) e a descrição do `<head>` composta com ele custava
+ * outras duas. Com quatro áreas eram dezasseis linhas; com nove, trinta e seis;
+ * com as dezasseis do Governo seriam sessenta e quatro. Isso não é um inventário
+ * das frases da casa: é a lista dos ministérios escrita outra vez dentro dele.
+ * `data-lugar` não servia, e por uma razão que está escrita na marca: uma área de
+ * governo não é um lugar.
+ *
+ * O QUE ESTA MARCA DIZ. «Este texto é o nome de uma coisa de um ficheiro de
+ * dados, e não prosa que a casa escreveu.» O valor do atributo nomeia o FICHEIRO
+ * de onde o nome vem, e é isso que a torna conferível.
+ *
+ * A REGRA, E É ESTREITA DE PROPÓSITO. Só um nome que venha de um ficheiro de
+ * dados com fonte declarada a pode levar. Hoje são dois, e cada um traz a sua
+ * fonte escrita: `src/data/areas.mjs` (as páginas do Governo, no campo
+ * `FONTE_DOS_NOMES`, com a data em que foram lidas) e `src/data/regioes.mjs` (a
+ * classificação NUTS 2024, com o código de cada região ao lado do nome). Um
+ * `data-nome` com outro valor fecha a construção, e um `data-nome` cujo texto não
+ * seja, carácter a carácter, um nome daquele ficheiro fecha a construção
+ * também. **É a diferença entre esta marca e a dos lugares**: `data-lugar`
+ * exclui e não confere, e por isso um erro de digitação num nome sai do
+ * inventário sem que ninguém o veja. Aqui não sai.
+ *
+ * A DESCRIÇÃO DO `<head>` LEVA A MESMA SUBSTITUIÇÃO que a dos lugares, e pela
+ * mesma razão: uma descrição composta com o nome conta-se uma vez, com `<nome>`
+ * no lugar dele, e não uma por área.
+ *
+ * O QUE ESTA MARCA NÃO É. Não é uma dispensa da declaração para tudo o que um
+ * ficheiro de dados guarda: marca o NOME de uma entrada, e nada mais. Uma frase
+ * que a casa escreveu sobre uma área continua a ser prosa da casa, viva no
+ * ficheiro de dados ou não.
+ *
+ * AS REGIÕES CONTINUAM EM `data-lugar`, e não é um descuido: uma região NUTS II
+ * é um lugar, a descrição da página de cada uma já se conta com `<lugar>` lá
+ * dentro, e trocar a marca mudava o texto de quatro linhas do inventário sem
+ * mudar o que elas dizem. O ficheiro fica na lista das fontes desta marca porque
+ * a regra é sobre que ficheiros a podem sustentar, e a medição diz quantas vezes
+ * cada fonte se exerce, para que uma fonte por exercer não fique em silêncio.
+ */
+const NOME_DECLARADO = '[data-nome]';
+/** As fontes que podem sustentar um `data-nome`, e os nomes que cada uma publica. */
+const NOMES_POR_FONTE = {
+  areas: new Set(AREAS.flatMap((a) => Object.values(a.nome ?? {}))),
+  regioes: new Set(REGIOES.flatMap((r) => Object.values(r.nome ?? {}))),
+};
+/* A CONFERÊNCIA DE `data-nome`, e é o que distingue esta marca da dos lugares.
+   Cada elemento marcado diz de que ficheiro vem o nome, e a régua confere que o
+   texto rendido é, carácter a carácter, um nome daquele ficheiro. Os achados
+   fecham a construção em `check-voz.mjs`; a contagem por fonte sai na medição
+   para que uma fonte declarada e nunca exercida não fique em silêncio. */
+const nomesPorFonte = Object.fromEntries(Object.keys(NOMES_POR_FONTE).map((f) => [f, 0]));
+const nomesForaDaFonte = [];
+
 /** A lista declarada: texto normalizado → classe. A leitura vive em `voz.mjs`,
     porque o portão da voz lê a mesma tabela e a terceira coluna dela. */
 const INVENTARIO = leInventario(RAIZ);
@@ -461,7 +526,15 @@ function textoForaDasOrigens(no, marcados) {
 function frasesDaVoz(root) {
   const out = [];
   const DECLARADO =
-    ORIGEM_DECLARADA + ',' + MEDIDA_DECLARADA + ',' + COBERTURA_DECLARADA + ',' + LUGAR_DECLARADO;
+    ORIGEM_DECLARADA +
+    ',' +
+    MEDIDA_DECLARADA +
+    ',' +
+    COBERTURA_DECLARADA +
+    ',' +
+    LUGAR_DECLARADO +
+    ',' +
+    NOME_DECLARADO;
   const marcados = new Set();
   for (const el of root.querySelectorAll(DECLARADO)) marcados.add(el);
   for (const el of root.querySelectorAll(BLOCOS_DA_VOZ)) {
@@ -477,7 +550,15 @@ function frasesDaCasa(root) {
   const out = [];
   const marcados = new Set();
   const DECLARADO =
-    ORIGEM_DECLARADA + ',' + MEDIDA_DECLARADA + ',' + COBERTURA_DECLARADA + ',' + LUGAR_DECLARADO;
+    ORIGEM_DECLARADA +
+    ',' +
+    MEDIDA_DECLARADA +
+    ',' +
+    COBERTURA_DECLARADA +
+    ',' +
+    LUGAR_DECLARADO +
+    ',' +
+    NOME_DECLARADO;
   for (const el of root.querySelectorAll(DECLARADO)) {
     marcados.add(el);
     for (const d of el.querySelectorAll('*')) marcados.add(d);
@@ -677,6 +758,13 @@ for (const file of ficheiros) {
       const nome = norm(texto(el));
       if (nome) descricao = norm(descricao.split(nome).join('<lugar>'));
     }
+    /* E o nome de uma coisa de um ficheiro de dados sai da descrição pela mesma
+       regra, com a marca `<nome>` no lugar dele: a descrição de uma página de
+       área é o nome da área, e conta-se uma vez e não uma por área. */
+    for (const el of root.querySelectorAll(NOME_DECLARADO)) {
+      const nome = norm(texto(el));
+      if (nome) descricao = norm(descricao.split(nome).join('<nome>'));
+    }
     if (descricao) conta.set(descricao, (conta.get(descricao) ?? 0) + 1);
     frasesPorRota.set(chave, conta);
     const daVoz = frasesDaVozPorRota.get(chave) ?? new Set();
@@ -693,6 +781,32 @@ for (const file of ficheiros) {
      não «esta classe existe onde eu meço». */
   for (const c of CLASSES_DE_ROTULO) {
     rotulosEmSpan[c] += root.querySelectorAll(`span.${c}`).length;
+  }
+
+  /* E `data-nome` confere-se em TODAS as páginas, pela mesma razão: uma marca que
+     dispensa um texto do inventário tem de ser verdadeira onde quer que esteja, e
+     não só onde a contagem do inventário passa. */
+  for (const el of root.querySelectorAll(NOME_DECLARADO)) {
+    const fonte = el.getAttribute('data-nome') ?? '';
+    const t = norm(texto(el));
+    if (!Object.prototype.hasOwnProperty.call(NOMES_POR_FONTE, fonte)) {
+      nomesForaDaFonte.push({
+        caminho: caminho || '/',
+        fonte: fonte || '(vazio)',
+        texto: t,
+        porque: 'a fonte não é um dos ficheiros de dados que podem sustentar esta marca',
+      });
+      continue;
+    }
+    nomesPorFonte[fonte] += 1;
+    if (!NOMES_POR_FONTE[fonte].has(t)) {
+      nomesForaDaFonte.push({
+        caminho: caminho || '/',
+        fonte,
+        texto: t,
+        porque: `o texto marcado não é um nome de src/data/${fonte}.mjs`,
+      });
+    }
   }
 
   /* 7 — as frases de cobertura */
@@ -981,6 +1095,7 @@ const medicao = {
     ocorrencias_varridas: ocorrenciasVarridas,
     achados,
     rotulos_em_span: rotulosEmSpan,
+    nomes_declarados: { por_fonte: nomesPorFonte, fora_da_fonte: nomesForaDaFonte },
   },
 };
 

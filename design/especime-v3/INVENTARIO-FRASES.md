@@ -1348,18 +1348,14 @@ bloco inteiro que a contém, porque ele contém uma origem declarada, que é a m
 razão por que o valor não entra. O que a guarda é uma célula da régua do
 navegador deste bloco, a M8, com o seu estrago plantado.*
 
-*O NOME DE CADA ÁREA ENTRA AQUI, uma linha por edição, e não é `data-lugar`: uma
-área de governo não é um lugar, e a marca dos lugares tem escrito o que marca (o
-nome de um concelho e a etiqueta que a Carta Administrativa lhe dá). São nove
-áreas, e são dezoito linhas com o nome e dezoito com a descrição composta a
-partir dele. **A dívida de forma que a lista de quatro já tinha ficou maior, e
-não foi paga aqui**: com as dezasseis áreas do Governo seriam sessenta e quatro
-linhas, que é a lista dos ministérios escrita outra vez dentro do inventário. A
-saída continua a ser a mesma e continua a ser uma alteração à régua da voz e não
-a estas páginas: uma marca irmã de `data-lugar` para o nome declarado de uma
-coisa que não é um lugar, com a mesma substituição na descrição do `<head>`. Não
-se tomou neste bloco porque a régua da voz é partilhada por todos os blocos e a
-decisão desta passagem era a regra das áreas.*
+*O NOME DE CADA ÁREA ENTROU AQUI a 28.08.2026, uma linha por edição, e **as
+dezoito linhas saíram a 29.08.2026 com a marca `data-nome`**. A razão está escrita
+no bloco «Correções pequenas, quarta passagem» mais abaixo: a marca irmã de
+`data-lugar` que esta nota descrevia foi feita, o nome de uma área passou a
+declarar de que ficheiro de dados vem, e a régua confere que o texto rendido é o
+daquele ficheiro. Com as dezasseis áreas do Governo estas seriam sessenta e
+quatro linhas, que é a lista dos ministérios escrita outra vez dentro do
+inventário.*
 
 *OS DEZOITO NOMES SÃO OS QUE O GOVERNO PUBLICA, e nenhum é tradução da casa. O
 brief manda dizer quando um nome inglês é nosso, e não há nenhum: os nove
@@ -1405,24 +1401,6 @@ um CAMPO de uma linha, e não uma afirmação sobre o que este sítio cobre.*
 | conteudo | The areas of government of Portugal, and the studies and measures whose subject is a matter of each one. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
 | conteudo | peças na página desta área de governo | areas | viva | — |
 | conteudo | pieces on this area of government’s page | areas | viva | — |
-| conteudo | Finanças | areas | viva | — |
-| conteudo | Finance | areas | viva | — |
-| conteudo | Economia e Coesão Territorial | areas | viva | — |
-| conteudo | Economy and of Territorial Cohesion | areas | viva | — |
-| conteudo | Infraestruturas e Habitação | areas | viva | — |
-| conteudo | Infrastructure and Housing | areas | viva | — |
-| conteudo | Justiça | areas | viva | — |
-| conteudo | Justice | areas | viva | — |
-| conteudo | Administração Interna | areas | viva | — |
-| conteudo | Home Affairs | areas | viva | — |
-| conteudo | Educação, Ciência e Inovação | areas | viva | — |
-| conteudo | Education, Science and Innovation | areas | viva | — |
-| conteudo | Saúde | areas | viva | — |
-| conteudo | Health | areas | viva | — |
-| conteudo | Trabalho, Solidariedade e Segurança Social | areas | viva | — |
-| conteudo | Labour, Solidarity and Social Security | areas | viva | — |
-| conteudo | Ambiente e Energia | areas | viva | — |
-| conteudo | Environment and Energy | areas | viva | — |
 | conteudo | Os trabalhos e as medidas cujo assunto é matéria de Finanças, área de governo. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
 | conteudo | The studies and measures whose subject is a matter of Finance, an area of government. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
 | conteudo | Os trabalhos e as medidas cujo assunto é matéria de Economia e Coesão Territorial, área de governo. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
@@ -1532,3 +1510,52 @@ grelha da voz).*
 | navegacao | Agenda | pequenas-4 | viva | — |
 | navegacao | Documento do estudo · texto | pequenas-4 | viva | — |
 | navegacao | Study document · text | pequenas-4 | viva | — |
+
+## Bloco «Correções pequenas, quarta passagem» · a marca `data-nome` · 29.08.2026
+
+*A DÍVIDA DE FORMA QUE O BLOCO DAS ÁREAS NOMEOU DUAS VEZES ESTÁ PAGA. O nome de
+cada área de governo custava duas linhas desta tabela, uma por edição, e a
+descrição do `<head>` composta com ele custava outras duas. Com quatro áreas eram
+dezasseis linhas; com nove, trinta e seis; com as dezasseis áreas do Governo
+seriam sessenta e quatro. Isso não é um inventário das frases da casa: é a lista
+dos ministérios escrita outra vez dentro dele.*
+
+*A MARCA É `data-nome`, e é a irmã de `data-lugar`: diz «este texto é o nome de
+uma entrada de um ficheiro de dados, e não prosa que a casa escreveu». Não podia
+ser `data-lugar`, e a marca dos lugares tem escrito o que marca, o nome de um
+concelho e a etiqueta que a Carta Administrativa lhe dá: uma área de governo não
+é um lugar.*
+
+*A REGRA É ESTREITA, E O VALOR DO ATRIBUTO NOMEIA A FONTE. Só o nome de uma
+entrada de um ficheiro de dados com fonte declarada a pode levar, e hoje são dois:
+`src/data/areas.mjs`, cujos nomes vêm das páginas do Governo lidas a 28.08.2026
+(`FONTE_DOS_NOMES`, com a data), e `src/data/regioes.mjs`, cujos nomes vêm da
+classificação NUTS 2024, com o código de cada região ao lado do nome.*
+
+*E A MARCA TRAZ A SUA PRÓPRIA VERIFICAÇÃO, que é a diferença que mais importa.
+`data-lugar` exclui e não confere: um nome trocado sai do inventário sem que
+ninguém o veja. `check:voz` fecha a construção quando um `data-nome` nomeia uma
+fonte que não é uma das duas, e quando o texto marcado não é, carácter a carácter,
+um nome daquele ficheiro. Uma marca que dispensa um texto da declaração sem trazer
+verificação troca uma lista por um buraco.*
+
+*AS REGIÕES CONTINUAM EM `data-lugar`, e não é um descuido: uma região NUTS II é
+um lugar, e as quatro linhas da descrição das suas páginas já se contam com
+`<lugar>` lá dentro. Trocar a marca mudava o texto dessas linhas sem mudar o que
+elas dizem. O ficheiro fica na lista das fontes porque a regra é sobre que
+ficheiros podem sustentar a marca; a medição diz quantas vezes cada fonte se
+exerce (hoje `areas 36`, `regioes 0`), para que uma fonte por exercer não fique em
+silêncio.*
+
+*DEZOITO LINHAS SAEM E UMA ENTRA. As dezoito são os nomes das nove áreas nas duas
+edições, e **saem do ficheiro em vez de ficarem `retirada`**: uma linha `retirada`
+diz «a casa tirou esta frase e ela não pode voltar», e estes nomes não foram
+tirados de lado nenhum — continuam na cabeça de cada página, onde sempre
+estiveram. O que mudou foi quem os conta. A que entra é a descrição do `<head>`
+de uma página de área, que é o nome da área e mais nada: com a substituição, ela
+conta-se uma vez, com `<nome>` no lugar do nome, e não uma por área e por edição.
+É a mesma forma das descrições que se contam com `<lugar>`.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | <nome> | pequenas-4 | viva | — |

@@ -11,7 +11,7 @@
  * «É a lei que o define, não este sítio.» viveu em 616 páginas.
  *
  * Este passo entra na cadeia do `build` e do `verify`, e fecha a construção em
- * oito casos:
+ * nove casos:
  *
  *   1. **o tripwire** · uma frase da casa com um marcador de
  *      `design/especime-v3/VOZ-MARCADORES.md` que não está declarada como
@@ -39,7 +39,12 @@
  *      de `CLASSES_DE_ROTULO` que não se renda em página nenhuma de `dist/`. A
  *      régua da voz passou a medir os rótulos que vivem num `<span>` por essa
  *      lista, e uma classe renomeada deixava-a cega com a contagem de «nada por
- *      classificar» a dizer zero.
+ *      classificar» a dizer zero;
+ *   9. **o nome declarado** (29.08.2026) · um `data-nome` cuja fonte não é um dos
+ *      ficheiros de dados declarados, ou cujo texto não é um nome desse ficheiro.
+ *      A marca tira do inventário o nome de uma coisa que vem de um ficheiro de
+ *      dados, e uma marca que dispensa um texto da declaração tem de trazer a sua
+ *      própria verificação.
  *
  * A varredura não é feita aqui: é a da régua, corrida com `--json`, que é a
  * mesma que a matriz já usa. Duas implementações da mesma definição diriam a
@@ -111,6 +116,35 @@ if (!voz.rotulos_em_span) {
     `a régua não devolveu a contagem das classes de rótulo, e é o positivo conhecido ` +
       `de que a medida dos rótulos em «span» depende.`,
   );
+}
+
+/* 9 · O NOME DECLARADO É CONFERIDO CONTRA O FICHEIRO DE ONDE DIZ VIR (29.08.2026).
+ *
+ * `data-nome` tira do inventário o nome de uma coisa que vem de um ficheiro de
+ * dados — hoje o nome de uma área de governo, dezoito linhas de tabela que eram a
+ * lista dos ministérios escrita outra vez. Uma marca que dispensa um texto da
+ * declaração tem de trazer a sua própria verificação, ou troca uma lista por um
+ * buraco: `data-lugar`, que é a marca irmã, exclui e não confere, e por isso um
+ * nome trocado sai do inventário sem que ninguém o veja.
+ *
+ * Fecham a construção duas coisas: um `data-nome` cuja fonte não é um dos
+ * ficheiros de dados declarados, e um `data-nome` cujo texto não é, carácter a
+ * carácter, um nome daquele ficheiro. */
+{
+  const nd = voz.nomes_declarados ?? null;
+  if (!nd) {
+    erros.push(
+      `a régua não devolveu a conferência de «data-nome», e é ela que sustenta a marca: ` +
+        `sem ela, a marca tira texto do inventário sem provar que o texto é o do ficheiro.`,
+    );
+  } else {
+    for (const x of nd.fora_da_fonte) {
+      erros.push(
+        `${x.caminho}: «data-nome="${x.fonte}"» sobre «${x.texto.slice(0, 80)}» · ${x.porque}. ` +
+          `Só o nome de uma entrada de um ficheiro de dados com fonte declarada pode levar esta marca.`,
+      );
+    }
+  }
 }
 
 /* 1 · o tripwire */
@@ -328,6 +362,9 @@ console.log(
     `lida contra a Emenda ${lidaContra} (a mais alta da voz é a ${emendaMaisAlta}) · ` +
     `rótulos em span: ${Object.entries(voz.rotulos_em_span ?? {})
       .map(([c, n]) => `.${c} ${n}`)
+      .join(', ')} · ` +
+    `nomes declarados: ${Object.entries(voz.nomes_declarados?.por_fonte ?? {})
+      .map(([f, n]) => `${f} ${n}`)
       .join(', ')}`,
 );
 if (blocosPorLer.length) {
