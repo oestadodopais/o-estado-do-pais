@@ -1,0 +1,29 @@
+{
+ "registado_em": "2026-08-29",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "paginas/area-economia.html",
+   "descricao": "one measure's name on the Portuguese Economia page changed («no Início do Mandato» → «no Fim do Mandato»); the English page keeps the source's label",
+   "sha256_antes": "eaa336378d2004553530c721d07adf3a06139b530c08677f3f4e73e8ad8fbbad",
+   "sha256_depois": "0a26cb34fb0512b451285e3446138641d81baa37305e85d7e4c7bd979207569a",
+   "contexto": "data-linha-campo=\"name\">Dívida Total no Início do Mandato<"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "paginas/en-area-economia.html",
+   "descricao": "the language mark removed from one Portuguese name on the English Economia page (evora-divida-total-2017)",
+   "sha256_antes": "dba80fa7926354e7dd958baa7eac3a9e3505d08c5139ea8a64211554753c7630",
+   "sha256_depois": "57a9420da4ae92dc5f03c48bf555d1095c8a08138f00386cb42b8ffe2501c6bd",
+   "contexto": "<span class=\"campo-valor livro-item-nome\" lang=\"pt-PT\" data-linha-claim=\"evora-divida-total-2017\" data-linha-campo=\"name\">"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "linhas/evora-prazo-medio-de-pagamento-2025-12.yml",
+   "descricao": "the name in Évora's payment-time row changed to «PMP (N.º meses)» while the pages show the source's «PMP (N.º dias)»",
+   "sha256_antes": "57f9c4e73359130a6028b0ead91427b100eb06614703f6639a967f3e13ea502d",
+   "sha256_depois": "e5fd19f6b1b88baf922a09d1105ed957b61c96aa2cdd6fb72f303184bd013a04",
+   "contexto": "name: \"PMP (N.º dias)\""
+  }
+ ]
+}
