@@ -1248,8 +1248,16 @@ export const STRINGS = {
          fazer. A frase que saiu fica declarada como autorreferência no
          `INVENTARIO-FRASES.md`, para que a régua a apanhe pelo nome se alguém a
          repuser. */
-      distanciaLei:
-        'O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos anteriores.',
+      /* A FRASE DA LEI EM TRÊS PEÇAS, E A DO MEIO É O NOME DO DIPLOMA (I91,
+         29.08.2026). O texto rendido é o mesmo, carácter a carácter; o que
+         muda é que o nome da lei passa a poder levar `lang="pt-PT"` dentro da
+         página inglesa, como já leva a referência legal do selo das áreas. Um
+         nome de lei portuguesa lido com fonética inglesa é «lay no 73 slash
+         2013», e não é o nome de coisa nenhuma. */
+      distanciaLeiAntes: 'O limite é fixado no artigo 52.º da ',
+      distanciaLeiDiploma: 'Lei n.º 73/2013',
+      distanciaLeiDepois:
+        ': uma vez e meia a média da receita corrente líquida dos três anos anteriores.',
       distanciaDivida: 'dívida',
       distanciaTecto: 'limite legal',
 
@@ -2149,8 +2157,10 @@ export const STRINGS = {
       distanciaIndiceB: ' in ',
       distanciaIndiceC: ', against a legal cap of ',
       distanciaIndiceD: '.',
-      distanciaLei:
-        'The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue.',
+      distanciaLeiAntes: 'The limit is set by article 52.º of ',
+      distanciaLeiDiploma: 'Lei n.º 73/2013',
+      distanciaLeiDepois:
+        ': one and a half times the three-year average of net current revenue.',
       distanciaDivida: 'debt',
       distanciaTecto: 'legal limit',
 

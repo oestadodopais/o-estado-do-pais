@@ -777,20 +777,22 @@ exclusão que a subetapa 3c escreveu para a lista por distritos.
 
 *As frases que os itens E7 a E12 mudaram: a nota das empresas, que deixou de afirmar o que a verificação das fontes não confirmou; a legenda da dívida, sem a oração em que o sítio falava de si; e as que chamavam «regulador» à Direção-Geral das Autarquias Locais. As duas últimas linhas da tabela são a frase que SAIU, declarada pelo que ela era: autorreferência. Fica declarada para que a régua a apanhe pelo nome se alguém a repuser, em vez de a apanhar como bloco por classificar.*
 
+**O ESPAÇO ANTES DOS DOIS PONTOS NA FRASE DA LEI É A RÉGUA A LER, E NÃO A PÁGINA A ESCREVER** (bloco `pequenas-5`, 29.08.2026). A página publica «…artigo 52.º da Lei n.º 73/2013: uma vez e meia…», carácter a carácter, como publicava. O que mudou foi por dentro: o nome do diploma passou a viver num `<span lang="pt-PT">` para que um leitor de ecrã inglês não leia «Lei n.º 73/2013» com fonética inglesa (I91). A régua junta os pedaços de texto de um bloco com um espaço entre eles (`texto()` em `scripts/medir-defeitos.mjs`), e por isso lê um espaço onde o `<span>` fecha. A coluna do texto é, e sempre foi, **a cadeia normalizada tal como a régua a lê** — é a mesma razão do « ." » da manchete dos painéis europeus, que está nesta lista desde o primeiro dia.
+
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
 | conteudo | A Direção-Geral | até 2026-08-26 | viva | — |
 | conteudo | A Direção-Geral publica | até 2026-08-26 | viva | — |
 | conteudo | A série anual da Direção-Geral das Autarquias Locais ainda não chegou a este mandato. | até 2026-08-26 | viva | — |
 | conteudo | Lista anual da Direção-Geral das Autarquias Locais, que publica os dados das contas dos municípios. | até 2026-08-26 | viva | — |
-| conteudo | O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos anteriores. | até 2026-08-26 | viva | — |
+| conteudo | O limite é fixado no artigo 52.º da Lei n.º 73/2013 : uma vez e meia a média da receita corrente líquida dos três anos anteriores. | pequenas-5 | viva | — |
 | conteudo | O traço fino é a dívida total que a Direção-Geral das Autarquias Locais publica para o concelho; a barra é a distância até ao limite legal do mesmo ano, que é o fio da direita. O índice mede uma contra o outro numa escala em que o teto é o valor permitido. | até 2026-08-26 | viva | — |
 | conteudo | Série anual da Direção-Geral das Autarquias Locais, que publica os dados das contas dos municípios. Exclui dívidas não orçamentais e exceções legais. | até 2026-08-26 | viva | — |
 | conteudo | The annual list of the local-government directorate, which publishes the municipalities’ accounts data. | até 2026-08-26 | viva | — |
 | conteudo | The annual series of the local-government directorate, which publishes the municipalities’ accounts data. Excludes non-budgetary debt and legal exceptions. | até 2026-08-26 | viva | — |
 | conteudo | The directorate-general | até 2026-08-26 | viva | — |
 | conteudo | The directorate-general publishes | até 2026-08-26 | viva | — |
-| conteudo | The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue. | até 2026-08-26 | viva | — |
+| conteudo | The limit is set by article 52.º of Lei n.º 73/2013 : one and a half times the three-year average of net current revenue. | pequenas-5 | viva | — |
 | conteudo | The local-government directorate’s annual series has not yet reached this term. | até 2026-08-26 | viva | — |
 | conteudo | The thin line is the total debt the local-government directorate publishes for the municipality; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. | até 2026-08-26 | viva | — |
 | conteudo | Sem linhas ainda. | grelha-2 | retirada | a ausência passou a dizer-se em três palavras, «Sem linha ainda.», e a forma longa saiu (item E4 do bloco dos 308, `8b2a260`) |

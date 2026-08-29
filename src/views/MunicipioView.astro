@@ -554,7 +554,10 @@ const metodoPath = routePath('metodo', lang);
               <Frase partes={indicePartes} lang={lang} selos={true} />
             </p>
           )}
-          <p class="mun-distancia-legenda">{s.municipio.distanciaLei}</p>
+          {/* O NOME DA LEI LEVA A MARCA DA LÍNGUA (I91, 29.08.2026): as três
+              peças escrevem-se sem espaço entre elas para que o texto rendido
+              seja o mesmo de antes, carácter a carácter. */}
+          <p class="mun-distancia-legenda">{s.municipio.distanciaLeiAntes}<span lang={lang === 'pt' ? undefined : 'pt-PT'}>{s.municipio.distanciaLeiDiploma}</span>{s.municipio.distanciaLeiDepois}</p>
         </div>
         )}
       </section>

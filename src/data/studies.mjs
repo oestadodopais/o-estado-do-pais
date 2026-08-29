@@ -452,8 +452,25 @@ export function linguaDoTitulo(titulo, lang = 'pt') {
   for (const w of WORKS) {
     for (const e of w.editions) if (e.title === titulo) linguas.add(marca(e.lang));
   }
-  if (!linguas.size || linguas.has(daPagina)) return null;
-  return [...linguas][0];
+  if (!linguas.size) return null;
+  /**
+   * O CASO 2 ACIMA ESTAVA A DEVOLVER `null` DEMAIS (I91, 29.08.2026).
+   *
+   * «Onde está a água?» e «Água Não Faturada» são o título das duas edições, e
+   * a regra antiga — «se uma das línguas é a da página, não marques» — deixava
+   * as duas cadeias portuguesas sem marca dentro das páginas inglesas: onze
+   * ocorrências medidas em `dist/en`. O comentário deste ficheiro já dizia a
+   * razão certa («a decisão é do TEXTO e não da edição»); o que faltava era a
+   * linha de código que a cumprisse.
+   *
+   * A língua do TEXTO é o português sempre que a mesma cadeia é o título de uma
+   * edição portuguesa: uma cadeia portuguesa não deixa de o ser porque a edição
+   * inglesa a manteve por o seu título inglês não ser conhecido
+   * (`titleUnverified`). Marcá-la `en` seria o defeito que esta função existe
+   * para corrigir; não marcar nada deixa-o só por dizer.
+   */
+  const doTexto = linguas.has('pt-PT') ? 'pt-PT' : [...linguas][0];
+  return doTexto === daPagina ? null : doTexto;
 }
 
 export function studyTitle(id, lang = 'pt') {
