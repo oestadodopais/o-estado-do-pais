@@ -1,18 +1,21 @@
 # Correções pequenas, quinta passagem · o relatório do construtor
 
 *Ramo `pequenas-5-2026-08-29`, saído de `main` `98fd779`. Construtor: Claude Opus
-5, 29.08.2026. Três commits, cada um verde na cadeia inteira (`npm run build`,
+5, 29.08.2026. Seis commits, cada um verde na cadeia inteira (`npm run build`,
 `npm run verify`, `npm run typecheck`). Sem travessões na prosa.*
 
 ---
 
-## 0 · Os três commits
+## 0 · Os seis commits
 
 | commit | o que fecha |
 | --- | --- |
 | `d5ef2b3` | I92 · a unidade de uma linha é um rótulo, e diz-se na língua da página |
 | `3335d4b` | I91, segunda metade · o título de um documento é um nome, e diz em que língua está |
-| o terceiro | ISSUES, o brief e este relatório. Não se nomeia a si próprio: o identificador de um commit não existe antes de ele ser escrito |
+| `7f0d36d` | ISSUES (I91 e I92), o brief e a primeira escrita deste relatório |
+| `dbc08a7` | I93 · a régua ganha L8, o atributo escrito duas vezes. A leitura que a pediu era um falso positivo, e §7 di-lo |
+| `d3ce282` | I94 · o nome do trabalho no texto que só se ouve, e o dicionário pela letra da fonte |
+| o último | ISSUES (I93 e I94) e a revisão deste relatório |
 
 A ordem não é a do brief, e a razão é a cadeia: a peça partilhada pelas duas
 metades é a propriedade `lingua` de `CampoDaLinha.astro`, que nasceu com a
@@ -35,6 +38,9 @@ Medidas com o mesmo instrumento nas duas construções, sobre `dist/en` inteiro
 | nomes de lei portuguesa com a marca | 9 | 930 |
 | títulos de estudo portugueses sem a marca | **11** | **0** |
 | títulos de estudo portugueses com a marca | 94 | 105 |
+| títulos de estudo portugueses **no texto oculto** dos selos, sem marca | **382** | **0** |
+| títulos de estudo portugueses no texto oculto, com a marca | 0 | 382 |
+| elementos com um atributo escrito duas vezes, em `dist/` inteiro | **0** | **0** |
 | unidades traduzidas na edição inglesa | 0 | **5 320** |
 | unidades em português na edição inglesa | 5 329 | 9, **todas com a marca** |
 
@@ -103,12 +109,12 @@ vem» desta tabela é a mesma:
 | `rácio` | 1 | ratio | a fonte · «Ratio» |
 | `pontuação` | 1 | score | a fonte · «Score» |
 | `m² por 1000 habitantes` | 1 | m² per 1000 inhabitants | a fonte · «Square metres per 1000 inhabitants» |
-| `euros por habitante · volumes encadeados (2015)` | 1 | euros per inhabitant · chain linked volumes (2015) | a fonte · «Chain linked volumes (2015), euro per capita» |
+| `euros por habitante · volumes encadeados (2015)` | 1 | euro per capita · chain linked volumes (2015) | a fonte · «Chain linked volumes (2015), euro per capita» |
 | `edições` | 1 | editions | dicionário |
 | `correções` | 1 | corrections | dicionário |
 | `anos` | 1 | years | dicionário |
 | `% dos indivíduos` | 1 | % of individuals | a fonte · «Percentage of individuals» |
-| `% do total OCDE e UE não-OCDE, variação em três anos` | 1 | % of the OECD and non-OECD EU total, three-year change | a fonte · «Percentage of OECD and non-OECD EU countries total - 3-year change» |
+| `% do total OCDE e UE não-OCDE, variação em três anos` | 1 | % of the OECD and non-OECD EU countries total, three-year change | a fonte · «Percentage of OECD and non-OECD EU countries total - 3-year change» |
 | `% do PIB (média de três anos)` | 1 | % of GDP (three-year average) | a fonte · «Percentage of GDP - three-year average» |
 
 ### As duas que ficam em português, e porquê
@@ -117,6 +123,35 @@ vem» desta tabela é a mesma:
 | --- | ---: | --- |
 | `avisos` | 2 | um «aviso» do Portugal 2030 é um acto administrativo com nome próprio, e as duas linhas (`avisos-pt2030-abertos`, `avisos-pt2030-pessoas-singulares`) têm fonte, documento e excerto `[a verificar]`. Não há inglês do organismo de onde tirar a palavra, e escolher entre «call» e «notice» era a casa a decidir o que a fonte quis dizer |
 | `factor` | 1 | o factor de sustentabilidade é o nome que o relatório citado dá ao número, e não uma unidade de contagem. A linha cita-o em português, com a grafia dele |
+
+### Duas correções da leitura do Codex, e uma auditoria às 34
+
+A leitura de 29.08 achou duas entradas que traduziam o português e não seguiam o
+inglês do próprio organismo. **Onde a fonte tem inglês seu, é o dela que vale**,
+e as duas mudaram:
+
+| unidade | dizia | diz | a fonte |
+| --- | --- | --- | --- |
+| `euros por habitante · volumes encadeados (2015)` | euros per inhabitant · … | **euro per capita** · … | «Chain linked volumes (2015), euro per capita» |
+| `% do total OCDE e UE não-OCDE, variação em três anos` | % of the OECD and non-OECD EU **total** | % of the OECD and non-OECD EU **countries total** | «Percentage of OECD and non-OECD EU countries total - 3-year change» |
+
+A segunda não é uma palavra a mais: o total é de PAÍSES, e sem «countries» a
+cadeia podia ler-se como um total de outra coisa.
+
+A leitura nomeou também seis entradas sem a origem do seu inglês escrita ao lado
+(`% da população`, `% do orçamento`, `% do valor aprovado`, `edições`,
+`correções`, `anos`). Ao escrevê-las, auditei as 34: havia **mais três** na mesma
+situação (`índice (Portugal = 100)`, `pontos de índice`, `votos`). **As 34
+nomeiam agora a sua origem, uma a uma**, e a auditoria está feita e não suposta.
+
+Duas notas que essas linhas passaram a dizer, e que valem a pena aqui:
+
+* `% da população` traduz-se «% of the population» e **não** «% of the total
+  population», que é o que a fonte imprime: a cadeia do livro-razão não diz
+  «total», e o rótulo diz o que a linha guarda. Quem quiser «total» muda a linha,
+  não a tradução dela;
+* `edições` e `correções` vêm da casa e não do dicionário: `strings.mjs` escreve
+  «Editions» e a rota inglesa do registo é `/en/corrections`.
 
 ### Um desvio ao brief, dito por inteiro
 
@@ -199,9 +234,9 @@ verde.
 
 ---
 
-## 4 · A régua nova, e os sete estragos plantados
+## 4 · A régua nova, e os nove estragos plantados
 
-`scripts/check-lingua.mjs` entra na cadeia do `build` e do `verify`. Sete
+`scripts/check-lingua.mjs` entra na cadeia do `build` e do `verify`. Oito
 conferências:
 
 | | o que fecha a construção |
@@ -211,8 +246,9 @@ conferências:
 | L3 | em `dist/en`, uma unidade em português sem `lang="pt-PT"` |
 | L4 | nas duas edições, um título de documento na língua errada e sem a marca da sua |
 | L5 | em `dist/en`, um nome de lei portuguesa em prosa da casa sem a marca |
-| L6 | em `dist/en`, um título de estudo português sem a marca |
+| L6 | em `dist/en`, um título de estudo português sem a marca, **à vista ou no texto oculto de um selo** |
 | L7 | um localizador numa linha cujo documento não esteja declarado português |
+| L8 | um elemento com o mesmo atributo escrito duas vezes, em qualquer página de `dist/` que a casa componha |
 
 E, nos dois sentidos: uma entrada do dicionário ou da declaração que nenhuma
 linha do livro-razão use fecha a construção também. É a regra do inventário das
@@ -232,6 +268,8 @@ construção publica:
 | a marca tirada de dois localizadores | a mesma cópia | L4b |
 | o `<span lang="pt-PT">` tirado da frase da lei, e a marca tirada do selo legal de uma área | a mesma cópia | L5, nas duas formas («Lei n.º 73/2013» e «Decreto-Lei n.º 87-A/2025») |
 | a marca tirada de dois títulos de estudo portugueses | a mesma cópia | L6 |
+| o texto oculto dos selos, tal como a construção anterior o tinha | a construção de antes da correção | L6, nas 382 ocorrências e nos sete títulos |
+| um `lang="pt-PT"` escrito a dobrar num elemento que já o tinha | `OEDP_DIST` numa cópia de duas páginas, com o par `hreflang`/`lang` intacto ao lado | L8, e o par certo não foi acusado |
 
 A régua traz ainda o seu próprio positivo, corrido em **cada** construção: se a
 edição inglesa render unidades e nenhuma traduzida, o dicionário não está a ser
@@ -321,14 +359,114 @@ chamada «correções pequenas» é decidir por quem decide.
 
 ---
 
-## 6 · O custo
+## 6 · O nome do trabalho no texto que só se ouve (I94)
+
+O selo de proveniência escreve três coisas: a palavra à vista («source»), o
+`title`, e um texto oculto que só um leitor de ecrã lê. O oculto dizia
+« · Avaliação Económica Regional de Portugal 2026» dentro de páginas inglesas,
+sem dizer em que língua está. **382 ocorrências em `dist/en`, em sete títulos:**
+
+| título | ocorrências |
+| --- | ---: |
+| Avaliação Económica Regional de Portugal 2026 | 200 |
+| Évora — Quinze Anos, Cinco Mandatos | 87 |
+| Évora — Economia, Investidores, Portas Abertas 2026 | 35 |
+| Évora — Os Pelouros, Quem Os Teve, O Que Fizeram | 34 |
+| Penalizações por Reforma Antecipada em Portugal | 18 |
+| Água Não Faturada | 6 |
+| Evolução de Portugal desde 1981 | 2 |
+
+À vista, o mesmo título já levava a marca desde 27.08, por `TituloDeTrabalho`;
+no oculto não, porque ali ele é um pedaço de uma cadeia composta e não um título
+sozinho. É o defeito que a I91 fecha, na superfície que não se vê — e uma
+superfície não deixa de ser superfície por não se ver.
+
+**Só o nome leva a marca:**
+
+```html
+<span class="vh"> · calculated · <span lang="pt-PT">Avaliação Económica Regional de Portugal 2026</span></span>
+```
+
+«calculated» e o separador são prosa da casa na língua da página, e marcá-los
+português era trocar um defeito por outro. **O texto rendido não muda um
+carácter**, e o portão continua a compará-lo com `seloDaLinha()`: o
+`textoTranscrito()` dele junta os pedaços SEM separador, e um `<span>` a mais por
+dentro não mexe na cadeia que ele lê. O `title` e o `data-selo-etiqueta` levam a
+mesma cadeia e ficam como estão — um atributo não tem onde pendurar uma marca de
+língua, e fica dito.
+
+A L6 da régua passa a varrer o oculto, e a varredura correu primeiro contra a
+construção anterior, que a viu vermelha nas 382.
+
+### A frase de atribuição já estava marcada
+
+A leitura pedia também que se conferisse a frase «Published by … in *documento*»
+das páginas de linha inglesas. **Já leva a marca**, desde o commit `3335d4b`:
+
+```html
+in <span class="campo-valor" lang="pt-PT" data-linha-claim="abrantes-divida-dgal-2024"
+      data-linha-campo="document.title">Evolução do endividamento total, …</span>
+```
+
+A L4 da régua confere as duas rendições do título — a da frase e a da ficha — pela
+mesma regra, e conta 4 639 marcadas em 9 278 rendidas nas duas edições. A leitura
+olhou para uma construção anterior àquele commit.
+
+---
+
+## 7 · O atributo que parecia estar lá duas vezes (I93)
+
+O lugar de direção, ao empacotar esta passagem para a leitura cruzada, achou em
+`dist/en/areas/financas/index.html` a cadeia `lang="pt-PT" lang="pt-PT"` e pediu
+que o defeito fosse corrigido. **Não há defeito, e a razão é a forma da procura.**
+
+O elemento é este, cru:
+
+```html
+<a class="lang" href="/areas/financas" hreflang="pt-PT" lang="pt-PT">Português</a>
+```
+
+É o comutador de língua do cabeçalho, e leva **quatro atributos distintos**.
+`hreflang` diz a língua da PÁGINA LIGADA — a edição portuguesa daquela área — e
+`lang` diz a língua do TEXTO da ligação, «Português». Os dois são precisos, e um
+sem o outro é que seria o defeito. A cadeia procurada está lá porque
+`hreflang="pt-PT" lang="pt-PT"` **acaba** em `lang="pt-PT" lang="pt-PT"`: a
+procura por cadeia não sabe onde começa um nome de atributo.
+
+**Medido com um tokenizador de atributos, e não com uma procura por cadeia:**
+6 606 ficheiros de `dist/`, **zero elementos com um atributo repetido**, de
+qualquer nome, antes e depois desta passagem. O elemento também não é desta
+passagem: o comutador de língua vive no cabeçalho, e este ramo não toca nenhum
+ficheiro de gabarito.
+
+Duas coisas que a primeira medição ensinou, e que estão no código da régua:
+
+1. **um `parse()` não serve.** Normaliza os atributos num mapa e apaga a
+   repetição em silêncio, que é exactamente o defeito que se procura. Uma régua
+   que lesse o mapa dizia sempre zero, e o zero não valia nada;
+2. **o conteúdo de `<script>` tem de sair primeiro.** Sem isso,
+   `for(var i=0;i<b.length-1;i++)` dentro de um script parece a etiqueta
+   `<b.length-1;i++)…` com «var» escrito duas vezes: a primeira varredura acusou
+   **dez** elementos, todos inexistentes, nos documentos de estudo alojados.
+
+**A régua fica na mesma**, e a razão é a regra da casa e não a leitura que a
+pediu: um atributo repetido é silencioso — o navegador fica com o primeiro e
+deita o segundo fora — e um gabarito que acrescente a marca de língua a um
+elemento que já a tem passava despercebido. L8 fecha a construção com qualquer
+atributo escrito duas vezes. O estrago plantado foi visto vermelho numa cópia
+onde o par `hreflang`/`lang` ficou intacto ao lado dele, que é a discriminação
+que faltava à procura por cadeia.
+
+---
+
+## 8 · O custo
 
 | | |
 | --- | --- |
 | modelo | Claude Opus 5 (contexto de 1M), a passagem inteira; sem subagentes |
-| construções completas | 6 (`npm run build`), mais quatro `verify` e cinco `typecheck` |
+| construções completas | 8 (`npm run build`), mais seis `verify` e sete `typecheck` |
 | tempo de construção | cerca de 6 minutos cada |
-| tokens | cerca de 380 mil, dos quais a maior parte em leitura do portão de HTML, da régua da voz e do livro-razão |
+| tokens | cerca de 450 mil, dos quais a maior parte em leitura do portão de HTML, da régua da voz e do livro-razão |
 
 O que gastou mais foi a leitura antes de escrever: `scripts/gate-html.mjs`
 (6 460 linhas) e `scripts/medir-defeitos.mjs` foram lidos por partes até se
