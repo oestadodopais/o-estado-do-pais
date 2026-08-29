@@ -406,46 +406,6 @@ section {
 }
 
 /* ---------------------------------------------------------------------------
- * O SINAL AO LADO DO NOME · a âncora B (diretor, 28.08.2026)
- * ---------------------------------------------------------------------------
- * O «e» minúsculo da casa, em `Masthead.astro`, com os caminhos lidos de
- * `public/favicon.svg` na construção. As três medidas são de
- * `design/marca/NOTAS.md`, e nenhuma é escolhida aqui:
- *
- *   ALTURA · a altura de MAIÚSCULA do nome, que no Spectral é 660 em 1000 de em
- *     (tabela `OS/2` do ficheiro da casa). O `viewBox` do SVG está recortado à
- *     caixa da tinta em `src/lib/marca.mjs`, e por isso `0.66em` é a altura da
- *     TINTA e não a de uma caixa com ar à volta. É a âncora B da §5: a que
- *     deixa a caixa de tinta do cabeçalho exactamente onde ela está hoje.
- *
- *   LINHA DE BASE · o sinal assenta nela. Estava centrado a meia altura de
- *     maiúscula numa versão anterior do estudo e descia 0,12 abaixo da base: ao
- *     lado de um nome sem descendentes, ficava pendurado (§6 bis, item 6). Um
- *     `inline-block` alinha o bordo de baixo pela base, que é o que se quer.
- *
- *   FOLGA · 0,42 da altura de maiúscula, ou seja 0,42 × 0,66 = 0,2772em. Subiu
- *     de 0,30 para 0,42 ao ver a marca a 1:1: com 0,30, o anel do «e» e o «O» de
- *     «O Estado» ficavam quase encostados, e duas formas redondas encostadas
- *     leem-se como uma só.
- *
- * `letter-spacing: normal` NÃO É COSMÉTICA. `.wordmark` aperta as letras em
- * −0,014em, e esse aperto aplica-se também depois de um elemento substituído:
- * sem esta linha a folga medida ficaria 0,2632em em vez de 0,2772em, ou seja o
- * aperto do texto a comer 5 % de uma medida que não é de texto.
- *
- * A COR é `currentColor`, herdada de `.wordmark` (que é `var(--ink)`): em claro
- * o sinal é tinta, em escuro é o papel do tema, sem uma segunda regra.
- * ------------------------------------------------------------------------- */
-.wordmark-e {
-  display: inline-block;
-  width: 0.66em;
-  height: 0.66em;
-  margin-inline-end: 0.2772em;
-  vertical-align: baseline;
-  letter-spacing: normal;
-}
-
-/* ---------------------------------------------------------------------------
  * A FRASE DE IDENTIDADE, POR BAIXO DA MARCA (Emenda 18, 25.08.2026)
  * ---------------------------------------------------------------------------
  * «Um observatório de Portugal.» / «An observatory of Portugal.», só na primeira

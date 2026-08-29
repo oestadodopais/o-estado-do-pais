@@ -81,20 +81,9 @@
  *      daquela página, porque um manifesto da outra abre a aplicação na primeira
  *      página errada.
  *
- * A7 · A ALTURA DO CABEÇALHO NÃO MUDA COM O SINAL AO LADO DO NOME. É a condição
- *      da âncora B (`design/marca/NOTAS.md` §5): a âncora A faz a caixa de tinta
- *      crescer de 26 px para 39 px e obriga o cabeçalho a crescer com ela; a B
- *      deixa-a onde está. Mede-se nas SETE larguras da casa, com a página
- *      carregada e o `<header>` medido duas vezes: com o sinal e com ele
- *      escondido por uma folha acrescentada no momento. É a mesma página, o
- *      mesmo tipo já carregado e a mesma composição: a única diferença é o
- *      sinal, que é o que se quer isolar.
- *
- * A8 · O SINAL ESTÁ ONDE A ÂNCORA B O PÕE. A tinta do «e» mede a altura de
- *      MAIÚSCULA do nome, medida no tipo carregado com `TextMetrics` e não lida
- *      de uma nota; assenta na linha de base; e a folga até ao nome é 0,42 dessa
- *      altura (NOTAS §6 bis, item 6).
- *
+ * A7 · O CABEÇALHO É O NOME, SEM SINAL, NUMA LINHA (diretor, 29.08.2026): o sinal
+ *      saiu; a célula confirma que não voltou e que a marca cabe numa linha.
+
  * A9 · EM ESCURO O «e» É PAPEL. O escuro entra pelo caminho real — a escolha
  *      guardada em `localStorage` antes de a página correr —, e não por
  *      `data-theme` posto à mão nem pela preferência do sistema, que desde a
@@ -403,7 +392,6 @@ const ROTAS_DO_CABECALHO = [
 ];
 
 /** A geometria do lockup, de `design/marca/NOTAS.md` §5 e §6 bis item 6. */
-const LOCKUP = { alturaEmCap: 1, folgaEmCap: 0.42 };
 /* O que a medição aceita de desvio, e porquê: um `em` traduzido para píxeis
    arredonda, e o Chromium devolve sub-píxeis. Meio píxel é a diferença que um
    olho não vê e que uma folha mal escrita ultrapassa de longe. */
@@ -765,13 +753,11 @@ function mediuAsCabecas() {
 }
 
 /**
- * A7 e A8 · o cabeçalho a cada largura, com o sinal e sem ele.
+ * A7 · o cabeçalho é o nome, sem sinal, numa linha (diretor, 29.08.2026).
  *
- * A página é carregada uma vez e medida duas: a segunda depois de se lhe
- * acrescentar uma folha que esconde o sinal. É a mesma página, o mesmo tipo já
- * carregado e a mesma composição — a única diferença é o sinal, que é o que se
- * quer isolar. Recarregar a página para a segunda medição trocava uma variável
- * por duas.
+ * O sinal ao lado do nome saiu do cabeçalho a 29.08.2026 (§1.79). A célula
+ * confirma que não voltou (nenhum `.wordmark-e` na página) e que a marca
+ * continua numa linha só, em cada largura e nas quatro rotas.
  */
 async function mediuOCabecalho(largura) {
   for (const { nome, rota, forma } of ROTAS_DO_CABECALHO) {
@@ -782,161 +768,28 @@ async function mediuOCabecalho(largura) {
     const m = await p.evaluate(() => {
       const cabeca = document.querySelector('header');
       const marca = document.querySelector('.wordmark');
-      const sinal = document.querySelector('.wordmark-e');
       if (!cabeca || !marca) return { erro: 'não há header ou .wordmark' };
-      if (!sinal) return { erro: 'não há .wordmark-e' };
-      const estilo = getComputedStyle(marca);
-      const corpo = parseFloat(estilo.fontSize);
-      const entrelinha = parseFloat(estilo.lineHeight);
-      /* A ALTURA DE MAIÚSCULA SAI DO TIPO CARREGADO e não de uma nota: o
-         `actualBoundingBoxAscent` de um «E» é a distância da linha de base ao
-         topo do desenho da letra, no ficheiro que a página está mesmo a usar. */
-      const lona = document.createElement('canvas').getContext('2d');
-      lona.font = `${estilo.fontStyle} ${estilo.fontWeight} ${corpo}px ${estilo.fontFamily}`;
-      const cap = lona.measureText('E').actualBoundingBoxAscent;
-      /* A caixa da TINTA, e não a do SVG: é a tinta que tem de medir a altura de
-         maiúscula, e a caixa podia ter ar à volta sem se ver. */
-      let x0 = Infinity;
-      let y0 = Infinity;
-      let x1 = -Infinity;
-      let y1 = -Infinity;
-      for (const el of sinal.querySelectorAll('path')) {
-        const r = el.getBoundingClientRect();
-        x0 = Math.min(x0, r.left);
-        y0 = Math.min(y0, r.top);
-        x1 = Math.max(x1, r.right);
-        y1 = Math.max(y1, r.bottom);
-      }
-      /* A linha de base do texto, com uma sonda de altura zero: o bordo de baixo
-         de um `inline-block` vazio assenta nela. */
-      const sonda = document.createElement('span');
-      sonda.style.cssText = 'display:inline-block;width:0;height:0;padding:0;margin:0;border:0';
-      marca.appendChild(sonda);
-      const linhaDeBase = sonda.getBoundingClientRect().bottom;
-      sonda.remove();
-      /* A folga: do bordo direito da tinta ao primeiro glifo do nome. */
-      const noDoNome =
-        [...marca.childNodes].find((n) => n.nodeType === 3 && n.textContent.trim()) ??
-        marca.querySelector('a')?.firstChild ??
-        null;
-      let folga = null;
-      if (noDoNome) {
-        const alcance = document.createRange();
-        alcance.selectNodeContents(noDoNome);
-        folga = alcance.getBoundingClientRect().left - x1;
-      }
+      const entrelinha = parseFloat(getComputedStyle(marca).lineHeight);
       return {
-        cabeca: cabeca.getBoundingClientRect().height,
-        corpo,
-        entrelinha,
-        cap,
-        tinta: { largura: x1 - x0, altura: y1 - y0 },
-        desvioDaBase: y1 - linhaDeBase,
-        folga,
+        sinal: Boolean(document.querySelector('.wordmark-e')),
         linhas: Math.round(marca.getBoundingClientRect().height / entrelinha),
-        cor: getComputedStyle(sinal).fill || getComputedStyle(marca).color,
+        cabeca: cabeca.getBoundingClientRect().height,
       };
     });
+    await ctx.close();
     if (m.erro) {
-      conta(`A7·${largura} ${nome} · a altura do cabeçalho não muda com o sinal`, false, m.erro);
-      await ctx.close();
+      conta(`A7·${largura} ${nome} · o cabeçalho é o nome, sem sinal, numa linha`, false, m.erro);
       continue;
     }
-    await p.addStyleTag({ content: '.wordmark-e{display:none !important}' });
-    const semSinal = await p.evaluate(
-      () => document.querySelector('header').getBoundingClientRect().height,
-    );
-    await ctx.close();
-
-    const diferenca = m.cabeca - semSinal;
     conta(
-      `A7·${largura} ${nome} · a altura do cabeçalho não muda com o sinal`,
-      Math.abs(diferenca) < 0.01 && m.linhas === 1,
-      `com ${m.cabeca.toFixed(2)}px · sem ${semSinal.toFixed(2)}px · ` +
-        `diferença ${diferenca.toFixed(2)}px · marca em ${m.linhas} linha(s) · ` +
-        `cabeçalho ${forma}, corpo ${m.corpo.toFixed(2)}px`,
+      `A7·${largura} ${nome} · o cabeçalho é o nome, sem sinal, numa linha`,
+      !m.sinal && m.linhas === 1,
+      `sinal ${m.sinal ? 'presente' : 'ausente'} · marca em ${m.linhas} linha(s) · ` +
+        `cabeçalho ${forma}, ${m.cabeca.toFixed(2)}px`,
     );
-
-    const alturaCerta = Math.abs(m.tinta.altura - m.cap * LOCKUP.alturaEmCap) < TOLERANCIA_PX;
-    const naBase = Math.abs(m.desvioDaBase) < TOLERANCIA_PX;
-    const folgaCerta =
-      m.folga !== null && Math.abs(m.folga - m.cap * LOCKUP.folgaEmCap) < TOLERANCIA_PX;
-    conta(
-      `A8·${largura} ${nome} · o sinal está onde a âncora B o põe`,
-      alturaCerta && naBase && folgaCerta,
-      `altura de maiúscula ${m.cap.toFixed(2)}px (medida no tipo) · ` +
-        `tinta ${m.tinta.altura.toFixed(2)}px (${(m.tinta.altura / m.cap).toFixed(3)} da maiúscula) · ` +
-        `desvio da linha de base ${m.desvioDaBase.toFixed(2)}px · ` +
-        `folga ${m.folga === null ? '—' : m.folga.toFixed(2)}px ` +
-        `(${m.folga === null ? '—' : (m.folga / m.cap).toFixed(3)} da maiúscula, quer-se ${LOCKUP.folgaEmCap})`,
-    );
-
-    if (!medidas.cabecalho) medidas.cabecalho = {};
-    medidas.cabecalho[`${largura}-${nome}`] = {
-      com_sinal: +m.cabeca.toFixed(2),
-      sem_sinal: +semSinal.toFixed(2),
-      diferenca: +diferenca.toFixed(2),
-      corpo: +m.corpo.toFixed(3),
-      altura_de_maiuscula: +m.cap.toFixed(3),
-      tinta: +m.tinta.altura.toFixed(2),
-      folga: m.folga === null ? null : +m.folga.toFixed(2),
-      desvio_da_base: +m.desvioDaBase.toFixed(3),
-      linhas: m.linhas,
-    };
   }
 }
 
-/**
- * A9 · em escuro o «e» é papel.
- *
- * O escuro entra pela escolha guardada, que é o único caminho para ele desde a
- * Emenda 12; e o que se compara é a cor computada do sinal com a TINTA DO TEMA
- * lida de `tokens.css`, que em escuro é a cor clara. `currentColor` não se
- * confere olhando para o atributo: confere-se perguntando ao navegador com que
- * cor ele desenhou o caminho.
- */
-async function mediuOEscuro() {
-  for (const [tema, escolha, esperada] of [
-    ['claro', 'light', TINTA_CLARA],
-    ['escuro', 'dark', TINTA_ESCURA],
-  ]) {
-    const ctx = await nav.newContext({ viewport: { width: 1280, height: 900 } });
-    await ctx.addInitScript((v) => {
-      try {
-        localStorage.setItem('tema', v);
-      } catch (e) {
-        /* um aparelho que recusa o armazenamento fica em claro, e a célula vê-o */
-      }
-    }, escolha);
-    const p = await ctx.newPage();
-    await p.goto(base + '/', { waitUntil: 'networkidle' });
-    await p.evaluate(() => document.fonts.ready);
-    const lido = await p.evaluate(() => {
-      const caminho = document.querySelector('.wordmark-e path');
-      const grupo = document.querySelector('.wordmark-e g');
-      if (!caminho) return null;
-      return {
-        fill: getComputedStyle(caminho).fill,
-        declarado: grupo?.getAttribute('fill') ?? null,
-        tema: document.documentElement.getAttribute('data-theme'),
-      };
-    });
-    await ctx.close();
-    const hex = (rgb) => {
-      const m = /rgb\((\d+),\s*(\d+),\s*(\d+)\)/.exec(rgb ?? '');
-      return m ? `#${[1, 2, 3].map((i) => Number(m[i]).toString(16).padStart(2, '0')).join('')}` : rgb;
-    };
-    const medida = lido ? hex(lido.fill) : null;
-    conta(
-      `A9·${tema} · o «e» leva a tinta do tema`,
-      medida === esperada && lido?.declarado === 'currentColor',
-      `desenhado com ${medida} · tokens dizem ${esperada} · ` +
-        `declarado "${lido?.declarado}" · data-theme "${lido?.tema}"`,
-    );
-    if (!medidas.tema) medidas.tema = {};
-    medidas.tema[tema] = { desenhado: medida, esperado: esperada };
-  }
-}
 
 /* ================================================================ os estragos */
 
@@ -1019,18 +872,8 @@ const PLANTAS = [
         ? Buffer.from(buf.toString('utf8').replace(/@media[^}]+\}[^}]*\}/, ''))
         : buf,
   },
-  {
-    nome: 'o sinal do cabeçalho a duas vezes a altura de maiúscula',
-    celulas: ['A7', 'A8'],
-    html: (html) =>
-      html.replace('</head>', '<style>.wordmark-e{height:1.32em !important}</style></head>'),
-  },
-  {
-    nome: 'a cor do sinal do cabeçalho fixada em âmbar',
-    celulas: ['A9'],
-    html: (html) =>
-      html.replace('</head>', '<style>.wordmark-e path{fill:#e0a21a !important}</style></head>'),
-  },
+
+
 ];
 
 /* =================================================================== a corrida */
@@ -1042,7 +885,6 @@ async function corridaInteira() {
   mediuOsFavicons();
   mediuAsCabecas();
   for (const largura of LARGURAS) await mediuOCabecalho(largura);
-  await mediuOEscuro();
 }
 
 if (!VERMELHOS) {
@@ -1084,8 +926,7 @@ for (const planta of PLANTAS) {
   /* O cabeçalho corre a UMA largura nas plantas, e não às sete: uma planta que
      muda a altura do sinal muda-a em todas, e sete corridas de navegador por
      planta seriam sete vezes o mesmo vermelho. */
-  if (toca('A7') || toca('A8')) await mediuOCabecalho(1280);
-  if (toca('A9')) await mediuOEscuro();
+  if (toca('A7')) await mediuOCabecalho(1280);
   const tocadas = celulas.filter((c) => planta.celulas.some((n) => c.nome.startsWith(n)));
   const apanhou = tocadas.some((c) => !c.passa);
   if (!apanhou) todosVermelhos = false;

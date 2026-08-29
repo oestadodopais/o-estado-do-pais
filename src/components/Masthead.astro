@@ -46,7 +46,6 @@
 import { SITE_NAME } from '../../site.config.mjs';
 import { routePath, otherLanguagePath, normalizePath } from '../lib/routes.mjs';
 import { estadoDaVerificacao, prova } from '../lib/prova.mjs';
-import { sinalDaMarca } from '../lib/marca.mjs';
 import ValorDaProva from './ValorDaProva.astro';
 import ControloDeTema from './ControloDeTema.astro';
 import { t } from '../i18n/strings.mjs';
@@ -154,7 +153,6 @@ const NomeTag = compact ? 'p' : 'h1';
  * sinal é tinta, em escuro é o papel do tema. Uma cor própria aqui seria uma
  * terceira decisão de cor num sítio que tem duas.
  */
-const marca = sinalDaMarca();
 
 const verificacao = estadoDaVerificacao();
 const p = prova(lang);
@@ -246,17 +244,7 @@ const painel = `${home}#painel`;
 
   <div class:list={['masthead', compact && 'masthead-compact']}>
     <NomeTag class="wordmark">
-      <svg
-        class="wordmark-e"
-        viewBox={marca.viewBox}
-        aria-hidden="true"
-        focusable="false"
-        role="presentation"
-      >
-        <g transform={marca.transform} fill="currentColor">
-          {marca.caminhos.map((d) => <path d={d} />)}
-        </g>
-      </svg>{compact ? <a href={home}>{SITE_NAME}</a> : SITE_NAME}
+      {compact ? <a href={home}>{SITE_NAME}</a> : SITE_NAME}
     </NomeTag>
 
     {/* ------------------------------------------------------------------
