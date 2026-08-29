@@ -480,6 +480,9 @@ def _na_tira(tema):
              "K1 · sobre o campo de tinta do ícone")]
     for v in VARIANTES:
         fora.append((f"{v}-sep-{s}", f"{v}-sep-{s}", f"{TITULOS[v]} · como veio"))
+    for v in VARIANTES:
+        fora.append((f"{v}-tinta-sep-{s}", f"{v}-tinta-sep-{s}",
+                     f"{TITULOS[v]} · sobre o campo de tinta do ícone"))
     return fora
 
 
@@ -520,8 +523,8 @@ def separadores(regua_):
                         f"{dd['ilhas_fundo']}\ncorrida {dd['corrida_min']} / {dd['corrida_med']}"
                         + (f"\npresença {dd['presenca']}:1" if dd['presenca'] else ""))
         f.nota(f"separador {tema}")
-        f.fila(linha[:4], rots[:4], gap=60)
-        f.fila(linha[4:], rots[4:], gap=60)
+        for i in range(0, len(linha), 4):
+            f.fila(linha[i:i + 4], rots[i:i + 4], gap=60)
     f.grava(os.path.join(AQUI, "ECRA-SEPARADORES-K.png"))
 
 
