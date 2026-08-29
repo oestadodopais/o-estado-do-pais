@@ -219,3 +219,205 @@ export function linguaDoRotuloDaFonte(rotulo, lang = 'pt') {
   if (declarada === lang) return null;
   return declarada === 'pt' ? 'pt-PT' : 'en';
 }
+
+/**
+ * ---------------------------------------------------------------------------
+ * E A LÍNGUA DO NOME DE CADA ORGANISMO (I97, 29.08.2026)
+ * ---------------------------------------------------------------------------
+ *
+ * `source` é o nome de quem publica o número, escrito como o organismo se
+ * escreve. É um nome, como o título de um documento e como o rótulo da fonte, e
+ * vale-lhe a mesma regra pela mesma razão: não se traduz, e diz em que língua
+ * está. Sem isso, «Direção-Geral das Autarquias Locais (DGAL)» era lido com
+ * fonética inglesa em 2 798 sítios da edição inglesa.
+ *
+ * NÃO SE TRADUZ, E NEM SEQUER PARA OS QUE TÊM NOME INGLÊS OFICIAL. O INE publica
+ * em inglês como «Statistics Portugal», e escrever isso aqui era a casa a
+ * escolher por qual dos dois nomes a fonte se chama nesta linha. A linha do
+ * livro-razão guarda um, e é esse que se rende, na língua em que está.
+ *
+ * SÃO DEZASSEIS NOMES E QUINZE SÃO PORTUGUESES. O décimo sexto é o Eurostat, que
+ * é o nome inglês de um organismo europeu e leva `lang="en"` na edição
+ * portuguesa, como qualquer outro nome fora da língua da página. As siglas
+ * contam como o nome de que saíram: «INE», «ERSAR» e «PORDATA» são portuguesas,
+ * e uma sigla portuguesa lida com fonética inglesa soa a outra coisa.
+ *
+ * O NOME DA PRÓPRIA CASA fica em português nas duas edições, como o «Arquivo de
+ * estudos» e o «Registo de correções» da tabela de cima: a edição inglesa cita a
+ * casa pelo nome que ela tem.
+ *
+ * O MARCADOR NÃO ESTÁ AQUI, pela razão de sempre: uma linha cujo `source` é
+ * `[a verificar]` não tem organismo nenhum, e declarar a língua de um buraco não
+ * diz nada. `CampoDaLinha` já o rende com `lang="pt-PT"`.
+ */
+
+/** `pt` ou `en`, para cada valor distinto do campo `source`. */
+export const LINGUA_DAS_FONTES = {
+  /* --- os organismos portugueses ---------------------------------------- */
+  'Direção-Geral das Autarquias Locais (DGAL)': 'pt',
+  INE: 'pt',
+  'Instituto do Emprego e Formação Profissional (IEFP)': 'pt',
+  'Município de Évora': 'pt',
+  'Direção Regional de Qualificação Profissional e Emprego (DRQPE)': 'pt',
+  'Instituto de Emprego da Madeira, IP-RAM (IEM)': 'pt',
+  'Secretaria-Geral do Ministério da Administração Interna (SGMAI)': 'pt',
+  'Estrutura de Missão Recuperar Portugal': 'pt',
+  'Grupo de Trabalho para a Reforma da Segurança Social': 'pt',
+  'Direção-Geral do Território (DGT)': 'pt',
+  'Marques, Cruz & Associados': 'pt',
+  ERSAR: 'pt',
+  'CICF/IPCA — Anuário Financeiro dos Municípios Portugueses': 'pt',
+  PORDATA: 'pt',
+  /* A casa, que se cita a si própria pelo nome que tem. */
+  'O Estado do País': 'pt',
+
+  /* --- o organismo de nome inglês --------------------------------------- */
+  Eurostat: 'en',
+};
+
+/**
+ * A MARCA DE LÍNGUA DE UM NOME DE ORGANISMO, NUMA PÁGINA DE UMA LÍNGUA.
+ *
+ * O mesmo contrato de `linguaDoTituloDoDocumento()`: `pt-PT` ou `en` quando o
+ * nome está numa língua que não é a da página, `null` quando é a da página ou
+ * quando não há declaração. Um nome sem declaração não ganha marca nenhuma, e
+ * `scripts/check-lingua.mjs` fecha a construção quando um chega sem ela.
+ */
+export function linguaDaFonte(fonte, lang = 'pt') {
+  const cru = fonte === null || fonte === undefined ? '' : String(fonte);
+  const declarada = Object.prototype.hasOwnProperty.call(LINGUA_DAS_FONTES, cru)
+    ? LINGUA_DAS_FONTES[cru]
+    : null;
+  if (declarada === null) return null;
+  if (declarada === lang) return null;
+  return declarada === 'pt' ? 'pt-PT' : 'en';
+}
+
+/**
+ * ---------------------------------------------------------------------------
+ * E A LÍNGUA DE CADA EDIÇÃO DE DOCUMENTO (I97, 29.08.2026)
+ * ---------------------------------------------------------------------------
+ *
+ * `document.edition` diz de que edição do documento saiu o número: «dezembro de
+ * 2025», «indicador 0014580», «tipsbd10», «2024». É o campo que obriga esta
+ * tabela a ter uma terceira resposta, e é uma resposta que as outras duas não
+ * precisavam de dar.
+ *
+ * **UMA EDIÇÃO PODE NÃO TER LÍNGUA NENHUMA.** Um ano («2024»), uma data
+ * («12.08.2026») e um código de série do Eurostat («tipsbd10») não estão em
+ * português nem em inglês: são cadeias de máquina. Marcá-las `pt-PT` na edição
+ * inglesa era dizer a um leitor de ecrã que «tipsbd10» é português, que é tão
+ * falso como o defeito que esta linha veio fechar. Marcá-las `en` era o mesmo
+ * erro virado ao contrário.
+ *
+ * Por isso a tabela declara **três coisas e não duas**: `'pt'`, `'en'` e `null`,
+ * e `null` ESCRITO não é o mesmo que ausente. A régua distingue os dois pela
+ * presença da chave: uma edição declarada `null` não ganha marca e está
+ * decidida; uma edição que falte à tabela fecha a construção. É a diferença
+ * entre «não tem língua» e «ninguém olhou».
+ *
+ * SÃO 61 EDIÇÕES DISTINTAS, CONTADAS: 16 em português, 45 sem língua (7 anos, 3
+ * datas, 3 nomes de ficheiro e 32 códigos de série do Eurostat), e nenhuma em
+ * inglês. A coluna do inglês fica de pé na mesma, porque a regra é sobre a
+ * espécie de cadeia e não sobre o que hoje calha existir.
+ *
+ * UMA EDIÇÃO MISTURADA MARCA-SE INTEIRA, NA LÍNGUA DA PROSA que ela traz.
+ * «nama_10r_2gdp, atualizado 2026-02-10» é um código e uma palavra portuguesa, e
+ * é a palavra que um leitor de ecrã lê mal: o campo leva `pt-PT`. É a mesma
+ * regra dos campos transcritos, que se marcam inteiros na língua do campo.
+ *
+ * «indicador 0014580» É PORTUGUÊS, e não um código: «indicador» é a palavra que
+ * o INE imprime, e a tabela declara o que a cadeia é, não o que ela parece.
+ */
+
+/** `pt`, `en`, ou `null` para uma edição que não está em língua nenhuma. */
+export const LINGUA_DAS_EDICOES = {
+  /* --- as edições escritas em português --------------------------------- */
+  'dezembro de 2025': 'pt',
+  'dezembro 2024': 'pt',
+  'dezembro 2013': 'pt',
+  'indicador 0014580': 'pt',
+  'indicador 0014061': 'pt',
+  'indicador 0012917': 'pt',
+  'indicador 0012918': 'pt',
+  'indicador 0014047': 'pt',
+  'indicador 0014063': 'pt',
+  'indicador 0013863': 'pt',
+  'instantâneo 20260819-1728': 'pt',
+  'Relatório final, Junho de 2026': 'pt',
+  'consulta de 2026-08-12': 'pt',
+  '2021 — dados provisórios (rótulo da DGAL)': 'pt',
+  'captura de 2021-12-28 (Wayback Machine, 20211228193105)': 'pt',
+  /* Um código do Eurostat e uma palavra portuguesa: marca-se pela prosa. */
+  'nama_10r_2gdp, atualizado 2026-02-10': 'pt',
+
+  /* --- os anos, que não estão em língua nenhuma -------------------------- */
+  '2014': null,
+  '2015': null,
+  '2016': null,
+  '2017': null,
+  '2021': null,
+  '2024': null,
+  '2025': null,
+
+  /* --- as datas ---------------------------------------------------------- */
+  '12.08.2026': null,
+  '15.08.2026': null,
+  '24.08.2026': null,
+
+  /* --- os nomes de ficheiro do publicador -------------------------------- */
+  'TERRITORY-RESULTS-LOCAL-070500-CM.json': null,
+  'territory-electionId=1-territoryId=1267-organId=4.json': null,
+  'territory-results-LOCAL-070500-CM.json': null,
+
+  /* --- os códigos de série do Eurostat ----------------------------------- */
+  edat_lfse_14: null,
+  lfsi_emp_a: null,
+  sdg_16_40: null,
+  sdg_16_50: null,
+  tepsr_sp210: null,
+  tepsr_sp410: null,
+  tesem060: null,
+  tesem130: null,
+  tespm110: null,
+  tespm140: null,
+  tessi180: null,
+  tipsbd10: null,
+  tipsbp10: null,
+  tipsbp60: null,
+  tipser10: null,
+  tipsgo10: null,
+  tipsho20: null,
+  tipsho50: null,
+  tipsii10: null,
+  tipslc10: null,
+  tipslm10: null,
+  tipslm60: null,
+  tipslm90: null,
+  tipsna20: null,
+  tipsna40: null,
+  tipspc30: null,
+  tipspc40: null,
+  tipspd22: null,
+  tipspd30: null,
+  tipsst10: null,
+  tipsun20: null,
+  une_rt_a: null,
+};
+
+/**
+ * A MARCA DE LÍNGUA DE UMA EDIÇÃO, NUMA PÁGINA DE UMA LÍNGUA.
+ *
+ * `pt-PT` ou `en` quando a edição está numa língua que não é a da página;
+ * `null` quando é a da página, quando a edição não está em língua nenhuma, e
+ * quando não há declaração. Os três `null` querem dizer coisas diferentes, e é
+ * `scripts/check-lingua.mjs` que os separa: o terceiro fecha a construção.
+ */
+export function linguaDaEdicao(edicao, lang = 'pt') {
+  const cru = edicao === null || edicao === undefined ? '' : String(edicao);
+  if (!Object.prototype.hasOwnProperty.call(LINGUA_DAS_EDICOES, cru)) return null;
+  const declarada = LINGUA_DAS_EDICOES[cru];
+  if (declarada === null) return null;
+  if (declarada === lang) return null;
+  return declarada === 'pt' ? 'pt-PT' : 'en';
+}
