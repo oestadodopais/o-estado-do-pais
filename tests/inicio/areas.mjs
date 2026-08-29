@@ -35,7 +35,8 @@
  *      `INVENTARIO-FRASES.md`, e nenhum classificado como autorreferência. É a
  *      segunda implementação da definição da medida 8 de `medir-defeitos.mjs`,
  *      feita no navegador e sobre o que o leitor vê: duas contas da mesma coisa,
- *      de sítios diferentes.
+ *      de sítios diferentes. As marcas que dispensam um texto do inventário são
+ *      LIDAS daquela régua e não copiadas para aqui (I100).
  *
  * M5 · o telemóvel, a 320, 360, 390 e 430, as quatro larguras que a casa serve.
  *      Transbordo zero no índice e na maior página de área.
@@ -304,10 +305,94 @@ async function mediuOsNomes() {
  * navegador construiu. Duas implementações da mesma definição, de dois sítios,
  * que têm de dizer a mesma coisa. Um bloco é um elemento de bloco que não contém
  * outro, que não é nem contém uma origem declarada, nem o nome ou a unidade de
- * uma medida, nem uma marca de cobertura ou de lugar, e cujo texto não está todo
- * dentro de um `<a>` ou de um `<button>`.
+ * uma medida, nem uma marca de cobertura, de lugar ou de nome, e cujo texto não
+ * está todo dentro de um `<a>` ou de um `<button>`.
+ *
+ * ---------------------------------------------------------------------------
+ * AS MARCAS LEEM-SE DA RÉGUA DA CASA, E NÃO SE COPIAM PARA AQUI (I100)
+ * ---------------------------------------------------------------------------
+ * A lista das marcas estava escrita à mão nas duas pontas, e a segunda ficou
+ * para trás: `data-nome` entrou em `medir-defeitos.mjs` a 29.08.2026 e esta
+ * célula não soube dela, o que pôs a M4 vermelha com dezoito blocos que eram os
+ * nove nomes das áreas, duas vezes, enquanto `npm run check:voz` dizia «nada por
+ * classificar» na mesma construção. Não é a primeira marca a entrar nesta lista
+ * e não será a última, e uma lista que cresce num sítio e não no outro volta a
+ * partir-se. Passa a ser LIDA do ficheiro que a declara, e esta corrida pára com
+ * o nome da constante que não encontrou, em vez de medir com meia definição.
+ *
+ * PORQUE É QUE A CÉLULA NÃO CHAMA `medir-defeitos.mjs` COMO A M7 DA RÉGUA DO
+ * MAPA. Porque perdia o estrago plantado, que é o que faz o verde valer alguma
+ * coisa (regra 14 da casa). Os estragos desta régua são uma transformação do
+ * HTML no caminho entre o ficheiro e o navegador, e nunca em disco; a outra
+ * régua lê o `dist/` do disco, e um bloco de prosa plantado à saída do servidor
+ * nunca lhe chegaria. Ficaria uma célula com o número certo e sem controlo
+ * positivo nenhum.
+ *
+ * A SUBSTITUIÇÃO NA DESCRIÇÃO É PARTE DA MARCA, E NÃO UM EXTRA. A régua da casa
+ * troca na `<meta name="description">` o texto de cada elemento marcado pelo
+ * lugar que ele ocupa — `<lugar>` e `<nome>` —, para que uma descrição composta
+ * com o nome de uma área se conte uma vez e não uma por área. Sem essa troca a
+ * marca ficava meio aprendida: metade dos dezoito blocos por classificar era o
+ * `<h1>` marcado, e a outra metade era a descrição composta com o mesmo nome.
+ *
+ * O QUE CONTINUA DIFERENTE, E ESTÁ MEDIDO. A lista dos ELEMENTOS de bloco não se
+ * lê de lá: aqui traz `div` e não traz `span.eyebrow`. A diferença nas vinte
+ * rotas desta célula é de zero blocos, medida a 29.08.2026 nas duas formas (103
+ * blocos por edição em ambas), e por isso fica como está em vez de mudar sem
+ * efeito. O que cresce é a lista das marcas, e é essa que passa a ter uma fonte
+ * só.
  */
 const INVENTARIO = leInventario(RAIZ);
+
+/** O ficheiro que declara as marcas, lido como texto e não importado: um
+    `import` corria a régua inteira, que varre as 6 590 páginas de `dist/`. */
+const REGUA_DA_VOZ = path.join(RAIZ, 'scripts', 'medir-defeitos.mjs');
+const FONTE_DA_REGUA = fs.readFileSync(REGUA_DA_VOZ, 'utf8');
+
+/**
+ * Um seletor declarado em `scripts/medir-defeitos.mjs`, pelo nome da constante.
+ *
+ * A constante pode estar escrita em várias cadeias somadas, e o que se devolve é
+ * a soma. Se ela mudar de nome ou de forma, isto morre com o nome dela: uma
+ * definição partilhada não pode envelhecer calada.
+ */
+function seletorDaRegua(nome) {
+  const m = new RegExp(`\\bconst ${nome} =([\\s\\S]*?);\\n`).exec(FONTE_DA_REGUA);
+  if (!m) {
+    console.error(
+      `não encontrei \`const ${nome}\` em scripts/medir-defeitos.mjs. ` +
+        `A M4 mede com as marcas que essa régua declara, e não as pode adivinhar.`,
+    );
+    process.exit(2);
+  }
+  const partes = [...m[1].matchAll(/'([^']*)'/g)].map((x) => x[1]);
+  if (!partes.length) {
+    console.error(`\`const ${nome}\` de scripts/medir-defeitos.mjs não traz nenhum seletor.`);
+    process.exit(2);
+  }
+  return partes.join('');
+}
+
+/* As cinco constantes que `frasesDaCasa()` soma, pela mesma ordem. `[data-prova]`
+   NÃO está lá, e é de propósito: um bloco com um número da prova continua a ser
+   prosa da casa, e a régua declara-o. */
+const ORIGEM_DECLARADA_DA_CASA = [
+  'ORIGEM_DECLARADA',
+  'MEDIDA_DECLARADA',
+  'COBERTURA_DECLARADA',
+  'LUGAR_DECLARADO',
+  'NOME_DECLARADO',
+]
+  .map(seletorDaRegua)
+  .join(',');
+
+/* As duas marcas cujo texto sai da descrição e deixa lá o lugar que ocupava. São
+   as marcas de NOME: um lugar e uma coisa de um ficheiro de dados. Uma marca
+   nova que nomeie alguma coisa entra aqui com o seu lugar; as outras não. */
+const MARCAS_NA_DESCRICAO = [
+  [seletorDaRegua('LUGAR_DECLARADO'), '<lugar>'],
+  [seletorDaRegua('NOME_DECLARADO'), '<nome>'],
+];
 
 async function mediuAVoz() {
   for (const { edicao, indice, area } of EDICOES) {
@@ -317,18 +402,8 @@ async function mediuAVoz() {
     let blocos = 0;
     for (const rota of rotas) {
       const p = await pagina(rota, 1280);
-      const lidos = await p.evaluate(() => {
+      const lidos = await p.evaluate(([ORIGEM, MARCAS]) => {
         const BLOCOS = 'p,li,h1,h2,h3,h4,dt,dd,figcaption,caption,td,th,summary,blockquote,div';
-        /* A lista é a de `ORIGEM_DECLARADA` mais as três marcas que a régua junta
-           a ela, carácter a carácter, e `[data-prova]` NÃO está lá: um bloco com
-           um número da prova continua a ser prosa da casa, e a régua declara-o.
-           Uma lista mais larga aqui era uma peneira mais fina do que a que fecha
-           a construção, e mediria outra coisa. */
-        const ORIGEM =
-          '[data-claim],[data-linha-claim],[data-correcao-claim],[data-verbatim],' +
-          '[data-nonledger],[data-agenda],[data-registo],[data-registo-unidade],' +
-          '[data-registo-linha],[data-registo-conta],[data-medida-nome],[data-medida-unidade],' +
-          '[data-cobertura],[data-lugar]';
         const marcados = new Set();
         for (const el of document.querySelectorAll(ORIGEM)) {
           marcados.add(el);
@@ -362,10 +437,21 @@ async function mediuAVoz() {
           if (!semComandos(el)) continue;
           out.push(inteiro(el));
         }
+        /* A DESCRIÇÃO DO `<head>` É SUPERFÍCIE PÚBLICA E CONTA COMO UM BLOCO, com
+           o texto de cada elemento marcado trocado pelo lugar que ele ocupa. É a
+           mesma troca da régua da casa, e sem ela a descrição de uma página de
+           área contava-se uma vez por área em vez de uma vez. */
         const d = document.querySelector('head meta[name="description"]');
-        if (d) out.push((d.getAttribute('content') ?? '').replace(/\s+/g, ' ').trim());
+        let descricao = (d?.getAttribute('content') ?? '').replace(/\s+/g, ' ').trim();
+        for (const [seletor, marca] of MARCAS) {
+          for (const el of document.querySelectorAll(seletor)) {
+            const nome = (el.textContent ?? '').replace(/\s+/g, ' ').trim();
+            if (nome) descricao = descricao.split(nome).join(marca).replace(/\s+/g, ' ').trim();
+          }
+        }
+        if (descricao) out.push(descricao);
         return out;
-      });
+      }, [ORIGEM_DECLARADA_DA_CASA, MARCAS_NA_DESCRICAO]);
       await p.__ctx.close();
       for (const texto of lidos) {
         blocos++;
@@ -598,6 +684,19 @@ const PLANTAS = [
             '<ul class="areas-lista"',
             '<p>Verificámos todas as fontes destas áreas, uma a uma.</p><ul class="areas-lista"',
           )
+        : html,
+  },
+  {
+    /* O ESTRAGO DA I100. A marca que dispensa o nome de uma área do inventário
+       é retirada da página, e o nome volta a ser prosa por classificar — no
+       `<h1>`, no selo da referência legal e na descrição composta com ele. É o
+       vermelho que a célula não sabia ver enquanto a lista das marcas estava
+       escrita à mão aqui dentro. */
+    nome: 'a marca `data-nome` retirada da página de uma área',
+    celulas: ['M4'],
+    estrago: (html, rota) =>
+      rota.startsWith('/areas/') || rota.startsWith('/en/areas/')
+        ? html.replace(/data-nome="/g, 'data-marca-apagada="')
         : html,
   },
 ];
