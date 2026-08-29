@@ -1,0 +1,31 @@
+{
+ "registado_em": "2026-08-29",
+ "copia": "pacote copiado do worktree wt-pequenas-7 em bcd77fc (fonte e dist); as plantas so no pacote",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "paginas/en-row-a.html (dist/en/ledger/abrantes-desemprego-registado-2025-12/index.html)",
+   "descricao": "the lang=\"pt-PT\" mark removed from one Portuguese source name on an English row page",
+   "sha256_antes": "bbb9e314c96f992084f7b7433b3307ee58b61022f8218fca9e1673afe15b87df",
+   "sha256_depois": "6d6404ffbf50d5d8c5f0a49d39c238ec9b9b9ce6f0cfcbb65363bf06dcd027ae",
+   "contexto": "<span class=\"campo-valor\" lang=\"pt-PT\" data-linha-claim=\"abrantes-desemprego-registado-2025-12\" data-linha-campo=\"source\">"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "fonte/src/i18n/lingua-dos-titulos.mjs",
+   "descricao": "Eurostat classified as 'pt' while the file's own comment says the sixteenth name is Eurostat, English",
+   "sha256_antes": "3e1a0152d4e31ebde54f45b8f07e45d27cdf0e34d4fead75a46e1add11d3109f",
+   "sha256_depois": "59b2081df6ddc315b044abab2ba17d26ac6b50ad41148719da4781fad9a9e834",
+   "contexto": "Eurostat: 'en',"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "fonte/design/especime-v3/medicoes/pequenas-7-construtor.md",
+   "descricao": "the after-count of unmarked organisation names in dist/en changed from 164 to 146 in the table, against the text's 164",
+   "sha256_antes": "7cac409a1443044e5b6bd558d52dfb55ad512a72a7bddc96cf063f263ea19833",
+   "sha256_depois": "f3a76f6fd5434f4d51f7d48b036e807abedee2110f03a29cab7ade0feb8ca48b",
+   "contexto": "| sem marca em `dist/en` | 6 911 | 164 |"
+  }
+ ],
+ "nota": "a primeira tentativa lançou a leitura com a P1 por plantar (a página escolhida tinha fonte inglesa); a leitura foi parada e relançada com as três plantas conferidas"
+}
