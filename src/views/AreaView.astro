@@ -190,7 +190,16 @@ const portaLegal = [LEI_ORGANICA.diplomaCurto, ...area.pecas.artigos].join(' · 
           artigo em que esta página assenta, com a ligação ao ficheiro que o
           Diário da República serve. Nada mais sobre a regra: quem quiser o
           texto do número abre o diploma. É a forma do `.prov` que o índice dos
-          308 usa para a legenda do selo. */}
+          308 usa para a legenda do selo.
+
+          A REFERÊNCIA LEGAL LEVA A MARCA DA LÍNGUA (I91, 29.08.2026). «Decreto-Lei
+          n.º 87-A/2025 · Artigo 15.º, n.º 1» é português dentro de uma página
+          inglesa: sem `lang="pt-PT"` um leitor de ecrã inglês lê «n.º» como se
+          fosse inglês, e o «º» e o hífen do número do diploma saem trocados. É a
+          mesma marca, e a mesma razão, que o rótulo de cada matéria já leva:
+          uma citação de uma lei portuguesa diz-se em português, e diz em que
+          língua está. Vai nas duas edições, como a do rótulo, para que a marca
+          não dependa da edição em que a página é construída. */}
       <div class="prov area-lei">
         <div class="prov-row">
           <span class="prov-study">{nome}</span>
@@ -200,6 +209,7 @@ const portaLegal = [LEI_ORGANICA.diplomaCurto, ...area.pecas.artigos].join(' · 
               href={LEI_ORGANICA.url}
               rel="noopener noreferrer external"
               data-nonledger="referencia-legal"
+              lang="pt-PT"
             >
               {portaLegal}
             </a>
