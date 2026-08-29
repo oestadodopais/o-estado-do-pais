@@ -72,6 +72,7 @@ import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import {
   linguaDoTituloDoDocumento,
   linguaDoRotuloDaFonte,
+  linguaDaFonte,
 } from '../i18n/lingua-dos-titulos.mjs';
 
 /* `...resto` deixa quem chama pendurar as suas marcas no item sem que este
@@ -133,7 +134,14 @@ const nomeDaFonte = c.name === null || c.name === undefined || c.name === '' ? n
       {c.source !== null && c.source !== undefined && (
         <span class="livro-item-campo">
           <span class="livro-item-k">{s.prov.fonte}</span>{' '}
-          <CampoDaLinha id={c.id} campo="source" valor={c.source} lang={lang} />
+          {/* O NOME DO ORGANISMO É UM NOME, E DIZ EM QUE LÍNGUA ESTÁ (I97). */}
+          <CampoDaLinha
+            id={c.id}
+            campo="source"
+            valor={c.source}
+            lang={lang}
+            lingua={linguaDaFonte(c.source, lang)}
+          />
         </span>
       )}
       {documento && c.document?.title !== null && c.document?.title !== undefined && (

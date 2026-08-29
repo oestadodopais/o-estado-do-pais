@@ -69,6 +69,8 @@ import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import {
   linguaDoTituloDoDocumento,
   linguaDoRotuloDaFonte,
+  linguaDaFonte,
+  linguaDaEdicao,
 } from '../i18n/lingua-dos-titulos.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -260,7 +262,9 @@ const verificacoes = verificacoesDaLinha(claim).slice(0, VERIFICACOES_MOSTRADAS)
 
 /** As linhas da ficha que existem nesta afirmação. Uma linha a null não se mostra. */
 const ficha = [
-  { k: s.prov.fonte, campo: 'source', valor: claim.source },
+  /* O NOME DO ORGANISMO É UM NOME, E DIZ EM QUE LÍNGUA ESTÁ (I97, 29.08.2026):
+     a tabela é `src/i18n/lingua-dos-titulos.mjs`, e a regra é a dos títulos. */
+  { k: s.prov.fonte, campo: 'source', valor: claim.source, lingua: linguaDaFonte(claim.source, lang) },
   {
     k: ehSerieDeDados ? s.prov.serie : s.prov.documento,
     campo: 'document.title',
@@ -270,7 +274,15 @@ const ficha = [
        `src/i18n/lingua-dos-titulos.mjs`. */
     lingua: linguaDoTituloDoDocumento(claim.document?.title ?? null, lang),
   },
-  { k: s.prov.edicao, campo: 'document.edition', valor: claim.document?.edition ?? null },
+  /* A EDIÇÃO TAMBÉM (I97), e é o campo onde a tabela precisa de uma terceira
+     resposta: um ano, uma data e um código de série não estão em língua nenhuma
+     e não levam marca, mas estão declarados. */
+  {
+    k: s.prov.edicao,
+    campo: 'document.edition',
+    valor: claim.document?.edition ?? null,
+    lingua: linguaDaEdicao(claim.document?.edition ?? null, lang),
+  },
   /* Onde no documento está o excerto. Opcional: a maior parte das fontes é uma
      página só e não há para onde apontar; quando há, é o que separa «está neste
      relatório» de «está nesta página deste relatório». */
@@ -354,7 +366,14 @@ const unidade = unidadeDaLinha(claim.unit, lang);
  * contra o livro-razão carácter a carácter.
  */
 const atribuicaoPecas = [
-  presente(claim.source) ? { k: s.livro.linha.publicadoPor, campo: 'source', valor: claim.source } : null,
+  presente(claim.source)
+    ? {
+        k: s.livro.linha.publicadoPor,
+        campo: 'source',
+        valor: claim.source,
+        lingua: linguaDaFonte(claim.source, lang),
+      }
+    : null,
   presente(claim.document?.title)
     ? {
         k: s.livro.linha.publicadoEm,
@@ -364,7 +383,13 @@ const atribuicaoPecas = [
       }
     : null,
   presente(claim.document?.edition)
-    ? { k: null, campo: 'document.edition', valor: claim.document.edition, entreParenteses: true }
+    ? {
+        k: null,
+        campo: 'document.edition',
+        valor: claim.document.edition,
+        entreParenteses: true,
+        lingua: linguaDaEdicao(claim.document.edition, lang),
+      }
     : null,
   paginaDoPdf
     ? { k: s.livro.linha.publicadoPagina, campo: 'source_url.page', valor: paginaDoPdf }

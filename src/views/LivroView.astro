@@ -30,7 +30,7 @@ import { caminhoDoLivro } from '../lib/livro.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
-import { linguaDoRotuloDaFonte } from '../i18n/lingua-dos-titulos.mjs';
+import { linguaDoRotuloDaFonte, linguaDaFonte } from '../i18n/lingua-dos-titulos.mjs';
 import { prova } from '../lib/prova.mjs';
 import { LICENCA } from '../data/licenca.mjs';
 import { CONJUNTO } from '../lib/conjunto.mjs';
@@ -214,7 +214,14 @@ const p = prova(lang);
                 {c.source !== null && c.source !== undefined && (
                   <span class="livro-item-campo">
                     <span class="livro-item-k">{s.prov.fonte}</span>{' '}
-                    <CampoDaLinha id={c.id} campo="source" valor={c.source} lang={lang} />
+                    {/* O NOME DO ORGANISMO É UM NOME (I97, 29.08.2026). */}
+                    <CampoDaLinha
+                      id={c.id}
+                      campo="source"
+                      valor={c.source}
+                      lang={lang}
+                      lingua={linguaDaFonte(c.source, lang)}
+                    />
                   </span>
                 )}
                 {c.access_date !== null && c.access_date !== undefined && (
