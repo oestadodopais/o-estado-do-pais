@@ -65,6 +65,7 @@ import {
 } from '../lib/ledger.mjs';
 import { caminhoDaLinha, caminhoDoLivro, tituloDaLinha, descricaoDaLinha } from '../lib/livro.mjs';
 import { studyTitle } from '../data/studies.mjs';
+import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import { LICENCA } from '../data/licenca.mjs';
@@ -279,6 +280,17 @@ const ficha = [
 const estudo = studyTitle(claim.study, lang).titulo;
 
 /**
+ * A UNIDADE, NA LÍNGUA DA PÁGINA (I92, 29.08.2026).
+ *
+ * A unidade de uma linha é um rótulo e não uma citação: o dicionário de
+ * `src/i18n/unidades.mjs` dá o inglês onde há um facto de dicionário, e devolve
+ * a unidade em português com `lang="pt-PT"` onde não há. O portão de HTML
+ * confere o texto renderizado contra a mesma função, como já fazia com a
+ * `derivation` e com a nota de bandeira.
+ */
+const unidade = unidadeDaLinha(claim.unit, lang);
+
+/**
  * A FRASE DE ATRIBUIÇÃO (v2, §11 iii da ordem do recibo).
  *
  * «Publicado por *organismo*, em *documento* (*edição*), p. *N* · lido a
@@ -375,10 +387,10 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
       <CampoDaLinha
         id={id}
         campo="unit"
-        valor={claim.unit}
+        valor={unidade.texto}
         lang={lang}
         class="linha-valor-unidade"
-        originalPt={true}
+        lingua={unidade.lingua}
       />
     </h1>
     {/* O selo ao lado do valor de cabeça, na sua própria página. §5.3 não abre
@@ -417,7 +429,13 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                 {i > 0 && (peca.apos ? ' · ' : peca.entreParenteses ? ' ' : ', ')}
                 {peca.k && `${peca.k} `}
                 {peca.entreParenteses && '('}
-                <CampoDaLinha id={id} campo={peca.campo} valor={peca.valor} lang={lang} />
+                <CampoDaLinha
+                  id={id}
+                  campo={peca.campo}
+                  valor={peca.valor}
+                  lang={lang}
+                  lingua={peca.lingua ?? null}
+                />
                 {peca.entreParenteses && ')'}
               </>
             ))}
@@ -904,7 +922,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                   campo={l.campo}
                   valor={l.valor}
                   lang={lang}
-                  originalPt={l.originalPt ?? false}
+                  lingua={l.lingua ?? null}
                 />
               </dd>
             </>

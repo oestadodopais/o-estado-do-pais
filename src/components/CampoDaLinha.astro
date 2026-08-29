@@ -11,14 +11,22 @@
  * sítio, `[a verificar]`, em português nas duas edições, com glosa inglesa —
  * como os marcadores do Método (IDENTIDADE.md §6).
  *
- * `originalPt` marca os campos que são prosa da casa e vivem numa só língua:
- * hoje só a unidade. Ver DECISIONS §1.24.
+ * `lingua` é o valor do atributo `lang` deste campo, ou `null` quando não há
+ * nada a marcar. Quem chama decide-o, porque é quem chama que sabe o que o
+ * campo é: a unidade pergunta-o a `unidadeDaLinha()` (I92), e os campos que são
+ * datas ou endereços não marcam nada.
+ *
+ * ATÉ 29.08.2026 ISTO ERA `originalPt`, UM BOOLEANO, e queria dizer «este campo
+ * é prosa da casa e vive numa só língua» (DECISIONS §1.24) — hoje só a unidade.
+ * A I92 partiu esse pressuposto: a unidade passou a ter inglês onde há um facto
+ * de dicionário, e continua em português onde não há. Um booleano não sabe dizer
+ * as duas coisas; a língua, sim.
  */
 import { POR_VERIFICAR } from '../lib/ledger.mjs';
 import { t } from '../i18n/strings.mjs';
 import { routePath } from '../lib/routes.mjs';
 
-const { id, campo, valor, lang = 'pt', class: klass = '', originalPt = false } = Astro.props;
+const { id, campo, valor, lang = 'pt', class: klass = '', lingua = null } = Astro.props;
 const s = t(lang);
 const porVerificar = valor === POR_VERIFICAR;
 const gloss = lang !== 'pt' ? s.livro.marcadorGloss : '';
@@ -46,7 +54,7 @@ const gloss = lang !== 'pt' ? s.livro.marcadorGloss : '';
   ) : (
     <span
       class:list={['campo-valor', klass]}
-      lang={originalPt ? 'pt-PT' : undefined}
+      lang={lingua ?? undefined}
       data-linha-claim={id}
       data-linha-campo={campo}
     >

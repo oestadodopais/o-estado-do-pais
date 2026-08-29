@@ -29,6 +29,7 @@ import { ESTUDO_DOS_CONCELHOS } from '../lib/livro-concelhos.mjs';
 import { caminhoDoLivro } from '../lib/livro.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
+import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { prova } from '../lib/prova.mjs';
 import { LICENCA } from '../data/licenca.mjs';
 import { CONJUNTO } from '../lib/conjunto.mjs';
@@ -187,10 +188,10 @@ const p = prova(lang);
                 <CampoDaLinha
                   id={c.id}
                   campo="unit"
-                  valor={c.unit}
+                  valor={unidadeDaLinha(c.unit, lang).texto}
                   lang={lang}
                   class="livro-item-unidade"
-                  originalPt={true}
+                  lingua={unidadeDaLinha(c.unit, lang).lingua}
                 />
                 {c.source !== null && c.source !== undefined && (
                   <span class="livro-item-campo">
