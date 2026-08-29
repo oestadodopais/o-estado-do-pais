@@ -375,7 +375,7 @@ function exige(condicao, mensagem) {
   return true;
 }
 
-function provas() {
+export function provas() {
   console.log('MEDIDA 2 · o traço mais fino, e se desaparece');
 
   // VERDE conhecido: uma barra de 3 px, cheia. O detetor tem de dizer 3 e não «desaparece».
