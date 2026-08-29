@@ -15,7 +15,7 @@
  *   · **I92** — a unidade de uma linha é um RÓTULO. Traduz-se onde há um facto
  *     de dicionário (`src/i18n/unidades.mjs`), e onde não há rende-se em
  *     português com a marca da língua.
- *   · **I97** — o nome do ORGANISMO que publica (`source`) e a EDIÇÃO do
+ *   · **I97** · o nome do ORGANISMO que publica (`source`) e a EDIÇÃO do
  *     documento (`document.edition`) são nomes, e valem-lhes as regras do
  *     título. A edição trouxe uma resposta que as outras cadeias não precisavam
  *     de dar: um ano, uma data e um código de série não estão em língua
@@ -260,7 +260,7 @@ for (const [f] of fontesDoLivro) {
       `o organismo «${f.slice(0, 90)}» (${fontesDoLivro.get(f)} linha(s)) não tem língua ` +
         `declarada em src/i18n/lingua-dos-titulos.mjs.\n` +
         `      O nome de quem publica é um nome: não se traduz, e diz em que língua está. ` +
-        `Nem para os que têm nome inglês oficial — a linha guarda um nome, e é esse que se rende.`,
+        `Nem para os que têm nome inglês oficial: a linha guarda um nome, e é esse que se rende.`,
     );
   }
 }
@@ -289,7 +289,7 @@ for (const [e] of edicoesDoLivro) {
     erros.push(
       `a edição «${e.slice(0, 90)}» (${edicoesDoLivro.get(e)} linha(s)) não tem língua declarada ` +
         `em src/i18n/lingua-dos-titulos.mjs.\n` +
-        `      Uma edição declara-se «pt», «en», ou «null» quando não está em língua nenhuma — um ` +
+        `      Uma edição declara-se «pt», «en», ou «null» quando não está em língua nenhuma: um ` +
         `ano, uma data, um código de série. «null» ESCRITO é uma decisão; a chave em falta é ` +
         `ninguém ter olhado.`,
     );

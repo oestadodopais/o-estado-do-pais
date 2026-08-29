@@ -330,7 +330,7 @@ async function mediuOsNomes() {
  *
  * A SUBSTITUIÇÃO NA DESCRIÇÃO É PARTE DA MARCA, E NÃO UM EXTRA. A régua da casa
  * troca na `<meta name="description">` o texto de cada elemento marcado pelo
- * lugar que ele ocupa — `<lugar>` e `<nome>` —, para que uma descrição composta
+ * lugar que ele ocupa (`<lugar>` e `<nome>`), para que uma descrição composta
  * com o nome de uma área se conte uma vez e não uma por área. Sem essa troca a
  * marca ficava meio aprendida: metade dos dezoito blocos por classificar era o
  * `<h1>` marcado, e a outra metade era a descrição composta com o mesmo nome.
@@ -688,7 +688,7 @@ const PLANTAS = [
   },
   {
     /* O ESTRAGO DA I100. A marca que dispensa o nome de uma área do inventário
-       é retirada da página, e o nome volta a ser prosa por classificar — no
+       é retirada da página, e o nome volta a ser prosa por classificar: no
        `<h1>`, no selo da referência legal e na descrição composta com ele. É o
        vermelho que a célula não sabia ver enquanto a lista das marcas estava
        escrita à mão aqui dentro. */
