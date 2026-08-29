@@ -365,17 +365,25 @@
  * `.cabeca-grelha`, e é aqui que se decide onde ele fica e que cara tem.
  *
  * ABAIXO DE 1024 É A FORMA EM LINHA, e é esta a base: os nomes correm uns a
- * seguir aos outros, separados por ponto, e o alvo de cada um faz-se de
- * `padding` e não de uma linha própria. Era uma ligação por linha, e a 390 isso
- * dava 1 238 px de pilha (medido a 29.08 sobre `a76f829`): 29 linhas de 44 px
- * mais os três rótulos. Com os nomes em linha o alvo continua a ter 44 px de
- * altura, porque a caixa de um `inline-block` com 12 px de `padding` em cima e
- * em baixo mede 44, e a linha inteira leva quantos nomes couberem.
+ * seguir aos outros e o alvo de cada um faz-se de `padding` e não de uma linha
+ * própria. Era uma ligação por linha, e a 390 isso dava 1 238 px de pilha
+ * (medido a 29.08 sobre `a76f829`): 29 linhas de 44 px mais os três rótulos.
  *
- * O PONTO ENTRE DOIS NOMES É DA FOLHA E NÃO DO DOCUMENTO, e a razão é a régua
- * da voz: um separador escrito na marcação punha texto fora da ligação dentro do
- * `<li>`, e um `<li>` com texto fora de um comando é uma frase da casa por
- * classificar. O separador é decoração, e é onde a decoração vive.
+ * O ALVO TEM 44 px NOS DOIS LADOS, e não só na altura (leitura cruzada de
+ * 29.08). A primeira forma desta folha dava 12 px de `padding` em cima e em
+ * baixo sobre uma linha de 20, e mais nada: «Beja» media 44 px de alto e 32 de
+ * largo, e um alvo de 44 px que é 44 num sentido só é 44 no papel e menos no
+ * dedo. Leva agora `min-width` de 44 px, `padding` dos lados e o nome ao centro,
+ * e a régua mede as duas dimensões e a interseção dos rectângulos.
+ *
+ * SEM PONTUAÇÃO ENTRE OS NOMES (decisão do lugar de direção, 29.08.2026). Havia
+ * um ponto por `::after`, e a captura mostrou o que ele fazia: com o item
+ * inquebrável, o ponto nunca abre uma linha mas fica pendurado no fim dela
+ * («Castelo Branco ·», «Lisboa ·»). O que separa os nomes passa a ser o
+ * intervalo entre eles e o sublinhado que cada ligação já tem, que é o que os
+ * separa em qualquer lista de ligações desta casa. A `<ul>` é uma fila flexível
+ * e o intervalo é o `gap`: assim não há caracteres a decidir onde a linha parte,
+ * e não há texto nenhum fora das ligações para a régua da voz ler.
  */
 .mapa-ilhas {
   display: flex;
@@ -392,34 +400,34 @@
   font-size: 13px;
   color: var(--muted);
 }
+/* A FILA É FLEXÍVEL, E O INTERVALO É O `gap`. Com os itens em linha corrente, a
+   quebra decidia-se em oportunidades de quebra à volta de caixas atómicas, e era
+   isso que deixava um separador pendurado no fim da linha. Numa fila flexível
+   cada nome é um item, o intervalo entre dois é uma medida e não um carácter, e
+   a linha parte entre itens e mais lado nenhum. */
 .mapa-ilhas-lista {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.75em;
 }
-/* O PONTO É DE QUEM VEM ANTES, E O NOME NÃO SE PARTE. Medido na primeira forma
-   desta folha: com o separador a abrir o item seguinte, uma linha podia começar
-   por «· Ilha de São Jorge» e outra acabar em «Castelo Branco ·», porque há
-   oportunidade de quebra dos dois lados de uma caixa em linha. O item passa a
-   ser uma caixa atómica com `nowrap`: dentro dele nada se parte (nem «Viana do
-   Castelo», nem o ponto do seu nome), e a quebra só pode acontecer entre dois
-   itens, que é onde ela se lê. */
 .mapa-ilhas-lista li {
-  display: inline-block;
-  white-space: nowrap;
   margin: 0;
 }
-.mapa-ilhas-lista li:not(:last-child)::after {
-  content: '·';
-  margin-inline: 5px;
-  color: var(--muted);
-}
 .mapa-ilhas-lista a {
-  display: inline-block;
+  display: block;
   font-family: var(--f-instr);
   font-size: 14px;
   line-height: 20px;
+  /* 12 + 20 + 12 = 44 de altura; 44 de largura mínima com 6 de folga de cada
+     lado, e o nome ao centro para que um nome curto não fique encostado. */
   padding-block: 12px;
+  padding-inline: 6px;
+  min-width: 44px;
+  text-align: center;
+  white-space: nowrap;
   /* O SUBLINHADO DECLARA-SE EM PÍXEIS, E É O MESMO 1 px DO CONTORNO. Por
      omissão a espessura é `auto`, que é uma cadeia e não uma grandeza: a marca
      do par ia de `auto` para 3 px, e nem a régua nem quem lê a folha sabe
@@ -477,17 +485,21 @@
     margin-top: 26px;
     gap: 0 clamp(18px, 2vw, 30px);
   }
-  /* A forma em linha é da largura pequena: aqui volta a ser uma por linha. */
+  /* A forma em linha é da largura pequena: aqui a fila desfaz-se e cada nome
+     volta a ter a sua linha, com a largura da coluna em que está. */
+  .mapa-ilhas-lista {
+    display: block;
+    column-gap: normal;
+  }
   .mapa-ilhas-lista li {
     display: list-item;
-    white-space: normal;
-  }
-  .mapa-ilhas-lista li:not(:last-child)::after {
-    content: none;
   }
   .mapa-ilhas-lista a {
     display: block;
     padding-block: 0;
+    padding-inline: 0;
+    min-width: 0;
+    text-align: left;
     min-height: 44px;
     line-height: 44px;
     font-size: 13px;
@@ -847,6 +859,18 @@ svg [hidden] {
   .cabeca-grelha {
     grid-template-columns: minmax(0, 1fr);
     row-gap: 22px;
+  }
+  /* A ORDEM DO DOCUMENTO É A DO ECRÃ LARGO, E AQUI A FOLHA INVERTE-A. Os nomes
+     vêm antes do mapa no documento porque são o índice dele, e acima de 1024 é
+     também a ordem do ecrã: a cabeça, os nomes por baixo dela, o mapa ao lado.
+     Numa coluna só, o mapa é a coisa e os nomes são a rede dele, e uma rede
+     lê-se por baixo daquilo que ela protege. Aqui, e só aqui, a ordem visual e a
+     do documento divergem, e é uma escolha e não um acaso. */
+  .cabeca-inst {
+    order: 1;
+  }
+  .mapa-ilhas {
+    order: 2;
   }
 }
 
