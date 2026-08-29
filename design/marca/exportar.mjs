@@ -40,7 +40,7 @@
 
 import { chromium } from 'playwright';
 import { readFile, writeFile, mkdir, readdir } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
+import { existsSync, realpathSync } from 'node:fs';
 import zlib from 'node:zlib';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -522,7 +522,21 @@ function componFaviconDasBarras(claro, escuro, deOnde, deOndeEscuro) {
  * expressão da medida apanharia neles o `<rect>` do campo, que também mede 512
  * por 512. Aqui a medida entra no `<svg ` e mais em sítio nenhum.
  */
-function paginaDoSvg(svg, px) {
+export function paginaDoSvg(svg, px) {
+  /* A GUARDA, E PORQUE É QUE ELA TEM DE EXISTIR. O que põe a medida é um
+     `String.replace` sobre o literal «<svg », e um `replace` que não encontra o
+     que procura devolve o texto INTACTO e não se queixa. Um `<svg` seguido de
+     quebra de linha, que é como muitos editores guardam um SVG, dava uma página
+     sem medida nenhuma: o navegador desenhava o defeito de 300 × 150, o PNG
+     saía do tamanho da janela com a marca cortada, e nada disto aparecia nos
+     bytes de nada. Um ficheiro errado é pior do que um ficheiro que falta. */
+  if (!svg.includes('<svg ')) {
+    throw new Error(
+      'este desenho não tem o literal «<svg » e a medida não teria onde entrar. ' +
+        'Sem medida, a página desenha o defeito de 300×150 e o PNG sai do tamanho da ' +
+        'janela, com a marca cortada.',
+    );
+  }
   return `<!doctype html><meta charset="utf-8">
 <style>html,body{margin:0;padding:0;background:transparent}svg{display:block}</style>
 ${svg.replace('<svg ', `<svg width="${px}" height="${px}" `)}`;
@@ -870,7 +884,30 @@ async function main() {
   console.log(`${contados} PNG em ${path.relative(process.cwd(), destino)}`);
 }
 
-main().catch((erro) => {
-  console.error(erro);
-  process.exit(1);
-});
+/**
+ * SÓ CORRE A RONDA QUANDO É ISTO QUE FOI CHAMADO.
+ *
+ * As peças de cima passaram a ser importáveis para que `tests/inicio/app.mjs`
+ * possa conferir a guarda da medida sem correr uma exportação inteira. Sem esta
+ * condição, uma importação escrevia seis ficheiros em `public/` só por ser
+ * importada, que é a pior coisa que um módulo pode fazer.
+ *
+ * A comparação é entre CAMINHOS REAIS e não entre textos: o repositório é
+ * trabalhado em árvores de trabalho debaixo de `/tmp`, que no macOS é uma
+ * ligação para `/private/tmp`, e `import.meta.url` traz o caminho resolvido
+ * enquanto `process.argv[1]` traz o que foi escrito na linha.
+ */
+function caminhoRealOuNulo(caminho) {
+  try {
+    return caminho ? realpathSync(caminho) : null;
+  } catch {
+    return null;
+  }
+}
+
+if (caminhoRealOuNulo(process.argv[1]) === caminhoRealOuNulo(fileURLToPath(import.meta.url))) {
+  main().catch((erro) => {
+    console.error(erro);
+    process.exit(1);
+  });
+}
