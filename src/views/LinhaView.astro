@@ -66,7 +66,10 @@ import {
 import { caminhoDaLinha, caminhoDoLivro, tituloDaLinha, descricaoDaLinha } from '../lib/livro.mjs';
 import { studyTitle } from '../data/studies.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
-import { linguaDoTituloDoDocumento } from '../i18n/lingua-dos-titulos.mjs';
+import {
+  linguaDoTituloDoDocumento,
+  linguaDoRotuloDaFonte,
+} from '../i18n/lingua-dos-titulos.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import { LICENCA } from '../data/licenca.mjs';
@@ -288,6 +291,24 @@ const ficha = [
      * um localizador aparecer numa linha de documento inglês — que é o dia em
      * que esta regra deixa de valer e alguém tem de decidir.
      */
+    lingua: linguaDoTituloDoDocumento(claim.document?.title ?? null, lang),
+  },
+  /* O RÓTULO COM QUE A FONTE PUBLICA ESTA FIGURA, e onde no ficheiro alojado
+     ele foi lido (29.08.2026). Vem a seguir ao localizador porque é o par dele
+     visto do outro lado: o localizador diz onde está o VALOR, e estes dois
+     dizem o que a fonte escreve por cima dele e onde. O rótulo está na língua
+     da fonte e leva a marca dela, como o título; o localizador do rótulo tem a
+     forma dos outros localizadores e leva a marca do documento. */
+  {
+    k: s.prov.rotuloDaFonte,
+    campo: 'name',
+    valor: claim.name ?? null,
+    lingua: linguaDoRotuloDaFonte(claim.name ?? null, lang),
+  },
+  {
+    k: s.prov.rotuloOnde,
+    campo: 'name_source',
+    valor: claim.name_source ?? null,
     lingua: linguaDoTituloDoDocumento(claim.document?.title ?? null, lang),
   },
   { k: s.prov.lido, campo: 'access_date', valor: claim.access_date },

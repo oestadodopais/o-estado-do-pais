@@ -87,7 +87,12 @@ import { parse, NodeType } from 'node-html-parser';
 
 import { loadClaims, POR_VERIFICAR } from '../src/lib/ledger.mjs';
 import { UNIDADES, UNIDADES_EM_PORTUGUES, unidadeDaLinha } from '../src/i18n/unidades.mjs';
-import { LINGUA_DOS_TITULOS, linguaDoTituloDoDocumento } from '../src/i18n/lingua-dos-titulos.mjs';
+import {
+  LINGUA_DOS_TITULOS,
+  linguaDoTituloDoDocumento,
+  LINGUA_DOS_ROTULOS,
+  linguaDoRotuloDaFonte,
+} from '../src/i18n/lingua-dos-titulos.mjs';
 import { WORKS, linguaDoTitulo } from '../src/data/studies.mjs';
 import { matchPath } from '../src/lib/routes.mjs';
 
@@ -179,6 +184,35 @@ for (const t of Object.keys(LINGUA_DOS_TITULOS)) {
   if (!titulosDoLivro.has(t)) {
     erros.push(
       `a declaração de língua nomeia o título «${t.slice(0, 90)}», que nenhuma linha do ` +
+        `livro-razão traz. A tabela declara o que existe.`,
+    );
+  }
+}
+
+/* ==================================================================== L2b · */
+/* os rótulos da fonte do livro-razão, contra a declaração de língua          */
+
+const rotulosDoLivro = new Map();
+for (const c of claims) {
+  const n = c.name;
+  if (n === null || n === undefined || String(n) === '') continue;
+  const r = String(n);
+  rotulosDoLivro.set(r, (rotulosDoLivro.get(r) ?? 0) + 1);
+}
+for (const [r] of rotulosDoLivro) {
+  if (!Object.prototype.hasOwnProperty.call(LINGUA_DOS_ROTULOS, r)) {
+    erros.push(
+      `o rótulo da fonte «${r.slice(0, 90)}» (${rotulosDoLivro.get(r)} linha(s)) não tem língua ` +
+        `declarada em src/i18n/lingua-dos-titulos.mjs.\n` +
+        `      Um rótulo é um nome: não se traduz, e diz em que língua está. «Total» é a palavra ` +
+        `que o IEFP imprime na folha portuguesa dele, e adivinhá-la pelo aspecto dava inglês.`,
+    );
+  }
+}
+for (const r of Object.keys(LINGUA_DOS_ROTULOS)) {
+  if (!rotulosDoLivro.has(r)) {
+    erros.push(
+      `a declaração de língua nomeia o rótulo «${r.slice(0, 90)}», que nenhuma linha do ` +
         `livro-razão traz. A tabela declara o que existe.`,
     );
   }
@@ -350,6 +384,9 @@ const contas = {
   titulos: 0,
   titulos_com_marca: 0,
   titulos_sem_marca: 0,
+  rotulos: 0,
+  rotulos_com_marca: 0,
+  rotulos_sem_marca: 0,
   localizadores: 0,
   localizadores_en_com_marca: 0,
   localizadores_en_sem_marca: 0,
@@ -369,6 +406,7 @@ const achados = {
   ocultos: new Map(),
   unidades: new Map(),
   titulos: new Map(),
+  rotulos: new Map(),
   localizadores: new Map(),
   leis: new Map(),
   estudos: new Map(),
@@ -450,6 +488,19 @@ for (const ficheiro of paginasDe(DIST)) {
     else {
       contas.titulos_sem_marca++;
       anota(achados.titulos, `${esperada} · ${texto}`, rel);
+    }
+  }
+
+  /* --- L4c · o rótulo da fonte, nas duas edições --- */
+  for (const el of root.querySelectorAll('[data-linha-campo="name"]')) {
+    const texto = norm(el.text);
+    contas.rotulos++;
+    const esperada = linguaDoRotuloDaFonte(texto, lang);
+    if (esperada === null) continue;
+    if (langDe(el) === esperada) contas.rotulos_com_marca++;
+    else {
+      contas.rotulos_sem_marca++;
+      anota(achados.rotulos, `${esperada} · ${texto}`, rel);
     }
   }
 
@@ -562,6 +613,11 @@ for (const [texto, x] of achados.unidades) {
 for (const [chave, x] of achados.titulos) {
   erros.push(`título sem a marca da sua língua: ${chave} (${x.n} ocorrência(s), ex.: ${x.onde}).`);
 }
+for (const [chave, x] of achados.rotulos) {
+  erros.push(
+    `rótulo da fonte sem a marca da sua língua: ${chave} (${x.n} ocorrência(s), ex.: ${x.onde}).`,
+  );
+}
 for (const [chave, x] of achados.repetidos) {
   erros.push(
     `elemento com o mesmo atributo escrito duas vezes: ${chave}\n` +
@@ -623,14 +679,18 @@ console.log(
     `${comLocalizador} localizador(es), todos dentro de documento português · ` +
     `${titulosDoLivro.size} título(s) de documento com língua declarada ` +
     `(${Object.values(LINGUA_DOS_TITULOS).filter((l) => l === 'pt').length} pt, ` +
-    `${Object.values(LINGUA_DOS_TITULOS).filter((l) => l === 'en').length} en)`,
+    `${Object.values(LINGUA_DOS_TITULOS).filter((l) => l === 'en').length} en) · ` +
+    `${rotulosDoLivro.size} rótulo(s) da fonte com língua declarada ` +
+    `(${Object.values(LINGUA_DOS_ROTULOS).filter((l) => l === 'pt').length} pt, ` +
+    `${Object.values(LINGUA_DOS_ROTULOS).filter((l) => l === 'en').length} en)`,
 );
 console.log(
   cinza(
     `        ${contas.paginas} página(s) lidas · unidades em «en»: ${contas.unidades_en} ` +
       `(${contas.unidades_en_traduzidas} traduzidas, ${contas.unidades_en_em_portugues} em português, ` +
       `todas com marca) · títulos com marca de língua: ${contas.titulos_com_marca} de ` +
-      `${contas.titulos} rendidos · localizadores em «en»: ` +
+      `${contas.titulos} rendidos · rótulos da fonte com marca de língua: ` +
+      `${contas.rotulos_com_marca} de ${contas.rotulos} rendidos · localizadores em «en»: ` +
       `${contas.localizadores_en_com_marca} com marca · ` +
       `leis em «en»: ${contas.leis_en_com_marca} com marca, ` +
       `${contas.leis_en_em_transcricao} dentro de transcrição do motor · ` +

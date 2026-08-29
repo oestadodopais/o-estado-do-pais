@@ -149,3 +149,73 @@ export function linguaDoTituloDoDocumento(titulo, lang = 'pt') {
   if (declarada === lang) return null;
   return declarada === 'pt' ? 'pt-PT' : 'en';
 }
+
+/**
+ * ---------------------------------------------------------------------------
+ * E A LÍNGUA DE CADA RÓTULO DA FONTE (29.08.2026)
+ * ---------------------------------------------------------------------------
+ *
+ * `name` é o rótulo com que o publicador imprime a figura, copiado do ficheiro
+ * alojado. É um nome, como o título de um documento, e vale-lhe a mesma regra
+ * pela mesma razão: não se traduz, e tem de dizer em que língua está, senão um
+ * leitor de ecrã lê «PMP (N.º dias)» com fonética inglesa dentro da edição
+ * inglesa.
+ *
+ * Fica NESTE ficheiro e não num ao lado, porque é a mesma pergunta sobre a
+ * mesma espécie de cadeia. Duas tabelas em dois ficheiros seriam duas coisas
+ * para lembrar no dia em que a regra mudar, e a segunda ficava para trás.
+ *
+ * São quinze rótulos distintos em 1553 linhas, e catorze deles são portugueses:
+ * o décimo quinto é a série do Eurostat. Como na tabela de cima, a língua
+ * escreve-se à mão por quem olha para a cadeia — «Total» é a palavra que o IEFP
+ * imprime na folha portuguesa dele, e adivinhá-la pelo aspecto dava inglês.
+ * `scripts/check-lingua.mjs` fecha a construção quando o livro-razão traz um
+ * rótulo que não está aqui, e quando esta tabela nomeia um que já não existe.
+ */
+
+/** `pt` ou `en`, para cada rótulo distinto do campo `name`. */
+export const LINGUA_DOS_ROTULOS = {
+  /* --- os rótulos portugueses ------------------------------------------- */
+  'PMP (N.º dias)': 'pt',
+  Total: 'pt',
+  TOTAL: 'pt',
+  'DESEMPREGO REGISTADO': 'pt',
+  'Poder de compra per capita por Localização geográfica (NUTS - 2024); Bienal - INE, Estudo sobre o poder de compra concelhio':
+    'pt',
+  'Empresas (N.º) por Localização geográfica (NUTS - 2024) e Dimensão; Anual - INE, Sistema de contas integradas das empresas':
+    'pt',
+  'Empresas (N.º) por Localização geográfica (NUTS - 2024), Atividade económica (Divisão - CAE Rev. 3) e Forma jurídica; Anual - INE, Sistema de contas integradas das empresas':
+    'pt',
+  'População residente (N.º) por Local de residência (NUTS - 2024), Sexo e Grupo etário (Por ciclos de vida); Anual - INE, Estimativas anuais da população residente':
+    'pt',
+  'População residente (N.º) por Local de residência (NUTS - 2024), Sexo e Grupo etário; Anual - INE, Estimativas anuais da população residente':
+    'pt',
+  'Indicador de concentração do valor acrescentado bruto das quatro maiores empresas (%) por Localização geográfica (NUTS - 2024); Anual - INE, Sistema de contas integradas das empresas':
+    'pt',
+  'Valor acrescentado bruto (€) das Empresas por Localização geográfica (NUTS - 2024) e Atividade económica (Divisão - CAE Rev. 3); Anual - INE, Sistema de contas integradas das empresas':
+    'pt',
+  'DÍVIDA TOTAL DE OPERAÇÕES ORÇAMENTAIS = (1) + (2)': 'pt',
+  'LIMITE = Média dos Últimos 3 Exercícios * 1,5': 'pt',
+  'Dívida Total no Início do Mandato': 'pt',
+
+  /* --- o rótulo inglês --------------------------------------------------- */
+  'Gross domestic product (GDP) at current market prices by NUTS 2 region': 'en',
+};
+
+/**
+ * A MARCA DE LÍNGUA DE UM RÓTULO DA FONTE, NUMA PÁGINA DE UMA LÍNGUA.
+ *
+ * A mesma forma e o mesmo contrato de `linguaDoTituloDoDocumento()`: `pt-PT` ou
+ * `en` quando o rótulo está numa língua que não é a da página, `null` quando é
+ * a da página ou quando não há declaração. Um rótulo sem declaração não ganha
+ * marca nenhuma, e não é um silêncio: é `scripts/check-lingua.mjs` que o vê.
+ */
+export function linguaDoRotuloDaFonte(rotulo, lang = 'pt') {
+  const cru = rotulo === null || rotulo === undefined ? '' : String(rotulo);
+  const declarada = Object.prototype.hasOwnProperty.call(LINGUA_DOS_ROTULOS, cru)
+    ? LINGUA_DOS_ROTULOS[cru]
+    : null;
+  if (declarada === null) return null;
+  if (declarada === lang) return null;
+  return declarada === 'pt' ? 'pt-PT' : 'en';
+}
