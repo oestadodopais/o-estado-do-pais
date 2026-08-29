@@ -52,11 +52,30 @@
  * conferência corre no fim, imprime a tabela e sai a 1 se algum cartão falhar.
  *
  * A PASTA É GERADA. `design-system/` está no `.gitignore`. O que se guarda é
- * este ficheiro; a pasta refaz-se com uma corrida. Esta corrida está FORA do
- * `npm run build` e não é um portão de construção.
+ * este ficheiro; a pasta refaz-se com uma corrida.
+ *
+ * ---------------------------------------------------------------------------
+ * ESTA CORRIDA ENTROU NO `npm run verify` A 29.08.2026 (I98)
+ * ---------------------------------------------------------------------------
+ * Não entrou por ser um portão de gosto: entrou porque estava vermelha havia
+ * dias e ninguém dava por isso. O feixe morria na primeira leitura de uma regra
+ * que já não existia (`.movel-selo`), e por trás dessa havia mais nove — a peça
+ * sem limiar, o valor provisório e o antetítulo que mudaram de página, o
+ * marcador que passou de `span` a âncora, a banda das regiões que deixou de
+ * render, o mapa de pontos que a Emenda 20 trocou por áreas, e um `@import`
+ * novo nas folhas que reprovava nove dos vinte cartões. Um retrato do sistema
+ * de desenho que envelhece em silêncio é pior do que não haver retrato: quem
+ * desenha lê-o e desenha sobre um sítio que já não existe.
+ *
+ * O CUSTO MEDIU-SE ANTES DE DECIDIR, que é a regra do brief: **0,26 s** de
+ * relógio, três corridas seguidas com o mesmo número, sobre as 6 590 páginas de
+ * `dist/`. Trinta segundos era o tecto; isto é um centésimo dele, e por isso
+ * corre a cada `verify`. Fica FORA do `npm run build`, que é onde as páginas se
+ * fazem: o feixe lê o que a construção acabou de escrever, e uma corrida que se
+ * lê a si própria a meio não prova nada.
  *
  * Uso:  npm run build                    (as páginas têm de estar construídas)
- *       node scripts/design-bundle.mjs
+ *       npm run design:feixe
  */
 
 import fs from 'node:fs';
@@ -118,6 +137,50 @@ for (const nome of FOLHAS) {
   const f = path.join(RAIZ, 'src', 'styles', `${nome}.css`);
   if (!fs.existsSync(f)) morre(`falta \`src/styles/${nome}.css\`. A casa das folhas mudou de forma.`);
   css[nome] = fs.readFileSync(f, 'utf8');
+}
+
+/**
+ * ---------------------------------------------------------------------------
+ * UM `@import` DE UMA FOLHA RESOLVE-SE AQUI, E NÃO NO NAVEGADOR (I98)
+ * ---------------------------------------------------------------------------
+ * As folhas passaram a partir-se: `inicio.css` abre com `@import './mapa.css'`,
+ * que é a língua do mapa partilhada com as páginas de distrito. Embutida tal
+ * como está, essa linha é um PEDIDO PARA FORA dentro de um cartão que se tem de
+ * bastar a si próprio, e a conferência do fim reprovava-a — nove dos vinte
+ * cartões, pela mesma linha. A folha importada entra no lugar do `@import`, com
+ * o nome do ficheiro escrito ao lado para que quem desenha saiba de onde veio.
+ *
+ * O QUE NÃO MUDA: as impressões digitais das famílias e a varredura de classes
+ * continuam a ler a folha CRUA (`css`), e não esta. Uma classe de `mapa.css`
+ * contada como classe de `inicio.css` podia virar a impressão digital do início
+ * e fazer uma página de distrito passar por primeira página, que é medir uma
+ * coisa por outra.
+ */
+function comImportadas(texto, ficheiro, vistos = new Set()) {
+  return texto.replace(/@import\s+(?:url\()?\s*['"]([^'"]+)['"]\s*\)?\s*;/g, (_, alvo) => {
+    const f = path.resolve(path.dirname(ficheiro), alvo);
+    const rel = path.relative(RAIZ, f);
+    if (!fs.existsSync(f)) {
+      morre(`\`${path.relative(RAIZ, ficheiro)}\` importa \`${alvo}\`, que não existe.`);
+    }
+    if (vistos.has(f)) morre(`\`${rel}\` importa-se a si próprio, em volta.`);
+    vistos.add(f);
+    /* A MARCA NÃO ESCREVE A PALAVRA que a conferência procura: ela testa a
+       cadeia inteira do cartão, e um comentário que a nomeasse reprovava o
+       cartão que este embutimento acabou de consertar. Medido: foi o que
+       aconteceu à primeira tentativa, nos mesmos nove cartões. */
+    return (
+      `/* ↓ ${rel}, embutida aqui no lugar da linha que a importava */\n` +
+      comImportadas(fs.readFileSync(f, 'utf8'), f, vistos)
+    );
+  });
+}
+
+/** As mesmas folhas, com o que elas importam já lá dentro. É esta que se embute. */
+const cssEmbutida = {};
+for (const nome of FOLHAS) {
+  const f = path.join(RAIZ, 'src', 'styles', `${nome}.css`);
+  cssEmbutida[nome] = comImportadas(css[nome], f);
 }
 
 const identidade = fs.readFileSync(path.join(RAIZ, 'IDENTIDADE.md'), 'utf8');
@@ -292,18 +355,63 @@ function daFolha(nome, re, oQue) {
 }
 
 const LARGURA_INVOLUCRO = daFolha('site', /\.wrap\s*\{[^}]*?max-width:\s*([^;]+);/, 'a largura do invólucro (`.wrap { max-width }`)');
-const SELO_MOVEL_LARGURA = daFolha('inicio', /\.movel-selo\s*\{[^}]*?width:\s*([^;]+);/, 'a largura do selo do mapa no telemóvel (`.movel-selo { width }`)');
-const SELO_MOVEL_ALTURA = daFolha('inicio', /\.movel-selo\s*\{[^}]*?height:\s*([^;]+);/, 'a altura do selo do mapa no telemóvel (`.movel-selo { height }`)');
 
-/** A consulta de meios que mostra o selo do mapa: a última aberta antes dele. */
-const SELO_MOVEL_MEDIA = (() => {
+/**
+ * ---------------------------------------------------------------------------
+ * O MAPA NO TELEMÓVEL, E O SELO QUE JÁ NÃO EXISTE (I98, 29.08.2026)
+ * ---------------------------------------------------------------------------
+ * Estavam aqui três leituras de `.movel-selo` — largura, altura e a consulta de
+ * meios que o mostrava —, e esta corrida morria na primeira delas desde que o
+ * seletor saiu da folha. Não era o feixe atrasado sobre uma regra legítima: o
+ * seletor não existe em `src/styles/inicio.css`, não existe em `src/` nenhum, e
+ * não existe em `dist/index.html`. Nada o usa, e uma leitura de uma regra que
+ * não há é uma leitura que só pode morrer.
+ *
+ * O QUE ACONTECEU À COISA QUE ELE DESENHAVA. A Emenda 18 tirou o mapa do
+ * telemóvel e pôs no lugar dele um selo que abria a pesquisa; a Emenda 20c
+ * devolveu o mapa ao telemóvel, e o selo saiu com a forma que o justificava. O
+ * cartão passa a retratar a regra que existe: a tela toma a JANELA e não a
+ * coluna, por uma margem negativa de uma goteira de cada lado, dentro da mesma
+ * consulta de meios. As duas medidas e a consulta continuam a ser lidas da
+ * folha, e esta corrida continua a parar se elas mudarem de forma.
+ */
+const MAPA_MOVEL_LARGURA = daFolha(
+  'inicio',
+  /\[data-inicio\]\s*\.mapa-tela\s*\{[^}]*?width:\s*([^;]+);/,
+  'a largura da tela do mapa no telemóvel (`[data-inicio] .mapa-tela { width }`)',
+);
+const MAPA_MOVEL_MARGEM = daFolha(
+  'inicio',
+  /\[data-inicio\]\s*\.mapa-tela\s*\{[^}]*?margin-inline:\s*([^;]+);/,
+  'a margem da tela do mapa no telemóvel (`[data-inicio] .mapa-tela { margin-inline }`)',
+);
+
+/** A consulta de meios que dá a janela à tela do mapa: a última aberta antes dela. */
+const MAPA_MOVEL_MEDIA = (() => {
   const folha = semComentarios(css.inicio);
-  const ate = folha.indexOf('.movel-selo');
-  if (ate < 0) morre('não encontrei `.movel-selo` em `src/styles/inicio.css`.');
+  const ate = folha.indexOf('[data-inicio] .mapa-tela');
+  if (ate < 0) morre('não encontrei `[data-inicio] .mapa-tela` em `src/styles/inicio.css`.');
   const consultas = [...folha.slice(0, ate).matchAll(/@media[^{]+/g)].map((m) => m[0].trim());
-  if (!consultas.length) morre('`.movel-selo` deixou de estar dentro de uma consulta de meios em `src/styles/inicio.css`.');
+  if (!consultas.length) {
+    morre('`[data-inicio] .mapa-tela` deixou de estar dentro de uma consulta de meios em `src/styles/inicio.css`.');
+  }
   return consultas[consultas.length - 1];
 })();
+
+/**
+ * A frase da Emenda 20c que o cartão do mapa invoca, procurada em `direcao.md`.
+ *
+ * Uma referência a uma emenda não pode envelhecer mais calada do que uma
+ * citação: se a emenda for reescrita, esta corrida pára e o cartão é revisto.
+ */
+const EMENDA_20C =
+  'a razão daquela forma era um mapa em que nada se tocava; neste, cada distrito é alvo';
+if (!direcao.includes(EMENDA_20C)) {
+  morre(
+    `não encontrei em \`design/especime-v3/direcao.md\` a frase da Emenda 20c que o cartão do ` +
+      `mapa invoca: «${EMENDA_20C}». O texto mudou; o cartão que o cita tem de ser revisto.`,
+  );
+}
 
 /**
  * A paleta lê-se de `tokens.css`, nos dois temas, com o comentário de cada ficha.
@@ -437,6 +545,61 @@ function peca(rota, seletor, { indice = 0, filtro = null, raiz = null } = {}) {
   tiraCodigo(el);
   absolutizaLigacoes(el, `dist/${rota} → ${seletor}`);
   return el.outerHTML;
+}
+
+/**
+ * ---------------------------------------------------------------------------
+ * A ROTA DE UMA PEÇA PROCURA-SE; NÃO SE ESCREVE À MÃO (I98, 29.08.2026)
+ * ---------------------------------------------------------------------------
+ * É a razão por que este feixe apodrece. Um cartão que diz «tira este selo de
+ * `dist/index.html`» fica errado no dia em que a peça mudar de página, e nada o
+ * avisa até alguém correr a corrida. Aconteceu quatro vezes de uma só vez: a
+ * peça sem limiar, o valor provisório e o antetítulo em `span` deixaram de
+ * render na primeira página, e continuam a render noutras.
+ *
+ * A resposta é a que o cartão do selo já usava para o selo a tracejado: uma
+ * lista de rotas candidatas, a primeira que tenha a peça, e o cartão a IMPRIMIR
+ * de onde ela veio. Uma peça que desapareça de todas as candidatas continua a
+ * parar a corrida, que é o comportamento certo — o que deixa de parar é uma peça
+ * que apenas se mudou de casa.
+ */
+/* As páginas onde uma peça do painel pode viver, pela ordem em que se procuram.
+   A primeira página tem hoje treze peças e as treze têm limiar; uma medida sem
+   limiar rende na página de um concelho e na de uma área. */
+const CANDIDATAS_DA_PECA_SEM_LIMIAR = [
+  'index.html',
+  'municipios/evora/index.html',
+  'areas/economia-e-coesao-territorial/index.html',
+];
+
+/** Um valor com o seu selo ao lado. Existe em quase todas as páginas do sítio. */
+const CANDIDATAS_DO_VALOR = ['index.html', 'livro-razao/index.html', 'regioes/index.html'];
+
+/** Um antetítulo em `span`. A primeira página não tem cabeça de secção com um. */
+const CANDIDATAS_DO_ANTETITULO = [
+  'index.html',
+  'livro-razao/index.html',
+  'municipios/evora/index.html',
+];
+
+/** Um valor cuja fonte o marca provisório, com a palavra por extenso. */
+const CANDIDATAS_DO_PROVISORIO = [
+  'index.html',
+  'regioes/index.html',
+  'livro-razao/index.html',
+  'areas/economia-e-coesao-territorial/index.html',
+];
+
+function ondeHa(seletor, candidatas, oQue) {
+  const rota = candidatas.find((r) => arvore(r).querySelectorAll(seletor).length > 0);
+  if (!rota) {
+    morre(
+      `não encontrei ${oQue} ("${seletor}") em nenhuma das páginas candidatas: ` +
+        `${candidatas.map((c) => `\`dist/${c}\``).join(', ')}. Ou a peça saiu do sítio, e o cartão ` +
+        `que a retrata tem de ser revisto, ou mudou-se para uma página que não está nesta lista.`,
+    );
+  }
+  return rota;
 }
 
 /* ================================== que folhas de família é que uma página usa */
@@ -591,7 +754,7 @@ const ANDAIME = `
 function folhaDe(familias) {
   for (const f of familias) if (!FAMILIAS.includes(f)) morre(`folha de família desconhecida: \`${f}\`.`);
   const emOrdem = ORDEM_FAMILIAS.filter((f) => familias.includes(f));
-  const bruta = ['tokens', 'site', ...emOrdem].map((n) => css[n]).join('\n');
+  const bruta = ['tokens', 'site', ...emOrdem].map((n) => cssEmbutida[n]).join('\n');
   const { folha, trocas } = tiposRelativos(bruta);
   if (!trocas) morre('a folha embutida não trouxe um único `url(/tipos/…)`; os `@font-face` saíram de `tokens.css` e os cartões ficariam sem letra.');
   return folha;
@@ -834,7 +997,12 @@ const citar = (texto) => `<p class="ds-regra">«${emLinha(texto)}»</p>`;
 
   const foraDoLimiar = peca('index.html', '.peca[data-estado="fora"] .peca-topo');
   const dentroDoLimiar = peca('index.html', '.peca[data-estado="dentro"][data-limiar="sim"] .peca-topo');
-  const semLimiar = peca('index.html', '.peca[data-estado="sem"] .peca-topo');
+  const ondeSemLimiar = ondeHa(
+    '.peca[data-estado="sem"] .peca-topo',
+    CANDIDATAS_DA_PECA_SEM_LIMIAR,
+    'uma peça sem limiar',
+  );
+  const semLimiar = peca(ondeSemLimiar, '.peca[data-estado="sem"] .peca-topo');
   const aCor = peca('metodo/index.html', '#a-cor');
 
   const corpo = `  <header class="ds-cabeca">
@@ -876,7 +1044,7 @@ ${amostras}
         <p class="ds-nota">Nenhuma cor: o quadrado é só contorno e o estado diz-se por palavras.</p>
       </div>
     </div>
-    <p class="ds-nota">As três peças são <code class="ds-mono">.peca-topo</code> tirados de <code class="ds-mono">dist/index.html</code>, do painel da primeira página.</p>
+    <p class="ds-nota">As três peças são <code class="ds-mono">.peca-topo</code> tirados de páginas construídas: as duas primeiras de <code class="ds-mono">dist/index.html</code>, do painel da primeira página, e a terceira de <code class="ds-mono">dist/${escapa(ondeSemLimiar)}</code>, porque as treze peças da primeira página têm hoje todas limiar e uma medida sem limiar rende noutras páginas.</p>
     ${citar(REGRA('- **Fora do limiar**'))}
     ${citar(REGRA('- **Dentro do limiar**'))}
     ${citar(REGRA('- **Sem limiar** e **por confirmar**'))}
@@ -933,8 +1101,14 @@ ${amostras}
 {
   const wordmark = peca('index.html', '.wordmark');
   const prosa = peca('sobre/index.html', 'p.sobre-texto');
-  const valorComSelo = peca('index.html', '.banda-legenda-item');
-  const antetitulo = peca('index.html', 'span.eyebrow');
+  /* O VALOR COM SELO ERA `.banda-legenda-item`, DA LEGENDA DA BANDA DAS REGIÕES,
+     e essa peça não rende em página nenhuma desde que a leitura breve saiu da
+     primeira página (Emenda 21). O que a substitui é a mesma coisa vista onde
+     ela está hoje: um valor com o seu selo, que é o que a secção mostra. */
+  const ondeValor = ondeHa('.claim-com-chip', CANDIDATAS_DO_VALOR, 'um valor com selo');
+  const valorComSelo = peca(ondeValor, '.claim-com-chip');
+  const ondeAntetitulo = ondeHa('span.eyebrow', CANDIDATAS_DO_ANTETITULO, 'um antetítulo em `span`');
+  const antetitulo = peca(ondeAntetitulo, 'span.eyebrow');
   const navegacao = peca('index.html', 'nav.nav-principal');
   const aLetra = peca('metodo/index.html', '#a-letra');
 
@@ -991,7 +1165,7 @@ ${['| **Spectral** |', '| **Bitter** |', '| **Spectral SC** |']
   <section class="ds-bloco">
     <h2>Um valor medido, em Bitter</h2>
     <div class="ds-mostra">${valorComSelo}</div>
-    <p class="ds-nota">Tirado de <code class="ds-mono">dist/index.html</code>, a legenda da régua da convergência. O número vai a Bitter porque tem linha no livro-razão; o selo ao lado é a porta para ela, e a palavra «provisório» é a bandeira da fonte, dita por extenso.</p>
+    <p class="ds-nota">Tirado de <code class="ds-mono">dist/${escapa(ondeValor)}</code>. O número vai a Bitter porque tem linha no livro-razão, e o selo ao lado é a porta para ela.</p>
     ${citar(REGRA('**Algarismos tabulares versais nos instrumentos.**'))}
   </section>
 
@@ -999,7 +1173,7 @@ ${['| **Spectral** |', '| **Bitter** |', '| **Spectral SC** |']
     <h2>Versaletes editoriais, em Spectral SC</h2>
     <div class="ds-mostra">${antetitulo}</div>
     <div class="ds-mostra ds-mostra-larga">${navegacao}</div>
-    <p class="ds-nota">Em cima o antetítulo de um instrumento, em baixo a navegação do cabeçalho, os dois de <code class="ds-mono">dist/index.html</code>.</p>
+    <p class="ds-nota">Em cima o antetítulo de uma cabeça de página, de <code class="ds-mono">dist/${escapa(ondeAntetitulo)}</code>; em baixo a navegação do cabeçalho, de <code class="ds-mono">dist/index.html</code>.</p>
     ${citar(REGRA('**Bitter em caixa alta só dentro dos instrumentos.**'))}
   </section>
 
@@ -1056,9 +1230,22 @@ ${tabelaTipos}
 
   const foraTopo = peca('index.html', '.peca[data-estado="fora"] .peca-topo');
   const dentroTopo = peca('index.html', '.peca[data-estado="dentro"][data-limiar="sim"] .peca-topo');
-  const semTopo = peca('index.html', '.peca[data-estado="sem"] .peca-topo');
-  const provisorio = peca('index.html', '.claim-com-provisorio');
-  const marcador = peca('a-verificar/index.html', 'span.marcador');
+  const ondeSemTopo = ondeHa(
+    '.peca[data-estado="sem"] .peca-topo',
+    CANDIDATAS_DA_PECA_SEM_LIMIAR,
+    'uma peça sem limiar',
+  );
+  const semTopo = peca(ondeSemTopo, '.peca[data-estado="sem"] .peca-topo');
+  const ondeProvisorio = ondeHa(
+    '.claim-com-provisorio',
+    CANDIDATAS_DO_PROVISORIO,
+    'um valor marcado provisório pela fonte',
+  );
+  const provisorio = peca(ondeProvisorio, '.claim-com-provisorio');
+  /* O MARCADOR É UMA ÂNCORA, E NÃO UM `span`, desde que passou a ser a porta da
+     sua própria página (`CampoDaLinha.astro`, bloco B, item B5). A marca e a
+     classe são as mesmas; o que mudou foi o elemento. */
+  const marcador = peca('a-verificar/index.html', 'a.marcador');
   const correcao = peca('correcoes/index.html', '.log-linha');
 
   /* O texto oculto do selo mostra-se como texto, porque é isso que ele é para
@@ -1107,13 +1294,13 @@ ${tabelaTipos}
       <div><div class="ds-mostra">${dentroTopo}</div><p class="ds-legenda">cobalto</p></div>
       <div><div class="ds-mostra">${semTopo}</div><p class="ds-legenda">só contorno, sem cor</p></div>
     </div>
-    <p class="ds-nota">De <code class="ds-mono">dist/index.html</code>. O quadrado e a palavra andam sempre juntos; as peças inteiras estão no cartão «O par de estados».</p>
+    <p class="ds-nota">Os dois primeiros de <code class="ds-mono">dist/index.html</code>, o terceiro de <code class="ds-mono">dist/${escapa(ondeSemTopo)}</code>. O quadrado e a palavra andam sempre juntos; as peças inteiras estão no cartão «O par de estados».</p>
   </section>
 
   <section class="ds-bloco">
     <h2>A palavra «provisório»</h2>
     <div class="ds-mostra">${provisorio}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/index.html</code> · onde a fonte marca a linha como provisória (<code class="ds-mono">source_flag: p</code>), a palavra fica ao lado do valor e o selo continua a ser a porta. É a decisão (d) da direção, de 20.08.2026.</p>
+    <p class="ds-nota"><code class="ds-mono">dist/${escapa(ondeProvisorio)}</code> · onde a fonte marca a linha como provisória (<code class="ds-mono">source_flag: p</code>), a palavra fica ao lado do valor e o selo continua a ser a porta. É a decisão (d) da direção, de 20.08.2026.</p>
   </section>
 
   <section class="ds-bloco">
@@ -1164,7 +1351,30 @@ ${tabelaTipos}
     'uma peça com banda de dois lados (duas referências na mesma régua)'
   );
 
-  const bandaRegiao = peca('index.html', '.banda');
+  /**
+   * A BANDA DAS REGIÕES SAIU DE TODAS AS PÁGINAS, E O CARTÃO DEIXA DE A MOSTRAR.
+   *
+   * A secção mostrava `.banda` de `dist/index.html`: a régua da convergência em
+   * largura inteira, com as regiões como pontos numa escala partilhada. A
+   * Emenda 21 mudou a leitura breve de sítio (§1.75) e o componente que a
+   * desenhava (`src/components/inicio/BandaDaRegiao.astro`) deixou de ser
+   * chamado. Medido a 29.08.2026 sobre a construção de hoje: `class="banda`
+   * rende em **0** das 6 590 páginas, com `class="peca` a render em 636 como
+   * controlo positivo.
+   *
+   * Um cartão não mostra o que não existe, e esta corrida pára se a banda
+   * voltar sem que o cartão volte com ela.
+   */
+  const bandasNoSitio = ['index.html', 'regioes/index.html', 'municipios/evora/index.html'].filter(
+    (rota) => arvore(rota).querySelectorAll('.banda').length > 0,
+  );
+  if (bandasNoSitio.length) {
+    morre(
+      `a banda das regiões (\`.banda\`) voltou a render em \`dist/${bandasNoSitio[0]}\`. O cartão ` +
+        `da régua diz que ela saiu com a Emenda 21; ou ela sai da página, ou o cartão volta a ` +
+        `retratá-la.`,
+    );
+  }
 
   const evoraRaiz = arvore('municipios/evora/index.html');
   const evoraPeca = evoraRaiz.querySelectorAll('.peca').filter((p) => p.querySelector('.regua'))[0];
@@ -1208,9 +1418,8 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   </section>
 
   <section class="ds-bloco">
-    <h2>A banda das regiões</h2>
-    <div class="ds-mostra ds-mostra-larga">${bandaRegiao}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/index.html</code> · a mesma gramática numa escala partilhada: a referência é a média da UE-27, a barra é a distância a ela, e não há cor nenhuma, porque uma média não é um limiar publicado (Emenda 1). As barras das regiões que não estão escolhidas vêm com <code class="ds-mono">hidden</code>: é o código adiado do sítio que as troca, e um cartão não tem código.</p>
+    <h2>A banda das regiões, que já não se desenha</h2>
+    <p class="ds-nota">Esta secção mostrava <code class="ds-mono">.banda</code> de <code class="ds-mono">dist/index.html</code>: a mesma gramática numa escala partilhada, com a média da UE-27 por referência e as cinco regiões como pontos. A Emenda 21 mudou a leitura breve de sítio, e o componente que a desenhava deixou de ser chamado por vista nenhuma. Medido nesta corrida: <code class="ds-mono">.banda</code> rende em zero das páginas candidatas, e a corrida pára se voltar a render sem que este cartão volte com ela. Fica dito em vez de desaparecer: um cartão que apaga uma secção em silêncio deixa quem desenha a pensar que a forma nunca existiu.</p>
   </section>
 
   <section class="ds-bloco">
@@ -1228,26 +1437,82 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   );
 }
 
-/* ------------------------------------------------------- 05. O mapa em pontos */
+/* ---------------------------------------------------- 05. O mapa por unidades */
 {
   const mapa = peca('index.html', 'figure#mapa');
   const localizador = peca('municipios/evora/index.html', 'figure#mapa');
-  const seloMovel = peca('index.html', '.movel-selo');
   const linha = peca('index.html', '.mapa-linha');
 
-  const casaMapa = arvore('index.html');
-  const circulos = casaMapa.querySelectorAll('#mapa circle.mun');
-  const pontos = circulos.length;
-  if (!pontos) morre('não encontrei um único ponto (`circle.mun`) no mapa de `dist/index.html`.');
-
-  /* OS PONTOS SÃO IGUAIS, e isso mede-se em vez de se afirmar: uma classe a
-     mais ou um raio diferente num deles seria um município destacado por
-     estatuto, que é o que a Emenda 3 proíbe. */
-  const feitios = new Set(circulos.map((c) => `${c.getAttribute('class')}|${c.getAttribute('r')}|${c.getAttribute('fill') ?? ''}`));
-  if (feitios.size !== 1) {
-    morre(`os ${pontos} pontos do mapa de \`dist/index.html\` não são todos iguais: ${feitios.size} feitios diferentes. O cartão do mapa diz que são iguais, e ou são, ou o cartão mente.`);
+  /* O SELO DO TELEMÓVEL JÁ NÃO RENDE, e a corrida confere-o antes de o cartão o
+     dizer, como faz com a legenda de neutralidade mais abaixo. É a mesma
+     disciplina: uma ausência afirmada tem de ser uma ausência medida. */
+  for (const rota of ['index.html', 'en/index.html']) {
+    if (leDist(rota).includes('movel-selo')) {
+      morre(
+        `\`.movel-selo\` voltou a render em \`dist/${rota}\`. O cartão do mapa diz que o selo do ` +
+          `telemóvel saiu com a Emenda 20c; ou ele sai da página, ou o cartão volta a retratá-lo.`,
+      );
+    }
   }
-  const aneis = arvore('municipios/evora/index.html').querySelectorAll('#mapa .mun-escolhido').length;
+
+  /**
+   * -------------------------------------------------------------------------
+   * A PRIMEIRA PÁGINA DEIXOU DE TER PONTOS (Emenda 20a, e I98 a 29.08.2026)
+   * -------------------------------------------------------------------------
+   * Esta corrida contava `circle.mun` em `dist/index.html` e morria a zero. Não
+   * era um defeito da página: a Emenda 20 trocou os 308 pontos pelas 29 unidades
+   * da Carta, cada uma a porta da sua página, e o cartão continuava a retratar o
+   * mapa anterior. Os pontos não desapareceram do sítio — vivem no cartão
+   * localizador da página de um concelho, que é o que a Emenda 20d manda —, e é
+   * de lá que a secção deles passa a sair.
+   */
+  const casaMapa = arvore('index.html');
+  const areas = casaMapa.querySelectorAll('#mapa path.uni');
+  const unidades = areas.length;
+  if (!unidades) morre('não encontrei uma única unidade (`path.uni`) no mapa de `dist/index.html`.');
+
+  /* AS ÁREAS SÃO IGUAIS, e isso mede-se em vez de se afirmar: uma classe a mais
+     ou um enchimento diferente numa delas seria uma unidade destacada por
+     estatuto, que é o que a Emenda 20b proíbe. */
+  const feitios = new Set(
+    areas.map((p) =>
+      [
+        p.getAttribute('class'),
+        p.getAttribute('fill') ?? '',
+        p.getAttribute('stroke') ?? '',
+        p.getAttribute('stroke-width') ?? '',
+      ].join('|'),
+    ),
+  );
+  if (feitios.size !== 1) {
+    morre(`as ${unidades} unidades do mapa de \`dist/index.html\` não são todas iguais: ${feitios.size} feitios diferentes. O cartão do mapa diz que são iguais, e ou são, ou o cartão mente.`);
+  }
+  /* CADA UNIDADE É UMA PORTA, e são tantas portas quantas unidades. */
+  const portas = casaMapa.querySelectorAll('#mapa a.uni-porta').length;
+  if (portas !== unidades) {
+    morre(`o mapa de \`dist/index.html\` tem ${unidades} unidades e ${portas} portas. A Emenda 20a diz que cada unidade é uma ligação para a sua página.`);
+  }
+  /* E OS NOMES ESTÃO POR BAIXO, um por unidade: é a rede da Emenda 20c, e a
+     decisão de 29.08 sobre a I101 diz que ela não se esconde. */
+  const nomes = casaMapa.querySelectorAll('.mapa-ilhas-lista li').length;
+  if (nomes !== unidades) {
+    morre(`a lista de nomes por baixo do mapa de \`dist/index.html\` tem ${nomes} nomes para ${unidades} unidades.`);
+  }
+
+  /* O DISTRITO ABERTO: os concelhos daquela unidade, também como áreas. */
+  const distritoRaiz = arvore('distritos/evora/index.html');
+  const concelhosDoDistrito = distritoRaiz.querySelectorAll('.distrito-mapa path.uni').length;
+  if (!concelhosDoDistrito) {
+    morre('não encontrei uma única área (`path.uni`) no mapa de `dist/distritos/evora/index.html`.');
+  }
+  const distrito = peca('distritos/evora/index.html', 'figure.distrito-mapa');
+
+  const localizadorRaiz = arvore('municipios/evora/index.html');
+  const pontos = localizadorRaiz.querySelectorAll('#mapa circle.mun').length;
+  if (!pontos) {
+    morre('não encontrei um único ponto (`circle.mun`) no localizador de `dist/municipios/evora/index.html`.');
+  }
+  const aneis = localizadorRaiz.querySelectorAll('#mapa .mun-escolhido').length;
   if (aneis !== 1) morre(`o localizador de \`dist/municipios/evora/index.html\` tem ${aneis} anéis, e devia ter um.`);
 
   /* A LEGENDA DE NEUTRALIDADE JÁ NÃO RENDE, e a corrida confere-o antes de o
@@ -1263,49 +1528,56 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
 
   const corpo = `  <header class="ds-cabeca">
     <span class="eyebrow">Disposições</span>
-    <h1>O mapa em pontos</h1>
-    <p class="sec-sub">Substitui o cartão «Camadas»: as três densidades acabaram com a Emenda 2, e o que o mapa é hoje passou a ser uma regra por si.</p>
+    <h1>O mapa por unidades</h1>
+    <p class="sec-sub">A primeira página mostra as ${unidades} unidades da Carta, cada uma a porta da sua página. Os pontos não saíram do sítio: são o localizador da página de um concelho, e estão aqui em baixo.</p>
   </header>
 
   <section class="ds-bloco">
     <h2>A regra</h2>
-    <p class="ds-nota">Emenda 10, de 20.08.2026: «${emLinha(EMENDA('**Um glifo, um significado'))}»</p>
     <p class="ds-nota">Emenda 17, de 21.08.2026: «${emLinha(EMENDA('**O mapa na primeira página'))}»</p>
+    <p class="ds-nota">Emenda 10, de 20.08.2026, na parte dos glifos, que continua inteira: «${emLinha(EMENDA('**Um glifo, um significado'))}»</p>
+    <p class="ds-nota">A metade dessa emenda que dizia «o mapa leva pontos» foi emendada pela Emenda 20, de 27.08.2026: a primeira página passa a mostrar as unidades da Carta como áreas, a página de uma unidade mostra os seus concelhos, e o cartão localizador da página de um concelho continua a ser o dos pontos. O quadrado, o ponto e o anel não mudaram de significado.</p>
   </section>
 
   <section class="ds-bloco">
     <h2>O mapa inteiro, na primeira página</h2>
     <div class="ds-mostra ds-mostra-larga">${mapa}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/index.html</code> · ${pontos} pontos, todos com a mesma classe e o mesmo raio (conferido nesta corrida), nenhum preenchido, nenhum anel. Não há preenchimento de cobertura e não há capital: nem a do país, nem as de distrito. A cobertura diz-se por palavras, ao lado do mapa e na lista.</p>
+    <p class="ds-nota"><code class="ds-mono">dist/index.html</code> · ${unidades} unidades, todas com a mesma classe e o mesmo desenho de traço e enchimento (conferido nesta corrida), nenhuma destacada. Cada uma é uma ligação para a sua página — ${portas} portas para ${unidades} unidades —, e por baixo do mapa estão os ${nomes} nomes, um por unidade, que são a rede da Emenda 20c. Não há preenchimento de cobertura e não há capital: nem a do país, nem as de distrito.</p>
     <div class="ds-mostra">${linha}</div>
     <p class="ds-nota">A única linha por baixo do mapa, e é a da Emenda 17.</p>
   </section>
 
   <section class="ds-bloco">
-    <h2>A neutralidade dos pontos, e a legenda que já não se escreve</h2>
-    <p class="ds-nota">Emenda 3, de 20.08.2026: «${emLinha(EMENDA('**Mapa (§4 emendado;'))}»</p>
+    <h2>A neutralidade das áreas, e a legenda que já não se escreve</h2>
+    <p class="ds-nota">Emenda 3, de 20.08.2026, emendada na parte do desenho pela Emenda 20: «${emLinha(EMENDA('**Mapa (§4 emendado;'))}»</p>
     <p class="ds-nota">A legenda que essa emenda mandava pôr ao lado do mapa («${escapa(legendaRevogada)}») <strong>já não rende na página</strong>: a Emenda 15, de 21.08.2026, revoga-a por escrito. Esta corrida procura-a em <code class="ds-mono">dist/index.html</code>, em <code class="ds-mono">dist/municipios/index.html</code> e em <code class="ds-mono">dist/en/index.html</code>, e pára se a encontrar. A regra continua a valer; o que saiu foi a página dizê-la de si própria.</p>
     <p class="ds-nota">Emenda 15: «${emLinha(EMENDA('**A página do leitor não se explica'))}»</p>
   </section>
 
   <section class="ds-bloco">
-    <h2>Um lugar escolhido é um anel</h2>
-    <div class="ds-mostra ds-mostra-larga">${localizador}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/municipios/evora/index.html</code> · o mesmo componente em postura de localizador, com ${aneis} anel em ${pontos}. Na primeira página nenhum ponto vem escolhido; aqui o anel é posto na construção, porque a página é de um concelho.</p>
+    <h2>Uma unidade aberta, com os seus concelhos</h2>
+    <div class="ds-mostra ds-mostra-larga">${distrito}</div>
+    <p class="ds-nota"><code class="ds-mono">dist/distritos/evora/index.html</code> · a mesma gramática uma escala abaixo: ${concelhosDoDistrito} concelhos como áreas, cada um a porta da sua página. É o segundo passo da Emenda 20a, e é o que faz o mapa levar a alguém a um concelho sem passar pela pesquisa.</p>
   </section>
 
   <section class="ds-bloco">
-    <h2>O selo do mapa no telemóvel</h2>
-    <div class="ds-mostra">${seloMovel}</div>
-    <p class="ds-nota">É o mesmo HTML da primeira página: <code class="ds-mono">.movel-selo</code> está sempre lá, e é a folha que o põe a ${escapa(SELO_MOVEL_LARGURA)} por ${escapa(SELO_MOVEL_ALTURA)}, dentro de <code class="ds-mono">${escapa(SELO_MOVEL_MEDIA)}</code>, por cima do rectângulo inteiro do mapa. Acima dessa largura ele não se vê, e o que tem dentro é texto para leitores de ecrã. As medidas e a consulta são lidas de <code class="ds-mono">src/styles/inicio.css</code>.</p>
+    <h2>Um lugar escolhido é um anel</h2>
+    <div class="ds-mostra ds-mostra-larga">${localizador}</div>
+    <p class="ds-nota"><code class="ds-mono">dist/municipios/evora/index.html</code> · o cartão localizador, que é onde os pontos vivem desde a Emenda 20d: ${pontos} pontos e ${aneis} anel. Os dois desenhos têm campos diferentes — o dos pontos não guarda os polígonos —, e por isso são dois e não um. Na primeira página nenhum lugar vem escolhido; aqui o anel é posto na construção, porque a página é de um concelho.</p>
+  </section>
+
+  <section class="ds-bloco">
+    <h2>O mapa no telemóvel, e o selo que saiu</h2>
+    <p class="ds-nota">É o mesmo HTML das larguras de cima: o mapa não muda de marcação, muda de caixa. Dentro de <code class="ds-mono">${escapa(MAPA_MOVEL_MEDIA)}</code> a folha põe <code class="ds-mono">[data-inicio] .mapa-tela</code> a <code class="ds-mono">width: ${escapa(MAPA_MOVEL_LARGURA)}</code> com <code class="ds-mono">margin-inline: ${escapa(MAPA_MOVEL_MARGEM)}</code>, que é a goteira devolvida: a tela toma a largura da JANELA e não a da coluna, e as molduras e a lista dos nomes seguem-na. As duas medidas e a consulta são lidas de <code class="ds-mono">src/styles/inicio.css</code>.</p>
+    <p class="ds-nota">Até 27.08.2026 esta secção retratava outra coisa: <code class="ds-mono">.movel-selo</code>, o selo que a Emenda 18 punha no lugar do mapa por baixo de 640, quando o mapa era de pontos e nenhum ponto se tocava. A Emenda 20c devolveu o mapa ao telemóvel — «${escapa(EMENDA_20C)}» — e o selo saiu com a forma que o justificava. Esta corrida procura-o em <code class="ds-mono">dist/index.html</code> e em <code class="ds-mono">dist/en/index.html</code>, e pára se o encontrar.</p>
   </section>`;
 
   regista(
     '05-mapa.html',
     'Disposições',
     1240,
-    cartao({ grupo: 'Disposições', viewport: 1240, titulo: 'O mapa em pontos', corpo, familias: ['inicio', 'municipio'] }),
-    `${pontos} pontos, dois mapas de dist/`
+    cartao({ grupo: 'Disposições', viewport: 1240, titulo: 'O mapa por unidades', corpo, familias: ['inicio', 'municipio'] }),
+    `${unidades} unidades, ${concelhosDoDistrito} concelhos e ${pontos} pontos, três mapas de dist/`
   );
 }
 
@@ -1314,7 +1586,12 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   const cabeca = peca('index.html', '.cabeca-bloco[data-cabeca="pais"]');
   const foraPeca = peca('index.html', '.peca[data-estado="fora"]');
   const dentroPeca = peca('index.html', '.peca[data-estado="dentro"][data-limiar="sim"]');
-  const semPeca = peca('index.html', '.peca[data-estado="sem"]');
+  const ondeSem = ondeHa(
+    '.peca[data-estado="sem"]',
+    CANDIDATAS_DA_PECA_SEM_LIMIAR,
+    'uma peça sem limiar',
+  );
+  const semPeca = peca(ondeSem, '.peca[data-estado="sem"]');
   const social = peca('index.html', '.social-linha');
   const socialTitulo = peca('index.html', '.social-titulo');
 
@@ -1363,7 +1640,7 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
     <p class="ds-legenda">.peca[data-estado="dentro"][data-limiar="sim"]</p>
     <div class="ds-mostra">${semPeca}</div>
     <p class="ds-legenda">.peca[data-estado="sem"]</p>
-    <p class="ds-nota">As três de <code class="ds-mono">dist/index.html</code>, tal como rendem. A peça sem limiar não tem cor nenhuma, e a régua dela, quando existe, é a tinta contra uma referência publicada que não é um limiar.</p>
+    <p class="ds-nota">As duas primeiras de <code class="ds-mono">dist/index.html</code> e a terceira de <code class="ds-mono">dist/${escapa(ondeSem)}</code>, tal como rendem. A peça sem limiar não tem cor nenhuma, e a régua dela, quando existe, é a tinta contra uma referência publicada que não é um limiar.</p>
   </section>
 
   <section class="ds-bloco">
