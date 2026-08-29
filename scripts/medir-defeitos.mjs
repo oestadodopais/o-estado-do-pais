@@ -110,6 +110,58 @@ const SECCIONADORES = new Set(['section', 'article', 'aside', 'details', 'main',
  */
 const BLOCOS = 'p,li,dd,dt,h1,h2,h3,h4,figcaption,summary,blockquote,td,th,caption';
 /**
+ * ---------------------------------------------------------------------------
+ * OS RÓTULOS QUE VIVEM NUM `<span>`, E A RÉGUA PASSOU A VÊ-LOS (29.08.2026)
+ * ---------------------------------------------------------------------------
+ * A definição de bloco acima é uma lista de etiquetas, e um `<span>` não está
+ * nela. Isso é o certo para prosa corrida: um `<span>` dentro de um parágrafo é
+ * um pedaço da frase, não uma frase. **Mas o rótulo da cabeça de dezasseis
+ * vistas do sítio é um `<span>` sozinho ao lado do `<h1>`**, e ali ele é um
+ * bloco no ecrã e um bloco na leitura: `.eyebrow` é `display: block` com
+ * `margin: 0`. O elemento à volta dos dois é um `<div>`, que também não está na
+ * lista, e por isso a cadeia passava por baixo da régua sem ninguém a ver.
+ *
+ * A MEDIÇÃO CEGA DE 28.08.2026 É QUE O ENCONTROU, nas páginas das áreas: vinte
+ * rendições de «Áreas de governo» e «Government areas» sem uma linha no
+ * inventário. A prova de que a causa é a etiqueta e não outra coisa está no
+ * próprio inventário: «Relance» e «At a glance» são o mesmo rótulo, com a mesma
+ * classe, escritos num `<h2>`, e estão declarados desde sempre.
+ *
+ * DUAS SAÍDAS, E ESTA É A QUE MANTÉM A RÉGUA VERDADEIRA. A outra era pôr o
+ * rótulo de cada vista num `<p>`, e foi o que o bloco das áreas fez nas suas
+ * duas. Corrige as páginas de hoje e **não corrige a régua**: o próximo rótulo
+ * que alguém escreva num `<span>` volta a passar por baixo dela, e a regra «cada
+ * frase da casa está declarada» fica com uma exceção por escrever. O caso
+ * plantado do brief pede o contrário: um rótulo em `<span>` não inventariado tem
+ * de ser visto VERMELHO, e só a régua pode fazer isso.
+ *
+ * A LISTA É DE CLASSES DECLARADAS, E NÃO DE `<span>` A ESMO. Medir todos os
+ * `<span>` do sítio partia cada frase composta em pedaços e enchia o inventário
+ * com metades de frases. O que entra é o `<span>` que a casa declarou como
+ * rótulo pela classe, e a classe está aqui, nomeada, com a razão.
+ *
+ * E A RÉGUA PROVA, EM CADA CONSTRUÇÃO, QUE AINDA VÊ. Uma lista de classes é uma
+ * dependência de uma folha de estilos, e uma folha de estilos muda: renomear
+ * `.eyebrow` deixava esta régua cega em silêncio, que é o defeito que ela existe
+ * para fechar. Por isso conta as ocorrências de cada classe declarada em `dist/`
+ * e escreve-as na medição; `check-voz.mjs` fecha a construção quando uma delas
+ * for a zero. É o positivo conhecido da regra 14, corrido a cada construção em
+ * vez de uma vez.
+ *
+ * SÓ AS MEDIDAS 8 E 9 A USAM. A medida 3 («frases de moldura») é uma linha de
+ * base comparada entre construções desde a etapa 0, e mudar-lhe a definição
+ * mudava um número que não é deste assunto. É a mesma razão por que
+ * `COBERTURA_DECLARADA` ficou de fora de `ORIGEM_DECLARADA`.
+ */
+const CLASSES_DE_ROTULO = [
+  /* `.eyebrow` · o antetítulo da cabeça de uma página: «Município», «Livro-razão»,
+     «Distritos e ilhas». Nomeia o que a página é, e o leitor lê-o antes do
+     título. */
+  'eyebrow',
+];
+const ROTULOS_EM_SPAN = CLASSES_DE_ROTULO.map((c) => `span.${c}`).join(',');
+const BLOCOS_DA_VOZ = `${BLOCOS},${ROTULOS_EM_SPAN}`;
+/**
  * `data-registo*` entrou a 24.08.2026 com as páginas de leitura, e pela mesma
  * razão de todas as outras: **um documento transcrito não é a casa a falar**.
  * O corpo de uma página de leitura são os blocos de um documento fixado, com
@@ -161,6 +213,10 @@ const paginasComMarcadorRetirado = new Set();
 let frontSemSelo = [];
 let frontSeloErrado = [];
 const blocosDaPorta = new Set();
+/* O POSITIVO CONHECIDO DA LISTA DAS CLASSES DE RÓTULO, contado em `dist/`. Ver a
+   razão escrita ao lado de `CLASSES_DE_ROTULO`: uma classe que deixe de existir
+   deixa esta régua cega, e um zero aqui fecha a construção em `check-voz.mjs`. */
+const rotulosEmSpan = Object.fromEntries(CLASSES_DE_ROTULO.map((c) => [c, 0]));
 
 /**
  * 7 — AS FRASES DE COBERTURA (v3, etapa 2a; defeito 7 de `DECISIONS.md` §4).
@@ -408,8 +464,8 @@ function frasesDaVoz(root) {
     ORIGEM_DECLARADA + ',' + MEDIDA_DECLARADA + ',' + COBERTURA_DECLARADA + ',' + LUGAR_DECLARADO;
   const marcados = new Set();
   for (const el of root.querySelectorAll(DECLARADO)) marcados.add(el);
-  for (const el of root.querySelectorAll(BLOCOS)) {
-    if (el.querySelector(BLOCOS)) continue;
+  for (const el of root.querySelectorAll(BLOCOS_DA_VOZ)) {
+    if (el.querySelector(BLOCOS_DA_VOZ)) continue;
     if (marcados.has(el)) continue;
     const t = norm(textoForaDasOrigens(el, marcados));
     if (t) out.push(t);
@@ -426,8 +482,8 @@ function frasesDaCasa(root) {
     marcados.add(el);
     for (const d of el.querySelectorAll('*')) marcados.add(d);
   }
-  for (const el of root.querySelectorAll(BLOCOS)) {
-    if (el.querySelector(BLOCOS)) continue;
+  for (const el of root.querySelectorAll(BLOCOS_DA_VOZ)) {
+    if (el.querySelector(BLOCOS_DA_VOZ)) continue;
     if (marcados.has(el)) continue;
     if (el.querySelector(DECLARADO)) continue;
     const t = norm(texto(el));
@@ -630,6 +686,13 @@ for (const file of ficheiros) {
     if (descricao) daVoz.add(descricao);
     frasesDaVozPorRota.set(chave, daVoz);
     chaveDaRotaPorCaminho.set(chave, rota.key);
+  }
+
+  /* O positivo conhecido das classes de rótulo, em TODAS as páginas e não só nas
+     rotas inventariadas: a pergunta é «esta classe ainda existe no sítio?», e
+     não «esta classe existe onde eu meço». */
+  for (const c of CLASSES_DE_ROTULO) {
+    rotulosEmSpan[c] += root.querySelectorAll(`span.${c}`).length;
   }
 
   /* 7 — as frases de cobertura */
@@ -917,6 +980,7 @@ const medicao = {
     frases_varridas: frasesVarridas.size,
     ocorrencias_varridas: ocorrenciasVarridas,
     achados,
+    rotulos_em_span: rotulosEmSpan,
   },
 };
 
