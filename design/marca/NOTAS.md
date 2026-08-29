@@ -6,7 +6,7 @@
 
 ## 0 · O que está aqui, e o que não está
 
-**Está:** dezanove desenhos em `direcoes/*.svg` (o campo é 512, o sinal cabe em 360), a prancha `PRANCHA.html` com a captura `PRANCHA.png`, os PNG de cada um em `EXPORT/`, as maquetas do ecrã principal em `ECRA-*.png`, e os dois programas que os fazem. As sete primeiras são de 28.08 de manhã; a H, a I e a J são a resposta à terceira adenda, que pediu a palavra «Estado»; a J2 é a quarta adenda, depois de o diretor ter escolhido a palavra; e as **sete vozes** (`12` a `18`, mais a `14b`, que é um campo alternativo e não uma voz) são a resposta à quinta, depois de o diretor ter dito que a palavra ao tamanho de um ícone pode não funcionar e que não encontrou nenhum desenho de que gostasse. As vozes estão na §6; as onze primeiras na §5.
+**Está:** dezanove desenhos em `direcoes/*.svg` (o campo é 512, o sinal cabe em 360), a prancha `PRANCHA.html` com a captura `PRANCHA.png`, os PNG de cada um em `EXPORT/`, as maquetas do ecrã principal em `ECRA-*.png`, e os dois programas que os fazem. As sete primeiras são de 28.08 de manhã; a H, a I e a J são a resposta à terceira adenda, que pediu a palavra «Estado»; a J2 é a quarta adenda, depois de o diretor ter escolhido a palavra; e as **sete vozes** (`12` a `18`, mais a `14b`, que é um campo alternativo e não uma voz) são a resposta à quinta, depois de o diretor ter dito que a palavra ao tamanho de um ícone pode não funcionar e que não encontrou nenhum desenho de que gostasse. As vozes estão na §6; as onze primeiras na §5. **E está a direção K**, que é do diretor e não desta casa: sete SVG em `direcoes-k/` tal como vieram, as variantes K2 a K5 em `direcoes-k/derivadas/`, os marcadores de `derivados-k/`, as quatro folhas `FOLHA-K.png`, `ECRA-SEPARADORES-K.png`, `ECRA-K.png` e `CABECALHO-K.png`, e os dois programas que as fazem (`render-k.mjs` e `marca-k.py`). Está na §6 quinquies.
 
 **E está, ao lado e não no meio, uma exploração:** cinquenta e cinco desenhos em `direcoes-e2/*.svg`, os PNG deles em `EXPORT-E2/`, e as três folhas `FOLHA-E2.png`, `FOLHA-E2-cores.png` e `ECRA-E2.png`. É a resposta à sexta adenda, que não pede uma variante mas uma grelha: oito comprimentos de barra contra cinco cortes, e seis pares de cor. **Não são direções**, e por isso não estão em `direcoes/`, não entram na prancha e não entram na ordem da §7: são células de uma tabela, e uma célula de tabela não é uma proposta de marca. Estão na §6 ter.
 
@@ -1128,6 +1128,229 @@ Na cela, e em campo de tinta: a geométrica pinta 29,9 % de sinal, o Spectral Bo
 
 ---
 
+## 6 quinquies · A direção K, do diretor
+
+*A ADENDA 8 pede esta secção com o número 7. O 7 está ocupado pela ordem de preferência das onze, e renumerá-la partia uma referência que vive em `src/lib/marca.mjs` («NOTAS §8»), que é fora de `design/marca/` e este ramo não lhe toca. Fica na família do 6, que é onde as rondas anteriores foram sendo acrescentadas, e com o título que a adenda deu.*
+
+### As palavras do diretor, e a data
+
+**29.08.2026.** Sete ficheiros SVG e um `LEIA-ME.txt`, em `direcoes-k/`, tal como vieram: uma marca de três linhas horizontais alinhadas à esquerda, a do meio mais curta e em cobalto («registo, valor, registo»), em peso cheio e em peso fino, o ícone do telemóvel e o favicon. E, depois, uma frase sobre a mesma marca: «lembra o E de estado». Essa frase mudou a ronda, porque transformou a leitura de letra de acidente em qualidade a medir, e trouxe um vizinho novo para a cela da colisão: a letra.
+
+Os sete ficheiros dele não se editam. O que esta ronda desenhou está em `derivados-k/` (a regra do esquema escuro e os dois glifos de interface, que são marcadores) e em `direcoes-k/derivadas/` (as variantes K2 a K5, e o controlo monocromático da K1), e cada ficheiro diz no cabeçalho que é derivado, de onde saiu e o que mudou.
+
+### A geometria, conferida contra o LEIA-ME
+
+Lida dos ficheiros com `marca-k.py geometria`, atributo a atributo. **O LEIA-ME está certo em tudo, com um arredondamento a corrigir.**
+
+| o que o LEIA-ME diz | o que os ficheiros têm | |
+|---|---|---|
+| linhas 340 × 72 | 340 × 72 nas duas de fora | confirma |
+| intervalo 48 | 48 e 48 | confirma |
+| valor 197 | 197 | confirma |
+| valor a 58 % | 197 em 340 dá **57,9 %** | 58 % é arredondamento |
+| fio da fina 7 | 7 nos quatro lados dos dois contornos | confirma |
+| grelha 512 | margens 86 e 86 na horizontal, 100 e 100 na vertical | confirma |
+
+**E três medidas que o LEIA-ME não dá e que decidem coisas.** A caixa de tinta da marca é **340 × 312**, ou seja mais larga do que alta (razão 1,090), e ocupa 66,4 % da largura da grelha e 60,9 % da altura. O ícone do telemóvel tem o canto a `rx 114`, que é **22,27 %** do lado, contra os 22,37 % da máscara do iOS que a casa já usa: são a mesma coisa a menos de um décimo. E o grupo do ícone leva `translate(97 97) scale(0.62)`, o que põe a marca a ocupar **41,2 % da largura** do campo e 37,8 % da altura, centrada a menos de 0,3 unidades de 512 do centro exacto. Este último número é o que decide o ecrã principal, e volta abaixo.
+
+### 1 · A tira de separadores, e o que se viu a 16 px
+
+`ECRA-SEPARADORES-K.png`, com a fila de sempre: Guardian, Público, New York Times, o nosso, e dois quadrados marcadores no lugar da Anthropic e da Google. A 16 px e a 2×, em separador escuro e em separador claro.
+
+**Primeiro, um limite da régua, porque ele muda a leitura de tudo o resto.** A contagem de píxeis dá **20,3 % de sinal, 3 ilhas e corrida mínima de 2 px** para o mesmo favicon num separador escuro e num claro. São o mesmo número e não são a mesma coisa: `_mascara` separa o sinal por distância à cor do canto, e conta igual uma barra que difere do campo por uma sombra e uma que difere por tudo. Foi preciso acrescentar uma segunda medida, a **presença**, que é o contraste entre a cor do campo e a cor mais afastada dela, as duas lidas no PNG. A percentagem diz que a marca está lá; a presença diz se ela se vê.
+
+| a 16 px, no separador | sinal | ilhas s/f | corrida mín. | presença |
+|---|---|---|---|---|
+| **como veio, separador escuro** | 20,3 % | 3 / 1 | 2 px | **1,45:1** |
+| como veio, separador claro | 20,3 % | 3 / 1 | 2 px | 17,63:1 |
+| com a regra do escuro, separador escuro | 20,3 % | 3 / 1 | 2 px | 10,34:1 |
+| sobre o campo de tinta do ícone, separador escuro | 4,7 % | 2 / 1 | 1 px | 10,49:1 |
+| sobre o campo de tinta do ícone, separador claro | 92,2 % | 1 / 6 | 4 px | 17,48:1 |
+
+**O que se vê, e é a coisa mais dura desta secção: o favicon tal como veio desaparece num separador escuro.** As barras são de tinta `#17191b` e o separador ativo do Chromium escuro é `#35363a`; a relação é de **1,46:1** para a tinta e **1,45:1** para o cobalto. Ampliada doze vezes vê-se uma mancha; ao tamanho a que o navegador a desenha, a nossa cela é a única da fila sem forma. É a mesma família de queixa que o diretor fez na sétima ronda («our icon letter is a lot weaker when compared», §6 quater), e não é o mesmo defeito: o ficheiro que está no ar é fraco porque é um fio sem campo, mas TEM a regra do esquema escuro e por isso vê-se; este é forte de traço e não tem a regra, e por isso não se vê.
+
+**Uma nota sobre o que a razão de contraste não mede.** O cobalto e a tinta medem quase o mesmo contra o separador escuro (1,45 e 1,46), e no entanto, ao ampliar, a barra do meio vê-se um bocado mais do que as de fora. A razão de contraste da WCAG é de luminância e não conta matiz; o que sobra ali é matiz. Fica dito como observação de quem olhou, não como medida: a régua da casa não tem número para isto.
+
+**A regra do esquema escuro resolve, e é uma linha.** Com `prefers-color-scheme: dark` a trocar as barras para papel-claro `#eceeea` e o valor para cobalto-claro `#7fa6dc`, a presença passa de 1,45:1 para **10,34:1**, que é mais do dobro do limiar de 4,5 e mais do triplo dos 3:1 que `scripts/medir-contraste.mjs` exige a um objeto de interface. É a regra que `public/favicon.svg` já tem hoje e que `exportar.mjs` escreve; o ficheiro do diretor não a traz. Num separador claro a regra não faz nada, e é isso que se quer.
+
+**O campo de tinta do ícone resolve de outra maneira, e cobra outro preço.** No separador escuro dá 10,49:1 e uma cela com forma própria. No separador claro dá uma cela que pinta **92,2 % de tinta**: um quadrado preto entre um «G» da Guardian e um «P» do Público em campo claro. Não é ilegível, é o contrário: é a cela mais pesada da fila. A escolha entre as duas saídas não é de legibilidade, é de que fila se quer estar.
+
+**E há um número que não muda com nenhuma delas: três ilhas.** Em todas as celas do separador a marca conta **três** componentes ligadas. As candidaturas que este trabalho pôs à frente contam **uma**: a H e a J2 dão uma ilha a 60 e a 16 px (§5), e as três construções ao peso de ícone dão uma ilha a 16 px (§6 quater). Isto volta na colisão, que é onde importa.
+
+### 2 · O ecrã principal
+
+`ECRA-K.png`, com `icone-telemovel.svg` na cela de 180 px (60 pt a 3×) entre os oito de referência, em ecrã claro e escuro.
+
+**A cela segura o lugar, e a marca dentro dela não.** O campo de tinta faz o trabalho que a §6 ter já tinha medido: entre o Expresso, o Público, o Economist e o NYT, um quadrado quase preto lê-se de longe nos dois ecrãs. O que não se lê é a marca: as três barras pintam **9,4 % da cela**.
+
+| na cela de 180 px, campo de tinta | sinal |
+|---|---|
+| a palavra «Estado» da J2, que a quarta adenda reprovou | 4,7 % |
+| **a marca K, no enquadramento do ficheiro dele** | **9,4 %** |
+| o «E» da J2 sozinho | 19,8 % |
+| o sinal que está no ar (`e2-unida-28`) | 23,4 % |
+| a construção 3, Spectral Bold ao peso de ícone | 23,6 % |
+| a construção 2, humanista ao peso de ícone | 24,7 % |
+| o «E» da direção H | 27,2 % |
+| a construção 1, geométrica ao peso de ícone | 29,9 % |
+
+**A causa está medida e tem conserto sem redesenhar nada: é o `scale(0.62)`.** O mesmo desenho, enquadrado como o `favicon.svg` do próprio diretor o enquadra (sem redução nenhuma), pinta **23,6 %** de uma cela de 180 px, que é o número da construção 3 e está dentro da faixa de tudo o que a casa aceitou. A área das barras não depende da cor do campo, só do enquadramento, e as duas medições batem certo com a geometria (24,1 % da grelha, e 24,1 % × 0,62² = 9,3 %). **A redução para 0,62 deita fora seis décimos da mancha da marca.** Se a direção quiser esta cela, o que falta é encher o campo, e não engrossar as barras.
+
+### 3 · A colisão: o menu, o alinhar à esquerda, e o «E»
+
+`FOLHA-K.png`, secção final. Cada glifo na sua cela a 16 e a 24 px, nos dois campos, ampliados doze vezes. Os dois glifos de interface são **marcadores desenhados na grelha da própria marca** (mesma margem 86, mesma altura de linha 72, mesmo intervalo 48, mesmo comprimento 340), de propósito: assim a única diferença entre a marca e o botão é a que a marca reivindica como sua. O «E» **não** é marcador: é Spectral Bold, o tipo da casa, à mesma altura de maiúscula que a marca tem de caixa (312 unidades em 512), com a haste na mesma margem esquerda e a base na mesma linha.
+
+**As duas diferenças que separam a marca do botão de menu, medidas nas capturas:**
+
+| | a 16 px | a 24 px |
+|---|---|---|
+| barra de fora, no menu e na marca | 10 px | 16 px |
+| barra do meio, no menu | 10 px | 16 px |
+| barra do meio, na marca K1 | **6 px** | **9 px** |
+| a diferença de comprimento | 4 px | 7 px |
+| a cor do valor contra a cor do registo | 2,12:1 | 2,12:1 |
+
+**O veredicto, a olhar.** A cores, a 24 px, a marca não se lê como botão: uma barra azul, mais curta, no meio de duas pretas, é um objeto com uma linha assinalada lá dentro, e um botão de menu não tem isso. A 16 px a distinção aguenta, com menos folga: os 4 px de diferença de comprimento sobrevivem ao suavizado, e a barra azul continua azul.
+
+**Em monocromia não aguenta.** Tirada a cor, a K1 a 16 px fica com barras de 10, 6 e 10 px e três ilhas, contra as três barras de 10 px e três ilhas do menu: o que resta é um botão de menu com a barra do meio encurtada, e o vizinho mais parecido deixa de ser o menu e passa a ser o **alinhar à esquerda**, que também é uma pilha de barras alternadas na mesma margem. Isto importa porque há sítios onde a cor não vai: impressão a uma cor, alto contraste do sistema, e um favicon que um cliente pinte de uma cor só.
+
+**E o número que a cor não salva: 2,12:1.** O cobalto contra a tinta mede 2,12:1 em campo claro e o cobalto-claro contra o papel-claro mede 2,14:1 em campo escuro. `scripts/medir-contraste.mjs` avisa a partir de 3:1 para objetos de interface. **A cor que carrega a ideia inteira da marca (isto é um valor, aquilo é um registo) está abaixo do limiar que a casa aplica a qualquer outro objeto de interface.** Não é um aviso sobre a marca ser vista: é sobre a distinção interna dela ser vista.
+
+**O «E», e a distância que falta.** Medido na captura de 512 px, e não citado: o braço do meio do «E» do Spectral Bold alcança **80,4 %** do maior dos outros dois, contra os 57,9 % da K1. Mas a proporção dos braços não é o que separa as duas coisas. O que separa é isto:
+
+| a 16 px, campo claro | ilhas de sinal |
+|---|---|
+| o «E» do Spectral Bold | **1** |
+| o botão de menu | 3 |
+| o alinhar à esquerda | 4 |
+| a K1, a K2, a K4 e a K5 | **3** |
+| a K3, a cores | 2, porque a régua perde a barra fina |
+| a K3, em monocromia | **3** |
+
+**Uma letra é uma peça; esta marca são três.** A haste do «E» ocupa 43,2 % do alcance do braço de cima e é ela que solda os três braços num objeto só. Nenhuma das cinco tem haste. Isto não é uma opinião sobre o desenho: é a mesma medição que a §5 já tinha feito à direção H, onde a variante **sem haste** foi desenhada, vista e recusada com esta frase: «as três barras leem-se como o botão de menu de uma aplicação e a letra desaparece (três ilhas, e nenhuma delas é uma letra)». A K é essa variante, com duas coisas acrescentadas que a H não tinha: a barra do meio mais curta e o cobalto. **As duas acrescentam distinção contra o botão; nenhuma acrescenta a letra.**
+
+### 4 · O cabeçalho
+
+`CABECALHO-K.png`. Marcação e folha de estilos do sítio (`.wrap`, `.masthead`, `.wordmark`, `.masthead-identidade`), com o `clamp()` a resolver-se contra a janela. A marca entra pela **âncora B** (§5): à altura de maiúscula do cabeçalho, 0,660 em, com a largura tirada da proporção 340 por 312 e 0,42 dessa altura de espaço até ao nome. O 0,42 é **herdado** da §6 bis e não medido aqui: aquele número saiu de duas formas redondas quase encostadas, e esta marca é uma pilha de rectângulos.
+
+**A altura do cabeçalho não muda, e é medido.**
+
+| janela | corpo do `.wordmark` | `.masthead` sem marca | `.masthead` com marca |
+|---|---|---|---|
+| 320 px | 34 px | 85,36 px | **85,36 px** |
+| 390 px | 34 px | 85,36 px | **85,36 px** |
+| 768 px | 56,83 px | 156,05 px | **156,05 px** |
+| 1280 px | 68 px | 198,72 px | **198,72 px** |
+
+São os mesmos números da §6 quater, o que é uma confirmação e não uma coincidência: a caixa de linha do `.wordmark` é `line-height: 1.04` e o traço sobe 0,818 em acima da base (INFERÊNCIA, calculada da tabela `hhea` do Spectral e registada como tal na §6 quater), e uma marca de 0,660 em cabe lá dentro sem empurrar a linha. Vale para os dois nomes e para as cinco variantes, porque a caixa de tinta das cinco é a mesma.
+
+**O que muda é a largura da caixa de tinta, e a 320 px é onde ela decide.** Contada nos PNG, que é o método da §8:
+
+| | sem marca | com marca | coluna | folga |
+|---|---|---|---|---|
+| «O Estado do País» a 320 | 244 × 25 px | **280 × 25 px** | 284 px | **4 px** |
+| «O Estado do País» a 390 | 244 × 25 | 280 × 25 | 354 px | 74 px |
+| «O Estado do País» a 768 | 407 × 44 | 468 × 43 | 708 px | 240 px |
+| «O Estado do País» a 1280 | 488 × 52 | 560 × 52 | 1092 px | 532 px |
+| «estado» a 320 | 91 × 25 | 127 × 25 | 284 px | 157 px |
+| «estado» a 1280 | 183 × 52 | 253 × 52 | 1092 px | 839 px |
+
+**A marca custa 36 px de largura a 34 px de corpo, e a 320 px sobram 4 px.** Cabe, numa linha, sem partir nada, e não sobra mais nada: com o nome de hoje e esta marca, a linha do cabeçalho a 320 px está cheia. Qualquer coisa que cresça (um nome mais longo, um espaço maior entre a marca e o nome, uma marca menos larga do que alta) obriga a decidir outra vez. Com «estado» o problema não existe.
+
+**E uma coisa que só se vê a 1:1.** Ao lado de «O Estado do País», a marca com a barra do meio em cobalto lê-se como um sinal separado, e não como uma inicial do nome. Não é o defeito que a §5 apontou à H («um objeto colado à palavra»), porque as três barras não se parecem com nenhuma letra do nome; é o contrário: fica ao lado do nome sem conversar com ele. É a leitura honesta do que ali está, e é uma decisão de direção se se quer isso ou uma inicial.
+
+### 5 · A marca fina, e onde é que ela deixa de servir
+
+O LEIA-ME diz «nunca abaixo de 60 px» e dá «fio da fina 7» numa grelha de 512. **Não diz de que 60 px fala**, e as duas leituras possíveis dão números diferentes, por isso deram-se as duas, rendidas e contadas.
+
+| | fio na GRELHA (7/512 × n) | fio na CAIXA (7/340 × n) | o que a captura da grelha mostra |
+|---|---|---|---|
+| 512 px | 7,00 px | 10,56 px | cheio |
+| 120 px | 1,64 px | 2,47 px | 3 ilhas, corrida 1/2, tinta cheia `#17191b` |
+| **60 px** | **0,82 px** | **1,24 px** | 3 ilhas, corrida 1/1, e a tinta mais escura da imagem é `#2d3031`, **cinzento e não tinta** |
+| 32 px | 0,44 px | 0,66 px | 3 ilhas, corrida 1/1, e o mais escuro passa a ser o cobalto |
+| 16 px | 0,22 px | 0,33 px | **1 ilha**: os dois contornos desaparecem e sobra o valor cheio |
+
+**A prova do LEIA-ME confirma-se, e é generosa consigo própria.** Aos 60 px da grelha o fio já não chega a tinta: mede 0,82 px e o navegador desenha-o em cinzento médio. A regra devia ser mais dura do que a que ele escreveu, ou então ele fala da caixa de tinta, e aí a 60 px o fio dá 1,24 px, que é uma linha fina mas cheia. **Fica dito qual é a leitura que a medição sustenta: a da caixa.** À grelha, o limite honesto anda nos 120 px, onde o fio dá 1,64 px e chega a tinta cheia.
+
+**E aos 16 px a marca fina inverte-se.** Os dois contornos somem-se e o que fica na imagem é a barra do valor, que é a única cheia: um traço de cobalto sozinho. Não é ilegibilidade, é outra marca. É o mesmo tipo de acidente que a §6 ter apanhou na exploração do «e» («um traço horizontal dentro de um anel, ou seja o sinal de menos»), e apanha-se pela mesma via, que é olhar.
+
+### 6 · As cinco, uma linha cada
+
+As quatro variantes saem da geometria dele, cada uma com **uma** coisa mudada. A razão do valor é o comprimento da barra do meio sobre o das de fora.
+
+**K1, o ficheiro do diretor. Razão 57,9 % (197 de 340), à esquerda, altura 72.** No «E»: é a razão mais baixa das cinco e a mais longe dos 80,4 % do braço do meio do Spectral Bold, e por isso é a que menos se lê como letra; sem haste, não se lê como letra de todo. Na colisão: 4 px de diferença de comprimento a 16 px e 7 px a 24, mais a cor, que a 2,12:1 fica abaixo do limiar da casa.
+
+**K2, o valor encostado à direita. Razão 57,9 %, x 229.** No «E»: **desiste da letra por construção**, e é o que a torna útil. Um «E» tem os três braços na mesma haste esquerda; com o do meio encostado à direita não há leitura de «E» nenhuma para discutir. Na colisão: é a que mais se afasta do botão de menu, porque nenhum glifo de menu tem uma barra a flutuar à direita; em contrapartida encosta no glifo de **alinhar à direita**, que existe na mesma barra de ferramentas onde o de alinhar à esquerda existe, e a leitura de livro-razão (a coluna do valor alinha à direita) é verdadeira mas é uma convenção de tabela, não de marca.
+
+**K3, o valor mais fino. Razão 57,9 % em comprimento, 55,6 % em altura (40 de 72).** No «E»: piora, porque um braço de «E» mais fino do que os outros não existe em tipo nenhum desta família; lê-se um sublinhado entre duas barras. Na colisão: é a única das cinco em que a régua **perde a barra do meio** a 16 px em campo claro (2 ilhas em vez de 3, sinal 15,6 %, contra as 3 ilhas de todas as outras), e ao olhar confirma-se: o cobalto fino sobre papel a 1,25 px de altura fica um véu. Em monocromia distingue-se do menu por peso, que era o que se pretendia; a 16 px o peso é que não sobrevive.
+
+**K4, o valor mais pesado. Razão 57,9 % em comprimento, 138,9 % em altura (100 de 72).** No «E»: piora por outro lado; um braço do meio mais grosso do que a haste que não existe lê-se como um erro de composição, não como letra. Na colisão: é a que mais se afasta do menu **em monocromia**, que era o objetivo, e paga-o na geometria: os intervalos caem de 48 para 34 unidades, o que a 16 px dá **1 px de folga** medido (contra 2 px nas outras), e ao olhar as três barras começam a soldar-se. É a variante que ganha à distância e perde ao tamanho onde a pergunta se põe.
+
+**K5, o valor a 70 %. Razão 70,0 % (238 de 340), à esquerda, altura 72.** No «E»: é a que chega mais perto, e a distância que fica é medível: 70,0 % contra os 80,4 % do Spectral Bold, ou seja dez pontos. Na colisão: perde-se distância contra o menu (a diferença de comprimento cai de 4 px para 3 px a 16, e de 7 px para 5 px a 24), o que é o mesmo movimento visto do outro lado. **É a variante que mostra que as duas qualidades são a mesma escala vista dos dois topos: quanto mais a marca se aproxima da letra, mais se aproxima do botão.**
+
+### 7 · A comparação com as direções anteriores, pelas mesmas medidas
+
+**Nas colunas da §5**, que são as das onze direções, com a K1 rendida no enquadramento do ficheiro dele (66,4 % da grelha em largura) contra os 70,3 % das onze, o que é uma diferença de quatro pontos e fica dita:
+
+| | 60 px: ilhas | 60 px: corrida mín. | 60 px: mediana | 16 px: ilhas | 60 px: tinta |
+|---|---|---|---|---|---|
+| F, a régua (a melhor corrida das onze) | 1 | 8 px | 8 px | 1 | 15,6 % |
+| H, o «E» do livro-razão | 1 | 5 px | 10 px | 1 | 27,2 % |
+| J2, «Estado» com a linha do valor | 1 | 6 px | 10 px | 1 | 19,8 % |
+| **K1, a marca do diretor** | **3** | **8 px** | **8 px** | **3** | **22,9 %** |
+
+**Nas colunas da §6 quater**, que são as das candidaturas a ícone a 16 px, todas com campo cheio:
+
+| a 16 px, campo cheio | sinal | ilhas de sinal | corrida mín. | corrida med. |
+|---|---|---|---|---|
+| construção 1, geométrica, peso de ícone | 30,1 % | 1 | 1 px | 3 px |
+| construção 2, humanista, peso de ícone | 25,8 % | 1 | 2 px | 3 px |
+| construção 3, Spectral Bold | 29,7 % | 1 | 1 px | 4 px |
+| **K1, o favicon do diretor** | **20,3 %** | **3** | **2 px** | **2 px** |
+
+E na cela do telemóvel, que é a medida que reprovou a palavra da J2, a tabela está na §2 acima: 9,4 % no enquadramento do ficheiro, contra 19,8 % a 29,9 % de tudo o que a casa aceitou, e 4,7 % da palavra que reprovou.
+
+**Duas leituras, e as duas são novas.** A primeira: **em robustez a K1 empata com a melhor das onze.** A 60 px dá corrida mínima de 8 px, que é o número da régua (a direção F), o melhor da tabela das onze; a 16 px dá 2 px, que empata com a humanista e bate a geométrica e o Spectral Bold. Não é surpresa: uma barra horizontal de 2,25 px de altura é a forma mais robusta que se pode pôr numa cela de 16 px. Nada nesta marca é frágil. A segunda: **é a única destas com três ilhas**, aos dois tamanhos, e é a primeira candidatura desde a palavra reprovada da J2 que não é uma peça só. (Entre as onze há outras com mais de uma ilha, a C, a D, a E e a G, e nenhuma delas subiu na ordem da §7 por causa disso.) As duas coisas convivem, e é preciso dizê-lo assim: cada peça é robusta, e não é uma peça.
+
+### 8 · A ordem entre as cinco, e a razão
+
+*Os critérios são os da casa, por esta ordem: diz o nome, entra no cabeçalho sem o obrigar a mexer, lê-se às quatro larguras, sobrevive a 16 px, e não está em cima de ninguém. Ao último foi acrescentado, por instrução, um segundo sentido: e a que distância fica da letra.*
+
+**1.º · K5, o valor a 70 %.** Fica em primeiro porque é a única cuja mudança melhora a leitura que o diretor diz querer sem estragar nenhuma medida: a razão sobe de 57,9 % para 70,0 % e aproxima-se dos 80,4 % do «E» do tipo, os intervalos ficam nos 48, a folga a 16 px fica nos 2 px, e a corrida mínima não muda. O que ela custa está medido e é pequeno: um píxel de diferença de comprimento contra o botão de menu a 16 px.
+
+**2.º · K1, a marca do diretor.** É a que tem a maior distância medida contra o botão de menu (4 px a 16, 7 px a 24) e a razão mais baixa, e as duas coisas são a mesma. Fica em segundo e não em primeiro por uma razão de propósito e não de desenho: se a leitura de «E» é uma qualidade, a K1 é a que menos a tem das quatro que a podem ter (as quatro alinhadas à esquerda).
+
+**3.º · K2, o valor à direita.** É a mais distinta de todas contra os glifos de menu, e é a única que não tem de defender a leitura de letra porque não a reivindica. Desce ao terceiro por duas coisas: encosta no glifo de alinhar à direita em vez do de alinhar à esquerda, o que troca um vizinho por outro, e é a única que perde uma qualidade que o diretor nomeou.
+
+**4.º · K4, o valor pesado.** Ganha em monocromia, que é uma prova real, e perde onde a pergunta se põe: a 16 px a folga entre barras cai para 1 px medido e as três começam a soldar-se. Uma variante que se degrada precisamente ao tamanho do separador não pode subir.
+
+**5.º · K3, o valor fino.** É a única em que uma barra da marca **desaparece à medição e ao olhar** a 16 px. A ideia (distinguir por peso e não só por comprimento) é boa e a execução a 40 unidades não sobrevive ao tamanho onde é julgada. Se a direção quiser esta ideia, o número a experimentar é entre 40 e 72, e não está desenhado.
+
+### 9 · A opinião, e a razão
+
+**A direção K resolve o problema que o diretor levantou na sétima ronda, e resolve-o pelo campo e não pelo desenho.** A queixa era «our icon letter is a lot weaker when compared», e uma barra horizontal de 2,25 px é, medida, a forma mais robusta que qualquer ronda deste trabalho pôs numa cela de 16 px: corrida mínima 2 px, melhor do que a geométrica e do que o Spectral Bold. Nada nesta marca se parte.
+
+**E não é uma letra, e isso está medido três vezes.** Três ilhas onde o «E» do tipo tem uma. A haste, que é 43,2 % do alcance do «E» e é o que solda os braços, não existe. E a variante sem haste da direção H foi desenhada, vista e recusada na §5 com a frase exacta que descreve esta forma. Chamar-lhe «o E de estado» é uma leitura que o autor faz do próprio desenho, e é uma leitura que a régua não confirma: sem cor, a 16 px e a 24 px, o vizinho mais próximo da K1 não é o «E», é o botão de menu com a barra do meio encurtada.
+
+**A minha recomendação é em três partes, e a primeira é a única urgente.** Primeira: **o `favicon.svg` como veio não pode ir ao ar.** A 1,45:1 num separador escuro não é uma marca fraca, é uma marca ausente, e o conserto é a regra `prefers-color-scheme` que a casa já escreve, uma linha em `exportar.mjs`. Segunda: **se esta cela for para o telemóvel, o `scale(0.62)` sobe.** O mesmo desenho enquadrado como o próprio favicon dele o enquadra passa de 9,4 % para 23,6 % de mancha na cela de 180, o que é a diferença entre a palavra reprovada e as construções aprovadas, e não custa um traço novo. Terceira: **se a leitura de «E» for para ser defendida, o número é o da K5 e não o da K1**, e mesmo lá continua a faltar a haste, que é o que a §5 já tinha medido em 28 de agosto.
+
+**E fica uma pergunta que não é minha para responder.** Esta marca vale como marca de casa (é robusta, é da paleta certa, entra no cabeçalho sem mexer nele, e a 24 px a cores não se confunde com um botão) e não vale como letra. Se o sítio quiser um sinal que não seja letra nenhuma, esta serve e as onze primeiras direções passam a ter concorrência a sério. Se quiser a inicial do nome, esta não é, e nenhuma das quatro variantes a torna. **A decisão é entre um sinal e uma inicial, e é de direção.**
+
+### 10 · O que esta ronda não fez
+
+* **Não desenhou a marca com haste.** É a mudança óbvia que faria a K ler-se como «E», e é exactamente a direção H, que já existe em `direcoes/8-e-livro-razao.svg` e já está medida. Não se redesenhou porque duplicava uma direção que a §5 já ordenou.
+* **Não experimentou o valor entre 40 e 72 de altura**, que é o intervalo que a K3 abre e não fecha. Nem o valor entre 197 e 238 de comprimento, entre a K1 e a K5.
+* **Não experimentou outra cor no valor.** O cobalto contra a tinta mede 2,12:1, abaixo dos 3:1 da casa, e a pergunta «que cor dos tokens é que passa os 3:1 contra a tinta» não está respondida. Pela §6 ter o âmbar e o ocre estão reprovados pelo diretor, o que deixa o problema em aberto e não resolvido.
+* **Não viu a marca sobre fotografia**, como já acontecia às onze, às sete e ao «e».
+* **A colisão com barras de aplicação a sério não foi conferida.** Os dois glifos são marcadores desenhados por esta ronda, na grelha da própria marca, que é a comparação mais severa possível e não é a real: um botão de menu de um sistema tem outra grelha, outras proporções e outro peso. Sem rede não se confere no ficheiro de ninguém.
+* **O cinzento do separador claro é escolhido e não conferido.** O escuro veio da captura do diretor; do claro não há captura. O que a medição usa é o contraste contra o campo, e essa relação não muda com dois pontos de cinzento, mas o número exacto do Chromium não está aqui.
+* **O 0,42 de espaço entre a marca e o nome é herdado da §6 bis e não foi medido nesta forma.** Saiu de duas formas redondas quase encostadas; esta é uma pilha de rectângulos, e o problema de espaço é outro.
+* **As quatro variantes não têm ficheiro de cores escuras.** Trazem as cores claras do diretor, e por isso a prova de cor delas é em campo claro. A regra do escuro troca cores e não mexe na silhueta, que é o que elas mudam, mas isso é dedução e não medição.
+
+---
+
+
 ## 7 · A ordem de preferência, refeita para as onze
 
 *Esta é a ordem das ONZE primeiras direções, e ficou como estava. A ordem das sete vozes é outra lista e está no fim da §6, porque a adenda das vozes a pediu «só sobre estas», e porque comparar um campo de papel com um campo de cor a partir de números medidos em réguas diferentes daria uma ordem que não queria dizer nada. Quem quiser uma ordem só sobre as dezanove tem de decidir primeiro se o campo entra no critério, e essa é uma decisão de direção.*
@@ -1169,6 +1392,8 @@ Na cela, e em campo de tinta: a geométrica pinta 29,9 % de sinal, o Spectral Bo
 * **As colisões** foram vistas na folha das 42 referências, à mesma escala, e a tira «A vizinhança a 60 px» da prancha põe as onze direções na mesma linha que dezasseis delas. É lá que se vê o «E» da J ao lado do «E» do Expresso e do «E» do Economist, e é lá que se vê o que a linha do valor da J2 lhe acrescenta.
 * **A maqueta do ecrã principal** é composta em `desenhar.py ecras`, e o que nela é medido é a geometria: cela de 180 px (60 pt a 3×), largura de 1170 px (390 pt a 3×), arredondamento de 22,37 %. O que **não** é medido, e fica dito como inferência, é o rótulo: 33 px são 11 pt a 3×, e esse valor não foi conferido contra a documentação da Apple, que não se pode consultar sem rede; o tipo do rótulo é o Helvetica do sistema e não o do telemóvel. O fundo liso e cinzento médio é escolha, e a razão está na §5: um fundo claro de mais fabricava o problema em vez de o medir. Dois dos oito ícones de referência (Pordata, 48 px; Poder360, 57 px) foram ampliados para 180 e por isso saem moles, o que num telemóvel a sério não aconteceria.
 * **O cabeçalho** foi medido em `src/styles/site.css` (`.wordmark`: `clamp(34px, 7.4vw, 68px)`, e a compacta `clamp(24px, 3.4vw, 34px)`) e a altura de maiúscula do Spectral na tabela `OS/2` do ficheiro (660 em 1000). As três linhas da prancha estão a 1:1: a altura de cada SVG em píxeis é a altura da caixa de tinta nas mesmas unidades.
+* **A PRESENÇA de uma cela** (§6 quinquies) é medida nova, e existe por causa de um limite da contagem: `_mascara` separa o sinal por distância à cor do canto, e por isso conta igual uma barra que difere do campo por uma sombra e uma que difere por tudo. A mesma marca dá 20,3 % de sinal num separador escuro e num claro, e num deles não se vê. A presença é o contraste entre a cor do campo e a cor mais afastada dela, as duas **lidas no PNG** e não declaradas, passadas pela mesma régua de `desenhar.py contraste`. Nas celas de canto transparente não se mede, porque ali o canto não é campo nenhum.
+* **O «E» versal do Spectral Bold** que serve de vizinho na cela de colisão (§6 quinquies) é **medido na captura de 512 px**, e não citado: a proporção dos braços dele é a premissa da comparação, e uma premissa citada de cor não é medição. Conta-se, linha a linha, o alcance da tinta a partir da margem esquerda. E o programa **pára** se `document.fonts.check()` não confirmar que o ficheiro da casa está carregado, porque um «E» em Georgia mediria outra letra.
 * **A altura de x e as hastes do Spectral** foram medidas no ficheiro da casa: `sxHeight` 454 e `sCapHeight` 660 vêm da tabela `OS/2` do `Spectral-SemiBold.woff2`; a haste do «d» (98,3 no SemiBold, 68,9 no Regular) foi contada no contorno, com as curvas achatadas em segmentos e a linha do meio do glifo cruzada. Nenhum destes números veio de uma tabela de fora.
 
 ---
@@ -1196,6 +1421,14 @@ E o que ficou por fazer na ronda do «e» explorado (§6 ter) está escrito no f
 secção, e não se repete aqui: a grossura não se mexeu, a barra fora do meio e o corte
 não radial continuam por desenhar desde a §6 bis, e a colisão com o navegador da
 Microsoft continua a ser a primeira coisa a conferir quando houver rede.
+
+E o que ficou por fazer na ronda da direção K (§6 quinquies) está escrito no fim dessa
+secção, e não se repete aqui: a marca com haste não se desenhou porque isso é a direção
+H, que já existe e já está ordenada; o valor entre 40 e 72 de altura e entre 197 e 238 de
+comprimento não está experimentado; a cor do valor continua a 2,12:1 contra a tinta, que
+é abaixo dos 3:1 que a casa exige a um objeto de interface, e não se procurou outra; e os
+dois glifos da colisão são marcadores desta ronda e não barras de aplicação a sério, que
+sem rede não se conferem.
 
 E o que ficou por fazer na ronda das vozes (§6):
 
@@ -1268,3 +1501,30 @@ E uma medição que mudou a leitura de tudo o resto: **ao peso do cabeçalho, du
 das três letras partem-se aos 16 px**, e ao peso de ícone as três aguentam com o
 olho fechado. A queixa do diretor sobre a tira de separadores tinha razão, e o
 que a corrige não é o desenho: é o peso e o campo.
+
+Cerca de **380 mil símbolos** na oitava sessão, a da direção K, e o número é
+aproximado: conta a leitura das rondas anteriores, que é o que permite comparar,
+e não só o que esta escreveu. A adenda cresceu duas vezes com a ronda a meio (as
+variantes K2 a K4, e depois a K5 mais o «E» como terceiro vizinho), e cada
+crescimento obrigou a refazer as capturas, que é o mesmo padrão da sétima.
+
+Três correções vieram de olhar, e as três têm a mesma forma das anteriores: o
+programa estava certo e o que ele media não era o que se pensava.
+
+1. **A régua conta igual uma marca que se vê e uma que não se vê.** `_mascara`
+   separa o sinal por distância à cor do canto, e por isso o favicon do diretor
+   dá **20,3 % de sinal num separador escuro e num claro**, com as mesmas três
+   ilhas e a mesma corrida mínima. Num deles não há marca nenhuma. Não foi um
+   número que o denunciou, foi a folha ampliada doze vezes; e o que saiu daí foi
+   a medida da **presença**, que passou a acompanhar todas as celas.
+2. **Um PNG transparente convertido para RGB fica com o campo preto.** Os cantos
+   arredondados do ícone saíam brancos na folha de conferência, porque a captura
+   estava a ser composta sobre branco em vez de guardar o alfa. Corrigiu-se onde
+   a composição tem de acontecer, que é sobre o separador, e passou a haver celas
+   compostas pelo navegador para a régua não ter de adivinhar o campo.
+3. **A cela da marca fina media ao contrário, e foi um número impossível que a
+   apanhou.** Sem margem, o canto da imagem cai em cima do contorno da marca, a
+   régua lê tinta como campo e devolve **76,8 % de sinal** para um desenho que é
+   um fio de dois píxeis e meio. Uma marca de fio com três quartos da cela pintados não
+   existe, e é essa impossibilidade que denuncia a medição, como já tinha
+   acontecido à corda do «e» na §6 ter.
