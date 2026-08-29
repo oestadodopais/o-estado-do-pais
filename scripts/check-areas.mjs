@@ -473,6 +473,20 @@ function A5(m) {
           );
         }
       }
+      /* E A REFERÊNCIA LEGAL DO SELO LEVA A MESMA MARCA (I91, 29.08.2026). «Decreto-Lei
+         n.º 87-A/2025 · Artigo 15.º, n.º 1» é o nome de um diploma português, e
+         na página inglesa está dentro de um documento declarado inglês. A regra
+         é a do rótulo da matéria, pela mesma razão, e confere-se no mesmo sítio:
+         a marca vai nas duas edições. */
+      const referencia = raiz.querySelector('[data-nonledger="referencia-legal"]');
+      if (!referencia) {
+        erros.push(`${p.rota}: não rende a referência legal do selo da porta legal.`);
+      } else if (referencia.getAttribute('lang') !== 'pt-PT') {
+        erros.push(
+          `${p.rota}: a referência legal "${referencia.text.replace(/\s+/g, ' ').trim()}" não vai ` +
+            `marcada lang="pt-PT". É o nome de um diploma português, e nas duas edições.`,
+        );
+      }
     }
   }
   for (const x of m.fora) {
@@ -671,6 +685,19 @@ const ESTRAGOS = {
           .join('>as contas das autarquias<'),
       };
       return `o rótulo "${e.pecas.rotulos[0]}" trocado por uma paráfrase em ${chave}`;
+    },
+    (m) => {
+      /* A marca da língua tirada da referência legal: o nome de um diploma
+         português dentro de uma página declarada inglesa, sem dizer que o é
+         (I91). */
+      const chave = Object.keys(m.paginas).find((k) => k.startsWith('en:'));
+      m.paginas[chave] = {
+        ...m.paginas[chave],
+        html: m.paginas[chave].html
+          .split('data-nonledger="referencia-legal" lang="pt-PT"')
+          .join('data-nonledger="referencia-legal"'),
+      };
+      return `a marca lang="pt-PT" tirada da referência legal de ${chave}`;
     },
   ],
   A6: (m) => {
