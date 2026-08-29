@@ -1134,7 +1134,7 @@ Na cela, e em campo de tinta: a geométrica pinta 29,9 % de sinal, o Spectral Bo
 
 ### As palavras do diretor, e a data
 
-**29.08.2026.** Sete ficheiros SVG e um `LEIA-ME.txt`, em `direcoes-k/`, tal como vieram: uma marca de três linhas horizontais alinhadas à esquerda, a do meio mais curta e em cobalto («registo, valor, registo»), em peso cheio e em peso fino, o ícone do telemóvel e o favicon. E, depois, uma frase sobre a mesma marca: «lembra o E de estado». Essa frase mudou a ronda, porque transformou a leitura de letra de acidente em qualidade a medir, e trouxe um vizinho novo para a cela da colisão: a letra.
+**29.08.2026.** Seis ficheiros SVG e um `LEIA-ME.txt` (sete ficheiros; a primeira versão desta frase dizia sete SVG, corrigido a 29.08 pelo lugar de direção depois da leitura cruzada), em `direcoes-k/`, tal como vieram: uma marca de três linhas horizontais alinhadas à esquerda, a do meio mais curta e em cobalto («registo, valor, registo»), em peso cheio e em peso fino, o ícone do telemóvel e o favicon. E, depois, uma frase sobre a mesma marca: «lembra o E de estado». Essa frase mudou a ronda, porque transformou a leitura de letra de acidente em qualidade a medir, e trouxe um vizinho novo para a cela da colisão: a letra.
 
 Os sete ficheiros dele não se editam. O que esta ronda desenhou está em `derivados-k/` (a regra do esquema escuro e os dois glifos de interface, que são marcadores) e em `direcoes-k/derivadas/` (as variantes K2 a K5, e o controlo monocromático da K1), e cada ficheiro diz no cabeçalho que é derivado, de onde saiu e o que mudou.
 
@@ -1175,7 +1175,7 @@ Lida dos ficheiros com `marca-k.py geometria`, atributo a atributo. **O LEIA-ME 
 
 **O campo de tinta do ícone resolve de outra maneira, e cobra outro preço.** No separador escuro dá 10,49:1 e uma cela com forma própria. No separador claro dá uma cela que pinta **92,2 % de tinta**: um quadrado preto entre um «G» da Guardian e um «P» do Público em campo claro. Não é ilegível, é o contrário: é a cela mais pesada da fila. A escolha entre as duas saídas não é de legibilidade, é de que fila se quer estar.
 
-**E há um número que não muda com nenhuma delas: três ilhas.** Em todas as celas do separador a marca conta **três** componentes ligadas. As candidaturas que este trabalho pôs à frente contam **uma**: a H e a J2 dão uma ilha a 60 e a 16 px (§5), e as três construções ao peso de ícone dão uma ilha a 16 px (§6 quater). Isto volta na colisão, que é onde importa.
+**E há um número que não muda com nenhuma delas: três ilhas.** Em todas as celas do separador sem campo a marca conta **três** componentes ligadas (sobre o campo de tinta do ícone a régua conta o campo e não a marca: 2 e 1 na tabela; a primeira versão desta frase dizia «em todas as celas», corrigido a 29.08 pelo lugar de direção depois da leitura cruzada). As candidaturas que este trabalho pôs à frente contam **uma**: a H e a J2 dão uma ilha a 60 e a 16 px (§5), e as três construções ao peso de ícone dão uma ilha a 16 px (§6 quater). Isto volta na colisão, que é onde importa.
 
 ### 2 · O ecrã principal
 
