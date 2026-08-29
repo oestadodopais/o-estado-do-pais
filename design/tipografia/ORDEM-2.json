@@ -1,0 +1,584 @@
+{
+  "ronda": 2,
+  "adenda": "design/tipografia/ADENDA-2-segunda-ronda.md",
+  "pesos": {
+    "a": 5,
+    "b": 3,
+    "c": 3,
+    "d": 2,
+    "e": 1
+  },
+  "motor": {
+    "nome": "Chromium (Playwright)",
+    "versao": "148.0.7778.96",
+    "plataforma": "darwin"
+  },
+  "nota_dos_sentidos": "a adenda fixou os pesos e não os sentidos; os sentidos estão em cada medida, com a razão, e as duas que são escolha (c e d) levam ao lado a soma com o sentido invertido",
+  "prosa": {
+    "lugar": "prosa",
+    "candidatas": [
+      "Spectral",
+      "Newsreader",
+      "Source Serif 4",
+      "Literata",
+      "Ledger"
+    ],
+    "vazias": [
+      {
+        "familia": "Parnaso Standard",
+        "porque": "o pacote de teste não existe: só o diretor o pode pedir"
+      },
+      {
+        "familia": "Parnaso Small",
+        "porque": "o pacote de teste não existe: só o diretor o pode pedir"
+      }
+    ],
+    "excluidas": [],
+    "eliminatorias": [
+      {
+        "familia": "Spectral",
+        "tnum": true,
+        "smcp": true,
+        "passa": true,
+        "nota": null
+      },
+      {
+        "familia": "Newsreader",
+        "tnum": true,
+        "smcp": false,
+        "passa": true,
+        "nota": "sem `smcp`: entra com as versais na Spectral SC e com o custo desses dois ficheiros na medida 7, por decisão do lugar de direção posterior à adenda"
+      },
+      {
+        "familia": "Source Serif 4",
+        "tnum": true,
+        "smcp": true,
+        "passa": true,
+        "nota": null
+      },
+      {
+        "familia": "Literata",
+        "tnum": true,
+        "smcp": true,
+        "passa": true,
+        "nota": null
+      },
+      {
+        "familia": "Ledger",
+        "tnum": false,
+        "smcp": false,
+        "passa": true,
+        "nota": "sem `smcp`: entra com as versais na Spectral SC e com o custo desses dois ficheiros na medida 7, por decisão do lugar de direção posterior à adenda"
+      }
+    ],
+    "medidas": {
+      "a": {
+        "chave": "a",
+        "peso": 5,
+        "medida": 2,
+        "maiorEMelhor": true,
+        "rotulo": "a solidez do traço mais fino a 1× (tinta mediana numa corrida de 1 px)",
+        "sentido": "mais tinta na haste de um píxel é melhor: uma haste que o ecrã pousa a 45% imprime-se, a mesma a 12% é um cinzento com forma de letra",
+        "unidade": "cobertura de 0 a 1, mediana das células de 1× (cinco páginas × sete larguras)",
+        "valores": {
+          "Spectral": 0.3174,
+          "Newsreader": 0.3229,
+          "Source Serif 4": 0.4208,
+          "Literata": 0.3583,
+          "Ledger": 0.5399
+        },
+        "lugares": {
+          "Ledger": 1,
+          "Source Serif 4": 2,
+          "Literata": 3,
+          "Newsreader": 4,
+          "Spectral": 5
+        },
+        "distingue": true,
+        "valores_distintos": 5,
+        "sem_valor": [],
+        "empates_no_lugar": [],
+        "peso_efetivo": 5,
+        "porque_zero": null
+      },
+      "b": {
+        "chave": "b",
+        "peso": 3,
+        "medida": 3,
+        "maiorEMelhor": true,
+        "rotulo": "as aberturas de «e», «a» e «s» a 17 px e 1×",
+        "sentido": "abertura maior é melhor: uma garganta que fecha a 17 px faz um «e» ler-se como um «o»",
+        "unidade": "píxeis, média das três letras a 17 px e 1×",
+        "valores": {
+          "Spectral": null,
+          "Newsreader": null,
+          "Source Serif 4": null,
+          "Literata": null,
+          "Ledger": null
+        },
+        "lugares": {},
+        "distingue": false,
+        "valores_distintos": 0,
+        "sem_valor": [
+          "Spectral",
+          "Newsreader",
+          "Source Serif 4",
+          "Literata",
+          "Ledger"
+        ],
+        "empates_no_lugar": [],
+        "peso_efetivo": 0,
+        "porque_zero": "nenhuma família deu valor a esta medida"
+      },
+      "c": {
+        "chave": "c",
+        "peso": 3,
+        "medida": 6,
+        "maiorEMelhor": true,
+        "rotulo": "a densidade de leitura a 390 × 844 (caracteres no ecrã)",
+        "sentido": "mais caracteres no ecrã é melhor, ao mesmo corpo e à mesma entrelinha",
+        "unidade": "caracteres estimados num ecrã de 390 × 844, na página de leitura",
+        "valores": {
+          "Spectral": 942,
+          "Newsreader": 977,
+          "Source Serif 4": 940,
+          "Literata": 907,
+          "Ledger": 907
+        },
+        "lugares": {
+          "Newsreader": 1,
+          "Spectral": 2,
+          "Source Serif 4": 3,
+          "Literata": 4,
+          "Ledger": 4
+        },
+        "distingue": true,
+        "valores_distintos": 4,
+        "sem_valor": [],
+        "empates_no_lugar": [
+          4
+        ],
+        "peso_efetivo": 3,
+        "porque_zero": null
+      },
+      "d": {
+        "chave": "d",
+        "peso": 2,
+        "medida": 1,
+        "maiorEMelhor": true,
+        "rotulo": "a altura de x a 17 px, medida no navegador",
+        "sentido": "maior é melhor: a 17 px num telemóvel o que se lê é a altura de x",
+        "unidade": "píxeis de altura de x",
+        "valores": {
+          "Spectral": 7.65,
+          "Newsreader": 7.3638,
+          "Source Serif 4": 8.2153,
+          "Literata": 8.6262,
+          "Ledger": 8.245
+        },
+        "lugares": {
+          "Literata": 1,
+          "Ledger": 2,
+          "Source Serif 4": 3,
+          "Spectral": 4,
+          "Newsreader": 5
+        },
+        "distingue": true,
+        "valores_distintos": 5,
+        "sem_valor": [],
+        "empates_no_lugar": [],
+        "peso_efetivo": 2,
+        "porque_zero": null
+      },
+      "e": {
+        "chave": "e",
+        "peso": 1,
+        "medida": 7,
+        "maiorEMelhor": false,
+        "rotulo": "os bytes do sítio, normalizados",
+        "sentido": "menos é melhor",
+        "unidade": "bytes do sítio inteiro, com a Bitter",
+        "valores": {
+          "Spectral": 415008,
+          "Newsreader": 581340,
+          "Source Serif 4": 516872,
+          "Literata": 549200,
+          "Ledger": 179852
+        },
+        "lugares": {
+          "Ledger": 1,
+          "Spectral": 2,
+          "Source Serif 4": 3,
+          "Literata": 4,
+          "Newsreader": 5
+        },
+        "distingue": true,
+        "valores_distintos": 5,
+        "sem_valor": [],
+        "empates_no_lugar": [],
+        "peso_efetivo": 1,
+        "porque_zero": null
+      }
+    },
+    "pesos_da_adenda": {
+      "a": 5,
+      "b": 3,
+      "c": 3,
+      "d": 2,
+      "e": 1
+    },
+    "peso_total_efetivo": 11,
+    "somas": {
+      "Spectral": {
+        "soma": 41,
+        "conta": "5·5 + 3·2 + 2·4 + 1·2"
+      },
+      "Newsreader": {
+        "soma": 38,
+        "conta": "5·4 + 3·1 + 2·5 + 1·5"
+      },
+      "Source Serif 4": {
+        "soma": 28,
+        "conta": "5·2 + 3·3 + 2·3 + 1·3"
+      },
+      "Literata": {
+        "soma": 33,
+        "conta": "5·3 + 3·4 + 2·1 + 1·4"
+      },
+      "Ledger": {
+        "soma": 22,
+        "conta": "5·1 + 3·4 + 2·2 + 1·1"
+      }
+    },
+    "ordem": [
+      {
+        "posicao": 1,
+        "familia": "Ledger",
+        "soma": 22,
+        "conta": "5·1 + 3·4 + 2·2 + 1·1"
+      },
+      {
+        "posicao": 2,
+        "familia": "Source Serif 4",
+        "soma": 28,
+        "conta": "5·2 + 3·3 + 2·3 + 1·3"
+      },
+      {
+        "posicao": 3,
+        "familia": "Literata",
+        "soma": 33,
+        "conta": "5·3 + 3·4 + 2·1 + 1·4"
+      },
+      {
+        "posicao": 4,
+        "familia": "Newsreader",
+        "soma": 38,
+        "conta": "5·4 + 3·1 + 2·5 + 1·5"
+      },
+      {
+        "posicao": 5,
+        "familia": "Spectral",
+        "soma": 41,
+        "conta": "5·5 + 3·2 + 2·4 + 1·2"
+      }
+    ],
+    "empates_na_soma": [],
+    "soma_com_c_e_d_invertidas": {
+      "Spectral": {
+        "soma": 43,
+        "conta": "5·5 + 3·4 + 2·2 + 1·2"
+      },
+      "Newsreader": {
+        "soma": 42,
+        "conta": "5·4 + 3·5 + 2·1 + 1·5"
+      },
+      "Source Serif 4": {
+        "soma": 28,
+        "conta": "5·2 + 3·3 + 2·3 + 1·3"
+      },
+      "Literata": {
+        "soma": 32,
+        "conta": "5·3 + 3·1 + 2·5 + 1·4"
+      },
+      "Ledger": {
+        "soma": 17,
+        "conta": "5·1 + 3·1 + 2·4 + 1·1"
+      }
+    },
+    "numeros_a_bater": {
+      "a": {
+        "medida": 2,
+        "rotulo": "a solidez do traço mais fino a 1× (tinta mediana numa corrida de 1 px)",
+        "unidade": "cobertura de 0 a 1, mediana das células de 1× (cinco páginas × sete larguras)",
+        "valor": 0.5399,
+        "de": "Ledger",
+        "sentido": "maior é melhor",
+        "pesa": 5
+      },
+      "b": null,
+      "c": {
+        "medida": 6,
+        "rotulo": "a densidade de leitura a 390 × 844 (caracteres no ecrã)",
+        "unidade": "caracteres estimados num ecrã de 390 × 844, na página de leitura",
+        "valor": 977,
+        "de": "Newsreader",
+        "sentido": "maior é melhor",
+        "pesa": 3
+      },
+      "d": {
+        "medida": 1,
+        "rotulo": "a altura de x a 17 px, medida no navegador",
+        "unidade": "píxeis de altura de x",
+        "valor": 8.6262,
+        "de": "Literata",
+        "sentido": "maior é melhor",
+        "pesa": 2
+      },
+      "e": {
+        "medida": 7,
+        "rotulo": "os bytes do sítio, normalizados",
+        "unidade": "bytes do sítio inteiro, com a Bitter",
+        "valor": 179852,
+        "de": "Ledger",
+        "sentido": "menor é melhor",
+        "pesa": 1
+      }
+    }
+  },
+  "instrumento": {
+    "lugar": "instrumento",
+    "candidatas": [
+      "Bitter",
+      "Public Sans"
+    ],
+    "vazias": [
+      {
+        "familia": "Sebenta",
+        "porque": "o pacote de teste não existe: só o diretor o pode pedir"
+      }
+    ],
+    "excluidas": [
+      {
+        "familia": "IBM Plex Sans",
+        "porque": "a medida 4: sem `tnum` no ficheiro de montante"
+      }
+    ],
+    "eliminatorias": [
+      {
+        "familia": "Bitter",
+        "tnum": true,
+        "smcp": true,
+        "passa": true,
+        "nota": null
+      },
+      {
+        "familia": "Public Sans",
+        "tnum": true,
+        "smcp": false,
+        "passa": true,
+        "nota": null
+      }
+    ],
+    "medidas": {
+      "a": {
+        "chave": "a",
+        "peso": 5,
+        "medida": 2,
+        "maiorEMelhor": true,
+        "rotulo": "a solidez do traço mais fino a 1× (tinta mediana numa corrida de 1 px)",
+        "sentido": "mais tinta na haste de um píxel é melhor: uma haste que o ecrã pousa a 45% imprime-se, a mesma a 12% é um cinzento com forma de letra",
+        "unidade": "cobertura de 0 a 1, mediana das células de 1× (cinco páginas × sete larguras)",
+        "valores": {
+          "Bitter": 0.1835,
+          "Public Sans": 0.1227
+        },
+        "lugares": {
+          "Bitter": 1,
+          "Public Sans": 2
+        },
+        "distingue": true,
+        "valores_distintos": 2,
+        "sem_valor": [],
+        "empates_no_lugar": [],
+        "peso_efetivo": 5,
+        "porque_zero": null
+      },
+      "b": {
+        "chave": "b",
+        "peso": 3,
+        "medida": 3,
+        "maiorEMelhor": true,
+        "rotulo": "as aberturas de «e», «a» e «s» a 17 px e 1×",
+        "sentido": "abertura maior é melhor: uma garganta que fecha a 17 px faz um «e» ler-se como um «o»",
+        "unidade": "píxeis, média das três letras a 17 px e 1×",
+        "valores": {
+          "Bitter": null,
+          "Public Sans": null
+        },
+        "lugares": {},
+        "distingue": false,
+        "valores_distintos": 0,
+        "sem_valor": [
+          "Bitter",
+          "Public Sans"
+        ],
+        "empates_no_lugar": [],
+        "peso_efetivo": 0,
+        "porque_zero": "nenhuma família deu valor a esta medida"
+      },
+      "c": {
+        "chave": "c",
+        "peso": 3,
+        "medida": 6,
+        "maiorEMelhor": false,
+        "rotulo": "a densidade do aparelho a 390 × 844 (a altura da ficha da linha do livro-razão)",
+        "sentido": "uma ficha mais baixa é melhor: o mesmo conteúdo, o mesmo corpo, menos ecrã gasto",
+        "unidade": "píxeis de altura da ficha do aparelho",
+        "valores": {
+          "Bitter": 416.8,
+          "Public Sans": 416.8
+        },
+        "lugares": {
+          "Bitter": 1,
+          "Public Sans": 1
+        },
+        "distingue": false,
+        "valores_distintos": 1,
+        "sem_valor": [],
+        "empates_no_lugar": [
+          1
+        ],
+        "peso_efetivo": 0,
+        "porque_zero": "todas as famílias leem o mesmo valor (416.8)"
+      },
+      "d": {
+        "chave": "d",
+        "peso": 2,
+        "medida": 1,
+        "maiorEMelhor": true,
+        "rotulo": "a altura de x a 17 px, medida no navegador",
+        "sentido": "maior é melhor: a 17 px num telemóvel o que se lê é a altura de x",
+        "unidade": "píxeis de altura de x",
+        "valores": {
+          "Bitter": 9.0384,
+          "Public Sans": 8.789
+        },
+        "lugares": {
+          "Bitter": 1,
+          "Public Sans": 2
+        },
+        "distingue": true,
+        "valores_distintos": 2,
+        "sem_valor": [],
+        "empates_no_lugar": [],
+        "peso_efetivo": 2,
+        "porque_zero": null
+      },
+      "e": {
+        "chave": "e",
+        "peso": 1,
+        "medida": 7,
+        "maiorEMelhor": false,
+        "rotulo": "os bytes do sítio, normalizados",
+        "sentido": "menos é melhor",
+        "unidade": "bytes da família",
+        "valores": {
+          "Bitter": 66164,
+          "Public Sans": 34244
+        },
+        "lugares": {
+          "Public Sans": 1,
+          "Bitter": 2
+        },
+        "distingue": true,
+        "valores_distintos": 2,
+        "sem_valor": [],
+        "empates_no_lugar": [],
+        "peso_efetivo": 1,
+        "porque_zero": null
+      }
+    },
+    "pesos_da_adenda": {
+      "a": 5,
+      "b": 3,
+      "c": 3,
+      "d": 2,
+      "e": 1
+    },
+    "peso_total_efetivo": 8,
+    "somas": {
+      "Bitter": {
+        "soma": 9,
+        "conta": "5·1 + 2·1 + 1·2"
+      },
+      "Public Sans": {
+        "soma": 15,
+        "conta": "5·2 + 2·2 + 1·1"
+      }
+    },
+    "ordem": [
+      {
+        "posicao": 1,
+        "familia": "Bitter",
+        "soma": 9,
+        "conta": "5·1 + 2·1 + 1·2"
+      },
+      {
+        "posicao": 2,
+        "familia": "Public Sans",
+        "soma": 15,
+        "conta": "5·2 + 2·2 + 1·1"
+      }
+    ],
+    "empates_na_soma": [],
+    "soma_com_c_e_d_invertidas": {
+      "Bitter": {
+        "soma": 11,
+        "conta": "5·1 + 2·2 + 1·2"
+      },
+      "Public Sans": {
+        "soma": 13,
+        "conta": "5·2 + 2·1 + 1·1"
+      }
+    },
+    "numeros_a_bater": {
+      "a": {
+        "medida": 2,
+        "rotulo": "a solidez do traço mais fino a 1× (tinta mediana numa corrida de 1 px)",
+        "unidade": "cobertura de 0 a 1, mediana das células de 1× (cinco páginas × sete larguras)",
+        "valor": 0.1835,
+        "de": "Bitter",
+        "sentido": "maior é melhor",
+        "pesa": 5
+      },
+      "b": null,
+      "c": {
+        "medida": 6,
+        "rotulo": "a densidade do aparelho a 390 × 844 (a altura da ficha da linha do livro-razão)",
+        "unidade": "píxeis de altura da ficha do aparelho",
+        "valor": 416.8,
+        "de": "Bitter",
+        "sentido": "menor é melhor",
+        "pesa": 0
+      },
+      "d": {
+        "medida": 1,
+        "rotulo": "a altura de x a 17 px, medida no navegador",
+        "unidade": "píxeis de altura de x",
+        "valor": 9.0384,
+        "de": "Bitter",
+        "sentido": "maior é melhor",
+        "pesa": 2
+      },
+      "e": {
+        "medida": 7,
+        "rotulo": "os bytes do sítio, normalizados",
+        "unidade": "bytes da família",
+        "valor": 34244,
+        "de": "Public Sans",
+        "sentido": "menor é melhor",
+        "pesa": 1
+      }
+    }
+  }
+}
