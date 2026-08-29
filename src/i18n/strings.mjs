@@ -561,14 +561,32 @@ export const STRINGS = {
       },
 
       /**
-       * O PAINEL SOCIAL EUROPEU (Emenda 16, 21.08.2026).
+       * OS DOIS PAINÉIS LEVAM O NOME DA SUA FONTE (decisão do diretor, 29.08.2026).
        *
-       * Duas cadeias, e as duas são nomes: o do painel, que é como a instituição
-       * lhe chama, e o do livro-razão, que é a porta por onde sai o resto das
-       * medidas. Nenhuma das duas diz o que a casa fez nem o que a casa promete.
+       * As peças grandes vinham sem nome nenhum e a lista compacta vinha com
+       * nome e sem contagem, e o par lia-se como uma corrida de cartões seguida
+       * de uma lista com título, sem se perceber que são dois painéis de duas
+       * instituições. Cada um leva agora a mesma linha: o nome que a fonte lhe
+       * dá, o ponto, e quantas medidas dele estão ali.
+       *
+       * O NOME É O DA FONTE E A CONTAGEM VEM DA PROVA. Nenhuma das duas cadeias
+       * é uma frase sobre o sítio: a primeira metade é como a instituição chama
+       * ao painel, e o algarismo do meio é um `<ValorDaProva>` que o portão
+       * reconta (`painel_com_limiar` e `painel_social_total`). O que fica escrito
+       * aqui é só o que está à volta do algarismo.
+       *
+       * OS ESPAÇOS ESTÃO DENTRO DAS CADEIAS, e não é descuido: entre uma expressão
+       * e um elemento, uma mudança de linha do gabarito não é um espaço, e as duas
+       * metades colavam-se ao algarismo. É a mesma forma da manchete, que escreve
+       * «Portugal ultrapassa » com o espaço lá dentro pela mesma razão.
        */
+      painel: {
+        nomeA: 'Procedimento dos Desequilíbrios Macroeconómicos · ',
+        nomeFim: ' medidas com limiar',
+      },
       social: {
-        titulo: 'Painel Social Europeu',
+        titulo: 'Painel Social Europeu · ',
+        tituloFim: ' medidas',
         porta: 'O livro-razão',
       },
     },
@@ -1804,8 +1822,13 @@ export const STRINGS = {
         svgLabel: 'Convergence rule: GDP per capita of each region against the European average.',
       },
 
+      painel: {
+        nomeA: 'Macroeconomic Imbalance Procedure · ',
+        nomeFim: ' measures with a threshold',
+      },
       social: {
-        titulo: 'European Social Scoreboard',
+        titulo: 'European Social Scoreboard · ',
+        tituloFim: ' measures',
         porta: 'The ledger',
       },
     },

@@ -42,6 +42,7 @@ leu **só o diff do inventário**. É essa a leitura que esta tabela regista.
 | marca-k | 0 | `design/especime-v3/critica/2026-08-29-codex-leitura-marca-k.md` | Codex `gpt-5.6-sol`, 29.08.2026, sobre o exportador, a célula do ecrã principal, os SVG do diretor, os seis ficheiros de public, o relatório do construtor e a §6 quinquies das notas, com três plantas (3 de 3); cinco achados reais, consertados em be3f368 e nas notas; o inventário não mudou (os ícones não têm prosa) |
 | pequenas-4 | 14 | `design/especime-v3/critica/2026-08-29-codex-leitura-pequenas-4.md` | Codex `gpt-5.6-sol`, 29.08.2026, sobre a página de Évora, uma página de área inglesa, o índice das áreas, a agenda e os diffs, com três plantas (2 de 3; a primeira mal plantada); I92 saiu dela |
 | pequenas-5 | 2 | `design/especime-v3/critica/2026-08-29-codex-leitura-pequenas-5.md` | Codex `gpt-5.6-sol`, 29.08.2026, sobre sete páginas construídas, o dicionário das unidades e o diff do inventário, com três plantas (3 de 3); o texto oculto dos selos e a letra da fonte no dicionário saíram dela |
+| inicio-lista | 8 | por ler | o bloco «Os nomes do mapa ao lado, e os dois painéis com nome», 29.08.2026; a leitura cruzada faz-se antes da fusão |
 
 ## As duas colunas novas de 27.08.2026 (I74)
 

@@ -358,18 +358,33 @@
    o conteúdo, e um comentário a dizer onde uma regra vive não a põe lá. */
 
 /* ---------------------------------------------------------------------------
- * OS NOMES DAS ILHAS POR BAIXO DA SUA MOLDURA (Emenda 20c)
+ * OS NOMES DAS 29 UNIDADES (Emenda 20c e I81; recolocados a 29.08.2026)
  * ---------------------------------------------------------------------------
- * Uma por linha, como a emenda escreve, e com a altura de alvo da casa: uma
- * ilha que não chega aos 44 px no mapa chega aqui, e é essa a troca. As duas
- * molduras ficam lado a lado onde há largura para isso, e em coluna quando não
- * há: a lista é a resposta ao mapa pequeno, e não pode ser ela a transbordar.
+ * Duas formas, e a mesma lista: uma no ecrã largo, ao lado do mapa, e outra
+ * abaixo dele. O bloco é o mesmo no documento (`ListaDosNomes.astro`), filho de
+ * `.cabeca-grelha`, e é aqui que se decide onde ele fica e que cara tem.
+ *
+ * ABAIXO DE 1024 É A FORMA EM LINHA, e é esta a base: os nomes correm uns a
+ * seguir aos outros, separados por ponto, e o alvo de cada um faz-se de
+ * `padding` e não de uma linha própria. Era uma ligação por linha, e a 390 isso
+ * dava 1 238 px de pilha (medido a 29.08 sobre `a76f829`): 29 linhas de 44 px
+ * mais os três rótulos. Com os nomes em linha o alvo continua a ter 44 px de
+ * altura, porque a caixa de um `inline-block` com 12 px de `padding` em cima e
+ * em baixo mede 44, e a linha inteira leva quantos nomes couberem.
+ *
+ * O PONTO ENTRE DOIS NOMES É DA FOLHA E NÃO DO DOCUMENTO, e a razão é a régua
+ * da voz: um separador escrito na marcação punha texto fora da ligação dentro do
+ * `<li>`, e um `<li>` com texto fora de um comando é uma frase da casa por
+ * classificar. O separador é decoração, e é onde a decoração vive.
  */
 .mapa-ilhas {
   display: flex;
   flex-wrap: wrap;
   gap: 4px clamp(18px, 3vw, 34px);
   margin-top: 10px;
+}
+.mapa-ilhas-grupo {
+  min-width: 0;
 }
 .mapa-ilhas-k {
   margin: 0 0 2px;
@@ -382,14 +397,105 @@
   margin: 0;
   padding: 0;
 }
+/* O PONTO É DE QUEM VEM ANTES, E O NOME NÃO SE PARTE. Medido na primeira forma
+   desta folha: com o separador a abrir o item seguinte, uma linha podia começar
+   por «· Ilha de São Jorge» e outra acabar em «Castelo Branco ·», porque há
+   oportunidade de quebra dos dois lados de uma caixa em linha. O item passa a
+   ser uma caixa atómica com `nowrap`: dentro dele nada se parte (nem «Viana do
+   Castelo», nem o ponto do seu nome), e a quebra só pode acontecer entre dois
+   itens, que é onde ela se lê. */
 .mapa-ilhas-lista li {
+  display: inline-block;
+  white-space: nowrap;
   margin: 0;
 }
+.mapa-ilhas-lista li:not(:last-child)::after {
+  content: '·';
+  margin-inline: 5px;
+  color: var(--muted);
+}
 .mapa-ilhas-lista a {
-  display: block;
-  min-height: 44px;
-  line-height: 44px;
-  font-size: 15px;
+  display: inline-block;
+  font-family: var(--f-instr);
+  font-size: 14px;
+  line-height: 20px;
+  padding-block: 12px;
+  /* O SUBLINHADO DECLARA-SE EM PÍXEIS, E É O MESMO 1 px DO CONTORNO. Por
+     omissão a espessura é `auto`, que é uma cadeia e não uma grandeza: a marca
+     do par ia de `auto` para 3 px, e nem a régua nem quem lê a folha sabe
+     dizer se isso é mais grosso. Declarado, o par lê-se de um lado e do outro
+     com o mesmo número: 1 px em repouso, 3 px marcado, no traço da área e no
+     traço do nome. */
+  text-decoration-thickness: 1px;
+}
+/* A MARCA DO PAR, DO LADO DE QUEM É APONTADO. O outro lado do par é composto em
+   `ListaDosNomes.astro`, uma regra por unidade, porque o CSS não sabe dizer «o
+   elemento cujo atributo vale o mesmo que aquele». Esta é a marca de quem tem o
+   rato ou o foco em cima, e é a mesma: o sublinhado de 1 px passa a 3 px, que é
+   o mesmo salto que o contorno da área faz no mapa. */
+.mapa-ilhas-lista a:is(:hover, :focus-visible) {
+  text-decoration-thickness: 3px;
+  text-decoration-color: currentColor;
+}
+
+/* ---------------------------------------------------------------------------
+ * NO ECRÃ LARGO, OS NOMES FICAM NA COLUNA ESQUERDA (decisão do diretor, 29.08)
+ * ---------------------------------------------------------------------------
+ * «Os 29 nomes ficam na coluna esquerda, por baixo da manchete, e o mapa
+ * responde-lhes.» A coluna esquerda tinha, a 1280, 1 260 px de papel por baixo
+ * da manchete (medido), e a lista estava do outro lado, a empurrar a página.
+ *
+ * AS TRÊS COLOCAÇÕES SÃO EXPLÍCITAS, E NÃO SÃO DECORAÇÃO. A grelha tem três
+ * filhos e duas colunas: com colocação automática, o terceiro filho ia para a
+ * fila 2 da coluna 1 por acaso, e a coluna do instrumento ficava presa à fila 1.
+ * Declaradas, a cabeça e os nomes empilham-se na coluna esquerda e o mapa
+ * atravessa as duas filas, que é o que o põe ao lado dos nomes.
+ *
+ * O CONTINENTE VAI EM DUAS COLUNAS DE NOVE, e é o que faz o bloco caber ao lado
+ * do mapa: dezoito nomes numa coluna são 792 px de altura, e nove são 396. As
+ * outras duas parcelas têm nove e duas unidades, e por isso não se partem.
+ *
+ * O ALVO CONTINUA A TER 44 px. Aqui a lista não é a rede de toque (isso é o
+ * telemóvel), mas a régua do mapa mede-a a 1280 (célula M1c) e a casa não tem
+ * uma segunda altura de alvo para o rato: a forma compacta que o brief desenhava
+ * (uns 250 px) pedia linhas de 28 px, e essa é uma decisão de régua e não de
+ * folha. Está no relatório, com a medida das duas.
+ */
+@media (min-width: 1024px) {
+  .cabeca-col {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .cabeca-inst {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+  .mapa-ilhas {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
+    margin-top: 26px;
+    gap: 0 clamp(18px, 2vw, 30px);
+  }
+  /* A forma em linha é da largura pequena: aqui volta a ser uma por linha. */
+  .mapa-ilhas-lista li {
+    display: list-item;
+    white-space: normal;
+  }
+  .mapa-ilhas-lista li:not(:last-child)::after {
+    content: none;
+  }
+  .mapa-ilhas-lista a {
+    display: block;
+    padding-block: 0;
+    min-height: 44px;
+    line-height: 44px;
+    font-size: 13px;
+  }
+  .mapa-ilhas-grupo[data-parcela-lista='continente'] .mapa-ilhas-lista {
+    columns: 2;
+    column-gap: clamp(18px, 2vw, 30px);
+  }
 }
 .mapa-arq {
   font-family: var(--f-instr);
@@ -1448,6 +1554,13 @@ a.porta:hover .porta-abrir {
   [data-inicio] .cabeca-inst {
     order: 4;
   }
+  /* Os nomes das 29 vêm logo a seguir ao mapa, que é onde eles estavam quando
+     viviam dentro dele. A grelha da cabeça dissolve-se nesta largura, e por isso
+     este bloco é item desta coluna como os outros quatro: sem número, a ordem
+     do documento punha-o antes do comando. */
+  [data-inicio] .mapa-ilhas {
+    order: 5;
+  }
 
   /* A linha dos 308 encosta-se à pesquisa em vez de flutuar: é a legenda dela. */
   [data-inicio] .mapa-linha {
@@ -1643,12 +1756,32 @@ a.porta:hover .porta-abrir {
   padding-top: 18px;
 }
 
-.social-titulo {
+/* O NOME DE UM PAINEL, E É O MESMO NOS DOIS (29.08.2026).
+   `.social-titulo` era a forma do nome do Painel Social, o único que tinha nome;
+   com o Procedimento a ganhar o seu, a forma passa a servir os dois e o bloco
+   ganha o segundo nome. As duas classes ficam porque o feixe do sistema de
+   desenho procura a primeira pelo nome (`scripts/design-bundle.mjs`), e uma
+   renomeação daqui partia-o em silêncio. */
+.social-titulo,
+.painel-nome {
   font-family: var(--f-versal);
   font-size: 15px;
   letter-spacing: 0.05em;
   font-weight: 600;
   margin: 0 0 10px 0;
+}
+/* O FIO PASSA PARA O NOME ONDE HÁ NOME. `.painel` abria com `border-top`, e com
+   um nome por cima o fio ficava por baixo dele: quem abre o bloco é o nome, e é
+   ele que leva o fio. Onde não há nome (a página de um concelho e a de uma
+   região) a grelha continua a abri-lo, e por isso a regra desliga-se só na
+   grelha que vem logo a seguir a um nome. */
+.painel-nome {
+  border-top: 1px solid var(--ink);
+  padding-top: 20px;
+}
+.painel-nome + .painel {
+  border-top: 0;
+  padding-top: 0;
 }
 
 .social-lista {

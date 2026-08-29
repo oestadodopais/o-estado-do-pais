@@ -186,6 +186,21 @@ export function ladoEmPixeis(unidade, larguraDoMapa, campo) {
   return Math.max(unidade.caixa[2], unidade.caixa[3]) * escala;
 }
 
+/**
+ * A LARGURA DE MAPA A QUE UMA UNIDADE CHEGA AOS 44 px, que é `ladoEmPixeis()`
+ * resolvida ao contrário.
+ *
+ * `lado * largura / campo.largura = 44` dá `largura = 44 * campo.largura / lado`,
+ * e é o mesmo cálculo e o mesmo lado: nada aqui é uma segunda geometria, é a
+ * mesma regra de três lida no sentido em que a folha precisa dela. A folha não
+ * pergunta «esta unidade chega a esta largura?» uma largura de cada vez: pergunta
+ * «a partir de que largura é que ela chega?», e é essa a fronteira que uma
+ * `@media` sabe escrever.
+ */
+export function larguraQueDaOAlvo(unidade, campo) {
+  return (ALVO_PX * campo.largura) / Math.max(unidade.caixa[2], unidade.caixa[3]);
+}
+
 /** O alvo da casa. Não é uma escolha deste ficheiro: é a regra de 44 px. */
 export const ALVO_PX = 44;
 
@@ -313,6 +328,16 @@ export function parcelasDoMapa() {
       unidades,
       menorAlvoPx: menor,
       precisaDaLista: menor < ALVO_PX,
+      /* A LARGURA ABAIXO DA QUAL ESTA PARCELA PRECISA DA REDE (29.08.2026).
+         É a maior das larguras que as suas unidades pedem: basta uma não chegar
+         para que a parcela inteira leve os nomes, que é a regra da I81 escrita
+         com um número em vez de um sim ou não. Arredonda-se PARA CIMA, porque o
+         que a folha escreve com ela é uma fronteira: a `@media` que esconde o
+         grupo abre a partir desta largura, e meio píxel a menos deixaria uma
+         unidade sem alvo na largura exacta em que ela ainda não chega. */
+      larguraMinimaPx: Math.ceil(
+        Math.max(...unidades.map((u) => larguraQueDaOAlvo(u, pais.campo))),
+      ),
     };
   });
 }

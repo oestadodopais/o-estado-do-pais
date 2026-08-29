@@ -162,7 +162,6 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | navegacao | Brief reading | até 2026-08-26 | viva | — |
 | conteudo | Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu, e a descer. | até 2026-08-26 | viva | — |
 | navegacao | Encontrou um erro? correcoes@oestadodopais.pt · O registo de correções → | até 2026-08-26 | viva | — |
-| conteudo | European Social Scoreboard | até 2026-08-26 | viva | — |
 | navegacao | Found an error? correcoes@oestadodopais.pt · The corrections log → | até 2026-08-26 | viva | — |
 | conteudo | General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold, and falling. | até 2026-08-26 | viva | — |
 | conteudo | Grande Lisboa · região | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
@@ -176,7 +175,6 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | navegacao | O Estado do País | até 2026-08-26 | viva | — |
 | conteudo | O que o país tem a haver do exterior menos o que lhe deve: negativo quando deve mais do que tem a haver. | até 2026-08-26 | viva | — |
 | conteudo | O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27. Um valor abaixo da média significa menos poder de compra por pessoa; um valor acima, mais. | regioes | viva | — |
-| conteudo | Painel Social Europeu | até 2026-08-26 | viva | — |
 | navegacao | Passe o cursor sobre um ponto para ler o município. Teclado: Tab até ao mapa, setas para percorrer os municípios vizinhos, Home para voltar a Évora. | grelha-2 | retirada | a leitura em voz alta do mapa saiu com os pontos da primeira página (Emenda 20a e 20c; bloco do mapa por distritos) |
 | conteudo | Península de Setúbal · região | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | conteudo | Portugal breaches 4 thresholds of the Macroeconomic Imbalance Procedure and meets 9 . | até 2026-08-26 | viva | — |
@@ -1561,3 +1559,40 @@ conta-se uma vez, com `<nome>` no lugar do nome, e não uma por área e por edi�
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
 | conteudo | <nome> | pequenas-4 | viva | — |
+
+## Bloco «Os nomes ao lado do mapa, e os dois painéis com nome» · 29.08.2026
+
+*Oito linhas, e todas da primeira página. Duas famílias.*
+
+**As quatro dicas dos dois valores novos.** `<ValorDaProva>` põe a glosa da chave
+no `title`, e a régua lê os atributos desde a I79: cada painel ganhou um algarismo
+da prova, e com ele a dica daquela chave nas duas edições. São a definição do que
+se conta, escrita em `src/lib/prova.mjs`, e são conteúdo pela mesma razão que as
+outras quatro dicas do painel que já estavam declaradas.
+
+**As quatro linhas de nome dos dois painéis.** Duas saem e quatro entram. Saíam
+«Painel Social Europeu» e «European Social Scoreboard», que eram o nome do painel
+de baixo sozinho, e **saem do ficheiro em vez de ficarem `retirada`**: a casa não
+tirou aquele nome de lado nenhum, ele continua onde estava, e o que mudou foi o
+que está ao lado dele. Entram as quatro linhas inteiras, uma por painel e por
+edição: o nome que a fonte dá ao painel, o ponto, e quantas medidas dele estão na
+página.
+
+*AS DUAS LINHAS DE NOME LEVAM A CONTAGEM DE HOJE (13 e 8), como «2602 afirmações
+· 330 calculadas» leva a dela, e pela mesma razão: o algarismo não está escrito em
+cadeia nenhuma, é um `<ValorDaProva>` que o portão reconta (`painel_com_limiar` e
+`painel_social_total`), e a régua da voz lê o texto rendido. Quando uma das
+contagens mudar, a linha deixa de se render e a construção fecha a dizer o nome
+dela: é o portão a pedir que alguém volte a olhar para a frase, que é o que estas
+linhas existem para fazer.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | European Social Scoreboard · 8 measures | inicio-lista | viva | — |
+| conteudo | European Social Scoreboard measures the ledger holds | inicio-lista | viva | — |
+| conteudo | Macroeconomic Imbalance Procedure · 13 measures with a threshold | inicio-lista | viva | — |
+| conteudo | Painel Social Europeu · 8 medidas | inicio-lista | viva | — |
+| conteudo | Procedimento dos Desequilíbrios Macroeconómicos · 13 medidas com limiar | inicio-lista | viva | — |
+| conteudo | medidas do Painel Social Europeu que o livro-razão guarda | inicio-lista | viva | — |
+| conteudo | medidas do painel cujo quadro publica um limiar | inicio-lista | viva | — |
+| conteudo | panel measures whose scoreboard publishes a threshold | inicio-lista | viva | — |

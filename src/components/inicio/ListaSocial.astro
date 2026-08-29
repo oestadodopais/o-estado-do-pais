@@ -35,12 +35,23 @@
  */
 import Claim from '../Claim.astro';
 import Frase from '../Frase.astro';
+import ValorDaProva from '../ValorDaProva.astro';
 
-const { s, lang, medidas, porta } = Astro.props;
+const { s, lang, p, medidas, porta } = Astro.props;
 ---
 
 <section class="social" id="painel-social">
-  <h2 class="social-titulo">{s.inicio.social.titulo}</h2>
+  {/* O NOME DO PAINEL LEVA A CONTAGEM (decisão do diretor, 29.08.2026). Era o
+      nome sozinho, e por baixo oito linhas que ninguém contava: a linha diz
+      agora quantas medidas do painel estão ali. A contagem NÃO SE ESCREVE: é
+      `painel_social_total`, que é a chave da prova que conta as medidas do
+      Painel Social que o livro-razão guarda, e que o portão de HTML reconta por
+      conta própria contra os algarismos rendidos. */}
+  <h2 class="social-titulo">
+    {s.inicio.social.titulo}
+    <ValorDaProva chave="painel_social_total" item={p.painel_social_total} lang={lang} />
+    {s.inicio.social.tituloFim}
+  </h2>
 
   <ul class="social-lista">
     {
