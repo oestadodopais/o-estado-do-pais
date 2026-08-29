@@ -1,0 +1,26 @@
+{
+ "registado_em": "2026-08-29",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "paginas/municipio-evora.html",
+   "descricao": "the two values of Évora's series sentence swapped (242,6 and 105,5) so «desceu» contradicts them",
+   "sha256_antes": "bc9a6da29fcd95e1cb591a758f6c1229f0a3a244c6971de0d8c7d95bd83980e2",
+   "sha256_depois": "a51d86117d54381349dad56bf1e204a7d5927fb67fda5fb53c014112f3b72168"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "paginas/en-area-financas.html",
+   "descricao": "the language mark removed from the legal reference on the English Finanças page",
+   "sha256_antes": "f73c9e0d86dda658714238f1174ae92c543b9991543a56da8752506cb4008f8a",
+   "sha256_depois": "e931da254dfa945d604e9fb0af683ad178fc2be58565d9398aef188781a044de"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "paginas/areas.html",
+   "descricao": "an area name on the index changed from the Government's «Saúde» to «Saúde Pública»",
+   "sha256_antes": "680b0783520fc0c50c0fd3f1fe999b9af41bcaef3ec670342b10102cdf54c58f",
+   "sha256_depois": "4846e0e6ade35b6e4f44f8e39e76a56331c2dda14c3ea89a833b9e1a40759088"
+  }
+ ]
+}

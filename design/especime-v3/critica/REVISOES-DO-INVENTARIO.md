@@ -38,7 +38,7 @@ leu **só o diff do inventário**. É essa a leitura que esta tabela regista.
 | pequenas-3 | 4 | `design/especime-v3/critica/2026-08-28-codex-leitura-pequenas-3.md` | Codex `gpt-5.6-sol`, 28.08.2026, sobre o índice dos concelhos, a página de Évora, uma leitura longa, o manifesto e o diff do inventário, com três plantas (2 de 3; a terceira mal plantada); a ordem dos membros dos grupos saiu dela |
 | app | 2 | `design/especime-v3/critica/2026-08-28-codex-leitura-app.md` | Codex `gpt-5.6-sol`, 28.08.2026, sobre os manifestos, os ícones, cinco páginas nas duas edições e o diff do inventário, com três plantas (3 de 3); a classe do nome curto corrigida para navegação no fecho |
 | areas | 75 | `design/especime-v3/critica/2026-08-29-codex-releitura-areas.md` | Codex `gpt-5.6-sol`, 29.08.2026, sobre o índice e as páginas de área nas duas edições, o mapa, a lei e o diff do inventário, com três plantas (2 de 3); a primeira leitura, de 28.08 (`2026-08-28-codex-leitura-areas.md`, 2 de 3), fez sair a terceira passagem; I91 saiu desta |
-| pequenas-4 | 14 | `por ler` | por ler: a leitura cruzada faz-se antes da fusão |
+| pequenas-4 | 14 | `design/especime-v3/critica/2026-08-29-codex-leitura-pequenas-4.md` | Codex `gpt-5.6-sol`, 29.08.2026, sobre a página de Évora, uma página de área inglesa, o índice das áreas, a agenda e os diffs, com três plantas (2 de 3; a primeira mal plantada); I92 saiu dela |
 
 ## As duas colunas novas de 27.08.2026 (I74)
 
