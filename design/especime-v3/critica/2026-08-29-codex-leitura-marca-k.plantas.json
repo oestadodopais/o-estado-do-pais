@@ -1,0 +1,9 @@
+{
+ "registado_em": "2026-08-29",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/wt-codex-k (worktree destacado de marca-k-2026-08-29 rebased sobre main 45c5c59)",
+ "plantas": [
+  {"id": "P1", "ficheiro": "NOTAS-6-quinquies.md (design/marca/NOTAS.md, linha 1150)", "descricao": "the geometry table's percentage for the value bar changed from 57,9 % to 61,9 % (197 of 340 is 57,9)", "sha256_antes": "7de0646024d74a970a05d2c41637e98d11e6862fef907666e4459ebb7e9cfb1e", "sha256_depois": "a18e9ae6a7ecd987b56c8a5fad64eb3c2ba8df39e4c8e2b3a7dd5d4701477532", "contexto": "| valor a 58 % | 197 em 340 dá **57,9 %** | 58 % é arredondamento |"},
+  {"id": "P2", "ficheiro": "tests/inicio/app.mjs (linha 402)", "descricao": "the safe-circle radius constant changed from 0.4 to 0.5 of the side; the cell's printed text still says 40 %", "sha256_antes": "9aa632d56c1033d9348569d5ddf24b800fca9a9a2d2295f9991aa4598df7787c", "sha256_depois": "01b6197b39bae7b25fc908ecbc674684aefb6b4a1f4d8a97c136fc7356fde089", "contexto": "const RAIO_SEGURO = 0.4;"},
+  {"id": "P3", "ficheiro": "design/marca/exportar.mjs (MARCAS.k)", "descricao": "escalaDoMaskable changed from 0.85 to 0.9, which the comment above it says falls outside the safe circle (207,66 px)", "sha256_antes": "7665f65e9f67c7f64c9ecaa3da8944ddc6445f998616bfd3e3d2522f130c4119", "sha256_depois": "918ece6bbd365694b7bc40a70a2510518d68776b9229ce5738a8d43af6072e76", "contexto": "    escalaDoMaskable: 0.85,"}
+ ]
+}
