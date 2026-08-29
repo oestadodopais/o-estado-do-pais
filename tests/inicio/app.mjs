@@ -68,20 +68,26 @@
  *      preto sai preto sem ninguém dar por isso. Contam-se os píxeis com alfa
  *      abaixo de 255, e o número é zero.
  *
- *      E a célula imprime, sem julgar, a MANCHA da cela: a percentagem de
- *      píxeis que não são o campo. A §6 quinquies das NOTAS mediu que os ícones
- *      que a casa aceitou pintam entre 19,8 e 29,9 % da cela, e que a palavra
- *      recusada pintava 4,7 %. O número fica à vista para que uma marca que
- *      desaparece numa grelha de ícones se veja aqui e não só num telemóvel. A
- *      banda é decisão de direção, e por isso o número sai na prova e não na
- *      condição.
+ *      E A MANCHA DA CELA TEM CHÃO, que é a segunda metade desta célula. A
+ *      mancha é a percentagem de píxeis que não são o campo, e a §6 quinquies
+ *      das NOTAS mediu que os ícones que a casa aceitou pintam entre 19,8 e
+ *      29,9 % da cela e que a palavra recusada pintava 4,7 %. Essa BANDA é
+ *      decisão de direção e sai só impressa. O CHÃO não: é a área geométrica
+ *      das barras ao enquadramento da cela, somada dos próprios `<rect>` do
+ *      desenho do diretor, e a célula falha se a mancha ficar abaixo dela por
+ *      mais do que o suavizado pode tirar. Sem chão, um ícone opaco todo em
+ *      campo passava a imprimir 0 %.
  *
  * A5 · OS DOIS FAVICONS. O ICO lê-se pelo seu DIRETÓRIO — seis bytes de cabeça e
  *      dezasseis por entrada — e tem de trazer os dois tamanhos, 32 e 16, cada
  *      um com os bytes que a entrada promete. O SVG tem de trazer os TRÊS
  *      caminhos do sinal e a regra do esquema escuro, e não pode trazer campo:
  *      um favicon é desenhado sobre o separador do navegador, e um quadrado
- *      opaco numa barra de separadores é uma mancha e não uma marca.
+ *      opaco numa barra de separadores é uma mancha e não uma marca. E «três»
+ *      é uma contagem de TUDO o que desenha (path, rect, circle, ellipse,
+ *      polygon, polyline, line, image, use, text) e não dos elementos que a
+ *      célula esperava encontrar: com as três barras certas e um `<circle>` ao
+ *      lado, o favicon rende outra coisa.
  *
  *      E «os três caminhos» não é uma contagem, é uma COMPARAÇÃO: cada um tem
  *      de ser, carácter a carácter, a barra correspondente de
@@ -101,12 +107,28 @@
  *
  * A7 · O CABEÇALHO É O NOME, SEM SINAL, NUMA LINHA (diretor, 29.08.2026): o sinal
  *      saiu; a célula confirma que não voltou e que a marca cabe numa linha.
-
- * A9 · EM ESCURO O «e» É PAPEL. O escuro entra pelo caminho real — a escolha
- *      guardada em `localStorage` antes de a página correr —, e não por
- *      `data-theme` posto à mão nem pela preferência do sistema, que desde a
- *      Emenda 12 não decide nada neste sítio. Pôr o atributo à mão mediria a
- *      folha; assim mede-se o caminho.
+ *
+ * A8 · O EXPORTADOR PÕE A MEDIDA, E PÁRA QUANDO NÃO A PODE PÔR. É a única
+ *      célula que olha para `design/marca/exportar.mjs` e não para `dist/`, e
+ *      está aqui porque o defeito que ela apanha não deixa rasto em `dist/`:
+ *      `paginaDoSvg()` põe a medida no `<svg ` do desenho com um
+ *      `String.replace`, e um `replace` que não encontra o literal devolve o
+ *      texto INTACTO e cala-se. Um `<svg` seguido de quebra de linha, que é
+ *      como muitos editores guardam um SVG, dava uma página sem medida nenhuma,
+ *      o navegador desenhava o defeito de 300 × 150, e o PNG saía do tamanho da
+ *      janela com a marca cortada. A célula chama a função com o desenho do
+ *      diretor e exige a medida; e chama-a outra vez com uma cópia em memória
+ *      onde o literal está escondido, e exige que PARE. É a segunda metade que
+ *      prova a guarda, e corre em todas as passagens.
+ *
+ * (NÃO HÁ A9, e a falta é deliberada, não um esquecimento. A A9 media o «e» do
+ *  cabeçalho em tema escuro; o sinal saiu do cabeçalho a 29.08.2026 por decisão
+ *  do diretor, e não há marca nenhuma no cabeçalho para medir — a A7 já exige
+ *  que ela não volte. A única superfície onde a marca ainda muda de cor com o
+ *  esquema é o favicon, e essa é a A5b, que compara a regra do escuro contra a
+ *  paleta escura do próprio diretor. Uma A9 reposta hoje mediria uma folha de
+ *  estilos sem nada do outro lado, e as constantes que ela usava saíram com
+ *  ela.)
  *
  * A10 · NADA DE MAIS. Nenhum service worker registado e nenhum
  *      `beforeinstallprompt` em nenhum ficheiro servido, e nenhuma
@@ -121,6 +143,12 @@ import path from 'node:path';
 import zlib from 'node:zlib';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
+/* A ÚNICA PEÇA QUE ESTA RÉGUA IMPORTA DO EXPORTADOR, e a razão de a importar em
+   vez de a copiar: o que a célula A8 mede é a GUARDA do exportador, e uma cópia
+   da guarda escrita aqui não provava nada sobre a dele. Para todo o resto vale
+   a disciplina do costume, e o leitor de PNG desta régua é o dela. Importar não
+   corre a ronda: `exportar.mjs` só a corre quando é ele o ficheiro chamado. */
+import { paginaDoSvg } from '../../design/marca/exportar.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -164,14 +192,17 @@ if (!fs.existsSync(DIST)) {
  * transformação no caminho entre o ficheiro e quem o lê. Assim a régua mede
  * exactamente o que mediria de verdade, e o `dist/` fica como estava.
  *
- * São três formas porque esta régua lê três coisas diferentes, e nenhuma das
- * três se planta como as outras: HTML servido ao navegador, BYTES de um ficheiro
- * binário, e PÍXEIS já descodificados (que é onde um píxel de tinta fora do
- * círculo seguro se pode plantar sem reescrever um PNG).
+ * São quatro formas porque esta régua lê quatro coisas diferentes, e nenhuma
+ * delas se planta como as outras: HTML servido ao navegador, BYTES de um
+ * ficheiro binário, PÍXEIS já descodificados (que é onde um píxel de tinta fora
+ * do círculo seguro se pode plantar sem reescrever um PNG), e o TEXTO de um
+ * ficheiro da árvore, que é o que a A8 precisa: os ficheiros do diretor não se
+ * tocam, nem para plantar um estrago.
  * ========================================================================== */
 let ESTRAGO = null; // (html, rota) => html
 let ESTRAGO_BYTES = null; // (caminho, buf) => buf
 let ESTRAGO_PIXEIS = null; // (caminho, imagem) => imagem
+let ESTRAGO_FONTE = null; // (ficheiro, texto) => texto
 
 const servidor = http.createServer((req, res) => {
   const semQuery = req.url.split('?')[0];
@@ -303,6 +334,18 @@ function lePng(bytes) {
   return { largura: cab.largura, altura: cab.altura, rgba };
 }
 
+/**
+ * O TEXTO DE UM FICHEIRO DA ÁRVORE (não de `dist/`), com o estrago pelo caminho.
+ *
+ * É por aqui que passam os desenhos do diretor. O estrago é uma transformação
+ * entre o ficheiro e quem o lê, e nunca uma escrita: `design/marca/direcoes-k/`
+ * é obra dele e não se toca, nem para plantar.
+ */
+function textoDaFonte(ficheiro) {
+  const cru = fs.readFileSync(ficheiro, 'utf8');
+  return ESTRAGO_FONTE ? ESTRAGO_FONTE(ficheiro, cru) : cru;
+}
+
 /** Os píxeis de um ícone construído, com o estrago de píxeis pelo caminho. */
 function pixeisDoDist(caminho) {
   const imagem = lePng(bytesDoDist(caminho));
@@ -367,13 +410,9 @@ function rotasConstruidas() {
 /** As sete larguras que a casa mede, das mais estreitas às de secretária. */
 const LARGURAS = [320, 360, 390, 430, 768, 1024, 1280];
 
-/** O papel dos dois temas, de `src/styles/tokens.css`. Lido, não escrito. */
+/** O papel do sítio, de `src/styles/tokens.css`. Lido, não escrito. */
 const TOKENS = fs.readFileSync(path.join(RAIZ, 'src', 'styles', 'tokens.css'), 'utf8');
 const PAPEL_CLARO = (/--paper:\s*(#[0-9a-f]{6})/i.exec(TOKENS) ?? [])[1]?.toLowerCase() ?? null;
-const TINTA_CLARA = (/--ink:\s*(#[0-9a-f]{6})/i.exec(TOKENS) ?? [])[1]?.toLowerCase() ?? null;
-const BLOCO_ESCURO = /:root\[data-theme='dark'\]\s*\{([\s\S]*?)\}/.exec(TOKENS);
-const TINTA_ESCURA =
-  (/--ink:\s*(#[0-9a-f]{6})/i.exec(BLOCO_ESCURO?.[1] ?? '') ?? [])[1]?.toLowerCase() ?? null;
 
 const MANIFESTOS = [
   {
@@ -401,6 +440,80 @@ const ICONES = [
 /** O raio do círculo seguro de um ícone adaptável do Android: 40 % do lado. */
 const RAIO_SEGURO = 0.4;
 
+/* ============================================== o desenho do diretor, lido ==
+ * As barras de `design/marca/direcoes-k/` são a origem de duas coisas nesta
+ * régua: a forma que o `favicon.svg` construído tem de repetir (A5b), e a área
+ * que a cela de 180 px tem de pintar (A4). Lêem-se aqui, uma vez, com a régua
+ * DESTA régua: um `<rect>` de cada vez, atributo a atributo, sem presumir a
+ * ordem em que eles estão escritos, e o retângulo vira caminho aqui. Se a
+ * conversão fosse pedida ao exportador, o que se media era o exportador a
+ * concordar consigo próprio.
+ * ========================================================================== */
+const MARCA_K = path.join(RAIZ, 'design', 'marca', 'direcoes-k');
+
+/** O lado da grelha em que a marca está desenhada. */
+const LADO_DA_GRELHA = 512;
+
+/** As barras de um desenho do diretor, com a geometria e a cor de cada uma. */
+function barrasDaMarca(ficheiro) {
+  return [...textoDaFonte(ficheiro).matchAll(/<rect\b[^>]*>/g)]
+    .map((m) => {
+      const atr = (n) => (new RegExp(`\\b${n}="([^"]*)"`).exec(m[0]) ?? [])[1] ?? null;
+      return {
+        x: atr('x'),
+        y: atr('y'),
+        largura: atr('width'),
+        altura: atr('height'),
+        cor: (atr('fill') ?? '').toUpperCase() || null,
+      };
+    })
+    /* O campo de um ficheiro de cela não tem `x` nem `y`; as barras têm. */
+    .filter((b) => b.x !== null && b.y !== null);
+}
+
+/** O caminho que uma barra dá, escrito como o exportador o escreve. */
+function caminhoDaBarra(b) {
+  const x = Number(b.x);
+  const y = Number(b.y);
+  return `M${x} ${y}H${x + Number(b.largura)}V${y + Number(b.altura)}H${x}Z`;
+}
+
+/**
+ * O CHÃO DA MANCHA, DERIVADO DO DESENHO E NÃO ESCRITO À MÃO.
+ *
+ * A soma das áreas das três barras, em percentagem da grelha de 512. Ao
+ * enquadramento que as celas usam (o do `favicon.svg` do diretor) dá 24,0875 %,
+ * e é esse o número que a cela de 180 px tem de pintar. Não está escrito aqui:
+ * sai dos `<rect>` dele, e se ele mudar as barras o chão muda com elas.
+ */
+function manchaDoDesenho() {
+  const barras = barrasDaMarca(path.join(MARCA_K, 'favicon.svg'));
+  const area = barras.reduce((a, b) => a + Number(b.largura) * Number(b.altura), 0);
+  return (100 * area) / (LADO_DA_GRELHA * LADO_DA_GRELHA);
+}
+
+/**
+ * O QUE O SUAVIZADO PODE TIRAR À MANCHA, MEDIDO E NÃO ARBITRADO.
+ *
+ * A mancha conta os píxeis que diferem do campo em mais de 8 níveis, que é o
+ * limiar da A3. Um píxel de bordo só se PERDE se a cobertura de tinta nele for
+ * tão pequena que a mistura fique dentro desses 8 níveis. O par de cor mais
+ * fraco da marca é o cobalto-claro #7FA6DC contra o campo #17191B, que difere
+ * 193 níveis no seu canal mais aberto: um píxel só se perde abaixo de
+ * 8/193 = 4,15 % de cobertura. A 180 px as três barras têm 768,52 px de
+ * perímetro somado, e um bordo tem um píxel de fundo: o máximo que o suavizado
+ * pode tirar são 768,52 × 0,0415 = 31,86 px², ou seja **0,098 pontos** dos
+ * 32 400 píxeis da cela.
+ *
+ * A margem é 0,5 pontos, cinco vezes esse máximo. E o desvio real vai no
+ * sentido contrário, como tinha de ir: medido, o 180 pinta 24,88 %, que é
+ * 0,79 pontos ACIMA da área geométrica, porque um bordo suavizado quase sempre
+ * conta. A margem existe para o dia em que um navegador desenhe de outra
+ * maneira, não para tapar uma marca encolhida: 0,5 pontos não chegam para
+ * esconder um enquadramento trocado, que custaria catorze.
+ */
+const MARGEM_DO_SUAVIZADO = 0.5;
+
 /** As quatro rotas do cabeçalho: as duas edições, no grande e no compacto. */
 const ROTAS_DO_CABECALHO = [
   { nome: 'pt', rota: '/', forma: 'grande' },
@@ -408,12 +521,6 @@ const ROTAS_DO_CABECALHO = [
   { nome: 'pt-compacto', rota: '/metodo', forma: 'compacto' },
   { nome: 'en-compacto', rota: '/en/method', forma: 'compacto' },
 ];
-
-/** A geometria do lockup, de `design/marca/NOTAS.md` §5 e §6 bis item 6. */
-/* O que a medição aceita de desvio, e porquê: um `em` traduzido para píxeis
-   arredonda, e o Chromium devolve sub-píxeis. Meio píxel é a diferença que um
-   olho não vê e que uma folha mal escrita ultrapassa de longe. */
-const TOLERANCIA_PX = 0.5;
 
 /* ================================================================= as células */
 
@@ -580,12 +687,16 @@ function mediuOIconeDoIPhone() {
     if (imagem.rgba[i] < minimo) minimo = imagem.rgba[i];
   }
   const medida = imagem.largura === 180 && imagem.altura === 180;
-  /* A MANCHA DA CELA, que não é uma condição mas um número que a casa passou a
-     ler (NOTAS §6 quinquies): quantos píxeis da cela NÃO são o campo. É o que
-     separa um ícone que segura o seu lugar numa grelha de ícones de um que
-     desaparece nela, e o 180 é o tamanho a que isso se vê. Sai na prova e fica
-     nas medidas; não entra na condição, porque a banda aceitável é uma decisão
-     de direção e não de régua. O limiar de 8 níveis é o mesmo da célula A3. */
+  /* A MANCHA DA CELA: quantos píxeis da cela NÃO são o campo. É o que separa um
+     ícone que segura o seu lugar numa grelha de ícones de um que desaparece
+     nela, e o 180 é o tamanho a que isso se vê (NOTAS §6 quinquies). O limiar
+     de 8 níveis é o mesmo da célula A3.
+
+     A BANDA de direção (19,8 a 29,9 %) sai só impressa, porque é uma decisão
+     dele. O CHÃO entra na condição, porque não é uma decisão de ninguém: é a
+     área que as barras do desenho ocupam, somada dos `<rect>` do próprio
+     ficheiro do diretor, menos o que o suavizado pode tirar. Sem ele, esta
+     célula dava verde a um ícone opaco todo em campo, com a mancha a zero. */
   const campo = [imagem.rgba[0], imagem.rgba[1], imagem.rgba[2]];
   let doSinal = 0;
   for (let i = 0; i < imagem.rgba.length; i += 4) {
@@ -598,6 +709,8 @@ function mediuOIconeDoIPhone() {
   }
   const pixeis = imagem.largura * imagem.altura;
   const mancha = (100 * doSinal) / pixeis;
+  const doDesenho = manchaDoDesenho();
+  const chao = doDesenho - MARGEM_DO_SUAVIZADO;
   medidas.apple_touch_icon = {
     largura: imagem.largura,
     altura: imagem.altura,
@@ -607,13 +720,20 @@ function mediuOIconeDoIPhone() {
     campo: `#${campo.map((c) => c.toString(16).padStart(2, '0')).join('')}`,
     pixeis_de_sinal: doSinal,
     mancha_por_cento: +mancha.toFixed(2),
+    area_do_desenho_por_cento: +doDesenho.toFixed(4),
+    margem_do_suavizado: MARGEM_DO_SUAVIZADO,
+    chao_por_cento: +chao.toFixed(4),
+    acima_do_chao: +(mancha - chao).toFixed(2),
   };
   conta(
-    'A4 · o apple-touch-icon é opaco e mede 180',
-    medida && transparentes === 0,
+    'A4 · o apple-touch-icon é opaco, mede 180 e pinta a marca inteira',
+    medida && transparentes === 0 && mancha >= chao,
     `${imagem.largura}×${imagem.altura} · ${pixeis} píxeis · ` +
       `alfa mínimo ${minimo} · ${transparentes} abaixo de 255 · ` +
-      `mancha ${doSinal} px, ${mancha.toFixed(1)} % da cela`,
+      `mancha ${doSinal} px, ${mancha.toFixed(2)} % da cela · ` +
+      `chão ${chao.toFixed(2)} % (área do desenho ${doDesenho.toFixed(2)} % ` +
+      `menos ${MARGEM_DO_SUAVIZADO} de suavizado), ${(mancha - chao).toFixed(2)} pontos acima · ` +
+      `banda de direção 19,8 a 29,9 %, só impressa`,
   );
 }
 
@@ -640,12 +760,26 @@ function mediuOsFavicons() {
   const svg = textoDoDist('/favicon.svg');
   if (svg === null) {
     conta(
-      'A5b · o favicon.svg são as três barras do diretor, sem campo, com a regra do escuro',
+      'A5b · o favicon.svg são as três barras do diretor e mais nada, com a regra do escuro',
       false,
       'não foi construído',
     );
     return;
   }
+  /* TUDO O QUE DESENHA, e não só o que se espera encontrar.
+     A conferência antiga recolhia `<path class="…" d="…"/>` e contava esses: um
+     `<circle>` a mais, um `<path>` sem classe, um `<image>` ou um `<use>`
+     passavam ao lado dela, e o favicon rendia outra coisa com as três barras
+     certas lá dentro. Agora contam-se os ELEMENTOS DE DESENHO todos, e a célula
+     exige que sejam exactamente os três que compara. Os comentários saem antes
+     da contagem, para que uma palavra dentro de um comentário não conte como
+     desenho. */
+  const semComentarios = svg.replace(/<!--[\s\S]*?-->/g, '');
+  const elementos = [
+    ...semComentarios.matchAll(
+      /<(path|rect|circle|ellipse|polygon|polyline|line|image|use|text)\b/g,
+    ),
+  ].map((m) => m[1]);
   const caminhos = [...svg.matchAll(/<path class="([a-z-]+)" d="([^"]+)"\s*\/>/g)].map((m) => ({
     classe: m[1],
     d: m[2],
@@ -653,33 +787,8 @@ function mediuOsFavicons() {
   const temRegra = /@media\s*\(prefers-color-scheme:\s*dark\)/.test(svg);
   const temCampo = /class="campo"/.test(svg) || /<rect\b/.test(svg);
 
-  /* As barras dos ficheiros do diretor, lidas com a régua desta régua: um
-     `<rect>` de cada vez, atributo a atributo, sem presumir a ordem em que eles
-     estão escritos. E o retângulo vira caminho AQUI, para que a comparação
-     valha alguma coisa: se a conversão fosse pedida ao exportador, o que se
-     media era o exportador a concordar consigo próprio. */
-  const MARCA_K = path.join(RAIZ, 'design', 'marca', 'direcoes-k');
-  const barrasDe = (ficheiro) =>
-    [...fs.readFileSync(ficheiro, 'utf8').matchAll(/<rect\b[^>]*>/g)]
-      .map((m) => {
-        const atr = (n) => (new RegExp(`\\b${n}="([^"]*)"`).exec(m[0]) ?? [])[1] ?? null;
-        return {
-          x: atr('x'),
-          y: atr('y'),
-          largura: atr('width'),
-          altura: atr('height'),
-          cor: (atr('fill') ?? '').toUpperCase() || null,
-        };
-      })
-      /* O campo de um ficheiro de cela não tem `x` nem `y`; as barras têm. */
-      .filter((b) => b.x !== null && b.y !== null);
-  const caminhoDa = (b) => {
-    const x = Number(b.x);
-    const y = Number(b.y);
-    return `M${x} ${y}H${x + Number(b.largura)}V${y + Number(b.altura)}H${x}Z`;
-  };
-  const daFonte = barrasDe(path.join(MARCA_K, 'favicon.svg'));
-  const doEscuro = barrasDe(path.join(MARCA_K, 'marca-cheia-escuro.svg'));
+  const daFonte = barrasDaMarca(path.join(MARCA_K, 'favicon.svg'));
+  const doEscuro = barrasDaMarca(path.join(MARCA_K, 'marca-cheia-escuro.svg'));
 
   /* As duas classes, pela ordem em que a COR aparece e não pela posição da
      barra: as duas linhas de registo partilham uma regra, a do valor tem a
@@ -703,7 +812,12 @@ function mediuOsFavicons() {
   const asFormas =
     daFonte.length === 3 &&
     caminhos.length === daFonte.length &&
-    caminhos.every((c, i) => c.d === caminhoDa(daFonte[i]) && c.classe === classeDa(daFonte[i]));
+    caminhos.every(
+      (c, i) => c.d === caminhoDaBarra(daFonte[i]) && c.classe === classeDa(daFonte[i]),
+    );
+  /* E nada mais desenha: os elementos de desenho do ficheiro são exactamente os
+     três caminhos que a linha de cima comparou. */
+  const soAsBarras = elementos.length === daFonte.length && elementos.every((n) => n === 'path');
   const aPaleta =
     ordem.length === 2 &&
     doEscuro.length === daFonte.length &&
@@ -718,19 +832,22 @@ function mediuOsFavicons() {
     daFonte.every((b, i) => corDe(noEscuro, classeDa(b)) === doEscuro[i].cor);
 
   medidas.favicon_svg = {
+    elementos_de_desenho: elementos,
     caminhos: caminhos.length,
     regra_do_escuro: temRegra,
     campo: temCampo,
     fonte: 'design/marca/direcoes-k/favicon.svg',
     claro: ordem,
     escuro: [...new Set(doEscuro.map((b) => b.cor))],
+    so_as_barras: soAsBarras,
     formas_iguais: asFormas,
     paleta_igual: aPaleta,
   };
   conta(
-    'A5b · o favicon.svg são as três barras do diretor, sem campo, com a regra do escuro',
-    caminhos.length === 3 && temRegra && !temCampo && asFormas && aPaleta,
-    `${caminhos.length} caminho(s) · prefers-color-scheme: ${temRegra} · campo: ${temCampo} · ` +
+    'A5b · o favicon.svg são as três barras do diretor e mais nada, com a regra do escuro',
+    soAsBarras && caminhos.length === 3 && temRegra && !temCampo && asFormas && aPaleta,
+    `${elementos.length} elemento(s) de desenho (${elementos.join(', ') || 'nenhum'}) · ` +
+      `prefers-color-scheme: ${temRegra} · campo: ${temCampo} · ` +
       `iguais às barras de direcoes-k/favicon.svg: ${asFormas} · ` +
       `paleta ${ordem.join(' e ')} → ${[...new Set(doEscuro.map((b) => b.cor))].join(' e ')} ` +
       `(de marca-cheia-escuro.svg): ${aPaleta}`,
@@ -902,6 +1019,57 @@ async function mediuOCabecalho(largura) {
 }
 
 
+/**
+ * A8 · o exportador põe a medida, e pára quando não a pode pôr.
+ *
+ * As duas metades estão na mesma célula porque são a mesma afirmação: a medida
+ * entra, ou o exportador pára. A segunda metade faz a cópia mexida AQUI, em
+ * memória; `design/marca/direcoes-k/` é obra do diretor e não se toca.
+ */
+function mediuOExportador() {
+  const ficheiro = path.join(MARCA_K, 'favicon.svg');
+  const fonte = textoDaFonte(ficheiro);
+  const queixas = [];
+
+  let pagina = null;
+  try {
+    pagina = paginaDoSvg(fonte, 180);
+  } catch (e) {
+    queixas.push(`parou com o desenho como ele está: ${e.message.split('.')[0]}`);
+  }
+  const comMedida = pagina !== null && /<svg width="180" height="180"/.test(pagina);
+  if (pagina !== null && !comMedida) {
+    queixas.push('a página saiu sem a medida no <svg, e o PNG sairia do tamanho da janela');
+  }
+
+  let parou = false;
+  try {
+    paginaDoSvg(fonte.replace('<svg ', '<svg\n  '), 180);
+  } catch {
+    parou = true;
+  }
+  if (!parou) {
+    queixas.push(
+      'não parou com um «<svg» seguido de quebra de linha: um replace que não encontra o ' +
+        'literal devolve o texto intacto, e a página ficava sem medida',
+    );
+  }
+
+  medidas.exportador = {
+    ficheiro: path.relative(RAIZ, ficheiro),
+    pagina_com_medida: comMedida,
+    para_sem_o_literal: parou,
+  };
+  conta(
+    'A8 · o exportador põe a medida, e pára quando não a pode pôr',
+    queixas.length === 0,
+    queixas.length === 0
+      ? `paginaDoSvg() sobre ${path.basename(ficheiro)}: <svg width="180" height="180"> · ` +
+        'com «<svg» seguido de quebra de linha, pára'
+      : queixas.join(' · '),
+  );
+}
+
 /* ================================================================ os estragos */
 
 /**
@@ -997,6 +1165,40 @@ const PLANTAS = [
         : buf,
   },
   {
+    /* Um ícone opaco, do tamanho certo, e todo em campo. Passava as duas
+       condições antigas da A4 (mede 180, nenhum píxel translúcido) e imprimia
+       0 % de mancha sem que nada ficasse vermelho. É o estrago que o chão da
+       mancha existe para apanhar. */
+    nome: 'o apple-touch-icon opaco, do tamanho certo, e sem marca nenhuma',
+    celulas: ['A4'],
+    pixeis: (caminho, imagem) =>
+      caminho === '/apple-touch-icon.png'
+        ? { ...imagem, rgba: Buffer.alloc(imagem.rgba.length, 0xff) }
+        : imagem,
+  },
+  {
+    /* Um elemento a mais, com as três barras intactas ao lado dele. A
+       comparação carácter a carácter continua a dar certo; o que apanha isto é
+       a contagem de tudo o que desenha. */
+    nome: 'um <circle> a mais no favicon.svg, ao lado das três barras',
+    celulas: ['A5b'],
+    bytes: (caminho, buf) =>
+      caminho === '/favicon.svg'
+        ? Buffer.from(
+            buf.toString('utf8').replace('</svg>', '  <circle cx="256" cy="256" r="20"/>\n</svg>'),
+          )
+        : buf,
+  },
+  {
+    /* O desenho de origem guardado com «<svg» seguido de quebra de linha, que é
+       como muitos editores o escrevem. NUMA CÓPIA EM MEMÓRIA: o ficheiro do
+       diretor não se toca, nem para plantar um estrago. */
+    nome: 'um <svg seguido de quebra de linha no desenho de origem',
+    celulas: ['A8'],
+    fonte: (ficheiro, texto) =>
+      ficheiro.endsWith('favicon.svg') ? texto.replace('<svg ', '<svg\n  ') : texto,
+  },
+  {
     /* A cor do valor trocada pela da tinta na regra do escuro: o cobalto claro
        do diretor desaparece e a barra do meio passa a papel. É um favicon que
        continua a ler-se e que já não é a marca. */
@@ -1025,6 +1227,7 @@ async function corridaInteira() {
   mediuOIconeDoIPhone();
   mediuOsFavicons();
   mediuAsCabecas();
+  mediuOExportador();
   for (const largura of LARGURAS) await mediuOCabecalho(largura);
 }
 
@@ -1058,12 +1261,14 @@ for (const planta of PLANTAS) {
   ESTRAGO = planta.html ?? null;
   ESTRAGO_BYTES = planta.bytes ?? null;
   ESTRAGO_PIXEIS = planta.pixeis ?? null;
+  ESTRAGO_FONTE = planta.fonte ?? null;
   const toca = (prefixo) => planta.celulas.some((c) => c.startsWith(prefixo) || prefixo.startsWith(c));
   if (toca('A1') || toca('A2')) mediuOsManifestos();
   if (toca('A3')) mediuAZonaSegura();
   if (toca('A4')) mediuOIconeDoIPhone();
   if (toca('A5')) mediuOsFavicons();
   if (toca('A6') || toca('A10')) mediuAsCabecas();
+  if (toca('A8')) mediuOExportador();
   /* O cabeçalho corre a UMA largura nas plantas, e não às sete: uma planta que
      muda a altura do sinal muda-a em todas, e sete corridas de navegador por
      planta seriam sete vezes o mesmo vermelho. */
@@ -1077,6 +1282,7 @@ for (const planta of PLANTAS) {
 ESTRAGO = null;
 ESTRAGO_BYTES = null;
 ESTRAGO_PIXEIS = null;
+ESTRAGO_FONTE = null;
 console.log('');
 await nav.close();
 servidor.close();
