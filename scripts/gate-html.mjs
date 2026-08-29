@@ -64,6 +64,7 @@ import { load } from 'js-yaml';
 import { parse, NodeType } from 'node-html-parser';
 
 import { t } from '../src/i18n/strings.mjs';
+import { unidadeDaLinha } from '../src/i18n/unidades.mjs';
 import {
   loadClaims,
   digitsOf,
@@ -2085,8 +2086,17 @@ function verificacoesOrdenadasGate(claim) {
  */
 const SEPARADOR_ATRIBUICAO = ' · ';
 
-/** Os campos cuja versão depende da língua da edição. */
-const CAMPOS_DA_LINHA_POR_LINGUA = new Set(['derivation', 'source_flag_note']);
+/**
+ * Os campos cuja versão depende da língua da edição.
+ *
+ * `unit` entrou a 29.08.2026 com a I92. A unidade de uma linha é um RÓTULO e
+ * não uma citação: onde há um facto de dicionário a edição inglesa escreve-o em
+ * inglês (`src/i18n/unidades.mjs`), e onde não há escreve a cadeia do
+ * livro-razão com `lang="pt-PT"`. O portão continua a conferir carácter a
+ * carácter — o que muda é o que ele espera, que passa a depender da edição,
+ * como já dependia na `derivation` e na nota de bandeira.
+ */
+const CAMPOS_DA_LINHA_POR_LINGUA = new Set(['derivation', 'source_flag_note', 'unit']);
 
 /**
  * `derived_from` é uma lista, e o gabarito desenha-a como uma lista de
@@ -2158,6 +2168,13 @@ function campoDaLinha(claim, campo, lang) {
       return Array.isArray(claim.attributed_to) && claim.attributed_to.length
         ? claim.attributed_to.join(SEPARADOR_ATRIBUICAO)
         : null;
+    case 'unit':
+      /* A MESMA FUNÇÃO QUE O GABARITO CHAMA, e é a mesma escolha que a
+         `derivation` já fazia: o que se confere aqui é a TRANSCRIÇÃO da unidade
+         daquela linha naquela edição, e a tabela de tradução é prosa da casa,
+         conferida contra o livro-razão por `scripts/check-lingua.mjs` — que é
+         quem obriga toda a unidade do livro-razão a ter entrada ou marca. */
+      return unidadeDaLinha(claim.unit, lang).texto;
     case 'derivation':
       return derivacaoDaLinha(claim, lang);
     case 'source_flag_note':

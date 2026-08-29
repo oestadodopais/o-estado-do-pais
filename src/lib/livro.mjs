@@ -16,6 +16,7 @@
 import { routePath } from './routes.mjs';
 import { eDerivada } from './ledger.mjs';
 import { t } from '../i18n/strings.mjs';
+import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { SITE_NAME } from '../../site.config.mjs';
 
 /** O endereço da página de uma afirmação, numa língua. */
@@ -42,8 +43,16 @@ export function caminhoDoLivro(lang) {
  * de unidades, para não haver uma segunda lista a manter ao lado do
  * livro-razão.
  */
-export function valorComUnidade(claim) {
-  const unidade = String(claim.unit ?? '');
+export function valorComUnidade(claim, lang = null) {
+  /* A LÍNGUA É OPCIONAL, E QUEM NÃO A PASSA FICA COM A CADEIA DO LIVRO-RAZÃO.
+     Desde a I92 (29.08.2026) a unidade tem inglês onde há um facto de
+     dicionário (`src/i18n/unidades.mjs`), e o título e a descrição da página de
+     uma linha passam a língua para o dizerem na língua da página. Os cartões de
+     partilha NÃO a passam, e é uma dívida escrita e não um esquecimento: a
+     manchete de um cartão é medida em pixels e desenhada em 580 PNG com o seu
+     registo, e traduzir a unidade ali é reconstruir os cartões todos — trabalho
+     de outro bloco, e não de uma passagem de correções pequenas. */
+  const unidade = lang === null ? String(claim.unit ?? '') : unidadeDaLinha(claim.unit, lang).texto;
   if (!unidade) return String(claim.value);
   const comecaPorLetra = /^\p{L}/u.test(unidade);
   return comecaPorLetra ? `${claim.value} ${unidade}` : `${claim.value}${unidade}`;
@@ -55,7 +64,7 @@ export function valorComUnidade(claim) {
  */
 export function tituloDaLinha(claim, lang) {
   const s = t(lang);
-  return `${valorComUnidade(claim)} · ${s.livro.eyebrow} · ${SITE_NAME}`;
+  return `${valorComUnidade(claim, lang)} · ${s.livro.eyebrow} · ${SITE_NAME}`;
 }
 
 /**
@@ -67,7 +76,7 @@ export function tituloDaLinha(claim, lang) {
  */
 export function descricaoDaLinha(claim, lang) {
   const s = t(lang);
-  const partes = [`${s.livro.linha.eyebrow} ${claim.id}`, valorComUnidade(claim)];
+  const partes = [`${s.livro.linha.eyebrow} ${claim.id}`, valorComUnidade(claim, lang)];
 
   if (eDerivada(claim)) {
     partes.push(s.prov.naoPublicado);

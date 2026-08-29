@@ -48,6 +48,7 @@ import Claim from './Claim.astro';
 import CampoDaLinha from './CampoDaLinha.astro';
 import { provenienciaIncompleta } from '../lib/ledger.mjs';
 import { t } from '../i18n/strings.mjs';
+import { unidadeDaLinha } from '../i18n/unidades.mjs';
 
 /* `...resto` deixa quem chama pendurar as suas marcas no item sem que este
    componente saiba o que elas são: é assim que a página de uma área lhe põe
@@ -56,6 +57,11 @@ import { t } from '../i18n/strings.mjs';
    volta dele partia a grelha. */
 const { linha: c, lang = 'pt', referencia = false, documento = false, ...resto } = Astro.props;
 const s = t(lang);
+/* A UNIDADE É UM RÓTULO, E UM RÓTULO DIZ-SE NA LÍNGUA DA PÁGINA (I92).
+   O dicionário está em `src/i18n/unidades.mjs` e traz a marca de língua com o
+   texto: `null` quando traduziu, `pt-PT` quando a unidade ficou em português
+   por não haver facto de dicionário para ela. */
+const unidade = unidadeDaLinha(c.unit, lang);
 ---
 
 <div class="livro-item" data-estado={provenienciaIncompleta(c) ? 'por-confirmar' : 'completa'} {...resto}>
@@ -70,10 +76,10 @@ const s = t(lang);
       <CampoDaLinha
         id={c.id}
         campo="unit"
-        valor={c.unit}
+        valor={unidade.texto}
         lang={lang}
         class="livro-item-unidade"
-        originalPt={true}
+        lingua={unidade.lingua}
       />
       {referencia && c.reference_date !== null && c.reference_date !== undefined && (
         <span class="livro-item-campo">
