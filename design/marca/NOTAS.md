@@ -23,6 +23,20 @@ python3 design/marca/desenhar.py prancha  # a prancha, com os PNG e as maquetas 
 node   design/marca/exportar.mjs          # a captura PRANCHA.png
 ```
 
+E a ronda da SÉTIMA adenda, que é a palavra «estado» em minúsculas, e que tem
+programas próprios porque não desenha ícones nem passa pela prancha: as letras
+saem de `estado.py`, os cabeçalhos e as celas saem do navegador com
+`render-estado.mjs`, e as folhas voltam a `estado.py`:
+
+```
+python3 design/marca/estado.py                    os SVG das duas construções
+node   design/marca/render-estado.mjs             os cabeçalhos, as celas, os alfabetos
+python3 design/marca/estado.py medir              a régua, lida dos PNG
+python3 design/marca/estado.py ecras              as maquetas do ecrã principal
+python3 design/marca/estado.py separadores        ECRA-SEPARADORES.png
+python3 design/marca/estado.py folhas             as quatro FOLHA-ESTADO*.png
+```
+
 E a ronda de exploração da sexta adenda, que é outra corrente e não passa por
 `direcoes/` nem pela prancha:
 
@@ -903,6 +917,217 @@ Os seis pares, com o contraste contado pela fórmula da WCAG e a mancha lida na 
 
 ---
 
+## 6 quater · A palavra «estado», em minúsculas
+
+*A sétima adenda (`ADENDA-7-estado-minusculo.md`, 29.08.2026) pergunta uma coisa de nome e uma de desenho ao mesmo tempo: se o título do sítio passar a ser a palavra «estado» em minúsculas, com uma linha de descritor por baixo, com que letras é que ela se escreve. No mesmo dia chegaram duas correções, e as duas estão em `ADENDA-7b.md`, porque as duas mudam o que havia a desenhar. Tudo o que aqui leva número foi lido dos PNG de `EXPORT-ESTADO/` com `estado.py medir`, ou medido no navegador por `render-estado.mjs` sobre a folha de estilos do sítio, e não estimado. As folhas são `FOLHA-ESTADO-1.png`, `-2` e `-3`, uma por construção; `FOLHA-ESTADO.png`, os três cabeçalhos lado a lado; e `ECRA-SEPARADORES.png`, a barra do navegador.*
+
+### As palavras do diretor, e as datas
+
+Três, e ficam escritas porque cada uma tirou um caminho de cima da mesa.
+
+**29.08.2026, de manhã** (a 7b, ponto 1), depois de ver o cabeçalho no ar com o «e» ao lado do nome: «having that e behind the name is just not right; better not having it; and don't use it for the phone icon.» O que isto fecha é a resposta mais barata à sétima adenda, que era compor a palavra e pôr o sinal de hoje ao lado dela. **Nenhuma das três construções tem o «e» ao lado da palavra**, e a terceira, que era «Spectral com o sinal como inicial», passou a ser «Spectral sozinho».
+
+**29.08.2026, de manhã** (a 7b, ponto 2): as candidaturas a ícone passam a ser **a letra da construção**, e não o `e2-unida-28` que está no ar. O ficheiro que o sítio serve hoje deixa de ser candidato nesta ronda.
+
+**29.08.2026, 07:25** (a continuação da 7b), com a captura da barra de separadores dele, onde o nosso favicon está entre a Guardian, o Público, o New York Times, a Anthropic e a Google: «our icon letter is a lot weaker when compared.» Daí saíram três exigências com número: campo cheio em todas as candidaturas, uma alternativa de cor dos tokens da casa, e **a grossura da letra a pelo menos 22 % do diâmetro do círculo da altura de x**, contra os 14 % que a §6 bis recomendou para o sinal do cabeçalho.
+
+### A régua comum, e porque é que ela é 760
+
+As três construções partilham uma régua, e ela não é escolhida: é medida no cabeçalho que já existe.
+
+| | milésimos de em |
+|---|---|
+| ascendente | 750 (o topo da tinta do «d» do Spectral Regular, contado no contorno do ficheiro da casa) |
+| saliência das redondas | 10 (o quanto o «o» passa da linha de base) |
+| caixa de tinta | 760, ou seja 0,76 em |
+
+«O Estado do País» leva um «d» e um «o», e por isso a marca de hoje mede 0,76 em de alto: a 34 px de corpo dá 25,8 px, que são os 26 px que a §5 mediu. **A palavra «estado» leva o mesmo «d» e o mesmo «o».** Se as letras desenhadas respeitarem esta caixa, a caixa de tinta do cabeçalho não muda com o nome, e é isso que permite responder à pergunta do diretor sem mexer no cabeçalho. É por aqui que as duas construções desenhadas começam, e não por uma altura de x escolhida.
+
+### O que muda no cabeçalho, medido antes e depois
+
+O `.masthead` foi rendido com `src/styles/tokens.css` e `src/styles/site.css` tal como estão, na marcação de `Masthead.astro` (`.wrap`, `.masthead`, `.wordmark`, `.masthead-identidade`), com a janela às quatro larguras da adenda. Nenhuma medida da folha foi reescrita: o `clamp()` resolveu-se sozinho.
+
+| janela | corpo do `.wordmark` | altura do `.masthead`, hoje | com «estado», nas três |
+|---|---|---|---|
+| 320 px | 34 px | 85,36 px | **85,36 px** |
+| 390 px | 34 px | 85,36 px | **85,36 px** |
+| 768 px | 56,83 px | 156,05 px | **156,05 px** |
+| 1280 px | 68 px | 198,72 px | **198,72 px** |
+
+**A altura do cabeçalho não muda, e não muda em nenhuma das três.** Isto é medido, com `getBoundingClientRect()` sobre o `.masthead`, e não deduzido. A razão de ser assim é (INFERÊNCIA, calculada e não medida): a caixa de linha do `.wordmark` é `line-height: 1.04`, e com a ascendente de 1059 e a descendente de 463 que a tabela `hhea` do Spectral declara, o traço da linha sobe 0,818 em acima da linha de base. Uma palavra desenhada com 0,75 em acima da base cabe lá dentro sem empurrar a linha, e por isso o desenho entra no cabeçalho onde o texto entrava.
+
+O que muda é a **caixa de tinta**, e muda em largura e não em altura:
+
+| | 320 e 390 | 768 | 1280 |
+|---|---|---|---|
+| hoje, «O Estado do País» com o sinal | 25 × 278 px | 44 × 465 | 52 × 556 |
+| 1 · geométrica | 25 × 100 | 43 × 167 | 51 × 200 |
+| 2 · humanista | 25 × 87 | 44 × 146 | 52 × 175 |
+| 3 · Spectral | 25 × 91 | 43 × 152 | 52 × 183 |
+
+Em altura são as mesmas, com um píxel de diferença a 768 e a 1280 na primeira e na terceira, que é o suavizado a arredondar 0,75 em contra 0,76 (a geométrica não tem saliência abaixo da base; o Spectral tem, e a 43 contra 44 a diferença é de leitura do píxel e não de desenho). **Em largura a marca passa a ocupar entre 31 % e 36 % do que ocupava.** A 320 px isso é o número que mais muda o cabeçalho: hoje o nome ocupa 278 px de uma coluna de 284, ou seja a linha inteira menos seis píxeis; «estado» ocupa 87 a 100.
+
+### Construção 1 · a geométrica, do círculo da marca
+
+| | |
+|---|---|
+| altura de x | 470 (0,618 da caixa de tinta) |
+| grossura | 65,8, uma só, 14 % do diâmetro do círculo |
+| topo do «t» | 620 |
+| ascendente do «d» | 750 |
+| entalhe do «e» | 103, ou 22 % da altura de x |
+| ar entre letras | 0,125 da altura de x, medido na tinta e não no avanço |
+
+**Onde ela se afasta do sinal que está no ar, e é de propósito.** A 7b diz que a candidatura a ícone tem de ser uma letra da tipografia nova e não o `e2-unida-28`. Duas coisas mudaram, e nenhuma é cosmética. A **barra não está no meio**: está a 0,54 da altura de x, e com isso o olho de cima fecha e o vão de baixo abre, que é o que um «e» faz e um símbolo simétrico não faz. E o **remate corta na horizontal**, e não no raio: a regra da casa (§4) diz «remates cortados a direito, no horizontal ou no vertical, nunca em ângulo», e o corte do sinal é radial, ou seja em ângulo. Um sinal pode dar-se a essa exceção; uma letra de um alfabeto da casa não. Com o corte horizontal, a face de baixo do remate fica paralela à face de baixo da barra, e a abertura passa a ser um entalhe de lados paralelos em vez de um sector.
+
+**O «s», que era a pergunta.** A §4 conta doze construções falhadas na grelha das onze primeiras. Aquela grelha tinha contraste; esta não, o que tira uma variável e acrescenta outra: com grossura constante não há sítio fraco, mas também não há espinha, e é a espinha que separa um «s» de dois discos encostados. Três construções, todas desenhadas, medidas e na `FOLHA-ESTADO-1.png`, sozinhas a 60 px e dentro da palavra a 34 e a 68 px de corpo:
+
+| | o que é | a 60 px, sozinho | o que se vê |
+|---|---|---|---|
+| s(a) | dois semicírculos do mesmo raio, tangentes, remates onde a tangente é horizontal | 1 ilha, mín. 3 px, med. 7, sinal 9,3 % | Lê-se «s». Os braços têm 180 graus e acabam a meio do topo e a meio do fundo, o que fecha a letra: dentro da palavra ela é a mais estreita e a mais escura das seis, e abre um buraco no ritmo. |
+| **s(b)** | dois arcos de um círculo mais pequeno, desencontrados na horizontal, com um troço recto entre eles | 1 ilha, mín. 2 px, med. 7, sinal 8,8 % | **Lê-se «s», e é a única das três com diagonal.** O troço recto a 60 graus é a espinha, e é ele que faz a letra parecer um «s» e não dois arcos empilhados. Dentro da palavra é a que menos se nota, que é o que se quer de um «s». |
+| s(c) | o traço do «e», com remate radial, usado duas vezes e invertido; braços de 210 graus | 1 ilha, mín. 1 px, med. 7, sinal 10,8 % | Os remates enrolam para dentro e a letra fecha-se mais do que a s(a). Ao lado do «e» da mesma construção o parentesco vê-se; dentro da palavra lê-se antes um «5» do que um «s», e as duas peças encontram-se num ponto só, o que deixa uma junta à vista no ponto de tangência. |
+
+**Fica a s(b)**, e a razão é a que a tabela mostra: é a única em que a letra tem eixo diagonal, e é a única que não muda o peso da palavra à volta dela. As três estão no ramo para a comparação se poder refazer.
+
+**O ritmo das seis letras.** O «a», o «d» e o «o» são o mesmo círculo de 470, e por isso a palavra tem três círculos iguais seguidos: é a assinatura de uma geométrica e não um defeito, mas é preciso dizê-lo, porque é a coisa que mais separa esta construção das outras duas. O «e» é o mesmo círculo com barra e entalhe, o que faz quatro redondas em seis letras. O «t» e o «s» são as duas únicas letras que quebram a fila, e o «s», mesmo na versão b, é 0,86 da altura de x em largura contra 1,0 dos círculos.
+
+### Construção 2 · a humanista
+
+| | |
+|---|---|
+| altura de x | 450, e a saliência 10, que são as do Spectral da casa |
+| haste | 72 |
+| fino | 44 |
+| contraste | 1,64 (o «O» do Spectral SemiBold dá 2,62) |
+| eixo | inclinado 8 graus |
+| topo do «t» | 560, que é o do «t» do Spectral |
+| ar entre letras | 0,130 da altura de x |
+
+A haste é 72 e não 68,9, que é a do «d» do Spectral Regular: uma serifada tira peso das serifas e uma sem serifas tem de o ter no traço. Com o fino a 44, a grossura média é 58, ou seja **a mancha desta é mais leve do que a da geométrica** apesar de a haste ser mais grossa, e isso vê-se nos números do ícone mais abaixo.
+
+**O «e» e o sinal são da mesma família por anatomia, e não por semelhança.** O sinal do cabeçalho é um anel de grossura constante com uma barra a atravessar e um corte em baixo à direita; este «e» é um anel **modulado** com uma barra a atravessar e um corte em baixo à direita, com o remate a afinar no último sétimo do arco para a abertura abrir. O que os separa é a modulação; o que os junta é o resto da construção. A barra acaba na elipse de fora, como no sinal: os remates dela são cordas, e a silhueta não ganha saliência nenhuma.
+
+O «a» é de dois andares e o «s» sai da pena de bico, que é a ferramenta que a §6 criou para as sete vozes. As duas escolhas são a mesma: numa letra modulada, um «a» de um andar lê-se como itálico, e um «s» sem espinha não se lê.
+
+**O ritmo.** É a mais próxima de uma palavra de texto das três: seis letras de larguras diferentes, com o «t» estreito e o «s» a 0,68 da altura de x. A palavra mede 175 px de tinta a 1280 contra 200 da geométrica, ou seja **é a mais compacta das três**.
+
+### Construção 3 · o controlo, Spectral em minúsculas
+
+Sem desenho novo: «estado» composto em Spectral Regular no `.wordmark`, com o aperto de letras que a folha já dá, e sem sinal ao lado (a 7b tirou-o). As medidas são as do ficheiro da casa: altura de x 450, ascendente do «d» 750, haste do «e» 79,4 contada no contorno a meia altura de x.
+
+O que este controlo mostra, e é o mais útil dele: **a caixa de tinta do cabeçalho é exactamente a mesma que hoje**, porque o «d» e o «o» são os mesmos glifos que hoje já lá estão. A troca de «O Estado do País» por «estado» não é, do lado da composição, uma troca de desenho: é uma troca de cadeia.
+
+### A linha do descritor, a 320 px
+
+O `.masthead-identidade` é 12 px de Spectral na cor `--muted`, com 4 px de folga acima dele abaixo dos 640 px de janela e 6 px acima dessa largura. As três linhas foram rendidas nas quatro larguras, nos dois temas, com as três construções. A 320 px de janela a coluna do `.wrap` tem 284 px, porque o `--gutter` é `clamp(18px, 4vw, 44px)` e a 320 resolve-se em 18. Medido:
+
+| linha | largura do texto a 320 px | linhas |
+|---|---|---|
+| «observatório de Portugal» | 133,1 px | 1 |
+| «observatório do estado do país» | 164,1 px | 1 |
+| «observatório do estado de Portugal» | 187,6 px | 1 |
+
+**As três cabem numa linha a 320 px**, com 96 px de folga na mais longa. O que as separa não é o espaço, é o que dizem: a primeira é a frase de identidade que já existe (`src/i18n/strings.mjs`, sem o ponto final, porque deixa de ser frase e passa a descritor); a segunda repete a palavra do título e diz «país» sem o nomear; a terceira repete a palavra do título e nomeia Portugal. **A segunda é a única que devolve ao leitor a leitura que a minúscula quer**, porque põe «estado» outra vez, agora dentro de uma frase onde ele só pode ser a condição. Isto é observação de leitura, não medição.
+
+Uma coisa que a medição mostra e que não é do descritor: a 1280 px o corpo da marca é 68 px e o do descritor 12, ou seja **um para 5,7**. Com o nome comprido essa distância lia-se como hierarquia; com uma palavra de seis letras, o descritor fica pequeno ao lado de um bloco de tinta curto. Não se mexeu nele, porque a regra é da folha do sítio e não desta ronda.
+
+### O ícone, depois da tira de separadores
+
+A continuação da 7b fechou duas perguntas por instrução, e a medição confirma as duas.
+
+**O peso.** A grossura pedida é 22 % do diâmetro do círculo da altura de x. As três chegam lá, e uma delas sem desenho novo:
+
+| construção | peso de ícone | grossura | como se lá chegou |
+|---|---|---|---|
+| 1 · geométrica | 103,4 num círculo de 470 | **22,0 %** | o mesmo desenho com outro número; a barra sobe para 0,515 e o corte fecha para 33 graus, que é o máximo que uma banda desta grossura deixa atravessar na horizontal |
+| 2 · humanista | haste 106 num círculo de 470 | **22,6 %** | o mesmo desenho, com a haste a 106 e o fino a 64, o mesmo contraste |
+| 3 · Spectral | haste do «e» 135,9 num círculo de 476 | **28,6 %** | `Spectral-Bold.woff2`, que a casa já serve. O SemiBold dá 112,7 em 474, ou seja 23,8 %, e também passa. |
+
+A barra da primeira sobe para o meio no peso de ícone, e é uma troca declarada: com a banda a 22 % sobram 159,8 unidades de contraforma para repartir entre o olho e o vão, e com a barra a 0,54 o olho ficava com 61, que numa cela de 16 px são 1,5 px e o suavizado fecha. A 0,515 fica com 73, ou seja 1,75 px. **A letra perde no ícone a assimetria que tem no cabeçalho, e ganha o olho aberto onde é julgada.**
+
+**Os 16 px, cela a cela.** É a pergunta que a 7b faz à letra («podia ser ícone a 16 px: corrida mínima, olho fechado»). «Ilhas de fundo 2» quer dizer que o olho do «e» é uma ilha separada do campo, ou seja **fechado**; «ilhas de sinal 2» quer dizer que a letra se partiu.
+
+| cela de 16 px | tinta da cela | ilhas de sinal | ilhas de fundo | corrida mín. | corrida med. |
+|---|---|---|---|---|---|
+| 1 · peso do cabeçalho (14 %) | 22,7 % | 1 | 2 | 1 | 2 |
+| 2 · peso do cabeçalho | 18,4 % | **2** | 2 | 1 | 2 |
+| 3 · Spectral Regular | 21,9 % | **2** | 2 | 1 | 3 |
+| **1 · peso de ícone (22 %)** | **30,1 %** | 1 | 2 | 1 | 3 |
+| **2 · peso de ícone (22,6 %)** | **25,8 %** | 1 | 2 | **2** | 3 |
+| **3 · Spectral Bold (28,6 %)** | **29,7 %** | 1 | 2 | 1 | **4** |
+
+Duas leituras saem daqui, e nenhuma era óbvia antes de se medir. A primeira: **ao peso do cabeçalho, duas das três letras partem-se aos 16 px**, e a que não parte é a monolinear, porque não tem finos para morrer. A segunda: **ao peso de ícone as três aguentam, com o olho fechado**, o que responde à pergunta da 7b com um sim para as três. Entre elas, a humanista tem a melhor corrida mínima (2 px contra 1) e a do Spectral Bold a melhor mediana (4 px contra 3).
+
+O campo não muda a topologia: as mesmas três leem-se igual em campo de tinta, de papel e de cobalto, com meio ponto de diferença na percentagem. **O que o campo muda é a presença**, e isso vê-se e não se conta aqui.
+
+**A palavra como ícone: não.** Medida na mesma cela, ao peso de ícone e em campo de tinta:
+
+| | a 512 px | a 180 px | a 60 px |
+|---|---|---|---|
+| 1 · geométrica | 3,9 % de sinal, 6 ilhas | 4,0 %, 6 ilhas, altura de x 20,0 px | 4,0 %, 6 ilhas |
+| 2 · humanista | 4,6 %, 6 ilhas | 4,5 %, 6 ilhas, altura de x 21,7 px | 4,6 %, 7 ilhas |
+| 3 · Spectral Bold | 5,2 %, 6 ilhas | 5,3 %, 6 ilhas, altura de x 20,2 px | 5,6 %, 6 ilhas |
+
+A maqueta da quarta adenda reprovou a palavra «Estado» da J2 com **4,7 %** de mancha numa cela de 180 px. As três palavras em minúsculas estão nesse número ou abaixo dele, e as seis letras contam-se como seis ilhas separadas em todas: a palavra não é uma mancha, é seis manchas. Aos 180 px a altura de x fica entre 20 e 22 px, contra 121 a 127 px da letra sozinha na mesma cela. **A palavra tem lugar aos 512 px e no cabeçalho; a cela do telemóvel e o separador do navegador são da letra**, e isto é agora a segunda medição independente a dizer o mesmo.
+
+**A tira de separadores, e quem se aguenta lá.** `ECRA-SEPARADORES.png` põe cada candidatura entre a Guardian, o Público e o New York Times, com dois quadrados marcadores no lugar da Anthropic e da Google (os ficheiros delas não estão em `referencias/` e não se vai à rede, que é a regra deste ramo desde a primeira sessão). A 16 px e a 2×, em moldura escura como a da captura do diretor. O que se vê:
+
+1. **O ficheiro de hoje é o mais fraco da fila, e a queixa está confirmada a olhar.** O «e» de fio sem campo, sobre o cinzento da barra, é a única cela do separador que não tem forma própria: os vizinhos são todos um quadrado de cor com uma letra pesada dentro, e o nosso é um traço. A diferença não é de desenho, é de campo e de peso ao mesmo tempo.
+2. **O peso do cabeçalho não chega, mesmo com campo.** A cela de 14 % com campo de tinta já se distingue da barra, e a letra dentro dela continua mais fina do que o «G» da Guardian e o «P» do Público. A 16 px, 22,7 % de tinta contra os 30,1 % da mesma letra ao peso de ícone.
+3. **As três candidaturas ao peso de ícone aguentam a fila.** A do Spectral Bold é a que mais se parece com os vizinhos, e por uma razão que não é vantagem: são todos letras serifadas pesadas em campo de cor, e o «G» da Guardian e o «P» do Público são exactamente isso. A geométrica é a que mais se afasta da fila, porque é a única redonda e monolinear. A humanista fica no meio das duas, e é a que tem a corrida mínima maior.
+4. **O campo de cobalto encosta na Guardian.** É o vizinho imediato e é um campo escuro azulado; a §6 já tinha medido o mesmo com o Expresso («o cobalto perde-se e o âmbar não»). O campo de tinta não tem esse problema nesta fila, porque nenhum dos cinco é preto. O âmbar não entrou nesta ronda, e a razão está dita: é uma das duas cores que o diretor reprovou na §6 ter, e carrega a semântica da régua do sítio, onde quer dizer «fora do limiar».
+
+**Fica dito qual aguenta melhor**, e é a única frase de preferência desta secção que se apoia em olhar e não em contar: **a geométrica ao peso de ícone em campo de tinta**. Não porque seja mais legível do que as outras duas, que não é (a mediana dela a 16 px é 3 px contra os 4 do Spectral Bold), mas porque é a única cela daquela fila que não é uma letra serifada de imprensa dentro de um quadrado de cor, e numa fila em que três dos cinco vizinhos são exactamente isso, a diferença de família vale mais do que um píxel de mediana.
+
+### O ecrã principal
+
+A maqueta é a mesma máquina de `desenhar.py` (cela de 180 px, que é 60 pt a 3×, entre oito ícones de referência), com duas coisas mudadas pela 7b: a cela leva a letra da construção ao peso de ícone, e **o rótulo por baixo diz «estado»**. O rótulo é a segunda razão de esta ronda existir: a maqueta da quarta adenda mediu que «O Estado do País» não cabe numa cela de 60 pt e sai «Estado do …», e foi por isso que o `short_name` do manifesto ficou «O Estado». **«estado» cabe inteiro, com folga, e é o primeiro nome candidato de que isso se pode dizer sem cortar nada.**
+
+Na cela, e em campo de tinta: a geométrica pinta 29,9 % de sinal, o Spectral Bold 23,6 % e a humanista 24,7 %, contra os 19,8 % da letra da J2 e os 23,4 % do sinal que está no ar. As três seguram o lugar ao lado do Expresso, do Público e do Economist. Em campo de papel as três são a cela mais clara do ecrã, que é o defeito que a ronda das vozes foi chamada a corrigir, e continua a sê-lo.
+
+### A ordem de preferência, e é sobre a palavra e não sobre o ícone
+
+*Os critérios são os da casa, por esta ordem: diz o nome, entra no cabeçalho sem o obrigar a mexer, lê-se às quatro larguras, dá uma letra que sobrevive a 16 px, e não está em cima de ninguém. A adenda acrescentou um: o que a construção diz do sítio antes de o leitor ler uma palavra.*
+
+**1.º · Construção 2, a humanista.** É a que tem menos coisas a explicar. As seis letras têm larguras diferentes e por isso a palavra tem ritmo de palavra e não de fila de círculos; é a mais compacta das três (175 px de tinta a 1280 contra 200 e 183); o «e» dela é o sinal da casa com modulação, o que resolve o pedido da adenda («a marca e a palavra leem-se como uma família») sem repetir o sinal; e ao peso de ícone tem a melhor corrida mínima das três a 16 px. Contra ela pesa uma coisa medida e uma dita: é a mais leve das três na cela do telemóvel em peso de cabeçalho (18,4 % contra 21,9 e 22,7), e é a construção que exige mais desenho por fazer, porque um sem serifas humanista com seis letras não é um alfabeto.
+
+**2.º · Construção 1, a geométrica.** É a que responde melhor à tira do diretor, e é a única das três cuja letra não se parte aos 16 px nem ao peso do cabeçalho. O «e» dela é a letra mais distinta das três em qualquer fila de ícones, porque é a única redonda monolinear. Contra ela pesam duas coisas, e as duas se vêem na palavra: quatro das seis letras são o mesmo círculo, o que dá à palavra uma fila de redondas iguais; e o «s», mesmo na melhor das três construções, é a letra que menos pertence à grelha, e continua a ser o sítio onde esta gramática se vê a forçar.
+
+**3.º · Construção 3, o controlo.** Não é uma construção, é a medição do que se ganha e do que se perde sem desenhar nada, e essa medição é útil: a caixa de tinta do cabeçalho não muda, a palavra lê-se, e o custo é zero. Fica em terceiro por duas coisas: o «e» dela parte-se aos 16 px em peso de leitura, o que obriga a que o ícone seja outro peso do mesmo tipo (o Bold, que a casa serve); e na tira de separadores é a terceira letra serifada pesada em campo de cor de uma fila que já tem duas. **É a escolha certa se a decisão for renomear sem abrir um trabalho de tipografia; não é, se a adenda quiser letras desenhadas para o nome.**
+
+### O que esta ronda não fez
+
+* **Não desenhou o alfabeto, desenhou seis letras.** «estado» precisa de seis; o sítio precisa de um alfabeto se alguma destas construções passar a marca. Faltam, no mínimo, as maiúsculas, os algarismos e os acentos, e o acento é o caso que a §2 já apontou como o mais português de todos.
+* **Não experimentou a palavra com o «e» destacado**, nem em cor nem em peso, o que era a maneira óbvia de ligar a palavra ao ícone sem pôr o sinal ao lado. Não se fez porque a 7b tirou o sinal de ao lado do nome e não disse o que fazer com a ligação.
+* **Não mexeu no descritor.** As três linhas são as que a adenda deu, compostas na regra que a folha já tem. Não se experimentou o descritor em versaletes, nem em Bitter, nem alinhado à direita.
+* **Não mediu o cabeçalho com a navegação e a mobília por cima e por baixo.** O que aqui se mede é o `.masthead`, e a página inteira tem uma barra em cima e um fio em baixo que mudam a leitura do conjunto.
+* **Não experimentou a palavra em caixa alta nem em versaletes**, que são as duas maneiras de escrever «estado» sem a maiúscula inicial que faz a palavra ler-se como a instituição.
+* **A colisão do «e» minúsculo redondo com o navegador da Microsoft continua por conferir**, como está desde a §6 bis, e agora vale para a construção 1 ao peso de ícone, que é um «e» redondo monolinear pesado. Sem rede não se confere no ficheiro deles.
+* **A Anthropic e a Google são quadrados marcadores** na tira dos separadores, e não desenhos de memória. Fica dito na folha e aqui.
+* **Não se viu nada sobre fotografia**, como em todas as rondas anteriores.
+
+### A pegada do nome no código, contada e não mexida
+
+*A adenda pede este parágrafo como pegada para um bloco de mudança de nome que ainda não existe. **Nada disto foi mexido nesta ronda**, e nenhum ficheiro fora de `design/marca/` foi tocado. Os números são de 29.08.2026 e contam-se com `grep` sobre o ramo.*
+
+| onde | quanto | o que é |
+|---|---|---|
+| `site.config.mjs` | 1 declaração | `export const SITE_NAME = 'O Estado do País'`, na linha 21. É a fonte única, e o ficheiro diz que é. |
+| `SITE_NAME`, leituras | **36 ocorrências em 13 ficheiros** | `scripts/design-bundle.mjs`, `scripts/gate-html.mjs`, `site.config.mjs`, `src/components/Masthead.astro`, `src/layouts/Base.astro`, `src/lib/cartoes.mjs`, `src/lib/conjunto.mjs`, `src/lib/dados.mjs`, `src/lib/documentos.mjs`, `src/lib/livro.mjs`, `src/views/EstudoView.astro`, `src/views/MunicipioView.astro`, `src/views/TextoView.astro` |
+| o sufixo do `<title>` | **44 cadeias escritas à mão** em `src/i18n/strings.mjs` (22 na edição portuguesa, 22 na inglesa) | `metaTitle` e `metaCauda` levam «· O Estado do País» escrito por extenso, rota a rota, e não composto de `SITE_NAME` |
+| o sufixo do `<title>`, composto | **5 composições** `${SITE_NAME}` | `src/lib/conjunto.mjs`, `src/lib/dados.mjs`, `src/lib/livro.mjs`, `src/views/EstudoView.astro`, `src/views/TextoView.astro` |
+| `SITE_SHORT_NAME` | 1 declaração e **7 ocorrências em 3 ficheiros** | `site.config.mjs`, `scripts/gate-html.mjs`, `src/layouts/Base.astro`. É o nome que cabe por baixo do ícone, e é «O Estado». |
+| os manifestos | **2 ficheiros, 4 campos** | `public/manifest.webmanifest` e `public/en/manifest.webmanifest`, cada um com `name` e `short_name`, mais uma linha de explicação no inglês. O portão (`scripts/gate-html.mjs`, linhas 5551 e 5552) confere os dois campos contra `SITE_NAME` e `SITE_SHORT_NAME`. |
+| a frase de identidade | **2 cadeias** | `src/i18n/strings.mjs`, `identidade`, na linha 33 («Um observatório de Portugal.») e na 1500 («An observatory of Portugal.»). Rende num sítio só: `Masthead.astro`, e só na primeira página. |
+| as linhas do inventário | **5 com o nome, 2 com a frase**, em 672 linhas de tabela | `design/especime-v3/INVENTARIO-FRASES.md`: a linha 176 é o nome sozinho, classificado `navegacao`; as 1002, 1003, 1026 e 1027 são títulos de livro-razão com o nome no fim; as 155 e 216 são a frase de identidade nas duas edições |
+| o favicon | **2 ocorrências** | `public/favicon.svg`, no `aria-label` e no `<title>`. É ficheiro gerado por `design/marca/exportar.mjs app`, e não se edita à mão. |
+| o resto | **13 ocorrências em 8 ficheiros** | `src/data/sobre.mjs` (2, o texto do Sobre nas duas edições), `src/data/licenca.mjs` (2, a forma da atribuição que a licença obriga), `src/data/studies.mjs` (1, o rótulo de apuramento próprio), `src/data/agenda.json` (4, dentro de citações de fonte, que são transcrições e não se traduzem), `tests/inicio/app.mjs` (1, a asserção do manifesto), `public/dados/*.csv` (1 em cada um dos três, na primeira linha, que é o cabeçalho de comentários do descarregável) |
+
+**O que a contagem diz sobre o custo, sem propor nada.** Uma mudança de nome não é uma cadeia: é uma declaração, 44 cadeias escritas à mão nos títulos, 4 campos de manifesto conferidos pelo portão, 2 frases de identidade, 7 linhas de inventário que o portão da voz lê, uma asserção de teste e três cabeçalhos de CSV. E há duas decisões que a contagem não resolve e que são de direção: se `SITE_SHORT_NAME` continua a existir (com «estado» o nome cabe inteiro na cela, e o nome curto deixa de ter razão de ser), e se a edição inglesa passa a ter o mesmo nome (hoje o nome não se traduz, e é isso que o comentário do manifesto inglês declara).
+
+---
+
 ## 7 · A ordem de preferência, refeita para as onze
 
 *Esta é a ordem das ONZE primeiras direções, e ficou como estava. A ordem das sete vozes é outra lista e está no fim da §6, porque a adenda das vozes a pediu «só sobre estas», e porque comparar um campo de papel com um campo de cor a partir de números medidos em réguas diferentes daria uma ordem que não queria dizer nada. Quem quiser uma ordem só sobre as dezanove tem de decidir primeiro se o campo entra no critério, e essa é uma decisão de direção.*
@@ -1012,3 +1237,32 @@ Cerca de **270 mil símbolos** na sexta sessão, a do «e» explorado. Foram tr�
 1. **A régua mediu o entalhe e chamou-lhe corte.** A `medir-e` procura o maior arco sem tinta em toda a circunferência do meio da banda, e com uma barra que para há dois buracos em vez de um. Devolveu 2,0 px de «corda» a 16 px para um anel **fechado**, o que é uma impossibilidade, e foi essa impossibilidade que a denunciou: o número só se percebeu por estar ao lado da corda **desenhada**, que dava 0,51 px. Duas réguas independentes sobre a mesma coisa apanham o que uma sozinha não apanha, e é por isso que as duas ficaram no programa.
 2. **A ideia do diretor, desenhada à letra, não dá um «e».** Isso não se vê em números: as ilhas dizem «sinal em duas peças», e uma peça a mais podia ser só uma peça a mais. O que a captura de 60 px mostra é o que essas duas peças fazem juntas, que é um traço horizontal dentro de um anel, ou seja o sinal de menos. A medição diz o que mudou; olhar diz o que passou a estar lá.
 3. **A oitava linha da grelha não foi pedida, e é a melhor resposta à primeira pista.** Ao ver as três linhas de barra presa à esquerda ao lado das de barra unida, o que salta é que o entalhe e o corte comem o mesmo lado. A correção é uma linha de código e mudou a recomendação; sem a folha cruzada, as sete linhas pedidas tinham sido entregues e a oitava não existia.
+
+Cerca de **330 mil símbolos** na sétima sessão, a da palavra «estado» em
+minúsculas. Foram quatro correções, e as quatro vieram de olhar:
+
+1. **A régua do texto composto media a caixa de LINHA e não a de tinta.** O «e» do
+   Spectral, enquadrado por `Range.getBoundingClientRect()`, saía com metade do
+   tamanho dos «e» desenhados na mesma cela, porque o que essa régua devolve para
+   uma letra é a altura do corpo. Só se viu ao pôr as seis celas lado a lado: os
+   números todos estavam certos para a caixa errada. Passou a `measureText` com
+   `actualBoundingBox*`, que devolve a tinta.
+2. **A pena de um polígono só não aguenta o peso de ícone.** O «s» com a banda a
+   22 % saía com uma mancha no meio da espinha: os dois lados do traço cruzam-se
+   e um polígono que se atravessa a si mesmo, cheio por `nonzero`, enche o
+   cruzamento. A pena passou a emitir um quadrilátero por troço, e a união deles
+   é o traço, cruze-se ele ou não. Nenhum número denunciava isto.
+3. **O anel modulado tinha uma costura.** O «o» e o «d» da humanista saíam com um
+   fio de papel a sair do lado direito, que é onde o esqueleto fecha. Um anel são
+   dois contornos e não um polígono dobrado.
+4. **A adenda mudou duas vezes a meio da ronda, e a segunda mudou o desenho.** A
+   7b tirou o sinal de ao lado do nome antes de haver composição; a continuação
+   das 07:25 acrescentou um número (22 % de grossura) que obrigou a redesenhar a
+   barra e o corte do «e» geométrico, porque à grossura de ícone o corte
+   horizontal deixa de caber: com a banda a 22 % o raio de dentro é 131,6 num raio
+   de 235, e o corte não passa dos 34 graus.
+
+E uma medição que mudou a leitura de tudo o resto: **ao peso do cabeçalho, duas
+das três letras partem-se aos 16 px**, e ao peso de ícone as três aguentam com o
+olho fechado. A queixa do diretor sobre a tira de separadores tinha razão, e o
+que a corrige não é o desenho: é o peso e o campo.
