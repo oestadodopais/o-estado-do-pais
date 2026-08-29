@@ -17,7 +17,9 @@
  * É um bloco só no documento, rendido uma vez, com as mesmas cadeias, o mesmo
  * selo e a mesma atribuição; o `check:mapa` continua a conferir que as três
  * cadeias do manifesto estão nas duas superfícies. Não é `<figcaption>` porque
- * já não está dentro de uma `<figure>`.
+ * já não está dentro de uma `<figure>`; a figura aponta-lhe com
+ * `aria-describedby` para que a ligação entre o mapa e a sua legenda continue
+ * dita a quem lê com um leitor de ecrã (leitura cruzada de 29.08).
  */
 import Claim from '../Claim.astro';
 import Provenance from '../Provenance.astro';
@@ -28,7 +30,7 @@ const { s, lang } = Astro.props;
 const caop = getClaim('municipios-portugal-caop-2025');
 ---
 
-<div class="mapa-legenda mapa-linha" data-mapa-ficha data-mapa-legenda>
+<div class="mapa-legenda mapa-linha" id="mapa-legenda" data-mapa-ficha data-mapa-legenda>
   <p class="mapa-linha-fonte">
     <Claim id="municipios-portugal-caop-2025" lang={lang} />
     {s.inicio.mapa.linha}

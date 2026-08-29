@@ -440,6 +440,9 @@ async function correTudo(soEstas) {
         const vistos = r.nomes.filter((n) => n.visivel);
         const alvo = alvoEm(w);
         const baixos = vistos.filter((n) => n.caixa.h < alvo);
+        /* No ecrã com rato a altura é a declarada (32 px), e não «pelo menos»: uma
+           linha de 44 px ali seria a forma antiga a passar por nova. */
+        const altos = w >= LIMIAR_DA_COLUNA ? vistos.filter((n) => n.caixa.h > alvo + 2) : [];
         const estreitos = vistos.filter((n) => n.caixa.w < alvo);
         let colisoes = 0;
         for (let i = 0; i < vistos.length; i++) {
@@ -451,9 +454,9 @@ async function correTudo(soEstas) {
         const menorLargo = vistos.length ? Math.min(...vistos.map((n) => n.caixa.w)) : 0;
         conta(
           `L5·${e.chave}·${w} · cada nome é um alvo de ${alvo} × ${alvo} px, e nenhum se interseta`,
-          vistos.length === 29 && baixos.length === 0 && estreitos.length === 0 && colisoes === 0,
+          vistos.length === 29 && baixos.length === 0 && altos.length === 0 && estreitos.length === 0 && colisoes === 0,
           `${vistos.length}/29 à vista · o mais baixo ${menorAlto.toFixed(1)} px, o mais estreito ${menorLargo.toFixed(1)} px · ` +
-            `${baixos.length} sob ${alvo} de altura, ${estreitos.length} sob ${alvo} de largura, ${colisoes} interseção(ões)`,
+            `${baixos.length} sob ${alvo} de altura, ${altos.length} acima de ${alvo + 2}, ${estreitos.length} sob ${alvo} de largura, ${colisoes} interseção(ões)`,
         );
       }
     }
@@ -470,7 +473,7 @@ async function correTudo(soEstas) {
       for (const w of [1024, 1280, 1440]) {
         const r = lido[`${e.chave}_${w}`];
         if (!r || !r.svg || !r.legenda) {
-          conta(`L11·${e.chave}·${w} · o mapa e a legenda existem na página`, false, 'sem svg ou sem legenda');
+          for (const c of ['L11', 'L12', 'L13']) if (precisa(c)) conta(`${c}·${e.chave}·${w} · o mapa e a legenda existem na página`, false, 'sem svg ou sem legenda');
           continue;
         }
         if (w >= 1280) {
@@ -489,16 +492,28 @@ async function correTudo(soEstas) {
             );
           }
           if (precisa('L13')) {
+            /* O desenho enche a caixa: a razão da caixa do `svg` é a do `viewBox`
+               (6090/8030) a menos de 1,5 px, senão o navegador centra o desenho
+               com ar em cima e em baixo e o fundo «partilhado» é o da caixa e não
+               o do mapa (leitura cruzada de 29.08). E a caixa não sai da coluna
+               por nenhum dos lados, fica a menos de 8 px da largura dela, e não
+               passa a altura da grelha. */
+            const arVertical = Math.abs(r.svg.h - r.svg.w * (8030 / 6090));
             conta(
-              `L13·${e.chave}·${w} · o mapa cabe na coluna e enche-a em altura`,
-              r.svg.x + r.svg.w <= r.instrumento.x + r.instrumento.w + 1 && r.svg.h >= r.grelha.h - 12,
-              `mapa ${r.svg.w} × ${r.svg.h} px em x ${r.svg.x} · coluna x ${r.instrumento.x} w ${r.instrumento.w} · grelha h ${r.grelha.h}`,
+              `L13·${e.chave}·${w} · o mapa cabe na coluna, enche-a em altura e o desenho enche a caixa`,
+              r.svg.x >= r.instrumento.x - 1 &&
+                r.svg.x + r.svg.w <= r.instrumento.x + r.instrumento.w + 1 &&
+                r.instrumento.w - r.svg.w <= 8 &&
+                r.svg.h >= r.grelha.h - 12 &&
+                r.svg.h <= r.grelha.h + 1 &&
+                arVertical <= 1.5,
+              `mapa ${r.svg.w} × ${r.svg.h} px em x ${r.svg.x} · coluna x ${r.instrumento.x} w ${r.instrumento.w} · grelha h ${r.grelha.h} · ar vertical ${arVertical.toFixed(1)} px`,
             );
           }
         } else if (precisa('L12')) {
           conta(
-            `L12·${e.chave}·${w} · a legenda por baixo do mapa, na coluna dele`,
-            r.legenda.y >= r.svg.fundo - 1 && Math.abs(r.legenda.x - r.instrumento.x) <= 1,
+            `L12·${e.chave}·${w} · a legenda por baixo do mapa, na coluna dele, a menos de 16 px`,
+            r.legenda.y >= r.svg.fundo - 1 && r.legenda.y - r.svg.fundo <= 16 && Math.abs(r.legenda.x - r.instrumento.x) <= 1,
             `legenda x ${r.legenda.x} y ${r.legenda.y} · mapa fundo ${r.svg.fundo} · coluna x ${r.instrumento.x}`,
           );
         }

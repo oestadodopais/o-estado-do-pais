@@ -329,7 +329,9 @@ async function mediuOPais(largura, id) {
   const naoChegam = r.areas.filter((a) => a.inscrito < ALVO);
   const semRede = naoChegam.filter((a) => !r.naLista.includes(a.slug));
   const alvoDaLista = largura >= 1024 ? ALVO_PONTEIRO : ALVO;
-  const listaCurta = r.alvosDaLista.filter((a) => a.h < alvoDaLista);
+  /* No ecrã com rato a linha é a declarada, 32 px, e não «pelo menos 32»: uma
+     linha de 44 ali seria a forma antiga a passar. */
+  const listaCurta = r.alvosDaLista.filter((a) => a.h < alvoDaLista || (largura >= 1024 && a.h > alvoDaLista + 2));
   const porCaixa = r.areas.filter((a) => a.lado >= ALVO);
   const foraDoPonto = r.areas.filter((a) => !a.dentro);
 
