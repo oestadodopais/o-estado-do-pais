@@ -1,0 +1,6 @@
+# As capturas intermédias e o cache do Python. As FOLHAS e os ECRÃS ficam no
+# ramo, porque são o que a direção vê; os PNG de onde elas se compõem refazem-se
+# com uma linha (`estado.py` e `render-estado.mjs` dizem qual), e um ramo com
+# milhares de capturas intermédias é um ramo que ninguém consegue ler.
+EXPORT-ESTADO/
+__pycache__/
