@@ -9,6 +9,11 @@ id: "lajes-das-flores-desemprego-registado-2025-12"
 value: "20"
 unit: "pessoas"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "DESEMPREGO REGISTADO"
+name_source: "p.2, linha 6, campo 1"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Direção Regional de Qualificação Profissional e Emprego (DRQPE)"
 document:

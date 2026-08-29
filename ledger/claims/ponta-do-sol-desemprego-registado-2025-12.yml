@@ -9,6 +9,11 @@ id: "ponta-do-sol-desemprego-registado-2025-12"
 value: "256"
 unit: "pessoas"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "TOTAL"
+name_source: "p.3, linha 10, campo 1"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Instituto de Emprego da Madeira, IP-RAM (IEM)"
 document:

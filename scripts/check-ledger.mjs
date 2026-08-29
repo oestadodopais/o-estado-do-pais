@@ -67,7 +67,8 @@ console.log('');
 console.log(
   '  ' +
     verde('✓') +
-    ` ${stats.total} afirmações válidas · ${stats.derivadas} derivadas · ${stats.verificadas} com aritmética reavaliada no build`,
+    ` ${stats.total} afirmações válidas · ${stats.derivadas} derivadas · ${stats.verificadas} com aritmética reavaliada no build` +
+    ` · ${stats.comRotulo} com o rótulo da fonte`,
 );
 
 if (porVerificar.length) {

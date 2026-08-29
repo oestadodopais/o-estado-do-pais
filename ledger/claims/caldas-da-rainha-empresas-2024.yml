@@ -9,6 +9,11 @@ id: "caldas-da-rainha-empresas-2024"
 value: "8 348"
 unit: "empresas"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Empresas (N.º) por Localização geográfica (NUTS - 2024) e Dimensão; Anual - INE, Sistema de contas integradas das empresas"
+name_source: "IndicadorDsg"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "INE"
 document:

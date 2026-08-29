@@ -9,6 +9,11 @@ id: "alfandega-da-fe-poder-de-compra-2023"
 value: "69,07"
 unit: "índice (Portugal = 100)"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Poder de compra per capita por Localização geográfica (NUTS - 2024); Bienal - INE, Estudo sobre o poder de compra concelhio"
+name_source: "IndicadorDsg"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "INE"
 document:
