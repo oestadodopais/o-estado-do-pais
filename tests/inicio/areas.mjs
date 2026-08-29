@@ -345,7 +345,7 @@ async function mediuOsNomes() {
 const INVENTARIO = leInventario(RAIZ);
 
 /** O ficheiro que declara as marcas, lido como texto e não importado: um
-    `import` corria a régua inteira, que varre as 6 590 páginas de `dist/`. */
+    `import` corria a régua inteira, que varre os 6 606 ficheiros de `dist/`. */
 const REGUA_DA_VOZ = path.join(RAIZ, 'scripts', 'medir-defeitos.mjs');
 const FONTE_DA_REGUA = fs.readFileSync(REGUA_DA_VOZ, 'utf8');
 
