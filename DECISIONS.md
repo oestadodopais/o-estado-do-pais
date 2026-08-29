@@ -11637,6 +11637,8 @@ dobra que o escondia.
 
 **O custo do bloco:** marca ≈1,9M (quatro construtores Opus), aplicação ≈372k (Opus), medição ≈367k (Sonnet), leitura 88k (Codex), o lugar de direção o resto.
 
+**Emenda de 29.08.2026, 07:02.** O diretor viu o cabeçalho no ar e recusou o sinal ao lado do nome («having that e behind the name is just not right; better not having it; and don't use it for the phone icon»). O sinal saiu do cabeçalho no mesmo dia (`cabecalho-2026-08-29`: o `svg` e a sua regra de CSS fora de `Masthead.astro` e `site.css`; a célula A7 de `tests/inicio/app.mjs` passa a confirmar que o cabeçalho é o nome, sem sinal, numa linha; a A8 e a célula do escuro, que mediam o sinal, saíram com os seus estragos plantados; o cabeçalho volta a ser o texto composto, à mesma altura). Os ícones do telemóvel ficam com o «e» até o diretor escolher o que os substitui, porque o manifesto tem de apontar para uma imagem e sem ela o telemóvel usa uma captura da página; a escolha corre com a exploração da palavra «estado» em minúsculas, que o diretor pediu na mesma manhã.
+
 
 ### 1.80 As áreas de governo: uma página por área, só onde há conteúdo, com a lei orgânica como porta (Emenda 23)
 
