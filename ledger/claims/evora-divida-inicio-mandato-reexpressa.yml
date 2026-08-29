@@ -9,6 +9,11 @@ id: "evora-divida-inicio-mandato-reexpressa"
 value: "95 082 509,86"
 unit: "euros"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Dívida Total no Início do Mandato"
+name_source: "p.30, linha 35, campo 1"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Município de Évora"
 document:

@@ -9,6 +9,11 @@ id: "pacos-de-ferreira-populacao-2025"
 value: "57 467"
 unit: "pessoas"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "População residente (N.º) por Local de residência (NUTS - 2024), Sexo e Grupo etário (Por ciclos de vida); Anual - INE, Estimativas anuais da população residente"
+name_source: "IndicadorDsg"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "INE"
 document:

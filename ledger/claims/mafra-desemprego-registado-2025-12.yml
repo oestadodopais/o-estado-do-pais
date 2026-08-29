@@ -9,6 +9,11 @@ id: "mafra-desemprego-registado-2025-12"
 value: "1 240"
 unit: "pessoas"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Total"
+name_source: "Quadro_I, linha 4, coluna 13"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Instituto do Emprego e Formação Profissional (IEFP)"
 document:

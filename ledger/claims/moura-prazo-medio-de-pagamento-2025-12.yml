@@ -9,6 +9,11 @@ id: "moura-prazo-medio-de-pagamento-2025-12"
 value: "20"
 unit: "dias"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "PMP (N.º dias)"
+name_source: "p.3, linha 10, campo 1"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Direção-Geral das Autarquias Locais (DGAL)"
 document:
