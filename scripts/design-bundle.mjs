@@ -67,12 +67,15 @@
  * de desenho que envelhece em silêncio é pior do que não haver retrato: quem
  * desenha lê-o e desenha sobre um sítio que já não existe.
  *
- * O CUSTO MEDIU-SE ANTES DE DECIDIR, que é a regra do brief: **0,26 s** de
- * relógio, três corridas seguidas com o mesmo número, sobre as 6 590 páginas de
- * `dist/`. Trinta segundos era o tecto; isto é um centésimo dele, e por isso
- * corre a cada `verify`. Fica FORA do `npm run build`, que é onde as páginas se
- * fazem: o feixe lê o que a construção acabou de escrever, e uma corrida que se
- * lê a si própria a meio não prova nada.
+ * O CUSTO MEDIU-SE ANTES DE DECIDIR, que é a regra do brief, e o que se mede é
+ * uma CORRIDA INTEIRA deste guião: ler as folhas e as páginas de que os cartões
+ * saem, varrer todos os `.html` de `dist/` à procura das duas ausências que os
+ * cartões afirmam, escrever os vinte cartões e os onze ficheiros de letra, e
+ * correr a conferência do fim. Trinta segundos era o tecto do brief; a corrida
+ * inteira fica em segundos e a última medição está no relatório da passagem.
+ * Por isso corre a cada `verify`. Fica FORA do `npm run build`, que é onde as
+ * páginas se fazem: o feixe lê o que a construção acabou de escrever, e uma
+ * corrida que se lê a si própria a meio não prova nada.
  *
  * Uso:  npm run build                    (as páginas têm de estar construídas)
  *       npm run design:feixe
@@ -86,6 +89,9 @@ import { parse } from 'node-html-parser';
 
 import { SITE_HOST_DISPLAY, SITE_NAME } from '../site.config.mjs';
 import { t } from '../src/i18n/strings.mjs';
+/* Os números do mapa não se escrevem aqui: leem-se do artefacto que o motor
+   atravessou, pela mesma porta que o sítio usa (`src/lib/mapa.mjs`). */
+import { manifestoDoMapa, unidadesDoMapa, distritoDoMapa } from '../src/lib/mapa.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -224,6 +230,56 @@ function leDist(rota) {
   const f = path.join(DIST, rota);
   if (!fs.existsSync(f)) morre(`falta \`dist/${rota}\`. Correr \`npm run build\`.`);
   return fs.readFileSync(f, 'utf8');
+}
+
+/**
+ * ---------------------------------------------------------------------------
+ * TODAS AS PÁGINAS CONSTRUÍDAS (leitura cruzada do Codex, 29.08.2026)
+ * ---------------------------------------------------------------------------
+ * Uma ausência afirmada só vale sobre onde se procurou. Este feixe dizia que a
+ * banda das regiões «não rende em página nenhuma» e procurava-a em três rotas
+ * portuguesas; a prosa falava de 6 590 páginas e a medição via três. Ou o feixe
+ * mede o que diz, ou a prosa diz só o que ele mede, e aqui a escolha foi medir:
+ * uma varredura por cadeia sobre todos os `.html` de `dist/`, nas duas edições,
+ * custa décimas de segundo e faz a frase ser verdadeira.
+ */
+const PAGINAS_DE_DIST = (() => {
+  const out = [];
+  const anda = (dir) => {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const f = path.join(dir, e.name);
+      if (e.isDirectory()) anda(f);
+      else if (e.name.endsWith('.html')) out.push(f);
+    }
+  };
+  anda(DIST);
+  if (!out.length) morre('não encontrei uma única página `.html` em `dist/`.');
+  return out;
+})();
+
+/**
+ * A classe como PALAVRA dentro do atributo, e não como pedaço de cadeia.
+ *
+ * `class="banda"` e `class="banda instr"` são a banda; `class="banda-legenda"` e
+ * `class="mun-banda"` não são, e uma procura por cadeia solta contava as três.
+ */
+const comoPalavraDeClasse = (classe) =>
+  new RegExp(`class="(?:[^"]*\\s)?${classe}(?:\\s[^"]*)?"`);
+
+/**
+ * As páginas onde uma classe rende, varridas todas. Devolve os caminhos, para
+ * que a mensagem possa dizer onde a encontrou.
+ */
+function paginasComAClasse(classe, extra = null) {
+  const re = comoPalavraDeClasse(classe);
+  const achadas = [];
+  for (const f of PAGINAS_DE_DIST) {
+    const cru = fs.readFileSync(f, 'utf8');
+    if (re.test(cru) || (extra !== null && cru.includes(extra))) {
+      achadas.push(path.relative(DIST, f).split(path.sep).join('/'));
+    }
+  }
+  return achadas;
 }
 
 function arvore(rota) {
@@ -1358,21 +1414,23 @@ ${tabelaTipos}
    * largura inteira, com as regiões como pontos numa escala partilhada. A
    * Emenda 21 mudou a leitura breve de sítio (§1.75) e o componente que a
    * desenhava (`src/components/inicio/BandaDaRegiao.astro`) deixou de ser
-   * chamado. Medido a 29.08.2026 sobre a construção de hoje: `class="banda`
-   * rende em **0** das 6 590 páginas, com `class="peca` a render em 636 como
-   * controlo positivo.
+   * chamado por vista nenhuma.
+   *
+   * A AUSÊNCIA É VARRIDA EM TODAS AS PÁGINAS, e é a correcção de uma afirmação
+   * que era maior do que a medida: procurava-se em três rotas portuguesas e
+   * dizia-se «em página nenhuma». Procura-se a classe como palavra e a marca de
+   * raiz do componente, para que um `class="banda-legenda"` não conte como a
+   * banda nem uma banda sem classe escape.
    *
    * Um cartão não mostra o que não existe, e esta corrida pára se a banda
    * voltar sem que o cartão volte com ela.
    */
-  const bandasNoSitio = ['index.html', 'regioes/index.html', 'municipios/evora/index.html'].filter(
-    (rota) => arvore(rota).querySelectorAll('.banda').length > 0,
-  );
-  if (bandasNoSitio.length) {
+  const comBanda = paginasComAClasse('banda', 'data-banda-raiz');
+  if (comBanda.length) {
     morre(
-      `a banda das regiões (\`.banda\`) voltou a render em \`dist/${bandasNoSitio[0]}\`. O cartão ` +
-        `da régua diz que ela saiu com a Emenda 21; ou ela sai da página, ou o cartão volta a ` +
-        `retratá-la.`,
+      `a banda das regiões (\`.banda\`) voltou a render em ${comBanda.length} página(s), a ` +
+        `começar em \`dist/${comBanda[0]}\`. O cartão da régua diz que ela saiu com a Emenda 21; ` +
+        `ou ela sai da página, ou o cartão volta a retratá-la.`,
     );
   }
 
@@ -1419,7 +1477,7 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
 
   <section class="ds-bloco">
     <h2>A banda das regiões, que já não se desenha</h2>
-    <p class="ds-nota">Esta secção mostrava <code class="ds-mono">.banda</code> de <code class="ds-mono">dist/index.html</code>: a mesma gramática numa escala partilhada, com a média da UE-27 por referência e as cinco regiões como pontos. A Emenda 21 mudou a leitura breve de sítio, e o componente que a desenhava deixou de ser chamado por vista nenhuma. Medido nesta corrida: <code class="ds-mono">.banda</code> rende em zero das páginas candidatas, e a corrida pára se voltar a render sem que este cartão volte com ela. Fica dito em vez de desaparecer: um cartão que apaga uma secção em silêncio deixa quem desenha a pensar que a forma nunca existiu.</p>
+    <p class="ds-nota">Esta secção mostrava <code class="ds-mono">.banda</code> de <code class="ds-mono">dist/index.html</code>: a mesma gramática numa escala partilhada, com a média da UE-27 por referência e as cinco regiões como pontos. A Emenda 21 mudou a leitura breve de sítio, e o componente que a desenhava deixou de ser chamado por vista nenhuma. Medido nesta corrida: <code class="ds-mono">.banda</code> rende em zero das ${PAGINAS_DE_DIST.length} páginas construídas, procurada como palavra do atributo de classe e pela marca de raiz do componente, e a corrida pára se voltar a render sem que este cartão volte com ela. Fica dito em vez de desaparecer: um cartão que apaga uma secção em silêncio deixa quem desenha a pensar que a forma nunca existiu.</p>
   </section>
 
   <section class="ds-bloco">
@@ -1445,14 +1503,15 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
 
   /* O SELO DO TELEMÓVEL JÁ NÃO RENDE, e a corrida confere-o antes de o cartão o
      dizer, como faz com a legenda de neutralidade mais abaixo. É a mesma
-     disciplina: uma ausência afirmada tem de ser uma ausência medida. */
-  for (const rota of ['index.html', 'en/index.html']) {
-    if (leDist(rota).includes('movel-selo')) {
-      morre(
-        `\`.movel-selo\` voltou a render em \`dist/${rota}\`. O cartão do mapa diz que o selo do ` +
-          `telemóvel saiu com a Emenda 20c; ou ele sai da página, ou o cartão volta a retratá-lo.`,
-      );
-    }
+     disciplina: uma ausência afirmada tem de ser uma ausência medida, e medida
+     onde a frase diz: em todas as páginas construídas, e não em duas. */
+  const comSeloMovel = paginasComAClasse('movel-selo');
+  if (comSeloMovel.length) {
+    morre(
+      `\`.movel-selo\` voltou a render em ${comSeloMovel.length} página(s), a começar em ` +
+        `\`dist/${comSeloMovel[0]}\`. O cartão do mapa diz que o selo do telemóvel saiu com a ` +
+        `Emenda 20c; ou ele sai da página, ou o cartão volta a retratá-lo.`,
+    );
   }
 
   /**
@@ -1466,10 +1525,23 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
    * localizador da página de um concelho, que é o que a Emenda 20d manda, e é
    * de lá que a secção deles passa a sair.
    */
+  /* O QUE SE ESPERA NÃO É «MAIS DE ZERO»: é o número que o artefacto do motor
+     traz. As contagens deste cartão eram todas relacionais, e uma unidade, uma
+     âncora e um nome passavam as três. */
+  const UNIDADES_DA_CARTA = unidadesDoMapa().length;
+  const CONCELHOS_DA_CARTA = manifestoDoMapa().concelhos.n;
+  const CONCELHOS_DO_DISTRITO = distritoDoMapa('evora').concelhos.length;
+
   const casaMapa = arvore('index.html');
   const areas = casaMapa.querySelectorAll('#mapa path.uni');
   const unidades = areas.length;
-  if (!unidades) morre('não encontrei uma única unidade (`path.uni`) no mapa de `dist/index.html`.');
+  if (unidades !== UNIDADES_DA_CARTA) {
+    morre(
+      `o mapa de \`dist/index.html\` tem ${unidades} unidades (\`path.uni\`) e a Carta tem ` +
+        `${UNIDADES_DA_CARTA}. O cartão retrata o mapa do país inteiro, e um mapa a que falte uma ` +
+        `unidade não é esse mapa.`,
+    );
+  }
 
   /* AS ÁREAS SÃO IGUAIS, e isso mede-se em vez de se afirmar: uma classe a mais
      ou um enchimento diferente numa delas seria uma unidade destacada por
@@ -1487,30 +1559,52 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   if (feitios.size !== 1) {
     morre(`as ${unidades} unidades do mapa de \`dist/index.html\` não são todas iguais: ${feitios.size} feitios diferentes. O cartão do mapa diz que são iguais, e ou são, ou o cartão mente.`);
   }
-  /* CADA UNIDADE É UMA PORTA, e são tantas portas quantas unidades. */
-  const portas = casaMapa.querySelectorAll('#mapa a.uni-porta').length;
-  if (portas !== unidades) {
-    morre(`o mapa de \`dist/index.html\` tem ${unidades} unidades e ${portas} portas. A Emenda 20a diz que cada unidade é uma ligação para a sua página.`);
+  /* CADA UNIDADE É UMA PORTA, E É A SUA. Contar âncoras e caminhos e ver o
+     mesmo número não prova o emparelhamento: duas âncoras à volta de um
+     caminho e uma âncora vazia dariam a mesma conta. Conta-se por âncora. */
+  const portasDoMapa = casaMapa.querySelectorAll('#mapa a.uni-porta');
+  const portas = portasDoMapa.length;
+  if (portas !== UNIDADES_DA_CARTA) {
+    morre(`o mapa de \`dist/index.html\` tem ${portas} portas (\`a.uni-porta\`) para as ${UNIDADES_DA_CARTA} unidades da Carta. A Emenda 20a diz que cada unidade é uma ligação para a sua página.`);
+  }
+  const semUmCaminho = portasDoMapa.filter((a) => a.querySelectorAll('path.uni').length !== 1).length;
+  if (semUmCaminho) {
+    morre(`${semUmCaminho} das ${portas} portas do mapa de \`dist/index.html\` não levam exactamente um \`path.uni\` dentro. Uma porta por unidade quer dizer uma porta À VOLTA de cada unidade, e não o mesmo número das duas coisas.`);
+  }
+  const foraDePorta = areas.filter((c) => {
+    for (let a = c.parentNode; a; a = a.parentNode) {
+      if (String(a.rawTagName ?? '').toLowerCase() === 'a') return false;
+    }
+    return true;
+  }).length;
+  if (foraDePorta) {
+    morre(`${foraDePorta} das ${unidades} unidades do mapa de \`dist/index.html\` não estão dentro de uma âncora.`);
   }
   /* E OS NOMES ESTÃO POR BAIXO, um por unidade: é a rede da Emenda 20c, e a
      decisão de 29.08 sobre a I101 diz que ela não se esconde. */
   const nomes = casaMapa.querySelectorAll('.mapa-ilhas-lista li').length;
-  if (nomes !== unidades) {
-    morre(`a lista de nomes por baixo do mapa de \`dist/index.html\` tem ${nomes} nomes para ${unidades} unidades.`);
+  if (nomes !== UNIDADES_DA_CARTA) {
+    morre(`a lista de nomes por baixo do mapa de \`dist/index.html\` tem ${nomes} nomes para as ${UNIDADES_DA_CARTA} unidades da Carta.`);
   }
 
   /* O DISTRITO ABERTO: os concelhos daquela unidade, também como áreas. */
   const distritoRaiz = arvore('distritos/evora/index.html');
   const concelhosDoDistrito = distritoRaiz.querySelectorAll('.distrito-mapa path.uni').length;
-  if (!concelhosDoDistrito) {
-    morre('não encontrei uma única área (`path.uni`) no mapa de `dist/distritos/evora/index.html`.');
+  if (concelhosDoDistrito !== CONCELHOS_DO_DISTRITO) {
+    morre(
+      `o mapa de \`dist/distritos/evora/index.html\` tem ${concelhosDoDistrito} áreas e o ` +
+        `distrito tem ${CONCELHOS_DO_DISTRITO} concelhos no artefacto do mapa.`,
+    );
   }
   const distrito = peca('distritos/evora/index.html', 'figure.distrito-mapa');
 
   const localizadorRaiz = arvore('municipios/evora/index.html');
   const pontos = localizadorRaiz.querySelectorAll('#mapa circle.mun').length;
-  if (!pontos) {
-    morre('não encontrei um único ponto (`circle.mun`) no localizador de `dist/municipios/evora/index.html`.');
+  if (pontos !== CONCELHOS_DA_CARTA) {
+    morre(
+      `o localizador de \`dist/municipios/evora/index.html\` tem ${pontos} pontos e a Carta tem ` +
+        `${CONCELHOS_DA_CARTA} concelhos. O cartão diz que estão lá todos.`,
+    );
   }
   const aneis = localizadorRaiz.querySelectorAll('#mapa .mun-escolhido').length;
   if (aneis !== 1) morre(`o localizador de \`dist/municipios/evora/index.html\` tem ${aneis} anéis, e devia ter um.`);
@@ -1542,7 +1636,7 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   <section class="ds-bloco">
     <h2>O mapa inteiro, na primeira página</h2>
     <div class="ds-mostra ds-mostra-larga">${mapa}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/index.html</code> · ${unidades} unidades, todas com a mesma classe e o mesmo desenho de traço e enchimento (conferido nesta corrida), nenhuma destacada. Cada uma é uma ligação para a sua página, ${portas} portas para ${unidades} unidades, e por baixo do mapa estão os ${nomes} nomes, um por unidade, que são a rede da Emenda 20c. Não há preenchimento de cobertura e não há capital: nem a do país, nem as de distrito.</p>
+    <p class="ds-nota"><code class="ds-mono">dist/index.html</code> · ${unidades} unidades, que são as ${UNIDADES_DA_CARTA} da Carta lidas do artefacto do mapa nesta corrida, todas com a mesma classe e o mesmo desenho de traço e enchimento, nenhuma destacada. Cada uma está dentro da SUA ligação, e isso é contado por âncora e não pelo total: ${portas} portas, cada uma com um caminho só lá dentro. Por baixo do mapa estão os ${nomes} nomes, um por unidade, que são a rede da Emenda 20c. Não há preenchimento de cobertura e não há capital: nem a do país, nem as de distrito.</p>
     <div class="ds-mostra">${linha}</div>
     <p class="ds-nota">A única linha por baixo do mapa, e é a da Emenda 17.</p>
   </section>
@@ -1557,19 +1651,19 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   <section class="ds-bloco">
     <h2>Uma unidade aberta, com os seus concelhos</h2>
     <div class="ds-mostra ds-mostra-larga">${distrito}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/distritos/evora/index.html</code> · a mesma gramática uma escala abaixo: ${concelhosDoDistrito} concelhos como áreas, cada um a porta da sua página. É o segundo passo da Emenda 20a, e é o que faz o mapa levar a alguém a um concelho sem passar pela pesquisa.</p>
+    <p class="ds-nota"><code class="ds-mono">dist/distritos/evora/index.html</code> · a mesma gramática uma escala abaixo: ${concelhosDoDistrito} concelhos como áreas, que são os ${CONCELHOS_DO_DISTRITO} que o artefacto do mapa dá a este distrito, cada um a porta da sua página. É o segundo passo da Emenda 20a, e é o que faz o mapa levar a alguém a um concelho sem passar pela pesquisa.</p>
   </section>
 
   <section class="ds-bloco">
     <h2>Um lugar escolhido é um anel</h2>
     <div class="ds-mostra ds-mostra-larga">${localizador}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/municipios/evora/index.html</code> · o cartão localizador, que é onde os pontos vivem desde a Emenda 20d: ${pontos} pontos e ${aneis} anel. Os dois desenhos têm campos diferentes, porque o dos pontos não guarda os polígonos, e por isso são dois e não um. Na primeira página nenhum lugar vem escolhido; aqui o anel é posto na construção, porque a página é de um concelho.</p>
+    <p class="ds-nota"><code class="ds-mono">dist/municipios/evora/index.html</code> · o cartão localizador, que é onde os pontos vivem desde a Emenda 20d: ${pontos} pontos, que são os ${CONCELHOS_DA_CARTA} concelhos da Carta, e ${aneis} anel. Os dois desenhos têm campos diferentes, porque o dos pontos não guarda os polígonos, e por isso são dois e não um. Na primeira página nenhum lugar vem escolhido; aqui o anel é posto na construção, porque a página é de um concelho.</p>
   </section>
 
   <section class="ds-bloco">
     <h2>O mapa no telemóvel, e o selo que saiu</h2>
     <p class="ds-nota">É o mesmo HTML das larguras de cima: o mapa não muda de marcação, muda de caixa. Dentro de <code class="ds-mono">${escapa(MAPA_MOVEL_MEDIA)}</code> a folha põe <code class="ds-mono">[data-inicio] .mapa-tela</code> a <code class="ds-mono">width: ${escapa(MAPA_MOVEL_LARGURA)}</code> com <code class="ds-mono">margin-inline: ${escapa(MAPA_MOVEL_MARGEM)}</code>, que é a goteira devolvida: a tela toma a largura da JANELA e não a da coluna, e as molduras e a lista dos nomes seguem-na. As duas medidas e a consulta são lidas de <code class="ds-mono">src/styles/inicio.css</code>.</p>
-    <p class="ds-nota">Até 27.08.2026 esta secção retratava outra coisa: <code class="ds-mono">.movel-selo</code>, o selo que a Emenda 18 punha no lugar do mapa por baixo de 640, quando o mapa era de pontos e nenhum ponto se tocava. A Emenda 20c devolveu o mapa ao telemóvel («${escapa(EMENDA_20C)}») e o selo saiu com a forma que o justificava. Esta corrida procura-o em <code class="ds-mono">dist/index.html</code> e em <code class="ds-mono">dist/en/index.html</code>, e pára se o encontrar.</p>
+    <p class="ds-nota">Até 27.08.2026 esta secção retratava outra coisa: <code class="ds-mono">.movel-selo</code>, o selo que a Emenda 18 punha no lugar do mapa por baixo de 640, quando o mapa era de pontos e nenhum ponto se tocava. A Emenda 20c devolveu o mapa ao telemóvel («${escapa(EMENDA_20C)}») e o selo saiu com a forma que o justificava. Esta corrida procura-o nas ${PAGINAS_DE_DIST.length} páginas construídas, nas duas edições, e pára se o encontrar.</p>
   </section>`;
 
   regista(
@@ -2114,5 +2208,11 @@ if (falhados.length) {
 }
 
 console.log();
+console.log(
+  cinza(
+    `  ${PAGINAS_DE_DIST.length} página(s) de \`dist/\` varridas à procura das duas ausências que ` +
+      `os cartões afirmam (\`.movel-selo\`, \`.banda\`): nenhuma das duas rende.`,
+  ),
+);
 console.log(`  ${verde('✓')} ${cartoes.length} cartões, ${TIPOS.length} ficheiros de letra e um README em design-system/.`);
 console.log();
