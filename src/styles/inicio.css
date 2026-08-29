@@ -487,14 +487,14 @@
   }
   /* A legenda por baixo do mapa entre 1024 e 1279, como estava. Partilha a
      célula do mapa (as duas filas) e desce exactamente a altura dele: o mapa
-     tem a largura da coluna e a razão 790/600 do seu campo, e uma margem em
+     tem a largura da coluna e a razão 8030/6090 do seu `viewBox`, e uma margem em
      percentagem resolve-se contra a largura da célula, por isso a conta é
      exacta sem escrever uma altura em píxeis. */
   .mapa-legenda {
     grid-column: 2;
     grid-row: 1 / span 2;
     align-self: start;
-    margin-top: calc(100% * 790 / 600 + 8px);
+    margin-top: calc(100% * 8030 / 6090 + 8px);
   }
   /* A forma em linha é da largura pequena: aqui a fila desfaz-se e cada nome
      volta a ter a sua linha, com a largura da coluna em que está. */
@@ -511,8 +511,11 @@
     padding-inline: 0;
     min-width: 0;
     text-align: left;
-    min-height: 44px;
-    line-height: 44px;
+    /* 32 px a partir de 1024: no ecrã com rato a lista é o índice do mapa e não
+       a rede dele (29.08.2026, a emenda do alinhamento à §1.84); os 44 px são a
+       regra do toque e ficam abaixo de 1024. */
+    min-height: 32px;
+    line-height: 32px;
     font-size: 13px;
   }
   .mapa-ilhas-grupo[data-parcela-lista='continente'] .mapa-ilhas-lista {
@@ -717,9 +720,12 @@
  * 85 px acima do fim dos nomes, e a legenda ficava pendurada por baixo dele.
  * Pediu o fundo partilhado e o mapa a subir até ao topo da manchete, a encher o
  * lado direito. Medido na maqueta antes de escrever: com a coluna esquerda a
- * 550 px e as linhas dos nomes a 32 px, a coluna esquerda mede 683 px a 1280
- * (manchete 286, nomes 311, legenda 52) e o mapa, com a razão 600/790 do seu
- * campo, cabe em 518 px de largura do topo da manchete ao fundo da legenda.
+ * 550 px e as linhas dos nomes a 32 px, a coluna esquerda mede uns 680 px a
+ * 1280 e o mapa, com a razão 6090/8030 do seu `viewBox`, cabe na coluna de 518
+ * px do topo da manchete ao fundo da legenda (a leitura cruzada de 29.08 apanhou
+ * a primeira versão a pedir 529 px de largura para 697 px de altura, presa pelo
+ * `max-width` e com 7 px de ar em cima e em baixo: as margens entre os nomes e
+ * a legenda encolheram até a largura pedida caber com folga).
  *
  * O MAPA É DIMENSIONADO PELA ALTURA e não pela largura, e é isso que faz o fundo
  * partilhado: o item da grelha estica-se às três filas (`align-self: stretch`)
@@ -727,13 +733,14 @@
  * que impede o mapa de decidir a altura da grelha e deixa a coluna esquerda
  * decidi-la), e a tela toma a altura toda com `aspect-ratio`; a largura segue.
  * Onde a coluna é mais estreita do que a largura que a altura pede, a tela
- * fica presa a `max-width: 100%` e o fundo do mapa sobe uns píxeis; a 1280 e a
- * 1440 não acontece, e `tests/inicio/alinhamento.mjs` mede-o.
+ * fica presa a `max-width: 100%` e o desenho ganha ar em cima e em baixo; a
+ * 1280 e a 1440 não acontece, e `tests/inicio/lista.mjs` (L13) mede-o pela
+ * razão da caixa do `svg` contra a do `viewBox`.
  *
  * OS 32 PX são a decisão do lugar de direção para o ecrã com rato: os 44 px
  * são a regra do toque (Emenda 20c), e a partir de 1024 a lista é o índice do
  * mapa e não a rede dele; `tests/inicio/mapa-distritos.mjs` (M1c) e
- * `tests/inicio/alinhamento.mjs` medem os dois números.
+ * `tests/inicio/lista.mjs` (L5) medem os dois números.
  */
 @media (min-width: 1280px) {
   .cabeca-grelha {
@@ -758,27 +765,26 @@
     height: 100%;
     width: auto;
     max-width: 100%;
-    aspect-ratio: 600 / 790;
+    aspect-ratio: 6090 / 8030;
   }
   .cabeca-inst .mapa-svg {
     height: 100%;
     width: auto;
     max-width: 100%;
   }
+  .mapa-ilhas {
+    margin-top: 20px;
+  }
   .mapa-legenda {
     grid-column: 1;
     grid-row: 3;
     align-self: end;
-    margin-top: 18px;
+    margin-top: 6px;
   }
   .mapa-legenda .mapa-linha-fonte,
   .mapa-legenda .mapa-fonte {
     text-align: left;
     justify-content: flex-start;
-  }
-  .mapa-ilhas-lista a {
-    min-height: 32px;
-    line-height: 32px;
   }
 }
 [data-postura='localizador'] .mapa-cartao {
@@ -948,8 +954,13 @@ svg [hidden] {
   .cabeca-inst {
     order: 1;
   }
-  .mapa-ilhas {
+  /* A legenda entre o mapa e os nomes também aqui (leitura cruzada de 29.08):
+     sem esta linha ficava com `order` 0, antes do mapa, entre 641 e 1023. */
+  .mapa-legenda {
     order: 2;
+  }
+  .mapa-ilhas {
+    order: 3;
   }
 }
 

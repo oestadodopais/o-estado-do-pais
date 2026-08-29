@@ -188,6 +188,7 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
   data-instrumento="mapa"
   data-mapa-raiz
   data-postura={postura}
+  aria-describedby={postura === 'inteiro' ? 'mapa-legenda' : undefined}
 >
   {/* «FECHAR» SAIU COM A VISTA DE ESCOLHA (Emenda 19b, 26.08.2026).
       Era o comando que devolvia o mapa à coluna, no canto superior direito do
