@@ -322,6 +322,18 @@ const MARCAS = {
      * folha de estilos deixa de ser uma intenção.
      */
     escalaDoMaskable: 0.85,
+    /**
+     * A ESCALA DAS BARRAS NAS CELAS «any» (30.08.2026, o diretor: «it feels a bit
+     * too big for the space it has around»). Medido contra os 25 ícones de
+     * referência com campo liso (`design/marca/referencias/`, 120 a 256 px): ao
+     * enquadramento cheio as barras ocupam 66,7 % da largura da cela (a mediana
+     * das referências é 64 %) e pintam 24,9 % dela (a mediana é 18,6 %, quartis
+     * 12,6 a 31,8): em extensão são típicas, em tinta ficam na metade pesada, e é
+     * isso que se lê como «grande». A 0,9 as duas medidas caem nas medianas
+     * (60 % de largura, uns 20 % de tinta). Aplica-se ao 180, ao 192 e ao 512;
+     * o `maskable` fica com a sua própria escala, que é a do círculo seguro.
+     */
+    escalaDaCela: 0.9,
   },
   e2: {
     nome: 'o «e» unido, corte de 28 (design/marca/direcoes-e2/, 28.08.2026)',
@@ -332,8 +344,10 @@ const MARCAS = {
     /* Está no CSS do próprio SVG (`svg[data-forma^="maskable"] .reducao`), que
        é onde a ronda de 28.08 a pôs. Aqui não entra. */
     escalaDoMaskable: null,
+    escalaDaCela: 1,
   },
 };
+export { MARCAS };
 
 /* ------------------------------------------------ a marca do diretor, lida --
  * As três expressões que leem os ficheiros de `direcoes-k/`. São estritas de
@@ -777,7 +791,7 @@ async function app(qual = 'k') {
                 svgDoSinal,
                 marca.cela,
                 marca.sinal,
-                forma === 'maskable' ? marca.escalaDoMaskable : 1,
+                forma === 'maskable' ? marca.escalaDoMaskable : marca.escalaDaCela,
               ),
               px,
             )

@@ -148,7 +148,9 @@ import { chromium } from 'playwright';
    da guarda escrita aqui não provava nada sobre a dele. Para todo o resto vale
    a disciplina do costume, e o leitor de PNG desta régua é o dela. Importar não
    corre a ronda: `exportar.mjs` só a corre quando é ele o ficheiro chamado. */
-import { paginaDoSvg } from '../../design/marca/exportar.mjs';
+import { paginaDoSvg, MARCAS } from '../../design/marca/exportar.mjs';
+/* A escala das barras nas celas «any», lida do exportador e não copiada. */
+const ESCALA_DA_CELA = MARCAS.k.escalaDaCela;
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -489,7 +491,10 @@ function caminhoDaBarra(b) {
 function manchaDoDesenho() {
   const barras = barrasDaMarca(path.join(MARCA_K, 'favicon.svg'));
   const area = barras.reduce((a, b) => a + Number(b.largura) * Number(b.altura), 0);
-  return (100 * area) / (LADO_DA_GRELHA * LADO_DA_GRELHA);
+  /* AS CELAS «any» LEVAM AS BARRAS À ESCALA QUE O EXPORTADOR DECLARA
+     (`MARCAS.k.escalaDaCela`, 0,9 desde 30.08.2026): a área escala com o
+     quadrado, e o chão lê a escala do exportador em vez de a copiar. */
+  return ((100 * area) / (LADO_DA_GRELHA * LADO_DA_GRELHA)) * ESCALA_DA_CELA * ESCALA_DA_CELA;
 }
 
 /**
