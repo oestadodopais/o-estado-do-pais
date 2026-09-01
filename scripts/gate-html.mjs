@@ -125,6 +125,7 @@ import {
   FRASE as FRASE_DA_POLITICA,
   LINGUA_DO_RESPONSAVEL,
   RESPONSAVEL_EDITORIAL,
+  ROTULO as ROTULO_DA_CASA,
   textoDoRotulo,
 } from '../src/data/politica-ia.mjs';
 import { VERIFICACAO } from '../src/data/verificacao.mjs';
@@ -141,6 +142,19 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..');
 const DIST = path.join(ROOT, 'dist');
 const ALLOWLIST = path.join(ROOT, 'ledger', 'allowlist.yml');
+
+/**
+ * ---------------------------------------------------------------------------
+ * O ORÁCULO DOS TEXTOS APROVADOS (segunda passagem, 01.09.2026)
+ * ---------------------------------------------------------------------------
+ * Lido de um ficheiro que só o portão lê. `src/data/politica-ia.mjs` não o
+ * importa, e é isso que faz dele um oráculo: uma cadeia mudada de um lado fica
+ * diferente do outro, e a construção fecha. A razão inteira está escrita dentro
+ * do próprio ficheiro.
+ */
+const TEXTOS_APROVADOS = JSON.parse(
+  fs.readFileSync(path.join(ROOT, 'scripts', 'textos-aprovados.json'), 'utf8'),
+);
 const RESTANTES = path.join(ROOT, 'ortografia', 'restantes.yml');
 
 const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
@@ -869,6 +883,40 @@ function ocorrenciasDaPagina(raiz, lingua) {
     });
   }
   return saida;
+}
+
+/**
+ * ---------------------------------------------------------------------------
+ * A OCULTAÇÃO ESCRITA NO PRÓPRIO DOCUMENTO (segunda passagem, 01.09.2026)
+ * ---------------------------------------------------------------------------
+ * Devolve o nome do que esconde um elemento, ou `null`. Olha para ele e para
+ * todos os antepassados, e conhece quatro formas: `hidden`, `aria-hidden="true"`,
+ * a classe `.vh` da casa, e um `style` em linha com `display:none` ou
+ * `visibility:hidden`.
+ *
+ * A QUARTA ENTROU NA SEGUNDA PASSAGEM. A porta das correções conhecia três, e a
+ * leitura a frio notou que a mais barata de todas faltava: um `style` no próprio
+ * documento não precisa de folha nenhuma para apagar um bloco.
+ *
+ * **E O QUE ELA NÃO ALCANÇA, DITO E NÃO ESCONDIDO**: uma regra numa folha de
+ * estilos. Este é um portão estático, lê HTML e não corre CSS. Quem apanha a
+ * ocultação por folha é a régua do navegador, `tests/inicio/rotulo.mjs`, que
+ * mede a caixa de facto e tem o estrago plantado que o prova.
+ */
+const ESTILO_QUE_ESCONDE = /(^|;)\s*(display\s*:\s*none|visibility\s*:\s*hidden)\s*(;|$)/i;
+
+function escondidoNoDocumento(el) {
+  let no = el;
+  while (no && no.nodeType !== undefined) {
+    const attrs = no.attributes ?? {};
+    if ('hidden' in attrs) return 'hidden';
+    if ((attrs['aria-hidden'] ?? '') === 'true') return 'aria-hidden="true"';
+    if (/(^|\s)vh(\s|$)/.test(String(attrs['class'] ?? ''))) return 'class="vh"';
+    const estilo = String(attrs['style'] ?? '');
+    if (ESTILO_QUE_ESCONDE.test(estilo)) return `style="${estilo.slice(0, 60)}"`;
+    no = no.parentNode;
+  }
+  return null;
 }
 
 /**
@@ -3312,17 +3360,25 @@ const cartoesUsados = new Set();
 
 /**
  * ---------------------------------------------------------------------------
- * UMA PESSOA, UM NOME (01.09.2026)
+ * UMA PESSOA, UM NOME, E UM ORÁCULO (01.09.2026; alargado na segunda passagem)
  * ---------------------------------------------------------------------------
- * O rótulo de todas as páginas nomeia quem detém a responsabilidade editorial,
- * e a regra 9 do Método já nomeava quem dirige. São a mesma pessoa, e por isso
- * têm de ser a mesma cadeia: duas grafias do nome são duas pessoas para quem
- * lê, e a divulgação do artigo 50.º deixa de identificar ninguém.
+ * O rótulo de todas as páginas nomeia quem detém a responsabilidade editorial, e
+ * a regra 9 do Método já nomeava quem dirige. São a mesma pessoa, e por isso têm
+ * de ser a mesma cadeia: duas grafias do nome são duas pessoas para quem lê, e a
+ * divulgação do artigo 50.º deixa de identificar ninguém.
  *
- * A conferência é sobre os FICHEIROS e não sobre as páginas, e corre uma vez:
- * o nome de `src/data/politica-ia.mjs` tem de aparecer, carácter a carácter,
- * num pedaço `{ forte: … }` das dez regras de `src/data/metodo.mjs`. É o que
- * impede a cópia de envelhecer no dia em que uma das duas mudar.
+ * A CONFERÊNCIA É SOBRE OS FICHEIROS e não sobre as páginas, e corre uma vez. O
+ * oráculo é `scripts/textos-aprovados.json`, e é contra ele que os dois textos
+ * governados se medem: o nome tem de estar, carácter a carácter, num pedaço
+ * `{ forte: … }` das dez regras de `src/data/metodo.mjs` E em
+ * `src/data/politica-ia.mjs`. Sem o segundo braço, o oráculo e o ficheiro que
+ * rende podiam divergir sem que nada o dissesse até alguém olhar para uma
+ * página.
+ *
+ * E OS TEXTOS TAMBÉM SE MEDEM AQUI, não só na página: o rótulo composto de
+ * `politica-ia.mjs` tem de ser o do oráculo, e a frase da política também. A
+ * comparação da página apanha o mesmo defeito, e esta apanha-o com o nome do
+ * ficheiro em vez de com o nome de seis mil páginas.
  */
 {
   const fortes = [];
@@ -3334,24 +3390,79 @@ const cartoesUsados = new Set();
     }
   };
   anda(REGRAS_DO_METODO);
-  if (!fortes.includes(RESPONSAVEL_EDITORIAL)) {
+  const nome = TEXTOS_APROVADOS.responsavel;
+  if (!fortes.includes(nome)) {
     erros.push({
-      rel: 'src/data/politica-ia.mjs',
+      rel: 'scripts/textos-aprovados.json',
       msg:
-        `o responsável editorial é "${RESPONSAVEL_EDITORIAL}" e nenhuma das dez regras do Método ` +
-        `imprime esse nome (imprime ${fortes.length ? fortes.map((f) => `"${f}"`).join(', ') : 'nenhum'}).\n` +
+        `o responsável editorial é ${JSON.stringify(nome)} e nenhuma das dez regras do Método ` +
+        `imprime esse nome (imprime ${fortes.length ? fortes.map((f) => JSON.stringify(f)).join(', ') : 'nenhum'}).\n` +
         `      O rótulo de todas as páginas e a regra 9 nomeiam a mesma pessoa: ou é a mesma ` +
         `cadeia nos dois ficheiros, ou o sítio diz dois nomes.`,
     });
   }
-  /* E a língua declarada do nome é uma das duas que o sítio sabe render: o
-     `check-lingua` compara-a com a língua efectiva de cada rendição, e uma
-     cadeia fora do conjunto deixava-o a comparar contra nada. */
-  if (LINGUA_DO_RESPONSAVEL !== 'pt-PT' && LINGUA_DO_RESPONSAVEL !== 'en') {
+  if (RESPONSAVEL_EDITORIAL !== nome) {
     erros.push({
       rel: 'src/data/politica-ia.mjs',
-      msg: `a língua do responsável editorial é "${LINGUA_DO_RESPONSAVEL}", e a casa só sabe render "pt-PT" e "en".`,
+      msg:
+        `o responsável editorial é ${JSON.stringify(RESPONSAVEL_EDITORIAL)} e o oráculo diz ` +
+        `${JSON.stringify(nome)}.`,
     });
+  }
+  if (LINGUA_DO_RESPONSAVEL !== TEXTOS_APROVADOS.lingua_do_responsavel) {
+    erros.push({
+      rel: 'src/data/politica-ia.mjs',
+      msg:
+        `a língua do responsável é ${JSON.stringify(LINGUA_DO_RESPONSAVEL)} e o oráculo diz ` +
+        `${JSON.stringify(TEXTOS_APROVADOS.lingua_do_responsavel)}.`,
+    });
+  }
+  if (ANCORA_DA_POLITICA !== TEXTOS_APROVADOS.ancora_da_politica) {
+    erros.push({
+      rel: 'src/data/politica-ia.mjs',
+      msg:
+        `a âncora da política é ${JSON.stringify(ANCORA_DA_POLITICA)} e o oráculo diz ` +
+        `${JSON.stringify(TEXTOS_APROVADOS.ancora_da_politica)}.`,
+    });
+  }
+  for (const l of ['pt', 'en']) {
+    if (textoDoRotulo(l) !== TEXTOS_APROVADOS.rotulo[l]) {
+      erros.push({
+        rel: 'src/data/politica-ia.mjs',
+        msg:
+          `o rótulo composto da edição "${l}" não é o texto aprovado.\n` +
+          `      aprovado: ${JSON.stringify(TEXTOS_APROVADOS.rotulo[l])}\n` +
+          `      composto: ${JSON.stringify(textoDoRotulo(l))}`,
+      });
+    }
+    if (ROTULO_DA_CASA[l]?.porta !== TEXTOS_APROVADOS.porta[l]) {
+      erros.push({
+        rel: 'src/data/politica-ia.mjs',
+        msg:
+          `as palavras ligadas da edição "${l}" são ${JSON.stringify(ROTULO_DA_CASA[l]?.porta)} ` +
+          `e o oráculo diz ${JSON.stringify(TEXTOS_APROVADOS.porta[l])}.`,
+      });
+    }
+    if (FRASE_DA_POLITICA[l] !== TEXTOS_APROVADOS.frase[l]) {
+      erros.push({
+        rel: 'src/data/politica-ia.mjs',
+        msg:
+          `a frase da política da edição "${l}" não é o texto aprovado.\n` +
+          `      aprovado: ${JSON.stringify(TEXTOS_APROVADOS.frase[l].slice(0, 120))}\n` +
+          `      escrito:  ${JSON.stringify(FRASE_DA_POLITICA[l].slice(0, 120))}`,
+      });
+    }
+    const ficha = FICHA_DA_PRIMEIRA_PAGINA[l];
+    const composta = `${ficha.diretorK} ${RESPONSAVEL_EDITORIAL} · ${ficha.gratuito}`;
+    if (composta !== TEXTOS_APROVADOS.ficha[l]) {
+      erros.push({
+        rel: 'src/data/politica-ia.mjs',
+        msg:
+          `a ficha da primeira página da edição "${l}" não é a cadeia decidida.\n` +
+          `      decidida: ${JSON.stringify(TEXTOS_APROVADOS.ficha[l])}\n` +
+          `      composta: ${JSON.stringify(composta)}`,
+      });
+    }
   }
 }
 
@@ -4000,6 +4111,16 @@ for (const file of ficheirosHtml(DIST)) {
    * lembrar de pôr uma linha numa vista nova não é uma obrigação cumprida: é
    * esta conferência que a torna uma condição da construção.
    *
+   * O ORÁCULO NÃO É O FICHEIRO QUE RENDE (segunda passagem, 01.09.2026). A
+   * primeira forma desta regra comparava a página com `src/data/politica-ia.mjs`,
+   * que é o mesmo ficheiro de onde a página sai: mudar a cadeia mudava a saída e
+   * a expectativa ao mesmo tempo, e a leitura a frio provou-o com uma planta que
+   * tirava o «the» de «under the house policy» e passava verde. O oráculo passa a
+   * ser `scripts/textos-aprovados.json`, copiado da ordem de construção §3 e que
+   * nenhum ficheiro de `src/` importa. **E a comparação é EXATA**: sem colapsar
+   * espaços e sem aparar as pontas, porque um espaço a mais numa divulgação
+   * obrigatória é uma diferença e não um detalhe de composição.
+   *
    * **OS DOCUMENTOS DE ESTUDO ESTÃO FORA, e pela mesma razão da porta das
    * correções**: um documento em `/estudos/<slug>/documento` é obra já
    * publicada, alojada intacta e conferida carácter a carácter contra a
@@ -4008,22 +4129,25 @@ for (const file of ficheirosHtml(DIST)) {
    * página deste sítio e é contada aqui como as outras. Este ramo nem chega a
    * correr para eles: `verificaDocumento()` devolve antes.
    *
-   * SÃO QUATRO CONFERÊNCIAS, e cada uma fecha um modo diferente de falhar:
+   * O QUE SE CONFERE EM CADA BLOCO DE RÓTULO, e é o mesmo no rodapé e no topo
+   * (segunda passagem: a primeira forma conferia o topo só pela contagem do
+   * marcador, e uma página de leitura com o rótulo de outra língua passava):
    *
-   *   1. **existe, uma vez** · exactamente um bloco de rodapé por página. Duas
-   *      cópias na mesma página não são duas divulgações, são mobília repetida;
-   *   2. **diz o texto aprovado** · o que a página rende é, carácter a carácter,
-   *      o texto do diretor na língua da edição. Não é uma dispensa: é a
-   *      comparação de `data-sobre` e de `data-linha-*`, aplicada a esta linha;
-   *   3. **a porta abre a política** · a ligação da linha vai para a secção da
-   *      política, e não para a página do Método em geral. Uma divulgação cuja
-   *      política não se alcança é meia divulgação;
-   *   4. **vê-se** · nem `hidden`, nem `aria-hidden`, nem `.vh`, nela ou num
-   *      antepassado. «De forma clara e percetível» é a letra do n.º 5.
+   *   1. **diz o texto aprovado**, carácter a carácter, na língua da edição;
+   *   2. **a porta abre a política**, e as palavras ligadas são exactamente
+   *      «a política da casa» / «the house policy»: uma ligação com o texto
+   *      errado é outra promessa;
+   *   3. **o nome de quem responde** aparece exactamente uma vez, com o texto
+   *      certo, e com `lang="pt-PT"` próprio nas páginas inglesas;
+   *   4. **vê-se**: nem `hidden`, nem `aria-hidden`, nem `.vh`, nem um `style`
+   *      em linha com `display:none` ou `visibility:hidden`, nele ou num
+   *      antepassado.
    *
-   * E DUAS QUE SÃO SOBRE ONDE MAIS ELE APARECE: o topo das páginas de leitura,
-   * que são texto longo e onde o rodapé chega tarde; e a ficha da primeira
-   * página, que é o artigo 15.º, n.º 1 da Lei de Imprensa e só ali.
+   * **O LIMITE DESTA REGRA, DITO E NÃO ESCONDIDO.** É um portão estático: lê o
+   * HTML, e não corre folhas de estilo. Uma regra de CSS que esconda `.rotulo-ia`
+   * numa folha passa por aqui, e quem a apanha é a régua do navegador
+   * (`tests/inicio/rotulo.mjs`, célula M1, com o estrago plantado que a prova).
+   * O que este portão fecha é a ocultação escrita no próprio documento.
    */
   {
     const rotulos = root.querySelectorAll('[data-rotulo-ia]');
@@ -4032,6 +4156,21 @@ for (const file of ficheirosHtml(DIST)) {
     ROTULO_DE_IA.rodape += noRodape.length;
     ROTULO_DE_IA.topo += noTopo.length;
 
+    /* A LÍNGUA DA PÁGINA É UMA CONDIÇÃO, E NÃO UMA COMODIDADE (segunda
+       passagem). A primeira forma escrevia `else if (linguaPagina)`: uma página
+       sem `<html lang>`, ou com um valor que a tabela de rotas não conhece,
+       saltava a conferência inteira em silêncio, que é o modo mais barato de a
+       desligar. Passa a ser vermelha. */
+    if (!linguaPagina) {
+      err(
+        `esta página não diz a sua língua num «<html lang>» que a casa conheça ` +
+          `(leu "${root.querySelector('html')?.getAttribute('lang') ?? '(nenhum)'}").\n` +
+          `      O rótulo de IA, a marca do nome de quem responde e a frase da política ` +
+          `conferem-se todos contra a língua da edição: sem ela não há nada contra que ` +
+          `comparar, e uma conferência que não corre não é uma conferência.`,
+      );
+    }
+
     if (noRodape.length !== 1) {
       err(
         `esta página tem ${noRodape.length} rótulo(s) de IA no rodapé; tem de ter exactamente um.\n` +
@@ -4039,69 +4178,6 @@ for (const file of ficheirosHtml(DIST)) {
           `construídas. A divulgação do artigo 50.º, n.º 4 do Regulamento (UE) 2024/1689 é de ` +
           `cada página, à primeira exposição, e não só do Sobre.`,
       );
-    } else if (linguaPagina) {
-      const rotulo = noRodape[0];
-      const esperado = textoDoRotulo(linguaPagina);
-      const rendido = normalizeWhitespace(decodeEntities(textoDe(rotulo, { semEstilo: true })));
-      /* A ficha da primeira página vive dentro do mesmo bloco, e não faz parte
-         do texto aprovado do rótulo: compara-se a linha, e não o bloco. */
-      const linha = rotulo.querySelector('.rotulo-ia-linha');
-      const soALinha = linha
-        ? normalizeWhitespace(decodeEntities(textoDe(linha, { semEstilo: true })))
-        : rendido;
-      if (soALinha !== esperado) {
-        err(
-          `o rótulo de IA não é o texto aprovado.\n` +
-            `      aprovado:    ${esperado}\n` +
-            `      renderizado: ${soALinha.slice(0, 200)}\n` +
-            `      Este texto é do diretor (ordem de 01.09.2026 §3) e vive em ` +
-            `src/data/politica-ia.mjs. Muda por decisão, e no ficheiro.`,
-        );
-      }
-
-      const destinoDaPolitica = `${routePath('metodo', linguaPagina)}#${ANCORA_DA_POLITICA}`;
-      const abre = (linha ?? rotulo)
-        .querySelectorAll('a[href]')
-        .some((a) => decodeEntities(a.getAttribute('href') ?? '') === destinoDaPolitica);
-      if (!abre) {
-        err(
-          `o rótulo de IA não tem a porta para a política ("${destinoDaPolitica}").\n` +
-            `      «a política da casa» é uma ligação, e uma divulgação cuja política não se ` +
-            `alcança é meia divulgação.`,
-        );
-      }
-
-      const tapado = (() => {
-        let no = rotulo;
-        while (no && no.nodeType !== undefined) {
-          const attrs = no.attributes ?? {};
-          if ('hidden' in attrs) return 'hidden';
-          if ((attrs['aria-hidden'] ?? '') === 'true') return 'aria-hidden="true"';
-          if (/(^|\s)vh(\s|$)/.test(String(attrs['class'] ?? ''))) return 'class="vh"';
-          no = no.parentNode;
-        }
-        return null;
-      })();
-      if (tapado) {
-        err(
-          `o rótulo de IA está escondido por ${tapado} (nele ou num antepassado). ` +
-            `O n.º 5 do artigo 50.º pede-o «de forma clara e percetível».`,
-        );
-      }
-
-      /* O nome de quem responde diz em que língua está, nas duas edições. É um
-         nome português, e numa página inglesa sem marca um leitor de ecrã lê-o
-         com fonética inglesa. `check-lingua.mjs` mede-o no sítio inteiro; aqui
-         confere-se que o texto é o nome e mais nada. */
-      for (const nome of rotulo.querySelectorAll('[data-rotulo-nome]')) {
-        const t = normalizeWhitespace(decodeEntities(textoDe(nome, { semEstilo: true })));
-        if (t !== RESPONSAVEL_EDITORIAL) {
-          err(
-            `um «data-rotulo-nome» diz "${t.slice(0, 80)}" e o responsável editorial é ` +
-              `"${RESPONSAVEL_EDITORIAL}". A marca é do nome, e de mais nada.`,
-          );
-        }
-      }
     }
 
     /* O topo das páginas de leitura: lá tem de estar, e em mais lado nenhum. */
@@ -4112,6 +4188,158 @@ for (const file of ficheirosHtml(DIST)) {
           `      O topo é das páginas de leitura, que são texto longo e onde o rodapé chega ` +
           `tarde para o «momento da primeira exposição» do n.º 5 do artigo 50.º.`,
       );
+    }
+
+    /**
+     * A MESMA CONFERÊNCIA NOS DOIS SÍTIOS (segunda passagem).
+     *
+     * O rodapé e o topo são o mesmo bloco, e a divulgação é a mesma: o que se
+     * confere num confere-se no outro. A primeira forma conferia o texto só no
+     * rodapé, e o topo passava com a contagem do marcador.
+     */
+    if (linguaPagina) {
+      for (const rotulo of rotulos) {
+        const onde = rotulo.getAttribute('data-rotulo-ia');
+        if (onde !== 'rodape' && onde !== 'topo') {
+          err(`«data-rotulo-ia="${onde}"» não é um dos dois lugares do rótulo ("rodape" ou "topo").`);
+          continue;
+        }
+
+        /* 1 · o texto aprovado, carácter a carácter e sem normalizar nada. A
+           ficha da primeira página vive dentro do mesmo bloco e não faz parte do
+           texto aprovado do rótulo: compara-se a LINHA. */
+        const linha = rotulo.querySelector('.rotulo-ia-linha');
+        if (!linha) {
+          err(`o rótulo de IA (${onde}) não tem a linha «.rotulo-ia-linha», que é o que se compara.`);
+          continue;
+        }
+        const esperado = TEXTOS_APROVADOS.rotulo[linguaPagina];
+        const rendido = decodeEntities(textoDe(linha, { semEstilo: true, separador: '' }));
+        if (rendido !== esperado) {
+          err(
+            `o rótulo de IA (${onde}) não é o texto aprovado.\n` +
+              `      aprovado:    ${JSON.stringify(esperado)}\n` +
+              `      renderizado: ${JSON.stringify(rendido.slice(0, 200))}\n` +
+              `      Este texto é do diretor (ordem de 01.09.2026 §3) e o oráculo é ` +
+              `scripts/textos-aprovados.json. Muda por decisão, e nos dois ficheiros.`,
+          );
+        }
+
+        /* 2 · a porta abre a política, e as palavras ligadas são as aprovadas. */
+        const destinoDaPolitica = `${routePath('metodo', linguaPagina)}#${TEXTOS_APROVADOS.ancora_da_politica}`;
+        const portas = linha
+          .querySelectorAll('a[href]')
+          .filter((a) => decodeEntities(a.getAttribute('href') ?? '') === destinoDaPolitica);
+        if (portas.length !== 1) {
+          err(
+            `o rótulo de IA (${onde}) tem ${portas.length} porta(s) para a política ` +
+              `("${destinoDaPolitica}") e tem de ter exactamente uma.\n` +
+              `      Uma divulgação cuja política não se alcança é meia divulgação.`,
+          );
+        } else {
+          const texto = decodeEntities(textoDe(portas[0], { semEstilo: true, separador: '' }));
+          const palavras = TEXTOS_APROVADOS.porta[linguaPagina];
+          if (texto !== palavras) {
+            err(
+              `a porta da política diz ${JSON.stringify(texto)} e as palavras ligadas têm de ser ` +
+                `${JSON.stringify(palavras)}.\n` +
+                `      O texto aprovado põe a ligação naquelas palavras e não noutras: uma porta ` +
+                `com outro texto é outra promessa.`,
+            );
+          }
+        }
+
+        /* 3 · o nome de quem responde: uma vez, com o texto certo, e com a
+           marca de língua própria numa página inglesa. */
+        const nomes = rotulo.querySelectorAll('[data-rotulo-nome]');
+        /* UM POR CADA SÍTIO ONDE O NOME SE DIZ, e não «pelo menos um»: a linha
+           tem exactamente um, a ficha da primeira página tem exactamente um, e
+           não há nenhum solto no bloco. Dois nomes na mesma linha são duas
+           pessoas para quem ouve a página. */
+        const naLinha = linha.querySelectorAll('[data-rotulo-nome]').length;
+        const fichaDoBloco = rotulo.querySelector('[data-ficha-primeira-pagina]');
+        const naFicha = fichaDoBloco
+          ? fichaDoBloco.querySelectorAll('[data-rotulo-nome]').length
+          : 0;
+        if (naLinha !== 1) {
+          err(
+            `a linha do rótulo de IA (${onde}) tem ${naLinha} «data-rotulo-nome» e tem de ter ` +
+              `exactamente um.`,
+          );
+        }
+        if (fichaDoBloco && naFicha !== 1) {
+          err(
+            `a ficha da primeira página tem ${naFicha} «data-rotulo-nome» e tem de ter ` +
+              `exactamente um.`,
+          );
+        }
+        if (nomes.length !== naLinha + naFicha) {
+          err(
+            `o rótulo de IA (${onde}) tem ${nomes.length - naLinha - naFicha} «data-rotulo-nome» ` +
+              `fora da linha e da ficha. O nome diz-se onde está escrito que se diz, e em mais ` +
+              `lado nenhum.`,
+          );
+        }
+        for (const nome of nomes) {
+          const t = decodeEntities(textoDe(nome, { semEstilo: true, separador: '' }));
+          if (t !== TEXTOS_APROVADOS.responsavel) {
+            err(
+              `um «data-rotulo-nome» diz ${JSON.stringify(t.slice(0, 80))} e o responsável ` +
+                `editorial é ${JSON.stringify(TEXTOS_APROVADOS.responsavel)}. A marca é do nome, ` +
+                `e de mais nada.`,
+            );
+          }
+          const propria = nome.getAttribute('lang') ?? null;
+          if (linguaPagina === 'en' && propria !== TEXTOS_APROVADOS.lingua_do_responsavel) {
+            err(
+              `numa página inglesa o nome de quem responde tem de levar ` +
+                `lang="${TEXTOS_APROVADOS.lingua_do_responsavel}" e leva "${propria ?? '(nenhum)'}". ` +
+                `É um nome português, e sem a marca um leitor de ecrã lê-o com fonética inglesa.`,
+            );
+          }
+          if (linguaPagina === 'pt' && propria !== null) {
+            err(
+              `numa página portuguesa o nome de quem responde não leva marca de língua nenhuma ` +
+                `e leva lang="${propria}". A marca a mais é o mesmo defeito da marca em falta.`,
+            );
+          }
+        }
+
+        /* 4 · vê-se. */
+        const tapado = escondidoNoDocumento(rotulo);
+        if (tapado) {
+          err(
+            `o rótulo de IA (${onde}) está escondido por ${tapado} (nele ou num antepassado). ` +
+              `O n.º 5 do artigo 50.º pede-o «de forma clara e percetível».`,
+          );
+        }
+      }
+    }
+
+    /**
+     * O BLOCO DO RODAPÉ VIVE DENTRO DE UM `<footer>` (segunda passagem).
+     *
+     * A classe `.rotulo-ia-rodape` e o atributo `data-rotulo-ia="rodape"` são
+     * cadeias: dizem onde o bloco DEVIA estar, e não onde está. A conferência é
+     * de ANTEPASSADO REAL, porque é isso que faz a linha ser o `contentinfo` da
+     * página, que é o marco onde um leitor de ecrã procura quem responde por
+     * ela.
+     */
+    for (const rotulo of noRodape) {
+      let no = rotulo.parentNode;
+      let dentro = false;
+      while (no && no.nodeType !== undefined) {
+        if (String(no.rawTagName ?? '').toLowerCase() === 'footer') { dentro = true; break; }
+        no = no.parentNode;
+      }
+      if (!dentro) {
+        err(
+          `o rótulo de IA do rodapé não está dentro de um «<footer>».\n` +
+            `      O nome da classe diz onde ele devia estar; esta conferência diz onde ele ` +
+            `está. A autoria e quem responde são o que um leitor de ecrã procura no ` +
+            `«contentinfo» da página.`,
+        );
+      }
     }
 
     /**
@@ -4138,14 +4366,13 @@ for (const file of ficheirosHtml(DIST)) {
           `menção de gratuitidade na primeira página de cada edição, e ali só.`,
       );
     } else if (fichas.length === 1 && linguaPagina) {
-      const f = FICHA_DA_PRIMEIRA_PAGINA[linguaPagina];
-      const t = normalizeWhitespace(decodeEntities(textoDe(fichas[0], { semEstilo: true })));
-      const esperado = `${f.diretorK} ${RESPONSAVEL_EDITORIAL} · ${f.gratuito}`;
+      const t = decodeEntities(textoDe(fichas[0], { semEstilo: true, separador: '' }));
+      const esperado = TEXTOS_APROVADOS.ficha[linguaPagina];
       if (t !== esperado) {
         err(
           `a ficha da primeira página não é a cadeia decidida.\n` +
-            `      decidida:    ${esperado}\n` +
-            `      renderizada: ${t.slice(0, 200)}`,
+            `      decidida:    ${JSON.stringify(esperado)}\n` +
+            `      renderizada: ${JSON.stringify(t.slice(0, 200))}`,
         );
       }
     }
@@ -4157,6 +4384,11 @@ for (const file of ficheirosHtml(DIST)) {
      * como o do Sobre. As duas rotas são as que a ordem nomeia: a página do
      * leitor leva o rótulo, que é uma linha e uma porta; a frase inteira vive
      * onde há sítio para ela.
+     *
+     * E O ATRIBUTO TEM DE DIZER A LÍNGUA DA ROTA (segunda passagem): a primeira
+     * forma comparava a frase com a língua que o próprio atributo declarava, e
+     * uma frase inglesa numa página portuguesa passava por estar declarada
+     * inglesa. O atributo é do gabarito e não é prova de nada.
      */
     const frases = root.querySelectorAll('[data-frase-da-politica]');
     ROTULO_DE_IA.frase += frases.length;
@@ -4167,22 +4399,22 @@ for (const file of ficheirosHtml(DIST)) {
           `${esperadasFrases}. A frase vive no Sobre e no Método; as páginas do leitor levam o ` +
           `rótulo e a porta.`,
       );
-    } else if (frases.length === 1) {
+    } else if (frases.length === 1 && linguaPagina) {
       const declarada = frases[0].getAttribute('data-frase-da-politica');
-      const esperada = FRASE_DA_POLITICA[declarada];
-      if (!esperada) {
+      if (declarada !== linguaPagina) {
         err(
-          `«data-frase-da-politica="${declarada}"» não é uma edição desta casa ("pt" ou "en").`,
+          `«data-frase-da-politica="${declarada}"» e a página é da edição "${linguaPagina}". ` +
+            `A marca diz de que edição é a frase, e tem de ser a da rota.`,
         );
-      } else {
-        const t = normalizeWhitespace(decodeEntities(textoDe(frases[0], { semEstilo: true })));
-        if (t !== normalizeWhitespace(esperada)) {
-          err(
-            `a frase da política não é o texto aprovado.\n` +
-              `      aprovado:    ${normalizeWhitespace(esperada).slice(0, 160)}\n` +
-              `      renderizado: ${t.slice(0, 160)}`,
-          );
-        }
+      }
+      const t = decodeEntities(textoDe(frases[0], { semEstilo: true, separador: '' }));
+      const esperada = TEXTOS_APROVADOS.frase[linguaPagina];
+      if (t !== esperada) {
+        err(
+          `a frase da política não é o texto aprovado.\n` +
+            `      aprovado:    ${JSON.stringify(esperada.slice(0, 160))}\n` +
+            `      renderizado: ${JSON.stringify(t.slice(0, 160))}`,
+        );
       }
     }
   }

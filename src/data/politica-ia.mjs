@@ -144,7 +144,7 @@ export function textoDoRotulo(lang) {
  */
 export const FICHA_DA_PRIMEIRA_PAGINA = {
   pt: { diretorK: 'Diretor:', gratuito: 'Publicação gratuita' },
-  en: { diretorK: 'Director:', gratuito: 'Free publication' },
+  en: { diretorK: 'Director:', gratuito: 'Free of charge' },
 };
 
 /**
@@ -188,12 +188,12 @@ export const POLITICA = {
     pt: [
       'Tudo o que a casa publica leva o rótulo de gerado por IA, em cada página, ' +
         'no momento em que a página é vista. A revisão faz-se por portões e por ' +
-        'amostra, e não peça a peça. A casa não finge uma revisão que não existe.',
+        'amostra, e não peça a peça.',
     ],
     en: [
       'Everything the house publishes carries the AI-generated label, on every page, ' +
         'at the moment the page is seen. Review is done by gates and by sample, not ' +
-        'piece by piece. The house does not pretend to a review that does not exist.',
+        'piece by piece.',
     ],
   },
 
@@ -255,50 +255,71 @@ export const POLITICA = {
   },
 
   /**
-   * Os quatro lugares. Os nomes dos modelos trazem algarismos e são
-   * identificadores de máquina: vão marcados, com o motivo já escrito na lista
-   * de excepções, e não são uma medição do país.
+   * OS QUATRO LUGARES, SEM UM ÚNICO ALGARISMO (segunda passagem, 01.09.2026).
+   *
+   * A primeira passagem escreveu os nomes dos modelos com a versão («Claude
+   * Opus 5», «gpt-5.6-sol») e marcou os algarismos `identificador-tecnico`. A
+   * leitura a frio recusou-o por duas razões que valem as duas: um número de
+   * versão de um produto de terceiros envelhece sozinho na página, e a marca
+   * punha algarismos novos no sítio para dizer uma coisa que não precisa deles.
+   * A página passa a nomear as FAMÍLIAS e os lugares, que é o que o leitor
+   * precisa de saber para ler a regra que se segue: quem verifica não é quem
+   * construiu.
+   *
+   * E A VOZ MUDOU COM ELES. «Claude Fable 5 decide, escreve as regras» dizia
+   * uma coisa falsa: as regras são do diretor, e a primeira frase desta secção
+   * di-lo. «Mede às cegas» e «lê a frio» são o jargão da casa, e a página do
+   * leitor diz o que a coisa é: mede sem ver a construção, lê sem contexto
+   * prévio.
    */
   lugares: {
     titulo: { pt: 'Os lugares', en: 'The places' },
     intro: {
-      pt: [
-        'São quatro lugares, e a família de modelos que construiu nunca verifica o que construiu:',
-      ],
-      en: [
-        'There are four places, and the family of models that built a thing never checks it:',
-      ],
+      pt: ['São quatro lugares, e a verificação é sempre de outra família de modelos:'],
+      en: ['There are four places, and checking is always done by a different family of models:'],
     },
     itens: [
       {
-        modelo: 'Claude Fable 5',
-        pt: { antes: '', depois: ' decide, escreve as regras, revê e funde.' },
-        en: { antes: '', depois: ' decides, writes the rules, reviews and merges.' },
+        rotulo: { pt: 'A direção', en: 'Direction' },
+        texto: {
+          pt: 'dirige o trabalho: escreve os briefs, revê e funde.',
+          en: 'directs the work: it writes the briefs, reviews and merges.',
+        },
       },
       {
-        modelo: 'Claude Opus 5',
-        pt: { antes: '', depois: ' constrói, e verifica lotes na fonte.' },
-        en: { antes: '', depois: ' builds, and checks batches at the source.' },
+        rotulo: { pt: 'A construção', en: 'Building' },
+        texto: {
+          pt: 'constrói o sítio, e verifica lotes na fonte.',
+          en: 'builds the site, and checks batches at the source.',
+        },
       },
       {
-        modelo: 'Claude Sonnet 5',
-        pt: { antes: '', depois: ' mede às cegas, com código próprio, numa cópia.' },
-        en: { antes: '', depois: ' measures blind, with its own code, on a copy.' },
+        rotulo: { pt: 'A medição', en: 'Measurement' },
+        texto: {
+          pt: 'mede numa cópia, com código próprio, sem ver a construção.',
+          en: 'measures on a copy, with its own code, without seeing the build.',
+        },
       },
       {
-        modelo: 'gpt-5.6-sol',
-        pt: { antes: 'O Codex (', depois: ') lê a frio, com estragos plantados.' },
-        en: { antes: 'Codex (', depois: ') reads cold, with planted damage.' },
+        rotulo: { pt: 'A leitura', en: 'Reading' },
+        texto: {
+          pt: 'lê sem contexto prévio, com erros plantados que tem de encontrar.',
+          en: 'reads with no prior context, with planted errors it has to find.',
+        },
       },
     ],
     fecho: {
       pt: [
-        'Um modelo novo só ocupa um lugar depois de passar os mesmos testes que o ' +
-          'titular passou, e a troca fica escrita com a data.',
+        'São os modelos Claude da Anthropic, em três lugares (a direção, a construção, ' +
+          'a medição), e o Codex da OpenAI na leitura. Um modelo novo só ocupa um lugar ' +
+          'depois de passar os mesmos testes que o titular passou, e a troca fica escrita ' +
+          'com a data.',
       ],
       en: [
-        'A new model takes a place only after passing the same tests the incumbent ' +
-          'passed, and the change is written down with its date.',
+        'They are the Claude models from Anthropic in three of the places (direction, ' +
+          'building, measurement), and Codex from OpenAI in the reading. A new model takes ' +
+          'a place only after passing the same tests the incumbent passed, and the change ' +
+          'is written down with its date.',
       ],
     },
   },
