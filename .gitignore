@@ -28,3 +28,6 @@ pnpm-debug.log*
 # ficheiros de teste do portão (criados e removidos durante a verificação)
 src/pages/_gate-test-*.astro
 .vercel
+
+# worktrees dos construtores e medidores (nunca entram no repositório)
+.claude/worktrees/

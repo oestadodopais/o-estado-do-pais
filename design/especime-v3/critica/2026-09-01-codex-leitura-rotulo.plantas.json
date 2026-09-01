@@ -1,0 +1,33 @@
+{
+ "registado_em": "2026-09-01T14:17:27+00:00",
+ "copia": "pacote",
+ "plantas": [
+  {
+   "id": "PR1",
+   "ficheiro": "paginas/pt-inicio.html",
+   "descricao": "primeira página pt: «sob» trocado por «sobre» no rótulo (desvio ao texto aprovado)",
+   "sha256_antes": "418bfb294018336e0c416ec344b07da01a0dfe1c38b95110580457f746b479ac",
+   "sha256_depois": "d25e5a4bc715dc59e67134737a3f9680f61d5cf4bf032d28cdadd420a76c8d45",
+   "contexto_antes": "\"rotulo-ia rotulo-ia-rodape\" data-rotulo-ia=\"rodape\"><p class=\"rotulo-ia-linha\">Texto gerado por IA sob <a href=\"/metodo#politica-de-ia\">a política da casa</a> · responsável editorial: <span data-rotulo-nome>Nuno dos Santos</span></p><",
+   "contexto_depois": "\"rotulo-ia rotulo-ia-rodape\" data-rotulo-ia=\"rodape\"><p class=\"rotulo-ia-linha\">Texto gerado por IA sobre <a href=\"/metodo#politica-de-ia\">a política da casa</a> · responsável editorial: <span data-rotulo-nome>Nuno dos Santos</span></p><"
+  },
+  {
+   "id": "PR2",
+   "ficheiro": "fonte/src/data/politica-ia.mjs",
+   "descricao": "o texto inglês aprovado perde um «the»",
+   "sha256_antes": "d08dc327be24c15da9b41073b499a301b1a90c2ec498a2a6fb035b1c49bd8377",
+   "sha256_depois": "7afb30d9d2aedb8a06b45f6c15b5c07f6753a17d1437a9c6da44d34c6358a19a",
+   "contexto_antes": "ece before it goes out; a named person holds editorial ' +     'responsibility, sets the rules and the refusals, and answers for it.', };  /**  * -----------------------------------------------------------------",
+   "contexto_depois": "ece before it goes out; a named person holds editorial ' +     'responsibility, sets the rules and refusals, and answers for it.', };  /**  * -----------------------------------------------------------------"
+  },
+  {
+   "id": "PR3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório do construtor com a contagem de rótulos trocada (6 950 de 6 590)",
+   "sha256_antes": "3c9e32a8c3357db8658ded2d9dbe6d00ed7863411700485921d32528be2bb508",
+   "sha256_depois": "34f19d48522f7706b461406564a4a32e738daabe94d5317cef564616fec333e1",
+   "contexto_antes": "a prosa nova.*  ## 0 · O que fica feito, em cinco linhas  * **O rótulo rende em 6 590 das 6 590 páginas construídas** das duas edições, no   rodapé, mais **8 no topo das páginas de leitura**, que",
+   "contexto_depois": "a prosa nova.*  ## 0 · O que fica feito, em cinco linhas  * **O rótulo rende em 6 950 das 6 590 páginas construídas** das duas edições, no   rodapé, mais **8 no topo das páginas de leitura**, que"
+  }
+ ]
+}

@@ -4,7 +4,7 @@
 
 ## O que muda no ar
 
-**Nada, ainda.** O `push` de 01.09 (`077d2b7..8ba6dd4`, para `github.com/oestadodopais/o-estado-do-pais`) não disparou lançamento nenhum no Vercel: cinco minutos depois, um pedido por minuto, a lista de lançamentos continuava a acabar no de há dois dias. O Vercel está ligado ao repositório antigo, na conta pessoal do diretor, e a religação à organização é dele e está pendente desde 31.08 (`PENDENTES-DO-DIRETOR.md`). O sítio no ar está em `077d2b7`, com o carimbo semanal de 24.08; quando o diretor religar, o lançamento seguinte traz o carimbo de 31.08 (`3198666`: 32 afirmações reconferidas, 0 alarmes) e nenhuma página nova nem número novo. O `verify:deploy` corre nessa altura.
+**À tarde, sim.** De manhã o `push` de `077d2b7..8ba6dd4` não lançou (o Vercel estava ligado ao repositório antigo); à tarde o diretor autorizou a religação pela linha de comandos, o plano Hobby recusou o repositório privado da organização (409), o diretor decidiu passar o repositório a público depois da passagem a segredos e dados pessoais (nenhum segredo; os dados eram os dele; o brief para o advogado emendado em `38d9166`), o repositório passou a público e o Vercel ficou ligado a `github.com/oestadodopais/o-estado-do-pais`. O primeiro lançamento depois disso foi o de `38d9166`: construído pelo Vercel a partir do repositório da organização (16 minutos, «Ready»), com `verify:deploy` verde («o que está no ar é o que está no repositório»); trouxe para o ar o carimbo semanal de 31.08 (`3198666`) e nada mais. A seguir, pela ordem, o rótulo de IA em todas as páginas e as 314 linhas do primeiro domínio, cada um depois da sua leitura cruzada.
 
 ## O que muda no repositório
 
