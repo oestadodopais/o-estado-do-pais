@@ -199,6 +199,16 @@ export const AREAS = [
             razao:
               'A dívida bruta das administrações públicas é o passivo do Estado, e o Estado é o sujeito da matéria: a política financeira DO ESTADO. O que a lei não dá às Finanças é a dívida de quem não é o Estado, e por isso a dívida das famílias e a das empresas ficam de fora.',
           },
+          {
+            id: /^saldo-das-administracoes-publicas-\d{4}$/,
+            razao:
+              'A diferença entre o que as administrações públicas arrecadam e o que gastam num ano é o resultado da política financeira do Estado, na mesma medida em que a dívida é o seu acumulado: as duas têm o mesmo sujeito e a mesma matéria. É o saldo do SECTOR S13, o das administrações públicas, e não o saldo de contas externas, que mede a posição do País perante o resto do mundo e fica fora por não haver matéria que a nomeie.',
+          },
+          {
+            id: /^crescimento-da-despesa-liquida-\d{4}$/,
+            razao:
+              'O crescimento da despesa líquida do Estado contra a trajetória que o Conselho da União Europeia recomendou é a execução da política financeira do Estado medida contra a regra a que ela está sujeita. O organismo que a apura, o Conselho das Finanças Públicas, não é nomeado em artigo nenhum da lei orgânica, e é a matéria que traz esta linha para aqui, não o organismo.',
+          },
         ],
       },
     ],
@@ -553,6 +563,32 @@ export const AREAS = [
             id: /^(taxa-de-desemprego|taxa-de-desemprego-mip|taxa-de-emprego|taxa-de-actividade|desemprego-de-longa-duracao|disparidade-de-emprego-entre-sexos|jovens-nem)-\d{4}$/,
             razao:
               'A taxa de desemprego, a de emprego, a de atividade, o desemprego de longa duração, a diferença de emprego entre homens e mulheres e os jovens que não estudam nem trabalham medem todos a situação das pessoas perante o emprego.',
+          },
+        ],
+      },
+      {
+        materia: 'relações laborais e condições de trabalho',
+        artigo: 'Artigo 24.º, n.º 1',
+        citacao:
+          'O Ministério do Trabalho, Solidariedade e Segurança Social é o departamento governamental que tem por missão formular, conduzir, executar e avaliar as políticas de emprego, de formação profissional, de relações laborais e condições de trabalho, solidariedade e segurança social, bem como a coordenação das políticas sociais de apoio à família, crianças e jovens em risco, idosos e natalidade, de inclusão das pessoas com deficiência, de combate à pobreza e de promoção da inclusão social, de fortalecimento do setor cooperativo, da economia social e do voluntariado.',
+        regras: [
+          {
+            estudos: ['dominios-2026', 'concelhos-2026'],
+            id: /(^|-)ganho-medio-mensal-\d{4}$/,
+            razao:
+              'Quanto ganha, por mês, quem trabalha por conta de outrem é a condição de trabalho que se mede em dinheiro. A lei nomeia «relações laborais e condições de trabalho», e a remuneração é o objeto de uma e a medida da outra. A matéria não é o emprego: o emprego mede quem trabalha, e isto mede o que recebe quem trabalha.',
+          },
+          {
+            estudos: ['dominios-2026'],
+            id: /^disparidade-salarial-entre-sexos-\d{4}$/,
+            razao:
+              'A diferença entre o ganho horário bruto médio dos homens e o das mulheres é uma medida da remuneração, e por isso da mesma matéria do ganho médio. NÃO é a disparidade de emprego entre sexos, que mede quem trabalha e está na matéria «emprego»: a carta dos conteúdos separa as duas pelo nome, e esta regra separa-as pela matéria.',
+          },
+          {
+            estudos: ['dominios-2026'],
+            id: /^retribuicao-minima-mensal-(garantida-continente|doze-meses)-\d{4}$/,
+            razao:
+              'A retribuição mínima mensal garantida é uma condição de trabalho fixada por lei: o piso da remuneração. As duas linhas são a mesma matéria por dois publicadores, o diploma que a fixa para o território continental e a base do Eurostat que a converte de catorze meses para doze; o que muda entre elas é o perímetro, não o assunto. O identificador da primeira di-lo: o decreto-lei aplica-se ao continente, e os Açores e a Madeira fixam o seu por diploma regional próprio.',
           },
         ],
       },
