@@ -4608,3 +4608,123 @@ a.marcador::after {
 .municipio-so-aparelho {
   grid-template-columns: minmax(0, 340px);
 }
+
+/* ==============================================================================
+   O RÓTULO DE IA (01.09.2026)
+   ==============================================================================
+   Uma linha em todas as páginas construídas, no rodapé, e uma segunda no topo
+   das páginas de leitura, que são texto longo. A razão de existir é legal e
+   está escrita em `src/components/RotuloDeIA.astro`: o artigo 50.º, n.os 4 e 5
+   do Regulamento (UE) 2024/1689.
+
+   A LETRA É A DA PROSA, e não a do instrumento. É uma frase e não um rótulo de
+   aparelho: `IDENTIDADE.md` §1 dá a Spectral à prosa e a Bitter ao que é medido
+   ou transcrito, e uma frase composta em Bitter versaletes lia-se como uma
+   etiqueta de máquina. Fica em Spectral, ao corpo da mobília e não ao da
+   leitura, porque não é o conteúdo da página.
+
+   A COR É `--muted` SOBRE `--paper`, que é o par que o aparelho inteiro já usa e
+   que a régua do contraste mede em cada corrida: 6,24:1 em claro e 9,52:1 em
+   escuro, os dois acima do mínimo de 4,5:1 para texto
+   (`node scripts/medir-contraste.mjs`). A porta da política é `--ink`, que é
+   16,39:1 e 15,38:1.
+
+   SEM COR NOVA E SEM SEGUNDO PAPEL (`IDENTIDADE.md` §2): o bloco separa-se do
+   que está acima com um fio de `--rule`, que é como o resto do sítio separa. */
+.rotulo-ia {
+  display: grid;
+  gap: 6px;
+  max-width: 68ch;
+}
+.rotulo-ia-rodape {
+  margin-top: 18px;
+  border-top: 1px solid var(--rule);
+  padding-top: 14px;
+}
+/* No topo de uma página de leitura o rótulo vem debaixo do antetítulo e antes
+   do título do documento: sem fio por cima, porque não separa nada, e com uma
+   goma que o descole do antetítulo. */
+.rotulo-ia-topo {
+  margin-top: 10px;
+}
+.rotulo-ia-linha {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.rotulo-ia-linha a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--rule-strong);
+}
+.rotulo-ia-linha a:hover {
+  text-decoration-color: currentColor;
+}
+/* A ficha da primeira página: o nome de quem dirige e a menção de gratuitidade.
+   É aparelho e não prosa, e por isso leva a letra do instrumento, como as duas
+   leituras da mobília do cabeçalho.
+
+   O CORPO É 12px E NÃO 11, e é uma medição e não um gosto: a primeira versão
+   deste bloco escreveu 11px, e a régua A9 de `tests/inicio/correcoes-a.mjs`
+   fechou vermelha nas duas edições com «11px span. "Nuno dos Santos"». O chão
+   de 12px na rota `home` é da A9, e a regra da casa escrita em B10 é que toda a
+   classe que declare corpo abaixo de 12px tem de aparecer na lista das excepções
+   de 640: em vez de a acrescentar, esta declara 12 e o problema deixa de
+   existir. O nome de quem responde não é sítio para ganhar um píxel. */
+.rotulo-ia-ficha {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* O alvo de toque da porta da política, pela mesma regra da porta das
+   correções: 44px de altura numa linha de 21 obrigava a caixa a transbordar
+   para a linha de baixo, e por isso a linha passa a caixa flexível que quebra. */
+@media (max-width: 640px) {
+  .rotulo-ia-linha {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 6px;
+  }
+  .rotulo-ia-linha a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
+/* ------------------------------------------------------- a política, no Método
+   e a frase da política, no Sobre.
+
+   Nenhuma peça nova: os casos e as recusas usam as listas e as linhas rotuladas
+   que o Método já tem. O que estas regras fazem é a goma entre elas. */
+.sobre-politica {
+  margin-top: clamp(18px, 2.4vw, 26px);
+  max-width: 62ch;
+  font-size: var(--t-leitura);
+  line-height: var(--lh-leitura);
+  color: var(--muted);
+}
+.politica-caso + .politica-caso {
+  margin-top: 10px;
+}
+.politica-caso strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+.politica-lugares,
+.politica-recusas {
+  margin: 10px 0 0;
+  padding-left: 1.35em;
+  display: grid;
+  gap: 8px;
+  font-size: 15px;
+  line-height: 1.62;
+  color: var(--muted);
+}

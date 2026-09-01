@@ -1596,3 +1596,47 @@ linhas existem para fazer.*
 | conteudo | medidas do Painel Social Europeu que o livro-razão guarda | inicio-lista | viva | — |
 | conteudo | medidas do painel cujo quadro publica um limiar | inicio-lista | viva | — |
 | conteudo | panel measures whose scoreboard publishes a threshold | inicio-lista | viva | — |
+
+## Bloco «rotulo-ia» · a divulgação pela via B · 01.09.2026
+
+**Quatro cadeias novas, e as quatro entram por uma obrigação e não por uma
+escolha editorial.** O artigo 50.º, n.º 4, segundo parágrafo, do Regulamento (UE)
+2024/1689 manda divulgar que um texto publicado para informar o público sobre
+matérias de interesse público foi gerado por IA, e o n.º 5 manda dá-lo «de forma
+clara e percetível, o mais tardar no momento da primeira interação ou exposição».
+A casa escolheu a via B a 30.08.2026 (rotular tudo), e por isso a linha está em
+todas as páginas construídas fora dos documentos alojados. As duas primeiras são
+o texto aprovado pelo diretor, carácter a carácter; as duas últimas são o nome do
+diretor e a menção de gratuitidade que o artigo 15.º, n.º 1 da Lei de Imprensa
+pede na primeira página de cada edição.
+
+**As quatro são NAVEGAÇÃO, e a razão tem de ser dita porque não é óbvia.** A
+classe da autorreferência é «o método, a verificação, a honestidade, a cobertura
+ou as intenções do próprio sítio», e vai a zero em todas as rotas medidas. Estas
+frases não são nenhuma dessas coisas: não dizem como a casa trabalha, não dizem
+que ela confere, não dizem o que cobre, e não têm um adjetivo. **Dizem o que o
+texto é e quem responde por ele, e levam a porta para onde isso se lê por
+extenso** — que é exactamente a definição desta lista para navegação: «o que leva
+a outro sítio […]: o nome da publicação, os comandos, a porta das correções». A
+porta das correções é a irmã mais próxima: também ela é uma linha de todas as
+páginas, com uma pergunta e um endereço, e está declarada navegação desde o
+princípio.
+
+**O teste da Emenda 15 não decide esta classe, e é honesto dizê-lo.** «Uma frase
+sobrevive numa página do leitor se a sua remoção fizesse um leitor ler mal um
+número»: nenhuma destas quatro sobrevive a esse teste, e a porta das correções e
+a navegação do rodapé também não. O teste governa o que é autorreferência e o que
+é conteúdo; não governa o que a lei obriga a página a dizer. Fica escrito para
+que a próxima leitura saiba que a pergunta foi feita, e o lugar de direção pode
+reclassificar com uma linha.
+
+*As duas frases da primeira página contam-se uma vez cada, e rendem-se em duas
+páginas: `/` e `/en`. As duas do rótulo rendem-se em todas as rotas
+inventariadas.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | AI-generated text under the house policy · editorial responsibility: Nuno dos Santos | rotulo-ia | viva | — |
+| navegacao | Director: Nuno dos Santos · Free publication | rotulo-ia | viva | — |
+| navegacao | Diretor: Nuno dos Santos · Publicação gratuita | rotulo-ia | viva | — |
+| navegacao | Texto gerado por IA sob a política da casa · responsável editorial: Nuno dos Santos | rotulo-ia | viva | — |

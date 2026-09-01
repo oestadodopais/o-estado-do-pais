@@ -1,0 +1,100 @@
+---
+/**
+ * O RÓTULO DE IA — a mesma linha em todas as páginas construídas.
+ *
+ * ---------------------------------------------------------------------------
+ * PORQUE EXISTE, E PORQUE É EM TODAS AS PÁGINAS
+ * ---------------------------------------------------------------------------
+ * O artigo 50.º, n.º 4, segundo parágrafo, do Regulamento (UE) 2024/1689 obriga
+ * quem publica texto gerado por IA para informar o público sobre matérias de
+ * interesse público a divulgá-lo; o n.º 5 diz que a informação se dá «de forma
+ * clara e percetível, o mais tardar no momento da primeira interação ou
+ * exposição», e que cumpre os requisitos de acessibilidade aplicáveis. O texto
+ * das duas normas está lido na fonte em `design/observatorio/DILIGENCIA-LEGAL.md`
+ * §4, e é o que faz deste bloco uma coisa de todas as páginas e não do Sobre: a
+ * primeira exposição de um leitor a este sítio é a página onde ele aterra, e um
+ * leitor que chega a uma linha do livro-razão por um motor de busca nunca passa
+ * pelo Sobre.
+ *
+ * A casa escolheu a via B — rotular tudo — a 30.08.2026, e por isso não precisa
+ * de provar a isenção de revisão humana que o mesmo parágrafo abre
+ * (`POLITICA-DA-AUTONOMIA.md` §2).
+ *
+ * ---------------------------------------------------------------------------
+ * O TEXTO NÃO SE COMPÕE AQUI
+ * ---------------------------------------------------------------------------
+ * Vem de `src/data/politica-ia.mjs`, aprovado carácter a carácter, e
+ * `scripts/gate-html.mjs` compara-o com o que a página rende: a mesma
+ * disciplina do Sobre (`data-sobre`) e dos campos de uma linha
+ * (`data-linha-*`). A marca não é uma dispensa, é uma comparação.
+ *
+ * SEM ADJETIVOS E SEM JUSTIFICAÇÃO (Emenda 18). A linha diz o que o texto é e
+ * quem responde por ele; não diz que a casa é cuidadosa, nem porque se deve
+ * confiar nela. O que a política é por extenso vive na porta, e a porta é uma
+ * secção do Método.
+ *
+ * ---------------------------------------------------------------------------
+ * AS TRÊS MARCAS, E O QUE CADA UMA SUSTENTA
+ * ---------------------------------------------------------------------------
+ *   · `data-rotulo-ia="rodape|topo"` · o bloco. O portão conta exactamente um
+ *     `rodape` por página construída, e exige o `topo` nas páginas de leitura;
+ *   · `data-rotulo-nome` · o nome de quem responde. `check-lingua.mjs` confere
+ *     que ele diz em que língua está, nas duas edições: é um nome português, e
+ *     numa página inglesa sem marca um leitor de ecrã lê-o com fonética
+ *     inglesa (a regra da §1.82, aplicada a um nome de pessoa);
+ *   · `data-ficha-primeira-pagina` · as duas cadeias do artigo 15.º, n.º 1 da
+ *     Lei de Imprensa, e só na primeira página de cada edição.
+ *
+ * ---------------------------------------------------------------------------
+ * A PRIMEIRA PÁGINA DE CADA EDIÇÃO
+ * ---------------------------------------------------------------------------
+ * `naPrimeiraPagina` compara o caminho desta página com o da rota `home` da sua
+ * edição, que é a mesma pergunta que o cabeçalho já faz para a frase de
+ * identidade (`Masthead.astro`, `naHome`). Uma segunda maneira de perguntar a
+ * mesma coisa divergiria da primeira.
+ */
+import {
+  ANCORA_DA_POLITICA,
+  FICHA_DA_PRIMEIRA_PAGINA,
+  LINGUA_DO_RESPONSAVEL,
+  RESPONSAVEL_EDITORIAL,
+  ROTULO,
+} from '../data/politica-ia.mjs';
+import { routePath, normalizePath } from '../lib/routes.mjs';
+
+const { lang = 'pt', path, onde = 'rodape' } = Astro.props;
+const aqui = normalizePath(path ?? Astro.url.pathname);
+const naPrimeiraPagina = normalizePath(routePath('home', lang)) === aqui;
+
+const r = ROTULO[lang];
+const ficha = FICHA_DA_PRIMEIRA_PAGINA[lang];
+const politica = `${routePath('metodo', lang)}#${ANCORA_DA_POLITICA}`;
+
+/* O nome é português. Numa página portuguesa está na língua da página e não
+   leva marca; numa página inglesa leva a sua. É a regra dos dois sentidos que
+   `check-lingua.mjs` já aplica aos títulos e aos organismos: a marca a mais é o
+   mesmo defeito da marca em falta. */
+const linguaDoNome = lang === 'pt' ? undefined : LINGUA_DO_RESPONSAVEL;
+---
+
+<div class:list={['rotulo-ia', `rotulo-ia-${onde}`]} data-rotulo-ia={onde}>
+  <p class="rotulo-ia-linha">
+    <Fragment set:text={r.antes} /><a href={politica}>{r.porta}</a><Fragment
+      set:text={r.depois}
+    /><span data-rotulo-nome lang={linguaDoNome}>{RESPONSAVEL_EDITORIAL}</span>
+  </p>
+
+  {
+    /* A ficha da primeira página: o nome de quem dirige e a menção de
+       gratuitidade, numa linha só. Não se repete em mais nenhuma página, porque
+       a lei a pede na primeira e uma frase repetida em seis mil páginas é
+       mobília. */
+    naPrimeiraPagina && onde === 'rodape' && (
+      <p class="rotulo-ia-ficha" data-ficha-primeira-pagina>
+        <Fragment set:text={`${ficha.diretorK} `} />
+        <span data-rotulo-nome lang={linguaDoNome}>{RESPONSAVEL_EDITORIAL}</span>
+        <Fragment set:text={` · ${ficha.gratuito}`} />
+      </p>
+    )
+  }
+</div>

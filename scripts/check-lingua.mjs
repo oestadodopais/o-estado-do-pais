@@ -133,6 +133,7 @@ import {
   linguaDaEdicao,
 } from '../src/i18n/lingua-dos-titulos.mjs';
 import { WORKS, linguaDoTitulo } from '../src/data/studies.mjs';
+import { LINGUA_DO_RESPONSAVEL, RESPONSAVEL_EDITORIAL } from '../src/data/politica-ia.mjs';
 import { matchPath } from '../src/lib/routes.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -580,6 +581,14 @@ const contas = {
   estudos_pt_ocultos_sem_marca: 0,
   elementos_com_atributo_repetido: 0,
   repetidos_em_documento_alojado: 0,
+  /* L9 · o rótulo de IA: o nome de quem responde, e a linha que o embrulha. */
+  nomes_do_rotulo: 0,
+  nomes_do_rotulo_em_pt: 0,
+  nomes_do_rotulo_em_en: 0,
+  nomes_do_rotulo_certos: 0,
+  nomes_do_rotulo_errados: 0,
+  linhas_do_rotulo: 0,
+  linhas_do_rotulo_erradas: 0,
 };
 const achados = {
   repetidos: new Map(),
@@ -592,6 +601,7 @@ const achados = {
   localizadores: new Map(),
   leis: new Map(),
   estudos: new Map(),
+  rotulo: new Map(),
 };
 const anota = (mapa, chave, caminho) => {
   const x = mapa.get(chave) ?? { n: 0, onde: caminho };
@@ -768,6 +778,58 @@ for (const ficheiro of paginasDe(DIST)) {
       contas.localizadores_en_sem_marca++;
       anota(achados.localizadores, texto.slice(0, 70), rel);
     }
+  }
+
+  /**
+   * --- L9 · o rótulo de IA: o nome é um nome, a frase é da página -----------
+   *
+   * O rótulo de todas as páginas acaba no nome de quem detém a
+   * responsabilidade editorial, e esse nome é português nas duas edições. Vale
+   * aqui a regra da §1.82, aplicada a um nome de pessoa em vez de a um título
+   * de documento: **um nome não se traduz, e diz em que língua está**. Sem
+   * marca, uma página inglesa manda um leitor de ecrã ler «Nuno dos Santos»
+   * com fonética inglesa, e é o nome de quem responde pela publicação.
+   *
+   * NOS DOIS SENTIDOS, como L4d e L4e: a marca que falta e a marca a mais são o
+   * mesmo defeito visto de dois lados. Numa página portuguesa o nome está na
+   * língua da página e não leva marca própria nenhuma; numa página inglesa leva
+   * a sua. É `efetivaEsperada()` que o diz, e é a mesma função das outras.
+   *
+   * E A LINHA LEVA A LÍNGUA DA PÁGINA. O nome é a única coisa deste bloco que
+   * está noutra língua: se um ancestral impuser uma língua à linha inteira, a
+   * frase aprovada passa a ser lida na língua errada de uma ponta à outra.
+   */
+  for (const el of root.querySelectorAll('[data-rotulo-nome]')) {
+    const texto = norm(el.text);
+    contas.nomes_do_rotulo++;
+    contas[lang === 'pt' ? 'nomes_do_rotulo_em_pt' : 'nomes_do_rotulo_em_en']++;
+    if (texto !== RESPONSAVEL_EDITORIAL) {
+      contas.nomes_do_rotulo_errados++;
+      anota(achados.rotulo, `o nome marcado é «${texto.slice(0, 60)}»`, rel);
+      continue;
+    }
+    const declarada = LINGUA_DO_RESPONSAVEL === 'pt-PT' ? 'pt' : 'en';
+    const efetiva = efetivaEsperada(declarada, lingua);
+    if (langDe(el) === efetiva) {
+      contas.nomes_do_rotulo_certos++;
+      continue;
+    }
+    contas.nomes_do_rotulo_errados++;
+    anota(
+      achados.rotulo,
+      `${motivo(langDe(el), efetiva, declarada, lang)} · «${texto}» (o nome de quem responde)`,
+      rel,
+    );
+  }
+  for (const el of root.querySelectorAll('.rotulo-ia-linha')) {
+    contas.linhas_do_rotulo++;
+    if (langDe(el) === lingua) continue;
+    contas.linhas_do_rotulo_erradas++;
+    anota(
+      achados.rotulo,
+      `a linha do rótulo lê-se em «${langDe(el)}» e a página é «${lingua}»`,
+      rel,
+    );
   }
 
   /* --- L6b · o mesmo título, no texto que só um leitor de ecrã ouve --- */
@@ -985,6 +1047,31 @@ for (const pos of positivos) {
   erros.push(`a varredura não viu um único ${pos.o}.\n      ${pos.porque}`);
 }
 
+/* --- L9 · o que a varredura do rótulo achou, e o seu mínimo positivo -------
+ *
+ * O rótulo é de TODAS as páginas construídas fora dos documentos alojados, e
+ * por isso o mínimo positivo é o mais forte que esta régua tem: se a varredura
+ * não viu nomes nas duas edições, não está a olhar para o sítio, e o zero de
+ * defeitos não prova nada. */
+for (const [chave, x] of achados.rotulo) {
+  erros.push(`o rótulo de IA: ${chave}\n      primeira ocorrência em ${x.onde} (${x.n} no total).`);
+}
+if (contas.nomes_do_rotulo_em_pt === 0 || contas.nomes_do_rotulo_em_en === 0) {
+  erros.push(
+    `a varredura viu ${contas.nomes_do_rotulo_em_pt} nome(s) do rótulo em «pt» e ` +
+      `${contas.nomes_do_rotulo_em_en} em «en». O rótulo é de todas as páginas construídas das ` +
+      `duas edições: um zero de qualquer dos lados quer dizer que L9 não olhou para nada, e o ` +
+      `verde dela não prova coisa nenhuma.`,
+  );
+}
+if (contas.linhas_do_rotulo === 0) {
+  erros.push(
+    `a varredura não viu uma única linha de rótulo («.rotulo-ia-linha»). Ou a classe mudou de ` +
+      `nome e L9 ficou cega, ou o rótulo deixou de se render: nos dois casos a conferência da ` +
+      `língua da frase deixou de existir.`,
+  );
+}
+
 /* O positivo conhecido da varredura: se nenhuma unidade traduzida se rendeu, a
    régua está a olhar para um sítio onde a tradução não chegou, e o zero de L3
    não vale nada. */
@@ -1043,6 +1130,9 @@ console.log(
       `${contas.leis_en_em_transcricao} dentro de transcrição do motor · ` +
       `títulos de estudo portugueses em «en»: ${contas.estudos_pt_en} à vista e ` +
       `${contas.estudos_pt_ocultos} no oculto, todos com marca · ` +
+      `rótulo de IA: ${contas.nomes_do_rotulo} nome(s) de quem responde ` +
+      `(${contas.nomes_do_rotulo_em_pt} em «pt», ${contas.nomes_do_rotulo_em_en} em «en»), ` +
+      `todos com a marca certa, e ${contas.linhas_do_rotulo} linha(s) na língua da página · ` +
       `atributos repetidos: nenhum`,
   ),
 );
