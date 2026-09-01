@@ -41,6 +41,9 @@ import Comando from '../components/inicio/Comando.astro';
 import Peca from '../components/inicio/Peca.astro';
 import Portas from '../components/inicio/Portas.astro';
 import Cabeca from '../components/inicio/Cabeca.astro';
+import CabecaDoLugar from '../components/inicio/CabecaDoLugar.astro';
+import Faixa from '../components/inicio/Faixa.astro';
+import Gaveta from '../components/inicio/Gaveta.astro';
 import Pesquisa from '../components/inicio/Pesquisa.astro';
 import MapaRespira from '../components/inicio/MapaRespira.astro';
 import ListaDosNomes from '../components/inicio/ListaDosNomes.astro';
@@ -133,6 +136,48 @@ const lede = ledeDoPainel(medidas, s.inicio.cabeca.ledePais, lang);
 /* O Painel Social Europeu: a lista da Emenda 16, com a linha de cada medida. */
 const sociais = FIGURAS_SOCIAL.map((f) => ({ ...f, linha: getClaim(f.claim) }));
 
+/* ---------------------------------------------------------------------------
+ * OS CARTÕES DA FAIXA (01.09.2026)
+ * ---------------------------------------------------------------------------
+ * São as mesmas medidas que os dois painéis rendem por baixo, pela mesma ordem e
+ * da mesma lista: 13 do Procedimento e 8 do Painel Social. NÃO é uma segunda
+ * lista — é a mesma, lida uma vez, e por isso um cartão nunca pode nomear uma
+ * medida que o painel não tenha, nem o contrário. A régua `tests/inicio/
+ * faixa.mjs` compara os dois conjuntos elemento a elemento, e não pelo tamanho.
+ *
+ * O DESTINO DE CADA CARTÃO é a âncora da leitura daquela medida NESTA página: a
+ * peça, no painel do Procedimento; a linha, na lista do Painel Social. É a mesma
+ * relação que a lista dos nomes tem com o mapa — um índice e o que ele indexa —,
+ * e é o que a Emenda 4 do brief chama a «Leitura breve» de um cartão.
+ *
+ * O ESTADO SÓ EXISTE ONDE HÁ LIMIAR PUBLICADO (Emenda 1). As oito medidas do
+ * Painel Social não têm limiar nenhum — a fonte classifica pela posição na
+ * distribuição dos Estados-Membros —, e por isso os seus cartões não levam
+ * palavra de estado nem quadrado: `estado` chega a `null` e a faixa desenha a
+ * fila vazia, para que os valores de todos os cartões se leiam à mesma altura.
+ * Desenhar-lhes a palavra «sem limiar» seria dizer que a casa procurou um limiar
+ * e não o encontrou, quando o quadro nunca publicou nenhum.
+ *
+ * `glifos` é o comprimento do valor publicado, contado aqui e passado à folha
+ * como ficha: é a mesma conta que `Peca.astro` faz para escolher o corpo do
+ * número, e não um algarismo novo na página.
+ */
+const cartaoDaMedida = (f, estado) => {
+  const linha = getClaim(f.claim);
+  return {
+    id: f.claim,
+    ancora: `m-${f.claim}`,
+    nome: f.nome[lang],
+    medida: f.medida[lang],
+    estado,
+    glifos: [...String(linha.value)].length,
+  };
+};
+const cartoes = [
+  ...medidas.map((f) => cartaoDaMedida(f, f.estado ?? 'sem')),
+  ...sociais.map((f) => cartaoDaMedida(f, null)),
+];
+
 /* -------------------------------------------------------------- os concelhos
  *
  * `primeiroSemPagina` SAIU COM O BLOCO VAZIO (Emenda 19a). Era o concelho com
@@ -198,87 +243,90 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
   <Masthead slot="masthead" lang={lang} path={path} compact={false} furniture={true} />
 
   <div class="inicio" data-inicio data-ambito="pais" data-densidade="relance">
-    <Comando s={s} hrefs={hrefs} portaDaRegiao={portaDaRegiao} slugsDasRegioes={regioesComPorta} />
-
     {/* ----------------------------------------------------------------------
-        A PESQUISA DEIXA DE SER UM PAINEL QUE ABRE (bloco A, itens A1, A2 e A4)
+        A CABEÇA NOVA: NOME, MANCHETE, FAIXA, MAPA (01.09.2026)
         ----------------------------------------------------------------------
-        Era `<div class="cmd-sub" data-sub="municipio" hidden>`, e quem lhe tirava
-        o `hidden` era o script, quando o âmbito passava a «município». Abaixo de
-        640 isso deixou de servir: com o mapa fora do telemóvel (item A4), a
-        pesquisa é o caminho para o concelho e tem de estar à VISTA, em qualquer
-        estado, logo por baixo da lede.
+        É o conceito do diretor de 31.08 e a ordem de construção de 01.09: «nome,
+        manchete, faixa, mapa, por esta ordem no documento e no ecrã, nas duas
+        larguras». O nome é o do cabeçalho, que já lá está; o resto é esta
+        grelha, e a ordem do documento é a de cima para baixo, com o mapa por
+        último. Acima de 1024 a folha põe o mapa na coluna direita, do topo da
+        manchete ao fundo da legenda (a emenda das 19:50 de 29.08 à §1.84), e a
+        coluna esquerda é a pilha manchete, faixa, gavetas, legenda.
 
-        Quem decide agora é a FOLHA, pelo `data-modo` que a raiz já carrega — a
-        mesma técnica de `data-postura` no mapa (etapa 2m): acima de 640 a
-        pesquisa só se vê no modo «município»; abaixo de 640 vê-se sempre. O
-        atributo `hidden` sai daqui porque um `[hidden]` não se deixa reabrir por
-        uma regra de largura, e uma segunda cópia do 640 dentro do script
-        divergiria da primeira no dia em que a folha mudasse.
-
-        A FILA DAS REGIÕES SAIU COM O COMANDO «REGIÃO» (item A2), e o comando
-        voltou sem ela (Emenda 21b): «Região» é agora uma ligação para `/regioes`,
-        e não um painel que abre. Um endereço `?ambito=regiao:<slug>` deixou de
-        ser um estado desta página e leva à página daquela região, que é o que a
-        Emenda 7 promete a um endereço partilhado.
+        O QUE SAIU DAQUI. A linha de comando («Âmbito · País Região Concelho
+        Áreas» e «Densidade · Relance Leitura breve») era o primeiro bloco desta
+        coluna e media 116,2 px a 390 px, entre a manchete e a busca. Sai da
+        cabeça e desce para o cabeçalho do painel, que é o que o brief manda («o
+        âmbito vive no menu, a densidade no cabeçalho do painel»); a busca deixa
+        de ser um bloco à vista e recolhe-se numa gaveta ao lado do mapa, com os
+        nomes das 29. O que ocupa o lugar dos dois é a faixa, e o nome dela é a
+        frase que substitui as duas palavras da casa.
         ---------------------------------------------------------------------- */}
-    <div class="pesquisa-bloco" data-pesquisa-bloco>
-      <Pesquisa s={s} lang={lang} p={p} concelhos={cs} destino={destinoDoConcelho} />
-    </div>
+    <CabecaDoLugar forma="pais" chave="pais">
+      {/* A COLUNA DA CABEÇA DO PAÍS entra por ranhura, e não pelo rótulo e pela
+          manchete do componente: ela é a única das três que tem ESTADO (a lista
+          de blocos que o guião acende) e duas contagens da prova dentro da
+          manchete. O que as três partilham é a moldura, a ordem e as classes. */}
+      <Cabeca slot="col" s={s} lang={lang} p={p} blocos={blocos} ambito="pais" lede={lede} />
 
-    <div class="cabeca-grelha" data-grelha>
-      <Cabeca s={s} lang={lang} p={p} blocos={blocos} ambito="pais" lede={lede} />
       {/* ------------------------------------------------------------------
-          OS NOMES DAS 29, IRMÃOS DA CABEÇA E DO INSTRUMENTO (29.08.2026)
+          A FAIXA, ENTRE A MANCHETE E O MAPA (afinação 2 do brief)
           ------------------------------------------------------------------
-          Estavam dentro de `MapaRespira`, por baixo do mapa, e por isso viviam
-          na coluna do instrumento: a 1280 eram 815 px de nomes à direita com a
-          coluna esquerda vazia por baixo da manchete. A decisão do diretor
-          põe-nos na coluna esquerda, onde havia papel a mais.
-
-          O BLOCO É FILHO DA GRELHA, e é isso que torna a colocação possível sem
-          uma segunda rendição: uma lista dentro do mapa não muda de coluna, e
-          duas listas seriam 58 ligações para 29 páginas. Quem decide a coluna é
-          a folha, pelo mesmo `.cabeca-grelha` que já coloca as outras duas.
-
-          E VEM ANTES DO MAPA NO DOCUMENTO (leitura cruzada de 29.08.2026). A
-          lista estava depois, e acima de 1024 ela está à esquerda e o mapa à
-          direita: quem percorre a página pelo teclado ou com um leitor de ecrã
-          encontrava as 29 áreas do mapa antes dos 29 nomes, que é o contrário
-          do que vê quem olha. A lista é o índice do mapa e a ordem do documento
-          passa a dizê-lo. Abaixo de 1024 a folha inverte a ordem no ecrã, com
-          `order`, porque ali o mapa é a coisa e os nomes são a rede dele; é a
-          única largura em que as duas ordens divergem, e a folha escreve
-          porquê.
+          «A faixa fica entre a manchete e o mapa, não por cima dele.» Os
+          cartões são as 21 medidas dos dois quadros da União — as 13 do
+          Procedimento e as 8 do Painel Social —, pela ordem em que os dois
+          painéis as rendem por baixo, e cada cartão abre a leitura da sua
+          medida na mesma página. Quando os domínios da primeira vaga entrarem,
+          são eles os cartões, e esta lista muda de conteúdo sem mudar de forma:
+          é para isso que a cabeça é um contentor.
           ------------------------------------------------------------------ */}
-      <ListaDosNomes s={s} lang={lang} />
+      <Faixa slot="faixa" s={s} lang={lang} rotulo={s.inicio.faixa.rotulo} cartoes={cartoes} />
 
-      <div class="cabeca-inst" data-coluna-instrumento>
-        <MapaRespira s={s} lang={lang} p={p} concelhos={cs} />
+      {/* ------------------------------------------------------------------
+          AS DUAS GAVETAS DO MAPA (afinação 1 do brief)
+          ------------------------------------------------------------------
+          «A caixa de busca, os oito nomes e a lista dos quarenta deixam de ser
+          coisas separadas e recolhem-se no mapa.» São duas gavetas fechadas ao
+          lado dele: os nomes das 29 unidades, que são o índice do desenho, e a
+          busca dos 308 concelhos, que é o caminho para um concelho a qualquer
+          largura.
 
-        {/* ----------------------------------------------------------------
-            OS DOIS DESTINOS DO TELEMÓVEL SAÍRAM (bloco A, itens A2 e A4)
-            ----------------------------------------------------------------
-            «Abrir um concelho →» e «Ver uma região →», ao lado do selo do mapa,
-            eram a cara móvel do comando de âmbito, com outros nomes e outra
-            forma (achado C5), e o primeiro rolava a página para lá do que
-            abria (achado B1). Os dois foram substituídos pelo comando único das
-            duas larguras. O selo do país saiu com eles: abaixo de 640 o mapa
-            deixa de se render, e uma porta invisível por cima de um espaço em
-            branco é uma porta que ninguém vê e que qualquer polegar abre.
+          A LISTA CONTINUA A VIR ANTES DO MAPA NO DOCUMENTO, pela razão da
+          leitura cruzada de 29.08: ela é o índice do desenho, e quem percorre a
+          página pelo teclado tem de a encontrar primeiro. O que muda é que
+          agora está fechada, e é o `<summary>` que se encontra.
 
-            A Emenda 3 continua de pé por baixo desta correção: no telemóvel os
-            308 pontos nunca são alvos, e a pesquisa é o caminho principal. O que
-            muda é que a pesquisa deixou de estar atrás de um comando.
-            ---------------------------------------------------------------- */}
+          A EMENDA 20c CONTINUA PROTEGIDA, e é a pergunta que este bloco tem de
+          responder: abaixo de 1024 nenhuma das 29 unidades chega aos 44 px pelo
+          quadrado inscrito (I82), e a rede de nomes é o alvo que responde por
+          elas. Fechada, a rede continua a existir para o teclado e para quem
+          ouve — o `<summary>` é um alvo de 44 px e abre sem guião —, e cada nome
+          continua a medir 44 × 44 px quando a gaveta está aberta. É a decisão
+          do brief (afinação 1) a emendar a decisão da I101, que mandava a rede
+          mostrar-se sempre; a régua `lista.mjs` L9 passa a medir a forma nova.
+          ------------------------------------------------------------------ */}
+      <div class="cabeca-lado" slot="lado" data-cabeca-lado>
+        <Gaveta chave="nomes" rotulo={s.inicio.mapa.nomesGaveta}>
+          <ListaDosNomes s={s} lang={lang} />
+        </Gaveta>
+
+        <div class="pesquisa-bloco" data-pesquisa-bloco>
+          <Gaveta chave="busca" rotulo={s.inicio.mapa.buscaGaveta}>
+            <Pesquisa s={s} lang={lang} p={p} concelhos={cs} destino={destinoDoConcelho} />
+          </Gaveta>
+        </div>
+
+        {/* A legenda do mapa (a linha dos 308 e a menção da Carta) fica no fim
+            desta coluna, alinhada ao fundo do mapa a partir de 1280, como a
+            emenda das 19:50 de 29.08 à §1.84 decidiu; entre 1024 e 1279 fica
+            por baixo do mapa, na coluna dele, e abaixo de 1024 entre o mapa e
+            as gavetas. */}
+        <LegendaDoMapa s={s} lang={lang} />
       </div>
 
-      {/* A legenda do mapa (a linha dos 308 e a menção da Carta) é a quarta
-          filha da grelha: a folha põe-na por baixo dos nomes a partir de 1280,
-          alinhada ao fundo do mapa, e por baixo do mapa antes disso. */}
-      <LegendaDoMapa s={s} lang={lang} />
-
-    </div>
+      <MapaRespira slot="instrumento" s={s} lang={lang} p={p} concelhos={cs} />
+    </CabecaDoLugar>
 
     {/* A REGUA DA REGIÃO SAIU DA PRIMEIRA PÁGINA (bloco A, itens A2 e A3).
         A banda desenhava as seis leituras da convergência no âmbito «região»,
@@ -291,6 +339,25 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
         página. É aqui que a mudança de âmbito e de densidade se diz a quem não a
         vê acontecer. */}
     <p class="vh" role="status" aria-live="polite" data-anuncio></p>
+
+    {/* ----------------------------------------------------------------------
+        A LINHA DE COMANDO, NO CABEÇALHO DO PAINEL (01.09.2026)
+        ----------------------------------------------------------------------
+        Estava em cima, dentro da cabeça, e sai dela: «Âmbito» e «Densidade» são
+        vocabulário da casa e ocupavam duas filas do primeiro ecrã do telemóvel.
+        A densidade fica onde o brief a manda pôr — no cabeçalho do painel, ao pé
+        do que ela abre e fecha —, e o âmbito desce com ela por uma razão medida
+        e não por gosto: as suas quatro posições são as mesmas quatro cadeias de
+        `s.ambito`, e levá-las para a navegação do cabeçalho mudaria a fila de
+        oito posições que a §1.51 fixou, em 6 600 páginas. A decisão de as levar
+        ao menu é do diretor, e está no relatório como dúvida.
+
+        FICA DENTRO DE `[data-inicio]`, e isso não é um detalhe: `public/js/
+        inicio.js` procura os comandos DENTRO da raiz do estado, e a matriz mede
+        que a fila tem exactamente «pais, regiao, municipio». O que muda é o
+        lugar na coluna, e mais nada.
+        ---------------------------------------------------------------------- */}
+    <Comando s={s} hrefs={hrefs} portaDaRegiao={portaDaRegiao} slugsDasRegioes={regioesComPorta} />
   </div>
 
   <!-- ============================ O painel -->

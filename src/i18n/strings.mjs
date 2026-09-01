@@ -483,6 +483,34 @@ export const STRINGS = {
         distritoDe: 'distrito de ',
       },
 
+      /**
+       * ---------------------------------------------------------------------
+       * A FAIXA (bloco «a cabeça nova como contentor», 01.09.2026)
+       * ---------------------------------------------------------------------
+       * UMA CADEIA SÓ, e é o nome da faixa: o que a coisa é, na forma da Emenda
+       * 18 e na gramática do nome do mapa («Mapa dos distritos e das ilhas de
+       * Portugal, com uma área por unidade.»), que diz o que o desenho é e como
+       * está feito, e não como se usa nem porque confiar.
+       *
+       * É ELA QUE SUBSTITUI «ÂMBITO» E «DENSIDADE» NA CABEÇA. As duas palavras
+       * eram vocabulário da casa a nomear dois comandos, e o comando saiu da
+       * cabeça; o que fica na cabeça, entre a manchete e o mapa, é a faixa, e
+       * uma lista precisa de um nome para quem a ouve. O nome não se vê: é o
+       * `aria-label` da lista, como o do mapa, porque um rótulo à vista por cima
+       * dos cartões custaria a linha de ecrã que este bloco existe para poupar.
+       * A escolha está no relatório do construtor, com as alternativas.
+       *
+       * NÃO NOMEIA O LUGAR, e é uma decisão medida: «As medidas de Portugal» na
+       * primeira página obrigaria a «As medidas de Évora» nas 308 e a «As
+       * medidas do Alentejo» nas 9, com a preposição a contrair-se por nome, e a
+       * régua da voz lê os `aria-label` desde a I79 — seriam 318 frases novas no
+       * inventário. O lugar já está dito no rótulo da cabeça e na manchete, a
+       * três linhas de distância.
+       */
+      faixa: {
+        rotulo: 'As medidas, uma por cartão',
+      },
+
       /* AS TRÊS CADEIAS DO TELEMÓVEL FICAM SEM SUPERFÍCIE (bloco A, itens A2 e
          A4). Os dois destinos («Abrir um concelho →», «Ver uma região →») foram
          substituídos pelo comando único das duas larguras, e o selo do país saiu
@@ -537,6 +565,15 @@ export const STRINGS = {
            primeira página passa a ser as 29 unidades da Carta como áreas, e o
            seu nome diz isso: o que a coisa é, e não como se usa. */
         distritosLabel: 'Mapa dos distritos e das ilhas de Portugal, com uma área por unidade.',
+        /* AS DUAS GAVETAS DO MAPA (01.09.2026). A afinação 1 do brief da forma
+           dos domínios recolhe no mapa a busca e a lista dos nomes, e cada uma
+           fica atrás de um `<summary>`. As duas cadeias nomeiam o que está do
+           outro lado, e não o gesto: «Os nomes no mapa» é a lista das 29
+           unidades que o desenho tem, e «Um concelho pelo nome» é a busca dos
+           308. Nenhuma diz «abrir», «tocar» ou «escolher», que seria a casa a
+           ensinar o leitor a usar um `<details>`. */
+        nomesGaveta: 'Os nomes no mapa',
+        buscaGaveta: 'Um concelho pelo nome',
         /* «trocar de concelho» rende-se no cartão localizador, que vive na
            página do concelho, e leva ao índice dos 308. `paginaInteira` («a
            página inteira, com quem governou») saiu com a Emenda 19a: era a
@@ -1219,6 +1256,28 @@ export const STRINGS = {
     },
 
     municipio: {
+      /* ---------------------------------------------------------------------
+       * A MANCHETE DO CONCELHO (01.09.2026)
+       * ---------------------------------------------------------------------
+       * A cabeça das três camadas é a mesma, e o brief pede que a manchete seja
+       * «uma afirmação com números selados» e não um título. A do país conta
+       * limiares; a de uma região é a frase da região, que já existia. Um
+       * concelho não tinha nenhuma, e esta é a mais barata que é verdadeira nos
+       * 308: a população residente, que é a única medida que todos publicam, com
+       * o seu selo e a sua linha.
+       *
+       * A FRASE PARTE-SE ONDE O NÚMERO ENTRA, como a do país: nenhuma destas
+       * duas cadeias traz um algarismo, e o valor entra por `<Claim/>`. O nome
+       * do concelho vai declarado como lugar e não é prosa da casa.
+       *
+       * NÃO DIZ MAIS NADA, e é uma decisão: um segundo membro sobre o índice de
+       * dívida contra o teto legal era possível (o estado está medido em
+       * `pecasDoConcelho`), e seria a casa a escolher, por 308 páginas, qual das
+       * sete medidas merece a manchete. Essa escolha é do diretor, e está no
+       * relatório como proposta.
+       */
+      mancheteA: ' tem ',
+      mancheteB: ' pessoas.',
       eyebrow: 'Município',
       /* O título e a descrição do <head> não podem ter algarismos: o portão só
          tolera aí as cadeias que calcula do registo. Compõem-se com o nome do
@@ -1787,6 +1846,12 @@ export const STRINGS = {
         distritoDe: 'district of ',
       },
 
+      /* O nome da faixa. Ver a razão na edição portuguesa: uma cadeia só, sem o
+         nome do lugar, na gramática do nome do mapa. */
+      faixa: {
+        rotulo: 'The measures, one per card',
+      },
+
       movel: {
         abrirConcelho: 'Open a municipality',
         verRegiao: 'See a region',
@@ -1811,6 +1876,9 @@ export const STRINGS = {
           'Keyboard: Tab to the map, arrow keys to move between neighbouring municipalities, Home to return to Évora.',
         svgLabel: 'Point map of the municipalities of Portugal.',
         distritosLabel: 'Map of the districts and islands of Portugal, one area per unit.',
+        /* As duas gavetas do mapa. Ver a razão na edição portuguesa. */
+        nomesGaveta: 'The names on the map',
+        buscaGaveta: 'A municipality by name',
         trocar: 'change municipality',
       },
 
@@ -2172,6 +2240,9 @@ export const STRINGS = {
     },
 
     municipio: {
+      /* A manchete do concelho. Ver a razão na edição portuguesa. */
+      mancheteA: ' has ',
+      mancheteB: ' people.',
       eyebrow: 'Municipality',
       metaCauda: 'the municipality, measured · O Estado do País',
       metaDescricaoA: 'What the sources publish about the municipality of ',

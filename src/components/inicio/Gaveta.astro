@@ -1,0 +1,43 @@
+---
+/**
+ * UMA GAVETA · o `<details>` da casa, sem uma linha de guião.
+ *
+ * ---------------------------------------------------------------------------
+ * PORQUE EXISTE
+ * ---------------------------------------------------------------------------
+ * A afinação 1 do brief da forma dos domínios (31.08.2026): «a caixa de busca,
+ * os oito nomes e a lista dos quarenta deixam de ser coisas separadas e
+ * recolhem-se no mapa», e «a lista dos nomes sobrevive fechada (um `<details>`
+ * ou equivalente sem guião), para teclado e leitores de ecrã, porque um mapa sem
+ * lista não é navegável por quem não vê».
+ *
+ * São duas gavetas, com a mesma forma, ao lado do mapa: os nomes das 29 unidades
+ * e a busca dos 308 concelhos. Uma forma escrita duas vezes divergiria à segunda
+ * mudança, e por isso é um componente.
+ *
+ * ---------------------------------------------------------------------------
+ * É UM `<details>` NATIVO, E É POR ISSO QUE FUNCIONA SEM SCRIPT
+ * ---------------------------------------------------------------------------
+ * A mesma razão que `Peca.astro` escreve para a densidade e que `Masthead.astro`
+ * escreve para o menu: o `<details>` é um elemento do navegador, com teclado,
+ * com estado anunciado e com foco, e nenhuma implementação nossa faria melhor.
+ * O que a folha faz é o desenho do `<summary>`, ou seja o triângulo que roda e
+ * o alvo de 44 px, e mais nada.
+ *
+ * O CONTEÚDO FICA DENTRO, e não como irmão. A razão pela qual a navegação do
+ * cabeçalho o põe fora está escrita lá: ela tem de estar VISÍVEL a 1280, onde o
+ * comando não se desenha, e um `<details>` fechado é escondido pelo navegador.
+ * Aqui não: a gaveta está fechada a todas as larguras, e é o leitor que a abre.
+ */
+const { rotulo, chave } = Astro.props;
+---
+
+<details class="gaveta" data-gaveta={chave}>
+  <summary class="gaveta-abrir">
+    <span class="gaveta-seta" aria-hidden="true"></span>
+    <span class="gaveta-nome">{rotulo}</span>
+  </summary>
+  <div class="gaveta-corpo">
+    <slot />
+  </div>
+</details>

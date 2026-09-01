@@ -1,0 +1,168 @@
+---
+/**
+ * A FAIXA DE CARTÕES · o «Relance» de um lugar, percorrível de lado.
+ *
+ * ---------------------------------------------------------------------------
+ * O QUE ELA É, E DE ONDE VEM
+ * ---------------------------------------------------------------------------
+ * É o conceito do diretor de 31.08.2026, tal como o brief da forma dos domínios
+ * o fixa (§1): «o primeiro ecrã é o instrumento inteiro: o nome, a manchete, uma
+ * faixa de cartões com os números que se percorre de lado, e o mapa». A faixa é
+ * o «Relance» da camada 1 (IDENTIDADE §4); tocar num cartão leva à «Leitura
+ * breve» daquela medida, que vive por baixo, na mesma página.
+ *
+ * Antes deste bloco, a 390 px, o primeiro número selado de uma MEDIDA ficava a
+ * 2 071,9 px da manchete, ou seja a 2,45 ecrãs de 844 px (medido a 01.09.2026
+ * sobre `307796f`, em `medicoes/cabeca-antes.json`): entre a manchete e o
+ * primeiro número estavam a linha de comando, a busca, o mapa, a legenda e a
+ * pilha dos 29 nomes. A faixa põe os números onde eles têm de estar.
+ *
+ * ---------------------------------------------------------------------------
+ * SEM UMA LINHA DE JAVASCRIPT, E É UMA LISTA NO DOCUMENTO
+ * ---------------------------------------------------------------------------
+ * A afinação 2 do brief: «a faixa fica entre a manchete e o mapa, não por cima
+ * dele, com `scroll-snap` em CSS, sem biblioteca nem JavaScript; os cartões são
+ * uma lista no documento (`<ol>` ou `<ul>`), percorrível por teclado, e o
+ * primeiro cartão é visível sem gesto».
+ *
+ * É uma `<ol>`: a ordem importa e é a do painel (os quatro limiares
+ * ultrapassados primeiro, como `figuras.mjs` os ordena). Com o guião desligado a
+ * faixa é exactamente o que é com ele: uma lista que se percorre com o dedo, com
+ * a roda ou com o `Tab`. Não há botões de seta, não há pontos de página, não há
+ * nada para um guião fazer.
+ *
+ * ---------------------------------------------------------------------------
+ * O CARTÃO INTEIRO É ALVO, E O SELO NÃO FICA DENTRO DELE (Emenda 2)
+ * ---------------------------------------------------------------------------
+ * A regra da casa é dupla e as duas metades puxam para lados opostos: «os
+ * cartões da faixa são alvos inteiros» (brief §4) e «o selo nunca fica aninhado
+ * dentro de outro alvo» (Emenda 2, 20.08.2026). Uma porta metida dentro de outra
+ * porta abre a de fora, e quem toca no selo quer a prova.
+ *
+ * A FORMA QUE CUMPRE AS DUAS: o cartão é uma grelha de cinco filas (o estado, o
+ * valor, o nome, a unidade e o selo), e a porta é uma âncora VAZIA que ocupa as
+ * três primeiras. As duas últimas são o PÉ do cartão, e a porta não chega lá.
+ * Nenhum selo fica debaixo da porta, e as caixas não se tocam, que é o que a
+ * célula A10 de `correcoes-a.mjs` exige («uma área sobreposta não é um alvo
+ * maior, é uma porta que abre a linha do vizinho»).
+ *
+ * A UNIDADE ESTÁ NO PÉ E NÃO AO PÉ DO VALOR, e isso não é arrumação: a linha da
+ * unidade de uma medida PODE trazer um valor do livro-razão, e nesse caso traz
+ * também o selo dele. Acontece hoje numa das sete medidas de um concelho: o
+ * índice de dívida escreve «Percentagem, teto legal = 150 · 2024», e o 150 é uma
+ * linha, e o portão de HTML fecha a construção quando esse valor aparece sem
+ * o seu selo. Com a unidade dentro da porta, esse selo ficava debaixo dela. No
+ * pé não fica, e a folha dá à fila da unidade a altura de um alvo quando ela
+ * leva um selo, para que os dois selos do cartão não se sobreponham (é a regra
+ * que a I13 já escreveu: «a saída certa não é encolher a área, é dar altura à
+ * fila»).
+ *
+ * A PORTA É UMA `<a>` COM CAIXA PRÓPRIA E NÃO UM PSEUDO-ELEMENTO ESTICADO, e a
+ * razão é a régua: a área efectiva de um alvo, em `correcoes-a.mjs`, une a caixa
+ * do elemento com a do seu `::after` absoluto CENTRADO nele. Um `::after`
+ * esticado por `inset` mede-se ali no sítio errado, e um alvo que a casa não
+ * sabe medir não é um alvo que a casa possa prometer. Aqui a porta é uma célula
+ * da grelha que atravessa três filas, e a régua lê-a como lê qualquer outra
+ * caixa; não é preciso escrever a altura do pé em píxeis em lado nenhum.
+ *
+ * O NOME ACESSÍVEL DA PORTA VEM DO NOME DA MEDIDA, por `aria-labelledby`, e não
+ * de uma cadeia escrita aqui: a porta não acrescenta uma palavra ao sítio, e o
+ * nome que um leitor de ecrã ouve é exactamente o que está escrito no cartão.
+ * `aria-label` seria uma frase nova por medida, e a régua da voz lê os
+ * `aria-label` desde a I79.
+ *
+ * ---------------------------------------------------------------------------
+ * O VALOR E O SELO SÃO UM SÓ NÓ NO DOCUMENTO, E DUAS CÉLULAS NO ECRÃ
+ * ---------------------------------------------------------------------------
+ * `auditaSelo()` no portão de HTML procura o selo DENTRO do pai do elemento do
+ * valor: «o selo é do VALOR e não da secção». `<Claim chip/>` rende os dois
+ * dentro do mesmo `<span class="claim-com-chip">`, e é essa vizinhança que o
+ * portão confere. Mas o desenho quer o valor em cima, grande, e o selo em baixo,
+ * sozinho na sua fila, que é onde ele é o maior alvo do cartão.
+ *
+ * `display: contents` resolve os dois: o invólucro deixa de ter caixa e os seus
+ * filhos passam a ser células da grelha do cartão, colocadas fila a fila pela
+ * folha. O documento não muda, porque o pai do valor continua a ser o invólucro
+ * que leva o selo, e o ecrã fica como o desenho pede. É a mesma disciplina de
+ * `ListaDosNomes.astro`: o que a régua lê é a árvore, e o que o leitor vê é a
+ * caixa.
+ *
+ * ---------------------------------------------------------------------------
+ * NENHUM NÚMERO NOVO
+ * ---------------------------------------------------------------------------
+ * Cada cartão desenha uma linha do livro-razão, por `<Claim/>`, e o limiar entra
+ * pelo mesmo `data-nonledger="limiar-do-quadro"` que a peça já usa. Não há aqui
+ * uma contagem, uma percentagem nem uma distância: a faixa é uma segunda vista
+ * das mesmas linhas, e não uma segunda conta.
+ */
+import Claim from '../Claim.astro';
+import Frase from '../Frase.astro';
+
+const { s, lang, rotulo, cartoes } = Astro.props;
+
+/* As três palavras de estado da casa, como na peça. Uma medida sem estado (o
+   valor é uma marca da fonte, «N.d.») não tem palavra nem quadrado: as duas
+   condições são a mesma, e por isso escrevem-se uma vez. */
+const PALAVRA = {
+  fora: s.estado.foraDoLimiar,
+  dentro: s.estado.dentroDoLimiar,
+  sem: s.estado.semLimiar,
+};
+---
+
+<div class="faixa-bloco" data-faixa-bloco>
+  <ol class="faixa" data-faixa aria-label={rotulo}>
+    {
+      cartoes.map((c) => {
+        const palavra = PALAVRA[c.estado] ?? null;
+        const pintado = c.estado === 'fora' || c.estado === 'dentro';
+        return (
+          <li
+            class="cartao"
+            data-cartao={c.id}
+            data-estado={c.estado ?? 'sem'}
+            style={c.glifos ? `--cartao-glifos:${c.glifos}` : undefined}
+          >
+            {/* A PORTA, VAZIA E POR CIMA. Ver a nota do cabeçalho: o nome
+                acessível vem do nome da medida, que está escrito na fila de
+                baixo, e a caixa é a das três primeiras filas do cartão. */}
+            <a class="cartao-porta" href={`#${c.ancora}`} aria-labelledby={`k-${c.id}`}></a>
+
+            {/* A FILA DO ESTADO É UM `<div>` E NÃO UM `<p>`, como na peça, e é
+                uma decisão medida e não de gosto: a régua da voz recolhe os
+                blocos de texto (`p, li, h1…`) e as três palavras de estado da
+                casa vivem, desde a Emenda 13, dentro de um `<div class="peca-
+                topo">`: não são prosa da casa, são o vocabulário fechado do
+                estado, e estão declaradas uma vez em `strings.mjs`. Num `<p>` a
+                faixa punha «fora do limiar» a contar como frase nova em 6 590
+                rotas, e a construção fechava a pedir que alguém a classificasse.
+                A mesma palavra, no mesmo sítio da mesma casa, tem de ser lida da
+                mesma maneira nos dois componentes. */}
+            {palavra ? (
+              <div class="cartao-topo">
+                {c.estado !== 'sem' && <span class={`sq sq-${pintado ? c.estado : 'sem'}`} aria-hidden="true" />}
+                <span class:list={['cartao-palavra', pintado && `est-${c.estado}`]}>{palavra}</span>
+              </div>
+            ) : (
+              /* Sem palavra de estado a fila fica, vazia, para que os valores de
+                 todos os cartões da faixa se leiam à mesma altura. Uma fila que
+                 se dissolve num cartão e não no vizinho faz uma serra. */
+              <div class="cartao-topo" aria-hidden="true"></div>
+            )}
+
+            <Claim id={c.id} lang={lang} chip={true} class="cartao-valor" />
+
+            <p class="cartao-nome" id={`k-${c.id}`} data-medida-nome>{c.nome}</p>
+            {/* `selos` LIGADO, E É O PORTÃO QUE O EXIGE: a unidade de uma medida
+                pode citar uma linha do livro-razão (o teto legal do índice de
+                dívida cita-a), e um valor sem o seu selo fecha a construção. É
+                por isto que esta fila está no pé e não dentro da porta. */}
+            <p class="cartao-unidade" data-medida-unidade>
+              <Frase partes={c.medida} lang={lang} selos={true} />
+            </p>
+          </li>
+        );
+      })
+    }
+  </ol>
+</div>
