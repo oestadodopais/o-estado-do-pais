@@ -6,7 +6,7 @@
 
 O sítio publica hoje dois quadros que não são seus: os treze indicadores com limiar do Procedimento dos Desequilíbrios Macroeconómicos e os oito do Painel Social Europeu, mais sete medidas por concelho para os 308 concelhos, e doze estudos. Um leitor que chegue vê dois painéis da União e um mapa. O diretor disse a 31.08 que quem chega tem de ver um observatório, e não meia dúzia de indicadores e estudos difíceis à primeira vista: «sem uma representação compreensiva do que faz a sociedade, falhava logo à partida».
 
-A carta é o quadro da casa. A unidade é o **domínio**: uma área da vida do país sobre a qual um leitor tem perguntas. Cada domínio tem **três a cinco perguntas**, escritas como um leitor as faz; cada pergunta tem **uma medida**, publicada por uma instituição com definição, unidade e base, e **a comparação que a fonte permite** e nenhuma outra: contra um limiar publicado (a meta, o teto, o mínimo legal), contra a posição entre pares (os 27 da União, a OCDE, os 308 concelhos), contra o passado do próprio país (a série, desde quando é comparável, onde quebra). Onde a mesma medida exista **ao nível do concelho**, de uma fonte central para os 308, a página do concelho mostra-a contra o valor nacional e contra o passado do concelho; onde não exista, a página diz «não há número público para isto ao nível do concelho», que é conteúdo de observatório e não uma falha.
+A carta é o quadro da casa. A unidade é o **domínio**: uma área da vida do país sobre a qual um leitor tem perguntas. Cada domínio tem **três a cinco perguntas** no sítio (a lista de candidatas de um domínio pode trazer mais ou menos, e o diretor corta ou espera), escritas como um leitor as faz; cada pergunta tem **uma medida** (ou duas, ditas como tal, quando a pergunta precisa da nacional e da do concelho, ou de dois publicadores para a mesma contagem), publicada por uma instituição com definição, unidade e base, e **a comparação que a fonte permite** e nenhuma outra: contra um limiar publicado (a meta, o teto, o mínimo legal), contra a posição entre pares (os 27 da União, a OCDE, os 308 concelhos), contra o passado do próprio país (a série, desde quando é comparável, onde quebra). Onde a mesma medida exista **ao nível do concelho**, de uma fonte central para os 308, a página do concelho mostra-a contra o valor nacional e contra o passado do concelho; onde não exista, a página diz «não há número público para isto ao nível do concelho», que é conteúdo de observatório e não uma falha.
 
 Um domínio só entra no sítio quando todas as suas medidas passam a disciplina inteira (a linha do livro-razão com fonte, excerto, data de acesso e selo; a verificação por outra família de modelos; os portões da construção). Até lá está ausente, e a ausência diz-se.
 
@@ -60,7 +60,7 @@ As tabelas dizem a pergunta, a medida candidata tal como o publicador a nomeia (
 | As contas públicas estão em equilíbrio? | saldo das administrações públicas (B.9), em % do PIB (notificação do Procedimento dos Défices Excessivos, INE; Eurostat) | o limiar de 3 % do Protocolo n.º 12; o passado | não | E2 |
 | Quanto deve o Estado? | dívida bruta das administrações públicas, em % do PIB (a mesma notificação) | o limiar de 60 %; os 27; o passado | não | E3 |
 | O Estado gasta dentro da regra europeia? | crescimento da despesa líquida contra a taxa máxima recomendada (a trajetória do Conselho da UE; a leitura do Conselho das Finanças Públicas) | o teto publicado | não | E4 |
-| Quanto deve a minha câmara, e qual é o limite? | dívida total do município e limite do artigo 52.º da Lei n.º 73/2013 (DGAL) | o limite legal; o passado do concelho; a contagem nacional de municípios acima do limite (CFP) | sim, 308 | E5 |
+| Quanto deve a minha câmara, e qual é o limite? | dívida total do município e limite do artigo 52.º da Lei n.º 73/2013 (DGAL) | o limite legal; o passado do concelho; a contagem nacional de municípios acima do limite (CFP, `[verify]` na sua vez) | sim: 308 municípios no ficheiro, 307 com dados (Penedono «N.d.») | E5 |
 
 O que o domínio não pergunta aqui, e porquê: a produtividade (o mapa de 18.08 mostrou que é uma pergunta de estudo e não uma série abaixo das NUTS III; fica como estudo); as empresas por concelho (existem no sítio e ficam na página do concelho como medida de contexto deste domínio; a inovação vai para o domínio 11).
 
@@ -68,11 +68,11 @@ O que o domínio não pergunta aqui, e porquê: a produtividade (o mapa de 18.08
 
 | pergunta | medida candidata | comparação | concelho | linha |
 |---|---|---|---|---|
-| Quantas pessoas trabalham? | taxa de emprego dos 20 aos 64 anos (INE, Inquérito ao Emprego; Eurostat) | a meta de 78 % em 2030 do Plano de Ação do Pilar Europeu dos Direitos Sociais; os 27; o passado | não | T1 |
-| Quantas procuram trabalho e não encontram? | taxa de desemprego dos 15 aos 74 anos (INE; Eurostat); e o desemprego registado por concelho (IEFP no continente; DRQPE e IEM nas ilhas) | os 27; o passado; o concelho contra o país e contra o seu passado | sim, 308 (dois publicadores para as ilhas, dito) | T2 |
-| Quanto se ganha? | ganho médio mensal dos trabalhadores por conta de outrem (INE, dos Quadros de Pessoal) | o país; o passado do concelho; a retribuição mínima como referência | sim, se o inventário o confirmar | T3 |
-| As mulheres ganham o mesmo? | disparidade no ganho médio mensal entre sexos por concelho (INE, Quadros de Pessoal); a disparidade salarial não ajustada no país (Eurostat) | o país; os 27; o passado | sim, por concelho, se o inventário o confirmar | T4 |
-| Qual é o salário mínimo em vigor? | retribuição mínima mensal garantida (o decreto-lei anual; a DGERT; o Eurostat para os 27) | os 27, na base do Eurostat; a série dos diplomas | não (é nacional) | T5 |
+| Quantas pessoas trabalham? | taxa de emprego dos 20 aos 64 anos (INE, Inquérito ao Emprego; Eurostat) | a meta de 78 % em 2030 do Plano de Ação do Pilar Europeu dos Direitos Sociais, que é da União no seu conjunto e não de Portugal (a meta nacional `[verify]`); os 27; o passado | não | T1 |
+| Quantas procuram trabalho e não encontram? | taxa de desemprego dos 15 aos 74 anos (INE; Eurostat); e o desemprego registado por concelho (IEFP no continente; DRQPE e IEM nas ilhas) | os 27; o passado; o concelho contra o total do continente e contra o seu passado | sim: 278 do continente verificados hoje pelo IEFP; as 30 das ilhas (DRQPE, IEM) estão no livro-razão desde 28.08 e não foram reverificadas hoje | T2 |
+| Quanto se ganha? | ganho médio mensal dos trabalhadores por conta de outrem (GEP/MTSSS, Quadros de Pessoal; o INE redissemina) | o país; o passado do concelho (2021 a 2024); os 308 entre si | sim, 308 | T3 |
+| As mulheres ganham o mesmo? | a disparidade salarial não ajustada entre homens e mulheres no país (Eurostat, do Inquérito à Estrutura dos Ganhos e de estimativas nacionais; ganho horário, empresas com 10 ou mais pessoas) | os 27; o passado | **não**: o inventário mostrou que o indicador do INE por concelho (`0012661`) é um coeficiente de variação do ganho, não a disparidade entre sexos; por concelho não há disparidade salarial publicada, e a ausência diz-se | T4 |
+| Qual é o salário mínimo em vigor? | retribuição mínima mensal garantida (o decreto-lei anual, lido no texto do diploma servido por `dre.pt`; o Eurostat para os 27) | os 27, na base do Eurostat; a série dos diplomas | não (o valor do decreto-lei vale para o continente; as regiões autónomas fixam o seu) | T5 |
 
 Já publicadas e que ficam neste domínio, sem linha nova: o desemprego de longa duração, os jovens NEM, a disparidade de emprego entre sexos, a taxa de atividade, o custo unitário do trabalho.
 
@@ -84,7 +84,7 @@ Já publicadas e que ficam neste domínio, sem linha nova: o desemprego de longa
 | Envelhecemos? | índice de envelhecimento (INE) | o país; o passado do concelho | sim | P2 |
 | Nascem mais pessoas do que morrem? | saldo natural (INE, indicadores demográficos) | o país; o passado do concelho | sim, se o indicador com total por concelho se confirmar | P3 |
 | O concelho cresce ou encolhe? | taxa de crescimento efetivo (INE) | o país; o passado | sim | P4 |
-| Que idade tem o país? | idade mediana da população (INE; Eurostat) | os 27; o passado | não | P5 |
+| Que idade tem o país? | idade mediana da população (INE; Eurostat) | os 27; o passado (com a nota de que o Eurostat publicou em 2026 duas populações para a mesma data, uma com a revisão do INE de junho e outra sem) | não | P5 |
 
 #### 4 · Migração
 
@@ -92,11 +92,11 @@ O domínio de maior procura, e o que mais precisa de fonte séria. Três coisas 
 
 | pergunta | medida candidata | comparação | concelho | linha |
 |---|---|---|---|---|
-| Quantos estrangeiros residem em Portugal? | cidadãos estrangeiros residentes a 31 de dezembro (AIMA, Relatório de Migrações e Asilo); população estrangeira com estatuto legal de residente (INE, de dados administrativos) | o passado de cada série, com a transição do SEF para a AIMA dita; as duas contagens lado a lado | a do INE, se a série municipal continuar; senão, «parada em <ano>» | M1, M2 |
+| Quantos estrangeiros residem em Portugal? | cidadãos estrangeiros residentes a 31 de dezembro (AIMA, Relatório de Migrações e Asilo); população estrangeira com estatuto legal de residente (INE, de dados administrativos) | o passado de cada série, com a transição do SEF para a AIMA dita; as duas contagens lado a lado | a da AIMA, que publica os 308 concelhos em adenda (2024); a do INE parou em 2023 e diz-se «parada em 2023» | M1, M2 |
 | Quantos entram e quantos saem? | saldo migratório (INE, por concelho); taxa bruta de migração líquida (Eurostat) | os 27; o passado do concelho | sim (INE) | M3 |
-| Quantos portugueses saem? | emigrantes permanentes (INE, estimativas anuais); o Observatório da Emigração como referência | o passado | não | M4 |
+| Quantos portugueses saem? | emigrantes permanentes (a operação é do INE, que transmite ao Eurostat; a base do INE parou em 2020 e o Eurostat publica 2024, pelo que a série lê-se no Eurostat com o INE como fonte); o Observatório da Emigração como referência | o passado | não | M4 |
 | Quantas pessoas pedem proteção? | requerentes de asilo pela primeira vez (AIMA; Eurostat) | os 27; o passado | não | M5 |
-| Quanto contribuem os imigrantes para a Segurança Social, e quanto recebem? | o balanço entre contribuições e prestações dos estrangeiros, tal como o publicador oficial o publique; a hipótese é que só o Observatório das Migrações o compila, com dados do Instituto da Segurança Social, e que não há série primária | só a que o publicador permitir | não | M6 |
+| Quanto contribuem os imigrantes para a Segurança Social, e quanto recebem? | o balanço entre contribuições e prestações dos estrangeiros: o inventário confirmou que o produtor é o Instituto da Segurança Social e que o único publicador legível é o Observatório das Migrações (estudo de março de 2026), sem série pública periódica; a página diz isto, cita o estudo como do Observatório, e a análise vai para um estudo | só o passado da própria série (2015 a 2025) | não | M6 |
 
 #### 5 · Segurança social e pensões
 
@@ -105,10 +105,10 @@ A armadilha do domínio é o perímetro: o saldo da Segurança Social com ou sem
 | pergunta | medida candidata | comparação | concelho | linha |
 |---|---|---|---|---|
 | A Segurança Social tem saldo positivo? | saldo da execução orçamental do subsector da Segurança Social (a Síntese de Execução Orçamental da DGO; a Conta da Segurança Social do IGFSS) | o passado, com o perímetro constante | não | S1 |
-| Quanto vale a reserva, e quantos meses de pensões paga? | o Fundo de Estabilização Financeira da Segurança Social: valor e meses de despesa com pensões cobertos (IGFCSS) | o mínimo legal da Lei de Bases; o passado | não | S2 |
-| Quantos pensionistas há, e quanto recebem em média? | pensionistas da Segurança Social e valor médio das pensões (Instituto da Segurança Social, estatísticas mensais; o INE por concelho, se existir) | o passado; o concelho contra o país | sim, se o inventário o confirmar | S3 |
+| Quanto vale a reserva, e quantos meses de pensões paga? | o Fundo de Estabilização Financeira da Segurança Social: valor e meses de despesa com pensões cobertos (IGFCSS; o CFP calcula os meses) | o mínimo legal de dois anos, do n.º 2 do artigo 16.º do Decreto-Lei n.º 367/2007 (a citação vem do CFP; o diploma fica por ler na fonte); o passado | não | S2 |
+| Quantos pensionistas há, e quanto recebem em média? | pensionistas da Segurança Social e valor médio anual das pensões (o Instituto de Informática produz; o INE redissemina por concelho, 308; o valor médio é anual por pensionista, não mensal, e a CGA fica fora) | o passado desde 2017; o concelho contra o país | sim, 308 | S3 |
 | Quantas pessoas dependem da prestação de último recurso? | beneficiários do rendimento social de inserção por 1000 habitantes em idade ativa (INE, do Instituto de Informática) | o país; o passado do concelho | sim | S4 |
-| Com que idade se acede à pensão? | idade normal de acesso à pensão de velhice (a portaria anual do MTSSS) | o passado (a série das portarias); a idade em vigor é o próprio limiar | não | S5 |
+| Com que idade se acede à pensão? | idade normal de acesso à pensão de velhice (a portaria anual do MTSSS; hoje só a portaria de 2027 foi lida, e a idade em vigor em 2026 fica `[verify]`) | o passado (a série das portarias); a idade em vigor é o próprio limiar | não | S5 |
 
 Já publicadas e que ficam neste domínio: o risco de pobreza ou exclusão social e o rácio S80/S20.
 
@@ -116,10 +116,10 @@ Já publicadas e que ficam neste domínio: o risco de pobreza ou exclusão socia
 
 | pergunta | medida candidata | comparação | concelho | linha |
 |---|---|---|---|---|
-| Quanta água se perde antes de chegar a quem paga? | água não faturada (ERSAR, RASARP, por entidade gestora) | a referência de qualidade da ERSAR; o país; o passado | por entidade gestora, que o inventário liga ao concelho | A1 |
+| Quanta água se perde antes de chegar a quem paga? | água não faturada (ERSAR, RASARP, por entidade gestora) | a referência de qualidade da ERSAR; o país; o passado | não por concelho: a percentagem é por entidade gestora, e várias servem um concelho; por concelho a ERSAR dá só a banda de avaliação (278 do continente) | A1 |
 | A água da torneira é segura? | água segura (ERSAR; o INE redissemina) | a referência da ERSAR; o país; o passado | sim | A2 |
-| Quanta água consumimos? | água consumida ou distribuída por habitante (INE, estatísticas do ambiente) | o país; o passado do concelho | sim, se o inventário o confirmar | A3 |
-| Quanta água há nas albufeiras? | armazenamento das albufeiras em % da capacidade (SNIRH, da APA; boletim mensal) | a média do mês em anos anteriores, se o boletim a imprimir | não (país e bacia) | A4 |
+| Quanta água se distribui por habitante? | água distribuída por habitante (INE, dos sistemas públicos urbanos de serviços de águas; «consumida» não existe por concelho, e a pergunta corrige-se) | o país; o passado do concelho (curto: 2022 e 2023) | sim, 308 | A3 |
+| Quanta água há nas albufeiras? | armazenamento das albufeiras em % da capacidade (SNIRH, da APA; boletim mensal) | a média do mês em anos anteriores, se o boletim a imprimir | não: por albufeira e por bacia, no continente, sem total nacional publicado (e a casa não o soma) | A4 |
 | Usamos mais água do que temos? | índice de exploração da água, WEI+ (Agência Europeia do Ambiente; Eurostat) | o limiar que a AEA publicar; os 27; o passado | não | A5 |
 
 Uma ausência já conhecida do mapa de 18.08, a confirmar no inventário: a população ligada a tratamento secundário de águas residuais não tem observação portuguesa no Eurostat desde 2009; se se confirmar, a página diz-o.
@@ -128,11 +128,11 @@ Uma ausência já conhecida do mapa de 18.08, a confirmar no inventário: a popu
 
 | pergunta | medida candidata | comparação | concelho | linha |
 |---|---|---|---|---|
-| Quantos jovens deixam a escola cedo? | abandono precoce de educação e formação, 18 a 24 anos (INE; Eurostat) | a meta de menos de 9 % em 2030 do Espaço Europeu da Educação; os 27; o passado | não | D1 |
-| Quantos alunos ficam retidos? | taxa de retenção e desistência no ensino básico (DGEEC; o INE redissemina) | o país, Portugal e Continente ditos; o passado do concelho | sim | D2 |
-| Quantas crianças estão no pré-escolar? | taxa bruta de pré-escolarização por concelho (DGEEC; INE); participação a partir dos 3 anos no país (Eurostat) | a meta de 96 % em 2030; os 27; o país e o passado do concelho | sim (a taxa bruta), com a nota de que pode passar de 100 % | D3 |
-| Quantos adultos jovens têm ensino superior? | população dos 25 aos 34 anos com ensino superior (INE; Eurostat) | a meta de 45 % em 2030; os 27; o passado | não | D4 |
-| Como se saem os alunos a matemática? | alunos de 15 anos com baixo desempenho a matemática, PISA (OCDE) | a meta de menos de 15 % em 2030; a OCDE; o passado (as edições) | não | D5 |
+| Quantos jovens deixam a escola cedo? | abandono precoce de educação e formação, 18 a 24 anos (INE; Eurostat) | a meta de 2030 do Espaço Europeu da Educação, na versão que se citar (menos de 9 % na Resolução de 2021; menos de 7 % no Monitor 2025 da Comissão, que agravou a ambição); os 27; o passado | não | D1 |
+| Quantos alunos ficam retidos? | taxa de retenção e desistência no ensino básico (DGEEC; o INE redissemina) | o país, Portugal e Continente ditos; o passado do concelho | sim, 308, pelo concelho do estabelecimento de ensino e não da residência dos alunos | D2 |
+| Quantas crianças estão no pré-escolar? | taxa bruta de pré-escolarização por concelho (DGEEC; INE); participação a partir dos 3 anos no país (Eurostat) | a meta de 96 % em 2030; os 27; o país e o passado do concelho | sim (a taxa bruta), pelo concelho do estabelecimento de ensino, com a nota de que passa dos 100 % por isso, e de que a DGEEC e o INE publicam valores diferentes para o mesmo ano letivo | D3 |
+| Quantos adultos jovens têm ensino superior? | população dos 25 aos 34 anos com ensino superior (INE; Eurostat) | a meta de 2030, na versão que se citar (45 % na Resolução de 2021; 50 % no Monitor 2025); os 27; o passado | não | D4 |
+| Como se saem os alunos a matemática? | alunos de 15 anos com baixo desempenho a matemática, PISA (OCDE) | a meta de menos de 15 % em 2030; a OCDE; o passado (as edições); os resultados do PISA 2025 saem a 8 de setembro de 2026, e a página espera por eles | não | D5 |
 
 Já publicadas e que ficam neste domínio: as competências digitais e as crianças em creche (o Painel Social).
 
@@ -142,11 +142,11 @@ O SNS mede por Unidade Local de Saúde e o INE por município, e as duas unidade
 
 | pergunta | medida candidata | comparação | concelho | linha |
 |---|---|---|---|---|
-| Quanto vivemos? | esperança de vida à nascença (INE; Eurostat) | os 27; o passado; a NUTS III contra o país | não (NUTS III) | H1 |
-| Quantas pessoas não têm médico de família? | utentes inscritos sem médico de família atribuído (Portal da Transparência do SNS) | o passado; a ULS contra o país | não (ULS) | H2 |
+| Quanto vivemos? | esperança de vida à nascença (INE, tábuas de mortalidade por triénio; Eurostat, anual: dois valores oficiais em bases diferentes, e a página diz qual mostra) | os 27; o passado; a região contra o país só onde a fonte a publica com o país na mesma tabela e no mesmo período (NUTS II no Eurostat; a tabela NUTS III do INE não traz o país) | não (NUTS III no INE, NUTS II no Eurostat) | H1 |
+| Quantas pessoas não têm médico de família? | utentes inscritos sem médico de família atribuído (Portal da Transparência do SNS; sem licença declarada, com Notas Legais que restringem a cópia: cita-se o valor, não se redistribui o ficheiro, até à hora do advogado) | o passado; a ULS contra o total do continente, que a fonte não publica e a casa soma dizendo que soma | não (ULS, só continente) | H2 |
 | Quem precisou de cuidados e não os teve? | necessidades de cuidados médicos não satisfeitas, autoavaliadas (INE, ICOR; Eurostat) | os 27; o passado | não | H3 |
-| Quantos médicos há por mil habitantes? | médicas e médicos por 1000 habitantes (INE, do registo da Ordem dos Médicos) | o país; o passado do concelho | sim, com a advertência da residência ou do local de trabalho | H4 |
-| Quantas mortes se teriam evitado? | mortalidade evitável, prevenível e tratável, por 100 000 habitantes (Eurostat) | os 27; o passado | não | H5 |
+| Quantos médicos há por mil habitantes? | médicas e médicos por 1000 habitantes (INE, do registo da Ordem dos Médicos) | o país; o passado do concelho | sim, 308, pelo concelho de residência do médico (não o de trabalho), contando também quem praticou medicina | H4 |
+| Quantas mortes se teriam evitado? | mortalidade evitável, prevenível e tratável (Eurostat; a unidade tal como o conjunto a imprime, «Rate», até a ficha confirmar a base por 100 000) | os 27; o passado | não | H5 |
 
 ### Segunda vaga (candidatas, com `[verify]` até à sua vez)
 
@@ -168,7 +168,7 @@ A indústria espacial portuguesa, pedida pelo diretor. O mapa de 18.08 não a es
 
 #### 13 · Infraestruturas e ferrovia
 
-Quantos passageiros usam a ferrovia (passageiros transportados e passageiros-quilómetro, INE e IMT; Eurostat); que rede existe e quanto dela está eletrificada (Infraestruturas de Portugal, relatório da rede, `[verify]`); a pontualidade e a oferta (CP e IP, `[verify]` se publicam série); quantas pessoas morrem na estrada (ANSR, redisseminada pelo INE por concelho; Eurostat); quantos usam transporte coletivo para ir trabalhar (Censos 2021, por concelho, uma fotografia decenal e dita como tal).
+Quantos passageiros usam a ferrovia (passageiros transportados e passageiros-quilómetro, INE e IMT; Eurostat); que rede existe e quanto dela está eletrificada (Infraestruturas de Portugal, relatório da rede, `[verify]`); a pontualidade e a oferta (CP e IP, `[verify]` se publicam série; a candidata IFR5); quantas pessoas morrem na estrada (ANSR, redisseminada pelo INE por concelho; Eurostat); quantos usam transporte coletivo para ir trabalhar (Censos 2021, por concelho, uma fotografia decenal e dita como tal).
 
 #### 14 · Ambiente e sustentabilidade
 
@@ -223,11 +223,11 @@ O mapa de 18.08 tinha vinte e dois vereditos por domínio, com uma ordem por esc
 
 Dois domínios da carta não estão no mapa: o espaço (12) e a parte do sistema da segurança social e pensões (as linhas S1, S2, S3 e S5); o balanço fiscal da imigração (M6) também não. São as linhas em que o inventário mais provavelmente vai dizer «ausente» ou «parcial», e a carta está escrita para que isso seja uma resposta.
 
-O que o mapa ensinou e a carta leva: oito a doze domínios é a banda dos observatórios credíveis (a carta tem dezoito, por decisão do diretor, e por isso as vagas: seis domínios de cada vez no ar, nunca dezoito de uma vez); três a seis medidas por domínio com o registo inteiro a uma porta de distância e a fronteira dita numa frase por página; duas datas em cada número (o período e a publicação; a casa acrescenta a terceira, a conferência); um estado publicado por fonte (viva, parada desde, em revisão desde, descontinuada com a razão) rendido no selo; uma lista fixa de unidades e de medidas, uma fonte central por medida, igual para os 308.
+O que o mapa ensinou e a carta leva: oito a doze domínios é a banda dos observatórios credíveis (a carta tem dezoito, por decisão do diretor, e por isso as vagas: oito na primeira, seis na segunda, quatro na terceira, nunca dezoito de uma vez); três a seis medidas por domínio com o registo inteiro a uma porta de distância e a fronteira dita numa frase por página; duas datas em cada número (o período e a publicação; a casa acrescenta a terceira, a conferência); um estado publicado por fonte (viva, parada desde, em revisão desde, descontinuada com a razão) rendido no selo; uma lista fixa de unidades e de medidas, uma fonte central por medida, igual para os 308.
 
 ## 5 · As ausências que a carta já espera
 
-Ditas na página do domínio como conteúdo, com as pistas registadas no inventário, se o inventário as confirmar hoje: o balanço fiscal da imigração como série primária (M6); a população estrangeira por concelho depois de 2023 (M2); as rendas nos concelhos com menos de cem mil habitantes (9); a população ligada a tratamento de águas residuais desde 2009 (6); a transparência municipal desde a suspensão do índice (18); a saúde por concelho (8: a unidade é a ULS); os tribunais por concelho (17: a unidade é o país); a pobreza por concelho (5: a unidade é a região); a indústria espacial como série oficial (12).
+Ditas na página do domínio como conteúdo, com as pistas registadas no inventário, se o inventário as confirmar hoje: uma publicação periódica do produtor para o balanço fiscal da imigração (M6: a série existe, não periódica, no Observatório das Migrações com dados do Instituto da Segurança Social); a série do INE da população estrangeira por concelho depois de 2023 (M2; a AIMA publica os 308 para 2024 em adenda); as rendas nos concelhos com menos de cem mil habitantes (9); a população ligada a tratamento de águas residuais desde 2009 (6); a transparência municipal desde a suspensão do índice (18); a saúde por concelho (8: a unidade é a ULS); os tribunais por concelho (17: a unidade é o país); a pobreza por concelho (5: a unidade é a região); a indústria espacial como série oficial (12).
 
 ## 6 · O que fica para o diretor
 
@@ -238,4 +238,4 @@ Ditas na página do domínio como conteúdo, com as pistas registadas no invent�
 
 ## 7 · O registo
 
-A carta e o inventário são a entrega A da sessão de 01.09.2026 (o prompt de 30.08). O inventário foi verificado em leque: quatro lotes lidos na fonte primária por quatro agentes Claude Opus 5 (E e T; P e M; S e A; D e H), com o lugar de direção a escrever o brief comum e o de cada lote, a rever e a fundir; uma amostra medida às cegas por um agente Claude Sonnet 5 com código próprio; a leitura a frio do Codex (`gpt-5.6-sol`, xhigh) ao inventário com estragos plantados, registados por sha256 e com o contexto impresso de cada alvo conferido antes e depois. Os relatórios, os custos e os achados de cada passagem estão no inventário (§«O registo da verificação») e no ficheiro das plantas ao lado. A decisão do diretor entra em `DECISIONS.md` quando ele escolher.
+A carta e o inventário são a entrega A da sessão de 01.09.2026 (o prompt de 30.08). O inventário foi verificado em leque: quatro lotes lidos na fonte primária por quatro agentes Claude Opus 5 (E e T; P e M; S e A; D e H), com o lugar de direção a escrever o brief comum e o de cada lote, a rever e a fundir; uma amostra medida às cegas por um agente Claude Sonnet 5 com código próprio; a leitura a frio do Codex (`gpt-5.6-sol`, xhigh) ao inventário com estragos plantados, registados por sha256 e com o contexto impresso de cada alvo conferido antes e depois. Os relatórios, os custos e os achados de cada passagem estão no inventário (§4, «O registo da verificação») e no ficheiro das plantas ao lado; os quatro lotes custaram cerca de 1,2 M símbolos de Opus e mudaram esta carta em onze linhas (T4, T5, P5, M2, M4, M6, S2, S3, A3, D1, D3, D4, D5, H1, H2), o que é a razão de a verificação vir antes da escolha. A decisão do diretor entra em `DECISIONS.md` quando ele escolher.

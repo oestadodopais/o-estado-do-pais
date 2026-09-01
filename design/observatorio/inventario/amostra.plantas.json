@@ -1,0 +1,33 @@
+{
+ "registado_em": "2026-09-01T09:08:59+00:00",
+ "copia": "inventario",
+ "plantas": [
+  {
+   "id": "PS1",
+   "ficheiro": "amostra-linhas.json",
+   "descricao": "H4: o valor de Évora trocado de 8,3 para 8,8",
+   "sha256_antes": "382c38595077abf6df7f2d391e9d1167ad2586da6fbb331d1ed3dae2b648d49b",
+   "sha256_depois": "6714f961f86bd94c258f1c4bc900293bc2b5fa2c822f14ddca45cde8da883d93",
+   "contexto_antes": "»: «5,7»; geocod 1C40705 Évora «ind_string»: «8,3».\",   \"valor_recente\": \"2025: Portugal 5,7 médicas/os por 1000 habitantes; Évora 8,3.\"  } ]",
+   "contexto_depois": "»: «5,7»; geocod 1C40705 Évora «ind_string»: «8,3».\",   \"valor_recente\": \"2025: Portugal 5,7 médicas/os por 1000 habitantes; Évora 8,8.\"  } ]"
+  },
+  {
+   "id": "PS2",
+   "ficheiro": "amostra-linhas.json",
+   "descricao": "P1: a data de publicação do INE trocada de 22 de junho para 22 de maio",
+   "sha256_antes": "6714f961f86bd94c258f1c4bc900293bc2b5fa2c822f14ddca45cde8da883d93",
+   "sha256_depois": "3d8c5c739d8f2e0abc4482ee3f11b6c87f174e83c6c755108bee520fb1869aaa",
+   "contexto_antes": "21\",   \"periodicidade\": \"Anual\",   \"ultimo_periodo\": \"2025\",   \"publicado_em\": \"2026-06-22 (DataUltimaAtualizacao; o destaque abre com «22 de junho de 2026 / ESTIMATIVAS DE POPULAÇÃO RESIDENTE – 2025»)\",   \"concelh",
+   "contexto_depois": "21\",   \"periodicidade\": \"Anual\",   \"ultimo_periodo\": \"2025\",   \"publicado_em\": \"2026-05-22 (DataUltimaAtualizacao; o destaque abre com «22 de junho de 2026 / ESTIMATIVAS DE POPULAÇÃO RESIDENTE – 2025»)\",   \"concelh"
+  },
+  {
+   "id": "PS3",
+   "ficheiro": "amostra-linhas.json",
+   "descricao": "E3: a periodicidade dos dados trocada de anual para trimestral",
+   "sha256_antes": "3d8c5c739d8f2e0abc4482ee3f11b6c87f174e83c6c755108bee520fb1869aaa",
+   "sha256_depois": "6a4c8df368f0bbcd8c74fe1526fc4588c6e8c30374c28d37113a4f1964349a80",
+   "contexto_antes": "urities (AF.3) and loans (AF.4).\",   \"serie_desde\": \"1995\",   \"periodicidade\": \"Dados anuais, difusão semestral (abril e outubro)\",   \"ultimo_periodo\": \"2025\",   \"publicado_em\": \"2026-04-22\",   \"concelho\": \"nã",
+   "contexto_depois": "urities (AF.3) and loans (AF.4).\",   \"serie_desde\": \"1995\",   \"periodicidade\": \"Dados trimestrais, difusão semestral (abril e outubro)\",   \"ultimo_periodo\": \"2025\",   \"publicado_em\": \"2026-04-22\",   \"concelho\": \"nã"
+  }
+ ]
+}
