@@ -1,6 +1,6 @@
 # O estado de `main` depois do bloco «o observatório a sério» (01.09.2026)
 
-*Escrito pelo lugar de direção (Claude Fable 5). A sessão de 01.09.2026 não construiu nada no sítio: escreveu a carta dos conteúdos, o inventário das fontes verificado na fonte primária, o desenho da frescura e da automação, o brief da forma dos domínios, a diligência legal lida na fonte e a política da autonomia, e pôs a visão no repositório. `main` está verde em cada commit (construção, `verify`, `typecheck` a 0). A §1.88 do `DECISIONS.md` é o registo. Sem travessões na prosa.*
+*Escrito pelo lugar de direção (Claude Fable 5). De manhã a sessão de 01.09.2026 não construiu nada no sítio: escreveu a carta dos conteúdos, o inventário das fontes verificado na fonte primária, o desenho da frescura e da automação, o brief da forma dos domínios, a diligência legal lida na fonte e a política da autonomia, e pôs a visão no repositório (§1.88). À tarde, depois de o diretor adotar as recomendações, construíram-se e leram-se em cruzado o rótulo de IA (§1.89, fundido) e as 314 linhas do primeiro domínio (§1.90), e a cabeça nova arrancou. `main` está verde em cada commit (construção, `verify`, `typecheck` a 0) com uma exceção dita na secção da tarde. Sem travessões na prosa.*
 
 ## O que muda no ar
 
@@ -20,6 +20,19 @@ No motor: `3d4a302`, os quatro ficheiros da Segurança Social do bloco de 24.08 
 ## O que a verificação disse (o essencial; o resto em `INVENTARIO-DAS-FONTES.md` §4)
 
 Das 41 linhas da primeira vaga, 20 verificadas por inteiro, 20 parciais (catorze só pela data da próxima difusão, que o Eurostat não serve em HTML), 1 mal formulada e corrigida, 0 ausentes. Onze linhas da carta mudaram com o que se leu. Fecham-se de caminho a I99 (os dois indicadores da população são a mesma tabela) e as células `[a verificar]` do estudo da água não faturada (o RASARP 2025 confirma os 26,5 %), em blocos pequenos por fazer. Depois da fusão, a amostra cega do Sonnet (3 de 3 plantas; nenhuma discrepância real em 87 comparações; ≈431 mil símbolos) e a leitura a frio do Codex (2 de 3 plantas; 16 achados graves e 28 maiores, quase todos reais e consertados: a tabela truncada, os estados sem regra, a frase de §5, dezanove células da carta).
+
+## O que a tarde construiu e fundiu
+
+| bloco | construtor | leitura cruzada | onde ficou |
+|---|---|---|---|
+| a verificação dos achados F1 a F4 e F9 da Segurança Social | (verificação, não construção) | Sonnet 3 de 3 plantas, Codex 3 de 3; as revisões de enquadramento escritas no relatório | motor `3720458`, empurrado |
+| o rótulo de IA em todas as páginas, a secção da política, a ficha da primeira página | Opus, ≈590 mil em duas passagens | Codex 3 de 3 (`critica/2026-09-01-codex-leitura-rotulo.md`); a medição cega não correu (bloco de forma sem números) | `a185a2c` (fusão), `a08e7cb` (registos), `cfa5045` (emenda), `307796f` |
+| as 314 linhas do primeiro domínio (E2, E4, T3, T4b, T5 e o ganho médio nos 308 concelhos) | Opus, ≈1,2 M em duas passagens | Sonnet 3 de 3 (95 de 101 células), Codex 3 de 3 (dezasseis achados consertados) | motor `7d6d486` (fusão), `77ce780`/fusão (o estrago independente do ambiente), `e7942c0` (as verificações), empurrado; sítio: rebaseado sobre `307796f` (`c72c4ff`, os quatro portões a 0) e fundido em `main` como `787b474`; a §1.90 é o registo |
+| a cabeça nova como contentor | Opus, em curso (worktree `cabeca-2026-09-01`, saída de `307796f`) | por fazer | ramo, por fundir |
+
+**A exceção à regra do commit verde.** `a08e7cb` saiu para o repositório com o `verify` a 1: a §1.89 dizia `Afecta: todos`, que não é um dos quatro nomes da amarra, e o lugar de direção escondeu o estado de saída atrás de um `tail`. Apanhado minutos depois pelo próprio registo e pelo construtor dos domínios, que rebaseou sobre esse commit e recusou consertá-lo no ramo dele (bem). `cfa5045` repõe a regra: `Afecta: sobre · metodo` com os carimbos dos dois textos e `Sem alteração` com a razão (a secção da política vive em `src/data/politica-ia.mjs` e nas vistas; `sobre.mjs` e `metodo.mjs` não mexeram, e a amarra só vê esses dois ficheiros, o que fica dito na própria entrada). O Vercel constrói com `npm run build`, e o primeiro passo dessa cadeia é o `ledger:check`, que traz a amarra: o lançamento de `a08e7cb` falhou (`● Error` aos 15 segundos, «§1.89: **Afecta:** nomeia "todos"», lido nos registos do Vercel), o ar ficou no lançamento anterior (`38d9166`), e foi o lançamento de `cfa5045` que trouxe o rótulo (a secção de cima diz como acabou). Dito com as duas versões porque o lugar de direção escreveu primeiro que o lançamento não tinha sido afetado, e estava errado.
+
+**Por arrumar, sem pressa:** `scripts/gate-html.mjs` importa `temLeitura` (desde 26.08) e declara `TAGS_SVG` (desde 16.08) sem os usar; são código morto anterior ao rótulo, não uma regra desligada.
 
 ## O que fica
 
