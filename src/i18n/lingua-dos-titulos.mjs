@@ -79,6 +79,11 @@ export const LINGUA_DOS_TITULOS = {
   'VAB (€) das empresas × CAE divisão': 'pt',
   'RASARP — Relatório Anual dos Serviços de Águas e Resíduos em Portugal': 'pt',
   'Anuário Financeiro dos Municípios Portugueses 2024 — apresentação das conclusões': 'pt',
+  /* Os documentos do primeiro domínio da primeira vaga (estudo 13 do motor). */
+  'Ganho médio mensal (€) por Localização geográfica (NUTS - 2024); Anual - MTSSS/GEP, Quadros de pessoal':
+    'pt',
+  'PARECER RELATIVO AO RELATÓRIO ANUAL DE PROGRESSO 2026': 'pt',
+  'Decreto-Lei n.º 139/2025, de 29 de dezembro': 'pt',
   /* Os dois documentos do próprio sítio. O nome deles é português nas duas
      edições, e é o nome com que eles se publicam: a edição inglesa cita-os pelo
      nome que eles têm, e diz em que língua está. */
@@ -87,6 +92,10 @@ export const LINGUA_DOS_TITULOS = {
 
   /* --- os documentos ingleses ------------------------------------------- */
   'Gross domestic product (GDP) at current market prices by NUTS 2 region': 'en',
+  'Government deficit/surplus, debt and associated data': 'en',
+  'Gender pay gap in unadjusted form by NACE Rev. 2 activity - structure of earnings survey methodology':
+    'en',
+  'Monthly minimum wages - bi-annual data': 'en',
   'Young persons (aged 15-24) neither in employment nor in education and training - % of total population in private households in the same age group':
     'en',
   'Unemployment rate - annual data': 'en',
@@ -197,9 +206,15 @@ export const LINGUA_DOS_ROTULOS = {
   'DÍVIDA TOTAL DE OPERAÇÕES ORÇAMENTAIS = (1) + (2)': 'pt',
   'LIMITE = Média dos Últimos 3 Exercícios * 1,5': 'pt',
   'Dívida Total no Início do Mandato': 'pt',
+  'Ganho médio mensal (€) por Localização geográfica (NUTS - 2024); Anual - MTSSS/GEP, Quadros de pessoal':
+    'pt',
 
-  /* --- o rótulo inglês --------------------------------------------------- */
+  /* --- os rótulos ingleses ----------------------------------------------- */
   'Gross domestic product (GDP) at current market prices by NUTS 2 region': 'en',
+  'Government deficit/surplus, debt and associated data': 'en',
+  'Gender pay gap in unadjusted form by NACE Rev. 2 activity - structure of earnings survey methodology':
+    'en',
+  'Monthly minimum wages - bi-annual data': 'en',
 };
 
 /**
@@ -268,6 +283,8 @@ export const LINGUA_DAS_FONTES = {
   ERSAR: 'pt',
   'CICF/IPCA — Anuário Financeiro dos Municípios Portugueses': 'pt',
   PORDATA: 'pt',
+  'Conselho das Finanças Públicas': 'pt',
+  'Diário da República': 'pt',
   /* A casa, que se cita a si própria pelo nome que tem. */
   'O Estado do País': 'pt',
 
@@ -350,6 +367,13 @@ export const LINGUA_DAS_EDICOES = {
   'captura de 2021-12-28 (Wayback Machine, 20211228193105)': 'pt',
   /* Um código do Eurostat e uma palavra portuguesa: marca-se pela prosa. */
   'nama_10r_2gdp, atualizado 2026-02-10': 'pt',
+  /* As edições do primeiro domínio da primeira vaga (estudo 13 do motor).
+     «indicador 0012656» é português pela mesma razão que os outros: «indicador»
+     é a palavra que o INE imprime. As outras duas são prosa portuguesa inteira,
+     e marcam-se inteiras. */
+  'indicador 0012656': 'pt',
+  'Parecer n.º 02/2026, abril de 2026': 'pt',
+  'Diário da República, 1.ª série, n.º 249, de 29-12-2025': 'pt',
 
   /* --- os anos, que não estão em língua nenhuma -------------------------- */
   '2014': null,
@@ -371,7 +395,10 @@ export const LINGUA_DAS_EDICOES = {
   'territory-results-LOCAL-070500-CM.json': null,
 
   /* --- os códigos de série do Eurostat ----------------------------------- */
+  earn_gr_gpgr2: null,
+  earn_mw_cur: null,
   edat_lfse_14: null,
+  gov_10dd_edpt1: null,
   lfsi_emp_a: null,
   sdg_16_40: null,
   sdg_16_50: null,

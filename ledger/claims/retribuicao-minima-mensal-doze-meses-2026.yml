@@ -1,0 +1,48 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "retribuicao-minima-mensal-doze-meses-2026"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "1 073"
+unit: "euros por mês"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Monthly minimum wages - bi-annual data"
+name_source: "label"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Eurostat"
+document:
+  title: "Monthly minimum wages - bi-annual data"
+  edition: "earn_mw_cur"
+  locator: null
+  kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/earn_mw_cur/default/table?lang=en"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/earn_mw_cur?format=JSON&lang=EN&geo=PT&currency=EUR"
+access_date: "2026-09-01"
+reference_date: "2026"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Monthly minimum wages - bi-annual data — Half-yearly, semesterly — Euro — Portugal — 2026-S2: 1073"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+# A quem o valor é creditado. Lista de entidades, ou campo nenhum.
+attributed_to:
+  - "Eurostat"
+
+study: "dominios-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Coordenadas do pedido: currency EUR, geo PT, 2026-S2. T5 do inventário das fontes de 01.09.2026, a linha do Eurostat. NÃO é o valor do diploma: é a conversão que a ficha earn_minw_esms explica, «when the minimum wage is paid for more than 12 months per year, data have been adjusted to take these payments into account», e por isso 1 073 e não 920,00. Publicar os dois lado a lado sem esta nota convida ao erro. O período que a resposta traz é 2026-S2, e o semestre anterior do mesmo ano traz o mesmo valor; o esquema do sítio não tem forma de período semestral, e a data de referência é por isso o ano, com o semestre dito no excerto. Última atualização do conjunto, impressa na resposta: 2026-07-31T11:00:00+0200. Licença: Eurostat, CC BY 4.0. · Cruzado de ResearchHub content/13 Dominios · retribuicao-minima-mensal-doze-meses-2026."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []
