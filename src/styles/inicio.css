@@ -229,6 +229,59 @@
   padding-top: 6px;
 }
 
+/* ---------------------------------------------------------------------------
+ * A CABEÇA DE UM LUGAR QUE NÃO É O PAÍS (01.09.2026)
+ * ---------------------------------------------------------------------------
+ * `CabecaDoLugar` serve as três camadas com a mesma ordem e as mesmas classes, e
+ * duas formas: a do país é a de duas colunas da emenda das 19:50 de 29.08 à
+ * §1.84 (a manchete, a faixa e as gavetas à esquerda, o mapa à direita); a de
+ * uma região ou de um concelho é UMA COLUNA, com o instrumento da camada por
+ * baixo da faixa.
+ *
+ * A razão de não serem duas colunas ali é que o instrumento não é o mesmo: a
+ * régua da convergência é um desenho largo e baixo, e o cartão localizador é um
+ * cartão. Nenhum dos dois pede uma coluna alta ao lado do texto, que é o que o
+ * mapa das 29 unidades pede. A ordem, que é o que a ordem de construção fixa,
+ * é a mesma nas duas formas.
+ */
+/* O SELECTOR LEVA A CLASSE E O ATRIBUTO, e não é enfeite: as regras de largura
+   da forma do país vêm mais abaixo nesta folha e escrevem `.cabeca-grelha` com a
+   mesma especificidade, e a ordem do ficheiro decidia por elas. Medido antes de
+   o corrigir: a cabeça de um concelho a 1280 saía em duas colunas, com o cartão
+   localizador a 518 px na coluna direita e uma banda de 63 px de papel por baixo
+   da manchete, que a célula A8 de `correcoes-a.mjs` viu. Com a classe à frente,
+   a forma do lugar ganha em qualquer largura. */
+.cabeca-grelha[data-cabeca-forma='lugar'] {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto;
+  row-gap: clamp(12px, 1.6vw, 18px);
+  padding-top: clamp(20px, 3vw, 34px);
+}
+/* As três peças ficam na coluna única e em filas automáticas, e as margens que a
+   forma do país lhes dá para separar as filas saem: aqui quem separa é o
+   `row-gap` da grelha. */
+.cabeca-grelha[data-cabeca-forma='lugar'] > .cabeca-col,
+.cabeca-grelha[data-cabeca-forma='lugar'] > .faixa-bloco,
+.cabeca-grelha[data-cabeca-forma='lugar'] > .cabeca-inst {
+  grid-column: 1;
+  grid-row: auto;
+  align-self: start;
+  margin-top: 0;
+}
+[data-cabeca-forma='lugar'] .cabeca-rotulo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 6px;
+}
+/* A manchete de um lugar não conta limiares: é uma frase com um valor, e o corpo
+   dela é o da manchete do país, com a mesma medida de leitura. */
+[data-cabeca-forma='lugar'] .cabeca-h1 {
+  max-width: 24em;
+}
+[data-cabeca-forma='lugar'] .cabeca-inst {
+  min-width: 0;
+}
+
 .cabeca-col {
   display: flex;
   flex-direction: column;
@@ -334,7 +387,8 @@
   /* O enchimento é uma ficha porque a porta o desconta: ver `.cartao-porta`. */
   --cartao-pad-x: 12px;
   --cartao-pad-y: 12px;
-  padding: var(--cartao-pad-y) var(--cartao-pad-x) 0;
+  --cartao-pad-b: 0px;
+  padding: var(--cartao-pad-y) var(--cartao-pad-x) var(--cartao-pad-b);
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto auto 1fr auto var(--cartao-pe);
@@ -415,7 +469,7 @@
 
 /* A UNIDADE É A PRIMEIRA FILA DO PÉ, e ganha altura de alvo quando leva um selo
    por dentro. É a regra da I13 posta onde ela morde: numa das sete medidas de um
-   concelho a unidade cita uma linha («teto legal = 100») e traz o selo dela, e
+   concelho a unidade cita uma linha («teto legal = 150») e traz o selo dela, e
    dois selos a 20 px um do outro têm as suas áreas de 44 px sobrepostas — «uma
    área sobreposta não é um alvo maior, é uma porta que abre a linha do vizinho».
    Onde não há selo por dentro, a fila fica com a altura do texto. */
@@ -460,36 +514,56 @@
 }
 
 /* --------------------------------------------------------------------------
-   A PORTA DO CARTÃO — o corpo inteiro, e nada do pé
+   A PORTA DO CARTÃO · o cartão inteiro, com os selos por cima
    --------------------------------------------------------------------------
-   Ver a nota de `Faixa.astro`: é uma âncora VAZIA sobre as três primeiras filas
-   do cartão — o estado, o valor e o nome —, com o nome acessível emprestado do
-   nome da medida. Não chega ao pé, e por isso nenhum selo fica debaixo dela: é o
-   que a célula A10 de `correcoes-a.mjs` exige e o que a Emenda 2 protege.
+   O brief §4 diz «os cartões da faixa são alvos inteiros», e inteiro quer dizer
+   inteiro: a porta é uma âncora VAZIA que ocupa as CINCO filas do cartão e sai
+   do enchimento pelos quatro lados, com o nome acessível emprestado do nome da
+   medida.
+
+   A primeira construção deste bloco parou-a antes do pé, para que a caixa dela
+   não tocasse na do selo, e a régua aceitava isso. Não chega: o pé é um terço da
+   altura do cartão a 390, e um terço do cartão que não abre nada é um alvo com
+   um buraco. A saída não é encolher a porta, é pôr os selos POR CIMA dela.
+
+   OS SELOS FICAM POR CIMA, E ISSO NÃO É A EMENDA 2 QUEBRADA. A Emenda 2 proíbe o
+   selo ANINHADO dentro de outro alvo, e a razão que ela escreve é o que acontece
+   nesse caso: «uma porta metida dentro de outra porta abre a de fora, e quem
+   toca no selo quer a prova». Aqui não há aninhamento nenhum no documento (o
+   selo é irmão da porta) e quem ganha o toque é o selo, porque está pintado por
+   cima. Isso não se afirma: `tests/inicio/faixa.mjs` F3 pergunta ao navegador,
+   com `elementFromPoint` no centro de cada selo, quem é que apanha o toque, e
+   exige que seja o selo, nos 21 cartões e às sete larguras.
 
    É UMA CÉLULA DA GRELHA E NÃO UM `::after` ESTICADO, porque a régua da casa
    mede a área efectiva de um alvo unindo a caixa do elemento com a do seu
    `::after` absoluto CENTRADO nele: um pseudo esticado por `inset` seria medido
    no sítio errado, e um alvo que a casa não sabe medir não é um alvo que ela
-   possa prometer. Uma célula que atravessa três filas tem caixa própria, e a
-   altura do pé não precisa de ser escrita em píxeis em lado nenhum.
+   possa prometer.
 
    O `z-index` PÕE-A POR CIMA DO TEXTO, e é ele que faz o cartão ser alvo: sem
    ele o toque cairia no `<span>` do valor, que não é porta nenhuma, e não
-   aconteceria nada. */
+   aconteceria nada. Os selos levam um degrau acima dela, pela mesma razão ao
+   contrário. */
 .cartao-porta {
   grid-column: 1;
-  grid-row: 1 / 4;
+  grid-row: 1 / -1;
   position: relative;
   z-index: 1;
-  /* A PORTA SAI DO ENCHIMENTO DO CARTÃO, e é o que faz «o cartão inteiro é
-     alvo» ser verdade à letra: sem estas três margens negativas a caixa da
-     porta era a caixa de conteúdo, e ficavam 12 px de papel em cima e de cada
-     lado onde o dedo não abria nada. Medido antes de as pôr: a porta media
-     181,3 px num cartão de 205,3. Em baixo não sai, porque em baixo está o pé,
-     que é do selo. */
+  /* A PORTA SAI DO ENCHIMENTO DO CARTÃO pelos quatro lados, e é o que faz «o
+     cartão inteiro é alvo» ser verdade à letra: sem estas margens negativas a
+     caixa da porta era a caixa de conteúdo, e ficavam 12 px de papel em cima e
+     de cada lado onde o dedo não abria nada. Medido antes de as pôr: a porta
+     media 181,3 px num cartão de 205,3. */
   margin-top: calc(-1 * var(--cartao-pad-y));
   margin-inline: calc(-1 * var(--cartao-pad-x));
+  margin-bottom: calc(-1 * var(--cartao-pad-b));
+}
+/* Os selos do cartão, o do valor e os que a unidade cite, ficam por cima da
+   porta. Ver a nota acima: quem apanha o toque é medido e não afirmado. */
+.cartao .src-chip {
+  position: relative;
+  z-index: 2;
 }
 .cartao-porta:focus-visible {
   outline: 2px solid var(--focus);
@@ -2123,8 +2197,18 @@ a.porta:hover .porta-abrir {
      que a cabeça devolve ao conteúdo, e o rótulo continua a ler-se e a nomear o
      grupo.
      ------------------------------------------------------------------------- */
+  /* `flex-wrap: nowrap` É A LINHA QUE CONSERTA O TRANSBORDO, e a que faltava.
+     A regra de cima da folha deixa `.cmd` com `flex-wrap: wrap`, que ali serve
+     (a fila é horizontal e as duas filas partem-se). Aqui a direção passa a
+     coluna, e uma coluna que QUEBRA é multi-linha no eixo horizontal: a largura
+     da linha passa a ser a do item mais largo, e não a do contentor. Medido a
+     320 na edição inglesa: `.cmd` media 284 px e `.cmd-grupo` media 334,7,
+     porque o grupo definia a linha em vez de caber nela, e eram esses 33 px que
+     a página rolava de lado. Sem quebra, o grupo tem a largura do contentor e o
+     `overflow-x` da fila corta o resto. */
   .cmd {
     flex-direction: column;
+    flex-wrap: nowrap;
     align-items: stretch;
     gap: 10px;
   }
@@ -2136,12 +2220,42 @@ a.porta:hover .porta-abrir {
   .cmd-k {
     flex: none;
   }
+  /* -------------------------------------------------------------------------
+     A FILA DO COMANDO CORRE EM VEZ DE EMPURRAR A PÁGINA (01.09.2026)
+     -------------------------------------------------------------------------
+     MEDIDO, na construção de partida deste bloco (`307796f`) e nesta: na edição
+     INGLESA a primeira página tinha transbordo horizontal de 33 px a 320 e de
+     16 px a 390, e nenhum em português. O culpado é esta fila: «Country ·
+     Region · Municipality · Areas» pede 334,7 px e a coluna dá 284 a 320. É um
+     defeito anterior a este bloco, e as capturas às sete larguras foram o que o
+     mostrou.
+
+     A SAÍDA NÃO É PARTIR A FILA EM DUAS LINHAS, e a folha já escreveu porquê
+     quando isso foi construído, medido e desfeito: a junção das posições é feita
+     com `.seg + .seg { border-left: none }`, e numa fila partida a primeira
+     posição de cada linha ficava sem traço à esquerda; devolvê-lo com uma margem
+     negativa faz duas caixas de alvo sobreporem-se, que é o que a célula A10
+     recusa. Também não é encolher a letra nem cortar o rótulo: um comando que
+     diz meia palavra não é um comando.
+
+     A SAÍDA É A DA FAIXA: a fila corre dentro da sua caixa. `overflow-x: auto`
+     corta o transbordo no sítio onde ele nasce, a página deixa de rolar de lado,
+     cada posição fica com o seu nome inteiro e com os seus 44 px de altura, e o
+     que fica de fora alcança-se com o dedo ou com o `Tab`, que já o alcançava.
+     ------------------------------------------------------------------------- */
   .cmd-segs {
     flex: 1;
     display: flex;
+    min-width: 0;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
   }
+  /* As posições deixam de repartir a fila entre si (`flex: 1`) e passam a ter
+     cada uma a sua largura: numa fila que corre, repartir uma largura que não
+     chega é o mesmo que não repartir nada, e o que se ganha é que nenhum rótulo
+     encolhe abaixo do que ele diz. */
   .seg {
-    flex: 1;
+    flex: 0 0 auto;
     text-align: center;
     min-height: 44px;
     display: flex;

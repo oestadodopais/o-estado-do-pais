@@ -1738,3 +1738,41 @@ palavra, no mesmo sítio da mesma casa, lê-se da mesma maneira nos dois sítios
 | --- | --- | --- | --- | --- |
 | navegacao | As medidas, uma por cartão | cabeca | viva | — |
 | navegacao | The measures, one per card | cabeca | viva | — |
+
+## Bloco «A cabeça nova» · segunda passagem · os `<summary>` entram na régua · 01.09.2026
+
+*Sete linhas, e nenhuma delas é uma frase nova no sítio: são frases que já lá
+estavam e que a régua da voz não via.*
+
+**O QUE ESTAVA ABERTO.** `frasesDaCasa()` em `scripts/medir-defeitos.mjs` saltava
+todos os `<summary>` sem condição, debaixo de um comentário que falava de outra
+coisa («uma ligação inteira não é uma frase: é um destino», que é a regra do
+texto fora das âncoras e vale para todos os blocos). Um `<summary>` é texto à
+vista, escrito pela casa, e é a palavra que o leitor lê antes de decidir se abre.
+O bloco da cabeça nova acrescentou dois e encontrou o buraco; a primeira passagem
+registou-o como dúvida e esta fecha-o.
+
+**O QUE APARECEU quando a régua passou a ver.** Cinco frases distintas por
+edição, e só duas delas são novas no sítio: o «Menu» do cabeçalho, que já estava
+declarado pelo `aria-label` («Menu · Navegação principal») e não pelo texto; o
+«abrir/fechar» da densidade de cada peça, cujas duas palavras já estavam
+declaradas em separado mas não como o par que o `<summary>` mostra; a porta das
+linhas de um documento, no fim de cada página de texto de um trabalho; e os nomes
+das duas gavetas do mapa, que são deste bloco. As duas edições escrevem «Menu»
+com a mesma palavra, e por isso é uma linha e não duas.
+
+**A CLASSE É `navegacao` nas sete**, e é a do positivo conhecido: são nomes de
+comandos e de portas, não conteúdo. «Relance», «Leitura breve», «Menu ·
+Navegação principal» e «Áreas de governo» estão classificadas assim desde sempre.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | A municipality by name | cabeca | viva | — |
+| navegacao | Menu | cabeca | viva | — |
+| navegacao | Os nomes no mapa | cabeca | viva | — |
+| navegacao | The names on the map | cabeca | viva | — |
+| navegacao | Um concelho pelo nome | cabeca | viva | — |
+| navegacao | abrir fechar | cabeca | viva | — |
+| navegacao | open close | cabeca | viva | — |
+| navegacao | As linhas deste documento → | cabeca | viva | — |
+| navegacao | The rows of this document → | cabeca | viva | — |

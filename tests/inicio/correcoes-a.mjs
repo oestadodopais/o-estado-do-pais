@@ -171,12 +171,16 @@ const SONDA_ALVOS = () => {
       : true;
   const seletor = 'a[href], button, input, select, textarea, summary, [role="button"]';
   const alvos = [];
+  /* Os elementos, na mesma ordem de `alvos`, para as perguntas que só se fazem
+     dentro da página: um nó do DOM não atravessa a serialização de `evaluate`. */
+  const nos = [];
   for (const el of document.querySelectorAll(seletor)) {
     if (el.closest('[hidden]') || el.closest('.vh')) continue;
     if (!seVe(el)) continue;
     const r = el.getBoundingClientRect();
     if (!(r.width > 0) || !(r.height > 0)) continue;
     const a = areaEfetiva(el);
+    nos.push(el);
     alvos.push({
       nome:
         el.tagName.toLowerCase() +
@@ -209,7 +213,39 @@ const SONDA_ALVOS = () => {
     });
   }
   /* Os pares que se sobrepõem: a regra da casa é que uma área sobreposta não é
-     um alvo maior, é uma porta que abre a linha do vizinho. */
+     um alvo maior, é uma porta que abre a linha do vizinho.
+
+     UMA ÁREA DENTRO DE OUTRA, COM A DE DENTRO A GANHAR O TOQUE, NÃO É ESSE CASO
+     (01.09.2026). O cartão da faixa é uma porta que cobre o cartão inteiro, e os
+     selos ficam por cima dela: o selo está inteiramente DENTRO da porta, e quem
+     apanha o dedo é o selo, porque está pintado acima. O defeito que esta lista
+     existe para apanhar é outro, e a razão dela di-lo: «a de baixo, que vem
+     depois no documento, apanha o clique da de cima», ou seja duas áreas que se
+     cruzam em parte, no mesmo degrau, sem nada que decida qual delas responde.
+
+     A EXCEPÇÃO NÃO SE AFIRMA, MEDE-SE. Um par só sai da lista quando as duas
+     condições se verificam ao mesmo tempo: uma das caixas contém a outra por
+     inteiro, e `document.elementFromPoint` no centro da caixa de dentro devolve
+     a de dentro. Um selo por baixo da porta não passa por aqui: a segunda
+     condição responde «a porta», e o par fica. É a mesma pergunta que
+     `tests/inicio/faixa.mjs` F3 faz aos 21 cartões, feita aqui sobre a página
+     inteira. */
+  const contem = (a, b) =>
+    a.x1 <= b.x1 + 0.5 && a.y1 <= b.y1 + 0.5 && a.x2 >= b.x2 - 0.5 && a.y2 >= b.y2 - 0.5;
+  const ganhaOToque = (i) => {
+    /* O ALVO É TRAZIDO À VISTA ANTES DE SE PERGUNTAR. `elementFromPoint` lê
+       coordenadas do ECRÃ, e a faixa da cabeça corre de lado: os cartões a
+       seguir ao primeiro estão fora da parte visível dela, e perguntar por eles
+       sem os trazer devolveria o que estiver naquele ponto, que é outra coisa.
+       O rolamento acontece DEPOIS de as caixas de todos os alvos estarem lidas,
+       e cada pergunta relê a caixa do seu alvo: a lista dos pares vem de um
+       retrato coerente, e cada resposta é coerente consigo mesma. */
+    nos[i].scrollIntoView({ block: 'nearest', inline: 'center' });
+    const r = nos[i].getBoundingClientRect();
+    if (!(r.width > 0) || !(r.height > 0)) return false;
+    const em = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+    return !!em && em.closest('a[href], button, [role="button"]') === nos[i];
+  };
   const pares = [];
   for (let i = 0; i < alvos.length; i++) {
     for (let j = i + 1; j < alvos.length; j++) {
@@ -220,7 +256,11 @@ const SONDA_ALVOS = () => {
       if (a.noMapa || b.noMapa) continue;
       const ox = Math.min(a.x2, b.x2) - Math.max(a.x1, b.x1);
       const oy = Math.min(a.y2, b.y2) - Math.max(a.y1, b.y1);
-      if (ox > 0.5 && oy > 0.5) pares.push(`${a.nome}«${a.txt}» × ${b.nome}«${b.txt}»`);
+      if (!(ox > 0.5 && oy > 0.5)) continue;
+      /* A excepção medida: um dentro do outro, e o de dentro a ganhar o toque. */
+      if (contem(a, b) && ganhaOToque(j)) continue;
+      if (contem(b, a) && ganhaOToque(i)) continue;
+      pares.push(`${a.nome}«${a.txt}» × ${b.nome}«${b.txt}»`);
     }
   }
   return { alvos, pares };

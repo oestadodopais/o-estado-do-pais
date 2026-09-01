@@ -1376,13 +1376,14 @@ for (const largura of [1280, 390]) {
   await p.goto(`${base}/`, { waitUntil: 'networkidle' });
   await p.focus('[data-densidade="leitura"]');
   /* A ROLAGEM MEDE-SE ENTRE O FOCO E O ESPAÇO, e não desde o topo da página
-     (01.09.2026). A célula existe para provar que **a tecla** não rola; medida
-     desde zero, ela media também o que o `focus()` rola para trazer o comando ao
-     ecrã, que é trabalho do navegador e não da página. Enquanto a linha de
-     comando esteve no topo da cabeça isso deu sempre zero e a diferença não se
-     via; com o comando no cabeçalho do painel (o bloco da cabeça nova, 01.09) o
-     `focus()` passa a rolar 627 px e a célula ficava vermelha por causa de um
-     rolamento que não é o que ela mede. */
+     (01.09.2026). A célula existe para provar que **a tecla** não rola. Medida
+     desde zero, ela media duas coisas somadas: o que o `focus()` rola para
+     trazer o comando ao ecrã, que é trabalho do navegador, e o que a tecla rola,
+     que é o que se quer saber. Enquanto a linha de comando esteve no topo da
+     cabeça a primeira parcela era zero e a soma dava o número certo por acaso;
+     com o comando no cabeçalho do painel (o bloco da cabeça nova, 01.09) o
+     `focus()` passa a rolar 627 px e a célula ficava vermelha por um rolamento
+     que não é o dela. A subtração mede a parcela certa nas duas posições. */
   const antes = await p.evaluate(() => window.scrollY);
   await p.keyboard.press('Space');
   const a = await estadoDaPagina(p);

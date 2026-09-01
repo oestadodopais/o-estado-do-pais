@@ -41,6 +41,7 @@ import Comando from '../components/inicio/Comando.astro';
 import Peca from '../components/inicio/Peca.astro';
 import Portas from '../components/inicio/Portas.astro';
 import Cabeca from '../components/inicio/Cabeca.astro';
+import CabecaDoLugar from '../components/inicio/CabecaDoLugar.astro';
 import Faixa from '../components/inicio/Faixa.astro';
 import Gaveta from '../components/inicio/Gaveta.astro';
 import Pesquisa from '../components/inicio/Pesquisa.astro';
@@ -262,8 +263,12 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
         nomes das 29. O que ocupa o lugar dos dois é a faixa, e o nome dela é a
         frase que substitui as duas palavras da casa.
         ---------------------------------------------------------------------- */}
-    <div class="cabeca-grelha" data-grelha>
-      <Cabeca s={s} lang={lang} p={p} blocos={blocos} ambito="pais" lede={lede} />
+    <CabecaDoLugar forma="pais" chave="pais">
+      {/* A COLUNA DA CABEÇA DO PAÍS entra por ranhura, e não pelo rótulo e pela
+          manchete do componente: ela é a única das três que tem ESTADO (a lista
+          de blocos que o guião acende) e duas contagens da prova dentro da
+          manchete. O que as três partilham é a moldura, a ordem e as classes. */}
+      <Cabeca slot="col" s={s} lang={lang} p={p} blocos={blocos} ambito="pais" lede={lede} />
 
       {/* ------------------------------------------------------------------
           A FAIXA, ENTRE A MANCHETE E O MAPA (afinação 2 do brief)
@@ -276,7 +281,7 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
           são eles os cartões, e esta lista muda de conteúdo sem mudar de forma:
           é para isso que a cabeça é um contentor.
           ------------------------------------------------------------------ */}
-      <Faixa s={s} lang={lang} rotulo={s.inicio.faixa.rotulo} cartoes={cartoes} />
+      <Faixa slot="faixa" s={s} lang={lang} rotulo={s.inicio.faixa.rotulo} cartoes={cartoes} />
 
       {/* ------------------------------------------------------------------
           AS DUAS GAVETAS DO MAPA (afinação 1 do brief)
@@ -301,7 +306,7 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
           do brief (afinação 1) a emendar a decisão da I101, que mandava a rede
           mostrar-se sempre; a régua `lista.mjs` L9 passa a medir a forma nova.
           ------------------------------------------------------------------ */}
-      <div class="cabeca-lado" data-cabeca-lado>
+      <div class="cabeca-lado" slot="lado" data-cabeca-lado>
         <Gaveta chave="nomes" rotulo={s.inicio.mapa.nomesGaveta}>
           <ListaDosNomes s={s} lang={lang} />
         </Gaveta>
@@ -320,10 +325,8 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
         <LegendaDoMapa s={s} lang={lang} />
       </div>
 
-      <div class="cabeca-inst" data-coluna-instrumento>
-        <MapaRespira s={s} lang={lang} p={p} concelhos={cs} />
-      </div>
-    </div>
+      <MapaRespira slot="instrumento" s={s} lang={lang} p={p} concelhos={cs} />
+    </CabecaDoLugar>
 
     {/* A REGUA DA REGIÃO SAIU DA PRIMEIRA PÁGINA (bloco A, itens A2 e A3).
         A banda desenhava as seis leituras da convergência no âmbito «região»,

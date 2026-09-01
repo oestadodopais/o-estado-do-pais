@@ -69,7 +69,12 @@ import Claim from './Claim.astro';
 import Provenance from './Provenance.astro';
 import Frase from './Frase.astro';
 
-const { lang = 'pt', distinguida = null } = Astro.props;
+/* `leituraNaCabeca` · a página da região passou a levar a frase da região como
+   MANCHETE (01.09.2026), e uma frase dita duas vezes no mesmo ecrã, com o mesmo
+   valor e o mesmo selo, é a repetição que a etapa 2i tirou da peça da região
+   (achado 6, R4). Quem chama diz onde a frase vive; o índice das regiões, que
+   não tem manchete de região, continua a rendê-la aqui. */
+const { lang = 'pt', distinguida = null, leituraNaCabeca = false } = Astro.props;
 const s = t(lang);
 
 const { min, max, passo, rotuloAte, datum } = ESCALA;
@@ -300,7 +305,7 @@ const ilhaJson = JSON.stringify(ilha).replace(/</g, '\\u003c');
       ---------------------------------------------------------------------- */}
   <div class="conv-lista-caixa">
     <p class="layer-tag">{lang === 'pt' ? 'Leitura breve' : 'Brief reading'}</p>
-    {aDistinguir && (
+    {aDistinguir && !leituraNaCabeca && (
       <p class="brief-text">
         <Frase partes={aDistinguir.frase} lang={lang} selos={true} />
       </p>
