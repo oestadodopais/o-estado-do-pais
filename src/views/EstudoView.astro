@@ -39,6 +39,7 @@ import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import { workById, POR_VERIFICAR, subjectLabel } from '../data/studies.mjs';
 import { leituraDe } from '../data/leituras.mjs';
+import { FONTE_DIGITAL_GERADA_POR_IA } from '../data/politica-ia.mjs';
 import { municipioPorSlug } from '../data/municipios.mjs';
 import { documentosDoEstudo } from '../lib/documentos.mjs';
 import { temRegisto } from '../lib/registos.mjs';
@@ -131,6 +132,10 @@ const jsonld = {
   headline: principal.title,
   inLanguage: work.editions.map((e) => (e.lang === 'pt' ? 'pt-PT' : 'en')),
   creativeWorkStatus: leitura ? 'Published' : 'Draft',
+  /* A mesma divulgação do rótulo, para máquinas: o termo do vocabulário do
+     schema.org que diz a geração por IA, lido na fonte e não inventado (a
+     razão inteira está em `src/data/politica-ia.mjs`). */
+  digitalSourceType: FONTE_DIGITAL_GERADA_POR_IA,
   url: canonicalUrl(path),
   isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
   publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
