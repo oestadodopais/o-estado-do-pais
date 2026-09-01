@@ -129,7 +129,21 @@ const simbolo = limiar?.simbolo ?? '%';
     </article>
   ) : (
 
-<article class="peca" data-medida={id} data-estado={estado} data-limiar={limiar ? 'sim' : 'nao'}>
+<article
+  class="peca"
+  id={`m-${id}`}
+  data-medida={id}
+  data-estado={estado}
+  data-limiar={limiar ? 'sim' : 'nao'}
+>
+  {/* O `id` DESTA PEÇA É A CHEGADA DA PORTA DE UM CARTÃO DA FAIXA (01.09.2026).
+      A faixa é o «Relance» e a peça é a «Leitura breve» da mesma medida, na
+      mesma página: o cartão leva a esta âncora. O prefixo `m-` existe porque um
+      `id` de HTML e um `id` do livro-razão não são a mesma coisa e não podem
+      colidir com outro identificador da página; o portão continua a ler
+      `data-medida`, que é a marca que ele conhece, e este atributo não muda uma
+      vírgula do que a peça diz. Vale nas três páginas que rendem peças, porque a
+      faixa vale nas três, e uma medida aparece uma vez por página. */}
   {/* O MARCADOR E A PALAVRA DE ESTADO, SEMPRE (Emenda 13, alargada pela 16).
       A palavra vivia no fecho da leitura breve quando havia limiar, e no topo
       quando não havia: uma peça fechada com limiar dizia «limiar 60% · acima» e

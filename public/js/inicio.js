@@ -326,6 +326,22 @@
   var anuncio = raiz.querySelector('[data-anuncio]');
   var pecas = document.querySelectorAll('.peca-mais');
   var campo = raiz.querySelector('[data-pesquisa]');
+  /* ---------------------------------------------------------------------------
+   * A GAVETA DA BUSCA (01.09.2026)
+   * ---------------------------------------------------------------------------
+   * A afinação 1 do brief da forma dos domínios recolheu a busca numa gaveta ao
+   * lado do mapa, fechada a todas as larguras. Uma gaveta fechada é o navegador
+   * a esconder o que ela tem dentro: o campo deixa de ser focável, e o comando
+   * «Concelho», que promete pôr a busca à vista e o foco no campo, deixava de
+   * cumprir as duas coisas.
+   *
+   * O QUE O GUIÃO FAZ É ABRIR A GAVETA, e mais nada. `open` está na lista do que
+   * este ficheiro pode tocar desde o primeiro dia — «trocar `hidden`, `open`,
+   * `aria-pressed` e `aria-current`» —, e é o mesmo mecanismo que o leitor usa
+   * com o dedo. Sem guião a gaveta continua a abrir-se sozinha, porque é um
+   * `<details>`: o que se perde sem guião é o atalho, e não o caminho.
+   */
+  var gavetaDaBusca = raiz.querySelector('[data-gaveta="busca"]');
   var semResultado = raiz.querySelector('[data-sem-resultado]');
   var ligacaoDeIdioma = document.querySelector('a.lang');
   var baseDoIdioma = ligacaoDeIdioma ? ligacaoDeIdioma.getAttribute('href').split('?')[0] : null;
@@ -414,14 +430,26 @@
         segsDensidade[i2].getAttribute('data-densidade') === estado.densidade ? 'true' : 'false',
       );
     }
-    /* A PESQUISA JÁ NÃO SE ACENDE AQUI (bloco A, itens A1 e A4). Era um
-       `[data-sub]` que este ciclo abria e fechava conforme o modo; quem a mostra
-       passa a ser a folha, pelo `data-modo` que acabou de ser escrito na raiz —
-       acima de 640 só no modo «concelho», abaixo de 640 sempre, porque com o
-       mapa fora do telemóvel a pesquisa É o caminho para o concelho. Um
-       `[hidden]` escrito aqui não se deixaria reabrir por uma regra de largura, e
-       uma segunda cópia do 640 dentro deste ficheiro divergiria da folha no dia
-       em que ela mudasse. */
+    /* A PESQUISA VOLTA A ACENDER-SE AQUI, E É OUTRA COISA (01.09.2026).
+       ------------------------------------------------------------------------
+       O que estava escrito era isto, e valia enquanto a busca foi um bloco:
+       «era um `[data-sub]` que este ciclo abria e fechava conforme o modo; quem
+       a mostra passa a ser a folha, pelo `data-modo` que acabou de ser escrito
+       na raiz — acima de 640 só no modo concelho, abaixo de 640 sempre».
+
+       Com a afinação 1 do brief da forma dos domínios a busca é uma GAVETA, um
+       `<details>` fechado a todas as larguras, e a folha não pode abrir um
+       `<details>`: quem o abre é o leitor, ou o `open`. Este ficheiro pode tocar
+       no `open` desde o primeiro dia, e é isso que faz aqui e mais nada.
+
+       É AQUI E NÃO SÓ NO CLIQUE porque o estado está no ENDEREÇO (Emenda 7): um
+       `/?ambito=municipio` partilhado tem de chegar com a busca aberta, e não só
+       depois de alguém carregar no comando. `aplica()` corre no arranque e em
+       cada mudança, e é o único sítio onde as duas entradas se encontram.
+
+       A GAVETA DOS NOMES NÃO É TOCADA. Ela não é um estado do endereço: é o
+       índice do mapa, e abre-se quando o leitor a abre. */
+    if (gavetaDaBusca) gavetaDaBusca.open = mo === 'municipio';
 
     var chave = chaveDoBloco(ambito);
     mostraSo(blocos, 'data-cabeca', chave);
@@ -476,6 +504,12 @@
   var blocoDaPesquisa = raiz.querySelector('#pesquisa');
 
   function vai(estadoNovo, modo, foco) {
+    /* `aplica()` abre e fecha a gaveta da busca, e por isso ela está aberta antes
+       do `focus()` daqui a três linhas: um campo dentro de um `<details>` fechado
+       não aceita foco, e `focus()` sobre ele não faz nada. A REGRA É UMA SÓ NAS
+       DUAS LARGURAS — até 01.09 a busca ficava à vista abaixo de 640 em qualquer
+       estado, porque era um bloco aberto; agora é uma gaveta, e uma gaveta
+       fecha-se em qualquer largura. */
     aplica(estadoNovo, modo);
     history.pushState(
       { ambito: estado.ambito, densidade: estado.densidade, modo: modoEscolhido },

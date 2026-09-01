@@ -48,6 +48,7 @@ import { routePath, otherLanguagePath, normalizePath } from '../lib/routes.mjs';
 import { estadoDaVerificacao, prova } from '../lib/prova.mjs';
 import ValorDaProva from './ValorDaProva.astro';
 import ControloDeTema from './ControloDeTema.astro';
+import { dataDaCasa } from '../lib/datas.mjs';
 import { t } from '../i18n/strings.mjs';
 
 const { lang = 'pt', path, compact = false, furniture = false, outraLingua = null } = Astro.props;
@@ -156,6 +157,7 @@ const NomeTag = compact ? 'p' : 'h1';
 
 const verificacao = estadoDaVerificacao();
 const p = prova(lang);
+
 /* A linha da agenda só existe quando o registo atravessou. Um rótulo «Agenda»
    sem agenda é pior do que nenhum, e por isso a mobília não desenha o lugar
    vazio: nem contagem, nem palavra. */
@@ -287,7 +289,7 @@ const painel = `${home}#painel`;
                 {verificacao.vencida ? s.sinal.vencido : s.sinal.reconferido}
               </span>
               <span class="mob-leitura-v" data-nonledger="data-de-atualizacao">
-                {verificacao.verificadoEm}
+                {dataDaCasa(verificacao.verificadoEm)}
               </span>
             </a>
           </span>

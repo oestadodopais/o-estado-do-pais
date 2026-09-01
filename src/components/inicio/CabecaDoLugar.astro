@@ -1,0 +1,84 @@
+---
+/**
+ * A CABEÇA DE UM LUGAR · o mesmo componente nas três camadas.
+ *
+ * ---------------------------------------------------------------------------
+ * O QUE ELE É
+ * ---------------------------------------------------------------------------
+ * A ordem de construção de 01.09.2026 pede que as páginas de região e de
+ * concelho herdem «a mesma cabeça (o mesmo componente, com a unidade
+ * escolhida)». Este é esse componente, e as três camadas passam por ele: o país,
+ * as nove regiões e os 308 concelhos.
+ *
+ * A ORDEM É UMA SÓ, e é a do brief: o nome do lugar, a manchete, a faixa, e o
+ * instrumento da camada. O nome do SÍTIO vem antes, no cabeçalho, e é a mobília.
+ *
+ * ---------------------------------------------------------------------------
+ * DUAS FORMAS, E A MESMA ORDEM NAS DUAS
+ * ---------------------------------------------------------------------------
+ * `forma="pais"` é a cabeça de duas colunas da emenda das 19:50 de 29.08 à
+ * §1.84: a manchete, a faixa e a coluna das gavetas à esquerda, o mapa à
+ * direita, do topo da manchete ao fundo da legenda. `forma="lugar"` é uma coluna
+ * só: o rótulo, a manchete, a faixa e o instrumento, um por baixo do outro.
+ *
+ * A forma não muda a ordem nem as classes: muda a colocação, e quem a decide é a
+ * folha, pelo `data-cabeca-forma` que a raiz carrega. É a mesma técnica do
+ * `data-postura` do mapa e do `data-modo` da primeira página.
+ *
+ * ---------------------------------------------------------------------------
+ * O INSTRUMENTO DE CADA CAMADA
+ * ---------------------------------------------------------------------------
+ * Não é o mesmo desenho nas três, e não pode ser:
+ *
+ *   · o país tem o mapa das 29 unidades da Carta, que é a navegação entre as
+ *     camadas (§1.84);
+ *   · uma região não tem mapa nenhum, e não é uma falta: a Emenda 21 (d) decide
+ *     que «uma região não tem mapa de pontos nem de áreas; tem a régua». O
+ *     artefacto do mapa da casa tem 29 unidades (distritos e ilhas) e as regiões
+ *     são NUTS II: não há geometria de região no repositório, e inventar uma
+ *     seria desenhar uma fronteira que a Carta não dá. O instrumento da camada é
+ *     a régua da convergência, com aquela região distinguida;
+ *   · um concelho tem o cartão localizador, que é o mapa da Carta com o anel no
+ *     concelho desta página (Emenda 20d). Estava no fim da página, na coluna do
+ *     aparelho, e sobe para a cabeça, que é onde uma pessoa procura saber onde
+ *     está o lugar de que a página trata.
+ *
+ * ---------------------------------------------------------------------------
+ * O RÓTULO LEVA O NOME DECLARADO
+ * ---------------------------------------------------------------------------
+ * O nome de um lugar não é prosa da casa: é o nome da coisa de que a página
+ * trata, transcrito, e vai marcado `data-lugar` como nas outras superfícies. Sem
+ * isso o inventário das frases ganhava uma linha por região e por concelho, que
+ * é a lista dos lugares escrita outra vez.
+ */
+const { rotulo = null, tipo = null, forma = 'lugar', chave = null } = Astro.props;
+const temCol = Astro.slots.has('col');
+---
+
+<div class="cabeca-grelha" data-grelha data-cabeca-forma={forma} data-cabeca-lugar={chave}>
+  {
+    temCol ? (
+      <slot name="col" />
+    ) : (
+      <div class="cabeca-col">
+        <div class="cabeca-bloco">
+          {rotulo && (
+            <p class="cabeca-rotulo">
+              <span data-lugar>{rotulo}</span>
+              {tipo && <> · {tipo}</>}
+            </p>
+          )}
+          <slot name="manchete" />
+          <slot name="lede" />
+        </div>
+      </div>
+    )
+  }
+
+  <slot name="faixa" />
+  <slot name="lado" />
+
+  <div class="cabeca-inst" data-coluna-instrumento>
+    <slot name="instrumento" />
+  </div>
+</div>

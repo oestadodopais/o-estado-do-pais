@@ -38,6 +38,8 @@ import Claim from '../components/Claim.astro';
 import Provenance from '../components/Provenance.astro';
 import Frase from '../components/Frase.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
+import CabecaDoLugar from '../components/inicio/CabecaDoLugar.astro';
+import Faixa from '../components/inicio/Faixa.astro';
 import Peca from '../components/inicio/Peca.astro';
 import MapaRespira from '../components/inicio/MapaRespira.astro';
 import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
@@ -47,6 +49,7 @@ import { leituraDe } from '../data/leituras.mjs';
 import { FONTE_DIGITAL_GERADA_POR_IA } from '../data/politica-ia.mjs';
 import { getClaim, parsePtNumber, POR_VERIFICAR } from '../lib/ledger.mjs';
 import { concelhos, pecasDoConcelho } from '../lib/inicio.mjs';
+import { dataDaCasa } from '../lib/datas.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { canonicalUrl, SITE_NAME, SITE_URL } from '../../site.config.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -148,6 +151,42 @@ const indicePartes = temIndice
  * agora as sete, pela ordem declarada, cada uma a dizer se tem linha.
  */
 const pecas = pecasDoConcelho(m);
+
+/* ---------------------------------------------------------------------------
+ * A FAIXA DO CONCELHO (01.09.2026)
+ * ---------------------------------------------------------------------------
+ * A cabeça nova é a mesma nas três páginas, «cada uma com a sua faixa»: aqui são
+ * as medidas de hoje do concelho, que são as MESMAS peças que a camada do
+ * Relance rende por baixo, da mesma lista e pela mesma ordem. Um cartão leva à
+ * leitura daquela medida, nesta página.
+ *
+ * UMA PEÇA VAZIA NÃO É UM CARTÃO. A disposição-padrão da Emenda 14 rende, num
+ * concelho sem uma medida, uma peça sem valor, sem selo e sem marcador: «sem
+ * linha ainda». Um cartão dessa medida seria um cartão sem número e sem selo, e
+ * a régua da faixa recusa-o com razão — o cartão é o valor. A ausência continua
+ * a dizer-se onde ela é verdade, na peça, que é o que a Emenda 14 prova.
+ *
+ * `estado` PASSA TAL E QUAL o que `pecasDoConcelho()` calculou, incluindo o nulo
+ * de um valor que é uma marca da fonte («N.d.»): ali o limiar existe e o que
+ * falta é o valor, e nenhuma das três palavras da casa é verdade (regra 2 de
+ * 28.08). Sem palavra, sem quadrado.
+ */
+/* A LINHA DA POPULAÇÃO, para a manchete da cabeça (01.09.2026). É a única das
+   sete medidas que os 308 publicam, e sai da mesma lista de que as peças e os
+   cartões saem: não há aqui uma segunda declaração do que é a população deste
+   concelho. */
+const populacao = pecas.find((t) => !t.vazia && /-populacao-/.test(String(t.claim)));
+
+const cartoes = pecas
+  .filter((tile) => !tile.vazia)
+  .map((tile) => ({
+    id: tile.claim,
+    ancora: `m-${tile.claim}`,
+    nome: tile.nome[lang],
+    medida: tile.medida[lang],
+    estado: tile.estado,
+    glifos: [...String(tile.linha.value)].length,
+  }));
 
 /* --- os trabalhos sobre o concelho ---------------------------------------
    Um concelho sem trabalho publicado não declara `estudos`, e a secção inteira
@@ -373,31 +412,68 @@ const metodoPath = routePath('metodo', lang);
   jsonld={jsonld}
   portaNoRodape={false}
 >
-  <div class="municipio-cabeca">
-    <span class="eyebrow">{s.municipio.eyebrow}</span>
-    {/* O NOME DO CONCELHO E A ETIQUETA DA CARTA VÃO DECLARADOS (bloco dos 308,
-        P2). Não são prosa da casa: são o nome da coisa de que a página trata e o
-        campo que a Carta Administrativa lhe dá. Sem a declaração, o inventário
-        de frases da casa passava a ter 924 entradas — o nome, a etiqueta e a
-        descrição de cada um dos 308 —, que é a lista dos concelhos escrita outra
-        vez, e é a mesma razão pela qual `data-cobertura` já está declarado. */}
-    <h1 data-lugar>{nome}</h1>
-    {/* A REGIÃO É DE QUEM A TEM (bloco dos 308, P2). «Alentejo Central» é uma
-        NUTS III, e a Carta Administrativa não a guarda: o que ela dá a cada
-        concelho é o distrito ou a ilha. Um concelho sem região declarada rende
-        só a etiqueta que a Carta lhe dá, e não um separador seguido de nada. */}
-    <p class="municipio-sub" data-lugar>
-      {m.distrito[lang] ?? m.distrito.pt}
-      {m.regiao ? ` · ${m.regiao[lang] ?? m.regiao.pt}` : ''}
-    </p>
-    {/* A ABERTURA SAIU (direção, 21.08.2026, tarde; Emenda 15). Dizia «Esta
-        página mede o município de Évora e mostra de onde vem cada medida. Não
-        interpreta: onde uma fonte não estabelece uma coisa, a página di-lo em
-        vez de a supor.» — três orações sobre o método e as intenções do sítio,
-        que é a classe que a emenda tira das páginas do leitor. Saiu da primeira
-        página na etapa 2m; sai daqui agora, e a relocação R6 fecha a zero. O que
-        a página mede lê-se nas sete medidas. */}
-  </div>
+  {/* ------------------------------------------------------------------------
+      A CABEÇA DO CONCELHO É A MESMA DA DO PAÍS (01.09.2026)
+      ------------------------------------------------------------------------
+      `CabecaDoLugar` é o componente das três camadas: o nome do lugar, a
+      manchete, a faixa e o instrumento da camada, por esta ordem.
+
+      A MANCHETE PASSA A SER UMA AFIRMAÇÃO COM UM NÚMERO SELADO, que é o que o
+      brief pede («uma afirmação com números selados, como a da primeira
+      página»). Era o nome do concelho sozinho. O número é a população
+      residente, que é a única das sete medidas que os 308 publicam, e sai da
+      mesma lista de que as peças saem.
+
+      O INSTRUMENTO DA CAMADA É O CARTÃO LOCALIZADOR, e sobe da coluna do
+      aparelho, no fim da página, para a cabeça: é o mapa da Carta com o anel no
+      concelho desta página (Emenda 20d), e é onde uma pessoa procura saber onde
+      fica o lugar de que a página trata. O que ele era e como se rende está na
+      nota que veio com ele.
+      ------------------------------------------------------------------------ */}
+  <CabecaDoLugar forma="lugar" chave="concelho">
+    <div class="cabeca-col" slot="col">
+      <div class="cabeca-bloco">
+        {/* O NOME DO CONCELHO E A ETIQUETA DA CARTA VÃO DECLARADOS (bloco dos
+            308, P2). Não são prosa da casa: são o nome da coisa de que a página
+            trata e o campo que a Carta Administrativa lhe dá. Sem a declaração,
+            o inventário de frases da casa passava a ter 924 entradas.
+
+            A REGIÃO É DE QUEM A TEM. «Alentejo Central» é uma NUTS III, e a
+            Carta não a guarda: o que ela dá a cada concelho é o distrito ou a
+            ilha. Um concelho sem região declarada rende só a etiqueta que a
+            Carta lhe dá, e não um separador seguido de nada. */}
+        <p class="cabeca-rotulo">
+          <span class="eyebrow">{s.municipio.eyebrow}</span> · <span data-lugar>{nome}</span> ·{' '}
+          {/* A CLASSE `municipio-sub` FICA (01.09.2026), e não é decoração: é a
+              marca por que `tests/inicio/matriz.mjs` lê o rótulo do distrito nos
+              308, para medir a regra da I18 (prefixo «distrito de» onde é
+              distrito, nome de ilha nu onde é ilha). O bloco mudou de sítio e de
+              moldura, e a marca que a régua conhece viaja com ele. */}
+          <span class="municipio-sub" data-lugar>
+            {m.distrito[lang] ?? m.distrito.pt}
+            {m.regiao ? ` · ${m.regiao[lang] ?? m.regiao.pt}` : ''}
+          </span>
+        </p>
+        <h1 class="cabeca-h1">
+          <span data-lugar>{nome}</span>
+          {s.municipio.mancheteA}
+          <Claim id={populacao.claim} lang={lang} chip={true} />
+          {s.municipio.mancheteB}
+        </h1>
+      </div>
+    </div>
+
+    <Faixa slot="faixa" s={s} lang={lang} rotulo={s.inicio.faixa.rotulo} cartoes={cartoes} />
+
+    <MapaRespira
+      slot="instrumento"
+      s={s}
+      lang={lang}
+      concelhos={concelhos()}
+      postura="localizador"
+      escolhido={slug}
+    />
+  </CabecaDoLugar>
 
   <!-- ===================================================== CAMADA 1 — RELANCE -->
   <section id="relance" aria-labelledby="relance-k">
@@ -849,8 +925,10 @@ const metodoPath = routePath('metodo', lang);
                       </span>
                       <span class="mun-mandato-quem">
                         <Frase partes={mandato.quem[lang]} lang={lang} />
+                        {/* dd.mm.aaaa, pela regra do brief §4: o dado continua
+                            ISO no ficheiro, e o que muda é a composição. */}
                         {mandato.quemData && (
-                          <span data-nonledger="data-de-referencia">{mandato.quemData}</span>
+                          <span data-nonledger="data-de-referencia">{dataDaCasa(mandato.quemData)}</span>
                         )}
                       </span>
                       <span class="mun-mandato-lista">
@@ -860,7 +938,7 @@ const metodoPath = routePath('metodo', lang);
                       {mandato.instalado ? (
                         <span class="mun-mandato-instalado">
                           {s.municipio.tempoInstalado}{' '}
-                          <span data-nonledger="data-de-referencia">{mandato.instalado}</span>
+                          <span data-nonledger="data-de-referencia">{dataDaCasa(mandato.instalado)}</span>
                         </span>
                       ) : null}
                     </div>
@@ -1099,13 +1177,11 @@ const metodoPath = routePath('metodo', lang);
 
           A porta «a página inteira, com quem governou» continua escondida, e é
           a resposta certa: esta É a página inteira. */}
-      <MapaRespira
-        s={s}
-        lang={lang}
-        concelhos={concelhos()}
-        postura="localizador"
-        escolhido={slug}
-      />
+      {/* O CARTÃO LOCALIZADOR SUBIU PARA A CABEÇA (01.09.2026). Era o primeiro
+          bloco desta coluna, e a cabeça das três camadas passou a levar o
+          instrumento da camada: o mapa de um concelho é onde ele fica, e não no
+          fim da página. A chamada é a mesma, com as mesmas duas propriedades, e
+          está em `CabecaDoLugar`. */}
 
       <h2 class="aparelho-titulo" id="aparelho">{s.municipio.provenienciaK}</h2>
 
