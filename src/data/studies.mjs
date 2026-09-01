@@ -297,9 +297,24 @@ export const EXCLUIDOS = [
 ];
 
 /**
- * "Estudos" internos: não são publicações, são a origem de números que a
- * própria casa apura (contagens do arquivo, processamento da CAOP).
- * Existem para que o campo `study` do livro-razão nunca fique vazio nem mentiroso.
+ * OS ESTUDOS QUE NÃO SÃO TRABALHOS DO ARQUIVO.
+ *
+ * `WORKS` é o arquivo: um trabalho tem documento publicado, edições, data e
+ * página própria em `/estudos`. Esta lista é a outra metade do campo `study` de
+ * uma linha do livro-razão, e existe para que ele nunca fique vazio nem
+ * mentiroso.
+ *
+ * O NOME «internos» DIZ MENOS DO QUE A LISTA TEM, e fica dito em vez de
+ * corrigido à socapa (01.09.2026). Duas destas entradas são mesmo apuramento da
+ * casa (`o-estado-do-pais`, as contagens do próprio arquivo); as outras três não
+ * são: `quadro-institucional`, `concelhos-2026` e `dominios-2026` são medidas
+ * que o INE, o Eurostat, a DGAL, o IEFP, o Conselho das Finanças Públicas e o
+ * Diário da República publicam, lidas na fonte, e a proveniência de cada linha
+ * diz qual. O que as três têm em comum com as outras duas é só isto: são
+ * identificadores de estudo sem trabalho no arquivo. Renomear a constante mexe
+ * em todos os ficheiros que a importam e é uma decisão da direção, não desta
+ * passagem.
+ *
  * Não aparecem no arquivo.
  */
 export const INTERNAL_SOURCES = [
@@ -379,12 +394,25 @@ export const INTERNAL_SOURCES = [
      * nenhum: é o identificador que o campo `study` destas linhas traz, e a sua
      * superfície são as páginas dos domínios, que são outro bloco.
      *
+     * SÃO CINCO MEDIDAS NACIONAIS E UMA CONTINENTAL, e a diferença não é uma
+     * finura: o Decreto-Lei n.º 139/2025 fixa a retribuição mínima e o seu
+     * artigo 2.º aplica-o «a todo o território continental». Os Açores e a
+     * Madeira fixam a sua por diploma regional próprio, que não foi lido. O
+     * identificador da linha diz o perímetro (`…-garantida-continente-2026`) e
+     * o localizador cita o artigo, para que a página não a possa apresentar
+     * como «o salário mínimo em Portugal», que estaria errado por omissão nas
+     * ilhas.
+     *
      * NÃO DECLARA `conjunto`, e a razão é que ainda não há página de conjunto
-     * onde estas linhas se leiam juntas. São poucas e nacionais, e por isso
-     * ficam no índice do livro-razão como as outras medidas nacionais ficam.
+     * onde estas linhas se leiam juntas. São seis, e por isso ficam no índice
+     * do livro-razão como as outras medidas nacionais ficam.
+     *
      * As 308 linhas por concelho da mesma leitura (o ganho médio mensal) NÃO
-     * estão aqui: levam `concelhos-2026`, que é o estudo das medidas centrais
-     * por concelho e é onde a página do conjunto delas já existe.
+     * estão aqui: levam `concelhos-2026`, por decisão da direção de 01.09.2026,
+     * porque são medidas de concelho como as outras sete que a página de cada
+     * concelho mostra. De que estudo do motor elas vieram está no registo da
+     * travessia, `ledger/cruzamentos/dominios.json`, que nomeia `13 Dominios`
+     * em cada uma.
      */
     id: 'dominios-2026',
     label: {
