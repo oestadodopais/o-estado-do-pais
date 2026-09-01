@@ -67,28 +67,37 @@ ninguém se lembrar. E a composição passa a ser por partes (`formatToParts`) e
 vez de um `replace` sobre o texto do `pt-PT`, que escrevia «01/09/2026, 21:07» com
 barras e vírgula e era uma regra que se partia à primeira mudança de locale.
 
-**Uma observação para o lugar de direção, e não uma mudança:** a leitura vizinha,
-a do painel europeu, mostra a data em ISO (`2026-08-31`), e esta mostra-a em
-`dd.mm.aaaa`. São duas formas de data lado a lado no mesmo cabeçalho. A forma
-desta está na decisão §1.92; a do painel é anterior. Fica dito.
+**A observação das duas formas de data fechou na rebase.** A segunda passagem
+deixou dito que a leitura vizinha, a do painel europeu, mostrava a data em ISO
+(`2026-08-31`) enquanto esta a mostrava em `dd.mm.aaaa`. O bloco da cabeça, que
+entrou em `main` entretanto, trouxe a regra da casa em `src/lib/datas.mjs`
+(«as datas escrevem-se dd.mm.aaaa em todo o lado, uma regra só») e aplicou-a ao
+painel. Este componente passa a chamar a mesma função para a sua parte da data, e
+faz de seu só o que ela não pode fazer: converter o instante UTC para a hora de
+Lisboa e escrever o fuso. As duas leituras do cabeçalho ficam na mesma forma, e a
+forma decide-se num sítio só.
 
-**O cabeçalho cresce 23,19 px, e está medido.** Corri
-`node tests/inicio/app.mjs` (a régua da worktree `cabeca-2026-09-01`) sobre duas
-construções, uma com a leitura montada e outra sem:
+**O cabeçalho cresce 23,19 px, e está medido DUAS VEZES: antes e depois de a
+cabeça nova entrar em `main`.** Corri `node tests/inicio/app.mjs` (a régua que a
+cabeça trouxe) sobre duas construções, uma com a leitura montada e outra sem, e
+repeti-o depois da rebase sobre `main` com a cabeça já lá dentro. A medida é a
+mesma nas duas vezes; o que mudou foram as alturas de partida, porque a cabeça
+nova é mais alta:
 
 | largura e edição | sem a leitura | com a leitura | diferença |
 |---|---|---|---|
-| cabeçalho grande (6 células) | 200,73 px | 223,92 px | +23,19 |
-| cabeçalho compacto (6 células) | 168,33 px | 191,52 px | +23,19 |
+| cabeçalho grande (7 células) | 200,73 px | 223,92 px | +23,19 |
+| cabeçalho compacto (7 células) | 168,33 px | 191,52 px | +23,19 |
 | cabeçalho grande (2 células) | 177,55 px | 200,73 px | +23,19 |
 | cabeçalho compacto (2 células) | 145,14 px | 168,33 px | +23,19 |
-| as páginas sem mobília (12 células) | iguais | iguais | 0 |
+| cabeçalho grande, a cela alta (2 células) | 320,83 px | 346,02 px | +23,19 |
+| as páginas sem mobília | iguais | iguais | 0 |
 
-**A régua passa 39 de 39 nas duas construções**, porque o que ela afirma é que o
-cabeçalho é o nome numa linha e sem sinal, e não uma altura fixa. Fica dito na
-mesma: a altura mudou, a régua é de outra família, e ela tem de voltar a correr
-depois da fusão, que, pela §1.91, é depois de a cabeça nova entrar, com este ramo
-a rebasear por cima dela.
+**A régua passa 39 de 39 nas quatro construções** (com e sem a leitura, antes e
+depois da cabeça), porque o que ela afirma é que o cabeçalho é o nome numa linha e
+sem sinal, e não uma altura fixa. A §1.91 mandava este ramo rebasear por cima da
+cabeça e voltar a correr a régua dela: está feito, e a dúvida 2 da primeira
+passagem fecha com o mesmo número que tinha.
 
 ### 2.3 As três datas no recibo da linha
 

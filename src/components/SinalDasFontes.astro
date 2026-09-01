@@ -48,6 +48,7 @@
  * o que a linha da agenda já faz ao lado.
  */
 import { estadoDasFontes } from '../lib/prova.mjs';
+import { dataDaCasa } from '../lib/datas.mjs';
 
 const { lang = 'pt', s, porta } = Astro.props;
 const fontes = estadoDasFontes();
@@ -56,9 +57,18 @@ const fontes = estadoDasFontes();
    do instante UTC que o motor escreveu; escrever a data à mão a partir da cadeia
    ISO daria a hora de Greenwich rotulada como se fosse a de cá. */
 /* Compõe-se por partes e não do texto corrido do formatador: o `pt-PT` escreve
-   «01/09/2026, 19:15 WEST», com barras e uma vírgula, e a casa escreve as datas
+   «01/09/2026, 21:07 WEST», com barras e uma vírgula, e a casa escreve as datas
    com pontos. Trocar isso com um `replace` sobre o texto é uma regra que se
-   parte na primeira mudança de locale; pedir as partes é pedir o que se quer. */
+   parte na primeira mudança de locale; pedir as partes é pedir o que se quer.
+
+   E A DATA PASSA POR `dataDaCasa()`, que é a regra da casa desde o bloco da
+   cabeça: «as datas escrevem-se dd.mm.aaaa em todo o lado (uma regra só)». O que
+   este componente faz de seu é a parte que aquela função não pode fazer, e que é
+   a razão de ele existir: converter um INSTANTE UTC para a hora de Lisboa e
+   escrever o fuso. A data que sai dessa conversão volta a ISO e vai pela porta
+   de todos, para que o dia em que a casa mudar a forma das datas a mude num
+   sítio só. Antes desta passagem eram duas formas lado a lado no mesmo
+   cabeçalho, e estava dito no relatório como observação; deixou de ser. */
 const carimbo = (() => {
   if (!fontes.conferidoEm) return null;
   const partes = new Intl.DateTimeFormat('pt-PT', {
@@ -72,10 +82,8 @@ const carimbo = (() => {
     timeZoneName: 'short',
   }).formatToParts(new Date(fontes.conferidoEm));
   const parte = (t) => partes.find((x) => x.type === t)?.value ?? '';
-  return (
-    `${parte('day')}.${parte('month')}.${parte('year')} ` +
-    `${parte('hour')}:${parte('minute')} ${parte('timeZoneName')}`
-  );
+  const dia = dataDaCasa(`${parte('year')}-${parte('month')}-${parte('day')}`);
+  return `${dia} ${parte('hour')}:${parte('minute')} ${parte('timeZoneName')}`;
 })();
 ---
 
