@@ -125,6 +125,205 @@ function sha256(buf) {
   return crypto.createHash('sha256').update(buf).digest('hex');
 }
 
+/* ------------------------------------------------ a reconferência acrescentada
+ *
+ * O PROBLEMA, MEDIDO A 01.09.2026. O corredor diário escreve `verificado_em` em
+ * todas as linhas que conferiu, e 2 525 das 2 577 linhas com endereço são linhas
+ * CRUZADAS. A conferência de aceitação compara os bytes do ficheiro com os que
+ * atravessaram, e uma entrada acrescentada muda os bytes: a primeira corrida do
+ * corredor fechou a construção com 2 525 «os bytes em disco já não são os que
+ * atravessaram».
+ *
+ * O QUE ESTA CONFERÊNCIA QUER DIZER, escrito na sua própria mensagem de erro:
+ * «uma linha cruzada não se edita à mão». O bloco `verifications[]` é, por regra
+ * do formato (`ledger/README.md`), o único que NUNCA se escreve à mão: nasce de
+ * uma releitura que aconteceu e é escrito por um dos três programas que a fazem.
+ * Deixar de o ver seria enfraquecer a régua; o que se faz é o contrário, e é
+ * mais apertado do que uma exceção:
+ *
+ *   1. Se os bytes batem, acabou, e é o caminho de sempre.
+ *   2. Se não batem, RECONSTROI-SE o ficheiro tal como estava na travessia,
+ *      tirando as entradas que vieram DEPOIS dela (o registo diz quantas havia,
+ *      em `verifications_at_export`), e os bytes reconstruídos têm de dar
+ *      exactamente o resumo registado. Tudo o que não seja o acrescento continua
+ *      a fechar a construção, byte a byte.
+ *   3. E cada entrada acrescentada tem de declarar um autor da lista fechada.
+ *
+ * O QUE O PONTO 3 PROVA, E O QUE NÃO PROVA (leitura a frio de 01.09, M18). Ele
+ * prova que o `by` da entrada é **um rótulo permitido**. NÃO prova que um
+ * programa a escreveu: `by` é uma cadeia que a própria entrada declara, e quem
+ * editar a linha à mão escrevendo `by: "corredor-diario"` passa por aqui. A
+ * primeira redacção desta régua dizia «só um programa pode acrescentar», e isso
+ * era uma afirmação que nada aqui sustenta.
+ *
+ * O que de facto sustenta a promessa está noutro sítio e é de outra natureza: o
+ * bloco `verifications[]` não se escreve à mão porque o formato o proíbe
+ * (`ledger/README.md`), e a prova de que uma conferência aconteceu é a linha do
+ * índice do arquivo — com o endereço, a hora UTC, o estado HTTP e o resumo do
+ * ficheiro lido — que uma edição à mão do YAML não consegue fabricar. Esta
+ * régua é a segunda tranca, não a primeira, e diz agora o que tranca.
+ *
+ * Provado nesta corrida contra os registos de travessia, e com cinco plantas em
+ * `provaDaReconferencia()`.
+ */
+
+/** Os rótulos de autor que os programas escrevem. A cópia local da lista de
+ *  `src/lib/ledger.mjs`: se esta régua lesse a de lá, confirmava-a em vez de a
+ *  conferir. É uma lista de RÓTULOS PERMITIDOS, não uma prova de autoria: ver o
+ *  bloco acima. */
+const AUTORES_DE_MAQUINA = new Set([
+  'painel-semanal',
+  'revisao-cruzada',
+  'leitura-independente',
+  'corredor-diario',
+]);
+
+/**
+ * O ficheiro tal como estava quando atravessou, se a única diferença for um
+ * acrescento ao fim do bloco `verifications:`. `null` quando não se consegue.
+ *
+ * `n` é quantas entradas havia na travessia. Com `n === 0` sai o bloco inteiro,
+ * com o comentário que o precede e a linha em branco que os separa, porque é
+ * assim que o escritor o cria numa linha que ainda não tinha nenhum.
+ */
+function semAsReconferenciasNovas(texto, n) {
+  const linhas = texto.split('\n');
+  const i = linhas.findIndex((l) => l.trimEnd() === 'verifications:');
+  if (i < 0) return null;
+  let fim = linhas.length;
+  for (let j = i + 1; j < linhas.length; j++) {
+    if (linhas[j].trim() && !/^[ \t-]/.test(linhas[j])) {
+      fim = j;
+      break;
+    }
+  }
+  while (fim > i + 1 && !linhas[fim - 1].trim()) fim--;
+  const bloco = linhas.slice(i + 1, fim);
+  const inicios = [];
+  bloco.forEach((l, k) => {
+    if (/^ {2}- /.test(l)) inicios.push(k);
+  });
+  /* A PODA DAS QUATRO (§1.92(2)) E O QUE ELA FAZ A ESTA RECONSTRUÇÃO. A linha
+     guarda as últimas quatro conferências, pelo que um dia as mais velhas saem.
+     Para uma linha que atravessou SEM bloco (`n === 0`, que são 2 829 das 2 850
+     de hoje), isto não muda nada: tira-se o bloco inteiro e os bytes voltam a
+     ser os que atravessaram, hoje e daqui a um ano. Para uma linha que
+     atravessou COM entradas (21 de hoje), o dia em que a poda lhe comer a
+     primeira, esta reconstrução deixa de bater e a régua fecha com a mensagem
+     de sempre — que é o correcto: a partir daí a linha tem de voltar a
+     atravessar pelo exportador, que é como uma linha cruzada muda. */
+  if (inicios.length < n) return null;
+  if (n === 0) {
+    let inicio = i;
+    while (inicio > 0 && linhas[inicio - 1].startsWith('#')) inicio--;
+    while (inicio > 0 && linhas[inicio - 1].trim() === '') inicio--;
+    const resto = [...linhas.slice(0, inicio), ...linhas.slice(fim)];
+    while (resto.length && resto[resto.length - 1] === '') resto.pop();
+    return resto.join('\n') + '\n';
+  }
+  return [...linhas.slice(0, i + 1), ...bloco.slice(0, inicios[n]), ...linhas.slice(fim)].join('\n');
+}
+
+/**
+ * A diferença entre o disco e a travessia é SÓ um acrescento de máquina?
+ * Devolve `{ ok, novas, motivo }`.
+ */
+function soAcrescentouReconferencia(texto, entrada, linha) {
+  const n = Number(entrada.verifications_at_export ?? 0);
+  const reconstruido = semAsReconferenciasNovas(texto, n);
+  if (reconstruido === null) {
+    return { ok: false, novas: 0, motivo: 'não há bloco de reconferências que explique a diferença' };
+  }
+  if (sha256(Buffer.from(reconstruido, 'utf8')) !== entrada.exported_row_sha256) {
+    return { ok: false, novas: 0, motivo: 'mudou alguma coisa fora das reconferências' };
+  }
+  const todas = Array.isArray(linha?.verifications) ? linha.verifications : [];
+  const novas = todas.slice(n);
+  const mao = novas.filter((v) => !AUTORES_DE_MAQUINA.has(String(v?.by)));
+  if (mao.length) {
+    return {
+      ok: false,
+      novas: novas.length,
+      motivo: `${mao.length} reconferência(s) com um "by" fora da lista dos programas ` +
+        `(${[...new Set(mao.map((v) => String(v?.by)))].join(', ')}). Isto confere o ` +
+        `rótulo, não a autoria: quem a escreveu prova-se na linha do índice do arquivo`,
+    };
+  }
+  return { ok: true, novas: novas.length, motivo: '' };
+}
+
+/**
+ * A PLANTA, ANTES DE A RÉGUA CONTAR. Quatro casos, e o verde tem de ser verde:
+ * um acrescento de máquina passa; um valor mexido no meio do ficheiro fecha; uma
+ * reconferência com autor à mão fecha; e um bloco tirado fecha.
+ */
+function provaDaReconferencia(erros) {
+  const base =
+    'id: "f"\nvalue: "10,0"\nunit: "%"\nsource: "F"\n' +
+    'source_url: "https://exemplo.invalido/a"\naccess_date: "2026-01-01"\n' +
+    'reference_date: "2025"\nexcerpt: "F"\nstudy: "q"\ncorrections: []\n';
+  const entrada = (por) =>
+    `  - date: "2026-09-01"\n    path: "https://exemplo.invalido/a"\n` +
+    `    result: "igual"\n    by: "${por}"\n`;
+  const comBloco = (por) =>
+    base + '\n# Reconferências. Escritas pelo motor, nunca à mão.\nverifications:\n' + entrada(por) + '\n';
+  const reg = { exported_row_sha256: sha256(Buffer.from(base, 'utf8')), verifications_at_export: 0 };
+  const casos = [
+    {
+      nome: 'uma reconferência de máquina acrescentada',
+      texto: comBloco('corredor-diario'),
+      linha: { verifications: [{ by: 'corredor-diario' }] },
+      espera: true,
+    },
+    {
+      nome: 'uma reconferência com autor escrito à mão',
+      texto: comBloco('o-nuno'),
+      linha: { verifications: [{ by: 'o-nuno' }] },
+      espera: false,
+    },
+    {
+      nome: 'o valor mexido, com a reconferência por cima',
+      texto: comBloco('corredor-diario').replace('"10,0"', '"11,0"'),
+      linha: { verifications: [{ by: 'corredor-diario' }] },
+      espera: false,
+    },
+    {
+      nome: 'o ficheiro sem bloco nenhum e com o valor mexido',
+      texto: base.replace('"10,0"', '"11,0"'),
+      linha: {},
+      espera: false,
+    },
+    {
+      /* A PODA DAS QUATRO, numa linha que atravessou sem bloco: continua verde,
+         porque a reconstrução tira o bloco INTEIRO. É o caso de 2 829 das 2 850
+         linhas cruzadas, e é o que garante que a regra §1.92(2) não fecha a
+         construção daqui a quatro dias. */
+      nome: 'quatro conferências numa linha que atravessou sem bloco',
+      texto:
+        base +
+        '\n# Reconferências. Escritas pelo motor, nunca à mão.\nverifications:\n' +
+        entrada('corredor-diario').repeat(4) +
+        '\n',
+      linha: { verifications: Array(4).fill({ by: 'corredor-diario' }) },
+      espera: true,
+    },
+  ];
+  let vistas = 0;
+  for (const c of casos) {
+    const r = soAcrescentouReconferencia(c.texto, reg, c.linha);
+    if (r.ok !== c.espera) {
+      erros.push(
+        `a prova da régua das reconferências falhou no caso "${c.nome}": ` +
+          `esperava-se ${c.espera ? 'verde' : 'vermelho'} e deu ${r.ok ? 'verde' : 'vermelho'}` +
+          `${r.motivo ? ` (${r.motivo})` : ''}. A conferência abaixo deixou de valer.`,
+      );
+    } else {
+      vistas++;
+    }
+  }
+  return vistas;
+}
+
 function registos() {
   let ficheiros = [];
   try {
@@ -553,6 +752,12 @@ function main(argv) {
     }
   }
 
+  /* A planta, antes de qualquer conferência: uma régua que ninguém viu falhar
+     não é uma régua (regra 14 da casa). */
+  const plantasDaReconferencia = provaDaReconferencia(erros);
+  let acrescentos = 0;
+  let linhasComAcrescento = 0;
+
   for (const { ficheiro, dados } of regsDeLinhas) {
     ficheiros++;
     const linhas = dados.rows;
@@ -579,18 +784,6 @@ function main(argv) {
 
       const bytes = fs.readFileSync(caminho);
       const actual = sha256(bytes);
-      if (actual !== entrada.exported_row_sha256) {
-        erros.push(
-          `${onde}: os bytes em disco já não são os que atravessaram.\n` +
-            `        registo: ${entrada.exported_row_sha256}\n` +
-            `        disco:   ${actual}\n` +
-            `        Uma linha cruzada não se edita à mão. Ou se volta a cruzar no motor ` +
-            `(ResearchHub/publisher/export_site_rows.py --write), ou — se é este sítio a ` +
-            `admitir um erro — escreve-se a correcção em corrections[] e corre-se\n` +
-            `        node scripts/check-cruzamento.mjs --accept-correction ${id}`,
-        );
-        continue;
-      }
 
       let linha;
       try {
@@ -598,6 +791,29 @@ function main(argv) {
       } catch (err) {
         erros.push(`${onde}: YAML inválido: ${err.message}`);
         continue;
+      }
+
+      if (actual !== entrada.exported_row_sha256) {
+        /* A ÚNICA DIFERENÇA ACEITE É UM ACRESCENTO DE MÁQUINA AO BLOCO DAS
+           RECONFERÊNCIAS, e ele prova-se reconstruindo o ficheiro tal como
+           atravessou. Ver `soAcrescentouReconferencia()` e a sua planta. */
+        const r = soAcrescentouReconferencia(bytes.toString('utf8'), entrada, linha);
+        if (!r.ok) {
+          erros.push(
+            `${onde}: os bytes em disco já não são os que atravessaram.\n` +
+              `        registo: ${entrada.exported_row_sha256}\n` +
+              `        disco:   ${actual}\n` +
+              `        ${r.motivo}.\n` +
+              `        Uma linha cruzada não se edita à mão. O bloco verifications[] é a ` +
+              `única excepção, e só quando é escrito por um programa. Ou se volta a cruzar ` +
+              `no motor (ResearchHub/publisher/export_site_rows.py --write), ou — se é este ` +
+              `sítio a admitir um erro — escreve-se a correcção em corrections[] e corre-se\n` +
+              `        node scripts/check-cruzamento.mjs --accept-correction ${id}`,
+          );
+          continue;
+        }
+        acrescentos += r.novas;
+        linhasComAcrescento++;
       }
       if (linha?.id !== id) {
         erros.push(`${onde}: o ficheiro traz id "${linha?.id}".`);
@@ -643,13 +859,32 @@ function main(argv) {
           );
         }
       }
+      /* A CONTAGEM DAS RECONFERÊNCIAS. Só pode CRESCER, e o que a faz crescer é
+         um programa. Até 01.09.2026 exigia igualdade, porque até aí o único que
+         escrevia numa linha cruzada era o exportador; o corredor diário passa a
+         escrever também, e o que aqui se guarda é a mesma promessa dita com
+         precisão: nada se apaga, e nada entra à mão. Que o resto do ficheiro
+         não mexeu já foi provado byte a byte acima, reconstruindo-o. */
       const nVer = Array.isArray(linha?.verifications) ? linha.verifications.length : 0;
-      if (nVer !== Number(entrada.verifications_at_export ?? 0)) {
+      const nExport = Number(entrada.verifications_at_export ?? 0);
+      if (nVer < nExport) {
         erros.push(
-          `${onde}: a linha tem ${nVer} reconferência(s) e o registo diz ` +
-            `${entrada.verifications_at_export ?? 0}. Uma reconferência de uma linha cruzada ` +
-            `entra pelo exportador do motor e por mais lado nenhum: volte a cruzar.`,
+          `${onde}: a linha tem ${nVer} reconferência(s) e o registo diz ${nExport}. ` +
+            `A lista encolheu: uma reconferência escrita não se apaga.`,
         );
+      } else if (nVer > nExport) {
+        const mao = linha.verifications
+          .slice(nExport)
+          .filter((v) => !AUTORES_DE_MAQUINA.has(String(v?.by)));
+        if (mao.length) {
+          erros.push(
+            `${onde}: a linha ganhou ${nVer - nExport} reconferência(s) desde a travessia, e ` +
+              `${mao.length} delas declara um "by" fora da lista dos programas ` +
+              `(${[...new Set(mao.map((v) => String(v?.by)))].join(', ')}). Uma reconferência ` +
+              `entra por um programa que releu, e por mais lado nenhum. Esta régua confere o ` +
+              `rótulo; a prova de que a releitura aconteceu é a linha do índice do arquivo.`,
+          );
+        }
       }
     }
   }
@@ -734,7 +969,9 @@ function main(argv) {
   console.log(
     cinza(
       `  cruzamentos · ${total} linha(s) de origem externa em ${ficheiros} registo(s)` +
-        (origem ? ` · ${origem.lidos} conferida(s) contra o motor` : ''),
+        (origem ? ` · ${origem.lidos} conferida(s) contra o motor` : '') +
+        ` · ${linhasComAcrescento} com reconferência de programa acrescentada ` +
+        `(${acrescentos} entrada(s)) · ${plantasDaReconferencia} planta(s) vista(s)`,
     ),
   );
   console.log(

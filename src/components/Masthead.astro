@@ -47,6 +47,7 @@ import { SITE_NAME } from '../../site.config.mjs';
 import { routePath, otherLanguagePath, normalizePath } from '../lib/routes.mjs';
 import { estadoDaVerificacao, prova } from '../lib/prova.mjs';
 import ValorDaProva from './ValorDaProva.astro';
+import SinalDasFontes from './SinalDasFontes.astro';
 import ControloDeTema from './ControloDeTema.astro';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -170,6 +171,12 @@ const temAgenda = p.agenda_em_curso.valor !== null && p.agenda_a_seguir.valor !=
    essa âncora é a do próprio painel: a linha que vivia em `#numeros`, por baixo
    dele, era a segunda cópia desta e saiu. */
 const painel = `${home}#painel`;
+/* A PORTA DA LEITURA DAS FONTES é a secção da releitura no Método, que é onde a
+   regra vive (Emenda 15: «o Método, o Sobre e o recibo da página de linha são
+   onde o método vive»). A do painel abre o painel porque é o painel que aquela
+   data cobre; esta abre a regra, porque o que ela cobre são todas as linhas e
+   não uma secção da primeira página. */
+const releitura = `${routePath('metodo', lang)}#releitura`;
 ---
 
 <header>
@@ -277,11 +284,16 @@ const painel = `${home}#painel`;
       furniture && (
         <div class="masthead-furniture" data-sinal-de-tempo>
           {/* --------------------------------------------------------------
-              DUAS LEITURAS ROTULADAS E LIGADAS (v2, direção S).
+              LEITURAS ROTULADAS E LIGADAS (v2, direção S).
               Cada uma tem rótulo e valor, os dois em monoespaçada, e cada uma
               tem porta. Eram microtexto corrido; passam a ler-se como o que
-              são, duas leituras de aparelho por baixo da marca. Sem caixa: o
+              são, leituras de aparelho por baixo da marca. Sem caixa: o
               cabeçalho leva um fio e mais nada (IDENTIDADE.md §3).
+
+              Eram duas até 01.09.2026 e são três desde o corredor diário: o
+              painel europeu, as fontes e a agenda. A terceira mede uma coisa
+              que nenhuma das outras media, e a altura que ela acrescenta ao
+              cabeçalho está medida no relatório do bloco.
               -------------------------------------------------------------- */}
           <span class="mob-leitura" data-vencida={verificacao.vencida ? 'sim' : null}>
             <a class="mob-leitura-porta" href={painel}>
@@ -293,6 +305,15 @@ const painel = `${home}#painel`;
               </span>
             </a>
           </span>
+          {/* --------------------------------------------------------------
+              A LEITURA DAS FONTES (01.09.2026, o corredor diário).
+
+              A terceira leitura da mobília, e vive num componente seu: ver o
+              topo de `SinalDasFontes.astro` para o que ela diz, o que não diz e
+              porquê. Aqui fica só onde se liga. Antes da primeira corrida do
+              corredor ela não rende nada, como a linha da agenda.
+              -------------------------------------------------------------- */}
+          <SinalDasFontes lang={lang} s={s} porta={releitura} />
           {/* --------------------------------------------------------------
               A LINHA DA AGENDA (16.08.2026, DECISIONS §1.40).
               As duas contagens são números do próprio sítio: vêm de

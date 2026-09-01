@@ -41,3 +41,11 @@ note: "[note do motor] T5 do inventário das fontes de 01.09.2026, a linha do di
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://dre.pt/application/conteudo/992879809"
+    result: "igual"
+    by: "corredor-diario"

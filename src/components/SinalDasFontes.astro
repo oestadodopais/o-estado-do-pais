@@ -1,0 +1,101 @@
+---
+/**
+ * A leitura das fontes na mobília do cabeçalho: quando é que se perguntou.
+ *
+ * É UM COMPONENTE PRÓPRIO E NÃO MAIS UM BLOCO DENTRO DO `Masthead.astro`, e a
+ * razão é de outra ordem que não a estética: a geometria do cabeçalho está a ser
+ * medida por outra família nesta mesma noite (`tests/inicio/app.mjs` mede a
+ * altura do `<header>` a sete larguras), e uma leitura que vive num ficheiro seu
+ * tira-se e põe-se com uma linha. A ordem do lugar de direção pede-o assim para
+ * as partes que tocam a cabeça.
+ *
+ * ONDE SE LIGA: `src/components/Masthead.astro`, dentro de
+ * `<div class="masthead-furniture">`, entre a leitura do painel europeu e a
+ * linha da agenda. Usa as classes que já lá estão (`mob-leitura`,
+ * `mob-leitura-porta`, `mob-leitura-k`, `mob-leitura-v`), sem folha de estilo
+ * própria: é a MESMA leitura de aparelho que as outras duas, e uma terceira
+ * gramática visual para a mesma coisa seria uma decisão de identidade que este
+ * bloco não tem.
+ *
+ * O QUE ELA DIZ, E O QUE NÃO DIZ. Diz o nome da coisa e a data: «Fontes ·
+ * 01.09.2026 19:22». Não diz nem quantas linhas se conferiram nem quantos
+ * valores novos entraram, e isso é deliberado contra a letra do brief: a
+ * Emenda 15 tira da página do leitor as frases sobre o método e a diligência, a
+ * Emenda 18e escreve «nada existe para mostrar diligência», e a segunda passagem
+ * da voz (V2, 27.08) tirou desta mesma linha o verbo «reconferido» com essa
+ * razão escrita. Uma frase com contagens por dentro tem ainda um segundo
+ * problema, mecânico: o inventário da voz não a pode guardar como sentinela,
+ * porque «uma frase com um número que se move volta com outro número, e a linha
+ * nunca voltaria a morder» (INVENTARIO-FRASES.md). As contagens da corrida têm
+ * onde viver, e vivem lá: o relatório da corrida, o índice do arquivo, e o
+ * recibo de cada linha. O que fica no cabeçalho é o ESTADO, que é o que muda
+ * todos os dias e o que o leitor tem de ver quando deixar de mudar.
+ *
+ * A DATA É A DE LISBOA E ESCREVE-SE À PORTUGUESA, COM O FUSO À VISTA. O motor
+ * carimba em UTC (§7 do desenho: «UTC em todo o lado no motor; o sítio imprime a
+ * hora de Lisboa com o fuso escrito»). A conversão faz-se aqui, uma vez.
+ *
+ * O FUSO ESTAVA NOMEADO NO CÓDIGO E NÃO NA PÁGINA, e a leitura a frio de 01.09
+ * apanhou a diferença: pôr `timeZone: 'Europe/Lisbon'` no formatador diz ao
+ * programa que hora calcular, e não diz NADA a quem lê. «19:15» sem mais é uma
+ * hora sem sítio. Agora a abreviatura do fuso vai no texto rendido, tirada do
+ * próprio formatador (`timeZoneName: 'short'`), pelo que ela acompanha a mudança
+ * de verão para inverno sem ninguém se lembrar: WEST no verão, WET no inverno.
+ *
+ * SEM CORRIDA NENHUMA NÃO SE DESENHA NADA. O ficheiro `src/data/fontes.mjs` é
+ * escrito pela corrida; antes da primeira, `conferidoEm` é nulo e este
+ * componente não rende. Um lugar vazio com um rótulo é pior do que nenhum, que é
+ * o que a linha da agenda já faz ao lado.
+ */
+import { estadoDasFontes } from '../lib/prova.mjs';
+import { dataDaCasa } from '../lib/datas.mjs';
+
+const { lang = 'pt', s, porta } = Astro.props;
+const fontes = estadoDasFontes();
+
+/* dd.mm.aaaa hh:mm, na hora de Lisboa. `Intl` faz a conversão do fuso a partir
+   do instante UTC que o motor escreveu; escrever a data à mão a partir da cadeia
+   ISO daria a hora de Greenwich rotulada como se fosse a de cá. */
+/* Compõe-se por partes e não do texto corrido do formatador: o `pt-PT` escreve
+   «01/09/2026, 21:07 WEST», com barras e uma vírgula, e a casa escreve as datas
+   com pontos. Trocar isso com um `replace` sobre o texto é uma regra que se
+   parte na primeira mudança de locale; pedir as partes é pedir o que se quer.
+
+   E A DATA PASSA POR `dataDaCasa()`, que é a regra da casa desde o bloco da
+   cabeça: «as datas escrevem-se dd.mm.aaaa em todo o lado (uma regra só)». O que
+   este componente faz de seu é a parte que aquela função não pode fazer, e que é
+   a razão de ele existir: converter um INSTANTE UTC para a hora de Lisboa e
+   escrever o fuso. A data que sai dessa conversão volta a ISO e vai pela porta
+   de todos, para que o dia em que a casa mudar a forma das datas a mude num
+   sítio só. Antes desta passagem eram duas formas lado a lado no mesmo
+   cabeçalho, e estava dito no relatório como observação; deixou de ser. */
+const carimbo = (() => {
+  if (!fontes.conferidoEm) return null;
+  const partes = new Intl.DateTimeFormat('pt-PT', {
+    timeZone: 'Europe/Lisbon',
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+    timeZoneName: 'short',
+  }).formatToParts(new Date(fontes.conferidoEm));
+  const parte = (t) => partes.find((x) => x.type === t)?.value ?? '';
+  const dia = dataDaCasa(`${parte('year')}-${parte('month')}-${parte('day')}`);
+  return `${dia} ${parte('hour')}:${parte('minute')} ${parte('timeZoneName')}`;
+})();
+---
+
+{
+  carimbo && (
+    <span class="mob-leitura" data-vencida={fontes.vencida ? 'sim' : null}>
+      <a class="mob-leitura-porta" href={porta}>
+        <span class="mob-leitura-k">{fontes.vencida ? s.sinal.fontesVencidas : s.sinal.fontes}</span>
+        <span class="mob-leitura-v" data-nonledger="data-da-conferencia">
+          {carimbo}
+        </span>
+      </a>
+    </span>
+  )
+}

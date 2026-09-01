@@ -45,3 +45,11 @@ note: "[derivation do motor] the source prints 32.166.372,20; printed here to th
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://www.cm-evora.pt/wp-content/uploads/2020/06/Relatorio_Gestão_2016.pdf#page=84"
+    result: "igual"
+    by: "corredor-diario"

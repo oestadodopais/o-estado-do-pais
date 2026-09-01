@@ -46,3 +46,11 @@ note: "[note do motor] Coordenadas do pedido: na_item B9, sector S13, unit PC_GD
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/gov_10dd_edpt1?format=JSON&lang=EN&geo=PT&unit=PC_GDP&sector=S13&na_item=B9"
+    result: "igual"
+    by: "corredor-diario"

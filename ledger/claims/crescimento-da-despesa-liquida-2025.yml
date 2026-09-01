@@ -41,3 +41,11 @@ note: "[note do motor] E4 do inventário das fontes de 01.09.2026. Lido em p. 9,
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://www.cfp.pt/uploads/publicacoes_ficheiros/cfp_parecer-2026-02-rap26.pdf#page=9"
+    result: "igual"
+    by: "corredor-diario"

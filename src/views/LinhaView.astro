@@ -64,6 +64,7 @@ import {
   POR_VERIFICAR,
 } from '../lib/ledger.mjs';
 import { caminhoDaLinha, caminhoDoLivro, tituloDaLinha, descricaoDaLinha } from '../lib/livro.mjs';
+import { estadoDaFonte } from '../lib/prova.mjs';
 import { studyTitle } from '../data/studies.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import {
@@ -259,6 +260,17 @@ const recorteAlt = recorte
  * linha: é por ele que o portão a vai buscar, e não pela ordem em que aparece.
  */
 const verificacoes = verificacoesDaLinha(claim).slice(0, VERIFICACOES_MOSTRADAS);
+
+/**
+ * O estado da fonte desta linha: desde quando é que o endereço não responde.
+ *
+ * `null` na esmagadora maioria, e `null` não se desenha. Uma fonte que responde
+ * não tem estado a mostrar, e um lugar vazio com um rótulo diria que há alguma
+ * coisa a dizer. É o corredor diário que o mede, e o que ele escreve é a data
+ * da primeira ausência DEPOIS da última resposta boa: ver `estadoDaFonte()` em
+ * `src/lib/prova.mjs` e `escrever_estado_das_fontes()` no motor.
+ */
+const fonteSemResposta = estadoDaFonte(claim.source_url);
 
 /** As linhas da ficha que existem nesta afirmação. Uma linha a null não se mostra. */
 const ficha = [
@@ -904,11 +916,55 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
           {/* Uma linha sem data de leitura não é lida de lado nenhum: é
               calculada, e a sua prova é a aritmética acima. A linha da tabela
               não se rende vazia nem com a frase de outro campo. */}
+          {/* ------------------------------------------------- as três datas
+
+              O período de referência está no bloco de cima, ao pé do valor, que
+              é onde ele pertence: é uma propriedade do número. As outras duas
+              são deste bloco e estão por ordem do que aconteceu: a fonte
+              publicou, a casa leu, a casa releu.
+
+              «Publicado pela fonte a» só se desenha quando a linha o tem, e a
+              maior parte não tem: a maior parte dos publicadores não carimba
+              nada que se possa ler. Uma data que a casa não sabe não se
+              inventa e não se desenha — nem sequer com `[a verificar]`, porque
+              isso diria «existe e falta-nos», e o que se sabe é que o
+              publicador não a serve. Ver `published_at` em `src/lib/ledger.mjs`
+              para as duas origens de que ela pode vir.
+              ------------------------------------------------------------ */}
+          {claim.published_at && (
+            <>
+              <dt>{s.livro.linha.publicadoEmK}</dt>
+              <dd>
+                <CampoDaLinha
+                  id={id}
+                  campo="published_at"
+                  valor={claim.published_at}
+                  lang={lang}
+                />
+              </dd>
+            </>
+          )}
           {claim.access_date && (
             <>
               <dt>{s.prov.lido}</dt>
               <dd>
                 <CampoDaLinha id={id} campo="access_date" valor={claim.access_date} lang={lang} />
+              </dd>
+            </>
+          )}
+          {/* -------------------------------------- o estado da fonte, quando há
+
+              «Sem resposta desde dd.mm.aaaa». É uma DATA e não um adjectivo, e
+              é o que impede a página de dizer «hoje» sobre uma linha cuja fonte
+              deixou de atender (§1 do desenho: «uma fonte que não responde é um
+              estado, com a data em que deixou de responder»). Não se desenha
+              quando a fonte responde.
+              ------------------------------------------------------------ */}
+          {fonteSemResposta && (
+            <>
+              <dt>{s.livro.linha.semRespostaK}</dt>
+              <dd class="linha-sem-resposta">
+                <span data-nonledger="data-da-conferencia">{fonteSemResposta.desde}</span>
               </dd>
             </>
           )}

@@ -121,6 +121,38 @@ export const CAMPOS = [
   'document',
   'source_url',
   'access_date',
+  /**
+   * A data que o PUBLICADOR carimba no que serve (01.09.2026, o corredor).
+   *
+   * A terceira das três datas de uma medida, e a que faltava. As outras duas
+   * são `reference_date` (o período a que o número se refere) e `access_date`
+   * mais as entradas de `verifications` (quando a casa leu e releu). Faltava a
+   * do meio: quando é que a FONTE publicou aquilo. Sem ela, uma linha lida hoje
+   * e publicada em 2019 tem a mesma cara de uma lida hoje e publicada ontem, e
+   * a página não sabe dizer qual é.
+   *
+   * DE ONDE VEM, e é uma lista fechada de UMA origem, porque uma data sem
+   * origem é uma data plausível: o carimbo que o PRÓPRIO CONJUNTO DE DADOS
+   * publica (`updated` no Eurostat, `DataUltimaAtualizacao` no INE, a data
+   * impressa na capa de um relatório). Fica registado, verbatim, na linha do
+   * índice do arquivo que a captura escreveu — que é a prova desta data como o
+   * excerto é a prova do valor.
+   *
+   * O `Last-Modified` DO HTTP NÃO ENTRA AQUI. Ele descreve a última modificação
+   * da REPRESENTAÇÃO que aquele servidor serve, e muda quando um ficheiro é
+   * copiado, regravado ou passado por uma cache sem que nada tenha sido
+   * publicado. Serve para o validador de `If-Modified-Since`, que é para onde o
+   * corredor o usa, e não serve para dizer ao leitor quando é que a fonte
+   * publicou o número.
+   *
+   * NÃO SE ESCREVE À MÃO, pela mesma razão que `verifications` não se escreve:
+   * quem a escreve é `indicators/corredor.py`, da resposta que leu.
+   *
+   * Opcional: a maior parte dos publicadores não carimba nada, e uma linha sem
+   * este campo é uma linha sobre a qual a casa não sabe. A página não desenha
+   * um campo que não existe.
+   */
+  'published_at',
   'reference_date',
   'excerpt',
   'source_flag',
@@ -558,6 +590,19 @@ export const AUTORES_DA_VERIFICACAO = [
   'leitura-independente',
   'painel-semanal',
   'revisao-cruzada',
+  /**
+   * O corredor diário (01.09.2026). Vale o que vale, e o que vale diz-se: ele
+   * NÃO relê o valor. O que ele prova é que o ficheiro da fonte é byte a byte o
+   * mesmo que estava guardado, ou que o publicador respondeu `304 Not Modified`
+   * ao validador da captura anterior — nos dois casos o número não pode ter
+   * mudado, porque o ficheiro de onde ele foi lido não mudou.
+   *
+   * Por isso ele só escreve `igual` e `inacessivel`, nunca `diverge`: onde o
+   * ficheiro MUDOU, o corredor não escreve nada na linha e deixa-a no relatório
+   * para uma sessão a rever. Dizer «igual» sem ler o valor seria a automação
+   * perigosa que o motor existe para não fazer.
+   */
+  'corredor-diario',
 ];
 
 /**
@@ -1997,6 +2042,52 @@ export function validateLedger() {
       if (v === null || v === undefined || v === POR_VERIFICAR) continue;
       if (!/^\d{4}(-\d{2}(-\d{2})?)?$/.test(String(v))) {
         errors.push(`${onde} "${campo}" = "${v}": use AAAA, AAAA-MM, AAAA-MM-DD ou "${POR_VERIFICAR}".`);
+      }
+    }
+
+    /* 7b — a data em que a fonte publicou.
+       AAAA-MM-DD e mais nada: ao contrário do período de referência, que pode
+       ser um ano, esta é o dia em que uma coisa aconteceu do lado do
+       publicador, e um ano não é um dia. Não pode ser posterior ao dia da
+       construção (uma fonte não publicou no futuro) nem anterior ao período a
+       que o número se refere quando esse período é um dia ou um mês: um número
+       de junho não foi publicado em maio. */
+    if (!ausente(c.published_at)) {
+      const v = String(c.published_at);
+      const [ano, mes, dia] = v.split('-').map(Number);
+      /* A FORMA NÃO CHEGA: A DATA TEM DE EXISTIR. `2026-02-31` passa a expressão
+         e passa as comparações de texto que vêm a seguir, e é um dia que não
+         há. Reconstrói-se a data em UTC e exige-se que ela devolva os mesmos
+         três números: é assim que 31 de fevereiro se denuncia, virando 3 de
+         março. */
+      const real =
+        /^\d{4}-\d{2}-\d{2}$/.test(v) &&
+        (() => {
+          const d = new Date(Date.UTC(ano, mes - 1, dia));
+          return (
+            d.getUTCFullYear() === ano && d.getUTCMonth() === mes - 1 && d.getUTCDate() === dia
+          );
+        })();
+      if (!real) {
+        errors.push(
+          `${onde} "published_at" = "${v}": a data em que a fonte publicou é AAAA-MM-DD, ` +
+            `e tem de ser um dia que existe. Um ano não é um dia, e 31 de fevereiro não é ` +
+            `uma data.`,
+        );
+      } else {
+        const hoje = new Date().toISOString().slice(0, 10);
+        if (v > hoje) {
+          errors.push(
+            `${onde} "published_at" é ${v} e hoje é ${hoje}. Uma fonte não publicou no futuro.`,
+          );
+        }
+        const ref = String(c.reference_date ?? '');
+        if (/^\d{4}-\d{2}(-\d{2})?$/.test(ref) && v.slice(0, ref.length) < ref) {
+          errors.push(
+            `${onde} "published_at" é ${v} e o período de referência é ${ref}. ` +
+              `Um número não foi publicado antes do período que mede.`,
+          );
+        }
       }
     }
 

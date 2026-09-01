@@ -32,3 +32,11 @@ study: "penalizacoes-por-reforma-antecipada-2026"
 note: "Fixado pela Portaria n.º 476/2025/1, de 29 de Dezembro. É um corte único sobre o montante estatutário, não uma taxa anual: aplica-se por inteiro a um mês e a seis anos de antecipação. A página impressa é a 226; a página física do PDF é a 265, porque o documento tem 39 páginas de rosto antes da numeração impressa."
 
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://www.dgcp.mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef#page=265"
+    result: "inacessivel"
+    by: "corredor-diario"
