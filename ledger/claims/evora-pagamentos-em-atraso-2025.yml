@@ -52,3 +52,7 @@ verifications:
     path: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf"
     result: "igual"
     by: "leitura-independente"
+  - date: "2026-09-01"
+    path: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=141"
+    result: "igual"
+    by: "corredor-diario"

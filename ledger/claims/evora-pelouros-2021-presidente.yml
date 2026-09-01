@@ -40,3 +40,11 @@ note: "[derivation do motor] the length of this member's recorded pelouro list, 
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://www.cm-evora.pt/municipe/camara-municipal/executivo/"
+    result: "igual"
+    by: "corredor-diario"

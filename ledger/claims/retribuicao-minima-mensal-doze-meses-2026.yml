@@ -46,3 +46,11 @@ note: "[note do motor] Coordenadas do pedido: currency EUR, geo PT, 2026-S2. T5 
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/earn_mw_cur?format=JSON&lang=EN&geo=PT&currency=EUR"
+    result: "igual"
+    by: "corredor-diario"

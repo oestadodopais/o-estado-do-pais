@@ -47,3 +47,7 @@ verifications:
     path: "https://portalautarquico.dgal.gov.pt/ficheiros/?schema=f7664ca7-3a1a-4b25-9f46-2056eef44c33&channel=a7187039-4863-4c6c-9ef0-1422b677728d&content_id=80B6C319-F1C8-4A6C-95F8-D93E11A38D63&field=storage_image&lang=pt&ver=1&filetype=pdf&dtestate=2017-02-17113411"
     result: "igual"
     by: "leitura-independente"
+  - date: "2026-09-01"
+    path: "https://portalautarquico.dgal.gov.pt/ficheiros/?schema=f7664ca7-3a1a-4b25-9f46-2056eef44c33&channel=a7187039-4863-4c6c-9ef0-1422b677728d&content_id=80B6C319-F1C8-4A6C-95F8-D93E11A38D63&field=storage_image&lang=pt&ver=1&filetype=pdf&dtestate=2017-02-17113411"
+    result: "igual"
+    by: "corredor-diario"

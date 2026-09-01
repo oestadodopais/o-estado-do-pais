@@ -32,3 +32,11 @@ study: "penalizacoes-por-reforma-antecipada-2026"
 note: "Redução cumulativa actuarialmente neutra para um ano de antecipação, caso geral, lida da Figura 8.4 como o complemento do factor de ajustamento aos 65 anos (100% - 91,8% = 8,2%), com idade pessoal de reforma aos 66. Caso geral significa que conta também as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Pressupostos na p. 233: tábuas completas do INE para o triénio 2023-2025, taxa de desconto e de actualização das pensões de 2% ao ano, taxa contributiva de 26,94%. O relatório chama-lhe uma estimativa preliminar. O localizador e a âncora do endereço usam a página física do PDF (273); a página impressa no rodapé do relatório é a 234, porque o documento tem 39 páginas de rosto antes de a numeração impressa começar."
 
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://www.dgcp.mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef#page=273"
+    result: "inacessivel"
+    by: "corredor-diario"

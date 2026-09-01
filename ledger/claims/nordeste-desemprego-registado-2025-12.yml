@@ -46,3 +46,11 @@ note: "[note do motor] tabela CONCELHOS, p.1, linha 46, linha de NORDESTE, colun
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://emprego.azores.gov.pt/wp-content/uploads/2026/02/02_DESEMPREGO_REGISTADO_DEZEMBRO_2025.pdf#page=1"
+    result: "igual"
+    by: "corredor-diario"

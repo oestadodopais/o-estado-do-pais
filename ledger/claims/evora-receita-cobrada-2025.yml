@@ -45,3 +45,11 @@ note: "[derivation do motor] printed to the nearest euro · Cruzado de ResearchH
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=111"
+    result: "igual"
+    by: "corredor-diario"

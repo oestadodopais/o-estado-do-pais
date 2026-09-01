@@ -41,3 +41,11 @@ note: "Cruzado de ResearchHub content/07 Évora Municipal Accounts · anuario-in
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://www.occ.pt/sites/default/files/public/2025-11/Anu%C3%A1rio%202024_OCC.pdf#page=22"
+    result: "igual"
+    by: "corredor-diario"

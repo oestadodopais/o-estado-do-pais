@@ -47,3 +47,7 @@ verifications:
     path: "https://www.iefp.pt/documents/10181/283855/SIE+-+Desemprego+registado+por+concelhos+dezembro+2013.pdf/bc2198f3-f017-498f-8b28-527773348d76"
     result: "igual"
     by: "leitura-independente"
+  - date: "2026-09-01"
+    path: "https://www.iefp.pt/documents/10181/283855/SIE+-+Desemprego+registado+por+concelhos+dezembro+2013.ods/3618526f-6c6b-4f55-b1c9-3dd4195e1a18"
+    result: "igual"
+    by: "corredor-diario"

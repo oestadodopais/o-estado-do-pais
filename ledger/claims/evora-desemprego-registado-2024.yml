@@ -47,3 +47,7 @@ verifications:
     path: "https://www.iefp.pt/documents/10181/12563215/SIE+-+Desemprego+registado+por+concelhos+dezembro+2024.pdf/52db05d1-25dd-4891-b893-9eeab0614036"
     result: "igual"
     by: "leitura-independente"
+  - date: "2026-09-01"
+    path: "https://www.iefp.pt/documents/10181/12563215/SIE+-+Desemprego+registado+por+concelhos+dezembro+2024.ods/fa4f152d-a6df-4058-9303-9ad626c35d86"
+    result: "igual"
+    by: "corredor-diario"

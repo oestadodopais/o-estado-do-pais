@@ -1973,6 +1973,16 @@ const CAMPOS_DA_LINHA = new Set([
   'unit',
   'source',
   /**
+   * A data que o publicador carimba no que serve (01.09.2026, o corredor).
+   *
+   * A terceira das três datas do recibo. Confere-se como qualquer outro campo,
+   * carácter a carácter contra o livro-razão: a página mostra a data que a
+   * linha guarda, e o portão prova que é essa. O validador do livro-razão
+   * garante a forma (AAAA-MM-DD, nunca no futuro, nunca antes do período que o
+   * número mede); este garante a transcrição.
+   */
+  'published_at',
+  /**
    * O rótulo com que a fonte publica a figura, e onde no ficheiro alojado ele
    * foi lido (29.08.2026).
    *
@@ -2108,11 +2118,17 @@ const ROTULO_DE_QUEM_RELEU = {
     'leitura-independente': 'leitura independente',
     'painel-semanal': 'reconferência semanal do painel',
     'revisao-cruzada': 'revisão cruzada',
+    /* O corredor diário confere o FICHEIRO da fonte, não o valor: o rótulo
+       di-lo, para que uma reconferência dele não se leia como uma releitura do
+       número. Ver AUTORES_DA_VERIFICACAO em src/lib/ledger.mjs. Esta tabela é a
+       cópia do portão: se ele lesse a do gabarito, confirmava o gabarito. */
+    'corredor-diario': 'conferência diária do ficheiro da fonte',
   },
   en: {
     'leitura-independente': 'independent reading',
     'painel-semanal': 'weekly panel re-check',
     'revisao-cruzada': 'cross-family review',
+    'corredor-diario': 'daily check of the source file',
   },
 };
 

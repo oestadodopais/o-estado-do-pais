@@ -46,3 +46,11 @@ note: "[note do motor] Quadro III, p.3, linha 85, linha de SANTANA, coluna TOTAL
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://www.iem.madeira.gov.pt/wp-content/uploads/recursos/instituto/estatisticas/2025/Conc/12-Bol-Conc-25.pdf#page=3"
+    result: "igual"
+    by: "corredor-diario"

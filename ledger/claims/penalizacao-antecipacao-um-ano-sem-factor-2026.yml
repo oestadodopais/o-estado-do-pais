@@ -32,3 +32,11 @@ study: "penalizacoes-por-reforma-antecipada-2026"
 note: "Redução acumulada da pensão, um ano de antecipação, para quem se enquadra numa das excepções legais que afastam o factor de sustentabilidade. O factor não se aplica uniformemente: carreiras muito longas, flexibilização aos 60 anos com 40 de carreira, profissões de desgaste rápido e invalidez estão fora. O localizador e a âncora do endereço usam a página física do PDF (266); a página impressa no rodapé do relatório é a 227, porque o documento tem 39 páginas de rosto antes de a numeração impressa começar."
 
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://www.dgcp.mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef#page=266"
+    result: "inacessivel"
+    by: "corredor-diario"
