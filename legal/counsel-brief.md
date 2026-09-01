@@ -32,8 +32,7 @@ human**, who sets scope, approves method, can reject or alter any study, and
 holds editorial responsibility. AI authorship is disclosed on every page. This is
 central to several questions below.
 
-**Who runs it.** Nuno Paulo dos Santos — Portuguese national, resident in the
-United Kingdom. Sole operator and named director. `[CONFIRM: how much personal
+**Who runs it.** Nuno dos Santos, Portuguese national. Sole operator and named director. `[CONFIRM: how much personal
 detail you want disclosed in this brief]`
 
 **Technical.** Static site (Astro) hosted on Vercel; canonical domain
@@ -58,7 +57,7 @@ SHA-256 manifest, published in Portuguese and English from a single build.
 The publication has a **split character** and we would like this addressed
 explicitly, since it may affect every answer below:
 
-- The **operator** is resident in the United Kingdom
+- The **operator** lives outside Portugal (the country is stated to counsel directly, not in this public file)
 - The **domain** is Portuguese (`.pt`), registered with a Portuguese registrar
 - The **subject matter** is Portuguese public administration
 - The **hosting** is on a US-headquartered platform with EU regions
