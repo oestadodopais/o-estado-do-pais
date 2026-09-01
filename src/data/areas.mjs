@@ -586,9 +586,9 @@ export const AREAS = [
           },
           {
             estudos: ['dominios-2026'],
-            id: /^retribuicao-minima-mensal-(garantida|doze-meses)-\d{4}$/,
+            id: /^retribuicao-minima-mensal-(garantida-continente|doze-meses)-\d{4}$/,
             razao:
-              'A retribuição mínima mensal garantida é uma condição de trabalho fixada por lei: o piso da remuneração. As duas linhas são a mesma matéria por dois publicadores, o diploma que a fixa para o território continental e a base do Eurostat que a converte de catorze meses para doze; o que muda entre elas é o perímetro, não o assunto.',
+              'A retribuição mínima mensal garantida é uma condição de trabalho fixada por lei: o piso da remuneração. As duas linhas são a mesma matéria por dois publicadores, o diploma que a fixa para o território continental e a base do Eurostat que a converte de catorze meses para doze; o que muda entre elas é o perímetro, não o assunto. O identificador da primeira di-lo: o decreto-lei aplica-se ao continente, e os Açores e a Madeira fixam o seu por diploma regional próprio.',
           },
         ],
       },

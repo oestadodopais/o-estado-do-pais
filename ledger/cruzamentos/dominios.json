@@ -1,6 +1,6 @@
 {
   "_": [
-    "Registo de travessia — Évora. Uma entrada por linha do livro-razão que veio do",
+    "Registo de travessia — Domínios. Uma entrada por linha do livro-razão que veio do",
     "motor de investigação (ResearchHub), com o resumo criptográfico da linha de",
     "origem e o dos bytes que aqui foram escritos.",
     "FICHEIRO GERADO. Escrito por ResearchHub/publisher/export_site_rows.py.",
@@ -16,7 +16,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5bba3c0efc2a690e0610b9ce5d754be1ec98358a8ce16b901a0502c0a5592ea6",
       "rh_id": "abrantes-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -27,7 +27,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d07ff51613d176cb61198df06203b7d781abbb643abfbb3834a96c35b66f66a3",
       "rh_id": "agueda-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -38,7 +38,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cb3b02f23ece7b898f3f5d6417e45b107ea4edb4a1338ba8b401813b14e2d4c1",
       "rh_id": "aguiar-da-beira-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -49,7 +49,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1d9f61ab4f9f003a55d22b576dd4d7451d6e9a53c048f1ac9063351571260672",
       "rh_id": "alandroal-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -60,7 +60,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "241cb43491adf24dbf80d86eec7278919b79ae872c6742184bce5d6f93aae8d4",
       "rh_id": "albergaria-a-velha-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -71,7 +71,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2789f158c39adf4ae5cf5e582432aed31bf8a9140363238a6a9d934899f161c0",
       "rh_id": "albufeira-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -82,7 +82,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6e4928b9a2df9ca656463d21bbfbebd5f44fdca39dc9839203520531bbb4da7c",
       "rh_id": "alcacer-do-sal-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -93,7 +93,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6c3f9e3a772a6482f582fb69a42b374220f83a6f1148e18e5e28e9a3cfdc9a08",
       "rh_id": "alcanena-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -104,7 +104,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4fa47bb268cfb39534303c2490107a99ab86bb403f68c889de70a6caae9c3678",
       "rh_id": "alcobaca-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -115,7 +115,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "37e8f2503d6f8fdddd726bd575adcecde0d8e6fbb7df9fe87959281d6abf4f43",
       "rh_id": "alcochete-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -126,7 +126,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4c18f901275bcb433e2917ca15fcc1caf12840c78a1a14e92436fc50492e87e8",
       "rh_id": "alcoutim-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -137,7 +137,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "70a75477db34182e9e4e9c4fe034720d3af0f55f3fe7cdbbd7548059bbf3113a",
       "rh_id": "alenquer-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -148,7 +148,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9ff959c1b8d6316dd0077696da79df66dd19471f0f95967fb83d3f815c312911",
       "rh_id": "alfandega-da-fe-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -159,7 +159,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "899105db8936b97e7af614b2c5449cd52249f39c3bdbb6f842339a39e17452cc",
       "rh_id": "alijo-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -170,7 +170,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "29b402e0b9fc70a9f945d8cd6821e7f68daa97d230bb2ceea20392ebf0a2c53c",
       "rh_id": "aljezur-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -181,7 +181,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d63c180fe4fdacfe4bc562be09487fcfe01d8e600b847271b117b7779e2c9817",
       "rh_id": "aljustrel-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -192,7 +192,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9939f4fb0f9a84220e2f008f283dd147f3c222638e517f922c20b6489988c44a",
       "rh_id": "almada-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -203,7 +203,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7b1960bc0c79726299b8585fde113750da5660c5582aa217f9cc9a7abc93702e",
       "rh_id": "almeida-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -214,7 +214,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2375c15aca791afda6e5504d478fa07f6bade7b6dba35e4995e5c0948fbc03aa",
       "rh_id": "almeirim-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -225,7 +225,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a060d9df25673093508bdf72ad464493ccee9f393d629ac604f7f1f60eefd41c",
       "rh_id": "almodovar-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -236,7 +236,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "beb377ffab01ae7f73fc7d34c8d42bf8c822a6470ff0e32d33d8997626107eea",
       "rh_id": "alpiarca-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -247,7 +247,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0727601d4a4a1a3e50b152bf4d27dbf122eb7e9bdbd3030855be9c62367a9720",
       "rh_id": "alter-do-chao-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -258,7 +258,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "35ff80482e19fa4beff95152da46c46ca74ea273140794e32bd2c61399056427",
       "rh_id": "alvaiazere-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -269,7 +269,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7864efa5447ecaf50043818a2aad672a352e3dd2f4929d6d7060278bab2e7fab",
       "rh_id": "alvito-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -280,7 +280,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b95a86e8e3a2b08be4bc86ed74af61eed3be0240ebedc69c218685990adbf9be",
       "rh_id": "amadora-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -291,7 +291,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c429110a1445915a4f1cee2041bc674696794a944239440ede87689e2aec8a16",
       "rh_id": "amarante-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -302,7 +302,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "56683f841eb347de624b5f75c83f87eb06e1f93e14ac952e6a3f89ef0663ddeb",
       "rh_id": "amares-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -313,7 +313,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3f6cc453e41e5aba6a509b5512ec2c9e407110f701584c72b625138ab6f78017",
       "rh_id": "anadia-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -324,7 +324,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b6a15a5d805834ca6f405fe8ef24541d63f2f790ca032180a85eb9bfa6bd6099",
       "rh_id": "angra-do-heroismo-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -335,7 +335,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "588adc551a1ea917b138f397bc882e86c2a6aca645ce6cd3abd98a9a2242670d",
       "rh_id": "ansiao-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -346,7 +346,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "58cdb71c168bda3c043ed4210c6605cb3c08c67312e0891b14c38f947f6aeb04",
       "rh_id": "arcos-de-valdevez-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -357,7 +357,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "df680c0f5a5eeb9d92cfddbfa4481c766d5e06de02e258c2c18b6b24a95e13b0",
       "rh_id": "arganil-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -368,7 +368,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "73d0052151a4eaff59bcc3996bc59625b6929ce6ec67f88100ead6bdd222e0b5",
       "rh_id": "armamar-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -379,7 +379,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3b81205188e6fc580e5651a38edaa295bcc08e9bbddb025d5e36332739e234fe",
       "rh_id": "arouca-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -390,7 +390,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "72ce3290403b216e0d2b75274b2fb23764d2daec7b1bb33bc346b7f5f1d9f5ca",
       "rh_id": "arraiolos-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -401,7 +401,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d7a034bd400bf24ea036dc1518ec460d9bc971b5bc852bebcd3b6157e3c490cc",
       "rh_id": "arronches-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -412,7 +412,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ec4dbcc66a38c9716957d489c39a0049d4d39569b96d940d3c255ae81e06e1cd",
       "rh_id": "arruda-dos-vinhos-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -423,7 +423,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f348e1d49a58fd2bcd0687e0a918815de3b81d64e40e650137d8e699bd4ca7c5",
       "rh_id": "aveiro-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -434,7 +434,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "403f44471afdbce3c74cb363faeb1923804284ffd91903e8b2cc20e71568025b",
       "rh_id": "avis-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -445,7 +445,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f6d5025b400ba400619f59178da1327d852a932633573444c7dba6260961ae1e",
       "rh_id": "azambuja-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -456,7 +456,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d6bc82a704b6d26621ad66a56f45f6bf9d2562ae884b1d88464f483b156905e7",
       "rh_id": "baiao-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -467,7 +467,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "aeed86604ad6d8ef9a2b59537c5495332038b2c1c75af6a23b185c05e35db917",
       "rh_id": "barcelos-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -478,7 +478,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1d146be1398925bd08962032caa5dbd738bce119a5dfb1fc0ff4d748f3319a24",
       "rh_id": "barrancos-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -489,7 +489,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "738e68139236286b8a4b2e17f429bda2ece5f58a7c53db1befdcb53b8cbce2b4",
       "rh_id": "barreiro-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -500,7 +500,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "54d9620a6e77ac113412e62e5583e7acf680c59207bec621c3695bfac817b1aa",
       "rh_id": "batalha-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -511,7 +511,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ec0a4493f81e352766c7c44d57954e0eb67134770e3a8b726bda5ba0bf71e9d2",
       "rh_id": "beja-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -522,7 +522,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9fc568242dbb7877e7f66867b3143dd2c6008d144eeeb256a055fd81606f41c9",
       "rh_id": "belmonte-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -533,7 +533,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c50a9e8e86ec4800d3ab782c3f8cc9a83331728278530288fdf894e2d5455d88",
       "rh_id": "benavente-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -544,7 +544,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7d3522405c38d7a92665e01c781171a14e9012406bc0cdff1f259a433b8c9bfd",
       "rh_id": "bombarral-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -555,7 +555,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7bd4ffa7db1de30611b19ce4176f7ddba671377f6d5f21e88b8071b22d16e067",
       "rh_id": "borba-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -566,7 +566,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "eff46736cbcb4a59cb48214b3c137fe6ebbd6cd71ae890317c76489756fe4abb",
       "rh_id": "boticas-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -577,7 +577,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5cdf18ec684bde09d340e8dbaf63db04f92a02624867e7bd996d67c4fb32f783",
       "rh_id": "braga-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -588,7 +588,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b52e50f9b9db32b6e394a3caa54266716d5d160c6818b9e080670558dc37437d",
       "rh_id": "braganca-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -599,7 +599,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "110b1c356f6584117b17ecfc0b2e1dafb519583ee9e9958d700af6aae24a754d",
       "rh_id": "cabeceiras-de-basto-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -610,7 +610,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "900c22bae5c05d40c428dceb6537fec32252a1800e3eef117916dd2277d5574d",
       "rh_id": "cadaval-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -621,7 +621,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c1b8c14b7fa4f220026ac696fd04c034139f8869d9934aa69fbcf8dc7295e652",
       "rh_id": "caldas-da-rainha-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -632,7 +632,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "bd4b5d69861b86a90d9f09c5692da8272e72c75c510162807cbc00d87d141464",
       "rh_id": "calheta-de-sao-jorge-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -643,7 +643,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a80130b6160bd704c7923e00dad2e9c6564008e551a28b51a49033fec38b06ab",
       "rh_id": "calheta-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -654,7 +654,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9b2cb5e800d06486fd1c3bad2091cf211a218eb21338ef944d98fdb2cccaac4a",
       "rh_id": "camara-de-lobos-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -665,7 +665,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "bde93dffa69fccc58c536b9f5f7f5c8fe1a476dde95087abeee32b8eae96f64c",
       "rh_id": "caminha-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -676,7 +676,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2566f7cc5c474a506fcdd925e5f2c6925d421aebe17bc0ca64e9139d385ff30d",
       "rh_id": "campo-maior-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -687,7 +687,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b86e5dd67f406343ebcac63aea311f2271fe39c73d226f9d56107bf4f5d2dbfa",
       "rh_id": "cantanhede-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -698,7 +698,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f4076103470b0aab71d20fd675d60d5213a320c6c5e12badaab8f1f1bd6167d5",
       "rh_id": "carrazeda-de-ansiaes-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -709,7 +709,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6ad0de608ded023c6a772bb7acd4e85c29c7765265cb01804c7592f2621d16dd",
       "rh_id": "carregal-do-sal-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -720,7 +720,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0a7448dc16f730693d1b66697afc4202b3b0a79f482df67cb828de6c6e81edf7",
       "rh_id": "cartaxo-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -731,7 +731,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6f03496f85f4640f8df1410ad475e2274397822def427e9bd2d88f2f013d998d",
       "rh_id": "cascais-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -742,7 +742,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ecd6dde5ef5551a9997e41d770c511844b7c4f03c8bdaf03df79ef5a97a8b6d9",
       "rh_id": "castanheira-de-pera-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -753,7 +753,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a5e0094d1fe87db75a65363287ba4e833b0406662e3d5a67aaf36579e6574f2d",
       "rh_id": "castelo-branco-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -764,7 +764,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "12c7289adb8b1dac80d5598e3d788f97311b034430d212b3f82b0970aa75203a",
       "rh_id": "castelo-de-paiva-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -775,7 +775,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "653db060f638b6a41151938894716cb091c1fb08b62fe75e5b120cb0ce474214",
       "rh_id": "castelo-de-vide-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -786,7 +786,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2cf915336ed3b9dd78e93a0cf81a48c599f1ceeb505abbf098d46dd143f38df6",
       "rh_id": "castro-daire-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -797,7 +797,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e34bf190d3a0e43817711084d438883abf20aac7370d0a6bace389ef181882fb",
       "rh_id": "castro-marim-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -808,7 +808,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1025e951a5c10f82810b509a8b00f3a3921f346dc3da3975abfe94b265f6c3ea",
       "rh_id": "castro-verde-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -819,7 +819,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9725935f43dec38ce718bfb2ad2b2d39cba60a781f59f4a7ad052ced48cb1471",
       "rh_id": "celorico-da-beira-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -830,7 +830,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "72c1197fc8cb2fccd941b563a29ea55b6fe1cb47041012ad42b7212884bfb6df",
       "rh_id": "celorico-de-basto-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -841,7 +841,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2e00020be35f430d84617970c6426243e1128566c451feed37a192af113fabbc",
       "rh_id": "chamusca-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -852,7 +852,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "af8d713a213e6166528684612d52ad9d0001d1cae72b36da42759918419755ff",
       "rh_id": "chaves-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -863,7 +863,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8c97ac180628671e12eefa6d8d68b84424a7fa86635764f2cb93ea565294c31b",
       "rh_id": "cinfaes-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -874,7 +874,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3c7f6f6679fa70900df25acf31cee36ff7983d296d6f870a17b4ab2d5af968d7",
       "rh_id": "coimbra-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -885,7 +885,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d06fd54d0129b0a45bb960d027dbe60e055ea781040ced8e9332124968353c61",
       "rh_id": "condeixa-a-nova-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -896,7 +896,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f48b5785e30ac045d31cecc11e264d6e89078065f79a1a74a76ef90cf6ed1775",
       "rh_id": "constancia-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -907,7 +907,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ce53919e53674cd7f67c9057434847bdd599842e3f13742d4cc122a8b884328c",
       "rh_id": "coruche-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -918,7 +918,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1fce0a1f322162cbd0e0f55650e41a36fcdb088b4e6a48c7b8afe41a604570d8",
       "rh_id": "corvo-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -929,7 +929,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "dbddef92aef8105351317626f5f8b2d0598b0131b1064fbd667e47a9b76d1e8a",
       "rh_id": "covilha-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -940,7 +940,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0b74a772580693af39349e47b61ebf4c1b63df2bf1890e80a79d32f703a38594",
       "rh_id": "crato-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -951,7 +951,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "32d4ab4ad5b039447608264cfec31c905b6f23725d0112394129c4d5e835534d",
       "rh_id": "crescimento-da-despesa-liquida-2025",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -962,7 +962,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "59a3479b88b87730b069090ba4ad94b1616d3dfa35387adbea707ed464fbae89",
       "rh_id": "cuba-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -973,7 +973,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "bf80624d20098fb3d01f699bbce0da71e43a42c928328fc122b9d378d270e064",
       "rh_id": "disparidade-salarial-entre-sexos-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -984,7 +984,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "38e1a9dc1f405667fde1231f510c44c3f00ba1cb92fae931ec9ffd63d0d564f0",
       "rh_id": "elvas-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -995,7 +995,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ca65d9740b00bb919c271b55080d088c1eb98c5b136635909d9f5e2fbe55c448",
       "rh_id": "entroncamento-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1006,7 +1006,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c2680623473e902c557cac2b91ec6f86cd8fdef3abd5f29797a38754dc502639",
       "rh_id": "espinho-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1017,7 +1017,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "301856719d339867a633fefdd2b3f480144ddef13f67e3b269a40d342b3fcb06",
       "rh_id": "esposende-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1028,7 +1028,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3722e556a88a7a935f350ce1cd10a520bf2e26c4d7e7dd146b56570aae9617f1",
       "rh_id": "estarreja-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1039,7 +1039,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "41b6be8aa91274c09fff8a0ca69ac3823ea42ea69981ae1d4a50ffa2dad6f6e7",
       "rh_id": "estremoz-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1050,7 +1050,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9ee7c7a09fead3e26c58184a7204e23089f80b2efac6d61c7fd74d8a0c928e85",
       "rh_id": "evora-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1061,7 +1061,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "df4507b25009deebc714e7a8d5bd342d1e0e9bcaf4dd0516bd7d6b052bdae7d7",
       "rh_id": "fafe-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1072,7 +1072,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ac68ab1fc02e5910cd684e1d5fe16aa291a4abf4de2564894cf3900c9cba2e97",
       "rh_id": "faro-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1083,7 +1083,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "60fd19a02c718201a08cbda46cd6d68d73527025b8375254dbf604f2e1344c3c",
       "rh_id": "felgueiras-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1094,7 +1094,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7cdbdf802a85406b50afa69e7397fd39130a4a052b51d1b5919f7c4baa10035b",
       "rh_id": "ferreira-do-alentejo-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1105,7 +1105,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e7085925c491bccdb1d6b5e2d148312ab54983af666cca71c1d58aeb953e3d11",
       "rh_id": "ferreira-do-zezere-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1116,7 +1116,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "edb265ef27c126fa749041968083aa2faf2217f7a003ee0e9825a68dfebcc2a5",
       "rh_id": "figueira-da-foz-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1127,7 +1127,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ff31ff6cd1519545f84c356b36e69ef8c8c31317a0825d0628edb656d35749f1",
       "rh_id": "figueira-de-castelo-rodrigo-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1138,7 +1138,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c8a8d42cfeda1d2a22e4c0ec0e38a8b14bfefd66d4dbc91b53376080815e5c14",
       "rh_id": "figueiro-dos-vinhos-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1149,7 +1149,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "dafae3116c6cda46e7b7252f976b410345d21bb5d2dc9b3bb2e13673d480a2dd",
       "rh_id": "fornos-de-algodres-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1160,7 +1160,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0d46c3fd8c1cde005b8fc969f6763a1a847e39a2e3dfe9235c9b4a01fee5af7f",
       "rh_id": "freixo-de-espada-a-cinta-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1171,7 +1171,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f68a4c1d264640bbb54f4016e0b1f9f42a43facb90248a15de86d15e94107a1a",
       "rh_id": "fronteira-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1182,7 +1182,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c5c6d5a38ac8e2944f2060534c83662f20140a02ffff626ea92e5b683b8fe1ac",
       "rh_id": "funchal-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1193,7 +1193,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3f3603fa75e397a2a2c00e5c53780b7d46cf2478fd6d1f0e787970ea2ad38a24",
       "rh_id": "fundao-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1204,7 +1204,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "bd5d50f12dd1395511808ac21f8dd09a0c0bea6f12d23c0ced86854d20ef775d",
       "rh_id": "ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1215,7 +1215,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8ea5a220932cda634bdec448379e1218d529e0ba6b2a63ef8eb05bc20ff250b6",
       "rh_id": "gaviao-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1226,7 +1226,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fb479983d217c4270e8a812e62ea10db8c8b6951d347196709863e9848049b2d",
       "rh_id": "gois-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1237,7 +1237,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f86e8ea278b08d134dfd7a59f3707681f1fc6a08747ca2f28ed14542a34440bf",
       "rh_id": "golega-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1248,7 +1248,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a20bfbccb334b362a39ae6ef96c3a36803e2c4903c8a535b5d8c6429f61f48a5",
       "rh_id": "gondomar-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1259,7 +1259,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d5ed73322dc79927079ded83b23d7b085156429a5601d9255a49c9922a9750bb",
       "rh_id": "gouveia-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1270,7 +1270,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "245df4cf641870ae0f06cd0611af4f40cd76757f9c9afdb271d758a8ad87792e",
       "rh_id": "grandola-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1281,7 +1281,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "103e40ed3c6622069d86f2703a2ed77354edb14b0480ee5c73cd5d3b57b47a2f",
       "rh_id": "guarda-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1292,7 +1292,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c33231f5be0521e91d0846893da8eb99c611ef06216ff8633616cdd9e455223a",
       "rh_id": "guimaraes-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1303,7 +1303,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "273ca999a5588a01c0be6de477309043f079e07a1c861eea58d1b785e18589fd",
       "rh_id": "horta-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1314,7 +1314,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c7907f957f25a414dcabe1027452ef53287902bc6acf683dfb3f074effc07f48",
       "rh_id": "idanha-a-nova-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1325,7 +1325,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "68e7644506654b147cec49a447799ae14e7a04ed0b35735f49366e7d28080f55",
       "rh_id": "ilhavo-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1336,7 +1336,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d682b3e07d60cc300d29bd297e268f89ff712bc7671fa9f83568c9bcf35e2223",
       "rh_id": "lagoa-faro-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1347,7 +1347,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "89eff50af6a06d361a0ab8eb4fe270118b8df72dc848ca9b5fda2baa8cc51e11",
       "rh_id": "lagoa-ilha-de-sao-miguel-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1358,7 +1358,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8e21713335b3fac3bc40ea4ae5ee380e9be4fcfbd6a4cbc3bb7d3ac8783796dd",
       "rh_id": "lagos-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1369,7 +1369,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e399f3927789aca0682b29ec119645c4f94e4dec6c712ea8a0bab205abf97b21",
       "rh_id": "lajes-das-flores-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1380,7 +1380,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c15cf0a6f7ee0b73b2f95bd3a5bbc962fbda6a88a53cc526a62a5c6b3b94101a",
       "rh_id": "lajes-do-pico-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1391,7 +1391,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0fcb5be194c450ebe60534cc249f2ddc13a8f59514019209c33a652f33430a38",
       "rh_id": "lamego-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1402,7 +1402,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1d48f12b174032f4a2cf365f5acd424588aac5277f8a1d365d77de094c9e44d1",
       "rh_id": "leiria-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1413,7 +1413,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "289b0adb1f8c66b5de5d738dc1e2dffd4404e6a997433d1b359ecfc6d9e4ed28",
       "rh_id": "lisboa-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1424,7 +1424,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "654007e87365683e0f6a99015b256536dbb64ba875d49fd35683838d7d87f1a5",
       "rh_id": "loule-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1435,7 +1435,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "78e095b1ec992cb586393d26143bd252b229ef6d116cd26e2e11cb1b71966f41",
       "rh_id": "loures-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1446,7 +1446,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3a018e67b7c1f53ab23f9bfae0bc73f1f460a715a595daad0980f84a55177ac2",
       "rh_id": "lourinha-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1457,7 +1457,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "97927c13966795069147bd9dcf1db4f6b2319f5fe9bcf5117f27e5ef6f9608ca",
       "rh_id": "lousa-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1468,7 +1468,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "eb165cc6644a1f57c43dc66203e33b3058d101acdd3166ed10c08a8d1c94b5ce",
       "rh_id": "lousada-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1479,7 +1479,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4f3d7361f19afb8c1fee9b75ade8d569ee34d766ba395ae739457bf21f2cab47",
       "rh_id": "macao-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1490,7 +1490,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e149af7c02162ab41a22fd64acfb9b3c865535e1759c9951a5904582e67ab0c6",
       "rh_id": "macedo-de-cavaleiros-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1501,7 +1501,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "00de43570f26c4b639718d32f266b03cd4c6e0fe312a421a97fe8bd122815c51",
       "rh_id": "machico-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1512,7 +1512,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4d732300529d0ecc645aa5388adb368b0620a52e8ca56fe3daaa941334f7bd53",
       "rh_id": "madalena-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1523,7 +1523,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fdd4d1342d3243d1e45c889a146fc16165ce9f57451f25ea4ae27922c6e0c6c6",
       "rh_id": "mafra-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1534,7 +1534,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "28c08c03745ca80e5890bcdecabdc975fecaee987b59b8b5df5fd73cbc3a5420",
       "rh_id": "maia-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1545,7 +1545,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d55ad6e26ccd8c604f30abc044d7621df995469d3f77902f892060923da7e2bb",
       "rh_id": "mangualde-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1556,7 +1556,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d4391e3f5e345194d41b6499ca49332187bfa2c0e18b6df4b735ff716f5ccb3b",
       "rh_id": "manteigas-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1567,7 +1567,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6308b5aa3ac1e371f4ab2e84e0a561d4cd25aa74cb56d8653520a0862e7239ca",
       "rh_id": "marco-de-canaveses-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1578,7 +1578,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3fb71485a2bf3c77518a94db81c59f92f9f65d43c909573078d3739b74fee9d3",
       "rh_id": "marinha-grande-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1589,7 +1589,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c3fd6bf10aa5b4d4eecad6f519c409bd60856fd231ff474456746680dafc53c4",
       "rh_id": "marvao-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1600,7 +1600,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a3847f3c580d4b9470c3cdf2fcb5d308caae49e3ce0edec8ec138570a81694ea",
       "rh_id": "matosinhos-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1611,7 +1611,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "614f1e2f3186f16dd8c9ff16132c1f5e0c74212c1b236dd8daf72763a37fae03",
       "rh_id": "mealhada-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1622,7 +1622,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "766d3cedf93a59c920bd2a10eef786ad05975775060037858a86252f01c1006d",
       "rh_id": "meda-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1633,7 +1633,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f0bf9cd6589d9c2c322138dc9e1118c418823019d7ca1bc125967add7f9fdf04",
       "rh_id": "melgaco-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1644,7 +1644,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b04657fb1af8cbfb001d8a7fd8bc7a54c39a180f56cafe22649bb3f85a445124",
       "rh_id": "mertola-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1655,7 +1655,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a5ea3e50696538db592e9393aaa8cc3318855728f9c88d5cb7d2a5b8f84b5c1d",
       "rh_id": "mesao-frio-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1666,7 +1666,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ea2442cbb4046b2b1e0ba33f651f14dacd3ddbc81e6d12b86b86171a0f80b472",
       "rh_id": "mira-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1677,7 +1677,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9bf5e0b0eb4a08bd10f1136aac8bacbf134bec4914ce50a3d75b0c5c78f84e93",
       "rh_id": "miranda-do-corvo-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1688,7 +1688,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d62852b7f37146958b2cf57a4f6231c3a46162419aaa15992fdc4f90af43f798",
       "rh_id": "miranda-do-douro-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1699,7 +1699,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2f5bb542d181835723485ada65e6657c2d7033d472e40f282db8112f4db8fa08",
       "rh_id": "mirandela-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1710,7 +1710,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7020a56dfac8fa2b005f1cc7b27f84fa2d7fb02e35bc569f73b3b2cd2347b5ba",
       "rh_id": "mogadouro-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1721,7 +1721,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2626c8d11edbcefc4d48d104330dea1c134140616ea0d52f1f937bc69285f1aa",
       "rh_id": "moimenta-da-beira-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1732,7 +1732,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c3d4c0661ff5926b3c1fb8d586ef76963628e990acc799009552ff6410dbdcac",
       "rh_id": "moita-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1743,7 +1743,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5a14195fa5037799c389e40188c8c4a6241951aa6fa0d344bf6a6c5b54bf2939",
       "rh_id": "moncao-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1754,7 +1754,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "81cf0b1c19ecb3f15edbe1460529e4834eed0c804387dc83485ab29f91881f76",
       "rh_id": "monchique-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1765,7 +1765,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "09b8de49394f55f304a306d3e1c896874d460eb6e938ee62c2319022777663e7",
       "rh_id": "mondim-de-basto-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1776,7 +1776,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3b427e8e99743d0e951f42d60354f2b5db5f9a3dce0549e64993a80c4552e873",
       "rh_id": "monforte-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1787,7 +1787,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0e8260e878db953ccbeddcf340d1a5f43d6444eb1317d294878974d8509591a5",
       "rh_id": "montalegre-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1798,7 +1798,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a1d8b1bf4dc988faf9e7484344d15b8f977110155735f6a2be6ac78a1d859f9d",
       "rh_id": "montemor-o-novo-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1809,7 +1809,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2e3062ad58711d2bd59e2c1e823fc163f91d1990d7ddac7f4698752766a8bdce",
       "rh_id": "montemor-o-velho-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1820,7 +1820,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "736efe9b90f8c36f05602329146dbe314d3e53bbd7c7dbfbda90453c1b8169ed",
       "rh_id": "montijo-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1831,7 +1831,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ae55f6f06556aeda76978125ac3571f3bb4890a35a26aa4775ea723aee2a4368",
       "rh_id": "mora-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1842,7 +1842,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1f7aa2e143dccbed71aa6c12a4c3053c26b529d3cae3c2f3fdc790940c62bce8",
       "rh_id": "mortagua-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1853,7 +1853,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "120182088d2589dc0397b88405d83de3e60bfa26a0084d50c3e2de369838e89d",
       "rh_id": "moura-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1864,7 +1864,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "126a09509e82b336f9ef58999894348e5c65cfb4efd1a09ffc20e24a9a5ba426",
       "rh_id": "mourao-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1875,7 +1875,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0014483ceec76e6471d51a6846290699eeaa4ed5d52ff02e92df988eed471a1c",
       "rh_id": "murca-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1886,7 +1886,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "58ec1d657bd1a17f8a87759c0715f5ccb1b4d83afb90b6eb93a4a06f41fb0417",
       "rh_id": "murtosa-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1897,7 +1897,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2e2247d9fc76161f2d76a3ebd357f08b0d02efe8721185c0d92a3ee4b2759cbe",
       "rh_id": "nazare-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1908,7 +1908,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3f0c17b200538144516d175434f83ed9a5de61de5ed00cb14ab2103bb8379592",
       "rh_id": "nelas-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1919,7 +1919,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "de9499c289512a792f2831442aecfc1e56288c88eab5aa9ba0bd18b703ae31e1",
       "rh_id": "nisa-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1930,7 +1930,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2889cf23780208ef2682f1d6a5ec6bd94831866ee5459631a34095a7da25ed6f",
       "rh_id": "nordeste-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1941,7 +1941,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d17936c2c97bfa96c2f8c5abe55efd0f0fc6f7529c51e2f658d4c161fa9588ca",
       "rh_id": "obidos-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1952,7 +1952,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e4118f492526f5ce364ab99eba62a024ff7b10b9eba40e5b0a7a7ac2c6246787",
       "rh_id": "odemira-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1963,7 +1963,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b0e56feea162bad442a91635b02d7fe15e356beb1f6ca1f6270c1e60aa69f6ff",
       "rh_id": "odivelas-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1974,7 +1974,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "753c3df16869b6fa457ff2860d52cf8ad482f5640c9f86d5e862c3ea208b8b1b",
       "rh_id": "oeiras-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1985,7 +1985,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6e263c7dd4991dc5ef4ca9f97d212000e4e865177070a0e5cb2711399881d713",
       "rh_id": "oleiros-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -1996,7 +1996,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "bb941d308446e28c22c45ad3c43d48ad796e2a0c72e38d4a55ff90f2a0109b86",
       "rh_id": "olhao-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2007,7 +2007,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ca5f6623e94e5798e2dff07098ee6d47627e9f5c217fda66e1516f7cea88fcca",
       "rh_id": "oliveira-de-azemeis-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2018,7 +2018,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3a5eca30ed446c8137125cc707c568b42fa58ddae4fb06aab339ad5ccf4c8a17",
       "rh_id": "oliveira-de-frades-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2029,7 +2029,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "56023b9ecf280e8c02effce5312de45df200eba99bbdd85dc919c184b74edca1",
       "rh_id": "oliveira-do-bairro-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2040,7 +2040,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "47f06724ee488c91da103c27800992160446ef2af6e526354f9097fd8ba394d6",
       "rh_id": "oliveira-do-hospital-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2051,7 +2051,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7449853d5a06b8028595206e8c47e961a733558566c32ee0f4d7687774277ddc",
       "rh_id": "ourem-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2062,7 +2062,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e0265c7883f9aa95c3760a7869a54daeed9ac750ac18ae34bf099f8ba8c80f6f",
       "rh_id": "ourique-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2073,7 +2073,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "61bdadb7e9366d472b2243ed1524e2ca269a98d75b1820b4b824f81317b13ded",
       "rh_id": "ovar-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2084,7 +2084,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e00606e194f7e33b590c250f8d43292e12751b2f4a51f11e37fa02c4ab6d438a",
       "rh_id": "pacos-de-ferreira-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2095,7 +2095,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "254669752bcc45bf9aba45473a8c6218444ad7bdd47a035c5d5b26b351d08108",
       "rh_id": "palmela-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2106,7 +2106,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6d0598fb22474e85be0bcedf79b7bbca484e7c9fe5689b747e3e434ae1b46edb",
       "rh_id": "pampilhosa-da-serra-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2117,7 +2117,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "61a378f19665b3df122115a6cc8172a78f601be1bc1a7dd8c95a6dfe62d0a7d6",
       "rh_id": "paredes-de-coura-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2128,7 +2128,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b7b0ace747bb4188db4b15aabb71ee13e8f8f53d2f635e6e5555218f88f958f4",
       "rh_id": "paredes-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2139,7 +2139,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "96c05c8b899f2d2893889a32203edaefb5146e98f8169f23a2175ae4915695a2",
       "rh_id": "pedrogao-grande-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2150,7 +2150,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2f798052dde45b57a3cf8bbb71a04a165b0574c3de59dd91d206ceb795243ccd",
       "rh_id": "penacova-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2161,7 +2161,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "17ed69a673b3eb5837781c4e9e4413c1e1d515e4e9d278059f081e8cebf92fef",
       "rh_id": "penafiel-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2172,7 +2172,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7bf7972b2078c1c7fbd54ca3320aa17d070b0edd6614670bc0a0abc28b2b1451",
       "rh_id": "penalva-do-castelo-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2183,7 +2183,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7da27d3769d262e22c9a7bf6c2bc01b10d8f8e207a799ce349a2714da5c778bb",
       "rh_id": "penamacor-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2194,7 +2194,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d55c8831aae58efe19064f1aaf11dff2200858ce9438bedf0bfd454a13bef195",
       "rh_id": "penedono-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2205,7 +2205,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8c9e4ce43b79999227b4d6ad97b8e4a531d22bbc68ed23874601714300bee18c",
       "rh_id": "penela-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2216,7 +2216,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "471a3aed7d26ee82c81dcb521840ade8c13f371782b1b3fb514a66f4b317792f",
       "rh_id": "peniche-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2227,7 +2227,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "decc7cacd3b2ff31ef959e2ee23d474a37b7f07ba71f4410920c8ec93ca0afb7",
       "rh_id": "peso-da-regua-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2238,7 +2238,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fde6c83db96339c059891728dd162472b0ea372ae1f46745d439b5d3b73495f1",
       "rh_id": "pinhel-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2249,7 +2249,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "510fc9c761f58d2e7ff30fb097e812feedb434357bd63889a6c0452249c9b8e7",
       "rh_id": "pombal-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2260,7 +2260,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9987e7b520171a87e838fff811049647ad29d3daa316ffc70311a65895a9c565",
       "rh_id": "ponta-delgada-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2271,7 +2271,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "47d56f226d3aa4c7e159835667c71075b845572f8526a02fba9a04ef2089f33a",
       "rh_id": "ponta-do-sol-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2282,7 +2282,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1cc13e9725690c8691678e24f3151811f296573bb3d98cb3c3ca90d36f353bf5",
       "rh_id": "ponte-da-barca-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2293,7 +2293,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d614a1d95b8311392110c74ee8756eb4e6e0b3c8b82be098bd80114e6d5716f0",
       "rh_id": "ponte-de-lima-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2304,7 +2304,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ab6ecb0a93f20e76ec161e7e77c99cee0aadc0df88ad77c60381fcbc544a2524",
       "rh_id": "ponte-de-sor-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2315,7 +2315,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0e5d469b40d95842e6da355eb83a98f44c3aa62f043f092a469991e8e60e3713",
       "rh_id": "portalegre-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2326,7 +2326,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f46863e891ff5098301091c9a7126b55c4a7c22fff7128fa476bdaf3575657f7",
       "rh_id": "portel-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2337,7 +2337,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "98de9f018e361f9b834f993dd70561886ee398c318a0af8535b0cd11d8b7e683",
       "rh_id": "portimao-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2348,7 +2348,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "acccd75c0b49e1706b365fdcf4d92d91c8c2f5389f58ba593d333108dd298eb1",
       "rh_id": "porto-de-mos-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2359,7 +2359,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f09f0f6452ca4e60ac256a5675ed68fadf0de3c9a34d42f02ebaa91d6239126e",
       "rh_id": "porto-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2370,7 +2370,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c15cec301edd7932d2d4dca37b368818087b9c667f3e6e923dc1e0223cf37219",
       "rh_id": "porto-moniz-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2381,7 +2381,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "99a7341cb54eeb0a8494ddef5b48b748dd5096fa10c046c5d82a7318894e00bd",
       "rh_id": "porto-santo-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2392,7 +2392,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0773b0ae61df3b15081bea098c1f8f15ce6b8b2e761602561efaf7462f32a265",
       "rh_id": "povoa-de-lanhoso-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2403,7 +2403,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "dea81b95d001a5a477ca785c50561e76bf4c607427f3250b6fc3d407a0cf85db",
       "rh_id": "povoa-de-varzim-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2414,7 +2414,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0ac1058f4406395f43ca86edbcbe1600edc2e676347bf715a770e509750f6180",
       "rh_id": "povoacao-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2425,7 +2425,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "18ac9fe565ed6b8df076fec35dfd45d928850bbf3cbbfa45ecda76a5548e42ae",
       "rh_id": "praia-da-vitoria-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2436,7 +2436,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "151b65782cde264d5febd68a8dcd005803e784c145a4b1dd60d91c39a37cbbe3",
       "rh_id": "proenca-a-nova-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2447,7 +2447,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4cc5ea405074542598346656fbe7b8fc6907445a4e3e88dfb15c04e65ce412ca",
       "rh_id": "redondo-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2458,7 +2458,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a5b51ffec315f4fab526450daa6e2e6bfb1b4157047bd2d114925765479a30a9",
       "rh_id": "reguengos-de-monsaraz-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2469,7 +2469,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "64b81e394ea1a9fbf7186436157a5d744b74fe8bdba2d58adda94924c99f23a4",
       "rh_id": "resende-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2480,18 +2480,18 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9cfabcf87e29ec9564baaa807e2ad33ce72a09319c410ee2d7a38777eab59a7f",
       "rh_id": "retribuicao-minima-mensal-doze-meses-2026",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
-    "retribuicao-minima-mensal-garantida-2026": {
+    "retribuicao-minima-mensal-garantida-continente-2026": {
       "corrections_at_export": 0,
       "exported_at": "2026-09-01",
-      "exported_row_sha256": "4b1549be58a89e3cb30d05637af2d3cdd87c1a73671f19023cae426aa0878551",
+      "exported_row_sha256": "4c10c92b21ee2a5d1ceba3e7415163dfb717ebb5e28aac45651a86caa628720e",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "372ea55a35e58209cc7fbdd0a5b8ee6d5c347ba323f1a48485935b5bfaf863fa",
-      "rh_id": "retribuicao-minima-mensal-garantida-2026",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "origin_row_sha256": "443eab5f355effd216ffd52cb52594d1e459dde6206e47ef944c419668f53dfb",
+      "rh_id": "retribuicao-minima-mensal-garantida-continente-2026",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2502,7 +2502,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8f6a3f2e1659cda6e13e40042d1bd30569abfbac493b091afaac33980b6edf1c",
       "rh_id": "ribeira-brava-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2513,7 +2513,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "74d3ed55287c427e7102a0ec3dbf4198d23c4eb2bac6406f815ac312c79338b7",
       "rh_id": "ribeira-de-pena-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2524,7 +2524,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "01a73fea72999cd0fcee9369b9bfa0aa536af32d854a73ab43bee1bb0a6e5844",
       "rh_id": "ribeira-grande-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2535,7 +2535,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "98c072da65d58b890f7c60d7e24d862c07f6e2fe7e07b0cebbd71c2521e74908",
       "rh_id": "rio-maior-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2546,7 +2546,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "556a30cea695d543cbbfcdc85d530c800a6e511c5b5aeff75223054f2fb8ac39",
       "rh_id": "sabrosa-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2557,7 +2557,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "14e4745680b51052153bae2bf0891241af83bdfce680cb178446aa16a8a88798",
       "rh_id": "sabugal-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2568,7 +2568,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "45b2449bb9eb3521ba99bd80a24e19e7b99a15faea855c3200ca2d7d9bff7630",
       "rh_id": "saldo-das-administracoes-publicas-2025",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2579,7 +2579,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "477271bba51843acc2b633d38fcb1201dbad1720e0d4e8ead15fe83b007edb64",
       "rh_id": "salvaterra-de-magos-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2590,7 +2590,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "79353fba5c9104be242e68b4ba988e022f1d62b47f81f60b9ee29bcd41b8f8d5",
       "rh_id": "santa-comba-dao-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2601,7 +2601,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5402aa2600faa557af1c9ab7163dd3ec356f424f9e64a4bc43e79a026fc2abd2",
       "rh_id": "santa-cruz-da-graciosa-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2612,7 +2612,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5eadc81690b941661e9b83a281453a6ff9cd36d42934aadcd2e7565e33eb972e",
       "rh_id": "santa-cruz-das-flores-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2623,7 +2623,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9e1c5826e391452a289b158f389a0d75b61d838094500c91ba0521692dfe53e6",
       "rh_id": "santa-cruz-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2634,7 +2634,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ccb54a22d6e754a329be258c19e7c7d9a34c7a1e4b120d3e8e80088455965abf",
       "rh_id": "santa-maria-da-feira-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2645,7 +2645,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5bb12c8b7c54b107d7ea1c79483719a32f048e04d4db62768f34190e5f0d557c",
       "rh_id": "santa-marta-de-penaguiao-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2656,7 +2656,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c213bf8cc3676f41ecb5a5d91adf3a40b69f48fba75d886c37b91021a0b7359e",
       "rh_id": "santana-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2667,7 +2667,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "402b54d2557a26c0f2d2867ef49358df5fb9ca2d769093e7f5101fff73cd4bf4",
       "rh_id": "santarem-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2678,7 +2678,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "99c476dad24f66008f650db238c537698d6003c6e9013cfa53b1eec0e4b27b16",
       "rh_id": "santiago-do-cacem-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2689,7 +2689,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3e32e78aa1b22ef1dcd683acb2b5b41e3a95ddb0af3d252e58a6270c9cece078",
       "rh_id": "santo-tirso-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2700,7 +2700,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "425392b8bedfc6a790d9c8dd9ac81bd9043e1d90172276672033186459ddfc7d",
       "rh_id": "sao-bras-de-alportel-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2711,7 +2711,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c87890b18c85701b36f625652a82795b71856f598e01582403fa1f48535c4ed9",
       "rh_id": "sao-joao-da-madeira-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2722,7 +2722,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8b0dbaf96333d8abc40dbc46d572c6ff4794c6396048d19f35394f65a3c3bafe",
       "rh_id": "sao-joao-da-pesqueira-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2733,7 +2733,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "107f6640299dd57005c5314b7924885f7a0fa207026e46128095c787072753de",
       "rh_id": "sao-pedro-do-sul-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2744,7 +2744,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b38f510912b2fef78570238336e60b67def2f8f689ff6e48f9b1281391f4ed69",
       "rh_id": "sao-roque-do-pico-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2755,7 +2755,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0dd2bd1d6b1ad4bbb5757d88c990741801010182fb8701ff4f241da71e7614f0",
       "rh_id": "sao-vicente-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2766,7 +2766,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "07fcef55736c5588f17ca0e8ce63245ef3151c966d3eed56540cc9d3e639d97a",
       "rh_id": "sardoal-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2777,7 +2777,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d931f153e938c913531a5a9517567b39bdc6d3ac51f99ac44ff2cf7f011eec07",
       "rh_id": "satao-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2788,7 +2788,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4bf6ad9e4a3f65c620a0b0ea514c2edaf3fa2b5e4f6ffba2a15f14166f573e62",
       "rh_id": "seia-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2799,7 +2799,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "bf79bd58fa12f61dd35c9b18e7e5f7b11ef121a73f67ba029e611a6a0b770924",
       "rh_id": "seixal-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2810,7 +2810,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "924beaf4fdf1d1acd55bf54fbc31c1959fd12948d3d86919a5082cc95af4c3cc",
       "rh_id": "sernancelhe-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2821,7 +2821,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b9035b91b2f2d42f857ca3e0c30b3a9583e72e5fff583f421ba87c1ab54cb44b",
       "rh_id": "serpa-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2832,7 +2832,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "72ab070dc8ae19cc3f5657a2e6d99a01271c1bd338508ce6b2f95c0ff803d75c",
       "rh_id": "serta-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2843,7 +2843,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1b9c9e484db4a74830311a2e4f6e738cb85b3232385db6746b122eb88c1465dc",
       "rh_id": "sesimbra-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2854,7 +2854,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "816244331da4f5bb7f460c26ee7698a428423ea1be36530f827236d599a040f0",
       "rh_id": "setubal-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2865,7 +2865,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d0f7b2900bb41ed94dfe49f236b12882c3f1af7b1ad6a461541e10abf547ac2e",
       "rh_id": "sever-do-vouga-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2876,7 +2876,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "14094f7c057d231758b4c80f06629d28792fc70a46d24a84420279a4fad6964f",
       "rh_id": "silves-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2887,7 +2887,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0effb4d804845c2bb6101f230e91677f41534177dc385dcbc9132a3b5a4bb785",
       "rh_id": "sines-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2898,7 +2898,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a8be73c7e8a8a82f71351653f4dabbdfc6a6231a6fa7b3823f4fd7b45c127248",
       "rh_id": "sintra-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2909,7 +2909,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "641628d6a6c677a36813122e2c8e65e537df483edb7364c9ebc057ce230edbc8",
       "rh_id": "sobral-de-monte-agraco-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2920,7 +2920,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d406201d044199ce6b1cef0d2e0b4bdac626b6eae7d2cb34c209562713ca03c3",
       "rh_id": "soure-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2931,7 +2931,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c627b9a914cc1a86648ecb860d95c1278955f31fad5dcf365b6dd5a88b3fe842",
       "rh_id": "sousel-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2942,7 +2942,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cd881fe6a769c88b64da425e8a679ecee1aca860a0e4f0fb56bea396e84020be",
       "rh_id": "tabua-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2953,7 +2953,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1eb3f1e0969b9e631bb5b6b6b506dcf242fb9452c8e35579d319680ef7ca2b4d",
       "rh_id": "tabuaco-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2964,7 +2964,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "31528dd37c5487f317add87c89f226bbb0b4a3e8a6a90b9d7c661c2401623825",
       "rh_id": "tarouca-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2975,7 +2975,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7e171aaaeb6191408361b61cc3ff9e21450e6e414d9e72cf3ae8acab16e991c9",
       "rh_id": "tavira-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2986,7 +2986,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a4b93bc2f7ac0794576a9e32ac993ce2e9e1801a2daca6ff616651172afd8637",
       "rh_id": "terras-de-bouro-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -2997,7 +2997,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "35e769e906f365ce4762ca5bd0e1a0d89eb5b2fb8f6ca11e18a6fcb82425417a",
       "rh_id": "tomar-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3008,7 +3008,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a96b1125fa0aae418fc25d6930b9146360ce7c3ccd5e85524feadaf092de1dad",
       "rh_id": "tondela-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3019,7 +3019,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d490c4bd6eb3d4daed301163a102ab4c83ec6d6aad18b34a40f9b5ecc1570a68",
       "rh_id": "torre-de-moncorvo-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3030,7 +3030,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "047471ce4d5c18466ea0252f46c27b3bfd0176c3f377309c9d13211441780ebb",
       "rh_id": "torres-novas-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3041,7 +3041,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1741ba9bae839c930963e52f8f569f3bd695ecefbbc5a70ecbd1c00cb90202d4",
       "rh_id": "torres-vedras-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3052,7 +3052,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4a736b890916820ab9480d5a00f0ccb76af921c6f0e2d503abdd5f61f989c07a",
       "rh_id": "trancoso-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3063,7 +3063,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "01c84fe5a43b51ad9d1925ac87479f1cbc119f10585539ffbbcb52d76ff7f1a0",
       "rh_id": "trofa-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3074,7 +3074,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9d8df56ede2891c036313e6253e503531b80c8d20bc48d9655a4a19c4ef28cc7",
       "rh_id": "vagos-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3085,7 +3085,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9035169ba7468ee3b94f5079d669a7231cb69640353cb7a621db0a2ac10ffaa3",
       "rh_id": "vale-de-cambra-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3096,7 +3096,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b29436fa883f88a4e74bc9b3337a6fa1c8781772e85178979fff280fd3e125cc",
       "rh_id": "valenca-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3107,7 +3107,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1cf7181f97ceff0e95a164e28ddab44cae21416674cfe3cdb05ff6013bce974f",
       "rh_id": "valongo-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3118,7 +3118,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6fe4145000e04dfdce42707312dc81d07c4a35d13828ff550f9fb0ba43b7ac51",
       "rh_id": "valpacos-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3129,7 +3129,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3f8812e026937dd058fb9baf6fb4eb9f9c7b26406133e4a7d21734cda65d356b",
       "rh_id": "velas-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3140,7 +3140,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "49c6260c2a706ee9c5e79bc64a2159bb566b425a96634c3f2b5b0f54814809a3",
       "rh_id": "vendas-novas-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3151,7 +3151,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3bae478195f61b7d3242eceb4411011a50caa6082f27f4e49d8569e4cd97d912",
       "rh_id": "viana-do-alentejo-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3162,7 +3162,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9c2c5e6028a840181a8b4a01e1be3b958c0151bde80ea0603b4cf2e0bd1b2319",
       "rh_id": "viana-do-castelo-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3173,7 +3173,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8c0156022c58b15fa8a58c4eb7e33aee7d50893cd093dee766de9dd6edb92a73",
       "rh_id": "vidigueira-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3184,7 +3184,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8b7b1d48981401c7f9780f89646bcfa5982c502f3c125702ee9dc023ff3fad1d",
       "rh_id": "vieira-do-minho-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3195,7 +3195,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c7a8975fcd688d82961c03c33653433fea08443ef3b1d7c61607b1485dc4c0c2",
       "rh_id": "vila-de-rei-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3206,7 +3206,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a2fe86d6e386e6e22ba7e2a8bce03ea99c4dc7396c1aef22cb5a29037f521ded",
       "rh_id": "vila-do-bispo-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3217,7 +3217,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d23319f63c6349a6b45605460183204e5a11365d1a378e1f3d841a5c18fcf921",
       "rh_id": "vila-do-conde-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3228,7 +3228,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "97992dfcc06760aa4d91230416beb592832418165613933c764bd62368829cf6",
       "rh_id": "vila-do-porto-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3239,7 +3239,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a8ea59938f61c97e201dec993d0a1be8dbf68a6034b507623d4eb9d9c0e75ccd",
       "rh_id": "vila-flor-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3250,7 +3250,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a602b8bc0d2eb13275fea0aa2d3a73dcb2e19aab9a9bed872f62d52de15115a1",
       "rh_id": "vila-franca-de-xira-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3261,7 +3261,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2619a3019d71268ad4c0a0790ab3f089cbccabfa7d2e8e461e1921b836620153",
       "rh_id": "vila-franca-do-campo-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3272,7 +3272,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6d4a908f46b2136e11ce844b8d163e2abacf16cac51076fafc4a4fa3b3a5aa03",
       "rh_id": "vila-nova-da-barquinha-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3283,7 +3283,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5002dc29b752d0c20618da841209a24555640ea38a16f548f7f5dc8f9da22271",
       "rh_id": "vila-nova-de-cerveira-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3294,7 +3294,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "eb77d6845d8142101f3ac5d1d2fc7a54c15e13e4bfa46aecf70534b69e10d9fd",
       "rh_id": "vila-nova-de-famalicao-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3305,7 +3305,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ebe6d2ede768ccde4121885a81d13fa5163da54568657712f3c60b63beebd6e4",
       "rh_id": "vila-nova-de-foz-coa-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3316,7 +3316,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c519fd1407848822657ac4f8e0d922b5abb676982adff225de9ae4cabcb5c40c",
       "rh_id": "vila-nova-de-gaia-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3327,7 +3327,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b2ed88e873b5ec4143efe18d888612c48c2256012979695f96c2d378e4766c06",
       "rh_id": "vila-nova-de-paiva-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3338,7 +3338,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6d8a55775d75095d3654980b4bfe9cb69bd04ff67210cfc0d9088d936cfdf72c",
       "rh_id": "vila-nova-de-poiares-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3349,7 +3349,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "09cc8ab863bd656d163fb92ad99ba11bc02be28ccede7e07f0440f602d15bb93",
       "rh_id": "vila-pouca-de-aguiar-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3360,7 +3360,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d34ca272789eea06ced97bcd03e5754d49d64058555fa21d5d2358d30389fae6",
       "rh_id": "vila-real-de-santo-antonio-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3371,7 +3371,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6ca0e4ea5f1ab3848ae3c4db10188f2767794d6fa569b60c30cc1add3d7ae24b",
       "rh_id": "vila-real-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3382,7 +3382,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8f3f764215cfaa871504bb9c0ce1f1dd944ecc405ac0f7ac1842dc0759df0496",
       "rh_id": "vila-velha-de-rodao-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3393,7 +3393,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "eb253df59da45bd2c9923900bbd0d5c0480bc4dd0cccb062f0f19f5f4ca78d26",
       "rh_id": "vila-verde-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3404,7 +3404,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "56924465ca3dcfaf2e8f0027f0f6601b9a38b70e30d59cbceef7ae1d3f0a4670",
       "rh_id": "vila-vicosa-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3415,7 +3415,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ed174b041fa5317eec3138c50f49dd51fa8bc11b7dae9c50fd7850c51e305e91",
       "rh_id": "vimioso-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3426,7 +3426,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1f46df75af1f8fa7de27de3ee1426180e93caae1ba78dd065fe6226d10f9765d",
       "rh_id": "vinhais-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3437,7 +3437,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4ec0e245b41c6ef25be92a07eb19bc02bf81d7940df7a38bc58ab92d6318863d",
       "rh_id": "viseu-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3448,7 +3448,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1c97497c7d9755b6e335bff73973ab20863bc3613e465916b4135d722be8eb6e",
       "rh_id": "vizela-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     },
@@ -3459,7 +3459,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "84154d4becda596a9defefafade8eedaa87c6b544cb5d782750a9ffe6af5d6f3",
       "rh_id": "vouzela-ganho-medio-mensal-2024",
-      "rh_ledger_sha256": "e28d08e8c96ac4a8ca5929f7fb783dfafff3315a7fe9aec34cb3ba2a980b76a4",
+      "rh_ledger_sha256": "eb3f1a378e458ecce654f7b8639aa20a853e8c7585fbee27a9315b6f92ec9755",
       "rh_study": "13 Dominios",
       "verifications_at_export": 0
     }

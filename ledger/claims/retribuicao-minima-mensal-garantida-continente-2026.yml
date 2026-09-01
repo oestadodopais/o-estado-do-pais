@@ -3,7 +3,7 @@
 # GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
 # Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
 
-id: "retribuicao-minima-mensal-garantida-2026"
+id: "retribuicao-minima-mensal-garantida-continente-2026"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
 value: "920,00"
@@ -14,7 +14,7 @@ source: "Diário da República"
 document:
   title: "Decreto-Lei n.º 139/2025, de 29 de dezembro"
   edition: "Diário da República, 1.ª série, n.º 249, de 29-12-2025"
-  locator: "artigo 3.º, p. 2"
+  locator: "artigo 3.º (o valor) e artigo 2.º, «Âmbito territorial» («O presente decreto-lei é aplicável a todo o território continental»), p. 2"
   page: 2
   kind: "pdf"
 source_url: "https://dre.pt/application/conteudo/992879809"
@@ -37,7 +37,7 @@ attributed_to:
 
 study: "dominios-2026"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] T5 do inventário das fontes de 01.09.2026, a linha do diploma. Lido no artigo 3.º, p. 2, linhas 47 a 48 da extração por pdftotext -layout do PDF alojado. O artigo 2.º restringe o diploma a todo o território continental: este valor NÃO é nacional, e os Açores e a Madeira fixam o seu por diploma regional próprio, que não foi lido: [a verificar]. O artigo 7.º diz que produz efeitos a 1 de janeiro de 2026. Publicado a 2025-12-29. Não se compara com a linha do Eurostat, que é a conversão de catorze meses para doze. O endereço é o caminho que responde: a página de leitura e o endereço ELI devolvem uma casca de aplicação sem texto, e o pedido direto ao PDF em files.diariodarepublica.pt devolve 403. Licença: os termos do Diário da República não foram procurados: [a verificar]. · Cruzado de ResearchHub content/13 Dominios · retribuicao-minima-mensal-garantida-2026."
+note: "[note do motor] T5 do inventário das fontes de 01.09.2026, a linha do diploma. Lido no artigo 3.º, p. 2, linhas 47 a 48 da extração por pdftotext -layout do PDF alojado. O artigo 2.º restringe o diploma a todo o território continental: este valor NÃO é nacional, e os Açores e a Madeira fixam o seu por diploma regional próprio, que não foi lido: [a verificar]. O artigo 7.º diz que produz efeitos a 1 de janeiro de 2026. Publicado a 2025-12-29. Não se compara com a linha do Eurostat, que é a conversão de catorze meses para doze. O endereço é o caminho que responde: a página de leitura e o endereço ELI devolvem uma casca de aplicação sem texto, e o pedido direto ao PDF em files.diariodarepublica.pt devolve 403. Licença: os termos do Diário da República não foram procurados: [a verificar]. · Cruzado de ResearchHub content/13 Dominios · retribuicao-minima-mensal-garantida-continente-2026."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
