@@ -329,7 +329,7 @@ async function mediuOContraste() {
     linhas.length === 4 && maus.length === 0,
     linhas
       .map((l) => `${l.tema}/${l.lang} texto ${l.texto}:1 · porta ${l.porta}:1`)
-      .join(' · ') + (maus.length ? ` — ${maus.join(' · ')}` : ''),
+      .join(' · ') + (maus.length ? ` · ${maus.join(' · ')}` : ''),
   );
 }
 
@@ -366,7 +366,7 @@ async function mediuAPorta() {
   conta(
     'M3 · a porta do rótulo abre a secção da política, nas duas edições',
     maus.length === 0,
-    `${vistos.map((v) => `${v.lang} → ${v.href}`).join(' · ')}${maus.length ? ' — ' + maus.join(' · ') : ''}`,
+    `${vistos.map((v) => `${v.lang} → ${v.href}`).join(' · ')}${maus.length ? ' · ' + maus.join(' · ') : ''}`,
   );
 }
 
@@ -397,7 +397,7 @@ async function mediuOAlvo() {
     maus.length === 0,
     vistos
       .map((v) => `${v.lang} ${Number(v.altura).toFixed(1)}px de alvo, acaba em ${v.direita.toFixed(1)} de ${v.ecra}`)
-      .join(' · ') + (maus.length ? ` — ${maus.join(' · ')}` : ''),
+      .join(' · ') + (maus.length ? ` · ${maus.join(' · ')}` : ''),
   );
 }
 

@@ -3989,14 +3989,14 @@ for (const file of ficheirosHtml(DIST)) {
 
   /**
    * ---------------------------------------------------------------------
-   * O RÓTULO DE IA — em todas as páginas construídas (01.09.2026)
+   * O RÓTULO DE IA · em todas as páginas construídas (01.09.2026)
    * ---------------------------------------------------------------------
    *
    * O artigo 50.º, n.º 4, segundo parágrafo, do Regulamento (UE) 2024/1689
    * obriga quem publica texto gerado por IA para informar o público sobre
    * matérias de interesse público a divulgá-lo, e o n.º 5 manda dá-lo «o mais
    * tardar no momento da primeira interação ou exposição». A casa escolheu a
-   * via B — rotular tudo — a 30.08.2026. Uma obrigação que depende de alguém se
+   * via B (rotular tudo) a 30.08.2026. Uma obrigação que depende de alguém se
    * lembrar de pôr uma linha numa vista nova não é uma obrigação cumprida: é
    * esta conferência que a torna uma condição da construção.
    *
@@ -4115,7 +4115,7 @@ for (const file of ficheirosHtml(DIST)) {
     }
 
     /**
-     * A FICHA DA PRIMEIRA PÁGINA — o artigo 15.º, n.º 1 da Lei de Imprensa.
+     * A FICHA DA PRIMEIRA PÁGINA · o artigo 15.º, n.º 1 da Lei de Imprensa.
      *
      * «As publicações periódicas devem conter, na primeira página de cada
      * edição, o título, a data, o período de tempo a que respeitam, o nome do
@@ -4151,7 +4151,7 @@ for (const file of ficheirosHtml(DIST)) {
     }
 
     /**
-     * A FRASE DA POLÍTICA — no Sobre e no Método, e em mais lado nenhum.
+     * A FRASE DA POLÍTICA · no Sobre e no Método, e em mais lado nenhum.
      *
      * É texto do diretor, aprovado carácter a carácter, e por isso é comparado
      * como o do Sobre. As duas rotas são as que a ordem nomeia: a página do

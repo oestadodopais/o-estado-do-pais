@@ -1616,7 +1616,7 @@ ou as intenções do próprio sítio», e vai a zero em todas as rotas medidas. 
 frases não são nenhuma dessas coisas: não dizem como a casa trabalha, não dizem
 que ela confere, não dizem o que cobre, e não têm um adjetivo. **Dizem o que o
 texto é e quem responde por ele, e levam a porta para onde isso se lê por
-extenso** — que é exactamente a definição desta lista para navegação: «o que leva
+extenso**, que é exactamente a definição desta lista para navegação: «o que leva
 a outro sítio […]: o nome da publicação, os comandos, a porta das correções». A
 porta das correções é a irmã mais próxima: também ela é uma linha de todas as
 páginas, com uma pergunta e um endereço, e está declarada navegação desde o
