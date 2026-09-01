@@ -28,7 +28,7 @@ O motor (`master`) tem o estudo `13 Dominios` (`publisher/dominios_build.py` e v
 
 ### A · O corredor: do piloto verificado ao primeiro real
 
-O piloto está construído e verificado (§1.92; os três ramos `corredor-2026-09-01`). O que falta, por ordem: a corrida `ensaio` verde no GitHub a partir de `master` (`gh workflow run corredor.yml --repo oestadodopais/motor -f modo=ensaio`); a decisão das chaves de implantação (a organização tem-nas desativadas; ligar a definição e criar as duas, ou a GitHub App); `CORREDOR_ARMADO=sim` nas variáveis do repositório do motor, pelo diretor, com registo em `DECISIONS.md`; uma semana de corridas verdes com o agente `launchd` das segundas em paralelo; e só então o primeiro `real`.
+O piloto está construído e verificado (§1.92; os três ramos `corredor-2026-09-01`). O que falta, por ordem: **os três consertos de ambiente que o primeiro `ensaio` (corrida 33559459861, vermelha no leitor e limpa na busca) diagnosticou na *issue* n.º 1 do motor** (o poppler no fluxo para o `pdftotext` dos leitores; `python -m indicators.refresh` ou o pacote no caminho; a política da DGAL que responde ReadTimeout aos IPs do datacenter), e então a corrida `ensaio` verde no GitHub (`gh workflow run corredor.yml --repo oestadodopais/motor -f modo=ensaio`); a decisão das chaves de implantação (a organização tem-nas desativadas; ligar a definição e criar as duas, ou a GitHub App); `CORREDOR_ARMADO=sim` nas variáveis do repositório do motor, pelo diretor, com registo em `DECISIONS.md`; uma semana de corridas verdes com o agente `launchd` das segundas em paralelo; e só então o primeiro `real`.
 
 ### B · Os domínios da primeira vaga, um a um, pela ordem estreita
 
