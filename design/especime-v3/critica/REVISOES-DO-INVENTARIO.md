@@ -47,6 +47,7 @@ leu **só o diff do inventário**. É essa a leitura que esta tabela regista.
 | pequenas-4 | 14 | `design/especime-v3/critica/2026-08-29-codex-leitura-pequenas-4.md` | Codex `gpt-5.6-sol`, 29.08.2026, sobre a página de Évora, uma página de área inglesa, o índice das áreas, a agenda e os diffs, com três plantas (2 de 3; a primeira mal plantada); I92 saiu dela |
 | pequenas-5 | 2 | `design/especime-v3/critica/2026-08-29-codex-leitura-pequenas-5.md` | Codex `gpt-5.6-sol`, 29.08.2026, sobre sete páginas construídas, o dicionário das unidades e o diff do inventário, com três plantas (3 de 3); o texto oculto dos selos e a letra da fonte no dicionário saíram dela |
 | inicio-lista | 8 | por ler | o bloco «Os nomes do mapa ao lado, e os dois painéis com nome», 29.08.2026; a leitura cruzada faz-se antes da fusão |
+| rotulo-ia | 4 | por ler | o bloco «O rótulo de IA em todas as páginas», 01.09.2026, ramo `rotulo-ia-2026-09-01`; construtor Claude Opus 5; a leitura cruzada do Codex faz-se antes da fusão, sobre o diff do inventário, as quatro cadeias novas, a secção da política do Método e as páginas construídas nas duas edições |
 
 ## As duas colunas novas de 27.08.2026 (I74)
 

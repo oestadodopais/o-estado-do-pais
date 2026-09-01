@@ -37,6 +37,7 @@
 import Base from '../layouts/Base.astro';
 import Provenance from '../components/Provenance.astro';
 import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
+import RotuloDeIA from '../components/RotuloDeIA.astro';
 import { workById } from '../data/studies.mjs';
 import { registoDaEdicao, manifestoDosRegistos, temRegisto } from '../lib/registos.mjs';
 import {
@@ -144,6 +145,22 @@ const conta = (nome) => `${chave}=${nome}`;
 >
   <div class="texto-cabeca">
     <span class="eyebrow">{s.estudos.textoEyebrow}</span>
+
+    {/* ------------------------------------------------------------------
+        O RÓTULO DE IA TAMBÉM NO TOPO, E SÓ AQUI (01.09.2026)
+        ------------------------------------------------------------------
+        Esta é a única família de páginas do sítio que é texto longo: o corpo é
+        um documento inteiro, e quem o lê pode nunca chegar ao rodapé. O n.º 5
+        do artigo 50.º do Regulamento (UE) 2024/1689 diz «o mais tardar no
+        momento da primeira interação ou exposição», e num documento longo o
+        rodapé chega tarde. A linha do rodapé fica na mesma, porque ela é de
+        todas as páginas e o portão conta-a; esta é a que a exposição obriga.
+
+        O bloco vive FORA do `<article>`, como o índice e pela mesma razão: o
+        portão compara o corpo com o registo do motor bloco a bloco, e a
+        mobília não é corpo.
+        ------------------------------------------------------------------ */}
+    <RotuloDeIA lang={lang} path={path} onde="topo" />
   </div>
 
   <div class="texto">

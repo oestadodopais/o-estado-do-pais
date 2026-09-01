@@ -117,8 +117,16 @@ import {
   PAPEL_ESCURO,
   canonicalUrl,
 } from '../site.config.mjs';
-import { ENDERECO_CORRECOES } from '../src/data/metodo.mjs';
+import { ENDERECO_CORRECOES, REGRAS as REGRAS_DO_METODO } from '../src/data/metodo.mjs';
 import { SOBRE } from '../src/data/sobre.mjs';
+import {
+  ANCORA_DA_POLITICA,
+  FICHA_DA_PRIMEIRA_PAGINA,
+  FRASE as FRASE_DA_POLITICA,
+  LINGUA_DO_RESPONSAVEL,
+  RESPONSAVEL_EDITORIAL,
+  textoDoRotulo,
+} from '../src/data/politica-ia.mjs';
 import { VERIFICACAO } from '../src/data/verificacao.mjs';
 import { prova, CAMINHO_DA_PROVA } from '../src/lib/prova.mjs';
 import {
@@ -361,6 +369,8 @@ const idsUsados = new Set();
 const linhasConstruidas = new Set();
 let ficheiros = 0;
 let documentos = 0;
+/** O rótulo de IA, contado pelo lado da página: rodapé, topo, ficha e frase. */
+const ROTULO_DE_IA = { rodape: 0, topo: 0, ficha: 0, frase: 0 };
 let paginasDoLivro = 0;
 /** Valores auditados pela regra do selo, e quantos ficaram sem ele (sempre 0: falha). */
 let valoresAuditados = 0;
@@ -3300,6 +3310,51 @@ const registoDoCartao = (nomePng) => REGISTOS_DOS_CARTOES.get(nomePng) ?? null;
 /** Os cartões que alguma página nomeou. Um cartão que ninguém nomeia é um aviso. */
 const cartoesUsados = new Set();
 
+/**
+ * ---------------------------------------------------------------------------
+ * UMA PESSOA, UM NOME (01.09.2026)
+ * ---------------------------------------------------------------------------
+ * O rótulo de todas as páginas nomeia quem detém a responsabilidade editorial,
+ * e a regra 9 do Método já nomeava quem dirige. São a mesma pessoa, e por isso
+ * têm de ser a mesma cadeia: duas grafias do nome são duas pessoas para quem
+ * lê, e a divulgação do artigo 50.º deixa de identificar ninguém.
+ *
+ * A conferência é sobre os FICHEIROS e não sobre as páginas, e corre uma vez:
+ * o nome de `src/data/politica-ia.mjs` tem de aparecer, carácter a carácter,
+ * num pedaço `{ forte: … }` das dez regras de `src/data/metodo.mjs`. É o que
+ * impede a cópia de envelhecer no dia em que uma das duas mudar.
+ */
+{
+  const fortes = [];
+  const anda = (v) => {
+    if (Array.isArray(v)) return void v.forEach(anda);
+    if (v && typeof v === 'object') {
+      if (typeof v.forte === 'string') fortes.push(v.forte);
+      return void Object.values(v).forEach(anda);
+    }
+  };
+  anda(REGRAS_DO_METODO);
+  if (!fortes.includes(RESPONSAVEL_EDITORIAL)) {
+    erros.push({
+      rel: 'src/data/politica-ia.mjs',
+      msg:
+        `o responsável editorial é "${RESPONSAVEL_EDITORIAL}" e nenhuma das dez regras do Método ` +
+        `imprime esse nome (imprime ${fortes.length ? fortes.map((f) => `"${f}"`).join(', ') : 'nenhum'}).\n` +
+        `      O rótulo de todas as páginas e a regra 9 nomeiam a mesma pessoa: ou é a mesma ` +
+        `cadeia nos dois ficheiros, ou o sítio diz dois nomes.`,
+    });
+  }
+  /* E a língua declarada do nome é uma das duas que o sítio sabe render: o
+     `check-lingua` compara-a com a língua efectiva de cada rendição, e uma
+     cadeia fora do conjunto deixava-o a comparar contra nada. */
+  if (LINGUA_DO_RESPONSAVEL !== 'pt-PT' && LINGUA_DO_RESPONSAVEL !== 'en') {
+    erros.push({
+      rel: 'src/data/politica-ia.mjs',
+      msg: `a língua do responsável editorial é "${LINGUA_DO_RESPONSAVEL}", e a casa só sabe render "pt-PT" e "en".`,
+    });
+  }
+}
+
 /* ------------------------------------------------------------------ varrimento */
 
 for (const file of ficheirosHtml(DIST)) {
@@ -3929,6 +3984,206 @@ for (const file of ficheirosHtml(DIST)) {
         `a porta de correcções está escondida por ${escondido} (nela ou num antepassado). ` +
           `Estar na página e não ser vista é o mesmo que não estar.`,
       );
+    }
+  }
+
+  /**
+   * ---------------------------------------------------------------------
+   * O RÓTULO DE IA — em todas as páginas construídas (01.09.2026)
+   * ---------------------------------------------------------------------
+   *
+   * O artigo 50.º, n.º 4, segundo parágrafo, do Regulamento (UE) 2024/1689
+   * obriga quem publica texto gerado por IA para informar o público sobre
+   * matérias de interesse público a divulgá-lo, e o n.º 5 manda dá-lo «o mais
+   * tardar no momento da primeira interação ou exposição». A casa escolheu a
+   * via B — rotular tudo — a 30.08.2026. Uma obrigação que depende de alguém se
+   * lembrar de pôr uma linha numa vista nova não é uma obrigação cumprida: é
+   * esta conferência que a torna uma condição da construção.
+   *
+   * **OS DOCUMENTOS DE ESTUDO ESTÃO FORA, e pela mesma razão da porta das
+   * correções**: um documento em `/estudos/<slug>/documento` é obra já
+   * publicada, alojada intacta e conferida carácter a carácter contra a
+   * origem, e injectar-lhe uma linha nossa quebrava essa igualdade (§1.19).
+   * Levam o rótulo na página que os embrulha, `/estudos/<slug>`, que é uma
+   * página deste sítio e é contada aqui como as outras. Este ramo nem chega a
+   * correr para eles: `verificaDocumento()` devolve antes.
+   *
+   * SÃO QUATRO CONFERÊNCIAS, e cada uma fecha um modo diferente de falhar:
+   *
+   *   1. **existe, uma vez** · exactamente um bloco de rodapé por página. Duas
+   *      cópias na mesma página não são duas divulgações, são mobília repetida;
+   *   2. **diz o texto aprovado** · o que a página rende é, carácter a carácter,
+   *      o texto do diretor na língua da edição. Não é uma dispensa: é a
+   *      comparação de `data-sobre` e de `data-linha-*`, aplicada a esta linha;
+   *   3. **a porta abre a política** · a ligação da linha vai para a secção da
+   *      política, e não para a página do Método em geral. Uma divulgação cuja
+   *      política não se alcança é meia divulgação;
+   *   4. **vê-se** · nem `hidden`, nem `aria-hidden`, nem `.vh`, nela ou num
+   *      antepassado. «De forma clara e percetível» é a letra do n.º 5.
+   *
+   * E DUAS QUE SÃO SOBRE ONDE MAIS ELE APARECE: o topo das páginas de leitura,
+   * que são texto longo e onde o rodapé chega tarde; e a ficha da primeira
+   * página, que é o artigo 15.º, n.º 1 da Lei de Imprensa e só ali.
+   */
+  {
+    const rotulos = root.querySelectorAll('[data-rotulo-ia]');
+    const noRodape = rotulos.filter((e) => e.getAttribute('data-rotulo-ia') === 'rodape');
+    const noTopo = rotulos.filter((e) => e.getAttribute('data-rotulo-ia') === 'topo');
+    ROTULO_DE_IA.rodape += noRodape.length;
+    ROTULO_DE_IA.topo += noTopo.length;
+
+    if (noRodape.length !== 1) {
+      err(
+        `esta página tem ${noRodape.length} rótulo(s) de IA no rodapé; tem de ter exactamente um.\n` +
+          `      <RotuloDeIA/> entra pelo rodapé (SiteFooter.astro) em todas as páginas ` +
+          `construídas. A divulgação do artigo 50.º, n.º 4 do Regulamento (UE) 2024/1689 é de ` +
+          `cada página, à primeira exposição, e não só do Sobre.`,
+      );
+    } else if (linguaPagina) {
+      const rotulo = noRodape[0];
+      const esperado = textoDoRotulo(linguaPagina);
+      const rendido = normalizeWhitespace(decodeEntities(textoDe(rotulo, { semEstilo: true })));
+      /* A ficha da primeira página vive dentro do mesmo bloco, e não faz parte
+         do texto aprovado do rótulo: compara-se a linha, e não o bloco. */
+      const linha = rotulo.querySelector('.rotulo-ia-linha');
+      const soALinha = linha
+        ? normalizeWhitespace(decodeEntities(textoDe(linha, { semEstilo: true })))
+        : rendido;
+      if (soALinha !== esperado) {
+        err(
+          `o rótulo de IA não é o texto aprovado.\n` +
+            `      aprovado:    ${esperado}\n` +
+            `      renderizado: ${soALinha.slice(0, 200)}\n` +
+            `      Este texto é do diretor (ordem de 01.09.2026 §3) e vive em ` +
+            `src/data/politica-ia.mjs. Muda por decisão, e no ficheiro.`,
+        );
+      }
+
+      const destinoDaPolitica = `${routePath('metodo', linguaPagina)}#${ANCORA_DA_POLITICA}`;
+      const abre = (linha ?? rotulo)
+        .querySelectorAll('a[href]')
+        .some((a) => decodeEntities(a.getAttribute('href') ?? '') === destinoDaPolitica);
+      if (!abre) {
+        err(
+          `o rótulo de IA não tem a porta para a política ("${destinoDaPolitica}").\n` +
+            `      «a política da casa» é uma ligação, e uma divulgação cuja política não se ` +
+            `alcança é meia divulgação.`,
+        );
+      }
+
+      const tapado = (() => {
+        let no = rotulo;
+        while (no && no.nodeType !== undefined) {
+          const attrs = no.attributes ?? {};
+          if ('hidden' in attrs) return 'hidden';
+          if ((attrs['aria-hidden'] ?? '') === 'true') return 'aria-hidden="true"';
+          if (/(^|\s)vh(\s|$)/.test(String(attrs['class'] ?? ''))) return 'class="vh"';
+          no = no.parentNode;
+        }
+        return null;
+      })();
+      if (tapado) {
+        err(
+          `o rótulo de IA está escondido por ${tapado} (nele ou num antepassado). ` +
+            `O n.º 5 do artigo 50.º pede-o «de forma clara e percetível».`,
+        );
+      }
+
+      /* O nome de quem responde diz em que língua está, nas duas edições. É um
+         nome português, e numa página inglesa sem marca um leitor de ecrã lê-o
+         com fonética inglesa. `check-lingua.mjs` mede-o no sítio inteiro; aqui
+         confere-se que o texto é o nome e mais nada. */
+      for (const nome of rotulo.querySelectorAll('[data-rotulo-nome]')) {
+        const t = normalizeWhitespace(decodeEntities(textoDe(nome, { semEstilo: true })));
+        if (t !== RESPONSAVEL_EDITORIAL) {
+          err(
+            `um «data-rotulo-nome» diz "${t.slice(0, 80)}" e o responsável editorial é ` +
+              `"${RESPONSAVEL_EDITORIAL}". A marca é do nome, e de mais nada.`,
+          );
+        }
+      }
+    }
+
+    /* O topo das páginas de leitura: lá tem de estar, e em mais lado nenhum. */
+    const esperadoNoTopo = rota?.key === 'texto' ? 1 : 0;
+    if (noTopo.length !== esperadoNoTopo) {
+      err(
+        `esta página tem ${noTopo.length} rótulo(s) de IA no topo e devia ter ${esperadoNoTopo}.\n` +
+          `      O topo é das páginas de leitura, que são texto longo e onde o rodapé chega ` +
+          `tarde para o «momento da primeira exposição» do n.º 5 do artigo 50.º.`,
+      );
+    }
+
+    /**
+     * A FICHA DA PRIMEIRA PÁGINA — o artigo 15.º, n.º 1 da Lei de Imprensa.
+     *
+     * «As publicações periódicas devem conter, na primeira página de cada
+     * edição, o título, a data, o período de tempo a que respeitam, o nome do
+     * director e o preço por unidade ou a menção da sua gratuitidade» (Lei
+     * n.º 2/99, consolidada; `design/observatorio/DILIGENCIA-LEGAL.md` §2.1). O
+     * título e a data já lá estavam; o nome e a gratuitidade são desta ordem.
+     *
+     * A LEITURA QUE SE FEZ está escrita em `src/data/politica-ia.mjs`: «a
+     * primeira página de cada edição» lê-se como a página inicial de cada uma
+     * das duas edições construídas. É uma leitura, e não a resposta do
+     * advogado: se ele ler de outra maneira, muda-se a condição num sítio só.
+     */
+    const fichas = root.querySelectorAll('[data-ficha-primeira-pagina]');
+    ROTULO_DE_IA.ficha += fichas.length;
+    const esperadaFicha = rota?.key === 'home' ? 1 : 0;
+    if (fichas.length !== esperadaFicha) {
+      err(
+        `esta página tem ${fichas.length} ficha(s) da primeira página e devia ter ` +
+          `${esperadaFicha}. O artigo 15.º, n.º 1 da Lei de Imprensa pede o nome do diretor e a ` +
+          `menção de gratuitidade na primeira página de cada edição, e ali só.`,
+      );
+    } else if (fichas.length === 1 && linguaPagina) {
+      const f = FICHA_DA_PRIMEIRA_PAGINA[linguaPagina];
+      const t = normalizeWhitespace(decodeEntities(textoDe(fichas[0], { semEstilo: true })));
+      const esperado = `${f.diretorK} ${RESPONSAVEL_EDITORIAL} · ${f.gratuito}`;
+      if (t !== esperado) {
+        err(
+          `a ficha da primeira página não é a cadeia decidida.\n` +
+            `      decidida:    ${esperado}\n` +
+            `      renderizada: ${t.slice(0, 200)}`,
+        );
+      }
+    }
+
+    /**
+     * A FRASE DA POLÍTICA — no Sobre e no Método, e em mais lado nenhum.
+     *
+     * É texto do diretor, aprovado carácter a carácter, e por isso é comparado
+     * como o do Sobre. As duas rotas são as que a ordem nomeia: a página do
+     * leitor leva o rótulo, que é uma linha e uma porta; a frase inteira vive
+     * onde há sítio para ela.
+     */
+    const frases = root.querySelectorAll('[data-frase-da-politica]');
+    ROTULO_DE_IA.frase += frases.length;
+    const esperadasFrases = rota?.key === 'sobre' || rota?.key === 'metodo' ? 1 : 0;
+    if (frases.length !== esperadasFrases) {
+      err(
+        `esta página rende ${frases.length} frase(s) da política e devia render ` +
+          `${esperadasFrases}. A frase vive no Sobre e no Método; as páginas do leitor levam o ` +
+          `rótulo e a porta.`,
+      );
+    } else if (frases.length === 1) {
+      const declarada = frases[0].getAttribute('data-frase-da-politica');
+      const esperada = FRASE_DA_POLITICA[declarada];
+      if (!esperada) {
+        err(
+          `«data-frase-da-politica="${declarada}"» não é uma edição desta casa ("pt" ou "en").`,
+        );
+      } else {
+        const t = normalizeWhitespace(decodeEntities(textoDe(frases[0], { semEstilo: true })));
+        if (t !== normalizeWhitespace(esperada)) {
+          err(
+            `a frase da política não é o texto aprovado.\n` +
+              `      aprovado:    ${normalizeWhitespace(esperada).slice(0, 160)}\n` +
+              `      renderizado: ${t.slice(0, 160)}`,
+          );
+        }
+      }
     }
   }
 
@@ -6123,6 +6378,14 @@ console.log(
       (paginasDeTexto
         ? ` · ${paginasDeTexto} página(s) de leitura, conferidas contra o seu registo de conteúdo`
         : ''),
+  ),
+);
+console.log(
+  cinza(
+    `  rótulo de IA · ${ROTULO_DE_IA.rodape} no rodapé (de ${ficheiros - documentos} páginas fora ` +
+      `dos documentos alojados) · ${ROTULO_DE_IA.topo} no topo das páginas de leitura · ` +
+      `${ROTULO_DE_IA.ficha} ficha(s) da primeira página · ${ROTULO_DE_IA.frase} frase(s) da ` +
+      `política, comparadas com o texto aprovado`,
   ),
 );
 console.log(
