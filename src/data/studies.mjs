@@ -362,6 +362,36 @@ export const INTERNAL_SOURCES = [
      */
     conjunto: 'livroConcelhos',
   },
+  {
+    /**
+     * OS DOMÍNIOS, PRIMEIRA VAGA (01.09.2026).
+     *
+     * As medidas que respondem às perguntas da carta dos conteúdos, uma por
+     * pergunta, lidas na fonte pelo motor de investigação e atravessadas de lá
+     * com o excerto, a data de leitura e o rótulo com que o publicador as
+     * imprime. Também não é um apuramento próprio: os números são do Eurostat,
+     * do INE, do Conselho das Finanças Públicas e do Diário da República, e a
+     * proveniência de cada linha diz qual.
+     *
+     * Entra aqui, e não em `WORKS`, pela mesma razão que `concelhos-2026`:
+     * `WORKS` é o ARQUIVO, e um trabalho do arquivo tem documento publicado,
+     * edições, data e página própria em `/estudos`. Isto não tem documento
+     * nenhum: é o identificador que o campo `study` destas linhas traz, e a sua
+     * superfície são as páginas dos domínios, que são outro bloco.
+     *
+     * NÃO DECLARA `conjunto`, e a razão é que ainda não há página de conjunto
+     * onde estas linhas se leiam juntas. São poucas e nacionais, e por isso
+     * ficam no índice do livro-razão como as outras medidas nacionais ficam.
+     * As 308 linhas por concelho da mesma leitura (o ganho médio mensal) NÃO
+     * estão aqui: levam `concelhos-2026`, que é o estudo das medidas centrais
+     * por concelho e é onde a página do conjunto delas já existe.
+     */
+    id: 'dominios-2026',
+    label: {
+      pt: 'Domínios: as medidas das perguntas',
+      en: 'Domains: the measures behind the questions',
+    },
+  },
 ];
 
 /** Todas as edições, em lista plana — é isto que o arquivo mostra. */
