@@ -158,7 +158,17 @@ for (const a of voz.achados) {
   );
 }
 
-/* 2 · a contagem */
+/* 2 · a contagem.
+ *
+ * A QUARTA CLASSE NÃO ENFRAQUECE ESTA REGRA (segunda passagem, 01.09.2026). O
+ * inventário ganhou `divulgacao` para o rótulo de IA e para a ficha do artigo
+ * 15.º, que estão na página porque a lei os põe lá; `autorreferencia` continua a
+ * ir a ZERO em todas as rotas medidas, e é esta linha que o impõe. A diferença
+ * entre as duas classes é a que a Emenda 15 escreve: a autorreferência existe
+ * para mostrar diligência, e a divulgação existe porque alguém tem de saber quem
+ * responde. Uma frase de divulgação que explique porque se deve confiar na casa
+ * é autorreferência com outro nome, e não passa por aqui só por mudar de
+ * coluna. */
 for (const [rota, r] of rotas) {
   if (r.por_classe.autorreferencia > 0) {
     erros.push(
@@ -357,7 +367,9 @@ console.log(
   verde('  voz ✓ ') +
     `${voz.marcadores} marcadores · ${voz.excecoes} exceções (${voz.excecoes_de_registo} de registo) · ` +
     `${voz.frases_varridas} frases distintas, ${voz.ocorrencias_varridas} ocorrências em ${rotas.length} rotas · ` +
-    `autorreferência 0 · nada por classificar · ${inventario.linhas.length} linhas do inventário com bloco ` +
+    `autorreferência 0 · nada por classificar · ` +
+    `divulgação ${rotas.reduce((n, [, r]) => n + (r.por_classe.divulgacao ?? 0), 0)} ocorrência(s) ` +
+    `nas rotas medidas · ${inventario.linhas.length} linhas do inventário com bloco ` +
     `(${casa.declaracoes?.vivas ?? '?'} vivas, todas rendidas; ${casa.declaracoes?.retiradas ?? '?'} retiradas, nenhuma rendida) · ` +
     `lida contra a Emenda ${lidaContra} (a mais alta da voz é a ${emendaMaisAlta}) · ` +
     `rótulos em span: ${Object.entries(voz.rotulos_em_span ?? {})

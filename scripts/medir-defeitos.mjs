@@ -306,7 +306,31 @@ const rotulosEmSpan = Object.fromEntries(CLASSES_DE_ROTULO.map((c) => [c, 0]));
  * que não esteja nesta lista não é medida — e isso está escrito, em vez de
  * parecer um zero.
  */
-const CLASSES = ['conteudo', 'navegacao', 'autorreferencia'];
+/* A quarta classe entra na segunda passagem de 01.09.2026, e a razão está
+   escrita em `scripts/voz.mjs`: uma divulgação obrigatória não é nem conteúdo,
+   nem navegação, nem a casa a falar de si. `autorreferencia` continua a ir a
+   zero. */
+const CLASSES = ['conteudo', 'navegacao', 'autorreferencia', 'divulgacao'];
+
+/**
+ * AS ROTAS QUE SÓ PROVAM QUE UMA LINHA SE RENDE (segunda passagem, 01.09.2026).
+ *
+ * A Emenda 15 isenta o Método e o Sobre da CONTAGEM, e por isso eles não estão
+ * em `ROTAS_DO_INVENTARIO`: são a casa do método, e ali a autorreferência é o
+ * objecto da página. Mas a régua usava a mesma lista para responder a duas
+ * perguntas diferentes, e a segunda não é a mesma: «esta linha declarada ainda
+ * se rende em algum lado?» A frase da política e a secção da política vivem no
+ * Sobre e no Método e em mais lado nenhum, e sem esta lista uma linha declarada
+ * para elas era logo uma «viva que não rende» e fechava a construção.
+ *
+ * O que estas duas rotas dão é só isso: entram no conjunto que prova que uma
+ * linha viva se rende. **Não entram na contagem por classe, não entram nos
+ * blocos por classificar, e não entram na proibição das linhas retiradas**: uma
+ * frase retirada de uma página do leitor continua a poder ser citada no Método,
+ * que é onde o método se explica, e alargar-lhe a proibição mudava uma regra que
+ * ninguém mandou mudar.
+ */
+const ROTAS_QUE_PROVAM_A_RENDICAO = new Set(['sobre', 'metodo']);
 const MEDIDA_DECLARADA = '[data-medida-nome],[data-medida-unidade]';
 const ROTAS_DO_INVENTARIO = new Set([
   'home',
@@ -704,6 +728,8 @@ const frasesDaVozPorRota = new Map(); // rota → Set(texto), a varredura do tri
    de páginas tem uma chave e seiscentos caminhos, e é pela chave que uma
    dispensa se escreve. */
 const chaveDaRotaPorCaminho = new Map(); // caminho → chave da rota
+/** As frases das rotas isentas da contagem: só provam que uma linha se rende. */
+const rendidasNasIsentas = new Set();
 
 const coberturaPorEdicao = new Map(); // edição → estado → Map(cadeia → ocorrências)
 function registaCobertura(edicao, estado, cadeia) {
@@ -774,6 +800,13 @@ for (const file of ficheiros) {
     if (descricao) daVoz.add(descricao);
     frasesDaVozPorRota.set(chave, daVoz);
     chaveDaRotaPorCaminho.set(chave, rota.key);
+  }
+
+  /* As rotas isentas da contagem, que só provam que uma linha se rende. */
+  if (rota && ROTAS_QUE_PROVAM_A_RENDICAO.has(rota.key)) {
+    for (const f of frasesDaCasa(root)) rendidasNasIsentas.add(f);
+    for (const f of frasesDaVoz(root)) rendidasNasIsentas.add(f);
+    for (const f of dicasDaCasa(root)) rendidasNasIsentas.add(f);
   }
 
   /* O positivo conhecido das classes de rótulo, em TODAS as páginas e não só nas
@@ -1042,8 +1075,12 @@ const declaracoes = {
   /* A pergunta é «esta linha rende-se?», e quem responde «não tem de se render»
      é só o estado `retirada`. Uma linha sem estado nenhum entra aqui e sai
      também em `sem_estado`: as duas coisas estão erradas, e as duas dizem-se. */
+  rendidas_nas_isentas: rendidasNasIsentas.size,
+  /* A peneira desta pergunta é a mais larga das duas, e inclui as rotas isentas
+     da contagem (o Método e o Sobre): uma linha declarada para uma frase que só
+     lá vive rende-se, e a lista não está a mentir sobre o sítio. */
   vivas_que_nao_rendem: INVENTARIO.linhas
-    .filter((l) => l.estado !== 'retirada' && !rendidas.has(l.texto))
+    .filter((l) => l.estado !== 'retirada' && !rendidas.has(l.texto) && !rendidasNasIsentas.has(l.texto))
     .map((l) => ({ n: l.n, classe: l.classe, bloco: l.bloco, texto: l.texto })),
   retiradas_que_rendem: INVENTARIO.linhas
     .filter((l) => l.estado === 'retirada')
@@ -1173,6 +1210,7 @@ if (!INVENTARIO.existe) {
     console.log(
       `  frases da casa · ${rota} ... ${r.distintas} distinta(s) · ` +
         `conteúdo ${r.por_classe.conteudo} · navegação ${r.por_classe.navegacao} · ` +
+        `divulgação ${r.por_classe.divulgacao} · ` +
         `autorreferência ${r.por_classe.autorreferencia}` +
         (zero ? verde('  ✓') : amarelo('  ✗')),
     );

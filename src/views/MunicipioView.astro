@@ -44,6 +44,7 @@ import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import { municipioPorSlug } from '../data/municipios.mjs';
 import { workById, studyTitle } from '../data/studies.mjs';
 import { leituraDe } from '../data/leituras.mjs';
+import { FONTE_DIGITAL_GERADA_POR_IA } from '../data/politica-ia.mjs';
 import { getClaim, parsePtNumber, POR_VERIFICAR } from '../lib/ledger.mjs';
 import { concelhos, pecasDoConcelho } from '../lib/inicio.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -175,6 +176,9 @@ const jsonld = {
   headline: `${nome} · ${s.municipio.metaCauda}`,
   inLanguage: ['pt-PT', 'en'],
   about: { '@type': 'AdministrativeArea', name: m.nome.pt },
+  /* Ver `src/data/politica-ia.mjs`: o termo do schema.org que diz a geração
+     por IA. */
+  digitalSourceType: FONTE_DIGITAL_GERADA_POR_IA,
   url: canonicalUrl(path),
   isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
   publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },

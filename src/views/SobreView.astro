@@ -19,16 +19,34 @@
  * humana»), desde que o rodapé passou a ser navegação só. O nome de quem
  * dirige está na regra 9 do Método, que é onde a intervenção humana se
  * descreve.
+ *
+ * ---------------------------------------------------------------------------
+ * E DESDE 01.09.2026 A FRASE DA POLÍTICA (via B)
+ * ---------------------------------------------------------------------------
+ * «Duas frases e uma porta» passa a ser duas frases decididas, a frase da
+ * política e duas portas. A frase é do diretor, aprovada carácter a carácter, e
+ * diz o que as duas primeiras não dizem: que nenhum humano revê cada peça antes
+ * de sair, e que quem responde é uma pessoa com nome. É a metade da divulgação
+ * que o rótulo de todas as páginas não cabe a dizer; o rótulo diz o que o texto
+ * é e leva à política, e é aqui e no Método que a política se lê.
+ *
+ * Não entra em `src/data/sobre.mjs`: aquele ficheiro é um dos dois textos
+ * governados pela amarra das decisões, com o resumo carimbado no `DECISIONS.md`,
+ * e mexer-lhe é do lugar de direção. Vive em `src/data/politica-ia.mjs`, com a
+ * mesma disciplina de comparação: `data-frase-da-politica` é a marca que o
+ * portão compara com o texto aprovado, carácter a carácter, aqui e no Método.
  */
 import Base from '../layouts/Base.astro';
 import { SOBRE } from '../data/sobre.mjs';
 import { ABERTURA } from '../data/metodo.mjs';
+import { ANCORA_DA_POLITICA, FRASE, POLITICA } from '../data/politica-ia.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 
 const { lang = 'pt' } = Astro.props;
 const s = t(lang);
 const path = routePath('sobre', lang);
+const politica = `${routePath('metodo', lang)}#${ANCORA_DA_POLITICA}`;
 ---
 
 <Base lang={lang} path={path} title={s.sobre.metaTitle} description={s.sobre.metaDescription}>
@@ -38,6 +56,12 @@ const path = routePath('sobre', lang);
     </div>
     <div class="metodo-corpo">
       <p class="lede sobre-texto" data-sobre={lang}>{SOBRE[lang].texto}</p>
+
+      <p class="sobre-politica" data-frase-da-politica={lang}>{FRASE[lang]}</p>
+
+      <p class="sobre-porta">
+        <a href={politica}>→ {POLITICA.titulo[lang]}</a>
+      </p>
 
       <p class="sobre-porta">
         <a href={routePath('metodo', lang)}>→ {s.nav.metodo}</a>

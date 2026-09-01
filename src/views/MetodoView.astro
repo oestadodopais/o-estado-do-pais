@@ -60,6 +60,7 @@ import Frase from '../components/Frase.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
 import InstrumentoMecanismo from '../components/InstrumentoMecanismo.astro';
 import { REGRAS, ABERTURA, FECHO } from '../data/metodo.mjs';
+import { ANCORA_DA_POLITICA, FRASE, POLITICA } from '../data/politica-ia.mjs';
 import { prova, CAMINHO_DA_PROVA } from '../lib/prova.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -91,6 +92,13 @@ const destino = (l) => (l.prova ? CAMINHO_DA_PROVA : routePath(l.rota, lang));
           </li>
         ))
       }
+      {/* A secção da política entra no sumário entre as dez regras e a entrada
+          de fecho, que é onde ela vive na página. Não leva número: as dez
+          regras são numeradas porque são uma lista fechada da direção, e esta
+          não é uma décima primeira regra. */}
+      <li class="metodo-sumario-fecho">
+        <a href={`#${ANCORA_DA_POLITICA}`}>{POLITICA.titulo[lang]}</a>
+      </li>
       <li class="metodo-sumario-fecho">
         <a href={`#${FECHO.id}`}>{FECHO.titulo[lang]}</a>
       </li>
@@ -170,6 +178,84 @@ const destino = (l) => (l.prova ? CAMINHO_DA_PROVA : routePath(l.rota, lang));
       ))
     }
   </div>
+
+  {/* ===================================== a política da casa sobre a IA
+      ----------------------------------------------------------------------
+      A SECÇÃO QUE A DIVULGAÇÃO OBRIGA (01.09.2026)
+      ----------------------------------------------------------------------
+      O rótulo de todas as páginas diz o que o texto é e quem responde por ele,
+      e liga para aqui. Esta é a página onde a política se lê por extenso: a
+      via, o que sai sem o diretor, os lugares e as recusas. É a
+      `design/observatorio/POLITICA-DA-AUTONOMIA.md` §2, §4, §5 e §6 dita ao
+      leitor, e o texto vem de `src/data/politica-ia.mjs`, como o das dez regras
+      vem de `src/data/metodo.mjs`: esta vista compõe, não escreve.
+
+      NÃO É UMA DÉCIMA PRIMEIRA REGRA, e por isso não leva número nem dobra. As
+      dez regras são a lista fechada da direção; esta secção é a política de
+      autonomia, que muda por decisão do diretor com data. A regra 9 («A
+      intervenção humana») continua a ser a regra, e esta é o que ela remete.
+
+      A FRASE DA POLÍTICA É A MESMA DO SOBRE, e vai marcada nos dois sítios:
+      `data-frase-da-politica` é a marca que o portão compara, carácter a
+      carácter, com o texto aprovado. Não é uma dispensa, é uma comparação, como
+      `data-sobre`.
+      ---------------------------------------------------------------------- */}
+  <section class="metodo-secao" id={ANCORA_DA_POLITICA}>
+    <div class="regra-cabeca">
+      <h2>{POLITICA.titulo[lang]}</h2>
+    </div>
+    <div class="metodo-corpo">
+      <p class="metodo-p" data-frase-da-politica={lang}>{FRASE[lang]}</p>
+
+      {POLITICA.via[lang].map((paragrafo) => <p class="metodo-p">{paragrafo}</p>)}
+
+      <div class="regra-linha">
+        <span class="regra-k">{POLITICA.casos.titulo[lang]}</span>
+        <div class="regra-v">
+          {
+            POLITICA.casos.itens.map((caso) => (
+              <p class="metodo-p politica-caso">
+                <strong>{caso.rotulo[lang]}</strong>
+                <Fragment set:text={` · ${caso.texto[lang]}`} />
+              </p>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="regra-linha">
+        <span class="regra-k">{POLITICA.lugares.titulo[lang]}</span>
+        <div class="regra-v">
+          {POLITICA.lugares.intro[lang].map((p2) => <p class="metodo-p">{p2}</p>)}
+          {/* Os quatro lugares, pelo nome do lugar e não pelo nome do modelo
+              com a sua versão (segunda passagem): a página não ganha um
+              algarismo, e não envelhece no dia em que um modelo mudar de
+              número. As famílias dizem-se na frase de fecho, e é lá que a
+              palavra «Claude» e a palavra «Codex» aparecem uma vez cada. */}
+          <ul class="politica-lugares">
+            {
+              POLITICA.lugares.itens.map((item) => (
+                <li>
+                  <strong>{item.rotulo[lang]}</strong>{' '}
+                  <Fragment set:text={item.texto[lang]} />
+                </li>
+              ))
+            }
+          </ul>
+          {POLITICA.lugares.fecho[lang].map((p2) => <p class="metodo-p">{p2}</p>)}
+        </div>
+      </div>
+
+      <div class="regra-linha">
+        <span class="regra-k">{POLITICA.recusas.titulo[lang]}</span>
+        <div class="regra-v">
+          <ul class="politica-recusas">
+            {POLITICA.recusas.itens.map((r) => <li>{r[lang]}</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
   {/* ===================================== a entrada de fecho
       As duas linhas rotuladas que o diretor aprovou a 20.08.2026 (decisões g e
