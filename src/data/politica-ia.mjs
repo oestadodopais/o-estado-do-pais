@@ -13,8 +13,8 @@
  * dois textos governados pela amarra das decisões (`scripts/check-ledger.mjs`):
  * o resumo do ficheiro está carimbado numa entrada do `DECISIONS.md`, e mexer
  * num byte dele obriga a uma entrada nova, que é escrita do lugar de direção e
- * não do construtor. Este ficheiro é do mesmo tipo — texto que a página rende e
- * que não se reescreve em passagem — e o lugar de direção decidirá se o traz
+ * não do construtor. Este ficheiro é do mesmo tipo, texto que a página rende e
+ * que não se reescreve em passagem, e o lugar de direção decidirá se o traz
  * para dentro da amarra com uma entrada sua.
  *
  * ---------------------------------------------------------------------------
@@ -69,11 +69,11 @@ export const ANCORA_DA_POLITICA = 'politica-de-ia';
  * O brief manda acrescentar ao JSON-LD «o que o esquema permitir para dizer a
  * geração por IA sem inventar propriedades». Existe, e está lido na fonte:
  *
- *   · `https://schema.org/digitalSourceType` — «Indicates an
+ *   · `https://schema.org/digitalSourceType`: «Indicates an
  *     IPTCDigitalSourceEnumeration code indicating the nature of the digital
  *     source(s) for some CreativeWork.» Usa-se em `CreativeWork`, e por isso
  *     em `Article`, que dela herda;
- *   · `https://schema.org/TrainedAlgorithmicMediaDigitalSource` — «Content
+ *   · `https://schema.org/TrainedAlgorithmicMediaDigitalSource`: «Content
  *     coded as “trained algorithmic media” using the IPTC digital source type
  *     vocabulary.» O código do IPTC de que ela é o eco chama-se «Created using
  *     Generative AI» e define-se «Digital media created algorithmically using
@@ -131,12 +131,12 @@ export function textoDoRotulo(lang) {
  *
  * A LEITURA QUE SE FEZ, e fica escrita para poder ser desfeita: «a primeira
  * página de cada edição» lê-se como a página inicial de cada uma das duas
- * edições construídas — `/` e `/en`. Num sítio em atualização contínua não há
+ * edições construídas, `/` e `/en`. Num sítio em atualização contínua não há
  * números de edição, e a página inicial é a que faz o papel da primeira página
  * de um jornal. Se o advogado ler de outra maneira, muda-se a condição num
  * sítio só (`RotuloDeIA.astro`) e a linha passa a render onde ele disser. A
- * pergunta de fundo — se a casa é sequer uma publicação periódica no sentido do
- * artigo 9.º — é a primeira das perguntas para o advogado (§3 da diligência), e
+ * pergunta de fundo, se a casa é sequer uma publicação periódica no sentido do
+ * artigo 9.º, é a primeira das perguntas para o advogado (§3 da diligência), e
  * cumprir o artigo antes da resposta não custa nada e não decide nada.
  *
  * A menção de gratuitidade diz o que a coisa é e não tem adjetivo nenhum: não
