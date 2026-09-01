@@ -229,7 +229,7 @@ O que o mapa ensinou e a carta leva: oito a doze domínios é a banda dos observ
 
 Ditas na página do domínio como conteúdo, com as pistas registadas no inventário, se o inventário as confirmar hoje: uma publicação periódica do produtor para o balanço fiscal da imigração (M6: a série existe, não periódica, no Observatório das Migrações com dados do Instituto da Segurança Social); a série do INE da população estrangeira por concelho depois de 2023 (M2; a AIMA publica os 308 para 2024 em adenda); as rendas nos concelhos com menos de cem mil habitantes (9); a população ligada a tratamento de águas residuais desde 2009 (6); a transparência municipal desde a suspensão do índice (18); a saúde por concelho (8: a unidade é a ULS); os tribunais por concelho (17: a unidade é o país); a pobreza por concelho (5: a unidade é a região); a indústria espacial como série oficial (12).
 
-## 6 · O que fica para o diretor
+## 6 · O que fica para o diretor (decidido a 01.09.2026: o diretor adotou as propostas do lugar de direção tal como estão, nas quatro perguntas e na tabela do inventário)
 
 1. **A escolha da tabela.** Para cada domínio da primeira vaga, quais das linhas verificadas entram (a recomendação do lugar de direção está no inventário, §5, linha a linha: as linhas `verificadas` primeiro; as `parciais` só depois de fechadas; as `ausentes` entram como ausência).
 2. **A colocação da pobreza e da desigualdade** no domínio 5 (a proposta) ou num domínio próprio «proteção social» (o que daria dezanove).
