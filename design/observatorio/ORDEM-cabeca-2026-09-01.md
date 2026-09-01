@@ -12,7 +12,7 @@ O que este bloco não faz: páginas de domínio (esperam as linhas); qualquer me
 
 ## 2 · Onde
 
-Numa worktree nova saída de `main` depois de o bloco do rótulo fundir (o lugar de direção diz o commit): `/Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/cabeca-2026-09-01` (ramo `cabeca-2026-09-01`). `npm ci` lá. Nunca `git checkout` na árvore principal, nunca `push`, nunca fusão, só caminhos explícitos. Commits verdes (build, verify, typecheck a 0) com os trailers `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>` e `Claude-Session: https://claude.ai/code/session_01RfmmTfG3C9xPwSngA5DDbr`. Prosa nova em português (Acordo), sem travessões.
+Numa worktree nova saída de `main` depois de o bloco do rótulo fundir (o lugar de direção diz o commit: `cfa5045`, 01.09, com o rótulo fundido em `a185a2c` e a §1.89 registada): `/Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/cabeca-2026-09-01` (ramo `cabeca-2026-09-01`). `npm ci` lá. Nunca `git checkout` na árvore principal, nunca `push`, nunca fusão, só caminhos explícitos. Commits verdes (build, verify, typecheck a 0) com os trailers `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>` e `Claude-Session: https://claude.ai/code/session_01RfmmTfG3C9xPwSngA5DDbr`. Prosa nova em português (Acordo), sem travessões.
 
 ## 3 · O que ler antes
 
