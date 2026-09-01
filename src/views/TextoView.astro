@@ -39,6 +39,7 @@ import Provenance from '../components/Provenance.astro';
 import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import RotuloDeIA from '../components/RotuloDeIA.astro';
 import { workById } from '../data/studies.mjs';
+import { FONTE_DIGITAL_GERADA_POR_IA } from '../data/politica-ia.mjs';
 import { registoDaEdicao, manifestoDosRegistos, temRegisto } from '../lib/registos.mjs';
 import {
   pecasDoCorpo,
@@ -123,6 +124,10 @@ const jsonld = {
   '@type': 'Article',
   headline: tituloDoDocumento,
   inLanguage: lang === 'pt' ? 'pt-PT' : 'en',
+  /* Ver `src/data/politica-ia.mjs`: o termo do schema.org que diz a geração
+     por IA. Esta página é o documento do estudo composto do registo do
+     motor, e o documento foi escrito por sistemas de IA como o resto. */
+  digitalSourceType: FONTE_DIGITAL_GERADA_POR_IA,
   url: canonicalUrl(path),
   isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
   publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },

@@ -62,6 +62,37 @@ export const LINGUA_DO_RESPONSAVEL = 'pt-PT';
 /** A âncora da secção da política, dentro do Método. */
 export const ANCORA_DA_POLITICA = 'politica-de-ia';
 
+/**
+ * ---------------------------------------------------------------------------
+ * A MESMA DIVULGAÇÃO, PARA MÁQUINAS (schema.org, lido na fonte a 01.09.2026)
+ * ---------------------------------------------------------------------------
+ * O brief manda acrescentar ao JSON-LD «o que o esquema permitir para dizer a
+ * geração por IA sem inventar propriedades». Existe, e está lido na fonte:
+ *
+ *   · `https://schema.org/digitalSourceType` — «Indicates an
+ *     IPTCDigitalSourceEnumeration code indicating the nature of the digital
+ *     source(s) for some CreativeWork.» Usa-se em `CreativeWork`, e por isso
+ *     em `Article`, que dela herda;
+ *   · `https://schema.org/TrainedAlgorithmicMediaDigitalSource` — «Content
+ *     coded as “trained algorithmic media” using the IPTC digital source type
+ *     vocabulary.» O código do IPTC de que ela é o eco chama-se «Created using
+ *     Generative AI» e define-se «Digital media created algorithmically using
+ *     an Artificial Intelligence model trained on captured content»
+ *     (`http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia`).
+ *
+ * As duas estão na área «new» do vocabulário, na versão 30.0 (19.03.2026), e é
+ * honesto dizê-lo: são termos publicados por schema.org e podem ainda mudar de
+ * definição. Não são inventadas por esta casa, que era a condição.
+ *
+ * O VALOR VAI COMO `@id`, E FOI MEDIDO. O contexto JSON-LD de schema.org
+ * (`https://schema.org/docs/jsonldcontext.jsonld`) declara `digitalSourceType`
+ * como `{"@id": "schema:digitalSourceType"}` e **não** como `@type: @vocab`:
+ * uma cadeia solta seria lida como um literal de texto e não como o termo do
+ * vocabulário. `{ '@id': … }` é a única forma que resolve no termo.
+ */
+export const FONTE_DIGITAL_GERADA_POR_IA = {
+  '@id': 'https://schema.org/TrainedAlgorithmicMediaDigitalSource',
+};
 
 /**
  * O rótulo, em três pedaços: o que vem antes da porta, o texto da porta, e o
