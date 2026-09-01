@@ -1,0 +1,25 @@
+{
+ "plantas": [
+  {
+   "id": "M1",
+   "ficheiro": "indice.jsonl",
+   "linha": 21,
+   "descricao": "um dígito do sha256 trocado na linha 21 (só nessa; o mesmo sha aparece em 2 linhas); o ficheiro guardado (sha real ba859d084b9e…) deixa de bater com essa linha (ba859d084bfe…)",
+   "alvo": "ba859d084b9e5eda1877597282245d2b3cfd8fe2d9df06dd49da87325f08b4ed",
+   "plantado": "ba859d084bfe5eda1877597282245d2b3cfd8fe2d9df06dd49da87325f08b4ed",
+   "aplicada": true
+  },
+  {
+   "id": "M2",
+   "ficheiro": "sha256/28/a148a41e1f6a0a26bf4e59ee259c0b057e9e54d2c60c2a468f74536ce406af",
+   "descricao": "11 bytes acrescentados à captura; o sha real passou a e4fd74c015cd… e o índice continua a dizer 28a148a41e1f…",
+   "aplicada": true
+  },
+  {
+   "id": "M3",
+   "ficheiro": "indice.jsonl (última linha)",
+   "descricao": "linha com sha256 abab…×32 e url ?x=1; o ficheiro não existe",
+   "aplicada": true
+  }
+ ]
+}

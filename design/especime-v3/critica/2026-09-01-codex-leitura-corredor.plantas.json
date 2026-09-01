@@ -1,0 +1,31 @@
+[
+ {
+  "id": "P1",
+  "ficheiro": "motor/relatorio-motor.md",
+  "descricao": "o relatório diz 152 linhas de índice; o índice do pacote tem 148 (+1 planta M-independente? não: o índice do pacote é o original de 148)",
+  "antes": "fdb2084e2f4a",
+  "depois": "cc53182c53d3",
+  "contexto": "| linhas do índice | 148 |",
+  "vista": "Major 13 (152 vs 148, com a cópia aninhada notada)"
+ },
+ {
+  "id": "P2",
+  "ficheiro": "motor/fonte/.github/workflows/corredor.yml",
+  "descricao": "a guarda do modo real comentada no passo do push do sítio: em ensaio o passo passa a correr",
+  "antes": "51aab3514e98",
+  "depois": "e6ef7b3533c3",
+  "contexto": "- name: O commit e o push no sítio\n        if: env.MODO == 'real'",
+  "vista": "Blocking 1 (patch × fonte cruzados)"
+ },
+ {
+  "id": "P3",
+  "ficheiro": "arquivo/indice.jsonl",
+  "linha": 17,
+  "descricao": "um dígito do sha256 trocado na linha 17; o ficheiro dessa captura vai em arquivo/amostras e o sha real é 14afc270190b…",
+  "antes": "2a86a630a7ca",
+  "depois": "3066b2becc1a",
+  "alvo": "14afc270190b5a09571649479d052f0c3c4c435ebd9d7268d6d681625e2f9a44",
+  "plantado": "14afc270190bfa09571649479d052f0c3c4c435ebd9d7268d6d681625e2f9a44",
+  "vista": "Blocking 6 (hash recalculado, 190bfa vs 190b5a)"
+ }
+]
