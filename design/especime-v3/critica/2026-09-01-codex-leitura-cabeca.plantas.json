@@ -1,0 +1,33 @@
+{
+ "registado_em": "2026-09-01T18:02:13+00:00",
+ "copia": "codex-cabeca/pacote",
+ "plantas": [
+  {
+   "id": "C1",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 118,2 px onde o JSON das medições diz 138,2",
+   "sha256_antes": "efad365a9a46d00771a01c2550a0bab900dbfcf128e3096f1a02deef2c18bfad",
+   "sha256_depois": "37d58f46f8e813a51ab7ecebbfebbb214c72987692725eeb676a14d8bff7b4b8",
+   "contexto_antes": " uma com as suas medidas. A data do cabeçalho passou a escrever-se dd.mm.aaaa.  A 390 px, o primeiro número selado de uma medida estava a **2 071,9 px** da manchete, ou seja a **2,45 ecrãs** de 844 px; passou a estar a **138,2 px**, ou **0,16 ecrãs**. A página do país a 390 encolheu **474 px** e a 1280 encolheu **5 px**.  ## 1 · As medidas de aceitação do brief §4, célula a célula  | a medida do bri",
+   "contexto_depois": " uma com as suas medidas. A data do cabeçalho passou a escrever-se dd.mm.aaaa.  A 390 px, o primeiro número selado de uma medida estava a **2 071,9 px** da manchete, ou seja a **2,45 ecrãs** de 844 px; passou a estar a **118,2 px**, ou **0,16 ecrãs**. A página do país a 390 encolheu **474 px** e a 1280 encolheu **5 px**.  ## 1 · As medidas de aceitação do brief §4, célula a célula  | a medida do bri"
+  },
+  {
+   "id": "C2",
+   "ficheiro": "fonte/src/components/inicio/Faixa.astro",
+   "descricao": "a fonte perde o aria-label da faixa; as páginas construídas do pacote ainda o têm",
+   "sha256_antes": "025070d353472c807b1abab008e81ed2bf6916dacf61e9f4cde01aac31d09ac1",
+   "sha256_depois": "5b8fb9f8b03ad365bf9fe85f4eab0f42bbe71244ef3459aed6fb8a6885beaf14",
+   "contexto_antes": "tra  * caixa; não é preciso escrever a altura do pé em píxeis em lado nenhum.  *  * O NOME ACESSÍVEL DA PORTA VEM DO NOME DA MEDIDA, por `aria-labelledby`, e não  * de uma cadeia escrita aqui: a porta não acrescenta uma palavra ao sítio, e o ",
+   "contexto_depois": "--- /**  * A FAIXA DE CARTÕES · o «Relance» de um lugar, percorrível de lado.  *  * "
+  },
+  {
+   "id": "C3",
+   "ficheiro": "fonte/src/i18n/strings.mjs",
+   "descricao": "um algarismo dentro de uma cadeia da interface",
+   "sha256_antes": "ba83b112362b7ba95ed4b8d79dcc1b72fac8afb175aa6679b1ed9f83669a7c81",
+   "sha256_depois": "740ca21ccd14ebbbdee2a154276d312daf6c8a20c1aaa121da000345f65fed3a",
+   "contexto_antes": "nome do lugar, na gramática do nome do mapa. */       faixa: {         rotulo: 'The measures, one per card',       },        movel: {         abrirConcelho: 'Open a municipality',       ",
+   "contexto_depois": "nome do lugar, na gramática do nome do mapa. */       faixa: {         rotulo: 'The measures, 1 per card',       },        movel: {         abrirConcelho: 'Open a municipality',       "
+  }
+ ]
+}

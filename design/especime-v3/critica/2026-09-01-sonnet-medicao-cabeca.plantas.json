@@ -1,0 +1,42 @@
+{
+ "registado_em": "2026-09-01T18:02:13+00:00",
+ "copia": "cabeca-medicao/depois",
+ "plantas": [
+  {
+   "id": "S1",
+   "ficheiro": "index.html",
+   "descricao": "o cartão da dívida pública perde o selo da fonte (um número selado passa a não selado)",
+   "sha256_antes": "9dc07596aed3cf1b7ce157c44e90f823ad0600ecf75836285fabaf7fbaf2b60d",
+   "sha256_depois": "dde1f171f8cc75d8f3bf5e5e592154f31b8d08172e59f74d6d521d15d0d041b4",
+   "contexto_antes": "palavra est-fora\">fora do limiar</span></div><span class=\"claim claim-com-chip\"><span data-claim=\"divida-publica-2025\" class=\"claim-value cartao-valor\">89,7</span><a class=\"src-chip\" href=\"/livro-razao/divida-publica-2025\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Quadro institucional de indicadores\" title=\"Quadro institucional de indicadores\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>Quadro institucional de indicadores</span></span></a></span><p class=\"cartao-nome\" id=\"k-divida-publica-2025\" data-medida-nome>Dívida",
+   "contexto_depois": "palavra est-fora\">fora do limiar</span></div><span class=\"claim claim-com-chip\"><span data-claim=\"divida-publica-2025\" class=\"claim-value cartao-valor\">89,7</span></span><p class=\"cartao-nome\" id=\"k-divida-publica-2025\" data-medida-nome>Dívida"
+  },
+  {
+   "id": "S2",
+   "ficheiro": "index.html",
+   "descricao": "o alvo inteiro do cartão posicao-de-investimento-internacional-2025 encolhe para 20 × 20 px (deixa de ser alvo inteiro e fica abaixo de 44 px)",
+   "sha256_antes": "dde1f171f8cc75d8f3bf5e5e592154f31b8d08172e59f74d6d521d15d0d041b4",
+   "sha256_depois": "6ea6162033f7f558d83757b356ecb53c8b944bef06ea425cffd0e81eb006abb1",
+   "contexto_antes": "e-investimento-internacional-2025\" data-estado=\"fora\" style=\"--cartao-glifos:5\"><a class=\"cartao-porta\" href=\"#m-posicao-de-investimento-internacional-2025\" aria-labelledby=\"k-posicao-de-investimento-internacional-2025\"></a><div class=\"cartao-topo\"><span class=\"sq sq-fora\" aria-hidden=\"true\"></span><spa",
+   "contexto_depois": "e-investimento-internacional-2025\" data-estado=\"fora\" style=\"--cartao-glifos:5\"><a class=\"cartao-porta\" href=\"#m-posicao-de-investimento-internacional-2025\" aria-labelledby=\"k-posicao-de-investimento-internacional-2025\" style=\"position:static;display:inline-block;width:20px;height:20px\"></a><div class=\"cartao-topo\"><span class=\"sq sq-fora\" aria-hidden=\"true\"></span><spa"
+  },
+  {
+   "id": "S3",
+   "ficheiro": "index.html",
+   "descricao": "a data do sinal de tempo volta à forma ISO à vista",
+   "sha256_antes": "6ea6162033f7f558d83757b356ecb53c8b944bef06ea425cffd0e81eb006abb1",
+   "sha256_depois": "756ad002caa11d22909fa7098d75d06508d3357b1488bb5d75959dd0d5466880",
+   "contexto_antes": "uropeu ·</span><span class=\"mob-leitura-v\" data-nonledger=\"data-de-atualizacao\">31.08.2026</span></a></span><span class=\"mob-leitura\"><a class=\"mob-leitura-k\" href=\"/agen",
+   "contexto_depois": "uropeu ·</span><span class=\"mob-leitura-v\" data-nonledger=\"data-de-atualizacao\">2026-08-31</span></a></span><span class=\"mob-leitura\"><a class=\"mob-leitura-k\" href=\"/agen"
+  },
+  {
+   "id": "S4",
+   "ficheiro": "en/index.html",
+   "descricao": "a cabeça inglesa leva o nome português da faixa (cadeia da outra língua na cabeça)",
+   "sha256_antes": "9453a4fa9455a9ce185e02b265d855b1ef58ef72aa5c09a5ec7ee0c0a7998089",
+   "sha256_depois": "432e0a6d7f2365b4e115c17ee7d2ca186d7c9bf0dce40902d491b4b0d1d0cc5a",
+   "contexto_antes": "iv></div><div class=\"faixa-bloco\" data-faixa-bloco><ol class=\"faixa\" data-faixa aria-label=\"The measures, one per card\"><li class=\"cartao\" data-cartao=\"divida-publica-2025\" data-estado=\"fora\" style=\"",
+   "contexto_depois": "iv></div><div class=\"faixa-bloco\" data-faixa-bloco><ol class=\"faixa\" data-faixa aria-label=\"As medidas, uma por cartão\"><li class=\"cartao\" data-cartao=\"divida-publica-2025\" data-estado=\"fora\" style=\""
+  }
+ ]
+}
