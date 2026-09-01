@@ -1,0 +1,107 @@
+# A frescura e a automação · o corredor diário, o arquivo de versões e o que se publica sem humano (01.09.2026)
+
+*Escrito a 01.09.2026 pelo lugar de direção (Claude Fable 5); entrega B do prompt de 30.08. Duas coisas estão decididas pelo diretor a 30.08.2026 e não se voltam a perguntar: o corredor diário corre numa ação agendada no repositório do motor, com Python e Node, sem segredos porque as fontes são públicas; e um valor novo de rotina, no mesmo formato e com todos os portões verdes, publica-se e fica registado em «O que mudou», enquanto o resto pára e avisa. O arquivo de versões parte da «Nota · o arquivo de versões das fontes · desenho proposto (31.08)», no Desktop do diretor, e adota-a. O que aqui é medido diz-se medido; o que é proposta diz-se proposta; o que está por confirmar leva `[verify]`. Sem travessões na prosa.*
+
+## 1 · As três datas, e o que o sítio pode dizer sem inventar
+
+Uma medida tem três datas, e o sítio separa-as sempre: **o período de referência** (a que se refere o número: 2025, junho de 2026, o ano letivo 2023/24), **a data em que a fonte o publicou** (o carimbo do publicador: `DataUltimoAtualizacao` no INE, `updated` no Eurostat, a data da nota ou do ficheiro), e **a data em que a casa conferiu a fonte** (o `verificado_em` da linha). A confusão entre as três é a maneira mais comum de um sítio parecer fresco sem o ser.
+
+Com as três datas o sítio pode dizer, todos os dias e sem inventar: no cabeçalho, «conferido hoje às 06:12 contra as fontes; 2 536 linhas, 0 valores novos» (os números vêm da corrida, nunca escritos); ao lado de cada número, «publicado pela fonte em dd.mm.aaaa; próxima publicação prevista dd.mm.aaaa» onde o publicador tem calendário (o INE e o Eurostat publicam calendários; o inventário regista «sem calendário publicado» onde não há, e aí a frase é só a primeira); e, quando uma fonte não respondeu, «última conferência em dd.mm.aaaa», nunca «hoje». Uma fonte que não responde é um estado, com a data em que deixou de responder; a lição do mapa de cobertura de 18.08 é que a falha de atualização é o estado normal do campo e dizer porquê é raro: a casa diz.
+
+## 2 · O que existe hoje (lido no motor e no `launchctl` a 01.09.2026)
+
+- **A corrida semanal.** `indicators/refresh.py` no motor, lançada por `com.nunosantos.oedp-indicadores` (`~/Library/LaunchAgents/`, `StartCalendarInterval` segunda-feira às 09:30 na hora da máquina; a corrida de 31.08 registou `heartbeat stamped 2026-08-31T08:30:12+00:00`). Refaz a leitura das 32 afirmações do estudo `quadro-institucional` (os dois quadros da União, pela API do Eurostat), corre cinco canários (valor, estrutura, metainformação, existência, limiar), acrescenta à história de vintages (`indicators/vintages.json`, só se acrescenta, provado antes de escrever), carimba `heartbeat.json`, escreve `refresh_report.json`, e escreve no repositório do sítio: uma linha de verificação em cada uma das 32 linhas (`by: "painel-semanal"`) e o carimbo `verificadoEm` em `src/data/verificacao.mjs`. **Não faz commit**: uma sessão revê e faz o commit (a 31.08 fê-lo esta sessão, `3198666`, depois de construir e correr os portões). Os caminhos do sítio estão escritos no programa (`CLAIMS` e `SITE_STATE` apontam a `~/Instruments/OEstadoDoPais`, linhas 80 e 86): o corredor tem de os receber por parâmetro. O segundo comando do agente é o interruptor de homem morto: `refresh.py --check-heartbeat` sai com erro quando a última corrida boa é mais velha do que `MAX_AGE_DAYS`.
+- **A releitura dos concelhos.** `releitura_concelhos.py` no motor, o ciclo de releitura das linhas dos 308 concelhos, corrido uma vez a 28.08 sem alarmes; não está agendado `[verify]` no motor antes de o corredor o absorver.
+- **O calendário.** `indicators/calendar.json` e `upcoming.py`, que alimentam a página `/agenda` do sítio.
+- **Os portões do sítio.** `npm run build` (a cadeia inteira, 3 minutos e 38 segundos medidos hoje), `npm run verify`, `npm run typecheck`, e depois do lançamento `npm run verify:deploy` (nunca mais de um pedido por minuto ao sítio).
+- **O que o sítio já mostra.** O carimbo semanal («Painel europeu · <data>») e, por linha, a história das verificações no recibo. Não mostra ainda a data de publicação da fonte como data separada em todas as linhas, nem a próxima publicação prevista, nem o estado da fonte.
+
+## 3 · O corredor diário
+
+### 3.1 Onde corre, e o que isso custa (lido na documentação do GitHub a 01.09.2026)
+
+Uma ação agendada (`on: schedule`) no repositório do motor (`github.com/oestadodopais/motor`, privado). A documentação do GitHub diz: «Use POSIX cron syntax to schedule workflows to run at specific times»; «The shortest interval you can run scheduled workflows is once every 5 minutes»; «By default, scheduled workflows run in UTC»; «Scheduled workflows run on the latest commit on the default branch»; «The schedule event can be delayed during periods of high loads of GitHub Actions workflow runs. High load times include the start of every hour»; e «In a public repository, scheduled workflows are automatically disabled when no repository activity has occurred in 60 days» (o motor é privado; se um dia for público, os commits do próprio corredor contam como atividade). O plano gratuito para organizações inclui «2,000» minutos por mês e «500 MB» de armazenamento de artefactos nos repositórios privados, «Linux 2-core (x64)» a «$0.006» por minuto além disso, e «Your free minutes reset to the full amount at the start of each billing cycle»; nos repositórios públicos o uso é gratuito. Uma corrida diária de uns dez minutos (a busca em série de umas dezenas de ficheiros, a releitura, a construção do sítio de 3 a 4 minutos) são uns 300 minutos por mês: cabe três vezes nos 2 000. Se a construção do sítio pesar, sai da ação e fica só no Vercel, que constrói a cada `push` de qualquer maneira, e a ação passa a empurrar só as linhas e o carimbo.
+
+### 3.2 A hora (proposta do lugar de direção)
+
+**06:10 UTC**, uma corrida por dia (07:10 em Lisboa no horário de verão, 06:10 no de inverno). Razões, lidas nos publicadores a 01.09.2026: o INE diz «Publicação de Destaques: às 11h00 dos dias indicados (salvo situações imprevistas)» e «Os Destaques cuja difusão é efetuada no mesmo dia a nível europeu são divulgados pelo INE às 9h30m»; o Eurostat diz «Data in the data navigation tree are updated twice a day at 11:00 and 23:00, Central European Time (CET)». Uma corrida às 06:10 UTC vê tudo o que os dois publicaram no dia anterior, incluindo a atualização das 23:00 CET do Eurostat, antes da manhã do diretor; os dez minutos depois da hora fogem ao pico de carga que o GitHub nomeia. Uma segunda corrida às 12:10 UTC, que apanharia as publicações das 11:00 no próprio dia, fica proposta para a fase 2, quando a primeira vaga estiver no ar e a maioria das fontes for mensal ou anual: uma hora de atraso num número anual não vale o dobro dos minutos.
+
+### 3.3 O que a corrida faz, passo a passo, e onde pára
+
+Cada passo é um portão: se falha, a corrida pára ali, nada se publica, e o estado fica escrito.
+
+1. **Prepara.** Obtém o motor (a ação corre nele) e o repositório do sítio. Para escrever no sítio precisa de **uma chave de implantação com escrita no repositório do sítio, guardada como segredo da ação no motor**. É a única credencial do desenho e é da casa, não de uma fonte: a premissa «sem segredos porque as fontes são públicas» continua verdadeira para as fontes. (Inferido da documentação lida: o `GITHUB_TOKEN` é o token do repositório em que o fluxo corre, e a documentação diz que para disparar outro fluxo é preciso «a GitHub App installation access token or a personal access token instead of GITHUB_TOKEN»; a frase exata sobre o alcance do token a outro repositório fica `[verify]`.) A chave cria-a o diretor (as definições do repositório são dele) e é o primeiro pedido do piloto.
+2. **Busca.** Para cada endereço de fonte do livro-razão (as linhas com `source_url` e `path`; o inventário da primeira vaga acrescenta os seus), descarrega o ficheiro com um `User-Agent` identificável («OEstadoDoPais/corredor»), em série, com dois segundos de intervalo no INE e recuo a 429, e regista o estado HTTP, a hora UTC, o tamanho e o sha256. Um 404, um 403 ou um tempo esgotado é uma linha de ausência no índice, não um erro silencioso.
+3. **Compara e arquiva.** Se o sha256 é o guardado, a linha fica conferida (`verificado_em` avança, o valor não se toca). Se mudou, guarda a versão nova no arquivo (§5), com a linha de índice, antes de qualquer leitura.
+4. **Relê.** Corre o leitor do motor sobre o ficheiro novo e os cinco canários. Classifica: o mesmo valor com carimbo novo (aviso, publica-se a conferência); um período novo da mesma medida no mesmo formato (valor de rotina: publica-se); o carimbo e o valor a mudarem na mesma corrida (revisão da fonte: pára, uma frase só, como o motor já faz); a estrutura, as unidades ou as dimensões diferentes (pára); o leitor não reconhece o ficheiro (pára); a série desapareceu (pára, e a fonte passa a «sem resposta desde»).
+5. **Escreve.** `verificado_em` em todas as linhas conferidas; os valores novos de rotina nas linhas, com a verificação e a data de publicação da fonte; a história de vintages; o estado de cada fonte; a entrada do dia em «O que mudou».
+6. **Portões do sítio.** `npm run build`, `npm run verify`, `npm run typecheck` sobre o sítio com as mudanças. Vermelho: pára, nada se empurra, o relatório diz porquê.
+7. **Publica.** Um commit no sítio com caminhos explícitos (as linhas tocadas, o carimbo, a página «O que mudou»), assinado como código («Corredor diário», sem modelo, porque não há modelo), e o `push` para `main`, que é o que faz o Vercel lançar. Nunca `git add -A`.
+8. **Confere o lançamento.** Espera pelo lançamento e corre `verify:deploy`, nunca mais de um pedido por minuto ao sítio (a lição de 26.08: um pedido a cada dez segundos fez a mitigação do Vercel bloquear o próprio endereço da casa). Vermelho: aviso.
+9. **Carimba e vigia.** `heartbeat.json`; um segundo fluxo agendado, à tarde, corre `--check-heartbeat` e falha alto se a corrida da manhã não carimbou. A ausência de corrida tem de aparecer como falha, nunca como nada.
+
+### 3.4 O aviso ao diretor
+
+A política manda avisar por correio, com cópia para ele. A casa não tem ainda caixa de correio própria (a camada 1 da entidade, decisão de 30.08: a caixa é o primeiro gasto quando a casa precisar de escrever). Até lá, o aviso do corredor é (a) a falha do fluxo, que o GitHub notifica ao dono do repositório pelos canais dele (`[verify]` a regra exata de quem é notificado numa corrida agendada), e (b) uma *issue* aberta pelo próprio fluxo no repositório do motor com o relatório da corrida, o que o `GITHUB_TOKEN` faz sem segredo novo. O correio a sério entra quando a caixa existir, com a cópia para o diretor como a regra manda. Fica dito que até lá o aviso é o do GitHub.
+
+## 4 · A política do que se publica sem humano (decidida a 30.08.2026)
+
+| o que a corrida encontrou | o que faz | onde fica registado |
+|---|---|---|
+| o mesmo valor, o mesmo ficheiro (sha256 igual) | confere: `verificado_em` avança | o recibo da linha |
+| o mesmo valor, carimbo do publicador novo | confere e regista o carimbo (aviso, não alarme) | o recibo; a história de vintages |
+| **um período novo da mesma medida, no mesmo formato, da mesma fonte, com todos os portões verdes** | **publica**: a linha ganha o valor novo, as três datas, a verificação; a página «O que mudou» ganha a entrada | «O que mudou»; o recibo; a história de vintages |
+| o carimbo e o valor a mudarem na mesma corrida (uma revisão de um período já publicado) | **pára** o valor: mantém o publicado com «em revisão pela fonte desde dd.mm»; avisa | o relatório; a *issue*; «O que mudou» diz que há uma revisão por decidir |
+| uma medida nova, uma definição mudada, um ficheiro que a leitura não reconhece, a estrutura ou as unidades diferentes | **pára** e avisa | idem |
+| uma fonte que não responde | confere o que respondeu; a fonte passa a «sem resposta desde dd.mm»; ao fim do prazo que a sua periodicidade justifica (um mês para uma fonte mensal, três para uma anual, proposta), avisa | o estado da fonte, rendido no selo; o relatório |
+| um portão do sítio vermelho | **pára** tudo; nada se empurra | o relatório; a *issue* |
+
+«Mesmo formato» quer dizer, em código e não em juízo: o mesmo código de conjunto de dados, as mesmas dimensões e tamanhos, o mesmo rótulo de unidade, a mesma estrutura do ficheiro (o canário da estrutura), e um excerto que embebe o valor tal como o padrão da linha espera. Tudo o que não passe nisto é «o resto», e o resto pára.
+
+## 5 · O arquivo de versões (a nota de 31.08, adotada)
+
+A frase: guardar, para sempre e sem alteração, cada versão de cada ficheiro de fonte que o livro-razão leu, com a prova de quando e de onde veio, porque os publicadores substituem ficheiros e o passado não se volta a descarregar. É o ativo que compõe (a nota da entidade, §10).
+
+1. **Endereçado pelo conteúdo**: `arquivo/sha256/<aa>/<resto>`; um ficheiro que não mudou nunca se guarda duas vezes.
+2. **Os bytes tal como vieram**: sem recompressão nem normalização.
+3. **Só se acrescenta**: uma correção ao índice é uma linha nova.
+4. **O índice é um livro-razão**: `indice.jsonl`, uma linha por captura: id; URL pedido; a cadeia de redirecionamentos e o URL final; data e hora UTC; estado HTTP; `Content-Type`; tamanho; `ETag` e `Last-Modified` tal como enviados; sha256; o sha256 anterior dessa fonte; as medidas que leem o ficheiro. Um 404 ou um bloqueio é também uma linha.
+5. **É um portão**: uma linha do livro-razão cuja verificação aponte para um vintage que não esteja no arquivo faz a construção falhar.
+
+**Onde vive**: um repositório próprio na organização (`oestadodopais/arquivo`), privado ao início, separado do motor para o motor não engordar. As dimensões da nota (umas dezenas de MB por mês, menos de 1 GB por ano) são estimativas e ficam `[verify]` até o vintage zero as medir; Git simples chega para anos, e quando pesar, Git LFS ou um balde compatível com S3 (`[verify quotas e preços]` nesse dia). O corredor escreve no arquivo com a mesma chave de implantação, ou com uma segunda, restrita ao arquivo (proposta: uma segunda chave, para que uma fuga de uma não abra os dois).
+
+**Como se enche**: o vintage zero no piloto (descarregar de uma vez os endereços do livro-razão, guardar e indexar; os que já não respondem entram como linhas de ausência, e isso é um achado; as sete capturas de 30.08 da nota da I87, DRQPE e IEFP, com sha256, tamanho e endereço, são as primeiras linhas); o corredor diário depois, para sempre; e retroativamente o que o motor já guarda (`content/*/source`, `Technical Source/`), marcado como captura retroativa com a data em que foi lido.
+
+**A testemunha de fora**: o sha256 da casa prova integridade, não a data. A cada vintage novo, pedir uma captura ao Wayback Machine (Save Page Now) e, onde dê, ao Arquivo.pt, e guardar o endereço da captura na linha do índice (`[verify]` as APIs e os limites antes de construir); e ancorar o sha256 do `indice.jsonl` numa etiqueta assinada do git e na página «O que mudou». OpenTimestamps fica acima disto e é provavelmente excessivo `[verify]`.
+
+**O que se mostra**: arquivar para verificar é registo interno; redistribuir é decisão de licença, fonte a fonte. Na fase 2, uma página «O arquivo das fontes» lista todas as capturas (URL, data, hash); o ficheiro em si serve-se só onde a licença o permita. Lido hoje nos publicadores (`DILIGENCIA-LEGAL.md` §6): o Eurostat autoriza a reutilização com a fonte reconhecida; o INE licencia em CC BY 4.0 com a fonte identificada na forma que ele fixa; a DGAL permite copiar e utilizar «desde que sem finalidades lucrativas ou ofensivas, devendo contudo mencionar expressamente a fonte»; o IEFP não publica termos; a DRQPE não tem licença; o IEM diz «todos os direitos reservados»; a Transparency International licencia o CPI em CC BY-ND 4.0. As fontes sem licença ou com todos os direitos reservados ficam listadas sem ficheiro até à hora do advogado.
+
+## 6 · «O que mudou»
+
+Uma página nas duas edições, gerada da própria corrida, que é conteúdo de observatório e não registo técnico: por dia, a hora da conferência, quantas linhas se conferiram, quantos valores novos entraram (cada um com a medida, o período novo, o valor anterior e o novo, a data de publicação pela fonte, a ligação à linha), quantas fontes não responderam (quais, desde quando), e o que ficou parado por decidir (as revisões, as definições mudadas), sem adjetivos e sem explicar a maquinaria (Emenda 18). A entrada de um dia sem mudanças é uma linha: «conferido; 0 valores novos». Na fase 2 a página ganha um *feed* Atom e alimenta o resumo semanal; é a terceira camada da pilha (`VISAO.md` §3).
+
+## 7 · Os riscos, e a resposta de cada um (um portão que pára, nunca um número inventado)
+
+| risco | resposta |
+|---|---|
+| fontes que bloqueiam pedidos automáticos (o INE a 429 e a recusar depois de pedidos em paralelo, 18.08; a DRQPE atrás do Cloudflare, 30.08) | pedidos em série, `User-Agent` identificável, recuo; nunca em paralelo no INE; a DRQPE descobre-se pelo total dos Açores no Quadro 3 do IEFP, cujo endereço é previsível (`https://www.iefp.pt/documents/10181/<pasta do ano>/Informação+Mensal+<mês>+<ano>.pdf`, pastas 13014693 para 2025 e 13482332 para 2026, conferido a 30.08 em quatro de quatro); um bloqueio é uma linha de ausência e um estado, não um erro |
+| formatos que mudam (dimensões, unidades, a folha de um ODS, um PDF com outra tabela) | o canário da estrutura pára; o ficheiro novo já está no arquivo; uma sessão decide |
+| leituras que partem (o leitor não encontra o valor) | pára; o último valor verificado fica com «última conferência em dd.mm»; nunca se escreve o que não se leu |
+| uma fonte em baixo por muito tempo (a ERSAR e a APA em agosto) | o estado «sem resposta desde», rendido no selo, com o prazo da periodicidade; a página nunca fica vazia nem diz «hoje» |
+| os limites do construtor do Vercel (o passo dos cartões morto aos 19 minutos a 26.08) | o corredor constrói o sítio antes de empurrar e só empurra verde; os cartões continuam a ser só os do estudo, como a correção de 26.08 deixou |
+| a ação não corre, ou corre tarde (a carga do GitHub, uma ação desativada) | o interruptor de homem morto à tarde; o sítio mostra a última conferência real, nunca a de hoje por defeito |
+| um `push` errado | todos os commits são reversíveis e com caminhos explícitos; o arquivo só acrescenta; a política pára tudo o que não é rotina |
+| horas e fusos | UTC em todo o lado no motor; o sítio imprime a hora de Lisboa com o fuso escrito |
+| a chave de implantação | só escrita no repositório do sítio (e outra para o arquivo); rodada pelo diretor; nunca no código |
+
+## 8 · O piloto: o que seria, e o que decide se cabe
+
+O piloto pedido pelo prompt: a conferência diária das linhas que já existem (busca, sha256, `verificado_em`) e o selo «conferido em» no sítio, sem publicar valores novos. O que exige: `refresh.py` a receber os caminhos por parâmetro e a cobrir as 2 447 linhas dos concelhos além das 32 do painel (ou a chamar `releitura_concelhos.py`), o fluxo agendado no motor, o arquivo com o vintage zero, a chave de implantação criada pelo diretor, e uma semana de corridas verdes antes de o agente `launchd` sair (o corredor absorve-o; até lá os dois correm e a segunda-feira confere o que o corredor fez). É construção do Opus com medição cega e leitura cruzada, e depende de um gesto do diretor (a chave). **Não cabe nesta sessão como «pequeno»**: fica desenhado aqui e com o brief escrito em `BRIEF-piloto-corredor.md`, para a semana em que o Opus tiver folga e depois de o diretor criar a chave.
+
+## 9 · O que fica para o diretor
+
+1. A hora: 06:10 UTC, uma corrida por dia (proposta), ou outra.
+2. A chave de implantação com escrita no repositório do sítio, guardada como segredo da ação no motor (e uma segunda para o arquivo); só ele a cria.
+3. Se a ação constrói o sítio (minutos gastos, portões antes do `push`) ou só empurra as linhas e deixa o Vercel construir (mais barato, e um portão a menos antes de publicar; a recomendação é construir na ação).
+4. A criação do repositório `oestadodopais/arquivo` (privado).
+5. O aviso pelo GitHub até a caixa de correio da casa existir.
