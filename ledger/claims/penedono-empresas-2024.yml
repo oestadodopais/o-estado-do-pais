@@ -45,3 +45,11 @@ note: "[note do motor] INE 0014061, Dados[\"2024\"], geocod 11D1812; DICO 1812, 
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014061&Dim1=S7A2024&lang=PT"
+    result: "igual"
+    by: "corredor-diario"

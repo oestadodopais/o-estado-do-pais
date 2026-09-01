@@ -45,3 +45,11 @@ note: "[derivation do motor] Quadro 30's series, year 2024; printed to the neare
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=140"
+    result: "igual"
+    by: "corredor-diario"

@@ -34,6 +34,15 @@ contexts:
       uma data editorial, como a de publicação, e é uma afirmação diferente
       dela: enquanto não se souber, aparece como "[a verificar]" e não se
       preenche com a data de publicação.
+  - id: data-da-conferencia
+    why: >-
+      A data e a hora em que o corredor diário perguntou às fontes, no cabeçalho
+      de todas as páginas, e a data desde a qual uma fonte deixou de responder,
+      no recibo da linha. Não são medições do país: são o estado da conferência
+      e o estado da fonte, escritos pela corrida que os mediu
+      (ResearchHub/indicators/corredor.py, para src/data/fontes.mjs) e nunca à
+      mão. A data que o PUBLICADOR carimba é outra coisa e não passa por aqui: é
+      o campo published_at do livro-razão, e vai com a marca data-linha-campo.
   - id: referencia-legal
     why: >-
       A citação de um diploma e dos seus artigos: o número do decreto-lei, o ano

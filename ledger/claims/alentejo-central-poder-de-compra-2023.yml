@@ -52,3 +52,7 @@ verifications:
     path: "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=759871921&att_display=n&att_download=y"
     result: "igual"
     by: "leitura-independente"
+  - date: "2026-09-01"
+    path: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014580&Dim1=S7A2023&lang=PT&Dim2=1C4"
+    result: "igual"
+    by: "corredor-diario"

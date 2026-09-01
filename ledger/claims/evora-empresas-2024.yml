@@ -52,3 +52,7 @@ verifications:
     path: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014061&Dim1=S7A2024&Dim2=1C40705&Dim3=T&lang=PT"
     result: "igual"
     by: "leitura-independente"
+  - date: "2026-09-01"
+    path: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014063&Dim1=S7A2024&lang=PT&Dim2=1C40705"
+    result: "igual"
+    by: "corredor-diario"

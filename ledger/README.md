@@ -43,6 +43,7 @@ document:
   #       bytes: 15235290
 source_url: "[a verificar]"
 access_date: "[a verificar]"     # AAAA-MM-DD — quando foi lido
+published_at: null               # AAAA-MM-DD — quando a FONTE publicou (ver abaixo)
 reference_date: "2024"           # AAAA / AAAA-MM / AAAA-MM-DD — a que se refere
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
@@ -71,7 +72,7 @@ verifications:
   - date: "2026-08-15"                 # AAAA-MM-DD, o dia da reconferência
     path: "https://www.ine.pt/…"       # o endereço que foi lido nesse dia
     result: "igual"                    # igual | diverge | inacessivel
-    by: "leitura-independente"         # leitura-independente | painel-semanal | revisao-cruzada
+    by: "leitura-independente"         # leitura-independente | painel-semanal | revisao-cruzada | corredor-diario
     # found: "12,3"                    # só quando result é diverge: o valor como a fonte o imprimiu
 ```
 
@@ -136,7 +137,49 @@ verifications:
     com `file`, `snapshot_date` (AAAA-MM-DD), `sha256` (64 hexadecimais) e
     `bytes` (inteiro ≥ 1);
 20. `document.url` não começar por `http://` ou `https://`, ou estiver numa
-    linha cujo `document.kind` não seja `serie`.
+    linha cujo `document.kind` não seja `serie`;
+21. `published_at` não for AAAA-MM-DD, for posterior ao dia da construção (UTC)
+    ou for anterior ao período de referência, quando esse período é um mês ou um
+    dia.
+
+## `published_at` — quando a fonte publicou
+
+Opcional. **A terceira das três datas de uma medida**, e a que faltava até
+01.09.2026. As outras duas são `reference_date` (o período a que o número se
+refere) e `access_date`, mais as entradas de `verifications` (quando a casa leu
+e releu). Faltava a do meio: quando é que a FONTE publicou aquilo. Sem ela, uma
+linha lida hoje e publicada em 2019 tem a mesma cara de uma lida hoje e publicada
+ontem, e a página não sabe dizer qual é.
+
+**De onde vem, e é uma lista fechada, porque uma data sem origem é uma data
+plausível:** o carimbo que o PRÓPRIO CONJUNTO DE DADOS publica — `updated` no
+Eurostat, `DataUltimaAtualizacao` no INE, a data impressa na capa de um relatório
+— e mais nada.
+
+**O `Last-Modified` do HTTP NÃO é uma data de publicação, e não entra aqui.**
+Uma primeira redacção deste ficheiro dizia que ele era «quando é que o publicador
+o pôs lá»; não é. O `Last-Modified` descreve a última modificação da
+REPRESENTAÇÃO que aquele servidor serve: muda quando um ficheiro é copiado para
+outra máquina, quando um sistema de gestão de conteúdos o regrava sem lhe tocar,
+quando uma cache o reescreve. Ele é excelente para o que o corredor o usa — o
+validador de `If-Modified-Since`, que pergunta ao servidor se vale a pena
+descarregar — e não serve para dizer ao leitor quando é que a fonte publicou
+aquele número. Onde só existe `Last-Modified`, este campo fica ausente.
+
+O carimbo fica registado, verbatim, na linha do índice do arquivo de versões que
+a captura escreveu (`oestadodopais/arquivo`, `indice.jsonl`): essa linha é a
+prova desta data como o excerto é a prova do valor. A extração por publicador
+entra com os blocos dos domínios; até lá nenhuma linha traz o campo, e a página
+não desenha o lugar.
+
+**Não se escreve à mão**, pela mesma razão que `verifications` não se escreve:
+quem a escreve é `ResearchHub/indicators/corredor.py`, da resposta que leu.
+
+**Ausente é o caso normal.** A maior parte dos publicadores não carimba nada que
+se possa ler, e uma linha sem este campo é uma linha sobre a qual a casa não
+sabe. A página da linha não desenha o lugar: nem vazio, nem com `[a verificar]`,
+que diria «existe e falta-nos» quando o que se sabe é que o publicador não a
+serve.
 
 ## `document.kind` — o que o endereço serve
 
@@ -231,7 +274,7 @@ endereço que foi lido nesse dia, o que se encontrou, e por que caminho.
 | `date` | AAAA-MM-DD, o dia da reconferência |
 | `path` | o endereço lido nesse dia, a começar por `http://` ou `https://` |
 | `result` | `igual` · `diverge` · `inacessivel` |
-| `by` | `leitura-independente` · `painel-semanal` · `revisao-cruzada` |
+| `by` | `leitura-independente` · `painel-semanal` · `revisao-cruzada` · `corredor-diario` |
 | `found` | **só** quando `result` é `diverge`: o valor como a fonte o imprimiu |
 
 **Porque existe.** O único campo de tempo de uma linha era `access_date`, «lido
@@ -241,7 +284,7 @@ regra 3 do `BRIEF-confianca.md` §6.8 pede as duas datas visíveis, e esta é a
 segunda.
 
 **Não se escreve à mão, e essa é a regra que sustenta o campo.** Uma entrada
-nasce de uma releitura que aconteceu, e entra por um de dois caminhos:
+nasce de uma releitura que aconteceu, e entra por um de três caminhos:
 
 - **as linhas cruzadas**, pelo exportador do motor
   (`ResearchHub/publisher/export_site_rows.py`), a partir de um registo de
@@ -252,12 +295,24 @@ nasce de uma releitura que aconteceu, e entra por um de dois caminhos:
 - **as 32 linhas de base** (`quadro-institucional`), pelo
   `ResearchHub/indicators/refresh.py`, no fim de cada corrida das canárias:
   `igual` quando a canária do valor passou, `diverge` com `found` quando o
-  valor mexeu, `inacessivel` quando a fonte não respondeu.
+  valor mexeu, `inacessivel` quando a fonte não respondeu;
+- **todas as linhas com endereço de máquina**, pelo corredor diário
+  (`ResearchHub/indicators/corredor.py`, desde 01.09.2026), com `by:
+  "corredor-diario"`. **Vale o que vale, e o que vale diz-se: ele não relê o
+  valor.** O que ele prova é que o ficheiro da fonte é byte a byte o mesmo que
+  está guardado no arquivo de versões, ou que o publicador respondeu `304 Not
+  Modified` ao validador da captura anterior; nos dois casos o número não pode
+  ter mudado, porque o ficheiro de onde ele foi lido não mudou. Por isso ele
+  escreve `igual` e `inacessivel` e **nunca `diverge`**: onde o ficheiro mudou,
+  não escreve nada na linha e deixa-a no relatório da corrida para uma sessão a
+  rever. Dizer «igual» sem ler o valor seria a automação perigosa que o motor
+  existe para não fazer.
 
 Um campo de reconferência preenchido à mão é a promessa mais fácil de fazer e a
 mais difícil de desmentir. **O que não se pode provar não se escreve.**
 
-**A página da linha** mostra «Lido a *access_date*» e, a seguir, as **duas**
+**A página da linha** mostra «Publicado pela fonte a *published_at*» quando a
+linha o tem, «Lido a *access_date*» e, a seguir, as **duas**
 entradas mais recentes, da mais nova para a mais velha: «Reconferido a *data* ·
 *quem releu* · *o que encontrou*», com a porta para repetir a leitura. Sem
 nenhuma entrada fica o marcador, com a porta para a regra da releitura no

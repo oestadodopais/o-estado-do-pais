@@ -38,3 +38,11 @@ corrections:
     new_value: "78"
     reason: "O valor publicado trazia uma casa decimal que a fonte não sustenta. Era calculado a partir dos valores absolutos em paridades de poder de compra; o Eurostat publica este índice arredondado à unidade: 78. Passa a publicar-se o índice tal como a fonte o publica."
     reason_en: "The published value carried a decimal the source does not support. It was computed from the absolute purchasing-power-standard values; Eurostat publishes this index rounded to the unit: 78. The index is now published as the source publishes it."
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10r_2gdp?format=JSON&lang=EN&unit=PPS_EU27_2020_HAB&unit=PPS_HAB_EU27_2020&geo=PT&geo=PT15&geo=PT1A&geo=PT1B&geo=PT1C&geo=PT30&geo=EU27_2020&sinceTimePeriod=2000"
+    result: "igual"
+    by: "corredor-diario"

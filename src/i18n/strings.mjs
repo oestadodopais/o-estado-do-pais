@@ -74,6 +74,15 @@ export const STRINGS = {
          diligência. */
       reconferido: 'Painel europeu ·',
       vencido: 'Painel europeu em atraso ·',
+      /* A SEGUNDA LEITURA DO CABEÇALHO (01.09.2026, o corredor diário).
+         «Fontes ·» e a data, na mesma forma das outras duas leituras: rótulo,
+         valor, porta. O verbo fica de fora, como a V2 o tirou da primeira («o
+         nome da coisa e a data são o que o leitor precisa, e "reconferido" é a
+         casa a dizer que fez o seu trabalho»; Emenda 18e). Isto é o estado das
+         fontes e não a diligência da casa: o que muda todos os dias é a data,
+         e quando ela deixa de mudar é isso que o leitor tem de ver. */
+      fontes: 'Fontes ·',
+      fontesVencidas: 'Fontes em atraso ·',
       agenda: 'Agenda:',
       agendaEmCurso: 'em curso',
       agendaASeguir: 'a seguir',
@@ -1238,6 +1247,12 @@ export const STRINGS = {
         verificacoesK: 'Verificações',
         reconferidoK: 'Reconferido a',
         releituraPorta: 'A regra da releitura',
+        /* A TERCEIRA DATA (01.09.2026). O recibo mostrava duas: o período, no
+           bloco de cima, e as leituras da casa. Esta é a do publicador. */
+        publicadoEmK: 'Publicado pela fonte a',
+        /* O estado de uma fonte que deixou de responder. É uma data e não um
+           adjectivo: o que a casa sabe é desde quando. */
+        semRespostaK: 'Sem resposta desde',
         /* As reconferências independentes de uma linha (bloco T, §1.47). Os
            rótulos vivem aqui e o portão tem a sua própria cópia deles: se ele
            lesse esta tabela, confirmava a tabela e não o livro-razão. */
@@ -1245,6 +1260,10 @@ export const STRINGS = {
           'leitura-independente': 'leitura independente',
           'painel-semanal': 'reconferência semanal do painel',
           'revisao-cruzada': 'revisão cruzada',
+          /* O corredor confere o FICHEIRO, não o valor: o rótulo di-lo, para
+             que uma reconferência dele não se leia como uma releitura do
+             número. Ver AUTORES_DA_VERIFICACAO em src/lib/ledger.mjs. */
+          'corredor-diario': 'conferência diária do ficheiro da fonte',
         },
         verificacaoResultado: {
           igual: 'o mesmo valor',
@@ -1626,6 +1645,8 @@ export const STRINGS = {
     sinal: {
       reconferido: 'European panel ·',
       vencido: 'European panel overdue ·',
+      fontes: 'Sources ·',
+      fontesVencidas: 'Sources overdue ·',
       agenda: 'Agenda:',
       agendaEmCurso: 'under way',
       agendaASeguir: 'next',
@@ -2225,10 +2246,13 @@ export const STRINGS = {
         verificacoesK: 'Verifications',
         reconferidoK: 'Re-checked on',
         releituraPorta: 'The re-reading rule',
+        publicadoEmK: 'Published by the source on',
+        semRespostaK: 'No answer since',
         verificacaoPor: {
           'leitura-independente': 'independent reading',
           'painel-semanal': 'weekly panel re-check',
           'revisao-cruzada': 'cross-family review',
+          'corredor-diario': 'daily check of the source file',
         },
         verificacaoResultado: {
           igual: 'the same value',

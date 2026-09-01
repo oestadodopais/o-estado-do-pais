@@ -45,3 +45,11 @@ note: "Quadro 7 «Dívida (Lei do RFALEI) — Montante em Excesso»; um valor ne
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://www.cm-evora.pt/wp-content/uploads/2022/05/2_Relatorio_Gestao_2021.pdf#page=33"
+    result: "igual"
+    by: "corredor-diario"

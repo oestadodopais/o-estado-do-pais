@@ -64,6 +64,7 @@ import { contagensDasRegioes } from './regioes.mjs';
 import { areasComPecas } from './areas.mjs';
 import { AREAS } from '../data/areas.mjs';
 import { VERIFICACAO } from '../data/verificacao.mjs';
+import { CONFERENCIA, FONTES_SEM_RESPOSTA } from '../data/fontes.mjs';
 import { ENDERECO_CORRECOES } from '../data/metodo.mjs';
 
 /**
@@ -122,6 +123,77 @@ export function estadoDaVerificacao(hoje = new Date()) {
     dias,
     vencida: dias > VERIFICACAO.validadeDias,
   };
+}
+
+/**
+ * Quando é que o corredor diário perguntou às fontes, e há quantos dias.
+ *
+ * A IRMÃ DE `estadoDaVerificacao()`, E MEDE OUTRA COISA. Aquela é o painel
+ * europeu: 32 linhas, uma vez por semana, com as canárias a reler o VALOR.
+ * Esta é o corredor: todos os endereços do livro-razão, todos os dias, a
+ * perguntar se o FICHEIRO mudou. As duas datas andam a ritmos diferentes e é
+ * por isso que são duas leituras e não uma; juntá-las numa só faria a mais
+ * lenta parecer tão fresca como a rápida.
+ *
+ * O PRAZO É DOIS DIAS e não os quarenta e cinco do painel, porque o que se está
+ * a medir é uma corrida DIÁRIA: uma que não corre ontem nem hoje é uma corrida
+ * parada, e o leitor tem de ver isso na página no segundo dia e não no
+ * quadragésimo sexto. É o mesmo número que o `--check-heartbeat` do corredor
+ * usa, e vive nos dois sítios pela mesma razão que os rótulos do portão vivem
+ * em duas cópias: se a página lesse o do motor, confirmava o motor.
+ *
+ * E A COMPARAÇÃO É `>=`, NÃO `>`. Com `>`, um prazo de dois dias só ficava
+ * vencido ao TERCEIRO, que é a mesma conta trocada que a leitura a frio de
+ * 01.09 achou no homem morto do motor e no vigia. Se o prazo é dois dias, ao
+ * segundo dia está vencido.
+ *
+ * O QUE ISTO NÃO PODE FAZER, e diz-se: a página é construída, não é lida em
+ * tempo real. Se o corredor parar E não houver lançamento nenhum, a data no
+ * cabeçalho fica onde ficou e este estado nunca chega a mudar no que o leitor
+ * vê. Quem vê a paragem é o vigia do motor, que abre uma *issue*; o §3.5 ponto
+ * 6 do desenho já tinha posto a alternativa (o carimbo servido num ficheiro
+ * pequeno e lido pela página) como decisão para essa altura.
+ *
+ * `conferidoEm` traz a hora com o fuso (o motor escreve tudo em UTC, §7 do
+ * desenho). A data que se publica é a da hora de Lisboa, que é onde o leitor
+ * está; o que aqui se calcula é a distância em dias, e essa faz-se sobre o dia
+ * UTC dos dois lados para não mudar de resposta às onze da noite.
+ */
+export const PRAZO_DAS_FONTES_DIAS = 2;
+
+export function estadoDasFontes(hoje = new Date()) {
+  const conferidoEm = CONFERENCIA?.conferidoEm ?? null;
+  if (!conferidoEm) {
+    /* Sem corrida nenhuma não há data, e não se inventa uma: a mobília não
+       desenha a leitura. O mesmo que a linha da agenda faz quando o registo
+       ainda não atravessou. */
+    return { conferidoEm: null, dia: null, hora: null, dias: null, vencida: false };
+  }
+  const dia = String(conferidoEm).slice(0, 10);
+  const hora = String(conferidoEm).slice(11, 16);
+  const dias = Math.floor(
+    (Date.parse(`${hoje.toISOString().slice(0, 10)}T00:00:00Z`) -
+      Date.parse(`${dia}T00:00:00Z`)) /
+      86400000,
+  );
+  return { conferidoEm, dia, hora, dias, vencida: dias >= PRAZO_DAS_FONTES_DIAS };
+}
+
+/**
+ * O estado de UM endereço: desde quando é que ele não responde, ou `null`.
+ *
+ * `null` quer dizer «respondeu da última vez que se perguntou», e é o caso da
+ * esmagadora maioria. Um endereço que não está no ficheiro nunca foi conferido
+ * OU respondeu: os dois dão `null`, e a diferença entre eles diz-se pela data da
+ * conferência, que a página já mostra. O `#page=N` tira-se antes de procurar,
+ * porque o fragmento não vai no pedido e o índice do arquivo é por endereço
+ * pedido — três linhas que citam três páginas do mesmo relatório partilham o
+ * estado do ficheiro, que é o que elas de facto partilham.
+ */
+export function estadoDaFonte(sourceUrl) {
+  if (typeof sourceUrl !== 'string' || !sourceUrl.startsWith('http')) return null;
+  const pedido = sourceUrl.split('#')[0];
+  return FONTES_SEM_RESPOSTA?.[pedido] ?? null;
 }
 
 /**
