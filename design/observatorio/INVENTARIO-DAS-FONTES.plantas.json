@@ -1,0 +1,33 @@
+{
+ "registado_em": "2026-09-01T09:09:17+00:00",
+ "copia": "pacote",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "INVENTARIO-DAS-FONTES.md",
+   "descricao": "M2: o último período da população estrangeira por concelho trocado de 2023 para 2025, contra a data de publicação de 2024 e a nota de que a série parou em 2023",
+   "sha256_antes": "44c023060e7bf42114b0b04819148119c40f4ca2819061fc6aed0f30cd245364",
+   "sha256_depois": "ace6462900ed86e2f13c7c1eb9562fa9cc64fba9376dd89f3bc2c150f5dc3e72",
+   "contexto_antes": "://smi.ine.pt/DocumentacaoMetodologica/D… | 2021 nesta versão NUTS 2024 · Anual | 2023 · 2024-09-20 (a página de metainformação … | sem calendário publicado. A lista completa do tema População do calendá",
+   "contexto_depois": "://smi.ine.pt/DocumentacaoMetodologica/D… | 2021 nesta versão NUTS 2024 · Anual | 2025 · 2024-09-20 (a página de metainformação … | sem calendário publicado. A lista completa do tema População do calendá"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "CARTA-DOS-CONTEUDOS.md",
+   "descricao": "§4 da carta: a educação posta na segunda vaga, contra a tabela de §2 e a decisão do diretor",
+   "sha256_antes": "c912ca71eafff7b316427bc14ad6b68e31ecbe134485ad7a6be9bb82bbdb196d",
+   "sha256_depois": "6cc2f19a1bb50c25cf883be21cb9ef75df8c0f8624e684aed9f5a5602af1d2ad",
+   "contexto_antes": "róprio na lista do diretor; a advertência das percentagens de renováveis fica | | Educação | secretária, segundo | 7, primeira vaga | contradiz a ordem para cima (diretor, 30.08) | | Saúde | secretária com fronteira dita, segundo | 8, primeira vaga | contradiz",
+   "contexto_depois": "róprio na lista do diretor; a advertência das percentagens de renováveis fica | | Educação | secretária, segundo | 7, segunda vaga | contradiz a ordem para cima (diretor, 30.08) | | Saúde | secretária com fronteira dita, segundo | 8, primeira vaga | contradiz"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "lotes/lote-4.md",
+   "descricao": "lote 4, tabela-resumo: a data dos resultados do PISA 2025 trocada de setembro para outubro, contra o texto da linha D5",
+   "sha256_antes": "164c26937e41334be66fabc006a9df5cf8a46ac976ee0a871145d420f58d8f52",
+   "sha256_depois": "14e71bf946d85cfb038cd8784ae5989d4fc3baed94175240f8248c80c81c90e8",
+   "contexto_antes": "te citada | verificada | | D5 | OCDE (PISA) | Trienal | PISA 2022 · © OECD 2023 | PISA 2025 a 8 de setembro de 2026 | não | CC BY-NC-SA 3.0 IGO na nota de país | parcial | | H1 | Eurostat; INE (Táb",
+   "contexto_depois": "te citada | verificada | | D5 | OCDE (PISA) | Trienal | PISA 2022 · © OECD 2023 | PISA 2025 a 8 de outubro de 2026 | não | CC BY-NC-SA 3.0 IGO na nota de país | parcial | | H1 | Eurostat; INE (Táb"
+  }
+ ]
+}
