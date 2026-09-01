@@ -62,7 +62,20 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 
-import { textoDoRotulo, ANCORA_DA_POLITICA } from '../../src/data/politica-ia.mjs';
+/**
+ * O ORÁCULO É O DO PORTÃO, e não o ficheiro que rende (segunda passagem).
+ * `scripts/textos-aprovados.json` é copiado da ordem de construção §3 e nenhum
+ * ficheiro de `src/` o importa: comparar a página com ele é comparar duas coisas
+ * independentes, que é o que uma conferência tem de ser.
+ */
+const APROVADOS = JSON.parse(
+  fs.readFileSync(
+    path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..', 'scripts', 'textos-aprovados.json'),
+    'utf8',
+  ),
+);
+const textoDoRotulo = (lang) => APROVADOS.rotulo[lang];
+const ANCORA_DA_POLITICA = APROVADOS.ancora_da_politica;
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -382,10 +395,15 @@ async function mediuOAlvo() {
     const s = await p.evaluate(SONDA);
     await p.__ctx.close();
     vistos.push({ lang, altura: s.alturaDaPorta, direita: s.larguraDaLinha, ecra: s.larguraDoEcra });
+    /* Uma sonda que não achou a porta devolve `null`, e um `null` é vermelho e
+       não uma excepção: quando o corredor corre a suite inteira sobre uma planta
+       que tira o rótulo, esta célula tem de dizer «não há porta» e continuar. */
     if (!(s.alturaDaPorta >= 44)) {
-      maus.push(`${lang}: a porta mede ${Number(s.alturaDaPorta).toFixed(1)}px de altura`);
+      maus.push(
+        `${lang}: a porta mede ${s.alturaDaPorta === null ? 'nada, porque não há porta' : `${Number(s.alturaDaPorta).toFixed(1)}px`} de altura`,
+      );
     }
-    if (s.larguraDaLinha > s.larguraDoEcra + 0.5) {
+    if (s.larguraDaLinha !== null && s.larguraDaLinha > s.larguraDoEcra + 0.5) {
       maus.push(
         `${lang}: a linha do rótulo acaba em ${s.larguraDaLinha.toFixed(1)}px e o ecrã tem ${s.larguraDoEcra}px`,
       );
@@ -396,7 +414,11 @@ async function mediuOAlvo() {
     'M4 · a 390, a porta da política tem 44px de alvo e a linha não transborda',
     maus.length === 0,
     vistos
-      .map((v) => `${v.lang} ${Number(v.altura).toFixed(1)}px de alvo, acaba em ${v.direita.toFixed(1)} de ${v.ecra}`)
+      .map(
+        (v) =>
+          `${v.lang} ${v.altura === null ? 'sem porta' : `${Number(v.altura).toFixed(1)}px de alvo`}, ` +
+          `acaba em ${v.direita === null ? 'lado nenhum' : v.direita.toFixed(1)} de ${v.ecra}`,
+      )
       .join(' · ') + (maus.length ? ` · ${maus.join(' · ')}` : ''),
   );
 }
@@ -466,10 +488,16 @@ async function mediuOTopo() {
     }
   }
   medidas.M6 = vistos;
+  /* AS DUAS EDIÇÕES, E NÃO «pelo menos uma» (segunda passagem). `length > 0`
+     dava verde a uma régua que só tivesse encontrado a página portuguesa, e o
+     rótulo do topo é das duas edições: um mínimo positivo que não distingue os
+     dois lados não é um mínimo positivo. */
+  const linguas = new Set(leituras.map((p) => p.lang));
   conta(
     'M6 · nas páginas de leitura o rótulo do topo vem inteiro antes do documento',
-    leituras.length > 0 && maus.length === 0,
-    `${leituras.length} página(s) de leitura${maus.length ? ' · ' + maus.join(' · ') : ''}`,
+    linguas.has('pt') && linguas.has('en') && maus.length === 0,
+    `${leituras.length} página(s) de leitura em ${linguas.size} edição(ões) ` +
+      `(${[...linguas].sort().join(', ') || 'nenhuma'})${maus.length ? ' · ' + maus.join(' · ') : ''}`,
   );
 }
 
@@ -503,12 +531,16 @@ async function mediuSemJs() {
 const PLANTAS = [
   {
     nome: 'o rótulo do rodapé retirado',
-    celulas: ['M1'],
+    /* Tira a linha, a porta, o nome e a ficha de uma vez: a leitura a frio
+       notou que a declaração antiga só dizia M1. */
+    celulas: ['M1', 'M2', 'M3', 'M4', 'M5', 'M7'],
     estrago: (html) => html.replace(/<div class="rotulo-ia rotulo-ia-rodape"[\s\S]*?<\/div>/, ''),
   },
   {
     nome: 'o rótulo escondido por uma folha',
-    celulas: ['M1'],
+    /* `display:none` põe a caixa a zero, e com ela o alvo de toque e o rótulo do
+       topo. A cor computada não muda, e por isso M2 fica verde. */
+    celulas: ['M1', 'M4', 'M6'],
     estrago: (html) =>
       html.replace('</head>', '<style>.rotulo-ia{display:none !important}</style></head>'),
   },
@@ -593,13 +625,23 @@ if (!VERMELHOS) {
 }
 
 /**
- * O CORREDOR DOS ESTRAGOS EXIGE AS TRÊS COISAS (a lição da I100, 29.08.2026).
+ * O CORREDOR DOS ESTRAGOS CORRE A SUITE INTEIRA (segunda passagem, 01.09.2026).
  *
- * Cada planta declara as células que tem de pôr vermelhas, e o corredor exige:
- * cada alvo declarado casa com uma célula corrida; todas as que ele nomeia
- * ficam vermelhas; e as outras que a medição produziu ficam verdes. A terceira
- * é o par da primeira: um estrago que estrague mais do que declara está a ser
- * creditado por um vermelho que não é o dele.
+ * A primeira forma corria só as células que a planta declarava, e é uma peneira
+ * furada nos dois sentidos: um estrago que estrague uma célula que ele não
+ * declara nunca é apanhado, porque a célula não chega a correr. A leitura a frio
+ * apanhou-o com dois casos reais: tirar o rodapé estraga M2 a M5 e M7, e esconder
+ * `.rotulo-ia` estraga M4 e M6, e nenhuma das duas plantas o dizia.
+ *
+ * Passa a correr a suite INTEIRA por planta, e a exigir as três coisas:
+ *
+ *   1. cada alvo declarado casa com uma célula corrida;
+ *   2. todas as células que a planta nomeia ficam VERMELHAS;
+ *   3. todas as outras ficam VERDES.
+ *
+ * A terceira é o par da primeira: um estrago que estrague mais do que declara
+ * está a ser creditado por um vermelho que não é o dele, e a declaração
+ * corrige-se para dizer a verdade em vez de se calar.
  */
 const CORRIDAS = {
   M1: mediuAsOitoPaginas,
@@ -612,13 +654,22 @@ const CORRIDAS = {
 };
 
 console.log('');
-let todosVermelhos = true;
+/* Verde antes: sem a corrida limpa, um vermelho de planta não prova nada. */
+ESTRAGO = null;
+celulas = [];
+await corridaInteira();
+const verdesAntes = celulas.filter((c) => !c.passa);
+console.log(
+  `  ${verdesAntes.length ? vermelho('a suite JÁ ESTAVA VERMELHA ✗') : verde('verde antes ✓')}  ` +
+    `${celulas.length} célula(s)`,
+);
+for (const c of verdesAntes) console.log(vermelho(`      ${c.nome} · ${c.prova.slice(0, 160)}`));
+
+let todosVermelhos = verdesAntes.length === 0;
 for (const planta of PLANTAS) {
   celulas = [];
   ESTRAGO = planta.estrago;
-  for (const chave of Object.keys(CORRIDAS)) {
-    if (planta.celulas.includes(chave)) await CORRIDAS[chave]();
-  }
+  for (const chave of Object.keys(CORRIDAS)) await CORRIDAS[chave]();
   const problemas = [];
   for (const alvo of planta.celulas) {
     const tocadas = celulas.filter((c) => c.nome.startsWith(alvo));
@@ -631,11 +682,10 @@ for (const planta of PLANTAS) {
   }
   if (problemas.length) todosVermelhos = false;
   console.log(
-    `  ${problemas.length ? vermelho('NÃO APANHOU ✗') : verde('vermelho ✓')}  ${planta.nome}`,
+    `  ${problemas.length ? vermelho('NÃO APANHOU ✗') : verde('vermelho ✓')}  ${planta.nome}\n` +
+      `      declara ${planta.celulas.join(', ')} · vermelhas ` +
+      `${celulas.filter((c) => !c.passa).map((c) => c.nome.split(' ')[0]).join(', ') || 'nenhuma'}`,
   );
-  for (const c of celulas.filter((x) => !x.passa)) {
-    console.log(cinza(`      ${c.nome} · ${c.prova.slice(0, 160)}`));
-  }
   for (const p of problemas) console.log(vermelho(`      ${p}`));
 }
 ESTRAGO = null;

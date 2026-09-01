@@ -5,13 +5,20 @@
 `design/observatorio/BRIEF-divulgacao-via-B.md`. Nada fundido, nada empurrado.
 Sem travessões na prosa nova.*
 
+*Segunda passagem, no mesmo dia e no mesmo ramo: a leitura a frio do Codex, com
+três plantas e a apanhá-las às três, achou dez defeitos reais, e o mais grave era
+que o oráculo do portão era o ficheiro que ele conferia. Os dez estão consertados,
+e o que eles mudaram está escrito no sítio de cada número, com a §11 a dizer o
+que mudou e porquê.*
+
 ## 0 · O que fica feito, em cinco linhas
 
 * **O rótulo rende em 6 590 das 6 590 páginas construídas** das duas edições, no
   rodapé, mais **8 no topo das páginas de leitura**, que são texto longo. Os 16
   documentos de estudo alojados ficam de fora por desenho (§1.19) e levam o
   rótulo na página que os embrulha. O `gate:html` ganhou a regra que fecha a
-  construção a uma página sem ele, provada em oito estragos plantados.
+  construção a uma página sem ele ou com ele errado, e o seu oráculo é um
+  ficheiro que o sítio não importa: vinte estragos plantados, todos vermelhos.
 * **A secção da política entra em `/metodo`** nas duas edições (a via, o que sai
   sem o diretor, os quatro lugares e as cinco recusas), e a frase da política
   entra no Sobre e no Método. As duas cadeias aprovadas pelo diretor são
@@ -123,10 +130,10 @@ final do ramo.
 | linhas do `ledger/` tocadas | | **0** |
 
 O inventário do livro-razão é o mesmo à unidade. **Nenhum número novo entrou no
-sítio**: as cadeias novas não trazem um único algarismo, e os três nomes de
-modelo da secção da política vão dentro de
-`data-nonledger="identificador-tecnico"`, que é o motivo já escrito em
-`ledger/allowlist.yml` para versões e identificadores de máquina.
+sítio, e nem sequer um algarismo declarado**: a primeira passagem escrevia os
+nomes dos modelos com a versão e marcava-os `identificador-tecnico`; a segunda
+tirou-lhes as versões (§11, achado 8), e por isso não há uma única marca nova de
+algarismo neste ramo. As cadeias novas não trazem um algarismo.
 
 ### 3.2 · O que cresceu, e porquê
 
@@ -140,8 +147,9 @@ modelo da secção da política vão dentro de
 | das quais âncoras | 45 177 | 51 779 | +6 602 |
 | frases distintas da casa (`check:voz`) | 701 | **705** | +4 |
 | ocorrências de frases da casa | 30 123 | 31 503 | +1 380 |
-| linhas do inventário com bloco | 582 | **586** | +4 |
-| das quais vivas | 506 | 510 | +4 |
+| linhas do inventário com bloco | 582 | **620** | +38 |
+| das quais vivas | 506 | 544 | +38 |
+| ocorrências da classe `divulgacao` | 0 | **1 388** | +1 388 |
 | autorreferência, em todas as rotas medidas | 0 | **0** | 0 |
 | páginas com o termo do schema.org | 0 | **648** | +648 |
 
@@ -149,7 +157,9 @@ As 6 602 âncoras novas são a porta da política, e a soma fecha à unidade: 6 
 no rodapé, 8 no topo das páginas de leitura, 2 no Sobre (a porta para a secção) e
 2 no sumário do Método (a entrada da secção nova). As 1 380 ocorrências novas de
 frases da casa são a cadeia do rótulo nas 1 378 rotas inventariadas mais as duas
-fichas da primeira página.
+fichas da primeira página; as 1 388 da classe `divulgacao` são essas mais os oito
+rótulos do topo das páginas de leitura. As 38 linhas do inventário são as quatro
+do rótulo e da ficha mais as trinta e quatro da política publicada (§6.3).
 
 ### 3.3 · O que L9 conta, do seu lado
 
@@ -196,44 +206,99 @@ acrescentar uma excepção, a ficha passou a declarar 12px.
 
 ### 5.1 · A regra do portão (`scripts/gate-html.mjs`)
 
-Sete conferências, e cada uma fecha um modo diferente de falhar:
+**O ORÁCULO É UM FICHEIRO QUE O SÍTIO NÃO IMPORTA.** A primeira passagem
+comparava a página com `src/data/politica-ia.mjs`, que é o mesmo ficheiro de onde
+a página sai, e uma comparação assim não compara nada: mudar a cadeia muda a
+saída e a expectativa ao mesmo tempo. A leitura a frio provou-o com uma planta
+que tirava o «the» de «under the house policy», e ela passava verde. O oráculo é
+agora `scripts/textos-aprovados.json`, copiado da ordem de construção §3, lido só
+pelo portão e que nenhum ficheiro de `src/` importa. **E a comparação é exata**:
+sem colapsar espaços e sem aparar as pontas, porque um espaço a mais numa
+divulgação obrigatória é uma diferença e não um detalhe de composição.
 
-1. **existe, uma vez** · exactamente um bloco de rodapé por página construída;
-2. **diz o texto aprovado** · carácter a carácter, na língua da edição;
-3. **a porta abre a política** · a ligação vai para a secção e não para a página
-   do Método em geral;
-4. **vê-se** · nem `hidden`, nem `aria-hidden="true"`, nem `.vh`, nele ou num
-   antepassado;
-5. **o topo** · exactamente um nas páginas de leitura, e zero em todas as outras;
-6. **a ficha** · exactamente uma na primeira página de cada edição, e zero nas
-   outras, com as duas cadeias conferidas;
-7. **a frase da política** · uma no Sobre e uma no Método, e zero nas outras,
-   comparada com o texto aprovado.
+Em cada bloco de rótulo, no rodapé **e no topo** (a primeira passagem conferia o
+topo só pela contagem do marcador, e uma página de leitura com o rótulo de outra
+língua passava):
 
-E uma conferência que corre uma vez, sobre os ficheiros e não sobre as páginas:
+1. **diz o texto aprovado**, carácter a carácter, na língua da edição;
+2. **a porta abre a política**, uma vez, e as palavras ligadas são exactamente
+   «a política da casa» / «the house policy»: uma ligação com o texto errado é
+   outra promessa;
+3. **o nome de quem responde** aparece uma vez na linha e uma vez na ficha,
+   nenhuma solta, com o texto certo e com `lang="pt-PT"` próprio nas páginas
+   inglesas e sem marca nenhuma nas portuguesas;
+4. **vê-se**: nem `hidden`, nem `aria-hidden="true"`, nem `.vh`, nem um `style`
+   em linha com `display:none` ou `visibility:hidden`, nele ou num antepassado.
+
+E, à volta deles:
+
+5. **existe, uma vez** · exactamente um bloco de rodapé por página construída, e
+   **dentro de um `<footer>` de verdade**: a conferência é de antepassado e não
+   do nome da classe, porque é a pertença ao `contentinfo` que faz a linha ser
+   encontrada por quem salta para esse marco;
+6. **o topo** · exactamente um nas páginas de leitura, e zero em todas as outras;
+7. **a ficha** · exactamente uma na primeira página de cada edição, e zero nas
+   outras, com a cadeia conferida contra o oráculo;
+8. **a frase da política** · uma no Sobre e uma no Método, e zero nas outras,
+   comparada com o oráculo, **e com a marca da edição igual à da rota**: a
+   primeira forma comparava a frase com a língua que o próprio atributo
+   declarava, e uma frase inglesa numa página portuguesa passava por estar
+   declarada inglesa;
+9. **a língua da página é uma condição** · um `<html lang>` ausente ou que a
+   tabela de rotas não conheça é vermelho. A primeira forma escrevia
+   `else if (linguaPagina)`, e uma página sem língua saltava a conferência
+   inteira em silêncio, que é o modo mais barato de a desligar.
+
+E as conferências que correm uma vez, sobre os ficheiros e não sobre as páginas:
 o nome de quem responde tem de ser, carácter a carácter, um dos pedaços
-`{ forte: … }` das dez regras de `src/data/metodo.mjs`. Duas grafias do nome são
-duas pessoas para quem lê, e a divulgação do artigo 50.º deixa de identificar
-ninguém.
+`{ forte: … }` das dez regras de `src/data/metodo.mjs` **e** o do oráculo; e o
+rótulo composto, as palavras ligadas, a frase e a ficha de
+`src/data/politica-ia.mjs` têm de ser os do oráculo. Sem este segundo braço, o
+oráculo e o ficheiro que rende podiam divergir sem que nada o dissesse.
 
-**Os oito estragos plantados** (os sete primeiros em `dist/`, o oitavo no
-ficheiro de dados), com o portão verde antes, o `sha256` do ficheiro antes e
-depois, e o ficheiro reposto e reconferido pelo `sha256` no fim. O portão correu
-verde no fim, com tudo reposto.
+**O LIMITE, DITO E NÃO ESCONDIDO.** É um portão estático: lê o HTML e não corre
+folhas de estilo. Uma regra de CSS que esconda `.rotulo-ia` numa folha passa por
+aqui, e quem a apanha é a régua do navegador (`tests/inicio/rotulo.mjs`, célula
+M1, com o estrago plantado que a prova). O que este portão fecha é a ocultação
+escrita no próprio documento.
+
+**Os vinte estragos plantados** (dezassete em `dist/`, três no ficheiro de dados),
+com o portão verde antes, o `sha256` do ficheiro antes e depois, e o ficheiro
+reposto e reconferido pelo `sha256` no fim. O portão correu verde no fim das duas
+corridas, com tudo reposto.
+
+Os oito da primeira passagem:
 
 | estrago | onde | o que o portão disse |
 | --- | --- | --- |
 | o rótulo do rodapé retirado | uma página de linha | «esta página tem 0 rótulo(s) de IA no rodapé; tem de ter exactamente um» |
 | uma palavra trocada no texto aprovado | a mesma | «o rótulo de IA não é o texto aprovado» |
 | a porta a abrir o Método sem a âncora | a mesma | «não tem a porta para a política ("/metodo#politica-de-ia")» |
-| o rótulo escondido com `aria-hidden` | a mesma | «está escondido por aria-hidden="true" […] O n.º 5 do artigo 50.º pede-o "de forma clara e percetível"» |
+| o rótulo escondido com `aria-hidden` | a mesma | «está escondido por aria-hidden="true" […] o n.º 5 do artigo 50.º pede-o "de forma clara e percetível"» |
 | o nome de quem responde trocado | a mesma | «um "data-rotulo-nome" diz "Outra Pessoa" e o responsável editorial é "Nuno dos Santos"» |
 | a ficha injectada fora da primeira página | uma página de linha inglesa | «esta página tem 1 ficha(s) da primeira página e devia ter 0» |
 | a frase da política reescrita | `/sobre` | «a frase da política não é o texto aprovado» |
 | o nome do responsável trocado no ficheiro de dados | `src/data/politica-ia.mjs` | «o responsável editorial é "Nuno Santos" e nenhuma das dez regras do Método imprime esse nome» |
 
-O oitavo é o único plantado fora de `dist/`, e foi reposto com o `sha256` do
-ficheiro conferido igual ao original antes de qualquer construção.
+E os doze da segunda, que são os que a leitura a frio obrigou a poder existir:
+
+| estrago | onde | o que o portão disse |
+| --- | --- | --- |
+| **o «the» tirado das palavras ligadas** (a planta do Codex, que passava) | uma página de linha inglesa | «o rótulo de IA (rodape) não é o texto aprovado» |
+| as palavras ligadas trocadas, com a porta certa | uma página de linha | «a porta da política diz "o método da casa" e as palavras ligadas têm de ser "a política da casa"» |
+| o rótulo do rodapé posto fora do `<footer>` | a mesma | «o rótulo de IA do rodapé não está dentro de um "<footer>"» |
+| um `style` em linha com `display:none` | a mesma | «está escondido por style="display:none"» |
+| a marca de língua tirada do nome numa página inglesa | uma página de linha inglesa | «tem de levar lang="pt-PT" e leva "(nenhum)"» |
+| a marca de língua posta no nome numa página portuguesa | uma página de linha | «não leva marca de língua nenhuma e leva lang="en"» |
+| o `<html lang>` apagado | a mesma | «esta página não diz a sua língua num "<html lang>" que a casa conheça» |
+| a frase da política declarada da outra edição | `/sobre` | «"data-frase-da-politica=en" e a página é da edição "pt"» |
+| **o texto do rótulo do TOPO mudado** | uma página de leitura | «o rótulo de IA (topo) não é o texto aprovado» |
+| **a porta do rótulo do TOPO a apontar para outro sítio** | a mesma | «o rótulo de IA (topo) tem 0 porta(s) para a política» |
+| **uma vírgula a menos na frase da política**, no ficheiro que rende | `src/data/politica-ia.mjs` | «a frase da política da edição "pt" não é o texto aprovado» |
+| o «the» tirado das palavras ligadas, no ficheiro que rende | o mesmo | «as palavras ligadas da edição "en" são "house policy" e o oráculo diz "the house policy"» |
+
+Os três do ficheiro de dados foram repostos com o `sha256` conferido igual ao
+original antes de qualquer construção.
 
 ### 5.2 · L9 do portão da língua (`scripts/check-lingua.mjs`)
 
@@ -276,17 +341,25 @@ portão e não se repete aqui.
 | M3 | a porta abre a secção da política | `/metodo#politica-de-ia` e `/en/method#politica-de-ia`, as duas com área |
 | M4 | o alvo de toque a 390 | 44,0px de altura, a linha acaba em 372,0 de 390 |
 | M5 | a ficha do artigo 15.º só nas duas primeiras páginas | 2 fichas em 8 páginas |
-| M6 | o rótulo do topo vem inteiro antes do documento | 2 páginas de leitura |
+| M6 | o rótulo do topo vem inteiro antes do documento, nas duas edições | 2 páginas de leitura em 2 edições (a primeira forma aceitava «pelo menos uma») |
 | M7 | o rótulo está completo no HTML servido, sem script | as duas edições |
 
-**Os sete estragos plantados**, cada um a pôr vermelhas exactamente as células
-que declara e nenhuma outra (o corredor exige as três coisas, que é a lição da
-I100):
+**O corredor corre a suite INTEIRA por planta** (segunda passagem). A primeira
+forma corria só as células que a planta declarava, e é uma peneira furada nos
+dois sentidos: um estrago que estrague uma célula que ele não declara nunca é
+apanhado, porque a célula não chega a correr. A leitura a frio apanhou-o com dois
+casos reais, e as duas declarações foram corrigidas para dizerem a verdade em vez
+de se calarem. O corredor imprime «verde antes» antes de plantar o que quer que
+seja, e exige as três coisas: cada alvo declarado casa com uma célula corrida,
+todas as que a planta nomeia ficam vermelhas, e **todas as outras ficam
+verdes**.
+
+**Os sete estragos plantados**, com a declaração corrigida e medida:
 
 | estrago | célula | o que ela disse |
 | --- | --- | --- |
-| o rótulo do rodapé retirado | M1 | «sem rótulo no rodapé» em 8 de 8 |
-| o rótulo escondido por uma folha | M1 | «o rótulo mede 0×0px» em 8 de 8 |
+| o rótulo do rodapé retirado | M1, M2, M3, M4, M5, M7 | tira a linha, a porta, o nome e a ficha de uma vez; a declaração antiga dizia só M1 |
+| o rótulo escondido por uma folha | M1, M4, M6 | `display:none` põe a caixa a zero, e com ela o alvo de toque e o rótulo do topo; a cor computada não muda, e M2 fica verde |
 | a cor posta no fio de arrumação | M2 | 1,28:1 em claro e 1,67:1 em escuro |
 | a porta a abrir o Método sem a âncora | M3 | «abre "/metodo" e devia abrir "/metodo#politica-de-ia"» |
 | o alvo de toque reduzido a uma linha de texto | M4 | 20,9px de altura |
@@ -370,41 +443,70 @@ seria lida como um literal de texto e não como o termo do vocabulário;
 `{ "@id": "https://schema.org/TrainedAlgorithmicMediaDigitalSource" }` é a única
 forma que resolve no termo.
 
-### 6.3 · A classe das quatro cadeias no inventário da voz
+### 6.3 · A classe das cadeias novas: `divulgacao`, e é uma classe nova
 
-As quatro entram como **navegação**, e a razão está escrita no
-`INVENTARIO-FRASES.md` para que a leitura seguinte saiba que a pergunta foi
-feita. Em resumo: a classe da autorreferência é «o método, a verificação, a
-honestidade, a cobertura ou as intenções do próprio sítio» e vai a zero em todas
-as rotas medidas; estas frases não são nenhuma dessas coisas, não têm um
-adjetivo, dizem o que o texto é e quem responde por ele, e levam a porta para
-onde isso se lê por extenso. A irmã mais próxima é a porta das correções, que é
-navegação desde o princípio e também é uma linha de todas as páginas.
+A primeira passagem pôs as quatro cadeias do rótulo em `navegacao`, com a razão
+escrita, e a leitura a frio recusou-a. **Tinha razão: era a classificação a
+torcer-se para caber.** As três classes do inventário respondem à pergunta da
+Emenda 15 (conteúdo é o que a coisa medida é, navegação é o que leva a outro
+sítio, autorreferência é o método, a verificação, a honestidade, a cobertura ou
+as intenções do próprio sítio), e uma divulgação obrigatória não é nenhuma
+delas: **está na página porque a lei a põe lá, e sairia no dia em que a lei
+mudasse**.
 
-**O teste da Emenda 15 não decide esta classe, e isso fica dito.** «Uma frase
-sobrevive numa página do leitor se a sua remoção fizesse um leitor ler mal um
-número»: nenhuma das quatro sobrevive a esse teste, e a porta das correções e a
-navegação do rodapé também não. O teste governa o que é autorreferência e o que
-é conteúdo; não governa o que a lei obriga a página a dizer.
+A segunda passagem abre `divulgacao` em `scripts/voz.mjs` e em
+`scripts/medir-defeitos.mjs`, e a razão fica escrita nos dois e no inventário.
+Entram nela as duas cadeias do rótulo, as duas da ficha do artigo 15.º e as
+trinta e duas da política publicada que o rótulo aponta; as duas cabeças de
+secção ficam em `navegacao`, porque nomeiam um lugar da página como qualquer
+outro nome de secção.
+
+**A Emenda 15 não se enfraquece com ela, e o `check:voz` continua a ser quem o
+impõe**: `autorreferencia` vai a ZERO em todas as rotas medidas, medido em cada
+construção. A distinção entre as duas está escrita nos três sítios onde ela tem
+de ser lida: a autorreferência existe **para mostrar diligência**, a divulgação
+existe **porque alguém tem de saber quem responde**, e uma frase de divulgação
+que comece a explicar porque se deve confiar na casa é autorreferência com outro
+nome, que não passa por mudar de coluna.
+
+**As trinta e quatro cadeias da secção da política também entram**, e isso pediu
+uma segunda coisa. A secção vive em `/metodo` e a frase vive também no Sobre, e
+nenhuma das duas rotas é medida (a Emenda 15 isenta o Método e o Sobre da
+contagem). A régua usava a mesma lista para duas perguntas diferentes, e a
+segunda não é a mesma: «esta linha declarada ainda se rende em algum lado?». Uma
+linha declarada para uma frase que só lá vive era logo uma «viva que não rende» e
+fechava a construção. `ROTAS_QUE_PROVAM_A_RENDICAO` é a lista que responde só a
+essa pergunta: **não entra na contagem por classe, não entra nos blocos por
+classificar, e não entra na proibição das linhas retiradas**, porque alargar-lhe
+a proibição mudava uma regra que ninguém mandou mudar.
+
+**O texto de cada uma das trinta e quatro foi extraído das páginas construídas**
+com a mesma definição de bloco que a régua usa, e não datilografado: uma cadeia
+copiada à mão para o inventário é a linha a divergir da página no dia em que se
+escreve.
 
 **Nenhuma delas morde num marcador da voz**, e isso foi medido e não suposto: a
-construção corre `check:voz` com a lista fechada de 65 marcadores sobre todas as
-frases das 1 378 rotas inventariadas, e a contagem de «por classificar» ficou a
-zero com as quatro linhas novas declaradas. `autorreferência 0` em todas as
-rotas, como antes.
+construção corre `check:voz` com a lista fechada de 65 marcadores, e a contagem
+de «por classificar» está a zero com as trinta e oito linhas declaradas.
+`autorreferência 0` em todas as rotas, e `divulgação 1 388` ocorrências nas rotas
+medidas (uma por página construída de rota inventariada, mais as oito do topo das
+páginas de leitura e as duas fichas).
 
 ## 7 · O que fica para o lugar de direção
 
-1. **A classe das quatro cadeias.** Ficam navegação, com a razão escrita. Se a
-   direção as ler como uma quarta classe («divulgação obrigatória»), é uma
-   coluna nova no inventário e uma linha em `check-voz.mjs`; se as ler como
-   autorreferência, a regra da Emenda 15 tem de ganhar a excepção da lei, porque
-   a contagem tem de continuar a poder ir a zero.
-2. **Os nomes dos modelos na secção da política.** A ordem manda dizer «os
-   lugares e os modelos (§5)», e a página nomeia `Claude Fable 5`,
-   `Claude Opus 5`, `Claude Sonnet 5` e `gpt-5.6-sol`, marcados
-   `identificador-tecnico`. São nomes de produto de terceiros que envelhecem, e
-   tirá-los é uma linha. **A decisão é da direção.**
+1. **A classe das cadeias novas está decidida, e é nova.** A primeira passagem
+   pôs as quatro do rótulo em `navegacao`, que era a classificação a torcer-se
+   para caber; a leitura a frio recusou-o e a segunda passagem abriu
+   `divulgacao`, a quarta classe (§11, achado 6). Fica para a direção só uma
+   coisa: **confirmar que a classe nova é dela**, porque o inventário é uma
+   lista governada e eu acrescentei-lhe uma coluna de vocabulário.
+   `autorreferencia` continua a ir a zero em todas as rotas medidas, e o
+   `check:voz` continua a ser quem o impõe.
+2. **Os nomes dos modelos saíram com as versões** (§11, achado 8). A página diz
+   agora «os modelos Claude da Anthropic, em três lugares (a direção, a
+   construção, a medição), e o Codex da OpenAI na leitura». Não envelhece com um
+   número de versão e não põe um algarismo na página. **Se a direção quiser os
+   nomes exactos de volta, é uma linha, e volta a precisar da marca.**
 3. **A tradução inglesa da secção da política é minha**, fiel, sem acrescentos e
    sem omissões, e ninguém além de mim a leu. É prosa nova, e é o maior bloco de
    prosa nova deste ramo.
@@ -465,6 +567,96 @@ rotas, como antes.
 | `matriz.mjs` | 83 de 87 (as quatro da §7.7, medidas iguais em `b097d20`) |
 | `regioes.mjs` | 30 de 30 |
 | `rotulo.mjs` | **7 de 7**, e 7 de 7 estragos vistos vermelhos |
+
+## 11 · Segunda passagem: os dez achados da leitura a frio, e o que mudou
+
+A leitura do Codex correu a frio sobre o ramo, com três plantas, e apanhou as
+três. Achou dez defeitos reais. **O primeiro é de classe, e é o que mais importa
+do bloco inteiro.**
+
+**1 · O oráculo do portão era o ficheiro que ele conferia.** O portão comparava o
+rótulo e a frase da política com `src/data/politica-ia.mjs`, que é de onde a
+página sai: mudar a cadeia mudava a saída e a expectativa ao mesmo tempo, e a
+planta que tirava o «the» de «under the house policy» passava verde. É o defeito
+que a casa já conhece com outro nome («uma conferência que usasse o código das
+páginas confirmava-se a si própria», `check-cadeia.mjs`), e escapou-me. **O que
+mudou**: os textos aprovados passam para `scripts/textos-aprovados.json`,
+copiados da ordem §3, lidos só pelo portão, e que nenhum ficheiro de `src/`
+importa; **a comparação passa a ser exata**, sem `normalizeWhitespace`. Provado
+com uma vírgula tirada da frase em `politica-ia.mjs`, e com o «the» tirado das
+palavras ligadas: as duas vermelhas, no ficheiro e na página.
+
+**2 · O rótulo do topo era conferido só pela contagem do marcador.** Uma página
+de leitura com o texto de outra edição, ou com a porta a apontar para outro
+sítio, passava. **O que mudou**: as quatro conferências do bloco correm nos dois
+lugares, e a célula M6 da régua exige as duas edições em vez de
+`leituras.length > 0`. Duas plantas novas provam-no.
+
+**3 · A visibilidade não olhava para onde o bloco está nem para um `style`.** **O
+que mudou**: o bloco do rodapé tem de ter um `<footer>` por antepassado real (e
+não a classe que diz que devia), e um `style` em linha com `display:none` ou
+`visibility:hidden` é vermelho. **E o limite ficou escrito**: um portão estático
+não corre folhas de estilo, e a ocultação por CSS é da régua do navegador, que
+tem o estrago plantado que a prova.
+
+**4 · As línguas tinham três buracos.** Um `<html lang>` ausente ou desconhecido
+saltava a conferência inteira em silêncio (`else if (linguaPagina)`); o nome
+podia levar marca a mais numa página portuguesa; e a frase da política era
+comparada com a língua que o próprio atributo declarava, o que a tornava verdade
+por construção. **O que mudou**: os três são vermelhos, e o nome conta-se por
+sítio (um na linha, um na ficha, nenhum solto).
+
+**5 · O corredor das plantas corria só as células declaradas.** Um estrago que
+estragasse uma célula não declarada nunca era apanhado, porque a célula não
+chegava a correr. **O que mudou**: corre a suite inteira por planta, imprime
+«verde antes», e exige que todas as não declaradas fiquem verdes. As duas
+declarações que mentiam foram corrigidas: tirar o rodapé afeta M1 a M5 e M7;
+esconder `.rotulo-ia` afeta M1, M4 e M6.
+
+**6 · O inventário tinha quatro linhas onde devia ter trinta e oito, e a classe
+estava torcida.** **O que mudou**: entram as trinta e quatro cadeias da política
+publicada (a frase nas duas línguas e cada frase da secção), extraídas das
+páginas construídas e não datilografadas, e abre-se a quarta classe
+`divulgacao`. A §6.3 escreve a razão por extenso, e a Emenda 15 não se
+enfraquece: `autorreferencia` continua a ir a zero em todas as rotas medidas.
+
+**7 · A voz da secção da política tinha quatro frases a mais do que devia.** «A
+casa não finge uma revisão que não existe» é a casa a justificar-se, e sai. «Fable
+decide, escreve as regras» dizia uma coisa falsa: as regras são do diretor, e a
+primeira frase da secção di-lo. «Mede às cegas» e «lê a frio» são o jargão da
+casa; a página passa a dizer «mede numa cópia, com código próprio, sem ver a
+construção» e «lê sem contexto prévio, com erros plantados que tem de
+encontrar». E «a família que construiu nunca verifica o que construiu» passa a «a
+verificação é sempre de outra família de modelos», que é a regra e não a sua
+consequência.
+
+**8 · Os nomes dos modelos traziam a versão.** Um número de versão de um produto
+de terceiros envelhece sozinho na página, e a marca punha algarismos novos no
+sítio para dizer uma coisa que não precisa deles. **O que mudou**: a página diz
+«os modelos Claude da Anthropic, em três lugares (a direção, a construção, a
+medição), e o Codex da OpenAI na leitura», e **o ramo deixa de acrescentar uma
+única marca de algarismo**.
+
+**9 · A menção de gratuitidade em inglês** passa de «Free publication» a «Free of
+charge».
+
+**10 · As palavras ligadas não eram conferidas.** A porta podia abrir a política
+com qualquer texto. **O que mudou**: o portão exige que as palavras ligadas sejam
+exactamente «a política da casa» e «the house policy», e uma planta com «o método
+da casa» fica vermelha.
+
+**O que a segunda passagem custou em números**: doze estragos plantados novos no
+portão (dez em `dist/`, dois no ficheiro de dados), todos vermelhos e todos
+repostos pelo `sha256`; o inventário de 586 para 620 linhas; a régua do rótulo
+nas mesmas sete células, agora com o corredor a correr sessenta e três medições
+em vez de nove. Nada mudou nas contagens do sítio: 6 606 ficheiros, 13 320
+números marcados, o livro-razão intacto.
+
+**E o que ela diz sobre a primeira.** Os oito estragos da primeira passagem
+provaram que a regra vê o defeito que ela nomeia; nenhum deles perguntava se o
+ORÁCULO era independente do que ele confere, nem se a régua vê o defeito nos dois
+sítios onde a mesma coisa se rende. As duas perguntas que faltavam são as duas
+que a leitura a frio fez.
 
 ## 10 · O custo
 

@@ -227,17 +227,17 @@ const destino = (l) => (l.prova ? CAMINHO_DA_PROVA : routePath(l.rota, lang));
         <span class="regra-k">{POLITICA.lugares.titulo[lang]}</span>
         <div class="regra-v">
           {POLITICA.lugares.intro[lang].map((p2) => <p class="metodo-p">{p2}</p>)}
+          {/* Os quatro lugares, pelo nome do lugar e não pelo nome do modelo
+              com a sua versão (segunda passagem): a página não ganha um
+              algarismo, e não envelhece no dia em que um modelo mudar de
+              número. As famílias dizem-se na frase de fecho, e é lá que a
+              palavra «Claude» e a palavra «Codex» aparecem uma vez cada. */}
           <ul class="politica-lugares">
             {
               POLITICA.lugares.itens.map((item) => (
                 <li>
-                  <Fragment set:text={item[lang].antes} />
-                  {/* O nome de um modelo é um identificador de máquina com a sua
-                      versão, e é o motivo `identificador-tecnico` que já está
-                      escrito em `ledger/allowlist.yml`. Não é uma medição do
-                      país, e é por isso que traz algarismos sem trazer linha. */}
-                  <span data-nonledger="identificador-tecnico">{item.modelo}</span>
-                  <Fragment set:text={item[lang].depois} />
+                  <strong>{item.rotulo[lang]}</strong>{' '}
+                  <Fragment set:text={item.texto[lang]} />
                 </li>
               ))
             }

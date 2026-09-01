@@ -195,7 +195,25 @@ export const FICHEIRO_DO_INVENTARIO = path.join(
   'INVENTARIO-FRASES.md',
 );
 
-const CLASSES_DO_INVENTARIO = new Set(['conteudo', 'navegacao', 'autorreferencia']);
+/**
+ * A QUARTA CLASSE, `divulgacao` (segunda passagem, 01.09.2026).
+ *
+ * As três primeiras respondem à pergunta da Emenda 15: o que a página diz sobre
+ * a coisa medida, o que leva a outro sítio, e o que a casa diz sobre si própria.
+ * O rótulo de IA não é nenhuma das três, e forçá-lo a «navegação» era a
+ * classificação a torcer-se para caber: **é uma divulgação que a lei obriga**, o
+ * artigo 50.º, n.º 4 do Regulamento (UE) 2024/1689 e o artigo 15.º, n.º 1 da Lei
+ * de Imprensa, e está na página porque a lei a põe lá e não porque a casa a
+ * escolheu.
+ *
+ * A regra da Emenda 15 não se enfraquece com ela: `autorreferencia` continua a ir
+ * a zero em todas as rotas medidas, e divulgação não é autojustificação. A
+ * diferença é a que a própria emenda escreve: a autorreferência existe para
+ * mostrar diligência, e a divulgação existe porque alguém tem de saber quem
+ * responde. Uma frase de divulgação que comece a explicar porque se deve confiar
+ * na casa é autorreferência com outro nome, e continua a ir a zero.
+ */
+const CLASSES_DO_INVENTARIO = new Set(['conteudo', 'navegacao', 'autorreferencia', 'divulgacao']);
 
 /**
  * A QUARTA COLUNA, «estado», ENTROU A 27.08.2026 COM O G2 DESTE BLOCO (I74).
