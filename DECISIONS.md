@@ -11784,7 +11784,9 @@ Nada muda no ar nesta sessão além do carimbo semanal de 31.08.
 
 ### 1.89 A divulgação pela via B: o rótulo de IA em todas as páginas, a secção da política em `/metodo`, o nome do diretor e a gratuitidade na primeira página
 
-**Afecta:** todos
+**Afecta:** sobre · metodo
+**Texto:** sobre 0507f5f3d6af · metodo e327c482c6db
+**Sem alteração:** a frase da política e a secção «A política da casa» vivem em `src/data/politica-ia.mjs` e são montadas pelas páginas do Sobre e do Método; os dois textos governados não mexeram, e a amarra, que só vê estes dois ficheiros, não vê a secção nova (o portão do rótulo e a régua `tests/inicio/rotulo.mjs` são o que a prende).
 
 **A decisão** (diretor, 30.08, a via B; 01.09, «adota as recomendações», que aprovou a tradução inglesa e a frase do rótulo tal como o lugar de direção as propôs). O artigo 50.º, n.º 4, segundo parágrafo, do Regulamento (UE) 2024/1689, lido na fonte a 01.09 (`design/observatorio/DILIGENCIA-LEGAL.md` §4), obriga a divulgar que um texto publicado para informar o público sobre matérias de interesse público foi gerado por IA, salvo revisão humana ou controlo editorial com uma pessoa a deter a responsabilidade editorial; o n.º 5 manda que a informação chegue «de forma clara e percetível, o mais tardar no momento da primeira interação ou exposição»; aplica-se desde 2 de agosto de 2026. A casa escolheu rotular tudo. E o artigo 15.º, n.º 1, da Lei de Imprensa pede na primeira página o nome do diretor e a menção de gratuitidade, que não fazem mal em nenhuma leitura do enquadramento (§2.1 da diligência).
 
