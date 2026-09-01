@@ -1,0 +1,48 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "ganho-medio-mensal-2024"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "1 576,0"
+unit: "euros por mês"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Ganho médio mensal (€) por Localização geográfica (NUTS - 2024); Anual - MTSSS/GEP, Quadros de pessoal"
+name_source: "IndicadorDsg"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "INE"
+document:
+  title: "Ganho médio mensal (€) por Localização geográfica (NUTS - 2024); Anual - MTSSS/GEP, Quadros de pessoal"
+  edition: "indicador 0012656"
+  locator: "INE, indicador 0012656, Portugal (código PT), dados de 2024"
+  kind: "serie"
+  url: "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012656&lingua=PT"
+source_url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0012656&Dim1=S7A2024&lang=PT"
+access_date: "2026-09-01"
+reference_date: "2024"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"ind_string\" : \"1 576,0\", \"valor\" : \"1576\" }"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+# A quem o valor é creditado. Lista de entidades, ou campo nenhum.
+attributed_to:
+  - "INE"
+
+study: "dominios-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] T3 do inventário das fontes de 01.09.2026, a linha nacional. Publicador primário: o Gabinete de Estratégia e Planeamento do Ministério do Trabalho, Solidariedade e Segurança Social, Quadros de Pessoal; o INE redissemina, e o rótulo do próprio indicador imprime «MTSSS/GEP, Quadros de pessoal». Os dados referem-se a trabalhadores por conta de outrem a tempo completo com remuneração completa. A série tem quatro anos nesta nomenclatura, 2021 a 2024. Última atualização impressa pelo INE: 2026-03-27. A fonte não permite comparar este valor com a retribuição mínima mensal garantida, e nenhuma comparação dessas é construída aqui. Licença: INE, CC BY 4.0, com a atribuição «Fonte: Instituto Nacional de Estatística, IP – Portugal». · Cruzado de ResearchHub content/13 Dominios · ganho-medio-mensal-2024."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

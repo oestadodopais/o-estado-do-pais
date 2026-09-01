@@ -62,6 +62,13 @@ export const UNIDADES = {
   /* 311 linhas. O índice de dívida dos 308 e o seu limite. A casa:
      `concelhos.mjs`, `tectoTexto`, «teto legal = » → «legal cap = ». */
   '% (limite legal = 150)': '% (legal cap = 150)',
+  /* 311 linhas. O ganho médio mensal dos 308 concelhos e do país, e as duas
+     linhas da retribuição mínima. Dicionário: «euros» é «euros» (a entrada
+     acima) e «por mês» é «per month». A fonte não dá inglês próprio para esta
+     unidade: o INE imprime «Euro (€)» e o Eurostat «Euro», e o «mensal» está no
+     nome do indicador e não na unidade, por isso a casa junta as duas palavras
+     do seu próprio dicionário e não de nenhuma das duas fontes. */
+  'euros por mês': 'euros per month',
   /* 310 linhas. A casa: `concelhos.mjs`, medida «pmp», Dias → Days. */
   dias: 'days',
   /* 309 linhas. O poder de compra concelhio do INE, com Portugal na base 100.
