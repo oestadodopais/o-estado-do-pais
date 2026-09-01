@@ -10,7 +10,7 @@
  * ver um número que parece fresco.
  */
 export const VERIFICACAO = {
-  verificadoEm: '2026-08-24',
+  verificadoEm: '2026-08-31',
   afirmacoes: 32,
   alarmes: 0,
   validadeDias: 45,
