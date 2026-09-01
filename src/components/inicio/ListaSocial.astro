@@ -56,7 +56,10 @@ const { s, lang, p, medidas, porta } = Astro.props;
   <ul class="social-lista">
     {
       medidas.map((m) => (
-        <li class="social-linha" data-social={m.claim}>
+        <li class="social-linha" id={`m-${m.claim}`} data-social={m.claim}>
+          {/* O `id`, como na peça: é a chegada da porta do cartão daquela medida
+              na faixa da cabeça (01.09.2026). A faixa é o «Relance» e esta linha
+              é a leitura da mesma medida, na mesma página. */}
           <span class="social-valor">
             <Claim id={m.claim} lang={lang} chip={true} />
           </span>

@@ -38,11 +38,29 @@
  */
 import Base from '../layouts/Base.astro';
 import InstrumentoConvergencia from '../components/InstrumentoConvergencia.astro';
+import Faixa from '../components/inicio/Faixa.astro';
 import Peca from '../components/inicio/Peca.astro';
 import { regiaoDoSlug } from '../lib/regioes.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
+/* ---------------------------------------------------------------------------
+ * A FOLHA DA PRIMEIRA PÁGINA ENTRA AQUI, E ANTES NÃO ENTRAVA (01.09.2026)
+ * ---------------------------------------------------------------------------
+ * Esta página rende `<Peca>` dentro de um `.painel` desde a Emenda 21, e as
+ * regras das duas classes vivem em `src/styles/inicio.css` — a moldura, os
+ * fios, a grelha, e as fichas do corpo do valor (`--peca-corpo-*`), que estão
+ * declaradas em `.painel`. A folha nunca foi importada por esta vista nem por
+ * `regiao.css`: medido na construção de partida deste bloco, a folha ligada por
+ * `/regioes/alentejo` é só a de `Base`, e nela não há uma única regra `.peca`.
+ * As duas peças de cada uma das nove regiões desenhavam-se sem folha nenhuma.
+ * `MunicipioView.astro` importa-a há muito, com esta razão escrita ao lado.
+ *
+ * A FAIXA PRECISA DELA PELO MESMO MOTIVO, e é isso que traz o defeito à luz: a
+ * cabeça nova é a mesma nas três páginas, e uma faixa sem a folha da faixa seria
+ * uma lista de texto corrido. Um componente e a sua folha viajam juntos.
+ */
+import '../styles/inicio.css';
 import '../styles/regiao.css';
 
 const { lang = 'pt', slug } = Astro.props;
@@ -71,6 +89,42 @@ const distancia = getClaim(regiao.distancia);
  */
 const medidaDeUmaLinha = (unidade, linha) =>
   linha.reference_date ? [unidade, ' · ', { ref: linha.reference_date }] : [unidade];
+
+/* ---------------------------------------------------------------------------
+ * A FAIXA DA REGIÃO (01.09.2026)
+ * ---------------------------------------------------------------------------
+ * A cabeça nova é a mesma nas três páginas — a do país, a da região e a do
+ * concelho —, e cada uma tem a sua faixa: «a faixa da região com a régua de
+ * hoje». As medidas de hoje de uma região são as duas que a entrada dela traz, e
+ * são as MESMAS que as peças rendem por baixo, da mesma lista e pela mesma
+ * ordem: a faixa é o «Relance» e as peças são a «Leitura breve».
+ *
+ * NENHUMA LEVA ESTADO, e a razão é a que as peças já escrevem: não há limiar
+ * publicado numa média (Emenda 1), e o que a régua desenha é a posição e não um
+ * juízo. Sem estado não há palavra nem quadrado, e o cartão fica com o valor, a
+ * unidade, o nome e o selo.
+ */
+const cartoes = [
+  {
+    id: regiao.valor,
+    ancora: `m-${regiao.valor}`,
+    nome: s.regioes.indiceK,
+    medida: medidaDeUmaLinha(
+      { nl: s.home.instr1.glanceUnidade, motivo: 'escala-de-instrumento' },
+      indice,
+    ),
+    estado: null,
+    glifos: [...String(indice.value)].length,
+  },
+  {
+    id: regiao.distancia,
+    ancora: `m-${regiao.distancia}`,
+    nome: s.regioes.distanciaK,
+    medida: medidaDeUmaLinha(s.regioes.distanciaUnidade, distancia),
+    estado: null,
+    glifos: [...String(distancia.value)].length,
+  },
+];
 ---
 
 <Base
@@ -87,6 +141,14 @@ const medidaDeUmaLinha = (unidade, linha) =>
     <h1 data-lugar>{nome}</h1>
     <p class="regiao-tipo">{s.regioes.tipo}</p>
   </div>
+
+  {/* A FAIXA, LOGO A SEGUIR À CABEÇA (01.09.2026). A mesma peça da primeira
+      página, com as medidas desta região: é a cabeça nova a herdar-se, «cada uma
+      com a sua faixa». Um cartão leva à leitura daquela medida mais abaixo,
+      nesta mesma página. Uma região não tem mapa (Emenda 21d: «uma região não
+      tem mapa de pontos nem de áreas; tem a régua»), e por isso a cabeça daqui
+      acaba na faixa e o instrumento que se segue é a régua da convergência. */}
+  <Faixa s={s} lang={lang} rotulo={s.inicio.faixa.rotulo} cartoes={cartoes} />
 
   <section class="regiao-instr" id="regua" aria-labelledby="regua-k">
     <h2 class="regiao-instr-k" id="regua-k">{s.home.instr1.h2}</h2>

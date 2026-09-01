@@ -22,10 +22,12 @@
  * slugs das áreas do desenho. Uma lista com 29 nomes certos e um errado passava
  * numa contagem e não passa numa comparação de conjuntos.
  *
- * L2 · A COLOCAÇÃO, nas duas edições. A lista na banda da coluna esquerda (a
- * mesma abcissa e a mesma largura da cabeça), a começar por baixo da manchete e
- * a acabar antes do fim da coluna do instrumento: é isso, e não uma ordem no
- * documento, que a põe AO LADO do mapa e não por baixo dele.
+ * L2 · A COLOCAÇÃO, nas duas edições. A coluna das gavetas na banda da coluna
+ * esquerda (a mesma abcissa e a mesma largura da cabeça), a começar por baixo da
+ * manchete e da faixa e a começar antes do fim da coluna do instrumento: é isso,
+ * e não uma ordem no documento, que a põe AO LADO do mapa e não por baixo dele.
+ * Desde 01.09.2026 mede-se a GAVETA e não a lista, e a razão está na célula: com
+ * a lista recolhida, os 29 nomes só têm caixa quando ela abre.
  *
  * L3 · A PÁGINA DEIXA DE CRESCER, nas duas edições. A altura da grelha da cabeça
  * contra a da sua coluna mais alta: antes deste bloco a lista estava dentro da
@@ -64,9 +66,16 @@
  * baixo dele continua a ser um número errado. Nas duas edições.
  *
  * L9 · UMA FORMA DE CADA VEZ, ÀS SETE LARGURAS. A regra, depois da decisão do
- * lugar de direção sobre a I101: abaixo de 1024 a rede mostra-se sempre, em
- * linha; a partir de 1024 mostra-se a lista da coluna esquerda. Nenhuma largura
- * mostra as duas, e nenhuma esconde a lista. A forma lê-se em dois sítios que não
+ * lugar de direção sobre a I101: abaixo de 1024 a rede é em linha; a partir de
+ * 1024 é a lista da coluna esquerda. Nenhuma largura mostra as duas.
+ *
+ * A REDE DEIXOU DE SE MOSTRAR SEMPRE (01.09.2026). A I101 tinha decidido que ela
+ * se mostra a todas as larguras abaixo de 1024, porque era o único alvo de 44 px
+ * das unidades do mapa; a afinação 1 do brief da forma dos domínios recolheu-a
+ * numa gaveta fechada, e a Emenda 20c passa a estar protegida pelo `<summary>`,
+ * que é um alvo de 44 px e abre sem guião. Esta régua abre a gaveta e mede a
+ * rede como sempre a mediu; que a gaveta existe, vem fechada e abre sem guião é
+ * `tests/inicio/faixa.mjs` (F10a e F10b). A forma lê-se em dois sítios que não
  * podem divergir: a `display` da `<ul>` (a folha) e o número de linhas que os 18
  * nomes do continente ocupam (o ecrã) — dezoito em fila dão menos de nove linhas,
  * duas colunas de nove dão exactamente nove.
@@ -163,12 +172,39 @@ let medidas = {};
 const conta = (nome, passa, prova) => celulas.push({ nome, passa: !!passa, prova: String(prova) });
 
 const nav = await chromium.launch({ headless: true });
-async function pagina(rota, largura) {
+/* ---------------------------------------------------------------------------
+ * A LISTA PASSOU A VIVER NUMA GAVETA FECHADA (01.09.2026)
+ * ---------------------------------------------------------------------------
+ * A afinação 1 do brief da forma dos domínios recolhe a lista dos nomes e a
+ * busca em duas gavetas ao lado do mapa, fechadas a todas as larguras. Um
+ * `<details>` fechado não desenha o que tem dentro: as caixas dos 29 nomes
+ * passam a medir zero, e as células que medem a REDE — os alvos, a forma, a
+ * pontuação, o par de estado — mediriam o nada.
+ *
+ * ESTA RÉGUA NÃO SE DESLIGA, ABRE A GAVETA. É o que a ordem de construção manda
+ * («as réguas existentes verdes ou reescritas para a forma decidida, nunca
+ * desligadas»), e é o que a régua sempre mediu: o que a rede é quando o leitor
+ * chega a ela. Que a gaveta EXISTE, que vem fechada e que abre sem guião é
+ * medido em `tests/inicio/faixa.mjs` (F10a e F10b), e não aqui: uma coisa por
+ * régua.
+ *
+ * AS CÉLULAS DA GEOMETRIA DA CABEÇA CONTINUAM A MEDIR-SE FECHADAS. L3, L11 e
+ * L13 dizem onde o mapa começa e acaba e quanto a página cresce, e isso é o que
+ * o leitor vê ao chegar: com a gaveta aberta a coluna esquerda cresce e o mapa
+ * cresce com ela. São por isso duas leituras por largura, e cada célula diz de
+ * qual delas fala.
+ */
+async function pagina(rota, largura, abrir = false) {
   const ctx = await nav.newContext({ viewport: { width: largura, height: 900 } });
   const p = await ctx.newPage();
   p.__ctx = ctx;
   await p.goto(base + rota, { waitUntil: 'networkidle' });
   await p.evaluate(() => document.fonts.ready);
+  if (abrir) {
+    await p.evaluate(() => {
+      for (const g of document.querySelectorAll('[data-gaveta]')) g.setAttribute('open', '');
+    });
+  }
   return p;
 }
 
@@ -284,6 +320,7 @@ const LEITURA = () => {
       return e ? getComputedStyle(e).textAlign : null;
     })(),
     lista: cx(lista),
+    lado: cx(document.querySelector('[data-cabeca-lado]')),
     grupos,
     nomes,
     pontuacao,
@@ -335,6 +372,7 @@ async function correTudo(soEstas) {
   const daMao = ['L6', 'L7'].filter(precisa);
 
   const lido = {};
+  const fechado = {};
   if (daPagina.length) {
     const larguras = new Set();
     for (const c of daPagina) {
@@ -345,12 +383,19 @@ async function correTudo(soEstas) {
     }
     for (const e of EDICOES) {
       for (const w of [...larguras].sort((a, b) => a - b)) {
-        const p = await pagina(e.rota, w);
+        /* `lido` é a leitura com a gaveta ABERTA — a rede à vista, que é o que
+           quase todas as células medem —, e `fechado` é a de chegada, com a
+           gaveta como o leitor a encontra. Ver a nota de `pagina()`. */
+        const p = await pagina(e.rota, w, true);
         lido[`${e.chave}_${w}`] = await p.evaluate(LEITURA);
         await p.__ctx.close();
+        const q = await pagina(e.rota, w, false);
+        fechado[`${e.chave}_${w}`] = await q.evaluate(LEITURA);
+        await q.__ctx.close();
       }
     }
     medidas.larguras = lido;
+    medidas.fechado = fechado;
   }
 
   /* --------------------------------------------------------------------- L1 */
@@ -379,30 +424,47 @@ async function correTudo(soEstas) {
   }
 
   /* --------------------------------------------------------------------- L2 */
+  /* ---------------------------------------------------------------------------
+   * A LISTA MEDE-SE PELA GAVETA EM QUE ELA VIVE (01.09.2026)
+   * ---------------------------------------------------------------------------
+   * A célula dizia «a lista na coluna esquerda, por baixo da manchete e ao lado
+   * do mapa», e media a caixa dos 29 nomes. Com a afinação 1 do brief da forma
+   * dos domínios a lista passou a viver numa gaveta fechada, e o que está na
+   * coluna esquerda ao lado do mapa é a GAVETA: os nomes só têm caixa quando ela
+   * abre, e nessa altura a coluna cresce e passa o fundo do mapa, que é o que
+   * qualquer coisa que se abre faz.
+   *
+   * O que a célula prova continua a ser o mesmo e mede-se no estado de chegada:
+   * a coluna das gavetas está na banda da cabeça (a mesma abcissa e a mesma
+   * largura), começa por baixo da manchete e da faixa, e está ao lado do mapa e
+   * não por baixo dele. Que a lista está DENTRO dessa gaveta é a L1 e a L4.
+   * ------------------------------------------------------------------------ */
   if (precisa('L2')) {
     for (const e of EDICOES) {
       for (const w of [1024, 1280]) {
-        const r = lido[`${e.chave}_${w}`];
-        const naBanda = Math.abs(r.lista.x - r.cabeca.x) < 1 && Math.abs(r.lista.w - r.cabeca.w) < 1;
-        const porBaixoDaManchete = r.lista.y >= r.cabeca.fundo;
-        const aoLadoDoMapa = r.lista.y < r.instrumento.fundo;
+        const r = fechado[`${e.chave}_${w}`];
+        const naBanda = Math.abs(r.lado.x - r.cabeca.x) < 1 && Math.abs(r.lado.w - r.cabeca.w) < 1;
+        const porBaixoDaManchete = r.lado.y >= r.cabeca.fundo;
+        const aoLadoDoMapa = r.lado.y < r.instrumento.fundo;
         conta(
-          `L2·${e.chave}·${w} · a lista na coluna esquerda, por baixo da manchete e ao lado do mapa`,
+          `L2·${e.chave}·${w} · a coluna das gavetas na banda da cabeça, por baixo da manchete e ao lado do mapa`,
           naBanda && porBaixoDaManchete && aoLadoDoMapa,
-          `lista x ${r.lista.x} w ${r.lista.w} (cabeça x ${r.cabeca.x} w ${r.cabeca.w}) · topo ${r.lista.y} contra o fim da manchete ${r.cabeca.fundo} e o fim do mapa ${r.instrumento.fundo}`,
+          `gavetas x ${r.lado.x} w ${r.lado.w} (cabeça x ${r.cabeca.x} w ${r.cabeca.w}) · topo ${r.lado.y} contra o fim da manchete ${r.cabeca.fundo} e o fim do mapa ${r.instrumento.fundo}`,
         );
       }
     }
   }
 
   /* --------------------------------------------------------------------- L3 */
+  /* COM A GAVETA FECHADA, que é o estado de chegada: o que esta célula mede é a
+     página que o leitor recebe, e não a que ele constrói ao abrir a rede. */
   if (precisa('L3')) {
     for (const e of EDICOES) {
-      const r = lido[`${e.chave}_1280`];
+      const r = fechado[`${e.chave}_1280`];
       const colunaDoInstrumento = r.instrumento.fundo - r.grelha.y;
       const folga = r.grelha.h - colunaDoInstrumento;
       conta(
-        `L3·${e.chave}·1280 · a página deixa de crescer: a grelha não passa muito da coluna do mapa`,
+        `L3·${e.chave}·1280 · a página deixa de crescer: a grelha não passa muito da coluna do mapa (gaveta fechada)`,
         folga <= 60,
         `grelha ${r.grelha.h} px · coluna do instrumento ${colunaDoInstrumento.toFixed(1)} px · folga ${folga.toFixed(1)} px (limite 60) · página ${r.pagina} px`,
       );
@@ -471,7 +533,12 @@ async function correTudo(soEstas) {
   if (precisa('L11') || precisa('L12') || precisa('L13')) {
     for (const e of EDICOES) {
       for (const w of [1024, 1280, 1440]) {
-        const r = lido[`${e.chave}_${w}`];
+        /* A GEOMETRIA DA CABEÇA MEDE-SE COM A GAVETA FECHADA (01.09.2026): o
+           mapa estica-se com a coluna esquerda, e com a rede aberta a coluna
+           cresce 300 px. O que a emenda das 19:50 de 29.08 promete é a cabeça de
+           chegada, e é essa que se mede. A L12 é a excepção, e diz porquê. */
+        const r = fechado[`${e.chave}_${w}`];
+        const aberto = lido[`${e.chave}_${w}`];
         if (!r || !r.svg || !r.legenda) {
           for (const c of ['L11', 'L12', 'L13']) if (precisa(c)) conta(`${c}·${e.chave}·${w} · o mapa e a legenda existem na página`, false, 'sem svg ou sem legenda');
           continue;
@@ -485,10 +552,18 @@ async function correTudo(soEstas) {
             );
           }
           if (precisa('L12')) {
+            /* COM A GAVETA ABERTA, e é a única das três que o é: a célula fala
+               da posição da legenda CONTRA A LISTA, e uma lista fechada não tem
+               caixa contra a qual comparar. O que a célula prova continua a ser
+               o mesmo — a legenda é a última coisa da coluna esquerda, alinhada
+               à esquerda com os nomes —, e com a gaveta fechada mede-se a
+               distância dela ao fundo do mapa, que é a outra metade da promessa. */
             conta(
               `L12·${e.chave}·${w} · a legenda por baixo dos nomes, alinhada à esquerda com eles`,
-              Math.abs(r.legenda.x - r.lista.x) <= 1 && r.legenda.y >= r.lista.fundo - 0.5 && r.legendaAlinhamento === 'left',
-              `legenda x ${r.legenda.x} y ${r.legenda.y} · lista x ${r.lista.x} fundo ${r.lista.fundo} · text-align ${r.legendaAlinhamento}`,
+              Math.abs(aberto.legenda.x - aberto.lista.x) <= 1 &&
+                aberto.legenda.y >= aberto.lista.fundo - 0.5 &&
+                ['left', 'start'].includes(aberto.legendaAlinhamento),
+              `legenda x ${aberto.legenda.x} y ${aberto.legenda.y} · lista x ${aberto.lista.x} fundo ${aberto.lista.fundo} · text-align ${aberto.legendaAlinhamento}`,
             );
           }
           if (precisa('L13')) {
@@ -511,10 +586,19 @@ async function correTudo(soEstas) {
             );
           }
         } else if (precisa('L12')) {
+          /* A 1024 A LEGENDA MUDOU DE COLUNA (01.09.2026). Estava na coluna do
+             mapa, descida pela altura dele com uma margem em percentagem; com a
+             legenda a passar a ser a última filha da coluna das gavetas, essa
+             margem resolvia-se contra a largura errada e saiu. A regra passa a
+             ser uma só nas três larguras: a legenda é a última coisa da coluna
+             esquerda, alinhada à esquerda com os nomes. O que muda de 1024 para
+             1280 é só se o fundo dela é também o fundo do mapa, e isso é a L11. */
           conta(
-            `L12·${e.chave}·${w} · a legenda por baixo do mapa, na coluna dele, a menos de 16 px`,
-            r.legenda.y >= r.svg.fundo - 1 && r.legenda.y - r.svg.fundo <= 16 && Math.abs(r.legenda.x - r.instrumento.x) <= 1,
-            `legenda x ${r.legenda.x} y ${r.legenda.y} · mapa fundo ${r.svg.fundo} · coluna x ${r.instrumento.x}`,
+            `L12·${e.chave}·${w} · a legenda no fim da coluna das gavetas, alinhada à esquerda com os nomes`,
+            Math.abs(aberto.legenda.x - aberto.lista.x) <= 1 &&
+              aberto.legenda.y >= aberto.lista.fundo - 0.5 &&
+              ['left', 'start'].includes(aberto.legendaAlinhamento),
+            `legenda x ${aberto.legenda.x} y ${aberto.legenda.y} · lista x ${aberto.lista.x} fundo ${aberto.lista.fundo} · text-align ${aberto.legendaAlinhamento}`,
           );
         }
       }
@@ -588,9 +672,13 @@ async function correTudo(soEstas) {
   }
 
   /* ----------------------------------------------------------------- L6 e L7 */
+  /* COM A GAVETA ABERTA, pela razão de `pagina()`: o par de estado é entre um
+     nome e uma área, e um nome dentro de um `<details>` fechado não tem caixa,
+     não recebe o rato e não recebe o foco. O que estas células medem é o par
+     quando o leitor chega a ele. */
   if (daMao.length) {
     for (const e of EDICOES) {
-      const p = await pagina(e.rota, 1280);
+      const p = await pagina(e.rota, 1280, true);
       const repouso = await p.evaluate(ESTADO, 'lisboa');
 
       /* O rato do lado do mapa vai ao ponto representativo, e por isso o desenho
@@ -791,24 +879,45 @@ const PLANTAS = [
     },
   },
   {
-    nome: 'o mapa antes dos nomes no documento',
+    /* A COLUNA DAS GAVETAS DEPOIS DO MAPA NO DOCUMENTO. Era «o mapa antes dos
+       nomes», e o corte era entre `<div class="mapa-ilhas">` e
+       `<div class="cabeca-inst">`; com a lista dentro de uma gaveta dentro da
+       coluna, esse corte deixaria de fechar as etiquetas do meio. O bloco que
+       se move é o `.cabeca-lado` inteiro, e o fim dele encontra-se a contar as
+       `<div>` que abrem e as que fecham, que é a única maneira honesta de o
+       saber num documento. */
+    nome: 'a coluna das gavetas depois do mapa no documento',
     celulas: ['L1'],
     estrago: (html, rota) => {
       if (!soNaPrimeira(rota)) return html;
-      const i = html.indexOf('<div class="mapa-ilhas"');
-      const f = html.indexOf('<div class="cabeca-inst"');
-      if (i < 0 || f < 0 || f < i) return html;
-      const lista = html.slice(i, f);
-      const resto = html.slice(0, i) + html.slice(f);
-      const j = resto.indexOf('</div>', resto.indexOf('<div class="cabeca-inst"'));
-      return resto.slice(0, j + 6) + lista + resto.slice(j + 6);
+      const fimDoBloco = (texto, inicio) => {
+        let nivel = 0;
+        const re = /<div\b|<\/div>/g;
+        re.lastIndex = inicio;
+        let m;
+        while ((m = re.exec(texto))) {
+          nivel += m[0] === '</div>' ? -1 : 1;
+          if (nivel === 0) return m.index + 6;
+        }
+        return -1;
+      };
+      const i = html.indexOf('<div class="cabeca-lado"');
+      if (i < 0) return html;
+      const f = fimDoBloco(html, i);
+      const j = html.indexOf('<div class="cabeca-inst"', f);
+      if (f < 0 || j < 0) return html;
+      const g = fimDoBloco(html, j);
+      if (g < 0) return html;
+      const lado = html.slice(i, f);
+      const inst = html.slice(j, g);
+      return html.slice(0, i) + inst + html.slice(f, j) + lado + html.slice(g);
     },
   },
   {
-    nome: 'a lista de volta para baixo do mapa, a 1280',
+    nome: 'a coluna das gavetas de volta para a coluna do mapa, a 1280',
     celulas: ['L2', 'L3'],
     estrago: comFolha(
-      '@media (min-width:1024px){.mapa-ilhas{grid-column:2 !important;grid-row:3 !important}.cabeca-inst{grid-row:1 !important}}',
+      '@media (min-width:1024px){.cabeca-lado{grid-column:2 !important;grid-row:3 !important}.cabeca-inst{grid-row:1 !important}}',
     ),
   },
   {
@@ -841,9 +950,13 @@ const PLANTAS = [
     ),
   },
   {
-    nome: 'a legenda de volta para a coluna do mapa, a 1280',
+    /* A legenda ao princípio da coluna em vez do fim: era «de volta para a
+       coluna do mapa» por `grid-column`, e a legenda deixou de ser filha da
+       grelha (01.09.2026). O que a põe no sítio errado agora é a ordem dentro
+       da coluna das gavetas. */
+    nome: 'a legenda por cima dos nomes em vez de por baixo',
     celulas: ['L12'],
-    estrago: comFolha('@media (min-width:1280px){.mapa-legenda{grid-column:2 !important}}'),
+    estrago: comFolha('.cabeca-lado .mapa-legenda{order:-1 !important;margin-top:0 !important}'),
   },
   {
     nome: 'o mapa mais largo do que a coluna, a 1280',

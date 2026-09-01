@@ -317,8 +317,17 @@ for (const largura of [1280, 390]) {
     const abriu = await p.evaluate(() => {
       const bloco = document.querySelector('#pesquisa');
       const r = bloco.getBoundingClientRect();
+      /* «À VISTA» PERGUNTA-SE AO NAVEGADOR, E NÃO À CAIXA (01.09.2026). Com a
+         busca dentro de uma gaveta, `getBoundingClientRect()` devolve na mesma
+         uma caixa quando a gaveta está fechada: o `<details>` esconde o
+         conteúdo com `content-visibility: hidden`, e o que responde a «isto
+         vê-se?» é `checkVisibility`. */
+      const seVe = (el) =>
+        typeof el.checkVisibility === 'function'
+          ? el.checkVisibility({ contentVisibilityAuto: true, opacityProperty: true, visibilityProperty: true })
+          : r.width > 0 && r.height > 0;
       return {
-        visivel: r.width > 0 && r.height > 0,
+        visivel: seVe(bloco),
         dentro: r.top >= 0 && r.top < innerHeight,
         foco: document.activeElement ? document.activeElement.id : null,
         anuncio: (document.querySelector('[data-anuncio]')?.textContent ?? '').trim(),
@@ -330,13 +339,24 @@ for (const largura of [1280, 390]) {
     await p.locator('[data-comando] [data-modo="pais"]:visible').first().click();
     await p.waitForTimeout(200);
     const fechou = await p.evaluate(() => {
-      const r = document.querySelector('#pesquisa').getBoundingClientRect();
+      const bloco = document.querySelector('#pesquisa');
+      const r = bloco.getBoundingClientRect();
+      const seVe = (el) =>
+        typeof el.checkVisibility === 'function'
+          ? el.checkVisibility({ contentVisibilityAuto: true, opacityProperty: true, visibilityProperty: true })
+          : r.width > 0 && r.height > 0;
       return {
         url: location.pathname + location.search,
-        /* Abaixo de 640 a pesquisa fica À VISTA em qualquer estado (item A4), e
-           acima de 640 só com a pesquisa aberta. A régua pergunta o que a folha
-           responde para esta largura, em vez de escrever o 640 outra vez. */
-        visivel: r.width > 0 && r.height > 0,
+        /* A REGRA PASSOU A SER UMA SÓ NAS DUAS LARGURAS (01.09.2026). Dizia
+           aqui: «abaixo de 640 a pesquisa fica À VISTA em qualquer estado (item
+           A4), e acima de 640 só com a pesquisa aberta». A busca era um bloco
+           que a folha mostrava pelo `data-modo` da raiz; com a afinação 1 do
+           brief da forma dos domínios passou a ser uma gaveta ao lado do mapa,
+           fechada a todas as larguras, e uma gaveta fecha-se em qualquer
+           largura. O que o comando «País» faz é fechá-la, e é isso que se mede.
+           O `<details>` continua a ser do navegador: o guião só troca `open`. */
+        visivel: seVe(bloco),
+        gaveta: document.querySelector('[data-gaveta="busca"]')?.hasAttribute('open') ?? null,
       };
     });
     const ok =
@@ -348,10 +368,11 @@ for (const largura of [1280, 390]) {
       abriu.cabeca === 'pais' &&
       abriu.painel === 'pais' &&
       fechou.url === rota &&
-      fechou.visivel === (largura <= 640);
+      fechou.visivel === false &&
+      fechou.gaveta === false;
     if (!ok) bem = false;
     linhas.push(
-      `${edicao}: «${abriu.url}» · pesquisa à vista ${abriu.visivel}, dentro do ecrã ${abriu.dentro} · foco «${abriu.foco}» · anúncio «${abriu.anuncio}» · cabeça ${abriu.cabeca}, painel ${abriu.painel} · «País» → «${fechou.url}», pesquisa à vista ${fechou.visivel}`,
+      `${edicao}: «${abriu.url}» · pesquisa à vista ${abriu.visivel}, dentro do ecrã ${abriu.dentro} · foco «${abriu.foco}» · anúncio «${abriu.anuncio}» · cabeça ${abriu.cabeca}, painel ${abriu.painel} · «País» → «${fechou.url}», pesquisa à vista ${fechou.visivel}, gaveta aberta ${fechou.gaveta}`,
     );
     if (edicao === 'pt') medidas[`n3_${largura}`] = { abriu, fechou };
     await p.__ctx.close();

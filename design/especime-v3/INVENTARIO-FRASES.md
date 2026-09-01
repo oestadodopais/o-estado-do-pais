@@ -1699,3 +1699,42 @@ definição de bloco que a régua usa, e não datilografado.*
 | divulgacao | They are the Claude models from Anthropic in three of the places (direction, building, measurement), and Codex from OpenAI in the reading. A new model takes a place only after passing the same tests the incumbent passed, and the change is written down with its date. | rotulo-ia | viva | — |
 | divulgacao | Tudo o que a casa publica leva o rótulo de gerado por IA, em cada página, no momento em que a página é vista. A revisão faz-se por portões e por amostra, e não peça a peça. | rotulo-ia | viva | — |
 | divulgacao | Written, checked and updated by AI systems under a published policy; no human reviews each piece before it goes out; a named person holds editorial responsibility, sets the rules and the refusals, and answers for it. | rotulo-ia | viva | — |
+
+## Bloco «A cabeça nova como contentor» · 01.09.2026
+
+*Duas linhas, e são a mesma frase nas duas edições: o nome da faixa de cartões
+que passou a viver entre a manchete e o mapa.*
+
+**É a frase que substitui «Âmbito» e «Densidade» na cabeça do telemóvel.** As
+duas palavras eram os rótulos dos dois grupos da linha de comando, e a linha
+desceu para o cabeçalho do painel; o que fica no lugar delas é a faixa, e uma
+lista precisa de um nome para quem a ouve. Nenhuma das duas palavras estava neste
+ficheiro — vivem em `<span class="cmd-k">`, e a régua recolhe os blocos de texto e
+os rótulos em `span` da classe `eyebrow`, não este —, e por isso não há aqui uma
+linha a retirar: elas continuam a render-se, no fim de `.inicio`, com o comando.
+
+**A CLASSE É `navegacao`, e é a do positivo conhecido.** O nome do mapa da
+primeira página («Mapa dos distritos e das ilhas de Portugal, com uma área por
+unidade.») está classificado assim desde o bloco `grelha-2`, e é a mesma coisa
+feita da mesma maneira: um `aria-label` que diz o que um instrumento de navegação
+é e como está feito, sem verbo sobre a casa, sem porta, sem algarismo e sem selo.
+
+**NÃO NOMEIA O LUGAR, e isso é a razão de ser uma linha e não trezentas e
+dezoito.** «As medidas de Portugal» obrigaria a «As medidas de Évora» nas 308
+páginas de concelho e a «As medidas do Alentejo» nas 9 de região, com a
+preposição a contrair-se por nome; a régua lê os `aria-label` desde a I79, e o
+inventário ganharia uma linha por lugar. O lugar está dito no rótulo da cabeça e
+na manchete, a três linhas de distância.
+
+**AS TRÊS PALAVRAS DE ESTADO NÃO ENTRAM, e a razão está no componente.** A
+primeira construção deste bloco punha a fila do estado do cartão num `<p>`, e a
+régua passou a recolher «fora do limiar», «dentro do limiar» e «sem limiar» como
+frases novas em 6 590 rotas. A peça rende-as, desde a Emenda 13, dentro de um
+`<div class="peca-topo">`, e por isso nunca foram recolhidas: são o vocabulário
+fechado do estado e não prosa da casa. A faixa passou a fazer o mesmo. A mesma
+palavra, no mesmo sítio da mesma casa, lê-se da mesma maneira nos dois sítios.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | As medidas, uma por cartão | cabeca | viva | — |
+| navegacao | The measures, one per card | cabeca | viva | — |

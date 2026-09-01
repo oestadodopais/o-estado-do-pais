@@ -1,0 +1,959 @@
+#!/usr/bin/env node
+/**
+ * =============================================================================
+ * A RÉGUA DA FAIXA · o bloco «a cabeça nova como contentor», 01.09.2026
+ * =============================================================================
+ *
+ * Uma célula por coisa que a ordem de construção e o brief mandam medir, em
+ * Chromium sem cabeça sobre `dist/`. NÃO é um portão: não entra no `npm run
+ * build` e não constrói nada. Imprime uma linha por célula e sai com 0 quando
+ * todas passam e com 1 quando alguma falha, como `tests/inicio/lista.mjs`.
+ *
+ *   node tests/inicio/faixa.mjs
+ *   node tests/inicio/faixa.mjs --json <ficheiro>
+ *   node tests/inicio/faixa.mjs --vermelhos
+ *
+ * ---------------------------------------------------------------------------
+ * O QUE CADA CÉLULA MEDE, E PORQUE É ASSIM QUE SE MEDE
+ * ---------------------------------------------------------------------------
+ * F1 · A FAIXA É UMA LISTA NO DOCUMENTO, E OS SEUS CARTÕES SÃO AS MEDIDAS DA
+ * PÁGINA. A afinação 2 do brief pede «uma lista no documento (`<ol>` ou `<ul>`)»
+ * e a ordem pede que a faixa se encha do conteúdo de hoje. Não basta contar: o
+ * conjunto dos ids dos cartões tem de ser, elemento a elemento, o conjunto das
+ * medidas que a página rende por baixo (as peças do painel e as linhas da lista
+ * social). Uma faixa com o número certo de cartões e um id errado passava numa
+ * contagem e não passa numa comparação de conjuntos.
+ *
+ * F2 · CADA CARTÃO TEM VALOR COM LINHA E SELO PARA ESSA LINHA. É a promessa da
+ * casa vista dentro do cartão: o número está debaixo de `data-claim`, o selo é
+ * uma `<a class="src-chip">` cujo `href` é a página daquela linha, e nenhum
+ * algarismo do cartão está fora de `[data-claim]` ou de um motivo declarado
+ * (`data-nonledger`). É esta célula que a planta «um cartão sem selo» e a planta
+ * «um número sem linha» têm de fazer cair.
+ *
+ * F3 · O CARTÃO INTEIRO É ALVO, E O SELO NÃO ESTÁ DENTRO DELE. Duas exigências
+ * que puxam para lados opostos (brief §4 e Emenda 2), e por isso medem-se
+ * juntas: a porta do cartão cobre a largura toda e tudo menos a fila do selo; a
+ * porta mede pelo menos 44 px nos dois sentidos abaixo de 1024 e 32 a partir de
+ * 1024; e a caixa da porta não interseta a do selo, nem a de nenhuma outra porta
+ * da faixa. A área efectiva é a mesma de `correcoes-a.mjs` (a caixa unida com a
+ * do `::after` absoluto), para que os dois números se possam comparar.
+ *
+ * F4 · A FAIXA FUNCIONA SEM JAVASCRIPT. A página carrega-se com o guião
+ * DESLIGADO e conta-se o mesmo número de cartões, todos com caixa; a faixa
+ * continua a poder correr (`overflow-x` não é `visible`); e nenhum `<script>` da
+ * página nomeia a faixa ou um cartão. Uma faixa que precisa de guião é a coisa
+ * que a afinação 2 proíbe pelo nome.
+ *
+ * F5 · O ENCAIXE É DE CSS. `scroll-snap-type` com eixo x na lista e
+ * `scroll-snap-align` em cada cartão, lidos do estilo computado. Sem isto a
+ * faixa corre mas não encaixa, e o brief pede as duas coisas.
+ *
+ * F6 · O PRIMEIRO CARTÃO É VISÍVEL SEM GESTO, às sete larguras e nas duas
+ * edições: a caixa começa em `scrollLeft` 0 e o primeiro cartão está INTEIRO
+ * dentro da parte visível da faixa. E a faixa TEM de correr (`scrollWidth` maior
+ * do que `clientWidth`), senão o encaixe é uma promessa sobre nada.
+ *
+ * F7 · O TECLADO CHEGA A CADA CARTÃO. Cada porta é focável pelo `Tab`, na ordem
+ * do documento, e o destino de cada uma existe nesta página: a âncora da leitura
+ * daquela medida. Uma porta que não abre nada é pior do que nenhuma.
+ *
+ * F8 · OS DOIS CORPOS DO NÚMERO. O `font-size` computado do valor de um cartão a
+ * 390 é menor do que a 1280, os dois vêm das duas fichas declaradas na folha, e
+ * nenhum desce abaixo do corpo mínimo da casa para um número com selo, que é o
+ * da lista social (19 px). É a regra do brief §4, medida em píxeis e não
+ * afirmada.
+ *
+ * F9 · A ORDEM DA CABEÇA, ÀS SETE LARGURAS: a manchete, a faixa e o mapa, por
+ * esta ordem no documento E no ecrã. Duas leituras que não podem divergir:
+ * `compareDocumentPosition` para a árvore, e o topo de cada caixa para o ecrã.
+ *
+ * F10 · AS DUAS GAVETAS DO MAPA, FECHADAS, E QUE ABREM SEM GUIÃO. As duas
+ * existem, nenhuma vem aberta, o `<summary>` de cada uma é um alvo de 44 px
+ * abaixo de 1024, e, com o guião DESLIGADO, um toque no `<summary>` abre a
+ * gaveta e põe os 29 nomes à vista. É o que a afinação 1 promete a quem não vê:
+ * «um mapa sem lista não é navegável por quem não vê».
+ *
+ * F11 · O PRIMEIRO NÚMERO SELADO DE UMA MEDIDA A MENOS DE UM ECRÃ DA MANCHETE, a
+ * 390 × 844. É a medida de aceitação do brief §4, e mede-se do FUNDO da manchete
+ * ao TOPO do número, em píxeis de documento e em ecrãs de 844 px.
+ *
+ * F12 · A FAIXA NAS TRÊS PÁGINAS. A cabeça é a mesma no país, na região e no
+ * concelho, «cada uma com a sua faixa»: as três têm lista, e os cartões de cada
+ * uma resolvem nas medidas daquela página.
+ *
+ * ---------------------------------------------------------------------------
+ * O QUE `--vermelhos` EXIGE DE CADA ESTRAGO
+ * ---------------------------------------------------------------------------
+ * Três coisas, e não uma, como em `lista.mjs`. **Verde antes**: as células que o
+ * estrago nomeia passam sem ele, porque uma célula que já estava vermelha não
+ * prova nada. **O HTML mudou**: a transformação dá bytes diferentes, porque um
+ * estrago que não muda nada nunca podia ser apanhado. **Vermelho depois**: pelo
+ * menos uma das células nomeadas cai.
+ */
+import fs from 'node:fs';
+import http from 'node:http';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { chromium } from 'playwright';
+
+const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
+const DIST = path.join(RAIZ, 'dist');
+
+const MIME = {
+  '.html': 'text/html; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
+  '.js': 'text/javascript; charset=utf-8',
+  '.json': 'application/json',
+  '.woff2': 'font/woff2',
+  '.svg': 'image/svg+xml',
+  '.png': 'image/png',
+  '.webp': 'image/webp',
+  '.csv': 'text/csv',
+  '.xml': 'application/xml',
+  '.txt': 'text/plain',
+  '.pdf': 'application/pdf',
+  '.zip': 'application/zip',
+};
+
+const verde = (s) => `\x1b[32m${s}\x1b[0m`;
+const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
+const cinza = (s) => `\x1b[90m${s}\x1b[0m`;
+
+const argv = process.argv.slice(2);
+const opcao = (nome) => {
+  const i = argv.indexOf(nome);
+  return i >= 0 ? (argv[i + 1] ?? true) : null;
+};
+const FICHEIRO_JSON = opcao('--json');
+const VERMELHOS = argv.includes('--vermelhos');
+
+if (!fs.existsSync(DIST)) {
+  console.error('não existe dist/. Corra o build primeiro.');
+  process.exit(2);
+}
+
+/* O estrago plantado não toca em disco: é uma transformação do HTML no caminho
+   entre o ficheiro e o navegador, como nas outras réguas da casa. */
+let ESTRAGO = null;
+
+const servidor = http.createServer((req, res) => {
+  const semQuery = req.url.split('?')[0];
+  let ficheiro;
+  try {
+    ficheiro = path.resolve(DIST, '.' + decodeURIComponent(semQuery));
+  } catch {
+    ficheiro = path.resolve(DIST, '.' + semQuery);
+  }
+  if (!ficheiro.startsWith(DIST)) return void res.writeHead(403).end();
+  if (fs.existsSync(ficheiro) && fs.statSync(ficheiro).isDirectory()) {
+    ficheiro = path.join(ficheiro, 'index.html');
+  }
+  if (!fs.existsSync(ficheiro)) return void res.writeHead(404).end('404');
+  const tipo = MIME[path.extname(ficheiro)] ?? 'application/octet-stream';
+  if (ESTRAGO && path.extname(ficheiro) === '.html') {
+    const html = ESTRAGO(fs.readFileSync(ficheiro, 'utf8'), semQuery);
+    res.writeHead(200, { 'content-type': tipo });
+    return void res.end(html);
+  }
+  res.writeHead(200, { 'content-type': tipo });
+  fs.createReadStream(ficheiro).pipe(res);
+});
+await new Promise((r) => servidor.listen(0, '127.0.0.1', r));
+const base = `http://127.0.0.1:${servidor.address().port}`;
+
+let celulas = [];
+let medidas = {};
+const conta = (nome, passa, prova) => celulas.push({ nome, passa: !!passa, prova: String(prova) });
+
+const nav = await chromium.launch({ headless: true });
+async function pagina(rota, largura, { altura = 900, js = true } = {}) {
+  const ctx = await nav.newContext({
+    viewport: { width: largura, height: altura },
+    javaScriptEnabled: js,
+  });
+  const p = await ctx.newPage();
+  p.__ctx = ctx;
+  await p.goto(base + rota, { waitUntil: 'networkidle' });
+  /* `document.fonts.ready` é uma promessa do documento e resolve-se com o guião
+     ligado; com ele desligado não há como esperar por ela, e a espera de rede já
+     cobre o descarregamento dos tipos. */
+  if (js) await p.evaluate(() => document.fonts.ready);
+  return p;
+}
+
+/* As sete larguras da casa, as mesmas de `tests/inicio/app.mjs`. */
+const LARGURAS = [320, 360, 390, 430, 768, 1024, 1280];
+const LIMIAR_DA_COLUNA = 1024;
+const ALVO_TOQUE = 44;
+const ALVO_PONTEIRO = 32;
+/* O corpo mínimo da casa para um número com selo: o da lista social. */
+const CORPO_MINIMO = 19;
+const ALTURA_DO_ECRA = 844;
+
+const EDICOES = [
+  { chave: 'pt', rota: '/', regiao: '/regioes/alentejo', concelho: '/municipios/evora' },
+  {
+    chave: 'en',
+    rota: '/en',
+    regiao: '/en/regions/alentejo',
+    concelho: '/en/municipalities/evora',
+  },
+];
+
+/* ===========================================================================
+ * A SONDA · corre dentro da página, uma vez por largura e por edição
+ * ======================================================================== */
+const LEITURA = () => {
+  const cx = (el) => {
+    const r = el.getBoundingClientRect();
+    return {
+      x: +(r.left + scrollX).toFixed(1),
+      y: +(r.top + scrollY).toFixed(1),
+      w: +r.width.toFixed(1),
+      h: +r.height.toFixed(1),
+      fundo: +(r.bottom + scrollY).toFixed(1),
+    };
+  };
+  /* A ÁREA EFECTIVA DE UM ALVO, palavra por palavra de `correcoes-a.mjs` (item
+     A10): a caixa do elemento unida com a do seu `::after` absoluto, que é a
+     técnica com que o selo alarga o que se toca sem alargar o que se compõe. */
+  const areaEfetiva = (el) => {
+    const r = el.getBoundingClientRect();
+    let x1 = r.left;
+    let y1 = r.top;
+    let x2 = r.right;
+    let y2 = r.bottom;
+    const cs = getComputedStyle(el, '::after');
+    if (cs && cs.content !== 'none' && cs.position === 'absolute') {
+      const W = Math.max(parseFloat(cs.width) || 0, parseFloat(cs.minWidth) || 0);
+      const H = Math.max(parseFloat(cs.height) || 0, parseFloat(cs.minHeight) || 0);
+      if (W > 0 && H > 0) {
+        const ccx = (r.left + r.right) / 2;
+        const ccy = (r.top + r.bottom) / 2;
+        x1 = Math.min(x1, ccx - W / 2);
+        x2 = Math.max(x2, ccx + W / 2);
+        y1 = Math.min(y1, ccy - H / 2);
+        y2 = Math.max(y2, ccy + H / 2);
+      }
+    }
+    return {
+      x: +(x1 + scrollX).toFixed(1),
+      y: +(y1 + scrollY).toFixed(1),
+      w: +(x2 - x1).toFixed(1),
+      h: +(y2 - y1).toFixed(1),
+    };
+  };
+
+  const faixa = document.querySelector('[data-faixa]');
+  const cartoes = [...document.querySelectorAll('[data-cartao]')];
+  /* A MANCHETE DA PÁGINA, E NÃO O NOME DO SÍTIO: `querySelector('h1')` devolve
+     o `<h1 class="wordmark">` do cabeçalho, que é a marca. A manchete é a da
+     vista, e vive dentro de `<main>`. */
+  const manchete = document.querySelector('main h1') ?? document.querySelector('h1');
+  const mapa = document.querySelector('.mapa-svg');
+
+  /* O primeiro número SELADO de uma medida: um `[data-claim]` cujo pai leva o
+     selo, dentro do painel, da lista social ou da faixa. É a mesma relação que
+     `auditaSelo()` confere no portão. */
+  const selados = [...document.querySelectorAll('[data-claim]')].filter((el) => {
+    const pai = el.parentElement;
+    return !!(pai && pai.querySelector('.src-chip'));
+  });
+  const primeiraMedida = selados.find((el) =>
+    el.closest('#painel, #painel-social, [data-faixa], .painel'),
+  );
+
+  /* As medidas que a página rende por baixo da faixa: as peças e as linhas da
+     lista social. É o conjunto contra o qual os cartões se comparam. */
+  const daPagina = [
+    ...document.querySelectorAll('[data-medida]'),
+  ].map((el) => el.getAttribute('data-medida'));
+  const daSocial = [...document.querySelectorAll('[data-social]')].map((el) =>
+    el.getAttribute('data-social'),
+  );
+
+  const guioes = [...document.querySelectorAll('script')].map((s) => s.textContent ?? '');
+
+  return {
+    largura: window.innerWidth,
+    pagina: document.documentElement.scrollHeight,
+    temFaixa: !!faixa,
+    etiqueta: faixa ? faixa.tagName.toLowerCase() : null,
+    rotulo: faixa ? faixa.getAttribute('aria-label') : null,
+    faixaCaixa: faixa ? cx(faixa) : null,
+    scroll: faixa
+      ? {
+          left: faixa.scrollLeft,
+          largura: faixa.scrollWidth,
+          visivel: faixa.clientWidth,
+          snap: getComputedStyle(faixa).scrollSnapType,
+          overflow: getComputedStyle(faixa).overflowX,
+        }
+      : null,
+    cartoes: cartoes.map((c) => {
+      const porta = c.querySelector('.cartao-porta');
+      const selo = c.querySelector(':scope > .claim-com-chip > .src-chip');
+      /* TODOS os selos do cartão, e não só o do valor: a linha da unidade pode
+         citar uma linha do livro-razão e trazer o selo dela. Nenhum deles pode
+         cair debaixo da porta, e nenhum pode sobrepor-se a outro. */
+      const selos = [...c.querySelectorAll('.src-chip')];
+      const unidade = c.querySelector('.cartao-unidade');
+      const valor = c.querySelector('[data-claim]');
+      /* Um algarismo dentro do cartão que não esteja debaixo de `data-claim`
+         nem de um motivo declarado é um número sem linha. Percorre-se o texto
+         dos nós-folha, que é o que o leitor vê. */
+      const semLinha = [];
+      for (const el of c.querySelectorAll('*')) {
+        if (el.children.length) continue;
+        if (el.closest('[data-claim],[data-nonledger],.src-chip,.vh')) continue;
+        const t = (el.textContent ?? '').trim();
+        if (/\d/.test(t)) semLinha.push(t.slice(0, 24));
+      }
+      return {
+        id: c.getAttribute('data-cartao'),
+        estado: c.getAttribute('data-estado'),
+        caixa: cx(c),
+        porta: porta ? areaEfetiva(porta) : null,
+        portaDestino: porta ? porta.getAttribute('href') : null,
+        portaNome: porta ? porta.getAttribute('aria-labelledby') : null,
+        selo: selo ? areaEfetiva(selo) : null,
+        seloDestino: selo ? selo.getAttribute('href') : null,
+        selos: selos.map((s) => areaEfetiva(s)),
+        pe: unidade ? cx(unidade) : null,
+        valorId: valor ? valor.getAttribute('data-claim') : null,
+        corpo: valor ? +parseFloat(getComputedStyle(valor).fontSize).toFixed(2) : null,
+        snapAlign: getComputedStyle(c).scrollSnapAlign,
+        visivel:
+        c.getBoundingClientRect().width > 0 &&
+        c.getBoundingClientRect().height > 0 &&
+        (typeof c.checkVisibility !== 'function' ||
+          c.checkVisibility({ contentVisibilityAuto: true, opacityProperty: true, visibilityProperty: true })),
+        semLinha,
+      };
+    }),
+    medidasDaPagina: [...new Set([...daPagina, ...daSocial])],
+    ancoras: [...document.querySelectorAll('[id]')].map((el) => el.id),
+    manchete: manchete ? cx(manchete) : null,
+    mapa: mapa ? cx(mapa) : null,
+    ordem: (() => {
+      if (!manchete || !faixa) return null;
+      const antesDaFaixa = manchete.compareDocumentPosition(faixa) & Node.DOCUMENT_POSITION_FOLLOWING;
+      const faixaAntesDoMapa = mapa
+        ? Boolean(faixa.compareDocumentPosition(mapa) & Node.DOCUMENT_POSITION_FOLLOWING)
+        : null;
+      return { mancheteAntesDaFaixa: Boolean(antesDaFaixa), faixaAntesDoMapa };
+    })(),
+    primeiraMedida: primeiraMedida
+      ? {
+          id: primeiraMedida.getAttribute('data-claim'),
+          topo: +(primeiraMedida.getBoundingClientRect().top + scrollY).toFixed(1),
+        }
+      : null,
+    gavetas: [...document.querySelectorAll('[data-gaveta]')].map((g) => {
+      const sum = g.querySelector('summary');
+      return {
+        chave: g.getAttribute('data-gaveta'),
+        aberta: g.hasAttribute('open'),
+        alvo: sum ? areaEfetiva(sum) : null,
+        rotulo: sum ? (sum.textContent ?? '').trim() : null,
+      };
+    }),
+    nomes: document.querySelectorAll('[data-lista-porta]').length,
+    guiaoNomeiaAFaixa: guioes.some((g) => /data-faixa|data-cartao|cartao-porta/.test(g)),
+  };
+};
+
+/* ===========================================================================
+ * A CORRIDA
+ * ======================================================================== */
+const intersecta = (a, b) =>
+  a.x < b.x + b.w - 0.5 && b.x < a.x + a.w - 0.5 && a.y < b.y + b.h - 0.5 && b.y < a.y + a.h - 0.5;
+
+const alvoEm = (w) => (w >= LIMIAR_DA_COLUNA ? ALVO_PONTEIRO : ALVO_TOQUE);
+
+async function correTudo(soEstas) {
+  const precisa = (c) => !soEstas || soEstas.includes(c);
+  const daPagina = ['F1', 'F2', 'F3', 'F5', 'F6', 'F8', 'F9', 'F11'].filter(precisa);
+
+  const lido = {};
+  if (daPagina.length || precisa('F10')) {
+    const larguras = new Set();
+    for (const c of daPagina) {
+      if (['F3', 'F6', 'F9'].includes(c)) for (const w of LARGURAS) larguras.add(w);
+      if (['F1', 'F2', 'F5'].includes(c)) larguras.add(1280);
+      if (c === 'F8') {
+        larguras.add(390);
+        larguras.add(1280);
+      }
+      if (c === 'F11') larguras.add(390);
+    }
+    if (precisa('F10')) for (const w of LARGURAS) larguras.add(w);
+    for (const e of EDICOES) {
+      for (const w of [...larguras].sort((a, b) => a - b)) {
+        const p = await pagina(e.rota, w, { altura: ALTURA_DO_ECRA });
+        lido[`${e.chave}_${w}`] = await p.evaluate(LEITURA);
+        await p.__ctx.close();
+      }
+    }
+    medidas.larguras = lido;
+  }
+
+  /* --------------------------------------------------------------------- F1 */
+  if (precisa('F1')) {
+    for (const e of EDICOES) {
+      const r = lido[`${e.chave}_1280`];
+      const ids = r.cartoes.map((c) => c.id);
+      const daFaixa = new Set(ids);
+      const daPagina = new Set(r.medidasDaPagina);
+      const soNaFaixa = [...daFaixa].filter((i) => !daPagina.has(i));
+      const soNaPagina = [...daPagina].filter((i) => !daFaixa.has(i));
+      conta(
+        `F1·${e.chave} · a faixa é uma lista, e os seus cartões são as medidas da página`,
+        r.temFaixa &&
+          (r.etiqueta === 'ol' || r.etiqueta === 'ul') &&
+          ids.length > 0 &&
+          daFaixa.size === ids.length &&
+          soNaFaixa.length === 0 &&
+          soNaPagina.length === 0 &&
+          Boolean(r.rotulo),
+        `<${r.etiqueta}> com ${ids.length} cartões (${daFaixa.size} ids distintos) · ${daPagina.size} medidas na página` +
+          ` · só na faixa: ${soNaFaixa.join(', ') || 'nenhuma'} · só na página: ${soNaPagina.join(', ') || 'nenhuma'}` +
+          ` · nome da lista: «${r.rotulo ?? 'nenhum'}»`,
+      );
+    }
+  }
+
+  /* --------------------------------------------------------------------- F2 */
+  if (precisa('F2')) {
+    for (const e of EDICOES) {
+      const r = lido[`${e.chave}_1280`];
+      const semSelo = r.cartoes.filter((c) => !c.selo);
+      const semValor = r.cartoes.filter((c) => c.valorId !== c.id);
+      const seloErrado = r.cartoes.filter(
+        (c) => c.selo && !String(c.seloDestino ?? '').includes(String(c.id)),
+      );
+      const comNumeroSolto = r.cartoes.filter((c) => c.semLinha.length > 0);
+      conta(
+        `F2·${e.chave} · cada cartão tem valor com linha, selo para essa linha, e nenhum algarismo solto`,
+        r.cartoes.length > 0 &&
+          semSelo.length === 0 &&
+          semValor.length === 0 &&
+          seloErrado.length === 0 &&
+          comNumeroSolto.length === 0,
+        `${r.cartoes.length} cartões · sem selo: ${semSelo.length}${semSelo.length ? ` (${semSelo.map((c) => c.id).join(', ')})` : ''}` +
+          ` · valor que não é o do cartão: ${semValor.length}` +
+          ` · selo a apontar para outra linha: ${seloErrado.length}` +
+          ` · com algarismo fora de linha ou motivo: ${comNumeroSolto.length}` +
+          `${comNumeroSolto.length ? ` (${comNumeroSolto.map((c) => `${c.id}: «${c.semLinha.join('», «')}»`).join(' · ')})` : ''}`,
+      );
+    }
+  }
+
+  /* --------------------------------------------------------------------- F3 */
+  if (precisa('F3')) {
+    for (const e of EDICOES) {
+      for (const w of LARGURAS) {
+        const r = lido[`${e.chave}_${w}`];
+        const min = alvoEm(w);
+        const pequenas = r.cartoes.filter(
+          (c) => !c.porta || c.porta.w + 0.5 < min || c.porta.h + 0.5 < min,
+        );
+        /* A porta cobre o CORPO do cartão: a largura toda, do topo até ao pé (a
+           fila da unidade, que é a primeira do pé). O que fica de fora são os
+           selos, e é isso que a Emenda 2 protege. */
+        const porque = (c) => {
+          if (!c.porta || !c.pe) return 'sem porta ou sem pé';
+          const falhas = [];
+          if (c.porta.w < c.caixa.w - 1) falhas.push(`largura ${c.porta.w} de ${c.caixa.w}`);
+          if (Math.abs(c.porta.y - c.caixa.y) > 1) falhas.push(`topo ${c.porta.y} contra ${c.caixa.y}`);
+          if (c.porta.y + c.porta.h > c.pe.y + 0.5)
+            falhas.push(`entra no pé (${(c.porta.y + c.porta.h).toFixed(1)} > ${c.pe.y})`);
+          return falhas.join(', ');
+        };
+        const naoCobrem = r.cartoes.filter((c) => porque(c) !== '');
+        /* Nenhum selo do cartão (o do valor e os que a unidade cite) pode
+           cair debaixo da porta, nem sobrepor-se a outro selo. */
+        const sobrepostas = [];
+        for (const c of r.cartoes) {
+          for (let a = 0; a < c.selos.length; a++) {
+            if (c.porta && intersecta(c.porta, c.selos[a])) sobrepostas.push(`${c.id}·porta×selo${a}`);
+            for (let b = a + 1; b < c.selos.length; b++) {
+              if (intersecta(c.selos[a], c.selos[b])) sobrepostas.push(`${c.id}·selo${a}×selo${b}`);
+            }
+          }
+        }
+        for (let i = 0; i < r.cartoes.length; i++) {
+          for (let j = i + 1; j < r.cartoes.length; j++) {
+            const a = r.cartoes[i].porta;
+            const b = r.cartoes[j].porta;
+            if (a && b && intersecta(a, b)) sobrepostas.push(`${r.cartoes[i].id}×${r.cartoes[j].id}`);
+          }
+        }
+        conta(
+          `F3·${e.chave}·${w} · o cartão inteiro é alvo (mín ${min} px), sem tocar no selo nem no vizinho`,
+          r.cartoes.length > 0 &&
+            pequenas.length === 0 &&
+            naoCobrem.length === 0 &&
+            sobrepostas.length === 0,
+          `${r.cartoes.length} cartões · porta mais pequena ${
+            r.cartoes.length
+              ? Math.min(...r.cartoes.filter((c) => c.porta).map((c) => Math.min(c.porta.w, c.porta.h))).toFixed(1)
+              : '(sem)'
+          } px · abaixo do mínimo: ${pequenas.length} · portas que não cobrem o cartão menos o pé: ${naoCobrem.length}` +
+            `${naoCobrem.length ? ` (${naoCobrem.slice(0, 2).map((c) => `${c.id}: ${porque(c)}`).join(' · ')})` : ''}` +
+            ` · áreas sobrepostas: ${sobrepostas.length}${sobrepostas.length ? ` (${sobrepostas.slice(0, 3).join(', ')})` : ''}`,
+        );
+      }
+    }
+  }
+
+  /* --------------------------------------------------------------------- F4 */
+  if (precisa('F4')) {
+    for (const e of EDICOES) {
+      const p = await pagina(e.rota, 390, { altura: ALTURA_DO_ECRA, js: false });
+      const semJs = await p.evaluate(LEITURA);
+      await p.__ctx.close();
+      const comJs = lido[`${e.chave}_390`] ?? (await (async () => {
+        const q = await pagina(e.rota, 390, { altura: ALTURA_DO_ECRA });
+        const v = await q.evaluate(LEITURA);
+        await q.__ctx.close();
+        return v;
+      })());
+      medidas[`semJs_${e.chave}`] = semJs;
+      const vistos = semJs.cartoes.filter((c) => c.visivel).length;
+      conta(
+        `F4·${e.chave} · a faixa funciona com o guião desligado, e nenhum guião a nomeia`,
+        semJs.temFaixa &&
+          vistos === comJs.cartoes.length &&
+          vistos > 0 &&
+          semJs.scroll &&
+          semJs.scroll.overflow !== 'visible' &&
+          !semJs.guiaoNomeiaAFaixa,
+        `sem guião: ${vistos} cartões com caixa de ${semJs.cartoes.length} no documento (com guião: ${comJs.cartoes.length})` +
+          ` · overflow-x «${semJs.scroll?.overflow ?? '(sem)'}» · algum <script> nomeia a faixa: ${semJs.guiaoNomeiaAFaixa}`,
+      );
+    }
+  }
+
+  /* --------------------------------------------------------------------- F5 */
+  if (precisa('F5')) {
+    for (const e of EDICOES) {
+      const r = lido[`${e.chave}_1280`];
+      const semAlign = r.cartoes.filter((c) => !c.snapAlign || c.snapAlign === 'none');
+      conta(
+        `F5·${e.chave} · o encaixe é de CSS: eixo x na lista, alinhamento em cada cartão`,
+        Boolean(r.scroll) &&
+          /x/.test(r.scroll.snap) &&
+          r.scroll.snap !== 'none' &&
+          semAlign.length === 0,
+        `scroll-snap-type «${r.scroll?.snap ?? '(sem)'}» · cartões sem scroll-snap-align: ${semAlign.length} de ${r.cartoes.length}`,
+      );
+    }
+  }
+
+  /* --------------------------------------------------------------------- F6 */
+  if (precisa('F6')) {
+    for (const e of EDICOES) {
+      for (const w of LARGURAS) {
+        const r = lido[`${e.chave}_${w}`];
+        const primeiro = r.cartoes[0];
+        const dentro =
+          primeiro &&
+          r.faixaCaixa &&
+          primeiro.caixa.x >= r.faixaCaixa.x - 0.5 &&
+          primeiro.caixa.x + primeiro.caixa.w <= r.faixaCaixa.x + r.faixaCaixa.w + 0.5;
+        const corre = r.scroll && r.scroll.largura > r.scroll.visivel + 1;
+        conta(
+          `F6·${e.chave}·${w} · o primeiro cartão inteiro sem gesto, e a faixa corre`,
+          Boolean(dentro) && r.scroll.left === 0 && Boolean(corre),
+          `faixa ${r.faixaCaixa?.w ?? '(sem)'} px · primeiro cartão ${primeiro?.caixa.w ?? '(sem)'} px em x ${primeiro?.caixa.x ?? '(sem)'}` +
+            ` · scrollLeft ${r.scroll?.left ?? '(sem)'} · corre ${r.scroll?.largura ?? '(sem)'} de ${r.scroll?.visivel ?? '(sem)'} px`,
+        );
+      }
+    }
+  }
+
+  /* --------------------------------------------------------------------- F7 */
+  if (precisa('F7')) {
+    for (const e of EDICOES) {
+      const p = await pagina(e.rota, 390, { altura: ALTURA_DO_ECRA });
+      const r = await p.evaluate(() => {
+        const cartoes = [...document.querySelectorAll('[data-cartao]')];
+        const ancoras = new Set([...document.querySelectorAll('[id]')].map((el) => el.id));
+        return cartoes.map((c) => {
+          const a = c.querySelector('.cartao-porta');
+          const destino = a ? (a.getAttribute('href') ?? '').replace(/^#/, '') : null;
+          return {
+            id: c.getAttribute('data-cartao'),
+            temPorta: !!a,
+            destinoExiste: destino ? ancoras.has(destino) : false,
+            nomeadaPor: a ? a.getAttribute('aria-labelledby') : null,
+            nomeExiste: a ? ancoras.has(a.getAttribute('aria-labelledby') ?? '') : false,
+          };
+        });
+      });
+      /* O `Tab` A PARTIR DO PRIMEIRO CARTÃO, e o que se prova é a ORDEM em que
+         as portas aparecem, não que elas sejam seguidas: entre a porta de um
+         cartão e a do seguinte há o selo daquele cartão, que também é uma porta
+         e também é focável, e é assim que se quer, porque o selo abre a linha. O
+         que se recolhe é a subsequência das portas dos cartões, e o que se
+         compara é essa subsequência com a ordem do documento.
+
+         `focus()` põe o foco onde a tabulação continua; um `focus()` de guião
+         não acende `:focus-visible` em todos os motores, e por isso o que esta
+         célula mede é a ordem e não a marca (a marca é da folha, e a régua da
+         lista mede-a nos nomes). */
+      const focados = [];
+      await p.evaluate(() => {
+        const primeiro = document.querySelector('[data-cartao] .cartao-porta');
+        if (primeiro) primeiro.focus();
+      });
+      const passos = r.length * 6;
+      for (let i = 0; i < passos && focados.length < r.length; i++) {
+        const foco = await p.evaluate(() => {
+          const el = document.activeElement;
+          return el && el.classList && el.classList.contains('cartao-porta')
+            ? el.closest('[data-cartao]').getAttribute('data-cartao')
+            : null;
+        });
+        if (foco && focados[focados.length - 1] !== foco) focados.push(foco);
+        await p.keyboard.press('Tab');
+      }
+      await p.__ctx.close();
+      const semPorta = r.filter((c) => !c.temPorta);
+      const semDestino = r.filter((c) => !c.destinoExiste);
+      const semNome = r.filter((c) => !c.nomeExiste);
+      const ordem = focados.join(',') === r.map((c) => c.id).join(',');
+      conta(
+        `F7·${e.chave} · o teclado chega a cada cartão, pela ordem, e cada porta abre uma âncora que existe`,
+        r.length > 0 && semPorta.length === 0 && semDestino.length === 0 && semNome.length === 0 && ordem,
+        `${r.length} cartões · sem porta: ${semPorta.length} · com destino que não existe: ${semDestino.length}` +
+          `${semDestino.length ? ` (${semDestino.map((c) => c.id).slice(0, 3).join(', ')})` : ''}` +
+          ` · sem nome acessível: ${semNome.length} · a ordem do Tab é a do documento: ${ordem}`,
+      );
+    }
+  }
+
+  /* --------------------------------------------------------------------- F8 */
+  if (precisa('F8')) {
+    for (const e of EDICOES) {
+      const movel = lido[`${e.chave}_390`];
+      const largo = lido[`${e.chave}_1280`];
+      const cm = movel.cartoes[0]?.corpo ?? null;
+      const cl = largo.cartoes[0]?.corpo ?? null;
+      const todosMoveis = movel.cartoes.map((c) => c.corpo);
+      conta(
+        `F8·${e.chave} · dois corpos: o número da faixa é mais pequeno no telemóvel do que no ecrã largo`,
+        cm !== null && cl !== null && cm < cl && cm >= CORPO_MINIMO && new Set(todosMoveis).size === 1,
+        `390: ${cm} px · 1280: ${cl} px · chão da casa para um número com selo: ${CORPO_MINIMO} px` +
+          ` · corpos distintos a 390: ${new Set(todosMoveis).size}`,
+      );
+    }
+  }
+
+  /* --------------------------------------------------------------------- F9 */
+  /* ---------------------------------------------------------------------------
+   * A ORDEM NO ECRÃ TEM DUAS FORMAS, PORQUE A CABEÇA TEM DUAS (01.09.2026)
+   * ---------------------------------------------------------------------------
+   * Abaixo de 1024 a cabeça é uma coluna, e «manchete, faixa, mapa» é uma ordem
+   * de cima para baixo: mede-se pelo topo de cada caixa.
+   *
+   * A PARTIR DE 1024 a cabeça tem duas colunas, e é a forma que a emenda das
+   * 19:50 de 29.08 à §1.84 decidiu: a manchete, a faixa e as gavetas na coluna
+   * esquerda, o mapa na direita, do topo da manchete ao fundo da legenda. Ali a
+   * ordem é a de LEITURA, ou seja a coluna esquerda de cima para baixo com o
+   * mapa ao lado dela, e não a do topo das caixas: o mapa começa à altura da
+   * manchete,
+   * porque é isso que estar ao lado quer dizer. Medir aqui «o topo da faixa
+   * acima do topo do mapa» seria pedir à cabeça de duas colunas que fosse de uma.
+   * A célula mede o que a forma promete: a coluna esquerda pela ordem, e o mapa
+   * inteiramente à direita dela.
+   * ------------------------------------------------------------------------ */
+  if (precisa('F9')) {
+    for (const e of EDICOES) {
+      for (const w of LARGURAS) {
+        const r = lido[`${e.chave}_${w}`];
+        const noDocumento = r.ordem?.mancheteAntesDaFaixa && r.ordem?.faixaAntesDoMapa;
+        const duasColunas = w >= LIMIAR_DA_COLUNA;
+        let noEcra = null;
+        let prova = '';
+        if (r.manchete && r.faixaCaixa && r.mapa) {
+          if (duasColunas) {
+            const aoLado = r.mapa.x >= r.faixaCaixa.x + r.faixaCaixa.w - 0.5;
+            const emCima = r.manchete.y <= r.faixaCaixa.y + 0.5;
+            noEcra = aoLado && emCima;
+            prova =
+              `duas colunas · manchete y ${r.manchete.y} antes da faixa y ${r.faixaCaixa.y}: ${emCima}` +
+              ` · mapa x ${r.mapa.x} à direita do fim da coluna esquerda ${(r.faixaCaixa.x + r.faixaCaixa.w).toFixed(1)}: ${aoLado}`;
+          } else {
+            noEcra = r.manchete.y <= r.faixaCaixa.y + 0.5 && r.faixaCaixa.y <= r.mapa.y + 0.5;
+            prova = `uma coluna · manchete y ${r.manchete.y} · faixa y ${r.faixaCaixa.y} · mapa y ${r.mapa.y}`;
+          }
+        }
+        conta(
+          `F9·${e.chave}·${w} · manchete, faixa, mapa, por esta ordem no documento e no ecrã`,
+          Boolean(noDocumento) && Boolean(noEcra),
+          `documento: manchete→faixa ${r.ordem?.mancheteAntesDaFaixa} · faixa→mapa ${r.ordem?.faixaAntesDoMapa} · ${prova}`,
+        );
+      }
+    }
+  }
+
+  /* -------------------------------------------------------------------- F10 */
+  if (precisa('F10')) {
+    for (const e of EDICOES) {
+      for (const w of LARGURAS) {
+        const r = lido[`${e.chave}_${w}`];
+        const min = alvoEm(w);
+        const abertas = r.gavetas.filter((g) => g.aberta);
+        const pequenas = r.gavetas.filter(
+          (g) => !g.alvo || g.alvo.w + 0.5 < min || g.alvo.h + 0.5 < min,
+        );
+        conta(
+          `F10a·${e.chave}·${w} · as duas gavetas do mapa, fechadas, com alvo de ${min} px`,
+          r.gavetas.length === 2 && abertas.length === 0 && pequenas.length === 0 && r.nomes === 29,
+          `${r.gavetas.length} gavetas (${r.gavetas.map((g) => g.chave).join(', ')}) · abertas: ${abertas.length}` +
+            ` · alvo mais pequeno ${
+              r.gavetas.length
+                ? Math.min(...r.gavetas.filter((g) => g.alvo).map((g) => Math.min(g.alvo.w, g.alvo.h))).toFixed(1)
+                : '(sem)'
+            } px · nomes no documento: ${r.nomes}`,
+        );
+      }
+      /* Abre sem guião: um toque real no `<summary>`, com o guião desligado. O
+         `<details>` é do navegador, e é isso que esta célula prova. */
+      const p = await pagina(e.rota, 390, { altura: ALTURA_DO_ECRA, js: false });
+      /* UM TOQUE A SÉRIO, e não um `open` escrito por guião: o que esta célula
+         prova é que o mecanismo é do NAVEGADOR. Se não houver `<summary>`, que
+         é exactamente o que a planta «a lista dos nomes a abrir só com guião»
+         faz, a célula fica vermelha com a razão escrita, e não rebenta a
+         corrida: uma régua que atira em vez de contar não prova nada. */
+      let tocou = true;
+      try {
+        await p.locator('[data-gaveta="nomes"] > summary').click({ timeout: 4000 });
+      } catch {
+        tocou = false;
+      }
+      const depois = await p.evaluate(() => {
+        const g = document.querySelector('[data-gaveta="nomes"]');
+        const nomes = [...document.querySelectorAll('[data-lista-porta]')];
+        return {
+          etiqueta: g ? g.tagName.toLowerCase() : null,
+          aberta: !!g && g.hasAttribute('open'),
+          visiveis: nomes.filter((n) => n.getBoundingClientRect().height > 0).length,
+          total: nomes.length,
+        };
+      });
+      await p.__ctx.close();
+      conta(
+        `F10b·${e.chave} · a gaveta dos nomes abre com o guião desligado, e os 29 ficam à vista`,
+        tocou && depois.etiqueta === 'details' && depois.aberta && depois.visiveis === 29 && depois.total === 29,
+        `o toque chegou ao <summary>: ${tocou} · a gaveta é um <${depois.etiqueta ?? 'nada'}> · aberta: ${depois.aberta}` +
+          ` · ${depois.visiveis} de ${depois.total} nomes com caixa`,
+      );
+    }
+  }
+
+  /* -------------------------------------------------------------------- F11 */
+  if (precisa('F11')) {
+    for (const e of EDICOES) {
+      const r = lido[`${e.chave}_390`];
+      const d = r.primeiraMedida && r.manchete ? r.primeiraMedida.topo - r.manchete.fundo : null;
+      conta(
+        `F11·${e.chave}·390 · o primeiro número selado de uma medida a menos de um ecrã da manchete`,
+        d !== null && d < ALTURA_DO_ECRA,
+        `${d === null ? 'não medido' : `${d.toFixed(1)} px · ${(d / ALTURA_DO_ECRA).toFixed(2)} ecrãs de ${ALTURA_DO_ECRA} px · ${r.primeiraMedida?.id}`}`,
+      );
+    }
+  }
+
+  /* -------------------------------------------------------------------- F12 */
+  if (precisa('F12')) {
+    for (const e of EDICOES) {
+      for (const [qual, rota] of [
+        ['regiao', e.regiao],
+        ['concelho', e.concelho],
+      ]) {
+        const p = await pagina(rota, 390, { altura: ALTURA_DO_ECRA });
+        const r = await p.evaluate(LEITURA);
+        await p.__ctx.close();
+        medidas[`${qual}_${e.chave}`] = r;
+        const ids = r.cartoes.map((c) => c.id);
+        const daPagina = new Set(r.medidasDaPagina);
+        const soltos = ids.filter((i) => !daPagina.has(i));
+        const semSelo = r.cartoes.filter((c) => !c.selo);
+        /* A MESMA GEOMETRIA DA F3, AQUI, e é onde ela morde: uma das sete
+           medidas de um concelho cita uma linha dentro da unidade e traz um
+           SEGUNDO selo no cartão. Nenhum dos dois pode cair debaixo da porta nem
+           sobre o outro. */
+        const sobrepostas = [];
+        for (const c of r.cartoes) {
+          for (let a = 0; a < c.selos.length; a++) {
+            if (c.porta && intersecta(c.porta, c.selos[a])) sobrepostas.push(`${c.id}·porta×selo${a}`);
+            for (let b = a + 1; b < c.selos.length; b++) {
+              if (intersecta(c.selos[a], c.selos[b])) sobrepostas.push(`${c.id}·selo${a}×selo${b}`);
+            }
+          }
+        }
+        const maisDoQueUmSelo = r.cartoes.filter((c) => c.selos.length > 1).length;
+        conta(
+          `F12·${qual}·${e.chave} · a página herda a cabeça: tem faixa, os cartões são medidas dela, e nenhum selo fica debaixo da porta`,
+          r.temFaixa &&
+            ids.length > 0 &&
+            soltos.length === 0 &&
+            semSelo.length === 0 &&
+            sobrepostas.length === 0,
+          `${ids.length} cartões · sem correspondência na página: ${soltos.join(', ') || 'nenhum'} · sem selo: ${semSelo.length}` +
+            ` · cartões com mais do que um selo: ${maisDoQueUmSelo} · áreas sobrepostas: ${sobrepostas.length}` +
+            `${sobrepostas.length ? ` (${sobrepostas.slice(0, 3).join(', ')})` : ''}` +
+            ` · <${r.etiqueta}> com o nome «${r.rotulo ?? 'nenhum'}»`,
+        );
+      }
+    }
+  }
+}
+
+/* ===========================================================================
+ * OS ESTRAGOS PLANTADOS · os cinco que a ordem de construção nomeia
+ * ======================================================================== */
+const soNaPrimeira = (rota) => rota === '/' || rota === '/index.html' || rota === '/en/' || rota === '/en/index.html';
+const comFolha = (css) => (html, rota) =>
+  soNaPrimeira(rota) ? html.replace('</head>', `<style>${css}</style></head>`) : html;
+
+const PLANTAS = [
+  {
+    nome: 'um cartão sem selo (o selo do primeiro cartão retirado)',
+    celulas: ['F2'],
+    estrago: (html, rota) => {
+      if (!soNaPrimeira(rota)) return html;
+      const i = html.indexOf('<li class="cartao"');
+      if (i < 0) return html;
+      const f = html.indexOf('</li>', i);
+      const cartao = html.slice(i, f);
+      const sem = cartao.replace(/<a class="src-chip[\s\S]*?<\/a>/, '');
+      return sem === cartao ? html : html.slice(0, i) + sem + html.slice(f);
+    },
+  },
+  {
+    nome: 'um cartão sem alvo de 44 px (a porta encolhida a 30 px)',
+    celulas: ['F3'],
+    estrago: comFolha('.cartao:first-child .cartao-porta{inset:0 auto auto 0 !important;width:30px !important;height:30px !important}'),
+  },
+  {
+    nome: 'a faixa a depender de guião (os cartões escondidos pela folha)',
+    celulas: ['F4'],
+    estrago: comFolha('.cartao:nth-child(n+2){display:none !important}'),
+  },
+  {
+    nome: 'um número sem linha (um algarismo escrito à mão dentro de um cartão)',
+    celulas: ['F2'],
+    estrago: (html, rota) => {
+      if (!soNaPrimeira(rota)) return html;
+      return html.replace(
+        /(<p class="cartao-unidade"[^>]*>)/,
+        '$1<span>13 de 27</span>',
+      );
+    },
+  },
+  {
+    nome: 'a lista dos nomes a abrir só com guião (o <details> trocado por uma caixa escondida)',
+    celulas: ['F10'],
+    estrago: (html, rota) => {
+      if (!soNaPrimeira(rota)) return html;
+      return html
+        .replace('<details class="gaveta" data-gaveta="nomes">', '<div class="gaveta" data-gaveta="nomes" hidden>')
+        .replace(/<summary class="gaveta-abrir">([\s\S]*?)<\/summary>/, '<p class="gaveta-abrir">$1</p>');
+    },
+  },
+  /* Dois estragos a mais, que não estão na ordem e existem porque as células
+     que eles nomeiam não tinham planta nenhuma: uma célula sem estrago é uma
+     célula que ninguém provou saber falhar. */
+  {
+    nome: 'o encaixe retirado da folha',
+    celulas: ['F5'],
+    estrago: comFolha('.faixa{scroll-snap-type:none !important}.cartao{scroll-snap-align:none !important}'),
+  },
+  {
+    nome: 'a faixa por baixo do mapa',
+    celulas: ['F9'],
+    estrago: comFolha('[data-inicio] .faixa-bloco{order:9 !important}@media (min-width:1024px){.faixa-bloco{grid-row:4 !important}.cabeca-inst{grid-row:1 !important}}'),
+  },
+];
+
+if (VERMELHOS) {
+  console.log('');
+  let falhou = false;
+  const tocada = (c, planta) => planta.celulas.some((n) => c.nome.startsWith(n));
+  for (const planta of PLANTAS) {
+    ESTRAGO = null;
+    celulas = [];
+    medidas = {};
+    await correTudo(planta.celulas);
+    const antes = celulas.filter((c) => tocada(c, planta));
+    const verdesAntes = antes.length > 0 && antes.every((c) => c.passa);
+
+    let mudou = false;
+    for (const [rota, rel] of [
+      ['/', 'index.html'],
+      ['/en', path.join('en', 'index.html')],
+    ]) {
+      const cru = fs.readFileSync(path.join(DIST, rel), 'utf8');
+      if (planta.estrago(cru, rota) !== cru) mudou = true;
+    }
+
+    ESTRAGO = planta.estrago;
+    celulas = [];
+    medidas = {};
+    await correTudo(planta.celulas);
+    const depois = celulas.filter((c) => tocada(c, planta));
+    const apanhou = depois.some((c) => !c.passa);
+
+    const ok = verdesAntes && mudou && apanhou;
+    if (!ok) falhou = true;
+    console.log(
+      `  ${ok ? verde('vermelho ✓') : vermelho('NÃO APANHOU ✗')}  ${planta.nome}` +
+        cinza(
+          `  [${antes.length} célula(s) · verde antes: ${verdesAntes} · o HTML mudou: ${mudou} · vermelho depois: ${apanhou}]`,
+        ),
+    );
+    for (const c of depois.filter((c) => !c.passa).slice(0, 2)) {
+      console.log(cinza(`              ${c.nome} · ${c.prova}`));
+    }
+    if (!verdesAntes) {
+      for (const c of antes.filter((c) => !c.passa).slice(0, 2)) {
+        console.log(vermelho(`              já estava vermelha ANTES: ${c.nome} · ${c.prova}`));
+      }
+    }
+  }
+  ESTRAGO = null;
+  console.log('');
+  await nav.close();
+  servidor.close();
+  process.exit(falhou ? 1 : 0);
+}
+
+await correTudo(null);
+await nav.close();
+servidor.close();
+
+console.log('');
+for (const c of celulas) {
+  console.log(`  ${c.passa ? verde('✓') : vermelho('✗')} ${c.nome}`);
+  console.log(cinza(`      ${c.prova}`));
+}
+const falhadas = celulas.filter((c) => !c.passa);
+console.log('');
+console.log(
+  falhadas.length === 0
+    ? verde(`  ${celulas.length} células, todas verdes.\n`)
+    : vermelho(`  ${falhadas.length} de ${celulas.length} células vermelhas.\n`),
+);
+
+if (FICHEIRO_JSON) {
+  fs.writeFileSync(
+    path.resolve(RAIZ, String(FICHEIRO_JSON)),
+    JSON.stringify({ celulas, medidas }, null, 2),
+  );
+}
+process.exit(falhadas.length === 0 ? 0 : 1);

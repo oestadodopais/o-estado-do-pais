@@ -38,6 +38,7 @@ import Claim from '../components/Claim.astro';
 import Provenance from '../components/Provenance.astro';
 import Frase from '../components/Frase.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
+import Faixa from '../components/inicio/Faixa.astro';
 import Peca from '../components/inicio/Peca.astro';
 import MapaRespira from '../components/inicio/MapaRespira.astro';
 import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
@@ -148,6 +149,36 @@ const indicePartes = temIndice
  * agora as sete, pela ordem declarada, cada uma a dizer se tem linha.
  */
 const pecas = pecasDoConcelho(m);
+
+/* ---------------------------------------------------------------------------
+ * A FAIXA DO CONCELHO (01.09.2026)
+ * ---------------------------------------------------------------------------
+ * A cabeça nova é a mesma nas três páginas, «cada uma com a sua faixa»: aqui são
+ * as medidas de hoje do concelho, que são as MESMAS peças que a camada do
+ * Relance rende por baixo, da mesma lista e pela mesma ordem. Um cartão leva à
+ * leitura daquela medida, nesta página.
+ *
+ * UMA PEÇA VAZIA NÃO É UM CARTÃO. A disposição-padrão da Emenda 14 rende, num
+ * concelho sem uma medida, uma peça sem valor, sem selo e sem marcador: «sem
+ * linha ainda». Um cartão dessa medida seria um cartão sem número e sem selo, e
+ * a régua da faixa recusa-o com razão — o cartão é o valor. A ausência continua
+ * a dizer-se onde ela é verdade, na peça, que é o que a Emenda 14 prova.
+ *
+ * `estado` PASSA TAL E QUAL o que `pecasDoConcelho()` calculou, incluindo o nulo
+ * de um valor que é uma marca da fonte («N.d.»): ali o limiar existe e o que
+ * falta é o valor, e nenhuma das três palavras da casa é verdade (regra 2 de
+ * 28.08). Sem palavra, sem quadrado.
+ */
+const cartoes = pecas
+  .filter((tile) => !tile.vazia)
+  .map((tile) => ({
+    id: tile.claim,
+    ancora: `m-${tile.claim}`,
+    nome: tile.nome[lang],
+    medida: tile.medida[lang],
+    estado: tile.estado,
+    glifos: [...String(tile.linha.value)].length,
+  }));
 
 /* --- os trabalhos sobre o concelho ---------------------------------------
    Um concelho sem trabalho publicado não declara `estudos`, e a secção inteira
@@ -398,6 +429,13 @@ const metodoPath = routePath('metodo', lang);
         página na etapa 2m; sai daqui agora, e a relocação R6 fecha a zero. O que
         a página mede lê-se nas sete medidas. */}
   </div>
+
+  {/* A FAIXA, LOGO A SEGUIR À CABEÇA (01.09.2026). A mesma peça da primeira
+      página, com as medidas de hoje deste concelho, e cada cartão a levar à
+      leitura da sua medida na camada do Relance, mais abaixo. O mapa deste lugar
+      é o cartão localizador, que vive no fim da página com a linha do tempo e as
+      contas: a cabeça de um concelho acaba na faixa. */}
+  <Faixa s={s} lang={lang} rotulo={s.inicio.faixa.rotulo} cartoes={cartoes} />
 
   <!-- ===================================================== CAMADA 1 — RELANCE -->
   <section id="relance" aria-labelledby="relance-k">
