@@ -17,7 +17,7 @@
 | 01.09.2026 | **O corredor diário**: decidir a hora (06:10 UTC proposta), criar a chave de implantação com escrita no repositório do sítio e guardá-la como segredo da ação no motor, criar o repositório `oestadodopais/arquivo` (`FRESCURA-E-AUTOMACAO.md` §9) | as definições dos repositórios são dele | o piloto do corredor (`BRIEF-piloto-corredor.md`) |
 | 01.09.2026 | **A hora do advogado**, com `DILIGENCIA-LEGAL.md` (as perguntas 1 a 5 primeiro: se o sítio é imprensa e publicação periódica; o cartão de equiparado; a exposição pelo tempo decorrido; a morada; o estatuto editorial) | dinheiro e a ERC são dele (política da autonomia) | a indexação, o registo se se aplicar, o estatuto editorial, a página de licença |
 | 01.09.2026 | **Aprovar ou emendar o texto do plano de fim de vida e nomear a segunda pessoa** na nota de continuidade (`~/Obsidian/Handoffs/O Estado do País · nota de continuidade.md`) | a continuidade é dele | a nota deixa de ser uma lista e passa a ser uma continuidade |
-| 31.08.2026 | **Religar o Vercel ao repositório na organização** (Settings → Git) e confirmar com `npm run verify:deploy` | as definições do Vercel são dele | os lançamentos continuarem a sair do repositório certo depois da transferência |
+| 31.08.2026 | **Religar o Vercel ao repositório na organização** (Settings → Git) e confirmar com `npm run verify:deploy`. **Confirmado a 01.09.2026 que é preciso:** o `push` de `077d2b7..8ba6dd4` não disparou lançamento nenhum, e o sítio no ar ficou em `077d2b7` | as definições do Vercel são dele | os lançamentos voltarem a sair a cada `push` (hoje: o carimbo semanal de 31.08 e tudo o que vier a seguir) |
 
 ## Feitas
 

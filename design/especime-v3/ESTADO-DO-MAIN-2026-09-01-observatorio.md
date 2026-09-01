@@ -4,7 +4,7 @@
 
 ## O que muda no ar
 
-Só o carimbo da corrida semanal de 31.08 (`3198666`): 32 afirmações reconferidas, 0 alarmes, `verificadoEm` de 24.08 para 31.08, e uma verificação nova no recibo de cada uma das 32 linhas. Nenhuma página nova, nenhum número novo. Empurrado para `origin/main` no fecho da sessão; o `verify:deploy` corre depois do lançamento e o resultado fica no cofre.
+**Nada, ainda.** O `push` de 01.09 (`077d2b7..8ba6dd4`, para `github.com/oestadodopais/o-estado-do-pais`) não disparou lançamento nenhum no Vercel: cinco minutos depois, um pedido por minuto, a lista de lançamentos continuava a acabar no de há dois dias. O Vercel está ligado ao repositório antigo, na conta pessoal do diretor, e a religação à organização é dele e está pendente desde 31.08 (`PENDENTES-DO-DIRETOR.md`). O sítio no ar está em `077d2b7`, com o carimbo semanal de 24.08; quando o diretor religar, o lançamento seguinte traz o carimbo de 31.08 (`3198666`: 32 afirmações reconferidas, 0 alarmes) e nenhuma página nova nem número novo. O `verify:deploy` corre nessa altura.
 
 ## O que muda no repositório
 
