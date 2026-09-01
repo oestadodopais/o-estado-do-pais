@@ -45,3 +45,11 @@ note: "Cruzado de ResearchHub content/06 Évora Economy · conc-vab4-pt."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014047&Dim1=S7A2024&lang=PT&Dim2=PT"
+    result: "igual"
+    by: "corredor-diario"

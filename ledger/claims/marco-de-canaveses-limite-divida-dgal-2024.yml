@@ -41,3 +41,11 @@ note: "[note do motor] coluna (1): Limite 2024 (Art.º 52.º, n.º 1 da Lei n.º
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://portalautarquico.dgal.gov.pt/ficheiros/?schema=f7664ca7-3a1a-4b25-9f46-2056eef44c33&channel=b968cb93-065b-4076-96bd-ee3919432585&content_id=47E7F1B2-F35F-4A27-9850-3BAF922FC36F&field=storage_image&lang=pt&ver=1&filetype=pdf&dtestate=2025-12-18180039"
+    result: "igual"
+    by: "corredor-diario"

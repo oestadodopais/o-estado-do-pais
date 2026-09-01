@@ -51,3 +51,11 @@ note: "[note do motor] Coordenadas do pedido: nace_r2 B-S_X_O, unit PC, geo PT, 
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/earn_gr_gpgr2?format=JSON&lang=EN&geo=PT"
+    result: "igual"
+    by: "corredor-diario"

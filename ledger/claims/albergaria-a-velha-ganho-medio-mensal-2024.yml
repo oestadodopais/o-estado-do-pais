@@ -46,3 +46,11 @@ note: "[note do motor] T3 do inventário das fontes de 01.09.2026. INE 0012656, 
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0012656&Dim1=S7A2024&lang=PT"
+    result: "igual"
+    by: "corredor-diario"

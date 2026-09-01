@@ -52,3 +52,11 @@ corrections:
     new_value: "https://geo2.dgterritorio.gov.pt/caop/CAOP_RAA_2025-gpkg.zip"
     reason: "O endereço antigo é a pasta onde os ficheiros da CAOP estão alojados e devolve HTTP 403 a qualquer pedido, com listagem desativada: não é, nem nunca foi, uma página que se possa abrir. Os ficheiros por baixo dela respondem HTTP 200. A linha passa a citar o ficheiro de onde a contagem foi feita. O valor não muda."
     reason_en: "The old address is the directory the CAOP files sit in and returns HTTP 403 to every request, with listing disabled: it is not, and never was, a page that can be opened. The files beneath it answer HTTP 200. The row now cites the file the count was made over. The value does not change."
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://geo2.dgterritorio.gov.pt/caop/CAOP_RAA_2025-gpkg.zip"
+    result: "igual"
+    by: "corredor-diario"

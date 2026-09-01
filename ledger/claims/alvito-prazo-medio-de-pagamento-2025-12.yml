@@ -46,3 +46,11 @@ note: "[note do motor] coluna 31/12/2025 de «LISTA DO PRAZO MÉDIO DE PAGAMENTO
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://portalautarquico.dgal.gov.pt/ficheiros/?schema=f7664ca7-3a1a-4b25-9f46-2056eef44c33&channel=b968cb93-065b-4076-96bd-ee3919432585&content_id=BA9E7E0B-DAB7-43A4-9014-3D4E5B1A3466&field=storage_image&lang=pt&ver=1&filetype=pdf&dtestate=2026-04-30143311"
+    result: "igual"
+    by: "corredor-diario"

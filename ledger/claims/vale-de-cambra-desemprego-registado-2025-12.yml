@@ -45,3 +45,11 @@ note: "[note do motor] Quadro_I, linha 74, coluna Total, região 1; DICO 0119 ·
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://www.iefp.pt/documents/10181/13014940/SIE+-+Desemprego+registado+por+concelhos+dezembro+2025.ods/e6d88643-cc12-41ae-990e-61bdbb296dd4"
+    result: "igual"
+    by: "corredor-diario"

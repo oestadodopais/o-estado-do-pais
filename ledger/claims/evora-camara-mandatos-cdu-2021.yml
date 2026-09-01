@@ -40,3 +40,11 @@ note: "Cruzado de ResearchHub content/08 Évora Mandates · el2021-pcp-pev-seats
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://www.eleicoes.mai.gov.pt/autarquicas2021/assets/static/territory-results/territory-results-LOCAL-070500-CM.json"
+    result: "igual"
+    by: "corredor-diario"

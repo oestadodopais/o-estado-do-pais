@@ -45,3 +45,11 @@ note: "Empréstimo de saneamento financeiro, recebido e aplicado na totalidade e
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-01"
+    path: "https://www.cm-evora.pt/wp-content/uploads/2020/06/Relatorio_Gestão_2016.pdf#page=79"
+    result: "igual"
+    by: "corredor-diario"
