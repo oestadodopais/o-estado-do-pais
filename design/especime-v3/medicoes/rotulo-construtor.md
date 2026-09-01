@@ -37,15 +37,15 @@ que mudou e porquê.*
 
 ## 1 · Os commits
 
-Quatro commits de código, mais o que traz este relatório, que não pode conter o
-seu próprio resumo.
+Cinco commits de código, mais o que traz este relatório.
 
-| commit | o quê |
-| --- | --- |
-| `fe2ab5b` | a política da casa e o rótulo de IA em todas as páginas |
-| `06fb12c` | os dados estruturados dizem a geração por IA |
-| `cea6167` | a régua do rótulo, com sete células e sete estragos plantados |
-| `2b8e774` | os travessões saem da prosa nova deste bloco |
+| commit | passagem | o quê |
+| --- | --- | --- |
+| `fe2ab5b` | primeira | a política da casa e o rótulo de IA em todas as páginas |
+| `06fb12c` | primeira | os dados estruturados dizem a geração por IA |
+| `cea6167` | primeira | a régua do rótulo, com sete células e sete estragos plantados |
+| `2b8e774` | primeira | os travessões saem da prosa nova deste bloco |
+| `82046ad` | **segunda** | o oráculo do portão sai do ficheiro que ele confere, e mais nove (§11) |
 
 O quarto é uma reparação minha: escrevi vinte e um travessões contra a regra do
 projeto, nos comentários e em três cadeias de saída da régua, e saem todos. O
@@ -60,9 +60,11 @@ nova no `DECISIONS.md`, que é do lugar de direção), `public/` não foi tocado
 identidade não foi tocada, o motor não foi tocado.
 
 `npm run build`, `npm run verify` e `npm run typecheck` correram a **0** no
-estado de cada um dos quatro commits de código. O quinto acrescenta este
-ficheiro, que nenhum passo da cadeia lê: a corrida que provou o quarto provou a
-árvore em que ele entra, ficheiro a ficheiro.
+estado de cada um dos cinco commits de código. Este relatório entra no `82046ad`
+e a emenda do seu §1 num commit a seguir, porque um relatório não pode conter o
+seu próprio resumo; nenhum passo da cadeia lê `design/especime-v3/medicoes/`, e a
+corrida que provou o `82046ad` provou a árvore em que ele entra, ficheiro a
+ficheiro.
 
 ## 2 · Ficheiro a ficheiro
 
@@ -662,14 +664,14 @@ que a leitura a frio fez.
 
 Modelo: **Claude Opus 5**.
 
-Cerca de **490 000 símbolos**, lidos do contador de orçamento da própria sessão:
-15 000 000 quando ela abriu e cerca de 14 510 000 quando esta linha foi escrita.
-É a aritmética desse contador e não uma contabilidade por chamada, e o que vier
-depois desta linha fica de fora dela.
+Cerca de **590 000 símbolos** nas duas passagens, lidos do contador de orçamento
+da própria sessão: 15 000 000 quando ela abriu e cerca de 14 410 000 quando esta
+linha foi escrita. É a aritmética desse contador e não uma contabilidade por
+chamada, e o que vier depois desta linha fica de fora dela.
 
-**Oito construções completas**: sete nesta worktree (a linha de base em
-`b097d20`, duas a corrigir, e uma por cada um dos quatro commits de código) e
-uma na worktree temporária que mediu a matriz em `b097d20`. Cada uma a **2 min
-50 s a 3 min**; o `verify` a cerca de 1 min 20 s; o corredor dos oito estragos
-do portão a cerca de 6 min, porque cada um corre o portão inteiro sobre as 6 606
+**Onze construções completas**: dez nesta worktree (a linha de base em
+`b097d20`, quatro na primeira passagem e cinco na segunda) e uma na worktree
+temporária que mediu a matriz em `b097d20`. Cada uma a **2 min 50 s a 3 min**; o
+`verify` a cerca de 1 min 20 s; os dois corredores de estragos do portão a cerca
+de 6 min e 9 min, porque cada estrago corre o portão inteiro sobre as 6 606
 páginas.
