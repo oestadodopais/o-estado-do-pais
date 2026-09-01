@@ -38,7 +38,9 @@
  */
 import Base from '../layouts/Base.astro';
 import InstrumentoConvergencia from '../components/InstrumentoConvergencia.astro';
+import CabecaDoLugar from '../components/inicio/CabecaDoLugar.astro';
 import Faixa from '../components/inicio/Faixa.astro';
+import Frase from '../components/Frase.astro';
 import Peca from '../components/inicio/Peca.astro';
 import { regiaoDoSlug } from '../lib/regioes.mjs';
 import { getClaim } from '../lib/ledger.mjs';
@@ -133,37 +135,57 @@ const cartoes = [
   title={`${nome} · ${s.regioes.metaCauda}`}
   description={`${s.regioes.metaDescricaoA}${nome}${s.regioes.metaDescricaoB}`}
 >
-  <div class="regiao-cabeca">
-    <span class="eyebrow">{s.regioes.eyebrow}</span>
-    {/* O nome vai declarado como lugar, pela mesma razão das 29 unidades e dos
-        308 concelhos: é o nome da coisa de que a página trata, transcrito, e não
-        prosa da casa. Sem isto o inventário ganhava uma entrada por região. */}
-    <h1 data-lugar>{nome}</h1>
-    <p class="regiao-tipo">{s.regioes.tipo}</p>
-  </div>
-
-  {/* A FAIXA, LOGO A SEGUIR À CABEÇA (01.09.2026). A mesma peça da primeira
-      página, com as medidas desta região: é a cabeça nova a herdar-se, «cada uma
-      com a sua faixa». Um cartão leva à leitura daquela medida mais abaixo,
-      nesta mesma página. Uma região não tem mapa (Emenda 21d: «uma região não
-      tem mapa de pontos nem de áreas; tem a régua»), e por isso a cabeça daqui
-      acaba na faixa e o instrumento que se segue é a régua da convergência. */}
-  <Faixa s={s} lang={lang} rotulo={s.inicio.faixa.rotulo} cartoes={cartoes} />
-
-  <section class="regiao-instr" id="regua" aria-labelledby="regua-k">
-    <h2 class="regiao-instr-k" id="regua-k">{s.home.instr1.h2}</h2>
-    <InstrumentoConvergencia lang={lang} distinguida={slug} />
-  </section>
-
   {/* ------------------------------------------------------------------------
-      AS PEÇAS DA REGIÃO · as que a região tiver
+      A CABEÇA DA REGIÃO É A MESMA DA DO PAÍS (01.09.2026)
       ------------------------------------------------------------------------
-      Hoje são duas, e as duas saem da entrada da região no ficheiro de dados: o
-      índice e a distância. Uma região que traga mais linhas traz mais peças pelo
-      mesmo caminho, porque a lista sai da entrada e não de um gabarito escrito à
-      mão. Nenhuma leva estado nem cor: não há limiar publicado numa média
-      (Emenda 1), e o que a régua desenha é a posição, não um juízo.
-      ---------------------------------------------------------------------- */}
+      `CabecaDoLugar` é o componente das três camadas, e a ordem é a dele: o
+      nome do lugar, a manchete, a faixa e o instrumento da camada. O que muda
+      de camada para camada é o que enche cada ranhura.
+
+      A MANCHETE PASSA A SER A FRASE DA REGIÃO, que é uma afirmação com um
+      número selado («A Grande Lisboa está 21 pontos acima da média da UE-27.»),
+      e é o que o brief pede a uma manchete de domínio: «uma afirmação com
+      números selados, como a da primeira página». Era o nome da região sozinho.
+      O nome não se perde: está no rótulo, declarado como lugar, e dentro da
+      própria frase.
+
+      E SAI DA LEITURA BREVE DO INSTRUMENTO, senão dizia-se duas vezes no mesmo
+      ecrã, com o mesmo valor e o mesmo selo. É a mesma razão que a etapa 2i
+      escreveu para a peça de uma região (achado 6, R4), e é por isso que o
+      instrumento leva agora `leituraNaCabeca`.
+
+      O INSTRUMENTO DA CAMADA É A RÉGUA, e não um mapa: a Emenda 21 (d) decide
+      que «uma região não tem mapa de pontos nem de áreas; tem a régua». O
+      artefacto do mapa da casa tem 29 unidades (distritos e ilhas) e as regiões
+      são NUTS II: não há geometria de região no repositório, e desenhar uma
+      seria uma fronteira que a Carta não dá. A régua sobe da metade de baixo da
+      página para a cabeça, que é onde o instrumento da camada pertence.
+      ------------------------------------------------------------------------ */}
+  <CabecaDoLugar forma="lugar" chave="regiao">
+    <div class="cabeca-col" slot="col">
+      <div class="cabeca-bloco">
+        {/* O nome vai declarado como lugar, pela mesma razão das 29 unidades e
+            dos 308 concelhos: é o nome da coisa de que a página trata,
+            transcrito, e não prosa da casa. Sem isto o inventário ganhava uma
+            entrada por região. */}
+        <p class="cabeca-rotulo">
+          <span class="eyebrow">{s.regioes.eyebrow}</span> · <span data-lugar>{nome}</span>
+        </p>
+        <h1 class="cabeca-h1">
+          <Frase partes={regiao.frase[lang]} lang={lang} selos={true} />
+        </h1>
+        <p class="regiao-tipo">{s.regioes.tipo}</p>
+      </div>
+    </div>
+
+    <Faixa slot="faixa" s={s} lang={lang} rotulo={s.inicio.faixa.rotulo} cartoes={cartoes} />
+
+    <section slot="instrumento" class="regiao-instr" id="regua" aria-labelledby="regua-k">
+      <h2 class="regiao-instr-k" id="regua-k">{s.home.instr1.h2}</h2>
+      <InstrumentoConvergencia lang={lang} distinguida={slug} leituraNaCabeca={true} />
+    </section>
+  </CabecaDoLugar>
+
   <section class="regiao-pecas" id="pecas" aria-labelledby="pecas-k">
     <h2 class="regiao-instr-k" id="pecas-k">{s.regioes.pecasK}</h2>
     <div class="painel">

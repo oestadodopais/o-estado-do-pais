@@ -1256,6 +1256,28 @@ export const STRINGS = {
     },
 
     municipio: {
+      /* ---------------------------------------------------------------------
+       * A MANCHETE DO CONCELHO (01.09.2026)
+       * ---------------------------------------------------------------------
+       * A cabeça das três camadas é a mesma, e o brief pede que a manchete seja
+       * «uma afirmação com números selados» e não um título. A do país conta
+       * limiares; a de uma região é a frase da região, que já existia. Um
+       * concelho não tinha nenhuma, e esta é a mais barata que é verdadeira nos
+       * 308: a população residente, que é a única medida que todos publicam, com
+       * o seu selo e a sua linha.
+       *
+       * A FRASE PARTE-SE ONDE O NÚMERO ENTRA, como a do país: nenhuma destas
+       * duas cadeias traz um algarismo, e o valor entra por `<Claim/>`. O nome
+       * do concelho vai declarado como lugar e não é prosa da casa.
+       *
+       * NÃO DIZ MAIS NADA, e é uma decisão: um segundo membro sobre o índice de
+       * dívida contra o teto legal era possível (o estado está medido em
+       * `pecasDoConcelho`), e seria a casa a escolher, por 308 páginas, qual das
+       * sete medidas merece a manchete. Essa escolha é do diretor, e está no
+       * relatório como proposta.
+       */
+      mancheteA: ' tem ',
+      mancheteB: ' pessoas.',
       eyebrow: 'Município',
       /* O título e a descrição do <head> não podem ter algarismos: o portão só
          tolera aí as cadeias que calcula do registo. Compõem-se com o nome do
@@ -2218,6 +2240,9 @@ export const STRINGS = {
     },
 
     municipio: {
+      /* A manchete do concelho. Ver a razão na edição portuguesa. */
+      mancheteA: ' has ',
+      mancheteB: ' people.',
       eyebrow: 'Municipality',
       metaCauda: 'the municipality, measured · O Estado do País',
       metaDescricaoA: 'What the sources publish about the municipality of ',

@@ -1,0 +1,54 @@
+
+[90m  claro (:root)[0m
+[90m  par                           limiar  [0m[90mtokens.css            [0m
+  ink / paper [90m(texto)[0m           4,5     [32m16,39:1  ✓            [0m
+  muted / paper [90m(texto)[0m         4,5     [32m6,24:1  ✓             [0m
+  paper / ink [90m(texto)[0m           4,5     [32m16,39:1  ✓            [0m
+  ink / g3 [90m(texto)[0m              4,5     [32m12,83:1  ✓            [0m
+  ochre / paper [90m(texto)[0m         4,5     [32m6,37:1  ✓             [0m
+  cobalt-palavra / paper [90m(texto)[0m4,5     [32m7,73:1  ✓             [0m
+  rule-strong / paper [90m(interface)[0m3       [32m3,47:1  ✓             [0m
+  axis / paper [90m(interface)[0m      3       [32m3,47:1  ✓             [0m
+  g2 / paper [90m(interface)[0m        3       [32m3,47:1  ✓             [0m
+  focus / paper [90m(interface)[0m     3       [32m16,39:1  ✓            [0m
+  ink / g3 [90m(interface)[0m          3       [32m12,83:1  ✓            [0m
+  muted / g3 [90m(interface)[0m        3       [32m4,88:1  ✓             [0m
+  paper / ink [90m(interface)[0m       3       [32m16,39:1  ✓            [0m
+  amber / paper [90m(interface)[0m     3       [31m2,09:1  ✗             [0m
+  onamber / amber [90m(interface)[0m   3       [32m7,85:1  ✓             [0m
+  cobalt / paper [90m(interface)[0m    3       [32m7,73:1  ✓             [0m
+  ink / cobalt [90m(interface)[0m      3       [31m2,12:1  ✗             [0m
+  amber / cobalt [90m(interface)[0m    3       [32m3,70:1  ✓             [0m
+  rule / paper [90m(decoração)[0m      0       [90m1,28:1  ·             [0m
+  g3 / paper [90m(decoração)[0m        0       [90m1,28:1  ·             [0m
+  rule-strong / paper [90m(decoração)[0m0       [90m3,47:1  ·             [0m
+
+[90m  escuro, à escolha do leitor (:root[data-theme='dark'])[0m
+[90m  par                           limiar  [0m[90mtokens.css            [0m
+  ink / paper [90m(texto)[0m           4,5     [32m15,38:1  ✓            [0m
+  muted / paper [90m(texto)[0m         4,5     [32m9,52:1  ✓             [0m
+  paper / ink [90m(texto)[0m           4,5     [32m15,38:1  ✓            [0m
+  ink / g3 [90m(texto)[0m              4,5     [32m9,19:1  ✓             [0m
+  ochre / paper [90m(texto)[0m         4,5     [32m8,00:1  ✓             [0m
+  cobalt-palavra / paper [90m(texto)[0m4,5     [32m7,18:1  ✓             [0m
+  rule-strong / paper [90m(interface)[0m3       [32m5,80:1  ✓             [0m
+  axis / paper [90m(interface)[0m      3       [32m5,80:1  ✓             [0m
+  g2 / paper [90m(interface)[0m        3       [32m5,80:1  ✓             [0m
+  focus / paper [90m(interface)[0m     3       [32m15,38:1  ✓            [0m
+  ink / g3 [90m(interface)[0m          3       [32m9,19:1  ✓             [0m
+  muted / g3 [90m(interface)[0m        3       [32m5,69:1  ✓             [0m
+  paper / ink [90m(interface)[0m       3       [32m15,38:1  ✓            [0m
+  amber / paper [90m(interface)[0m     3       [32m8,00:1  ✓             [0m
+  onamber / amber [90m(interface)[0m   3       [31m1,92:1  ✗             [0m
+  cobalt / paper [90m(interface)[0m    3       [31m2,16:1  ✗             [0m
+  ink / cobalt [90m(interface)[0m      3       [32m7,12:1  ✓             [0m
+  amber / cobalt [90m(interface)[0m    3       [32m3,70:1  ✓             [0m
+  rule / paper [90m(decoração)[0m      0       [90m1,67:1  ·             [0m
+  g3 / paper [90m(decoração)[0m        0       [90m1,67:1  ·             [0m
+  rule-strong / paper [90m(decoração)[0m0       [90m5,80:1  ·             [0m
+
+[90m  src/styles/tokens.css: uma paleta escura, à escolha do leitor, com 22 fichas.[0m
+
+  src/styles/tokens.css: [32m0 falhas de texto[0m · [33m4 objeto(s) de interface abaixo de 3:1[0m
+[90m  A régua não falha a construção. O que ela diz decide-se por escrito.[0m
+

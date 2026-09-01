@@ -1,5 +1,7 @@
 # A cabeça nova como contentor · relatório do construtor
 
+*Segunda passagem, 01.09.2026, sobre os oito pontos que o lugar de direção devolveu depois da medição cega (Sonnet, 4 de 4 estragos vistos) e da leitura a frio (Codex, 3 de 3 plantas). O que mudou nesta passagem está na §10, e os números do relatório inteiro são os dela.*
+
 *Bloco `cabeca-2026-09-01`, saído de `main` `307796f` (que é `cfa5045`, o commit que a ordem nomeia, mais o commit da própria ordem), num worktree. Construtor: Claude Opus 5. Ordem: `design/observatorio/ORDEM-cabeca-2026-09-01.md`. Especificação: `design/observatorio/BRIEF-forma-dos-dominios.md`. Todas as medições correram em Chromium sem cabeça sobre o `dist/` construído, nas duas edições, e cada número desta página saiu de uma corrida que se diz ao lado dele. Sem travessões na prosa.*
 
 **Modelo: Claude Opus 5.**
@@ -8,15 +10,15 @@
 
 A primeira página tem a cabeça do brief: o nome, a manchete, uma faixa de vinte e um cartões que se percorre de lado com `scroll-snap` e sem uma linha de guião, e o mapa. A busca dos 308 e os nomes das 29 unidades recolheram-se em duas gavetas ao lado do mapa, fechadas, que abrem sem guião. A linha de comando («Âmbito», «Densidade») saiu da cabeça e desceu para o cabeçalho do painel. As páginas de região e de concelho herdam a mesma faixa, cada uma com as suas medidas. A data do cabeçalho passou a escrever-se dd.mm.aaaa.
 
-A 390 px, o primeiro número selado de uma medida estava a **2 071,9 px** da manchete, ou seja a **2,45 ecrãs** de 844 px; passou a estar a **138,2 px**, ou **0,16 ecrãs**. A página do país a 390 encolheu **474 px** e a 1280 encolheu **5 px**.
+A 390 px, o primeiro número selado de uma medida estava a **1 766,9 px** da manchete, ou seja a **2,09 ecrãs** de 844 px; passou a estar a **138,2 px**, ou **0,16 ecrãs**. A página do país a 390 encolheu **479 px** e a 1280 encolheu **5 px**.
 
 ## 1 · As medidas de aceitação do brief §4, célula a célula
 
 | a medida do brief | como ficou | onde se lê |
 |---|---|---|
 | a 390 × 844 o primeiro ecrã contém o nome, a manchete inteira, a faixa com o primeiro cartão inteiro e o topo do mapa | **cumprida.** nome 68 a 103,4 (inteiro); manchete 249,5 a 408,3 (inteira); faixa 510,3 a 710,1 (inteira); primeiro cartão 511,3 a 705,1 (inteiro); topo do mapa a 726,1, dentro dos 844 | §2.1 |
-| o primeiro número selado a menos de um ecrã da manchete a 390 | **cumprida.** 138,2 px, 0,16 ecrãs (antes 2 071,9 px, 2,45 ecrãs) | §2.2 · `faixa.mjs` F11 |
-| a página do país a 390 não mais alta do que hoje | **cumprida.** 7 529 → **7 055** px (−474); em inglês 7 484 → 7 025 (−459). Também abaixo dos 7 383 px que o brief cita de 29.08 | §2.3 |
+| o primeiro número selado a menos de um ecrã da manchete a 390 | **cumprida.** 138,2 px, 0,16 ecrãs (antes 1 766,9 px, 2,09 ecrãs, medidos numa construção do commit de partida) | §2.2 · `faixa.mjs` F11 |
+| a página do país a 390 não mais alta do que hoje | **cumprida.** 7 529 → **7 050** px (−479); em inglês 7 484 → 7 020 (−464). Também abaixo dos 7 383 px que o brief cita de 29.08 | §2.3 |
 | a página do país a 1280 não mais alta do que hoje | **cumprida contra o «hoje» medido, e não contra o número de 29.08.** 4 030 → **4 025** px (−5). O brief cita 4 003 px, medidos a 29.08; a página cresceu 27 px entre 29.08 e 01.09 com o bloco do rótulo de IA, e a ordem manda medir de novo o «hoje». Contra 4 003 px ficam 22 px acima, e isso fica dito | §2.3 e a dúvida 3 |
 | a cabeça a 1280 mantém o alinhamento da §1.84 | **mantém-se, e o mecanismo mudou.** O mapa vai de 351,1 a 1 034,1 e a legenda acaba em 1 034,1: **0 px** de diferença no fundo, e 0 px no topo contra a manchete. O que mudou foi a dependência: era a altura a decidir a largura, e passou a ser a largura a decidir a altura | §3.2 · `lista.mjs` L11 |
 | `tests/inicio/lista.mjs` (L11 a L13) verde ou reescrita, nunca desligada | **94 de 94 verdes.** L2, L3, L9, L11, L12 reescritas para a forma decidida, com a razão escrita em cada uma | §4 |
@@ -58,16 +60,20 @@ O «antes» é a construção de `307796f`, medida nesta worktree antes da prime
 
 ### 2.2 · Da manchete ao primeiro número selado
 
-Do fundo da manchete ao topo do primeiro `[data-claim]` que tem o seu selo no invólucro, que é a mesma relação que `auditaSelo()` confere no portão.
+Do fundo da manchete ao topo do primeiro `[data-claim]` que tem o seu selo no invólucro, que é a mesma relação que `auditaSelo()` confere no portão. A manchete é a da VISTA (`main h1`) e não o `<h1 class="wordmark">` do cabeçalho.
 
-| | antes | depois |
+**O «antes» desta tabela foi medido outra vez, e o primeiro estava errado.** A primeira redação deste programa media `document.querySelector('h1')`, que devolve o `<h1>` do cabeçalho, ou seja o nome do sítio: a distância saía do nome do sítio e não da afirmação com números, e o número publicado na primeira passagem (2 071,9 px, 2,45 ecrãs) media outra coisa. O seletor foi corrigido, mas o «antes» nunca tinha sido corrido com ele: a construção de partida já não existia. Nesta passagem o commit de partida (`307796f`) foi extraído para uma pasta de ensaio fora do repositório (`git archive`, sem tocar em nada), construído e medido com o programa corrigido. Os números abaixo são desse ensaio.
+
+| | antes (`307796f`, medido de novo) | depois |
 |---|---:|---:|
-| 390 pt · a primeira MEDIDA | 2 071,9 px · **2,45 ecrãs** | **138,2 px · 0,16 ecrãs** |
-| 390 en · a primeira medida | 2 023,3 px · 2,40 ecrãs | 138,2 px · 0,16 ecrãs |
-| 1280 pt · a primeira medida | 1 069,4 px · 1,27 ecrãs | 109,1 px · 0,13 ecrãs |
-| 390 pt · o primeiro selado de qualquer espécie | 1 323,6 px (a contagem dos 308 da legenda) | 138,2 px (a dívida pública) |
+| 390 pt · a primeira MEDIDA | 1 766,9 px · **2,09 ecrãs** | **138,2 px · 0,16 ecrãs** |
+| 390 en · a primeira medida | 1 749,7 px · 2,07 ecrãs | 138,2 px · 0,16 ecrãs |
+| 1280 pt · a primeira medida | (não medido no ensaio) | 109,1 px · 0,13 ecrãs |
+| 390 pt · o primeiro selado de qualquer espécie | 1 018,6 px · 1,21 ecrãs (a contagem dos 308 da legenda) | 138,2 px (a dívida pública) |
 
-*Dois números e não um, e a razão está no programa: o primeiro selado do documento era a contagem dos 308 concelhos da legenda do mapa, que é uma medida da Carta e não uma medida de Portugal. A leitura do lugar de direção de 31.08 diz «cerca de quatro ecrãs»; o que este bloco mediu na construção de partida foram 2,45, e é esse o número contra o qual o depois se lê.*
+*Dois números e não um, e a razão está no programa: o primeiro selado do documento era a contagem dos 308 concelhos da legenda do mapa, que é uma medida da Carta e não uma medida de Portugal.*
+
+*A leitura do lugar de direção de 31.08 diz «cerca de quatro ecrãs»; o que este ensaio mede são 2,09. A medição cega do Sonnet, com o método dela, deu 2,22. As três contas medem coisas ligeiramente diferentes (de onde começa a manchete, o que conta como primeiro número), e o que este relatório afirma é a sua, com o programa e o commit ao lado.*
 
 ### 2.3 · A altura das páginas, às sete larguras e nas duas edições
 
@@ -77,11 +83,11 @@ Do fundo da manchete ao topo do primeiro `[data-claim]` que tem o seu selo no in
 
 | janela | pt | menos | en | menos |
 |---|---|---:|---|---:|
-| 320 | 7 931 → **7 334** | −597 | 7 895 → **7 298** | −597 |
-| 360 | 7 557 → **7 100** | −457 | 7 635 → **7 178** | −457 |
-| 390 | 7 529 → **7 055** | −474 | 7 484 → **7 025** | −459 |
-| 430 | 7 300 → **6 964** | −336 | 7 303 → **6 968** | −335 |
-| 768 | 5 277 → **5 261** | −16 | 5 370 → **5 371** | +1 |
+| 320 | 7 931 → **7 301** | −630 | 7 895 → **7 265** | −630 |
+| 360 | 7 557 → **7 066** | −491 | 7 635 → **7 144** | −491 |
+| 390 | 7 529 → **7 050** | −479 | 7 484 → **7 020** | −464 |
+| 430 | 7 300 → **6 959** | −341 | 7 303 → **6 963** | −340 |
+| 768 | 5 277 → **5 261** | −16 | 5 370 → **5 371** | **+1** |
 | 1024 | 3 872 → **3 914** | **+42** | 3 831 → **3 876** | **+45** |
 | 1280 | 4 030 → **4 025** | −5 | 4 014 → **4 009** | −5 |
 
@@ -89,17 +95,17 @@ Do fundo da manchete ao topo do primeiro `[data-claim]` que tem o seu selo no in
 
 | janela | região pt | menos | concelho pt | menos |
 |---|---|---:|---|---:|
-| 320 | 2 778 → **3 101** | +323 | 10 071 → **10 279** | +208 |
-| 390 | 2 602 → **2 927** | +325 | 9 253 → **9 461** | +208 |
-| 768 | 2 454 → **2 746** | +292 | 7 028 → **7 235** | +207 |
-| 1024 | 2 550 → **2 864** | +314 | 6 644 → **6 867** | +223 |
-| 1280 | 2 662 → **2 980** | +318 | 6 776 → **6 983** | +207 |
+| 320 | 2 778 → **3 187** | +409 | 10 071 → **10 302** | +231 |
+| 390 | 2 602 → **3 010** | +408 | 9 253 → **9 484** | +231 |
+| 768 | 2 454 → **2 792** | +338 | 7 028 → **7 207** | +179 |
+| 1024 | 2 550 → **2 910** | +360 | 6 644 → **7 104** | +460 |
+| 1280 | 2 662 → **3 008** | +346 | 6 776 → **7 207** | +431 |
 
-*As três subidas dizem-se sem as arredondar. A 1024 a primeira página cresce 42 px, e é a única largura em que cresce: ali o mapa tem 340,1 px de largura e 448,4 de altura, e a coluna esquerda passou a ter uma fila a mais (a faixa) sem que o mapa possa crescer com ela. O brief nomeia 390 e 1280 e as duas ficam abaixo do «hoje»; a 1024 não fica, e a decisão de a perseguir é do lugar de direção (dúvida 3).*
+**Onde a primeira página cresce, e são duas larguras e não uma.** A 1024 cresce 42 px em português e 45 em inglês; a 768 encolhe 16 px em português e cresce **1 px** em inglês. A primeira redação deste relatório escreveu «1024 é a única largura em que cresce», e não é: em inglês são duas. A 1024 a razão é medida: o mapa tem 340,1 px de largura e 448,4 de altura, e a coluna esquerda passou a ter uma fila a mais (a faixa) sem que o mapa possa crescer com ela. A 768 em inglês é um píxel, e é o arredondamento de uma linha de texto. O brief nomeia 390 e 1280 e as duas ficam abaixo do «hoje»; as outras não são medidas de aceitação, e ficam escritas.
 
-*Na página de uma região, dos ~320 px que ela ganha, a faixa é uma parte e a outra é um defeito consertado: `RegiaoView.astro` rendia `<Peca>` dentro de um `.painel` desde a Emenda 21 e nunca importou `src/styles/inicio.css`, onde as duas classes vivem. Medido na construção de partida: a folha ligada por `/regioes/alentejo` é só a de `Base`, e nela não há uma única regra `.peca`. As duas peças de cada uma das nove regiões desenhavam-se sem folha nenhuma. A faixa precisava da mesma folha, e foi isso que trouxe o defeito à luz. Está em §6.*
+**A página de uma região cresce ~350 a 400 px, e a maior parte não é a faixa.** `RegiaoView.astro` rendia `<Peca>` dentro de um `.painel` desde a Emenda 21 e nunca importou `src/styles/inicio.css`, onde as duas classes vivem: as duas peças de cada uma das nove regiões desenhavam-se sem folha nenhuma. A faixa precisava da mesma folha e trouxe o defeito à luz. Está na §6.
 
-*Na página de um concelho, os ~208 px são a faixa, e são o preço de ter o Relance no primeiro ecrã: a célula A8 de `correcoes-a.mjs` media que os quatro primeiros valores do relance cabem nos primeiros 800 px, e com as peças o primeiro estava a 744 px e só dois dos quatro cabiam; com a faixa o primeiro está a 496 e cabem os quatro.*
+**A página de um concelho cresce ~180 a 230 px no telemóvel e ~440 no ecrã largo.** É a faixa, mais o cartão localizador que subiu para a cabeça: no ecrã largo ele estava na coluna do aparelho, ao lado do corpo, e passou a ter uma fila só para ele. O que se compra é a camada 1 no primeiro ecrã: a célula A8 de `correcoes-a.mjs` media que os quatro primeiros valores do relance cabem nos primeiros 800 px, e com as peças o primeiro estava a 744 px e só dois dos quatro cabiam; com a faixa o primeiro está a 388 e cabem os quatro.
 
 ### 2.4 · Os alvos
 
@@ -115,7 +121,9 @@ A área efectiva de um alvo é a caixa do elemento unida com a do seu `::after` 
 | 1024 | 32 | 4 + 24 | 4 + 24 |
 | 1280 | 32 | 4 + 24 | 4 + 24 |
 
-**Os alvos pequenos não são deste bloco, e são os mesmos antes e depois.** A 768 são as quatro posições do âmbito e as duas da densidade (33,6 px de altura: `.seg { min-height: 44px }` vive dentro do `@media (max-width: 640px)`) e cinco resultados da busca (`.chipb`, 34,9 px, pela mesma razão), mais «O livro-razão →», «a página inteira →», o endereço de correio e «O registo de correções →». A 1024 e a 1280, onde o mínimo é 32, ficam esses quatro últimos, com 14, 19,2, 19 e 24 px de altura. **Nenhum é da faixa nem das gavetas**, e nenhum mudou com este bloco: a regra dos 44 px abaixo de 1024 tem um buraco entre 641 e 1023 que é anterior a este trabalho e continua aberto. Fica na §6.
+**Os alvos pequenos não são deste bloco, e são os mesmos antes e depois.** A 768 são **onze, e a conta fecha**: as **seis** posições da linha de comando (quatro do âmbito e duas da densidade, 33,6 px de altura, porque `.seg { min-height: 44px }` vive dentro do `@media (max-width: 640px)`) e **cinco** ligações de texto («O livro-razão →» com 14 px, «Agenda» com 32, «a página inteira →» com 19,2, o endereço de correio com 19 e «O registo de correções →» com 24). A 1024 e a 1280, onde o mínimo é 32, ficam quatro dessas cinco. **Nenhum é da faixa nem das gavetas**, e nenhum mudou com este bloco: a regra dos 44 px abaixo de 1024 tem um buraco entre 641 e 1023 que é anterior a este trabalho e continua aberto. Fica na §6.
+
+*A primeira redação desta secção contava «seis posições, cinco resultados da busca e quatro ligações», que são quinze e não onze: os resultados da busca já não entram na conta, porque a sonda passou a perguntar ao navegador se uma gaveta fechada se vê, e a soma tinha ficado por refazer.*
 
 **Uma gaveta fechada não é um alvo, e as réguas tiveram de aprender isso.** Medido neste Chromium: `getBoundingClientRect()` sobre um descendente de um `<details>` fechado devolve na mesma uma caixa, com coordenadas de um arranjo que não está no ecrã. Sem esse conhecimento, os 308 resultados da busca entravam na medição como alvos e davam 63 pares de áreas sobrepostas em `correcoes-a.mjs` A10. A pergunta certa é `checkVisibility()`, que é a do navegador e responde «não»; está escrita em `correcoes-a.mjs`, em `faixa.mjs`, em `mapa-navegacao.mjs` e no programa das medidas, com a razão ao lado.
 
@@ -213,8 +221,8 @@ O âmbito desceu com ela, e não subiu para o menu como o brief pede. A razão e
 
 | régua | resultado |
 |---|---|
-| `tests/inicio/faixa.mjs` (nova) | **76 de 76 células** |
-| `tests/inicio/faixa.mjs --vermelhos` | **7 de 7 estragos vistos vermelhos**, com as três exigências (verde antes, o HTML mudou, vermelho depois) |
+| `tests/inicio/faixa.mjs` (nova) | **80 de 80 células** |
+| `tests/inicio/faixa.mjs --vermelhos` | **7 de 7 estragos vistos vermelhos**, com as três exigências (verde antes, o HTML mudou, vermelho depois) e com o vermelho exigido em TODAS as células que cada planta nomeia |
 | `tests/inicio/lista.mjs` | **94 de 94** (eram 94; L2, L3, L9, L11 e L12 reescritas) |
 | `tests/inicio/mapa-distritos.mjs` | 43 de 43 |
 | `tests/inicio/mapa-navegacao.mjs` | 9 de 9 (N3 reescrita) |
@@ -223,7 +231,7 @@ O âmbito desceu com ela, e não subiu para o menu como o brief pede. A razão e
 | `tests/inicio/app.mjs` | 39 de 39 |
 | `tests/inicio/regioes.mjs` | 30 de 30 |
 | `tests/inicio/rotulo.mjs` | 7 de 7 |
-| `tests/inicio/matriz.mjs` | **86 de 87** · duas células reescritas; uma falha que não é deste bloco (§6) |
+| `tests/inicio/matriz.mjs` | **86 de 87** · três células reescritas; a falha que fica não é deste bloco e está aprovada como exceção (§6) |
 
 **Os sete estragos plantados de `faixa.mjs`.** Os cinco que a ordem nomeia, e dois que ela não nomeia e que existem porque as células que eles apanham não tinham planta nenhuma: uma célula sem estrago é uma célula que ninguém provou saber falhar.
 
@@ -248,6 +256,8 @@ O âmbito desceu com ela, e não subiu para o menu como o brief pede. A razão e
 * `matriz.mjs` **2i·5** media a rolagem desde o topo da página; passa a medir a rolagem entre o foco e o espaço, que é o que a célula existe para provar. Com o comando no topo da cabeça isso dava sempre zero e a diferença não se via.
 * `matriz.mjs` **2m (f1)** media a legenda dentro do campo do desenho, no canto que as ilhas deixam. Essa regra saiu a 29.08 e a célula estava vermelha desde então, antes deste bloco; passa a medir a decisão que a substituiu, que é a legenda não se sobrepor ao desenho.
 * `matriz.mjs` **2m (f2)** media a busca a abrir acima do mapa; mede agora a gaveta a abrir com o estado e a ficar por baixo dele.
+* `matriz.mjs` **I18** lê o rótulo do distrito por `.municipio-sub`; o bloco mudou de moldura e a classe viajou com ele, porque é a marca que a régua conhece.
+* `faixa.mjs` **F3** deixou de aceitar uma porta que pára antes do pé e passou a perguntar ao navegador quem apanha o toque; **F9** ganhou a invariante das duas colunas; **F12** passou a exigir a cabeça inteira; **F13** é nova, e mede o transbordo horizontal às sete larguras e nas duas edições.
 
 ## 5 · A voz e a língua
 
@@ -311,12 +321,36 @@ A data do sinal de tempo do cabeçalho passou de `2026-08-31` para `31.08.2026`,
 
 **4 · A ordem no ecrã a partir de 1024.** «Nome, manchete, faixa, mapa, por esta ordem no documento e no ecrã, nas duas larguras.» No documento cumpre-se em todas. No ecrã, a partir de 1024, a cabeça tem duas colunas e o mapa começa à altura da manchete: a faixa vem antes dele na ordem de LEITURA da coluna esquerda, e não no topo das caixas. **A minha proposta:** é isto que «ao lado» quer dizer, e é o que a emenda das 19:50 de 29.08 decidiu; a alternativa é a cabeça de uma coluna a 1280, que devolve os 1 260 px de papel vazio que a §1.84 existiu para tirar. A célula F9 mede as duas formas com a sua conta cada. *Construído com as duas colunas.*
 
-**5 · As quatro cadeias dos `<summary>` das gavetas.** A régua da voz salta os `<summary>` e por isso «Os nomes no mapa», «Um concelho pelo nome» e as duas inglesas são texto à vista que o inventário não conhece (§6.5). Não as pus no inventário porque uma linha `viva` que a régua não recolhe fecha a construção. **A minha proposta:** um bloco pequeno que ensine `medir-defeitos.mjs` a ler os `<summary>` e que classifique as que aparecerem, incluindo as quatro deste ramo; não é trabalho para dentro deste bloco, porque muda a régua da voz para o sítio inteiro.
+**5 · As quatro cadeias dos `<summary>` das gavetas.** **FECHADA na segunda passagem**, e não adiada: a régua da voz passou a ler os `<summary>`, e as nove linhas que isso revelou estão classificadas (§5.1 e §8, ponto 5).
 
-## 8 · As capturas
+**6 · A manchete de um concelho diz a população, e podia dizer mais.** A que se construiu é «Évora tem 53 011 pessoas.»: um número selado, a única medida que os 308 publicam, e nenhuma escolha da casa sobre o que importa. Um segundo membro era possível e é mais interessante (o índice de dívida contra o teto legal, cujo estado já está medido em `pecasDoConcelho`: «está dentro do teto legal», «ultrapassa o teto legal»), e não o construí por uma razão que é do diretor e não minha: escolher, por 308 páginas, qual das sete medidas merece a manchete é uma decisão editorial. Fica proposto, com o mecanismo pronto.
+
+## 8 · A segunda passagem, ponto a ponto
+
+*Os oito pontos que o lugar de direção devolveu depois da medição cega e da leitura a frio. O que era decisão veio decidido; o que se segue é a obra.*
+
+**1 · A cabeça herdada a sério nas regiões e nos concelhos.** Nasce `src/components/inicio/CabecaDoLugar.astro`, e as três camadas passam por ele. Duas formas, a mesma ordem e as mesmas classes: `forma="pais"` é a cabeça de duas colunas da §1.84; `forma="lugar"` é uma coluna, com o instrumento da camada por baixo da faixa. **A região** ganha manchete numérica (a frase da região, «A Grande Lisboa está 21 pontos acima da média da UE-27.», com o seu selo), que sai da leitura breve do instrumento para não se dizer duas vezes no mesmo ecrã (`InstrumentoConvergencia` recebe `leituraNaCabeca`), e ganha o instrumento na cabeça: a régua da convergência, que subiu da metade de baixo da página. **O concelho** ganha manchete numérica («Évora tem 53 011 pessoas.», com o selo da linha da população, que é a única das sete medidas que os 308 publicam) e o cartão localizador, que subiu da coluna do aparelho para a cabeça. `F12` foi reescrita e passou a exigir a cabeça inteira e não só a faixa: a moldura, o rótulo com o nome do lugar declarado, a manchete com um número selado, a faixa com os seus cartões, o instrumento com desenho lá dentro, e a ordem no documento. Corre nas três camadas e nas duas edições, seis células.
+
+*O mapa de uma região não existe, e não se inventou.* O artefacto da casa tem 29 unidades (distritos e ilhas) e as regiões são NUTS II: não há geometria de região no repositório, e o campo `regiao` de um concelho é NUTS III («Alentejo Central»), que não serve para as agrupar. Desenhar uma seria traçar uma fronteira que a Carta não dá. A forma mais barata que é verdadeira é a que a Emenda 21 (d) já tinha decidido: «uma região não tem mapa de pontos nem de áreas; tem a régua». A maqueta é a página construída, e está medida na §2.3 e nas capturas.
+
+**2 · A porta do cartão cobre o cartão inteiro.** Cobria as três primeiras filas e parava antes do pé, e a `F3` aceitava isso: a 390 o pé é um terço da altura do cartão, e um terço do cartão que não abre nada é um alvo com um buraco. A porta passa a ocupar as cinco filas e a sair do enchimento pelos quatro lados; os selos ficam por cima dela, com um degrau de `z-index`. O que a Emenda 2 protege deixa de ser uma regra geométrica e passa a ser medido onde ela o promete: a `F3` pergunta ao navegador, com `document.elementFromPoint` no centro de cada selo e com o cartão trazido à vista, quem apanha o toque, e exige que seja o selo; e num ponto do corpo exige que seja a porta. Nos 21 cartões, às sete larguras e nas duas edições. A célula A10 de `correcoes-a.mjs` aprendeu a mesma pergunta: um par em que uma caixa contém a outra e a de dentro ganha o toque sai da lista, e um selo por baixo da porta não sai, porque a resposta seria «a porta».
+
+**3 · O «antes» da manchete.** Estava medido com o seletor errado e nunca fora corrido de novo. O commit de partida foi extraído para uma pasta de ensaio fora do repositório, construído e medido: **1 766,9 px, 2,09 ecrãs** em português e 1 749,7 px, 2,07 em inglês. A §2.2, o §0 e a §1 estão corrigidos, e a §2.2 diz de onde vem o número e porque é que o outro estava errado.
+
+**4 · O transbordo horizontal em `/en/`.** **Era real, e é anterior a este bloco.** Medido nas duas construções, a de partida (`307796f`) e esta: `/en/` rolava de lado **33 px a 320** e **16 px a 390**, e `/` não rolava a nenhuma largura. O culpado é a linha de comando: «Country · Region · Municipality · Areas» pede 334,7 px e a coluna dá 284 a 320. E a causa exacta não era a fila: era `.cmd { flex-wrap: wrap }` a valer numa direção de coluna, o que faz a LINHA ter a largura do item mais largo em vez da do contentor. Medido: `.cmd` media 284 px e `.cmd-grupo` media 334,7. Três linhas consertam-no: `flex-wrap: nowrap` na coluna, `overflow-x: auto` na fila, e cada posição com a sua largura em vez de repartirem uma que não chega. **Está a zero nas duas edições e às sete larguras**, e passa a ter régua própria (`F13`). As capturas foram refeitas.
+
+**5 · Os `<summary>` entram na régua da voz.** `frasesDaCasa()` saltava todos os `<summary>` sem condição, debaixo de um comentário que falava de outra coisa. O salto sai, e a regra que fica vale para eles como para qualquer bloco: o que se recolhe é o texto de fora das âncoras. Apareceram cinco frases distintas por edição, e só duas são novas no sítio: o «Menu» do cabeçalho (que estava declarado pelo `aria-label` e não pelo texto), o «abrir/fechar» da densidade de cada peça, a porta das linhas de um documento, e os nomes das duas gavetas. Nove linhas novas no inventário, classe `navegacao`, bloco `cabeca`; `check:voz` a 0. A dúvida 5 da primeira passagem fecha-se aqui.
+
+**6 · O arnês das plantas.** «Pelo menos uma célula vermelha» passa a ser «vermelho em TODAS as células que a planta nomeia», e o corredor aponta quantas de quantas. Isso apanhou dois defeitos do próprio arnês: o `tocada()` comparava por prefixo, e uma planta da `F1` contava com o vermelho da `F10`, da `F12` ou da `F13`; e `soNaPrimeira()` escrevia `/en/` com barra quando o servidor recebe `/en` sem ela, **de modo que nenhum dos sete estragos chegava à edição inglesa** e as sete plantas passavam com metade das células. Os dois estão consertados, aqui e em `lista.mjs`, que tinha o defeito simétrico. E a `F9` do ecrã largo ganhou invariante própria: não basta «o mapa à direita», exige-se a ordem da coluna esquerda (manchete, faixa, gavetas), a faixa na banda dessa coluna e o mapa a começar acima do topo da faixa. Com ela, a planta que põe a faixa por baixo do mapa passa a morder às sete larguras, e não só às cinco estreitas. **Sete de sete estragos vistos vermelhos, em todas as células que nomeiam.**
+
+**7 · As miudezas.** A aritmética dos alvos a 768 estava errada (contava quinze e são onze) e está refeita na §2.4 com a razão de a soma ter mudado. «1024 é a única largura em que cresce» era falso em inglês, onde a 768 cresce 1 px, e a §2.3 di-lo. O teto legal da dívida está documentado como **150** (era o que o livro-razão publica; os comentários diziam 100) em `Faixa.astro` e na folha. O comentário da célula `2i·5` da matriz passa a dizer o que o teste faz: mede a rolagem ENTRE o foco e o espaço, porque a soma das duas parcelas dava o número certo por acaso enquanto o comando esteve no topo. A saída de `medir-contraste.mjs` fica guardada em `medicoes/cabeca-contraste.txt`, ao lado das medidas, e as razões dos quatro objetos abaixo de 3:1 estão na §2.5.
+
+**8 · As cinco datas ISO do concelho.** Era barato e está feito. Nasce `src/lib/datas.mjs` com uma função só, `dataDaCasa()`, que escreve `aaaa-mm-dd` como `dd.mm.aaaa` e deixa passar tudo o que não seja uma data completa (um ano, um mês, um período), porque uma função que adivinhasse inventaria dias. É usada no sinal de tempo do cabeçalho e nas duas datas completas das listas de mandatos do concelho, «a partir de» e «instalado a». Os ficheiros de dados continuam em ISO.
+
+## 9 · As capturas
 
 42 ficheiros em `design/especime-v3/medicoes/cabeca-2026-09-01/`, no tema claro: as três rotas (a primeira página, `/regioes/alentejo`, `/municipios/evora`) às sete larguras da casa (320, 360, 390, 430, 768, 1024, 1280) e nas duas edições, com o nome a dizer o que cada uma é (`<rota>-<largura>-<edição>-claro.png`). O tema entra pela escolha guardada no aparelho, que é o único caminho para ele desde a Emenda 12: pôr `data-theme` à mão fotografaria a folha e não o mecanismo.
 
-## 9 · O custo
+## 10 · O custo
 
 O harness desta sessão não imprime os símbolos gastos, e por isso não escrevo um número que não medi: **[verify]**, com a razão. A estimativa do lugar de direção para o bloco inteiro é de 0,6 a 0,9 M símbolos em duas passagens; esta é a primeira passagem, e o lugar de direção tem a conta do lado dele.

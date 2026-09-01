@@ -863,8 +863,14 @@ async function correTudo(soEstas) {
 /* ===========================================================================
  * OS ESTRAGOS PLANTADOS
  * =========================================================================== */
+/* `/en/` COM BARRA ENTRA TAMBÉM (01.09.2026): o servidor desta régua recebe o
+   caminho tal como a chamada o escreve, e as duas formas existem no código. */
 const soNaPrimeira = (rota) =>
-  rota === '/' || rota === '/index.html' || rota === '/en' || rota === '/en/index.html';
+  rota === '/' ||
+  rota === '/index.html' ||
+  rota === '/en' ||
+  rota === '/en/' ||
+  rota === '/en/index.html';
 const comFolha = (css) => (html, rota) =>
   soNaPrimeira(rota) ? html.replace('</head>', `<style>${css}</style></head>`) : html;
 

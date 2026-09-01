@@ -593,9 +593,29 @@ function frasesDaCasa(root) {
     if (el.querySelector(DECLARADO)) continue;
     const t = norm(texto(el));
     if (!t) continue;
-    /* Uma ligação inteira não é uma frase: é um destino. O teste é sobre o
-       texto que fica FORA das âncoras, e não sobre a etiqueta do elemento. */
-    if (String(el.rawTagName ?? '').toLowerCase() === 'summary') continue;
+    /* --------------------------------------------------------------------
+       O `<summary>` ENTRA (01.09.2026)
+       --------------------------------------------------------------------
+       Estava escrito aqui «uma ligação inteira não é uma frase: é um destino»,
+       e a linha a seguir saltava TODOS os `<summary>` sem condição. As duas
+       coisas não são a mesma: o comentário fala do texto que fica fora das
+       âncoras, e isso é a regra que vem logo a seguir e vale para todos os
+       blocos; o salto do `<summary>` era mais largo do que a sua razão.
+
+       O QUE ELE DEIXAVA PASSAR. Um `<summary>` é texto à vista, escrito pela
+       casa, e é a palavra que o leitor lê antes de decidir se abre. Nenhum
+       estava neste inventário: nem o «abrir/fechar» de cada peça, nem a porta
+       da régua da convergência, nem — desde o bloco da cabeça nova, 01.09.2026 —
+       os nomes das duas gavetas do mapa. O bloco da cabeça encontrou o buraco e
+       este commit fecha-o, com as cadeias que ele revela classificadas.
+
+       O «Menu» do cabeçalho já estava declarado, mas pelo `aria-label` e não
+       pelo texto: as dicas e os rótulos de acessibilidade entram desde a I79.
+       Passa a estar pelas duas superfícies, que é o que ele é.
+
+       A REGRA QUE FICA vale para o `<summary>` como para qualquer outro bloco:
+       o que se recolhe é o texto de fora das âncoras e dos botões. Um `<summary>`
+       cujo conteúdo seja só uma ligação continua a não ser uma frase. */
     /* O texto que fica FORA das âncoras e dos botões, percorrendo a árvore. Uma
        subtração de cadeias não serve: dois destinos seguidos dão «a →b →» de um
        lado e «a → b →» do outro, e o bloco escapava por um espaço. */
