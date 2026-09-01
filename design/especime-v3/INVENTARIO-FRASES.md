@@ -15,7 +15,8 @@ escreve aqui.*
 
 *Etapa 2l, 21.08.2026. A Emenda 15 («a página do leitor não se explica») traz a
 sua própria medida: «o inventário de todas as frases da casa na superfície
-pública, classificadas em conteúdo, navegação e autorreferência; a terceira
+pública, classificadas em conteúdo, navegação e autorreferência (e, desde
+01.09.2026, divulgação); a terceira
 classe vai a zero fora do Método, do Sobre e do recibo, e a régua imprime a
 contagem para que não volte».*
 
@@ -103,6 +104,15 @@ mais curta que seja. O mesmo teste está em `direcao.md`, por baixo da Emenda 15
   estado vazio de uma pesquisa, a descrição acessível de um instrumento.
 - **autorreferência** — o método, a verificação, a honestidade, a cobertura ou
   as intenções do próprio sítio. **Zero na primeira página**, nas duas edições.
+- **divulgação**: o que está na página porque a lei o obriga, e sairia no dia em
+  que a lei mudasse: o rótulo de IA do artigo 50.º do Regulamento (UE) 2024/1689,
+  a ficha do artigo 15.º da Lei de Imprensa, e a política publicada que o rótulo
+  aponta. **Entrou a 01.09.2026**, e não abre porta traseira nenhuma à Emenda 15:
+  a autorreferência existe **para mostrar diligência**, a divulgação existe
+  **porque alguém tem de saber quem responde**, a contagem da terceira continua a
+  ir a zero em todas as rotas medidas, e uma frase de divulgação que explique
+  porque se deve confiar na casa é autorreferência com outro nome. A secção do
+  bloco «rotulo-ia», mais abaixo, escreve-o por extenso.
 
 **A frase de identidade é NAVEGAÇÃO (Emenda 18, 25.08.2026).** «Um observatório
 de Portugal.» e «An observatory of Portugal.», por baixo da marca e só na
@@ -1596,3 +1606,96 @@ linhas existem para fazer.*
 | conteudo | medidas do Painel Social Europeu que o livro-razão guarda | inicio-lista | viva | — |
 | conteudo | medidas do painel cujo quadro publica um limiar | inicio-lista | viva | — |
 | conteudo | panel measures whose scoreboard publishes a threshold | inicio-lista | viva | — |
+
+## Bloco «rotulo-ia» · a divulgação pela via B · 01.09.2026
+
+*Emendado na segunda passagem do mesmo dia, depois da leitura a frio: as quatro
+linhas da primeira passagem mudam de classe e entram trinta e quatro que
+faltavam.*
+
+**Trinta e oito cadeias, e nenhuma entra por uma escolha editorial.** O artigo
+50.º, n.º 4, segundo parágrafo, do Regulamento (UE) 2024/1689 manda divulgar que
+um texto publicado para informar o público sobre matérias de interesse público
+foi gerado por IA, e o n.º 5 manda dá-lo «de forma clara e percetível, o mais
+tardar no momento da primeira interação ou exposição». A isenção do mesmo
+parágrafo é para quem tem revisão humana ou controlo editorial; a casa escolheu a
+via B (rotular tudo) a 30.08.2026 e não a invoca. O artigo 15.º, n.º 1 da Lei de
+Imprensa acrescenta o nome do diretor e a menção de gratuitidade na primeira
+página de cada edição. **A lei obriga a divulgar E obriga a que a política
+divulgada exista publicada**: por isso entram as duas cadeias do rótulo, as duas
+da ficha, e as trinta e quatro da secção da política que o rótulo aponta, no
+Método e no Sobre.
+
+## A classe é `divulgacao`, e é nova
+
+A primeira passagem meteu as quatro cadeias do rótulo em `navegacao`, e era a
+classificação a torcer-se para caber. **Nenhuma das três classes descrevia o que
+elas são.** Conteúdo é o que a coisa medida é; navegação é o que leva a outro
+sítio; autorreferência é o método, a verificação, a honestidade, a cobertura ou
+as intenções do próprio sítio. Uma divulgação obrigatória não é nada disso: está
+na página porque a lei a põe lá, e sairia no dia em que a lei mudasse.
+
+**`autorreferencia` continua a ir a ZERO em todas as rotas medidas**, e a classe
+nova não abre uma porta traseira à Emenda 15. A diferença entre as duas é a que a
+própria emenda escreve: a autorreferência existe **para mostrar diligência**, e a
+divulgação existe **porque alguém tem de saber quem responde**. Uma frase de
+divulgação que comece a explicar porque se deve confiar na casa é
+autorreferência com outro nome, e continua a ir a zero: quem a apanha é o mesmo
+`npm run check:voz`, que conta a classe e não a intenção.
+
+**As duas cabeças de secção ficam em `navegacao`**, e não em `divulgacao`: «A
+política da casa» e «The house policy» nomeiam um lugar da página, como qualquer
+outro nome de secção, e é o que a lista já chama navegação.
+
+## Onde é que estas cadeias se rendem, e como é que a régua as vê
+
+As trinta e quatro da secção rendem-se em `/metodo` e `/en/method`, e a frase da
+política também no Sobre. **Nenhuma dessas rotas é medida**, porque a Emenda 15
+isenta o Método e o Sobre da contagem: ali a autorreferência é o objecto da
+página. A régua usava a mesma lista para duas perguntas diferentes, e a segunda
+não é a mesma: «esta linha declarada ainda se rende em algum lado?». Ganhou uma
+lista à parte (`ROTAS_QUE_PROVAM_A_RENDICAO` em `scripts/medir-defeitos.mjs`) que
+serve só para responder a essa, sem entrar na contagem por classe, nos blocos por
+classificar, nem na proibição das linhas retiradas.
+
+*O texto de cada linha foi extraído das páginas construídas com a mesma
+definição de bloco que a régua usa, e não datilografado.*
+
+| divulgacao | A casa não aceita dinheiro de nenhuma entidade que mede. | rotulo-ia | viva | — |
+| divulgacao | A casa não chama jornalista à IA e não se diz jornalística. | rotulo-ia | viva | — |
+| divulgacao | A casa não escreve para o alcance: mede-se por citações, não por visitas. | rotulo-ia | viva | — |
+| divulgacao | A casa não guarda dados pessoais dos leitores nem os põe no repositório. | rotulo-ia | viva | — |
+| divulgacao | A casa não publica um número que não tenha lido na fonte, não aproxima o que não existe, e diz as ausências. | rotulo-ia | viva | — |
+| divulgacao | A construção constrói o sítio, e verifica lotes na fonte. | rotulo-ia | viva | — |
+| divulgacao | A direção dirige o trabalho: escreve os briefs, revê e funde. | rotulo-ia | viva | — |
+| divulgacao | A leitura lê sem contexto prévio, com erros plantados que tem de encontrar. | rotulo-ia | viva | — |
+| divulgacao | A medição mede numa cópia, com código próprio, sem ver a construção. | rotulo-ia | viva | — |
+| navegacao | A política da casa | rotulo-ia | viva | — |
+| divulgacao | AI-generated text under the house policy · editorial responsibility: Nuno dos Santos | rotulo-ia | viva | — |
+| divulgacao | Building builds the site, and checks batches at the source. | rotulo-ia | viva | — |
+| divulgacao | Direction directs the work: it writes the briefs, reviews and merges. | rotulo-ia | viva | — |
+| divulgacao | Director: Nuno dos Santos · Free of charge | rotulo-ia | viva | — |
+| divulgacao | Diretor: Nuno dos Santos · Publicação gratuita | rotulo-ia | viva | — |
+| divulgacao | Escrito, conferido e atualizado por sistemas de IA sob uma política publicada; nenhum humano revê cada peça antes de sair; uma pessoa com nome detém a responsabilidade editorial, define as regras e as recusas, e responde. | rotulo-ia | viva | — |
+| divulgacao | Everything the house publishes carries the AI-generated label, on every page, at the moment the page is seen. Review is done by gates and by sample, not piece by piece. | rotulo-ia | viva | — |
+| divulgacao | Measurement measures on a copy, with its own code, without seeing the build. | rotulo-ia | viva | — |
+| divulgacao | Não se publica, e o diretor é avisado · Uma medida nova; uma definição mudada; um ficheiro que a leitura já não reconhece; uma revisão da fonte; um portão vermelho; uma fonte que deixou de responder. | rotulo-ia | viva | — |
+| divulgacao | Never without the director · Any piece that names a person; mail to third parties in the name of the house; a change of identity; money, contracts, accounts. | rotulo-ia | viva | — |
+| divulgacao | Not published, and the director is told · A new measure; a changed definition; a file the reader no longer recognises; a revision at the source; a red gate; a source that has stopped answering. | rotulo-ia | viva | — |
+| divulgacao | Nunca sem o diretor · Qualquer peça que nomeie uma pessoa; correio a terceiros em nome da casa; uma mudança de identidade; dinheiro, contratos, contas. | rotulo-ia | viva | — |
+| divulgacao | Publica-se · Um valor novo da mesma medida, no mesmo formato, da mesma fonte, com todos os portões verdes. | rotulo-ia | viva | — |
+| divulgacao | Published · A new value of the same measure, in the same format, from the same source, with every gate green. | rotulo-ia | viva | — |
+| divulgacao | Reading reads with no prior context, with planted errors it has to find. | rotulo-ia | viva | — |
+| divulgacao | São os modelos Claude da Anthropic, em três lugares (a direção, a construção, a medição), e o Codex da OpenAI na leitura. Um modelo novo só ocupa um lugar depois de passar os mesmos testes que o titular passou, e a troca fica escrita com a data. | rotulo-ia | viva | — |
+| divulgacao | São quatro lugares, e a verificação é sempre de outra família de modelos: | rotulo-ia | viva | — |
+| divulgacao | Texto gerado por IA sob a política da casa · responsável editorial: Nuno dos Santos | rotulo-ia | viva | — |
+| divulgacao | The house does not call the AI a journalist and does not call itself journalism. | rotulo-ia | viva | — |
+| divulgacao | The house does not write for reach: it is measured by citations, not by visits. | rotulo-ia | viva | — |
+| divulgacao | The house keeps no personal data of its readers and puts none in the repository. | rotulo-ia | viva | — |
+| navegacao | The house policy | rotulo-ia | viva | — |
+| divulgacao | The house publishes no figure it has not read at the source, does not approximate what does not exist, and says what is missing. | rotulo-ia | viva | — |
+| divulgacao | The house takes no money from any entity it measures. | rotulo-ia | viva | — |
+| divulgacao | There are four places, and checking is always done by a different family of models: | rotulo-ia | viva | — |
+| divulgacao | They are the Claude models from Anthropic in three of the places (direction, building, measurement), and Codex from OpenAI in the reading. A new model takes a place only after passing the same tests the incumbent passed, and the change is written down with its date. | rotulo-ia | viva | — |
+| divulgacao | Tudo o que a casa publica leva o rótulo de gerado por IA, em cada página, no momento em que a página é vista. A revisão faz-se por portões e por amostra, e não peça a peça. | rotulo-ia | viva | — |
+| divulgacao | Written, checked and updated by AI systems under a published policy; no human reviews each piece before it goes out; a named person holds editorial responsibility, sets the rules and the refusals, and answers for it. | rotulo-ia | viva | — |

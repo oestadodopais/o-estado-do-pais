@@ -30,9 +30,34 @@
  * oitavo item. Uma navegação de rodapé mais completa do que a do cabeçalho não é
  * uma incoerência: o rodapé é o índice do sítio, o cabeçalho é a barra de
  * leitura.
+ *
+ * ---------------------------------------------------------------------------
+ * UMA COISA VOLTOU, E NÃO É A QUE SAIU (01.09.2026)
+ * ---------------------------------------------------------------------------
+ * A §1.39 tirou daqui a linha de autoria, «Escrito por IA, dirigido por uma
+ * pessoa», porque era «uma declaração dita de passagem, no sítio onde ninguém
+ * lê». Essa continua fora, e não volta.
+ *
+ * O que entra é outra coisa, e a diferença é a razão de existir: o rótulo de IA
+ * é uma DIVULGAÇÃO OBRIGATÓRIA, e a obrigação diz onde tem de estar. O artigo
+ * 50.º, n.º 4, segundo parágrafo, do Regulamento (UE) 2024/1689 manda divulgar
+ * que o texto foi gerado por IA, e o n.º 5 manda dá-lo «o mais tardar no
+ * momento da primeira interação ou exposição». A primeira exposição de um
+ * leitor a este sítio é a página onde ele aterra, e não o Sobre: por isso a
+ * linha é de todas as páginas, e por isso não pode ser uma preferência
+ * editorial a decidir onde ela vive. A casa escolheu a via B (rotular tudo) a
+ * 30.08.2026, e a mudança no sítio é a ordem de construção de 01.09.2026.
+ *
+ * VIVE DENTRO DO `<footer>`, e não antes dele como a porta das correções. Um
+ * `<footer>` é o `contentinfo` da página: a autoria e quem responde por ela são
+ * exactamente o que um leitor de ecrã espera encontrar ao saltar para esse
+ * marco, e pô-la fora escondia-a de quem a procura pelo caminho normal. A
+ * navegação continua a ser navegação e mais nada: o rótulo é irmão dela dentro
+ * do rodapé, e não um item da lista.
  */
 import { routePath, otherLanguagePath, normalizePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
+import RotuloDeIA from './RotuloDeIA.astro';
 
 const { lang = 'pt', path, outraLingua = null } = Astro.props;
 const s = t(lang);
@@ -71,4 +96,6 @@ const secoes = [
       lang={lang === 'pt' ? 'en' : 'pt-PT'}
     >{s.outraLingua}</a>
   </nav>
+
+  <RotuloDeIA lang={lang} path={aqui} onde="rodape" />
 </footer>

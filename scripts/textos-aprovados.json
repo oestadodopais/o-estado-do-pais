@@ -1,0 +1,41 @@
+{
+  "_": [
+    "O ORÁCULO DO PORTÃO, E PORQUE É UM FICHEIRO À PARTE (segunda passagem, 01.09.2026).",
+    "A primeira passagem pôs o portão a comparar o rótulo e a frase da política com",
+    "`src/data/politica-ia.mjs`, que é o MESMO ficheiro que os rende. Uma comparação assim",
+    "não compara nada: mudar a cópia muda a saída e o oráculo ao mesmo tempo, e a leitura a",
+    "frio do Codex provou-o com uma planta que tirava o «the» de «under the house policy» e",
+    "passava verde. É a mesma disciplina que o portão já aplica ao livro-razão e ao Sobre, e",
+    "que estava por aplicar aqui: o que confere tem de ser independente do que é conferido.",
+    "",
+    "As cadeias abaixo estão copiadas carácter a carácter da ordem de construção de",
+    "01.09.2026 §3, que é onde o diretor as aprovou, e NÃO de `politica-ia.mjs`. Este",
+    "ficheiro é lido só por `scripts/gate-html.mjs`; nenhum ficheiro de `src/` o importa, e",
+    "é isso que o torna um oráculo. A comparação é exata: sem colapsar espaços, sem aparar",
+    "as pontas, sem normalizar coisa nenhuma.",
+    "",
+    "As duas cadeias da ficha da primeira página não são palavras do diretor: são a forma",
+    "que o construtor deu ao que o artigo 15.º, n.º 1 da Lei de Imprensa pede (o nome do",
+    "diretor e a menção de gratuitidade). Ficam aqui pela mesma razão, e mudam com uma",
+    "decisão escrita."
+  ],
+  "responsavel": "Nuno dos Santos",
+  "lingua_do_responsavel": "pt-PT",
+  "ancora_da_politica": "politica-de-ia",
+  "rotulo": {
+    "pt": "Texto gerado por IA sob a política da casa · responsável editorial: Nuno dos Santos",
+    "en": "AI-generated text under the house policy · editorial responsibility: Nuno dos Santos"
+  },
+  "porta": {
+    "pt": "a política da casa",
+    "en": "the house policy"
+  },
+  "frase": {
+    "pt": "Escrito, conferido e atualizado por sistemas de IA sob uma política publicada; nenhum humano revê cada peça antes de sair; uma pessoa com nome detém a responsabilidade editorial, define as regras e as recusas, e responde.",
+    "en": "Written, checked and updated by AI systems under a published policy; no human reviews each piece before it goes out; a named person holds editorial responsibility, sets the rules and the refusals, and answers for it."
+  },
+  "ficha": {
+    "pt": "Diretor: Nuno dos Santos · Publicação gratuita",
+    "en": "Director: Nuno dos Santos · Free of charge"
+  }
+}
