@@ -1486,4 +1486,6 @@ A regra da carta: as linhas `verificadas` entram primeiro; as `parciais` só dep
 | H5 | verificada (calendário) | a data exata da próxima difusão; a unidade «por 100 000» na ficha | entra com a unidade tal como o Eurostat a imprime («Rate») até a ficha confirmar a base |
 
 Em resumo: entram 36 medidas (contando T2 e T4 por metades), esperam três (S2, S5, D5) e sai uma (T4a). O que o diretor escolher desta tabela é a lista de construção da primeira vaga.
+
+**A escolha do diretor (01.09.2026, à tarde):** adotou esta recomendação tal como está. A lista de construção da primeira vaga é, portanto, a coluna «recomendação» desta tabela, pela ordem estreita da carta; S2, S5 e D5 entram quando fecharem; T4a fica dita como ausência.
 <!-- recomendacao:fim -->
