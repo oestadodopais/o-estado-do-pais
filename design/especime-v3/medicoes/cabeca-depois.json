@@ -1,0 +1,684 @@
+{
+  "alturas": {
+    "home·pt·320": 7334,
+    "home·pt·360": 7100,
+    "home·pt·390": 7055,
+    "home·pt·430": 6964,
+    "home·pt·768": 5261,
+    "home·pt·1024": 3914,
+    "home·pt·1280": 4025,
+    "regiao·pt·320": 3101,
+    "regiao·pt·360": 2957,
+    "regiao·pt·390": 2927,
+    "regiao·pt·430": 2868,
+    "regiao·pt·768": 2746,
+    "regiao·pt·1024": 2864,
+    "regiao·pt·1280": 2980,
+    "concelho·pt·320": 10279,
+    "concelho·pt·360": 9796,
+    "concelho·pt·390": 9461,
+    "concelho·pt·430": 9162,
+    "concelho·pt·768": 7235,
+    "concelho·pt·1024": 6867,
+    "concelho·pt·1280": 6983,
+    "home·en·320": 7298,
+    "home·en·360": 7178,
+    "home·en·390": 7025,
+    "home·en·430": 6968,
+    "home·en·768": 5371,
+    "home·en·1024": 3876,
+    "home·en·1280": 4009,
+    "regiao·en·320": 3155,
+    "regiao·en·360": 2984,
+    "regiao·en·390": 2927,
+    "regiao·en·430": 2861,
+    "regiao·en·768": 2765,
+    "regiao·en·1024": 2864,
+    "regiao·en·1280": 2980,
+    "concelho·en·320": 10247,
+    "concelho·en·360": 9793,
+    "concelho·en·390": 9400,
+    "concelho·en·430": 9168,
+    "concelho·en·768": 7261,
+    "concelho·en·1024": 6808,
+    "concelho·en·1280": 6889
+  },
+  "distancia": {
+    "pt·390": {
+      "manchete": {
+        "topo": 249.5,
+        "fundo": 408.3
+      },
+      "qualquer": {
+        "id": "divida-publica-2025",
+        "topo": 546.5,
+        "px": 138.2,
+        "ecras": 0.16
+      },
+      "medida": {
+        "id": "divida-publica-2025",
+        "topo": 546.5,
+        "px": 138.2,
+        "ecras": 0.16
+      }
+    },
+    "pt·1280": {
+      "manchete": {
+        "topo": 385.9,
+        "fundo": 569.1
+      },
+      "qualquer": {
+        "id": "divida-publica-2025",
+        "topo": 678.2,
+        "px": 109.1,
+        "ecras": 0.13
+      },
+      "medida": {
+        "id": "divida-publica-2025",
+        "topo": 678.2,
+        "px": 109.1,
+        "ecras": 0.13
+      }
+    },
+    "en·390": {
+      "manchete": {
+        "topo": 249.5,
+        "fundo": 377
+      },
+      "qualquer": {
+        "id": "divida-publica-2025",
+        "topo": 515.2,
+        "px": 138.2,
+        "ecras": 0.16
+      },
+      "medida": {
+        "id": "divida-publica-2025",
+        "topo": 515.2,
+        "px": 138.2,
+        "ecras": 0.16
+      }
+    },
+    "en·1280": {
+      "manchete": {
+        "topo": 385.9,
+        "fundo": 569.1
+      },
+      "qualquer": {
+        "id": "divida-publica-2025",
+        "topo": 678.2,
+        "px": 109.1,
+        "ecras": 0.13
+      },
+      "medida": {
+        "id": "divida-publica-2025",
+        "topo": 678.2,
+        "px": 109.1,
+        "ecras": 0.13
+      }
+    }
+  },
+  "primeiroEcra": {
+    "pt": {
+      "nome": {
+        "topo": 68,
+        "fundo": 103.4,
+        "comecaNoEcra": true,
+        "inteiroNoEcra": true
+      },
+      "manchete": {
+        "topo": 249.5,
+        "fundo": 408.3,
+        "comecaNoEcra": true,
+        "inteiroNoEcra": true
+      },
+      "faixa": {
+        "topo": 510.3,
+        "fundo": 710.1,
+        "comecaNoEcra": true,
+        "inteiroNoEcra": true
+      },
+      "primeiroCartao": {
+        "topo": 511.3,
+        "fundo": 705.1,
+        "comecaNoEcra": true,
+        "inteiroNoEcra": true
+      },
+      "mapa": {
+        "topo": 726.1,
+        "fundo": 1240.3,
+        "comecaNoEcra": true,
+        "inteiroNoEcra": false
+      },
+      "painel": {
+        "topo": 1574.7,
+        "fundo": 6031.7,
+        "comecaNoEcra": false,
+        "inteiroNoEcra": false
+      },
+      "comando": {
+        "topo": 1467.5,
+        "fundo": 1574.7,
+        "comecaNoEcra": false,
+        "inteiroNoEcra": false
+      },
+      "pesquisa": {
+        "topo": 1451.5,
+        "fundo": 1691.7,
+        "comecaNoEcra": false,
+        "inteiroNoEcra": false
+      },
+      "nomes": {
+        "topo": 1404.5,
+        "fundo": 1920.9,
+        "comecaNoEcra": false,
+        "inteiroNoEcra": false
+      }
+    },
+    "en": {
+      "nome": {
+        "topo": 68,
+        "fundo": 103.4,
+        "comecaNoEcra": true,
+        "inteiroNoEcra": true
+      },
+      "manchete": {
+        "topo": 249.5,
+        "fundo": 377,
+        "comecaNoEcra": true,
+        "inteiroNoEcra": true
+      },
+      "faixa": {
+        "topo": 479,
+        "fundo": 694.3,
+        "comecaNoEcra": true,
+        "inteiroNoEcra": true
+      },
+      "primeiroCartao": {
+        "topo": 480,
+        "fundo": 689.3,
+        "comecaNoEcra": true,
+        "inteiroNoEcra": true
+      },
+      "mapa": {
+        "topo": 710.3,
+        "fundo": 1224.5,
+        "comecaNoEcra": true,
+        "inteiroNoEcra": false
+      },
+      "painel": {
+        "topo": 1558.9,
+        "fundo": 6021.4,
+        "comecaNoEcra": false,
+        "inteiroNoEcra": false
+      },
+      "comando": {
+        "topo": 1451.7,
+        "fundo": 1558.9,
+        "comecaNoEcra": false,
+        "inteiroNoEcra": false
+      },
+      "pesquisa": {
+        "topo": 1435.7,
+        "fundo": 1675.9,
+        "comecaNoEcra": false,
+        "inteiroNoEcra": false
+      },
+      "nomes": {
+        "topo": 1388.7,
+        "fundo": 1905.1,
+        "comecaNoEcra": false,
+        "inteiroNoEcra": false
+      }
+    }
+  },
+  "alvos": {
+    "pt·320": {
+      "min": 44,
+      "vistos": 118,
+      "maus": 15,
+      "naMobilia": 15,
+      "noCorpo": 0,
+      "exemplos": []
+    },
+    "pt·360": {
+      "min": 44,
+      "vistos": 118,
+      "maus": 15,
+      "naMobilia": 15,
+      "noCorpo": 0,
+      "exemplos": []
+    },
+    "pt·390": {
+      "min": 44,
+      "vistos": 118,
+      "maus": 15,
+      "naMobilia": 15,
+      "noCorpo": 0,
+      "exemplos": []
+    },
+    "pt·430": {
+      "min": 44,
+      "vistos": 118,
+      "maus": 15,
+      "naMobilia": 15,
+      "noCorpo": 0,
+      "exemplos": []
+    },
+    "pt·768": {
+      "min": 44,
+      "vistos": 127,
+      "maus": 35,
+      "naMobilia": 24,
+      "noCorpo": 11,
+      "exemplos": [
+        {
+          "tag": "a",
+          "classe": "seg",
+          "texto": "País",
+          "mobilia": false,
+          "w": 56.5,
+          "h": 33.6
+        },
+        {
+          "tag": "a",
+          "classe": "seg",
+          "texto": "Região",
+          "mobilia": false,
+          "w": 76.9,
+          "h": 33.6
+        },
+        {
+          "tag": "a",
+          "classe": "seg",
+          "texto": "Concelho",
+          "mobilia": false,
+          "w": 100.8,
+          "h": 33.6
+        },
+        {
+          "tag": "a",
+          "classe": "seg",
+          "texto": "Áreas",
+          "mobilia": false,
+          "w": 69.1,
+          "h": 33.6
+        },
+        {
+          "tag": "a",
+          "classe": "seg",
+          "texto": "Relance",
+          "mobilia": false,
+          "w": 89.1,
+          "h": 33.6
+        },
+        {
+          "tag": "a",
+          "classe": "seg",
+          "texto": "Leitura breve",
+          "mobilia": false,
+          "w": 132.1,
+          "h": 33.6
+        },
+        {
+          "tag": "a",
+          "classe": "lig",
+          "texto": "O livro-razão →",
+          "mobilia": false,
+          "w": 92.6,
+          "h": 14
+        },
+        {
+          "tag": "a",
+          "classe": "porta-nome",
+          "texto": "Agenda",
+          "mobilia": false,
+          "w": 706.6,
+          "h": 32
+        },
+        {
+          "tag": "a",
+          "classe": "lig.porta-abrir",
+          "texto": "a página inteira →",
+          "mobilia": false,
+          "w": 706.6,
+          "h": 19.2
+        },
+        {
+          "tag": "a",
+          "classe": "ligacao-email",
+          "texto": "correcoes@oestadodopais.pt",
+          "mobilia": false,
+          "w": 216.6,
+          "h": 19
+        },
+        {
+          "tag": "a",
+          "classe": "",
+          "texto": "O registo de correções →",
+          "mobilia": false,
+          "w": 172.8,
+          "h": 24
+        }
+      ]
+    },
+    "pt·1024": {
+      "min": 32,
+      "vistos": 127,
+      "maus": 28,
+      "naMobilia": 24,
+      "noCorpo": 4,
+      "exemplos": [
+        {
+          "tag": "a",
+          "classe": "lig",
+          "texto": "O livro-razão →",
+          "mobilia": false,
+          "w": 92.6,
+          "h": 14
+        },
+        {
+          "tag": "a",
+          "classe": "lig.porta-abrir",
+          "texto": "a página inteira →",
+          "mobilia": false,
+          "w": 108.2,
+          "h": 19.2
+        },
+        {
+          "tag": "a",
+          "classe": "ligacao-email",
+          "texto": "correcoes@oestadodopais.pt",
+          "mobilia": false,
+          "w": 216.6,
+          "h": 19
+        },
+        {
+          "tag": "a",
+          "classe": "",
+          "texto": "O registo de correções →",
+          "mobilia": false,
+          "w": 172.8,
+          "h": 24
+        }
+      ]
+    },
+    "pt·1280": {
+      "min": 32,
+      "vistos": 127,
+      "maus": 28,
+      "naMobilia": 24,
+      "noCorpo": 4,
+      "exemplos": [
+        {
+          "tag": "a",
+          "classe": "lig",
+          "texto": "O livro-razão →",
+          "mobilia": false,
+          "w": 92.6,
+          "h": 14
+        },
+        {
+          "tag": "a",
+          "classe": "lig.porta-abrir",
+          "texto": "a página inteira →",
+          "mobilia": false,
+          "w": 108.2,
+          "h": 19.2
+        },
+        {
+          "tag": "a",
+          "classe": "ligacao-email",
+          "texto": "correcoes@oestadodopais.pt",
+          "mobilia": false,
+          "w": 216.6,
+          "h": 19
+        },
+        {
+          "tag": "a",
+          "classe": "",
+          "texto": "O registo de correções →",
+          "mobilia": false,
+          "w": 172.8,
+          "h": 24
+        }
+      ]
+    },
+    "en·320": {
+      "min": 44,
+      "vistos": 118,
+      "maus": 15,
+      "naMobilia": 15,
+      "noCorpo": 0,
+      "exemplos": []
+    },
+    "en·360": {
+      "min": 44,
+      "vistos": 118,
+      "maus": 15,
+      "naMobilia": 15,
+      "noCorpo": 0,
+      "exemplos": []
+    },
+    "en·390": {
+      "min": 44,
+      "vistos": 118,
+      "maus": 15,
+      "naMobilia": 15,
+      "noCorpo": 0,
+      "exemplos": []
+    },
+    "en·430": {
+      "min": 44,
+      "vistos": 118,
+      "maus": 15,
+      "naMobilia": 15,
+      "noCorpo": 0,
+      "exemplos": []
+    },
+    "en·768": {
+      "min": 44,
+      "vistos": 127,
+      "maus": 35,
+      "naMobilia": 24,
+      "noCorpo": 11,
+      "exemplos": [
+        {
+          "tag": "a",
+          "classe": "seg",
+          "texto": "Country",
+          "mobilia": false,
+          "w": 92.5,
+          "h": 33.6
+        },
+        {
+          "tag": "a",
+          "classe": "seg",
+          "texto": "Region",
+          "mobilia": false,
+          "w": 78,
+          "h": 33.6
+        },
+        {
+          "tag": "a",
+          "classe": "seg",
+          "texto": "Municipality",
+          "mobilia": false,
+          "w": 127.1,
+          "h": 33.6
+        },
+        {
+          "tag": "a",
+          "classe": "seg",
+          "texto": "Areas",
+          "mobilia": false,
+          "w": 69.1,
+          "h": 33.6
+        },
+        {
+          "tag": "a",
+          "classe": "seg",
+          "texto": "At a glance",
+          "mobilia": false,
+          "w": 116.3,
+          "h": 33.6
+        },
+        {
+          "tag": "a",
+          "classe": "seg",
+          "texto": "Brief reading",
+          "mobilia": false,
+          "w": 130.3,
+          "h": 33.6
+        },
+        {
+          "tag": "a",
+          "classe": "lig",
+          "texto": "The ledger →",
+          "mobilia": false,
+          "w": 77.1,
+          "h": 14
+        },
+        {
+          "tag": "a",
+          "classe": "porta-nome",
+          "texto": "Agenda",
+          "mobilia": false,
+          "w": 706.6,
+          "h": 32
+        },
+        {
+          "tag": "a",
+          "classe": "lig.porta-abrir",
+          "texto": "the whole page →",
+          "mobilia": false,
+          "w": 706.6,
+          "h": 19.2
+        },
+        {
+          "tag": "a",
+          "classe": "ligacao-email",
+          "texto": "correcoes@oestadodopais.pt",
+          "mobilia": false,
+          "w": 216.6,
+          "h": 19
+        },
+        {
+          "tag": "a",
+          "classe": "",
+          "texto": "The corrections log →",
+          "mobilia": false,
+          "w": 152.4,
+          "h": 24
+        }
+      ]
+    },
+    "en·1024": {
+      "min": 32,
+      "vistos": 127,
+      "maus": 28,
+      "naMobilia": 24,
+      "noCorpo": 4,
+      "exemplos": [
+        {
+          "tag": "a",
+          "classe": "lig",
+          "texto": "The ledger →",
+          "mobilia": false,
+          "w": 77.1,
+          "h": 14
+        },
+        {
+          "tag": "a",
+          "classe": "lig.porta-abrir",
+          "texto": "the whole page →",
+          "mobilia": false,
+          "w": 104.2,
+          "h": 19.2
+        },
+        {
+          "tag": "a",
+          "classe": "ligacao-email",
+          "texto": "correcoes@oestadodopais.pt",
+          "mobilia": false,
+          "w": 216.6,
+          "h": 19
+        },
+        {
+          "tag": "a",
+          "classe": "",
+          "texto": "The corrections log →",
+          "mobilia": false,
+          "w": 152.4,
+          "h": 24
+        }
+      ]
+    },
+    "en·1280": {
+      "min": 32,
+      "vistos": 127,
+      "maus": 28,
+      "naMobilia": 24,
+      "noCorpo": 4,
+      "exemplos": [
+        {
+          "tag": "a",
+          "classe": "lig",
+          "texto": "The ledger →",
+          "mobilia": false,
+          "w": 77.1,
+          "h": 14
+        },
+        {
+          "tag": "a",
+          "classe": "lig.porta-abrir",
+          "texto": "the whole page →",
+          "mobilia": false,
+          "w": 104.2,
+          "h": 19.2
+        },
+        {
+          "tag": "a",
+          "classe": "ligacao-email",
+          "texto": "correcoes@oestadodopais.pt",
+          "mobilia": false,
+          "w": 216.6,
+          "h": 19
+        },
+        {
+          "tag": "a",
+          "classe": "",
+          "texto": "The corrections log →",
+          "mobilia": false,
+          "w": 152.4,
+          "h": 24
+        }
+      ]
+    }
+  },
+  "corpos": {
+    "390": {
+      "faixa": 30,
+      "peca": 39.31,
+      "social": 19,
+      "manchete": 28
+    },
+    "1280": {
+      "faixa": 40,
+      "peca": 56,
+      "social": 19,
+      "manchete": 40
+    }
+  },
+  "faixa": {
+    "pt": {
+      "etiqueta": "ol",
+      "cartoes": 21,
+      "comSelo": 21,
+      "comClaim": 21
+    }
+  },
+  "capturas": {
+    "pasta": "design/especime-v3/medicoes/cabeca-2026-09-01",
+    "ficheiros": 42
+  }
+}

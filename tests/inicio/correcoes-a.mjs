@@ -151,10 +151,29 @@ const SONDA_ALVOS = () => {
     }
     return { x: x1, y: y1 + scrollY, w: x2 - x1, h: y2 - y1 };
   };
+  /* -------------------------------------------------------------------------
+     UMA GAVETA FECHADA É O NAVEGADOR A ESCONDER (01.09.2026)
+     -------------------------------------------------------------------------
+     Um `<details>` fechado esconde o que tem dentro com `content-visibility:
+     hidden`: o conteúdo não se vê, não recebe o foco e não está na árvore de
+     acessibilidade. MEDIDO neste Chromium, e é o que obriga esta linha:
+     `getBoundingClientRect()` sobre um descendente de uma gaveta fechada devolve
+     na mesma uma caixa, com coordenadas de um arranjo que não está no ecrã. Sem
+     este teste, os 308 resultados da busca, que vivem numa gaveta fechada desde
+     a afinação 1 do brief da forma dos domínios, entravam nesta medição como
+     alvos e davam dezenas de pares sobrepostos que ninguém pode tocar.
+     `checkVisibility` é a pergunta certa e é a do navegador; a caixa fica como
+     defeito para os motores que não a tenham.
+     ------------------------------------------------------------------------- */
+  const seVe = (el) =>
+    typeof el.checkVisibility === 'function'
+      ? el.checkVisibility({ contentVisibilityAuto: true, opacityProperty: true, visibilityProperty: true })
+      : true;
   const seletor = 'a[href], button, input, select, textarea, summary, [role="button"]';
   const alvos = [];
   for (const el of document.querySelectorAll(seletor)) {
     if (el.closest('[hidden]') || el.closest('.vh')) continue;
+    if (!seVe(el)) continue;
     const r = el.getBoundingClientRect();
     if (!(r.width > 0) || !(r.height > 0)) continue;
     const a = areaEfetiva(el);
@@ -879,14 +898,31 @@ for (const edicao of ['pt', 'en']) {
     };
   });
   /* «Quatro valores cortados pela margem inferior depois de uma área vazia»: os
-     quatro são os da PRIMEIRA fila do relance do concelho (a segunda fila fica
-     abaixo da dobra por desenho, e sempre ficou). O que se mede é se os quatro
-     primeiros cabem no primeiro ecrã de 800px, e onde começa o primeiro cartão. */
+     quatro são os primeiros do RELANCE do concelho, e o que se mede é se cabem
+     no primeiro ecrã de 800 px e onde começa o primeiro.
+
+     O RELANCE MUDOU DE FORMA A 01.09.2026, e por isso a fonte dos quatro muda
+     com ele. A camada 1 do concelho era a primeira fila da grelha de peças; com
+     o bloco «a cabeça nova como contentor» passou a ser a FAIXA de cartões, que
+     fica entre a manchete e o resto da página, e as peças passaram a ser a
+     leitura de cada medida por baixo dela. A célula continua a medir a mesma
+     coisa — os quatro primeiros valores do relance dentro do primeiro ecrã —, e
+     mede-a onde ela agora vive; se um dia não houver faixa, cai para as peças,
+     que é onde a medida estava. Medido nesta construção: com as peças, o
+     primeiro valor ficava a 744 px e só dois dos quatro cabiam; com a faixa fica
+     a 496 e cabem os quatro. */
   const dobra = await pe.evaluate(() => {
-    const vals = [...document.querySelectorAll('#relance .peca .peca-valor')].slice(0, 4);
-    const c = document.querySelector('#relance .peca');
+    const daFaixa = [...document.querySelectorAll('[data-faixa] [data-cartao] .cartao-valor')];
+    const vals = (daFaixa.length
+      ? daFaixa
+      : [...document.querySelectorAll('#relance .peca .peca-valor')]
+    ).slice(0, 4);
+    const c = daFaixa.length
+      ? document.querySelector('[data-faixa] [data-cartao]')
+      : document.querySelector('#relance .peca');
     const rc = c ? c.getBoundingClientRect() : null;
     return {
+      onde: daFaixa.length ? 'faixa' : 'peças',
       valores: vals.length,
       dentro: vals.filter((v) => v.getBoundingClientRect().bottom <= innerHeight).length,
       primeiro: vals[0] ? +vals[0].getBoundingClientRect().top.toFixed(0) : null,
@@ -906,9 +942,9 @@ for (const edicao of ['pt', 'en']) {
       dobra.dentro === 4,
     `maior banda no main: ${noMainE[0]?.alt ?? 0}px em y=${noMainE[0]?.y ?? '—'} (era 86px, o ar da secção) · ${
       dobra.dentro
-    } de ${dobra.valores} valores da primeira fila dentro dos 800px, o primeiro a ${
+    } de ${dobra.valores} valores do relance (na ${dobra.onde}) dentro dos 800px, o primeiro a ${
       dobra.primeiro
-    }px (era 582) · cartão ${dobra.cartao}..${dobra.pedDoCartao}px (era 545..908)`,
+    }px (era 582 nas peças) · cartão ${dobra.cartao}..${dobra.pedDoCartao}px (era 545..908)`,
   );
   if (edicao === 'pt') medidas.evora1280 = { dobra, maiorBanda: noMainE[0] ?? null };
 

@@ -1375,9 +1375,18 @@ for (const largura of [1280, 390]) {
   const p = await pagina();
   await p.goto(`${base}/`, { waitUntil: 'networkidle' });
   await p.focus('[data-densidade="leitura"]');
+  /* A ROLAGEM MEDE-SE ENTRE O FOCO E O ESPAÇO, e não desde o topo da página
+     (01.09.2026). A célula existe para provar que **a tecla** não rola; medida
+     desde zero, ela media também o que o `focus()` rola para trazer o comando ao
+     ecrã, que é trabalho do navegador e não da página. Enquanto a linha de
+     comando esteve no topo da cabeça isso deu sempre zero e a diferença não se
+     via; com o comando no cabeçalho do painel (o bloco da cabeça nova, 01.09) o
+     `focus()` passa a rolar 627 px e a célula ficava vermelha por causa de um
+     rolamento que não é o que ela mede. */
+  const antes = await p.evaluate(() => window.scrollY);
   await p.keyboard.press('Space');
   const a = await estadoDaPagina(p);
-  const rolou = await p.evaluate(() => window.scrollY);
+  const rolou = (await p.evaluate(() => window.scrollY)) - antes;
   /* O comando que se prova aqui passou a ser o de «Concelho»: a terceira posição
      do âmbito saiu com a régua (bloco A, itens A2 e A3), e o que a célula mede é
      que o espaço activa um comando de âmbito, seja ele qual for.
@@ -2137,7 +2146,21 @@ const CANTO_DAS_ILHAS = (() => {
   };
 })();
 
-/* (f1) O mapa enche a coluna, e a legenda vai para o canto que as ilhas deixam. */
+/* (f1) O mapa enche a coluna, e a legenda está FORA do campo do desenho.
+ *
+ * A CÉLULA MEDIA UMA REGRA QUE SAIU A 29.08.2026, e estava vermelha desde então:
+ * a etapa 2m tinha posto a legenda DENTRO da célula do desenho, no rectângulo
+ * vazio que as ilhas deixam no canto (`margin-left: 45%`), e a emenda das 19:50
+ * de 29.08 à §1.84 tirou-a da figura para a coluna esquerda, por baixo dos nomes
+ * («A regra do canto das ilhas saiu com ela»). O que ela media deixou de ser
+ * verdade por decisão, e não por defeito.
+ *
+ * O QUE ELA MEDE AGORA é a metade que ficou de pé — o mapa enche a coluna, sem
+ * transbordo — e a decisão que substituiu a outra: a legenda não se sobrepõe ao
+ * desenho. É a mesma pergunta («onde é que a legenda está?») com a resposta de
+ * hoje, e continua a ser medida em caixas do navegador. Reescrita no bloco «a
+ * cabeça nova como contentor» (01.09.2026), que é o primeiro a passar por aqui
+ * desde a emenda. */
 {
   const linhas = [];
   let bem = true;
@@ -2149,36 +2172,35 @@ const CANTO_DAS_ILHAS = (() => {
         const coluna = document.querySelector('.cabeca-inst').getBoundingClientRect();
         const tela = document.querySelector('.mapa-tela').getBoundingClientRect();
         const legenda = document.querySelector('.mapa-linha-fonte').getBoundingClientRect();
+        /* A legenda está fora do desenho quando as duas caixas não se cruzam.
+           Mede-se em píxeis do navegador, e não em unidades do campo: a legenda
+           deixou de estar dentro do campo, e uma coordenada de campo para uma
+           caixa que está noutra coluna é um número sem significado. */
+        const cruza =
+          legenda.left < tela.right - 0.5 &&
+          tela.left < legenda.right - 0.5 &&
+          legenda.top < tela.bottom - 0.5 &&
+          tela.top < legenda.bottom - 0.5;
         return {
           coluna: +coluna.width.toFixed(1),
           mapa: +tela.width.toFixed(1),
           altura: +tela.height.toFixed(1),
-          /* A legenda, em UNIDADES DO CAMPO: é assim que a instrução está
-             escrita («à direita da moldura dos Açores; por baixo do ponto mais a
-             sul à direita dela»), e é assim que ela se confere sem depender da
-             largura da página.
-             O CAMPO É O DO ARTEFACTO E NÃO 600 × 790 (Emenda 20a): o mapa da
-             primeira página passou a ser o das 29 unidades, cujo campo guarda os
-             polígonos e não só os pontos. As duas medidas vêm de fora, em
-             `CANTO_DAS_ILHAS`, lidas de `mapa/pais.json`. */
-          legX: +(((legenda.left - tela.left) / tela.width) * campo.largura).toFixed(1),
-          legY: +(((legenda.top - tela.top) / tela.height) * campo.altura).toFixed(1),
+          cruza,
+          legX: +legenda.left.toFixed(1),
+          legY: +(legenda.top + scrollY).toFixed(1),
+          telaX: +tela.left.toFixed(1),
           transbordo: document.documentElement.scrollWidth - document.documentElement.clientWidth,
         };
       }, CANTO_DAS_ILHAS.campo);
-      const ok =
-        Math.abs(m.mapa - m.coluna) < 1 &&
-        m.legX >= CANTO_DAS_ILHAS.x &&
-        m.legY >= CANTO_DAS_ILHAS.y &&
-        m.transbordo <= 0;
+      const ok = Math.abs(m.mapa - m.coluna) < 1 && !m.cruza && m.transbordo <= 0;
       if (!ok) bem = false;
       linhas.push(
-        `${largura}${rota === '/' ? ' pt' : ' en'}: coluna ${m.coluna} · mapa ${m.mapa}×${m.altura} · legenda em x=${m.legX} y=${m.legY} do campo (o canto começa em x=${CANTO_DAS_ILHAS.x} y=${CANTO_DAS_ILHAS.y}) · transbordo ${m.transbordo}`,
+        `${largura}${rota === '/' ? ' pt' : ' en'}: coluna ${m.coluna} · mapa ${m.mapa}×${m.altura} em x=${m.telaX} · legenda em x=${m.legX} y=${m.legY}, cruza o desenho: ${m.cruza} · transbordo ${m.transbordo}`,
       );
       await p.__contexto.close();
     }
   }
-  conta('2m · o mapa enche a coluna da cabeça, e a legenda vai para o canto das ilhas', bem, linhas.join(' · '));
+  conta('2m · o mapa enche a coluna da cabeça, e a legenda fica fora do desenho', bem, linhas.join(' · '));
 }
 
 /* (f2) A PESQUISA ABERTA NÃO MUDA O MAPA (Emenda 19b, 26.08.2026).
@@ -2209,11 +2231,18 @@ const CANTO_DAS_ILHAS = (() => {
           url: location.pathname + location.search,
           cabeca: document.querySelector('[data-cabeca]:not([hidden])')?.getAttribute('data-cabeca'),
           painel: document.querySelector('[data-painel]:not([hidden])')?.getAttribute('data-painel'),
-          /* A pesquisa é um bloco governado pela folha pelo `data-modo` da raiz
-             (bloco A, itens A1 e A4), e continua a abrir ACIMA do mapa. */
-          pesquisaAcima:
-            document.querySelector('[data-pesquisa-bloco]').getBoundingClientRect().bottom <=
-            tela.top + 1,
+          /* A BUSCA ABRE POR BAIXO DO MAPA, E ABRE MESMO (01.09.2026).
+             Era um bloco que a folha mostrava pelo `data-modo` da raiz e que
+             ficava ACIMA do mapa; com a afinação 1 do brief da forma dos
+             domínios é uma gaveta ao lado dele, na coluna das gavetas, e o
+             estado `?ambito=municipio` abre-a. O que se mede passa a ser isso:
+             a gaveta está aberta, e o bloco da busca fica abaixo do topo do
+             desenho e não por cima dele. */
+          gavetaAberta:
+            document.querySelector('[data-gaveta="busca"]')?.hasAttribute('open') ?? false,
+          pesquisaAbaixo:
+            document.querySelector('[data-pesquisa-bloco]').getBoundingClientRect().top >=
+            tela.top - 1,
           mapa: +tela.width.toFixed(1),
           coluna: +coluna.width.toFixed(1),
           transbordo: document.documentElement.scrollWidth - document.documentElement.clientWidth,
@@ -2225,7 +2254,8 @@ const CANTO_DAS_ILHAS = (() => {
         /\?ambito=municipio$/.test(m.url) &&
         m.cabeca === 'pais' &&
         m.painel === 'pais' &&
-        m.pesquisaAcima &&
+        m.gavetaAberta &&
+        m.pesquisaAbaixo &&
         Math.abs(m.mapa - m.coluna) < 1 &&
         Math.abs(m.mapa - noPais) < 1 &&
         antes !== null &&
@@ -2237,13 +2267,13 @@ const CANTO_DAS_ILHAS = (() => {
         m.transbordo <= 0;
       if (!ok) bem = false;
       linhas.push(
-        `${largura}${rota === '/' ? ' pt' : ' en'}: ${m.url} · mapa ${m.mapa} na coluna de ${m.coluna} (no país ${noPais}) · caixa das ${antes?.n} áreas ${antes?.largura}×${antes?.altura} → ${depois?.largura}×${depois?.altura} · transbordo ${m.transbordo}`,
+        `${largura}${rota === '/' ? ' pt' : ' en'}: ${m.url} · gaveta aberta ${m.gavetaAberta}, busca por baixo do mapa ${m.pesquisaAbaixo} · mapa ${m.mapa} na coluna de ${m.coluna} (no país ${noPais}) · caixa das ${antes?.n} áreas ${antes?.largura}×${antes?.altura} → ${depois?.largura}×${depois?.altura} · transbordo ${m.transbordo}`,
       );
       await p.__contexto.close();
     }
   }
   conta(
-    '2m · a pesquisa abre acima do mapa, e o mapa fica onde estava',
+    '2m · a gaveta da busca abre por baixo do mapa, e o mapa fica onde estava',
     bem,
     linhas.join(' · '),
   );

@@ -52,14 +52,18 @@
 
 /* ------------------------------------------------------------ linha de comando */
 
+/* O FIO SAIU DE BAIXO DO COMANDO (01.09.2026). Ele estava no topo da página e o
+   fio dizia onde a barra acabava e a cabeça começava. O comando desceu para o
+   fim de `.inicio`, ao pé do painel que a densidade governa, e o fio que abre
+   esse bloco é o de `.painel-nome`, que já lá está: dois fios a 20 px um do
+   outro seriam dois traços a dizer a mesma coisa. */
 .cmd {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 24px;
   flex-wrap: wrap;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--ink);
+  padding-bottom: 4px;
 }
 
 .cmd-grupo {
@@ -186,13 +190,18 @@
  * `.cmd-sub` saiu com a fila das regiões, que era o outro painel deste
  * mecanismo: uma regra sem elemento mente sobre o que a folha desenha.
  */
+/* A BUSCA PASSA A SER UMA GAVETA, E POR ISSO DEIXA DE TER ESTADO (01.09.2026).
+   O bloco acima descreve o mecanismo que este substitui: a peça aparecia e
+   desaparecia com o `data-modo` da raiz, e abaixo de 640 via-se sempre. Com a
+   afinação 1 do brief da forma dos domínios a busca recolhe-se numa gaveta ao
+   lado do mapa, fechada a todas as larguras, e quem a abre é o leitor. Uma peça
+   que está sempre no documento e sempre fechada não precisa de uma regra de
+   estado: o invólucro é só a coluna onde ela mora, e o `data-modo` deixa de
+   decidir o que quer que seja aqui. */
 .pesquisa-bloco {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 10px;
-}
-[data-inicio][data-modo='municipio'] .pesquisa-bloco {
-  display: flex;
 }
 
 .cmd-chips {
@@ -253,6 +262,327 @@
   font-size: clamp(16px, 1.4vw, 18px);
   line-height: 1.5;
   max-width: 42em;
+}
+
+/* =============================================================================
+ * A FAIXA DE CARTÕES — o «Relance» de um lugar (01.09.2026)
+ * =============================================================================
+ *
+ * O conceito do diretor de 31.08, fixado no brief da forma dos domínios §1: «uma
+ * faixa de cartões com os números que se percorre de lado». A afinação 2 diz
+ * como: «com `scroll-snap` em CSS, sem biblioteca nem JavaScript; os cartões são
+ * uma lista no documento, percorrível por teclado, e o primeiro cartão é visível
+ * sem gesto».
+ *
+ * TUDO O QUE MEXE ESTÁ AQUI, e não há uma linha de guião: `overflow-x: auto` dá
+ * o arrastar e a roda, `scroll-snap-type: x mandatory` dá o encaixe, e o `Tab`
+ * do navegador rola a caixa sozinho quando o foco entra num cartão que está
+ * fora. `scroll-padding-inline-start` existe para o encaixe não cortar o cartão
+ * a que o teclado acabou de chegar.
+ *
+ * O PRIMEIRO CARTÃO É VISÍVEL SEM GESTO porque a caixa começa no princípio e o
+ * cartão é mais estreito do que ela. A largura do cartão é uma fracção da faixa
+ * e não uma medida em píxeis: a 320 px o cartão mede 190 e vê-se um e meio, e a
+ * 1280 vêem-se quatro. Mostrar uma nesga do seguinte é o que diz que a faixa
+ * corre; um cartão a preencher a largura toda seria um cartão sozinho.
+ */
+.faixa-bloco {
+  min-width: 0;
+}
+
+.faixa {
+  /* --------------------------------------------------------------------------
+     OS DOIS CORPOS DO NÚMERO, POR REGRA E MEDIDOS (brief §4)
+     --------------------------------------------------------------------------
+     «Os números da faixa mais pequenos no telemóvel do que no ecrã largo, por
+     regra escrita na folha (dois corpos, medidos), sem descer abaixo do corpo
+     mínimo da casa para números com selo.»
+
+     São dois valores declarados, e não uma rampa: uma `clamp()` daria um número
+     diferente em cada largura e a promessa deixaria de se poder medir com dois
+     números. O chão da casa para um número com selo é o da lista social, 19 px
+     (`.social-valor`), e o mais pequeno destes é 30. */
+  --faixa-corpo-movel: 30px;
+  --faixa-corpo-largo: 40px;
+  --faixa-corpo: var(--faixa-corpo-movel);
+  --cartao-pe: 44px;
+
+  list-style: none;
+  margin: 0;
+  padding: 0 0 4px;
+  display: flex;
+  gap: 1px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline-start: 0;
+  /* O fio entre cartões é o intervalo sobre o fundo, que é a mesma técnica da
+     `.figuras` da v2 e a razão pela qual o painel não a usa: aqui a fila está
+     sempre cheia, porque é uma fila e não uma grelha com buracos. */
+  background: var(--rule);
+  border-block: 1px solid var(--ink);
+}
+
+/* AS CINCO FILAS DO CARTÃO: o estado, o valor, o nome, a unidade e o selo. As
+   três primeiras são o corpo, que é o que a porta cobre; as duas últimas são o
+   pé, onde vivem todos os selos do cartão. Ver a nota de `Faixa.astro`. */
+.cartao {
+  flex: 0 0 clamp(190px, 58%, 230px);
+  min-width: 0;
+  scroll-snap-align: start;
+  background: var(--paper);
+  /* O enchimento é uma ficha porque a porta o desconta: ver `.cartao-porta`. */
+  --cartao-pad-x: 12px;
+  --cartao-pad-y: 12px;
+  padding: var(--cartao-pad-y) var(--cartao-pad-x) 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto 1fr auto var(--cartao-pe);
+  row-gap: 4px;
+}
+/* A COLUNA DECLARA-SE EM TODOS OS FILHOS, E NÃO É DECORAÇÃO. A porta ocupa a
+   coluna 1 nas filas 1 a 3, e a colocação automática não põe dois itens na mesma
+   célula: os outros filhos iam para uma SEGUNDA coluna, que a grelha criava para
+   os receber. Medido antes de escrever esta regra: `grid-template-columns` saía
+   «84,67px 96,64px» num cartão onde a folha declara uma coluna só, e a porta
+   ficava com 84,7 px de largura em vez dos 205,3 do cartão — um alvo de 84 px
+   onde a casa promete o cartão inteiro. É o mesmo defeito, e a mesma linha, que
+   a folha já escreveu para a célula do mapa a 1024.
+   `.claim-com-chip` é `display: contents`, e por isso quem precisa da declaração
+   são os FILHOS dele e não ele. */
+.cartao > *,
+.cartao > .claim-com-chip > * {
+  grid-column: 1;
+}
+
+/* --------------------------------------------------------------------------
+   O VALOR E O SELO SÃO UM NÓ SÓ NO DOCUMENTO E DUAS CÉLULAS NO ECRÃ
+   --------------------------------------------------------------------------
+   `auditaSelo()` no portão procura o selo dentro do PAI do elemento do valor, e
+   `<Claim chip/>` põe os dois no mesmo invólucro. `display: contents` faz esse
+   invólucro deixar de ter caixa: os filhos passam a ser células desta grelha e a
+   folha coloca-os fila a fila. A árvore que o portão lê não muda. */
+.cartao > .claim-com-chip {
+  display: contents;
+}
+.cartao-valor {
+  grid-row: 2;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: var(--faixa-corpo);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+/* A palavra «provisório» da fonte, quando a linha a traz, senta-se por baixo do
+   valor e não ao lado: ao lado, num cartão de 190 px, empurrava o número para
+   duas linhas. Nenhuma linha desta faixa a traz hoje; a regra existe porque as
+   linhas das regiões trazem-na, e a faixa é a mesma. */
+.cartao .claim-provisorio,
+.cartao .claim-sufixo {
+  grid-row: 2;
+  align-self: end;
+  justify-self: end;
+}
+/* O selo do valor do cartão é o último: sozinho na sua fila, é o maior alvo do
+   pé, e é a mesma regra que a peça já escreve. O selector é directo (`>`) para
+   não apanhar um selo que venha DENTRO da linha da unidade. */
+.cartao > .claim-com-chip > .src-chip {
+  grid-row: 5;
+  align-self: center;
+  justify-self: start;
+}
+
+.cartao-topo {
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 16px;
+  margin: 0;
+}
+.cartao-topo .sq {
+  width: 11px;
+  height: 11px;
+}
+.cartao-palavra {
+  font-family: var(--f-instr);
+  font-size: 11.5px;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+
+/* A UNIDADE É A PRIMEIRA FILA DO PÉ, e ganha altura de alvo quando leva um selo
+   por dentro. É a regra da I13 posta onde ela morde: numa das sete medidas de um
+   concelho a unidade cita uma linha («teto legal = 100») e traz o selo dela, e
+   dois selos a 20 px um do outro têm as suas áreas de 44 px sobrepostas — «uma
+   área sobreposta não é um alvo maior, é uma porta que abre a linha do vizinho».
+   Onde não há selo por dentro, a fila fica com a altura do texto. */
+.cartao-unidade {
+  grid-row: 4;
+  margin: 0;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+/* O SELO QUE VEM DENTRO DA UNIDADE PASSA A TER A SUA PRÓPRIA FILA DE 44 px, e é
+   a saída que a casa já escreveu para os selos empilhados (I13, em `site.css`):
+   «a saída certa não é encolher a área, é dar altura à fila».
+
+   MEDIDO, e é por isso que a primeira forma não serviu: com a unidade a 44 px e
+   o selo em linha corrente, o texto quebrava e o selo caía na SEGUNDA linha; a
+   área de 44 px que ele leva é centrada na caixa dele, e ficava 10,8 px abaixo
+   do fim da fila, a cruzar a área do selo do cartão por 6,8 × 21 px. Com
+   `display: flex` o selo é uma caixa de bloco: ocupa a sua linha, mede
+   exactamente 44 px, e a área que ele leva coincide com ele. Entre a fila da
+   unidade e a fila do selo do cartão fica o intervalo da grelha. */
+.cartao-unidade .src-chip {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.cartao-nome {
+  grid-row: 3;
+  align-self: start;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.25;
+  /* O sublinhado declara-se em píxeis pela mesma razão da lista dos nomes: a
+     marca do par vai de 1 para 3 px, e `auto` é uma cadeia e não uma grandeza. */
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--rule-strong);
+  text-underline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   A PORTA DO CARTÃO — o corpo inteiro, e nada do pé
+   --------------------------------------------------------------------------
+   Ver a nota de `Faixa.astro`: é uma âncora VAZIA sobre as três primeiras filas
+   do cartão — o estado, o valor e o nome —, com o nome acessível emprestado do
+   nome da medida. Não chega ao pé, e por isso nenhum selo fica debaixo dela: é o
+   que a célula A10 de `correcoes-a.mjs` exige e o que a Emenda 2 protege.
+
+   É UMA CÉLULA DA GRELHA E NÃO UM `::after` ESTICADO, porque a régua da casa
+   mede a área efectiva de um alvo unindo a caixa do elemento com a do seu
+   `::after` absoluto CENTRADO nele: um pseudo esticado por `inset` seria medido
+   no sítio errado, e um alvo que a casa não sabe medir não é um alvo que ela
+   possa prometer. Uma célula que atravessa três filas tem caixa própria, e a
+   altura do pé não precisa de ser escrita em píxeis em lado nenhum.
+
+   O `z-index` PÕE-A POR CIMA DO TEXTO, e é ele que faz o cartão ser alvo: sem
+   ele o toque cairia no `<span>` do valor, que não é porta nenhuma, e não
+   aconteceria nada. */
+.cartao-porta {
+  grid-column: 1;
+  grid-row: 1 / 4;
+  position: relative;
+  z-index: 1;
+  /* A PORTA SAI DO ENCHIMENTO DO CARTÃO, e é o que faz «o cartão inteiro é
+     alvo» ser verdade à letra: sem estas três margens negativas a caixa da
+     porta era a caixa de conteúdo, e ficavam 12 px de papel em cima e de cada
+     lado onde o dedo não abria nada. Medido antes de as pôr: a porta media
+     181,3 px num cartão de 205,3. Em baixo não sai, porque em baixo está o pé,
+     que é do selo. */
+  margin-top: calc(-1 * var(--cartao-pad-y));
+  margin-inline: calc(-1 * var(--cartao-pad-x));
+}
+.cartao-porta:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: -3px;
+}
+/* A marca é a mesma dos nomes do mapa: o traço que o nome já tem passa de 1 para
+   3 px, e a tinta passa de cinzento a tinta. Não é cor sozinha. */
+.cartao:has(.cartao-porta:is(:hover, :focus-visible)) .cartao-nome {
+  text-decoration-thickness: 3px;
+  text-decoration-color: currentColor;
+}
+
+/* Do 1024 para cima o número cresce, que é a segunda metade da regra dos dois
+   corpos. O ponto é o mesmo em que a cabeça passa a ter duas colunas. */
+@media (min-width: 1024px) {
+  .faixa {
+    --faixa-corpo: var(--faixa-corpo-largo);
+  }
+  /* O CARTÃO ALARGA E O NOME FICA NO CORPO DE 15 px, e as duas medidas foram
+     escolhidas com a fita: o nome mais longo dos vinte e um («Jovens sem
+     emprego, escola ou formação») ocupava três linhas num cartão de 250 px a
+     16 px, e o cartão inteiro media 206,6 px de altura a 1280. Três linhas de
+     nome são 20 px de altura por cartão que a coluna esquerda leva ao mapa, e o
+     mapa paga essa altura em largura pela razão do seu `viewBox`. Com 280 px de
+     cartão e 15 px de nome são duas linhas. */
+  .cartao {
+    flex-basis: clamp(220px, 28%, 280px);
+    --cartao-pad-y: 6px;
+  }
+}
+
+/* =============================================================================
+ * AS GAVETAS DO MAPA — a busca e os nomes, fechadas (01.09.2026)
+ * ========================================================================== */
+
+.gaveta {
+  border-top: 1px solid var(--rule);
+}
+.gaveta-abrir {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 4px 0;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--f-versal);
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  color: var(--ink);
+}
+.gaveta-abrir::-webkit-details-marker {
+  display: none;
+}
+/* O mesmo sinal de dobra da casa (I54): o triângulo de bordos que roda, como o
+   da peça, o do `.aparelho` e o da porta da convergência. */
+.gaveta-seta::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  border-left: 5px solid currentColor;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: transform 0.16s ease;
+  transform-origin: 30% 50%;
+}
+.gaveta[open] .gaveta-seta::before {
+  transform: rotate(90deg);
+}
+.gaveta-abrir:hover .gaveta-nome {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.gaveta-corpo {
+  padding-bottom: 10px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .gaveta-seta::before {
+    transition: none;
+  }
+}
+
+/* A coluna que vive ao lado do mapa: as duas gavetas e a legenda. A legenda é
+   empurrada para o fundo, e é isso que faz o fundo do mapa ser o fundo da
+   legenda a partir de 1280 (a emenda das 19:50 de 29.08 à §1.84). */
+.cabeca-lado {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
 }
 
 /* ------------------------------------------- o marcador de estado, na peça
@@ -469,32 +799,52 @@
  * (uns 250 px) pedia linhas de 28 px, e essa é uma decisão de régua e não de
  * folha. Está no relatório, com a medida das duas.
  */
+/* ---------------------------------------------------------------------------
+ * AS TRÊS FILAS DA COLUNA ESQUERDA (01.09.2026)
+ * ---------------------------------------------------------------------------
+ * Eram duas — a manchete e os nomes — e a legenda era a quarta filha, colocada
+ * ora na coluna do mapa ora por baixo dos nomes. Passam a ser três, e a faixa é
+ * a do meio: manchete, faixa, e a coluna das gavetas com a legenda no fim. O
+ * mapa continua na coluna direita e continua a atravessar as filas todas, que é
+ * o que o põe ao lado e não por baixo.
+ *
+ * A LEGENDA DEIXOU DE SER FILHA DA GRELHA e passou a ser a última filha de
+ * `.cabeca-lado`: ela é a legenda do mapa e vive na coluna que o mapa tem ao
+ * lado, com as duas gavetas por cima. A regra do 1024 que a punha na coluna do
+ * mapa com `margin-top: calc(100% * 8030 / 6090 + 8px)` saiu com essa mudança —
+ * a margem resolvia-se contra a largura da célula do MAPA, e a legenda já não
+ * está nela. O alinhamento que a emenda das 19:50 de 29.08 pediu faz-se agora
+ * de outra maneira, e mais simples: a legenda é empurrada para o fundo da sua
+ * coluna (`margin-top: auto` em `.cabeca-lado`), e a partir de 1280 o mapa
+ * estica-se até ao fundo da grelha. O fundo dos dois é o mesmo fundo.
+ * ------------------------------------------------------------------------- */
 @media (min-width: 1024px) {
   .cabeca-col {
     grid-column: 1;
     grid-row: 1;
   }
-  .cabeca-inst {
-    grid-column: 2;
-    grid-row: 1 / span 2;
-  }
-  .mapa-ilhas {
+  .faixa-bloco {
     grid-column: 1;
     grid-row: 2;
-    align-self: start;
-    margin-top: 26px;
-    gap: 0 clamp(18px, 2vw, 30px);
+    margin-top: 12px;
   }
-  /* A legenda por baixo do mapa entre 1024 e 1279, como estava. Partilha a
-     célula do mapa (as duas filas) e desce exactamente a altura dele: o mapa
-     tem a largura da coluna e a razão 8030/6090 do seu `viewBox`, e uma margem em
-     percentagem resolve-se contra a largura da célula, por isso a conta é
-     exacta sem escrever uma altura em píxeis. */
-  .mapa-legenda {
+  .cabeca-lado {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: stretch;
+    margin-top: 10px;
+    gap: 10px;
+  }
+  .cabeca-lado .mapa-legenda {
+    margin-top: auto;
+  }
+  .cabeca-inst {
     grid-column: 2;
-    grid-row: 1 / span 2;
+    grid-row: 1 / span 3;
+  }
+  .mapa-ilhas {
     align-self: start;
-    margin-top: calc(100% * 8030 / 6090 + 8px);
+    gap: 0 clamp(18px, 2vw, 30px);
   }
   /* A forma em linha é da largura pequena: aqui a fila desfaz-se e cada nome
      volta a ter a sua linha, com a largura da coluna em que está. */
@@ -743,44 +1093,42 @@
  * `tests/inicio/lista.mjs` (L5) medem os dois números.
  */
 @media (min-width: 1280px) {
+  /* A COLUNA ESQUERDA FICA NOS 550 PX QUE A EMENDA DAS 19:50 DE 29.08 MEDIU, e
+     o que mudou para ela lá caber foi a altura da faixa. A regra dessa emenda é
+     que o mapa vai do topo da manchete ao fundo da legenda: a sua altura é a da
+     grelha, e a sua largura sai dessa altura pela razão 6090/8030 do `viewBox`.
+     Uma coluna esquerda mais alta pede um mapa mais largo, e um mapa mais largo
+     do que a coluna direita fica preso a `max-width: 100%` com ar em cima e em
+     baixo do desenho — que é exactamente o defeito que a leitura do Codex
+     apanhou a 29.08 e que a L13 mede pela razão da caixa. A faixa entrou na
+     coluna com 212,6 px e saiu com 175: as duas linhas de nome e os quatro
+     píxeis de enchimento que ela devolve são o que faz a conta fechar outra vez.
+     Medido, e não estimado: está no relatório do construtor. */
   .cabeca-grelha {
     grid-template-columns: 550px minmax(0, 1fr);
-    grid-template-rows: auto auto auto;
+    /* A TERCEIRA FILA É A FLEXÍVEL, e é ela que faz o alinhamento fechar sem um
+       número escrito à mão. O mapa atravessa as três; se a coluna esquerda for
+       mais baixa do que ele, a folga vai toda para a fila das gavetas, e a
+       legenda, que está no fim dela com `margin-top: auto`, desce até ao fundo.
+       O fundo do mapa e o fundo da legenda são o mesmo fundo, que é o que a
+       emenda das 19:50 de 29.08 promete. */
+    grid-template-rows: auto auto 1fr;
     column-gap: 24px;
   }
-  .cabeca-inst {
-    grid-column: 2;
-    grid-row: 1 / span 3;
-    align-self: stretch;
-    height: 0;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  .cabeca-inst .mapa {
-    height: 100%;
-    display: block;
-  }
-  .cabeca-inst .mapa-tela {
-    height: 100%;
-    width: auto;
-    max-width: 100%;
-    aspect-ratio: 6090 / 8030;
-  }
-  .cabeca-inst .mapa-svg {
-    height: 100%;
-    width: auto;
-    max-width: 100%;
-  }
-  .mapa-ilhas {
-    margin-top: 20px;
-  }
-  .mapa-legenda {
-    grid-column: 1;
-    grid-row: 3;
-    align-self: end;
-    margin-top: 6px;
-  }
+  /* O MAPA DEIXA DE SER ESTICADO E PASSA A SER DIMENSIONADO PELA LARGURA
+     (01.09.2026), e a razão é a que a leitura do Codex de 29.08 escreveu ao
+     contrário. A forma anterior era: a altura do mapa é a da grelha, e a largura
+     sai dela pela razão do `viewBox`. Funcionava enquanto a coluna esquerda
+     tivesse exactamente a altura certa, e com a faixa lá dentro deixou de ter:
+     a largura que a altura pedia passava dos 518 px da coluna, ficava presa a
+     `max-width: 100%`, e o desenho ganhava 55 px de ar em cima e em baixo.
+
+     A forma nova inverte a dependência e não tem ponto fixo nenhum: o mapa tem a
+     LARGURA da sua coluna (a regra dos 1024, que já lá estava) e a altura sai
+     dela pelo `viewBox`, exactamente. Nunca há ar. Quem se estica é a coluna
+     esquerda, pela fila flexível, e é a legenda que desce ao fundo. O que a
+     folha tem de garantir é só que a coluna esquerda não passa a altura do mapa,
+     e isso é uma medida e não uma equação: está no relatório. */
   .mapa-legenda .mapa-linha-fonte,
   .mapa-legenda .mapa-fonte {
     text-align: left;
@@ -945,22 +1293,28 @@ svg [hidden] {
     grid-template-columns: minmax(0, 1fr);
     row-gap: 22px;
   }
-  /* A ORDEM DO DOCUMENTO É A DO ECRÃ LARGO, E AQUI A FOLHA INVERTE-A. Os nomes
-     vêm antes do mapa no documento porque são o índice dele, e acima de 1024 é
-     também a ordem do ecrã: a cabeça, os nomes por baixo dela, o mapa ao lado.
-     Numa coluna só, o mapa é a coisa e os nomes são a rede dele, e uma rede
-     lê-se por baixo daquilo que ela protege. Aqui, e só aqui, a ordem visual e a
-     do documento divergem, e é uma escolha e não um acaso. */
+  /* A ORDEM DO DOCUMENTO É A DO ECRÃ LARGO, E AQUI A FOLHA INVERTE DUAS PEÇAS.
+     As gavetas vêm antes do mapa no documento porque são o índice dele — os
+     nomes das 29 unidades e a busca dos 308 concelhos —, e acima de 1024 é
+     também a ordem do ecrã: a manchete, a faixa e as gavetas na coluna
+     esquerda, o mapa ao lado. Numa coluna só, o mapa é a coisa e as gavetas são
+     a rede dele, e uma rede lê-se por baixo daquilo que ela protege; e é essa a
+     ordem que a ordem de construção de 01.09 fixa para a cabeça: nome,
+     manchete, faixa, mapa. Aqui, e só aqui, a ordem visual e a do documento
+     divergem, e é uma escolha e não um acaso.
+
+     A legenda vai à frente das gavetas dentro da sua coluna, para ficar entre o
+     mapa e elas: é a legenda do desenho, e o que se lê a seguir a um desenho é a
+     sua legenda. */
   .cabeca-inst {
     order: 1;
   }
-  /* A legenda entre o mapa e os nomes também aqui (leitura cruzada de 29.08):
-     sem esta linha ficava com `order` 0, antes do mapa, entre 641 e 1023. */
-  .mapa-legenda {
+  .cabeca-lado {
     order: 2;
   }
-  .mapa-ilhas {
-    order: 3;
+  .cabeca-lado .mapa-legenda {
+    order: -1;
+    margin-bottom: 4px;
   }
 }
 
@@ -1637,20 +1991,26 @@ a.porta:hover .porta-abrir {
   }
 
   /* -------------------------------------------------------------------------
-     A ORDEM DA COLUNA NO TELEMÓVEL (itens A4 e A7)
+     A ORDEM DA COLUNA NO TELEMÓVEL (01.09.2026, a ordem da cabeça nova)
      -------------------------------------------------------------------------
-     A cabeça primeiro (o rótulo do âmbito, a manchete e a lede), o comando a
-     seguir, e logo por baixo a pesquisa com a linha dos 308. É a ordem que o
-     item A4 escreve — «no seu lugar, logo por baixo da lede, a pesquisa de
-     concelho» — e é a que faz o objetivo medido do item A7 fechar: com a linha
-     de comando por cima da manchete, a manchete começava a 415,9px num ecrã de
-     664, e não há corte de goteira que a traga aos 40%.
+     «Nome, manchete, faixa, mapa, por esta ordem no documento e no ecrã, nas
+     duas larguras.» O nome é o do cabeçalho, que vem antes de `.inicio`; a
+     manchete é `.cabeca-col`, a faixa vem a seguir, e depois o mapa com a sua
+     legenda e as suas duas gavetas. A linha de comando desceu para o fim, ao pé
+     do painel que ela governa.
+
+     O QUE ISTO SUBSTITUI, e a razão de a nota anterior sair: até aqui a coluna
+     era cabeça, comando, busca, mapa, legenda, nomes. O comando media 116,2 px e
+     estava entre a manchete e tudo o resto, e a busca era um bloco aberto de
+     240 px: os dois juntos punham o primeiro número selado de uma medida a
+     2 071,9 px da manchete, ou seja a 2,45 ecrãs de 844 px (medido a 01.09 sobre
+     `307796f`). Com a faixa no lugar deles o primeiro número está no primeiro
+     ecrã, e o mapa começa logo a seguir.
 
      `.inicio` já é uma coluna flexível; o que isto faz é numerar-lhe os itens. A
-     `.cabeca-grelha` dissolve-se para que a sua coluna de texto e a sua coluna
-     de instrumento sejam itens desta mesma coluna e possam ser numeradas com os
-     outros. Acima de 640 nada disto existe e a ordem é a do documento, que é a
-     do computador: o comando em cima, como a barra sempre esteve.
+     `.cabeca-grelha` dissolve-se para que as suas quatro colunas sejam itens
+     desta mesma coluna e possam ser numeradas com o comando. Acima de 640 nada
+     disto existe e a ordem é a do documento.
      ------------------------------------------------------------------------- */
   [data-inicio] .cabeca-grelha {
     display: contents;
@@ -1658,25 +2018,20 @@ a.porta:hover .porta-abrir {
   [data-inicio] .cabeca-col {
     order: 1;
   }
-  [data-inicio] .cmd {
+  [data-inicio] .faixa-bloco {
     order: 2;
   }
-  [data-inicio] .pesquisa-bloco {
-    order: 3;
-    display: flex;
-  }
   [data-inicio] .cabeca-inst {
+    order: 3;
+  }
+  /* A coluna das gavetas vem a seguir ao mapa, que é onde a legenda e a rede dos
+     nomes estavam. Dentro dela a legenda continua a vir primeiro, pela regra que
+     a largura de cima já escreve. */
+  [data-inicio] .cabeca-lado {
     order: 4;
   }
-  /* Os nomes das 29 vêm logo a seguir ao mapa, que é onde eles estavam quando
-     viviam dentro dele. A grelha da cabeça dissolve-se nesta largura, e por isso
-     este bloco é item desta coluna como os outros quatro: sem número, a ordem
-     do documento punha-o antes do comando. */
-  [data-inicio] .mapa-legenda {
+  [data-inicio] .cmd {
     order: 5;
-  }
-  [data-inicio] .mapa-ilhas {
-    order: 6;
   }
 
   /* A linha dos 308 encosta-se à pesquisa em vez de flutuar: é a legenda dela. */
@@ -1997,6 +2352,12 @@ a.porta:hover .porta-abrir {
 @media (max-width: 640px) {
   .regua-escala,
   .peca-unidade,
+  /* As duas linhas pequenas do cartão da faixa entram nesta lista com o bloco
+     da cabeça nova (01.09.2026), e pela razão que ela já escreve: num telemóvel
+     9,5 px não se leem, e 11,5 px também não. A palavra de estado e a linha da
+     unidade compõem-se a 11,5 px acima de 640, como as suas irmãs da peça. */
+  .cartao-palavra,
+  .cartao-unidade,
   .mapa-linha-fonte,
   .mapa-hint,
   .mapa-leitura,
