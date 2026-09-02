@@ -307,9 +307,9 @@ coisas, também geradas de `ledger/claims/` e nunca copiadas:
 
 | Endereço | O que traz |
 | --- | --- |
-| `/livro-razao.csv` | as 132 linhas, uma por registo, com cabeçalho. RFC 4180 inteiro: aspas duplicadas, fim de linha CRLF e **nenhuma linha de comentário**, ao contrário dos dois CSV acima |
+| `/livro-razao.csv` | uma linha por registo, com cabeçalho (2 916 linhas a 02.09.2026; corrigido nesse dia: dizia «as 132 linhas», a contagem de 18.08). RFC 4180 inteiro: aspas duplicadas, fim de linha CRLF e **nenhuma linha de comentário**, ao contrário dos dois CSV acima |
 | `/livro-razao.json` | as mesmas linhas, com a estrutura que o CSV achata, e um bloco `_` que diz o que o ficheiro é |
-| `/livro-razao/<id>.json` | uma linha, 132 ficheiros |
+| `/livro-razao/<id>.json` | uma linha, um ficheiro por registo (2 916 a 02.09.2026; corrigido nesse dia: dizia «132 ficheiros») |
 
 Os campos são os do formato menos `note`, e a lista não está escrita duas vezes:
 é `CAMPOS_PUBLICADOS` em [`src/lib/ledger.mjs`](src/lib/ledger.mjs). Todos os
