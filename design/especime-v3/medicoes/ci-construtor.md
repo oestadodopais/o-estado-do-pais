@@ -135,11 +135,11 @@ Três coisas que estes números dizem e vale a pena escrever:
    ficheiros, dos quais `729 - 659 = 70` são do projeto e 659 são de
    `node_modules`. É exatamente o buraco que o bloco F0.4 fecha; a CI apenas o
    torna visível a cada push em vez de o esconder.
-3. **A cache do npm ainda não pagou nada.** Nas duas corridas desta sessão o
-   passo «O Node» escreveu `npm cache is not found`, e a cache só foi guardada no
-   fim da primeira (`Cache saved with the key: node-cache-Linux-x64-npm-141a93da…`).
-   Os 7 s e os 6 s de `npm ci` são portanto tempos de cache fria; a terceira
-   corrida em diante é que começa a poupar.
+3. **A cache do npm está fria nesta corrida.** O passo «O Node» escreveu
+   `npm cache is not found`, e a cache só foi guardada no fim
+   (`Cache saved with the key: node-cache-Linux-x64-npm-141a93da…`). Os 7 s de
+   `npm ci` são portanto tempo de cache fria. O que a cache fez quando ficou
+   quente está medido em §3.4, e não é o que se esperava.
 
 ### 3.2 O que o `npm ci` instalou no anfitrião, e o caso do `@resvg/resvg-js`
 
@@ -241,6 +241,49 @@ git branch -D ci-planta-2026-09-02
 A planta nunca esteve em `main` nem no ramo `ci-2026-09-02`: foi cortada para um
 ramo próprio, e o `git status --porcelain` do ramo de trabalho voltou vazio com a
 linha 11831 a dizer `**Afecta:** nenhum` outra vez.
+
+### 3.4 A terceira corrida, e o que ela diz da cache e do anfitrião
+
+O commit deste relatório produziu uma terceira corrida no mesmo ramo, e vale a
+pena escrevê-la porque é a primeira que apanha a cache do npm e a primeira que
+mede a variação entre anfitriões.
+
+Ramo `ci-2026-09-02`, commit `6b746e673b11f6d48ff5c9da66685750ad05f2ef`.
+**https://github.com/oestadodopais/o-estado-do-pais/actions/runs/33593721414**
+
+Conclusão `success`. Total: **11 min 43 s** (703 s), de `2026-09-02T05:11:52Z` a
+`2026-09-02T05:23:35Z`.
+
+| # | passo | segundos na 3.ª corrida | segundos na 1.ª (§3.1) |
+|---|---|---|---|
+| 2 | A árvore | 13 | 12 |
+| 3 | O Node | 12 | 4 |
+| 4 | `npm ci` | 12 | 7 |
+| 5 | `npm run build` | **540** | 449 |
+| 6 | `npm run verify` | 114 | 92 |
+| 7 | `npm run typecheck` | 1 | 0 |
+| 8 | A prova desta construção | 1 | 1 |
+
+Duas leituras, e a segunda desmente uma expectativa:
+
+1. **O mesmo trabalho custa mais 20 % num anfitrião diferente** (540 s contra
+   449 s na construção, 114 s contra 92 s no `verify`). Não há nada a consertar:
+   é a dispersão dos anfitriões partilhados, e é o motivo pelo qual o
+   `timeout-minutes: 30` tem de ficar largo.
+2. **A cache do npm custou mais do que poupou.** A corrida acertou na cache
+   (`Cache hit for: node-cache-Linux-x64-npm-141a93da…`, `Cache Size: ~84 MB
+   (88128500 B)`, `Cache restored successfully`, linhas do passo «O Node»), e
+   mesmo assim o passo «O Node» passou de 4 s para 12 s e o `npm ci` de 7 s para
+   12 s: 24 s com cache contra 11 s sem ela. Descomprimir 84 MB custa mais do que
+   ir buscar 223 pacotes pequenos ao registo. O `cache: npm` fica como o brief
+   pediu, mas fica também esta medição: se algum dia o tempo da corrida importar,
+   é uma linha a tirar, não a afinar, e a poupança seria de cerca de 13 s numa
+   corrida de 700 s, ou seja irrelevante ao pé dos 540 s da construção.
+
+A quarta corrida do ramo é a deste acrescento, e o seu resultado lê-se em
+`gh run list --repo oestadodopais/o-estado-do-pais --branch ci-2026-09-02`. A
+cadeia para aqui de propósito: um relatório que se cite a si próprio a cada push
+nunca fecha.
 
 ---
 
