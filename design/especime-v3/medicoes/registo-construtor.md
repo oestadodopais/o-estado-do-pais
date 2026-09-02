@@ -109,7 +109,7 @@ Todas na forma da casa. Nenhuma reescrita em silêncio.
 | §3, camada 1 (l. 23) | «Existe: 2 602 linhas a 30.08.2026, publicadas em JSON e CSV.» | «Existe: 2 916 linhas a 02.09.2026, publicadas em JSON e CSV; dizia «2 602 linhas a 30.08.2026».» | `ls ledger/claims/*.yml \| wc -l` |
 | §4, cabeçalho (l. 30) | «(30.08.2026)» | «(02.09.2026; a leitura anterior era de 30.08.2026)» | a data da própria conferência |
 | §4, camada 1 (l. 35) | «2 602 linhas; JSON e CSV; selos» | «2 916 linhas a 02.09.2026, dizia «2 602»; JSON e CSV; selos» | `ls ledger/claims/*.yml \| wc -l` |
-| §4, camada 6 (l. 40) | «espera: … feeds, **dados por linha**, MCP» | «existe: … e um JSON por linha a 02.09.2026 (dizia que os dados por linha esperavam)»; sai da coluna «espera» | `find dist/livro-razao -name '*.json' \| wc -l`, e `README.md` §«O livro-razão inteiro» descreve `/livro-razao/<id>.json` |
+| §4, camada 6 (l. 40) | «espera: … feeds, **dados por linha**, MCP» | «existe: … e um JSON por linha a 02.09.2026 (dizia que os dados por linha esperavam)»; sai da coluna «espera» | `find dist/livro-razao -name '*.json' \| wc -l` → `2916` |
 | §5, a casa como entidade (l. 49) | «falta religar o Vercel» | «o Vercel religado a 01.09.2026 e o repositório do sítio público desde esse dia, dizia «falta religar o Vercel»» | `PENDENTES-DO-DIRETOR.md` «Feitas», linha de 01.09.2026 |
 
 A linha 23 estava datada («a 30.08.2026») e o portão deixava-a passar pela forma (i). Corrigiu-se na mesma, porque F0.10 a nomeia e porque a frase abre com «Existe:», que é o estado presente. Fica dito aqui que **esta correção não foi imposta pela régua**: foi imposta pelo bloco.
@@ -174,13 +174,21 @@ O caso (a) é o dos 53 011: o portão recusa-o **duas vezes**, pelo valor que n�
 
 **Um vermelho que não estava previsto e valeu a pena.** Ao escrever a descrição do passo 2 no `README.md` citei a frase «Évora tem 53 011 pessoas» como exemplo do que o portão apanha. O portão pôs o próprio `README.md` vermelho, e tem razão: um documento que governa não escreve esse número, nem como exemplo, porque não há id que o confirme e escrevê-lo ao lado do id certo é uma segunda falsificação. A frase passou a nomear o caso sem repetir o algarismo.
 
-## 6 · Os três portões da casa
+## 6 · Os três portões da casa, e a CI
 
-| portão | comando | código de saída |
-|---|---|---|
-| construção | `npm run build` | **0** |
-| verificação | `npm run verify` | **0** |
-| tipos | `npm run typecheck` | **0** |
+Corridos por inteiro em cada um dos dois commits do bloco, e os códigos de saída registados tal como saíram:
+
+| portão | comando | `b2f15243` | `ba3396b5` |
+|---|---|---|---|
+| construção | `npm run build` | **0** | **0** |
+| verificação | `npm run verify` | **0** | **0** |
+| tipos | `npm run typecheck` | **0** | **0** |
+
+O `check:registo` corre dentro dos dois primeiros, e vê-se no registo da construção: `> npm run ledger:check && npm run check:registo && npm run check:cruzamento && …` (linha 3 do `build.log`), com a sua saída na linha 33.
+
+O segundo commit é só prosa: a regra da casa manda a prosa nova sem travessões, e as sete entradas novas da lista dos passos tinham-nos por imitarem as antigas. Os itens 1 e 3 da mesma lista já usavam dois pontos, de maneira que a forma existe e não se inventou nada. Fica o travessão nas duas linhas de erro impressas pelo portão, que não são prosa e seguem a forma que os outros portões da casa já imprimem («O LIVRO-RAZÃO NÃO PASSA — N erro(s)»).
+
+**A CI.** O contexto `portao` é exigido em `main` e corre `npm run build`, `npm run verify` e `npm run typecheck`; o passo novo vive dentro dos dois primeiros e entra na CI **sem uma linha de alteração no `.github/workflows/portao.yml`**. Corrida do primeiro commit: [33677726722](https://github.com/oestadodopais/o-estado-do-pais/actions/runs/33677726722), `conclusion=success`.
 
 ## 7 · O que este portão ainda não faz
 
