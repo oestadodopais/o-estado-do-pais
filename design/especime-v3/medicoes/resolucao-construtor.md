@@ -237,7 +237,7 @@ O `verify` não engordou de forma mensurável: as duas peças novas somam menos 
 
 ## 7 · O que ficou de fora, e o buraco que resta
 
-**O que resta por fechar, dito às claras.** O motor prova a sua cópia da especificação (`core.derivations_test`), e o sítio prova que a sua cópia é, byte a byte, a que o registo de travessia declara (`check:cruzamento`, em cada `build` e em cada `verify`). O que nenhuma corrida automática confere é a **terceira** comparação: a cópia do sítio contra o ficheiro que o motor tem hoje em disco. Isso é o modo `--with-origin`, que a casa já trata assim para as outras travessias e pela mesma razão (a construção acontece num construtor remoto onde o motor não existe):
+**O que resta por fechar, dito às claras** (e que a segunda passagem fechou: ver o §9.5). O motor prova a sua cópia da especificação (`core.derivations_test`), e o sítio prova que a sua cópia é, byte a byte, a que o registo de travessia declara (`check:cruzamento`, em cada `build` e em cada `verify`). O que nenhuma corrida automática confere é a **terceira** comparação: a cópia do sítio contra o ficheiro que o motor tem hoje em disco. Isso é o modo `--with-origin`, que a casa já trata assim para as outras travessias e pela mesma razão (a construção acontece num construtor remoto onde o motor não existe):
 
     RESEARCHHUB_DIR=<motor> node scripts/check-cruzamento.mjs --with-origin   → exit 0
     python3 -m publisher.cruzar_paridade --conferir --sitio <sítio>            → PASSA — 2 conferencias
@@ -289,7 +289,7 @@ O caminho que fecharia isto sozinho é a especificação entrar na cópia versio
 | **Major 7** · o zero com sinal | a cadeia canónica de qualquer zero é `0` nos dois lados | `core/derivations.py:377-395`; `src/lib/decimal.mjs:178-186` |
 | **Major 8** · a especificação não provava tudo | 13 casos novos, 4 recusas novas e um género novo (`quase-iguais`); o harness passa a conferir a CADEIA quando o caso a exige | `core/derivacoes-paridade.json`; `core/derivations_test.py:77-140`; `scripts/check-ledger.mjs:112-155` e `:157-210` |
 | **Major 9** · a prova inválida | refeita com o método certo: a regra velha e a nova por argumento explícito, sem tocar em nada global | §9.3 |
-| **Major 10** · a paridade com a origem | ver §9.5, do lado do motor |
+| **Major 10** · a paridade com a origem | a cópia versionada do sítio passa a levar a especificação e o registo, e `core.gate` passa a correr `publisher.cruzar_paridade --conferir`; a frase de `cruzar_paridade.py` que dizia que o portão já o corria era falsa e passa a ser verdadeira | `publisher/fixtures/refrescar_site_min.py:96-104`; `core/gate.py:257-274`; `publisher/cruzar_paridade.py:39-44` |
 | **Major 11** · a classe e a marca de ordem de bytes | os conhecidos-positivos comparam o CONJUNTO inteiro dos 24 pontos de código; a marca de ordem de bytes à cabeça é cortada nos dois lados, com seis caminhos conferidos | `core/eyetext.py:118-142` e `:224`; `src/lib/eyetext.mjs:174-197` e `:281`; `core/eyetext_test.py:213-259`; `scripts/provar-eyetext.mjs:538-604` |
 | **Minor 12** · o `temClasse` | separa pelos cinco espaços em branco ASCII do HTML, e não pelo `\s`; a documentação deixa de contar a tabulação vertical como espaço do HTML | `src/lib/eyetext.mjs:205-218`; os dois cabeçalhos |
 | **Minor 13** · as duas portas | `Decimal.de` deixa de aceitar o sinal de mais que o avaliador nunca lhe entregava; os resumos de reposição são remedidos nos ficheiros finais (§9.4) | `src/lib/decimal.mjs:114-124` |
@@ -407,6 +407,23 @@ Duas plantas desta lista só ficaram detetáveis depois de a régua mudar, e é 
 
 As quase-igualdades são o género novo, e são a única coisa que prova que a comparação não tem tolerância: a régua tem de RECUSAR `77.200000000001` para `round ( 30800 / 39900 * 100 , 1 )`, que difere de 77,2 por um bilionésimo, mil vezes menos do que a tolerância de `1e-9` que esta casa tinha e aceitava.
 
+**E a terceira comparação passa a ser automática** (Major 10). Havia duas: o motor provava a sua cópia, o sítio provava que a dele é a que o registo declara, e nada comparava as duas de hoje. Um byte de diferença passava os dois portões, que é exatamente a planta que a leitura a frio trouxe. Agora:
+
+  · a cópia versionada do sítio (`publisher/fixtures/site-min`) passa a levar `ledger/derivacoes-paridade.json` e `ledger/cruzamentos/paridade.json`, refrescada de um clone limpo do ramo do sítio em `3c209d1cacfa`, com 108 ficheiros e 782 298 bytes, resumo `d32a5b7a2c6ec36a3471f12a08f23c326a100d444c79d3189f12cdbe51373859`;
+  · `core/gate.py` corre `python3 -m publisher.cruzar_paridade --conferir`, que compara contra o sítio que o `core.sitio` resolver: a cópia versionada numa máquina sem sítio (é para isso que ela passou a levar os dois ficheiros), a árvore viva no portátil;
+  · a frase de `cruzar_paridade.py` que dizia «é o que o portão corre» era falsa quando foi escrita, e passa a ser verdadeira com a data e a razão ao lado.
+
+Enquanto o ramo do sítio não estiver em `main`, a árvore viva desta máquina não tem os dois ficheiros e a conferência diz isso com razão; corre-se com o sítio nomeado, que é para o que a variável existe:
+
+    OEDP_SITE=<sítio do ramo> python3 -m core.gate     → 0 em 140,13 s, com a linha `GATE  paridade  ok`
+
+E as duas plantas da comparação nova, sobre a cópia versionada, vistas vermelhas e repostas verdes:
+
+| planta | com a planta | reposto |
+|---|---|---|
+| R · um byte a mais na cópia versionada do sítio | exit 1 | exit 0 · `e427112f` |
+| S · um resumo errado no registo da cópia versionada | exit 1 | exit 0 · `40bec89d` |
+
 ### 9.6 · O diferencial, nos avaliadores finais
 
     12 000 expressões ao acaso (duas sementes)   6 000 de 6 000 e 6 000 de 6 000 iguais
@@ -423,3 +440,9 @@ A varredura de fronteira é nova e é a que encontrou o achado do §9.2. Cobre o
 | `scripts/provar-eyetext.mjs` | 595 conferências | **603** conferências | `node scripts/provar-eyetext.mjs` |
 | a prova da aritmética do `ledger:check` | 37 conferências | **77** conferências | `npm run ledger:check` |
 | linhas com aritmética reavaliada (sítio) | 334 | 334 | `npm run ledger:check` |
+| passos do `core.gate` | sem a paridade | **com** `GATE  paridade` | `python3 -m core.gate` |
+| `python3 -m core.gate` | 145,73 s | 140,13 s | `/usr/bin/time -p python3 -m core.gate` |
+
+### 9.8 · O que fica por fechar
+
+O §7 dizia que a terceira comparação da especificação não era corrida por nada. Deixa de ser verdade: o `core.gate` corre-a. O que fica é menor e escreve-se aqui para não se perder: a cópia versionada do sítio é uma fotografia de um commit, e um bloco que mexa na especificação tem de a refrescar (`python3 -m publisher.fixtures.refrescar_site_min --escrever --site <clone limpo>`) na mesma passagem, ou o portão do motor fica vermelho a dizer a verdade. É o preço de a comparação existir, e é o preço certo.
