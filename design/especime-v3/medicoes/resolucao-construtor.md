@@ -167,6 +167,8 @@ O registo de travessia de um ficheiro dizia onde o ficheiro aterrava sabendo-o d
 
 Uma linha no `package.json`: `"provar:eyetext": "node scripts/provar-eyetext.mjs"` e o mesmo no fim da cadeia do `verify`. Não entrou no `build`: o que ela prova é uma paridade entre duas casas e não uma propriedade das páginas construídas, e a medida de aceitação do plano diz `verify`.
 
+O `main` do sítio andou enquanto este bloco corria (o F0.6 fundiu-se em `25a0e9b1` e pôs o `check:registo` nas duas cadeias). A fusão trouxe o único conflito deste bloco, na linha do `verify` do `package.json`, e resolveu-se guardando as duas: a cadeia fica com o `check:registo` a seguir ao `ledger:check` e o `provar:eyetext` antes do `design:feixe`. As três medidas voltaram a correr sobre a árvore fundida, todas a 0.
+
 ## 3 · A tabela dos quatro casos, medida nos dois motores
 
 Os comandos, os quatro. O «antes» do motor é o que o `val.quantize(quantum)` sem regra dava, medido diretamente com o `decimal` no contexto por omissão; o «antes» do sítio é o `evaluateCheck` corrido com a árvore ainda por mudar; os dois «depois» foram medidos na mesma sessão, com o código que este bloco entrega:
