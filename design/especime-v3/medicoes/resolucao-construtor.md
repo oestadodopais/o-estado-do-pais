@@ -172,10 +172,13 @@ Cada planta foi posta, corrida, e reposta com o sha256 do ficheiro conferido ant
 | 3 | um byte a mais na cópia cruzada do sítio | `ledger/derivacoes-paridade.json` (sha reposto `04a824a9…`) | `node scripts/check-cruzamento.mjs` **exit 1**: «os bytes em disco já não são os que atravessaram», com os dois resumos e o exportador certo | `exit 0` |
 | 4 | a classe velha do Python (`str.isspace()`) | `core/eyetext.py` (sha antes e depois `1a60d7fa…`) | `python3 -m core.eyetext_test` **exit 1**, 6 problemas: os cinco U+001C a U+0085 e a conta da classe | `exit 0`, `PASS — 33 checks` |
 | 5 | a classe velha do JavaScript (`/\s/`) | `src/lib/eyetext.mjs` (sha antes e depois `ed1e9b82…`) | `node scripts/provar-eyetext.mjs` **exit 1**, 2 problemas: o U+FEFF apertado a um espaço e aparado da ponta | `exit 0`, `PASSA — 595 conferências` |
+| 6 | o arredondamento em `float64` que estava no sítio antes deste bloco | `src/lib/decimal.mjs` (sha antes e depois `e0378c12…`) | `npm run ledger:check` **exit 1**, 3 erros: o caso `round ( 1,005 , 2 )` da especificação, e as duas plantas de ponta a ponta que ele governa (uma aceite que tinha de ser recusada, uma recusada que tinha de passar) | `exit 0` |
 
 E as plantas que ficam a correr sozinhas em cada corrida, dentro do `npm run ledger:check`: doze linhas de um livro-razão de mentira numa pasta temporária, pela porta `OEDP_LEDGER_DIR`, avaliadas noutro processo (o livro-razão resolve-se uma vez por processo e fica em cache). Sete têm de passar e cinco têm de ser recusadas, e entre elas estão os quatro empates, a divisão `23 / 80 × 100` (28,75 exatos, `28.749999999999996` em `float64`) e as duas derivações que o `float64` aceitava: `1 / 3 * 3` publicado como 1, e `round ( 1,005 , 2 )` publicado como 1.
 
     npm run ledger:check  →  aritmética · 37 conferência(s)
+
+O processo filho é chamado com o caminho do módulo passado como `file://` e com o erro apanhado: se o livro-razão de mentira não chegar a ser lido, isso é dito como um problema e não como um verde. Uma prova que passasse por a planta não ter corrido era pior do que não ter prova nenhuma.
 
 ## 5 · As contagens dos portões, antes e depois
 
