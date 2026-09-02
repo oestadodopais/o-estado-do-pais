@@ -176,13 +176,15 @@ O caso (a) é o dos 53 011: o portão recusa-o **duas vezes**, pelo valor que n�
 
 ## 6 · Os três portões da casa, e a CI
 
-Corridos por inteiro em cada um dos dois commits do bloco, e os códigos de saída registados tal como saíram:
+Corridos por inteiro em cada um dos três commits do bloco, e os códigos de saída registados tal como saíram:
 
-| portão | comando | `b2f15243` | `ba3396b5` |
-|---|---|---|---|
-| construção | `npm run build` | **0** | **0** |
-| verificação | `npm run verify` | **0** | **0** |
-| tipos | `npm run typecheck` | **0** | **0** |
+| portão | comando | `b2f15243` (o portão e as correções) | `ba3396b5` (os travessões) | este relatório |
+|---|---|---|---|---|
+| construção | `npm run build` | **0** | **0** | **0** |
+| verificação | `npm run verify` | **0** | **0** | **0** |
+| tipos | `npm run typecheck` | **0** | **0** | **0** |
+
+A última coluna mediu-se na árvore antes de o commit a fixar, que é o mais perto que um relatório chega do seu próprio resumo: um documento não pode registar o `sha` do commit que o contém. Quem quiser o selo da cabeça do ramo lê-o na corrida do `portao` desse commit, no GitHub.
 
 O `check:registo` corre dentro dos dois primeiros, e vê-se no registo da construção: `> npm run ledger:check && npm run check:registo && npm run check:cruzamento && …` (linha 3 do `build.log`), com a sua saída na linha 33.
 
