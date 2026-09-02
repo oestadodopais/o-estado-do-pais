@@ -9,10 +9,11 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run ledger:check && npm run check:cruzamento && npm run check:documentos && astro build && npm run stamp:version && npm run cartoes && npm run gate:html && npm run check:cadeia && npm run check:dados && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:voz && npm run check:lingua",
+    "build": "npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && astro build && npm run stamp:version && npm run cartoes && npm run gate:html && npm run check:cadeia && npm run check:dados && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:voz && npm run check:lingua",
     "preview": "astro preview",
     "astro": "astro",
     "ledger:check": "node scripts/check-ledger.mjs",
+    "check:registo": "node scripts/check-registo.mjs",
     "cartoes": "node scripts/cartoes.mjs",
     "gate:html": "node scripts/gate-html.mjs",
     "check:dados": "node scripts/check-dados.mjs",
@@ -28,7 +29,7 @@
     "stamp:version": "node scripts/stamp-version.mjs",
     "verify:deploy": "node scripts/verify-deploy.mjs",
     "typecheck": "tsc -p tsconfig.check.json",
-    "verify": "npm run ledger:check && npm run check:cruzamento && npm run check:documentos && npm run gate:html && npm run check:cadeia && npm run check:dados && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:voz && npm run check:lingua && npm run design:feixe"
+    "verify": "npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && npm run gate:html && npm run check:cadeia && npm run check:dados && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:voz && npm run check:lingua && npm run design:feixe"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",
