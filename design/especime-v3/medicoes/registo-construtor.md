@@ -10,7 +10,7 @@ Existe `scripts/check-registo.mjs`, no `build` (passo 2, logo a seguir ao `ledge
 
 Dezasseis positivos conhecidos, cada um numa cópia dos documentos apontada por `OEDP_REGISTO_DIR` com a bandeira `--prova`: catorze vermelhos e dois verdes, códigos de saída `[1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,0]` (§5). Cada um exige, além do código, o **texto** do erro que mede: sair 1 por outro motivo qualquer não prova regra nenhuma.
 
-Dezasseis correções na `VISAO.md` e no `README.md` (§4), todas na forma da casa e com o texto antigo **citado**, nunca parafraseado. Depois delas a régua fica verde sobre a árvore de hoje: **15 afirmações correntes conferidas, 6 datadas saltadas, 1 subconjunto com numerador e denominador conferidos, 1 valor do sítio com o id ao lado, 23 avaliadas contra um chão de 23, 0 erros.**
+Dez correções na `VISAO.md` e no `README.md` (§4), cinco em cada, todas na forma da casa e com o texto antigo **citado**, nunca parafraseado. Depois delas a régua fica verde sobre a árvore de hoje: **15 afirmações correntes conferidas, 6 datadas saltadas, 1 subconjunto com numerador e denominador conferidos, 1 valor do sítio com o id ao lado, 23 avaliadas contra um chão de 23, 0 erros.**
 
 ## 1 · A gramática: o que é corrente, o que é datado
 
@@ -176,7 +176,7 @@ O caso **e** foi refeito nesta passagem: a redação antiga («(2 602 linhas a 3
 
 O caso **a** é o dos 53 011. Recusa-se **uma vez**, com uma mensagem que nomeia a linha certa e o valor certo: «o id mais próximo depois dele, `evora-populacao-2025`, diz "58 567" em "pessoas"». A primeira versão deste relatório dizia «duas vezes», e era falso: V2 não repete um valor que V1 já apanhou (leitura a frio, Minor 13).
 
-O caso **M8** mostra porque o corte do plano é obrigatório: sem o título, a régua lê o plano inteiro e acende em catorze afirmações que são medidas de aceitação de blocos por construir, e não estados. Ou se lia o documento todo e ele ficava vermelho por bom motivo nenhum, ou se deixava de o ler em silêncio; agora para e diz porquê.
+O caso **M8** mostra porque o corte do plano é obrigatório: sem o título, a régua lê o plano inteiro e acende em quinze afirmações que são medidas de aceitação de blocos por construir, e não estados (contadas na corrida do caso M8). Ou se lia o documento todo e ele ficava vermelho por bom motivo nenhum, ou se deixava de o ler em silêncio; agora para e diz porquê.
 
 **Um vermelho que não estava previsto e valeu a pena** (primeira passagem). Ao escrever a descrição do passo 2 no `README.md` citei a frase «Évora tem 53 011 pessoas» como exemplo do que o portão apanha. O portão pôs o próprio `README.md` vermelho, e tem razão: um documento que governa não escreve esse número, nem como exemplo. A frase passou a nomear o caso sem repetir o algarismo.
 
