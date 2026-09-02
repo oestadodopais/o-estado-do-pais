@@ -1,0 +1,125 @@
+# O portão da casa, corrido pelo GitHub e não pela memória de quem constrói.
+#
+# Porquê: a 01.09 um commit vermelho chegou a `main` e foi o Vercel a recusá-lo,
+# aos 15 s, depois do push. A auditoria de 02.09 escreveu-o como o terceiro risco
+# («nenhuma CI, nenhuma verificação obrigatória em `main`: os três portões da casa
+# são uma promessa»). Este ficheiro transforma a promessa em condição: os três
+# comandos que a casa exige antes de cada commit passam a correr no GitHub, em
+# cada push e em cada pedido de integração, num anfitrião limpo que não tem o
+# `node_modules` de ninguém nem o `dist/` de uma construção anterior.
+#
+# O QUE ISTO CONFERE, À LETRA (leitura a frio do Codex, achado 3): a cabeça de
+# cada push e de cada pedido de integração, e não cada commit lá dentro. Um push
+# com cinco commits produz uma corrida, sobre o quinto. É por isso que a regra da
+# casa (os três portões a 0 em cada commit) continua a ser da casa: a CI garante
+# que o que chega a `main` foi conferido, não que cada passo do caminho o foi.
+#
+# O trabalho chama-se `portao` de propósito: é esse o nome do contexto que o
+# diretor exige em `main` nas definições do repositório (Settings → Branches →
+# Require status checks to pass → `portao`). Mudar o identificador do trabalho
+# parte a exigência em silêncio.
+#
+# As ações de terceiros estão presas ao resumo completo do commit, com a etiqueta
+# ao lado em comentário: uma etiqueta é um ponteiro que quem a publica pode mover,
+# um resumo não é. As etiquetas foram lidas na fonte a 02.09.2026 com
+# `gh release view --repo <r>` e os resumos com
+# `gh api repos/<r>/git/ref/tags/<etiqueta>`.
+
+name: portão
+
+on:
+  push:
+  pull_request:
+
+# Nada mais do que ler a árvore. Sem escrita, sem pacotes, sem `id-token`.
+permissions:
+  contents: read
+
+# Uma corrida por referência. O push de um ramo e o pedido de integração desse
+# ramo já correm em referências distintas (`refs/heads/<ramo>` e
+# `refs/pull/<n>/merge`), de modo que o `github.ref` sozinho bastava: o
+# `event_name` fica por ser explícito e nunca poder agrupar dois acontecimentos
+# na mesma chave, e não porque sem ele uma corrida cancelasse a outra (leitura a
+# frio do Codex, achado 10; a primeira redação dizia o contrário e estava
+# errada). O `cancel-in-progress` cancela a corrida anterior da MESMA
+# referência: um segundo push cancela o primeiro, e a corrida que conta para uma
+# verificação obrigatória é sempre a do resumo que se vai fundir.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  portao:
+    # O anfitrião está preso ao maior, e não a `ubuntu-latest`, de propósito: a
+    # 02.09.2026 o `ubuntu-latest` resolvia para esta mesma imagem
+    # (`Image: ubuntu-24.04`, lido no passo «Set up job» da corrida 33593721414),
+    # mas resolve sozinho para a seguinte no dia em que o GitHub a mudar, e um
+    # commit que estava verde passaria a correr noutro sistema sem ninguém
+    # decidir nada. QUANDO MUDAR: por decisão registada, quando a casa quiser o
+    # maior seguinte, e nunca a meio de um bloco; a par com o `.nvmrc`.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: A árvore
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      # `node-version-file: .nvmrc` para haver um só lugar onde a versão do Node
+      # se escreve. O `engines` do `package.json` diz o mínimo (>=22.12.0) e não
+      # se toca; o `.nvmrc` diz a versão exata em que a casa desenvolve, com o
+      # remendo e tudo (`22.23.1`, o `node -v` do portátil), e não um `22` que
+      # flutua por todos os remendos do maior. QUANDO MUDAR: quando o portátil
+      # mudar de Node, na mesma passagem e com o número medido, nunca por
+      # omissão.
+      - name: O Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: npm ci
+        run: npm ci
+
+      # Os três portões, um passo cada um, para o registo dizer qual caiu sem
+      # ninguém ter de ler as 11 577 linhas de saída de uma corrida verde
+      # (medido: `gh run view 33592347822 --log | wc -l`). Um vermelho num destes
+      # passos salta os seguintes, e é o desenho: o primeiro portão que cai é o
+      # que se conserta.
+      - name: npm run build
+        run: npm run build
+
+      - name: npm run verify
+        run: npm run verify
+
+      - name: npm run typecheck
+        run: npm run typecheck
+
+      # A prova: `dist/prova.json` (escrito pelo `gate:html`) e `dist/cadeia.json`
+      # (escrito pelo `check:cadeia`). Os dois são reescritos pelo `verify`, que
+      # torna a correr esses dois portões, de modo que o que sobe é o estado
+      # depois dos três portões, que é o estado que interessa.
+      #
+      # Este passo existe porque o `if-no-files-found: error` do passo seguinte
+      # só falha quando NENHUM dos caminhos casa: com um ficheiro presente e o
+      # outro ausente, a subida passava e a prova ficava meia (leitura a frio do
+      # Codex, achado 4). O `test -f` de cada um fecha esse buraco.
+      - name: Os dois ficheiros da prova existem
+        if: success()
+        run: |
+          test -f dist/prova.json
+          test -f dist/cadeia.json
+
+      # `if: success()` e não `always()`: o artefacto é a prova de uma corrida
+      # VERDE, não de uma construção que a seguir caiu no `verify` ou no
+      # `typecheck` (leitura a frio do Codex, achado 5). Uma corrida vermelha não
+      # deixa artefacto nenhum, e é assim que se quer: a prova de uma corrida que
+      # falhou é o registo, não um ficheiro que parece um selo.
+      - name: A prova desta corrida
+        if: success()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: prova-${{ github.sha }}
+          path: |
+            dist/prova.json
+            dist/cadeia.json
+          retention-days: 14
+          if-no-files-found: error
