@@ -244,7 +244,9 @@ todo o mecanismo:
 | `/estudos/<slug>/documento` | o **trabalho**, tal como foi publicado | o documento, no dia em que foi publicado | dispensado: obra citada, com proveniência própria |
 
 A página de leitura existe **só onde há registo de conteúdo** — hoje oito
-edições com registo, seis portuguesas e duas inglesas — e a diferença diz-se pela porta que
+edições com registo a 02.09.2026, seis portuguesas e duas inglesas; dizia «hoje
+oito edições», e a palavra nua não dizia quais, porque «edições» são também as
+dezasseis do arquivo — e a diferença diz-se pela porta que
 falta na página do estudo, não por uma frase. É uma **transcrição de um
 documento fixado**: nada é reformatado, nem números, nem espaços, nem
 travessões, e o portão compara-a com o registo unidade a unidade. Nesta sessão
@@ -258,8 +260,9 @@ por palavras). **Não tem resumo nem números do estudo**: um resumo escrito sem
 ler o estudo seria conteúdo inventado, e os números do estudo só entram quando
 cada um tiver a sua linha no livro-razão.
 
-Hoje estão alojados **dezasseis documentos** a 02.09.2026 (dizia «treze»): todas
-as dezasseis edições do arquivo, dos seus doze trabalhos. Não falta nenhuma.
+Hoje estão alojados **dezasseis documentos** a 02.09.2026: todas as dezasseis
+edições do arquivo, dos seus doze trabalhos. Não falta nenhuma. A frase dizia
+«treze documentos: todas as treze edições do arquivo, dos seus dez trabalhos».
 
 ### Pôr o documento de um estudo no sítio
 
