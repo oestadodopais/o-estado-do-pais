@@ -1,0 +1,91 @@
+# O portão da casa, corrido pelo GitHub e não pela memória de quem constrói.
+#
+# Porquê: a 01.09 um commit vermelho chegou a `main` e foi o Vercel a recusá-lo,
+# aos 15 s, depois do push. A auditoria de 02.09 escreveu-o como o terceiro risco
+# («nenhuma CI, nenhuma verificação obrigatória em `main`: os três portões da casa
+# são uma promessa»). Este ficheiro transforma a promessa em condição: os três
+# comandos que a casa exige antes de cada commit passam a correr no GitHub, em
+# cada push e em cada pedido de integração, num anfitrião limpo que não tem o
+# `node_modules` de ninguém nem o `dist/` de uma construção anterior.
+#
+# O trabalho chama-se `portao` de propósito: é esse o nome do contexto que o
+# diretor exige em `main` nas definições do repositório (Settings → Branches →
+# Require status checks to pass → `portao`). Mudar o identificador do trabalho
+# parte a exigência em silêncio.
+#
+# As ações de terceiros estão presas ao resumo completo do commit, com a etiqueta
+# ao lado em comentário: uma etiqueta é um ponteiro que quem a publica pode mover,
+# um resumo não é. As etiquetas foram lidas na fonte a 02.09.2026 com
+# `gh release view --repo <r>` e os resumos com
+# `gh api repos/<r>/git/ref/tags/<etiqueta>`.
+
+name: portão
+
+on:
+  push:
+  pull_request:
+
+# Nada mais do que ler a árvore. Sem escrita, sem pacotes, sem `id-token`.
+permissions:
+  contents: read
+
+# Uma corrida por referência e por espécie de acontecimento. O `event_name` está
+# no grupo porque um ramo com pedido de integração aberto produz duas corridas
+# (a do push e a do pedido) e sem ele uma cancelava a outra.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  portao:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: A árvore
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      # `node-version-file: .nvmrc` para haver um só lugar onde a versão do Node
+      # se escreve. O `engines` do `package.json` diz o mínimo (>=22.12.0) e não
+      # se toca; o `.nvmrc` diz o maior em que a casa desenvolve.
+      - name: O Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: npm ci
+        run: npm ci
+
+      # Os três portões, um passo cada um, para o registo dizer qual caiu sem
+      # ninguém ter de ler duas mil linhas de saída.
+      - name: npm run build
+        id: construcao
+        run: npm run build
+
+      - name: npm run verify
+        run: npm run verify
+
+      - name: npm run typecheck
+        run: npm run typecheck
+
+      # A prova desta construção: `dist/prova.json` (do `gate:html`) e
+      # `dist/cadeia.json` (do `check:cadeia`). Fica presa à corrida durante
+      # catorze dias, para quem confere não ter de reconstruir para saber o que
+      # esta árvore mediu.
+      #
+      # A condição tem duas metades e ambas contam: `always()` para uma corrida
+      # que caia no `verify` ou no `typecheck` deixar mesmo assim a prova da
+      # construção; e o resultado do passo da construção, para uma corrida que
+      # caia ANTES de haver `dist/` não juntar um segundo vermelho por um
+      # ficheiro que nunca podia existir. Com a construção verde os dois
+      # ficheiros têm de estar lá, e por isso `if-no-files-found: error`.
+      - name: A prova desta construção
+        if: always() && steps.construcao.outcome == 'success'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: prova-${{ github.sha }}
+          path: |
+            dist/prova.json
+            dist/cadeia.json
+          retention-days: 14
+          if-no-files-found: error
