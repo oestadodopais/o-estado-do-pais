@@ -90,7 +90,7 @@ import { STUDY_IDS } from '../src/data/studies.mjs';
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIR_CRUZAMENTOS = path.join(RAIZ, 'ledger', 'cruzamentos');
 const DIR_CLAIMS = path.join(RAIZ, 'ledger', 'claims');
-/** Onde aterram os ficheiros que atravessam inteiros. */
+/** Onde aterram, por omissão, os ficheiros que atravessam inteiros. */
 const DIR_DADOS = path.join(RAIZ, 'src', 'data');
 
 const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
@@ -415,7 +415,26 @@ function aceitarCorreccao(id) {
 
 /* ----------------------------------------- os ficheiros que atravessam inteiros */
 
-const CAMPOS_FICHEIRO = ['origin_path', 'origin_sha256', 'exported_sha256', 'exporter'];
+/**
+ * Os campos de uma entrada de ficheiro.
+ *
+ * `destino` entrou a 02.09.2026 (bloco F0.5) e é opcional: diz a pasta do sítio
+ * onde o ficheiro aterra, contada da raiz. Sem ele, a pasta é `src/data`, que é
+ * onde a agenda e o calendário aterram e era a única pasta que esta régua sabia
+ * abrir. A especificação da aritmética (`ledger/derivacoes-paridade.json`)
+ * aterra em `ledger/`, ao lado das linhas que ela governa e longe dos dados que
+ * uma página renderiza, e por isso o destino passou a ser uma coisa que o
+ * registo diz em vez de uma coisa que esta régua sabia de cor.
+ */
+const CAMPOS_FICHEIRO = ['destino', 'origin_path', 'origin_sha256', 'exported_sha256', 'exporter'];
+
+/** A pasta do sítio onde um ficheiro cruzado aterra. */
+const PASTA_POR_OMISSAO = 'src/data';
+
+function pastaDoFicheiro(entrada) {
+  const rel = String(entrada.destino ?? PASTA_POR_OMISSAO);
+  return { rel, caminho: path.join(RAIZ, ...rel.split('/')) };
+}
 
 /** Os quatro estados da agenda. Um quinto não tem secção onde renderizar. */
 const ESTADOS = ['em_curso', 'a_seguir', 'concluido', 'retirado'];
@@ -474,11 +493,12 @@ function confereFicheiros(regs, erros) {
       for (const k of ['origin_path', 'origin_sha256', 'exported_sha256']) {
         if (!entrada[k]) erros.push(`${onde}: falta "${k}".`);
       }
-      const caminho = path.join(DIR_DADOS, nome);
+      const { rel, caminho: pasta } = pastaDoFicheiro(entrada);
+      const caminho = path.join(pasta, nome);
       if (!fs.existsSync(caminho)) {
         erros.push(
           `${onde}: o registo diz que este ficheiro atravessou, e não há ` +
-            `src/data/${nome}. Ou o ficheiro voltou a ser exportado, ou foi apagado ` +
+            `${rel}/${nome}. Ou o ficheiro voltou a ser exportado, ou foi apagado ` +
             `sem sair do registo.`,
         );
         continue;
@@ -490,8 +510,8 @@ function confereFicheiros(regs, erros) {
             `        registo: ${entrada.exported_sha256}\n` +
             `        disco:   ${actual}\n` +
             `        Um ficheiro cruzado não se edita à mão. Corrige-se no motor e ` +
-            `volta a atravessar:\n` +
-            `        python3 publisher/export_agenda.py --destino <sítio>/src/data/`,
+            `volta a atravessar, com o exportador que o registo nomeia:\n` +
+            `        ${entrada.exporter ?? 'ResearchHub/publisher/export_agenda.py'}`,
         );
       }
     }

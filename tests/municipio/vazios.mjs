@@ -48,6 +48,7 @@ import {
   validateLedger,
   evaluateCheck,
   parsePtNumber,
+  parsePtDecimal,
   marcaDoValor,
   eValorTextual,
   MarcaDaExpressao,
@@ -186,17 +187,21 @@ function errosDe(resultado, ids) {
   } catch {
     atirou = true;
   }
+  /* `soNumeros` é um `Decimal` desde 02.09.2026 (bloco F0.5): a aritmética das
+     expressões `check` deixou de correr em `float64` e passou a correr em
+     decimais exatos, com as regras do motor (`src/lib/decimal.mjs`). A
+     comparação é por VALOR, que é o que o portão faz. */
   const bem =
     duasMarcas instanceof MarcaDaExpressao &&
     duasMarcas.marca === MARCA &&
     marcaENumero instanceof MarcaDaExpressao &&
-    soNumeros === 112.5 &&
+    soNumeros.igual(parsePtDecimal('112,5')) &&
     atirou;
   conta(
     'A3 · a receita dá a marca quando uma entrada é marca, e a aritmética normal não muda',
     bem,
     `duas marcas → «${duasMarcas}» · marca × número → «${marcaENumero}» · ` +
-      `3/4×150 → ${soNumeros} · valor não declarado → ${atirou ? 'atira' : 'passa'}`,
+      `3/4×150 → ${soNumeros.canonica()} · valor não declarado → ${atirou ? 'atira' : 'passa'}`,
   );
 }
 

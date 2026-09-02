@@ -62,6 +62,91 @@ export const LINHA = new Set([
 export const GENERO_DE_ENFASE = { strong: 'strong', b: 'strong', em: 'em', i: 'em', code: 'code' };
 
 /**
+ * ===========================================================================
+ * O ESPAÇO EM BRANCO DA LEITURA DO OLHO, ESCRITO POR EXTENSO (F0.5, 02.09.2026)
+ * ===========================================================================
+ *
+ * Este módulo dizia `\s` e o seu par do motor (`core/eyetext.py`) dizia
+ * `str.isspace()`, e as duas classes não são a mesma classe: medidas nos 69 632
+ * primeiros pontos de código, o Python tem 29 caracteres e o JavaScript 25, e
+ * discordam em seis.
+ *
+ *   · U+001C, U+001D, U+001E, U+001F e U+0085 são espaço para o Python e não
+ *     são para o JavaScript;
+ *   · U+FEFF é espaço para o JavaScript e não é para o Python.
+ *
+ * Uma classe herdada de uma linguagem não é uma decisão da casa, e duas classes
+ * herdadas de duas linguagens é a mesma leitura a dar duas respostas. Aqui está
+ * escrita a decisão, e é a mesma cadeia dos dois lados: **um caractere que o
+ * olho vê como um espaço, e mais nenhum**.
+ *
+ *   · entram os cinco espaços do HTML (tabulação, mudança de linha, tabulação
+ *     vertical, avanço de página, retorno) e o espaço;
+ *   · entram os separadores de espaço do Unicode (Zs: U+00A0, U+1680,
+ *     U+2000 a U+200A, U+202F, U+205F, U+3000), que um navegador desenha como
+ *     espaço;
+ *   · entram os dois separadores de linha e de parágrafo (U+2028, U+2029);
+ *   · NÃO entra o U+FEFF, que tem largura zero: apertá-lo a um espaço punha na
+ *     leitura um espaço que a página não imprime, que é exatamente o defeito
+ *     que o `juntas()` deste módulo existe para medir;
+ *   · NÃO entram os U+001C a U+001F nem o U+0085, que nenhum navegador aperta e
+ *     que o olho não vê como espaço nenhum.
+ *
+ * A classe é, portanto, a que as duas linguagens já partilham: 24 caracteres.
+ *
+ * ESCRITA POR CÓDIGO E NÃO POR CARACTERE, dos dois lados: um U+00A0 ou um U+2007
+ * escrito à letra dentro do ficheiro é invisível em qualquer revisão, e uma
+ * lista de espaços em branco escrita com espaços em branco é a única lista que
+ * ninguém consegue ler.
+ */
+export const ESPACOS = new Set(
+  [
+    0x0009, 0x000a, 0x000b, 0x000c, 0x000d, 0x0020,
+    0x00a0, 0x1680,
+    0x2000, 0x2001, 0x2002, 0x2003, 0x2004, 0x2005,
+    0x2006, 0x2007, 0x2008, 0x2009, 0x200a,
+    0x2028, 0x2029, 0x202f, 0x205f, 0x3000,
+  ].map((c) => String.fromCodePoint(c)),
+);
+
+/** Este caractere é espaço em branco para a leitura do olho? */
+export function eEspaco(c) {
+  return ESPACOS.has(c);
+}
+
+/** O texto sem espaço em branco nas duas pontas, pela classe da casa. */
+export function apara(s) {
+  let i = 0;
+  let j = s.length;
+  while (i < j && eEspaco(s[i])) i++;
+  while (j > i && eEspaco(s[j - 1])) j--;
+  return s.slice(i, j);
+}
+
+/** Quantos caracteres de espaço em branco há à cabeça, pela classe da casa. */
+export function cabecaDeEspaco(s) {
+  let i = 0;
+  while (i < s.length && eEspaco(s[i])) i++;
+  return i;
+}
+
+/** Cada corrida de espaço em branco reduzida a um espaço, pela classe da casa. */
+export function apertaEspacos(s) {
+  let saida = '';
+  let i = 0;
+  while (i < s.length) {
+    if (eEspaco(s[i])) {
+      while (i < s.length && eEspaco(s[i])) i++;
+      saida += ' ';
+    } else {
+      saida += s[i];
+      i++;
+    }
+  }
+  return saida;
+}
+
+/**
  * Onde o texto não é texto do documento.
  *
  * `script`, `style`, `noscript` e `template` são o `_SKIP_TAGS` do
@@ -89,7 +174,14 @@ const DECLARACAO = /^﻿?\s*<!DOCTYPE[^>]*>/i;
 /** Uma estrutura que a leitura recusa em vez de adivinhar onde pôr o texto. */
 export class Falha extends Error {}
 
-/** Tem esta classe? (o atributo pode trazer várias, separadas por espaço) */
+/**
+ * Tem esta classe? (o atributo pode trazer várias, separadas por espaço)
+ *
+ * O `\s` aqui é deliberado e não entra na classe de espaço da casa (`ESPACOS`):
+ * isto lê um atributo `class` do HTML, que o motor não lê de todo (não há função
+ * nenhuma do lado de lá com que isto tenha de concordar), e a norma do HTML
+ * separa os nomes de classe pelos cinco espaços ASCII, que o `\s` cobre.
+ */
 function temClasse(no, classe) {
   const bruto = no.getAttribute?.('class');
   if (!bruto) return false;
@@ -189,7 +281,7 @@ export function leBlocos(html) {
 
   const despejaSolto = () => {
     if (solto !== null) {
-      if (solto.pedacos.some((c) => c.trim() !== '')) blocos.push({ kind: 'paragraph', unidade: solto });
+      if (solto.pedacos.some((c) => apara(c) !== '')) blocos.push({ kind: 'paragraph', unidade: solto });
       solto = null;
     }
   };
@@ -310,9 +402,9 @@ export function apertaComMapa(s) {
   const indice = new Array(s.length + 1).fill(0);
   let i = 0;
   while (i < s.length) {
-    if (/\s/.test(s[i])) {
+    if (eEspaco(s[i])) {
       let j = i;
-      while (j < s.length && /\s/.test(s[j])) {
+      while (j < s.length && eEspaco(s[j])) {
         indice[j] = saida.length;
         j++;
       }
@@ -341,8 +433,8 @@ export class Texto {
     this.bruto = this.pedacos.join('');
     const { texto, indice } = apertaComMapa(this.bruto);
     this.indice = indice;
-    this.cabeca = texto.length - texto.replace(/^\s+/, '').length;
-    this.texto = texto.trim();
+    this.cabeca = cabecaDeEspaco(texto);
+    this.texto = apara(texto);
     this.deslocamentos = [];
     let posicao = 0;
     for (const pedaco of this.pedacos) {
@@ -377,7 +469,7 @@ export class Texto {
       const esquerda = this.pedacos[i];
       const direita = this.pedacos[i + 1];
       if (!esquerda || !direita) continue;
-      if (/\s/.test(esquerda[esquerda.length - 1]) || /\s/.test(direita[0])) continue;
+      if (eEspaco(esquerda[esquerda.length - 1]) || eEspaco(direita[0])) continue;
       apertadas++;
       const em = this.em(this.deslocamentos[i + 1]);
       if (em > 0 && em <= this.texto.length && this.texto[em - 1] === ' ') fantasmas++;
@@ -437,5 +529,5 @@ export function tituloDoHtml(html) {
   const achado = TITULO.exec(String(html));
   if (!achado) return '';
   const fragmento = parse(`<span>${achado[1]}</span>`);
-  return fragmento.text.replace(/\s+/g, ' ').trim();
+  return apara(apertaEspacos(fragmento.text));
 }

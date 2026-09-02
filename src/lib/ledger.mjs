@@ -19,6 +19,15 @@ import { load } from 'js-yaml';
 
 import { STUDY_IDS, COUNTS } from '../data/studies.mjs';
 import { KINDS, CAMPOS_DE_PROVENIENCIA } from '../data/correcoes.mjs';
+import {
+  Decimal,
+  arredonda,
+  divide,
+  multiplica,
+  nega,
+  soma,
+  subtrai,
+} from './decimal.mjs';
 
 /**
  * Onde está o livro-razão.
@@ -687,11 +696,14 @@ export function hasClaim(id) {
 /* ------------------------------------------------------------------ números */
 
 /**
- * Lê um valor com formatação portuguesa e devolve um número.
- * "82" -> 82 · "26,5%" -> 26.5 · "77,2" -> 77.2 · "−34 100" -> -34100
+ * Lê um valor com formatação portuguesa e devolve a CADEIA canónica dele.
+ * "82" -> "82" · "26,5%" -> "26.5" · "77,2" -> "77.2" · "−34 100" -> "-34100"
  * Devolve null quando não é um número simples (e então `check` não é possível).
+ *
+ * É a única leitura de um valor publicado, e as duas maneiras de o usar saem
+ * daqui: `parsePtNumber` para quem desenha, `parsePtDecimal` para quem prova.
  */
-export function parsePtNumber(value) {
+export function normalizaPtNumero(value) {
   if (typeof value !== 'string') return null;
   let s = value.trim();
   s = s.replace(/−/g, '-'); // sinal de menos tipográfico
@@ -704,8 +716,32 @@ export function parsePtNumber(value) {
   else if (temVirgula) s = s.replace(',', '.');
   else if (temPonto && /^-?\d{1,3}(\.\d{3})+$/.test(s)) s = s.replace(/\./g, '');
   if (!/^-?\d+(\.\d+)?$/.test(s)) return null;
+  return s;
+}
+
+export function parsePtNumber(value) {
+  const s = normalizaPtNumero(value);
+  if (s === null) return null;
   const n = Number(s);
   return Number.isFinite(n) ? n : null;
+}
+
+/**
+ * O MESMO valor, EXATO (bloco F0.5 do plano de 02.09.2026).
+ *
+ * `parsePtNumber` devolve um `float64`, e um `float64` não é o valor que a fonte
+ * publicou: `1,005` não existe em binário, e `0,1 + 0,2` não é `0,3`. A aritmética
+ * das expressões `check` corre agora em decimais exatos, com as regras do
+ * `core/derivations.py` do motor (ver `src/lib/decimal.mjs`), e esta é a porta por
+ * onde um valor publicado entra nelas.
+ *
+ * A NORMALIZAÇÃO É A MESMA, por construção e não por disciplina: as duas funções
+ * chamam `normalizaPtNumero`, e por isso aceitam exatamente os mesmos valores.
+ * Duas normalizações escritas duas vezes foi como o `.5` divergiu.
+ */
+export function parsePtDecimal(value) {
+  const s = normalizaPtNumero(value);
+  return s === null ? null : Decimal.de(s);
 }
 
 /** Só os algarismos de um texto — usado para comparar o que foi renderizado com o livro-razão. */
@@ -821,8 +857,18 @@ function operaComMarca(a, b, fn) {
  * Os operadores e os parênteses TÊM de estar separados por espaços — os ids
  * contêm hífenes, e sem essa regra "a - b" seria ambíguo.
  *
- * Devolve um número, ou uma `MarcaDaExpressao` quando alguma das linhas citadas
- * publica uma marca no lugar do número (ver `VALORES_NAO_NUMERICOS`).
+ * Devolve um `Decimal` (`src/lib/decimal.mjs`), ou uma `MarcaDaExpressao` quando
+ * alguma das linhas citadas publica uma marca no lugar do número (ver
+ * `VALORES_NAO_NUMERICOS`).
+ *
+ * EM DECIMAIS EXATOS, E NÃO EM `float64` (bloco F0.5 do plano de 02.09.2026).
+ * Isto corria em vírgula flutuante e o `core/derivations.py` do motor corria em
+ * `Decimal` de 28 algarismos: a mesma expressão dava respostas diferentes nas
+ * duas casas, e a diferença era tapada por uma tolerância de `1e-9` na
+ * aceitação. As regras estão escritas em `src/lib/decimal.mjs` e provadas contra
+ * o motor por `ledger/derivacoes-paridade.json`; em três linhas: 28 algarismos
+ * significativos e meio-para-o-par nas contas intermédias, meio para longe do
+ * zero no `round`, igualdade exata na comparação.
  */
 export function evaluateCheck(expr, { claims, env = COUNTS, selfId = null } = {}) {
   const bruto = String(expr).replace(/([(),])/g, ' $1 ');
@@ -833,14 +879,14 @@ export function evaluateCheck(expr, { claims, env = COUNTS, selfId = null } = {}
   const next = () => tokens[i++];
 
   function valorDe(token) {
-    if (/^-?\d+(\.\d+)?$/.test(token)) return Number(token);
-    if (Object.prototype.hasOwnProperty.call(env, token)) return Number(env[token]);
+    if (/^-?\d+(\.\d+)?$/.test(token)) return Decimal.de(token);
+    if (Object.prototype.hasOwnProperty.call(env, token)) return Decimal.de(String(env[token]));
     if (token === selfId) {
       throw new Error(`a expressão check refere-se a si própria ("${token}")`);
     }
     const claim = claims.get(token);
     if (!claim) throw new Error(`a expressão check refere "${token}", que não existe no livro-razão`);
-    const n = parsePtNumber(claim.value);
+    const n = parsePtDecimal(claim.value);
     if (n === null) {
       /* UMA MARCA NÃO É UM ERRO DE ESCRITA. Quando o valor é uma das marcas
          declaradas, a expressão continua e leva a marca consigo; qualquer outra
@@ -862,7 +908,7 @@ export function evaluateCheck(expr, { claims, env = COUNTS, selfId = null } = {}
     }
     if (t === '-') {
       const v = primary();
-      return v instanceof MarcaDaExpressao ? v : -v;
+      return v instanceof MarcaDaExpressao ? v : nega(v);
     }
     /* `round ( x , n )` — acrescentado a 2026-08-13. Sem isto, uma linha
        derivada publicada com menos casas do que a divisão produz não podia ser
@@ -870,8 +916,11 @@ export function evaluateCheck(expr, { claims, env = COUNTS, selfId = null } = {}
        é 77,2. A alternativa seria uma tolerância na comparação, que é pior —
        esconderia precisamente a classe de erro que o check existe para apanhar.
        O arredondamento diz-se na expressão, não se presume na comparação.
-       Meio para longe do zero, simétrico: Math.round() sozinho trata −0,5 e 0,5
-       de maneiras diferentes. */
+       Meio para longe do zero, simétrico, e em decimais exatos (F0.5,
+       02.09.2026): o `Math.round()` sozinho trata −0,5 e 0,5 de maneiras
+       diferentes, e a linha que corrigia isso com `Math.sign()` continuava a
+       fazer a conta em `float64`, onde `1,005 × 100` são `100.49999999999999` e
+       o arredondamento dava `1,00` em vez de `1,01`. */
     if (t === 'round') {
       if (next() !== '(') throw new Error('falta um ( depois de round na expressão check');
       const v = expression();
@@ -884,8 +933,7 @@ export function evaluateCheck(expr, { claims, env = COUNTS, selfId = null } = {}
       /* Arredondar uma marca dá a marca: não há casas decimais numa coisa que a
          fonte não mediu. */
       if (v instanceof MarcaDaExpressao) return v;
-      const f = Math.pow(10, Number(casas));
-      return Math.sign(v) * Math.round(Math.abs(v) * f) / f;
+      return arredonda(v, Number(casas));
     }
     return valorDe(t);
   }
@@ -895,7 +943,7 @@ export function evaluateCheck(expr, { claims, env = COUNTS, selfId = null } = {}
     while (peek() === '*' || peek() === '/') {
       const op = next();
       const r = primary();
-      v = operaComMarca(v, r, (a, b) => (op === '*' ? a * b : a / b));
+      v = operaComMarca(v, r, (a, b) => (op === '*' ? multiplica(a, b) : divide(a, b)));
     }
     return v;
   }
@@ -905,7 +953,7 @@ export function evaluateCheck(expr, { claims, env = COUNTS, selfId = null } = {}
     while (peek() === '+' || peek() === '-') {
       const op = next();
       const r = term();
-      v = operaComMarca(v, r, (a, b) => (op === '+' ? a + b : a - b));
+      v = operaComMarca(v, r, (a, b) => (op === '+' ? soma(a, b) : subtrai(a, b)));
     }
     return v;
   }
@@ -2093,7 +2141,7 @@ export function validateLedger() {
 
     // 8 — reavaliação da aritmética
     if (!ausente(c.check)) {
-      const publicado = parsePtNumber(c.value);
+      const publicado = parsePtDecimal(c.value);
       const marcaPublicada = marcaDoValor(c.value);
       if (publicado === null && marcaPublicada === null) {
         errors.push(`${onde} tem "check" mas "value" ("${c.value}") não é um número simples.`);
@@ -2122,15 +2170,26 @@ export function validateLedger() {
             }
           } else if (publicado === null) {
             errors.push(
-              `${onde} publica a marca "${c.value}" e a receita dá o número ${calculado}.\n` +
+              `${onde} publica a marca "${c.value}" e a receita dá o número ${calculado.canonica()}.\n` +
                 `    check: ${c.check}`,
             );
-          } else if (Math.abs(calculado - publicado) > 1e-9) {
+          } else if (!calculado.igual(publicado)) {
+            /* IGUALDADE EXATA, SEM TOLERÂNCIA (bloco F0.5, 02.09.2026). Aqui
+               estava `Math.abs(calculado - publicado) > 1e-9`, uma tolerância
+               ABSOLUTA em `float64`, e o comentário do motor a dizer, com razão,
+               «there is no tolerance». Uma tolerância absoluta é cega à
+               grandeza: numa linha de milhões não recusa nada, e numa linha
+               pequena tapa exactamente o erro que o `check` existe para
+               apanhar. A comparação é agora por VALOR e não por cadeia, que é o
+               que o motor faz na sua linha `if got != want`: `71` e `71,0` são
+               o mesmo número, e `0,1 + 0,2` ou é `0,3` ou não é. */
             errors.push(
               `${onde} a aritmética não bate certo.\n` +
                 `    check: ${c.check}\n` +
-                `    calculado: ${calculado}\n` +
-                `    publicado: ${c.value} (${publicado})`,
+                `    calculado: ${calculado.canonica()}\n` +
+                `    publicado: ${c.value} (${publicado.canonica()})\n` +
+                `    A comparação é exata: não há tolerância nenhuma, e uma derivação que só ` +
+                `bate arredondada diz o arredondamento na própria expressão.`,
             );
           } else {
             verificadas++;

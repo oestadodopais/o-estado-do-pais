@@ -6,11 +6,20 @@
  */
 
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
-import { validateLedger, allClaims, camposPorVerificar, POR_VERIFICAR } from '../src/lib/ledger.mjs';
+import {
+  validateLedger,
+  allClaims,
+  camposPorVerificar,
+  evaluateCheck,
+  parsePtDecimal,
+  POR_VERIFICAR,
+} from '../src/lib/ledger.mjs';
 import { REGRAS, ABERTURA, LEITURA_BREVE, FECHO } from '../src/data/metodo.mjs';
 import { SOBRE } from '../src/data/sobre.mjs';
 
@@ -18,6 +27,205 @@ const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
 const amarelo = (s) => `\x1b[33m${s}\x1b[0m`;
 const verde = (s) => `\x1b[32m${s}\x1b[0m`;
 const cinza = (s) => `\x1b[90m${s}\x1b[0m`;
+
+const AQUI_ = path.dirname(fileURLToPath(import.meta.url));
+const RAIZ_ = path.resolve(AQUI_, '..');
+
+/* ===========================================================================
+ * A PROVA DA ARITMÉTICA, ANTES DE QUALQUER VERDE (bloco F0.5, 02.09.2026)
+ * ===========================================================================
+ *
+ * Regra 14 da casa: um zero só conta depois de a régua ter visto um vermelho.
+ * O que esta régua diz, na linha «N com aritmética reavaliada no build», é que
+ * cada expressão `check` foi reavaliada e deu o valor publicado. A auditoria de
+ * 02.09.2026 mostrou que isso não queria dizer o que parecia: a conta corria em
+ * `float64` e a aceitação tinha uma tolerância de `1e-9`, enquanto o motor
+ * corria em decimais exatos sem tolerância nenhuma, e as duas casas davam
+ * respostas diferentes ao mesmo `.5`.
+ *
+ * São duas provas, e correm as duas antes de a régua ler o livro-razão a sério:
+ *
+ *   1. A ESPECIFICAÇÃO PARTILHADA. `ledger/derivacoes-paridade.json` é o mesmo
+ *      ficheiro, byte a byte, que o motor tem em `core/derivacoes-paridade.json`
+ *      (o `check:cruzamento` prende-lhe os bytes) e que o
+ *      `python3 -m core.derivations_test` avalia do outro lado. Cada caso tem a
+ *      resposta que as regras da casa lhe dão, e cada recusa tem de atirar.
+ *   2. OS ESTRAGOS PLANTADOS, DE PONTA A PONTA. Um livro-razão de mentira numa
+ *      pasta temporária, pela porta `OEDP_LEDGER_DIR` que a casa já usa no
+ *      `check:lingua`, corrido noutro processo: os quatro empates a meio, uma
+ *      divisão cujo resultado em `float64` não é o resultado exato, e as duas
+ *      derivações que o `float64` aceitava e a aritmética exata recusa. Não é o
+ *      avaliador que se prova aqui, é a ACEITAÇÃO: o caminho inteiro, desde o
+ *      ficheiro da linha até à lista de erros.
+ *
+ * A planta é sempre numa CÓPIA, nunca no que a construção publica.
+ */
+
+const provaDaAritmetica = [];
+let casosDaAritmetica = 0;
+
+{
+  /* 1 · a especificação partilhada com o motor */
+  const especFich = path.join(RAIZ_, 'ledger', 'derivacoes-paridade.json');
+  if (!fs.existsSync(especFich)) {
+    provaDaAritmetica.push(
+      `não há ledger/derivacoes-paridade.json. É a especificação da aritmética, atravessa do ` +
+        `motor e é avaliada pelos dois portões.\n        ` +
+        `python3 -m publisher.cruzar_paridade --escrever --sitio <este sítio>`,
+    );
+  } else {
+    const espec = JSON.parse(fs.readFileSync(especFich, 'utf8'));
+    const semLinhas = new Map();
+    for (const caso of espec.casos) {
+      casosDaAritmetica++;
+      let obtido;
+      try {
+        obtido = evaluateCheck(caso.expr, { claims: semLinhas, env: {} });
+      } catch (err) {
+        provaDaAritmetica.push(
+          `paridade/${caso.id}: «${caso.expr}» devia dar ${caso.espera} e foi recusada — ` +
+            `${err.message}`,
+        );
+        continue;
+      }
+      const esperado = parsePtDecimal(caso.espera);
+      if (esperado === null) {
+        provaDaAritmetica.push(`paridade/${caso.id}: "${caso.espera}" não é um número simples.`);
+      } else if (!obtido.igual(esperado)) {
+        provaDaAritmetica.push(
+          `paridade/${caso.id}: «${caso.expr}» dá ${obtido.canonica()} e a especificação diz ` +
+            `${caso.espera}.\n        ${caso.porque}`,
+        );
+      }
+    }
+    for (const recusa of espec.recusas) {
+      casosDaAritmetica++;
+      let obtido = null;
+      try {
+        obtido = evaluateCheck(recusa.expr, { claims: semLinhas, env: {} });
+      } catch {
+        continue;
+      }
+      provaDaAritmetica.push(
+        `paridade/${recusa.id}: «${recusa.expr}» devia ser recusada e deu ` +
+          `${obtido.canonica()}.\n        ${recusa.porque}`,
+      );
+    }
+  }
+}
+
+{
+  /* 2 · os estragos plantados, de ponta a ponta */
+  const linhasDeApoio = {
+    'meio-zero': '0,5',
+    'meio-um': '1,5',
+    'meio-dois': '2,5',
+    'meio-menos': '-0,5',
+    'vinte-e-tres': '23',
+    'oitenta': '80',
+    'um': '1',
+    'tres': '3',
+    'mil-e-cinco-milesimos': '1,005',
+  };
+  /* [id, valor publicado, expressão, tem de ficar vermelho?, o que a planta prova] */
+  const plantas = [
+    ['t-meio-zero-verde', '1', 'round ( meio-zero , 0 )', false,
+      'round(0,5) é 1: meio para longe do zero. O motor dava 0 até 02.09.2026.'],
+    ['t-meio-zero-vermelho', '0', 'round ( meio-zero , 0 )', true,
+      'o valor que o meio-para-o-par dava tem de ser recusado.'],
+    ['t-meio-um-verde', '2', 'round ( meio-um , 0 )', false,
+      'round(1,5) é 2: o único dos quatro empates em que as duas regras concordam.'],
+    ['t-meio-dois-verde', '3', 'round ( meio-dois , 0 )', false,
+      'round(2,5) é 3. O motor dava 2, porque 2 é par.'],
+    ['t-meio-dois-vermelho', '2', 'round ( meio-dois , 0 )', true,
+      'o 2 do meio-para-o-par tem de ser recusado.'],
+    ['t-meio-menos-verde', '-1', 'round ( meio-menos , 0 )', false,
+      'round(-0,5) é -1: para longe do zero, simétrico.'],
+    ['t-meio-menos-vermelho', '0', 'round ( meio-menos , 0 )', true,
+      'o 0 que o Math.round() dá a -0,5 tem de ser recusado.'],
+    ['t-divisao-verde', '28,8', 'round ( vinte-e-tres / oitenta * 100 , 1 )', false,
+      '23 / 80 × 100 são 28,75 exatos, e 28,75 arredonda a 28,8.'],
+    ['t-divisao-vermelho', '28,7', 'round ( vinte-e-tres / oitenta * 100 , 1 )', true,
+      'em float64 a mesma divisão dá 28,749999999999996 e o arredondamento dava 28,7.'],
+    ['t-float-aceitava-um', '1', 'um / tres * tres', true,
+      'em float64 1/3×3 é exatamente 1 e a linha passava; com 28 algarismos são 0,999…9.'],
+    ['t-float-aceitava-dois', '1', 'round ( mil-e-cinco-milesimos , 2 )', true,
+      'em float64 1,005 × 100 são 100.49999999999999 e o arredondamento dava 1,00.'],
+    ['t-exato-aceita', '1,01', 'round ( mil-e-cinco-milesimos , 2 )', false,
+      'e o mesmo caso do outro lado: 1,01 é a resposta exata, e a tolerância de 1e-9 recusava-a.'],
+  ];
+
+  const pasta = fs.mkdtempSync(path.join(os.tmpdir(), 'oedp-prova-aritmetica-'));
+  try {
+    for (const [id, valor] of Object.entries(linhasDeApoio)) {
+      fs.writeFileSync(path.join(pasta, `${id}.yml`), `id: "${id}"\nvalue: "${valor}"\n`, 'utf8');
+    }
+    for (const [id, valor, expr] of plantas) {
+      fs.writeFileSync(
+        path.join(pasta, `${id}.yml`),
+        `id: "${id}"\nvalue: "${valor}"\ncheck: "${expr}"\n`,
+        'utf8',
+      );
+    }
+    /* NOUTRO PROCESSO, e não neste: o livro-razão resolve-se uma vez por
+       processo e fica em cache, e uma régua que trocasse o livro debaixo de si
+       própria a meio da corrida não estaria a conferir o livro verdadeiro. */
+    const guiao =
+      "import('" +
+      path.join(RAIZ_, 'src', 'lib', 'ledger.mjs').split(path.sep).join('/') +
+      "').then((L) => { const r = L.validateLedger(); " +
+      "process.stdout.write(JSON.stringify(r.errors)); });";
+    const saida = execFileSync(process.execPath, ['-e', guiao], {
+      env: { ...process.env, OEDP_LEDGER_DIR: pasta },
+      encoding: 'utf8',
+    });
+    const errosPlantados = JSON.parse(saida);
+    const arithm = (id) =>
+      errosPlantados.some((e) => e.includes(`[${id}.yml]`) && e.includes('a aritmética não bate certo'));
+    for (const [id, valor, expr, temDeSerVermelho, porque] of plantas) {
+      casosDaAritmetica++;
+      const foiVermelho = arithm(id);
+      if (foiVermelho === temDeSerVermelho) continue;
+      provaDaAritmetica.push(
+        temDeSerVermelho
+          ? `planta/${id}: «${expr}» publicada como ${valor} foi ACEITE e tinha de ser recusada.\n` +
+              `        ${porque}`
+          : `planta/${id}: «${expr}» publicada como ${valor} foi RECUSADA e tinha de passar.\n` +
+              `        ${porque}`,
+      );
+    }
+  } finally {
+    fs.rmSync(pasta, { recursive: true, force: true });
+  }
+}
+
+console.log('');
+console.log(
+  cinza(
+    `  aritmética · ${casosDaAritmetica} conferência(s): a especificação partilhada com o motor ` +
+      `e os estragos plantados num livro-razão de mentira`,
+  ),
+);
+if (provaDaAritmetica.length) {
+  console.log('');
+  console.error(
+    vermelho(`  A ARITMÉTICA DAS DUAS CASAS NÃO É A MESMA · ${provaDaAritmetica.length} erro(s):`),
+  );
+  console.error('');
+  for (const e of provaDaAritmetica) console.error('    ' + vermelho('✗') + ' ' + e);
+  console.error('');
+  console.error(
+    '  As regras estão em src/lib/decimal.mjs e em core/derivations.py, e a especificação',
+  );
+  console.error('  em ledger/derivacoes-paridade.json. Mudar uma sem a outra é o defeito.');
+  console.error('');
+  process.exit(1);
+}
+console.log(
+  '  ' +
+    verde('✓') +
+    ' os quatro empates a meio, a divisão exata e as duas derivações que o float64 aceitava.',
+);
 
 let resultado;
 try {
