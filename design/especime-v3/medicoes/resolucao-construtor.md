@@ -409,7 +409,7 @@ As quase-igualdades são o género novo, e são a única coisa que prova que a c
 
 **E a terceira comparação passa a ser automática** (Major 10). Havia duas: o motor provava a sua cópia, o sítio provava que a dele é a que o registo declara, e nada comparava as duas de hoje. Um byte de diferença passava os dois portões, que é exatamente a planta que a leitura a frio trouxe. Agora:
 
-  · a cópia versionada do sítio (`publisher/fixtures/site-min`) passa a levar `ledger/derivacoes-paridade.json` e `ledger/cruzamentos/paridade.json`, refrescada de um clone limpo do ramo do sítio em `3c209d1cacfa`, com 108 ficheiros e 782 298 bytes, resumo `d32a5b7a2c6ec36a3471f12a08f23c326a100d444c79d3189f12cdbe51373859`;
+  · a cópia versionada do sítio (`publisher/fixtures/site-min`) passa a levar `ledger/derivacoes-paridade.json` e `ledger/cruzamentos/paridade.json`, refrescada de um clone limpo do ramo do sítio, com 108 ficheiros e 782 298 bytes, resumo `d32a5b7a2c6ec36a3471f12a08f23c326a100d444c79d3189f12cdbe51373859`. O commit exato de onde a cópia veio não se repete aqui: está em `publisher/fixtures/ORIGEM.md`, que é gerado pelo refresco e é o registo dessa proveniência. Um relatório que o copiasse envelhecia no commit seguinte, que foi o que aconteceu na primeira tentativa desta linha;
   · `core/gate.py` corre `python3 -m publisher.cruzar_paridade --conferir`, que compara contra o sítio que o `core.sitio` resolver: a cópia versionada numa máquina sem sítio (é para isso que ela passou a levar os dois ficheiros), a árvore viva no portátil;
   · a frase de `cruzar_paridade.py` que dizia «é o que o portão corre» era falsa quando foi escrita, e passa a ser verdadeira com a data e a razão ao lado.
 
