@@ -20,24 +20,24 @@ O Estado do País é um observatório de Portugal escrito, conferido e atualizad
 ## 3 · A pilha: cada camada feita só da anterior
 
 0. **As fontes e as versões.** O motor (ResearchHub) lê os publicadores oficiais e guarda cada versão de cada ficheiro, com sha256 e data, porque os publicadores substituem ficheiros e o passado não se volta a descarregar. Existe o motor e `indicators/vintages.json`; o arquivo dos ficheiros entra com o corredor diário.
-1. **O livro-razão.** Os números com proveniência, frescura e comparabilidade, nas duas edições. Existe: 2 602 linhas a 30.08.2026, publicadas em JSON e CSV.
+1. **O livro-razão.** Os números com proveniência, frescura e comparabilidade, nas duas edições. Existe: 2 916 linhas a 02.09.2026, publicadas em JSON e CSV; dizia «2 602 linhas a 30.08.2026».
 2. **As medidas e as comparações.** Os domínios da carta dos conteúdos, cada pergunta com uma medida e a comparação que a fonte permite (contra um limiar publicado, contra os pares, contra o próprio passado; o concelho contra o país e contra o seu passado). A carta e o inventário são a entrega da sessão seguinte; os domínios entram por vagas.
 3. **As leituras.** «O que mudou» (o diário do que os números públicos fizeram, gerado da própria corrida), «O que os números dizem» (uma pergunta da atualidade respondida só com linhas) e «O que se discute» (a vigia da Assembleia, do Diário da República e dos calendários de difusão). Depois da primeira vaga.
 4. **Os estudos.** Uma pergunta (não um tema), um método fixado antes de ver os dados, o livro-razão de afirmações, a leitura cruzada, a condição de matar, o resultado nulo publicado. O arquivo do conhecimento sobre um assunto ou um período. Doze existem. Três patamares, abertos por fases: os factos; o que as fontes projetam, com os pressupostos e os falhanços passados de cada projeção; as opções com evidência, com conclusões só sobre evidência e nunca sobre valores.
 5. **A síntese.** O cruzamento entre domínios e no tempo. A exploração por IA que procura ligações entre áreas produz **perguntas, nunca achados**: cada pergunta passa pela disciplina dos estudos, porque a caça a correlações é a forma mais rápida de fabricar falsos achados (quebras de comparabilidade, denominadores pequenos, falácia ecológica). No topo, a peça que dá nome à casa: «O Estado do País», uma síntese periódica (um ponto de situação por trimestre, um relatório por ano) construída das camadas de baixo, que é o que um decisor lê. Horizonte.
 6. **Os instrumentos e o acesso.** Para pessoas: explorar, comparar, descarregar gráficos com atribuição, e um dia vídeos curtos e infografias feitos de linhas. Para agentes de IA de outras pessoas: o livro-razão em JSON (existe), um servidor MCP da casa, feeds, dados estruturados por linha, uma licença explícita. O motor deixa de ser só a ferramenta da casa e passa a ser, aos poucos, a ferramenta de quem investiga. O pacote de citabilidade na fase 2; os instrumentos na fase 3.
 
-## 4 · O que já existe e o que cada camada espera (30.08.2026)
+## 4 · O que já existe e o que cada camada espera (02.09.2026; a leitura anterior era de 30.08.2026)
 
 | camada | existe | espera |
 |---|---|---|
 | 0 | o motor; os *vintages* em JSON | o arquivo de cada versão de cada ficheiro (corredor diário, B) |
-| 1 | 2 602 linhas; JSON e CSV; selos; correções em `/metodo` | a frescura diária, «conferido em» (B) |
+| 1 | 2 916 linhas a 02.09.2026, dizia «2 602»; JSON e CSV; selos; correções em `/metodo` | a frescura diária, «conferido em» (B) |
 | 2 | os dois painéis da União na primeira página | a carta, o inventário, a primeira vaga (A, depois a construção) |
 | 3 | a régua semanal do painel europeu | «O que mudou», «O que os números dizem», a vigia |
 | 4 | doze estudos com livro-razão e leitura cruzada | os patamares 2 e 3, por fases |
 | 5 | nada | a exploração como geradora de perguntas; a síntese periódica |
-| 6 | o livro-razão em JSON e CSV; JSON-LD; sitemaps; robots | licença, «citar como», feeds, dados por linha, MCP; instrumentos para leitores; vídeo |
+| 6 | o livro-razão em JSON e CSV, e um JSON por linha a 02.09.2026; JSON-LD; sitemaps; robots; a coluna do lado dizia «licença, «citar como», feeds, dados por linha, MCP; instrumentos para leitores; vídeo», e os dados por linha saíram dela porque já existem | licença, «citar como», feeds, MCP; instrumentos para leitores; vídeo |
 
 ## 5 · O horizonte: as ideias postas por escrito para não se perderem
 
@@ -46,7 +46,7 @@ O Estado do País é um observatório de Portugal escrito, conferido e atualizad
 | a carta dos conteúdos com 17 domínios, por vagas | diretor, 29.08 | decidida a 30.08 (ordem confirmada); a 31.08 o diretor acrescentou «segurança social e pensões» à primeira vaga, e os domínios passam a 18 |
 | a frescura diária e «O que mudou» | diretor, 29.08 | decidida a 30.08 (corredor no motor; rotina publica com portões verdes) |
 | o arquivo de versões dos ficheiros de fonte | diretor, 30.08 | decidido (entra em B) |
-| a casa como entidade (caixa de correio, organização no GitHub, cofre, nota de continuidade, depósito externo, plano de fim de vida) | diretor, 30.08 | decidida a 30.08; a organização `oestadodopais` criada a 31.08, com o sítio transferido e o motor publicado lá (privados); falta religar o Vercel; a caixa quando a casa precisar de escrever; o repositório do sítio público no lançamento, com a regra dos dados pessoais |
+| a casa como entidade (caixa de correio, organização no GitHub, cofre, nota de continuidade, depósito externo, plano de fim de vida) | diretor, 30.08 | decidida a 30.08; a organização `oestadodopais` criada a 31.08, com o sítio transferido e o motor publicado lá; a 02.09.2026 o Vercel está religado, o repositório do sítio é público desde 01.09 e o do motor continua privado; a caixa quando a casa precisar de escrever. A frase dizia «(privados); falta religar o Vercel» e dizia «o repositório do sítio público no lançamento, com a regra dos dados pessoais»: a passagem a público foi a 01.09, e não no lançamento, com a regra dos dados pessoais aplicada nesse dia |
 | a tabela da autonomia e a via B da divulgação (rotular tudo; o diretor responde) | diretor, 30.08 | decidida a 30.08: a tabela escreve-se em `POLITICA-DA-AUTONOMIA.md` como autorização durável; o texto da divulgação muda em «Sobre» e `/metodo` |
 | o registo de modelos, com testes de promoção por estragos plantados | diretor, 30.08 | decidido a 30.08 (o Fable no lugar de direção; a rotina é código; as passagens mecânicas em Opus e Sonnet; o Codex lê a frio) |
 | a diligência legal: a leitura na fonte agora, a hora do advogado quando a leitura o pedir e sempre antes do lançamento | diretor, 30.08 | decidida a 30.08 («para não nos metermos em sarilhos»): a memória `DILIGENCIA-LEGAL.md` é a entrega D da sessão seguinte; a hora do advogado paga-se quando a memória o pedir e, em qualquer caso, antes da indexação e das redes; hipótese do diretor, a testar e não a assumir: um sítio independente, sem fins lucrativos, que não se diz jornalístico, não precisa de registo, como um blogue; o que se leu até agora (resumos, não a lei) diz que o critério da ERC é formal (periodicidade, estrutura editorial), não o nome que o sítio dá a si próprio |
