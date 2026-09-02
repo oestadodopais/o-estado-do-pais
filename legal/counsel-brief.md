@@ -64,7 +64,7 @@ explicitly, since it may affect every answer below:
 - The **regulatory frame** invoked (AI Act, GDPR, database rights) is EU
 
 **Q0. Which law governs, for each of the clusters below — and does the operator's
-UK residence create exposure, protection, or merely complication?** If the answer
+residence outside Portugal create exposure, protection, or merely complication?** If the answer
 differs by cluster, we need to know which.
 
 ---
