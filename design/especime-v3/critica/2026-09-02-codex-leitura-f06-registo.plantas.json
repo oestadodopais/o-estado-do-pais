@@ -1,0 +1,42 @@
+{
+ "registado_em": "2026-09-02T20:58:01+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/78714fcd-9d7a-49ae-92d0-914347b16683/scratchpad/leituras/f06-pacote",
+ "plantas": [
+  {
+   "id": "P1a",
+   "ficheiro": "check-registo.mjs",
+   "descricao": "uma data igual à de hoje passa a isentar a afirmação, contra o cabeçalho do próprio portão (cópia inteira)",
+   "sha256_antes": "c8244ef4dea69f16e4df13e604535aaaa08ff7806cc161735a24cb0428a0190c",
+   "sha256_depois": "a8d2c5ef05563e92d068e80af9f2a1c3964c36a1980cad9187a14bb279dfc756",
+   "contexto_antes": "n = denominador(texto, fim);\n      const escrito = den ?? m[1];\n      if (den) conta.subconjuntos++;\n\n      const datada = dataDaAfirmacao(texto, inicio, fim);\n      if (datada && (datada.absoluta || datada.data !== hoje)) {\n        conta.datadas.push({ onde: onde(inicio), texto: m[0].trim(), forma: datada.forma, data: datada.data });\n        continue;\n      }\n\n      conta.corrente",
+   "contexto_depois": "n = denominador(texto, fim);\n      const escrito = den ?? m[1];\n      if (den) conta.subconjuntos++;\n\n      const datada = dataDaAfirmacao(texto, inicio, fim);\n      if (datada) {\n        conta.datadas.push({ onde: onde(inicio), texto: m[0].trim(), forma: datada.forma, data: datada.data });\n        continue;\n      }\n\n      conta.corrente"
+  },
+  {
+   "id": "P1b",
+   "ficheiro": "diff.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff.patch",
+   "sha256_antes": "3b57844372c31c4e278f8787211373a06c7e4237a3da405d1158194715963a7b",
+   "sha256_depois": "b0c8279aaba3704b96ace12acd06dce08280638c073f0f3737e59ec6c6684541",
+   "contexto_antes": "denominador(texto, fim);\n+      const escrito = den ?? m[1];\n+      if (den) conta.subconjuntos++;\n+\n+      const datada = dataDaAfirmacao(texto, inicio, fim);\n+      if (datada && (datada.absoluta || datada.data !== hoje)) {\n+        conta.datadas.push({ onde: onde(inicio), texto: m[0].trim(), forma: datada.forma, data: datada.data });\n+        continue;\n+      }\n+\n+      conta.cor",
+   "contexto_depois": "denominador(texto, fim);\n+      const escrito = den ?? m[1];\n+      if (den) conta.subconjuntos++;\n+\n+      const datada = dataDaAfirmacao(texto, inicio, fim);\n+      if (datada) {\n+        conta.datadas.push({ onde: onde(inicio), texto: m[0].trim(), forma: datada.forma, data: datada.data });\n+        continue;\n+      }\n+\n+      conta.cor"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz que o portão lê as últimas dez secções do DECISIONS.md, e o portão não o lê",
+   "sha256_antes": "58da4b8f217759e0e929d4265736eb86b3e78683ea650931d24fa8dbe5e58825",
+   "sha256_depois": "f3169d3be2dc78d78fd6d3dcff69057a52ccddf9748e59b8a869c29333c7ddaf",
+   "contexto_antes": "porque F0.10 o manda; o portão não o teria apanhado e não o apanha. O «vazio» do arquivo fica como está, por ser prosa e por ser do diretor a linha onde vive.\n\n**O que fica de fora, por escolha.** O `DECISIONS.md`: é o registo, e os seus números são históricos por natureza; uma decisão de agosto diz o que era verdade em agosto, e reescrevê-la seria falsificar o registo. Do `PLANO` leem-se só o §0 e o §1 (as garantias e as regras);",
+   "contexto_depois": "porque F0.10 o manda; o portão não o teria apanhado e não o apanha. O «vazio» do arquivo fica como está, por ser prosa e por ser do diretor a linha onde vive.\n\n**O que entra também.** O `DECISIONS.md`: o portão lê as suas últimas dez secções como documentos correntes, e os seus números conferem-se como os outros; uma decisão de agosto diz o que era verdade em agosto, e reescrevê-la seria falsificar o registo. Do `PLANO` leem-se só o §0 e o §1 (as garantias e as regras);"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "VISAO.md",
+   "descricao": "a VISAO da cópia volta a dizer 2 602 linhas sem data, que o portão descrito recusaria, enquanto o relatório diz que os documentos estão verdes",
+   "sha256_antes": "d0051ac091c7acc740e26b81787b8373b248ecfbb4e53b5fbf4aeb966fa94ff1",
+   "sha256_depois": "779c4152fd5493340386b712206304efdb62b0db2d5f375a8f3786183f4f566f",
+   "contexto_antes": "30.08.2026)\n\n| camada | existe | espera |\n|---|---|---|\n| 0 | o motor; os *vintages* em JSON | o arquivo de cada versão de cada ficheiro (corredor diário, B) |\n| 1 | 2 916 linhas a 02.09.2026, dizia «2 602»; JSON e CSV; selos; correções em `/metodo` | a frescura diária, «conferido em» (B) |\n| 2 | os dois painéis da União na primeira página | a carta, o inventário, a primeira v",
+   "contexto_depois": "30.08.2026)\n\n| camada | existe | espera |\n|---|---|---|\n| 0 | o motor; os *vintages* em JSON | o arquivo de cada versão de cada ficheiro (corredor diário, B) |\n| 1 | 2 602 linhas; JSON e CSV; selos; correções em `/metodo` | a frescura diária, «conferido em» (B) |\n| 2 | os dois painéis da União na primeira página | a carta, o inventário, a primeira v"
+  }
+ ]
+}

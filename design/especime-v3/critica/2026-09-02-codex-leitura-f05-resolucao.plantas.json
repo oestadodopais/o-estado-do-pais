@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-02T22:14:56+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/78714fcd-9d7a-49ae-92d0-914347b16683/scratchpad/leituras/f05-pacote",
+ "plantas": [
+  {
+   "id": "P1a",
+   "ficheiro": "decimal.mjs",
+   "descricao": "a precisão das contas intermédias passa de 28 para 27 algarismos, contra o cabeçalho do próprio ficheiro e contra o motor (cópia inteira)",
+   "sha256_antes": "e0378c1212866415d48f4489f7f787d6cf5177ba0b95749c7156b082219ffa89",
+   "sha256_depois": "1836f2646cb55671b5c8c71c1616428525626028a9e04afab6a4e8ea3331b7fa",
+   "contexto_antes": ", e é\n * assim que «meio para longe do zero» é uma regra e não dois casos.\n */\n\n/** Os algarismos significativos das contas intermédias. O `prec` do Python. */\nexport const PRECISAO = 28;\n\n/** Quantos algarismos tem este inteiro não negativo. */\nfunction algarismos(n) {\n  return n === 0n ? 1 : String(n).length;\n}\n\n/** 10^k como `BigInt`, para k ",
+   "contexto_depois": ", e é\n * assim que «meio para longe do zero» é uma regra e não dois casos.\n */\n\n/** Os algarismos significativos das contas intermédias. O `prec` do Python. */\nexport const PRECISAO = 27;\n\n/** Quantos algarismos tem este inteiro não negativo. */\nfunction algarismos(n) {\n  return n === 0n ? 1 : String(n).length;\n}\n\n/** 10^k como `BigInt`, para k "
+  },
+  {
+   "id": "P1b",
+   "ficheiro": "diff-sitio.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff do sítio",
+   "sha256_antes": "8250b75f333d9dc6ed04e59095198976d15b773a1e38fd538b08147643f4e6c6",
+   "sha256_depois": "5b8b6118fe9decb9f5bc5b405428442b20112a68ca9aa2906c46ef781207e598",
+   "contexto_antes": "é\n+ * assim que «meio para longe do zero» é uma regra e não dois casos.\n+ */\n+\n+/** Os algarismos significativos das contas intermédias. O `prec` do Python. */\n+export const PRECISAO = 28;\n+\n+/** Quantos algarismos tem este inteiro não negativo. */\n+function algarismos(n) {\n+  return n === 0n ? 1 : String(n).length;\n+}\n+\n+/** 10^k como `BigInt`, ",
+   "contexto_depois": "é\n+ * assim que «meio para longe do zero» é uma regra e não dois casos.\n+ */\n+\n+/** Os algarismos significativos das contas intermédias. O `prec` do Python. */\n+export const PRECISAO = 27;\n+\n+/** Quantos algarismos tem este inteiro não negativo. */\n+function algarismos(n) {\n+  return n === 0n ? 1 : String(n).length;\n+}\n+\n+/** 10^k como `BigInt`, "
+  },
+  {
+   "id": "P2a",
+   "ficheiro": "derivations.py",
+   "descricao": "o motor volta ao arredondamento por omissão (meio para o par): rounding=None (cópia inteira)",
+   "sha256_antes": "105e7d9d4282f7532189a668a5f7a63e96806c2f0c7bd490ed81db9438e4e2f4",
+   "sha256_depois": "345c5fe72d6c96a219010d086576c5c5800077420752f26cbc922ce0fc3d51d8",
+   "contexto_antes": "f digits, found {digits_tok!r}\"\n                )\n            digits = int(digits_tok)\n            expect(\")\")\n            quantum = Decimal(1).scaleb(-digits)\n            return val.quantize(quantum, rounding=ROUND_HALF_UP)\n        if tok in {\")\", \",\", \"+\", \"*\", \"/\"}:\n            raise DerivationError(f\"check expression has a stray {tok!r}\")\n        return value_of(tok)\n\n    def t",
+   "contexto_depois": "f digits, found {digits_tok!r}\"\n                )\n            digits = int(digits_tok)\n            expect(\")\")\n            quantum = Decimal(1).scaleb(-digits)\n            return val.quantize(quantum, rounding=None)\n        if tok in {\")\", \",\", \"+\", \"*\", \"/\"}:\n            raise DerivationError(f\"check expression has a stray {tok!r}\")\n        return value_of(tok)\n\n    def t"
+  },
+  {
+   "id": "P2b",
+   "ficheiro": "diff-motor.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff do motor",
+   "sha256_antes": "c017dea4b8b1d4c2648a1d1420621e25a6e662558f6aad57a495e6317d94c369",
+   "sha256_depois": "f7976d36e1609d54b5760a76cf6885f5d2f82ca73b180e63f25ed19a802d8930",
+   "contexto_antes": "   )\n+            digits = int(digits_tok)\n             expect(\")\")\n             quantum = Decimal(1).scaleb(-digits)\n-            return val.quantize(quantum)\n+            return val.quantize(quantum, rounding=ROUND_HALF_UP)\n         if tok in {\")\", \",\", \"+\", \"*\", \"/\"}:\n             raise DerivationError(f\"check expression has a stray {tok!r}\")\n         return value_of(tok)\ndiff --",
+   "contexto_depois": "   )\n+            digits = int(digits_tok)\n             expect(\")\")\n             quantum = Decimal(1).scaleb(-digits)\n-            return val.quantize(quantum)\n+            return val.quantize(quantum, rounding=None)\n         if tok in {\")\", \",\", \"+\", \"*\", \"/\"}:\n             raise DerivationError(f\"check expression has a stray {tok!r}\")\n         return value_of(tok)\ndiff --"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "derivacoes-paridade.sitio.json",
+   "descricao": "a cópia do sítio do fixture espera 1.00 onde o motor e o porquê dizem 1.01: as duas cópias deixam de ser byte a byte iguais e o sha256 registado deixa de bater",
+   "sha256_antes": "5cf0cd4337bd872f4369efd2666220855a9b01b8814461a090360e8f8e84d856",
+   "sha256_depois": "a28c75758c82daf60d18903b057b877bd78e6697b07d2e6dea75c960b846dda3",
+   "contexto_antes": "empate nao e so na casa das unidades. Meio-para-o-par dava 0,12.\"\n  },\n  {\n   \"id\": \"empate-duas-casas-que-o-float-perde\",\n   \"expr\": \"round ( 1.005 , 2 )\",\n   \"espera\": \"1.01\",\n   \"porque\": \"em float64, 1.005 * 100 da 100.49999999999999 e o arredondamento da 1,00. E o caso que separa a aritmetica exata da aproximada.\"\n  },\n  {\n   \"id",
+   "contexto_depois": "empate nao e so na casa das unidades. Meio-para-o-par dava 0,12.\"\n  },\n  {\n   \"id\": \"empate-duas-casas-que-o-float-perde\",\n   \"expr\": \"round ( 1.005 , 2 )\",\n   \"espera\": \"1.00\",\n   \"porque\": \"em float64, 1.005 * 100 da 100.49999999999999 e o arredondamento da 1,00. E o caso que separa a aritmetica exata da aproximada.\"\n  },\n  {\n   \"id"
+  }
+ ]
+}
