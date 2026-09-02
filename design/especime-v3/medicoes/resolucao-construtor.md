@@ -169,10 +169,14 @@ Uma linha no `package.json`: `"provar:eyetext": "node scripts/provar-eyetext.mjs
 
 ## 3 · A tabela dos quatro casos, medida nos dois motores
 
-Antes:
+Os comandos, os quatro. O «antes» do motor é o que o `val.quantize(quantum)` sem regra dava, medido diretamente com o `decimal` no contexto por omissão; o «antes» do sítio é o `evaluateCheck` corrido com a árvore ainda por mudar; os dois «depois» foram medidos na mesma sessão, com o código que este bloco entrega:
 
-    motor: python3 -c "…Decimal('0.5').quantize(Decimal(1))…"
-    sítio: node -e "…evaluateCheck('round ( 0.5 , 0 )')…"
+    motor antes:  python3 -c "from decimal import Decimal; print(Decimal('0.5').quantize(Decimal(1)))"
+    sítio antes:  node -e "…evaluateCheck('round ( 0.5 , 0 )', {claims:new Map()})…"
+    motor depois: python3 -c "…D.evaluate('round ( 0.5 , 0 )', {})…"
+    sítio depois: node -e "…evaluateCheck('round ( 0.5 , 0 )', {claims:new Map()}).canonica()…"
+
+Em negrito, o valor que difere do que a casa publica agora.
 
 | expressão | motor antes | sítio antes | motor depois | sítio depois |
 |---|---|---|---|---|
@@ -181,11 +185,11 @@ Antes:
 | `round ( 2,5 , 0 )` | **2** | 3 | 3 | 3 |
 | `round ( -0,5 , 0 )` | **-0** | -1 | -1 | -1 |
 | `round ( 0,125 , 2 )` | **0,12** | 0,13 | 0,13 | 0,13 |
-| `round ( 1,005 , 2 )` | 1,01 | **1** | 1,01 | 1,01 |
+| `round ( 1,005 , 2 )` | **1,00** | **1** | 1,01 | 1,01 |
 | `1 / 3` | 0,3333333333333333333333333333 | **0,3333333333333333** | 0,3333333333333333333333333333 | 0,3333333333333333333333333333 |
 | `0,1 + 0,2` | 0,3 | **0.30000000000000004** | 0,3 | 0,3 |
 
-Os «depois» dos dois lados foram medidos na mesma sessão, com os comandos acima.
+Os quatro primeiros são os empates do brief. O quinto mostra que o empate não é só na casa das unidades. O sexto é o único em que as duas casas concordavam **e as duas estavam erradas**: o motor por arredondar para o par e o sítio por multiplicar `1,005` por 100 em `float64` e obter `100.49999999999999`. Os dois últimos são a aritmética por baixo do arredondamento.
 
 ## 4 · Os conhecidos-positivos, vermelhos e depois verdes
 
