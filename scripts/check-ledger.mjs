@@ -10,7 +10,7 @@ import os from 'node:os';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import {
   validateLedger,
@@ -170,19 +170,29 @@ let casosDaAritmetica = 0;
     /* NOUTRO PROCESSO, e não neste: o livro-razão resolve-se uma vez por
        processo e fica em cache, e uma régua que trocasse o livro debaixo de si
        própria a meio da corrida não estaria a conferir o livro verdadeiro. */
+    const modulo = JSON.stringify(pathToFileURL(path.join(RAIZ_, 'src', 'lib', 'ledger.mjs')).href);
     const guiao =
-      "import('" +
-      path.join(RAIZ_, 'src', 'lib', 'ledger.mjs').split(path.sep).join('/') +
-      "').then((L) => { const r = L.validateLedger(); " +
-      "process.stdout.write(JSON.stringify(r.errors)); });";
-    const saida = execFileSync(process.execPath, ['-e', guiao], {
-      env: { ...process.env, OEDP_LEDGER_DIR: pasta },
-      encoding: 'utf8',
-    });
-    const errosPlantados = JSON.parse(saida);
+      `import(${modulo}).then((L) => { const r = L.validateLedger(); ` +
+      'process.stdout.write(JSON.stringify(r.errors)); });';
+    let errosPlantados;
+    try {
+      errosPlantados = JSON.parse(
+        execFileSync(process.execPath, ['-e', guiao], {
+          env: { ...process.env, OEDP_LEDGER_DIR: pasta },
+          encoding: 'utf8',
+        }),
+      );
+    } catch (err) {
+      provaDaAritmetica.push(
+        `o livro-razão de mentira não chegou a ser lido: ${err.message}\n` +
+          `        Sem isto, os doze estragos plantados não foram vistos, e a linha verde de ` +
+          `baixo não valeria nada.`,
+      );
+      errosPlantados = null;
+    }
     const arithm = (id) =>
       errosPlantados.some((e) => e.includes(`[${id}.yml]`) && e.includes('a aritmética não bate certo'));
-    for (const [id, valor, expr, temDeSerVermelho, porque] of plantas) {
+    for (const [id, valor, expr, temDeSerVermelho, porque] of errosPlantados ? plantas : []) {
       casosDaAritmetica++;
       const foiVermelho = arithm(id);
       if (foiVermelho === temDeSerVermelho) continue;
