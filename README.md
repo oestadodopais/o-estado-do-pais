@@ -27,22 +27,36 @@ npm run verify:deploy  # confere o que está NO AR contra origin/main
 
 Requer Node ≥ 22.12 (exigência do Astro 7).
 
-`npm run build` são oito passos encadeados, e qualquer um deles pára tudo:
+`npm run build` são quinze passos encadeados a 02.09.2026 (dizia «oito», a
+cadeia de 15.08), e qualquer um deles pára tudo:
 
 1. `ledger:check`: o livro-razão está completo e a aritmética bate certo, e
    toda a entrada do `DECISIONS.md` a partir da §1.38 declara que texto governa,
    com o resumo desse texto tal como ele está (a **amarra das decisões**: uma
    mudança de rumo não sai em silêncio);
-2. `check:cruzamento`: cada linha **e cada ficheiro** que veio do motor de
+2. `check:registo` — os números de estado dos documentos que governam contra o
+   que se mede na fonte: as linhas do livro-razão, os concelhos com página, os
+   estudos e as edições do arquivo, os documentos alojados, as correções
+   publicadas, os passos desta cadeia e as páginas de leitura. Uma afirmação sem
+   data é o estado de hoje e tem de bater certo; uma afirmação datada sai da
+   conferência pela forma («2 916 linhas a 02.09.2026», «dizia «132 linhas»»). E
+   um valor do sítio citado num desses documentos traz o id da sua linha ao
+   lado, ou a construção pára. Foi por aqui que uma população de Évora que nunca
+   foi medida entrou no ficheiro que cada sessão lê primeiro, e este passo
+   recusa-a duas vezes: pelo valor, que não é o da linha, e pela falta do id
+   (`AUDITORIA-2026-09-02.md` §6, «O caso dos 53 011»);
+3. `check:cruzamento`: cada linha **e cada ficheiro** que veio do motor de
    investigação é, byte a byte, o que atravessou, e as invariantes da agenda são
    reconferidas deste lado (ver [«Linhas cruzadas»](ledger/README.md));
-3. `check:documentos` — cada documento de estudo alojado é, byte a byte, o que o
+4. `check:documentos` — cada documento de estudo alojado é, byte a byte, o que o
    manifesto declara, **e cada registo de conteúdo que atravessou do motor** é,
    byte a byte, o que o registo de travessia declara (ver
    [`registos/README.md`](registos/README.md));
-4. `astro build` — se um gabarito citar uma afirmação que não existe, o build atira;
-5. `stamp:version` — carimba em `dist/version.json` o commit de que a construção saiu;
-6. `gate:html` — varre `dist/` à procura de algarismos sem proveniência, e
+5. `astro build` — se um gabarito citar uma afirmação que não existe, o build atira;
+6. `stamp:version` — carimba em `dist/version.json` o commit de que a construção saiu;
+7. `cartoes` — os cartões de partilha, desenhados e rasterizados depois de a
+   construção resolver os dados e antes de o portão os conferir;
+8. `gate:html` — varre `dist/` à procura de algarismos sem proveniência, e
    ainda de mais cinco coisas: nas páginas em pt-PT, nenhuma forma anterior ao
    Acordo Ortográfico de 1990; em qualquer página das duas edições, nenhum
    travessão no texto renderizado (`IDENTIDADE.md` §9, `DECISIONS.md` §1.38);
@@ -59,7 +73,7 @@ Requer Node ≥ 22.12 (exigência do Astro 7).
    `value` —, as contagens, o selo de quem tem linha e a porta de quem não tem, e
    os `<th>` (`DECISIONS.md` §1.64 e §2.2 item 9). No fim, escreve
    `dist/prova.json` e relê-o;
-7. `check:cadeia` — por edição com registo de conteúdo, percorre a cadeia de
+9. `check:cadeia` — por edição com registo de conteúdo, percorre a cadeia de
    cada algarismo da página de leitura até onde ela chega: o resumo de origem do
    documento, a linha do motor, a linha do livro-razão deste sítio quando
    existe, a posição no registo, a marca `data-registo` na página construída e a
@@ -67,8 +81,20 @@ Requer Node ≥ 22.12 (exigência do Astro 7).
    qual das duas formas cada algarismo tem, completa ou do motor, recusa a
    construção quando não tem nenhuma, e escreve `dist/cadeia.json` com as oito
    contagens e as contagens por edição (`DECISIONS.md` §1.64, P3);
-8. `check:dados` — os ficheiros de dados descarregáveis existem e batem certo
-   com as suas origens.
+10. `check:dados` — os ficheiros de dados descarregáveis existem e batem certo
+    com as suas origens;
+11. `check:mapa` — as sete regras do mapa dos distritos: os resumos dos
+    ficheiros que o motor atravessou, os 308 concelhos uma vez cada um na
+    junção conferida no sítio, e as ilhas dentro da sua caixa;
+12. `check:regioes` — cada região com linhas tem página nas duas edições, cada
+    página cita as afirmações que a sua entrada declara, e nenhuma região sem
+    linhas tem página nenhuma;
+13. `check:areas` — o mesmo para as áreas de governo: cada área com peças tem
+    página nas duas edições, e cada peça do mapa tem a sua página construída;
+14. `check:voz` — a autorreferência a zero fora do Método, do Sobre e do recibo
+    (Emendas 15 e 18), medida no `dist/` e não numa régua à parte;
+15. `check:lingua` — cada unidade, título, rótulo de fonte e nome de organismo
+    que aparece na língua contrária traz a marca que o diz, nas duas edições.
 
 `check:cruzamento` corre **sem rede e sem o motor presente** — o construtor é
 remoto e o ResearchHub não existe lá. A comparação com o lado da origem é um
@@ -152,8 +178,10 @@ na mesma página, o calendário do que as fontes publicam a seguir. Os dois
 registos vêm do motor e não se escrevem aqui: `DECISIONS.md` §1.40.
 
 Um `<slug>` de município é o nome do concelho sem acentos. A lista dos que têm
-página está em [`src/data/municipios.mjs`](src/data/municipios.mjs) — hoje só
-`evora`. O índice `/municipios` lista os **308** concelhos pelo nome que a Carta
+página está em [`src/data/municipios.mjs`](src/data/municipios.mjs) — os 308 a
+02.09.2026, uma entrada escrita à mão (`evora`) e 307 geradas de
+`src/data/concelhos.gerado.json`; dizia «hoje só `evora`», o estado até ao bloco
+dos 308. O índice `/municipios` lista os **308** concelhos pelo nome que a Carta
 Administrativa lhes dá, cada um com o seu estado; não publica nenhuma medida por
 concelho. Uma página de município é uma leitura das medidas que as fontes
 publicam para aquele concelho; o que ela **não** sabe está escrito na coluna do
@@ -216,7 +244,7 @@ todo o mecanismo:
 | `/estudos/<slug>/documento` | o **trabalho**, tal como foi publicado | o documento, no dia em que foi publicado | dispensado: obra citada, com proveniência própria |
 
 A página de leitura existe **só onde há registo de conteúdo** — hoje oito
-edições, seis portuguesas e duas inglesas — e a diferença diz-se pela porta que
+edições com registo, seis portuguesas e duas inglesas — e a diferença diz-se pela porta que
 falta na página do estudo, não por uma frase. É uma **transcrição de um
 documento fixado**: nada é reformatado, nem números, nem espaços, nem
 travessões, e o portão compara-a com o registo unidade a unidade. Nesta sessão
@@ -230,8 +258,8 @@ por palavras). **Não tem resumo nem números do estudo**: um resumo escrito sem
 ler o estudo seria conteúdo inventado, e os números do estudo só entram quando
 cada um tiver a sua linha no livro-razão.
 
-Hoje estão alojados **treze documentos**: todas as treze edições do arquivo, dos
-seus dez trabalhos. Não falta nenhuma.
+Hoje estão alojados **dezasseis documentos** a 02.09.2026 (dizia «treze»): todas
+as dezasseis edições do arquivo, dos seus doze trabalhos. Não falta nenhuma.
 
 ### Pôr o documento de um estudo no sítio
 
