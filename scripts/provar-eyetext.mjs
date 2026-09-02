@@ -4,8 +4,14 @@
  *
  * Regra 14 da casa: um leitor só se acredita depois de um conhecido-positivo o
  * fazer falhar. E, antes disso, uma leitura portada de outro sistema só vale se
- * ler o que o sistema de origem lê. São por isso duas provas, e as duas correm
+ * ler o que o sistema de origem lê. São por isso três provas, e as três correm
  * aqui:
+ *
+ * E CORREM DENTRO DO `npm run verify` desde 02.09.2026 (bloco F0.5). Até esse
+ * dia este guião existia, era bom, e não estava nem no `build` nem no `verify`:
+ * a única prova cruzada entre o motor e o sítio não era corrida por nada, e
+ * bastava uma linha do `package.json` para o ser (auditoria de 02.09, §5). Mede
+ * 0,15 s sobre as cinco edições.
  *
  *   1. CONTRA O MOTOR. Nas cinco edições cujos bytes alojados são os do motor e
  *      cuja prova é `edicao-html` (06 pt, 07 pt, 07 en, 08 pt, 09 pt), a leitura
@@ -31,6 +37,10 @@
  *      cópia em memória de um registo real: um bloco deitado fora e um espaço
  *      fantasma numa junta apertada. Os dois têm de fazer a comparação falhar.
  *
+ *   3. A CLASSE DE ESPAÇO EM BRANCO, CRUZADA. Os seis pontos de código em que o
+ *      `str.isspace()` do Python e o `\s` do JavaScript discordavam, com a
+ *      mesma pergunta que o `core/eyetext_test.py` faz do outro lado.
+ *
  *   node scripts/provar-eyetext.mjs
  *   node scripts/provar-eyetext.mjs --detalhe    (nomeia cada bloco excluído)
  */
@@ -39,7 +49,16 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { registoDoHtml, leBlocos, unidades, Texto, Falha, le, tituloDoHtml } from '../src/lib/eyetext.mjs';
+import {
+  registoDoHtml,
+  leBlocos,
+  unidades,
+  Texto,
+  Falha,
+  le,
+  tituloDoHtml,
+  ESPACOS,
+} from '../src/lib/eyetext.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DETALHE = process.argv.includes('--detalhe');
@@ -442,6 +461,87 @@ conferencias++;
     `  ${'juntas apertadas na 07 pt'.padEnd(48)} ${String(apertadas).padStart(4)} · ` +
       `${fantasmas} imprimem um espaço`,
   );
+}
+
+/* ==========================================================================
+ * A CLASSE DE ESPAÇO EM BRANCO, A MESMA DOS DOIS LADOS (bloco F0.5, 02.09.2026)
+ * ==========================================================================
+ *
+ * Este módulo dizia `\s` e o `core/eyetext.py` do motor dizia `str.isspace()`,
+ * e as duas classes discordam em seis pontos de código. A classe está agora
+ * escrita por extenso em `ESPACOS`, dos dois lados, e estes são os seis: cinco
+ * que o Python chamava espaço e o JavaScript não, e um que o JavaScript chamava
+ * espaço e o Python não. O caso é CRUZADO: o `core/eyetext_test.py` faz a mesma
+ * pergunta do outro lado, com os mesmos seis códigos.
+ */
+{
+  const SEIS = [
+    [0x001c, 'separador de ficheiro', 'era espaço só para o Python'],
+    [0x001d, 'separador de grupo', 'era espaço só para o Python'],
+    [0x001e, 'separador de registo', 'era espaço só para o Python'],
+    [0x001f, 'separador de unidade', 'era espaço só para o Python'],
+    [0x0085, 'mudança de linha do Unicode', 'era espaço só para o Python'],
+    [0xfeff, 'espaço de largura zero', 'era espaço só para o JavaScript'],
+  ];
+  for (const [codigo, nome, historia] of SEIS) {
+    conferencias++;
+    const c = String.fromCodePoint(codigo);
+    const codigoEscrito = `U+${codigo.toString(16).toUpperCase().padStart(4, '0')}`;
+    if (ESPACOS.has(c)) {
+      falhas.push(
+        `${codigoEscrito} (${nome}) está na classe de espaço da leitura do olho, e a decisão ` +
+          `da casa é que não está: ${historia}, e os dois lados só concordam sem ele`,
+      );
+      continue;
+    }
+    /* E a decisão tem de valer na LEITURA, e não só no conjunto. */
+    const lido = le(`<p>a${c}b</p>`);
+    if (lido.length !== 1 || lido[0] !== `a${c}b`) {
+      falhas.push(`${codigoEscrito} (${nome}) foi apertado a um espaço na leitura: ${JSON.stringify(lido)}`);
+    }
+    const aparado = le(`<p>${c}a${c}</p>`);
+    if (aparado.length !== 1 || aparado[0] !== `${c}a${c}`) {
+      falhas.push(`${codigoEscrito} (${nome}) foi aparado da ponta do bloco: ${JSON.stringify(aparado)}`);
+    }
+    /* E o JavaScript ainda diz o que dizia: sem isto, o caso deixava de medir a
+       diferença que existe para medir no dia em que o motor de JS mudasse. */
+    if (codigo === 0xfeff && !/\s/.test(c)) {
+      falhas.push(`${codigoEscrito} deixou de ser espaço para o próprio \\s do JavaScript`);
+    }
+    if (codigo !== 0xfeff && /\s/.test(c)) {
+      falhas.push(`${codigoEscrito} passou a ser espaço para o \\s do JavaScript`);
+    }
+  }
+
+  /* E o positivo do outro sentido, para que a lista acima não seja uma lista de
+     ausências: os caracteres que ESTÃO na classe apertam-se mesmo. */
+  for (const [codigo, nome] of [
+    [0x0009, 'tabulação'],
+    [0x00a0, 'espaço inquebrável'],
+    [0x2003, 'quadratim'],
+    [0x2028, 'separador de linha'],
+    [0x3000, 'espaço ideográfico'],
+  ]) {
+    conferencias++;
+    const c = String.fromCodePoint(codigo);
+    const codigoEscrito = `U+${codigo.toString(16).toUpperCase().padStart(4, '0')}`;
+    if (!ESPACOS.has(c)) {
+      falhas.push(`${codigoEscrito} (${nome}) devia estar na classe de espaço`);
+      continue;
+    }
+    const lido = le(`<p>a${c}${c}b</p>`);
+    if (lido.length !== 1 || lido[0] !== 'a b') {
+      falhas.push(`${codigoEscrito} (${nome}) não foi apertado a um espaço: ${JSON.stringify(lido)}`);
+    }
+  }
+
+  conferencias++;
+  if (ESPACOS.size !== 24) {
+    falhas.push(
+      `a classe de espaço tem ${ESPACOS.size} caracteres e a decisão da casa são 24. ` +
+        `Se mudou de propósito, muda nos dois lados e nos dois testes.`,
+    );
+  }
 }
 
 /* ========================================================================== */

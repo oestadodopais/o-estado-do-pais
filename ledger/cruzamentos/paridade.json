@@ -1,0 +1,26 @@
+{
+ "_": [
+  "Registo de travessia da especificacao da aritmetica das expressoes `check`.",
+  "FICHEIRO GERADO. Escrito por ResearchHub/publisher/cruzar_paridade.py.",
+  "",
+  "O ficheiro que atravessa e `core/derivacoes-paridade.json`: as expressoes e a",
+  "resposta que as regras da casa lhes dao. O motor avalia-o em",
+  "`core.derivations_test`; este sitio avalia-o em `scripts/check-ledger.mjs`.",
+  "",
+  "A COPIA E BYTE A BYTE, e por isso `origin_sha256` e `exported_sha256` sao o",
+  "mesmo resumo. Se forem diferentes, alguem editou uma das duas copias a mao, e",
+  "as duas casas deixaram de avaliar a mesma coisa.",
+  "",
+  "Sem datas, pela razao do registo da agenda: uma data por corrida tornava a",
+  "idempotencia indemonstravel."
+ ],
+ "files": {
+  "derivacoes-paridade.json": {
+   "destino": "ledger",
+   "exported_sha256": "04a824a9df300b1856bdb7eea137269814d11eddb4abc49f682bcaf58d2a1a7d",
+   "exporter": "ResearchHub/publisher/cruzar_paridade.py",
+   "origin_path": "core/derivacoes-paridade.json",
+   "origin_sha256": "04a824a9df300b1856bdb7eea137269814d11eddb4abc49f682bcaf58d2a1a7d"
+  }
+ }
+}
