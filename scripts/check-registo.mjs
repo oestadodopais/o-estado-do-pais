@@ -69,7 +69,7 @@
  * como o valor antigo.
  *
  * A FORMA DA CORREÇÃO, que é a da casa: nunca se reescreve um número em
- * silêncio. Escreve-se «N a 02.09.2026; dizia «M»» — o valor novo, a data em
+ * silêncio. Escreve-se «N a 02.09.2026; dizia «M»»: o valor novo, a data em
  * que se mediu, e o que lá estava.
  *
  * DUAS PRECAUÇÕES DA GRAMÁTICA, ambas medidas neste corpus e não supostas:
@@ -118,9 +118,9 @@
  *
  * Duas formas disparam a regra, e nunca mais nenhuma:
  *
- *   V1  «<Nome> tem <número> <unidade>» — um nome próprio, o verbo, o número e
+ *   V1  «<Nome> tem <número> <unidade>»: um nome próprio, o verbo, o número e
  *       uma unidade do livro-razão. É a forma da manchete, e é a que falhou.
- *   V2  «<número em algarismos> <unidade>» — a unidade tal como o livro-razão
+ *   V2  «<número em algarismos> <unidade>»: a unidade tal como o livro-razão
  *       a escreve. Só algarismos: um valor medido escreve-se em algarismos, e
  *       as unidades por extenso destes documentos («duas edições», «quinze
  *       anos») são prosa. As quatro unidades que também são palavras de facto
@@ -144,7 +144,7 @@
  * plantado é uma variável de ambiente, como o `OEDP_DIRECAO` do portão da voz
  * e o `OEDP_REGISTOS_DIR` do portão dos documentos, e pela mesma razão:
  *
- *   · `OEDP_REGISTO_DIR` — uma CÓPIA dos documentos, com o número trocado.
+ *   · `OEDP_REGISTO_DIR`: uma CÓPIA dos documentos, com o número trocado.
  *     Os factos continuam a medir-se na árvore verdadeira; o que se planta é
  *     só o que se lê. Planta-se numa cópia, nunca no que a casa publica.
  *

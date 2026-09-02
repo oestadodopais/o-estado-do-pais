@@ -34,7 +34,7 @@ cadeia de 15.08), e qualquer um deles pára tudo:
    toda a entrada do `DECISIONS.md` a partir da §1.38 declara que texto governa,
    com o resumo desse texto tal como ele está (a **amarra das decisões**: uma
    mudança de rumo não sai em silêncio);
-2. `check:registo` — os números de estado dos documentos que governam contra o
+2. `check:registo`: os números de estado dos documentos que governam contra o
    que se mede na fonte: as linhas do livro-razão, os concelhos com página, os
    estudos e as edições do arquivo, os documentos alojados, as correções
    publicadas, os passos desta cadeia e as páginas de leitura. Uma afirmação sem
@@ -54,7 +54,7 @@ cadeia de 15.08), e qualquer um deles pára tudo:
    [`registos/README.md`](registos/README.md));
 5. `astro build` — se um gabarito citar uma afirmação que não existe, o build atira;
 6. `stamp:version` — carimba em `dist/version.json` o commit de que a construção saiu;
-7. `cartoes` — os cartões de partilha, desenhados e rasterizados depois de a
+7. `cartoes`: os cartões de partilha, desenhados e rasterizados depois de a
    construção resolver os dados e antes de o portão os conferir;
 8. `gate:html` — varre `dist/` à procura de algarismos sem proveniência, e
    ainda de mais cinco coisas: nas páginas em pt-PT, nenhuma forma anterior ao
@@ -83,17 +83,17 @@ cadeia de 15.08), e qualquer um deles pára tudo:
    contagens e as contagens por edição (`DECISIONS.md` §1.64, P3);
 10. `check:dados` — os ficheiros de dados descarregáveis existem e batem certo
     com as suas origens;
-11. `check:mapa` — as sete regras do mapa dos distritos: os resumos dos
+11. `check:mapa`: as sete regras do mapa dos distritos: os resumos dos
     ficheiros que o motor atravessou, os 308 concelhos uma vez cada um na
     junção conferida no sítio, e as ilhas dentro da sua caixa;
-12. `check:regioes` — cada região com linhas tem página nas duas edições, cada
+12. `check:regioes`: cada região com linhas tem página nas duas edições, cada
     página cita as afirmações que a sua entrada declara, e nenhuma região sem
     linhas tem página nenhuma;
-13. `check:areas` — o mesmo para as áreas de governo: cada área com peças tem
+13. `check:areas`: o mesmo para as áreas de governo: cada área com peças tem
     página nas duas edições, e cada peça do mapa tem a sua página construída;
-14. `check:voz` — a autorreferência a zero fora do Método, do Sobre e do recibo
+14. `check:voz`: a autorreferência a zero fora do Método, do Sobre e do recibo
     (Emendas 15 e 18), medida no `dist/` e não numa régua à parte;
-15. `check:lingua` — cada unidade, título, rótulo de fonte e nome de organismo
+15. `check:lingua`: cada unidade, título, rótulo de fonte e nome de organismo
     que aparece na língua contrária traz a marca que o diz, nas duas edições.
 
 `check:cruzamento` corre **sem rede e sem o motor presente** — o construtor é
@@ -178,7 +178,7 @@ na mesma página, o calendário do que as fontes publicam a seguir. Os dois
 registos vêm do motor e não se escrevem aqui: `DECISIONS.md` §1.40.
 
 Um `<slug>` de município é o nome do concelho sem acentos. A lista dos que têm
-página está em [`src/data/municipios.mjs`](src/data/municipios.mjs) — os 308 a
+página está em [`src/data/municipios.mjs`](src/data/municipios.mjs): os 308 a
 02.09.2026, uma entrada escrita à mão (`evora`) e 307 geradas de
 `src/data/concelhos.gerado.json`; dizia «hoje só `evora`», o estado até ao bloco
 dos 308. O índice `/municipios` lista os **308** concelhos pelo nome que a Carta
