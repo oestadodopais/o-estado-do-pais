@@ -1,0 +1,33 @@
+{
+ "registado_em": "2026-09-02T05:46:47+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/78714fcd-9d7a-49ae-92d0-914347b16683/scratchpad/leituras/f03-pacote",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz que a construção é 78 % de 515 s (449 s), onde a corrida durou 575 s: a percentagem deixa de bater",
+   "sha256_antes": "309454772fce07d1bd828b7eb1658babe103d7f030fc0325316cc643eba1bfe1",
+   "sha256_depois": "42a9aab76effce8a2d6b533f059d1bb5bbcd4a525f94300c850d38260a621440",
+   "contexto_antes": "omplete job | success | 05:00:08 | 05:00:08 | 0 |\n\nTrês coisas que estes números dizem e vale a pena escrever:\n\n1. **A construção é 78 % do tempo da corrida** (449 s de 575 s). O anfitrião é\n   mais lento do que o portátil: 449 s contra os 283 s medidos localmente na\n   mesma árvore (§1), ou seja **1,59 vezes**. É o número com que s",
+   "contexto_depois": "omplete job | success | 05:00:08 | 05:00:08 | 0 |\n\nTrês coisas que estes números dizem e vale a pena escrever:\n\n1. **A construção é 78 % do tempo da corrida** (449 s de 515 s). O anfitrião é\n   mais lento do que o portátil: 449 s contra os 283 s medidos localmente na\n   mesma árvore (§1), ou seja **1,59 vezes**. É o número com que s"
+  },
+  {
+   "id": "P2a",
+   "ficheiro": "portao.yml",
+   "descricao": "o checkout deixa de estar fixado por SHA: passa a uma etiqueta, contra a regra da casa (na cópia do fluxo)",
+   "sha256_antes": "95224b08ac74539870630b8531bb6f228b7373ad0280195d54258bb3e95a52df",
+   "sha256_depois": "ae26f7c3e93882d54d9a0459ba28483dd6c8c0f7d996cb5efce23544249afe15",
+   "contexto_antes": "e }}-${{ github.ref }}\n  cancel-in-progress: true\n\njobs:\n  portao:\n    runs-on: ubuntu-latest\n    timeout-minutes: 30\n    steps:\n      - name: A árvore\n        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1\n\n      # `node-version-file: .nvmrc` para haver um só lugar onde a versão do Node\n      # se escreve. O `engines` do `package.json` diz o mínimo (>=22.12.0) e ",
+   "contexto_depois": "e }}-${{ github.ref }}\n  cancel-in-progress: true\n\njobs:\n  portao:\n    runs-on: ubuntu-latest\n    timeout-minutes: 30\n    steps:\n      - name: A árvore\n        uses: actions/checkout@v7.0.1 # v7.0.1\n\n      # `node-version-file: .nvmrc` para haver um só lugar onde a versão do Node\n      # se escreve. O `engines` do `package.json` diz o mínimo (>=22.12.0) e "
+  },
+  {
+   "id": "P2b",
+   "ficheiro": "diff.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff.patch",
+   "sha256_antes": "9554b42ca2c5ba76a6df81512800c367a355fc962e0a511da9a05f55062712f4",
+   "sha256_depois": "d55689f4bc5ea72f7d3d0b193357f263ed61fdec5452c198f928cfd8df20b0a7",
+   "contexto_antes": "e }}-${{ github.ref }}\n+  cancel-in-progress: true\n+\n+jobs:\n+  portao:\n+    runs-on: ubuntu-latest\n+    timeout-minutes: 30\n+    steps:\n+      - name: A árvore\n+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1\n+\n+      # `node-version-file: .nvmrc` para haver um só lugar onde a versão do Node\n+      # se escreve. O `engines` do `package.json` diz o mínimo (>=22.12.0)",
+   "contexto_depois": "e }}-${{ github.ref }}\n+  cancel-in-progress: true\n+\n+jobs:\n+  portao:\n+    runs-on: ubuntu-latest\n+    timeout-minutes: 30\n+    steps:\n+      - name: A árvore\n+        uses: actions/checkout@v7.0.1 # v7.0.1\n+\n+      # `node-version-file: .nvmrc` para haver um só lugar onde a versão do Node\n+      # se escreve. O `engines` do `package.json` diz o mínimo (>=22.12.0)"
+  }
+ ]
+}

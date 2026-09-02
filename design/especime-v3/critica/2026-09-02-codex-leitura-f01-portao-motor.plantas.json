@@ -1,0 +1,33 @@
+{
+ "registado_em": "2026-09-02T05:10:31+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/78714fcd-9d7a-49ae-92d0-914347b16683/scratchpad/leituras/f01-pacote",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 83 conferências onde o teste imprime 93",
+   "sha256_antes": "279cc5f86d0632269bb1e715cb6c77cdae505f3a19b7ada947811a6090f6c625",
+   "sha256_depois": "8b5fc2b28315dc5d88d4c156789e5bb5eced070880c711e710134cdca754db6d",
+   "contexto_antes": "nta.\n\n## 5 · As duas corridas verdes, com os códigos de saída lidos do processo\n\n```\n$ python3 -m publisher.export_site_rows_test\nEXPORT_SITE_ROWS_TEST: PASS — 93 checks (...)\nEXIT=0\n```\n\n```\n$ python3 -m core.gate\nGATE: PASS\nEXIT=0\nsegundos=138\n```\n\nAs 24 suítes do portão dão `ok`, `export_site_rows_test` entre elas. Os 138 s ",
+   "contexto_depois": "nta.\n\n## 5 · As duas corridas verdes, com os códigos de saída lidos do processo\n\n```\n$ python3 -m publisher.export_site_rows_test\nEXPORT_SITE_ROWS_TEST: PASS — 83 checks (...)\nEXIT=0\n```\n\n```\n$ python3 -m core.gate\nGATE: PASS\nEXIT=0\nsegundos=138\n```\n\nAs 24 suítes do portão dão `ok`, `export_site_rows_test` entre elas. Os 138 s "
+  },
+  {
+   "id": "P2a",
+   "ficheiro": "export_site_rows.py",
+   "descricao": "o guarda das leituras de autor desconhecido deixa de parar a corrida: raise Fail passa a report.append (na cópia inteira do ficheiro)",
+   "sha256_antes": "c7783f989d525f8ca12b5a4e3b0b27fc79ed719198a4ccb904af0b43c9f4c081",
+   "sha256_depois": "0df3c45b343a4c441fff6084e53fa30fc61be693f494919ce993875462397e42",
+   "contexto_antes": "das.add(chave)\n                preservadas[have[\"by\"]] = preservadas.get(have[\"by\"], 0) + 1\n                guardadas += 1\n                continue\n            raise Fail(f'{c[\"id\"]}: the site publishes a re-check of {have.get(\"date\")!r} '\n                       f\"that this run does not produce. A re-export rewrites this block, \"\n                       f\"so it would be erased. Map it, or find out",
+   "contexto_depois": "das.add(chave)\n                preservadas[have[\"by\"]] = preservadas.get(have[\"by\"], 0) + 1\n                guardadas += 1\n                continue\n            report.append(f'{c[\"id\"]}: the site publishes a re-check of {have.get(\"date\")!r} '\n                       f\"that this run does not produce. A re-export rewrites this block, \"\n                       f\"so it would be erased. Map it, or find out"
+  },
+  {
+   "id": "P2b",
+   "ficheiro": "diff.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff.patch",
+   "sha256_antes": "99a0b502252d744b88a2e2a37655c102ab72c092fc7ed2e7c2fa220107677d83",
+   "sha256_depois": "9e8038537f7c3005f1e95f659a88533cc840b576667a14e37517936f522acb8f",
+   "contexto_antes": "  produzidas.add(chave)\n+                preservadas[have[\"by\"]] = preservadas.get(have[\"by\"], 0) + 1\n+                guardadas += 1\n+                continue\n+            raise Fail(f'{c[\"id\"]}: the site publishes a re-check of {have.get(\"date\")!r} '\n+                       f\"that this run does not produce. A re-export rewrites this block, \"\n+                       f\"so it would be erased. Map it, or find o",
+   "contexto_depois": "  produzidas.add(chave)\n+                preservadas[have[\"by\"]] = preservadas.get(have[\"by\"], 0) + 1\n+                guardadas += 1\n+                continue\n+            report.append(f'{c[\"id\"]}: the site publishes a re-check of {have.get(\"date\")!r} '\n+                       f\"that this run does not produce. A re-export rewrites this block, \"\n+                       f\"so it would be erased. Map it, or find o"
+  }
+ ]
+}

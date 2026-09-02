@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-02T06:50:10+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/78714fcd-9d7a-49ae-92d0-914347b16683/scratchpad/leituras/f02-pacote",
+ "plantas": [
+  {
+   "id": "P1a",
+   "ficheiro": "sitio.py",
+   "descricao": "uma OEDP_SITE que não é um sítio passa a cair em silêncio na árvore principal, contra a docstring da própria função (cópia inteira)",
+   "sha256_antes": "17323fd9fba360ea66d8bb5527d1d8c9b79e8263b3083036656c9cf690b87835",
+   "sha256_depois": "ca1201c2f387aface4cefc7454f1b700c1e3bc30344b2c426ebf5c413995ed07",
+   "contexto_antes": "cópia, e cair na de sempre por ela estar vazia seria ler\n    uma árvore que ninguém nomeou.\n    \"\"\"\n    escolhido = do_ambiente()\n    if escolhido is not None:\n        return escolhido if e_um_sitio(escolhido) else None\n    return ARVORE_PRINCIPAL if e_um_sitio(ARVORE_PRINCIPAL) else None\n\n\ndef por_omissao() -> Path:\n    \"\"\"O sítio para onde um módulo aponta ao carregar: o viv",
+   "contexto_depois": "cópia, e cair na de sempre por ela estar vazia seria ler\n    uma árvore que ninguém nomeou.\n    \"\"\"\n    escolhido = do_ambiente()\n    if escolhido is not None:\n        return escolhido if e_um_sitio(escolhido) else (ARVORE_PRINCIPAL if e_um_sitio(ARVORE_PRINCIPAL) else None)\n    return ARVORE_PRINCIPAL if e_um_sitio(ARVORE_PRINCIPAL) else None\n\n\ndef por_omissao() -> Path:\n    \"\"\"O sítio para onde um módulo aponta ao carregar: o viv"
+  },
+  {
+   "id": "P1b",
+   "ficheiro": "diff.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff.patch",
+   "sha256_antes": "d5b45e0b005051f5726525deeb4fc74750bff2438bc72380d623a459b14974d7",
+   "sha256_depois": "c16e4f8b98404bf0143053020cc8f8efd97526cf16a2a268919b34c345c54cec",
+   "contexto_antes": "a, e cair na de sempre por ela estar vazia seria ler\n+    uma árvore que ninguém nomeou.\n+    \"\"\"\n+    escolhido = do_ambiente()\n+    if escolhido is not None:\n+        return escolhido if e_um_sitio(escolhido) else None\n+    return ARVORE_PRINCIPAL if e_um_sitio(ARVORE_PRINCIPAL) else None\n+\n+\n+def por_omissao() -> Path:\n+    \"\"\"O sítio para onde um módulo aponta ao carregar: ",
+   "contexto_depois": "a, e cair na de sempre por ela estar vazia seria ler\n+    uma árvore que ninguém nomeou.\n+    \"\"\"\n+    escolhido = do_ambiente()\n+    if escolhido is not None:\n+        return escolhido if e_um_sitio(escolhido) else (ARVORE_PRINCIPAL if e_um_sitio(ARVORE_PRINCIPAL) else None)\n+    return ARVORE_PRINCIPAL if e_um_sitio(ARVORE_PRINCIPAL) else None\n+\n+\n+def por_omissao() -> Path:\n+    \"\"\"O sítio para onde um módulo aponta ao carregar: "
+  },
+  {
+   "id": "P2a",
+   "ficheiro": "portao.yml",
+   "descricao": "a matriz perde o Python 3.14 enquanto o relatório diz que as duas versões correram (cópia do fluxo)",
+   "sha256_antes": "2ee20a32de05def3a1f57bad7fa9a650fdecb9af789d43aa047a2334e0afae9d",
+   "sha256_depois": "a037adcd4108702383f13b81098521e4fbb84c5974a8988eb063b79b63971170",
+   "contexto_antes": "github.ref }}\n  cancel-in-progress: true\n\njobs:\n  portao:\n    runs-on: ubuntu-latest\n    timeout-minutes: 20\n    strategy:\n      fail-fast: false\n      matrix:\n        python: [\"3.12\", \"3.14\"]\n\n    steps:\n      - name: O motor\n        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1\n\n      - name: Python ${{ matrix.python }}\n ",
+   "contexto_depois": "github.ref }}\n  cancel-in-progress: true\n\njobs:\n  portao:\n    runs-on: ubuntu-latest\n    timeout-minutes: 20\n    strategy:\n      fail-fast: false\n      matrix:\n        python: [\"3.12\"]\n\n    steps:\n      - name: O motor\n        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1\n\n      - name: Python ${{ matrix.python }}\n "
+  },
+  {
+   "id": "P2b",
+   "ficheiro": "diff.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff.patch",
+   "sha256_antes": "c16e4f8b98404bf0143053020cc8f8efd97526cf16a2a268919b34c345c54cec",
+   "sha256_depois": "7bea8bbe789a6c16ec899567ee74fb697ca285618df24000615e766ca6f46ab4",
+   "contexto_antes": "f }}\n+  cancel-in-progress: true\n+\n+jobs:\n+  portao:\n+    runs-on: ubuntu-latest\n+    timeout-minutes: 20\n+    strategy:\n+      fail-fast: false\n+      matrix:\n+        python: [\"3.12\", \"3.14\"]\n+\n+    steps:\n+      - name: O motor\n+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1\n+\n+      - name: Python ${{ matrix.pytho",
+   "contexto_depois": "f }}\n+  cancel-in-progress: true\n+\n+jobs:\n+  portao:\n+    runs-on: ubuntu-latest\n+    timeout-minutes: 20\n+    strategy:\n+      fail-fast: false\n+      matrix:\n+        python: [\"3.12\"]\n+\n+    steps:\n+      - name: O motor\n+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1\n+\n+      - name: Python ${{ matrix.pytho"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 94 ficheiros na cópia onde a listagem tem 104",
+   "sha256_antes": "70d76fad26a9050ccdb50d9b55fe7cabe11e7b26c25f1a9d6960d41c2c3ccc30",
+   "sha256_depois": "bbeaadc56d5f59983d3d9d60776cd9a19494384dfb604406d4416891605d7432",
+   "contexto_antes": "ece: é conferida contra o `.gitignore`, que é onde a casa declara que a cache é derivada (caso 28 da suíte).\n\n## 3 · A cópia versionada\n\n`publisher/fixtures/`, 104 ficheiros, 706 840 bytes. O comando que os conta é o próprio guião:\n\n```\n$ python3 -m publisher.fixtures.refrescar_site_min --conferir\n  cópia   104 ficheiro(s), 706840 bytes\n  resumo ",
+   "contexto_depois": "ece: é conferida contra o `.gitignore`, que é onde a casa declara que a cache é derivada (caso 28 da suíte).\n\n## 3 · A cópia versionada\n\n`publisher/fixtures/`, 94 ficheiros, 706 840 bytes. O comando que os conta é o próprio guião:\n\n```\n$ python3 -m publisher.fixtures.refrescar_site_min --conferir\n  cópia   104 ficheiro(s), 706840 bytes\n  resumo "
+  }
+ ]
+}
