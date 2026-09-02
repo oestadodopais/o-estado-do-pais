@@ -84,12 +84,12 @@ A segunda linha é o conhecido-positivo do próprio medidor, impressa antes de s
 Atravessa com `publisher/cruzar_paridade.py` (novo), que copia os bytes tal e qual para `<sítio>/ledger/derivacoes-paridade.json` e escreve `<sítio>/ledger/cruzamentos/paridade.json` com os dois resumos. A cópia é byte a byte e por isso `origin_sha256` e `exported_sha256` são o mesmo: se forem diferentes, alguém editou uma das duas cópias.
 
     python3 -m publisher.cruzar_paridade --escrever --sitio <sítio>
-    sha256 04a824a9df300b1856bdb7eea137269814d11eddb4abc49f682bcaf58d2a1a7d
+    sha256 5cf0cd4337bd872f4369efd2666220855a9b01b8814461a090360e8f8e84d856
 
 O mesmo resumo, medido dos dois lados:
 
-    motor: python3 -m core.derivations_test          → core/derivacoes-paridade.json sha256 04a824a9…
-    sítio: shasum -a 256 ledger/derivacoes-paridade.json → 04a824a9df300b1856bdb7eea137269814d11eddb4abc49f682bcaf58d2a1a7d
+    motor: python3 -m core.derivations_test          → core/derivacoes-paridade.json sha256 5cf0cd43…
+    sítio: shasum -a 256 ledger/derivacoes-paridade.json → 5cf0cd4337bd872f4369efd2666220855a9b01b8814461a090360e8f8e84d856
     sítio: ledger/cruzamentos/paridade.json           → origin_sha256 e exported_sha256 iguais a esse
 
 ### 1.4 A classe de espaço em branco
@@ -198,8 +198,8 @@ Cada planta foi posta, corrida, e reposta com o sha256 do ficheiro conferido ant
 | # | planta | onde | vermelho | verde |
 |---|---|---|---|---|
 | 1 | a regra velha do arredondamento (`quantize(quantum)` sem regra) | `core/derivations.py` (sha antes e depois `105e7d9d…`) | `python3 -m core.derivations_test` **exit 1**, 13 problemas: os 4 empates, os 3 valores do meio-para-o-par aceites, 6 casos da especificação | `exit 0`, `PASS — 49 checks` |
-| 2 | um valor esperado errado na especificação (`round ( 2.5 , 0 )` a esperar 2) | `core/derivacoes-paridade.json` (sha antes `e8523d58…`, reposto e depois emendado para `04a824a9…`) | motor `exit 1` e sítio `exit 1`, os dois com «`round ( 2.5 , 0 )` dá 3 e a especificação diz 2» | os dois `exit 0` |
-| 3 | um byte a mais na cópia cruzada do sítio | `ledger/derivacoes-paridade.json` (sha reposto `04a824a9…`) | `node scripts/check-cruzamento.mjs` **exit 1**: «os bytes em disco já não são os que atravessaram», com os dois resumos e o exportador certo | `exit 0` |
+| 2 | um valor esperado errado na especificação (`round ( 2.5 , 0 )` a esperar 2) | `core/derivacoes-paridade.json` (sha antes `e8523d58…`, reposto e depois emendado duas vezes, para `04a824a9…` e para `5cf0cd43…`) | motor `exit 1` e sítio `exit 1`, os dois com «`round ( 2.5 , 0 )` dá 3 e a especificação diz 2» | os dois `exit 0` |
+| 3 | um byte a mais na cópia cruzada do sítio | `ledger/derivacoes-paridade.json` (sha reposto `5cf0cd43…`) | `node scripts/check-cruzamento.mjs` **exit 1**: «os bytes em disco já não são os que atravessaram», com os dois resumos e o exportador certo | `exit 0` |
 | 4 | a classe velha do Python (`str.isspace()`) | `core/eyetext.py` (sha antes e depois `1a60d7fa…`) | `python3 -m core.eyetext_test` **exit 1**, 6 problemas: os cinco U+001C a U+0085 e a conta da classe | `exit 0`, `PASS — 33 checks` |
 | 5 | a classe velha do JavaScript (`/\s/`) | `src/lib/eyetext.mjs` (sha antes e depois `ed1e9b82…`) | `node scripts/provar-eyetext.mjs` **exit 1**, 2 problemas: o U+FEFF apertado a um espaço e aparado da ponta | `exit 0`, `PASSA — 595 conferências` |
 | 6 | o arredondamento em `float64` que estava no sítio antes deste bloco | `src/lib/decimal.mjs` (sha antes e depois `e0378c12…`) | `npm run ledger:check` **exit 1**, 3 erros: o caso `round ( 1,005 , 2 )` da especificação, e as duas plantas de ponta a ponta que ele governa (uma aceite que tinha de ser recusada, uma recusada que tinha de passar) | `exit 0` |

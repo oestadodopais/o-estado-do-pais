@@ -17,10 +17,10 @@
  "files": {
   "derivacoes-paridade.json": {
    "destino": "ledger",
-   "exported_sha256": "04a824a9df300b1856bdb7eea137269814d11eddb4abc49f682bcaf58d2a1a7d",
+   "exported_sha256": "5cf0cd4337bd872f4369efd2666220855a9b01b8814461a090360e8f8e84d856",
    "exporter": "ResearchHub/publisher/cruzar_paridade.py",
    "origin_path": "core/derivacoes-paridade.json",
-   "origin_sha256": "04a824a9df300b1856bdb7eea137269814d11eddb4abc49f682bcaf58d2a1a7d"
+   "origin_sha256": "5cf0cd4337bd872f4369efd2666220855a9b01b8814461a090360e8f8e84d856"
   }
  }
 }
