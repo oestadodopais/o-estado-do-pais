@@ -446,3 +446,22 @@ A varredura de fronteira é nova e é a que encontrou o achado do §9.2. Cobre o
 ### 9.8 · O que fica por fechar
 
 O §7 dizia que a terceira comparação da especificação não era corrida por nada. Deixa de ser verdade: o `core.gate` corre-a. O que fica é menor e escreve-se aqui para não se perder: a cópia versionada do sítio é uma fotografia de um commit, e um bloco que mexa na especificação tem de a refrescar (`python3 -m publisher.fixtures.refrescar_site_min --escrever --site <clone limpo>`) na mesma passagem, ou o portão do motor fica vermelho a dizer a verdade. É o preço de a comparação existir, e é o preço certo.
+
+### 9.9 · Os resumos, remedidos nos ficheiros finais
+
+O Minor 13 tinha razão numa segunda coisa: os resumos de reposição do §4 são os dos ficheiros **tal como estavam na primeira passagem**, e essa passagem mexeu neles outra vez. Ficam os dois, e diz-se qual é qual: os do §4 são a prova de que cada reposição da primeira passagem repôs os bytes que tinha tirado, e são verdadeiros sobre aquele momento; os de baixo são os ficheiros que este ramo entrega, medidos agora.
+
+    shasum -a 256 core/derivations.py core/eyetext.py core/derivacoes-paridade.json
+    shasum -a 256 src/lib/decimal.mjs src/lib/eyetext.mjs src/lib/ledger.mjs ledger/derivacoes-paridade.json
+
+| ficheiro | §4 (primeira passagem) | final |
+|---|---|---|
+| `core/derivations.py` | `105e7d9d` | `a06b68ab` |
+| `core/eyetext.py` | `1a60d7fa` | `a4f52ad8` |
+| `core/derivacoes-paridade.json` | `e8523d58`, depois `04a824a9`, depois `5cf0cd43` | `e427112f` |
+| `src/lib/eyetext.mjs` | `ed1e9b82` | `e96e4767` |
+| `src/lib/decimal.mjs` | `e0378c12` | `472eb48b` |
+| `src/lib/ledger.mjs` | (sem planta) | `8c6ab2d0` |
+| `ledger/derivacoes-paridade.json` | `04a824a9` | `e427112f` |
+
+Os resumos da coluna final são os mesmos que o §9.4 usa nas suas reposições, o que é a maneira de dizer que as plantas desta passagem correram sobre estes ficheiros e não sobre outros.
