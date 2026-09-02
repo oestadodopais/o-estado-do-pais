@@ -27,8 +27,29 @@
   "  3. a comparacao e exata, por valor: `71` e `71,0` sao o mesmo numero, e",
   "     `0,1 + 0,2` nao e `0,3` por pouco. Nao ha tolerancia de nenhuma especie.",
   "",
-  "AS EXPRESSOES SO USAM NUMEROS, de proposito: um caso que citasse uma linha do",
-  "livro-razao mediria o livro e nao a aritmetica, e envelhecia com ele.",
+  "AS EXPRESSOES SO USAM NUMEROS, de proposito, e por duas razoes. A primeira: um",
+  "caso que citasse uma linha do livro-razao mediria o livro e nao a aritmetica, e",
+  "envelhecia com ele. A segunda: o sitio tem um espaco de nomes que o motor nao",
+  "tem. O `evaluateCheck` do sitio resolve nomes de CONTAGENS que a construcao faz",
+  "do proprio arquivo (`estudos_evora_no_arquivo` e as outras de `COUNTS` em",
+  "`src/data/studies.mjs`, mais as contagens do registo de correcoes), e as linhas",
+  "que os usam nunca atravessam a fronteira: o motor nao as ve e nao tem de as",
+  "saber resolver. O espaco de nomes e SO DO SITIO e nao faz parte da gramatica",
+  "partilhada; a gramatica partilhada e a aritmetica, e e essa que este ficheiro",
+  "prova.",
+  "",
+  "OS TRES GENEROS DE CASO:",
+  "",
+  "  `casos`        a expressao e o valor que as regras da casa lhe dao,",
+  "                 comparado POR VALOR. Um caso pode trazer tambem `canonica`, e",
+  "                 entao a CADEIA canonica tem de ser exatamente essa: e assim",
+  "                 que o zero com sinal se prova, porque `-0` e `0` sao iguais",
+  "                 por valor e diferentes por cadeia.",
+  "  `recusas`      a expressao tem de atirar dos dois lados.",
+  "  `quase-iguais` a expressao NAO pode dar `espera_errada`. Sao os casos que",
+  "                 provam que a comparacao nao tem tolerancia nenhuma: um difere",
+  "                 no 28.o algarismo, o outro por um bilionesimo, que e mil vezes",
+  "                 menos do que a tolerancia de 1e-9 que o sitio tinha.",
   "",
   "`espera` compara-se POR VALOR e nao por cadeia, que e o que o motor faz na",
   "linha `if got != want`. `recusa` diz que a expressao tem de atirar: os dois",
@@ -156,6 +177,90 @@
    "expr": "round ( 71.04 , 1 )",
    "espera": "71",
    "porque": "da 71,0 e compara-se com 71: a igualdade e por valor, e uma comparacao de cadeias recusava isto."
+  },
+  {
+   "id": "empate-intermedio-par",
+   "expr": "1.2345678901234567890123456785 * 1",
+   "espera": "1.234567890123456789012345678",
+   "porque": "o empate das CONTAS INTERMEDIAS, que segue a regra oposta a do round: 29 algarismos cortados a 28, exatamente a meio, e o algarismo que fica e par, por isso fica. Meio-para-longe-do-zero dava ...679, e nenhum caso anterior via esta regra (leitura a frio, Major 8)."
+  },
+  {
+   "id": "empate-intermedio-impar",
+   "expr": "1.2345678901234567890123456795 * 1",
+   "espera": "1.23456789012345678901234568",
+   "porque": "o outro lado do mesmo empate: o algarismo que fica e impar, por isso sobe, e o transporte encurta a resposta."
+  },
+  {
+   "id": "soma-acima-dos-28-algarismos",
+   "expr": "1234567890123456789012345678.5 + 0",
+   "espera": "1234567890123456789012345678",
+   "porque": "os 28 algarismos nao sao so da divisao e do produto: a soma tambem os sente, e o meio cai no algarismo par."
+  },
+  {
+   "id": "subtracao-acima-dos-28-algarismos",
+   "expr": "1234567890123456789012345678.5 - 0",
+   "espera": "1234567890123456789012345678",
+   "porque": "o mesmo na subtracao."
+  },
+  {
+   "id": "precedencia-sem-parentesis",
+   "expr": "1 + 2 * 3",
+   "espera": "7",
+   "porque": "o produto manda mais do que a soma sem ninguem escrever parentesis. O caso dos parentesis provava o contrario e nao provava isto."
+  },
+  {
+   "id": "menos-unario-acima-dos-28-algarismos",
+   "expr": "- 12345678901234567890123456789",
+   "espera": "-12345678901234567890123456790",
+   "porque": "o menos unario e uma OPERACAO e nao uma troca de sinal: um literal de 29 algarismos negado passa pela regra dos 28 dos dois lados."
+  },
+  {
+   "id": "zero-com-sinal-no-literal",
+   "expr": "-0",
+   "espera": "0",
+   "canonica": "0",
+   "porque": "um zero nao tem sinal para quem o le. O `normalize()` do Python guardava o `-0` e a reconstrucao do zero do sitio nao, e a cadeia divergia onde a igualdade nao via nada (leitura a frio, Major 7). Este e o caminho que produz mesmo um zero negativo nos dois lados: o literal. O `- 0` com espaco NAO o produz no motor, porque o menos unario do Python normaliza o zero."
+  },
+  {
+   "id": "zero-com-sinal-com-casas",
+   "expr": "-0.0",
+   "espera": "0",
+   "canonica": "0",
+   "porque": "o mesmo com uma casa decimal, que e um zero negativo com outro expoente."
+  },
+  {
+   "id": "zero-com-sinal-no-produto",
+   "expr": "-0 * 1",
+   "espera": "0",
+   "canonica": "0",
+   "porque": "o zero negativo atravessa um produto e continua a imprimir-se `0`."
+  },
+  {
+   "id": "zero-com-sinal-pelo-outro-fator",
+   "expr": "0 * -1",
+   "espera": "0",
+   "canonica": "0",
+   "porque": "e nasce de um produto de dois numeros que nao sao zero negativo nenhum."
+  },
+  {
+   "id": "zero-sem-sinal-na-subtracao",
+   "expr": "0 - 0",
+   "espera": "0",
+   "canonica": "0",
+   "porque": "o outro lado: uma subtracao de zeros da um zero POSITIVO nos dois. Esta aqui para que os quatro de cima nao passem por uma regra que trate todos os zeros por igual sem os distinguir."
+  },
+  {
+   "id": "literal-intocado-de-31-algarismos",
+   "expr": "1234567890123456789012345678901",
+   "espera": "1234567890123456789012345678901",
+   "canonica": "1234567890123456789012345678901",
+   "porque": "um literal que nenhuma conta tocou vale o que esta escrito: a leitura de um numero a partir de uma cadeia e exata dos dois lados, e a regra dos 28 e das OPERACOES. O `_as_canonical` do motor imprimia-o com 28 algarismos porque o `normalize()` do Python arredonda no contexto; achado pela varredura de fronteira de 02.09.2026."
+  },
+  {
+   "id": "literal-de-31-algarismos-depois-de-uma-conta",
+   "expr": "1234567890123456789012345678901 + 0",
+   "espera": "1234567890123456789012345679000",
+   "porque": "e o mesmo literal depois de uma soma, que ja e uma operacao: ai sim, 28 algarismos. Os dois casos ao lado um do outro sao a fronteira."
   }
  ],
  "recusas": [
@@ -188,6 +293,40 @@
    "id": "expressao-vazia",
    "expr": "",
    "porque": "nao ha nada para avaliar, e um zero em vez de uma recusa era um numero inventado."
+  },
+  {
+   "id": "notacao-cientifica",
+   "expr": "1e2 + 1",
+   "porque": "o `Decimal(token)` do Python aceitava-o e dava 101; o sitio pedia a forma estreita e recusava. Um numero escreve-se com algarismos (leitura a frio, Major 6)."
+  },
+  {
+   "id": "sinal-de-mais",
+   "expr": "+3 + 1",
+   "porque": "o mesmo pelo outro lado: o Python aceitava o sinal de mais, o sitio nao."
+  },
+  {
+   "id": "infinito",
+   "expr": "Infinity + 1",
+   "porque": "`Decimal('Infinity')` e um numero para o Python e nao e um numero desta gramatica."
+  },
+  {
+   "id": "casas-em-algarismo-nao-ascii",
+   "expr": "round ( 1.25 , \u0662 )",
+   "porque": "o `str.isdigit()` do Python e verdadeiro para o dois arabe-indico e o `int()` converte-o; as casas do sitio sao ASCII e recusam-no. Passava num portao e falhava no outro (leitura a frio, Major 6)."
+  }
+ ],
+ "quase-iguais": [
+  {
+   "id": "divisao-longa-no-28o-algarismo",
+   "expr": "1 / 3",
+   "espera_errada": "0.3333333333333333333333333334",
+   "porque": "difere no ultimo dos 28 algarismos. Se algum dia entrar uma tolerancia, e aqui que ela se ve primeiro."
+  },
+  {
+   "id": "percentagem-por-um-bilionesimo",
+   "expr": "round ( 30800 / 39900 * 100 , 1 )",
+   "espera_errada": "77.200000000001",
+   "porque": "difere de 77,2 por um bilionesimo, mil vezes menos do que a tolerancia de 1e-9 que o sitio tinha: com ela, esta linha passava."
   }
  ]
 }

@@ -20,6 +20,7 @@ import {
   parsePtDecimal,
   POR_VERIFICAR,
 } from '../src/lib/ledger.mjs';
+import { Decimal } from '../src/lib/decimal.mjs';
 import { REGRAS, ABERTURA, LEITURA_BREVE, FECHO } from '../src/data/metodo.mjs';
 import { SOBRE } from '../src/data/sobre.mjs';
 
@@ -91,11 +92,27 @@ let casosDaAritmetica = 0;
       const esperado = parsePtDecimal(caso.espera);
       if (esperado === null) {
         provaDaAritmetica.push(`paridade/${caso.id}: "${caso.espera}" não é um número simples.`);
-      } else if (!obtido.igual(esperado)) {
+        continue;
+      }
+      if (!obtido.igual(esperado)) {
         provaDaAritmetica.push(
           `paridade/${caso.id}: «${caso.expr}» dá ${obtido.canonica()} e a especificação diz ` +
             `${caso.espera}.\n        ${caso.porque}`,
         );
+        continue;
+      }
+      /* A CADEIA, quando o caso a exige. O valor e a cadeia são duas perguntas
+         diferentes, e o zero com sinal é a única coisa que as separa: «-0» e
+         «0» são iguais por valor e eram diferentes por cadeia (leitura a frio,
+         Major 7). Um caso sem `canonica` não a exige, e não se inventa uma. */
+      if (Object.prototype.hasOwnProperty.call(caso, 'canonica')) {
+        const cadeia = obtido.canonica();
+        if (cadeia !== caso.canonica) {
+          provaDaAritmetica.push(
+            `paridade/${caso.id}: a cadeia canónica de «${caso.expr}» é "${cadeia}" e a ` +
+              `especificação diz "${caso.canonica}".\n        ${caso.porque}`,
+          );
+        }
       }
     }
     for (const recusa of espec.recusas) {
@@ -109,6 +126,85 @@ let casosDaAritmetica = 0;
       provaDaAritmetica.push(
         `paridade/${recusa.id}: «${recusa.expr}» devia ser recusada e deu ` +
           `${obtido.canonica()}.\n        ${recusa.porque}`,
+      );
+    }
+    /* AS QUASE-IGUALDADES, que são a prova de que não há tolerância nenhuma. O
+       provador compara exatamente, e por isso não pode dizer sozinho que a
+       aceitação também compara: estes casos pedem-lhe que RECUSE um valor a um
+       bilionésimo do certo, que é mil vezes menos do que a tolerância de 1e-9
+       que esta régua tinha (leitura a frio, Major 8). */
+    for (const quase of espec['quase-iguais'] ?? []) {
+      casosDaAritmetica++;
+      let obtido;
+      try {
+        obtido = evaluateCheck(quase.expr, { claims: semLinhas, env: {} });
+      } catch (err) {
+        provaDaAritmetica.push(`paridade/${quase.id}: «${quase.expr}» foi recusada — ${err.message}`);
+        continue;
+      }
+      const errado = parsePtDecimal(quase.espera_errada);
+      if (errado !== null && obtido.igual(errado)) {
+        provaDaAritmetica.push(
+          `paridade/${quase.id}: «${quase.expr}» deu ${quase.espera_errada}, que é o valor ` +
+            `que NÃO pode dar.\n        ${quase.porque}`,
+        );
+      }
+    }
+  }
+}
+
+{
+  /* 1b · AS DUAS PORTAS DO MESMO DOMÍNIO (leitura a frio, Minor 13).
+     `Decimal.de` documentava `-?\d+(\.\d+)?` e aceitava um sinal de mais que o
+     `evaluateCheck` nunca lhe entregava: o comentário descrevia o código certo e
+     o código fazia outra coisa. As duas portas por onde um número entra têm de
+     pedir a mesma forma, e é esta a conferência que o diz. */
+  const foraDoDominio = ['+3', '1e2', '1E2', '.5', '5.', 'Infinity', 'NaN', '', ' ', '- 3'];
+  for (const texto of foraDoDominio) {
+    casosDaAritmetica++;
+    let aceite = null;
+    try {
+      aceite = Decimal.de(texto);
+    } catch {
+      continue;
+    }
+    provaDaAritmetica.push(
+      `dominio/Decimal.de: aceitou "${texto}" e deu ${aceite.canonica()}. A forma de um ` +
+        `número é a mesma nas duas portas: algarismos, um ponto decimal, e um menos à ` +
+        `cabeça quando é negativo.`,
+    );
+  }
+  for (const texto of ['0', '-0', '12', '-12', '1.5', '-1.5', '007', '1234567890123456789012345678901']) {
+    casosDaAritmetica++;
+    try {
+      Decimal.de(texto);
+    } catch (err) {
+      provaDaAritmetica.push(
+        `dominio/Decimal.de: recusou "${texto}", que está dentro da forma — ${err.message}`,
+      );
+    }
+  }
+
+  /* E A RAZÃO DA RECUSA, e não só a recusa. Um símbolo como `1e2` era recusado
+     das duas maneiras: pela gramática (que é a razão) ou por não ser um id do
+     livro-razão (que é verdade e não é a razão). As duas dão erro, e por isso
+     nenhum caso da especificação as distingue; quem lê a mensagem é uma pessoa,
+     e a diferença entre as duas é a diferença entre saber e não saber o que
+     fazer a seguir. */
+  for (const expr of ['1e2 + 1', '+3 + 1', '.5 + 1']) {
+    casosDaAritmetica++;
+    let mensagem = '';
+    try {
+      evaluateCheck(expr, { claims: new Map(), env: {} });
+    } catch (err) {
+      mensagem = err.message;
+    }
+    if (!mensagem) {
+      provaDaAritmetica.push(`dominio/${expr}: foi aceite, e tinha de ser recusada.`);
+    } else if (!mensagem.includes('não é um número desta gramática')) {
+      provaDaAritmetica.push(
+        `dominio/${expr}: foi recusada pela razão errada — «${mensagem}». Um símbolo que ` +
+          `começa como um número recusa-se pela gramática, e não por não ser um id.`,
       );
     }
   }
