@@ -81,27 +81,27 @@
   },
   {
    "id": "empate-duas-casas-negativo",
-   "expr": "round ( -2.675 , 2 )",
-   "espera": "-2.68",
-   "porque": "o mesmo do lado negativo, e em float64 -2.675 * 100 da -267.49999999999994."
+   "expr": "round ( -1.005 , 2 )",
+   "espera": "-1.01",
+   "porque": "o mesmo caso do lado negativo. Em float64 -1.005 * 100 da -100.49999999999999 e o arredondamento dava -1; meio-para-o-par dava -1,00. Medido a 02.09.2026."
   },
   {
    "id": "arredondamento-encadeado",
    "expr": "round ( round ( 2.45 , 1 ) , 0 )",
    "espera": "3",
-   "porque": "2,45 arredonda a 2,5 e 2,5 arredonda a 3. Meio-para-o-par dava 2,4 e depois 2; em float64 da 2,4 e depois 2."
+   "porque": "2,45 arredonda a 2,5 e 2,5 arredonda a 3. Com meio-para-o-par dava 2,4 e depois 2, e e essa a diferenca que este caso mede; em float64 a resposta calha ser 3 tambem, porque 2.45 * 10 da exatamente 24.5."
   },
   {
    "id": "divisao-longa",
    "expr": "1 / 3",
    "espera": "0.3333333333333333333333333333",
-   "porque": "28 algarismos significativos, que e onde a divisao para. Em float64 sao 17."
+   "porque": "28 algarismos significativos, que e onde a divisao para. Em float64 o mesmo quociente imprime-se com 16."
   },
   {
    "id": "divisao-longa-negativa",
    "expr": "-2 / 3",
    "espera": "-0.6666666666666666666666666667",
-   "porque": "o ultimo algarismo e arredondado meio-para-o-par como qualquer conta intermedia, e o sinal nao muda a regra."
+   "porque": "o quociente e arredondado no 28.o algarismo pela regra das contas intermedias, e o sinal nao muda a regra."
   },
   {
    "id": "divisao-que-nao-fecha",
@@ -125,7 +125,7 @@
    "id": "soma-que-o-float-nao-fecha",
    "expr": "0.1 + 0.2",
    "espera": "0.3",
-   "porque": "em float64 da 0.30000000000000004, e a tolerancia de 1e-9 do sitio existia para esconder isto."
+   "porque": "em float64 da 0.30000000000000004, e a tolerancia de 1e-9 do sitio aceitava isso como 0,3."
   },
   {
    "id": "subtracao-que-o-float-nao-fecha",
