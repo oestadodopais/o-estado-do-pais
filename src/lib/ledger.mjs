@@ -21,6 +21,7 @@ import { STUDY_IDS, COUNTS } from '../data/studies.mjs';
 import { KINDS, CAMPOS_DE_PROVENIENCIA } from '../data/correcoes.mjs';
 import {
   Decimal,
+  REGRA_DO_ROUND,
   arredonda,
   divide,
   multiplica,
@@ -869,8 +870,26 @@ function operaComMarca(a, b, fn) {
  * o motor por `ledger/derivacoes-paridade.json`; em três linhas: 28 algarismos
  * significativos e meio-para-o-par nas contas intermédias, meio para longe do
  * zero no `round`, igualdade exata na comparação.
+ *
+ * O QUE ESTE AVALIADOR TEM E O DO MOTOR NÃO TEM: o espaço de nomes das
+ * CONTAGENS (`env`). Nomes como `estudos_evora_no_arquivo` resolvem-se contra
+ * contagens que a construção faz do próprio arquivo (`COUNTS` em
+ * `src/data/studies.mjs`) e contra as do registo de correções, e é isso que
+ * permite a uma linha escrever `check: "estudos_evora_no_arquivo"`. É um espaço
+ * de nomes SÓ DESTE SÍTIO, sobre coisas que só existem aqui, e as linhas que o
+ * usam nunca atravessam a fronteira: o motor não as vê e não tem de as saber
+ * resolver. Não faz parte da gramática partilhada, e é por isso que
+ * `ledger/derivacoes-paridade.json` só usa números (leitura a frio, Major 6).
+ *
+ * `regraDoRound` existe por uma razão só, e escrita: a prova de que nenhum valor
+ * publicado se move quando a regra do `round` muda tem de poder reavaliar as
+ * mesmas linhas com a regra velha (meio-para-o-par). Nenhum chamador de
+ * produção o passa.
  */
-export function evaluateCheck(expr, { claims, env = COUNTS, selfId = null } = {}) {
+export function evaluateCheck(
+  expr,
+  { claims, env = COUNTS, selfId = null, regraDoRound = REGRA_DO_ROUND } = {},
+) {
   const bruto = String(expr).replace(/([(),])/g, ' $1 ');
   const tokens = bruto.split(/\s+/).filter(Boolean);
   let i = 0;
@@ -880,6 +899,21 @@ export function evaluateCheck(expr, { claims, env = COUNTS, selfId = null } = {}
 
   function valorDe(token) {
     if (/^-?\d+(\.\d+)?$/.test(token)) return Decimal.de(token);
+    /* UM SÍMBOLO QUE COMEÇA COMO UM NÚMERO É LIDO COMO NÚMERO, e recusado se não
+       tiver a forma (segunda passagem do F0.5, 02.09.2026). Sem isto, `1e2` e
+       `+3` caíam no ramo dos ids e diziam «não existe no livro-razão», que é
+       verdade e não é a razão; do lado do motor eram aceites como números, e a
+       mesma expressão dava 101 num portão e uma recusa no outro (leitura a
+       frio, Major 6). Nenhum dos 2 916 ids do sítio nem dos 4 640 do motor
+       começa por algarismo, `+`, `.` ou `-` (medido a 02.09.2026). */
+    if (/^[0-9+.-]/.test(token)) {
+      throw new Error(
+        `a expressão check tem "${token}", que não é um número desta gramática. ` +
+          `Um número escreve-se com algarismos, um ponto decimal, e um sinal de menos à ` +
+          `cabeça quando é negativo: sem expoente, sem sinal de mais, sem Infinity nem NaN. ` +
+          `O avaliador do motor recusa os mesmos quatro.`,
+      );
+    }
     if (Object.prototype.hasOwnProperty.call(env, token)) return Decimal.de(String(env[token]));
     if (token === selfId) {
       throw new Error(`a expressão check refere-se a si própria ("${token}")`);
@@ -933,7 +967,7 @@ export function evaluateCheck(expr, { claims, env = COUNTS, selfId = null } = {}
       /* Arredondar uma marca dá a marca: não há casas decimais numa coisa que a
          fonte não mediu. */
       if (v instanceof MarcaDaExpressao) return v;
-      return arredonda(v, Number(casas));
+      return arredonda(v, Number(casas), regraDoRound);
     }
     return valorDe(t);
   }

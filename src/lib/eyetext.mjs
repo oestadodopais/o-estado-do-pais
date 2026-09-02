@@ -80,8 +80,11 @@ export const GENERO_DE_ENFASE = { strong: 'strong', b: 'strong', em: 'em', i: 'e
  * escrita a decisão, e é a mesma cadeia dos dois lados: **um caractere que o
  * olho vê como um espaço, e mais nenhum**.
  *
- *   · entram os cinco espaços do HTML (tabulação, mudança de linha, tabulação
- *     vertical, avanço de página, retorno) e o espaço;
+ *   · entram os cinco espaços em branco ASCII do HTML (tabulação, mudança de
+ *     linha, avanço de página, retorno e o espaço), mais a tabulação vertical,
+ *     que a norma do HTML NÃO conta como espaço em branco e que o olho vê como
+ *     um espaço na mesma (a lista do HTML tem cinco e esta linha dizia seis;
+ *     leitura a frio, Minor 12);
  *   · entram os separadores de espaço do Unicode (Zs: U+00A0, U+1680,
  *     U+2000 a U+200A, U+202F, U+205F, U+3000), que um navegador desenha como
  *     espaço;
@@ -169,7 +172,30 @@ const CABECALHO = /^h([1-6])$/;
  * era «<!doctype html>». Corta-se só a declaração à cabeça, que é o único sítio
  * onde ela é válida, e uma marca de ordem de bytes à frente dela.
  */
-const DECLARACAO = /^﻿?\s*<!DOCTYPE[^>]*>/i;
+const DECLARACAO = /^[\t\n\f\r ]*<!DOCTYPE[^>]*>/i;
+
+/**
+ * A MARCA DE ORDEM DE BYTES À CABEÇA DE UM DOCUMENTO NÃO É TEXTO.
+ *
+ * Estava dentro da expressão da declaração de tipo, e por duas razões isso não
+ * servia (leitura a frio, Major 11 e Minor 12): a expressão usava `\s`, que não
+ * é a classe de espaço desta casa, e o corte só acontecia quando havia uma
+ * declaração de tipo a seguir. Do outro lado, o `core/eyetext.py` entregava o
+ * U+FEFF ao analisador e produzia um bloco solto com ele dentro: as duas
+ * leituras diziam coisas diferentes sobre o mesmo documento.
+ *
+ * A decisão, escrita nos dois cabeçalhos: corta-se UM U+FEFF, e só na posição
+ * zero, com ou sem declaração de tipo a seguir. É a marca de ordem de bytes, e
+ * nenhum navegador a desenha. Um U+FEFF em qualquer outra posição é texto, dos
+ * dois lados, e continua a sê-lo.
+ */
+const MARCA_DE_ORDEM = '\uFEFF';
+
+/** O documento sem a marca de ordem de bytes à cabeça, se a tiver. */
+export function semMarcaDeOrdem(html) {
+  const texto = String(html);
+  return texto.startsWith(MARCA_DE_ORDEM) ? texto.slice(1) : texto;
+}
 
 /** Uma estrutura que a leitura recusa em vez de adivinhar onde pôr o texto. */
 export class Falha extends Error {}
@@ -177,15 +203,18 @@ export class Falha extends Error {}
 /**
  * Tem esta classe? (o atributo pode trazer várias, separadas por espaço)
  *
- * O `\s` aqui é deliberado e não entra na classe de espaço da casa (`ESPACOS`):
- * isto lê um atributo `class` do HTML, que o motor não lê de todo (não há função
- * nenhuma do lado de lá com que isto tenha de concordar), e a norma do HTML
- * separa os nomes de classe pelos cinco espaços ASCII, que o `\s` cobre.
+ * OS CINCO ESPAÇOS EM BRANCO ASCII DO HTML, e não o `\s` do JavaScript (leitura
+ * a frio, Minor 12). Isto lê um atributo `class`, que o motor não lê de todo, e
+ * por isso não usa a classe de espaço da casa; usa a da norma do HTML, que é
+ * tabulação, mudança de linha, avanço de página, retorno e o espaço. O `\s`
+ * cobria-os e cobria mais: com `class="foo\u00A0src-chip"` este sítio
+ * reconhecia `src-chip` e deitava fora o nó inteiro, quando o navegador vê ali
+ * uma classe só, chamada «foo\u00A0src-chip», e não a reconhece.
  */
 function temClasse(no, classe) {
   const bruto = no.getAttribute?.('class');
   if (!bruto) return false;
-  return String(bruto).split(/\s+/).includes(classe);
+  return String(bruto).split(/[\t\n\f\r ]+/).includes(classe);
 }
 
 /**
@@ -250,7 +279,7 @@ const unidadeNova = () => ({ pedacos: [], intervalos: [] });
  * @returns {{kind: string, level?: number, ordered?: boolean, unidade?: object, items?: object[], rows?: object[][]}[]}
  */
 export function leBlocos(html) {
-  const raiz = parse(String(html).replace(DECLARACAO, ''), {
+  const raiz = parse(semMarcaDeOrdem(html).replace(DECLARACAO, ''), {
     comment: false,
     blockTextElements: { script: true, style: true, noscript: false },
   });

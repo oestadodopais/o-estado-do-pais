@@ -535,11 +535,75 @@ conferencias++;
     }
   }
 
+  /* O CONJUNTO INTEIRO, E NÃO UMA AMOSTRA (leitura a frio, Major 11). Isto
+     conferia seis exclusões, cinco inclusões e o TOTAL: trocar dois membros não
+     testados passava nos dois lados sem ninguém ver. A lista abaixo é a decisão
+     da casa escrita por extenso, e o mesmo par existe no `core/eyetext_test.py`
+     do motor. */
   conferencias++;
-  if (ESPACOS.size !== 24) {
+  const A_CLASSE = [
+    0x0009, 0x000a, 0x000b, 0x000c, 0x000d, 0x0020,
+    0x00a0, 0x1680,
+    0x2000, 0x2001, 0x2002, 0x2003, 0x2004, 0x2005,
+    0x2006, 0x2007, 0x2008, 0x2009, 0x200a,
+    0x2028, 0x2029, 0x202f, 0x205f, 0x3000,
+  ];
+  const escrita = [...ESPACOS].map((c) => c.codePointAt(0)).sort((a, b) => a - b);
+  const daCasa = [...A_CLASSE].sort((a, b) => a - b);
+  if (escrita.join(',') !== daCasa.join(',')) {
+    const nome = (c) => `U+${c.toString(16).toUpperCase().padStart(4, '0')}`;
+    const emFalta = daCasa.filter((c) => !escrita.includes(c)).map(nome);
+    const aMais = escrita.filter((c) => !daCasa.includes(c)).map(nome);
     falhas.push(
-      `a classe de espaço tem ${ESPACOS.size} caracteres e a decisão da casa são 24. ` +
-        `Se mudou de propósito, muda nos dois lados e nos dois testes.`,
+      `a classe de espaço não é a da casa: ${escrita.length} caractere(s) em vez de ` +
+        `${daCasa.length}` +
+        (emFalta.length ? `; falta(m) ${emFalta.join(', ')}` : '') +
+        (aMais.length ? `; a mais ${aMais.join(', ')}` : '') +
+        `. Se mudou de propósito, muda nos dois lados e nos dois testes.`,
+    );
+  }
+
+  /* A MARCA DE ORDEM DE BYTES À CABEÇA, que é o caminho que faltava (leitura a
+     frio, Major 11). O conhecido-positivo do U+FEFF punha-o DENTRO de um `<p>`,
+     onde os dois lados sempre concordaram; à cabeça de um documento, este lado
+     cortava-o com a declaração de tipo e o motor entregava-o ao analisador. Os
+     seis casos abaixo são os mesmos do `core/eyetext_test.py`. */
+  for (const [nome, documento, esperado] of [
+    ['com declaração de tipo', '\uFEFF<!DOCTYPE html><p>x</p>', ['x']],
+    ['sem declaração de tipo', '\uFEFF<p>x</p>', ['x']],
+    ['com espaço entre a marca e a declaração', '\uFEFF  <!DOCTYPE html><p>x</p>', ['x']],
+    ['sem marca nenhuma', '<!DOCTYPE html><p>x</p>', ['x']],
+    ['uma marca no meio continua a ser texto', '<p>a\uFEFFb</p>', ['a\uFEFFb']],
+    /* Corta-se UMA, e a segunda é texto: fica um bloco solto com ela dentro,
+       nos dois lados (medido a 02.09.2026). */
+    ['uma segunda marca à cabeça é texto', '\uFEFF\uFEFF<p>x</p>', ['\uFEFF', 'x']],
+  ]) {
+    conferencias++;
+    const lido = le(documento);
+    if (JSON.stringify(lido) !== JSON.stringify(esperado)) {
+      falhas.push(
+        `a marca de ordem de bytes, ${nome}: leu ${JSON.stringify(lido)} e devia ler ` +
+          `${JSON.stringify(esperado)}`,
+      );
+    }
+  }
+
+  /* E a classe do atributo `class`, que é a do HTML e não a do `\s` (Minor 12):
+     um espaço inquebrável dentro de um `class` não separa dois nomes. */
+  conferencias++;
+  const comInquebravel = le('<p>de <a class="foo\u00A0src-chip" href="/x">fonte</a> aqui</p>');
+  if (JSON.stringify(comInquebravel) !== JSON.stringify(['de fonte aqui'])) {
+    falhas.push(
+      `um espaço inquebrável dentro de um atributo class separou dois nomes de classe: ` +
+        `${JSON.stringify(comInquebravel)}`,
+    );
+  }
+  conferencias++;
+  const comEspaco = le('<p>de <a class="foo src-chip" href="/x">fonte</a> aqui</p>');
+  if (JSON.stringify(comEspaco) !== JSON.stringify(['de aqui'])) {
+    falhas.push(
+      `o selo com duas classes separadas por um espaço a sério deixou de sair inteiro: ` +
+        `${JSON.stringify(comEspaco)}`,
     );
   }
 }

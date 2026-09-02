@@ -273,3 +273,153 @@ O caminho que fecharia isto sozinho é a especificação entrar na cópia versio
 | `tests/municipio/vazios.mjs` | a comparação A3 por valor, agora que o avaliador devolve um decimal |
 | `ledger/derivacoes-paridade.json` | **novo**, a cópia cruzada |
 | `ledger/cruzamentos/paridade.json` | **novo**, o registo da travessia |
+
+## 9 · Segunda passagem, depois da leitura a frio do Codex (02.09.2026)
+
+*A leitura está em `design/especime-v3/critica/2026-09-02-codex-leitura-f05-resolucao.md`. Cinco plantas de três classes, cinco vistas; os três Blocking são as plantas e não estão nestes ramos. Os Major 4 a 11 e os Minor 12 e 13 são reais e são o que esta secção conserta. Cada conserto tem o seu conhecido-positivo, visto vermelho e depois verde, com o sha256 do ficheiro conferido antes e depois.*
+
+### 9.1 · O que mudou, achado a achado
+
+| achado | o que mudou | onde |
+|---|---|---|
+| **Major 5** · o contrato era ambiente | as contas correm num `localcontext` feito de três constantes do módulo (`PRECISAO`, `REGRA_DAS_INTERMEDIAS`, `REGRA_DO_ROUND`); o contexto do processo deixa de entrar | `core/derivations.py:112-146` e `:255-276` (o `localcontext`) |
+| **Major 6** · domínios diferentes | o motor passa a pedir a forma estreita de um número (`-?\d+(\.\d+)?`), como o sítio; as casas do `round` passam a ser algarismos ASCII; o sítio passa a recusar pela GRAMÁTICA um símbolo que comece como número, em vez de o mandar para os ids | `core/derivations.py:148-162`, `:291-299`, `:329-341`; `src/lib/ledger.mjs:903-916` |
+| **Major 6** · o espaço de nomes | fica escrito nos dois cabeçalhos e no bloco `_` da especificação que o `env` é só do sítio, sobre contagens que só existem lá, e que as linhas que o usam não atravessam | `core/derivations.py:80-93`; `src/lib/ledger.mjs:874-884`; o bloco `_` de `core/derivacoes-paridade.json` |
+| **Major 7** · o menos unário | passa a ser uma operação e a passar pela regra dos 28 algarismos, como em Python | `src/lib/decimal.mjs:302-310` |
+| **Major 7** · o zero com sinal | a cadeia canónica de qualquer zero é `0` nos dois lados | `core/derivations.py:377-395`; `src/lib/decimal.mjs:178-186` |
+| **Major 8** · a especificação não provava tudo | 13 casos novos, 4 recusas novas e um género novo (`quase-iguais`); o harness passa a conferir a CADEIA quando o caso a exige | `core/derivacoes-paridade.json`; `core/derivations_test.py:77-140`; `scripts/check-ledger.mjs:112-155` e `:157-210` |
+| **Major 9** · a prova inválida | refeita com o método certo: a regra velha e a nova por argumento explícito, sem tocar em nada global | §9.3 |
+| **Major 10** · a paridade com a origem | ver §9.5, do lado do motor |
+| **Major 11** · a classe e a marca de ordem de bytes | os conhecidos-positivos comparam o CONJUNTO inteiro dos 24 pontos de código; a marca de ordem de bytes à cabeça é cortada nos dois lados, com seis caminhos conferidos | `core/eyetext.py:118-142` e `:224`; `src/lib/eyetext.mjs:174-197` e `:281`; `core/eyetext_test.py:213-259`; `scripts/provar-eyetext.mjs:538-604` |
+| **Minor 12** · o `temClasse` | separa pelos cinco espaços em branco ASCII do HTML, e não pelo `\s`; a documentação deixa de contar a tabulação vertical como espaço do HTML | `src/lib/eyetext.mjs:205-218`; os dois cabeçalhos |
+| **Minor 13** · as duas portas | `Decimal.de` deixa de aceitar o sinal de mais que o avaliador nunca lhe entregava; os resumos de reposição são remedidos nos ficheiros finais (§9.4) | `src/lib/decimal.mjs:114-124` |
+
+### 9.2 · Um achado que a leitura não tinha: um literal de 31 algarismos
+
+A varredura de fronteira desta passagem (169 expressões escolhidas sobre os símbolos que a gramática discute: `1e2`, `+3`, `-0`, `.5`, `٢`, literais de 31 algarismos) encontrou uma divergência que não está na leitura: um literal que nenhuma conta toca vale exatamente o que está escrito nos dois lados, e o `_as_canonical` do motor imprimia-o com 28 algarismos, porque o `normalize()` do Python é uma operação do contexto e arredonda.
+
+    motor antes:  1234567890123456789012345679000
+    sítio:        1234567890123456789012345678901
+
+Consertado em `core/derivations.py:377-395`, e preso por dois casos da especificação (`literal-intocado-de-31-algarismos` e `literal-de-31-algarismos-depois-de-uma-conta`, que é o mesmo número depois de uma soma e aí sim tem 28 algarismos).
+
+### 9.3 · A prova refeita: nenhum valor publicado se move
+
+O método antigo era inválido (Major 9): mexia no contexto do processo, e com a regra do `round` escrita na chamada o contexto já não manda nela. O método novo avalia cada linha DUAS VEZES com o mesmo avaliador, passando a regra velha e a nova por argumento explícito. Nenhum chamador de produção passa esse argumento; existe para esta prova e está escrito nos dois cabeçalhos.
+
+**Motor**, da raiz do motor:
+
+    python3 -c '
+    import json, sys
+    from decimal import ROUND_HALF_EVEN
+    from pathlib import Path
+    sys.path.insert(0, ".")
+    from core import derivations as D
+    cfg = json.loads(Path("core/gate_baselines.json").read_text())
+    n = 0; mexem = []
+    for l in sorted({d["ledger"] for d in cfg["deliverables"]}):
+        rows = json.loads(Path(l).read_text())["claims"]
+        cl = {x["id"]: x for x in rows if x.get("id")}
+        for row in rows:
+            e = row.get("check")
+            if not e or D.inherited_mark(e, cl, self_id=row.get("id")) is not None: continue
+            velha = D.evaluate(e, cl, row.get("id"), regra_do_round=ROUND_HALF_EVEN)
+            nova  = D.evaluate(e, cl, row.get("id"))
+            n += 1
+            if velha != nova: mexem.append((l, row["id"]))
+    print("linhas reavaliadas com as duas regras:", n)
+    print("linhas cujo resultado MUDA:", len(mexem), mexem)
+    print("conhecido-positivo do medidor:",
+          D._as_canonical(D.evaluate("round ( 2.5 , 0 )", {}, regra_do_round=ROUND_HALF_EVEN)),
+          D._as_canonical(D.evaluate("round ( 2.5 , 0 )", {})))
+    '
+    linhas reavaliadas com as duas regras: 308
+    linhas cujo resultado MUDA: 0 []
+    conhecido-positivo do medidor: 2 3
+
+**Sítio**, da raiz do sítio:
+
+    node -e '
+    import("./src/lib/ledger.mjs").then(async (L) => {
+      const S = await import("./src/data/studies.mjs");
+      const claims = L.loadClaims();
+      const env = { ...S.COUNTS, ...L.contagensDoRegisto(claims) };
+      let n = 0; const mexem = [];
+      for (const c of claims.values()) {
+        if (!c.check) continue;
+        const nova  = L.evaluateCheck(c.check, { claims, env, selfId: c.id });
+        const velha = L.evaluateCheck(c.check, { claims, env, selfId: c.id, regraDoRound: "meio-para-o-par" });
+        if (nova instanceof L.MarcaDaExpressao || velha instanceof L.MarcaDaExpressao) continue;
+        n++;
+        if (!nova.igual(velha)) mexem.push(c.id);
+      }
+      console.log("linhas reavaliadas com as duas regras:", n);
+      console.log("linhas cujo resultado MUDA:", mexem.length, mexem);
+      const vazio = new Map();
+      console.log("conhecido-positivo do medidor:",
+        L.evaluateCheck("round ( 2.5 , 0 )", { claims: vazio, env: {}, regraDoRound: "meio-para-o-par" }).canonica(),
+        L.evaluateCheck("round ( 2.5 , 0 )", { claims: vazio, env: {} }).canonica());
+    });'
+    linhas reavaliadas com as duas regras: 333
+    linhas cujo resultado MUDA: 0 []
+    conhecido-positivo do medidor: 2 3
+
+Cada uma imprime o seu conhecido-positivo antes de se acreditar no zero: com a regra velha `round ( 2,5 , 0 )` dá 2 e com a nova dá 3, nos dois motores. A linha 334 do sítio e a 309 do motor são a que herda uma marca impressa e não passa pelo avaliador.
+
+**Nenhum valor publicado se move, dos dois lados: «nenhum».**
+
+### 9.4 · Os conhecidos-positivos, vermelhos e depois verdes
+
+Cada planta foi posta por código, corrida, e reposta com o sha256 do ficheiro conferido antes e depois. O guião apaga o `__pycache__` antes de cada corrida: o Python valida o bytecode pela data em segundos e pelo tamanho, e uma planta que troque `0x3000` por `0x3001` não muda o tamanho, corria dentro do mesmo segundo e não era vista. Foi assim que a planta G passou verde na primeira tentativa desta passagem, e é a razão de o guião a apagar.
+
+**Motor** (`sha` igual antes e depois em todas):
+
+| planta | régua | com a planta | reposto |
+|---|---|---|---|
+| A · o contexto volta a ser ambiente | `python3 -m core.derivations_test` | exit 1, 3 problemas | exit 0 · `a06b68ab` |
+| B · o literal volta a ser tudo o que o `Decimal` aceita | idem | exit 1 | exit 0 · `a06b68ab` |
+| C · as casas do `round` voltam ao `isdigit()` | idem | exit 1, 1 problema | exit 0 · `a06b68ab` |
+| D · a cadeia canónica volta a arredondar | idem | exit 1, 4 problemas | exit 0 · `a06b68ab` |
+| E · o zero volta a ter sinal na cadeia | idem | exit 1, 4 problemas | exit 0 · `a06b68ab` |
+| F · a marca de ordem de bytes volta a entrar | `python3 -m core.eyetext_test` | exit 1, 4 problemas | exit 0 · `a4f52ad8` |
+| G · dois membros trocados na classe de espaço | idem | exit 1, 2 problemas | exit 0 · `a4f52ad8` |
+| H · um valor esperado errado na especificação | `python3 -m core.derivations_test` | exit 1, 1 problema | exit 0 · `e427112f` |
+
+**Sítio**:
+
+| planta | régua | com a planta | reposto |
+|---|---|---|---|
+| I · o menos unário volta a virar só o sinal | `node scripts/check-ledger.mjs` | exit 1 | exit 0 · `472eb48b` |
+| J · o zero volta a ter sinal na cadeia | idem | exit 1 | exit 0 · `472eb48b` |
+| K · a `Decimal.de` volta a aceitar o sinal de mais | idem | exit 1 | exit 0 · `472eb48b` |
+| L · o símbolo que começa como número volta a cair nos ids | idem | exit 1 | exit 0 · `8c6ab2d0` |
+| M · a regra do `round` do avaliador volta ao meio-para-o-par | idem | exit 1 | exit 0 · `8c6ab2d0` |
+| N · a marca de ordem de bytes volta a depender da declaração | `node scripts/provar-eyetext.mjs` | exit 1, 4 problemas | exit 0 · `e96e4767` |
+| O · o `temClasse` volta ao `\s` do JavaScript | idem | exit 1, 1 problema | exit 0 · `e96e4767` |
+| P · dois membros trocados na classe de espaço | idem | exit 1, 2 problemas | exit 0 · `e96e4767` |
+| Q · um byte a mais na cópia cruzada | `node scripts/check-cruzamento.mjs` | exit 1 | exit 0 · `e427112f` |
+
+Duas plantas desta lista só ficaram detetáveis depois de a régua mudar, e é honesto dizer porquê. A **L** não era vista por nenhum caso da especificação: com o ramo desligado, `1e2` continuava a ser recusado, mas por não ser um id do livro-razão em vez de por não ser um número, e as duas recusas são erros iguais para quem só conta erros. A régua passou a conferir a RAZÃO da recusa e não só a recusa. A **M** apontava para o valor por omissão do `arredonda()`, que o avaliador nunca usa porque passa sempre a regra: era uma planta em código morto, e passou a apontar para o valor por omissão do `evaluateCheck`, que é o que decide.
+
+### 9.5 · A especificação, e a paridade com a origem
+
+`core/derivacoes-paridade.json` passa a ter **32 casos, 10 recusas e 2 quase-igualdades**, e o sha256 é `e427112f9761459392051e2a810f5e9d4df64100b5c7d655adeb058e692d9f1e`, o mesmo dos dois lados e nos dois campos de `ledger/cruzamentos/paridade.json`.
+
+As quase-igualdades são o género novo, e são a única coisa que prova que a comparação não tem tolerância: a régua tem de RECUSAR `77.200000000001` para `round ( 30800 / 39900 * 100 , 1 )`, que difere de 77,2 por um bilionésimo, mil vezes menos do que a tolerância de `1e-9` que esta casa tinha e aceitava.
+
+### 9.6 · O diferencial, nos avaliadores finais
+
+    12 000 expressões ao acaso (duas sementes)   6 000 de 6 000 e 6 000 de 6 000 iguais
+    169 expressões de fronteira (esta passagem)  169 de 169 iguais
+
+A varredura de fronteira é nova e é a que encontrou o achado do §9.2. Cobre os símbolos que a gramática discute, em todas as posições em que a gramática os pode ver: sozinhos, dos dois lados de cada operador, depois de um menos unário, e nas duas posições do `round`.
+
+### 9.7 · As contagens dos portões, antes e depois desta passagem
+
+| | primeira passagem | segunda passagem | comando |
+|---|---|---|---|
+| `core.derivations_test` | 49 checks | **73** checks | `python3 -m core.derivations_test` |
+| `core.eyetext_test` | 33 checks | **39** checks | `python3 -m core.eyetext_test` |
+| `scripts/provar-eyetext.mjs` | 595 conferências | **603** conferências | `node scripts/provar-eyetext.mjs` |
+| a prova da aritmética do `ledger:check` | 37 conferências | **77** conferências | `npm run ledger:check` |
+| linhas com aritmética reavaliada (sítio) | 334 | 334 | `npm run ledger:check` |

@@ -61,6 +61,24 @@
 /** Os algarismos significativos das contas intermédias. O `prec` do Python. */
 export const PRECISAO = 28;
 
+/**
+ * As duas regras de meio caminho, escritas uma vez e com nome.
+ *
+ * `REGRA_DAS_INTERMEDIAS` é meio-para-o-par e governa `+ - * /`; `REGRA_DO_ROUND`
+ * é meio-para-longe-do-zero e governa só o `round ( x , n )`. São os nomes que o
+ * `rounding=` do Python usa, e estão aqui com nome pela mesma razão que o motor
+ * as pôs em constantes na segunda passagem: uma regra escrita num sítio é uma
+ * regra que se pode ler, e uma regra embutida numa linha é uma regra que se
+ * muda sem ninguém dar por isso.
+ *
+ * A segunda serve ainda a PROVA de que nenhum valor publicado se move quando a
+ * regra do `round` muda: `arredonda(x, n, REGRA_DAS_INTERMEDIAS)` refaz a conta
+ * com a regra velha sem tocar em nada global. Nenhum chamador de produção passa
+ * o terceiro argumento.
+ */
+export const REGRA_DAS_INTERMEDIAS = 'meio-para-o-par';
+export const REGRA_DO_ROUND = 'meio-para-longe-do-zero';
+
 /** Quantos algarismos tem este inteiro não negativo. */
 function algarismos(n) {
   return n === 0n ? 1 : String(n).length;
@@ -93,7 +111,13 @@ export class Decimal {
    */
   static de(texto) {
     const s = String(texto).trim();
-    const m = /^([+-]?)(\d+)(?:\.(\d+))?$/.exec(s);
+    /* A FORMA ESTREITA, E SÓ ELA (segunda passagem do F0.5, 02.09.2026). Isto
+       aceitava um sinal de mais que o `evaluateCheck` nunca lhe entregava, e a
+       documentação dizia `-?\d+...`: o comentário descrevia o código certo e o
+       código fazia outra coisa (leitura a frio, Minor 13). Agora as duas portas
+       pedem o mesmo, e é o mesmo que o motor pede desde a segunda passagem:
+       algarismos, um ponto decimal, e um menos à cabeça quando é negativo. */
+    const m = /^(-?)(\d+)(?:\.(\d+))?$/.exec(s);
     if (!m) throw new Error(`"${texto}" não é um número decimal simples`);
     const fracao = m[3] ?? '';
     return new Decimal(m[1] === '-', BigInt(m[2] + fracao), -fracao.length);
@@ -152,6 +176,12 @@ export class Decimal {
    * linha vermelha lá se possam comparar sem tradução.
    */
   canonica() {
+    /* UM ZERO NÃO TEM SINAL PARA QUEM O LÊ (leitura a frio, Major 7). O
+       `normalize()` do Python guarda o `-0` e a reconstrução do zero deste lado
+       não guardava: `- 0 + - 0` dava `-0` no motor e `0` aqui, e a igualdade,
+       que trata os dois como o mesmo número, não via nada. A cadeia passa a ser
+       `0` nos dois lados, e o `_as_canonical` do motor faz o mesmo. */
+    if (this.zero) return '0';
     return this.normaliza().toString();
   }
 
@@ -269,9 +299,16 @@ export function divide(a, b) {
   return ajusta(neg, quociente, exp);
 }
 
-/** O menos unário. O zero muda de sinal e continua a ser zero. */
+/**
+ * O menos unário, que é uma OPERAÇÃO e não uma troca de sinal.
+ *
+ * Isto virava o sinal e mais nada, e o `-x` do Python passa pelo contexto como
+ * qualquer outra operação: `- 12345678901234567890123456789` guardava 29
+ * algarismos aqui e era arredondado a 28 no motor (leitura a frio, Major 7).
+ * Passa pelo `ajusta()` como as outras quatro.
+ */
 export function nega(a) {
-  return new Decimal(!a.neg, a.coef, a.exp);
+  return ajusta(!a.neg, a.coef, a.exp);
 }
 
 /**
@@ -285,7 +322,7 @@ export function nega(a) {
  * `Math.sign()`, e o que ela não podia corrigir era o `float64` por baixo:
  * `1,005 × 100` são `100.49999999999999`, e o arredondamento dava `1,00`.
  */
-export function arredonda(a, casas) {
+export function arredonda(a, casas, regra = REGRA_DO_ROUND) {
   const alvo = -casas;
   const desvio = a.exp - alvo;
   let coef;
@@ -295,7 +332,14 @@ export function arredonda(a, casas) {
     const p = dez(-desvio);
     const q = a.coef / p;
     const resto = a.coef % p;
-    coef = resto * 2n >= p ? q + 1n : q;
+    const dobro = resto * 2n;
+    if (regra === REGRA_DAS_INTERMEDIAS) {
+      /* Meio-para-o-par: só existe aqui para a prova de que nenhum valor
+         publicado se move quando a regra muda. Ver `REGRA_DO_ROUND`. */
+      coef = dobro > p || (dobro === p && q % 2n === 1n) ? q + 1n : q;
+    } else {
+      coef = dobro >= p ? q + 1n : q;
+    }
   }
   if (algarismos(coef) > PRECISAO) {
     throw new Error(
