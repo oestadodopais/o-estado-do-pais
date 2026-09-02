@@ -43,16 +43,16 @@ Node local: `node -v` → `v22.23.1`. npm local: `npm -v` → `10.9.8`.
 (`git show --stat 267d97db` → `2 files changed, 92 insertions(+)`).
 
 * **Quando corre:** `on: push` sem filtro de ramo (todos os ramos) e
-  `on: pull_request`. Um ramo com pedido de integração aberto produz duas
-  corridas, e é por isso que o grupo de concorrência leva o `event_name`:
-  `group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}`,
-  com `cancel-in-progress: true`. Sem o `event_name` a corrida do pedido
-  cancelava a do push, e a verificação de estado que o diretor vai exigir em
-  `main` ficava dependente de qual das duas chegou primeiro.
+  `on: pull_request`. Confere a **cabeça** de cada push e de cada pedido, e não
+  cada commit lá dentro (§7.1). O grupo de concorrência é
+  `group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}`
+  com `cancel-in-progress: true`; o `github.ref` sozinho já separava o push do
+  pedido, e o `event_name` fica por ser explícito, não por ser preciso (§7.2).
 * **O que pode:** `permissions: contents: read`, e mais nada. Sem escrita, sem
   pacotes, sem `id-token`.
-* **Onde corre:** `runs-on: ubuntu-latest`, `timeout-minutes: 30`. A corrida
-  verde levou 9 min 35 s (§3), o que deixa a margem larga sem a deixar infinita.
+* **Onde corre:** `runs-on: ubuntu-24.04` (preso de propósito, §7.3),
+  `timeout-minutes: 30`. A corrida verde mais lenta levou 13 min 50 s (§3.5), o
+  que deixa a margem larga sem a deixar infinita.
 * **O nome do trabalho:** `portao`. É esse o nome do contexto que o diretor tem
   de escolher em Settings → Branches → Require status checks to pass. O trabalho
   não leva campo `name:` de propósito: assim o contexto é o identificador do
@@ -78,18 +78,22 @@ Node local: `node -v` → `v22.23.1`. npm local: `npm -v` → `10.9.8`.
   `cache`, e que o `upload-artifact` v7.0.1 aceita `retention-days` e
   `if-no-files-found`.
 * **O Node:** `actions/setup-node` com `node-version-file: .nvmrc` e `cache: npm`.
-  O `.nvmrc` novo diz `22` (`od -c .nvmrc` → `2 2 \n`), e o `engines` do
-  `package.json` fica como estava (`>=22.12.0`): o `engines` diz o mínimo que a
-  casa aceita, o `.nvmrc` diz o maior em que a casa desenvolve. No anfitrião isso
-  resolveu para `node: v22.23.2` (linha do passo «O Node» do registo da corrida).
+  O `.nvmrc` diz `22.23.1` (`od -c .nvmrc` → `2 2 . 2 3 . 1 \n`), a versão exata
+  do portátil, e o `engines` do `package.json` fica como estava (`>=22.12.0`): o
+  `engines` diz o mínimo que a casa aceita, o `.nvmrc` diz a versão em que a casa
+  desenvolve, com o remendo e tudo (§7.3). Na primeira passagem o `.nvmrc` dizia
+  `22` e o anfitrião resolveu para `node: v22.23.2`, um remendo à frente do
+  portátil sem ninguém decidir nada.
 * **Os três portões, um passo cada:** `npm ci`, `npm run build`,
   `npm run verify`, `npm run typecheck`. Separados para o registo dizer qual caiu
   sem ninguém ter de ler onze mil linhas de saída
   (`gh run view 33592347822 --log | wc -l` → `11577`).
-* **A prova de cada construção:** `dist/prova.json` (escrito pelo `gate:html`) e
-  `dist/cadeia.json` (escrito pelo `check:cadeia`), guardados 14 dias. Na corrida
-  verde: `prova-267d97db4faec412787b40fcb7d9ff0a3baf9382`, 2 646 bytes, a expirar
-  em `2026-09-16T05:00:05Z`
+* **A prova de cada corrida verde:** `dist/prova.json` (escrito pelo `gate:html`)
+  e `dist/cadeia.json` (escrito pelo `check:cadeia`), guardados 14 dias. Sobem só
+  quando os três portões fecharam verdes, e um passo antes da subida exige os
+  dois ficheiros com `test -f` cada (§7.4 e §7.5). Na primeira corrida verde:
+  `prova-267d97db4faec412787b40fcb7d9ff0a3baf9382`, 2 646 bytes, a expirar em
+  `2026-09-16T05:00:05Z`
   (`gh api repos/oestadodopais/o-estado-do-pais/actions/runs/33592347822/artifacts`).
 
 ---
@@ -119,13 +123,14 @@ Os passos, com os tempos lidos em
 | 6 | `npm run verify` | success | 04:58:32 | 05:00:04 | 92 |
 | 7 | `npm run typecheck` | success | 05:00:04 | 05:00:04 | 0 |
 | 8 | A prova desta construção | success | 05:00:04 | 05:00:05 | 1 |
-| 15 | Post O Node (guardar a cache) | success | 05:00:05 | 05:00:07 | 2 |
+| 15 | Post O Node | success | 05:00:05 | 05:00:07 | 2 |
 | 16 | Post A árvore | success | 05:00:07 | 05:00:08 | 1 |
 | 17 | Complete job | success | 05:00:08 | 05:00:08 | 0 |
 
 Três coisas que estes números dizem e vale a pena escrever:
 
-1. **A construção é 78 % do tempo da corrida** (449 s de 575 s). O anfitrião é
+1. **A construção é 78,1 % do tempo da corrida** (449 s de 575 s; nas três
+   corridas verdes a fração ficou entre 76,8 % e 79,8 %, §3.5). O anfitrião é
    mais lento do que o portátil: 449 s contra os 283 s medidos localmente na
    mesma árvore (§1), ou seja **1,59 vezes**. É o número com que se conta antes
    de pôr mais alguma coisa no `build`.
@@ -264,26 +269,59 @@ Conclusão `success`. Total: **11 min 43 s** (703 s), de `2026-09-02T05:11:52Z` 
 | 7 | `npm run typecheck` | 1 | 0 |
 | 8 | A prova desta construção | 1 | 1 |
 
-Duas leituras, e a segunda desmente uma expectativa:
+Duas leituras, e nenhuma delas é uma conclusão:
 
-1. **O mesmo trabalho custa mais 20 % num anfitrião diferente** (540 s contra
-   449 s na construção, 114 s contra 92 s no `verify`). Não há nada a consertar:
-   é a dispersão dos anfitriões partilhados, e é o motivo pelo qual o
+1. **O mesmo trabalho custa mais, e o quanto varia por portão** (leitura a frio
+   do Codex, achado 14: um «20 %» só não descreve os dois). Contra a 1.ª corrida:
+   a construção **+20,3 %** (540 s contra 449 s), o `verify` **+23,9 %** (114 s
+   contra 92 s), os dois juntos **+20,9 %**, a corrida inteira **+22,3 %**. Não
+   há nada a consertar: as duas corridas saíram na mesma imagem
+   (`Image: ubuntu-24.04` nas duas), pelo que a diferença é dispersão de
+   anfitriões partilhados e não uma mudança de sistema. É por isso que o
    `timeout-minutes: 30` tem de ficar largo.
-2. **A cache do npm custou mais do que poupou.** A corrida acertou na cache
-   (`Cache hit for: node-cache-Linux-x64-npm-141a93da…`, `Cache Size: ~84 MB
-   (88128500 B)`, `Cache restored successfully`, linhas do passo «O Node»), e
-   mesmo assim o passo «O Node» passou de 4 s para 12 s e o `npm ci` de 7 s para
-   12 s: 24 s com cache contra 11 s sem ela. Descomprimir 84 MB custa mais do que
-   ir buscar 223 pacotes pequenos ao registo. O `cache: npm` fica como o brief
-   pediu, mas fica também esta medição: se algum dia o tempo da corrida importar,
-   é uma linha a tirar, não a afinar, e a poupança seria de cerca de 13 s numa
-   corrida de 700 s, ou seja irrelevante ao pé dos 540 s da construção.
+2. **A cache do npm acertou, e o que isso custou não se sabe destas corridas**
+   (leitura a frio do Codex, achado 15). O passo «O Node» diz
+   `Cache hit for: node-cache-Linux-x64-npm-141a93da…`, `Cache Size: ~84 MB
+   (88128500 B)`, `Cache restored successfully`, e nesta corrida os dois passos
+   do Node custaram 24 s contra os 11 s da 1.ª, que estava fria. A primeira
+   redação deste relatório concluiu daí que a cache custava mais do que poupava:
+   **estava errado**, e a 4.ª corrida mostra porquê (§3.5). Duas corridas sem
+   controlo nenhum não separam o custo da cache da variação do anfitrião e da
+   rede, e este parágrafo passa a dizer só o que foi medido.
 
-A quarta corrida do ramo é a deste acrescento, e o seu resultado lê-se em
-`gh run list --repo oestadodopais/o-estado-do-pais --branch ci-2026-09-02`. A
-cadeia para aqui de propósito: um relatório que se cite a si próprio a cada push
-nunca fecha.
+### 3.5 A quarta corrida, que desfaz a conclusão da cache
+
+Ramo `ci-2026-09-02`, commit `8144787958451e1836617cfcfec03a6063f4d4eb`.
+**https://github.com/oestadodopais/o-estado-do-pais/actions/runs/33594974810**
+
+Conclusão `success`. Total: **13 min 50 s** (830 s), de `2026-09-02T05:30:55Z` a
+`2026-09-02T05:44:45Z`. Artefacto
+`prova-8144787958451e1836617cfcfec03a6063f4d4eb`, 2 647 bytes.
+
+| passo | 1.ª corrida (cache fria) | 3.ª corrida (cache quente) | 4.ª corrida (cache quente) |
+|---|---|---|---|
+| O Node | 4 | 12 | **3** |
+| `npm ci` | 7 | 12 | **5** |
+| os dois juntos | **11** | **24** | **8** |
+| `npm run build` | 449 | 540 | 662 |
+| `npm run verify` | 92 | 114 | 138 |
+| total da corrida | 575 | 703 | 830 |
+
+A 4.ª corrida acertou na mesma cache (`Cache hit for:
+node-cache-Linux-x64-npm-141a93da…`, e no fim `Cache hit occurred on the primary
+key …, not saving cache`) e fez os dois passos do Node em **8 s**, ou seja menos
+do que os 11 s da corrida fria. A cache quente deu portanto o pior resultado
+(24 s) e o melhor (8 s) das três, o que fecha a questão: **destas corridas não se
+tira nenhuma conclusão sobre o custo da cache**, e a dispersão do anfitrião
+domina tudo o resto (a construção subiu +47,4 % da 1.ª para a 4.ª, e o `verify`
++50,0 %, sempre na mesma imagem `ubuntu-24.04`). O `cache: npm` fica como está;
+para decidir se compensa era preciso o mesmo commit corrido várias vezes com e
+sem a linha, e isso não é trabalho deste bloco.
+
+O que estas três corridas verdes dizem com segurança é uma coisa só, e é
+estável: **a construção vale entre 76,8 % e 79,8 % do tempo da corrida** (449 de
+575, 540 de 703, 662 de 830). É esse o número com que se conta antes de pôr mais
+alguma coisa no `build`.
 
 ---
 
@@ -320,17 +358,16 @@ auditoria, e é o que os blocos F0.6 e F3.1 vão buscar).
 ## 5 · O que ficou decidido aqui e o brief não dizia
 
 1. **O `event_name` dentro do grupo de concorrência.** O brief pedia «um grupo
-   por referência»; ficou `workflow + event_name + ref`, porque com um grupo só
-   por referência a corrida do `pull_request` cancelava a do `push` no mesmo ramo
-   e a verificação de estado ficava a depender de qual delas sobrevivia.
-2. **O passo do artefacto preso ao resultado da construção**
-   (`if: always() && steps.construcao.outcome == 'success'`) com
-   `if-no-files-found: error`. As duas metades contam: o `always()` faz com que
-   uma corrida que caia no `verify` ou no `typecheck` deixe mesmo assim a prova
-   da construção; a condição do passo da construção evita que uma corrida que cai
-   antes de haver `dist/` (como a da planta) junte um segundo vermelho falso. E,
-   com a construção verde, os dois ficheiros têm mesmo de estar lá, o que é uma
-   régua e não um aviso.
+   por referência»; ficou `workflow + event_name + ref`. A razão que aqui estava
+   escrita na primeira passagem estava errada, e a leitura a frio do Codex
+   apanhou-a (achado 10): o `github.ref` já separa o push do pedido de
+   integração. Ficou, pela razão certa, em §7.2.
+2. **O passo do artefacto.** Na primeira passagem estava
+   `if: always() && steps.construcao.outcome == 'success'`, o que subia a prova
+   de uma construção que a seguir caía no `verify` ou no `typecheck`, e o
+   `if-no-files-found: error` sozinho deixava passar uma prova com um dos dois
+   ficheiros. As duas coisas eram defeitos, o Codex apanhou-as (achados 4 e 5) e
+   estão consertadas em §7.4 e §7.5.
 3. **O trabalho sem campo `name:`**, para o contexto da verificação de estado ser
    o identificador do trabalho (`portao`) e não haver dois nomes para a mesma
    coisa.
@@ -355,3 +392,191 @@ metades: «o fluxo verde no push», que está feita e medida em §3.1, e «um co
 com `**Afecta:** todos` plantado num ramo é recusado antes de fundir», que está
 provada como recusa da corrida em §3.3 e passa a recusa da fusão no momento em
 que o diretor escolher o contexto.
+
+---
+
+## 7 · Segunda passagem, sobre a leitura a frio do Codex
+
+*A leitura está em `design/especime-v3/critica/2026-09-02-codex-leitura-f03-ci-sitio.md`
+(Codex `gpt-5.6-sol`, xhigh, 05:46 a 05:55 UTC, 15 achados distintos), com três
+estragos plantados no pacote e **3 de 3 vistos**: o achado 1 (o `checkout` preso
+por etiqueta e não por resumo) e o achado 11 (a aritmética `449 s de 515 s`) são
+as plantas e não existem neste ramo. Da triagem do lugar de direção: o achado 2 é
+o passo do diretor depois da fusão (§6), o 6 é o bloco F0.4, o 7 conferiu-se pela
+API do GitHub, o 9 é do pacote e não da obra. Os restantes oito são reais e são
+esta secção. As linhas do relatório que estavam erradas foram corrigidas onde
+estavam, e não só aqui: um relatório que guarda a versão errada no corpo e a
+emenda no fim mente a quem lê o corpo.*
+
+### 7.1 O que o fluxo confere, à letra (achado 3)
+
+O fluxo confere **a cabeça de cada push e de cada pedido de integração**, e não
+cada commit lá dentro: o GitHub dispara uma corrida por push, e um push com cinco
+commits produz uma corrida, sobre o quinto. A regra da casa (os três portões a 0
+em cada commit) continua a ser da casa e não passa a ser da máquina: o que a CI
+garante é que o que chega a `main` foi conferido, não que cada passo do caminho o
+foi.
+
+Duas consequências do desenho, e ambas são propositadas. Primeira: **um vermelho
+salta os portões seguintes**. Na corrida da planta o `verify` e o `typecheck`
+ficaram `skipped` (§3.3), e é assim que se quer: o primeiro portão que cai é o
+que se conserta, e correr os outros por cima de uma construção que não existe
+custa minutos e não diz nada. Segunda: **o `cancel-in-progress` cancela a corrida
+anterior da mesma referência**. Um segundo push cancela a corrida do primeiro, e
+uma corrida cancelada é `cancelled` e não `success`, pelo que não vale como
+verificação verde. A corrida que conta para uma verificação obrigatória é sempre
+a do resumo que se vai fundir, e é por isso que a fusão em avanço rápido (§4) é o
+caminho que fecha: o resumo que chega a `main` é o mesmo que o GitHub viu verde.
+
+### 7.2 A razão da concorrência, corrigida (achado 10)
+
+A primeira redação dizia que sem o `event_name` no grupo a corrida do pedido de
+integração cancelava a do push. **Estava errado.** Um push corre em
+`refs/heads/<ramo>` e um pedido de integração corre em `refs/pull/<n>/merge`: são
+referências distintas, e o `github.ref` sozinho já as separava.
+
+O `event_name` **fica** no grupo, pela razão certa: é explícito, e uma chave que
+não depende de saber de cor como o GitHub nomeia as referências dos pedidos não
+pode agrupar por acidente dois acontecimentos diferentes se essa nomenclatura
+mudar. Não custa nada e não esconde nada. O que sai é a justificação falsa, aqui
+e no comentário do ficheiro.
+
+### 7.3 O ambiente preso, e quando se mexe (achado 8)
+
+O `.nvmrc` dizia `22`, que é todos os remendos do maior; o `runs-on` dizia
+`ubuntu-latest`, que é a imagem que o GitHub quiser. Um commit verde de hoje
+podia correr amanhã noutro Node e noutro sistema sem ninguém decidir nada, e a
+primeira passagem já o mostrava sem lhe chamar defeito: o portátil corre
+`v22.23.1` e o anfitrião resolveu `v22.23.2`.
+
+* `.nvmrc` → **`22.23.1`** (`od -c .nvmrc` → `2 2 . 2 3 . 1 \n`), o `node -v` do
+  portátil. **Quando mudar:** quando o portátil mudar de Node, na mesma passagem
+  e com o número medido.
+* `runs-on` → **`ubuntu-24.04`**. Não muda nada hoje: as quatro corridas da
+  primeira passagem saíram todas em `Image: ubuntu-24.04` (linha do passo «Set up
+  job»), que é o que o `ubuntu-latest` resolvia a 02.09.2026. Muda no dia em que
+  o GitHub mover o `latest`. **Quando mudar:** por decisão registada, quando a
+  casa quiser o maior seguinte, e nunca a meio de um bloco.
+
+O `engines` do `package.json` fica como estava (`>=22.12.0`): diz o mínimo que a
+casa aceita, que é outra pergunta.
+
+### 7.4 A prova exige os dois ficheiros (achado 4)
+
+O `if-no-files-found: error` só falha quando **nenhum** dos caminhos casa. Com o
+`dist/prova.json` presente e o `dist/cadeia.json` ausente, a subida passava e o
+artefacto ficava meio, com o nome de uma prova inteira. A primeira redação dizia
+que «com a construção verde os dois ficheiros têm mesmo de estar lá»: era o que
+se queria, não o que o ficheiro fazia.
+
+Entra um passo antes da subida:
+
+```yaml
+      - name: Os dois ficheiros da prova existem
+        if: success()
+        run: |
+          test -f dist/prova.json
+          test -f dist/cadeia.json
+```
+
+O `if-no-files-found: error` fica, como segunda rede. Conhecido positivo corrido
+no portátil sobre o `dist/` desta árvore, com o mesmo `bash -e` que o GitHub usa
+nos passos `run`:
+
+```
+os dois presentes                      → GUARDA_A_EXIT=0
+dist/cadeia.json escondido             → GUARDA_B_EXIT=1
+dist/cadeia.json outra vez no lugar    → GUARDA_C_EXIT=0
+```
+
+No estado B o `ls dist/prova.json` continuava a encontrar o ficheiro: é
+exatamente o caso em que o `if-no-files-found` sozinho não via nada.
+
+### 7.5 O artefacto é a prova de uma corrida verde (achado 5)
+
+A condição era `if: always() && steps.construcao.outcome == 'success'`, que subia
+a prova de uma corrida cuja construção passou e que a seguir morreu no `verify`
+ou no `typecheck`. Um ficheiro chamado prova numa corrida vermelha é pior do que
+nenhum. Passa a `if: success()` nos dois passos, o do `test -f` e o da subida:
+**uma corrida vermelha não deixa artefacto nenhum**, e o registo é a prova do que
+falhou.
+
+E há uma coisa que a primeira redação não dizia e é o achado do Codex: **o
+`verify` reescreve os dois ficheiros.** O `npm run verify` torna a correr o
+`gate:html` e o `check:cadeia` (`package.json`, o `verify` chama os dois), que
+são precisamente quem escreve `dist/prova.json` e `dist/cadeia.json`. O que sobe
+não é portanto a prova da construção: é **o estado depois dos três portões**, que
+é o estado que interessa, porque é esse que corresponde ao verde que a
+verificação obrigatória vai ler. O nome do artefacto leva o resumo do commit
+(`prova-${{ github.sha }}`), de modo que o ficheiro diz sozinho a que árvore
+pertence.
+
+### 7.6 O comentário do tamanho do registo (achado 12)
+
+O comentário do ficheiro dizia «duas mil linhas de saída» e o relatório dizia
+11 577 medidas. Ficam as 11 577, com o comando ao lado no próprio comentário
+(`gh run view 33592347822 --log | wc -l`).
+
+### 7.7 As três correções no relatório (achados 13, 14 e 15)
+
+* **Achado 13, o nome do passo.** A tabela da §3.1 escrevia
+  `Post O Node (guardar a cache)`. O nome que a API dá é `Post O Node`, e o
+  relatório diz que os nomes vieram da API: passa a dizer o que veio.
+* **Achado 14, um «20 %» para duas subidas diferentes.** Passa a haver o número
+  de cada portão: da 1.ª para a 3.ª corrida a construção subiu **+20,3 %** e o
+  `verify` **+23,9 %** (os dois juntos +20,9 %); da 1.ª para a 4.ª, **+47,4 %** e
+  **+50,0 %**.
+* **Achado 15, a conclusão da cache.** A primeira redação concluiu de duas
+  corridas sem controlo que a cache do npm custava mais do que poupava. A 4.ª
+  corrida desfá-lo: também acertou na cache e fez os dois passos do Node em 8 s,
+  contra os 24 s da 3.ª e os 11 s da 1.ª, que estava fria. A conclusão sai e fica
+  a medição, em §3.5.
+
+### 7.8 A corrida que prova a segunda passagem
+
+Ramo `ci-2026-09-02`, commit `29b7a5255fd19c9e4d5951e9ebb2087879fe576d`.
+**https://github.com/oestadodopais/o-estado-do-pais/actions/runs/33597530623**
+
+Conclusão `success`, à primeira. Total: **10 min 40 s** (640 s), de
+`2026-09-02T06:07:52Z` a `2026-09-02T06:18:32Z`.
+
+| # | passo | resultado | segundos |
+|---|---|---|---|
+| 1 | Set up job | success | 1 |
+| 2 | A árvore | success | 10 |
+| 3 | O Node | success | 6 |
+| 4 | `npm ci` | success | 3 |
+| 5 | `npm run build` | success | 506 |
+| 6 | `npm run verify` | success | 106 |
+| 7 | `npm run typecheck` | success | 0 |
+| 8 | **Os dois ficheiros da prova existem** | success | 0 |
+| 9 | **A prova desta corrida** | success | 1 |
+| 17 | Post O Node | success | 0 |
+| 18 | Post A árvore | success | 0 |
+| 19 | Complete job | success | 0 |
+
+O que esta corrida prova, linha a linha do registo:
+
+* **O ambiente está preso.** `Image: ubuntu-24.04` no passo «Set up job», e no
+  «O Node»: `Attempting to download 22.23.1...`,
+  `Acquiring 22.23.1 - x64 from https://github.com/actions/node-versions/releases/download/22.23.1-28070984979/node-22.23.1-linux-x64.tar.gz`,
+  `node: v22.23.1`. É a versão exata do portátil, e já não a que o anfitrião
+  tivesse à mão. Custa: o passo «O Node» passou de 3 s (a 4.ª corrida, com o
+  `22.23.2` já na cache de ferramentas do anfitrião) para 6 s, porque o `22.23.1`
+  teve de ser descarregado. Seis segundos numa corrida de 640 s.
+* **A guarda dos dois ficheiros corre mesmo.** O passo 8 traz no registo
+  `Run test -f dist/prova.json` e `test -f dist/cadeia.json`, as duas linhas.
+* **O artefacto leva os dois ficheiros.** Descarregado e aberto:
+  `gh run download 33597530623 --dir <pasta>` → `prova-29b7a5255fd19c9e4d5951e9ebb2087879fe576d/`
+  com `prova.json` (7 877 bytes) e `cadeia.json` (2 843 bytes); o artefacto tem
+  2 646 bytes comprimidos e expira a `2026-09-16T06:18:28Z`. Os dois tamanhos são
+  os mesmos dos ficheiros que o `verify` deixou no `dist/` do portátil, o que
+  confirma o que a §7.5 diz: o que sobe é o estado depois dos três portões.
+
+O que esta corrida **não** prova, e é honesto separá-lo: que a guarda dos dois
+ficheiros fica vermelha quando um falta. Isso não se vê numa corrida verde. Está
+provado no portátil pelo conhecido positivo da §7.4 (`GUARDA_B_EXIT=1` com o
+`dist/cadeia.json` escondido), com o mesmo `bash -e` e as mesmas duas linhas do
+passo. Plantar essa falta numa corrida do GitHub obrigaria a partir um portão da
+casa de propósito para o `dist/` sair incompleto, e isso é uma planta de outro
+bloco, não deste.
