@@ -41,11 +41,37 @@ Uma segunda diferença de gramática saiu ao mesmo tempo: o motor lia as casas d
 
 Todos os `check` dos dez livros que o portão re-deriva foram reavaliados com as duas regras, antes e depois, com o mesmo avaliador e o contexto trocado.
 
-    python3 /…/scratchpad/medir_meio.py
-    linhas com check reavaliadas: 308  (das quais com round(): 307)
-    linhas cujo resultado MUDA com ROUND_HALF_UP: 0
+O comando, corrido da raiz do motor, avalia cada `check` com as duas regras e diz quantos resultados diferem:
 
-O guião tem o seu próprio conhecido-positivo, corrido antes de se acreditar no zero: com `0,5` e `2,5` plantados como linhas, imprime `HALF_EVEN 0 2` e `HALF_UP 1 3`. As 308 são as linhas de aritmética; a 309.ª que o portão conta é a que herda uma marca impressa (o índice de Penedono) e não passa pelo avaliador.
+    python3 -c '
+    import json, decimal, sys
+    from decimal import ROUND_HALF_EVEN, ROUND_HALF_UP
+    from pathlib import Path
+    sys.path.insert(0, ".")
+    from core import derivations as D
+    cfg = json.loads(Path("core/gate_baselines.json").read_text())
+    r = {}
+    for nome, regra in (("par", ROUND_HALF_EVEN), ("longe", ROUND_HALF_UP)):
+        ctx = decimal.getcontext().copy(); ctx.rounding = regra
+        for l in sorted({d["ledger"] for d in cfg["deliverables"]}):
+            rows = json.loads(Path(l).read_text())["claims"]
+            cl = {x["id"]: x for x in rows if x.get("id")}
+            for row in rows:
+                e = row.get("check")
+                if not e or D.inherited_mark(e, cl, self_id=row.get("id")) is not None: continue
+                guardado = decimal.getcontext(); decimal.setcontext(ctx)
+                try: v = D._as_canonical(D.evaluate(e, cl, self_id=row.get("id")))
+                finally: decimal.setcontext(guardado)
+                r.setdefault((l, row["id"]), {})[nome] = v
+    mexem = [k for k, v in r.items() if v.get("par") != v.get("longe")]
+    print("linhas reavaliadas:", len(r), "| mexem:", len(mexem), mexem)
+    print("conhecido-positivo:", D._as_canonical(D.evaluate("round ( 0.5 , 0 )", {})),
+                                 D._as_canonical(D.evaluate("round ( 2.5 , 0 )", {})))
+    '
+    linhas reavaliadas: 308 | mexem: 0 []
+    conhecido-positivo: 1 3
+
+A segunda linha é o conhecido-positivo do próprio medidor, impressa antes de se acreditar no zero: se o `evaluate` deixasse de arredondar para longe do zero, ela dizia `0 2`, e a primeira corrida deste medidor (antes da mudança) trocava as duas regras e imprimia `HALF_EVEN 0 2` contra `HALF_UP 1 3`. Das 308, 307 usam `round()`; a 309.ª linha que o portão conta é a que herda uma marca impressa (o índice de Penedono) e não passa pelo avaliador.
 
     linhas re-derivadas nos dez livros: 309   (soma dos dez `python3 -m core.derivations <livro>`)
 
