@@ -47,6 +47,7 @@ import { matchPath, routePath } from '../src/lib/routes.mjs';
    ao lado de `NOME_DECLARADO`. */
 import { AREAS } from '../src/data/areas.mjs';
 import { REGIOES } from '../src/data/regioes.mjs';
+import { DOMINIOS } from '../src/data/dominios.mjs';
 import { leMarcadores, analisa, leInventario, FICHEIRO_DOS_MARCADORES } from './voz.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -364,7 +365,18 @@ const ROTAS_QUE_PROVAM_A_RENDICAO = new Set(['sobre', 'metodo']);
  * fechado. Enquanto uma rota não estiver aqui, o que ela esconde está contado e
  * dito, e não é uma surpresa.
  */
-const ROTAS_COM_ORIGEM_LIDA = new Set(['home']);
+const ROTAS_COM_ORIGEM_LIDA = new Set([
+  'home',
+  /* AS DUAS ROTAS DOS DOMÍNIOS ENTRAM COM ELAS (bloco F1.2, 03.09.2026), pela
+     regra que esta lista já tinha: «uma rota por bloco que a reconstrua». São
+     rotas NOVAS, e as suas frases são classificadas no mesmo commit em que a
+     página nasce — que é a única altura em que isso não é uma migração. Sem esta
+     entrada, o índice dos domínios ficava inteiro fora da régua (cada linha da
+     lista tem um `data-nome` lá dentro, e um bloco com uma marca é saltado) e o
+     bloco entregava dezoito linhas de prosa que nenhuma régua vê. */
+  'dominios',
+  'dominio',
+]);
 const MEDIDA_DECLARADA = '[data-medida-nome],[data-medida-unidade]';
 const ROTAS_DO_INVENTARIO = new Set([
   'home',
@@ -423,6 +435,13 @@ const ROTAS_DO_INVENTARIO = new Set([
      região: a Emenda 15 governa-as, e a sua autorreferência vai a zero. */
   'areas',
   'area',
+  /* O ÍNDICE DOS DOMÍNIOS E A PÁGINA DE CADA UM (bloco F1.2, 03.09.2026).
+     Entram no commit em que são construídas, que é a regra desta lista. São
+     páginas do leitor como as das áreas e as das regiões: a Emenda 15 governa-as,
+     e a sua autorreferência vai a zero. O nome de um domínio é `data-nome` e por
+     isso conta-se uma vez e não dezoito. */
+  'dominios',
+  'dominio',
 ]);
 
 /**
@@ -516,6 +535,13 @@ const NOME_DECLARADO = '[data-nome]';
 const NOMES_POR_FONTE = {
   areas: new Set(AREAS.flatMap((a) => Object.values(a.nome ?? {}))),
   regioes: new Set(REGIOES.flatMap((r) => Object.values(r.nome ?? {}))),
+  /* OS DEZOITO DOMÍNIOS (bloco F1.2, 03.09.2026). O nome de um domínio é o nome
+     de uma entrada de `src/data/dominios.mjs`, copiado da carta dos conteúdos, e
+     não prosa da casa: sem esta fonte, os dezoito nomes custavam trinta e seis
+     linhas ao inventário das frases no índice, mais duas por página de domínio,
+     que é a carta escrita outra vez. A régua confere que o texto marcado é,
+     carácter a carácter, um nome deste ficheiro. */
+  dominios: new Set(DOMINIOS.flatMap((d) => Object.values(d.nome ?? {}))),
 };
 /* A CONFERÊNCIA DE `data-nome`, e é o que distingue esta marca da dos lugares.
    Cada elemento marcado diz de que ficheiro vem o nome, e a régua confere que o

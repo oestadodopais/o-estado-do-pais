@@ -69,6 +69,14 @@ const outra = outraLingua ?? otherLanguagePath(aqui, lang);
 const secoes = [
   ['home', s.nav.inicio],
   ['municipios', s.nav.municipios],
+  /* «Domínios» entra com as páginas dos domínios (bloco F1.2, segunda passagem,
+     03.09.2026). O achado que a primeira passagem deixou escrito: «/dominios» e
+     «/dominios/<slug>» estavam no mapa do sítio, uma abria a outra, mas nenhuma
+     página do sítio as abria. A mesma regra das «Áreas» ao lado: o rodapé é o
+     índice do sítio, e uma família de páginas que existe e não está nele é uma
+     família sem porta comum. O menu do cabeçalho fica para depois do F1.1, que
+     tem a mobília dele na mão. */
+  ['dominios', s.nav.dominios],
   /* «Áreas» entra com as páginas das áreas (decisão 6 da auditoria de 25.08.2026).
      O rodapé é o índice do sítio, e uma família de páginas que existe e não está
      nele é uma família sem porta comum: é a razão pela qual `/municipios` está

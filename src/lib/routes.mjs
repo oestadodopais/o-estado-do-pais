@@ -154,6 +154,39 @@ export const ROUTES = {
   areas: { pt: '/areas', en: '/en/areas' },
   area: { pt: '/areas/:slug', en: '/en/areas/:slug' },
   /**
+   * OS DOMÍNIOS DA CARTA, E A PÁGINA DE CADA UM (bloco F1.2, 03.09.2026).
+   *
+   * Um domínio é «uma área da vida do país sobre a qual um leitor tem
+   * perguntas» (`design/observatorio/CARTA-DOS-CONTEUDOS.md` §0), e é a unidade
+   * da camada 2 da pilha. São dezoito, por vagas, e o índice lista-os todos:
+   * quem tem página abre; quem ainda não tem medidas conferidas fica dito e sem
+   * porta, «para o leitor saber que a casa sabe»
+   * (`BRIEF-forma-dos-dominios.md` §2).
+   *
+   * O SLUG É UMA SUPOSIÇÃO DO LUGAR DE DIREÇÃO E NÃO UMA DECISÃO DO DIRETOR
+   * (brief F1.2 §1, que a deixa nos pendentes). A palavra do CAMINHO traduz-se,
+   * ao contrário de `areas` e de `agenda`: «dominios» não é palavra inglesa, e o
+   * índice inglês do sítio chama-lhes «domains».
+   *
+   * O `:slug` É O MESMO NAS DUAS EDIÇÕES, e não o que o brief supôs
+   * (`/en/domains/economy-and-public-finances`). A regra desta tabela está
+   * escrita nas regiões, nas áreas e nos concelhos — «o que se traduz é o
+   * rótulo e nunca a chave» — e a espinha do encaminhamento assenta nela:
+   * `matchPath()` tira o slug de um caminho e `alternatesFor()` compõe com ele o
+   * caminho da outra edição, para o canonical, para o hreflang e para o sitemap.
+   * Um slug por edição obrigava a uma tabela de tradução de slugs dentro do
+   * encaminhamento, que é uma mudança na espinha de que dependem as 6 590
+   * páginas, e não uma escolha desta página. Fica nos pendentes do diretor com o
+   * custo escrito: se ele quiser o slug inglês, é um bloco do encaminhamento.
+   *
+   * SÓ EXISTE PÁGINA PARA UM DOMÍNIO COM MEDIDAS: o `getStaticPaths()` sai de
+   * `slugsDosDominios()`, que lê a lista declarada e o livro-razão. É a mesma
+   * regra das áreas e das regiões, e pela mesma razão: uma página que só tivesse
+   * o nome de um domínio não é conteúdo, é uma promessa.
+   */
+  dominios: { pt: '/dominios', en: '/en/domains' },
+  dominio: { pt: '/dominios/:slug', en: '/en/domains/:slug' },
+  /**
    * A agenda: o que se mede agora, o que se segue, e o calendário das fontes.
    *
    * Os dois registos vêm do motor (`src/data/agenda.json` e

@@ -126,6 +126,11 @@ const EVORA = {
            do próprio município: são duas contagens da mesma coisa por duas
            definições, e é essa a razão de a camada das contas existir. */
         pmp: 'evora-prazo-medio-de-pagamento-2025-12',
+        /* A OITAVA MEDIDA (bloco F1.2, 03.09.2026). Évora declara o id da sua
+           linha do ganho médio como declara os outros sete; os 307 gerados
+           recebem-no pelo código do INE, em `entradasGeradas()`. A linha é a
+           mesma série e o mesmo ano nos 308. */
+        ganho: 'evora-ganho-medio-mensal-2024',
       },
       /* Sem data de referência própria: Évora passa a medir o mesmo período que
          os outros 307, que é o que a declaração das sete medidas já diz. */
