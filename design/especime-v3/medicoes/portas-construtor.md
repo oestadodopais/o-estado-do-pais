@@ -414,10 +414,13 @@ o portão dos identificadores mortos serve para o que foi feito.
 
 ## 11 · Onde estão as capturas e as medições
 
-**As capturas**, em `design/especime-v3/capturas/portas-2026-09-03/`, só PNG, sem
-dados pessoais: `/`, `/dominios/economia-e-financas-publicas`,
-`/municipios/evora` e `/regioes/alentejo`, nas duas edições, a **390 × 664** e a
-**1 280**.
+**As capturas**, em `design/especime-v3/capturas/portas-2026-09-03/`, **30
+ficheiros**, só PNG, sem dados pessoais: `/`,
+`/dominios/economia-e-financas-publicas`, `/municipios/evora` e
+`/regioes/alentejo`, nas duas edições, a **390 × 664** e a **1 280**. Mais duas
+(`*-inicio-390x664-fila-dos-estudos.png`) com a página descida até à fila dos
+estudos: a 390 × 664 ela começa a 662,7 px, ou seja mesmo por baixo da dobra, e
+não se via em nenhuma das outras.
 
 **As medições**, em `design/especime-v3/medicoes/`:
 
@@ -439,5 +442,5 @@ git diff --stat d82bc4cf -- src/ tests/
 ```
 
 Um ficheiro novo (`src/components/Manchete.astro`) e onze mudados, dos quais dois
-são réguas. Ao todo, com o relatório, as quatro medições e as 28 capturas, 45
+são réguas. Ao todo, com o relatório, as quatro medições e as 30 capturas, 47
 ficheiros.
