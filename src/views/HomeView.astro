@@ -55,7 +55,7 @@ import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
 import { estadoDaMedida } from '../lib/estado.mjs';
 import { concelhos, ledeDoPainel } from '../lib/inicio.mjs';
 import { slugsDasRegioes } from '../lib/regioes.mjs';
-import { estadoDaVerificacao, prova } from '../lib/prova.mjs';
+import { prova } from '../lib/prova.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import '../styles/inicio.css';
@@ -64,7 +64,6 @@ const { lang = 'pt' } = Astro.props;
 const s = t(lang);
 const path = routePath('home', lang);
 const p = prova(lang);
-const verificacao = estadoDaVerificacao();
 
 const home = routePath('home', lang);
 /* Os destinos sem script. `regiao` VOLTOU (Emenda 21b): o seu destino era

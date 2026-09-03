@@ -30,12 +30,13 @@
     "verify:deploy": "node scripts/verify-deploy.mjs",
     "provar:eyetext": "node scripts/provar-eyetext.mjs",
     "typecheck": "tsc -p tsconfig.check.json",
-    "verify": "npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && npm run gate:html && npm run check:cadeia && npm run check:dados && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:voz && npm run check:lingua && npm run provar:eyetext && npm run design:feixe"
+    "verify": "npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && npm run gate:html && npm run check:cadeia && npm run check:dados && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:voz && npm run check:lingua && npm run provar:eyetext && npm run check:mortos && npm run design:feixe",
+    "check:mortos": "node scripts/check-mortos.mjs --prova"
   },
   "dependencies": {
-    "@astrojs/sitemap": "3.7.3",
+    "@astrojs/sitemap": "3.7.4",
     "@resvg/resvg-js": "2.6.2",
-    "astro": "7.2.1"
+    "astro": "7.2.10"
   },
   "devDependencies": {
     "js-yaml": "5.2.3",

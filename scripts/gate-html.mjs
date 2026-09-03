@@ -79,7 +79,7 @@ import {
 import { VERBATIM, normalizeWhitespace } from '../src/data/verbatim.mjs';
 import { FIGURAS_PDM, FIGURAS_SOCIAL } from '../src/data/figuras.mjs';
 import { EDITIONS, workById, studyLabel } from '../src/data/studies.mjs';
-import { temLeitura, LEITURAS } from '../src/data/leituras.mjs';
+import { LEITURAS } from '../src/data/leituras.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 /* A LISTA DA CARTA, PARA RECONTAR AS 29 UNIDADES E OS SEUS CONCELHOS (Emenda 20).
    O ponto de observação do portão não é o artefacto do mapa: é a lista de 308
@@ -106,7 +106,7 @@ import {
   cartaoDaPagina,
   nomeDoCartao,
 } from '../src/lib/cartoes.mjs';
-import { documentoDaEdicao, documentoServido } from '../src/lib/documentos.mjs';
+import { documentoDaEdicao, documentoServido, MARCA_DOS_ROBOS } from '../src/lib/documentos.mjs';
 import { leBlocos, Texto } from '../src/lib/eyetext.mjs';
 import { renderizacoesAceites } from '../src/data/correcoes.mjs';
 import {
@@ -188,12 +188,52 @@ const PROVA = PROVA_POR_LINGUA.pt;
 
 const allow = load(fs.readFileSync(ALLOWLIST, 'utf8')) ?? {};
 const CONTEXTOS = new Set((allow.contexts ?? []).map((c) => c.id));
+
+/**
+ * ---------------------------------------------------------------------------
+ * UMA EXCEPÇÃO QUE NÃO DISPENSA NADA (03.09.2026, bloco F0.7)
+ * ---------------------------------------------------------------------------
+ * A `allowlist` era conferida numa direcção só: todo o motivo que uma página
+ * rende tem de estar declarado aqui. O contrário nunca era perguntado, e por
+ * isso `data-de-edicao` sobreviveu quatro semanas a não dispensar coisa nenhuma
+ * (a auditoria de 02.09.2026 §4 chamou-lhe «a excepção órfã»). Uma lista de
+ * excepções que só cresce deixa de ser uma decisão e passa a ser um hábito, que
+ * é exactamente o que a cabeça deste ficheiro diz que ela não pode ser.
+ *
+ * Estes três contadores contam os USOS de facto, sobre o `dist/` inteiro, e o
+ * relatório recusa a construção quando algum fica a zero. É a mesma disciplina
+ * das duas varreduras vizinhas (o restante da ortografia, as linhas que ninguém
+ * cita), com uma diferença que é deliberada: aquelas avisam, esta FECHA. Uma
+ * entrada de ortografia a mais não dispensa nada; uma excepção a mais é uma
+ * porta aberta no portão dos algarismos, e o custo de a deixar aberta é o custo
+ * de um número por conferir numa página.
+ *
+ * O QUE UM TOKEN SEM ALGARISMOS NUNCA PODE FAZER, dito aqui porque a mensagem
+ * sozinha seria um enigma: `tokensProibidos()` só pergunta pela lista quando o
+ * token TEM um algarismo. Uma entrada sem algarismos nenhuns nunca é consultada,
+ * e por isso nunca dispensa nada, por muito que a página a renda. O `CAOP` era
+ * uma dessas e saiu a 03.09.2026, com a sua clareza mudada para o motivo
+ * `fonte-da-carta`, que é onde a sigla aparece com a edição atrás («CAOP 2025»).
+ */
+const USOS = {
+  contextos: new Map((allow.contexts ?? []).map((c) => [c.id, 0])),
+  tokens: new Map(),
+  padroes: new Map(),
+};
+const chaveDoToken = (t) => `${t.token} (scope: ${t.scope ?? 'any'})`;
+const chaveDoPadrao = (p) => `${p.pattern} (scope: ${p.scope ?? 'any'})`;
+const usou = (mapa, chave) => mapa.set(chave, (mapa.get(chave) ?? 0) + 1);
 const TOKENS = (allow.tokens ?? []).map((t) => ({ ...t, scope: t.scope ?? 'any' }));
 const PATTERNS = (allow.patterns ?? []).map((p) => ({
   ...p,
   scope: p.scope ?? 'any',
   re: new RegExp(p.pattern),
 }));
+for (const t of TOKENS) USOS.tokens.set(chaveDoToken(t), 0);
+for (const p of PATTERNS) USOS.padroes.set(chaveDoPadrao(p), 0);
+
+/** Um token sem algarismos nunca chega a `tokenPermitido()`: ver a nota acima. */
+const TOKENS_SEM_ALGARISMOS = TOKENS.filter((t) => !/\d/.test(t.token)).map(chaveDoToken);
 
 /**
  * Cadeias estruturais toleradas no <head>: títulos de estudos, nome do sítio,
@@ -591,11 +631,17 @@ function limpaToken(t) {
 function tokenPermitido(token, scope) {
   for (const t of TOKENS) {
     if (t.scope !== 'any' && t.scope !== scope) continue;
-    if (t.token === token) return true;
+    if (t.token === token) {
+      usou(USOS.tokens, chaveDoToken(t));
+      return true;
+    }
   }
   for (const p of PATTERNS) {
     if (p.scope !== 'any' && p.scope !== scope) continue;
-    if (p.re.test(token)) return true;
+    if (p.re.test(token)) {
+      usou(USOS.padroes, chaveDoPadrao(p));
+      return true;
+    }
   }
   return false;
 }
@@ -940,7 +986,18 @@ function escondidoNoDocumento(el) {
  *      o que prova que o documento foi alojado intacto e que nada nosso entrou
  *      abaixo da faixa;
  *   5. a faixa existe uma só vez, liga para a página do estudo, e **o seu texto
- *      não tem um único algarismo**.
+ *      não tem um único algarismo**;
+ *   6. o `<html>` DECLARA A SUA LÍNGUA, e a raiz da etiqueta é a da edição;
+ *   7. o `<head>` traz UMA marca `robots` e ela diz `noindex, follow`;
+ *   8. a faixa traz o RÓTULO DE IA, com o texto aprovado carácter a carácter, a
+ *      porta para a política, e o nome de quem responde com a marca de língua
+ *      que a edição inglesa exige.
+ *
+ * AS TRÊS ÚLTIMAS ENTRARAM A 03.09.2026 (bloco F0.7). Não bastava acrescentá-las
+ * em `src/lib/documentos.mjs`: o ponto 4 compara o construído com o que aquele
+ * módulo produz, e por isso uma marca tirada de lá mudava os DOIS lados da
+ * igualdade e passava em silêncio. Estas três leem o ficheiro construído e
+ * exigem a marca por si, que é o que as torna um portão e não um espelho.
  *
  * O que continua a ser conferido: que o documento é auto-contido (não carrega
  * nada de fora — a promessa de «nenhum pedido de rede» não tem excepção para
@@ -1069,6 +1126,129 @@ function verificaDocumento({ rota, rel, caminho, html, root, err }) {
       `a porta da leitura no sítio abre "${aDoTexto.getAttribute('href')}" e devia abrir ` +
         `"${portaDoTexto}", a página de leitura desta edição.`,
     );
+  }
+
+  /* ------------------------------------------- 6, 7 e 8: as marcas da casa */
+
+  /* 6 — A LÍNGUA, DECLARADA. Compara-se a RAIZ da etiqueta e não a etiqueta
+     inteira: oito dos dezasseis documentos declaram a sua língua e três deles
+     escrevem "pt" onde a casa escreve "pt-PT". As duas dizem português, e
+     reescrever a do autor seria editar a obra alojada para a fazer caber na
+     grafia da casa. O que se exige é que a língua esteja DITA e que seja a da
+     edição; a forma da etiqueta é dele. */
+  const elHtml = root.querySelector('html');
+  const langDeclarado = (elHtml?.getAttribute('lang') ?? '').trim();
+  const raizDaLingua = langDeclarado.split('-')[0].toLowerCase();
+  if (!langDeclarado) {
+    err(
+      `o documento não declara a língua: falta \`lang\` no \`<html>\`.\n` +
+        `      Um leitor de ecrã lê um documento sem língua com a fonética da página anterior, e ` +
+        `um rastreador não sabe em que língua o indexar. Ver src/lib/documentos.mjs, ` +
+        `\`comMarcasDaCasa()\`.`,
+    );
+  } else if (raizDaLingua !== lang) {
+    err(
+      `o documento declara \`lang="${langDeclarado}"\` e é a edição "${lang}".\n` +
+        `      A raiz da etiqueta tem de ser a da edição ("${lang}"); a forma completa é do autor.`,
+    );
+  }
+
+  /* 7 — A MARCA DOS ROBÔS. Uma só: duas marcas `robots` numa página são
+     ambíguas para um rastreador, e a que a casa põe tem de ser a única.
+     `noindex` enquanto o advogado não responder à pergunta 11 da diligência;
+     `follow` porque o que se recusa é a indexação deste ficheiro e não as
+     fontes que ele cita. */
+  const robos = (root.querySelectorAll('meta') ?? []).filter(
+    (m) => (m.getAttribute('name') ?? '').trim().toLowerCase() === 'robots',
+  );
+  if (robos.length !== 1) {
+    err(
+      `o documento tem ${robos.length} marca(s) \`<meta name="robots">\`; tem de ter exactamente uma.\n` +
+        `      Esperava-se ${JSON.stringify(MARCA_DOS_ROBOS)} no \`<head>\`.`,
+    );
+  } else {
+    const conteudo = (robos[0].getAttribute('content') ?? '').trim();
+    if (conteudo !== 'noindex, follow') {
+      err(
+        `a marca dos robôs diz ${JSON.stringify(conteudo)} e tem de dizer "noindex, follow".`,
+      );
+    }
+  }
+
+  /* 8 — O RÓTULO DE IA, com o texto aprovado. A mesma conferência que as outras
+     páginas levam no rodapé (a comparação com `textoDoRotulo()`), aplicada aqui
+     à faixa, porque nos documentos é na faixa que ele vive: o corpo é obra
+     citada e não se lhe acrescenta nada. */
+  const rotuloIA = faixa.querySelector('[data-oedp-rotulo-ia]');
+  if (!rotuloIA) {
+    err(
+      `a faixa do observatório não traz o rótulo de IA.\n` +
+        `      Esperava-se um \`<span data-oedp-rotulo-ia>\` com ` +
+        `${JSON.stringify(textoDoRotulo(lang))}.\n` +
+        `      O artigo 50.º, n.º 5 do Regulamento (UE) 2024/1689 quer a divulgação no momento da ` +
+        `primeira exposição, e quem chega a um documento por um motor de busca nunca passa pelo ` +
+        `rodapé de outra página.`,
+    );
+  } else {
+    const dito = normalizeWhitespace(decodeEntities(textoDe(rotuloIA, { semEstilo: true })));
+    const esperadoRotulo = textoDoRotulo(lang);
+    if (dito !== esperadoRotulo) {
+      err(
+        `o rótulo de IA da faixa não diz o texto aprovado.\n` +
+          `      esperado: ${JSON.stringify(esperadoRotulo)}\n` +
+          `      dito:     ${JSON.stringify(dito)}`,
+      );
+    }
+
+    const portaDaPolitica = `${routePath('metodo', lang)}#${ANCORA_DA_POLITICA}`;
+    const aDaPolitica = rotuloIA.querySelector('a[href]');
+    if (!aDaPolitica) {
+      err(`o rótulo de IA da faixa não tem a porta para a política da casa.`);
+    } else {
+      if (decodeEntities(aDaPolitica.getAttribute('href') ?? '') !== portaDaPolitica) {
+        err(
+          `a porta da política abre "${aDaPolitica.getAttribute('href')}" e devia abrir ` +
+            `"${portaDaPolitica}".`,
+        );
+      }
+      const palavras = decodeEntities(textoDe(aDaPolitica, { semEstilo: true })).trim();
+      if (palavras !== ROTULO_DA_CASA[lang]?.porta) {
+        err(
+          `as palavras ligadas do rótulo de IA são ${JSON.stringify(palavras)} e têm de ser ` +
+            `${JSON.stringify(ROTULO_DA_CASA[lang]?.porta)}.`,
+        );
+      }
+    }
+
+    /* O NOME É PORTUGUÊS, e numa edição inglesa leva a sua marca de língua: a
+       mesma regra da §1.82 que `check-lingua.mjs` aplica ao rodapé das outras
+       páginas. Aqui é este portão que a aplica, porque um documento sai do
+       varrimento geral antes de lá chegar. */
+    const nomes = rotuloIA.querySelectorAll('[data-oedp-rotulo-nome]');
+    if (nomes.length !== 1) {
+      err(
+        `o rótulo de IA da faixa tem ${nomes.length} nome(s) de quem responde; tem de ter um.`,
+      );
+    } else {
+      const nome = nomes[0];
+      const dizNome = decodeEntities(textoDe(nome, { semEstilo: true })).trim();
+      if (dizNome !== RESPONSAVEL_EDITORIAL) {
+        err(
+          `o nome de quem responde diz ${JSON.stringify(dizNome)} e tem de dizer ` +
+            `${JSON.stringify(RESPONSAVEL_EDITORIAL)}.`,
+        );
+      }
+      const marcaDoNome = (nome.getAttribute('lang') ?? '').trim();
+      const esperadaNoNome = lang === 'pt' ? '' : LINGUA_DO_RESPONSAVEL;
+      if (marcaDoNome !== esperadaNoNome) {
+        err(
+          `o nome de quem responde tem \`lang="${marcaDoNome}"\` e devia ter ` +
+            `${esperadaNoNome ? `\`lang="${esperadaNoNome}"\`` : 'a língua da página, sem marca'}.\n` +
+            `      Numa página inglesa um nome português sem marca é lido com fonética inglesa; ` +
+            `numa portuguesa a marca a mais é o mesmo defeito ao contrário.`,
+        );
+      }
+    }
   }
 
   /* As ligações da faixa entram na conferência das ligações internas, como as
@@ -2661,7 +2841,6 @@ const MOTIVO_SEM_DATA_RENDIDO = {
  * linha, e um selo para si própria seria uma porta para a divisão onde já se
  * está.
  */
-const TAGS_SVG = new Set(['svg', 'g', 'text', 'tspan', 'title', 'desc']);
 
 function dentroDeSvg(el) {
   let p = el.parentNode;
@@ -3653,6 +3832,7 @@ for (const file of ficheirosHtml(DIST)) {
             `Motivos aceites: ${[...CONTEXTOS].join(', ')}.`,
         );
       } else {
+        usou(USOS.contextos, motivo);
         delete raiz.estrutura;
         delete raiz.estrutura_motivo;
       }
@@ -4137,13 +4317,15 @@ for (const file of ficheirosHtml(DIST)) {
    * espaços e sem aparar as pontas, porque um espaço a mais numa divulgação
    * obrigatória é uma diferença e não um detalhe de composição.
    *
-   * **OS DOCUMENTOS DE ESTUDO ESTÃO FORA, e pela mesma razão da porta das
-   * correções**: um documento em `/estudos/<slug>/documento` é obra já
-   * publicada, alojada intacta e conferida carácter a carácter contra a
-   * origem, e injectar-lhe uma linha nossa quebrava essa igualdade (§1.19).
-   * Levam o rótulo na página que os embrulha, `/estudos/<slug>`, que é uma
-   * página deste sítio e é contada aqui como as outras. Este ramo nem chega a
-   * correr para eles: `verificaDocumento()` devolve antes.
+   * **OS DOCUMENTOS DE ESTUDO NÃO PASSAM POR AQUI, E DESDE 03.09.2026 LEVAM O
+   * RÓTULO NA MESMA.** Este ramo continua a não correr para eles
+   * (`verificaDocumento()` devolve antes), porque o bloco que ele procura é o
+   * do rodapé da casa e um documento alojado não tem rodapé nosso. O que mudou
+   * foi o lugar: o rótulo passou a ir na FAIXA, que já é markup nosso e entra
+   * no `esperado` que o portão recalcula dos dois lados da igualdade, e por
+   * isso não quebra o carácter a carácter da §1.19. Quem o confere é o ponto 8
+   * de `verificaDocumento()`, com a mesma comparação de texto que aqui se faz.
+   * A contagem de baixo continua a ser das páginas fora dos documentos.
    *
    * O QUE SE CONFERE EM CADA BLOCO DE RÓTULO, e é o mesmo no rodapé e no topo
    * (segunda passagem: a primeira forma conferia o topo só pela contagem do
@@ -5820,6 +6002,8 @@ for (const file of ficheirosHtml(DIST)) {
         `data-nonledger="${motivo}" não é um motivo declarado. ` +
           `Motivos aceites: ${[...CONTEXTOS].join(', ')} (ver ledger/allowlist.yml).`,
       );
+    } else {
+      usou(USOS.contextos, motivo);
     }
     /**
      * `proveniencia` deixa de ser uma dispensa e passa a ser uma comparação.
@@ -6591,6 +6775,42 @@ for (const [id] of claims) {
   }
 }
 
+/* A EXCEPÇÃO ÓRFÃ, VERMELHA. Ver a nota em «UMA EXCEPÇÃO QUE NÃO DISPENSA
+   NADA», ao pé do carregamento da lista. */
+for (const [id, n] of USOS.contextos) {
+  if (n === 0) {
+    erros.push({
+      rel: 'ledger/allowlist.yml',
+      msg:
+        `o motivo "${id}" está declarado e não dispensa nada: nenhuma página de dist/ o rende.\n` +
+        `      Uma excepção que não excepciona é uma porta aberta que ninguém decidiu abrir. ` +
+        `Tire-a da lista, ou renda o motivo onde ele faz falta.`,
+    });
+  }
+}
+for (const [chave, n] of USOS.tokens) {
+  if (n > 0) continue;
+  const semAlgarismos = TOKENS_SEM_ALGARISMOS.includes(chave);
+  erros.push({
+    rel: 'ledger/allowlist.yml',
+    msg: semAlgarismos
+      ? `o token "${chave}" não tem um algarismo, e por isso NUNCA é consultado: o varrimento ` +
+        `só pergunta pela lista quando o token traz algarismos.\n` +
+        `      Não é uma excepção, é uma nota. Tire-a da lista de regras e escreva o que ela ` +
+        `esclarece no motivo onde a palavra aparece com algarismos.`
+      : `o token "${chave}" está declarado e não dispensa nada: nenhuma página de dist/ o traz.\n` +
+        `      Tire-o da lista, ou renda-o onde ele faz falta.`,
+  });
+}
+for (const [chave, n] of USOS.padroes) {
+  if (n === 0) {
+    erros.push({
+      rel: 'ledger/allowlist.yml',
+      msg: `o padrão "${chave}" está declarado e não corresponde a nada em dist/. Tire-o da lista.`,
+    });
+  }
+}
+
 /**
  * Uma página por linha, nas duas edições, da mesma construção.
  *
@@ -6630,6 +6850,9 @@ console.log(
 );
 console.log(
   cinza(
+    `  allowlist · ${USOS.contextos.size} motivo(s) e ${USOS.tokens.size} token(s), com os usos ` +
+      `que os provam vivos: ${[...USOS.contextos].map(([k, n]) => `${k} ${n}`).join(' · ')} · ` +
+      `${[...USOS.tokens].map(([k, n]) => `${k} ${n}`).join(' · ')}\n` +
     `  rótulo de IA · ${ROTULO_DE_IA.rodape} no rodapé (de ${ficheiros - documentos} páginas fora ` +
       `dos documentos alojados) · ${ROTULO_DE_IA.topo} no topo das páginas de leitura · ` +
       `${ROTULO_DE_IA.ficha} ficha(s) da primeira página · ${ROTULO_DE_IA.frase} frase(s) da ` +

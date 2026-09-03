@@ -20,10 +20,6 @@
 
 # Motivos aceites em data-nonledger="<motivo>".
 contexts:
-  - id: data-de-edicao
-    why: >-
-      Data da edição no cabeçalho e no rodapé. É uma data de publicação, não uma
-      medição do país.
   - id: data-de-publicacao
     why: >-
       Data de publicação de um estudo, no arquivo. Enquanto não estiver
@@ -98,7 +94,8 @@ contexts:
       informação, o nome e a edição da Carta Administrativa Oficial de Portugal,
       e a licença sob a qual a Direção-Geral do Território a publica. Traz
       algarismos por duas razões, e as duas são identificação e não medição: a
-      edição da Carta faz parte do nome dela ("CAOP 2025"), e uma licença
+      edição da Carta faz parte do nome dela ("CAOP 2025", a sigla de Carta
+      Administrativa Oficial de Portugal), e uma licença
       identifica-se pela versão ("CC BY 4.0" e não "CC BY"). As três cadeias não
       são escritas no gabarito: saem de `mapa/manifest.json`, que o motor
       escreveu das constantes onde a frase da DGT foi transcrita da fonte, e o
@@ -108,22 +105,38 @@ contexts:
   - id: licenca-do-conjunto
     why: >-
       O nome da licença sob a qual o conjunto de dados do livro-razão é
-      oferecido, quando a direcção a tiver decidido ("CC BY 4.0" é a
-      recomendação do BRIEF-bloco-T.md §2.6, e não a decisão). Traz algarismos
-      porque uma licença se identifica pela sua versão, e é isso mesmo que o
-      leitor precisa de ler: "CC BY" sem versão não são termos. Não é uma
-      medição de Portugal nem um número deste sítio: é o nome que um terceiro
-      dá aos termos em que este conjunto sai. Nenhum dos motivos acima o
-      descreve — não é escala, nem limiar, nem título de trabalho, nem data,
+      oferecido: CC BY 4.0, decidida e escrita em `src/data/licenca.mjs`. Traz
+      algarismos porque uma licença se identifica pela sua versão, e é isso
+      mesmo que o leitor precisa de ler: "CC BY" sem versão não são termos. Não
+      é uma medição de Portugal nem um número deste sítio: é o nome que um
+      terceiro dá aos termos em que este conjunto sai. Nenhum dos outros motivos
+      o descreve, não é escala, nem limiar, nem título de trabalho, nem data,
       nem identificador da própria máquina. A licença de um ficheiro alojado
       numa linha é outra coisa e continua a entrar pela origem 6
       (`document.hosted.licence`, comparada contra a linha): esta é a licença do
       CONJUNTO, que não tem linha. Acrescentado em 2026-08-18 (DECISIONS §1.47,
-      T4); enquanto `LICENCA` for `null` este motivo não é usado por nenhuma
-      página, e está registado na §4.3.
+      T4). A razão foi reescrita a 03.09.2026 (bloco F0.7): dizia «enquanto
+      `LICENCA` for `null` este motivo não é usado por nenhuma página, e está
+      registado na §4.3», e as duas metades deixaram de ser verdade. `LICENCA`
+      tem valor e o motivo rende-se em `src/views/LivroView.astro`.
 
 # Palavras que contêm algarismos mas não são medições. Correspondência exacta.
 # scope: any | body | head
+#
+# DUAS ENTRADAS SAÍRAM A 03.09.2026, no primeiro dia em que o portão passou a
+# recusar uma excepção que não dispensa nada (bloco F0.7):
+#
+#   · 'CAOP', que não tem um algarismo. O varrimento só pergunta pela lista
+#     quando o token TRAZ algarismos, portanto esta entrada nunca era
+#     consultada. O que ela esclarecia está dito no motivo `fonte-da-carta`,
+#     que é onde a sigla aparece com a edição atrás («CAOP 2025»);
+#   · 'PT2030', que dispensava zero ocorrências. A palavra existe em quatro
+#     páginas construídas e as quatro são de classes que já saem do varrimento
+#     por outra via: três documentos alojados (obra citada) e uma página de
+#     leitura (comparada carácter a carácter contra o registo de conteúdo). As
+#     duas linhas do livro-razão que a trazem no seu id escrevem-no em
+#     minúsculas, que não é a mesma cadeia. Se um dia a prosa da casa escrever
+#     «PT2030», o portão fecha e a entrada volta com uma razão nova e medida.
 tokens:
   - token: 'UE-27'
     scope: any
@@ -131,12 +144,6 @@ tokens:
   - token: 'EU-27'
     scope: any
     why: O mesmo nome, na edição inglesa.
-  - token: 'PT2030'
-    scope: any
-    why: Nome do programa de financiamento público. É um nome próprio.
-  - token: 'CAOP'
-    scope: any
-    why: Carta Administrativa Oficial de Portugal — sigla sem algarismos, listada por clareza.
   - token: '73/2013'
     scope: body
     why: >-

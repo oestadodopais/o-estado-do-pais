@@ -29,5 +29,11 @@ pnpm-debug.log*
 src/pages/_gate-test-*.astro
 .vercel
 
-# worktrees dos construtores e medidores (nunca entram no repositório)
-.claude/worktrees/
+# A PASTA DO CLAUDE CODE, INTEIRA (03.09.2026, bloco F0.7).
+# Era só `.claude/worktrees/`, e o resto da pasta ficava a um ficheiro de
+# distância de entrar num repositório público: as definições locais da sessão,
+# o que os agentes lá deixam, os caminhos da máquina do diretor. Nada disto é do
+# sítio. Nenhum ficheiro `.claude` estava seguido pelo git quando a linha mudou
+# (`git ls-files '.claude*'` a zero), portanto isto não desliga o seguimento de
+# coisa nenhuma: fecha a porta antes de alguém lá pôr alguma coisa.
+.claude/
