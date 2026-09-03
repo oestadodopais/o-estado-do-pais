@@ -1685,6 +1685,16 @@ export const STRINGS = {
          portão, e a razão dela está em src/lib/documentos.mjs. */
       documentoFaixa: 'Documento do estudo · edição de registo',
       documentoVoltar: 'Voltar à página do estudo',
+      /* O NOME DE UMA CAIXA QUE SE DESLOCA (bloco F1.8, 03.09.2026). Não se
+         rende no HTML construído: a moldura põe-no em `aria-label` no
+         navegador, sobre caixas do documento alojado, porque acrescentar um
+         atributo ao corpo era mexer nos bytes da obra citada. Quando a caixa
+         traz uma legenda ou vem debaixo de um título, o nome do documento entra
+         a seguir a este, para que duas caixas da mesma página não digam a mesma
+         coisa a quem ouve. Não diz o sentido do deslocamento porque as caixas
+         medidas deslocam-se umas de lado e outras a direito, e um rótulo que
+         prometesse o sentido errado era pior do que um que o não promete. */
+      documentoDeslocamento: 'Caixa que se desloca',
 
       /* ------------------------------------------------------------------
          A PÁGINA DE LEITURA (`/estudos/<slug>/texto`), parte 3 P2.
@@ -2580,6 +2590,7 @@ export const STRINGS = {
       documentoLink: 'Read the document',
       documentoFaixa: 'Study document · edition of record',
       documentoVoltar: 'Back to the study page',
+      documentoDeslocamento: 'Box that scrolls',
 
       textoEyebrow: 'Study document · text',
       textoLink: 'Read on the site',
