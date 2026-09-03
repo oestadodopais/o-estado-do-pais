@@ -13,6 +13,33 @@
 
 export const VERBATIM = {
   /**
+   * O IDENTIFICADOR DO DOCUMENTO DA COMISSÃO, TRANSCRITO (F1.1, 03.09.2026).
+   *
+   * As duas frases de contexto dos painéis da primeira página dizem que os
+   * valores estão confirmados contra a Comissão Europeia, e nomeiam o documento
+   * onde essa confirmação foi feita. O identificador traz algarismos e não é uma
+   * medição: é a morada de um documento, e a morada transcreve-se.
+   *
+   * A ORIGEM É O LIVRO-RAZÃO, e são as 21 linhas dos dois quadros da União: o
+   * campo `note` de cada uma escreve «Valor confirmado contra a Comissão
+   * Europeia, SWD(2026) 222 (Relatório por País 2026 — Portugal): <o valor>».
+   * A cadeia registada aqui é o pedaço que a página rende, carácter a carácter,
+   * e o portão compara-os.
+   *
+   * A MESMA CADEIA NAS DUAS EDIÇÕES, e por isso `lang` é `null`: o identificador
+   * de um documento não se traduz. É o mesmo princípio pelo qual o marcador
+   * `[a verificar]` fica em português nas duas edições — o que se copia de uma
+   * fonte fica como a fonte o escreveu.
+   */
+  'swd-2026-222': {
+    lang: null,
+    origem:
+      'Campo `note` das 21 linhas dos dois quadros da União em ledger/claims/, ' +
+      'por exemplo divida-publica-2025.yml e taxa-de-emprego-2025.yml.',
+    text: `SWD(2026) 222`,
+  },
+
+  /**
    * As frases de abertura de dois documentos alojados.
    *
    * O arquivo rotula estas duas descrições como «frase de abertura do
