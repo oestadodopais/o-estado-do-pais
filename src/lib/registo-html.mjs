@@ -169,21 +169,36 @@ export function linhasDoDocumento(registo, chave, linhaDoSitio) {
 }
 
 /**
- * OS TÍTULOS DE NÍVEL 2 DO REGISTO — o índice «Nesta página» (item B4).
+ * OS TÍTULOS DO REGISTO: o índice «Nesta página» (item B4; F1.9a, 03.09.2026).
  *
- * Devolve, na ordem do documento, o índice do bloco e o seu texto tal como o
- * registo o guarda. A vista não reescreve nada: o texto entra na página com a
- * marca `data-registo-indice`, que o portão compara carácter a carácter com
- * este mesmo bloco (L8). Seis dos títulos das oito edições trazem um ano nas
- * palavras, e é por isso que o índice tem de entrar por uma origem conferida e
- * não por prosa da casa.
+ * Devolve, na ordem do documento, o índice do bloco, o seu nível e o seu texto
+ * tal como o registo o guarda. A vista não reescreve nada: o texto entra na
+ * página com a marca `data-registo-indice`, que o portão compara carácter a
+ * carácter com este mesmo bloco (L8). Seis dos títulos das oito edições trazem
+ * um ano nas palavras, e é por isso que o índice tem de entrar por uma origem
+ * conferida e não por prosa da casa.
+ *
+ * ---------------------------------------------------------------------------
+ * DE NÍVEL 2 PARA NÍVEL 2 E 3 (bloco F1.9a, §1.1 do brief)
+ * ---------------------------------------------------------------------------
+ * O índice do bloco B levava só os títulos de nível 2, e as oito edições têm
+ * entre 2 e 20 títulos de nível 3 que ficavam de fora: numa página de 67 ecrãs
+ * (`evora-quinze-anos-cinco-mandatos`, medido a 390 × 664), as 20 secções de
+ * nível 3 são metade do documento e não tinham porta nenhuma. Passam a entrar,
+ * aninhadas debaixo do título de nível 2 que as antecede, e o L8 do portão
+ * compara-as pela mesma regra: mesma contagem, mesma ordem, mesmo texto.
+ *
+ * O nível 4 fica de fora, e é uma escolha e não um esquecimento: uma só edição
+ * os tem (dez, em `evora-os-pelouros-quem-os-teve-o-que-fizeram`), e um índice
+ * de três andares numa dobra de telemóvel deixa de ser um índice.
  *
  * @param {RegistoDeConteudo} registo
+ * @returns {{ i: unknown, nivel: number, texto: string }[]}
  */
 export function titulosDoDocumento(registo) {
   return registo.blocks
-    .filter((b) => b.kind === 'heading' && Number(b.level) === 2)
-    .map((b) => ({ i: b.i, texto: String(b.text ?? '') }));
+    .filter((b) => b.kind === 'heading' && (Number(b.level) === 2 || Number(b.level) === 3))
+    .map((b) => ({ i: b.i, nivel: Number(b.level), texto: String(b.text ?? '') }));
 }
 
 /**
@@ -497,10 +512,57 @@ const atributosDaUnidade = (marca) => ` data-registo-unidade="${escapaAtributo(m
  * a construção pára, porque uma porta sem nome é uma ligação que um leitor de
  * ecrã anuncia vazia.
  *
- * @param {{registo: RegistoDeConteudo, chave: string, linhaDoSitio: (row: string) => (string|null), rotuloDaPorta: string}} args
+ * ---------------------------------------------------------------------------
+ * A POSIÇÃO DE CADA SECÇÃO, TAMBÉM PARA QUEM NÃO VÊ (F1.9a, segunda passagem,
+ * 03.09.2026, Major 8 da leitura a frio do Codex)
+ * ---------------------------------------------------------------------------
+ * `rotuloDaPosicao(n, total)` devolve a frase «Secção n de N» (ou a sua irmã
+ * inglesa) na língua da edição. A primeira passagem compunha o «n/N» só na
+ * folha de estilos, com o texto alternativo do CSS a ir vazio onde o motor o
+ * sabe fazer: a posição desenhava-se e não se ouvia. Aqui entra uma segunda
+ * peça, um `<span class="vh">` ANTES do título, MAS FORA dele: não é filho do
+ * `<h2>`, é irmão. A diferença não é cosmética, é o que protege as duas coisas
+ * que este ficheiro promete:
+ *
+ *   1. O TÍTULO CONTINUA BYTE A BYTE O QUE ERA. Se a frase entrasse DENTRO do
+ *      `<h2>`, o L2 do portão (que lê cada título como uma unidade e compara o
+ *      seu texto, carácter a carácter, com o do registo) via-a como texto a
+ *      mais e fechava a construção em todos os títulos de nível 2 das oito
+ *      edições. Um irmão anterior não é lido por essa unidade.
+ *   2. O NOME ACESSÍVEL DO TÍTULO PASSA A INCLUIR A POSIÇÃO, e é isso que a
+ *      falta apontava: o `<h2>` leva `aria-labelledby="posicao-bloco-<i> bloco-<i>"`,
+ *      que aponta primeiro para este irmão e depois para o próprio título. A
+ *      computação do nome acessível (Accessible Name and Description, WAI-ARIA)
+ *      junta o texto dos dois, pela ordem da lista, e o `<h2>` REFERIR-SE A SI
+ *      PRÓPRIO na sua lista é a forma padrão de acrescentar texto a um nome sem
+ *      duplicar o que já lá está: o segundo id lê o texto que o título já tem,
+ *      e não uma cópia escrita à mão que pudesse divergir dele.
+ *
+ * A marca `data-registo-posicao` é a origem declarada deste irmão (a oitava da
+ * família `data-registo-*`, ao lado de `data-registo-indice`): o numerador é a
+ * posição do bloco entre os títulos de nível 2, o denominador é o mesmo total
+ * que `data-seccoes` já leva, e o L8 do portão recontou os dois. Um número do
+ * próprio sítio não se escreve, verifica-se.
+ *
+ * `rotuloDoFimDeSeccao`, se vier, é a etiqueta de uma porta em fluxo (não fixa)
+ * no fim de cada secção de nível 2 (Blocking 4 da mesma leitura): a 390px não
+ * há goteira nenhuma onde um comando fixo caiba sem tapar uma linha do
+ * documento, e a saída que não tapa é a que entra no próprio documento. É
+ * mobília e não corpo — não tem `data-registo-bloco` nenhum —, mas vive dentro
+ * do fluxo do artigo para que a sua caixa empurre o que vem a seguir em vez de
+ * se lhe sobrepor.
+ *
+ * @param {{registo: RegistoDeConteudo, chave: string, linhaDoSitio: (row: string) => (string|null), rotuloDaPorta: string, rotuloDaPosicao?: (n: number, total: number) => string, rotuloDoFimDeSeccao?: string}} args
  * @returns {PecaDoRegisto[]}
  */
-export function pecasDoCorpo({ registo, chave, linhaDoSitio, rotuloDaPorta }) {
+export function pecasDoCorpo({
+  registo,
+  chave,
+  linhaDoSitio,
+  rotuloDaPorta,
+  rotuloDaPosicao,
+  rotuloDoFimDeSeccao,
+}) {
   if (typeof rotuloDaPorta !== 'string' || rotuloDaPorta === '') {
     throw new FalhaDoRegisto(
       'pecasDoCorpo: falta o "rotuloDaPorta", que é o nome acessível da porta que vai a seguir a ' +
@@ -509,6 +571,21 @@ export function pecasDoCorpo({ registo, chave, linhaDoSitio, rotuloDaPorta }) {
   }
   const saida = acumulador();
   const ctx = { linhaDoSitio, rotuloDaPorta, dentroDeLigacao: 0, ligacaoAberta: null };
+
+  const totalNivel2 = registo.blocks.filter(
+    (b) => b.kind === 'heading' && Number(b.level) === 2,
+  ).length;
+  let vistosNivel2 = 0;
+  /* A porta em fluxo fecha a secção ANTERIOR quando uma nova de nível 2 abre, e
+     fecha a ÚLTIMA depois do laço: por isso o marcador fica fora dele. */
+  let seccaoPorFechar = false;
+  const fechaSeccaoEmFluxo = () => {
+    if (!seccaoPorFechar || !rotuloDoFimDeSeccao) return;
+    saida.html(
+      `<a class="texto-secao-topo" href="#texto-indice">${escapaTexto(rotuloDoFimDeSeccao)} ↑</a>`,
+    );
+    seccaoPorFechar = false;
+  };
 
   registo.blocks.forEach((bloco, indice) => {
     if (bloco.i !== indice) {
@@ -526,12 +603,26 @@ export function pecasDoCorpo({ registo, chave, linhaDoSitio, rotuloDaPorta }) {
     }
     if (bloco.kind === 'heading') {
       const nivel = Math.min(Math.max(Number(bloco.level) || 1, 1), 6);
+      let aria = '';
+      if (nivel === 2) {
+        fechaSeccaoEmFluxo();
+        if (rotuloDaPosicao) {
+          vistosNivel2++;
+          const idPosicao = `posicao-bloco-${bloco.i}`;
+          saida.html(
+            `<span id="${idPosicao}" class="vh" data-registo-posicao="${base}">` +
+              `${escapaTexto(rotuloDaPosicao(vistosNivel2, totalNivel2))}</span>`,
+          );
+          aria = ` aria-labelledby="${idPosicao} bloco-${bloco.i}"`;
+        }
+        seccaoPorFechar = true;
+      }
       /* O ID DE UM TÍTULO É O SEU ÍNDICE DE BLOCO, e não uma cadeia derivada do
          texto (bloco B, item B4). É o que o índice «Nesta página» abre, e é a
          mesma coordenada que o `data-registo-bloco` já declara: um id feito do
          texto mudaria no dia em que o documento mudasse uma palavra, e uma
          âncora partilhada que muda é uma âncora partida. */
-      saida.html(`<h${nivel} id="bloco-${bloco.i}"${marcaDoBloco}${atributosDaUnidade(base)}>`);
+      saida.html(`<h${nivel} id="bloco-${bloco.i}"${marcaDoBloco}${atributosDaUnidade(base)}${aria}>`);
       escreveUnidade(bloco, base, saida, ctx);
       saida.html(`</h${nivel}>`);
       return;
@@ -578,6 +669,9 @@ export function pecasDoCorpo({ registo, chave, linhaDoSitio, rotuloDaPorta }) {
       `género de bloco desconhecido: "${/** @type {{ kind: unknown }} */ (bloco).kind}"`,
     );
   });
+  /* A última secção fecha aqui: não há um título de nível 2 a seguir a ela
+     para disparar o fecho de dentro do laço. */
+  fechaSeccaoEmFluxo();
 
   return saida.pecas;
 }
