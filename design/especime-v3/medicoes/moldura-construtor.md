@@ -193,3 +193,131 @@ corrida `portao`: [a preencher]
 ```
 
 Não fundido em `main`, por ordem do brief.
+
+## Segunda passagem (Claude Sonnet 5, 03.09.2026)
+
+*Escrita pelo medidor (Claude Sonnet 5), na mesma worktree, sobre a lista exacta de sete achados que a leitura a frio do Codex confirmou como reais e o lugar de direção mandou consertar (Blocking 4, Major 6 a 10, Minor 11; os Blocking 1 a 3 e o Major 5 eram plantas do pacote dado ao Codex, não bugs do código desta árvore, e não entram aqui). Cada número desta secção foi medido nesta árvore, com `tests/documentos/moldura.mjs` corrido sobre `dist/` depois do `npm run build`, ou computado pela mesma fórmula de contraste que a régua usa, num guião à parte, sobre os valores que o axe-core ou o `getComputedStyle()` devolveram. Sem travessões.*
+
+### Blocking 4 · as cores do texto das obras, uma a uma, nunca achatadas
+
+O C1 pedia zero violações graves e ficaram 1 111, todas `color-contrast`, todas do texto das PRÓPRIAS obras. A decisão do lugar de direção: não achatar as cores das obras para a tinta da casa, e não as reescrever à mão; onde uma cor do texto falha 4,5:1 (ou um objecto de interface falha 3:1), substitui-se pela sombra mais próxima da MESMA matiz e saturação que passa, mais escura em claro e mais clara em escuro.
+
+**Como se mediu a lista.** As 1 111 violações agrupam-se, pelo par exacto de cor e fundo que o axe-core reporta no seu próprio campo `data` (não recalculado por mim), em 69 combinações distintas. Extraídas as nove obras onde caem, e para cada uma lida a folha `<style>` de origem, confirma-se que NENHUMA cor de texto vem escrita célula a célula: todas saem de uma meia dúzia de fichas CSS próprias de cada obra (`--ink-3`, `--teal`, `--blue`…, cada uma no `:root` dessa obra, com o seu próprio bloco escuro). `.tag.src{color:var(--teal)}`, `.psub{color:var(--ink-3)}`, `.chip.tier-2{color:var(--chip-2)}`, e por aí fora: confirmado lendo a fonte de cada uma das seis obras envolvidas, não adivinhado do nome da classe.
+
+Isso muda o mecanismo por completo: em vez de reescrever selectores, `src/lib/documentos.mjs` (nova secção, «OS AJUSTES DE COR DENTRO DAS OBRAS») redeclara a FICHA no elemento que a moldura já envolve (`[data-oedp-moldura]`), com uma cor computada por uma função de ajuste (`ajustaParaContraste()`: converte para HSL, escurece ou aclara em passos de 0,1% até passar o alvo, mantendo a matiz e a saturação). Como cada documento é o seu próprio ficheiro construído, uma regra escrita para `agua-nao-faturada` não existe no ficheiro de `evora-quinze-anos-cinco-mandatos`: nenhum atributo novo precisou de se acrescentar à moldura para isolar os documentos entre si.
+
+**A lista completa, medida com o pior fundo de cada ficha em cada tema** (o fundo é o mais desfavorável entre TODOS os nós que a violação atingia, não o primeiro que apareceu):
+
+| obra | ficha | tema | pior fundo medido | antes | depois (computado) |
+|---|---|---|---|---|---|
+| agua-nao-faturada, onde-esta-a-agua | `--ink-3` | claro | `#f1f3f5` | `#7a8895` | `#63707c` |
+| agua-nao-faturada, onde-esta-a-agua | `--ink-3` | escuro | `#1c262d` | `#6e808d` | `#7e8e9a` |
+| agua-nao-faturada, onde-esta-a-agua | `--teal` | claro | `#cfe9ec` | `#009aa6` | `#006d75` |
+| agua-nao-faturada, onde-esta-a-agua | `--teal` | escuro | `#163239` | `#189ca8` | `#1aa7b4` |
+| agua-nao-faturada, onde-esta-a-agua | `--blue` | claro | `#dae0ed` | `#3f62b0` | `#3e60ac` |
+| agua-nao-faturada, onde-esta-a-agua | `--blue` | escuro | `#222f3f` | `#6486ce` | `#7c98d5` |
+| agua-nao-faturada, onde-esta-a-agua | `--orange` | claro | `#efdfd5` | `#c85c15` | `#9e4911` |
+| agua-nao-faturada, onde-esta-a-agua | `--orange` | escuro | `#362c26` | `#de7433` | `#e07c3f` |
+| agua-nao-faturada, onde-esta-a-agua | `--olive` | claro | `#f7f8f9` | `#6e9e1f` | `#577d18` |
+| evolucao-de-portugal-desde-1981 | `--ink-3` | claro | `#f2f4f7` | `#828a93` | `#687079` |
+| alentejo-algarve | `--ink-3` | claro | `#f5f4f1` | `#8a877e` | `#726f67` |
+| alentejo-algarve | `--ink-3` | escuro | `#232322` | `#807d74` | `#8d8a81` |
+| alentejo-algarve | `--algarve` | claro | `#fcfcfb` | `#0e7fa3` | `#0e7ea1` |
+| alentejo-algarve | `--alentejo` | claro | `#fcfcfb` | `#a9741a` | `#9b6a18` |
+| evora-prometido-pago-auditado-2026 | `--chip-2` | claro | `#fafbf9` | `#7a8a91` | `#67767c` |
+| which-door-is-yours | `--muted` | claro | `#e3e7e2` | `#5a6b70` | `#59696e` |
+| which-door-is-yours | `--soon` | claro | `#f6ebd4` | `#9a6212` | `#955f11` |
+
+Dezassete correcções, oito fichas onde só o tema que falhava leva entrada (o `--olive` escuro, o `--ink-3` escuro de duas obras, o `--algarve`/`--alentejo` escuros, o `--chip-2` escuro e o `--muted`/`--soon` escuros já passavam sozinhos, e ficam exactamente como a obra os escreveu). As outras sete obras dos dezasseis não entram: não tinham nenhuma violação de `color-contrast` a corrigir.
+
+**Um ajuste feito de propósito não pegava à primeira**, e fica dito porque é o tipo de erro que uma medição a mais apanha e uma medição a menos deixa passar: os selos `.tag.src`, `.tag.inf` e `.tag.prs` da água pintam o seu PRÓPRIO fundo com `color-mix(in srgb,var(--teal) 16%,transparent)`, a MESMA ficha que dá a cor do texto. Um primeiro ajuste, calibrado só contra o fundo medido ANTES da correcção, deixava 59 nós ainda abaixo de 4,5:1 (entre 4,16 e 4,44:1) porque escurecer a ficha também escurece os 16% do fundo do seu próprio selo. A correcção (`misturaFundo` em `AjusteDeCor`) recompõe o fundo a cada passo do ajuste, contra o pano por trás da mistura e não contra o número medido antes: com ela, `node tests/documentos/moldura.mjs` mede 0 nós `color-contrast` em qualquer impacto, nos 16 documentos × 2 temas.
+
+**C1, medido antes e depois desta passagem**: 1 111 nós `color-contrast` (nove obras) → **0**, em 64 passagens (dezasseis documentos × dois temas × duas larguras, Major 8, abaixo). Os 50 nós dentro de tabela que o C2 do relatório original media entre 2,83:1 e 4,30:1 estão dentro destes 1 111 e resolvem-se pelo mesmo mecanismo: são os mesmos `.tag.*`/`.chip.*` medidos dentro de uma célula.
+
+### Major 6 · o C5 escrito como a decisão pede
+
+A decisão: **a moldura e os filetes das tabelas usam só cores da casa; as cores interiores das obras ficam das obras, excepto onde o contraste falha (Blocking 4)**. É esta a frase que substitui a leitura anterior de C5, e o código já a cumpre à letra, porque as duas coisas vivem em mecanismos diferentes desde a origem:
+
+- `[data-oedp-moldura] table, ... td{border-color:var(--oedp-rule-strong)!important}` e as suas variantes (`h1`, `h2::before`, e agora `estiloDoFileteReforcado()`, Major 7) só escrevem fichas de `tokens.css`, resolvidas e comparadas pela régua contra a lista completa da folha da casa (célula C5, que só olha para `coresDosFiletes`);
+- `estiloDosAjustesDeCor()` (Blocking 4) redeclara fichas PRÓPRIAS de cada obra (`--ink-3`, `--teal`…) com sombras da MESMA matiz, nunca com uma cor da casa; a régua mede-as em C1/C2 (contraste), nunca em C5 (paleta), porque C5 só olha para `coresDosFiletes` e as cores das obras nunca lá entram.
+
+Medido: C5 continua a listar só as cores que a moldura declara suas (agora 4 distintas: `--rule-strong`/`--g2` em claro e escuro, mais `--ink` em claro e escuro, pelos dois filetes reforçados do Major 7), e 0 fora da paleta. As dezassete cores de obra do Blocking 4 nunca entram nesta lista, e é assim que a regra fica escrita no cabeçalho da célula (`tests/documentos/moldura.mjs`, C5).
+
+### Major 7 · o filete contra os dois fundos, e a `opacity` que faltava
+
+A régua só olhava para o fundo do elemento-mãe. `piorContraste()` (nova função em `medeNaPagina()`) mede agora contra os DOIS fundos que um filete toca (o composto pelo PRÓPRIO elemento e o do elemento-mãe) e guarda o pior, que é o que a WCAG 2.1 §1.4.11 pede: distinguir-se de CADA fundo que o toca.
+
+Medir os dois lados nos dezasseis documentos revelou dois sítios onde `--rule-strong` não chega a 3:1 mesmo assim, e revelou também um segundo problema, mais fundo: a `opacity` de um elemento não é o alfa do seu fundo, e `fundoDe()` ignorava-a por completo. A fileira que assinala um mandato em `evora-quinze-anos-cinco-mandatos` (`tr.boundary td{background:var(--series-1-soft);opacity:.85}`) esbate o PRÓPRIO filete, e não só o fundo, contra o que está atrás: sem contar a opacidade, um filete que parecia passar a 3,18:1 (escalado a `--g1`) media, de facto, 2,49:1. A correcção (`filetEfetivo()`, que trata `opacity` como um multiplicador do alfa do fundo desse nó, algebricamente equivalente a compor cada nó com `sobre()`) apanha o efeito nos dois lados, e é essa versão que decidiu a correcção final:
+
+| onde | tema | antes (`--rule-strong`, com `opacity`) | depois (`--ink`, com `opacity`) |
+|---|---|---|---|
+| `evora-quinze-anos-cinco-mandatos`, `tr.boundary td` | claro | 1,57:1 | 5,97:1 |
+| `evora-quinze-anos-cinco-mandatos`, `tr.boundary td` | escuro | 2,34:1 | 5,84:1 |
+| `which-door-is-yours`, `table thead th` (sem `opacity`) | claro | 2,98:1 | 14,10:1 |
+
+Os dois selectores sobem ao degrau mais escuro da casa, `--ink` (`estiloDoFileteReforcado()`, `src/lib/documentos.mjs`, ao lado de `estiloDosAjustesDeCor()`): é a mesma escolha, pela mesma razão, que o F0.7 fez no fio da faixa quando `--g3` não chegava. `--oedp-ink` já estava declarado nos dois temas por `estiloDaMoldura()` (é a ficha do texto das células), e por isso a regra nova não precisa da sua própria metade escura.
+
+**Um efeito colateral descoberto no caminho, e corrigido**: o Chromium serializa um `color-mix()` como `color(srgb r g b / a)`, com os canais em 0 a 1 e não em 0 a 255. A leitura de cor da régua (`cor()`, em `medeNaPagina()`) só apanhava números com uma expressão regular e lia 0,43 como se fosse quase preto; isso fazia os selos `tag src/prs/inf` dentro de tabela medirem, no diagnóstico interno «o que a moldura não corrige» (`saida.selos`), abaixo de 4,5:1 mesmo depois de corrigidos pelo Blocking 4, quando o axe-core (que resolve a cor à parte, correctamente) já os media a passar com folga (4,81:1 a 4,84:1, medido directamente no campo `data` do axe). Corrigido `cor()` para reconhecer a forma `color(espaço r g b / a)`: o diagnóstico interno lê agora **0 nós** «que a moldura não corrige», que é o que de facto se vê no ecrã.
+
+### Major 8 · as duas larguras, dentro do `verify`
+
+A régua corria só a 1 280 e não entrava em nenhum comando oficial. Corre agora a 390 E a 1 280 (`LARGURAS`, em `tests/documentos/moldura.mjs`), nos dois temas, e `npm run verify` chama-a (`check:moldura`, novo script em `package.json`, entre `gate:html` e `check:fontes`). Medido: a passagem limpa (sem `--vermelhos`) corre em 85 s nesta máquina, 64 passagens; a corrida com as quatro plantas (`--vermelhos`, cinco passagens completas) em 7 min 7 s. Por isso `--vermelhos` fica fora do `verify` (o custo é cinco vezes o de uma corrida), e dentro do relatório (abaixo).
+
+A largura pequena não é decorativa: das 326 caixas que se deslocam medidas nos 64 (dezasseis × dois temas × duas larguras), uma parte só se desloca a 390 (a 1 280 muitas tabelas cabem inteiras). Sem a largura pequena, essas caixas nunca entravam na contagem do C3, e um estrago que só as afectasse nunca era apanhado.
+
+### Major 9 · uma planta que não pega faz a corrida cair
+
+A primeira forma calculava `bom` (o HTML mudou, uma célula nomeada caiu, essa célula estava verde antes) e só o usava para escolher a cor do símbolo no ecrã; a saída de `--vermelhos` olhava só para a corrida limpa. Agora `plantaMa` acumula-se por cada planta falhada e entra na mesma condição de saída que as células vermelhas: uma planta que não pega faz `process.exit(1)`, com uma linha própria a dizer qual.
+
+**As saídas das quatro plantas, medidas nesta árvore** (`node tests/documentos/moldura.mjs --vermelhos --json design/especime-v3/medicoes/moldura-2026-09-03-segunda-passagem.json`, guardado por inteiro no campo `plantas` desse ficheiro):
+
+```
+✓ moldura-fora · tirar a abertura da moldura
+    o HTML mudou: sim · verdes antes: C4, C5 · caíram: C1, C2, C3, C4, C5 · das nomeadas: C4, C5
+✓ filete-turquesa · o filete da grelha volta à cor de fora da paleta
+    o HTML mudou: sim · verdes antes: C2, C5 · caíram: C2, C5 · das nomeadas: C2, C5
+✓ texto-da-celula · tirar a regra da cor do texto das células
+    o HTML mudou: sim · verdes antes: C2 · caíram: C1, C2 · das nomeadas: C2
+✓ sem-guiao · tirar o guião da moldura
+    o HTML mudou: sim · verdes antes: C1, C3 · caíram: C1, C3 · das nomeadas: C1, C3
+```
+
+As quatro pegam (`bom: true` nas quatro, no JSON), e a corrida sai a 0 com «todas as plantas pegaram» a seguir a «todas as células verdes».
+
+### Major 10 · o SHA, a corrida, o JSON
+
+O resultado desta medição está guardado, por inteiro, em `design/especime-v3/medicoes/moldura-2026-09-03-segunda-passagem.json` (1,7 KB): as seis células, o axe regra a regra, os selos (vazios), a contagem de caixas e as quatro plantas com o seu `nomeadas`/`verdesAntes`/`bom`. O SHA da cabeça e o número da corrida `portao` ficam na tabela abaixo, preenchidos depois do `push` (não podiam sê-lo antes: são factos da corrida, não do código).
+
+```
+ramo:              moldura-2026-09-03
+SHA da cabeça:     [a preencher depois do push]
+corrida `portao`:  [a preencher depois do push]
+```
+
+### Minor 11 · o `<h1>` visível, o `role` exacto, o `aria-labelledby` que aponta para alguém
+
+Três conferências mais fracas do que o nome dizia, todas em `tests/documentos/moldura.mjs` salvo a primeira:
+
+1. **`<h1>` visível** (`scripts/gate-html.mjs`, a conferência estática, e a célula C4 da régua, a dinâmica). O portão estático ganhou `h1EscondidoNaEtiqueta()`: recusa um `<h1>` com `hidden`, `aria-hidden="true"` ou `display:none`/`visibility:hidden` dentro do PRÓPRIO `style` em linha (não apanha uma regra de folha por selector: isso é trabalho da régua em navegador). A régua ganhou `visivel()`: além de `getClientRects().length>0` (que já apanhava `display:none`), confere `getComputedStyle(el).visibility!=='visible'` e `el.closest('[aria-hidden="true"]')`. Medido nos dezasseis: 0 `<h1>` escondidos, nos dois portões.
+2. **O `role` tem de ser `region`**, e não qualquer valor não vazio. `semPapel` media antes `!c.papel`; agora exige `c.papel==='region'`, com uma excepção medida e não adivinhada: um `role="tablist"` já existente (a barra de separadores de `evolucao-de-portugal-desde-1981`, com os seus `role="tab"` por baixo) fica com o seu, porque o guião da moldura só escreve `region` onde a obra não declarou papel nenhum, e um `tablist` é um papel mais específico e correcto, não uma omissão. `presentation` e `none`, que apagam o marco em vez de o dar, continuam a falhar. Medido: 326 caixas, 0 sem marco.
+3. **`aria-labelledby` tem de apontar para um `id` que existe.** `labelledbyValido()` verifica cada `id` que o atributo lista (pode listar mais do que um) contra `document.getElementById()`; um `id` ausente já não conta como nome. Medido: nenhuma das 326 caixas usa `aria-labelledby` hoje (todas levam `aria-label` do guião ou já tinham o seu), e por isso a conferência não muda o resultado, só a garantia.
+
+### C1 a C7, medidos outra vez
+
+| # | medida | antes desta passagem | depois desta passagem |
+|---|---|---|---|
+| C1 | axe a 0 nas graves | **1 111** nós `color-contrast` (9 obras), 32 passagens | **0** nós, em qualquer impacto, 64 passagens (2 larguras × 2 temas × 16) |
+| C2 | filetes ≥ 3:1 (2 fundos), texto das tabelas ≥ 4,5:1 | filetes: 19 264 medidos, 0 abaixo de 3:1 contra 1 fundo só; celulas: 17 014 medidos, 0 abaixo de 4,5:1; selos: 50 nós entre 2,83:1 e 4,30:1 fora da célula | filetes: **38 528** medidos, **0** abaixo de 3:1 contra os 2 fundos (o pior 3,23:1); celulas: **34 028** medidos, **0** abaixo de 4,5:1 (o pior 7,57:1); selos: **0** nós (Blocking 4 chega lá por outra via) |
+| C3 | caixas com teclado, nome, marco | 92 caixas (1 largura), 0 sem teclado/nome/marco | **326** caixas (2 larguras), 0 sem teclado, 0 sem nome (com o `aria-labelledby` verificado), 0 sem marco (com `region` exacto e a excepção do `tablist`) |
+| C4 | `<main>` a 1, `<h1>` visível a 1 | 32 passagens, 0 sem `<main>`, 0 sem `<h1>` visível (só `getClientRects`) | 64 passagens, 0 sem `<main>`, 0 sem `<h1>` visível (`getClientRects` + `visibility` + `aria-hidden`) |
+| C5 | frame e filetes só com paleta da casa; interior das obras por contraste | 20 cores → 2, 0 fora da paleta (regra não escrita explicitamente) | **2 → 4** cores (mais `--ink` claro/escuro dos 2 filetes reforçados), 0 fora da paleta; regra escrita: frame e filetes contra a paleta, interior contra o contraste (Major 6) |
+| C6 | provador dos bytes, verde e depois vermelho | 16 de 16 verdes, 16 de 16 plantas apanhadas | **inalterado**: 16 de 16 verdes, 16 de 16 plantas apanhadas (a moldura não mudou de geometria nesta passagem) |
+| C7 | `build`, `verify`, `typecheck` a 0 | não medido no antes desta passagem | `npm run build` → **0**; `npm run verify` (agora com `check:moldura` lá dentro) → **0**; `npm run typecheck` → **0**; os três lidos de ficheiro, nunca de um `echo` encadeado |
+
+### O que fica
+
+Os sete achados da lista (Blocking 4, Major 6 a 10, Minor 11) estão resolvidos e medidos a zero. Três coisas ficam fora, por não estarem na lista e por não as ter medido a falhar:
+
+1. **As vinte capturas de `design/especime-v3/capturas/moldura-2026-09-03/`** são do construtor e não se refizeram: `evora-prometido-pago-auditado-2026` recebeu uma correcção do Blocking 4 (`--chip-2`, o selo `tier-2`) que as capturas «tabela» de ambas as edições não mostram. As capturas «topo» (o `<h1>` e o seu fio) não mudam: este documento não está no `FILETE_REFORCADO` do Major 7.
+2. **A opacidade só se corrigiu onde a medição a mostrou a falhar** (o filete de `evora-quinze-anos-cinco-mandatos`): o mecanismo (`filetEfetivo()`) é geral e aplica-se a qualquer filete que a régua meça, mas não houve uma auditoria à parte a `opacity<1` fora dos filetes (por exemplo, sobre o texto das obras); nenhuma dessa classe de violação apareceu nas 1 111 do Blocking 4.
+3. **O guião da moldura só segue `prefers-color-scheme`**, não o interruptor manual de tema de uma obra (`data-theme`, alternado por um botão dentro do documento, sem relação com o tema do sistema): é a mesma fronteira que `estiloDaMoldura()` já tinha antes desta passagem (documentada aí), e nem os ajustes de cor do Blocking 4 nem o filete reforçado do Major 7 a alargam nem a estreitam. A régua, que só varia `colorScheme` no navegador e nunca carrega no interruptor de uma obra, não a exercita.
