@@ -169,21 +169,36 @@ export function linhasDoDocumento(registo, chave, linhaDoSitio) {
 }
 
 /**
- * OS TÍTULOS DE NÍVEL 2 DO REGISTO — o índice «Nesta página» (item B4).
+ * OS TÍTULOS DO REGISTO — o índice «Nesta página» (item B4; F1.9a, 03.09.2026).
  *
- * Devolve, na ordem do documento, o índice do bloco e o seu texto tal como o
- * registo o guarda. A vista não reescreve nada: o texto entra na página com a
- * marca `data-registo-indice`, que o portão compara carácter a carácter com
- * este mesmo bloco (L8). Seis dos títulos das oito edições trazem um ano nas
- * palavras, e é por isso que o índice tem de entrar por uma origem conferida e
- * não por prosa da casa.
+ * Devolve, na ordem do documento, o índice do bloco, o seu nível e o seu texto
+ * tal como o registo o guarda. A vista não reescreve nada: o texto entra na
+ * página com a marca `data-registo-indice`, que o portão compara carácter a
+ * carácter com este mesmo bloco (L8). Seis dos títulos das oito edições trazem
+ * um ano nas palavras, e é por isso que o índice tem de entrar por uma origem
+ * conferida e não por prosa da casa.
+ *
+ * ---------------------------------------------------------------------------
+ * DE NÍVEL 2 PARA NÍVEL 2 E 3 (bloco F1.9a, §1.1 do brief)
+ * ---------------------------------------------------------------------------
+ * O índice do bloco B levava só os títulos de nível 2, e as oito edições têm
+ * entre 2 e 20 títulos de nível 3 que ficavam de fora: numa página de 67 ecrãs
+ * (`evora-quinze-anos-cinco-mandatos`, medido a 390 × 664), as 20 secções de
+ * nível 3 são metade do documento e não tinham porta nenhuma. Passam a entrar,
+ * aninhadas debaixo do título de nível 2 que as antecede, e o L8 do portão
+ * compara-as pela mesma regra: mesma contagem, mesma ordem, mesmo texto.
+ *
+ * O nível 4 fica de fora, e é uma escolha e não um esquecimento: uma só edição
+ * os tem (dez, em `evora-os-pelouros-quem-os-teve-o-que-fizeram`), e um índice
+ * de três andares numa dobra de telemóvel deixa de ser um índice.
  *
  * @param {RegistoDeConteudo} registo
+ * @returns {{ i: unknown, nivel: number, texto: string }[]}
  */
 export function titulosDoDocumento(registo) {
   return registo.blocks
-    .filter((b) => b.kind === 'heading' && Number(b.level) === 2)
-    .map((b) => ({ i: b.i, texto: String(b.text ?? '') }));
+    .filter((b) => b.kind === 'heading' && (Number(b.level) === 2 || Number(b.level) === 3))
+    .map((b) => ({ i: b.i, nivel: Number(b.level), texto: String(b.text ?? '') }));
 }
 
 /**

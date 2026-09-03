@@ -93,6 +93,10 @@
   display: grid;
   gap: clamp(26px, 3.4vw, 38px);
   min-width: 0;
+  /* A ORIGEM DOS DOIS CONTADORES DA POSIÇÃO (F1.9a, item 2; §5c desta folha).
+     `seccao` anda de título de nível 2 em título de nível 2, e `deQuantas`
+     fica no total que a vista escreve em `--seccoes`, contado do registo. */
+  counter-reset: seccao 0 deQuantas var(--seccoes);
 }
 /* O `min-width: 0` da coluna não chega: um item de grelha tem `min-width: auto`,
    e uma cadeia que não parte levaria a coluna inteira com ela por cima do
@@ -486,37 +490,171 @@
   display: inline-flex;
   align-items: center;
   min-height: 44px;
+  /* UMA ENTRADA CURTA TAMBÉM É UM ALVO. «2025» ou «Fontes» medem menos de 44px
+     de largura, e a régua do índice apanhou uma na edição dos pelouros. É a
+     mesma linha que o índice do Método já tem, pela mesma razão. */
+  min-width: 44px;
+  justify-content: flex-start;
+}
+/* O SEGUNDO ANDAR (F1.9a, item 1): os títulos de nível 3 debaixo do seu.
+   Recuados por um filete e não por marcadores, que é o que a casa usa quando
+   uma lista tem dois andares; o corpo desce um ponto, e o alvo fica nos 44px,
+   que é a regra do toque e não muda com o andar. */
+.texto-indice-sublista {
+  margin: 0 0 6px;
+  padding: 0 0 0 12px;
+  list-style: none;
+  border-left: 1px solid var(--rule);
+}
+.texto-indice-sublista li {
+  font-size: 14px;
+  line-height: 1.45;
+}
+.texto-indice-sublista a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 44px;
+  justify-content: flex-start;
+  color: var(--muted);
+}
+.texto-indice-sublista a:hover {
+  color: var(--ink);
 }
 
-/* SUBIR. Fixo no fim do ecrã abaixo de 640px, e em mais lado nenhum: no
-   computador a coluna do aparelho está sempre à vista. O alvo é de 44px nos
-   dois eixos, e o comando fica encostado à direita, fora da coluna de leitura,
-   para não se cruzar com nenhuma porta do texto. */
+/* SUBIR. Fixo no fim do ecrã, NAS DUAS LARGURAS desde 03.09.2026 (F1.9a, item
+   3). A regra anterior escondia-o acima de 640px porque «no computador a
+   coluna do aparelho está sempre à vista»; medido a 1280 nas oito páginas,
+   elas medem entre 12 612 e 37 008 px, e a coluna do aparelho está à vista no
+   primeiro ecrã e em mais nenhum. O alvo é de 44px nos dois eixos, e o comando
+   fica encostado à direita, fora da coluna de leitura, para não se cruzar com
+   nenhuma porta do texto: medido a 390 e a 1280, zero caixas de linha do
+   artigo debaixo dele. */
 .texto-subir {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  z-index: 5;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 12px;
+  background: var(--paper);
+  border: 1px solid var(--rule-strong);
+  color: var(--ink);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+/* A 1280 a coluna de leitura acaba muito antes da margem direita da janela, e
+   o comando fica na goteira; abaixo disso encosta-se à margem, que é onde a
+   medição diz que ele não apanha texto nenhum. */
+@media (min-width: 901px) {
+  .texto-subir {
+    right: clamp(12px, 3vw, 40px);
+    bottom: 20px;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+ * 5c · A INDICAÇÃO DE PROGRESSO (F1.9a, item 2)
+ * -----------------------------------------------------------------------------
+ * Duas metades, e nenhuma delas leva uma linha de JavaScript.
+ *
+ * (a) A POSIÇÃO DE CADA SECÇÃO, «n/N», ao lado do título de nível 2. O
+ *     numerador é um contador do navegador e o denominador é a ficha
+ *     `--seccoes`, que a vista escreve uma vez com a contagem que o L8 do
+ *     portão reconta do registo. A casa não escreve um algarismo no HTML do
+ *     corpo: o corpo é transcrição, e a §0 do brief manda que não mude um
+ *     carácter.
+ *
+ *     NÃO CUSTA UM PÍXEL DE ALTURA, e é por isso que é absoluta: o título de
+ *     nível 2 já tem 1,9em de goma por cima (39,9px a 390, medido), e a
+ *     posição vive lá dentro. Uma peça em fluxo somava 9 a 14 filas de 16px a
+ *     uma página que a auditoria já diz longa de mais.
+ *
+ *     O TEXTO ALTERNATIVO VAI VAZIO onde o motor conhece a sintaxe
+ *     (`content: … / ""`): o nome acessível de um título transcrito é o texto
+ *     do registo e mais nada. Onde não a conhecer, a declaração base fica de
+ *     pé e o contador rende-se na mesma, que é a ordem certa das duas: um
+ *     leitor de ecrã a ouvir «3/9» antes do título é ruído; um leitor sem
+ *     indicação nenhuma é o defeito D1 da auditoria.
+ *
+ * (b) A BARRA, três píxeis no topo da janela, movida pela linha do tempo do
+ *     deslocamento. Só existe dentro do `@supports`: uma barra parada é uma
+ *     indicação falsa. Medida nos dois motores (WebKit e Chromium), 0px no
+ *     topo e a largura da janela no fim.
+ * -------------------------------------------------------------------------- */
+.texto-artigo h2 {
+  position: relative;
+}
+.texto-artigo h2::before {
+  counter-increment: seccao;
+  content: counter(seccao) '/' counter(deQuantas);
+  position: absolute;
+  top: -1.35em;
+  left: 0;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  color: var(--muted);
+}
+@supports (content: 'a' / 'b') {
+  .texto-artigo h2::before {
+    content: counter(seccao) '/' counter(deQuantas) / '';
+  }
+}
+
+.texto-barra {
   display: none;
 }
-@media (max-width: 640px) {
-  .texto-subir {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+@supports (animation-timeline: scroll()) {
+  .texto-barra {
+    display: block;
     position: fixed;
-    right: 12px;
-    bottom: 12px;
-    z-index: 5;
-    min-width: 44px;
-    min-height: 44px;
-    padding: 0 12px;
-    background: var(--paper);
-    border: 1px solid var(--rule-strong);
-    color: var(--ink);
-    font-family: var(--f-instr);
-    font-variant-numeric: tabular-nums lining-nums;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-decoration: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    z-index: 6;
+    background: var(--ink);
+    transform: scaleX(0);
+    transform-origin: left center;
+    /* AS FICHAS UMA A UMA, E NÃO A ABREVIATURA, e é uma correção medida e não
+       um gosto: escrita `animation: texto-progresso linear` com a linha do
+       tempo ao lado, o minificador junta as duas numa só
+       (`animation: linear texto-progresso scroll(root)`), e essa abreviatura
+       não vale em nenhum dos dois motores. Provado nos dois, com a declaração
+       minificada e a declaração por fichas lado a lado na mesma página: a
+       primeira mede 0px no fim da página, a segunda mede a janela inteira. */
+    animation-name: texto-progresso;
+    animation-timing-function: linear;
+    animation-timeline: scroll(root block);
+  }
+}
+@keyframes texto-progresso {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+/* Quem pediu menos movimento não deixa de ter a indicação: a barra fica, e o
+   que sai é a animação. Sem linha do tempo, a barra não se desenha (a regra de
+   cima volta a valer por ser mais específica na cascata do `@supports`). */
+@media (prefers-reduced-motion: reduce) {
+  .texto-barra {
+    display: none;
   }
 }
 
@@ -594,6 +732,30 @@
   .texto-dobra-porta {
     display: inline-flex;
     align-items: center;
+    min-height: 44px;
+  }
+  /* AS TRÊS CONTAGENS DA FAIXA (F1.9a, item 4). Mediam 15,8 × 15 px no toque,
+     que é o alvo mais pequeno da mobília desta página, e são três portas para
+     o corpo. A saída é a da casa e não a área posicionada: numa faixa de duas
+     ou três filas, três áreas de 44px caíam umas em cima das outras, e uma
+     área sobreposta não é um alvo maior, é uma porta que abre a linha do
+     vizinho. Dá-se altura à fila, e a faixa cresce o que tiver de crescer:
+     medido, +58px na página mais longa a 390, contra os 60px de banda que o
+     índice ocupa. */
+  .texto-faixa {
+    line-height: 44px;
+    /* A FILA PASSA A LEVAR O AR POR DENTRO, e a peça devolve o que já não
+       precisa: sem esta devolução a faixa somava 68px à página, e o índice
+       inteiro ocupa uma banda de 46px (medido a 390 nas oito). O que se tira
+       é metade do que cada fila ganhou, dos dois lados. */
+    margin-top: -12px;
+    margin-bottom: -12px;
+  }
+  .texto-conta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
     min-height: 44px;
   }
 }
