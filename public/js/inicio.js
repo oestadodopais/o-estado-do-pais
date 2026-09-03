@@ -340,7 +340,18 @@
      botão, não ganha `aria-pressed` e não lhe é interceptado o clique. Ficar de
      fora desta lista é o que o faz continuar a ser uma ligação. */
   var segsAmbito = raiz.querySelectorAll('[data-modo]:not([data-modo="regiao"])');
-  var segsDensidade = raiz.querySelectorAll('[data-densidade]');
+  /* O COMANDO DA DENSIDADE MUDOU DE CASA (F1.1, segunda passagem, 03.09.2026).
+     Estava na fila do âmbito, dentro da raiz do estado; a fila saiu da página e o
+     comando voltou onde o brief da forma dos domínios o manda estar, no cabeçalho
+     do painel, que é o que ele abre e fecha. Fica FORA de `[data-inicio]`, e por
+     isso não se procura pela raiz: procura-se pela marca do bloco. O bloco chega
+     escondido do servidor e é esta linha que o acende, que é a mesma regra da
+     busca de `/municipios` — um comando que não comanda é pior do que nenhum. */
+  var blocoDensidade = document.querySelector('[data-densidade-bloco]');
+  var segsDensidade = blocoDensidade
+    ? blocoDensidade.querySelectorAll('[data-densidade]')
+    : document.querySelectorAll('[data-densidade-bloco] [data-densidade]');
+  if (blocoDensidade) blocoDensidade.hidden = false;
   var anuncio = raiz.querySelector('[data-anuncio]');
   var pecas = document.querySelectorAll('.peca-mais');
   var campo = raiz.querySelector('[data-pesquisa]');

@@ -480,6 +480,42 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
     </h2>
 
     {/* ------------------------------------------------------------------
+        A LEITURA BREVE, NO CABEÇALHO DO PAINEL (F1.1, segunda passagem)
+        ------------------------------------------------------------------
+        O `BRIEF-forma-dos-dominios.md` §4 manda a densidade viver no cabeçalho
+        do painel, e a primeira passagem deste bloco tirou-a da página inteira
+        com a fila do âmbito: ficaram os `<details>` de cada peça, que abrem uma
+        de cada vez, e o estado `?densidade=leitura`, que só o guião lê. O Minor
+        10 da leitura a frio apanhou-o: o comando global desapareceu, e com ele a
+        maneira de abrir as treze de uma vez.
+
+        VOLTA COM DUAS POSIÇÕES E SEM A PALAVRA «DENSIDADE», que é vocabulário da
+        casa e que o item 6 do brief manda fora da página. O que se lê são as duas
+        palavras que a casa já tem para as duas leituras, «Relance» e «Leitura
+        breve», cada uma declarada em `strings.mjs` desde a etapa 2.
+
+        CHEGA ESCONDIDO E É O GUIÃO QUE O ACENDE, que é a regra que a casa já
+        escreveu para a busca de `/municipios`: «uma caixa de pesquisa que não
+        pesquisa é pior do que nenhuma». Sem guião, este comando não abriria nada
+        — quem abre as peças de uma vez é o guião, ao ler o endereço — e um
+        comando que não comanda é uma porta falsa. Sem ele, cada peça continua a
+        abrir-se sozinha, no seu `<details>` nativo, sem guião nenhum.
+
+        VIVE FORA DE `[data-inicio]`, e isso é medido e não acidental: a raiz do
+        estado é a cabeça, e a régua `matriz` exige que dentro dela não haja
+        comando de estado nenhum depois deste bloco. O guião procura-o pela marca
+        do bloco, e não pela raiz.
+        ------------------------------------------------------------------ */}
+    <div class="painel-densidade" data-densidade-bloco hidden>
+      <button class="densidade-b" type="button" data-densidade="relance">
+        {s.densidade.relance}
+      </button>
+      <button class="densidade-b" type="button" data-densidade="leitura">
+        {s.densidade.leitura}
+      </button>
+    </div>
+
+    {/* ------------------------------------------------------------------
         A FRASE DE CONTEXTO DO PAINEL (F1.1, item 1; achado C6, decisão 3.4)
         ------------------------------------------------------------------
         Uma frase, impressa uma vez, antes dos cartões: o que o painel é, quem
