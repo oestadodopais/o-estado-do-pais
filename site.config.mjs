@@ -84,6 +84,8 @@ export const PAPEL_ESCURO = '#15171a';
 /**
  * URL canónico de um caminho interno.
  * Regra: sem barra final, excepto a raiz.
+ *
+ * @param {string} path
  */
 export function canonicalUrl(path) {
   const clean = path === '/' ? '/' : '/' + path.replace(/^\/+/, '').replace(/\/+$/, '');

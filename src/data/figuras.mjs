@@ -465,9 +465,13 @@ export const FIGURAS = [...FIGURAS_PDM, ...FIGURAS_SOCIAL];
  * declaração da mesma maneira. Devolve `{ inferior, superior }` como cadeias
  * prontas a passar por `parsePtNumber()`, ou `null` onde não há lado nenhum.
  * Não devolve um algarismo para a página: devolve o que a nota já escreveu.
+ *
+ * @param {Limiar | null | undefined} limiar
+ * @returns {{ inferior: string | null, superior: string | null } | null}
  */
 export function ladosDoLimiar(limiar) {
   if (!limiar) return null;
+  /** @param {LadoDoLimiar | undefined} l */
   const escreve = (l) => (l ? `${l.sinal === '−' ? '−' : ''}${l.nl}` : null);
   if (limiar.inferior || limiar.superior) {
     return { inferior: escreve(limiar.inferior), superior: escreve(limiar.superior) };
@@ -500,6 +504,10 @@ export function ladosDoLimiar(limiar) {
  *
  * Devolve `null` quando um dos dois lados não é um número simples. Um `null`
  * não se rende: a célula fica sem a palavra, e não com uma palavra inventada.
+ *
+ * @param {Linha | null | undefined} claim
+ * @param {Limiar | null | undefined} limiar
+ * @returns {'acima' | 'abaixo' | 'noLimiar' | null}
  */
 export function comparacaoComOLimiar(claim, limiar) {
   if (!limiar) return null;

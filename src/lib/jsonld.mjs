@@ -27,6 +27,7 @@
  */
 
 /** Os três caracteres que um `<script>` lê como marcação, e os seus escapes. */
+/** @type {Record<string, string>} */
 const ESCAPES = { '<': '\\u003c', '>': '\\u003e', '&': '\\u0026' };
 
 /**

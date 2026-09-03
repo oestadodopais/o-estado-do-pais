@@ -148,11 +148,14 @@ export const LINGUA_DOS_TITULOS = {
  *
  * Um título sem declaração não ganha marca nenhuma. Não é um silêncio: é
  * `scripts/check-lingua.mjs` que o vê, e fecha a construção.
+ *
+ * @param {unknown} titulo
+ * @param {string} [lang]
  */
 export function linguaDoTituloDoDocumento(titulo, lang = 'pt') {
   const cru = titulo === null || titulo === undefined ? '' : String(titulo);
   const declarada = Object.prototype.hasOwnProperty.call(LINGUA_DOS_TITULOS, cru)
-    ? LINGUA_DOS_TITULOS[cru]
+    ? /** @type {Record<string, string | null>} */ (LINGUA_DOS_TITULOS)[cru]
     : null;
   if (declarada === null) return null;
   if (declarada === lang) return null;
@@ -224,11 +227,14 @@ export const LINGUA_DOS_ROTULOS = {
  * `en` quando o rótulo está numa língua que não é a da página, `null` quando é
  * a da página ou quando não há declaração. Um rótulo sem declaração não ganha
  * marca nenhuma, e não é um silêncio: é `scripts/check-lingua.mjs` que o vê.
+ *
+ * @param {unknown} rotulo
+ * @param {string} [lang]
  */
 export function linguaDoRotuloDaFonte(rotulo, lang = 'pt') {
   const cru = rotulo === null || rotulo === undefined ? '' : String(rotulo);
   const declarada = Object.prototype.hasOwnProperty.call(LINGUA_DOS_ROTULOS, cru)
-    ? LINGUA_DOS_ROTULOS[cru]
+    ? /** @type {Record<string, string | null>} */ (LINGUA_DOS_ROTULOS)[cru]
     : null;
   if (declarada === null) return null;
   if (declarada === lang) return null;
@@ -299,11 +305,14 @@ export const LINGUA_DAS_FONTES = {
  * nome está numa língua que não é a da página, `null` quando é a da página ou
  * quando não há declaração. Um nome sem declaração não ganha marca nenhuma, e
  * `scripts/check-lingua.mjs` fecha a construção quando um chega sem ela.
+ *
+ * @param {unknown} fonte
+ * @param {string} [lang]
  */
 export function linguaDaFonte(fonte, lang = 'pt') {
   const cru = fonte === null || fonte === undefined ? '' : String(fonte);
   const declarada = Object.prototype.hasOwnProperty.call(LINGUA_DAS_FONTES, cru)
-    ? LINGUA_DAS_FONTES[cru]
+    ? /** @type {Record<string, string | null>} */ (LINGUA_DAS_FONTES)[cru]
     : null;
   if (declarada === null) return null;
   if (declarada === lang) return null;
@@ -439,11 +448,14 @@ export const LINGUA_DAS_EDICOES = {
  * `null` quando é a da página, quando a edição não está em língua nenhuma, e
  * quando não há declaração. Os três `null` querem dizer coisas diferentes, e é
  * `scripts/check-lingua.mjs` que os separa: o terceiro fecha a construção.
+ *
+ * @param {unknown} edicao
+ * @param {string} [lang]
  */
 export function linguaDaEdicao(edicao, lang = 'pt') {
   const cru = edicao === null || edicao === undefined ? '' : String(edicao);
   if (!Object.prototype.hasOwnProperty.call(LINGUA_DAS_EDICOES, cru)) return null;
-  const declarada = LINGUA_DAS_EDICOES[cru];
+  const declarada = /** @type {Record<string, string | null>} */ (LINGUA_DAS_EDICOES)[cru];
   if (declarada === null) return null;
   if (declarada === lang) return null;
   return declarada === 'pt' ? 'pt-PT' : 'en';

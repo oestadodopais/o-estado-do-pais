@@ -639,7 +639,11 @@ const EVORA = {
  */
 export const MUNICIPIOS_COM_PAGINA = [EVORA, ...entradasGeradas([EVORA.slug])];
 
-/** O município deste slug, ou null. */
+/**
+ * O município deste slug, ou null.
+ *
+ * @param {string} slug
+ */
 export function municipioPorSlug(slug) {
   return MUNICIPIOS_COM_PAGINA.find((m) => m.slug === slug) ?? null;
 }

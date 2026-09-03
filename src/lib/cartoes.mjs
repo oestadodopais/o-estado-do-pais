@@ -108,21 +108,29 @@ export const PASTA = 'cartoes';
  * propósito: quem lê `dist/cartoes/` sabe de que página é cada ficheiro sem
  * abrir nada, e o portão reconstrói o nome a partir da rota da página que está
  * a conferir.
+ *
+ * @param {string} rota
  */
 export function slugDaRota(rota) {
   const limpo = String(rota).replace(/^\/+/, '').replace(/\/+$/, '');
   return limpo === '' ? 'inicio' : limpo.replace(/\//g, '-');
 }
 
+/** @param {{ rota: string, lang: string, largura: number, altura: number, extensao?: string }} args */
 export function nomeDoCartao({ rota, lang, largura, altura, extensao = 'png' }) {
   return `${slugDaRota(rota)}.${lang}.${largura}x${altura}.${extensao}`;
 }
 
+/** @param {{ rota: string, lang: string, largura: number, altura: number, extensao?: string }} args */
 export function caminhoDoCartao(args) {
   return `/${PASTA}/${nomeDoCartao(args)}`;
 }
 
-/** O endereço absoluto, que é o que uma etiqueta `og:image` tem de levar. */
+/**
+ * O endereço absoluto, que é o que uma etiqueta `og:image` tem de levar.
+ *
+ * @param {{ rota: string, lang: string, largura: number, altura: number, extensao?: string }} args
+ */
 export function urlDoCartao(args) {
   return canonicalUrl(caminhoDoCartao(args));
 }
@@ -136,9 +144,12 @@ export function urlDoCartao(args) {
  * nada. A página de conjunto continua a levar o cartão da primeira página, como
  * levava — o que muda com esta decisão são as páginas de LINHA do estudo, e mais
  * nada.
+ *
+ * @param {string | null} study
+ * @param {string} lang
  */
 function cartaoDoEstudo(study, lang) {
-  const conjunto = ESTUDOS_DE_DADOS.get(study);
+  const conjunto = ESTUDOS_DE_DADOS.get(/** @type {string} */ (study));
   if (!conjunto) return null;
   return { tipo: 'estudo', id: study, rota: routePath(conjunto, lang), lang };
 }
@@ -155,6 +166,9 @@ function cartaoDoEstudo(study, lang) {
  * pergunta faz-se à linha, no campo `study`, e não ao nome da rota: é a linha
  * que declara de que estudo é, e um recorte do id daria a resposta errada em
  * silêncio.
+ *
+ * @param {string} caminho
+ * @param {string} lang
  */
 export function cartaoDaPagina(caminho, lang) {
   const rota = matchPath(caminho);
@@ -180,9 +194,13 @@ export function cartaoDaPagina(caminho, lang) {
  * A lista das rotas servidas não é decorativa: entra no registo de cada cartão,
  * e é assim que o registo diz, sem que ninguém tenha de o adivinhar, que a
  * Agenda e o Método levam o cartão da primeira página.
+ *
+ * @param {{ caminho: string, lang: string }[]} rotasDoSitio
  */
 export function cartoesAConstruir(rotasDoSitio) {
+  /** @type {Map<string, { tipo: string, id: string | null, rota: string, lang: string, cobre: string[] }>} */
   const cartoes = new Map();
+  /** @param {{ tipo: string, id: string | null, lang: string }} c */
   const chave = (c) => `${c.tipo}:${c.id ?? ''}:${c.lang}`;
 
   for (const lang of LANGS) {
@@ -223,6 +241,10 @@ export function cartoesAConstruir(rotasDoSitio) {
  * registo: um valor sem unidade e sem período é um número solto, que é
  * exactamente o que um cartão de partilha não pode ser.
  */
+/**
+ * @param {Linha} claim
+ * @param {string} campo
+ */
 function valorDaLinha(claim, campo) {
   return {
     texto: String(claim[campo]),
@@ -234,6 +256,10 @@ function valorDaLinha(claim, campo) {
   };
 }
 
+/**
+ * @param {Record<string, ChaveDaProva>} p
+ * @param {string} chave
+ */
 function valorDaProva(p, chave) {
   return {
     texto: String(p[chave].valor),
@@ -257,6 +283,8 @@ function valorDaProva(p, chave) {
  * §5 do plano põe-na no CARTÃO — que é outra superfície e outro problema: no
  * cartão não há peças onde o marcador de cada medida possa viver, e sem a fila o
  * cartão diria a contagem sem mostrar de que tamanho é o painel.
+ *
+ * @param {Lingua} lang
  */
 function modeloDoInicio(lang) {
   const s = t(lang);
@@ -324,6 +352,9 @@ function modeloDoInicio(lang) {
  * buscar. Uma linha fora do painel não tem limiar publicado e o cartão diz-lhe
  * «sem limiar», que é a palavra do vocabulário fechado para isso. Nunca se
  * infere um limiar.
+ *
+ * @param {string} id
+ * @param {Lingua} lang
  */
 function modeloDaLinha(id, lang) {
   const s = t(lang);
@@ -382,6 +413,9 @@ function modeloDaLinha(id, lang) {
  * `valores` fica vazia e a conferência dos algarismos do portão continua a
  * morder: o que ela exige é que nenhum algarismo da cópia visível fique sem
  * origem, e a maneira mais segura de o cumprir é não ter algarismo nenhum.
+ *
+ * @param {string} id
+ * @param {Lingua} lang
  */
 function modeloDoEstudo(id, lang) {
   const s = t(lang);
@@ -404,7 +438,11 @@ function modeloDoEstudo(id, lang) {
   };
 }
 
-/** O modelo de um cartão, seja de que tipo for. */
+/**
+ * O modelo de um cartão, seja de que tipo for.
+ *
+ * @param {{ tipo: string, id: string, lang: Lingua }} cartao
+ */
 export function modeloDoCartao({ tipo, id, lang }) {
   if (tipo === 'linha') return modeloDaLinha(id, lang);
   if (tipo === 'estudo') return modeloDoEstudo(id, lang);
@@ -419,6 +457,9 @@ export function modeloDoCartao({ tipo, id, lang }) {
  * dos valores declarados**. Um cartão pode dizer palavras que a página diz;
  * não pode dizer um número que ninguém consegue reconduzir a uma linha ou a
  * uma chave da prova.
+ *
+ * @param {Record<string, any>} modelo
+ * @param {string} hospedeiro
  */
 export function copiaVisivel(modelo, hospedeiro) {
   const partes = [modelo.marca, modelo.sobrancelha, modelo.manchete];

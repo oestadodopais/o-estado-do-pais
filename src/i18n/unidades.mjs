@@ -216,11 +216,16 @@ export const UNIDADES_EM_PORTUGUES = {
  * `[a verificar]` não tem unidade nenhuma para traduzir, e o marcador tem a sua
  * própria forma nas duas edições (`CampoDaLinha`). O marcador não é uma unidade
  * do livro-razão e não entra nem no dicionário nem na lista das que ficam.
+ *
+ * @param {unknown} unit
+ * @param {string} [lang]
  */
 export function unidadeDaLinha(unit, lang = 'pt') {
   const cru = unit === null || unit === undefined ? '' : String(unit);
   if (lang !== 'en') return { texto: cru, lingua: 'pt-PT' };
-  const traduzida = Object.prototype.hasOwnProperty.call(UNIDADES, cru) ? UNIDADES[cru] : null;
+  const traduzida = Object.prototype.hasOwnProperty.call(UNIDADES, cru)
+    ? /** @type {Record<string, string>} */ (UNIDADES)[cru]
+    : null;
   if (traduzida === null) return { texto: cru, lingua: 'pt-PT' };
   return { texto: traduzida, lingua: null };
 }

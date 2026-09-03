@@ -42,6 +42,7 @@ export const PRIMARY_LANG = 'pt';
  * nas duas línguas, que o selo é a porta para a linha, e sem esta rota a
  * promessa era falsa (auditoria de 13.08.2026, F1).
  */
+/** @type {Record<string, Record<string, string>>} */
 export const ROUTES = {
   home: { pt: '/', en: '/en' },
   /**
@@ -323,6 +324,7 @@ export function alternatesFor(path) {
 export function otherLanguagePath(path, currentLang) {
   const hit = matchPath(path);
   if (!hit) return currentLang === 'pt' ? ROUTES.home.en : ROUTES.home.pt;
-  const other = LANGS.find((l) => l !== currentLang);
+  /* `LANGS` tem duas entradas e no máximo uma é a corrente: a outra existe. */
+  const other = /** @type {string} */ (LANGS.find((l) => l !== currentLang));
   return routePath(hit.key, other, hit.params);
 }

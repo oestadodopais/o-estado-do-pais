@@ -28,8 +28,8 @@ import { ladosDoLimiar } from '../data/figuras.mjs';
 /**
  * O estado de uma medida do painel contra o limiar que o quadro publica.
  *
- * @param {{ value?: any }|null|undefined} claim  a linha do livro-razão
- * @param {{ nl: string, sinal?: string, lado?: 'superior'|'inferior' }|null|undefined} limiar
+ * @param {Linha|null|undefined} claim  a linha do livro-razão
+ * @param {Limiar|null|undefined} limiar
  * @returns {'fora'|'dentro'|'sem'|null}
  *
  *   `'sem'`     não há limiar publicado para esta medida. É um estado, e
@@ -154,6 +154,9 @@ export function estadoDaRegua(claim, referencia) {
  *
  * Devolve `{ min, max }` como números; quem escreve os rótulos é o gabarito,
  * pela mesma função de escrita da casa.
+ *
+ * @param {number | null} valor
+ * @param {number | (number | null)[] | null | undefined} referencia
  */
 export function escalaDaRegua(valor, referencia) {
   if (valor === null || referencia === null || referencia === undefined) return null;
@@ -163,8 +166,10 @@ export function escalaDaRegua(valor, referencia) {
      e não se desenha. */
   const refs = (Array.isArray(referencia) ? referencia : [referencia]).filter((r) => r !== undefined);
   if (!refs.length || refs.some((r) => r === null || !Number.isFinite(r))) return null;
-  const lo = Math.min(0, valor, ...refs);
-  const hi = Math.max(0, valor, ...refs);
+  /* A linha acima já regressou se alguma referência não for um número finito. */
+  const numeros = /** @type {number[]} */ (refs);
+  const lo = Math.min(0, valor, ...numeros);
+  const hi = Math.max(0, valor, ...numeros);
   const amplitude = hi - lo;
   if (!(amplitude > 0)) return null;
 
@@ -186,6 +191,7 @@ export function escalaDaRegua(valor, referencia) {
   /* Em vírgula flutuante, `Math.floor(-50.2 / 10) * 10` é seguro, mas
      `0.1 * 3` não é: as pontas passam por `arredonda()` para que um passo
      decimal não escreva «19,999999999999996» no rótulo da escala. */
+  /** @param {number} n */
   const arredonda = (n) => Number(n.toFixed(10));
   let min = arredonda(Math.floor(lo / passo) * passo);
   let max = arredonda(Math.ceil(hi / passo) * passo);
@@ -201,6 +207,9 @@ export function escalaDaRegua(valor, referencia) {
  * É geometria de desenho, e não um valor: o que sai daqui vai para um atributo
  * de SVG (`x`, `x1`), nunca para texto. Fica presa ao intervalo para que um
  * valor fora da escala não desenhe fora da caixa.
+ *
+ * @param {number | null} n
+ * @param {{ min: number, max: number } | null | undefined} escala
  */
 export function posicaoNaRegua(n, escala) {
   if (!escala || n === null) return null;

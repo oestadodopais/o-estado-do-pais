@@ -47,13 +47,18 @@ export const CAMPOS_DE_PROVENIENCIA = [
   'excerpt',
 ];
 
+/** @type {Record<string, ParDeLinguas>} */
 export const KIND_LABELS = {
   correcao: { pt: 'correção', en: 'correction' },
   atualizacao: { pt: 'atualização', en: 'update' },
   proveniencia: { pt: 'revisão de proveniência', en: 'provenance revision' },
 };
 
-/** Todas as formas que o portão aceita ver renderizadas para uma natureza. */
+/**
+ * Todas as formas que o portão aceita ver renderizadas para uma natureza.
+ *
+ * @param {string} kind
+ */
 export function renderizacoesAceites(kind) {
   const labels = KIND_LABELS[kind];
   if (!labels) return [];

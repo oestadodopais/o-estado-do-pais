@@ -42,12 +42,17 @@ export const DADOS = {
   municipios: '/dados/municipios-308.csv',
 };
 
-/** Escape RFC 4180. Fim de linha LF, como todo o resto do repositório. */
+/**
+ * Escape RFC 4180. Fim de linha LF, como todo o resto do repositório.
+ *
+ * @param {unknown} v
+ */
 function campo(v) {
   const s = String(v ?? '');
   return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
 }
 
+/** @param {unknown[]} campos */
 function linha(campos) {
   return campos.map(campo).join(',');
 }
@@ -69,6 +74,8 @@ function linha(campos) {
  * dados mudaram sempre que o sítio é reconstruído, que é falso. Quem quiser
  * saber de quando é cada valor tem, em cada linha, o id da afirmação e a sua
  * data de referência.
+ *
+ * @param {string} titulo
  */
 function preambulo(titulo) {
   return [

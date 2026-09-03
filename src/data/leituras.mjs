@@ -462,5 +462,5 @@ export function temLeitura(id) {
 
 /** A leitura de um trabalho, ou null. @param {string} id */
 export function leituraDe(id) {
-  return temLeitura(id) ? LEITURAS[id] : null;
+  return temLeitura(id) ? /** @type {Record<string, any>} */ (LEITURAS)[id] : null;
 }
