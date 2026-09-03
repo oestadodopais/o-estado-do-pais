@@ -321,10 +321,12 @@
    corpo da mobília e não no da manchete: eles são a porta do número, e não
    parte da frase que se lê.
 
-   O `line-height` VOLTA AO NORMAL, e é medido e não estético: a manchete corre
-   a 1,12 para as suas linhas ficarem juntas, e a 1,12 a área de toque de 44 px
-   de dois selos seguidos passa a caber uma dentro da outra. Aqui a linha é a da
-   prosa. */
+   O `line-height` VOLTA AO DA PROSA. A manchete corre a 1,12 para as suas linhas
+   ficarem juntas, que é a entrelinha de um título e não a de uma fila de alvos:
+   a área de toque de um selo mede 44 px de alto, e a 1,12 de um corpo de 13 px a
+   fila tinha 14,6 px de altura de linha para as segurar. Medido no que ficou: os
+   dois selos da manchete do domínio a 390 medem 52,5 × 44 px (61 × 44 na edição
+   inglesa) e não se sobrepõem. */
 .manchete-selos {
   display: flex;
   flex-wrap: wrap;
@@ -418,12 +420,13 @@
    ---------------------------------------------------------------------------
    Uma fila, uma porta. Vive dentro de `.faixa-bloco`, que é o filho da grelha
    da cabeça onde a faixa já está, e por isso não pede colocação nova em largura
-   nenhuma. O fio de cima é o mesmo `--rule` do fio que fecha a faixa, e serve
-   para dizer que a fila é outra coisa e não um cartão que ficou de fora.
+   nenhuma. NÃO LEVA FIO NENHUM: quem a separa dos cartões é o fio que já fecha a
+   faixa (`.faixa` tem `border-block`), e um segundo fio a 6 px do primeiro eram
+   duas linhas a dizer a mesma coisa.
 
    O ALVO É A FILA INTEIRA. A ligação é um bloco com 44 px de altura mínima, que
    é o alvo da casa abaixo de 1024; não há aqui um `::after` a alargar coisa
-   nenhuma, porque a caixa já é do tamanho do alvo. */
+   nenhuma, porque a caixa já é do tamanho do alvo. Medido a 390: 354 × 44 px. */
 .inicio-estudos {
   margin: 0;
   padding-top: 6px;
@@ -520,9 +523,10 @@
    esquerda: com `justify-self: end` o rótulo fica no outro extremo da MESMA
    célula, e o cartão não ganha uma fila nem um píxel de altura.
 
-   OS DOIS NÃO SE TOCAM, e isso mede-se: a régua da faixa confere, em cada
-   cartão com rótulo, que a caixa dele não interseta a do selo. Um rótulo por
-   cima de um selo seria a etiqueta a comer a porta.
+   OS DOIS NÃO SE TOCAM, e isso mede-se: a célula A13 de `tests/inicio/porta.mjs`
+   confere, em cada cartão com rótulo, que a caixa dele não interseta a do selo
+   daquele cartão. Um rótulo por cima de um selo seria a etiqueta a comer a
+   porta, e uma célula que só contasse rótulos não o via.
 
    12 px E NÃO 11,5, pela mesma razão que a posição do cartão: o achado D4 conta
    texto abaixo de 12 px como defeito, e uma cadeia nova não entra abaixo do
