@@ -94,16 +94,27 @@ const NOME_DA_PARCELA = { continente: s.inicio.mapa.continente };
  * selector lê a árvore e não a caixa.
  */
 const alvos = paisDoMapa().unidades.map((u) => u.slug);
+/* A RAIZ DO PAR PASSOU A SER O DOCUMENTO (F1.1, 03.09.2026).
+   Era `.cabeca-grelha`, porque a lista dos nomes e o mapa viviam os dois dentro
+   dela. Com a lista a passar a uma banda de largura inteira FORA da grelha (item
+   4 do brief; a razão medida está em `CabecaDoLugar.astro`), o `:has()` da
+   grelha deixou de ver os nomes e as vinte e nove marcas de estado deixaram de
+   acender nos dois sentidos: a régua `tests/inicio/lista.mjs` (L6a a L6d e L7)
+   contou 29 falhas de 29.
+
+   `:root` é a raiz que contém sempre os dois lados, seja qual for a arrumação da
+   cabeça, e não alarga o que a regra apanha: o que a torna precisa é o PAR de
+   atributos, que continua a ser o mesmo slug dos dois lados. */
 const paraOMapa = alvos
   .map(
     (slug) =>
-      `.cabeca-grelha:has([data-lista-porta="${slug}"]:is(:hover,:focus-visible)) .uni[data-unidade="${slug}"]`,
+      `:root:has([data-lista-porta="${slug}"]:is(:hover,:focus-visible)) .uni[data-unidade="${slug}"]`,
   )
   .join(',');
 const paraALista = alvos
   .map(
     (slug) =>
-      `.cabeca-grelha:has([data-uni-porta="${slug}"]:is(:hover,:focus-visible)) [data-lista-porta="${slug}"]`,
+      `:root:has([data-uni-porta="${slug}"]:is(:hover,:focus-visible)) [data-lista-porta="${slug}"]`,
   )
   .join(',');
 const parDeEstado =
