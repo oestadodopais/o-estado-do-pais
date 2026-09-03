@@ -35,6 +35,12 @@ export const STRINGS = {
     nav: {
       inicio: 'Início',
       municipios: 'Municípios',
+      /* «Domínios» entra no rodapé no commit em que as páginas dos domínios
+         ganham porta comum (bloco F1.2, segunda passagem, 03.09.2026). A mesma
+         razão das «Áreas» ao lado: o rodapé é o índice do sítio, e uma família
+         de páginas que existe e não está nele é uma família sem porta comum. O
+         menu do cabeçalho fica para depois do F1.1. */
+      dominios: 'Domínios',
       /* «Áreas» entra no rodapé no commit em que as páginas das áreas são
          construídas. O rodapé é o índice do sítio (ver `SiteFooter.astro`), e
          uma família de páginas que existe e não está nele é uma família sem
@@ -852,6 +858,80 @@ export const STRINGS = {
          `home.instr1.glanceUnidade`, que é a mesma do instrumento. */
       distanciaUnidade: 'pontos do índice',
       voltarIndice: 'As regiões de Portugal',
+      voltarPais: 'Portugal',
+    },
+
+    /**
+     * OS DOMÍNIOS DA CARTA (bloco F1.2, 03.09.2026).
+     *
+     * O nome de cada domínio não está aqui: está em `src/data/dominios.mjs`,
+     * como o da região está em `regioes.mjs` e o da área em `areas.mjs`. O que
+     * está aqui é a mobília à volta dele, e as palavras da manchete que não são
+     * algarismos.
+     *
+     * A LEDE NÃO EXISTE, e é a mesma razão das áreas: uma frase que dissesse o
+     * que um domínio é, ou quantos o sítio cobre, seria o sítio a explicar-se
+     * (Emenda 15). O índice diz os nomes e o estado de cada um; a página diz a
+     * fronteira, que é conteúdo e não método.
+     *
+     * O ESTADO DE UM DOMÍNIO É VOCABULÁRIO FECHADO, como o de cobertura de um
+     * concelho: três cadeias, declaradas uma vez, e a marca `data-dominio-estado`
+     * para que a régua da voz as conte por conta própria em vez de as ler como
+     * prosa nova em dezoito linhas.
+     */
+    dominios: {
+      metaTitle: 'Domínios · O Estado do País',
+      /* A DESCRIÇÃO NÃO FALA DO SÍTIO (Emenda 15). A primeira redação nomeava a
+         casa a si própria («… sobre as quais este obs…»), e o portão da voz
+         apanhou-a pelo marcador da autorreferência: a descrição do `<head>` é
+         superfície pública desde a etapa 3, e o que ela diz é o que a página
+         tem, não quem a publica. */
+      metaDescription:
+        'As áreas da vida do país com medidas publicadas, e as que ainda não têm medidas conferidas.',
+      eyebrow: 'Domínios',
+      h1: 'Por domínio',
+      estadoNoAr: 'no ar',
+      estadoDentroDe: 'as medidas estão em',
+      estadoSem: 'ainda sem medidas conferidas',
+      vagaPrimeira: 'primeira vaga',
+      vagaSegunda: 'segunda vaga',
+      vagaTerceira: 'terceira vaga',
+      metaCauda: 'domínio · O Estado do País',
+      metaDescricaoA: 'As medidas de ',
+      metaDescricaoB: ', com a fonte, o período e a data de cada uma.',
+      tipo: 'domínio da carta dos conteúdos',
+      fronteiraK: 'A fronteira deste domínio',
+      ausenciaK: 'Sem número público',
+      ausenciaResposta: 'Não há número público para isto.',
+      ausenciaProcurado: 'procurado em',
+      /* Os três rótulos das três datas. São nomes de campos do livro-razão, e a
+         página da linha já lhes chama assim: «período», «lido», «conferido». */
+      dataPeriodo: 'período',
+      dataLido: 'lido',
+      dataConferido: 'conferido',
+      fonteK: 'fonte',
+      mapaSemValor: 'sem valor publicado',
+      mapaMenosDe: 'menos de ',
+      mapaA: ' a ',
+      mapaOuMais: ' ou mais',
+      /* A NOTA DA ESCALA (segunda passagem, 03.09.2026, Blocking 3). Só se
+         rende no mapa cuja paleta é `escala`: as suas classes são marcas
+         redondas na unidade da medida, e não um limiar publicado, ao contrário
+         do mapa cuja paleta é `limiar` (o índice de dívida contra o teto
+         legal), que fica ao lado dele com a mesma forma visual. Sem a frase, a
+         diferença entre as duas paletas só se lê pela cor. */
+      mapaEscalaNota: 'As classes são marcas redondas da escala, e não um limite oficial.',
+      porConcelhoPorta: 'Os valores concelho a concelho →',
+      /* A ALTERNATIVA EM TEXTO DO MAPA, DENTRO DA PÁGINA (segunda passagem,
+         03.09.2026, Major 7): uma tabela com os valores de cada concelho,
+         recolhida na própria página e não só uma porta para outro sítio. SEM
+         ALGARISMO: uma contagem escrita aqui seria um número da casa sem
+         `data-prova`, e o `<details>` já diz «concelho a concelho», que é o
+         que a tabela é. */
+      mapaTabelaAbrir: 'Os valores, concelho a concelho',
+      mapaTabelaConcelho: 'Concelho',
+      mapaTabelaValor: 'Valor',
+      voltarIndice: 'Os domínios',
       voltarPais: 'Portugal',
     },
 
@@ -1696,6 +1776,7 @@ export const STRINGS = {
     nav: {
       inicio: 'Home',
       municipios: 'Municipalities',
+      dominios: 'Domains',
       areas: 'Areas',
       /* As três famílias no menu. Ver a razão na edição portuguesa. */
       regioes: 'Regions',
@@ -2072,6 +2153,43 @@ export const STRINGS = {
       distanciaK: 'Distance from the EU-27 average',
       distanciaUnidade: 'index points',
       voltarIndice: 'The regions of Portugal',
+      voltarPais: 'Portugal',
+    },
+
+    dominios: {
+      metaTitle: 'Domains · O Estado do País',
+      metaDescription:
+        'The areas of the country’s life with published measures, and the ones with no verified measures yet.',
+      eyebrow: 'Domains',
+      h1: 'By domain',
+      estadoNoAr: 'live',
+      estadoDentroDe: 'the measures are in',
+      estadoSem: 'no verified measures yet',
+      vagaPrimeira: 'first wave',
+      vagaSegunda: 'second wave',
+      vagaTerceira: 'third wave',
+      metaCauda: 'domain · O Estado do País',
+      metaDescricaoA: 'The measures of ',
+      metaDescricaoB: ', with the source, the period and the dates of each one.',
+      tipo: 'domain of the content charter',
+      fronteiraK: 'What this domain covers',
+      ausenciaK: 'No published figure',
+      ausenciaResposta: 'There is no published figure for this.',
+      ausenciaProcurado: 'looked for in',
+      dataPeriodo: 'period',
+      dataLido: 'read',
+      dataConferido: 'checked',
+      fonteK: 'source',
+      mapaSemValor: 'no published value',
+      mapaMenosDe: 'less than ',
+      mapaA: ' to ',
+      mapaOuMais: ' or more',
+      mapaEscalaNota: 'The classes are round scale marks, not an official limit.',
+      porConcelhoPorta: 'The values municipality by municipality →',
+      mapaTabelaAbrir: 'The values, municipality by municipality',
+      mapaTabelaConcelho: 'Municipality',
+      mapaTabelaValor: 'Value',
+      voltarIndice: 'The domains',
       voltarPais: 'Portugal',
     },
 

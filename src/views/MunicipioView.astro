@@ -43,11 +43,14 @@ import Faixa from '../components/inicio/Faixa.astro';
 import Peca from '../components/inicio/Peca.astro';
 import MapaRespira from '../components/inicio/MapaRespira.astro';
 import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
+import BarraConcelhoPais from '../components/formas/BarraConcelhoPais.astro';
 import { municipioPorSlug } from '../data/municipios.mjs';
 import { workById, studyTitle } from '../data/studies.mjs';
 import { leituraDe } from '../data/leituras.mjs';
 import { FONTE_DIGITAL_GERADA_POR_IA } from '../data/politica-ia.mjs';
+import { medidaPelaChave } from '../data/dominios.mjs';
 import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
+import { barraConcelhoPais } from '../lib/dominios.mjs';
 import { concelhos, pecasDoConcelho } from '../lib/inicio.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -151,6 +154,31 @@ const indicePartes = temIndice
  * agora as sete, pela ordem declarada, cada uma a dizer se tem linha.
  */
 const pecas = pecasDoConcelho(m);
+
+/* ---------------------------------------------------------------------------
+ * A BARRA DO GANHO MÉDIO CONTRA O PAÍS (bloco F1.2, segunda passagem,
+ * 03.09.2026, Blocking 2)
+ * ---------------------------------------------------------------------------
+ * T3 («Ganho médio mensal») é a única das dez medidas do domínio 1 que os 308
+ * concelhos também publicam, e o brief pede a comparação lado a lado: o valor
+ * do concelho e o valor nacional, na forma 3 do `BRIEF-forma-dos-dominios.md`
+ * §3, a mesma que a página do domínio já usa. A peça do «Relance», mais acima,
+ * continua a mostrar só o valor do concelho, como as outras sete: é aqui, na
+ * leitura breve, que a comparação vive, como a distância da dívida já vive.
+ *
+ * O ID NACIONAL VEM DA DECLARAÇÃO DO DOMÍNIO, e não se escreve aqui outra vez:
+ * `medidaPelaChave('T3').claim` é `src/data/dominios.mjs`, e é a mesma linha
+ * que a página do domínio mostra. `barraConcelhoPais()` devolve `null` se um
+ * dos dois valores não for número (a mesma regra 2 de 28.08.2026 da distância
+ * da dívida), e por isso o bloco não se rende num concelho cuja linha falte. */
+const ganhoTile = pecas.find((t) => t.chave === 'ganho' && !t.vazia);
+const ganhoPaisId = medidaPelaChave('T3')?.claim ?? null;
+const barraGanho =
+  ganhoTile && ganhoPaisId ? barraConcelhoPais(ganhoTile.claim, ganhoPaisId) : null;
+/* O NOME DO PAÍS NÃO É PROSA DA CASA: é o nome de um lugar, como o nome deste
+   concelho (`nome`, acima), e `BarraConcelhoPais.astro` marca os dois com
+   `data-lugar` por conta própria. */
+const NOME_DO_PAIS = 'Portugal';
 
 /* ---------------------------------------------------------------------------
  * A FAIXA DO CONCELHO (01.09.2026)
@@ -398,7 +426,7 @@ const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
    município, a linha do tempo e os trabalhos. A secção do método saiu com o G6
    de 26.08.2026, e saiu daqui também. */
 const temCorpo = Boolean(
-  m.leitura || temDistancia || m.contas || temTempo || estudos.length > 0,
+  m.leitura || temDistancia || barraGanho || m.contas || temTempo || estudos.length > 0,
 );
 
 const metodoPath = routePath('metodo', lang);
@@ -554,13 +582,16 @@ const metodoPath = routePath('metodo', lang);
     {temCorpo && (
     <div class="municipio-corpo">
       <!-- ============================================ CAMADA 2 — LEITURA BREVE -->
-      {/* A CAMADA RENDE-SE SE TIVER CORPO (bloco dos 308, P2). São duas coisas
+      {/* A CAMADA RENDE-SE SE TIVER CORPO (bloco dos 308, P2; barra do ganho
+          acrescentada no F1.2, segunda passagem, 03.09.2026). São três coisas
           diferentes: as frases da leitura breve, que só existem onde alguém as
-          escreveu, e a distância desenhada, que existe onde há as duas linhas
-          da dívida e do limite. Sem nenhuma das duas, a secção não se rende —
-          nem título, nem caixa vazia (IDENTIDADE §7: uma página por escrever
-          declara o que lhe falta, e o que lhe falta está dito nas sete peças). */}
-      {(m.leitura || temDistancia) && (
+          escreveu; a distância desenhada, que existe onde há as duas linhas
+          da dívida e do limite; e a barra do ganho contra o país, que existe
+          onde a linha do concelho é um número. Sem nenhuma das três, a secção
+          não se rende, nem título nem caixa vazia (IDENTIDADE §7: uma
+          página por escrever declara o que lhe falta, e o que lhe falta está
+          dito nas oito peças). */}
+      {(m.leitura || temDistancia || barraGanho) && (
       <section class="linha-bloco" aria-labelledby="breve">
         <h2 class="linha-bloco-titulo" id="breve">{s.municipio.breveK}</h2>
         {/* A SUB-LINHA DA LEITURA BREVE SAIU (Emenda 15; mesma decisão de
@@ -638,6 +669,25 @@ const metodoPath = routePath('metodo', lang);
               peças escrevem-se sem espaço entre elas para que o texto rendido
               seja o mesmo de antes, carácter a carácter. */}
           <p class="mun-distancia-legenda">{s.municipio.distanciaLeiAntes}<span lang={lang === 'pt' ? undefined : 'pt-PT'}>{s.municipio.distanciaLeiDiploma}</span>{s.municipio.distanciaLeiDepois}</p>
+        </div>
+        )}
+
+        {/* A BARRA DO GANHO MÉDIO CONTRA O PAÍS (bloco F1.2, segunda passagem,
+            03.09.2026, Blocking 2): o valor deste concelho e o valor nacional,
+            lado a lado, na forma 3 do brief da forma dos domínios. É a mesma
+            comparação que a página do domínio mostra com Évora como exemplo;
+            aqui é a de cada um dos 308. */}
+        {barraGanho && (
+        <div class="mun-ganho">
+          <p class="layer-tag" id={`m-${ganhoTile.claim}-nome`} data-medida-nome>{ganhoTile.nome[lang]}</p>
+          <BarraConcelhoPais
+            lang={lang}
+            barra={barraGanho}
+            rotuloConcelho={nome}
+            rotuloPais={NOME_DO_PAIS}
+            unidade={ganhoTile.unidade[lang] ?? ganhoTile.unidade.pt}
+            nomeada={`m-${ganhoTile.claim}-nome`}
+          />
         </div>
         )}
       </section>

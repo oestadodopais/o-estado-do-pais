@@ -40,6 +40,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { MUNICIPIOS, DISTRITOS, eIlha } from './caop-centroids.mjs';
+/* O livro-razão entra aqui a 03.09.2026, e só para uma coisa: ligar as 308
+   linhas do ganho médio ao concelho de cada uma pelo código do INE. Não há ciclo
+   de importação — `src/lib/ledger.mjs` lê `studies.mjs`, `correcoes.mjs` e
+   `marcador.mjs`, e nenhum deles lê este ficheiro. */
+import { loadClaims } from '../lib/ledger.mjs';
 
 /**
  * AS SETE MEDIDAS, PELA ORDEM DA EMENDA 14.
@@ -189,7 +194,90 @@ export const MEDIDAS_DO_CONCELHO = [
       en: ['The annual list of the local-government directorate, which publishes the municipalities’ accounts data.'],
     },
   },
+  {
+    /* ------------------------------------------------------------------------
+       A OITAVA MEDIDA, E É A T3 DA CARTA (bloco F1.2, 03.09.2026)
+       ------------------------------------------------------------------------
+       O ganho médio mensal dos trabalhadores por conta de outrem, publicado pelo
+       GEP/MTSSS nos Quadros de Pessoal e redisseminado pelo INE. As 308 linhas
+       atravessaram a 01.09.2026 (DECISIONS §1.90) e ficaram no livro-razão SEM
+       PORTA: nenhuma página as citava. Passam a ser a oitava peça de cada uma
+       das 308 páginas de concelho, pela mesma disposição-padrão das outras sete.
+
+       ENTRA NO FIM E NÃO NO MEIO. A Emenda 14 fixa a ORDEM das medidas, e é ela
+       que faz da página de um concelho a mesma página que a de outro; uma medida
+       nova no meio da lista mudava a posição de todas as que estão depois dela
+       nas 616 páginas construídas. Entra depois das que já lá estavam.
+
+       A NOTA DIZ QUEM PUBLICA E O QUE CONTA. «Trabalhadores por conta de outrem
+       a tempo completo com remuneração completa» é o âmbito que a nota da
+       própria linha regista, e é o que muda a leitura do número: sem ele, um
+       leitor lê «o que se ganha no concelho». O publicador primário é o GEP do
+       Ministério do Trabalho, e o rótulo do indicador imprime-o. */
+    chave: 'ganho',
+    nome: { pt: 'Ganho médio mensal', en: 'Average monthly earnings' },
+    unidade: { pt: 'Euros por mês', en: 'Euros per month' },
+    prefixo: { pt: '', en: '' },
+    ref: '2024',
+    nota: {
+      pt: [
+        'Quadros de Pessoal do Gabinete de Estratégia e Planeamento do Ministério do Trabalho; trabalhadores por conta de outrem a tempo completo com remuneração completa.',
+      ],
+      en: [
+        'Staff records of the labour ministry’s strategy and planning office; full-time employees on full pay.',
+      ],
+    },
+  },
 ];
+
+/**
+ * ---------------------------------------------------------------------------
+ * AS 308 LINHAS DO GANHO MÉDIO, LIGADAS PELO CÓDIGO DO INE E NÃO PELO SLUG
+ * ---------------------------------------------------------------------------
+ * O ficheiro que o motor escreve (`concelhos.gerado.json`) traz o mapa das
+ * `linhas` de cada concelho, e as do ganho médio não estão nele: atravessaram
+ * depois dele, com o bloco do primeiro domínio. Enquanto o exportador não as
+ * puser lá, resolvem-se do livro-razão.
+ *
+ * A LIGAÇÃO É O CÓDIGO GEOGRÁFICO DO INE, e não a concatenação do slug com um
+ * sufixo. O localizador de cada uma daquelas linhas escreve «INE, indicador
+ * 0012656, <nome> (código <geocod>), dados de 2024», e os quatro últimos
+ * algarismos do `geocod` são o DICO do concelho, que o ficheiro do motor declara
+ * em cada entrada. É um facto das duas pontas, conferido a cada construção; o
+ * nome do ficheiro de uma linha é uma convenção do motor, e uma convenção não é
+ * um facto.
+ *
+ * Medido a 03.09.2026: 308 de 308 concelhos ficam ligados por esta regra. Um
+ * concelho que ficasse sem linha rende a peça vazia da Emenda 14, e não um
+ * silêncio: é o que `relanceDoConcelho()` faz com um `null`.
+ *
+ * @returns {Map<string, string>}
+ */
+const LOCALIZADOR_DO_GANHO = /^INE, indicador 0012656, .+ \(código (\w+)\), dados de 2024$/;
+
+export function linhasDoGanhoPorDico() {
+  /** @type {Map<string, string>} */
+  const porDico = new Map();
+  for (const [id, linha] of loadClaims()) {
+    const documento = /** @type {{ locator?: unknown }|null} */ (
+      typeof linha.document === 'object' ? linha.document : null
+    );
+    const localizador = typeof documento?.locator === 'string' ? documento.locator : '';
+    const m = LOCALIZADOR_DO_GANHO.exec(localizador);
+    if (m === null) continue;
+    const dico = m[1].slice(-4);
+    const jaHa = porDico.get(dico);
+    if (jaHa !== undefined) {
+      throw new Error(
+        `concelhos: duas linhas do ganho médio mensal para o código ${dico} ` +
+          `("${jaHa}" e "${id}"). O código geográfico é a ligação ao concelho e tem de ` +
+          `ser único.`,
+      );
+    }
+    porDico.set(dico, id);
+  }
+  return porDico;
+}
 
 /**
  * A linha «unidade · período» de uma medida, nas duas línguas.
@@ -319,6 +407,7 @@ function carregaGerados() {
  */
 export function entradasGeradas(excluir = []) {
   const fora = new Set(excluir);
+  const ganho = linhasDoGanhoPorDico();
   return carregaGerados()
     .filter((c) => !fora.has(c.slug))
     .map((c) => {
@@ -345,7 +434,16 @@ export function entradasGeradas(excluir = []) {
         nome: { pt: c.nome, en: c.nome },
         distrito: rotuloDoDistrito(distritoDaCarta),
         caopIndex: c.caopIndex,
-        relance: relanceDoConcelho(linhas),
+        /* O DICO ATRAVESSA (bloco F1.2, 03.09.2026). É o código de município do
+           INE, que o motor já escreve em cada entrada, e é a ligação entre um
+           concelho e uma linha do livro-razão cujo localizador traz o código
+           geográfico do INE: as 308 linhas do ganho médio mensal atravessaram
+           depois deste ficheiro e não estão no mapa das `linhas`. Sem o DICO, a
+           ligação teria de ser a concatenação do slug com um sufixo, que é uma
+           regra que ninguém publicou; com ele, é um facto das duas pontas. Ver
+           `src/lib/dominios.mjs`. */
+        dico: c.dico,
+        relance: relanceDoConcelho({ ...linhas, ganho: ganho.get(c.dico) ?? null }),
         distancia: {
           valor: linhas.divida ?? null,
           limite: linhas.limite ?? null,

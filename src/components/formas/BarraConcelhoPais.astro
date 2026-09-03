@@ -1,0 +1,112 @@
+---
+/**
+ * FORMA 3 · A BARRA DO CONCELHO CONTRA O PAÍS (`BRIEF-forma-dos-dominios.md` §3).
+ *
+ * «Duas barras (o concelho, o país) com os valores escritos, e por baixo a série
+ * pequena do concelho quando exista. Só para medidas que existem para os 308.»
+ *
+ * ---------------------------------------------------------------------------
+ * A SÉRIE PEQUENA DO CONCELHO NÃO SE DESENHA, E A RAZÃO É MEDIDA
+ * ---------------------------------------------------------------------------
+ * O livro-razão tem uma linha do ganho médio mensal por concelho, do ano de
+ * 2024, e mais nenhuma: 308 linhas, um período. Uma série de um ponto não é uma
+ * série. Quando o motor atravessar o segundo ano, `serieDoPais()` em
+ * `src/lib/dominios.mjs` devolve-a e ela entra por baixo destas duas barras.
+ *
+ * ---------------------------------------------------------------------------
+ * NENHUM NÚMERO É ESCRITO AQUI
+ * ---------------------------------------------------------------------------
+ * Os dois valores são `<Claim as="text">`, e por isso são a linha do livro-razão
+ * e não texto: o portão de HTML compara os algarismos rendidos com o valor
+ * publicado. O comprimento de cada barra é a fracção do maior dos dois, contada
+ * em `src/lib/dominios.mjs` a partir dos mesmos dois valores.
+ *
+ * SEM COR. Não há aqui limiar publicado nenhum: um concelho não está «dentro» ou
+ * «fora» do país, e o cobalto quer dizer «dentro do limiar» e só isso (§1.79).
+ * As duas barras distinguem-se com fio e com o rótulo, como a distância da
+ * página do concelho.
+ *
+ * O SELO DE CADA VALOR VIVE NA LEGENDA, e não dentro do desenho: «um `<a>`
+ * dentro de um desenho não se lê como porta» (§1.34, ponto 2), e é o que
+ * `auditaSelo()` no portão exige de um valor desenhado: um `.src-chip` para
+ * aquela linha dentro de um `[data-legenda-selos]` do mesmo instrumento.
+ *
+ * A ALTERNATIVA EM TEXTO É UMA FRASE, E NÃO SÓ NOMES E SELOS (segunda
+ * passagem, 03.09.2026, Major 7). Até aqui a legenda dava os dois nomes e um
+ * selo para cada um, e os dois VALORES só existiam dentro do `<svg>`: um
+ * `role="img"` não promete a quem não vê o desenho o texto que está lá dentro.
+ * Agora a legenda é a frase «<concelho>: <valor> <unidade>; <país>: <valor>
+ * <unidade>.», com `<Claim chip={true}/>` a trazer o valor e o selo juntos,
+ * como em qualquer outra leitura do sítio. Quem não vê o desenho lê a mesma
+ * informação, na mesma página, e não uma descrição do desenho.
+ *
+ * O NOME DO DESENHO VEM DO NOME DA MEDIDA, por `aria-labelledby`, e não de uma
+ * cadeia escrita aqui. É a regra que a porta do cartão da faixa já segue: o
+ * desenho não acrescenta uma palavra ao sítio, e o que um leitor de ecrã ouve é
+ * exactamente o que está escrito por cima dele. Um `aria-label` seria uma frase
+ * nova por medida, e a régua da voz lê os `aria-label` desde a I79.
+ */
+import Claim from '../Claim.astro';
+
+const { lang, barra, rotuloConcelho, rotuloPais, unidade, nomeada } = Astro.props;
+const G = barra.campo;
+---
+
+<div class="forma forma-barra" data-instrumento="barra-concelho-pais" data-forma="barra-concelho-pais">
+  <svg
+    class="forma-svg"
+    viewBox={`0 0 ${G.W} ${barra.altura}`}
+    role="img"
+    aria-labelledby={nomeada}
+  >
+    {/* O eixo é o zero, e é a única marca de escala deste desenho: as barras
+        medem-se dele, e a régua está escrita nos dois valores. */}
+    <line x1={G.L} y1={G.y - 6} x2={G.L} y2={barra.pais.y + G.h + 6} stroke="var(--axis)" stroke-width="1" />
+
+    <rect class="forma-barra-c" x={G.L} y={barra.concelho.y} width={Math.max(barra.concelho.largura, 1)} height={G.h} />
+    <text class="tk" x={G.L + 6} y={barra.concelho.y + G.h - 6} text-anchor="start" data-lugar>{rotuloConcelho}</text>
+    <Claim
+      id={barra.concelho.id}
+      lang={lang}
+      as="text"
+      class="forma-barra-num"
+      x={Math.max(barra.concelho.largura, 1) + G.L + 8}
+      y={barra.concelho.y + G.h - 6}
+      text-anchor="start"
+    />
+
+    <rect class="forma-barra-p" x={G.L} y={barra.pais.y} width={Math.max(barra.pais.largura, 1)} height={G.h} />
+    <text class="tk" x={G.L + 6} y={barra.pais.y + G.h - 6} text-anchor="start" data-lugar>{rotuloPais}</text>
+    <Claim
+      id={barra.pais.id}
+      lang={lang}
+      as="text"
+      class="forma-barra-num"
+      x={Math.max(barra.pais.largura, 1) + G.L + 8}
+      y={barra.pais.y + G.h - 6}
+      text-anchor="start"
+    />
+  </svg>
+
+  {/* A ALTERNATIVA EM TEXTO É UMA FRASE COM OS DOIS VALORES, E NÃO SÓ OS
+      NOMES (segunda passagem, 03.09.2026, Major 7). Antes desta frase, a
+      legenda dava o nome do concelho, o nome do país e um selo para cada um
+      lá; os dois VALORES só existiam dentro do `<svg>`, e um `role="img"` não
+      promete o texto de dentro a quem não o vê. Cada valor continua a ser
+      `<Claim chip={true}/>`: a linha do livro-razão, com o seu selo ao lado,
+      não um número escrito aqui. */}
+  <p class="forma-frase" data-legenda-selos>
+    <span class="forma-selo-rot" data-lugar>{rotuloConcelho}</span>
+    {': '}
+    <Claim id={barra.concelho.id} lang={lang} chip={true} class="forma-frase-num" />
+    {' '}
+    <span data-medida-unidade>{unidade}</span>
+    {'; '}
+    <span class="forma-selo-rot" data-lugar>{rotuloPais}</span>
+    {': '}
+    <Claim id={barra.pais.id} lang={lang} chip={true} class="forma-frase-num" />
+    {' '}
+    <span data-medida-unidade>{unidade}</span>
+    {'.'}
+  </p>
+</div>
