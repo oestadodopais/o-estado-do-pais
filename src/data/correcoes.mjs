@@ -27,7 +27,7 @@
  * livro-razão falha o build.
  */
 
-export const KINDS = ['correcao', 'atualizacao', 'proveniencia'];
+export const KINDS = /** @type {const} */ (['correcao', 'atualizacao', 'proveniencia']);
 
 /** As naturezas que o registo do Método lista uma a uma. Ver RegistoCorrecoes. */
 export const KINDS_NO_REGISTO = ['correcao', 'atualizacao'];
@@ -37,7 +37,7 @@ export const KINDS_NO_REGISTO = ['correcao', 'atualizacao'];
  * `field` escrito à mão («endereço», «url») passaria a parecer um campo e não
  * seria nenhum.
  */
-export const CAMPOS_DE_PROVENIENCIA = [
+export const CAMPOS_DE_PROVENIENCIA = /** @type {const} */ ([
   'source',
   'source_url',
   'document.title',
@@ -45,7 +45,7 @@ export const CAMPOS_DE_PROVENIENCIA = [
   'document.locator',
   'access_date',
   'excerpt',
-];
+]);
 
 /** @type {Record<string, ParDeLinguas>} */
 export const KIND_LABELS = {

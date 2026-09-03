@@ -69,14 +69,14 @@ import { temRegisto } from './registos.mjs';
  * todos. A expressão corre sobre o IDENTIFICADOR da linha, que é o nome do
  * assunto dela.
  *
- * @param {Record<string, any>} area
+ * @param {(typeof AREAS)[number]} area
  * @param {string} id
  * @param {Linha} claim
  */
 function materiaDaLinha(area, id, claim) {
   for (const m of area.materias) {
     for (const r of m.regras) {
-      if (r.estudos && !r.estudos.includes(claim.study)) continue;
+      if (r.estudos && !/** @type {readonly unknown[]} */ (r.estudos).includes(claim.study)) continue;
       if (r.id.test(id)) return { materia: m.materia, artigo: m.artigo, razao: r.razao };
     }
   }
@@ -102,7 +102,7 @@ function conjuntoInterno(id) {
  * entrou. Numa medida é sempre uma; num trabalho ou num conjunto podem ser mais
  * do que uma, porque as linhas dele tratam de assuntos diferentes.
  *
- * @param {Record<string, any>} area
+ * @param {(typeof AREAS)[number]} area
  * @param {Map<string, Linha>} claims
  */
 function pecasDaArea(area, claims) {
@@ -114,8 +114,9 @@ function pecasDaArea(area, claims) {
     const m = materiaDaLinha(area, id, c);
     if (!m) continue;
 
-    if (ESTUDOS_DE_DADOS.has(c.study)) {
-      const p = conjuntos.get(c.study) ?? { id: c.study, linhas: [], materias: new Set() };
+    const estudo = typeof c.study === 'string' ? c.study : null;
+    if (estudo !== null && ESTUDOS_DE_DADOS.has(estudo)) {
+      const p = conjuntos.get(estudo) ?? { id: estudo, linhas: [], materias: new Set() };
       p.linhas.push(id);
       p.materias.add(m.materia);
       conjuntos.set(c.study, p);

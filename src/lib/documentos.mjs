@@ -789,7 +789,7 @@ function recusa(slug, lang, porque) {
  * qual vale seria a casa a decidir uma coisa do autor.
  *
  * @param {string} bruto o ficheiro tal como está em studies-src/
- * @param {{ slug: string, lang: string }} onde
+ * @param {{ slug: string, lang: Lingua }} onde
  */
 export function comMarcasDaCasa(bruto, { slug, lang }) {
   const s = t(lang);

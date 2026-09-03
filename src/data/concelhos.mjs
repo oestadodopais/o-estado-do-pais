@@ -194,13 +194,13 @@ export const MEDIDAS_DO_CONCELHO = [
 /**
  * A linha «unidade · período» de uma medida, nas duas línguas.
  *
- * @param {Record<string, any>} medida
+ * @param {{ unidade: ParDeLinguas, prefixo: ParDeLinguas, tecto?: string, tectoTexto?: ParDeLinguas }} medida
  * @param {string} ref
  */
 function linhaDaMedida(medida, ref) {
   /** @param {Lingua} lang */
   const parte = (lang) => {
-    const cabeca = `${medida.unidade[lang]}${medida.tecto ? medida.tectoTexto[lang] : ''}`;
+    const cabeca = `${medida.unidade[lang]}${medida.tecto && medida.tectoTexto ? medida.tectoTexto[lang] : ''}`;
     const cauda = ` · ${medida.prefixo[lang]}`;
     return medida.tecto
       ? [cabeca, { claim: medida.tecto }, cauda, { ref }]

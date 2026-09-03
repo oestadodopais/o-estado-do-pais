@@ -47,6 +47,10 @@ export const TIPOS_DE_HISTORICO = /** @type {const} */ ([
 ]);
 
 /** @param {string} ficheiro */
+/**
+ * @param {string} ficheiro
+ * @returns {unknown}
+ */
 function leJson(ficheiro) {
   try {
     if (!fs.existsSync(ficheiro)) return null;
@@ -58,42 +62,51 @@ function leJson(ficheiro) {
   }
 }
 
-/** O registo da agenda, ou `null` se ainda não atravessou. */
+/**
+ * O registo da agenda, ou `null` se ainda não atravessou.
+ *
+ * @returns {RegistoDaAgenda | null}
+ */
 export function agendaCruzada() {
-  const cru = leJson(FICHEIRO_DA_AGENDA);
-  return Array.isArray(cru?.itens) ? cru : null;
+  const cru = /** @type {{ itens?: unknown } | null} */ (leJson(FICHEIRO_DA_AGENDA));
+  return Array.isArray(cru?.itens) ? /** @type {RegistoDaAgenda} */ (cru) : null;
 }
 
-/** O registo do calendário das fontes, ou `null`. */
+/**
+ * O registo do calendário das fontes, ou `null`.
+ *
+ * @returns {RegistoDoCalendario | null}
+ */
 export function calendarioCruzado() {
-  const cru = leJson(FICHEIRO_DO_CALENDARIO);
-  return Array.isArray(cru?.eventos) ? cru : null;
+  const cru = /** @type {{ eventos?: unknown } | null} */ (leJson(FICHEIRO_DO_CALENDARIO));
+  return Array.isArray(cru?.eventos) ? /** @type {RegistoDoCalendario} */ (cru) : null;
 }
 
 /**
  * Os itens de um estado, pela ordem do registo.
  *
  * @param {string} estado
- * @param {any} [agenda]
+ * @param {RegistoDaAgenda | null} [agenda]
  */
 export function itensDoEstado(estado, agenda = agendaCruzada()) {
-  return (agenda?.itens ?? []).filter((/** @type {any} */ i) => i?.estado === estado);
+  return (agenda?.itens ?? []).filter((i) => i?.estado === estado);
 }
 
 /**
  * Um acontecimento pelo seu id, para o critério que o nomeia.
  *
  * @param {string} id
- * @param {any} [calendario]
+ * @param {RegistoDoCalendario | null} [calendario]
  */
 export function eventoPorId(id, calendario = calendarioCruzado()) {
-  return (calendario?.eventos ?? []).find((/** @type {any} */ e) => e?.id === id) ?? null;
+  return (calendario?.eventos ?? []).find((e) => e?.id === id) ?? null;
 }
 
 /**
  * A data por que um acontecimento se ordena: a sua, ou o início da janela.
  *
- * @param {any} evento
+ * @param {EventoDoCalendario | null | undefined} evento
+ * @returns {string | null}
  */
 export function dataDoEvento(evento) {
   return evento?.data ?? evento?.janela?.inicio ?? null;
@@ -107,10 +120,10 @@ export function dataDoEvento(evento) {
  * exactamente quando não há data nem janela, e é isso que separa uma lista do
  * que vai acontecer de uma lista do que se anda à espera.
  *
- * @param {any} [calendario]
+ * @param {RegistoDoCalendario | null} [calendario]
  */
 export function eventosOrdenados(calendario = calendarioCruzado()) {
-  /** @type {any[]} */
+  /** @type {EventoDoCalendario[]} */
   const eventos = calendario?.eventos ?? [];
   const datados = eventos
     .filter((e) => dataDoEvento(e))

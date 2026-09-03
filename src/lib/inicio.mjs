@@ -152,7 +152,7 @@ export function coberturaDistingue(lista) {
 export function concelhos() {
   const paginaPorIndice = new Map(MUNICIPIOS_COM_PAGINA.map((m) => [m.caopIndex, m]));
   const slugs = slugsDaCarta();
-  /** @type {{ i: number, nome: string, distrito: string, ilha: boolean, x: number, y: number, slug: string, normal: string, pagina: any, alvo?: number }[]} */
+  /** @type {{ i: number, nome: string, distrito: string, ilha: boolean, x: number, y: number, slug: string, normal: string, pagina: (typeof MUNICIPIOS_COM_PAGINA)[number] | null, alvo?: number }[]} */
   const base = MUNICIPIOS.map((m, i) => ({
     i,
     nome: m[0],
@@ -210,12 +210,12 @@ export function concelhos() {
  * cada uma com `vazia` a dizer se tem linha. Quem rende decide o que fazer com
  * isso, e é uma peça só nos dois casos.
  *
- * @param {Record<string, any>} municipio  o registo de `municipios.mjs`
+ * @param {(typeof MUNICIPIOS_COM_PAGINA)[number]} municipio  o registo de `municipios.mjs`
  */
 export function pecasDoConcelho(municipio) {
   const alvo = municipio.distancia ?? {};
   return municipio.relance
-    .map((/** @type {Record<string, any>} */ medida) => {
+    .map((medida) => {
       if (!medida.claim) return { ...medida, vazia: true, linha: null, derivada: false, estado: 'sem', colore: false, regua: null };
       const linha = getClaim(medida.claim);
       /* A NOTA DE UMA MEDIDA CALCULADA LÊ-SE DA LINHA (Emenda 15, commit 3-0), e
@@ -332,8 +332,8 @@ export function nomeEmFrase(nome) {
 }
 
 /**
- * @param {any[]} medidas  as peças do painel, já com `estado` e `linha`
- * @param {Record<string, any>} gramatica  `s.inicio.cabeca.ledePais` da edição
+ * @param {MedidaDoPainel[]} medidas  as peças do painel, já com `estado` e `linha`
+ * @param {GramaticaDoLede} gramatica  `s.inicio.cabeca.ledePais` da edição
  * @param {'pt'|'en'} lang
  * @returns {{ itens: string[], nomes: string[], ano: string|null, cauda: any[] } | null}
  */
@@ -353,7 +353,15 @@ export function ledeDoPainel(medidas, gramatica, lang) {
     itens.push(nome);
   });
 
-  const anos = new Set(fora.map((m) => m.linha?.reference_date).filter(Boolean));
+  /* A data de referência de uma linha é o que o ficheiro trouxer: pergunta-se
+     se é texto antes de a pôr na frase. O conjunto guarda o mesmo que guardava
+     (o `filter(Boolean)` já deitava fora o vazio e o ausente). */
+  /** @type {Set<string>} */
+  const anos = new Set();
+  for (const m of fora) {
+    const d = m.linha?.reference_date;
+    if (typeof d === 'string' && d !== '') anos.add(d);
+  }
   const ano = anos.size === 1 ? [...anos][0] : null;
 
   return {

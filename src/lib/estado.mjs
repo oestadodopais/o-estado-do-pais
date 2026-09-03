@@ -102,8 +102,8 @@ export function estadoDaMedida(claim, limiar) {
  * compra: o sítio sabe de que lado da média o concelho está, e desenha-o a
  * tinta.
  *
- * @param {{ value?: any }|null|undefined} claim
- * @param {{ valor: string|number, lado: 'superior'|'inferior', colore: boolean }} referencia
+ * @param {Linha|null|undefined} claim
+ * @param {{ valor: unknown, lado: 'superior'|'inferior', colore: boolean }} referencia
  * @returns {{ estado: 'fora'|'dentro'|null, colore: boolean }}
  */
 export function estadoDaRegua(claim, referencia) {

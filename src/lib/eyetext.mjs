@@ -233,12 +233,14 @@ export class Falha extends Error {}
  *
  * `no` é um nó do `node-html-parser`, e a árvore mistura elementos com texto:
  * o percurso pergunta ao nó o que ele é antes de lhe pedir o que quer que seja.
+ * O `getAttribute` só existe nos elementos, e é por isso que se pergunta com
+ * `?.` em vez de se afirmar que ele lá está.
  *
- * @param {any} no
+ * @param {import('node-html-parser').Node} no
  * @param {string} classe
  */
 function temClasse(no, classe) {
-  const bruto = no.getAttribute?.('class');
+  const bruto = /** @type {import('node-html-parser').HTMLElement} */ (no).getAttribute?.('class');
   if (!bruto) return false;
   return String(bruto).split(/[\t\n\f\r ]+/).includes(classe);
 }
@@ -253,7 +255,7 @@ function temClasse(no, classe) {
  * o entrega desde 24.08.2026: entregue depois, ficava a pairar para o elemento
  * de linha seguinte, e as ligações do documento perdiam-se todas.
  *
- * @param {any} raiz um nó do `node-html-parser`
+ * @param {import('node-html-parser').Node} raiz um nó do `node-html-parser`
  * @returns {[string, string][]}
  */
 function eventos(raiz) {
@@ -261,7 +263,7 @@ function eventos(raiz) {
   const saida = [];
   let saltadas = 0;
 
-  /** @param {any} no */
+  /** @param {import('node-html-parser').Node | undefined} no */
   const anda = (no) => {
     if (!no) return;
     if (no.nodeType === NodeType.TEXT_NODE) {
@@ -278,7 +280,9 @@ function eventos(raiz) {
     if (temClasse(no, 'src-chip')) return;
 
     if (tag === 'a') {
-      const href = no.getAttribute('href');
+      /* A esta altura o nó é um elemento: a linha do `nodeType` acima já
+         regressou para tudo o que não seja um, e só um elemento tem etiqueta. */
+      const href = /** @type {import('node-html-parser').HTMLElement} */ (no).getAttribute('href');
       if (href) saida.push(['endereco', href]);
     }
     saida.push(['abre', tag]);

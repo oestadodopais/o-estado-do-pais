@@ -36,7 +36,7 @@ import { loadClaims } from './ledger.mjs';
 /**
  * As afirmações que uma entrada precisa de ter publicadas para se desenhar.
  *
- * @param {Record<string, any>} r
+ * @param {(typeof REGIOES)[number]} r
  * @param {Map<string, Linha>} claims
  */
 function temLinhas(r, claims) {
