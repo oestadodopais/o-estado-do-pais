@@ -82,6 +82,32 @@ const {
   regua = null,
   ambito = null,
   selosNaMedida = false,
+  /* ---------------------------------------------------------------------
+     `valor` APAGA O NÚMERO E MAIS NADA (F1.1, item 2, 03.09.2026)
+     ---------------------------------------------------------------------
+     A primeira página imprimia cada um dos 21 valores DUAS VEZES: uma no
+     cartão da faixa, que é o «Relance», e outra na peça do painel, que é a
+     «Leitura breve» da mesma medida. Não eram duas leituras de coisas
+     diferentes: era o mesmo algarismo, com o mesmo selo, a 4 000 px de
+     distância, e é o que o brief chama «o painel de baixo é uma segunda cópia
+     da faixa».
+
+     O QUE SAI É O ALGARISMO, e não a leitura. A peça continua a dizer a palavra
+     do estado, o limiar publicado e de que lado dele o valor está, o nome, a
+     unidade, a definição da medida, a régua contra o limiar e o recibo. O valor
+     está no cartão, que é a porta que traz o leitor até aqui.
+
+     É UMA PROPRIEDADE E NÃO UMA REGRA, porque a peça serve três páginas e a
+     duplicação é da primeira: quem decide é a vista que rende as duas
+     superfícies. `MunicipioView` e `RegiaoView` não passam nada e ficam como
+     estavam — as suas faixas são de outro bloco (F1.2), e mudá-las daqui era
+     mexer numa página de que este bloco não é dono.
+
+     A RÉGUA CONTINUA `aria-hidden`, e a razão dela continua de pé: tudo o que
+     ela desenha está escrito ao pé dela em palavras validadas — o limiar com o
+     seu motivo, a palavra do estado, as pontas da escala — e o valor está na
+     mesma página, no cartão que abre esta leitura. */
+  valor = true,
 } = Astro.props;
 
 const PALAVRA = {
@@ -208,7 +234,9 @@ const simbolo = limiar?.simbolo ?? '%';
       nenhum: `Claim.astro` deixou de ter «pt» por defeito e a construção pára
       quando a língua falta (ISSUES I24, fechado). Esta chamada era um dos sete
       lugares que rendiam «provisório» em português na edição inglesa. */}
-  <Claim id={id} lang={lang} class="peca-valor" as="div" style={`--peca-corpo:${corpo}`} />
+  {valor && (
+    <Claim id={id} lang={lang} class="peca-valor" as="div" style={`--peca-corpo:${corpo}`} />
+  )}
   <p class="peca-unidade" data-medida-unidade><Frase partes={medida} lang={lang} selos={selosNaMedida} /></p>
   <h3 class="peca-nome" data-medida-nome>{nome}</h3>
   {frase && <p class="peca-frase"><Frase partes={frase} lang={lang} selos={true} /></p>}
