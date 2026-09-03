@@ -33,11 +33,25 @@
  * As frases são sobre a MEDIDA e não sobre o sítio, e é por isso que a Emenda 15
  * não lhes toca: dizem o que a coisa é, e não o que a casa fez.
  */
-import Claim from '../Claim.astro';
 import Frase from '../Frase.astro';
+import Provenance from '../Provenance.astro';
 import ValorDaProva from '../ValorDaProva.astro';
 
-const { s, lang, p, medidas, porta } = Astro.props;
+/* ---------------------------------------------------------------------------
+ * O VALOR SAIU DESTA LINHA (F1.1, item 2, 03.09.2026)
+ * ---------------------------------------------------------------------------
+ * Pela mesma razão que saiu da peça do Procedimento, e está escrita por extenso
+ * em `Peca.astro`: cada uma das oito medidas do Painel Social aparecia com o seu
+ * algarismo no cartão da faixa e outra vez aqui, e o brief manda os 21 valores
+ * uma vez só fora das páginas de linha. Fica a leitura: o nome, a unidade, a
+ * fonte, a definição da medida e o recibo.
+ *
+ * O SELO FICA, E É ELE QUE ERA O RECIBO. Vinha dentro do `<Claim chip>` que
+ * rendia o valor; sem valor, continua a ser preciso, porque a porta para a linha
+ * daquela medida é o que faz desta lista uma leitura e não uma legenda. É o
+ * mesmo `<Provenance>` que a peça do Procedimento tem no pé.
+ */
+const { s, lang, p, medidas, porta, contexto = null } = Astro.props;
 ---
 
 <section class="social" id="painel-social">
@@ -53,6 +67,14 @@ const { s, lang, p, medidas, porta } = Astro.props;
     {s.inicio.social.tituloFim}
   </h2>
 
+  {/* A frase de contexto deste painel (F1.1, item 1). Ver a razão e a origem de
+      cada afirmação em `CONTEXTO_DOS_PAINEIS`, em `src/data/figuras.mjs`. */}
+  {contexto && (
+    <p class="painel-contexto" data-contexto-painel="social">
+      <Frase partes={contexto} lang={lang} />
+    </p>
+  )}
+
   <ul class="social-lista">
     {
       medidas.map((m) => (
@@ -61,7 +83,7 @@ const { s, lang, p, medidas, porta } = Astro.props;
               na faixa da cabeça (01.09.2026). A faixa é o «Relance» e esta linha
               é a leitura da mesma medida, na mesma página. */}
           <span class="social-valor">
-            <Claim id={m.claim} lang={lang} chip={true} />
+            <Provenance id={m.claim} lang={lang} />
           </span>
           <span class="social-corpo">
             <span class="social-nome" data-medida-nome>{m.nome[lang]}</span>
