@@ -77,15 +77,58 @@ const path = routePath('texto', lang, { slug });
    manifesto dos registos que diz de que estudo do motor esta edição é. */
 const linhaDoSitio = linhaDoSitioDoEstudo(entrada.rh_study);
 
+/**
+ * A FRASE DA POSIÇÃO, MONTADA AQUI PORQUE `registo-html.mjs` NÃO SABE LÍNGUAS
+ * (F1.9a, segunda passagem, Major 8 da leitura a frio do Codex). O modelo
+ * («Secção {n} de {total}») vive no inventário da voz; a substituição dos dois
+ * números é trabalho desta vista, pela mesma razão que `rotuloDaPorta` já é
+ * uma cadeia pronta e não uma chave.
+ */
+const rotuloDaPosicao = (n, total) =>
+  s.estudos.textoPosicaoSeccaoModelo.replace('{n}', String(n)).replace('{total}', String(total));
+
 const pecas = pecasDoCorpo({
   registo,
   chave,
   linhaDoSitio,
   rotuloDaPorta: s.estudos.textoPortaDaLinha,
+  rotuloDaPosicao,
+  /* A PORTA EM FLUXO NO FIM DE CADA SECÇÃO (Blocking 4). Reutiliza a palavra
+     que a subida fixa já tem: é o mesmo destino, `#texto-indice`, e a mesma
+     ideia, e o inventário da voz já a nomeia com origem — inventar «Índice ↑»
+     ao lado seria uma segunda etiqueta para a mesma porta. */
+  rotuloDoFimDeSeccao: s.estudos.textoSubir,
 });
 const linhas = linhasDoDocumento(registo, chave, linhaDoSitio);
 const contas = contasDoRegisto(registo, chave, linhaDoSitio);
 const titulos = titulosDoDocumento(registo);
+
+/**
+ * O ÍNDICE EM DOIS ANDARES (F1.9a, item 1 do brief).
+ *
+ * Cada título de nível 2 leva por baixo os de nível 3 que o seguem, e a ordem
+ * do documento é a ordem em que o L8 os compara: uma travessia da lista
+ * aninhada dá exatamente a mesma sequência que `titulosDoDocumento` devolve.
+ * Um título de nível 3 antes do primeiro de nível 2 (não há nenhum nas oito
+ * edições de hoje, e o gabarito não pode partir por causa disso) fica no
+ * primeiro andar, no seu lugar.
+ */
+const arvoreDoIndice = [];
+for (const t of titulos) {
+  if (t.nivel === 2 || arvoreDoIndice.length === 0) arvoreDoIndice.push({ ...t, filhos: [] });
+  else arvoreDoIndice[arvoreDoIndice.length - 1].filhos.push(t);
+}
+
+/**
+ * QUANTAS SECÇÕES TEM O DOCUMENTO: o denominador da indicação de progresso.
+ *
+ * Contado dos títulos de nível 2 do registo, e não escrito: é o mesmo número
+ * que o L8 recontou quando comparou o índice com o registo. Entra na página
+ * como uma ficha da folha (`--seccoes`), e a folha compõe com ele o «n/N» que
+ * cada título mostra ao lado. A casa não escreve o algarismo em lado nenhum do
+ * HTML: escreve o total uma vez, onde o contador o vai buscar.
+ */
+const seccoes = titulos.filter((t) => t.nivel === 2).length;
 
 /* O título do documento é o bloco 0 do registo, que é o seu título de nível 1.
    O `<title>` da página é esse texto mais o nome do sítio; a descrição é a do
@@ -171,9 +214,11 @@ const conta = (nome) => `${chave}=${nome}`;
   <div class="texto">
     {/* ===================================================== NESTA PÁGINA
         O índice do documento (bloco B, item B4; achado D1): os títulos de
-        nível 2 do registo, cada um a âncora do seu bloco. É a forma que a
-        agenda e o Método já têm, e vive FORA do `<article>`, porque o portão
-        compara o corpo com o registo bloco a bloco e a mobília não é corpo.
+        nível 2 e 3 do registo, cada um a âncora do seu bloco, os de nível 3
+        aninhados debaixo do de nível 2 que os antecede (F1.9a, 03.09.2026). É
+        a forma que a agenda e o Método já têm, e vive FORA do `<article>`,
+        porque o portão compara o corpo com o registo bloco a bloco e a mobília
+        não é corpo.
 
         O TEXTO É TRANSCRIÇÃO, e por isso entra pela nona origem com uma marca
         própria: `data-registo-indice`, que o L8 compara carácter a carácter
@@ -214,11 +259,22 @@ const conta = (nome) => `${chave}=${nome}`;
             <h2 class="texto-indice-k" id="texto-indice-k">{s.leitura.sumarioK}</h2>
           </summary>
           <ul class="texto-indice-lista">
-            {titulos.map((titulo) => (
+            {arvoreDoIndice.map((titulo) => (
               <li>
                 <a href={`#bloco-${titulo.i}`} data-registo-indice={`${chave}#${titulo.i}`}>
                   {titulo.texto}
                 </a>
+                {titulo.filhos.length > 0 && (
+                  <ul class="texto-indice-sublista">
+                    {titulo.filhos.map((filho) => (
+                      <li>
+                        <a href={`#bloco-${filho.i}`} data-registo-indice={`${chave}#${filho.i}`}>
+                          {filho.texto}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
           </ul>
@@ -226,7 +282,20 @@ const conta = (nome) => `${chave}=${nome}`;
       </nav>
     )}
 
-    <div class="texto-corpo">
+    {/* ------------------------------------------------------------------
+        A POSIÇÃO DE CADA SECÇÃO, SEM UMA LINHA DE GUIÃO (F1.9a, item 2)
+        ------------------------------------------------------------------
+        O denominador entra aqui, uma vez, como ficha da folha; o numerador é
+        um contador do próprio navegador, que anda de título em título. A casa
+        não escreve um algarismo dentro do corpo transcrito nem ao lado dele: o
+        HTML do artigo fica byte a byte o que era, e o «n/N» que se lê ao pé de
+        cada título de nível 2 é composto pela folha (`texto.css`, §5c).
+
+        É a primeira das duas metades da indicação de progresso, e é a que vale
+        em todos os motores. A segunda é a barra fina do fim deste ficheiro,
+        que só existe onde o motor sabe mover uma animação com o deslocamento.
+        ------------------------------------------------------------------ */}
+    <div class="texto-corpo" style={`--seccoes: ${seccoes}`} data-seccoes={seccoes}>
       {/* ================================================= o documento inteiro
           Exatamente os blocos do registo, na ordem do registo, e mais nada. As
           peças vêm de `registo-html.mjs`, que é puro; o selo é sempre o
@@ -364,10 +433,29 @@ const conta = (nome) => `${chave}=${nome}`;
     </aside>
   </div>
 
-  {/* SUBIR (item B4). Fixo no fim do ecrã abaixo de 640, e em mais lado nenhum:
-      no computador a coluna do aparelho está sempre à vista e a página tem
-      metade da altura. Abre o índice, que é o topo do corpo e o sítio de onde
-      se salta para qualquer secção. É mobília, e por isso vive fora do
-      `<article>`, como o índice. */}
+  {/* SUBIR (item B4; F1.9a item 3; Blocking 4 da leitura a frio do Codex,
+      segunda passagem, 03.09.2026). Fixo, SÓ A PARTIR DE 1024px, onde a
+      goteira à direita da coluna de leitura existe e cabe um alvo de 44px sem
+      tocar num carácter do artigo. Abaixo disso não há goteira nenhuma — a
+      régua mediu, antes desta correção, entre 12 e 26 caixas de linha tapadas
+      em 6 a 9 das dez posições da página a 390 —, e a porta que a substitui
+      aí é a que cada secção já leva no seu próprio fim (`.texto-secao-topo`,
+      escrita por `pecasDoCorpo`). Abre o índice, que é o topo do corpo e o
+      sítio de onde se salta para qualquer secção. É mobília, e por isso vive
+      fora do `<article>`, como o índice. */}
   <a class="texto-subir" href="#texto-indice">{s.estudos.textoSubir} ↑</a>
+
+  {/* A BARRA DO PROGRESSO (F1.9a, item 2, segunda metade).
+      ------------------------------------------------------------------
+      Três píxeis no topo da janela, movidos pelo deslocamento da própria
+      página com uma animação de folha de estilos: nenhuma linha de guião, e
+      por isso a página com o guião desligado mostra o mesmo. Onde o motor não
+      souber mover uma animação pelo deslocamento, a peça NÃO SE DESENHA (a
+      folha prende-a a um `@supports`): uma barra parada num sítio qualquer
+      seria uma indicação falsa, e a posição «n/N» ao lado de cada título fica
+      lá na mesma, em todos os motores.
+
+      Não leva texto e não é uma porta: é a duplicação visual do que o contador
+      já diz, e por isso sai da árvore de acessibilidade. */}
+  <div class="texto-barra" aria-hidden="true"></div>
 </Base>

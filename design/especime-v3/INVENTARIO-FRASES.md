@@ -1806,6 +1806,54 @@ Navegação principal» e «Áreas de governo» estão classificadas assim desde
 | navegacao | As linhas deste documento → | cabeca | viva | — |
 | navegacao | The rows of this document → | cabeca | viva | — |
 
+## Segunda passagem do bloco F1.9a (Sonnet) · 03.09.2026
+
+*A leitura a frio do Codex sobre a primeira passagem (guardada na árvore
+principal como `design/especime-v3/critica/2026-09-03-codex-leitura-f19-indice.md`,
+e não citada aqui entre plicas pela mesma razão que já vale para a leitura do
+`rotulo-ia`, acima: a conferência do portão exige que um ficheiro nomeado
+assim exista NESTE ramo, e este vive só no principal) apontou, no Major 7,
+que os rótulos novos ficavam sem entrada nomeada com origem. Nenhum dos dois
+GANHA uma linha na tabela, e as duas razões são diferentes uma da outra e
+estão escritas por extenso, porque confundi-las seria esconder um limite
+mecânico atrás de uma escolha editorial.*
+
+**«Subir» / «Back to top» NÃO PODE ser uma linha `viva`, e não é falta de
+tentar: `npm run check:voz` fecha a construção se o for.** A medida 8 (os
+blocos de texto da casa) e a medida 9 (o tripwire, que varre o texto fora das
+origens declaradas) EXCLUEM as duas, por regra, o texto que vive dentro de um
+`<a>` ou de um `<button>` — é a mesma exclusão que já tirava «Subir ↑» da
+contagem de blocos por classificar, e ela corre nos dois sentidos: também
+impede a régua de confirmar que uma linha `viva` SE RENDE. Uma frase cujo
+texto inteiro é sempre a etiqueta de uma ligação não tem como entrar na
+tabela deste ficheiro enquanto a régua não souber ler dentro de `<a>` — é o
+que a nota de 25.08 já dizia, com a razão certa; o que faltava era dizê-lo
+sem soar a esquecimento. «Subir» / «Back to top» é a palavra de duas portas
+desde esta passagem (o comando fixo do computador, a partir de 1024px onde a
+goteira existe, e a porta em fluxo no fim de cada secção de nível 2, abaixo
+disso, Blocking 4 da mesma leitura), sempre para o mesmo destino
+(`#texto-indice`), declarada em `src/i18n/strings.mjs` (`estudos.textoSubir`)
+nas duas línguas, e nomeada aqui por essa razão.
+
+**«Secção {n} de {total}» / «Section {n} of {total}» também não ganha linha,
+e a razão é outra: é origem declarada, não prosa solta.** O modelo vive em
+`src/i18n/strings.mjs` (`estudos.textoPosicaoSeccaoModelo`); a vista substitui
+os dois números em cada título de nível 2 (Major 8 da mesma leitura: a
+indicação de progresso ganha nome acessível), e a instância rendida leva
+`data-registo-posicao`, que o L8 do portão de `scripts/gate-html.mjs` confere
+a cada construção — a contagem, o texto contra este modelo e a referência do
+título. É a mesma classe do `{ref}` que a grelha da voz já tira da tabela
+(«A grelha da voz» · G6, acima) e do índice «Nesta página», que entra pela
+marca `data-registo-indice`: um número do próprio sítio não se escreve à
+mão, verifica-se, e o que se verifica assim não é uma frase da casa para
+classificar.
+
+**O que isto deixa por resolver, e é do F3.1 e não desta passagem.** A régua
+da voz não lê texto dentro de `<a>` em nenhuma rota do sítio, não só nesta: é
+uma exclusão geral, e alargá-la é redesenhar `medir-defeitos.mjs` para saber
+distinguir «rótulo de comando, sem origem própria» de «prosa da casa dentro
+de uma ligação» — o mesmo problema que o F0.9 mediu do lado de fora do
+arame (190 cadeias em 2 118 ocorrências) e deixou escrito para aquele bloco.
 
 ## Bloco «porta» · a porta da frente · 03.09.2026
 
