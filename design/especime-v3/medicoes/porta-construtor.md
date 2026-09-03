@@ -457,3 +457,41 @@ git diff --stat d8b14a88 -- src/ public/ tests/ design/especime-v3/INVENTARIO-FR
 
 Ao todo, com o relatório e as capturas, 57 ficheiros, 1 554 linhas acrescentadas e
 258 tiradas.
+
+
+## 15 · As duas fusões com o `main`, e o que elas custaram
+
+O ramo foi tirado de `origin/main` em `d8b14a88` e fundiu duas vezes antes de ser
+empurrado, porque o `main` andou enquanto este bloco se construía.
+
+**A primeira, com `a8459420`** (o F1.9a, o índice das páginas de leitura). Dois
+conflitos, os dois do mesmo feitio: o F1.9a e este bloco acrescentaram cada um a
+sua secção ao fim do `INVENTARIO-FRASES.md` e a sua linha ao
+`critica/REVISOES-DO-INVENTARIO.md`, e o git não sabe somar dois acrescentos no
+mesmo sítio. Ficaram os dois, pela ordem em que se fundiram. Nenhuma linha de
+nenhum dos dois se perdeu, e está conferido: a linha `| porta |` e a linha
+`| indice-sonnet |` existem as duas no registo das revisões, e as quatro cadeias
+do bloco `porta` continuam no inventário.
+
+**A segunda, com `3093b72b`** (o F1.2, a página do primeiro domínio). Um conflito,
+o mesmo feitio, no `CHAVES-EN.md`; os outros três ficheiros que os dois blocos
+tocam (`src/i18n/strings.mjs`, o inventário e o registo das revisões) o git juntou
+sozinho. Conferido depois da fusão: as quatro chaves deste bloco continuam em
+`strings.mjs`, as linhas `| dominio |` e `| porta |` estão as duas no registo, e
+a ranhura dos nomes continua em `CabecaDoLugar.astro`.
+
+**Os três portões e as réguas voltaram a correr na árvore fundida**, e não só
+antes da fusão:
+
+```
+npm run build      → 0
+npm run verify     → 0        (já com o check:formas e o check:alcance do F1.2)
+npm run typecheck  → 0
+node tests/inicio/porta.mjs --vermelhos → 0 · 24 de 24 células · 5 de 5 plantas
+app 0 · areas 0 · correcoes-a 0 · faixa 0 · lista 0 · mapa-distritos 0
+mapa-navegacao 0 · matriz 0 · regioes 0 · rotulo 0
+```
+
+As doze medidas não mexeram com nenhuma das duas fusões: A1 continua a acabar a
+653,7 px em `/` e a 641,1 px em `/en`, e a altura a 390 continua a 6 807 e a
+6 759 px.
