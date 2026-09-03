@@ -88,6 +88,13 @@ const {
   id,
   chip = false,
   plano = false,
+  /* OS DOIS `id` DO MODO PLANO (segunda passagem, Major 5, 03.09.2026). O nome
+     acessível de uma manchete compõe-se referindo cada pedaço dela pelo `id`, e
+     dois dos pedaços saem daqui: o valor e o símbolo da unidade. Chamam-se
+     `elemId` e `sufixoId` e não `id` porque `id` já é o identificador da LINHA,
+     que é outra coisa e não se pode confundir com um identificador de HTML. */
+  elemId = null,
+  sufixoId = null,
   lang,
   class: klass = '',
   as = 'span',
@@ -193,10 +200,10 @@ const estilo = escala
        número é a classe PO da UAX #14). Medido na manchete das duas edições a
        390 px. */
     <>
-      <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
+      <Tag class:list={['claim-value', klass]} id={elemId ?? undefined} data-claim={id} style={estilo} {...rest}>
         {valor}
       </Tag>
-      {sufixo && <span class="claim-sufixo" set:text={sufixo} />}
+      {sufixo && <span class="claim-sufixo" id={sufixoId ?? undefined} set:text={sufixo} />}
       {provisorio && <span class="claim-provisorio">{s.prov.provisorio}</span>}
     </>
   ) : chip ? (

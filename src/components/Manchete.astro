@@ -1,90 +1,153 @@
 ---
 /**
- * A MANCHETE DE UM LUGAR · a frase, e os selos ao pé dela, fora dela.
+ * A MANCHETE DE UM LUGAR · a frase é o nome do título, e os selos ficam de fora.
  *
  * ---------------------------------------------------------------------------
- * O DEFEITO QUE ELE FECHA (F1.2b, item 3, 03.09.2026)
+ * O DEFEITO QUE ELE FECHA (F1.2b, item 3; segunda passagem, Major 5)
  * ---------------------------------------------------------------------------
- * A manchete da página do domínio lia-se assim num leitor de ecrã, medido no
- * HTML construído a 03.09.2026:
+ * A manchete lia-se assim num leitor de ecrã, medido no HTML construído:
  *
  *   «A dívida pública é 89,7%fonte · Quadro institucional de indicadores do
  *    PIB, fora do limiar de 60%; …»
  *
- * O texto do selo («fonte · <nome do trabalho>») estava DENTRO da frase, entre
- * o número e a palavra seguinte, e a frase deixava de ser uma frase para quem a
- * ouve. A mesma coisa acontecia na manchete de cada um dos 308 concelhos
- * («Évora tem 58 567fonte · Évora — Economia… pessoas.») e na de cada região.
- *
- * A FORMA QUE O F1.1 DEU À MANCHETE DO PAÍS é a que este componente generaliza:
- * o `<h1>` é a frase, e mais nada; a porta do número fica ao pé dele, mas fora
- * dela. Na manchete do país isso saiu de graça, porque os dois algarismos são
- * contagens do próprio sítio (`ValorDaProva`), que são elas próprias a porta e
- * não levam selo; aqui os números são linhas do livro-razão, e a porta é o selo.
+ * A primeira passagem tirou o texto do selo de DENTRO da frase e pô-lo no fim
+ * do `<h1>`. A frase deixou de se partir ao meio, e a leitura a frio do Codex
+ * (Major 5) apanhou o que faltava: o NOME ACESSÍVEL do título continuava a
+ * acabar com «fonte · Quadro institucional…», duas vezes na página do domínio e
+ * uma na de cada concelho. Quem percorre uma página pelos títulos ouvia o nome
+ * de duas ligações colado ao fim da manchete.
  *
  * ---------------------------------------------------------------------------
- * PORQUE É QUE OS SELOS FICAM DENTRO DO `<h1>`, NO FIM, E NÃO DEPOIS DELE
+ * PORQUE É QUE O NOME SE COMPÕE DE VÁRIAS REFERÊNCIAS, E NÃO DE UMA
  * ---------------------------------------------------------------------------
- * Não é gosto: é o portão. `auditaSelo()` (`scripts/gate-html.mjs`) exige que o
- * selo de um valor esteja dentro do PAI do elemento que leva o `data-claim`,
- * «o selo é do VALOR e não da secção», e é essa regra que impede um selo no
- * fim da página de passar por porta de um número que está no princípio. Um selo
- * num `<p>` a seguir ao `</h1>` deixava de estar no pai do valor, e a construção
- * fechava.
+ * A forma óbvia era um `aria-labelledby` para UM `<span>` com a frase inteira
+ * lá dentro. Ela não é possível, e a razão é um portão que não se enfraquece:
+ * `auditaSelo()` (`scripts/gate-html.mjs`) exige que o selo de um valor esteja
+ * dentro do PAI do elemento que leva o `data-claim`. Daí sai um teorema curto:
  *
- * A saída é a que a regra permite sem se enfraquecer: o valor é filho DIRETO do
- * `<h1>` (é para isso que `<Claim plano/>` existe) e os selos são o último filho
- * do mesmo `<h1>`. O pai é o mesmo, o portão continua a exigir o que exigia, e a
- * frase lê-se inteira antes de qualquer selo. Na folha, `.manchete-selos` é um
- * bloco, e por isso o que se vê é a frase e, na linha de baixo, os selos ao pé
- * do número, que é o que o `BRIEF-F1.1-porta-da-frente.md` (item 9) desenha.
+ *   se um elemento CONTÉM um valor, então contém também o selo desse valor
+ *   (o pai do valor está dentro dele, e o selo está dentro do pai).
+ *
+ * Logo, qualquer elemento que embrulhe a frase inteira embrulha também os
+ * selos, e o nome tirado dele voltaria a acabar em «fonte». **O único elemento
+ * que pode ser referido sem arrastar um selo é o próprio valor.** Por isso o
+ * nome compõe-se pedaço a pedaço: cada corrida de texto, cada valor, cada
+ * símbolo de unidade e cada marca declarada levam um `id`, e o `aria-labelledby`
+ * lista-os pela ordem da frase. Os valores continuam filhos DIRETOS do título, e
+ * por isso o pai deles é o título, que é onde os selos estão: o portão continua
+ * a exigir o que exigia.
  *
  * ---------------------------------------------------------------------------
- * NENHUMA CADEIA NOVA, NENHUM ALGARISMO NOVO
+ * O QUE ISTO CUSTA, MEDIDO NOS DOIS MOTORES E NÃO PRESUMIDO
  * ---------------------------------------------------------------------------
- * Este componente não escreve uma palavra: recebe os mesmos pedaços que
- * `Frase.astro` recebia e rende os mesmos elementos, pela mesma ordem, com os
- * selos noutro sítio do mesmo pai. O que muda é a posição de um `<a>`.
+ * O algoritmo do nome acessível junta o texto de duas referências com um espaço
+ * pelo meio. Medido a 03.09.2026 em Chromium e em WebKit, com a mesma página de
+ * prova nos dois:
  *
- * UM PEDAÇO QUE ELE NÃO CONHEÇA FECHA A CONSTRUÇÃO. `Frase.astro` conhece oito
- * formas de pedaço e uma manchete usa quatro; um pedaço de outra forma que
- * chegasse aqui seria rendido como contexto estrutural sem motivo declarado,
- * silenciosamente. A exceção nomeia a chave, como as de `Claim.astro`.
+ *   um `aria-labelledby` para uma referência só  →  «… é 89,7% do PIB.»
+ *   um `aria-labelledby` para várias             →  «… é 89,7 % do PIB.»
+ *
+ * O símbolo da unidade fica separado do número POR UM ESPAÇO, e só no nome: o
+ * texto à vista não muda um píxel, e o `%` continua colado ao número como a §11
+ * manda. Um leitor de ecrã diz «oitenta e nove vírgula sete por cento» nos dois
+ * casos, porque o espaço antes de um símbolo não se ouve. É o preço de o selo
+ * sair do nome sem o portão se abrir, está medido, e a célula A16 mede o nome
+ * com os espaços tirados dos dois lados, para que nenhuma palavra possa cair
+ * sem ser vista.
+ *
+ * ---------------------------------------------------------------------------
+ * O QUE ELE NÃO FAZ
+ * ---------------------------------------------------------------------------
+ * Não escreve uma palavra: recebe os mesmos pedaços que `Frase.astro` recebia e
+ * rende os mesmos elementos, pela mesma ordem, com um `id` em cada um e os selos
+ * no fim. Não usa `aria-label`: uma etiqueta escrita à mão seria uma segunda
+ * cópia da frase, com os algarismos dentro de um atributo e sem selo nenhum, que
+ * é a classe de coisa que a casa proíbe.
+ *
+ * UM PEDAÇO QUE ELE NÃO CONHEÇA FECHA A CONSTRUÇÃO, e um valor marcado como
+ * provisório pela fonte também: a palavra «provisório» que `<Claim>` escreve ao
+ * pé do número teria de entrar na lista do nome, e nenhuma das manchetes de hoje
+ * a traz (medido: as 12 linhas citadas nas manchetes das nove regiões, as duas
+ * do domínio e a população dos 308 têm `source_flag` nulo). O dia em que uma
+ * traga, a construção fecha e diz porquê, em vez de deixar a palavra cair do
+ * nome em silêncio.
  */
 import Claim from './Claim.astro';
 import Provenance from './Provenance.astro';
+import { getClaim } from '../lib/ledger.mjs';
 
-const { partes, lang } = Astro.props;
+const { partes, lang, as: Tag = 'h1', class: klass = '', id = 'manchete' } = Astro.props;
 
 if (!lang) throw new Error('<Manchete> sem "lang". A língua é obrigatória, como em <Claim>.');
 
-/* AS LINHAS CITADAS, PELA ORDEM EM QUE A FRASE AS CITA, E SEM REPETIÇÃO. Uma
-   manchete pode citar a mesma linha duas vezes (nenhuma o faz hoje); dois selos
-   iguais lado a lado seriam duas portas para a mesma divisão, e a régua dos
-   alvos conta-os como duas áreas. */
-const citadas = [
-  ...new Set(
-    partes
-      .filter((/** @type {*} */ p) => p && typeof p === 'object' && p.claim)
-      .map((/** @type {*} */ p) => p.claim),
-  ),
-];
+/* A LISTA DOS PEDAÇOS, cada um com o seu `id`, pela ordem da frase. É desta
+   lista que sai o `aria-labelledby`, e é ela que garante que o nome tem a frase
+   inteira: um pedaço que se render e não entre aqui desaparece do nome. */
+let n = 0;
+const chave = () => `${id}-${n++}`;
+/** @type {{ ref: string, parte: unknown }[]} */
+const pecas = [];
+/** @type {string[]} */
+const citadas = [];
+
+for (const parte of partes) {
+  if (typeof parte === 'string') {
+    pecas.push({ ref: chave(), parte });
+    continue;
+  }
+  if (parte && typeof parte === 'object' && parte.claim) {
+    const linha = getClaim(parte.claim);
+    if (linha.source_flag === 'p') {
+      throw new Error(
+        `<Manchete>: a linha "${parte.claim}" está marcada como provisória pela fonte, e ` +
+          `<Claim> escreve a palavra «provisório» ao pé do número. Essa palavra teria de ` +
+          `entrar na lista do nome acessível, e ainda não entra. Ver o cabeçalho de ` +
+          `src/components/Manchete.astro.`,
+      );
+    }
+    const refValor = chave();
+    const refSufixo = parte.sufixo ? chave() : null;
+    if (!citadas.includes(parte.claim)) citadas.push(parte.claim);
+    pecas.push({ ref: refValor, parte, refSufixo });
+    continue;
+  }
+  pecas.push({ ref: chave(), parte });
+}
+
+/* O `aria-labelledby` é a frase, e mais nada: os selos ficam no `<h1>` (o
+   portão exige-os lá) e fora desta lista (o nome não os quer). */
+const nomeDoTitulo = pecas
+  .flatMap((p) => [p.ref, p.refSufixo])
+  .filter((r) => r !== null && r !== undefined)
+  .join(' ');
 ---
 
-<Fragment>
+<Tag class={klass} aria-labelledby={nomeDoTitulo}>
   {
-    partes.map((parte) => {
-      if (typeof parte === 'string') return <Fragment set:text={parte} />;
-      /* O VALOR VAI SEM INVÓLUCRO (`plano`), para que o pai dele seja o `<h1>` e
-         o portão encontre o selo no fim dele. Ver a nota do cabeçalho. */
+    pecas.map(({ ref, parte, refSufixo }) => {
+      if (typeof parte === 'string') return <span id={ref} set:text={parte} />;
+      /* O NOME DO LUGAR, transcrito, com a marca que o tira do inventário das
+         frases da casa. É o primeiro pedaço da manchete de um concelho. */
+      if (parte.lugar) return <span id={ref} data-lugar set:text={parte.lugar} />;
+      /* O VALOR VAI SEM INVÓLUCRO (`plano`) e com `id`: filho direto do título,
+         para que o pai dele seja o título, que é onde os selos estão. */
       if (parte.claim)
-        return <Claim id={parte.claim} lang={lang} plano={true} sufixo={parte.sufixo ?? ''} />;
-      if (parte.ref) return <span data-nonledger="data-de-referencia">{parte.ref}</span>;
-      if (parte.forte) return <strong set:text={parte.forte} />;
-      if (parte.nl) return <span data-nonledger={parte.motivo}>{parte.nl}</span>;
+        return (
+          <Claim
+            id={parte.claim}
+            lang={lang}
+            plano={true}
+            sufixo={parte.sufixo ?? ''}
+            elemId={ref}
+            sufixoId={refSufixo}
+          />
+        );
+      if (parte.ref) return <span id={ref} data-nonledger="data-de-referencia">{parte.ref}</span>;
+      if (parte.forte) return <strong id={ref} set:text={parte.forte} />;
+      if (parte.nl) return <span id={ref} data-nonledger={parte.motivo}>{parte.nl}</span>;
       throw new Error(
         `<Manchete>: pedaço de forma desconhecida (${JSON.stringify(parte)}). ` +
-          `Uma manchete leva texto, { claim }, { ref }, { forte } e { nl, motivo }; ` +
+          `Uma manchete leva texto, { lugar }, { claim }, { ref }, { forte } e { nl, motivo }; ` +
           `as outras formas de <Frase> não passaram por aqui e por isso não se rendem às cegas.`,
       );
     })
@@ -92,10 +155,10 @@ const citadas = [
   {
     citadas.length > 0 && (
       <span class="manchete-selos">
-        {citadas.map((id) => (
-          <Provenance id={id} lang={lang} />
+        {citadas.map((c) => (
+          <Provenance id={c} lang={lang} />
         ))}
       </span>
     )
   }
-</Fragment>
+</Tag>

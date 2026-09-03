@@ -9,7 +9,7 @@
     {
       "nome": "A2.pt",
       "passa": true,
-      "prova": "altura de / a 390: 6909 px · teto medido na árvore de partida: 6991 px (menos 82 px)"
+      "prova": "altura de / a 390: 6909 px · teto 6941 px (6941 da árvore de partida + 0 da fila dos estudos) (menos 32 px)"
     },
     {
       "nome": "A11.pt",
@@ -79,7 +79,12 @@
     {
       "nome": "A16.pt",
       "passa": false,
-      "prova": "a manchete das quatro camadas em pt, pelo texto acessível do <h1>: pais 0 selo(s) fora da frase · dominio 2 selo(s) fora da frase · regiao 2 selo(s) fora da frase · concelho 1 selo(s) fora da frase · SELO DENTRO DA FRASE em dominio («A dívida pública é 89,7%fonte · Quadro institucional de indi…»), regiao («O Alentejo está 23fonte · calculado · Alentejo & Algarve — E…»), concelho («Évora tem 58 567fonte · Évora — Economia, Investidores, Port…»)"
+      "prova": "o nome acessível do <h1> das quatro camadas em pt, em Chromium e WebKit: pais 0 valor(es)/0 selo(s) · dominio 2 valor(es)/2 selo(s) · regiao 2 valor(es)/2 selo(s) · concelho 1 valor(es)/1 selo(s) · QUEIXAS: dominio: o nome «A dívida pública é 89,7 % fonte · Quadro institucional de indicadores » não é a frase «A dívida pública é 89,7% do PIB, fora do limiar de 60%; o saldo das ad»; o nome traz o texto do selo «fonte · Quadro institucional de indicado»; o nome traz o texto do selo «fonte · Domínios: as medidas das pergunt» | regiao: o nome «O Alentejo está 23 fonte · calculado · Alentejo & Algarve — Economy, S» não é a frase «O Alentejo está 23 pontos abaixo da média da UE-27. Em 2000 estava a 2»; o nome traz o texto do selo «fonte · calculado · Alentejo & Algarve —»; o nome traz o texto do selo «fonte · calculado · Alentejo & Algarve —» | concelho: o nome «Évora tem 58 567 fonte · Évora — Economia, Investidores, Portas Aberta» não é a frase «Évora tem 58 567 pessoas.»; o nome traz o texto do selo «fonte · Évora — Economia, Investidores, »"
+    },
+    {
+      "nome": "A17.pt",
+      "passa": false,
+      "prova": "o «n de N» das quatro faixas em pt: pais 1..21 de 21 · dominio 1..5 de 5 · regiao 1..2 de 2 · concelho 1..8 de 8 · QUEIXAS: dominio: 5 cartão(ões) sem posição | regiao: 2 cartão(ões) sem posição | concelho: 8 cartão(ões) sem posição"
     },
     {
       "nome": "A1.en",
@@ -89,7 +94,7 @@
     {
       "nome": "A2.en",
       "passa": true,
-      "prova": "altura de /en a 390: 6861 px · teto medido na árvore de partida: 6940 px (menos 79 px)"
+      "prova": "altura de /en a 390: 6861 px · teto 6890 px (6890 da árvore de partida + 0 da fila dos estudos) (menos 29 px)"
     },
     {
       "nome": "A11.en",
@@ -159,7 +164,12 @@
     {
       "nome": "A16.en",
       "passa": false,
-      "prova": "a manchete das quatro camadas em en, pelo texto acessível do <h1>: pais 0 selo(s) fora da frase · dominio 2 selo(s) fora da frase · regiao 2 selo(s) fora da frase · concelho 1 selo(s) fora da frase · SELO DENTRO DA FRASE em dominio («Government debt is 89,7%source · Institutional indicator fra…»), regiao («The Alentejo is 23source · calculated · Alentejo & Algarve —…»), concelho («Évora has 58 567source · Évora — Economia, Investidores, Por…»)"
+      "prova": "o nome acessível do <h1> das quatro camadas em en, em Chromium e WebKit: pais 0 valor(es)/0 selo(s) · dominio 2 valor(es)/2 selo(s) · regiao 2 valor(es)/2 selo(s) · concelho 1 valor(es)/1 selo(s) · QUEIXAS: dominio: o nome «Government debt is 89,7 % source · Institutional indicator framework o» não é a frase «Government debt is 89,7% of GDP, outside the threshold of 60%; the gen»; o nome traz o texto do selo «source · Institutional indicator framewo»; o nome traz o texto do selo «source · Domains: the measures behind th» | regiao: o nome «The Alentejo is 23 source · calculated · Alentejo & Algarve — Economy,» não é a frase «The Alentejo is 23 points below the EU-27 average. In 2000 it was 22 p»; o nome traz o texto do selo «source · calculated · Alentejo & Algarve»; o nome traz o texto do selo «source · calculated · Alentejo & Algarve» | concelho: o nome «Évora has 58 567 source · Évora — Economia, Investidores, Portas Abert» não é a frase «Évora has 58 567 people.»; o nome traz o texto do selo «source · Évora — Economia, Investidores,»"
+    },
+    {
+      "nome": "A17.en",
+      "passa": false,
+      "prova": "o «n de N» das quatro faixas em en: pais 1..21 de 21 · dominio 1..5 de 5 · regiao 1..2 de 2 · concelho 1..8 de 8 · QUEIXAS: dominio: 5 cartão(ões) sem posição | regiao: 2 cartão(ões) sem posição | concelho: 8 cartão(ões) sem posição"
     }
   ],
   "medidas": {
@@ -198,6 +208,7 @@
       "semSelo": [],
       "ecra": 664,
       "altura": 6909,
+      "filaDosEstudos": 0,
       "mobilia": 62,
       "barra": {
         "filas": 1,
@@ -212,7 +223,9 @@
     },
     "A2.pt": {
       "altura": 6909,
-      "teto": 6991
+      "teto": 6941,
+      "tetoDaPartida": 6941,
+      "filaDosEstudos": 0
     },
     "A11.pt": {
       "acimaDoNome": 62,
@@ -303,126 +316,168 @@
           "id": "divida-publica-2025",
           "href": "#m-divida-publica-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "posicao-de-investimento-internacional-2025",
           "href": "#m-posicao-de-investimento-internacional-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "custo-unitario-do-trabalho-2025",
           "href": "#m-custo-unitario-do-trabalho-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "precos-da-habitacao-2025",
           "href": "#m-precos-da-habitacao-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "desempenho-das-exportacoes-2025",
           "href": "#m-desempenho-das-exportacoes-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "divida-das-empresas-2025",
           "href": "#m-divida-das-empresas-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "divida-das-familias-2025",
           "href": "#m-divida-das-familias-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "fluxo-de-credito-as-empresas-2025",
           "href": "#m-fluxo-de-credito-as-empresas-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "fluxo-de-credito-as-familias-2025",
           "href": "#m-fluxo-de-credito-as-familias-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "saldo-da-balanca-corrente-2025",
           "href": "#m-saldo-da-balanca-corrente-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "taxa-de-actividade-2025",
           "href": "#m-taxa-de-actividade-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "taxa-de-cambio-efectiva-real-2025",
           "href": "#m-taxa-de-cambio-efectiva-real-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "taxa-de-desemprego-mip-2025",
           "href": "#m-taxa-de-desemprego-mip-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "taxa-de-emprego-2025",
           "href": "#m-taxa-de-emprego-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "taxa-de-desemprego-2025",
           "href": "#m-taxa-de-desemprego-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "desemprego-de-longa-duracao-2025",
           "href": "#m-desemprego-de-longa-duracao-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "jovens-nem-2025",
           "href": "#m-jovens-nem-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "abandono-escolar-precoce-2025",
           "href": "#m-abandono-escolar-precoce-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "risco-de-pobreza-ou-exclusao-2025",
           "href": "#m-risco-de-pobreza-ou-exclusao-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "racio-s80-s20-2025",
           "href": "#m-racio-s80-s20-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "sobrecarga-do-custo-da-habitacao-2025",
           "href": "#m-sobrecarga-do-custo-da-habitacao-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         }
       ],
@@ -435,20 +490,67 @@
     },
     "A14.pt": {
       "menu": [
-        "/",
-        "/municipios",
-        "/regioes",
-        "/distritos",
-        "/areas",
-        "/estudos",
-        "/livro-razao",
-        "/agenda",
-        "/metodo",
-        "/correcoes",
-        "/sobre"
+        {
+          "href": "/",
+          "texto": "Início",
+          "visivel": true
+        },
+        {
+          "href": "/municipios",
+          "texto": "Municípios",
+          "visivel": true
+        },
+        {
+          "href": "/regioes",
+          "texto": "Regiões",
+          "visivel": true
+        },
+        {
+          "href": "/distritos",
+          "texto": "Distritos",
+          "visivel": true
+        },
+        {
+          "href": "/areas",
+          "texto": "Áreas",
+          "visivel": true
+        },
+        {
+          "href": "/estudos",
+          "texto": "Estudos",
+          "visivel": true
+        },
+        {
+          "href": "/livro-razao",
+          "texto": "Livro-razão",
+          "visivel": true
+        },
+        {
+          "href": "/agenda",
+          "texto": "Agenda",
+          "visivel": true
+        },
+        {
+          "href": "/metodo",
+          "texto": "Método",
+          "visivel": true
+        },
+        {
+          "href": "/correcoes",
+          "texto": "Correções",
+          "visivel": true
+        },
+        {
+          "href": "/sobre",
+          "texto": "Sobre",
+          "visivel": true
+        }
       ],
       "temDominios": false,
-      "respostaDoIndice": null
+      "respostaDoIndice": null,
+      "palavraEsperada": "Domínios",
+      "palavra": null,
+      "palavraAVista": false
     },
     "A15.pt": {
       "portas": [
@@ -481,44 +583,88 @@
         {
           "camada": "pais",
           "rota": "/",
-          "inteiro": "Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
+          "nomeChromium": "Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9 .",
           "frase": "Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
-          "selos": 0,
           "valores": 0,
-          "semSelo": 0
+          "selos": 0,
+          "queixas": [],
+          "nomeWebkit": "Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9 ."
         },
         {
           "camada": "dominio",
           "rota": "/dominios/economia-e-financas-publicas",
-          "inteiro": "A dívida pública é 89,7%fonte · Quadro institucional de indicadores do PIB, fora do limiar de 60%; o saldo das administrações públicas é 0,7%fonte · Domínios: as medidas das perguntas do PIB, dentro do limiar de −3%.",
+          "nomeChromium": "A dívida pública é 89,7 % fonte · Quadro institucional de indicadores do PIB, fora do limiar de 60%; o saldo das administrações públicas é 0,7 % fonte · Domínios: as medidas das perguntas do PIB, dentro do limiar de −3%.",
           "frase": "A dívida pública é 89,7% do PIB, fora do limiar de 60%; o saldo das administrações públicas é 0,7% do PIB, dentro do limiar de −3%.",
-          "selos": 2,
           "valores": 2,
-          "semSelo": 0
+          "selos": 2,
+          "queixas": [
+            "o nome «A dívida pública é 89,7 % fonte · Quadro institucional de indicadores » não é a frase «A dívida pública é 89,7% do PIB, fora do limiar de 60%; o saldo das ad»",
+            "o nome traz o texto do selo «fonte · Quadro institucional de indicado»",
+            "o nome traz o texto do selo «fonte · Domínios: as medidas das pergunt»"
+          ],
+          "nomeWebkit": "A dívida pública é 89,7 % fonte · Quadro institucional de indicadores do PIB, fora do limiar de 60%; o saldo das administrações públicas é 0,7 % fonte · Domínios: as medidas das perguntas do PIB, dentro do limiar de −3%."
         },
         {
           "camada": "regiao",
           "rota": "/regioes/alentejo",
-          "inteiro": "O Alentejo está 23fonte · calculado · Alentejo & Algarve — Economy, Society, Strategy pontos abaixo da média da UE-27. Em 2000 estava a 22fonte · calculado · Alentejo & Algarve — Economy, Society, Strategy: a distância aumentou.",
+          "nomeChromium": "O Alentejo está 23 fonte · calculado · Alentejo & Algarve — Economy, Society, Strategy pontos abaixo da média da UE-27. Em 2000 estava a 22 fonte · calculado · Alentejo & Algarve — Economy, Society, Strategy : a distância aumentou.",
           "frase": "O Alentejo está 23 pontos abaixo da média da UE-27. Em 2000 estava a 22: a distância aumentou.",
-          "selos": 2,
           "valores": 2,
-          "semSelo": 0
+          "selos": 2,
+          "queixas": [
+            "o nome «O Alentejo está 23 fonte · calculado · Alentejo & Algarve — Economy, S» não é a frase «O Alentejo está 23 pontos abaixo da média da UE-27. Em 2000 estava a 2»",
+            "o nome traz o texto do selo «fonte · calculado · Alentejo & Algarve —»",
+            "o nome traz o texto do selo «fonte · calculado · Alentejo & Algarve —»"
+          ],
+          "nomeWebkit": "O Alentejo está 23 fonte · calculado · Alentejo & Algarve — Economy, Society, Strategy pontos abaixo da média da UE-27. Em 2000 estava a 22 fonte · calculado · Alentejo & Algarve — Economy, Society, Strategy : a distância aumentou."
         },
         {
           "camada": "concelho",
           "rota": "/municipios/evora",
-          "inteiro": "Évora tem 58 567fonte · Évora — Economia, Investidores, Portas Abertas 2026 pessoas.",
+          "nomeChromium": "Évora tem 58 567 fonte · Évora — Economia, Investidores, Portas Abertas 2026 pessoas.",
           "frase": "Évora tem 58 567 pessoas.",
-          "selos": 1,
           "valores": 1,
-          "semSelo": 0
+          "selos": 1,
+          "queixas": [
+            "o nome «Évora tem 58 567 fonte · Évora — Economia, Investidores, Portas Aberta» não é a frase «Évora tem 58 567 pessoas.»",
+            "o nome traz o texto do selo «fonte · Évora — Economia, Investidores, »"
+          ],
+          "nomeWebkit": "Évora tem 58 567 fonte · Évora — Economia, Investidores, Portas Abertas 2026 pessoas."
         }
-      ],
-      "partidas": [
-        "dominio",
-        "regiao",
-        "concelho"
+      ]
+    },
+    "A17.pt": {
+      "faixas": [
+        {
+          "camada": "pais",
+          "rota": "/",
+          "cartoes": 21,
+          "queixas": []
+        },
+        {
+          "camada": "dominio",
+          "rota": "/dominios/economia-e-financas-publicas",
+          "cartoes": 5,
+          "queixas": [
+            "5 cartão(ões) sem posição"
+          ]
+        },
+        {
+          "camada": "regiao",
+          "rota": "/regioes/alentejo",
+          "cartoes": 2,
+          "queixas": [
+            "2 cartão(ões) sem posição"
+          ]
+        },
+        {
+          "camada": "concelho",
+          "rota": "/municipios/evora",
+          "cartoes": 8,
+          "queixas": [
+            "8 cartão(ões) sem posição"
+          ]
+        }
       ]
     },
     "A1.en": {
@@ -556,6 +702,7 @@
       "semSelo": [],
       "ecra": 664,
       "altura": 6861,
+      "filaDosEstudos": 0,
       "mobilia": 62,
       "barra": {
         "filas": 1,
@@ -570,7 +717,9 @@
     },
     "A2.en": {
       "altura": 6861,
-      "teto": 6940
+      "teto": 6890,
+      "tetoDaPartida": 6890,
+      "filaDosEstudos": 0
     },
     "A11.en": {
       "acimaDoNome": 62,
@@ -661,126 +810,168 @@
           "id": "divida-publica-2025",
           "href": "#m-divida-publica-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "posicao-de-investimento-internacional-2025",
           "href": "#m-posicao-de-investimento-internacional-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "custo-unitario-do-trabalho-2025",
           "href": "#m-custo-unitario-do-trabalho-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "precos-da-habitacao-2025",
           "href": "#m-precos-da-habitacao-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "desempenho-das-exportacoes-2025",
           "href": "#m-desempenho-das-exportacoes-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "divida-das-empresas-2025",
           "href": "#m-divida-das-empresas-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "divida-das-familias-2025",
           "href": "#m-divida-das-familias-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "fluxo-de-credito-as-empresas-2025",
           "href": "#m-fluxo-de-credito-as-empresas-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "fluxo-de-credito-as-familias-2025",
           "href": "#m-fluxo-de-credito-as-familias-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "saldo-da-balanca-corrente-2025",
           "href": "#m-saldo-da-balanca-corrente-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "taxa-de-actividade-2025",
           "href": "#m-taxa-de-actividade-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "taxa-de-cambio-efectiva-real-2025",
           "href": "#m-taxa-de-cambio-efectiva-real-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "taxa-de-desemprego-mip-2025",
           "href": "#m-taxa-de-desemprego-mip-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "taxa-de-emprego-2025",
           "href": "#m-taxa-de-emprego-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "taxa-de-desemprego-2025",
           "href": "#m-taxa-de-desemprego-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "desemprego-de-longa-duracao-2025",
           "href": "#m-desemprego-de-longa-duracao-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "jovens-nem-2025",
           "href": "#m-jovens-nem-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "abandono-escolar-precoce-2025",
           "href": "#m-abandono-escolar-precoce-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "risco-de-pobreza-ou-exclusao-2025",
           "href": "#m-risco-de-pobreza-ou-exclusao-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "racio-s80-s20-2025",
           "href": "#m-racio-s80-s20-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "sobrecarga-do-custo-da-habitacao-2025",
           "href": "#m-sobrecarga-do-custo-da-habitacao-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         }
       ],
@@ -793,20 +984,67 @@
     },
     "A14.en": {
       "menu": [
-        "/en",
-        "/en/municipalities",
-        "/en/regions",
-        "/en/districts",
-        "/en/areas",
-        "/en/studies",
-        "/en/ledger",
-        "/en/agenda",
-        "/en/method",
-        "/en/corrections",
-        "/en/about"
+        {
+          "href": "/en",
+          "texto": "Home",
+          "visivel": true
+        },
+        {
+          "href": "/en/municipalities",
+          "texto": "Municipalities",
+          "visivel": true
+        },
+        {
+          "href": "/en/regions",
+          "texto": "Regions",
+          "visivel": true
+        },
+        {
+          "href": "/en/districts",
+          "texto": "Districts",
+          "visivel": true
+        },
+        {
+          "href": "/en/areas",
+          "texto": "Areas",
+          "visivel": true
+        },
+        {
+          "href": "/en/studies",
+          "texto": "Studies",
+          "visivel": true
+        },
+        {
+          "href": "/en/ledger",
+          "texto": "Ledger",
+          "visivel": true
+        },
+        {
+          "href": "/en/agenda",
+          "texto": "Agenda",
+          "visivel": true
+        },
+        {
+          "href": "/en/method",
+          "texto": "Method",
+          "visivel": true
+        },
+        {
+          "href": "/en/corrections",
+          "texto": "Corrections",
+          "visivel": true
+        },
+        {
+          "href": "/en/about",
+          "texto": "About",
+          "visivel": true
+        }
       ],
       "temDominios": false,
-      "respostaDoIndice": null
+      "respostaDoIndice": null,
+      "palavraEsperada": "Domains",
+      "palavra": null,
+      "palavraAVista": false
     },
     "A15.en": {
       "portas": [
@@ -839,44 +1077,88 @@
         {
           "camada": "pais",
           "rota": "/en",
-          "inteiro": "Portugal breaches 4 thresholds of the Macroeconomic Imbalance Procedure and meets 9.",
+          "nomeChromium": "Portugal breaches 4 thresholds of the Macroeconomic Imbalance Procedure and meets 9 .",
           "frase": "Portugal breaches 4 thresholds of the Macroeconomic Imbalance Procedure and meets 9.",
-          "selos": 0,
           "valores": 0,
-          "semSelo": 0
+          "selos": 0,
+          "queixas": [],
+          "nomeWebkit": "Portugal breaches 4 thresholds of the Macroeconomic Imbalance Procedure and meets 9 ."
         },
         {
           "camada": "dominio",
           "rota": "/en/domains/economia-e-financas-publicas",
-          "inteiro": "Government debt is 89,7%source · Institutional indicator framework of GDP, outside the threshold of 60%; the general government balance is 0,7%source · Domains: the measures behind the questions of GDP, within the threshold of −3%.",
+          "nomeChromium": "Government debt is 89,7 % source · Institutional indicator framework of GDP, outside the threshold of 60%; the general government balance is 0,7 % source · Domains: the measures behind the questions of GDP, within the threshold of −3%.",
           "frase": "Government debt is 89,7% of GDP, outside the threshold of 60%; the general government balance is 0,7% of GDP, within the threshold of −3%.",
-          "selos": 2,
           "valores": 2,
-          "semSelo": 0
+          "selos": 2,
+          "queixas": [
+            "o nome «Government debt is 89,7 % source · Institutional indicator framework o» não é a frase «Government debt is 89,7% of GDP, outside the threshold of 60%; the gen»",
+            "o nome traz o texto do selo «source · Institutional indicator framewo»",
+            "o nome traz o texto do selo «source · Domains: the measures behind th»"
+          ],
+          "nomeWebkit": "Government debt is 89,7 % source · Institutional indicator framework of GDP, outside the threshold of 60%; the general government balance is 0,7 % source · Domains: the measures behind the questions of GDP, within the threshold of −3%."
         },
         {
           "camada": "regiao",
           "rota": "/en/regions/alentejo",
-          "inteiro": "The Alentejo is 23source · calculated · Alentejo & Algarve — Economy, Society, Strategy points below the EU-27 average. In 2000 it was 22source · calculated · Alentejo & Algarve — Economy, Society, Strategy points away: the gap has widened.",
+          "nomeChromium": "The Alentejo is 23 source · calculated · Alentejo & Algarve — Economy, Society, Strategy points below the EU-27 average. In 2000 it was 22 source · calculated · Alentejo & Algarve — Economy, Society, Strategy points away: the gap has widened.",
           "frase": "The Alentejo is 23 points below the EU-27 average. In 2000 it was 22 points away: the gap has widened.",
-          "selos": 2,
           "valores": 2,
-          "semSelo": 0
+          "selos": 2,
+          "queixas": [
+            "o nome «The Alentejo is 23 source · calculated · Alentejo & Algarve — Economy,» não é a frase «The Alentejo is 23 points below the EU-27 average. In 2000 it was 22 p»",
+            "o nome traz o texto do selo «source · calculated · Alentejo & Algarve»",
+            "o nome traz o texto do selo «source · calculated · Alentejo & Algarve»"
+          ],
+          "nomeWebkit": "The Alentejo is 23 source · calculated · Alentejo & Algarve — Economy, Society, Strategy points below the EU-27 average. In 2000 it was 22 source · calculated · Alentejo & Algarve — Economy, Society, Strategy points away: the gap has widened."
         },
         {
           "camada": "concelho",
           "rota": "/en/municipalities/evora",
-          "inteiro": "Évora has 58 567source · Évora — Economia, Investidores, Portas Abertas 2026 people.",
+          "nomeChromium": "Évora has 58 567 source · Évora — Economia, Investidores, Portas Abertas 2026 people.",
           "frase": "Évora has 58 567 people.",
-          "selos": 1,
           "valores": 1,
-          "semSelo": 0
+          "selos": 1,
+          "queixas": [
+            "o nome «Évora has 58 567 source · Évora — Economia, Investidores, Portas Abert» não é a frase «Évora has 58 567 people.»",
+            "o nome traz o texto do selo «source · Évora — Economia, Investidores,»"
+          ],
+          "nomeWebkit": "Évora has 58 567 source · Évora — Economia, Investidores, Portas Abertas 2026 people."
         }
-      ],
-      "partidas": [
-        "dominio",
-        "regiao",
-        "concelho"
+      ]
+    },
+    "A17.en": {
+      "faixas": [
+        {
+          "camada": "pais",
+          "rota": "/en",
+          "cartoes": 21,
+          "queixas": []
+        },
+        {
+          "camada": "dominio",
+          "rota": "/en/domains/economia-e-financas-publicas",
+          "cartoes": 5,
+          "queixas": [
+            "5 cartão(ões) sem posição"
+          ]
+        },
+        {
+          "camada": "regiao",
+          "rota": "/en/regions/alentejo",
+          "cartoes": 2,
+          "queixas": [
+            "2 cartão(ões) sem posição"
+          ]
+        },
+        {
+          "camada": "concelho",
+          "rota": "/en/municipalities/evora",
+          "cartoes": 8,
+          "queixas": [
+            "8 cartão(ões) sem posição"
+          ]
+        }
       ]
     }
   },

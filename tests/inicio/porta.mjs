@@ -128,6 +128,12 @@
  * ainda que cada valor do livro-razão da manchete continue a ter o seu selo, e
  * é isso que impede que a maneira mais fácil de a passar seja tirar as portas.
  *
+ * A17 · O «n DE N» DE CADA FAIXA, nas quatro camadas e nas duas edições: uma
+ * posição por cartão, o total igual ao número de cartões DAQUELA página (contado
+ * no HTML dela), o ordinal a correr de 1 a N pela ordem do documento, e os dois
+ * algarismos com o motivo `numeracao` declarado. É a célula que recusa uma faixa
+ * de região a dizer «de 21».
+ *
  * ---------------------------------------------------------------------------
  * O QUE `--vermelhos` EXIGE DE CADA ESTRAGO
  * ---------------------------------------------------------------------------
@@ -143,7 +149,7 @@ import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { chromium } from 'playwright';
+import { chromium, webkit } from 'playwright';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = process.env.OEDP_DIST
@@ -263,26 +269,33 @@ const LIMIAR_DA_COLUNA = 1024;
  * mudar de propósito, muda-se aqui, com a data e a medição ao lado.
  *
  * ---------------------------------------------------------------------------
- * O TETO SOBE 50 px A 03.09.2026, E SOBE EXACTAMENTE A ALTURA DA FILA NOVA
+ * O TETO É UMA REGRA E NÃO UM SEGUNDO NÚMERO ESCRITO (Minor 11 da leitura a
+ * frio, segunda passagem, 03.09.2026)
  * ---------------------------------------------------------------------------
  * O F1.2b põe a fila dos estudos logo a seguir à faixa (item 4 do brief), e o
  * brief diz o que ela pode custar: «a altura de `/` a 390 não sobe mais do que a
- * altura da fila dos estudos, medida e dita». A fila mede **50,0 px** nas duas
- * edições (a caixa de `.inicio-estudos`: 44 px de alvo e 6 px de ar por cima,
- * `margin: 0`), e a página subiu **exactamente 50 px** nas duas:
+ * altura da fila dos estudos, medida e dita».
  *
- *     antes (a construção deste ramo, sem a fila)   `/` 6 909 · `/en` 6 861
- *     depois                                        `/` 6 959 · `/en` 6 911
+ * A PRIMEIRA REDAÇÃO SUBIU O TETO À MÃO, de 6 941 para 6 991, e a leitura a frio
+ * apanhou o que isso estragava: a régua corrida sobre a ÁRVORE DE PARTIDA
+ * passava a guardar no seu JSON o teto NOVO, e a linha de partida deixava de
+ * provar o teto que estava em vigor no dia dela.
  *
- * O teto sobe por isso 50 px e nem um a mais: 6 941 → 6 991 e 6 890 → 6 940. A
- * folga contra o teto continua a ser a mesma que o F1.1 deixou (32 px em `/` e
- * 29 px em `/en`), e é essa a razão de o subir assim: um teto que subisse «até
- * caber» apagava o que a folga diz. Nada mais deste bloco custa altura ao
- * telemóvel: o rótulo do destino senta-se na fila do selo (o cartão mede 163,0 px
- * em `/` e 181,7 px em `/en`, antes e depois), o «Domínios» do menu vive dentro
- * do `<details>` fechado, e a manchete do domínio ENCOLHEU 3,4 px com o selo
- * fora da frase. */
-const TETO_DA_ALTURA = { pt: 6991, en: 6940 };
+ * O TETO PASSA A SER o teto da partida MAIS a altura da fila dos estudos medida
+ * na construção que se está a ler. Na árvore de partida a fila não existe, a
+ * parcela é 0 e o teto é 6 941; nesta a fila mede 50,0 px (a caixa de
+ * `.inicio-estudos`: 44 px de alvo e 6 px de ar por cima, `margin: 0`) e o teto
+ * é 6 991. Não há um segundo número escrito à mão, cada lado guarda o teto que o
+ * governa, e a regra é a frase do brief posta em código: nem um píxel além do
+ * que a fila mede.
+ *
+ * A FOLGA CONTINUA A SER A QUE O F1.1 DEIXOU (32 px em `/` e 29 px em `/en`), e
+ * é essa a razão de a regra ser esta: um teto que subisse «até caber» apagava o
+ * que a folga diz. Nada mais deste bloco custa altura ao telemóvel: o rótulo do
+ * destino senta-se na fila do selo (o cartão mede 163,0 px em `/` e 181,7 px em
+ * `/en`, antes e depois), o «Domínios» do menu vive dentro do `<details>`
+ * fechado, e a manchete do domínio ENCOLHEU com o selo fora da frase. */
+const TETO_DA_PARTIDA = { pt: 6941, en: 6890 };
 
 const EDICOES = [
   {
@@ -336,6 +349,12 @@ const AS_VINTE_E_UMA = [...FIGURAS_PDM, ...FIGURAS_SOCIAL].map((f) => f.claim);
    trocavam juntas e nada caía. O que a régua sabe é a REGRA (`dominioDaLinha`),
    e o que ela mede é o HTML construído contra ela. */
 const { dominioDaLinha } = await import(path.join(RAIZ, 'src', 'lib', 'dominios.mjs'));
+
+/* AS CADEIAS DA CASA, LIDAS DA FONTE DO SÍTIO (Minor 12, segunda passagem). As
+   células que conferem PALAVRAS comparam-nas com o que `src/i18n/strings.mjs`
+   declara, e nunca com uma cópia escrita aqui: uma régua que escrevesse a
+   palavra estaria a medir o que ela própria disse. */
+const { t } = await import(path.join(RAIZ, 'src', 'i18n', 'strings.mjs'));
 
 const ALTURA_DA_DOBRA = 1.5;
 
@@ -443,6 +462,16 @@ const SONDA_A1 = (alturaDoEcra) => {
     semSelo,
     ecra: alturaDoEcra,
     altura: document.documentElement.scrollHeight,
+    /* A CAIXA DA FILA DOS ESTUDOS, para o teto da A2 se calcular em vez de se
+       escrever. Zero quando a fila não existe, que é o caso da árvore de
+       partida. */
+    filaDosEstudos: (() => {
+      const f = document.querySelector('.inicio-estudos');
+      if (!f) return 0;
+      const r = f.getBoundingClientRect();
+      const e = getComputedStyle(f);
+      return +(r.height + parseFloat(e.marginTop) + parseFloat(e.marginBottom)).toFixed(1);
+    })(),
     mobilia: cx(document.querySelector('.wordmark'))
       ? +document.querySelector('.wordmark').getBoundingClientRect().top.toFixed(1)
       : null,
@@ -477,12 +506,19 @@ async function corre() {
         (g.semSelo.length ? ` (${g.semSelo.map((c) => c.id).slice(0, 3).join(', ')})` : ''),
     );
 
-    const teto = TETO_DA_ALTURA[ed.chave];
-    medidas[`A2.${ed.chave}`] = { altura: g.altura, teto };
+    const tetoDaPartida = TETO_DA_PARTIDA[ed.chave];
+    const teto = tetoDaPartida + Math.round(g.filaDosEstudos);
+    medidas[`A2.${ed.chave}`] = {
+      altura: g.altura,
+      teto,
+      tetoDaPartida,
+      filaDosEstudos: g.filaDosEstudos,
+    };
     conta(
       `A2.${ed.chave}`,
       Number.isFinite(g.altura) && g.altura <= teto,
-      `altura de ${ed.rota} a 390: ${g.altura} px · teto medido na árvore de partida: ${teto} px` +
+      `altura de ${ed.rota} a 390: ${g.altura} px · teto ${teto} px ` +
+        `(${tetoDaPartida} da árvore de partida + ${g.filaDosEstudos} da fila dos estudos)` +
         ` (${g.altura <= teto ? `menos ${teto - g.altura}` : `MAIS ${g.altura - teto}`} px)`,
     );
 
@@ -814,6 +850,7 @@ async function corre() {
     })();
 
     const errados = [];
+    const rotuloEsperado = t(ed.chave).dominios.eyebrow;
     for (const c of cartoes) {
       const dominio = dominioDaLinha(c.id);
       if (dominio) {
@@ -822,6 +859,12 @@ async function corre() {
         else if (!idsDaPaginaDoDominio.has(dominio.ancora))
           errados.push(`${c.id}: a âncora «${dominio.ancora}» não existe na página do domínio`);
         else if (!c.rotulo) errados.push(`${c.id}: aponta ao domínio e não diz para onde leva`);
+        /* A PALAVRA DO RÓTULO, e não só a sua presença (Minor 12). É a
+           sobrancelha da página de chegada, `dominios.eyebrow`, lida das cadeias
+           da edição: o cartão diz para onde leva com a palavra que a página de
+           chegada usa para se nomear, e uma palavra que ninguém declarou cai. */
+        else if (c.rotulo !== rotuloEsperado)
+          errados.push(`${c.id}: o rótulo diz «${c.rotulo}» e não «${rotuloEsperado}»`);
         else if (!c.rotuloComCaixa) errados.push(`${c.id}: o rótulo do destino não tem caixa`);
         else if (c.rotuloSobreOSelo)
           errados.push(`${c.id}: o rótulo do destino sobrepõe-se ao selo do cartão`);
@@ -851,21 +894,62 @@ async function corre() {
        destino tem de responder 200: uma porta no menu para uma página que não
        foi construída é pior do que nenhuma. */
     const pMenu = await pagina(ed.rota, 390, ALTURA_PEQUENA);
+    /* O MENU ABRE-SE PARA A ETIQUETA TER CAIXA. Abaixo de 640 px a fila vive
+       dentro de um `<details>` fechado, e o conteúdo de uma gaveta fechada não
+       tem caixa nenhuma: medir a etiqueta sem a abrir dizia «sem caixa» sobre
+       uma palavra que está lá. A porta abre-se como um leitor a abre. */
+    await pMenu.evaluate(() => {
+      /* A GAVETA É IRMÃ DA FILA, E NÃO A ENVOLVE. Medido no HTML construído: o
+         `<details class="nav-menu">` e o `<nav class="nav-principal">` são
+         irmãos, e é a folha que revela a fila quando a gaveta abre
+         (`details[open] + .nav-principal`). Um `closest('details')` a partir da
+         fila devolve `null`, e a etiqueta ficava a medir zero com a palavra lá:
+         foi o que a primeira redação desta célula disse, e estava a medir a
+         gaveta fechada e não a etiqueta. */
+      for (const g of document.querySelectorAll('details.nav-menu')) g.open = true;
+    });
+    await pMenu.waitForTimeout(50);
     const menuDominios = await pMenu.evaluate(() =>
-      [...document.querySelectorAll('.nav-principal a')].map((a) => a.getAttribute('href')),
+      [...document.querySelectorAll('.nav-principal a')].map((a) => {
+        const r = a.getBoundingClientRect();
+        return {
+          href: a.getAttribute('href'),
+          texto: (a.textContent ?? '').replace(/\s+/g, ' ').trim(),
+          visivel: r.width > 0 && r.height > 0,
+        };
+      }),
     );
     await pMenu.__ctx.close();
-    const temDominios = menuDominios.includes(ed.indiceDosDominios);
+    const temDominios = menuDominios.map((x) => x.href).includes(ed.indiceDosDominios);
     const respostaDoIndice = temDominios
       ? (await fetch(base + ed.indiceDosDominios)).status
       : null;
-    medidas[`A14.${ed.chave}`] = { menu: menuDominios, temDominios, respostaDoIndice };
+    /* A PALAVRA, E NÃO SÓ A PORTA (segunda passagem, Minor 12, 03.09.2026). A
+       célula conferia o `href` e o código da resposta, e por isso uma etiqueta
+       vazia, escondida, ou uma palavra que ninguém declarou passavam por ela. O
+       texto do item passa a comparar-se, carácter a carácter, com a cadeia
+       `nav.dominios` da edição, lida de `src/i18n/strings.mjs` e não escrita
+       aqui: uma régua que escrevesse a palavra media o que ela própria disse. */
+    const itemDosDominios = menuDominios.find((x) => x.href === ed.indiceDosDominios) ?? null;
+    const palavraEsperada = t(ed.chave).nav.dominios;
+    const palavraCerta = itemDosDominios?.texto === palavraEsperada;
+    const palavraAVista = !!itemDosDominios?.visivel;
+    medidas[`A14.${ed.chave}`] = {
+      menu: menuDominios,
+      temDominios,
+      respostaDoIndice,
+      palavraEsperada,
+      palavra: itemDosDominios?.texto ?? null,
+      palavraAVista,
+    };
     conta(
       `A14.${ed.chave}`,
-      temDominios && respostaDoIndice === 200,
+      temDominios && respostaDoIndice === 200 && palavraCerta && palavraAVista,
       `«${ed.indiceDosDominios}» no menu de ${ed.rota}: ` +
         (temDominios
-          ? `lá está, e a página responde ${respostaDoIndice}`
+          ? `lá está, a página responde ${respostaDoIndice}, e diz «${itemDosDominios?.texto ?? ''}»` +
+            ` (esperado «${palavraEsperada}»${palavraCerta ? '' : ', NÃO BATE'})` +
+            `${palavraAVista ? '' : ' · a etiqueta não tem caixa'}`
           : `NÃO está (o menu tem ${menuDominios.length} portas)`),
     );
 
@@ -948,62 +1032,281 @@ async function corre() {
     );
 
     /* ------------------------------------------------------------------ A16
-       A MANCHETE SEM TEXTO DE SELO DENTRO DA FRASE (F1.2b, item 3)
+       O NOME ACESSÍVEL DA MANCHETE É A FRASE, E CADA VALOR TEM A SUA PORTA
        ------------------------------------------------------------------------
-       As quatro camadas: o país, o domínio, a região e o concelho. A regra é
-       mecânica e não uma leitura: o texto do `<h1>` com os selos retirados é a
-       FRASE, e o texto inteiro tem de COMEÇAR por ela. Um selo pelo meio parte a
-       frase e a comparação cai; um selo no fim não a parte.
+       Segunda passagem, 03.09.2026, achados Major 5 e Major 6 da leitura a frio.
 
-       E CADA VALOR CONTINUA A TER O SEU SELO. Sem esta segunda metade, a maneira
-       mais fácil de passar a célula era tirar as portas da manchete, que é
-       exactamente o contrário do que o bloco quer. */
-    const manchetes = [];
-    for (const [camada, rota] of [
+       O QUE A PRIMEIRA REDAÇÃO MEDIA, E O QUE ELA DEIXAVA PASSAR. Media duas
+       coisas fracas: que o texto do `<h1>` COMEÇASSE pela frase (um prefixo, e
+       por isso um selo acrescentado no fim passava, que era exactamente o estado
+       do bloco), e que o PAI de cada valor contivesse ALGUM `.src-chip` (e como
+       todos os valores partilham o mesmo pai, que é o `<h1>`, um único selo,
+       ainda que apontasse à linha errada, satisfazia todos).
+
+       O QUE ELA PASSA A MEDIR, e são quatro coisas:
+
+         1 · o NOME ACESSÍVEL CALCULADO do `<h1>`, lido do navegador por
+             `ariaSnapshot()` e não do texto do elemento, EM CHROMIUM E EM
+             WEBKIT. O nome, sem espaços, tem de ser a frase, sem espaços. Os
+             espaços tiram-se dos dois lados porque o algoritmo do nome junta
+             duas referências com um espaço pelo meio, e por isso o símbolo da
+             unidade fica separado do número NO NOME (medido nos dois motores; a
+             razão está no cabeçalho de `src/components/Manchete.astro`). Tirar
+             os espaços não esconde uma palavra que caia: esconde só onde elas
+             se juntam;
+         2 · o nome não contém o texto de nenhum selo. É a mesma coisa dita pela
+             outra ponta, e é ela que cai se alguém voltar a pôr os selos dentro
+             da lista do nome;
+         3 · CADA valor tem UM selo SEU: uma âncora `.src-chip` cujo `href` é o
+             caminho da linha DAQUELE valor. Contam-se os selos por linha, e um
+             valor com zero ou com dois cai. Uma manchete com dois valores e um
+             selo cai, que é o caso que o Major 6 nomeia;
+         4 · e esse selo está AO PÉ DO NÚMERO E FORA DA FRASE, medido em píxeis:
+             a caixa do selo não interseta a caixa de nenhum pedaço da frase, e
+             fica na linha de baixo (o topo do selo abaixo do fundo da frase) a
+             menos de um ecrã pequeno de distância. É a forma que o item 9 do
+             brief da porta da frente desenha, medida em vez de afirmada. */
+    const CAMADAS = [
       ['pais', ed.rota],
       ['dominio', ed.dominio],
       ['regiao', ed.regiao],
       ['concelho', ed.paginaDoConcelho],
-    ]) {
-      const pg = await pagina(rota, 390, ALTURA_PEQUENA);
-      const r = await pg.evaluate(() => {
-        const h1 = document.querySelector('[data-grelha] h1');
-        if (!h1) return null;
-        const norma = (t) => String(t ?? '').replace(/\s+/g, ' ').trim();
-        const inteiro = norma(h1.textContent);
-        const copia = h1.cloneNode(true);
-        for (const selo of copia.querySelectorAll('.src-chip')) selo.remove();
-        const frase = norma(copia.textContent);
+    ];
+
+    /* O NOME É O QUE O NAVEGADOR CALCULA, e não o que a régua recompõe. Lê-se do
+       instantâneo de acessibilidade do próprio `<h1>`, cuja primeira linha traz
+       o nome entre aspas. Dois motores, porque um nome acessível é uma leitura
+       do motor e dois motores podem discordar: é a única maneira de a promessa
+       valer para quem não usa o mesmo navegador que o construtor. */
+    const nomeDoH1 = async (pg) => {
+      const yaml = await pg.locator('[data-grelha] h1').first().ariaSnapshot();
+      const linha = String(yaml).split('\n')[0];
+      const m = /heading\s+"((?:[^"\\]|\\.)*)"/.exec(linha);
+      return m ? m[1].replace(/\\(.)/g, '$1') : null;
+    };
+
+    const SONDA_MANCHETE = () => {
+      const h1 = document.querySelector('[data-grelha] h1');
+      if (!h1) return null;
+      const norma = (t) => String(t ?? '').replace(/\s+/g, ' ').trim();
+      const cx = (el) => {
+        const r = el.getBoundingClientRect();
         return {
-          inteiro,
-          frase,
-          selos: h1.querySelectorAll('.src-chip').length,
-          valores: h1.querySelectorAll('[data-claim]').length,
-          semSelo: [...h1.querySelectorAll('[data-claim]')].filter(
-            (v) => !v.parentElement?.querySelector('.src-chip'),
-          ).length,
+          esq: +r.left.toFixed(1),
+          dir: +r.right.toFixed(1),
+          topo: +r.top.toFixed(1),
+          fundo: +r.bottom.toFixed(1),
         };
-      });
+      };
+      const copia = h1.cloneNode(true);
+      for (const selo of copia.querySelectorAll('.src-chip')) selo.remove();
+      /* OS PEDAÇOS DA FRASE são os elementos que o `aria-labelledby` nomeia, e
+         é deles que sai a caixa da frase: a caixa do `<h1>` inclui a linha dos
+         selos, e mediria a frase como se ela chegasse até lá abaixo. */
+      const refs = (h1.getAttribute('aria-labelledby') ?? '').split(/\s+/).filter(Boolean);
+      const pedacos = refs
+        .map((r) => document.getElementById(r))
+        .filter((el) => el && h1.contains(el))
+        .map((el) => ({ id: el.id, caixa: cx(el) }));
+      const valores = [...h1.querySelectorAll('[data-claim]')].map((v) => ({
+        linha: v.getAttribute('data-claim'),
+        caixa: cx(v),
+      }));
+      const selos = [...h1.querySelectorAll('.src-chip')].map((a) => ({
+        href: a.getAttribute('href'),
+        texto: norma(a.textContent),
+        caixa: cx(a),
+      }));
+      return {
+        frase: norma(copia.textContent),
+        refs: refs.length,
+        pedacos,
+        valores,
+        selos,
+        fundoDaFrase: pedacos.length ? Math.max(...pedacos.map((p) => p.caixa.fundo)) : null,
+      };
+    };
+
+    /* O caminho da linha de um valor, na edição da página: é o mesmo que o
+       portão de HTML compõe, e é contra ele que o `href` do selo se confere. */
+    const caminhoDaLinha = (linha) =>
+      ed.chave === 'pt' ? `/livro-razao/${linha}` : `/en/ledger/${linha}`;
+
+    const manchetes = [];
+    for (const [camada, rota] of CAMADAS) {
+      const pg = await pagina(rota, 390, ALTURA_PEQUENA);
+      const r = await pg.evaluate(SONDA_MANCHETE);
+      const nomeChromium = r ? await nomeDoH1(pg) : null;
       await pg.__ctx.close();
-      manchetes.push({ camada, rota, ...(r ?? {}) });
+      if (!r) {
+        manchetes.push({ camada, rota, erro: 'não há <h1> na cabeça' });
+        continue;
+      }
+
+      const semEspacos = (t) => String(t ?? '').replace(/\s+/g, '');
+      const queixas = [];
+
+      /* 1 · o nome calculado é a frase */
+      if (semEspacos(nomeChromium) !== semEspacos(r.frase)) {
+        queixas.push(
+          `o nome «${String(nomeChromium).slice(0, 70)}» não é a frase «${r.frase.slice(0, 70)}»`,
+        );
+      }
+      /* 2 · e não traz o texto de selo nenhum */
+      for (const selo of r.selos) {
+        if (selo.texto && semEspacos(nomeChromium).includes(semEspacos(selo.texto))) {
+          queixas.push(`o nome traz o texto do selo «${selo.texto.slice(0, 40)}»`);
+        }
+      }
+      /* 3 · cada valor com o SEU selo, e um só */
+      for (const v of r.valores) {
+        const seus = r.selos.filter((sl) => sl.href === caminhoDaLinha(v.linha));
+        if (seus.length !== 1) {
+          queixas.push(`«${v.linha}» tem ${seus.length} selo(s) para a sua linha`);
+          continue;
+        }
+        /* 4 · ao pé do número, na linha de baixo, e fora da frase */
+        const selo = seus[0];
+        const cruza = (a, b) =>
+          !(a.dir <= b.esq || b.dir <= a.esq || a.fundo <= b.topo || b.fundo <= a.topo);
+        const dentroDaFrase = r.pedacos.filter((p) => cruza(selo.caixa, p.caixa));
+        if (dentroDaFrase.length > 0) {
+          queixas.push(
+            `o selo de «${v.linha}» cruza ${dentroDaFrase.length} pedaço(s) da frase`,
+          );
+        }
+        const abaixo = selo.caixa.topo >= r.fundoDaFrase - 1;
+        const perto = selo.caixa.topo - r.fundoDaFrase <= ALTURA_PEQUENA;
+        if (!abaixo || !perto) {
+          queixas.push(
+            `o selo de «${v.linha}» está a ${(selo.caixa.topo - r.fundoDaFrase).toFixed(1)} px do fim da frase`,
+          );
+        }
+      }
+      manchetes.push({
+        camada,
+        rota,
+        nomeChromium,
+        frase: r.frase,
+        valores: r.valores.length,
+        selos: r.selos.length,
+        queixas,
+      });
     }
-    const partidas = manchetes.filter((m) => !m.frase || !m.inteiro.startsWith(m.frase));
-    const orfaos = manchetes.filter((m) => (m.semSelo ?? 0) > 0);
-    medidas[`A16.${ed.chave}`] = { manchetes, partidas: partidas.map((m) => m.camada) };
+
+    /* O MESMO NOME NO SEGUNDO MOTOR. Só o nome: a geometria é a mesma folha e o
+       Chromium já a mediu; o que um segundo motor acrescenta é a leitura do
+       algoritmo do nome, que é onde os motores podem divergir. */
+    const nomesWebkit = [];
+    {
+      const nav2 = await webkit.launch({ headless: true });
+      for (const [camada, rota] of CAMADAS) {
+        const ctx = await nav2.newContext({ viewport: { width: 390, height: ALTURA_PEQUENA } });
+        const pg = await ctx.newPage();
+        await pg.goto(base + rota, { waitUntil: 'networkidle' });
+        await pg.evaluate(() => document.fonts.ready);
+        const nome = await nomeDoH1(pg);
+        await ctx.close();
+        nomesWebkit.push({ camada, nome });
+      }
+      await nav2.close();
+    }
+    for (const m of manchetes) {
+      const w = nomesWebkit.find((x) => x.camada === m.camada);
+      m.nomeWebkit = w?.nome ?? null;
+      if (String(m.nomeWebkit) !== String(m.nomeChromium)) {
+        (m.queixas ??= []).push(
+          `os dois motores dão nomes diferentes (webkit «${String(m.nomeWebkit).slice(0, 50)}»)`,
+        );
+      }
+    }
+
+    const comQueixa = manchetes.filter((m) => m.erro || (m.queixas ?? []).length > 0);
+    medidas[`A16.${ed.chave}`] = { manchetes };
     conta(
       `A16.${ed.chave}`,
-      manchetes.length === 4 &&
-        manchetes.every((m) => !!m.frase) &&
-        partidas.length === 0 &&
-        orfaos.length === 0,
-      `a manchete das quatro camadas em ${ed.chave}, pelo texto acessível do <h1>: ` +
+      manchetes.length === 4 && comQueixa.length === 0,
+      `o nome acessível do <h1> das quatro camadas em ${ed.chave}, em Chromium e WebKit: ` +
         manchetes
-          .map((m) => `${m.camada} ${m.selos ?? 0} selo(s) fora da frase`)
+          .map((m) => `${m.camada} ${m.valores ?? 0} valor(es)/${m.selos ?? 0} selo(s)`)
           .join(' · ') +
-        (partidas.length
-          ? ` · SELO DENTRO DA FRASE em ${partidas.map((m) => `${m.camada} («${(m.inteiro ?? '').slice(0, 60)}…»)`).join(', ')}`
-          : '') +
-        (orfaos.length ? ` · valores sem selo em ${orfaos.map((m) => m.camada).join(', ')}` : ''),
+        (comQueixa.length
+          ? ` · QUEIXAS: ${comQueixa.map((m) => `${m.camada}: ${m.erro ?? m.queixas.join('; ')}`).join(' | ')}`
+          : ' · nome igual à frase nos dois motores, cada valor com a sua porta ao pé dele'),
+    );
+
+    /* ------------------------------------------------------------------ A17
+       O «n DE N» DE CADA FAIXA, COM O N DA PRÓPRIA PÁGINA
+       ------------------------------------------------------------------------
+       Segunda passagem, 03.09.2026, achado Major 7 da leitura a frio: «No ruler
+       verifies "n de N". A region showing "1 de 21" with both numerals still
+       marked `numeracao` would pass.» Tinha razão: a F12 da régua da faixa mede
+       a pertença dos cartões, os selos, a geometria e a ordem, e nunca lê o
+       `.cartao-posicao`. A posição era a única coisa deste bloco sem régua.
+
+       O QUE ESTA CÉLULA EXIGE, nas quatro camadas e nas duas edições:
+
+         · há uma posição por cartão, e nem uma a mais;
+         · o TOTAL de cada posição é o número de cartões DAQUELA página, contado
+           no HTML dela e não escrito aqui. É esta metade que recusa uma faixa de
+           região a dizer «de 21»;
+         · o ORDINAL corre de 1 a N, pela ordem do documento, sem saltos;
+         · e os DOIS algarismos levam `data-nonledger="numeracao"`, que é o
+           motivo do registo para a numeração de secções e de instrumentos. Um
+           algarismo à vista sem origem declarada é o que a casa não deixa
+           entrar. */
+    const faixas = [];
+    for (const [camada, rota] of CAMADAS) {
+      const pg = await pagina(rota, 390, ALTURA_PEQUENA);
+      const r = await pg.evaluate(() => {
+        const cartoes = [...document.querySelectorAll('[data-faixa] [data-cartao]')];
+        const posicoes = cartoes.map((c) => {
+          const p = c.querySelector('.cartao-posicao');
+          if (!p) return null;
+          const marcados = [...p.querySelectorAll('[data-nonledger]')].map((x) => ({
+            motivo: x.getAttribute('data-nonledger'),
+            texto: (x.textContent ?? '').trim(),
+          }));
+          return { texto: (p.textContent ?? '').replace(/\s+/g, ' ').trim(), marcados };
+        });
+        return { cartoes: cartoes.length, posicoes };
+      });
+      await pg.__ctx.close();
+      const queixas = [];
+      const N = r.cartoes;
+      const semPosicao = r.posicoes.filter((x) => x === null).length;
+      if (N === 0) queixas.push('a página não tem faixa nenhuma');
+      if (semPosicao > 0) queixas.push(`${semPosicao} cartão(ões) sem posição`);
+      r.posicoes.forEach((x, i) => {
+        if (!x) return;
+        const nums = x.marcados.map((m) => m.texto);
+        const motivos = x.marcados.map((m) => m.motivo);
+        if (x.marcados.length !== 2) {
+          queixas.push(`o cartão ${i + 1} tem ${x.marcados.length} algarismo(s) declarado(s)`);
+          return;
+        }
+        if (motivos.some((m) => m !== 'numeracao')) {
+          queixas.push(`o cartão ${i + 1} declara «${motivos.join(', ')}» e não «numeracao»`);
+        }
+        if (nums[0] !== String(i + 1)) {
+          queixas.push(`o cartão ${i + 1} diz que é o «${nums[0]}»`);
+        }
+        if (nums[1] !== String(N)) {
+          queixas.push(`o cartão ${i + 1} diz «de ${nums[1]}» numa faixa de ${N}`);
+        }
+      });
+      faixas.push({ camada, rota, cartoes: N, queixas });
+    }
+    const faixasComQueixa = faixas.filter((f) => f.queixas.length > 0);
+    medidas[`A17.${ed.chave}`] = { faixas };
+    conta(
+      `A17.${ed.chave}`,
+      faixas.length === 4 && faixasComQueixa.length === 0,
+      `o «n de N» das quatro faixas em ${ed.chave}: ` +
+        faixas.map((f) => `${f.camada} 1..${f.cartoes} de ${f.cartoes}`).join(' · ') +
+        (faixasComQueixa.length
+          ? ` · QUEIXAS: ${faixasComQueixa.map((f) => `${f.camada}: ${f.queixas.slice(0, 3).join('; ')}`).join(' | ')}`
+          : ''),
     );
   }
 }
@@ -1125,6 +1428,73 @@ const PLANTAS = [
        mais acima que se toca sem abrir uma gaveta é a do rodapé, a sete mil
        píxeis, e a medida do brief («≤ 1,5 ecrãs») cai. */
     f: (h) => h.replace(/<p class="inicio-estudos"/, '<p class="inicio-estudos" style="display:none"'),
+  },
+  {
+    nome: 'a manchete do domínio com dois valores e um selo só',
+    celulas: ['A16.pt', 'A16.en'],
+    rotas: [
+      '/dominios/economia-e-financas-publicas/index.html',
+      '/en/domains/economia-e-financas-publicas/index.html',
+    ],
+    /* O CASO QUE O MAJOR 6 NOMEIA. A primeira redação da A16 perguntava se o PAI
+       de um valor continha ALGUM `.src-chip`; como os dois valores partilham o
+       `<h1>`, um selo só satisfazia os dois. Esta planta tira o segundo selo e
+       deixa o primeiro: a frase não muda, o nome não muda, e o que fica sem
+       porta é o saldo das administrações públicas. */
+    f: (h, rota) => {
+      if (!rota.includes('dominios') && !rota.includes('domains')) return h;
+      const i = h.indexOf('<span class="manchete-selos">');
+      if (i < 0) return h;
+      const fim = h.indexOf('</span></h1>', i);
+      if (fim < 0) return h;
+      const bloco = h.slice(i, fim);
+      const selos = [...bloco.matchAll(/<a class="src-chip[\s\S]*?<\/a>/g)];
+      if (selos.length < 2) return h;
+      return h.slice(0, i) + bloco.replace(selos[1][0], '') + h.slice(fim);
+    },
+  },
+  {
+    nome: 'um selo da manchete a abrir a linha do outro valor',
+    celulas: ['A16.pt', 'A16.en'],
+    rotas: [
+      '/dominios/economia-e-financas-publicas/index.html',
+      '/en/domains/economia-e-financas-publicas/index.html',
+    ],
+    /* A OUTRA METADE DO MAJOR 6: os dois selos ficam, e um deles passa a abrir a
+       linha do vizinho. A contagem de selos continua certa, o nome continua
+       certo, e o que está errado é a porta: um leitor que toque no selo da
+       dívida pública aterra na linha do saldo. */
+    f: (h, rota) => {
+      if (!rota.includes('dominios') && !rota.includes('domains')) return h;
+      const i = h.indexOf('<span class="manchete-selos">');
+      if (i < 0) return h;
+      const fim = h.indexOf('</span></h1>', i);
+      if (fim < 0) return h;
+      const bloco = h.slice(i, fim);
+      const trocado = bloco.replace('divida-publica-2025', 'saldo-das-administracoes-publicas-2025');
+      return h.slice(0, i) + trocado + h.slice(fim);
+    },
+  },
+  {
+    nome: 'a faixa de uma região a dizer «de 21»',
+    celulas: ['A17.pt', 'A17.en'],
+    rotas: ['/regioes/alentejo/index.html', '/en/regions/alentejo/index.html'],
+    /* O TOTAL DA PRIMEIRA PÁGINA NUMA FAIXA QUE TEM DOIS CARTÕES. É o caso que
+       o Major 7 nomeia: o algarismo continua declarado como `numeracao`, a
+       posição continua lá, e o que está errado é que ele não é o N daquela
+       página. Uma célula que só contasse posições passava. */
+    f: (h, rota) => {
+      if (!rota.includes('regio') && !rota.includes('region')) return h;
+      /* O TOTAL é o SEGUNDO algarismo declarado de cada posição, e é só ele que
+         a planta troca: o ordinal fica certo, a marca fica declarada, e o que
+         passa a estar errado é o N. Medido no HTML construído, a posição rende
+         `<span class="cartao-posicao"><span data-nonledger="numeracao">1</span>
+         de <span data-nonledger="numeracao">2</span></span>`. */
+      return h.replace(
+        /(<span class="cartao-posicao">(?:(?!<\/span><\/span>)[\s\S])*<span data-nonledger="numeracao">)\d+(<\/span><\/span>)/g,
+        '$121$2',
+      );
+    },
   },
   {
     nome: 'o selo de volta dentro da manchete do domínio',

@@ -8,11 +8,19 @@ F1.1, e da segunda metade da linha F1.9 do plano. Sem travessões na prosa.*
 
 ## 1 · O resultado, em cinco linhas
 
+*Segunda passagem, 03.09.2026, depois da leitura a frio do Codex
+(`design/especime-v3/critica/2026-09-03-codex-leitura-f12b-portas.md`: cinco
+plantas de três classes, **5 de 5 vistas**, doze achados distintos). Quatro dos
+doze eram as plantas e não estão neste ramo; conferido antes de mexer em nada, e
+a §14 imprime o comando de cada um. Seis são reais e estão consertados; os outros
+dois são o pacote da leitura e uma decisão do diretor. A §14 diz o que cada um
+passou a ser.*
+
 **As sete medidas de aceitação, de E1 a E7, estão verdes nas duas edições**,
-medidas pela régua do F1.1 (`tests/inicio/porta.mjs`), que passou de 24 para 32
-células. **Os quatro estragos plantados do E6 foram vistos vermelhos e depois
-verdes**, ao lado dos sete que o F1.1 deixou: são onze plantas, e nenhuma passou
-por planta sem plantar.
+medidas pela régua do F1.1 (`tests/inicio/porta.mjs`), que passou de 24 para
+**34** células. **Os sete estragos plantados deste bloco foram vistos vermelhos e
+depois verdes**, ao lado dos sete que o F1.1 deixou: são catorze plantas, e
+nenhuma passou por planta sem plantar.
 
 **Três dos vinte e um cartões da faixa passam a abrir a página do domínio**, na
 âncora da sua medida (`#m-e3`, `#m-t1`, `#m-t2`), e dizem-no com uma palavra que
@@ -30,10 +38,14 @@ estudos**, e o teto da régua sobe os mesmos 50 px, com a medição escrita ao l
 dele. Mais nada deste bloco custa altura ao telemóvel; a manchete do domínio
 ENCOLHEU 3,4 px.
 
-**A manchete deixou de trazer o texto do selo dentro da frase em três camadas**,
-e não em duas: o domínio e o concelho, que o brief nomeia, e também a região, que
-ficaria a única com o defeito depois de o mecanismo existir. **Nenhuma cadeia
-nova entrou no sítio: `src/i18n/strings.mjs` não foi tocado.**
+**O NOME ACESSÍVEL da manchete passou a ser a frase, e mais nada**, em três
+camadas e não em duas: o domínio e o concelho, que o brief nomeia, e também a
+região, que ficaria a única com o defeito depois de o mecanismo existir. A
+primeira passagem tinha tirado o selo de dentro da frase e deixado o seu texto no
+fim do nome do título; a segunda dá ao `<h1>` um `aria-labelledby` para os
+pedaços da frase e lê o nome CALCULADO em Chromium e em WebKit (§4). **Nenhuma
+cadeia nova entrou no sítio: nenhum commit deste bloco tocou `strings.mjs`, o
+inventário ou as chaves inglesas.**
 
 **Uma coisa custou mais do que o brief mede, e está medida na §9 (5):** o doze
 avo item do menu não cabe na fila com a ligação da edição ao lado, e a mobília
@@ -51,10 +63,22 @@ no repositório**, para que ninguém tenha de acreditar na tabela:
 
 ```
 OEDP_DIST=<a construção de partida> node tests/inicio/porta.mjs \
-  --json design/especime-v3/medicoes/portas-medidas-antes.json    → saída 1 · 24 de 32
+  --json design/especime-v3/medicoes/portas-medidas-antes.json    → saída 1 · 24 de 34
 node tests/inicio/porta.mjs --vermelhos \
-  --json design/especime-v3/medicoes/portas-medidas-depois.json   → saída 0 · 32 de 32 · 11 de 11 plantas
+  --json design/especime-v3/medicoes/portas-medidas-depois.json   → saída 0 · 34 de 34 · 14 de 14 plantas
 ```
+
+**As dez células vermelhas da partida são exactamente as deste bloco**, cinco por
+edição: A13 (os cartões apontam todos à leitura desta página), A14 («Domínios»
+não está no menu, que tem onze portas), A15 (a porta dos estudos mais acima está
+a 9,14 ecrãs), A16 (o nome do título traz o texto do selo nas três camadas que
+citam linhas) e A17 (o domínio, a região e o concelho sem posição nenhuma nos
+cartões). As outras vinte e quatro passam dos dois lados.
+
+**E o teto que cada lado guarda é o que o governa** (segunda passagem, Minor 11):
+o JSON de partida traz `{"teto": 6941, "tetoDaPartida": 6941, "filaDosEstudos": 0}`
+e o desta construção `{"teto": 6991, "tetoDaPartida": 6941, "filaDosEstudos": 50}`.
+A régua imprime a conta em cada linha.
 
 | # | medida | antes (`d82bc4cf`) | depois | estado |
 | --- | --- | --- | --- | --- |
@@ -66,10 +90,11 @@ node tests/inicio/porta.mjs --vermelhos \
 | E3 en | o mesmo | 3 portas, 2 tocáveis; a mais acima a **6 041,8 px** (**9,10 ecrãs**) | a mais acima a **650,1 px** (**0,98 ecrã**), alvo 354 × 44 px; um toque chegou a `/en/studies` | ✓ |
 | E4 pt | a altura de `/` a 390 não sobe mais do que a altura da fila dos estudos | **6 909 px** (teto 6 941) | **6 959 px** (mais **50**, que é a altura da fila; teto 6 991, folga 32) | ✓ |
 | E4 en | o mesmo | 6 861 px (teto 6 890) | 6 911 px (mais 50; teto 6 940, folga 29) | ✓ |
+| E3b | o «n de N» de cada faixa com o N da própria página (segunda passagem, Major 7; a A17) | o domínio, a região e o concelho **sem posição nenhuma**: 5, 2 e 8 cartões sem ela | 1..21 de 21 na primeira página, 1..5 de 5 no domínio, 1..2 de 2 na região, 1..8 de 8 no concelho, com os dois algarismos declarados `numeracao` | ✓ |
 | E5 | as réguas do F1.1 e as do sítio verdes; `build`, `verify`, `typecheck` a 0 | — | os três a 0, lidos de ficheiros escritos pelo próprio comando; a lista das réguas está na §7 | ✓ |
 | E6 | uma planta por porta, vermelha e depois verde | — | as quatro vistas vermelhas e repostas verdes; a §6 imprime-as | ✓ |
-| E7 pt | a manchete sem texto de selo dentro da frase, pelo texto acessível do `<h1>` | domínio: «A dívida pública é 89,7%**fonte · Quadro institucional de indicadores** do PIB, …»; concelho: «Évora tem 58 567**fonte · Évora — Economia, Investidores, Portas Abertas 2026** pessoas.»; região: idem, duas vezes | as quatro camadas com o texto inteiro a COMEÇAR pela frase: país 0 selos, domínio 2, região 2, concelho 1, todos fora da frase | ✓ |
-| E7 en | o mesmo | domínio: «Government debt is 89,7%**source · Institutional indicator framework** of GDP, …» | idem | ✓ |
+| E7 pt | a manchete sem texto de selo, medida pelo NOME ACESSÍVEL do `<h1>` (segunda passagem: era pelo texto, e por prefixo) | medido na partida: o nome do domínio é «A dívida pública é 89,7 % **fonte · Quadro institucional de indicadores** …», o do concelho «Évora tem 58 567 **fonte · Évora — Economia, Investidores, Portas Abertas 2026**…», o da região idem duas vezes | as quatro camadas com o nome calculado IGUAL à frase e sem texto de selo nenhum, em **Chromium e em WebKit**; cada valor com o SEU selo (a linha certa), ao pé do número e fora da frase, medido em píxeis | ✓ |
+| E7 en | o mesmo | o nome acabava em «**source · Institutional indicator framework**» | idem | ✓ |
 
 ## 3 · O que se construiu, item a item do brief §1
 
@@ -163,75 +188,150 @@ bloco inteiro é a ligação, e por isso a régua da voz não o recolhe («uma l
 inteira não é uma frase, é um destino»): **nenhuma cadeia nova entra no
 inventário, porque nenhuma cadeia nova existe.**
 
-## 4 · O selo fora da frase: a forma, e porque é que ela é a que o portão permite
+## 4 · O nome acessível da manchete, e porque é que ele se compõe de pedaços
 
-O item 9 do `BRIEF-F1.1-porta-da-frente.md` desenha-a numa linha: «a manchete é
-uma frase; o selo vai ao pé do número, na linha de baixo». A pergunta que ele não
-responde é ONDE, na árvore, e essa é decidida por um portão que não se
-enfraquece.
+*Reescrita na segunda passagem, 03.09.2026, sobre o achado Major 5 da leitura a
+frio. A primeira redação desta secção descrevia a forma que ela tinha então, e
+essa forma estava a meio caminho.*
 
-**`auditaSelo()` (`scripts/gate-html.mjs`) exige que o selo de um valor esteja
-dentro do PAI do elemento que leva o `data-claim`**, «o selo é do VALOR e não da
-secção», e é essa regra que impede um selo no fim da página de passar por porta
-de um número que está no princípio. Um selo num `<p>` a seguir ao `</h1>` deixa
-de estar no pai do valor, e a construção fecha.
+O item 9 do `BRIEF-F1.1-porta-da-frente.md` desenha a coisa numa linha: «a
+manchete é uma frase; o selo vai ao pé do número, na linha de baixo». A primeira
+passagem tirou o texto do selo de DENTRO da frase e pô-lo no fim do `<h1>`. A
+frase deixou de se partir ao meio, e o leitor a frio apanhou o que faltava: **o
+NOME ACESSÍVEL do título continuava a acabar com «fonte · Quadro
+institucional…»**, duas vezes na página do domínio e uma na de cada concelho.
+Quem percorre uma página pelos títulos ouvia o nome de duas ligações colado ao
+fim da manchete. A medida E7 media um PREFIXO, e um prefixo aceita o que vem
+depois dele.
 
-**A saída é a que a regra permite sem se abrir:** o valor é filho DIRECTO do
-`<h1>` e os selos são o último filho do mesmo `<h1>`. O pai é o mesmo, o portão
-continua a exigir o que exigia, e a frase lê-se inteira antes de qualquer selo.
-Na folha, `.manchete-selos` é um bloco, e o que se vê é a frase e, na linha de
-baixo, os selos ao pé do número.
+### O teorema que fecha a porta óbvia
 
-**Isso obrigou a um modo novo em `<Claim>`, e ele não dispensa nada.** Com
-`sufixo`, o componente embrulhava o valor e o símbolo num `<span class="claim">`,
-e o pai do valor passava a ser esse invólucro, que não tem selo nenhum lá dentro.
-O modo `plano` rende os mesmos filhos, pela mesma ordem (valor, unidade colada,
-palavra da ressalva), sem o invólucro. **Quem o usa continua a ter de pôr o selo,
-e é o portão que lho cobra**: um chamador que se esqueça vê a construção fechar
-com a mensagem de sempre. Foi por isso que o modo ficou em `Claim.astro` e não na
-vista: a ordem dos três filhos está escrita na §11 uma vez, e uma segunda
-composição fora do componente podia escrevê-la ao contrário sem nada cair.
+A forma óbvia era um `aria-labelledby` para UM `<span>` com a frase inteira lá
+dentro. Ela não é possível, e a razão é um portão que não se enfraquece.
+`auditaSelo()` exige que o selo de um valor esteja dentro do PAI do elemento que
+leva o `data-claim`. Daí sai um teorema de uma linha:
 
-**O `nowrap` que o invólucro dava não se perdeu, e mediu-se.**
-`.cabeca-h1 .claim-value` declara-o na folha; entre o valor e o `%` não há
-oportunidade de quebra nenhuma para o navegador (um símbolo colado a um número é
-a classe PO da UAX #14, e a regra LB25 proíbe a quebra ali). Medido nas duas
-edições a 390: **o valor rende num só rectângulo e o símbolo fica na mesma linha
-do valor**, nos dois números da manchete do domínio.
+> se um elemento CONTÉM um valor, contém também o selo desse valor
+> (o pai do valor está dentro dele, e o selo está dentro do pai).
 
-**A célula que mede isto é mecânica e não uma leitura.** O texto do `<h1>` com os
-selos retirados é a FRASE; o texto inteiro tem de COMEÇAR por ela. Um selo pelo
-meio parte a frase e a comparação cai; um selo no fim não a parte. E a célula
-exige, na mesma linha, que cada valor do livro-razão da manchete continue a ter o
-seu selo: sem essa segunda metade, a maneira mais fácil de a passar era tirar as
-portas, que é o contrário do que o bloco quer.
+Logo **qualquer elemento que embrulhe a frase embrulha também os selos**, e o
+nome tirado dele voltaria a acabar em «fonte». O único elemento que se pode
+referir sem arrastar um selo é o próprio valor.
 
-**O que a manchete ganhou e perdeu, medido:** a altura do `<h1>` do domínio a 390
-passou de **190,2 px a 186,8 px** em `/dominios/…` e de **221,5 px a 218,2 px** na
-edição inglesa. Encolheu, porque os selos saíram do corpo da manchete
-(28 px) para uma linha própria de 13 px.
+### A forma que fica
+
+O `<h1>` leva um `aria-labelledby` que lista, pela ordem da frase, **cada corrida
+de texto, cada valor, cada símbolo de unidade e cada marca declarada**, cada um
+com o seu `id`. Os selos ficam no `<h1>` (o portão exige-os lá) e fora da lista
+(o nome não os quer). Os valores continuam filhos DIRETOS do título, e por isso o
+pai deles é o título, que é onde os selos estão: **o portão continua a exigir
+exactamente o que exigia, e não se lhe tocou.**
+
+### O que isto custa, medido nos dois motores
+
+O algoritmo do nome acessível junta o texto de duas referências com um espaço
+pelo meio. Medido a 03.09.2026 com a mesma página de prova em Chromium e em
+WebKit:
+
+| forma | nome calculado |
+| --- | --- |
+| `aria-labelledby` para UMA referência | «A dívida pública é 89,7% do PIB.» |
+| `aria-labelledby` para VÁRIAS | «A dívida pública é 89,7 % do PIB.» |
+| sem `aria-labelledby` (o estado da primeira passagem) | «A dívida pública é 89,7% do PIB. fonte · Quadro» |
+
+**O símbolo da unidade fica separado do número por um espaço, e só no nome.** O
+texto à vista não muda um píxel, e o `%` continua colado ao número como a §11
+manda. Um leitor de ecrã diz «oitenta e nove vírgula sete por cento» nos dois
+casos, porque o espaço antes de um símbolo não se ouve. É o preço de o selo sair
+do nome sem o portão se abrir; está medido, está escrito no cabeçalho de
+`src/components/Manchete.astro`, e a célula A16 compara o nome com a frase **com
+os espaços tirados dos dois lados**, para que nenhuma palavra possa cair sem ser
+vista.
+
+### O que o nome passou a ser, nas quatro camadas e nos dois motores
+
+Medido pelo `ariaSnapshot()` do próprio `<h1>`, que é o nome que o navegador
+calcula e não uma recomposição da régua:
+
+| camada | nome acessível do `<h1>` (pt) | traz texto de selo |
+| --- | --- | --- |
+| país | «Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.» | não |
+| domínio | «A dívida pública é 89,7 % do PIB, fora do limiar de 60 %; o saldo das administrações públicas é 0,7 % do PIB, dentro do limiar de −3 %.» | não |
+| região | «O Alentejo está 23 pontos abaixo da média da UE-27. Em 2000 estava a 22 : a distância aumentou.» | não |
+| concelho | «Évora tem 58 567 pessoas.» | não |
+
+Chromium e WebKit dão o **mesmo nome**, carácter a carácter, nas quatro camadas e
+nas duas edições. A célula recusa se os dois divergirem.
+
+### O `nowrap` do valor, e a razão de o modo plano existir
+
+`.cabeca-h1 .claim-value` declara `white-space: nowrap` na folha; entre o valor e
+o `%` não há oportunidade de quebra nenhuma para o navegador (um símbolo colado a
+um número é a classe PO da UAX #14, e a regra LB25 proíbe a quebra ali). Medido
+nas duas edições a 390: o valor rende num só rectângulo e o símbolo fica na mesma
+linha do valor. O modo `plano` de `<Claim>` existe para o valor ser filho direto
+do título; **não dispensa nada**, e um chamador que se esqueça do selo vê a
+construção fechar com a mensagem de sempre.
+
+### O que a manchete ganhou e perdeu
+
+A altura do `<h1>` do domínio a 390 passou de **190,2 px a 186,8 px** e a da
+edição inglesa de **221,5 px a 218,2 px**: encolheu, porque os selos saíram do
+corpo da manchete (28 px) para uma linha própria de 13 px.
 
 ## 5 · O que NÃO entrou
 
-**Nenhuma cadeia nova.** `git diff src/i18n/strings.mjs` não tem saída: as três
-superfícies novas rendem cadeias que já estavam declaradas
+**Nenhuma cadeia nova, e a prova é um comando com a sua saída** (segunda
+passagem, Major 8: «neither voice inventory nor its origins is supplied»). As
+três superfícies novas rendem cadeias que já estavam declaradas
 (`s.dominios.eyebrow`, `s.estudos.h1`, `s.nav.dominios`), e as três chegam ao
-leitor dentro de uma âncora ou de um `<span>` que a régua da voz não recolhe. O
-`INVENTARIO-FRASES.md` e o `CHAVES-EN.md` ficam como estavam, e `npm run
-check:voz` continua a dizer «nada por classificar».
+leitor dentro de uma âncora ou de um `<span>` que a régua da voz não recolhe.
+
+```
+git diff --stat 86632082 HEAD -- src/i18n/strings.mjs   design/especime-v3/INVENTARIO-FRASES.md design/especime-v3/CHAVES-EN.md   design/especime-v3/critica/REVISOES-DO-INVENTARIO.md design/especime-v3/VOZ-MARCADORES.md
+  → sem saída
+```
+
+**A base da comparação é `86632082` e não `d82bc4cf`, e a razão fica dita**:
+contra o ponto de partida do ramo o `strings.mjs` mostra onze linhas
+acrescentadas, e elas são do F1.8 (`documentoDeslocamento`, o nome de uma caixa
+que se desloca), que entrou por fusão. `git log d82bc4cf..HEAD -- src/i18n/strings.mjs`
+nomeia os três commits, e nenhum é deste bloco.
+
+**E o portão da voz confirma-o do outro lado**, sobre a construção deste ramo:
+
+```
+voz ✓ 65 marcadores · 11 exceções · 800 frases distintas, 34 133 ocorrências em
+1 382 rotas · autorreferência 0 · nada por classificar · 756 linhas do inventário
+com bloco (670 vivas, todas rendidas; 86 retiradas, nenhuma rendida)
+```
+
+«Nada por classificar» é a metade que importa: um bloco de texto novo numa rota
+inventariada fecharia a construção. As manchetes ganharam `<span>` à volta de
+cada corrida de texto para o nome acessível se compor, e o texto que a régua da
+voz recolhe não mudou um carácter, que é o que este verde diz.
 
 **Nenhum número novo, e a prova conta as quatro classes** que a régua
 `tests/inicio/numeros-novos.mjs` conhece, sobre as 7 238 páginas construídas dos
-dois lados:
+dois lados. **A auditoria ficou guardada** (segunda passagem, Major 8: os dois
+JSON da primeira passagem cobriam quatro páginas e não sustentavam a conta das
+9 948), em `design/especime-v3/medicoes/portas-numeros-sitio-{antes,depois}.json`:
 
 | classe | o que é | antes | depois | o que mudou |
 | --- | --- | --- | --- | --- |
-| `data-claim` | o valor de uma linha do livro-razão | 2 916 distintos · 31 244 | **2 916 distintos · 31 244** | **nada**: nenhum id entrou nem saiu, e nenhuma ocorrência |
-| `data-prova` | uma contagem do sítio, que o portão reconta | 47 · 14 584 | **47 · 14 584** | nada |
-| `data-nonledger` | contexto estrutural, com o motivo em `ledger/allowlist.yml` | 16 motivos · 64 742 | **16 motivos · 74 690** | **nenhum motivo novo**; mais 9 948 ocorrências, todas de `numeracao` |
-| `data-verbatim` | uma citação transcrita | 6 chaves · 23 | **6 chaves · 23** | nada |
+| `data-claim` | o valor de uma linha do livro-razão | 2 916 distintos · 31 244 | **2 916 distintos · 31 244** | **nada**: o resumo sha256 da lista ordenada das chaves é o MESMO dos dois lados, ou seja nenhum id entrou nem saiu |
+| `data-prova` | uma contagem do sítio, que o portão reconta | 47 · 14 584 | **47 · 14 584** | nada; mesmo resumo |
+| `data-nonledger` | contexto estrutural, com o motivo em `ledger/allowlist.yml` | 16 motivos · 64 742 | **16 motivos · 74 690** | **nenhum motivo novo** (mesmo resumo); `numeracao` passa de **124 a 10 072**, mais 9 948 |
+| `data-verbatim` | uma citação transcrita | 6 chaves · 23 | **6 chaves · 23** | nada; mesmo resumo |
 
-**As 9 948 ocorrências dizem-se por extenso, e a conta fecha ao algarismo**: são
+**O ficheiro guardado é pequeno de propósito**: traz a contagem de cada classe, o
+mapa motivo→ocorrências onde ele é pequeno (os 16 motivos, as 47 chaves da prova,
+as 6 transcrições) e um **resumo sha256 da lista ordenada das chaves** de cada
+classe. É o resumo que sustenta «nenhum id entrou nem saiu» sem pôr os 2 916
+identificadores do livro-razão dentro do relatório.
+
+**As 9 948 ocorrências dizem-se por extenso, e a conta fecha ao algarismo** (e
+agora contra o ficheiro guardado, e não contra a memória do relatório): são
 o ordinal e o total de cada cartão das faixas que ganharam a posição, nas duas
 edições. 308 concelhos × 8 cartões × 2 algarismos × 2 edições = 9 856; 9 regiões
 × 2 × 2 × 2 = 72; 1 domínio × 5 × 2 × 2 = 20. Somam **9 948**. Nenhum é uma
@@ -257,6 +357,9 @@ ela), **o HTML mudou** (a transformação dá bytes diferentes) e **vermelho dep
 | o menu sem «Domínios» | A14.pt, A14.en | sim | sim | as duas vermelhas |
 | os estudos a mais de 1,5 ecrãs (a fila escondida) | A15.pt, A15.en | sim | sim | as duas vermelhas |
 | o selo de volta dentro da manchete do domínio | A16.pt, A16.en | sim | sim | as duas vermelhas |
+| **a manchete do domínio com dois valores e um selo só** (segunda passagem, Major 6) | A16.pt, A16.en | sim | sim | as duas vermelhas |
+| **um selo da manchete a abrir a linha do outro valor** (segunda passagem, Major 6) | A16.pt, A16.en | sim | sim | as duas vermelhas |
+| **a faixa de uma região a dizer «de 21»** (segunda passagem, Major 7) | A17.pt, A17.en | sim | sim | as duas vermelhas |
 
 **A conferência de «o html mudou» tinha um buraco, e este bloco fechou-o.** Ela
 lia sempre `/index.html` e `/en/index.html`, e a planta do selo só toca na página
@@ -273,17 +376,29 @@ conferência existe.
 **As sete plantas do F1.1 continuam verdes** na mesma corrida, e a lista está na
 saída da régua: o selo do último cartão, a cópia de um valor, a Comissão numa
 frase só, a busca sem `action`, uma unidade do mapa sem nome, a página mais alta
-do que o teto, e a mobília do menu em duas filas.
+do que o teto, e a mobília do menu em duas filas. **São catorze ao todo**, sete do
+F1.1 e sete deste bloco.
+
+**AS TRÊS PLANTAS DA SEGUNDA PASSAGEM SÃO OS CASOS QUE A LEITURA A FRIO NOMEOU**,
+e não variações do que já caía. A do selo a menos e a do selo trocado são as duas
+metades do Major 6 («one remaining or wrongly targeted seal can satisfy every
+value»): na primeira o nome não muda, a frase não muda, e o saldo das
+administrações públicas fica sem porta; na segunda a contagem de selos continua
+certa e o que está errado é o destino. A da faixa da região é o Major 7 à letra
+(«a region showing "1 de 21" with both numerals still marked `numeracao` would
+pass»): o ordinal fica certo, a marca fica declarada, e o que passa a estar errado
+é o N.
 
 ## 7 · As réguas, e o que mudou em cada uma
 
 | régua · célula | media antes | passa a medir |
 | --- | --- | --- |
-| `porta` A2 | teto 6 941 / 6 890 px | teto **6 991 / 6 940**, subido em exactamente 50 px, que é a altura medida da fila dos estudos, com a medição escrita na régua |
-| `porta` A13 (nova) | — | o destino de cada um dos 21 cartões, cartão a cartão, contra `dominioDaLinha()`, com a âncora conferida na página de chegada; e o rótulo do destino em cada cartão que aponta para fora e em nenhum dos outros, com caixa e sem se sobrepor ao selo daquele cartão |
-| `porta` A14 (nova) | — | «Domínios» no menu pelo `href`, com a página a responder 200 |
+| `porta` A2 | teto 6 941 / 6 890 px, escrito | o teto passa a ser uma REGRA e não um segundo número (Minor 11): teto da partida **mais a altura da fila dos estudos medida na construção que se está a ler**. Na árvore de partida a fila não existe e o teto é 6 941 / 6 890; nesta é 6 991 / 6 940 |
+| `porta` A13 (nova) | — | o destino de cada um dos 21 cartões, cartão a cartão, contra `dominioDaLinha()`, com a âncora conferida na página de chegada; e o rótulo do destino em cada cartão que aponta para fora e em nenhum dos outros, com caixa, sem se sobrepor ao selo daquele cartão, **e com a PALAVRA comparada com `dominios.eyebrow` da edição** (Minor 12) |
+| `porta` A14 (nova) | — | «Domínios» no menu pelo `href`, com a página a responder 200, **e pela PALAVRA**: o texto do item comparado com `nav.dominios` da edição, lido de `strings.mjs`, com a gaveta aberta para a etiqueta ter caixa (Minor 12) |
 | `porta` A15 (nova) | — | `/estudos` a ≤ 1 toque e ≤ 1,5 ecrãs, com as portas dentro de gavetas fechadas deitadas fora antes de medir |
-| `porta` A16 (nova) | — | a manchete das quatro camadas sem texto de selo dentro da frase, e nenhum valor sem selo |
+| `porta` A16 (nova, reescrita na segunda passagem) | media um PREFIXO do texto, e «o pai deste valor tem algum selo» | o NOME ACESSÍVEL calculado do `<h1>`, lido por `ariaSnapshot()` em **Chromium e WebKit**, igual à frase e sem texto de selo; e, por valor, **um** selo para a linha DAQUELE valor, sem cruzar nenhum pedaço da frase e na linha de baixo (Major 5 e Major 6) |
+| `porta` A17 (nova, segunda passagem) | — | o «n de N» das quatro faixas: uma posição por cartão, o total igual ao número de cartões DAQUELA página, o ordinal de 1 a N pela ordem do documento, e os dois algarismos com o motivo `numeracao` (Major 7) |
 | `porta` (plantas) | o html muda nas duas primeiras páginas | o html muda nas rotas que a planta nomeia |
 | `faixa` F7 | o destino de um cartão é uma âncora DESTA página | o destino é o que cada forma promete: `#id` existe aqui; `/caminho#id` responde 200 e tem o `id` lá dentro; `/caminho` responde 200 |
 
@@ -299,7 +414,7 @@ cada uma lido de um ficheiro escrito pelo próprio comando:**
 ```
 app 0 · areas 0 · correcoes-a 0 · faixa 0 · lista 0 · mapa-distritos 0
 mapa-navegacao 0 · matriz 0 · regioes 0 · rotulo 0 · numeros-novos 0
-porta 0 (32 de 32 células, 11 de 11 plantas)
+porta 0 (34 de 34 células, 14 de 14 plantas)
 dominio/pagina 0 (6 de 6 plantas) · dominio/medidas 0 · dominio/alcance 0
 texto/correcoes-b 0
 linha/correcoes-b 1 · texto/correcoes-c 1   (as duas eram-no na árvore de partida)
@@ -358,7 +473,9 @@ numa página que este bloco tem de não fazer crescer, e a porta cumpre a medida
 sozinha.
 
 **5 · O QUE O DOZE AVO ITEM DO MENU CUSTA A PARTIR DE 1024, e é o custo que este
-bloco entrega sem o poder fechar.** A fila do menu passou a não caber numa linha
+bloco entrega sem o poder fechar.** *(A leitura a frio nomeia-o Major 9; a
+triagem do lugar de direção manda-o para os pendentes, porque é uma decisão de
+forma do diretor. Fica medido aqui e não consertado à revelia.)* A fila do menu passou a não caber numa linha
 com a ligação da edição ao lado, e a mobília ganhou uma fila física a partir de
 1024. Medido nas duas construções, com a mesma sonda:
 
@@ -437,6 +554,8 @@ não se via em nenhuma das outras.
 | `portas-medidas-depois.json` | as 32 células sobre esta construção (saída 0, 32 de 32, 11 de 11 plantas) |
 | `portas-numeros-antes.json` | o inventário dos algarismos das quatro páginas deste bloco, na partida |
 | `portas-numeros-depois.json` | o mesmo, nesta construção |
+| `portas-numeros-sitio-antes.json` | a auditoria das **7 238 páginas** na partida, condensada: contagens, motivos e o resumo sha256 das chaves de cada classe |
+| `portas-numeros-sitio-depois.json` | o mesmo, nesta construção (segunda passagem, Major 8) |
 
 ## 12 · A fusão com o `main`, e o que ela custou
 
@@ -484,3 +603,96 @@ são réguas. Ao todo, com o relatório, as quatro medições e as 30 capturas, 
 ficheiros** deste bloco. O `git diff --name-only d82bc4cf HEAD` conta 49 fora dos
 ficheiros do F1.8, e os dois a mais são a fusão: `package.json` e
 `package-lock.json` chegam do outro lado.
+
+## 14 · Segunda passagem, depois da leitura a frio do Codex (03.09.2026)
+
+*A leitura está em `design/especime-v3/critica/2026-09-03-codex-leitura-f12b-portas.md`:
+Codex `gpt-5.6-sol`, xhigh, sobre um pacote com cinco plantas de três classes,
+**cinco de cinco vistas**, doze achados distintos. A triagem do lugar de direção
+está no cabeçalho daquele ficheiro.*
+
+### As quatro plantas, e a prova de que não estão neste ramo
+
+Quatro dos doze achados são as plantas que o pacote levava. Conferidos neste ramo
+antes de mexer em nada, cada um com o seu comando:
+
+| planta | o achado que ela gerou | conferido aqui |
+| --- | --- | --- |
+| P1a e P1b · `dominioDaLinha()` a exigir a linha principal **e** uma secundária (`&&`) | Blocking 1 | o ramo tem `\|\|`: `m.claim === id \|\| (m.claims ?? []).some(…)`, e a A13 conta 3 cartões para o domínio |
+| P4 · a entrada do menu a apontar a `/dominio` | Blocking 2 | `grep -c 'href="/dominio"' dist/index.html` → **0**; `href="/dominios"` está lá |
+| P2 · a régua a aceitar os estudos a 9,5 ecrãs | Blocking 3 | `ALTURA_DA_DOBRA = 1.5`, uma vez só no ficheiro |
+| P3 · o relatório a dizer 6 627 px na prosa | Minor 10 | `grep -c '6 627'` → **0**; `grep -c '662,7'` → 3 |
+
+**Nenhum é real neste ramo.**
+
+### Os seis achados reais, e o que cada um passou a ser
+
+**Major 5 · o nome acessível ainda acabava com as palavras do selo.** Real, e era
+o que o bloco devia ter fechado. A §4 foi reescrita inteira: o `<h1>` ganha um
+`aria-labelledby` que lista os pedaços da frase, os selos ficam dentro do título
+(o portão exige-o) e fora da lista (o nome não os quer), e a A16 passa a ler o
+nome CALCULADO por `ariaSnapshot()` em Chromium e em WebKit, nas quatro camadas e
+nas duas edições. O teorema que fecha a porta óbvia (um `aria-labelledby` para um
+`<span>` com a frase toda) está escrito na §4 e no cabeçalho de
+`src/components/Manchete.astro`, e o preço medido (um espaço antes do símbolo da
+unidade, no nome e não à vista) também.
+
+**Major 6 · a A16 não provava que cada valor tinha a sua porta.** Real. A célula
+perguntava se o PAI de um valor continha ALGUM `.src-chip`, e como os valores
+partilham o `<h1>` um selo satisfazia todos. Passa a exigir, por valor, **um**
+selo cujo `href` é o caminho da linha DAQUELE valor, e a medir onde ele está: não
+cruza nenhum pedaço da frase, e fica na linha de baixo a menos de um ecrã
+pequeno. **Duas plantas novas** provam as duas metades: a manchete do domínio com
+dois valores e um selo só, e um selo a abrir a linha do outro valor.
+
+**Major 7 · nenhuma régua lia o «n de N».** Real, e era o único item deste bloco
+sem régua. Entra a **A17**: nas quatro camadas e nas duas edições, uma posição por
+cartão, o total igual ao número de cartões DAQUELA página (contado no HTML dela e
+não escrito na régua), o ordinal a correr de 1 a N pela ordem do documento, e os
+dois algarismos com o motivo `numeracao`. A planta é a do achado, à letra: a faixa
+de uma região a dizer «de 21», com o ordinal certo e a marca declarada.
+
+**Major 8 · a prova da voz e dos números estava incompleta.** Real. A auditoria
+das 7 238 páginas ficou guardada, condensada, nos dois ficheiros
+`portas-numeros-sitio-{antes,depois}.json`, com o resumo sha256 da lista ordenada
+das chaves de cada classe: é ele que sustenta «nenhum id entrou nem saiu» sem pôr
+o livro-razão dentro do relatório, e é nele que se lê `numeracao` a passar de 124
+a 10 072. A prova da voz passou a ser um comando com a sua saída, contra
+`86632082`, com a nota de que as onze linhas que o `strings.mjs` mostra contra o
+ponto de partida do ramo são do F1.8 e entraram por fusão. Ver a §5.
+
+**Minor 11 · o JSON de partida guardava o teto novo.** Real, e o conserto é mais
+do que o achado pedia: em vez de escrever o teto antigo a mais um sítio, **o teto
+passou a ser uma regra** (o teto da partida mais a altura da fila dos estudos
+medida na construção que se está a ler). Na árvore de partida a fila não existe, a
+parcela é 0 e o JSON guarda 6 941 / 6 890; nesta guarda 6 991 / 6 940. Deixou de
+haver um segundo número escrito à mão, e a régua diz a conta em cada linha que
+imprime.
+
+**Minor 12 · as réguas do menu e do rótulo não conferiam as palavras.** Real. A
+A14 compara o texto do item do menu com `nav.dominios` da edição, lido de
+`src/i18n/strings.mjs` e nunca escrito na régua, **com a gaveta aberta** (a fila
+vive num `<details>` fechado abaixo de 640 px, e o conteúdo de uma gaveta fechada
+não tem caixa: a primeira redação desta conferência media a gaveta e não a
+etiqueta, e disse-o). A A13 compara o rótulo de destino de cada cartão com
+`dominios.eyebrow` da edição.
+
+### Os dois achados sem ação, e porquê
+
+**Major 4 · o pacote não continha as páginas inglesas.** É uma limitação do
+pacote da leitura, dita pela própria triagem. As páginas existem e estão medidas:
+a A13, a A16 e a A17 correm sobre `/en/domains/…`, `/en/municipalities/evora` e
+`/en/regions/alentejo` em cada corrida, e o JSON das medições traz as suas
+leituras. Não há aqui nada para consertar no sítio.
+
+**Major 9 · a fila a mais do cabeçalho a partir de 1024.** É a decisão de forma
+do diretor, já nos pendentes. A medição está na §9 (5), dos dois lados e às cinco
+larguras, e este bloco não a inventa.
+
+### O que a segunda passagem custou à página
+
+**Nada, e está medido.** A altura de `/` a 390 continua a 6 959 px e a de `/en` a
+6 911; o teto continua a 6 991 / 6 940 pela regra nova; a porta dos estudos
+continua a 662,7 px e a 650,1 px. A manchete não mudou de texto nem de forma
+visível: o que mudou foi a árvore por dentro (cada corrida de texto ganhou um
+`<span>` com `id`) e o `aria-labelledby` do título.

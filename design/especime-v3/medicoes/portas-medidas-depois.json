@@ -9,7 +9,7 @@
     {
       "nome": "A2.pt",
       "passa": true,
-      "prova": "altura de / a 390: 6959 px · teto medido na árvore de partida: 6991 px (menos 32 px)"
+      "prova": "altura de / a 390: 6959 px · teto 6991 px (6941 da árvore de partida + 50 da fila dos estudos) (menos 32 px)"
     },
     {
       "nome": "A11.pt",
@@ -69,7 +69,7 @@
     {
       "nome": "A14.pt",
       "passa": true,
-      "prova": "«/dominios» no menu de /: lá está, e a página responde 200"
+      "prova": "«/dominios» no menu de /: lá está, a página responde 200, e diz «Domínios» (esperado «Domínios»)"
     },
     {
       "nome": "A15.pt",
@@ -79,7 +79,12 @@
     {
       "nome": "A16.pt",
       "passa": true,
-      "prova": "a manchete das quatro camadas em pt, pelo texto acessível do <h1>: pais 0 selo(s) fora da frase · dominio 2 selo(s) fora da frase · regiao 2 selo(s) fora da frase · concelho 1 selo(s) fora da frase"
+      "prova": "o nome acessível do <h1> das quatro camadas em pt, em Chromium e WebKit: pais 0 valor(es)/0 selo(s) · dominio 2 valor(es)/2 selo(s) · regiao 2 valor(es)/2 selo(s) · concelho 1 valor(es)/1 selo(s) · nome igual à frase nos dois motores, cada valor com a sua porta ao pé dele"
+    },
+    {
+      "nome": "A17.pt",
+      "passa": true,
+      "prova": "o «n de N» das quatro faixas em pt: pais 1..21 de 21 · dominio 1..5 de 5 · regiao 1..2 de 2 · concelho 1..8 de 8"
     },
     {
       "nome": "A1.en",
@@ -89,7 +94,7 @@
     {
       "nome": "A2.en",
       "passa": true,
-      "prova": "altura de /en a 390: 6911 px · teto medido na árvore de partida: 6940 px (menos 29 px)"
+      "prova": "altura de /en a 390: 6911 px · teto 6940 px (6890 da árvore de partida + 50 da fila dos estudos) (menos 29 px)"
     },
     {
       "nome": "A11.en",
@@ -149,7 +154,7 @@
     {
       "nome": "A14.en",
       "passa": true,
-      "prova": "«/en/domains» no menu de /en: lá está, e a página responde 200"
+      "prova": "«/en/domains» no menu de /en: lá está, a página responde 200, e diz «Domains» (esperado «Domains»)"
     },
     {
       "nome": "A15.en",
@@ -159,7 +164,12 @@
     {
       "nome": "A16.en",
       "passa": true,
-      "prova": "a manchete das quatro camadas em en, pelo texto acessível do <h1>: pais 0 selo(s) fora da frase · dominio 2 selo(s) fora da frase · regiao 2 selo(s) fora da frase · concelho 1 selo(s) fora da frase"
+      "prova": "o nome acessível do <h1> das quatro camadas em en, em Chromium e WebKit: pais 0 valor(es)/0 selo(s) · dominio 2 valor(es)/2 selo(s) · regiao 2 valor(es)/2 selo(s) · concelho 1 valor(es)/1 selo(s) · nome igual à frase nos dois motores, cada valor com a sua porta ao pé dele"
+    },
+    {
+      "nome": "A17.en",
+      "passa": true,
+      "prova": "o «n de N» das quatro faixas em en: pais 1..21 de 21 · dominio 1..5 de 5 · regiao 1..2 de 2 · concelho 1..8 de 8"
     }
   ],
   "medidas": {
@@ -198,6 +208,7 @@
       "semSelo": [],
       "ecra": 664,
       "altura": 6959,
+      "filaDosEstudos": 50,
       "mobilia": 62,
       "barra": {
         "filas": 1,
@@ -212,7 +223,9 @@
     },
     "A2.pt": {
       "altura": 6959,
-      "teto": 6991
+      "teto": 6991,
+      "tetoDaPartida": 6941,
+      "filaDosEstudos": 50
     },
     "A11.pt": {
       "acimaDoNome": 62,
@@ -474,21 +487,72 @@
     },
     "A14.pt": {
       "menu": [
-        "/",
-        "/municipios",
-        "/regioes",
-        "/distritos",
-        "/areas",
-        "/dominios",
-        "/estudos",
-        "/livro-razao",
-        "/agenda",
-        "/metodo",
-        "/correcoes",
-        "/sobre"
+        {
+          "href": "/",
+          "texto": "Início",
+          "visivel": true
+        },
+        {
+          "href": "/municipios",
+          "texto": "Municípios",
+          "visivel": true
+        },
+        {
+          "href": "/regioes",
+          "texto": "Regiões",
+          "visivel": true
+        },
+        {
+          "href": "/distritos",
+          "texto": "Distritos",
+          "visivel": true
+        },
+        {
+          "href": "/areas",
+          "texto": "Áreas",
+          "visivel": true
+        },
+        {
+          "href": "/dominios",
+          "texto": "Domínios",
+          "visivel": true
+        },
+        {
+          "href": "/estudos",
+          "texto": "Estudos",
+          "visivel": true
+        },
+        {
+          "href": "/livro-razao",
+          "texto": "Livro-razão",
+          "visivel": true
+        },
+        {
+          "href": "/agenda",
+          "texto": "Agenda",
+          "visivel": true
+        },
+        {
+          "href": "/metodo",
+          "texto": "Método",
+          "visivel": true
+        },
+        {
+          "href": "/correcoes",
+          "texto": "Correções",
+          "visivel": true
+        },
+        {
+          "href": "/sobre",
+          "texto": "Sobre",
+          "visivel": true
+        }
       ],
       "temDominios": true,
-      "respostaDoIndice": 200
+      "respostaDoIndice": 200,
+      "palavraEsperada": "Domínios",
+      "palavra": "Domínios",
+      "palavraAVista": true
     },
     "A15.pt": {
       "portas": [
@@ -527,41 +591,72 @@
         {
           "camada": "pais",
           "rota": "/",
-          "inteiro": "Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
+          "nomeChromium": "Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9 .",
           "frase": "Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
-          "selos": 0,
           "valores": 0,
-          "semSelo": 0
+          "selos": 0,
+          "queixas": [],
+          "nomeWebkit": "Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9 ."
         },
         {
           "camada": "dominio",
           "rota": "/dominios/economia-e-financas-publicas",
-          "inteiro": "A dívida pública é 89,7% do PIB, fora do limiar de 60%; o saldo das administrações públicas é 0,7% do PIB, dentro do limiar de −3%.fonte · Quadro institucional de indicadoresfonte · Domínios: as medidas das perguntas",
+          "nomeChromium": "A dívida pública é 89,7 % do PIB, fora do limiar de 60 %; o saldo das administrações públicas é 0,7 % do PIB, dentro do limiar de − 3 %.",
           "frase": "A dívida pública é 89,7% do PIB, fora do limiar de 60%; o saldo das administrações públicas é 0,7% do PIB, dentro do limiar de −3%.",
-          "selos": 2,
           "valores": 2,
-          "semSelo": 0
+          "selos": 2,
+          "queixas": [],
+          "nomeWebkit": "A dívida pública é 89,7 % do PIB, fora do limiar de 60 %; o saldo das administrações públicas é 0,7 % do PIB, dentro do limiar de − 3 %."
         },
         {
           "camada": "regiao",
           "rota": "/regioes/alentejo",
-          "inteiro": "O Alentejo está 23 pontos abaixo da média da UE-27. Em 2000 estava a 22: a distância aumentou.fonte · calculado · Alentejo & Algarve — Economy, Society, Strategyfonte · calculado · Alentejo & Algarve — Economy, Society, Strategy",
+          "nomeChromium": "O Alentejo está 23 pontos abaixo da média da UE-27. Em 2000 estava a 22 : a distância aumentou.",
           "frase": "O Alentejo está 23 pontos abaixo da média da UE-27. Em 2000 estava a 22: a distância aumentou.",
-          "selos": 2,
           "valores": 2,
-          "semSelo": 0
+          "selos": 2,
+          "queixas": [],
+          "nomeWebkit": "O Alentejo está 23 pontos abaixo da média da UE-27. Em 2000 estava a 22 : a distância aumentou."
         },
         {
           "camada": "concelho",
           "rota": "/municipios/evora",
-          "inteiro": "Évora tem 58 567 pessoas.fonte · Évora — Economia, Investidores, Portas Abertas 2026",
+          "nomeChromium": "Évora tem 58 567 pessoas.",
           "frase": "Évora tem 58 567 pessoas.",
-          "selos": 1,
           "valores": 1,
-          "semSelo": 0
+          "selos": 1,
+          "queixas": [],
+          "nomeWebkit": "Évora tem 58 567 pessoas."
         }
-      ],
-      "partidas": []
+      ]
+    },
+    "A17.pt": {
+      "faixas": [
+        {
+          "camada": "pais",
+          "rota": "/",
+          "cartoes": 21,
+          "queixas": []
+        },
+        {
+          "camada": "dominio",
+          "rota": "/dominios/economia-e-financas-publicas",
+          "cartoes": 5,
+          "queixas": []
+        },
+        {
+          "camada": "regiao",
+          "rota": "/regioes/alentejo",
+          "cartoes": 2,
+          "queixas": []
+        },
+        {
+          "camada": "concelho",
+          "rota": "/municipios/evora",
+          "cartoes": 8,
+          "queixas": []
+        }
+      ]
     },
     "A1.en": {
       "nome": {
@@ -598,6 +693,7 @@
       "semSelo": [],
       "ecra": 664,
       "altura": 6911,
+      "filaDosEstudos": 50,
       "mobilia": 62,
       "barra": {
         "filas": 1,
@@ -612,7 +708,9 @@
     },
     "A2.en": {
       "altura": 6911,
-      "teto": 6940
+      "teto": 6940,
+      "tetoDaPartida": 6890,
+      "filaDosEstudos": 50
     },
     "A11.en": {
       "acimaDoNome": 62,
@@ -874,21 +972,72 @@
     },
     "A14.en": {
       "menu": [
-        "/en",
-        "/en/municipalities",
-        "/en/regions",
-        "/en/districts",
-        "/en/areas",
-        "/en/domains",
-        "/en/studies",
-        "/en/ledger",
-        "/en/agenda",
-        "/en/method",
-        "/en/corrections",
-        "/en/about"
+        {
+          "href": "/en",
+          "texto": "Home",
+          "visivel": true
+        },
+        {
+          "href": "/en/municipalities",
+          "texto": "Municipalities",
+          "visivel": true
+        },
+        {
+          "href": "/en/regions",
+          "texto": "Regions",
+          "visivel": true
+        },
+        {
+          "href": "/en/districts",
+          "texto": "Districts",
+          "visivel": true
+        },
+        {
+          "href": "/en/areas",
+          "texto": "Areas",
+          "visivel": true
+        },
+        {
+          "href": "/en/domains",
+          "texto": "Domains",
+          "visivel": true
+        },
+        {
+          "href": "/en/studies",
+          "texto": "Studies",
+          "visivel": true
+        },
+        {
+          "href": "/en/ledger",
+          "texto": "Ledger",
+          "visivel": true
+        },
+        {
+          "href": "/en/agenda",
+          "texto": "Agenda",
+          "visivel": true
+        },
+        {
+          "href": "/en/method",
+          "texto": "Method",
+          "visivel": true
+        },
+        {
+          "href": "/en/corrections",
+          "texto": "Corrections",
+          "visivel": true
+        },
+        {
+          "href": "/en/about",
+          "texto": "About",
+          "visivel": true
+        }
       ],
       "temDominios": true,
-      "respostaDoIndice": 200
+      "respostaDoIndice": 200,
+      "palavraEsperada": "Domains",
+      "palavra": "Domains",
+      "palavraAVista": true
     },
     "A15.en": {
       "portas": [
@@ -927,41 +1076,72 @@
         {
           "camada": "pais",
           "rota": "/en",
-          "inteiro": "Portugal breaches 4 thresholds of the Macroeconomic Imbalance Procedure and meets 9.",
+          "nomeChromium": "Portugal breaches 4 thresholds of the Macroeconomic Imbalance Procedure and meets 9 .",
           "frase": "Portugal breaches 4 thresholds of the Macroeconomic Imbalance Procedure and meets 9.",
-          "selos": 0,
           "valores": 0,
-          "semSelo": 0
+          "selos": 0,
+          "queixas": [],
+          "nomeWebkit": "Portugal breaches 4 thresholds of the Macroeconomic Imbalance Procedure and meets 9 ."
         },
         {
           "camada": "dominio",
           "rota": "/en/domains/economia-e-financas-publicas",
-          "inteiro": "Government debt is 89,7% of GDP, outside the threshold of 60%; the general government balance is 0,7% of GDP, within the threshold of −3%.source · Institutional indicator frameworksource · Domains: the measures behind the questions",
+          "nomeChromium": "Government debt is 89,7 % of GDP, outside the threshold of 60 %; the general government balance is 0,7 % of GDP, within the threshold of − 3 %.",
           "frase": "Government debt is 89,7% of GDP, outside the threshold of 60%; the general government balance is 0,7% of GDP, within the threshold of −3%.",
-          "selos": 2,
           "valores": 2,
-          "semSelo": 0
+          "selos": 2,
+          "queixas": [],
+          "nomeWebkit": "Government debt is 89,7 % of GDP, outside the threshold of 60 %; the general government balance is 0,7 % of GDP, within the threshold of − 3 %."
         },
         {
           "camada": "regiao",
           "rota": "/en/regions/alentejo",
-          "inteiro": "The Alentejo is 23 points below the EU-27 average. In 2000 it was 22 points away: the gap has widened.source · calculated · Alentejo & Algarve — Economy, Society, Strategysource · calculated · Alentejo & Algarve — Economy, Society, Strategy",
+          "nomeChromium": "The Alentejo is 23 points below the EU-27 average. In 2000 it was 22 points away: the gap has widened.",
           "frase": "The Alentejo is 23 points below the EU-27 average. In 2000 it was 22 points away: the gap has widened.",
-          "selos": 2,
           "valores": 2,
-          "semSelo": 0
+          "selos": 2,
+          "queixas": [],
+          "nomeWebkit": "The Alentejo is 23 points below the EU-27 average. In 2000 it was 22 points away: the gap has widened."
         },
         {
           "camada": "concelho",
           "rota": "/en/municipalities/evora",
-          "inteiro": "Évora has 58 567 people.source · Évora — Economia, Investidores, Portas Abertas 2026",
+          "nomeChromium": "Évora has 58 567 people.",
           "frase": "Évora has 58 567 people.",
-          "selos": 1,
           "valores": 1,
-          "semSelo": 0
+          "selos": 1,
+          "queixas": [],
+          "nomeWebkit": "Évora has 58 567 people."
         }
-      ],
-      "partidas": []
+      ]
+    },
+    "A17.en": {
+      "faixas": [
+        {
+          "camada": "pais",
+          "rota": "/en",
+          "cartoes": 21,
+          "queixas": []
+        },
+        {
+          "camada": "dominio",
+          "rota": "/en/domains/economia-e-financas-publicas",
+          "cartoes": 5,
+          "queixas": []
+        },
+        {
+          "camada": "regiao",
+          "rota": "/en/regions/alentejo",
+          "cartoes": 2,
+          "queixas": []
+        },
+        {
+          "camada": "concelho",
+          "rota": "/en/municipalities/evora",
+          "cartoes": 8,
+          "queixas": []
+        }
+      ]
     }
   },
   "plantasOk": true

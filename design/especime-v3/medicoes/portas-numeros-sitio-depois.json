@@ -1,0 +1,54 @@
+{
+  "rotulo": "a construção deste ramo",
+  "paginas": 7238,
+  "classes": {
+    "data-claim": {
+      "distintos": 2916,
+      "ocorrencias": 31244,
+      "sha256DasChaves": "a1a7ce2228d4c50b1223df62c8447502b814ec6507f953652af0185fb6ce8b34",
+      "valores": "(os 2916 identificadores ficam fora: o resumo acima prova o conjunto)"
+    },
+    "data-prova": {
+      "distintos": 47,
+      "ocorrencias": 14584,
+      "sha256DasChaves": "d1f73a7d0dfb7b86511a03b277b742aac925193a9ce77cbbde85e1e505540272",
+      "valores": "(os 47 identificadores ficam fora: o resumo acima prova o conjunto)"
+    },
+    "data-nonledger": {
+      "distintos": 16,
+      "ocorrencias": 74690,
+      "sha256DasChaves": "cab343f8c132ffad707d2b8ca692042f845f2f965e2d60a21a71842f1204fec2",
+      "valores": {
+        "ambito-da-medida": 4,
+        "data-da-agenda": 146,
+        "data-da-conferencia": 7266,
+        "data-da-linha": 66,
+        "data-de-atualizacao": 7254,
+        "data-de-publicacao": 56,
+        "data-de-referencia": 10762,
+        "escala-de-instrumento": 874,
+        "fonte-da-carta": 64,
+        "identificador-tecnico": 1922,
+        "licenca-do-conjunto": 2,
+        "limiar-do-quadro": 72,
+        "numeracao": 10072,
+        "proveniencia": 30156,
+        "referencia-legal": 18,
+        "titulo-de-estudo": 5956
+      }
+    },
+    "data-verbatim": {
+      "distintos": 6,
+      "ocorrencias": 23,
+      "sha256DasChaves": "64e6d94ab6a6975d87707fbdb533fadfcbd0f17118097d918739e5625d1426bc",
+      "valores": {
+        "caop-fonte": 2,
+        "estudo-pelouros-abertura-pt": 5,
+        "estudo-prometido-abertura-en": 5,
+        "estudo-prometido-abertura-pt": 5,
+        "relatorio-por-pais-2026": 2,
+        "swd-2026-222": 4
+      }
+    }
+  }
+}

@@ -335,9 +335,12 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
             fora da frase, que é a forma que o item 9 do brief da porta da frente
             desenha. A razão de eles ficarem DENTRO do `<h1>` está no cabeçalho
             do componente: é o portão que a obriga. */}
-        <h1 class="cabeca-h1">
-          <Manchete partes={manchete[lang] ?? manchete.pt} lang={lang} />
-        </h1>
+        <Manchete
+          as="h1"
+          class="cabeca-h1"
+          partes={manchete[lang] ?? manchete.pt}
+          lang={lang}
+        />
       </div>
     </div>
 
