@@ -63,11 +63,17 @@ const VAGA = {
 
 const linhas = DOMINIOS.map((d) => {
   const dentro = d.estado === 'dentro-de' && d.dentroDe ? dominioDeclarado(d.dentroDe) : null;
+  /* A PORTA DE UM DOMÍNIO «DENTRO DE» OUTRO VAI À SUA SECÇÃO, e não só ao topo
+     da página onde as suas medidas vivem (segunda passagem, 03.09.2026,
+     Major 11): «uma ligação à sua secção está bem» é a palavra do lugar de
+     direção, e `ancoraDentro` é a âncora dessa secção, declarada ao lado do
+     domínio em `src/data/dominios.mjs`. Sem âncora declarada, a porta ainda
+     assim abre a página, no seu início. */
   const porta =
     d.estado === 'no-ar' && comPagina.has(d.slug)
       ? routePath('dominio', lang, { slug: d.slug })
       : dentro !== null && comPagina.has(dentro.slug)
-        ? routePath('dominio', lang, { slug: dentro.slug })
+        ? `${routePath('dominio', lang, { slug: dentro.slug })}${d.ancoraDentro ? `#${d.ancoraDentro}` : ''}`
         : null;
   return { dominio: d, dentro, porta, vaga: VAGA[d.vaga] };
 });
