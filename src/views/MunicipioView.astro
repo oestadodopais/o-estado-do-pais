@@ -505,13 +505,17 @@ const metodoPath = routePath('metodo', lang);
             também manda: as duas cadeias são as mesmas, o valor é o mesmo, e o
             que se move é a posição de um `<a>`. O nome do concelho fica onde
             estava, declarado como lugar, e a frase começa a seguir a ele. */}
-        <h1 class="cabeca-h1">
-          <span data-lugar>{nome}</span>
-          <Manchete
-            partes={[s.municipio.mancheteA, { claim: populacao.claim }, s.municipio.mancheteB]}
-            lang={lang}
-          />
-        </h1>
+        <Manchete
+          as="h1"
+          class="cabeca-h1"
+          partes={[
+            { lugar: nome },
+            s.municipio.mancheteA,
+            { claim: populacao.claim },
+            s.municipio.mancheteB,
+          ]}
+          lang={lang}
+        />
       </div>
     </div>
 

@@ -186,9 +186,7 @@ const cartoes = [
             `<a>`. Fica dito no relatório do bloco: a camada da região não está
             na letra do brief F1.2b, e ficaria a única das quatro com o selo
             dentro da frase depois de o mecanismo existir. */}
-        <h1 class="cabeca-h1">
-          <Manchete partes={regiao.frase[lang]} lang={lang} />
-        </h1>
+        <Manchete as="h1" class="cabeca-h1" partes={regiao.frase[lang]} lang={lang} />
         <p class="regiao-tipo">{s.regioes.tipo}</p>
       </div>
     </div>
