@@ -37,7 +37,6 @@
  */
 import Base from '../layouts/Base.astro';
 import Masthead from '../components/Masthead.astro';
-import Comando from '../components/inicio/Comando.astro';
 import Peca from '../components/inicio/Peca.astro';
 import Portas from '../components/inicio/Portas.astro';
 import Cabeca from '../components/inicio/Cabeca.astro';
@@ -50,7 +49,14 @@ import ListaDosNomes from '../components/inicio/ListaDosNomes.astro';
 import LegendaDoMapa from '../components/inicio/LegendaDoMapa.astro';
 import ListaSocial from '../components/inicio/ListaSocial.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
-import { FIGURAS_PDM, FIGURAS_SOCIAL, comparacaoComOLimiar, ladosDoLimiar } from '../data/figuras.mjs';
+import Frase from '../components/Frase.astro';
+import {
+  FIGURAS_PDM,
+  FIGURAS_SOCIAL,
+  CONTEXTO_DOS_PAINEIS,
+  comparacaoComOLimiar,
+  ladosDoLimiar,
+} from '../data/figuras.mjs';
 import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
 import { estadoDaMedida } from '../lib/estado.mjs';
 import { concelhos, ledeDoPainel } from '../lib/inicio.mjs';
@@ -66,21 +72,41 @@ const path = routePath('home', lang);
 const p = prova(lang);
 
 const home = routePath('home', lang);
-/* Os destinos sem script. `regiao` VOLTOU (Emenda 21b): o seu destino era
-   `#convergencia`, a âncora da secção que saiu da página a 25.08, e passa a ser
-   `/regioes`, que é uma página que existe. Não é um estado desta página — é uma
-   porta —, e por isso continua a ser uma ligação mesmo com script. */
-const hrefs = {
-  pais: home,
-  regiao: routePath('regioes', lang),
-  municipio: routePath('municipios', lang),
-  /* «Áreas» entra no comando com as páginas das áreas (decisão 6 da auditoria de
-     25.08.2026). É uma porta, como «Região», e não um estado desta página:
-     `?ambito=area:<slug>` não existe e não vai existir. */
-  area: routePath('areas', lang),
-  relance: home,
-  leitura: `${home}?densidade=leitura`,
-};
+
+/* ---------------------------------------------------------------------------
+ * A LINHA DE COMANDO SAIU DA PÁGINA (F1.1, item 6, 03.09.2026)
+ * ---------------------------------------------------------------------------
+ * «Âmbito · País Região Concelho Áreas» e «Densidade · Relance Leitura breve».
+ * As duas palavras que os nomeavam são vocabulário da casa — o achado C6 e a
+ * decisão 3.4 da auditoria de 25.08 —, e a frase que as substituiria é texto do
+ * diretor que ele não escreveu. O brief resolve a espera pela subtracção: «sem
+ * palavra do diretor, não se escreve frase nova nenhuma: os dois comandos saem e
+ * o que fica é o menu e o cabeçalho».
+ *
+ * ONDE FOI CADA UM DOS DOIS. O ÂMBITO vive no menu, que passa a ter as três
+ * famílias de páginas que existiam sem porta comum (regiões, distritos, áreas),
+ * mais os concelhos, que já lá estavam: as quatro posições da fila eram quatro
+ * ligações para quatro índices, e um índice alcança-se pelo menu. A DENSIDADE
+ * vive no cabeçalho de cada peça, que é o `<summary>` que ela abria: o comando
+ * global abria as treze de uma vez, e cada peça continua a abrir-se sozinha,
+ * como sempre se abriu sem guião.
+ *
+ * O ESTADO `?densidade=leitura` DEIXA DE TER COMANDO E CONTINUA A RESOLVER, que
+ * é o que a Emenda 7 exige de um endereço partilhável: o guião continua a abrir
+ * as peças quando o endereço o pede. O que desapareceu foi a maneira de o
+ * escrever a partir da página, e essa era a fila que custava 116 px do primeiro
+ * ecrã do telemóvel.
+ *
+ * OS DOIS CAMPOS DO REENCAMINHAMENTO DESCEM PARA A RAIZ DO ESTADO. O gabarito da
+ * rota da região e a lista fechada das regiões com página viviam no comando
+ * «Região», e era de lá que `public/js/inicio.js` os lia para levar um
+ * `?ambito=regiao:<slug>` antigo à página daquela região (Emenda 21b). Com o
+ * comando fora, passam para `[data-inicio]`, que é a raiz que o guião já
+ * conhece, com o índice das regiões e o dos concelhos ao lado: o cliente
+ * continua sem conhecer a tabela de rotas, e o endereço antigo continua a abrir
+ * alguma coisa. */
+const indiceDasRegioes = routePath('regioes', lang);
+const indiceDosConcelhos = routePath('municipios', lang);
 
 /* ---------------------------------------------------------------------------
  * O REENCAMINHAMENTO DOS ENDEREÇOS ANTIGOS DAS REGIÕES (Emenda 21b)
@@ -172,10 +198,16 @@ const cartaoDaMedida = (f, estado) => {
     glifos: [...String(linha.value)].length,
   };
 };
+/* A POSIÇÃO DE CADA CARTÃO (F1.1, item 5). O ordinal é o índice na lista que a
+   faixa rende, contado aqui uma vez, e o total é o comprimento dessa mesma
+   lista: os dois saem da mesma linha de código, e por isso um cartão a mais
+   muda-os aos dois. Nenhum dos dois é um algarismo escrito à mão, e nenhum é uma
+   medição de Portugal: são a numeração de uma lista, com o motivo do registo que
+   o diz. */
 const cartoes = [
   ...medidas.map((f) => cartaoDaMedida(f, f.estado ?? 'sem')),
   ...sociais.map((f) => cartaoDaMedida(f, null)),
-];
+].map((c, i) => ({ ...c, posicao: i + 1 }));
 
 /* -------------------------------------------------------------- os concelhos
  *
@@ -241,7 +273,16 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
 >
   <Masthead slot="masthead" lang={lang} path={path} compact={false} furniture={true} />
 
-  <div class="inicio" data-inicio data-ambito="pais" data-densidade="relance">
+  <div
+    class="inicio"
+    data-inicio
+    data-ambito="pais"
+    data-densidade="relance"
+    data-porta-regiao={portaDaRegiao}
+    data-regioes={regioesComPorta}
+    data-indice-regioes={indiceDasRegioes}
+    data-indice-concelhos={indiceDosConcelhos}
+  >
     {/* ----------------------------------------------------------------------
         A CABEÇA NOVA: NOME, MANCHETE, FAIXA, MAPA (01.09.2026)
         ----------------------------------------------------------------------
@@ -267,7 +308,39 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
           manchete do componente: ela é a única das três que tem ESTADO (a lista
           de blocos que o guião acende) e duas contagens da prova dentro da
           manchete. O que as três partilham é a moldura, a ordem e as classes. */}
-      <Cabeca slot="col" s={s} lang={lang} p={p} blocos={blocos} ambito="pais" lede={lede} />
+      <Cabeca slot="col" s={s} lang={lang} p={p} blocos={blocos} ambito="pais" lede={lede}>
+        {/* ----------------------------------------------------------------
+            A PORTA PARA O CONCELHO (F1.1, itens 3 e 12)
+            ----------------------------------------------------------------
+            A busca dos 308 sai da gaveta ao lado do mapa e sobe para debaixo da
+            manchete, como um `<form>` com destino. São três coisas ao mesmo
+            tempo, e é por isso que é uma peça só e não três: é a PORTA para o
+            concelho no primeiro ecrã (item 3), é a busca que funciona SEM GUIÃO
+            (item 12, com `action` para o índice dos 308) e é o caminho de dois
+            toques da tarefa (a) da ronda.
+
+            `resultadosOcultos` É A CONDIÇÃO DE ELA PODER ESTAR AQUI. Os 308
+            resultados estão no documento — o portão vê tudo o que o leitor pode
+            ver —, e uma fila de 308 nomes debaixo da manchete seria a primeira
+            página inteira para quem não tem guião. Com guião, a fila acende-se e
+            filtra, como sempre fez; sem guião, o formulário leva ao índice, que
+            é a mesma resposta noutra página.
+
+            `data-pesquisa-bloco` FICA, e é a marca que a folha e a régua do mapa
+            já conheciam quando a busca vivia na gaveta.
+            ---------------------------------------------------------------- */}
+        <div class="pesquisa-bloco" slot="porta" data-pesquisa-bloco>
+          <Pesquisa
+            s={s}
+            lang={lang}
+            p={p}
+            concelhos={cs}
+            destino={destinoDoConcelho}
+            forma={indiceDosConcelhos}
+            resultadosOcultos={true}
+          />
+        </div>
+      </Cabeca>
 
       {/* ------------------------------------------------------------------
           A FAIXA, ENTRE A MANCHETE E O MAPA (afinação 2 do brief)
@@ -280,7 +353,14 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
           são eles os cartões, e esta lista muda de conteúdo sem mudar de forma:
           é para isso que a cabeça é um contentor.
           ------------------------------------------------------------------ */}
-      <Faixa slot="faixa" s={s} lang={lang} rotulo={s.inicio.faixa.rotulo} cartoes={cartoes} />
+      <Faixa
+        slot="faixa"
+        s={s}
+        lang={lang}
+        rotulo={s.inicio.faixa.rotulo}
+        cartoes={cartoes}
+        total={cartoes.length}
+      />
 
       {/* ------------------------------------------------------------------
           AS DUAS GAVETAS DO MAPA (afinação 1 do brief)
@@ -306,15 +386,18 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
           mostrar-se sempre; a régua `lista.mjs` L9 passa a medir a forma nova.
           ------------------------------------------------------------------ */}
       <div class="cabeca-lado" slot="lado" data-cabeca-lado>
-        <Gaveta chave="nomes" rotulo={s.inicio.mapa.nomesGaveta}>
-          <ListaDosNomes s={s} lang={lang} />
-        </Gaveta>
+        {/* A GAVETA DOS NOMES CHEGA ABERTA (F1.1, item 4, 03.09.2026). A
+            afinação 1 do brief da forma dos domínios recolheu-a fechada a
+            01.09; a auditoria da porta da frente mediu o que isso custa: abaixo
+            de 1024 nenhuma das 29 unidades do desenho chega aos 44 px pelo
+            quadrado inscrito (I82), a rede de nomes é o único alvo que responde
+            por elas, e fechada ela existia para o teclado e para quem ouve e não
+            existia para quem vê. Continua a ser uma gaveta, e fecha-se.
 
-        <div class="pesquisa-bloco" data-pesquisa-bloco>
-          <Gaveta chave="busca" rotulo={s.inicio.mapa.buscaGaveta}>
-            <Pesquisa s={s} lang={lang} p={p} concelhos={cs} destino={destinoDoConcelho} />
-          </Gaveta>
-        </div>
+            A GAVETA DA BUSCA SAIU DESTA COLUNA, e não se fechou: subiu para
+            debaixo da manchete, sem gaveta nenhuma. A cadeia
+            `inicio.mapa.buscaGaveta` fica sem superfície e passa a `retirada` no
+            inventário da voz, com a razão escrita. */}
 
         {/* A legenda do mapa (a linha dos 308 e a menção da Carta) fica no fim
             desta coluna, alinhada ao fundo do mapa a partir de 1280, como a
@@ -325,6 +408,14 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
       </div>
 
       <MapaRespira slot="instrumento" s={s} lang={lang} p={p} concelhos={cs} />
+
+      {/* A banda dos 29 nomes, aberta, fora da grelha da cabeça. A razão e a
+          medida que a puseram aqui estão em `CabecaDoLugar.astro`. */}
+      <div class="cabeca-nomes" slot="nomes" data-cabeca-nomes>
+        <Gaveta chave="nomes" rotulo={s.inicio.mapa.nomesGaveta} aberta={true}>
+          <ListaDosNomes s={s} lang={lang} />
+        </Gaveta>
+      </div>
     </CabecaDoLugar>
 
     {/* A REGUA DA REGIÃO SAIU DA PRIMEIRA PÁGINA (bloco A, itens A2 e A3).
@@ -356,7 +447,6 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
         que a fila tem exactamente «pais, regiao, municipio». O que muda é o
         lugar na coluna, e mais nada.
         ---------------------------------------------------------------------- */}
-    <Comando s={s} hrefs={hrefs} portaDaRegiao={portaDaRegiao} slugsDasRegioes={regioesComPorta} />
   </div>
 
   <!-- ============================ O painel -->
@@ -389,6 +479,61 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
       {s.inicio.painel.nomeFim}
     </h2>
 
+    {/* ------------------------------------------------------------------
+        A LEITURA BREVE, NO CABEÇALHO DO PAINEL (F1.1, segunda passagem)
+        ------------------------------------------------------------------
+        O `BRIEF-forma-dos-dominios.md` §4 manda a densidade viver no cabeçalho
+        do painel, e a primeira passagem deste bloco tirou-a da página inteira
+        com a fila do âmbito: ficaram os `<details>` de cada peça, que abrem uma
+        de cada vez, e o estado `?densidade=leitura`, que só o guião lê. O Minor
+        10 da leitura a frio apanhou-o: o comando global desapareceu, e com ele a
+        maneira de abrir as treze de uma vez.
+
+        VOLTA COM DUAS POSIÇÕES E SEM A PALAVRA «DENSIDADE», que é vocabulário da
+        casa e que o item 6 do brief manda fora da página. O que se lê são as duas
+        palavras que a casa já tem para as duas leituras, «Relance» e «Leitura
+        breve», cada uma declarada em `strings.mjs` desde a etapa 2.
+
+        CHEGA ESCONDIDO E É O GUIÃO QUE O ACENDE, que é a regra que a casa já
+        escreveu para a busca de `/municipios`: «uma caixa de pesquisa que não
+        pesquisa é pior do que nenhuma». Sem guião, este comando não abriria nada
+        — quem abre as peças de uma vez é o guião, ao ler o endereço — e um
+        comando que não comanda é uma porta falsa. Sem ele, cada peça continua a
+        abrir-se sozinha, no seu `<details>` nativo, sem guião nenhum.
+
+        VIVE FORA DE `[data-inicio]`, e isso é medido e não acidental: a raiz do
+        estado é a cabeça, e a régua `matriz` exige que dentro dela não haja
+        comando de estado nenhum depois deste bloco. O guião procura-o pela marca
+        do bloco, e não pela raiz.
+        ------------------------------------------------------------------ */}
+    <div class="painel-densidade" data-densidade-bloco hidden>
+      <button class="densidade-b" type="button" data-densidade="relance">
+        {s.densidade.relance}
+      </button>
+      <button class="densidade-b" type="button" data-densidade="leitura">
+        {s.densidade.leitura}
+      </button>
+    </div>
+
+    {/* ------------------------------------------------------------------
+        A FRASE DE CONTEXTO DO PAINEL (F1.1, item 1; achado C6, decisão 3.4)
+        ------------------------------------------------------------------
+        Uma frase, impressa uma vez, antes dos cartões: o que o painel é, quem
+        publica as medidas e quem publica os limiares. A origem de cada
+        afirmação está escrita, afirmação a afirmação, no cabeçalho de
+        `CONTEXTO_DOS_PAINEIS` em `src/data/figuras.mjs`, com o comando que a
+        confirma no livro-razão; nada entrou aqui que não esteja numa linha ou
+        numa decisão registada.
+
+        NÃO FALA DA CASA (Emenda 15 e Emenda 18): diz o que a coisa é, e não
+        como a casa trabalha nem porque se deve confiar nela. E não traz um
+        algarismo: a contagem das medidas está no nome do painel, ao lado, com a
+        marca que o portão reconta.
+        ------------------------------------------------------------------ */}
+    <p class="painel-contexto" data-contexto-painel="pdm">
+      <Frase partes={CONTEXTO_DOS_PAINEIS.pdm[lang]} lang={lang} />
+    </p>
+
     <div class="painel" data-painel="pais">
       {
         medidas.map((f) => (
@@ -402,6 +547,7 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
             limiar={f.limiar}
             comparacao={f.comparacao}
             estado={f.estado ?? 'sem'}
+            valor={false}
             regua={
               f.referencias.length
                 ? {
@@ -446,7 +592,21 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
         têm nem um nem outro». Não há outro âmbito: o painel social é sempre do
         país, e uma marca que nunca esconde nada é um mecanismo a fingir que ainda
         serve. O script deixou de a procurar no mesmo commit. */}
-    <ListaSocial s={s} lang={lang} p={p} medidas={sociais} porta={routePath('livro', lang)} />
+    {/* O SEPARADOR ENTRE OS DOIS PAINÉIS (F1.1, item 5). Os dois painéis são de
+        duas instituições e de duas naturezas — um tem limiares publicados, o
+        outro não tem nenhum —, e liam-se como uma lista só que muda de forma a
+        meio. O fio é o da casa e não desenha nada de novo; é uma separação
+        estrutural e não decoração, e por isso é um `<hr>` e não uma borda. */}
+    <hr class="paineis-separador" data-separador-paineis />
+
+    <ListaSocial
+      s={s}
+      lang={lang}
+      p={p}
+      medidas={sociais}
+      porta={routePath('livro', lang)}
+      contexto={CONTEXTO_DOS_PAINEIS.social[lang]}
+    />
 
     {/* ------------------------------------------------------------------
         A LINHA DA RECONFERÊNCIA SAIU DA PRIMEIRA PÁGINA (Emenda 15)

@@ -85,7 +85,21 @@ const tituloPais = fora === 1 ? s.inicio.cabeca.tituloPaisUm : s.inicio.cabeca.t
       <div class="cabeca-bloco" data-cabeca={b.chave} hidden={b.chave !== ambito}>
         {b.tipo === 'pais' && (
           <>
-            <p class="cabeca-rotulo">{s.inicio.cabeca.paisA}</p>
+            {/* O RÓTULO «Portugal · país» SAIU DA CABEÇA DO PAÍS (F1.1,
+                03.09.2026). Dizia o nome do lugar e o tipo dele por cima de uma
+                manchete que começa pela mesma palavra, «Portugal ultrapassa…»,
+                e custava uma fila inteira do primeiro ecrã do telemóvel, que é
+                o que este bloco existe para libertar. Era também o eco do
+                comando de âmbito, que saiu da página no mesmo bloco: com o
+                comando fora, o rótulo deixou de nomear um estado escolhido e
+                passou a repetir a manchete.
+
+                O RÓTULO FICA ONDE ELE SEPARA ALGUMA COISA: nas páginas de
+                região e de concelho, onde `CabecaDoLugar` o rende com o tipo do
+                lugar («Alentejo · região NUTS II», «Évora · concelho · distrito
+                de Évora»), e onde o nome do lugar não está na manchete pela
+                mesma ordem. A cadeia `inicio.cabeca.paisA` passa a `retirada`
+                no inventário da voz, com a razão. */}
             <h1 class="cabeca-h1">
               {s.inicio.cabeca.tituloPaisA}
               <ValorDaProva
@@ -119,6 +133,26 @@ const tituloPais = fora === 1 ? s.inicio.cabeca.tituloPaisUm : s.inicio.cabeca.t
             {lede && (
               <p class="cabeca-lede">{s.inicio.cabeca.ledePais.abre}<span data-prova-lista="painel_fora_do_limiar">{lede.itens}</span><Frase partes={lede.cauda} lang={lang} /></p>
             )}
+
+            {/* ------------------------------------------------------------
+                A PORTA PARA O CONCELHO, DEBAIXO DA MANCHETE (F1.1, item 3)
+                ------------------------------------------------------------
+                «Debaixo da manchete, o campo de busca do concelho ou uma
+                ligação "o teu concelho →" que leva ao campo; a 390 × 664
+                visível sem gesto.» É o campo, e não a ligação, por uma razão
+                medida: a tarefa da ronda («encontrar o meu concelho») tem de
+                caber em dois toques, e uma ligação que leva ao campo gasta o
+                primeiro deles a chegar ao sítio onde a tarefa começa.
+
+                ENTRA PELA RANHURA E NÃO PELA GRELHA, e isso não é um detalhe:
+                a grelha da cabeça tem três filhos com colocação declarada a
+                partir de 1024 (a coluna, a faixa e a coluna das gavetas, com o
+                mapa a atravessar as filas), e um quarto filho obrigaria a
+                recolocar os três. Dentro da coluna, a porta fica onde ela é
+                lida — a seguir à lede — nas duas larguras, e a régua dos nomes
+                continua a medir a grelha que sempre mediu.
+                ------------------------------------------------------------ */}
+            <slot name="porta" />
           </>
         )}
 

@@ -29,10 +29,17 @@
  * comando não se desenha, e um `<details>` fechado é escondido pelo navegador.
  * Aqui não: a gaveta está fechada a todas as larguras, e é o leitor que a abre.
  */
-const { rotulo, chave } = Astro.props;
+/* `aberta` ENTRA COM O F1.1 (item 4, 03.09.2026). A lista das 29 unidades da
+   Carta chega ao leitor ABERTA: a auditoria mediu que abaixo de 1024 nenhuma
+   unidade do desenho chega aos 44 px pelo quadrado inscrito (I82), e a rede de
+   nomes é o único alvo que responde por elas. Fechada, ela existia para o
+   teclado e para quem ouve, e não existia para quem vê. A gaveta continua a ser
+   uma gaveta — fecha-se, e o `<summary>` continua a ser um alvo de 44 px que
+   funciona sem guião —, o que muda é o estado com que chega. */
+const { rotulo, chave, aberta = false } = Astro.props;
 ---
 
-<details class="gaveta" data-gaveta={chave}>
+<details class="gaveta" data-gaveta={chave} open={aberta || undefined}>
   <summary class="gaveta-abrir">
     <span class="gaveta-seta" aria-hidden="true"></span>
     <span class="gaveta-nome">{rotulo}</span>

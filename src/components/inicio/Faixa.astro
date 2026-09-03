@@ -98,7 +98,13 @@
 import Claim from '../Claim.astro';
 import Frase from '../Frase.astro';
 
-const { s, lang, rotulo, cartoes } = Astro.props;
+/* `total` É OPCIONAL, E É O QUE ACENDE A POSIÇÃO (F1.1, item 5, 03.09.2026).
+   A faixa serve três páginas — o país, a região e o concelho — e a posição é do
+   bloco da porta da frente, que é o da primeira página. Sem `total`, a faixa
+   rende-se como sempre se rendeu, e as páginas de região e de concelho ficam
+   como estavam: as suas faixas são do F1.2, que corre em paralelo e é dono
+   delas. Fica dito no relatório do bloco, e não fingido feito. */
+const { s, lang, rotulo, cartoes, total = null } = Astro.props;
 
 /* As três palavras de estado da casa, como na peça. Uma medida sem estado (o
    valor é uma marca da fonte, «N.d.») não tem palavra nem quadrado: as duas
@@ -138,16 +144,89 @@ const PALAVRA = {
                 rotas, e a construção fechava a pedir que alguém a classificasse.
                 A mesma palavra, no mesmo sítio da mesma casa, tem de ser lida da
                 mesma maneira nos dois componentes. */}
+            {/* A POSIÇÃO DO CARTÃO NA FAIXA (F1.1, item 5, 03.09.2026).
+                «1 de 21», em cada cartão, na fila do estado, encostada à
+                direita: a faixa passa a dizer quantos cartões tem e onde o
+                leitor está nela, que era o que a auditoria de 25.08 lia como
+                uma corrida sem fim. Vai em CADA cartão e não numa linha por
+                cima da faixa porque uma linha única teria de mudar de algarismo
+                enquanto o leitor rola, e o guião desta página não compõe
+                números; escrita em cada cartão, é sempre verdadeira e é
+                verdadeira sem guião nenhum. E não custa uma fila: senta-se na
+                que o estado já ocupa, que é a primeira das cinco.
+
+                A FILA DO ESTADO CONTINUA A SER UM `<div>` e a posição vive
+                dentro dela pela mesma razão escrita abaixo: não é prosa da
+                casa, é vocabulário fechado com os dois algarismos declarados —
+                o ordinal com o motivo `numeracao` do registo, e o total com a
+                chave da prova que o portão reconta. */}
             {palavra ? (
               <div class="cartao-topo">
                 {c.estado !== 'sem' && <span class={`sq sq-${pintado ? c.estado : 'sem'}`} aria-hidden="true" />}
                 <span class:list={['cartao-palavra', pintado && `est-${c.estado}`]}>{palavra}</span>
+                {total !== null && (
+                  <span class="cartao-posicao">
+                    <span data-nonledger="numeracao">{c.posicao}</span>
+                    {s.inicio.faixa.de}
+                    {/* OS DOIS ALGARISMOS SÃO NUMERAÇÃO, e nenhum é uma porta.
+                        A marca é a mesma nos dois porque a coisa é a mesma: a
+                        posição de um cartão numa lista e o tamanho dessa lista.
+                        `numeracao` é o motivo do registo para «numeração de
+                        secções e de instrumentos» (`ledger/allowlist.yml`), e
+                        nenhum dos dois é uma medição de Portugal.
+
+                        O TOTAL NÃO É ESCRITO À MÃO: é o comprimento da lista que
+                        a faixa está a render, contado uma vez na vista, e por
+                        isso um cartão a mais ou a menos muda os dois algarismos
+                        ao mesmo tempo. Uma segunda lista escrita aqui era o que
+                        a régua da faixa existe para recusar.
+
+                        E NÃO É UMA CHAVE DA PROVA, e isso mediu-se antes de se
+                        decidir: uma chave da prova rende-se dentro da sua porta,
+                        e a porta desta seria a própria faixa, dentro do cartão
+                        cujo alvo já é o cartão inteiro (`.cartao-porta` cobre as
+                        três primeiras filas). Com a ligação lá dentro, a régua
+                        `correcoes-a.mjs` (item A10) contou 41 pares de áreas
+                        sobrepostas a 390, e um alvo sobreposto não é um alvo
+                        maior: é uma porta que abre a coisa do lado. */}
+                    <span data-nonledger="numeracao">{total}</span>
+                  </span>
+                )}
               </div>
             ) : (
               /* Sem palavra de estado a fila fica, vazia, para que os valores de
                  todos os cartões da faixa se leiam à mesma altura. Uma fila que
                  se dissolve num cartão e não no vizinho faz uma serra. */
-              <div class="cartao-topo" aria-hidden="true"></div>
+              <div class="cartao-topo" aria-hidden={total === null ? 'true' : undefined}>
+                {total !== null && (
+                  <span class="cartao-posicao">
+                    <span data-nonledger="numeracao">{c.posicao}</span>
+                    {s.inicio.faixa.de}
+                    {/* OS DOIS ALGARISMOS SÃO NUMERAÇÃO, e nenhum é uma porta.
+                        A marca é a mesma nos dois porque a coisa é a mesma: a
+                        posição de um cartão numa lista e o tamanho dessa lista.
+                        `numeracao` é o motivo do registo para «numeração de
+                        secções e de instrumentos» (`ledger/allowlist.yml`), e
+                        nenhum dos dois é uma medição de Portugal.
+
+                        O TOTAL NÃO É ESCRITO À MÃO: é o comprimento da lista que
+                        a faixa está a render, contado uma vez na vista, e por
+                        isso um cartão a mais ou a menos muda os dois algarismos
+                        ao mesmo tempo. Uma segunda lista escrita aqui era o que
+                        a régua da faixa existe para recusar.
+
+                        E NÃO É UMA CHAVE DA PROVA, e isso mediu-se antes de se
+                        decidir: uma chave da prova rende-se dentro da sua porta,
+                        e a porta desta seria a própria faixa, dentro do cartão
+                        cujo alvo já é o cartão inteiro (`.cartao-porta` cobre as
+                        três primeiras filas). Com a ligação lá dentro, a régua
+                        `correcoes-a.mjs` (item A10) contou 41 pares de áreas
+                        sobrepostas a 390, e um alvo sobreposto não é um alvo
+                        maior: é uma porta que abre a coisa do lado. */}
+                    <span data-nonledger="numeracao">{total}</span>
+                  </span>
+                )}
+              </div>
             )}
 
             <Claim id={c.id} lang={lang} chip={true} class="cartao-valor" />

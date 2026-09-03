@@ -505,13 +505,29 @@ async function mediuOTelemovel(largura) {
 async function mediuANavegacao() {
   for (const { edicao, home, indice } of EDICOES) {
     const p = await pagina(home, 1280);
+    /* ---------------------------------------------------------------------
+       «ÁREAS» MUDOU DE SÍTIO COM O F1.1 (03.09.2026), e a célula segue-a.
+       Estava na quarta posição da fila do âmbito da primeira página, que era uma
+       porta e não um estado (decisão 6 da auditoria de 25.08). A fila inteira
+       saiu com o bloco da porta da frente, e com ela a palavra «Âmbito» que a
+       nomeava (achado C6, decisão 3.4; brief F1.1 §1, item 6). As páginas das
+       áreas passam a ter porta no MENU, que é o índice do sítio que está sempre
+       à vista, ao lado das regiões e dos distritos, que também não a tinham
+       (item 11 do mesmo brief).
+
+       A CÉLULA MEDE A MESMA COISA NOUTRO SÍTIO: que «Áreas» tem porta, que a
+       porta leva ao índice, e que o rodapé continua a ter a sua e leva ao mesmo
+       lado. O que muda é qual é o primeiro dos dois caminhos. */
     const lido = await p.evaluate(() => ({
-      comando: document.querySelector('[data-comando] [data-porta="area"]')?.getAttribute('href') ?? null,
+      comando:
+        [...document.querySelectorAll('.nav-principal a[href]')]
+          .map((a) => a.getAttribute('href'))
+          .find((h) => /\/areas$/.test(h)) ?? null,
       rodape: [...document.querySelectorAll('footer.rodape a[href]')]
         .map((a) => a.getAttribute('href'))
         .filter((h) => /\/areas$/.test(h)),
     }));
-    await p.locator('[data-comando] [data-porta="area"]:visible').first().click();
+    await p.locator('.nav-principal a[href$="/areas"]:visible').first().click();
     await p.waitForLoadState('networkidle');
     const chegou = new URL(p.url()).pathname;
     await p.__ctx.close();
@@ -524,12 +540,12 @@ async function mediuANavegacao() {
 
     medidas[`M6·${edicao}`] = { ...lido, chegou, chegouRodape };
     conta(
-      `M6 · «Áreas» no comando e no rodapé leva ao índice das áreas · ${edicao}`,
+      `M6 · «Áreas» no menu e no rodapé leva ao índice das áreas · ${edicao}`,
       lido.comando === indice &&
         lido.rodape.length === 1 &&
         chegou === indice &&
         chegouRodape === indice,
-      `comando ${lido.comando} · rodapé ${lido.rodape.join(', ') || 'sem'} · ` +
+      `menu ${lido.comando} · rodapé ${lido.rodape.join(', ') || 'sem'} · ` +
         `cliques → ${chegou} e ${chegouRodape}`,
     );
   }

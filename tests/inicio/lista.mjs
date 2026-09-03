@@ -408,14 +408,30 @@ async function correTudo(soEstas) {
       const soNoMapa = [...doMapa].filter((s) => !daLista.has(s));
       const destinos = new Set(r.nomes.map((n) => n.destino));
       conta(
-        `L1·${e.chave} · uma lista só, e os seus slugs são exactamente os das áreas do mapa`,
+        `L1·${e.chave} · uma lista só, os seus slugs são os das áreas do mapa, e vem depois dele no documento`,
         r.nomes.length === 29 &&
           daLista.size === 29 &&
           doMapa.size === 29 &&
           soNaLista.length === 0 &&
           soNoMapa.length === 0 &&
           destinos.size === 29 &&
-          r.ordemDoDocumento === 'nomes antes do mapa',
+          /* A ORDEM DO DOCUMENTO INVERTEU-SE COM O F1.1 (03.09.2026), e a razão
+             que a fixava caducou com a forma. A lista vinha antes do mapa porque
+             estava FECHADA: era o índice do desenho, e a leitura cruzada de
+             29.08 escreveu que «quem percorre a página pelo teclado tem de a
+             encontrar primeiro» — um `<summary>` de uma linha antes de um
+             desenho de 683 px. Desde o F1.1 a lista chega ABERTA (item 4 do
+             brief), com os 29 nomes à vista e cada um com o seu alvo, e vive
+             numa banda de largura inteira por baixo da cabeça, fora da grelha
+             (a razão está em `CabecaDoLugar.astro`: dentro da coluna esquerda
+             ela punha 316,6 px de papel liso na metade direita a 1280).
+
+             O QUE A CÉLULA CONTINUA A PROTEGER é que a ordem do documento e a
+             ordem do ecrã são a mesma, que é o que serve quem percorre a página
+             pelo teclado: o desenho, a legenda do desenho, e a seguir os nomes.
+             Uma lista aberta depois do mapa é lida na mesma ordem em que se vê;
+             era a lista fechada que precisava de vir primeiro. */
+          r.ordemDoDocumento === 'mapa antes dos nomes',
         `${r.nomes.length} ligações, ${daLista.size} slugs na lista e ${doMapa.size} no mapa, ${destinos.size} destinos distintos` +
           `${soNaLista.length || soNoMapa.length ? ` · só na lista: ${soNaLista.join(', ') || 'nenhum'} · só no mapa: ${soNoMapa.join(', ') || 'nenhum'}` : ' · os dois conjuntos são o mesmo'}` +
           ` · ordem do documento: ${r.ordemDoDocumento}`,
@@ -443,13 +459,33 @@ async function correTudo(soEstas) {
     for (const e of EDICOES) {
       for (const w of [1024, 1280]) {
         const r = fechado[`${e.chave}_${w}`];
+        /* -------------------------------------------------------------------
+           A COLUNA MUDOU DE CONTEÚDO COM O F1.1 (03.09.2026), e a célula segue-a.
+           Media a coluna das DUAS GAVETAS — a dos nomes e a da busca — e exigia
+           três coisas: a mesma banda da coluna da cabeça, por baixo da manchete,
+           e a começar antes do fim da coluna do mapa, que é o que a punha AO LADO
+           do desenho e não por baixo dele.
+
+           As duas gavetas deixaram de estar ali. A busca subiu para debaixo da
+           manchete, como `<form>` com destino (itens 3 e 12 do brief), e a lista
+           dos nomes passou a uma banda de largura inteira fora da grelha (item 4;
+           a razão medida está em `CabecaDoLugar.astro`). O que fica na coluna é a
+           LEGENDA DO MAPA, e é dela que a célula passa a falar.
+
+           A TERCEIRA EXIGÊNCIA CAI A 1024, E COM RAZÃO MEDIDA. A coluna esquerda
+           ganhou uma fila — a porta do concelho — e a 1024 a coluna do mapa é a
+           mais estreita das três larguras (o desenho mede 831,7 px de altura
+           contra 864,4 px de coluna esquerda). Ali a legenda fica por baixo do
+           fim do desenho, e a promessa de que o fundo dos dois é o mesmo é a L11,
+           que corre a 1280 e a 1440, onde ela vale. A célula continua a exigir a
+           banda e a ordem, que são o que ela sempre protegeu. */
         const naBanda = Math.abs(r.lado.x - r.cabeca.x) < 1 && Math.abs(r.lado.w - r.cabeca.w) < 1;
         const porBaixoDaManchete = r.lado.y >= r.cabeca.fundo;
-        const aoLadoDoMapa = r.lado.y < r.instrumento.fundo;
+        const aoLadoDoMapa = w >= 1280 ? r.lado.y < r.instrumento.fundo : true;
         conta(
-          `L2·${e.chave}·${w} · a coluna das gavetas na banda da cabeça, por baixo da manchete e ao lado do mapa`,
+          `L2·${e.chave}·${w} · a legenda do mapa na banda da cabeça, por baixo da manchete${w >= 1280 ? ' e ao lado do mapa' : ''}`,
           naBanda && porBaixoDaManchete && aoLadoDoMapa,
-          `gavetas x ${r.lado.x} w ${r.lado.w} (cabeça x ${r.cabeca.x} w ${r.cabeca.w}) · topo ${r.lado.y} contra o fim da manchete ${r.cabeca.fundo} e o fim do mapa ${r.instrumento.fundo}`,
+          `legenda x ${r.lado.x} w ${r.lado.w} (cabeça x ${r.cabeca.x} w ${r.cabeca.w}) · topo ${r.lado.y} contra o fim da manchete ${r.cabeca.fundo} e o fim do mapa ${r.instrumento.fundo}`,
         );
       }
     }
@@ -552,16 +588,18 @@ async function correTudo(soEstas) {
             );
           }
           if (precisa('L12')) {
-            /* COM A GAVETA ABERTA, e é a única das três que o é: a célula fala
-               da posição da legenda CONTRA A LISTA, e uma lista fechada não tem
-               caixa contra a qual comparar. O que a célula prova continua a ser
-               o mesmo — a legenda é a última coisa da coluna esquerda, alinhada
-               à esquerda com os nomes —, e com a gaveta fechada mede-se a
-               distância dela ao fundo do mapa, que é a outra metade da promessa. */
+            /* A ORDEM DOS DOIS INVERTEU-SE COM O F1.1 (03.09.2026). A legenda
+               era a última coisa da coluna esquerda e os nomes estavam por cima
+               dela, dentro da mesma coluna; com a lista aberta a viver numa banda
+               de largura inteira fora da grelha, a legenda é a última coisa da
+               COLUNA e a banda dos nomes é a primeira coisa DEPOIS dela. O que a
+               célula continua a provar é o mesmo: que as duas coisas estão
+               alinhadas à esquerda uma com a outra e que não se atravessam.
+               A razão da mudança está em `CabecaDoLugar.astro`. */
             conta(
-              `L12·${e.chave}·${w} · a legenda por baixo dos nomes, alinhada à esquerda com eles`,
+              `L12·${e.chave}·${w} · a legenda por cima dos nomes, alinhada à esquerda com eles`,
               Math.abs(aberto.legenda.x - aberto.lista.x) <= 1 &&
-                aberto.legenda.y >= aberto.lista.fundo - 0.5 &&
+                aberto.legenda.fundo <= aberto.lista.y + 0.5 &&
                 ['left', 'start'].includes(aberto.legendaAlinhamento),
               `legenda x ${aberto.legenda.x} y ${aberto.legenda.y} · lista x ${aberto.lista.x} fundo ${aberto.lista.fundo} · text-align ${aberto.legendaAlinhamento}`,
             );
@@ -586,17 +624,16 @@ async function correTudo(soEstas) {
             );
           }
         } else if (precisa('L12')) {
-          /* A 1024 A LEGENDA MUDOU DE COLUNA (01.09.2026). Estava na coluna do
-             mapa, descida pela altura dele com uma margem em percentagem; com a
-             legenda a passar a ser a última filha da coluna das gavetas, essa
-             margem resolvia-se contra a largura errada e saiu. A regra passa a
-             ser uma só nas três larguras: a legenda é a última coisa da coluna
-             esquerda, alinhada à esquerda com os nomes. O que muda de 1024 para
-             1280 é só se o fundo dela é também o fundo do mapa, e isso é a L11. */
+          /* A 1024 A LEGENDA MUDOU DE COLUNA (01.09.2026) e a ordem contra os
+             nomes inverteu-se (F1.1, 03.09.2026). A regra é uma só nas três
+             larguras: a legenda é a última coisa da coluna da cabeça, alinhada à
+             esquerda com a banda dos nomes que vem a seguir a ela. O que muda de
+             1024 para 1280 é só se o fundo dela é também o fundo do mapa, e isso
+             é a L11. */
           conta(
-            `L12·${e.chave}·${w} · a legenda no fim da coluna das gavetas, alinhada à esquerda com os nomes`,
+            `L12·${e.chave}·${w} · a legenda no fim da coluna da cabeça, por cima da banda dos nomes e alinhada com ela`,
             Math.abs(aberto.legenda.x - aberto.lista.x) <= 1 &&
-              aberto.legenda.y >= aberto.lista.fundo - 0.5 &&
+              aberto.legenda.fundo <= aberto.lista.y + 0.5 &&
               ['left', 'start'].includes(aberto.legendaAlinhamento),
             `legenda x ${aberto.legenda.x} y ${aberto.legenda.y} · lista x ${aberto.lista.x} fundo ${aberto.lista.fundo} · text-align ${aberto.legendaAlinhamento}`,
           );
@@ -613,16 +650,34 @@ async function correTudo(soEstas) {
         const formas = new Set(r.grupos.map((g) => g.formaDaFila));
         const continente = r.nomes.filter((n) => n.parcela === 'continente' && n.visivel);
         const linhas = new Set(continente.map((n) => Math.round(n.caixa.y))).size;
-        const emColuna = w >= LIMIAR_DA_COLUNA;
-        const formaCerta = formas.size === 1 && [...formas][0] === (emColuna ? 'block' : 'flex');
-        const linhasCertas = emColuna ? linhas === 9 : linhas < 9;
-        const naBanda =
-          !emColuna || (Math.abs(r.lista.x - r.cabeca.x) < 1 && Math.abs(r.lista.w - r.cabeca.w) < 1);
+        /* -------------------------------------------------------------------
+           A FORMA É UMA SÓ EM TODAS AS LARGURAS DESDE O F1.1 (03.09.2026).
+           Eram duas: abaixo de 1024 a rede em linha, com 44 px de alvo, porque
+           era o único alvo que respondia pelas 29 unidades do desenho (I82 e
+           Emenda 20c); a partir de 1024 a lista em coluna, uma linha por nome,
+           com 32 px, porque ali ela era o índice do mapa dentro da coluna
+           esquerda (a emenda do alinhamento à §1.84, 29.08.2026).
+
+           A LISTA DEIXOU DE VIVER NA COLUNA. Com ela aberta (item 4 do brief), a
+           coluna esquerda a 1280 passava de 424 px para 1 005,6 px contra uma
+           coluna do mapa de 689,0 px, e ficavam 316,6 px de papel liso na metade
+           direita: a razão inteira está em `CabecaDoLugar.astro`. A lista passa a
+           uma banda de largura inteira por baixo da cabeça, e numa banda a forma
+           em coluna não faz sentido nenhum — dezoito nomes numa coluna de
+           1 200 px de largura seriam dezoito linhas de papel vazio.
+
+           O QUE A CÉLULA CONTINUA A PROTEGER, E É O ESSENCIAL: uma forma de cada
+           vez (nunca as duas ao mesmo tempo), os 29 à vista, e o continente a
+           caber em menos linhas do que os dezoito nomes empilhados dariam. O
+           alvo de cada nome é a L5, que corre às sete larguras e não mudou. */
+        const formaCerta = formas.size === 1 && [...formas][0] === 'flex';
+        const linhasCertas = linhas > 0 && linhas < 9;
+        const naBanda = true;
         conta(
-          `L9·${e.chave}·${w} · uma forma de cada vez: ${emColuna ? 'a lista da coluna esquerda' : 'a rede em linha'}`,
-          r.nomes.every((n) => n.visivel) && formaCerta && linhasCertas && naBanda,
+          `L9·${e.chave}·${w} · uma forma de cada vez: a rede em linha`,
+          r.nomes.every((n) => n.visivel) && formaCerta && linhasCertas,
           `fila em «${[...formas].join(', ')}» (${formas.size} forma no bloco) · os 18 do continente em ${linhas} linha(s) · ` +
-            `${r.nomes.filter((n) => n.visivel).length}/29 à vista${emColuna ? ` · na banda da cabeça: ${naBanda}` : ''}`,
+            `${r.nomes.filter((n) => n.visivel).length}/29 à vista`,
         );
       }
     }

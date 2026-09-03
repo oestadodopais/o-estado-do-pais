@@ -23,6 +23,7 @@
  */
 import Claim from './Claim.astro';
 import { routePath } from '../lib/routes.mjs';
+import { VERBATIM } from '../data/verbatim.mjs';
 
 /**
  * `selos` — todo o `{ claim: … }` desta frase sai com o seu selo ao lado.
@@ -42,6 +43,16 @@ const { partes, lang = 'pt', selos = false } = Astro.props;
     if (parte.claim)
       return <Claim id={parte.claim} lang={lang} chip={selos} sufixo={parte.sufixo ?? ''} />;
     if (parte.ref) return <span data-nonledger="data-de-referencia">{parte.ref}</span>;
+    {/* UM PEDAÇO TRANSCRITO DENTRO DE UMA FRASE (F1.1, 03.09.2026).
+        `{ verbatim: '<chave>' }` rende a cadeia registada em
+        `src/data/verbatim.mjs` com a marca que o portão conhece, e o portão
+        compara o que se rende com o que está registado, carácter a carácter. É
+        o mecanismo n.º 2 do cabeçalho de `ledger/allowlist.yml`, e não uma
+        dispensa: uma citação com algarismos entra por aqui em vez de entrar por
+        um motivo novo. O texto NÃO se escreve na chamada — vem do registo —,
+        para que não haja duas cópias da mesma transcrição. */}
+    if (parte.verbatim)
+      return <span data-verbatim={parte.verbatim}>{VERBATIM[parte.verbatim].text}</span>;
     if (parte.forte) return <strong set:text={parte.forte} />;
     if (parte.email)
       return (

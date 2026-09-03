@@ -1,0 +1,1110 @@
+{
+  "dist": "/tmp/dist-antes",
+  "celulas": [
+    {
+      "nome": "A1.pt",
+      "passa": false,
+      "prova": "fora do primeiro ecrã: cartao: fundo 726.7; selo: fundo 714.3; porta: não existe · 21 cartões, 0 sem selo com caixa"
+    },
+    {
+      "nome": "A2.pt",
+      "passa": true,
+      "prova": "altura de / a 390: 6941 px · teto medido na árvore de partida: 6941 px (menos 0 px)"
+    },
+    {
+      "nome": "A11.pt",
+      "passa": false,
+      "prova": "mobília acima do nome a 390: 68 px (teto 64) · a barra em 1 fila(s) com 2 item(ns), 52 px · as leituras por baixo do nome em 3 fila(s) com 3 à vista, 73 px"
+    },
+    {
+      "nome": "A5.pt",
+      "passa": false,
+      "prova": "as 29 unidades com nome visível e alvo ≥ 44 px, sem gesto, abaixo de 1024 (a partir de 1024 a regra é 32 px, Emenda 20c): a 390 29 nome(s), 29 invisível(eis), 29 fora do alvo; a 768 29 nome(s), 29 invisível(eis), 29 fora do alvo (aveiro 54.1×44, beja 44×44, braga 49.5×44…)"
+    },
+    {
+      "nome": "A3.pt",
+      "passa": false,
+      "prova": "os 21 valores selados uma só vez em /: 21 fora da conta (divida-publica-2025×2, posicao-de-investimento-internacional-2025×2, custo-unitario-do-trabalho-2025×2, precos-da-habitacao-2025×2, desempenho-das-exportacoes-2025×2, divida-das-empresas-2025×2, divida-das-familias-2025×2, fluxo-de-credito-as-empresas-2025×2, fluxo-de-credito-as-familias-2025×2, saldo-da-balanca-corrente-2025×2, taxa-de-actividade-2025×2, taxa-de-cambio-efectiva-real-2025×2, taxa-de-desemprego-mip-2025×2, taxa-de-emprego-2025×2, taxa-de-desemprego-2025×2, desemprego-de-longa-duracao-2025×2, jovens-nem-2025×2, abandono-escolar-precoce-2025×2, risco-de-pobreza-ou-exclusao-2025×2, racio-s80-s20-2025×2, sobrecarga-do-custo-da-habitacao-2025×2)"
+    },
+    {
+      "nome": "A4.pt",
+      "passa": false,
+      "prova": "«Comissão Europeia» em cada frase de contexto de /: 0 frase(s), 0 sem a Comissão · no documento inteiro: 0"
+    },
+    {
+      "nome": "A6.pt",
+      "passa": false,
+      "prova": "vocabulário da casa em /: Âmbito=1 · Densidade=1"
+    },
+    {
+      "nome": "A10.pt",
+      "passa": true,
+      "prova": "«sem limiar» nos cartões e nas peças de /: 0 cartão(ões), 0 peça(s)"
+    },
+    {
+      "nome": "A7.pt",
+      "passa": false,
+      "prova": "as duas fichas de «Lagoa» em /: 2 ficha(s), 1 texto(s) distinto(s), 0 com «Faro» e 0 com «São Miguel» [Lagoa | Lagoa]"
+    },
+    {
+      "nome": "A12.pt",
+      "passa": false,
+      "prova": "regiões, distritos e áreas no menu de /: faltam /regioes, /distritos, /areas"
+    },
+    {
+      "nome": "A8.pt",
+      "passa": false,
+      "prova": "<form> em /: 0; action «null» (não responde 200); method «null»"
+    },
+    {
+      "nome": "A9.pt",
+      "passa": false,
+      "prova": "com guião, a partir de /: 0 toque(s), com rolar, chegou a «erro: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n» · sem guião, pela submissão nativa: «erro: page.fill: Timeout 30000ms exceeded.»"
+    },
+    {
+      "nome": "A1.en",
+      "passa": false,
+      "prova": "fora do primeiro ecrã: cartao: fundo 710.9; selo: fundo 698.5; porta: não existe · 21 cartões, 0 sem selo com caixa"
+    },
+    {
+      "nome": "A2.en",
+      "passa": true,
+      "prova": "altura de /en a 390: 6890 px · teto medido na árvore de partida: 6890 px (menos 0 px)"
+    },
+    {
+      "nome": "A11.en",
+      "passa": false,
+      "prova": "mobília acima do nome a 390: 68 px (teto 64) · a barra em 1 fila(s) com 2 item(ns), 52 px · as leituras por baixo do nome em 3 fila(s) com 3 à vista, 73 px"
+    },
+    {
+      "nome": "A5.en",
+      "passa": false,
+      "prova": "as 29 unidades com nome visível e alvo ≥ 44 px, sem gesto, abaixo de 1024 (a partir de 1024 a regra é 32 px, Emenda 20c): a 390 29 nome(s), 29 invisível(eis), 29 fora do alvo; a 768 29 nome(s), 29 invisível(eis), 29 fora do alvo (aveiro 54.1×44, beja 44×44, braga 49.5×44…)"
+    },
+    {
+      "nome": "A3.en",
+      "passa": false,
+      "prova": "os 21 valores selados uma só vez em /en: 21 fora da conta (divida-publica-2025×2, posicao-de-investimento-internacional-2025×2, custo-unitario-do-trabalho-2025×2, precos-da-habitacao-2025×2, desempenho-das-exportacoes-2025×2, divida-das-empresas-2025×2, divida-das-familias-2025×2, fluxo-de-credito-as-empresas-2025×2, fluxo-de-credito-as-familias-2025×2, saldo-da-balanca-corrente-2025×2, taxa-de-actividade-2025×2, taxa-de-cambio-efectiva-real-2025×2, taxa-de-desemprego-mip-2025×2, taxa-de-emprego-2025×2, taxa-de-desemprego-2025×2, desemprego-de-longa-duracao-2025×2, jovens-nem-2025×2, abandono-escolar-precoce-2025×2, risco-de-pobreza-ou-exclusao-2025×2, racio-s80-s20-2025×2, sobrecarga-do-custo-da-habitacao-2025×2)"
+    },
+    {
+      "nome": "A4.en",
+      "passa": false,
+      "prova": "«European Commission» em cada frase de contexto de /en: 0 frase(s), 0 sem a Comissão · no documento inteiro: 0"
+    },
+    {
+      "nome": "A6.en",
+      "passa": false,
+      "prova": "vocabulário da casa em /en: Scope=1 · Density=1"
+    },
+    {
+      "nome": "A10.en",
+      "passa": true,
+      "prova": "«no threshold» nos cartões e nas peças de /en: 0 cartão(ões), 0 peça(s)"
+    },
+    {
+      "nome": "A7.en",
+      "passa": false,
+      "prova": "as duas fichas de «Lagoa» em /en: 2 ficha(s), 1 texto(s) distinto(s), 0 com «Faro» e 0 com «São Miguel» [Lagoa | Lagoa]"
+    },
+    {
+      "nome": "A12.en",
+      "passa": false,
+      "prova": "regiões, distritos e áreas no menu de /en: faltam /en/regions, /en/districts, /en/areas"
+    },
+    {
+      "nome": "A8.en",
+      "passa": false,
+      "prova": "<form> em /en: 0; action «null» (não responde 200); method «null»"
+    },
+    {
+      "nome": "A9.en",
+      "passa": false,
+      "prova": "com guião, a partir de /en: 0 toque(s), com rolar, chegou a «erro: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n» · sem guião, pela submissão nativa: «erro: page.fill: Timeout 30000ms exceeded.»"
+    }
+  ],
+  "medidas": {
+    "A1.pt": {
+      "nome": {
+        "topo": 68,
+        "fundo": 103.4,
+        "largura": 354,
+        "altura": 35.4
+      },
+      "manchete": {
+        "topo": 271.1,
+        "fundo": 429.9,
+        "largura": 354,
+        "altura": 158.8
+      },
+      "cartao": {
+        "topo": 532.9,
+        "fundo": 726.7,
+        "largura": 205.3,
+        "altura": 193.8
+      },
+      "selo": {
+        "topo": 695.1,
+        "fundo": 714.3,
+        "largura": 52.5,
+        "altura": 19.2
+      },
+      "porta": null,
+      "cartoes": 21,
+      "semSelo": [],
+      "ecra": 664,
+      "altura": 6941,
+      "mobilia": 68,
+      "barra": {
+        "filas": 1,
+        "itens": 2,
+        "altura": 52
+      },
+      "leituras": {
+        "filas": 3,
+        "itens": 3,
+        "altura": 73
+      }
+    },
+    "A2.pt": {
+      "altura": 6941,
+      "teto": 6941
+    },
+    "A11.pt": {
+      "acimaDoNome": 68,
+      "barra": {
+        "filas": 1,
+        "itens": 2,
+        "altura": 52
+      },
+      "leituras": {
+        "filas": 3,
+        "itens": 3,
+        "altura": 73
+      }
+    },
+    "A5.pt.390": {
+      "total": 29,
+      "pequenos": [
+        {
+          "slug": "aveiro",
+          "w": 54.1,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "beja",
+          "w": 44,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "braga",
+          "w": 49.5,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "braganca",
+          "w": 72.9,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "castelo-branco",
+          "w": 108.5,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "coimbra",
+          "w": 67.7,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "evora",
+          "w": 48.8,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "faro",
+          "w": 44,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "guarda",
+          "w": 60.1,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "leiria",
+          "w": 49,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "lisboa",
+          "w": 54.2,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "portalegre",
+          "w": 79.8,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "porto",
+          "w": 47.3,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "santarem",
+          "w": 76.1,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "setubal",
+          "w": 61.4,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "viana-do-castelo",
+          "w": 118.9,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "vila-real",
+          "w": 67.8,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "viseu",
+          "w": 48.3,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-da-madeira",
+          "w": 112.1,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-de-porto-santo",
+          "w": 134.5,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-da-graciosa",
+          "w": 116,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-das-flores",
+          "w": 105.4,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-de-santa-maria",
+          "w": 136.4,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-de-sao-jorge",
+          "w": 119.2,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-de-sao-miguel",
+          "w": 130.3,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-do-corvo",
+          "w": 97.4,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-do-faial",
+          "w": 90.1,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-do-pico",
+          "w": 86.6,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-terceira",
+          "w": 93.3,
+          "h": 44,
+          "vis": false
+        }
+      ],
+      "invisiveis": 29
+    },
+    "A5.pt.768": {
+      "total": 29,
+      "pequenos": [
+        {
+          "slug": "aveiro",
+          "w": 54.1,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "beja",
+          "w": 44,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "braga",
+          "w": 49.5,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "braganca",
+          "w": 72.9,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "castelo-branco",
+          "w": 108.5,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "coimbra",
+          "w": 67.7,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "evora",
+          "w": 48.8,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "faro",
+          "w": 44,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "guarda",
+          "w": 60.1,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "leiria",
+          "w": 49,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "lisboa",
+          "w": 54.2,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "portalegre",
+          "w": 79.8,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "porto",
+          "w": 47.3,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "santarem",
+          "w": 76.1,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "setubal",
+          "w": 61.4,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "viana-do-castelo",
+          "w": 118.9,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "vila-real",
+          "w": 67.8,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "viseu",
+          "w": 48.3,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-da-madeira",
+          "w": 112.1,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-de-porto-santo",
+          "w": 134.5,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-da-graciosa",
+          "w": 116,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-das-flores",
+          "w": 105.4,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-de-santa-maria",
+          "w": 136.4,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-de-sao-jorge",
+          "w": 119.2,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-de-sao-miguel",
+          "w": 130.3,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-do-corvo",
+          "w": 97.4,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-do-faial",
+          "w": 90.1,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-do-pico",
+          "w": 86.6,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-terceira",
+          "w": 93.3,
+          "h": 44,
+          "vis": false
+        }
+      ],
+      "invisiveis": 29
+    },
+    "A3.pt": {
+      "total": 21,
+      "repetidos": [
+        "divida-publica-2025×2",
+        "posicao-de-investimento-internacional-2025×2",
+        "custo-unitario-do-trabalho-2025×2",
+        "precos-da-habitacao-2025×2",
+        "desempenho-das-exportacoes-2025×2",
+        "divida-das-empresas-2025×2",
+        "divida-das-familias-2025×2",
+        "fluxo-de-credito-as-empresas-2025×2",
+        "fluxo-de-credito-as-familias-2025×2",
+        "saldo-da-balanca-corrente-2025×2",
+        "taxa-de-actividade-2025×2",
+        "taxa-de-cambio-efectiva-real-2025×2",
+        "taxa-de-desemprego-mip-2025×2",
+        "taxa-de-emprego-2025×2",
+        "taxa-de-desemprego-2025×2",
+        "desemprego-de-longa-duracao-2025×2",
+        "jovens-nem-2025×2",
+        "abandono-escolar-precoce-2025×2",
+        "risco-de-pobreza-ou-exclusao-2025×2",
+        "racio-s80-s20-2025×2",
+        "sobrecarga-do-custo-da-habitacao-2025×2"
+      ]
+    },
+    "A4.pt": {
+      "noDocumento": 0,
+      "frases": []
+    },
+    "A6.pt": 2,
+    "A10.pt": {
+      "cartoes": 0,
+      "pecas": 0
+    },
+    "A7.pt": [
+      "Lagoa",
+      "Lagoa"
+    ],
+    "A12.pt": {
+      "menu": [
+        "/",
+        "/municipios",
+        "/estudos",
+        "/livro-razao",
+        "/agenda",
+        "/metodo",
+        "/correcoes",
+        "/sobre"
+      ],
+      "emFalta": [
+        "/regioes",
+        "/distritos",
+        "/areas"
+      ]
+    },
+    "A8.pt": {
+      "formularios": 0,
+      "action": null,
+      "metodo": null,
+      "destinoVivo": false
+    },
+    "A9.pt": {
+      "toques": 0,
+      "dentroDoEcra": false,
+      "chegou": "erro: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+      "semGuiao": {
+        "caminho": "erro: page.fill: Timeout 30000ms exceeded.",
+        "query": "",
+        "titulo": ""
+      }
+    },
+    "A1.en": {
+      "nome": {
+        "topo": 68,
+        "fundo": 103.4,
+        "largura": 354,
+        "altura": 35.4
+      },
+      "manchete": {
+        "topo": 271.1,
+        "fundo": 398.6,
+        "largura": 354,
+        "altura": 127.4
+      },
+      "cartao": {
+        "topo": 501.6,
+        "fundo": 710.9,
+        "largura": 205.3,
+        "altura": 209.3
+      },
+      "selo": {
+        "topo": 679.3,
+        "fundo": 698.5,
+        "largura": 61,
+        "altura": 19.2
+      },
+      "porta": null,
+      "cartoes": 21,
+      "semSelo": [],
+      "ecra": 664,
+      "altura": 6890,
+      "mobilia": 68,
+      "barra": {
+        "filas": 1,
+        "itens": 2,
+        "altura": 52
+      },
+      "leituras": {
+        "filas": 3,
+        "itens": 3,
+        "altura": 73
+      }
+    },
+    "A2.en": {
+      "altura": 6890,
+      "teto": 6890
+    },
+    "A11.en": {
+      "acimaDoNome": 68,
+      "barra": {
+        "filas": 1,
+        "itens": 2,
+        "altura": 52
+      },
+      "leituras": {
+        "filas": 3,
+        "itens": 3,
+        "altura": 73
+      }
+    },
+    "A5.en.390": {
+      "total": 29,
+      "pequenos": [
+        {
+          "slug": "aveiro",
+          "w": 54.1,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "beja",
+          "w": 44,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "braga",
+          "w": 49.5,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "braganca",
+          "w": 72.9,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "castelo-branco",
+          "w": 108.5,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "coimbra",
+          "w": 67.7,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "evora",
+          "w": 48.8,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "faro",
+          "w": 44,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "guarda",
+          "w": 60.1,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "leiria",
+          "w": 49,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "lisboa",
+          "w": 54.2,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "portalegre",
+          "w": 79.8,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "porto",
+          "w": 47.3,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "santarem",
+          "w": 76.1,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "setubal",
+          "w": 61.4,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "viana-do-castelo",
+          "w": 118.9,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "vila-real",
+          "w": 67.8,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "viseu",
+          "w": 48.3,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-da-madeira",
+          "w": 112.1,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-de-porto-santo",
+          "w": 134.5,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-da-graciosa",
+          "w": 116,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-das-flores",
+          "w": 105.4,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-de-santa-maria",
+          "w": 136.4,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-de-sao-jorge",
+          "w": 119.2,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-de-sao-miguel",
+          "w": 130.3,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-do-corvo",
+          "w": 97.4,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-do-faial",
+          "w": 90.1,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-do-pico",
+          "w": 86.6,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-terceira",
+          "w": 93.3,
+          "h": 44,
+          "vis": false
+        }
+      ],
+      "invisiveis": 29
+    },
+    "A5.en.768": {
+      "total": 29,
+      "pequenos": [
+        {
+          "slug": "aveiro",
+          "w": 54.1,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "beja",
+          "w": 44,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "braga",
+          "w": 49.5,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "braganca",
+          "w": 72.9,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "castelo-branco",
+          "w": 108.5,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "coimbra",
+          "w": 67.7,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "evora",
+          "w": 48.8,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "faro",
+          "w": 44,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "guarda",
+          "w": 60.1,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "leiria",
+          "w": 49,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "lisboa",
+          "w": 54.2,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "portalegre",
+          "w": 79.8,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "porto",
+          "w": 47.3,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "santarem",
+          "w": 76.1,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "setubal",
+          "w": 61.4,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "viana-do-castelo",
+          "w": 118.9,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "vila-real",
+          "w": 67.8,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "viseu",
+          "w": 48.3,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-da-madeira",
+          "w": 112.1,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-de-porto-santo",
+          "w": 134.5,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-da-graciosa",
+          "w": 116,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-das-flores",
+          "w": 105.4,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-de-santa-maria",
+          "w": 136.4,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-de-sao-jorge",
+          "w": 119.2,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-de-sao-miguel",
+          "w": 130.3,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-do-corvo",
+          "w": 97.4,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-do-faial",
+          "w": 90.1,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-do-pico",
+          "w": 86.6,
+          "h": 44,
+          "vis": false
+        },
+        {
+          "slug": "ilha-terceira",
+          "w": 93.3,
+          "h": 44,
+          "vis": false
+        }
+      ],
+      "invisiveis": 29
+    },
+    "A3.en": {
+      "total": 21,
+      "repetidos": [
+        "divida-publica-2025×2",
+        "posicao-de-investimento-internacional-2025×2",
+        "custo-unitario-do-trabalho-2025×2",
+        "precos-da-habitacao-2025×2",
+        "desempenho-das-exportacoes-2025×2",
+        "divida-das-empresas-2025×2",
+        "divida-das-familias-2025×2",
+        "fluxo-de-credito-as-empresas-2025×2",
+        "fluxo-de-credito-as-familias-2025×2",
+        "saldo-da-balanca-corrente-2025×2",
+        "taxa-de-actividade-2025×2",
+        "taxa-de-cambio-efectiva-real-2025×2",
+        "taxa-de-desemprego-mip-2025×2",
+        "taxa-de-emprego-2025×2",
+        "taxa-de-desemprego-2025×2",
+        "desemprego-de-longa-duracao-2025×2",
+        "jovens-nem-2025×2",
+        "abandono-escolar-precoce-2025×2",
+        "risco-de-pobreza-ou-exclusao-2025×2",
+        "racio-s80-s20-2025×2",
+        "sobrecarga-do-custo-da-habitacao-2025×2"
+      ]
+    },
+    "A4.en": {
+      "noDocumento": 0,
+      "frases": []
+    },
+    "A6.en": 2,
+    "A10.en": {
+      "cartoes": 0,
+      "pecas": 0
+    },
+    "A7.en": [
+      "Lagoa",
+      "Lagoa"
+    ],
+    "A12.en": {
+      "menu": [
+        "/en",
+        "/en/municipalities",
+        "/en/studies",
+        "/en/ledger",
+        "/en/agenda",
+        "/en/method",
+        "/en/corrections",
+        "/en/about"
+      ],
+      "emFalta": [
+        "/en/regions",
+        "/en/districts",
+        "/en/areas"
+      ]
+    },
+    "A8.en": {
+      "formularios": 0,
+      "action": null,
+      "metodo": null,
+      "destinoVivo": false
+    },
+    "A9.en": {
+      "toques": 0,
+      "dentroDoEcra": false,
+      "chegou": "erro: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+      "semGuiao": {
+        "caminho": "erro: page.fill: Timeout 30000ms exceeded.",
+        "query": "",
+        "titulo": ""
+      }
+    }
+  },
+  "plantasOk": null
+}
