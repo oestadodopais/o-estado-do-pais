@@ -621,7 +621,7 @@ antes de mexer em nada, cada um com o seu comando:
 | P1a e P1b · `dominioDaLinha()` a exigir a linha principal **e** uma secundária (`&&`) | Blocking 1 | o ramo tem `\|\|`: `m.claim === id \|\| (m.claims ?? []).some(…)`, e a A13 conta 3 cartões para o domínio |
 | P4 · a entrada do menu a apontar a `/dominio` | Blocking 2 | `grep -c 'href="/dominio"' dist/index.html` → **0**; `href="/dominios"` está lá |
 | P2 · a régua a aceitar os estudos a 9,5 ecrãs | Blocking 3 | `ALTURA_DA_DOBRA = 1.5`, uma vez só no ficheiro |
-| P3 · o relatório a dizer 6 627 px na prosa | Minor 10 | `grep -c '6 627'` → **0**; `grep -c '662,7'` → 3 |
+| P3 · o relatório a dizer «6 627 px» na prosa | Minor 10 | a prosa diz **662,7 px** em toda a parte; `grep -n '6 627'` neste relatório devolve **uma** linha, e é esta, a que nomeia a planta. O comando é `grep -n` e não `grep -c` justamente por isso: uma contagem a 1 não distinguiria a planta citada da planta real |
 
 **Nenhum é real neste ramo.**
 
