@@ -561,7 +561,7 @@ for (const edicao of ['pt', 'en']) {
   conta(
     `A10 · zero alvos efetivos abaixo de 44px fora da mobília e do mapa, e zero áreas sobrepostas · 390 ${edicao}`,
     pequenosNoCorpo.length === 0 && pares.length === 0,
-    `${alvos.length} alvos · ${pequenosNoCorpo.length} abaixo de 44 fora da mobília e do mapa · ${pares.length} pares sobrepostos · exceção medida na mobília: ${pequenos
+    `${alvos.length} alvos · ${pequenosNoCorpo.length} abaixo de 44 fora da mobília e do mapa · ${pares.length} pares sobrepostos${pares.length ? ` (${pares.slice(0, 3).join(' | ')})` : ''} · exceção medida na mobília: ${pequenos
       .filter((a) => a.naMobilia)
       .map((a) => `${a.nome} ${a.w}×${a.h}`)
       .join(', ') || 'nenhuma'} · medidas ao lado, no mapa: ${pequenosDoMapa.length} de ${alvos.filter((a) => a.noMapa).length} áreas abaixo de 44 pela caixa, que é a medida errada para uma forma côncava (I82; os alvos das 29 são mapa-distritos.mjs M1 e M2)`,
