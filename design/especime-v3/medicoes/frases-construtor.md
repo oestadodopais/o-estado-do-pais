@@ -409,7 +409,7 @@ que o número não mude de significado entre passagens. Os cinco ficheiros que
 mudam o sítio, a régua e o portão, sem este relatório:
 
 ```
-git diff --stat 2ab66578 -- src/data/figuras.mjs scripts/check-voz.mjs \
+git diff --stat 2ab66578 a1af1c65 -- src/data/figuras.mjs scripts/check-voz.mjs \
   scripts/medir-defeitos.mjs design/especime-v3/INVENTARIO-FRASES.md \
   design/especime-v3/critica/REVISOES-DO-INVENTARIO.md
  design/especime-v3/INVENTARIO-FRASES.md              |  32 +++-
@@ -420,14 +420,19 @@ git diff --stat 2ab66578 -- src/data/figuras.mjs scripts/check-voz.mjs \
  5 files changed, 423 insertions(+), 47 deletions(-)
 ```
 
-Com este relatório, são **6 ficheiros, 1 085 inserções e 47 supressões**
-(`git diff --stat 2ab66578 -- src scripts design`). A diferença entre as duas
-contas é este ficheiro, e ele tem **662 linhas**
-(`wc -l < design/especime-v3/medicoes/frases-construtor.md`), que é exatamente
-1 085 menos 423. A primeira passagem escreveu «422 linhas» a partir da contagem de
-inserções de um ficheiro novo no `git diff --stat`, e a leitura a frio apanhou a
-incoerência (Major 4): o número certo é o do `wc -l`, e é o que fica escrito, com
-o comando ao lado.
+Este relatório entra no mesmo commit e conta à parte. Na altura em que a §9 foi
+escrita tinha 662 linhas; com a §11 (a segunda passagem) e a §12 (a fusão), tem
+**705** na versão final, medidas com
+`wc -l < design/especime-v3/medicoes/frases-construtor.md`. A primeira passagem
+escreveu «422 linhas» a partir da contagem de inserções de um ficheiro novo no
+`git diff --stat`, e a leitura a frio apanhou a incoerência (Major 4): uma
+contagem de inserções não é uma contagem de linhas, e o número certo é o do
+`wc -l`, com o comando ao lado.
+
+**A referência é `2ab66578..a1af1c65` e não `HEAD`**, porque `HEAD` passou a
+incluir a fusão com o `main` descrita na §12, e um `git diff` contra o ponto de
+partida traria também o trabalho de outro ramo. O intervalo acima é só o deste
+bloco.
 
 **Os três portões locais**, corridos na árvore do ramo depois da última mudança, com
 os códigos de saída lidos dos registos:
@@ -660,3 +665,41 @@ assim, no seu `<h2>`, e é um nome e não uma atribuição), «taxa de propriet�
 
 O inventário passa de 638 para **660 linhas** com bloco: **582 vivas**, todas
 rendidas, e **78 retiradas**, nenhuma rendida.
+
+## 12 · A fusão com o `main` que andou por baixo (03.09.2026)
+
+O `main` avançou durante o bloco, com a fusão do ramo das conferências
+(`df20ce65`): 935 linhas do livro-razão ganharam entradas de reconferência,
+`src/data/fontes.mjs` mudou de formato, `src/views/LinhaView.astro` passou a
+render os estados de ausência de uma fonte, e um portão novo, `check:fontes`
+(`tests/linha/sem-resposta.mjs`), entrou no `verify`.
+
+`origin/main` foi fundido neste ramo, e não rebasado: o ramo já estava publicado e
+com uma corrida verde, e reescrever a história dele para arrumar uma fusão limpa
+não paga o que custa. **A fusão não teve conflitos, e a razão é que os conjuntos
+de ficheiros não se tocam**: o `main` mexeu em `package.json`, `src/data/fontes.mjs`,
+`src/views/LinhaView.astro`, `src/i18n/strings.mjs`, `src/styles/site.css` e nas
+linhas do livro-razão; este bloco mexeu em `src/data/figuras.mjs`,
+`scripts/check-voz.mjs`, `scripts/medir-defeitos.mjs`, no inventário, no registo
+das revisões e neste relatório. O `package.json` não precisou de resolução porque
+este bloco nunca lhe tocou: `git diff --name-only 2ab66578 HEAD` não o nomeia, e o
+`check:fontes` do `main` entra no `verify` sem uma linha deste lado.
+
+**O que foi remedido depois da fusão, e não copiado de antes:**
+
+| medição | valor na árvore fundida |
+| --- | --- |
+| `npm run build` | **0** |
+| `npm run verify` (já com `check:fontes`) | **0** |
+| `npm run typecheck` | **0** |
+| soma das ocorrências das dezoito cadeias da classe em `dist/index.html` e `dist/en/index.html` | **0** |
+| positivo conhecido do `grep` na mesma construção | **1** e **1** |
+| autoteste do arame | passou, 0 falhas |
+| inventário | **660** linhas (582 vivas, 78 retiradas) |
+| altura de `/` a 390 px | **6 941 px** |
+| altura de `/en/` a 390 px | **6 890 px** |
+
+As duas alturas são as mesmas de antes da fusão, e é o que se esperava: o `main`
+mexeu na página de uma linha e não na primeira página. A régua nova do `main`
+(`check:fontes`) corre sobre as páginas de linha, que não são rota inventariada, e
+por isso não cruza com a mudança da régua da voz feita neste bloco.
