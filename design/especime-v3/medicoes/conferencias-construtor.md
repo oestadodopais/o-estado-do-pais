@@ -166,9 +166,90 @@ Se um dia houver uma linha primária que **não** se possa reler por meio nenhum
 | `npm run build`, antes de qualquer alteração | 09:22 | 0 | 300 |
 | `npm run build`, com as alterações | 09:35 | 0 | 313 |
 | `npm run build`, com a planta do anfitrião | 09:48 | 0 | 302 |
-| `npm run build`, final (a planta reposta) | 10:02 | **0** | 298 |
-| `npm run verify` | 10:07 | **0** | 59 |
-| `npm run typecheck` | 10:08 | **0** | 1 |
-| `node tests/linha/sem-resposta.mjs` | 10:08 | **0** | 4 |
+| `npm run build`, final da primeira passagem | 10:02 | **0** | 298 |
+| `npm run verify`, primeira passagem | 10:07 | **0** | 59 |
+| `npm run typecheck`, primeira passagem | 10:08 | **0** | 1 |
+| `npm run build`, **segunda passagem** | 11:02 | **0** | 307 |
+| `npm run verify`, **segunda passagem** (já com `check:fontes`) | 11:08 | **0** | 67 |
+| `npm run typecheck`, **segunda passagem** | 11:09 | **0** | 0 |
 
-Os três a 0, lidos dos registos antes do commit. A régua nova não entra no `build` nem no `verify`: é uma medida do `dist/`, corre a seguir, e o que ela mede depende de uma corrida do corredor que não acontece dentro da construção. Entrar no `verify` faria a construção depender do estado da rede de ontem, que é exatamente o que o ficheiro gerado existe para evitar.
+Os três a 0, lidos dos registos antes do commit.
+
+**A régua passou a portão, e o argumento anterior caiu.** A primeira redacção deste relatório justificava deixá-la fora do `verify` assim: «o que ela mede depende de uma corrida do corredor que não acontece dentro da construção». O argumento está errado, e a leitura a frio apanhou-o (Major 7). O que ela mede é o `dist/` contra `src/data/fontes.mjs`, e os dois são ficheiros do repositório: a construção não pergunta nada à rede, e o que o portão confere é que a página diz o que o ficheiro gerado diz. Um portão que corria fora do `verify` era um portão que ninguém era obrigado a correr.
+
+---
+
+## 6 · Segunda passagem, depois da leitura a frio do Codex (03.09.2026)
+
+*A leitura está em `design/especime-v3/critica/2026-09-03-codex-leitura-f0b-conferencias.md`: doze achados, cinco deles plantas do pacote que o leitor viu todas e que não existem nestes ramos, e um que é do próprio pacote. Deste lado mordem quatro: Major 4 e 5 (o que o recibo diz e o que ele não pode fingir), Major 7 (a régua passa a portão) e Major 8 (o que os relatórios afirmavam e nada conferia) e Major 9 (o que a cópia arquivada prova). O lado do motor está no relatório do motor, §5.*
+
+### Major 4 · o recibo aprende dois estados
+
+Uma fonte que não atende e uma fonte que responde `403` não são a mesma coisa, e o sítio dizia «Sem resposta desde» às duas. Chamar «sem resposta» a um 404 diz ao leitor que a fonte se calou, quando o que ela fez foi mudar o endereço.
+
+* `src/i18n/strings.mjs:1256-1279` e `:2274-2278`: `respondeuComErroK` («Respondeu com erro desde» / «Answering with an error since») ao lado do `semRespostaK` que já havia, nas duas edições;
+* `src/views/LinhaView.astro:322-331`: `rotuloDoEstado` escolhe um dos dois pelo campo `estado` que o ficheiro gerado agora traz. Uma entrada escrita antes de hoje não o traz, e a falta lê-se pelo que ela é: o que a casa sabia então era só «não se leu», e fica a palavra mais fraca das duas.
+
+**E as duas aparecem nos dados a sério**, o que é a prova de que a separação não é teórica:
+
+```
+$ tail -24 src/data/fontes.mjs
+  'https://emprego.azores.gov.pt/estatisticas/':  'estado': 'respondeu-com-erro'   (403 da Cloudflare, desde 30.08)
+  'https://www.dgcp.mtsss.gov.pt/…':              'estado': 'sem-resposta'         (SSLError, desde 01.09)
+```
+
+### Major 5 · quem observou, e o selo que não pode parecer fresco
+
+* **quem observou** (`src/views/LinhaView.astro:333-347`): «a esta máquina: `<nome>`» quando o índice do arquivo sabe a máquina, «ao corredor» quando não. «A DGAL não responde» e «a DGAL não respondeu a esta máquina» são duas frases diferentes, e só a segunda é verdade;
+* **o selo** (`src/views/LinhaView.astro:540-560`): a cabeça mostra agora, no MESMO bloco e um a seguir ao outro, **a data da última conferência que correu bem** desta linha e **a data em que a fonte dela começou a falhar**. Um leitor não pode ver uma sem a outra. A data da conferência sai por `CampoDaLinha` com o `data-linha-campo` da entrada, porque é um campo do livro-razão e o portão de HTML compara-a com o livro; a da falha sai por `data-nonledger`, porque não é. **Sem cor nova:** a `IDENTIDADE.md` §2 reserva a cor para os limiares de uma medida.
+
+### Major 9 · o que a cópia arquivada prova, dito ao leitor
+
+`src/views/LinhaView.astro:363-377` e `:1069-1082`: uma conferência cujo `path` é um endereço de `web.archive.org` passa a render **«contra a cópia arquivada de dd.mm.aaaa»**, com a data do instantâneo tirada dos catorze algarismos do próprio endereço. O `result` continua `igual` e o `path` continua o endereço do arquivo, porque foi ele que se leu; o que muda é que o leitor deixa de poder confundir uma conferência de integridade da cópia com uma releitura da fonte viva. As cinco linhas do PRR são exactamente esse caso: o publicador já não serve o instantâneo sobre que a conta foi feita.
+
+### Major 7 · a régua passa a portão
+
+A primeira redacção corria fora do `verify`, contava as páginas em falta e seguia em frente, media só a edição portuguesa, comparava a classe e a data mas não o texto do rótulo, e importava o formatador da produção para conferir a produção. Cinco defeitos numa régua, e cada um deles é uma maneira de ela dizer que sim sem ter olhado.
+
+| o que mudou | onde |
+|---|---|
+| entra no `npm run verify`, a seguir ao `gate:html` | `package.json` (`check:fontes`) |
+| uma página de linha que falta é uma FALHA | `tests/linha/sem-resposta.mjs:212-222` |
+| mede as DUAS edições (`/livro-razao/<id>` e `/en/ledger/<id>`) | `tests/linha/sem-resposta.mjs:76-90` |
+| compara o TEXTO LITERAL do rótulo nas duas línguas, e que o outro rótulo NÃO está lá | `tests/linha/sem-resposta.mjs:255-275` |
+| escreve a data pela sua PRÓPRIA regra, sem importar `dataDaCasa()` | `tests/linha/sem-resposta.mjs:92-97` |
+
+A tabela dos rótulos é uma segunda cópia da de `src/i18n/strings.mjs`, e é de propósito: uma régua que lesse a tabela da produção confirmava a tabela e não a página.
+
+### Major 8 · o que se afirmava passa a conferir-se
+
+Os dois relatórios diziam que as linhas de proveniência incompleta levam `noindex` e ficam fora do mapa do sítio, e nada o conferia. `tests/linha/sem-resposta.mjs:296-322` confere-o sobre o `dist/` construído e sobre o `dist/sitemap-0.xml` que ele traz, nos dois sentidos: uma linha incompleta que esteja no mapa é uma falha, e uma linha completa que esteja fora dele também.
+
+```
+$ node tests/linha/sem-resposta.mjs; echo "exit=$?"
+  5832 página(s) de linha lidas em …/dist, nas duas edições (2916 linha(s) × 2).
+  4 linha(s) devem mostrar o estado da fonte · 2912 não devem · 8 de proveniência
+  incompleta, fora do mapa e com noindex.
+  endereços em falha: 2 · anfitriões em falha: 1
+
+FONTES: PASS — 17496 conferências
+exit=0
+```
+
+As 8 são as 5 sem endereço nenhum mais as 3 do PRR cujo `excerpt` é o marcador.
+
+### Os conhecidos-positivos deste portão, vermelhos e depois verdes
+
+Plantados sobre o `dist/` construído, que é o que este portão mede, e desfeitos a seguir.
+
+| # | a planta | o que o portão disse | exit |
+|---|---|---|---|
+| 1 | uma página de linha apagada do `dist/` | `abrantes-divida-dgal-2024 (pt): não há página construída em …` | 1 |
+| 2 | a edição INGLESA com o rótulo português | `factor-sustentabilidade-2026 (en): a cabeça não escreve o rótulo «No answer since»` (e o mesmo para o recibo) | 1 |
+| 3 | a data em ISO dentro do bloco do estado | `a cabeça não escreve «01.09.2026» … sai em ISO («2026-09-01») e a regra da casa é dd.mm.aaaa` | 1 |
+| 4 | uma linha incompleta acrescentada ao `sitemap-0.xml` | `saldo-natural-portugal-2025: proveniência incompleta e no mapa do sítio` | 1 |
+| — | as quatro desfeitas | `FONTES: PASS — 17496 conferências` | 0 |
+
+A planta 1 ficou MUDA na primeira tentativa: o portão rebentava com uma excepção ao ler a página em falta no bloco do mapa, e um portão que rebenta não diz o que falhou, diz que ele próprio falhou. Consertado em `tests/linha/sem-resposta.mjs:300-306`, e a planta repetida deu a mensagem acima.
+
+E o portão apanhou um defeito SEU na primeira corrida a sério: o recorte de um `<dd>` não continha o rótulo, porque o rótulo vive no `<dt>` ao lado. Oito falhas sobre um recibo que estava certo. Consertado em `tests/linha/sem-resposta.mjs:152-166`.
