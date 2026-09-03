@@ -438,6 +438,7 @@ for (const edicao of ['pt', 'en']) {
       const subir = document.querySelector('.texto-subir');
       const rs = subir ? subir.getBoundingClientRect() : null;
       const entradas = nav ? [...nav.querySelectorAll('a')] : [];
+      const portasDeSeccao = art ? [...art.querySelectorAll('.texto-secao-topo')] : [];
       return {
         indice: !!nav,
         foraDoArtigo: nav ? !art.contains(nav) : false,
@@ -446,27 +447,39 @@ for (const edicao of ['pt', 'en']) {
         destinos: entradas.filter((a) => document.querySelector(a.getAttribute('href'))).length,
         h2: art ? art.querySelectorAll('h2[data-registo-bloco]').length : 0,
         h3: art ? art.querySelectorAll('h3[data-registo-bloco]').length : 0,
-        subirForaDoArtigo: subir ? !art.contains(subir) : false,
+        subirDisplay: subir ? getComputedStyle(subir).display : null,
         subir: rs ? { w: +rs.width.toFixed(1), h: +rs.height.toFixed(1), fixo: getComputedStyle(subir).position } : null,
-        subirDentroDoEcra: rs ? rs.bottom <= innerHeight + 1 && rs.top >= 0 : false,
+        portasDeSeccao: portasDeSeccao.length,
+        portasDentroDoArtigo: art ? portasDeSeccao.every((a) => art.contains(a)) : false,
+        portasAbaixoDe44: portasDeSeccao.filter((a) => {
+          const r = a.getBoundingClientRect();
+          return r.width < 44 || r.height < 44;
+        }).length,
       };
     });
     /* OS TÍTULOS DE NÍVEL 3 ENTRARAM NO ÍNDICE A 03.09.2026 (bloco F1.9a), e a
        célula conta agora os dois níveis. A prova continua a ser a mesma: uma
-       entrada por título que o registo traz, e nenhuma a mais. */
+       entrada por título que o registo traz, e nenhuma a mais.
+
+       O COMANDO «SUBIR» DEIXOU DE SER FIXO A 390 NA SEGUNDA PASSAGEM (Blocking
+       4 da leitura a frio do Codex, 03.09.2026): a 390 não há goteira onde um
+       comando fixo de 44px caiba sem tapar uma linha do artigo, e por isso ele
+       não se desenha aí (`display: none`). A porta que o substitui é a que
+       cada secção de nível 2 leva no seu próprio fim, DENTRO do artigo (é
+       mobília, não corpo: não tem `data-registo-bloco`), uma por título de
+       nível 2. */
     conta(
-      `B4 · «Nesta página» com os títulos de nível 2 e 3, fora do artigo, e o comando «subir» fixo · 390 ${edicao}`,
+      `B4 · «Nesta página» com os títulos de nível 2 e 3, fora do artigo, e uma porta «subir» por secção, dentro do fluxo · 390 ${edicao}`,
       m.indice &&
         m.foraDoArtigo &&
         m.entradas > 0 &&
         m.entradas === m.h2 + m.h3 &&
         m.destinos === m.entradas &&
-        m.subirForaDoArtigo &&
-        m.subir?.fixo === 'fixed' &&
-        m.subir.w >= 44 &&
-        m.subir.h >= 44 &&
-        m.subirDentroDoEcra,
-      `${m.entradas} entradas para ${m.h2} títulos de nível 2 e ${m.h3} de nível 3, ${m.destinos} com destino na página · índice fora do <article>: ${m.foraDoArtigo} · subir ${m.subir?.w}×${m.subir?.h}px, ${m.subir?.fixo}, dentro do ecrã ${m.subirDentroDoEcra}`,
+        m.subirDisplay === 'none' &&
+        m.portasDeSeccao === m.h2 &&
+        m.portasDentroDoArtigo &&
+        m.portasAbaixoDe44 === 0,
+      `${m.entradas} entradas para ${m.h2} títulos de nível 2 e ${m.h3} de nível 3, ${m.destinos} com destino na página · índice fora do <article>: ${m.foraDoArtigo} · subir fixo: display ${m.subirDisplay} · portas em fluxo: ${m.portasDeSeccao} (para ${m.h2} secções), dentro do artigo: ${m.portasDentroDoArtigo}, abaixo de 44px: ${m.portasAbaixoDe44}`,
     );
     if (edicao === 'pt') medidas.indice = m;
 
