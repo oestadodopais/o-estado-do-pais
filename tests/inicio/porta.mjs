@@ -101,6 +101,12 @@
  * «três apontam para fora» passava com os três errados. E cada destino tem de
  * responder: a página existe (200) e o `id` da âncora existe nela.
  *
+ * O RÓTULO DO DESTINO ENTRA NA MESMA CÉLULA, e por três exigências: existe em
+ * cada cartão que aponta para fora e em nenhum dos outros; tem caixa (um rótulo
+ * de largura zero não é um rótulo); e NÃO SE SOBREPÕE ao selo daquele cartão,
+ * com quem partilha a fila do pé. As três medem-se a 390, que é onde o cartão é
+ * mais estreito.
+ *
  * A14 · «DOMÍNIOS» NO MENU, nas duas edições, pelo `href` e não pelo texto (a
  * regra da A12), e com a página a responder 200.
  *
@@ -775,14 +781,29 @@ async function corre() {
     const pCartoes = await pagina(ed.rota, 390, ALTURA_PEQUENA);
     const cartoes = await pCartoes.evaluate(() => {
       const ancoras = new Set([...document.querySelectorAll('[id]')].map((el) => el.id));
-      return [...document.querySelectorAll('[data-faixa] [data-cartao]')].map((c) => ({
-        id: c.getAttribute('data-cartao'),
-        href: c.querySelector('.cartao-porta')?.getAttribute('href') ?? null,
-        rotulo: (c.querySelector('.cartao-destino')?.textContent ?? '').trim() || null,
-        ancoraLocal: ancoras.has(
-          String(c.querySelector('.cartao-porta')?.getAttribute('href') ?? '').replace(/^#/, ''),
-        ),
-      }));
+      const cruza = (a, b) =>
+        !(a.right <= b.left || b.right <= a.left || a.bottom <= b.top || b.bottom <= a.top);
+      return [...document.querySelectorAll('[data-faixa] [data-cartao]')].map((c) => {
+        /* O RÓTULO DO DESTINO SENTA-SE NA MESMA CÉLULA DA GRELHA QUE O SELO, no
+           outro extremo dela, para não custar uma fila ao cartão. Os dois têm de
+           caber lado a lado: um rótulo por cima de um selo seria a etiqueta a
+           comer a porta, e uma célula que só contasse rótulos não o via. */
+        const rot = c.querySelector('.cartao-destino');
+        const selo = c.querySelector('.src-chip');
+        const cx = (el) => (el ? el.getBoundingClientRect() : null);
+        const rr = cx(rot);
+        const rs = cx(selo);
+        return {
+          id: c.getAttribute('data-cartao'),
+          href: c.querySelector('.cartao-porta')?.getAttribute('href') ?? null,
+          rotulo: (rot?.textContent ?? '').trim() || null,
+          rotuloComCaixa: !!rr && rr.width > 0 && rr.height > 0,
+          rotuloSobreOSelo: !!(rr && rs) && cruza(rr, rs),
+          ancoraLocal: ancoras.has(
+            String(c.querySelector('.cartao-porta')?.getAttribute('href') ?? '').replace(/^#/, ''),
+          ),
+        };
+      });
     });
     await pCartoes.__ctx.close();
 
@@ -801,6 +822,9 @@ async function corre() {
         else if (!idsDaPaginaDoDominio.has(dominio.ancora))
           errados.push(`${c.id}: a âncora «${dominio.ancora}» não existe na página do domínio`);
         else if (!c.rotulo) errados.push(`${c.id}: aponta ao domínio e não diz para onde leva`);
+        else if (!c.rotuloComCaixa) errados.push(`${c.id}: o rótulo do destino não tem caixa`);
+        else if (c.rotuloSobreOSelo)
+          errados.push(`${c.id}: o rótulo do destino sobrepõe-se ao selo do cartão`);
       } else {
         if (c.href !== `#m-${c.id}`) errados.push(`${c.id}: «${c.href}» ≠ «#m-${c.id}»`);
         else if (!c.ancoraLocal) errados.push(`${c.id}: a âncora «m-${c.id}» não existe nesta página`);

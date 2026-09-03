@@ -106,9 +106,16 @@ seria uma área sobreposta, que é o que a régua dos alvos recusa desde a I13.
 
 **E NÃO CUSTA UMA FILA AO CARTÃO.** Senta-se na quinta fila, que tem 44 px de
 altura e leva o selo encostado à esquerda; com `justify-self: end` fica no outro
-extremo da mesma célula. Medido: o cartão mede **163,0 px** em `/` e **181,7 px**
-em `/en`, antes e depois, e as caixas do rótulo e do selo não se tocam nos três
-cartões.
+extremo da mesma célula. Medido a 390 nas duas construções: o cartão mede
+**163,0 px** em `/` e **181,7 px** em `/en`, com e sem o rótulo.
+
+**E A CÉLULA MEDE-O, e não é o relatório que o afirma.** A A13 exige, em cada um
+dos 21 cartões, três coisas sobre o rótulo: existe onde o destino é de fora e não
+existe nos outros; tem caixa (um rótulo de largura zero não é um rótulo); e não
+se sobrepõe ao selo daquele cartão, com quem partilha a fila do pé. A primeira
+redação da célula contava só a presença, e a folha escrevia num comentário que a
+sobreposição estava medida quando não estava: o comentário e a célula ficaram os
+dois consertados, e é a célula que manda.
 
 **2 · «Domínios» no menu.** A fila de `Masthead.astro` passa de onze a doze
 posições, nas duas edições, entre «Áreas» e «Estudos»: primeiro as quatro
@@ -273,7 +280,7 @@ do que o teto, e a mobília do menu em duas filas.
 | régua · célula | media antes | passa a medir |
 | --- | --- | --- |
 | `porta` A2 | teto 6 941 / 6 890 px | teto **6 991 / 6 940**, subido em exactamente 50 px, que é a altura medida da fila dos estudos, com a medição escrita na régua |
-| `porta` A13 (nova) | — | o destino de cada um dos 21 cartões, cartão a cartão, contra `dominioDaLinha()`, com a âncora conferida na página de chegada |
+| `porta` A13 (nova) | — | o destino de cada um dos 21 cartões, cartão a cartão, contra `dominioDaLinha()`, com a âncora conferida na página de chegada; e o rótulo do destino em cada cartão que aponta para fora e em nenhum dos outros, com caixa e sem se sobrepor ao selo daquele cartão |
 | `porta` A14 (nova) | — | «Domínios» no menu pelo `href`, com a página a responder 200 |
 | `porta` A15 (nova) | — | `/estudos` a ≤ 1 toque e ≤ 1,5 ecrãs, com as portas dentro de gavetas fechadas deitadas fora antes de medir |
 | `porta` A16 (nova) | — | a manchete das quatro camadas sem texto de selo dentro da frase, e nenhum valor sem selo |
