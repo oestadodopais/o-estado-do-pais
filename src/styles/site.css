@@ -4573,6 +4573,16 @@ a.marcador::after {
   flex-wrap: wrap;
   gap: 8px;
 }
+/* UMA FILA SEM NENHUM RESULTADO À VISTA NÃO OCUPA LUGAR (F1.1, 03.09.2026).
+   Os 308 resultados estão sempre no documento e escondem-se um a um com
+   `hidden`; a `<ul>` continuava a ser um item da coluna com zero de altura, e o
+   intervalo de 10 px da peça contava-o duas vezes. Com a busca debaixo da
+   manchete isso eram 20 px do primeiro ecrã gastos por uma lista que não mostra
+   nada. `:has` pergunta pelo que está à vista, e é a mesma pergunta que o
+   `hidden` de cada item responde: nenhuma regra nova decide o que se vê. */
+.pesquisa-res:not(:has(.pesquisa-item:not([hidden]))) {
+  display: none;
+}
 .pesquisa-item {
   display: block;
 }
@@ -4748,4 +4758,63 @@ a.marcador::after {
   font-size: 15px;
   line-height: 1.62;
   color: var(--muted);
+}
+
+/* =============================================================================
+ * A MOBÍLIA NUMA LINHA NO TELEMÓVEL (F1.1, item 10; achado D6 de 25.08.2026)
+ * =============================================================================
+ * O achado, medido: «a mesma mobília em cima de todas as páginas (213 px: menu,
+ * língua, marca, "Painel europeu reconferido a", a agenda, claro · escuro); o
+ * título de cada página aparece a 0,35 ecrãs; a contagem da agenda repete-se em
+ * dezassete sítios.» A 390 px as três leituras empilhavam-se em três filas e
+ * mediam 73 px, entre a marca e a manchete.
+ *
+ * A MEDIDA DE ACEITAÇÃO É A DE CIMA DA MARCA (A11: 64 px acima do nome), e o
+ * primeiro ecrã é a de baixo (A1). Este bloco trata das duas: aperta a barra do
+ * menu e da língua, aperta o enchimento da marca, e deixa a mobília com UMA
+ * leitura no telemóvel.
+ *
+ * ---------------------------------------------------------------------------
+ * QUAL DAS TRÊS FICA, E PORQUÊ AS OUTRAS DUAS SAEM DO TELEMÓVEL
+ * ---------------------------------------------------------------------------
+ * Fica a data em que o painel europeu foi reconferido: é a leitura que governa
+ * os números que estão nesta página, e a única das três que diz alguma coisa
+ * sobre o que se está a ler.
+ *
+ * A AGENDA SAI, e é o próprio achado D6 que o pede: «a contagem da agenda
+ * repete-se em dezassete sítios». A página que ela conta está no menu.
+ *
+ * O SINAL DAS FONTES SAI, e é a leitura mais nova das três (01.09.2026): diz o
+ * estado da conferência da casa, e a regra dela vive em `/metodo#releitura`, que
+ * é para onde ela aponta e que o menu alcança.
+ *
+ * SAEM DO TELEMÓVEL E NÃO DO SÍTIO: a partir de 641 px as três voltam, com as
+ * mesmas cadeias e as mesmas portas, e em nenhuma largura alguma delas é
+ * apagada do documento. É uma decisão de largura, e está medida no relatório do
+ * bloco.
+ * ========================================================================== */
+@media (max-width: 640px) {
+  .topbar {
+    padding-top: 10px;
+    gap: 6px 22px;
+  }
+  .masthead {
+    padding: 8px 0 10px;
+  }
+  .masthead-identidade {
+    margin-top: 2px;
+  }
+  .masthead-furniture {
+    margin-top: 6px;
+    padding-top: 6px;
+    flex-wrap: nowrap;
+    gap: 4px 12px;
+  }
+  /* A primeira leitura fica; as outras saem do telemóvel. O selector conta a
+     partir do segundo filho e não nomeia classes, porque as três leituras
+     partilham a classe: quem as separa é a ordem, que é a do documento e a
+     mesma em todas as páginas. */
+  .masthead-furniture > *:nth-child(n + 2) {
+    display: none;
+  }
 }

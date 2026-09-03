@@ -640,8 +640,14 @@
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+/* O PÉ DA GAVETA APERTOU (F1.1, 03.09.2026). Com a lista das 29 unidades aberta,
+   o fim dela e o nome do primeiro painel deixavam papel liso a mais: 54 px a 390
+   e 59 px a 1280, medidos, e o item A8 das correções de 25.08 (o «vazio» que o
+   diretor viu) recusa uma banda de cor uniforme acima de 48 px dentro do
+   `<main>`. Nenhum conteúdo sai e nenhum corpo de letra desce: o que encolhe é
+   o ar. A outra metade está em `.painel-nome`. */
 .gaveta-corpo {
-  padding-bottom: 10px;
+  padding-bottom: 4px;
 }
 @media (prefers-reduced-motion: reduce) {
   .gaveta-seta::before {
@@ -2363,9 +2369,31 @@ a.porta:hover .porta-abrir {
    grelha que vem logo a seguir a um nome. */
 .painel-nome {
   border-top: 1px solid var(--ink);
-  padding-top: 20px;
+  /* 12 px E NÃO 20 (F1.1, 03.09.2026): a segunda parte do aperto do pé da
+     gaveta. Ver a razão medida em `.gaveta-corpo`. */
+  padding-top: 12px;
 }
-.painel-nome + .painel {
+
+/* ---------------------------------------------------------------------------
+ * O PAINEL ENTRA MAIS PERTO DA BANDA DOS NOMES (F1.1, 03.09.2026)
+ * ---------------------------------------------------------------------------
+ * `section { padding-top: clamp(30px, 3.2vw, 44px) }`, em `site.css`, é o ar com
+ * que TODAS as secções do sítio abrem, e a 1280 vale 41 px. Com a lista das 29
+ * unidades aberta, esses 41 px ficam por baixo do último nome e por cima do fio
+ * do painel, e a banda de papel liso media 52 px depois de o pé da gaveta e a
+ * entrada do painel já terem apertado 6 px cada: o item A8 das correções de
+ * 25.08 recusa uma banda de cor uniforme acima de 48 px dentro do `<main>`.
+ *
+ * A REGRA É DESTA PÁGINA E DESTE PAR, e não do sítio: só morde na secção que vem
+ * imediatamente a seguir à cabeça da primeira página. O ar de todas as outras
+ * secções do sítio fica exactamente como estava, e a separação não se perde,
+ * porque quem a faz é o fio de `.painel-nome`, que continua lá.
+ * ------------------------------------------------------------------------- */
+.inicio + section {
+  padding-top: clamp(18px, 1.6vw, 24px);
+}
+.painel-nome + .painel,
+.painel-contexto + .painel {
   border-top: 0;
   padding-top: 0;
 }
@@ -2378,7 +2406,7 @@ a.porta:hover .porta-abrir {
 
 .social-linha {
   display: grid;
-  grid-template-columns: 5.5em minmax(0, 1fr);
+  grid-template-columns: 2.6em minmax(0, 1fr);
   column-gap: 16px;
   align-items: baseline;
   padding: 10px 0;
@@ -2388,6 +2416,12 @@ a.porta:hover .porta-abrir {
   border-top: 0;
 }
 
+/* A COLUNA DO VALOR PASSOU A SER A COLUNA DO SELO (F1.1, item 2, 03.09.2026).
+   O valor de cada uma das oito medidas saiu desta linha e ficou no cartão da
+   faixa, que é onde ele se lê uma vez; o que fica na coluna é o recibo, que é a
+   porta para a linha daquela medida. A coluna estreita-se ao que passou a ter
+   lá dentro: 5,5em era a largura de um número de cinco algarismos com o selo por
+   baixo, e um selo sozinho mede menos de metade disso. */
 .social-valor {
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;
@@ -2524,5 +2558,205 @@ a.porta:hover .porta-abrir {
      DENTRO, que é onde as portas pequenas da agenda vivem. */
   .porta {
     padding: 8px 0;
+  }
+}
+
+
+/* =============================================================================
+ * O BLOCO DA PORTA DA FRENTE (F1.1, 03.09.2026)
+ * =============================================================================
+ * Tudo o que este bloco acrescenta à folha da primeira página, e nada mais: a
+ * posição do cartão na faixa, a porta para o concelho debaixo da manchete, a
+ * frase de contexto de cada painel, o separador entre os dois, e o aperto das
+ * filas da cabeça no telemóvel pequeno. Nenhuma regra muda um tipo, uma cor ou
+ * um corpo de número: a identidade está fechada (§1.86) e o que este bloco mexe
+ * é espaço, colocação e visibilidade.
+ * ========================================================================== */
+
+/* --------------------------------------------------------------- a posição
+   «1 de 21», encostada à direita da fila do estado, no cartão. Senta-se na fila
+   que o estado já ocupa e por isso não custa uma fila ao cartão; `margin-left:
+   auto` empurra-a para o fim de uma fila que já é flexível. O corpo é o da
+   palavra de estado, e a cor é `--muted`: é a legenda da faixa, não o estado. */
+.cartao-posicao {
+  margin-left: auto;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  /* 12 px E NÃO 11,5. A palavra de estado ao lado mede 11,5 px e é anterior a
+     este bloco; o achado D4 da auditoria de 25.08 conta texto abaixo de 12 px
+     como defeito, e a régua `correcoes-a.mjs` (item A9) mede-o. Uma cadeia nova
+     não entra abaixo do chão que a casa está a subir. */
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------- a porta para o concelho
+   O formulário debaixo da manchete. O campo e o botão numa fila, com o botão a
+   não encolher: a 320 px o campo fica com o que sobra e o botão continua a
+   caber inteiro. Os dois têm 44 px de altura, que é o alvo da casa abaixo de
+   1024, e o botão tem-nos também acima, porque é um comando e não um nome. */
+.pesquisa-forma {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pesquisa-linha {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+.pesquisa-linha .pesquisa-campo {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.pesquisa-submeter {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--f-versal);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+}
+.pesquisa-submeter:hover {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* O distrito de um nome que se repete, na ficha da busca. Vai a seguir ao nome,
+   no corpo da unidade e na cor recuada: separa duas fichas e não compete com o
+   nome que o leitor procura. */
+.pesquisa-distrito {
+  font-family: var(--f-instr);
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------ a frase de contexto e o fio
+   A frase de cada painel, entre o nome dele e os seus cartões. É prosa, e por
+   isso é do tipo da prosa; o corpo é o da lede em pequeno, e a medida de linha
+   trava-se para que ela não atravesse o ecrã largo de ponta a ponta. */
+.painel-contexto {
+  margin: 0 0 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  max-width: 46em;
+  color: var(--ink);
+}
+
+/* O separador entre os dois painéis. É o fio da casa, com ar dos dois lados: o
+   painel de baixo já abre com o seu nome, e o que este fio diz é que ali acaba
+   um quadro e começa outro. */
+/* A BANDA DOS NOMES, DE LARGURA INTEIRA, A PARTIR DE 1024. A lista está aberta
+   e vive fora da grelha da cabeça: aqui ela é uma banda, e os 29 nomes correm em
+   fila pela largura toda em vez de empilharem numa coluna de 582 px. A razão e a
+   medida estão em `CabecaDoLugar.astro`. */
+.cabeca-nomes {
+  min-width: 0;
+}
+@media (min-width: 1024px) {
+  .cabeca-nomes .mapa-ilhas {
+    gap: 4px clamp(18px, 3vw, 34px);
+  }
+  .cabeca-nomes .mapa-ilhas-lista {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.75em;
+    columns: auto;
+  }
+  .cabeca-nomes .mapa-ilhas-grupo[data-parcela-lista='continente'] .mapa-ilhas-lista {
+    columns: auto;
+  }
+  .cabeca-nomes .mapa-ilhas-lista li {
+    display: block;
+  }
+  /* O alvo do rato a partir de 1024 continua a ser 32 px de altura, que é a
+     regra da §1.84; a largura mínima volta com a fila, para que um nome curto
+     não fique sem caixa. */
+  .cabeca-nomes .mapa-ilhas-lista a {
+    display: block;
+    padding-block: 0;
+    padding-inline: 6px;
+    min-width: 44px;
+    text-align: center;
+    min-height: 32px;
+    line-height: 32px;
+  }
+}
+
+.paineis-separador {
+  border: 0;
+  border-top: 1px solid var(--rule-strong, var(--ink));
+  margin: 34px 0 0;
+}
+
+/* ---------------------------------------------------------------------------
+ * O PRIMEIRO ECRÃ DO TELEMÓVEL PEQUENO (A1 do brief: 390 × 664)
+ * ---------------------------------------------------------------------------
+ * A medida de aceitação: a 390 × 664 o nome, a manchete inteira, o primeiro
+ * cartão inteiro, o seu selo e a porta do concelho vêem-se sem gesto. Medido na
+ * árvore de partida, o cartão acabava a 726,7 px, a porta não existia, e a
+ * distância a ganhar era de cerca de 115 px.
+ *
+ * O QUE ESTE BLOCO APERTA É AR, e não conteúdo: os intervalos entre as filas da
+ * cabeça, o enchimento do cartão e a fila do pé da marca. Nenhum corpo de letra
+ * desce, nenhum alvo desce dos 44 px, e nada sai da página. O que sai do
+ * telemóvel são duas das três leituras da mobília, e essa regra vive em
+ * `site.css`, com a razão escrita ao pé dela.
+ * ------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .cabeca-bloco {
+    gap: 8px;
+  }
+  .cabeca-grelha {
+    row-gap: 10px;
+  }
+  .cartao {
+    --cartao-pad-y: 6px;
+    row-gap: 2px;
+  }
+  .faixa {
+    padding-bottom: 2px;
+  }
+  .pesquisa-forma {
+    gap: 4px;
+  }
+  .inicio {
+    gap: 12px;
+    padding-top: 10px;
+  }
+  /* A LEDE APERTA A ENTRELINHA E NÃO O CORPO. 1,5 é a entrelinha da prosa da
+     casa e fica onde a prosa corre; aqui são três linhas de lista dentro do
+     primeiro ecrã, e o corpo não desce um ponto. */
+  .cabeca-lede {
+    line-height: 1.4;
+  }
+  /* O CARTÃO É MAIS LARGO NO TELEMÓVEL, E ISSO ENCURTA-O. A altura de todos os
+     cartões é a do mais alto, e o mais alto é o que parte o nome e a unidade em
+     mais linhas: a 58 % da faixa o cartão media 212 px de largura e o nome mais
+     comprido caía para duas linhas. A 70 % mede 256 px, e a nesga do cartão
+     seguinte continua a dizer que a faixa corre, que é para o que ela existe.
+     Medido nas duas edições, e o número está no relatório do bloco. */
+  .cartao {
+    flex-basis: clamp(230px, 70%, 280px);
+  }
+  /* A banda dos nomes vem a seguir à legenda do mapa, que é a legenda do
+     desenho: o leitor lê o desenho, a sua legenda, e depois os nomes. */
+  [data-inicio] .cabeca-nomes {
+    order: 5;
+  }
+  .painel-contexto {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  .paineis-separador {
+    margin-top: 24px;
   }
 }
