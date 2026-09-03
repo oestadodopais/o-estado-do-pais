@@ -620,39 +620,59 @@ export function comparacaoComOLimiar(claim, limiar) {
  * livro-razão ou numa decisão registada. Afirmação a afirmação, com o comando
  * que a confirma:
  *
+ * **A SEGUNDA PASSAGEM APERTOU OS VERBOS** (03.09.2026, o Blocking 6 da leitura a
+ * frio do Codex). A primeira redação dizia «com os limiares que o Procedimento
+ * publica» e «que não publica limiares»: dois verbos que as linhas não sustentam.
+ * Uma linha diz que o limiar É do Procedimento, não que o Procedimento o publica;
+ * e a Emenda 16 diz que o Painel Social «não tem limiares», que é outra coisa de
+ * «não publica limiares». Cada verbo passou a ser o das linhas ou o da emenda,
+ * palavra por palavra, e o que não tinha origem saiu.
+ *
  *   «do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos»
  *     → o campo `note` das treze linhas, que abre «Limiar do Procedimento
  *       relativo aos Desequilíbrios Macroeconómicos: …».
  *       `grep -l "Limiar do Procedimento" ledger/claims/*.yml` → 13 ficheiros,
  *       que são exactamente os treze `claim` de `FIGURAS_PDM`.
  *
- *   «com os limiares que o Procedimento publica»
- *     → o mesmo campo `note`, que escreve o limiar de cada uma («60%», «-35%»,
- *       «-4/+6%», «-0.2pp»), e `ledger/allowlist.yml`, motivo `limiar-do-quadro`:
- *       «Limiar publicado num quadro institucional … fixado no Regulamento (UE)
- *       n.º 1176/2011 e revisto pela Comissão».
+ *   «cada um com o limiar do Procedimento»
+ *     → o mesmo campo `note`, que escreve o limiar de cada uma e diz de quem ele
+ *       é: «Limiar do Procedimento relativo aos Desequilíbrios Macroeconómicos:
+ *       60%». A frase diz o que a nota diz, e mais nada. **Quem PUBLICA o limiar
+ *       não entra na frase**, e é a correção do Blocking 6: `ledger/allowlist.yml`
+ *       explica o motivo `limiar-do-quadro` com «fixado no Regulamento (UE)
+ *       n.º 1176/2011 e revisto pela Comissão», que não é «o Procedimento
+ *       publica»; e a explicação de um motivo do registo não é uma linha nem uma
+ *       decisão. Quem fixa e quem revê fica por dizer até haver linha ou decisão
+ *       que o diga.
  *
  *   «Os valores são do Eurostat»
  *     → o campo `source` das 21 linhas: `Eurostat` nas treze e nas oito.
  *       Medido, e não presumido: `grep -h "^source:" ledger/claims/<as 21>.yml`
  *       devolve «Eurostat» vinte e uma vezes.
  *
- *   «confirmados contra a Comissão Europeia, SWD(2026) 222»
+ *   «confirmados contra o Relatório por País 2026 da Comissão Europeia,
+ *   SWD(2026) 222»
  *     → o campo `note` das 21 linhas, que escreve «Valor confirmado contra a
  *       Comissão Europeia, SWD(2026) 222 (Relatório por País 2026 — Portugal):
- *       <o valor>». As 21 trazem-no; nenhuma o traz por defeito.
+ *       <o valor>». As 21 trazem-no. **A nota nomeia o SWD(2026) 222 COMO o
+ *       Relatório por País**, e a primeira redação deixava isso de fora: dizia só
+ *       «contra a Comissão Europeia», e o leitor não sabia contra o quê. As duas
+ *       designações entram como transcrições conferidas
+ *       (`data-verbatim`), e não como prosa da casa.
  *
- *   «do Painel Social Europeu»
- *     → o registo do motor, `ResearchHub/indicators/convergence.md` §2, coluna
- *       «Social SB» do quadro comparativo, que é o que coloca cada uma das oito
- *       nesta lista; está escrito no cabeçalho de `FIGURAS_SOCIAL` e na Emenda
- *       16 de `DECISIONS.md`.
+ *   «os indicadores que o livro-razão guarda e cujo registo nomeia o Painel
+ *   Social Europeu»
+ *     → a **Emenda 16, palavra por palavra** (`design/especime-v3/direcao.md`,
+ *       21.08.2026): «com os indicadores que o livro-razão guarda e cujo registo
+ *       nomeia esse painel». O registo é `ResearchHub/indicators/convergence.md`
+ *       §2, coluna «Social SB», e está escrito no cabeçalho de `FIGURAS_SOCIAL`.
  *
- *   «que não publica limiares»
- *     → a Emenda 16 e `convergence.md` §5, que o escreve por extenso na linha
- *       «Thresholds: published, numeric, legally grounded (MIP) | None fixed
- *       anywhere». É a mesma razão pela qual os oito cartões não levam palavra
- *       de estado nem quadrado.
+ *   «sem cor porque não tem limiares»
+ *     → a **Emenda 16, palavra por palavra**, na forma em que a `DECISIONS.md`
+ *       (§ das emendas, entrada 16) a regista: «O Painel Social Europeu entra
+ *       como lista compacta por baixo, sem cor porque não tem limiares». É a
+ *       razão pela qual os oito cartões não levam palavra de estado nem quadrado,
+ *       dita com as palavras da decisão que o decidiu.
  *
  * ---------------------------------------------------------------------------
  * O QUE FICOU DE FORA, E PORQUÊ
@@ -663,21 +683,36 @@ export function comparacaoComOLimiar(claim, limiar) {
  * explicar uma escolha que não é dela. O relatório do bloco escreve esta
  * lacuna, como o brief manda.
  *
- * **A posição face à média da União** não entra, e é a mesma decisão do F0.9:
- * nenhuma média da União existe como linha do livro-razão
- * (`grep -rlE "geo=EU|EU27" ledger/claims/` devolve só as linhas do PIB per
- * capita regional), e uma comparação contra um valor que a página não tem é
- * exactamente a classe de afirmação que aquele bloco veio tirar.
+ * **A posição face à média da União** não entra, e a segunda passagem confirmou-o
+ * por dois caminhos. O primeiro é o do F0.9: nenhuma média da União existe como
+ * linha do livro-razão (`grep -rlE "geo=EU|EU27" ledger/claims/` devolve só as
+ * linhas do PIB per capita regional), e uma comparação contra um valor que a
+ * página não tem é exactamente a classe de afirmação que aquele bloco veio tirar.
+ * O segundo é a **Emenda 16 lida por inteiro**: procurada nos dois sítios onde
+ * ela vive (`DECISIONS.md` e `design/especime-v3/direcao.md`), a emenda **não tem
+ * cláusula nenhuma sobre a posição face à média da União**; o que ela diz do
+ * Painel Social é «sem cor porque não tem limiares» e «os indicadores que o
+ * livro-razão guarda e cujo registo nomeia esse painel». Uma frase que não está
+ * numa linha nem numa decisão não entra, mesmo quando um brief a sugere.
  *
  * **Nenhuma das duas fala da casa nem de confiança** (Emenda 15 e Emenda 18):
  * dizem o que o painel é e quem publica as medidas e os limiares. Não dizem que
  * a casa confere, não dizem que os números têm fonte, não dizem porque se deve
  * acreditar neles.
  *
- * **Nenhuma das duas traz um algarismo.** Nem a contagem das medidas: ela já
- * está no nome de cada painel, marcada `data-prova` e recontada pelo portão, e
- * escrevê-la outra vez na frase punha um número que se move dentro de uma linha
- * do inventário da voz.
+ * **NENHUMA DAS DUAS TRAZ UM ALGARISMO DA CASA, E AS DUAS TRAZEM ALGARISMOS
+ * TRANSCRITOS.** A primeira redação deste cabeçalho escrevia «nenhuma das duas
+ * traz um algarismo», e era falso: as duas imprimem «Relatório por País 2026» e
+ * «SWD(2026) 222», que são a designação e o identificador de um documento. O
+ * Blocking 4 da leitura a frio apanhou-o. Os algarismos que elas trazem são
+ * TRANSCRIÇÕES CONFERIDAS, marcadas `data-verbatim` e comparadas carácter a
+ * carácter com `src/data/verbatim.mjs`; nenhum é uma medição de Portugal, e
+ * nenhum foi escrito à mão.
+ *
+ * O que continua a não entrar é a CONTAGEM das medidas: ela já está no nome de
+ * cada painel, marcada `data-prova` e recontada pelo portão, e escrevê-la outra
+ * vez na frase punha um número que se move dentro de uma linha do inventário da
+ * voz.
  *
  * As frases são um rascunho da casa e ficam nos pendentes do diretor como
  * frase a substituir pelas palavras dele (o plano §7 dá-as como texto dele).
@@ -685,24 +720,28 @@ export function comparacaoComOLimiar(claim, limiar) {
 export const CONTEXTO_DOS_PAINEIS = {
   pdm: {
     pt: [
-      'Os indicadores do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, com os limiares que o Procedimento publica. Os valores são do Eurostat, confirmados contra a Comissão Europeia, ',
+      'Os indicadores do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, cada um com o limiar do Procedimento. Os valores são do Eurostat, confirmados contra o ',
+      { verbatim: 'relatorio-por-pais-2026' },
+      ' da Comissão Europeia, ',
       { verbatim: 'swd-2026-222' },
       '.',
     ],
     en: [
-      'The indicators of the Macroeconomic Imbalance Procedure scoreboard, with the thresholds the Procedure publishes. The values are from Eurostat, confirmed against the European Commission, ',
+      'The indicators of the Macroeconomic Imbalance Procedure scoreboard, each with the threshold of the Procedure. The values are from Eurostat, confirmed against the European Commission’s country report, ',
       { verbatim: 'swd-2026-222' },
       '.',
     ],
   },
   social: {
     pt: [
-      'Os indicadores do Painel Social Europeu, que não publica limiares. Os valores são do Eurostat, confirmados contra a Comissão Europeia, ',
+      'Os indicadores que o livro-razão guarda e cujo registo nomeia o Painel Social Europeu, sem cor porque não tem limiares. Os valores são do Eurostat, confirmados contra o ',
+      { verbatim: 'relatorio-por-pais-2026' },
+      ' da Comissão Europeia, ',
       { verbatim: 'swd-2026-222' },
       '.',
     ],
     en: [
-      'The indicators of the European Social Scoreboard, which publishes no thresholds. The values are from Eurostat, confirmed against the European Commission, ',
+      'The indicators the ledger holds whose record names the European Social Scoreboard, with no colour because it has no thresholds. The values are from Eurostat, confirmed against the European Commission’s country report, ',
       { verbatim: 'swd-2026-222' },
       '.',
     ],
