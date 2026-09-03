@@ -26,7 +26,7 @@ A altura sobe **44 px** nas seis páginas portuguesas e **0 px** nas duas ingles
 
 | # | medida | antes (`d447286f`) | depois | cumpre |
 |---|---|---|---|---|
-| D1 | um índice rendido nas 8 páginas, uma entrada por título do registo, cada ligação a um `id` que existe | 8 páginas com índice, **79 entradas**, só de nível 2 | 8 páginas, **136 entradas**, nível 2 e 3, todas com destino na página | sim |
+| D1 | um índice rendido nas 8 páginas, uma entrada por título de nível 2 e 3 do registo (o nível 4 fica de fora, contado e dito na §3), cada ligação a um `id` que existe | 8 páginas com índice, **79 entradas**, só de nível 2 | 8 páginas, **136 entradas**, nível 2 e 3, todas com destino na página | sim |
 | D2 | a indicação de progresso presente sem guião nas 8 | **não existe** (0 contadores, 0 barras) | **79 contadores** «n/N» (um por título de nível 2) e 1 barra por página, medidos com o guião desligado | sim |
 | D3 | a subida com alvo ≥ 44 px, visível sem tapar texto, a 390 × 664 e a 1 280 | 79,2 × 44 px a 390 (124,2 × 44 em inglês); a 1280 `display: none` | 79,2 × 44 px nas duas larguras (124,2 × 44 em inglês) | alvo e visibilidade sim; **«sem tapar texto» só a 1280** (§6) |
 | D4 | alvos abaixo de 44 px nas páginas de leitura, a descer para 0 nos selos e nas ligações do texto | mobília da página **3** por página; cabeça 6; corpo transcrito 171 a 682 | mobília da página **0**; cabeça 6 (é do F1.7); corpo transcrito **na mesma** | mobília sim; **corpo não** (§5) |
@@ -150,3 +150,100 @@ Os três correm sobre a árvore de cada commit e os códigos são lidos do regis
 **Os ficheiros tocados:** `src/lib/registo-html.mjs`, `src/views/TextoView.astro`, `src/styles/texto.css`, `scripts/gate-html.mjs`, `tests/texto/correcoes-b.mjs`, `tests/texto/indice.mjs`, este relatório e as capturas. Nenhuma cor nova, nenhum tipo novo, nenhuma chave nova, nenhuma linha de JavaScript.
 
 **As capturas** estão em `design/especime-v3/capturas/indice-2026-09-03/`, PNG a escala 2: as duas edições a 390 e a 1280, com o índice fechado e aberto, mais a banda do contador ao lado de um título a meio do documento.
+## 11 · Segunda passagem (Claude Sonnet 5, 03.09.2026)
+
+*Sobre a leitura a frio do Codex, `design/especime-v3/critica/2026-09-03-codex-leitura-f19-indice.md`, e a triagem do lugar de direção no seu cabeçalho: Blocking 3, Blocking 4, Major 6 a 9 e Minor 10. O Blocking 1, o Blocking 2 e o Major 5 eram plantas do próprio pacote de leitura (a triagem di-lo por extenso) e não se tocam aqui. Todos os números desta secção foram medidos hoje, com sondas próprias sobre o `dist/` construído desta árvore, e as sondas estão escritas em `tests/texto/indice.mjs` e `tests/texto/correcoes-b.mjs`, que qualquer um pode voltar a correr.*
+
+### O resultado, em quatro linhas
+
+Os selos do corpo transcrito fora de tabela (101 nas oito páginas) crescem para 44px pela técnica do `::after`; 87 alcançam-no sem tocar num vizinho, e os 14 que não alcançam têm uma razão medida e não uma desculpa (o rótulo quebra em duas linhas). As ligações do documento foram tentadas com a mesma técnica e a medição mostrou que ela não serve: a maioria quebra em várias linhas, e um `::after` centrado numa caixa que quebra não fica sobre nenhuma linha em particular — ficam como estavam, com a razão escrita ao lado da regra. A subida deixa de ser um comando fixo a 390 (onde tapava entre 12 e 26 caixas de linha do artigo, medido antes desta correção): fica fixa só a partir de 1024px, onde a goteira existe, e cada secção de nível 2 ganha uma porta em fluxo no seu próprio fim; a régua mede zero sobreposições nas duas formas, nas oito páginas. A indicação de progresso ganha nome acessível («Secção n de N»), verificado com `ariaSnapshot()` nos dois motores, sem mudar um carácter do título.
+
+### 1 · Blocking 3 — os alvos de toque do corpo, medidos antes de se escrever uma regra
+
+Antes de tocar numa linha de CSS, uma sonda própria (não commitada, a metodologia fica aqui) simulou o que cresceria e o que colidiria, nas oito páginas, para as quatro classes que o Blocking 3 nomeia: `.texto-ligacao`, `.texto-figura-porta`, `.texto-figura-porta-apos` e `a.src-chip`.
+
+**As portas de figura ficam como estavam**, e a medição está em `src/styles/texto.css:221-245` (o comentário ao lado de `.texto-figura-porta-apos`): 2 358 portas de figura nas oito páginas (876 fora de tabela, 1 482 dentro) e 42 setas «→» destas (8 fora, 34 dentro). Crescê-las às cegas sobrepunha-se a um vizinho em cerca de 27% das de fora de tabela, 67% das de dentro, 75% e 100% das duas classes de setas. A regra da casa («uma área sobreposta não é um alvo maior, é uma porta que abre a linha do vizinho») decide sozinha: não se tenta. A régua nova (`tests/texto/indice.mjs`, célula I9b) mede a cada corrida a distância entre portas seguidas nas oito páginas e imprime a mediana, que é a prova de que a isenção continua a ter razão medida.
+
+**As ligações do documento foram tentadas, medidas e revertidas**, e é o achado mais caro desta passagem, escrito em `src/styles/texto.css:170-193` (a nota ao lado de `.texto-ligacao`, linha 167). A primeira tentativa deu-lhes a técnica do selo (`::after` absoluto e centrado); uma régua com o acerto real do navegador (`elementFromPoint`, não uma soma de áreas) mediu que NENHUMA das 39 ligações (13 fora de tabela, 26 dentro) alcançava 44px sem sobrepor um vizinho. A razão, medida e não suposta: na amostra, 12 das 16 ligações fora de tabela quebram em 2 a 7 linhas (a etiqueta é o próprio endereço do documento, «283 caracteres na mais longa»), e um `::after` centrado sobre uma caixa em linha que quebra fica ancorado à caixa gerada inteira, não a uma linha em particular — o seu centro cai algures entre a primeira e a última linha, não onde o dedo vê a palavra. É a mesma técnica que funciona no selo da casa precisamente porque um selo nunca quebra; medida agora, essa condição não vale para o endereço de uma ligação. As ligações ficam com a área que já tinham.
+
+**Os selos fora de tabela crescem**, e é o ganho real desta correção: `src/styles/texto.css:271-291` (a regra em `286-296`). Dos 196 selos do corpo (101 fora de tabela, 95 dentro), os 101 de fora ganham o `::after` de 44px; 95 dentro de tabela ficam como estavam, pela mesma razão que já prende as portas de figura em tabela (entrelinha de 13,5px/1,45, medida e não mudada). Dos 101 que crescem, **87 alcançam 44px sem tocar um vizinho e 14 não alcançam**, todos pela mesma causa medida: o rótulo («fonte · <estudo>» / «source · <estudo>») quebra em duas linhas quando o título do estudo é longo (13 das 101 instâncias), e nessa segunda linha o acerto ou não chega à área própria ou cai perto do selo da entrada seguinte. A régua nova (I9) exige que o número de selos com problema seja exatamente 14; qualquer desvio falha a construção até se reler a razão.
+
+**O residual completo, com a contagem e a razão, é este:**
+
+| classe | onde | quantos | porquê ficam |
+|---|---|---|---|
+| `.texto-figura-porta` | fora de tabela | 876 | cresce-los sobrepunha-se a um vizinho em ~27%, medido por simulação antes da regra |
+| `.texto-figura-porta` | em tabela | 1 482 | idem, ~67%; a entrelinha da tabela (13,5px/1,45) não muda |
+| `.texto-figura-porta-apos` | fora e em tabela | 42 (8+34) | a mesma família de encosto do selo em fluxo; ~75% e 100% |
+| `.texto-ligacao` | fora e em tabela | 39 (13+26) | MEDIDO com o acerto real: 0 de 39 alcançavam 44px sem sobrepor; a etiqueta quebra em várias linhas |
+| `a.src-chip` | em tabela | 95 | mesma densidade das portas de figura em tabela; não se tentou |
+| `a.src-chip` | fora de tabela, com problema | 14 de 101 | o rótulo quebra em duas linhas (título de estudo longo); MEDIDO com o acerto real |
+
+### 2 · Blocking 4 — a subida sem goteira, e a porta em fluxo
+
+A régua da primeira passagem já tinha medido o problema e tinha-o impresso como informação («não é uma exigência: é a conta do que custa»); a leitura a frio apanhou exatamente essa frase. A 390 a coluna de leitura é a janela menos duas goteiras de 18px, e um comando fixo de 44px de lado não tem onde caber sem tapar uma linha do artigo: medido antes desta correção, entre 12 e 26 caixas de linha tapadas em 6 a 9 das dez posições de cada página.
+
+**A saída:** o comando fixo (`.texto-subir`) passa a `display: none` por defeito e só se desenha a partir de 1024px (`src/styles/texto.css:625-660`), que é um limiar já usado na primeira página desta casa (`inicio.css`, quatro sítios) e não um número novo inventado para este bloco. Abaixo disso, cada secção de nível 2 ganha uma porta em fluxo no seu próprio fim («Subir ↑», o mesmo destino `#texto-indice`), escrita por `pecasDoCorpo()` em `src/lib/registo-html.mjs:558-676` (a lógica da secção em fluxo, `575-618`; o fecho da última secção depois do laço, `674`): fecha a secção anterior antes de abrir um novo título de nível 2, e fecha a última depois do laço. É mobília e não corpo (não leva `data-registo-bloco`), mas vive dentro do fluxo do `<article>` para que a sua caixa empurre o que vem a seguir em vez de se lhe sobrepor — a única forma que garante zero sobreposição por construção, e não por sorte.
+
+**Medido depois:** as caixas de linha tapadas pelo comando (fixo ou em fluxo, o que estiver ativo a cada largura) caem de 12 a 26 (oito páginas, antes) para **0 em todas as oito**, a 390 e a 1280 (`tests/texto/indice.mjs`, células I7a e I10a, agora exigências e não informação). O preço é altura: a 390 a página cresce entre 473 e 1 217px, consoante o número de secções de nível 2 (8 a 14 por página) — é o custo honesto de um alvo que não se sobrepõe, e fica medido e não escondido.
+
+### 3 · Major 6 — os comentários da folha, com os números remedidos
+
+Todos os comentários de `src/styles/texto.css` que descrevem estas duas correções foram reescritos com os números desta passagem (não os da simulação anterior à `::after`, que continuam lá mas identificados como simulação): ver `texto.css:170-193` (ligação), `221-245` (figura), `271-296` (selo), `587-660` (subida e porta em fluxo), `661-698` (posição acessível). Onde um número vem de uma simulação geométrica e não do acerto real do navegador, o comentário di-lo por extenso, para que ninguém o leia como a mesma prova que a I9 faz.
+
+**Os registos de medição** ficam em `design/especime-v3/medicoes/indice-sonnet-antes.json` (a régua da primeira passagem, corrida contra `cc7e6bd2` antes de esta passagem tocar em nada) e `design/especime-v3/medicoes/indice-sonnet-depois.json` (a mesma régua, depois de todas as correções, 17 de 17 células verdes).
+
+### 4 · Major 7 — a voz, e o que a régua automática não pode confirmar
+
+O brief previa declarar «Subir» e a posição de cada secção no inventário; a primeira passagem não escreveu nenhuma das duas, e a leitura a frio leu a nota de 25.08 sobre «Subir ↑» (que explica porque é que a régua automática não o lê) como se fosse dispensa de a declarar. **A tentativa de a corrigir literalmente falhou a construção**, e a falha é a prova mais forte desta secção: dar a «Subir» e a «Back to top» o estado `viva` na tabela do inventário faz `npm run check:voz` fechar com «linha viva que não se rende em rota nenhuma», porque as duas medidas do portão da voz (a dos blocos de texto e o tripwire) excluem, por regra, texto que viva inteiro dentro de um `<a>` — nos dois sentidos: não o contam como bloco por classificar, e também não conseguem confirmar que uma declaração `viva` se rende. Não é uma falha desta correção: é um limite mecânico do portão, medido ao tentar contorná-lo.
+
+**O que ficou feito:** `design/especime-v3/INVENTARIO-FRASES.md` ganha a secção «Segunda passagem do bloco F1.9a (Sonnet)», que nomeia «Subir» / «Back to top» (com a razão por que não podem ser uma linha `viva`) e o modelo «Secção {n} de {total}» / «Section {n} of {total}» (com a razão por que é origem declarada e não prosa solta, `data-registo-posicao`, verificado pelo L8), cada um com o seu par inglês e a sua origem escritos por extenso. `design/especime-v3/critica/REVISOES-DO-INVENTARIO.md` ganha a entrada `indice-sonnet` (0 linhas novas na tabela classificada, e a razão de serem 0 escrita).
+
+**O que a régua da voz exclui, e não é desta passagem.** `medir-defeitos.mjs` não lê texto que viva inteiro dentro de um `<a>`, em nenhuma rota do sítio: é uma exclusão geral do portão, não um esquecimento deste bloco. Alargá-la é redesenhar a medida 8 e o tripwire para saberem separar «rótulo de comando, sem origem própria» de «prosa da casa dentro de uma ligação», e é exatamente a classe de trabalho que o F0.9 já deixou escrita para o F3.1 (190 cadeias em 2 118 ocorrências fora do arame, `design/especime-v3/medicoes/frases-construtor.md` §10).
+
+### 5 · Major 8 — a indicação de progresso chega a quem não vê
+
+A primeira passagem compôs o «n/N» só na folha de estilos, com o texto alternativo do CSS vazio de propósito para o título continuar a ser só o texto do registo (`content: … / ""`); a leitura a frio mediu a consequência: o nome acessível de um título transcrito excluía a posição.
+
+**A técnica**, escrita em `src/lib/registo-html.mjs:516-554` (a nota) e `575-618` (o código): um irmão do título, fora dele (`<span id="posicao-bloco-N" class="vh" data-registo-posicao="…">Secção n de N</span>`), a que o título aponta com `aria-labelledby="posicao-bloco-N bloco-N"` — a própria lista inclui o id do título, que é a forma padrão de acrescentar texto a um nome acessível sem duplicar o que já lá está (o segundo id lê o texto que o título já tem). O título continua byte a byte o que era: o irmão vive FORA do `<h2>`, nunca dentro, e por isso não é lido pela unidade que o L2 do portão compara carácter a carácter. `scripts/gate-html.mjs` ganha a oitava marca da família `data-registo-posicao` (linha 5617) e uma conferência no L8 (linhas 2144-2206) que reconta a posição, o texto contra o modelo do inventário e a referência, a cada construção.
+
+**Medido nos dois motores**, com `ariaSnapshot()` do Playwright (não uma suposição sobre a regra do `aria-labelledby`): o nome acessível de cada título de nível 2 das oito páginas é «Secção n de N <título>», confirmado em WebKit e em Chromium (`tests/texto/indice.mjs`, células I11a e I11b, 9 de 9 títulos na página de amostra, nos dois motores). A barra do progresso continua `aria-hidden`, porque a posição já chega pelos dois lados.
+
+### 6 · Major 9 — as réguas exigem o que dizem exigir
+
+Três buracos que a leitura a frio apanhou, e os três fechados:
+
+* **Ids duplicados passavam.** `tests/texto/indice.mjs` usava `querySelector`, que devolve o primeiro e nunca revela um segundo com o mesmo id. A célula I1 passa a contar CADA id da página com `querySelectorAll` (não só os `#bloco-N`) e a nova célula I1b exige que todos apareçam exatamente uma vez; a comparação de destino de cada entrada do índice também passou de «existe algum» para «existe exatamente um».
+* **A I9 media a razão da isenção e não provava nada sobre a correção.** Passa a exigir que os selos que crescem alcancem 44px pelo acerto real do navegador, com o resíduo (o rótulo que quebra) contado a um número exato: qualquer desvio falha a construção (§1, acima).
+* **A I10a era informativa.** Passa a falhar com qualquer sobreposição, nas duas larguras, e a sonda (`SONDA_TAPA`) foi corrigida duas vezes no processo: uma vez para saltar a caixa da própria porta em fluxo (o mesmo texto não se tapa a si próprio) e outra para saltar o `.vh` da posição acessível, que é `position: absolute` sem `top`/`left` declarados e por isso cai, pela posição estática do CSS, em cima da porta que o precede — um leitor com vista não o vê, e por isso não é texto que a porta possa tapar (a mesma razão que já tira `.vh` do `textoVisivel()` do portão). As duas eram defeitos da própria sonda, não do sítio, e ficaram escritos porque são a prova de que a régua nova conta.
+
+### 7 · Minor 10 — a afirmação qualificada
+
+`design/especime-v3/medicoes/indice-construtor.md:29` (a linha D1 da tabela §2) dizia «uma entrada por título do registo», sem os dois níveis; o resto do relatório (§3, linha 55) já qualificava corretamente e contava o nível 4 excluído («dez, nos pelouros»). A linha da tabela passa a dizer «uma entrada por título de nível 2 e 3 do registo (o nível 4 fica de fora, contado e dito na §3)», que é o que a implementação sempre fez.
+
+### D1 a D8, remedidos depois desta passagem
+
+| # | medida | antes desta passagem (`cc7e6bd2`) | depois desta passagem | cumpre |
+|---|---|---|---|---|
+| D1 | índice, uma entrada por título de nível 2 e 3, destino que existe | 8 páginas, 136 entradas | igual, 136 entradas, **e agora com cada id da página confirmado único (I1b)** | sim |
+| D2 | progresso sem guião | «n/N» visual, sem nome acessível | «n/N» visual **e** «Secção n de N» no nome acessível, medido com `ariaSnapshot()` nos dois motores | sim |
+| D3 | subida, alvo ≥44px, sem tapar texto | tapava 12 a 26 caixas de linha em 6 a 9 das 10 posições, a 390 | **0 caixas tapadas nas oito páginas**, a 390 (porta em fluxo) e a 1280 (comando fixo) | sim |
+| D4 | alvos <44px na mobília, a descer para 0 | mobília 0; corpo transcrito não tentado para ligação e selo | mobília 0; **selo fora de tabela: 87 de 101 a 44px limpo, 14 com o resíduo medido**; ligação tentada e revertida com a razão medida; figura e apos por decisão da direção (§5 do relatório original) | parcial, medido |
+| D5 | `check:documentos` e `gate:html` verdes | verdes | verdes, com o L8 a conferir também `data-registo-posicao` | sim |
+| D6 | altura a 390 não sobe mais do que a banda do índice | banda 46px, +44px (pt) / +0px (en) | banda do índice **continua 46px**; a altura total sobe **473 a 1217px** nas oito páginas, e a causa não é o índice — é a porta em fluxo que o Blocking 4 exige, uma por secção de nível 2 | a banda do índice cumpre; o custo novo está medido e é de outro item |
+| D7 | `build`, `verify`, `typecheck` a 0 | 0, 0, 0 | 0, 0, 0 (§10) | sim |
+| D8 | régua com plantas vermelhas e depois verdes | 13 células, 3 plantas | **17 células** (I1b, I9 reescrita, I11a, I11b novas), plantas desta passagem não repetidas (as da primeira continuam válidas, ver §8 do relatório original); `correcoes-b.mjs` 19 de 19 | sim |
+
+### O que fica para a direção, sem mudar, e os três comandos
+
+Os dois pontos que o relatório original já tinha deixado para a direção continuam exatamente onde estavam, porque nenhum item desta passagem os revisitava: a entrelinha da prosa transcrita (30,4px) não muda para dar 44px às portas de figura ou às ligações (§5 do relatório original, e agora também §1 desta secção); e a célula C1 de `tests/texto/correcoes-c.mjs`, vermelha desde antes de F1.9a por causa do rótulo de IA no topo da página (§9 do relatório original), continua vermelha, sem relação com este bloco.
+
+| comando | código de saída | onde se leu |
+|---|---|---|
+| `npm run build` | 0 | `build-final.log` (local, não commitado: a mesma convenção do `build-4.log` da primeira passagem) |
+| `npm run verify` | 0 | `verify-final.log` |
+| `npm run typecheck` | 0 | `typecheck-final.log` |
+
+Os três correm sobre a árvore desta correção e os códigos foram lidos do ficheiro de cada corrida, nunca de um comando em segundo plano (a régua `tests/texto/indice.mjs` e `tests/texto/correcoes-b.mjs`, que não entram no `build`, correram à parte e estão nas suas próprias secções acima).
+
+**Os ficheiros tocados nesta passagem:** `src/lib/registo-html.mjs`, `src/views/TextoView.astro`, `src/styles/texto.css`, `src/i18n/strings.mjs`, `scripts/gate-html.mjs`, `tests/texto/indice.mjs`, `tests/texto/correcoes-b.mjs`, `design/especime-v3/INVENTARIO-FRASES.md`, `design/especime-v3/critica/REVISOES-DO-INVENTARIO.md`, este relatório, e dois ficheiros JSON de medição novos em `design/especime-v3/medicoes/` (`indice-sonnet-antes.json`, `indice-sonnet-depois.json`). Nenhuma cor nova, nenhum tipo novo, nenhuma linha de JavaScript de produção. `src/data/figuras.mjs`, que o brief original listava para declarar cadeias novas, não foi tocado: as cadeias novas vivem em `strings.mjs`, que é onde o resto da rota já as declara, e `figuras.mjs` é, medido agora, o ficheiro dos limiares do painel da primeira página e não tem nada a ver com strings da interface.
