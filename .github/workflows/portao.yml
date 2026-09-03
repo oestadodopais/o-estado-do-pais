@@ -79,6 +79,18 @@ jobs:
       - name: npm ci
         run: npm ci
 
+      # O BINÁRIO DO CHROMIUM NÃO VEM DO `npm ci` (bloco F1.8, segunda
+      # passagem, 03.09.2026). `npm ci` só instala o pacote `playwright`, a
+      # biblioteca; o motor que ela pilota é outro descarregamento, à parte, e
+      # sem ele `chromium.launch()` morre com «Executable doesn't exist»
+      # (medido na corrida 33802765663: o primeiro portão desta árvore a abrir
+      # um navegador, porque as réguas anteriores que usam Playwright,
+      # `tests/inicio/*.mjs`, nunca entraram num portão automático, e por isso
+      # o buraco nunca se via aqui). `--with-deps` instala também as
+      # bibliotecas do sistema que a imagem do Ubuntu não traz de origem.
+      - name: O Chromium do Playwright
+        run: npx playwright install --with-deps chromium
+
       # Os três portões, um passo cada um, para o registo dizer qual caiu sem
       # ninguém ter de ler as 11 577 linhas de saída de uma corrida verde
       # (medido: `gh run view 33592347822 --log | wc -l`). Um vermelho num destes
