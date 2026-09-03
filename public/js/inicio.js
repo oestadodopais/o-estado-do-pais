@@ -205,9 +205,25 @@
     return porSlug[slug] && porSlug[slug].porta ? porSlug[slug].porta : null;
   }
 
+  /* ---------------------------------------------------------------------------
+   * OS DESTINOS DEIXARAM DE VIR DO COMANDO (F1.1, 03.09.2026)
+   * ---------------------------------------------------------------------------
+   * A fila do âmbito saiu da página com o bloco da porta da frente, e com ela os
+   * dois sítios de onde este ficheiro lia para onde vai um endereço antigo: o
+   * `href` de «Concelho» e os dois campos de «Região». Passam a estar na RAIZ do
+   * estado, `[data-inicio]`, que é o elemento que este ficheiro já procurava
+   * antes de qualquer outra coisa. O comando continua a ser lido primeiro onde
+   * ele existir, para que uma página que ainda o renda não mude de
+   * comportamento; a raiz é a resposta quando ele não existe.
+   *
+   * A REGRA CONTINUA A MESMA: o cliente não conhece a tabela de rotas nem a
+   * lista das regiões. Põe um slug de uma lista fechada no lugar que o gabarito
+   * marca, e um slug fora da lista cai no índice. Nenhuma cadeia é montada e
+   * nenhum algarismo é escrito. */
   function indiceDosConcelhos() {
     var seg = raiz.querySelector('[data-modo="municipio"]');
-    return seg ? seg.getAttribute('href') : null;
+    if (seg) return seg.getAttribute('href');
+    return raiz.getAttribute('data-indice-concelhos') || null;
   }
 
   /* ------------------------------------------ o comando «Região», e o que ele traz
@@ -221,11 +237,13 @@
   }
 
   function portaDaRegiao(slug) {
-    var cmd = comandoDaRegiao();
-    if (!cmd) return null;
+    /* Sem comando na página, os três campos leem-se da raiz do estado, onde o
+       servidor os escreve desde o F1.1. */
+    var cmd = comandoDaRegiao() || raiz;
     var gabarito = cmd.getAttribute('data-porta-regiao');
+    if (!gabarito) return null;
     var lista = (cmd.getAttribute('data-regioes') || '').split(/\s+/);
-    var indice = cmd.getAttribute('href');
+    var indice = cmd.getAttribute('href') || raiz.getAttribute('data-indice-regioes');
     for (var i = 0; i < lista.length; i++) {
       if (lista[i] && lista[i] === slug && gabarito) return gabarito.replace(':slug', slug);
     }
@@ -322,7 +340,18 @@
      botão, não ganha `aria-pressed` e não lhe é interceptado o clique. Ficar de
      fora desta lista é o que o faz continuar a ser uma ligação. */
   var segsAmbito = raiz.querySelectorAll('[data-modo]:not([data-modo="regiao"])');
-  var segsDensidade = raiz.querySelectorAll('[data-densidade]');
+  /* O COMANDO DA DENSIDADE MUDOU DE CASA (F1.1, segunda passagem, 03.09.2026).
+     Estava na fila do âmbito, dentro da raiz do estado; a fila saiu da página e o
+     comando voltou onde o brief da forma dos domínios o manda estar, no cabeçalho
+     do painel, que é o que ele abre e fecha. Fica FORA de `[data-inicio]`, e por
+     isso não se procura pela raiz: procura-se pela marca do bloco. O bloco chega
+     escondido do servidor e é esta linha que o acende, que é a mesma regra da
+     busca de `/municipios` — um comando que não comanda é pior do que nenhum. */
+  var blocoDensidade = document.querySelector('[data-densidade-bloco]');
+  var segsDensidade = blocoDensidade
+    ? blocoDensidade.querySelectorAll('[data-densidade]')
+    : document.querySelectorAll('[data-densidade-bloco] [data-densidade]');
+  if (blocoDensidade) blocoDensidade.hidden = false;
   var anuncio = raiz.querySelector('[data-anuncio]');
   var pecas = document.querySelectorAll('.peca-mais');
   var campo = raiz.querySelector('[data-pesquisa]');
@@ -615,6 +644,16 @@
   if (campo) {
     var itens = raiz.querySelectorAll('.pesquisa-item');
     var MAX = MAX_RESULTADOS;
+    /* A FILA DE RESULTADOS ACENDE-SE COM O GUIÃO (F1.1, item 3, 03.09.2026).
+       A busca subiu para debaixo da manchete e o servidor rende a fila com
+       `hidden`: os 308 estão no documento, porque o portão tem de ver tudo o que
+       o leitor pode ver, e uma fila de 308 nomes no primeiro ecrã seria a página
+       inteira para quem não tem guião. É a mesma decisão que `/municipios` já
+       tomava com o bloco todo, e é a razão pela qual a caixa só promete filtrar
+       onde há quem filtre: sem guião, o que leva a algum lado é o `action` do
+       formulário. */
+    var fila = raiz.querySelector('[data-resultados]');
+    if (fila) fila.hidden = false;
     filtra = function () {
       var q = campo.value
         .normalize('NFD')
@@ -625,10 +664,21 @@
       for (var j = 0; j < itens.length; j++) {
         /* Caixa com texto: os oito primeiros que casam. Caixa vazia: os
            concelhos que têm página, que é o que o servidor já rendeu. */
-        var casa =
-          q.length > 0
-            ? itens[j].getAttribute('data-normal').indexOf(q) >= 0
-            : itens[j].hasAttribute('data-tem-pagina');
+        /* A CAIXA VAZIA DEIXA DE MOSTRAR OITO NOMES (F1.1, 03.09.2026).
+           A regra de 2026-08 era «com a caixa vazia mostram-se os concelhos que
+           têm página, hoje um, Évora», e a nota ao lado dela dizia porquê: «uma
+           pesquisa que abre com oito nomes que ninguém pediu diz que aqueles
+           oito são especiais, e não são: são os primeiros da Carta». Com os 308
+           construídos, a condição «tem página» deixou de separar alguma coisa e
+           a caixa vazia passou a mostrar exactamente esses oito primeiros da
+           Carta, que é o que a nota proibia. Com a busca debaixo da manchete, no
+           primeiro ecrã, custava também 168 px a quem não pediu nada.
+
+           A regra passa a ser uma só: a fila mostra o que casa com o que está
+           escrito, e com a caixa vazia não mostra nada. `/municipios` e
+           `/livro-razao/concelhos` ficam como estavam: lá a fila abre por baixo
+           de uma lista dos 308 que já está na página, e não no primeiro ecrã. */
+        var casa = q.length > 0 && itens[j].getAttribute('data-normal').indexOf(q) >= 0;
         var mostrar = casa && vistos < MAX;
         itens[j].hidden = !mostrar;
         if (mostrar) vistos++;

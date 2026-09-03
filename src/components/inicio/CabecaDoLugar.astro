@@ -101,3 +101,25 @@ const temInstrumento = Astro.slots.has('instrumento');
     )
   }
 </div>
+
+{/* ---------------------------------------------------------------------------
+    A BANDA DOS NOMES, FORA DA GRELHA (F1.1, item 4, 03.09.2026)
+    ---------------------------------------------------------------------------
+    A lista das 29 unidades da Carta passou a chegar ABERTA, e isso mediu-se
+    antes de se decidir onde ela fica: dentro da coluna esquerda da cabeça, a
+    1280, a coluna passava de 424 px para 1 005,6 px contra uma coluna do mapa de
+    689,0 px, e ficavam 316,6 px de papel liso na metade direita, por baixo do
+    desenho. É o mesmo vazio que o achado D7 nomeia, mudado de sítio.
+
+    A LISTA SAI DA GRELHA E FICA NUMA BANDA DE LARGURA INTEIRA logo a seguir a
+    ela. Com isto o alinhamento da §1.84 fica intacto — a coluna esquerda volta a
+    ser a manchete, a faixa, a porta do concelho e a legenda, e o mapa continua a
+    ir do topo da manchete ao fundo da legenda — e os 29 nomes ficam à vista, com
+    o seu alvo, a todas as larguras. Abaixo de 1024 nada muda de sítio: a lista
+    já vinha depois do mapa na coluna única, e o que se lê agora é o desenho, a
+    sua legenda, e a seguir os nomes.
+
+    A RANHURA É OPCIONAL: as páginas de região e de concelho não a passam, e
+    rendem a cabeça exactamente como rendiam.
+    --------------------------------------------------------------------------- */}
+<slot name="nomes" />

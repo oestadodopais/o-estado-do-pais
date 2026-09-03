@@ -61,9 +61,32 @@
  * que aceitasse não a receber voltaria a ter dois feitios, e o segundo não teria
  * quem o rendesse.
  */
-import { coberturaDistingue } from '../../lib/inicio.mjs';
+import { coberturaDistingue, eIlha } from '../../lib/inicio.mjs';
 
-const { s, concelhos, destino } = Astro.props;
+const { s, concelhos, destino, forma = null, resultadosOcultos = false } = Astro.props;
+
+/* ---------------------------------------------------------------------------
+ * O DISTRITO NA FICHA DE UM NOME QUE SE REPETE (F1.1, item 7, 03.09.2026)
+ * ---------------------------------------------------------------------------
+ * A Carta Administrativa tem «Lagoa» no distrito de Faro e «Lagoa» na Ilha de
+ * São Miguel, e é a única colisão de nome nos 308 (a razão está escrita em
+ * `slugsDaCarta()`, que é quem paga o preço no endereço). Na lista de
+ * resultados as duas fichas diziam «Lagoa» e mais nada: duas linhas iguais,
+ * dois destinos diferentes, e nenhuma maneira de saber qual é qual.
+ *
+ * A ETIQUETA SÓ APARECE ONDE ELA SEPARA ALGUMA COISA, que é a mesma regra de
+ * `coberturaDistingue()` e a `IDENTIDADE.md` §7 lida ao contrário: um estado
+ * desenha-se quando há outro estado de que se distinga. Escrever o distrito nas
+ * 308 fichas punha 308 etiquetas para separar duas.
+ *
+ * A PALAVRA É A DA CARTA, e a regra de a escrever é a I18, que já vive na casa:
+ * prefixo «distrito de» quando o campo é um distrito, nome de ilha nu quando
+ * começa por «Ilha». Não há aqui uma segunda leitura do campo: `eIlha()` é a
+ * mesma função que o mapa e a página do concelho usam.
+ */
+const vezesPorNome = new Map();
+for (const c of concelhos) vezesPorNome.set(c.nome, (vezesPorNome.get(c.nome) ?? 0) + 1);
+const desambigua = (c) => (vezesPorNome.get(c.nome) ?? 0) > 1 && c.distrito;
 
 /* A ETIQUETA DE COBERTURA SÓ SE RENDE SE A LISTA DISTINGUIR (item E8). Com os
    308 concelhos a terem página, «tem página» repetia-se 308 vezes e não separava
@@ -71,17 +94,59 @@ const { s, concelhos, destino } = Astro.props;
 const distingue = coberturaDistingue(concelhos);
 ---
 
-<div class="pesquisa" id="pesquisa">
-  <label class="pesquisa-rotulo" for="pesquisa-concelho">{s.ambito.pesquisaRotulo}</label>
-  <input
-    class="pesquisa-campo"
-    id="pesquisa-concelho"
-    type="search"
-    autocomplete="off"
-    data-pesquisa
-  />
+{/* ---------------------------------------------------------------------------
+    A BUSCA É UM `<form>` COM DESTINO (F1.1, item 12, 03.09.2026)
+    ---------------------------------------------------------------------------
+    Era uma caixa solta: sem guião não filtrava nada e não levava a lado nenhum,
+    e a regra da casa já estava escrita na própria peça, «uma caixa de pesquisa
+    que não pesquisa é pior do que nenhuma». Passa a ser um formulário `GET` com
+    `action` para o índice dos 308, que existe, é a página que responde à mesma
+    pergunta, e é para onde o leitor sem guião tem de poder ir.
 
-  <ul class="pesquisa-res" data-resultados>
+    O `forma` É UMA PROPRIEDADE E NÃO UM DEFEITO, porque as três superfícies que
+    rendem esta peça não são iguais: na primeira página a busca é A PORTA para o
+    concelho e tem de funcionar sem guião; em `/municipios` e em
+    `/livro-razao/concelhos` a página já É a lista inteira e o formulário
+    apontaria para a página em que se está.
+
+    OS RESULTADOS ESCONDEM-SE SEM GUIÃO onde há formulário, e é a mesma decisão
+    lida do outro lado: os 308 estão no documento porque o portão tem de ver
+    tudo o que o leitor pode ver, e uma fila de 308 nomes por baixo do campo, na
+    primeira página, seria o ecrã inteiro para quem não tem guião. Com guião, a
+    fila acende-se e filtra, como sempre fez. Em `/municipios` a fila continua a
+    aparecer como aparecia, porque lá o bloco inteiro já vem escondido do
+    servidor e é o guião que o acende.
+    --------------------------------------------------------------------------- */}
+<div class="pesquisa" id="pesquisa">
+  {forma ? (
+    <form class="pesquisa-forma" action={forma} method="get" role="search" data-porta-concelho>
+      <label class="pesquisa-rotulo" for="pesquisa-concelho">{s.ambito.pesquisaRotulo}</label>
+      <div class="pesquisa-linha">
+        <input
+          class="pesquisa-campo"
+          id="pesquisa-concelho"
+          name="concelho"
+          type="search"
+          autocomplete="off"
+          data-pesquisa
+        />
+        <button class="pesquisa-submeter" type="submit">{s.ambito.pesquisaSubmeter}</button>
+      </div>
+    </form>
+  ) : (
+    <>
+      <label class="pesquisa-rotulo" for="pesquisa-concelho">{s.ambito.pesquisaRotulo}</label>
+      <input
+        class="pesquisa-campo"
+        id="pesquisa-concelho"
+        type="search"
+        autocomplete="off"
+        data-pesquisa
+      />
+    </>
+  )}
+
+  <ul class="pesquisa-res" data-resultados hidden={resultadosOcultos || undefined}>
     {
       concelhos.map((c) => (
         <li
@@ -103,6 +168,11 @@ const distingue = coberturaDistingue(concelhos);
           {destino(c) ? (
             <a class="chipb" href={destino(c)}>
               <span class="pesquisa-nome">{c.nome}</span>
+              {desambigua(c) && (
+                <span class="pesquisa-distrito" data-lugar>
+                  {eIlha(c.distrito) ? c.distrito : `${s.inicio.cabeca.distritoDe}${c.distrito}`}
+                </span>
+              )}
               {distingue && (
                 <span class="pesquisa-cobertura" data-cobertura="com-pagina">
                   {s.cobertura.temPagina}
@@ -112,6 +182,11 @@ const distingue = coberturaDistingue(concelhos);
           ) : (
             <span class="chipb chipb-inerte">
               <span class="pesquisa-nome">{c.nome}</span>
+              {desambigua(c) && (
+                <span class="pesquisa-distrito" data-lugar>
+                  {eIlha(c.distrito) ? c.distrito : `${s.inicio.cabeca.distritoDe}${c.distrito}`}
+                </span>
+              )}
               {distingue && (
                 <span class="pesquisa-cobertura" data-cobertura="sem-pagina">
                   {s.cobertura.semPaginaAinda}

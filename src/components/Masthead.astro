@@ -79,10 +79,34 @@ const agenda = routePath('agenda', lang);
  * As chaves são as de `routePath()`; o rótulo vem de `s.nav`, e a única que não
  * tem o mesmo nome dos dois lados é a primeira.
  */
+/* ---------------------------------------------------------------------------
+ * AS TRÊS FAMÍLIAS SEM PORTA ENTRAM NO MENU (F1.1, item 11, 03.09.2026)
+ * ---------------------------------------------------------------------------
+ * As páginas das regiões, dos distritos e das áreas de governo existem desde 28
+ * e 29.08.2026 e não estavam no menu: alcançavam-se pelo rodapé, ou por dentro
+ * de outra página, ou pela fila do âmbito da primeira página, que saiu neste
+ * mesmo bloco. Uma família de páginas que o índice não nomeia é uma família que
+ * o leitor não sabe que existe.
+ *
+ * FICAM AO PÉ DOS CONCELHOS, e a ordem é a das camadas do território, de cima
+ * para baixo: os concelhos, as regiões e os distritos são três maneiras de
+ * cortar o mesmo país, e as áreas são a quarta porta que a fila do âmbito
+ * levava. Depois delas vem o que não é território: os trabalhos, o livro-razão,
+ * a agenda e as três páginas do fim.
+ *
+ * A §1.51 FIXOU UMA FILA DE OITO POSIÇÕES, e esta emenda-a com a razão escrita:
+ * a fila era de oito porque o sítio tinha oito índices, e passou a ter onze. O
+ * custo é a mobília de 6 590 páginas, que era a razão pela qual a §1.91 não lhe
+ * tocou; o brief da porta da frente decide pagá-lo, porque abaixo de 640 a fila
+ * vive dentro do `<details>` do menu e não custa uma linha ao ecrã de entrada.
+ */
 const OITAVO_ITEM = 'correcoes';
 const ROTAS_NAV = [
   'home',
   'municipios',
+  'regioes',
+  'distritos',
+  'areas',
   'estudos',
   'livro',
   'agenda',
@@ -93,6 +117,9 @@ const ROTAS_NAV = [
 const ETIQUETA_NAV = {
   home: 'inicio',
   municipios: 'municipios',
+  regioes: 'regioes',
+  distritos: 'distritos',
+  areas: 'areas',
   estudos: 'estudos',
   livro: 'livro',
   agenda: 'agenda',

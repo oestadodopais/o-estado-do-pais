@@ -868,9 +868,31 @@ async function correTudo(soEstas) {
         const pequenas = r.gavetas.filter(
           (g) => !g.alvo || g.alvo.w + 0.5 < min || g.alvo.h + 0.5 < min,
         );
+        /* ---------------------------------------------------------------------
+           A CÉLULA MUDOU DE EXIGÊNCIA COM O BLOCO F1.1 (03.09.2026), e não foi
+           desligada. Media «as duas gavetas do mapa, FECHADAS»: era a afinação 1
+           do brief da forma dos domínios, de 01.09, que recolheu a busca e a
+           lista dos nomes em dois `<details>` fechados ao lado do mapa.
+
+           O F1.1 mediu o que isso custava e desfez as duas metades por razões
+           diferentes, escritas no brief da porta da frente. A LISTA DOS NOMES
+           passa a chegar ABERTA (item 4): abaixo de 1024 nenhuma das 29 unidades
+           do desenho chega aos 44 px pelo quadrado inscrito (I82), a rede de
+           nomes é o único alvo que responde por elas, e fechada ela existia para
+           o teclado e para quem ouve e não existia para quem vê. A BUSCA sai da
+           gaveta e sobe para debaixo da manchete (itens 3 e 12), como `<form>`
+           com destino, porque é a porta para o concelho no primeiro ecrã.
+
+           O QUE A CÉLULA CONTINUA A PROTEGER é o que ela sempre protegeu: que a
+           rede de nomes existe, que tem os 29, e que o comando que a fecha é um
+           alvo da medida da casa. O que muda é o estado esperado — uma gaveta,
+           aberta — e a busca, que passa a medir-se onde ela agora está. */
         conta(
-          `F10a·${e.chave}·${w} · as duas gavetas do mapa, fechadas, com alvo de ${min} px`,
-          r.gavetas.length === 2 && abertas.length === 0 && pequenas.length === 0 && r.nomes === 29,
+          `F10a·${e.chave}·${w} · a gaveta dos nomes, aberta, com alvo de ${min} px, e a busca fora dela`,
+          r.gavetas.length === 1 &&
+            abertas.length === 1 &&
+            pequenas.length === 0 &&
+            r.nomes === 29,
           `${r.gavetas.length} gavetas (${r.gavetas.map((g) => g.chave).join(', ')}) · abertas: ${abertas.length}` +
             ` · alvo mais pequeno ${
               r.gavetas.length
@@ -887,28 +909,61 @@ async function correTudo(soEstas) {
          é exactamente o que a planta «a lista dos nomes a abrir só com guião»
          faz, a célula fica vermelha com a razão escrita, e não rebenta a
          corrida: uma régua que atira em vez de contar não prova nada. */
+      /* DUAS VOLTAS, E NÃO UMA (F1.1, 03.09.2026). A gaveta chega ABERTA, e por
+         isso o primeiro toque fecha-a e o segundo abre-a: é a ida e a volta que
+         provam que o mecanismo é do navegador, e é a mesma prova que a célula
+         sempre quis. Uma célula que só medisse o estado inicial provaria o
+         atributo `open` que o servidor escreve, e não o `<details>`.
+
+         AS CAIXAS MEDEM-SE COM `checkVisibility` e não com a altura, e isso
+         mediu-se antes de se escrever: num Chromium 148 o conteúdo de um
+         `<details>` fechado CONTINUA a ter caixa (os 29 nomes dão 54,1 × 44 com
+         a gaveta fechada), porque a implementação nova o esconde por
+         `content-visibility` e não por `display`. Uma célula que contasse
+         alturas dizia «29 à vista» com a gaveta fechada. */
       let tocou = true;
+      const olha = () =>
+        p.evaluate(() => {
+          const g = document.querySelector('[data-gaveta="nomes"]');
+          const nomes = [...document.querySelectorAll('[data-lista-porta]')];
+          const ve = (n) =>
+            n.checkVisibility({ contentVisibilityAuto: true, visibilityProperty: true });
+          return {
+            etiqueta: g ? g.tagName.toLowerCase() : null,
+            aberta: !!g && g.hasAttribute('open'),
+            visiveis: nomes.filter(ve).length,
+            total: nomes.length,
+          };
+        });
+      const entrada = await olha();
       try {
         await p.locator('[data-gaveta="nomes"] > summary').click({ timeout: 4000 });
       } catch {
         tocou = false;
       }
-      const depois = await p.evaluate(() => {
-        const g = document.querySelector('[data-gaveta="nomes"]');
-        const nomes = [...document.querySelectorAll('[data-lista-porta]')];
-        return {
-          etiqueta: g ? g.tagName.toLowerCase() : null,
-          aberta: !!g && g.hasAttribute('open'),
-          visiveis: nomes.filter((n) => n.getBoundingClientRect().height > 0).length,
-          total: nomes.length,
-        };
-      });
+      const fechada = await olha();
+      try {
+        await p.locator('[data-gaveta="nomes"] > summary').click({ timeout: 4000 });
+      } catch {
+        tocou = false;
+      }
+      const depois = await olha();
       await p.__ctx.close();
       conta(
-        `F10b·${e.chave} · a gaveta dos nomes abre com o guião desligado, e os 29 ficam à vista`,
-        tocou && depois.etiqueta === 'details' && depois.aberta && depois.visiveis === 29 && depois.total === 29,
-        `o toque chegou ao <summary>: ${tocou} · a gaveta é um <${depois.etiqueta ?? 'nada'}> · aberta: ${depois.aberta}` +
-          ` · ${depois.visiveis} de ${depois.total} nomes com caixa`,
+        `F10b·${e.chave} · a gaveta dos nomes chega aberta e fecha e abre sem guião, com os 29 à vista`,
+        tocou &&
+          depois.etiqueta === 'details' &&
+          entrada.aberta &&
+          entrada.visiveis === 29 &&
+          !fechada.aberta &&
+          fechada.visiveis === 0 &&
+          depois.aberta &&
+          depois.visiveis === 29 &&
+          depois.total === 29,
+        `o toque chegou ao <summary>: ${tocou} · a gaveta é um <${depois.etiqueta ?? 'nada'}>` +
+          ` · à chegada: aberta ${entrada.aberta}, ${entrada.visiveis} à vista` +
+          ` · depois de um toque: aberta ${fechada.aberta}, ${fechada.visiveis} à vista` +
+          ` · depois do segundo: aberta ${depois.aberta}, ${depois.visiveis} de ${depois.total} à vista`,
       );
     }
   }
@@ -987,10 +1042,24 @@ async function correTudo(soEstas) {
            `strings.mjs` e inventariada como todas as outras: pedir-lhe a marca
            de lugar seria pedir-lhe que fosse o que não é. */
         const precisaDeLugar = qual !== 'pais';
+        /* ---------------------------------------------------------------------
+           O RÓTULO SAIU DA CABEÇA DO PAÍS (F1.1, 03.09.2026), e a célula segue-o
+           em vez de o exigir onde ele já não está. Dizia «Portugal · país» por
+           cima de uma manchete que começa por «Portugal ultrapassa…»: o nome do
+           lugar duas vezes em duas filas, e a segunda custava uma fila do
+           primeiro ecrã do telemóvel, que é o que o bloco existe para libertar.
+           Era também o eco do comando de âmbito, que saiu da página no mesmo
+           bloco: sem comando, o rótulo deixou de nomear um estado escolhido.
+
+           NAS OUTRAS DUAS CAMADAS O RÓTULO CONTINUA A SER EXIGIDO, e com a marca
+           de lugar: numa página de região ou de concelho ele diz o tipo do lugar
+           («região NUTS II», «concelho · distrito de Évora»), que não está na
+           manchete e que é o que distingue as três camadas uma da outra. */
+        const precisaDeRotulo = qual !== 'pais';
         const temCabeca =
           !!c &&
           (!precisaDeLugar || c.rotuloDeclarado) &&
-          !!c.rotulo &&
+          (!precisaDeRotulo || !!c.rotulo) &&
           !!c.manchete &&
           c.manchete.comNumero &&
           c.manchete.selado &&
@@ -999,7 +1068,7 @@ async function correTudo(soEstas) {
           c.ordemDaCabeca.colAntesDaFaixa === true &&
           c.ordemDaCabeca.faixaAntesDoInstrumento === true;
         conta(
-          `F12·${qual}·${e.chave} · a camada herda a cabeça inteira: rótulo declarado, manchete com número selado, faixa e instrumento`,
+          `F12·${qual}·${e.chave} · a camada herda a cabeça inteira: ${precisaDeRotulo ? 'rótulo declarado, ' : ''}manchete com número selado, faixa e instrumento`,
           temCabeca &&
             r.temFaixa &&
             ids.length > 0 &&
@@ -1007,7 +1076,7 @@ async function correTudo(soEstas) {
             semSelo.length === 0 &&
             sobrepostas.length === 0 &&
             selosRoubados.length === 0,
-          `forma «${c?.forma ?? '(sem)'}» · rótulo «${c?.rotulo ?? '(sem)'}», nome declarado ${c?.rotuloDeclarado}${precisaDeLugar ? '' : ' (não é preciso: é cadeia da casa)'}` +
+          `forma «${c?.forma ?? '(sem)'}» · rótulo «${c?.rotulo ?? '(sem)'}»${precisaDeRotulo ? '' : ' (não é preciso: o F1.1 tirou-o da cabeça do país)'}, nome declarado ${c?.rotuloDeclarado}${precisaDeLugar ? '' : ' (não é preciso: é cadeia da casa)'}` +
             ` · manchete «${c?.manchete?.texto ?? '(sem)'}» com número ${c?.manchete?.comNumero}, selado ${c?.manchete?.selado}` +
             ` · instrumento com ${c?.instrumento?.desenho ?? 0} desenho(s), ${c?.instrumento?.caixa?.w ?? 0} px de largura` +
             ` · ordem coluna→faixa ${c?.ordemDaCabeca?.colAntesDaFaixa}, faixa→instrumento ${c?.ordemDaCabeca?.faixaAntesDoInstrumento}` +

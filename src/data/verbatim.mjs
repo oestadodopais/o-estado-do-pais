@@ -13,6 +13,62 @@
 
 export const VERBATIM = {
   /**
+   * O IDENTIFICADOR DO DOCUMENTO DA COMISSÃO, TRANSCRITO (F1.1, 03.09.2026).
+   *
+   * As duas frases de contexto dos painéis da primeira página dizem que os
+   * valores estão confirmados contra a Comissão Europeia, e nomeiam o documento
+   * onde essa confirmação foi feita. O identificador traz algarismos e não é uma
+   * medição: é a morada de um documento, e a morada transcreve-se.
+   *
+   * A ORIGEM É O LIVRO-RAZÃO, e são as 21 linhas dos dois quadros da União: o
+   * campo `note` de cada uma escreve «Valor confirmado contra a Comissão
+   * Europeia, SWD(2026) 222 (Relatório por País 2026 — Portugal): <o valor>».
+   * A cadeia registada aqui é o pedaço que a página rende, carácter a carácter,
+   * e o portão compara-os.
+   *
+   * A MESMA CADEIA NAS DUAS EDIÇÕES, e por isso `lang` é `null`: o identificador
+   * de um documento não se traduz. É o mesmo princípio pelo qual o marcador
+   * `[a verificar]` fica em português nas duas edições — o que se copia de uma
+   * fonte fica como a fonte o escreveu.
+   */
+  /**
+   * A DESIGNAÇÃO DO DOCUMENTO, TRANSCRITA (F1.1, segunda passagem, 03.09.2026).
+   *
+   * A leitura a frio do Codex (Blocking 6) mostrou que a frase dizia menos do que
+   * a linha sabe: a nota das 21 linhas não nomeia só a Comissão, nomeia o
+   * documento em que a confirmação foi feita, e diz o que ele é. A frase passa a
+   * dizê-lo, e o nome do documento é uma transcrição como o identificador dele.
+   *
+   * A CADEIA É UM PEDAÇO DA NOTA, palavra por palavra, e sem a parte que traz o
+   * travessão: a nota escreve «(Relatório por País 2026 — Portugal)», e o que a
+   * frase precisa é da designação do relatório, não do país, que já está dito na
+   * página inteira. Uma transcrição pode ser um pedaço; o que ela não pode ser é
+   * uma paráfrase, e o portão compara carácter a carácter o que a página rende
+   * com o que está aqui.
+   *
+   * SÓ NA EDIÇÃO PORTUGUESA, e `lang` di-lo. A nota do livro-razão é portuguesa,
+   * e traduzir a designação seria escrever um título inglês que este bloco não
+   * leu em lado nenhum: a edição inglesa diz o que o documento É, em minúsculas
+   * («the European Commission's country report»), que é uma descrição e não um
+   * título, e leva o mesmo identificador ao lado.
+   */
+  'relatorio-por-pais-2026': {
+    lang: 'pt',
+    origem:
+      'Campo `note` das 21 linhas dos dois quadros da União em ledger/claims/, ' +
+      'o parêntesis que designa o documento: «(Relatório por País 2026 — Portugal)».',
+    text: `Relatório por País 2026`,
+  },
+
+  'swd-2026-222': {
+    lang: null,
+    origem:
+      'Campo `note` das 21 linhas dos dois quadros da União em ledger/claims/, ' +
+      'por exemplo divida-publica-2025.yml e taxa-de-emprego-2025.yml.',
+    text: `SWD(2026) 222`,
+  },
+
+  /**
    * As frases de abertura de dois documentos alojados.
    *
    * O arquivo rotula estas duas descrições como «frase de abertura do
