@@ -445,24 +445,28 @@ for (const edicao of ['pt', 'en']) {
         hrefs: entradas.map((a) => a.getAttribute('href')),
         destinos: entradas.filter((a) => document.querySelector(a.getAttribute('href'))).length,
         h2: art ? art.querySelectorAll('h2[data-registo-bloco]').length : 0,
+        h3: art ? art.querySelectorAll('h3[data-registo-bloco]').length : 0,
         subirForaDoArtigo: subir ? !art.contains(subir) : false,
         subir: rs ? { w: +rs.width.toFixed(1), h: +rs.height.toFixed(1), fixo: getComputedStyle(subir).position } : null,
         subirDentroDoEcra: rs ? rs.bottom <= innerHeight + 1 && rs.top >= 0 : false,
       };
     });
+    /* OS TÍTULOS DE NÍVEL 3 ENTRARAM NO ÍNDICE A 03.09.2026 (bloco F1.9a), e a
+       célula conta agora os dois níveis. A prova continua a ser a mesma: uma
+       entrada por título que o registo traz, e nenhuma a mais. */
     conta(
-      `B4 · «Nesta página» com os títulos de nível 2, fora do artigo, e o comando «subir» fixo · 390 ${edicao}`,
+      `B4 · «Nesta página» com os títulos de nível 2 e 3, fora do artigo, e o comando «subir» fixo · 390 ${edicao}`,
       m.indice &&
         m.foraDoArtigo &&
         m.entradas > 0 &&
-        m.entradas === m.h2 &&
+        m.entradas === m.h2 + m.h3 &&
         m.destinos === m.entradas &&
         m.subirForaDoArtigo &&
         m.subir?.fixo === 'fixed' &&
         m.subir.w >= 44 &&
         m.subir.h >= 44 &&
         m.subirDentroDoEcra,
-      `${m.entradas} entradas para ${m.h2} títulos de nível 2, ${m.destinos} com destino na página · índice fora do <article>: ${m.foraDoArtigo} · subir ${m.subir?.w}×${m.subir?.h}px, ${m.subir?.fixo}, dentro do ecrã ${m.subirDentroDoEcra}`,
+      `${m.entradas} entradas para ${m.h2} títulos de nível 2 e ${m.h3} de nível 3, ${m.destinos} com destino na página · índice fora do <article>: ${m.foraDoArtigo} · subir ${m.subir?.w}×${m.subir?.h}px, ${m.subir?.fixo}, dentro do ecrã ${m.subirDentroDoEcra}`,
     );
     if (edicao === 'pt') medidas.indice = m;
 

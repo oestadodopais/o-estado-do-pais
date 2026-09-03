@@ -2054,21 +2054,48 @@ function verificaTexto({ rota, root, err }) {
   /* ------------------------------------------------------------------ L8 ---
      «Nesta página»: o índice do documento (bloco B, item B4).
 
-     O índice é uma TRANSCRIÇÃO dos títulos de nível 2 do registo, e por isso
-     entra pela nona origem e é comparado aqui, como o corpo: mesma contagem,
-     mesma ordem, mesmo texto carácter a carácter, e cada âncora a abrir o
-     bloco que ela nomeia. Sem esta comparação, a marca seria uma dispensa: seis
-     dos títulos das oito edições trazem um ano escrito, e os algarismos deles
-     sairiam do varrimento sem nada por trás. */
+     O índice é uma TRANSCRIÇÃO dos títulos de nível 2 e 3 do registo, e por
+     isso entra pela nona origem e é comparado aqui, como o corpo: mesma
+     contagem, mesma ordem, mesmo texto carácter a carácter, e cada âncora a
+     abrir o bloco que ela nomeia. Sem esta comparação, a marca seria uma
+     dispensa: seis dos títulos das oito edições trazem um ano escrito, e os
+     algarismos deles sairiam do varrimento sem nada por trás.
+
+     OS DE NÍVEL 3 ENTRARAM A 03.09.2026 (bloco F1.9a). O índice do bloco B
+     levava só os de nível 2, e as oito edições têm entre 2 e 20 títulos de
+     nível 3 sem porta nenhuma. A comparação é a mesma e a ordem é a do
+     documento: uma travessia da lista aninhada da página dá a mesma sequência
+     que a lista dos blocos do registo.
+
+     E A PÁGINA DECLARA QUANTAS SECÇÕES TEM, que é o denominador da indicação
+     de progresso («n/N» ao lado de cada título de nível 2, composto pela folha
+     de estilos). A contagem RECONTA-SE aqui, como as três da faixa: um número
+     do próprio sítio não se escreve, verifica-se. */
   {
     const titulosDoRegisto = registo.blocks.filter(
-      (b) => b.kind === 'heading' && Number(b.level) === 2,
+      (b) => b.kind === 'heading' && (Number(b.level) === 2 || Number(b.level) === 3),
     );
+    const deNivel2 = titulosDoRegisto.filter((b) => Number(b.level) === 2).length;
+    const corpos = root.querySelectorAll('[data-seccoes]');
+    if (corpos.length !== 1) {
+      err(
+        `L8 ${chave}: a página tem ${corpos.length} elementos com data-seccoes, e tem de ter ` +
+          `exatamente um: é o denominador da indicação de progresso.`,
+      );
+    } else {
+      const declarado = decodeEntities(corpos[0].getAttribute('data-seccoes') ?? '');
+      if (declarado !== String(deNivel2)) {
+        err(
+          `L8 ${chave}: a página declara data-seccoes="${declarado}" e o registo tem ` +
+            `${deNivel2} títulos de nível 2.`,
+        );
+      }
+    }
     const entradas = root.querySelectorAll('[data-registo-indice]');
     if (entradas.length !== titulosDoRegisto.length) {
       err(
         `L8 ${chave}: o índice «Nesta página» tem ${entradas.length} entradas e o registo tem ` +
-          `${titulosDoRegisto.length} títulos de nível 2.`,
+          `${titulosDoRegisto.length} títulos de nível 2 e 3.`,
       );
     } else {
       titulosDoRegisto.forEach((bloco, i) => {
@@ -2078,7 +2105,7 @@ function verificaTexto({ rota, root, err }) {
         if (marca !== esperada) {
           err(
             `L8 ${chave}: a entrada ${i} do índice declara data-registo-indice="${marca}" e o ` +
-              `título de nível 2 nessa posição é o bloco ${bloco.i} ("${esperada}").`,
+              `título de nível ${bloco.level} nessa posição é o bloco ${bloco.i} ("${esperada}").`,
           );
           return;
         }
