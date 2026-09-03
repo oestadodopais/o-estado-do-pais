@@ -1610,6 +1610,18 @@ export const STRINGS = {
          páginas de leitura medem 111 e 243 ecrãs a 390: sem ele, voltar ao
          princípio é rolar tudo outra vez. */
       textoSubir: 'Subir',
+      /* A INDICAÇÃO DE PROGRESSO TAMBÉM PARA QUEM NÃO VÊ (F1.9a, segunda
+         passagem, 03.09.2026; Major 8 da leitura a frio do Codex). O «n/N»
+         que a folha de estilos desenha ao lado de cada título de nível 2 não
+         tinha nome acessível: o texto alternativo do CSS ia vazio de propósito
+         para o título continuar a ser só o texto do registo. Esta frase entra
+         num irmão do título (`<span class="vh">`, fora do `<h2>`, nunca dentro
+         dele) e o `aria-labelledby` do título aponta para os dois: o nome
+         acessível passa a ser esta frase seguida do título, e o título em si
+         não ganha um carácter. `{n}` e `{total}` são a posição e o total, os
+         dois já verificados pelo L8 do portão contra o registo; a vista faz a
+         substituição, porque este ficheiro não sabe línguas. */
+      textoPosicaoSeccaoModelo: 'Secção {n} de {total}',
       textoContaBlocos: 'blocos',
       textoContaAlgarismos: 'algarismos',
       textoContaComLinha: 'com linha do livro-razão',
@@ -2424,6 +2436,9 @@ export const STRINGS = {
       textoPortaDaLinha: 'this figure’s row',
       textoRegistoK: 'The content record',
       textoSubir: 'Back to top',
+      /* See the Portuguese key for why this lives outside the `<h1>`..`<h6>`
+         it labels, and never inside it. */
+      textoPosicaoSeccaoModelo: 'Section {n} of {total}',
       textoContaBlocos: 'blocks',
       textoContaAlgarismos: 'figures',
       textoContaComLinha: 'with a ledger row',

@@ -2140,6 +2140,69 @@ function verificaTexto({ rota, root, err }) {
         }
       });
     }
+
+    /* A POSIÇÃO DE CADA SECÇÃO, TAMBÉM PARA QUEM NÃO VÊ (F1.9a, segunda
+       passagem, 03.09.2026; Major 8 da leitura a frio do Codex). A frase
+       «Secção n de N» vive num irmão do título («data-registo-posicao»,
+       FORA do `<h2>`) e o título aponta para ela com `aria-labelledby`, ao
+       lado de si próprio: é assim que o nome acessível passa a incluir a
+       posição sem o corpo transcrito ganhar um carácter. As três coisas
+       reconferem-se aqui, como a de cima: a contagem, o texto (contra o
+       modelo do inventário da voz, na língua da página) e a referência. */
+    {
+      const titulosNivel2 = titulosDoRegisto.filter((b) => Number(b.level) === 2);
+      const modeloPosicao = t(lang).estudos.textoPosicaoSeccaoModelo;
+      const posicoes = artigo.querySelectorAll('[data-registo-posicao]');
+      if (posicoes.length !== titulosNivel2.length) {
+        err(
+          `L8 ${chave}: o corpo tem ${posicoes.length} elemento(s) data-registo-posicao e o ` +
+            `registo tem ${titulosNivel2.length} títulos de nível 2.`,
+        );
+      } else {
+        titulosNivel2.forEach((bloco, i) => {
+          const el = posicoes[i];
+          const esperada = `${chave}#${bloco.i}`;
+          const marca = decodeEntities(el.getAttribute('data-registo-posicao') ?? '');
+          if (marca !== esperada) {
+            err(
+              `L8 ${esperada}: a posição na entrada ${i} declara data-registo-posicao="${marca}" ` +
+                `e devia declarar "${esperada}".`,
+            );
+            return;
+          }
+          const esperadoTexto = modeloPosicao
+            .replace('{n}', String(i + 1))
+            .replace('{total}', String(titulosNivel2.length));
+          const lido = textoTranscrito(el);
+          if (lido !== esperadoTexto) {
+            err(
+              `L8 ${esperada}: a posição escreve "${lido}" e o modelo do inventário («${modeloPosicao}») ` +
+                `com n=${i + 1} e total=${titulosNivel2.length} dá "${esperadoTexto}".`,
+            );
+          }
+          const idPosicao = decodeEntities(el.getAttribute('id') ?? '');
+          const idEsperado = `posicao-bloco-${bloco.i}`;
+          if (idPosicao !== idEsperado) {
+            err(
+              `L8 ${esperada}: a posição tem id="${idPosicao}" e devia ter id="${idEsperado}", que ` +
+                `é o id que o título tem de referir em aria-labelledby.`,
+            );
+            return;
+          }
+          const titulo = artigo.querySelector(`#bloco-${bloco.i}`);
+          if (!titulo) return; // já reportado acima, na comparação do índice
+          const aria = decodeEntities(titulo.getAttribute('aria-labelledby') ?? '');
+          const ariaEsperado = `${idEsperado} bloco-${bloco.i}`;
+          if (aria !== ariaEsperado) {
+            err(
+              `L8 ${esperada}: o título "bloco-${bloco.i}" declara aria-labelledby="${aria}" e ` +
+                `devia declarar "${ariaEsperado}" — é essa referência que dá ao título um nome ` +
+                `acessível com a posição lá dentro, sem lhe mudar um carácter do texto.`,
+            );
+          }
+        });
+      }
+    }
   }
 
   /* ------------------------------------------------------------------ L5 ---
@@ -5536,20 +5599,28 @@ for (const file of ficheirosHtml(DIST)) {
   }
 
   /* --- o registo de conteúdo, na página de leitura (origem 9) -------------
-     As quatro marcas saem do varrimento dos algarismos e do da ortografia
+     As oito marcas saem do varrimento dos algarismos e do da ortografia
      porque foram TODAS comparadas em `verificaTexto()`, carácter a carácter,
      contra um ficheiro fixado por resumo. Aqui fica a outra metade da regra: a
      marca **só vale nesta rota**. Noutra página seria uma segunda porta para
      pôr texto de um registo em prosa corrente, que é a mesma disciplina das
-     origens 6 e 8. */
+     origens 6 e 8.
+
+     `data-registo-posicao` ENTROU A 03.09.2026 (F1.9a, segunda passagem,
+     Major 8 da leitura a frio do Codex): a frase «Secção n de N», irmã de
+     cada título de nível 2 e nunca filha dele, que dá ao título um nome
+     acessível com a posição lá dentro. O texto tem algarismos (o «n» e o
+     «N»), e por isso precisa da mesma dispensa que as outras sete; a
+     verificação que a justifica é a de `verificaTexto()`, mais abaixo. */
   for (const el of body.querySelectorAll(
     '[data-registo-edicao], [data-registo-bloco], [data-registo-unidade], [data-registo], ' +
-      '[data-registo-linha], [data-registo-conta], [data-registo-indice]',
+      '[data-registo-linha], [data-registo-conta], [data-registo-indice], [data-registo-posicao]',
   )) {
     aRemover.push(el);
     if (rota?.key !== 'texto') {
       const qual = ['data-registo-edicao', 'data-registo-bloco', 'data-registo-unidade',
-        'data-registo', 'data-registo-linha', 'data-registo-conta', 'data-registo-indice']
+        'data-registo', 'data-registo-linha', 'data-registo-conta', 'data-registo-indice',
+        'data-registo-posicao']
         .find((m) => m in (el.attributes ?? {}));
       err(
         `${qual}="${decodeEntities(el.getAttribute(qual) ?? '')}" numa página que não é a de ` +
