@@ -1250,9 +1250,33 @@ export const STRINGS = {
         /* A TERCEIRA DATA (01.09.2026). O recibo mostrava duas: o período, no
            bloco de cima, e as leituras da casa. Esta é a do publicador. */
         publicadoEmK: 'Publicado pela fonte a',
-        /* O estado de uma fonte que deixou de responder. É uma data e não um
-           adjectivo: o que a casa sabe é desde quando. */
+        /* O ESTADO DE UMA FONTE SÃO DOIS ESTADOS, e não um (03.09.2026,
+           segunda passagem do F0.11, Major 4 da leitura a frio). É uma data e
+           não um adjectivo: o que a casa sabe é desde quando. E é uma de duas
+           coisas, que não se parecem:
+
+             `semRespostaK`         a fonte não atendeu de todo: tempo esgotado,
+                                    ligação recusada, nome que não resolve, TLS;
+             `respondeuComErroK`    a fonte atendeu, e o que respondeu não é
+                                    2xx nem 304: um 403, um 404, um 500. Há
+                                    resposta, e ela diz outra coisa. Chamar
+                                    «sem resposta» a um 404 dizia ao leitor que
+                                    a fonte se calou quando o que ela fez foi
+                                    mudar o endereço.
+
+           E QUEM PERGUNTOU DIZ-SE. «A DGAL não responde» e «a DGAL não
+           respondeu a esta máquina» são duas frases diferentes, e só a segunda
+           é verdade: o mesmo endereço responde ao portátil do diretor e não
+           responde ao IP do runner do GitHub (medido a 01.09.2026). O
+           qualificador vai a seguir à data. */
         semRespostaK: 'Sem resposta desde',
+        respondeuComErroK: 'Respondeu com erro desde',
+        aEstaMaquinaK: 'a esta máquina',
+        aoCorredorK: 'ao corredor',
+        /* A conferência contra a cópia arquivada de um ficheiro (F0.12): o que
+           ela prova é que os bytes da cópia continuam a ser os que a linha
+           declara, e não que a fonte viva ainda serve o mesmo ficheiro. */
+        contraCopiaArquivadaK: 'contra a cópia arquivada de',
         /* As reconferências independentes de uma linha (bloco T, §1.47). Os
            rótulos vivem aqui e o portão tem a sua própria cópia deles: se ele
            lesse esta tabela, confirmava a tabela e não o livro-razão. */
@@ -2248,6 +2272,10 @@ export const STRINGS = {
         releituraPorta: 'The re-reading rule',
         publicadoEmK: 'Published by the source on',
         semRespostaK: 'No answer since',
+        respondeuComErroK: 'Answering with an error since',
+        aEstaMaquinaK: 'to this machine',
+        aoCorredorK: 'to the runner',
+        contraCopiaArquivadaK: 'against the archived copy of',
         verificacaoPor: {
           'leitura-independente': 'independent reading',
           'painel-semanal': 'weekly panel re-check',
