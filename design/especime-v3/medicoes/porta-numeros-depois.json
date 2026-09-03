@@ -1,0 +1,77 @@
+{
+  "dist": "/Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/porta-2026-09-03/dist",
+  "so": [
+    "index.html",
+    "en/index.html"
+  ],
+  "paginas": 2,
+  "classes": {
+    "data-claim": {
+      "distintos": 22,
+      "ocorrencias": 44,
+      "valores": {
+        "abandono-escolar-precoce-2025": 2,
+        "custo-unitario-do-trabalho-2025": 2,
+        "desempenho-das-exportacoes-2025": 2,
+        "desemprego-de-longa-duracao-2025": 2,
+        "divida-das-empresas-2025": 2,
+        "divida-das-familias-2025": 2,
+        "divida-publica-2025": 2,
+        "fluxo-de-credito-as-empresas-2025": 2,
+        "fluxo-de-credito-as-familias-2025": 2,
+        "jovens-nem-2025": 2,
+        "municipios-portugal-caop-2025": 2,
+        "posicao-de-investimento-internacional-2025": 2,
+        "precos-da-habitacao-2025": 2,
+        "racio-s80-s20-2025": 2,
+        "risco-de-pobreza-ou-exclusao-2025": 2,
+        "saldo-da-balanca-corrente-2025": 2,
+        "sobrecarga-do-custo-da-habitacao-2025": 2,
+        "taxa-de-actividade-2025": 2,
+        "taxa-de-cambio-efectiva-real-2025": 2,
+        "taxa-de-desemprego-2025": 2,
+        "taxa-de-desemprego-mip-2025": 2,
+        "taxa-de-emprego-2025": 2
+      }
+    },
+    "data-prova": {
+      "distintos": 11,
+      "ocorrencias": 26,
+      "valores": {
+        "agenda_a_seguir": 4,
+        "agenda_concluido": 2,
+        "agenda_em_curso": 4,
+        "agenda_retirado": 2,
+        "edicoes": 2,
+        "estudos": 2,
+        "municipios_total": 2,
+        "painel_com_limiar": 2,
+        "painel_dentro_do_limiar": 2,
+        "painel_fora_do_limiar": 2,
+        "painel_social_total": 2
+      }
+    },
+    "data-nonledger": {
+      "distintos": 8,
+      "ocorrencias": 386,
+      "valores": {
+        "data-da-conferencia": 2,
+        "data-de-atualizacao": 2,
+        "data-de-referencia": 88,
+        "escala-de-instrumento": 62,
+        "fonte-da-carta": 2,
+        "limiar-do-quadro": 60,
+        "numeracao": 84,
+        "proveniencia": 86
+      }
+    },
+    "data-verbatim": {
+      "distintos": 2,
+      "ocorrencias": 6,
+      "valores": {
+        "relatorio-por-pais-2026": 2,
+        "swd-2026-222": 4
+      }
+    }
+  }
+}

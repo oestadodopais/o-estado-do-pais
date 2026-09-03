@@ -1,0 +1,396 @@
+{
+  "dist": "/Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/porta-2026-09-03/dist",
+  "celulas": [
+    {
+      "nome": "A1.pt",
+      "passa": true,
+      "prova": "390×664: nome, manchete, cartão, selo e porta do concelho dentro do ecrã (fundo máximo 653.7 px) · 21 cartões, 0 sem selo com caixa"
+    },
+    {
+      "nome": "A2.pt",
+      "passa": true,
+      "prova": "altura de / a 390: 6909 px · teto medido na árvore de partida: 6941 px (menos 32 px)"
+    },
+    {
+      "nome": "A11.pt",
+      "passa": true,
+      "prova": "mobília acima do nome a 390: 62 px (teto 64) · a barra em 1 fila(s) com 2 item(ns), 54 px · as leituras por baixo do nome em 1 fila(s) com 1 à vista, 26.2 px"
+    },
+    {
+      "nome": "A5.pt",
+      "passa": true,
+      "prova": "as 29 unidades com nome visível e alvo ≥ 44 px, sem gesto, abaixo de 1024 (a partir de 1024 a regra é 32 px, Emenda 20c): a 390 29 nome(s), 0 invisível(eis), 0 fora do alvo; a 768 29 nome(s), 0 invisível(eis), 0 fora do alvo"
+    },
+    {
+      "nome": "A3.pt",
+      "passa": true,
+      "prova": "os 21 valores selados uma só vez em /: 0 fora da conta"
+    },
+    {
+      "nome": "A4.pt",
+      "passa": true,
+      "prova": "«Comissão Europeia» em cada frase de contexto de /: 2 frase(s), 0 sem a Comissão · no documento inteiro: 2"
+    },
+    {
+      "nome": "A6.pt",
+      "passa": true,
+      "prova": "vocabulário da casa em /: Âmbito=0 · Densidade=0"
+    },
+    {
+      "nome": "A10.pt",
+      "passa": true,
+      "prova": "«sem limiar» nos cartões e nas peças de /: 0 cartão(ões), 0 peça(s)"
+    },
+    {
+      "nome": "A7.pt",
+      "passa": true,
+      "prova": "as duas fichas de «Lagoa» em /: 2 ficha(s), 2 texto(s) distinto(s), 1 com «Faro» e 1 com «São Miguel» [Lagoadistrito de Faro | LagoaIlha de São Miguel]"
+    },
+    {
+      "nome": "A12.pt",
+      "passa": true,
+      "prova": "regiões, distritos e áreas no menu de /: as três lá estão"
+    },
+    {
+      "nome": "A8.pt",
+      "passa": true,
+      "prova": "<form> em /: 1; action «/municipios» (200); method «get»"
+    },
+    {
+      "nome": "A9.pt",
+      "passa": true,
+      "prova": "com guião, a partir de /: 2 toque(s), sem rolar, chegou a «/municipios/evora» · sem guião, pela submissão nativa: «/municipios?concelho=%C3%89vora»"
+    },
+    {
+      "nome": "A1.en",
+      "passa": true,
+      "prova": "390×664: nome, manchete, cartão, selo e porta do concelho dentro do ecrã (fundo máximo 641.1 px) · 21 cartões, 0 sem selo com caixa"
+    },
+    {
+      "nome": "A2.en",
+      "passa": true,
+      "prova": "altura de /en a 390: 6861 px · teto medido na árvore de partida: 6890 px (menos 29 px)"
+    },
+    {
+      "nome": "A11.en",
+      "passa": true,
+      "prova": "mobília acima do nome a 390: 62 px (teto 64) · a barra em 1 fila(s) com 2 item(ns), 54 px · as leituras por baixo do nome em 1 fila(s) com 1 à vista, 26.2 px"
+    },
+    {
+      "nome": "A5.en",
+      "passa": true,
+      "prova": "as 29 unidades com nome visível e alvo ≥ 44 px, sem gesto, abaixo de 1024 (a partir de 1024 a regra é 32 px, Emenda 20c): a 390 29 nome(s), 0 invisível(eis), 0 fora do alvo; a 768 29 nome(s), 0 invisível(eis), 0 fora do alvo"
+    },
+    {
+      "nome": "A3.en",
+      "passa": true,
+      "prova": "os 21 valores selados uma só vez em /en: 0 fora da conta"
+    },
+    {
+      "nome": "A4.en",
+      "passa": true,
+      "prova": "«European Commission» em cada frase de contexto de /en: 2 frase(s), 0 sem a Comissão · no documento inteiro: 2"
+    },
+    {
+      "nome": "A6.en",
+      "passa": true,
+      "prova": "vocabulário da casa em /en: Scope=0 · Density=0"
+    },
+    {
+      "nome": "A10.en",
+      "passa": true,
+      "prova": "«no threshold» nos cartões e nas peças de /en: 0 cartão(ões), 0 peça(s)"
+    },
+    {
+      "nome": "A7.en",
+      "passa": true,
+      "prova": "as duas fichas de «Lagoa» em /en: 2 ficha(s), 2 texto(s) distinto(s), 1 com «Faro» e 1 com «São Miguel» [Lagoadistrict of Faro | LagoaIlha de São Miguel]"
+    },
+    {
+      "nome": "A12.en",
+      "passa": true,
+      "prova": "regiões, distritos e áreas no menu de /en: as três lá estão"
+    },
+    {
+      "nome": "A8.en",
+      "passa": true,
+      "prova": "<form> em /en: 1; action «/en/municipalities» (200); method «get»"
+    },
+    {
+      "nome": "A9.en",
+      "passa": true,
+      "prova": "com guião, a partir de /en: 2 toque(s), sem rolar, chegou a «/en/municipalities/evora» · sem guião, pela submissão nativa: «/en/municipalities?concelho=%C3%89vora»"
+    }
+  ],
+  "medidas": {
+    "A1.pt": {
+      "nome": {
+        "topo": 62,
+        "fundo": 97.4,
+        "largura": 354,
+        "altura": 35.4
+      },
+      "manchete": {
+        "topo": 169.5,
+        "fundo": 328.3,
+        "largura": 354,
+        "altura": 158.8
+      },
+      "cartao": {
+        "topo": 490.7,
+        "fundo": 653.7,
+        "largura": 247.8,
+        "altura": 163
+      },
+      "selo": {
+        "topo": 622.1,
+        "fundo": 641.3,
+        "largura": 52.5,
+        "altura": 19.2
+      },
+      "porta": {
+        "topo": 411.5,
+        "fundo": 477.7,
+        "largura": 315.5,
+        "altura": 66.2
+      },
+      "cartoes": 21,
+      "semSelo": [],
+      "ecra": 664,
+      "altura": 6909,
+      "mobilia": 62,
+      "barra": {
+        "filas": 1,
+        "itens": 2,
+        "altura": 54
+      },
+      "leituras": {
+        "filas": 1,
+        "itens": 1,
+        "altura": 26.2
+      }
+    },
+    "A2.pt": {
+      "altura": 6909,
+      "teto": 6941
+    },
+    "A11.pt": {
+      "acimaDoNome": 62,
+      "barra": {
+        "filas": 1,
+        "itens": 2,
+        "altura": 54
+      },
+      "leituras": {
+        "filas": 1,
+        "itens": 1,
+        "altura": 26.2
+      }
+    },
+    "A5.pt.390": {
+      "total": 29,
+      "pequenos": [],
+      "invisiveis": 0
+    },
+    "A5.pt.768": {
+      "total": 29,
+      "pequenos": [],
+      "invisiveis": 0
+    },
+    "A3.pt": {
+      "total": 21,
+      "repetidos": []
+    },
+    "A4.pt": {
+      "noDocumento": 2,
+      "frases": [
+        {
+          "painel": "pdm",
+          "tem": true,
+          "texto": "Os indicadores do painel do Procedimento relativo aos Desequ"
+        },
+        {
+          "painel": "social",
+          "tem": true,
+          "texto": "Os indicadores que o livro-razão guarda e cujo registo nomei"
+        }
+      ]
+    },
+    "A6.pt": 0,
+    "A10.pt": {
+      "cartoes": 0,
+      "pecas": 0
+    },
+    "A7.pt": [
+      "Lagoadistrito de Faro",
+      "LagoaIlha de São Miguel"
+    ],
+    "A12.pt": {
+      "menu": [
+        "/",
+        "/municipios",
+        "/regioes",
+        "/distritos",
+        "/areas",
+        "/estudos",
+        "/livro-razao",
+        "/agenda",
+        "/metodo",
+        "/correcoes",
+        "/sobre"
+      ],
+      "emFalta": []
+    },
+    "A8.pt": {
+      "formularios": 1,
+      "action": "/municipios",
+      "metodo": "get",
+      "destinoVivo": true
+    },
+    "A9.pt": {
+      "toques": 2,
+      "dentroDoEcra": true,
+      "chegou": "/municipios/evora",
+      "semGuiao": {
+        "caminho": "/municipios",
+        "query": "?concelho=%C3%89vora",
+        "titulo": "Municípios · O Estado do País"
+      }
+    },
+    "A1.en": {
+      "nome": {
+        "topo": 62,
+        "fundo": 97.4,
+        "largura": 354,
+        "altura": 35.4
+      },
+      "manchete": {
+        "topo": 169.5,
+        "fundo": 297,
+        "largura": 354,
+        "altura": 127.4
+      },
+      "cartao": {
+        "topo": 459.3,
+        "fundo": 641.1,
+        "largura": 247.8,
+        "altura": 181.7
+      },
+      "selo": {
+        "topo": 609.5,
+        "fundo": 628.7,
+        "largura": 61,
+        "altura": 19.2
+      },
+      "porta": {
+        "topo": 380.2,
+        "fundo": 446.3,
+        "largura": 294.3,
+        "altura": 66.2
+      },
+      "cartoes": 21,
+      "semSelo": [],
+      "ecra": 664,
+      "altura": 6861,
+      "mobilia": 62,
+      "barra": {
+        "filas": 1,
+        "itens": 2,
+        "altura": 54
+      },
+      "leituras": {
+        "filas": 1,
+        "itens": 1,
+        "altura": 26.2
+      }
+    },
+    "A2.en": {
+      "altura": 6861,
+      "teto": 6890
+    },
+    "A11.en": {
+      "acimaDoNome": 62,
+      "barra": {
+        "filas": 1,
+        "itens": 2,
+        "altura": 54
+      },
+      "leituras": {
+        "filas": 1,
+        "itens": 1,
+        "altura": 26.2
+      }
+    },
+    "A5.en.390": {
+      "total": 29,
+      "pequenos": [],
+      "invisiveis": 0
+    },
+    "A5.en.768": {
+      "total": 29,
+      "pequenos": [],
+      "invisiveis": 0
+    },
+    "A3.en": {
+      "total": 21,
+      "repetidos": []
+    },
+    "A4.en": {
+      "noDocumento": 2,
+      "frases": [
+        {
+          "painel": "pdm",
+          "tem": true,
+          "texto": "The indicators of the Macroeconomic Imbalance Procedure scor"
+        },
+        {
+          "painel": "social",
+          "tem": true,
+          "texto": "The indicators the ledger holds whose record names the Europ"
+        }
+      ]
+    },
+    "A6.en": 0,
+    "A10.en": {
+      "cartoes": 0,
+      "pecas": 0
+    },
+    "A7.en": [
+      "Lagoadistrict of Faro",
+      "LagoaIlha de São Miguel"
+    ],
+    "A12.en": {
+      "menu": [
+        "/en",
+        "/en/municipalities",
+        "/en/regions",
+        "/en/districts",
+        "/en/areas",
+        "/en/studies",
+        "/en/ledger",
+        "/en/agenda",
+        "/en/method",
+        "/en/corrections",
+        "/en/about"
+      ],
+      "emFalta": []
+    },
+    "A8.en": {
+      "formularios": 1,
+      "action": "/en/municipalities",
+      "metodo": "get",
+      "destinoVivo": true
+    },
+    "A9.en": {
+      "toques": 2,
+      "dentroDoEcra": true,
+      "chegou": "/en/municipalities/evora",
+      "semGuiao": {
+        "caminho": "/en/municipalities",
+        "query": "?concelho=%C3%89vora",
+        "titulo": "Municipalities · O Estado do País"
+      }
+    }
+  },
+  "plantasOk": true
+}
