@@ -373,14 +373,14 @@ design/especime-v3/medicoes/typecheck-dist/dist-antes.sha256    11 420 linhas
 design/especime-v3/medicoes/typecheck-dist/dist-depois.sha256   11 420 linhas
 ```
 
-São a saída crua de `shasum -a 256` sobre todos os ficheiros de `dist/`, por ordem de caminho, antes (construído em `main`, `2ab66578`) e depois (construído neste ramo). Quem quiser refazer a comparação corre:
+São a saída crua de `shasum -a 256` sobre todos os ficheiros de `dist/`, por ordem de caminho. **Refizeram-se depois de `main` se mexer** (§S13): o «antes» é agora `origin/main` em `df20ce65`, construído numa árvore de trabalho própria, e o «depois» é a árvore fundida em `8f5d2aa4`. Quem quiser refazer a comparação corre:
 
 ```
 $ diff design/especime-v3/medicoes/typecheck-dist/dist-antes.sha256 \
        design/especime-v3/medicoes/typecheck-dist/dist-depois.sha256
 ```
 
-Diferem **dois** ficheiros, `./prova.json` e `./version.json`, e neles diferem **dois campos**: `commit` (o carimbo de que commit foi construído: `2ab66578` na primeira, `65265d93` na segunda) e `construido_em`. Os 7 233 `index.html`, o `cadeia.json`, os conjuntos de dados, os 2 916 JSON por linha, os cartões, os mapas do sítio e as folhas têm a mesma soma, byte a byte.
+Diferem **dois** ficheiros, `./prova.json` e `./version.json`, e neles diferem **três campos**: `commit` e `ref` (o carimbo de que commit e de que ramo foi construído) e `construido_em`. Os 7 233 `index.html`, o `cadeia.json`, os conjuntos de dados, os 2 916 JSON por linha, os cartões, os mapas do sítio e as folhas têm a mesma soma, byte a byte, nos 11 420 ficheiros.
 
 ## S5 · Major 7 a 10 · nenhuma forma é afirmada antes de ser validada
 
@@ -542,3 +542,38 @@ Para cada guarda, um caso que tem de ser recusado e um que tem de passar, com a 
 1. `src/data/sobre.mjs` continua fora do programa, pela razão do §6 (é texto governado). O que muda com a segunda passagem é que a exclusão passa a ter prova mecânica de que não reentra.
 2. `scripts/` continua fora até ao F4.2. A contagem de hoje muda com os tipos novos e volta a medir-se nesse bloco.
 3. `astro check` continua sem correr, pela razão do §10, e os 337 erros que ele mede com um TypeScript 6 continuam por resolver.
+
+
+## S13 · A fusão de `main`, e a comparação refeita sobre ela
+
+`main` mexeu-se enquanto este bloco corria: entraram as conferências no recibo
+(as 936 reconferências, o formato novo de `src/data/fontes.mjs`, o
+`LinhaView.astro` e a régua `check:fontes`). O ramo foi fundido com `origin/main`
+em `df20ce65` antes do empurrão final.
+
+**O único conflito** foi o `verify` do `package.json`, onde cada lado tinha
+acrescentado uma régua à cadeia: ficam as duas, o `check:fontes` no lugar onde
+`main` o pôs e o `provar:guardas` a seguir ao `provar:eyetext`. O
+`src/i18n/strings.mjs` fundiu-se sozinho, porque as linhas de `main` são cadeias
+novas no meio do objeto e as deste ramo são o `@param {Lingua}` do `t()`, no fim
+do ficheiro.
+
+**O programa de tipos sobre a árvore fundida está a 0 sem uma linha de conserto.**
+O formato novo de `src/data/fontes.mjs` (dois estados por endereço, a máquina que
+observou, os anfitriões) lê-se pela `TabelaAberta<typeof FONTES_SEM_RESPOSTA>`
+que a segunda passagem já tinha posto: como ela é a união dos valores que o
+próprio ficheiro declara, o tipo acompanhou a mudança de forma sozinho. É a
+primeira prova, e não pedida, de que a derivação do Major 17 faz o que promete.
+
+Os três portões sobre a árvore fundida, com os códigos lidos dos registos de cada
+corrida:
+
+```
+$ npm run build      → EXIT=0   4 m 47,27 s
+$ npm run verify     → EXIT=0   1 m 06,79 s   (17 réguas, com check:fontes e provar:guardas)
+$ npm run typecheck  → EXIT=0   0,227 s
+```
+
+E a comparação do `dist/`, refeita entre `origin/main` sozinho e a árvore fundida
+(11 420 ficheiros cada, as duas listas guardadas no §S4): dois ficheiros
+diferentes, três campos diferentes, todos eles carimbos do commit e da hora.
