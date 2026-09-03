@@ -348,3 +348,176 @@ Para os pendentes, com o que cada um destrava:
    domínio, ou ganha página própria.
 5. **A frase da fronteira**, composta das palavras da carta, à espera das dele se
    ele quiser outras.
+
+## Segunda passagem (Claude Sonnet 5, 03.09.2026)
+
+*Sobre a leitura a frio do Codex `gpt-5.6-sol` xhigh
+(`design/especime-v3/critica/2026-09-03-codex-leitura-f12-dominio.md`, 14
+achados) e a triagem do lugar de direção no cabeçalho daquele ficheiro. A lista
+de conserto era exactamente dez itens (Blocking 2, 3, 4; Major 6, 7, 8, 9, 11,
+13; Minor 14); os Blocking 1 e 5 e o Major 10 e 12 não estavam nela. Trabalhado
+na mesma worktree (`dominio-2026-09-03`), a partir do commit `89ebc2e1` do
+construtor.*
+
+### Duas conclusões que a medição não confirmou, e ficam ditas
+
+Antes de mexer em código, medi os dois achados que a lista de conserto não
+nomeia, porque um deles descreve um número errado à vista e isso pesa mais do
+que qualquer instrução.
+
+- **Blocking 1** (o valor nacional do ganho médio a sair «1 567,0» no PT e certo
+  no EN): reconstruí `dist/` do commit `89ebc2e1`, sem tocar em código, e o
+  valor sai **«1 576,0» nas duas edições**, carácter a carácter igual ao que a
+  linha `ganho-medio-mensal-2024` publica (`grep` sobre
+  `dist/dominios/economia-e-financas-publicas/index.html` e o par inglês). O
+  componente que desenha a barra (`BarraConcelhoPais.astro`) não escreve o
+  valor: é sempre `<Claim as="text">`, que lê `claim.value` sem formatação
+  dependente de língua nenhuma (`Claim.astro`, linha 151). Não há aqui um
+  defeito para consertar: o que o pacote da leitura a frio continha não bate
+  com o que este repositório constrói.
+- **Blocking 5** (a planta P1 da régua a não provar nada, por o portão saltar
+  números com vírgula ou aceitar `data-nonledger=""`): corri
+  `node tests/dominio/pagina.mjs` sobre o `dist/` real, sem tocar em código, e
+  as **seis plantas do commit `89ebc2e1` veem-se vermelhas e depois verdes**, as
+  seis (registo abaixo, «antes do conserto»). O código de `tests/dominio/pagina.mjs`
+  não insere `data-nonledger` nenhum na planta P1, e `temAlgarismo()` não
+  distingue vírgulas: o pacote que a leitura a frio auditou tinha um
+  `tests/dominio/pagina.mjs` diferente do que o `diff.patch` e o `git log`
+  desta árvore mostram, e é o que a própria leitura já assinalava («o portão
+  não prova nada por NENHUMA das duas versões fornecidas»).
+
+```
+node tests/dominio/pagina.mjs        (sobre 89ebc2e1, antes do conserto)
+  a cópia intacta passa o portão · saída 0
+  vermelho ✓ P1 · F2 · … · saída 1
+  vermelho ✓ P2 · F5 · … · saída 1
+  vermelho ✓ P3 · F4 · … · saída 1
+  vermelho ✓ P4 · F7 · … · saída 1
+  vermelho ✓ P5 · F8 · … · saída 1
+  vermelho ✓ P6 · F1 · … · saída 1
+  reposto, o portão volta a verde · saída 0
+  a régua do domínio ✓ 6 de 6 plantas vistas
+```
+
+Os dois ficam ditos e não consertados, porque não há o que consertar; o Major
+10 (o 150 duplicado) entra no Blocking 3 abaixo, que é onde a coordenação o
+ligou, e o Major 12 é sobre o pacote da auditoria e não sobre este repositório.
+
+### Os dez achados, um a um
+
+| # | achado | ficheiro : linha | o que mudou |
+|---|---|---|---|
+| 1 | Blocking 2 · a página de concelho não mostrava o ganho médio contra o país | `src/views/MunicipioView.astro:37,46,51,53,156-181,429,594,672-691` | a barra do concelho contra o país (forma 3, `BarraConcelhoPais.astro`) entra na «Leitura breve» das 308 páginas, a par da distância da dívida; a peça do «Relance» continua a mostrar só o valor do concelho, como as outras sete. `barraConcelhoPais()` devolve `null` sem as duas linhas, e o bloco não se rende num concelho a quem falte uma: medido, 0 concelhos caem neste caso |
+| 2 | Blocking 3 · os limiares e o corte legal não resolviam em linha, ou não tinham razão explicada | `src/views/DominioView.astro:189-212`, `src/i18n/strings.mjs` (`dominios.mapaEscalaNota`), `src/components/formas/MapaPorConcelho.astro:140-143` | os limiares 60, −3 e 5 já eram `limiar-do-quadro` (a marca que a primeira página usa) e ficam assim: não há linha do livro-razão para um valor de referência de um regulamento europeu ou de um parecer do CFP, e a lista das que faltam vai na secção seguinte. O corte 150 do mapa do índice de dívida **deixa de ser um literal** e passa a ler-se de `getClaim(medidaPelaChave('E5').claim).value`: a mesma linha que a leitura breve de E5 já mostra com selo, acima do mapa. Os cortes do mapa do ganho (1200/1400/1600/1800) já eram `escala-de-instrumento`; ganham uma frase na legenda, só nesse mapa, a dizer que são marcas redondas e não um limite oficial |
+| 3 | Blocking 4 · os marcadores `[a verificar]` de T1 e T5 existiam só no comentário do código, nunca na página | `src/data/dominios.mjs:375-388` (T1), `463-476` (T5); `src/views/DominioView.astro:442-450` | cada uma das duas medidas ganha um campo `ressalva` (frase nas duas línguas, tipada em `src/tipos.d.ts`), rendida com `<Frase>` logo a seguir à leitura; o marcador sai pelo `{ marcador: 'a verificar', gloss: 'to verify' }` que `Frase.astro` já sabia ler (o mesmo mecanismo da página de Évora). T1 diz que a meta é da União e não de Portugal; T5 diz que o valor é do continente e que os Açores e a Madeira têm diploma próprio, não lido |
+| 4 | Major 6 · o portão aceitava qualquer motivo em `data-nonledger`, a contagem dos 308 comparava uma edição com a outra, e as classes do mapa não se conferiam contra as linhas | `scripts/check-formas.mjs` (ver §"As três conferências novas") | três conferências novas (F9, F10, F11) e duas reparadas (F2, F8, F7); `tests/dominio/alcance.mjs` entra em `npm run verify` como `check:alcance` (`package.json:29,36`) |
+| 5 | Major 7 · nenhuma das três formas desenhadas tinha alternativa em texto com a MESMA informação | `src/components/formas/BarraConcelhoPais.astro:90-111`, `src/components/formas/MapaPorConcelho.astro:65-71,109-118,144-176` | a barra ganha uma frase com os dois valores selados (`<Claim chip={true}/>`), substituindo a legenda que só tinha nomes e selos; cada mapa ganha um `<details>` fechado por omissão com uma tabela dos valores concelho a concelho, cada um com o seu selo — a mesma informação que o mapa pinta, e não uma descrição do desenho |
+| 6 | Major 8 · a redação das medidas de aceitação dizia «60 datas em dd.mm.aaaa» | este ficheiro (ver «B5» abaixo) | emendado: das 66 datas de linha, **44 são `access_date`/`verifications` em dd.mm.aaaa e 22 são o período de referência**, escrito como a fonte o publica (um ano é um ano, nunca convertido: 11 leituras × 2 edições); `dataDaCasa()` já fazia isto (linha 23-26 do próprio ficheiro), a frase é que dizia mais do que o código faz |
+| 7 | Major 9 · o relatório dizia que as formas 1 e 2 «desenham sem que uma linha de código mude» | este ficheiro (ver «O que fica por fazer») | emendado: `formaDaMedida()` só decide para `medida.forma === 'mapa'` (`src/lib/dominios.mjs:373-379`); `serieDoPais()` e `entre27()` existem e leem o livro-razão correctamente, mas NENHUM gabarito as chama hoje. Uma segunda linha de período ou 27 linhas de Estados-membros não desenhariam nada sem também ligar essas duas funções a uma vista — o que fica é para o F1.5 |
+| 8 | Major 11 · «Trabalho» ficava com dois estados incompatíveis, e nenhuma página do sítio abria `/dominios` | `src/data/dominios.mjs:97-104` (`ancoraDentro`), `src/views/DominiosView.astro:64-77`, `src/components/SiteFooter.astro:69-83`, `src/i18n/strings.mjs` (`nav.dominios`) | «Trabalho» mantém-se «dentro de» com porta (a coordenação aceitou a ligação, e pediu que fosse à sua secção): a porta passa a `/dominios/economia-e-financas-publicas#m-t1`, a âncora da primeira medida de Trabalho na página. O rodapé ganha a entrada «Domínios» / «Domains», ao lado de «Áreas»; a entrada do menu do cabeçalho fica para depois do F1.1, que tem essa mobília na mão (é ele quem decide «Regiões, Distritos e Áreas no menu», e as duas mãos ao mesmo tempo é a fusão a doer que o primeiro relatório já evitou) |
+| 9 | Major 13 · o valor irmão de T5 (Eurostat) mostrava-se com as datas e a fonte da linha do Diário da República | `src/views/DominioView.astro:386-440` | cada `outras[]` (hoje só a de T5) ganha as suas próprias três datas (`o.datas`, já calculadas por `medidasComLeitura()` e nunca rendidas) e a sua própria fonte (`CampoDaLinha` sobre `o.linha`, não `linha`); medido, a linha `retribuicao-minima-mensal-doze-meses-2026` passa a mostrar «Eurostat», e não «Diário da República» |
+| 10 | Minor 14 · o slug da edição inglesa fica em português | nenhum (report only) | fica como está, por regra da casa: `src/lib/routes.mjs` escreve três vezes «o que se traduz é o rótulo e nunca a chave», e vale hoje para regiões, distritos, concelhos e estudos. Mudar a regra (um slug por edição) é um bloco do encaminhamento, não desta página; o pendente já está escrito no relatório do construtor, §7 (a) e §8, item 1 |
+
+### As três conferências novas de `check-formas.mjs`, e as duas reparadas
+
+O achado comum ao Major 6 é que `data-nonledger` só provava a PRESENÇA de um
+motivo, nunca se aquele motivo fazia sentido onde apareceu.
+
+- **F2 e F8, reparadas.** Dentro do `<svg>` de uma forma, só `data-claim` ou
+  `data-nonledger="escala-de-instrumento"` contam como origem de um algarismo
+  (`scripts/check-formas.mjs:307-330`); dentro de um cartão de ausência, só
+  `identificador-tecnico` (`:378-409`). Um motivo válido no resto do sítio mas
+  emprestado para aqui passa a fechar a construção.
+- **F9, nova.** Todo `data-nonledger` dentro da manchete (`.cabeca-h1`) ou da
+  leitura breve (`#leitura`) tem de estar numa lista fechada de sete motivos,
+  cada um com a sua razão (`:150-172,418-435`). O escopo é só este conteúdo e
+  não a página inteira: a cabeça comum e o rodapé são mobília doutros blocos,
+  já cobertos pelo fecho geral do `gate:html` contra `ledger/allowlist.yml`.
+- **F10, nova.** Nenhuma data ISO no texto da página (`:437-451`). Medido
+  durante esta passagem: a primeira redação usava `\b` a fechar a expressão, e
+  `texto()` cola o texto de blocos vizinhos sem separador — uma data ISO à
+  beira de uma palavra (não de um espaço ou de pontuação) não tinha fronteira
+  de palavra nenhuma a seguir ao último algarismo, e a planta P8 via-se
+  invisível. A expressão fecha agora com `(?!\d)`: o que fecha o grupo dos dois
+  algarismos do dia é não vir mais um algarismo a seguir, e não vir uma
+  não-palavra.
+- **F11, nova.** As classes do mapa reconciliam-se com as linhas
+  (`:453-486`): um `<use>` com uma classe de escala tem de ter, do outro lado,
+  uma linha com valor numérico; um `<use>` sem valor tem de estar em
+  `sem-valor`. As duas contas são independentes (uma lê o HTML, a outra lê o
+  livro-razão pelo mesmo `data-concelho`), e por isso `MapaPorConcelho.astro`
+  ganhou o atributo `data-concelho={c.slug}` em cada `<use>` (linha 111).
+- **F7, reparada.** O total de concelhos lê-se de
+  `MUNICIPIOS_COM_PAGINA.length` (`src/data/municipios.mjs`), nunca da
+  contagem que a própria varredura descobre (`:543-577`): comparar uma edição
+  com a outra só apanha uma DIFERENÇA entre elas, nunca as duas a faltarem a
+  mesma página.
+
+### A régua, com nove plantas e não seis
+
+`tests/dominio/pagina.mjs` ganha P7, P8 e P9, uma por conferência nova, e o
+cabeçalho do ficheiro passa a falar de nove plantas. As seis do commit
+`89ebc2e1` continuam a ver-se vermelhas (medido acima, sobre o `dist/` daquele
+commit); as nove veem-se vermelhas e depois verdes sobre o `dist/` desta
+passagem:
+
+```
+node tests/dominio/pagina.mjs
+  a cópia intacta passa o portão · saída 0
+  vermelho ✓ P1 · F2 · um número escrito à mão dentro do <svg> de uma forma · saída 1
+  vermelho ✓ P2 · F5 · uma leitura breve sem as três datas · saída 1
+  vermelho ✓ P3 · F4 · a frase da fronteira impressa duas vezes · saída 1
+  vermelho ✓ P4 · F7 · uma das 308 linhas do ganho médio fora do alcance de uma página de concelho · saída 1
+  vermelho ✓ P5 · F8 · o cartão de ausência com um valor do livro-razão · saída 1
+  vermelho ✓ P6 · F1 · a data de uma medida trocada por outra data · saída 1
+  vermelho ✓ P7 · F9 · um número da legenda do mapa com um motivo emprestado de outro sítio da página · saída 1
+  vermelho ✓ P8 · F10 · uma data ISO à vista no texto da página · saída 1
+  vermelho ✓ P9 · F11 · a classe do mapa e o valor da linha a discordarem · saída 1
+  reposto, o portão volta a verde · saída 0
+
+  a régua do domínio ✓ 9 de 9 plantas vistas
+```
+
+### B1 a B15, remedidos
+
+| # | medida | medido | como |
+|---|---|---|---|
+| B1 | as duas páginas do domínio, canonical, hreflang, sitemap, sem `noindex` | **verde** | `dist/dominios/economia-e-financas-publicas/index.html` (806 166 B) e o par inglês (817 616 B); canonical para si própria; `hreflang` `pt-PT`/`en`/`x-default` cruzados; `grep -c noindex` a 0 nas quatro páginas; as quatro no `dist/sitemap-0.xml` |
+| B2 | «Ganho médio» em 308 de 308, com o valor nacional e a barra (Blocking 2) | **308/308 nas duas, com a barra** | `check:formas`: «ganho médio em 308/308 concelhos (controlo: população em 308)»; `barra-concelho-pais 618` desenhos (2 do domínio + 616 dos concelhos); 0 concelhos sem as duas linhas |
+| B3 | as 314 linhas da §1.90 alcançáveis da página do domínio | **314 de 314, a 0 portas** | `node tests/dominio/alcance.mjs`: **0 portas → 314 das 314**, porque a tabela dos 308 valores (Major 7) já cita todas as linhas de concelho na própria página. Ficou mais forte do que a medida B3 original pedia (2 portas), sem se ter proposto a isso |
+| B4 | as quatro formas só, SVG estático; cada número resolve numa linha; o portão recusa um número solto, com planta | **verde** | `npm run check:formas` (622 desenhos); planta P1 vermelha e depois verde |
+| B5 | as três datas em dd.mm.aaaa; a fonte nomeada | **66 datas conferidas, 44 dd.mm.aaaa + 22 períodos como a fonte publica** | `check:formas` F1; a redação da medida foi corrigida nesta passagem (Major 8): um ano fica um ano |
+| B6 | a regra dos vazios; zero valores inventados; `git diff` do livro-razão vazio | **verde** | `git diff --stat -- ledger/` vazio (nenhum ficheiro tocado nesta passagem); T4a continua sem valor nenhum; planta P5 vermelha e depois verde |
+| B7 | a manchete com todos os algarismos como valores da prova; nenhuma subtração | **verde, inalterada** | `npm run gate:html` a 0; a frase não mudou nesta passagem (só o corte do índice, noutro sítio da página, deixou de ser literal) |
+| B8 | a frase da fronteira uma vez, com id, rastreável à carta | **1 de 1, inalterada** | `check:formas` F4; planta P3 vermelha e depois verde |
+| B9 | o índice com os 18 domínios | **18: 1 no-ar, 1 dentro-de com porta, 16 sem** | `grep` sobre `dist/dominios/index.html`: `data-dominio-estado` distintos «no-ar» 1, «dentro-de» 1, «sem» 16; a porta de «Trabalho» é `/dominios/economia-e-financas-publicas#m-t1` |
+| B10 | nenhum número novo no sítio | **2 916 de 2 916, e 0 fora** | `data-claim` distintos em todo o `dist/`: 2 916, exactamente as linhas do livro-razão (2 916); 0 citados que não sejam linhas |
+| B11 | a 390 × 664 o primeiro ecrã com o nome, a manchete, o primeiro cartão e o selo | **verde nas duas edições, inalterado** | `node tests/dominio/medidas.mjs`: pt, rótulo 231 px, manchete 435 px, cartão 625 px, selo 612 px; en, 231/466/656/644. As mesmas quatro medidas do construtor: nada desta passagem entra acima do primeiro cartão |
+| B12 | contraste ≥ 4,5:1 e ≥ 3:1 nos dois temas; texto alternativo em cada SVG | **verde, com uma nota nova** | as tintas e os contrastes de texto não mudaram (medidos de novo, os mesmos números do construtor). A NOTA NOVA: `tests/dominio/medidas.mjs` só sabe medir o NOME acessível de um desenho (`aria-labelledby`), não a frase ou a tabela que esta passagem acrescentou como alternativa em texto; essas líem-se no HTML (§ «Major 7» acima) e não por esta régua, que não foi escrita para isso |
+| B13 | `build`, `verify`, `typecheck` a 0 | **0, 0, 0** | os três lidos de ficheiros de registo (`echo "exit=$?" > ficheiro`), nunca do resumo de um comando em fundo. `check:voz`: «nada por classificar»; `check:lingua` verde; `check:alcance` (novo em `verify`) a 314/314 |
+| B14 | a régua com estragos plantados vistos vermelhos | **9 de 9** | ver «A régua, com nove plantas» acima |
+| B15 | a §1.90 e o `VISAO.md` §4 | **inalterados, e continuam certos** | esta passagem não acrescentou domínios nem medidas: a emenda do construtor continua a descrever o que existe |
+
+### O que fica por fazer
+
+O mesmo que o construtor já tinha escrito, mais o que esta passagem mediu:
+
+1. **O item 9 do brief (os cartões da faixa da primeira página a apontarem para
+   o domínio).** Continua à espera do F1.1: `HomeView.astro` e os componentes
+   da primeira página não foram tocados nesta passagem, pela mesma fronteira
+   que o construtor respeitou.
+2. **A entrada «Domínios» no MENU do cabeçalho** (distinta da entrada do
+   rodapé, feita nesta passagem): fica para depois do F1.1, que tem a mobília
+   do cabeçalho na mão.
+3. **As formas 1 e 2 não desenham com nenhuma linha nova** (Major 9, corrigido
+   nesta passagem): `serieDoPais()` e `entre27()` leem correctamente o
+   livro-razão, mas nenhum gabarito as chama. Ligá-las a uma vista quando o
+   motor trouxer um segundo período ou as 27 linhas do Eurostat é trabalho do
+   F1.5, e não uma consequência automática de mais linhas no livro-razão.
+4. **O slug de cada domínio, a medida de cabeça e as cinco da faixa, a
+   manchete do domínio, o estado de «Trabalho», e a frase da fronteira**:
+   os cinco pendentes do diretor que o construtor já escreveu, sem mudança
+   nesta passagem.
+5. **A leitura a frio e a medição cega desta segunda passagem** são de outra
+   família: esta régua (`tests/dominio/pagina.mjs`) prova o portão novo, e não
+   as substitui.
