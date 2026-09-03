@@ -422,7 +422,7 @@ git diff --stat 2ab66578 a1af1c65 -- src/data/figuras.mjs scripts/check-voz.mjs 
 
 Este relatório entra no mesmo commit e conta à parte. Na altura em que a §9 foi
 escrita tinha 662 linhas; com a §11 (a segunda passagem) e a §12 (a fusão), tem
-**705** na versão final, medidas com
+**763** na versão final, medidas com
 `wc -l < design/especime-v3/medicoes/frases-construtor.md`. A primeira passagem
 escreveu «422 linhas» a partir da contagem de inserções de um ficheiro novo no
 `git diff --stat`, e a leitura a frio apanhou a incoerência (Major 4): uma
@@ -703,3 +703,61 @@ As duas alturas são as mesmas de antes da fusão, e é o que se esperava: o `ma
 mexeu na página de uma linha e não na primeira página. A régua nova do `main`
 (`check:fontes`) corre sobre as páginas de linha, que não são rota inventariada, e
 por isso não cruza com a mudança da régua da voz feita neste bloco.
+
+## 13 · A segunda fusão: o `typecheck` a valer por baixo do bloco (03.09.2026)
+
+O `main` voltou a andar, agora com o F0.4 (`16e70350`): o `typecheck` deixou de
+conferir um ficheiro e passou a ser um programa a sério, com `checkJs` estrito
+sobre `src/lib`, `src/data` e `src/i18n`, mais `src/tipos.d.ts` com 629 linhas de
+tipos e as guardas de execução de `scripts/provar-guardas.mjs`, que entraram no
+`verify` ao lado do `check:fontes`.
+
+`origin/main` foi outra vez fundido e não rebasado, pela mesma razão da §12, e
+outra vez **sem conflitos**: o `main` não tocou em nenhum dos três ficheiros deste
+bloco.
+
+**`src/data/figuras.mjs` está dentro da conferência nova, e passa sem uma linha de
+remendo.** Isto não se presume, mede-se, e a régua 15 da casa manda abrir o
+ficheiro em vez de o julgar pelo nome:
+
+```
+npx tsc -p tsconfig.check.json --listFiles --noEmit | grep -c "src/data/figuras.mjs"   → 1
+npm run typecheck                                                                      → 0
+```
+
+E o positivo conhecido, porque um zero de um verificador só vale depois de ele ter
+visto um positivo: plantado `const plantado = limiar.naoExisteEsteCampo.nem.este;`
+dentro de `ladosDoLimiar`, o `typecheck` sai a **1** com
+`src/data/figuras.mjs(542,20): error TS18049: 'limiar' is possibly 'null' or
+'undefined'` e `(542,27): error TS2339: Property 'naoExisteEsteCampo' does not
+exist on type 'Limiar'`. Reposto o ficheiro, sai a **0**.
+
+**Nada foi tocado fora dos ficheiros deste bloco.** Não houve `any`, não houve
+`@ts-ignore`, e `src/tipos.d.ts` e `src/lib/ledger.mjs` ficaram como o F0.4 os
+deixou. A razão de não ter sido preciso mexer em nada é a forma das mudanças do
+F0.9: o que este bloco fez a `figuras.mjs` foi **encurtar cadeias e apagar
+orações** dentro de campos `frase` que já existiam, mais dois `{ nl }` novos na
+célula da taxa de emprego, escritos com a mesma forma que a célula da sobrecarga
+do custo da habitação já usava. Nenhum campo novo, nenhuma forma nova, nenhuma
+função com assinatura nova. Uma mudança que só tira texto de um literal não cria
+tipo nenhum para conferir.
+
+`scripts/check-voz.mjs` e `scripts/medir-defeitos.mjs` continuam fora do
+`tsconfig.check.json`: `scripts/` entra em F4.2, e está escrito assim na medida de
+aceitação do F0.4.
+
+**Remedido depois desta segunda fusão, e não copiado de antes:**
+
+| medição | valor |
+| --- | --- |
+| `npm run build` | **0** |
+| `npm run verify` (com `check:fontes` e `provar:guardas` a correr) | **0** |
+| `npm run typecheck` (o novo, estrito) | **0** |
+| soma das ocorrências das dezoito cadeias da classe nas duas edições | **0** |
+| positivo conhecido do `grep` na mesma construção | **1** e **1** |
+| autoteste do arame | passou, 0 falhas |
+| inventário | **660** linhas (582 vivas, 78 retiradas) |
+| altura de `/` e de `/en/` a 390 px | **6 941 px** e **6 890 px** |
+
+As alturas são as mesmas das §11 e §12, o que era de esperar: as três fusões
+mexeram na página de uma linha, nos tipos e nas réguas, e não na primeira página.
