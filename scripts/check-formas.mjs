@@ -159,7 +159,7 @@ const MOTIVO_DE_AUSENCIA = 'identificador-tecnico';
  * `ledger/allowlist.yml`, e uma lista fechada aqui sobre esse território
  * apanharia um motivo alheio válido como se fosse um erro deste bloco. Um
  * motivo novo NESTE conteúdo entra nesta lista com a sua razão, como entra
- * naquele ficheiro — as duas listas mudam juntas ou divergem em silêncio.
+ * naquele ficheiro: as duas listas mudam juntas ou divergem em silêncio.
  */
 const MOTIVOS_DO_DOMINIO = new Set([
   'data-da-linha',
@@ -304,10 +304,10 @@ for (const ficheiro of paginasDe(DIST)) {
         if (t.querySelector('text, tspan')) continue;
         const conteudo = texto(t);
         if (!temAlgarismo(conteudo)) continue;
-        /* F9 · O MOTIVO CONTA, E NÃO SÓ A PRESENÇA DO ATRIBUTO (leitura a fria
+        /* F9 · O MOTIVO CONTA, E NÃO SÓ A PRESENÇA DO ATRIBUTO (leitura a frio
            do Codex, Major 6). `data-claim` é sempre uma linha; de
            `data-nonledger`, só a marca da régua de um instrumento é a escala de
-           uma forma — qualquer outro motivo (uma data, um limiar, um
+           uma forma: qualquer outro motivo (uma data, um limiar, um
            identificador técnico) não descreve o que um algarismo desenhado
            pode ser aqui, e aceitá-lo era a fresta que deixava passar um número
            escrito à mão debaixo de um motivo emprestado de outro sítio da
@@ -442,9 +442,9 @@ for (const ficheiro of paginasDe(DIST)) {
       const textoDoCorpo = texto(clone);
       /* SEM `\b` NO FIM (medido nesta segunda passagem, planta P8 de
          `tests/dominio/pagina.mjs`). `texto()` junta o texto de blocos vizinhos
-         sem separador nenhum — é a mesma função que rende «…calcula.Leitura
-         breve…» sem espaço entre o fim de uma secção e o início da seguinte —
-         e uma data ISO à beira de um bloco vizinho que comece por letra não
+         sem separador nenhum: é a mesma função que rende «…calcula.Leitura
+         breve…» sem espaço entre o fim de uma secção e o início da seguinte, e
+         uma data ISO à beira de um bloco vizinho que comece por letra não
          tinha fronteira de palavra nenhuma a seguir ao último algarismo: o `\b`
          da direita nunca via a planta. O que fecha o grupo dos dois algarismos
          do dia é «não vem mais um algarismo a seguir», e não «vem uma
