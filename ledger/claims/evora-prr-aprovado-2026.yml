@@ -92,3 +92,11 @@ corrections:
     new_value: "167 372 755,84"
     reason: "O publicador do PRR substitui o ficheiro e não arquiva o anterior. Esta soma foi refeita sobre o instantâneo de 2026-08-19 (listagem-de-entidades-prr-20260819.xlsx); a anterior era sobre o instantâneo de 2026-08-17 (listagem-de-entidades-prr-20260817.xlsx). O valor antigo não estava errado quando foi publicado: media outro instantâneo, e esse já não é servido."
     reason_en: "The PRR publisher replaces the file and archives nothing. This sum was recomputed over the 2026-08-19 snapshot (listagem-de-entidades-prr-20260819.xlsx); the previous one was over the 2026-08-17 snapshot (listagem-de-entidades-prr-20260817.xlsx). The old value was not wrong when it was published: it measured a different snapshot, and that one is no longer served."
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-03"
+    path: "https://web.archive.org/web/20260820111244/https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx"
+    result: "igual"
+    by: "corredor-diario"
