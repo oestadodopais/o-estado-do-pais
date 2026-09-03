@@ -77,11 +77,27 @@ const path = routePath('texto', lang, { slug });
    manifesto dos registos que diz de que estudo do motor esta edição é. */
 const linhaDoSitio = linhaDoSitioDoEstudo(entrada.rh_study);
 
+/**
+ * A FRASE DA POSIÇÃO, MONTADA AQUI PORQUE `registo-html.mjs` NÃO SABE LÍNGUAS
+ * (F1.9a, segunda passagem, Major 8 da leitura a frio do Codex). O modelo
+ * («Secção {n} de {total}») vive no inventário da voz; a substituição dos dois
+ * números é trabalho desta vista, pela mesma razão que `rotuloDaPorta` já é
+ * uma cadeia pronta e não uma chave.
+ */
+const rotuloDaPosicao = (n, total) =>
+  s.estudos.textoPosicaoSeccaoModelo.replace('{n}', String(n)).replace('{total}', String(total));
+
 const pecas = pecasDoCorpo({
   registo,
   chave,
   linhaDoSitio,
   rotuloDaPorta: s.estudos.textoPortaDaLinha,
+  rotuloDaPosicao,
+  /* A PORTA EM FLUXO NO FIM DE CADA SECÇÃO (Blocking 4). Reutiliza a palavra
+     que a subida fixa já tem: é o mesmo destino, `#texto-indice`, e a mesma
+     ideia, e o inventário da voz já a nomeia com origem — inventar «Índice ↑»
+     ao lado seria uma segunda etiqueta para a mesma porta. */
+  rotuloDoFimDeSeccao: s.estudos.textoSubir,
 });
 const linhas = linhasDoDocumento(registo, chave, linhaDoSitio);
 const contas = contasDoRegisto(registo, chave, linhaDoSitio);
@@ -417,14 +433,16 @@ const conta = (nome) => `${chave}=${nome}`;
     </aside>
   </div>
 
-  {/* SUBIR (item B4; F1.9a, item 3). Fixo no fim do ecrã, agora nas duas
-      larguras. Até 03.09.2026 escondia-se acima de 640px, com a razão escrita
-      «no computador a coluna do aparelho está sempre à vista e a página tem
-      metade da altura»; a medição desta manhã desmentiu a segunda metade: a
-      1280 as oito páginas medem entre 12 612 e 37 008 px, e a coluna do
-      aparelho fica no primeiro ecrã e nunca mais volta. Abre o índice, que é o
-      topo do corpo e o sítio de onde se salta para qualquer secção. É mobília,
-      e por isso vive fora do `<article>`, como o índice. */}
+  {/* SUBIR (item B4; F1.9a item 3; Blocking 4 da leitura a frio do Codex,
+      segunda passagem, 03.09.2026). Fixo, SÓ A PARTIR DE 1024px, onde a
+      goteira à direita da coluna de leitura existe e cabe um alvo de 44px sem
+      tocar num carácter do artigo. Abaixo disso não há goteira nenhuma — a
+      régua mediu, antes desta correção, entre 12 e 26 caixas de linha tapadas
+      em 6 a 9 das dez posições da página a 390 —, e a porta que a substitui
+      aí é a que cada secção já leva no seu próprio fim (`.texto-secao-topo`,
+      escrita por `pecasDoCorpo`). Abre o índice, que é o topo do corpo e o
+      sítio de onde se salta para qualquer secção. É mobília, e por isso vive
+      fora do `<article>`, como o índice. */}
   <a class="texto-subir" href="#texto-indice">{s.estudos.textoSubir} ↑</a>
 
   {/* A BARRA DO PROGRESSO (F1.9a, item 2, segunda metade).
