@@ -31,8 +31,9 @@
     "provar:eyetext": "node scripts/provar-eyetext.mjs",
     "provar:guardas": "node scripts/provar-guardas.mjs",
     "typecheck": "tsc -p tsconfig.check.json",
-    "verify": "npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && npm run gate:html && npm run check:cadeia && npm run check:dados && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:voz && npm run check:lingua && npm run provar:eyetext && npm run provar:guardas && npm run check:mortos && npm run design:feixe",
-    "check:mortos": "node scripts/check-mortos.mjs --prova"
+    "verify": "npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && npm run gate:html && npm run check:fontes && npm run check:cadeia && npm run check:dados && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:voz && npm run check:lingua && npm run provar:eyetext && npm run provar:guardas && npm run check:mortos && npm run design:feixe",
+    "check:mortos": "node scripts/check-mortos.mjs --prova",
+    "check:fontes": "node tests/linha/sem-resposta.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",
