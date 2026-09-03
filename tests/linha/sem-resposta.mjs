@@ -41,7 +41,13 @@
  *      distraída não mede: bastava rendê-lo sempre para a primeira passar.
  *
  * ---------------------------------------------------------------------------
- * A PLANTA (regra 14). Uma régua só vale depois de um conhecido-positivo a ter
+ * E AS CINCO LINHAS SEM ENDEREÇO (Major 8). As linhas cuja proveniência está
+ * incompleta não se oferecem como registo: levam `noindex` e ficam fora do
+ * `dist/sitemap-0.xml`. Isso era afirmado nos relatórios e não era conferido
+ * por nada; passa a ser, sobre o `dist/` construído e sobre o mapa que ele
+ * traz.
+ *
+ * A PLANTA (regra 14). Um portão só vale depois de um conhecido-positivo a ter
  * feito falhar. `--plantar <anfitrião>` acrescenta esse anfitrião ao
  * `ANFITRIOES_SEM_RESPOSTA` do ficheiro gerado; constrói-se o sítio outra vez e
  * corre-se esta régua: as linhas daquele anfitrião passam a dever o estado, e
@@ -56,10 +62,38 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { allClaims } from '../../src/lib/ledger.mjs';
-import { dataDaCasa } from '../../src/lib/datas.mjs';
+import { allClaims, provenienciaIncompleta } from '../../src/lib/ledger.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
+
+/**
+ * OS RÓTULOS QUE A PÁGINA TEM DE ESCREVER, palavra por palavra, nas duas
+ * línguas. São uma SEGUNDA CÓPIA da tabela de `src/i18n/strings.mjs`, e é de
+ * propósito: uma régua que lesse a tabela da produção confirmava a tabela e não
+ * a página. Uma chave trocada rende a etiqueta errada com a classe certa, e a
+ * única coisa que o vê é uma cópia independente do texto.
+ */
+const ROTULOS = {
+  pt: {
+    rota: (id) => path.join('livro-razao', id),
+    'sem-resposta': 'Sem resposta desde',
+    'respondeu-com-erro': 'Respondeu com erro desde',
+  },
+  en: {
+    rota: (id) => path.join('en', 'ledger', id),
+    'sem-resposta': 'No answer since',
+    'respondeu-com-erro': 'Answering with an error since',
+  },
+};
+
+/**
+ * dd.mm.aaaa, escrito aqui e não importado. Ver o cabeçalho: a régua não pode
+ * usar o formatador da produção para conferir a produção.
+ */
+function esperadaDdMmAaaa(iso) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(iso ?? ''));
+  return m === null ? String(iso ?? '') : `${m[3]}.${m[2]}.${m[1]}`;
+}
 const FONTES = path.join(RAIZ, 'src', 'data', 'fontes.mjs');
 const GUARDADO = path.join(RAIZ, 'src', 'data', '.fontes.mjs.antes-da-planta');
 const DIST = path.join(RAIZ, 'dist');
@@ -123,7 +157,14 @@ const { FONTES_SEM_RESPOSTA, ANFITRIOES_SEM_RESPOSTA } = await import(
 function recorte(html, marca) {
   const i = html.indexOf(`class="${marca}"`);
   if (i < 0) return null;
-  const abre = html.indexOf('>', i);
+  /* O RÓTULO DE UMA LINHA DA LISTA VIVE NO `<dt>` E O VALOR NO `<dd>`, e são
+     dois elementos. O recorte de um `dd` começa no `<dt>` que o antecede, senão
+     mede o valor e diz que falta o rótulo, que foi o que este portão disse na
+     primeira corrida sobre um recibo que estava certo. Numa `<p>` não há `dt`
+     nenhum e o recorte é o elemento inteiro. */
+  const dt = html.lastIndexOf('<dt', i);
+  const inicio = dt >= 0 && dt < i && i - dt < 400 ? dt : i;
+  const abre = html.indexOf('>', inicio === dt ? html.indexOf('>', dt) : i);
   if (abre < 0) return null;
   const fecha = Math.min(
     ...['</p>', '</dd>'].map((f) => {
@@ -131,30 +172,36 @@ function recorte(html, marca) {
       return j < 0 ? Number.POSITIVE_INFINITY : j;
     }),
   );
-  return Number.isFinite(fecha) ? html.slice(abre + 1, fecha) : html.slice(abre + 1, abre + 400);
+  return Number.isFinite(fecha) ? html.slice(inicio, fecha) : html.slice(inicio, abre + 400);
 }
 
-/** O estado que a página DEVE desenhar para uma linha, ou null. A mesma decisão
- *  que `LinhaView.astro` toma, reconstruída aqui e não importada de lá: uma
- *  régua que importasse a função da página confirmava-a em vez de a conferir. */
+/** O estado que a página DEVE desenhar para uma linha: `{estado, desde}` ou null.
+ *  A mesma decisão que `LinhaView.astro` toma, reconstruída aqui e não importada
+ *  de lá: uma régua que importasse a função da página confirmava-a em vez de a
+ *  conferir. */
 function estadoEsperado(claim) {
   const u = claim?.source_url;
   if (typeof u !== 'string' || !u.startsWith('http')) return null;
   const pedido = u.split('#')[0];
   const doEndereco = FONTES_SEM_RESPOSTA?.[pedido];
-  if (doEndereco) return doEndereco.desde;
+  if (doEndereco) {
+    return { estado: doEndereco.estado ?? 'sem-resposta', desde: doEndereco.desde };
+  }
   let anfitriao;
   try {
     anfitriao = new URL(pedido).host;
   } catch {
     return null;
   }
-  return ANFITRIOES_SEM_RESPOSTA?.[anfitriao]?.desde ?? null;
+  const doAnfitriao = ANFITRIOES_SEM_RESPOSTA?.[anfitriao];
+  return doAnfitriao
+    ? { estado: doAnfitriao.estado ?? 'sem-resposta', desde: doAnfitriao.desde }
+    : null;
 }
 
 const claims = allClaims();
 if (claims.length === 0) {
-  console.error('  o livro-razão veio vazio: a régua não mede nada e não passa.');
+  console.error('  o livro-razão veio vazio: o portão não mede nada e não passa.');
   process.exit(1);
 }
 
@@ -162,78 +209,146 @@ const falhas = [];
 let comEstado = 0;
 let semEstado = 0;
 let paginasLidas = 0;
-let semPagina = 0;
 
 for (const claim of claims) {
-  const pagina = path.join(DIST, 'livro-razao', claim.id, 'index.html');
-  if (!fs.existsSync(pagina)) {
-    /* Uma linha sem página construída não é uma falha desta régua: há linhas
-       que o sítio não publica. Conta-se, para que um `dist/` vazio não passe
-       por um sítio inteiro sem estado nenhum. */
-    semPagina += 1;
-    continue;
-  }
-  paginasLidas += 1;
-  const html = fs.readFileSync(pagina, 'utf8');
   const esperado = estadoEsperado(claim);
-  const naCabeca = html.includes('class="linha-selo-estado"');
-  const noRecibo = html.includes('class="linha-sem-resposta"');
-  if (esperado === null) {
-    semEstado += 1;
-    if (naCabeca || noRecibo) {
-      falhas.push(
-        `${claim.id}: a fonte responde e a página desenha o estado ` +
-          `(cabeça: ${naCabeca}, recibo: ${noRecibo}).`,
-      );
+  if (esperado === null) semEstado += 1;
+  else comEstado += 1;
+  for (const [lang, rot] of Object.entries(ROTULOS)) {
+    const pagina = path.join(DIST, rot.rota(claim.id), 'index.html');
+    if (!fs.existsSync(pagina)) {
+      /* UMA PÁGINA EM FALTA É UMA FALHA (Major 7). A primeira redacção contava
+         as ausências e seguia em frente, e um `dist/` vazio ou meio construído
+         saía com 0: o portão dizia que sim por não ter olhado para nada. Cada
+         linha do livro-razão tem página nas duas edições; se não tiver, ou a
+         construção não correu ou o sítio deixou de a publicar, e as duas coisas
+         param aqui. */
+      falhas.push(`${claim.id} (${lang}): não há página construída em ${pagina}.`);
+      continue;
     }
-    continue;
+    paginasLidas += 1;
+    const html = fs.readFileSync(pagina, 'utf8');
+    const naCabeca = html.includes('class="linha-selo-estado"');
+    const noRecibo = html.includes('class="linha-sem-resposta"');
+    if (esperado === null) {
+      if (naCabeca || noRecibo) {
+        falhas.push(
+          `${claim.id} (${lang}): a fonte responde e a página desenha o estado ` +
+            `(cabeça: ${naCabeca}, recibo: ${noRecibo}).`,
+        );
+      }
+      continue;
+    }
+    const rotulo = rot[esperado.estado];
+    if (rotulo === undefined) {
+      falhas.push(`${claim.id} (${lang}): estado «${esperado.estado}» sem rótulo conhecido.`);
+      continue;
+    }
+    const escrita = esperadaDdMmAaaa(esperado.desde);
+    if (!naCabeca) falhas.push(`${claim.id} (${lang}): falta o estado na cabeça, ao pé do selo.`);
+    if (!noRecibo) falhas.push(`${claim.id} (${lang}): falta o estado no bloco das verificações.`);
+    /* A DATA E O RÓTULO MEDEM-SE DENTRO DOS DOIS ELEMENTOS DO ESTADO, e não na
+       página inteira. A primeira redacção procurava a forma ISO em todo o HTML e
+       ficou vermelha nas quatro linhas da DGCP por uma razão que não é um
+       defeito: o recibo rende `verifications.N.date` como CAMPO DO LIVRO-RAZÃO,
+       em ISO e dentro de um `data-linha-campo`, porque é isso que o portão de
+       HTML compara carácter a carácter com o livro. Uma régua que confundisse o
+       dado com a superfície mandava mudar a coisa certa. */
+    for (const [onde, marca] of [
+      ['a cabeça', 'linha-selo-estado'],
+      ['o recibo', 'linha-sem-resposta'],
+    ]) {
+      const bloco = recorte(html, marca);
+      if (bloco === null) continue; /* a falta já foi dita acima */
+      if (!bloco.includes(rotulo)) {
+        falhas.push(
+          `${claim.id} (${lang}): ${onde} não escreve o rótulo «${rotulo}». ` +
+            `O estado é «${esperado.estado}». Rendido: ${bloco}`,
+        );
+      }
+      for (const outro of Object.keys(ROTULOS[lang])) {
+        /* E NÃO ESCREVE O OUTRO. Chamar «sem resposta» a um 404 é a metade do
+           defeito que uma régua distraída não vê: o rótulo certo está lá, e o
+           errado também. */
+        if (outro === 'rota' || outro === esperado.estado) continue;
+        if (bloco.includes(rot[outro])) {
+          falhas.push(
+            `${claim.id} (${lang}): ${onde} escreve «${rot[outro]}» e o estado é ` +
+              `«${esperado.estado}».`,
+          );
+        }
+      }
+      if (!bloco.includes(escrita)) {
+        falhas.push(
+          `${claim.id} (${lang}): ${onde} não escreve «${escrita}». O ficheiro gerado diz ` +
+            `«${esperado.desde}» e a regra da casa escreve-a «${escrita}». Rendido: ${bloco}`,
+        );
+      }
+      if (bloco.includes(esperado.desde)) {
+        falhas.push(
+          `${claim.id} (${lang}): ${onde} sai em ISO («${esperado.desde}») e a regra da ` +
+            `casa é dd.mm.aaaa.`,
+        );
+      }
+    }
   }
-  comEstado += 1;
-  const escrita = dataDaCasa(esperado);
-  if (!naCabeca) falhas.push(`${claim.id}: falta o estado na cabeça, ao pé do selo.`);
-  if (!noRecibo) falhas.push(`${claim.id}: falta o estado no bloco das verificações.`);
-  /* A DATA MEDE-SE DENTRO DOS DOIS ELEMENTOS DO ESTADO, e não na página inteira.
-     A primeira redacção desta régua procurava a forma ISO em todo o HTML e ficou
-     vermelha nas quatro linhas da DGCP por uma razão que não é um defeito: o
-     recibo rende `verifications.N.date` como CAMPO DO LIVRO-RAZÃO, em ISO e
-     dentro de um `data-linha-campo`, porque é isso que o portão de HTML compara
-     carácter a carácter com o livro. Uma régua que confundisse o dado com a
-     superfície mandava mudar a coisa certa. */
-  for (const [onde, marca] of [
-    ['a cabeça', 'linha-selo-estado'],
-    ['o recibo', 'linha-sem-resposta'],
-  ]) {
-    const bloco = recorte(html, marca);
-    if (bloco === null) continue; /* a falta já foi dita acima */
-    if (!bloco.includes(escrita)) {
-      falhas.push(
-        `${claim.id}: ${onde} não escreve «${escrita}». O ficheiro gerado diz ` +
-          `«${esperado}» e a regra da casa escreve-a «${escrita}». Rendido: ${bloco}`,
-      );
-    }
-    if (bloco.includes(esperado)) {
-      falhas.push(
-        `${claim.id}: ${onde} sai em ISO («${esperado}») e a regra da casa é dd.mm.aaaa.`,
-      );
+}
+
+/* ------------------------------------------- as linhas de proveniência incompleta
+ *
+ * MAJOR 8. Os dois relatórios afirmavam que as cinco linhas sem endereço levam
+ * `noindex` e ficam fora do mapa do sítio, e nada o conferia. Confere-se agora,
+ * e sobre o `dist/` construído: a régua da proveniência incompleta é a mesma que
+ * o `filter` do `astro.config.mjs` e o `noindex` do `LinhaView` leem, e o que
+ * aqui se prova é que as três leituras dizem o mesmo.
+ */
+const MAPA = path.join(DIST, 'sitemap-0.xml');
+if (!fs.existsSync(MAPA)) {
+  falhas.push(`não há ${MAPA}: sem o mapa do sítio não se pode conferir quem está fora dele.`);
+} else {
+  const mapa = fs.readFileSync(MAPA, 'utf8');
+  var incompletas = 0;
+  for (const claim of claims) {
+    const dentro = mapa.includes(`/livro-razao/${claim.id}`);
+    const pagina = path.join(DIST, 'livro-razao', claim.id, 'index.html');
+    /* A FALTA JÁ FOI DITA ACIMA, e aqui não se lê um ficheiro que não existe: um
+       portão que rebenta com uma excepção não diz o que falhou, diz que ele
+       próprio falhou. Foi assim que a planta da página em falta ficou muda na
+       primeira corrida. */
+    if (!fs.existsSync(pagina)) continue;
+    const html = fs.readFileSync(pagina, 'utf8');
+    const semIndice = html.includes('name="robots"') && html.includes('noindex');
+    if (provenienciaIncompleta(claim)) {
+      incompletas += 1;
+      if (dentro) falhas.push(`${claim.id}: proveniência incompleta e no mapa do sítio.`);
+      if (!semIndice) falhas.push(`${claim.id}: proveniência incompleta e sem noindex.`);
+    } else {
+      if (!dentro) falhas.push(`${claim.id}: proveniência completa e fora do mapa do sítio.`);
+      if (semIndice) falhas.push(`${claim.id}: proveniência completa e com noindex.`);
     }
   }
 }
 
 console.log(
-  `  ${paginasLidas} página(s) de linha lidas em ${DIST} (${semPagina} linha(s) sem página).`,
+  `  ${paginasLidas} página(s) de linha lidas em ${DIST}, nas duas edições ` +
+    `(${claims.length} linha(s) × ${Object.keys(ROTULOS).length}).`,
 );
 console.log(
-  `  ${comEstado} linha(s) devem mostrar «sem resposta desde» · ${semEstado} não devem.`,
+  `  ${comEstado} linha(s) devem mostrar o estado da fonte · ${semEstado} não devem · ` +
+    `${incompletas ?? 0} de proveniência incompleta, fora do mapa e com noindex.`,
 );
 console.log(
-  `  endereços calados: ${Object.keys(FONTES_SEM_RESPOSTA ?? {}).length} · ` +
-    `anfitriões calados: ${Object.keys(ANFITRIOES_SEM_RESPOSTA ?? {}).length}`,
+  `  endereços em falha: ${Object.keys(FONTES_SEM_RESPOSTA ?? {}).length} · ` +
+    `anfitriões em falha: ${Object.keys(ANFITRIOES_SEM_RESPOSTA ?? {}).length}`,
 );
 
 if (falhas.length > 0) {
-  console.error(`\nSEM-RESPOSTA: FAIL — ${falhas.length} problema(s) de ${paginasLidas} páginas`);
+  console.error(`\nFONTES: FAIL — ${falhas.length} problema(s) de ${paginasLidas} páginas`);
   for (const f of falhas.slice(0, 20)) console.error(' -', f);
   if (falhas.length > 20) console.error(` … e mais ${falhas.length - 20}`);
   process.exit(1);
 }
-console.log(`\nSEM-RESPOSTA: PASS — ${paginasLidas * 2} conferências (o estado e a sua ausência, em cada página)`);
+console.log(
+  `\nFONTES: PASS — ${paginasLidas * 2 + claims.length * 2} conferências ` +
+    `(o estado e a sua ausência em cada página das duas edições, e o mapa do sítio)`,
+);

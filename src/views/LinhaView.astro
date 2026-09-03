@@ -294,20 +294,85 @@ const verificacoes = verificacoesDaLinha(claim).slice(0, VERIFICACOES_MOSTRADAS)
  * o tira: o fragmento não vai no pedido, e o anfitrião de um endereço é o mesmo
  * com ou sem ele.
  */
-function estadoDoAnfitriaoDaLinha(sourceUrl) {
+function anfitriaoDe(sourceUrl) {
   if (typeof sourceUrl !== 'string' || !sourceUrl.startsWith('http')) return null;
-  let anfitriao;
   try {
-    anfitriao = new URL(sourceUrl.split('#')[0]).host;
+    return new URL(sourceUrl.split('#')[0]).host;
   } catch {
     /* Um endereço que não se lê não tem anfitrião, e não se adivinha um. */
     return null;
   }
+}
+
+function estadoDoAnfitriaoDaLinha(sourceUrl) {
+  if (typeof sourceUrl !== 'string' || !sourceUrl.startsWith('http')) return null;
+  const anfitriao = anfitriaoDe(sourceUrl);
+  if (anfitriao === null) return null;
   const estado = ANFITRIOES_SEM_RESPOSTA?.[anfitriao] ?? null;
   return estado === null ? null : { ...estado, anfitriao };
 }
 
 const fonteSemResposta = estadoDaFonte(claim.source_url) ?? estadoDoAnfitriaoDaLinha(claim.source_url);
+
+/**
+ * O RÓTULO DO ESTADO, e é um de dois (03.09.2026, segunda passagem, Major 4).
+ *
+ * «Sem resposta desde» é a fonte que não atendeu; «Respondeu com erro desde» é
+ * a fonte que atendeu e cuja resposta não é 2xx nem 304. Chamar «sem resposta»
+ * a um 404 diria ao leitor que a fonte se calou, quando o que ela fez foi mudar
+ * o endereço. O ficheiro gerado traz o estado por palavra (`estado`); as
+ * entradas escritas antes desta data não o trazem, e a falta lê-se pelo que ela
+ * é: o que a casa sabia então era só «não se leu», e a palavra mais fraca das
+ * duas é a que não afirma a mais forte.
+ */
+const rotuloDoEstado =
+  fonteSemResposta?.estado === 'respondeu-com-erro'
+    ? s.livro.linha.respondeuComErroK
+    : s.livro.linha.semRespostaK;
+
+/**
+ * QUEM OBSERVOU A FALHA (Major 5). «A DGAL não responde» e «a DGAL não
+ * respondeu a esta máquina» são duas frases diferentes, e só a segunda é
+ * verdade: o mesmo endereço responde ao portátil do diretor e não responde ao
+ * IP do runner do GitHub, medido a 01.09.2026. Quando o índice do arquivo sabe
+ * a máquina, a página nomeia-a; quando não sabe (as linhas escritas antes de o
+ * campo existir), diz o que sabe, que é que quem perguntou foi o corredor.
+ */
+const quemObservou = fonteSemResposta?.maquina
+  ? `${s.livro.linha.aEstaMaquinaK}: ${fonteSemResposta.maquina}`
+  : s.livro.linha.aoCorredorK;
+
+/**
+ * A ÚLTIMA CONFERÊNCIA QUE CORREU BEM, para o selo não parecer fresco ao lado
+ * de uma fonte que deixou de responder (Major 5).
+ *
+ * O selo é a porta para a prova, e sozinho ao lado de um número lê-se como
+ * «isto está conferido». A cabeça passa a mostrar as duas datas no MESMO bloco:
+ * quando é que esta linha foi relida com êxito pela última vez, e desde quando
+ * é que a fonte dela falha. Um leitor não pode ver uma sem a outra.
+ *
+ * `null` quando nunca houve uma conferência boa, e aí não há data que mostrar:
+ * o que fica é a falha, sozinha, que é ainda mais claro.
+ */
+const ultimaConferenciaBoa =
+  verificacoesDaLinha(claim).find((v) => v.result === 'igual')?.date ?? null;
+
+/**
+ * A DATA DE UMA CÓPIA ARQUIVADA, tirada do próprio endereço (Major 9).
+ *
+ * Uma conferência do corredor contra `web.archive.org` prova uma coisa
+ * precisa: que os bytes da CÓPIA continuam a dar o resumo que a linha declara.
+ * Não prova que a fonte viva ainda serve o mesmo ficheiro, e no caso das cinco
+ * linhas do PRR ela não serve mesmo (§1.49). O recibo tem de dizer contra o
+ * quê a leitura foi feita, e a data do instantâneo está no endereço do arquivo,
+ * nos catorze algarismos do carimbo.
+ */
+function copiaArquivadaDe(caminho) {
+  const m = /^https?:\/\/(?:web\.archive\.org|archive\.org)\/web\/(\d{4})(\d{2})(\d{2})\d*/.exec(
+    String(caminho ?? ''),
+  );
+  return m === null ? null : `${m[3]}.${m[2]}.${m[1]}`;
+}
 
 /** As linhas da ficha que existem nesta afirmação. Uma linha a null não se mostra. */
 const ficha = [
@@ -541,8 +606,22 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
         uma data de conferência: ela não é um algarismo do livro-razão. */}
     {fonteSemResposta && (
       <p class="linha-selo-estado">
-        <span class="linha-campo-k">{s.livro.linha.semRespostaK}</span>{' '}
+        {ultimaConferenciaBoa && (
+          <>
+            <span class="linha-campo-k">{s.livro.linha.reconferidoK}</span>{' '}
+            <CampoDaLinha
+              id={id}
+              campo={`verifications.${verificacoesDaLinha(claim).find((v) => v.result === 'igual').__n}.date`}
+              valor={ultimaConferenciaBoa}
+              lang={lang}
+            />
+            {' · '}
+          </>
+        )}
+        <span class="linha-campo-k">{rotuloDoEstado}</span>{' '}
         <span data-nonledger="data-da-conferencia">{dataDaCasa(fonteSemResposta.desde)}</span>
+        {' · '}
+        <span data-nonledger="data-da-conferencia">{quemObservou}</span>
       </p>
     )}
     {/* O IDENTIFICADOR, COM O SEU RÓTULO (bloco B, item B7; achado C13).
@@ -1021,7 +1100,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
               ------------------------------------------------------------ */}
           {fonteSemResposta && (
             <>
-              <dt>{s.livro.linha.semRespostaK}</dt>
+              <dt>{rotuloDoEstado}</dt>
               <dd class="linha-sem-resposta">
                 {/* dd.mm.aaaa, pela regra da casa (`src/lib/datas.mjs`): «as
                     datas escrevem-se dd.mm.aaaa em todo o lado, uma regra só».
@@ -1030,6 +1109,8 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                 <span data-nonledger="data-da-conferencia">
                   {dataDaCasa(fonteSemResposta.desde)}
                 </span>
+                {' · '}
+                <span data-nonledger="data-da-conferencia">{quemObservou}</span>
               </dd>
             </>
           )}
@@ -1080,6 +1161,20 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                         </>
                       )}
                     </span>{' '}
+                    {/* O QUE FOI LIDO, quando não foi a fonte viva (Major 9).
+                        Uma conferência contra `web.archive.org` prova que os
+                        bytes da CÓPIA continuam a dar o resumo que a linha
+                        declara; não prova que o publicador ainda serve o mesmo
+                        ficheiro. O recibo diz contra o quê a leitura foi feita,
+                        com a data do instantâneo, que está no próprio endereço. */}
+                    {copiaArquivadaDe(v.path) && (
+                      <>
+                        <span data-nonledger="data-da-conferencia">
+                          {s.livro.linha.contraCopiaArquivadaK}{' '}
+                          {copiaArquivadaDe(v.path)}
+                        </span>{' '}
+                      </>
+                    )}
                     <a class="ligacao-externa" href={v.path} rel="noopener noreferrer external">
                       {s.livro.linha.verificacaoPorta} →
                     </a>
