@@ -178,10 +178,10 @@
    A RAZÃO É ESTRUTURAL E NÃO UM ERRO DE ESCRITA: na página de amostra, 12 das
    16 ligações fora de tabela quebram em 2 a 7 linhas — a etiqueta é o próprio
    endereço, «283 caracteres na mais longa» — e um `::after` centrado num
-   elemento em linha que quebra não
-   fica centrado sobre nenhuma das linhas em particular: o navegador ancora-o à
-   caixa gerada inteira, e o seu centro cai algures entre a primeira e a
-   última, não onde o dedo vê a palavra. É a mesma técnica que funciona no
+   elemento em linha que quebra não fica centrado sobre nenhuma das linhas em
+   particular: o navegador ancora-o à caixa gerada inteira, e o seu centro cai
+   algures entre a primeira e a última, não onde o dedo vê a palavra. É a
+   mesma técnica que funciona no
    selo da casa (`site.css`, A10) precisamente porque um selo NUNCA quebra —
    «fonte · <estudo>» é uma etiqueta curta e fixa — e essa condição, medida
    agora, não vale para o endereço de uma ligação. As que não quebram também
@@ -269,20 +269,20 @@
   margin-left: 0.35em;
 }
 /* O ALVO DO SELO NO CORPO TRANSCRITO (Blocking 3, F1.9a segunda passagem,
- * 03.09.2026). `site.css` já reduz `.texto-artigo a.src-chip::after` à área
- * da própria linha, sem medição própria desta rota: era a exceção do
- * `.brief-text` aplicada aqui por semelhança. MEDIDO nas oito páginas, com o
- * acerto do navegador (`elementFromPoint`) e não só a área: dos 196 selos do
- * corpo (101 fora de tabela, 95 dentro), crescer os 101 de fora para 44px dá
- * 87 alvos limpos e 14 com problema — todos pela mesma razão, o rótulo
- * («fonte · <estudo>») a quebrar em duas linhas quando o título do estudo é
- * longo, o que acontece em 13 dos 101. Os 95 de dentro de tabela FICAM SEM
- * TENTAR: a mesma entrelinha apertada (13,5px de corpo, 1,45 de entrelinha)
- * que já impede as portas de figura de crescerem em tabela impediria o
- * selo pela mesma conta, e não se mede o que não se muda. Os 101 de fora
- * crescem em geral e reduzem-se de volta aqui, dentro de tabela, à área da
- * sua linha. A régua (`tests/texto/indice.mjs`, I9) confere a contagem dos
- * 101 a cada corrida, com o resíduo de 14 escrito a um número exato. */
+   03.09.2026). `site.css` já reduz `.texto-artigo a.src-chip::after` à área
+   da própria linha, sem medição própria desta rota: era a exceção do
+   `.brief-text` aplicada aqui por semelhança. MEDIDO nas oito páginas, com o
+   acerto do navegador (`elementFromPoint`) e não só a área: dos 196 selos do
+   corpo (101 fora de tabela, 95 dentro), crescer os 101 de fora para 44px dá
+   87 alvos limpos e 14 com problema — todos pela mesma razão, o rótulo
+   («fonte · <estudo>») a quebrar em duas linhas quando o título do estudo é
+   longo, o que acontece em 13 dos 101. Os 95 de dentro de tabela FICAM SEM
+   TENTAR: a mesma entrelinha apertada (13,5px de corpo, 1,45 de entrelinha)
+   que já impede as portas de figura de crescerem em tabela impediria o
+   selo pela mesma conta, e não se mede o que não se muda. Os 101 de fora
+   crescem em geral e reduzem-se de volta aqui, dentro de tabela, à área da
+   sua linha. A régua (`tests/texto/indice.mjs`, I9) confere a contagem dos
+   101 a cada corrida, com o resíduo de 14 escrito a um número exato. */
 .texto-artigo a.src-chip::after {
   width: 100%;
   min-width: 44px;
