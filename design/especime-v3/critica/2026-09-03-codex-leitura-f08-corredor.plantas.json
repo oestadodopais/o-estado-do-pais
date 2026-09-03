@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-03T01:36:22+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/78714fcd-9d7a-49ae-92d0-914347b16683/scratchpad/leituras/f08-pacote",
+ "plantas": [
+  {
+   "id": "P1a",
+   "ficheiro": "corredor.py",
+   "descricao": "o disjuntor deixa de disparar por ReadTimeout, que é o caso da DGAL (cópia inteira)",
+   "sha256_antes": "c39ef564536fbed4cae8ba1cc46579a0bed1e664b98658844e9faf5ae15a1427",
+   "sha256_depois": "f09e7d5e1ea6b651330ff2863e3bbb46672bab15e73addef44ba7a57eb2bba58",
+   "contexto_antes": "RAS; um aperto de mão\n# que falha depressa não é uma espera.\nERROS_DE_SILENCIO = (\n    # requests: o publicador aceitou a ligação e não mandou os bytes a tempo\n    \"ReadTimeout\", \"ConnectTimeout\", \"Timeout\", \"ConnectionError\",\n    # requests: nem a ligação se fez (nome que não resolve, porta fechada)\n    \"ProxyError\", \"ChunkedEncodingError\",\n)\n\n\ndef e_silencio(erro: str | None) -> bo",
+   "contexto_depois": "RAS; um aperto de mão\n# que falha depressa não é uma espera.\nERROS_DE_SILENCIO = (\n    # requests: o publicador aceitou a ligação e não mandou os bytes a tempo\n    \"ConnectTimeout\", \"Timeout\", \"ConnectionError\",\n    # requests: nem a ligação se fez (nome que não resolve, porta fechada)\n    \"ProxyError\", \"ChunkedEncodingError\",\n)\n\n\ndef e_silencio(erro: str | None) -> bo"
+  },
+  {
+   "id": "P1b",
+   "ficheiro": "diff-motor.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff",
+   "sha256_antes": "1d0eebe000e96a98291798edd31a62d7a8d223895426f84d4f36cb65e15c8670",
+   "sha256_depois": "e3d9555fa56342d135599584d503472eeec17f13bc0c984ba45303ec1ec276ae",
+   "contexto_antes": "; um aperto de mão\n+# que falha depressa não é uma espera.\n+ERROS_DE_SILENCIO = (\n+    # requests: o publicador aceitou a ligação e não mandou os bytes a tempo\n+    \"ReadTimeout\", \"ConnectTimeout\", \"Timeout\", \"ConnectionError\",\n+    # requests: nem a ligação se fez (nome que não resolve, porta fechada)\n+    \"ProxyError\", \"ChunkedEncodingError\",\n+)\n+\n+\n+def e_silencio(erro: str | None)",
+   "contexto_depois": "; um aperto de mão\n+# que falha depressa não é uma espera.\n+ERROS_DE_SILENCIO = (\n+    # requests: o publicador aceitou a ligação e não mandou os bytes a tempo\n+    \"ConnectTimeout\", \"Timeout\", \"ConnectionError\",\n+    # requests: nem a ligação se fez (nome que não resolve, porta fechada)\n+    \"ProxyError\", \"ChunkedEncodingError\",\n+)\n+\n+\n+def e_silencio(erro: str | None)"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "http.py",
+   "descricao": "o User-Agent da casa volta a disfarçar-se de navegador (cópia inteira de http.py)",
+   "sha256_antes": "ef9969dd5e917afe6bca5495db74c7b7b5183f8e11b42d2120307524ef44d7fb",
+   "sha256_depois": "1dd8f5fb1a41942068acb1e4291fdf8cc4f96acd8f75c887144b286e1a18d608",
+   "contexto_antes": "da auditoria de 02.09). Uma casa\n# que publica a sua diligência não se disfarça de navegador, e um nome que se\n# declara em dois sítios acaba a ser dois nomes.\nCASA_UA = \"OEstadoDoPais/corredor\"\n\nDEFAULT_CACHE_DIR = Path.home() / \".cache\" / \"researchhub\"\n\n# --------------------------------------------------------- the host policy --\n#\n# One entry per n",
+   "contexto_depois": "da auditoria de 02.09). Uma casa\n# que publica a sua diligência não se disfarça de navegador, e um nome que se\n# declara em dois sítios acaba a ser dois nomes.\nCASA_UA = \"Mozilla/5.0 (compatible; OEstadoDoPais/corredor)\"\n\nDEFAULT_CACHE_DIR = Path.home() / \".cache\" / \"researchhub\"\n\n# --------------------------------------------------------- the host policy --\n#\n# One entry per n"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz que a conferência passou a 14,1 s numa frase e a 140,1 s nas outras",
+   "sha256_antes": "94192fad6ed8c5a2181a184c00be081d1b9cb75b932e269847796bf87ac2332b",
+   "sha256_depois": "1fe074d4aa950b717832fdbbc81ef03d9be6711483df5c6a9178cb0a1d348e3d",
+   "contexto_antes": "acima é inferido\nda duração dos trabalhos, e a base do cálculo está escrita.\n\n**Contra a corrida de 01.09** (`33559459861`, 31 m 42 s, vermelha): a conferência\npassou de **1 822,2 s a 140,1 s**, e a corrida inteira de 31 m 42 s a 17 m 18 s.\n\n### 7.2 O que a corrida mediu\n\n```\n79 endereço(s) de 79 · 2577 linha(s)\n0 a 304 · 0 a 200 igual · 0 a 200 novo ",
+   "contexto_depois": "acima é inferido\nda duração dos trabalhos, e a base do cálculo está escrita.\n\n**Contra a corrida de 01.09** (`33559459861`, 31 m 42 s, vermelha): a conferência\npassou de **1 822,2 s a 14,1 s**, e a corrida inteira de 31 m 42 s a 17 m 18 s.\n\n### 7.2 O que a corrida mediu\n\n```\n79 endereço(s) de 79 · 2577 linha(s)\n0 a 304 · 0 a 200 igual · 0 a 200 novo "
+  },
+  {
+   "id": "P2b",
+   "ficheiro": "diff-motor.patch",
+   "descricao": "a mesma planta do User-Agent na linha acrescentada do diff",
+   "sha256_antes": "e3d9555fa56342d135599584d503472eeec17f13bc0c984ba45303ec1ec276ae",
+   "sha256_depois": "b94fa3bc4738441609e3407749442ff177053e49977a52d5c61f8b525e1726f4",
+   "contexto_antes": " auditoria de 02.09). Uma casa\n+# que publica a sua diligência não se disfarça de navegador, e um nome que se\n+# declara em dois sítios acaba a ser dois nomes.\n+CASA_UA = \"OEstadoDoPais/corredor\"\n+\n DEFAULT_CACHE_DIR = Path.home() / \".cache\" / \"researchhub\"\n \n # --------------------------------------------------------- the host policy --\n@@ -338,7 +368,",
+   "contexto_depois": " auditoria de 02.09). Uma casa\n+# que publica a sua diligência não se disfarça de navegador, e um nome que se\n+# declara em dois sítios acaba a ser dois nomes.\n+CASA_UA = \"Mozilla/5.0 (compatible; OEstadoDoPais/corredor)\"\n+\n DEFAULT_CACHE_DIR = Path.home() / \".cache\" / \"researchhub\"\n \n # --------------------------------------------------------- the host policy --\n@@ -338,7 +368,"
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-03T01:33:51+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/78714fcd-9d7a-49ae-92d0-914347b16683/scratchpad/leituras/f07-pacote",
+ "plantas": [
+  {
+   "id": "P1a",
+   "ficheiro": "documentos.mjs",
+   "descricao": "a marca dos robôs passa a index em vez de noindex, contra o comentário e o relatório (cópia inteira)",
+   "sha256_antes": "fd114081f13d812a02ae891d1734601a806fb2baaa5173f4cf23b8aa8429b13f",
+   "sha256_depois": "c8a32e3c1ccaab1cc7ca854a2f78da1c1412184eb4851951c2d27627495fc159",
+   "contexto_antes": "que as\n * ligações que ele traz continuem a contar, porque o que aqui se recusa é a\n * indexação DESTE ficheiro e não a existência das fontes que ele cita.\n */\nexport const MARCA_DOS_ROBOS = '<meta name=\"robots\" content=\"noindex, follow\">';\n\n/**\n * As duas marcas que vivem ACIMA do `<body>`: a língua do `<html>` e a marca\n * dos robôs no `<head>`.\n *\n * A LÍNGUA SÓ ENTRA ONDE FALTA. Oito dos dezas",
+   "contexto_depois": "que as\n * ligações que ele traz continuem a contar, porque o que aqui se recusa é a\n * indexação DESTE ficheiro e não a existência das fontes que ele cita.\n */\nexport const MARCA_DOS_ROBOS = '<meta name=\"robots\" content=\"index, follow\">';\n\n/**\n * As duas marcas que vivem ACIMA do `<body>`: a língua do `<html>` e a marca\n * dos robôs no `<head>`.\n *\n * A LÍNGUA SÓ ENTRA ONDE FALTA. Oito dos dezas"
+  },
+  {
+   "id": "P1b",
+   "ficheiro": "diff-sitio.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff do sítio",
+   "sha256_antes": "137680b73cfd9332f8d0066fd7ec3515057438b1e24f1cf45560ad6f785b6764",
+   "sha256_depois": "4ba209265e7736858599c8e737e55d734793fc026179da68bfbdbbbe8f5526f0",
+   "contexto_antes": " as\n+ * ligações que ele traz continuem a contar, porque o que aqui se recusa é a\n+ * indexação DESTE ficheiro e não a existência das fontes que ele cita.\n+ */\n+export const MARCA_DOS_ROBOS = '<meta name=\"robots\" content=\"noindex, follow\">';\n+\n+/**\n+ * As duas marcas que vivem ACIMA do `<body>`: a língua do `<html>` e a marca\n+ * dos robôs no `<head>`.\n+ *\n+ * A LÍNGUA SÓ ENTRA ONDE FALTA. Oito dos",
+   "contexto_depois": " as\n+ * ligações que ele traz continuem a contar, porque o que aqui se recusa é a\n+ * indexação DESTE ficheiro e não a existência das fontes que ele cita.\n+ */\n+export const MARCA_DOS_ROBOS = '<meta name=\"robots\" content=\"index, follow\">';\n+\n+/**\n+ * As duas marcas que vivem ACIMA do `<body>`: a língua do `<html>` e a marca\n+ * dos robôs no `<head>`.\n+ *\n+ * A LÍNGUA SÓ ENTRA ONDE FALTA. Oito dos"
+  },
+  {
+   "id": "P2a",
+   "ficheiro": "portao-motor.yml",
+   "descricao": "o fluxo instala do requirements.txt e não do lock, contra o comentário e o relatório (cópia do fluxo)",
+   "sha256_antes": "4ef32ab1525d35d0d0ab122fe69c5795b9bc092d2a6bd8184147293e43da8487",
+   "sha256_depois": "5976d205c6d8daea4da80b4b2f48a1f90cecd60e2607064324ec25b1b21bfea9",
+   "contexto_antes": "uma\n      # máquina que é 3.14 e macOS.\n      - name: As dependências\n        run: |\n          set -euo pipefail\n          python3 -m pip install --upgrade pip\n          python3 -m pip install -r requirements.lock.txt\n\n      # O AMBIENTE DA CORRIDA, DITO EM VEZ DE SUPOSTO. Uma corrida verde por a\n      # máquina ter alguma coisa que ninguém declarou é uma corrida que não pro",
+   "contexto_depois": "uma\n      # máquina que é 3.14 e macOS.\n      - name: As dependências\n        run: |\n          set -euo pipefail\n          python3 -m pip install --upgrade pip\n          python3 -m pip install -r requirements.txt\n\n      # O AMBIENTE DA CORRIDA, DITO EM VEZ DE SUPOSTO. Uma corrida verde por a\n      # máquina ter alguma coisa que ninguém declarou é uma corrida que não pro"
+  },
+  {
+   "id": "P2b",
+   "ficheiro": "diff-motor.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff do motor",
+   "sha256_antes": "1b9d87d4348f5dc83193a2a24f8b5d477e2233b36baf4140de4caa3902f52289",
+   "sha256_depois": "041aa25a4a0b30cd7d2f2f2caf594176fea8fe24bd3c950e9e9760869b05c6a2",
+   "contexto_antes": "dependências\n         run: |\n           set -euo pipefail\n           python3 -m pip install --upgrade pip\n-          python3 -m pip install -r requirements.txt\n+          python3 -m pip install -r requirements.lock.txt\n \n       # O AMBIENTE DA CORRIDA, DITO EM VEZ DE SUPOSTO. Uma corrida verde por a\n       # máquina ter alguma coisa que ninguém declarou é uma corrida que não ",
+   "contexto_depois": "dependências\n         run: |\n           set -euo pipefail\n           python3 -m pip install --upgrade pip\n-          python3 -m pip install -r requirements.txt\n+          python3 -m pip install -r requirements.txt\n \n       # O AMBIENTE DA CORRIDA, DITO EM VEZ DE SUPOSTO. Uma corrida verde por a\n       # máquina ter alguma coisa que ninguém declarou é uma corrida que não "
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz que o lang faltava nos 16 documentos, e o diff só o acrescenta a 8",
+   "sha256_antes": "bd41e2a168821f05936d33c48d045a1655a1700d6c55122eff53ee521bd7f637",
+   "sha256_depois": "c9e873bed2fa76cb554f08e8ecff3afc49a76618b1448a000d1928adec1b51f6",
+   "contexto_antes": "nde. Os dois ramos ficam empurrados e por fundir, e nenhum deles tocou em `main` nem em `master`.\n- **A auditoria errou em dois números** que este bloco mediu: o `lang` faltava em 8 dos 16 documentos e não nos 16; os identificadores mortos eram 18 e não 12. As duas correcções estão nas §2.1 e §5.1.\n",
+   "contexto_depois": "nde. Os dois ramos ficam empurrados e por fundir, e nenhum deles tocou em `main` nem em `master`.\n- **A auditoria errou em dois números** que este bloco mediu: o `lang` faltava em 16 dos 16 documentos; os identificadores mortos eram 18 e não 12. As duas correcções estão nas §2.1 e §5.1.\n"
+  }
+ ]
+}
