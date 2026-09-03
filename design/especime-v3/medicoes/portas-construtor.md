@@ -475,10 +475,12 @@ Os ficheiros do sítio e das réguas, sem este relatório, sem as capturas e sem
 medições:
 
 ```
-git diff --stat d82bc4cf -- src/ tests/
-  → 12 ficheiros, 978 linhas acrescentadas e 40 tiradas
+git diff --stat d82bc4cf HEAD -- <os doze ficheiros do sítio e das réguas>
+  → 12 ficheiros, 1 008 linhas acrescentadas e 40 tiradas
 ```
 
 Um ficheiro novo (`src/components/Manchete.astro`) e onze mudados, dos quais dois
-são réguas. Ao todo, com o relatório, as quatro medições e as 30 capturas, 47
-ficheiros.
+são réguas. Ao todo, com o relatório, as quatro medições e as 30 capturas, **47
+ficheiros** deste bloco. O `git diff --name-only d82bc4cf HEAD` conta 49 fora dos
+ficheiros do F1.8, e os dois a mais são a fusão: `package.json` e
+`package-lock.json` chegam do outro lado.
