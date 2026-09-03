@@ -309,6 +309,24 @@ fundido quando o resto do bloco estiver pronto, entregas o bloco sem este item e
 o relatório di-lo». Não estava. **Nenhum ficheiro do F1.1 foi tocado.** O item
 faz-se numa passagem curta a seguir, com o SHA que o lugar de direção der.
 
+**A PORTA COMUM DAS DUAS ROTAS NOVAS, e é o achado que este bloco entrega sem a
+fechar.** `/dominios` e `/dominios/<slug>` estão no sitemap, têm canonical e
+hreflang, e uma abre a outra; mas **nenhuma página do sítio as abre**. O rodapé
+tem a regra escrita ao lado da sua própria lista: «o rodapé é o índice do sítio,
+e uma família de páginas que existe e não está nele é uma família sem porta
+comum: é a razão pela qual `/municipios` está aqui desde §1.36, e é a mesma»
+(`src/components/SiteFooter.astro`). Pela regra da casa, `dominios` pertence ali.
+
+**Não foi feito, e a razão é o contrato deste bloco.** O §4 do brief lista os
+ficheiros do F1.2, e `src/components/SiteFooter.astro` e as chaves `nav.*` não
+estão nele; o brief do F1.1 fala de pôr «Regiões, Distritos e Áreas no menu», e
+duas mãos na mobília de 7 222 páginas ao mesmo tempo é uma fusão a doer. **O
+conserto é de três linhas** e fica escrito para quem o fizer: uma entrada
+`['dominios', s.nav.dominios]` na lista `secoes` do rodapé, um par de chaves
+`nav.dominios` («Domínios» / «Domains») em `src/i18n/strings.mjs`, e as duas
+linhas correspondentes no inventário da voz, que já lá estão declaradas como
+`navegacao` por este bloco. Cabe na mesma passagem curta do item 9.
+
 **A leitura a frio e a medição cega** são de outra família e não deste
 construtor: a régua deste bloco (`tests/dominio/pagina.mjs`) é o
 conhecido-positivo do portão novo, e não substitui nenhuma das duas.
