@@ -61,6 +61,7 @@ import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
 import { estadoDaMedida } from '../lib/estado.mjs';
 import { concelhos, ledeDoPainel } from '../lib/inicio.mjs';
 import { slugsDasRegioes } from '../lib/regioes.mjs';
+import { dominioDaLinha } from '../lib/dominios.mjs';
 import { prova } from '../lib/prova.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -187,11 +188,48 @@ const sociais = FIGURAS_SOCIAL.map((f) => ({ ...f, linha: getClaim(f.claim) }));
  * como ficha: é a mesma conta que `Peca.astro` faz para escolher o corpo do
  * número, e não um algarismo novo na página.
  */
+/* ---------------------------------------------------------------------------
+ * O DESTINO DE UM CARTÃO, DECIDIDO NUM SÍTIO SÓ (F1.2b, item 1, 03.09.2026)
+ * ---------------------------------------------------------------------------
+ * Até aqui o destino era sempre a âncora da leitura breve daquela medida NESTA
+ * página. Passou a haver um segundo destino possível: a medida cuja linha
+ * pertence a um domínio COM PÁGINA leva à leitura daquela medida na página do
+ * domínio, que é onde ela vive com a sua fronteira, as suas três datas e a sua
+ * forma. Hoje são três das vinte e uma (a dívida pública, a taxa de emprego e a
+ * taxa de desemprego do Painel Social), e amanhã são as que a primeira vaga
+ * puser no ar, sem uma linha mudar aqui.
+ *
+ * QUEM DECIDE É `dominioDaLinha()`, EM `src/lib/dominios.mjs`, e é a única
+ * tabela: ela lê `dominiosComPagina()`, que é a mesma condição por que a página
+ * do domínio existe. Uma lista de ids escrita nesta vista era a promessa de
+ * apontar para uma página que não foi construída.
+ *
+ * A ÂNCORA DENTRO DO DOMÍNIO VAI JUNTO, e não é enfeite: é o mesmo achado que a
+ * segunda passagem do F1.2 escreveu para o índice dos domínios (Major 11, «a
+ * porta vai à secção, e não só ao topo da página»). Quem toca no cartão da
+ * dívida pública quer a dívida pública, e não o princípio de um domínio com dez
+ * medidas.
+ *
+ * O RÓTULO DO DESTINO É UMA PALAVRA QUE JÁ EXISTE. `s.dominios.eyebrow`
+ * («Domínios» / «Domains») é a sobrancelha da página do domínio e do índice
+ * deles, está declarada desde o F1.2 e é o que o leitor vê quando lá chega: o
+ * cartão diz para onde leva com a palavra que a página de chegada usa para se
+ * nomear. Nenhuma frase nova, e nada sobre a casa.
+ */
+const destinoDoCartao = (claim) => {
+  const dominio = dominioDaLinha(claim);
+  if (!dominio) return { destino: `#m-${claim}`, destinoRotulo: null };
+  return {
+    destino: `${routePath('dominio', lang, { slug: dominio.slug })}#${dominio.ancora}`,
+    destinoRotulo: s.dominios.eyebrow,
+  };
+};
+
 const cartaoDaMedida = (f, estado) => {
   const linha = getClaim(f.claim);
   return {
     id: f.claim,
-    ancora: `m-${f.claim}`,
+    ...destinoDoCartao(f.claim),
     nome: f.nome[lang],
     medida: f.medida[lang],
     estado,
@@ -360,7 +398,33 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
         rotulo={s.inicio.faixa.rotulo}
         cartoes={cartoes}
         total={cartoes.length}
-      />
+      >
+        {/* --------------------------------------------------------------
+            A FILA DOS ESTUDOS, LOGO DEPOIS DA FAIXA (F1.2b, item 4)
+            --------------------------------------------------------------
+            «Os estudos alcançáveis de `/` em um toque e a menos de ecrã e
+            meio a 390 × 664.» Até aqui o arquivo tinha duas portas nesta
+            página: a do menu, que abaixo de 640 px vive dentro de um
+            `<details>` fechado e custa DOIS toques, e a do rodapé, que está
+            no fim de uma página de perto de sete mil píxeis. A fila põe a
+            terceira onde a medida a pede, logo por baixo dos cartões.
+
+            É UMA PORTA E MAIS NADA, e isso é a disciplina e não pressa:
+            uma contagem ao lado dela («N trabalhos no arquivo») seria um
+            algarismo a mais nesta página, e uma frase a dizer o que o
+            arquivo é seria uma frase nova sobre a casa, que o §2 do brief
+            recusa. O texto é `s.estudos.h1`, que é o título da página de
+            chegada, declarado desde a etapa 3.
+
+            O BLOCO INTEIRO É A LIGAÇÃO, e por isso a régua da voz não o
+            recolhe: «uma ligação inteira não é uma frase, é um destino»
+            (`scripts/medir-defeitos.mjs`). Nenhuma cadeia nova entra no
+            inventário, porque nenhuma cadeia nova existe.
+            -------------------------------------------------------------- */}
+        <p class="inicio-estudos" slot="depois">
+          <a class="inicio-estudos-porta" href={routePath('estudos', lang)}>{s.estudos.h1}</a>
+        </p>
+      </Faixa>
 
       {/* ------------------------------------------------------------------
           AS DUAS GAVETAS DO MAPA (afinação 1 do brief)

@@ -66,6 +66,13 @@
  * A ORDEM É: valor, unidade colada, palavra, selo. A ressalva prende-se ao
  * valor, e a porta fecha a unidade.
  *
+ * `plano`, sem invólucro. Só para quem PÕE O SELO NOUTRO SÍTIO DO MESMO PAI,
+ * que hoje é uma coisa só: a manchete de um lugar (`Manchete.astro`, F1.2b).
+ * `auditaSelo()` procura o selo dentro do pai do elemento do valor; com o
+ * invólucro pelo meio, o pai passava a ser o invólucro e a construção fechava.
+ * Não dispensa nada: quem usa este modo continua a ter de pôr o selo, e é o
+ * portão que lho cobra. A ordem dos filhos é a mesma das outras formas.
+ *
  * O QUE ELA NÃO FAZ, e fica escrito: dentro de um `<svg>` não entra. Um
  * `<span>` não é filho legítimo de um `<text>`, e o `<tspan>` que o substituiria
  * teria de ser posicionado pelo instrumento que o desenha, e não por este
@@ -80,6 +87,7 @@ import Provenance from './Provenance.astro';
 const {
   id,
   chip = false,
+  plano = false,
   lang,
   class: klass = '',
   as = 'span',
@@ -159,7 +167,39 @@ const estilo = escala
 ---
 
 {
-  chip ? (
+  plano && !chip ? (
+    /* ------------------------------------------------------------------------
+       O MODO PLANO: SEM INVÓLUCRO, PORQUE O SELO ESTÁ NOUTRO SÍTIO DO MESMO PAI
+       ------------------------------------------------------------------------
+       Existe para a MANCHETE (F1.2b, item 3, 03.09.2026). Ali o selo sai da
+       frase e vai para o fim do `<h1>`, e `auditaSelo()` procura-o dentro do PAI
+       do elemento do valor: com o invólucro `<span class="claim">` pelo meio, o
+       pai passava a ser o invólucro, que não tem selo nenhum lá dentro, e a
+       construção fechava com «o valor da afirmação aparece sem selo».
+
+       O QUE ELE NÃO DISPENSA. Nada: quem chama assume que o selo daquela linha
+       está no MESMO pai, e é o portão que o exige. Um chamador que se esqueça
+       vê a construção fechar com a mensagem de sempre, e é por isso que este
+       modo não abre buraco nenhum.
+
+       A ORDEM É A MESMA DAS OUTRAS FORMAS (valor, unidade colada, palavra), e é
+       essa a razão de este ramo viver aqui e não na vista: a §11 escreve a ordem
+       uma vez, e uma segunda composição fora deste componente podia escrevê-la
+       ao contrário sem nada cair.
+
+       O `nowrap` DO INVÓLUCRO NÃO SE PERDE onde ele importa: `.cabeca-h1
+       .claim-value` declara-o na folha, e entre o valor e o `%` não há
+       oportunidade de quebra nenhuma para o navegador (o símbolo colado a um
+       número é a classe PO da UAX #14). Medido na manchete das duas edições a
+       390 px. */
+    <>
+      <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
+        {valor}
+      </Tag>
+      {sufixo && <span class="claim-sufixo" set:text={sufixo} />}
+      {provisorio && <span class="claim-provisorio">{s.prov.provisorio}</span>}
+    </>
+  ) : chip ? (
     <span class:list={['claim', 'claim-com-chip', provisorio && 'claim-com-provisorio']}>
       <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
         {valor}

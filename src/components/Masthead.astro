@@ -100,6 +100,27 @@ const agenda = routePath('agenda', lang);
  * tocou; o brief da porta da frente decide pagá-lo, porque abaixo de 640 a fila
  * vive dentro do `<details>` do menu e não custa uma linha ao ecrã de entrada.
  */
+/* ---------------------------------------------------------------------------
+ * «DOMÍNIOS» ENTRA NO MENU (F1.2b, item 2, 03.09.2026)
+ * ---------------------------------------------------------------------------
+ * As páginas dos domínios existem desde o F1.2 (03.09.2026) e tinham porta
+ * comum no rodapé e mais lado nenhum: o próprio relatório daquele bloco escreveu
+ * o conserto e a razão de o não fazer ali («duas mãos na mobília de 7 222
+ * páginas ao mesmo tempo é uma fusão a doer»). É a mesma regra que trouxe as
+ * regiões, os distritos e as áreas no F1.1: uma família de páginas que o menu
+ * não nomeia é uma família que o leitor não sabe que existe.
+ *
+ * O LUGAR É DEPOIS DO TERRITÓRIO E ANTES DOS TRABALHOS, e segue a gramática que
+ * o F1.1 escreveu para esta fila: primeiro as quatro maneiras de cortar o país
+ * (concelhos, regiões, distritos, áreas), depois as maneiras de cortar a
+ * MATÉRIA (os domínios), e só então o que não é nem uma coisa nem outra. A fila
+ * passa de onze a doze posições, e a §1.51 fica emendada pela segunda vez com a
+ * mesma razão: a fila tem tantas posições quantos os índices do sítio.
+ *
+ * A CADEIA JÁ EXISTIA. `nav.dominios` («Domínios» / «Domains») foi declarada
+ * pelo F1.2 para o rodapé, nas duas edições, com a nota que dizia «o menu do
+ * cabeçalho fica para depois do F1.1». Ficou, e é este o commit.
+ */
 const OITAVO_ITEM = 'correcoes';
 const ROTAS_NAV = [
   'home',
@@ -107,6 +128,7 @@ const ROTAS_NAV = [
   'regioes',
   'distritos',
   'areas',
+  'dominios',
   'estudos',
   'livro',
   'agenda',
@@ -120,6 +142,7 @@ const ETIQUETA_NAV = {
   regioes: 'regioes',
   distritos: 'distritos',
   areas: 'areas',
+  dominios: 'dominios',
   estudos: 'estudos',
   livro: 'livro',
   agenda: 'agenda',

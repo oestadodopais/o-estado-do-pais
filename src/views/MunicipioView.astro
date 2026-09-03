@@ -37,6 +37,7 @@ import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
 import Provenance from '../components/Provenance.astro';
 import Frase from '../components/Frase.astro';
+import Manchete from '../components/Manchete.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import CabecaDoLugar from '../components/inicio/CabecaDoLugar.astro';
 import Faixa from '../components/inicio/Faixa.astro';
@@ -205,15 +206,24 @@ const NOME_DO_PAIS = 'Portugal';
    concelho. */
 const populacao = pecas.find((t) => !t.vazia && /-populacao-/.test(String(t.claim)));
 
+/* A POSIÇÃO DE CADA CARTÃO ENTRA NA FAIXA DO CONCELHO (F1.2b, item 3,
+   03.09.2026). O ordinal é o índice na lista que a faixa rende e o total é o
+   comprimento dessa mesma lista, contados aqui e não escritos: são a numeração
+   desta faixa, e não a da primeira página. O F1.1 escreveu «1 de 21» só na
+   primeira página porque esta vista era do F1.2 e corria em paralelo; escrever
+   «de 21» aqui teria sido um algarismo certo noutra página e errado nesta, e é
+   por isso que cada faixa conta a sua. */
 const cartoes = pecas
   .filter((tile) => !tile.vazia)
-  .map((tile) => ({
+  .map((tile, i) => ({
     id: tile.claim,
-    ancora: `m-${tile.claim}`,
+    /* A leitura breve daquela medida vive por baixo, nesta mesma página. */
+    destino: `#m-${tile.claim}`,
     nome: tile.nome[lang],
     medida: tile.medida[lang],
     estado: tile.estado,
     glifos: [...String(tile.linha.value)].length,
+    posicao: i + 1,
   }));
 
 /* --- os trabalhos sobre o concelho ---------------------------------------
@@ -482,16 +492,37 @@ const metodoPath = routePath('metodo', lang);
             {m.regiao ? ` · ${m.regiao[lang] ?? m.regiao.pt}` : ''}
           </span>
         </p>
+        {/* O SELO SAI DE DENTRO DA FRASE (F1.2b, item 3, 03.09.2026). Era um
+            `<Claim chip>` no meio da manchete, e o texto do selo ficava entre o
+            número e a palavra a seguir: medido no HTML construído, a manchete
+            de Évora lia-se «Évora tem 58 567fonte · Évora — Economia,
+            Investidores, Portas Abertas 2026 pessoas.». O item 9 do
+            `BRIEF-F1.1-porta-da-frente.md` manda o contrário («a manchete é uma
+            frase; o selo vai ao pé do número, na linha de baixo»), e o F1.1 não
+            o pôde construir porque esta vista era do F1.2.
+
+            O TEXTO DA MANCHETE NÃO MUDA UM CARÁCTER, que é o que aquele item
+            também manda: as duas cadeias são as mesmas, o valor é o mesmo, e o
+            que se move é a posição de um `<a>`. O nome do concelho fica onde
+            estava, declarado como lugar, e a frase começa a seguir a ele. */}
         <h1 class="cabeca-h1">
           <span data-lugar>{nome}</span>
-          {s.municipio.mancheteA}
-          <Claim id={populacao.claim} lang={lang} chip={true} />
-          {s.municipio.mancheteB}
+          <Manchete
+            partes={[s.municipio.mancheteA, { claim: populacao.claim }, s.municipio.mancheteB]}
+            lang={lang}
+          />
         </h1>
       </div>
     </div>
 
-    <Faixa slot="faixa" s={s} lang={lang} rotulo={s.inicio.faixa.rotulo} cartoes={cartoes} />
+    <Faixa
+      slot="faixa"
+      s={s}
+      lang={lang}
+      rotulo={s.inicio.faixa.rotulo}
+      cartoes={cartoes}
+      total={cartoes.length}
+    />
 
     <MapaRespira
       slot="instrumento"

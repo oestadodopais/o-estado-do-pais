@@ -1,0 +1,101 @@
+---
+/**
+ * A MANCHETE DE UM LUGAR · a frase, e os selos ao pé dela, fora dela.
+ *
+ * ---------------------------------------------------------------------------
+ * O DEFEITO QUE ELE FECHA (F1.2b, item 3, 03.09.2026)
+ * ---------------------------------------------------------------------------
+ * A manchete da página do domínio lia-se assim num leitor de ecrã, medido no
+ * HTML construído a 03.09.2026:
+ *
+ *   «A dívida pública é 89,7%fonte · Quadro institucional de indicadores do
+ *    PIB, fora do limiar de 60%; …»
+ *
+ * O texto do selo («fonte · <nome do trabalho>») estava DENTRO da frase, entre
+ * o número e a palavra seguinte, e a frase deixava de ser uma frase para quem a
+ * ouve. A mesma coisa acontecia na manchete de cada um dos 308 concelhos
+ * («Évora tem 58 567fonte · Évora — Economia… pessoas.») e na de cada região.
+ *
+ * A FORMA QUE O F1.1 DEU À MANCHETE DO PAÍS é a que este componente generaliza:
+ * o `<h1>` é a frase, e mais nada; a porta do número fica ao pé dele, mas fora
+ * dela. Na manchete do país isso saiu de graça, porque os dois algarismos são
+ * contagens do próprio sítio (`ValorDaProva`), que são elas próprias a porta e
+ * não levam selo; aqui os números são linhas do livro-razão, e a porta é o selo.
+ *
+ * ---------------------------------------------------------------------------
+ * PORQUE É QUE OS SELOS FICAM DENTRO DO `<h1>`, NO FIM, E NÃO DEPOIS DELE
+ * ---------------------------------------------------------------------------
+ * Não é gosto: é o portão. `auditaSelo()` (`scripts/gate-html.mjs`) exige que o
+ * selo de um valor esteja dentro do PAI do elemento que leva o `data-claim`,
+ * «o selo é do VALOR e não da secção», e é essa regra que impede um selo no
+ * fim da página de passar por porta de um número que está no princípio. Um selo
+ * num `<p>` a seguir ao `</h1>` deixava de estar no pai do valor, e a construção
+ * fechava.
+ *
+ * A saída é a que a regra permite sem se enfraquecer: o valor é filho DIRETO do
+ * `<h1>` (é para isso que `<Claim plano/>` existe) e os selos são o último filho
+ * do mesmo `<h1>`. O pai é o mesmo, o portão continua a exigir o que exigia, e a
+ * frase lê-se inteira antes de qualquer selo. Na folha, `.manchete-selos` é um
+ * bloco, e por isso o que se vê é a frase e, na linha de baixo, os selos ao pé
+ * do número, que é o que o `BRIEF-F1.1-porta-da-frente.md` (item 9) desenha.
+ *
+ * ---------------------------------------------------------------------------
+ * NENHUMA CADEIA NOVA, NENHUM ALGARISMO NOVO
+ * ---------------------------------------------------------------------------
+ * Este componente não escreve uma palavra: recebe os mesmos pedaços que
+ * `Frase.astro` recebia e rende os mesmos elementos, pela mesma ordem, com os
+ * selos noutro sítio do mesmo pai. O que muda é a posição de um `<a>`.
+ *
+ * UM PEDAÇO QUE ELE NÃO CONHEÇA FECHA A CONSTRUÇÃO. `Frase.astro` conhece oito
+ * formas de pedaço e uma manchete usa quatro; um pedaço de outra forma que
+ * chegasse aqui seria rendido como contexto estrutural sem motivo declarado,
+ * silenciosamente. A exceção nomeia a chave, como as de `Claim.astro`.
+ */
+import Claim from './Claim.astro';
+import Provenance from './Provenance.astro';
+
+const { partes, lang } = Astro.props;
+
+if (!lang) throw new Error('<Manchete> sem "lang". A língua é obrigatória, como em <Claim>.');
+
+/* AS LINHAS CITADAS, PELA ORDEM EM QUE A FRASE AS CITA, E SEM REPETIÇÃO. Uma
+   manchete pode citar a mesma linha duas vezes (nenhuma o faz hoje); dois selos
+   iguais lado a lado seriam duas portas para a mesma divisão, e a régua dos
+   alvos conta-os como duas áreas. */
+const citadas = [
+  ...new Set(
+    partes
+      .filter((/** @type {*} */ p) => p && typeof p === 'object' && p.claim)
+      .map((/** @type {*} */ p) => p.claim),
+  ),
+];
+---
+
+<Fragment>
+  {
+    partes.map((parte) => {
+      if (typeof parte === 'string') return <Fragment set:text={parte} />;
+      /* O VALOR VAI SEM INVÓLUCRO (`plano`), para que o pai dele seja o `<h1>` e
+         o portão encontre o selo no fim dele. Ver a nota do cabeçalho. */
+      if (parte.claim)
+        return <Claim id={parte.claim} lang={lang} plano={true} sufixo={parte.sufixo ?? ''} />;
+      if (parte.ref) return <span data-nonledger="data-de-referencia">{parte.ref}</span>;
+      if (parte.forte) return <strong set:text={parte.forte} />;
+      if (parte.nl) return <span data-nonledger={parte.motivo}>{parte.nl}</span>;
+      throw new Error(
+        `<Manchete>: pedaço de forma desconhecida (${JSON.stringify(parte)}). ` +
+          `Uma manchete leva texto, { claim }, { ref }, { forte } e { nl, motivo }; ` +
+          `as outras formas de <Frase> não passaram por aqui e por isso não se rendem às cegas.`,
+      );
+    })
+  }
+  {
+    citadas.length > 0 && (
+      <span class="manchete-selos">
+        {citadas.map((id) => (
+          <Provenance id={id} lang={lang} />
+        ))}
+      </span>
+    )
+  }
+</Fragment>

@@ -59,6 +59,7 @@ import CabecaDoLugar from '../components/inicio/CabecaDoLugar.astro';
 import Faixa from '../components/inicio/Faixa.astro';
 import Claim from '../components/Claim.astro';
 import Frase from '../components/Frase.astro';
+import Manchete from '../components/Manchete.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
 import DataDaLinha from '../components/DataDaLinha.astro';
 import BarraConcelhoPais from '../components/formas/BarraConcelhoPais.astro';
@@ -72,7 +73,13 @@ import {
   CABECA_DO_DOMINIO_1,
   FAIXA_DO_DOMINIO_1,
 } from '../data/dominios.mjs';
-import { medidasComLeitura, mapaPorConcelho, barraConcelhoPais, linhasPorConcelho } from '../lib/dominios.mjs';
+import {
+  medidasComLeitura,
+  mapaPorConcelho,
+  barraConcelhoPais,
+  linhasPorConcelho,
+  ancoraDaMedida,
+} from '../lib/dominios.mjs';
 import { estadoDaMedida } from '../lib/estado.mjs';
 import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
@@ -100,8 +107,12 @@ const ausencias = ausenciasDoDominio(slug);
 const fronteira = fronteiraDoDominio(slug);
 if (fronteira === null) throw new Error(`dominios: o domínio "${slug}" não declara a fronteira.`);
 
-/** A âncora de uma medida: a chave do inventário, que é estável e não é um id. */
-const ancoraDa = (chave) => `m-${chave.toLowerCase()}`;
+/* A ÂNCORA DE UMA MEDIDA COMPÕE-SE UMA VEZ, E NÃO AQUI (F1.2b, item 1,
+   03.09.2026). Era `m-${chave.toLowerCase()}` escrito nesta vista; passa a vir
+   de `ancoraDaMedida()`, em `src/lib/dominios.mjs`, porque a faixa da primeira
+   página passou a apontar para estas âncoras e duas composições da mesma cadeia
+   divergiriam em silêncio no dia em que uma delas mudasse. */
+const ancoraDa = ancoraDaMedida;
 
 /* ---------------------------------------------------------------------------
  * A MANCHETE, COMPOSTA DAS DUAS MEDIDAS QUE TÊM LIMIAR PUBLICADO
@@ -164,13 +175,20 @@ const manchete = {
  * página. Um cartão sem linha não existe: a régua da faixa recusa-o com razão,
  * porque o cartão é o valor.
  */
-const cartoes = FAIXA_DO_DOMINIO_1.map((chave) => {
+/* A POSIÇÃO DE CADA CARTÃO ENTRA NA FAIXA DO DOMÍNIO (F1.2b, item 3,
+   03.09.2026): o ordinal é o índice nesta lista e o total é o comprimento dela.
+   Cada faixa conta a sua, e é por isso que «1 de 5» aqui e «1 de 21» na primeira
+   página são o mesmo cálculo sobre listas diferentes. */
+const cartoes = FAIXA_DO_DOMINIO_1.map((chave, i) => {
   const m = medidaPelaChave(chave);
   if (!m?.claim) throw new Error(`dominios: a faixa nomeia "${chave}", que não tem linha.`);
   const linha = getClaim(m.claim);
   return {
+    posicao: i + 1,
     id: m.claim,
-    ancora: ancoraDa(chave),
+    /* O DESTINO É UMA ÂNCORA DESTA MESMA PÁGINA: a leitura breve daquela medida
+       vive por baixo, e é para lá que o cartão leva (F1.2b, item 1). */
+    destino: `#${ancoraDa(chave)}`,
     nome: m.nome[lang] ?? m.nome.pt,
     medida: [`${m.unidade[lang] ?? m.unidade.pt} · `, { ref: linha.reference_date }],
     estado: m.limiar ? estadoDaMedida(linha, m.limiar) : 'sem',
@@ -308,13 +326,29 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
           <span class="eyebrow">{s.dominios.eyebrow}</span> ·{' '}
           <span data-nome="dominios">{nome}</span>
         </p>
+        {/* O SELO SAI DE DENTRO DA FRASE (F1.2b, item 3, 03.09.2026). Era
+            `<Frase … selos>`, e o texto de cada selo ficava entre o número e a
+            palavra a seguir: medido no HTML construído, a manchete lia-se «A
+            dívida pública é 89,7%fonte · Quadro institucional de indicadores do
+            PIB, fora do limiar de 60%; …». `<Manchete>` rende os mesmos pedaços
+            pela mesma ordem e põe os selos no fim do `<h1>`, ao pé do número e
+            fora da frase, que é a forma que o item 9 do brief da porta da frente
+            desenha. A razão de eles ficarem DENTRO do `<h1>` está no cabeçalho
+            do componente: é o portão que a obriga. */}
         <h1 class="cabeca-h1">
-          <Frase partes={manchete[lang] ?? manchete.pt} lang={lang} selos={true} />
+          <Manchete partes={manchete[lang] ?? manchete.pt} lang={lang} />
         </h1>
       </div>
     </div>
 
-    <Faixa slot="faixa" s={s} lang={lang} rotulo={s.inicio.faixa.rotulo} cartoes={cartoes} />
+    <Faixa
+      slot="faixa"
+      s={s}
+      lang={lang}
+      rotulo={s.inicio.faixa.rotulo}
+      cartoes={cartoes}
+      total={cartoes.length}
+    />
   </CabecaDoLugar>
 
   {/* ------------------------------------------------------------------------

@@ -40,7 +40,7 @@ import Base from '../layouts/Base.astro';
 import InstrumentoConvergencia from '../components/InstrumentoConvergencia.astro';
 import CabecaDoLugar from '../components/inicio/CabecaDoLugar.astro';
 import Faixa from '../components/inicio/Faixa.astro';
-import Frase from '../components/Frase.astro';
+import Manchete from '../components/Manchete.astro';
 import Peca from '../components/inicio/Peca.astro';
 import { regiaoDoSlug } from '../lib/regioes.mjs';
 import { getClaim } from '../lib/ledger.mjs';
@@ -106,10 +106,16 @@ const medidaDeUmaLinha = (unidade, linha) =>
  * juízo. Sem estado não há palavra nem quadrado, e o cartão fica com o valor, a
  * unidade, o nome e o selo.
  */
+/* A POSIÇÃO DE CADA CARTÃO ENTRA NA FAIXA DA REGIÃO (F1.2b, item 3,
+   03.09.2026): o ordinal é o índice nesta lista e o total é o comprimento dela,
+   contados abaixo e não escritos. Uma região tem outra lista e outro número, e é
+   por isso que a posição se conta em cada faixa e nunca se copia da primeira
+   página. */
 const cartoes = [
   {
     id: regiao.valor,
-    ancora: `m-${regiao.valor}`,
+    /* A leitura breve daquela medida vive por baixo, nesta mesma página. */
+    destino: `#m-${regiao.valor}`,
     nome: s.regioes.indiceK,
     medida: medidaDeUmaLinha(
       { nl: s.home.instr1.glanceUnidade, motivo: 'escala-de-instrumento' },
@@ -120,13 +126,13 @@ const cartoes = [
   },
   {
     id: regiao.distancia,
-    ancora: `m-${regiao.distancia}`,
+    destino: `#m-${regiao.distancia}`,
     nome: s.regioes.distanciaK,
     medida: medidaDeUmaLinha(s.regioes.distanciaUnidade, distancia),
     estado: null,
     glifos: [...String(distancia.value)].length,
   },
-];
+].map((c, i) => ({ ...c, posicao: i + 1 }));
 ---
 
 <Base
@@ -171,14 +177,30 @@ const cartoes = [
         <p class="cabeca-rotulo">
           <span class="eyebrow">{s.regioes.eyebrow}</span> · <span data-lugar>{nome}</span>
         </p>
+        {/* O SELO SAI DE DENTRO DA FRASE (F1.2b, item 3, 03.09.2026). É o mesmo
+            defeito da manchete do domínio e da dos concelhos, e a mesma forma:
+            medido no HTML construído, a manchete do Alentejo lia-se «O Alentejo
+            está 23fonte · calculado · Alentejo & Algarve — Economy, Society,
+            Strategy pontos abaixo da média da UE-27.». A frase e os seus dois
+            valores não mudam um carácter; o que se move é a posição dos dois
+            `<a>`. Fica dito no relatório do bloco: a camada da região não está
+            na letra do brief F1.2b, e ficaria a única das quatro com o selo
+            dentro da frase depois de o mecanismo existir. */}
         <h1 class="cabeca-h1">
-          <Frase partes={regiao.frase[lang]} lang={lang} selos={true} />
+          <Manchete partes={regiao.frase[lang]} lang={lang} />
         </h1>
         <p class="regiao-tipo">{s.regioes.tipo}</p>
       </div>
     </div>
 
-    <Faixa slot="faixa" s={s} lang={lang} rotulo={s.inicio.faixa.rotulo} cartoes={cartoes} />
+    <Faixa
+      slot="faixa"
+      s={s}
+      lang={lang}
+      rotulo={s.inicio.faixa.rotulo}
+      cartoes={cartoes}
+      total={cartoes.length}
+    />
 
     <section slot="instrumento" class="regiao-instr" id="regua" aria-labelledby="regua-k">
       <h2 class="regiao-instr-k" id="regua-k">{s.home.instr1.h2}</h2>

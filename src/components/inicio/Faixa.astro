@@ -98,13 +98,52 @@
 import Claim from '../Claim.astro';
 import Frase from '../Frase.astro';
 
-/* `total` É OPCIONAL, E É O QUE ACENDE A POSIÇÃO (F1.1, item 5, 03.09.2026).
-   A faixa serve três páginas — o país, a região e o concelho — e a posição é do
-   bloco da porta da frente, que é o da primeira página. Sem `total`, a faixa
-   rende-se como sempre se rendeu, e as páginas de região e de concelho ficam
-   como estavam: as suas faixas são do F1.2, que corre em paralelo e é dono
-   delas. Fica dito no relatório do bloco, e não fingido feito. */
+/* `total` É OPCIONAL, E É O QUE ACENDE A POSIÇÃO (F1.1, item 5, 03.09.2026;
+   F1.2b, item 3, 03.09.2026).
+   A faixa serve quatro páginas: o país, o domínio, a região e o concelho. Cada
+   uma passa o SEU total, que é o comprimento da lista que ela rende, e por isso
+   «1 de 21» na primeira página e «1 de 2» na de uma região são o mesmo cálculo
+   sobre listas diferentes. O F1.1 deixou-o só na primeira página, porque as
+   outras vistas eram do F1.2 e corria em paralelo; a razão de a posição não se
+   render nas outras acabou com esse paralelo.
+
+   CONTINUA OPCIONAL, e não é indecisão: uma faixa de um cartão só não tem
+   posição para dizer, e o dia em que uma página renda uma faixa dessas o `null`
+   é a resposta certa. */
 const { s, lang, rotulo, cartoes, total = null } = Astro.props;
+
+/* O DESTINO DE CADA CARTÃO CHEGA ESCRITO, E A FAIXA NÃO O COMPÕE (F1.2b, item 1,
+   03.09.2026).
+   Era `href={`#${c.ancora}`}`: a faixa presumia que o destino de um cartão é
+   sempre uma âncora da MESMA página. Desde que a página do primeiro domínio
+   existe isso deixou de ser verdade (um cartão cuja medida pertence a um
+   domínio no ar leva à leitura daquela medida na página do domínio), e a
+   escolha é de quem monta a lista dos cartões, que é o único sítio que sabe a
+   que domínio cada linha pertence. A faixa recebe o `href` já composto e não
+   decide nada: uma segunda decisão aqui era a promessa de divergir da primeira.
+
+   O RÓTULO DO DESTINO é opcional e diz PARA ONDE o cartão leva, quando não leva
+   para esta mesma página. Não é uma frase nova: é a palavra que o inventário da
+   voz já tem para aquela família de páginas, passada por quem monta a lista. */
+for (const c of cartoes) {
+  if (!c.destino) {
+    throw new Error(
+      `<Faixa>: o cartão «${c.id}» chegou sem destino. Cada cartão traz o seu ` +
+        `href composto pela vista (uma âncora desta página, ou a porta da página ` +
+        `onde a leitura daquela medida vive).`,
+    );
+  }
+  /* A POSIÇÃO OU NENHUMA, E NUNCA METADE DELA. Uma faixa que passe `total` e um
+     cartão sem `posicao` rende «de 5» com o ordinal em branco, e foi isso que a
+     primeira redação deste bloco pôs na página do domínio: o `undefined` não
+     rende nada em Astro e o defeito só se via no HTML construído. */
+  if (total !== null && !c.posicao) {
+    throw new Error(
+      `<Faixa>: o cartão «${c.id}» chegou sem posição, e a faixa tem total (${total}). ` +
+        `A posição conta-se na vista, com o índice da lista que ela rende.`,
+    );
+  }
+}
 
 /* As três palavras de estado da casa, como na peça. Uma medida sem estado (o
    valor é uma marca da fonte, «N.d.») não tem palavra nem quadrado: as duas
@@ -132,7 +171,7 @@ const PALAVRA = {
             {/* A PORTA, VAZIA E POR CIMA. Ver a nota do cabeçalho: o nome
                 acessível vem do nome da medida, que está escrito na fila de
                 baixo, e a caixa é a das três primeiras filas do cartão. */}
-            <a class="cartao-porta" href={`#${c.ancora}`} aria-labelledby={`k-${c.id}`}></a>
+            <a class="cartao-porta" href={c.destino} aria-labelledby={`k-${c.id}`}></a>
 
             {/* A FILA DO ESTADO É UM `<div>` E NÃO UM `<p>`, como na peça, e é
                 uma decisão medida e não de gosto: a régua da voz recolhe os
@@ -239,9 +278,37 @@ const PALAVRA = {
             <p class="cartao-unidade" data-medida-unidade>
               <Frase partes={c.medida} lang={lang} selos={true} />
             </p>
+            {/* O RÓTULO DO DESTINO, NA FILA DO SELO E ENCOSTADO À DIREITA
+                (F1.2b, item 1, 03.09.2026).
+                Um cartão que leva para FORA desta página di-lo, e di-lo onde não
+                custa uma fila: a quinta fila do cartão tem a altura de um alvo
+                (44 px) e leva o selo encostado à esquerda, com o resto dela
+                vazio. Com `justify-self: end` o rótulo senta-se no outro extremo
+                da mesma célula, e o cartão não cresce um píxel. Medido: a faixa
+                a 390 é a mesma altura com e sem ele.
+
+                NÃO É UMA PORTA, e por isso é um `<span>`: a porta do cartão é o
+                cartão inteiro, e um segundo alvo dentro dela seria uma área
+                sobreposta, que é o que a régua dos alvos (`correcoes-a.mjs`,
+                item A10) recusa. É a etiqueta do destino, e quem a lê já está
+                dentro do alvo que a cumpre. */}
+            {c.destinoRotulo && <span class="cartao-destino">{c.destinoRotulo}</span>}
           </li>
         );
       })
     }
   </ol>
+  {/* -----------------------------------------------------------------------
+      A RANHURA DEPOIS DA FAIXA (F1.2b, item 4, 03.09.2026)
+      -----------------------------------------------------------------------
+      Fica DENTRO de `.faixa-bloco` e não é arrumação: `.faixa-bloco` já é um
+      filho colocado da grelha da cabeça (coluna 1, fila 2, a partir de 1024), e
+      uma quinta peça na grelha obrigava a recolocar as quatro que lá estão. Cá
+      dentro, o que a ranhura recebe fica exactamente onde se lê, logo por baixo
+      dos cartões, em todas as larguras e sem uma linha de colocação nova.
+
+      É OPCIONAL: as páginas do domínio, da região e do concelho não a passam, e
+      rendem a faixa exactamente como rendiam.
+      ----------------------------------------------------------------------- */}
+  <slot name="depois" />
 </div>
