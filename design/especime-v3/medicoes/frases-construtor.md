@@ -160,8 +160,19 @@ construída neste bloco.
 | «acima da média da União» (emprego) | `lfsi_emp_a` | `geo=EU27_2020`, `indic_em=EMP_LFS`, `sex=T`, `age=Y20-64`, `unit=PC_POP`, período 2025 | % da população | a comparação com a média como linha |
 | «era mais de um terço» (abandono) | `edat_lfse_14` | `geo=PT`, `sex=T`, `age=Y18-24`, `unit=PC`, período 2000 | % dos 18 aos 24 anos | o valor do início do século |
 | «abaixo da média europeia» (sobrecarga) | `tespm140` | `geo=EU27_2020`, `sex=T`, período 2025 | % | a comparação com a média como linha |
-| a mudança de definição (custo do trabalho) | `tipslm10` | a nota metodológica do publicador | excerto, não valor | a atribuição com as palavras da fonte (é F3.3, não F3.1) |
-| a advertência da Comissão (sobrecarga) | SWD(2026) 222 ou a ficha do `tespm140` | o excerto literal do parágrafo do regime de propriedade | excerto | a atribuição com porta (F3.3) |
+
+**São cinco linhas, e são todas do F3.1 e do motor.** A tabela acima tem cinco
+registos e nenhum é um excerto: cada um é um valor que se lê de um endereço.
+
+**E três excertos, que são do F3.3 e não do F3.1**, porque uma atribuição não se
+prova com um número, prova-se com as palavras de quem a fez. Ficam à parte para
+que as duas contas não se misturem:
+
+| para a frase | onde está o excerto | o que destrava |
+| --- | --- | --- |
+| a mudança de definição (custo do trabalho) | a nota metodológica do publicador do `tipslm10` | a atribuição sobre o que a fonte media antes |
+| a advertência da Comissão (sobrecarga) | SWD(2026) 222 ou a ficha do `tespm140`, o parágrafo do regime de propriedade | a ressalva com o nome de quem a fez, e a porta para as palavras dela |
+| a classificação no Painel Social (emprego) | `ResearchHub/indicators/convergence.md` §2, a coluna «Social SB» | a frase poder voltar a dizer onde a medida está classificada |
 
 Os códigos dos conjuntos e as dimensões saem dos `source_url` das linhas que já
 existem, e não de memória: por exemplo, `taxa-de-emprego-2025.yml` traz
@@ -374,28 +385,49 @@ cada edição. É uma reconstrução e não uma segunda construção, e fica dit
 A primeira página encolheu cerca de um sexto de um ecrã de telemóvel nas duas edições.
 É ganho para a F1.1, cuja medida de aceitação é «a altura de `/` menor do que hoje».
 
-**As frases mudadas.** Seis frases, nas duas edições: **doze cadeias**. Oito afirmações
-da classe saíram (as sete da tabela da §1.44 menos a da creche, que já não existia,
-mais a «de outra natureza» do custo unitário do trabalho, mais a segunda oração dos
-preços da habitação, que a §1.44 conta como uma e são duas afirmações).
+**As frases mudadas, contadas sem juntar coisas diferentes.** São **seis
+células** do painel; **doze cadeias**, porque cada célula tem a sua frase nas duas
+edições e cada edição é uma cadeia; e **dez afirmações da classe** que saíram, que
+é a conta que interessa e que não é nenhuma das outras duas. Uma célula pode ter
+mais do que uma afirmação na mesma frase, e três têm:
 
-**O diff.** Os quatro ficheiros que mudam o sítio e o portão, sem este relatório,
-que vai no mesmo commit e conta à parte:
+| célula | afirmações que saíram | quantas |
+| --- | --- | --- |
+| Dívida pública | a tendência «e a descer» | 1 |
+| Preços da habitação | o valor de 2024; a comparação entre 2024 e 2025 | 2 |
+| Custo unitário do trabalho | a mudança de definição da fonte, sem excerto | 1 |
+| Taxa de emprego | a comparação com a média da União; a classificação no Painel Social, sem excerto | 2 |
+| Abandono escolar precoce | o valor do início do século | 1 |
+| Sobrecarga do custo da habitação | a comparação com a média europeia; a advertência da Comissão, sem excerto; a ressalva do regime de propriedade | 3 |
+| **total** | | **10** |
+
+Sete das dez saíram na primeira passagem e três na segunda, e as três estão
+nomeadas na §11.
+
+**O diff, medido contra `main` (`2ab66578`) e não contra o commit anterior**, para
+que o número não mude de significado entre passagens. Os cinco ficheiros que
+mudam o sítio, a régua e o portão, sem este relatório:
 
 ```
-git diff --stat HEAD~1 HEAD -- src/data/figuras.mjs scripts/check-voz.mjs \
-  design/especime-v3/INVENTARIO-FRASES.md \
+git diff --stat 2ab66578 -- src/data/figuras.mjs scripts/check-voz.mjs \
+  scripts/medir-defeitos.mjs design/especime-v3/INVENTARIO-FRASES.md \
   design/especime-v3/critica/REVISOES-DO-INVENTARIO.md
- design/especime-v3/INVENTARIO-FRASES.md              |  10 +-
+ design/especime-v3/INVENTARIO-FRASES.md              |  32 +++-
  design/especime-v3/critica/REVISOES-DO-INVENTARIO.md |   1 +
- scripts/check-voz.mjs                                | 101 ++++++++++++++++++-
- src/data/figuras.mjs                                 | 111 +++++++++++--------
- 4 files changed, 180 insertions(+), 43 deletions(-)
+ scripts/check-voz.mjs                                | 213 ++++++++++++++++++++-
+ scripts/medir-defeitos.mjs                           |  81 +++++++-
+ src/data/figuras.mjs                                 | 143 ++++++++++----
+ 5 files changed, 423 insertions(+), 47 deletions(-)
 ```
 
-O commit inteiro, com este relatório, é `5 files changed, 602 insertions(+),
-43 deletions(-)` (`git diff --stat HEAD~1 HEAD`). As 422 linhas da diferença são
-as deste ficheiro.
+Com este relatório, são **6 ficheiros, 1 085 inserções e 47 supressões**
+(`git diff --stat 2ab66578 -- src scripts design`). A diferença entre as duas
+contas é este ficheiro, e ele tem **662 linhas**
+(`wc -l < design/especime-v3/medicoes/frases-construtor.md`), que é exatamente
+1 085 menos 423. A primeira passagem escreveu «422 linhas» a partir da contagem de
+inserções de um ficheiro novo no `git diff --stat`, e a leitura a frio apanhou a
+incoerência (Major 4): o número certo é o do `wc -l`, e é o que fica escrito, com
+o comando ao lado.
 
 **Os três portões locais**, corridos na árvore do ramo depois da última mudança, com
 os códigos de saída lidos dos registos:
@@ -408,13 +440,13 @@ npm run typecheck  → 0
 
 ## 10 · O que fica para os blocos seguintes
 
-* **F3.1** · as seis linhas da tabela da §4, e a régua do mundo fechado que alcance um
+* **F3.1** · as **cinco** linhas da tabela da §4, e a régua do mundo fechado que alcance um
   `span.social-frase` e um bloco com marca de origem lá dentro (§5). Quando o
   `check:prosa` entrar, o décimo caso do `check-voz.mjs` sai inteiro, com a lista.
-* **F3.3** · o excerto da advertência da Comissão sobre o regime de propriedade, e o
+* **F3.3** · os **três** excertos da segunda tabela da §4: a advertência da Comissão sobre o regime de propriedade, o
   excerto da mudança de definição do custo unitário do trabalho. Com eles, as duas
   atribuições voltam com porta.
-* **O motor** · as seis linhas da §4 lêem-se da fonte, e por isso são blocos do motor.
+* **O motor** · as cinco linhas da §4 lêem-se da fonte, e por isso são blocos do motor.
   Ficam registadas e não construídas: este bloco correu sem rede.
 * **`[a verificar]`** · o código `geo=EU27_2020` das duas linhas de média não foi
   conferido contra o Eurostat neste bloco.
@@ -427,3 +459,204 @@ npm run typecheck  → 0
   fonte fica como a fonte o escreveu; a régua da ortografia não corre nem no `build`
   nem no `verify`, e a nota é propriedade do motor. Fica dito e não fica corrigido
   aqui.
+
+## 11 · Segunda passagem, depois da leitura a frio do Codex (03.09.2026)
+
+*A leitura está em `design/especime-v3/critica/2026-09-03-codex-leitura-f09-frases.md`:
+Codex `gpt-5.6-sol`, xhigh, sobre um pacote com cinco plantas de três classes,
+**cinco de cinco vistas**. Dez achados distintos. Três dos achados eram as
+plantas e não estão neste ramo: o Blocking 1 (a fonte a dizer «e a descer»), o
+Blocking 2 (o arame sem a palavra «a descer») e os 180 px do Major 4. Conferido
+neste ramo antes de mexer em nada: `grep -c "e a descer" src/data/figuras.mjs` a
+**0**, o par `a descer/falling` presente em `scripts/check-voz.mjs`, e o
+relatório a dizer 108,0 px. Os restantes sete são reais e estão consertados
+abaixo.*
+
+### Blocking 3 · o ponto cego da régua fecha-se na régua
+
+**O que estava errado.** A primeira passagem encontrou o buraco e contornou-o: o
+arame lia o HTML construído porque a régua não via as frases. O achado é justo, e
+a saída certa é a régua.
+
+**A causa, medida e não presumida.** `scripts/medir-defeitos.mjs:frasesDaCasa`
+tinha a linha `if (el.querySelector(DECLARADO)) continue;`, que deitava fora o
+BLOCO inteiro por causa de uma marca lá dentro. A célula do Painel Social é um
+`<li class="social-linha">` sem nenhum outro bloco dentro, logo é folha, e leva um
+`data-claim` com o valor: as três frases daquele painel nunca foram lidas. Não é
+a classe `span.social-frase` que as escondia, como a primeira passagem escreveu:
+o `<span>` tem um `<li>` por cima, e a régua tê-lo-ia lido pelo `<li>` se a linha
+do `DECLARADO` não o tivesse saltado. **A primeira passagem diagnosticou duas
+causas onde havia uma**, e a correção está aqui.
+
+**O que mudou** (`scripts/medir-defeitos.mjs`): a linha sai, e no seu lugar o
+bloco com marca é contado com as marcas retiradas, por `textoForaDasOrigens`, que
+é o que a medida 9 já fazia. Um bloco sem marca nenhuma continua a contar-se com
+`texto()`, incluindo o texto das âncoras: mudar a definição para todos os blocos
+mudava a cadeia declarada de centenas de linhas do inventário de uma vez, e isso
+é uma migração e não uma correção.
+
+**O buraco é maior do que o bloco que o encontrou, e isso mediu-se.** Com a
+leitura ligada em todas as rotas inventariadas, a construção passa a ver
+**190 cadeias distintas por classificar, em 2 118 ocorrências**: 1 906 nas páginas
+de concelho, 58 nas de distrito, 50 na agenda, 30 nas de estudo, 18 nas de
+região, 22 na primeira página e 6 nas correções. E entre elas estão frases da
+mesma classe que o F0.9 veio tirar, agora à vista noutras rotas: «A população
+residente subiu de … para …», «A execução da receita caiu de … para …», «O índice
+de dívida … desceu de … para …», «A Grande Lisboa está … pontos acima da média da
+UE-27». Declarar 190 cadeias dentro de um bloco de outro assunto é migrar à
+pressa, que é como a lista engorda sem ninguém a ler.
+
+**A forma que a casa já tem para isto** está escrita em `ROTAS_DO_INVENTARIO`:
+«uma rota entra no commit em que a sua página é reconstruída e as suas frases são
+classificadas». A lista nova `ROTAS_COM_ORIGEM_LIDA` segue a mesma regra e cresce
+da mesma maneira. Hoje tem uma rota, `home`, que é a do F0.9, e as suas frases
+estão classificadas neste commit. As outras ficam com o número acima escrito, que
+é o que o F3.1 fecha com a régua do mundo fechado.
+
+**Vinte e duas cadeias novas no inventário**, todas da primeira página, nas duas
+edições: as três frases do Painel Social, a lede do painel, a legenda do mapa e as
+seis formas da linha do limiar. Nenhuma traz uma contagem por dentro, e a razão é
+o próprio desenho: os algarismos são origens declaradas e saem do texto contado,
+por isso a cadeia declarada é estável.
+
+**As classes de `<span>` que carregam prosa, medidas nas 7 234 páginas de
+`dist/`.** A pergunta certa não é «que `<span>` tem prosa», é «que `<span>` tem
+prosa que nenhum antepassado da régua recolhe»:
+
+* **já cobertas por um antepassado**, e por isso a não tocar (pô-las numa lista
+  partiria uma frase composta em pedaços, que é o defeito que a lista dos rótulos
+  escreve por extenso): `.social-frase` e `.pesquisa-nome` dentro de um `<li>`,
+  `.mun-campo-vazio` dentro de um `<dd>`, `.areas-nome` e `.agenda-k-inline`
+  dentro de um `<li>`, `.mono`, `.agenda-historico-estados` e `.mun-tempo-nota-k`
+  dentro de um `<p>`. `.social-frase` fica coberta a partir deste commit, pelo
+  `<li>` que a régua deixou de saltar;
+* **sem ninguém por cima, e ainda fora da régua**: `.linha-campo-k` (6 cadeias, em
+  678 páginas), `.prov-study` (3 cadeias, em 31 páginas), `.linha-nota` (2
+  cadeias, nas duas edições de `/correcoes`) e `.porta-conta` (3 cadeias, em 2
+  páginas). São **14 cadeias**, e ficam por fechar neste bloco com a razão
+  escrita: `.porta-conta` rende «12 trabalhos · 16 edições», uma contagem do
+  próprio sítio, e a cabeça do `INVENTARIO-FRASES.md` recusa declarar uma frase
+  com uma contagem por dentro, «uma frase com um número que se move volta com
+  outro número, e a linha nunca voltaria a morder». A saída certa é a contagem
+  levar uma origem declarada, como as outras do sítio, e isso é uma mudança de
+  gabarito que não é deste bloco. Fica medido para o F3.1.
+
+### Blocking 4 · a taxa de emprego perde a atribuição institucional
+
+`src/data/figuras.mjs:376` (pt) e `:377` (en) na primeira passagem diziam
+«Indicador principal do Painel Social Europeu.» e «A headline indicator of the
+European Social Scoreboard.» A primeira passagem guardou-as como se fossem a
+definição da medida. Não são: dizem **onde** a medida está classificada, não **o
+que** ela mede, e são uma atribuição a uma instituição sem excerto na página, da
+mesma classe da advertência da Comissão. O cabeçalho desta mesma lista escreve
+que nenhum ficheiro do livro-razão nomeia o Painel Social.
+
+Passa a ser a definição, nas palavras da casa, com os dois números na marca de
+escala que a linha da medida já usa: «Proporção das pessoas dos 20 aos 64 anos
+com emprego.» e «The share of people aged 20 to 64 who are in employment.»
+(`src/data/figuras.mjs:395` e `:402`). A atribuição volta em F3.3, com o excerto
+de `convergence.md` §2. O nome do painel continua a ler-se onde é um nome e não
+uma atribuição: no `<h2>` da secção, que a régua já tinha declarado.
+
+### Blocking 5 · a ressalva da sobrecarga sai inteira
+
+`src/data/figuras.mjs:482` (pt) e `:487` (en) na primeira passagem guardavam «Onde
+a taxa de proprietários é alta, esta medida não vê quem não conseguiu comprar» e
+a gémea inglesa, com a Emenda 15 e a Emenda 18d como razão. A leitura a frio
+mostrou que a razão não se aplica, e tem razão em dois pontos. «Onde a taxa de
+proprietários é alta» é uma comparação contra um patamar que a página não nomeia
+e contra um valor de propriedade que a célula não publica. E a conclusão não
+segue da definição ao lado: a medida conta quem gasta mais de 40% do rendimento
+em habitação, e quem nunca comprou também tem custos de habitação e também pode
+ser contado. Uma conclusão que não segue dos dados não é a que a Emenda 18d
+permite: é interpretação, e a interpretação vive nos estudos.
+
+Fica só a definição: «Proporção que gasta mais de 40% do rendimento disponível em
+habitação.» e «The share spending more than 40% of disposable income on housing.»
+(`src/data/figuras.mjs:496` e `:501`). A ressalva volta em F3.3 com o excerto da
+Comissão e com o nome de quem a fez.
+
+### Major 1 e 2 · o arame ganha isenção de origem, flexões e um autoteste
+
+**A isenção de origem** (`scripts/check-voz.mjs`). O arame lia `body.text` e não
+sabia distinguir a casa a afirmar de um valor de linha ou de um excerto
+transcrito: um excerto legítimo com «adverte» lá dentro fechava a construção.
+Passa a ler o texto com as origens declaradas retiradas, pela mesma lista de
+marcas de `medir-defeitos.mjs`.
+
+**As flexões.** A lista tinha sete pares e cobria o gerúndio e não o pretérito.
+Passa a **catorze pares**: entram `desceu/fell`, `subiu/rose`, `caiu/dropped`,
+`cresceu/grew`, `dobrou/halved` e `média da UE/EU average`.
+
+**O autoteste, corrido a cada construção.** A sentinela provava que os ficheiros
+tinham sido lidos, não que o arame detetava alguma coisa. Entram duas páginas de
+rascunho construídas no próprio passo: uma com cada termo em prosa solta, onde
+**todos** têm de morder, e outra com cada termo dentro de `data-claim`, onde
+**nenhum** pode morder. Falha em qualquer dos sentidos fecha a construção antes de
+o arame olhar para a primeira página, porque um arame partido mede zero e parece
+verde.
+
+**A sentinela mudou de cadeia, e a mudança foi o autoteste a funcionar.** Era
+«Dívida pública», que vive dentro de `data-medida-nome`: com a leitura a tirar as
+origens, a sentinela desapareceu com elas e a construção fechou. Passa a ser a
+frase de identidade da Emenda 18a, «Um observatório de Portugal.» e «An
+observatory of Portugal.», que é prosa da casa, está fixada por decisão do
+diretor e rende-se na primeira página e em mais lado nenhum.
+
+**O que o arame NÃO cobre, dito por extenso.** Cobre catorze termos literais, nas
+duas edições, **só em `/` e em `/en/`**. Não cobre: sinónimos e paráfrases («em
+queda», «tem vindo a reduzir-se»); outras flexões além das listadas; qualquer
+outra rota, e as páginas de concelho e de região têm hoje frases desta classe,
+contadas acima; texto inserido em execução; separadores de largura zero ou
+pontuação metida no meio de um termo. **É um tapa-buraco declarado**: a saída
+certa é a frase tipada com os ids das linhas que a provam e um vocabulário
+fechado, e é o `check:prosa` do F3.1 que a traz. Nesse dia a secção sai inteira,
+com a sua lista.
+
+### Major 4 e Minor 1 · as contagens e o comentário envelhecido
+
+As contagens da §9 passam a estar separadas e cada uma com o seu nome: **seis
+células**, **doze cadeias** e **dez afirmações**, com a tabela por célula que
+mostra porque é que os três números são diferentes. A tabela do F3.1 na §4 passa a
+ser duas: **cinco linhas** de valor, que são do F3.1 e do motor, e **três
+excertos**, que são do F3.3. E o comentário de `src/data/figuras.mjs:99` deixa de
+dizer que as quatro frases do Procedimento foram relocadas «sem mudar uma
+palavra»: três delas mudaram a 03.09.2026, e a quarta já tinha mudado na §1.44.
+
+**Major 3 · o que fica em `[verify]` e porquê.** A leitura marcou duas afirmações
+como não auditáveis a partir do pacote, e tinha razão: o livro-razão e a régua não
+iam nele. Ficam auditáveis aqui pelos comandos escritos na §4 e na §5, que correm
+sobre a árvore. A parte do achado que era o mesmo ponto cego do Blocking 3 está
+consertada acima, na régua.
+
+### As conferências desta passagem
+
+| planta | o que se plantou | esperado | medido |
+| --- | --- | --- | --- |
+| A | uma frase não declarada dentro de um `span.social-frase` | vermelho | `check:voz` saída **1**, a frase nomeada como bloco por classificar |
+| B | uma frase não declarada ao lado de um `{ ref }`, num `p.peca-frase` | vermelho | saída **1**, o bloco lido com a marca retirada |
+| C | os termos da classe **dentro** de `data-claim` e de `data-verbatim` | verde | saída **0**, 0 mordidas: a isenção de origem funciona |
+| D | treze termos da classe **fora** de qualquer origem | vermelho | saída **1**, **13 de 13** mordidas, cada uma nomeada |
+| E | a isenção partida (tira-se `[data-claim]` da lista) | vermelho | saída **1**, o autoteste a dizer «14 termos morderam DENTRO de uma origem», nas duas edições |
+| verde | tudo reposto | verde | `check:voz` saída **0** |
+
+### As medições desta passagem
+
+A altura da primeira página a 390 px, com a mesma régua e a mesma reconstrução do
+«antes» da §9 (as seis orações do `main` repostas no DOM, seis de seis nas duas
+edições):
+
+| rota | antes (`main`, reconstruído) | depois da segunda passagem | diferença |
+| --- | --- | --- | --- |
+| `/` | 7 071 px | 6 941 px | 130,0 px |
+| `/en/` | 7 042 px | 6 890 px | 152,0 px |
+
+As catorze cadeias da §9 continuam a **0** nas duas edições, e as quatro que a
+segunda passagem acrescenta também: «Painel Social Europeu» e «European Social
+Scoreboard» dentro de uma frase de medida a 0 (a secção continua a chamar-se
+assim, no seu `<h2>`, e é um nome e não uma atribuição), «taxa de proprietários» e
+«owner-occupation» a 0. Positivo conhecido do `grep` na mesma construção:
+`grep -c "Um observatório de Portugal." dist/index.html` a **1**.
+
+O inventário passa de 638 para **660 linhas** com bloco: **582 vivas**, todas
+rendidas, e **78 retiradas**, nenhuma rendida.
