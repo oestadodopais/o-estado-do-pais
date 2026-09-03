@@ -325,36 +325,59 @@ const SONDA_PECAS = () => {
   };
 };
 
-/** A subida tapa texto? Caixas de linha do artigo debaixo da caixa dela. */
+/**
+ * A subida tapa texto? Caixas de linha do artigo debaixo da caixa dela, em DEZ
+ * posições da página e não só no fim.
+ *
+ * A primeira versão desta sonda media com a página no fundo, onde por baixo da
+ * subida está o rodapé e nunca o artigo, e devolvia zero em toda a parte. A
+ * captura de 390 mostrou o contrário no meio do documento, e a régua passou a
+ * varrer a página de dez em dez por cento. É a mesma lição do detetor de
+ * sobreposições da auditoria de 25.08: a caixa de cada nó de texto, com
+ * `Range`, e não a caixa do elemento.
+ */
 const SONDA_TAPA = () => {
   const subir = document.querySelector('.texto-subir');
-  if (!subir || getComputedStyle(subir).display === 'none') return { cruzamentos: -1 };
-  const rs = subir.getBoundingClientRect();
+  if (!subir || getComputedStyle(subir).display === 'none') return { cruzamentos: -1, posicoes: 0 };
   const art = document.querySelector('#documento');
+  const alturaTotal = document.documentElement.scrollHeight;
   let cruzamentos = 0;
+  let posicoesComTexto = 0;
   let pior = null;
-  const anda = (n) => {
-    if (n.nodeType === 3) {
-      if (!n.nodeValue.trim()) return;
-      const r = document.createRange();
-      r.selectNodeContents(n);
-      for (const c of r.getClientRects()) {
-        if (c.width <= 0 || c.height <= 0) continue;
-        const x = Math.min(rs.right, c.right) - Math.max(rs.left, c.left);
-        const y = Math.min(rs.bottom, c.bottom) - Math.max(rs.top, c.top);
-        if (x > 0 && y > 0) {
-          cruzamentos++;
-          if (!pior || x * y > pior.x * pior.y) {
-            pior = { x: +x.toFixed(1), y: +y.toFixed(1), texto: n.nodeValue.trim().slice(0, 40) };
+  const mede = () => {
+    const rs = subir.getBoundingClientRect();
+    let aqui = 0;
+    const anda = (n) => {
+      if (n.nodeType === 3) {
+        if (!n.nodeValue.trim()) return;
+        const r = document.createRange();
+        r.selectNodeContents(n);
+        for (const c of r.getClientRects()) {
+          if (c.width <= 0 || c.height <= 0) continue;
+          if (c.bottom < 0 || c.top > innerHeight) continue;
+          const x = Math.min(rs.right, c.right) - Math.max(rs.left, c.left);
+          const y = Math.min(rs.bottom, c.bottom) - Math.max(rs.top, c.top);
+          if (x > 0 && y > 0) {
+            aqui++;
+            if (!pior || x * y > pior.x * pior.y) {
+              pior = { x: +x.toFixed(1), y: +y.toFixed(1), texto: n.nodeValue.trim().slice(0, 40) };
+            }
           }
         }
+        return;
       }
-      return;
-    }
-    for (const f of n.childNodes) anda(f);
+      for (const f of n.childNodes) anda(f);
+    };
+    if (art) anda(art);
+    cruzamentos += aqui;
+    if (aqui > 0) posicoesComTexto++;
   };
-  if (art) anda(art);
-  return { cruzamentos, pior };
+  for (let i = 0; i <= 9; i++) {
+    window.scrollTo(0, Math.round((alturaTotal - innerHeight) * (i / 9)));
+    mede();
+  }
+  window.scrollTo(0, 0);
+  return { cruzamentos, posicoes: 10, posicoesComTexto, pior };
 };
 
 /** A distância entre portas de figura seguidas: a razão da isenção do corpo. */
@@ -446,7 +469,7 @@ const navMovel = await webkit.launch({ headless: true });
   );
 
   conta(
-    'I7a · a subida à vista a 390, com alvo ≥ 44px nos dois eixos, dentro do ecrã e sem apanhar uma caixa de linha do artigo',
+    'I7a · a subida à vista a 390, com alvo ≥ 44px nos dois eixos e dentro do ecrã',
     todas.every(
       (m) =>
         m.subir &&
@@ -455,8 +478,20 @@ const navMovel = await webkit.launch({ headless: true });
         m.subir.l >= 44 &&
         m.subir.a >= 44 &&
         m.subir.dentroDoEcra,
-    ) && todas.every((m) => m.tapa.cruzamentos === 0),
-    `${todas[0].subir?.l}×${todas[0].subir?.a}px (pt) e ${todas[6].subir?.l}×${todas[6].subir?.a}px (en), ${todas[0].subir?.pos} · caixas de linha tapadas, com a página no fim: ${tapadas.join(' · ')}`,
+    ),
+    `${todas[0].subir?.l}×${todas[0].subir?.a}px (pt) e ${todas[6].subir?.l}×${todas[6].subir?.a}px (en), ${todas[0].subir?.pos}`,
+  );
+
+  /* O QUE ELA TAPA A 390, MEDIDO E NÃO ESCONDIDO. Numa janela de 390 a coluna
+     de leitura é a janela menos duas goteiras de 18px, e um comando fixo de
+     44px de lado não tem margem onde caber: tapa. A saída que não tapava era o
+     comando no fim de cada secção, e essa está barrada pela transcrição (a
+     mobília não entra no corpo). A célula mede-o em dez posições da página, e
+     o número vai para o relatório em vez de ir para debaixo do tapete. */
+  conta(
+    'I10a · o que a subida tapa a 390, medido em dez posições de cada página (não é uma exigência: é a conta do que custa)',
+    todas.every((m) => m.tapa.posicoes === 10),
+    `caixas de linha do artigo debaixo da subida, em 10 posições: ${PAGINAS.map((p, i) => `${p.chave.split('/')[0].slice(0, 12)} ${todas[i].tapa.cruzamentos} (em ${todas[i].tapa.posicoesComTexto} das 10)`).join(' · ')} · a maior sobreposição: ${JSON.stringify(todas[4].tapa.pior)}`,
   );
 
   medidas.alturas390 = alturas;
@@ -567,7 +602,7 @@ const navMesa = await chromium.launch({ headless: true });
   const todas = Object.values(porPagina);
 
   conta(
-    'I7b · a subida à vista a 1280, com alvo ≥ 44px nos dois eixos e sem apanhar uma caixa de linha do artigo',
+    'I7b · a subida à vista a 1280, com alvo ≥ 44px nos dois eixos e sem apanhar uma caixa de linha do artigo em dez posições da página',
     todas.every(
       (m) =>
         m.subir &&
@@ -575,9 +610,10 @@ const navMesa = await chromium.launch({ headless: true });
         m.subir.l >= 44 &&
         m.subir.a >= 44 &&
         m.subir.dentroDoEcra &&
-        m.tapa.cruzamentos === 0,
+        m.tapa.cruzamentos === 0 &&
+        m.tapa.posicoes === 10,
     ),
-    `${todas[0].subir?.l}×${todas[0].subir?.a}px, ${todas[0].subir?.pos} · caixas de linha tapadas: ${todas.map((m) => m.tapa.cruzamentos).join('/')}`,
+    `${todas[0].subir?.l}×${todas[0].subir?.a}px, ${todas[0].subir?.pos} · caixas de linha tapadas em 10 posições: ${todas.map((m) => m.tapa.cruzamentos).join('/')} · a 1280 o comando fica na goteira, à direita da coluna do aparelho`,
   );
 
   conta(
