@@ -2200,6 +2200,26 @@ a.badge-porta:hover {
 .linha-selo {
   margin-top: -2px;
 }
+/* O ESTADO DA FONTE AO PÉ DO SELO (bloco F0.11, 03.09.2026): «Sem resposta desde
+   dd.mm.aaaa», e só quando a fonte deixou de atender.
+
+   SEM COR NOVA, e a razão é constitucional: a `IDENTIDADE.md` §2 reserva a cor
+   para os limiares de uma medida, e um estado de fonte não é um limiar. O que o
+   faz ver-se é a POSIÇÃO (na cabeça, ao lado da porta para a prova) e a forma de
+   campo que o recibo já usa. A letra é a do identificador que está por baixo,
+   pela mesma razão que ele a tem: é aparelho, não é leitura, e a cabeça já tem
+   uma voz — a do número. */
+.linha-selo-estado {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.linha-selo-estado .linha-campo-k {
+  font-size: inherit;
+}
 
 /* ------------------------------------------------------------ o recibo, v2
 
@@ -4260,6 +4280,7 @@ a.marcador::after {
   .linha-bloco-titulo,
   .aparelho-titulo,
   .linha-id,
+  .linha-selo-estado,
   .linha-verificacao,
   .linha-verificacoes dt,
   .linha-verificacoes dd,
