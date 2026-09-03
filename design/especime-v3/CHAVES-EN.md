@@ -1049,3 +1049,25 @@ um desenho passou a vir, por `aria-labelledby`, do elemento que já escreve o no
 da medida: um desenho não acrescenta uma palavra ao sítio, e um `aria-label`
 seria uma frase nova por medida numa superfície que a régua da voz lê desde a
 I79. `dominios.escolheConcelho` saiu por nunca ter sido usada.
+
+### Segunda passagem do bloco F1.2 (Claude Sonnet 5, 03.09.2026)
+
+**Seis chaves novas**, depois da leitura a frio do Codex
+(`design/especime-v3/critica/2026-09-03-codex-leitura-f12-dominio.md`): uma em
+`nav` (a porta comum de `/dominios` e `/dominios/<slug>` no rodapé, Major 11) e
+cinco em `dominios` (a alternativa em texto do mapa por concelho, dentro da
+própria página, Major 7; a nota da paleta de escala, Blocking 3).
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `nav.dominios` | Domínios | Domains | a entrada nova do rodapé; o menu do cabeçalho fica para depois do F1.1 |
+| `dominios.mapaEscalaNota` | As classes são marcas redondas da escala, e não um limite oficial. | The classes are round scale marks, not an official limit. | só no mapa cuja paleta é `escala` (o ganho médio); distingue-o do mapa cuja paleta é `limiar` (o índice de dívida) |
+| `dominios.mapaTabelaAbrir` | Os valores, concelho a concelho | The values, municipality by municipality | o rótulo do `<details>` que abre a tabela dos 308 valores |
+| `dominios.mapaTabelaConcelho` | Concelho | Municipality | o cabeçalho da coluna do nome |
+| `dominios.mapaTabelaValor` | Valor | Value | o cabeçalho da coluna do valor |
+
+**A ressalva de T1 e de T5 não ganhou chave em `strings.mjs`**: é conteúdo do
+domínio, como a frase da fronteira, e vive em `src/data/dominios.mjs`, no campo
+novo `ressalva` de cada medida, nas duas línguas, com o marcador da casa
+(`{ marcador: 'a verificar', gloss: 'to verify' }`) que `Frase.astro` já sabe
+ler.

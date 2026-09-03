@@ -178,17 +178,16 @@
   height: auto;
   max-width: 720px;
 }
-.forma-selos {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 4px 12px;
+.forma-frase {
   margin: 6px 0 0;
   font-family: var(--f-instr);
   font-size: 13px;
   color: var(--muted);
 }
 .forma-selo-rot {
+  color: var(--ink);
+}
+.forma-frase-num {
   color: var(--ink);
 }
 
@@ -297,6 +296,34 @@
 }
 .forma-mapa-classe-k {
   color: var(--ink);
+}
+.forma-mapa-nota {
+  margin: 6px 0 0;
+  font-family: var(--f-instr);
+  font-size: 13px;
+  color: var(--muted);
+}
+.forma-mapa-tabela {
+  margin: 10px 0 0;
+  font-family: var(--f-instr);
+  font-size: 13px;
+}
+.forma-mapa-tabela > summary {
+  color: var(--ink);
+  cursor: pointer;
+}
+.forma-mapa-tabela table {
+  width: 100%;
+  max-width: 480px;
+  border-collapse: collapse;
+  margin: 8px 0 0;
+}
+.forma-mapa-tabela th,
+.forma-mapa-tabela td {
+  text-align: left;
+  padding: 3px 10px 3px 0;
+  border-bottom: 1px solid var(--g2);
+  font-weight: normal;
 }
 .sq-mapa {
   display: inline-block;

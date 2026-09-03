@@ -1912,3 +1912,43 @@ que a régua não passasse a ter uma linha cujo texto é a letra «a».
 | conteudo | no published value | dominio | viva | — |
 | conteudo | Quadros de Pessoal do Gabinete de Estratégia e Planeamento do Ministério do Trabalho; trabalhadores por conta de outrem a tempo completo com remuneração completa. | dominio | viva | — |
 | conteudo | Staff records of the labour ministry’s strategy and planning office; full-time employees on full pay. | dominio | viva | — |
+
+## As frases da segunda passagem (bloco F1.2, Claude Sonnet 5, 03.09.2026)
+
+**Sete cadeias novas, todas dentro da manchete, da leitura breve ou do mapa por
+concelho.** A leitura a frio do Codex (Blocking 2, 3, 4; Major 7, 13) pediu a
+barra do ganho contra o país nas 308 páginas de concelho, a ressalva visível de
+T1 e de T5, a nota da escala do mapa do ganho, e a tabela dos 308 valores dentro
+da própria página. As duas primeiras entram porque a rota `dominio` já está em
+`ROTAS_COM_ORIGEM_LIDA` (F0.9): a régua conta agora o texto de um bloco com as
+marcas de origem retiradas, e não deita fora o bloco inteiro por ter uma marca
+lá dentro.
+
+**A ressalva de T1 e de T5 leva o marcador da casa por extenso**, porque o
+bloco que a contém não tem NENHUMA outra marca de origem lá dentro (nem
+`data-claim`, nem `data-lugar`, nem `data-medida-nome`): é o `<a class="marcador">`
+sozinho, e por isso a régua lê o parágrafo inteiro, marcador incluído, como
+lê qualquer parágrafo sem marca (a mesma regra que já vale para «Bragança
+… `[a verificar]` … 2013» na página de Évora).
+
+**A frase da barra do ganho reduz-se a pontuação, e é a mesma classe de
+`fonte · ·` e `limiar % · fora do limiar` ali em cima**: os dois nomes de
+lugar (`data-lugar`), os dois valores (`data-claim`, dentro de `<Claim
+chip={true}/>`) e as duas unidades (`data-medida-unidade`) saem antes de contar,
+e o que sobra é a pontuação que os liga. Não é um número solto: é o molde da
+frase, sem os números.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | : ; : . | dominio | viva | o molde da frase da barra do ganho contra o país (`BarraConcelhoPais.astro`), sem os dois nomes de lugar, os dois valores e as duas unidades, que saem por `data-lugar`, `data-claim` e `data-medida-unidade` |
+| conteudo | A meta desta medida é da União Europeia no seu conjunto e não de Portugal; uma meta nacional própria permanece [a verificar] . | dominio | viva | a ressalva de T1 (Blocking 4): a meta de 2030 do Plano de Ação do Pilar Europeu é da União e não de Portugal, e a carta di-lo; a meta nacional própria não está pesquisada |
+| conteudo | This measure’s target belongs to the European Union as a whole, not to Portugal; a national target of its own remains [a verificar] (to verify) . | dominio | viva | — |
+| conteudo | Este valor é o do território continental. Os Açores e a Madeira fixam o seu por diploma regional próprio, que não foi lido: [a verificar] . | dominio | viva | a ressalva de T5 (Blocking 4): paráfrase do artigo 2.º do diploma, «Âmbito territorial», citado ao carácter em `document.locator` da linha `retribuicao-minima-mensal-garantida-continente-2026` |
+| conteudo | This value is for mainland Portugal. The Azores and Madeira set their own value by separate regional decree, which has not been read: [a verificar] (to verify) . | dominio | viva | — |
+| conteudo | As classes são marcas redondas da escala, e não um limite oficial. | dominio | viva | a nota do mapa do ganho médio (Blocking 3): distingue a sua paleta `escala` da paleta `limiar` do mapa do índice de dívida, ao lado |
+| conteudo | The classes are round scale marks, not an official limit. | dominio | viva | — |
+| conteudo | Concelho | dominio | viva | o cabeçalho da coluna do nome, na tabela dos 308 valores (Major 7) |
+| conteudo | Valor | dominio | viva | o cabeçalho da coluna do valor, na mesma tabela |
+| conteudo | Value | dominio | viva | — |
+| navegacao | Os valores, concelho a concelho | dominio | viva | o rótulo do `<details>` que abre a tabela dos 308 valores: a alternativa em texto do mapa, na própria página (Major 7) |
+| navegacao | The values, municipality by municipality | dominio | viva | — |

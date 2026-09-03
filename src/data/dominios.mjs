@@ -68,6 +68,7 @@ import { hasClaim } from '../lib/ledger.mjs';
  *   vaga: 'primeira'|'segunda'|'terceira',
  *   estado: 'no-ar'|'dentro-de'|'sem',
  *   dentroDe?: string,
+ *   ancoraDentro?: string,
  * }} Dominio
  */
 
@@ -95,6 +96,12 @@ export const DOMINIOS = /** @type {const} */ ([
     vaga: 'primeira',
     estado: 'dentro-de',
     dentroDe: 'economia-e-financas-publicas',
+    /* A PORTA VAI À SECÇÃO, E NÃO SÓ AO TOPO DA PÁGINA (segunda passagem,
+       03.09.2026, achado Major 11 da leitura a frio). T1 é a primeira das
+       cinco medidas de Trabalho na ordem em que a página as lista (E1 a E5,
+       depois T1 a T5), e por isso é a âncora que leva à secção onde elas
+       vivem, e não ao início do domínio 1. */
+    ancoraDentro: 'm-t1',
   },
   {
     n: 3,
@@ -208,6 +215,11 @@ export const DOMINIOS = /** @type {const} */ ([
  * `forma`      a forma gráfica admitida que esta medida ganha (`§3` do brief da
  *              forma dos domínios), ou `null`.
  * `ausencia`   a razão da ausência, quando não há número público.
+ * `ressalva`   uma frase de ressalva sobre o ALCANCE da medida, quando a fonte
+ *              publica menos do que a página deixaria supor (segunda passagem,
+ *              03.09.2026, Blocking 4): a meta da União que não é de Portugal
+ *              em T1, o território que o diploma de T5 não cobre. Nunca um
+ *              número novo, sempre com o marcador da casa onde algo falta.
  *
  * @typedef {{
  *   chave: string,
@@ -222,6 +234,7 @@ export const DOMINIOS = /** @type {const} */ ([
  *   porConcelho?: 'ganho'|'indice'|null,
  *   forma?: 'barra-concelho'|'mapa'|null,
  *   ausencia?: ParDeLinguas|null,
+ *   ressalva?: FraseDasDuasLinguas|null,
  * }} MedidaDoDominio
  */
 
@@ -355,6 +368,22 @@ export const MEDIDAS_DO_DOMINIO_1 = /** @type {const} */ ([
     limiar: null,
     porConcelho: null,
     forma: null,
+    /* O MARCADOR FICA VISÍVEL, E NÃO SÓ NO COMENTÁRIO (segunda passagem,
+       03.09.2026, Blocking 4). A meta que falta é a de Portugal e não a da
+       União: dizê-lo sem o número da meta europeia, que não tem linha neste
+       domínio e não se escreve à mão. */
+    ressalva: {
+      pt: [
+        'A meta desta medida é da União Europeia no seu conjunto e não de Portugal; uma meta nacional própria permanece ',
+        { marcador: 'a verificar', gloss: 'to verify' },
+        '.',
+      ],
+      en: [
+        'This measure’s target belongs to the European Union as a whole, not to Portugal; a national target of its own remains ',
+        { marcador: 'a verificar', gloss: 'to verify' },
+        '.',
+      ],
+    },
   },
   {
     chave: 'T2',
@@ -425,6 +454,24 @@ export const MEDIDAS_DO_DOMINIO_1 = /** @type {const} */ ([
     limiar: null,
     porConcelho: null,
     forma: null,
+    /* O MARCADOR FICA VISÍVEL (segunda passagem, 03.09.2026, Blocking 4). A
+       linha do diploma é do território continental (artigo 2.º, «Âmbito
+       territorial»); os Açores e a Madeira fixam o seu valor por diploma
+       regional próprio, que o inventário das fontes não leu. Paráfrase da
+       fronteira territorial e não citação: a citação exacta vive no campo
+       `document.locator` da linha, para quem quiser conferi-la. */
+    ressalva: {
+      pt: [
+        'Este valor é o do território continental. Os Açores e a Madeira fixam o seu por diploma regional próprio, que não foi lido: ',
+        { marcador: 'a verificar', gloss: 'to verify' },
+        '.',
+      ],
+      en: [
+        'This value is for mainland Portugal. The Azores and Madeira set their own value by separate regional decree, which has not been read: ',
+        { marcador: 'a verificar', gloss: 'to verify' },
+        '.',
+      ],
+    },
   },
 ]);
 

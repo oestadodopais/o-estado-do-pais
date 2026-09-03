@@ -31,9 +31,14 @@
  * `auditaSelo()` no portão exige de um valor desenhado: um `.src-chip` para
  * aquela linha dentro de um `[data-legenda-selos]` do mesmo instrumento.
  *
- * A ALTERNATIVA EM TEXTO é a própria legenda: os dois nomes, os dois valores com
- * o seu selo, e a unidade. Quem não vê o desenho lê a mesma informação, na mesma
- * página, e não uma descrição do desenho.
+ * A ALTERNATIVA EM TEXTO É UMA FRASE, E NÃO SÓ NOMES E SELOS (segunda
+ * passagem, 03.09.2026, Major 7). Até aqui a legenda dava os dois nomes e um
+ * selo para cada um, e os dois VALORES só existiam dentro do `<svg>`: um
+ * `role="img"` não promete a quem não vê o desenho o texto que está lá dentro.
+ * Agora a legenda é a frase «<concelho>: <valor> <unidade>; <país>: <valor>
+ * <unidade>.», com `<Claim chip={true}/>` a trazer o valor e o selo juntos,
+ * como em qualquer outra leitura do sítio. Quem não vê o desenho lê a mesma
+ * informação, na mesma página, e não uma descrição do desenho.
  *
  * O NOME DO DESENHO VEM DO NOME DA MEDIDA, por `aria-labelledby`, e não de uma
  * cadeia escrita aqui. É a regra que a porta do cartão da faixa já segue: o
@@ -42,7 +47,6 @@
  * nova por medida, e a régua da voz lê os `aria-label` desde a I79.
  */
 import Claim from '../Claim.astro';
-import Provenance from '../Provenance.astro';
 
 const { lang, barra, rotuloConcelho, rotuloPais, unidade, nomeada } = Astro.props;
 const G = barra.campo;
@@ -84,11 +88,25 @@ const G = barra.campo;
     />
   </svg>
 
-  <p class="forma-selos" data-legenda-selos>
+  {/* A ALTERNATIVA EM TEXTO É UMA FRASE COM OS DOIS VALORES, E NÃO SÓ OS
+      NOMES (segunda passagem, 03.09.2026, Major 7). Antes desta frase, a
+      legenda dava o nome do concelho, o nome do país e um selo para cada um
+      lá; os dois VALORES só existiam dentro do `<svg>`, e um `role="img"` não
+      promete o texto de dentro a quem não o vê. Cada valor continua a ser
+      `<Claim chip={true}/>`: a linha do livro-razão, com o seu selo ao lado,
+      não um número escrito aqui. */}
+  <p class="forma-frase" data-legenda-selos>
     <span class="forma-selo-rot" data-lugar>{rotuloConcelho}</span>
-    <Provenance id={barra.concelho.id} lang={lang} />
+    {': '}
+    <Claim id={barra.concelho.id} lang={lang} chip={true} class="forma-frase-num" />
+    {' '}
+    <span data-medida-unidade>{unidade}</span>
+    {'; '}
     <span class="forma-selo-rot" data-lugar>{rotuloPais}</span>
-    <Provenance id={barra.pais.id} lang={lang} />
-    <span class="forma-selo-rot" data-medida-unidade>{unidade}</span>
+    {': '}
+    <Claim id={barra.pais.id} lang={lang} chip={true} class="forma-frase-num" />
+    {' '}
+    <span data-medida-unidade>{unidade}</span>
+    {'.'}
   </p>
 </div>

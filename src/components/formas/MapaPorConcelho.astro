@@ -61,6 +61,7 @@
 import FonteDaCarta from '../FonteDaCarta.astro';
 import Frase from '../Frase.astro';
 import Provenance from '../Provenance.astro';
+import Claim from '../Claim.astro';
 
 const {
   s,
@@ -74,6 +75,14 @@ const {
   chave,
 } = Astro.props;
 const campo = mapa.campo;
+
+/* A ALTERNATIVA EM TEXTO, DENTRO DA PÁGINA (segunda passagem, 03.09.2026,
+   Major 7). Uma ligação para outra página não é o mesmo conteúdo; a régua da
+   acessibilidade pede a informação, não uma promessa de a ir buscar. A lista
+   sai da mesma `mapa.unidades`, pela mesma ordem do desenho, e cada concelho
+   sem valor diz-o com a mesma palavra do mapa («sem valor publicado»), nunca
+   com uma cor de escala fingida em texto. */
+const linhas = mapa.unidades.flatMap((u) => u.concelhos);
 ---
 
 <figure class="forma forma-mapa" data-instrumento={`mapa-por-concelho-${chave}`} data-forma="mapa-por-concelho">
@@ -99,6 +108,7 @@ const campo = mapa.campo;
           {u.concelhos.map((c) => (
             <use
               href={`#geo-c-${c.slug}`}
+              data-concelho={c.slug}
               class:list={['forma-mapa-c', c.classe === null ? 'sem-valor' : `cl-${paleta}-${c.classe}`]}
               fill={c.classe === null ? `url(#trama-${chave})` : undefined}
             />
@@ -127,8 +137,46 @@ const campo = mapa.campo;
       </li>
     </ul>
 
-    {/* A PORTA DA LISTA DOS VALORES, que é a alternativa em texto deste desenho:
-        os 308 valores, um a um, com o selo de cada um. */}
+    {/* A NOTA DA ESCALA, SÓ NA PALETA QUE NÃO É LIMIAR: as classes deste mapa
+        são marcas redondas e não uma referência publicada, ao contrário do
+        mapa cujo corte é a lei. */}
+    {paleta === 'escala' && <p class="forma-mapa-nota">{s.dominios.mapaEscalaNota}</p>}
+
+    {/* A ALTERNATIVA EM TEXTO, NA PRÓPRIA PÁGINA (segunda passagem, 03.09.2026,
+        Major 7): uma tabela com o valor de cada concelho, com o seu selo, fechada
+        por omissão para não pesar no primeiro ecrã. Um `<a>` para outra página não
+        é a mesma informação; isto é. */}
+    <details class="forma-mapa-tabela">
+      <summary>{s.dominios.mapaTabelaAbrir}</summary>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">{s.dominios.mapaTabelaConcelho}</th>
+            <th scope="col">{s.dominios.mapaTabelaValor}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            linhas.map((c) => (
+              <tr>
+                <th scope="row" data-lugar>{c.nome}</th>
+                <td>
+                  {c.id === null ? (
+                    <span>{s.dominios.mapaSemValor}</span>
+                  ) : (
+                    <Claim id={c.id} lang={lang} chip={true} />
+                  )}
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </details>
+
+    {/* A PORTA DA LISTA COMPLETA DO LIVRO-RAZÃO, à parte da tabela acima: a
+        tabela dá o valor desta medida; esta porta dá as OUTRAS linhas que cada
+        concelho tem. */}
     <p class="forma-mapa-porta"><a href={porta}>{portaRotulo}</a></p>
 
     {/* O SELO DA CARTA E A MENÇÃO DA FONTE. A obrigação da licença da CAOP é
