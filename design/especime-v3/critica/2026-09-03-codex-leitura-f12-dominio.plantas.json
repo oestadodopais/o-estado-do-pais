@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-03T13:54:44+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/78714fcd-9d7a-49ae-92d0-914347b16683/scratchpad/leituras/f12-pacote",
+ "plantas": [
+  {
+   "id": "P1a",
+   "ficheiro": "scripts/check-formas.mjs",
+   "descricao": "o portão das formas salta os números desenhados que têm vírgula decimal: um valor como 1 576,0 deixa de ser conferido (cópia inteira)",
+   "sha256_antes": "6021384e9e3a35b78de05c4a14999b5097eb7e2e2655b8f2d833f923d797413b",
+   "sha256_depois": "81d631b12ef8288653b1ac72181aa6e73554fe90880f7997d2db0753177b5900",
+   "contexto_antes": "   for (const t of svg.querySelectorAll('text, tspan, title, desc')) {\n        if (t.querySelector('text, tspan')) continue;\n        const conteudo = texto(t);\n        if (!temAlgarismo(conteudo)) continue;\n        const declarado =\n          t.getAttribute('data-claim') !== undefined ||\n          t.getAttribute('data-nonledger') !== undefined ||\n          t.closest?.('[data-claim],[data-n",
+   "contexto_depois": "   for (const t of svg.querySelectorAll('text, tspan, title, desc')) {\n        if (t.querySelector('text, tspan')) continue;\n        const conteudo = texto(t);\n        if (!temAlgarismo(conteudo) || conteudo.includes(',')) continue;\n        const declarado =\n          t.getAttribute('data-claim') !== undefined ||\n          t.getAttribute('data-nonledger') !== undefined ||\n          t.closest?.('[data-claim],[data-n"
+  },
+  {
+   "id": "P1b",
+   "ficheiro": "diff.patch",
+   "descricao": "a mesma planta nas linhas acrescentadas do diff",
+   "sha256_antes": "a0667ef10935e11c35beb4c9582a0c7de4c3396bdcc6efd2dc2761800b05214c",
+   "sha256_depois": "8e3b7551c4da5ebdc9fab04a6adee2376eef6c3a84dbae121b9ff313fea7bedd",
+   "contexto_antes": " for (const t of svg.querySelectorAll('text, tspan, title, desc')) {\n+        if (t.querySelector('text, tspan')) continue;\n+        const conteudo = texto(t);\n+        if (!temAlgarismo(conteudo)) continue;\n+        const declarado =\n+          t.getAttribute('data-claim') !== undefined ||\n+          t.getAttribute('data-nonledger') !== undefined ||\n+          t.closest?.('[data-claim],[dat",
+   "contexto_depois": " for (const t of svg.querySelectorAll('text, tspan, title, desc')) {\n+        if (t.querySelector('text, tspan')) continue;\n+        const conteudo = texto(t);\n+        if (!temAlgarismo(conteudo) || conteudo.includes(',')) continue;\n+        const declarado =\n+          t.getAttribute('data-claim') !== undefined ||\n+          t.getAttribute('data-nonledger') !== undefined ||\n+          t.closest?.('[data-claim],[dat"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "tests/dominio/pagina.mjs",
+   "descricao": "a planta P1 da régua passa a levar data-nonledger: o portão aceita-a e o conhecido-positivo deixa de provar nada",
+   "sha256_antes": "659ed17976900f6e86288e0c5bc2b57f54ae6061d144548ef00f7a020bf40270",
+   "sha256_depois": "8c9763ac2aa18be6ca042e220adfe7d2a459bfaafa56f39452cf3176ea53b66b",
+   "contexto_antes": "e escala declarada',\n    plantar: () =>\n      planta(PAGINA_DO_DOMINIO, (cru) =>\n        cru.replace(\n          /(<svg[^>]*class=\"forma-svg\"[^>]*>)/,\n          '$1<text class=\"tk\" x=\"10\" y=\"10\">1 234,5</text>',\n        ),\n      ),\n  },\n  {\n    nome: 'P2',\n    celula: 'F5',\n    o_que: 'uma leitura breve sem as três datas',\n    marca: 'e a carta pede três',\n    /* UMA S",
+   "contexto_depois": "e escala declarada',\n    plantar: () =>\n      planta(PAGINA_DO_DOMINIO, (cru) =>\n        cru.replace(\n          /(<svg[^>]*class=\"forma-svg\"[^>]*>)/,\n          '$1<text class=\"tk\" x=\"10\" y=\"10\" data-nonledger=\"\">1 234,5</text>',\n        ),\n      ),\n  },\n  {\n    nome: 'P2',\n    celula: 'F5',\n    o_que: 'uma leitura breve sem as três datas',\n    marca: 'e a carta pede três',\n    /* UMA S"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 307/308 na tabela B2 e 308 no comando ao lado",
+   "sha256_antes": "d8f5b17a494350f57141412562c9b77119fb102ba486ace61a57e18bf49accb7",
+   "sha256_depois": "e8216d8f9d7674d3c3838bc14992ba68edfcfb6580ecea36aab8caed3fa4a8f8",
+   "contexto_antes": "tro páginas novas; as quatro no `dist/sitemap-0.xml` |\n| B2 | «Ganho médio» em 308 de 308 páginas de concelho nas duas edições, com o controlo positivo a 308 | **308/308 nas duas** | `grep -l 'Ganho médio mensal' dist/municipios/*/index.html \\| wc -l` → 308 de 308; `'Average monthly earnings'` em `dist/en/municipalities/*` → 308 de 308; c",
+   "contexto_depois": "tro páginas novas; as quatro no `dist/sitemap-0.xml` |\n| B2 | «Ganho médio» em 308 de 308 páginas de concelho nas duas edições, com o controlo positivo a 308 | **307/308 nas duas** | `grep -l 'Ganho médio mensal' dist/municipios/*/index.html \\| wc -l` → 308 de 308; `'Average monthly earnings'` em `dist/en/municipalities/*` → 308 de 308; c"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/dominio-pt.html",
+   "descricao": "o valor do país desenhado no SVG da barra diz 1 567,0 e a linha diz 1 576,0",
+   "sha256_antes": "b6ba7b27419b566c87dad3c8613f4134b469847b5345d4e09addaffe83262de3",
+   "sha256_depois": "cc9540b06941456d2f5704534044f7836b1b5b7cff1cae41ccb80159fcf675b1",
+   "contexto_antes": "4,5</text><rect class=\"forma-barra-p\" x=\"10\" y=\"48\" width=\"610\" height=\"20\"></rect><text class=\"tk\" x=\"16\" y=\"62\" text-anchor=\"start\" data-lugar>Portugal</text><text data-claim=\"ganho-medio-mensal-2024\" x=\"628\" y=\"62\" text-anchor=\"start\" class=\"claim-value forma-barra-num\">1 576,0</text></svg><p class=\"forma-selos\" data-legenda-selos><span class=\"forma-selo-rot\" data-lugar>Évora</span><a class=\"src-chip\" href=\"/livro-razao/evora-ganho-medio-men",
+   "contexto_depois": "4,5</text><rect class=\"forma-barra-p\" x=\"10\" y=\"48\" width=\"610\" height=\"20\"></rect><text class=\"tk\" x=\"16\" y=\"62\" text-anchor=\"start\" data-lugar>Portugal</text><text data-claim=\"ganho-medio-mensal-2024\" x=\"628\" y=\"62\" text-anchor=\"start\" class=\"claim-value forma-barra-num\">1 567,0</text></svg><p class=\"forma-selos\" data-legenda-selos><span class=\"forma-selo-rot\" data-lugar>Évora</span><a class=\"src-chip\" href=\"/livro-razao/evora-ganho-medio-men"
+  }
+ ]
+}

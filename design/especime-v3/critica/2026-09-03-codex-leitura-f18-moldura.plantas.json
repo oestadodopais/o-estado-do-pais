@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-03T13:48:09+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/78714fcd-9d7a-49ae-92d0-914347b16683/scratchpad/leituras/f18-pacote",
+ "plantas": [
+  {
+   "id": "P1a",
+   "ficheiro": "src/lib/documentos.mjs",
+   "descricao": "as tabelas deixam de ganhar tabindex: o essencial do teclado perde-se (cópia inteira)",
+   "sha256_antes": "5a094a083ed3c0e53c9c66a07153ad0ebd4d705ea182b227f32637ad8b7bcf20",
+   "sha256_depois": "3e27b4782cf036ea85889cfa0eccb72492f26183e14aa61b53923372b9c2ecb7",
+   "contexto_antes": " `var vistos={};` +\n    `for(i=0;i<corre.length;i++){el=corre[i];k=nomes[i];` +\n    `if(conta[k]>1){vistos[k]=(vistos[k]||0)+1;k=k+\" (\"+vistos[k]+\")\";}` +\n    `if(!el.hasAttribute(\"tabindex\"))el.setAttribute(\"tabindex\",\"0\");` +\n    `if(!el.hasAttribute(\"role\"))el.setAttribute(\"role\",\"region\");` +\n    `if(!el.getAttribute(\"aria-label\")&&!el.getAttribute(\"aria-labelledby\"))el.setAttr",
+   "contexto_depois": " `var vistos={};` +\n    `for(i=0;i<corre.length;i++){el=corre[i];k=nomes[i];` +\n    `if(conta[k]>1){vistos[k]=(vistos[k]||0)+1;k=k+\" (\"+vistos[k]+\")\";}` +\n    `if(!el.hasAttribute(\"tabindex\"))el.setAttribute(\"data-oedp-teclado\",\"0\");` +\n    `if(!el.hasAttribute(\"role\"))el.setAttribute(\"role\",\"region\");` +\n    `if(!el.getAttribute(\"aria-label\")&&!el.getAttribute(\"aria-labelledby\"))el.setAttr"
+  },
+  {
+   "id": "P1b",
+   "ficheiro": "diff.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff",
+   "sha256_antes": "25406fba5824ec0de7e7f65dd8378a79bc4cec4e2ba5bcba75dcc8233a720ced",
+   "sha256_depois": "09dac6c7beba4618bfb51388447b9d5cf26b79fc1b9d535deee0bba2cda3a9d4",
+   "contexto_antes": "ar vistos={};` +\n+    `for(i=0;i<corre.length;i++){el=corre[i];k=nomes[i];` +\n+    `if(conta[k]>1){vistos[k]=(vistos[k]||0)+1;k=k+\" (\"+vistos[k]+\")\";}` +\n+    `if(!el.hasAttribute(\"tabindex\"))el.setAttribute(\"tabindex\",\"0\");` +\n+    `if(!el.hasAttribute(\"role\"))el.setAttribute(\"role\",\"region\");` +\n+    `if(!el.getAttribute(\"aria-label\")&&!el.getAttribute(\"aria-labelledby\"))el.setAt",
+   "contexto_depois": "ar vistos={};` +\n+    `for(i=0;i<corre.length;i++){el=corre[i];k=nomes[i];` +\n+    `if(conta[k]>1){vistos[k]=(vistos[k]||0)+1;k=k+\" (\"+vistos[k]+\")\";}` +\n+    `if(!el.hasAttribute(\"tabindex\"))el.setAttribute(\"data-oedp-teclado\",\"0\");` +\n+    `if(!el.hasAttribute(\"role\"))el.setAttribute(\"role\",\"region\");` +\n+    `if(!el.getAttribute(\"aria-label\")&&!el.getAttribute(\"aria-labelledby\"))el.setAt"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "tests/moldura.mjs",
+   "descricao": "a régua deixa passar texto de células a 1,5:1 em vez de 4,5:1",
+   "sha256_antes": "43d3d4a3e6b56fd6c474fa5989bb4636ae00fd8a61c7bc3c84164183fdcc87e1",
+   "sha256_depois": "40c6638322073d20927953a47c1c199a82bb2920b2949f5cb02c002b5331a035",
+   "contexto_antes": "  );\n\n  /* C2 */\n  const filetes = dos((d) => d.filetes);\n  const celulasTexto = dos((d) => d.celulas);\n  const filetesMaus = filetes.filter(([r]) => r < 3);\n  const textoMau = celulasTexto.filter(([r]) => r < 4.5);\n  const min = (xs) => (xs.length ? Math.min(...xs.map(([r]) => r)) : Infinity);\n  /* UMA MEDIÇÃO VAZIA NÃO É UM VERDE. Se a régua não encontrou filete nenhum\n ",
+   "contexto_depois": "  );\n\n  /* C2 */\n  const filetes = dos((d) => d.filetes);\n  const celulasTexto = dos((d) => d.celulas);\n  const filetesMaus = filetes.filter(([r]) => r < 3);\n  const textoMau = celulasTexto.filter(([r]) => r < 1.5);\n  const min = (xs) => (xs.length ? Math.min(...xs.map(([r]) => r)) : Infinity);\n  /* UMA MEDIÇÃO VAZIA NÃO É UM VERDE. Se a régua não encontrou filete nenhum\n "
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz que as violações graves passaram a 0, quando o próprio §C1 diz 1 111",
+   "sha256_antes": "29df6b6eb8fe7e508daabe0680691b34fb642eef74684afcad0b8c4ae7239e3a",
+   "sha256_depois": "cd51a3571d26ee26e7f3b246a36bf5f90909a9279a81dc262639928850ad9f15",
+   "contexto_antes": " C1 · axe a 0 nas graves nos dezasseis | **não feito, e é decisão do diretor** | §3 |\n\nA conta curta: as violações graves do axe nos dezasseis, nos dois temas, passam de **2 069 para 1 111**; os documentos com zero graves passam de **4 para 7**; as caixas que se deslocam sem teclado passam de **92 para 0**; os filetes abaixo de 3:1 passam de **18 9",
+   "contexto_depois": " C1 · axe a 0 nas graves nos dezasseis | **não feito, e é decisão do diretor** | §3 |\n\nA conta curta: as violações graves do axe nos dezasseis, nos dois temas, passam de **2 069 para 0**; os documentos com zero graves passam de **4 para 7**; as caixas que se deslocam sem teclado passam de **92 para 0**; os filetes abaixo de 3:1 passam de **18 9"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "depois/documento-pt.html",
+   "descricao": "um carácter do corpo do documento mudado depois da moldura (registo para registro)",
+   "sha256_antes": "cbe662237ee2dc9f16dc522681df7988f87ef775be78fdb37091d08a8c47457b",
+   "sha256_depois": "5c47759130879c43b54d8893b9d3f2b46e3f96a3813363bbc3dc09d381261b7d",
+   "contexto_antes": "ura>\n<h1>Évora — o que foi prometido, o que foi pago e o que foi auditado</h1>\n<p class=\"lede\"><em>Research Hub. Uma leitura transversal do município de Évora: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado. Cada valor abaixo tem uma linha em <code>ledger.json</code> junto a este ficheir",
+   "contexto_depois": "ura>\n<h1>Évora — o que foi prometido, o que foi pago e o que foi auditado</h1>\n<p class=\"lede\"><em>Research Hub. Uma leitura transversal do município de Évora: o registro de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado. Cada valor abaixo tem uma linha em <code>ledger.json</code> junto a este ficheir"
+  }
+ ]
+}
