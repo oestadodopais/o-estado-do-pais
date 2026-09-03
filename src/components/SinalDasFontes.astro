@@ -50,7 +50,10 @@
 import { estadoDasFontes } from '../lib/prova.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 
-const { lang = 'pt', s, porta } = Astro.props;
+/* \`lang\` saiu daqui a 03.09.2026 (bloco F0.7, segunda passagem): estava
+   desestruturado com omissão e não era lido por nada. Quem chama continua a
+   poder passá-lo; este componente compõe-se do \`s\` que recebe. */
+const { s, porta } = Astro.props;
 const fontes = estadoDasFontes();
 
 /* dd.mm.aaaa hh:mm, na hora de Lisboa. `Intl` faz a conversão do fuso a partir

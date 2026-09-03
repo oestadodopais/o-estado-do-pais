@@ -22,9 +22,16 @@
  * de IA que a §1.89 diz estar em todas as páginas. São textos gerados por IA, de
  * até 1 062 254 bytes, ligados das páginas dos estudos e portanto rastreáveis.
  *
- *   1. `lang` no `<html>`, ONDE FALTA. Oito dos dezasseis declaram a sua língua
- *      e esses não se tocam: o documento é obra alojada e a língua que ele
- *      declara é dele. Os outros oito passam a declarar a da edição;
+ *   1. `lang` no `<html>`, com a etiqueta EXACTA da edição («pt-PT» ou «en»).
+ *      Medidos os dezasseis a 03.09.2026: oito não declaravam língua nenhuma,
+ *      cinco já declaravam a etiqueta exacta, e três diziam «pt» onde a casa
+ *      escreve «pt-PT». Aos oito acrescenta-se; aos três normaliza-se a forma
+ *      da mesma língua; qualquer outra coisa (vazia, ou de outra língua) é
+ *      RECUSADA e pára a construção. A primeira passagem preservava o «pt» do
+ *      autor e o portão exigia a raiz; a leitura a frio mostrou que isso era
+ *      um contrato a duas vozes, e a segunda passagem fecha-o do lado estrito:
+ *      a etiqueta é exacta nos dezasseis, e o que não couber diz-se em vez de
+ *      se acomodar;
  *   2. `<meta name="robots" content="noindex, follow">` no `<head>`. É o
  *      recuo seguro enquanto o advogado não responder à pergunta 11 da
  *      `DILIGENCIA-LEGAL.md`: `noindex` tira o documento dos motores de busca,
@@ -487,13 +494,34 @@ function estiloDaFaixa() {
   ].join('\n');
 
   const fichas = fichasNecessarias(regras, raiz);
-  ESTILO = regras.replace(
+  const composto = regras.replace(
     '@@fichas@@',
     [...fichas]
       .sort(([a], [b]) => a.localeCompare(b))
       .map(([nome, valor]) => `--oedp-${nome}:${valor}`)
       .join(';') + ';',
   );
+
+  /**
+   * AS LETRAS DA FAIXA MUDAM DE NOME (segunda passagem, 03.09.2026).
+   *
+   * A faixa declara dois `@font-face` com os nomes de família da casa,
+   * «Spectral» e «Spectral SC», dentro de um documento de outra pessoa. Um
+   * documento que declare uma família com o mesmo nome, ou que a peça, fica com
+   * duas fichas a disputar o nome, e ganha a última que o navegador ler: a
+   * moldura da casa passaria a mexer na letra da obra citada, ou ao contrário.
+   * A leitura a frio apontou-o (Blocking 3, «unscoped @font-face rules»).
+   *
+   * As famílias passam a `oedp-Spectral` e `oedp-Spectral SC`, e o nome muda nos
+   * dois sítios ao mesmo tempo, porque a substituição corre sobre a folha já
+   * composta: dentro das fichas `@font-face` e dentro das pilhas de tipos que as
+   * fichas `--oedp-f-*` trazem. Os nomes de recuo (Georgia, Times New Roman) não
+   * se tocam: são famílias do sistema, não são declaradas aqui, e renomeá-las
+   * era pedir uma letra que não existe.
+   */
+  ESTILO = composto
+    .replace(/'Spectral SC'/g, "'oedp-Spectral SC'")
+    .replace(/'Spectral'/g, "'oedp-Spectral'");
   return ESTILO;
 }
 
@@ -584,50 +612,252 @@ export function faixa(slug, lang) {
 export const MARCA_DOS_ROBOS = '<meta name="robots" content="noindex, follow">';
 
 /**
+ * ---------------------------------------------------------------------------
+ * ONDE UMA ETIQUETA É UMA ETIQUETA (segunda passagem, 03.09.2026)
+ * ---------------------------------------------------------------------------
+ * A primeira passagem procurava `<html`, `<head` e `<body` com uma expressão
+ * regular sobre o ficheiro inteiro, e a leitura a frio mostrou o que isso
+ * abria: texto com forma de etiqueta dentro de um comentário, de um `<script>`
+ * ou de um `<style>` escolhe o ponto de inserção, e a marca da casa vai parar
+ * ao meio de outra coisa. Um dos dezasseis documentos tem mesmo um segundo
+ * `<html lang="pt-PT">` na linha 3, que não é a raiz.
+ *
+ * Estas duas funções resolvem-no sem trazer um analisador: marcam as zonas
+ * OPACAS (comentário, guião, folha) e recusam qualquer correspondência que caia
+ * lá dentro. A etiqueta tem ainda de estar nos primeiros 4 KB e antes do
+ * primeiro `<body`, que é onde a raiz e a cabeça de um documento HTML vivem.
+ */
+const LIMITE_DA_CABECA = 4096;
+
+/** Os intervalos `[inicio, fim)` que não são markup. */
+function zonasOpacas(texto) {
+  const zonas = [];
+  const padroes = [
+    /<!--[\s\S]*?(?:-->|$)/g,
+    /<script\b[^>]*>[\s\S]*?(?:<\/script\s*>|$)/gi,
+    /<style\b[^>]*>[\s\S]*?(?:<\/style\s*>|$)/gi,
+  ];
+  for (const re of padroes) {
+    for (const m of texto.matchAll(re)) zonas.push([m.index, m.index + m[0].length]);
+  }
+  return zonas;
+}
+
+const dentroDe = (zonas, i) => zonas.some(([de, ate]) => i >= de && i < ate);
+
+/**
+ * A primeira ocorrência REAL de uma etiqueta de abertura.
+ * @returns {{ inicio: number, fim: number, atributos: string } | null}
+ */
+function etiquetaReal(texto, nome, zonas, { ate = Infinity, antesDe = Infinity } = {}) {
+  for (const m of texto.matchAll(new RegExp(`<${nome}\\b([^>]*)>`, 'gi'))) {
+    if (m.index >= ate || m.index >= antesDe) return null;
+    if (dentroDe(zonas, m.index)) continue;
+    return { inicio: m.index, fim: m.index + m[0].length, atributos: m[1] };
+  }
+  return null;
+}
+
+/**
+ * Uma marca `robots` do autor, em QUALQUER grafia: aspas duplas, simples ou
+ * nenhumas, e espaço à volta do `=`. A primeira passagem procurou só
+ * `name="robots"` e disse que nenhum dos dezasseis trazia uma, o que era uma
+ * conclusão tirada de uma busca estreita.
+ */
+const ROBOS_DO_AUTOR =
+  /<meta\b[^>]*\bname\s*=\s*(?:"\s*robots\s*"|'\s*robots\s*'|robots(?=[\s/>]))[^>]*>/i;
+
+/** Uma declaração de codificação do autor, a seguir à qual a casa escreve. */
+const CHARSET_DO_AUTOR =
+  /<meta\b[^>]*(?:\bcharset\s*=|\bhttp-equiv\s*=\s*['"]?\s*content-type)[^>]*>/i;
+
+const recusa = (slug, lang, porque) => {
+  throw new Error(`documentos: o documento "${slug}" (${lang}) ${porque}`);
+};
+
+/**
  * As duas marcas que vivem ACIMA do `<body>`: a língua do `<html>` e a marca
  * dos robôs no `<head>`.
  *
- * A LÍNGUA SÓ ENTRA ONDE FALTA. Oito dos dezasseis documentos declaram a sua
- * («pt-PT», «pt» ou «en»), e essa é a declaração do autor sobre a sua própria
- * obra: reescrever «pt» para «pt-PT» seria editar o documento para o fazer
- * caber na grafia da casa, que é exactamente o que a regra destas páginas
- * proíbe. O que faltava era a declaração, e é ela que se acrescenta.
+ * A LÍNGUA FICA EXACTA, e as três saídas estão escritas na cabeça do ficheiro:
+ * acrescenta-se onde falta, normaliza-se a forma da mesma língua, recusa-se o
+ * resto. Uma etiqueta vazia (`lang=""`) é uma declaração que não declara nada e
+ * é recusada; uma de outra língua diz que o ficheiro não é o que o arquivo diz
+ * que é, e também.
  *
- * A marca dos robôs entra sempre, porque nenhum dos dezasseis traz uma: não há
- * declaração de autor nenhuma para respeitar, e uma segunda marca `robots` numa
- * página é ambígua para um rastreador.
+ * A MARCA DOS ROBÔS ENTRA A SEGUIR AO CHARSET DO AUTOR, quando ele existe. A
+ * norma manda a declaração de codificação caber nos primeiros 1 024 bytes do
+ * ficheiro, e enfiar a nossa marca antes dela empurra-a para a frente: com
+ * documentos de até 1 MB isso é mexer na maneira como o ficheiro se descodifica,
+ * que é a coisa que estas páginas mais têm de proteger. Sem charset declarado, a
+ * marca vai logo a seguir ao `<head>`.
+ *
+ * E UM DOCUMENTO QUE JÁ TRAGA A SUA MARCA `robots` É RECUSADO, não duplicado:
+ * duas marcas numa página são ambíguas para um rastreador, e escolher por ele
+ * qual vale seria a casa a decidir uma coisa do autor.
  *
  * @param {string} bruto o ficheiro tal como está em studies-src/
  * @param {{ slug: string, lang: string }} onde
  */
 export function comMarcasDaCasa(bruto, { slug, lang }) {
   const s = t(lang);
+  const zonas = zonasOpacas(bruto);
+  const corpo = etiquetaReal(bruto, 'body', zonas);
+  const ate = Math.min(LIMITE_DA_CABECA, bruto.length);
+  const antesDe = corpo ? corpo.inicio : Infinity;
+
+  const html = etiquetaReal(bruto, 'html', zonas, { ate, antesDe });
+  if (!html) {
+    recusa(slug, lang, 'não tem um `<html>` de verdade nos primeiros 4 KB, antes do `<body>`.');
+  }
+
+  /* A língua: acrescentar, normalizar, ou recusar. */
   let saida = bruto;
-
-  const html = saida.match(/<html\b([^>]*)>/i);
-  if (!html || html.index === undefined) {
-    throw new Error(
-      `documentos: o documento "${slug}" (${lang}) não tem \`<html>\`, e a língua não sabe onde ` +
-        `entrar. Um documento de estudo é um ficheiro HTML completo e auto-contido.`,
-    );
-  }
-  if (!/\blang\s*=/i.test(html[1])) {
-    const i = html.index;
+  const declarada = html.atributos.match(/\blang\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'>]+))/i);
+  const valor = declarada ? (declarada[1] ?? declarada[2] ?? declarada[3] ?? '').trim() : null;
+  if (valor === null) {
     saida =
-      saida.slice(0, i) +
-      `<html lang="${atributo(s.lang)}"${html[1]}>` +
-      saida.slice(i + html[0].length);
+      bruto.slice(0, html.inicio) +
+      `<html lang="${atributo(s.lang)}"${html.atributos}>` +
+      bruto.slice(html.fim);
+  } else if (valor !== s.lang) {
+    if (!valor || valor.split('-')[0].toLowerCase() !== s.lang.split('-')[0].toLowerCase()) {
+      recusa(
+        slug,
+        lang,
+        `declara \`lang="${valor}"\` e é a edição "${lang}", que a casa escreve "${s.lang}".\n` +
+          `      Uma etiqueta vazia não declara nada, e uma de outra língua diz que este ficheiro ` +
+          `não é o que o arquivo diz que é. Nenhuma das duas se conserta em passagem: ou o ` +
+          `documento está na pasta errada, ou a etiqueta dele está errada.`,
+      );
+    }
+    /* A MESMA LÍNGUA, NOUTRA FORMA: normaliza-se, e diz-se porquê. «pt» e
+       «pt-PT» dizem português, e o portão exige a etiqueta exacta da edição nos
+       dezasseis. Preservar a forma do autor e exigir a raiz no portão era um
+       contrato a duas vozes (leitura a frio de 03.09, Major 5). Fecha-se do
+       lado estrito, e o que se muda é a FORMA de uma etiqueta de metadados,
+       acima do `<head>`: nenhum byte do corpo se move. */
+    saida =
+      bruto.slice(0, html.inicio) +
+      `<html${html.atributos.slice(0, declarada.index)}lang="${atributo(s.lang)}"` +
+      `${html.atributos.slice(declarada.index + declarada[0].length)}>` +
+      bruto.slice(html.fim);
   }
 
-  const cabeca = saida.match(/<head\b[^>]*>/i);
-  if (!cabeca || cabeca.index === undefined) {
-    throw new Error(
-      `documentos: o documento "${slug}" (${lang}) não tem \`<head>\`, e a marca dos robôs não ` +
-        `sabe onde entrar.`,
+  /* A marca dos robôs. As zonas recalculam-se: a língua pode ter mudado o
+     comprimento da etiqueta e todos os índices com ela. */
+  const zonas2 = zonasOpacas(saida);
+  const corpo2 = etiquetaReal(saida, 'body', zonas2);
+  const cabeca = etiquetaReal(saida, 'head', zonas2, {
+    ate: Math.min(LIMITE_DA_CABECA, saida.length),
+    antesDe: corpo2 ? corpo2.inicio : Infinity,
+  });
+  if (!cabeca) {
+    recusa(slug, lang, 'não tem um `<head>` de verdade nos primeiros 4 KB, antes do `<body>`.');
+  }
+
+  const daCabeca = saida.slice(cabeca.fim, corpo2 ? corpo2.inicio : saida.length);
+  const jaTem = daCabeca.match(ROBOS_DO_AUTOR) ?? saida.match(ROBOS_DO_AUTOR);
+  if (jaTem) {
+    recusa(
+      slug,
+      lang,
+      `já traz uma marca \`robots\` sua: ${JSON.stringify(jaTem[0].slice(0, 120))}.\n` +
+        `      A casa não lhe acrescenta uma segunda: duas marcas \`robots\` numa página são ` +
+        `ambíguas para um rastreador, e escolher por ele qual vale era decidir uma coisa do autor.`,
     );
   }
-  const j = cabeca.index + cabeca[0].length;
-  return saida.slice(0, j) + MARCA_DOS_ROBOS + saida.slice(j);
+
+  const charset = daCabeca.match(CHARSET_DO_AUTOR);
+  const onde = charset ? cabeca.fim + charset.index + charset[0].length : cabeca.fim;
+  return saida.slice(0, onde) + MARCA_DOS_ROBOS + saida.slice(onde);
+}
+
+/**
+ * A região do `<head>` de um ficheiro construído, em índices de cadeia.
+ *
+ * O portão precisa dela para exigir que a marca dos robôs esteja DENTRO da
+ * cabeça e não em qualquer sítio do documento. Pergunta-se por posição e não à
+ * árvore do analisador: um documento alojado pode ter markup que um analisador
+ * arrume de outra maneira, e o que aqui se quer saber é onde a marca está no
+ * ficheiro que o rastreador vai ler.
+ *
+ * @returns {{ de: number, ate: number } | null}
+ */
+export function regiaoDaCabeca(texto) {
+  const zonas = zonasOpacas(texto);
+  const corpo = etiquetaReal(texto, 'body', zonas);
+  const cabeca = etiquetaReal(texto, 'head', zonas, {
+    ate: Math.min(LIMITE_DA_CABECA, texto.length),
+    antesDe: corpo ? corpo.inicio : Infinity,
+  });
+  if (!cabeca) return null;
+  return { de: cabeca.fim, ate: corpo ? corpo.inicio : texto.length };
+}
+
+/**
+ * ---------------------------------------------------------------------------
+ * A PROVA DOS BYTES, POR FATIAS E NÃO POR RECÁLCULO (segunda passagem)
+ * ---------------------------------------------------------------------------
+ * O portão comparava o construído com `documentoServido()`, e a leitura a frio
+ * apontou o que essa igualdade prova de facto: que o transformador é
+ * DETERMINÍSTICO. Se ele corromper um documento, corrompe os dois lados da
+ * igualdade e a comparação continua verde.
+ *
+ * Esta prova é independente porque não passa pelo transformador: lê os bytes do
+ * ficheiro de origem, lê os bytes do ficheiro construído, e compara FATIAS.
+ *
+ *   · a cauda: os bytes do construído a seguir à faixa têm de ser, byte a byte,
+ *     os bytes do original a seguir ao seu `<body>`. Como a faixa é a última
+ *     coisa que a casa insere e nada se acrescenta abaixo dela, o construído
+ *     TERMINA com essa cauda, e a comparação é uma subtracção de comprimentos;
+ *   · a cabeça: tirar do construído a única ocorrência de `MARCA_DOS_ROBOS`
+ *     devolve, entre o `<head>` e o `<body>`, exactamente os bytes do original
+ *     entre os seus.
+ *
+ * Devolve `null` quando está bem, ou a frase do que falhou.
+ */
+export function provaDosBytes(bruto, construido) {
+  const bufO = Buffer.from(bruto, 'utf8');
+  const bufC = Buffer.from(construido, 'utf8');
+  const bytesAte = (texto, i) => Buffer.byteLength(texto.slice(0, i), 'utf8');
+
+  const corpoO = etiquetaReal(bruto, 'body', zonasOpacas(bruto));
+  if (!corpoO) return 'o original não tem um `<body>` de verdade.';
+
+  /* A cauda. */
+  const cauda = bufO.subarray(bytesAte(bruto, corpoO.fim));
+  if (bufC.length < cauda.length) {
+    return `o construído (${bufC.length} bytes) é mais curto do que a cauda do original (${cauda.length}).`;
+  }
+  const caudaC = bufC.subarray(bufC.length - cauda.length);
+  if (Buffer.compare(cauda, caudaC) !== 0) {
+    let i = 0;
+    while (i < cauda.length && cauda[i] === caudaC[i]) i++;
+    return (
+      `os bytes abaixo da faixa não são os do original: diferem no byte ${i} da cauda ` +
+      `(original ${cauda[i]}, construído ${caudaC[i]}).`
+    );
+  }
+
+  /* A cabeça. */
+  const semRobos = construido.split(MARCA_DOS_ROBOS);
+  if (semRobos.length !== 2) {
+    return `esperava exactamente uma marca dos robôs no construído e encontrei ${semRobos.length - 1}.`;
+  }
+  const reposto = semRobos.join('');
+  const cabecaO = etiquetaReal(bruto, 'head', zonasOpacas(bruto), { antesDe: corpoO.inicio });
+  const zonasR = zonasOpacas(reposto);
+  const corpoR = etiquetaReal(reposto, 'body', zonasR);
+  const cabecaR = etiquetaReal(reposto, 'head', zonasR, { antesDe: corpoR ? corpoR.inicio : Infinity });
+  if (!cabecaO || !cabecaR) return 'não encontrei o `<head>` dos dois lados para comparar.';
+  const entreO = bufO.subarray(bytesAte(bruto, cabecaO.fim), bytesAte(bruto, corpoO.inicio));
+  const bufR = Buffer.from(reposto, 'utf8');
+  const entreR = bufR.subarray(bytesAte(reposto, cabecaR.fim), bytesAte(reposto, corpoR.inicio));
+  if (Buffer.compare(entreO, entreR) !== 0) {
+    return `os bytes entre o \`<head>\` e o \`<body>\` não são os do original depois de tirar a marca dos robôs.`;
+  }
+  return null;
 }
 
 /**
@@ -643,20 +873,18 @@ export function comMarcasDaCasa(bruto, { slug, lang }) {
 export function comFaixa(bruto, { slug, lang }) {
   const marca = faixa(slug, lang);
 
-  const corpo = bruto.match(/<body[^>]*>/i);
-  if (corpo && corpo.index !== undefined) {
-    const i = corpo.index + corpo[0].length;
-    return bruto.slice(0, i) + marca + bruto.slice(i);
-  }
-
-  const cabeca = bruto.match(/<\/head\s*>/i);
-  if (cabeca && cabeca.index !== undefined) {
-    const i = cabeca.index + cabeca[0].length;
-    return bruto.slice(0, i) + marca + bruto.slice(i);
+  /* O `<body>` DE VERDADE, e sem recuo para o `</head>`. A primeira passagem
+     aceitava um documento sem `<body>` e punha a faixa a seguir ao `</head>`,
+     onde ela fica fora do corpo e a prova da cauda deixa de ter âncora. Os
+     dezasseis têm `<body>`; um que não tenha é um ficheiro que ninguém
+     conferiu, e diz-se em vez de se remendar. */
+  const corpo = etiquetaReal(bruto, 'body', zonasOpacas(bruto));
+  if (corpo) {
+    return bruto.slice(0, corpo.fim) + marca + bruto.slice(corpo.fim);
   }
 
   throw new Error(
-    `documentos: o documento "${slug}" (${lang}) não tem <body> nem </head>, e a faixa não ` +
+    `documentos: o documento "${slug}" (${lang}) não tem um <body> de verdade, e a faixa não ` +
       `sabe onde entrar. Um documento de estudo é um ficheiro HTML completo e auto-contido.`,
   );
 }
@@ -674,6 +902,36 @@ export function documentoServido(slug, lang) {
   if (!workById(slug)) {
     throw new Error(`documentos: "${slug}" não é um trabalho do arquivo.`);
   }
-  const bruto = fs.readFileSync(doc.ficheiro, 'utf8');
-  return comFaixa(comMarcasDaCasa(bruto, { slug, lang }), { slug, lang });
+  /**
+   * A IDA E VOLTA DOS BYTES, ANTES DE TOCAR EM NADA (segunda passagem).
+   *
+   * Tudo o que se segue trata o documento como uma cadeia de JavaScript, isto é,
+   * como UTF-8 descodificado. Para um ficheiro que não seja UTF-8 válido, ou que
+   * esteja noutra codificação, essa descodificação já perdeu bytes antes de
+   * qualquer inserção, e a prova das fatias compararia o estrago consigo próprio.
+   * Lê-se o ficheiro duas vezes, em bytes e em texto, e exige-se que o texto
+   * reescrito dê os MESMOS bytes. Um documento que não faça a volta é recusado,
+   * e nunca transformado.
+   */
+  const bytes = fs.readFileSync(doc.ficheiro);
+  const bruto = bytes.toString('utf8');
+  if (Buffer.compare(Buffer.from(bruto, 'utf8'), bytes) !== 0) {
+    throw new Error(
+      `documentos: o documento "${slug}" (${lang}) não sobrevive à ida e volta por UTF-8: ` +
+        `${bytes.length} bytes lidos, ${Buffer.byteLength(bruto, 'utf8')} bytes reescritos.\n` +
+        `      Ou não é UTF-8, ou traz bytes que não são UTF-8 válido. A casa não o transforma: ` +
+        `qualquer marca que lhe acrescentasse viajaria com o resto do ficheiro já alterado.`,
+    );
+  }
+
+  const construido = comFaixa(comMarcasDaCasa(bruto, { slug, lang }), { slug, lang });
+
+  const falha = provaDosBytes(bruto, construido);
+  if (falha) {
+    throw new Error(
+      `documentos: a transformação de "${slug}" (${lang}) não preservou os bytes do original.\n` +
+        `      ${falha}`,
+    );
+  }
+  return construido;
 }
