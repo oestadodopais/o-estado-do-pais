@@ -2639,6 +2639,49 @@ a.porta:hover .porta-abrir {
   white-space: nowrap;
 }
 
+/* ------------------------------------------- a leitura breve, no cabeçalho
+   Duas posições, no cabeçalho do painel, por baixo do nome dele e por cima da
+   frase de contexto. Chega escondido do servidor e é o guião que o acende: ver a
+   razão em `HomeView.astro`. O alvo é o da casa abaixo de 1024, 44 px, e a forma
+   é a do comando que saiu, sem a palavra que o nomeava. */
+.painel-densidade {
+  display: flex;
+  gap: 8px;
+  /* O AR POR CIMA É MEDIDO, E NÃO DE GOSTO. O nome do painel leva a contagem das
+     medidas dentro de um `.prova-valor`, e a área efetiva desse alvo é de 44 px,
+     expandida por um `::after` centrado no algarismo: com o comando encostado ao
+     nome, essa área tocava o botão da esquerda, e a régua `correcoes-a` (item
+     A10) contou um par sobreposto na edição inglesa, onde a linha do nome quebra
+     noutro sítio. Uma área sobreposta não é um alvo maior: é uma porta que abre a
+     coisa do lado. Os 14 px afastam os dois alvos nas duas edições. */
+  margin: 14px 0 12px;
+}
+.densidade-b {
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--rule-strong);
+  background: var(--paper);
+  color: var(--muted);
+  font-family: var(--f-versal);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+}
+.densidade-b:hover {
+  color: var(--ink);
+}
+.densidade-b[aria-pressed='true'] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+@media (min-width: 1024px) {
+  .densidade-b {
+    min-height: 32px;
+  }
+}
+
 /* ------------------------------------------------ a frase de contexto e o fio
    A frase de cada painel, entre o nome dele e os seus cartões. É prosa, e por
    isso é do tipo da prosa; o corpo é o da lede em pequeno, e a medida de linha
