@@ -31,13 +31,24 @@
  *      o contador da posição em cada título de nível 2, a tinta que ele
  *      desenha (por píxeis, comparando a mesma banda com a regra e sem ela) e
  *      a barra que mede 0 no topo e a largura da janela no fim.
- * D3 · a subida: à vista nas duas larguras, alvo ≥ 44px nos dois eixos, e zero
- *      caixas de linha do artigo debaixo dela.
- * D4 · os alvos da mobília da página de leitura, a 390 e com toque: zero
- *      abaixo de 44px. O que fica no corpo transcrito é medido e dito, não
- *      corrigido: são alvos dentro de uma frase, e a distância entre portas
- *      seguidas (mediana medida) é a razão pela qual uma área de 44px ali seria
- *      uma porta que abre a linha do vizinho.
+ * D3 · a subida (Blocking 4 da leitura a frio do Codex, segunda passagem,
+ *      03.09.2026): a 1024px e acima, fixa, alvo ≥ 44px, zero caixas de linha
+ *      do artigo debaixo dela em dez posições da página — uma exigência, não
+ *      uma informação. Abaixo de 1024px o comando fixo não se desenha (não há
+ *      goteira onde caiba), e cada secção de nível 2 termina numa porta em
+ *      fluxo com o mesmo alvo, que por estar no próprio documento não pode
+ *      sobrepor-se a uma linha dele.
+ * D4 · os alvos de toque do corpo transcrito (Blocking 3 da mesma leitura):
+ *      `.texto-ligacao` e `a.src-chip` fora de tabela crescem para 44px pela
+ *      técnica do `::after` e a régua exige que alcancem essa área, com um
+ *      resíduo de sobreposição contado a um número exato (I9). As portas de
+ *      figura (`.texto-figura-porta` e `.texto-figura-porta-apos`) ficam com
+ *      a área que já tinham, e a razão é medida e não suposta: a distância
+ *      entre portas seguidas (mediana medida, I9b) é a que uma área de 44px
+ *      teria de caber, e não cabe.
+ * D8 · o nome acessível de cada título de nível 2 leva a posição «Secção n de
+ *      N» antes do título (Major 8 da mesma leitura), computado pelo próprio
+ *      motor via `ariaSnapshot()` — não suposto a partir da regra CSS.
  * D6 · a altura de cada página a 390, e a banda que o índice ocupa.
  *
  * ---------------------------------------------------------------------------
@@ -156,6 +167,7 @@ const AMOSTRA = {
 {
   const falhas = [];
   const contagens = [];
+  const falhasIdsDuplicados = [];
   for (const p of PAGINAS) {
     const ficheiro = path.join(DIST, p.rota.replace(/^\//, ''), 'index.html');
     if (!fs.existsSync(ficheiro)) {
@@ -163,6 +175,26 @@ const AMOSTRA = {
       continue;
     }
     const root = parse(fs.readFileSync(ficheiro, 'utf8'));
+
+    /* OS ID SÃO ÚNICOS NA PÁGINA (Major 9 da leitura a frio do Codex: «I1 usa
+       só querySelector, e um id duplicado passa»). `querySelector` devolve o
+       primeiro; um segundo elemento com o mesmo id nunca aparece nessa
+       comparação, e por isso esta célula conta as OCORRÊNCIAS de cada id, não
+       só a presença de uma. Conta CADA id da página, e não só os `#bloco-N`:
+       um id duplicado em qualquer sítio é uma âncora que já não sabe para
+       onde vai. */
+    {
+      const contagemPorId = new Map();
+      for (const el of root.querySelectorAll('[id]')) {
+        const id = el.getAttribute('id') ?? '';
+        if (!id) continue;
+        contagemPorId.set(id, (contagemPorId.get(id) ?? 0) + 1);
+      }
+      for (const [id, n] of contagemPorId) {
+        if (n !== 1) falhasIdsDuplicados.push(`${p.chave} #${id} (${n}×)`);
+      }
+    }
+
     const nav = root.querySelector('#texto-indice');
     if (!nav) {
       falhas.push(`${p.chave}: não há índice`);
@@ -194,17 +226,32 @@ const AMOSTRA = {
         falhas.push(`${p.chave} entrada ${i}: abre "${href}" e o bloco é "#bloco-${bloco.i}"`);
         return;
       }
-      const destino = root.querySelector(`#bloco-${bloco.i}`);
-      if (!destino) {
+      /* O DESTINO É UM SÓ (Major 9): antes só se perguntava se `querySelector`
+         encontrava alguma coisa; agora conta-se quantos elementos têm este id
+         exatamente, com `querySelectorAll`, que não para no primeiro. */
+      const destinos = root.querySelectorAll(`#bloco-${bloco.i}`);
+      if (destinos.length === 0) {
         falhas.push(`${p.chave} entrada ${i}: abre "${href}" e não há esse id na página`);
+      } else if (destinos.length > 1) {
+        falhas.push(
+          `${p.chave} entrada ${i}: abre "${href}" e há ${destinos.length} elementos com esse id`,
+        );
       }
     });
   }
   medidas.indice = { paginas: PAGINAS.length, contagens, falhas };
+  medidas.idsDuplicados = falhasIdsDuplicados;
   conta(
     'I1 · o índice das 8 páginas de leitura: uma entrada por título de nível 2 e 3 do registo, com o texto do registo e um destino que existe',
     falhas.length === 0 && PAGINAS.length === 8,
     `${PAGINAS.length} páginas · ${contagens.join(' · ')}${falhas.length ? ` · FALHAS: ${falhas.slice(0, 3).join(' | ')}` : ''}`,
+  );
+  conta(
+    'I1b · cada id da página aparece exatamente uma vez, nas 8 páginas de leitura (Major 9 da leitura a frio do Codex)',
+    falhasIdsDuplicados.length === 0,
+    falhasIdsDuplicados.length === 0
+      ? `zero ids duplicados, nas 8 páginas`
+      : `${falhasIdsDuplicados.length} id(s) duplicado(s): ${falhasIdsDuplicados.slice(0, 5).join(' | ')}`,
   );
 }
 
@@ -275,7 +322,33 @@ const SONDA_ALVOS = () => {
   window.scrollTo(0, 0);
   const porZona = {};
   for (const x of pequenos) porZona[x.zona] = (porZona[x.zona] ?? 0) + 1;
-  return { rendidos, pequenos: pequenos.length, porZona, daPagina: pequenos.filter((x) => x.zona === 'pagina' || x.zona === 'rodape' && false) };
+  /* A REPARTIÇÃO DO CORPO POR CLASSE (Blocking 3, F1.9a segunda passagem): a
+     isenção do artigo deixou de ser uma só, e é preciso saber quem ainda está
+     pequeno depois de `.texto-ligacao` e `a.src-chip` (fora de tabela)
+     crescerem para 44px. `.texto-figura-porta` e `.texto-figura-porta-apos`
+     ficam com a área que já tinham, por regra medida (I9b); os outros dois
+     não deviam sobrar nenhum. */
+  const porClasseNoArtigo = {};
+  for (const x of pequenos) {
+    if (x.zona !== 'artigo') continue;
+    const classe = x.nome.includes('texto-figura-porta-apos')
+      ? 'apos'
+      : x.nome.includes('texto-figura-porta')
+        ? 'figura'
+        : x.nome.includes('src-chip')
+          ? 'selo'
+          : x.nome.includes('texto-ligacao')
+            ? 'ligacao'
+            : 'outro';
+    porClasseNoArtigo[classe] = (porClasseNoArtigo[classe] ?? 0) + 1;
+  }
+  return {
+    rendidos,
+    pequenos: pequenos.length,
+    porZona,
+    porClasseNoArtigo,
+    daPagina: pequenos.filter((x) => x.zona === 'pagina' || x.zona === 'rodape' && false),
+  };
 };
 
 /** As peças da página: índice, contador, barra, subida, altura. */
@@ -293,6 +366,10 @@ const SONDA_PECAS = () => {
   const rs = subir ? subir.getBoundingClientRect() : null;
   const rb = barra ? barra.getBoundingClientRect() : null;
   const entradas = nav ? [...nav.querySelectorAll('a[href^="#"]')] : [];
+  /* AS PORTAS EM FLUXO, no fim de cada secção de nível 2 (Blocking 4). Uma
+     por título de nível 2, incluindo o último (o laço de `pecasDoCorpo` fecha
+     a secção que ficar aberta no fim do artigo). */
+  const portasDeSeccao = art ? [...art.querySelectorAll('.texto-secao-topo')] : [];
   return {
     indice: !!nav,
     entradas: entradas.length,
@@ -319,6 +396,14 @@ const SONDA_PECAS = () => {
           dentroDoEcra: rs.bottom <= innerHeight + 1 && rs.top >= 0 && rs.right <= innerWidth + 1,
         }
       : null,
+    secaoTopo: {
+      total: portasDeSeccao.length,
+      display: portasDeSeccao.length ? getComputedStyle(portasDeSeccao[0]).display : null,
+      abaixoDe44: portasDeSeccao.filter((a) => {
+        const r = a.getBoundingClientRect();
+        return getComputedStyle(a).display !== 'none' && (r.width < 44 || r.height < 44);
+      }).length,
+    },
     barra: rb ? { l: +rb.width.toFixed(1), a: +rb.height.toFixed(1), display: getComputedStyle(barra).display } : null,
     altura: document.documentElement.scrollHeight,
     ecra: innerHeight,
@@ -326,8 +411,10 @@ const SONDA_PECAS = () => {
 };
 
 /**
- * A subida tapa texto? Caixas de linha do artigo debaixo da caixa dela, em DEZ
- * posições da página e não só no fim.
+ * O QUE TAPA TEXTO? Caixas de linha do artigo debaixo do comando de subida, em
+ * DEZ posições da página e não só no fim (Blocking 4 da leitura a frio do
+ * Codex: a primeira versão desta célula tratava o número como informativo;
+ * esta versão FALHA quando há sobreposição, nas duas larguras).
  *
  * A primeira versão desta sonda media com a página no fundo, onde por baixo da
  * subida está o rodapé e nunca o artigo, e devolvia zero em toda a parte. A
@@ -335,19 +422,49 @@ const SONDA_PECAS = () => {
  * varrer a página de dez em dez por cento. É a mesma lição do detetor de
  * sobreposições da auditoria de 25.08: a caixa de cada nó de texto, com
  * `Range`, e não a caixa do elemento.
+ *
+ * DAS DUAS FORMAS DO COMANDO, A QUE ESTIVER VISÍVEL (F1.9a, segunda passagem):
+ * a partir de 1024px é o `.texto-subir` fixo, e o varrimento tem de repetir-se
+ * a cada posição porque ele fica quieto enquanto o documento roda por baixo;
+ * abaixo disso são as portas em fluxo (`.texto-secao-topo`), uma por secção, e
+ * o varrimento conta as que estiverem dentro do ecrã em cada uma das dez
+ * posições. UMA PORTA NUNCA TAPA O SEU PRÓPRIO TEXTO: a caixa de uma porta e o
+ * nó de texto lá dentro são a mesma coisa, e contá-los sobrepostos mediria um
+ * defeito que não existe — por isso o passeio salta o que está dentro de
+ * `.texto-secao-topo`.
+ *
+ * `.vh` TAMBÉM SE SALTA, E A PRIMEIRA VERSÃO DESTA CÉLULA NÃO SALTAVA (F1.9a
+ * segunda passagem: a captura de 390 apanhou o defeito da própria sonda). O
+ * irmão que dá a posição ao título (`<span class="vh" data-registo-posicao>`)
+ * é `position: absolute` sem `top`/`left` declarados, e por isso usa a
+ * posição estática do CSS — que, escrito logo a seguir à porta em fluxo, cai
+ * em cima da caixa dela. Um leitor com vista não o vê (é a mesma razão que já
+ * tira `.vh` do `textoVisivel()` do portão, `scripts/gate-html.mjs`), e por
+ * isso não é texto que a porta possa tapar.
  */
 const SONDA_TAPA = () => {
-  const subir = document.querySelector('.texto-subir');
-  if (!subir || getComputedStyle(subir).display === 'none') return { cruzamentos: -1, posicoes: 0 };
   const art = document.querySelector('#documento');
   const alturaTotal = document.documentElement.scrollHeight;
+  const subir = document.querySelector('.texto-subir');
+  const subirVisivel = !!subir && getComputedStyle(subir).display !== 'none';
+  const alvos = () => {
+    if (subirVisivel) {
+      const r = subir.getBoundingClientRect();
+      return r.width > 0 && r.height > 0 ? [r] : [];
+    }
+    return [...document.querySelectorAll('.texto-secao-topo')]
+      .map((p) => p.getBoundingClientRect())
+      .filter((r) => r.width > 0 && r.height > 0 && r.bottom > 0 && r.top < innerHeight);
+  };
   let cruzamentos = 0;
   let posicoesComTexto = 0;
   let pior = null;
   const mede = () => {
-    const rs = subir.getBoundingClientRect();
+    const rs = alvos();
+    if (!rs.length) return;
     let aqui = 0;
     const anda = (n) => {
+      if (n.nodeType === 1 && n.classList && (n.classList.contains('texto-secao-topo') || n.classList.contains('vh'))) return;
       if (n.nodeType === 3) {
         if (!n.nodeValue.trim()) return;
         const r = document.createRange();
@@ -355,12 +472,14 @@ const SONDA_TAPA = () => {
         for (const c of r.getClientRects()) {
           if (c.width <= 0 || c.height <= 0) continue;
           if (c.bottom < 0 || c.top > innerHeight) continue;
-          const x = Math.min(rs.right, c.right) - Math.max(rs.left, c.left);
-          const y = Math.min(rs.bottom, c.bottom) - Math.max(rs.top, c.top);
-          if (x > 0 && y > 0) {
-            aqui++;
-            if (!pior || x * y > pior.x * pior.y) {
-              pior = { x: +x.toFixed(1), y: +y.toFixed(1), texto: n.nodeValue.trim().slice(0, 40) };
+          for (const rs1 of rs) {
+            const x = Math.min(rs1.right, c.right) - Math.max(rs1.left, c.left);
+            const y = Math.min(rs1.bottom, c.bottom) - Math.max(rs1.top, c.top);
+            if (x > 0 && y > 0) {
+              aqui++;
+              if (!pior || x * y > pior.x * pior.y) {
+                pior = { x: +x.toFixed(1), y: +y.toFixed(1), texto: n.nodeValue.trim().slice(0, 40) };
+              }
             }
           }
         }
@@ -377,7 +496,114 @@ const SONDA_TAPA = () => {
     mede();
   }
   window.scrollTo(0, 0);
-  return { cruzamentos, posicoes: 10, posicoesComTexto, pior };
+  return { cruzamentos, posicoes: 10, posicoesComTexto, pior, modo: subirVisivel ? 'fixa' : 'em-fluxo' };
+};
+
+/**
+ * OS ALVOS QUE CRESCERAM ALCANÇAM 44px, E SEM SOBREPOR UM VIZINHO (Blocking 3
+ * e Major 9 da leitura a frio do Codex, F1.9a segunda passagem, 03.09.2026).
+ *
+ * A célula I9 antiga só provava que a isenção tinha uma razão medida
+ * (`pares > 0`); não provava nada sobre o que a correção fez. Esta sonda mede
+ * as DUAS coisas que a correção promete para `a.src-chip` fora de tabela — o
+ * único tipo que cresce, medido: alcança 44px, E essa área não cai em cima da
+ * de um vizinho. `.texto-ligacao` foi TENTADA e MEDIDA sem sucesso (a nota em
+ * `texto.css` ao lado da regra diz porquê: a técnica não serve uma etiqueta
+ * que quebra em várias linhas) e fica de fora, como `.texto-figura-porta` e
+ * `.texto-figura-porta-apos` (a razão destas duas está na I9b, ao lado). As
+ * três entram aqui só como vizinhos possíveis, nunca como alvo a crescer.
+ *
+ * A ÁREA DE UM `::after` NÃO SE LÊ EM `getClientRects()` DO ELEMENTO, e a
+ * primeira versão desta sonda cometia esse erro: comparava a caixa NUA do
+ * `<a>`, que continua pequena, e não a área que o `::after` acrescenta por
+ * cima. As DUAS PERGUNTAS respondem-se do mesmo jeito que a `SONDA_ALVOS` já
+ * usa e que a folha da casa escreve como prova (`site.css`, A10): o acerto do
+ * próprio navegador, `elementFromPoint`, nos quatro pontos cardeais a 21,9px
+ * do centro. «Alcança 44px?» é o acerto resolver para o PRÓPRIO alvo nos
+ * cinco pontos; «sobrepõe-se?» é o acerto resolver para OUTRO alvo desta
+ * lista — a pergunta real («em quem toca quem tocar aqui»), não uma soma de
+ * áreas que a folha nunca declara.
+ */
+const SONDA_ALVOS_CRESCIDOS = () => {
+  const D = 21.9;
+  const dentro = (el, alvo) => {
+    for (let n = el; n; n = n.parentElement) if (n === alvo) return true;
+    return false;
+  };
+  const candidatos = [
+    ...document.querySelectorAll(
+      '#documento a.texto-figura-porta, #documento a.texto-figura-porta-apos, #documento a.src-chip, #documento a.texto-ligacao',
+    ),
+  ].map((el) => {
+    const classe = el.className || '';
+    const tipo = classe.includes('texto-figura-porta-apos')
+      ? 'apos'
+      : classe.includes('texto-figura-porta')
+        ? 'figura'
+        : classe.includes('src-chip')
+          ? 'selo'
+          : 'ligacao';
+    return { el, tipo, naTabela: !!el.closest('table') };
+  });
+  /** A que candidato (se algum) pertence este elemento resolvido pelo acerto? */
+  const candidatoDe = (elResolvido) => candidatos.find((c) => dentro(elResolvido, c.el) || dentro(c.el, elResolvido));
+  const porTipo = {};
+  const exemplos = [];
+  for (const a of candidatos) {
+    /* `.texto-ligacao` NÃO CRESCE (a medição a seguir a este comentário provou
+       porquê: a técnica do `::after` não centra sobre uma ligação que quebra
+       em várias linhas, e a maioria quebra). Só o selo fora de tabela cresce. */
+    const cresce = a.tipo === 'selo' && !a.naTabela;
+    if (!cresce) continue;
+    /* SEM ISTO, `elementFromPoint` DEVOLVE `null` OU O ELEMENTO ERRADO PARA
+       QUALQUER ALVO FORA DO ECRÃ (a primeira versão desta sonda não
+       escrolava, e via 100% dos alvos como pequenos — nenhum estava dentro
+       da janela). É a mesma linha que a `SONDA_ALVOS` já tem. */
+    a.el.scrollIntoView({ block: 'center', inline: 'center' });
+    const r = a.el.getClientRects()[0];
+    if (!r || r.width <= 0 || r.height <= 0) continue;
+    const cx = r.left + r.width / 2;
+    const cy = r.top + r.height / 2;
+    const chave = `${a.tipo}${a.naTabela ? '@tabela' : ''}`;
+    porTipo[chave] ??= { total: 0, abaixoDe44: 0, sobreposto: 0, comProblema: 0 };
+    porTipo[chave].total++;
+    const pontos = [
+      [cx, cy],
+      [cx - D, cy],
+      [cx + D, cy],
+      [cx, cy - D],
+      [cx, cy + D],
+    ];
+    const caixaChega = r.width >= 44 && r.height >= 44;
+    const acertaTodos = pontos.every(([x, y]) => {
+      const el = document.elementFromPoint(x, y);
+      return !!el && dentro(el, a.el);
+    });
+    const abaixoDe44 = !caixaChega && !acertaTodos;
+    if (abaixoDe44) porTipo[chave].abaixoDe44++;
+    let colideCom = null;
+    for (const [x, y] of pontos) {
+      const el = document.elementFromPoint(x, y);
+      if (!el || dentro(el, a.el)) continue;
+      colideCom = candidatoDe(el);
+      if (colideCom && colideCom !== a) break;
+      colideCom = null;
+    }
+    if (colideCom) porTipo[chave].sobreposto++;
+    /* AS DUAS PERGUNTAS TÊM A MESMA CAUSA, medida (o rótulo que quebra em
+       duas linhas), e por isso o RESÍDUO que a régua exige é a UNIÃO das
+       duas, não a soma: um selo que não alcança 44px E se sobrepõe a um
+       vizinho é um só alvo com um só problema, contado uma vez. */
+    if (abaixoDe44 || colideCom) {
+      porTipo[chave].comProblema++;
+      if (exemplos.length < 8) {
+        const contra = colideCom ? `${colideCom.tipo}${colideCom.naTabela ? '@tabela' : ''} "${colideCom.el.textContent.trim().slice(0, 20)}"` : '(caixa pequena, sem vizinho a tocar)';
+        exemplos.push(`${chave} "${a.el.textContent.trim().slice(0, 20)}" vs ${contra}`);
+      }
+    }
+  }
+  window.scrollTo(0, 0);
+  return { porTipo, exemplos };
 };
 
 /** A distância entre portas de figura seguidas: a razão da isenção do corpo. */
@@ -427,9 +653,10 @@ const navMovel = await webkit.launch({ headless: true });
     await pag.evaluate(() => document.fonts.ready);
     const pecas = await pag.evaluate(SONDA_PECAS);
     const alvos = await pag.evaluate(SONDA_ALVOS);
+    const crescidos = await pag.evaluate(SONDA_ALVOS_CRESCIDOS);
     await pag.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
     const tapa = await pag.evaluate(SONDA_TAPA);
-    porPagina[p.chave] = { ...pecas, alvos, tapa };
+    porPagina[p.chave] = { ...pecas, alvos, crescidos, tapa };
     alvosDaPagina.push(
       `${p.chave} ${(alvos.porZona.pagina ?? 0) + (alvos.porZona.rodape ?? 0)}`,
     );
@@ -468,30 +695,82 @@ const navMovel = await webkit.launch({ headless: true });
     `por página (mobília da página + rodapé): ${alvosDaPagina.join(' · ')} · no corpo transcrito, que é a isenção medida: ${todas.map((m) => m.alvos.porZona.artigo ?? 0).join('/')} · na cabeça, que é do bloco F1.7: ${todas.map((m) => m.alvos.porZona.cabeca ?? 0).join('/')}`,
   );
 
+  /* I9 · Blocking 3 e Major 9 da leitura a frio do Codex: a célula antiga só
+     provava que a isenção do corpo tinha uma razão medida; esta prova o que a
+     correção fez. AS DUAS COISAS SÃO EXIGÊNCIAS: nenhuma ligação nem selo
+     fora de tabela fica abaixo de 44px depois de crescer (é a área do
+     `::after`, medida como caixa e não como suposição); e o RESÍDUO da
+     sobreposição está contado a um número exato, não a «alguns» — qualquer
+     desvio deste número é uma regressão a investigar, não um valor a
+     tolerar em silêncio. */
+  {
+    const somaPorTipo = {};
+    for (const m of todas) {
+      for (const [k, v] of Object.entries(m.crescidos.porTipo)) {
+        somaPorTipo[k] ??= { total: 0, abaixoDe44: 0, sobreposto: 0, comProblema: 0 };
+        somaPorTipo[k].total += v.total;
+        somaPorTipo[k].abaixoDe44 += v.abaixoDe44;
+        somaPorTipo[k].sobreposto += v.sobreposto;
+        somaPorTipo[k].comProblema += v.comProblema;
+      }
+    }
+    medidas.alvosCrescidos = { somaPorTipo, exemplos: todas.flatMap((m) => m.crescidos.exemplos) };
+    const totalComProblema = Object.values(somaPorTipo).reduce((s, v) => s + v.comProblema, 0);
+    /* O NÚMERO EXATO DESTA CONSTRUÇÃO: medido aqui, e não suposto. Se mudar,
+       para cima OU PARA BAIXO, é porque um documento novo ou uma correção de
+       fonte trouxe outra densidade de citações, e a régua tem de voltar a ser
+       lida antes de o número novo ser aceite — é a mesma disciplina do
+       `paresAbaixoDe44` da I9b, só que esta é uma exigência e aquela é só a
+       prova da razão.
+
+       `.texto-ligacao` NÃO ESTÁ AQUI: foi tentada e MEDIDA (a nota em
+       `texto.css`, ao lado da regra), e a técnica do `::after` não serve uma
+       etiqueta que quebra em várias linhas, que é a maioria das ligações
+       desta rota (o endereço é a própria etiqueta). Fica com a I9b.
+
+       OS QUE FICAM SÃO TODOS SELO, e todos pela mesma razão: o rótulo do
+       selo («fonte · <estudo>») quebra em duas linhas quando o título do
+       estudo é longo — 13 das 101 instâncias medidas, nas oito páginas —, e
+       o `::after` deixa de acertar no centro de uma linha só ou cai perto do
+       selo da entrada seguinte, que cita o mesmo estudo ou um estudo irmão.
+       É a mesma classe de proximidade que já justifica a exceção do
+       `.brief-text` noutra rota, em `site.css`: dar-lhe mais altura de linha
+       é mudar a composição da leitura, e essa é uma decisão da direção e não
+       desta folha. */
+    const RESIDUO_ACEITE = 14;
+    conta(
+      'I9 · os selos que crescem alcançam 44px, e o resíduo (o rótulo que quebra em duas linhas) está contado a um número exato · 390 (WebKit, toque)',
+      totalComProblema === RESIDUO_ACEITE,
+      `por tipo (total/abaixo de 44px/sobreposto/com problema): ${Object.entries(somaPorTipo).map(([k, v]) => `${k} ${v.total}/${v.abaixoDe44}/${v.sobreposto}/${v.comProblema}`).join(' · ')} · resíduo esperado ${RESIDUO_ACEITE}, medido ${totalComProblema}${totalComProblema !== RESIDUO_ACEITE ? ' · MUDOU: relê antes de aceitar' : ''}${todas.some((m) => m.crescidos.exemplos.length) ? ` · exemplos: ${todas.flatMap((m) => m.crescidos.exemplos).slice(0, 4).join(' | ')}` : ''}`,
+    );
+  }
+
+  /* I7a MUDOU DE FORMA NA SEGUNDA PASSAGEM (Blocking 4 da leitura a frio do
+     Codex): a 390 não há goteira nenhuma onde um comando FIXO de 44px caiba
+     sem tapar uma linha do artigo, e por isso o comando fixo NÃO SE DESENHA
+     aí — a subida é a porta em fluxo, no fim de cada secção de nível 2. */
   conta(
-    'I7a · a subida à vista a 390, com alvo ≥ 44px nos dois eixos e dentro do ecrã',
+    'I7a · a 390 (sem goteira) o comando fixo não se desenha, e cada secção de nível 2 termina numa porta em fluxo com alvo ≥ 44px',
     todas.every(
-      (m) =>
+      (m, i) =>
         m.subir &&
-        m.subir.display !== 'none' &&
-        m.subir.pos === 'fixed' &&
-        m.subir.l >= 44 &&
-        m.subir.a >= 44 &&
-        m.subir.dentroDoEcra,
+        m.subir.display === 'none' &&
+        m.secaoTopo.total === PAGINAS[i].deNivel2 &&
+        m.secaoTopo.display !== 'none' &&
+        m.secaoTopo.abaixoDe44 === 0,
     ),
-    `${todas[0].subir?.l}×${todas[0].subir?.a}px (pt) e ${todas[6].subir?.l}×${todas[6].subir?.a}px (en), ${todas[0].subir?.pos}`,
+    PAGINAS.map((p, i) => `${p.chave.split('/')[0].slice(0, 12)} subir=${todas[i].subir?.display} portas=${todas[i].secaoTopo.total}/${p.deNivel2} <44px=${todas[i].secaoTopo.abaixoDe44}`).join(' · '),
   );
 
-  /* O QUE ELA TAPA A 390, MEDIDO E NÃO ESCONDIDO. Numa janela de 390 a coluna
-     de leitura é a janela menos duas goteiras de 18px, e um comando fixo de
-     44px de lado não tem margem onde caber: tapa. A saída que não tapava era o
-     comando no fim de cada secção, e essa está barrada pela transcrição (a
-     mobília não entra no corpo). A célula mede-o em dez posições da página, e
-     o número vai para o relatório em vez de ir para debaixo do tapete. */
+  /* I10a ENDURECE NA SEGUNDA PASSAGEM: até aqui o número ia para o relatório
+     como informação («não é uma exigência»), e passava com QUALQUER valor
+     desde que dez posições fossem amostradas — foi o Blocking 4 da leitura a
+     frio do Codex. Passa a FALHAR com qualquer sobreposição, porque agora há
+     uma forma sem sobreposição nenhuma para comparar: a porta em fluxo. */
   conta(
-    'I10a · o que a subida tapa a 390, medido em dez posições de cada página (não é uma exigência: é a conta do que custa)',
-    todas.every((m) => m.tapa.posicoes === 10),
-    `caixas de linha do artigo debaixo da subida, em 10 posições: ${PAGINAS.map((p, i) => `${p.chave.split('/')[0].slice(0, 12)} ${todas[i].tapa.cruzamentos} (em ${todas[i].tapa.posicoesComTexto} das 10)`).join(' · ')} · a maior sobreposição: ${JSON.stringify(todas[4].tapa.pior)}`,
+    'I10a · zero caixas de linha do artigo tapadas pelo comando de subida, em dez posições de cada página · 390',
+    todas.every((m) => m.tapa.posicoes === 10 && m.tapa.cruzamentos === 0),
+    `modo ${todas[0].tapa.modo} · caixas de linha tapadas em 10 posições: ${PAGINAS.map((p, i) => `${p.chave.split('/')[0].slice(0, 12)} ${todas[i].tapa.cruzamentos}`).join(' · ')}${todas.some((m) => m.tapa.cruzamentos > 0) ? ` · a maior sobreposição: ${JSON.stringify(todas.find((m) => m.tapa.pior)?.pior)}` : ''}`,
   );
 
   medidas.alturas390 = alturas;
@@ -549,6 +828,37 @@ const navMovel = await webkit.launch({ headless: true });
     medidas.barra390 = { topo: topo?.width ?? null, fim: fim?.width ?? null };
     await pag.close();
     await semGuiao.close();
+  }
+
+  /* ---------------------- I11a · o nome acessível leva a posição · 390 (WebKit)
+     Major 8 da leitura a frio do Codex: a indicação de progresso não chegava à
+     tecnologia de apoio, porque o texto alternativo do CSS ia vazio de
+     propósito. Mede-se com `ariaSnapshot()`, que é o próprio motor a computar
+     o nome — não uma suposição sobre a regra do `aria-labelledby`. */
+  {
+    const pag = await navMovel.newContext({ ...devices['iPhone 13'], deviceScaleFactor: 1 }).then((c) => c.newPage());
+    await pag.goto(base + AMOSTRA.pt.rota, { waitUntil: 'networkidle' });
+    const titulosH2 = AMOSTRA.pt.titulos.filter((b) => Number(b.level) === 2);
+    const falhasNome = [];
+    for (let i = 0; i < titulosH2.length; i++) {
+      const bloco = titulosH2[i];
+      const esperado = `Secção ${i + 1} de ${titulosH2.length} ${String(bloco.text ?? '').replace(/\s+/g, ' ').trim()}`;
+      const snap = await pag.locator(`#bloco-${bloco.i}`).ariaSnapshot();
+      const m = /^-\s*heading\s+"([^"]*)"/.exec(snap.trim());
+      const nome = m ? m[1] : null;
+      if (nome !== esperado) {
+        falhasNome.push(`bloco-${bloco.i}: nome="${nome}" esperado="${esperado.slice(0, 60)}"`);
+      }
+    }
+    medidas.nomeAcessivelDaPosicao = { total: titulosH2.length, falhas: falhasNome };
+    conta(
+      'I11a · o nome acessível de cada título de nível 2 leva «Secção n de N» antes do título, computado pelo motor · 390 (WebKit)',
+      falhasNome.length === 0 && titulosH2.length > 0,
+      falhasNome.length === 0
+        ? `${titulosH2.length} títulos de nível 2, todos com o nome esperado`
+        : `${falhasNome.length} de ${titulosH2.length} sem o nome esperado: ${falhasNome.slice(0, 3).join(' | ')}`,
+    );
+    await pag.context().close();
   }
 
   /* -------------------------------------------------------------- capturas */
@@ -622,6 +932,30 @@ const navMesa = await chromium.launch({ headless: true });
     PAGINAS.map((p, i) => `${p.chave.split('/')[0].slice(0, 12)} ${todas[i].contadores}/${p.deNivel2}`).join(' · '),
   );
 
+  /* I11b · a mesma prova do nome acessível, na outra família de motores. */
+  {
+    const pag = await ctx.newPage();
+    await pag.goto(base + AMOSTRA.pt.rota, { waitUntil: 'networkidle' });
+    const titulosH2 = AMOSTRA.pt.titulos.filter((b) => Number(b.level) === 2);
+    const falhasNome = [];
+    for (let i = 0; i < titulosH2.length; i++) {
+      const bloco = titulosH2[i];
+      const esperado = `Secção ${i + 1} de ${titulosH2.length} ${String(bloco.text ?? '').replace(/\s+/g, ' ').trim()}`;
+      const snap = await pag.locator(`#bloco-${bloco.i}`).ariaSnapshot();
+      const m = /^-\s*heading\s+"([^"]*)"/.exec(snap.trim());
+      const nome = m ? m[1] : null;
+      if (nome !== esperado) falhasNome.push(`bloco-${bloco.i}: nome="${nome}" esperado="${esperado.slice(0, 60)}"`);
+    }
+    conta(
+      'I11b · o nome acessível de cada título de nível 2 leva «Secção n de N» antes do título, computado pelo motor · 1280 (Chromium)',
+      falhasNome.length === 0 && titulosH2.length > 0,
+      falhasNome.length === 0
+        ? `${titulosH2.length} títulos de nível 2, todos com o nome esperado`
+        : `${falhasNome.length} de ${titulosH2.length} sem o nome esperado: ${falhasNome.slice(0, 3).join(' | ')}`,
+    );
+    await pag.close();
+  }
+
   /* I5b · a barra, na outra família de motores, e também sem guião. */
   {
     const semGuiao = await navMesa.newContext({
@@ -671,12 +1005,13 @@ const navMesa = await chromium.launch({ headless: true });
     medidas.semGuiao = pecas;
   }
 
-  /* I9 · a razão da isenção do corpo, medida. */
+  /* I9b · a razão pela qual as portas de figura NÃO crescem, medida (a I9,
+     a 390, prova o que cresceu: as ligações e os selos). */
   {
     const d = todas.map((m) => m.dist);
     medidas.distancias = d;
     conta(
-      'I9 · as portas do corpo transcrito estão mais perto umas das outras do que 44px, e é isso que as isenta (medida, não regra)',
+      'I9b · as portas de figura do corpo transcrito estão mais perto umas das outras do que 44px, e é essa a razão medida por que ficam com a área que já tinham',
       d.every((x) => x.pares > 0),
       PAGINAS.map(
         (p, i) =>
