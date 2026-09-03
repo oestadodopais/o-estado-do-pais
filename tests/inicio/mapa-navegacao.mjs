@@ -306,15 +306,32 @@ for (const { edicao, rota, evora, indice } of EDICOES) {
 /* N3 · «Concelho» abre a pesquisa nas duas larguras                          */
 /* ========================================================================== */
 
+/* ---------------------------------------------------------------------------
+ * A N3 MUDOU DE OBJECTO COM O F1.1 (03.09.2026), E NÃO FOI DESLIGADA
+ * ---------------------------------------------------------------------------
+ * Media «"Concelho" abre a pesquisa com o foco no campo, e "País" fecha-a»: a
+ * busca vivia atrás de um comando, primeiro como bloco governado pelo estado do
+ * endereço, depois (01.09) como gaveta ao lado do mapa. A fila do âmbito saiu da
+ * página inteira com o bloco da porta da frente (achado C6 e decisão 3.4 da
+ * auditoria de UX de 25.08; brief F1.1 §1, item 6), e a busca subiu para debaixo
+ * da manchete como `<form>` com destino (itens 3 e 12).
+ *
+ * A EXIGÊNCIA SOBE COM A FORMA. Já não é «um toque revela a busca dentro do
+ * ecrã»: é «a busca está à vista, dentro do ecrã, SEM GESTO NENHUM, nas duas
+ * larguras», que é mais do que a célula pedia. O foco no campo continua a
+ * medir-se, porque é a segunda metade da promessa antiga: o campo tem de ser
+ * alcançável. O anúncio vivo deixa de ser exigido porque nada muda de estado.
+ * ------------------------------------------------------------------------- */
 for (const largura of [1280, 390]) {
   const linhas = [];
   let bem = true;
   for (const { edicao, rota } of EDICOES) {
     const p = await pagina({ largura });
     await p.goto(`${base}${rota}`, { waitUntil: 'networkidle' });
-    await p.locator('[data-comando] [data-modo="municipio"]:visible').first().click();
     await p.waitForTimeout(200);
     const abriu = await p.evaluate(() => {
+      const campo = document.querySelector('#pesquisa-concelho');
+      if (campo) campo.focus();
       const bloco = document.querySelector('#pesquisa');
       const r = bloco.getBoundingClientRect();
       /* «À VISTA» PERGUNTA-SE AO NAVEGADOR, E NÃO À CAIXA (01.09.2026). Com a
@@ -336,8 +353,6 @@ for (const largura of [1280, 390]) {
         painel: document.querySelector('[data-painel]:not([hidden])')?.getAttribute('data-painel'),
       };
     });
-    await p.locator('[data-comando] [data-modo="pais"]:visible').first().click();
-    await p.waitForTimeout(200);
     const fechou = await p.evaluate(() => {
       const bloco = document.querySelector('#pesquisa');
       const r = bloco.getBoundingClientRect();
@@ -356,29 +371,30 @@ for (const largura of [1280, 390]) {
            largura. O que o comando «País» faz é fechá-la, e é isso que se mede.
            O `<details>` continua a ser do navegador: o guião só troca `open`. */
         visivel: seVe(bloco),
+        /* A GAVETA DA BUSCA DEIXOU DE EXISTIR (F1.1): a busca não está atrás de
+           nada, e é isso que a célula passa a exigir. */
         gaveta: document.querySelector('[data-gaveta="busca"]')?.hasAttribute('open') ?? null,
+        forma: document.querySelectorAll('#pesquisa form[action]').length,
       };
     });
     const ok =
       abriu.visivel &&
       abriu.dentro &&
       abriu.foco === 'pesquisa-concelho' &&
-      abriu.anuncio.length > 0 &&
-      /\?ambito=municipio$/.test(abriu.url) &&
+      abriu.url === rota &&
       abriu.cabeca === 'pais' &&
       abriu.painel === 'pais' &&
-      fechou.url === rota &&
-      fechou.visivel === false &&
-      fechou.gaveta === false;
+      fechou.gaveta === null &&
+      fechou.forma === 1;
     if (!ok) bem = false;
     linhas.push(
-      `${edicao}: «${abriu.url}» · pesquisa à vista ${abriu.visivel}, dentro do ecrã ${abriu.dentro} · foco «${abriu.foco}» · anúncio «${abriu.anuncio}» · cabeça ${abriu.cabeca}, painel ${abriu.painel} · «País» → «${fechou.url}», pesquisa à vista ${fechou.visivel}, gaveta aberta ${fechou.gaveta}`,
+      `${edicao}: «${abriu.url}» · pesquisa à vista ${abriu.visivel}, dentro do ecrã ${abriu.dentro} · foco «${abriu.foco}» · cabeça ${abriu.cabeca}, painel ${abriu.painel} · gaveta da busca ${fechou.gaveta === null ? 'não existe' : fechou.gaveta} · ${fechou.forma} formulário(s) com destino`,
     );
     if (edicao === 'pt') medidas[`n3_${largura}`] = { abriu, fechou };
     await p.__ctx.close();
   }
   conta(
-    `N3 · «Concelho» abre a pesquisa com o foco no campo, e «País» fecha-a · ${largura}`,
+    `N3 · a busca do concelho à vista sem gesto, com o campo alcançável e o formulário com destino · ${largura}`,
     bem,
     linhas.join(' · '),
   );
@@ -390,23 +406,44 @@ for (const largura of [1280, 390]) {
   for (const { edicao, rota, indice } of EDICOES) {
     const p = await pagina({ js: false });
     await p.goto(`${base}${rota}`, { waitUntil: 'load' });
-    const hrefs = await p.evaluate(() =>
-      [...document.querySelectorAll('[data-comando] [data-modo]')].map((a) => [
-        a.getAttribute('data-modo'),
+    /* SEM GUIÃO, O QUE LEVA A ALGUM LADO É O FORMULÁRIO (F1.1, item 12).
+       Eram os comandos do âmbito, que sem guião continuavam a ser ligações para
+       páginas que existiam; o comando saiu, e o que fica a fazer a mesma
+       promessa é a busca, que passou a ser um `<form action method="get">` para
+       o índice dos 308. A célula mede a mesma coisa: que a primeira página, sem
+       guião nenhum, tem um caminho para o concelho e que esse caminho existe. */
+    const forma = await p.evaluate(() => {
+      const f = document.querySelector('#pesquisa form');
+      const menu = [...document.querySelectorAll('.nav-principal a[href]')].map((a) =>
         a.getAttribute('href'),
-        a.tagName.toLowerCase(),
-      ]),
-    );
-    const mapa = Object.fromEntries(hrefs.map(([m, h]) => [m, h]));
+      );
+      return {
+        etiqueta: f ? f.tagName.toLowerCase() : null,
+        action: f ? f.getAttribute('action') : null,
+        method: f ? (f.getAttribute('method') || '').toLowerCase() : null,
+        campo: !!document.querySelector('#pesquisa [data-pesquisa]'),
+        menu,
+      };
+    });
+    const r = await fetch(`${base}${forma.action ?? '/nao-existe'}`);
     const ok =
-      hrefs.every(([, , t]) => t === 'a') &&
-      mapa.pais === rota &&
-      mapa.municipio === indice;
+      forma.etiqueta === 'form' &&
+      forma.action === indice &&
+      forma.method === 'get' &&
+      forma.campo &&
+      r.status === 200 &&
+      forma.menu.includes(indice);
     if (!ok) bem = false;
-    linhas.push(`${edicao}: ${hrefs.map(([m, h, t]) => `${m}=<${t}> ${h}`).join(' · ')}`);
+    linhas.push(
+      `${edicao}: <${forma.etiqueta}> action «${forma.action}» method «${forma.method}» (${r.status}) · campo ${forma.campo} · o índice também está no menu: ${forma.menu.includes(indice)}`,
+    );
     await p.__ctx.close();
   }
-  conta('N3 · sem script os dois comandos são ligações para páginas que existem', bem, linhas.join(' · '));
+  conta(
+    'N3 · sem script a busca é um formulário com destino, e o destino existe',
+    bem,
+    linhas.join(' · '),
+  );
 }
 
 /* ========================================================================== */

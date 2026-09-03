@@ -225,16 +225,22 @@ const estadoDaPagina = (p) =>
     );
     const marco = (sel) => alvos.findIndex((e) => e.matches(sel) || e.closest(sel));
     return {
-      comando: marco('[data-comando]'),
+      /* O PRIMEIRO MARCO MUDOU COM O F1.1 (03.09.2026). Era a linha de comando,
+         que saiu da página inteira com o bloco da porta da frente (brief §1,
+         item 6); o que ocupa o lugar dela na ordem do teclado é a porta para o
+         concelho, que é a primeira paragem do corpo depois da cabeça. A célula
+         mede o que sempre mediu: que a ordem do teclado desce a página sem
+         saltos para trás. */
+      comando: marco('[data-porta-concelho]'),
       painel: marco('[data-painel]:not([hidden])'),
       portas: marco('.portas'),
       total: alvos.length,
     };
   });
   conta(
-    'ordem do teclado · comando → painel → portas',
+    'ordem do teclado · porta do concelho → painel → portas',
     ordem.comando >= 0 && ordem.comando < ordem.painel && ordem.painel < ordem.portas,
-    `comando ${ordem.comando} · painel ${ordem.painel} · portas ${ordem.portas} · ${ordem.total} paragens`,
+    `porta do concelho ${ordem.comando} · painel ${ordem.painel} · portas ${ordem.portas} · ${ordem.total} paragens`,
   );
 
   /* AS MUDANÇAS DE ESTADO PASSAM DE CINCO A TRÊS (correções de UX, bloco A,
@@ -254,20 +260,49 @@ const estadoDaPagina = (p) =>
      concelho dentro desta página; um resultado é hoje uma ligação para
      `/municipios/evora`, e uma mudança de página não é uma mudança de estado. O
      que ela fazia é medido em `tests/inicio/mapa-navegacao.mjs`. */
+  /* ---------------------------------------------------------------------------
+     A PÁGINA DEIXOU DE TER COMANDO QUE ESCREVA UM ESTADO (F1.1, 03.09.2026)
+     ---------------------------------------------------------------------------
+     Os dois passos que restavam eram cliques na fila do âmbito e na da
+     densidade. As duas saíram da página com o bloco da porta da frente: eram
+     vocabulário da casa («Âmbito», «Densidade»), custavam 116 px do primeiro
+     ecrã do telemóvel, e a frase que as substituiria é texto do diretor que ele
+     não escreveu (achado C6 e decisão 3.4 da auditoria de 25.08; brief F1.1 §1,
+     item 6: «os dois comandos saem e o que fica é o menu e o cabeçalho»).
+
+     OS ESTADOS NÃO SAÍRAM: continuam a resolver-se pelo ENDEREÇO, que é o que a
+     Emenda 7 promete a um endereço partilhável, e é isso que estes passos passam
+     a medir. O que se perde é a maneira de os escrever de dentro da página, e
+     com ela o foco que ia para o comando e a região viva que anunciava a
+     mudança: sem mudança de estado dentro da página não há nada para anunciar,
+     e uma célula que exigisse um anúncio numa navegação estaria a pedir à página
+     que dissesse em voz alta o que o navegador acabou de fazer.
+
+     A CÉLULA DO FOCO E A DO ANÚNCIO SÃO SUBSTITUÍDAS POR UMA: que a página não
+     tem comando nenhum de estado. É a prova de que a subtracção aconteceu e não
+     ficou meia. */
   const passos = [
-    ['[data-densidade="leitura"]', 'densidade → leitura'],
-    ['[data-modo="municipio"]', 'âmbito → modo concelho'],
+    ['/?densidade=leitura', 'densidade → leitura'],
+    ['/?ambito=municipio', 'âmbito → modo concelho'],
   ];
   const historia = [];
-  for (const [sel, nome] of passos) {
-    await p.click(sel);
+  for (const [endereco, nome] of passos) {
+    await p.goto(base + endereco, { waitUntil: 'networkidle' });
     const e = await estadoDaPagina(p);
     historia.push(e);
     conta(`mudança · ${nome}`, true, `${e.url} · ${e.bloco}`);
-    conta(`foco não se perde no corpo · ${nome}`, e.focado !== null && e.focado !== 'BODY', e.focado);
-    conta(`região viva diz a mudança · ${nome}`, e.anuncio.length > 0, e.anuncio);
     despejos[`estado:${e.url}`] = e.texto;
   }
+  const semComando = await p.evaluate(() => ({
+    comandos: document.querySelectorAll('[data-comando]').length,
+    modos: document.querySelectorAll('[data-inicio] [data-modo]').length,
+    densidades: document.querySelectorAll('[data-inicio] [data-densidade]').length,
+  }));
+  conta(
+    'a página não tem comando de estado nenhum',
+    semComando.comandos === 0 && semComando.modos === 0 && semComando.densidades === 0,
+    `${semComando.comandos} linha(s) de comando · ${semComando.modos} comando(s) de âmbito · ${semComando.densidades} de densidade`,
+  );
 
   /* O PAINEL DE ÉVORA SAIU DA PRIMEIRA PÁGINA (Emenda 19a). A célula media que o
      âmbito de um concelho abria as suas peças aqui; as peças do concelho vivem em
@@ -301,9 +336,12 @@ const estadoDaPagina = (p) =>
   await p.click('.peca:first-child .peca-abrir');
   const uma = await estadoDaPagina(p);
   conta('uma peça abre só a sua', uma.abertas === 1, `${uma.abertas} abertas`);
-  await p.click('[data-densidade="leitura"]');
+  /* O ENDEREÇO ABRE TODAS, e é o que restou do comando global: `?densidade=
+     leitura` continua a ser um estado partilhável e o guião continua a abrir as
+     peças quando ele chega. O que saiu foi a fila que o escrevia. */
+  await p.goto(`${base}/?densidade=leitura`, { waitUntil: 'networkidle' });
   const todas = await estadoDaPagina(p);
-  conta('o comando global abre todas', todas.abertas === todas.pecas, `${todas.abertas} de ${todas.pecas}`);
+  conta('o endereço da leitura breve abre todas', todas.abertas === todas.pecas, `${todas.abertas} de ${todas.pecas}`);
 
   await p.__contexto.close();
 }
@@ -758,8 +796,10 @@ const PROCURADO = COM_PAGINA_NO_DIST.has('beja')
 const COBERTURA_DISTINGUE = COM_PAGINA_NO_DIST.size > 0 && COM_PAGINA_NO_DIST.size < 308;
 for (const largura of [1280, 390]) {
   const p = await pagina({ largura });
+  /* A BUSCA ESTÁ À VISTA SEM GESTO NENHUM (F1.1, itens 3 e 12, 03.09.2026): saiu
+     da gaveta ao lado do mapa e subiu para debaixo da manchete, como `<form>`
+     com destino. Não há comando para tocar, e a célula deixa de o procurar. */
   await p.goto(base + '/', { waitUntil: 'networkidle' });
-  await p.locator('[data-modo="municipio"]:visible').first().click();
   const vazio = await p.evaluate(() =>
     [...document.querySelectorAll('.pesquisa-item')]
       .filter((e) => e.getClientRects().length)
@@ -784,19 +824,34 @@ for (const largura of [1280, 390]) {
         estado: e.querySelector('[data-cobertura]')?.textContent.trim() ?? null,
       })),
   );
+  /* ---------------------------------------------------------------------------
+     A CAIXA VAZIA DEIXOU DE MOSTRAR OITO NOMES (F1.1, 03.09.2026)
+     ---------------------------------------------------------------------------
+     A regra de 2026-08 era «com a caixa vazia mostram-se os concelhos que têm
+     página, hoje um, Évora», e a nota ao lado dela, em `public/js/inicio.js`,
+     dizia porquê: «uma pesquisa que abre com oito nomes que ninguém pediu diz
+     que aqueles oito são especiais, e não são: são os primeiros da Carta». Com
+     os 308 construídos a condição «tem página» deixou de separar seja o que for,
+     e a caixa vazia passou a mostrar exactamente esses oito primeiros, que é o
+     que a nota proibia; com a busca no primeiro ecrã custava também 168 px a
+     quem não pediu nada.
+
+     A REGRA PASSA A SER UMA SÓ: a fila mostra o que casa com o que está escrito,
+     e com a caixa vazia não mostra nada. `/municipios` e `/livro-razao/concelhos`
+     ficam como estavam, e a razão está no guião: lá a fila abre por baixo de uma
+     lista dos 308 que já está na página. */
   conta(
-    `largura ${largura} · a pesquisa com a caixa vazia, e um resultado com e sem página`,
-    vazio.length > 0 &&
-      vazio.every((r) => r.href && COM_PAGINA_NO_DIST.has(r.href.split('/').pop())) &&
+    `largura ${largura} · a pesquisa com a caixa vazia não mostra nada, e um resultado com e sem página`,
+    vazio.length === 0 &&
       escrito.length === 1 &&
       escrito[0].nome === PROCURADO.nome &&
       escrito[0].porta === PROCURADO.temPagina &&
       /* A ETIQUETA DE ESTADO SÓ SE RENDE SE A LISTA DISTINGUIR (item E8, P2). */
       Boolean(escrito[0].estado) === COBERTURA_DISTINGUE,
-    `caixa vazia: ${vazio.length} resultado(s), todos com página — ${vazio
+    `caixa vazia: ${vazio.length} resultado(s)${vazio.length ? ` — ${vazio
       .slice(0, 3)
       .map((r) => `${r.nome} → ${r.href}`)
-      .join(' · ')}${vazio.length > 3 ? ' …' : ''} · a lista distingue: ${COBERTURA_DISTINGUE} · com «${PROCURADO.termo}» escrito: ${escrito
+      .join(' · ')}` : ''} · a lista distingue: ${COBERTURA_DISTINGUE} · com «${PROCURADO.termo}» escrito: ${escrito
       .map((r) => `${r.nome} (porta ${r.porta}, «${r.estado}»)`)
       .join(' · ')}`,
   );
@@ -1049,7 +1104,20 @@ for (const largura of [1280, 390]) {
       paineis: chaves('[data-painel]', 'data-painel'),
       banda: document.querySelectorAll('[data-banda-ponto]').length,
       pastilhas: document.querySelectorAll('[data-regiao]').length,
-      comando: document.querySelector('[data-modo="regiao"]')?.getAttribute('href') ?? null,
+      /* O ÍNDICE DAS REGIÕES MUDOU DE SÍTIO (F1.1, 03.09.2026). Era o `href` do
+         comando «Região», que era uma porta e não um estado; a fila do âmbito
+         saiu da página com o bloco da porta da frente, e o índice passou a
+         estar em dois sítios que continuam a ser um só destino: o menu, que é
+         onde o leitor o alcança, e `data-indice-regioes` na raiz do estado, que
+         é de onde o guião lê para onde vai um endereço antigo. A célula lê o do
+         guião, porque é o que ela sempre leu: o que faz o reencaminhamento. */
+      comando:
+        document.querySelector('[data-modo="regiao"]')?.getAttribute('href') ??
+        document.querySelector('[data-inicio]')?.getAttribute('data-indice-regioes') ??
+        null,
+      noMenu: [...document.querySelectorAll('.nav-principal a[href]')].some(
+        (a) => a.getAttribute('href') === '/regioes',
+      ),
     };
   });
   const destinos = [];
@@ -1067,8 +1135,9 @@ for (const largura of [1280, 390]) {
       c.banda === 0 &&
       c.pastilhas === 0 &&
       c.comando === '/regioes' &&
+      c.noMenu &&
       destinos.join(' ') === esperados.join(' '),
-    `${c.cabecas.length} cabeças e ${c.paineis.length} painéis de região · comando «Região» → ${c.comando} · banda e pastilhas fora da página (${c.banda} pontos, ${c.pastilhas} pastilhas) · destinos ${destinos.join(', ')}`,
+    `${c.cabecas.length} cabeças e ${c.paineis.length} painéis de região · índice das regiões → ${c.comando} (no menu: ${c.noMenu}) · banda e pastilhas fora da página (${c.banda} pontos, ${c.pastilhas} pastilhas) · destinos ${destinos.join(', ')}`,
   );
   await p.__contexto.close();
 }
@@ -1370,66 +1439,48 @@ for (const largura of [1280, 390]) {
   );
 }
 
-/* (2i·5) O espaço activa os comandos, como o Enter, e não rola a página. *//* (2i·5) O espaço activa os comandos, como o Enter, e não rola a página. */
+/* (2i·5) O espaço activa o comando que ficou, e não rola a página. */
+/* ---------------------------------------------------------------------------
+ * A CÉLULA MUDOU DE COMANDO COM O F1.1 (03.09.2026), E NÃO FOI DESLIGADA
+ * ---------------------------------------------------------------------------
+ * Media que o espaço activava os comandos de âmbito e de densidade, e que cada
+ * um deles tinha papel de botão e a tecla que esse papel promete. As duas filas
+ * saíram da página com o bloco da porta da frente (brief F1.1 §1, item 6), e com
+ * elas o único sítio da primeira página onde uma ligação fazia de interruptor.
+ *
+ * O QUE FICA, E É O QUE A CÉLULA PASSA A MEDIR: o comando da densidade de cada
+ * peça, que é um `<summary>` nativo — a tecla que o abre é do navegador, não do
+ * guião —, e o botão da busca, que é um `<button type="submit">` a sério. Os
+ * dois são o vocabulário da casa para «isto activa-se», e nenhum dos dois é uma
+ * ligação a fingir de botão. A célula continua a exigir que a tecla NÃO ROLE a
+ * página, que era a segunda metade da promessa antiga.
+ * ------------------------------------------------------------------------- */
 {
   const p = await pagina();
   await p.goto(`${base}/`, { waitUntil: 'networkidle' });
-  await p.focus('[data-densidade="leitura"]');
-  /* A ROLAGEM MEDE-SE ENTRE O FOCO E O ESPAÇO, e não desde o topo da página
-     (01.09.2026). A célula existe para provar que **a tecla** não rola. Medida
-     desde zero, ela media duas coisas somadas: o que o `focus()` rola para
-     trazer o comando ao ecrã, que é trabalho do navegador, e o que a tecla rola,
-     que é o que se quer saber. Enquanto a linha de comando esteve no topo da
-     cabeça a primeira parcela era zero e a soma dava o número certo por acaso;
-     com o comando no cabeçalho do painel (o bloco da cabeça nova, 01.09) o
-     `focus()` passa a rolar 627 px e a célula ficava vermelha por um rolamento
-     que não é o dela. A subtração mede a parcela certa nas duas posições. */
+  await p.focus('.peca:first-child .peca-abrir');
   const antes = await p.evaluate(() => window.scrollY);
   await p.keyboard.press('Space');
+  await p.waitForTimeout(80);
   const a = await estadoDaPagina(p);
   const rolou = (await p.evaluate(() => window.scrollY)) - antes;
-  /* O comando que se prova aqui passou a ser o de «Concelho»: a terceira posição
-     do âmbito saiu com a régua (bloco A, itens A2 e A3), e o que a célula mede é
-     que o espaço activa um comando de âmbito, seja ele qual for.
-
-     «REGIÃO» VOLTOU E NÃO É UM BOTÃO (Emenda 21b, 27.08.2026): é uma LIGAÇÃO
-     para `/regioes`, e uma ligação activa-se com Enter e não com espaço, que é a
-     promessa certa para o que ela é. Por isso a contagem dos papéis passa a
-     excluí-lo: o que a célula mede é que todo o comando que É estado tem papel de
-     botão e a tecla que esse papel promete. Contar o «Região» aqui era pedir a
-     uma porta que se comportasse como um interruptor. */
-  await p.focus('[data-modo="municipio"]');
-  await p.keyboard.press('Space');
-  const b = await estadoDaPagina(p);
-  /* Os comandos são os DESCENDENTES de `[data-inicio]`: a própria raiz leva
-     `data-modo` e `data-densidade` como estado, e não é um comando. É o mesmo
-     alcance com que o script os apanha. */
-  const papeis = await p.evaluate(() => {
-    const raiz = document.querySelector('[data-inicio]');
-    const papel = (sel) => {
-      const es = [...raiz.querySelectorAll(sel)];
-      return `${es.filter((e) => e.getAttribute('role') === 'button').length}/${es.length}`;
-    };
+  const forma = await p.evaluate(() => {
+    const b = document.querySelector('.pesquisa-submeter');
+    const s2 = document.querySelector('.peca:first-child .peca-abrir');
     return {
-      ambito: papel('[data-modo]:not([data-modo="regiao"])'),
-      densidade: papel('[data-densidade]'),
-      /* E a porta continua a ser uma porta: sem papel de botão, com `href`. */
-      porta: (() => {
-        const a = raiz.querySelector('[data-modo="regiao"]');
-        return a ? `${a.tagName.toLowerCase()} role=${a.getAttribute('role')} href=${a.getAttribute('href')}` : 'sem comando';
-      })(),
+      botao: b ? `${b.tagName.toLowerCase()} type=${b.getAttribute('type')}` : 'sem botão',
+      resumo: s2 ? s2.tagName.toLowerCase() : 'sem resumo',
+      ligacoesComoBotao: document.querySelectorAll('[data-inicio] a[role="button"]').length,
     };
   });
-  const todosBotoes = (r) => r.split('/')[0] === r.split('/')[1] && r.split('/')[1] !== '0';
   conta(
-    '2i·5 · o espaço activa os comandos de âmbito e de densidade',
-    a.densidade === 'leitura' &&
-      b.modo === 'municipio' &&
+    '2i·5 · o espaço abre a peça e não rola a página, e o que activa é um comando a sério',
+    a.abertas === 1 &&
       rolou === 0 &&
-      todosBotoes(papeis.ambito) &&
-      todosBotoes(papeis.densidade) &&
-      papeis.porta === 'a role=null href=/regioes',
-    `espaço na densidade → ${a.densidade} (rolagem ${rolou}) · espaço no âmbito → modo ${b.modo} · com role="button": âmbito ${papeis.ambito}, densidade ${papeis.densidade} · a porta das regiões: ${papeis.porta}`,
+      forma.botao === 'button type=submit' &&
+      forma.resumo === 'summary' &&
+      forma.ligacoesComoBotao === 0,
+    `espaço no resumo da peça → ${a.abertas} aberta(s) (rolagem ${rolou}) · o botão da busca é «${forma.botao}» · o comando da peça é <${forma.resumo}> · ligações com papel de botão: ${forma.ligacoesComoBotao}`,
   );
   await p.__contexto.close();
 }
@@ -1906,11 +1957,27 @@ for (const largura of [1280, 390]) {
       medida: selos[0],
     };
   });
+  /* ---------------------------------------------------------------------------
+     O VALOR SAIU DESTA LINHA (F1.1, item 2, 03.09.2026), E A CÉLULA SEGUE-O
+     ---------------------------------------------------------------------------
+     Cada uma das oito medidas do Painel Social aparecia com o seu algarismo no
+     cartão da faixa e OUTRA VEZ aqui, com o mesmo selo, a milhares de píxeis de
+     distância. O brief manda os 21 valores dos dois quadros uma vez só fora das
+     páginas de linha, e a prova é a contagem de `data-claim` no HTML construído
+     (medida A3 do bloco, e `tests/inicio/porta.mjs` mede-a).
+
+     O QUE FICA NESTA LINHA é a leitura: o nome, a unidade, a fonte, a definição
+     da medida e o RECIBO, que é o selo — a porta para a linha daquela medida, e
+     é ele que faz disto uma leitura e não uma legenda. A célula continua a
+     exigir tudo o que exigia do selo (existe, tem 44 px, não está aninhado
+     noutro alvo) e as duas ausências da Emenda 16 (sem cor, sem palavra de
+     estado, porque o quadro não publica limiares). O que muda é a contagem dos
+     valores, que passa de oito a zero, e a razão está escrita. */
   conta(
-    '2l · Emenda 16 · a lista social tem oito linhas, sem cor e com o selo fora de outro alvo',
+    '2l · Emenda 16 · a lista social tem oito linhas, sem cor, sem o valor repetido e com o selo fora de outro alvo',
     soc.n === 8 && soc.semSelo === 0 && soc.aninhados === 0 && soc.pequenos === 0 &&
-      soc.marcadores === 0 && soc.palavras === 0 && soc.valores === 8,
-    `${soc.n} linhas · ${soc.valores} valores · selo ${soc.medida?.largura}×${soc.medida?.altura}px · aninhados ${soc.aninhados} · marcadores ${soc.marcadores}`,
+      soc.marcadores === 0 && soc.palavras === 0 && soc.valores === 0,
+    `${soc.n} linhas · ${soc.valores} valores (o valor vive no cartão da faixa) · selo ${soc.medida?.largura}×${soc.medida?.altura}px · aninhados ${soc.aninhados} · marcadores ${soc.marcadores}`,
   );
   await p.__contexto.close();
 }
@@ -2240,10 +2307,16 @@ const CANTO_DAS_ILHAS = (() => {
              a gaveta está aberta, e o bloco da busca fica abaixo do topo do
              desenho e não por cima dele. */
           gavetaAberta:
-            document.querySelector('[data-gaveta="busca"]')?.hasAttribute('open') ?? false,
-          pesquisaAbaixo:
-            document.querySelector('[data-pesquisa-bloco]').getBoundingClientRect().top >=
-            tela.top - 1,
+            document.querySelector('[data-gaveta="busca"]')?.hasAttribute('open') ?? null,
+          /* A BUSCA ESTÁ À VISTA, e é isso que se mede agora: a posição dela
+             contra o topo do desenho deixou de dizer alguma coisa quando ela
+             subiu para a coluna da manchete — a partir de 1024 a cabeça tem duas
+             colunas, e o topo do mapa é o topo da manchete, que está por cima de
+             tudo o que a coluna esquerda tem por baixo dela. O que a célula quer
+             saber é que a busca não está atrás de nada. */
+          pesquisaVisivel: document
+            .querySelector('[data-pesquisa-bloco]')
+            .checkVisibility({ contentVisibilityAuto: true, opacityProperty: true, visibilityProperty: true }),
           mapa: +tela.width.toFixed(1),
           coluna: +coluna.width.toFixed(1),
           transbordo: document.documentElement.scrollWidth - document.documentElement.clientWidth,
@@ -2255,8 +2328,16 @@ const CANTO_DAS_ILHAS = (() => {
         /\?ambito=municipio$/.test(m.url) &&
         m.cabeca === 'pais' &&
         m.painel === 'pais' &&
-        m.gavetaAberta &&
-        m.pesquisaAbaixo &&
+        /* A BUSCA SUBIU PARA DEBAIXO DA MANCHETE (F1.1, itens 3 e 12,
+           03.09.2026). Era uma gaveta ao lado do mapa, fechada, e a célula
+           media que o estado `?ambito=municipio` a abria por baixo do desenho.
+           A gaveta deixou de existir: a busca é um `<form>` com destino no
+           primeiro ecrã, ACIMA do mapa, e não há estado nenhum que a revele.
+           A célula mede a mesma promessa ao contrário — a busca está à vista e
+           o mapa fica exactamente onde estava —, que é a metade que interessa:
+           o mapa não muda de tamanho nem de coluna com o estado. */
+        m.gavetaAberta === null &&
+        m.pesquisaVisivel &&
         Math.abs(m.mapa - m.coluna) < 1 &&
         Math.abs(m.mapa - noPais) < 1 &&
         antes !== null &&
@@ -2268,13 +2349,13 @@ const CANTO_DAS_ILHAS = (() => {
         m.transbordo <= 0;
       if (!ok) bem = false;
       linhas.push(
-        `${largura}${rota === '/' ? ' pt' : ' en'}: ${m.url} · gaveta aberta ${m.gavetaAberta}, busca por baixo do mapa ${m.pesquisaAbaixo} · mapa ${m.mapa} na coluna de ${m.coluna} (no país ${noPais}) · caixa das ${antes?.n} áreas ${antes?.largura}×${antes?.altura} → ${depois?.largura}×${depois?.altura} · transbordo ${m.transbordo}`,
+        `${largura}${rota === '/' ? ' pt' : ' en'}: ${m.url} · gaveta da busca ${m.gavetaAberta === null ? 'não existe' : m.gavetaAberta}, busca à vista ${m.pesquisaVisivel} · mapa ${m.mapa} na coluna de ${m.coluna} (no país ${noPais}) · caixa das ${antes?.n} áreas ${antes?.largura}×${antes?.altura} → ${depois?.largura}×${depois?.altura} · transbordo ${m.transbordo}`,
       );
       await p.__contexto.close();
     }
   }
   conta(
-    '2m · a gaveta da busca abre por baixo do mapa, e o mapa fica onde estava',
+    '2m · a busca está à vista por cima do mapa, e o mapa fica onde estava',
     bem,
     linhas.join(' · '),
   );
