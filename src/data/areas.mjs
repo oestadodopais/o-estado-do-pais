@@ -726,7 +726,11 @@ export const SEM_AREA = [
   },
 ];
 
-/** Uma área pelo seu nome no endereço, tal como o ficheiro a declara. */
+/**
+ * Uma área pelo seu nome no endereço, tal como o ficheiro a declara.
+ *
+ * @param {string} slug
+ */
 export function areaDeclarada(slug) {
   return AREAS.find((a) => a.slug === slug) ?? null;
 }

@@ -39,6 +39,7 @@ import { fileURLToPath } from 'node:url';
  * procura é a própria pasta do mapa, que é o que este leitor precisa de achar.
  */
 function encontraRaiz() {
+  /** @param {string} inicio */
   const subir = (inicio) => {
     let dir = inicio;
     for (let i = 0; i < 8; i++) {
@@ -56,7 +57,11 @@ function encontraRaiz() {
 
 export const RAIZ_DO_MAPA = path.join(encontraRaiz(), 'mapa');
 
-/** Um leitor com uma mensagem que nomeia o ficheiro em falta, e não `ENOENT`. */
+/**
+ * Um leitor com uma mensagem que nomeia o ficheiro em falta, e não `ENOENT`.
+ *
+ * @param {string} rel
+ */
 function le(rel) {
   const ficheiro = path.join(RAIZ_DO_MAPA, rel);
   if (!fs.existsSync(ficheiro)) {
@@ -68,19 +73,183 @@ function le(rel) {
   return JSON.parse(fs.readFileSync(ficheiro, 'utf8'));
 }
 
+/**
+ * ---------------------------------------------------------------------------
+ * OS GUARDAS DOS ARTEFACTOS DO MAPA
+ * ---------------------------------------------------------------------------
+ * Segunda passagem do bloco F0.4 (leitura a frio, Major 10): os três ficheiros
+ * do motor entravam aqui com um molde por cima («isto é um `PaisDoMapa`») e sem
+ * ninguém ter olhado. Agora cada leitor confere o que promete, e o que não
+ * passa fecha a construção com a frase do que falta e o nome do ficheiro.
+ *
+ * O que se confere é o que este sítio LÊ: o campo, as molduras, as unidades com
+ * o seu caminho e a sua caixa, e a parcela onde ela existe. Não se confere o
+ * desenho, que é uma cadeia que só o navegador entende.
+ */
+
+/** Uma caixa de quatro números. @param {unknown} c @returns {c is CaixaDoMapa} */
+function eCaixa(c) {
+  return Array.isArray(c) && c.length === 4 && c.every((n) => typeof n === 'number');
+}
+
+/** Um ponto de dois números. @param {unknown} p */
+function ePonto(p) {
+  return Array.isArray(p) && p.length === 2 && p.every((n) => typeof n === 'number');
+}
+
+/**
+ * Uma unidade do mapa: o nome, o slug, o caminho, a caixa e o ponto.
+ *
+ * @param {unknown} u
+ * @returns {u is UnidadeDoMapa}
+ */
+function eUnidade(u) {
+  if (typeof u !== 'object' || u === null || Array.isArray(u)) return false;
+  const x = /** @type {Record<string, unknown>} */ (u);
+  return (
+    typeof x.slug === 'string' &&
+    typeof x.nome === 'string' &&
+    typeof x.d === 'string' &&
+    eCaixa(x.caixa) &&
+    ePonto(x.ponto)
+  );
+}
+
+/**
+ * Uma unidade do país, que declara a parcela a que pertence.
+ *
+ * MEDIDO a 03.09.2026: as 29 unidades de `mapa/pais.json` declaram-na todas, e
+ * nenhum dos 308 concelhos dos 29 ficheiros de distrito a traz. É por isso que
+ * a parcela é obrigatória aqui e opcional no tipo geral.
+ *
+ * @param {unknown} u
+ * @returns {u is UnidadeComParcela}
+ */
+function eUnidadeComParcela(u) {
+  return eUnidade(u) && typeof u.parcela === 'string' && u.parcela !== '';
+}
+
+/** O campo do desenho. @param {unknown} c @returns {c is CampoDoMapa} */
+function eCampo(c) {
+  if (typeof c !== 'object' || c === null) return false;
+  const x = /** @type {Record<string, unknown>} */ (c);
+  return typeof x.largura === 'number' && typeof x.altura === 'number';
+}
+
+/** Uma moldura: o nome, a caixa e a escala. @param {unknown} m @returns {m is MolduraDoMapa} */
+function eMoldura(m) {
+  if (typeof m !== 'object' || m === null || Array.isArray(m)) return false;
+  const x = /** @type {Record<string, unknown>} */ (m);
+  return typeof x.nome === 'string' && eCaixa(x.caixa) && typeof x.escala === 'number';
+}
+
+/**
+ * O país: o campo, as molduras e as unidades.
+ *
+ * @param {unknown} p
+ * @returns {p is PaisDoMapa}
+ */
+export function ePaisDoMapa(p) {
+  if (typeof p !== 'object' || p === null || Array.isArray(p)) return false;
+  const x = /** @type {Record<string, unknown>} */ (p);
+  return (
+    eCampo(x.campo) &&
+    Array.isArray(x.molduras) &&
+    x.molduras.every(eMoldura) &&
+    Array.isArray(x.unidades) &&
+    x.unidades.length > 0 &&
+    x.unidades.every(eUnidadeComParcela)
+  );
+}
+
+/**
+ * A identidade de um distrito dentro do seu ficheiro: o slug, o nome e o tipo.
+ *
+ * Não tem desenho nem caixa, e é isso que a distingue de uma `UnidadeDoMapa`.
+ *
+ * @param {unknown} u
+ * @returns {u is IdentidadeDoDistrito}
+ */
+function eIdentidadeDeDistrito(u) {
+  if (typeof u !== 'object' || u === null || Array.isArray(u)) return false;
+  const x = /** @type {Record<string, unknown>} */ (u);
+  return typeof x.slug === 'string' && typeof x.nome === 'string';
+}
+
+/**
+ * Um distrito: a sua identidade, o seu campo local e os seus concelhos.
+ *
+ * @param {unknown} d
+ * @returns {d is DistritoDoMapa}
+ */
+export function eDistritoDoMapa(d) {
+  if (typeof d !== 'object' || d === null || Array.isArray(d)) return false;
+  const x = /** @type {Record<string, unknown>} */ (d);
+  return (
+    eIdentidadeDeDistrito(x.unidade) &&
+    eCampo(x.campo) &&
+    Array.isArray(x.concelhos) &&
+    x.concelhos.length > 0 &&
+    x.concelhos.every(eUnidade)
+  );
+}
+
+/**
+ * O manifesto, na parte que este sítio lê: a menção da fonte que a licença da
+ * CAOP obriga. `check:mapa` exige-a onde o mapa está, e sem ela a construção
+ * não pode continuar sem quebrar a licença.
+ *
+ * @param {unknown} m
+ * @returns {m is ManifestoDoMapa}
+ */
+export function eManifestoDoMapa(m) {
+  if (typeof m !== 'object' || m === null || Array.isArray(m)) return false;
+  const x = /** @type {Record<string, unknown>} */ (m);
+  if (typeof x.fonte !== 'object' || x.fonte === null) return false;
+  const f = /** @type {Record<string, unknown>} */ (x.fonte);
+  return (
+    typeof f.atribuicao === 'string' &&
+    typeof f.licenca === 'string' &&
+    typeof f.carta === 'string'
+  );
+}
+
+/** @type {ManifestoDoMapa | null} */
 let _manifesto = null;
+/** @type {PaisDoMapa | null} */
 let _pais = null;
+/** @type {Map<string, DistritoDoMapa>} */
 const _distritos = new Map();
 
 /** O manifesto: a origem, a licença, a tolerância e a prova de junção. */
 export function manifestoDoMapa() {
-  if (!_manifesto) _manifesto = le('manifest.json');
+  if (!_manifesto) {
+    const bruto = le('manifest.json');
+    if (!eManifestoDoMapa(bruto)) {
+      throw new Error(
+        `mapa: mapa/manifest.json não traz a menção da fonte (fonte.atribuicao, fonte.licenca ` +
+          `e fonte.carta, as três cadeias). É a única obrigação da licença CC BY 4.0 da CAOP, e ` +
+          `sem ela o mapa não pode ser servido.`,
+      );
+    }
+    _manifesto = bruto;
+  }
   return _manifesto;
 }
 
 /** O país: o campo, as duas molduras e as 29 unidades. */
 export function paisDoMapa() {
-  if (!_pais) _pais = le('pais.json');
+  if (!_pais) {
+    const bruto = le('pais.json');
+    if (!ePaisDoMapa(bruto)) {
+      throw new Error(
+        `mapa: mapa/pais.json não é o país. Precisa de "campo" (largura e altura), de ` +
+          `"molduras" (nome, caixa de quatro números, escala) e de "unidades" não vazia, cada ` +
+          `uma com slug, nome, caminho "d", caixa, ponto e a parcela a que pertence.`,
+      );
+    }
+    _pais = bruto;
+  }
   return _pais;
 }
 
@@ -89,10 +258,24 @@ export function unidadesDoMapa() {
   return paisDoMapa().unidades;
 }
 
-/** Um distrito: a sua unidade, o seu campo local e os seus concelhos. */
+/**
+ * Um distrito: a sua unidade, o seu campo local e os seus concelhos.
+ *
+ * @param {string} slug
+ * @returns {DistritoDoMapa}
+ */
 export function distritoDoMapa(slug) {
-  if (!_distritos.has(slug)) _distritos.set(slug, le(path.join('distritos', `${slug}.json`)));
-  return _distritos.get(slug);
+  const emCache = _distritos.get(slug);
+  if (emCache) return emCache;
+  const bruto = le(path.join('distritos', `${slug}.json`));
+  if (!eDistritoDoMapa(bruto)) {
+    throw new Error(
+      `mapa: mapa/distritos/${slug}.json não é um distrito. Precisa de "unidade", de "campo" e ` +
+        `de "concelhos", cada um com slug, nome, caminho "d", caixa e ponto.`,
+    );
+  }
+  _distritos.set(slug, bruto);
+  return bruto;
 }
 
 /** Os slugs das 29, para os `getStaticPaths` das duas edições. */
@@ -100,7 +283,11 @@ export function slugsDasUnidades() {
   return unidadesDoMapa().map((u) => u.slug);
 }
 
-/** A unidade de um slug, ou `null`. */
+/**
+ * A unidade de um slug, ou `null`.
+ *
+ * @param {string} slug
+ */
 export function unidadeDoMapa(slug) {
   return unidadesDoMapa().find((u) => u.slug === slug) ?? null;
 }
@@ -180,7 +367,13 @@ export function atribuicaoDoMapa() {
  */
 export const LARGURAS_DO_MAPA = { larga: 490, larga_minima: 340, media: 281, estreita: 320 };
 
-/** O maior lado da caixa de uma unidade, em píxeis, a uma largura de mapa. */
+/**
+ * O maior lado da caixa de uma unidade, em píxeis, a uma largura de mapa.
+ *
+ * @param {UnidadeDoMapa} unidade
+ * @param {number} larguraDoMapa
+ * @param {CampoDoMapa} campo
+ */
 export function ladoEmPixeis(unidade, larguraDoMapa, campo) {
   const escala = larguraDoMapa / campo.largura;
   return Math.max(unidade.caixa[2], unidade.caixa[3]) * escala;
@@ -197,7 +390,12 @@ export function ladoEmPixeis(unidade, larguraDoMapa, campo) {
 /** O alvo da casa. Não é uma escolha deste ficheiro: é a regra de 44 px. */
 export const ALVO_PX = 44;
 
-/** A caixa que contém todas as caixas de uma lista, no mesmo espaço delas. */
+/**
+ * A caixa que contém todas as caixas de uma lista, no mesmo espaço delas.
+ *
+ * @param {UnidadeDoMapa[]} unidades
+ * @returns {CaixaDoMapa}
+ */
 function caixaDe(unidades) {
   const x0 = Math.min(...unidades.map((u) => u.caixa[0]));
   const y0 = Math.min(...unidades.map((u) => u.caixa[1]));
@@ -227,9 +425,14 @@ function caixaDe(unidades) {
  * Madeira (começa em x 260, e a da Madeira começa em 1527); a da Madeira cabe na
  * dela e não na dos Açores (começa em y 4527, e a dos Açores em 6096). A
  * correspondência é única, e a função morre se deixar de o ser.
+ *
+ * @param {MolduraDoMapa} moldura
+ * @param {UnidadeComParcela[]} unidades
+ * @returns {string}
  */
 export function parcelaDaMoldura(moldura, unidades) {
   const [mx, my, mw, mh] = moldura.caixa;
+  /** @param {CaixaDoMapa} caixa */
   const cabe = ([x, y, w, h]) => x >= mx && y >= my && x + w <= mx + mw && y + h <= my + mh;
 
   const parcelas = [...new Set(unidades.map((u) => u.parcela))];
@@ -245,7 +448,12 @@ export function parcelaDaMoldura(moldura, unidades) {
   return candidatas[0];
 }
 
-/** As unidades da parcela que uma moldura enquadra. */
+/**
+ * As unidades da parcela que uma moldura enquadra.
+ *
+ * @param {MolduraDoMapa} moldura
+ * @param {UnidadeComParcela[]} unidades
+ */
 export function unidadesDaMoldura(moldura, unidades) {
   const parcela = parcelaDaMoldura(moldura, unidades);
   return unidades.filter((u) => u.parcela === parcela);
@@ -307,6 +515,10 @@ export function parcelasDoMapa() {
   const chaves = [...new Set(pais.unidades.map((u) => u.parcela))];
   const semMoldura = chaves.filter((c) => !molduraDe.has(c));
   const ordem = [...semMoldura, ...pais.molduras.map((m) => parcelaDaMoldura(m, pais.unidades))];
+  /**
+   * @param {UnidadeDoMapa} a
+   * @param {UnidadeDoMapa} b
+   */
   const alfabetica = (a, b) => a.nome.localeCompare(b.nome, 'pt');
   return ordem.map((chave) => {
     const unidades = pais.unidades.filter((u) => u.parcela === chave).sort(alfabetica);

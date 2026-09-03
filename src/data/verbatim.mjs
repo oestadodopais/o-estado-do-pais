@@ -86,13 +86,18 @@ Posições projetadas em Web Mercator e normalizadas para o referencial da pági
      renderizada exista aqui: uma entrada que ninguém rende não guarda nada. */
 };
 
-/** Normalização de espaços usada pelo portão — a mesma dos dois lados da comparação. */
+/**
+ * Normalização de espaços usada pelo portão — a mesma dos dois lados da comparação.
+ *
+ * @param {unknown} s
+ */
 export function normalizeWhitespace(s) {
   return String(s).replace(/ /g, ' ').replace(/\s+/g, ' ').trim();
 }
 
+/** @param {string} key */
 export function verbatim(key) {
-  const entry = VERBATIM[key];
+  const entry = /** @type {TabelaAberta<typeof VERBATIM>} */ (VERBATIM)[key];
   if (!entry) throw new Error(`verbatim: bloco desconhecido "${key}"`);
   return entry;
 }

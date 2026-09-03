@@ -17,6 +17,8 @@
  * («2024»), um mês («2025-12») ou um período escrito à mão não são desta regra,
  * e uma função que adivinhasse o que fazer com eles inventaria dias. A conversão
  * acontece só quando os três campos existem.
+ *
+ * @param {unknown} valor
  */
 export function dataDaCasa(valor) {
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(valor ?? ''));

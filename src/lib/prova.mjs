@@ -48,6 +48,8 @@ import {
   entradasDoRegisto,
   POR_VERIFICAR,
   TIPOS_DE_DOCUMENTO,
+  documentoDaLinha,
+  listaDaLinha,
 } from './ledger.mjs';
 import { ROUTES, routePath } from './routes.mjs';
 import { estadoDaMedida } from './estado.mjs';
@@ -79,6 +81,7 @@ import { ENDERECO_CORRECOES } from '../data/metodo.mjs';
  * directório de trabalho primeiro e do próprio ficheiro depois.
  */
 function encontraRaiz() {
+  /** @param {string} inicio */
   const subir = (inicio) => {
     let dir = inicio;
     for (let i = 0; i < 8; i++) {
@@ -189,11 +192,13 @@ export function estadoDasFontes(hoje = new Date()) {
  * porque o fragmento não vai no pedido e o índice do arquivo é por endereço
  * pedido — três linhas que citam três páginas do mesmo relatório partilham o
  * estado do ficheiro, que é o que elas de facto partilham.
+ *
+ * @param {unknown} sourceUrl
  */
 export function estadoDaFonte(sourceUrl) {
   if (typeof sourceUrl !== 'string' || !sourceUrl.startsWith('http')) return null;
   const pedido = sourceUrl.split('#')[0];
-  return FONTES_SEM_RESPOSTA?.[pedido] ?? null;
+  return /** @type {TabelaAberta<typeof FONTES_SEM_RESPOSTA>} */ (FONTES_SEM_RESPOSTA)?.[pedido] ?? null;
 }
 
 /**
@@ -208,8 +213,10 @@ export function agenda() {
   try {
     if (!fs.existsSync(FICHEIRO_DA_AGENDA)) return null;
     const cru = JSON.parse(fs.readFileSync(FICHEIRO_DA_AGENDA, 'utf8'));
+    /** @type {ItemDaAgenda[] | null} */
     const itens = Array.isArray(cru?.itens) ? cru.itens : Array.isArray(cru) ? cru : null;
     if (!itens) return null;
+    /** @param {string} estado */
     const porEstado = (estado) => itens.filter((i) => i?.estado === estado).length;
     return {
       total: itens.length,
@@ -238,12 +245,14 @@ function linhasCruzadas() {
   const dir = path.join(RAIZ, 'ledger', 'cruzamentos');
   let total = 0;
   let ficheiros = 0;
+  /** @type {Map<string, string>} */
   const doMotor = new Map();
   if (!fs.existsSync(dir)) return { total, ficheiros, doMotor };
   for (const f of fs.readdirSync(dir)) {
     if (!f.endsWith('.json')) continue;
     const manifesto = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
-    for (const [siteId, linha] of Object.entries(manifesto?.rows ?? {})) {
+    for (const [siteId, bruto] of Object.entries(manifesto?.rows ?? {})) {
+      const linha = /** @type {{ rh_study?: unknown, rh_id?: unknown } | null} */ (bruto);
       if (linha?.rh_study && linha?.rh_id) doMotor.set(`${linha.rh_study} ${linha.rh_id}`, siteId);
     }
     total += Object.keys(manifesto?.rows ?? {}).length;
@@ -278,9 +287,12 @@ const RESUMO_DE_ORIGEM = /^[0-9a-f]{64}$/;
  * Memoizado porque `prova()` é chamada uma vez por página construída: sem isto,
  * os oito registos (1,4 MB) eram lidos e analisados trezentas e quarenta vezes.
  */
+/** @type {ContagensDosRegistos | null} */
 let CONTAS_DOS_REGISTOS = null;
+/** @param {Map<string, string>} doMotor */
 function contagensDosRegistos(doMotor) {
   if (CONTAS_DOS_REGISTOS) return CONTAS_DOS_REGISTOS;
+  /** @type {ContagensDosRegistos} */
   const c = {
     edicoes: 0,
     blocos: 0,
@@ -304,15 +316,16 @@ function contagensDosRegistos(doMotor) {
           c.algarismos++;
           if (figura.row) {
             c.resolvidos++;
-            if (doMotor.has(`${entrada.rh_study} ${figura.row}`)) c.com_linha_do_sitio++;
+            const rh = /** @type {{ rh_study?: unknown }} */ (entrada).rh_study;
+            if (doMotor.has(`${rh} ${figura.row}`)) c.com_linha_do_sitio++;
           } else {
             c.por_resolver++;
           }
           if (RESUMO_DE_ORIGEM.test(String(figura.source_sha256 ?? ''))) {
             c.com_resumo_de_origem++;
-          } else if (MOTIVOS_SEM_RESUMO.has(figura.source_digest_kind)) {
+          } else if (MOTIVOS_SEM_RESUMO.has(/** @type {string} */ (figura.source_digest_kind))) {
             c.sem_resumo_de_origem++;
-            c.motivos[figura.source_digest_kind]++;
+            c.motivos[/** @type {string} */ (figura.source_digest_kind)]++;
           }
           /* Uma figura sem resumo E sem motivo da lista fechada não entra em
              nenhuma das duas contagens, e é de propósito: a soma das duas
@@ -330,6 +343,10 @@ function contagensDosRegistos(doMotor) {
  * Uma âncora dentro de uma rota, sem barra a dobrar: a raiz é `/` e o resto
  * não tem barra final.
  */
+/**
+ * @param {string} rota
+ * @param {string} id
+ */
 function ancora(rota, id) {
   return `${rota}#${id}`;
 }
@@ -341,6 +358,7 @@ function ancora(rota, id) {
  * aqui porque é daqui que a porta sai: a chave da prova é que decide para onde
  * a sua contagem abre, e o gabarito obedece.
  */
+/** @param {string} estado */
 export const ancoraDoEstadoDaAgenda = (estado) => `estado-${estado}`;
 
 /**
@@ -360,6 +378,10 @@ export const ancoraDoEstadoDaAgenda = (estado) => `estado-${estado}`;
  *
  * `agenda_total` fica sem âncora: conta a agenda inteira, e o que ela conta vê-se
  * na página inteira.
+ */
+/**
+ * @param {Lingua} lang
+ * @param {string | null} [estado]
  */
 function portaDaAgenda(lang, estado = null) {
   if (!ROUTES.agenda) return routePath('metodo', lang);
@@ -381,6 +403,7 @@ function portaDaAgenda(lang, estado = null) {
  * estavam, e as que só se rendem no Método ficam também, porque o Método é onde
  * o método vive.
  */
+/** @type {Record<string, ParDeLinguas>} */
 const FRASES = {
   fontes: {
     pt: 'organismos distintos no campo da fonte das linhas do livro-razão',
@@ -583,6 +606,7 @@ const FRASES = {
  * A CHAVE LEVA O SLUG e não um número de ordem, para que a mensagem do portão
  * nomeie a página em que o desacordo está.
  */
+/** @param {string} slug */
 export const CHAVE_DOS_CONCELHOS = (slug) => `mapa_concelhos_${slug}`;
 
 for (const u of unidadesDoMapa()) {
@@ -606,6 +630,7 @@ for (const u of unidadesDoMapa()) {
  * mesma chave. O que a mensagem do portão precisa é de nomear a página em que o
  * desacordo está, e o sublinhado nomeia-a na mesma.
  */
+/** @param {string} slug */
 export const CHAVE_DAS_PECAS = (slug) => `areas_pecas_${slug.replace(/-/g, '_')}`;
 
 /* A FRASE É A MESMA PARA TODAS AS ÁREAS, e é uma escolha e não uma preguiça. A
@@ -628,6 +653,7 @@ export function prova(lang = 'pt') {
   const claims = loadClaims();
   const linhas = [...claims.values()];
   const livro = routePath('livro', lang);
+  /** @param {string} chave */
   const f = (chave) => FRASES[chave][lang] ?? FRASES[chave].pt;
 
   const divida = linhas.filter((c) => provenienciaIncompleta(c)).length;
@@ -641,16 +667,17 @@ export function prova(lang = 'pt') {
   const dosConcelhos = contagensDosConcelhos();
   const ag = agenda();
 
+  /** @type {Record<string, number>} */
   const porTipo = {};
   for (const tipo of TIPOS_DE_DOCUMENTO) porTipo[tipo] = 0;
   let semTipo = 0;
   for (const c of linhas) {
-    const tipo = c.document?.kind;
-    if (tipo && tipo in porTipo) porTipo[tipo]++;
+    const tipo = documentoDaLinha(c)?.kind;
+    if (typeof tipo === 'string' && tipo in porTipo) porTipo[tipo]++;
     else semTipo++;
   }
 
-  /** @type {(chave: string, valor: any, porta: string, extra?: object) => object} */
+  /** @type {(chave: string, valor: string | number | null, porta: string, extra?: Partial<ChaveDaProva>) => ChaveDaProva} */
   const k = (chave, valor, porta, extra = {}) => ({
     valor,
     origem: f(chave),
@@ -663,7 +690,7 @@ export function prova(lang = 'pt') {
     afirmacoes: k('afirmacoes', claims.size, livro),
     indexaveis: k('indexaveis', claims.size - divida, livro),
     divida: k('divida', divida, livro),
-    derivadas: k('derivadas', linhas.filter((c) => (c.derived_from ?? []).length > 0).length, livro),
+    derivadas: k('derivadas', linhas.filter((c) => listaDaLinha(c.derived_from).length > 0).length, livro),
     aritmetica_reavaliada: k(
       'aritmetica_reavaliada',
       linhas.filter((c) => typeof c.check === 'string' && c.check.trim() !== '').length,
@@ -671,7 +698,7 @@ export function prova(lang = 'pt') {
     ),
     valores_creditados: k(
       'valores_creditados',
-      linhas.filter((c) => (c.attributed_to ?? []).length > 0).length,
+      linhas.filter((c) => listaDaLinha(c.attributed_to).length > 0).length,
       livro,
     ),
     /* Organismos citados, e o marcador não é um organismo.
@@ -842,7 +869,7 @@ export function prova(lang = 'pt') {
     releituras_registadas: k('releituras_registadas', entradasDeReleitura.length, livro),
     linhas_reconferidas: k(
       'linhas_reconferidas',
-      linhas.filter((c) => (c.verifications ?? []).length > 0).length,
+      linhas.filter((c) => listaDaLinha(c.verifications).length > 0).length,
       livro,
     ),
     releituras_divergentes: k(

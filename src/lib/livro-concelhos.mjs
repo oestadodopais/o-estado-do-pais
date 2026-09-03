@@ -33,15 +33,20 @@ import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
 /** O identificador do estudo, tal como o contrato com o motor o fixa. */
 export const ESTUDO_DOS_CONCELHOS = 'concelhos-2026';
 
-/** As linhas que uma entrada de concelho declara: as sete peças e o limite. */
+/**
+ * As linhas que uma entrada de concelho declara: as sete peças e o limite.
+ *
+ * @param {(typeof MUNICIPIOS_COM_PAGINA)[number]} municipio
+ */
 export function idsDoConcelho(municipio) {
+  /** @type {(string | null | undefined)[]} */
   const ids = municipio.relance.map((medida) => medida.claim);
   const d = municipio.distancia ?? {};
   /* O limite da dívida não é uma peça: é a referência contra que a peça do
      índice se lê, e a segunda ponta do desenho da distância. É uma linha do
      estudo como as outras, e a página do conjunto tem de a listar. */
-  ids.push(d.limite ?? null);
-  return ids.filter(Boolean);
+  ids.push('limite' in d ? d.limite : null);
+  return /** @type {string[]} */ (ids.filter(Boolean));
 }
 
 /**
@@ -99,7 +104,7 @@ export function linhasDosConcelhos() {
  * concelho mostra as medidas por essa ordem, e a página do livro-razão dele
  * mostra as linhas pela mesma: são a mesma coisa vista de dois lados.
  *
- * @param {object} municipio  o registo de `municipios.mjs`
+ * @param {(typeof MUNICIPIOS_COM_PAGINA)[number]} municipio  o registo de `municipios.mjs`
  */
 export function linhasDeUmConcelho(municipio) {
   const doEstudo = new Map(
