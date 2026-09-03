@@ -106,7 +106,13 @@ import {
   cartaoDaPagina,
   nomeDoCartao,
 } from '../src/lib/cartoes.mjs';
-import { documentoDaEdicao, documentoServido, MARCA_DOS_ROBOS } from '../src/lib/documentos.mjs';
+import {
+  documentoDaEdicao,
+  documentoServido,
+  provaDosBytes,
+  regiaoDaCabeca,
+  MARCA_DOS_ROBOS,
+} from '../src/lib/documentos.mjs';
 import { leBlocos, Texto } from '../src/lib/eyetext.mjs';
 import { renderizacoesAceites } from '../src/data/correcoes.mjs';
 import {
@@ -220,6 +226,33 @@ const USOS = {
   tokens: new Map(),
   padroes: new Map(),
 };
+
+/**
+ * DUAS ENTRADAS COM O MESMO NOME SÃO UMA ENTRADA A MENOS (segunda passagem).
+ *
+ * Os contadores vivem em `Map`, e os motivos em `Set`: duas declarações com a
+ * mesma chave colapsam numa só, em silêncio. A segunda ficaria com a razão que
+ * ninguém lê e o contador da primeira, e a régua das órfãs nunca a veria.
+ * Recusa-se no carregamento, que é onde o ficheiro ainda é uma lista e não um
+ * mapa.
+ */
+function recusaRepetidos(itens, chaveDe, oQue) {
+  const vistos = new Map();
+  for (const it of itens) {
+    const chave = chaveDe(it);
+    vistos.set(chave, (vistos.get(chave) ?? 0) + 1);
+  }
+  const repetidos = [...vistos].filter(([, n]) => n > 1);
+  if (repetidos.length) {
+    console.error(
+      `\n  PORTÃO DE HTML · ledger/allowlist.yml declara ${oQue} repetido(s): ` +
+        repetidos.map(([k, n]) => `"${k}" ${n} vezes`).join(', ') +
+        `\n  Duas entradas com o mesmo nome colapsam numa só e a segunda deixa de ser lida.\n`,
+    );
+    process.exit(1);
+  }
+}
+recusaRepetidos(allow.contexts ?? [], (c) => c.id, 'motivo(s)');
 const chaveDoToken = (t) => `${t.token} (scope: ${t.scope ?? 'any'})`;
 const chaveDoPadrao = (p) => `${p.pattern} (scope: ${p.scope ?? 'any'})`;
 const usou = (mapa, chave) => mapa.set(chave, (mapa.get(chave) ?? 0) + 1);
@@ -229,6 +262,8 @@ const PATTERNS = (allow.patterns ?? []).map((p) => ({
   scope: p.scope ?? 'any',
   re: new RegExp(p.pattern),
 }));
+recusaRepetidos(TOKENS, chaveDoToken, 'token(s)');
+recusaRepetidos(PATTERNS, chaveDoPadrao, 'padrão(ões)');
 for (const t of TOKENS) USOS.tokens.set(chaveDoToken(t), 0);
 for (const p of PATTERNS) USOS.padroes.set(chaveDoPadrao(p), 0);
 
@@ -1043,6 +1078,30 @@ function verificaDocumento({ rota, rel, caminho, html, root, err }) {
     );
   }
 
+  /**
+   * 4b — A PROVA DOS BYTES, INDEPENDENTE DO TRANSFORMADOR (segunda passagem).
+   *
+   * O ponto 4 acima compara o construído com `documentoServido()` e prova uma
+   * coisa mais estreita do que a primeira passagem escreveu: prova que o
+   * transformador é DETERMINÍSTICO. Se ele corromper um documento, corrompe os
+   * dois lados da igualdade, e a comparação continua verde. Foi o que a leitura
+   * a frio apontou (Blocking 3).
+   *
+   * Esta prova não passa pelo transformador. Lê os BYTES do ficheiro de origem,
+   * lê os bytes do construído, e compara fatias: a cauda do construído tem de
+   * ser, byte a byte, a cauda do original a seguir ao seu `<body>`; e tirar do
+   * construído a única marca dos robôs tem de devolver, entre o `<head>` e o
+   * `<body>`, os bytes do original entre os seus.
+   */
+  const falhaDosBytes = provaDosBytes(fs.readFileSync(origem.ficheiro, 'utf8'), html);
+  if (falhaDosBytes) {
+    err(
+      `o documento construído não preserva os bytes do original.\n` +
+        `      ${falhaDosBytes}\n` +
+        `      origem: ${path.relative(ROOT, origem.ficheiro)}`,
+    );
+  }
+
   /* 5 — a faixa: uma só, a ligar para a página do estudo, sem algarismos. */
   const faixas = root.querySelectorAll('[data-oedp-faixa]');
   if (faixas.length !== 1) {
@@ -1130,47 +1189,53 @@ function verificaDocumento({ rota, rel, caminho, html, root, err }) {
 
   /* ------------------------------------------- 6, 7 e 8: as marcas da casa */
 
-  /* 6 — A LÍNGUA, DECLARADA. Compara-se a RAIZ da etiqueta e não a etiqueta
-     inteira: oito dos dezasseis documentos declaram a sua língua e três deles
-     escrevem "pt" onde a casa escreve "pt-PT". As duas dizem português, e
-     reescrever a do autor seria editar a obra alojada para a fazer caber na
-     grafia da casa. O que se exige é que a língua esteja DITA e que seja a da
-     edição; a forma da etiqueta é dele. */
+  /* 6 — A LÍNGUA, EXACTA (segunda passagem, 03.09.2026). A primeira forma
+     comparava a RAIZ da etiqueta e deixava passar «pt» numa edição que a casa
+     escreve «pt-PT». Isso era um contrato a duas vozes: o módulo preservava a
+     forma do autor e o portão fingia que qualquer forma servia, e nenhum dos
+     dois dizia qual era a etiqueta certa. Passa a ser a da edição, carácter a
+     carácter, e é `comMarcasDaCasa()` que a põe lá: acrescenta onde falta,
+     normaliza a forma da mesma língua, e recusa o resto. */
+  const esperadaNoHtml = HREFLANG[lang];
   const elHtml = root.querySelector('html');
-  const langDeclarado = (elHtml?.getAttribute('lang') ?? '').trim();
-  const raizDaLingua = langDeclarado.split('-')[0].toLowerCase();
-  if (!langDeclarado) {
+  const langDeclarado = elHtml?.getAttribute('lang') ?? null;
+  if (langDeclarado !== esperadaNoHtml) {
     err(
-      `o documento não declara a língua: falta \`lang\` no \`<html>\`.\n` +
+      `o documento declara \`lang=${JSON.stringify(langDeclarado)}\` e tem de declarar ` +
+        `${JSON.stringify(esperadaNoHtml)}, a etiqueta desta edição.\n` +
         `      Um leitor de ecrã lê um documento sem língua com a fonética da página anterior, e ` +
         `um rastreador não sabe em que língua o indexar. Ver src/lib/documentos.mjs, ` +
         `\`comMarcasDaCasa()\`.`,
     );
-  } else if (raizDaLingua !== lang) {
-    err(
-      `o documento declara \`lang="${langDeclarado}"\` e é a edição "${lang}".\n` +
-        `      A raiz da etiqueta tem de ser a da edição ("${lang}"); a forma completa é do autor.`,
-    );
   }
 
-  /* 7 — A MARCA DOS ROBÔS. Uma só: duas marcas `robots` numa página são
-     ambíguas para um rastreador, e a que a casa põe tem de ser a única.
-     `noindex` enquanto o advogado não responder à pergunta 11 da diligência;
-     `follow` porque o que se recusa é a indexação deste ficheiro e não as
-     fontes que ele cita. */
-  const robos = (root.querySelectorAll('meta') ?? []).filter(
-    (m) => (m.getAttribute('name') ?? '').trim().toLowerCase() === 'robots',
-  );
+  /* 7 — A MARCA DOS ROBÔS, E DENTRO DA CABEÇA. Uma só, porque duas marcas
+     `robots` numa página são ambíguas para um rastreador; e dentro do `<head>`,
+     porque uma marca no corpo não é uma directiva: o rastreador lê-a como
+     texto. A primeira forma contava-as em qualquer sítio do documento, o que
+     deixava passar exactamente esse caso. Pergunta-se por POSIÇÃO no ficheiro e
+     não à árvore do analisador, que é o que o rastreador faz. */
+  const robos = [...html.matchAll(/<meta\b[^>]*\bname\s*=\s*["']?robots["']?[^>]*>/gi)];
   if (robos.length !== 1) {
     err(
       `o documento tem ${robos.length} marca(s) \`<meta name="robots">\`; tem de ter exactamente uma.\n` +
         `      Esperava-se ${JSON.stringify(MARCA_DOS_ROBOS)} no \`<head>\`.`,
     );
   } else {
-    const conteudo = (robos[0].getAttribute('content') ?? '').trim();
-    if (conteudo !== 'noindex, follow') {
+    if (robos[0][0] !== MARCA_DOS_ROBOS) {
       err(
-        `a marca dos robôs diz ${JSON.stringify(conteudo)} e tem de dizer "noindex, follow".`,
+        `a marca dos robôs é ${JSON.stringify(robos[0][0].slice(0, 120))} e tem de ser ` +
+          `${JSON.stringify(MARCA_DOS_ROBOS)}, carácter a carácter.`,
+      );
+    }
+    const cabeca = regiaoDaCabeca(html);
+    if (!cabeca) {
+      err('o documento construído não tem um `<head>` de verdade onde a marca dos robôs viva.');
+    } else if (robos[0].index < cabeca.de || robos[0].index >= cabeca.ate) {
+      err(
+        `a marca dos robôs está fora do \`<head>\` (no símbolo ${robos[0].index}; a cabeça vai ` +
+          `de ${cabeca.de} a ${cabeca.ate}).\n` +
+          `      Uma marca \`robots\` no corpo não é uma directiva: o rastreador lê-a como texto.`,
       );
     }
   }
@@ -1190,8 +1255,20 @@ function verificaDocumento({ rota, rel, caminho, html, root, err }) {
         `rodapé de outra página.`,
     );
   } else {
-    const dito = normalizeWhitespace(decodeEntities(textoDe(rotuloIA, { semEstilo: true })));
-    const esperadoRotulo = textoDoRotulo(lang);
+    /* O ORÁCULO É `scripts/textos-aprovados.json`, E NÃO `politica-ia.mjs`
+       (segunda passagem). A primeira forma comparava o rótulo do documento com
+       `textoDoRotulo()`, que é o MESMO ficheiro que o rende: mudar a cópia
+       mudava a saída e o oráculo ao mesmo tempo. É exactamente a falha que a
+       leitura a frio de 01.09 já tinha provado no rótulo do rodapé, com uma
+       planta que tirava o «the» de «under the house policy» e passava verde, e
+       que este ramo repetiu no ramo dos documentos.
+
+       E SEM NORMALIZAR NADA: nem entidades decodificadas, nem espaços
+       colapsados, nem pontas aparadas. É a disciplina da comparação do rodapé,
+       e a razão é a mesma: um espaço a mais no texto do diretor é uma diferença
+       e não um detalhe de composição. */
+    const dito = textoDe(rotuloIA, { semEstilo: true, separador: '' });
+    const esperadoRotulo = TEXTOS_APROVADOS.rotulo[lang];
     if (dito !== esperadoRotulo) {
       err(
         `o rótulo de IA da faixa não diz o texto aprovado.\n` +
@@ -1200,7 +1277,7 @@ function verificaDocumento({ rota, rel, caminho, html, root, err }) {
       );
     }
 
-    const portaDaPolitica = `${routePath('metodo', lang)}#${ANCORA_DA_POLITICA}`;
+    const portaDaPolitica = `${routePath('metodo', lang)}#${TEXTOS_APROVADOS.ancora_da_politica}`;
     const aDaPolitica = rotuloIA.querySelector('a[href]');
     if (!aDaPolitica) {
       err(`o rótulo de IA da faixa não tem a porta para a política da casa.`);
@@ -1211,11 +1288,11 @@ function verificaDocumento({ rota, rel, caminho, html, root, err }) {
             `"${portaDaPolitica}".`,
         );
       }
-      const palavras = decodeEntities(textoDe(aDaPolitica, { semEstilo: true })).trim();
-      if (palavras !== ROTULO_DA_CASA[lang]?.porta) {
+      const palavras = textoDe(aDaPolitica, { semEstilo: true, separador: '' });
+      if (palavras !== TEXTOS_APROVADOS.porta[lang]) {
         err(
           `as palavras ligadas do rótulo de IA são ${JSON.stringify(palavras)} e têm de ser ` +
-            `${JSON.stringify(ROTULO_DA_CASA[lang]?.porta)}.`,
+            `${JSON.stringify(TEXTOS_APROVADOS.porta[lang])}.`,
         );
       }
     }
@@ -1231,15 +1308,15 @@ function verificaDocumento({ rota, rel, caminho, html, root, err }) {
       );
     } else {
       const nome = nomes[0];
-      const dizNome = decodeEntities(textoDe(nome, { semEstilo: true })).trim();
-      if (dizNome !== RESPONSAVEL_EDITORIAL) {
+      const dizNome = textoDe(nome, { semEstilo: true, separador: '' });
+      if (dizNome !== TEXTOS_APROVADOS.responsavel) {
         err(
           `o nome de quem responde diz ${JSON.stringify(dizNome)} e tem de dizer ` +
-            `${JSON.stringify(RESPONSAVEL_EDITORIAL)}.`,
+            `${JSON.stringify(TEXTOS_APROVADOS.responsavel)}.`,
         );
       }
-      const marcaDoNome = (nome.getAttribute('lang') ?? '').trim();
-      const esperadaNoNome = lang === 'pt' ? '' : LINGUA_DO_RESPONSAVEL;
+      const marcaDoNome = nome.getAttribute('lang') ?? '';
+      const esperadaNoNome = lang === 'pt' ? '' : TEXTOS_APROVADOS.lingua_do_responsavel;
       if (marcaDoNome !== esperadaNoNome) {
         err(
           `o nome de quem responde tem \`lang="${marcaDoNome}"\` e devia ter ` +
@@ -3832,7 +3909,9 @@ for (const file of ficheirosHtml(DIST)) {
             `Motivos aceites: ${[...CONTEXTOS].join(', ')}.`,
         );
       } else {
-        usou(USOS.contextos, motivo);
+        /* Mesma regra da marca `data-nonledger`: o motivo só se conta usado se a
+           estrutura que ele dispensa trouxer um algarismo. */
+        if (/\d/.test(JSON.stringify(raiz.estrutura ?? null))) usou(USOS.contextos, motivo);
         delete raiz.estrutura;
         delete raiz.estrutura_motivo;
       }
@@ -6002,7 +6081,15 @@ for (const file of ficheirosHtml(DIST)) {
         `data-nonledger="${motivo}" não é um motivo declarado. ` +
           `Motivos aceites: ${[...CONTEXTOS].join(', ')} (ver ledger/allowlist.yml).`,
       );
-    } else {
+    } else if (/\d/.test(textoDe(el, { semEstilo: true }))) {
+      /* SÓ CONTA QUANDO HÁ ALGARISMO PARA DISPENSAR (segunda passagem,
+         03.09.2026). A primeira forma contava um uso sempre que o motivo era
+         rendido, e a leitura a frio mostrou o buraco: uma marca inerte sobre
+         markup sem números punha o contador acima de zero e a excepção passava
+         a parecer viva sem dispensar coisa nenhuma. É precisamente a classe de
+         defeito que esta régua existe para apanhar, e ela era cega a si própria.
+         O que conta um uso é o motivo a fazer o seu trabalho: haver um algarismo
+         no elemento que ele isenta. */
       usou(USOS.contextos, motivo);
     }
     /**

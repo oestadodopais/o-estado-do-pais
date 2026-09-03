@@ -111,7 +111,7 @@ O rótulo é o recuo seguro do artigo 50.º, n.º 4 e n.º 5 do Regulamento (UE)
 
 `Base.astro` serializava com `JSON.stringify` nu, nos dois blocos, sobre 7 866 blocos construídos. Passa por `jsonLd()` (`src/lib/jsonld.mjs`, novo).
 
-**O conserto é dentro do JSON e não em HTML.** O conteúdo de um `<script>` não é HTML: o analisador não lhe decodifica entidades, e a única coisa que procura é a cadeia que fecha o elemento. Escapar `<` como `&lt;` seria o erro simétrico e pior, porque o JSON passaria a conter os cinco caracteres da entidade. Usa-se `<`, que é escape do JSON: o objecto lido é o mesmo, byte a byte, e o analisador de HTML nunca vê um `<`. Escapam-se `<`, `>` e `&`.
+**O conserto é dentro do JSON e não em HTML.** O conteúdo de um `<script>` não é HTML: o analisador não lhe decodifica entidades, e a única coisa que procura é a cadeia que fecha o elemento. Escapar `<` como `&lt;` seria o erro simétrico e pior, porque o JSON passaria a conter os cinco caracteres da entidade. Usa-se `\u003c`, que é uma sequência de escape DO JSON: o objecto lido é o mesmo, byte a byte, e o analisador de HTML nunca vê um `<`. Escapam-se `<`, `>` e `&`.
 
 **O conhecido-positivo**, com um título de estudo que traz `</script><img src=x onerror=alert(1)>`, e com o juiz a ser o mesmo analisador de HTML que o portão usa (`node-html-parser`): serializa-se a mesma ficha das duas maneiras, mete-se cada uma num `<script type="application/ld+json">`, e pergunta-se ao analisador o que ficou dentro do bloco e o que nasceu na página.
 
@@ -335,3 +335,103 @@ Os commits: sítio `af60d3b6`; motor `63d3a34` (as quatro saídas) e `0c17de1` (
 - **Um achado adjacente, fora deste bloco**: `src/components/Frase.astro:57` escreve os parênteses rectos do marcador à mão (`[{parte.marcador}]`) em vez de importar `POR_VERIFICAR`, o que está em tensão com a regra escrita em `src/data/marcador.mjs:18` («NUNCA se escreve o texto do marcador à mão num gabarito. Importa-se.»). Funciona hoje e é o que rende o único marcador vivo da página de Évora, mas é um segundo caminho para o texto do marcador que a constante não governa. Não se tocou: não é deste bloco.
 - **O fecho do bloco não está feito, e não é do construtor.** A regra 5 do plano manda fechar em três ficheiros (a secção do `DECISIONS.md` com `Afecta` válido, a linha nos pendentes, e a caixa riscada com a data no plano). Nenhum dos três foi escrito aqui: são do lugar de direção, que funde. Os dois ramos ficam empurrados e por fundir, e nenhum deles tocou em `main` nem em `master`.
 - **A auditoria errou em dois números** que este bloco mediu: o `lang` faltava em 8 dos 16 documentos e não nos 16; os identificadores mortos eram 18 e não 12. As duas correcções estão nas §2.1 e §5.1.
+
+
+## 12 · Segunda passagem (03.09.2026), depois da leitura a frio
+
+*A leitura do Codex está em `design/especime-v3/critica/2026-09-03-codex-leitura-f07-higiene.md`, com 14 achados distintos e as cinco plantas de três classes vistas 5 de 5. Três achados não são deste ramo: os Blocking 1 e 2 e o «16 dos 16» do Major 4 são as plantas do pacote, e os Majors 11 e 12 são do empacotamento (o lugar de direção conferiu os quatro ficheiros de indicadores à mão, sha256 a sha256). Os restantes eram reais, e é o que esta secção regista. Cada conserto tem o seu conhecido-positivo.*
+
+### 12.1 Os bytes do documento, provados e não presumidos (Blocking 3)
+
+A leitura acertou no que mais importava: **a igualdade que o portão fazia não provava o que a primeira passagem escreveu**. Comparar o construído com `documentoServido()` prova que o transformador é DETERMINÍSTICO; se ele corromper um documento, corrompe os dois lados e a comparação continua verde. Está dito assim no ponto 4 do `verificaDocumento()`, e o relatório da primeira passagem dizia mais do que isso.
+
+Três consertos, e o terceiro é a prova que faltava:
+
+- **A ida e volta dos bytes, antes de tocar em nada** (`src/lib/documentos.mjs`, em `documentoServido()`): lê-se o ficheiro em bytes e em texto, e exige-se que o texto reescrito dê os MESMOS bytes. Um documento que não seja UTF-8 válido perdia bytes na descodificação antes de qualquer inserção, e passa a ser recusado em vez de transformado.
+- **As etiquetas são etiquetas** (`zonasOpacas()` e `etiquetaReal()`): `<html>`, `<head>` e `<body>` procuram-se fora de comentários, de `<script>` e de `<style>`, nos primeiros 4 KB e antes do primeiro `<body`. Um dos dezasseis tem mesmo um segundo `<html lang="pt-PT">` na linha 3 que não é a raiz.
+- **A prova das fatias** (`provaDosBytes()`, chamada em `documentoServido()` e OUTRA VEZ no portão, sobre o ficheiro construído): não passa pelo transformador. Lê os bytes da origem, lê os bytes do construído, e compara fatias. A cauda do construído tem de ser, byte a byte, a cauda do original a seguir ao seu `<body>`; e tirar a única marca dos robôs tem de devolver, entre o `<head>` e o `<body>`, os bytes do original entre os seus.
+
+Mais duas coisas que a leitura apontou no mesmo ponto: a faixa acrescentava `@font-face` com os nomes de família da casa dentro do documento de outra pessoa, e agora declara-os com prefixo (`oedp-Spectral`, `oedp-Spectral SC`), com os nomes trocados nas fichas e nas pilhas ao mesmo tempo; e `comFaixa()` deixou de aceitar um documento sem `<body>` (punha a faixa a seguir ao `</head>`, onde a prova da cauda deixa de ter âncora).
+
+### 12.2 Os pontos de inserção, e as recusas (Major 4)
+
+- **A marca dos robôs entra a seguir ao charset do autor**, quando ele existe. A norma manda a declaração de codificação caber nos primeiros 1 024 bytes, e enfiar a marca da casa antes dela empurra-a para a frente. Medido nos dezasseis depois do conserto: o charset mais tardio acaba no **byte 65**.
+- **Um documento com marca `robots` própria é RECUSADO, não duplicado**, e a busca deixou de ser pela grafia exacta: `ROBOS_DO_AUTOR` conhece aspas duplas, simples e nenhumas, e espaço à volta do `=`. A conclusão da primeira passagem («nenhum dos dezasseis traz uma») vinha de um `grep` por `name="robots"` e era uma conclusão tirada de uma busca estreita; refeita com a expressão larga, continua a ser zero.
+- **A língua fica exacta, e o que não couber diz-se.** Medidos os dezasseis: **8 não declaravam língua nenhuma, 5 já traziam a etiqueta exacta, e 3 diziam «pt»**. Aos oito acrescenta-se, aos três normaliza-se a forma da mesma língua, e uma etiqueta vazia ou de outra língua é recusada com mensagem.
+
+  **Isto reverte a decisão da primeira passagem, e a razão está escrita.** A primeira preservava o «pt» do autor e o portão exigia só a raiz; a leitura mostrou que isso era um contrato a duas vozes, em que nenhum dos dois lados dizia qual era a etiqueta certa. Fecha-se do lado estrito. O que se muda é a FORMA de uma etiqueta de metadados acima do `<head>`, e a prova das fatias mostra que nenhum byte do corpo se move. Assinala-se ao lugar de direção que o brief pedia «recusada», e que uma recusa pura punha a construção permanentemente vermelha nesses três: a normalização da mesma língua é a leitura que mantém o portão exacto sem parar a casa, e é dele a palavra final.
+- **A docstring do módulo deixou de se contradizer** (dizia primeiro que os dezasseis não tinham língua e oito linhas abaixo que oito já tinham).
+
+### 12.3 As três regras do portão, apertadas (Major 5)
+
+| regra | antes | agora |
+|---|---|---|
+| `lang` | raiz da etiqueta (`pt` passava numa edição `pt-PT`) | a etiqueta EXACTA da edição, de `HREFLANG` |
+| `robots` | contada em qualquer sítio do documento | uma só, igual carácter a carácter, e DENTRO do `<head>` (por posição no ficheiro, que é o que o rastreador lê) |
+| o rótulo | `normalizeWhitespace(decodeEntities(...))` contra `politica-ia.mjs` | carácter a carácter, sem decodificar nem normalizar, contra `scripts/textos-aprovados.json` |
+
+A troca do oráculo é a mais importante das três e não estava no brief: a primeira passagem comparava o rótulo do documento com `textoDoRotulo()`, que é **o mesmo ficheiro que o rende**. É exactamente a falha que a leitura a frio de 01.09 já tinha provado no rótulo do rodapé, com uma planta que tirava o «the» de «under the house policy» e passava verde, e que este ramo repetiu no ramo dos documentos. O oráculo independente já existia; faltava usá-lo.
+
+### 12.4 A varredura dos identificadores (Majors 6 e 7, Minor 14)
+
+**São dezanove e não dezoito** (Major 6). Contados do diff, um a um: 2 no portão, 3 em `check-lingua`, 6 importações de componente, 8 outras ligações e declarações de vistas. A subcontagem era a cascata do `HomeView`, em que `estadoDaVerificacao` só ficou visível depois de `verificacao` sair. Com a segunda passagem são **vinte**: a cobertura nova da desestruturação encontrou `lang` em `src/components/SinalDasFontes.astro`, uma propriedade que nada lia, e o argumento que lha passava em `Masthead.astro` saiu com ela.
+
+`scripts/check-mortos.mjs` foi reescrito (Major 7). Conta sobre o CÓDIGO e não sobre o texto cru: `soCodigo()` é uma máquina de estados que apaga comentários, o conteúdo das cadeias e as expressões regulares, e preserva o que está dentro de `${…}`. É isso que resolve, sem heurística, o falso positivo que fez a primeira passagem recuar para o texto cru. Cobre agora `let`, `var`, `function`, `class`, a desestruturação e a indentação, além das importações.
+
+**Escrevê-la custou três defeitos, e os três foram encontrados por ela própria a correr sobre a árvore:**
+
+1. a primeira forma apontou **56 mortos, dos quais 54 estavam vivos**: um `/` dentro de uma classe `[…]` de uma expressão regular fechava-a cedo, as aspas de dentro abriam uma cadeia, e o resto do ficheiro desaparecia (`gate-html.mjs:663`);
+2. `class="chip"` num gabarito `.astro` era lido como uma declaração de classe de JavaScript, e daí «classe "href"», «classe "aria"», «classe "viewBox"»: as declarações passam a sair só do frontmatter, e o gabarito conta só para os usos;
+3. o apagamento de valores de atributo usava `[^"]*`, que atravessa linhas: uma aspa desirmanada comia 180 símbolos e com eles o único uso de `rotulados` em `BandaDaRegiao.astro`. Limitado à linha.
+
+O conhecido-positivo passou de um caso a **doze**, num directório temporário: dez formas mortas que tem de ver (importação nomeada e por omissão, `let`, `var`, função, classe, desestruturada, indentada, e as duas que a primeira passagem deixava passar, o nome só em comentário e o nome só dentro de uma cadeia) e duas vivas que tem de deixar em paz (o uso dentro de `${…}` e o exportado). O módulo ganhou uma guarda de programa principal, para poder ser importado e examinado sem correr a varredura e sair do processo. E a docstring passou a dizer o que a prova faz de facto, que é um directório temporário e não um ficheiro do repositório reposto (Minor 14).
+
+### 12.5 A regra das excepções órfãs (Major 8)
+
+Duas coisas:
+
+- **um motivo só conta como usado quando o elemento que ele isenta traz um algarismo.** Antes contava sempre que fosse rendido, e uma marca inerte sobre markup sem números punha o contador acima de zero: a régua era cega precisamente à classe de defeito que existe para apanhar. O efeito da correcção mede-se nos contadores: `proveniencia` passou de 26 416 usos a 1 023, `titulo-de-estudo` de 5 956 a 190, `data-de-publicacao` de 56 a 10. Os catorze continuam acima de zero;
+- **duas entradas com o mesmo nome são recusadas no carregamento.** Os contadores vivem em `Map` e os motivos em `Set`: um id repetido colapsava em silêncio e a segunda entrada ficava invisível à régua das órfãs.
+
+### 12.6 O motor (Majors 9 e 10, Minor 13)
+
+- **A guarda das saídas volta ao `mtime`** (Major 9). A primeira passagem media a data do último commit que tocou o ficheiro, e a leitura mostrou o modelo falso: um ficheiro commitado há meses e mudado hoje aparecia como «meses em atraso». Mede-se agora quando a corrida ESCREVEU a saída. Fica escrito na função e aqui o que esta medida não apanha: as quatro saídas são reescritas a cada corrida semanal, e uma saída reescrita todas as semanas nunca chega aos sete dias. O que a guarda apanha é a corrida que parou com trabalho por commitar; a divergência longa com reescrita semanal é do F2.7, quando o corredor commitar as suas próprias saídas.
+- **A guarda passa a correr também no caminho normal**, como AVISO impresso no fim de `run()`, e falha só debaixo do interruptor de conferência. Uma corrida que conferiu 32 linhas contra as fontes não fica errada por o disco estar sujo.
+- **A precedência do despacho inverteu-se**: `--check-heartbeat` e `--check-por-commitar` são lidos ANTES de `--prova-por-commitar`. Antes, `--prova-por-commitar --check-heartbeat` corria a prova sobre um repositório temporário e devolvia 0 sem olhar para a árvore de verdade, que é uma bandeira de teste a desarmar uma conferência. É a regra do F0.6, agora escrita na ordem do `if`.
+- **O lock diz o que é** (Major 10): pinos de versão, sem um único `--hash`; congelado em 3.14 e macOS; provado nas outras duas pela corrida e não por esta máquina; e um `--require-hashes` fica para um bloco seu. **O `pip` também se prende** no fluxo, em `26.2.1`, que é a versão que as duas pernas da corrida 33701727148 usaram (lida no registo delas): o instalador faz parte do resultado, e `--upgrade pip` era o resolvedor a flutuar por cima de um ficheiro de versões presas.
+- **Duas frases falsas corrigidas** (Minor 13): este relatório dizia que o serializador escapa `<` como `<`, e escapa como `\u003c`; o `requirements.txt` chamava «pinned» a três dependências que declara com `>=`, e passa a dizer que são pisos. A mensagem do commit `af60d3b6` traz a primeira dessas frases e não se reescreve: fica corrigida aqui.
+
+
+### 12.7 Os conhecidos-positivos da segunda passagem
+
+Sete plantas nos documentos e na `allowlist`, cada uma vermelha e depois verde. Onde a planta está no TRANSFORMADOR, quem a apanha é a regeneração dos dezasseis documentos pela mesma função do endpoint; onde está no conteúdo, é o `npm run gate:html`.
+
+| # | o que se plantou | quem fecha | saída | o que disse |
+|---|---|---|---|---|
+| A | «under » passa a «under the » em `src/data/politica-ia.mjs` | `gate:html` | **1**, 6 documentos | «o rótulo de IA da faixa não diz o texto aprovado» |
+| B | a normalização da língua desligada, e o «pt» do autor mantido | `gate:html` | **1**, 3 documentos | «o documento declara `lang="pt"` e tem de declarar "pt-PT"» |
+| C | a marca dos robôs escrita a seguir ao `<body>` | `gate:html` | **1**, 16 documentos | «a marca dos robôs está fora do `<head>` (no símbolo 2676; a cabeça vai de 37 a 298)» |
+| D | o transformador a trocar um byte ABAIXO da faixa | `documentoServido` | **1** | «os bytes abaixo da faixa não são os do original: diferem no byte 12 da cauda» |
+| E | `<meta name = 'robots' content='index, follow'>` no documento de origem | `documentoServido` | **1** | «já traz uma marca `robots` sua» |
+| F | um `id` repetido na `allowlist` | `gate:html` | **1** | «declara motivo(s) repetido(s): "numeracao" 2 vezes» |
+| G | um motivo declarado E rendido, sobre texto sem algarismos | `gate:html` | **1** | «planta-sem-numeros 0 · … o motivo … não dispensa nada» |
+| | tudo reposto | `gate:html` | **0** | |
+
+**A planta A é a que mais importa**, e é a que a primeira passagem não teria visto: mexe no ficheiro que RENDE o rótulo, e antes da segunda passagem o portão comparava com esse mesmo ficheiro. É a planta da leitura a frio de 01.09, repetida no ramo dos documentos.
+
+**A planta D é a que justifica a prova das fatias**: o estrago está no transformador, portanto os dois lados da igualdade do ponto 4 movem-se juntos e essa comparação fica verde. O que o vê é a comparação com os bytes do ficheiro de origem.
+
+A ida e volta por UTF-8 (a recusa de um ficheiro que não seja UTF-8 válido) não tem planta de árvore porque exigiria pôr bytes inválidos num documento do arquivo; o predicado é `Buffer.compare(Buffer.from(bytes.toString('utf8'), 'utf8'), bytes) !== 0`, e é conferido em cada um dos dezasseis a cada construção.
+
+A régua dos identificadores traz os seus doze casos dentro de si (`node scripts/check-mortos.mjs --prova`), e o `verify` corre-os sempre: dez formas mortas que tem de ver e duas vivas que tem de deixar em paz.
+
+### 12.8 Os portões da segunda passagem
+
+| | comando | saída, lida do registo |
+|---|---|---|
+| sítio | `npm run build` | **0** (`BUILD_EXIT=0`) |
+| sítio | `npm run verify` | **0** (`VERIFY_EXIT=0`) |
+| sítio | `npm run typecheck` | **0** (`TYPECHECK_EXIT=0`) |
+| motor | `python3 -m core.gate` | **0** (`GATE_EXIT=0`, `GATE: PASS`) |
+
+7 233 páginas, como antes: nenhuma das mudanças desta passagem acrescenta ou tira uma página.
