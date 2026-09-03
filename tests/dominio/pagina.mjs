@@ -21,7 +21,7 @@
  * pode deixar `dist/` estragado.
  *
  * ---------------------------------------------------------------------------
- * AS SEIS PLANTAS, E A CÉLULA QUE CADA UMA TEM DE FAZER CAIR
+ * AS NOVE PLANTAS, E A CÉLULA QUE CADA UMA TEM DE FAZER CAIR
  * ---------------------------------------------------------------------------
  *   P1 · um número escrito à mão dentro do `<svg>` de uma forma        → F2
  *   P2 · uma leitura breve sem as três datas                           → F5
@@ -31,6 +31,11 @@
  *
  * E uma sexta, que não é do brief e que a casa exige de qualquer detetor:
  *   P6 · a data de uma medida trocada por outra data                   → F1
+ *
+ * E três da segunda passagem (03.09.2026), uma por conferência nova:
+ *   P7 · um número da legenda com um motivo emprestado doutro sítio    → F9
+ *   P8 · uma data ISO à vista no texto da página                       → F10
+ *   P9 · a classe do mapa e o valor da linha a discordarem             → F11
  *
  * Uso:  node tests/dominio/pagina.mjs
  *       node tests/dominio/pagina.mjs --json <ficheiro>
@@ -187,6 +192,68 @@ const PLANTAS = [
         cru.replace(
           /(<span class="data-da-linha" data-nonledger="data-da-linha"[^>]*>)([^<]*)(<\/span>)/,
           '$101.01.2000$3',
+        ),
+      ),
+  },
+  /* -------------------------------------------------------------------------
+   * TRÊS PLANTAS NOVAS, DAS TRÊS CONFERÊNCIAS DA SEGUNDA PASSAGEM
+   * -------------------------------------------------------------------------
+   * A leitura a frio do Codex (Blocking 5, Major 6) mediu que o pacote que lhe
+   * foi dado não provava o vermelho de P1 nem a validação do motivo: as três
+   * plantas abaixo exercitam especificamente as três conferências novas
+   * (F9, F10, F11), a régua 14 da casa aplicada às conferências que esta
+   * segunda passagem acrescentou. */
+  {
+    nome: 'P7',
+    celula: 'F9',
+    o_que: 'um número da legenda do mapa com um motivo emprestado de outro sítio da página',
+    marca: 'não é um dos motivos',
+    /* Troca UM corte da escala do mapa do ganho médio (`escala-de-instrumento`,
+       o único motivo admissível para uma marca de régua) por `numeracao», que é
+       um motivo válido no resto do sítio (a Emenda de «Instrumento n.º 1») e não
+       aqui: é exactamente o disfarce que a leitura a frio descreveu para F2 e F8
+       e que esta planta prova para a lista fechada geral. */
+    plantar: () =>
+      planta(PAGINA_DO_DOMINIO, (cru) =>
+        cru.replace(
+          '<span data-nonledger="escala-de-instrumento">1200</span>',
+          '<span data-nonledger="numeracao">1200</span>',
+        ),
+      ),
+  },
+  {
+    nome: 'P8',
+    celula: 'F10',
+    o_que: 'uma data ISO à vista no texto da página',
+    marca: 'uma data em ISO',
+    /* Acrescenta uma data ISO ao fim da frase da fronteira, sem tocar em nenhum
+       elemento marcado `data-da-linha`: um estrago isolado, que só a F10 (e
+       nenhuma outra conferência) tem de apanhar. SEM PONTO A SEGUIR, DE
+       PROPÓSITO: `texto()` concatena o texto de blocos vizinhos sem separador
+       nenhum, e a data ISO fica colada ao "L" de "Leitura breve" (a secção
+       seguinte). A primeira redação desta planta media isto sem o saber, com
+       um ponto a seguir à data, e não apanhava nada: o `\b` da direita nunca
+       via fronteira nenhuma entre "01" e "L", e a régua de `check-formas.mjs`
+       ficou mais estrita por causa disto (`(?!\d)` em vez de `\b` a fechar). */
+    plantar: () =>
+      planta(PAGINA_DO_DOMINIO, (cru) =>
+        cru.replace(/(<p class="dominio-fronteira"[^>]*>)([\s\S]*?)(<\/p>)/, '$1$2 2026-09-01$3'),
+      ),
+  },
+  {
+    nome: 'P9',
+    celula: 'F11',
+    o_que: 'a classe do mapa e o valor da linha a discordarem (um concelho sem valor pintado com cor da escala)',
+    marca: 'em vez de "sem-valor"',
+    /* Penedono não tem valor numérico no índice de dívida (a Direção-Geral
+       imprime «N.d.» nas duas colunas de que ele se calcula), e por isso o mapa
+       pinta-o "sem-valor". A planta troca-lhe a classe por uma cor da escala,
+       como se a linha tivesse um número. */
+    plantar: () =>
+      planta(PAGINA_DO_DOMINIO, (cru) =>
+        cru.replace(
+          'data-concelho="penedono" class="forma-mapa-c sem-valor"',
+          'data-concelho="penedono" class="forma-mapa-c cl-limiar-0"',
         ),
       ),
   },
