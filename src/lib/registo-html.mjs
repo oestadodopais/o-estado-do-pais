@@ -169,7 +169,7 @@ export function linhasDoDocumento(registo, chave, linhaDoSitio) {
 }
 
 /**
- * OS TÍTULOS DO REGISTO — o índice «Nesta página» (item B4; F1.9a, 03.09.2026).
+ * OS TÍTULOS DO REGISTO: o índice «Nesta página» (item B4; F1.9a, 03.09.2026).
  *
  * Devolve, na ordem do documento, o índice do bloco, o seu nível e o seu texto
  * tal como o registo o guarda. A vista não reescreve nada: o texto entra na
