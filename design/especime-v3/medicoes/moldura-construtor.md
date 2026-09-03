@@ -188,8 +188,8 @@ O que se vê no par `tabela-pt-1280-antes` / `-depois`: os filetes da grelha pas
 
 ```
 ramo:   moldura-2026-09-03, a partir de origin/main d447286f
-SHA:    [a preencher no commit do relatório]
-corrida `portao`: [a preencher]
+SHA:    b66e3ba7 (a cabeça depois da segunda passagem e das quatro fusões de origin/main)
+corrida `portao`: 33804407060, verde em 17m54s
 ```
 
 Não fundido em `main`, por ordem do brief.
@@ -290,9 +290,11 @@ O resultado desta medição está guardado, por inteiro, em `design/especime-v3/
 
 ```
 ramo:              moldura-2026-09-03
-SHA da cabeça:     [a preencher depois do push]
-corrida `portao`:  [a preencher depois do push]
+SHA da cabeça:     b66e3ba7
+corrida `portao`:  33804407060, verde em 17m54s (https://github.com/oestadodopais/o-estado-do-pais/actions/runs/33804407060)
 ```
+
+Entre o `push` que fechou a lista de sete achados e este SHA, `origin/main` moveu-se quatro vezes (fundido a cada uma: `3093b72b`, depois `d82bc4cf`) e a primeira corrida sobre a cabeça fundida (`33802765663`) caiu: `check:moldura`, o portão novo do Major 8, é o primeiro desta árvore a abrir um Chromium, e `npm ci` só instala a biblioteca do Playwright, nunca o motor que ela pilota. Um commit a mais (`b66e3ba7`, «O portão instala o Chromium do Playwright antes de correr», em `.github/workflows/portao.yml`) e a corrida seguinte fechou verde.
 
 ### Minor 11 · o `<h1>` visível, o `role` exacto, o `aria-labelledby` que aponta para alguém
 
