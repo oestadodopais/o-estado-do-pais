@@ -1,59 +1,83 @@
 #!/usr/bin/env node
 /**
  * =============================================================================
- * A RÉGUA DA MOLDURA · bloco F1.8, 03.09.2026
+ * A RÉGUA DA MOLDURA · bloco F1.8, 03.09.2026 (segunda passagem, mesma data)
  * =============================================================================
  *
  * Uma célula por medida de aceitação do brief F1.8, medida em Chromium sem
- * cabeça sobre `dist/`, nos dezasseis documentos alojados e nos dois temas que
- * eles próprios declaram. NÃO é um portão: não entra no `npm run build` e não
- * constrói nada. Imprime uma linha por célula e sai com 0 quando todas passam e
- * com 1 quando alguma falha, como `tests/inicio/faixa.mjs`.
+ * cabeça sobre `dist/`, nos dezasseis documentos alojados, nos dois temas que
+ * eles próprios declaram e nas duas larguras da casa (390 e 1 280 px: Major 8,
+ * segunda passagem). É UM PORTÃO: entra em `npm run verify` (`check:moldura`)
+ * e sai com 1 quando alguma célula falha, como as outras réguas do sítio.
  *
  *   node tests/documentos/moldura.mjs
  *   node tests/documentos/moldura.mjs --json <ficheiro>
  *   node tests/documentos/moldura.mjs --vermelhos
  *
+ * `--vermelhos` corre cinco vezes o que as outras formas correm uma (a
+ * limpa, e uma por estrago plantado): fica de fora do `verify` por custo, e é
+ * assim que o relatório do bloco o mede.
+ *
  * ---------------------------------------------------------------------------
  * O QUE CADA CÉLULA MEDE, E PORQUE É ASSIM QUE SE MEDE
  * ---------------------------------------------------------------------------
  * C1 · O AXE A ZERO NAS GRAVES. `axe-core` corrido sobre a página inteira, nos
- * dezasseis e nos dois temas, e contadas as violações de impacto «serious» e
- * «critical». Conta-se a página INTEIRA e não só a moldura, porque é a página
- * inteira que o leitor recebe; o relatório do bloco separa depois o que é da
- * moldura do que é do corpo da obra citada.
+ * dezasseis, nos dois temas e nas duas larguras, e contadas as violações de
+ * impacto «serious» e «critical». Conta-se a página INTEIRA e não só a
+ * moldura, porque é a página inteira que o leitor recebe; o relatório do
+ * bloco separa depois o que é da moldura do que é do corpo da obra citada.
  *
  * C2 · O CONTRASTE, MEDIDO E NÃO AFIRMADO. Duas coisas, contra o fundo que o
  * navegador de facto compõe por baixo (a pilha de fundos até à raiz, composta
- * de baixo para cima, como o axe faz):
+ * de baixo para cima, como o axe faz, com a `opacity` de cada nó incluída:
+ * Major 7, segunda passagem — ver `filetEfetivo()` e `fundoDe()`, abaixo):
  *
  *   · os FILETES da grelha das tabelas e da caixa que envolve uma tabela, a
- *     pelo menos 3:1, que é o que a WCAG 2.1 §1.4.11 pede a um objeto de
- *     interface;
+ *     pelo menos 3:1 contra os DOIS fundos que tocam (o de dentro, composto
+ *     pelo próprio elemento, e o de fora, do elemento-mãe), que é o que a
+ *     WCAG 2.1 §1.4.11 pede a um objeto de interface: distinguir-se de CADA
+ *     fundo que o toca, e não só de um dos dois;
  *   · o TEXTO PRÓPRIO das células, a pelo menos 4,5:1. «Próprio» é o texto que
  *     está debaixo do `<th>` ou do `<td>` e herda a cor dele; um filho que
  *     declare a sua cor não é texto da célula, é um selo da obra citada, e o
  *     relatório do bloco conta-os à parte com a razão por que a moldura não
- *     lhes toca.
+ *     lhes toca (Blocking 4, segunda passagem: onde esse selo falha 4,5:1, a
+ *     moldura já lá chega por outra via — `estiloDosAjustesDeCor()`, em
+ *     `src/lib/documentos.mjs` — e por isso os selos, aqui, contam-se a
+ *     zero).
  *
  * C3 · O TECLADO CHEGA A CADA CAIXA QUE SE DESLOCA. Procuram-se todas as caixas
  * que de facto se deslocam (estilo calculado `auto` ou `scroll` no eixo em que
- * o conteúdo não cabe) e exige-se de cada uma: focável (`tabindex`), nomeada
- * (`aria-label` ou `aria-labelledby`) e com marco (`role`). E os nomes têm de
- * ser DISTINTOS na página: dois marcos com o mesmo nome mandam quem ouve
- * escolher entre coisas que soam iguais.
+ * o conteúdo não cabe, nas duas larguras) e exige-se de cada uma: focável
+ * (`tabindex`), nomeada (`aria-label`, ou `aria-labelledby` que aponte para um
+ * `id` que EXISTE: um `id` que o documento não tem não nomeia nada, Minor 11)
+ * e com marco: `role="region"`, ou um papel próprio que a obra já declarava e
+ * que não é vazio nem `presentation`/`none` (Minor 11 — um `role="tablist"`
+ * já existente, por exemplo, fica com o seu, porque forçar `region` por cima
+ * apagava um papel mais específico e correcto). E os nomes têm de ser
+ * DISTINTOS na página: dois marcos com o mesmo nome mandam quem ouve escolher
+ * entre coisas que soam iguais.
  *
  * C4 · UM MARCO PRINCIPAL E UM TÍTULO. `<main>` a um e `<h1>` VISÍVEL a um em
- * cada um dos dezasseis, perguntado ao navegador (`getClientRects`), que é
- * quem sabe o que está à vista.
+ * cada uma das passagens: visível quer dizer que ocupa espaço
+ * (`getClientRects`), que `visibility` calculada não é `hidden`/`collapse`, e
+ * que nem ele nem nenhum antepassado tem `aria-hidden="true"` (Minor 11,
+ * segunda passagem — a primeira forma só perguntava pelas caixas do
+ * `getClientRects`).
  *
- * C5 · NENHUMA COR DE FORA DA PALETA NOS FILETES. A lista de cores é a da folha
- * da casa, lida de `src/styles/tokens.css` nos dois blocos e com os `var()`
- * resolvidos, e o que se compara com ela são os filetes que a moldura declara
- * suas: a grelha das tabelas, a caixa que envolve uma tabela, o fio do `<h1>` e
- * a barra do `h2::before`. Os fios com que a obra citada codifica os seus dados
- * (a severidade das notas, o contorno dos selos) ficam de fora, e o relatório
- * do bloco conta-os e diz porquê.
+ * C5 · O QUE É DA CASA CONTRA A PALETA DA CASA; O QUE É DA OBRA CONTRA O
+ * CONTRASTE (Major 6, segunda passagem escreve a regra assim, por decisão do
+ * lugar de direção). A moldura e os filetes das tabelas usam só cores da casa
+ * — a lista é a da folha da casa, lida de `src/styles/tokens.css` nos dois
+ * blocos e com os `var()` resolvidos — e o que se compara com ela são os
+ * filetes que a moldura declara seus: a grelha das tabelas, a caixa que
+ * envolve uma tabela, o fio do `<h1>`, a barra do `h2::before` e os filetes
+ * reforçados de `estiloDoFileteReforcado()` (Major 7 achou dois sítios onde o
+ * filete comum não chegava a 3:1; a correcção sobe um degrau na MESMA escala
+ * da casa, nunca sai dela). As cores INTERIORES da obra citada — os selos, as
+ * barras dos gráficos, os fios de severidade — ficam das obras e não entram
+ * aqui: onde uma delas falha contraste, é a C1/C2 que o mede e o Blocking 4 do
+ * relatório que o resolve, nunca esta célula.
  *
  * C6 · O PROVADOR DOS BYTES, VERDE E DEPOIS VERMELHO. O provador do F0.7 corre
  * sobre os dezasseis pares (origem em `studies-src/`, construído em `dist/`) e
@@ -68,7 +92,10 @@
  * caminho entre o ficheiro e o navegador e não toca em disco. Três exigências,
  * as mesmas das outras réguas da casa: **verde antes**, **o HTML mudou** (um
  * estrago que não muda nada nunca podia ser apanhado), **vermelho depois** em
- * pelo menos uma das células que o estrago nomeia.
+ * pelo menos uma das células que o estrago nomeia. UMA PLANTA QUE NÃO CUMPRE
+ * AS TRÊS FAZ A CORRIDA SAIR A 1 (Major 9, segunda passagem: a primeira forma
+ * calculava a prova e só a usava para a cor do símbolo no ecrã; `--vermelhos`
+ * podia mostrar um ✗ e sair a 0 na mesma).
  */
 import fs from 'node:fs';
 import http from 'node:http';
@@ -248,7 +275,14 @@ const DOCUMENTOS = todosOsDocumentos().map((d) => ({
 }));
 
 const TEMAS = /** @type {const} */ (['light', 'dark']);
-const LARGURA = 1280;
+/**
+ * AS DUAS LARGURAS (Major 8, segunda passagem). A primeira forma só media a
+ * 1 280 e não entrava no `verify`: uma tabela que só transborda a 390 (o
+ * telemóvel, e a largura que `IDENTIDADE.md` fixa para o aparelho pequeno)
+ * podia ficar sem teclado e os dois comandos oficiais passavam na mesma.
+ * Medido nos dezasseis: há caixas que só se deslocam a 390.
+ */
+const LARGURAS = /** @type {const} */ ([390, 1280]);
 
 /* ------------------------------------------------------- a medição no ecrã */
 
@@ -257,9 +291,32 @@ const LARGURA = 1280;
  * de funções sem nada importado: tudo o que precisa está aqui dentro.
  */
 function medeNaPagina() {
-  /** @param {string} c */
+  /**
+   * O CHROMIUM SERIALIZA `color-mix()` COMO `color(srgb r g b / a)`, COM OS
+   * TRÊS CANAIS EM 0–1 E NÃO EM 0–255 (segunda passagem, medido: o selo
+   * `.tag.src` da água, cujo fundo é `color-mix(in srgb,var(--teal) 16%,
+   * transparent)`, devolve `color(srgb 0 0.427451 0.458824 / 0.16)` e não
+   * `rgba(0,109,117,0.16)`). Uma leitura que só apanhasse os números da cadeia
+   * lia 0,43 como se fosse quase preto, e um fundo quase preto por trás de um
+   * selo escuro dava um contraste baixo que não é o que o navegador mostra: é
+   * essa leitura que fazia os selos `tag src/prs/inf` dentro de tabela
+   * medirem abaixo de 4,5:1 no diagnóstico ainda depois de corrigidos (o
+   * axe-core, que resolve a cor à parte, já os media a passar).
+   * @param {string} c
+   */
   const cor = (c) => {
-    const m = String(c).match(/[\d.]+/g);
+    const s = String(c);
+    const mistura = s.match(
+      /^color\([a-z0-9-]+\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)(?:\s*\/\s*([\d.]+))?\)$/,
+    );
+    if (mistura) {
+      const r = Number(mistura[1]) * 255;
+      const g = Number(mistura[2]) * 255;
+      const b = Number(mistura[3]) * 255;
+      const a = mistura[4] !== undefined ? Number(mistura[4]) : 1;
+      return [r, g, b, a];
+    }
+    const m = s.match(/[\d.]+/g);
     if (!m) return null;
     const [r, g, b] = m.map(Number);
     return [r, g, b, m.length > 3 ? Number(m[3]) : 1];
@@ -282,19 +339,47 @@ function medeNaPagina() {
     const a = frente[3];
     return [0, 1, 2].map((i) => Math.round(frente[i] * a + fundo[i] * (1 - a)));
   };
-  /** O fundo que o navegador compõe por baixo de um elemento. */
+  /**
+   * O fundo que o navegador compõe por baixo de um elemento, com a `opacity`
+   * de cada nó (Major 7, segunda passagem: sem isto, a fileira de fronteira de
+   * mandato de `evora-quinze-anos-cinco-mandatos`, a `opacity:.85`, media o
+   * seu próprio azul de série a cheio e não os 85% que de facto se veem).
+   *
+   * `opacity` NÃO É O ALFA DO FUNDO: cria um GRUPO — o elemento inteiro
+   * (fundo, filete, texto) pinta-se primeiro a cheio e só DEPOIS esse grupo se
+   * esbate contra o que está atrás. Matematicamente isso é o mesmo que tratar
+   * a `opacity` como um MULTIPLICADOR do alfa do fundo desse nó (a álgebra:
+   * `o·(a·C+(1-a)·F) + (1-o)·F = (o·a)·C + (1-o·a)·F`, que é exactamente
+   * `sobre(C, F)` com alfa `o·a`), e por isso a composição, nó a nó de dentro
+   * para fora, continua a ser a mesma função `sobre()` de sempre.
+   */
   const fundoDe = (el) => {
     const pilha = [];
     let n = el;
     while (n) {
       const c = cor(getComputedStyle(n).backgroundColor);
-      if (c && c[3] > 0) pilha.push(c);
-      if (c && c[3] >= 1) break;
+      const op = parseFloat(getComputedStyle(n).opacity);
+      const alfa = (c ? c[3] : 0) * (Number.isNaN(op) ? 1 : op);
+      if (c && alfa > 0) pilha.push([c[0], c[1], c[2], alfa]);
+      if (alfa >= 1) break;
       n = n.parentElement;
     }
     let out = [255, 255, 255];
     for (let i = pilha.length - 1; i >= 0; i--) out = sobre(pilha[i], out);
     return out;
+  };
+  /**
+   * A cor DECLARADA de um filete (um `border-color`) tal como o navegador a
+   * vai de facto mostrar: a mesma `opacity` do elemento que a declara também a
+   * esbate, exactamente como esbate o fundo desse elemento. O que fica «atrás»
+   * é o fundo do elemento-mãe: a `opacity` funde o elemento INTEIRO (fundo E
+   * filete) contra o que está fora dele, e não um contra o outro.
+   * @param {Element} el @param {number[]} corDeclarada
+   */
+  const filetEfetivo = (el, corDeclarada) => {
+    const op = parseFloat(getComputedStyle(el).opacity);
+    const alfa = corDeclarada[3] * (Number.isNaN(op) ? 1 : op);
+    return sobre([corDeclarada[0], corDeclarada[1], corDeclarada[2], alfa], fundoDe(el.parentElement ?? el));
   };
   /** O texto que é do próprio elemento, e não de um filho. */
   const textoProprio = (el) =>
@@ -303,6 +388,36 @@ function medeNaPagina() {
       .map((n) => n.textContent)
       .join('')
       .trim();
+
+  /**
+   * VISÍVEL, E NÃO SÓ PRESENTE (Minor 11, segunda passagem). `getClientRects()`
+   * apanha `display:none` (no elemento ou num antepassado: a caixa desaparece
+   * e ele com ela), mas não `visibility:hidden` (a caixa continua a existir, só
+   * não se pinta) nem `aria-hidden="true"` (pinta-se, mas sai da árvore de
+   * acessibilidade). Um `<h1>` que passasse por qualquer das duas não era um
+   * título visível: era um título que só um leitor de ecrã distraído contava.
+   * @param {Element} el
+   */
+  const visivel = (el) => {
+    if (el.getClientRects().length === 0) return false;
+    if (getComputedStyle(el).visibility !== 'visible') return false;
+    if (el.closest('[aria-hidden="true"]')) return false;
+    return true;
+  };
+
+  /**
+   * UM `aria-labelledby` QUE APONTE PARA NINGUÉM NÃO NOMEIA NADA (Minor 11,
+   * segunda passagem). A primeira forma tratava a simples presença do
+   * atributo como um nome; um `id` que o documento não tem dá um nome vazio a
+   * quem ouve, e a régua contava-o como nomeado. Todos os `id` que o atributo
+   * lista (pode listar mais do que um) têm de existir.
+   * @param {string | null} valor
+   */
+  const labelledbyValido = (valor) => {
+    if (!valor) return false;
+    const ids = valor.trim().split(/\s+/).filter(Boolean);
+    return ids.length > 0 && ids.every((id) => !!document.getElementById(id));
+  };
 
   /**
    * ONDE SE MEDE, E PORQUE NÃO É SÓ DENTRO DA MOLDURA.
@@ -319,7 +434,7 @@ function medeNaPagina() {
   const saida = {
     ambito: moldura ? 'moldura' : 'corpo',
     main: document.querySelectorAll('main').length,
-    h1: [...document.querySelectorAll('h1')].filter((h) => h.getClientRects().length > 0).length,
+    h1: [...document.querySelectorAll('h1')].filter(visivel).length,
     molduras: document.querySelectorAll('[data-oedp-moldura]').length,
     faixaDentro: moldura ? !!moldura.querySelector('[data-oedp-faixa]') : false,
     /** filetes da grelha: [razão, cor] */
@@ -335,27 +450,43 @@ function medeNaPagina() {
   const envolventes = [...ambito.querySelectorAll('*')].filter(
     (e) => !daFaixa(e) && !e.matches('table') && !!e.querySelector(':scope > table'),
   );
+  /**
+   * O CONTRASTE DE UM FILETE CONTRA OS DOIS FUNDOS ADJACENTES (Major 7, segunda
+   * passagem). Um filete é a fronteira entre DOIS fundos: o de dentro (a
+   * composição do PRÓPRIO elemento, se ele tiver a sua) e o de fora (a do
+   * elemento-mãe, do outro lado da fronteira). A primeira passagem só olhava
+   * para o de fora; um filete podia medir bem contra um fundo que ninguém lhe
+   * punha ao lado e mal contra o que de facto o rodeia dos dois lados, e
+   * passava. O que se guarda é o PIOR dos dois, que é o que WCAG 2.1 §1.4.11
+   * pede: o objeto tem de se distinguir de CADA fundo que o toca.
+   * @param {number[]} c @param {Element} el
+   */
+  const piorContraste = (c, el) => {
+    const corDoFilete = filetEfetivo(el, c);
+    const fundoProprio = fundoDe(el);
+    const fundoDoPai = fundoDe(el.parentElement ?? el);
+    return Math.min(razao(corDoFilete, fundoProprio), razao(corDoFilete, fundoDoPai));
+  };
   for (const el of [...grelha, ...envolventes]) {
     const cs = getComputedStyle(el);
-    const fundo = fundoDe(el.parentElement ?? el);
     for (const lado of ['Top', 'Right', 'Bottom', 'Left']) {
       const w = parseFloat(cs[`border${lado}Width`]);
       if (!(w > 0) || cs[`border${lado}Style`] === 'none') continue;
       const c = cor(cs[`border${lado}Color`]);
       if (!c || c[3] === 0) continue;
-      saida.filetes.push([razao(sobre(c, fundo), fundo), cs[`border${lado}Color`]]);
+      saida.filetes.push([piorContraste(c, el), cs[`border${lado}Color`]]);
       saida.coresDosFiletes.push(cs[`border${lado}Color`]);
     }
   }
   /* O fio do `<h1>` e a barra do `h2::before`, que são os outros dois filetes
-     que a moldura declara seus. */
+     que a moldura declara seus. A barra é um pseudo-elemento sem nó próprio: o
+     seu «fundo de dentro» é o do `<h2>` que a gera. */
   for (const h of [...ambito.querySelectorAll('h1')].filter((e) => !daFaixa(e))) {
     const cs = getComputedStyle(h);
     if (parseFloat(cs.borderBottomWidth) > 0 && cs.borderBottomStyle !== 'none') {
       saida.coresDosFiletes.push(cs.borderBottomColor);
-      const fundo = fundoDe(h.parentElement ?? h);
       const c = cor(cs.borderBottomColor);
-      if (c && c[3] > 0) saida.filetes.push([razao(sobre(c, fundo), fundo), cs.borderBottomColor]);
+      if (c && c[3] > 0) saida.filetes.push([piorContraste(c, h), cs.borderBottomColor]);
     }
   }
   for (const h of [...ambito.querySelectorAll('h2')].filter((e) => !daFaixa(e))) {
@@ -364,8 +495,7 @@ function medeNaPagina() {
       const c = cor(cs.backgroundColor);
       if (c && c[3] > 0) {
         saida.coresDosFiletes.push(cs.backgroundColor);
-        const fundo = fundoDe(h.parentElement ?? h);
-        saida.filetes.push([razao(sobre(c, fundo), fundo), cs.backgroundColor]);
+        saida.filetes.push([piorContraste(c, h), cs.backgroundColor]);
       }
     }
   }
@@ -401,7 +531,7 @@ function medeNaPagina() {
       eixo: x && /auto|scroll/.test(cs.overflowX) ? 'x' : 'y',
       focavel: el.tabIndex >= 0,
       papel: el.getAttribute('role'),
-      nome: el.getAttribute('aria-label') ?? (el.getAttribute('aria-labelledby') ? '(por id)' : null),
+      nome: el.getAttribute('aria-label') ?? (labelledbyValido(el.getAttribute('aria-labelledby')) ? '(por id)' : null),
       onde: el.tagName + '.' + String(el.className || '').slice(0, 24),
     });
   }
@@ -423,41 +553,43 @@ async function passagem() {
   const docs = [];
   for (const doc of DOCUMENTOS) {
     for (const tema of TEMAS) {
-      const ctx = await nav.newContext({
-        viewport: { width: LARGURA, height: 900 },
-        colorScheme: tema,
-      });
-      const pagina = await ctx.newPage();
-      await pagina.goto(base + doc.rota, { waitUntil: 'networkidle' });
-      /* O guião da moldura corre no `load` e as folhas dos documentos desenham
-         gráficos nessa altura: dá-se-lhes o tempo que a medição precisa. */
-      await pagina.evaluate(() => new Promise((r) => setTimeout(r, 400)));
-      await pagina.addScriptTag({ content: GUIAO_DO_AXE });
-      const violacoes = await pagina.evaluate(async () => {
-        const res = await window.axe.run(document, { resultTypes: ['violations'] });
-        return res.violations.map((v) => ({
-          id: v.id,
-          impacto: v.impact,
-          nos: v.nodes.length,
-          /* ONDE, e não só QUANTOS. O relatório do bloco tem de poder dizer
-             quanto do contraste é da moldura e quanto é do corpo da obra
-             citada, e uma contagem que não separa as duas coisas deixa a
-             pergunta em aberto. */
-          emTabela: v.nodes.filter((n) => {
-            const el = document.querySelector(n.target.join(' '));
-            return !!(el && el.closest('table'));
-          }).length,
-        }));
-      });
-      for (const v of violacoes) {
-        const k = `${v.id} [${v.impacto}]`;
-        axe[k] = (axe[k] ?? 0) + v.nos;
-        axe[`${k} · em tabela`] = (axe[`${k} · em tabela`] ?? 0) + v.emTabela;
-        if (v.impacto === 'serious' || v.impacto === 'critical') graves += v.nos;
+      for (const largura of LARGURAS) {
+        const ctx = await nav.newContext({
+          viewport: { width: largura, height: 900 },
+          colorScheme: tema,
+        });
+        const pagina = await ctx.newPage();
+        await pagina.goto(base + doc.rota, { waitUntil: 'networkidle' });
+        /* O guião da moldura corre no `load` e as folhas dos documentos desenham
+           gráficos nessa altura: dá-se-lhes o tempo que a medição precisa. */
+        await pagina.evaluate(() => new Promise((r) => setTimeout(r, 400)));
+        await pagina.addScriptTag({ content: GUIAO_DO_AXE });
+        const violacoes = await pagina.evaluate(async () => {
+          const res = await window.axe.run(document, { resultTypes: ['violations'] });
+          return res.violations.map((v) => ({
+            id: v.id,
+            impacto: v.impact,
+            nos: v.nodes.length,
+            /* ONDE, e não só QUANTOS. O relatório do bloco tem de poder dizer
+               quanto do contraste é da moldura e quanto é do corpo da obra
+               citada, e uma contagem que não separa as duas coisas deixa a
+               pergunta em aberto. */
+            emTabela: v.nodes.filter((n) => {
+              const el = document.querySelector(n.target.join(' '));
+              return !!(el && el.closest('table'));
+            }).length,
+          }));
+        });
+        for (const v of violacoes) {
+          const k = `${v.id} [${v.impacto}]`;
+          axe[k] = (axe[k] ?? 0) + v.nos;
+          axe[`${k} · em tabela`] = (axe[`${k} · em tabela`] ?? 0) + v.emTabela;
+          if (v.impacto === 'serious' || v.impacto === 'critical') graves += v.nos;
+        }
+        const medida = await pagina.evaluate(medeNaPagina);
+        docs.push({ chave: doc.chave, tema, largura, ...medida });
+        await ctx.close();
       }
-      const medida = await pagina.evaluate(medeNaPagina);
-      docs.push({ chave: doc.chave, tema, ...medida });
-      await ctx.close();
     }
   }
   return { axe, graves, docs };
@@ -504,10 +636,23 @@ function avalia(p) {
   );
 
   /* C3 */
-  const caixas = dos((d) => d.caixas.map((c) => ({ ...c, chave: d.chave, tema: d.tema })));
+  const caixas = dos((d) => d.caixas.map((c) => ({ ...c, chave: d.chave, tema: d.tema, largura: d.largura })));
   const semTeclado = caixas.filter((c) => !c.focavel);
   const semNome = caixas.filter((c) => !c.nome);
-  const semPapel = caixas.filter((c) => !c.papel);
+  /**
+   * O MARCO TEM DE SER `region`, OU UM PAPEL PRÓPRIO QUE JÁ NÃO É VAZIO NEM
+   * `presentation`/`none` (Minor 11, segunda passagem). A primeira forma só
+   * perguntava se havia ALGUM valor, e um `role="presentation"` — que APAGA o
+   * marco em vez de o dar — passava por essa pergunta. O guião da moldura só
+   * põe `region` onde a obra não declarou papel nenhum (`documentos.mjs`,
+   * `guiaoDaMoldura()`): uma caixa que já é `role="tablist"` (medido: a barra
+   * de separadores de `evolucao-de-portugal-desde-1981`, com os seus
+   * `role="tab"` por baixo) fica com o seu, porque um `tablist` não é uma
+   * região genérica e forçar `region` por cima apagava o papel mais
+   * específico, e mais correcto, que a própria obra já lhe dava.
+   */
+  const PAPEIS_QUE_APAGAM_O_MARCO = new Set(['presentation', 'none']);
+  const semPapel = caixas.filter((c) => !c.papel || PAPEIS_QUE_APAGAM_O_MARCO.has(c.papel));
   let repetidos = 0;
   for (const d of p.docs) {
     const vistos = new Set();
@@ -595,7 +740,12 @@ function celulaC6() {
 /* -------------------------------------------------------------- a corrida */
 
 console.log('');
-console.log(cinza(`  a régua da moldura · ${DOCUMENTOS.length} documentos × ${TEMAS.length} temas · ${LARGURA} px`));
+console.log(
+  cinza(
+    `  a régua da moldura · ${DOCUMENTOS.length} documentos × ${TEMAS.length} temas × ` +
+      `${LARGURAS.length} larguras (${LARGURAS.join(', ')} px)`,
+  ),
+);
 console.log('');
 
 const primeira = await passagem();
@@ -619,8 +769,23 @@ for (const [k, n] of diagnostico.selos.slice(0, 8)) console.log(cinza(`        $
 
 /* ------------------------------------------------------------- as plantas */
 
-/** @type {{ nome: string, celulas: string[], mudou: boolean, caiu: string[] }[]} */
+/**
+ * `bom` é a PROVA de que o estrago pegou: o HTML mudou, ao menos uma célula
+ * que o estrago nomeia caiu, e essa célula estava verde antes. Guarda-se aqui
+ * — e não só no ecrã — para o relatório poder citar cada planta sem repetir a
+ * corrida (Major 10), e para o `bom` poder decidir a saída (Major 9, abaixo).
+ * @type {{ nome: string, celulas: string[], mudou: boolean, caiu: string[], nomeadas: string[], verdesAntes: string[], bom: boolean }[]}
+ */
 const plantas = [];
+/**
+ * UMA PLANTA QUE NÃO PEGA É UMA FALHA DA CORRIDA, E NÃO SÓ UM ✗ NO ECRÃ (Major
+ * 9, segunda passagem). A primeira forma calculava `bom` e só o usava para
+ * escolher a cor do símbolo: `--vermelhos` podia mostrar uma planta falhada e
+ * sair a 0 na mesma, porque a saída só olhava para `limpas` (a corrida sem
+ * estragos). Uma planta que não muda a régua não prova que ela apanha nada, e
+ * por isso conta como um vermelho da corrida.
+ */
+let plantaMa = false;
 if (VERMELHOS) {
   console.log('');
   console.log(cinza('  as plantas:'));
@@ -640,7 +805,8 @@ if (VERMELHOS) {
     const nomeadas = estrago.celulas.filter((n) => caiu.includes(n));
     const verdesAntes = estrago.celulas.filter((n) => limpas.find((c) => c.nome === n)?.passa);
     const bom = mudou && nomeadas.length > 0 && verdesAntes.length > 0;
-    plantas.push({ nome: estrago.nome, celulas: estrago.celulas, mudou, caiu });
+    if (!bom) plantaMa = true;
+    plantas.push({ nome: estrago.nome, celulas: estrago.celulas, mudou, caiu, nomeadas, verdesAntes, bom });
     console.log(
       `    ${bom ? verde('✓') : vermelho('✗')} ${estrago.nome}\n` +
         cinza(
@@ -663,7 +829,7 @@ if (FICHEIRO_JSON) {
         quando: new Date().toISOString(),
         documentos: DOCUMENTOS.length,
         temas: TEMAS,
-        largura: LARGURA,
+        larguras: LARGURAS,
         celulas: limpas,
         axe: primeira.axe,
         graves: primeira.graves,
@@ -680,10 +846,20 @@ if (FICHEIRO_JSON) {
 
 console.log('');
 const maus = limpas.filter((c) => !c.passa);
-if (maus.length) {
-  console.log(vermelho(`  ${maus.length} célula(s) vermelhas: ${maus.map((c) => c.nome).join(', ')}`));
+const plantasMas = plantas.filter((p) => !p.bom);
+if (maus.length || plantasMas.length) {
+  if (maus.length) {
+    console.log(vermelho(`  ${maus.length} célula(s) vermelhas: ${maus.map((c) => c.nome).join(', ')}`));
+  }
+  if (plantasMas.length) {
+    console.log(
+      vermelho(
+        `  ${plantasMas.length} planta(s) que não pegaram: ${plantasMas.map((p) => p.nome).join(', ')}`,
+      ),
+    );
+  }
   console.log('');
   process.exit(1);
 }
-console.log(verde('  todas as células verdes.'));
+console.log(verde('  todas as células verdes.' + (VERMELHOS ? ' todas as plantas pegaram.' : '')));
 console.log('');
