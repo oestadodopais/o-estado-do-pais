@@ -379,16 +379,23 @@ da classe saíram (as sete da tabela da §1.44 menos a da creche, que já não e
 mais a «de outra natureza» do custo unitário do trabalho, mais a segunda oração dos
 preços da habitação, que a §1.44 conta como uma e são duas afirmações).
 
-**O diff.**
+**O diff.** Os quatro ficheiros que mudam o sítio e o portão, sem este relatório,
+que vai no mesmo commit e conta à parte:
 
 ```
-git diff --stat
- design/especime-v3/INVENTARIO-FRASES.md           |  10 +-
+git diff --stat HEAD~1 HEAD -- src/data/figuras.mjs scripts/check-voz.mjs \
+  design/especime-v3/INVENTARIO-FRASES.md \
+  design/especime-v3/critica/REVISOES-DO-INVENTARIO.md
+ design/especime-v3/INVENTARIO-FRASES.md              |  10 +-
  design/especime-v3/critica/REVISOES-DO-INVENTARIO.md |   1 +
- scripts/check-voz.mjs                             | 101 ++++++++++++++++++-
- src/data/figuras.mjs                              | 111 +++++++++++--------
+ scripts/check-voz.mjs                                | 101 ++++++++++++++++++-
+ src/data/figuras.mjs                                 | 111 +++++++++++--------
  4 files changed, 180 insertions(+), 43 deletions(-)
 ```
+
+O commit inteiro, com este relatório, é `5 files changed, 602 insertions(+),
+43 deletions(-)` (`git diff --stat HEAD~1 HEAD`). As 422 linhas da diferença são
+as deste ficheiro.
 
 **Os três portões locais**, corridos na árvore do ramo depois da última mudança, com
 os códigos de saída lidos dos registos:
