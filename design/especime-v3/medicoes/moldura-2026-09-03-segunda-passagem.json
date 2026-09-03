@@ -1,0 +1,139 @@
+{
+  "quando": "2026-09-03T19:25:39.319Z",
+  "documentos": 16,
+  "temas": [
+    "light",
+    "dark"
+  ],
+  "larguras": [
+    390,
+    1280
+  ],
+  "celulas": [
+    {
+      "nome": "C1",
+      "passa": true,
+      "prova": "0 nó(s) graves em 64 passagens · nenhuma"
+    },
+    {
+      "nome": "C2",
+      "passa": true,
+      "prova": "filetes: 38528 medidos, 0 abaixo de 3:1 (o pior 3.23:1) · texto próprio das células: 34028 medidos, 0 abaixo de 4,5:1 (o pior 7.57:1)"
+    },
+    {
+      "nome": "C3",
+      "passa": true,
+      "prova": "326 caixa(s) que se deslocam · 0 sem teclado · 0 sem nome · 0 sem marco · 0 nome(s) repetido(s)"
+    },
+    {
+      "nome": "C4",
+      "passa": true,
+      "prova": "64 passagens · 0 sem <main> a um · 0 sem <h1> visível a um · 0 com a moldura errada ou a faixa lá dentro"
+    },
+    {
+      "nome": "C5",
+      "passa": true,
+      "prova": "4 cor(es) distintas nos filetes da moldura · 0 fora da paleta da casa"
+    },
+    {
+      "nome": "C6",
+      "passa": true,
+      "prova": "16 de 16 verdes · 16 de 16 plantas apanhadas"
+    }
+  ],
+  "axe": {
+    "region [moderate]": 64,
+    "region [moderate] · em tabela": 0,
+    "heading-order [moderate]": 8,
+    "heading-order [moderate] · em tabela": 0
+  },
+  "graves": 0,
+  "selos": [],
+  "caixas": 326,
+  "plantas": [
+    {
+      "nome": "moldura-fora · tirar a abertura da moldura",
+      "celulas": [
+        "C4",
+        "C5"
+      ],
+      "mudou": true,
+      "caiu": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "nomeadas": [
+        "C4",
+        "C5"
+      ],
+      "verdesAntes": [
+        "C4",
+        "C5"
+      ],
+      "bom": true
+    },
+    {
+      "nome": "filete-turquesa · o filete da grelha volta à cor de fora da paleta",
+      "celulas": [
+        "C2",
+        "C5"
+      ],
+      "mudou": true,
+      "caiu": [
+        "C2",
+        "C5"
+      ],
+      "nomeadas": [
+        "C2",
+        "C5"
+      ],
+      "verdesAntes": [
+        "C2",
+        "C5"
+      ],
+      "bom": true
+    },
+    {
+      "nome": "texto-da-celula · tirar a regra da cor do texto das células",
+      "celulas": [
+        "C2"
+      ],
+      "mudou": true,
+      "caiu": [
+        "C1",
+        "C2"
+      ],
+      "nomeadas": [
+        "C2"
+      ],
+      "verdesAntes": [
+        "C2"
+      ],
+      "bom": true
+    },
+    {
+      "nome": "sem-guiao · tirar o guião da moldura",
+      "celulas": [
+        "C1",
+        "C3"
+      ],
+      "mudou": true,
+      "caiu": [
+        "C1",
+        "C3"
+      ],
+      "nomeadas": [
+        "C1",
+        "C3"
+      ],
+      "verdesAntes": [
+        "C1",
+        "C3"
+      ],
+      "bom": true
+    }
+  ]
+}

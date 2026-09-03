@@ -112,6 +112,7 @@ import {
   provaDosBytes,
   regiaoDaCabeca,
   MARCA_DOS_ROBOS,
+  MOLDURA,
 } from '../src/lib/documentos.mjs';
 import { leBlocos, Texto } from '../src/lib/eyetext.mjs';
 import { renderizacoesAceites } from '../src/data/correcoes.mjs';
@@ -1044,6 +1045,58 @@ function escondidoNoDocumento(el) {
  * estejam certos. Não estão no livro-razão e não vão estar — a sua proveniência
  * é a do próprio documento. Ver DECISIONS §1.19.
  */
+/**
+ * O LEITOR DE ETIQUETAS DESTE PORTÃO, e porque não é o do módulo.
+ *
+ * `src/lib/documentos.mjs` tem o seu (`zonasOpacas` e `etiquetaReal`) e é com
+ * ele que a casa DECIDE onde escrever. Um portão que o importasse para conferir
+ * o que ele escreveu confirmava-se a si próprio: o mesmo defeito nos dois lados
+ * da igualdade passava verde. Este é outro código, escrito aqui, com a mesma
+ * regra e nada mais: uma etiqueta dentro de um comentário, de um `<script>` ou
+ * de um `<style>` não é uma etiqueta.
+ *
+ * Devolve todas as etiquetas de ABERTURA reais, por ordem no ficheiro.
+ *
+ * @param {string} texto
+ * @returns {{ nome: string, texto: string, inicio: number }[]}
+ */
+function etiquetasReais(texto) {
+  const opacas = [];
+  for (const re of [
+    /<!--[\s\S]*?(?:-->|$)/g,
+    /<script\b[^>]*>[\s\S]*?(?:<\/script\s*>|$)/gi,
+    /<style\b[^>]*>[\s\S]*?(?:<\/style\s*>|$)/gi,
+  ]) {
+    for (const m of texto.matchAll(re)) opacas.push([m.index, m.index + m[0].length]);
+  }
+  const saida = [];
+  for (const m of texto.matchAll(/<([a-zA-Z][a-zA-Z0-9-]*)\b[^>]*>/g)) {
+    if (opacas.some(([de, ate]) => m.index >= de && m.index < ate)) continue;
+    saida.push({ nome: m[1].toLowerCase(), texto: m[0], inicio: m.index });
+  }
+  return saida;
+}
+
+/**
+ * UM SINAL DE ESCONDER, NA PRÓPRIA ETIQUETA (Minor 11, segunda passagem, para
+ * o `<h1>`, abaixo). `hidden`, `aria-hidden="true"` (com aspas simples,
+ * duplas ou nenhumas), ou um `display:none`/`visibility:hidden` DENTRO do
+ * valor do `style` em linha (e só dentro dele: um `style="color:red"` não é
+ * um sinal de esconder, e por isso o valor extrai-se antes de se procurar
+ * `display`/`visibility` lá dentro). Não apanha uma regra de folha que
+ * escondesse a etiqueta por selector: isto é um varrimento de texto, sem
+ * motor de CSS.
+ *
+ * @param {string} etiqueta a etiqueta de abertura, ex. `<h1 class="x">`
+ */
+function h1EscondidoNaEtiqueta(etiqueta) {
+  if (/\bhidden\b/i.test(etiqueta)) return true;
+  if (/\baria-hidden\s*=\s*(?:"true"|'true'|true\b)/i.test(etiqueta)) return true;
+  const estilo = etiqueta.match(/\bstyle\s*=\s*"([^"]*)"/i) ?? etiqueta.match(/\bstyle\s*=\s*'([^']*)'/i);
+  const valorDoEstilo = estilo ? estilo[1] : '';
+  return /display\s*:\s*none|visibility\s*:\s*hidden/i.test(valorDoEstilo);
+}
+
 function verificaDocumento({ rota, rel, caminho, html, root, err }) {
   const { slug } = rota.params;
   const lang = rota.lang;
@@ -1184,6 +1237,99 @@ function verificaDocumento({ rota, rel, caminho, html, root, err }) {
     err(
       `a porta da leitura no sítio abre "${aDoTexto.getAttribute('href')}" e devia abrir ` +
         `"${portaDoTexto}", a página de leitura desta edição.`,
+    );
+  }
+
+  /**
+   * 9 · A MOLDURA, E O MARCO PRINCIPAL A UM (bloco F1.8, 03.09.2026).
+   *
+   * O ponto 4 compara o construído com `documentoServido()` e por isso não
+   * prova nada sobre a moldura: uma moldura tirada do módulo desaparecia dos
+   * dois lados da igualdade e passava em silêncio, que é exactamente a falha
+   * que o F0.7 encontrou nas três marcas da casa. Estas conferências leem o
+   * ficheiro CONSTRUÍDO e exigem a moldura por si.
+   *
+   * Três coisas, e cada uma é a medida de aceitação de uma linha do brief:
+   *
+   *   · UM marco principal por página. Treze documentos não tinham nenhum e
+   *     três tinham o seu; depois da moldura são dezasseis com um, e nunca dois
+   *     (um `<main>` dentro de outro é markup inválido, e dois marcos numa
+   *     página mandam quem ouve escolher entre eles);
+   *   · UMA moldura, e a FAIXA FORA DELA. É a razão de a moldura existir: quem
+   *     salta para o marco principal tem de cair no documento e não na mobília
+   *     da casa. Uma faixa dentro da moldura passava a fazer parte do que se
+   *     salta para ler;
+   *   · UM `<h1>`. Se o documento traz o seu, a casa não acrescenta outro; e a
+   *     faixa não é um título.
+   *
+   * POR POSIÇÃO NO FICHEIRO, E NÃO À ÁRVORE, que é a mesma escolha do ponto 7, e
+   * aqui foi uma medição que a impôs. `studies-src/onde-esta-a-agua/pt.html` é
+   * dois documentos HTML concatenados: um `<!doctype html><html><head></head>
+   * <body>` inteiro dentro do corpo do primeiro. O Chromium 148 monta a árvore
+   * certa (`body > [faixa, folha, guião, main[moldura]]`, um `<main>` só,
+   * medido), e o `node-html-parser` deste portão perde o elemento nesse
+   * ficheiro e só nesse. Um portão que perguntasse à árvore chumbava um
+   * documento que está bem, e o que ele quer saber é o que o LEITOR vai
+   * receber. Conta-se no ficheiro, com o leitor de etiquetas deste portão, que
+   * não é o do módulo: uma conferência que usasse o código do módulo
+   * confirmava-se a si própria.
+   */
+  const etiquetas = etiquetasReais(html);
+  const abertura = `${MOLDURA.propria.abre}|${MOLDURA.aninhada.abre}`;
+  const molduras = etiquetas.filter((e) => e.texto === MOLDURA.propria.abre || e.texto === MOLDURA.aninhada.abre);
+  if (molduras.length !== 1) {
+    err(
+      `o documento tem ${molduras.length} molduras da casa; tem de ter exactamente uma.\n` +
+        `      Esperava-se \`${abertura}\` uma vez. A moldura envolve o corpo do documento e ` +
+        `deixa a faixa de fora. Ver src/lib/documentos.mjs, \`comFaixa()\`.`,
+    );
+  }
+
+  const marcos = etiquetas.filter((e) => e.nome === 'main');
+  if (marcos.length !== 1) {
+    err(
+      `o documento tem ${marcos.length} elemento(s) \`<main>\`; tem de ter exactamente um.\n` +
+        `      Treze dos dezasseis não traziam nenhum e a moldura põe o seu; nos três que já o ` +
+        `tinham, a moldura é um \`<div>\` para não duplicar o marco.`,
+    );
+  }
+
+  /* A FAIXA FORA DA MOLDURA, medida pela ordem no ficheiro: a moldura é UM
+     elemento aberto num ponto, e uma faixa que comece antes desse ponto não
+     pode estar lá dentro. */
+  const faixasNoFicheiro = etiquetas.filter((e) => e.texto.startsWith('<div data-oedp-faixa'));
+  if (molduras.length === 1 && faixasNoFicheiro.length === 1 && faixasNoFicheiro[0].inicio > molduras[0].inicio) {
+    err(
+      `a faixa do observatório está DENTRO da moldura (a faixa abre no símbolo ` +
+        `${faixasNoFicheiro[0].inicio} e a moldura no ${molduras[0].inicio}).\n` +
+        `      A moldura existe para que quem salta para o marco principal caia no documento; ` +
+        `com a faixa lá dentro, salta para a mobília da casa.`,
+    );
+  }
+
+  const titulos = etiquetas.filter((e) => e.nome === 'h1');
+  if (titulos.length !== 1) {
+    err(
+      `o documento tem ${titulos.length} \`<h1>\`; tem de ter exactamente um.\n` +
+        `      A faixa da casa não acrescenta título nenhum: o título é o do documento.`,
+    );
+  } else if (h1EscondidoNaEtiqueta(titulos[0].texto)) {
+    /**
+     * UM `<h1>` COM UM SINAL DE SE ESCONDER NA PRÓPRIA ETIQUETA NÃO É UM
+     * TÍTULO VISÍVEL (Minor 11, segunda passagem). A conferência de cima só
+     * contava a etiqueta; um `hidden`, um `aria-hidden="true"` ou um
+     * `display:none`/`visibility:hidden` em linha, na PRÓPRIA etiqueta,
+     * passavam como se fosse um título normal. Isto é um varrimento ESTÁTICO,
+     * sem motor de CSS: apanha o que está na etiqueta, não uma regra de folha
+     * algures que a escondesse por selector — essa conferência, completa
+     * (estilo calculado, `getClientRects`), é da régua em navegador
+     * (`tests/documentos/moldura.mjs`, célula C4).
+     */
+    err(
+      `o \`<h1>\` do documento tem, na própria etiqueta, um sinal de se esconder ` +
+        `(\`hidden\`, \`aria-hidden="true"\` ou \`display:none\`/\`visibility:hidden\` em linha): ` +
+        `${JSON.stringify(titulos[0].texto.slice(0, 160))}.\n` +
+        `      A faixa da casa não acrescenta título nenhum: o título tem de ser o do documento, e visível.`,
     );
   }
 
