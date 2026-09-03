@@ -5,7 +5,7 @@
  *
  * As regras da CABEÇA e da FAIXA não estão aqui: vivem em `inicio.css`, que a
  * vista importa ao lado desta folha, pela razão que `RegiaoView` escreveu quando
- * a cabeça nova chegou às três camadas — um componente e a sua folha viajam
+ * a cabeça nova chegou às três camadas: um componente e a sua folha viajam
  * juntos. O que está aqui é o que é destas duas páginas: a lista dos dezoito, a
  * frase da fronteira, a leitura breve de cada medida, e as duas formas gráficas.
  *
