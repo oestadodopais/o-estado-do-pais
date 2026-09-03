@@ -1,0 +1,1148 @@
+{
+ "reguas": [
+  {
+   "nome": "I1 · o índice das 8 páginas de leitura: uma entrada por título de nível 2 e 3 do registo, com o texto do registo e um destino que existe",
+   "passa": true,
+   "prova": "8 páginas · avaliacao-economica-regional-de-portugal-2026/pt 13/13 · evora-economia-investidores-portas-abertas-2026/pt 10/10 · evora-orcamentado-pago-devido-2025/en 17/17 · evora-orcamentado-pago-devido-2025/pt 17/17 · evora-os-pelouros-quem-os-teve-o-que-fizeram/pt 24/24 · evora-prometido-pago-auditado-2026/en 13/13 · evora-prometido-pago-auditado-2026/pt 13/13 · evora-quinze-anos-cinco-mandatos/pt 29/29"
+  },
+  {
+   "nome": "I1b · cada id da página aparece exatamente uma vez, nas 8 páginas de leitura (Major 9 da leitura a frio do Codex)",
+   "passa": true,
+   "prova": "zero ids duplicados, nas 8 páginas"
+  },
+  {
+   "nome": "I2 · a dobra do índice fechada, a porta com alvo ≥ 44px e nenhuma entrada abaixo de 44px · 390 (WebKit)",
+   "passa": true,
+   "prova": "avaliacao-ec porta 354×44, 13 entradas, 0 pequenas · evora-econom porta 354×44, 10 entradas, 0 pequenas · evora-orcame porta 354×44, 17 entradas, 0 pequenas · evora-orcame porta 354×44, 17 entradas, 0 pequenas · evora-os-pel porta 354×44, 24 entradas, 0 pequenas · evora-promet porta 354×44, 13 entradas, 0 pequenas · evora-promet porta 354×44, 13 entradas, 0 pequenas · evora-quinze porta 354×44, 29 entradas, 0 pequenas"
+  },
+  {
+   "nome": "I3 · o total de secções que a página declara é o número de títulos de nível 2 do registo, e cada um deles traz o contador da posição · 390",
+   "passa": true,
+   "prova": "avaliacao-economica-regional-de-portugal-2026/pt declara 8/folha 8, registo 8, contadores 8 · evora-economia-investidores-portas-abertas-2026/pt declara 8/folha 8, registo 8, contadores 8 · evora-orcamentado-pago-devido-2025/en declara 14/folha 14, registo 14, contadores 14 · evora-orcamentado-pago-devido-2025/pt declara 14/folha 14, registo 14, contadores 14 · evora-os-pelouros-quem-os-teve-o-que-fizeram/pt declara 8/folha 8, registo 8, contadores 8 · evora-prometido-pago-auditado-2026/en declara 9/folha 9, registo 9, contadores 9 · evora-prometido-pago-auditado-2026/pt declara 9/folha 9, registo 9, contadores 9 · evora-quinze-anos-cinco-mandatos/pt declara 9/folha 9, registo 9, contadores 9"
+  },
+  {
+   "nome": "I8 · zero alvos abaixo de 44px na mobília da própria página de leitura, nas 8 · 390 (WebKit, toque)",
+   "passa": true,
+   "prova": "por página (mobília da página + rodapé): avaliacao-economica-regional-de-portugal-2026/pt 0 · evora-economia-investidores-portas-abertas-2026/pt 0 · evora-orcamentado-pago-devido-2025/en 0 · evora-orcamentado-pago-devido-2025/pt 0 · evora-os-pelouros-quem-os-teve-o-que-fizeram/pt 0 · evora-prometido-pago-auditado-2026/en 0 · evora-prometido-pago-auditado-2026/pt 0 · evora-quinze-anos-cinco-mandatos/pt 0 · no corpo transcrito, que é a isenção medida: 418/162/165/163/295/338/337/670 · na cabeça, que é do bloco F1.7: 6/6/6/6/6/6/6/6"
+  },
+  {
+   "nome": "I9 · os selos que crescem alcançam 44px, e o resíduo (o rótulo que quebra em duas linhas) está contado a um número exato · 390 (WebKit, toque)",
+   "passa": true,
+   "prova": "por tipo (total/abaixo de 44px/sobreposto/com problema): selo 101/14/10/14 · resíduo esperado 14, medido 14 · exemplos: selo \"fonte · Évora — Econ\" vs (caixa pequena, sem vizinho a tocar) | selo \"source · Évora — Bud\" vs selo \"source · Évora — Bud\" | selo \"source · Évora — Bud\" vs (caixa pequena, sem vizinho a tocar) | selo \"source · Évora — Bud\" vs selo \"source · calculated \""
+  },
+  {
+   "nome": "I7a · a 390 (sem goteira) o comando fixo não se desenha, e cada secção de nível 2 termina numa porta em fluxo com alvo ≥ 44px",
+   "passa": true,
+   "prova": "avaliacao-ec subir=none portas=8/8 <44px=0 · evora-econom subir=none portas=8/8 <44px=0 · evora-orcame subir=none portas=14/14 <44px=0 · evora-orcame subir=none portas=14/14 <44px=0 · evora-os-pel subir=none portas=8/8 <44px=0 · evora-promet subir=none portas=9/9 <44px=0 · evora-promet subir=none portas=9/9 <44px=0 · evora-quinze subir=none portas=9/9 <44px=0"
+  },
+  {
+   "nome": "I10a · zero caixas de linha do artigo tapadas pelo comando de subida, em dez posições de cada página · 390",
+   "passa": true,
+   "prova": "modo em-fluxo · caixas de linha tapadas em 10 posições: avaliacao-ec 0 · evora-econom 0 · evora-orcame 0 · evora-orcame 0 · evora-os-pel 0 · evora-promet 0 · evora-promet 0 · evora-quinze 0"
+  },
+  {
+   "nome": "I4 · o contador da posição desenha tinta por cima do título (as duas capturas da mesma banda diferem quando a regra sai)",
+   "passa": true,
+   "prova": "banda de 120×20px em x=16 y=296 · com a regra 772 B, sem ela 251 B, iguais: false"
+  },
+  {
+   "nome": "I5a · a barra do progresso cresce com o deslocamento COM O GUIÃO DESLIGADO · 390 (WebKit)",
+   "passa": true,
+   "prova": "sem JavaScript nenhum: no topo 0.0px, com o rodapé à vista 390.0px, numa janela de 390"
+  },
+  {
+   "nome": "I11a · o nome acessível de cada título de nível 2 leva «Secção n de N» antes do título, computado pelo motor · 390 (WebKit)",
+   "passa": true,
+   "prova": "9 títulos de nível 2, todos com o nome esperado"
+  },
+  {
+   "nome": "I7b · a subida à vista a 1280, com alvo ≥ 44px nos dois eixos e sem apanhar uma caixa de linha do artigo em dez posições da página",
+   "passa": true,
+   "prova": "79.2×44px, fixed · caixas de linha tapadas em 10 posições: 0/0/0/0/0/0/0/0 · a 1280 o comando fica na goteira, à direita da coluna do aparelho"
+  },
+  {
+   "nome": "I3b · o contador da posição também a 1280, em cada título de nível 2 das 8",
+   "passa": true,
+   "prova": "avaliacao-ec 8/8 · evora-econom 8/8 · evora-orcame 14/14 · evora-orcame 14/14 · evora-os-pel 8/8 · evora-promet 9/9 · evora-promet 9/9 · evora-quinze 9/9"
+  },
+  {
+   "nome": "I11b · o nome acessível de cada título de nível 2 leva «Secção n de N» antes do título, computado pelo motor · 1280 (Chromium)",
+   "passa": true,
+   "prova": "9 títulos de nível 2, todos com o nome esperado"
+  },
+  {
+   "nome": "I5b · a barra do progresso cresce com o deslocamento COM O GUIÃO DESLIGADO · 1280 (Chromium)",
+   "passa": true,
+   "prova": "sem JavaScript nenhum: no topo 0.0px, com o rodapé à vista 1280.0px, numa janela de 1280"
+  },
+  {
+   "nome": "I6 · o índice, o total das secções, a barra e a subida estão no HTML servido, sem depender de guião nenhum",
+   "passa": true,
+   "prova": "no ficheiro construído: índice 1, entradas 13 (registo 13), data-seccoes 1, barra 1, subida 1"
+  },
+  {
+   "nome": "I9b · as portas de figura do corpo transcrito estão mais perto umas das outras do que 44px, e é essa a razão medida por que ficam com a área que já tinham",
+   "passa": true,
+   "prova": "avaliacao-ec: 418 portas, 368/417 pares a menos de 44px (253 na mesma linha), mediana entre linhas 34.6px · evora-econom: 171 portas, 104/170 pares a menos de 44px (48 na mesma linha), mediana entre linhas 54.1px · evora-orcame: 194 portas, 129/193 pares a menos de 44px (43 na mesma linha), mediana entre linhas 34.6px · evora-orcame: 194 portas, 124/193 pares a menos de 44px (41 na mesma linha), mediana entre linhas 36.6px · evora-os-pel: 296 portas, 203/295 pares a menos de 44px (166 na mesma linha), mediana entre linhas 73.7px · evora-promet: 340 portas, 240/339 pares a menos de 44px (138 na mesma linha), mediana entre linhas 40px · evora-promet: 340 portas, 231/339 pares a menos de 44px (141 na mesma linha), mediana entre linhas 54.1px · evora-quinze: 682 portas, 549/681 pares a menos de 44px (313 na mesma linha), mediana entre linhas 34.6px"
+  }
+ ],
+ "medidas": {
+  "indice": {
+   "paginas": 8,
+   "contagens": [
+    "avaliacao-economica-regional-de-portugal-2026/pt 13/13",
+    "evora-economia-investidores-portas-abertas-2026/pt 10/10",
+    "evora-orcamentado-pago-devido-2025/en 17/17",
+    "evora-orcamentado-pago-devido-2025/pt 17/17",
+    "evora-os-pelouros-quem-os-teve-o-que-fizeram/pt 24/24",
+    "evora-prometido-pago-auditado-2026/en 13/13",
+    "evora-prometido-pago-auditado-2026/pt 13/13",
+    "evora-quinze-anos-cinco-mandatos/pt 29/29"
+   ],
+   "falhas": []
+  },
+  "idsDuplicados": [],
+  "m390": {
+   "avaliacao-economica-regional-de-portugal-2026/pt": {
+    "indice": true,
+    "entradas": 13,
+    "entradasAbaixoDe44": 0,
+    "fechada": true,
+    "porta": {
+     "l": 354,
+     "a": 44
+    },
+    "banda": 46,
+    "seccoesDeclaradas": "8",
+    "seccoesNaFolha": "8",
+    "h2": 8,
+    "contadores": 8,
+    "subir": {
+     "l": 0,
+     "a": 0,
+     "pos": "static",
+     "display": "none",
+     "dentroDoEcra": true
+    },
+    "secaoTopo": {
+     "total": 8,
+     "display": "inline-flex",
+     "abaixoDe44": 0
+    },
+    "barra": {
+     "l": 0,
+     "a": 3,
+     "display": "block"
+    },
+    "altura": 16023,
+    "ecra": 664,
+    "alvos": {
+     "rendidos": 453,
+     "pequenos": 424,
+     "porZona": {
+      "cabeca": 6,
+      "artigo": 418
+     },
+     "porClasseNoArtigo": {
+      "figura": 411,
+      "ligacao": 7
+     },
+     "daPagina": []
+    },
+    "crescidos": {
+     "porTipo": {},
+     "exemplos": []
+    },
+    "tapa": {
+     "cruzamentos": 0,
+     "posicoes": 10,
+     "posicoesComTexto": 0,
+     "pior": null,
+     "modo": "em-fluxo"
+    }
+   },
+   "evora-economia-investidores-portas-abertas-2026/pt": {
+    "indice": true,
+    "entradas": 10,
+    "entradasAbaixoDe44": 0,
+    "fechada": true,
+    "porta": {
+     "l": 354,
+     "a": 44
+    },
+    "banda": 46,
+    "seccoesDeclaradas": "8",
+    "seccoesNaFolha": "8",
+    "h2": 8,
+    "contadores": 8,
+    "subir": {
+     "l": 0,
+     "a": 0,
+     "pos": "static",
+     "display": "none",
+     "dentroDoEcra": true
+    },
+    "secaoTopo": {
+     "total": 8,
+     "display": "inline-flex",
+     "abaixoDe44": 0
+    },
+    "barra": {
+     "l": 0,
+     "a": 3,
+     "display": "block"
+    },
+    "altura": 16695,
+    "ecra": 664,
+    "alvos": {
+     "rendidos": 206,
+     "pequenos": 168,
+     "porZona": {
+      "cabeca": 6,
+      "artigo": 162
+     },
+     "porClasseNoArtigo": {
+      "figura": 161,
+      "selo": 1
+     },
+     "daPagina": []
+    },
+    "crescidos": {
+     "porTipo": {
+      "selo": {
+       "total": 10,
+       "abaixoDe44": 1,
+       "sobreposto": 0,
+       "comProblema": 1
+      }
+     },
+     "exemplos": [
+      "selo \"fonte · Évora — Econ\" vs (caixa pequena, sem vizinho a tocar)"
+     ]
+    },
+    "tapa": {
+     "cruzamentos": 0,
+     "posicoes": 10,
+     "posicoesComTexto": 0,
+     "pior": null,
+     "modo": "em-fluxo"
+    }
+   },
+   "evora-orcamentado-pago-devido-2025/en": {
+    "indice": true,
+    "entradas": 17,
+    "entradasAbaixoDe44": 0,
+    "fechada": true,
+    "porta": {
+     "l": 354,
+     "a": 44
+    },
+    "banda": 46,
+    "seccoesDeclaradas": "14",
+    "seccoesNaFolha": "14",
+    "h2": 14,
+    "contadores": 14,
+    "subir": {
+     "l": 0,
+     "a": 0,
+     "pos": "static",
+     "display": "none",
+     "dentroDoEcra": true
+    },
+    "secaoTopo": {
+     "total": 14,
+     "display": "inline-flex",
+     "abaixoDe44": 0
+    },
+    "barra": {
+     "l": 0,
+     "a": 3,
+     "display": "block"
+    },
+    "altura": 18835,
+    "ecra": 664,
+    "alvos": {
+     "rendidos": 235,
+     "pequenos": 171,
+     "porZona": {
+      "cabeca": 6,
+      "artigo": 165
+     },
+     "porClasseNoArtigo": {
+      "selo": 23,
+      "figura": 142
+     },
+     "daPagina": []
+    },
+    "crescidos": {
+     "porTipo": {
+      "selo": {
+       "total": 33,
+       "abaixoDe44": 4,
+       "sobreposto": 2,
+       "comProblema": 4
+      }
+     },
+     "exemplos": [
+      "selo \"source · Évora — Bud\" vs selo \"source · Évora — Bud\"",
+      "selo \"source · Évora — Bud\" vs (caixa pequena, sem vizinho a tocar)",
+      "selo \"source · Évora — Bud\" vs selo \"source · calculated \"",
+      "selo \"source · Évora — Bud\" vs (caixa pequena, sem vizinho a tocar)"
+     ]
+    },
+    "tapa": {
+     "cruzamentos": 0,
+     "posicoes": 10,
+     "posicoesComTexto": 0,
+     "pior": null,
+     "modo": "em-fluxo"
+    }
+   },
+   "evora-orcamentado-pago-devido-2025/pt": {
+    "indice": true,
+    "entradas": 17,
+    "entradasAbaixoDe44": 0,
+    "fechada": true,
+    "porta": {
+     "l": 354,
+     "a": 44
+    },
+    "banda": 46,
+    "seccoesDeclaradas": "14",
+    "seccoesNaFolha": "14",
+    "h2": 14,
+    "contadores": 14,
+    "subir": {
+     "l": 0,
+     "a": 0,
+     "pos": "static",
+     "display": "none",
+     "dentroDoEcra": true
+    },
+    "secaoTopo": {
+     "total": 14,
+     "display": "inline-flex",
+     "abaixoDe44": 0
+    },
+    "barra": {
+     "l": 0,
+     "a": 3,
+     "display": "block"
+    },
+    "altura": 19571,
+    "ecra": 664,
+    "alvos": {
+     "rendidos": 235,
+     "pequenos": 169,
+     "porZona": {
+      "cabeca": 6,
+      "artigo": 163
+     },
+     "porClasseNoArtigo": {
+      "selo": 21,
+      "figura": 142
+     },
+     "daPagina": []
+    },
+    "crescidos": {
+     "porTipo": {
+      "selo": {
+       "total": 33,
+       "abaixoDe44": 2,
+       "sobreposto": 2,
+       "comProblema": 2
+      }
+     },
+     "exemplos": [
+      "selo \"fonte · Évora — Orça\" vs selo \"fonte · Évora — Orça\"",
+      "selo \"fonte · Évora — Orça\" vs selo \"fonte · Évora — Orça\""
+     ]
+    },
+    "tapa": {
+     "cruzamentos": 0,
+     "posicoes": 10,
+     "posicoesComTexto": 0,
+     "pior": null,
+     "modo": "em-fluxo"
+    }
+   },
+   "evora-os-pelouros-quem-os-teve-o-que-fizeram/pt": {
+    "indice": true,
+    "entradas": 24,
+    "entradasAbaixoDe44": 0,
+    "fechada": true,
+    "porta": {
+     "l": 354,
+     "a": 44
+    },
+    "banda": 46,
+    "seccoesDeclaradas": "8",
+    "seccoesNaFolha": "8",
+    "h2": 8,
+    "contadores": 8,
+    "subir": {
+     "l": 0,
+     "a": 0,
+     "pos": "static",
+     "display": "none",
+     "dentroDoEcra": true
+    },
+    "secaoTopo": {
+     "total": 8,
+     "display": "inline-flex",
+     "abaixoDe44": 0
+    },
+    "barra": {
+     "l": 0,
+     "a": 3,
+     "display": "block"
+    },
+    "altura": 49599,
+    "ecra": 664,
+    "alvos": {
+     "rendidos": 331,
+     "pequenos": 301,
+     "porZona": {
+      "cabeca": 6,
+      "artigo": 295
+     },
+     "porClasseNoArtigo": {
+      "figura": 286,
+      "selo": 9
+     },
+     "daPagina": []
+    },
+    "crescidos": {
+     "porTipo": {
+      "selo": {
+       "total": 1,
+       "abaixoDe44": 0,
+       "sobreposto": 0,
+       "comProblema": 0
+      }
+     },
+     "exemplos": []
+    },
+    "tapa": {
+     "cruzamentos": 0,
+     "posicoes": 10,
+     "posicoesComTexto": 0,
+     "pior": null,
+     "modo": "em-fluxo"
+    }
+   },
+   "evora-prometido-pago-auditado-2026/en": {
+    "indice": true,
+    "entradas": 13,
+    "entradasAbaixoDe44": 0,
+    "fechada": true,
+    "porta": {
+     "l": 354,
+     "a": 44
+    },
+    "banda": 46,
+    "seccoesDeclaradas": "9",
+    "seccoesNaFolha": "9",
+    "h2": 9,
+    "contadores": 9,
+    "subir": {
+     "l": 0,
+     "a": 0,
+     "pos": "static",
+     "display": "none",
+     "dentroDoEcra": true
+    },
+    "secaoTopo": {
+     "total": 9,
+     "display": "inline-flex",
+     "abaixoDe44": 0
+    },
+    "barra": {
+     "l": 0,
+     "a": 3,
+     "display": "block"
+    },
+    "altura": 24485,
+    "ecra": 664,
+    "alvos": {
+     "rendidos": 376,
+     "pequenos": 344,
+     "porZona": {
+      "cabeca": 6,
+      "artigo": 338
+     },
+     "porClasseNoArtigo": {
+      "figura": 292,
+      "selo": 9,
+      "ligacao": 16,
+      "apos": 21
+     },
+     "daPagina": []
+    },
+    "crescidos": {
+     "porTipo": {
+      "selo": {
+       "total": 4,
+       "abaixoDe44": 2,
+       "sobreposto": 2,
+       "comProblema": 2
+      }
+     },
+     "exemplos": [
+      "selo \"source · Évora — Pro\" vs selo \"source · calculated \"",
+      "selo \"source · calculated \" vs figura \"4\""
+     ]
+    },
+    "tapa": {
+     "cruzamentos": 0,
+     "posicoes": 10,
+     "posicoesComTexto": 0,
+     "pior": null,
+     "modo": "em-fluxo"
+    }
+   },
+   "evora-prometido-pago-auditado-2026/pt": {
+    "indice": true,
+    "entradas": 13,
+    "entradasAbaixoDe44": 0,
+    "fechada": true,
+    "porta": {
+     "l": 354,
+     "a": 44
+    },
+    "banda": 46,
+    "seccoesDeclaradas": "9",
+    "seccoesNaFolha": "9",
+    "h2": 9,
+    "contadores": 9,
+    "subir": {
+     "l": 0,
+     "a": 0,
+     "pos": "static",
+     "display": "none",
+     "dentroDoEcra": true
+    },
+    "secaoTopo": {
+     "total": 9,
+     "display": "inline-flex",
+     "abaixoDe44": 0
+    },
+    "barra": {
+     "l": 0,
+     "a": 3,
+     "display": "block"
+    },
+    "altura": 25998,
+    "ecra": 664,
+    "alvos": {
+     "rendidos": 376,
+     "pequenos": 343,
+     "porZona": {
+      "cabeca": 6,
+      "artigo": 337
+     },
+     "porClasseNoArtigo": {
+      "figura": 291,
+      "selo": 9,
+      "ligacao": 16,
+      "apos": 21
+     },
+     "daPagina": []
+    },
+    "crescidos": {
+     "porTipo": {
+      "selo": {
+       "total": 5,
+       "abaixoDe44": 2,
+       "sobreposto": 2,
+       "comProblema": 2
+      }
+     },
+     "exemplos": [
+      "selo \"fonte · Évora — Prom\" vs figura \"608\"",
+      "selo \"fonte · calculado · \" vs figura \"608\""
+     ]
+    },
+    "tapa": {
+     "cruzamentos": 0,
+     "posicoes": 10,
+     "posicoesComTexto": 0,
+     "pior": null,
+     "modo": "em-fluxo"
+    }
+   },
+   "evora-quinze-anos-cinco-mandatos/pt": {
+    "indice": true,
+    "entradas": 29,
+    "entradasAbaixoDe44": 0,
+    "fechada": true,
+    "porta": {
+     "l": 354,
+     "a": 44
+    },
+    "banda": 46,
+    "seccoesDeclaradas": "9",
+    "seccoesNaFolha": "9",
+    "h2": 9,
+    "contadores": 9,
+    "subir": {
+     "l": 0,
+     "a": 0,
+     "pos": "static",
+     "display": "none",
+     "dentroDoEcra": true
+    },
+    "secaoTopo": {
+     "total": 9,
+     "display": "inline-flex",
+     "abaixoDe44": 0
+    },
+    "barra": {
+     "l": 0,
+     "a": 3,
+     "display": "block"
+    },
+    "altura": 45691,
+    "ecra": 664,
+    "alvos": {
+     "rendidos": 718,
+     "pequenos": 676,
+     "porZona": {
+      "cabeca": 6,
+      "artigo": 670
+     },
+     "porClasseNoArtigo": {
+      "figura": 633,
+      "selo": 37
+     },
+     "daPagina": []
+    },
+    "crescidos": {
+     "porTipo": {
+      "selo": {
+       "total": 15,
+       "abaixoDe44": 3,
+       "sobreposto": 2,
+       "comProblema": 3
+      }
+     },
+     "exemplos": [
+      "selo \"fonte · Évora — Quin\" vs (caixa pequena, sem vizinho a tocar)",
+      "selo \"fonte · Évora — Quin\" vs figura \"755\"",
+      "selo \"fonte · Évora — Quin\" vs selo \"fonte · Évora — Quin\""
+     ]
+    },
+    "tapa": {
+     "cruzamentos": 0,
+     "posicoes": 10,
+     "posicoesComTexto": 0,
+     "pior": null,
+     "modo": "em-fluxo"
+    }
+   }
+  },
+  "alvosCrescidos": {
+   "somaPorTipo": {
+    "selo": {
+     "total": 101,
+     "abaixoDe44": 14,
+     "sobreposto": 10,
+     "comProblema": 14
+    }
+   },
+   "exemplos": [
+    "selo \"fonte · Évora — Econ\" vs (caixa pequena, sem vizinho a tocar)",
+    "selo \"source · Évora — Bud\" vs selo \"source · Évora — Bud\"",
+    "selo \"source · Évora — Bud\" vs (caixa pequena, sem vizinho a tocar)",
+    "selo \"source · Évora — Bud\" vs selo \"source · calculated \"",
+    "selo \"source · Évora — Bud\" vs (caixa pequena, sem vizinho a tocar)",
+    "selo \"fonte · Évora — Orça\" vs selo \"fonte · Évora — Orça\"",
+    "selo \"fonte · Évora — Orça\" vs selo \"fonte · Évora — Orça\"",
+    "selo \"source · Évora — Pro\" vs selo \"source · calculated \"",
+    "selo \"source · calculated \" vs figura \"4\"",
+    "selo \"fonte · Évora — Prom\" vs figura \"608\"",
+    "selo \"fonte · calculado · \" vs figura \"608\"",
+    "selo \"fonte · Évora — Quin\" vs (caixa pequena, sem vizinho a tocar)",
+    "selo \"fonte · Évora — Quin\" vs figura \"755\"",
+    "selo \"fonte · Évora — Quin\" vs selo \"fonte · Évora — Quin\""
+   ]
+  },
+  "alturas390": [
+   "avaliacao-economica-regional-de-portugal-2026/pt 16023px (banda do índice 46px)",
+   "evora-economia-investidores-portas-abertas-2026/pt 16695px (banda do índice 46px)",
+   "evora-orcamentado-pago-devido-2025/en 18835px (banda do índice 46px)",
+   "evora-orcamentado-pago-devido-2025/pt 19571px (banda do índice 46px)",
+   "evora-os-pelouros-quem-os-teve-o-que-fizeram/pt 49599px (banda do índice 46px)",
+   "evora-prometido-pago-auditado-2026/en 24485px (banda do índice 46px)",
+   "evora-prometido-pago-auditado-2026/pt 25998px (banda do índice 46px)",
+   "evora-quinze-anos-cinco-mandatos/pt 45691px (banda do índice 46px)"
+  ],
+  "tintaDoContador": {
+   "com": 772,
+   "sem": 251
+  },
+  "barra390": {
+   "topo": 0,
+   "fim": 390
+  },
+  "nomeAcessivelDaPosicao": {
+   "total": 9,
+   "falhas": []
+  },
+  "m1280": {
+   "avaliacao-economica-regional-de-portugal-2026/pt": {
+    "indice": true,
+    "entradas": 13,
+    "entradasAbaixoDe44": 0,
+    "fechada": true,
+    "porta": {
+     "l": 300,
+     "a": 44
+    },
+    "banda": 86,
+    "seccoesDeclaradas": "8",
+    "seccoesNaFolha": "8",
+    "h2": 8,
+    "contadores": 8,
+    "subir": {
+     "l": 79.2,
+     "a": 44,
+     "pos": "fixed",
+     "display": "flex",
+     "dentroDoEcra": true
+    },
+    "secaoTopo": {
+     "total": 8,
+     "display": "none",
+     "abaixoDe44": 0
+    },
+    "barra": {
+     "l": 0,
+     "a": 3,
+     "display": "block"
+    },
+    "altura": 12663,
+    "ecra": 800,
+    "tapa": {
+     "cruzamentos": 0,
+     "posicoes": 10,
+     "posicoesComTexto": 0,
+     "pior": null,
+     "modo": "fixa"
+    },
+    "dist": {
+     "portas": 418,
+     "pares": 417,
+     "paresNaMesmaLinha": 253,
+     "paresAbaixoDe44": 368,
+     "mediana": 34.6
+    }
+   },
+   "evora-economia-investidores-portas-abertas-2026/pt": {
+    "indice": true,
+    "entradas": 10,
+    "entradasAbaixoDe44": 0,
+    "fechada": true,
+    "porta": {
+     "l": 300,
+     "a": 44
+    },
+    "banda": 86,
+    "seccoesDeclaradas": "8",
+    "seccoesNaFolha": "8",
+    "h2": 8,
+    "contadores": 8,
+    "subir": {
+     "l": 79.2,
+     "a": 44,
+     "pos": "fixed",
+     "display": "flex",
+     "dentroDoEcra": true
+    },
+    "secaoTopo": {
+     "total": 8,
+     "display": "none",
+     "abaixoDe44": 0
+    },
+    "barra": {
+     "l": 0,
+     "a": 3,
+     "display": "block"
+    },
+    "altura": 12612,
+    "ecra": 800,
+    "tapa": {
+     "cruzamentos": 0,
+     "posicoes": 10,
+     "posicoesComTexto": 0,
+     "pior": null,
+     "modo": "fixa"
+    },
+    "dist": {
+     "portas": 171,
+     "pares": 170,
+     "paresNaMesmaLinha": 48,
+     "paresAbaixoDe44": 104,
+     "mediana": 54.1
+    }
+   },
+   "evora-orcamentado-pago-devido-2025/en": {
+    "indice": true,
+    "entradas": 17,
+    "entradasAbaixoDe44": 0,
+    "fechada": true,
+    "porta": {
+     "l": 300,
+     "a": 44
+    },
+    "banda": 86,
+    "seccoesDeclaradas": "14",
+    "seccoesNaFolha": "14",
+    "h2": 14,
+    "contadores": 14,
+    "subir": {
+     "l": 124.2,
+     "a": 44,
+     "pos": "fixed",
+     "display": "flex",
+     "dentroDoEcra": true
+    },
+    "secaoTopo": {
+     "total": 14,
+     "display": "none",
+     "abaixoDe44": 0
+    },
+    "barra": {
+     "l": 0,
+     "a": 3,
+     "display": "block"
+    },
+    "altura": 14718,
+    "ecra": 800,
+    "tapa": {
+     "cruzamentos": 0,
+     "posicoes": 10,
+     "posicoesComTexto": 0,
+     "pior": null,
+     "modo": "fixa"
+    },
+    "dist": {
+     "portas": 194,
+     "pares": 193,
+     "paresNaMesmaLinha": 43,
+     "paresAbaixoDe44": 129,
+     "mediana": 34.6
+    }
+   },
+   "evora-orcamentado-pago-devido-2025/pt": {
+    "indice": true,
+    "entradas": 17,
+    "entradasAbaixoDe44": 0,
+    "fechada": true,
+    "porta": {
+     "l": 300,
+     "a": 44
+    },
+    "banda": 86,
+    "seccoesDeclaradas": "14",
+    "seccoesNaFolha": "14",
+    "h2": 14,
+    "contadores": 14,
+    "subir": {
+     "l": 79.2,
+     "a": 44,
+     "pos": "fixed",
+     "display": "flex",
+     "dentroDoEcra": true
+    },
+    "secaoTopo": {
+     "total": 14,
+     "display": "none",
+     "abaixoDe44": 0
+    },
+    "barra": {
+     "l": 0,
+     "a": 3,
+     "display": "block"
+    },
+    "altura": 15077,
+    "ecra": 800,
+    "tapa": {
+     "cruzamentos": 0,
+     "posicoes": 10,
+     "posicoesComTexto": 0,
+     "pior": null,
+     "modo": "fixa"
+    },
+    "dist": {
+     "portas": 194,
+     "pares": 193,
+     "paresNaMesmaLinha": 41,
+     "paresAbaixoDe44": 124,
+     "mediana": 36.6
+    }
+   },
+   "evora-os-pelouros-quem-os-teve-o-que-fizeram/pt": {
+    "indice": true,
+    "entradas": 24,
+    "entradasAbaixoDe44": 0,
+    "fechada": true,
+    "porta": {
+     "l": 300,
+     "a": 44
+    },
+    "banda": 86,
+    "seccoesDeclaradas": "8",
+    "seccoesNaFolha": "8",
+    "h2": 8,
+    "contadores": 8,
+    "subir": {
+     "l": 79.2,
+     "a": 44,
+     "pos": "fixed",
+     "display": "flex",
+     "dentroDoEcra": true
+    },
+    "secaoTopo": {
+     "total": 8,
+     "display": "none",
+     "abaixoDe44": 0
+    },
+    "barra": {
+     "l": 0,
+     "a": 3,
+     "display": "block"
+    },
+    "altura": 36702,
+    "ecra": 800,
+    "tapa": {
+     "cruzamentos": 0,
+     "posicoes": 10,
+     "posicoesComTexto": 0,
+     "pior": null,
+     "modo": "fixa"
+    },
+    "dist": {
+     "portas": 296,
+     "pares": 295,
+     "paresNaMesmaLinha": 166,
+     "paresAbaixoDe44": 203,
+     "mediana": 73.7
+    }
+   },
+   "evora-prometido-pago-auditado-2026/en": {
+    "indice": true,
+    "entradas": 13,
+    "entradasAbaixoDe44": 0,
+    "fechada": true,
+    "porta": {
+     "l": 300,
+     "a": 44
+    },
+    "banda": 86,
+    "seccoesDeclaradas": "9",
+    "seccoesNaFolha": "9",
+    "h2": 9,
+    "contadores": 9,
+    "subir": {
+     "l": 124.2,
+     "a": 44,
+     "pos": "fixed",
+     "display": "flex",
+     "dentroDoEcra": true
+    },
+    "secaoTopo": {
+     "total": 9,
+     "display": "none",
+     "abaixoDe44": 0
+    },
+    "barra": {
+     "l": 0,
+     "a": 3,
+     "display": "block"
+    },
+    "altura": 18504,
+    "ecra": 800,
+    "tapa": {
+     "cruzamentos": 0,
+     "posicoes": 10,
+     "posicoesComTexto": 0,
+     "pior": null,
+     "modo": "fixa"
+    },
+    "dist": {
+     "portas": 340,
+     "pares": 339,
+     "paresNaMesmaLinha": 138,
+     "paresAbaixoDe44": 240,
+     "mediana": 40
+    }
+   },
+   "evora-prometido-pago-auditado-2026/pt": {
+    "indice": true,
+    "entradas": 13,
+    "entradasAbaixoDe44": 0,
+    "fechada": true,
+    "porta": {
+     "l": 300,
+     "a": 44
+    },
+    "banda": 86,
+    "seccoesDeclaradas": "9",
+    "seccoesNaFolha": "9",
+    "h2": 9,
+    "contadores": 9,
+    "subir": {
+     "l": 79.2,
+     "a": 44,
+     "pos": "fixed",
+     "display": "flex",
+     "dentroDoEcra": true
+    },
+    "secaoTopo": {
+     "total": 9,
+     "display": "none",
+     "abaixoDe44": 0
+    },
+    "barra": {
+     "l": 0,
+     "a": 3,
+     "display": "block"
+    },
+    "altura": 19643,
+    "ecra": 800,
+    "tapa": {
+     "cruzamentos": 0,
+     "posicoes": 10,
+     "posicoesComTexto": 0,
+     "pior": null,
+     "modo": "fixa"
+    },
+    "dist": {
+     "portas": 340,
+     "pares": 339,
+     "paresNaMesmaLinha": 141,
+     "paresAbaixoDe44": 231,
+     "mediana": 54.1
+    }
+   },
+   "evora-quinze-anos-cinco-mandatos/pt": {
+    "indice": true,
+    "entradas": 29,
+    "entradasAbaixoDe44": 0,
+    "fechada": true,
+    "porta": {
+     "l": 300,
+     "a": 44
+    },
+    "banda": 86,
+    "seccoesDeclaradas": "9",
+    "seccoesNaFolha": "9",
+    "h2": 9,
+    "contadores": 9,
+    "subir": {
+     "l": 79.2,
+     "a": 44,
+     "pos": "fixed",
+     "display": "flex",
+     "dentroDoEcra": true
+    },
+    "secaoTopo": {
+     "total": 9,
+     "display": "none",
+     "abaixoDe44": 0
+    },
+    "barra": {
+     "l": 0,
+     "a": 3,
+     "display": "block"
+    },
+    "altura": 37008,
+    "ecra": 800,
+    "tapa": {
+     "cruzamentos": 0,
+     "posicoes": 10,
+     "posicoesComTexto": 0,
+     "pior": null,
+     "modo": "fixa"
+    },
+    "dist": {
+     "portas": 682,
+     "pares": 681,
+     "paresNaMesmaLinha": 313,
+     "paresAbaixoDe44": 549,
+     "mediana": 34.6
+    }
+   }
+  },
+  "barra1280": {
+   "topo": 0,
+   "fim": 1280
+  },
+  "semGuiao": {
+   "indice": 1,
+   "entradas": 13,
+   "seccoes": 1,
+   "barra": 1,
+   "subir": 1
+  },
+  "distancias": [
+   {
+    "portas": 418,
+    "pares": 417,
+    "paresNaMesmaLinha": 253,
+    "paresAbaixoDe44": 368,
+    "mediana": 34.6
+   },
+   {
+    "portas": 171,
+    "pares": 170,
+    "paresNaMesmaLinha": 48,
+    "paresAbaixoDe44": 104,
+    "mediana": 54.1
+   },
+   {
+    "portas": 194,
+    "pares": 193,
+    "paresNaMesmaLinha": 43,
+    "paresAbaixoDe44": 129,
+    "mediana": 34.6
+   },
+   {
+    "portas": 194,
+    "pares": 193,
+    "paresNaMesmaLinha": 41,
+    "paresAbaixoDe44": 124,
+    "mediana": 36.6
+   },
+   {
+    "portas": 296,
+    "pares": 295,
+    "paresNaMesmaLinha": 166,
+    "paresAbaixoDe44": 203,
+    "mediana": 73.7
+   },
+   {
+    "portas": 340,
+    "pares": 339,
+    "paresNaMesmaLinha": 138,
+    "paresAbaixoDe44": 240,
+    "mediana": 40
+   },
+   {
+    "portas": 340,
+    "pares": 339,
+    "paresNaMesmaLinha": 141,
+    "paresAbaixoDe44": 231,
+    "mediana": 54.1
+   },
+   {
+    "portas": 682,
+    "pares": 681,
+    "paresNaMesmaLinha": 313,
+    "paresAbaixoDe44": 549,
+    "mediana": 34.6
+   }
+  ]
+ }
+}
