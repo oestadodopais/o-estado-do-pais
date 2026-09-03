@@ -113,14 +113,16 @@ O rótulo é o recuo seguro do artigo 50.º, n.º 4 e n.º 5 do Regulamento (UE)
 
 **O conserto é dentro do JSON e não em HTML.** O conteúdo de um `<script>` não é HTML: o analisador não lhe decodifica entidades, e a única coisa que procura é a cadeia que fecha o elemento. Escapar `<` como `&lt;` seria o erro simétrico e pior, porque o JSON passaria a conter os cinco caracteres da entidade. Usa-se `<`, que é escape do JSON: o objecto lido é o mesmo, byte a byte, e o analisador de HTML nunca vê um `<`. Escapam-se `<`, `>` e `&`.
 
-O conhecido-positivo, com um título de estudo que traz `</script>`:
+**O conhecido-positivo**, com um título de estudo que traz `</script><img src=x onerror=alert(1)>`, e com o juiz a ser o mesmo analisador de HTML que o portão usa (`node-html-parser`): serializa-se a mesma ficha das duas maneiras, mete-se cada uma num `<script type="application/ld+json">`, e pergunta-se ao analisador o que ficou dentro do bloco e o que nasceu na página.
 
 ```
-node -e "import('./src/lib/jsonld.mjs').then(({jsonLd}) => { ... })"
-  saida: {"name":"Estudo </script><img src=x onerror=alert(1)> fim", ...}
-  tem < literal: false · tem > literal: false · tem & literal: false
-  desserializa igual: true
+                                 o bloco     desserializa    nasceu um <img>
+                                 tem         e o título      na página
+  JSON.stringify (o que era)     77 de 126   não             SIM
+  jsonLd (o que é)              146 de 146   sim             não
 ```
+
+Com `JSON.stringify` o bloco corta-se a meio, o JSON deixa de ler, e o markup do título passa a ser um elemento da página: é a injeção a sair do bloco. Com `jsonLd` os 146 caracteres ficam lá dentro, o título volta a ler-se igual, e não nasce elemento nenhum. Medido também sobre a construção: 7 866 blocos em 7 218 páginas (`grep -ro 'application/ld+json' dist/ | wc -l`).
 
 ## 5 · Os identificadores mortos (item 5)
 
@@ -152,6 +154,15 @@ O conhecido-positivo corre sempre, com `--prova`, e planta a importação morta 
 node scripts/check-mortos.mjs --prova
   prova ✓ a importação plantada foi vista, fora da árvore do sítio.
   ✓ identificadores · 173 ficheiro(s) lidos, nenhuma importação nem constante de topo morta
+```
+
+E a planta pedida pelo brief, num ficheiro a sério e pelo comando que o `verify` corre: acrescentou-se `import { POR_VERIFICAR as ESTRAGO_PLANTADO }` a `src/views/MarcadorView.astro`.
+
+```
+COM A PLANTA · npm run check:mortos EXIT=1
+    ✗ src/views/MarcadorView.astro:17 · importacao "ESTRAGO_PLANTADO" declarada e nunca usada, nem em comentário.
+REPOSTO      · npm run check:mortos EXIT=0
+    árvore: 0 ficheiro(s) por commitar
 ```
 
 ## 6 · A `allowlist`, e a regra que a lê ao contrário (item 6)
@@ -305,10 +316,22 @@ python3 -m indicators.refresh --check-por-commitar   # EXIT=0
 
 As construções deste bloco, por ordem: uma de base em Astro 7.2.1, uma em 7.2.10 para isolar o efeito da atualização, e uma com todo o trabalho do bloco. A terceira parou vermelha à primeira, em `gate:html`, na órfã `PT2030` que a regra nova apanhou (§6.2), e ficou a 0 depois de a tirar.
 
+### As corridas
+
+| repositório | ramo | corrida | resultado |
+|---|---|---|---|
+| motor | `higiene-2026-09-03` | [33701727148](https://github.com/oestadodopais/motor/actions/runs/33701727148) | **success**, nas duas pernas da matriz (`portao (3.12)` e `portao (3.14)`), 4m53s |
+| sítio | `higiene-2026-09-03` | [33702101425](https://github.com/oestadodopais/o-estado-do-pais/actions/runs/33702101425) | **success**, com `build`, `verify` e `typecheck` verdes |
+
+A corrida do motor é a que prova o que esta máquina não podia provar: os 40 pinos do `requirements.lock.txt`, gerados em 3.14 e macOS, resolvem também em 3.12 e em `ubuntu-24.04`.
+
+Os commits: sítio `af60d3b6`; motor `63d3a34` (as quatro saídas) e `0c17de1` (o lock e a guarda). Nenhum dos dois ramos foi fundido, e nenhum tocou em `main` ou em `master`.
+
 **Uma nota de método, porque custou tempo e podia ter custado uma conclusão errada.** O padrão `npm run build > log 2>&1; echo "EXIT=$?"` num comando de fundo devolve o código do `echo` e não o do `npm`, e por isso a primeira construção do bloco foi anunciada como verde quando tinha fechado vermelha. O que a apanhou foi ler o fim do registo em vez de acreditar no anúncio. Os códigos desta tabela foram todos lidos do próprio registo.
 
 ## 11 · O que fica para quem revê
 
 - **O item 2 é do diretor** (§1): a Vercel constrói em Node 24.x, o `.nvmrc` diz 22.23.1, e apertar `engines` sem ele decidir criava a contradição em vez de a fechar.
 - **Um achado adjacente, fora deste bloco**: `src/components/Frase.astro:57` escreve os parênteses rectos do marcador à mão (`[{parte.marcador}]`) em vez de importar `POR_VERIFICAR`, o que está em tensão com a regra escrita em `src/data/marcador.mjs:18` («NUNCA se escreve o texto do marcador à mão num gabarito. Importa-se.»). Funciona hoje e é o que rende o único marcador vivo da página de Évora, mas é um segundo caminho para o texto do marcador que a constante não governa. Não se tocou: não é deste bloco.
+- **O fecho do bloco não está feito, e não é do construtor.** A regra 5 do plano manda fechar em três ficheiros (a secção do `DECISIONS.md` com `Afecta` válido, a linha nos pendentes, e a caixa riscada com a data no plano). Nenhum dos três foi escrito aqui: são do lugar de direção, que funde. Os dois ramos ficam empurrados e por fundir, e nenhum deles tocou em `main` nem em `master`.
 - **A auditoria errou em dois números** que este bloco mediu: o `lang` faltava em 8 dos 16 documentos e não nos 16; os identificadores mortos eram 18 e não 12. As duas correcções estão nas §2.1 e §5.1.
