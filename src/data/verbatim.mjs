@@ -31,6 +31,35 @@ export const VERBATIM = {
    * `[a verificar]` fica em português nas duas edições — o que se copia de uma
    * fonte fica como a fonte o escreveu.
    */
+  /**
+   * A DESIGNAÇÃO DO DOCUMENTO, TRANSCRITA (F1.1, segunda passagem, 03.09.2026).
+   *
+   * A leitura a frio do Codex (Blocking 6) mostrou que a frase dizia menos do que
+   * a linha sabe: a nota das 21 linhas não nomeia só a Comissão, nomeia o
+   * documento em que a confirmação foi feita, e diz o que ele é. A frase passa a
+   * dizê-lo, e o nome do documento é uma transcrição como o identificador dele.
+   *
+   * A CADEIA É UM PEDAÇO DA NOTA, palavra por palavra, e sem a parte que traz o
+   * travessão: a nota escreve «(Relatório por País 2026 — Portugal)», e o que a
+   * frase precisa é da designação do relatório, não do país, que já está dito na
+   * página inteira. Uma transcrição pode ser um pedaço; o que ela não pode ser é
+   * uma paráfrase, e o portão compara carácter a carácter o que a página rende
+   * com o que está aqui.
+   *
+   * SÓ NA EDIÇÃO PORTUGUESA, e `lang` di-lo. A nota do livro-razão é portuguesa,
+   * e traduzir a designação seria escrever um título inglês que este bloco não
+   * leu em lado nenhum: a edição inglesa diz o que o documento É, em minúsculas
+   * («the European Commission's country report»), que é uma descrição e não um
+   * título, e leva o mesmo identificador ao lado.
+   */
+  'relatorio-por-pais-2026': {
+    lang: 'pt',
+    origem:
+      'Campo `note` das 21 linhas dos dois quadros da União em ledger/claims/, ' +
+      'o parêntesis que designa o documento: «(Relatório por País 2026 — Portugal)».',
+    text: `Relatório por País 2026`,
+  },
+
   'swd-2026-222': {
     lang: null,
     origem:
