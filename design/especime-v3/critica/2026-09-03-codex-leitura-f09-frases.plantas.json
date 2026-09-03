@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-03T09:02:14+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/78714fcd-9d7a-49ae-92d0-914347b16683/scratchpad/leituras/f09-pacote",
+ "plantas": [
+  {
+   "id": "P1a",
+   "ficheiro": "check-voz.mjs",
+   "descricao": "o arame perde a palavra «a descer» (cópia inteira do portão da voz)",
+   "sha256_antes": "6b53d634e780139835db5b213e8670864bcac166aee2e88246ae8fbf3a4ea25d",
+   "sha256_depois": "09f4aa45386ae38aa50426fe97a03d783796fbe86c479e8c06cc81f1f2788cef",
+   "contexto_antes": " = [\n  /* tendência · o sítio publica um valor por indicador e nenhuma série; um\n     sentido sem os dois valores é uma afirmação que a página não sustenta. */\n  { pt: 'a descer', en: 'falling', porque: 'tendência sem série' },\n  { pt: 'a subir', en: 'rising', porque: 'tendência sem série' },\n  { pt: 'duplicou', en: 'doubled', porque: 'comparação entre dois períodos, e a página tem um'",
+   "contexto_depois": " = [\n  /* tendência · o sítio publica um valor por indicador e nenhuma série; um\n     sentido sem os dois valores é uma afirmação que a página não sustenta. */\n  { pt: 'a subir', en: 'rising', porque: 'tendência sem série' },\n  { pt: 'duplicou', en: 'doubled', porque: 'comparação entre dois períodos, e a página tem um'"
+  },
+  {
+   "id": "P1b",
+   "ficheiro": "diff.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff",
+   "sha256_antes": "25c2c5368fb8e048ea5e604dbcaa70081a81a808c4b5152e2cef31e4ef720990",
+   "sha256_depois": "9285334456f79063b45430edbcde61e146efb3e0d0267e060f75ab5b13a0913b",
+   "contexto_antes": " [\n+  /* tendência · o sítio publica um valor por indicador e nenhuma série; um\n+     sentido sem os dois valores é uma afirmação que a página não sustenta. */\n+  { pt: 'a descer', en: 'falling', porque: 'tendência sem série' },\n+  { pt: 'a subir', en: 'rising', porque: 'tendência sem série' },\n+  { pt: 'duplicou', en: 'doubled', porque: 'comparação entre dois períodos, e a página tem u",
+   "contexto_depois": " [\n+  /* tendência · o sítio publica um valor por indicador e nenhuma série; um\n+     sentido sem os dois valores é uma afirmação que a página não sustenta. */\n+  { pt: 'a subir', en: 'rising', porque: 'tendência sem série' },\n+  { pt: 'duplicou', en: 'doubled', porque: 'comparação entre dois períodos, e a página tem u"
+  },
+  {
+   "id": "P2a",
+   "ficheiro": "figuras.mjs",
+   "descricao": "a frase da dívida volta a dizer «e a descer» na fonte, enquanto o relatório e a página construída dizem que saiu (cópia inteira)",
+   "sha256_antes": "17a8ae590d023ab8e86ebbda71d77240a8b6f54a3558069a4ca4ee052522b814",
+   "sha256_depois": "4906e4752eed6ed2cd2ff09e6256b2ee29ce4fee38a8c46bd601ee7db0702013",
+   "contexto_antes": "  `comparacaoComOLimiar()`, que compara o valor publicado com o limiar\n       publicado, e os dois números estão na célula. */\n    frase: {\n      pt: [\n        'Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu.',\n      ],\n      en: [\n        'General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold.',\n     ",
+   "contexto_depois": "  `comparacaoComOLimiar()`, que compara o valor publicado com o limiar\n       publicado, e os dois números estão na célula. */\n    frase: {\n      pt: [\n        'Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu, e a descer.',\n      ],\n      en: [\n        'General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold.',\n     "
+  },
+  {
+   "id": "P2b",
+   "ficheiro": "diff.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff",
+   "sha256_antes": "9285334456f79063b45430edbcde61e146efb3e0d0267e060f75ab5b13a0913b",
+   "sha256_depois": "d836c8055706d63fa5021bf38ac8286392c7d2ff42f54351e430db269a3f1647",
+   "contexto_antes": "[\n-        'Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu, e a descer.',\n+        'Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu.',\n       ],\n       en: [\n-        'General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold, and ",
+   "contexto_depois": "[\n-        'Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu, e a descer.',\n+        'Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu, e a descer.',\n       ],\n       en: [\n-        'General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold, and "
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a aritmética da altura: 7 071 para 6 963 são 108 px e o relatório passa a dizer 180",
+   "sha256_antes": "9af9c62890fd1b2561b314eada8876d1762490e554e03ca891d927e1632e37d7",
+   "sha256_depois": "1ece4a0c4b644a8317db4db063c7f37a80e137ba848d0fbfe2587aee0e4d10e2",
+   "contexto_antes": "to como tal: a\núnica diferença entre os dois estados é o texto que saiu.\n\n| rota | antes (reconstruído) | depois (real) | diferença |\n| --- | --- | --- | --- |\n| `/` | 7 071 px | 6 963 px | 108,0 px |\n| `/en/` | 7 042 px | 6 933 px | 109,0 px |\n\nA primeira página encolheu cerca de um sexto de um ecrã de telemóvel nas duas edições.\nÉ ganho para a F1.1, cuja m",
+   "contexto_depois": "to como tal: a\núnica diferença entre os dois estados é o texto que saiu.\n\n| rota | antes (reconstruído) | depois (real) | diferença |\n| --- | --- | --- | --- |\n| `/` | 7 071 px | 6 963 px | 180,0 px |\n| `/en/` | 7 042 px | 6 933 px | 109,0 px |\n\nA primeira página encolheu cerca de um sexto de um ecrã de telemóvel nas duas edições.\nÉ ganho para a F1.1, cuja m"
+  }
+ ]
+}
