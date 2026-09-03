@@ -980,6 +980,18 @@ export function regiaoDaCabeca(texto) {
  * ficam como o autor os escreveu, porque recolori-los era a casa a reescrever o
  * que cita. O que ficou por corrigir está contado no relatório do bloco.
  *
+ * A REGRA DE CIMA GANHOU UMA EXCEPÇÃO, MEDIDA (segunda passagem, 03.09.2026,
+ * Blocking 4). Corrigido tudo o resto, sobravam 1 111 nós `color-contrast`
+ * graves nos dezasseis, todos do texto das PRÓPRIAS obras contra o fundo que
+ * elas próprias compõem — nunca as barras dos gráficos, nunca os fios de
+ * severidade, só o texto. Achatar essas cores para a tinta da casa apagava o
+ * código com que uma obra distingue tipos de fonte e níveis; a decisão do
+ * lugar de direção foi outra: onde uma cor do texto falha 4,5:1 (ou um objeto
+ * de interface falha 3:1), substitui-se pela sombra mais próxima da MESMA
+ * matiz e saturação que passa, mais escura em claro e mais clara em escuro —
+ * nunca por uma cor nova, sempre pela mesma obra, só legível. Ver
+ * `AJUSTES_DE_COR` e `estiloDosAjustesDeCor()`, logo a seguir a esta função.
+ *
  * `!important` E PORQUÊ. As folhas dos dezasseis declaram os seus filetes por
  * classe (`.table-shell td`, `.tablewrap`), e uma corrida de especificidade
  * contra dezasseis folhas de outra gente é uma corrida que se perde no
@@ -1107,6 +1119,339 @@ function estiloDaMoldura() {
     regras,
   ].join('\n');
   return ESTILO_DA_MOLDURA;
+}
+
+/**
+ * ===========================================================================
+ * OS AJUSTES DE COR DENTRO DAS OBRAS (Blocking 4, segunda passagem, 03.09.2026)
+ * ===========================================================================
+ *
+ * O relatório do construtor mediu, depois de tudo o que a folha por si só
+ * resolve, 1 111 nós `color-contrast` graves nos dezasseis: todos do texto das
+ * PRÓPRIAS obras, contra o fundo que elas próprias compõem. Duas hipóteses
+ * chegaram ao lugar de direção — reescrever a ficha de cor de cada documento, à
+ * mão, ou achatar toda a cor do texto para a tinta da casa — e as duas
+ * apagavam o código de cor com que uma obra distingue tipos de fonte, níveis e
+ * ligações dentro das suas próprias tabelas.
+ *
+ * A DECISÃO: nenhuma das duas. Onde uma cor do texto falha 4,5:1 (ou um objeto
+ * de interface falha 3:1), a moldura substitui-a pela sombra mais próxima da
+ * MESMA matiz e saturação que passa — mais escura em claro, mais clara em
+ * escuro — para que a obra continue a distinguir as suas próprias cores, só
+ * que todas legíveis. Nunca uma cor nova; sempre a mesma, deslocada o menos
+ * que chegue.
+ *
+ * ONDE A SUBSTITUIÇÃO ENTRA, E PORQUE NÃO PODE PARTIR AS OUTRAS QUINZE. As
+ * nove obras com violações compõem o seu texto por uma meia dúzia de FICHAS
+ * CSS próprias (`--ink-3`, `--teal`, `--blue`…, cada uma no seu `:root`), não
+ * por uma cor escrita em cada nó: `.tag.src{color:var(--teal)}`,
+ * `.psub{color:var(--ink-3)}`, e por aí fora — medido ficha a ficha, na fonte,
+ * antes de se escrever este código, nunca adivinhado do nome da classe (ver
+ * `design/especime-v3/medicoes/moldura-construtor.md`, segunda passagem, §C1).
+ * Substituir a FICHA no elemento que a moldura já envolve
+ * (`[data-oedp-moldura]`) chega a todos os que a usam — tabela ou não, com
+ * classe ou herdada — sem tocar num selector da obra. E como cada documento é
+ * o SEU PRÓPRIO ficheiro construído, uma regra escrita para
+ * `agua-nao-faturada` simplesmente não existe no ficheiro de
+ * `evora-quinze-anos-cinco-mandatos`: o âmbito é o ficheiro que a serve, e não
+ * precisa de um atributo novo para o dizer.
+ *
+ * A DIRECÇÃO É A DO TEMA, NUNCA A PERGUNTA A CADA PAR DE CORES: claro escurece,
+ * escuro aclara, sempre. As duas metades só entram quando ESSE tema de facto
+ * falha NESSA ficha — a que já passa (o `--olive` escuro da água, o
+ * `--algarve` escuro do Alentejo) fica exactamente como a obra a escreveu, dos
+ * dois lados, porque o `@media` de cada metade só declara a ficha que precisa
+ * dela.
+ *
+ * OS FUNDOS SÃO OS MEDIDOS, NÃO OS DECLARADOS. Uma mesma ficha aparece contra
+ * vários fundos na mesma obra (o papel, um painel, o interior de uma célula); o
+ * que está em `AJUSTES_DE_COR` é o PIOR fundo que o axe-core mediu entre os nós
+ * que de facto falharam. Passar contra o pior garante passar contra todos os
+ * melhores.
+ */
+
+/**
+ * A meta de contraste do texto (WCAG 2.1 §1.4.3), com uma margem pequena para
+ * o arredondamento do axe-core e para o deslize mínimo de um fundo composto
+ * por `color-mix()` quando a ficha que o alimenta também muda (`.tag.src`, por
+ * exemplo, tem o seu PRÓPRIO fundo tingido de `--teal`).
+ */
+const ALVO_TEXTO_DA_OBRA = 4.5 + 0.05;
+
+/**
+ * Uma correcção medida: a ficha CSS da obra, o tema em que ela falha, a cor
+ * original e o PIOR fundo medido para essa cor nesse tema. `alvo` é 4,5 por
+ * omissão (texto); uma entrada de objecto de interface pediria 3.
+ *
+ * `misturaFundo` é A EXCEPÇÃO MEDIDA, E PORQUE O ALVO SOZINHO NÃO CHEGA: os
+ * selos `.tag.*` da água (`tag src`, `tag inf`, `tag prs`) pintam o seu PRÓPRIO
+ * fundo com `color-mix(in srgb,var(--teal|--blue|--orange) 16%,transparent)`
+ * — a MESMA ficha que dá a cor do texto. Escurecer `--teal` também escurece
+ * (16% do deslocamento) o fundo do seu próprio selo, e um alvo medido contra o
+ * fundo ANTIGO fica curto contra o fundo NOVO (medido: 0,15 a 0,3 pontos
+ * curto, 03.09.2026). Uma entrada com `misturaFundo` diz «este fundo é
+ * `misturaFundo` desta MESMA ficha composta sobre um pano por trás», e
+ * `ajustaParaContraste()` recompõe o fundo a cada passo, contra o pano e não
+ * contra o número antigo.
+ * @typedef {{ ficha: string, tema: 'light'|'dark', original: string, fundo: string, alvo?: number, misturaFundo?: number }} AjusteDeCor
+ */
+
+/**
+ * `agua-nao-faturada` e `onde-esta-a-agua` são a mesma folha (medido: os
+ * mesmos pares de cor, exactos, nas duas obras), e por isso a mesma lista de
+ * correcções serve as duas.
+ * @type {AjusteDeCor[]}
+ */
+const AJUSTE_AGUA_NAO_FATURADA = [
+  { ficha: 'ink-3', tema: 'light', original: '#7a8895', fundo: '#f1f3f5' },
+  { ficha: 'ink-3', tema: 'dark', original: '#6e808d', fundo: '#1c262d' },
+  /* O pior fundo medido de --teal, --blue e --orange é sempre o do seu PRÓPRIO
+     selo `.tag.*` (color-mix a 16% consigo mesma): ver `misturaFundo`, acima. */
+  { ficha: 'teal', tema: 'light', original: '#009aa6', fundo: '#cfe9ec', misturaFundo: 0.16 },
+  { ficha: 'teal', tema: 'dark', original: '#189ca8', fundo: '#163239', misturaFundo: 0.16 },
+  { ficha: 'blue', tema: 'light', original: '#3f62b0', fundo: '#dae0ed', misturaFundo: 0.16 },
+  { ficha: 'blue', tema: 'dark', original: '#6486ce', fundo: '#222f3f', misturaFundo: 0.16 },
+  { ficha: 'orange', tema: 'light', original: '#c85c15', fundo: '#efdfd5', misturaFundo: 0.16 },
+  { ficha: 'orange', tema: 'dark', original: '#de7433', fundo: '#362c26', misturaFundo: 0.16 },
+  /* O `--olive` escuro (`#7ba332`) já passa: nenhuma entrada `dark` aqui. O
+     pior fundo do `--olive` claro é o `.stype.a` (sem `color-mix`): nenhuma
+     `misturaFundo` aqui. */
+  { ficha: 'olive', tema: 'light', original: '#6e9e1f', fundo: '#f7f8f9' },
+];
+
+/**
+ * As correcções medidas, por trabalho. Um slug ausente daqui não tinha
+ * nenhuma violação de `color-contrast` no texto: as outras sete obras não
+ * entram porque não precisam.
+ * @type {Record<string, AjusteDeCor[]>}
+ */
+const AJUSTES_DE_COR = {
+  'agua-nao-faturada': AJUSTE_AGUA_NAO_FATURADA,
+  'onde-esta-a-agua': AJUSTE_AGUA_NAO_FATURADA,
+  'evolucao-de-portugal-desde-1981': [
+    /* O `--ink-3` escuro (`#8b939c`) já passa: só a entrada `light`. */
+    { ficha: 'ink-3', tema: 'light', original: '#828a93', fundo: '#f2f4f7' },
+  ],
+  'alentejo-algarve': [
+    { ficha: 'ink-3', tema: 'light', original: '#8a877e', fundo: '#f5f4f1' },
+    { ficha: 'ink-3', tema: 'dark', original: '#807d74', fundo: '#232322' },
+    /* `--algarve` e `--alentejo` escuros já passam: só as entradas `light`. */
+    { ficha: 'algarve', tema: 'light', original: '#0e7fa3', fundo: '#fcfcfb' },
+    { ficha: 'alentejo', tema: 'light', original: '#a9741a', fundo: '#fcfcfb' },
+  ],
+  'evora-prometido-pago-auditado-2026': [
+    /* O `--chip-2` escuro (`#7e9099`) já passa: só a entrada `light`. */
+    { ficha: 'chip-2', tema: 'light', original: '#7a8a91', fundo: '#fafbf9' },
+  ],
+  'which-door-is-yours': [
+    /* `--muted` e `--soon` escuros já passam: só as entradas `light`. */
+    { ficha: 'muted', tema: 'light', original: '#5a6b70', fundo: '#e3e7e2' },
+    { ficha: 'soon', tema: 'light', original: '#9a6212', fundo: '#f6ebd4' },
+  ],
+};
+
+/** @param {string} hex */
+function hexParaRgb(hex) {
+  const n = parseInt(hex.replace('#', ''), 16);
+  return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+}
+
+/** @param {number[]} rgb */
+function rgbParaHex(rgb) {
+  return (
+    '#' +
+    rgb.map((v) => Math.round(Math.min(255, Math.max(0, v))).toString(16).padStart(2, '0')).join('')
+  );
+}
+
+/** A luminância relativa (WCAG 2.1 §1.4.3), a mesma fórmula da régua do bloco. @param {number[]} rgb */
+function luminancia(rgb) {
+  const c = rgb.map((v) => {
+    const s = v / 255;
+    return s <= 0.03928 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+  });
+  return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
+}
+
+/** @param {number[]} a @param {number[]} b */
+function razaoDeContraste(a, b) {
+  const [x, y] = [luminancia(a), luminancia(b)].sort((p, q) => q - p);
+  return (x + 0.05) / (y + 0.05);
+}
+
+/** @param {number[]} rgb */
+function rgbParaHsl(rgb) {
+  const r = rgb[0] / 255;
+  const g = rgb[1] / 255;
+  const b = rgb[2] / 255;
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  const l = (max + min) / 2;
+  const d = max - min;
+  let h = 0;
+  let s = 0;
+  if (d !== 0) {
+    s = d / (1 - Math.abs(2 * l - 1));
+    if (max === r) h = ((g - b) / d) % 6;
+    else if (max === g) h = (b - r) / d + 2;
+    else h = (r - g) / d + 4;
+    h *= 60;
+    if (h < 0) h += 360;
+  }
+  return [h, s * 100, l * 100];
+}
+
+/** @param {number[]} hsl */
+function hslParaRgb(hsl) {
+  const h = hsl[0];
+  const s = hsl[1] / 100;
+  const l = hsl[2] / 100;
+  const c = (1 - Math.abs(2 * l - 1)) * s;
+  const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
+  const m = l - c / 2;
+  let rgb;
+  if (h < 60) rgb = [c, x, 0];
+  else if (h < 120) rgb = [x, c, 0];
+  else if (h < 180) rgb = [0, c, x];
+  else if (h < 240) rgb = [0, x, c];
+  else if (h < 300) rgb = [x, 0, c];
+  else rgb = [c, 0, x];
+  return rgb.map((v) => (v + m) * 255);
+}
+
+/**
+ * A sombra mais próxima da MESMA matiz e saturação que passa o alvo contra o
+ * fundo medido: um passo de 0,1% de luminosidade de cada vez, mais escura em
+ * `light`, mais clara em `dark`, até passar ou esgotar a escala (e nesse caso
+ * a construção pára: um alvo que a escala de 0 a 100% não alcança é uma
+ * entrada medida a rever, não um valor a forçar).
+ *
+ * @param {AjusteDeCor} ajuste
+ */
+function ajustaParaContraste(ajuste) {
+  const { ficha, tema, original, fundo, alvo, misturaFundo } = ajuste;
+  const rgbOriginal = hexParaRgb(original);
+  const rgbFundoMedido = hexParaRgb(fundo);
+  /* O PANO POR TRÁS DO PRÓPRIO SELO, recuperado do fundo medido: se o fundo é
+     `misturaFundo` desta MESMA ficha composta sobre um pano estático (o selo
+     `.tag.*` sobre o papel ou o painel), o pano é o que sobra depois de se
+     tirar essa parcela: `medido = m·original + (1-m)·pano`. */
+  const m = misturaFundo;
+  const rgbPano = m !== undefined ? rgbFundoMedido.map((c, i) => (c - m * rgbOriginal[i]) / (1 - m)) : null;
+  const hsl = rgbParaHsl(rgbOriginal);
+  const h = hsl[0];
+  const s = hsl[1];
+  const meta = alvo ?? ALVO_TEXTO_DA_OBRA;
+  const passo = tema === 'dark' ? 0.1 : -0.1;
+  let l = hsl[2];
+  for (let i = 0; i <= 1000; i++) {
+    const rgb = hslParaRgb([h, s, l]);
+    /* O FUNDO EFECTIVO SEGUE A COR A CADA PASSO quando é a própria cor que o
+       compõe: escurecer `--teal` escurece também os 16% do fundo do seu selo,
+       e é contra ESSE fundo, recomposto, que o contraste se mede — não contra
+       o número medido antes do ajuste, que já não vai ser o de facto servido. */
+    const rgbFundoEfetivo =
+      rgbPano !== null && m !== undefined ? rgb.map((c, i) => m * c + (1 - m) * rgbPano[i]) : rgbFundoMedido;
+    if (razaoDeContraste(rgb, rgbFundoEfetivo) >= meta) return rgbParaHex(rgb);
+    const seguinte = l + passo;
+    if (seguinte < 0 || seguinte > 100) break;
+    l = seguinte;
+  }
+  return morre(
+    `não consegui ajustar \`--${ficha}\` (${tema}, ${original} sobre ${fundo}) até ${meta}:1 sem sair ` +
+      `de 0 a 100% de luminosidade.`,
+  );
+}
+
+/** @type {Map<string, string>} */
+const ESTILOS_DOS_AJUSTES = new Map();
+
+/**
+ * O CSS dos ajustes de cor para UM documento, ou a cadeia vazia se o seu slug
+ * não está em `AJUSTES_DE_COR`. Cada metade (`light`, `dark`) só declara a
+ * ficha que falha NESSE tema: a que já passa fica fora dos dois blocos, e por
+ * isso continua exactamente a da obra, nos dois lados.
+ *
+ * @param {string} slug
+ */
+function estiloDosAjustesDeCor(slug) {
+  const emCache = ESTILOS_DOS_AJUSTES.get(slug);
+  if (emCache !== undefined) return emCache;
+
+  const ajustes = AJUSTES_DE_COR[slug];
+  let estilo = '';
+  if (ajustes && ajustes.length > 0) {
+    /** @param {AjusteDeCor[]} lista */
+    const declara = (lista) => lista.map((a) => `--${a.ficha}:${ajustaParaContraste(a)}`).join(';');
+    const claras = ajustes.filter((a) => a.tema === 'light');
+    const escuras = ajustes.filter((a) => a.tema === 'dark');
+    /** @type {string[]} */
+    const blocos = [];
+    if (claras.length > 0) {
+      blocos.push(`@media (prefers-color-scheme:light){[data-oedp-moldura]{${declara(claras)}}}`);
+    }
+    if (escuras.length > 0) {
+      blocos.push(
+        `@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) ` +
+          `[data-oedp-moldura]{${declara(escuras)}}}`,
+      );
+    }
+    estilo = blocos.join('\n');
+  }
+  ESTILOS_DOS_AJUSTES.set(slug, estilo);
+  return estilo;
+}
+
+/**
+ * ONDE `--rule-strong` NÃO CHEGA, MEDIDO (Major 7, segunda passagem). O
+ * filete da moldura é `--rule-strong` porque passa 3:1 contra o PAPEL DA
+ * CASA — mas o que o rodeia, dentro de cada obra, não é o papel da casa: é o
+ * fundo que essa célula tem, com a `opacity` que ela própria declara (Major 7
+ * mede os dois fundos DE FACTO compostos, `opacity` incluída: ver
+ * `filetEfetivo()` em `tests/documentos/moldura.mjs`). Medidos os dois lados
+ * de cada filete nos dezasseis, dois sítios em duas obras ficam abaixo de 3:1
+ * mesmo com `--rule-strong`:
+ *
+ *   · a fileira que assinala um mandato em `evora-quinze-anos-cinco-mandatos`
+ *     (fundo `--series-1-soft` a `opacity:.85`, uma cor de série de gráfico,
+ *     não da casa): 1,57:1 em claro, 2,33:1 em escuro;
+ *   · o cabeçalho de `which-door-is-yours` (fundo `--surface-2`, quase o
+ *     papel): 2,98:1, não 3.
+ *
+ * NESTES DOIS SELECTORES, E SÓ NELES, o filete sobe ao degrau mais escuro da
+ * casa, `--ink` — o mesmo que o F0.7 escolheu quando `--g3` não chegava ao fio
+ * da faixa. Medido depois: 5,97:1 e 5,84:1 no primeiro (claro e escuro), 5,36:1
+ * no segundo. Continua paleta da casa; só sobe um degrau onde o de baixo não
+ * chegava, e só onde a medição o exige.
+ * @type {Record<string, string[]>}
+ */
+const FILETE_REFORCADO = {
+  'evora-quinze-anos-cinco-mandatos': ['tr.boundary td'],
+  'which-door-is-yours': ['table thead th'],
+};
+
+/** @type {Map<string, string>} */
+const ESTILOS_DO_FILETE_REFORCADO = new Map();
+
+/**
+ * O CSS do filete reforçado para UM documento, ou a cadeia vazia se o seu
+ * slug não está em `FILETE_REFORCADO`. `--oedp-ink` já está declarado nos
+ * dois temas por `estiloDaMoldura()` (é a ficha do texto das células): esta
+ * regra só o reaproveita, e por isso não precisa da sua própria metade escura.
+ *
+ * @param {string} slug
+ */
+function estiloDoFileteReforcado(slug) {
+  const emCache = ESTILOS_DO_FILETE_REFORCADO.get(slug);
+  if (emCache !== undefined) return emCache;
+
+  const selectores = FILETE_REFORCADO[slug];
+  const estilo =
+    selectores && selectores.length > 0
+      ? `${selectores.map((s) => `[data-oedp-moldura] ${s}`).join(',')}{border-color:var(--oedp-${FICHA_DA_TINTA})!important}`
+      : '';
+  ESTILOS_DO_FILETE_REFORCADO.set(slug, estilo);
+  return estilo;
 }
 
 /**
@@ -1340,7 +1685,7 @@ export function comFaixa(bruto, { slug, lang }) {
   return (
     bruto.slice(0, corpo.fim) +
     marca +
-    `<style>${estiloDaMoldura()}</style>` +
+    `<style>${estiloDaMoldura()}${estiloDosAjustesDeCor(slug)}${estiloDoFileteReforcado(slug)}</style>` +
     `<script>${guiaoDaMoldura(lang)}</script>` +
     moldura.abre +
     bruto.slice(corpo.fim, fimDoCorpo) +
