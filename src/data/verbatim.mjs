@@ -97,7 +97,7 @@ export function normalizeWhitespace(s) {
 
 /** @param {string} key */
 export function verbatim(key) {
-  const entry = /** @type {Record<string, any>} */ (VERBATIM)[key];
+  const entry = /** @type {TabelaAberta<typeof VERBATIM>} */ (VERBATIM)[key];
   if (!entry) throw new Error(`verbatim: bloco desconhecido "${key}"`);
   return entry;
 }

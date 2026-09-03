@@ -145,11 +145,17 @@ export function urlDoCartao(args) {
  * levava — o que muda com esta decisão são as páginas de LINHA do estudo, e mais
  * nada.
  *
- * @param {string | null} study
- * @param {string} lang
+ * `study` chega como o campo `study` de uma linha, que é o que o ficheiro
+ * trouxer: por isso pergunta-se primeiro se é uma cadeia, e só depois se é um
+ * estudo de dados. Um molde por cima de um `null` era uma promessa falsa
+ * (leitura a frio, Major 12).
+ *
+ * @param {unknown} study
+ * @param {Lingua} lang
  */
 function cartaoDoEstudo(study, lang) {
-  const conjunto = ESTUDOS_DE_DADOS.get(/** @type {string} */ (study));
+  if (typeof study !== 'string') return null;
+  const conjunto = ESTUDOS_DE_DADOS.get(study);
   if (!conjunto) return null;
   return { tipo: 'estudo', id: study, rota: routePath(conjunto, lang), lang };
 }
@@ -168,7 +174,7 @@ function cartaoDoEstudo(study, lang) {
  * silêncio.
  *
  * @param {string} caminho
- * @param {string} lang
+ * @param {Lingua} lang
  */
 export function cartaoDaPagina(caminho, lang) {
   const rota = matchPath(caminho);
@@ -195,7 +201,7 @@ export function cartaoDaPagina(caminho, lang) {
  * e é assim que o registo diz, sem que ninguém tenha de o adivinhar, que a
  * Agenda e o Método levam o cartão da primeira página.
  *
- * @param {{ caminho: string, lang: string }[]} rotasDoSitio
+ * @param {{ caminho: string, lang: Lingua }[]} rotasDoSitio
  */
 export function cartoesAConstruir(rotasDoSitio) {
   /** @type {Map<string, { tipo: string, id: string | null, rota: string, lang: string, cobre: string[] }>} */
@@ -243,7 +249,7 @@ export function cartoesAConstruir(rotasDoSitio) {
  */
 /**
  * @param {Linha} claim
- * @param {string} campo
+ * @param {CampoDaLinha} campo
  */
 function valorDaLinha(claim, campo) {
   return {
@@ -458,7 +464,7 @@ export function modeloDoCartao({ tipo, id, lang }) {
  * não pode dizer um número que ninguém consegue reconduzir a uma linha ou a
  * uma chave da prova.
  *
- * @param {Record<string, any>} modelo
+ * @param {ReturnType<typeof modeloDoCartao>} modelo
  * @param {string} hospedeiro
  */
 export function copiaVisivel(modelo, hospedeiro) {

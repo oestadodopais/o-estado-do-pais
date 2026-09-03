@@ -9,9 +9,8 @@
  */
 
 /**
- * @typedef {'pt'|'en'} Lingua
- * @typedef {{ lang: string, hreflang: string, path: string }} Alternativa
- * @typedef {{ key: string, lang: string, params: { slug?: string } }} Rota
+ * @typedef {{ lang: Lingua, hreflang: string, path: string }} Alternativa
+ * @typedef {{ key: ChaveDeRota, lang: Lingua, params: { slug?: string } }} Rota
  */
 
 export const LANGS = /** @type {const} */ (['pt', 'en']);
@@ -42,7 +41,6 @@ export const PRIMARY_LANG = 'pt';
  * nas duas línguas, que o selo é a porta para a linha, e sem esta rota a
  * promessa era falsa (auditoria de 13.08.2026, F1).
  */
-/** @type {Record<string, Record<string, string>>} */
 export const ROUTES = {
   home: { pt: '/', en: '/en' },
   /**
@@ -233,8 +231,8 @@ export function pathFromUrl(url) {
 
 /**
  * Caminho de uma rota, numa língua. `params.slug` quando a rota o pede.
- * @param {string} key
- * @param {string} lang
+ * @param {ChaveDeRota} key
+ * @param {Lingua} lang
  * @param {{ slug?: string }} [params]
  * @returns {string}
  */
@@ -277,7 +275,11 @@ export function matchPath(path) {
   // Primeiro os caminhos literais, depois os que têm parâmetro:
   // /estudos tem de ganhar a /estudos/:slug.
   for (const pass of [0, 1]) {
-    for (const [key, byLang] of Object.entries(ROUTES)) {
+    /* `ROUTES` é um literal fechado: as suas chaves são exactamente as de
+       `ChaveDeRota`, e é isso que este molde diz. */
+    for (const [key, byLang] of /** @type {[ChaveDeRota, Record<Lingua, string>][]} */ (
+      Object.entries(ROUTES)
+    )) {
       for (const lang of LANGS) {
         const template = byLang[lang];
         if (!template) continue;
@@ -318,13 +320,15 @@ export function alternatesFor(path) {
 /**
  * O caminho equivalente na outra língua (para o botão PT/EN).
  * @param {string} path
- * @param {string} currentLang
+ * @param {Lingua} currentLang
  * @returns {string}
  */
 export function otherLanguagePath(path, currentLang) {
   const hit = matchPath(path);
   if (!hit) return currentLang === 'pt' ? ROUTES.home.en : ROUTES.home.pt;
-  /* `LANGS` tem duas entradas e no máximo uma é a corrente: a outra existe. */
-  const other = /** @type {string} */ (LANGS.find((l) => l !== currentLang));
+  /* `LANGS` é uma tupla de duas entradas e `currentLang` é uma delas, por isso
+     exactamente uma difere: o `find` acha sempre. É um facto do tipo, e não uma
+     promessa sobre dados de fora. */
+  const other = /** @type {Lingua} */ (LANGS.find((l) => l !== currentLang));
   return routePath(hit.key, other, hit.params);
 }

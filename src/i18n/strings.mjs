@@ -2424,7 +2424,7 @@ export const STRINGS = {
 /**
  * Todas as chaves, em profundidade, de um objecto de strings.
  *
- * @param {Record<string, any>} obj
+ * @param {object} obj
  * @param {string} [prefixo]
  * @returns {string[]}
  */
@@ -2458,10 +2458,10 @@ export function assertKeyParity() {
   return true;
 }
 
-/** @param {string} lang */
+/** @param {Lingua} lang */
 export function t(lang) {
   assertKeyParity();
-  const s = /** @type {Record<string, any>} */ (STRINGS)[lang];
+  const s = STRINGS[lang];
   if (!s) throw new Error(`i18n: língua desconhecida "${lang}"`);
   return s;
 }

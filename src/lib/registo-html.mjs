@@ -407,8 +407,12 @@ function fechaIntervalo(no, saida, ctx) {
        meio: é o que as conferências L6 e C6 percorrem para saber qual saída é
        de qual figura. */
     for (const saidaPendente of no.saidasPendentes ?? []) {
-      if (saidaPendente.selo !== undefined) saida.selo(saidaPendente.selo);
-      else saida.html(portaAposALigacao(/** @type {string} */ (saidaPendente.porta), ctx));
+      /* `'selo' in x` e não `x.selo !== undefined`: o tipo diz que uma saída é
+         um selo OU uma porta, e a pergunta é a que separa os dois (leitura a
+         frio, Major 15). Para os objetos que este módulo constrói, com uma
+         chave só, as duas perguntas dão sempre a mesma resposta. */
+      if ('selo' in saidaPendente) saida.selo(saidaPendente.selo);
+      else saida.html(portaAposALigacao(saidaPendente.porta, ctx));
     }
     return;
   }

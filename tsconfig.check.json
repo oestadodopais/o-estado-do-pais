@@ -38,6 +38,12 @@
     "noEmit": true,
     "allowJs": true,
     // LIGADO A 03.09.2026 (bloco F0.4).
-    "checkJs": true
+    "checkJs": true,
+    // ESCRITO AQUI, E NÃO HERDADO EM SILÊNCIO (segunda passagem, leitura a frio,
+    // Major 4). O `astro/tsconfigs/strict` que a base estende já o punha a
+    // `true`, mas quem lê este ficheiro não o via, e uma régua herdada é uma
+    // régua que alguém pode desligar num ficheiro que ninguém volta a ler. Fica
+    // escrito onde o portão está.
+    "strict": true
   }
 }

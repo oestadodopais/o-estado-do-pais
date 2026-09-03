@@ -280,3 +280,265 @@ Os doze passos verdes, `npm run build`, `npm run verify` e `npm run typecheck` e
 2. **`scripts/`**, 1 316 erros, é o F4.2 (§9).
 3. **`astro check`**, 337 erros na camada `.astro`, espera por uma decisão de dependências: ou o `@astrojs/check` passa a aceitar o TypeScript nativo, ou a casa carrega um segundo TypeScript (§10).
 4. **A linha de código em `src/i18n/strings.mjs`** (§3) é a única do bloco fora dos ficheiros deste construtor, e é uma linha.
+
+---
+
+# Segunda passagem · 03.09.2026
+
+*Escrita pelo construtor depois da leitura a frio do Codex (`design/especime-v3/critica/2026-09-03-codex-leitura-f04-typecheck.md`, 21 achados, cinco plantas de três classes vistas 5 de 5). O Blocking 1, o 2, o 3 e o Minor 19 são as plantas e não estavam neste ramo; a parte da CI do Minor 21 é do empacotamento. Os Major 4 a 18 e o Minor 20 são reais, e é o que esta secção conserta. A leitura tem razão no essencial: um portão de tipos que fecha 526 erros com 43 `any` e com moldes afirmados antes da validação prova menos do que diz.*
+
+## S1 · O que mudou, em números
+
+```
+$ git diff --stat 2ab66578 | tail -1
+ 42 files changed, 2522 insertions(+), 264 deletions(-)
+$ npm run typecheck   → EXIT=0, 0,208 s
+$ npm run verify      → EXIT=0, 58,5 s
+$ npm run build       → EXIT=0, 4 m 54,67 s
+```
+
+| | primeira passagem | segunda passagem |
+|---|---|---|
+| erros do `typecheck` | 0 | **0**, com tipos muito mais apertados |
+| `any` nas linhas acrescentadas [V] | 43 | **0** |
+| guardas de execução | 0 | **15** (nove exportados) |
+| conhecidos-positivos dos guardas | 0 | **37**, em `npm run verify` |
+| afirmações de compilação sobre as listas | 0 (escritas onde nunca corriam) | **4**, num ficheiro conferido |
+| `strict` | herdado | **escrito no `tsconfig.check.json`** |
+
+## S2 · Major 4 · o `strict` escrito, e a varredura das dispensas
+
+`"strict": true` passa a estar escrito no `tsconfig.check.json`, ao lado do `checkJs`. A base já o punha (`astro/tsconfigs/strict`), e a leitura tem razão: uma régua herdada é uma régua que quem lê o portão não vê.
+
+```
+$ grep -rn '@ts-nocheck\|@ts-ignore\|@ts-expect-error' src/ site.config.mjs astro.config.mjs | wc -l
+       0
+```
+
+Zero antes do bloco e zero depois: nenhuma dispensa existia e nenhuma se acrescentou.
+
+## S3 · Major 5 · o inventário dos hunks que mexem em linhas executáveis
+
+A frase «cinco refactorizações; tudo o resto são comentários» estava errada, e o número do leitor está certo em ordem de grandeza. Medido sobre o diff inteiro do ramo, contando como executável toda a linha acrescentada ou retirada que não seja em branco nem comentário:
+
+```
+$ git diff 2ab66578 -- src/ site.config.mjs scripts/ > diff.patch   # e o contador do §S3
+HUNKS COM LINHA EXECUTÁVEL: 110 de 263 hunks
+LINHAS EXECUTÁVEIS: +761 -169
+```
+
+Dos 110, um é `src/tipos.d.ts` inteiro (ficheiro novo, só declarações, sem uma linha que corra: +316). Ficam **109 hunks em `.mjs`, com +445 e -169 linhas executáveis**, assim distribuídos:
+
+| ficheiro | hunks com código / hunks | + / - |
+|---|---|---|
+| `src/lib/ledger.mjs` | 48 / 66 | +184 / -90 |
+| `src/lib/prova.mjs` | 8 / 18 | +14 / -10 |
+| `src/lib/registo-html.mjs` | 8 / 22 | +16 / -7 |
+| `src/lib/documentos.mjs` | 6 / 24 | +19 / -8 |
+| `src/lib/registos.mjs` | 5 / 7 | +53 / -11 |
+| `src/lib/eyetext.mjs` | 4 / 18 | +6 / -5 |
+| `src/i18n/lingua-dos-titulos.mjs` | 4 / 4 | +4 / -4 |
+| `src/data/studies.mjs` | 3 / 6 | +7 / -4 |
+| `src/data/correcoes.mjs` | 3 / 3 | +3 / -3 |
+| `src/lib/mapa.mjs` | 2 / 10 | +96 / -4 |
+| `src/lib/areas.mjs`, `livro.mjs`, `routes.mjs`, `marca.mjs` | 2 cada | |
+| `cartoes.mjs`, `agenda.mjs`, `inicio.mjs`, `livro-concelhos.mjs`, `estado.mjs`, `leituras.mjs`, `concelhos.mjs`, `verbatim.mjs`, `politica-ia.mjs`, `unidades.mjs` | 1 cada | |
+
+**Doze ficheiros levam SÓ linhas de comentário**, e entre eles os dois que outros construtores têm abertos hoje:
+
+```
+site.config.mjs · src/data/areas.mjs · src/data/caop-centroids.mjs · src/data/figuras.mjs
+src/data/municipios.mjs · src/i18n/strings.mjs · src/lib/conjunto.mjs · src/lib/dados.mjs
+src/lib/datas.mjs · src/lib/decimal.mjs · src/lib/jsonld.mjs · src/lib/regioes.mjs
+```
+
+A linha de código que a primeira passagem tinha posto em `src/i18n/strings.mjs:2464` **saiu**: `t()` recebe agora `Lingua` e lê `STRINGS[lang]` sem molde nenhum, que é ao mesmo tempo o tipo certo e o ficheiro de volta a comentário puro.
+
+### Os três hunks que podiam mudar um resultado de fronteira
+
+O leitor nomeou três. Aqui está o que se fez a cada um, e o que se escolheu:
+
+1. **`alojamentoCompleto()`, as leituras dos campos** (`src/lib/ledger.mjs:459`). **Voltou ao comportamento anterior, exacto.** A primeira passagem guardava `h[k]` numa variável (uma leitura em vez de duas) e acrescentava um `typeof h.bytes !== 'number'` (uma leitura a mais). Agora está outra vez `typeof h[k] !== 'string' || h[k].trim() === ''` e `!Number.isInteger(h.bytes) || h.bytes < 1`, com um molde na segunda leitura de cada par cuja justificação é a conferência que a acabou de preceder. O mesmo número de leituras, pela mesma ordem, com os mesmos curtos-circuitos: um objeto com getters responde como respondia.
+2. **O tratamento do objeto cru em `loadClaims()`** (`src/lib/ledger.mjs:876`). **Mudou de propósito, e é o Major 7.** Onde havia um molde (`/** @type {Linha} */ (bruto)`) há agora `eLinha()`, e um ficheiro do livro-razão sem `id` de cadeia não vazia é **recusado com a frase do que lhe falta**, em vez de entrar no mapa com a chave `undefined`. Conhecido-positivo: `eLinha/sem-id`, `eLinha/id-vazio`, `eLinha/lista`, `eLinha/nulo`, `eLinha/cadeia` em `scripts/provar-guardas.mjs`.
+3. **O encadeamento opcional sobre entrada malformada** (`src/lib/ledger.mjs`, dez sítios). As dez leituras de `c.document` passam por `documentoDaLinha(c)`, calculado uma vez por linha, que devolve o mapa ou `null`. Para toda a entrada possível o resultado é o mesmo que antes: `null`, uma lista, um escalar e um mapa dão hoje exactamente o que davam (`undefined` nos três primeiros casos, o campo no quarto), porque `c.document && typeof c.document === 'object' ? c.document.X : undefined` e `documentoDaLinha(c)?.X` só divergiriam num objeto que fosse `typeof 'object'` e não fosse mapa, que é só uma lista, e numa lista as duas expressões dão `undefined`. Conhecido-positivo: `documentoDaLinha/lista` e `documentoDaLinha/mapa`.
+
+Mais duas mudanças de comportamento sobre entrada malformada, escritas aqui porque também o são: `textoOuNulo()` devolve `null` para um campo de prosa que não seja cadeia (as 702 ocorrências dos quatro campos de prosa das 2 916 linhas de hoje são todas cadeias, medido), `listaDaLinha()` devolve `[]` para um campo de lista que não seja lista, e os nove `catch` deixaram de ler `.message` às cegas: leem `erro instanceof Error ? erro.message : String(erro)`, que imprime a coisa em vez de «undefined».
+
+## S4 · Major 6 · as somas dos 11 420 ficheiros, guardadas
+
+As duas listas ficam no repositório, e não numa frase:
+
+```
+design/especime-v3/medicoes/typecheck-dist/dist-antes.sha256    11 420 linhas
+design/especime-v3/medicoes/typecheck-dist/dist-depois.sha256   11 420 linhas
+```
+
+São a saída crua de `shasum -a 256` sobre todos os ficheiros de `dist/`, por ordem de caminho, antes (construído em `main`, `2ab66578`) e depois (construído neste ramo). Quem quiser refazer a comparação corre:
+
+```
+$ diff design/especime-v3/medicoes/typecheck-dist/dist-antes.sha256 \
+       design/especime-v3/medicoes/typecheck-dist/dist-depois.sha256
+```
+
+Diferem **dois** ficheiros, `./prova.json` e `./version.json`, e neles diferem **dois campos**: `commit` (o carimbo de que commit foi construído: `2ab66578` na primeira, `65265d93` na segunda) e `construido_em`. Os 7 233 `index.html`, o `cadeia.json`, os conjuntos de dados, os 2 916 JSON por linha, os cartões, os mapas do sítio e as folhas têm a mesma soma, byte a byte.
+
+## S5 · Major 7 a 10 · nenhuma forma é afirmada antes de ser validada
+
+Entraram **quinze guardas de execução**, nove deles exportados, e saíram os moldes que os precediam:
+
+| guarda | onde | o que confere |
+|---|---|---|
+| `eMapa` | `ledger.mjs` | um mapa: nem `null`, nem escalar, nem lista |
+| `eLinha` | `ledger.mjs` | o `id` de cadeia não vazia, que é a chave do mapa do livro-razão |
+| `eVerificacao` | `ledger.mjs` | `date`, `result`, `by` e o `path` (cadeia ou `null`) |
+| `eCorrecao` | `ledger.mjs` | `date` e `kind` |
+| `documentoDaLinha` | `ledger.mjs` | o bloco `document`, quando é um mapa |
+| `correcoesDaLinha`, `listaDaLinha` | `ledger.mjs` | as listas de uma linha, quando são listas |
+| `eManifestoDosRegistos` | `registos.mjs` | `exporter`, `origin` e o mapa `registos` |
+| `eRegistoDeConteudo` | `registos.mjs` | `blocks`, com o índice e o género de cada bloco |
+| `ePaisDoMapa` | `mapa.mjs` | o campo, as molduras e as unidades com a sua parcela |
+| `eDistritoDoMapa` | `mapa.mjs` | a identidade, o campo e os concelhos |
+| `eManifestoDoMapa` | `mapa.mjs` | a menção da fonte que a licença da CAOP obriga |
+| `eUnidade`, `eUnidadeComParcela`, `eIdentidadeDeDistrito`, `eCampo`, `eMoldura`, `eCaixa`, `ePonto` | `mapa.mjs` | as peças de que os três de cima se compõem |
+
+**Onde o validador diz o que falta campo a campo, o guarda é só `eMapa`.** Trocar as sete frases de uma correção estragada por um «tem de ser um mapa» seria perder o que o validador existe para dizer; `eCorrecao` e `eVerificacao` servem quem CONSOME (a página, as contagens), e o validador continua a nomear cada campo.
+
+### O que os guardas apanharam à primeira construção
+
+`DistritoDoMapa.unidade` **estava errado no tipo que a primeira passagem escreveu**. O tipo prometia uma `UnidadeDoMapa` com desenho, caixa e ponto; o `unidade` de `mapa/distritos/<slug>.json` traz slug, nome e tipo, e mais nada. Medido nos 29 ficheiros: `slug` 29, `nome` 29, `tipo` 29, `d` 0, `caixa` 0, `ponto` 0. O guarda recusou os 29 ficheiros na primeira construção depois de entrar, com a frase do que faltava, e o tipo passou a `IdentidadeDoDistrito`. **É a demonstração do Major 10 no próprio bloco**: uma forma declarada sem ninguém a ter olhado estava errada, e nada a teria dito.
+
+### `CorrecaoDaLinha`, o `field` singular (Major 9)
+
+O tipo declarava `fields?: string[]` plural, e o validador exige e lê `corr.field` singular. O plural saiu, o singular entrou tipado com os campos de `CAMPOS_DE_PROVENIENCIA`, e a assinatura de índice aberta que escondia a diferença saiu também: uma chave a mais numa correção é agora um erro de tipo, como já era um erro de construção. Conhecido-positivo: `eCorrecao/fields-plural`.
+
+### `parcela` (Major 13)
+
+Medido a 03.09.2026: as **29 de 29** unidades de `mapa/pais.json` declaram `parcela`; **0 de 308** concelhos dos 29 ficheiros de distrito a declaram. Por isso `PaisDoMapa.unidades` é `UnidadeComParcela[]` (obrigatória, e o guarda confere-a) e `UnidadeDoMapa.parcela` fica opcional. Os dois moldes `/** @type {string} */ (u.parcela)` saíram. Conhecido-positivo: `ePaisDoMapa/unidade-sem-parcela`.
+
+## S6 · Major 11, 12, 14, 15 · os contratos escritos como são
+
+- **`evaluateCheck` exige `claims`** e, sem ele, atira «falta o mapa das linhas», em vez de rebentar com um `TypeError` a meio da avaliação. O comentário que admitia que a chamada documentada rebentava saiu com o molde. Os cinco chamadores de hoje passam-no todos (medido: `src/lib/ledger.mjs:2460`, quatro em `scripts/check-ledger.mjs`, um em `tests/municipio/vazios.mjs`). Conhecidos-positivos: `evaluateCheck/sem-claims` e `evaluateCheck/com-claims`.
+- **`cartaoDoEstudo` pergunta antes de moldar**: recebe `unknown`, faz `typeof study !== 'string'` e só então procura no mapa dos estudos de dados.
+- **`MarcaDaExpressao` reconhece-se por `instanceof`**, e não pela verdade da cadeia. Uma marca de cadeia vazia é falsa: `if (ma || mb)` caía no ramo dos números e entregava à aritmética um objeto que não é um `Decimal`. Nenhuma das marcas de `VALORES_NAO_NUMERICOS` é vazia, por isso nada do que hoje se publica muda. Conhecidos-positivos: `MarcaDaExpressao/vazia` (duas conferências).
+- **As invariantes do renderizador estão no tipo.** `SaidaPendenteDoRegisto` é agora `{ selo: string } | { porta: string }` (um ou o outro, nunca os dois nem nenhum) e lê-se com `'selo' in saida`; `ContextoDoRegisto.ligacaoAberta` é `NoDeLigacao | null` e não um nó qualquer, e a função-molde `aberta(ctx)` desapareceu porque deixou de ser precisa.
+
+## S7 · Major 16 · os `any`
+
+```
+$ git diff -U0 2ab66578 -- src/ site.config.mjs | grep '^+' | grep -v '^+++' | grep -c '\bany\b'
+```
+
+**43 na primeira passagem, 0 na segunda** (as únicas ocorrências que sobram da palavra são quatro linhas de prosa em comentários que explicam porque saíram). Onde foram parar:
+
+| eram | passaram a |
+|---|---|
+| nove `catch (/** @type {any} */ err)` | `catch (erro)` com `erro instanceof Error ? erro.message : String(erro)` |
+| o objeto das traduções | `t(lang: Lingua)` a indexar `STRINGS` sem molde |
+| `LEITURAS`, `VERBATIM`, `FONTES_SEM_RESPOSTA` | `TabelaAberta<typeof X>`, que é a união dos valores declarados mais o `undefined` de uma chave que não existe |
+| as estruturas da agenda | `RegistoDaAgenda`, `ItemDaAgenda`, `RegistoDoCalendario`, `EventoDoCalendario`, com todas as chaves dos ficheiros declaradas e as que ninguém lê a `unknown` |
+| o manifesto do mapa | `ManifestoDoMapa` com a `FonteDoMapa` que a licença obriga, conferida no leitor |
+| os valores da validação do livro-razão | `unknown` com o guarda que os estreita |
+| `area`, `municipio`, `r`, `medida`, `modelo` | derivados das próprias tabelas: `(typeof AREAS)[number]`, `(typeof MUNICIPIOS_COM_PAGINA)[number]`, `(typeof REGIOES)[number]`, `ReturnType<typeof modeloDoCartao>` |
+| `gramatica`, `medidas` | `GramaticaDoLede` (derivado de `STRINGS`) e `MedidaDoPainel` |
+| os nós do `node-html-parser` | `import('node-html-parser').Node`, com o molde para `HTMLElement` só onde a linha de cima já provou que é um elemento |
+
+## S8 · Major 17 · os tipos derivam das autoridades
+
+`src/tipos.d.ts` deixou de copiar listas:
+
+```ts
+type Lingua        = (typeof import('./lib/routes.mjs').LANGS)[number];
+type ChaveDeRota   = keyof typeof import('./lib/routes.mjs').ROUTES;
+type CampoDaLinha  = (typeof import('./lib/ledger.mjs').CAMPOS)[number];
+type CampoDoDocumento    = (typeof import('./lib/ledger.mjs').CAMPOS_DO_DOCUMENTO)[number];
+type NaturezaDaCorrecao  = (typeof import('./data/correcoes.mjs').KINDS)[number];
+type CampoDeProveniencia = (typeof import('./data/correcoes.mjs').CAMPOS_DE_PROVENIENCIA)[number];
+```
+
+`ROUTES` deixou de estar alargada a `Record<string, Record<string, string>>`: as chaves voltam a ser as suas, `routePath()` pede uma `ChaveDeRota`, e o `conjunto` de um estudo de dados é uma chave de rota, não uma cadeia qualquer. Uma rota escrita com um nome que a tabela não tem passa a ser um erro de tipo.
+
+### As afirmações de compilação, e onde vivem
+
+Quatro afirmações prendem as duas listas uma à outra e fecham a construção quando se afastarem:
+
+```js
+/** @typedef {Verdadeiro<SemSobras<CampoDaLinha, keyof Linha>>} _TodoOCampoEstaNaLinha */
+/** @typedef {Verdadeiro<SemSobras<Exclude<keyof Linha, '__file'>, CampoDaLinha>>} _ALinhaNaoInventaCampos */
+/** @typedef {Verdadeiro<SemSobras<CampoDoDocumento, keyof DocumentoDaLinha>>} _TodaAChaveDoDocumento */
+/** @typedef {Verdadeiro<SemSobras<_CamposDaVerificacao[number], keyof VerificacaoDaLinha>>} _OsCamposDaVerificacao */
+```
+
+**Vivem em `src/lib/ledger.mjs`, e não em `src/tipos.d.ts`, e a razão é medida.** O `skipLibCheck` que a base do Astro liga faz o verificador saltar o corpo de qualquer `.d.ts`: escritas no ficheiro de declarações, as afirmações **nunca corriam**. Foi assim que a primeira versão desta secção as escreveu, e a planta mostrou-o. Desligar o `skipLibCheck` não serve:
+
+```
+$ npx tsc -p tsconfig.check.json --pretty false     # com "skipLibCheck": false
+57 erros, todos dentro de node_modules
+28 deles em node_modules/astro/dist/core/config/schemas/relative.d.ts
+```
+
+**As duas plantas que provam que agora correm:**
+
+| planta | resultado |
+|---|---|
+| um campo a mais em `Linha` (`campoInventado`) | `EXIT=1` · `ledger.mjs(338,26): error TS2344: Type 'false' does not satisfy the constraint 'true'` |
+| um campo a mais em `CAMPOS` (`campo_novo_do_formato`) | `EXIT=1` · o mesmo TS2344, mais um TS7053 em `cartoes.mjs` |
+| repostos os dois | `EXIT=0` |
+
+## S9 · Major 18 e Minor 20 · o programa, contado e provado
+
+**A aritmética dos ficheiros.** A leitura contou 28 guiões; são 29.
+
+```
+$ npx tsc -p tsconfig.check.json --listFiles | grep -v node_modules | grep -c '/scripts/'   # antes: 29
+$ npx tsc -p tsconfig.check.json --listFiles | grep -vc node_modules                        # antes: 74, agora: 45
+```
+
+74 = 45 do sítio + 29 de `scripts/`. Tirados os 29, ficam 45; menos `src/data/sobre.mjs`, 44; mais `src/tipos.d.ts`, **45**.
+
+**`sobre.mjs` não reentra por importação, e prova-se mecanicamente:**
+
+```
+$ npx tsc -p tsconfig.check.json --listFiles | grep -c 'src/data/sobre.mjs'
+0
+$ grep -rn "data/sobre" src/ scripts/
+src/views/SobreView.astro:40   (uma vista, fora do programa)
+scripts/gate-html.mjs:127      (um guião, fora do programa)
+scripts/check-ledger.mjs:25    (um guião, fora do programa)
+```
+
+O `--listFiles` é a prova que conta: se alguém dentro do programa o importasse, o ficheiro reentrava e apareceria nesta lista. Não aparece.
+
+**As duas plantas que provam que `src/data` e `src/i18n` são CONFERIDOS e não só listados** (o segundo ponto do Minor 20, que é o que importa):
+
+| ficheiro | sha256 antes | com a planta | erro |
+|---|---|---|---|
+| `src/data/marcador.mjs` | `b93205ea…cb83` | `0c79cb53…0dd3` | `TS2362: The left-hand side of an arithmetic operation must be of type…` |
+| `src/i18n/unidades.mjs` | `e8af0f74…943b` | `cf710d04…6ab8` | `TS2345` e `TS2339: Property 'naoExiste' does not exist on type 'string'` |
+
+Com as duas plantas, `EXIT=1`; repostos os dois ficheiros aos mesmos sha256, `EXIT=0`.
+
+## S10 · Minor 21 · o TypeScript preso ao número exacto
+
+```
+$ node -e "console.log(require('./package.json').devDependencies.typescript)"
+7.0.2                                                    (era "^7.0.2")
+```
+
+`package-lock.json` atualizado na mesma passagem, com o `integrity` da 7.0.2. A casa prende as versões, e esta era a única do sítio que flutuava.
+
+## S11 · Os conhecidos-positivos, num guião que o `verify` corre
+
+`scripts/provar-guardas.mjs`, novo, entra em `npm run verify` ao lado de `provar-eyetext.mjs`:
+
+```
+  guardas · 37 conferência(s) sobre os guardas de execução do bloco F0.4
+  ✓ cada guarda recusa o que promete recusar e aceita o que promete aceitar.
+```
+
+Para cada guarda, um caso que tem de ser recusado e um que tem de passar, com a razão escrita ao lado. Os três que o brief da segunda passagem pediu por nome estão lá: **uma linha sem campo obrigatório** (`eLinha/sem-id`), **uma correção com `fields`** (`eCorrecao/fields-plural`) e **um manifesto sem `origin`** (`eManifestoDosRegistos/sem-origin`), cada um recusado com a sua frase.
+
+## S12 · O que fica dito e não feito
+
+1. `src/data/sobre.mjs` continua fora do programa, pela razão do §6 (é texto governado). O que muda com a segunda passagem é que a exclusão passa a ter prova mecânica de que não reentra.
+2. `scripts/` continua fora até ao F4.2. A contagem de hoje muda com os tipos novos e volta a medir-se nesse bloco.
+3. `astro check` continua sem correr, pela razão do §10, e os 337 erros que ele mede com um TypeScript 6 continuam por resolver.

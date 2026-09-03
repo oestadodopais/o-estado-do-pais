@@ -48,6 +48,8 @@ import {
   entradasDoRegisto,
   POR_VERIFICAR,
   TIPOS_DE_DOCUMENTO,
+  documentoDaLinha,
+  listaDaLinha,
 } from './ledger.mjs';
 import { ROUTES, routePath } from './routes.mjs';
 import { estadoDaMedida } from './estado.mjs';
@@ -196,7 +198,7 @@ export function estadoDasFontes(hoje = new Date()) {
 export function estadoDaFonte(sourceUrl) {
   if (typeof sourceUrl !== 'string' || !sourceUrl.startsWith('http')) return null;
   const pedido = sourceUrl.split('#')[0];
-  return /** @type {Record<string, any>} */ (FONTES_SEM_RESPOSTA)?.[pedido] ?? null;
+  return /** @type {TabelaAberta<typeof FONTES_SEM_RESPOSTA>} */ (FONTES_SEM_RESPOSTA)?.[pedido] ?? null;
 }
 
 /**
@@ -211,10 +213,11 @@ export function agenda() {
   try {
     if (!fs.existsSync(FICHEIRO_DA_AGENDA)) return null;
     const cru = JSON.parse(fs.readFileSync(FICHEIRO_DA_AGENDA, 'utf8'));
+    /** @type {ItemDaAgenda[] | null} */
     const itens = Array.isArray(cru?.itens) ? cru.itens : Array.isArray(cru) ? cru : null;
     if (!itens) return null;
     /** @param {string} estado */
-    const porEstado = (estado) => itens.filter((/** @type {any} */ i) => i?.estado === estado).length;
+    const porEstado = (estado) => itens.filter((i) => i?.estado === estado).length;
     return {
       total: itens.length,
       em_curso: porEstado('em_curso'),
@@ -249,7 +252,7 @@ function linhasCruzadas() {
     if (!f.endsWith('.json')) continue;
     const manifesto = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
     for (const [siteId, bruto] of Object.entries(manifesto?.rows ?? {})) {
-      const linha = /** @type {Record<string, any> | null} */ (bruto);
+      const linha = /** @type {{ rh_study?: unknown, rh_id?: unknown } | null} */ (bruto);
       if (linha?.rh_study && linha?.rh_id) doMotor.set(`${linha.rh_study} ${linha.rh_id}`, siteId);
     }
     total += Object.keys(manifesto?.rows ?? {}).length;
@@ -313,7 +316,8 @@ function contagensDosRegistos(doMotor) {
           c.algarismos++;
           if (figura.row) {
             c.resolvidos++;
-            if (doMotor.has(`${/** @type {Record<string, any>} */ (entrada).rh_study} ${figura.row}`)) c.com_linha_do_sitio++;
+            const rh = /** @type {{ rh_study?: unknown }} */ (entrada).rh_study;
+            if (doMotor.has(`${rh} ${figura.row}`)) c.com_linha_do_sitio++;
           } else {
             c.por_resolver++;
           }
@@ -668,12 +672,12 @@ export function prova(lang = 'pt') {
   for (const tipo of TIPOS_DE_DOCUMENTO) porTipo[tipo] = 0;
   let semTipo = 0;
   for (const c of linhas) {
-    const tipo = c.document?.kind;
-    if (tipo && tipo in porTipo) porTipo[tipo]++;
+    const tipo = documentoDaLinha(c)?.kind;
+    if (typeof tipo === 'string' && tipo in porTipo) porTipo[tipo]++;
     else semTipo++;
   }
 
-  /** @type {(chave: string, valor: any, porta: string, extra?: Record<string, any>) => ChaveDaProva} */
+  /** @type {(chave: string, valor: string | number | null, porta: string, extra?: Partial<ChaveDaProva>) => ChaveDaProva} */
   const k = (chave, valor, porta, extra = {}) => ({
     valor,
     origem: f(chave),
@@ -686,7 +690,7 @@ export function prova(lang = 'pt') {
     afirmacoes: k('afirmacoes', claims.size, livro),
     indexaveis: k('indexaveis', claims.size - divida, livro),
     divida: k('divida', divida, livro),
-    derivadas: k('derivadas', linhas.filter((c) => (c.derived_from ?? []).length > 0).length, livro),
+    derivadas: k('derivadas', linhas.filter((c) => listaDaLinha(c.derived_from).length > 0).length, livro),
     aritmetica_reavaliada: k(
       'aritmetica_reavaliada',
       linhas.filter((c) => typeof c.check === 'string' && c.check.trim() !== '').length,
@@ -694,7 +698,7 @@ export function prova(lang = 'pt') {
     ),
     valores_creditados: k(
       'valores_creditados',
-      linhas.filter((c) => (c.attributed_to ?? []).length > 0).length,
+      linhas.filter((c) => listaDaLinha(c.attributed_to).length > 0).length,
       livro,
     ),
     /* Organismos citados, e o marcador não é um organismo.
@@ -865,7 +869,7 @@ export function prova(lang = 'pt') {
     releituras_registadas: k('releituras_registadas', entradasDeReleitura.length, livro),
     linhas_reconferidas: k(
       'linhas_reconferidas',
-      linhas.filter((c) => (c.verifications ?? []).length > 0).length,
+      linhas.filter((c) => listaDaLinha(c.verifications).length > 0).length,
       livro,
     ),
     releituras_divergentes: k(

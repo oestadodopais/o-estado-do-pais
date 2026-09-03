@@ -457,9 +457,9 @@ export const EDITIONS = WORKS.flatMap((w) =>
  * que a máquina de construção da Vercel ficou sem memória.
  */
 export const ESTUDOS_DE_DADOS = new Map(
-  /** @type {Record<string, any>[]} */ ([...WORKS, ...INTERNAL_SOURCES])
-    .filter((e) => e.conjunto)
-    .map((e) => [e.id, e.conjunto]),
+  [...WORKS, ...INTERNAL_SOURCES]
+    .filter((e) => 'conjunto' in e && typeof e.conjunto === 'string')
+    .map((e) => [e.id, /** @type {ChaveDeRota} */ (e.conjunto)]),
 );
 
 /** Ids aceites no campo `study` de uma linha do livro-razão. */
