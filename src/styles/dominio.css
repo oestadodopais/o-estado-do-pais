@@ -1,0 +1,402 @@
+/* ============================================================================
+ * OS DOMÍNIOS: O ÍNDICE, A PÁGINA DE UM, E AS FORMAS GRÁFICAS
+ * ============================================================================
+ * Bloco F1.2, 03.09.2026.
+ *
+ * As regras da CABEÇA e da FAIXA não estão aqui: vivem em `inicio.css`, que a
+ * vista importa ao lado desta folha, pela razão que `RegiaoView` escreveu quando
+ * a cabeça nova chegou às três camadas: um componente e a sua folha viajam
+ * juntos. O que está aqui é o que é destas duas páginas: a lista dos dezoito, a
+ * frase da fronteira, a leitura breve de cada medida, e as duas formas gráficas.
+ *
+ * NENHUM TIPO NOVO, NENHUMA COR NOVA (§1.85 e §1.86). A escala do mapa é feita
+ * das tintas de cinzento que os tokens já declaram, e as duas classes do mapa do
+ * limiar são o cobalto e o âmbar que as peças já usam, com o mesmo significado e
+ * só esse: cobalto quer dizer «dentro do limiar» (§1.79).
+ */
+
+/* ---------------------------------------------------------------- o índice */
+
+.dominios-head {
+  padding-top: clamp(20px, 3vw, 34px);
+}
+.dominios-h1 {
+  margin: 8px 0 0;
+  font-size: clamp(26px, 3.4vw, 38px);
+}
+.dominios-lista {
+  list-style: none;
+  margin: clamp(20px, 3vw, 30px) 0 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+.dominios-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule);
+  /* O alvo de 44 px vem da altura da linha e não de um `::after` esticado: uma
+     linha desta lista é texto e a sua porta é o nome, que a folha faz alto o
+     bastante para se tocar. */
+  min-height: 44px;
+}
+.dominios-nome {
+  font-family: var(--f-prosa);
+  font-size: clamp(18px, 2vw, 21px);
+  flex: 1 1 18ch;
+}
+.dominios-porta {
+  color: var(--ink);
+}
+.dominios-estado,
+.dominios-vaga {
+  font-family: var(--f-instr);
+  font-size: 14px;
+  color: var(--muted);
+}
+.dominios-vaga {
+  min-width: 11ch;
+  text-align: right;
+}
+.dominios-item[data-dominio-estado='sem'] .dominios-nome {
+  color: var(--muted);
+}
+.dominios-portas {
+  margin-top: clamp(22px, 3vw, 32px);
+}
+
+/* -------------------------------------------------------- a frase da fronteira */
+
+/* Uma frase citável, e por isso com a medida de leitura da casa e um fio à
+   esquerda que a separa da cabeça sem lhe dar caixa própria. */
+.dominio-fronteira {
+  max-width: var(--measure);
+  margin: clamp(20px, 3vw, 30px) 0 0;
+  padding-left: 14px;
+  border-left: 2px solid var(--rule-strong);
+  font-family: var(--f-prosa);
+  font-size: var(--t-leitura);
+  line-height: var(--lh-leitura);
+}
+
+/* ------------------------------------------------------------ a leitura breve */
+
+.dominio-leitura {
+  margin: clamp(26px, 3.6vw, 40px) 0 0;
+}
+.dominio-medida {
+  max-width: 78ch;
+  margin: clamp(22px, 3vw, 34px) 0 0;
+  padding-top: clamp(16px, 2.2vw, 22px);
+  border-top: 1px solid var(--rule);
+}
+.dominio-pergunta {
+  margin: 0;
+  font-family: var(--f-prosa);
+  font-size: clamp(19px, 2.2vw, 24px);
+  font-weight: 600;
+}
+.dominio-nome {
+  margin: 6px 0 0;
+  font-family: var(--f-instr);
+  font-size: 15px;
+  color: var(--muted);
+}
+.dominio-valor {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  margin: 10px 0 0;
+}
+.dominio-num {
+  font-family: var(--f-instr);
+  font-size: clamp(30px, 4.2vw, 40px);
+  line-height: 1.05;
+}
+.dominio-num-irmao {
+  font-family: var(--f-instr);
+  font-size: clamp(20px, 2.4vw, 24px);
+}
+.dominio-unidade,
+.dominio-rotulo-valor {
+  font-family: var(--f-instr);
+  font-size: 14px;
+  color: var(--muted);
+}
+.dominio-limiar,
+.dominio-datas,
+.dominio-fonte,
+.dominio-razao {
+  margin: 8px 0 0;
+  font-family: var(--f-instr);
+  font-size: 14px;
+  color: var(--muted);
+}
+.dominio-limiar-k,
+.dominio-data-k {
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+}
+.dominio-limiar-v,
+.dominio-estado {
+  color: var(--ink);
+}
+.dominio-sep {
+  color: var(--g2);
+}
+.dominio-razao {
+  max-width: var(--measure);
+  font-family: var(--f-prosa);
+  font-size: 16px;
+  color: var(--ink);
+}
+.dominio-sem-numero {
+  margin: 10px 0 0;
+  font-family: var(--f-instr);
+  font-size: clamp(18px, 2.2vw, 21px);
+  color: var(--ink);
+}
+.dominio-ausente {
+  border-left: 2px dashed var(--rule-strong);
+  padding-left: 14px;
+}
+.dominio-portas {
+  margin-top: clamp(24px, 3.4vw, 36px);
+}
+
+/* ============================================================ as formas ==== */
+
+.forma {
+  margin: clamp(16px, 2.4vw, 22px) 0 0;
+}
+.forma-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 720px;
+}
+.forma-frase {
+  margin: 6px 0 0;
+  font-family: var(--f-instr);
+  font-size: 13px;
+  color: var(--muted);
+}
+.forma-selo-rot {
+  color: var(--ink);
+}
+.forma-frase-num {
+  color: var(--ink);
+}
+
+/* ------------------------------------------- forma 3 · o concelho e o país */
+
+/* Sem cor: não há limiar publicado entre um concelho e o país, e o cobalto quer
+   dizer «dentro do limiar» e só isso. As duas barras distinguem-se pelo fio. */
+.forma-barra-c {
+  fill: var(--g3);
+  stroke: var(--ink);
+  stroke-width: 1;
+}
+.forma-barra-p {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+.forma-barra-num {
+  font-family: var(--f-instr);
+  font-size: 15px;
+  fill: var(--ink);
+}
+
+/* ------------------------------------------------ forma 4 · o mapa por concelho */
+
+/* O `<svg>` que só declara geometria não ocupa espaço nem se lê. */
+.forma-mapa-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.forma-mapa-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 420px;
+  margin: 0 auto;
+}
+/* ----------------------------------------------------------------------------
+ * O FIO DE CADA CONCELHO É `--g2`, E NÃO O PAPEL
+ * ----------------------------------------------------------------------------
+ * Com o fio da cor do papel, um concelho da classe mais clara não tinha
+ * fronteira nenhuma: media 1,12:1 contra o papel e desaparecia. Com `--g2`
+ * (3,47:1 sobre papel claro, 5,80:1 sobre papel escuro, medidos em
+ * `tokens.css`), CADA CONCELHO É UM OBJETO VISÍVEL seja qual for a sua classe, e
+ * é o fio que cumpre o mínimo de 3:1 de um objeto de interface. A classe lê-se
+ * do enchimento contra a legenda, com os cortes escritos, e não da diferença
+ * para o vizinho: cinco degraus ordenados não podem estar a 3:1 uns dos outros,
+ * porque 3⁴ = 81 e o contraste máximo entre duas cores é 21:1. O número está
+ * medido no relatório do bloco. */
+.forma-mapa-c {
+  stroke: var(--g2);
+  stroke-width: 0.6;
+  vector-effect: non-scaling-stroke;
+}
+/* A ESCALA É DE TINTA, E NÃO DE COR. Cinco tintas do cinzento da casa, do papel
+   ao ink: dizem mais e menos da mesma unidade, e nenhuma delas diz «bom». */
+.cl-escala-0 {
+  fill: #dde2db;
+}
+.cl-escala-1 {
+  fill: #b8c0b6;
+}
+.cl-escala-2 {
+  fill: #8b948c;
+}
+.cl-escala-3 {
+  fill: #5c6560;
+}
+.cl-escala-4 {
+  fill: #2b312e;
+}
+/* As duas classes do limiar publicado: as duas cores da casa, com o significado
+   que a casa lhes deu e nenhum outro. */
+.cl-limiar-0 {
+  fill: var(--cobalt);
+}
+.cl-limiar-1 {
+  fill: var(--amber);
+}
+/* O «sem valor» distingue-se pela TRAMA, e não por um fio mais grosso: a
+   ausência é um estado e não uma classe da escala, e o fio é o mesmo dos outros
+   para que o desenho não sugira uma fronteira mais forte onde não há uma. */
+.forma-mapa-c.sem-valor {
+  stroke: var(--g2);
+}
+.forma-mapa-legenda {
+  margin: 8px 0 0;
+  font-family: var(--f-instr);
+  font-size: 13px;
+  color: var(--muted);
+}
+.forma-mapa-escala {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin: 0;
+  padding: 0;
+}
+.forma-mapa-classe {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.forma-mapa-classe-k {
+  color: var(--ink);
+}
+.forma-mapa-nota {
+  margin: 6px 0 0;
+  font-family: var(--f-instr);
+  font-size: 13px;
+  color: var(--muted);
+}
+.forma-mapa-tabela {
+  margin: 10px 0 0;
+  font-family: var(--f-instr);
+  font-size: 13px;
+}
+.forma-mapa-tabela > summary {
+  color: var(--ink);
+  cursor: pointer;
+}
+.forma-mapa-tabela table {
+  width: 100%;
+  max-width: 480px;
+  border-collapse: collapse;
+  margin: 8px 0 0;
+}
+.forma-mapa-tabela th,
+.forma-mapa-tabela td {
+  text-align: left;
+  padding: 3px 10px 3px 0;
+  border-bottom: 1px solid var(--g2);
+  font-weight: normal;
+}
+.sq-mapa {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--g2);
+}
+.sq-mapa.cl-escala-0 {
+  background: #dde2db;
+}
+.sq-mapa.cl-escala-1 {
+  background: #b8c0b6;
+}
+.sq-mapa.cl-escala-2 {
+  background: #8b948c;
+}
+.sq-mapa.cl-escala-3 {
+  background: #5c6560;
+}
+.sq-mapa.cl-escala-4 {
+  background: #2b312e;
+}
+.sq-mapa.cl-limiar-0 {
+  background: var(--cobalt);
+}
+.sq-mapa.cl-limiar-1 {
+  background: var(--amber);
+}
+.sq-mapa.sem-valor {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--paper),
+    var(--paper) 2px,
+    var(--g3) 2px,
+    var(--g3) 4px
+  );
+}
+.forma-mapa-porta,
+.forma-mapa-fonte {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  margin: 8px 0 0;
+}
+
+/* NO TEMA ESCURO A ESCALA INVERTE-SE, e não é gosto: o papel é escuro, e uma
+   escala que fosse do claro ao escuro deixava a classe mais alta a desaparecer
+   no fundo. As cinco tintas sobem do papel para a tinta nos dois temas, que é a
+   mesma leitura com os dois fundos. O selector é `:root[data-theme='dark']`, que
+   é o único caminho do tema escuro nesta casa (ver `tokens.css`). */
+:root[data-theme='dark'] .cl-escala-0,
+:root[data-theme='dark'] .sq-mapa.cl-escala-0 {
+  fill: #262b2d;
+  background: #262b2d;
+}
+:root[data-theme='dark'] .cl-escala-1,
+:root[data-theme='dark'] .sq-mapa.cl-escala-1 {
+  fill: #3f4744;
+  background: #3f4744;
+}
+:root[data-theme='dark'] .cl-escala-2,
+:root[data-theme='dark'] .sq-mapa.cl-escala-2 {
+  fill: #6d7570;
+  background: #6d7570;
+}
+:root[data-theme='dark'] .cl-escala-3,
+:root[data-theme='dark'] .sq-mapa.cl-escala-3 {
+  fill: #a6ada8;
+  background: #a6ada8;
+}
+:root[data-theme='dark'] .cl-escala-4,
+:root[data-theme='dark'] .sq-mapa.cl-escala-4 {
+  fill: #dfe2de;
+  background: #dfe2de;
+}
