@@ -254,7 +254,7 @@ Os cinco maiores: `MunicipioView.astro` 101, `MetodoView.astro` 34, `AgendaView.
 
 O `typecheck` custa **menos de um segundo** e passou de conferir um ficheiro a conferir quarenta e cinco: o portão que a auditoria dizia estar vazio custa hoje meio segundo por commit. A diferença na construção está dentro do que corridas da mesma árvore variam nesta máquina, e as próprias corridas «depois» diferem 11 s entre si [I]; nada no caminho de construção mudou, e o `dist/` prova-o (§5).
 
-## 12 · Os três códigos de saída locais
+## 12 · Os três códigos de saída locais, e o portão do GitHub
 
 ```
 $ npm run build     → EXIT=0
@@ -263,6 +263,16 @@ $ npm run typecheck → EXIT=0
 ```
 
 Lidos dos ficheiros de registo de cada corrida, e não de um `echo` a seguir a um redireccionamento.
+
+No GitHub, o contexto `portao` sobre o commit deste bloco:
+
+```
+$ gh run view 33734492674 --json status,conclusion
+status=completed | conclusion=success
+https://github.com/oestadodopais/o-estado-do-pais/actions/runs/33734492674
+```
+
+Os doze passos verdes, `npm run build`, `npm run verify` e `npm run typecheck` entre eles. **14 m 19 s** de ponta a ponta (`run_duration_ms` 859 000, lido em `gh api .../timing`); o trabalho arrancou às 08:39:05Z e fechou às 08:53:18Z. Facturado 0, porque o repositório é público.
 
 ## 13 · O que fica para os blocos seguintes
 
