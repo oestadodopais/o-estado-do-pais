@@ -744,8 +744,14 @@ bate.
 Algumas linhas não foram escritas aqui. Foram **produzidas no motor de
 investigação** ([ResearchHub](../../ResearchHub)) — onde vive o acesso às fontes,
 a aquisição, a verificação e a produção dos estudos — e atravessaram para cá.
-Hoje são as 70 linhas de Évora. Reconhecem-se pelo cabeçalho do ficheiro, que diz
-que foi gerado e por quem.
+Hoje são 2 850 linhas a 03.09.2026, de quatro ficheiros de travessia:
+`cruzamentos/concelhos.json` (2 458), `cruzamentos/dominios.json` (314),
+`cruzamentos/evora.json` (70) e `cruzamentos/regioes.json` (8); dizia «as 70
+linhas de Évora», que eram as do primeiro estudo e ficaram escritas aqui depois
+de os outros três atravessarem. São 2 850 das 2 916 linhas do livro-razão, e a
+soma dos quatro ficheiros é a mesma que a união deles: nenhuma linha atravessa
+duas vezes. Reconhecem-se pelo cabeçalho do ficheiro, que diz que foi gerado e
+por quem.
 
 **O que atravessa é conteúdo estruturado: linhas, recursos e um manifesto. Nunca
 saída renderizada.** Uma página construída lá e servida aqui seria este sítio a
@@ -758,8 +764,12 @@ Uma linha cruzada passa por tudo o que uma linha escrita à mão passa —
 
 ### `cruzamentos/` — o registo da travessia
 
-Um ficheiro JSON por origem (hoje `cruzamentos/evora.json`), escrito pelo
-exportador e nunca à mão. Por cada linha:
+Um ficheiro JSON por origem, escrito pelo exportador e nunca à mão. Hoje são
+seis, a 03.09.2026: os quatro que trazem linhas (`concelhos.json`,
+`dominios.json`, `evora.json`, `regioes.json`) e dois que atravessam ficheiros e
+não linhas, e por isso não têm bloco `rows` (`agenda.json`, escrito por
+`export_agenda.py`, e `paridade.json`, escrito por `cruzar_paridade.py`). Por
+cada linha:
 
 | Campo | O que é |
 | --- | --- |

@@ -121,16 +121,14 @@ import { fileURLToPath } from 'node:url';
 import { parse, NodeType } from 'node-html-parser';
 
 import { loadClaims, POR_VERIFICAR } from '../src/lib/ledger.mjs';
-import { UNIDADES, UNIDADES_EM_PORTUGUES, unidadeDaLinha } from '../src/i18n/unidades.mjs';
+import { UNIDADES, UNIDADES_EM_PORTUGUES } from '../src/i18n/unidades.mjs';
 import {
   LINGUA_DOS_TITULOS,
   linguaDoTituloDoDocumento,
   LINGUA_DOS_ROTULOS,
   linguaDoRotuloDaFonte,
   LINGUA_DAS_FONTES,
-  linguaDaFonte,
   LINGUA_DAS_EDICOES,
-  linguaDaEdicao,
 } from '../src/i18n/lingua-dos-titulos.mjs';
 import { WORKS, linguaDoTitulo } from '../src/data/studies.mjs';
 import { LINGUA_DO_RESPONSAVEL, RESPONSAVEL_EDITORIAL } from '../src/data/politica-ia.mjs';
@@ -288,8 +286,9 @@ for (const f of Object.keys(LINGUA_DAS_FONTES)) {
     );
   }
   /* E O VALOR TEM DE SER UM DOS DOIS. Uma língua que a casa não sabe render sai
-     de `linguaDaFonte()` como uma marca inventada, ou não sai de todo: nos dois
-     casos a página fica errada e a régua ficava calada. */
+     de `linguaDaFonte()` (em `src/i18n/lingua-dos-titulos.mjs`, que esta régua
+     já não importa desde 03.09.2026) como uma marca inventada, ou não sai de
+     todo: nos dois casos a página fica errada e a régua ficava calada. */
   const v = LINGUA_DAS_FONTES[f];
   if (v !== 'pt' && v !== 'en') {
     erros.push(

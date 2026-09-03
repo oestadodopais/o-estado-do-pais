@@ -9,9 +9,38 @@
  *
  * Este módulo trata do segundo. A regra é uma só e não tem excepções:
  *
- *   ****  O DOCUMENTO NÃO É REESCRITO. É-LHE ACRESCENTADA UMA FAIXA, E MAIS   ****
- *   ****  NADA. Nem <head>, nem estilos, nem scripts, nem uma vírgula abaixo   ****
- *   ****  da faixa.                                                           ****
+ *   ****  O DOCUMENTO NÃO É REESCRITO. ABAIXO DA FAIXA NÃO SE MEXE UM BYTE:  ****
+ *   ****  nem estilos, nem scripts, nem uma vírgula. ACIMA DELA entram as três ****
+ *   ****  marcas da casa, e mais nada.                                         ****
+ *
+ * AS TRÊS MARCAS, E PORQUE SUBIRAM ACIMA DA FAIXA (03.09.2026, bloco F0.7).
+ *
+ * Até aqui a faixa era a única coisa que a casa acrescentava, e o `<head>` do
+ * documento ficava intacto. A auditoria de 02.09.2026 (§4) mediu o que isso
+ * custava: os dezasseis documentos alojados não diziam a língua em que estão,
+ * não pediam aos motores de busca que não os indexassem, e não levavam o rótulo
+ * de IA que a §1.89 diz estar em todas as páginas. São textos gerados por IA, de
+ * até 1 062 254 bytes, ligados das páginas dos estudos e portanto rastreáveis.
+ *
+ *   1. `lang` no `<html>`, ONDE FALTA. Oito dos dezasseis declaram a sua língua
+ *      e esses não se tocam: o documento é obra alojada e a língua que ele
+ *      declara é dele. Os outros oito passam a declarar a da edição;
+ *   2. `<meta name="robots" content="noindex, follow">` no `<head>`. É o
+ *      recuo seguro enquanto o advogado não responder à pergunta 11 da
+ *      `DILIGENCIA-LEGAL.md`: `noindex` tira o documento dos motores de busca,
+ *      `follow` deixa as suas ligações contarem. Nenhum dos dezasseis trazia
+ *      uma marca `robots` própria, portanto nada se sobrepõe;
+ *   3. o RÓTULO DE IA, na faixa, com o mesmo texto do rodapé de todas as outras
+ *      páginas (`src/data/politica-ia.mjs`). O artigo 50.º, n.º 5 do
+ *      Regulamento (UE) 2024/1689 quer a divulgação «o mais tardar no momento
+ *      da primeira interação ou exposição», e para quem chega a um documento
+ *      por um motor de busca a primeira exposição é o documento.
+ *
+ * NENHUMA DAS TRÊS TOCA NO CORPO. As duas primeiras vivem acima do `<body>`; a
+ * terceira vive dentro da faixa, que já é markup nosso e entra no `esperado` que
+ * o portão recalcula dos dois lados da igualdade. A comparação carácter a
+ * carácter do `verificaDocumento()` continua exacta, e o portão passou a exigir
+ * as três: um documento sem elas fica vermelho.
  *
  * O que a faixa é: a marca do observatório, ligada de volta à página do estudo,
  * o rótulo que diz o que o leitor está a ver, a porta para o Sobre e a porta de
@@ -40,6 +69,12 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { WORKS, workById } from '../data/studies.mjs';
+import {
+  ANCORA_DA_POLITICA,
+  LINGUA_DO_RESPONSAVEL,
+  RESPONSAVEL_EDITORIAL,
+  ROTULO,
+} from '../data/politica-ia.mjs';
 import { routePath, LANGS } from './routes.mjs';
 import { temRegisto } from './registos.mjs';
 import { SITE_NAME } from '../../site.config.mjs';
@@ -505,11 +540,31 @@ export function faixa(slug, lang) {
    * ausência, não por uma frase»).
    */
   const rotaDoTexto = temRegisto(slug, lang) ? routePath('texto', lang, { slug }) : null;
+  /**
+   * O RÓTULO DE IA, com o texto aprovado e a porta para a política.
+   *
+   * É a MESMA cadeia que `RotuloDeIA.astro` rende no rodapé de todas as outras
+   * páginas, lida do mesmo ficheiro e não retipada aqui: `textoDoRotulo()`
+   * compõe-na dos três pedaços, e o portão compara-a carácter a carácter dos
+   * dois lados. O nome de quem responde é português e leva a sua marca de
+   * língua nas edições inglesas, pela regra da §1.82.
+   *
+   * NÃO TRAZ UM ÚNICO ALGARISMO, e é por isso que cabe aqui: a regra da faixa
+   * («nenhum algarismo no seu texto») é o que permite dispensar o corpo do
+   * documento do varrimento, e o rótulo não a toca.
+   */
+  const r = ROTULO[lang];
+  const politica = `${routePath('metodo', lang)}#${ANCORA_DA_POLITICA}`;
+  const linguaDoNome = lang === 'pt' ? '' : ` lang="${atributo(LINGUA_DO_RESPONSAVEL)}"`;
+
   return [
     `<div data-oedp-faixa lang="${atributo(s.lang)}" aria-label="${atributo(rotulo)}">`,
     `<style>${estiloDaFaixa()}</style>`,
     `<a data-oedp-marca href="${atributo(destino)}">${texto(SITE_NAME)}</a>`,
     `<span data-oedp-rotulo>${texto(rotulo)}</span>`,
+    `<span data-oedp-rotulo-ia>${texto(r.antes)}` +
+      `<a href="${atributo(politica)}">${texto(r.porta)}</a>${texto(r.depois)}` +
+      `<span data-oedp-rotulo-nome${linguaDoNome}>${texto(RESPONSAVEL_EDITORIAL)}</span></span>`,
     ...(rotaDoTexto
       ? [`<a data-oedp-texto href="${atributo(rotaDoTexto)}">${texto(s.estudos.textoLink)} →</a>`]
       : []),
@@ -520,8 +575,63 @@ export function faixa(slug, lang) {
 }
 
 /**
- * O documento com a faixa por cima. A ÚNICA transformação que este sítio faz a
- * um documento de estudo.
+ * A MARCA DOS ROBÔS, escrita uma vez e comparada pelo portão.
+ *
+ * `noindex` tira o documento dos motores de busca; `follow` deixa que as
+ * ligações que ele traz continuem a contar, porque o que aqui se recusa é a
+ * indexação DESTE ficheiro e não a existência das fontes que ele cita.
+ */
+export const MARCA_DOS_ROBOS = '<meta name="robots" content="noindex, follow">';
+
+/**
+ * As duas marcas que vivem ACIMA do `<body>`: a língua do `<html>` e a marca
+ * dos robôs no `<head>`.
+ *
+ * A LÍNGUA SÓ ENTRA ONDE FALTA. Oito dos dezasseis documentos declaram a sua
+ * («pt-PT», «pt» ou «en»), e essa é a declaração do autor sobre a sua própria
+ * obra: reescrever «pt» para «pt-PT» seria editar o documento para o fazer
+ * caber na grafia da casa, que é exactamente o que a regra destas páginas
+ * proíbe. O que faltava era a declaração, e é ela que se acrescenta.
+ *
+ * A marca dos robôs entra sempre, porque nenhum dos dezasseis traz uma: não há
+ * declaração de autor nenhuma para respeitar, e uma segunda marca `robots` numa
+ * página é ambígua para um rastreador.
+ *
+ * @param {string} bruto o ficheiro tal como está em studies-src/
+ * @param {{ slug: string, lang: string }} onde
+ */
+export function comMarcasDaCasa(bruto, { slug, lang }) {
+  const s = t(lang);
+  let saida = bruto;
+
+  const html = saida.match(/<html\b([^>]*)>/i);
+  if (!html || html.index === undefined) {
+    throw new Error(
+      `documentos: o documento "${slug}" (${lang}) não tem \`<html>\`, e a língua não sabe onde ` +
+        `entrar. Um documento de estudo é um ficheiro HTML completo e auto-contido.`,
+    );
+  }
+  if (!/\blang\s*=/i.test(html[1])) {
+    const i = html.index;
+    saida =
+      saida.slice(0, i) +
+      `<html lang="${atributo(s.lang)}"${html[1]}>` +
+      saida.slice(i + html[0].length);
+  }
+
+  const cabeca = saida.match(/<head\b[^>]*>/i);
+  if (!cabeca || cabeca.index === undefined) {
+    throw new Error(
+      `documentos: o documento "${slug}" (${lang}) não tem \`<head>\`, e a marca dos robôs não ` +
+        `sabe onde entrar.`,
+    );
+  }
+  const j = cabeca.index + cabeca[0].length;
+  return saida.slice(0, j) + MARCA_DOS_ROBOS + saida.slice(j);
+}
+
+/**
+ * O documento com a faixa por cima.
  *
  * A faixa entra logo a seguir ao `<body>`, que é o único sítio onde não
  * atravessa nada: acima dela fica o `<head>` do documento, intacto; abaixo,
@@ -564,5 +674,6 @@ export function documentoServido(slug, lang) {
   if (!workById(slug)) {
     throw new Error(`documentos: "${slug}" não é um trabalho do arquivo.`);
   }
-  return comFaixa(fs.readFileSync(doc.ficheiro, 'utf8'), { slug, lang });
+  const bruto = fs.readFileSync(doc.ficheiro, 'utf8');
+  return comFaixa(comMarcasDaCasa(bruto, { slug, lang }), { slug, lang });
 }

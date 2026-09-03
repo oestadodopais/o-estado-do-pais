@@ -6,6 +6,7 @@
  * pares hreflang PT<->EN a partir da tabela de rotas, e o JSON-LD da
  * organização em todas as páginas.
  */
+import { jsonLd } from '../lib/jsonld.mjs';
 import {
   SITE_NAME,
   SITE_SHORT_NAME,
@@ -263,11 +264,8 @@ const cartaoTwitter = urlDoCartao({ ...cartao, ...DIM_TWITTER });
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={cartaoTwitter} />
 
-    <script
-      type="application/ld+json"
-      set:html={JSON.stringify(organizationJsonLd)}
-    />
-    {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
+    <script type="application/ld+json" set:html={jsonLd(organizationJsonLd)} />
+    {jsonld && <script type="application/ld+json" set:html={jsonLd(jsonld)} />}
   </head>
 
   <body>

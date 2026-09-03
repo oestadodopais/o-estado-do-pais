@@ -377,6 +377,34 @@ for (const c of allClaims()) {
   if (campos.length) porVerificar.push({ id: c.id, campos });
 }
 
+/**
+ * ---------------------------------------------------------------------------
+ * OS MARCADORES QUE VIVEM EM CAMPOS NÃO PUBLICADOS (03.09.2026, bloco F0.7)
+ * ---------------------------------------------------------------------------
+ * `camposPorVerificar()` lê oito campos publicados e compara-os por igualdade
+ * inteira com o marcador. Duas linhas escondem um `[a verificar]` DENTRO da
+ * prosa do campo `note`, que é `CAMPOS_NAO_PUBLICADOS` e não vai à página: a
+ * licença dos termos do Diário da República na retribuição mínima, e o produtor
+ * da estimativa do Eurostat na disparidade salarial. As duas ficam invisíveis
+ * às duas peneiras ao mesmo tempo, pelo campo e pela forma.
+ *
+ * ISTO CONTA E IMPRIME, E NÃO FECHA NADA. As duas perguntas por resolver são
+ * sobre a LICENÇA e sobre o PRODUTOR, e não sobre o valor: o número está lido na
+ * fonte, com o excerto e a data de acesso, e a página que o rende não fica menos
+ * verdadeira por a licença do diploma não ter sido procurada. Promovê-las a um
+ * campo publicado mudaria o estado do selo e tiraria as duas linhas do índice
+ * dos motores de busca, que é uma consequência desproporcionada à dúvida. O que
+ * faltava era o lugar de direção VER que existem, e é isso que esta linha faz.
+ */
+const MARCADORES_EM_NOTAS = [];
+for (const c of allClaims()) {
+  const nota = typeof c.note === 'string' ? c.note : '';
+  if (!nota) continue;
+  const quantos = nota.split(POR_VERIFICAR).length - 1;
+  if (quantos > 0) MARCADORES_EM_NOTAS.push({ id: c.id, quantos });
+}
+const TOTAL_EM_NOTAS = MARCADORES_EM_NOTAS.reduce((n, m) => n + m.quantos, 0);
+
 console.log('');
 console.log(
   '  ' +
@@ -384,6 +412,21 @@ console.log(
     ` ${stats.total} afirmações válidas · ${stats.derivadas} derivadas · ${stats.verificadas} com aritmética reavaliada no build` +
     ` · ${stats.comRotulo} com o rótulo da fonte`,
 );
+
+if (TOTAL_EM_NOTAS) {
+  console.log(
+    amarelo(
+      `  ${TOTAL_EM_NOTAS} marcador(es) por resolver em notas não publicadas: ` +
+        MARCADORES_EM_NOTAS.map((m) => (m.quantos > 1 ? `${m.id} (${m.quantos})` : m.id)).join(', '),
+    ),
+  );
+  console.log(
+    cinza(
+      `    O campo "note" não vai à página, e por isso estes ${TOTAL_EM_NOTAS} não mudam o estado de ` +
+        `nenhum selo nem fecham a construção. Ficam aqui para não se perderem.`,
+    ),
+  );
+}
 
 if (porVerificar.length) {
   console.log('');
