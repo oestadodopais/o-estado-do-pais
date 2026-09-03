@@ -11,7 +11,7 @@
  * NENHUMA FUNÇÃO DAQUI ESCREVE UM NÚMERO
  * ---------------------------------------------------------------------------
  * O que sai daqui são ids de linhas, campos de linhas tal como estão, e
- * GEOMETRIA de desenho — coordenadas, comprimentos de barra, classes de cor. A
+ * GEOMETRIA de desenho (coordenadas, comprimentos de barra, classes de cor). A
  * geometria é derivada dos valores das linhas e do campo do desenho, e nenhum
  * número dela chega à página como texto: os números que se leem num desenho são
  * `<Claim/>` ou marcas de escala declaradas, e `scripts/check-formas.mjs`
@@ -252,7 +252,7 @@ export function entre27(id) {
  * barra é a fracção do maior dos dois.
  *
  * SÓ COM OS DOIS NÚMEROS. Onde um deles é uma marca da fonte, não há duas
- * barras para comparar, e a função devolve `null` — a mesma regra 2 de
+ * barras para comparar, e a função devolve `null`, pela mesma regra 2 de
  * 28.08.2026 que a distância do concelho já aplica.
  *
  * O CAMPO É O MESMO DA DISTÂNCIA DO CONCELHO (720 unidades de largura), para que

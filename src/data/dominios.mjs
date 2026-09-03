@@ -479,7 +479,7 @@ export const FAIXA_DO_DOMINIO_1 = /** @type {const} */ (['E3', 'E2', 'T1', 'T2',
  * «O que este domínio mede e o que não mede, uma frase, impressa uma vez,
  * citável.» As palavras vêm da carta, e o relatório do bloco diz de onde cada
  * uma vem: o que o domínio mede é a lista das perguntas da carta (§3, domínios
- * 1 e 2); o que não mede são as três exclusões que a própria carta escreve — a
+ * 1 e 2); o que não mede são as três exclusões que a própria carta escreve: a
  * produtividade, que ela manda para estudo; o PIB abaixo das NUTS III, que a
  * coluna «concelho» da linha E1 diz não existir; e a disparidade salarial por
  * concelho, que o inventário mostrou não ser publicada.

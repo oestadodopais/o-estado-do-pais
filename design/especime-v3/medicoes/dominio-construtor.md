@@ -1,7 +1,10 @@
 # F1.2 · a página do primeiro domínio · relatório do construtor
 
 *Ramo `dominio-2026-09-03`, tirado de `origin/main` em `d8b14a88` e fundido com
-`d447286f` antes de fechar; a construção é o commit `f5f66e30`. Construtor
+`d447286f` antes de fechar; a construção é o commit `f5f66e30`, o registo e as
+capturas o `45aff385`, e um terceiro commit tira seis travessões que tinham
+ficado em comentários de código (a regra da casa é sem travessões na prosa, e
+uma prosa que só um construtor lê continua a ser prosa). Construtor
 Claude Opus 5, 03.09.2026. O bloco é o F1.2 do
 `design/observatorio/PLANO-fiabilidade-2026-09-02.md` §3, escrito no
 `design/observatorio/BRIEF-F1.2-pagina-do-dominio.md`. Sem travessões na prosa.*

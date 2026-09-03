@@ -5,7 +5,7 @@
  * =============================================================================
  *
  * NÃO É UM PORTÃO: não entra no `npm run build` e não constrói nada. O que ela
- * faz é o CONHECIDO-POSITIVO do portão que entra — `npm run check:formas` —, e
+ * faz é o CONHECIDO-POSITIVO do portão que entra, o `npm run check:formas`, e
  * a regra 14 da casa diz porque é preciso: «um detetor que lê dois ficheiros e
  * conta zero tem duas explicações e só uma é boa».
  *
