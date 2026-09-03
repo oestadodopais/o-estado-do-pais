@@ -35,6 +35,7 @@ import { estadoDaRegua } from './estado.mjs';
  * António» dá «vila-real-de-santo-antonio», e «Freixo de Espada à Cinta» dá
  * «freixo-de-espada-a-cinta».
  */
+/** @param {unknown} nome */
 export function semAcentos(nome) {
   return String(nome)
     .normalize('NFD')
@@ -42,6 +43,7 @@ export function semAcentos(nome) {
     .toLowerCase();
 }
 
+/** @param {unknown} nome */
 export function slugDeConcelho(nome) {
   return semAcentos(nome)
     .replace(/[^a-z0-9]+/g, '-')
@@ -150,6 +152,7 @@ export function coberturaDistingue(lista) {
 export function concelhos() {
   const paginaPorIndice = new Map(MUNICIPIOS_COM_PAGINA.map((m) => [m.caopIndex, m]));
   const slugs = slugsDaCarta();
+  /** @type {{ i: number, nome: string, distrito: string, ilha: boolean, x: number, y: number, slug: string, normal: string, pagina: any, alvo?: number }[]} */
   const base = MUNICIPIOS.map((m, i) => ({
     i,
     nome: m[0],
@@ -207,12 +210,12 @@ export function concelhos() {
  * cada uma com `vazia` a dizer se tem linha. Quem rende decide o que fazer com
  * isso, e é uma peça só nos dois casos.
  *
- * @param {object} municipio  o registo de `municipios.mjs`
+ * @param {Record<string, any>} municipio  o registo de `municipios.mjs`
  */
 export function pecasDoConcelho(municipio) {
   const alvo = municipio.distancia ?? {};
   return municipio.relance
-    .map((medida) => {
+    .map((/** @type {Record<string, any>} */ medida) => {
       if (!medida.claim) return { ...medida, vazia: true, linha: null, derivada: false, estado: 'sem', colore: false, regua: null };
       const linha = getClaim(medida.claim);
       /* A NOTA DE UMA MEDIDA CALCULADA LÊ-SE DA LINHA (Emenda 15, commit 3-0), e
@@ -322,14 +325,15 @@ export function pecasDoConcelho(municipio) {
  * assim, e não há regra que o adivinhe — está em ISSUES para que a próxima
  * medida a entrar seja lida antes de entrar, e não depois.
  */
+/** @param {unknown} nome */
 export function nomeEmFrase(nome) {
   const n = String(nome);
   return n.charAt(0).toLowerCase() + n.slice(1);
 }
 
 /**
- * @param {Array} medidas  as peças do painel, já com `estado` e `linha`
- * @param {object} gramatica  `s.inicio.cabeca.ledePais` da edição
+ * @param {any[]} medidas  as peças do painel, já com `estado` e `linha`
+ * @param {Record<string, any>} gramatica  `s.inicio.cabeca.ledePais` da edição
  * @param {'pt'|'en'} lang
  * @returns {{ itens: string[], nomes: string[], ano: string|null, cauda: any[] } | null}
  */
@@ -342,6 +346,7 @@ export function ledeDoPainel(medidas, gramatica, lang) {
   /* Os itens já com os separadores pelo meio, para que o gabarito os renda como
      uma lista de pedaços adjacentes e não tenha de decidir nada: um espaço a
      mais entre dois pedaços seria um espaço a mais na frase. */
+  /** @type {string[]} */
   const itens = [];
   nomes.forEach((nome, i) => {
     if (i > 0) itens.push(i === nomes.length - 1 ? gramatica.ultimo : gramatica.separador);
@@ -389,6 +394,7 @@ export const AMBITO_POR_DEFEITO = 'pais';
 export const DENSIDADE_POR_DEFEITO = 'relance';
 export const DENSIDADES = ['relance', 'leitura'];
 
+/** @param {string} slug */
 export const chaveDoConcelho = (slug) => `municipio:${slug}`;
 
 /** A lista fechada dos âmbitos, na ordem em que a página os desenha. */

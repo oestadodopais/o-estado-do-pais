@@ -46,6 +46,7 @@ import { fileURLToPath } from 'node:url';
  * apontaria para lá. Procura-se o ficheiro que a raiz tem e mais ninguém.
  */
 function encontraRaiz() {
+  /** @param {string} inicio */
   const subir = (inicio) => {
     let dir = inicio;
     for (let i = 0; i < 8; i++) {
@@ -102,7 +103,7 @@ export function sinalDaMarca() {
   let cru;
   try {
     cru = fs.readFileSync(FAVICON, 'utf8');
-  } catch (erro) {
+  } catch (/** @type {any} */ erro) {
     throw new Error(
       `não consegui ler public/favicon.svg (${erro.message}). ` +
         `É o ficheiro de onde o cabeçalho tira o sinal, e gera-se com ` +

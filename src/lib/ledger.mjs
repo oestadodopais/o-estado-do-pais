@@ -42,6 +42,7 @@ function encontraLivroRazao() {
   const candidatos = [];
   if (process.env.OEDP_LEDGER_DIR) candidatos.push(process.env.OEDP_LEDGER_DIR);
 
+  /** @param {string} inicio */
   const subir = (inicio) => {
     let dir = inicio;
     for (let i = 0; i < 8; i++) {
@@ -80,6 +81,7 @@ export { POR_VERIFICAR } from '../data/marcador.mjs';
 import { POR_VERIFICAR } from '../data/marcador.mjs';
 
 /** Uma bandeira da fonte é um caractere qualquer; não pode virar sintaxe. */
+/** @param {string} s */
 function escapaRegex(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
@@ -337,21 +339,29 @@ const DIR_DADOS = path.join(path.dirname(path.dirname(LEDGER_DIR)), 'public', 'd
  * É a condição da **porta estreita** do `excerpt: null`; ver `eContadaSobreFicheiro`.
  * Não confere o resumo (isso é trabalho do validador, que lê o disco): confere
  * que a linha declarou tudo o que a porta exige que ela declare.
+ *
+ * @param {Linha | null | undefined} claim
+ * @returns {boolean}
  */
 export function alojamentoCompleto(claim) {
   const h = claim?.document?.hosted;
   if (!h || typeof h !== 'object' || Array.isArray(h)) return false;
+  const campos = /** @type {Record<string, unknown>} */ (/** @type {unknown} */ (h));
   for (const k of ['asset', 'sha256', 'licence', 'licence_url', 'attribution']) {
-    if (typeof h[k] !== 'string' || h[k].trim() === '') return false;
+    const v = campos[k];
+    if (typeof v !== 'string' || v.trim() === '') return false;
   }
-  if (!Number.isInteger(h.bytes) || h.bytes < 1) return false;
+  if (typeof h.bytes !== 'number' || !Number.isInteger(h.bytes) || h.bytes < 1) return false;
   if (!Array.isArray(h.extracted_from) || h.extracted_from.length === 0) return false;
   return h.extracted_from.every(
-    (e) =>
+    (/** @type {unknown} */ e) =>
       e &&
       typeof e === 'object' &&
       !Array.isArray(e) &&
-      CAMPOS_DA_EXTRACAO.every((k) => e[k] !== null && e[k] !== undefined && e[k] !== ''),
+      CAMPOS_DA_EXTRACAO.every((k) => {
+        const v = /** @type {Record<string, unknown>} */ (e)[k];
+        return v !== null && v !== undefined && v !== '';
+      }),
   );
 }
 
@@ -367,6 +377,8 @@ export function alojamentoCompleto(claim) {
  * Sem as três, `[a verificar]` fica. É a mesma disciplina da linha da casa: uma
  * porta larga aqui seria uma maneira de branquear proveniência em falta, que é
  * exactamente o que o marcador existe para impedir.
+ *
+ * @param {Linha | null | undefined} claim
  */
 export function eContadaSobreFicheiro(claim) {
   return (
@@ -434,6 +446,8 @@ export const SEPARADOR_ATRIBUICAO = ' · ';
  * quando o há, é **registo do que consta**, não juízo nem ordenação. O sítio
  * não faz tabelas classificativas por partido; ver IDENTIDADE.md e a decisão
  * de direcção de 2026-08-15.
+ *
+ * @param {Linha | null | undefined} claim
  */
 export function atribuicaoDaLinha(claim) {
   const lista = claim?.attributed_to;
@@ -441,7 +455,11 @@ export function atribuicaoDaLinha(claim) {
   return lista.join(SEPARADOR_ATRIBUICAO);
 }
 
-/** Uma linha é derivada quando declara de que linhas deriva. */
+/**
+ * Uma linha é derivada quando declara de que linhas deriva.
+ *
+ * @param {Linha | null | undefined} claim
+ */
 export function eDerivada(claim) {
   return Array.isArray(claim?.derived_from) && claim.derived_from.length > 0;
 }
@@ -471,6 +489,8 @@ export const CASA = 'O Estado do País';
  * `derivation` que explique a contagem. Sem as duas, `null` continua a ser um
  * erro — caso contrário isto seria uma maneira de branquear proveniência em
  * falta, que é exactamente o que o marcador existe para impedir.
+ *
+ * @param {Linha | null | undefined} claim
  */
 export function eDaCasa(claim) {
   return (
@@ -499,9 +519,13 @@ export function eDaCasa(claim) {
  * `municipios-portugal-caop-2025` é o caso que separava as duas: deriva de três
  * contagens **e** traz fonte própria, com o excerto por confirmar. Mostrava
  * selo cheio na página e aparecia na dívida do relatório.
+ *
+ * @param {Linha | null | undefined} claim
+ * @returns {string[]}
  */
 export function camposPorVerificar(claim) {
   if (!claim) return [];
+  /** @type {string[]} */
   const out = [];
   for (const campo of ['source', 'source_url', 'access_date', 'reference_date', 'excerpt']) {
     if (claim[campo] === POR_VERIFICAR) out.push(campo);
@@ -518,7 +542,11 @@ export function camposPorVerificar(claim) {
   return out;
 }
 
-/** true quando falta confirmar pelo menos um campo de proveniência. */
+/**
+ * true quando falta confirmar pelo menos um campo de proveniência.
+ *
+ * @param {Linha | null | undefined} claim
+ */
 export function provenienciaIncompleta(claim) {
   return camposPorVerificar(claim).length > 0;
 }
@@ -530,6 +558,10 @@ export function provenienciaIncompleta(claim) {
  * da casa, existe nas duas línguas — `derivation` em português, `derivation_en`
  * em inglês — e **não há recurso à outra língua**. O validador exige as duas;
  * um `null` aqui significa que o livro-razão não passou.
+ *
+ * @param {Linha | null | undefined} claim
+ * @param {string} lang
+ * @returns {string | null}
  */
 export function derivacaoDaLinha(claim, lang) {
   if (!claim) return null;
@@ -549,6 +581,10 @@ export function derivacaoDaLinha(claim, lang) {
  *
  * A nota é prosa da casa e segue a regra de §1.17, como `derivation`: existe
  * nas duas línguas ou em nenhuma, e não há recurso à outra.
+ *
+ * @param {Linha | null | undefined} claim
+ * @param {string} lang
+ * @returns {string | null}
  */
 export function notaDeBandeira(claim, lang) {
   if (!claim) return null;
@@ -627,44 +663,51 @@ export const AUTORES_DA_VERIFICACAO = [
  * A ordenação é estável: a lista está por ordem cronológica crescente (o
  * validador exige-o), e duas entradas do mesmo dia mantêm a ordem em que foram
  * escritas, com a mais recente da lista à frente.
+ *
+ * @param {Linha | null | undefined} claim
  */
 export function verificacoesDaLinha(claim) {
   const lista = Array.isArray(claim?.verifications) ? claim.verifications : [];
   return lista
-    .map((v, n) => ({ ...v, __n: n }))
+    .map((/** @type {VerificacaoDaLinha} */ v, /** @type {number} */ n) => ({ ...v, __n: n }))
     .sort((a, b) => String(b.date).localeCompare(String(a.date)) || b.__n - a.__n);
 }
 
 /** Quantas entradas a página mostra: as duas mais recentes, ou menos. */
 export const VERIFICACOES_MOSTRADAS = 2;
 
+/** @type {Map<string, Linha> | null} */
 let _cache = null;
 
 /** Carrega e devolve Map<id, claim>. Lança se o YAML estiver partido. */
 export function loadClaims() {
   if (_cache) return _cache;
+  /** @type {Map<string, Linha>} */
   const map = new Map();
+  /** @type {string[]} */
   let files = [];
   try {
     files = fs.readdirSync(LEDGER_DIR).filter((f) => f.endsWith('.yml') || f.endsWith('.yaml'));
-  } catch (err) {
+  } catch (/** @type {any} */ err) {
     throw new Error(`livro-razão: não foi possível ler ${LEDGER_DIR}: ${err.message}`);
   }
   files.sort();
   for (const file of files) {
     const full = path.join(LEDGER_DIR, file);
-    let doc;
+    /** @type {unknown} */
+    let bruto;
     try {
-      doc = load(fs.readFileSync(full, 'utf8'));
-    } catch (err) {
+      bruto = load(fs.readFileSync(full, 'utf8'));
+    } catch (/** @type {any} */ err) {
       throw new Error(`livro-razão: YAML inválido em ${file}: ${err.message}`);
     }
-    if (!doc || typeof doc !== 'object') {
+    if (!bruto || typeof bruto !== 'object') {
       throw new Error(`livro-razão: ${file} não contém um mapa YAML.`);
     }
+    const doc = /** @type {Linha} */ (bruto);
     doc.__file = file;
     if (map.has(doc.id)) {
-      throw new Error(`livro-razão: id repetido "${doc.id}" (${file} e ${map.get(doc.id).__file}).`);
+      throw new Error(`livro-razão: id repetido "${doc.id}" (${file} e ${map.get(doc.id)?.__file}).`);
     }
     map.set(doc.id, doc);
   }
@@ -672,7 +715,12 @@ export function loadClaims() {
   return map;
 }
 
-/** Uma afirmação, pelo id. Lança — em build — se não existir. Este é o portão (a). */
+/**
+ * Uma afirmação, pelo id. Lança — em build — se não existir. Este é o portão (a).
+ *
+ * @param {string} id
+ * @returns {Linha}
+ */
 export function getClaim(id) {
   const claims = loadClaims();
   const claim = claims.get(id);
@@ -690,6 +738,7 @@ export function getClaim(id) {
   return claim;
 }
 
+/** @param {string} id */
 export function hasClaim(id) {
   return loadClaims().has(id);
 }
@@ -703,6 +752,9 @@ export function hasClaim(id) {
  *
  * É a única leitura de um valor publicado, e as duas maneiras de o usar saem
  * daqui: `parsePtNumber` para quem desenha, `parsePtDecimal` para quem prova.
+ *
+ * @param {unknown} value
+ * @returns {string | null}
  */
 export function normalizaPtNumero(value) {
   if (typeof value !== 'string') return null;
@@ -720,6 +772,7 @@ export function normalizaPtNumero(value) {
   return s;
 }
 
+/** @param {unknown} value */
 export function parsePtNumber(value) {
   const s = normalizaPtNumero(value);
   if (s === null) return null;
@@ -739,13 +792,19 @@ export function parsePtNumber(value) {
  * A NORMALIZAÇÃO É A MESMA, por construção e não por disciplina: as duas funções
  * chamam `normalizaPtNumero`, e por isso aceitam exatamente os mesmos valores.
  * Duas normalizações escritas duas vezes foi como o `.5` divergiu.
+ *
+ * @param {unknown} value
  */
 export function parsePtDecimal(value) {
   const s = normalizaPtNumero(value);
   return s === null ? null : Decimal.de(s);
 }
 
-/** Só os algarismos de um texto — usado para comparar o que foi renderizado com o livro-razão. */
+/**
+ * Só os algarismos de um texto — usado para comparar o que foi renderizado com o livro-razão.
+ *
+ * @param {unknown} s
+ */
 export function digitsOf(s) {
   return String(s).replace(/\D+/g, '');
 }
@@ -795,6 +854,9 @@ const MARCAS = new Set(VALORES_NAO_NUMERICOS.map((m) => m.marca));
  * Compara-se a cadeia INTEIRA, depois de aparadas as pontas, e não uma parte
  * dela: «N.d. (2024)» não é a marca, é outra coisa, e adivinhar o que ela seria
  * é o contrário do que esta lista existe para fazer.
+ *
+ * @param {unknown} value
+ * @returns {string | null}
  */
 export function marcaDoValor(value) {
   if (typeof value !== 'string') return null;
@@ -808,6 +870,8 @@ export function marcaDoValor(value) {
  * É a pergunta que uma vista faz antes de comparar, de desenhar uma barra ou de
  * escrever uma palavra de estado: com uma marca não há comparação nenhuma para
  * fazer, e a peça mostra o valor e mais nada.
+ *
+ * @param {unknown} value
  */
 export function eValorTextual(value) {
   return parsePtNumber(value) === null && marcaDoValor(value) !== null;
@@ -830,6 +894,7 @@ export function eValorTextual(value) {
  * não seja uma escolha entre elas.
  */
 export class MarcaDaExpressao {
+  /** @param {string} marca */
   constructor(marca) {
     this.marca = marca;
   }
@@ -838,7 +903,14 @@ export class MarcaDaExpressao {
   }
 }
 
-/** Uma operação sobre dois operandos, com a marca a passar por cima do número. */
+/**
+ * Uma operação sobre dois operandos, com a marca a passar por cima do número.
+ *
+ * @param {Decimal | MarcaDaExpressao} a
+ * @param {Decimal | MarcaDaExpressao} b
+ * @param {(a: Decimal, b: Decimal) => Decimal} fn
+ * @returns {Decimal | MarcaDaExpressao}
+ */
 function operaComMarca(a, b, fn) {
   const ma = a instanceof MarcaDaExpressao ? a.marca : null;
   const mb = b instanceof MarcaDaExpressao ? b.marca : null;
@@ -848,8 +920,8 @@ function operaComMarca(a, b, fn) {
         `que não seja uma escolha entre elas`,
     );
   }
-  if (ma || mb) return new MarcaDaExpressao(ma ?? mb);
-  return fn(a, b);
+  if (ma || mb) return new MarcaDaExpressao(/** @type {string} */ (ma ?? mb));
+  return fn(/** @type {Decimal} */ (a), /** @type {Decimal} */ (b));
 }
 
 /**
@@ -885,6 +957,14 @@ function operaComMarca(a, b, fn) {
  * publicado se move quando a regra do `round` muda tem de poder reavaliar as
  * mesmas linhas com a regra velha (meio-para-o-par). Nenhum chamador de
  * produção o passa.
+ *
+ * `claims` vem declarado como opcional porque a assinatura traz `= {}`: quem
+ * chamar sem ele parte em `claims.get`, como sempre partiu. O molde na leitura
+ * diz isso e não muda um byte do que corre.
+ *
+ * @param {string} expr
+ * @param {{ claims?: Map<string, Linha>, env?: Record<string, unknown>, selfId?: string | null, regraDoRound?: string }} [opcoes]
+ * @returns {Decimal | MarcaDaExpressao}
  */
 export function evaluateCheck(
   expr,
@@ -897,6 +977,10 @@ export function evaluateCheck(
   const peek = () => tokens[i];
   const next = () => tokens[i++];
 
+  /**
+   * @param {string} token
+   * @returns {Decimal | MarcaDaExpressao}
+   */
   function valorDe(token) {
     if (/^-?\d+(\.\d+)?$/.test(token)) return Decimal.de(token);
     /* UM SÍMBOLO QUE COMEÇA COMO UM NÚMERO É LIDO COMO NÚMERO, e recusado se não
@@ -918,7 +1002,7 @@ export function evaluateCheck(
     if (token === selfId) {
       throw new Error(`a expressão check refere-se a si própria ("${token}")`);
     }
-    const claim = claims.get(token);
+    const claim = /** @type {Map<string, Linha>} */ (claims).get(token);
     if (!claim) throw new Error(`a expressão check refere "${token}", que não existe no livro-razão`);
     const n = parsePtDecimal(claim.value);
     if (n === null) {
@@ -932,6 +1016,7 @@ export function evaluateCheck(
     return n;
   }
 
+  /** @returns {Decimal | MarcaDaExpressao} */
   function primary() {
     const t = next();
     if (t === undefined) throw new Error('expressão check truncada');
@@ -972,6 +1057,7 @@ export function evaluateCheck(
     return valorDe(t);
   }
 
+  /** @returns {Decimal | MarcaDaExpressao} */
   function term() {
     let v = primary();
     while (peek() === '*' || peek() === '/') {
@@ -982,6 +1068,7 @@ export function evaluateCheck(
     return v;
   }
 
+  /** @returns {Decimal | MarcaDaExpressao} */
   function expression() {
     let v = term();
     while (peek() === '+' || peek() === '-') {
@@ -1031,6 +1118,10 @@ export function contagensDoRegisto(claims = loadClaims()) {
  * a mostrar o motivo português é exactamente o buraco que o campo `reason_en`
  * veio fechar — e o validador exige os dois campos, por isso um `null` aqui
  * significa que o livro-razão não passou.
+ *
+ * @param {CorrecaoDaLinha | null | undefined} corr
+ * @param {string} lang
+ * @returns {string | null}
  */
 export function motivoDaEntrada(corr, lang) {
   if (!corr) return null;
@@ -1042,8 +1133,11 @@ export function motivoDaEntrada(corr, lang) {
 /**
  * Todas as entradas do registo, de todas as afirmações, da mais recente à
  * primeira. É daqui que a página do método lê — nunca de texto escrito à mão.
+ *
+ * @param {string | null} [kind]
  */
 export function entradasDoRegisto(kind = null) {
+  /** @type {Array<CorrecaoDaLinha & { claimId: string, n: number }>} */
   const out = [];
   for (const claim of allClaims()) {
     (claim.corrections ?? []).forEach((corr, n) => {
@@ -1056,6 +1150,7 @@ export function entradasDoRegisto(kind = null) {
 
 /* -------------------------------------------------------------- validação */
 
+/** @param {unknown} v */
 function ausente(v) {
   return v === null || v === undefined || (typeof v === 'string' && v.trim() === '');
 }
@@ -1300,10 +1395,11 @@ export function validateLedger() {
         if (v === null || typeof v !== 'object') {
           errors.push(`${onde} falta "document" (precisa de title e edition).`);
         } else {
-          if (ausente(v.title)) errors.push(`${onde} falta "document.title".`);
-          if (ausente(v.edition)) errors.push(`${onde} falta "document.edition".`);
-          if (v.title === POR_VERIFICAR) porVerificar++;
-          if (v.edition === POR_VERIFICAR) porVerificar++;
+          const doc = /** @type {Record<string, unknown>} */ (v);
+          if (ausente(doc.title)) errors.push(`${onde} falta "document.title".`);
+          if (ausente(doc.edition)) errors.push(`${onde} falta "document.edition".`);
+          if (doc.title === POR_VERIFICAR) porVerificar++;
+          if (doc.edition === POR_VERIFICAR) porVerificar++;
         }
         continue;
       }
@@ -1539,10 +1635,10 @@ export function validateLedger() {
                diga que a sua fonte é uma página, uma série ou um PDF, o campo
                estaria a prometer que o documento citado É o ficheiro que este
                sítio aloja, e não é. */
-            if (c.document.kind !== 'ficheiro') {
+            if (c.document?.kind !== 'ficheiro') {
               errors.push(
                 `${onde} tem "document.hosted" e "document.kind" é ` +
-                  `${JSON.stringify(c.document.kind ?? null)}. Um ficheiro alojado é o extrato ` +
+                  `${JSON.stringify(c.document?.kind ?? null)}. Um ficheiro alojado é o extrato ` +
                   `de um ficheiro: declare "kind: ficheiro", ou o campo está na linha errada.`,
               );
             }
@@ -1690,10 +1786,10 @@ export function validateLedger() {
                 `indicador legível por pessoas, a começar por "http://" ou "https://".`,
             );
           }
-          if (c.document.kind !== 'serie') {
+          if (c.document?.kind !== 'serie') {
             errors.push(
               `${onde} tem "document.url" e "document.kind" é ` +
-                `${JSON.stringify(c.document.kind ?? null)}. A página humana existe onde o ` +
+                `${JSON.stringify(c.document?.kind ?? null)}. A página humana existe onde o ` +
                 `endereço é um pedido a uma API: numa linha que já cita um documento, o ` +
                 `endereço é a página, e um segundo seria a mesma promessa escrita duas vezes.`,
             );
@@ -1728,10 +1824,10 @@ export function validateLedger() {
                 );
               }
             }
-            if (c.document.kind !== 'ficheiro') {
+            if (c.document?.kind !== 'ficheiro') {
               errors.push(
                 `${onde} tem "document.computed_over" e "document.kind" é ` +
-                  `${JSON.stringify(c.document.kind ?? null)}. Uma soma faz-se sobre ficheiros: ` +
+                  `${JSON.stringify(c.document?.kind ?? null)}. Uma soma faz-se sobre ficheiros: ` +
                   `declare "kind: ficheiro", ou o campo está na linha errada.`,
               );
             }
@@ -1750,7 +1846,7 @@ export function validateLedger() {
                   `${CAMPOS_DO_FICHEIRO_CALCULADO.join(', ')}.`,
               );
             } else {
-              calc.files.forEach((f, n) => {
+              calc.files.forEach((/** @type {Record<string, any>} */ f, /** @type {number} */ n) => {
                 const rot = `${onde} "document.computed_over.files[${n}]"`;
                 if (!f || typeof f !== 'object' || Array.isArray(f)) {
                   errors.push(
@@ -1886,7 +1982,7 @@ export function validateLedger() {
           `${onde} "attributed_to" está vazio. Uma linha que não credita ninguém não traz o campo.`,
         );
       } else {
-        c.attributed_to.forEach((quem, n) => {
+        c.attributed_to.forEach((/** @type {unknown} */ quem, /** @type {number} */ n) => {
           if (typeof quem !== 'string' || quem.trim() === '') {
             errors.push(`${onde} "attributed_to[${n}]" tem de ser o nome de uma entidade.`);
           } else if (quem.includes(SEPARADOR_ATRIBUICAO.trim())) {
@@ -1921,7 +2017,7 @@ export function validateLedger() {
 
     // 5 — estudo
     if (ausente(c.study)) errors.push(`${onde} falta "study".`);
-    else if (!STUDY_IDS.has(c.study)) {
+    else if (!STUDY_IDS.has(/** @type {string} */ (c.study))) {
       errors.push(
         `${onde} "study" é "${c.study}", que não consta de src/data/studies.mjs.\n` +
           `    Estudos aceites: ${[...STUDY_IDS].join(', ')}`,
@@ -1932,7 +2028,7 @@ export function validateLedger() {
     if (!Array.isArray(c.corrections)) {
       errors.push(`${onde} "corrections" tem de ser uma lista (use [] quando não há correcções).`);
     } else {
-      c.corrections.forEach((corr, n) => {
+      c.corrections.forEach((/** @type {CorrecaoDaLinha} */ corr, /** @type {number} */ n) => {
         const rot = `${onde} correcção #${n + 1}`;
         if (!corr || typeof corr !== 'object') {
           errors.push(`${rot}: tem de ser um mapa com date, kind, old_value, new_value, reason e reason_en.`);
@@ -1956,7 +2052,7 @@ export function validateLedger() {
               `${rot}: uma entrada "proveniencia" tem de trazer "field" — qual o campo de ` +
                 `proveniência que mudou. Sem ele, "old_value → new_value" não diz de quê.`,
             );
-          } else if (!CAMPOS_DE_PROVENIENCIA.includes(corr.field)) {
+          } else if (!CAMPOS_DE_PROVENIENCIA.includes(/** @type {string} */ (corr.field))) {
             errors.push(
               `${rot}: "field" é "${corr.field}". Só pode ser ` +
                 `${CAMPOS_DE_PROVENIENCIA.map((k) => `"${k}"`).join(', ')}.`,
@@ -2016,6 +2112,7 @@ export function validateLedger() {
            estrago: ninguém releu ainda uma coisa que ainda não aconteceu. */
         const hoje = new Date().toISOString().slice(0, 10);
         const vistas = new Set();
+        /** @type {string | null} */
         let anterior = null;
         c.verifications.forEach((v, n) => {
           const rot = `${onde} verificação #${n + 1}`;
@@ -2073,7 +2170,7 @@ export function validateLedger() {
             );
           }
 
-          if (!ausente(v.by) && !AUTORES_DA_VERIFICACAO.includes(v.by)) {
+          if (!ausente(v.by) && !AUTORES_DA_VERIFICACAO.includes(/** @type {string} */ (v.by))) {
             errors.push(
               `${rot}: "by" é "${v.by}". Só pode ser ` +
                 `${AUTORES_DA_VERIFICACAO.map((k) => `"${k}"`).join(', ')}.`,
@@ -2181,7 +2278,7 @@ export function validateLedger() {
         errors.push(`${onde} tem "check" mas "value" ("${c.value}") não é um número simples.`);
       } else {
         try {
-          const calculado = evaluateCheck(c.check, { claims, env, selfId: id });
+          const calculado = evaluateCheck(/** @type {string} */ (c.check), { claims, env, selfId: id });
           /* A RECEITA DÁ A MARCA, E A LINHA TEM DE A PUBLICAR (28.08.2026,
              regra 2). O índice de dívida de Penedono é calculado sobre duas
              entradas que a Direção-Geral imprime «N.d.»: a expressão continua a
@@ -2228,7 +2325,7 @@ export function validateLedger() {
           } else {
             verificadas++;
           }
-        } catch (err) {
+        } catch (/** @type {any} */ err) {
           errors.push(`${onde} "check" inválido: ${err.message}`);
         }
       }

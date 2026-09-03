@@ -99,9 +99,11 @@ export const FICHEIRO_DA_EDICAO = { pt: 'pt.html', en: 'en.html' };
  * ficheiro passaria a apontar para o sítio errado.
  */
 function encontraOrigem() {
+  /** @type {string[]} */
   const candidatos = [];
   if (process.env.OEDP_STUDIES_DIR) candidatos.push(process.env.OEDP_STUDIES_DIR);
 
+  /** @param {string} inicio */
   const subir = (inicio) => {
     let dir = inicio;
     for (let i = 0; i < 8; i++) {
@@ -139,6 +141,7 @@ export const STUDIES_SRC_DIR = encontraOrigem();
  */
 export function todosOsDocumentos() {
   if (!STUDIES_SRC_DIR) return [];
+  /** @type {{ slug: string, lang: string, ficheiro: string, rota: string }[]} */
   const out = [];
   const nomesValidos = new Set(Object.values(FICHEIRO_DA_EDICAO));
 
@@ -168,7 +171,9 @@ export function todosOsDocumentos() {
             `Só ${[...nomesValidos].join(' e ')} — um ficheiro por edição.`,
         );
       }
-      const lang = LANGS.find((l) => FICHEIRO_DA_EDICAO[l] === ficheiro);
+      /* `nomesValidos` é `Object.values(FICHEIRO_DA_EDICAO)` e a conferência de cima já
+         atirou se o nome não for um deles: aqui a edição existe sempre. */
+      const lang = /** @type {Lingua} */ (LANGS.find((l) => FICHEIRO_DA_EDICAO[l] === ficheiro));
       if (!work.editions.some((e) => e.lang === lang)) {
         throw new Error(
           `documentos: "studies-src/${slug}/${ficheiro}" é a edição "${lang}" de um trabalho ` +
@@ -188,23 +193,37 @@ export function todosOsDocumentos() {
   return out.sort((a, b) => (a.slug + a.lang).localeCompare(b.slug + b.lang));
 }
 
-/** Os documentos de um estudo. É isto que a página do estudo pergunta. */
+/**
+ * Os documentos de um estudo. É isto que a página do estudo pergunta.
+ *
+ * @param {string} slug
+ */
 export function documentosDoEstudo(slug) {
   return todosOsDocumentos().filter((d) => d.slug === slug);
 }
 
-/** O documento de uma edição, ou null. */
+/**
+ * O documento de uma edição, ou null.
+ *
+ * @param {string} slug
+ * @param {string} lang
+ */
 export function documentoDaEdicao(slug, lang) {
   return todosOsDocumentos().find((d) => d.slug === slug && d.lang === lang) ?? null;
 }
 
 /* ------------------------------------------------------------------- faixa */
 
-/** Escape de atributo. Os slugs são [a-z0-9-], mas nada aqui confia nisso. */
+/**
+ * Escape de atributo. Os slugs são [a-z0-9-], mas nada aqui confia nisso.
+ *
+ * @param {unknown} s
+ */
 function atributo(s) {
   return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 }
 
+/** @param {unknown} s */
 function texto(s) {
   return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
@@ -253,6 +272,10 @@ const FOLHA_SITE = 'src/styles/site.css';
  */
 const PESO_DO_ROTULO = '400';
 
+/**
+ * @param {string} porque
+ * @returns {never}
+ */
 function morre(porque) {
   throw new Error(
     `documentos: ${porque}\n` +
@@ -265,9 +288,13 @@ function morre(porque) {
 /**
  * Onde está um ficheiro do repositório, visto de dentro da construção.
  * A mesma subida de `encontraOrigem()`, e pela mesma razão.
+ *
+ * @param {string} relativo
  */
 function encontraNoRepositorio(relativo) {
+  /** @type {string[]} */
   const candidatos = [];
+  /** @param {string} inicio */
   const subir = (inicio) => {
     let dir = inicio;
     for (let i = 0; i < 8; i++) {
@@ -289,13 +316,23 @@ function encontraNoRepositorio(relativo) {
   return morre(`não encontrei \`${relativo}\` a subir de ${process.cwd()}.`);
 }
 
+/** @param {string} css */
 const semComentarios = (css) => css.replace(/\/\*[\s\S]*?\*\//g, '');
 
-/** Os nomes de ficha de um bloco de CSS passam ao prefixo da faixa, e mais nada. */
+/**
+ * Os nomes de ficha de um bloco de CSS passam ao prefixo da faixa, e mais nada.
+ *
+ * @param {string} valor
+ */
 const comPrefixo = (valor) => valor.replace(/var\(\s*--([a-z0-9-]+)\s*\)/g, 'var(--oedp-$1)');
 
-/** As fichas de um bloco: `--nome` para valor, tal como estão escritas. */
+/**
+ * As fichas de um bloco: `--nome` para valor, tal como estão escritas.
+ *
+ * @param {string} bloco
+ */
 function fichasDe(bloco) {
+  /** @type {Map<string, string>} */
   const mapa = new Map();
   for (const [, nome, valor] of bloco.matchAll(/--([a-z0-9-]+)\s*:\s*([^;]+);/g)) {
     mapa.set(nome, valor.trim());
@@ -303,7 +340,13 @@ function fichasDe(bloco) {
   return mapa;
 }
 
-/** O corpo de uma regra, pelo selector exacto e não por um que o contenha. */
+/**
+ * O corpo de uma regra, pelo selector exacto e não por um que o contenha.
+ *
+ * @param {string} css
+ * @param {string} selector
+ * @param {string} onde
+ */
 function regraDe(css, selector, onde) {
   const escapado = selector.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const m = css.match(new RegExp(`(?:^|\\})\\s*${escapado}\\s*\\{([^{}]*)\\}`));
@@ -311,7 +354,14 @@ function regraDe(css, selector, onde) {
   return m[1];
 }
 
-/** Uma declaração de uma regra, com os nomes de ficha já prefixados. */
+/**
+ * Uma declaração de uma regra, com os nomes de ficha já prefixados.
+ *
+ * @param {string} bloco
+ * @param {string} propriedade
+ * @param {string} selector
+ * @param {string} onde
+ */
 function declaracaoDe(bloco, propriedade, selector, onde) {
   const m = bloco.match(new RegExp(`(?:^|;)\\s*${propriedade}\\s*:\\s*([^;]+)`));
   if (!m) morre(`\`${selector}\` (\`${onde}\`) já não declara \`${propriedade}\`.`);
@@ -323,6 +373,11 @@ function declaracaoDe(bloco, propriedade, selector, onde) {
  *
  * O endereço do ficheiro sai da própria ficha: retipá-lo era abrir a porta a
  * uma faixa que pede uma letra que já não está no sítio.
+ *
+ * @param {string} css
+ * @param {string} familia
+ * @param {string} peso
+ * @param {string} onde
  */
 function faceDe(css, familia, peso, onde) {
   for (const m of css.matchAll(/@font-face\s*\{([^{}]*)\}/g)) {
@@ -347,25 +402,32 @@ function faceDe(css, familia, peso, onde) {
  * Fecha-se sobre si própria: `--muted` é `var(--g1)` em `tokens.css`, e por isso
  * pedir a cor da sobrancelha traz o cinzento atrás. Uma ficha pedida que o
  * `:root` não declara pára a construção.
+ *
+ * @param {string} css
+ * @param {Map<string, string>} raiz
  */
 function fichasNecessarias(css, raiz) {
+  /** @type {Map<string, string>} */
   const necessarias = new Map();
   const porVer = [...css.matchAll(/var\(\s*--oedp-([a-z0-9-]+)\s*\)/g)].map((m) => m[1]);
   while (porVer.length) {
-    const nome = porVer.pop();
+    /* O `while` acima só entra com a lista não vazia: aqui há sempre nome. */
+    const nome = /** @type {string} */ (porVer.pop());
     if (necessarias.has(nome)) continue;
     if (!raiz.has(nome)) {
       morre(`a faixa pede \`--${nome}\` e o \`:root\` de \`${FOLHA_TOKENS}\` não o declara.`);
     }
-    const valor = comPrefixo(raiz.get(nome));
+    const valor = comPrefixo(/** @type {string} */ (raiz.get(nome)));
     necessarias.set(nome, valor);
     for (const m of valor.matchAll(/var\(\s*--oedp-([a-z0-9-]+)\s*\)/g)) porVer.push(m[1]);
   }
   return necessarias;
 }
 
+/** @param {string[][]} pares */
 const declaracoes = (pares) => pares.map(([p, v]) => `${p}:${v}`).join(';');
 
+/** @type {string | null} */
 let ESTILO = null;
 
 /**
@@ -403,7 +465,9 @@ function estiloDaFaixa() {
   const marca = regraDe(site, '.wordmark', FOLHA_SITE);
   const marcaCompacta = regraDe(site, '.masthead-compact .wordmark', FOLHA_SITE);
   const sobrancelha = regraDe(site, '.eyebrow', FOLHA_SITE);
+  /** @param {string} p */
   const daMarca = (p) => declaracaoDe(marca, p, '.wordmark', FOLHA_SITE);
+  /** @param {string} p */
   const daSobrancelha = (p) => declaracaoDe(sobrancelha, p, '.eyebrow', FOLHA_SITE);
 
   const corpo = [
@@ -551,6 +615,9 @@ function estiloDaFaixa() {
  *
  * O `lang` da faixa é o da edição, e o `aria-label` é o rótulo: assim quem ouve
  * a página ouve a faixa nomeada, e não uma tira de ligações sem dono.
+ *
+ * @param {string} slug
+ * @param {Lingua} lang
  */
 export function faixa(slug, lang) {
   const s = t(lang);
@@ -629,8 +696,14 @@ export const MARCA_DOS_ROBOS = '<meta name="robots" content="noindex, follow">';
  */
 const LIMITE_DA_CABECA = 4096;
 
-/** Os intervalos `[inicio, fim)` que não são markup. */
+/**
+ * Os intervalos `[inicio, fim)` que não são markup.
+ *
+ * @param {string} texto
+ * @returns {Array<[number, number]>}
+ */
 function zonasOpacas(texto) {
+  /** @type {Array<[number, number]>} */
   const zonas = [];
   const padroes = [
     /<!--[\s\S]*?(?:-->|$)/g,
@@ -643,10 +716,19 @@ function zonasOpacas(texto) {
   return zonas;
 }
 
+/**
+ * @param {Array<[number, number]>} zonas
+ * @param {number} i
+ */
 const dentroDe = (zonas, i) => zonas.some(([de, ate]) => i >= de && i < ate);
 
 /**
  * A primeira ocorrência REAL de uma etiqueta de abertura.
+ *
+ * @param {string} texto
+ * @param {string} nome
+ * @param {Array<[number, number]>} zonas
+ * @param {{ ate?: number, antesDe?: number }} [limites]
  * @returns {{ inicio: number, fim: number, atributos: string } | null}
  */
 function etiquetaReal(texto, nome, zonas, { ate = Infinity, antesDe = Infinity } = {}) {
@@ -671,9 +753,19 @@ const ROBOS_DO_AUTOR =
 const CHARSET_DO_AUTOR =
   /<meta\b[^>]*(?:\bcharset\s*=|\bhttp-equiv\s*=\s*['"]?\s*content-type)[^>]*>/i;
 
-const recusa = (slug, lang, porque) => {
+/**
+ * Uma declaração e não uma seta: só uma declaração deixa o verificador de tipos
+ * saber que a chamada não regressa, e é isso que faz as guardas de baixo lerem-se
+ * como o que são. Nada mais muda: é privada, não é reatribuída e não usa `this`.
+ *
+ * @param {string} slug
+ * @param {string} lang
+ * @param {string} porque
+ * @returns {never}
+ */
+function recusa(slug, lang, porque) {
   throw new Error(`documentos: o documento "${slug}" (${lang}) ${porque}`);
-};
+}
 
 /**
  * As duas marcas que vivem ACIMA do `<body>`: a língua do `<html>` e a marca
@@ -737,10 +829,14 @@ export function comMarcasDaCasa(bruto, { slug, lang }) {
        contrato a duas vozes (leitura a frio de 03.09, Major 5). Fecha-se do
        lado estrito, e o que se muda é a FORMA de uma etiqueta de metadados,
        acima do `<head>`: nenhum byte do corpo se move. */
+    /* `valor` só deixa de ser nulo quando houve correspondência, e um `match` sem
+       `g` traz sempre o índice: os dois moldes dizem isso e nada muda no que corre. */
+    const decl = /** @type {RegExpMatchArray} */ (declarada);
+    const indiceDeclarado = /** @type {number} */ (decl.index);
     saida =
       bruto.slice(0, html.inicio) +
-      `<html${html.atributos.slice(0, declarada.index)}lang="${atributo(s.lang)}"` +
-      `${html.atributos.slice(declarada.index + declarada[0].length)}>` +
+      `<html${html.atributos.slice(0, indiceDeclarado)}lang="${atributo(s.lang)}"` +
+      `${html.atributos.slice(indiceDeclarado + decl[0].length)}>` +
       bruto.slice(html.fim);
   }
 
@@ -769,7 +865,9 @@ export function comMarcasDaCasa(bruto, { slug, lang }) {
   }
 
   const charset = daCabeca.match(CHARSET_DO_AUTOR);
-  const onde = charset ? cabeca.fim + charset.index + charset[0].length : cabeca.fim;
+  const onde = charset
+    ? cabeca.fim + /** @type {number} */ (charset.index) + charset[0].length
+    : cabeca.fim;
   return saida.slice(0, onde) + MARCA_DOS_ROBOS + saida.slice(onde);
 }
 
@@ -784,6 +882,7 @@ export function comMarcasDaCasa(bruto, { slug, lang }) {
  *
  * @returns {{ de: number, ate: number } | null}
  */
+/** @param {string} texto */
 export function regiaoDaCabeca(texto) {
   const zonas = zonasOpacas(texto);
   const corpo = etiquetaReal(texto, 'body', zonas);
@@ -816,10 +915,18 @@ export function regiaoDaCabeca(texto) {
  *     entre os seus.
  *
  * Devolve `null` quando está bem, ou a frase do que falhou.
+ *
+ * @param {string} bruto
+ * @param {string} construido
+ * @returns {string | null}
  */
 export function provaDosBytes(bruto, construido) {
   const bufO = Buffer.from(bruto, 'utf8');
   const bufC = Buffer.from(construido, 'utf8');
+  /**
+   * @param {string} texto
+   * @param {number} i
+   */
   const bytesAte = (texto, i) => Buffer.byteLength(texto.slice(0, i), 'utf8');
 
   const corpoO = etiquetaReal(bruto, 'body', zonasOpacas(bruto));
@@ -850,6 +957,12 @@ export function provaDosBytes(bruto, construido) {
   const zonasR = zonasOpacas(reposto);
   const corpoR = etiquetaReal(reposto, 'body', zonasR);
   const cabecaR = etiquetaReal(reposto, 'head', zonasR, { antesDe: corpoR ? corpoR.inicio : Infinity });
+  /* O `<body>` do construído: a linha de cima já contava com a sua ausência
+     (`corpoR ? corpoR.inicio : Infinity`) e a de baixo lia-o na mesma. Um
+     documento construído sem `<body>` de verdade fazia este provador atirar um
+     TypeError em vez de devolver a frase do que falhou, que é o que ele promete
+     ao portão (achado do bloco F0.4). */
+  if (!corpoR) return 'o construído não tem um `<body>` de verdade.';
   if (!cabecaO || !cabecaR) return 'não encontrei o `<head>` dos dois lados para comparar.';
   const entreO = bufO.subarray(bytesAte(bruto, cabecaO.fim), bytesAte(bruto, corpoO.inicio));
   const bufR = Buffer.from(reposto, 'utf8');
@@ -868,7 +981,7 @@ export function provaDosBytes(bruto, construido) {
  * o documento inteiro, byte a byte.
  *
  * @param {string} bruto o ficheiro tal como está em studies-src/
- * @param {{ slug: string, lang: string }} onde
+ * @param {{ slug: string, lang: Lingua }} onde
  */
 export function comFaixa(bruto, { slug, lang }) {
   const marca = faixa(slug, lang);
@@ -893,6 +1006,9 @@ export function comFaixa(bruto, { slug, lang }) {
  * O que é servido em `/estudos/<slug>/documento`.
  * É também o que o portão recalcula para conferir que o que foi construído é o
  * documento de origem mais a faixa, e nada mais.
+ *
+ * @param {string} slug
+ * @param {Lingua} lang
  */
 export function documentoServido(slug, lang) {
   const doc = documentoDaEdicao(slug, lang);

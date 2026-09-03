@@ -58,9 +58,11 @@ export const MOTIVOS_SEM_RESUMO = new Set([
 /** Uma estrutura do registo que este renderizador recusa em vez de adivinhar. */
 export class FalhaDoRegisto extends Error {}
 
+/** @param {unknown} s */
 const escapaTexto = (s) =>
   String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
+/** @param {unknown} s */
 const escapaAtributo = (s) =>
   String(s)
     .replace(/&/g, '&amp;')
@@ -68,11 +70,17 @@ const escapaAtributo = (s) =>
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
 
-/** As unidades de um bloco, com a sua coordenada, em ordem de documento. */
+/**
+ * As unidades de um bloco, com a sua coordenada, em ordem de documento.
+ *
+ * @param {BlocoDoRegisto} bloco
+ * @returns {{ unidade: UnidadeDoRegisto, coordenada: string }[]}
+ */
 export function unidadesDoBloco(bloco) {
   if (bloco.kind === 'heading' || bloco.kind === 'paragraph') return [{ unidade: bloco, coordenada: '' }];
   if (bloco.kind === 'list') return bloco.items.map((u, i) => ({ unidade: u, coordenada: `.${i}` }));
   if (bloco.kind === 'table') {
+    /** @type {{ unidade: UnidadeDoRegisto, coordenada: string }[]} */
     const saida = [];
     bloco.rows.forEach((linha, r) => {
       linha.forEach((celula, c) => saida.push({ unidade: celula, coordenada: `.${r}.${c}` }));
@@ -80,10 +88,17 @@ export function unidadesDoBloco(bloco) {
     return saida;
   }
   if (bloco.kind === 'rule') return [];
-  throw new FalhaDoRegisto(`género de bloco desconhecido: "${bloco.kind}"`);
+  /* Os cinco géneros conhecidos já regressaram: o que chega aqui é um género
+     que o registo não devia trazer, e o molde diz isso ao verificador. */
+  throw new FalhaDoRegisto(`género de bloco desconhecido: "${/** @type {{ kind: unknown }} */ (bloco).kind}"`);
 }
 
-/** Todas as figuras de um registo, em ordem de documento, com a sua marca. */
+/**
+ * Todas as figuras de um registo, em ordem de documento, com a sua marca.
+ *
+ * @param {RegistoDeConteudo} registo
+ * @param {string} chave
+ */
 export function* figurasDoRegisto(registo, chave) {
   for (const bloco of registo.blocks) {
     for (const { unidade, coordenada } of unidadesDoBloco(bloco)) {
@@ -108,8 +123,13 @@ export function* figurasDoRegisto(registo, chave) {
  * documento, com o separador da casa: **medido**, 24 das 1 888 entradas das oito
  * edições imprimem a mesma linha de mais do que uma maneira, e escolher uma
  * delas seria a página a esconder o que o documento faz.
+ *
+ * @param {RegistoDeConteudo} registo
+ * @param {string} chave
+ * @param {(row: string) => (string | null)} linhaDoSitio
  */
 export function linhasDoDocumento(registo, chave, linhaDoSitio) {
+  /** @type {Map<string, LinhaDoDocumento>} */
   const porRow = new Map();
   for (const { figura } of figurasDoRegisto(registo, chave)) {
     if (!porRow.has(figura.row)) {
@@ -123,7 +143,8 @@ export function linhasDoDocumento(registo, chave, linhaDoSitio) {
         figuras: 0,
       });
     }
-    const entrada = porRow.get(figura.row);
+    /* A linha acima acabou de a pôr no mapa quando faltava. */
+    const entrada = /** @type {LinhaDoDocumento} */ (porRow.get(figura.row));
     entrada.figuras++;
     if (!entrada.impressos.includes(figura.printed)) entrada.impressos.push(figura.printed);
     if (entrada.valor !== figura.value) {
@@ -156,6 +177,8 @@ export function linhasDoDocumento(registo, chave, linhaDoSitio) {
  * este mesmo bloco (L8). Seis dos títulos das oito edições trazem um ano nas
  * palavras, e é por isso que o índice tem de entrar por uma origem conferida e
  * não por prosa da casa.
+ *
+ * @param {RegistoDeConteudo} registo
  */
 export function titulosDoDocumento(registo) {
   return registo.blocks
@@ -163,7 +186,13 @@ export function titulosDoDocumento(registo) {
     .map((b) => ({ i: b.i, texto: String(b.text ?? '') }));
 }
 
-/** As três contagens da faixa do aparelho, recontadas do registo. */
+/**
+ * As três contagens da faixa do aparelho, recontadas do registo.
+ *
+ * @param {RegistoDeConteudo} registo
+ * @param {string} chave
+ * @param {(row: string) => (string | null)} linhaDoSitio
+ */
 export function contasDoRegisto(registo, chave, linhaDoSitio) {
   let algarismos = 0;
   let comLinha = 0;
@@ -181,7 +210,13 @@ export function contasDoRegisto(registo, chave, linhaDoSitio) {
 /** A ordem de aninhamento quando dois intervalos começam no mesmo sítio. */
 const ORDEM = { ligacao: 0, enfase: 1, figura: 2 };
 
+/**
+ * @param {UnidadeDoRegisto} unidade
+ * @param {string} marcaDaUnidade
+ * @returns {IntervaloDaUnidade[]}
+ */
 function intervalosDaUnidade(unidade, marcaDaUnidade) {
+  /** @type {IntervaloDaUnidade[]} */
   const saida = [];
   for (const l of unidade.links ?? []) {
     saida.push({ tipo: 'ligacao', inicio: l.start, fim: l.end, href: l.href });
@@ -209,6 +244,11 @@ function intervalosDaUnidade(unidade, marcaDaUnidade) {
  * figura em dois elementos com a mesma marca: dois elementos com a mesma marca
  * seriam duas afirmações sobre o mesmo algarismo, e o portão não teria como
  * dizer qual delas é a figura.
+ *
+ * @param {UnidadeDoRegisto} unidade
+ * @param {string} marcaDaUnidade
+ * @param {string} texto
+ * @returns {NoDoIntervalo}
  */
 export function arvoreDeIntervalos(unidade, marcaDaUnidade, texto) {
   const intervalos = intervalosDaUnidade(unidade, marcaDaUnidade);
@@ -223,7 +263,9 @@ export function arvoreDeIntervalos(unidade, marcaDaUnidade, texto) {
   intervalos.sort(
     (a, b) => a.inicio - b.inicio || b.fim - a.fim || ORDEM[a.tipo] - ORDEM[b.tipo],
   );
+  /** @type {NoDoIntervalo} */
   const raiz = { tipo: 'raiz', inicio: 0, fim: texto.length, filhos: [] };
+  /** @type {NoDoIntervalo[]} */
   const pilha = [raiz];
   for (const iv of intervalos) {
     while (pilha.length > 1 && iv.inicio >= pilha[pilha.length - 1].fim) pilha.pop();
@@ -236,6 +278,7 @@ export function arvoreDeIntervalos(unidade, marcaDaUnidade, texto) {
           `duas afirmações sobre o mesmo algarismo.`,
       );
     }
+    /** @type {NoDoIntervalo} */
     const no = { ...iv, filhos: [] };
     topo.filhos.push(no);
     pilha.push(no);
@@ -249,15 +292,18 @@ export function arvoreDeIntervalos(unidade, marcaDaUnidade, texto) {
 
 /** Um acumulador que junta HTML seguido numa peça só e guarda os selos em ordem. */
 function acumulador() {
+  /** @type {PecaDoRegisto[]} */
   const pecas = [];
   return {
     pecas,
+    /** @param {string} s */
     html(s) {
       if (!s) return;
-      const ultima = pecas[pecas.length - 1];
+      const ultima = /** @type {{ html?: string }} */ (pecas[pecas.length - 1]);
       if (ultima && ultima.html !== undefined) ultima.html += s;
       else pecas.push({ html: s });
     },
+    /** @param {string} id */
     selo(id) {
       pecas.push({ selo: id });
     },
@@ -287,6 +333,9 @@ function acumulador() {
  * acessibilidade existe para dizer o que a porta abre. A chave continua no
  * `href`, que é onde ela é um endereço; o rótulo diz de que figura é a linha, e
  * é isso que separa duas portas seguidas dentro da mesma ligação.
+ *
+ * @param {string} row
+ * @param {ContextoDoRegisto} ctx
  */
 function portaAposALigacao(row, ctx) {
   return (
@@ -295,6 +344,26 @@ function portaAposALigacao(row, ctx) {
   );
 }
 
+/**
+ * A ligação aberta, quando `dentroDeLigacao` diz que há uma.
+ *
+ * Os dois campos movem-se sempre juntos em `escreveNo` (`dentroDeLigacao++` e
+ * `ligacaoAberta = filho`, e o contrário à saída), por isso um deles a dizer
+ * que há ligação é o outro a ter o nó. O molde diz isso; nada muda no que corre.
+ *
+ * @param {ContextoDoRegisto} ctx
+ * @returns {{ tipo: 'ligacao', inicio: number, fim: number, href: string, filhos: NoFilhoDoIntervalo[], saidasPendentes?: SaidaPendenteDoRegisto[] }}
+ */
+const aberta = (ctx) =>
+  /** @type {{ tipo: 'ligacao', inicio: number, fim: number, href: string, filhos: NoFilhoDoIntervalo[], saidasPendentes?: SaidaPendenteDoRegisto[] }} */ (
+    ctx.ligacaoAberta
+  );
+
+/**
+ * @param {NoFilhoDoIntervalo} no
+ * @param {ReturnType<typeof acumulador>} saida
+ * @param {ContextoDoRegisto} ctx
+ */
 function abreIntervalo(no, saida, ctx) {
   if (no.tipo === 'ligacao') {
     saida.html(`<a class="texto-ligacao" href="${escapaAtributo(no.href)}" rel="noopener">`);
@@ -325,6 +394,11 @@ function abreIntervalo(no, saida, ctx) {
   );
 }
 
+/**
+ * @param {NoFilhoDoIntervalo} no
+ * @param {ReturnType<typeof acumulador>} saida
+ * @param {ContextoDoRegisto} ctx
+ */
 function fechaIntervalo(no, saida, ctx) {
   if (no.tipo === 'ligacao') {
     saida.html('</a>');
@@ -334,7 +408,7 @@ function fechaIntervalo(no, saida, ctx) {
        de qual figura. */
     for (const saidaPendente of no.saidasPendentes ?? []) {
       if (saidaPendente.selo !== undefined) saida.selo(saidaPendente.selo);
-      else saida.html(portaAposALigacao(saidaPendente.porta, ctx));
+      else saida.html(portaAposALigacao(/** @type {string} */ (saidaPendente.porta), ctx));
     }
     return;
   }
@@ -349,7 +423,7 @@ function fechaIntervalo(no, saida, ctx) {
     /* O selo nunca fica dentro de uma ligação nem de outro alvo (Emenda 2):
        numa figura dentro de uma ligação do documento, vai imediatamente depois
        de a ligação fechar. */
-    if (ctx.ligacaoAberta) (ctx.ligacaoAberta.saidasPendentes ??= []).push({ selo: siteId });
+    if (ctx.ligacaoAberta) (aberta(ctx).saidasPendentes ??= []).push({ selo: siteId });
     else saida.selo(siteId);
     return;
   }
@@ -357,12 +431,18 @@ function fechaIntervalo(no, saida, ctx) {
     saida.html('</span>');
     /* A porta, pela mesma regra do selo: uma âncora não aninha noutra, e a
        saída vai imediatamente depois da ligação. */
-    (ctx.ligacaoAberta.saidasPendentes ??= []).push({ porta: no.figura.row });
+    (aberta(ctx).saidasPendentes ??= []).push({ porta: no.figura.row });
     return;
   }
   saida.html('</a>');
 }
 
+/**
+ * @param {NoDoIntervalo} no
+ * @param {string} texto
+ * @param {ReturnType<typeof acumulador>} saida
+ * @param {ContextoDoRegisto} ctx
+ */
 function escreveNo(no, texto, saida, ctx) {
   let cursor = no.inicio;
   for (const filho of no.filhos) {
@@ -384,7 +464,14 @@ function escreveNo(no, texto, saida, ctx) {
   saida.html(escapaTexto(texto.slice(cursor, no.fim)));
 }
 
-/** O conteúdo de uma unidade: o texto do registo, com os seus intervalos. */
+/**
+ * O conteúdo de uma unidade: o texto do registo, com os seus intervalos.
+ *
+ * @param {UnidadeDoRegisto} unidade
+ * @param {string} marca
+ * @param {ReturnType<typeof acumulador>} saida
+ * @param {ContextoDoRegisto} ctx
+ */
 function escreveUnidade(unidade, marca, saida, ctx) {
   const texto = String(unidade.text ?? '');
   const arvore = arvoreDeIntervalos(unidade, marca, texto);
@@ -393,6 +480,7 @@ function escreveUnidade(unidade, marca, saida, ctx) {
   escreveNo(arvore, texto, saida, ctx);
 }
 
+/** @param {string} marca */
 const atributosDaUnidade = (marca) => ` data-registo-unidade="${escapaAtributo(marca)}"`;
 
 /**
@@ -405,8 +493,8 @@ const atributosDaUnidade = (marca) => ` data-registo-unidade="${escapaAtributo(m
  * a construção pára, porque uma porta sem nome é uma ligação que um leitor de
  * ecrã anuncia vazia.
  *
- * @param {{registo: object, chave: string, linhaDoSitio: (row: string) => (string|null), rotuloDaPorta: string}} args
- * @returns {({html: string}|{selo: string})[]}
+ * @param {{registo: RegistoDeConteudo, chave: string, linhaDoSitio: (row: string) => (string|null), rotuloDaPorta: string}} args
+ * @returns {PecaDoRegisto[]}
  */
 export function pecasDoCorpo({ registo, chave, linhaDoSitio, rotuloDaPorta }) {
   if (typeof rotuloDaPorta !== 'string' || rotuloDaPorta === '') {
@@ -481,7 +569,10 @@ export function pecasDoCorpo({ registo, chave, linhaDoSitio, rotuloDaPorta }) {
       saida.html('</table></div>');
       return;
     }
-    throw new FalhaDoRegisto(`género de bloco desconhecido: "${bloco.kind}"`);
+    /* Como em `unidadesDoBloco`: os cinco géneros conhecidos já regressaram. */
+    throw new FalhaDoRegisto(
+      `género de bloco desconhecido: "${/** @type {{ kind: unknown }} */ (bloco).kind}"`,
+    );
   });
 
   return saida.pecas;

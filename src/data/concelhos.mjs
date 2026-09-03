@@ -191,8 +191,14 @@ export const MEDIDAS_DO_CONCELHO = [
   },
 ];
 
-/** A linha «unidade · período» de uma medida, nas duas línguas. */
+/**
+ * A linha «unidade · período» de uma medida, nas duas línguas.
+ *
+ * @param {Record<string, any>} medida
+ * @param {string} ref
+ */
 function linhaDaMedida(medida, ref) {
+  /** @param {Lingua} lang */
   const parte = (lang) => {
     const cabeca = `${medida.unidade[lang]}${medida.tecto ? medida.tectoTexto[lang] : ''}`;
     const cauda = ` · ${medida.prefixo[lang]}`;
@@ -225,7 +231,11 @@ export function relanceDoConcelho(linhas = {}, refs = {}) {
   });
 }
 
-/** O rótulo do distrito ou da ilha, pela regra dos 308 (`eIlha`). */
+/**
+ * O rótulo do distrito ou da ilha, pela regra dos 308 (`eIlha`).
+ *
+ * @param {string} distritoOuIlha
+ */
 export function rotuloDoDistrito(distritoOuIlha) {
   if (eIlha(distritoOuIlha)) return { pt: distritoOuIlha, en: distritoOuIlha };
   return { pt: `distrito de ${distritoOuIlha}`, en: `district of ${distritoOuIlha}` };
@@ -271,6 +281,7 @@ export function caminhoDoFicheiroGerado() {
  * `ledger/claims`.
  */
 function encontraRaiz() {
+  /** @param {string} inicio */
   const subir = (inicio) => {
     let dir = inicio;
     for (let i = 0; i < 8; i++) {

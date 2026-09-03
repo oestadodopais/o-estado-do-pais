@@ -2421,8 +2421,15 @@ export const STRINGS = {
   },
 };
 
-/** Todas as chaves, em profundidade, de um objecto de strings. */
+/**
+ * Todas as chaves, em profundidade, de um objecto de strings.
+ *
+ * @param {Record<string, any>} obj
+ * @param {string} [prefixo]
+ * @returns {string[]}
+ */
 function chaves(obj, prefixo = '') {
+  /** @type {string[]} */
   const out = [];
   for (const [k, v] of Object.entries(obj)) {
     const aqui = prefixo ? `${prefixo}.${k}` : k;
@@ -2451,9 +2458,10 @@ export function assertKeyParity() {
   return true;
 }
 
+/** @param {string} lang */
 export function t(lang) {
   assertKeyParity();
-  const s = STRINGS[lang];
+  const s = /** @type {Record<string, any>} */ (STRINGS)[lang];
   if (!s) throw new Error(`i18n: língua desconhecida "${lang}"`);
   return s;
 }

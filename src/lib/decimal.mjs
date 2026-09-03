@@ -79,12 +79,20 @@ export const PRECISAO = 28;
 export const REGRA_DAS_INTERMEDIAS = 'meio-para-o-par';
 export const REGRA_DO_ROUND = 'meio-para-longe-do-zero';
 
-/** Quantos algarismos tem este inteiro não negativo. */
+/**
+ * Quantos algarismos tem este inteiro não negativo.
+ *
+ * @param {bigint} n
+ */
 function algarismos(n) {
   return n === 0n ? 1 : String(n).length;
 }
 
-/** 10^k como `BigInt`, para k inteiro não negativo. */
+/**
+ * 10^k como `BigInt`, para k inteiro não negativo.
+ *
+ * @param {number} k
+ */
 function dez(k) {
   return 10n ** BigInt(k);
 }
@@ -108,6 +116,8 @@ export class Decimal {
    * `core/reconcile.py` reduz o valor publicado a esta forma antes de o dar ao
    * `Decimal` do Python. Uma cadeia que não seja esta atira, e nunca dá zero:
    * um zero em vez de uma recusa era um número inventado.
+   *
+   * @param {unknown} texto
    */
   static de(texto) {
     const s = String(texto).trim();
@@ -149,7 +159,11 @@ export class Decimal {
     return new Decimal(this.neg, coef, exp);
   }
 
-  /** Este valor é exatamente aquele? Por valor, nunca por cadeia. */
+  /**
+   * Este valor é exatamente aquele? Por valor, nunca por cadeia.
+   *
+   * @param {Decimal} outro
+   */
   igual(outro) {
     /* Zero é zero, com qualquer sinal e com qualquer expoente. */
     if (this.zero && outro.zero) return true;
@@ -203,6 +217,10 @@ export class Decimal {
  *
  * É o `_fix()` do `decimal` do Python: toda a operação aritmética passa por
  * aqui, e é por aqui que `1 / 3 * 3` dá `0,999…9` com 28 noves e não 1.
+ *
+ * @param {boolean} neg
+ * @param {bigint} coef
+ * @param {number} exp
  */
 function ajusta(neg, coef, exp) {
   const n = algarismos(coef);
@@ -224,7 +242,13 @@ function ajusta(neg, coef, exp) {
   return new Decimal(neg, q, novoExp);
 }
 
-/** O par de coeficientes com sinal, alinhados no expoente mais baixo. */
+/**
+ * O par de coeficientes com sinal, alinhados no expoente mais baixo.
+ *
+ * @param {Decimal} a
+ * @param {Decimal} b
+ * @returns {[bigint, bigint, number]}
+ */
 function alinha(a, b) {
   const exp = Math.min(a.exp, b.exp);
   const ca = (a.neg ? -a.coef : a.coef) * dez(a.exp - exp);
@@ -232,20 +256,36 @@ function alinha(a, b) {
   return [ca, cb, exp];
 }
 
+/**
+ * @param {bigint} soma
+ * @param {number} exp
+ */
 function daSoma(soma, exp) {
   return ajusta(soma < 0n, soma < 0n ? -soma : soma, exp);
 }
 
+/**
+ * @param {Decimal} a
+ * @param {Decimal} b
+ */
 export function soma(a, b) {
   const [ca, cb, exp] = alinha(a, b);
   return daSoma(ca + cb, exp);
 }
 
+/**
+ * @param {Decimal} a
+ * @param {Decimal} b
+ */
 export function subtrai(a, b) {
   const [ca, cb, exp] = alinha(a, b);
   return daSoma(ca - cb, exp);
 }
 
+/**
+ * @param {Decimal} a
+ * @param {Decimal} b
+ */
 export function multiplica(a, b) {
   return ajusta(a.neg !== b.neg, a.coef * b.coef, a.exp + b.exp);
 }
@@ -268,6 +308,9 @@ export class DivisaoPorZero extends Error {}
  *   · se não sobrou resto, a divisão é exata, e o resultado encolhe até ao
  *     expoente ideal (`exp(a) - exp(b)`), que é o que faz `3 / 1` dar `3` e não
  *     `3,000…`.
+ *
+ * @param {Decimal} a
+ * @param {Decimal} b
  */
 export function divide(a, b) {
   if (b.zero) throw new DivisaoPorZero('a expressão check divide por zero');
@@ -306,6 +349,8 @@ export function divide(a, b) {
  * qualquer outra operação: `- 12345678901234567890123456789` guardava 29
  * algarismos aqui e era arredondado a 28 no motor (leitura a frio, Major 7).
  * Passa pelo `ajusta()` como as outras quatro.
+ *
+ * @param {Decimal} a
  */
 export function nega(a) {
   return ajusta(!a.neg, a.coef, a.exp);
@@ -321,6 +366,10 @@ export function nega(a) {
  * dá 0 para `-0,5`; a linha que estava aqui antes já corrigia isso com
  * `Math.sign()`, e o que ela não podia corrigir era o `float64` por baixo:
  * `1,005 × 100` são `100.49999999999999`, e o arredondamento dava `1,00`.
+ *
+ * @param {Decimal} a
+ * @param {number} casas
+ * @param {string} [regra]
  */
 export function arredonda(a, casas, regra = REGRA_DO_ROUND) {
   const alvo = -casas;

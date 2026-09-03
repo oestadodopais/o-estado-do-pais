@@ -39,9 +39,11 @@ export const MANIFESTO = 'manifest.json';
  * caminho relativo a este ficheiro passaria a apontar para o sítio errado.
  */
 function encontraRegistos() {
+  /** @type {string[]} */
   const candidatos = [];
   if (process.env.OEDP_REGISTOS_DIR) candidatos.push(process.env.OEDP_REGISTOS_DIR);
 
+  /** @param {string} inicio */
   const subir = (inicio) => {
     let dir = inicio;
     for (let i = 0; i < 8; i++) {
@@ -67,6 +69,13 @@ function encontraRegistos() {
 
 export const REGISTOS_DIR = encontraRegistos();
 
+/**
+ * A pasta, já provada por `manifestoDosRegistos()`, que atira quando ela falta.
+ * Quem chega às funções de baixo passou por lá.
+ */
+const PASTA_PROVADA = () => /** @type {string} */ (REGISTOS_DIR);
+
+/** @type {{ exporter: string, origin: string, registos: Record<string, object> } | null} */
 let CACHE = null;
 
 /**
@@ -90,23 +99,27 @@ export function manifestoDosRegistos() {
   let bruto;
   try {
     bruto = fs.readFileSync(ficheiro, 'utf8');
-  } catch (erro) {
+  } catch (/** @type {any} */ erro) {
     throw new Error(`registos: não consegui ler ${ficheiro}: ${erro.message}`);
   }
   let doc;
   try {
     doc = JSON.parse(bruto);
-  } catch (erro) {
+  } catch (/** @type {any} */ erro) {
     throw new Error(`registos: ${ficheiro} não é JSON legível: ${erro.message}`);
   }
   if (!doc || typeof doc.registos !== 'object' || doc.registos === null) {
     throw new Error(`registos: ${ficheiro} não traz um objecto "registos".`);
   }
   CACHE = doc;
-  return CACHE;
+  return doc;
 }
 
 /** A chave de uma edição no manifesto. */
+/**
+ * @param {string} slug
+ * @param {string} lang
+ */
 const chaveDe = (slug, lang) => `${slug}/${lang}`;
 
 /**
@@ -124,20 +137,29 @@ export function todosOsRegistos() {
       return {
         slug,
         lang,
-        ficheiro: path.join(REGISTOS_DIR, slug, `${lang}.record.json`),
-        cortes: path.join(REGISTOS_DIR, slug, `${lang}.cortes.json`),
+        ficheiro: path.join(PASTA_PROVADA(), slug, `${lang}.record.json`),
+        cortes: path.join(PASTA_PROVADA(), slug, `${lang}.cortes.json`),
         entrada,
       };
     })
     .sort((a, b) => chaveDe(a.slug, a.lang).localeCompare(chaveDe(b.slug, b.lang)));
 }
 
-/** Se uma edição tem registo. É isto que a página do estudo pergunta. */
+/**
+ * Se uma edição tem registo. É isto que a página do estudo pergunta.
+ *
+ * @param {string} slug
+ * @param {string} lang
+ */
 export function temRegisto(slug, lang) {
   return Object.hasOwn(manifestoDosRegistos().registos, chaveDe(slug, lang));
 }
 
-/** Os registos de um estudo, nas línguas que o tenham. */
+/**
+ * Os registos de um estudo, nas línguas que o tenham.
+ *
+ * @param {string} slug
+ */
 export function registosDoEstudo(slug) {
   return todosOsRegistos().filter((r) => r.slug === slug);
 }
@@ -150,14 +172,18 @@ export function registosDoEstudo(slug) {
  * **Atira** quando o manifesto a declara e o ficheiro não está lá: um manifesto
  * que nomeia um ficheiro que não existe é o registo a dizer uma coisa que o
  * disco não confirma, e isso é um erro e não uma ausência.
+ *
+ * @param {string} slug
+ * @param {string} lang
+ * @returns {RegistoDeConteudo | null}
  */
 export function registoDaEdicao(slug, lang) {
   if (!temRegisto(slug, lang)) return null;
-  const ficheiro = path.join(REGISTOS_DIR, slug, `${lang}.record.json`);
+  const ficheiro = path.join(PASTA_PROVADA(), slug, `${lang}.record.json`);
   let bruto;
   try {
     bruto = fs.readFileSync(ficheiro, 'utf8');
-  } catch (erro) {
+  } catch (/** @type {any} */ erro) {
     throw new Error(
       `registos: o manifesto declara "${chaveDe(slug, lang)}" e não consegui ler ${ficheiro}: ` +
         `${erro.message}`,
@@ -165,7 +191,7 @@ export function registoDaEdicao(slug, lang) {
   }
   try {
     return JSON.parse(bruto);
-  } catch (erro) {
+  } catch (/** @type {any} */ erro) {
     throw new Error(`registos: ${ficheiro} não é JSON legível: ${erro.message}`);
   }
 }

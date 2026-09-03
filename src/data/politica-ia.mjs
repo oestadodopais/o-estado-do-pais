@@ -111,9 +111,13 @@ export const ROTULO = {
   },
 };
 
-/** O texto aprovado, inteiro, na língua de uma edição. É o que o portão compara. */
+/**
+ * O texto aprovado, inteiro, na língua de uma edição. É o que o portão compara.
+ *
+ * @param {string} lang
+ */
 export function textoDoRotulo(lang) {
-  const r = ROTULO[lang];
+  const r = /** @type {Record<string, { antes: string, porta: string, depois: string }>} */ (ROTULO)[lang];
   if (!r) return null;
   return `${r.antes}${r.porta}${r.depois}${RESPONSAVEL_EDITORIAL}`;
 }
