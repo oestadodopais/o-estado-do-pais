@@ -1,0 +1,16 @@
+---
+/**
+ * A página de um domínio, nas duas edições, da mesma construção.
+ * Os caminhos saem da lista declarada e do livro-razão: um domínio sem medidas
+ * não tem página, e não há lista escrita à mão.
+ */
+import DominioView from '../../views/DominioView.astro';
+import { slugsDosDominios } from '../../data/dominios.mjs';
+
+export function getStaticPaths() {
+  return slugsDosDominios().map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+---
+<DominioView lang="pt" slug={slug} />

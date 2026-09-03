@@ -2200,21 +2200,48 @@ function verificaTexto({ rota, root, err }) {
   /* ------------------------------------------------------------------ L8 ---
      «Nesta página»: o índice do documento (bloco B, item B4).
 
-     O índice é uma TRANSCRIÇÃO dos títulos de nível 2 do registo, e por isso
-     entra pela nona origem e é comparado aqui, como o corpo: mesma contagem,
-     mesma ordem, mesmo texto carácter a carácter, e cada âncora a abrir o
-     bloco que ela nomeia. Sem esta comparação, a marca seria uma dispensa: seis
-     dos títulos das oito edições trazem um ano escrito, e os algarismos deles
-     sairiam do varrimento sem nada por trás. */
+     O índice é uma TRANSCRIÇÃO dos títulos de nível 2 e 3 do registo, e por
+     isso entra pela nona origem e é comparado aqui, como o corpo: mesma
+     contagem, mesma ordem, mesmo texto carácter a carácter, e cada âncora a
+     abrir o bloco que ela nomeia. Sem esta comparação, a marca seria uma
+     dispensa: seis dos títulos das oito edições trazem um ano escrito, e os
+     algarismos deles sairiam do varrimento sem nada por trás.
+
+     OS DE NÍVEL 3 ENTRARAM A 03.09.2026 (bloco F1.9a). O índice do bloco B
+     levava só os de nível 2, e as oito edições têm entre 2 e 20 títulos de
+     nível 3 sem porta nenhuma. A comparação é a mesma e a ordem é a do
+     documento: uma travessia da lista aninhada da página dá a mesma sequência
+     que a lista dos blocos do registo.
+
+     E A PÁGINA DECLARA QUANTAS SECÇÕES TEM, que é o denominador da indicação
+     de progresso («n/N» ao lado de cada título de nível 2, composto pela folha
+     de estilos). A contagem RECONTA-SE aqui, como as três da faixa: um número
+     do próprio sítio não se escreve, verifica-se. */
   {
     const titulosDoRegisto = registo.blocks.filter(
-      (b) => b.kind === 'heading' && Number(b.level) === 2,
+      (b) => b.kind === 'heading' && (Number(b.level) === 2 || Number(b.level) === 3),
     );
+    const deNivel2 = titulosDoRegisto.filter((b) => Number(b.level) === 2).length;
+    const corpos = root.querySelectorAll('[data-seccoes]');
+    if (corpos.length !== 1) {
+      err(
+        `L8 ${chave}: a página tem ${corpos.length} elementos com data-seccoes, e tem de ter ` +
+          `exatamente um: é o denominador da indicação de progresso.`,
+      );
+    } else {
+      const declarado = decodeEntities(corpos[0].getAttribute('data-seccoes') ?? '');
+      if (declarado !== String(deNivel2)) {
+        err(
+          `L8 ${chave}: a página declara data-seccoes="${declarado}" e o registo tem ` +
+            `${deNivel2} títulos de nível 2.`,
+        );
+      }
+    }
     const entradas = root.querySelectorAll('[data-registo-indice]');
     if (entradas.length !== titulosDoRegisto.length) {
       err(
         `L8 ${chave}: o índice «Nesta página» tem ${entradas.length} entradas e o registo tem ` +
-          `${titulosDoRegisto.length} títulos de nível 2.`,
+          `${titulosDoRegisto.length} títulos de nível 2 e 3.`,
       );
     } else {
       titulosDoRegisto.forEach((bloco, i) => {
@@ -2224,7 +2251,7 @@ function verificaTexto({ rota, root, err }) {
         if (marca !== esperada) {
           err(
             `L8 ${chave}: a entrada ${i} do índice declara data-registo-indice="${marca}" e o ` +
-              `título de nível 2 nessa posição é o bloco ${bloco.i} ("${esperada}").`,
+              `título de nível ${bloco.level} nessa posição é o bloco ${bloco.i} ("${esperada}").`,
           );
           return;
         }
@@ -2258,6 +2285,69 @@ function verificaTexto({ rota, root, err }) {
           );
         }
       });
+    }
+
+    /* A POSIÇÃO DE CADA SECÇÃO, TAMBÉM PARA QUEM NÃO VÊ (F1.9a, segunda
+       passagem, 03.09.2026; Major 8 da leitura a frio do Codex). A frase
+       «Secção n de N» vive num irmão do título («data-registo-posicao»,
+       FORA do `<h2>`) e o título aponta para ela com `aria-labelledby`, ao
+       lado de si próprio: é assim que o nome acessível passa a incluir a
+       posição sem o corpo transcrito ganhar um carácter. As três coisas
+       reconferem-se aqui, como a de cima: a contagem, o texto (contra o
+       modelo do inventário da voz, na língua da página) e a referência. */
+    {
+      const titulosNivel2 = titulosDoRegisto.filter((b) => Number(b.level) === 2);
+      const modeloPosicao = t(lang).estudos.textoPosicaoSeccaoModelo;
+      const posicoes = artigo.querySelectorAll('[data-registo-posicao]');
+      if (posicoes.length !== titulosNivel2.length) {
+        err(
+          `L8 ${chave}: o corpo tem ${posicoes.length} elemento(s) data-registo-posicao e o ` +
+            `registo tem ${titulosNivel2.length} títulos de nível 2.`,
+        );
+      } else {
+        titulosNivel2.forEach((bloco, i) => {
+          const el = posicoes[i];
+          const esperada = `${chave}#${bloco.i}`;
+          const marca = decodeEntities(el.getAttribute('data-registo-posicao') ?? '');
+          if (marca !== esperada) {
+            err(
+              `L8 ${esperada}: a posição na entrada ${i} declara data-registo-posicao="${marca}" ` +
+                `e devia declarar "${esperada}".`,
+            );
+            return;
+          }
+          const esperadoTexto = modeloPosicao
+            .replace('{n}', String(i + 1))
+            .replace('{total}', String(titulosNivel2.length));
+          const lido = textoTranscrito(el);
+          if (lido !== esperadoTexto) {
+            err(
+              `L8 ${esperada}: a posição escreve "${lido}" e o modelo do inventário («${modeloPosicao}») ` +
+                `com n=${i + 1} e total=${titulosNivel2.length} dá "${esperadoTexto}".`,
+            );
+          }
+          const idPosicao = decodeEntities(el.getAttribute('id') ?? '');
+          const idEsperado = `posicao-bloco-${bloco.i}`;
+          if (idPosicao !== idEsperado) {
+            err(
+              `L8 ${esperada}: a posição tem id="${idPosicao}" e devia ter id="${idEsperado}", que ` +
+                `é o id que o título tem de referir em aria-labelledby.`,
+            );
+            return;
+          }
+          const titulo = artigo.querySelector(`#bloco-${bloco.i}`);
+          if (!titulo) return; // já reportado acima, na comparação do índice
+          const aria = decodeEntities(titulo.getAttribute('aria-labelledby') ?? '');
+          const ariaEsperado = `${idEsperado} bloco-${bloco.i}`;
+          if (aria !== ariaEsperado) {
+            err(
+              `L8 ${esperada}: o título "bloco-${bloco.i}" declara aria-labelledby="${aria}" e ` +
+                `devia declarar "${ariaEsperado}" — é essa referência que dá ao título um nome ` +
+                `acessível com a posição lá dentro, sem lhe mudar um carácter do texto.`,
+            );
+          }
+        });
+      }
     }
   }
 
@@ -3982,7 +4072,17 @@ for (const file of ficheirosHtml(DIST)) {
     rota?.key === 'livro' ||
     rota?.key === 'livroConcelhos' ||
     rota?.key === 'livroConcelho' ||
-    rota?.key === 'area';
+    rota?.key === 'area' ||
+    /* A PÁGINA DE UM DOMÍNIO ENTRA A 03.09.2026, E PELO MESMO ARGUMENTO DA DAS
+       ÁREAS. A leitura breve de uma medida tem de dizer «a fonte com o nome do
+       publicador como a linha o diz» e as três datas (brief F1.2 §2, item 5), e
+       essas são campos da linha: rendê-los sem a marca era pô-los na página sem
+       ninguém os comparar com nada. Com a marca, o portão confere cada um,
+       carácter a carácter, contra o campo da linha de que ele saiu — que é MAIS
+       conferência e não menos, que foi o que a decisão da página de área já
+       tinha pesado. A guarda continua a impedir o que ela existe para impedir:
+       uma página qualquer a citar um campo de uma linha em prosa corrente. */
+    rota?.key === 'dominio';
   /* As linhas que ESTA página cita com <Claim/>, para a conferência da prosa da
      agenda: é contra elas, e não contra o livro-razão inteiro, que se recusa um
      valor repetido em prosa. Ver `valoresDoLivroEmProsa()`. */
@@ -5655,20 +5755,28 @@ for (const file of ficheirosHtml(DIST)) {
   }
 
   /* --- o registo de conteúdo, na página de leitura (origem 9) -------------
-     As quatro marcas saem do varrimento dos algarismos e do da ortografia
+     As oito marcas saem do varrimento dos algarismos e do da ortografia
      porque foram TODAS comparadas em `verificaTexto()`, carácter a carácter,
      contra um ficheiro fixado por resumo. Aqui fica a outra metade da regra: a
      marca **só vale nesta rota**. Noutra página seria uma segunda porta para
      pôr texto de um registo em prosa corrente, que é a mesma disciplina das
-     origens 6 e 8. */
+     origens 6 e 8.
+
+     `data-registo-posicao` ENTROU A 03.09.2026 (F1.9a, segunda passagem,
+     Major 8 da leitura a frio do Codex): a frase «Secção n de N», irmã de
+     cada título de nível 2 e nunca filha dele, que dá ao título um nome
+     acessível com a posição lá dentro. O texto tem algarismos (o «n» e o
+     «N»), e por isso precisa da mesma dispensa que as outras sete; a
+     verificação que a justifica é a de `verificaTexto()`, mais abaixo. */
   for (const el of body.querySelectorAll(
     '[data-registo-edicao], [data-registo-bloco], [data-registo-unidade], [data-registo], ' +
-      '[data-registo-linha], [data-registo-conta], [data-registo-indice]',
+      '[data-registo-linha], [data-registo-conta], [data-registo-indice], [data-registo-posicao]',
   )) {
     aRemover.push(el);
     if (rota?.key !== 'texto') {
       const qual = ['data-registo-edicao', 'data-registo-bloco', 'data-registo-unidade',
-        'data-registo', 'data-registo-linha', 'data-registo-conta', 'data-registo-indice']
+        'data-registo', 'data-registo-linha', 'data-registo-conta', 'data-registo-indice',
+        'data-registo-posicao']
         .find((m) => m in (el.attributes ?? {}));
       err(
         `${qual}="${decodeEntities(el.getAttribute(qual) ?? '')}" numa página que não é a de ` +

@@ -1,0 +1,11 @@
+---
+import DominioView from '../../../views/DominioView.astro';
+import { slugsDosDominios } from '../../../data/dominios.mjs';
+
+export function getStaticPaths() {
+  return slugsDosDominios().map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+---
+<DominioView lang="en" slug={slug} />

@@ -1,0 +1,46 @@
+---
+/**
+ * UMA DATA DE UMA LINHA DO LIVRO-RAZÃO, ESCRITA NA FORMA DA CASA.
+ *
+ * ---------------------------------------------------------------------------
+ * PORQUE NÃO É `CampoDaLinha`
+ * ---------------------------------------------------------------------------
+ * `CampoDaLinha` marca `data-linha-campo` e o portão de HTML compara o texto
+ * rendido com o campo da linha **carácter a carácter**. O livro-razão guarda as
+ * datas em ISO, e é bem que continue: é a forma que se ordena e que os portões
+ * recontam. Mas a regra da casa desde o brief da forma dos domínios é uma só,
+ * `dd.mm.aaaa`, «em todo o lado». As duas coisas não cabem na mesma marca: uma
+ * data convertida nunca passaria a comparação literal.
+ *
+ * ---------------------------------------------------------------------------
+ * A SOLUÇÃO NÃO É UMA DISPENSA: É OUTRA CONFERÊNCIA
+ * ---------------------------------------------------------------------------
+ * O elemento leva o motivo declarado `data-da-linha` (em `ledger/allowlist.yml`)
+ * e diz DE QUE LINHA e DE QUE CAMPO a data saiu. `scripts/check-formas.mjs` lê
+ * o HTML construído, vai buscar aquele campo àquela linha, aplica-lhe
+ * `dataDaCasa()` por conta própria e compara com o que a página imprimiu. É a
+ * mesma disciplina do `data-prova`: duas contas do mesmo facto, feitas de
+ * sítios diferentes, que têm de bater certo. Um `data-nonledger` sozinho seria
+ * uma dispensa; isto é uma origem conferida.
+ *
+ * NENHUM ALGARISMO NOVO. `dataDaCasa()` devolve os quatro pedaços de entrada
+ * noutra ordem e com outro separador, e deixa passar sem tocar o que não é uma
+ * data completa: um ano («2024») e um mês («2025-12») são o período que a fonte
+ * mede, e inventar-lhes um dia seria inventar um facto.
+ *
+ * O RÓTULO NÃO ESTÁ AQUI. Quem chama escreve-o («período», «lido»,
+ * «conferido»), porque é quem chama que sabe qual das três datas está a mostrar.
+ */
+import { dataDaCasa } from '../lib/datas.mjs';
+
+const { id, campo, valor, class: klass = '' } = Astro.props;
+---
+
+<span
+  class:list={['data-da-linha', klass]}
+  data-nonledger="data-da-linha"
+  data-de-linha={id}
+  data-de-campo={campo}
+>
+  {dataDaCasa(valor)}
+</span>

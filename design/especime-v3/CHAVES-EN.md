@@ -999,3 +999,75 @@ dois anos. A vista escolhe pelos dois valores que a própria frase cita.
 242,6% em 2024» e «rose from … to …»; com a série achatada, «manteve-se em 105,5%
 em 2014 e em 2024» e «stayed at 105,5% in 2014 and in 2024». Os dados foram
 repostos e a construção final é a real, com «desceu» e «fell from».
+
+### Bloco F1.2 · a página do primeiro domínio (03.09.2026)
+
+**Vinte e sete chaves novas, todas dentro de `dominios`, e nenhuma renomeada.** O
+bloco acrescenta duas rotas (`/dominios` e `/dominios/<slug>`, nas duas edições) e
+com elas a mobília delas. **O nome de um domínio não está aqui**: está em
+`src/data/dominios.mjs`, como o de uma área está em `areas.mjs` e o de uma região
+em `regioes.mjs`, e vai à página com a marca `data-nome="dominios"`, que a régua
+da voz confere contra aquele ficheiro carácter a carácter.
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `dominios.metaTitle` | Domínios · O Estado do País | Domains · O Estado do País | |
+| `dominios.metaDescription` | As áreas da vida do país sobre as quais este observatório publica medidas, e as que ainda não têm medidas conferidas. | The areas of the country’s life this observatory publishes measures on, and the ones with no verified measures yet. | a descrição do `<head>` do índice |
+| `dominios.eyebrow` | Domínios | Domains | |
+| `dominios.h1` | Por domínio | By domain | a forma de `areas.h1`, «Por área de governo»: é uma das entradas do sítio, e não a promessa da lista oficial inteira |
+| `dominios.estadoNoAr` | no ar | live | o primeiro dos três estados de um domínio |
+| `dominios.estadoDentroDe` | as medidas estão em | the measures are in | o segundo, e é ele que impede uma falsidade: «Trabalho» tem as suas cinco medidas conferidas, dentro da página do primeiro domínio, e dizer-lhe «ainda sem medidas conferidas» era desmentir a página ao lado |
+| `dominios.estadoSem` | ainda sem medidas conferidas | no verified measures yet | o terceiro, e é a cadeia que o `BRIEF-forma-dos-dominios.md` §2 escreve |
+| `dominios.vagaPrimeira` · `vagaSegunda` · `vagaTerceira` | primeira vaga · segunda vaga · terceira vaga | first wave · second wave · third wave | a vaga de cada domínio, da tabela do §2 da carta |
+| `dominios.metaCauda` | domínio · O Estado do País | domain · O Estado do País | a cauda do `<head>` de uma página de domínio, composta com o nome |
+| `dominios.metaDescricaoA` · `metaDescricaoB` | As medidas de … , com a fonte, o período e a data de cada uma. | The measures of … , with the source, the period and the dates of each one. | |
+| `dominios.tipo` | domínio da carta dos conteúdos | domain of the content charter | o que a coisa é, na gramática de `regioes.tipo` |
+| `dominios.fronteiraK` | A fronteira deste domínio | What this domain covers | |
+| `dominios.ausenciaK` | Sem número público | No published figure | |
+| `dominios.ausenciaResposta` | Não há número público para isto. | There is no published figure for this. | a frase que a carta §1 (regra 6) e o brief da forma escrevem |
+| `dominios.ausenciaProcurado` | procurado em | looked for in | |
+| `dominios.dataPeriodo` · `dataLido` · `dataConferido` | período · lido · conferido | period · read · checked | os rótulos das três datas. «lido» é a palavra que a página da linha já usa (`prov.lido`) |
+| `dominios.fonteK` | fonte | source | |
+| `dominios.mapaSemValor` | sem valor publicado | no published value | a classe da trama |
+| `dominios.mapaMenosDe` · `mapaA` · `mapaOuMais` | menos de · a · ou mais | less than · to · or more | as palavras da escala do mapa; os cortes entram como marcas de régua |
+| `dominios.porConcelhoPorta` | Os valores concelho a concelho → | The values municipality by municipality → | a alternativa em texto do mapa dos 308 |
+| `dominios.voltarIndice` · `voltarPais` | Os domínios · Portugal | The domains · Portugal | as portas |
+
+**O que NÃO ganhou chave, e porquê.** A pergunta de cada medida, o nome de cada
+medida, a unidade, o âmbito (as idades) e a frase da fronteira vivem em
+`src/data/dominios.mjs`, nas duas línguas, ao lado do id da linha de que falam:
+são conteúdo do domínio e não mobília do sítio, como as sete medidas de um
+concelho vivem em `src/data/concelhos.mjs` e não em `strings.mjs`.
+
+**E quatro chaves que a primeira redação criou e que saíram antes do fim.**
+`dominios.leituraK` («Leitura breve» / «Short reading») saiu porque a casa já tem
+essa cadeia nas duas edições, em `densidade.leitura`: é o nome de uma das duas
+densidades da Emenda 2, está no inventário da voz desde 26.08.2026, e uma segunda
+chave para a mesma palavra era a mesma coisa dita duas vezes.
+`dominios.formaBarraK` e `dominios.formaMapaK` saíram porque o nome acessível de
+um desenho passou a vir, por `aria-labelledby`, do elemento que já escreve o nome
+da medida: um desenho não acrescenta uma palavra ao sítio, e um `aria-label`
+seria uma frase nova por medida numa superfície que a régua da voz lê desde a
+I79. `dominios.escolheConcelho` saiu por nunca ter sido usada.
+
+### Segunda passagem do bloco F1.2 (Claude Sonnet 5, 03.09.2026)
+
+**Seis chaves novas**, depois da leitura a frio do Codex
+(`design/especime-v3/critica/2026-09-03-codex-leitura-f12-dominio.md`): uma em
+`nav` (a porta comum de `/dominios` e `/dominios/<slug>` no rodapé, Major 11) e
+cinco em `dominios` (a alternativa em texto do mapa por concelho, dentro da
+própria página, Major 7; a nota da paleta de escala, Blocking 3).
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `nav.dominios` | Domínios | Domains | a entrada nova do rodapé; o menu do cabeçalho fica para depois do F1.1 |
+| `dominios.mapaEscalaNota` | As classes são marcas redondas da escala, e não um limite oficial. | The classes are round scale marks, not an official limit. | só no mapa cuja paleta é `escala` (o ganho médio); distingue-o do mapa cuja paleta é `limiar` (o índice de dívida) |
+| `dominios.mapaTabelaAbrir` | Os valores, concelho a concelho | The values, municipality by municipality | o rótulo do `<details>` que abre a tabela dos 308 valores |
+| `dominios.mapaTabelaConcelho` | Concelho | Municipality | o cabeçalho da coluna do nome |
+| `dominios.mapaTabelaValor` | Valor | Value | o cabeçalho da coluna do valor |
+
+**A ressalva de T1 e de T5 não ganhou chave em `strings.mjs`**: é conteúdo do
+domínio, como a frase da fronteira, e vive em `src/data/dominios.mjs`, no campo
+novo `ressalva` de cada medida, nas duas línguas, com o marcador da casa
+(`{ marcador: 'a verificar', gloss: 'to verify' }`) que `Frase.astro` já sabe
+ler.

@@ -1,0 +1,126 @@
+---
+/**
+ * O ÍNDICE DOS DOMÍNIOS: `/dominios` e `/en/domains`.
+ *
+ * ---------------------------------------------------------------------------
+ * O QUE ESTA PÁGINA É, E PORQUE LISTA OS DEZOITO
+ * ---------------------------------------------------------------------------
+ * «Um domínio que ainda não entrou não tem página: o índice dos domínios
+ * lista-o com "ainda sem medidas conferidas" e sem ligação, para o leitor saber
+ * que a casa sabe» (`BRIEF-forma-dos-dominios.md` §2). É a regra dos vazios
+ * aplicada à estrutura inteira: a lista mostra o mapa do que a casa se propõe
+ * cobrir e o estado de cada parte dele, e não só o que já está feito.
+ *
+ * ---------------------------------------------------------------------------
+ * O NOME DE UM DOMÍNIO NÃO É PROSA DA CASA
+ * ---------------------------------------------------------------------------
+ * `data-nome="dominios"` é a marca irmã de `data-lugar`, e diz que aquele texto
+ * é o nome de uma entrada de um ficheiro de dados. Sem ela, os dezoito nomes
+ * custavam trinta e seis linhas ao inventário das frases, que é a carta dos
+ * conteúdos escrita outra vez. A régua da voz confere que o texto marcado é,
+ * carácter a carácter, um nome de `src/data/dominios.mjs`.
+ *
+ * ---------------------------------------------------------------------------
+ * O ESTADO É VOCABULÁRIO FECHADO, E SÃO TRÊS PALAVRAS
+ * ---------------------------------------------------------------------------
+ * Como as duas de cobertura de um concelho: declaradas uma vez em
+ * `strings.mjs`, marcadas com `data-dominio-estado`, e contadas pela régua em
+ * vez de lidas como prosa. Sem a marca, o índice punha dezoito frases iguais no
+ * inventário.
+ *
+ * O TERCEIRO ESTADO É O QUE IMPEDE UMA FALSIDADE, e a razão está escrita em
+ * `src/data/dominios.mjs`: «Trabalho» tem as suas cinco medidas conferidas e à
+ * vista na página do primeiro domínio, e escrever-lhe «ainda sem medidas
+ * conferidas» era a casa a desmentir a sua própria página.
+ *
+ * ---------------------------------------------------------------------------
+ * NENHUMA CONTAGEM
+ * ---------------------------------------------------------------------------
+ * Nem «1 de 18», nem «oito na primeira vaga». Uma contagem é um número da casa,
+ * e um número da casa entra por `data-prova`, com quem o reconte de outro ponto
+ * de observação. A lista diz os nomes e os estados; quem quiser contar, conta.
+ */
+import Base from '../layouts/Base.astro';
+import { DOMINIOS, dominiosComPagina, dominioDeclarado } from '../data/dominios.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+import '../styles/dominio.css';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+const path = routePath('dominios', lang);
+
+const comPagina = new Set(dominiosComPagina().map((d) => d.slug));
+
+/* A porta de cada domínio, quando ele tem uma. Um domínio «dentro de» outro leva
+   à página onde as suas medidas estão, e não a uma página que não existe: é o
+   destino que a frase dele promete. */
+const VAGA = {
+  primeira: s.dominios.vagaPrimeira,
+  segunda: s.dominios.vagaSegunda,
+  terceira: s.dominios.vagaTerceira,
+};
+
+const linhas = DOMINIOS.map((d) => {
+  const dentro = d.estado === 'dentro-de' && d.dentroDe ? dominioDeclarado(d.dentroDe) : null;
+  /* A PORTA DE UM DOMÍNIO «DENTRO DE» OUTRO VAI À SUA SECÇÃO, e não só ao topo
+     da página onde as suas medidas vivem (segunda passagem, 03.09.2026,
+     Major 11): «uma ligação à sua secção está bem» é a palavra do lugar de
+     direção, e `ancoraDentro` é a âncora dessa secção, declarada ao lado do
+     domínio em `src/data/dominios.mjs`. Sem âncora declarada, a porta ainda
+     assim abre a página, no seu início. */
+  const porta =
+    d.estado === 'no-ar' && comPagina.has(d.slug)
+      ? routePath('dominio', lang, { slug: d.slug })
+      : dentro !== null && comPagina.has(dentro.slug)
+        ? `${routePath('dominio', lang, { slug: dentro.slug })}${d.ancoraDentro ? `#${d.ancoraDentro}` : ''}`
+        : null;
+  return { dominio: d, dentro, porta, vaga: VAGA[d.vaga] };
+});
+---
+
+<Base
+  lang={lang}
+  path={path}
+  title={s.dominios.metaTitle}
+  description={s.dominios.metaDescription}
+>
+  <header class="sec-head dominios-head">
+    <p class="eyebrow">{s.dominios.eyebrow}</p>
+    <h1 class="dominios-h1">{s.dominios.h1}</h1>
+  </header>
+
+  <ol class="dominios-lista">
+    {
+      linhas.map(({ dominio, dentro, porta, vaga }) => (
+        <li class="dominios-item" data-dominio={dominio.slug} data-dominio-vaga={dominio.vaga}>
+          {porta === null ? (
+            <span class="dominios-nome" data-nome="dominios">
+              {dominio.nome[lang] ?? dominio.nome.pt}
+            </span>
+          ) : (
+            <a class="dominios-nome dominios-porta" href={porta}>
+              <span data-nome="dominios">{dominio.nome[lang] ?? dominio.nome.pt}</span>
+            </a>
+          )}
+          <span class="dominios-estado" data-dominio-estado={dominio.estado}>
+            {dominio.estado === 'no-ar' && s.dominios.estadoNoAr}
+            {dominio.estado === 'sem' && s.dominios.estadoSem}
+            {dominio.estado === 'dentro-de' && dentro !== null && (
+              <>
+                {s.dominios.estadoDentroDe}{' '}
+                <span data-nome="dominios">{dentro.nome[lang] ?? dentro.nome.pt}</span>
+              </>
+            )}
+          </span>
+          <span class="dominios-vaga" data-dominio-vaga-rot>{vaga}</span>
+        </li>
+      ))
+    }
+  </ol>
+
+  <p class="rodape-nav dominios-portas">
+    <a href={routePath('home', lang)}>{s.dominios.voltarPais}</a>
+    <a href={routePath('livro', lang)}>{s.areas.voltarLivro}</a>
+  </p>
+</Base>
