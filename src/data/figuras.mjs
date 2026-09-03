@@ -99,8 +99,13 @@ import { parsePtNumber } from '../lib/ledger.mjs';
  *   · primeiro as QUATRO que a página já mostrava, pela ordem em que a lede da
  *     manchete as nomeia (dívida pública, posição de investimento internacional,
  *     custo unitário do trabalho, preços da habitação). São as quatro que estão
- *     fora do limiar, e são as únicas que trazem frase: a frase de cada uma é a
- *     da célula da v2, relocada sem mudar uma palavra (R1);
+ *     fora do limiar, e são as únicas que trazem frase. A frase de cada uma era
+ *     a da célula da v2, relocada sem mudar uma palavra (R1); **três das quatro
+ *     deixaram de o ser a 03.09.2026**, quando o F0.9 lhes tirou a oração que
+ *     afirmava sem linha (a tendência da dívida, os dois anos dos preços da
+ *     habitação, a mudança de definição do custo do trabalho). A quarta, a da
+ *     posição de investimento internacional, já tinha sido reescrita na §1.44 e
+ *     não muda aqui. A razão de cada corte está na entrada da sua célula;
  *   · depois as NOVE novas, pela ordem em que o `grep` as devolve, que é a
  *     alfabética do nome do ficheiro. Uma ordem mecânica, para que a lista não
  *     tenha uma arrumação da casa por dentro. As nove não trazem frase: nome,
@@ -371,10 +376,37 @@ export const FIGURAS_SOCIAL = [
        ela: «que é uma posição relativa, não um limiar» explica uma comparação
        que deixa de estar escrita, e sozinha não diz nada. A média da União não é
        linha deste livro-razão: `grep -rl lfsi_emp_a ledger/claims/` devolve um
-       só ficheiro, e é o de Portugal (`geo=PT`). Fica o que a medida é. */
+       só ficheiro, e é o de Portugal (`geo=PT`).
+
+       E «INDICADOR PRINCIPAL DO PAINEL SOCIAL EUROPEU» SAI TAMBÉM (segunda
+       passagem, leitura a frio do Codex, Blocking 4). Ficou na primeira
+       passagem como se fosse a definição da medida, e não é: diz ONDE a medida
+       está classificada, e não O QUE ela mede. É uma atribuição a uma
+       instituição, da mesma classe da advertência da Comissão, e a página não
+       tem o excerto que a sustente; o próprio cabeçalho desta lista escreve que
+       nenhum ficheiro do livro-razão nomeia o Painel Social, e que a única
+       origem é um documento do motor. O lugar dessa atribuição é o campo
+       `documento` de cada entrada, que fica onde está.
+
+       O QUE FICA É A DEFINIÇÃO, NAS PALAVRAS DA CASA: a proporção das pessoas
+       dos 20 aos 64 anos com emprego. Os dois números levam a mesma marca de
+       escala de instrumento que a linha da medida já usa. A atribuição volta em
+       F3.3, com o excerto ao lado. */
     frase: {
-      pt: ['Indicador principal do Painel Social Europeu.'],
-      en: ['A headline indicator of the European Social Scoreboard.'],
+      pt: [
+        'Proporção das pessoas dos ',
+        { nl: '20', motivo: 'escala-de-instrumento' },
+        ' aos ',
+        { nl: '64', motivo: 'escala-de-instrumento' },
+        ' anos com emprego.',
+      ],
+      en: [
+        'The share of people aged ',
+        { nl: '20', motivo: 'escala-de-instrumento' },
+        ' to ',
+        { nl: '64', motivo: 'escala-de-instrumento' },
+        ' who are in employment.',
+      ],
     },
   },
   {
@@ -455,31 +487,35 @@ export const FIGURAS_SOCIAL = [
       pt: ['Percentagem da população · ', { ref: '2025' }],
       en: ['Percentage of the population · ', { ref: '2025' }],
     },
-    /* SAEM DUAS ORAÇÕES E FICA A TERCEIRA (F0.9, 03.09.2026).
-       Sai «Está abaixo da média europeia»: a média europeia não é linha deste
-       livro-razão (`grep -rl tespm140 ledger/claims/` devolve um só ficheiro,
-       `geo=PT`), e uma comparação contra um valor que a página não tem é uma
-       afirmação por provar. Sai «a própria Comissão adverte que só se lê ao lado
-       do regime de propriedade»: é uma atribuição sem excerto, e uma atribuição
-       prova-se com as palavras de quem a fez, não com o nome dele.
-       FICA a ressalva sobre o que a medida não alcança, e fica por duas razões
-       escritas: a Emenda 15 guarda «as ressalvas sobre os dados (limites,
-       bandeiras de provisório, definições)», e a Emenda 18d permite a conclusão
-       que segue dos dados e não toma partido. A ressalva segue da definição que
-       está na mesma frase, que conta quem gasta mais de 40% do rendimento em
-       habitação; deixá-la cair publicaria um número que se lê ao contrário, e é
-       a razão que o cabeçalho desta lista já escrevia. Em F3.3 volta a poder
-       levar o nome da Comissão, com o excerto ao lado. */
+    /* SAEM AS TRÊS ORAÇÕES QUE NÃO SÃO A DEFINIÇÃO (F0.9, 03.09.2026; a
+       terceira na segunda passagem, leitura a frio do Codex, Blocking 5).
+       Sai «Está abaixo da média europeia»: comparação contra um valor que a
+       página não tem (`grep -rl tespm140 ledger/claims/` devolve um só
+       ficheiro, `geo=PT`).
+       Sai «e a própria Comissão adverte que só se lê ao lado do regime de
+       propriedade»: atribuição sem excerto.
+       E SAI «Onde a taxa de proprietários é alta, esta medida não vê quem não
+       conseguiu comprar». A primeira passagem guardou-a como ressalva sobre os
+       dados e enganou-se em duas coisas, e a leitura a frio mostrou as duas.
+       «Onde a taxa de proprietários é alta» é uma comparação contra um patamar
+       que a página não nomeia e contra um valor de propriedade que a célula não
+       publica. E a conclusão não decorre da definição que está ao lado: a
+       medida conta quem gasta mais de 40% do rendimento em habitação, e quem
+       nunca comprou também tem custos de habitação e também pode ser contado.
+       Uma conclusão que não segue dos dados não é a conclusão que a Emenda 18d
+       permite: é interpretação, e interpretação vive nos estudos.
+       Fica a definição da medida, e mais nada. A ressalva volta em F3.3, com o
+       excerto da Comissão que a sustenta e com o nome de quem a fez. */
     frase: {
       pt: [
         'Proporção que gasta mais de ',
         { nl: '40', motivo: 'escala-de-instrumento' },
-        '% do rendimento disponível em habitação. Onde a taxa de proprietários é alta, esta medida não vê quem não conseguiu comprar.',
+        '% do rendimento disponível em habitação.',
       ],
       en: [
         'The share spending more than ',
         { nl: '40', motivo: 'escala-de-instrumento' },
-        '% of disposable income on housing. Where owner-occupation is high, this measure does not see those who never bought.',
+        '% of disposable income on housing.',
       ],
     },
   },

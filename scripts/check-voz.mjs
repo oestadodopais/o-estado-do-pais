@@ -64,7 +64,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
-import { parse } from 'node-html-parser';
+import { parse, NodeType } from 'node-html-parser';
 
 import { leInventario, FICHEIRO_DO_INVENTARIO } from './voz.mjs';
 
@@ -400,13 +400,21 @@ let emendaMaisAlta = null;
  * de o zero das palavras valer alguma coisa. */
 const ARAME_DA_CLASSE = [
   /* tendência · o sítio publica um valor por indicador e nenhuma série; um
-     sentido sem os dois valores é uma afirmação que a página não sustenta. */
+     sentido sem os dois valores é uma afirmação que a página não sustenta. As
+     flexões entram porque a classe é a mesma palavra noutro tempo, e uma lista
+     que só apanha o gerúndio deixa passar o pretérito (leitura a frio, Major 1). */
   { pt: 'a descer', en: 'falling', porque: 'tendência sem série' },
+  { pt: 'desceu', en: 'fell', porque: 'tendência sem série, no pretérito' },
   { pt: 'a subir', en: 'rising', porque: 'tendência sem série' },
+  { pt: 'subiu', en: 'rose', porque: 'tendência sem série, no pretérito' },
+  { pt: 'caiu', en: 'dropped', porque: 'tendência sem série, no pretérito' },
+  { pt: 'cresceu', en: 'grew', porque: 'tendência sem série, no pretérito' },
   { pt: 'duplicou', en: 'doubled', porque: 'comparação entre dois períodos, e a página tem um' },
+  { pt: 'dobrou', en: 'halved', porque: 'comparação entre dois períodos, dita por outra palavra' },
   /* comparação · contra um valor que não está na página. */
   { pt: 'média da União', en: 'Union average', porque: 'a média da União não é linha do livro-razão' },
   { pt: 'média europeia', en: 'European average', porque: 'a média europeia não é linha do livro-razão' },
+  { pt: 'média da UE', en: 'EU average', porque: 'a média da União dita pela sigla' },
   { pt: 'mais se destaca', en: 'stands out most', porque: 'superlativo sobre medidas que a página não mostra' },
   /* valor de outro período · que a página não publica. */
   { pt: 'no início do século', en: 'turn of the century', porque: 'valor de outro período, sem linha' },
@@ -417,9 +425,114 @@ const ARAME_DA_CLASSE = [
    página tem de render enquanto tiver painel. Se um dia deixar de o render, o
    que se muda é esta linha, com a razão ao lado, e não o silêncio. */
 const ROTAS_DA_CLASSE = [
-  { rota: '/', ficheiro: path.join('dist', 'index.html'), lingua: 'pt', sentinela: 'Dívida pública' },
-  { rota: '/en/', ficheiro: path.join('dist', 'en', 'index.html'), lingua: 'en', sentinela: 'Government debt' },
+  {
+    rota: '/',
+    ficheiro: path.join('dist', 'index.html'),
+    lingua: 'pt',
+    /* A SENTINELA É PROSA DA CASA, E TEM DE O SER (segunda passagem, 03.09.2026).
+       Era «Dívida pública», e o nome de uma medida vive dentro de
+       `data-medida-nome`: a leitura passou a tirar as origens, e a sentinela
+       desapareceu com elas, o que fechou a construção. Bem fechada, aliás: era o
+       positivo conhecido a dizer que já não sabia o que estava a medir. A
+       sentinela passa a ser a frase de identidade da Emenda 18a, que é prosa da
+       casa, está fixada por decisão do diretor e rende-se na primeira página e
+       em mais lado nenhum. */
+    sentinela: 'Um observatório de Portugal.',
+  },
+  {
+    rota: '/en/',
+    ficheiro: path.join('dist', 'en', 'index.html'),
+    lingua: 'en',
+    sentinela: 'An observatory of Portugal.',
+  },
 ];
+
+/* AS MARCAS QUE ISENTAM (segunda passagem, leitura a frio do Codex, Major 1).
+ * Uma palavra da lista DENTRO de uma origem declarada ou de um excerto
+ * transcrito não é a casa a afirmar: é o valor de uma linha, o nome de uma
+ * medida, ou as palavras de uma fonte copiadas como ela as escreveu. O arame
+ * lia `body.text` e não sabia a diferença, e por isso um excerto legítimo com a
+ * palavra «adverte» lá dentro fechava a construção. A lista é a mesma de
+ * `medir-defeitos.mjs`, e é de propósito: duas definições da mesma coisa
+ * divergem no dia em que uma delas mudar. */
+const ORIGEM_DA_CLASSE =
+  '[data-claim],[data-linha-claim],[data-correcao-claim],[data-verbatim],[data-nonledger],' +
+  '[data-agenda],[data-registo],[data-registo-unidade],[data-registo-linha],[data-registo-conta],' +
+  '[data-medida-nome],[data-medida-unidade]';
+
+/** O texto que o leitor lê, sem o que veio de uma origem declarada. */
+function textoSemOrigens(html) {
+  const root = parse(html);
+  const corpo = root.querySelector('body');
+  if (!corpo) return '';
+  const marcados = new Set();
+  for (const el of root.querySelectorAll(ORIGEM_DA_CLASSE)) {
+    marcados.add(el);
+    for (const d of el.querySelectorAll('*')) marcados.add(d);
+  }
+  const partes = [];
+  const anda = (n) => {
+    if (!n) return;
+    if (n.nodeType === NodeType.TEXT_NODE) return void partes.push(n.rawText);
+    const tag = String(n.rawTagName ?? '').toLowerCase();
+    if (tag === 'script' || tag === 'style') return;
+    if (marcados.has(n)) return;
+    for (const f of n.childNodes ?? []) anda(f);
+  };
+  anda(corpo);
+  return partes.join(' ').replace(/\s+/g, ' ').trim();
+}
+
+/** As palavras da classe que mordem num texto já limpo de origens. */
+function mordidas(texto, lingua) {
+  const t = texto.toLowerCase();
+  return ARAME_DA_CLASSE.filter((p) => t.includes((lingua === 'pt' ? p.pt : p.en).toLowerCase()));
+}
+
+/* ---------------------------------------------------------------------------
+ * O AUTOTESTE DO ARAME, CORRIDO A CADA CONSTRUÇÃO (Major 2 da leitura a frio)
+ * ---------------------------------------------------------------------------
+ * A sentinela prova que os ficheiros foram lidos; NÃO prova que o arame deteta
+ * alguma coisa, nem que a isenção de origem funciona. Um detetor que nunca viu
+ * um positivo é uma contagem de zero sem valor, e é a regra 14 da casa.
+ *
+ * Duas páginas de rascunho, construídas aqui e não lidas de lado nenhum:
+ *   · FORA · cada termo proibido uma vez, em prosa solta. Espera-se que TODOS
+ *     mordam. Um que não morda diz que a entrada da lista está partida.
+ *   · DENTRO · cada termo proibido uma vez, dentro de uma marca de origem.
+ *     Espera-se que NENHUM morda. Um que morda diz que a isenção não funciona.
+ *
+ * Falha em qualquer dos sentidos fecha a construção antes de o arame olhar para
+ * a primeira página, porque um arame partido é pior do que nenhum: mede zero e
+ * parece verde. */
+{
+  for (const lingua of ['pt', 'en']) {
+    const termos = ARAME_DA_CLASSE.map((p) => (lingua === 'pt' ? p.pt : p.en));
+    const fora = `<html><body><p>${termos.map((t) => `o valor ${t} nesta frase.`).join(' ')}</p></body></html>`;
+    const dentro = `<html><body><p>${termos
+      .map((t) => `<span data-claim="x">o valor ${t} nesta frase.</span>`)
+      .join(' ')}</p></body></html>`;
+    const viuFora = mordidas(textoSemOrigens(fora), lingua).length;
+    if (viuFora !== termos.length) {
+      const cegas = termos.filter((t) => !textoSemOrigens(fora).toLowerCase().includes(t.toLowerCase()));
+      erros.push(
+        `o autoteste do arame da classe falhou em «${lingua}»: dos ${termos.length} termos postos em prosa ` +
+          `solta, só ${viuFora} morderam. O arame não deteta o que diz detetar` +
+          `${cegas.length ? `, e o texto de rascunho nem sequer contém: ${cegas.join(' · ')}` : ''}.`,
+      );
+    }
+    const viuDentro = mordidas(textoSemOrigens(dentro), lingua);
+    if (viuDentro.length) {
+      erros.push(
+        `o autoteste do arame da classe falhou em «${lingua}»: ${viuDentro.length} termo(s) morderam DENTRO ` +
+          `de uma origem declarada (${viuDentro.map((p) => (lingua === 'pt' ? p.pt : p.en)).join(' · ')}). ` +
+          `Um valor de uma linha ou um excerto transcrito não é a casa a afirmar, e a isenção de origem ` +
+          `deixou de funcionar.`,
+      );
+    }
+  }
+}
+
 for (const r of ROTAS_DA_CLASSE) {
   const caminho = path.join(RAIZ, r.ficheiro);
   if (!fs.existsSync(caminho)) {
@@ -429,8 +542,8 @@ for (const r of ROTAS_DA_CLASSE) {
     );
     continue;
   }
-  const corpo = parse(fs.readFileSync(caminho, 'utf8')).querySelector('body');
-  const texto = (corpo ? corpo.text : '').replace(/\s+/g, ' ').trim();
+  const cru = fs.readFileSync(caminho, 'utf8');
+  const texto = textoSemOrigens(cru);
   if (!texto.includes(r.sentinela)) {
     erros.push(
       `o positivo conhecido do arame da classe falhou em ${r.rota}: o texto de ${r.ficheiro} não contém ` +
@@ -439,9 +552,8 @@ for (const r of ROTAS_DA_CLASSE) {
     );
     continue;
   }
-  for (const p of ARAME_DA_CLASSE) {
+  for (const p of mordidas(texto, r.lingua)) {
     const cadeia = r.lingua === 'pt' ? p.pt : p.en;
-    if (!texto.toLowerCase().includes(cadeia.toLowerCase())) continue;
     erros.push(
       `FRASE DA CLASSE POR PROVAR EM ${r.rota} · «${cadeia}» (${p.porque}).\n` +
         `      O F0.9 tirou esta classe da primeira página a 03.09.2026: uma tendência, uma comparação\n` +

@@ -170,10 +170,12 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | navegacao | As regiões publicadas na régua da convergência. | grelha-2 | retirada | a régua da convergência saiu da primeira página até haver a página das regiões (Emenda 18, consequência decidida a 25.08; bloco A da auditoria de UI e UX, `696b51a`) |
 | navegacao | At a glance | até 2026-08-26 | viva | — |
 | navegacao | Brief reading | até 2026-08-26 | viva | — |
+| conteudo | concelhos · CAOP | frases | viva | — |
 | conteudo | Custo do trabalho por unidade produzida, por hora trabalhada. | frases | viva | — |
 | conteudo | Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu, e a descer. | frases | retirada | o F0.9 tirou «e a descer» a 03.09.2026: era uma tendência, e o livro-razão publica um só valor deste indicador (`grep -rl tipsgo10 ledger/claims/` devolve um ficheiro, o de 2025). Uma tendência volta em F3.1, tipada, com a linha do período anterior ao lado, e não com estas palavras |
 | conteudo | Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu. | frases | viva | — |
 | navegacao | Encontrou um erro? correcoes@oestadodopais.pt · O registo de correções → | até 2026-08-26 | viva | — |
+| conteudo | Fora do limiar: dívida pública, posição de investimento internacional, custo unitário do trabalho e preços da habitação , em . | frases | viva | — |
 | navegacao | Found an error? correcoes@oestadodopais.pt · The corrections log → | até 2026-08-26 | viva | — |
 | conteudo | General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold, and falling. | frases | retirada | a gémea inglesa da de cima: o F0.9 tirou «and falling» a 03.09.2026, pela mesma razão e no mesmo dia. Uma linha é uma decisão editorial e leva as duas edições da mesma frase |
 | conteudo | General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold. | frases | viva | — |
@@ -181,16 +183,25 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | conteudo | Greater Lisbon · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | navegacao | Hover over a point to read the municipality. Keyboard: Tab to the map, arrow keys to move between neighbouring municipalities, Home to return to Évora. | grelha-2 | retirada | a leitura em voz alta do mapa saiu com os pontos da primeira página (Emenda 20a e 20c; bloco do mapa por distritos) |
 | conteudo | Índice nominal de preços da habitação. | frases | viva | — |
+| conteudo | Jovens que deixaram a escola com o secundário incompleto e não estão em formação. | frases | viva | — |
 | conteudo | Labour cost per unit of output, per hour worked. | frases | viva | — |
 | navegacao | Leitura breve | até 2026-08-26 | viva | — |
+| conteudo | limiar % · abaixo | frases | viva | — |
+| conteudo | limiar % · acima | frases | viva | — |
+| conteudo | limiar − % · abaixo | frases | viva | — |
+| conteudo | limiar − % · acima | frases | viva | — |
+| conteudo | limiar − /+ % | frases | viva | — |
+| conteudo | limiar − pp · acima | frases | viva | — |
 | conteudo | Madeira · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | conteudo | Madeira · região | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
+| conteudo | municipalities · CAOP | frases | viva | — |
 | navegacao | Nenhum concelho com esse nome. | até 2026-08-26 | viva | — |
 | navegacao | No municipality by that name. | até 2026-08-26 | viva | — |
 | conteudo | Nominal house price index. | frases | viva | — |
 | navegacao | O Estado do País | até 2026-08-26 | viva | — |
 | conteudo | O que o país tem a haver do exterior menos o que lhe deve: negativo quando deve mais do que tem a haver. | até 2026-08-26 | viva | — |
 | conteudo | O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27. Um valor abaixo da média significa menos poder de compra por pessoa; um valor acima, mais. | regioes | viva | — |
+| conteudo | Outside the threshold: government debt, net international investment position, unit labour cost and house prices , in . | frases | viva | — |
 | navegacao | Passe o cursor sobre um ponto para ler o município. Teclado: Tab até ao mapa, setas para percorrer os municípios vizinhos, Home para voltar a Évora. | grelha-2 | retirada | a leitura em voz alta do mapa saiu com os pontos da primeira página (Emenda 20a e 20c; bloco do mapa por distritos) |
 | conteudo | Península de Setúbal · região | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | conteudo | Portugal breaches 4 thresholds of the Macroeconomic Imbalance Procedure and meets 9 . | até 2026-08-26 | viva | — |
@@ -199,11 +210,21 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | conteudo | Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9 . | até 2026-08-26 | viva | — |
 | conteudo | Portugal · country | até 2026-08-26 | viva | — |
 | conteudo | Portugal · país | até 2026-08-26 | viva | — |
+| conteudo | Proporção das pessoas dos aos anos com emprego. | frases | viva | — |
+| conteudo | Proporção que gasta mais de % do rendimento disponível em habitação. | frases | viva | — |
 | navegacao | Relance | até 2026-08-26 | viva | — |
 | conteudo | Setúbal Peninsula · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | conteudo | The convergence rule | regioes | viva | — |
 | conteudo | The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 average. A value below the average means less purchasing power per person; a value above it, more. | regioes | viva | — |
 | navegacao | The regions published on the convergence rule. | grelha-2 | retirada | a régua da convergência saiu da primeira página até haver a página das regiões (Emenda 18, consequência decidida a 25.08; bloco A da auditoria de UI e UX, `696b51a`) |
+| conteudo | The share of people aged to who are in employment. | frases | viva | — |
+| conteudo | The share spending more than % of disposable income on housing. | frases | viva | — |
+| conteudo | threshold % · above | frases | viva | — |
+| conteudo | threshold % · below | frases | viva | — |
+| conteudo | threshold − % · above | frases | viva | — |
+| conteudo | threshold − % · below | frases | viva | — |
+| conteudo | threshold − /+ % | frases | viva | — |
+| conteudo | threshold − pp · above | frases | viva | — |
 | conteudo | What the country is owed from abroad minus what it owes abroad: negative when it owes more than it is owed. | até 2026-08-26 | viva | — |
 
 ## `/livro-razao` · `/en/ledger` (etapa 3, subetapa 3b)
@@ -607,6 +628,7 @@ e por isso conteúdo.*
 | navegacao | The link leaves this domain. | até 2026-08-26 | viva | — |
 | conteudo | Uma leitura transversal do município de Évora: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado. | voz-dos-documentos | viva | — |
 | conteudo | Água não faturada nos sistemas de abastecimento em Portugal. | até 2026-08-26 | viva | — |
+| conteudo | Young people who left school without completing secondary education and are not in training. | frases | viva | — |
 | conteudo | € actually paid | até 2026-08-26 | viva | — |
 | conteudo | € approved and attributed to the concelho by the recovery-plan register | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
 | conteudo | € aprovados e atribuídos ao concelho pelo registo do plano de recuperação | até 2026-08-26 | viva | — |

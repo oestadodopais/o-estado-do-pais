@@ -331,6 +331,40 @@ const CLASSES = ['conteudo', 'navegacao', 'autorreferencia', 'divulgacao'];
  * ninguém mandou mudar.
  */
 const ROTAS_QUE_PROVAM_A_RENDICAO = new Set(['sobre', 'metodo']);
+/**
+ * ---------------------------------------------------------------------------
+ * AS ROTAS ONDE UM BLOCO COM MARCA DE ORIGEM JÁ É LIDO (F0.9, 03.09.2026)
+ * ---------------------------------------------------------------------------
+ * Até 03.09.2026 `frasesDaCasa` deitava fora o BLOCO inteiro quando ele tinha
+ * uma marca de origem lá dentro. A leitura a frio do Codex ao bloco F0.9
+ * (Blocking 3) mandou fechar o buraco na régua e não no arame que o contornava,
+ * e é o que a função abaixo faz: conta o texto do bloco com as marcas retiradas.
+ *
+ * **A LISTA EXISTE PORQUE O BURACO É MAIOR DO QUE O BLOCO QUE O ENCONTROU, E
+ * ISSO FOI MEDIDO.** Com a leitura ligada em todas as rotas inventariadas, a
+ * construção de 03.09.2026 passa a ver **190 cadeias distintas por classificar,
+ * em 2 118 ocorrências**: 1 906 delas nas páginas de concelho, 58 nas de
+ * distrito, 50 na agenda, 18 nas de região, 30 nas de estudo, 22 na primeira
+ * página e 6 nas correções. Não são blocos novos: são blocos que nunca foram
+ * lidos. E entre eles estão frases da mesma classe que o F0.9 veio tirar da
+ * primeira página, agora à vista noutras rotas: «A população residente subiu de
+ * … para …», «A execução da receita caiu de … para …», «O índice de dívida …
+ * desceu de … para …», «A Grande Lisboa está … pontos acima da média da UE-27».
+ *
+ * DECLARAR 190 CADEIAS DE UMA VEZ NÃO É CORRIGIR, É MIGRAR, e uma migração feita
+ * à pressa dentro de um bloco de outro assunto é como a lista engorda sem
+ * ninguém a ler. A casa já tem a forma certa para isto, escrita em
+ * `ROTAS_DO_INVENTARIO`: «uma rota entra no commit em que a sua página é
+ * reconstruída e as suas frases são classificadas». Esta lista segue a mesma
+ * regra e cresce da mesma maneira, uma rota por bloco que a reconstrua.
+ *
+ * A `home` entra agora porque é a rota do F0.9 e as suas frases foram
+ * classificadas neste commit. As outras ficam com o número acima escrito no
+ * relatório do bloco, que é o que o F3.1 vai fechar com a régua do mundo
+ * fechado. Enquanto uma rota não estiver aqui, o que ela esconde está contado e
+ * dito, e não é uma surpresa.
+ */
+const ROTAS_COM_ORIGEM_LIDA = new Set(['home']);
 const MEDIDA_DECLARADA = '[data-medida-nome],[data-medida-unidade]';
 const ROTAS_DO_INVENTARIO = new Set([
   'home',
@@ -570,7 +604,8 @@ function frasesDaVoz(root) {
   return out;
 }
 
-function frasesDaCasa(root) {
+function frasesDaCasa(root, rotaKey) {
+  const leOrigem = ROTAS_COM_ORIGEM_LIDA.has(rotaKey);
   const out = [];
   const marcados = new Set();
   const DECLARADO =
@@ -590,8 +625,40 @@ function frasesDaCasa(root) {
   for (const el of root.querySelectorAll(BLOCOS_DA_VOZ)) {
     if (el.querySelector(BLOCOS_DA_VOZ)) continue;
     if (marcados.has(el)) continue;
-    if (el.querySelector(DECLARADO)) continue;
-    const t = norm(texto(el));
+    /* ----------------------------------------------------------------------
+       UM BLOCO COM UMA MARCA DE ORIGEM LÁ DENTRO DEIXA DE SER SALTADO INTEIRO
+       (F0.9, segunda passagem, 03.09.2026; leitura a frio do Codex, Blocking 3)
+       ----------------------------------------------------------------------
+       Estava aqui `if (el.querySelector(DECLARADO)) continue;`, e a linha
+       deitava fora o BLOCO todo por causa de UMA marca lá dentro. A prosa da
+       casa que vivesse ao lado de um valor, de um nome de medida ou de uma data
+       de referência não era recolhida, não era classificada, e não podia ser
+       vista como «por classificar». Não era uma hipótese: era o que escondia
+       seis das sete frases da §1.44. A célula do Painel Social é um `<li>` sem
+       nenhum outro bloco lá dentro, logo é folha, e leva um `data-claim` com o
+       valor: as três frases daquele painel nunca chegaram ao inventário. As
+       duas do Procedimento que embrulhavam um `{ ref }` caíam pela mesma linha.
+
+       O QUE SUBSTITUI A LINHA é contar o texto do bloco COM AS MARCAS
+       RETIRADAS, que é o que `textoForaDasOrigens` já fazia para a medida 9 e
+       que aqui faltava. O que fica é a prosa da casa, sem o valor, sem o nome
+       declarado da medida, sem a unidade declarada e sem o selo, que são origens
+       com a sua própria conferência.
+
+       E O BLOCO SEM MARCA NENHUMA CONTINUA A CONTAR-SE COMO SEMPRE, com
+       `texto()`, incluindo o texto das âncoras. Não é distração: mudar a
+       definição para todos os blocos mudava a cadeia declarada de centenas de
+       linhas do inventário de uma vez, e isso é uma migração e não uma correção.
+       A diferença está no `temOrigem`, e vale só para os blocos que até hoje não
+       eram contados de todo. */
+    const temOrigem = !!el.querySelector(DECLARADO);
+    /* Numa rota que ainda não entrou em `ROTAS_COM_ORIGEM_LIDA`, o bloco com
+       marca continua a ser saltado como sempre foi. É o comportamento antigo,
+       preservado à letra: uma rota entra quando as suas frases forem
+       classificadas, e até lá o que ela esconde está contado no relatório do
+       F0.9 e não muda de número por acidente. */
+    if (temOrigem && !leOrigem) continue;
+    const t = temOrigem ? norm(textoForaDasOrigens(el, marcados)) : norm(texto(el));
     if (!t) continue;
     /* --------------------------------------------------------------------
        O `<summary>` ENTRA (01.09.2026)
@@ -619,7 +686,9 @@ function frasesDaCasa(root) {
     /* O texto que fica FORA das âncoras e dos botões, percorrendo a árvore. Uma
        subtração de cadeias não serve: dois destinos seguidos dão «a →b →» de um
        lado e «a → b →» do outro, e o bloco escapava por um espaço. */
-    const foraDeLigacoes = norm(textoForaDeComandos(el));
+    /* `textoForaDasOrigens` já salta as âncoras e os botões, e por isso um bloco
+       com origem já traz aqui o texto de fora deles. */
+    const foraDeLigacoes = temOrigem ? t : norm(textoForaDeComandos(el));
     if (!foraDeLigacoes) continue;
     out.push(t);
   }
@@ -791,7 +860,7 @@ for (const file of ficheiros) {
   if (rota && ROTAS_DO_INVENTARIO.has(rota.key)) {
     const chave = caminho || '/';
     const conta = frasesPorRota.get(chave) ?? new Map();
-    for (const f of frasesDaCasa(root)) conta.set(f, (conta.get(f) ?? 0) + 1);
+    for (const f of frasesDaCasa(root, rota.key)) conta.set(f, (conta.get(f) ?? 0) + 1);
     for (const f of dicasDaCasa(root)) conta.set(f, (conta.get(f) ?? 0) + 1);
     const daAplicacao = frasesDaAplicacao(root);
     for (const f of daAplicacao) conta.set(f, (conta.get(f) ?? 0) + 1);
@@ -824,7 +893,7 @@ for (const file of ficheiros) {
 
   /* As rotas isentas da contagem, que só provam que uma linha se rende. */
   if (rota && ROTAS_QUE_PROVAM_A_RENDICAO.has(rota.key)) {
-    for (const f of frasesDaCasa(root)) rendidasNasIsentas.add(f);
+    for (const f of frasesDaCasa(root, rota.key)) rendidasNasIsentas.add(f);
     for (const f of frasesDaVoz(root)) rendidasNasIsentas.add(f);
     for (const f of dicasDaCasa(root)) rendidasNasIsentas.add(f);
   }
