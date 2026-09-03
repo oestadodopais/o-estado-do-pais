@@ -71,6 +71,25 @@ type CampoDeProveniencia = _CamposDeProveniencia[number];
 type ParDeLinguas = Record<Lingua, string>;
 
 /**
+ * Um pedaço de uma frase composta, na forma que `Frase.astro` lê (segunda
+ * passagem, 03.09.2026, bloco F1.2). As sete formas são exactamente as que
+ * aquele componente trata: texto corrido, um valor selado, um período, uma
+ * palavra em negrito, um endereço de correio, um marcador de incerteza com a
+ * sua glosa inglesa, ou um outro contexto estrutural declarado.
+ */
+type PedacoDeFrase =
+  | string
+  | { claim: string; sufixo?: string }
+  | { ref: string }
+  | { forte: string }
+  | { email: string }
+  | { marcador: string; gloss?: string }
+  | { nl: string; motivo: string };
+
+/** Uma frase composta, pronta para `<Frase partes={...} />`, nas duas edições. */
+type FraseDasDuasLinguas = Record<Lingua, PedacoDeFrase[]>;
+
+/**
  * O tipo dos valores de um objeto literal.
  *
  * Serve para ler uma tabela fechada por uma chave que vem de fora sem inventar

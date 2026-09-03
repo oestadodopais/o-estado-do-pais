@@ -74,7 +74,7 @@ import {
 } from '../data/dominios.mjs';
 import { medidasComLeitura, mapaPorConcelho, barraConcelhoPais, linhasPorConcelho } from '../lib/dominios.mjs';
 import { estadoDaMedida } from '../lib/estado.mjs';
-import { getClaim } from '../lib/ledger.mjs';
+import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { linguaDoTituloDoDocumento, linguaDaFonte } from '../i18n/lingua-dos-titulos.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -190,13 +190,25 @@ const cartoes = FAIXA_DO_DOMINIO_1.map((chave) => {
    corte calculado dos próprios valores (um quintil, uma média) seria um número
    que a casa produziu e que não resolve em nenhuma linha; um corte redondo é uma
    marca de escala, e entra pelo motivo declarado que a casa já usa nos eixos. */
+/* O CORTE DO ÍNDICE LÊ-SE DA SUA LINHA, E NUNCA SE DUPLICA COMO LITERAL
+   (segunda passagem, 03.09.2026, Blocking 3 e Major 10). Era `[150]`, escrito à
+   mão ao lado do comentário que explica de onde o 150 vem: o valor desenhado e
+   o valor da lei podiam divergir sem que nenhum portão o visse. O único corte
+   do índice é o TETO LEGAL, que é a mesma medida E5 já mostra com selo acima do
+   mapa (`medidaPelaChave('E5').claim`), e não um número novo desta vista. */
+const limiteLegalE5 = medidaPelaChave('E5');
+if (!limiteLegalE5?.claim) throw new Error('dominios: E5 precisa da linha do limite legal.');
+const corteDoIndice = parsePtNumber(getClaim(limiteLegalE5.claim).value);
+if (corteDoIndice === null) {
+  throw new Error(`dominios: o limite legal "${limiteLegalE5.claim}" não é um número.`);
+}
 const CORTES = {
   ganho: [1200, 1400, 1600, 1800],
   /* UM CORTE SÓ, E É O TETO LEGAL. Não é uma escala inventada sobre o índice: é
      o limite que o artigo 52.º da Lei n.º 73/2013 fixa e que a linha
      `indice-de-divida-limite-legal` publica, com o seu selo, no valor desta
      medida logo acima do mapa. As duas classes são as duas palavras da casa. */
-  indice: [150],
+  indice: [corteDoIndice],
 };
 const PALETA = { ganho: 'escala', indice: 'limiar' };
 /* A IGUALDADE FICA DENTRO ONDE O CORTE É UM LIMIAR PUBLICADO: ver a razão em
@@ -372,11 +384,70 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
           )}
 
           {outras.map((o) => (
-            <p class="dominio-valor dominio-valor-irmao">
-              <Claim id={o.id} lang={lang} chip={true} class="dominio-num-irmao" />
-              <span class="dominio-rotulo-valor">{o.rotulo[lang] ?? o.rotulo.pt}</span>
-            </p>
+            <>
+              <p class="dominio-valor dominio-valor-irmao">
+                <Claim id={o.id} lang={lang} chip={true} class="dominio-num-irmao" />
+                <span class="dominio-rotulo-valor">{o.rotulo[lang] ?? o.rotulo.pt}</span>
+              </p>
+              {/* O VALOR IRMÃO TEM AS SUAS PRÓPRIAS DATAS E A SUA PRÓPRIA FONTE
+                  (segunda passagem, 03.09.2026, Major 13). Sem isto, as duas
+                  linhas do Eurostat e do Diário da República partilhavam as
+                  três datas e a fonte da primeira, e as duas não concordam: a
+                  vista já as calcula em `medidasComLeitura()` (`o.datas`), só
+                  não as rendia. */}
+              {o.datas.length > 0 && (
+                <p class="dominio-datas dominio-datas-irmao">
+                  {o.datas.map((d, i) => (
+                    <>
+                      {i > 0 && <span class="dominio-sep"> · </span>}
+                      <span class="dominio-data-k">{rotuloDaData(d.campo)}</span>{' '}
+                      <DataDaLinha id={o.id} campo={d.campo} valor={d.valor} />
+                    </>
+                  ))}
+                </p>
+              )}
+              <p class="dominio-fonte dominio-fonte-irmao">
+                <span class="dominio-data-k">{s.dominios.fonteK}</span>{' '}
+                <CampoDaLinha
+                  id={o.id}
+                  campo="source"
+                  valor={o.linha.source}
+                  lang={lang}
+                  lingua={linguaDaFonte(o.linha.source, lang)}
+                />
+                {o.linha.document?.title && (
+                  <>
+                    <span class="dominio-sep"> · </span>
+                    <CampoDaLinha
+                      id={o.id}
+                      campo="document.title"
+                      valor={o.linha.document.title}
+                      lang={lang}
+                      lingua={linguaDoTituloDoDocumento(o.linha.document.title, lang)}
+                    />
+                  </>
+                )}
+                <span class="dominio-sep"> · </span>
+                <CampoDaLinha
+                  id={o.id}
+                  campo="unit"
+                  valor={unidadeDaLinha(o.linha.unit, lang).texto}
+                  lang={lang}
+                  lingua={unidadeDaLinha(o.linha.unit, lang).lingua}
+                />
+              </p>
+            </>
           ))}
+
+          {/* A RESSALVA DE ALCANCE, QUANDO A MEDIDA A TEM (segunda passagem,
+              03.09.2026, Blocking 4): a meta que a União tem e Portugal ainda
+              não tem (T1), o território que o diploma de T5 não cobre. O
+              marcador da casa fica à vista, como as linhas o têm. */}
+          {medida.ressalva && (
+            <p class="dominio-ressalva">
+              <Frase partes={medida.ressalva[lang] ?? medida.ressalva.pt} lang={lang} />
+            </p>
+          )}
 
           {/* AS TRÊS DATAS, na forma da casa, cada uma com a linha e o campo de
               onde saiu. Ver `DataDaLinha.astro`. */}

@@ -35,6 +35,12 @@ export const STRINGS = {
     nav: {
       inicio: 'Início',
       municipios: 'Municípios',
+      /* «Domínios» entra no rodapé no commit em que as páginas dos domínios
+         ganham porta comum (bloco F1.2, segunda passagem, 03.09.2026). A mesma
+         razão das «Áreas» ao lado: o rodapé é o índice do sítio, e uma família
+         de páginas que existe e não está nele é uma família sem porta comum. O
+         menu do cabeçalho fica para depois do F1.1. */
+      dominios: 'Domínios',
       /* «Áreas» entra no rodapé no commit em que as páginas das áreas são
          construídas. O rodapé é o índice do sítio (ver `SiteFooter.astro`), e
          uma família de páginas que existe e não está nele é uma família sem
@@ -875,7 +881,23 @@ export const STRINGS = {
       mapaMenosDe: 'menos de ',
       mapaA: ' a ',
       mapaOuMais: ' ou mais',
+      /* A NOTA DA ESCALA (segunda passagem, 03.09.2026, Blocking 3). Só se
+         rende no mapa cuja paleta é `escala`: as suas classes são marcas
+         redondas na unidade da medida, e não um limiar publicado, ao contrário
+         do mapa cuja paleta é `limiar` (o índice de dívida contra o teto
+         legal), que fica ao lado dele com a mesma forma visual. Sem a frase, a
+         diferença entre as duas paletas só se lê pela cor. */
+      mapaEscalaNota: 'As classes são marcas redondas da escala, e não um limite oficial.',
       porConcelhoPorta: 'Os valores concelho a concelho →',
+      /* A ALTERNATIVA EM TEXTO DO MAPA, DENTRO DA PÁGINA (segunda passagem,
+         03.09.2026, Major 7): uma tabela com os valores de cada concelho,
+         recolhida na própria página e não só uma porta para outro sítio. SEM
+         ALGARISMO: uma contagem escrita aqui seria um número da casa sem
+         `data-prova`, e o `<details>` já diz «concelho a concelho», que é o
+         que a tabela é. */
+      mapaTabelaAbrir: 'Os valores, concelho a concelho',
+      mapaTabelaConcelho: 'Concelho',
+      mapaTabelaValor: 'Valor',
       voltarIndice: 'Os domínios',
       voltarPais: 'Portugal',
     },
@@ -1709,6 +1731,7 @@ export const STRINGS = {
     nav: {
       inicio: 'Home',
       municipios: 'Municipalities',
+      dominios: 'Domains',
       areas: 'Areas',
       estudos: 'Studies',
       livro: 'Ledger',
@@ -2109,7 +2132,11 @@ export const STRINGS = {
       mapaMenosDe: 'less than ',
       mapaA: ' to ',
       mapaOuMais: ' or more',
+      mapaEscalaNota: 'The classes are round scale marks, not an official limit.',
       porConcelhoPorta: 'The values municipality by municipality →',
+      mapaTabelaAbrir: 'The values, municipality by municipality',
+      mapaTabelaConcelho: 'Municipality',
+      mapaTabelaValor: 'Value',
       voltarIndice: 'The domains',
       voltarPais: 'Portugal',
     },
