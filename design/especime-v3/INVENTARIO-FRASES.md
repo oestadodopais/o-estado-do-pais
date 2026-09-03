@@ -170,18 +170,24 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | navegacao | As regiões publicadas na régua da convergência. | grelha-2 | retirada | a régua da convergência saiu da primeira página até haver a página das regiões (Emenda 18, consequência decidida a 25.08; bloco A da auditoria de UI e UX, `696b51a`) |
 | navegacao | At a glance | até 2026-08-26 | viva | — |
 | navegacao | Brief reading | até 2026-08-26 | viva | — |
-| conteudo | Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu, e a descer. | até 2026-08-26 | viva | — |
+| conteudo | Custo do trabalho por unidade produzida, por hora trabalhada. | frases | viva | — |
+| conteudo | Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu, e a descer. | frases | retirada | o F0.9 tirou «e a descer» a 03.09.2026: era uma tendência, e o livro-razão publica um só valor deste indicador (`grep -rl tipsgo10 ledger/claims/` devolve um ficheiro, o de 2025). Uma tendência volta em F3.1, tipada, com a linha do período anterior ao lado, e não com estas palavras |
+| conteudo | Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu. | frases | viva | — |
 | navegacao | Encontrou um erro? correcoes@oestadodopais.pt · O registo de correções → | até 2026-08-26 | viva | — |
 | navegacao | Found an error? correcoes@oestadodopais.pt · The corrections log → | até 2026-08-26 | viva | — |
-| conteudo | General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold, and falling. | até 2026-08-26 | viva | — |
+| conteudo | General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold, and falling. | frases | retirada | a gémea inglesa da de cima: o F0.9 tirou «and falling» a 03.09.2026, pela mesma razão e no mesmo dia. Uma linha é uma decisão editorial e leva as duas edições da mesma frase |
+| conteudo | General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold. | frases | viva | — |
 | conteudo | Grande Lisboa · região | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | conteudo | Greater Lisbon · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | navegacao | Hover over a point to read the municipality. Keyboard: Tab to the map, arrow keys to move between neighbouring municipalities, Home to return to Évora. | grelha-2 | retirada | a leitura em voz alta do mapa saiu com os pontos da primeira página (Emenda 20a e 20c; bloco do mapa por distritos) |
+| conteudo | Índice nominal de preços da habitação. | frases | viva | — |
+| conteudo | Labour cost per unit of output, per hour worked. | frases | viva | — |
 | navegacao | Leitura breve | até 2026-08-26 | viva | — |
 | conteudo | Madeira · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | conteudo | Madeira · região | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | navegacao | Nenhum concelho com esse nome. | até 2026-08-26 | viva | — |
 | navegacao | No municipality by that name. | até 2026-08-26 | viva | — |
+| conteudo | Nominal house price index. | frases | viva | — |
 | navegacao | O Estado do País | até 2026-08-26 | viva | — |
 | conteudo | O que o país tem a haver do exterior menos o que lhe deve: negativo quando deve mais do que tem a haver. | até 2026-08-26 | viva | — |
 | conteudo | O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27. Um valor abaixo da média significa menos poder de compra por pessoa; um valor acima, mais. | regioes | viva | — |

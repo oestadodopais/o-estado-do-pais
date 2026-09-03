@@ -118,12 +118,20 @@ export const FIGURAS_PDM = [
     },
     /* nota: «Limiar do Procedimento relativo aos Desequilíbrios Macroeconómicos: 60%.» */
     limiar: { nl: '60', lado: 'superior', simbolo: '%' },
+    /* «E A DESCER» SAI (F0.9, 03.09.2026). Era uma tendência, e o sítio publica
+       um valor de 2025 e mais nenhum: não há linha de 2024 no livro-razão
+       (`grep -rl tipsgo10 ledger/claims/` devolve este ficheiro e mais nenhum),
+       e uma tendência sem os dois valores é uma afirmação que a página onde se
+       lê não sustenta. O que fica é a definição da medida e o estado que a
+       página calcula das suas próprias linhas: «acima do limiar» sai de
+       `comparacaoComOLimiar()`, que compara o valor publicado com o limiar
+       publicado, e os dois números estão na célula. */
     frase: {
       pt: [
-        'Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu, e a descer.',
+        'Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu.',
       ],
       en: [
-        'General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold, and falling.',
+        'General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold.',
       ],
     },
   },
@@ -168,17 +176,16 @@ export const FIGURAS_PDM = [
     },
     /* nota: «… +9% (EA).» */
     limiar: { nl: '9', lado: 'superior', simbolo: '%' },
+    /* A MUDANÇA DE DEFINIÇÃO SAI (F0.9, 03.09.2026). É a oitava frase da §1.44,
+       a «de outra natureza»: não compara valores nem afirma um sentido, mas
+       afirma o que a FONTE media antes e quando mudou, e a página não tem nem o
+       excerto que o diga nem uma linha do período anterior. Uma atribuição sem
+       excerto é a mesma classe da advertência da Comissão, e sai pela mesma
+       razão. Fica a definição da medida. Volta em F3.3, que dá excerto às
+       definições. */
     frase: {
-      pt: [
-        'Custo do trabalho por unidade produzida, por hora trabalhada. A definição por hora é de ',
-        { ref: '2024' },
-        ': antes media-se por pessoa empregada.',
-      ],
-      en: [
-        'Labour cost per unit of output, per hour worked. The per-hour definition dates from ',
-        { ref: '2024' },
-        '; before that it was measured per person employed.',
-      ],
+      pt: ['Custo do trabalho por unidade produzida, por hora trabalhada.'],
+      en: ['Labour cost per unit of output, per hour worked.'],
     },
   },
   {
@@ -191,17 +198,14 @@ export const FIGURAS_PDM = [
     },
     /* nota: «… +9%.» */
     limiar: { nl: '9', lado: 'superior', simbolo: '%' },
+    /* A SEGUNDA ORAÇÃO SAI INTEIRA (F0.9, 03.09.2026), e são duas afirmações
+       numa só: um valor de 2024, que a página não tem, e a comparação entre
+       2024 e 2025, que sem ele não existe. `grep -rl tipsho20 ledger/claims/`
+       devolve um só ficheiro, o de 2025. Fica a definição da medida; o estado
+       lê-se no marcador da célula e na linha do limiar, que são calculados. */
     frase: {
-      pt: [
-        'Índice nominal de preços da habitação. O limiar foi ultrapassado em ',
-        { ref: '2024' },
-        ' e o excesso quase duplicou no ano seguinte.',
-      ],
-      en: [
-        'Nominal house price index. The threshold was breached in ',
-        { ref: '2024' },
-        ', and the overshoot nearly doubled the following year.',
-      ],
+      pt: ['Índice nominal de preços da habitação.'],
+      en: ['Nominal house price index.'],
     },
   },
 
@@ -337,13 +341,21 @@ export const FIGURAS_PDM = [
  * aqui. Tinha frase na primeira página da v2; a frase é retirada e a linha fica
  * atrás da porta do livro-razão, onde continua a ter página e selo.
  *
- * AS FRASES QUE FICAM SÃO AS QUE JÁ EXISTIAM (R1), e ficam por uma razão
- * escrita: a frase da sobrecarga do custo da habitação é a ressalva da própria
- * Comissão — a medida «só se lê ao lado do regime de propriedade» —, e o mesmo
- * documento do motor (§3, «Where convergence is a trap») diz o que acontece sem
- * ela: «Published naked, it says Portuguese housing is fine.» Uma lista compacta
- * que deixasse cair essa frase publicaria um número que se lê ao contrário. As
- * outras cinco entradas não trazem frase nenhuma, porque nunca tiveram uma.
+ * AS FRASES QUE FICAM SÃO AS QUE JÁ EXISTIAM (R1), aparadas pelo F0.9 de
+ * 03.09.2026: cada oração que afirmava uma tendência, uma comparação contra um
+ * valor que a página não tem, um valor de outro período ou uma atribuição sem
+ * excerto saiu, e ficou a definição da medida. As razões estão por entrada.
+ *
+ * A RESSALVA DA SOBRECARGA DO CUSTO DA HABITAÇÃO FICA, e o nome da Comissão
+ * sai de cima dela. O documento do motor (§3, «Where convergence is a trap»)
+ * diz o que acontece sem a ressalva: «Published naked, it says Portuguese
+ * housing is fine.» Uma lista que a deixasse cair publicaria um número que se lê
+ * ao contrário, e é por isso que ela fica. O que não podia ficar era a
+ * atribuição: a página nomeava quem advertiu e não trazia as palavras dele, e
+ * uma atribuição prova-se com o excerto. Em F3.3 o excerto entra e o nome volta
+ * com ele.
+ *
+ * As outras cinco entradas não trazem frase nenhuma, porque nunca tiveram uma.
  */
 export const FIGURAS_SOCIAL = [
   {
@@ -355,13 +367,14 @@ export const FIGURAS_SOCIAL = [
       pt: ['Percentagem da população dos ', { nl: '20', motivo: 'escala-de-instrumento' }, ' aos ', { nl: '64', motivo: 'escala-de-instrumento' }, ' anos · ', { ref: '2025' }],
       en: ['Percentage of the population aged ', { nl: '20', motivo: 'escala-de-instrumento' }, ' to ', { nl: '64', motivo: 'escala-de-instrumento' }, ' · ', { ref: '2025' }],
     },
+    /* «ESTÁ ACIMA DA MÉDIA DA UNIÃO» SAI (F0.9, 03.09.2026), e a glosa sai com
+       ela: «que é uma posição relativa, não um limiar» explica uma comparação
+       que deixa de estar escrita, e sozinha não diz nada. A média da União não é
+       linha deste livro-razão: `grep -rl lfsi_emp_a ledger/claims/` devolve um
+       só ficheiro, e é o de Portugal (`geo=PT`). Fica o que a medida é. */
     frase: {
-      pt: [
-        'Indicador principal do Painel Social Europeu. Está acima da média da União, que é uma posição relativa, não um limiar: muda quando os outros mudam.',
-      ],
-      en: [
-        'A headline indicator of the European Social Scoreboard. It sits above the Union average, a relative position, not a threshold: it moves when other countries move.',
-      ],
+      pt: ['Indicador principal do Painel Social Europeu.'],
+      en: ['A headline indicator of the European Social Scoreboard.'],
     },
   },
   {
@@ -403,9 +416,14 @@ export const FIGURAS_SOCIAL = [
       pt: ['Percentagem dos ', { nl: '18', motivo: 'escala-de-instrumento' }, ' aos ', { nl: '24', motivo: 'escala-de-instrumento' }, ' anos · ', { ref: '2025' }],
       en: ['Percentage of those aged ', { nl: '18', motivo: 'escala-de-instrumento' }, ' to ', { nl: '24', motivo: 'escala-de-instrumento' }, ' · ', { ref: '2025' }],
     },
+    /* «ERA MAIS DE UM TERÇO NO INÍCIO DO SÉCULO» SAI (F0.9, 03.09.2026). É um
+       valor do princípio do século, e o livro-razão não o tem:
+       `grep -rl edat_lfse_14 ledger/claims/` devolve um só ficheiro, o de 2025.
+       Fica a definição da medida, que é onde vive «secundário incompleto», a
+       cadeia que a exceção `complet` do `VOZ-MARCADORES.md` dispensa. */
     frase: {
-      pt: ['Jovens que deixaram a escola com o secundário incompleto e não estão em formação. Era mais de um terço no início do século.'],
-      en: ['Young people who left school without completing secondary education and are not in training. It was over a third at the turn of the century.'],
+      pt: ['Jovens que deixaram a escola com o secundário incompleto e não estão em formação.'],
+      en: ['Young people who left school without completing secondary education and are not in training.'],
     },
   },
   {
@@ -437,16 +455,31 @@ export const FIGURAS_SOCIAL = [
       pt: ['Percentagem da população · ', { ref: '2025' }],
       en: ['Percentage of the population · ', { ref: '2025' }],
     },
+    /* SAEM DUAS ORAÇÕES E FICA A TERCEIRA (F0.9, 03.09.2026).
+       Sai «Está abaixo da média europeia»: a média europeia não é linha deste
+       livro-razão (`grep -rl tespm140 ledger/claims/` devolve um só ficheiro,
+       `geo=PT`), e uma comparação contra um valor que a página não tem é uma
+       afirmação por provar. Sai «a própria Comissão adverte que só se lê ao lado
+       do regime de propriedade»: é uma atribuição sem excerto, e uma atribuição
+       prova-se com as palavras de quem a fez, não com o nome dele.
+       FICA a ressalva sobre o que a medida não alcança, e fica por duas razões
+       escritas: a Emenda 15 guarda «as ressalvas sobre os dados (limites,
+       bandeiras de provisório, definições)», e a Emenda 18d permite a conclusão
+       que segue dos dados e não toma partido. A ressalva segue da definição que
+       está na mesma frase, que conta quem gasta mais de 40% do rendimento em
+       habitação; deixá-la cair publicaria um número que se lê ao contrário, e é
+       a razão que o cabeçalho desta lista já escrevia. Em F3.3 volta a poder
+       levar o nome da Comissão, com o excerto ao lado. */
     frase: {
       pt: [
         'Proporção que gasta mais de ',
         { nl: '40', motivo: 'escala-de-instrumento' },
-        '% do rendimento disponível em habitação. Está abaixo da média europeia, e a própria Comissão adverte que só se lê ao lado do regime de propriedade. Onde a taxa de proprietários é alta, esta medida não vê quem não conseguiu comprar.',
+        '% do rendimento disponível em habitação. Onde a taxa de proprietários é alta, esta medida não vê quem não conseguiu comprar.',
       ],
       en: [
         'The share spending more than ',
         { nl: '40', motivo: 'escala-de-instrumento' },
-        '% of disposable income on housing. It is below the European average, and the Commission itself warns it must be read alongside the tenure structure. Where owner-occupation is high, this measure does not see those who never bought.',
+        '% of disposable income on housing. Where owner-occupation is high, this measure does not see those who never bought.',
       ],
     },
   },
