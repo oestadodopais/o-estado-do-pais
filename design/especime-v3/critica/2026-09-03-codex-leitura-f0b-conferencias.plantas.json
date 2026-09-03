@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-03T09:08:07+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/78714fcd-9d7a-49ae-92d0-914347b16683/scratchpad/leituras/f0b-pacote",
+ "plantas": [
+  {
+   "id": "P1a",
+   "ficheiro": "sitio.py",
+   "descricao": "a variável tira-se antes de decidir as passagens: com OEDP_SITE numa pasta vazia a segunda passagem cai na árvore principal a dizer «o sítio vivo», o defeito que a própria docstring descreve (cópia inteira)",
+   "sha256_antes": "dd62dd426d809a0d7b567ab9b43c8c42229c3cc2e09cf6a29a7a31f44d89f0eb",
+   "sha256_depois": "4d1b99136c83fd507e854aa32cab9008bcab81825b9082d0c71ae59f89eebef8",
+   "contexto_antes": "   dentro de uma travessia, um subprocesso) aponte a meio para outra árvore, e\n    o rótulo impresso passa a dizer uma coisa e a corrida a fazer outra.\n    \"\"\"\n    lista, ausencia = passagens()\n    anterior = os.environ.pop(VARIAVEL, None)\n    try:\n        yield lista, ausencia\n    finally:\n        if anterior is not None:\n            os.environ[VARIAVEL] = anterior\n\n\ndef descrever(raiz: Path | N",
+   "contexto_depois": "   dentro de uma travessia, um subprocesso) aponte a meio para outra árvore, e\n    o rótulo impresso passa a dizer uma coisa e a corrida a fazer outra.\n    \"\"\"\n    anterior = os.environ.pop(VARIAVEL, None)\n    lista, ausencia = passagens()\n    try:\n        yield lista, ausencia\n    finally:\n        if anterior is not None:\n            os.environ[VARIAVEL] = anterior\n\n\ndef descrever(raiz: Path | N"
+  },
+  {
+   "id": "P1b",
+   "ficheiro": "diff-motor.patch",
+   "descricao": "a mesma planta nas linhas acrescentadas do diff",
+   "sha256_antes": "6672544ff80aeae4ac00375df79a55d7f099862f30ea99e800c7e4755359769f",
+   "sha256_depois": "cdbd1d0ace746883e1d2154a7fac2bf1306f7c6146ac904c1bbdfc14092f76a9",
+   "contexto_antes": " dentro de uma travessia, um subprocesso) aponte a meio para outra árvore, e\n+    o rótulo impresso passa a dizer uma coisa e a corrida a fazer outra.\n+    \"\"\"\n+    lista, ausencia = passagens()\n+    anterior = os.environ.pop(VARIAVEL, None)\n+    try:\n+        yield lista, ausencia\n+    finally:\n+        if anterior is not None:\n+            os.environ[VARIAVEL] = anterior\n+\n+\n def descrever(raiz: ",
+   "contexto_depois": " dentro de uma travessia, um subprocesso) aponte a meio para outra árvore, e\n+    o rótulo impresso passa a dizer uma coisa e a corrida a fazer outra.\n+    \"\"\"\n+    anterior = os.environ.pop(VARIAVEL, None)\n+    lista, ausencia = passagens()\n+    try:\n+        yield lista, ausencia\n+    finally:\n+        if anterior is not None:\n+            os.environ[VARIAVEL] = anterior\n+\n+\n def descrever(raiz: "
+  },
+  {
+   "id": "P2a",
+   "ficheiro": "corredor.py",
+   "descricao": "uma corrida parcial volta a carimbar o cabeçalho do sítio com a hora dela (cópia inteira)",
+   "sha256_antes": "8b6e1f7279686c6e15860b1289e210dcc632c4c3066f6d5bf1026f4480f5c15b",
+   "sha256_depois": "265b4b432cbfea0aec2a7141238456cd14c70c2ec443138171e23c881b25715e",
+   "contexto_antes": "']},\\n\"\n        f\"  primeirasCapturas: {c['captura-primeira']},\\n\"\n        f\"  semResposta: {c['ausencia']},\\n\"\n        f\"  valoresNovos: 0,\\n\"\n        \"};\\n\")\n    if so_o_estado:\n        anterior = destino.read_text(encoding=\"utf-8\") if destino.exists() else \"\"\n        achado = BLOCO_DA_CONFERENCIA.search(anterior)\n        if achado is None:\n            raise Fail(\n       ",
+   "contexto_depois": "']},\\n\"\n        f\"  primeirasCapturas: {c['captura-primeira']},\\n\"\n        f\"  semResposta: {c['ausencia']},\\n\"\n        f\"  valoresNovos: 0,\\n\"\n        \"};\\n\")\n    if False and so_o_estado:\n        anterior = destino.read_text(encoding=\"utf-8\") if destino.exists() else \"\"\n        achado = BLOCO_DA_CONFERENCIA.search(anterior)\n        if achado is None:\n            raise Fail(\n       "
+  },
+  {
+   "id": "P2b",
+   "ficheiro": "diff-motor.patch",
+   "descricao": "a mesma planta nas linhas acrescentadas do diff",
+   "sha256_antes": "cdbd1d0ace746883e1d2154a7fac2bf1306f7c6146ac904c1bbdfc14092f76a9",
+   "sha256_depois": "20815c101c474346adb76a47bce3452b062b7cecf04259c13fedb44d0603d12c",
+   "contexto_antes": "\\n\"\n+        f\"  primeirasCapturas: {c['captura-primeira']},\\n\"\n+        f\"  semResposta: {c['ausencia']},\\n\"\n+        f\"  valoresNovos: 0,\\n\"\n+        \"};\\n\")\n+    if so_o_estado:\n+        anterior = destino.read_text(encoding=\"utf-8\") if destino.exists() else \"\"\n+        achado = BLOCO_DA_CONFERENCIA.search(anterior)\n+        if achado is None:\n+            raise Fail(\n+   ",
+   "contexto_depois": "\\n\"\n+        f\"  primeirasCapturas: {c['captura-primeira']},\\n\"\n+        f\"  semResposta: {c['ausencia']},\\n\"\n+        f\"  valoresNovos: 0,\\n\"\n+        \"};\\n\")\n+    if False and so_o_estado:\n+        anterior = destino.read_text(encoding=\"utf-8\") if destino.exists() else \"\"\n+        achado = BLOCO_DA_CONFERENCIA.search(anterior)\n+        if achado is None:\n+            raise Fail(\n+   "
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-motor.md",
+   "descricao": "o relatório diz 903 linhas reconferidas onde o stat do sítio mostra 935 ficheiros (930 da DGAL e 5 do PRR)",
+   "sha256_antes": "0b445d0b7dfd253a0b08310dd57e00ff63e549f2440fa0322835cf27403892df",
+   "sha256_depois": "7b18d7d9423e72a1999cec5fe685aa63aa53186207073eeef776f6a2fb91904a",
+   "contexto_antes": "gual | 200 | 331 260 | 1,033 | 2 |\n| 5 | `80B6C319…` | conferido-igual | 200 | 326 676 | 0,990 | 2 |\n\n* **5 endereços de 79**, os cinco da DGAL, e mais nenhum;\n* **930 linhas reconferidas**, que é o número que a auditoria contou;\n* **930 conferências `igual` escritas**, autor `corredor-diario`, 0 repetidas, 0 linhas por rever;\n* **2 685 124 bytes**, **7,7 s** de corrida (contra os 452 s",
+   "contexto_depois": "gual | 200 | 331 260 | 1,033 | 2 |\n| 5 | `80B6C319…` | conferido-igual | 200 | 326 676 | 0,990 | 2 |\n\n* **5 endereços de 79**, os cinco da DGAL, e mais nenhum;\n* **903 linhas reconferidas**, que é o número que a auditoria contou;\n* **930 conferências `igual` escritas**, autor `corredor-diario`, 0 repetidas, 0 linhas por rever;\n* **2 685 124 bytes**, **7,7 s** de corrida (contra os 452 s"
+  }
+ ]
+}
