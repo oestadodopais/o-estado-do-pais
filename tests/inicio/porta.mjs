@@ -83,6 +83,46 @@
  * palavra sem que a porta mude de sítio.
  *
  * ---------------------------------------------------------------------------
+ * AS QUATRO CÉLULAS DO F1.2b (03.09.2026)
+ * ---------------------------------------------------------------------------
+ * O bloco F1.2b abre três portas pequenas na primeira página e tira o selo de
+ * dentro da manchete do domínio. As quatro medidas do seu brief §4 (E1, E2, E3
+ * e E7) medem-se aqui, e não numa régua nova, porque as quatro são medidas
+ * DESTA página e das páginas que ela abre, que é o que esta régua já mede. Os
+ * seus estragos plantados (E6) entram na lista de `--vermelhos` desta mesma
+ * régua, pela mesma razão: uma planta que tenha de derrubar uma célula tem de
+ * viver ao pé da célula que derruba.
+ *
+ * A13 · O DESTINO DE CADA UM DOS 21 CARTÕES. Um cartão cuja linha pertence a um
+ * domínio COM PÁGINA abre a leitura daquela medida na página do domínio; os
+ * outros abrem a leitura breve desta página, como sempre. A régua não escreve a
+ * lista dos que são de domínio: pergunta-a a `dominioDaLinha()`, que é a mesma
+ * tabela que a vista usa, e compara CARTÃO A CARTÃO. Uma célula que contasse
+ * «três apontam para fora» passava com os três errados. E cada destino tem de
+ * responder: a página existe (200) e o `id` da âncora existe nela.
+ *
+ * A14 · «DOMÍNIOS» NO MENU, nas duas edições, pelo `href` e não pelo texto (a
+ * regra da A12), e com a página a responder 200.
+ *
+ * A15 · OS ESTUDOS A ≤ 1 TOQUE E ≤ 1,5 ECRÃS, a 390 × 664. As duas metades
+ * medem-se, e nenhuma chega sozinha: a porta do menu está a um toque de
+ * distância do menu, que abaixo de 640 px é um `<details>` fechado, e por isso
+ * custa dois; a do rodapé está a um toque e a sete mil píxeis. A célula procura
+ * a porta para `/estudos` que esteja MAIS ACIMA na página, sem contar as que
+ * vivem dentro de um `<details>` fechado (que não se tocam sem abrir primeiro),
+ * e mede o topo dela em ecrãs de 664 px. Depois toca-lhe, e a página que chega
+ * tem de ser o arquivo.
+ *
+ * A16 · A MANCHETE SEM TEXTO DE SELO DENTRO DA FRASE, nas quatro camadas (o
+ * país, o domínio, a região e o concelho) e nas duas edições. Mede-se pelo TEXTO
+ * ACESSÍVEL do `<h1>`, que é o que um leitor de ecrã ouve, e a regra é
+ * mecânica: o texto do `<h1>` com os selos retirados é a FRASE, e o texto
+ * inteiro tem de COMEÇAR por ela. Um selo pelo meio parte a frase e o texto
+ * inteiro deixa de começar por ela; um selo no fim não a parte. A célula exige
+ * ainda que cada valor do livro-razão da manchete continue a ter o seu selo, e
+ * é isso que impede que a maneira mais fácil de a passar seja tirar as portas.
+ *
+ * ---------------------------------------------------------------------------
  * O QUE `--vermelhos` EXIGE DE CADA ESTRAGO
  * ---------------------------------------------------------------------------
  * Três coisas, e não uma, como em `faixa.mjs` e em `lista.mjs`. **Verde antes**:
@@ -214,8 +254,29 @@ const LIMIAR_DA_COLUNA = 1024;
  *
  * Está escrito aqui e não no relatório porque é a régua que tem de o recusar. O
  * dia em que a página crescer acima disto, a célula fecha; o dia em que o teto
- * mudar de propósito, muda-se aqui, com a data e a medição ao lado. */
-const TETO_DA_ALTURA = { pt: 6941, en: 6890 };
+ * mudar de propósito, muda-se aqui, com a data e a medição ao lado.
+ *
+ * ---------------------------------------------------------------------------
+ * O TETO SOBE 50 px A 03.09.2026, E SOBE EXACTAMENTE A ALTURA DA FILA NOVA
+ * ---------------------------------------------------------------------------
+ * O F1.2b põe a fila dos estudos logo a seguir à faixa (item 4 do brief), e o
+ * brief diz o que ela pode custar: «a altura de `/` a 390 não sobe mais do que a
+ * altura da fila dos estudos, medida e dita». A fila mede **50,0 px** nas duas
+ * edições (a caixa de `.inicio-estudos`: 44 px de alvo e 6 px de ar por cima,
+ * `margin: 0`), e a página subiu **exactamente 50 px** nas duas:
+ *
+ *     antes (a construção deste ramo, sem a fila)   `/` 6 909 · `/en` 6 861
+ *     depois                                        `/` 6 959 · `/en` 6 911
+ *
+ * O teto sobe por isso 50 px e nem um a mais: 6 941 → 6 991 e 6 890 → 6 940. A
+ * folga contra o teto continua a ser a mesma que o F1.1 deixou (32 px em `/` e
+ * 29 px em `/en`), e é essa a razão de o subir assim: um teto que subisse «até
+ * caber» apagava o que a folga diz. Nada mais deste bloco custa altura ao
+ * telemóvel: o rótulo do destino senta-se na fila do selo (o cartão mede 163,0 px
+ * em `/` e 181,7 px em `/en`, antes e depois), o «Domínios» do menu vive dentro
+ * do `<details>` fechado, e a manchete do domínio ENCOLHEU 3,4 px com o selo
+ * fora da frase. */
+const TETO_DA_ALTURA = { pt: 6991, en: 6940 };
 
 const EDICOES = [
   {
@@ -228,6 +289,14 @@ const EDICOES = [
     concelho: 'Évora',
     destinoDoConcelho: '/municipios/evora',
     indiceDosConcelhos: '/municipios',
+    /* As rotas que as células do F1.2b abrem. Escritas aqui e não compostas:
+       esta régua lê o `dist/` e não a tabela de rotas do sítio, que é o que a
+       torna capaz de ver um caminho que mudou sem ninguém dar por isso. */
+    indiceDosDominios: '/dominios',
+    dominio: '/dominios/economia-e-financas-publicas',
+    estudos: '/estudos',
+    regiao: '/regioes/alentejo',
+    paginaDoConcelho: '/municipios/evora',
   },
   {
     chave: 'en',
@@ -239,6 +308,11 @@ const EDICOES = [
     concelho: 'Évora',
     destinoDoConcelho: '/en/municipalities/evora',
     indiceDosConcelhos: '/en/municipalities',
+    indiceDosDominios: '/en/domains',
+    dominio: '/en/domains/economia-e-financas-publicas',
+    estudos: '/en/studies',
+    regiao: '/en/regions/alentejo',
+    paginaDoConcelho: '/en/municipalities/evora',
   },
 ];
 
@@ -249,6 +323,15 @@ const { FIGURAS_PDM, FIGURAS_SOCIAL } = await import(
   path.join(RAIZ, 'src', 'data', 'figuras.mjs')
 );
 const AS_VINTE_E_UMA = [...FIGURAS_PDM, ...FIGURAS_SOCIAL].map((f) => f.claim);
+
+/* A TABELA DO DESTINO, LIDA DA MESMA FONTE QUE A VISTA USA (A13). Uma segunda
+   lista escrita aqui («estas três são de domínio») era a régua a medir o que ela
+   própria escreveu: se a vista trocasse de domínio uma medida, as duas listas
+   trocavam juntas e nada caía. O que a régua sabe é a REGRA (`dominioDaLinha`),
+   e o que ela mede é o HTML construído contra ela. */
+const { dominioDaLinha } = await import(path.join(RAIZ, 'src', 'lib', 'dominios.mjs'));
+
+const ALTURA_DA_DOBRA = 1.5;
 
 /* A rede de nomes, medida da mesma maneira em qualquer largura: uma função só,
    para que a leitura a 390 e a 768 não possam divergir por acaso. */
@@ -678,6 +761,226 @@ async function corre() {
         `${dentroDoEcra ? 'sem rolar' : 'com rolar'}, chegou a «${chegou ?? 'lado nenhum'}»` +
         ` · sem guião, pela submissão nativa: «${semGuiao.caminho}${semGuiao.query}»`,
     );
+
+    /* ------------------------------------------------------------------ A13
+       O DESTINO DE CADA UM DOS 21 CARTÕES (F1.2b, item 1)
+       ------------------------------------------------------------------------
+       Cartão a cartão, e não por contagem. Para cada um pergunta-se à tabela do
+       sítio se a sua linha pertence a um domínio com página: se pertencer, o
+       `href` tem de ser a página desse domínio (e a âncora daquela medida); se
+       não, tem de ser uma âncora DESTA página. E os dois destinos têm de
+       responder: a âncora existe no documento, e a página do domínio responde
+       200 com o `id` lá dentro. Um destino que não abre nada é pior do que
+       nenhum. */
+    const pCartoes = await pagina(ed.rota, 390, ALTURA_PEQUENA);
+    const cartoes = await pCartoes.evaluate(() => {
+      const ancoras = new Set([...document.querySelectorAll('[id]')].map((el) => el.id));
+      return [...document.querySelectorAll('[data-faixa] [data-cartao]')].map((c) => ({
+        id: c.getAttribute('data-cartao'),
+        href: c.querySelector('.cartao-porta')?.getAttribute('href') ?? null,
+        rotulo: (c.querySelector('.cartao-destino')?.textContent ?? '').trim() || null,
+        ancoraLocal: ancoras.has(
+          String(c.querySelector('.cartao-porta')?.getAttribute('href') ?? '').replace(/^#/, ''),
+        ),
+      }));
+    });
+    await pCartoes.__ctx.close();
+
+    /* As páginas de destino lêem-se uma vez, e não uma vez por cartão. */
+    const idsDaPaginaDoDominio = await (async () => {
+      const doc = await html(`${ed.dominio}/index.html`);
+      return new Set([...doc.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]));
+    })();
+
+    const errados = [];
+    for (const c of cartoes) {
+      const dominio = dominioDaLinha(c.id);
+      if (dominio) {
+        const esperado = `${ed.dominio}#${dominio.ancora}`;
+        if (c.href !== esperado) errados.push(`${c.id}: «${c.href}» ≠ «${esperado}»`);
+        else if (!idsDaPaginaDoDominio.has(dominio.ancora))
+          errados.push(`${c.id}: a âncora «${dominio.ancora}» não existe na página do domínio`);
+        else if (!c.rotulo) errados.push(`${c.id}: aponta ao domínio e não diz para onde leva`);
+      } else {
+        if (c.href !== `#m-${c.id}`) errados.push(`${c.id}: «${c.href}» ≠ «#m-${c.id}»`);
+        else if (!c.ancoraLocal) errados.push(`${c.id}: a âncora «m-${c.id}» não existe nesta página`);
+        else if (c.rotulo) errados.push(`${c.id}: não é de domínio nenhum e traz rótulo de destino`);
+      }
+    }
+    const paraODominio = cartoes.filter((c) => dominioDaLinha(c.id));
+    medidas[`A13.${ed.chave}`] = { cartoes, errados, paraODominio: paraODominio.length };
+    conta(
+      `A13.${ed.chave}`,
+      cartoes.length === AS_VINTE_E_UMA.length && paraODominio.length > 0 && errados.length === 0,
+      `o destino dos cartões de ${ed.rota}: ${cartoes.length} cartão(ões), ` +
+        `${paraODominio.length} para a página do domínio ` +
+        `(${paraODominio.map((c) => c.id).join(', ') || 'nenhum'}), ` +
+        `${cartoes.length - paraODominio.length} para a leitura breve desta página · ` +
+        (errados.length ? `errados: ${errados.slice(0, 4).join(' · ')}` : 'nenhum errado'),
+    );
+
+    /* ------------------------------------------------------------------ A14
+       «DOMÍNIOS» NO MENU (F1.2b, item 2)
+       ------------------------------------------------------------------------
+       Pelo `href` e não pelo texto, que é a regra que a A12 já escreve: o texto
+       é a etiqueta e pode mudar de palavra sem que a porta mude de sítio. E o
+       destino tem de responder 200: uma porta no menu para uma página que não
+       foi construída é pior do que nenhuma. */
+    const pMenu = await pagina(ed.rota, 390, ALTURA_PEQUENA);
+    const menuDominios = await pMenu.evaluate(() =>
+      [...document.querySelectorAll('.nav-principal a')].map((a) => a.getAttribute('href')),
+    );
+    await pMenu.__ctx.close();
+    const temDominios = menuDominios.includes(ed.indiceDosDominios);
+    const respostaDoIndice = temDominios
+      ? (await fetch(base + ed.indiceDosDominios)).status
+      : null;
+    medidas[`A14.${ed.chave}`] = { menu: menuDominios, temDominios, respostaDoIndice };
+    conta(
+      `A14.${ed.chave}`,
+      temDominios && respostaDoIndice === 200,
+      `«${ed.indiceDosDominios}» no menu de ${ed.rota}: ` +
+        (temDominios
+          ? `lá está, e a página responde ${respostaDoIndice}`
+          : `NÃO está (o menu tem ${menuDominios.length} portas)`),
+    );
+
+    /* ------------------------------------------------------------------ A15
+       OS ESTUDOS A ≤ 1 TOQUE E ≤ 1,5 ECRÃS (F1.2b, item 4)
+       ------------------------------------------------------------------------
+       As duas metades, e nenhuma chega sozinha. Uma porta dentro de um
+       `<details>` fechado não se toca sem abrir primeiro, e por isso não conta
+       como um toque: a célula deita fora as que estão lá dentro antes de medir,
+       e é essa a razão pela qual a porta do menu não passava esta medida. Do que
+       fica, mede-se a que está MAIS ACIMA, em píxeis de documento e em ecrãs de
+       664 px, e depois toca-se-lhe: a página que chega tem de ser o arquivo. */
+    const pEstudos = await pagina(ed.rota, 390, ALTURA_PEQUENA);
+    const portasDosEstudos = await pEstudos.evaluate((alvo) => {
+      const fechado = (el) => {
+        for (let p = el.parentElement; p; p = p.parentElement) {
+          if (p.tagName === 'DETAILS' && !p.open) return true;
+        }
+        return false;
+      };
+      return [...document.querySelectorAll('a')]
+        .filter((a) => a.getAttribute('href') === alvo)
+        .map((a) => {
+          const r = a.getBoundingClientRect();
+          return {
+            dentroDeGavetaFechada: fechado(a),
+            topo: +(r.top + window.scrollY).toFixed(1),
+            altura: +r.height.toFixed(1),
+            largura: +r.width.toFixed(1),
+          };
+        });
+    }, ed.estudos);
+    const alcancaveis = portasDosEstudos
+      .filter((x) => !x.dentroDeGavetaFechada && x.largura > 0 && x.altura > 0)
+      .sort((a, b) => a.topo - b.topo);
+    const primeira = alcancaveis[0] ?? null;
+    const ecras = primeira ? +(primeira.topo / ALTURA_PEQUENA).toFixed(2) : null;
+    let chegouAoArquivo = null;
+    if (primeira) {
+      await pEstudos.evaluate(
+        (alvo) =>
+          [...document.querySelectorAll('a')]
+            .filter((a) => a.getAttribute('href') === alvo)
+            .sort(
+              (a, b) =>
+                a.getBoundingClientRect().top + window.scrollY -
+                (b.getBoundingClientRect().top + window.scrollY),
+            )[0]
+            .scrollIntoView({ block: 'center' }),
+        ed.estudos,
+      );
+      await Promise.all([
+        pEstudos.waitForNavigation({ waitUntil: 'load' }),
+        pEstudos.click(`a[href="${ed.estudos}"]:visible`),
+      ]);
+      chegouAoArquivo = new URL(pEstudos.url()).pathname.replace(/\/$/, '');
+    }
+    await pEstudos.__ctx.close();
+    const alvoDoArquivo = ed.estudos.replace(/\/$/, '');
+    medidas[`A15.${ed.chave}`] = {
+      portas: portasDosEstudos,
+      alcancaveis: alcancaveis.length,
+      topo: primeira?.topo ?? null,
+      ecras,
+      chegouAoArquivo,
+    };
+    conta(
+      `A15.${ed.chave}`,
+      !!primeira &&
+        ecras !== null &&
+        ecras <= ALTURA_DA_DOBRA &&
+        primeira.altura >= ALVO_TOQUE &&
+        chegouAoArquivo === alvoDoArquivo,
+      `«${ed.estudos}» a partir de ${ed.rota}, a 390 × ${ALTURA_PEQUENA}: ` +
+        `${portasDosEstudos.length} porta(s) no documento, ${alcancaveis.length} tocável(eis) sem abrir gaveta` +
+        (primeira
+          ? ` · a mais acima a ${primeira.topo} px (${ecras} ecrã(s), teto ${ALTURA_DA_DOBRA}),` +
+            ` alvo ${primeira.largura}×${primeira.altura} px · um toque chegou a «${chegouAoArquivo}»`
+          : ' · nenhuma alcançável num toque'),
+    );
+
+    /* ------------------------------------------------------------------ A16
+       A MANCHETE SEM TEXTO DE SELO DENTRO DA FRASE (F1.2b, item 3)
+       ------------------------------------------------------------------------
+       As quatro camadas: o país, o domínio, a região e o concelho. A regra é
+       mecânica e não uma leitura: o texto do `<h1>` com os selos retirados é a
+       FRASE, e o texto inteiro tem de COMEÇAR por ela. Um selo pelo meio parte a
+       frase e a comparação cai; um selo no fim não a parte.
+
+       E CADA VALOR CONTINUA A TER O SEU SELO. Sem esta segunda metade, a maneira
+       mais fácil de passar a célula era tirar as portas da manchete, que é
+       exactamente o contrário do que o bloco quer. */
+    const manchetes = [];
+    for (const [camada, rota] of [
+      ['pais', ed.rota],
+      ['dominio', ed.dominio],
+      ['regiao', ed.regiao],
+      ['concelho', ed.paginaDoConcelho],
+    ]) {
+      const pg = await pagina(rota, 390, ALTURA_PEQUENA);
+      const r = await pg.evaluate(() => {
+        const h1 = document.querySelector('[data-grelha] h1');
+        if (!h1) return null;
+        const norma = (t) => String(t ?? '').replace(/\s+/g, ' ').trim();
+        const inteiro = norma(h1.textContent);
+        const copia = h1.cloneNode(true);
+        for (const selo of copia.querySelectorAll('.src-chip')) selo.remove();
+        const frase = norma(copia.textContent);
+        return {
+          inteiro,
+          frase,
+          selos: h1.querySelectorAll('.src-chip').length,
+          valores: h1.querySelectorAll('[data-claim]').length,
+          semSelo: [...h1.querySelectorAll('[data-claim]')].filter(
+            (v) => !v.parentElement?.querySelector('.src-chip'),
+          ).length,
+        };
+      });
+      await pg.__ctx.close();
+      manchetes.push({ camada, rota, ...(r ?? {}) });
+    }
+    const partidas = manchetes.filter((m) => !m.frase || !m.inteiro.startsWith(m.frase));
+    const orfaos = manchetes.filter((m) => (m.semSelo ?? 0) > 0);
+    medidas[`A16.${ed.chave}`] = { manchetes, partidas: partidas.map((m) => m.camada) };
+    conta(
+      `A16.${ed.chave}`,
+      manchetes.length === 4 &&
+        manchetes.every((m) => !!m.frase) &&
+        partidas.length === 0 &&
+        orfaos.length === 0,
+      `a manchete das quatro camadas em ${ed.chave}, pelo texto acessível do <h1>: ` +
+        manchetes
+          .map((m) => `${m.camada} ${m.selos ?? 0} selo(s) fora da frase`)
+          .join(' · ') +
+        (partidas.length
+          ? ` · SELO DENTRO DA FRASE em ${partidas.map((m) => `${m.camada} («${(m.inteiro ?? '').slice(0, 60)}…»)`).join(', ')}`
+          : '') +
+        (orfaos.length ? ` · valores sem selo em ${orfaos.map((m) => m.camada).join(', ')}` : ''),
+    );
   }
 }
 
@@ -757,6 +1060,75 @@ const PLANTAS = [
        célula, e esta planta prova-o: mil píxeis de papel no fim do corpo. */
     f: (h) => h.replace(/<\/body>/, '<div style="height:1000px"></div></body>'),
   },
+  /* -------------------------------------------------------------------------
+     AS QUATRO PLANTAS DO F1.2b (E6 do brief, 03.09.2026)
+     -------------------------------------------------------------------------
+     Uma por porta, e cada uma é o defeito que o bloco veio fechar, reposto no
+     HTML servido: o cartão do domínio a apontar à linha, o menu sem
+     «Domínios», os estudos a mais de 1,5 ecrãs, e o selo de volta dentro da
+     manchete do domínio.
+
+     A ÚLTIMA MEXE NUMA PÁGINA QUE NÃO É A PRIMEIRA, e por isso traz `rotas`: a
+     conferência de «o html mudou» lia só os dois `index.html` das duas edições,
+     e uma planta que só toca na página do domínio passava por planta sem plantar
+     nada. É a mesma regra da própria régua («um estrago que não muda nada nunca
+     podia ser apanhado»), alargada às páginas que as células novas abrem. */
+  {
+    nome: 'um cartão do domínio a apontar à linha desta página',
+    celulas: ['A13.pt', 'A13.en'],
+    /* Repõe o destino antigo no cartão da dívida pública: uma âncora desta
+       página, que é o que ele era antes deste bloco. A âncora existe, e por isso
+       a planta não passa por acaso: o que cai é a comparação com a tabela. */
+    f: (h) =>
+      h.replace(
+        /href="[^"]*\/dominios\/economia-e-financas-publicas#m-e3"|href="[^"]*\/en\/domains\/economia-e-financas-publicas#m-e3"/,
+        'href="#m-divida-publica-2025"',
+      ),
+  },
+  {
+    nome: 'o menu sem «Domínios»',
+    celulas: ['A14.pt', 'A14.en'],
+    /* Tira a posição dos domínios da fila do menu, e deixa as outras onze. A
+       fila é uma corrida de `<a>` dentro de `.nav-principal`, sem `<li>` pelo
+       meio: o que se tira é a âncora, e é o `href` que a nomeia. */
+    f: (h) => h.replace(/<a href="(\/dominios|\/en\/domains)"[^>]*>[^<]*<\/a>/, ''),
+  },
+  {
+    nome: 'os estudos a mais de 1,5 ecrãs (a fila depois da faixa escondida)',
+    celulas: ['A15.pt', 'A15.en'],
+    /* Esconde a fila dos estudos. O arquivo continua a ter porta na página (o
+       menu e o rodapé), e é isso que a planta prova: com a fila fora, a porta
+       mais acima que se toca sem abrir uma gaveta é a do rodapé, a sete mil
+       píxeis, e a medida do brief («≤ 1,5 ecrãs») cai. */
+    f: (h) => h.replace(/<p class="inicio-estudos"/, '<p class="inicio-estudos" style="display:none"'),
+  },
+  {
+    nome: 'o selo de volta dentro da manchete do domínio',
+    celulas: ['A16.pt', 'A16.en'],
+    rotas: [
+      '/dominios/economia-e-financas-publicas/index.html',
+      '/en/domains/economia-e-financas-publicas/index.html',
+    ],
+    /* Tira o bloco dos selos do fim do `<h1>` e mete-o de volta a seguir ao
+       primeiro valor, que é onde ele estava antes deste bloco: a manchete volta
+       a ler-se «89,7%fonte · Quadro institucional… do PIB». Nenhuma porta se
+       perde, e é isso que faz a planta valer: o que cai é a ORDEM, e não a
+       presença. */
+    f: (h, rota) => {
+      if (!rota.includes('dominios') && !rota.includes('domains')) return h;
+      const i = h.indexOf('<span class="manchete-selos">');
+      if (i < 0) return h;
+      const j = h.indexOf('</h1>', i);
+      if (j < 0) return h;
+      const selos = h.slice(i, j);
+      const sem = h.slice(0, i) + h.slice(j);
+      const v = sem.indexOf('data-claim=');
+      if (v < 0) return h;
+      const fim = sem.indexOf('</span>', v);
+      if (fim < 0) return h;
+      return sem.slice(0, fim + 7) + selos + sem.slice(fim + 7);
+    },
+  },
   {
     nome: 'a mobília do menu em duas filas',
     celulas: ['A11.pt', 'A11.en'],
@@ -790,10 +1162,16 @@ if (VERMELHOS) {
     /* O HTML tem de mudar: um `replace` que falha em silêncio é o modo mais
        comum de um estrago não ser estrago nenhum. */
     let mudou = false;
-    for (const ed of EDICOES) {
-      const rota = ed.rota === '/' ? '/index.html' : `${ed.rota}/index.html`;
+    /* AS ROTAS QUE A PLANTA TOCA, E NÃO SÓ AS DUAS PRIMEIRAS PÁGINAS (F1.2b,
+       03.09.2026). A conferência lia sempre `/index.html` e `/en/index.html`, e
+       uma planta que só mexa na página do domínio dava «html mudou: NÃO» com o
+       estrago a funcionar. Por defeito continuam a ser as duas primeiras
+       páginas, que é o que todas as plantas anteriores tocam. */
+    const rotasDaPlanta =
+      planta.rotas ?? EDICOES.map((ed) => (ed.rota === '/' ? '/index.html' : `${ed.rota}/index.html`));
+    for (const rota of rotasDaPlanta) {
       const antes = fs.readFileSync(path.join(DIST, rota.replace(/^\//, '')), 'utf8');
-      if (planta.f(antes, ed.rota) !== antes) mudou = true;
+      if (planta.f(antes, rota.replace(/\/index\.html$/, '') || '/') !== antes) mudou = true;
     }
     ESTRAGO = planta.f;
     await corre();

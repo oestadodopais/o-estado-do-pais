@@ -69,7 +69,7 @@
 
 import { getClaim, hasClaim, loadClaims, parsePtNumber, eValorTextual } from './ledger.mjs';
 import { paisDoMapa, distritoDoMapa } from './mapa.mjs';
-import { medidasDoDominio } from '../data/dominios.mjs';
+import { medidasDoDominio, dominiosComPagina } from '../data/dominios.mjs';
 import { entradasGeradas } from '../data/concelhos.mjs';
 import { dataDaCasa } from './datas.mjs';
 
@@ -396,4 +396,53 @@ export function medidasComLeitura(slug) {
     })),
     desenho: formaDaMedida(medida),
   }));
+}
+
+/**
+ * ---------------------------------------------------------------------------
+ * A ÂNCORA DE UMA MEDIDA DENTRO DA PÁGINA DO SEU DOMÍNIO
+ * ---------------------------------------------------------------------------
+ * A chave do inventário das fontes (E1 a E5, T1 a T5) em caixa baixa, com o
+ * prefixo que a página usa. Está aqui, e não na vista, porque duas superfícies
+ * a compõem: a página do domínio, que a escreve nos seus `id`, e a faixa da
+ * primeira página, que a escreve no `href` de um cartão. Duas composições da
+ * mesma cadeia divergiriam no dia em que uma delas mudasse, e a porta ficava a
+ * apontar para um `id` que não existe.
+ *
+ * @param {string} chave
+ */
+export const ancoraDaMedida = (chave) => `m-${chave.toLowerCase()}`;
+
+/**
+ * ---------------------------------------------------------------------------
+ * O DOMÍNIO A QUE UMA LINHA DO LIVRO-RAZÃO PERTENCE, OU `null` (F1.2b, item 1)
+ * ---------------------------------------------------------------------------
+ * É a tabela única do destino dos cartões da faixa: dado o id de uma linha,
+ * diz se ela é a medida de um domínio QUE TEM PÁGINA, e qual é a âncora dessa
+ * medida dentro dela. Quem não estiver aqui não tem página de domínio para
+ * onde ir, e o seu cartão continua a abrir a leitura breve da mesma página, que
+ * é o que a faixa sempre fez.
+ *
+ * LÊ-SE DE `dominiosComPagina()` E NÃO DE UMA LISTA ESCRITA. Uma segunda lista
+ * de ids aqui era a promessa de divergir de `src/data/dominios.mjs` no dia em
+ * que uma medida trocasse de domínio ou uma linha mudasse de id: a condição de
+ * um domínio ter página é a que aquela função já escreve (declara medidas E as
+ * linhas dessas medidas existem), e o destino de um cartão não pode ser mais
+ * generoso do que ela.
+ *
+ * OS IDS SECUNDÁRIOS DE UMA MEDIDA CONTAM (`claims`). T5 publica dois números
+ * para a mesma pergunta, e os dois vivem na mesma leitura breve: um cartão que
+ * cite o segundo aponta para a mesma âncora que um que cite o primeiro.
+ *
+ * @param {string} id  o id de uma linha do livro-razão
+ * @returns {{ slug: string, chave: string, ancora: string }|null}
+ */
+export function dominioDaLinha(id) {
+  for (const d of dominiosComPagina()) {
+    for (const m of medidasDoDominio(d.slug)) {
+      const daMedida = m.claim === id || (m.claims ?? []).some((o) => o.id === id);
+      if (daMedida) return { slug: d.slug, chave: m.chave, ancora: ancoraDaMedida(m.chave) };
+    }
+  }
+  return null;
 }

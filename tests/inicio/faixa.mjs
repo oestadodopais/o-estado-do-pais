@@ -66,8 +66,12 @@
  * do que `clientWidth`), senão o encaixe é uma promessa sobre nada.
  *
  * F7 · O TECLADO CHEGA A CADA CARTÃO. Cada porta é focável pelo `Tab`, na ordem
- * do documento, e o destino de cada uma existe nesta página: a âncora da leitura
- * daquela medida. Uma porta que não abre nada é pior do que nenhuma.
+ * do documento, e o destino de cada uma EXISTE. Desde o F1.2b (03.09.2026) há
+ * duas formas de destino: a âncora da leitura daquela medida nesta página, e a
+ * página do domínio a que a medida pertence, com a âncora da medida lá dentro. A
+ * célula exige o que cada forma promete (o `id` nesta página; a página a
+ * responder 200 e o `id` lá dentro). Uma porta que não abre nada é pior do que
+ * nenhuma.
  *
  * F8 · OS DOIS CORPOS DO NÚMERO. O `font-size` computado do valor de um cartão a
  * 390 é menor do que a 1280, os dois vêm das duas fichas declaradas na folha, e
@@ -709,21 +713,56 @@ async function correTudo(soEstas) {
   if (precisa('F7')) {
     for (const e of EDICOES) {
       const p = await pagina(e.rota, 390, { altura: ALTURA_DO_ECRA });
+      /* ---------------------------------------------------------------------
+         O DESTINO DE UM CARTÃO PODE SER OUTRA PÁGINA (F1.2b, item 1, 03.09.2026)
+         ---------------------------------------------------------------------
+         A célula media uma coisa só: que o `href` do cartão fosse uma âncora
+         DESTA página. Deixou de ser verdade quando os cartões cuja medida
+         pertence a um domínio no ar passaram a abrir a leitura daquela medida
+         na página do domínio. A célula não afrouxa: passa a exigir o que cada
+         forma de destino promete.
+
+           · `#ancora`        · o `id` existe nesta página;
+           · `/caminho#ancora` · a página responde 200 E tem esse `id` lá dentro;
+           · `/caminho`        · a página responde 200.
+
+         Uma porta para uma página que não foi construída, ou para uma âncora que
+         não existe na página de chegada, cai aqui, que é mais do que a célula
+         antiga sabia recusar. */
       const r = await p.evaluate(() => {
         const cartoes = [...document.querySelectorAll('[data-cartao]')];
         const ancoras = new Set([...document.querySelectorAll('[id]')].map((el) => el.id));
         return cartoes.map((c) => {
           const a = c.querySelector('.cartao-porta');
-          const destino = a ? (a.getAttribute('href') ?? '').replace(/^#/, '') : null;
+          const href = a ? (a.getAttribute('href') ?? '') : '';
+          const local = href.startsWith('#');
           return {
             id: c.getAttribute('data-cartao'),
             temPorta: !!a,
-            destinoExiste: destino ? ancoras.has(destino) : false,
+            href,
+            local,
+            destinoExiste: local ? ancoras.has(href.slice(1)) : null,
             nomeadaPor: a ? a.getAttribute('aria-labelledby') : null,
             nomeExiste: a ? ancoras.has(a.getAttribute('aria-labelledby') ?? '') : false,
           };
         });
       });
+      /* As páginas de fora pedem-se ao servidor, uma vez por destino distinto. */
+      const forasteiros = new Map();
+      for (const c of r) {
+        if (c.local || !c.href) continue;
+        if (forasteiros.has(c.href)) continue;
+        const [caminho, ancora] = c.href.split('#');
+        const resposta = await fetch(base + caminho);
+        const corpo = resposta.status === 200 ? await resposta.text() : '';
+        forasteiros.set(
+          c.href,
+          resposta.status === 200 && (!ancora || corpo.includes(`id="${ancora}"`)),
+        );
+      }
+      for (const c of r) {
+        if (!c.local) c.destinoExiste = c.href ? (forasteiros.get(c.href) ?? false) : false;
+      }
       /* O `Tab` A PARTIR DO PRIMEIRO CARTÃO, e o que se prova é a ORDEM em que
          as portas aparecem, não que elas sejam seguidas: entre a porta de um
          cartão e a do seguinte há o selo daquele cartão, que também é uma porta
@@ -757,7 +796,7 @@ async function correTudo(soEstas) {
       const semNome = r.filter((c) => !c.nomeExiste);
       const ordem = focados.join(',') === r.map((c) => c.id).join(',');
       conta(
-        `F7·${e.chave} · o teclado chega a cada cartão, pela ordem, e cada porta abre uma âncora que existe`,
+        `F7·${e.chave} · o teclado chega a cada cartão, pela ordem, e cada porta abre um destino que existe`,
         r.length > 0 && semPorta.length === 0 && semDestino.length === 0 && semNome.length === 0 && ordem,
         `${r.length} cartões · sem porta: ${semPorta.length} · com destino que não existe: ${semDestino.length}` +
           `${semDestino.length ? ` (${semDestino.map((c) => c.id).slice(0, 3).join(', ')})` : ''}` +

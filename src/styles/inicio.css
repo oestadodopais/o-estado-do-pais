@@ -311,6 +311,43 @@
   margin: 0;
 }
 
+/* ---------------------------------------------------------------------------
+   OS SELOS DA MANCHETE, NA LINHA DE BAIXO (F1.2b, item 3, 03.09.2026)
+   ---------------------------------------------------------------------------
+   «A manchete é uma frase; o selo vai ao pé do número, na linha de baixo»
+   (`BRIEF-F1.1-porta-da-frente.md`, item 9). Os selos são o último filho do
+   `<h1>` porque o portão exige que o selo de um valor esteja no PAI dele (ver
+   `src/components/Manchete.astro`), e a folha põe-nos numa linha própria, no
+   corpo da mobília e não no da manchete: eles são a porta do número, e não
+   parte da frase que se lê.
+
+   O `line-height` VOLTA AO NORMAL, e é medido e não estético: a manchete corre
+   a 1,12 para as suas linhas ficarem juntas, e a 1,12 a área de toque de 44 px
+   de dois selos seguidos passa a caber uma dentro da outra. Aqui a linha é a da
+   prosa. */
+.manchete-selos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 16px;
+  margin-top: 10px;
+  font-family: var(--f-instr);
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: normal;
+  font-weight: 400;
+}
+/* O VALOR NÃO SE PARTE NO FIM DA LINHA. Sem o invólucro `.claim` (que o modo
+   plano de `<Claim>` dispensa para o portão poder ver o selo) o `white-space:
+   nowrap` daquele invólucro não se aplica, e um valor com separador de milhares
+   podia partir-se. O separador do livro-razão já é inquebrável (U+00A0), e esta
+   regra fecha o caso que sobra. Entre o valor e o símbolo colado não há
+   oportunidade de quebra nenhuma: um símbolo colado a um número é a classe PO da
+   UAX #14, e a quebra ali é proibida pela regra LB25 do algoritmo. */
+.cabeca-h1 .claim-value {
+  white-space: nowrap;
+}
+
 .cabeca-lede {
   font-size: clamp(16px, 1.4vw, 18px);
   line-height: 1.5;
@@ -374,6 +411,32 @@
      sempre cheia, porque é uma fila e não uma grelha com buracos. */
   background: var(--rule);
   border-block: 1px solid var(--ink);
+}
+
+/* ---------------------------------------------------------------------------
+   A FILA DOS ESTUDOS, LOGO DEPOIS DA FAIXA (F1.2b, item 4, 03.09.2026)
+   ---------------------------------------------------------------------------
+   Uma fila, uma porta. Vive dentro de `.faixa-bloco`, que é o filho da grelha
+   da cabeça onde a faixa já está, e por isso não pede colocação nova em largura
+   nenhuma. O fio de cima é o mesmo `--rule` do fio que fecha a faixa, e serve
+   para dizer que a fila é outra coisa e não um cartão que ficou de fora.
+
+   O ALVO É A FILA INTEIRA. A ligação é um bloco com 44 px de altura mínima, que
+   é o alvo da casa abaixo de 1024; não há aqui um `::after` a alargar coisa
+   nenhuma, porque a caixa já é do tamanho do alvo. */
+.inicio-estudos {
+  margin: 0;
+  padding-top: 6px;
+}
+.inicio-estudos-porta {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--f-versal);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  color: var(--ink);
 }
 
 /* AS CINCO FILAS DO CARTÃO: o estado, o valor, o nome, a unidade e o selo. As
@@ -446,6 +509,33 @@
   grid-row: 5;
   align-self: center;
   justify-self: start;
+}
+
+/* ---------------------------------------------------------------------------
+   O RÓTULO DO DESTINO, NA FILA DO SELO (F1.2b, item 1, 03.09.2026)
+   ---------------------------------------------------------------------------
+   Um cartão cuja medida pertence a um domínio no ar leva para a página desse
+   domínio, e não para a leitura breve desta página. O rótulo di-lo, e senta-se
+   na quinta fila do cartão, que tem 44 px de altura e leva o selo encostado à
+   esquerda: com `justify-self: end` o rótulo fica no outro extremo da MESMA
+   célula, e o cartão não ganha uma fila nem um píxel de altura.
+
+   OS DOIS NÃO SE TOCAM, e isso mede-se: a régua da faixa confere, em cada
+   cartão com rótulo, que a caixa dele não interseta a do selo. Um rótulo por
+   cima de um selo seria a etiqueta a comer a porta.
+
+   12 px E NÃO 11,5, pela mesma razão que a posição do cartão: o achado D4 conta
+   texto abaixo de 12 px como defeito, e uma cadeia nova não entra abaixo do
+   chão que a casa está a subir. */
+.cartao-destino {
+  grid-row: 5;
+  align-self: center;
+  justify-self: end;
+  font-family: var(--f-instr);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  white-space: nowrap;
 }
 
 .cartao-topo {
