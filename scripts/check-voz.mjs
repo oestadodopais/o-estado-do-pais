@@ -11,7 +11,7 @@
  * «É a lei que o define, não este sítio.» viveu em 616 páginas.
  *
  * Este passo entra na cadeia do `build` e do `verify`, e fecha a construção em
- * nove casos:
+ * dez casos:
  *
  *   1. **o tripwire** · uma frase da casa com um marcador de
  *      `design/especime-v3/VOZ-MARCADORES.md` que não está declarada como
@@ -44,7 +44,14 @@
  *      ficheiros de dados declarados, ou cujo texto não é um nome desse ficheiro.
  *      A marca tira do inventário o nome de uma coisa que vem de um ficheiro de
  *      dados, e uma marca que dispensa um texto da declaração tem de trazer a sua
- *      própria verificação.
+ *      própria verificação;
+ *  10. **o arame da classe por provar, na primeira página** (F0.9, 03.09.2026) ·
+ *      uma palavra de tendência, de comparação contra um valor que a página não
+ *      tem, de valor de outro período ou de atribuição sem excerto, rendida em
+ *      `/` ou em `/en/`. **É um tapa-buraco declarado**, e o `check:prosa` do
+ *      F3.1 substitui-o: a saída certa é a frase tipada com os ids das linhas que
+ *      a provam, e não uma lista de palavras proibidas. A secção sai inteira com
+ *      a lista no dia em que o F3.1 entrar.
  *
  * A varredura não é feita aqui: é a da régua, corrida com `--json`, que é a
  * mesma que a matriz já usa. Duas implementações da mesma definição diriam a
@@ -57,6 +64,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { parse } from 'node-html-parser';
 
 import { leInventario, FICHEIRO_DO_INVENTARIO } from './voz.mjs';
 
@@ -351,6 +359,95 @@ let emendaMaisAlta = null;
           `«lida-contra» só sobe com uma entrada nova em ${REVISOES}.`,
       );
     }
+  }
+}
+
+/* 10 · O ARAME DA CLASSE POR PROVAR, NA PRIMEIRA PÁGINA (F0.9, 03.09.2026).
+ *
+ * **É UM TAPA-BURACO, E O F3.1 SUBSTITUI-O.** O que o plano da fiabilidade manda
+ * construir é um componente por tipo de frase (estado, comparação, tendência,
+ * quantificador) que receba ids de linhas, calcule na construção e renda as
+ * palavras de um vocabulário fechado, mais a régua do mundo fechado que fecha a
+ * construção sobre qualquer bloco de texto que não seja mobília, frase tipada ou
+ * transcrição. Enquanto esse portão não existir, a classe que o F0.9 acabou de
+ * tirar da primeira página pode voltar em silêncio, e este arame existe para que
+ * não volte: uma frase nova que use uma destas palavras em `/` ou em `/en/`
+ * fecha a construção até alguém a tipar. Quando o `check:prosa` do F3.1 entrar,
+ * esta secção sai inteira, e sai com a sua lista.
+ *
+ * POR QUE É QUE NÃO SÃO MARCADORES DO `VOZ-MARCADORES.md`. Um marcador daquele
+ * ficheiro pergunta «isto é a casa a falar de si?», e a saída dele é uma
+ * declaração de autorreferência; estas palavras não são autorreferência, são
+ * afirmações por provar, e declará-las na coluna errada faria a lista mentir
+ * sobre o que classifica. E um marcador morde em TODAS as rotas inventariadas,
+ * enquanto esta classe só está fechada na primeira página: «adverte» é palavra
+ * legítima no corpo de um estudo transcrito, e «era» de um documento citado não
+ * é uma afirmação da casa. A dispensa teria de ser escrita rota a rota, e uma
+ * proibição com trinta exceções é uma proibição que ninguém lê.
+ *
+ * A LEITURA É DIRETA DO HTML CONSTRUÍDO, E NÃO PELA RÉGUA. É de propósito, e a
+ * razão foi medida no próprio F0.9: das sete frases da §1.44, a régua da voz só
+ * via UMA. As três do Painel Social vivem num `<span class="social-frase">`, e
+ * `BLOCOS` só conhece `span.eyebrow`; duas das do Procedimento vivem num `<p>`
+ * que embrulha uma marca de origem declarada, e `blocosDe()` salta o bloco
+ * inteiro por causa dela. Um arame que passasse pela régua herdava os dois
+ * buracos e media zero com a página cheia.
+ *
+ * O SEU PRÓPRIO POSITIVO CONHECIDO (regra 14). Um detetor que lê dois ficheiros
+ * e conta zero tem duas explicações, e só uma é boa: ou a classe não está lá, ou
+ * a leitura partiu-se. Por isso cada edição declara uma sentinela, uma cadeia
+ * que a primeira página tem de ter, e a ausência dela fecha a construção antes
+ * de o zero das palavras valer alguma coisa. */
+const ARAME_DA_CLASSE = [
+  /* tendência · o sítio publica um valor por indicador e nenhuma série; um
+     sentido sem os dois valores é uma afirmação que a página não sustenta. */
+  { pt: 'a descer', en: 'falling', porque: 'tendência sem série' },
+  { pt: 'a subir', en: 'rising', porque: 'tendência sem série' },
+  { pt: 'duplicou', en: 'doubled', porque: 'comparação entre dois períodos, e a página tem um' },
+  /* comparação · contra um valor que não está na página. */
+  { pt: 'média da União', en: 'Union average', porque: 'a média da União não é linha do livro-razão' },
+  { pt: 'média europeia', en: 'European average', porque: 'a média europeia não é linha do livro-razão' },
+  { pt: 'mais se destaca', en: 'stands out most', porque: 'superlativo sobre medidas que a página não mostra' },
+  /* valor de outro período · que a página não publica. */
+  { pt: 'no início do século', en: 'turn of the century', porque: 'valor de outro período, sem linha' },
+  /* atribuição · sem o excerto de quem a fez. */
+  { pt: 'adverte', en: 'warns', porque: 'atribuição sem excerto' },
+];
+/* A sentinela de cada edição: o nome de uma medida do painel, que a primeira
+   página tem de render enquanto tiver painel. Se um dia deixar de o render, o
+   que se muda é esta linha, com a razão ao lado, e não o silêncio. */
+const ROTAS_DA_CLASSE = [
+  { rota: '/', ficheiro: path.join('dist', 'index.html'), lingua: 'pt', sentinela: 'Dívida pública' },
+  { rota: '/en/', ficheiro: path.join('dist', 'en', 'index.html'), lingua: 'en', sentinela: 'Government debt' },
+];
+for (const r of ROTAS_DA_CLASSE) {
+  const caminho = path.join(RAIZ, r.ficheiro);
+  if (!fs.existsSync(caminho)) {
+    erros.push(
+      `não existe ${r.ficheiro}, e é a rota ${r.rota} onde o arame da classe por provar (F0.9) morde. ` +
+        `Sem o ficheiro o arame conta zero por cegueira e não por limpeza.`,
+    );
+    continue;
+  }
+  const corpo = parse(fs.readFileSync(caminho, 'utf8')).querySelector('body');
+  const texto = (corpo ? corpo.text : '').replace(/\s+/g, ' ').trim();
+  if (!texto.includes(r.sentinela)) {
+    erros.push(
+      `o positivo conhecido do arame da classe falhou em ${r.rota}: o texto de ${r.ficheiro} não contém ` +
+        `«${r.sentinela}». Ou a leitura do corpo partiu-se, ou a primeira página deixou de render o painel: ` +
+        `nos dois casos a contagem de zero palavras da classe não prova nada.`,
+    );
+    continue;
+  }
+  for (const p of ARAME_DA_CLASSE) {
+    const cadeia = r.lingua === 'pt' ? p.pt : p.en;
+    if (!texto.toLowerCase().includes(cadeia.toLowerCase())) continue;
+    erros.push(
+      `FRASE DA CLASSE POR PROVAR EM ${r.rota} · «${cadeia}» (${p.porque}).\n` +
+        `      O F0.9 tirou esta classe da primeira página a 03.09.2026: uma tendência, uma comparação\n` +
+        `      contra um valor que a página não tem, um valor de outro período ou uma atribuição sem\n` +
+        `      excerto. Ou a frase ganha a linha que a prova e é tipada pelo F3.1, ou não volta.`,
+    );
   }
 }
 
