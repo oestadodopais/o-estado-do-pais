@@ -1,0 +1,142 @@
+---
+/**
+ * FORMA 4 · O MAPA POR CONCELHO (`BRIEF-forma-dos-dominios.md` §3).
+ *
+ * «O mapa da Carta com os 308 concelhos pintados por classes da medida, a escala
+ * com os cortes escritos, os concelhos sem valor publicado em "sem valor" (uma
+ * trama, não uma cor da escala), e a lista dos valores por concelho a uma porta
+ * de distância.»
+ *
+ * ---------------------------------------------------------------------------
+ * OS CAMINHOS ENTRAM TAL E QUAL, E A GRELHA MUDA NUM `transform`
+ * ---------------------------------------------------------------------------
+ * A geometria dos concelhos que o motor publica vive na grelha local de cada
+ * unidade da Carta. Este desenho põe cada unidade num `<g>` com a transformação
+ * que `src/lib/dominios.mjs` deduziu dos dois artefactos e cujo erro está medido
+ * lá. Nenhuma coordenada é reescrita: o `d` de cada concelho é, carácter a
+ * carácter, o que `mapa/distritos/<slug>.json` traz.
+ *
+ * ---------------------------------------------------------------------------
+ * OS 308 CAMINHOS DESENHAM-SE UMA VEZ POR PÁGINA, E NÃO UMA VEZ POR MAPA
+ * ---------------------------------------------------------------------------
+ * Os caminhos dos 308 concelhos ocupam 353 KiB, medidos. Uma página com dois
+ * mapas pagava-os duas vezes. Vivem por isso uma vez só, em
+ * `GeometriaDosConcelhos.astro`, e cada mapa refere-os com `<use>`: um `id` é do
+ * documento e não do `<svg>` que o declara, e por isso os dois mapas partilham a
+ * mesma geometria. O segundo mapa custa 308 elementos `<use>`.
+ *
+ * ---------------------------------------------------------------------------
+ * A COR, E O QUE ELA PODE DIZER
+ * ---------------------------------------------------------------------------
+ * Duas paletas, e cada uma tem a sua regra escrita:
+ *
+ *   · `escala`  classes de uma medida sem limiar publicado. São tintas do cinzento
+ *     da casa, do mais claro ao mais escuro, e NÃO dizem «bom» e «mau»: dizem
+ *     mais e menos da mesma unidade, com os cortes escritos ao lado. É a regra do
+ *     §1.79 lida ao contrário: onde a fonte não publica limiar, nenhuma cor da
+ *     casa pode fazer de juízo, e o cinzento é a única que não faz.
+ *   · `limiar`  duas classes só, quando existe um limiar publicado: cobalto para
+ *     «dentro do limiar» e âmbar para «fora», que são exactamente as duas
+ *     palavras e as duas cores que a casa já usa nas peças. Aqui o mapa não
+ *     inventa uma escala: mostra de que lado da lei cada município está.
+ *
+ * Em qualquer das duas, um concelho sem valor publicado leva a TRAMA e nunca uma
+ * cor da escala: a ausência é um estado e não um valor baixo.
+ *
+ * ---------------------------------------------------------------------------
+ * NENHUM NÚMERO DESENHADO, E A ALTERNATIVA É UMA PORTA
+ * ---------------------------------------------------------------------------
+ * Este desenho não escreve um único algarismo dentro do `<svg>`: os cortes das
+ * classes estão na legenda, fora dele, cada um debaixo do motivo declarado
+ * `escala-de-instrumento`, que é o que uma régua é. O rótulo de cada classe é
+ * uma lista de pedaços, como qualquer frase da casa, e passa por `Frase`: as
+ * palavras são da edição e os algarismos são marcas de régua, nunca texto. Os valores não cabem num
+ * mapa de 308 formas e não se põem lá: a alternativa em texto é a lista dos
+ * valores concelho a concelho, que é a porta que a legenda leva, e é ela que um
+ * leitor de ecrã percorre.
+ *
+ * O NOME DO DESENHO VEM DO NOME DA MEDIDA, por `aria-labelledby`: ver a nota
+ * gémea em `BarraConcelhoPais.astro`.
+ */
+import FonteDaCarta from '../FonteDaCarta.astro';
+import Frase from '../Frase.astro';
+import Provenance from '../Provenance.astro';
+
+const {
+  s,
+  lang,
+  mapa,
+  paleta = 'escala',
+  rotulos,
+  porta,
+  portaRotulo,
+  nomeada,
+  chave,
+} = Astro.props;
+const campo = mapa.campo;
+---
+
+<figure class="forma forma-mapa" data-instrumento={`mapa-por-concelho-${chave}`} data-forma="mapa-por-concelho">
+  <svg
+    class="forma-mapa-svg"
+    viewBox={`0 0 ${campo.largura} ${campo.altura}`}
+    role="img"
+    aria-labelledby={nomeada}
+    data-mapa-paleta={paleta}
+  >
+    <defs>
+      {/* A TRAMA DO «SEM VALOR». Não é uma cor da escala: é um padrão, e por
+          isso lê-se como ausência mesmo em cinzento e mesmo sem cor nenhuma. */}
+      <pattern id={`trama-${chave}`} width="80" height="80" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <rect width="80" height="80" fill="var(--paper)" />
+        <line x1="0" y1="0" x2="0" y2="80" stroke="var(--g3)" stroke-width="26" />
+      </pattern>
+    </defs>
+
+    {
+      mapa.unidades.map((u) => (
+        <g class="forma-mapa-u" transform={u.transform}>
+          {u.concelhos.map((c) => (
+            <use
+              href={`#geo-c-${c.slug}`}
+              class:list={['forma-mapa-c', c.classe === null ? 'sem-valor' : `cl-${paleta}-${c.classe}`]}
+              fill={c.classe === null ? `url(#trama-${chave})` : undefined}
+            />
+          ))}
+        </g>
+      ))
+    }
+  </svg>
+
+  <figcaption class="forma-mapa-legenda" data-legenda-selos>
+    {/* A ESCALA, COM OS CORTES ESCRITOS. Cada corte é uma marca de régua e vai
+        debaixo do seu motivo declarado; o rótulo de cada classe é uma palavra da
+        edição e não um número. */}
+    <ul class="forma-mapa-escala">
+      {
+        rotulos.map((partes, i) => (
+          <li class="forma-mapa-classe">
+            <span class:list={['sq-mapa', `cl-${paleta}-${i}`]} aria-hidden="true"></span>
+            <span class="forma-mapa-classe-k"><Frase partes={partes} lang={lang} /></span>
+          </li>
+        ))
+      }
+      <li class="forma-mapa-classe">
+        <span class="sq-mapa sem-valor" aria-hidden="true"></span>
+        <span class="forma-mapa-classe-k">{s.dominios.mapaSemValor}</span>
+      </li>
+    </ul>
+
+    {/* A PORTA DA LISTA DOS VALORES, que é a alternativa em texto deste desenho:
+        os 308 valores, um a um, com o selo de cada um. */}
+    <p class="forma-mapa-porta"><a href={porta}>{portaRotulo}</a></p>
+
+    {/* O SELO DA CARTA E A MENÇÃO DA FONTE. A obrigação da licença da CAOP é
+        escrita e vive onde o mapa está (Emenda 20e), e o selo do desenho abre a
+        linha dos 308 municípios, como nos outros mapas do sítio. */}
+    <p class="forma-mapa-fonte">
+      <FonteDaCarta />
+      <Provenance id="municipios-portugal-caop-2025" lang={lang} />
+    </p>
+  </figcaption>
+</figure>

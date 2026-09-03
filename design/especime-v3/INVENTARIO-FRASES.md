@@ -1805,3 +1805,110 @@ Navegação principal» e «Áreas de governo» estão classificadas assim desde
 | navegacao | open close | cabeca | viva | — |
 | navegacao | As linhas deste documento → | cabeca | viva | — |
 | navegacao | The rows of this document → | cabeca | viva | — |
+
+## As frases da página do primeiro domínio (bloco F1.2, 03.09.2026)
+
+**Duas rotas novas, e as duas entram no inventário no commit em que nascem**, que
+é a regra desta lista («uma rota entra no commit em que a sua página é
+reconstruída e as suas frases são classificadas»). Entram também em
+`ROTAS_COM_ORIGEM_LIDA`, e essa é a diferença que faz o número: a régua lê o
+bloco com as marcas de origem retiradas, e por isso vê o aparelho de cada leitura
+breve («período · lido · conferido», «fonte · ·», «limiar % · fora do limiar»)
+que nas rotas ainda não migradas fica escondido. Nenhuma das linhas abaixo é uma
+cadeia que já se rendesse noutro lado: são todas deste bloco.
+
+**Três classes de linha, e nenhuma é autorreferência.** As perguntas são as da
+`CARTA-DOS-CONTEUDOS.md` §3, palavra por palavra: são o conteúdo do domínio, e
+não a casa a falar de si. A frase da fronteira é o que o
+`BRIEF-forma-dos-dominios.md` §2 chama «o que este domínio mede e o que não
+mede», e as suas palavras vêm da carta. A ausência é conteúdo por decisão da
+carta (§1, regra 6): «não há número público para isto» é a resposta, e não uma
+falha.
+
+**O que NÃO está aqui, e porquê.** Os nomes dos dezoito domínios levam
+`data-nome="dominios"` e a régua confere-os contra `src/data/dominios.mjs`; os
+nomes de lugar da barra do concelho contra o país («Évora», «Portugal») levam
+`data-lugar`, como o nome de um concelho na sua página; o nome da camada
+(«Leitura breve», «Brief reading») é o da densidade e já estava declarado desde
+26.08.2026; e os intervalos das classes do mapa («1 200 a 1 400») são marcas de
+régua inteiras, e não palavras da casa com números pelo meio, exactamente para
+que a régua não passasse a ter uma linha cujo texto é a letra «a».
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | Domínios | dominio | viva | — |
+| navegacao | Domains | dominio | viva | — |
+| conteudo | As áreas da vida do país com medidas publicadas, e as que ainda não têm medidas conferidas. | dominio | viva | — |
+| conteudo | The areas of the country’s life with published measures, and the ones with no verified measures yet. | dominio | viva | — |
+| conteudo | Por domínio | dominio | viva | — |
+| conteudo | By domain | dominio | viva | — |
+| conteudo | no ar primeira vaga | dominio | viva | — |
+| conteudo | live first wave | dominio | viva | — |
+| conteudo | as medidas estão em primeira vaga | dominio | viva | — |
+| conteudo | the measures are in first wave | dominio | viva | — |
+| conteudo | ainda sem medidas conferidas primeira vaga | dominio | viva | — |
+| conteudo | ainda sem medidas conferidas segunda vaga | dominio | viva | — |
+| conteudo | ainda sem medidas conferidas terceira vaga | dominio | viva | — |
+| conteudo | no verified measures yet first wave | dominio | viva | — |
+| conteudo | no verified measures yet second wave | dominio | viva | — |
+| conteudo | no verified measures yet third wave | dominio | viva | — |
+| conteudo | A dívida pública é % do PIB, fora do limiar de %; o saldo das administrações públicas é % do PIB, dentro do limiar de − %. | dominio | viva | — |
+| conteudo | Government debt is % of GDP, outside the threshold of %; the general government balance is % of GDP, within the threshold of − %. | dominio | viva | — |
+| conteudo | As medidas de <nome>, com a fonte, o período e a data de cada uma. | dominio | viva | — |
+| conteudo | The measures of <nome>, with the source, the period and the dates of each one. | dominio | viva | — |
+| conteudo | Este domínio mede as contas do Estado, o que a economia produz por pessoa, a dívida dos municípios e o que se ganha e se trabalha em Portugal; não mede a produtividade, que é pergunta de estudo, nem o produto abaixo das regiões, nem a disparidade salarial entre sexos ao nível do concelho, que nenhum publicador oficial calcula. | dominio | viva | — |
+| conteudo | This domain measures the State’s accounts, what the economy produces per person, municipal debt, and what is earned and worked in Portugal; it does not measure productivity, which is a question for a study, nor output below the regions, nor the gender pay gap at municipal level, which no official publisher computes. | dominio | viva | — |
+| conteudo | Quanto cresce a economia por pessoa? | dominio | viva | — |
+| conteudo | As contas públicas estão em equilíbrio? | dominio | viva | — |
+| conteudo | Quanto deve o Estado? | dominio | viva | — |
+| conteudo | O Estado gasta dentro da regra europeia? | dominio | viva | — |
+| conteudo | Quanto deve a minha câmara, e qual é o limite? | dominio | viva | — |
+| conteudo | Quantas pessoas trabalham? | dominio | viva | — |
+| conteudo | Quantas procuram trabalho e não encontram? | dominio | viva | — |
+| conteudo | Quanto se ganha? | dominio | viva | — |
+| conteudo | As mulheres ganham o mesmo? | dominio | viva | — |
+| conteudo | Qual é o salário mínimo em vigor? | dominio | viva | — |
+| conteudo | As mulheres ganham o mesmo, no meu concelho? | dominio | viva | — |
+| conteudo | How much does the economy grow per person? | dominio | viva | — |
+| conteudo | Are the public accounts in balance? | dominio | viva | — |
+| conteudo | How much does the State owe? | dominio | viva | — |
+| conteudo | Does the State spend within the European rule? | dominio | viva | — |
+| conteudo | How much does my municipality owe, and what is the cap? | dominio | viva | — |
+| conteudo | How many people work? | dominio | viva | — |
+| conteudo | How many are looking for work and not finding it? | dominio | viva | — |
+| conteudo | How much do people earn? | dominio | viva | — |
+| conteudo | Do women earn the same? | dominio | viva | — |
+| conteudo | What is the minimum wage in force? | dominio | viva | — |
+| conteudo | Do women earn the same, in my municipality? | dominio | viva | — |
+| conteudo | Não há número público para isto. | dominio | viva | — |
+| conteudo | There is no published figure for this. | dominio | viva | — |
+| conteudo | O indicador que o publicador dá por concelho é um coeficiente de variação do ganho, e não a disparidade entre sexos. | dominio | viva | — |
+| conteudo | The indicator the publisher gives by municipality is a coefficient of variation of earnings, not the gap between sexes. | dominio | viva | — |
+| conteudo | procurado em INE, Quadros de Pessoal do MTSSS/GEP, indicador | dominio | viva | — |
+| conteudo | looked for in Statistics Portugal, MTSSS/GEP staff records, indicator | dominio | viva | — |
+| conteudo | período · lido · conferido | dominio | viva | — |
+| conteudo | period · read · checked | dominio | viva | — |
+| conteudo | fonte · · | dominio | viva | — |
+| conteudo | source · · | dominio | viva | — |
+| conteudo | limiar % · fora do limiar | dominio | viva | — |
+| conteudo | limiar − % · dentro do limiar | dominio | viva | — |
+| conteudo | threshold % · outside the threshold | dominio | viva | — |
+| conteudo | threshold − % · within the threshold | dominio | viva | — |
+| conteudo | dentro do limiar | dominio | viva | — |
+| conteudo | fora do limiar | dominio | viva | — |
+| conteudo | within the threshold | dominio | viva | — |
+| conteudo | outside the threshold | dominio | viva | — |
+| conteudo | o limite legal | dominio | viva | — |
+| conteudo | the legal cap | dominio | viva | — |
+| conteudo | em doze meses, na base do Eurostat | dominio | viva | — |
+| conteudo | over twelve months, on the Eurostat basis | dominio | viva | — |
+| conteudo | provisório | dominio | viva | — |
+| conteudo | provisional | dominio | viva | — |
+| conteudo | menos de | dominio | viva | — |
+| conteudo | less than | dominio | viva | — |
+| conteudo | ou mais | dominio | viva | — |
+| conteudo | or more | dominio | viva | — |
+| conteudo | sem valor publicado | dominio | viva | — |
+| conteudo | no published value | dominio | viva | — |
+| conteudo | Quadros de Pessoal do Gabinete de Estratégia e Planeamento do Ministério do Trabalho; trabalhadores por conta de outrem a tempo completo com remuneração completa. | dominio | viva | — |
+| conteudo | Staff records of the labour ministry’s strategy and planning office; full-time employees on full pay. | dominio | viva | — |
