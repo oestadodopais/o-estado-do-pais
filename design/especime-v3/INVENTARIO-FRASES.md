@@ -208,8 +208,8 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | conteudo | Portugal nos painéis europeus: os indicadores, os limiares e as fontes. | até 2026-08-26 | viva | — |
 | conteudo | Portugal on the European scoreboards: the indicators, the thresholds and the sources. | até 2026-08-26 | viva | — |
 | conteudo | Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9 . | até 2026-08-26 | viva | — |
-| conteudo | Portugal · country | até 2026-08-26 | viva | — |
-| conteudo | Portugal · país | até 2026-08-26 | viva | — |
+| conteudo | Portugal · country | até 2026-08-26 | retirada | o F1.1 tirou o rótulo do âmbito da cabeça do PAÍS a 03.09.2026: dizia o nome do lugar e o tipo dele por cima de uma manchete que começa pela mesma palavra («Portugal ultrapassa…»), custava uma fila do primeiro ecrã do telemóvel, e era o eco do comando de âmbito, que saiu da página no mesmo bloco. O rótulo fica onde separa alguma coisa: nas páginas de região e de concelho, onde o tipo do lugar não está na manchete |
+| conteudo | Portugal · país | até 2026-08-26 | retirada | o F1.1 tirou o rótulo do âmbito da cabeça do PAÍS a 03.09.2026: dizia o nome do lugar e o tipo dele por cima de uma manchete que começa pela mesma palavra («Portugal ultrapassa…»), custava uma fila do primeiro ecrã do telemóvel, e era o eco do comando de âmbito, que saiu da página no mesmo bloco. O rótulo fica onde separa alguma coisa: nas páginas de região e de concelho, onde o tipo do lugar não está na manchete |
 | conteudo | Proporção das pessoas dos aos anos com emprego. | frases | viva | — |
 | conteudo | Proporção que gasta mais de % do rendimento disponível em habitação. | frases | viva | — |
 | navegacao | Relance | até 2026-08-26 | viva | — |
@@ -1796,12 +1796,58 @@ Navegação principal» e «Áreas de governo» estão classificadas assim desde
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| navegacao | A municipality by name | cabeca | viva | — |
+| navegacao | A municipality by name | cabeca | retirada | o F1.1 tirou a gaveta da busca a 03.09.2026: a busca dos 308 saiu de ao lado do mapa e subiu para debaixo da manchete como `<form>` com destino, sem gaveta nenhuma, porque é a porta para o concelho no primeiro ecrã (itens 3 e 12 do brief). O nome da gaveta ficou sem superfície |
 | navegacao | Menu | cabeca | viva | — |
 | navegacao | Os nomes no mapa | cabeca | viva | — |
 | navegacao | The names on the map | cabeca | viva | — |
-| navegacao | Um concelho pelo nome | cabeca | viva | — |
+| navegacao | Um concelho pelo nome | cabeca | retirada | o F1.1 tirou a gaveta da busca a 03.09.2026: a busca dos 308 saiu de ao lado do mapa e subiu para debaixo da manchete como `<form>` com destino, sem gaveta nenhuma, porque é a porta para o concelho no primeiro ecrã (itens 3 e 12 do brief). O nome da gaveta ficou sem superfície |
 | navegacao | abrir fechar | cabeca | viva | — |
 | navegacao | open close | cabeca | viva | — |
 | navegacao | As linhas deste documento → | cabeca | viva | — |
 | navegacao | The rows of this document → | cabeca | viva | — |
+
+
+## Bloco «porta» · a porta da frente · 03.09.2026
+
+*O bloco F1.1 do `design/observatorio/PLANO-fiabilidade-2026-09-02.md` §3, com o
+brief `design/observatorio/BRIEF-F1.1-porta-da-frente.md`. Quatro cadeias novas e
+quatro retiradas.*
+
+**AS QUATRO PRIMEIRAS SÃO AS FRASES DE CONTEXTO DOS DOIS PAINÉIS**, nas duas
+edições, e são a resposta ao achado C6 da auditoria de UX de 25.08 («não se
+percebe porque estão ali treze indicadores… "Procedimento dos Desequilíbrios
+Macroeconómicos" nunca explicado, "limiar 60% · acima" sem dizer quem o fixou»).
+A classe é **conteúdo**, pelo teste da Emenda 15: sem elas o leitor lê «limiar
+60% · acima» como uma avaliação da casa, que é ler mal o número. Nenhuma fala do
+método, da verificação, da cobertura ou das intenções da casa; dizem o que o
+painel é, quem publica as medidas e quem publica os limiares, e a origem de cada
+afirmação está escrita, afirmação a afirmação, no cabeçalho de
+`CONTEXTO_DOS_PAINEIS` em `src/data/figuras.mjs`, com o comando que a confirma
+no livro-razão.
+
+**O TEXTO DECLARADO ACABA NUMA VÍRGULA E NUM PONTO**, e não é um erro de
+transcrição: o identificador do documento da Comissão é uma citação transcrita
+(`data-verbatim="swd-2026-222"`, conferida carácter a carácter contra
+`src/data/verbatim.mjs`), e a régua da voz conta o bloco com as origens
+declaradas retiradas, como faz a todas as outras. É a mesma forma das linhas do
+limiar, que declaram «limiar % · acima» sem o algarismo.
+
+**«1 de 21» NÃO TRAZ CADEIA NENHUMA PARA ESTA TABELA**, e a razão está medida no
+relatório do bloco: os dois algarismos são numeração declarada
+(`data-nonledger="numeracao"`), o separador « de » é uma cadeia de
+`strings.mjs`, e a fila onde eles vivem é um `<div>` e não um bloco de texto,
+como a fila da palavra de estado que já lá estava. A régua da voz não recolhe
+`<div>`, e a primeira passagem deste bloco chegou a declarar a dica de uma chave
+da prova que entretanto saiu.
+
+**AS QUATRO RETIRADAS** estão nas secções onde viviam, com a razão em cada
+linha: o rótulo «Portugal · país» e a sua gémea inglesa, que saíram da cabeça do
+país, e o nome da gaveta da busca nas duas edições, que ficou sem superfície
+quando a busca subiu para debaixo da manchete.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Os indicadores do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, com os limiares que o Procedimento publica. Os valores são do Eurostat, confirmados contra a Comissão Europeia, . | porta | viva | — |
+| conteudo | Os indicadores do Painel Social Europeu, que não publica limiares. Os valores são do Eurostat, confirmados contra a Comissão Europeia, . | porta | viva | — |
+| conteudo | The indicators of the Macroeconomic Imbalance Procedure scoreboard, with the thresholds the Procedure publishes. The values are from Eurostat, confirmed against the European Commission, . | porta | viva | — |
+| conteudo | The indicators of the European Social Scoreboard, which publishes no thresholds. The values are from Eurostat, confirmed against the European Commission, . | porta | viva | — |
