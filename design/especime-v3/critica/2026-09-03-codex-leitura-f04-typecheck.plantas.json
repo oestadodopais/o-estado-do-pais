@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-03T09:11:20+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/78714fcd-9d7a-49ae-92d0-914347b16683/scratchpad/leituras/f04-pacote",
+ "plantas": [
+  {
+   "id": "P1a",
+   "ficheiro": "tsconfig.check.json",
+   "descricao": "o checkJs volta a false: o portão deixa de conferir o que o relatório diz (cópia do programa)",
+   "sha256_antes": "bc9c94496ef54d97a2edb7c46a0d4879011060216e53c1724a3215111ede9674",
+   "sha256_depois": "76c63b2be6b80f43fbb997e223703c924a46add26e4256dce793bc0e1e38903c",
+   "contexto_antes": "ro e a 0.\n  \"exclude\": [\"dist\", \"src/data/sobre.mjs\"],\n  \"compilerOptions\": {\n    \"noEmit\": true,\n    \"allowJs\": true,\n    // LIGADO A 03.09.2026 (bloco F0.4).\n    \"checkJs\": true\n  }\n}\n",
+   "contexto_depois": "ro e a 0.\n  \"exclude\": [\"dist\", \"src/data/sobre.mjs\"],\n  \"compilerOptions\": {\n    \"noEmit\": true,\n    \"allowJs\": true,\n    // LIGADO A 03.09.2026 (bloco F0.4).\n    \"checkJs\": false\n  }\n}\n"
+  },
+  {
+   "id": "P1b",
+   "ficheiro": "diff.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff",
+   "sha256_antes": "2116dee39d31aaa397ee70ee3ba585b74e701f0473972533157324ba69355f0c",
+   "sha256_depois": "c3733b9d8166e76795567336ebe81b62f62a41fb9582746fd90d59a61590e83b",
+   "contexto_antes": "ist\", \"src/data/sobre.mjs\"],\n   \"compilerOptions\": {\n     \"noEmit\": true,\n     \"allowJs\": true,\n-    \"checkJs\": false\n+    // LIGADO A 03.09.2026 (bloco F0.4).\n+    \"checkJs\": true\n   }\n }\n",
+   "contexto_depois": "ist\", \"src/data/sobre.mjs\"],\n   \"compilerOptions\": {\n     \"noEmit\": true,\n     \"allowJs\": true,\n-    \"checkJs\": false\n+    // LIGADO A 03.09.2026 (bloco F0.4).\n+    \"checkJs\": false\n   }\n }\n"
+  },
+  {
+   "id": "P2a",
+   "ficheiro": "documentos.mjs",
+   "descricao": "a guarda do corpoR nulo, o defeito real que o bloco diz ter consertado, volta a faltar (cópia inteira)",
+   "sha256_antes": "c854b62dd6123ec9bcf2b8288a841b580551ddd18c2316d629b5ebe949cd19e5",
+   "sha256_depois": "e1aed5e7caf7a111a9edcb81bd3bfcec2c37c0a14bd7592c1f4137a98e17b593",
+   "contexto_antes": "erdade fazia este provador atirar um\n     TypeError em vez de devolver a frase do que falhou, que é o que ele promete\n     ao portão (achado do bloco F0.4). */\n  if (!corpoR) return 'o construído não tem um `<body>` de verdade.';\n  if (!cabecaO || !cabecaR) return 'não encontrei o `<head>` dos dois lados para comparar.';\n  const entreO = bufO.subarray(bytesAte(bruto, cabecaO.fim), bytesA",
+   "contexto_depois": "erdade fazia este provador atirar um\n     TypeError em vez de devolver a frase do que falhou, que é o que ele promete\n     ao portão (achado do bloco F0.4). */\n  if (!cabecaO || !cabecaR) return 'não encontrei o `<head>` dos dois lados para comparar.';\n  const entreO = bufO.subarray(bytesAte(bruto, cabecaO.fim), bytesA"
+  },
+  {
+   "id": "P2b",
+   "ficheiro": "diff.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff",
+   "sha256_antes": "c3733b9d8166e76795567336ebe81b62f62a41fb9582746fd90d59a61590e83b",
+   "sha256_depois": "d7e8a69cc69b1ca48f6ebaef11216d6c786b424fbfa7392a2cd9b780e8f398d7",
+   "contexto_antes": "dade fazia este provador atirar um\n+     TypeError em vez de devolver a frase do que falhou, que é o que ele promete\n+     ao portão (achado do bloco F0.4). */\n+  if (!corpoR) return 'o construído não tem um `<body>` de verdade.';\n   if (!cabecaO || !cabecaR) return 'não encontrei o `<head>` dos dois lados para comparar.';\n   const entreO = bufO.subarray(bytesAte(bruto, cabecaO.fim), byte",
+   "contexto_depois": "dade fazia este provador atirar um\n+     TypeError em vez de devolver a frase do que falhou, que é o que ele promete\n+     ao portão (achado do bloco F0.4). */\n   if (!cabecaO || !cabecaR) return 'não encontrei o `<head>` dos dois lados para comparar.';\n   const entreO = bufO.subarray(bytesAte(bruto, cabecaO.fim), byte"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz que ficam 5 erros na tabela e 0 noutras frases",
+   "sha256_antes": "ec2d0c866dbae238485eb694efcfe7fb98f2ba3ac0f3ae9bc412e275eeb0dbb8",
+   "sha256_depois": "14c2aa5d0a90372546775bc8b3735ea344cc8e9a8d18a2447f7a98e620f1e70a",
+   "contexto_antes": "-|---|\n| `src/lib` | 477 | **0** |\n| `src/data` | 32 | **0** |\n| `src/i18n` | 16 | **0** |\n| `site.config.mjs` | 1 | **0** |\n| `astro.config.mjs` | 0 | **0** |\n| **total** | **526** | **0** |\n\n### Por código de erro, no programa final\n\n| código | o que diz | antes [V] | depois [V] |\n|---|---|---|---|\n| TS7006 | parâmetro com `any` implícito | 343 | ",
+   "contexto_depois": "-|---|\n| `src/lib` | 477 | **0** |\n| `src/data` | 32 | **0** |\n| `src/i18n` | 16 | **0** |\n| `site.config.mjs` | 1 | **0** |\n| `astro.config.mjs` | 0 | **0** |\n| **total** | **526** | **5** |\n\n### Por código de erro, no programa final\n\n| código | o que diz | antes [V] | depois [V] |\n|---|---|---|---|\n| TS7006 | parâmetro com `any` implícito | 343 | "
+  }
+ ]
+}
