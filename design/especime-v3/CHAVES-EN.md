@@ -999,3 +999,27 @@ dois anos. A vista escolhe pelos dois valores que a própria frase cita.
 242,6% em 2024» e «rose from … to …»; com a série achatada, «manteve-se em 105,5%
 em 2014 e em 2024» e «stayed at 105,5% in 2014 and in 2024». Os dados foram
 repostos e a construção final é a real, com «desceu» e «fell from».
+
+### Bloco F1.1 · a porta da frente · 03.09.2026
+
+*Quatro chaves novas e nenhuma renomeada. Três são nomes de portas e o texto de um
+comando; a quarta é um separador de duas palavras entre dois algarismos
+declarados. As duas frases de contexto dos painéis não são chaves de
+`strings.mjs`: vivem em `src/data/figuras.mjs`, como as outras frases das medidas,
+e estão no `INVENTARIO-FRASES.md` com a origem de cada afirmação.*
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `nav.regioes` | Regiões | Regions | as páginas das regiões existem desde 28.08.2026 e não tinham porta no menu. O plural do que a página lista, na mesma gramática de `nav.municipios` e `nav.estudos` |
+| `nav.distritos` | Distritos | Districts | o mesmo, para os distritos e as ilhas da Carta. O nome do índice já dizia «Distritos e ilhas»; o item do menu diz o primeiro dos dois, que é o que a fila comporta, e a página diz os dois por extenso |
+| `ambito.pesquisaSubmeter` | Procurar | Search | o comando do formulário da busca, que passou a ter destino. A palavra nomeia o que o botão faz, e mais nada |
+| `inicio.faixa.de` | ` de ` | ` of ` | o separador de «1 de 21», a posição de cada cartão na faixa. Os dois algarismos são numeração declarada (`data-nonledger="numeracao"`); esta chave é a única cadeia da forma. Em inglês é «of» e não «out of»: é a forma curta que uma legenda de aparelho usa, e a mesma que o inglês do sítio já usa noutras contagens |
+
+**Duas cadeias ficaram sem superfície e passaram a `retirada` no inventário da
+voz**, com a razão escrita em cada linha: `inicio.cabeca.paisA` («Portugal ·
+país» / «Portugal · country»), que era o rótulo do âmbito da cabeça do país, e
+`inicio.mapa.buscaGaveta` («Um concelho pelo nome» / «A municipality by name»),
+que era o nome da gaveta da busca. **As duas chaves ficam em `strings.mjs`**, e a
+razão é a mesma que a casa já escreveu para as outras: a forma que elas nomeiam
+pode voltar, e uma chave apagada é uma decisão perdida. O que não pode voltar em
+silêncio é a frase, e é o inventário que o impede.

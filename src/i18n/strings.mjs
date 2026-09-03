@@ -40,6 +40,17 @@ export const STRINGS = {
          uma família de páginas que existe e não está nele é uma família sem
          porta comum. */
       areas: 'Áreas',
+      /* AS TRÊS FAMÍLIAS QUE EXISTIAM SEM PORTA NO MENU (F1.1, item 11,
+         03.09.2026). As páginas das regiões, dos distritos e das áreas estão
+         construídas desde 28 e 29.08.2026 e só se alcançavam pelo rodapé ou por
+         uma ligação de dentro de outra página. O menu é o índice do sítio que
+         está sempre à vista, e uma família de páginas que ele não nomeia é uma
+         família que o leitor não sabe que existe. «Áreas» já tinha cadeia (era
+         a do comando de âmbito e do rodapé) e passa a ser lida também aqui; as
+         duas novas são os nomes das outras duas famílias, na mesma gramática:
+         o plural do que a página lista, e mais nada. */
+      regioes: 'Regiões',
+      distritos: 'Distritos',
       estudos: 'Estudos',
       livro: 'Livro-razão',
       agenda: 'Agenda',
@@ -417,6 +428,12 @@ export const STRINGS = {
          completa da página das regiões. Registada em `CHAVES-EN.md`. */
       pesquisaRotulo: 'Escreva o nome do concelho',
       pesquisaSemResultado: 'Nenhum concelho com esse nome.',
+      /* O COMANDO DA BUSCA, QUE PASSOU A SER UM `<form>` (F1.1, item 12).
+         Sem guião a caixa não filtrava nada e a página não tinha maneira de
+         levar a lado nenhum: agora a busca é um formulário com destino, e o
+         destino é o índice dos 308, que existe e é a resposta à mesma pergunta.
+         A palavra nomeia o que o botão faz, e mais nada. */
+      pesquisaSubmeter: 'Procurar',
     },
 
     densidade: {
@@ -518,6 +535,22 @@ export const STRINGS = {
        */
       faixa: {
         rotulo: 'As medidas, uma por cartão',
+        /* «1 de 21», A POSIÇÃO DE CADA CARTÃO NA FAIXA (F1.1, item 5).
+           Uma faixa que se percorre de lado não diz quantos cartões tem nem
+           onde o leitor está nela, e a auditoria de 25.08 leu isso como uma
+           corrida sem fim. A posição vai em CADA cartão, e não numa linha só
+           por cima da faixa, por uma razão da casa e não de gosto: uma linha
+           única teria de mudar de algarismo enquanto o leitor rola, e o guião
+           desta página não compõe números («o código de execução escolhe
+           cadeias já validadas e nunca compõe um número»). Com a posição
+           escrita em cada cartão, o que o leitor vê é sempre verdade, e é
+           verdade sem guião nenhum.
+
+           O SEPARADOR É A ÚNICA CADEIA: o ordinal vai marcado
+           `data-nonledger="numeracao"`, que é o motivo do registo para a
+           numeração de secções e de instrumentos, e o total é a chave da prova
+           `faixa_cartoes`, que o portão de HTML reconta das duas listas. */
+        de: ' de ',
       },
 
       /* AS TRÊS CADEIAS DO TELEMÓVEL FICAM SEM SUPERFÍCIE (bloco A, itens A2 e
@@ -1652,6 +1685,9 @@ export const STRINGS = {
       inicio: 'Home',
       municipios: 'Municipalities',
       areas: 'Areas',
+      /* As três famílias no menu. Ver a razão na edição portuguesa. */
+      regioes: 'Regions',
+      distritos: 'Districts',
       estudos: 'Studies',
       livro: 'Ledger',
       agenda: 'Agenda',
@@ -1855,6 +1891,8 @@ export const STRINGS = {
       municipio: 'Municipality',
       pesquisaRotulo: 'Type the name of the municipality',
       pesquisaSemResultado: 'No municipality by that name.',
+      /* O comando da busca. Ver a razão na edição portuguesa. */
+      pesquisaSubmeter: 'Search',
     },
 
     densidade: {
@@ -1895,6 +1933,8 @@ export const STRINGS = {
          nome do lugar, na gramática do nome do mapa. */
       faixa: {
         rotulo: 'The measures, one per card',
+        /* «1 of 21». Ver a razão na edição portuguesa. */
+        de: ' of ',
       },
 
       movel: {
