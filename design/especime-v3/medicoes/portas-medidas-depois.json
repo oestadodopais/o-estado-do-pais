@@ -1,0 +1,884 @@
+{
+  "dist": "/Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/portas-2026-09-03/dist",
+  "celulas": [
+    {
+      "nome": "A1.pt",
+      "passa": true,
+      "prova": "390×664: nome, manchete, cartão, selo e porta do concelho dentro do ecrã (fundo máximo 653.7 px) · 21 cartões, 0 sem selo com caixa"
+    },
+    {
+      "nome": "A2.pt",
+      "passa": true,
+      "prova": "altura de / a 390: 6959 px · teto medido na árvore de partida: 6991 px (menos 32 px)"
+    },
+    {
+      "nome": "A11.pt",
+      "passa": true,
+      "prova": "mobília acima do nome a 390: 62 px (teto 64) · a barra em 1 fila(s) com 2 item(ns), 54 px · as leituras por baixo do nome em 1 fila(s) com 1 à vista, 26.2 px"
+    },
+    {
+      "nome": "A5.pt",
+      "passa": true,
+      "prova": "as 29 unidades com nome visível e alvo ≥ 44 px, sem gesto, abaixo de 1024 (a partir de 1024 a regra é 32 px, Emenda 20c): a 390 29 nome(s), 0 invisível(eis), 0 fora do alvo; a 768 29 nome(s), 0 invisível(eis), 0 fora do alvo"
+    },
+    {
+      "nome": "A3.pt",
+      "passa": true,
+      "prova": "os 21 valores selados uma só vez em /: 0 fora da conta"
+    },
+    {
+      "nome": "A4.pt",
+      "passa": true,
+      "prova": "«Comissão Europeia» em cada frase de contexto de /: 2 frase(s), 0 sem a Comissão · no documento inteiro: 2"
+    },
+    {
+      "nome": "A6.pt",
+      "passa": true,
+      "prova": "vocabulário da casa em /: Âmbito=0 · Densidade=0"
+    },
+    {
+      "nome": "A10.pt",
+      "passa": true,
+      "prova": "«sem limiar» nos cartões e nas peças de /: 0 cartão(ões), 0 peça(s)"
+    },
+    {
+      "nome": "A7.pt",
+      "passa": true,
+      "prova": "as duas fichas de «Lagoa» em /: 2 ficha(s), 2 texto(s) distinto(s), 1 com «Faro» e 1 com «São Miguel» [Lagoadistrito de Faro | LagoaIlha de São Miguel]"
+    },
+    {
+      "nome": "A12.pt",
+      "passa": true,
+      "prova": "regiões, distritos e áreas no menu de /: as três lá estão"
+    },
+    {
+      "nome": "A8.pt",
+      "passa": true,
+      "prova": "<form> em /: 1; action «/municipios» (200); method «get»"
+    },
+    {
+      "nome": "A9.pt",
+      "passa": true,
+      "prova": "com guião, a partir de /: 2 toque(s), sem rolar, chegou a «/municipios/evora» · sem guião, pela submissão nativa: «/municipios?concelho=%C3%89vora»"
+    },
+    {
+      "nome": "A13.pt",
+      "passa": true,
+      "prova": "o destino dos cartões de /: 21 cartão(ões), 3 para a página do domínio (divida-publica-2025, taxa-de-emprego-2025, taxa-de-desemprego-2025), 18 para a leitura breve desta página · nenhum errado"
+    },
+    {
+      "nome": "A14.pt",
+      "passa": true,
+      "prova": "«/dominios» no menu de /: lá está, e a página responde 200"
+    },
+    {
+      "nome": "A15.pt",
+      "passa": true,
+      "prova": "«/estudos» a partir de /, a 390 × 664: 4 porta(s) no documento, 3 tocável(eis) sem abrir gaveta · a mais acima a 662.7 px (1 ecrã(s), teto 1.5), alvo 354×44 px · um toque chegou a «/estudos»"
+    },
+    {
+      "nome": "A16.pt",
+      "passa": true,
+      "prova": "a manchete das quatro camadas em pt, pelo texto acessível do <h1>: pais 0 selo(s) fora da frase · dominio 2 selo(s) fora da frase · regiao 2 selo(s) fora da frase · concelho 1 selo(s) fora da frase"
+    },
+    {
+      "nome": "A1.en",
+      "passa": true,
+      "prova": "390×664: nome, manchete, cartão, selo e porta do concelho dentro do ecrã (fundo máximo 641.1 px) · 21 cartões, 0 sem selo com caixa"
+    },
+    {
+      "nome": "A2.en",
+      "passa": true,
+      "prova": "altura de /en a 390: 6911 px · teto medido na árvore de partida: 6940 px (menos 29 px)"
+    },
+    {
+      "nome": "A11.en",
+      "passa": true,
+      "prova": "mobília acima do nome a 390: 62 px (teto 64) · a barra em 1 fila(s) com 2 item(ns), 54 px · as leituras por baixo do nome em 1 fila(s) com 1 à vista, 26.2 px"
+    },
+    {
+      "nome": "A5.en",
+      "passa": true,
+      "prova": "as 29 unidades com nome visível e alvo ≥ 44 px, sem gesto, abaixo de 1024 (a partir de 1024 a regra é 32 px, Emenda 20c): a 390 29 nome(s), 0 invisível(eis), 0 fora do alvo; a 768 29 nome(s), 0 invisível(eis), 0 fora do alvo"
+    },
+    {
+      "nome": "A3.en",
+      "passa": true,
+      "prova": "os 21 valores selados uma só vez em /en: 0 fora da conta"
+    },
+    {
+      "nome": "A4.en",
+      "passa": true,
+      "prova": "«European Commission» em cada frase de contexto de /en: 2 frase(s), 0 sem a Comissão · no documento inteiro: 2"
+    },
+    {
+      "nome": "A6.en",
+      "passa": true,
+      "prova": "vocabulário da casa em /en: Scope=0 · Density=0"
+    },
+    {
+      "nome": "A10.en",
+      "passa": true,
+      "prova": "«no threshold» nos cartões e nas peças de /en: 0 cartão(ões), 0 peça(s)"
+    },
+    {
+      "nome": "A7.en",
+      "passa": true,
+      "prova": "as duas fichas de «Lagoa» em /en: 2 ficha(s), 2 texto(s) distinto(s), 1 com «Faro» e 1 com «São Miguel» [Lagoadistrict of Faro | LagoaIlha de São Miguel]"
+    },
+    {
+      "nome": "A12.en",
+      "passa": true,
+      "prova": "regiões, distritos e áreas no menu de /en: as três lá estão"
+    },
+    {
+      "nome": "A8.en",
+      "passa": true,
+      "prova": "<form> em /en: 1; action «/en/municipalities» (200); method «get»"
+    },
+    {
+      "nome": "A9.en",
+      "passa": true,
+      "prova": "com guião, a partir de /en: 2 toque(s), sem rolar, chegou a «/en/municipalities/evora» · sem guião, pela submissão nativa: «/en/municipalities?concelho=%C3%89vora»"
+    },
+    {
+      "nome": "A13.en",
+      "passa": true,
+      "prova": "o destino dos cartões de /en: 21 cartão(ões), 3 para a página do domínio (divida-publica-2025, taxa-de-emprego-2025, taxa-de-desemprego-2025), 18 para a leitura breve desta página · nenhum errado"
+    },
+    {
+      "nome": "A14.en",
+      "passa": true,
+      "prova": "«/en/domains» no menu de /en: lá está, e a página responde 200"
+    },
+    {
+      "nome": "A15.en",
+      "passa": true,
+      "prova": "«/en/studies» a partir de /en, a 390 × 664: 4 porta(s) no documento, 3 tocável(eis) sem abrir gaveta · a mais acima a 650.1 px (0.98 ecrã(s), teto 1.5), alvo 354×44 px · um toque chegou a «/en/studies»"
+    },
+    {
+      "nome": "A16.en",
+      "passa": true,
+      "prova": "a manchete das quatro camadas em en, pelo texto acessível do <h1>: pais 0 selo(s) fora da frase · dominio 2 selo(s) fora da frase · regiao 2 selo(s) fora da frase · concelho 1 selo(s) fora da frase"
+    }
+  ],
+  "medidas": {
+    "A1.pt": {
+      "nome": {
+        "topo": 62,
+        "fundo": 97.4,
+        "largura": 354,
+        "altura": 35.4
+      },
+      "manchete": {
+        "topo": 169.5,
+        "fundo": 328.3,
+        "largura": 354,
+        "altura": 158.8
+      },
+      "cartao": {
+        "topo": 490.7,
+        "fundo": 653.7,
+        "largura": 247.8,
+        "altura": 163
+      },
+      "selo": {
+        "topo": 622.1,
+        "fundo": 641.3,
+        "largura": 52.5,
+        "altura": 19.2
+      },
+      "porta": {
+        "topo": 411.5,
+        "fundo": 477.7,
+        "largura": 315.5,
+        "altura": 66.2
+      },
+      "cartoes": 21,
+      "semSelo": [],
+      "ecra": 664,
+      "altura": 6959,
+      "mobilia": 62,
+      "barra": {
+        "filas": 1,
+        "itens": 2,
+        "altura": 54
+      },
+      "leituras": {
+        "filas": 1,
+        "itens": 1,
+        "altura": 26.2
+      }
+    },
+    "A2.pt": {
+      "altura": 6959,
+      "teto": 6991
+    },
+    "A11.pt": {
+      "acimaDoNome": 62,
+      "barra": {
+        "filas": 1,
+        "itens": 2,
+        "altura": 54
+      },
+      "leituras": {
+        "filas": 1,
+        "itens": 1,
+        "altura": 26.2
+      }
+    },
+    "A5.pt.390": {
+      "total": 29,
+      "pequenos": [],
+      "invisiveis": 0
+    },
+    "A5.pt.768": {
+      "total": 29,
+      "pequenos": [],
+      "invisiveis": 0
+    },
+    "A3.pt": {
+      "total": 21,
+      "repetidos": []
+    },
+    "A4.pt": {
+      "noDocumento": 2,
+      "frases": [
+        {
+          "painel": "pdm",
+          "tem": true,
+          "texto": "Os indicadores do painel do Procedimento relativo aos Desequ"
+        },
+        {
+          "painel": "social",
+          "tem": true,
+          "texto": "Os indicadores que o livro-razão guarda e cujo registo nomei"
+        }
+      ]
+    },
+    "A6.pt": 0,
+    "A10.pt": {
+      "cartoes": 0,
+      "pecas": 0
+    },
+    "A7.pt": [
+      "Lagoadistrito de Faro",
+      "LagoaIlha de São Miguel"
+    ],
+    "A12.pt": {
+      "menu": [
+        "/",
+        "/municipios",
+        "/regioes",
+        "/distritos",
+        "/areas",
+        "/dominios",
+        "/estudos",
+        "/livro-razao",
+        "/agenda",
+        "/metodo",
+        "/correcoes",
+        "/sobre"
+      ],
+      "emFalta": []
+    },
+    "A8.pt": {
+      "formularios": 1,
+      "action": "/municipios",
+      "metodo": "get",
+      "destinoVivo": true
+    },
+    "A9.pt": {
+      "toques": 2,
+      "dentroDoEcra": true,
+      "chegou": "/municipios/evora",
+      "semGuiao": {
+        "caminho": "/municipios",
+        "query": "?concelho=%C3%89vora",
+        "titulo": "Municípios · O Estado do País"
+      }
+    },
+    "A13.pt": {
+      "cartoes": [
+        {
+          "id": "divida-publica-2025",
+          "href": "/dominios/economia-e-financas-publicas#m-e3",
+          "rotulo": "Domínios",
+          "ancoraLocal": false
+        },
+        {
+          "id": "posicao-de-investimento-internacional-2025",
+          "href": "#m-posicao-de-investimento-internacional-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "custo-unitario-do-trabalho-2025",
+          "href": "#m-custo-unitario-do-trabalho-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "precos-da-habitacao-2025",
+          "href": "#m-precos-da-habitacao-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "desempenho-das-exportacoes-2025",
+          "href": "#m-desempenho-das-exportacoes-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "divida-das-empresas-2025",
+          "href": "#m-divida-das-empresas-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "divida-das-familias-2025",
+          "href": "#m-divida-das-familias-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "fluxo-de-credito-as-empresas-2025",
+          "href": "#m-fluxo-de-credito-as-empresas-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "fluxo-de-credito-as-familias-2025",
+          "href": "#m-fluxo-de-credito-as-familias-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "saldo-da-balanca-corrente-2025",
+          "href": "#m-saldo-da-balanca-corrente-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "taxa-de-actividade-2025",
+          "href": "#m-taxa-de-actividade-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "taxa-de-cambio-efectiva-real-2025",
+          "href": "#m-taxa-de-cambio-efectiva-real-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "taxa-de-desemprego-mip-2025",
+          "href": "#m-taxa-de-desemprego-mip-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "taxa-de-emprego-2025",
+          "href": "/dominios/economia-e-financas-publicas#m-t1",
+          "rotulo": "Domínios",
+          "ancoraLocal": false
+        },
+        {
+          "id": "taxa-de-desemprego-2025",
+          "href": "/dominios/economia-e-financas-publicas#m-t2",
+          "rotulo": "Domínios",
+          "ancoraLocal": false
+        },
+        {
+          "id": "desemprego-de-longa-duracao-2025",
+          "href": "#m-desemprego-de-longa-duracao-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "jovens-nem-2025",
+          "href": "#m-jovens-nem-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "abandono-escolar-precoce-2025",
+          "href": "#m-abandono-escolar-precoce-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "risco-de-pobreza-ou-exclusao-2025",
+          "href": "#m-risco-de-pobreza-ou-exclusao-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "racio-s80-s20-2025",
+          "href": "#m-racio-s80-s20-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "sobrecarga-do-custo-da-habitacao-2025",
+          "href": "#m-sobrecarga-do-custo-da-habitacao-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        }
+      ],
+      "errados": [],
+      "paraODominio": 3
+    },
+    "A14.pt": {
+      "menu": [
+        "/",
+        "/municipios",
+        "/regioes",
+        "/distritos",
+        "/areas",
+        "/dominios",
+        "/estudos",
+        "/livro-razao",
+        "/agenda",
+        "/metodo",
+        "/correcoes",
+        "/sobre"
+      ],
+      "temDominios": true,
+      "respostaDoIndice": 200
+    },
+    "A15.pt": {
+      "portas": [
+        {
+          "dentroDeGavetaFechada": false,
+          "topo": 0,
+          "altura": 0,
+          "largura": 0
+        },
+        {
+          "dentroDeGavetaFechada": false,
+          "topo": 662.7,
+          "altura": 44,
+          "largura": 354
+        },
+        {
+          "dentroDeGavetaFechada": false,
+          "topo": 6120.7,
+          "altura": 161,
+          "largura": 354
+        },
+        {
+          "dentroDeGavetaFechada": false,
+          "topo": 6705.5,
+          "altura": 21.6,
+          "largura": 64.3
+        }
+      ],
+      "alcancaveis": 3,
+      "topo": 662.7,
+      "ecras": 1,
+      "chegouAoArquivo": "/estudos"
+    },
+    "A16.pt": {
+      "manchetes": [
+        {
+          "camada": "pais",
+          "rota": "/",
+          "inteiro": "Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
+          "frase": "Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
+          "selos": 0,
+          "valores": 0,
+          "semSelo": 0
+        },
+        {
+          "camada": "dominio",
+          "rota": "/dominios/economia-e-financas-publicas",
+          "inteiro": "A dívida pública é 89,7% do PIB, fora do limiar de 60%; o saldo das administrações públicas é 0,7% do PIB, dentro do limiar de −3%.fonte · Quadro institucional de indicadoresfonte · Domínios: as medidas das perguntas",
+          "frase": "A dívida pública é 89,7% do PIB, fora do limiar de 60%; o saldo das administrações públicas é 0,7% do PIB, dentro do limiar de −3%.",
+          "selos": 2,
+          "valores": 2,
+          "semSelo": 0
+        },
+        {
+          "camada": "regiao",
+          "rota": "/regioes/alentejo",
+          "inteiro": "O Alentejo está 23 pontos abaixo da média da UE-27. Em 2000 estava a 22: a distância aumentou.fonte · calculado · Alentejo & Algarve — Economy, Society, Strategyfonte · calculado · Alentejo & Algarve — Economy, Society, Strategy",
+          "frase": "O Alentejo está 23 pontos abaixo da média da UE-27. Em 2000 estava a 22: a distância aumentou.",
+          "selos": 2,
+          "valores": 2,
+          "semSelo": 0
+        },
+        {
+          "camada": "concelho",
+          "rota": "/municipios/evora",
+          "inteiro": "Évora tem 58 567 pessoas.fonte · Évora — Economia, Investidores, Portas Abertas 2026",
+          "frase": "Évora tem 58 567 pessoas.",
+          "selos": 1,
+          "valores": 1,
+          "semSelo": 0
+        }
+      ],
+      "partidas": []
+    },
+    "A1.en": {
+      "nome": {
+        "topo": 62,
+        "fundo": 97.4,
+        "largura": 354,
+        "altura": 35.4
+      },
+      "manchete": {
+        "topo": 169.5,
+        "fundo": 297,
+        "largura": 354,
+        "altura": 127.4
+      },
+      "cartao": {
+        "topo": 459.3,
+        "fundo": 641.1,
+        "largura": 247.8,
+        "altura": 181.7
+      },
+      "selo": {
+        "topo": 609.5,
+        "fundo": 628.7,
+        "largura": 61,
+        "altura": 19.2
+      },
+      "porta": {
+        "topo": 380.2,
+        "fundo": 446.3,
+        "largura": 294.3,
+        "altura": 66.2
+      },
+      "cartoes": 21,
+      "semSelo": [],
+      "ecra": 664,
+      "altura": 6911,
+      "mobilia": 62,
+      "barra": {
+        "filas": 1,
+        "itens": 2,
+        "altura": 54
+      },
+      "leituras": {
+        "filas": 1,
+        "itens": 1,
+        "altura": 26.2
+      }
+    },
+    "A2.en": {
+      "altura": 6911,
+      "teto": 6940
+    },
+    "A11.en": {
+      "acimaDoNome": 62,
+      "barra": {
+        "filas": 1,
+        "itens": 2,
+        "altura": 54
+      },
+      "leituras": {
+        "filas": 1,
+        "itens": 1,
+        "altura": 26.2
+      }
+    },
+    "A5.en.390": {
+      "total": 29,
+      "pequenos": [],
+      "invisiveis": 0
+    },
+    "A5.en.768": {
+      "total": 29,
+      "pequenos": [],
+      "invisiveis": 0
+    },
+    "A3.en": {
+      "total": 21,
+      "repetidos": []
+    },
+    "A4.en": {
+      "noDocumento": 2,
+      "frases": [
+        {
+          "painel": "pdm",
+          "tem": true,
+          "texto": "The indicators of the Macroeconomic Imbalance Procedure scor"
+        },
+        {
+          "painel": "social",
+          "tem": true,
+          "texto": "The indicators the ledger holds whose record names the Europ"
+        }
+      ]
+    },
+    "A6.en": 0,
+    "A10.en": {
+      "cartoes": 0,
+      "pecas": 0
+    },
+    "A7.en": [
+      "Lagoadistrict of Faro",
+      "LagoaIlha de São Miguel"
+    ],
+    "A12.en": {
+      "menu": [
+        "/en",
+        "/en/municipalities",
+        "/en/regions",
+        "/en/districts",
+        "/en/areas",
+        "/en/domains",
+        "/en/studies",
+        "/en/ledger",
+        "/en/agenda",
+        "/en/method",
+        "/en/corrections",
+        "/en/about"
+      ],
+      "emFalta": []
+    },
+    "A8.en": {
+      "formularios": 1,
+      "action": "/en/municipalities",
+      "metodo": "get",
+      "destinoVivo": true
+    },
+    "A9.en": {
+      "toques": 2,
+      "dentroDoEcra": true,
+      "chegou": "/en/municipalities/evora",
+      "semGuiao": {
+        "caminho": "/en/municipalities",
+        "query": "?concelho=%C3%89vora",
+        "titulo": "Municipalities · O Estado do País"
+      }
+    },
+    "A13.en": {
+      "cartoes": [
+        {
+          "id": "divida-publica-2025",
+          "href": "/en/domains/economia-e-financas-publicas#m-e3",
+          "rotulo": "Domains",
+          "ancoraLocal": false
+        },
+        {
+          "id": "posicao-de-investimento-internacional-2025",
+          "href": "#m-posicao-de-investimento-internacional-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "custo-unitario-do-trabalho-2025",
+          "href": "#m-custo-unitario-do-trabalho-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "precos-da-habitacao-2025",
+          "href": "#m-precos-da-habitacao-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "desempenho-das-exportacoes-2025",
+          "href": "#m-desempenho-das-exportacoes-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "divida-das-empresas-2025",
+          "href": "#m-divida-das-empresas-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "divida-das-familias-2025",
+          "href": "#m-divida-das-familias-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "fluxo-de-credito-as-empresas-2025",
+          "href": "#m-fluxo-de-credito-as-empresas-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "fluxo-de-credito-as-familias-2025",
+          "href": "#m-fluxo-de-credito-as-familias-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "saldo-da-balanca-corrente-2025",
+          "href": "#m-saldo-da-balanca-corrente-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "taxa-de-actividade-2025",
+          "href": "#m-taxa-de-actividade-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "taxa-de-cambio-efectiva-real-2025",
+          "href": "#m-taxa-de-cambio-efectiva-real-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "taxa-de-desemprego-mip-2025",
+          "href": "#m-taxa-de-desemprego-mip-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "taxa-de-emprego-2025",
+          "href": "/en/domains/economia-e-financas-publicas#m-t1",
+          "rotulo": "Domains",
+          "ancoraLocal": false
+        },
+        {
+          "id": "taxa-de-desemprego-2025",
+          "href": "/en/domains/economia-e-financas-publicas#m-t2",
+          "rotulo": "Domains",
+          "ancoraLocal": false
+        },
+        {
+          "id": "desemprego-de-longa-duracao-2025",
+          "href": "#m-desemprego-de-longa-duracao-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "jovens-nem-2025",
+          "href": "#m-jovens-nem-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "abandono-escolar-precoce-2025",
+          "href": "#m-abandono-escolar-precoce-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "risco-de-pobreza-ou-exclusao-2025",
+          "href": "#m-risco-de-pobreza-ou-exclusao-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "racio-s80-s20-2025",
+          "href": "#m-racio-s80-s20-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "sobrecarga-do-custo-da-habitacao-2025",
+          "href": "#m-sobrecarga-do-custo-da-habitacao-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        }
+      ],
+      "errados": [],
+      "paraODominio": 3
+    },
+    "A14.en": {
+      "menu": [
+        "/en",
+        "/en/municipalities",
+        "/en/regions",
+        "/en/districts",
+        "/en/areas",
+        "/en/domains",
+        "/en/studies",
+        "/en/ledger",
+        "/en/agenda",
+        "/en/method",
+        "/en/corrections",
+        "/en/about"
+      ],
+      "temDominios": true,
+      "respostaDoIndice": 200
+    },
+    "A15.en": {
+      "portas": [
+        {
+          "dentroDeGavetaFechada": false,
+          "topo": 0,
+          "altura": 0,
+          "largura": 0
+        },
+        {
+          "dentroDeGavetaFechada": false,
+          "topo": 650.1,
+          "altura": 44,
+          "largura": 354
+        },
+        {
+          "dentroDeGavetaFechada": false,
+          "topo": 6091.8,
+          "altura": 161,
+          "largura": 354
+        },
+        {
+          "dentroDeGavetaFechada": false,
+          "topo": 6676.6,
+          "altura": 21.6,
+          "largura": 59.3
+        }
+      ],
+      "alcancaveis": 3,
+      "topo": 650.1,
+      "ecras": 0.98,
+      "chegouAoArquivo": "/en/studies"
+    },
+    "A16.en": {
+      "manchetes": [
+        {
+          "camada": "pais",
+          "rota": "/en",
+          "inteiro": "Portugal breaches 4 thresholds of the Macroeconomic Imbalance Procedure and meets 9.",
+          "frase": "Portugal breaches 4 thresholds of the Macroeconomic Imbalance Procedure and meets 9.",
+          "selos": 0,
+          "valores": 0,
+          "semSelo": 0
+        },
+        {
+          "camada": "dominio",
+          "rota": "/en/domains/economia-e-financas-publicas",
+          "inteiro": "Government debt is 89,7% of GDP, outside the threshold of 60%; the general government balance is 0,7% of GDP, within the threshold of −3%.source · Institutional indicator frameworksource · Domains: the measures behind the questions",
+          "frase": "Government debt is 89,7% of GDP, outside the threshold of 60%; the general government balance is 0,7% of GDP, within the threshold of −3%.",
+          "selos": 2,
+          "valores": 2,
+          "semSelo": 0
+        },
+        {
+          "camada": "regiao",
+          "rota": "/en/regions/alentejo",
+          "inteiro": "The Alentejo is 23 points below the EU-27 average. In 2000 it was 22 points away: the gap has widened.source · calculated · Alentejo & Algarve — Economy, Society, Strategysource · calculated · Alentejo & Algarve — Economy, Society, Strategy",
+          "frase": "The Alentejo is 23 points below the EU-27 average. In 2000 it was 22 points away: the gap has widened.",
+          "selos": 2,
+          "valores": 2,
+          "semSelo": 0
+        },
+        {
+          "camada": "concelho",
+          "rota": "/en/municipalities/evora",
+          "inteiro": "Évora has 58 567 people.source · Évora — Economia, Investidores, Portas Abertas 2026",
+          "frase": "Évora has 58 567 people.",
+          "selos": 1,
+          "valores": 1,
+          "semSelo": 0
+        }
+      ],
+      "partidas": []
+    }
+  },
+  "plantasOk": true
+}
