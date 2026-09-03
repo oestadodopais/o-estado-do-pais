@@ -167,6 +167,32 @@
 .texto-ligacao {
   overflow-wrap: anywhere;
 }
+/* O ALVO DE TOQUE FOI TENTADO E MEDIDO, E A TÉCNICA NÃO SERVE AQUI (Blocking 3
+   da leitura a frio do Codex, F1.9a segunda passagem, 03.09.2026). A primeira
+   tentativa desta correção deu à ligação a técnica do selo da casa, um
+   `::after` absoluto e centrado; MEDIDO com uma sonda própria, com o acerto do
+   navegador (`elementFromPoint`) e não só a caixa, nas oito páginas: das 39
+   ligações do documento (13 fora de tabela, 26 dentro), a área de 44px não
+   alcançava as duas coisas que promete em NENHUMA das 39.
+
+   A RAZÃO É ESTRUTURAL E NÃO UM ERRO DE ESCRITA: na página de amostra, 12 das
+   16 ligações fora de tabela quebram em 2 a 7 linhas — a etiqueta é o próprio
+   endereço, «283 caracteres na mais longa» — e um `::after` centrado num
+   elemento em linha que quebra não
+   fica centrado sobre nenhuma das linhas em particular: o navegador ancora-o à
+   caixa gerada inteira, e o seu centro cai algures entre a primeira e a
+   última, não onde o dedo vê a palavra. É a mesma técnica que funciona no
+   selo da casa (`site.css`, A10) precisamente porque um selo NUNCA quebra —
+   «fonte · <estudo>» é uma etiqueta curta e fixa — e essa condição, medida
+   agora, não vale para o endereço de uma ligação. As que não quebram também
+   não alcançavam, porque a maioria fica encostada à porta «→» de uma figura
+   sem linha do sítio (a mesma família que já prende `.texto-figura-porta-apos`
+   a 24px, acima), e uma exceção para essas deixaria de fora a maioria das 39.
+
+   FICA COM A ÁREA QUE JÁ TINHA, como as portas de figura (I9b). Não é a
+   isenção medida original (a das portas de figura, por proximidade); é uma
+   segunda, medida à parte, e a diferença fica escrita para que ninguém a leia
+   como a mesma coisa duas vezes. */
 
 /* -----------------------------------------------------------------------------
  * 3 · AS FIGURAS
@@ -200,10 +226,21 @@
  * leitura do olho nem na comparação da unidade.
  *
  * O ALVO É A CAIXA DA PRÓPRIA PORTA, e não uma área posicionada de 44px como a
- * do selo. A razão está medida na `site.css`, ao lado da área do selo: duas
- * áreas de 44px a 13px uma da outra sobrepõem-se, e uma área sobreposta não é
- * um alvo maior, é uma porta que abre a linha do vizinho. As portas de uma
- * mesma ligação ficam encostadas (o bloco 62 do 04 tem células com três), e por
+ * do selo. A segunda passagem (F1.9a, Blocking 3 da leitura a frio do Codex,
+ * 03.09.2026) MEDIU outra vez antes de decidir não lhe tocar: nas oito
+ * páginas há 2 358 portas de figura (876 fora de tabela, 1 482 dentro) e 42
+ * setas «→» destas (8 fora, 34 dentro). Crescer as 2 358 para 44px, simulado
+ * por geometria antes de se escrever uma só regra nova, sobrepunha-se a um
+ * vizinho em cerca de 27% das de fora de tabela e 67% das de dentro; as 42
+ * setas, em cerca de 75% e 100%. A regra da casa é clara — «uma área
+ * sobreposta não é um alvo maior, é uma porta que abre a linha do vizinho» —,
+ * e nem a maioria das figuras conseguiria escapar a essa conta: não se tentou
+ * a regra em CSS, e por isso estes números são a simulação que a preveniu, não
+ * o acerto do navegador que a I9 (ao lado, para o selo) usa. FICAM COM A ÁREA
+ * QUE JÁ TINHAM, e é o residual desta correção: as 2 358 portas de figura e as
+ * 42 setas, nas oito páginas, sem exceção — a I9b (`tests/texto/indice.mjs`)
+ * mede a proximidade que o justifica a cada corrida. As portas de uma mesma
+ * ligação ficam encostadas (o bloco 62 do 04 tem células com três), e por
  * isso cada uma leva uma caixa própria de 24px, que é o mínimo da 2.5.8 e não
  * se sobrepõe à seguinte. Onde a entrelinha é menor do que isso (as tabelas), a
  * linha cresce para a caber, que é o preço honesto de um alvo a sério. */
@@ -230,6 +267,31 @@
    de um nó de texto no gabarito (o contrato da nona origem proíbe-o). */
 .texto-artigo .src-chip {
   margin-left: 0.35em;
+}
+/* O ALVO DO SELO NO CORPO TRANSCRITO (Blocking 3, F1.9a segunda passagem,
+ * 03.09.2026). `site.css` já reduz `.texto-artigo a.src-chip::after` à área
+ * da própria linha, sem medição própria desta rota: era a exceção do
+ * `.brief-text` aplicada aqui por semelhança. MEDIDO nas oito páginas, com o
+ * acerto do navegador (`elementFromPoint`) e não só a área: dos 196 selos do
+ * corpo (101 fora de tabela, 95 dentro), crescer os 101 de fora para 44px dá
+ * 87 alvos limpos e 14 com problema — todos pela mesma razão, o rótulo
+ * («fonte · <estudo>») a quebrar em duas linhas quando o título do estudo é
+ * longo, o que acontece em 13 dos 101. Os 95 de dentro de tabela FICAM SEM
+ * TENTAR: a mesma entrelinha apertada (13,5px de corpo, 1,45 de entrelinha)
+ * que já impede as portas de figura de crescerem em tabela impediria o
+ * selo pela mesma conta, e não se mede o que não se muda. Os 101 de fora
+ * crescem em geral e reduzem-se de volta aqui, dentro de tabela, à área da
+ * sua linha. A régua (`tests/texto/indice.mjs`, I9) confere a contagem dos
+ * 101 a cada corrida, com o resíduo de 14 escrito a um número exato. */
+.texto-artigo a.src-chip::after {
+  width: 100%;
+  min-width: 44px;
+  height: 44px;
+}
+.texto-artigo table a.src-chip::after {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
 }
 
 /* -----------------------------------------------------------------------------
@@ -522,22 +584,22 @@
   color: var(--ink);
 }
 
-/* SUBIR. Fixo no fim do ecrã, NAS DUAS LARGURAS desde 03.09.2026 (F1.9a, item
-   3). A regra anterior escondia-o acima de 640px porque «no computador a
-   coluna do aparelho está sempre à vista»; medido a 1280 nas oito páginas,
-   elas medem entre 12 612 e 37 008 px, e a coluna do aparelho está à vista no
-   primeiro ecrã e em mais nenhum. O alvo é de 44px nos dois eixos, e o comando
-   fica encostado à direita, fora da coluna de leitura, para não se cruzar com
-   nenhuma porta do texto: medido a 390 e a 1280, zero caixas de linha do
-   artigo debaixo dele. */
-.texto-subir {
+/* A PORTA EM FLUXO, no fim de cada secção de nível 2, ABAIXO DE 1024px
+   (Blocking 4 da leitura a frio do Codex, F1.9a segunda passagem,
+   03.09.2026). A 390 a coluna de leitura é a janela menos duas goteiras de
+   18px: um comando FIXO de 44px de lado não tem onde caber sem tapar uma
+   linha do artigo — medido pela régua antes desta correção, em dez posições
+   de cada página: entre 12 e 26 caixas de linha tapadas em 6 a 9 das dez
+   posições, a maior sobreposição 67,8 × 26,6px (era o Blocking 4). A saída que
+   não tapa nada é a que empurra o documento em vez de se lhe sobrepor: uma
+   porta NO PRÓPRIO FLUXO, e por isso mobília que vive dentro do artigo sem
+   ser corpo (não leva `data-registo-bloco`; `registo-html.mjs` escreve-a a
+   fechar cada secção, incluindo a última). O alvo e o desenho são os do
+   comando fixo, sem `position: fixed`. */
+.texto-secao-topo {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  right: 12px;
-  bottom: 12px;
-  z-index: 5;
   min-width: 44px;
   min-height: 44px;
   padding: 0 12px;
@@ -552,26 +614,60 @@
   text-transform: uppercase;
   text-decoration: none;
 }
-/* A 1280 a coluna de leitura acaba muito antes da margem direita da janela, e
-   o comando fica na goteira; abaixo disso encosta-se à margem, que é onde a
-   medição diz que ele não apanha texto nenhum. */
-@media (min-width: 901px) {
+/* DAS 1024px PARA CIMA HÁ GOTEIRA, e é aí que o comando fixo volta a bastar: a
+   porta em fluxo sairia do documento sem ganhar nada e duplicaria a subida. */
+@media (min-width: 1024px) {
+  .texto-secao-topo {
+    display: none;
+  }
+}
+
+/* SUBIR. Fixo, SÓ A PARTIR DE 1024px (Blocking 4, F1.9a segunda passagem).
+   Até 03.09.2026 ficava fixo nas duas larguras, com a razão escrita «medido a
+   390 e a 1280, zero caixas de linha do artigo debaixo dele»; a régua que
+   mede as dez posições da página (e não só o fim dela) desfez a metade de
+   390: era aí que a porta em fluxo de cima entrou. Abaixo de 1024px o comando
+   nem se desenha, porque não há goteira nenhuma onde 44px caibam sem tapar
+   texto. */
+.texto-subir {
+  display: none;
+}
+@media (min-width: 1024px) {
   .texto-subir {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
     right: clamp(12px, 3vw, 40px);
     bottom: 20px;
+    z-index: 5;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 12px;
+    background: var(--paper);
+    border: 1px solid var(--rule-strong);
+    color: var(--ink);
+    font-family: var(--f-instr);
+    font-variant-numeric: tabular-nums lining-nums;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
   }
 }
 
 /* -----------------------------------------------------------------------------
- * 5c · A INDICAÇÃO DE PROGRESSO (F1.9a, item 2)
+ * 5c · A INDICAÇÃO DE PROGRESSO (F1.9a, item 2; Major 8 da leitura a frio do
+ * Codex, segunda passagem, 03.09.2026)
  * -----------------------------------------------------------------------------
  * Duas metades, e nenhuma delas leva uma linha de JavaScript.
  *
- * (a) A POSIÇÃO DE CADA SECÇÃO, «n/N», ao lado do título de nível 2. O
- *     numerador é um contador do navegador e o denominador é a ficha
- *     `--seccoes`, que a vista escreve uma vez com a contagem que o L8 do
- *     portão reconta do registo. A casa não escreve um algarismo no HTML do
- *     corpo: o corpo é transcrição, e a §0 do brief manda que não mude um
+ * (a) A POSIÇÃO DE CADA SECÇÃO, «n/N» À VISTA, «Secção n de N» PARA QUEM NÃO
+ *     VÊ. O numerador visível é um contador do navegador e o denominador é a
+ *     ficha `--seccoes`, que a vista escreve uma vez com a contagem que o L8
+ *     do portão reconta do registo. A casa não escreve um algarismo no HTML
+ *     do corpo: o corpo é transcrição, e a §0 do brief manda que não mude um
  *     carácter.
  *
  *     NÃO CUSTA UM PÍXEL DE ALTURA, e é por isso que é absoluta: o título de
@@ -579,17 +675,26 @@
  *     posição vive lá dentro. Uma peça em fluxo somava 9 a 14 filas de 16px a
  *     uma página que a auditoria já diz longa de mais.
  *
- *     O TEXTO ALTERNATIVO VAI VAZIO onde o motor conhece a sintaxe
- *     (`content: … / ""`): o nome acessível de um título transcrito é o texto
- *     do registo e mais nada. Onde não a conhecer, a declaração base fica de
- *     pé e o contador rende-se na mesma, que é a ordem certa das duas: um
- *     leitor de ecrã a ouvir «3/9» antes do título é ruído; um leitor sem
- *     indicação nenhuma é o defeito D1 da auditoria.
+ *     O TEXTO ALTERNATIVO DESTE CONTADOR VAI VAZIO onde o motor conhece a
+ *     sintaxe (`content: … / ""`), e É POR ISSO QUE O NOME ACESSÍVEL NÃO VEM
+ *     DAQUI: até 03.09.2026 isso queria dizer que o nome de um título
+ *     transcrito era só o texto do registo, e a posição não chegava a quem
+ *     não vê (achado da leitura a frio do Codex, Major 8). A frase «Secção n
+ *     de N» que um leitor de ecrã ouve vem de OUTRO SÍTIO, que não é esta
+ *     folha: um irmão do título, fora dele (`<span class="vh"
+ *     data-registo-posicao>`, escrito por `pecasDoCorpo` em
+ *     `registo-html.mjs`), a que o título aponta com `aria-labelledby`, ao
+ *     lado de si próprio. É esse atributo que junta os dois num nome só,
+ *     medido nos dois motores desta casa com `ariaSnapshot()`: «Secção 3 de
+ *     9 <título>». O `::before` fica só com o trabalho visual, e por isso o
+ *     texto alternativo continua vazio onde o motor o sabe fazer — não há
+ *     dois lugares a dizer a mesma coisa duas vezes a quem ouve.
  *
  * (b) A BARRA, três píxeis no topo da janela, movida pela linha do tempo do
  *     deslocamento. Só existe dentro do `@supports`: uma barra parada é uma
  *     indicação falsa. Medida nos dois motores (WebKit e Chromium), 0px no
- *     topo e a largura da janela no fim.
+ *     topo e a largura da janela no fim. Fica `aria-hidden`: é a duplicação
+ *     visual do que a posição já diz, que agora chega aos dois lados.
  * -------------------------------------------------------------------------- */
 .texto-artigo h2 {
   position: relative;
