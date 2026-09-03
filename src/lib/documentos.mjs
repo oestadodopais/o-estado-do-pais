@@ -9,9 +9,18 @@
  *
  * Este módulo trata do segundo. A regra é uma só e não tem excepções:
  *
- *   ****  O DOCUMENTO NÃO É REESCRITO. ABAIXO DA FAIXA NÃO SE MEXE UM BYTE:  ****
- *   ****  nem estilos, nem scripts, nem uma vírgula. ACIMA DELA entram as três ****
- *   ****  marcas da casa, e mais nada.                                         ****
+ *   ****  O DOCUMENTO NÃO É REESCRITO. NEM UM BYTE DELE MUDA, NEM SE MOVE  ****
+ *   ****  DE ORDEM: nem estilos, nem scripts, nem uma vírgula. O que a casa ****
+ *   ****  faz é ACRESCENTAR markup seu à volta, e a prova das fatias        ****
+ *   ****  subtrai-o e compara byte a byte o que fica.                       ****
+ *
+ * A REGRA MUDOU DE PALAVRAS E NÃO DE SENTIDO (03.09.2026, bloco F1.8). Até aqui
+ * dizia «abaixo da faixa não se mexe um byte», porque a faixa era a última coisa
+ * que a casa inseria. Com a moldura, o corpo do documento passa a estar DENTRO
+ * de um elemento da casa, e a frase antiga passaria a ser falsa à letra e
+ * verdadeira na intenção. O que se promete, e o que o provador confere, é o que
+ * está escrito acima: os bytes do documento são os mesmos, na mesma ordem, e o
+ * que a casa acrescenta é uma abertura e um fecho de comprimento conhecido.
  *
  * AS TRÊS MARCAS, E PORQUE SUBIRAM ACIMA DA FAIXA (03.09.2026, bloco F0.7).
  *
@@ -741,6 +750,34 @@ function etiquetaReal(texto, nome, zonas, { ate = Infinity, antesDe = Infinity }
 }
 
 /**
+ * A primeira ocorrência REAL de uma etiqueta de fecho, com a mesma disciplina
+ * da de abertura: fora de comentário, de guião e de folha.
+ *
+ * Existe para a moldura (bloco F1.8): o `</main>` da casa entra ANTES do
+ * primeiro `</body>` de verdade, que é onde o corpo do documento acaba para
+ * quem o lê. Não se procura o ÚLTIMO, e a razão está medida: três dos dezasseis
+ * documentos trazem `</body></html>` repetido no fim (o `agua-nao-faturada/en`
+ * e o `onde-esta-a-agua/en` duas vezes, o `onde-esta-a-agua/pt` três), e um
+ * deles tem um segundo `<!doctype html>` inteiro dentro do corpo do primeiro.
+ * O analisador do navegador fecha o corpo no primeiro fecho e trata o resto
+ * como erro recuperável; a casa fecha a moldura no mesmo sítio.
+ *
+ * @param {string} texto
+ * @param {string} nome
+ * @param {Array<[number, number]>} zonas
+ * @param {{ desde?: number }} [limites]
+ * @returns {{ inicio: number, fim: number } | null}
+ */
+function fechoReal(texto, nome, zonas, { desde = 0 } = {}) {
+  for (const m of texto.matchAll(new RegExp(`</${nome}\\s*>`, 'gi'))) {
+    if (m.index < desde) continue;
+    if (dentroDe(zonas, m.index)) continue;
+    return { inicio: m.index, fim: m.index + m[0].length };
+  }
+  return null;
+}
+
+/**
  * Uma marca `robots` do autor, em QUALQUER grafia: aspas duplas, simples ou
  * nenhumas, e espaço à volta do `=`. A primeira passagem procurou só
  * `name="robots"` e disse que nenhum dos dezasseis trazia uma, o que era uma
@@ -895,6 +932,247 @@ export function regiaoDaCabeca(texto) {
 }
 
 /**
+ * ===========================================================================
+ * A MOLDURA (bloco F1.8, 03.09.2026)
+ * ===========================================================================
+ *
+ * A faixa diz o que o leitor está a ver. A MOLDURA é o que fica à volta do que
+ * ele lê, e entrou porque a auditoria de 02.09.2026 mediu quatro coisas que a
+ * faixa sozinha não conserta:
+ *
+ *   · o documento não tem `<main>`, e quem usa um leitor de ecrã não tem para
+ *     onde saltar: treze dos dezasseis não trazem nenhum, e a faixa da casa
+ *     ficava a ser a primeira coisa que se ouve, sempre;
+ *   · o texto das tabelas mede abaixo de 4,5:1 (o pior, medido, 2,13:1 em treze
+ *     células de `evora-quinze-anos-cinco-mandatos`, que é o número que a
+ *     auditoria escreveu);
+ *   · as caixas que se deslocam de lado não se focam, e portanto não se
+ *     deslocam com o teclado (quarenta e oito nós, nos dois temas);
+ *   · e um filete de cor fora da paleta da casa, medido `#16556E` em claro e
+ *     `#6FB3CC` em escuro, no fio por baixo do `<h1>`, na barra do `h2::before`
+ *     e no topo de duas classes de célula.
+ *
+ * O QUE A MOLDURA É, EM MARKUP. Três coisas, todas ACIMA do corpo, e um fecho:
+ *
+ *   <body>  [a faixa]  <style>a folha</style><script>o guião</script>
+ *           <main data-oedp-moldura>   … o documento, byte a byte …   </main>
+ *           </body>
+ *
+ * NENHUM BYTE DO DOCUMENTO SE MOVE. O corpo entra inteiro entre a abertura e o
+ * fecho, e é isso que a prova das fatias confere: quatro subtracções de sufixo,
+ * a última das quais compara os bytes do corpo do original com os bytes do
+ * corpo do construído. Um carácter mudado no meio do documento faz essa
+ * comparação cair, e é o conhecido-positivo que a régua planta.
+ *
+ * PORQUE É UM `<div>` EM TRÊS DELES. Três documentos já trazem um `<main>` seu
+ * (`evora-economia-investidores-portas-abertas-2026/pt`, `alentejo-algarve/en`
+ * e `which-door-is-yours/en`). Um `<main>` dentro de outro é markup inválido e
+ * dois marcos principais numa página são um defeito, não uma melhoria: nesses,
+ * a moldura é um `<div>` com a mesma marca, o marco continua a ser o do autor,
+ * e a folha da casa tem na mesma onde se agarrar. A escolha lê-se do documento
+ * de origem e o provador refá-la por si, sem passar pelo transformador.
+ *
+ * O QUE A FOLHA MUDA, E O QUE NÃO MUDA. Muda quatro coisas medidas: a cor dos
+ * filetes da grelha das tabelas e da caixa que envolve uma tabela, a cor do
+ * texto das células, o fio do `<h1>` e a barra do `h2::before`. Não toca nas
+ * cores com que a obra citada codifica os seus dados: as barras dos gráficos,
+ * os selos, as etiquetas de tipo de fonte e os fios de severidade das notas
+ * ficam como o autor os escreveu, porque recolori-los era a casa a reescrever o
+ * que cita. O que ficou por corrigir está contado no relatório do bloco.
+ *
+ * `!important` E PORQUÊ. As folhas dos dezasseis declaram os seus filetes por
+ * classe (`.table-shell td`, `.tablewrap`), e uma corrida de especificidade
+ * contra dezasseis folhas de outra gente é uma corrida que se perde no
+ * documento décimo sétimo. A moldura declara-se autoritária nas quatro
+ * propriedades que mede, e em mais nenhuma.
+ */
+
+/**
+ * As duas formas da moldura. A abertura leva a marca; o fecho é a etiqueta nua,
+ * e é por isso que os dois são cadeias fixas: o provador subtrai-as por bytes.
+ */
+export const MOLDURA = {
+  /** O documento não traz `<main>`: a casa põe o seu. */
+  propria: { abre: '<main data-oedp-moldura>', fecha: '</main>' },
+  /** O documento já traz `<main>`: a casa envolve sem duplicar o marco. */
+  aninhada: { abre: '<div data-oedp-moldura>', fecha: '</div>' },
+};
+
+/**
+ * Qual das duas formas serve este documento, lido do documento e de mais nada.
+ *
+ * @param {string} bruto
+ * @returns {{ abre: string, fecha: string }}
+ */
+export function molduraDe(bruto) {
+  return etiquetaReal(bruto, 'main', zonasOpacas(bruto)) ? MOLDURA.aninhada : MOLDURA.propria;
+}
+
+/**
+ * O LIMIAR DOS OBJETOS DE INTERFACE, e porque o filete NÃO é `--g3`.
+ *
+ * A folha da casa nomeia dois cinzentos para fios: `--rule` (que é `--g3`) e
+ * `--rule-strong` (que é `--g2`). Medidos contra o papel da casa: `--g3` dá
+ * 1,28:1 em claro e 1,67:1 em escuro, e a própria `tokens.css` os anota como
+ * «decoração»; `--g2` dá 3,47:1 em claro e 5,80:1 em escuro. A medida de
+ * aceitação deste bloco pede pelo menos 3:1 nos filetes, que é o que a WCAG
+ * 2.1 §1.4.11 pede a um objeto de interface, e por isso o filete da moldura é
+ * `--rule-strong` e não `--rule`. É a mesma escolha, pela mesma razão, que o
+ * F0.7 fez no fio da faixa quando mediu `--g3` a 1,28:1 e passou à tinta.
+ */
+const FICHA_DO_FILETE = 'rule-strong';
+
+/** A ficha da tinta, para o texto das células. */
+const FICHA_DA_TINTA = 'ink';
+
+/** @type {string | null} */
+let ESTILO_DA_MOLDURA = null;
+
+/**
+ * A folha da moldura, composta uma vez por construção.
+ *
+ * A MOLDURA SEGUE O TEMA DO DOCUMENTO, e a faixa não. Não é uma incoerência: a
+ * faixa declara o seu papel e a sua tinta e lê-se contra qualquer fundo, e a
+ * Emenda 12 fixa o claro para as páginas DA CASA. A moldura escreve por cima
+ * das cores de uma obra que segue `prefers-color-scheme` (medido: os dezasseis
+ * escurecem por essa consulta, sete deles com a guarda `[data-theme="light"]`).
+ * Uma moldura que pintasse tinta escura por cima de um documento escuro tirava
+ * a leitura a quem a tem; a guarda é a mesma que os documentos usam, para que
+ * as duas folhas nunca digam coisas diferentes ao mesmo leitor.
+ *
+ * As cores saem de `tokens.css`, do `:root` claro e do `:root[data-theme='dark']`
+ * escuro, e nenhuma é escrita aqui: se uma ficha desaparecer da folha da casa, a
+ * construção pára.
+ */
+function estiloDaMoldura() {
+  if (ESTILO_DA_MOLDURA) return ESTILO_DA_MOLDURA;
+
+  const tokens = semComentarios(fs.readFileSync(encontraNoRepositorio(FOLHA_TOKENS), 'utf8'));
+  const claro = fichasDe(regraDe(tokens, ':root', FOLHA_TOKENS));
+  const escuro = fichasDe(regraDe(tokens, ":root[data-theme='dark']", FOLHA_TOKENS));
+  for (const nome of [FICHA_DO_FILETE, FICHA_DA_TINTA]) {
+    if (!claro.has(nome)) morre(`\`--${nome}\` já não existe no \`:root\` de \`${FOLHA_TOKENS}\`.`);
+  }
+
+  const filete = `var(--oedp-${FICHA_DO_FILETE})`;
+  const tinta = `var(--oedp-${FICHA_DA_TINTA})`;
+
+  const regras = [
+    /* A grelha das tabelas e a caixa que envolve uma tabela. O `:has()` fica em
+       regra própria de propósito: num motor que não o conheça, a regra cai
+       sozinha e a grelha continua corrigida, em vez de levar as duas atrás. */
+    `[data-oedp-moldura] table,[data-oedp-moldura] thead,[data-oedp-moldura] tbody,` +
+      `[data-oedp-moldura] tfoot,[data-oedp-moldura] tr,[data-oedp-moldura] th,` +
+      `[data-oedp-moldura] td{border-color:${filete}!important}`,
+    `[data-oedp-moldura] :has(>table){border-color:${filete}!important}`,
+    /* O texto da célula, e SÓ o da célula: um filho que declare a sua cor fica
+       com ela, porque nas dezasseis folhas é por aí que a obra citada codifica
+       o que os seus selos e etiquetas querem dizer. */
+    `[data-oedp-moldura] th,[data-oedp-moldura] td{color:${tinta}!important}`,
+    /* O filete de cor. Medido: o fio por baixo do `<h1>` em sete documentos e a
+       barra do `h2::before` nos mesmos sete, os dois em `#16556E`. Um
+       pseudo-elemento sem `content` não gera caixa nenhuma, e por isso esta
+       regra é inerte nos outros nove. */
+    `[data-oedp-moldura] h1{border-color:${filete}!important}`,
+    `[data-oedp-moldura] h2::before{background-color:${filete}!important}`,
+    /* O anel de foco das caixas que o guião torna focáveis. Sem ele, quem chega
+       de teclado a uma caixa que se desloca não vê onde está. */
+    `[data-oedp-moldura] [tabindex="0"]:focus-visible{outline:2px solid ${tinta};outline-offset:2px}`,
+  ].join('\n');
+
+  const necessarias = fichasNecessarias(regras, claro);
+  /** @param {Map<string, string>} mapa */
+  const escreve = (mapa) =>
+    [...mapa]
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([nome, valor]) => `--oedp-${nome}:${valor}`)
+      .join(';');
+
+  /* As mesmas fichas, com o valor do bloco escuro onde ele as redeclara. Uma
+     ficha que o escuro não redeclara herda a do claro, que é o que
+     `tokens.css` faz (o `--rule-strong` escuro vem do `--g2` escuro). */
+  /** @type {Map<string, string>} */
+  const noEscuro = new Map();
+  for (const nome of necessarias.keys()) {
+    const valor = escuro.get(nome);
+    if (valor !== undefined) noEscuro.set(nome, comPrefixo(valor));
+  }
+  if (noEscuro.size === 0) {
+    morre(`o bloco \`:root[data-theme='dark']\` de \`${FOLHA_TOKENS}\` não redeclara nenhuma ficha da moldura.`);
+  }
+
+  ESTILO_DA_MOLDURA = [
+    `[data-oedp-moldura]{${escreve(necessarias)}}`,
+    `@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-oedp-moldura]{${escreve(noEscuro)}}}`,
+    regras,
+  ].join('\n');
+  return ESTILO_DA_MOLDURA;
+}
+
+/**
+ * O GUIÃO DA MOLDURA, e o que ele NÃO faz.
+ *
+ * `tabindex`, `role` e `aria-label` são atributos, e um atributo só entra numa
+ * caixa do documento mexendo nos bytes dela. É a única coisa deste bloco que
+ * não se resolve pela folha, e por isso é a única que leva guião.
+ *
+ * O ESSENCIAL NÃO DEPENDE DELE. Sem guião, o documento lê-se inteiro, com a
+ * moldura, os filetes corrigidos e as tabelas onde estão; o que falta é chegar
+ * de teclado a uma caixa que se desloca de lado. É a linha que o brief traça
+ * («sem guião novo para o essencial») e é a razão por que este guião não escreve
+ * nem apaga uma única palavra da página.
+ *
+ * Corre em duas passagens (`DOMContentLoaded` e `load`) porque as folhas dos
+ * documentos desenham gráficos na primeira e o que se desloca só se sabe depois
+ * do desenho, e volta a correr depois de uma mudança de largura, com espera:
+ * uma caixa que cabia a 1 280 deixa de caber a 390.
+ *
+ * @param {Lingua} lang
+ */
+function guiaoDaMoldura(lang) {
+  const s = t(lang);
+  /* `</` escapado: uma cadeia com `</script` dentro de um `<script>` fecha o
+     elemento a meio, e o rótulo é texto de tradução que ninguém volta a ler
+     daqui. */
+  const rotulo = JSON.stringify(s.estudos.documentoDeslocamento).replace(/<\//g, '<\\/');
+  return (
+    `(function(){var R=${rotulo};` +
+    `function nome(c){var t=c.querySelector("table"),l=t&&t.querySelector("caption"),x=l?l.textContent:"";` +
+    `if(!x){var a=c.previousElementSibling;while(a&&!/^H[1-6]$/.test(a.tagName))a=a.previousElementSibling;x=a?a.textContent:"";}` +
+    `x=(x||"").replace(/\\s+/g," ").trim();return x?R+": "+x.slice(0,80):R;}` +
+    `function passa(){var m=document.querySelector("[data-oedp-moldura]");if(!m)return;` +
+    /* Duas passagens: uma que só LÊ (medir a caixa depois de escrever nela
+       obrigava o navegador a refazer o cálculo a cada elemento), e outra que só
+       escreve. A leitura barata vem primeiro e o estilo calculado só se pede às
+       poucas que a leitura barata deixou passar. */
+    `var todos=m.querySelectorAll("*"),corre=[],i,el,cs,x,y;` +
+    `for(i=0;i<todos.length;i++){el=todos[i];` +
+    `x=el.scrollWidth-el.clientWidth>1;y=el.scrollHeight-el.clientHeight>1;if(!x&&!y)continue;` +
+    `cs=getComputedStyle(el);` +
+    `if(!(x&&/auto|scroll/.test(cs.overflowX))&&!(y&&/auto|scroll/.test(cs.overflowY)))continue;corre.push(el);}` +
+    /* OS NOMES SÃO ÚNICOS NA PÁGINA, e não por gosto: dois marcos com o mesmo
+       nome mandam quem ouve escolher entre coisas que soam iguais, e o axe
+       chama-lhe `landmark-unique`. Medidas as dezasseis páginas: seis têm
+       caixas que caem no mesmo nome (as de `onde-esta-a-agua`, que não têm
+       legenda nem título por cima, e três tabelas de pessoas que se repetem em
+       `evora-os-pelouros`). Onde há repetição, todas as do grupo levam a sua
+       ordem, e não só a segunda: «(1)» e «(2)» dizem-se um ao outro, e um nome
+       nu ao lado de um «(2)» não diz nada. */
+    `var nomes=[],conta={},k;` +
+    `for(i=0;i<corre.length;i++){k=nome(corre[i]);nomes.push(k);conta[k]=(conta[k]||0)+1;}` +
+    `var vistos={};` +
+    `for(i=0;i<corre.length;i++){el=corre[i];k=nomes[i];` +
+    `if(conta[k]>1){vistos[k]=(vistos[k]||0)+1;k=k+" ("+vistos[k]+")";}` +
+    `if(!el.hasAttribute("tabindex"))el.setAttribute("tabindex","0");` +
+    `if(!el.hasAttribute("role"))el.setAttribute("role","region");` +
+    `if(!el.getAttribute("aria-label")&&!el.getAttribute("aria-labelledby"))el.setAttribute("aria-label",k);}}` +
+    `if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",passa);else passa();` +
+    `window.addEventListener("load",passa);` +
+    `var e;window.addEventListener("resize",function(){clearTimeout(e);e=setTimeout(passa,200);});})();`
+  );
+}
+
+/**
  * ---------------------------------------------------------------------------
  * A PROVA DOS BYTES, POR FATIAS E NÃO POR RECÁLCULO (segunda passagem)
  * ---------------------------------------------------------------------------
@@ -906,10 +1184,27 @@ export function regiaoDaCabeca(texto) {
  * Esta prova é independente porque não passa pelo transformador: lê os bytes do
  * ficheiro de origem, lê os bytes do ficheiro construído, e compara FATIAS.
  *
- *   · a cauda: os bytes do construído a seguir à faixa têm de ser, byte a byte,
- *     os bytes do original a seguir ao seu `<body>`. Como a faixa é a última
- *     coisa que a casa insere e nada se acrescenta abaixo dela, o construído
- *     TERMINA com essa cauda, e a comparação é uma subtracção de comprimentos;
+ * A GEOMETRIA MUDOU COM A MOLDURA (bloco F1.8, 03.09.2026). Até aqui a faixa
+ * era a última coisa que a casa inseria e o construído TERMINAVA com a cauda do
+ * original, e por isso bastava uma subtracção de comprimentos. Agora o corpo do
+ * documento entra dentro de um elemento da casa, e a prova passa a descascar o
+ * construído pelo fim, por sufixos, quatro vezes:
+ *
+ *   1. a CAUDA: do primeiro `</body>` de verdade do original até ao fim do
+ *      ficheiro, byte a byte;
+ *   2. o FECHO da moldura (`</main>` ou `</div>`), a cadeia fixa que a casa lá
+ *      pôs;
+ *   3. o CORPO: os bytes do original entre o `<body>` e esse `</body>`, byte a
+ *      byte. É esta fatia que apanha um carácter mudado no meio do documento, e
+ *      é sobre ela que a régua do bloco planta o conhecido-positivo;
+ *   4. a ABERTURA da moldura, a outra cadeia fixa.
+ *
+ * O que fica acima da abertura é markup da casa (a faixa, a folha e o guião) e
+ * não se confere aqui: confere-se no portão, campo a campo, contra o que ele
+ * espera encontrar. O provador não sabe compor nada da casa, e é por isso que
+ * continua a ser uma prova e não um espelho: as três cadeias que conhece
+ * (`MARCA_DOS_ROBOS` e as duas da moldura) são fixas e não dependem da língua.
+ *
  *   · a cabeça: tirar do construído a única ocorrência de `MARCA_DOS_ROBOS`
  *     devolve, entre o `<head>` e o `<body>`, exactamente os bytes do original
  *     entre os seus.
@@ -929,22 +1224,53 @@ export function provaDosBytes(bruto, construido) {
    */
   const bytesAte = (texto, i) => Buffer.byteLength(texto.slice(0, i), 'utf8');
 
-  const corpoO = etiquetaReal(bruto, 'body', zonasOpacas(bruto));
+  const zonasO = zonasOpacas(bruto);
+  const corpoO = etiquetaReal(bruto, 'body', zonasO);
   if (!corpoO) return 'o original não tem um `<body>` de verdade.';
+  const fechoO = fechoReal(bruto, 'body', zonasO, { desde: corpoO.fim });
+  const fimDoCorpo = fechoO ? fechoO.inicio : bruto.length;
+  const moldura = molduraDe(bruto);
 
-  /* A cauda. */
-  const cauda = bufO.subarray(bytesAte(bruto, corpoO.fim));
-  if (bufC.length < cauda.length) {
-    return `o construído (${bufC.length} bytes) é mais curto do que a cauda do original (${cauda.length}).`;
-  }
-  const caudaC = bufC.subarray(bufC.length - cauda.length);
-  if (Buffer.compare(cauda, caudaC) !== 0) {
-    let i = 0;
-    while (i < cauda.length && cauda[i] === caudaC[i]) i++;
-    return (
-      `os bytes abaixo da faixa não são os do original: diferem no byte ${i} da cauda ` +
-      `(original ${cauda[i]}, construído ${caudaC[i]}).`
-    );
+  /* AS QUATRO FATIAS, DESCASCADAS PELO FIM. */
+  let fim = bufC.length;
+  /**
+   * @param {Buffer} esperado
+   * @param {string} nome
+   * @returns {string | null}
+   */
+  const descasca = (esperado, nome) => {
+    if (fim < esperado.length) {
+      return (
+        `o construído acaba antes de ${nome}: faltam ${esperado.length - fim} dos ` +
+        `${esperado.length} bytes que se esperavam.`
+      );
+    }
+    const visto = bufC.subarray(fim - esperado.length, fim);
+    if (Buffer.compare(esperado, visto) !== 0) {
+      let i = 0;
+      while (i < esperado.length && esperado[i] === visto[i]) i++;
+      return (
+        `${nome} não são os bytes do original: diferem no byte ${i} de ${esperado.length} ` +
+        `(original ${esperado[i]}, construído ${visto[i]}).`
+      );
+    }
+    fim -= esperado.length;
+    return null;
+  };
+
+  /** @type {Array<[Buffer, string]>} */
+  const fatias = [
+    [bufO.subarray(bytesAte(bruto, fimDoCorpo)), 'a cauda, do `</body>` ao fim do ficheiro,'],
+    [Buffer.from(moldura.fecha, 'utf8'), `o fecho da moldura (\`${moldura.fecha}\`)`],
+    [
+      bufO.subarray(bytesAte(bruto, corpoO.fim), bytesAte(bruto, fimDoCorpo)),
+      'os bytes do corpo do documento',
+    ],
+    [Buffer.from(moldura.abre, 'utf8'), `a abertura da moldura (\`${moldura.abre}\`)`],
+  ];
+  for (const [esperado, nome] of fatias) {
+    const falha = descasca(esperado, nome);
+    if (falha) return falha;
   }
 
   /* A cabeça. */
@@ -974,11 +1300,18 @@ export function provaDosBytes(bruto, construido) {
 }
 
 /**
- * O documento com a faixa por cima.
+ * O documento com a faixa por cima e a moldura à volta.
  *
  * A faixa entra logo a seguir ao `<body>`, que é o único sítio onde não
- * atravessa nada: acima dela fica o `<head>` do documento, intacto; abaixo,
- * o documento inteiro, byte a byte.
+ * atravessa nada: acima dela fica o `<head>` do documento, intacto. A seguir à
+ * faixa entram a folha e o guião da moldura, e depois a abertura; o fecho entra
+ * antes do primeiro `</body>` de verdade. Entre a abertura e o fecho vai o
+ * documento inteiro, byte a byte.
+ *
+ * A FAIXA FICA FORA DA MOLDURA, e é essa a razão de ela entrar primeiro: quem
+ * usa um leitor de ecrã salta para o marco principal e cai no documento, e não
+ * na mobília da casa. A folha e o guião ficam também fora, porque não são
+ * conteúdo: um `<style>` e um `<script>` não desenham caixa nenhuma.
  *
  * @param {string} bruto o ficheiro tal como está em studies-src/
  * @param {{ slug: string, lang: Lingua }} onde
@@ -991,14 +1324,28 @@ export function comFaixa(bruto, { slug, lang }) {
      onde ela fica fora do corpo e a prova da cauda deixa de ter âncora. Os
      dezasseis têm `<body>`; um que não tenha é um ficheiro que ninguém
      conferiu, e diz-se em vez de se remendar. */
-  const corpo = etiquetaReal(bruto, 'body', zonasOpacas(bruto));
-  if (corpo) {
-    return bruto.slice(0, corpo.fim) + marca + bruto.slice(corpo.fim);
+  const zonas = zonasOpacas(bruto);
+  const corpo = etiquetaReal(bruto, 'body', zonas);
+  if (!corpo) {
+    throw new Error(
+      `documentos: o documento "${slug}" (${lang}) não tem um <body> de verdade, e a faixa não ` +
+        `sabe onde entrar. Um documento de estudo é um ficheiro HTML completo e auto-contido.`,
+    );
   }
 
-  throw new Error(
-    `documentos: o documento "${slug}" (${lang}) não tem um <body> de verdade, e a faixa não ` +
-      `sabe onde entrar. Um documento de estudo é um ficheiro HTML completo e auto-contido.`,
+  const moldura = molduraDe(bruto);
+  const fecho = fechoReal(bruto, 'body', zonas, { desde: corpo.fim });
+  const fimDoCorpo = fecho ? fecho.inicio : bruto.length;
+
+  return (
+    bruto.slice(0, corpo.fim) +
+    marca +
+    `<style>${estiloDaMoldura()}</style>` +
+    `<script>${guiaoDaMoldura(lang)}</script>` +
+    moldura.abre +
+    bruto.slice(corpo.fim, fimDoCorpo) +
+    moldura.fecha +
+    bruto.slice(fimDoCorpo)
   );
 }
 
