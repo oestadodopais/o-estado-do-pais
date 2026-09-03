@@ -397,18 +397,36 @@ for (const edicao of ['pt', 'en']) {
   await p.goto(`${base}${rota}`, { waitUntil: 'networkidle' });
   await p.evaluate(() => document.fonts.ready);
 
-  /* ---------------------------------------------------------------- A2 · o comando */
+  /* ---------------------------------------------------------------- A2 · o âmbito
+     ---------------------------------------------------------------------------
+     A CÉLULA MUDOU DE OBJECTO COM O BLOCO F1.1 (03.09.2026), e não foi desligada.
+     Media «um comando com "País", "Região" e "Concelho", e nenhum destino de
+     telemóvel à parte»: o item A2 das correções de 25.08 juntava num comando só
+     as duas caras que o mesmo mecanismo tinha, a do telemóvel e a do computador.
+     O comando saiu da página inteira no F1.1, com a palavra «Âmbito» que o
+     nomeava (achado C6 e decisão 3.4 da auditoria de UX; o brief §1, item 6: «os
+     dois comandos saem e o que fica é o menu e o cabeçalho»).
+
+     O QUE O ITEM A2 PROTEGIA CONTINUA A MEDIR-SE, e é isso que esta célula
+     passa a fazer: as quatro camadas do território alcançam-se de UM SÓ SÍTIO,
+     que agora é o menu, e continua a não haver um segundo caminho só para o
+     telemóvel. As quatro portas conferem-se pelo `href` e não pelo texto, porque
+     o texto é a etiqueta e a porta é o destino. */
   const comando = await p.evaluate(() => {
-    const segs = [...document.querySelectorAll('[data-comando] [data-modo]')];
-    const visiveis = segs.filter((a) => a.getBoundingClientRect().width > 0);
+    const menu = [...document.querySelectorAll('.nav-principal a')].map((a) =>
+      a.getAttribute('href'),
+    );
     return {
-      modos: visiveis.map((a) => a.getAttribute('data-modo')),
-      rotulos: visiveis.map((a) => a.textContent.replace(/\s+/g, ' ').trim()),
-      papeis: visiveis.map((a) => a.getAttribute('role')),
-      hrefs: visiveis.map((a) => a.getAttribute('href')),
+      menu,
+      comandos: document.querySelectorAll('[data-comando]').length,
       moveis: document.querySelectorAll('.movel-destino, .movel-selo').length,
     };
   });
+  const PORTAS_DO_AMBITO =
+    edicao === 'pt'
+      ? ['/municipios', '/regioes', '/distritos', '/areas']
+      : ['/en/municipalities', '/en/regions', '/en/districts', '/en/areas'];
+  const emFaltaNoMenu = PORTAS_DO_AMBITO.filter((h) => !comando.menu.includes(h));
   /* «REGIÃO» VOLTOU AO COMANDO, E VOLTOU COMO PORTA (Emenda 21b, 27.08.2026).
      Eram duas posições desde 25.08, quando a terceira saiu com a régua da
      convergência «até haver a página das regiões»; a página existe, e a posição
@@ -421,16 +439,12 @@ for (const edicao of ['pt', 'en']) {
      uma porta que se comportasse como um interruptor — é a mesma correcção que a
      célula 2i·5 da matriz levou no mesmo dia. */
   conta(
-    `A2 · um comando com «País», «Região» e «Concelho», e nenhum destino de telemóvel à parte · 390 ${edicao}`,
-    comando.modos.join(',') === 'pais,regiao,municipio' &&
-      comando.papeis.filter((r, i) => comando.modos[i] !== 'regiao').every((r) => r === 'button') &&
-      comando.papeis[comando.modos.indexOf('regiao')] === null &&
-      comando.hrefs[comando.modos.indexOf('regiao')] ===
-        (edicao === 'pt' ? '/regioes' : '/en/regions') &&
-      comando.moveis === 0,
-    `${comando.rotulos.join(' · ')} → ${comando.hrefs.join(' ')} · papéis ${comando.papeis
-      .map((r) => r ?? 'ligação')
-      .join('/')} · ${comando.moveis} destino(s) do telemóvel`,
+    `A2 · as quatro camadas do território no menu, um só caminho, e nenhum destino de telemóvel à parte · 390 ${edicao}`,
+    emFaltaNoMenu.length === 0 && comando.comandos === 0 && comando.moveis === 0,
+    `menu com ${comando.menu.length} porta(s)` +
+      (emFaltaNoMenu.length ? ` · faltam ${emFaltaNoMenu.join(', ')}` : ' · as quatro lá estão') +
+      ` · ${comando.comandos} linha(s) de comando na página (o F1.1 tirou-a)` +
+      ` · ${comando.moveis} destino(s) do telemóvel`,
   );
 
   /* ---------------------------------------------------------------- A4 · o mapa */
@@ -481,34 +495,40 @@ for (const edicao of ['pt', 'en']) {
     `svg ${mapa.svg}px (a Emenda 20c manda rendê-lo; a 18 mandava-o fora) · ${mapa.pontos} ponto(s) com caixa, que é o que saiu com a Emenda 20a · pesquisa à vista ${mapa.pesquisaVisivel} · depois da lede ${mapa.pesquisaDepoisDaLede} · rótulo «${mapa.rotulo}» · linha dos 308 à vista ${mapa.linhaVisivel}, a ${mapa.distanciaDaLinha}px da pesquisa`,
   );
 
-  /* -------------------------------------------------- A1 · o comando põe a pesquisa à vista */
-  /* O toque pode não chegar a acontecer — um estrago que volte a esconder o
-     comando no telemóvel deixa-o invisível —, e nesse caso a régua tem de dizer
-     o que mediu em vez de rebentar: uma exceção aqui levaria consigo o relatório
-     das outras trinta e uma. O `catch` fica com o motivo, e a célula falha com
-     ele à vista. */
-  const toque = await p
-    .tap('[data-comando] [data-modo="municipio"]', { timeout: 5000 })
-    .then(() => 'tocado')
-    .catch((e) => `sem toque: ${String(e.message).split('\n')[0]}`);
-  await p.waitForTimeout(250);
+  /* --------------------------------------------- A1 · a busca sem gesto nenhum
+     ---------------------------------------------------------------------------
+     A CÉLULA MUDOU DE OBJECTO COM O BLOCO F1.1 (03.09.2026), e não foi desligada.
+     Media «"Concelho" revela a pesquisa dentro do ecrã, com o foco no campo»: o
+     item A1 das correções de 25.08 exigia que o comando pusesse a busca à vista
+     sem a mandar procurar. O comando saiu, e a busca deixou de precisar de ser
+     revelada: subiu para debaixo da manchete e está no primeiro ecrã sem gesto
+     nenhum, que é mais do que a célula pedia (brief F1.1, item 3).
+
+     A EXIGÊNCIA SOBE COM A FORMA: já não é «dentro do ecrã depois de um toque»,
+     é «inteira dentro do ecrã do telemóvel pequeno, sem toque», e o campo tem de
+     receber o foco pelo teclado, que era a segunda metade da célula antiga. O
+     anúncio vivo deixou de ser exigido aqui porque nada muda de estado: um
+     `aria-live` que anuncia a chegada de uma coisa que já estava na página é
+     ruído, e a região continua a existir para o que a página ainda muda. */
   const a1 = await p.evaluate(() => {
     const el = document.querySelector('#pesquisa');
     const r = el.getBoundingClientRect();
+    const campo = document.querySelector('#pesquisa-concelho');
+    if (campo) campo.focus();
     return {
       topo: +r.top.toFixed(1),
       fundo: +r.bottom.toFixed(1),
       ecra: innerHeight,
-      dentro: r.top >= 0 && r.top < innerHeight,
+      dentro: r.top >= 0 && r.bottom <= innerHeight,
       foco: document.activeElement ? document.activeElement.id || document.activeElement.tagName : null,
-      anuncio: document.querySelector('[data-anuncio]')?.textContent.replace(/\s+/g, ' ').trim() ?? '',
+      forma: document.querySelectorAll('#pesquisa form[action]').length,
       endereco: location.search,
     };
   });
   conta(
-    `A1 · «Concelho» revela a pesquisa dentro do ecrã, com o foco no campo · 390 ${edicao}`,
-    toque === 'tocado' && a1.dentro && a1.foco === 'pesquisa-concelho' && a1.anuncio.length > 0,
-    `${toque} · topo ${a1.topo} de ${a1.ecra} (dentro: ${a1.dentro}) · foco «${a1.foco}» · anúncio «${a1.anuncio}» · endereço «${a1.endereco}»`,
+    `A1 · a busca do concelho inteira no primeiro ecrã, sem gesto, e o campo recebe o foco · 390 ${edicao}`,
+    a1.dentro && a1.foco === 'pesquisa-concelho' && a1.forma === 1,
+    `topo ${a1.topo}, fundo ${a1.fundo} de ${a1.ecra} (dentro: ${a1.dentro}) · foco «${a1.foco}» · ${a1.forma} formulário(s) com destino · endereço «${a1.endereco}»`,
   );
   if (edicao === 'pt') medidas.a1 = a1;
 
@@ -560,6 +580,18 @@ for (const edicao of ['pt', 'en']) {
       temaNoMenu: !!temaNoMenu,
       temaNaMobiliaVisivel: !!temaNaMobilia && temaNaMobilia.getBoundingClientRect().width > 0,
       leituras: [...document.querySelectorAll('.masthead-furniture .mob-leitura')].length,
+      /* AS LEITURAS VISÍVEIS, E NÃO AS DO DOCUMENTO (F1.1, item 10, 03.09.2026).
+         A mobília tem três leituras desde o bloco do corredor (01.09.2026) e a
+         célula exigia duas: estava vermelha desde esse dia, e a leitura de
+         partida deste bloco mediu-a vermelha na árvore de origem. O achado D6 de
+         25.08 pede a mobília numa linha no telemóvel, e a folha passa a mostrar
+         ali UMA das três; as outras duas voltam a partir de 641 px, com as
+         mesmas cadeias e as mesmas portas, e nenhuma sai do documento. A célula
+         mede as duas coisas: quantas o documento tem, e quantas o ecrã pequeno
+         mostra. */
+      leiturasVisiveis: [...document.querySelectorAll('.masthead-furniture .mob-leitura')].filter(
+        (e) => e.checkVisibility({ contentVisibilityAuto: true, visibilityProperty: true }),
+      ).length,
       marcaLinhas: (() => {
         const m = document.querySelector('.wordmark');
         if (!m) return null;
@@ -575,13 +607,14 @@ for (const edicao of ['pt', 'en']) {
     cabeca.cabecaAlt < limiar40 &&
       cabeca.manchete !== null &&
       cabeca.manchete < limiar40 &&
-      cabeca.leituras === 2 &&
+      cabeca.leituras === 3 &&
+      cabeca.leiturasVisiveis === 1 &&
       cabeca.marcaLinhas === 1 &&
       cabeca.temaNoMenu &&
       !cabeca.temaNaMobiliaVisivel,
     `cabeça ${cabeca.cabecaAlt}px · manchete a ${cabeca.manchete}px · 40% = ${limiar40.toFixed(
       1,
-    )}px · marca em ${cabeca.marcaLinhas} linha(s) · ${cabeca.leituras} leituras · tema dentro do menu ${cabeca.temaNoMenu}, fora da mobília ${!cabeca.temaNaMobiliaVisivel}`,
+    )}px · marca em ${cabeca.marcaLinhas} linha(s) · ${cabeca.leituras} leituras no documento, ${cabeca.leiturasVisiveis} à vista · tema dentro do menu ${cabeca.temaNoMenu}, fora da mobília ${!cabeca.temaNaMobiliaVisivel}`,
   );
   if (edicao === 'pt') medidas.cabeca390 = cabeca;
 
