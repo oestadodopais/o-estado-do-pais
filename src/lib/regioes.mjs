@@ -33,7 +33,12 @@
 import { REGIOES } from '../data/regioes.mjs';
 import { loadClaims } from './ledger.mjs';
 
-/** As afirmações que uma entrada precisa de ter publicadas para se desenhar. */
+/**
+ * As afirmações que uma entrada precisa de ter publicadas para se desenhar.
+ *
+ * @param {(typeof REGIOES)[number]} r
+ * @param {Map<string, Linha>} claims
+ */
 function temLinhas(r, claims) {
   return claims.has(r.valor) && claims.has(r.distancia);
 }
@@ -62,7 +67,11 @@ export function slugsDasRegioes() {
   return regioesComPagina().map((r) => r.slug);
 }
 
-/** Uma região pelo seu nome no endereço, ou `null` se não tiver página. */
+/**
+ * Uma região pelo seu nome no endereço, ou `null` se não tiver página.
+ *
+ * @param {string} slug
+ */
 export function regiaoDoSlug(slug) {
   return regioesComPagina().find((r) => r.slug === slug) ?? null;
 }

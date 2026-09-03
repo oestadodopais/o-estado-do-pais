@@ -36,16 +36,21 @@ import { POR_VERIFICAR } from './marcador.mjs';
  * arquivo. Um trabalho sem tema atribuído fica com `subject: null`, e a página
  * di-lo por palavras em vez de inventar um.
  */
+/** @type {Record<string, ParDeLinguas>} */
 export const SUBJECTS = {
   evora: { pt: 'Évora', en: 'Évora' },
 };
 
 /** O nome legível de um tema, ou null quando não há tema atribuído. */
+/**
+ * @param {string | null | undefined} subject
+ * @param {string} [lang]
+ */
 export function subjectLabel(subject, lang = 'pt') {
   if (!subject) return null;
   const s = SUBJECTS[subject];
   if (!s) throw new Error(`studies: tema desconhecido "${subject}". Acrescente-o a SUBJECTS.`);
-  return s[lang] ?? s.pt;
+  return /** @type {Record<string, string>} */ (/** @type {unknown} */ (s))[lang] ?? s.pt;
 }
 
 export const WORKS = [
@@ -453,8 +458,8 @@ export const EDITIONS = WORKS.flatMap((w) =>
  */
 export const ESTUDOS_DE_DADOS = new Map(
   [...WORKS, ...INTERNAL_SOURCES]
-    .filter((e) => e.conjunto)
-    .map((e) => [e.id, e.conjunto]),
+    .filter((e) => 'conjunto' in e && typeof e.conjunto === 'string')
+    .map((e) => [e.id, /** @type {ChaveDeRota} */ (e.conjunto)]),
 );
 
 /** Ids aceites no campo `study` de uma linha do livro-razão. */
@@ -463,11 +468,17 @@ export const STUDY_IDS = new Set([
   ...INTERNAL_SOURCES.map((s) => s.id),
 ]);
 
+/** @param {string} id */
 export function workById(id) {
   return WORKS.find((w) => w.id === id) ?? null;
 }
 
-/** Nome legível de um estudo, para a etiqueta de proveniência. */
+/**
+ * Nome legível de um estudo, para a etiqueta de proveniência.
+ *
+ * @param {string} id
+ * @param {string} [lang]
+ */
 export function studyLabel(id, lang = 'pt') {
   return studyTitle(id, lang).titulo;
 }
@@ -502,8 +513,12 @@ export function studyLabel(id, lang = 'pt') {
  *
  * A decisão é do TEXTO e não da edição: o que a marca diz é em que língua está
  * a cadeia, e uma cadeia que também é título português não está em inglês.
+ *
+ * @param {string} titulo
+ * @param {string} [lang]
  */
 export function linguaDoTitulo(titulo, lang = 'pt') {
+  /** @param {string} l */
   const marca = (l) => (l === 'pt' ? 'pt-PT' : l);
   const daPagina = marca(lang);
   const linguas = new Set();
@@ -531,6 +546,10 @@ export function linguaDoTitulo(titulo, lang = 'pt') {
   return doTexto === daPagina ? null : doTexto;
 }
 
+/**
+ * @param {string} id
+ * @param {string} [lang]
+ */
 export function studyTitle(id, lang = 'pt') {
   const w = workById(id);
   if (w) {
@@ -538,7 +557,10 @@ export function studyTitle(id, lang = 'pt') {
     return { titulo: preferred.title, lingua: linguaDoTitulo(preferred.title, lang) };
   }
   const internal = INTERNAL_SOURCES.find((s) => s.id === id);
-  if (internal) return { titulo: internal.label[lang] ?? internal.label.pt, lingua: null };
+  if (internal) {
+    const rotulo = /** @type {Record<string, string>} */ (internal.label);
+    return { titulo: rotulo[lang] ?? rotulo.pt, lingua: null };
+  }
   return { titulo: id, lingua: null };
 }
 

@@ -14,17 +14,26 @@
  */
 
 import { routePath } from './routes.mjs';
-import { eDerivada } from './ledger.mjs';
+import { eDerivada, documentoDaLinha } from './ledger.mjs';
 import { t } from '../i18n/strings.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { SITE_NAME } from '../../site.config.mjs';
 
-/** O endereço da página de uma afirmação, numa língua. */
+/**
+ * O endereço da página de uma afirmação, numa língua.
+ *
+ * @param {string} id
+ * @param {Lingua} lang
+ */
 export function caminhoDaLinha(id, lang) {
   return routePath('linha', lang, { slug: id });
 }
 
-/** O endereço do índice do livro-razão, numa língua. */
+/**
+ * O endereço do índice do livro-razão, numa língua.
+ *
+ * @param {Lingua} lang
+ */
 export function caminhoDoLivro(lang) {
   return routePath('livro', lang);
 }
@@ -42,6 +51,9 @@ export function caminhoDoLivro(lang) {
  * unidade por ele. A regra é escrita pela forma da unidade e não por uma lista
  * de unidades, para não haver uma segunda lista a manter ao lado do
  * livro-razão.
+ *
+ * @param {Linha} claim
+ * @param {string | null} [lang]
  */
 export function valorComUnidade(claim, lang = null) {
   /* A LÍNGUA É OPCIONAL, E QUEM NÃO A PASSA FICA COM A CADEIA DO LIVRO-RAZÃO.
@@ -61,6 +73,9 @@ export function valorComUnidade(claim, lang = null) {
 /**
  * O título de uma página de linha: o valor, a unidade, a secção e a marca.
  * Sem prosa — é a linha a dizer o que é.
+ *
+ * @param {Linha} claim
+ * @param {Lingua} lang
  */
 export function tituloDaLinha(claim, lang) {
   const s = t(lang);
@@ -73,6 +88,9 @@ export function tituloDaLinha(claim, lang) {
  * Um campo por confirmar entra como está — «[a verificar]». A descrição de uma
  * linha incompleta diz que está incompleta; não se compõe uma frase que pareça
  * completa a partir de campos que não estão.
+ *
+ * @param {Linha} claim
+ * @param {Lingua} lang
  */
 export function descricaoDaLinha(claim, lang) {
   const s = t(lang);
@@ -82,8 +100,9 @@ export function descricaoDaLinha(claim, lang) {
     partes.push(s.prov.naoPublicado);
   }
   if (claim.source) partes.push(`${s.prov.fonte}: ${claim.source}`);
-  if (claim.document?.title) {
-    partes.push(`${claim.document.title} (${claim.document.edition})`);
+  const doc = documentoDaLinha(claim);
+  if (doc?.title) {
+    partes.push(`${doc.title} (${doc.edition})`);
   }
   /* «Lido a 2026-08-12», não «Lido a: 2026-08-12» — o rótulo já traz a
      preposição. A fonte leva dois pontos porque o rótulo é um substantivo. */

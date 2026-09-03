@@ -1,16 +1,49 @@
 {
   "extends": "./tsconfig.json",
+  // ---------------------------------------------------------------------------
+  // O PROGRAMA DO `npm run typecheck` (bloco F0.4, 03.09.2026)
+  // ---------------------------------------------------------------------------
+  //
+  // O `include` é a fronteira: o que está aqui é conferido com `checkJs`, e o
+  // que não está não entra no programa. Antes deste bloco o `checkJs` estava a
+  // `false` e um só ficheiro era conferido — o `astro.config.mjs`, o único com
+  // `// @ts-check`. Um portão nomeado como verde que não podia falhar comprava
+  // confiança com nada (auditoria de 02.09.2026, §4).
+  //
+  // `scripts/` FICA DE FORA até ao bloco F4.2 do plano de fiabilidade, e não é
+  // um esquecimento: medido a 03.09.2026, incluí-lo levanta 1 316 erros, 272
+  // deles só em `gate-html.mjs`. O relatório do bloco escreve o número.
+  //
+  // A CAMADA `.astro` é a segunda etapa, e também não está aqui: `astro check`
+  // corre-se à parte e o seu número está no relatório.
   "include": [
+    "src/tipos.d.ts",
     "astro.config.mjs",
     "site.config.mjs",
     "src/lib/**/*.mjs",
     "src/data/**/*.mjs",
-    "src/i18n/**/*.mjs",
-    "scripts/**/*.mjs"
+    "src/i18n/**/*.mjs"
   ],
+  // `src/data/sobre.mjs` É UM TEXTO GOVERNADO. A amarra das decisões
+  // (`scripts/check-ledger.mjs`) prende os bytes do ficheiro ao resumo sha256
+  // carimbado na entrada do `DECISIONS.md` que o governa: uma linha de JSDoc
+  // acrescentada lá dentro muda o resumo e fecha a construção, e reescrever o
+  // carimbo é acto de quem regista, não de quem constrói. Fica fora do programa
+  // com a razão escrita, e entra no dia em que uma entrada o nomear. Ninguém
+  // dentro do programa o importa (quem o lê é `SobreView.astro` e o portão), por
+  // isso a exclusão tira-o mesmo do programa e não o deixa por conferir em
+  // silêncio. O outro texto governado, `src/data/metodo.mjs`, está dentro e a 0.
+  "exclude": ["dist", "src/data/sobre.mjs"],
   "compilerOptions": {
     "noEmit": true,
     "allowJs": true,
-    "checkJs": false
+    // LIGADO A 03.09.2026 (bloco F0.4).
+    "checkJs": true,
+    // ESCRITO AQUI, E NÃO HERDADO EM SILÊNCIO (segunda passagem, leitura a frio,
+    // Major 4). O `astro/tsconfigs/strict` que a base estende já o punha a
+    // `true`, mas quem lê este ficheiro não o via, e uma régua herdada é uma
+    // régua que alguém pode desligar num ficheiro que ninguém volta a ler. Fica
+    // escrito onde o portão está.
+    "strict": true
   }
 }

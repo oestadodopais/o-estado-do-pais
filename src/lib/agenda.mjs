@@ -46,6 +46,11 @@ export const TIPOS_DE_HISTORICO = /** @type {const} */ ([
   'alteracao',
 ]);
 
+/** @param {string} ficheiro */
+/**
+ * @param {string} ficheiro
+ * @returns {unknown}
+ */
 function leJson(ficheiro) {
   try {
     if (!fs.existsSync(ficheiro)) return null;
@@ -57,29 +62,52 @@ function leJson(ficheiro) {
   }
 }
 
-/** O registo da agenda, ou `null` se ainda não atravessou. */
+/**
+ * O registo da agenda, ou `null` se ainda não atravessou.
+ *
+ * @returns {RegistoDaAgenda | null}
+ */
 export function agendaCruzada() {
-  const cru = leJson(FICHEIRO_DA_AGENDA);
-  return Array.isArray(cru?.itens) ? cru : null;
+  const cru = /** @type {{ itens?: unknown } | null} */ (leJson(FICHEIRO_DA_AGENDA));
+  return Array.isArray(cru?.itens) ? /** @type {RegistoDaAgenda} */ (cru) : null;
 }
 
-/** O registo do calendário das fontes, ou `null`. */
+/**
+ * O registo do calendário das fontes, ou `null`.
+ *
+ * @returns {RegistoDoCalendario | null}
+ */
 export function calendarioCruzado() {
-  const cru = leJson(FICHEIRO_DO_CALENDARIO);
-  return Array.isArray(cru?.eventos) ? cru : null;
+  const cru = /** @type {{ eventos?: unknown } | null} */ (leJson(FICHEIRO_DO_CALENDARIO));
+  return Array.isArray(cru?.eventos) ? /** @type {RegistoDoCalendario} */ (cru) : null;
 }
 
-/** Os itens de um estado, pela ordem do registo. */
+/**
+ * Os itens de um estado, pela ordem do registo.
+ *
+ * @param {string} estado
+ * @param {RegistoDaAgenda | null} [agenda]
+ */
 export function itensDoEstado(estado, agenda = agendaCruzada()) {
   return (agenda?.itens ?? []).filter((i) => i?.estado === estado);
 }
 
-/** Um acontecimento pelo seu id, para o critério que o nomeia. */
+/**
+ * Um acontecimento pelo seu id, para o critério que o nomeia.
+ *
+ * @param {string} id
+ * @param {RegistoDoCalendario | null} [calendario]
+ */
 export function eventoPorId(id, calendario = calendarioCruzado()) {
   return (calendario?.eventos ?? []).find((e) => e?.id === id) ?? null;
 }
 
-/** A data por que um acontecimento se ordena: a sua, ou o início da janela. */
+/**
+ * A data por que um acontecimento se ordena: a sua, ou o início da janela.
+ *
+ * @param {EventoDoCalendario | null | undefined} evento
+ * @returns {string | null}
+ */
 export function dataDoEvento(evento) {
   return evento?.data ?? evento?.janela?.inicio ?? null;
 }
@@ -91,8 +119,11 @@ export function dataDoEvento(evento) {
  * A separação é o próprio conteúdo do ficheiro: o marcador está presente
  * exactamente quando não há data nem janela, e é isso que separa uma lista do
  * que vai acontecer de uma lista do que se anda à espera.
+ *
+ * @param {RegistoDoCalendario | null} [calendario]
  */
 export function eventosOrdenados(calendario = calendarioCruzado()) {
+  /** @type {EventoDoCalendario[]} */
   const eventos = calendario?.eventos ?? [];
   const datados = eventos
     .filter((e) => dataDoEvento(e))
@@ -101,7 +132,11 @@ export function eventosOrdenados(calendario = calendarioCruzado()) {
   return { datados, semData };
 }
 
-/** A âncora de um acontecimento dentro da página. */
+/**
+ * A âncora de um acontecimento dentro da página.
+ *
+ * @param {string} id
+ */
 export function ancoraDoEvento(id) {
   return `ev-${id}`;
 }

@@ -40,12 +40,30 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 /**
+ * A razão de um erro apanhado, para a frase que se atira por cima dele.
+ *
+ * Um `catch` recebe o que quer que tenha sido atirado, e não um `Error`: a
+ * pergunta faz-se, e o que não for um erro diz-se como está. A versão anterior
+ * escrevia `/** @type {any} *\/` no `catch` e lia `.message` às cegas, o que
+ * imprimia «undefined» no dia em que alguém atirasse uma cadeia (segunda
+ * passagem do bloco F0.4, leitura a frio, Major 16).
+ *
+ * @param {unknown} erro
+ * @returns {string}
+ */
+function razaoDoErro(erro) {
+  return erro instanceof Error ? erro.message : String(erro);
+}
+
+
+/**
  * A raiz do repositório, procurada a subir, como em `src/lib/mapa.mjs` e
  * `src/lib/prova.mjs` e pela mesma razão: na construção, este módulo já não vive
  * em `src/lib/` — vive num pedaço empacotado dentro do `dist/`, e `import.meta.url`
  * apontaria para lá. Procura-se o ficheiro que a raiz tem e mais ninguém.
  */
 function encontraRaiz() {
+  /** @param {string} inicio */
   const subir = (inicio) => {
     let dir = inicio;
     for (let i = 0; i < 8; i++) {
@@ -104,7 +122,7 @@ export function sinalDaMarca() {
     cru = fs.readFileSync(FAVICON, 'utf8');
   } catch (erro) {
     throw new Error(
-      `não consegui ler public/favicon.svg (${erro.message}). ` +
+      `não consegui ler public/favicon.svg (${razaoDoErro(erro)}). ` +
         `É o ficheiro de onde o cabeçalho tira o sinal, e gera-se com ` +
         `\`node design/marca/exportar.mjs app\`.`,
     );

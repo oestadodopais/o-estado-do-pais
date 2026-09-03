@@ -2449,8 +2449,15 @@ export const STRINGS = {
   },
 };
 
-/** Todas as chaves, em profundidade, de um objecto de strings. */
+/**
+ * Todas as chaves, em profundidade, de um objecto de strings.
+ *
+ * @param {object} obj
+ * @param {string} [prefixo]
+ * @returns {string[]}
+ */
 function chaves(obj, prefixo = '') {
+  /** @type {string[]} */
   const out = [];
   for (const [k, v] of Object.entries(obj)) {
     const aqui = prefixo ? `${prefixo}.${k}` : k;
@@ -2479,6 +2486,7 @@ export function assertKeyParity() {
   return true;
 }
 
+/** @param {Lingua} lang */
 export function t(lang) {
   assertKeyParity();
   const s = STRINGS[lang];

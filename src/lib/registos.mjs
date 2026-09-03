@@ -27,6 +27,23 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+/**
+ * A razão de um erro apanhado, para a frase que se atira por cima dele.
+ *
+ * Um `catch` recebe o que quer que tenha sido atirado, e não um `Error`: a
+ * pergunta faz-se, e o que não for um erro diz-se como está. A versão anterior
+ * escrevia `/** @type {any} *\/` no `catch` e lia `.message` às cegas, o que
+ * imprimia «undefined» no dia em que alguém atirasse uma cadeia (segunda
+ * passagem do bloco F0.4, leitura a frio, Major 16).
+ *
+ * @param {unknown} erro
+ * @returns {string}
+ */
+function razaoDoErro(erro) {
+  return erro instanceof Error ? erro.message : String(erro);
+}
+
+
 /** A pasta dos registos, e o registo de travessia lá dentro. */
 export const PASTA = 'registos';
 export const MANIFESTO = 'manifest.json';
@@ -39,9 +56,11 @@ export const MANIFESTO = 'manifest.json';
  * caminho relativo a este ficheiro passaria a apontar para o sítio errado.
  */
 function encontraRegistos() {
+  /** @type {string[]} */
   const candidatos = [];
   if (process.env.OEDP_REGISTOS_DIR) candidatos.push(process.env.OEDP_REGISTOS_DIR);
 
+  /** @param {string} inicio */
   const subir = (inicio) => {
     let dir = inicio;
     for (let i = 0; i < 8; i++) {
@@ -67,6 +86,13 @@ function encontraRegistos() {
 
 export const REGISTOS_DIR = encontraRegistos();
 
+/**
+ * A pasta, já provada por `manifestoDosRegistos()`, que atira quando ela falta.
+ * Quem chega às funções de baixo passou por lá.
+ */
+const PASTA_PROVADA = () => /** @type {string} */ (REGISTOS_DIR);
+
+/** @type {{ exporter: string, origin: string, registos: Record<string, object> } | null} */
 let CACHE = null;
 
 /**
@@ -76,7 +102,7 @@ let CACHE = null;
  * declara páginas de leitura e não tem o registo de travessia não é um sítio com
  * uma funcionalidade em falta, é um sítio a servir texto sem proveniência.
  *
- * @returns {{ exporter: string, origin: string, registos: Record<string, object> }}
+ * @returns {ManifestoDosRegistos}
  */
 export function manifestoDosRegistos() {
   if (CACHE) return CACHE;
@@ -91,22 +117,79 @@ export function manifestoDosRegistos() {
   try {
     bruto = fs.readFileSync(ficheiro, 'utf8');
   } catch (erro) {
-    throw new Error(`registos: não consegui ler ${ficheiro}: ${erro.message}`);
+    throw new Error(`registos: não consegui ler ${ficheiro}: ${razaoDoErro(erro)}`);
   }
   let doc;
   try {
     doc = JSON.parse(bruto);
   } catch (erro) {
-    throw new Error(`registos: ${ficheiro} não é JSON legível: ${erro.message}`);
+    throw new Error(`registos: ${ficheiro} não é JSON legível: ${razaoDoErro(erro)}`);
   }
-  if (!doc || typeof doc.registos !== 'object' || doc.registos === null) {
-    throw new Error(`registos: ${ficheiro} não traz um objecto "registos".`);
+  if (!eManifestoDosRegistos(doc)) {
+    throw new Error(
+      `registos: ${ficheiro} não é um registo de travessia.\n` +
+        `  Precisa de "exporter" e "origin" (cadeias, quem o escreveu e de onde) e de um mapa ` +
+        `"registos". Escreve-o o exportador do motor: ` +
+        `python3 publisher/export_records_site.py --write`,
+    );
   }
   CACHE = doc;
-  return CACHE;
+  return doc;
+}
+
+/**
+ * O registo de travessia, conferido: as três chaves que este módulo promete a
+ * quem o lê, e não só a que o código antigo espreitava.
+ *
+ * Segunda passagem do bloco F0.4 (leitura a frio, Major 10): o tipo prometia
+ * `exporter` e `origin` e só `registos` era conferido, o que é o tipo a dizer
+ * uma coisa que ninguém tinha visto.
+ *
+ * @param {unknown} x
+ * @returns {x is ManifestoDosRegistos}
+ */
+export function eManifestoDosRegistos(x) {
+  if (typeof x !== 'object' || x === null || Array.isArray(x)) return false;
+  const m = /** @type {Record<string, unknown>} */ (x);
+  return (
+    typeof m.exporter === 'string' &&
+    typeof m.origin === 'string' &&
+    typeof m.registos === 'object' &&
+    m.registos !== null &&
+    !Array.isArray(m.registos)
+  );
+}
+
+/**
+ * Um registo de conteúdo, conferido: um mapa com uma lista `blocks` em que cada
+ * bloco declara o seu índice e o seu género.
+ *
+ * Não confere o conteúdo de cada unidade: quem o lê é o renderizador, que atira
+ * uma `FalhaDoRegisto` com a coordenada quando encontra o que não sabe compor.
+ * O que aqui se confere é a forma de que o percurso depende para não rebentar.
+ *
+ * @param {unknown} x
+ * @returns {x is RegistoDeConteudo}
+ */
+export function eRegistoDeConteudo(x) {
+  if (typeof x !== 'object' || x === null || Array.isArray(x)) return false;
+  const r = /** @type {Record<string, unknown>} */ (x);
+  if (!Array.isArray(r.blocks)) return false;
+  return r.blocks.every(
+    (b) =>
+      typeof b === 'object' &&
+      b !== null &&
+      !Array.isArray(b) &&
+      typeof b.i === 'number' &&
+      typeof b.kind === 'string',
+  );
 }
 
 /** A chave de uma edição no manifesto. */
+/**
+ * @param {string} slug
+ * @param {string} lang
+ */
 const chaveDe = (slug, lang) => `${slug}/${lang}`;
 
 /**
@@ -124,20 +207,29 @@ export function todosOsRegistos() {
       return {
         slug,
         lang,
-        ficheiro: path.join(REGISTOS_DIR, slug, `${lang}.record.json`),
-        cortes: path.join(REGISTOS_DIR, slug, `${lang}.cortes.json`),
+        ficheiro: path.join(PASTA_PROVADA(), slug, `${lang}.record.json`),
+        cortes: path.join(PASTA_PROVADA(), slug, `${lang}.cortes.json`),
         entrada,
       };
     })
     .sort((a, b) => chaveDe(a.slug, a.lang).localeCompare(chaveDe(b.slug, b.lang)));
 }
 
-/** Se uma edição tem registo. É isto que a página do estudo pergunta. */
+/**
+ * Se uma edição tem registo. É isto que a página do estudo pergunta.
+ *
+ * @param {string} slug
+ * @param {string} lang
+ */
 export function temRegisto(slug, lang) {
   return Object.hasOwn(manifestoDosRegistos().registos, chaveDe(slug, lang));
 }
 
-/** Os registos de um estudo, nas línguas que o tenham. */
+/**
+ * Os registos de um estudo, nas línguas que o tenham.
+ *
+ * @param {string} slug
+ */
 export function registosDoEstudo(slug) {
   return todosOsRegistos().filter((r) => r.slug === slug);
 }
@@ -150,22 +242,35 @@ export function registosDoEstudo(slug) {
  * **Atira** quando o manifesto a declara e o ficheiro não está lá: um manifesto
  * que nomeia um ficheiro que não existe é o registo a dizer uma coisa que o
  * disco não confirma, e isso é um erro e não uma ausência.
+ *
+ * @param {string} slug
+ * @param {string} lang
+ * @returns {RegistoDeConteudo | null}
  */
 export function registoDaEdicao(slug, lang) {
   if (!temRegisto(slug, lang)) return null;
-  const ficheiro = path.join(REGISTOS_DIR, slug, `${lang}.record.json`);
+  const ficheiro = path.join(PASTA_PROVADA(), slug, `${lang}.record.json`);
   let bruto;
   try {
     bruto = fs.readFileSync(ficheiro, 'utf8');
   } catch (erro) {
     throw new Error(
       `registos: o manifesto declara "${chaveDe(slug, lang)}" e não consegui ler ${ficheiro}: ` +
-        `${erro.message}`,
+        `${razaoDoErro(erro)}`,
     );
   }
+  let doc;
   try {
-    return JSON.parse(bruto);
+    doc = JSON.parse(bruto);
   } catch (erro) {
-    throw new Error(`registos: ${ficheiro} não é JSON legível: ${erro.message}`);
+    throw new Error(`registos: ${ficheiro} não é JSON legível: ${razaoDoErro(erro)}`);
   }
+  if (!eRegistoDeConteudo(doc)) {
+    throw new Error(
+      `registos: ${ficheiro} não é um registo de conteúdo.\n` +
+        `  Precisa de "blocks", uma lista em que cada bloco traz o seu índice "i" e o seu ` +
+        `género "kind". Escreve-o o exportador do motor.`,
+    );
+  }
+  return doc;
 }

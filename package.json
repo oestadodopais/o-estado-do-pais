@@ -29,8 +29,9 @@
     "stamp:version": "node scripts/stamp-version.mjs",
     "verify:deploy": "node scripts/verify-deploy.mjs",
     "provar:eyetext": "node scripts/provar-eyetext.mjs",
+    "provar:guardas": "node scripts/provar-guardas.mjs",
     "typecheck": "tsc -p tsconfig.check.json",
-    "verify": "npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && npm run gate:html && npm run check:fontes && npm run check:cadeia && npm run check:dados && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:voz && npm run check:lingua && npm run provar:eyetext && npm run check:mortos && npm run design:feixe",
+    "verify": "npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && npm run gate:html && npm run check:fontes && npm run check:cadeia && npm run check:dados && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:voz && npm run check:lingua && npm run provar:eyetext && npm run provar:guardas && npm run check:mortos && npm run design:feixe",
     "check:mortos": "node scripts/check-mortos.mjs --prova",
     "check:fontes": "node tests/linha/sem-resposta.mjs"
   },
@@ -43,6 +44,6 @@
     "js-yaml": "5.2.3",
     "node-html-parser": "9.0.1",
     "playwright": "^1.60.0",
-    "typescript": "^7.0.2"
+    "typescript": "7.0.2"
   }
 }

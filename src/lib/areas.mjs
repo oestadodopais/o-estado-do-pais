@@ -68,18 +68,26 @@ import { temRegisto } from './registos.mjs';
  * `estudos` limita uma regra a um ou mais estudos; sem ele, a regra vale para
  * todos. A expressão corre sobre o IDENTIFICADOR da linha, que é o nome do
  * assunto dela.
+ *
+ * @param {(typeof AREAS)[number]} area
+ * @param {string} id
+ * @param {Linha} claim
  */
 function materiaDaLinha(area, id, claim) {
   for (const m of area.materias) {
     for (const r of m.regras) {
-      if (r.estudos && !r.estudos.includes(claim.study)) continue;
+      if (r.estudos && !/** @type {readonly unknown[]} */ (r.estudos).includes(claim.study)) continue;
       if (r.id.test(id)) return { materia: m.materia, artigo: m.artigo, razao: r.razao };
     }
   }
   return null;
 }
 
-/** O nome legível de um estudo de dados, que não está em `WORKS`. */
+/**
+ * O nome legível de um estudo de dados, que não está em `WORKS`.
+ *
+ * @param {string} id
+ */
 function conjuntoInterno(id) {
   return INTERNAL_SOURCES.find((s) => s.id === id && s.conjunto) ?? null;
 }
@@ -93,6 +101,9 @@ function conjuntoInterno(id) {
  * Cada peça traz `materias`, que são as matérias desta área por que ela lá
  * entrou. Numa medida é sempre uma; num trabalho ou num conjunto podem ser mais
  * do que uma, porque as linhas dele tratam de assuntos diferentes.
+ *
+ * @param {(typeof AREAS)[number]} area
+ * @param {Map<string, Linha>} claims
  */
 function pecasDaArea(area, claims) {
   const trabalhos = new Map();
@@ -103,8 +114,9 @@ function pecasDaArea(area, claims) {
     const m = materiaDaLinha(area, id, c);
     if (!m) continue;
 
-    if (ESTUDOS_DE_DADOS.has(c.study)) {
-      const p = conjuntos.get(c.study) ?? { id: c.study, linhas: [], materias: new Set() };
+    const estudo = typeof c.study === 'string' ? c.study : null;
+    if (estudo !== null && ESTUDOS_DE_DADOS.has(estudo)) {
+      const p = conjuntos.get(estudo) ?? { id: estudo, linhas: [], materias: new Set() };
       p.linhas.push(id);
       p.materias.add(m.materia);
       conjuntos.set(c.study, p);
@@ -138,6 +150,7 @@ function pecasDaArea(area, claims) {
 
   /* OS NÚMEROS DA LEI EM QUE ESTA PÁGINA ASSENTA, pela ordem das matérias e sem
      repetir: é o que o selo da porta legal rende, uma vez por página. */
+  /** @type {string[]} */
   const artigos = [];
   for (const m of area.materias) {
     const tem =
@@ -188,7 +201,11 @@ export function slugsDasAreas() {
   return areasComPagina().map((a) => a.slug);
 }
 
-/** Uma área pelo seu nome no endereço, ou `null` se não tiver página. */
+/**
+ * Uma área pelo seu nome no endereço, ou `null` se não tiver página.
+ *
+ * @param {string} slug
+ */
 export function areaDoSlug(slug) {
   return areasComPagina().find((a) => a.slug === slug) ?? null;
 }
@@ -199,6 +216,9 @@ export function areaDoSlug(slug) {
  * É a mesma função que o resto do sítio usa para nomear um estudo: um título não
  * se traduz, e quem diz em que língua a cadeia está é `TituloDeTrabalho`, que a
  * rende. Devolve a cadeia, que é o que aquele componente recebe.
+ *
+ * @param {string} id
+ * @param {string} lang
  */
 export function nomeDoEstudo(id, lang) {
   return studyTitle(id, lang).titulo;
@@ -210,6 +230,9 @@ export function nomeDoEstudo(id, lang) {
  * Dos oito registos de conteúdo, seis são portugueses e dois ingleses: uma porta
  * para uma página que não foi construída é uma porta que não abre, e o portão
  * apanha-a. Devolve `true` quando há registo naquela língua.
+ *
+ * @param {string} slug
+ * @param {string} lang
  */
 export function temTexto(slug, lang) {
   return temRegisto(slug, lang);

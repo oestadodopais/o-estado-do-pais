@@ -168,7 +168,11 @@ export function jsonDoConjunto() {
   );
 }
 
-/** `/livro-razao/<id>.json` — uma linha, com o mesmo invólucro. */
+/**
+ * `/livro-razao/<id>.json` — uma linha, com o mesmo invólucro.
+ *
+ * @param {string} id
+ */
 export function jsonDaLinha(id) {
   return (
     JSON.stringify({ _: nota('uma'), licenca: licenca(), linha: linhaDoConjunto(getClaim(id)) }, null, 2) +
@@ -182,6 +186,8 @@ export function jsonDaLinha(id) {
  * O RFC 4180 fixa CRLF entre registos. Os dois ficheiros de `dados.mjs` usam LF
  * como todo o repositório, e continuam: são ficheiros da casa. Este diz que
  * segue o RFC, e por isso segue-o inteiro, aspas e fim de linha.
+ *
+ * @param {unknown} v
  */
 function campo(v) {
   const s = String(v ?? '');
@@ -191,6 +197,8 @@ function campo(v) {
 /**
  * O valor de uma célula: escalar como está, lista ou mapa em JSON, ausência
  * como célula vazia.
+ *
+ * @param {unknown} v
  */
 function celula(v) {
   if (v === null || v === undefined) return '';

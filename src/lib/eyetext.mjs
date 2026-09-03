@@ -112,12 +112,20 @@ export const ESPACOS = new Set(
   ].map((c) => String.fromCodePoint(c)),
 );
 
-/** Este caractere é espaço em branco para a leitura do olho? */
+/**
+ * Este caractere é espaço em branco para a leitura do olho?
+ *
+ * @param {string} c
+ */
 export function eEspaco(c) {
   return ESPACOS.has(c);
 }
 
-/** O texto sem espaço em branco nas duas pontas, pela classe da casa. */
+/**
+ * O texto sem espaço em branco nas duas pontas, pela classe da casa.
+ *
+ * @param {string} s
+ */
 export function apara(s) {
   let i = 0;
   let j = s.length;
@@ -126,14 +134,22 @@ export function apara(s) {
   return s.slice(i, j);
 }
 
-/** Quantos caracteres de espaço em branco há à cabeça, pela classe da casa. */
+/**
+ * Quantos caracteres de espaço em branco há à cabeça, pela classe da casa.
+ *
+ * @param {string} s
+ */
 export function cabecaDeEspaco(s) {
   let i = 0;
   while (i < s.length && eEspaco(s[i])) i++;
   return i;
 }
 
-/** Cada corrida de espaço em branco reduzida a um espaço, pela classe da casa. */
+/**
+ * Cada corrida de espaço em branco reduzida a um espaço, pela classe da casa.
+ *
+ * @param {string} s
+ */
 export function apertaEspacos(s) {
   let saida = '';
   let i = 0;
@@ -191,7 +207,11 @@ const DECLARACAO = /^[\t\n\f\r ]*<!DOCTYPE[^>]*>/i;
  */
 const MARCA_DE_ORDEM = '\uFEFF';
 
-/** O documento sem a marca de ordem de bytes à cabeça, se a tiver. */
+/**
+ * O documento sem a marca de ordem de bytes à cabeça, se a tiver.
+ *
+ * @param {unknown} html
+ */
 export function semMarcaDeOrdem(html) {
   const texto = String(html);
   return texto.startsWith(MARCA_DE_ORDEM) ? texto.slice(1) : texto;
@@ -210,9 +230,17 @@ export class Falha extends Error {}
  * cobria-os e cobria mais: com `class="foo\u00A0src-chip"` este sítio
  * reconhecia `src-chip` e deitava fora o nó inteiro, quando o navegador vê ali
  * uma classe só, chamada «foo\u00A0src-chip», e não a reconhece.
+ *
+ * `no` é um nó do `node-html-parser`, e a árvore mistura elementos com texto:
+ * o percurso pergunta ao nó o que ele é antes de lhe pedir o que quer que seja.
+ * O `getAttribute` só existe nos elementos, e é por isso que se pergunta com
+ * `?.` em vez de se afirmar que ele lá está.
+ *
+ * @param {import('node-html-parser').Node} no
+ * @param {string} classe
  */
 function temClasse(no, classe) {
-  const bruto = no.getAttribute?.('class');
+  const bruto = /** @type {import('node-html-parser').HTMLElement} */ (no).getAttribute?.('class');
   if (!bruto) return false;
   return String(bruto).split(/[\t\n\f\r ]+/).includes(classe);
 }
@@ -226,11 +254,16 @@ function temClasse(no, classe) {
  * de uma âncora é entregue ANTES da abertura da âncora que o traz, como o motor
  * o entrega desde 24.08.2026: entregue depois, ficava a pairar para o elemento
  * de linha seguinte, e as ligações do documento perdiam-se todas.
+ *
+ * @param {import('node-html-parser').Node} raiz um nó do `node-html-parser`
+ * @returns {[string, string][]}
  */
 function eventos(raiz) {
+  /** @type {[string, string][]} */
   const saida = [];
   let saltadas = 0;
 
+  /** @param {import('node-html-parser').Node | undefined} no */
   const anda = (no) => {
     if (!no) return;
     if (no.nodeType === NodeType.TEXT_NODE) {
@@ -247,7 +280,9 @@ function eventos(raiz) {
     if (temClasse(no, 'src-chip')) return;
 
     if (tag === 'a') {
-      const href = no.getAttribute('href');
+      /* A esta altura o nó é um elemento: a linha do `nodeType` acima já
+         regressou para tudo o que não seja um, e só um elemento tem etiqueta. */
+      const href = /** @type {import('node-html-parser').HTMLElement} */ (no).getAttribute('href');
       if (href) saida.push(['endereco', href]);
     }
     saida.push(['abre', tag]);
@@ -265,6 +300,7 @@ function eventos(raiz) {
   return saida;
 }
 
+/** @returns {UnidadeDoOlho} */
 const unidadeNova = () => ({ pedacos: [], intervalos: [] });
 
 /**
@@ -276,7 +312,7 @@ const unidadeNova = () => ({ pedacos: [], intervalos: [] });
  * assim que o leitor o vê: cada `div` na sua linha.
  *
  * @param {string} html
- * @returns {{kind: string, level?: number, ordered?: boolean, unidade?: object, items?: object[], rows?: object[][]}[]}
+ * @returns {BlocoDoOlho[]}
  */
 export function leBlocos(html) {
   const raiz = parse(semMarcaDeOrdem(html).replace(DECLARACAO, ''), {
@@ -285,14 +321,18 @@ export function leBlocos(html) {
   });
   const fluxo = eventos(raiz);
 
+  /** @type {BlocoDoOlho[]} */
   const blocos = [];
-  /** @type {{tag: string, unidade: object|null, hospedeiro: object|null}[]} */
+  /** @type {{tag: string, unidade: UnidadeDoOlho|null, hospedeiro: BlocoDoOlho|null}[]} */
   const molduras = [];
+  /** @type {UnidadeDoOlho|null} */
   let solto = null;
-  /** @type {{tag: string, href: string|null, unidade: object|null, inicio: number}[]} */
+  /** @type {{tag: string, href: string|null, unidade: UnidadeDoOlho|null, inicio: number}[]} */
   const pilhaDeLinha = [];
+  /** @type {string|null} */
   let enderecoPendente = null;
 
+  /** @param {string} genero */
   const hospedeiroDe = (genero) => {
     for (let i = molduras.length - 1; i >= 0; i--) {
       const h = molduras[i].hospedeiro;
@@ -368,11 +408,13 @@ export function leBlocos(html) {
         blocos.push({ kind: 'rule' });
         molduras.push({ tag, unidade: null, hospedeiro: null });
       } else if (tag === 'ul' || tag === 'ol') {
+        /** @type {BlocoDoOlho} */
         const bloco = { kind: 'list', ordered: tag === 'ol', items: [] };
         blocos.push(bloco);
         molduras.push({ tag, unidade: null, hospedeiro: bloco });
       } else if (tag === 'li') {
-        const hospedeiro = hospedeiroDe('list');
+        /* `hospedeiroDe('list')` só devolve blocos criados com `items`. */
+        const hospedeiro = /** @type {{ items: UnidadeDoOlho[] } | null} */ (hospedeiroDe('list'));
         if (hospedeiro === null) {
           throw new Falha('um <li> fora de qualquer lista: o passeio de blocos não sabe onde pôr o seu texto');
         }
@@ -380,18 +422,20 @@ export function leBlocos(html) {
         hospedeiro.items.push(unidade);
         molduras.push({ tag, unidade, hospedeiro: null });
       } else if (tag === 'table') {
+        /** @type {BlocoDoOlho} */
         const bloco = { kind: 'table', rows: [] };
         blocos.push(bloco);
         molduras.push({ tag, unidade: null, hospedeiro: bloco });
       } else if (tag === 'tr') {
-        const hospedeiro = hospedeiroDe('table');
+        /* `hospedeiroDe('table')` só devolve blocos criados com `rows`. */
+        const hospedeiro = /** @type {{ rows: UnidadeDoOlho[][] } | null} */ (hospedeiroDe('table'));
         if (hospedeiro === null) {
           throw new Falha('um <tr> fora de qualquer tabela: o passeio de blocos não sabe onde pôr as suas células');
         }
         hospedeiro.rows.push([]);
         molduras.push({ tag, unidade: null, hospedeiro: null });
       } else if (tag === 'td' || tag === 'th') {
-        const hospedeiro = hospedeiroDe('table');
+        const hospedeiro = /** @type {{ rows: UnidadeDoOlho[][] } | null} */ (hospedeiroDe('table'));
         if (hospedeiro === null || hospedeiro.rows.length === 0) {
           throw new Falha('uma célula fora de qualquer linha: o passeio de blocos não sabe onde pôr o seu texto');
         }
@@ -427,6 +471,7 @@ export function leBlocos(html) {
  * @param {string} s
  */
 export function apertaComMapa(s) {
+  /** @type {string[]} */
   const saida = [];
   const indice = new Array(s.length + 1).fill(0);
   let i = 0;
@@ -456,7 +501,7 @@ export function apertaComMapa(s) {
  * `visible_text`, e é a única diferença entre as duas.
  */
 export class Texto {
-  /** @param {{pedacos: string[], intervalos: object[], header?: boolean}} unidade */
+  /** @param {UnidadeDoOlho} unidade */
   constructor(unidade) {
     this.pedacos = unidade.pedacos;
     this.bruto = this.pedacos.join('');
@@ -464,6 +509,7 @@ export class Texto {
     this.indice = indice;
     this.cabeca = cabecaDeEspaco(texto);
     this.texto = apara(texto);
+    /** @type {number[]} */
     this.deslocamentos = [];
     let posicao = 0;
     for (const pedaco of this.pedacos) {
@@ -472,12 +518,21 @@ export class Texto {
     }
   }
 
-  /** A posição do texto apertado que corresponde a uma posição do texto bruto. */
+  /**
+   * A posição do texto apertado que corresponde a uma posição do texto bruto.
+   *
+   * @param {number} posicaoBruta
+   */
   em(posicaoBruta) {
     return Math.min(Math.max(this.indice[posicaoBruta] - this.cabeca, 0), this.texto.length);
   }
 
-  /** O intervalo, no texto apertado, coberto por uma corrida de pedaços. */
+  /**
+   * O intervalo, no texto apertado, coberto por uma corrida de pedaços.
+   *
+   * @param {number} inicio
+   * @param {number} fim
+   */
   intervaloDePedacos(inicio, fim) {
     const a = this.deslocamentos[inicio];
     const b = this.deslocamentos[fim - 1] + this.pedacos[fim - 1].length;
@@ -507,7 +562,12 @@ export class Texto {
   }
 }
 
-/** Todas as unidades que carregam texto, em ordem de documento. */
+/**
+ * Todas as unidades que carregam texto, em ordem de documento.
+ *
+ * @param {BlocoDoOlho[]} blocos
+ * @returns {Generator<UnidadeDoOlho>}
+ */
 export function* unidades(blocos) {
   for (const bloco of blocos) {
     if (bloco.kind === 'heading' || bloco.kind === 'paragraph') yield bloco.unidade;
@@ -516,7 +576,11 @@ export function* unidades(blocos) {
   }
 }
 
-/** O texto do olho de cada unidade de um HTML, em ordem de documento. */
+/**
+ * O texto do olho de cada unidade de um HTML, em ordem de documento.
+ *
+ * @param {string} html
+ */
 export function le(html) {
   return [...unidades(leBlocos(html))].map((u) => new Texto(u).texto);
 }
@@ -553,7 +617,11 @@ export function registoDoHtml(html) {
   });
 }
 
-/** O `<title>` de um HTML, sem entidades e sem espaço a mais. */
+/**
+ * O `<title>` de um HTML, sem entidades e sem espaço a mais.
+ *
+ * @param {unknown} html
+ */
 export function tituloDoHtml(html) {
   const achado = TITULO.exec(String(html));
   if (!achado) return '';
