@@ -1077,6 +1077,26 @@ function etiquetasReais(texto) {
   return saida;
 }
 
+/**
+ * UM SINAL DE ESCONDER, NA PRÓPRIA ETIQUETA (Minor 11, segunda passagem, para
+ * o `<h1>`, abaixo). `hidden`, `aria-hidden="true"` (com aspas simples,
+ * duplas ou nenhumas), ou um `display:none`/`visibility:hidden` DENTRO do
+ * valor do `style` em linha (e só dentro dele: um `style="color:red"` não é
+ * um sinal de esconder, e por isso o valor extrai-se antes de se procurar
+ * `display`/`visibility` lá dentro). Não apanha uma regra de folha que
+ * escondesse a etiqueta por selector: isto é um varrimento de texto, sem
+ * motor de CSS.
+ *
+ * @param {string} etiqueta a etiqueta de abertura, ex. `<h1 class="x">`
+ */
+function h1EscondidoNaEtiqueta(etiqueta) {
+  if (/\bhidden\b/i.test(etiqueta)) return true;
+  if (/\baria-hidden\s*=\s*(?:"true"|'true'|true\b)/i.test(etiqueta)) return true;
+  const estilo = etiqueta.match(/\bstyle\s*=\s*"([^"]*)"/i) ?? etiqueta.match(/\bstyle\s*=\s*'([^']*)'/i);
+  const valorDoEstilo = estilo ? estilo[1] : '';
+  return /display\s*:\s*none|visibility\s*:\s*hidden/i.test(valorDoEstilo);
+}
+
 function verificaDocumento({ rota, rel, caminho, html, root, err }) {
   const { slug } = rota.params;
   const lang = rota.lang;
@@ -1292,6 +1312,24 @@ function verificaDocumento({ rota, rel, caminho, html, root, err }) {
     err(
       `o documento tem ${titulos.length} \`<h1>\`; tem de ter exactamente um.\n` +
         `      A faixa da casa não acrescenta título nenhum: o título é o do documento.`,
+    );
+  } else if (h1EscondidoNaEtiqueta(titulos[0].texto)) {
+    /**
+     * UM `<h1>` COM UM SINAL DE SE ESCONDER NA PRÓPRIA ETIQUETA NÃO É UM
+     * TÍTULO VISÍVEL (Minor 11, segunda passagem). A conferência de cima só
+     * contava a etiqueta; um `hidden`, um `aria-hidden="true"` ou um
+     * `display:none`/`visibility:hidden` em linha, na PRÓPRIA etiqueta,
+     * passavam como se fosse um título normal. Isto é um varrimento ESTÁTICO,
+     * sem motor de CSS: apanha o que está na etiqueta, não uma regra de folha
+     * algures que a escondesse por selector — essa conferência, completa
+     * (estilo calculado, `getClientRects`), é da régua em navegador
+     * (`tests/documentos/moldura.mjs`, célula C4).
+     */
+    err(
+      `o \`<h1>\` do documento tem, na própria etiqueta, um sinal de se esconder ` +
+        `(\`hidden\`, \`aria-hidden="true"\` ou \`display:none\`/\`visibility:hidden\` em linha): ` +
+        `${JSON.stringify(titulos[0].texto.slice(0, 160))}.\n` +
+        `      A faixa da casa não acrescenta título nenhum: o título tem de ser o do documento, e visível.`,
     );
   }
 
