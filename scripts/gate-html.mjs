@@ -3836,7 +3836,17 @@ for (const file of ficheirosHtml(DIST)) {
     rota?.key === 'livro' ||
     rota?.key === 'livroConcelhos' ||
     rota?.key === 'livroConcelho' ||
-    rota?.key === 'area';
+    rota?.key === 'area' ||
+    /* A PÁGINA DE UM DOMÍNIO ENTRA A 03.09.2026, E PELO MESMO ARGUMENTO DA DAS
+       ÁREAS. A leitura breve de uma medida tem de dizer «a fonte com o nome do
+       publicador como a linha o diz» e as três datas (brief F1.2 §2, item 5), e
+       essas são campos da linha: rendê-los sem a marca era pô-los na página sem
+       ninguém os comparar com nada. Com a marca, o portão confere cada um,
+       carácter a carácter, contra o campo da linha de que ele saiu — que é MAIS
+       conferência e não menos, que foi o que a decisão da página de área já
+       tinha pesado. A guarda continua a impedir o que ela existe para impedir:
+       uma página qualquer a citar um campo de uma linha em prosa corrente. */
+    rota?.key === 'dominio';
   /* As linhas que ESTA página cita com <Claim/>, para a conferência da prosa da
      agenda: é contra elas, e não contra o livro-razão inteiro, que se recusa um
      valor repetido em prosa. Ver `valoresDoLivroEmProsa()`. */

@@ -33,7 +33,7 @@ O Estado do País é um observatório de Portugal escrito, conferido e atualizad
 |---|---|---|
 | 0 | o motor; os *vintages* em JSON | o arquivo de cada versão de cada ficheiro (corredor diário, B) |
 | 1 | 2 916 linhas a 02.09.2026, dizia «2 602»; JSON e CSV; selos; correções em `/metodo` | a frescura diária, «conferido em» (B) |
-| 2 | os dois painéis da União na primeira página | a carta, o inventário, a primeira vaga (A, depois a construção) |
+| 2 | os dois painéis da União na primeira página; a carta e o inventário (01.09.2026); as linhas do primeiro domínio no livro-razão (§1.90) e, desde 03.09.2026, **a página do primeiro domínio** («Economia e finanças públicas», com «Trabalho» dentro) e o índice dos dezoito, com o estado de cada um | os domínios 3 a 18 da carta, um bloco por domínio (F1.5); a série e a posição entre pares como linhas, que as formas gráficas 1 e 2 esperam |
 | 3 | a régua semanal do painel europeu | «O que mudou», «O que os números dizem», a vigia |
 | 4 | doze estudos com livro-razão e leitura cruzada | os patamares 2 e 3, por fases |
 | 5 | nada | a exploração como geradora de perguntas; a síntese periódica |

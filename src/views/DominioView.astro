@@ -1,0 +1,489 @@
+---
+/**
+ * A PÁGINA DE UM DOMÍNIO: `/dominios/<slug>` e `/en/domains/<slug>`.
+ *
+ * ---------------------------------------------------------------------------
+ * A FORMA É A DO `BRIEF-forma-dos-dominios.md` §2, POR ESTA ORDEM
+ * ---------------------------------------------------------------------------
+ *   · a cabeça comum das três camadas (§1.91): o nome do domínio, a manchete
+ *     com números selados, e a faixa de cartões que é o «Relance»;
+ *   · a frase da fronteira, uma vez, com id, citável;
+ *   · a «Leitura breve» de cada medida: o valor com selo, o limiar quando o
+ *     quadro o publica, as três datas, a fonte com o nome do publicador como a
+ *     linha o diz, e a comparação que a fonte permite numa das quatro formas;
+ *   · as ausências declaradas: a pergunta da carta e «não há número público para
+ *     isto», com a fonte que se procurou e a razão;
+ *   · as portas.
+ *
+ * A CABEÇA NÃO TEM INSTRUMENTO, e é de propósito: «o mapa não entra na página do
+ * domínio a não ser como a forma gráfica 4 de uma medida por concelho» (brief
+ * §2, item 2). As formas de uma medida vivem na leitura breve dela.
+ *
+ * ---------------------------------------------------------------------------
+ * A MANCHETE É UMA AFIRMAÇÃO COM NÚMEROS SELADOS, E NENHUMA CONTA À MÃO
+ * ---------------------------------------------------------------------------
+ * A regra é a da manchete do país (Emenda 16): cada algarismo é um `<Claim/>`
+ * que o portão reconta, ou um limiar do quadro debaixo do seu motivo declarado.
+ * A palavra de estado NÃO é escrita: sai de `estadoDaMedida()`, que compara o
+ * valor publicado com o limiar publicado, e é uma das três palavras fechadas da
+ * casa.
+ *
+ * **NENHUMA DIFERENÇA AO LIMIAR.** O brief é explícito: «uma diferença ao limiar
+ * só entra se existir como linha derivada no livro-razão; nunca se escreve uma
+ * subtração feita à mão». Não existe, e por isso a frase diz os dois números e a
+ * palavra de estado, e mais nada.
+ *
+ * O TEXTO É DO DIRETOR, e esta é a suposição do lugar de direção enquanto ele
+ * não escreve a dele (brief §1). Está nos pendentes.
+ *
+ * ---------------------------------------------------------------------------
+ * AS TRÊS DATAS, E PORQUE NÃO SÃO `CampoDaLinha`
+ * ---------------------------------------------------------------------------
+ * Ver `src/components/DataDaLinha.astro`: a regra da casa escreve dd.mm.aaaa e o
+ * ficheiro guarda ISO, e a marca forte compara carácter a carácter. A marca
+ * desta página diz de que linha e de que campo a data saiu, e
+ * `npm run check:formas` recompõe-a do livro-razão e compara-a.
+ *
+ * ---------------------------------------------------------------------------
+ * A FONTE ENTRA PELA MARCA FORTE
+ * ---------------------------------------------------------------------------
+ * O nome do publicador e o título do documento são `CampoDaLinha`, com
+ * `data-linha-campo`, e o portão compara-os carácter a carácter com a linha. A
+ * guarda do portão abriu-se para esta rota como se abriu para a das áreas, e
+ * pela mesma razão e com o mesmo argumento: esta página LISTA medidas do
+ * livro-razão na forma da sua origem, e não põe texto do livro-razão em prosa
+ * corrente. O que ela dá em troca é mais conferência, e não menos.
+ */
+import Base from '../layouts/Base.astro';
+import CabecaDoLugar from '../components/inicio/CabecaDoLugar.astro';
+import Faixa from '../components/inicio/Faixa.astro';
+import Claim from '../components/Claim.astro';
+import Frase from '../components/Frase.astro';
+import CampoDaLinha from '../components/CampoDaLinha.astro';
+import DataDaLinha from '../components/DataDaLinha.astro';
+import BarraConcelhoPais from '../components/formas/BarraConcelhoPais.astro';
+import MapaPorConcelho from '../components/formas/MapaPorConcelho.astro';
+import GeometriaDosConcelhos from '../components/formas/GeometriaDosConcelhos.astro';
+import {
+  dominioDoSlug,
+  medidaPelaChave,
+  ausenciasDoDominio,
+  fronteiraDoDominio,
+  CABECA_DO_DOMINIO_1,
+  FAIXA_DO_DOMINIO_1,
+} from '../data/dominios.mjs';
+import { medidasComLeitura, mapaPorConcelho, barraConcelhoPais, linhasPorConcelho } from '../lib/dominios.mjs';
+import { estadoDaMedida } from '../lib/estado.mjs';
+import { getClaim } from '../lib/ledger.mjs';
+import { unidadeDaLinha } from '../i18n/unidades.mjs';
+import { linguaDoTituloDoDocumento, linguaDaFonte } from '../i18n/lingua-dos-titulos.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { canonicalUrl, SITE_NAME, SITE_URL } from '../../site.config.mjs';
+import { FONTE_DIGITAL_GERADA_POR_IA } from '../data/politica-ia.mjs';
+import { t } from '../i18n/strings.mjs';
+/* A folha da primeira página, porque é dela que vêm a cabeça e a faixa; um
+   componente e a sua folha viajam juntos, e é a razão que `RegiaoView` já
+   escreveu quando a faixa chegou às três camadas. */
+import '../styles/inicio.css';
+import '../styles/dominio.css';
+
+const { lang = 'pt', slug } = Astro.props;
+const s = t(lang);
+
+const dominio = dominioDoSlug(slug);
+if (!dominio) throw new Error(`dominios: domínio desconhecido ou sem medidas "${slug}"`);
+
+const path = routePath('dominio', lang, { slug });
+const nome = dominio.nome[lang] ?? dominio.nome.pt;
+const leituras = medidasComLeitura(slug);
+const ausencias = ausenciasDoDominio(slug);
+const fronteira = fronteiraDoDominio(slug);
+if (fronteira === null) throw new Error(`dominios: o domínio "${slug}" não declara a fronteira.`);
+
+/** A âncora de uma medida: a chave do inventário, que é estável e não é um id. */
+const ancoraDa = (chave) => `m-${chave.toLowerCase()}`;
+
+/* ---------------------------------------------------------------------------
+ * A MANCHETE, COMPOSTA DAS DUAS MEDIDAS QUE TÊM LIMIAR PUBLICADO
+ * ---------------------------------------------------------------------------
+ * A de cabeça (E3) e a segunda da faixa (E2). As duas têm limiar do quadro, e é
+ * isso que faz a frase possível: sem limiar não há palavra de estado, e sem
+ * palavra de estado a frase seria dois números lado a lado.
+ */
+const cabeca = medidaPelaChave(CABECA_DO_DOMINIO_1);
+const segunda = medidaPelaChave('E2');
+if (!cabeca?.claim || !cabeca.limiar || !segunda?.claim || !segunda.limiar) {
+  throw new Error('dominios: a manchete precisa das duas medidas com limiar publicado.');
+}
+const PALAVRA = {
+  fora: s.estado.foraDoLimiar,
+  dentro: s.estado.dentroDoLimiar,
+  sem: s.estado.semLimiar,
+};
+/** @param {string} id @param {Limiar} limiar */
+const palavraDoEstado = (id, limiar) => PALAVRA[estadoDaMedida(getClaim(id), limiar) ?? 'sem'];
+const manchete = {
+  pt: [
+    'A dívida pública é ',
+    { claim: cabeca.claim, sufixo: '%' },
+    ' do PIB, ',
+    palavraDoEstado(cabeca.claim, cabeca.limiar),
+    ' de ',
+    { nl: String(cabeca.limiar.nl), motivo: 'limiar-do-quadro' },
+    '%; o saldo das administrações públicas é ',
+    { claim: segunda.claim, sufixo: '%' },
+    ' do PIB, ',
+    palavraDoEstado(segunda.claim, segunda.limiar),
+    ' de ',
+    `${segunda.limiar.sinal ?? ''}`,
+    { nl: String(segunda.limiar.nl), motivo: 'limiar-do-quadro' },
+    '%.',
+  ],
+  en: [
+    'Government debt is ',
+    { claim: cabeca.claim, sufixo: '%' },
+    ' of GDP, ',
+    palavraDoEstado(cabeca.claim, cabeca.limiar),
+    ' of ',
+    { nl: String(cabeca.limiar.nl), motivo: 'limiar-do-quadro' },
+    '%; the general government balance is ',
+    { claim: segunda.claim, sufixo: '%' },
+    ' of GDP, ',
+    palavraDoEstado(segunda.claim, segunda.limiar),
+    ' of ',
+    `${segunda.limiar.sinal ?? ''}`,
+    { nl: String(segunda.limiar.nl), motivo: 'limiar-do-quadro' },
+    '%.',
+  ],
+};
+
+/* ---------------------------------------------------------------------------
+ * A FAIXA: AS CINCO MEDIDAS DA SUPOSIÇÃO, PELA ORDEM DECLARADA
+ * ---------------------------------------------------------------------------
+ * Cada cartão é um alvo inteiro e abre a leitura breve daquela medida, na mesma
+ * página. Um cartão sem linha não existe: a régua da faixa recusa-o com razão,
+ * porque o cartão é o valor.
+ */
+const cartoes = FAIXA_DO_DOMINIO_1.map((chave) => {
+  const m = medidaPelaChave(chave);
+  if (!m?.claim) throw new Error(`dominios: a faixa nomeia "${chave}", que não tem linha.`);
+  const linha = getClaim(m.claim);
+  return {
+    id: m.claim,
+    ancora: ancoraDa(chave),
+    nome: m.nome[lang] ?? m.nome.pt,
+    medida: [`${m.unidade[lang] ?? m.unidade.pt} · `, { ref: linha.reference_date }],
+    estado: m.limiar ? estadoDaMedida(linha, m.limiar) : 'sem',
+    glifos: [...String(linha.value)].length,
+  };
+});
+
+/* ---------------------------------------------------------------------------
+ * OS DESENHOS: CONSTRUÍDOS UMA VEZ, E A GEOMETRIA DOS 308 TAMBÉM
+ * ---------------------------------------------------------------------------
+ * As duas medidas com mapa partilham os mesmos 308 caminhos, que valem 353 KiB:
+ * a geometria declara-se uma vez na página e cada mapa refere-a. A leitura dos
+ * artefactos faz-se aqui e não dentro do componente, para que a página saiba se
+ * há algum mapa antes de declarar a geometria.
+ */
+/* OS CORTES DAS CLASSES SÃO A RÉGUA, E SÃO REDONDOS NA UNIDADE DA MEDIDA. Um
+   corte calculado dos próprios valores (um quintil, uma média) seria um número
+   que a casa produziu e que não resolve em nenhuma linha; um corte redondo é uma
+   marca de escala, e entra pelo motivo declarado que a casa já usa nos eixos. */
+const CORTES = {
+  ganho: [1200, 1400, 1600, 1800],
+  /* UM CORTE SÓ, E É O TETO LEGAL. Não é uma escala inventada sobre o índice: é
+     o limite que o artigo 52.º da Lei n.º 73/2013 fixa e que a linha
+     `indice-de-divida-limite-legal` publica, com o seu selo, no valor desta
+     medida logo acima do mapa. As duas classes são as duas palavras da casa. */
+  indice: [150],
+};
+const PALETA = { ganho: 'escala', indice: 'limiar' };
+/* A IGUALDADE FICA DENTRO ONDE O CORTE É UM LIMIAR PUBLICADO: ver a razão em
+   `src/lib/dominios.mjs`. Numa escala, o valor igual ao corte sobe de classe. */
+const REGRA = { ganho: {}, indice: { igualdadeDentro: true } };
+
+/* ---------------------------------------------------------------------------
+ * OS RÓTULOS DAS CLASSES, COMPOSTOS E NÃO ESCRITOS
+ * ---------------------------------------------------------------------------
+ * Cada rótulo é uma lista de pedaços, como qualquer frase da casa: as palavras
+ * são da edição e os algarismos são marcas de régua, debaixo do motivo
+ * `escala-de-instrumento`.
+ *
+ * O INTERVALO DE UMA CLASSE FECHADA É UMA MARCA SÓ, e não três pedaços com um
+ * «a» da casa pelo meio. A razão é a régua da voz: ela recolhe o texto de um
+ * bloco com as marcas retiradas, e um rótulo partido em «marca a marca» deixava
+ * na página uma frase da casa cujo texto inteiro é a letra «a». Uma linha
+ * dessas no inventário calaria, para sempre, qualquer bloco futuro cujo texto
+ * seja «a». O «a» de «1 200 a 1 400» pertence à NOTAÇÃO DO INTERVALO, como o
+ * traço de um eixo, e por isso vive dentro da marca de régua com os dois
+ * números. As duas classes abertas ficam com as suas palavras («menos de»,
+ * «ou mais»), que são palavras da edição e entram no inventário como tal. */
+const marca = (nl) => ({ nl: String(nl), motivo: 'escala-de-instrumento' });
+const escalaDeClasses = (cortes) => [
+  [s.dominios.mapaMenosDe, marca(cortes[0])],
+  ...cortes.slice(0, -1).map((c, i) => [marca(`${c}${s.dominios.mapaA}${cortes[i + 1]}`)]),
+  [marca(cortes[cortes.length - 1]), s.dominios.mapaOuMais],
+];
+const ROTULOS = {
+  ganho: escalaDeClasses(CORTES.ganho),
+  indice: [[s.estado.dentroDoLimiar], [s.estado.foraDoLimiar]],
+};
+
+const comMapa = leituras.filter((l) => l.desenho !== null);
+const geometria =
+  comMapa.length === 0
+    ? null
+    : mapaPorConcelho(
+        linhasPorConcelho(comMapa[0].desenho.chave),
+        CORTES[comMapa[0].desenho.chave],
+        REGRA[comMapa[0].desenho.chave],
+      );
+
+const desenhos = new Map(
+  comMapa.map((l) => [
+    l.medida.chave,
+    mapaPorConcelho(l.desenho.linhas, CORTES[l.desenho.chave], REGRA[l.desenho.chave]),
+  ]),
+);
+
+/* A barra do concelho contra o país: a forma 3 do brief, para T3. O concelho é o
+   único com trabalho aprofundado publicado, que é o mesmo critério por que ele é
+   o exemplo em toda a parte; a porta para os 308 está por baixo. */
+const CONCELHO_DA_BARRA = 'evora';
+const t3 = medidaPelaChave('T3');
+const linhasDoGanho = linhasPorConcelho('ganho');
+const idDoConcelho = linhasDoGanho.get(CONCELHO_DA_BARRA) ?? null;
+const barraT3 =
+  t3?.claim && idDoConcelho ? barraConcelhoPais(idDoConcelho, t3.claim) : null;
+/* OS DOIS RÓTULOS DA BARRA SÃO NOMES DE LUGARES, e vão declarados `data-lugar`
+   como o nome de um concelho na sua página: são o nome da coisa que a barra
+   mede, e não prosa da casa. Sem a declaração, «Évora» e «Portugal» entravam no
+   inventário das frases como uma frase da casa em duas edições. */
+const nomeDoConcelhoDaBarra = 'Évora';
+const NOME_DO_PAIS = 'Portugal';
+
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: `${nome} · ${s.dominios.metaCauda}`,
+  inLanguage: ['pt-PT', 'en'],
+  digitalSourceType: FONTE_DIGITAL_GERADA_POR_IA,
+  url: canonicalUrl(path),
+  isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
+  publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+};
+
+const ROTULO_DA_DATA = {
+  reference_date: s.dominios.dataPeriodo,
+  published_at: s.dominios.dataLido,
+  access_date: s.dominios.dataLido,
+};
+const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferido;
+---
+
+<Base
+  lang={lang}
+  path={path}
+  title={`${nome} · ${s.dominios.metaCauda}`}
+  description={`${s.dominios.metaDescricaoA}${nome}${s.dominios.metaDescricaoB}`}
+  jsonld={jsonld}
+>
+  <CabecaDoLugar forma="lugar" chave="dominio">
+    <div class="cabeca-col" slot="col">
+      <div class="cabeca-bloco">
+        <p class="cabeca-rotulo">
+          <span class="eyebrow">{s.dominios.eyebrow}</span> ·{' '}
+          <span data-nome="dominios">{nome}</span>
+        </p>
+        <h1 class="cabeca-h1">
+          <Frase partes={manchete[lang] ?? manchete.pt} lang={lang} selos={true} />
+        </h1>
+      </div>
+    </div>
+
+    <Faixa slot="faixa" s={s} lang={lang} rotulo={s.inicio.faixa.rotulo} cartoes={cartoes} />
+  </CabecaDoLugar>
+
+  {/* ------------------------------------------------------------------------
+      A FRASE DA FRONTEIRA, UMA VEZ, COM ID
+      ------------------------------------------------------------------------
+      «O que este domínio mede e o que não mede, uma frase, impressa uma vez,
+      citável.» Tem id para se poder apontar, e é a única vez que aparece na
+      página: `npm run check:formas` fecha a construção se aparecer duas.
+      ------------------------------------------------------------------------ */}
+  <p class="dominio-fronteira" id="fronteira" data-fronteira={slug}>
+    {fronteira[lang] ?? fronteira.pt}
+  </p>
+
+  {geometria !== null && <GeometriaDosConcelhos mapa={geometria} />}
+
+  <section class="dominio-leitura" id="leitura" aria-labelledby="leitura-k">
+    <div class="sec-head">
+      {/* O NOME DA CAMADA É O DA CASA, e não uma cadeia nova: «Leitura breve» e
+          «Brief reading» são as duas palavras da densidade (Emenda 2), estão
+          declaradas em `strings.mjs` desde a etapa 2 e no inventário da voz
+          desde 26.08.2026. Uma chave própria para dizer o mesmo era uma segunda
+          cadeia para a mesma coisa. */}
+      <h2 class="eyebrow" id="leitura-k">{s.densidade.leitura}</h2>
+    </div>
+
+    {
+      leituras.map(({ medida, linha, datas, outras, desenho }) => (
+        <article class="dominio-medida" id={ancoraDa(medida.chave)} data-medida={medida.chave}>
+          <h3 class="dominio-pergunta">{medida.pergunta[lang] ?? medida.pergunta.pt}</h3>
+          <p class="dominio-nome" id={`k-${medida.chave.toLowerCase()}`} data-medida-nome>
+            {medida.nome[lang] ?? medida.nome.pt}
+            {medida.ambito && (
+              <>
+                {' · '}
+                <span data-nonledger="ambito-da-medida">{medida.ambito[lang] ?? medida.ambito.pt}</span>
+              </>
+            )}
+          </p>
+
+          {linha !== null && (
+            <p class="dominio-valor">
+              <Claim id={medida.claim} lang={lang} chip={true} class="dominio-num" />
+              <span class="dominio-unidade" data-medida-unidade>
+                {medida.unidade[lang] ?? medida.unidade.pt}
+              </span>
+              {medida.rotuloDoValor && (
+                <span class="dominio-rotulo-valor">
+                  {medida.rotuloDoValor[lang] ?? medida.rotuloDoValor.pt}
+                </span>
+              )}
+            </p>
+          )}
+
+          {medida.limiar && (
+            <p class="dominio-limiar">
+              <span class="dominio-limiar-k">{s.home.numeros.limiar}</span>{' '}
+              <span class="dominio-limiar-v">
+                {medida.limiar.sinal ?? ''}
+                <span data-nonledger="limiar-do-quadro">{String(medida.limiar.nl)}</span>
+                {medida.limiar.simbolo ?? ''}
+              </span>
+              {' · '}
+              <span class="dominio-estado">
+                {PALAVRA[estadoDaMedida(getClaim(medida.claim), medida.limiar) ?? 'sem']}
+              </span>
+            </p>
+          )}
+
+          {outras.map((o) => (
+            <p class="dominio-valor dominio-valor-irmao">
+              <Claim id={o.id} lang={lang} chip={true} class="dominio-num-irmao" />
+              <span class="dominio-rotulo-valor">{o.rotulo[lang] ?? o.rotulo.pt}</span>
+            </p>
+          ))}
+
+          {/* AS TRÊS DATAS, na forma da casa, cada uma com a linha e o campo de
+              onde saiu. Ver `DataDaLinha.astro`. */}
+          {datas.length > 0 && (
+            <p class="dominio-datas">
+              {datas.map((d, i) => (
+                <>
+                  {i > 0 && <span class="dominio-sep"> · </span>}
+                  <span class="dominio-data-k">{rotuloDaData(d.campo)}</span>{' '}
+                  <DataDaLinha id={medida.claim} campo={d.campo} valor={d.valor} />
+                </>
+              ))}
+            </p>
+          )}
+
+          {/* A FONTE, COM O NOME DO PUBLICADOR COMO A LINHA O DIZ, pela marca
+              forte que o portão compara carácter a carácter. */}
+          {linha !== null && (
+            <p class="dominio-fonte">
+              <span class="dominio-data-k">{s.dominios.fonteK}</span>{' '}
+              <CampoDaLinha
+                id={medida.claim}
+                campo="source"
+                valor={linha.source}
+                lang={lang}
+                lingua={linguaDaFonte(linha.source, lang)}
+              />
+              {linha.document?.title && (
+                <>
+                  <span class="dominio-sep"> · </span>
+                  <CampoDaLinha
+                    id={medida.claim}
+                    campo="document.title"
+                    valor={linha.document.title}
+                    lang={lang}
+                    lingua={linguaDoTituloDoDocumento(linha.document.title, lang)}
+                  />
+                </>
+              )}
+              <span class="dominio-sep"> · </span>
+              <CampoDaLinha
+                id={medida.claim}
+                campo="unit"
+                valor={unidadeDaLinha(linha.unit, lang).texto}
+                lang={lang}
+                lingua={unidadeDaLinha(linha.unit, lang).lingua}
+              />
+            </p>
+          )}
+
+          {/* A COMPARAÇÃO QUE A FONTE PERMITE, numa das quatro formas. */}
+          {medida.chave === 'T3' && barraT3 !== null && (
+            <BarraConcelhoPais
+              lang={lang}
+              barra={barraT3}
+              rotuloConcelho={nomeDoConcelhoDaBarra}
+              rotuloPais={NOME_DO_PAIS}
+              unidade={medida.unidade[lang] ?? medida.unidade.pt}
+              nomeada={`k-${medida.chave.toLowerCase()}`}
+            />
+          )}
+
+          {desenho !== null && (
+            <MapaPorConcelho
+              s={s}
+              lang={lang}
+              mapa={desenhos.get(medida.chave)}
+              paleta={PALETA[desenho.chave]}
+              rotulos={ROTULOS[desenho.chave]}
+              porta={routePath('livroConcelhos', lang)}
+              portaRotulo={s.dominios.porConcelhoPorta}
+              nomeada={`k-${medida.chave.toLowerCase()}`}
+              chave={desenho.chave}
+            />
+          )}
+        </article>
+      ))
+    }
+
+    {/* ----------------------------------------------------------------------
+        A REGRA DOS VAZIOS (Emenda 14; brief §2, item 6)
+        ----------------------------------------------------------------------
+        «Uma pergunta da carta cuja medida não existe imprime a pergunta e a
+        resposta "não há número público para isto", com a fonte que se
+        procurou.» Sem valor, sem selo, e sem um número em lado nenhum: um
+        cartão de ausência com um valor lá dentro é a contradição que a régua
+        deste bloco planta para se ver vermelha.
+        ---------------------------------------------------------------------- */}
+    {
+      ausencias.map((a) => (
+        <article class="dominio-medida dominio-ausente" id={ancoraDa(a.chave)} data-ausencia={a.chave}>
+          <h3 class="dominio-pergunta">{a.pergunta[lang] ?? a.pergunta.pt}</h3>
+          <p class="dominio-sem-numero">{s.dominios.ausenciaResposta}</p>
+          <p class="dominio-fonte">
+            <span class="dominio-data-k">{s.dominios.ausenciaProcurado}</span>{' '}
+            <span class="dominio-procurado">{a.procurado[lang] ?? a.procurado.pt}</span>
+            <span data-nonledger="identificador-tecnico">{a.codigo}</span>
+          </p>
+          <p class="dominio-razao">{a.razao[lang] ?? a.razao.pt}</p>
+        </article>
+      ))
+    }
+  </section>
+
+  <p class="rodape-nav dominio-portas">
+    <a href={routePath('dominios', lang)}>{s.dominios.voltarIndice}</a>
+    <a href={routePath('livro', lang)}>{s.areas.voltarLivro}</a>
+    <a href={routePath('home', lang)}>{s.dominios.voltarPais}</a>
+  </p>
+</Base>

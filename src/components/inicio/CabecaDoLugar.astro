@@ -53,6 +53,21 @@
  */
 const { rotulo = null, tipo = null, forma = 'lugar', chave = null } = Astro.props;
 const temCol = Astro.slots.has('col');
+/* ---------------------------------------------------------------------------
+ * UMA CAMADA PODE NÃO TER INSTRUMENTO, E ENTÃO NÃO TEM COLUNA (F1.2, 03.09.2026)
+ * ---------------------------------------------------------------------------
+ * As três camadas de 01.09 tinham todas um instrumento — o mapa, a régua, o
+ * cartão localizador — e a coluna rendia-se sempre. A página de um DOMÍNIO não
+ * tem: o brief da forma dos domínios diz que «o mapa não entra na página do
+ * domínio a não ser como a forma gráfica 4 de uma medida por concelho», e as
+ * formas de uma medida vivem na leitura breve dela e não na cabeça.
+ *
+ * Sem esta pergunta, a cabeça de um domínio rendia um `<div>` vazio com a
+ * largura de uma coluna, que é uma célula vazia numa grelha e é o que a
+ * `IDENTIDADE.md` §7 recusa. O que muda para as três camadas que já existiam é
+ * nada: as três passam um instrumento, e o HTML delas é o mesmo.
+ */
+const temInstrumento = Astro.slots.has('instrumento');
 ---
 
 <div class="cabeca-grelha" data-grelha data-cabeca-forma={forma} data-cabeca-lugar={chave}>
@@ -78,7 +93,11 @@ const temCol = Astro.slots.has('col');
   <slot name="faixa" />
   <slot name="lado" />
 
-  <div class="cabeca-inst" data-coluna-instrumento>
-    <slot name="instrumento" />
-  </div>
+  {
+    temInstrumento && (
+      <div class="cabeca-inst" data-coluna-instrumento>
+        <slot name="instrumento" />
+      </div>
+    )
+  }
 </div>

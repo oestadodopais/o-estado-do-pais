@@ -1,0 +1,26 @@
+---
+/**
+ * A GEOMETRIA DOS 308 CONCELHOS, DECLARADA UMA VEZ POR PÁGINA.
+ *
+ * Os caminhos que `mapa/distritos/<slug>.json` publica, cada um com o seu `id`,
+ * dentro de um `<svg>` que não desenha nada. Um `id` é do DOCUMENTO e não do
+ * `<svg>` que o declara: cada mapa da página refere-os com `<use>`, na sua
+ * própria grelha e com a sua própria pintura, e os 353 KiB de caminho pagam-se
+ * uma vez.
+ *
+ * O `<svg>` NÃO É UMA IMAGEM, e diz-o de três maneiras ao mesmo tempo: sem
+ * `role="img"`, com `aria-hidden` e com largura e altura a zero. O que ele tem
+ * não é conteúdo: é a forma de que os desenhos por baixo se servem.
+ *
+ * NENHUM NÚMERO E NENHUM NOME. Um caminho é geometria; o nome de um concelho não
+ * entra aqui, porque um `<defs>` não se lê, e a lista dos nomes com os valores
+ * está a uma porta de distância, na página do livro-razão dos concelhos.
+ */
+const { mapa } = Astro.props;
+---
+
+<svg class="forma-mapa-defs" width="0" height="0" aria-hidden="true" focusable="false" data-geometria-dos-concelhos>
+  <defs>
+    {mapa.unidades.map((u) => u.concelhos.map((c) => <path id={`geo-c-${c.slug}`} d={c.d} />))}
+  </defs>
+</svg>

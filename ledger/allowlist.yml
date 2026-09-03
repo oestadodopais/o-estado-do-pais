@@ -61,6 +61,33 @@ contexts:
       Regulamento (UE) n.º 1176/2011 e revisto pela Comissão. É a regra contra a
       qual a medição é lida, não uma medição de Portugal: mesma natureza que a
       escala de um instrumento. A medição vem sempre do livro-razão, ao lado.
+  - id: data-da-linha
+    why: >-
+      Uma das três datas de uma linha do livro-razão (o período de referência, a
+      data de leitura, a data da última conferência), escrita na forma da casa,
+      dd.mm.aaaa. Acrescentado em 2026-09-03, com a página do primeiro domínio.
+      NÃO É UMA DISPENSA: o elemento diz de que linha e de que campo a data saiu
+      (data-de-linha, data-de-campo) e `npm run check:formas` vai buscar aquele
+      campo àquela linha, aplica-lhe `dataDaCasa()` por conta própria e compara-o
+      carácter a carácter com o que a página imprimiu. Duas contas do mesmo
+      facto, feitas de sítios diferentes, como no data-prova. Existe porque a
+      marca forte, `data-linha-campo`, compara o texto rendido com o campo TAL
+      COMO ESTÁ no ficheiro, e o ficheiro guarda ISO: a regra de uma só grafia de
+      data no sítio e a comparação literal não cabem na mesma marca. A data ISO
+      continua intacta no livro-razão e na página da linha, que é o recibo.
+  - id: ambito-da-medida
+    why: >-
+      O intervalo que faz parte da DEFINIÇÃO publicada de um indicador, e não do
+      seu valor: as idades da taxa de emprego («dos 20 aos 64 anos», dimensão
+      age=Y20-64 do conjunto que a fonte publica) e as da taxa de desemprego
+      («dos 15 aos 74 anos», age=Y15-74). É o âmbito da contagem, e está no nome
+      com que o publicador nomeia a série; não é uma medição de Portugal, é o que
+      se conta. Sem ele o nome da medida ficava «taxa de emprego» sozinho, que é
+      outra medida: o Eurostat publica taxas de emprego para vários intervalos, e
+      um nome que não diz qual delas é convida a comparar o incomparável.
+      Acrescentado em 2026-09-03, com a página do primeiro domínio. O intervalo é
+      declarado em `src/data/dominios.mjs`, ao lado do id da linha cujo
+      `source_url` traz a dimensão.
   - id: data-de-referencia
     why: >-
       Ano ou período a que os dados se referem, quando aparece no meio de uma
