@@ -438,7 +438,38 @@ não se via em nenhuma das outras.
 | `portas-numeros-antes.json` | o inventário dos algarismos das quatro páginas deste bloco, na partida |
 | `portas-numeros-depois.json` | o mesmo, nesta construção |
 
-## 12 · O diff
+## 12 · A fusão com o `main`, e o que ela custou
+
+O `main` andou enquanto este bloco se construía: o F1.8 (a moldura à volta do
+documento alojado) fundiu-se em `86632082`. O ramo foi fundido com ele antes de
+fechar, e a fusão **não teve um conflito**: os ficheiros que os dois blocos tocam
+não se cruzam. O que entrou do outro lado e que muda a corrida deste:
+
+* `package.json` ganha `check:moldura` dentro do `verify`, e por isso o `verify`
+  deste ramo passa a abrir um navegador;
+* `.github/workflows/portao.yml` ganha um passo que instala o Chromium do
+  Playwright, sem o qual aquela régua não corre no anfitrião limpo;
+* `scripts/gate-html.mjs` ganha uma conferência do `<h1>` escondido, e ela vive
+  DENTRO de `verificaDocumento()`, ou seja só nas páginas de documento alojado.
+  **Não toca na manchete deste bloco**, e isso foi lido antes de fundir e não
+  presumido.
+
+**Os três portões voltaram a correr na árvore fundida**, e não só antes da fusão,
+e as sete medidas deste bloco foram medidas outra vez sobre a construção dela:
+
+```
+npm run build      → 0
+npm run verify     → 0     (já com o check:moldura do F1.8, que abre um navegador)
+npm run typecheck  → 0
+node tests/inicio/porta.mjs --vermelhos → 0 · 32 de 32 células · 11 de 11 plantas
+```
+
+**Nenhuma medida mexeu com a fusão**: a altura de `/` a 390 continua a 6 959 px e
+a de `/en` a 6 911; a porta dos estudos continua a 662,7 px (650,1 na inglesa); os
+três cartões continuam a apontar para as três âncoras do domínio; e as quatro
+manchetes continuam com o texto inteiro a começar pela frase.
+
+## 13 · O diff
 
 Os ficheiros do sítio e das réguas, sem este relatório, sem as capturas e sem as
 medições:

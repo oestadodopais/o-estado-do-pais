@@ -304,126 +304,168 @@
           "id": "divida-publica-2025",
           "href": "/dominios/economia-e-financas-publicas#m-e3",
           "rotulo": "Domínios",
+          "rotuloComCaixa": true,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": false
         },
         {
           "id": "posicao-de-investimento-internacional-2025",
           "href": "#m-posicao-de-investimento-internacional-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "custo-unitario-do-trabalho-2025",
           "href": "#m-custo-unitario-do-trabalho-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "precos-da-habitacao-2025",
           "href": "#m-precos-da-habitacao-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "desempenho-das-exportacoes-2025",
           "href": "#m-desempenho-das-exportacoes-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "divida-das-empresas-2025",
           "href": "#m-divida-das-empresas-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "divida-das-familias-2025",
           "href": "#m-divida-das-familias-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "fluxo-de-credito-as-empresas-2025",
           "href": "#m-fluxo-de-credito-as-empresas-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "fluxo-de-credito-as-familias-2025",
           "href": "#m-fluxo-de-credito-as-familias-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "saldo-da-balanca-corrente-2025",
           "href": "#m-saldo-da-balanca-corrente-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "taxa-de-actividade-2025",
           "href": "#m-taxa-de-actividade-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "taxa-de-cambio-efectiva-real-2025",
           "href": "#m-taxa-de-cambio-efectiva-real-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "taxa-de-desemprego-mip-2025",
           "href": "#m-taxa-de-desemprego-mip-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "taxa-de-emprego-2025",
           "href": "/dominios/economia-e-financas-publicas#m-t1",
           "rotulo": "Domínios",
+          "rotuloComCaixa": true,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": false
         },
         {
           "id": "taxa-de-desemprego-2025",
           "href": "/dominios/economia-e-financas-publicas#m-t2",
           "rotulo": "Domínios",
+          "rotuloComCaixa": true,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": false
         },
         {
           "id": "desemprego-de-longa-duracao-2025",
           "href": "#m-desemprego-de-longa-duracao-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "jovens-nem-2025",
           "href": "#m-jovens-nem-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "abandono-escolar-precoce-2025",
           "href": "#m-abandono-escolar-precoce-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "risco-de-pobreza-ou-exclusao-2025",
           "href": "#m-risco-de-pobreza-ou-exclusao-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "racio-s80-s20-2025",
           "href": "#m-racio-s80-s20-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "sobrecarga-do-custo-da-habitacao-2025",
           "href": "#m-sobrecarga-do-custo-da-habitacao-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         }
       ],
@@ -662,126 +704,168 @@
           "id": "divida-publica-2025",
           "href": "/en/domains/economia-e-financas-publicas#m-e3",
           "rotulo": "Domains",
+          "rotuloComCaixa": true,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": false
         },
         {
           "id": "posicao-de-investimento-internacional-2025",
           "href": "#m-posicao-de-investimento-internacional-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "custo-unitario-do-trabalho-2025",
           "href": "#m-custo-unitario-do-trabalho-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "precos-da-habitacao-2025",
           "href": "#m-precos-da-habitacao-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "desempenho-das-exportacoes-2025",
           "href": "#m-desempenho-das-exportacoes-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "divida-das-empresas-2025",
           "href": "#m-divida-das-empresas-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "divida-das-familias-2025",
           "href": "#m-divida-das-familias-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "fluxo-de-credito-as-empresas-2025",
           "href": "#m-fluxo-de-credito-as-empresas-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "fluxo-de-credito-as-familias-2025",
           "href": "#m-fluxo-de-credito-as-familias-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "saldo-da-balanca-corrente-2025",
           "href": "#m-saldo-da-balanca-corrente-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "taxa-de-actividade-2025",
           "href": "#m-taxa-de-actividade-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "taxa-de-cambio-efectiva-real-2025",
           "href": "#m-taxa-de-cambio-efectiva-real-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "taxa-de-desemprego-mip-2025",
           "href": "#m-taxa-de-desemprego-mip-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "taxa-de-emprego-2025",
           "href": "/en/domains/economia-e-financas-publicas#m-t1",
           "rotulo": "Domains",
+          "rotuloComCaixa": true,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": false
         },
         {
           "id": "taxa-de-desemprego-2025",
           "href": "/en/domains/economia-e-financas-publicas#m-t2",
           "rotulo": "Domains",
+          "rotuloComCaixa": true,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": false
         },
         {
           "id": "desemprego-de-longa-duracao-2025",
           "href": "#m-desemprego-de-longa-duracao-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "jovens-nem-2025",
           "href": "#m-jovens-nem-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "abandono-escolar-precoce-2025",
           "href": "#m-abandono-escolar-precoce-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "risco-de-pobreza-ou-exclusao-2025",
           "href": "#m-risco-de-pobreza-ou-exclusao-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "racio-s80-s20-2025",
           "href": "#m-racio-s80-s20-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         },
         {
           "id": "sobrecarga-do-custo-da-habitacao-2025",
           "href": "#m-sobrecarga-do-custo-da-habitacao-2025",
           "rotulo": null,
+          "rotuloComCaixa": false,
+          "rotuloSobreOSelo": false,
           "ancoraLocal": true
         }
       ],
