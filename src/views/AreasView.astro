@@ -130,7 +130,14 @@ const areas = areasComPagina();
               >
                 {p[CHAVE_DAS_PECAS(a.slug)].valor}
               </span>
-              {a.total === 1 ? s.areas.contaUma : s.areas.contaMuitas}
+              {/* O SUFIXO DA CONTAGEM É PROSA DA CASA, E DIZ QUE O É (leitura a
+                  frio do F1.4, Major 11). Vive dentro da âncora da linha, e um
+                  bloco cujo texto está todo dentro de um `<a>` é um destino e
+                  não uma frase para a régua da voz: sem esta marca, «estudos e
+                  medidas» era texto visível que nenhum inventário podia
+                  declarar. `data-voz` só alarga a peneira; ver a razão em
+                  `scripts/medir-defeitos.mjs`. */}
+              <span data-voz>{a.total === 1 ? s.areas.contaUma : s.areas.contaMuitas}</span>
             </span>
           </a>
         </li>

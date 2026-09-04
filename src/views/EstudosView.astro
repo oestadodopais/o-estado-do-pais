@@ -29,6 +29,7 @@ import { leituraDe } from '../data/leituras.mjs';
 import { documentosDoEstudo } from '../lib/documentos.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
+import { dataDaEdicaoNoRepositorio } from '../lib/datas-do-repositorio.mjs';
 import { t } from '../i18n/strings.mjs';
 
 const { lang = 'pt' } = Astro.props;
@@ -54,7 +55,13 @@ const path = routePath('estudos', lang);
  */
 const trabalhos = WORKS.map((w) => {
   const principal = w.editions.find((e) => e.lang === lang) ?? w.editions[0];
-  const datas = [...new Set(w.editions.map((e) => e.date ?? null))];
+  /* A DATA DE UMA EDIÇÃO É A DO REPOSITÓRIO (decisão de 04.09.2026). O campo
+     `date` de `src/data/studies.mjs` fica onde está e deixa de chegar à
+     superfície: o arquivo escreve, no seu cabeçalho, que nenhuma data de
+     publicação está confirmada, e treze das dezasseis edições levam `null`. O
+     que a casa pode provar é o dia em que o ficheiro da edição entrou neste
+     repositório, e é isso que a página diz, com a origem dita. */
+  const datas = [...new Set(w.editions.map((e) => dataDaEdicaoNoRepositorio(w.slug, e.lang)))];
   const migrado = documentosDoEstudo(w.slug).length > 0;
   const leitura = leituraDe(w.id);
   return {
@@ -64,7 +71,7 @@ const trabalhos = WORKS.map((w) => {
     verbatim: w.verbatimDaAbertura?.[lang] ?? null,
     edicoes: w.editions.map((e) => ({
       lang: e.lang,
-      date: e.date ?? null,
+      date: dataDaEdicaoNoRepositorio(w.slug, e.lang),
       pagina: routePath('estudo', e.lang, { slug: w.slug }),
     })),
     dataUnica: datas.length === 1 ? datas[0] : null,
@@ -145,7 +152,7 @@ const trabalhos = WORKS.map((w) => {
                         mesmo trabalho tiverem datas diferentes.
                         A DATA VAI NA FORMA DA CASA (dd.mm.aaaa, §1.91). */}
                     {!tr.umaSoData && e.date && (
-                      <span class="arquivo-edicao-data" data-nonledger="data-de-publicacao">
+                      <span class="arquivo-edicao-data" data-nonledger="data-do-repositorio">
                         {dataDaCasa(e.date)}
                       </span>
                     )}
@@ -153,15 +160,20 @@ const trabalhos = WORKS.map((w) => {
                 ))}
               </span>
               {tr.umaSoData && (
-                <span data-nonledger="data-de-publicacao">
-                  {s.estudos.dataLabel}:{' '}
-                  {/* dd.mm.aaaa, a regra da casa (§1.91, `src/lib/datas.mjs`).
-                      Saía a cadeia ISO do arquivo, que é a forma de dado.
-                      Sem data, o marcador com a porta da sua página, e uma vez
-                      só por trabalho: `date: null` em `src/data/studies.mjs`
-                      quer dizer que a data de publicação está por decidir pela
-                      direção, e é isso que o marcador diz. */}
-                  {tr.dataUnica ? dataDaCasa(tr.dataUnica) : <Marcador lang={lang} />}
+                <span class="arquivo-data">
+                  {/* A PREPOSIÇÃO É PROSA DA CASA E FICA FORA DA MARCA DA DATA
+                      (segunda passagem, 04.09.2026): assim o inventário da voz
+                      pode declará-la (`data-voz`) e a data pode levar a sua
+                      origem. «publicado a 12.08.2026», e o 12.08.2026 é o dia em
+                      que o ficheiro desta edição entrou no repositório. */}
+                  <span data-voz>{s.estudos.dataLabel}</span>{' '}
+                  {tr.dataUnica ? (
+                    <span data-nonledger="data-do-repositorio">{dataDaCasa(tr.dataUnica)}</span>
+                  ) : (
+                    /* Sem história no repositório não há data, e o marcador fica:
+                       é o modo certo de falhar de `src/lib/datas-do-repositorio.mjs`. */
+                    <Marcador lang={lang} />
+                  )}
                 </span>
               )}
             </div>

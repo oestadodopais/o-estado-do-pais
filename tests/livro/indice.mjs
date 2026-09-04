@@ -13,7 +13,8 @@
  *   node tests/livro/indice.mjs
  *   node tests/livro/indice.mjs --json <ficheiro>
  *   node tests/livro/indice.mjs --contra <ficheiro.json>   (I10: o antes)
- *   node tests/livro/indice.mjs --navegador                (I3b e I7)
+ *   node tests/livro/indice.mjs --navegador                (I3b e I7, rápidas)
+ *   node tests/livro/indice.mjs --navegador --amostra-larga (as duas edições, 60 linhas)
  *   node tests/livro/indice.mjs --navegador --capturas <dir>
  *   OEDP_DIST=<dir> node tests/livro/indice.mjs            (para as plantas)
  *
@@ -32,10 +33,14 @@
  *      origem transcrita, porque a casa não edita o que transcreve, ou quando a
  *      página é um documento alojado ou uma página de leitura, que o brief põe
  *      fora do âmbito. As duas contagens saem impressas.
- * I3 (G3) · **a busca existe e é um formulário.** Um `input[type=search]` em
- *      `/livro-razao` e em `/en/ledger`, dentro de um `<form method="get">` com
- *      destino, com nome de campo e com um rótulo preso a ele. Com
- *      `--navegador`, a filtragem é medida no navegador.
+ * I3 (G3) · **a busca existe, é um formulário, e o índice dela é o livro-razão
+ *      inteiro.** Um `input[type=search]` em `/livro-razao` e em `/en/ledger`,
+ *      dentro de um `<form method="get">` cujo destino EXISTE em `dist/`, com
+ *      nome de campo e com um rótulo preso a ele; e o ficheiro do índice da
+ *      busca com uma entrada por linha do livro-razão, cada uma com página e com
+ *      o nome da sua própria linha. Com `--navegador`, a filtragem é medida no
+ *      navegador (I3b), com perguntas que só um nome, um concelho e uma fonte
+ *      respondem.
  * I4 (G4) · **a palavra retirada não está no rótulo da contagem.** O brief dava
  *      duas saídas para «peça», definir ou substituir; a `DECISIONS.md` §1.98
  *      escolheu a segunda por todo o sítio, e esta célula mede-a onde este bloco
@@ -48,7 +53,10 @@
  * I7 (G7) · **sem transbordo a 390** nas páginas de linha (com `--navegador`).
  * I8 (G8) · **a página de uma unidade da Carta** diz o que tem e não ganhou
  *      número nenhum: as linhas citadas continuam a ser só a da Carta.
- * I9 (G9) · **o marcador dos estudos**, no índice, a no máximo um por trabalho.
+ * I9 (G9) · **as datas dos trabalhos, e o marcador que resta.** Conta TODOS os
+ *      marcadores da linha de cada trabalho (o da descrição e o da data), e não
+ *      só os do campo da data; e refaz, com o `git log`, a data em que o ficheiro
+ *      de cada edição entrou no repositório, exigindo que a página a diga.
  * I10 (G10) · **nenhum número novo.** O inventário dos valores selados e dos
  *      motivos `data-nonledger` sai em `--json`; com `--contra` compara-se com o
  *      de antes e a diferença fecha a régua.
@@ -66,8 +74,23 @@
 import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
+
+/**
+ * ---------------------------------------------------------------------------
+ * O QUE A RÉGUA IMPORTA, E O QUE ELA REFAZ
+ * ---------------------------------------------------------------------------
+ * Importa os DADOS (o livro-razão, as duas listas de nomes de cartão). Refaz a
+ * REGRA: a escada dos nomes está escrita outra vez aqui, em nove linhas, porque
+ * uma régua que chamasse `nomeDaMedida()` confirmava a função e não a página. É
+ * a mesma disciplina que `scripts/gate-html.mjs` escreve por extenso quando lê
+ * um campo «DIRECTAMENTE da afirmação» em vez de o pedir ao gabarito.
+ */
+import { loadClaims } from '../../src/lib/ledger.mjs';
+import { FIGURAS } from '../../src/data/figuras.mjs';
+import { MEDIDAS_DO_DOMINIO_1 } from '../../src/data/dominios.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = process.env.OEDP_DIST ?? path.join(RAIZ, 'dist');
@@ -81,6 +104,8 @@ const JSON_SAIDA = opcao('--json');
 const CONTRA = opcao('--contra');
 const CAPTURAS = opcao('--capturas');
 const NAVEGADOR = argv.includes('--navegador') || CAPTURAS !== null;
+/** A amostra larga: a do relatório, e não a que corre a cada construção. */
+const AMOSTRA_LARGA = argv.includes('--amostra-larga') || CAPTURAS !== null;
 
 const verde = (s) => `\x1b[32m${s}\x1b[0m`;
 const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
@@ -95,11 +120,19 @@ if (!fs.existsSync(DIST)) {
 /* As cópias locais da regra                                                  */
 /* ========================================================================== */
 
-/** A data ISO, tal como o livro-razão a guarda. */
-const ISO = /\b\d{4}-\d{2}-\d{2}\b/;
-const ISO_G = /\b\d{4}-\d{2}-\d{2}\b/g;
-/** Um texto que é UMA data ISO e mais nada. */
-const SO_ISO = /^\s*\d{4}-\d{2}-\d{2}\s*$/;
+/**
+ * A DATA QUE NÃO É A DA CASA (leitura a frio, Major 13).
+ *
+ * A regra da casa é uma só, `dd.mm.aaaa`. A primeira passagem procurava a forma
+ * ISO e mais nenhuma, e por isso `12/08/2026` e `2026/08/12` passavam: são
+ * exactamente a mesma falha (uma data escrita noutra grafia) na forma que a
+ * régua não conhecia. O que se procura são as TRÊS: ISO com hífenes, e as duas
+ * com barras.
+ */
+const ISO = /\b(?:\d{4}-\d{2}-\d{2}|\d{4}\/\d{2}\/\d{2}|\d{2}\/\d{2}\/\d{4})\b/;
+const ISO_G = new RegExp(ISO.source, 'g');
+/** Um texto que é UMA data noutra grafia e mais nada. */
+const SO_ISO = new RegExp('^\\s*(?:' + ISO.source.slice(2, -2) + ')\\s*$');
 /** O único marcador de incerteza do sítio (`IDENTIDADE.md` §6). */
 const MARCADOR = '[a verificar]';
 /** As duas páginas do marcador, uma por edição. */
@@ -117,6 +150,37 @@ const FORMA_DE_SLUG = /^[a-z0-9]+(?:-[a-z0-9.]+)+$/;
  * e não acompanhá-la.
  */
 const PALAVRA_RETIRADA = { pt: /\bpeças?\b/i, en: /\bpieces?\b/i };
+/**
+ * A ESCADA DOS NOMES, REFEITA (leitura a frio, Blocking 4 e Major 13).
+ *
+ * A primeira passagem perguntava «este texto parece um identificador?», e um
+ * nome trocado entre duas linhas passava: as duas cadeias são nomes legítimos,
+ * só que da linha errada. Esta escada é a segunda conta do mesmo facto: para
+ * cada identificador, qual É o nome que a página tem de mostrar. Os degraus são
+ * os do `src/lib/nomes.mjs`, escritos aqui à mão.
+ */
+const CARTOES_DA_REGUA = new Map();
+for (const f of FIGURAS) if (typeof f.claim === 'string' && !CARTOES_DA_REGUA.has(f.claim)) CARTOES_DA_REGUA.set(f.claim, f.nome);
+for (const m of MEDIDAS_DO_DOMINIO_1) if (typeof m.claim === 'string' && !CARTOES_DA_REGUA.has(m.claim)) CARTOES_DA_REGUA.set(m.claim, m.nome);
+
+const LINHAS_DA_REGUA = loadClaims();
+
+/** @param {string} id @param {'pt'|'en'} lang */
+function nomeEsperado(id, lang) {
+  const cartao = CARTOES_DA_REGUA.get(id);
+  if (cartao) {
+    const t = cartao[lang] ?? cartao.pt;
+    if (typeof t === 'string' && t.trim() !== '' && t !== MARCADOR) return t;
+  }
+  const linha = LINHAS_DA_REGUA.get(id);
+  if (!linha) return null;
+  const nome = linha.name;
+  if (typeof nome === 'string' && nome.trim() !== '' && nome !== MARCADOR) return nome;
+  const titulo = /** @type {{ title?: unknown }} */ (linha.document ?? {})?.title;
+  if (typeof titulo === 'string' && titulo.trim() !== '' && titulo !== MARCADOR) return titulo;
+  return null;
+}
+
 /**
  * As marcas que dizem «este texto não é prosa da casa: é uma transcrição».
  * É a lista de `scripts/medir-defeitos.mjs` (`ORIGEM_DECLARADA`), escrita outra
@@ -168,6 +232,16 @@ const dom = (pag) => {
 };
 
 const texto = (el) => String(el?.text ?? '').replace(/\s+/g, ' ').trim();
+/** Um caminho de `dist/` que existe: uma página, ou um ficheiro servido. */
+function existeNoDist(caminho) {
+  const limpo = String(caminho).split('?')[0].split('#')[0];
+  const base = path.join(DIST, limpo);
+  return (
+    fs.existsSync(path.join(base, 'index.html')) ||
+    (fs.existsSync(base) && fs.statSync(base).isFile())
+  );
+}
+
 const ePaginaDeIndiceDoLivro = (r) => r === '/livro-razao' || r === '/en/ledger';
 const ePaginaDeArea = (r) => /^\/(?:en\/)?areas\/[^/]+$/.test(r);
 const ePaginaDeLinha = (r) => /^\/(?:livro-razao|en\/ledger)\/[^/]+$/.test(r) && !/\/(?:concelhos|municipalities)$/.test(r);
@@ -212,14 +286,36 @@ celula('I1', 'o nome de uma medida não é o identificador', (falhas) => {
         falhas.push(`${pag.rota}: a entrada "${id}" encabeça com o identificador.`);
       }
       const nome = item.querySelector('.livro-item-nome');
+      const esperado = nomeEsperado(id, pag.lang);
       if (nome) {
         comNome++;
         const t = texto(nome);
         if (t === id) falhas.push(`${pag.rota}: o nome de "${id}" é o próprio identificador.`);
         else if (FORMA_DE_SLUG.test(t)) {
           falhas.push(`${pag.rota}: o nome de "${id}" tem a forma de um identificador ("${t}").`);
+        } else if (esperado === null) {
+          falhas.push(
+            `${pag.rota}: a entrada "${id}" mostra um nome ("${t.slice(0, 60)}") e a escada não ` +
+              `dá nenhum para essa linha.`,
+          );
+        } else if (t !== String(esperado).replace(/\s+/g, ' ').trim()) {
+          /* O NOME É O DAQUELA LINHA (Blocking 4). Trocar dois nomes entre duas
+             entradas do índice deixava as duas cadeias legítimas e a página a
+             mentir; a régua refaz a escada e compara com o identificador ao lado. */
+          falhas.push(
+            `${pag.rota}: a entrada "${id}" chama-se "${t.slice(0, 60)}" e o nome dela é ` +
+              `"${String(esperado).slice(0, 60)}".`,
+          );
         }
-      } else semNome++;
+      } else {
+        semNome++;
+        if (esperado !== null) {
+          falhas.push(
+            `${pag.rota}: a entrada "${id}" não mostra nome nenhum, e a escada dá-lhe ` +
+              `"${String(esperado).slice(0, 60)}".`,
+          );
+        }
+      }
       for (const marca of item.querySelectorAll('.livro-item-id')) {
         idEmMetadado++;
         const dentroDoMeta = Boolean(
@@ -286,9 +382,10 @@ celula('I2', 'as datas ISO à vista', (falhas) => {
 });
 
 /* --------------------------------------------------------------------- I3 */
-celula('I3', 'a busca do índice é um formulário', (falhas) => {
+celula('I3', 'a busca do índice é um formulário, e cobre o livro-razão inteiro', (falhas) => {
   const alvo = paginas.filter((p) => ePaginaDeIndiceDoLivro(p.rota));
   if (alvo.length !== 2) falhas.push(`esperava 2 páginas de índice do livro-razão e há ${alvo.length}.`);
+  let entradasNoIndice = 0;
   for (const pag of alvo) {
     const raiz = dom(pag);
     const campos = raiz.querySelectorAll('input[type="search"]');
@@ -307,7 +404,64 @@ celula('I3', 'a busca do índice é um formulário', (falhas) => {
     if ((forma.getAttribute('method') ?? '').toLowerCase() !== 'get') {
       falhas.push(`${pag.rota}: o formulário da busca não é method="get".`);
     }
-    if (!forma.getAttribute('action')) falhas.push(`${pag.rota}: o formulário da busca não tem destino.`);
+    /* O DESTINO TEM DE EXISTIR (leitura a frio, Major 13). Um `action` não vazio
+       passava a peneira antiga; um `action` para uma página que não existe é um
+       formulário que leva a lado nenhum, que é a mesma falha com outra cara. */
+    const destino = forma.getAttribute('action');
+    if (!destino) falhas.push(`${pag.rota}: o formulário da busca não tem destino.`);
+    else if (!existeNoDist(destino)) {
+      falhas.push(`${pag.rota}: o destino do formulário ("${destino}") não é uma página de dist/.`);
+    }
+
+    /* ---------------------------------------------------------------------
+       O ÍNDICE DA BUSCA, CONFERIDO CONTRA O LIVRO-RAZÃO (Major 6)
+       ---------------------------------------------------------------------
+       A busca passou a cobrir as 2 916 linhas por um ficheiro que a construção
+       escreve. Um ficheiro que o guião carrega é superfície pública como uma
+       página: a régua conta as suas entradas contra `ledger/claims/` (que ela
+       própria lê), confere que cada identificador tem página em `dist/` e que
+       cada nome é o nome daquela linha nesta edição. Sem isto, a promessa das
+       2 916 era uma cadeia num relatório. */
+    const caminhoDoIndice = forma.getAttribute('data-livro-indice');
+    if (!caminhoDoIndice) {
+      falhas.push(`${pag.rota}: o formulário não diz onde está o índice da busca.`);
+    } else {
+      const ficheiro = path.join(DIST, caminhoDoIndice);
+      if (!fs.existsSync(ficheiro)) {
+        falhas.push(`${pag.rota}: o índice da busca ("${caminhoDoIndice}") não existe em dist/.`);
+      } else {
+        const indice = JSON.parse(fs.readFileSync(ficheiro, 'utf8'));
+        entradasNoIndice += indice.linhas?.length ?? 0;
+        if (indice.edicao !== pag.lang) {
+          falhas.push(`${caminhoDoIndice}: diz ser da edição "${indice.edicao}" e serve a "${pag.lang}".`);
+        }
+        if ((indice.linhas?.length ?? 0) !== LINHAS_DA_REGUA.size) {
+          falhas.push(
+            `${caminhoDoIndice}: tem ${indice.linhas?.length ?? 0} entrada(s) e o livro-razão tem ` +
+              `${LINHAS_DA_REGUA.size} linhas.`,
+          );
+        }
+        let semPagina = 0;
+        let nomeErrado = 0;
+        for (const linha of indice.linhas ?? []) {
+          const id = String(linha[0]);
+          if (!LINHAS_DA_REGUA.has(id)) {
+            falhas.push(`${caminhoDoIndice}: a entrada "${id}" não é uma linha do livro-razão.`);
+            continue;
+          }
+          if (!fs.existsSync(path.join(DIST, indice.base, id, 'index.html'))) semPagina++;
+          const nome = linha[1] >= 0 ? indice.nomes[linha[1]] : null;
+          const devia = nomeEsperado(id, pag.lang);
+          if ((nome ?? null) !== (devia ?? null)) nomeErrado++;
+        }
+        if (semPagina > 0) {
+          falhas.push(`${caminhoDoIndice}: ${semPagina} entrada(s) sem página de linha em dist/.`);
+        }
+        if (nomeErrado > 0) {
+          falhas.push(`${caminhoDoIndice}: ${nomeErrado} entrada(s) com um nome que não é o da sua linha.`);
+        }
+      }
+    }
     const nome = campo.getAttribute('name');
     if (!nome) falhas.push(`${pag.rota}: o campo de busca não tem nome, e sem nome não vai nada no endereço.`);
     const idDoCampo = campo.getAttribute('id');
@@ -319,7 +473,8 @@ celula('I3', 'a busca do índice é um formulário', (falhas) => {
       falhas.push(`${pag.rota}: ${itens - comBusca} entrada(s) sem texto de busca declarado.`);
     }
   }
-  return `${alvo.length} índice(s) com um campo de busca dentro de um <form method="get">`;
+  medida.I3 = { indices: alvo.length, entradas: entradasNoIndice, linhas_do_livro: LINHAS_DA_REGUA.size };
+  return `${alvo.length} índice(s) com um campo de busca dentro de um <form method="get"> · ${entradasNoIndice} entrada(s) nos dois ficheiros do índice da busca, contra ${LINHAS_DA_REGUA.size} linhas do livro-razão em cada`;
 });
 
 /* --------------------------------------------------------------------- I4 */
@@ -491,26 +646,144 @@ celula('I8', 'a página de uma unidade da Carta', (falhas) => {
       falhas.push(`uma página de unidade cita a linha "${id}", que não é a da Carta: um agregado novo entrou sem linha derivada.`);
     }
   }
-  medida.I8 = { paginas: alvo.length, linhas: [...linhasCitadas] };
-  return `${alvo.length} página(s), cada uma com a frase do índice e sem uma linha que não seja a da Carta`;
+
+  /**
+   * O AGREGADO SEM MARCA (leitura a frio, Major 13).
+   *
+   * A peneira acima só via um agregado que entrasse COM a marca de uma linha:
+   * `<p>Dívida do distrito: 1 234</p>`, escrito à mão, passava inteiro. O que
+   * se mede agora é o que a `check-formas` F2 mede dentro de um desenho, e pela
+   * mesma razão: nesta página nenhum algarismo pode estar fora de uma origem
+   * declarada. A geometria do mapa vive em atributos (`d`, `viewBox`) e não em
+   * texto, e por isso não entra nesta conta.
+   */
+  let algarismosSoltos = 0;
+  for (const pag of alvo) {
+    /* O CORPO DA PÁGINA, E NÃO A MOBÍLIA. O cabeçalho e o rodapé são os mesmos
+       em todas as rotas e têm os seus próprios números, com as suas próprias
+       marcas e os seus próprios portões; o que esta célula julga é o que a
+       página de uma unidade da Carta acrescenta. */
+    const raiz = dom(pag).querySelector('main');
+    if (!raiz) {
+      falhas.push(`${pag.rota}: não tem <main>, e é por ele que esta célula mede.`);
+      continue;
+    }
+    const marcados = new Set();
+    for (const el of raiz.querySelectorAll('[data-claim],[data-prova],[data-nonledger],[data-lugar],[data-nome]')) {
+      marcados.add(el);
+      for (const d of el.querySelectorAll('*')) marcados.add(d);
+    }
+    for (const el of raiz.querySelectorAll('*')) {
+      if (marcados.has(el)) continue;
+      const proprio = el.childNodes
+        .filter((n) => n.nodeType === 3)
+        .map((n) => n.rawText ?? '')
+        .join('');
+      if (!/\d/.test(proprio)) continue;
+      algarismosSoltos++;
+      falhas.push(
+        `${pag.rota}: um algarismo fora de qualquer origem declarada ("${proprio.trim().slice(0, 60)}"). ` +
+          `Numa página que é um índice, um número é um agregado que ninguém conferiu.`,
+      );
+    }
+  }
+  medida.I8 = { paginas: alvo.length, linhas: [...linhasCitadas], algarismos_soltos: algarismosSoltos };
+  return `${alvo.length} página(s), cada uma com a frase do índice, sem uma linha que não seja a da Carta e sem um algarismo fora de origem declarada`;
 });
 
 /* --------------------------------------------------------------------- I9 */
-celula('I9', 'o marcador dos estudos, uma vez por trabalho', (falhas) => {
+celula('I9', 'as datas dos trabalhos, e o marcador que resta', (falhas) => {
+  /**
+   * A CONTA DOS MARCADORES É DE TODOS OS MARCADORES DA LINHA (leitura a frio,
+   * Major 10). A primeira passagem contava só os que estavam dentro do campo da
+   * data, e por isso via um marcador em «Onde está a água?» quando a linha dele
+   * mostra dois: um pela descrição que falta e outro pela data. A régua conta o
+   * que o leitor vê.
+   */
   let trabalhos = 0;
   let comMarcador = 0;
+  let marcadoresAoTodo = 0;
   for (const pag of paginas.filter((p) => p.rota === '/estudos' || p.rota === '/en/studies')) {
     for (const artigo of dom(pag).querySelectorAll('article.arquivo-item')) {
       trabalhos++;
-      const datas = artigo.querySelectorAll('[data-nonledger="data-de-publicacao"]');
-      let n = 0;
-      for (const d of datas) if (texto(d).includes(MARCADOR)) n++;
-      if (n > 1) falhas.push(`${pag.rota}: um trabalho com ${n} marcadores de data.`);
-      if (n === 1) comMarcador++;
+      const n = artigo.querySelectorAll('.marcador').length;
+      marcadoresAoTodo += n;
+      if (n > 1) {
+        falhas.push(
+          `${pag.rota}: um trabalho com ${n} marcadores («${texto(artigo).slice(0, 50)}»).`,
+        );
+      }
+      if (n >= 1) comMarcador++;
     }
   }
-  medida.I9 = { trabalhos, com_marcador: comMarcador };
-  return `${trabalhos} linha(s) de trabalho, ${comMarcador} com o marcador da data, nenhuma com mais do que um`;
+
+  /**
+   * A DATA DE CADA EDIÇÃO, REFEITA DO `git` (decisão de 04.09.2026).
+   *
+   * A página escreve «publicado a dd.mm.aaaa», e a data é o dia em que o
+   * ficheiro da edição entrou neste repositório. A régua não pergunta ao sítio
+   * qual foi: corre o `git log` por conta própria e exige que a página mostre
+   * essa data. É a segunda conta do mesmo facto, e é ela que apanha a cópia rasa
+   * (sem história, o sítio volta ao marcador e o `git` daqui também: as duas
+   * concordam, e a contagem de datas resolvidas, impressa, diz o que aconteceu).
+   */
+  const RAIZ_DO_REPO = path.resolve(RAIZ);
+  let comData = 0;
+  let semHistoria = 0;
+  const dirDosTrabalhos = path.join(RAIZ_DO_REPO, 'studies-src');
+  const slugs = fs.existsSync(dirDosTrabalhos)
+    ? fs.readdirSync(dirDosTrabalhos, { withFileTypes: true })
+        .filter((e) => e.isDirectory() && !e.name.startsWith('_'))
+        .map((e) => e.name)
+    : [];
+  for (const slug of slugs) {
+    for (const edicao of ['pt', 'en']) {
+      const rel = `studies-src/${slug}/${edicao}.html`;
+      if (!fs.existsSync(path.join(RAIZ_DO_REPO, rel))) continue;
+      let data = null;
+      try {
+        const saida = execFileSync(
+          'git',
+          ['log', '--diff-filter=A', '--format=%ad', '--date=short', '--', rel],
+          { cwd: RAIZ_DO_REPO, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] },
+        );
+        const linhas = saida.split('\n').map((l) => l.trim()).filter((l) => /^\d{4}-\d{2}-\d{2}$/.test(l));
+        data = linhas.length ? linhas[linhas.length - 1] : null;
+      } catch {
+        data = null;
+      }
+      if (data === null) {
+        semHistoria++;
+        continue;
+      }
+      comData++;
+      const naForma = `${data.slice(8, 10)}.${data.slice(5, 7)}.${data.slice(0, 4)}`;
+      const rota = edicao === 'pt' ? `/estudos/${slug}` : `/en/studies/${slug}`;
+      const pag = paginas.find((p) => p.rota === rota);
+      if (!pag) continue;
+      const t = texto(dom(pag));
+      if (!t.includes(naForma)) {
+        falhas.push(
+          `${rota}: o ficheiro desta edição entrou no repositório a ${naForma} e a página não o diz.`,
+        );
+      }
+    }
+  }
+  if (comData === 0 && slugs.length > 0) {
+    falhas.push(
+      `nenhuma das ${slugs.length} pastas de trabalho deu data de repositório: ou não há história ` +
+        `(uma cópia rasa) ou o \`git\` não corre. Sem um positivo conhecido, esta célula não mede nada.`,
+    );
+  }
+
+  medida.I9 = {
+    trabalhos,
+    com_marcador: comMarcador,
+    marcadores: marcadoresAoTodo,
+    edicoes_com_data_do_repositorio: comData,
+    edicoes_sem_historia: semHistoria,
+  };
+  return `${trabalhos} linha(s) de trabalho · ${marcadoresAoTodo} marcador(es) ao todo, ${comMarcador} linha(s) com um e nenhuma com dois · ${comData} edição(ões) com a data do repositório conferida contra o git, ${semHistoria} sem história`;
 });
 
 /* -------------------------------------------------------------------- I10 */
@@ -519,35 +792,85 @@ celula('I10', 'nenhum número novo', (falhas) => {
   const selados = {};
   /** @type {Record<string, number>} */
   const motivos = {};
+  /**
+   * O QUE SE INVENTARIA (leitura a frio, Major 13).
+   *
+   * A primeira passagem guardava os IDS citados e os NOMES dos motivos, e
+   * comparava a PRESENÇA das chaves. Assim, mudar o valor impresso de uma linha,
+   * ou render a mesma linha mais vinte vezes, não mexia numa única chave: as
+   * duas construções tinham exactamente o mesmo conjunto de ids e o mesmo
+   * conjunto de motivos. O que se guarda agora é o que se pode mudar sem
+   * mudança nenhuma de chave: **quantas vezes** cada linha se rende e **que
+   * algarismos** ela imprime.
+   */
+  /** @type {Record<string, string[]>} */
+  const impressos = {};
   for (const pag of paginas) {
     for (const el of dom(pag).querySelectorAll('[data-claim]')) {
       const id = el.getAttribute('data-claim') ?? '';
       selados[id] = (selados[id] ?? 0) + 1;
+      const t = texto(el);
+      if (!impressos[id]) impressos[id] = [];
+      if (t && !impressos[id].includes(t)) impressos[id].push(t);
     }
     for (const el of dom(pag).querySelectorAll('[data-nonledger]')) {
       const m = el.getAttribute('data-nonledger') ?? '';
       motivos[m] = (motivos[m] ?? 0) + 1;
     }
   }
-  medida.I10 = { selados, motivos };
+  for (const id of Object.keys(impressos)) impressos[id].sort();
+  medida.I10 = { selados, motivos, impressos };
   if (Object.keys(selados).length === 0) falhas.push('nenhum valor selado em dist/: a varredura não viu nada.');
   if (CONTRA) {
     if (!fs.existsSync(CONTRA)) falhas.push(`não existe ${CONTRA}.`);
     else {
       const antes = JSON.parse(fs.readFileSync(CONTRA, 'utf8'));
       const a = antes.medida?.I10 ?? {};
+      const antesSelados = a.selados ?? {};
+      const antesMotivos = a.motivos ?? {};
+      const antesImpressos = a.impressos ?? null;
       for (const id of Object.keys(selados)) {
-        if (!(id in (a.selados ?? {}))) falhas.push(`a linha "${id}" passou a ser citada e não era.`);
+        if (!(id in antesSelados)) falhas.push(`a linha "${id}" passou a ser citada e não era.`);
+        else if (antesSelados[id] !== selados[id]) {
+          falhas.push(
+            `a linha "${id}" rende-se ${selados[id]} vez(es) e rendia-se ${antesSelados[id]}.`,
+          );
+        }
       }
-      for (const id of Object.keys(a.selados ?? {})) {
+      for (const id of Object.keys(antesSelados)) {
         if (!(id in selados)) falhas.push(`a linha "${id}" deixou de ser citada.`);
       }
       for (const m of Object.keys(motivos)) {
-        if (!(m in (a.motivos ?? {}))) falhas.push(`o motivo "${m}" é novo.`);
+        if (!(m in antesMotivos)) falhas.push(`o motivo "${m}" é novo.`);
+        else if (antesMotivos[m] !== motivos[m]) {
+          falhas.push(`o motivo "${m}" rende-se ${motivos[m]} vez(es) e rendia-se ${antesMotivos[m]}.`);
+        }
+      }
+      for (const m of Object.keys(antesMotivos)) {
+        if (!(m in motivos)) falhas.push(`o motivo "${m}" deixou de se render.`);
+      }
+      /* Os ALGARISMOS de cada linha. Uma medição anterior sem esta tabela não
+         serve para a comparação, e a régua di-lo em vez de a saltar em silêncio. */
+      if (antesImpressos === null) {
+        falhas.push(
+          `a medição de antes não guardou os algarismos impressos de cada linha: ` +
+            `refaça-a com esta régua para que a comparação valha alguma coisa.`,
+        );
+      } else {
+        for (const id of Object.keys(impressos)) {
+          const antesTexto = (antesImpressos[id] ?? []).join(' | ');
+          const agoraTexto = impressos[id].join(' | ');
+          if (id in antesImpressos && antesTexto !== agoraTexto) {
+            falhas.push(
+              `a linha "${id}" imprime «${agoraTexto.slice(0, 60)}» e imprimia «${antesTexto.slice(0, 60)}».`,
+            );
+          }
+        }
       }
     }
   }
-  return `${Object.keys(selados).length} linha(s) citada(s) · ${Object.keys(motivos).length} motivo(s) declarado(s)${CONTRA ? ` · comparado com ${path.basename(CONTRA)}` : ''}`;
+  const ocorrencias = Object.values(selados).reduce((x, y) => x + y, 0);
+  return `${Object.keys(selados).length} linha(s) citada(s) em ${ocorrencias} ocorrência(s) · ${Object.keys(motivos).length} motivo(s) declarado(s)${CONTRA ? ` · comparado com ${path.basename(CONTRA)}, valor a valor` : ''}`;
 });
 
 /* ========================================================================== */
@@ -573,31 +896,72 @@ async function comNavegador() {
 
   /* ------------------------------------------------------------------ I3b */
   {
+    /**
+     * A BUSCA, MEDIDA NO NAVEGADOR E COM PERGUNTAS DE VERDADE (Major 13).
+     *
+     * A primeira passagem escrevia «divida» e uma palavra que não existe. As
+     * duas passavam com um filtro que só olhasse ao IDENTIFICADOR, porque
+     * `divida` está em dezenas de ids: a célula não distinguia uma busca por
+     * nome de uma busca por slug. As perguntas passam a ser quatro, e cada uma
+     * só pode ser respondida por um campo diferente do índice:
+     *
+     *   · «abandono escolar», um NOME de cartão com espaços, que nenhum id tem;
+     *   · «mertola», um CONCELHO, que só existe nas 2 767 linhas que a página
+     *     não lista: é a prova de que a busca cobre o livro-razão inteiro e não
+     *     as 149 do documento;
+     *   · «eurostat», uma FONTE;
+     *   · uma palavra que não existe, que tem de dar a fila vazia.
+     *
+     * UMA PÁGINA POR CÉLULA. A célula corre no `npm run verify` desde a segunda
+     * passagem, e um portão que abra dez páginas por célula é um portão que
+     * ninguém corre: mede-se a edição portuguesa, e a inglesa fica para a
+     * corrida larga (`--amostra-larga`), que é a do relatório.
+     */
     /** @type {string[]} */
     const falhas = [];
     const notas = [];
-    for (const rota of ['/livro-razao', '/en/ledger']) {
+    const rotas = AMOSTRA_LARGA ? ['/livro-razao', '/en/ledger'] : ['/livro-razao'];
+    for (const rota of rotas) {
       const ctx = await nav.newContext({ viewport: { width: 1280, height: 800 } });
       const pag = await ctx.newPage();
       await pag.goto(`${base}${rota}`, { waitUntil: 'networkidle' });
-      const antes = await pag.locator('.livro-item:visible').count();
-      await pag.fill('input[type="search"]', 'divida');
-      await pag.waitForTimeout(120);
-      const depois = await pag.locator('.livro-item:visible').count();
-      await pag.fill('input[type="search"]', 'zzzzzz-nao-existe');
-      await pag.waitForTimeout(120);
-      const nenhum = await pag.locator('.livro-item:visible').count();
+      const noDocumento = await pag.locator('.livro-item').count();
+
+      /** Escreve e devolve quantas portas a fila mostra. */
+      const procura = async (q) => {
+        await pag.fill('input[type="search"]', q);
+        await pag.waitForTimeout(150);
+        return pag.locator('.livro-busca-porta:visible').count();
+      };
+
+      const porNome = await procura(rota === '/livro-razao' ? 'abandono escolar' : 'early school');
+      const porConcelho = await procura('mertola');
+      const porFonte = await procura('eurostat');
+      const nenhum = await procura('zzzzzz-nao-existe-mesmo');
       const vazio = await pag.locator('[data-livro-sem-resultado]:visible').count();
-      if (!(depois > 0 && depois < antes)) {
-        falhas.push(`${rota}: a busca não filtrou (${antes} antes, ${depois} depois).`);
+
+      if (porNome < 1) falhas.push(`${rota}: uma busca por nome não devolveu nada.`);
+      if (porConcelho < 1) {
+        falhas.push(
+          `${rota}: uma busca por concelho («mertola») não devolveu nada. As linhas dos ` +
+            `concelhos não estão no documento: se a busca não as alcança, ela cobre ${noDocumento} ` +
+            `linhas e não o livro-razão.`,
+        );
       }
-      if (nenhum !== 0) falhas.push(`${rota}: uma busca sem resultado deixou ${nenhum} entrada(s) à vista.`);
+      if (porFonte < 1) falhas.push(`${rota}: uma busca por fonte não devolveu nada.`);
+      if (nenhum !== 0) falhas.push(`${rota}: uma busca sem resultado deixou ${nenhum} porta(s) à vista.`);
       if (vazio !== 1) falhas.push(`${rota}: o estado vazio da busca não apareceu.`);
-      notas.push(`${rota}: ${antes} → ${depois} com «divida», 0 com uma palavra que não existe`);
-      medida.I3b = { ...(medida.I3b ?? {}), [rota]: { antes, depois } };
+      notas.push(
+        `${rota}: ${noDocumento} entradas no documento · por nome ${porNome} · por concelho ` +
+          `${porConcelho} · por fonte ${porFonte} · sem resultado 0`,
+      );
+      medida.I3b = {
+        ...(medida.I3b ?? {}),
+        [rota]: { no_documento: noDocumento, por_nome: porNome, por_concelho: porConcelho, por_fonte: porFonte },
+      };
       await ctx.close();
     }
-    celulas.push({ id: 'I3b', nome: 'a busca filtra, no navegador', passa: falhas.length === 0, nota: notas.join(' · '), falhas });
+    celulas.push({ id: 'I3b', nome: 'a busca filtra o livro-razão inteiro, no navegador', passa: falhas.length === 0, nota: notas.join(' · '), falhas });
   }
 
   /* ------------------------------------------------------------------- I7 */
@@ -613,11 +977,17 @@ async function comNavegador() {
       return texto(el).length;
     };
     const ordenadas = [...linhas].sort((a, b) => comprimento(b) - comprimento(a));
-    const dez = ordenadas.slice(0, 10);
-    const resto = linhas.filter((p) => !dez.includes(p)).sort((a, b) => a.rota.localeCompare(b.rota));
-    const passo = Math.max(1, Math.floor(resto.length / 50));
-    const cinquenta = resto.filter((_, i) => i % passo === 0).slice(0, 50);
-    const amostra = [...dez, ...cinquenta];
+    /* UMA PÁGINA POR OMISSÃO, A AMOSTRA LARGA COM A BANDEIRA. A célula corre no
+       `npm run verify` desde a segunda passagem: a que conta todos os dias é a
+       do endereço mais longo, que é onde o transbordo aparece primeiro. A
+       amostra de 60 é a do relatório, e corre-se com `--amostra-larga`. */
+    let amostra = ordenadas.slice(0, 1);
+    if (AMOSTRA_LARGA) {
+      const dez = ordenadas.slice(0, 10);
+      const resto = linhas.filter((p) => !dez.includes(p)).sort((a, b) => a.rota.localeCompare(b.rota));
+      const passo = Math.max(1, Math.floor(resto.length / 50));
+      amostra = [...dez, ...resto.filter((_, i) => i % passo === 0).slice(0, 50)];
+    }
     const ctx = await nav.newContext({ ...devices['iPhone 13'] });
     let pior = 0;
     for (const p of amostra) {
@@ -632,13 +1002,15 @@ async function comNavegador() {
       }
       await pag.close();
     }
-    medida.I7 = { amostra: amostra.length, dez_mais_longas: dez.map((p) => p.rota), pior };
+    medida.I7 = { amostra: amostra.length, medidas: amostra.map((p) => p.rota), pior };
     await ctx.close();
     celulas.push({
       id: 'I7',
       nome: 'sem transbordo a 390 nas páginas de linha',
       passa: falhas.length === 0,
-      nota: `${amostra.length} página(s) medidas (as 10 com o endereço mais longo, mais 50 a passo fixo)`,
+      nota: AMOSTRA_LARGA
+        ? `${amostra.length} página(s) medidas (as 10 com o endereço mais longo, mais 50 a passo fixo)`
+        : `${amostra.length} página(s) medida (a do endereço mais longo; a amostra de 60 corre com --amostra-larga)`,
       falhas,
     });
   }
@@ -678,6 +1050,11 @@ async function comNavegador() {
       ['en-areas', '/en/areas', true],
       ['pt-distrito', '/distritos/evora', true],
       ['en-distrito', '/en/districts/evora', true],
+      /* O ARQUIVO ENTRA NA SEGUNDA PASSAGEM: é onde a decisão sobre as datas de
+         publicação se vê (dezasseis edições com a data do repositório, e o
+         marcador a sair de treze linhas). */
+      ['pt-estudos', '/estudos', true],
+      ['en-estudos', '/en/studies', true],
     ];
     for (const [largura, altura, sufixo] of [
       [390, 664, '390x664'],

@@ -392,6 +392,62 @@
   margin-top: 14px;
   color: var(--muted);
 }
+/* ----------------------------------------------------------------------------
+ * A FILA DE RESULTADOS (segunda passagem do F1.4, Major 6)
+ * ----------------------------------------------------------------------------
+ * A busca cobre as 2 916 linhas, e as 2 767 dos concelhos não estão no
+ * documento: os resultados são uma fila de portas, cada uma com o nome, o
+ * identificador e o concelho. A composição é a da lista de cima, para que a
+ * mudança de superfície não seja uma mudança de casa: nome na letra da prosa,
+ * identificador e lugar na do instrumento, pequenos e em cinzento.
+ *
+ * `hidden` GANHA À GRELHA, aqui e na lista: as duas são `display: grid`, e uma
+ * regra de classe ganha ao `display: none` do atributo. Foi assim que a primeira
+ * passagem escondeu entradas que continuaram à vista.
+ * ------------------------------------------------------------------------- */
+.livro-lista[hidden],
+.livro-busca-res[hidden] {
+  display: none;
+}
+.livro-busca-res {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: grid;
+  border-top: 1px solid var(--rule);
+}
+.livro-busca-item {
+  border-bottom: 1px solid var(--rule);
+}
+.livro-busca-porta {
+  display: grid;
+  gap: 2px;
+  padding: 10px 0;
+  min-height: 44px;
+  align-content: center;
+  text-decoration: none;
+  color: var(--ink);
+}
+.livro-busca-porta:hover .livro-busca-nome {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.livro-busca-nome {
+  font-family: var(--f-prosa);
+  font-size: 14px;
+  line-height: 1.35;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+.livro-busca-id,
+.livro-busca-lugar {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
 
 /* As contagens deste índice: números do próprio sítio, com a sua porta. Vão numa
    linha só, fora da prosa, para que a régua das frases da casa continue a ver a

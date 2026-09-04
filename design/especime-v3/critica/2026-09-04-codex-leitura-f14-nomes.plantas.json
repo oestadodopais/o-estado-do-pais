@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-04T02:13:29+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/78714fcd-9d7a-49ae-92d0-914347b16683/scratchpad/leituras/f14-pacote",
+ "plantas": [
+  {
+   "id": "P1a",
+   "ficheiro": "src/lib/nomes.mjs",
+   "descricao": "nomeDaMedida devolve o identificador em vez do nome quando a linha tem nome: numa reconstrução os nomes voltam a ser slugs; a página construída no pacote tem os nomes (cópia inteira)",
+   "sha256_antes": "d32e16579c8c1ee407a4a9a4f736b4037b54f68a809ce39df057e1e0eee28166",
+   "sha256_depois": "1d5b039a03e79cd489524291dbbf18b2facc473a6ebf98a235e7321ba821ef67",
+   "contexto_antes": "t texto = cartao.nome[lang] ?? cartao.nome.pt;\n    if (eTextoUtil(texto)) return { texto, fonte: cartao.fonte, campo: null };\n  }\n  if (eTextoUtil(claim.name)) return { texto: claim.name, fonte: null, campo: 'name' };\n  const titulo = documentoDaLinha(claim)?.title;\n  if (eTextoUtil(titulo)) return { texto: titulo, fonte: null, campo: 'document.title' };\n  return null;\n}\n\n/*",
+   "contexto_depois": "t texto = cartao.nome[lang] ?? cartao.nome.pt;\n    if (eTextoUtil(texto)) return { texto, fonte: cartao.fonte, campo: null };\n  }\n  if (eTextoUtil(claim.name)) return { texto: claim.id, fonte: null, campo: 'name' };\n  const titulo = documentoDaLinha(claim)?.title;\n  if (eTextoUtil(titulo)) return { texto: titulo, fonte: null, campo: 'document.title' };\n  return null;\n}\n\n/*"
+  },
+  {
+   "id": "P1b",
+   "ficheiro": "diff.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff",
+   "sha256_antes": "a6f5afb10fbab00d427a2f99399f6a99ec09a6ef56c6a3627f3ce1467a561bf4",
+   "sha256_depois": "0b835ff2d988976203a84f66e18071b0bc2be582bc0ff5ca3a634a5d71bb39dd",
+   "contexto_antes": "exto = cartao.nome[lang] ?? cartao.nome.pt;\n+    if (eTextoUtil(texto)) return { texto, fonte: cartao.fonte, campo: null };\n+  }\n+  if (eTextoUtil(claim.name)) return { texto: claim.name, fonte: null, campo: 'name' };\n+  const titulo = documentoDaLinha(claim)?.title;\n+  if (eTextoUtil(titulo)) return { texto: titulo, fonte: null, campo: 'document.title' };\n+  return null;\n+}",
+   "contexto_depois": "exto = cartao.nome[lang] ?? cartao.nome.pt;\n+    if (eTextoUtil(texto)) return { texto, fonte: cartao.fonte, campo: null };\n+  }\n+  if (eTextoUtil(claim.name)) return { texto: claim.id, fonte: null, campo: 'name' };\n+  const titulo = documentoDaLinha(claim)?.title;\n+  if (eTextoUtil(titulo)) return { texto: titulo, fonte: null, campo: 'document.title' };\n+  return null;\n+}"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "tests/livro/indice.mjs",
+   "descricao": "a régua I2 exige um Z no fim da data ISO e por isso nunca vê uma",
+   "sha256_antes": "08e984509a1f6e339919a4a23b13a216c73611a5a4c28168c25c3dc7fc3e69ba",
+   "sha256_depois": "34e5cbd5a8ff961a60fdaecc6f4c8ba82420e3e7a9469e69b3ad70b1d8d2baf0",
+   "contexto_antes": "================================================================== */\n\n/** A data ISO, tal como o livro-razão a guarda. */\nconst ISO = /\\b\\d{4}-\\d{2}-\\d{2}\\b/;\nconst ISO_G = /\\b\\d{4}-\\d{2}-\\d{2}\\b/g;\n/** Um texto que é UMA data ISO e mais nada. */\nconst SO_ISO = /^\\s*\\d{4}-\\d{2}-\\d{2}\\s*$/;\n/** O único marcador de incerteza do sítio (`IDENTIDADE.md` §6). */",
+   "contexto_depois": "================================================================== */\n\n/** A data ISO, tal como o livro-razão a guarda. */\nconst ISO = /\\b\\d{4}-\\d{2}-\\d{2}\\b/;\nconst ISO_G = /\\b\\d{4}-\\d{2}-\\d{2}Z\\b/g;\n/** Um texto que é UMA data ISO e mais nada. */\nconst SO_ISO = /^\\s*\\d{4}-\\d{2}-\\d{2}\\s*$/;\n/** O único marcador de incerteza do sítio (`IDENTIDADE.md` §6). */"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 30 datas ISO à vista na tabela G2 e 0 no resumo",
+   "sha256_antes": "d3bd7a8f5b5ba2739431de952c644247732f14e5eba402bc2a0c5e8087157634",
+   "sha256_depois": "a5070f3445cdd0ddaeaffd5be31ef361f7d7188c31b989add6d0ebab4b4c13e5",
+   "contexto_antes": "dado**; 0 nomes com a forma de um identificador |\n| G2 | datas ISO à vista | **28 300** elementos cujo texto inteiro é uma data ISO, mais 4 em prosa por marcar | **0** e **0** |\n| G3 | a busca do índice | **0** campos de busca em `/livro-razao` e `/en/ledger` | **1** em cada, dentro de um `<form method=\"get\">` com destino, nome de camp",
+   "contexto_depois": "dado**; 0 nomes com a forma de um identificador |\n| G2 | datas ISO à vista | **28 300** elementos cujo texto inteiro é uma data ISO, mais 4 em prosa por marcar | **0** e **30** |\n| G3 | a busca do índice | **0** campos de busca em `/livro-razao` e `/en/ledger` | **1** em cada, dentro de um `<form method=\"get\">` com destino, nome de camp"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/livro-razao.html",
+   "descricao": "uma medida do índice volta a chamar-se pelo slug na página construída",
+   "sha256_antes": "b918d7b12697b7b784b5fedc27da64e866624cbf53162c603fb883f506e37c73",
+   "sha256_depois": "242f6c22811fa0cc70a26aa4a26b0a2a2322b2a372c807cb7110df323919421f",
+   "contexto_antes": "n class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>Quadro institucional de indicadores</span></span></a></span></span><div class=\"livro-item-corpo\"><span class=\"livro-item-nome\" data-nome=\"figuras\">Abandono escolar precoce</span><div class=\"livro-item-meta\"><code class=\"livro-item-id\" data-linha-claim=\"abandono-escolar-precoce-2025\" data-linha-campo=\"id\">abandono-escolar-precoce-",
+   "contexto_depois": "n class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>Quadro institucional de indicadores</span></span></a></span></span><div class=\"livro-item-corpo\"><span class=\"livro-item-nome\" data-nome=\"figuras\">abandono-escolar-precoce-2025</span><div class=\"livro-item-meta\"><code class=\"livro-item-id\" data-linha-claim=\"abandono-escolar-precoce-2025\" data-linha-campo=\"id\">abandono-escolar-precoce-"
+  }
+ ]
+}
