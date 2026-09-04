@@ -37,7 +37,6 @@
  */
 import Base from '../layouts/Base.astro';
 import Masthead from '../components/Masthead.astro';
-import Peca from '../components/inicio/Peca.astro';
 import Portas from '../components/inicio/Portas.astro';
 import Cabeca from '../components/inicio/Cabeca.astro';
 import CabecaDoLugar from '../components/inicio/CabecaDoLugar.astro';
@@ -47,7 +46,7 @@ import Pesquisa from '../components/inicio/Pesquisa.astro';
 import MapaRespira from '../components/inicio/MapaRespira.astro';
 import ListaDosNomes from '../components/inicio/ListaDosNomes.astro';
 import LegendaDoMapa from '../components/inicio/LegendaDoMapa.astro';
-import ListaSocial from '../components/inicio/ListaSocial.astro';
+import LeituraBreve from '../components/inicio/LeituraBreve.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
 import Frase from '../components/Frase.astro';
 import {
@@ -61,7 +60,13 @@ import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
 import { estadoDaMedida } from '../lib/estado.mjs';
 import { concelhos, ledeDoPainel } from '../lib/inicio.mjs';
 import { slugsDasRegioes } from '../lib/regioes.mjs';
-import { dominioDaLinha } from '../lib/dominios.mjs';
+import { dominioDaLinha, ancoraDaMedida } from '../lib/dominios.mjs';
+import {
+  dominiosComPagina,
+  medidasDoDominio,
+  medidaPelaChave,
+  FAIXA_DO_DOMINIO_1,
+} from '../data/dominios.mjs';
 import { prova } from '../lib/prova.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -127,11 +132,60 @@ const regioesComPorta = slugsDasRegioes().join(' ');
 /* ------------------------------------------------------------------ o painel */
 /* A comparação com o limiar continua a ser calculada aqui, uma vez, como na v2:
    é prosa da casa gerada de dois números que já existem, e não um número novo. */
+/* A RÉGUA ATRAVESSA DA PEÇA PARA A LEITURA (F1.1b, item 2, 04.09.2026).
+   A referência da régua são os lados declarados do limiar, um ou dois: uma banda
+   dá dois números e a régua desenha dois traços; um teto ou um chão dá um. A
+   leitura da declaração é a de `ladosDoLimiar()`, e não há aqui uma segunda.
+
+   PORQUE É QUE ELA NÃO SAIU COM A PEÇA. A grelha das treze peças saiu desta
+   página, e a régua contra um LIMIAR PUBLICADO só existia ali: as sete medidas de
+   um concelho e as da régua da convergência não têm limiar do quadro, e por isso
+   a peça delas desenha a régua contra outra referência ou não desenha nenhuma.
+   Deixá-la cair era tirar do sítio inteiro a única forma gráfica que a Emenda 4
+   desenhou para «de que lado do limiar está o valor, e a que distância» — e foi o
+   feixe do sistema de desenho que o disse em voz alta, com a corrida a parar em
+   «não encontrei uma peça fora do limiar com régua». Ela vive agora dentro da
+   dobra da leitura, onde não custa um píxel enquanto a leitura estiver fechada. */
+/* ---------------------------------------------------------------------------
+ * A LEITURA DE UMA MEDIDA QUE VIVE NUM DOMÍNIO ACRESCENTA UMA PORTA (04.09.2026)
+ * ---------------------------------------------------------------------------
+ * A LEITURA BREVE É A MESMA PARA AS 21, e as três que vivem num domínio
+ * ACRESCENTAM, no fim, a porta «Ver no domínio →». Não trocam a leitura por ela.
+ *
+ * A DECISÃO FOI CORRIGIDA NO PRÓPRIO DIA, e fica escrito porque é a razão de
+ * esta porta existir. A primeira instrução do lugar de direção dizia «para os
+ * três cartões da primeira página que pertencem ao domínio, a área de leitura
+ * mostra uma linha só, com a porta, e não uma segunda leitura inteira». A
+ * leitura a frio do Codex mediu o que isso custava (Blocking 3): a primeira
+ * página passava de 7 para 5 definições, de 13 para 12 limiares e réguas, e de
+ * 21 para 18 selos de fonte. Não era compactar, era apagar. O lugar de direção
+ * corrigiu a decisão a 04.09.2026, e a página faz o que está escrito acima.
+ *
+ * QUEM DECIDE É A MESMA TABELA QUE DECIDE O DESTINO DO CARTÃO,
+ * `dominioDaLinha()`, e não uma segunda lista escrita aqui: a leitura de uma
+ * medida está NA PÁGINA DO DOMÍNIO exactamente quando o cartão dela leva à
+ * página do domínio, e as duas coisas não podem discordar. Hoje são três das 21
+ * (a dívida pública, do Procedimento, e as taxas de emprego e de desemprego, do
+ * Painel Social); amanhã são as que a primeira vaga puser no ar, sem uma linha
+ * mudar aqui.
+ *
+ * O VALOR NÃO VAI NA LEITURA, em nenhuma das 21, e a primeira instrução dizia
+ * «uma linha com o valor e a porta». A régua A3 conta `data-claim` por id e exige
+ * um por página; o valor daquela medida está no cartão da faixa, que é o
+ * «Relance» dela nesta página, e uma segunda rendição do mesmo id fecha a medida
+ * de aceitação J2. Fica a porta, e o relatório do bloco diz porquê.
+ *
+ * @param {string} claim
+ * @returns {string|null}
+ */
+const portaDaLeitura = (claim) => {
+  const dominio = dominioDaLinha(claim);
+  if (!dominio) return null;
+  return `${routePath('dominio', lang, { slug: dominio.slug })}#${dominio.ancora}`;
+};
+
 const medidas = FIGURAS_PDM.map((f) => {
   const linha = getClaim(f.claim);
-  /* A REFERÊNCIA DA RÉGUA SÃO OS LADOS DECLARADOS, um ou dois. Uma banda dá dois
-     números e a régua desenha dois traços; um teto ou um chão dá um. A leitura
-     da declaração é a de `ladosDoLimiar()`, e não há aqui uma segunda. */
   const lados = f.limiar ? ladosDoLimiar(f.limiar) : null;
   const refs = lados
     ? [lados.inferior, lados.superior].filter((l) => l !== null).map((l) => parsePtNumber(l))
@@ -141,7 +195,13 @@ const medidas = FIGURAS_PDM.map((f) => {
     linha,
     estado: estadoDaMedida(linha, f.limiar),
     comparacao: f.limiar ? comparacaoComOLimiar(linha, f.limiar) : null,
-    referencias: refs,
+    porta: portaDaLeitura(f.claim),
+    regua: refs.length
+      ? {
+          valor: parsePtNumber(linha.value),
+          referencia: refs.length > 1 ? refs : refs[0],
+        }
+      : null,
   };
 });
 
@@ -160,7 +220,11 @@ const medidas = FIGURAS_PDM.map((f) => {
 const lede = ledeDoPainel(medidas, s.inicio.cabeca.ledePais, lang);
 
 /* O Painel Social Europeu: a lista da Emenda 16, com a linha de cada medida. */
-const sociais = FIGURAS_SOCIAL.map((f) => ({ ...f, linha: getClaim(f.claim) }));
+const sociais = FIGURAS_SOCIAL.map((f) => ({
+  ...f,
+  linha: getClaim(f.claim),
+  porta: portaDaLeitura(f.claim),
+}));
 
 /* ---------------------------------------------------------------------------
  * OS CARTÕES DA FAIXA (01.09.2026)
@@ -216,13 +280,16 @@ const sociais = FIGURAS_SOCIAL.map((f) => ({ ...f, linha: getClaim(f.claim) }));
  * cartão diz para onde leva com a palavra que a página de chegada usa para se
  * nomear. Nenhuma frase nova, e nada sobre a casa.
  */
+/* O CARTÃO E A LEITURA COMPÕEM O MESMO ENDEREÇO UMA VEZ (F1.1b, 04.09.2026).
+   Eram duas composições da mesma cadeia — a do destino do cartão, aqui, e a da
+   porta da leitura, acima —, e duas composições da mesma coisa divergem no dia
+   em que uma delas mudar. Fica `portaDaLeitura()`, que é a única, e este bloco
+   decide só o que é DELE: o que fazer quando não há domínio (a âncora da leitura
+   nesta página) e que palavra o cartão diz quando leva para fora. */
 const destinoDoCartao = (claim) => {
-  const dominio = dominioDaLinha(claim);
-  if (!dominio) return { destino: `#m-${claim}`, destinoRotulo: null };
-  return {
-    destino: `${routePath('dominio', lang, { slug: dominio.slug })}#${dominio.ancora}`,
-    destinoRotulo: s.dominios.eyebrow,
-  };
+  const porta = portaDaLeitura(claim);
+  if (!porta) return { destino: `#m-${claim}`, destinoRotulo: null };
+  return { destino: porta, destinoRotulo: s.dominios.eyebrow };
 };
 
 const cartaoDaMedida = (f, estado) => {
@@ -246,6 +313,113 @@ const cartoes = [
   ...medidas.map((f) => cartaoDaMedida(f, f.estado ?? 'sem')),
   ...sociais.map((f) => cartaoDaMedida(f, null)),
 ].map((c, i) => ({ ...c, posicao: i + 1 }));
+
+/* ---------------------------------------------------------------------------
+ * A SECÇÃO DOS DOMÍNIOS, A SEGUIR AO MAPA (F1.1b, item 3, 04.09.2026)
+ * ---------------------------------------------------------------------------
+ * «A primeira página é o domínio "país": a cabeça comum, a faixa, o mapa como
+ * navegação, e por baixo os domínios por ordem, cada um com a sua faixa»
+ * (`BRIEF-forma-dos-dominios.md` §2). É o que entra no lugar dos dois painéis
+ * que saíram, e é a resposta à pergunta do diretor de 04.09 sobre o que vai
+ * debaixo do mapa.
+ *
+ * OS DOMÍNIOS SÃO OS QUE TÊM PÁGINA, e a lista é a mesma que a página do domínio
+ * e o destino dos cartões já leem: `dominiosComPagina()`. Um domínio sem página
+ * não aparece aqui — o índice `/dominios` diz que ele existe e que ainda não tem
+ * medidas conferidas, que é onde essa ausência se lê.
+ *
+ * ---------------------------------------------------------------------------
+ * A FAIXA DO DOMÍNIO LEVA AS MEDIDAS QUE NÃO ESTÃO JÁ NESTA PÁGINA
+ * ---------------------------------------------------------------------------
+ * É a forma que o §1, item 5 do brief autoriza («se a régua ou a régua de voz o
+ * recusarem, a faixa do domínio na primeira página leva só as medidas que não
+ * estão no Procedimento»), e as réguas recusaram a outra. O que foi medido, e
+ * está no relatório do bloco:
+ *
+ *   · das cinco medidas de cabeça do domínio 1 (E3, E2, T1, T2, T3), TRÊS já são
+ *     cartões desta página — a dívida pública (E3), do Procedimento, e as taxas
+ *     de emprego (T1) e de desemprego (T2), do Painel Social. As outras duas não
+ *     estavam cá: nem o saldo das administrações públicas (E2) nem o ganho médio
+ *     mensal (T3);
+ *   · com as cinco e os seus valores, a régua A3 conta `data-claim` por id e vê
+ *     três dos 21 valores DUAS vezes: a medida de aceitação J2 cai;
+ *   · com as cinco e os três repetidos sem valor selado (a forma que o brief
+ *     escolhia), a A3 fica verde e caem outras três coisas: a A1 exige selo em
+ *     cada cartão da faixa, a medida J1 conta o nome de três medidas em TRÊS
+ *     lugares em vez de dois, e dois cartões do mesmo id na mesma página dão dois
+ *     elementos com o mesmo `id` de HTML (`k-<id>`, que é o nome acessível da
+ *     porta do cartão), que é um documento inválido e um `aria-labelledby`
+ *     ambíguo.
+ *
+ * Fica a forma que nenhuma régua recusa: as medidas de cabeça do domínio que
+ * NÃO se rendem já nesta página. Hoje são duas, e a faixa diz «1 de 2»; no dia
+ * em que um domínio novo entrar, são as dele, contadas da mesma maneira. A
+ * condição é a lista dos cartões desta página, e não uma lista escrita aqui: o
+ * dia em que uma medida sair da faixa da cabeça, ela entra na do domínio sem
+ * uma linha mudar.
+ */
+const idsDaFaixaDaCabeca = new Set(cartoes.map((c) => c.id));
+
+/* A faixa de cabeça declarada de cada domínio. Hoje há uma, e a constante do
+   domínio 1 é a única que existe; a função é a porta, para que um domínio novo
+   traga a sua sem esta vista aprender o nome dele. */
+const faixaDeclaradaDo = (slug) =>
+  slug === 'economia-e-financas-publicas' ? FAIXA_DO_DOMINIO_1 : [];
+
+const seccaoDosDominios = dominiosComPagina().map((d) => {
+  const chaves = faixaDeclaradaDo(d.slug);
+  const porta = routePath('dominio', lang, { slug: d.slug });
+  const cartoesDoDominio = chaves
+    .map((chave) => {
+      const m = medidaPelaChave(chave);
+      if (!m?.claim) {
+        throw new Error(`inicio: a faixa do domínio "${d.slug}" nomeia "${chave}", que não tem linha.`);
+      }
+      return { chave, m };
+    })
+    .filter(({ m }) => !idsDaFaixaDaCabeca.has(m.claim))
+    .map(({ chave, m }, i) => {
+      const linha = getClaim(m.claim);
+      return {
+        posicao: i + 1,
+        id: m.claim,
+        /* O destino é a leitura daquela medida NA PÁGINA DO DOMÍNIO, com a
+           âncora composta pela mesma função que a página do domínio usa. É o
+           mesmo destino que os cartões de domínio da faixa da cabeça já levam. */
+        destino: `${porta}#${ancoraDaMedida(chave)}`,
+        destinoRotulo: s.dominios.eyebrow,
+        nome: m.nome[lang] ?? m.nome.pt,
+        medida: [`${m.unidade[lang] ?? m.unidade.pt} · `, { ref: linha.reference_date }],
+        /* `null` E NÃO «sem» ONDE NÃO HÁ LIMIAR PUBLICADO (Emenda 1, e o item B8
+           do bloco B). É a mesma regra dos oito cartões do Painel Social na
+           faixa da cabeça, e o motivo é o mesmo: escrever «sem limiar» num
+           cartão é dizer que a casa procurou um limiar e não o encontrou, quando
+           o quadro nunca publicou nenhum. Com `null` a faixa desenha a fila
+           vazia, os valores de todos os cartões leem-se à mesma altura, e a
+           régua A10 («"sem limiar" fora dos cartões») fica verde. */
+        estado: m.limiar ? estadoDaMedida(linha, m.limiar) : null,
+        glifos: [...String(linha.value)].length,
+      };
+    });
+  return { slug: d.slug, nome: d.nome[lang] ?? d.nome.pt, porta, cartoes: cartoesDoDominio };
+});
+
+/* A GUARDA DA SECÇÃO, e não um `if` silencioso. Um domínio com página e sem um
+   único cartão para mostrar é uma secção com um título e um vazio: se isso
+   acontecer, é porque as medidas de cabeça do domínio passaram todas a ser
+   cartões desta página, e a decisão de que forma a secção toma nesse dia é de
+   quem escreve o brief, e não desta vista. */
+for (const d of seccaoDosDominios) {
+  if (d.cartoes.length === 0) {
+    throw new Error(
+      `inicio: o domínio "${d.slug}" não tem nenhuma medida de cabeça fora da faixa da ` +
+        `cabeça desta página, e a sua secção ficaria com o nome e mais nada.`,
+    );
+  }
+  if (medidasDoDominio(d.slug).length === 0) {
+    throw new Error(`inicio: o domínio "${d.slug}" tem página e nenhuma medida declarada.`);
+  }
+}
 
 /* -------------------------------------------------------------- os concelhos
  *
@@ -514,11 +688,84 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
         ---------------------------------------------------------------------- */}
   </div>
 
-  <!-- ============================ O painel -->
-  {/* Um painel, porque há um âmbito. Era quatro em 21.08, seis em 25.08 e um
-      desde a Emenda 21b: cada subtracção pôs o conteúdo de um lugar na página
-      desse lugar. A regra da cabeça continua de pé — o portão vê tudo o que o
-      leitor pode ver —, e o que ela governa agora é a densidade. */}
+  {/* ======================================================================
+      OS DOMÍNIOS, A SEGUIR AO MAPA (F1.1b, item 3, 04.09.2026)
+      ======================================================================
+      «Por baixo os domínios por ordem, cada um com a sua faixa»
+      (`BRIEF-forma-dos-dominios.md` §2). É o que ocupa o lugar dos dois painéis
+      que saíram, e é a resposta à pergunta do diretor de 04.09: o que está
+      debaixo do mapa deixa de ser a segunda cópia da faixa e passa a ser a
+      estrutura do conteúdo do sítio.
+
+      O NOME DO DOMÍNIO É A PORTA, e é uma decisão medida e não um atalho. O
+      brief pede «o nome … e a porta "Ver o domínio →"», e a cadeia dessa porta
+      não existe: o F1.2b não a declarou (o rótulo de destino que ele declarou é
+      `s.dominios.eyebrow`, a sobrancelha da página de chegada, e é a que os
+      cartões levam). A forma da casa para uma porta é o NOME DA PÁGINA DE
+      CHEGADA com a seta — «O livro-razão →» na lista social, «Estudos» na fila
+      dos estudos —, e o nome da página de chegada de um domínio é o nome do
+      domínio. Uma cadeia nova para dizer «vai ao sítio cujo nome está escrito ao
+      lado» era uma palavra a mais no sítio.
+
+      A MANCHETE DO DOMÍNIO NÃO ENTRA, e a razão é a régua. A manchete do domínio
+      1 é «A dívida pública é 89,7% do PIB, fora do limiar de 60%; o saldo das
+      administrações públicas é −2,1% do PIB, dentro do limiar de −3%.», e o
+      primeiro dos dois valores é a linha `divida-publica-2025`, que já é um
+      cartão desta página: rendê-la aqui punha um segundo `data-claim` daquela
+      linha em `/`, e a régua A3 («os 21 valores selados uma só vez») conta por
+      id e cai. A medida de aceitação J2 do brief exige a A3 verde, e é ela que
+      manda. O leitor lê a manchete do domínio na página do domínio, a um toque
+      de distância, que é onde ela é a manchete de alguma coisa.
+      ====================================================================== */}
+  <section class="dominios-secao" id="dominios" aria-labelledby="dominios-k">
+    <h2 class="dominios-secao-k" id="dominios-k">{s.dominios.eyebrow}</h2>
+    {
+      seccaoDosDominios.map((d) => (
+        <article class="dominio-secao" data-dominio-secao={d.slug}>
+          {/* O NOME VEM DA DECLARAÇÃO, com a marca `data-nome` que o portão da
+              voz confere contra `src/data/dominios.mjs` (regra 9: «um
+              `data-nome` cujo texto não é um nome desse ficheiro» fecha a
+              construção). A seta fica FORA da marca, porque a marca é o nome e
+              não a mobília à volta dele. */}
+          <h3 class="dominio-secao-nome">
+            <a class="lig" href={d.porta}>
+              <span data-nome="dominios">{d.nome}</span> →
+            </a>
+          </h3>
+          <Faixa
+            s={s}
+            lang={lang}
+            rotulo={s.inicio.faixa.rotulo}
+            cartoes={d.cartoes}
+            total={d.cartoes.length}
+          />
+        </article>
+      ))
+    }
+  </section>
+
+  <!-- ============================ A área de leitura -->
+  {/* ----------------------------------------------------------------------
+      OS DOIS PAINÉIS SAÍRAM, E O QUE FICA É A ÁREA DE LEITURA (F1.1b, itens 1
+      e 2, 04.09.2026)
+      ----------------------------------------------------------------------
+      A secção continua a chamar-se `#painel` porque é a mesma secção e a data da
+      reconferência aponta para ela (`src/lib/prova.mjs`, a chave
+      `painel_reconferido_em`): o que muda é a forma do que está dentro dela.
+
+      O QUE SAIU. A grelha de treze `<Peca>` do Procedimento e a lista de oito
+      linhas do Painel Social. O F1.1 já lhes tinha tirado os 21 valores (a régua
+      A3), e o que sobrou foram os mesmos 21 nomes uma segunda vez na mesma
+      página, a milhares de píxeis dos cartões que os dizem primeiro. É o que o
+      diretor viu a 04.09 e é o que este bloco tira.
+
+      O QUE FICA. Os dois nomes de painel com a sua contagem reconferida, as duas
+      frases de contexto (uma vez cada, antes das leituras do seu quadro, como o
+      item 2 manda), o comando da densidade, e as 21 leituras breves em
+      `<details>` fechados. Cada `<details>` tem o `id` para onde o cartão
+      daquela medida já apontava, e por isso nenhuma porta desta página mudou de
+      destino: o que mudou foi o tamanho do que a porta abre.
+      ---------------------------------------------------------------------- */}
   <section id="painel">
     {/* ------------------------------------------------------------------
         AS PEÇAS GRANDES PASSAM A TER NOME (decisão do diretor, 29.08.2026)
@@ -599,33 +846,27 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
       <Frase partes={CONTEXTO_DOS_PAINEIS.pdm[lang]} lang={lang} />
     </p>
 
-    <div class="painel" data-painel="pais">
-      {
-        medidas.map((f) => (
-          <Peca
-            s={s}
-            lang={lang}
-            id={f.claim}
-            nome={f.nome[lang]}
-            medida={f.medida[lang]}
-            frase={f.frase?.[lang] ?? null}
-            limiar={f.limiar}
-            comparacao={f.comparacao}
-            estado={f.estado ?? 'sem'}
-            valor={false}
-            regua={
-              f.referencias.length
-                ? {
-                    valor: parsePtNumber(f.linha.value),
-                    referencia: f.referencias.length > 1 ? f.referencias : f.referencias[0],
-                    rotulo: 'limiar',
-                  }
-                : null
-            }
-          />
-        ))
-      }
-    </div>
+    {/* ------------------------------------------------------------------
+        A GRELHA DE TREZE PEÇAS SAIU, E AS TREZE LEITURAS FICAM (F1.1b, item 2)
+        ------------------------------------------------------------------
+        Era `<div class="painel">` com uma `<Peca>` por medida: o marcador, a
+        palavra de estado, o limiar, a unidade, o nome, a frase, uma dobra com a
+        régua e o selo no pé. Sem o valor (que o F1.1 lhe tirou), o que aquilo
+        mostrava fechado era o nome da medida — o mesmo nome do cartão que a
+        abre —, a milhares de píxeis dele.
+
+        O QUE SE PERDE, DITO: a régua contra o limiar (`Regua.astro`), que era o
+        único desenho da peça. Ela é `aria-hidden` e tudo o que desenha está
+        escrito ao pé dela em palavras — o limiar com o seu motivo, a palavra do
+        estado, e o valor no cartão —, e por isso a leitura não perde nenhuma
+        informação. A peça continua inteira, com a régua, onde ela é a leitura
+        daquela medida naquele lugar: em `/municipios/<slug>` e em
+        `/regioes/<slug>`. Este bloco não lhes toca.
+
+        `data-painel="pais"` SAIU COM A GRELHA: era a marca da grelha, e uma
+        marca sem a coisa que ela marcava é um mecanismo a fingir que serve.
+        ------------------------------------------------------------------ */}
+    <LeituraBreve s={s} lang={lang} quadro="pdm" medidas={medidas} />
 
     {/* OS CINCO PAINÉIS DE REGIÃO SAÍRAM (Emenda 21b, 27.08.2026). Cada um era
         uma peça com o índice daquela região e a sua régua contra o 100, acesa
@@ -664,14 +905,49 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
         estrutural e não decoração, e por isso é um `<hr>` e não uma borda. */}
     <hr class="paineis-separador" data-separador-paineis />
 
-    <ListaSocial
-      s={s}
-      lang={lang}
-      p={p}
-      medidas={sociais}
-      porta={routePath('livro', lang)}
-      contexto={CONTEXTO_DOS_PAINEIS.social[lang]}
-    />
+    {/* ------------------------------------------------------------------
+        O PAINEL SOCIAL PASSA A SER A SEGUNDA METADE DA ÁREA DE LEITURA
+        ------------------------------------------------------------------
+        `ListaSocial.astro` era a lista compacta de oito linhas da Emenda 16, e
+        deixa de se render aqui pela mesma razão que a grelha das treze peças: o
+        F1.1 tirou-lhe os valores, e o que ficava era o nome de cada medida uma
+        segunda vez. O componente FICA no repositório, com a sua folha e as suas
+        razões, como ficaram `InstrumentoConvergencia` e `BandaDaRegiao` quando
+        saíram de `/`: nada se apaga, o que sai é a rendição.
+
+        O NOME DO PAINEL E A SUA CONTAGEM SOBEM PARA AQUI, e é isso que faz da
+        área de leitura duas metades e não uma lista de 21: a chave da prova
+        `painel_social_total` continua rendida, com a mesma marca que o portão
+        de HTML reconta por conta própria. A frase de contexto vem com ela, uma
+        vez, antes das oito leituras do seu quadro, como o item 2 manda.
+
+        O QUE SE PERDE, DITO: a linha de cada medida deixa de imprimir o NOME DA
+        FONTE ao lado da unidade («Eurostat»). O selo do pé de cada leitura é a
+        porta para a linha, e é lá que a fonte está escrita com as suas três
+        datas; a porta para o livro-razão inteiro, que a lista tinha no fim,
+        continua no menu e no rodapé, e a fila dos estudos ficou onde o F1.2b a
+        pôs, debaixo dos cartões.
+        ------------------------------------------------------------------ */}
+    {/* A MOLDURA DA SEGUNDA METADE É A QUE JÁ ERA, e isso não é herança
+        preguiçosa: `id="painel-social"` é a ÂNCORA da porta da chave da prova
+        `painel_social_total` (`src/lib/prova.mjs`), e o portão de HTML fecha a
+        construção quando uma porta aponta para uma âncora que não existe na
+        página. Foi o que ele fez à primeira construção deste bloco, com quatro
+        erros nas duas edições. A classe `.social` traz o fio e o ar que a lista
+        tinha, e por isso a separação entre os dois quadros lê-se como se lia. */}
+    <section class="social" id="painel-social">
+      <h2 class="social-titulo">
+        {s.inicio.social.titulo}
+        <ValorDaProva chave="painel_social_total" item={p.painel_social_total} lang={lang} />
+        {s.inicio.social.tituloFim}
+      </h2>
+
+      <p class="painel-contexto" data-contexto-painel="social">
+        <Frase partes={CONTEXTO_DOS_PAINEIS.social[lang]} lang={lang} />
+      </p>
+
+      <LeituraBreve s={s} lang={lang} quadro="social" medidas={sociais} />
+    </section>
 
     {/* ------------------------------------------------------------------
         A LINHA DA RECONFERÊNCIA SAIU DA PRIMEIRA PÁGINA (Emenda 15)
