@@ -61,9 +61,12 @@
  *
  * L8 · O NOME DE CADA PAINEL CONTA O QUE ESTÁ NA PÁGINA. O algarismo tem de estar
  * dentro de um `data-prova` com a chave certa, e o número que ele mostra tem de
- * ser o número de peças de `#painel` e de linhas de `#painel-social` contadas no
- * documento. Um número certo com a marca certa que não conta o que está por
- * baixo dele continua a ser um número errado. Nas duas edições.
+ * ser o número de leituras breves de cada uma das duas metades da área de
+ * leitura, contadas no documento (`#painel [data-leituras="pdm"]` e
+ * `#painel-social`). Eram as peças da grelha e as linhas da lista social, que
+ * saíram da primeira página a 04.09.2026; a medida é a mesma e o seletor segue a
+ * coisa que ele conta. Um número certo com a marca certa que não conta o que
+ * está por baixo dele continua a ser um número errado. Nas duas edições.
  *
  * L9 · UMA FORMA DE CADA VEZ, ÀS SETE LARGURAS. A regra, depois da decisão do
  * lugar de direção sobre a I101: abaixo de 1024 a rede é em linha; a partir de
@@ -327,8 +330,17 @@ const LEITURA = () => {
     areas,
     ordemDoDocumento,
     painel,
-    pecasDoPainel: document.querySelectorAll('#painel .peca').length,
-    linhasDoSocial: document.querySelectorAll('#painel-social .social-linha').length,
+    /* O QUE CADA NOME DE PAINEL CONTA MUDOU DE FORMA, E NÃO DE COISA (F1.1b,
+       04.09.2026). Eram as peças da grelha do Procedimento e as linhas da lista
+       social; a grelha e a lista saíram da primeira página e no lugar delas está
+       a área de leitura, com um `<details data-leitura>` por medida, dividida
+       nas mesmas duas metades pelo quadro a que cada medida pertence
+       (`data-leituras="pdm"` e `data-leituras="social"`). O que a L8 mede é o
+       mesmo — «o algarismo do nome conta o que está por baixo dele» —, medido
+       na coisa que agora lá está: um seletor que continuasse a contar peças
+       contava zero, e um zero que ninguém recusa é uma régua cega. */
+    pecasDoPainel: document.querySelectorAll('#painel [data-leituras="pdm"] [data-leitura]').length,
+    linhasDoSocial: document.querySelectorAll('#painel-social [data-leitura]').length,
   };
 };
 
