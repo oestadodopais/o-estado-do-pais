@@ -401,6 +401,29 @@ do inventário; o vocabulário fechado tirou a palavra e as quatro coisas saíra
 com ela. Fica dito aqui porque quem ler o diff vai ver a definição a entrar e a
 sair no mesmo ramo, e a razão não está no código: está na decisão.
 
+## 7 · A cabeça e a corrida
+
+**`56cf933f`, verde na corrida `portao` n.º 33825298246.** É a cabeça deste ramo
+depois de fundir `0b51016d`, e os três comandos correram sobre a árvore dela
+antes do empurrão, com os códigos lidos dos registos:
+
+| comando | código |
+| --- | --- |
+| `npm run build` | **0** |
+| `npm run verify` | **0** (inclui a `check:indice`, a régua deste bloco) |
+| `npm run typecheck` | **0** |
+
+Uma corrida anterior, a 33824217134 sobre `e0c367ed`, foi CANCELADA pela regra de
+concorrência do próprio portão quando o empurrão da fusão chegou: não caiu, foi
+substituída pela corrida da cabeça que se vai fundir, que é a que conta.
+
+*Esta secção é ela própria um commit, e por isso a cabeça que ele faz não é a que
+está escrita acima: é a mesma disciplina que o bloco F1.8 seguiu em `86632082`.
+Os três comandos correram outra vez sobre a árvore deste commit antes do
+empurrão, e a corrida dele fica no registo do ramo.*
+
+## 8 · A leitura a frio
+
 **A leitura a frio deste bloco ainda não correu**, e a entrada do inventário
 di-lo por escrito («por ler»). É a régua que fecha o que ela fecharia sozinha, e
 não a substitui.
