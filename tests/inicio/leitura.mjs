@@ -153,6 +153,36 @@
  * bloco tenha o número ao lado do «hoje».
  *
  * ---------------------------------------------------------------------------
+ * AS DUAS CÉLULAS DO F1.1c (04.09.2026)
+ * ---------------------------------------------------------------------------
+ * O diretor viu a página do F1.1b no ar e disse o que ela é: «the cards that we
+ * can scroll on top of the website … then are double just under the map … the
+ * names are still there». A decisão: os cartões ficam, por baixo da faixa não se
+ * mostra nada até um cartão ser tocado, e então mostra-se a leitura daquele
+ * cartão e só ela. Sem guião não muda nada.
+ *
+ * J13 · COM GUIÃO, QUANTOS NOMES DE MEDIDA ESTÃO À VISTA POR BAIXO DA FAIXA. Em
+ * repouso, zero, e a linha do estado vazio no lugar deles; depois de um toque
+ * num cartão, um — o daquele cartão —, e a linha do estado vazio fora; depois de
+ * um Enter no mesmo cartão, o mesmo (a promessa do teclado é a promessa do
+ * dedo); e depois do botão «voltar» do navegador, zero outra vez, com a linha do
+ * estado vazio de volta. A contagem é de NOMES VISÍVEIS e não de `<details>`
+ * abertos: o que o diretor viu foi uma lista de nomes, e é a lista de nomes que
+ * a célula conta. Uma célula que contasse dobras abertas passava com as vinte e
+ * uma fechadas à vista, que é exactamente o defeito.
+ *
+ * «VISÍVEL» É O QUE O MOTOR DIZ, e não uma conta desta régua: `checkVisibility()`
+ * onde ele existe, e as caixas do elemento onde não existe. Uma dobra fechada
+ * que a folha tira da página não tem caixa nenhuma.
+ *
+ * J14 · SEM GUIÃO, NADA MUDA. As 21 leituras presentes no documento, os 21 nomes
+ * à vista, e a linha do estado vazio ESCONDIDA — que é a outra metade da mesma
+ * promessa: sem guião as leituras estão todas ao alcance, e uma linha a mandar
+ * tocar num cartão para ver o que já está no ecrã seria uma instrução falsa.
+ * A J3 já mede que elas lá estão, fechadas e com `id`; o que esta acrescenta é
+ * que elas se VEEM, que é o que a folha do F1.1c podia ter partido.
+ *
+ * ---------------------------------------------------------------------------
  * O QUE `--vermelhos` EXIGE DE CADA ESTRAGO
  * ---------------------------------------------------------------------------
  * Três coisas, como em `porta.mjs` e em `faixa.mjs`. **Verde antes**: as células
@@ -372,6 +402,34 @@ const SONDA_DA_FORMA = () => ({
     .filter((c) => !String(c.querySelector('.cartao-porta')?.getAttribute('href') ?? '').startsWith('#'))
     .map((c) => c.getAttribute('data-cartao')),
 });
+
+/* J13 e J14 · o que está À VISTA na área de leitura, e a linha do estado vazio.
+   A sonda não julga: devolve os nomes visíveis com a medida a que pertencem, e
+   quem decide são as células. */
+const SONDA_DA_AREA = () => {
+  /* «Visível» é o que o motor diz. `checkVisibility()` responde à pergunta certa
+     (a folha tira isto da página?), e onde ele não existir as caixas do elemento
+     respondem à mesma: um elemento com `display: none` não tem nenhuma. */
+  const visivel = (el) => {
+    if (!el) return false;
+    if (typeof el.checkVisibility === 'function') return el.checkVisibility();
+    return el.getClientRects().length > 0;
+  };
+  const area = document.querySelector('[data-area-leitura]') ?? document.getElementById('painel');
+  const nomes = area ? [...area.querySelectorAll('[data-leitura] [data-medida-nome]')] : [];
+  const vazio = document.querySelector('[data-leituras-vazio]');
+  return {
+    area: !!area,
+    detalhes: document.querySelectorAll('details[data-leitura]').length,
+    nomes: nomes.length,
+    visiveis: nomes
+      .filter(visivel)
+      .map((el) => el.closest('[data-leitura]')?.getAttribute('data-leitura') ?? '(sem medida)'),
+    abertas: [...document.querySelectorAll('details[data-leitura][open]')].map((d) => d.id),
+    vazio: vazio ? { existe: true, visivel: visivel(vazio) } : { existe: false, visivel: false },
+    hash: location.hash,
+  };
+};
 
 /* J7 · o primeiro ecrã, com a mesma definição da A1 de `porta.mjs`. */
 const SONDA_DO_PRIMEIRO_ECRA = () => {
@@ -819,6 +877,128 @@ async function corre() {
       );
     }
   }
+
+  /* ------------------------------------------------------------ J13 e J14 */
+  /* AS DUAS CÉLULAS DO F1.1c, nas duas edições e nos dois motores. A J13 mede o
+     que está À VISTA por baixo da faixa com guião — zero nomes em repouso, um
+     depois de um toque, um depois de um Enter, zero depois de voltar atrás — e a
+     J14 mede que sem guião nada disto acontece. */
+  for (const ed of EDICOES) {
+    for (const [motor, nav] of [
+      ['chromium', chrome],
+      ['webkit', safari],
+    ]) {
+      /* ---------------------------------------------------------------- J13 */
+      const chave13 = `J13.${ed.chave}.${motor}`;
+      const p13 = await pagina(nav, ed.rota, 390, ALTURA_PEQUENA);
+      const repouso = await p13.evaluate(SONDA_DA_AREA);
+
+      /* O CARTÃO QUE ABRE A LEITURA AQUI: os três que levam à página do domínio
+         mudam de página, e o que esta célula mede é a área desta. */
+      const cartao = await p13.evaluate(() => {
+        const c = [...document.querySelectorAll('[data-grelha] [data-faixa] [data-cartao]')].find(
+          (x) => (x.querySelector('.cartao-porta')?.getAttribute('href') ?? '').startsWith('#'),
+        );
+        if (c) c.scrollIntoView({ block: 'center', inline: 'center' });
+        return c ? c.getAttribute('data-cartao') : null;
+      });
+      await p13.click(`[data-cartao="${cartao}"] .cartao-porta`);
+      await p13.waitForTimeout(180);
+      const aposToque = await p13.evaluate(SONDA_DA_AREA);
+
+      /* O BOTÃO «VOLTAR» DO NAVEGADOR, e não o `goBack()` da ferramenta: o que a
+         página promete é que a travessia do histórico devolve o ecrã vazio, e
+         essa travessia é `history.back()` dentro do documento, que é o que
+         dispara o `hashchange` de que o guião vive. */
+      await p13.evaluate(() => history.back());
+      await p13.waitForTimeout(180);
+      const aposVoltar = await p13.evaluate(SONDA_DA_AREA);
+
+      /* E O TECLADO: Enter no mesmo cartão faz o que o dedo faz. */
+      await p13.focus(`[data-cartao="${cartao}"] .cartao-porta`);
+      await p13.keyboard.press('Enter');
+      await p13.waitForTimeout(180);
+      const aposEnter = await p13.evaluate(SONDA_DA_AREA);
+      await p13.__ctx.close();
+
+      const queixas13 = [];
+      if (!repouso.area) queixas13.push('não há área de leitura marcada');
+      if (repouso.detalhes !== AS_VINTE_E_UMA.length) {
+        queixas13.push(`${repouso.detalhes} leitura(s) no documento de ${AS_VINTE_E_UMA.length}`);
+      }
+      if (repouso.visiveis.length !== 0) {
+        queixas13.push(
+          `em repouso há ${repouso.visiveis.length} nome(s) à vista (${repouso.visiveis.slice(0, 3).join(', ')})`,
+        );
+      }
+      if (!repouso.vazio.existe) queixas13.push('não há linha do estado vazio');
+      else if (!repouso.vazio.visivel) queixas13.push('a linha do estado vazio não se vê em repouso');
+      /* Depois do toque: um nome à vista, o daquele cartão, e a linha do estado
+         vazio fora. As três coisas, porque duas delas certas com a terceira
+         errada continua a ser a área a dizer o que não é. */
+      if (aposToque.visiveis.length !== 1 || aposToque.visiveis[0] !== cartao) {
+        queixas13.push(
+          `depois do toque em «${cartao}» há ${aposToque.visiveis.length} nome(s) à vista ` +
+            `(${aposToque.visiveis.slice(0, 3).join(', ') || 'nenhum'})`,
+        );
+      }
+      if (aposToque.vazio.visivel) queixas13.push('a linha do estado vazio ficou à vista com uma leitura aberta');
+      if (aposToque.hash !== `#m-${cartao}`) queixas13.push(`o toque deu «${aposToque.hash}»`);
+      if (aposVoltar.visiveis.length !== 0) {
+        queixas13.push(`depois de voltar há ${aposVoltar.visiveis.length} nome(s) à vista`);
+      }
+      if (aposVoltar.vazio.existe && !aposVoltar.vazio.visivel) {
+        queixas13.push('depois de voltar a linha do estado vazio não voltou');
+      }
+      if (aposEnter.visiveis.length !== 1 || aposEnter.visiveis[0] !== cartao) {
+        queixas13.push(
+          `depois do Enter em «${cartao}» há ${aposEnter.visiveis.length} nome(s) à vista ` +
+            `(${aposEnter.visiveis.slice(0, 3).join(', ') || 'nenhum'})`,
+        );
+      }
+      if (aposEnter.hash !== `#m-${cartao}`) queixas13.push(`o Enter deu «${aposEnter.hash}»`);
+
+      medidas[chave13] = { cartao, repouso, aposToque, aposVoltar, aposEnter, queixas: queixas13 };
+      conta(
+        chave13,
+        !!cartao && queixas13.length === 0,
+        `com guião em ${ed.rota} · ${motor}: ${repouso.visiveis.length} nome(s) à vista em repouso ` +
+          `(linha do estado vazio: ${repouso.vazio.existe ? (repouso.vazio.visivel ? 'à vista' : 'escondida') : 'não existe'}), ` +
+          `${aposToque.visiveis.length} depois do toque em «${cartao}», ` +
+          `${aposVoltar.visiveis.length} depois de voltar atrás, ${aposEnter.visiveis.length} depois do Enter · ` +
+          `${repouso.detalhes} leitura(s) no documento` +
+          (queixas13.length ? ` · QUEIXAS: ${queixas13.slice(0, 4).join('; ')}` : ''),
+      );
+
+      /* ---------------------------------------------------------------- J14 */
+      const chave14 = `J14.${ed.chave}.${motor}`;
+      const p14 = await pagina(nav, ed.rota, 390, ALTURA_PEQUENA, { comGuiao: false });
+      const semGuiao = await p14.evaluate(SONDA_DA_AREA);
+      await p14.__ctx.close();
+
+      const queixas14 = [];
+      if (semGuiao.detalhes !== AS_VINTE_E_UMA.length) {
+        queixas14.push(`${semGuiao.detalhes} leitura(s) de ${AS_VINTE_E_UMA.length}`);
+      }
+      if (semGuiao.visiveis.length !== AS_VINTE_E_UMA.length) {
+        queixas14.push(
+          `${semGuiao.visiveis.length} nome(s) à vista de ${AS_VINTE_E_UMA.length}`,
+        );
+      }
+      if (semGuiao.abertas.length !== 0) queixas14.push(`${semGuiao.abertas.length} leitura(s) abertas`);
+      if (semGuiao.vazio.visivel) queixas14.push('a linha do estado vazio vê-se sem guião');
+
+      medidas[chave14] = { ...semGuiao, queixas: queixas14 };
+      conta(
+        chave14,
+        semGuiao.detalhes === AS_VINTE_E_UMA.length && queixas14.length === 0,
+        `sem guião em ${ed.rota} · ${motor}: ${semGuiao.detalhes} leitura(s) no documento, ` +
+          `${semGuiao.visiveis.length} nome(s) à vista, ${semGuiao.abertas.length} aberta(s), ` +
+          `linha do estado vazio ${semGuiao.vazio.existe ? (semGuiao.vazio.visivel ? 'À VISTA' : 'escondida') : 'não existe'}` +
+          (queixas14.length ? ` · QUEIXAS: ${queixas14.slice(0, 3).join('; ')}` : ''),
+      );
+    }
+  }
 }
 
 /* ===========================================================================
@@ -888,6 +1068,31 @@ const PLANTAS = [
             if (abre < 0 || porta < 0) return h;
             return h.slice(0, abre) + '<div class="dobra-corpo">' + h.slice(porta);
           })(),
+  },
+  {
+    nome: 'uma leitura fechada deixada à vista com guião',
+    celulas: ['J13.pt.chromium', 'J13.pt.webkit'],
+    /* O DEFEITO QUE O F1.1c VEIO TIRAR, REPOSTO NUMA LEITURA SÓ. A folha esconde
+       as dobras fechadas quando o guião acende a área; um estilo em linha na
+       primeira dobra ganha à folha e deixa aquela leitura à vista, fechada, por
+       baixo do cartão que já diz o nome dela. É um nome de medida a mais na
+       área, que é a unidade do defeito que o diretor viu — e a J13 tem de o
+       contar. Sem guião não muda nada: `display: block` é o que o navegador já
+       dá a um `<details>`, e por isso a J14 continua verde, como deve. */
+    f: (h, rota) =>
+      rota.startsWith('/en')
+        ? h
+        : h.replace('<details class="dobra" id="m-', '<details style="display:block" class="dobra" id="m-'),
+  },
+  {
+    nome: 'a área de leitura sem a linha do estado vazio',
+    celulas: ['J13.pt.chromium', 'J13.pt.webkit'],
+    /* Tira do documento a linha que a área mostra quando não há nenhuma leitura
+       aberta. As dobras continuam a esconder-se, o toque continua a abrir a
+       certa: o que fica é uma área sem nada dentro e sem uma palavra a dizer o
+       gesto que a enche, que é o buraco que o item 1 do bloco manda fechar. */
+    f: (h, rota) =>
+      rota.startsWith('/en') ? h : h.replace(/<p class="dobras-nada"[^>]*>[\s\S]*?<\/p>/, ''),
   },
   {
     nome: 'a faixa do domínio com um valor selado repetido',

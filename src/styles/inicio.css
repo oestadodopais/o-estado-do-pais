@@ -3125,6 +3125,52 @@ a.porta:hover .porta-abrir {
   }
 }
 
+/* ============================================================================
+ * UMA LEITURA DE CADA VEZ, E NENHUMA EM REPOUSO (F1.1c, 04.09.2026)
+ * ============================================================================
+ * O F1.1b trocou os dois painéis por vinte e uma dobras fechadas, e o diretor
+ * viu no ar o que elas são: «the cards that we can scroll on top of the website
+ * … then are double just under the map … the names are still there». Vinte e um
+ * nomes por baixo dos vinte e um cartões que os dizem primeiro.
+ *
+ * A REGRA É UMA SÓ: com guião, uma dobra fechada não se rende. O que fica na
+ * área é a leitura que o leitor abriu, e mais nada; quando não há nenhuma, fica
+ * a linha do estado vazio, que o guião acende pelo `hidden`.
+ *
+ * VAI PRESA A `[data-toque="sim"]`, que é a marca que o guião escreve na área
+ * (`public/js/inicio.js`). Sem guião a marca não aparece: as vinte e uma ficam à
+ * vista, fechadas, e o endereço `#m-<id>` continua a abrir a certa. É o lado
+ * seguro de falhar, e é a página que o F1.1b construiu.
+ *
+ * NENHUMA COR NOVA, NENHUM TIPO NOVO, NENHUMA MEDIDA NOVA: as duas regras de
+ * cima só mudam visibilidade, e a linha do estado vazio veste-se com as fichas
+ * do rótulo de instrumento que a folha já declara (`--f-instr`, `--muted`), na
+ * forma que a linha vazia da busca já tem (`.pesquisa-vazio`, `site.css`).
+ * ========================================================================== */
+[data-area-leitura][data-toque='sim'] .dobra:not([open]) {
+  display: none;
+}
+/* O FIO DE CIMA DA LISTA SÓ EXISTE ENQUANTO HOUVER LISTA. `.dobras` abre com o
+   fio da casa, que é o que separa a primeira dobra da frase de contexto; com as
+   fechadas fora da página, um quadro sem nenhuma leitura aberta ficava com um
+   fio solto a meio da área. `:has()` é o único selector que responde a «este
+   bloco tem alguma dobra aberta», e o lado seguro de falhar está escolhido: num
+   motor sem `:has()` o fio fica onde sempre esteve, que é o que a página é hoje. */
+[data-area-leitura][data-toque='sim'] .dobras:not(:has(.dobra[open])) {
+  border-top: 0;
+}
+/* A LINHA DO ESTADO VAZIO. Uma linha, no cabeçalho da área, com o ar que a
+   frase de contexto tem por baixo: diz o gesto que enche a área, e sai de cena
+   assim que uma leitura abre. Sem guião chega `hidden` do servidor e não se vê. */
+.dobras-nada {
+  margin: 0 0 16px;
+  font-family: var(--f-instr);
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+
 /* ------------------------------------------------------ a fila dos domínios
    A seguir ao mapa: o nome do domínio como porta, e por baixo a faixa das suas
    medidas de cabeça que não se rendem já nesta página. O título da secção tem a

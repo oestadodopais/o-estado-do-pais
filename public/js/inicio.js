@@ -759,8 +759,30 @@
   }
 
   /* ==========================================================================
-   * UMA LEITURA DE CADA VEZ (F1.1b, item 1, 04.09.2026)
+   * UMA LEITURA DE CADA VEZ, E NENHUMA EM REPOUSO (F1.1b item 1, F1.1c)
    * ==========================================================================
+   * O F1.1c (04.09.2026) acrescenta ao bloco a segunda metade da decisão do
+   * diretor, que ele deu depois de ver a página no ar: «keep the cards; show
+   * nothing under the band until a card is tapped; then show only that card's
+   * reading». As vinte e uma dobras fechadas eram a mesma lista dos vinte e um
+   * nomes dos cartões, uma segunda vez, e é isso que sai.
+   *
+   * O QUE ESTE FICHEIRO FAZ PARA ISSO SÃO TRÊS COISAS, e as três estão dentro da
+   * regra dele: escreve `data-toque="sim"` na área de leitura (uma marca de
+   * estado, como o `data-ambito` e o `data-densidade` que ele já escreve na raiz
+   * da cabeça), e é a FOLHA que esconde as dobras fechadas; troca o `hidden` da
+   * linha do estado vazio, que o servidor rende escondida; e devolve a área ao
+   * estado da densidade quando o endereço deixa de apontar para uma leitura, que
+   * é o que faz o botão «voltar» do navegador devolver o ecrã vazio.
+   *
+   * NÃO ESCREVE TEXTO NENHUM, e a linha do estado vazio prova-o: o texto dela
+   * vem do servidor, declarado em `src/i18n/strings.mjs` e no inventário das
+   * frases; o que este ficheiro decide é só se ela se vê.
+   *
+   * SEM GUIÃO NADA DISTO EXISTE E A PÁGINA NÃO PERDE NADA: sem a marca, a folha
+   * não esconde dobra nenhuma, as vinte e uma ficam à vista, fechadas, e
+   * `#m-<id>` continua a abrir a certa. É a página que o F1.1b construiu.
+   * --------------------------------------------------------------------------
    * O cartão da faixa é o «Relance» e a leitura por baixo é a «Leitura breve» da
    * mesma medida. Sem guião, o cartão é uma âncora para `#m-<id>`: o navegador
    * põe o fragmento na barra, rola até lá e — nos motores que o suportam — abre
@@ -785,11 +807,47 @@
    * ======================================================================== */
   var leituras = document.querySelectorAll('[data-leitura]');
   if (leituras.length) {
+    /* A ÁREA E A SUA LINHA VAZIA. As duas são do documento e as duas podem não
+       estar lá: este ficheiro serve uma página, mas uma marca que falta não pode
+       partir o resto do bloco — o fechar da leitura anterior vale na mesma. */
+    var areaDeLeitura = document.querySelector('[data-area-leitura]');
+    var linhaVazia = document.querySelector('[data-leituras-vazio]');
+
     var soEsta = function (alvo) {
       for (var i11 = 0; i11 < leituras.length; i11++) {
         leituras[i11].open = leituras[i11] === alvo;
       }
     };
+
+    /* A ÁREA VOLTA AO ESTADO DA DENSIDADE, e não «fecha tudo»: é a mesma linha
+       que `aplica()` corre sobre as dobras, e por isso «Relance» devolve a área
+       vazia e «Leitura breve» devolve as vinte e uma abertas. Uma volta que
+       fechasse sempre tudo desmentia o comando que o leitor tinha premido. */
+    var repoeDensidade = function () {
+      for (var i12 = 0; i12 < leituras.length; i12++) {
+        leituras[i12].open = estado.densidade === 'leitura';
+      }
+    };
+
+    /* A LINHA DO ESTADO VAZIO SEGUE AS DOBRAS, e não os cliques: quem a acende e
+       a apaga é o estado real da área, medido nas vinte e uma. Assim ela está
+       certa venha a mudança de onde vier — de um toque num cartão, do comando da
+       densidade, do endereço, ou do próprio `<summary>` da leitura aberta, que é
+       o comando de fechar que a página já tinha. */
+    var actualizaVazio = function () {
+      if (!linhaVazia) return;
+      var alguma = false;
+      for (var i13 = 0; i13 < leituras.length; i13++) {
+        if (leituras[i13].open) {
+          alguma = true;
+          break;
+        }
+      }
+      linhaVazia.hidden = alguma;
+    };
+    for (var i14 = 0; i14 < leituras.length; i14++) {
+      leituras[i14].addEventListener('toggle', actualizaVazio);
+    }
     /* O alvo de um fragmento, e só quando ele é uma leitura desta área: um
        `#painel` ou um `#dominios` continuam a ser o que sempre foram. */
     var leituraDoFragmento = function (frag) {
@@ -817,9 +875,21 @@
       if (alvo) soEsta(alvo);
     });
 
+    /* O ENDEREÇO MANDA NOS DOIS SENTIDOS (F1.1c). Um fragmento que é uma leitura
+       abre aquela e fecha as outras, como já fazia; um endereço que deixa de
+       apontar para uma leitura devolve a área ao estado da densidade, e é isso
+       que faz o botão «voltar» do navegador devolver o ecrã vazio depois de um
+       toque num cartão — o toque escreveu `#m-<id>` na barra, e voltar atrás
+       desfaz o que ele escreveu.
+
+       SÓ QUANDO O FRAGMENTO NÃO É UMA LEITURA DESTA ÁREA: um `#painel`, um
+       `#dominios` ou o salto para o conteúdo continuam a ser o que sempre foram,
+       e nesses a área volta ao que a densidade manda, que com «Leitura breve»
+       premido é ficar aberta. */
     window.addEventListener('hashchange', function () {
       var alvo = leituraDoFragmento(location.hash);
       if (alvo) soEsta(alvo);
+      else repoeDensidade();
     });
 
     /* À CHEGADA, e depois de `aplica()` ter posto as 21 na densidade do
@@ -828,6 +898,22 @@
        coisa em qualquer motor. */
     var doArranque = leituraDoFragmento(location.hash);
     if (doArranque) doArranque.open = true;
+
+    /* A MARCA DA ÁREA ENTRA AQUI, DEPOIS DE A LEITURA DO FRAGMENTO ESTAR ABERTA
+       (F1.1c), e a ordem é medida e não arrumação: assim que a marca entra, a
+       folha tira da página as dobras fechadas, e a página encolhe. Pô-la antes
+       fazia o navegador rolar para o sítio certo de uma página que ia mudar de
+       altura no instante seguinte. */
+    if (areaDeLeitura) areaDeLeitura.setAttribute('data-toque', 'sim');
+    actualizaVazio();
+
+    /* E O ROLAMENTO REFAZ-SE, pela mesma razão: o navegador já tinha rolado até
+       à leitura do fragmento com as vinte e uma à vista, e as vinte que saíram
+       eram todas as que estavam por cima dela. Isto não é um rolamento novo — é
+       o mesmo destino, medido depois de a página ter a altura que vai ter. Um
+       toque num cartão não precisa dele: aí quem rola é a âncora, e a folha já
+       encolheu antes de o navegador ir buscar o alvo. */
+    if (doArranque && doArranque.scrollIntoView) doArranque.scrollIntoView();
   }
 
   /* ------------------------------------------------------------------ o mapa
