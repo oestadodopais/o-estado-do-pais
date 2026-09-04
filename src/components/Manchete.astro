@@ -123,7 +123,30 @@ const nomeDoTitulo = pecas
   .join(' ');
 ---
 
-<Tag class={klass} aria-labelledby={nomeDoTitulo}>
+{/* ---------------------------------------------------------------------------
+    QUANTAS LINHAS É QUE ESTA MANCHETE CITA (segunda passagem do F1.7, 04.09.2026)
+    ---------------------------------------------------------------------------
+    O item 7 deu ao algarismo uma área de toque de 44 px. Numa manchete que cita
+    UMA linha isso resolve-se: há uma porta e ela pode ser grande. Numa manchete
+    que cita DUAS — a de uma região, a de um domínio — os dois algarismos caem
+    muitas vezes em linhas seguidas, e a entrelinha de uma manchete é 31,36 px:
+    duas áreas de 44 px a 35 px de distância cruzam-se por 11, e o cruzamento fica
+    para quem vem depois no documento. Medido a 768 em `/en/regions/alentejo`: um
+    dedo a 9 px por baixo de «23» abria a linha de «22».
+
+    Isso é o defeito que a regra da casa nomeia — «uma área sobreposta não é um
+    alvo maior, é uma porta que abre a linha do vizinho» — e não se conserta com
+    uma exceção na régua: conserta-se não o fazendo. Onde a manchete cita mais do
+    que uma linha, a área de cada algarismo fica pela caixa da sua própria linha
+    (`1lh`), que ladrilha com a de cima e a de baixo e nunca entra nelas. O
+    algarismo continua a ser porta, continua a ter 44 px de LARGURA, e o que
+    perde é a altura que ia buscar à linha do vizinho.
+
+    Dar 44 px aos dois pedia mais entrelinha, que é mudar o aspeto da manchete, e
+    o brief diz «Nada nas manchetes além do alvo». Fica medido e escrito; a
+    decisão de dar ar à manchete é da direção.
+    --------------------------------------------------------------------------- */}
+<Tag class={klass} aria-labelledby={nomeDoTitulo} data-citadas={String(citadas.length)}>
   {
     pecas.map(({ ref, parte, refSufixo }) => {
       if (typeof parte === 'string') return <span id={ref} set:text={parte} />;

@@ -1,5 +1,13 @@
 # Bloco F1.7 · Acessibilidade e alvos · o relatório do construtor
 
+*Duas passagens. A primeira, de 04.09.2026, está escrita abaixo tal como foi
+entregue, com as suas medições; a §9, no fim, é a SEGUNDA PASSAGEM, escrita no
+mesmo dia depois da leitura a frio do Codex
+(`design/especime-v3/critica/2026-09-04-codex-leitura-f17-alvos.md`), e é ela que
+manda: onde os dois textos discordarem, o número certo é o da §9, porque é o da
+árvore que foi empurrada. Cinco das doze medidas mudaram de valor, e uma delas
+(a H2) estava a dizer-se verde com 129 alvos por resolver.*
+
 *Escrito pelo construtor (Claude Opus 5) a 04.09.2026, sobre o brief
 `design/observatorio/BRIEF-F1.7-acessibilidade-e-alvos.md` e sobre a linha 71 da
 auditoria de 02.09. Ramo `alvos-2026-09-04`, a partir de `origin/main` em
@@ -469,6 +477,236 @@ fichas se veem), uma linha, uma região, a manchete da primeira página, a
 manchete de um concelho e o rodapé, nas duas edições. O ANTES foi fotografado
 com o mesmo guião sobre a construção de `8b2bbafc` (`OEDP_DIST`).
 
-**40 das 60 são iguais byte a byte.** As 20 que diferem são as fichas dos
-concelhos (10) e o rodapé (10), que são as duas coisas que este bloco muda à
-vista.
+**Na segunda passagem, 30 das 60 são iguais byte a byte, e as 30 que diferem são
+três famílias, todas esperadas:** as fichas dos concelhos (10, mais altas), o
+rodapé (10, com a porta lá dentro) e a página de uma linha (10, de onde a porta
+saiu — e onde o bloco F1.4, fundido entretanto, mudou as datas e o endereço da
+fonte).
+
+**As dez capturas das manchetes e as dez das manchetes de concelho continuam
+iguais byte a byte**, e são a prova que interessa ao item 7: nem o alvo de 44 px
+do algarismo, nem o tecto de uma caixa de linha nas manchetes que citam várias, nem
+a caixa própria do selo mudam um píxel do que se vê. Uma área de toque não se
+fotografa; o que se fotografa é o que ela não mudou.
+
+---
+
+# 9 · Segunda passagem, 04.09.2026 · a leitura a frio do Codex
+
+*O lugar de direção correu uma leitura a frio ao pacote da primeira passagem,
+com cinco estragos plantados de três classes; o leitor viu os cinco e levantou
+doze achados. A triagem separou o que era do PACOTE (uma régua copiada com
+`ALVO = 20`, a tabela das unidades que não foi no pacote, as capturas que não
+foram) do que era do SÍTIO. Esta secção é o que era do sítio, e o que se fez.*
+
+## 9.1 · O que estava errado, e o que se corrigiu
+
+### Blocking 2 · A H2 dizia-se verde com 129 alvos por resolver
+
+`buracoMau` era calculado e **não entrava na condição da célula**. O relatório da
+primeira passagem escreveu que os 129 que ficavam na faixa dos 641 aos 1023 px
+eram todos áreas do mapa; medidos, **só 36 eram**. Os outros 93 eram ligações
+comuns, algarismos de manchete, ligações de texto e selos.
+
+A condição passa a incluir a faixa, e o que sobra fica contado por classe, com a
+razão de cada uma escrita na régua e na folha:
+
+| o que era | depois |
+|---|---|
+| 129 alvos na faixa sem os 44 px, e a célula verde | **0 caixas** falham; a célula é vermelha se alguma falhar |
+| «são todos polígonos do mapa» (falso) | **6 áreas de desenho**, cujo alvo é a rede de nomes por baixo do mapa (Emenda 20c, I82) |
+| — | **4 numa página de leitura**, que o brief põe fora deste bloco («nada nas páginas de leitura») |
+| — | **3 que quebram de linha dentro de uma frase**, que é a dispensa que a WCAG 2.5.5 escreve para um alvo em linha |
+
+Os 93 subiram a 44 px por uma lista de classes medidas, uma a uma, e não por uma
+regra geral sobre `a`: o título de um trabalho no arquivo, as entradas do sumário
+do Método, o nome de um domínio, o endereço de uma fonte na página de uma linha e
+na agenda. **`.texto-ligacao` entrou e saiu com a medição**: numa tabela de uma
+página de leitura ela vive na mesma célula que as duas portas «a linha desta
+figura», e dar-lhe 44 px punha o canto dela por cima delas, que é a colisão que a
+regra da casa proíbe.
+
+### Blocking 3 · A H8 não conferia unidade nenhuma
+
+A régua passava `u.texto` — que depois deste bloco já vem em INGLÊS — à tabela,
+que é indexada pelo PORTUGUÊS. Nenhuma entrada casava, todos os cartões saíam
+«sem tradução», e o relatório publicou «210 sem tradução» quando o número real
+são **6**. A régua dizia zero em português porque não olhava para nenhum.
+
+Passa a perguntar pela cadeia do LIVRO-RAZÃO (`u.livro`, que o registo passou a
+levar exactamente para isto) e a comparar o que o cartão desenhou com o que a
+tabela manda. E ganha um **segundo canal**: a unidade rendida na página inglesa,
+lida no navegador, contra a mesma tabela. Um PNG não tem texto que se leia, e sem
+o segundo canal um registo que mentisse sobre o desenho passava.
+
+| | primeira passagem | segunda |
+|---|---|---|
+| cartões ingleses com unidade | 298 | 298 |
+| desenharam cadeia diferente da tabela | «0» (não media nada) | **0**, medido |
+| ficam em português por decisão da tabela | «210» | **6**: «avisos» em 4 e «factor» em 2, cada um com a razão da tabela |
+| unidades rendidas em páginas inglesas | não medido | **875**, 0 diferentes do que a tabela manda |
+
+### Blocking 4 · A porta das correções não podia estar dentro de `<main>`
+
+O brief diz «`<footer>` ou `<nav aria-label>`». A primeira passagem tirou-a do vão
+entre o `</main>` e o `<footer>` e deixou de pé o outro caso: **6 482 páginas com
+a porta dentro do `<main>`**, e nas páginas de linha dentro de um `<main><aside>`,
+que é a coluna do aparelho. O portão e a régua aceitavam `main`, e o relatório
+dizia por escrito que essas «não mudam nada».
+
+As cinco vistas que a rendiam deixam de a render (`LinhaView`, `MunicipioView`,
+`EstudoView`, `TextoView`, `CorrecoesView`), e **a propriedade que lhes permitia
+fazê-lo saiu do invólucro**: não há maneira de uma vista nova voltar a pô-la fora
+do rodapé. O portão e as duas leituras da régua (a do disco e a do navegador)
+passam a recusar `main` e a dizê-lo por palavras.
+
+**7 221 de 7 237 páginas com a porta dentro do `<footer>`; 0 fora; 16 sem porta**
+(os documentos alojados, que por desenho não a têm).
+
+### Blocking 5 · A exceção da manchete aceitava a porta errada
+
+A régua aceitava qualquer âncora dentro do mesmo `<h1>` como desculpa para um
+algarismo sem os 44 px. **Uma manchete cita mais do que uma linha**: o selo que
+roubava a área era muitas vezes o de OUTRA linha, e um dedo a 9 px por baixo de
+«0,7» abria a dívida pública. Medido a 768 em `/en/regions/alentejo`.
+
+Duas correções, e nenhuma delas é uma exceção nova:
+
+1. **o selo de uma manchete fica com a sua própria caixa** (`.manchete-selos
+   a.src-chip::after`), de modo que deixa de entrar na linha de cima. A célula
+   A10 de `tests/inicio/correcoes-a.mjs`, que exige 44 px a cada `a.src-chip` da
+   primeira página, não muda: a manchete da primeira página não tem selos;
+2. **a área de um algarismo numa manchete que cita várias linhas é a caixa da sua
+   própria linha** (`height: 1lh`). A entrelinha é o avanço entre duas linhas, de
+   modo que as áreas **ladrilham**: encostam e não se cruzam, seja qual for a
+   entrelinha. Com um tecto de 44 px a ladrilhagem partia-se onde a entrelinha é
+   menor, que foi o que a medição a 1023 px mostrou.
+
+A célula tem dois degraus, escritos à partida: uma manchete que cita uma linha dá
+44 px ao seu algarismo; uma que cita várias dá 44 px de largura e a caixa de
+linha de altura. **Nos dois degraus exige-se o mesmo: nenhum algarismo partilha a
+sua área com uma porta que abra outra linha.**
+
+**70 algarismos medidos · 30 em manchetes de uma linha, 0 sem os 44 px · 40 em
+manchetes de várias, 0 sem a largura ou sem a caixa de linha · 0 com uma porta de
+outra linha dentro da sua área.**
+
+### Major 6 · O relatório dizia o contrário do seu próprio JSON
+
+O `alvos-medidas-depois.json` da primeira passagem tinha a H2 **vermelha** e o
+relatório dizia «todas as células verdes». Os ficheiros desta passagem
+(`alvos-medidas-depois.json` e `alvos-plantas.json`) são regenerados depois das
+correções, e a tabela da §9.2 é a leitura deles, célula a célula.
+
+### Major 8 · As plantas não provavam o que o relatório dizia
+
+Três correções:
+
+- a planta da porta tirava-a de TODOS os marcos, e provava a regra fácil. Passa a
+  pô-la **dentro do `<main>`**, que é o caso que a régua aceitava;
+- a planta da unidade mexia só no registo ao lado. Passa a mexer **também no HTML
+  rendido**, porque a régua passou a ler a página;
+- a planta dos 30 px corre contra o limiar real de 44, e a folha do estrago tira
+  ao alvo qualquer folga (`::after` nenhum, `padding` nenhum), para que a ficha
+  meça mesmo 30.
+
+### Major 9 · Duas réguas exigiam menos do que o relatório afirmava
+
+- **H1** passava com zero violações graves e moderadas por baixo, e o relatório
+  afirmava «nenhuma violação de qualquer impacto». Passa a exigir o que o
+  relatório dizia: **zero nós em violação, de qualquer grau**;
+- **a geometria dos alvos** sondava quatro pontos axiais. Passa a sondar **oito**,
+  com os quatro cantos. Onde o teste barato falha, mede-se a área pelos quatro
+  lados, **recentra-se** o quadrado no meio do que se alcançou e perguntam-se os
+  oito outra vez: a área de um alvo da casa não é simétrica em relação à caixa do
+  elemento, e conferir os cantos da caixa medida reprovava um alvo que tem os 44
+  px inteiros (a caixa medida é a união de duas leituras axiais, e para um valor
+  com `::after` dentro de uma linha alta essa união é uma cruz, cujos cantos estão
+  vazios com toda a razão).
+
+### Major 10 · O controlo do `aria-expanded` não estava provado
+
+A régua conferia o FEITIO do elemento e mais nada: um atributo escrito à mão numa
+página cujo guião não fosse servido tinha o mesmo feitio e passava. Passa a
+exigir três coisas: **o ficheiro está em `dist/`**, **as páginas que levam o
+atributo pedem-no**, e **abrir e fechar o `<details>` muda o atributo e repõe-no**
+— uma prova no navegador, por rota. **46 provas, 0 em que o atributo não seguiu o
+estado.**
+
+### Major 11 · O reconhecedor de diplomas tinha falsos negativos
+
+Conhecia «Lei» e «Decreto-Lei» e cortava o sufixo do ano. Passa a conhecer
+**«Resolução do Conselho de Ministros», «Decreto-Lei», «Despacho Normativo»,
+«Lei Orgânica», «Portaria», «Despacho» e «Lei»**, com o sufixo dos dois lados
+(«n.º 137-A/2013» e «n.º 73/2013-A»), e a ordem das alternativas é a da
+especificidade, que numa alternância é obrigatória.
+
+`scripts/check-lingua.mjs` passa a **importar o mesmo feitio** em vez de guardar
+uma cópia: o gabarito que marca e a régua que conta liam dois feitios que se
+podiam separar. Medido no dia da mudança: nas 3 615 páginas inglesas só existem
+«Lei» e «Decreto-Lei», de modo que alargar não muda uma contagem de hoje; muda o
+que a régua vê amanhã.
+
+E a H9 passa a **dizer quantos ficheiros leu e quantos saltou**: 3 615 páginas
+inglesas, 1 247 com um nome de diploma, 2 368 sem nenhum, 1 documento alojado
+fora da conta. Um reconhecedor estreito não deixava um erro à vista: apagava-o.
+
+### Minor 12 · «Procurar» no inventário da voz
+
+A cadeia é `ambito.pesquisaSubmeter`, e não é nova: é o botão que a primeira
+página já rende desde o F1.1. O que mudou é a superfície, e está declarado no
+inventário com a origem.
+
+**E a declaração NÃO é uma linha da tabela, com a razão medida:** a tabela é a
+leitura da régua, e a régua **não lê botões**. `frasesDaCasa()` recolhe
+`p, li, dd, dt, h1..h4, figcaption, summary, blockquote, td, th, caption` e os
+rótulos que vivem num `<span>` sozinho; um `<button>` e um `<label>` nunca
+estiveram nessa lista. Uma linha «viva» para «Procurar» fecha a construção com
+«linha viva que não se rende em rota nenhuma» — não porque a cadeia não se veja,
+mas porque a régua não olha para onde ela está.
+
+**O buraco fica medido e é maior do que esta cadeia:** nas nove rotas
+inventariadas há **doze textos distintos de `<button>` e de `<label>`** fora da
+leitura da régua, e oito deles não têm linha nenhuma. Alargar `BLOCOS_DA_VOZ` é a
+correção certa e não se faz aqui: mexe na régua de que dependem os blocos que
+correm em paralelo, e pede uma entrada em `critica/REVISOES-DO-INVENTARIO.md`.
+**Fica para a direção, com a contagem feita.**
+
+## 9.2 · H1 a H13, como ficaram
+
+| # | segunda passagem |
+|---|---|
+| H1 | **0 nós em violação, de qualquer impacto**, em 46 rotas × 2 larguras |
+| H2 | fichas: 6 300 medidas, **0 sem o alvo** · folha: 46 blocos `@media`, **0** com 44 px que acabem antes de 1024 · faixa 641 a 1023: **0 caixas falham**; 6 áreas de desenho, 4 numa página de leitura, 3 que quebram de linha, cada grupo com a razão |
+| H3 | 7 237 páginas, **0** com um número de `<h1>` diferente de 1 |
+| H4 | **7 221 com a porta dentro do `<footer>`, 0 fora, 0 dentro de um `<main>`**, 16 sem porta |
+| H5 | 54 caixas com deslocamento, **0 sem teclado, nome ou papel** |
+| H6 | 8 alvos da I105, **0 abaixo de 32 px** |
+| H7 | 70 algarismos · 30 de uma linha, **0 sem 44 px** · 40 de várias, **0 sem a largura ou a caixa de linha** · **0 com uma porta de outra linha dentro da sua área** |
+| H8 | 298 cartões ingleses com unidade, **0 desenharam cadeia diferente da tabela**, 6 ficam em português com a razão · 875 unidades rendidas em páginas inglesas, **0 diferentes** |
+| H9 | 3 615 páginas inglesas lidas, 1 247 com diploma · 1 250 nomes: **1 247 com marca, 0 sem marca**, 3 em transcrição da fonte |
+| H10 | 7 221 ocorrências, **0 fora do feitio** · o guião está em `dist/`, **0 páginas com o atributo sem o pedir** · **46 provas de abrir e fechar, 0 falhas** |
+| H11 | `build`, `verify` (com `check:alvos` e `check:indice`), `typecheck` — os três a 0 |
+| H12 | **5 plantas, 5 apanhadas**, agora contra os casos certos |
+| H13 | `/municipios`: **308 portas, todas na lista agrupada** |
+
+## 9.3 · O que fica por fazer, e para quem
+
+1. **Seis áreas do mapa** na faixa dos 641 aos 1023 px (Beja, Castelo Branco,
+   Évora, Guarda, Portalegre, Santarém, Viseu, nas duas edições). São polígonos e
+   não caixas; a resposta da casa é a rede de nomes por baixo do mapa (Emenda
+   20c, I82), e cada uma delas tem o seu nome como alvo de 44 px nessa rede.
+2. **Quatro alvos numa página de leitura** (`.texto-ligacao` e um selo). O corpo
+   de uma página de leitura é do F1.9a e o brief F1.7 põe-no fora; dar 44 px à
+   ligação do relatório punha-a por cima das duas portas «a linha desta figura»
+   que vivem na mesma célula. **Para quem for dono daquela célula.**
+3. **Três ligações que quebram de linha** dentro de uma frase da agenda. A WCAG
+   2.5.5 dispensa um alvo em linha cuja altura é a da caixa de linha; dar-lhe 44
+   px obrigava a torná-lo um bloco, e um bloco não quebra dentro da frase.
+4. **A régua da voz não lê botões nem rótulos** (§9.1, Minor 12): doze cadeias
+   fora da leitura, oito sem linha no inventário. **Para a direção.**
+5. **A altura da manchete.** Onde ela cita várias linhas, o algarismo fica com a
+   caixa da sua linha e não com 44 px. Dar-lhe 44 pede mais entrelinha, que é
+   mudar o aspeto da manchete, e o brief diz «Nada nas manchetes além do alvo».
+   **Para a direção**, com a geometria medida: a 768 a entrelinha é 33,6 px e os
+   algarismos caem a 35 px um do outro.

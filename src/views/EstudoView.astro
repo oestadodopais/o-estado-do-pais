@@ -38,7 +38,6 @@ import Provenance from '../components/Provenance.astro';
 import Marcador from '../components/Marcador.astro';
 import Frase from '../components/Frase.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
-import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import { workById, POR_VERIFICAR, subjectLabel } from '../data/studies.mjs';
 import { leituraDe } from '../data/leituras.mjs';
 import { FONTE_DIGITAL_GERADA_POR_IA } from '../data/politica-ia.mjs';
@@ -155,7 +154,6 @@ const jsonld = {
   description={work.description[lang]}
   jsonld={jsonld}
   noindex={!leitura}
-  portaNoRodape={false}
 >
   {/* ======================================= o estado da página
       A CAIXA ÀS RISCAS SAIU E AS PALAVRAS FICARAM (`DECISIONS.md` §4, item M).
@@ -392,8 +390,6 @@ const jsonld = {
       <div class="log-vazio-k">{s.estudos.descarregarK}</div>
       <p class="log-vazio-v">{s.estudos.descarregarVazio}</p>
     </div>
-
-    <PortaDeCorreccoes lang={lang} class="log-vazio" />
 
     <p class="rodape-nav">
       <a href={routePath('estudos', lang)}>{s.estudos.stubVoltar}</a>
