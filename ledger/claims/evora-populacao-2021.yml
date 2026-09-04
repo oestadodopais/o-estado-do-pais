@@ -9,6 +9,11 @@ id: "evora-populacao-2021"
 value: "55 711"
 unit: "pessoas"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "População residente (N.º) por Local de residência (NUTS - 2024), Sexo e Grupo etário; Anual - INE, Estimativas anuais da população residente"
+name_source: "IndicadorDsg"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "INE"
 document:
@@ -41,8 +46,7 @@ note: "Cruzado de ResearchHub content/06 Évora Economy · pop-evora-2021."
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
 
-# Reconferências. Escritas pelo motor (indicators/refresh.py e
-# indicators/corredor.py), nunca à mão.
+# Reconferências. Do exportador (registo de releitura) e dos leitores da casa.
 verifications:
   - date: "2026-09-01"
     path: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0012918&Dim1=S7A2021%2CS7A2024%2CS7A2025&lang=PT&Dim2=1C40705"

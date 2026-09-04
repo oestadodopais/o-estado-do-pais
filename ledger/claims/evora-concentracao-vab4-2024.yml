@@ -46,8 +46,7 @@ note: "[derivation do motor] share of the four largest enterprises in the concel
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
 
-# Reconferências. Escritas pelo motor (indicators/refresh.py e
-# indicators/corredor.py), nunca à mão.
+# Reconferências. Do exportador (registo de releitura) e dos leitores da casa.
 verifications:
   - date: "2026-09-01"
     path: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014047&Dim1=S7A2024&lang=PT&Dim2=1C40705"

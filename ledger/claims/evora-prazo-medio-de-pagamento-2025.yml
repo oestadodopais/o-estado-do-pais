@@ -46,7 +46,7 @@ note: "Cruzado de ResearchHub content/07 Évora Municipal Accounts · pmp-2025."
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
 
-# Reconferências. Escritas pelo exportador a partir de um registo de releitura.
+# Reconferências. Do exportador (registo de releitura) e dos leitores da casa.
 verifications:
   - date: "2026-08-15"
     path: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf"
