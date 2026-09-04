@@ -165,20 +165,43 @@ for (const m of MEDIDAS_DO_DOMINIO_1) if (typeof m.claim === 'string' && !CARTOE
 
 const LINHAS_DA_REGUA = loadClaims();
 
-/** @param {string} id @param {'pt'|'en'} lang */
-function nomeEsperado(id, lang) {
+/**
+ * O DEGRAU DE ONDE O NOME VEIO, e não só o nome (bloco M1, 04.09.2026).
+ *
+ * A escada tem quatro degraus e o quarto é o título do DOCUMENTO, que não é o
+ * nome da medida: é o nome do papel de onde ela foi lida, e por isso dez
+ * entradas do índice se chamavam «Prestação de Contas 2025». Contar quantas
+ * entradas descem até esse degrau é a medida da dívida do nome, e ela move-se
+ * quando o motor lhe dá rótulo: por isso a contagem sai aqui, a cada
+ * construção, em vez de ser recontada por uma auditoria de quando em quando.
+ *
+ * @param {string} id @param {'pt'|'en'} lang
+ * @returns {{ texto: string, degrau: 'cartao'|'name'|'document.title' }|null}
+ */
+function nomeEsperadoComDegrau(id, lang) {
   const cartao = CARTOES_DA_REGUA.get(id);
   if (cartao) {
     const t = cartao[lang] ?? cartao.pt;
-    if (typeof t === 'string' && t.trim() !== '' && t !== MARCADOR) return t;
+    if (typeof t === 'string' && t.trim() !== '' && t !== MARCADOR) {
+      return { texto: t, degrau: 'cartao' };
+    }
   }
   const linha = LINHAS_DA_REGUA.get(id);
   if (!linha) return null;
   const nome = linha.name;
-  if (typeof nome === 'string' && nome.trim() !== '' && nome !== MARCADOR) return nome;
+  if (typeof nome === 'string' && nome.trim() !== '' && nome !== MARCADOR) {
+    return { texto: nome, degrau: 'name' };
+  }
   const titulo = /** @type {{ title?: unknown }} */ (linha.document ?? {})?.title;
-  if (typeof titulo === 'string' && titulo.trim() !== '' && titulo !== MARCADOR) return titulo;
+  if (typeof titulo === 'string' && titulo.trim() !== '' && titulo !== MARCADOR) {
+    return { texto: titulo, degrau: 'document.title' };
+  }
   return null;
+}
+
+/** @param {string} id @param {'pt'|'en'} lang */
+function nomeEsperado(id, lang) {
+  return nomeEsperadoComDegrau(id, lang)?.texto ?? null;
 }
 
 /**
@@ -273,12 +296,25 @@ celula('I1', 'o nome de uma medida não é o identificador', (falhas) => {
   let comNome = 0;
   let semNome = 0;
   let idEmMetadado = 0;
+  /* A ESCADA, CONTADA DEGRAU A DEGRAU (bloco M1). Por edição e sobre as linhas
+     DISTINTAS do índice do livro-razão, que é onde o número de 79 foi medido a
+     04.09.2026: contar as entrada rendidas somava as duas edições, e contar
+     também as páginas de área somava a mesma linha duas vezes. */
+  const degraus = new Map();
+  const contarDegrau = (lang, id) => {
+    const chave = `${lang}:${id}`;
+    if (degraus.has(chave)) return;
+    degraus.set(chave, nomeEsperadoComDegrau(id, lang)?.degrau ?? 'nenhum');
+  };
+  const porDegrau = (lang, degrau) =>
+    [...degraus].filter(([k, d]) => k.startsWith(`${lang}:`) && d === degrau).length;
   const alvo = paginas.filter((p) => ePaginaDeIndiceDoLivro(p.rota) || ePaginaDeArea(p.rota));
   if (alvo.length === 0) falhas.push('não há páginas de índice do livro-razão nem de área em dist/.');
   for (const pag of alvo) {
     for (const item of dom(pag).querySelectorAll('.livro-item')) {
       itens++;
       const id = item.getAttribute('data-linha-id') ?? '';
+      if (ePaginaDeIndiceDoLivro(pag.rota)) contarDegrau(pag.lang, id);
       const corpo = item.querySelector('.livro-item-corpo');
       const primeiro = corpo?.childNodes?.find((n) => n.nodeType === 1) ?? null;
       const classePrimeiro = String(primeiro?.getAttribute?.('class') ?? '');
@@ -327,8 +363,31 @@ celula('I1', 'o nome de uma medida não é o identificador', (falhas) => {
       }
     }
   }
-  medida.I1 = { paginas: alvo.length, itens, com_nome: comNome, sem_nome: semNome, ids_em_metadado: idEmMetadado };
-  return `${alvo.length} página(s) · ${itens} entrada(s) · ${comNome} com nome · ${semNome} sem nome (as derivadas, que não têm fonte nem documento, e as que só têm o marcador por título de documento) · ${idEmMetadado} identificador(es) em metadado`;
+  const escada = Object.fromEntries(
+    ['pt', 'en'].map((lang) => [
+      lang,
+      {
+        cartao: porDegrau(lang, 'cartao'),
+        name: porDegrau(lang, 'name'),
+        'document.title': porDegrau(lang, 'document.title'),
+        nenhum: porDegrau(lang, 'nenhum'),
+      },
+    ]),
+  );
+  medida.I1 = {
+    paginas: alvo.length, itens, com_nome: comNome, sem_nome: semNome,
+    ids_em_metadado: idEmMetadado, escada_do_indice: escada,
+  };
+  const e = escada.pt;
+  const total = e.cartao + e.name + e['document.title'] + e.nenhum;
+  return (
+    `${alvo.length} página(s) · ${itens} entrada(s) · ${comNome} com nome · ${semNome} sem nome ` +
+    `(as derivadas, que não têm fonte nem documento, e as que só têm o marcador por título de ` +
+    `documento) · ${idEmMetadado} identificador(es) em metadado\n        a escada no índice do ` +
+    `livro-razão, por edição (${total} linhas): ${e.cartao} pelo nome do cartão · ${e.name} pelo ` +
+    `rótulo da fonte · ${e['document.title']} pelo TÍTULO DO DOCUMENTO, que é o nome do papel e ` +
+    `não o da medida · ${e.nenhum} sem nome`
+  );
 });
 
 /* --------------------------------------------------------------------- I2 */
