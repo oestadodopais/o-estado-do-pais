@@ -635,12 +635,25 @@ for (const edicao of ['pt', 'en']) {
       algarismos: els[0] ? /\d/.test(els[0].textContent) : null,
     };
   });
-  const esperada = edicao === 'pt' ? 'Um observatório de Portugal.' : 'An observatory of Portugal.';
+  /* A FRASE CRESCEU E A CÉLULA MUDA COM ELA (bloco F1.10, 04.09.2026). A frase
+     de identidade passou a ser a frase de DEFINIÇÃO do sítio, por decisão do
+     lugar de direção (`DECISIONS.md` §1.98, segunda emenda, item 3): diz as três
+     maneiras de ler o sítio e a origem de cada número. O que a célula media
+     continua a valer todo — uma vez, na letra da prosa, sem porta, sem algarismo
+     — menos a contagem de linhas: uma frase de dezasseis palavras não cabe numa
+     linha a 390 px, e exigir que coubesse era exigir que a frase não mudasse. Em
+     vez do «uma linha» fica um TECTO medido, que é o que a composição promete:
+     não mais de três linhas a 390 px. */
+  const esperada =
+    edicao === 'pt'
+      ? 'Um observatório de Portugal: cada número com a sua fonte, lido por território, por domínio e em estudos.'
+      : 'An observatory of Portugal: every number with its source, read by territory, by domain and in studies.';
   conta(
-    `A11 · a frase de identidade, uma vez, na letra da prosa e sem porta · 390 ${edicao}`,
+    `A11 · a frase de definição, uma vez, na letra da prosa e sem porta · 390 ${edicao}`,
     identidade.n === 1 &&
       identidade.texto === esperada &&
-      identidade.linhas === 1 &&
+      identidade.linhas !== null &&
+      identidade.linhas <= 3 &&
       identidade.ligacoes === 0 &&
       identidade.algarismos === false,
     `«${identidade.texto}» · ${identidade.n} ocorrência(s) · ${identidade.familia} ${identidade.corpo} · ${identidade.linhas} linha · ${identidade.ligacoes} ligações · algarismos ${identidade.algarismos}`,

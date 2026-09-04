@@ -437,13 +437,20 @@ const ROTAS_DA_CLASSE = [
        sentinela passa a ser a frase de identidade da Emenda 18a, que é prosa da
        casa, está fixada por decisão do diretor e rende-se na primeira página e
        em mais lado nenhum. */
-    sentinela: 'Um observatório de Portugal.',
+    /* A SENTINELA CRESCEU COM A FRASE (bloco F1.10, 04.09.2026). A frase de
+       identidade passou a ser a frase de DEFINIÇÃO do sítio, por decisão do lugar
+       de direção (`DECISIONS.md` §1.98, segunda emenda, item 3), e a sentinela é
+       a cadeia inteira: uma sentinela que ficasse no prefixo deixava de provar
+       que a frase nova se rende. */
+    sentinela:
+      'Um observatório de Portugal: cada número com a sua fonte, lido por território, por domínio e em estudos.',
   },
   {
     rota: '/en/',
     ficheiro: path.join('dist', 'en', 'index.html'),
     lingua: 'en',
-    sentinela: 'An observatory of Portugal.',
+    sentinela:
+      'An observatory of Portugal: every number with its source, read by territory, by domain and in studies.',
   },
 ];
 
