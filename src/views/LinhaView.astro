@@ -49,6 +49,7 @@ import Provenance from '../components/Provenance.astro';
 import Marcador from '../components/Marcador.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import HistoricoDaLinha from '../components/HistoricoDaLinha.astro';
+import DataDaLinha from '../components/DataDaLinha.astro';
 import {
   getClaim,
   camposPorVerificar,
@@ -65,6 +66,7 @@ import {
 import { caminhoDaLinha, caminhoDoLivro, tituloDaLinha, descricaoDaLinha } from '../lib/livro.mjs';
 import { estadoDaFonte } from '../lib/prova.mjs';
 import { ANFITRIOES_SEM_RESPOSTA } from '../data/fontes.mjs';
+import { atrasoDaLinha } from '../lib/frescura.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { studyTitle } from '../data/studies.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
@@ -312,6 +314,33 @@ function estadoDoAnfitriaoDaLinha(sourceUrl) {
 }
 
 const fonteSemResposta = estadoDaFonte(claim.source_url) ?? estadoDoAnfitriaoDaLinha(claim.source_url);
+
+/**
+ * ---------------------------------------------------------------------------
+ * O ATRASO DA SÉRIE (bloco F1.6, 04.09.2026; DECISIONS §1.98, decisão (2))
+ * ---------------------------------------------------------------------------
+ * «O IEFP rende o atraso em vez de publicar 2026-07 por conferir.» O desemprego
+ * registado por concelho que esta casa publica é o de dezembro de 2025 e o
+ * ficheiro que o IEFP serve hoje é o de julho de 2026: são oito períodos, e
+ * antes deste bloco a página dizia «reconferido» ao lado do valor sem dizer
+ * contra o quê. Um selo conferido ao lado de um número velho é uma frescura que
+ * a página promete e não tem.
+ *
+ * ONDE FICA, E PORQUÊ. Na cabeça, ao pé do selo, e não no bloco das
+ * verificações a meia página de distância: é a mesma razão pela qual o estado da
+ * fonte calada subiu para aqui no F0.11, e o parágrafo dele está mesmo acima. O
+ * leitor tem de ver o atraso ANTES de acreditar no número, não depois.
+ *
+ * NENHUM DOS TRÊS VALORES É ESCRITO NO GABARITO. O período da fonte vem de
+ * `src/data/frescura.mjs`, com a origem declarada e reconferida pelo
+ * `check:formas`; o período da casa é o `reference_date` desta linha e a data
+ * do «desde» é o `access_date` dela, os dois pelo `DataDaLinha`, que o mesmo
+ * portão vai buscar ao livro-razão e compara carácter a carácter.
+ *
+ * SEM COR NOVA (`IDENTIDADE.md` §2) e sem segundo marcador (§6): o que o torna
+ * visível é a posição e o rótulo, como no estado da fonte.
+ */
+const atraso = atrasoDaLinha(claim);
 
 /**
  * O RÓTULO DO ESTADO, e é um de dois (03.09.2026, segunda passagem, Major 4).
@@ -648,6 +677,28 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
         <span data-nonledger="data-da-conferencia">{dataDaCasa(fonteSemResposta.desde)}</span>
         {' · '}
         <span data-nonledger="data-da-conferencia">{quemObservou}</span>
+      </p>
+    )}
+    {/* O ATRASO DA SÉRIE, ao pé do selo. Ver o bloco com o mesmo nome no topo
+        deste ficheiro para a razão e para a origem de cada um dos três valores. */}
+    {atraso && (
+      /* A CLASSE É PRÓPRIA E NÃO A DO ESTADO DA FONTE, e não é estética: o
+         `tests/linha/sem-resposta.mjs` reconhece o bloco do estado da fonte pela
+         cadeia `class="linha-selo-estado"`, e uma segunda coisa com a mesma
+         classe fazia aquela régua dizer que 278 linhas desenham um silêncio que
+         a fonte não tem. A folha dá às duas o mesmo desenho, que é o certo: são
+         a mesma camada de aparelho, na mesma posição, com dois factos
+         diferentes. */
+      <p class="linha-selo-atraso">
+        <span class="linha-campo-k" data-voz>{s.livro.linha.periodoDaFonteK}</span>{' '}
+        <span data-nonledger="periodo-da-fonte" data-de-serie={atraso.id}>
+          {atraso.periodoDaFonte}
+        </span>
+        {'; '}
+        <span class="linha-campo-k" data-voz>{s.livro.linha.periodoDaCasaK}</span>{' '}
+        <DataDaLinha id={id} campo="reference_date" valor={claim.reference_date} />{' '}
+        <span class="linha-campo-k" data-voz>{s.livro.linha.periodoDesdeK}</span>{' '}
+        <DataDaLinha id={id} campo="access_date" valor={claim.access_date} />
       </p>
     )}
     {/* O IDENTIFICADOR, COM O SEU RÓTULO (bloco B, item B7; achado C13).

@@ -10,6 +10,21 @@
  *                                   ao valor e antes do selo (§11).
  *   { ref: '2024' }               — ano ou período de referência dos dados
  *   { nl: '100', motivo: '…' }    — outro contexto estrutural declarado
+ *   { data: { id, campo, valor } }— uma das datas de uma linha do livro-razão,
+ *                                   escrita na forma da casa e reconferida pelo
+ *                                   `check:formas` contra aquele campo daquela
+ *                                   linha (ver `DataDaLinha.astro`)
+ *   { serie: 'id', periodo: '…' } — o último período que a fonte de uma série
+ *                                   publicou, declarado em `src/data/frescura.mjs`
+ *                                   e reconferido pelo `check:formas` contra a
+ *                                   origem que aquele ficheiro nomeia
+ *   { voz: 'palavras' }           — texto corrido que a régua da voz tem de
+ *                                   recolher onde quer que ele esteja. É a marca
+ *                                   `data-voz` (ver `scripts/medir-defeitos.mjs`):
+ *                                   só alarga a peneira, não dispensa nada. Serve
+ *                                   os rótulos de uma frase que vive ao lado de
+ *                                   marcas de origem, que a régua salta em rotas
+ *                                   fora de `ROTAS_COM_ORIGEM_LIDA`.
  *   { forte: '…' }                — negrito
  *   { email: '…' }                — endereço de correio, como ligação mailto.
  *                                   Abre o programa de correio de quem lê, e o
@@ -22,6 +37,7 @@
  *                                   na origem; na edição inglesa leva glosa.
  */
 import Claim from './Claim.astro';
+import DataDaLinha from './DataDaLinha.astro';
 import { routePath } from '../lib/routes.mjs';
 import { VERBATIM } from '../data/verbatim.mjs';
 
@@ -43,6 +59,17 @@ const { partes, lang = 'pt', selos = false } = Astro.props;
     if (parte.claim)
       return <Claim id={parte.claim} lang={lang} chip={selos} sufixo={parte.sufixo ?? ''} />;
     if (parte.ref) return <span data-nonledger="data-de-referencia">{parte.ref}</span>;
+    {/* AS DUAS MARCAS DO BLOCO F1.6 (04.09.2026), e as duas são origens
+        conferidas e não dispensas: o `check:formas` vai buscar a data ao campo
+        da linha que ela nomeia, e o período ao ficheiro que a série nomeia. */}
+    if (parte.data)
+      return <DataDaLinha id={parte.data.id} campo={parte.data.campo} valor={parte.data.valor} />;
+    if (parte.serie)
+      return (
+        <span data-nonledger="periodo-da-fonte" data-de-serie={parte.serie}>
+          {parte.periodo}
+        </span>
+      );
     {/* UM PEDAÇO TRANSCRITO DENTRO DE UMA FRASE (F1.1, 03.09.2026).
         `{ verbatim: '<chave>' }` rende a cadeia registada em
         `src/data/verbatim.mjs` com a marca que o portão conhece, e o portão
@@ -53,6 +80,7 @@ const { partes, lang = 'pt', selos = false } = Astro.props;
         para que não haja duas cópias da mesma transcrição. */}
     if (parte.verbatim)
       return <span data-verbatim={parte.verbatim}>{VERBATIM[parte.verbatim].text}</span>;
+    if (parte.voz) return <span data-voz set:text={parte.voz} />;
     if (parte.forte) return <strong set:text={parte.forte} />;
     if (parte.email)
       return (

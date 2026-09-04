@@ -97,6 +97,21 @@ contexts:
       Acrescentado em 2026-09-03, com a página do primeiro domínio. O intervalo é
       declarado em `src/data/dominios.mjs`, ao lado do id da linha cujo
       `source_url` traz a dimensão.
+  - id: periodo-da-fonte
+    why: >-
+      O último período que a fonte de uma série publicou, quando a casa continua
+      a publicar um período anterior: «Último período publicado pela fonte:
+      2026-07». Acrescentado em 2026-09-04, com o bloco F1.6 e a decisão (2) da
+      §1.98 («o IEFP rende o atraso em vez de publicar 2026-07 por conferir»).
+      NÃO É uma medição de Portugal e não é uma das três datas da linha, que já
+      têm o seu motivo: é o estado da FONTE, como a data desde a qual ela deixou
+      de responder, e a diferença entre este período e o `reference_date` da
+      linha é o atraso que a página existe para dizer. NÃO É UMA DISPENSA: o
+      elemento diz de que série o período saiu (`data-de-serie`), a série está
+      declarada em `src/data/frescura.mjs` com o ficheiro, o registo e o campo de
+      onde foi lida, e `npm run check:formas` abre esse ficheiro por conta
+      própria e compara os dois. Duas contas do mesmo facto, feitas de sítios
+      diferentes, como no `data-prova` e no `data-da-linha`.
   - id: data-de-referencia
     why: >-
       Ano ou período a que os dados se referem, quando aparece no meio de uma
