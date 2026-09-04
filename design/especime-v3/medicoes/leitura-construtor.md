@@ -543,8 +543,8 @@ mecânico por extenso, e a nota de que **o buraco é do F3.1** e não deste bloc
 
 ### 9.5 · O que a reposição obrigou a mexer nas réguas, e nada mais
 
-Repor a leitura inteira nas três medidas do domínio mudou o que quatro células da
-`matriz` contavam, e as quatro seguem a coisa em vez de a esconder:
+Repor a leitura inteira nas três medidas do domínio mudou o que cinco células da
+`matriz` contavam, e as cinco seguem a coisa em vez de a esconder:
 
 | célula | antes da reposição | depois |
 |---|---|---|
@@ -552,6 +552,16 @@ Repor a leitura inteira nas três medidas do domínio mudou o que quatro célula
 | «a régua de uma leitura aberta» (768 e 1280) | as leituras com porta saíam da conta, porque não tinham régua | **todas as que têm limiar entram**: onde há linha de limiar há régua |
 | «nenhum par de áreas de toque sobrepostas na leitura» | o selo e a porta ficavam a 17 px, e as áreas efectivas cruzavam-se por 1,4 px | **27 px de ar por cima da porta**, medidos: as duas áreas deixam de se tocar |
 | «o selo é o maior alvo do corpo da leitura» | o selo mede 52,5 × 19,2 px e a porta 105,8 × 32 | **a porta sai da conta, com a razão escrita**: não é aparelho da leitura, é um destino sozinho na sua linha, e a célula acima já mede que os dois não se tocam |
+| «Emenda 16 · o Painel Social tem oito leituras» | a célula excluía da conta dos selos as leituras COM porta, porque a primeira instrução as reduzia a uma linha | **conta as oito**, e a das portas fica ao lado com o seu número exigido (`portas === 2`, e não `> 0`) |
+
+**A quinta linha é um achado desta passagem e não da anterior, e o modo como
+apareceu diz-se.** Com a leitura reposta, a exclusão que a célula fazia deixou de
+ser verdadeira e passou a ser um buraco: **dois dos oito selos do Painel Social
+ficavam por medir e a célula passava à mesma**, porque o que ela contava era o
+resto. Não foi uma régua que o apanhou, foi a releitura dos comentários do
+próprio bloco à procura de frases que descrevessem a forma antiga. Corrigida, a
+célula mede `8 leituras, todas com selo (2 acrescentam a porta para o domínio)`,
+e a `matriz` continua nas mesmas **3 de 84**.
 
 ### 9.6 · Major 8 e Minor 9 · ficam, e diz-se porquê
 
@@ -642,16 +652,21 @@ isso a árvore fundida levou um `npm ci` novo antes dos comandos.
 
 Os três códigos foram lidos dos ficheiros de cada comando (`build-p5.code`,
 `verify-p5.code`, `tc-p5.code`), e não do que o terminal disse a seguir a um
-comando em segundo plano. Sobre a árvore do commit que escreve esta secção
-correram outra vez, e deram **0, 0 e 0** (`build-p7.code`, `verify-p7.code`,
-`tc-p7.code`), com as treze plantas da `porta` e as cinco da `leitura` verdes
-depois deles. **Uma nota de método, porque custou uma medição errada:** a primeira
+comando em segundo plano. **Cada commit que escreve ou corrige esta secção levou
+os três antes do empurrão**, e os dois últimos deram **0, 0 e 0** (`*-p7.code` e
+`*-p8.code`), com as treze plantas da `porta` e as cinco da `leitura` verdes
+depois deles. O que muda entre a última corrida dos comandos e o commit é a prosa
+deste relatório, que portão nenhum lê; quem confere a árvore exacta que foi
+empurrada é a corrida do `portao` sobre ela. **Uma nota de método, porque custou uma medição errada:** a primeira
 corrida das plantas da `porta` sobre a árvore fundida caiu com um tempo esgotado à
 espera de `[data-grelha] h1`, e não era defeito nenhum: um `npm run build` corria
 ao mesmo tempo e reescreve `dist/`, que é o que as plantas servem. Uma régua que
 lê `dist/` não corre ao lado de um comando que o refaz.
 
 ### 10.3 · As corridas deste ramo
+
+*(`8400fbec` é a cabeça que o resto deste relatório mede; as que vêm depois são os
+commits que escrevem esta secção, e o parágrafo do fim diz porquê)*
 
 | corrida | cabeça | como acabou |
 | --- | --- | --- |
@@ -660,17 +675,21 @@ lê `dist/` não corre ao lado de um comando que o refaz.
 | 33836453244 | `9f3998fd` | cancelada pelo empurrão seguinte |
 | 33837061176 | `9b20a2b8` | cancelada pelo empurrão seguinte |
 | 33837745555 | `8400fbec` | **verde** em 23m59s (segunda passagem, com o `main` fundido) |
+| 33840337730 | `a81bc122` | **verde** em 18m15s (o commit que escreveu esta secção) |
 
 Os três cancelamentos são o `cancel-in-progress` do fluxo de trabalho: cada
 empurrão novo mata a corrida da cabeça anterior. Nenhuma corrida deste ramo ficou
 vermelha.
 
-**A corrida verde leva 23m59s contra o tecto de 30 minutos** do
+**A corrida da cabeça fundida leva 23m59s contra o tecto de 30 minutos** do
 `timeout-minutes` em `.github/workflows/portao.yml`: a construção 12m47s e a
 `verify` 5m48s, e o resto é o anfitrião, o `npm ci` e o Chromium. O F1.4 mediu
 20m30s no mesmo dia, e a corrida da primeira passagem deste ramo levou 22m17s. Não
 é uma regressão de um bloco, é a soma deles: seis minutos de folga é pouco, e o
-tecto é uma decisão do diretor.
+tecto é uma decisão do diretor. **As corridas não levam todas o mesmo**: a
+seguinte, sobre a mesma árvore mais prosa, levou 18m15s, e a diferença é do
+anfitrião e da cache do `npm`, não da árvore. Quem decidir mexer no tecto tem de
+olhar para a pior e não para a média.
 
 *Esta secção é ela própria um commit, e por isso a cabeça que ele faz não é a que
 está escrita acima: é a mesma disciplina que o F1.4 seguiu na §10.6 do relatório

@@ -935,8 +935,10 @@ export const STRINGS = {
          A PORTA DA MEDIDA QUE VIVE NUM DOMÍNIO (F1.1b, 04.09.2026)
          ---------------------------------------------------------------------
          Três das 21 medidas dos dois quadros da União são medidas de um domínio
-         com página, e a leitura delas vive lá. Na área de leitura da primeira
-         página, a leitura de cada uma é uma linha só: esta porta.
+         com página, e a leitura inteira delas vive lá. Na área de leitura da
+         primeira página as três têm a MESMA leitura breve das outras dezoito, e
+         ACRESCENTAM esta porta no fim: não trocam a leitura por ela (decisão
+         corrigida a 04.09.2026, depois do Blocking 3 da leitura a frio).
 
          A CADEIA É NOVA, e isso mediu-se antes de se escrever. O brief e o
          lugar de direção dizem «a cadeia que o F1.2b já declarou»; o F1.2b

@@ -2045,16 +2045,20 @@ for (const largura of [1280, 390]) {
   await p.goto(base + '/?densidade=leitura', { waitUntil: 'networkidle' });
   const soc = await p.evaluate(() => {
     const lista = [...document.querySelectorAll('[data-leituras="social"] .dobra')];
-    /* AS QUE SÃO PORTA NÃO TÊM SELO, E É ASSIM QUE TÊM DE SER (decisão do lugar
-       de direção, 04.09.2026): duas das oito medidas do Painel Social são
-       medidas de um domínio com página (a taxa de emprego e a de desemprego), e
-       a leitura delas nesta página é uma linha só com a porta para o domínio. O
-       selo delas está na página do domínio, ao pé da leitura inteira. A célula
-       conta-as à parte e exige que cada leitura seja UMA das duas coisas: ou tem
-       selo, ou tem porta. Uma leitura sem nenhuma das duas é uma legenda. */
+    /* AS OITO TÊM SELO, E DUAS TÊM TAMBÉM A PORTA (decisão corrigida do lugar de
+       direção, 04.09.2026): duas das oito medidas do Painel Social são medidas
+       de um domínio com página (a taxa de emprego e a de desemprego), e a
+       leitura delas nesta página é a MESMA das outras seis, com o seu selo, mais
+       a porta para o domínio no fim.
+
+       A PRIMEIRA REDAÇÃO DESTA CÉLULA EXCLUÍA DA CONTA DOS SELOS as leituras com
+       porta, porque a primeira instrução do lugar de direção reduzia-as a uma
+       linha. Com a leitura reposta (Blocking 3 da leitura a frio), essa exclusão
+       deixava dois dos oito selos POR MEDIR e a célula passava à mesma. A conta
+       dos selos passa a correr sobre as oito, e a das portas fica ao lado, com o
+       seu próprio número exigido: uma régua não se enfraquece. */
     const portas = lista.filter((l) => l.querySelector('.dobra-porta a[href]')).length;
     const selos = lista
-      .filter((l) => !l.querySelector('.dobra-porta a[href]'))
       .map((l) => {
       const a = l.querySelector('a.src-chip');
       if (!a) return null;
@@ -2103,9 +2107,9 @@ for (const largura of [1280, 390]) {
      valores, que passa de oito a zero, e a razão está escrita. */
   conta(
     '2l · Emenda 16 · o Painel Social tem oito leituras, sem cor, sem o valor repetido e com o selo fora de outro alvo',
-    soc.n === 8 && soc.portas > 0 && soc.semSelo === 0 && soc.aninhados === 0 && soc.pequenos === 0 &&
+    soc.n === 8 && soc.portas === 2 && soc.semSelo === 0 && soc.aninhados === 0 && soc.pequenos === 0 &&
       soc.marcadores === 0 && soc.palavras === 0 && soc.valores === 0,
-    `${soc.n} leituras (${soc.portas} são porta para o domínio, e o selo delas está lá) · ${soc.valores} valores (o valor vive no cartão da faixa) · selo ${soc.medida?.largura}×${soc.medida?.altura}px · aninhados ${soc.aninhados} · marcadores ${soc.marcadores}`,
+    `${soc.n} leituras, todas com selo (${soc.portas} acrescentam a porta para o domínio) · ${soc.valores} valores (o valor vive no cartão da faixa) · selo ${soc.medida?.largura}×${soc.medida?.altura}px · aninhados ${soc.aninhados} · marcadores ${soc.marcadores}`,
   );
   await p.__contexto.close();
 }
