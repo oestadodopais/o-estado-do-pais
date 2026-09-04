@@ -338,7 +338,7 @@ coluna diz isso em vez de a inventar.
 
 | régua | antes (`1dbd1cef`) | depois | o que mudou nela |
 |---|---|---|---|
-| `leitura` | não existia | **13 de 13 células, 5 de 5 plantas** | nova |
+| `leitura` | não existia | **18 de 18 células, 5 de 5 plantas** | nova; a segunda passagem levou-a de 13 a 18 células (a J3 e a J4 nas duas edições e nos dois motores) |
 | `porta` | 34 de 34 | 34 de 34 | A10 conta dentro das leituras e exige as duas coleções não vazias; A13 lê a faixa da cabeça; A17 lê faixa a faixa; duas plantas mudaram de alvo (a da A3, cujo alvo saiu da página; a da A2, cujos mil píxeis de papel deixaram de chegar) |
 | `faixa` | 80 de 80 | 80 de 80 | F1 e F12 comparam os cartões da faixa da cabeça com as leituras da página |
 | `lista` | não medida na partida | 94 de 94 | L8 conta as leituras de cada metade |
