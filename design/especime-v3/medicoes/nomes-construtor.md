@@ -568,11 +568,45 @@ que a régua não vê fecha a construção pelo outro lado («viva que não se r
 
 `data-voz` diz «este texto é prosa da casa, recolhe-o onde quer que esteja». É a
 única marca deste sítio que só ALARGA a peneira: não dispensa nada, não esconde
-nada, e uma marca a mais só pode pôr mais texto por classificar. As catorze
-cadeias estão declaradas, e a régua da voz passou de 802 para **816 frases
-distintas**, com «nada por classificar» e autorreferência 0.
+nada, e uma marca a mais só pode pôr mais texto por classificar. Esta passagem
+escreveu **catorze linhas** no inventário (doze cadeias novas e duas reescritas,
+porque o alcance da busca mudou e a frase do estado vazio dizia o alcance
+antigo), e o bloco `nomes` tem agora dezasseis. A régua da voz passou de 802 para
+**816 frases distintas**, com «nada por classificar» e autorreferência 0.
 
-### 10.6 · O que continua por fazer
+### 10.6 · A cabeça e a corrida da segunda passagem
+
+**`cad7dc29`, verde na corrida `portao` n.º 33833716703**, das 03:34:46 às
+03:55:16 UTC de 04.09.2026. Não houve fusão a fazer: `origin/main` continua em
+`0b51016d`, que já entrou neste ramo na primeira passagem (`56cf933f`).
+
+| comando | código |
+| --- | --- |
+| `npm run build` | **0** |
+| `npm run verify` | **0** (com a `check:indice --navegador` lá dentro, as dez células) |
+| `npm run typecheck` | **0** |
+
+Os três códigos foram lidos dos ficheiros de registo de cada comando, e não do
+que o terminal disse.
+
+**A corrida do portão é a prova de que o `fetch-depth: 0` funciona**, e não uma
+formalidade: sem história o `git log` devolve vazio, as dezasseis edições voltam
+ao marcador, e o portão de HTML fecha a construção porque o motivo
+`data-do-repositorio` fica declarado sem se render em página nenhuma. Verde na CI
+quer dizer que a data saiu do `git` lá dentro.
+
+**A corrida leva 20m30s, contra um tecto de 30 minutos** no
+`.github/workflows/portao.yml`. Não é uma regressão desta passagem (as duas
+corridas anteriores deste ramo levaram 22m34s e 19m45s, já com a régua da moldura
+a abrir o navegador), mas o tecto tem menos folga do que parece, e as duas
+células novas do navegador correm agora lá dentro.
+
+*Esta secção é ela própria um commit, e por isso a cabeça que ele faz não é a que
+está escrita acima: é a mesma disciplina que a §7 seguiu na primeira passagem. Os
+três comandos correram outra vez sobre a árvore dele antes do empurrão, e a
+corrida dele fica no registo do ramo.*
+
+### 10.7 · O que continua por fazer
 
 1. **O «peça» das outras dezasseis ocorrências** (o Método, o Sobre, três
    documentos alojados) é do bloco F1.10, e a régua conta-as à parte para que não
