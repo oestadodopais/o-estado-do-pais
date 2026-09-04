@@ -154,20 +154,31 @@ const estadoDaPagina = (p) =>
   p.evaluate(() => {
     const raiz = document.querySelector('[data-inicio]');
     const bloco = document.querySelector('[data-cabeca]:not([hidden])');
-    const painel = document.querySelector('[data-painel]:not([hidden])');
+    /* A ÁREA DE LEITURA ENTROU NO LUGAR DO PAINEL (F1.1b, 04.09.2026). A grelha
+       das treze peças e a lista compacta do Painel Social saíram da primeira
+       página, e no lugar delas está a área de leitura: dois blocos
+       `[data-leituras]` (um por quadro) com um `<details data-leitura>` por
+       medida. O que estas leituras medem é o mesmo — quantas dobras há, quantas
+       estão abertas, e que bloco está à vista —, medido na coisa que agora lá
+       está. Um seletor que continuasse a procurar `.peca` contava zero, e um
+       zero que ninguém recusa é uma régua cega. */
+    const painel = document.querySelector('[data-leituras]');
     return {
       ambito: raiz?.getAttribute('data-ambito') ?? null,
       densidade: raiz?.getAttribute('data-densidade') ?? null,
       modo: raiz?.getAttribute('data-modo') ?? null,
       bloco: bloco?.getAttribute('data-cabeca') ?? null,
-      painel: painel?.getAttribute('data-painel') ?? null,
+      painel: painel?.getAttribute('data-leituras') ?? null,
       h1: document.querySelector('[data-cabeca]:not([hidden]) h1')?.textContent.trim() ?? null,
       anuncio: document.querySelector('[data-anuncio]')?.textContent.trim() ?? '',
       url: location.pathname + location.search,
-      abertas: [...document.querySelectorAll('[data-painel]:not([hidden]) .peca-mais')].filter(
+      abertas: [...document.querySelectorAll('[data-leituras] [data-leitura]')].filter(
         (d) => d.open,
       ).length,
-      pecas: document.querySelectorAll('[data-painel]:not([hidden]) .peca').length,
+      pecas: document.querySelectorAll('[data-leituras] [data-leitura]').length,
+      /* As do Procedimento à parte: são as treze da Emenda 16, e é essa a
+         contagem que a célula a seguir exige. */
+      pdm: document.querySelectorAll('[data-leituras="pdm"] [data-leitura]').length,
       /* `data-escolher` saiu desta lista com os botões da pesquisa (Emenda 19a):
          um resultado é hoje uma ligação para a página do concelho, e o foco lê-se
          pelo elemento. */
@@ -216,7 +227,15 @@ const estadoDaPagina = (p) =>
       manchete.provas.join(',') === 'painel_fora_do_limiar,painel_dentro_do_limiar',
     `${manchete.texto} · ${manchete.provas.join(' + ')}`,
   );
-  conta('painel do País com 13 peças (Emenda 16)', inicial.pecas === 13, `${inicial.pecas} peças`);
+  /* AS TREZE DA EMENDA 16 CONTAM-SE ONDE ELAS AGORA ESTÃO: na primeira metade
+     da área de leitura, que é a do Procedimento. A área inteira tem 21, que são
+     as 13 do Procedimento mais as 8 do Painel Social, e as duas contagens
+     medem-se para que uma medida que troque de metade não passe. */
+  conta(
+    'a área de leitura do País com 13 leituras do Procedimento e 21 ao todo (Emenda 16)',
+    inicial.pdm === 13 && inicial.pecas === 21,
+    `${inicial.pdm} do Procedimento · ${inicial.pecas} ao todo`,
+  );
 
   /* Ordem do teclado: da linha de comando até às portas, sem saltos para trás. */
   const ordem = await p.evaluate(() => {
@@ -232,7 +251,7 @@ const estadoDaPagina = (p) =>
          mede o que sempre mediu: que a ordem do teclado desce a página sem
          saltos para trás. */
       comando: marco('[data-porta-concelho]'),
-      painel: marco('[data-painel]:not([hidden])'),
+      painel: marco('[data-leituras]'),
       portas: marco('.portas'),
       total: alvos.length,
     };
@@ -333,15 +352,15 @@ const estadoDaPagina = (p) =>
 
   /* A peça abre-se sozinha, e o comando global não apaga a escolha das outras. */
   await p.goto(`${base}/`, { waitUntil: 'networkidle' });
-  await p.click('.peca:first-child .peca-abrir');
+  await p.click('[data-leituras] .dobra:first-child .dobra-abrir');
   const uma = await estadoDaPagina(p);
-  conta('uma peça abre só a sua', uma.abertas === 1, `${uma.abertas} abertas`);
+  conta('uma leitura abre só a sua', uma.abertas === 1, `${uma.abertas} abertas`);
   /* O ENDEREÇO ABRE TODAS, e é o que restou do comando global: `?densidade=
      leitura` continua a ser um estado partilhável e o guião continua a abrir as
      peças quando ele chega. O que saiu foi a fila que o escrevia. */
   await p.goto(`${base}/?densidade=leitura`, { waitUntil: 'networkidle' });
   const todas = await estadoDaPagina(p);
-  conta('o endereço da leitura breve abre todas', todas.abertas === todas.pecas, `${todas.abertas} de ${todas.pecas}`);
+  conta('o endereço da leitura breve abre todas', todas.abertas === todas.pecas && todas.pecas > 0, `${todas.abertas} de ${todas.pecas}`);
 
   await p.__contexto.close();
 }
@@ -460,7 +479,7 @@ const estadoDaPagina = (p) =>
     const p = await pagina({ movimento: 'reduce' });
     await p.goto(`${base}/`, { waitUntil: 'networkidle' });
     const t = await p.evaluate(() => {
-      const peca = document.querySelector('.peca');
+      const peca = document.querySelector('.dobra');
       return peca ? getComputedStyle(peca).transitionDuration : null;
     });
     /* O Chromium sem cabeça, com o movimento reduzido emulado, escreve
@@ -468,7 +487,7 @@ const estadoDaPagina = (p) =>
        é que nenhuma transição sobrevive. */
     const segundos = parseFloat(t);
     conta(
-      'movimento reduzido · a peça não tem transição',
+      'movimento reduzido · a leitura não tem transição',
       Number.isFinite(segundos) && segundos <= 0.001,
       `transition-duration ${t}`,
     );
@@ -477,12 +496,19 @@ const estadoDaPagina = (p) =>
 }
 
 /* --------------------------------------------------------- 5. o selo, alvo e aninho */
+/* A LEITURA ABRE-SE ANTES DE SE MEDIR (F1.1b, 04.09.2026). O selo de uma medida
+   vive hoje no pé da sua leitura breve, que é um `<details>` fechado: o conteúdo
+   de uma dobra fechada não tem caixa nenhuma, e medir o alvo ali dava zero. O
+   endereço `?densidade=leitura` é o estado partilhável que abre as 21, e é como
+   um leitor as abre. É a mesma coisa que a célula sempre mediu — o selo é alvo
+   de 44×44, não está dentro de outro alvo, e é o maior alvo da sua leitura —,
+   medida onde o leitor a vê. */
 {
   const p = await pagina();
-  await p.goto(`${base}/`, { waitUntil: 'networkidle' });
+  await p.goto(`${base}/?densidade=leitura`, { waitUntil: 'networkidle' });
   const selos = await p.evaluate(() => {
     const out = [];
-    for (const a of document.querySelectorAll('.peca a.src-chip')) {
+    for (const a of document.querySelectorAll('.dobra a.src-chip')) {
       const antes = getComputedStyle(a, '::after');
       const r = a.getBoundingClientRect();
       /* A área de toque vem de um `::after` posicionado e centrado no elemento.
@@ -504,9 +530,9 @@ const estadoDaPagina = (p) =>
   const com44 = selos.filter((s) => s.w >= 44 && s.h >= 44).length;
   const aninhados = selos.filter((s) => s.aninhado).length;
   conta(
-    'o selo de cada peça é alvo de 44×44',
+    'o selo de cada leitura é alvo de 44×44',
     selos.length > 0 && com44 === selos.length,
-    `${com44} de ${selos.length} selos de peça · mínimo ${Math.min(...selos.map((s) => s.w))}×${Math.min(...selos.map((s) => s.h))}`,
+    `${com44} de ${selos.length} selos de leitura · mínimo ${Math.min(...selos.map((s) => s.w))}×${Math.min(...selos.map((s) => s.h))}`,
   );
   conta('nenhum selo dentro de outro alvo', aninhados === 0, `${aninhados} aninhados em ${selos.length}`);
 
@@ -522,7 +548,7 @@ const estadoDaPagina = (p) =>
       return { x1: cx - w / 2, x2: cx + w / 2, y1: cy - h / 2, y2: cy + h / 2 };
     };
     let pares = 0;
-    for (const peca of document.querySelectorAll('[data-painel]:not([hidden]) .peca')) {
+    for (const peca of document.querySelectorAll('[data-leituras] .dobra')) {
       const alvos = [...peca.querySelectorAll('a,button,summary')].map(caixa);
       for (let i = 0; i < alvos.length; i++) {
         for (let j = i + 1; j < alvos.length; j++) {
@@ -534,13 +560,26 @@ const estadoDaPagina = (p) =>
     }
     return pares;
   });
-  conta('nenhum par de áreas de toque sobrepostas na peça', sobrepostos === 0, `${sobrepostos} pares`);
+  conta('nenhum par de áreas de toque sobrepostas na leitura', sobrepostos === 0, `${sobrepostos} pares`);
 
   const maiorDaFila = await p.evaluate(() => {
-    const peca = document.querySelector('.peca');
+    /* A PRIMEIRA LEITURA COM SELO, e não a primeira de todas: as três medidas que
+       vivem num domínio têm por leitura uma porta, sem selo e sem pé, e a
+       pergunta desta célula é sobre a leitura que tem um. */
+    const peca = [...document.querySelectorAll('.dobra')].find((e) => e.querySelector('a.src-chip'));
     if (!peca) return null;
     const selo = peca.querySelector('a.src-chip');
-    const outros = [...peca.querySelectorAll('a,button,summary')].filter((e) => e !== selo);
+    /* OS OUTROS ALVOS DO CORPO DA LEITURA, E NÃO O `<summary>` (F1.1b,
+       04.09.2026). A peça era um cartão com o selo no pé e a dobra a abrir-se
+       dentro dele; a leitura É a dobra, e o seu `<summary>` é a linha inteira do
+       nome da medida, que é o alvo primário e mede a largura da coluna. Exigir
+       que o selo fosse maior do que ele era exigir que o comando que abre a
+       leitura fosse mais pequeno do que o recibo lá dentro, que é o contrário do
+       que a casa desenha. O que a regra protege continua protegido: dentro do
+       corpo da leitura, o selo é o maior alvo, e é o que a I13 pede. */
+    const outros = [...peca.querySelectorAll('.dobra-corpo a, .dobra-corpo button')].filter(
+      (e) => e !== selo,
+    );
     /* A área de um alvo, e para o selo é a do `::after` que a folha lhe dá: é
        ele que apanha o toque, e não a caixa da unidade em linha. */
     const area = (e) => {
@@ -554,7 +593,7 @@ const estadoDaPagina = (p) =>
     return { selo: Math.round(aSelo), maiorOutro: Math.round(Math.max(0, ...outros.map(area))) };
   });
   conta(
-    'o selo é o maior alvo da peça',
+    'o selo é o maior alvo do corpo da leitura',
     maiorDaFila && maiorDaFila.selo >= maiorDaFila.maiorOutro,
     `selo ${maiorDaFila?.selo}px² · maior outro ${maiorDaFila?.maiorOutro}px²`,
   );
@@ -581,20 +620,28 @@ const estadoDaPagina = (p) =>
     await p.goto(base + q, { waitUntil: 'load' });
     const e = await p.evaluate(() => ({
       bloco: document.querySelector('[data-cabeca]:not([hidden])')?.getAttribute('data-cabeca') ?? null,
-      painel: document.querySelector('[data-painel]:not([hidden])')?.getAttribute('data-painel') ?? null,
-      pecas: document.querySelectorAll('[data-painel]:not([hidden]) .peca').length,
-      valores: document.querySelectorAll('[data-painel]:not([hidden]) [data-claim]').length,
-      selos: document.querySelectorAll('[data-painel]:not([hidden]) a.src-chip').length,
+      painel: document.querySelector('[data-leituras]')?.getAttribute('data-leituras') ?? null,
+      pecas: document.querySelectorAll('[data-leituras] [data-leitura]').length,
+      valores: document.querySelectorAll('[data-leituras] [data-claim]').length,
+      selos: document.querySelectorAll('[data-leituras] a.src-chip').length,
       ligacoes: [...document.querySelectorAll('[data-comando] a')].map((a) => a.getAttribute('href')),
       nota: document.querySelector('[data-sem-js]') ? true : false,
       transbordo: document.documentElement.scrollWidth - document.documentElement.clientWidth,
     }));
-    const completo = e.bloco === 'pais' && e.painel === 'pais' && e.pecas === 13 && e.selos >= 13;
+    /* O QUE «COMPLETO» QUER DIZER MUDOU COM A FORMA, E NÃO COM A PROMESSA
+       (F1.1b, 04.09.2026): sem guião a página continua a ser o País em Relance,
+       completa e correcta. O que a célula conta é a área de leitura inteira (21
+       leituras, o primeiro bloco é o do Procedimento) e os selos que ela leva:
+       18, porque as três medidas que vivem num domínio têm por leitura uma
+       porta, e o selo delas está na página do domínio. Os VALORES são zero nesta
+       área desde o F1.1: os 21 valores selados aparecem uma vez só, no cartão da
+       faixa. */
+    const completo = e.bloco === 'pais' && e.painel === 'pdm' && e.pecas === 21 && e.selos === 18;
     conta(
       `sem JavaScript · ${q}`,
       completo && e.ligacoes.every(Boolean) && e.transbordo <= 0,
       q === '/'
-        ? `completo e correcto: ${e.pecas} peças, ${e.valores} valores, ${e.selos} selos`
+        ? `completo e correcto: ${e.pecas} leituras, ${e.valores} valores, ${e.selos} selos`
         : `mostra o defeito (${e.bloco}), com os comandos como ligações que abrem: ${e.ligacoes.join(' · ')}`,
     );
     /* A NOTA «SEM JAVASCRIPT» SAIU (Emenda 15). A célula deixa de exigir que ela
@@ -720,30 +767,44 @@ const estadoDaPagina = (p) =>
   await p.__contexto.close();
 }
 
-/* (3) A peça aberta ocupa duas colunas, e a régua deixa de ser um fio. */
+/* (3) A LEITURA ABERTA DÁ À RÉGUA A LARGURA DA COLUNA (F1.1b, 04.09.2026).
+ *
+ * A célula media duas coisas: que a peça aberta passava a ocupar DUAS COLUNAS da
+ * grelha do painel (`grid-column: span 2`) e que a régua deixava de ser um fio.
+ * A grelha saiu da primeira página com o painel, e a área de leitura é uma LISTA:
+ * uma leitura aberta ocupa a largura toda por construção, e não há duas colunas
+ * para ocupar. A metade que sobrevive é a que importava — a régua de uma leitura
+ * aberta tem largura de régua e não de fio, e a página não transborda de lado —,
+ * e é essa que fica, com a razão escrita aqui em vez de a célula desaparecer.
+ *
+ * O NÚMERO DE RÉGUAS É O DAS MEDIDAS COM LIMIAR PUBLICADO, e conta-se aqui em vez
+ * de se escrever: são as leituras do Procedimento cujo quadro publica um limiar. */
 for (const largura of [768, 1280]) {
   const p = await pagina({ largura });
   await p.goto(base + '/?densidade=leitura', { waitUntil: 'networkidle' });
   const r = await p.evaluate(() => {
-    const reguas = [...document.querySelectorAll('[data-painel="pais"] .regua-svg')].map((e) =>
+    const reguas = [...document.querySelectorAll('[data-leituras] .regua-svg')].map((e) =>
       Math.round(e.getBoundingClientRect().width),
     );
-    /* `grid-column: span 2` põe o `span 2` no LADO DE INÍCIO e deixa o fim em
-       `auto`: é o início que se lê. */
-    const colunas = [...document.querySelectorAll('[data-painel="pais"] .peca')].map(
-      (e) => getComputedStyle(e).gridColumnStart,
-    );
+    /* AS QUE TÊM LIMIAR E NÃO SÃO PORTA. Uma medida que vive num domínio tem
+       limiar publicado e tem por leitura, nesta página, uma linha só com a porta
+       para o domínio: a régua dela desenha-se lá, ao pé da leitura inteira. */
+    const comLimiar = [...document.querySelectorAll('[data-leituras] .dobra[data-limiar="sim"]')].filter(
+      (e) => !e.querySelector('.dobra-porta a[href]'),
+    ).length;
     return {
       reguas,
-      colunas,
-      span: colunas.length === 13 && colunas.every((c) => c === 'span 2'),
+      comLimiar,
       transbordo: document.documentElement.scrollWidth - document.documentElement.clientWidth,
     };
   });
   conta(
-    `largura ${largura} · a peça aberta ocupa duas colunas`,
-    r.span && r.reguas.every((w) => w > 400) && r.transbordo <= 0,
-    `régua ${r.reguas[0]}px · grid-column-start «${r.colunas[0]}» em ${r.colunas.length} peças · transbordo ${r.transbordo}`,
+    `largura ${largura} · a régua de uma leitura aberta tem largura de régua`,
+    r.reguas.length > 0 &&
+      r.reguas.length === r.comLimiar &&
+      r.reguas.every((w) => w > 400) &&
+      r.transbordo <= 0,
+    `${r.reguas.length} régua(s) em ${r.comLimiar} leitura(s) com limiar · a mais estreita ${Math.min(...r.reguas)}px · transbordo ${r.transbordo}`,
   );
   await p.__contexto.close();
 }
@@ -1101,7 +1162,7 @@ for (const largura of [1280, 390]) {
         .filter((k) => k && k.indexOf('regiao:') === 0);
     return {
       cabecas: chaves('[data-cabeca]', 'data-cabeca'),
-      paineis: chaves('[data-painel]', 'data-painel'),
+      paineis: chaves('[data-leituras]', 'data-leituras'),
       banda: document.querySelectorAll('[data-banda-ponto]').length,
       pastilhas: document.querySelectorAll('[data-regiao]').length,
       /* O ÍNDICE DAS REGIÕES MUDOU DE SÍTIO (F1.1, 03.09.2026). Era o `href` do
@@ -1458,7 +1519,7 @@ for (const largura of [1280, 390]) {
 {
   const p = await pagina();
   await p.goto(`${base}/`, { waitUntil: 'networkidle' });
-  await p.focus('.peca:first-child .peca-abrir');
+  await p.focus('[data-leituras] .dobra:first-child .dobra-abrir');
   const antes = await p.evaluate(() => window.scrollY);
   await p.keyboard.press('Space');
   await p.waitForTimeout(80);
@@ -1466,7 +1527,7 @@ for (const largura of [1280, 390]) {
   const rolou = (await p.evaluate(() => window.scrollY)) - antes;
   const forma = await p.evaluate(() => {
     const b = document.querySelector('.pesquisa-submeter');
-    const s2 = document.querySelector('.peca:first-child .peca-abrir');
+    const s2 = document.querySelector('[data-leituras] .dobra:first-child .dobra-abrir');
     return {
       botao: b ? `${b.tagName.toLowerCase()} type=${b.getAttribute('type')}` : 'sem botão',
       resumo: s2 ? s2.tagName.toLowerCase() : 'sem resumo',
@@ -1474,7 +1535,7 @@ for (const largura of [1280, 390]) {
     };
   });
   conta(
-    '2i·5 · o espaço abre a peça e não rola a página, e o que activa é um comando a sério',
+    '2i·5 · o espaço abre a leitura e não rola a página, e o que activa é um comando a sério',
     a.abertas === 1 &&
       rolou === 0 &&
       forma.botao === 'button type=submit' &&
@@ -1671,64 +1732,98 @@ for (const largura of [1280, 390]) {
     const provas = [...document.querySelectorAll('[data-cabeca] [data-prova]')].map((e) =>
       e.getAttribute('data-prova'),
     );
-    const painel = document.querySelector('[data-painel="pais"]');
-    const marcadores = painel.querySelectorAll('.peca-topo .sq').length;
-    /* A PALAVRA DE ESTADO PASSOU AO TOPO DA PEÇA (etapa 2l). Vivia na linha do
-       limiar quando não havia limiar, e no fecho da leitura breve quando havia;
-       com treze peças a comparar, está sempre ao lado do marcador. */
-    const palavras = [...painel.querySelectorAll('.peca-topo .peca-palavra')].filter(
+    /* O MARCADOR E A PALAVRA DE ESTADO VIVEM NO CARTÃO DA FAIXA (F1.1b,
+       04.09.2026). A grelha das peças saiu da primeira página; o estado de uma
+       medida diz-se onde ele é a única cor do sítio, no cartão. A Emenda 13 é a
+       mesma — «a fila de estados sai da cabeça e o estado diz-se ao lado do valor
+       a que se refere» —, e o que mudou foi o componente que leva o valor.
+
+       AS DUAS CONTAGENS SAEM DA PÁGINA E NÃO ESTÃO ESCRITAS AQUI: a palavra
+       aparece em cada cartão cuja medida tem estado (as 13 do Procedimento; as 8
+       do Painel Social não têm limiar nenhum e por isso não têm palavra, Emenda
+       1), e o quadrado só nos dois estados pintados (Emenda 13 alargada pelo item
+       B8). A célula compara os marcadores com os cartões pintados, contados no
+       próprio documento. */
+    const faixa = document.querySelector('[data-grelha] [data-faixa]');
+    const cartoes = [...faixa.querySelectorAll('.cartao')];
+    const marcadores = faixa.querySelectorAll('.cartao-topo .sq').length;
+    const pintados = cartoes.filter((c) =>
+      ['fora', 'dentro'].includes(c.getAttribute('data-estado') ?? ''),
+    ).length;
+    const palavras = [...faixa.querySelectorAll('.cartao-topo .cartao-palavra')].filter(
       (e) => e.textContent.trim().length > 0,
     ).length;
-    return { filas: filas.length, provas: [...new Set(provas)], marcadores, palavras, temRaiz: !!raiz };
+    return {
+      filas: filas.length,
+      provas: [...new Set(provas)],
+      marcadores,
+      palavras,
+      pintados,
+      temRaiz: !!raiz,
+    };
   });
   conta(
     '2j · Emenda 13 · a fila de estados saiu da cabeça, e as contagens ficaram',
     m.filas === 0 &&
       m.provas.includes('painel_fora_do_limiar') &&
       m.provas.includes('painel_dentro_do_limiar') &&
-      m.marcadores === 13 && m.palavras === 13,
-    `${m.filas} filas · chaves da prova na cabeça: ${m.provas.join(', ')} · ${m.marcadores} marcadores e ${m.palavras} palavras nas peças`,
+      m.marcadores === m.pintados &&
+      m.marcadores > 0 &&
+      m.palavras === 13,
+    `${m.filas} filas · chaves da prova na cabeça: ${m.provas.join(', ')} · ${m.marcadores} marcadores em ${m.pintados} cartões pintados e ${m.palavras} palavras de estado na faixa`,
   );
   await p.__contexto.close();
 }
 
-/* (2j) AS PEÇAS SEM CAIXAS, SEPARADAS POR FIOS.
- * O que se mede não é a aparência: é que nenhuma peça tem moldura (`border-width`
- * a zero nos quatro lados) e que o intervalo da grelha é de 1px, que é o fio. */
+/* (2j) AS LEITURAS SEM CAIXAS, SEPARADAS POR FIOS DE 1px.
+ * O que se mede não é a aparência: é que nenhuma leitura tem MOLDURA (uma caixa
+ * fechada) e que o que separa uma da seguinte é um fio de 1px.
+ *
+ * A FORMA MUDOU E A REGRA NÃO (F1.1b, 04.09.2026). Eram treze peças numa grelha
+ * de intervalo 1px, com uma sombra a desenhar o fio; são hoje 21 leituras numa
+ * LISTA, e o fio é o `border-bottom` de cada uma, que é a mesma forma da lista
+ * social a que a área de leitura sucedeu. Uma moldura é um fio nos QUATRO lados;
+ * um fio numa aresta só é uma separação, e é o que a casa desenha. */
 {
   const p = await pagina();
   await p.goto(`${base}/`, { waitUntil: 'networkidle' });
   const m = await p.evaluate(() => {
-    const painel = document.querySelector('[data-painel="pais"]');
-    const cs = getComputedStyle(painel);
-    const pecas = [...painel.querySelectorAll('.peca')];
-    const molduras = pecas.filter((e) => {
+    const painel = document.querySelector('[data-leituras="pdm"]');
+    const pecas = [...painel.querySelectorAll('.dobra')];
+    const lados = (e) => {
       const c = getComputedStyle(e);
-      return [c.borderTopWidth, c.borderRightWidth, c.borderBottomWidth, c.borderLeftWidth].some(
-        (v) => parseFloat(v) > 0,
+      return [c.borderTopWidth, c.borderRightWidth, c.borderBottomWidth, c.borderLeftWidth].map((v) =>
+        parseFloat(v),
       );
-    });
+    };
+    const molduras = pecas.filter((e) => lados(e).every((v) => v > 0));
+    const semFio = pecas.filter((e) => lados(e)[2] !== 1);
     return {
       pecas: pecas.length,
       comMoldura: molduras.length,
-      intervaloCol: cs.columnGap,
-      intervaloLin: cs.rowGap,
+      semFio: semFio.length,
+      intervaloCol: getComputedStyle(painel).columnGap,
+      intervaloLin: getComputedStyle(painel).rowGap,
       sombra: pecas[0] ? getComputedStyle(pecas[0]).boxShadow : null,
     };
   });
   conta(
-    '2j · as peças sem caixas, separadas por fios de 1px',
-    m.pecas === 13 && m.comMoldura === 0 && m.intervaloCol === '1px' && m.intervaloLin === '1px' &&
-      /1px/.test(m.sombra ?? ''),
-    `${m.pecas} peças · ${m.comMoldura} com moldura · intervalo ${m.intervaloCol}/${m.intervaloLin} · fio «${m.sombra}»`,
+    '2j · as leituras sem caixas, separadas por fios de 1px',
+    m.pecas === 13 && m.comMoldura === 0 && m.semFio === 0,
+    `${m.pecas} leituras · ${m.comMoldura} com moldura · ${m.semFio} sem o fio de 1px`,
   );
   await p.__contexto.close();
 }
 
-/* (2j) OS ALGARISMOS DA PEÇA NÃO PASSAM DE 56px, E NÃO SALTAM.
- * Cinco larguras, e em cada uma o maior corpo de valor do painel. O tecto é 56;
- * entre 320 e 1280 a série tem de ser crescente, que é o que prova que a escala
- * é fluida e não três patamares. */
+/* (2j) OS ALGARISMOS NÃO PASSAM DE 56px, E NÃO SALTAM.
+ * Cinco larguras, e em cada uma o maior corpo de valor da primeira página. O
+ * tecto é 56; entre 320 e 1280 a série tem de ser crescente, que é o que prova
+ * que a escala é fluida e não três patamares.
+ *
+ * O VALOR MUDOU DE COMPONENTE (F1.1b, 04.09.2026): a grelha das peças saiu da
+ * primeira página e os 21 valores selados vivem uma vez só, no cartão da faixa.
+ * A regra da escala é a mesma e a folha declara-a para os dois (`.peca-valor` e
+ * `.cartao-valor`); o que se mede é o corpo do valor onde ele está. */
 {
   const serie = [];
   let bem = true;
@@ -1736,7 +1831,7 @@ for (const largura of [1280, 390]) {
     const p = await pagina({ largura });
     await p.goto(`${base}/`, { waitUntil: 'networkidle' });
     const m = await p.evaluate(() => {
-      const corpos = [...document.querySelectorAll('[data-painel="pais"] .peca-valor')].map((e) =>
+      const corpos = [...document.querySelectorAll('[data-faixa] .cartao-valor')].map((e) =>
         parseFloat(getComputedStyle(e).fontSize),
       );
       return { maior: Math.max(...corpos), menor: Math.min(...corpos), n: corpos.length };
@@ -1747,7 +1842,7 @@ for (const largura of [1280, 390]) {
   }
   for (let i = 1; i < serie.length; i++) if (serie[i].maior < serie[i - 1].maior) bem = false;
   conta(
-    '2j · os algarismos da peça têm tecto de 56px e crescem sem saltos',
+    '2j · os algarismos do valor têm tecto de 56px e crescem sem saltos',
     bem,
     serie.map((x) => `${x.largura}: ${x.maior.toFixed(1)}px (menor ${x.menor.toFixed(1)})`).join(' · '),
   );
@@ -1896,12 +1991,16 @@ for (const largura of [1280, 390]) {
   const b = await p.evaluate(() => {
     const alvo = ['saldo-da-balanca-corrente-2025', 'taxa-de-cambio-efectiva-real-2025'];
     return alvo.map((id) => {
-      const peca = document.querySelector(`[data-medida="${id}"]`);
+      /* A LEITURA DAQUELA MEDIDA, e não a peça: a peça saiu da primeira página a
+         04.09.2026 e a régua atravessou com o limiar para dentro da dobra da
+         leitura. A marca da medida é `data-leitura`, que é o que a área de
+         leitura escreve. */
+      const peca = document.querySelector(`[data-leitura="${id}"]`);
       const svg = peca.querySelector('.regua-svg');
       const refs = [...svg.querySelectorAll('.regua-ref')];
       const xs = refs.map((r) => Number(r.getAttribute('x1')));
-      const linha = peca.querySelector('.peca-limiar').textContent.replace(/\s+/g, ' ').trim();
-      const algarismos = [...peca.querySelectorAll('.peca-limiar [data-nonledger="limiar-do-quadro"]')].map(
+      const linha = peca.querySelector('.dobra-limiar').textContent.replace(/\s+/g, ' ').trim();
+      const algarismos = [...peca.querySelectorAll('.dobra-limiar [data-nonledger="limiar-do-quadro"]')].map(
         (e) => e.textContent.trim(),
       );
       return {
@@ -1923,14 +2022,32 @@ for (const largura of [1280, 390]) {
   await p.__contexto.close();
 }
 
-/* (b) O Painel Social Europeu: oito linhas, sem cor, com o selo fora de
-   qualquer outro alvo e com área de toque de 44px. */
+/* (b) O Painel Social Europeu: oito leituras, sem cor, com o selo fora de
+   qualquer outro alvo e com área de toque de 44px.
+   ---------------------------------------------------------------------------
+   A LISTA COMPACTA PASSOU A SER A SEGUNDA METADE DA ÁREA DE LEITURA (F1.1b,
+   04.09.2026). O que a Emenda 16 promete é o mesmo — oito medidas, sem cor,
+   porque o quadro não publica limiar nenhum, e o selo como porta para a linha —,
+   e o que mudou foi a forma: em vez de oito `<li>` à vista, oito `<details>`
+   fechados com o nome como `<summary>`. A célula abre-os para medir o selo, pela
+   mesma razão que a célula dos selos das leituras do Procedimento os abre: o
+   conteúdo de uma dobra fechada não tem caixa nenhuma. */
 {
   const p = await pagina();
-  await p.goto(base + '/', { waitUntil: 'networkidle' });
+  await p.goto(base + '/?densidade=leitura', { waitUntil: 'networkidle' });
   const soc = await p.evaluate(() => {
-    const lista = [...document.querySelectorAll('.social-linha')];
-    const selos = lista.map((l) => {
+    const lista = [...document.querySelectorAll('[data-leituras="social"] .dobra')];
+    /* AS QUE SÃO PORTA NÃO TÊM SELO, E É ASSIM QUE TÊM DE SER (decisão do lugar
+       de direção, 04.09.2026): duas das oito medidas do Painel Social são
+       medidas de um domínio com página (a taxa de emprego e a de desemprego), e
+       a leitura delas nesta página é uma linha só com a porta para o domínio. O
+       selo delas está na página do domínio, ao pé da leitura inteira. A célula
+       conta-as à parte e exige que cada leitura seja UMA das duas coisas: ou tem
+       selo, ou tem porta. Uma leitura sem nenhuma das duas é uma legenda. */
+    const portas = lista.filter((l) => l.querySelector('.dobra-porta a[href]')).length;
+    const selos = lista
+      .filter((l) => !l.querySelector('.dobra-porta a[href]'))
+      .map((l) => {
       const a = l.querySelector('a.src-chip');
       if (!a) return null;
       const depois = getComputedStyle(a, '::after');
@@ -1948,12 +2065,15 @@ for (const largura of [1280, 390]) {
     });
     return {
       n: lista.length,
+      portas,
       semSelo: selos.filter((x) => x === null).length,
       aninhados: selos.filter((x) => x && x.aninhado !== null).length,
       pequenos: selos.filter((x) => x && (x.altura < 44 || x.largura < 44)).length,
-      marcadores: document.querySelectorAll('.social-linha .sq').length,
-      palavras: document.querySelectorAll('.social-linha .peca-palavra, .social-linha .peca-estado').length,
-      valores: document.querySelectorAll('.social-linha [data-claim]').length,
+      marcadores: document.querySelectorAll('[data-leituras="social"] .sq').length,
+      palavras: document.querySelectorAll(
+        '[data-leituras="social"] .cartao-palavra, [data-leituras="social"] .peca-palavra, [data-leituras="social"] .dobra-limiar',
+      ).length,
+      valores: document.querySelectorAll('[data-leituras="social"] [data-claim]').length,
       medida: selos[0],
     };
   });
@@ -1974,10 +2094,10 @@ for (const largura of [1280, 390]) {
      estado, porque o quadro não publica limiares). O que muda é a contagem dos
      valores, que passa de oito a zero, e a razão está escrita. */
   conta(
-    '2l · Emenda 16 · a lista social tem oito linhas, sem cor, sem o valor repetido e com o selo fora de outro alvo',
-    soc.n === 8 && soc.semSelo === 0 && soc.aninhados === 0 && soc.pequenos === 0 &&
+    '2l · Emenda 16 · o Painel Social tem oito leituras, sem cor, sem o valor repetido e com o selo fora de outro alvo',
+    soc.n === 8 && soc.portas > 0 && soc.semSelo === 0 && soc.aninhados === 0 && soc.pequenos === 0 &&
       soc.marcadores === 0 && soc.palavras === 0 && soc.valores === 0,
-    `${soc.n} linhas · ${soc.valores} valores (o valor vive no cartão da faixa) · selo ${soc.medida?.largura}×${soc.medida?.altura}px · aninhados ${soc.aninhados} · marcadores ${soc.marcadores}`,
+    `${soc.n} leituras (${soc.portas} são porta para o domínio, e o selo delas está lá) · ${soc.valores} valores (o valor vive no cartão da faixa) · selo ${soc.medida?.largura}×${soc.medida?.altura}px · aninhados ${soc.aninhados} · marcadores ${soc.marcadores}`,
   );
   await p.__contexto.close();
 }
@@ -2298,7 +2418,7 @@ const CANTO_DAS_ILHAS = (() => {
           ambito: raiz.getAttribute('data-ambito'),
           url: location.pathname + location.search,
           cabeca: document.querySelector('[data-cabeca]:not([hidden])')?.getAttribute('data-cabeca'),
-          painel: document.querySelector('[data-painel]:not([hidden])')?.getAttribute('data-painel'),
+          painel: document.querySelector('[data-leituras]')?.getAttribute('data-leituras'),
           /* A BUSCA ABRE POR BAIXO DO MAPA, E ABRE MESMO (01.09.2026).
              Era um bloco que a folha mostrava pelo `data-modo` da raiz e que
              ficava ACIMA do mapa; com a afinação 1 do brief da forma dos
@@ -2327,7 +2447,12 @@ const CANTO_DAS_ILHAS = (() => {
         m.ambito === 'municipio' &&
         /\?ambito=municipio$/.test(m.url) &&
         m.cabeca === 'pais' &&
-        m.painel === 'pais' &&
+        /* O CORPO DA PÁGINA É A ÁREA DE LEITURA (F1.1b, 04.09.2026), e o
+           primeiro bloco dela é o do Procedimento: era `data-painel="pais"`, da
+           grelha das treze peças, que saiu. A célula continua a exigir que o
+           corpo esteja lá com o estado aceso, e lê-o na coisa que agora lá
+           está. */
+        m.painel === 'pdm' &&
         /* A BUSCA SUBIU PARA DEBAIXO DA MANCHETE (F1.1, itens 3 e 12,
            03.09.2026). Era uma gaveta ao lado do mapa, fechada, e a célula
            media que o estado `?ambito=municipio` a abria por baixo do desenho.
@@ -2491,8 +2616,11 @@ const CANTO_DAS_ILHAS = (() => {
     const p = await pagina({ largura: 1280 });
     await p.goto(base + rota, { waitUntil: 'networkidle' });
     const e = await p.evaluate(() => ({
-      /* As peças do painel do País marcadas «fora», pela ordem do documento. */
-      fora: [...document.querySelectorAll('[data-painel="pais"] .peca[data-estado="fora"]')].map(
+      /* OS CARTÕES DA FAIXA MARCADOS «fora», pela ordem do documento (F1.1b,
+         04.09.2026). Eram as peças do painel; a grelha saiu da primeira página e
+         o estado de uma medida diz-se no cartão, que é onde o valor vive. A
+         ordem é a mesma, porque a faixa e o painel rendiam a mesma lista. */
+      fora: [...document.querySelectorAll('[data-grelha] [data-faixa] .cartao[data-estado="fora"]')].map(
         (a) => a.querySelector('[data-medida-nome]').textContent.trim(),
       ),
       lista: document.querySelector('[data-prova-lista]')?.textContent.trim() ?? null,
@@ -2501,8 +2629,9 @@ const CANTO_DAS_ILHAS = (() => {
       lede: document.querySelector('.cabeca-lede')?.textContent.trim() ?? null,
       /* O ano da lede é o único algarismo que a frase escreve, e sai marcado. */
       ano: document.querySelector('.cabeca-lede [data-nonledger="data-de-referencia"]')?.textContent.trim() ?? null,
-      /* … e tem de ser o período que as próprias peças declaram. */
-      periodos: [...document.querySelectorAll('[data-painel="pais"] .peca[data-estado="fora"]')].map(
+      /* … e tem de ser o período que os próprios cartões declaram, na fila da
+         unidade, que é onde ele passou a viver para todas as 21. */
+      periodos: [...document.querySelectorAll('[data-grelha] [data-faixa] .cartao[data-estado="fora"]')].map(
         (a) => a.querySelector('[data-medida-unidade]')?.textContent.trim() ?? '',
       ),
     }));
@@ -2517,7 +2646,7 @@ const CANTO_DAS_ILHAS = (() => {
       e.periodos.every((u) => u.includes(e.ano));
     if (!ok) bem = false;
     linhas.push(
-      `${edicao}: manchete ${e.manchete} · lista de ${nomes.length} — «${nomes.join(' | ')}» · peças fora: «${esperados.join(' | ')}» · ano ${e.ano}, em todas as unidades das peças: ${e.periodos.every((u) => u.includes(e.ano))} · lede «${e.lede}»`,
+      `${edicao}: manchete ${e.manchete} · lista de ${nomes.length} — «${nomes.join(' | ')}» · cartões fora: «${esperados.join(' | ')}» · ano ${e.ano}, em todas as unidades dos cartões: ${e.periodos.every((u) => u.includes(e.ano))} · lede «${e.lede}»`,
     );
     await p.__contexto.close();
   }

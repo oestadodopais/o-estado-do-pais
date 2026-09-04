@@ -620,12 +620,29 @@ function peca(rota, seletor, { indice = 0, filtro = null, raiz = null } = {}) {
  * que apenas se mudou de casa.
  */
 /* As páginas onde uma peça do painel pode viver, pela ordem em que se procuram.
-   A primeira página tem hoje treze peças e as treze têm limiar; uma medida sem
-   limiar rende na página de um concelho e na de uma área. */
+   A PRIMEIRA PÁGINA DEIXOU DE TER PEÇAS a 04.09.2026 (bloco F1.1b): a grelha das
+   treze peças do Procedimento e a lista do Painel Social saíram, e no lugar delas
+   ficou a área de leitura, que é uma lista de `<details>` sem marcador de estado
+   (o estado de uma medida diz-se no cartão da faixa, que é onde ele é a única cor
+   do sítio). A peça continua inteira onde ela é a leitura daquela medida naquele
+   lugar: na página de um concelho, na de uma região e na de uma área. `index.html`
+   fica em primeiro lugar em todas as listas porque é a página mais barata de ler
+   e porque o dia em que a peça lá voltar a lista não tem de mudar. */
 const CANDIDATAS_DA_PECA_SEM_LIMIAR = [
   'index.html',
   'municipios/evora/index.html',
   'areas/economia-e-coesao-territorial/index.html',
+];
+
+/* As páginas onde um cartão de faixa com estado pintado pode viver, pela ordem
+   em que se procuram. Hoje é a primeira página, com a faixa dos dois quadros da
+   União; a página de uma região e a de um concelho têm faixa e as suas medidas
+   não têm limiar do quadro, e por isso os seus cartões não levam palavra de
+   estado nenhuma (Emenda 1). */
+const CANDIDATAS_DO_ESTADO_PINTADO = [
+  'index.html',
+  'dominios/economia-e-financas-publicas/index.html',
+  'municipios/evora/index.html',
 ];
 
 /** Um valor com o seu selo ao lado. Existe em quase todas as páginas do sítio. */
@@ -1051,8 +1068,33 @@ const citar = (texto) => `<p class="ds-regra">«${emLinha(texto)}»</p>`;
     return m[1].split('\n').map((l) => l.replace(/^\s*/, '')).join(' ').replace(/\s+/g, ' ').trim();
   })();
 
-  const foraDoLimiar = peca('index.html', '.peca[data-estado="fora"] .peca-topo');
-  const dentroDoLimiar = peca('index.html', '.peca[data-estado="dentro"][data-limiar="sim"] .peca-topo');
+  /* AS TRÊS PROCURAM-SE, E NENHUMA ESTÁ ESCRITA À MÃO (F1.1b, 04.09.2026). As
+     duas primeiras nomeavam `index.html` e a corrida parou no dia em que as
+     peças saíram da primeira página, que é exactamente o apodrecimento que a
+     nota da I98 acima descreve: «um cartão que diz "tira este selo de
+     dist/index.html" fica errado no dia em que a peça mudar de página». Passam a
+     usar a mesma lista de candidatas da terceira, e o cartão imprime de onde
+     cada peça veio. */
+  /* OS DOIS ESTADOS PINTADOS VÊM DO CARTÃO DA FAIXA (F1.1b, 04.09.2026), e não é
+     uma troca de gosto: é onde eles estão. A grelha das treze peças com limiar
+     publicado saiu da primeira página, e nenhuma outra página do sítio rende
+     hoje uma `.peca[data-limiar="sim"]` (as sete medidas de um concelho e as da
+     região não têm limiar do quadro). O marcador é o MESMO nos dois componentes
+     — o quadrado `.sq` e a palavra do estado, do mesmo vocabulário fechado —, e o
+     que este cartão retrata é o par de estados que é a única cor do sítio.
+     Medido em `dist/index.html`: 4 cartões «fora», 10 «dentro», 9 sem palavra. */
+  const ondeForaDoLimiar = ondeHa(
+    '.cartao[data-estado="fora"] .cartao-topo',
+    CANDIDATAS_DO_ESTADO_PINTADO,
+    'um cartão fora do limiar',
+  );
+  const foraDoLimiar = peca(ondeForaDoLimiar, '.cartao[data-estado="fora"] .cartao-topo');
+  const ondeDentroDoLimiar = ondeHa(
+    '.cartao[data-estado="dentro"] .cartao-topo',
+    CANDIDATAS_DO_ESTADO_PINTADO,
+    'um cartão dentro do limiar',
+  );
+  const dentroDoLimiar = peca(ondeDentroDoLimiar, '.cartao[data-estado="dentro"] .cartao-topo');
   const ondeSemLimiar = ondeHa(
     '.peca[data-estado="sem"] .peca-topo',
     CANDIDATAS_DA_PECA_SEM_LIMIAR,
@@ -1100,7 +1142,7 @@ ${amostras}
         <p class="ds-nota">Nenhuma cor: o quadrado é só contorno e o estado diz-se por palavras.</p>
       </div>
     </div>
-    <p class="ds-nota">As três peças são <code class="ds-mono">.peca-topo</code> tirados de páginas construídas: as duas primeiras de <code class="ds-mono">dist/index.html</code>, do painel da primeira página, e a terceira de <code class="ds-mono">dist/${escapa(ondeSemLimiar)}</code>, porque as treze peças da primeira página têm hoje todas limiar e uma medida sem limiar rende noutras páginas.</p>
+    <p class="ds-nota">As três peças são marcadores de estado tirados de páginas construídas, e a rota de cada uma procura-se em vez de se escrever: os dois pintados são <code class="ds-mono">.cartao-topo</code> de <code class="ds-mono">dist/${escapa(ondeForaDoLimiar)}</code> e <code class="ds-mono">dist/${escapa(ondeDentroDoLimiar)}</code>, e o terceiro é um <code class="ds-mono">.peca-topo</code> de <code class="ds-mono">dist/${escapa(ondeSemLimiar)}</code>. A primeira página deixou de ter peças a 04.09.2026 e o par de estados pintados vive no cartão da faixa; a peça continua onde ela é a leitura daquela medida naquele lugar.</p>
     ${citar(REGRA('- **Fora do limiar**'))}
     ${citar(REGRA('- **Dentro do limiar**'))}
     ${citar(REGRA('- **Sem limiar** e **por confirmar**'))}
@@ -1284,8 +1326,21 @@ ${tabelaTipos}
     filtro: (el) => el.querySelector('.src-chip.is-unverified') !== null,
   });
 
-  const foraTopo = peca('index.html', '.peca[data-estado="fora"] .peca-topo');
-  const dentroTopo = peca('index.html', '.peca[data-estado="dentro"][data-limiar="sim"] .peca-topo');
+  /* Os dois pintados vêm do cartão da faixa, pela razão escrita no cartão da cor:
+     a grelha das peças com limiar publicado saiu da primeira página a 04.09.2026
+     e o marcador é o mesmo nos dois componentes. */
+  const ondeForaTopo = ondeHa(
+    '.cartao[data-estado="fora"] .cartao-topo',
+    CANDIDATAS_DO_ESTADO_PINTADO,
+    'um cartão fora do limiar',
+  );
+  const foraTopo = peca(ondeForaTopo, '.cartao[data-estado="fora"] .cartao-topo');
+  const ondeDentroTopo = ondeHa(
+    '.cartao[data-estado="dentro"] .cartao-topo',
+    CANDIDATAS_DO_ESTADO_PINTADO,
+    'um cartão dentro do limiar',
+  );
+  const dentroTopo = peca(ondeDentroTopo, '.cartao[data-estado="dentro"] .cartao-topo');
   const ondeSemTopo = ondeHa(
     '.peca[data-estado="sem"] .peca-topo',
     CANDIDATAS_DA_PECA_SEM_LIMIAR,
@@ -1384,27 +1439,33 @@ ${tabelaTipos}
 
 /* ------------------------------------------------------------- 04. A régua */
 {
+  /* A RÉGUA CONTRA UM LIMIAR PUBLICADO MUDOU DE COMPONENTE (F1.1b, 04.09.2026):
+     era a dobra da peça do painel da primeira página, e é agora a dobra da
+     leitura breve, que entrou no lugar dele. É o MESMO componente `Regua.astro`
+     com a mesma gramática (Emenda 4) e as mesmas três formas; o que mudou foi a
+     caixa à volta. As três continuam a viver na primeira página, que é a única
+     onde há limiar do quadro publicado. */
   const casa = arvore('index.html');
   const escolhe = (filtro, oQue) => {
-    const p = casa.querySelectorAll('.peca').filter(filtro)[0];
+    const p = casa.querySelectorAll('.dobra').filter(filtro)[0];
     if (!p) morre(`não encontrei em \`dist/index.html\` ${oQue}.`);
-    const nome = p.querySelector('.peca-nome')?.text?.trim() ?? '';
-    const limiar = p.querySelector('.peca-limiar');
+    const nome = p.querySelector('.dobra-nome')?.text?.trim() ?? '';
+    const limiar = p.querySelector('.dobra-limiar');
     const regua = p.querySelector('.regua');
-    if (!regua) morre(`a peça «${nome}» de \`dist/index.html\` deixou de trazer régua.`);
+    if (!regua) morre(`a leitura «${nome}» de \`dist/index.html\` deixou de trazer régua.`);
     tiraCodigo(regua);
-    absolutizaLigacoes(regua, `dist/index.html → .peca[${nome}] .regua`);
+    absolutizaLigacoes(regua, `dist/index.html → .leitura[${nome}] .regua`);
     return { nome, limiar: limiar ? limiar.outerHTML : '', regua: regua.outerHTML, estado: p.getAttribute('data-estado') };
   };
 
-  const fora = escolhe((p) => p.getAttribute('data-estado') === 'fora' && p.querySelector('.regua'), 'uma peça fora do limiar com régua');
+  const fora = escolhe((p) => p.getAttribute('data-estado') === 'fora' && p.querySelector('.regua'), 'uma leitura fora do limiar com régua');
   const dentro = escolhe(
     (p) => p.getAttribute('data-estado') === 'dentro' && p.getAttribute('data-limiar') === 'sim' && p.querySelector('.regua') && p.querySelector('.regua').querySelectorAll('line.regua-ref').length === 1,
-    'uma peça dentro do limiar com régua de uma referência só'
+    'uma leitura dentro do limiar com régua de uma referência só'
   );
   const banda = escolhe(
     (p) => p.querySelector('.regua') && p.querySelector('.regua').querySelectorAll('line.regua-ref').length === 2,
-    'uma peça com banda de dois lados (duas referências na mesma régua)'
+    'uma leitura com banda de dois lados (duas referências na mesma régua)'
   );
 
   /**
@@ -1678,22 +1739,46 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
 /* --------------------------------------------------- 06. O par de estados */
 {
   const cabeca = peca('index.html', '.cabeca-bloco[data-cabeca="pais"]');
-  const foraPeca = peca('index.html', '.peca[data-estado="fora"]');
-  const dentroPeca = peca('index.html', '.peca[data-estado="dentro"][data-limiar="sim"]');
+  /* ------------------------------------------------------------------------
+     O QUE ESTE CARTÃO RETRATA MUDOU DE COMPONENTE, E NÃO DE COISA (F1.1b,
+     04.09.2026)
+     ------------------------------------------------------------------------
+     A primeira página deixou de ter a grelha das treze peças e a lista compacta
+     do Painel Social: no lugar delas está a área de leitura, e o estado de cada
+     medida diz-se onde ele sempre foi a única cor do sítio, no cartão da faixa.
+     Os dois estados pintados passam a ser cartões; o estado «sem limiar» com
+     palavra continua a ser uma peça, e continua a render na página de um
+     concelho, que é onde ele existe.
+
+     A LISTA DO PAINEL SOCIAL passa a ser a segunda metade da área de leitura, e é
+     ela que este cartão mostra: o nome do painel e uma leitura daquele quadro.
+     ------------------------------------------------------------------------ */
+  const ondeForaPeca = ondeHa(
+    '.cartao[data-estado="fora"]',
+    CANDIDATAS_DO_ESTADO_PINTADO,
+    'um cartão fora do limiar',
+  );
+  const foraPeca = peca(ondeForaPeca, '.cartao[data-estado="fora"]');
+  const ondeDentroPeca = ondeHa(
+    '.cartao[data-estado="dentro"]',
+    CANDIDATAS_DO_ESTADO_PINTADO,
+    'um cartão dentro do limiar',
+  );
+  const dentroPeca = peca(ondeDentroPeca, '.cartao[data-estado="dentro"]');
   const ondeSem = ondeHa(
     '.peca[data-estado="sem"]',
     CANDIDATAS_DA_PECA_SEM_LIMIAR,
     'uma peça sem limiar',
   );
   const semPeca = peca(ondeSem, '.peca[data-estado="sem"]');
-  const social = peca('index.html', '.social-linha');
+  const social = peca('index.html', '[data-leituras="social"] .dobra');
   const socialTitulo = peca('index.html', '.social-titulo');
 
   const casa = arvore('index.html');
-  const conta = (estado) => casa.querySelectorAll(`.peca[data-estado="${estado}"][data-limiar="sim"]`).length;
+  const conta = (estado) => casa.querySelectorAll(`.cartao[data-estado="${estado}"]`).length;
   const foraN = conta('fora');
   const dentroN = conta('dentro');
-  if (!foraN || !dentroN) morre('o painel da primeira página deixou de trazer peças com limiar nos dois estados.');
+  if (!foraN || !dentroN) morre('a faixa da primeira página deixou de trazer cartões nos dois estados pintados.');
 
   const vocabulario = [
     ['estado', 'foraDoLimiar'],
@@ -1721,26 +1806,26 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   <section class="ds-bloco">
     <h2>A manchete e a lede</h2>
     <div class="ds-mostra">${cabeca}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/index.html</code>, o bloco do âmbito País. As duas contagens são chaves da prova (<code class="ds-mono">painel_fora_do_limiar</code> e <code class="ds-mono">painel_dentro_do_limiar</code>), calculadas na construção e reconferidas pelo portão; a lede nomeia as medidas que estão fora. Hoje o painel rende ${foraN} fora e ${dentroN} dentro, contados nesta corrida sobre a página construída.</p>
+    <p class="ds-nota"><code class="ds-mono">dist/index.html</code>, o bloco do âmbito País. As duas contagens são chaves da prova (<code class="ds-mono">painel_fora_do_limiar</code> e <code class="ds-mono">painel_dentro_do_limiar</code>), calculadas na construção e reconferidas pelo portão; a lede nomeia as medidas que estão fora. Hoje a faixa rende ${foraN} cartões fora e ${dentroN} dentro, contados nesta corrida sobre a página construída.</p>
     <p class="ds-nota">Emenda 16, de 21.08.2026: «${emLinha(EMENDA('**O painel da primeira página é o painel inteiro'))}»</p>
     <p class="ds-nota">E a sua correção, de 22.08.2026: «${emLinha(EMENDA('**Correção à Emenda 16'))}»</p>
   </section>
 
   <section class="ds-bloco">
-    <h2>Uma peça, em cada estado</h2>
+    <h2>Cada estado, onde ele se diz</h2>
     <div class="ds-mostra">${foraPeca}</div>
-    <p class="ds-legenda">.peca[data-estado="fora"]</p>
+    <p class="ds-legenda">.cartao[data-estado="fora"]</p>
     <div class="ds-mostra">${dentroPeca}</div>
-    <p class="ds-legenda">.peca[data-estado="dentro"][data-limiar="sim"]</p>
+    <p class="ds-legenda">.cartao[data-estado="dentro"]</p>
     <div class="ds-mostra">${semPeca}</div>
     <p class="ds-legenda">.peca[data-estado="sem"]</p>
-    <p class="ds-nota">As duas primeiras de <code class="ds-mono">dist/index.html</code> e a terceira de <code class="ds-mono">dist/${escapa(ondeSem)}</code>, tal como rendem. A peça sem limiar não tem cor nenhuma, e a régua dela, quando existe, é a tinta contra uma referência publicada que não é um limiar.</p>
+    <p class="ds-nota">Os dois pintados de <code class="ds-mono">dist/${escapa(ondeForaPeca)}</code> e <code class="ds-mono">dist/${escapa(ondeDentroPeca)}</code>, e o terceiro de <code class="ds-mono">dist/${escapa(ondeSem)}</code>, tal como rendem. A primeira página deixou de ter peças a 04.09.2026 e o estado de uma medida diz-se no cartão da faixa; a peça sem limiar não tem cor nenhuma, e a régua dela, quando existe, é a tinta contra uma referência publicada que não é um limiar.</p>
   </section>
 
   <section class="ds-bloco">
     <h2>O Painel Social Europeu, que não tem limiares</h2>
     <div class="ds-mostra">${socialTitulo}${social}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/index.html</code> · a lista compacta que a Emenda 16 manda pôr por baixo do painel: nome, valor, unidade, fonte, selo. <strong>Sem quadrado de estado e sem cor</strong>, porque não há limiar publicado contra o qual dizer um estado. É o mesmo silêncio que o quadrado «sem limiar» diz com palavras nas peças acima.</p>
+    <p class="ds-nota"><code class="ds-mono">dist/index.html</code> · a segunda metade da área de leitura, que entrou a 04.09.2026 no lugar da lista compacta da Emenda 16: o nome do painel com a sua contagem, e uma leitura por medida. <strong>Sem quadrado de estado e sem cor</strong>, porque não há limiar publicado contra o qual dizer um estado. É o mesmo silêncio que o quadrado «sem limiar» diz com palavras na peça acima.</p>
   </section>
 
   <section class="ds-bloco">

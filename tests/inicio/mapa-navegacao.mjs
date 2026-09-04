@@ -350,7 +350,13 @@ for (const largura of [1280, 390]) {
         anuncio: (document.querySelector('[data-anuncio]')?.textContent ?? '').trim(),
         url: location.pathname + location.search,
         cabeca: document.querySelector('[data-cabeca]:not([hidden])')?.getAttribute('data-cabeca'),
-        painel: document.querySelector('[data-painel]:not([hidden])')?.getAttribute('data-painel'),
+        /* A ÁREA DE LEITURA ENTROU NO LUGAR DO PAINEL (F1.1b, 04.09.2026): a
+           grelha das treze peças saiu da primeira página e o que está por baixo
+           da cabeça são dois blocos `[data-leituras]`, um por quadro. O que esta
+           célula lê é «o corpo da página está lá», e lê-o na coisa que agora lá
+           está; o seletor antigo devolvia `undefined` e a célula caía por uma
+           razão que não é a dela. O primeiro bloco é o do Procedimento. */
+        painel: document.querySelector('[data-leituras]')?.getAttribute('data-leituras'),
       };
     });
     const fechou = await p.evaluate(() => {
@@ -383,7 +389,7 @@ for (const largura of [1280, 390]) {
       abriu.foco === 'pesquisa-concelho' &&
       abriu.url === rota &&
       abriu.cabeca === 'pais' &&
-      abriu.painel === 'pais' &&
+      abriu.painel === 'pdm' &&
       fechou.gaveta === null &&
       fechou.forma === 1;
     if (!ok) bem = false;

@@ -2897,3 +2897,229 @@ a.porta:hover .porta-abrir {
     margin-top: 24px;
   }
 }
+
+/* =============================================================================
+ * A LEITURA BREVE E A SECÇÃO DOS DOMÍNIOS (F1.1b, 04.09.2026)
+ * =============================================================================
+ * O que este bloco acrescenta à folha da primeira página, e nada mais: a lista
+ * das 21 leituras que entrou no lugar dos dois painéis, e a fila dos domínios
+ * que entrou a seguir ao mapa. NENHUMA COR NOVA, NENHUM TIPO NOVO, NENHUM CORPO
+ * DE NÚMERO NOVO: todas as fichas são as que a folha já declara (`--ink`,
+ * `--muted`, `--g3`, `--rule-strong`, `--f-instr`, `--f-versal`), e as formas
+ * são as que a peça e a lista social já tinham. A identidade está fechada
+ * (§1.86) e este bloco mexe espaço, colocação e visibilidade.
+ *
+ * ---------------------------------------------------------------------------
+ * PORQUE É QUE ESTAS CLASSES SE CHAMAM `dobra` E NÃO `leitura`
+ * ---------------------------------------------------------------------------
+ * Porque `.leitura`, `.leitura-frase` e `.leitura-breve` JÁ EXISTEM em
+ * `site.css`, e são a mobília da página de um estudo migrado: `.leitura` tem
+ * moldura de 1 px nos quatro lados e fundo de papel. A primeira redação deste
+ * bloco chamou `.leitura` ao `<details>` de cada medida, e o que se viu na
+ * página construída foi cada leitura dentro de uma caixa que ninguém desenhou —
+ * a célula «as leituras sem caixas, separadas por fios» da matriz contou as 13
+ * com moldura, e foi ela que o disse.
+ *
+ * O nome que fica é o da COISA: uma dobra, que é a palavra que a casa usa desde
+ * a I54 («o mesmo sinal de dobra de toda a casa»). As marcas de dados
+ * (`data-leituras`, `data-leitura`) continuam a nomear o que a coisa É — a
+ * leitura breve daquela medida —, e são elas que as réguas leem.
+ * ========================================================================== */
+
+/* --------------------------------------------------------- a área de leitura
+   Uma lista de dobras, uma por medida, com o fio da casa entre elas: é a mesma
+   forma da lista social — «isto é uma tabela, e uma tabela lê-se por linhas» —
+   e não a grelha de cartões que saiu. Fechada, cada leitura mede uma linha de
+   nome com o alvo da casa; aberta, cresce para baixo sem mexer nas vizinhas. */
+.dobras {
+  border-top: 1px solid var(--g3);
+}
+.dobra {
+  border-bottom: 1px solid var(--g3);
+}
+
+/* O `<summary>` É O NOME, e é o alvo. 44 px abaixo de 1024 (Emenda 20c) e 32 a
+   partir dali, que é a regra da §1.84 para o ponteiro; o alvo é a linha inteira,
+   e por isso o `<summary>` é um bloco flexível e não uma caixa em linha. */
+.dobra-abrir {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 4px 0;
+  cursor: pointer;
+  list-style: none;
+}
+.dobra-abrir::-webkit-details-marker {
+  display: none;
+}
+.dobra-nome {
+  font-size: 17px;
+  line-height: 1.3;
+}
+/* O MESMO SINAL DE DOBRA DE TODA A CASA (ISSUES I54): triângulo de bordos,
+   rotação de 90° ao abrir, carácter a carácter o que `.peca-seta` declara. */
+.dobra-seta {
+  flex: 0 0 auto;
+  color: var(--muted);
+}
+.dobra-seta::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  border-left: 5px solid currentColor;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: transform 0.16s ease;
+  transform-origin: 30% 50%;
+}
+.dobra[open] .dobra-seta::before {
+  transform: rotate(90deg);
+}
+.dobra[open] .dobra-nome {
+  font-weight: 500;
+}
+
+/* O CORPO DA LEITURA recua para a coluna do nome, para que a dobra se leia como
+   uma dobra e não como uma linha nova da lista. */
+.dobra-corpo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  /* 12 px POR CIMA, E É UMA MEDIDA E NÃO GOSTO. A dobra de uma medida que vive
+     num domínio tem uma porta como primeiro (e único) filho, e a área EFETIVA de
+     um alvo mede-se com o mínimo da casa: 44 px centrados na caixa. Com 2 px de
+     ar, a área do `<summary>` (33,6 px a 1280) e a da porta (32 px) cruzavam-se
+     por 9,2 px, e a matriz conta um par sobreposto — que não é um alvo maior, é
+     uma porta que abre a coisa do lado (ISSUES I13). Medido a 1280 nas duas
+     edições: com 12 px as duas áreas deixam de se tocar. */
+  padding: 12px 0 14px 21px;
+  max-width: 46em;
+}
+.dobra-unidade,
+.dobra-limiar,
+.dobra-datas {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  margin: 0;
+}
+.dobra-limiar-k,
+.dobra-data-k {
+  color: var(--muted);
+}
+.dobra-frase {
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--ink);
+  margin: 0;
+}
+/* A LINHA ÚNICA DE UMA MEDIDA QUE VIVE NUM DOMÍNIO: uma porta, e mais nada. O
+   alvo é o da casa abaixo de 1024 (44 px), como o de qualquer outra ligação
+   sozinha na sua linha. */
+.dobra-porta {
+  margin: 0;
+}
+.dobra-porta .lig {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+@media (min-width: 1024px) {
+  .dobra-porta .lig {
+    min-height: 32px;
+  }
+}
+
+/* O pé é o selo, sozinho na sua linha e sem nada à volta que seja alvo: a mesma
+   regra do pé da peça, e a mesma razão (a Emenda 2 não deixa um selo debaixo de
+   outro alvo, e aqui não há nenhum). */
+.dobra-pe {
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .dobra-corpo {
+    padding-left: 13px;
+  }
+}
+@media (min-width: 1024px) {
+  .dobra-abrir {
+    min-height: 32px;
+  }
+}
+
+/* ------------------------------------------------------ a fila dos domínios
+   A seguir ao mapa: o nome do domínio como porta, e por baixo a faixa das suas
+   medidas de cabeça que não se rendem já nesta página. O título da secção tem a
+   forma do nome de um painel, porque é a mesma coisa — o nome do que vem a
+   seguir —, e o fio de cima é o mesmo. */
+.dominios-secao-k {
+  font-family: var(--f-versal);
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  border-top: 1px solid var(--ink);
+  padding-top: 12px;
+}
+.dominio-secao + .dominio-secao {
+  margin-top: 24px;
+}
+.dominio-secao-nome {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0 0 8px 0;
+}
+/* O NOME É A PORTA, E UMA PORTA É UM ALVO. Medido antes de se escrever esta
+   regra: a 390 a ligação media 192,2 × 14,0 px em `/` e 190,2 × 14,0 px em
+   `/en`, porque uma âncora em linha tem a altura da letra, e a célula A10 de
+   `tests/inicio/correcoes-a.mjs` recusou-a. O alvo da casa é 44 px abaixo de
+   1024 e 32 px a partir dali (Emenda 20c e §1.84); `inline-flex` dá-lhe a altura
+   sem lhe dar a largura da coluna, que faria da linha inteira uma porta. */
+.dominio-secao-nome .lig {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+@media (min-width: 1024px) {
+  .dominio-secao-nome .lig {
+    min-height: 32px;
+  }
+}
+/* A FAIXA DE UM DOMÍNIO CORRE COMO A DA CABEÇA e não precisa de colocação nova:
+   `.faixa-bloco` só é filho colocado da grelha DENTRO da cabeça, e aqui vive num
+   `<article>` normal. O que se declara é o ar por baixo dela. */
+.dominio-secao .faixa-bloco {
+  margin-bottom: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   A FAIXA DE UM DOMÍNIO ENCOLHE AO QUE TEM (F1.1b, 04.09.2026)
+   ---------------------------------------------------------------------------
+   `.faixa` desenha o fio entre cartões com o INTERVALO de 1 px sobre um fundo de
+   `--rule`, e a nota que lá está diz porque é que isso é seguro: «aqui a fila
+   está sempre cheia, porque é uma fila e não uma grelha com buracos». A faixa da
+   cabeça tem 21 cartões e enche-se a qualquer largura; a faixa de um domínio tem
+   hoje dois, e a 1280 sobrava mais de metade da fila a mostrar o fundo do fio,
+   uma lâmina cinzenta que ninguém desenhou (visto na captura
+   `capturas/leitura-2026-09-04/inicio-1280-pt.png` da primeira construção).
+
+   `width: fit-content` faz a lista medir o que tem dentro, e o `max-width: 100%`
+   devolve-lhe a corrida quando os cartões passarem da largura da coluna. Nenhuma
+   cor nova, nenhum fio novo: o fundo continua a ser o mesmo, e o que muda é onde
+   ele acaba. */
+.dominio-secao .faixa {
+  width: fit-content;
+  max-width: 100%;
+}
