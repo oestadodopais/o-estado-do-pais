@@ -13,6 +13,7 @@
  * a construção.
  */
 import { motivoDaEntrada } from '../lib/ledger.mjs';
+import { dataDaCasa } from '../lib/datas.mjs';
 import { KIND_LABELS } from '../data/correcoes.mjs';
 import { t } from '../i18n/strings.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -43,7 +44,7 @@ const rotulo = (kind) => KIND_LABELS[kind]?.[lang] ?? kind;
               data-correcao-n={String(e.n)}
               data-correcao-campo="date"
             >
-              {e.date}
+              {dataDaCasa(e.date)}
             </span>
             <span
               class:list={['etiqueta-kind', e.kind === 'correcao' && 'etiqueta-correcao']}

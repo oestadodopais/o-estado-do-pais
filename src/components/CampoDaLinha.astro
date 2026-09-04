@@ -26,15 +26,62 @@
 import { POR_VERIFICAR } from '../lib/ledger.mjs';
 import { t } from '../i18n/strings.mjs';
 import { routePath } from '../lib/routes.mjs';
+import DataDaLinha from './DataDaLinha.astro';
+import { eCampoDeData } from '../lib/datas.mjs';
 
-const { id, campo, valor, lang = 'pt', class: klass = '', lingua = null } = Astro.props;
+const { id, campo, valor, lang = 'pt', class: klass = '', lingua = null, quebras = false } = Astro.props;
+/**
+ * UM ENDEREÇO QUEBRA DEPOIS DA BARRA (bloco F1.4, item 7).
+ *
+ * `overflow-wrap: anywhere` já impedia o transbordo, e quebrava a meio de uma
+ * palavra do caminho: «https://ec.europa.eu/eurost / at/api/…». Uma oportunidade
+ * de quebra depois de cada `/` põe o corte onde o endereço tem juntas, e é a
+ * forma como um endereço se lê.
+ *
+ * O TEXTO NÃO MUDA UM CARÁCTER: `<wbr>` é um elemento vazio, não tem texto e não
+ * se imprime; o que a página escreve continua a ser, byte a byte, o campo do
+ * livro-razão, e o portão continua a compará-lo carácter a carácter (junta os
+ * nós de texto sem separador). Não é uma dispensa, é uma junta.
+ *
+ * O corte guarda a barra do lado esquerdo (`(?<=\/)`), que é onde a leitura a
+ * quer: a linha acaba em «…/» e a seguinte começa no segmento novo.
+ */
+const pedacos = quebras ? String(valor).split(/(?<=\/)/) : null;
 const s = t(lang);
 const porVerificar = valor === POR_VERIFICAR;
 const gloss = lang !== 'pt' ? s.livro.marcadorGloss : '';
+/**
+ * UMA DATA SAI POR OUTRA PORTA (bloco F1.4, 04.09.2026).
+ *
+ * A regra da casa escreve dd.mm.aaaa em todo o lado (§1.91), e a marca deste
+ * componente obriga a uma comparação literal com o livro-razão, que guarda as
+ * datas em ISO. As duas coisas não cabem na mesma marca, e a casa já tinha
+ * resolvido isso noutro sítio: `DataDaLinha.astro` diz de que linha e de que
+ * campo a data saiu, e `scripts/check-formas.mjs` recompõe-a por conta própria e
+ * compara-a carácter a carácter. Aqui só se decide QUAL das duas marcas o campo
+ * leva; a lista dos campos que são datas está declarada em `src/lib/datas.mjs`.
+ *
+ * QUEM CHAMA NÃO MUDA. Trinta e quatro chamadas espalhadas por seis vistas
+ * pediam a data pelo nome do campo, e continuam a pedi-la assim: a escolha da
+ * marca é uma propriedade do campo e não de cada sítio onde ele se mostra, e
+ * espalhá-la pelos gabaritos era garantir que a próxima chamada a esquecia.
+ *
+ * O MARCADOR GANHA À DATA. Um campo por confirmar rende `[a verificar]` com a
+ * porta da sua página, e é isso que ele é: não há data nenhuma para escrever.
+ */
+const eData = !porVerificar && eCampoDeData(campo);
+/* A CLASSE DA COMPOSIÇÃO VAI JUNTA COM A MARCA NOVA. `campo-valor` é o que dá a
+   este texto a tinta e a quebra que ele tem hoje dentro das listas do
+   livro-razão (`.livro-item-campo .campo-valor`, e o chão de 12px do telemóvel);
+   sem ela, a data mudava de composição ao mudar de marca, que seria uma mudança
+   de desenho escondida dentro de uma mudança de conferência. */
+const classeDaData = ['campo-valor', klass].filter(Boolean).join(' ');
 ---
 
 {
-  porVerificar ? (
+  eData ? (
+    <DataDaLinha id={id} campo={campo} valor={valor} class={classeDaData} />
+  ) : porVerificar ? (
     <span class="campo-por-verificar">
       {/* O MARCADOR É A PORTA DA SUA PÁGINA (bloco B, item B5; achado C7).
           A marca `data-linha-*` não muda de sítio: continua neste elemento, e é
@@ -59,7 +106,14 @@ const gloss = lang !== 'pt' ? s.livro.marcadorGloss : '';
       data-linha-claim={id}
       data-linha-campo={campo}
     >
-      {valor}
+      {pedacos === null
+        ? valor
+        : pedacos.map((pedaco, i) => (
+            <>
+              {i > 0 && <wbr />}
+              {pedaco}
+            </>
+          ))}
     </span>
   )
 }

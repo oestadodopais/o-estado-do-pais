@@ -969,6 +969,11 @@ export const STRINGS = {
          reconferir. Sem plural inventado. */
       contaUma: ' peça',
       contaMuitas: ' peças',
+      /* A DEFINIÇÃO DA PALAVRA CONTADA (bloco F1.4, 04.09.2026), na página onde
+         ela aparece nove vezes. As três palavras são os três títulos de grupo
+         que a página de uma área usa, e por isso a linha não acrescenta
+         vocabulário: explica o que a contagem conta. */
+      pecaDefinicao: 'Uma peça é um trabalho, um estudo de dados ou uma medida.',
       /* A cauda do `<head>` de uma área, composta com o nome dela, como as das
          páginas de região e de concelho. A DESCRIÇÃO DEIXOU DE SER UMA FRASE:
          é o nome da área, e mais nada. As duas cadeias que a compunham saíram a
@@ -1260,11 +1265,22 @@ export const STRINGS = {
          entram por `data-prova`, o portão reconta-os por conta própria, e cada um
          leva a sua porta. As palavras ao lado nomeiam o que é contado. */
       contaAfirmacoes: 'afirmações',
+      /* O DENOMINADOR DAS DUAS PARCELAS (bloco F1.4, 04.09.2026). Uma palavra
+         só, entre a parcela e o total: «330 de 2916 calculadas». O total é a
+         mesma chave da prova que abre a linha, rendida outra vez com a sua
+         marca, e não um número escrito aqui. */
+      contaDe: 'de',
       contaDerivadas: 'calculadas',
       /* A porta da página do conjunto dos concelhos, no índice. Nomeia o que
          está do outro lado, e mais nada. */
       contaConcelhos: 'linhas de concelhos',
       concelhosPorta: 'Concelhos',
+      /* A BUSCA DO ÍNDICE (bloco F1.4, 04.09.2026). Três cadeias: o rótulo do
+         campo, que diz o que se escreve nele e por que campos a comparação se
+         faz; o botão, que é o mesmo verbo da pesquisa dos concelhos; e o estado
+         vazio, que só o guião acende. */
+      buscaRotulo: 'Procurar por nome, identificador ou fonte',
+      buscaSemResultado: 'Nenhuma linha do índice tem essas palavras.',
       /* A LEGENDA DO SELO PASSA A NOMEAR OS ESTADOS (direção, 21.08.2026).
          Dizia «Quadrado cheio: a proveniência está completa.» e «Quadrado a
          tracejado: falta pelo menos um campo, e a linha di-lo.» — duas frases a
@@ -2209,6 +2225,7 @@ export const STRINGS = {
       h1: 'By area of government',
       contaUma: ' piece',
       contaMuitas: ' pieces',
+      pecaDefinicao: 'A piece is a study, a data study or a measure.',
       metaCauda: 'government area · O Estado do País',
       tipo: 'area of the XXV Constitutional Government',
       trabalhosK: 'The studies',
@@ -2388,9 +2405,12 @@ export const STRINGS = {
       colunaAfirmacao: 'Claim',
       colunaSelo: 'Provenance',
       contaAfirmacoes: 'claims',
+      contaDe: 'of',
       contaDerivadas: 'calculated',
       contaConcelhos: 'municipality rows',
       concelhosPorta: 'Municipalities',
+      buscaRotulo: 'Search by name, identifier or source',
+      buscaSemResultado: 'No row in this index matches those words.',
       seloK: 'The two states of the seal',
       seloCheio: 'provenance complete',
       seloTracejado: 'one field unconfirmed',

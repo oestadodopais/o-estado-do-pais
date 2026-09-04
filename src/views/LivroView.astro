@@ -21,6 +21,7 @@
 import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
+import NomeDaMedida from '../components/NomeDaMedida.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
 import Marcador from '../components/Marcador.astro';
 import { allClaims, provenienciaIncompleta } from '../lib/ledger.mjs';
@@ -28,8 +29,10 @@ import { ESTUDO_DOS_CONCELHOS } from '../lib/livro-concelhos.mjs';
 import { caminhoDoLivro } from '../lib/livro.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
+import { nomeDaMedida } from '../lib/nomes.mjs';
+import { semAcentos } from '../lib/inicio.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
-import { linguaDoRotuloDaFonte, linguaDaFonte } from '../i18n/lingua-dos-titulos.mjs';
+import { linguaDaFonte } from '../i18n/lingua-dos-titulos.mjs';
 import { prova } from '../lib/prova.mjs';
 import { LICENCA } from '../data/licenca.mjs';
 import { CONJUNTO } from '../lib/conjunto.mjs';
@@ -53,6 +56,29 @@ const path = caminhoDoLivro(lang);
  */
 const todas = allClaims();
 const listadas = todas.filter((c) => c.study !== ESTUDO_DOS_CONCELHOS);
+
+/**
+ * ---------------------------------------------------------------------------
+ * O QUE CADA LINHA DESTA LISTA TEM DE PROCURÁVEL (bloco F1.4, 04.09.2026)
+ * ---------------------------------------------------------------------------
+ * A auditoria de 02.09 mediu 24,8 ecrãs de índice sem busca nem filtro, ao lado
+ * de um índice de concelhos que tem as duas coisas. A busca deste índice compara
+ * o que o leitor escreve com TRÊS coisas de cada linha, e são as três que
+ * aparecem nela: o nome, o identificador e a fonte.
+ *
+ * A COMPARAÇÃO É SEM ACENTOS, E A NORMALIZAÇÃO DO TEXTO DA PÁGINA FAZ-SE AQUI.
+ * É a regra que a pesquisa dos concelhos já segue (`public/js/municipios.js`): o
+ * guião normaliza só o que o leitor escreveu, que não é texto da página, e o
+ * texto da página vem normalizado da construção. `semAcentos` é a mesma função
+ * das duas pesquisas, e não uma segunda cópia da regra.
+ *
+ * NENHUM TEXTO NOVO E NENHUM ALGARISMO NOVO: o atributo é o texto que já está na
+ * linha, em caixa baixa e sem acentos, para uma comparação. Não se rende.
+ */
+const buscaDaLinha = (c) => {
+  const nome = nomeDaMedida(c, lang);
+  return semAcentos([nome?.texto ?? '', c.id, typeof c.source === 'string' ? c.source : ''].join(' '));
+};
 
 /**
  * AS CONTAGENS DESTE ÍNDICE (IDENTIDADE.md §10; `src/lib/prova.mjs`).
@@ -134,14 +160,32 @@ const p = prova(lang);
         suas linhas. */}
     {/* As contagens, numa linha só e fora da prosa: são números do próprio
         sítio, com a sua porta, e não uma frase da casa. */}
+    {/* AS DUAS PARCELAS DIZEM DE QUE TOTAL SAEM (bloco F1.4, 04.09.2026).
+        A auditoria de 02.09 leu «2916 afirmações · 330 calculadas · 2767 linhas
+        de concelhos» e escreveu «sem explicar»: três números sem relação
+        visível, dos quais dois são parcelas do primeiro e nada o dizia.
+
+        O DENOMINADOR É O PRIMEIRO NÚMERO, e não um número novo: as calculadas e
+        as linhas de concelhos são subconjuntos das afirmações que o livro-razão
+        guarda, e a mesma chave da prova (`afirmacoes`) rende-se três vezes, com
+        a mesma marca e a mesma porta. O portão reconta a chave uma vez e
+        compara-a com CADA ocorrência: três leituras do mesmo facto, e não três
+        factos.
+
+        O PRIMEIRO NÃO GANHA DENOMINADOR PORQUE É ELE. Um total sobre um total
+        maior seria um conjunto que não existe, e escrevê-lo era inventar. */}
     <p class="livro-contas">
       <ValorDaProva chave="afirmacoes" item={p.afirmacoes} lang={lang} />
       {' '}{s.livro.contaAfirmacoes}
       {' · '}
       <ValorDaProva chave="derivadas" item={p.derivadas} lang={lang} />
+      {' '}{s.livro.contaDe}{' '}
+      <ValorDaProva chave="afirmacoes" item={p.afirmacoes} lang={lang} />
       {' '}{s.livro.contaDerivadas}
       {' · '}
       <ValorDaProva chave="concelhos_linhas" item={p.concelhos_linhas} lang={lang} />
+      {' '}{s.livro.contaDe}{' '}
+      <ValorDaProva chave="afirmacoes" item={p.afirmacoes} lang={lang} />
       {' '}{s.livro.contaConcelhos}
     </p>
     {/* A PORTA DA PÁGINA DO CONJUNTO DOS CONCELHOS (decisão D6, 26.08.2026).
@@ -162,6 +206,47 @@ const p = prova(lang);
     <p class="rodape-nav" style="margin-top:10px">
       <a href={routePath('livroConcelhos', lang)}>{s.livro.concelhosPorta} →</a>
     </p>
+
+    {/* ------------------------------------------------------------------------
+        A BUSCA DO ÍNDICE (bloco F1.4, item 3; auditoria de 02.09.2026)
+        ------------------------------------------------------------------------
+        «`/livro-razao` tem 24,8 ecrãs sem busca nem filtro; o índice dos
+        concelhos ao lado tem busca e 85 ecrãs.» A busca compara o que se escreve
+        com o nome, o identificador e a fonte de cada linha desta lista.
+
+        É UM `<form method="get">` COM DESTINO NO PRÓPRIO ÍNDICE, e a caixa NÃO
+        vem escondida do servidor, ao contrário da dos concelhos. As duas
+        decisões são a mesma decisão vista dos dois lados, e a diferença entre as
+        duas páginas é o que a justifica: em `/municipios` sem guião não há
+        pesquisa nenhuma e por isso a caixa não aparece; aqui o formulário É um
+        destino sem guião (leva ao índice inteiro, com `?q=` no endereço) e a
+        caixa é, num leitor de página, o marco de busca desta página: o
+        `role="search"` faz dela uma âncora que se alcança sem percorrer os 24,8
+        ecrãs. Com guião, `public/js/livro.js` filtra a lista à medida que se
+        escreve e lê o `?q=` do endereço à chegada.
+
+        O QUE ISTO NÃO FAZ, e fica dito: sem guião o formulário não filtra nada.
+        Filtrar do lado do servidor pediria uma página por pergunta, e este sítio
+        é estático. O relatório do bloco escreve-o.
+        ---------------------------------------------------------------------- */}
+    <form class="livro-busca" role="search" method="get" action={path}>
+      <label class="livro-busca-k" for="livro-busca">{s.livro.buscaRotulo}</label>
+      <span class="livro-busca-linha">
+        <input
+          class="livro-busca-campo"
+          id="livro-busca"
+          name="q"
+          type="search"
+          autocomplete="off"
+          data-livro-busca
+        />
+        {/* O VERBO DO BOTÃO É O QUE JÁ EXISTE. `ambito.pesquisaSubmeter` é a
+            palavra do botão da pesquisa dos concelhos, e é a mesma acção: uma
+            chave nova para a mesma palavra era a mesma decisão tomada duas
+            vezes, e duas coisas para manter em dia. */}
+        <button class="livro-busca-submeter" type="submit">{s.ambito.pesquisaSubmeter}</button>
+      </span>
+    </form>
   </div>
 
   <div class="linha">
@@ -170,38 +255,29 @@ const p = prova(lang);
       {/* UMA LISTA SÓ, PELA ORDEM DO LIVRO-RAZÃO (27.08.2026). Os dois grupos
           por estado da proveniência saíram com as suas contagens; o estado de
           cada linha continua no seu selo e em `data-estado`. */}
-      <div class="livro-lista">
+      <div class="livro-lista" data-livro-lista>
         {listadas.map((c) => (
           <div
             class="livro-item"
             data-estado={provenienciaIncompleta(c) ? 'por-confirmar' : 'completa'}
             data-linha-id={c.id}
+            data-busca={buscaDaLinha(c)}
           >
             {/* o valor, com o selo da sua própria linha ao lado */}
             <span class="livro-item-valor">
               <Claim id={c.id} lang={lang} as="span" class="livro-item-num" chip={true} />
             </span>
             <div class="livro-item-corpo">
-              {/* O NOME DA MEDIDA, ONDE A FONTE O IMPRIME (29.08.2026).
-                  A mesma regra e a mesma forma do `ItemDoLivro.astro`, que é
-                  onde ela está escrita por extenso: o rótulo `name` encabeça a
-                  linha onde existe, e o identificador desce a atributo e ao
-                  recibo. Onde não existe, fica o identificador, como estava. */}
-              {c.name === null || c.name === undefined || c.name === '' ? (
+              {/* O NOME DA MEDIDA, PELA ESCADA (F1.4, 04.09.2026).
+                  A mesma peça e a mesma escada do `ItemDoLivro.astro`, que é
+                  onde ela está escrita por extenso: o nome do cartão, o rótulo
+                  da fonte, o título do documento. O identificador desce ao
+                  metadado, com a mesma classe e a mesma marca de campo. */}
+              <NomeDaMedida linha={c} lang={lang} />
+              <div class="livro-item-meta">
                 <code class="livro-item-id" data-linha-claim={c.id} data-linha-campo="id">
                   {c.id}
                 </code>
-              ) : (
-                <CampoDaLinha
-                  id={c.id}
-                  campo="name"
-                  valor={String(c.name)}
-                  lang={lang}
-                  class="livro-item-nome"
-                  lingua={linguaDoRotuloDaFonte(String(c.name), lang)}
-                />
-              )}
-              <div class="livro-item-meta">
                 <CampoDaLinha
                   id={c.id}
                   campo="unit"
@@ -239,6 +315,11 @@ const p = prova(lang);
           </div>
         ))}
       </div>
+      {/* O ESTADO VAZIO DA BUSCA (IDENTIDADE §7). Vem escondido do servidor e só
+          o guião o acende, porque sem guião nunca há filtro e por isso nunca há
+          «nenhuma»: uma frase de estado vazio numa página que mostra a lista
+          inteira seria uma frase falsa à espera. */}
+      <p class="livro-busca-vazio" data-livro-sem-resultado hidden>{s.livro.buscaSemResultado}</p>
     </div>
 
     <!-- ========================================== aparelho: como se lê -->
@@ -357,4 +438,9 @@ const p = prova(lang);
       </p>
     </aside>
   </div>
+
+  {/* O guião da busca. `defer is:inline`, como os outros quatro deste sítio: um
+      ficheiro servido da raiz, sem empacotador e sem módulo, para que a página
+      continue a ser a mesma sem ele. */}
+  <script src="/js/livro.js" defer is:inline></script>
 </Base>

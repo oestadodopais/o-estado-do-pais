@@ -49,6 +49,7 @@ import { distritoDoMapa, unidadeDoMapa } from '../lib/mapa.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
+import { dataDaCasa } from '../lib/datas.mjs';
 import '../styles/distrito.css';
 
 const { lang = 'pt', slug } = Astro.props;
@@ -79,6 +80,30 @@ const tipo = unidade.tipo === 'ilha' ? s.distritos.tipoIlha : s.distritos.tipoDi
         inventário de frases não ganhe 29 entradas com os nomes das unidades. */}
     <h1 data-lugar>{unidade.nome}</h1>
     <p class="distrito-tipo">{tipo}</p>
+    {/* ------------------------------------------------------------------------
+        O QUE ESTA PÁGINA TEM, DITO À VISTA (bloco F1.4, item 8)
+        ------------------------------------------------------------------------
+        A auditoria de 02.09.2026 leu esta página e escreveu «não tem dados: é um
+        índice com 14 formas sem nome e uma lista». O brief do bloco dá duas
+        saídas: o agregado das medidas dos concelhos desta unidade, ou a frase
+        que diz que a página é o índice deles.
+
+        O AGREGADO NÃO EXISTE, E FOI MEDIDO E NÃO SUPOSTO: o livro-razão não tem
+        uma única linha de unidade da Carta (`grep` sobre os 2 916 ids: nenhum
+        distrito, nenhuma ilha). Somar aqui as linhas dos concelhos seria
+        aritmética nova numa página, sem linha derivada e sem selo, que é
+        exactamente o que o brief proíbe e o que os portões fecham.
+
+        A FRASE É A MESMA QUE A DESCRIÇÃO DO `<head>` JÁ DIZ, e é essa a razão de
+        não haver aqui uma cadeia nova: o `<head>` desta página escreve «Os
+        concelhos de X, pela Carta Administrativa Oficial de Portugal.» desde que
+        ela existe, e o leitor que abria a página não a via. Duas cadeias com o
+        mesmo sentido eram duas coisas para manter em dia. Diz o que a página
+        tem, não o que ela é nem porque se deve confiar nela (Emenda 18).
+        ---------------------------------------------------------------------- */}
+    <p class="lede distrito-lede">
+      {s.distritos.metaDescricaoA}<span data-lugar>{unidade.nome}</span>{s.distritos.metaDescricaoB}
+    </p>
     {/* ------------------------------------------------------------------------
         A CONTAGEM NÃO SE RENDE AQUI, E A CHAVE DA PROVA FICA
         ------------------------------------------------------------------------
@@ -147,7 +172,12 @@ const tipo = unidade.tipo === 'ilha' ? s.distritos.tipoIlha : s.distritos.tipoDi
         `reference_date` da própria linha, com o motivo que já existe. */}
     <figcaption class="distrito-legenda">
       {s.distritos.legendaCarta}
-      <span data-nonledger="data-de-referencia">{caop.reference_date}</span>{' '}
+      {/* O ANO DA EDIÇÃO DA CARTA, NA FORMA DA CASA (§1.91). `reference_date`
+          desta linha é «2025», um ano, e `dataDaCasa()` deixa passar sem tocar o
+          que não é uma data completa: inventar-lhe um dia seria inventar um
+          facto. A chamada fica escrita na mesma para que a regra valha aqui como
+          vale nos outros sítios, e não por acaso do valor. */}
+      <span data-nonledger="data-de-referencia">{dataDaCasa(caop.reference_date)}</span>{' '}
       <Provenance id="municipios-portugal-caop-2025" lang={lang} />
     </figcaption>
   </figure>

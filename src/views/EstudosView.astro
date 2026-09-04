@@ -28,6 +28,7 @@ import { WORKS, POR_VERIFICAR } from '../data/studies.mjs';
 import { leituraDe } from '../data/leituras.mjs';
 import { documentosDoEstudo } from '../lib/documentos.mjs';
 import { routePath } from '../lib/routes.mjs';
+import { dataDaCasa } from '../lib/datas.mjs';
 import { t } from '../i18n/strings.mjs';
 
 const { lang = 'pt' } = Astro.props;
@@ -128,9 +129,24 @@ const trabalhos = WORKS.map((w) => {
                     hreflang={e.lang === 'pt' ? 'pt-PT' : 'en'}
                   >
                     {e.lang.toUpperCase()}
-                    {!tr.umaSoData && (
+                    {/* O MARCADOR NÃO SE ESCREVE À MÃO (bloco F1.4, item 6).
+                        Escrevia-se aqui a cadeia `POR_VERIFICAR` sozinha: o
+                        mesmo texto do único marcador do sítio, sem a classe e
+                        sem a porta da página que o explica. Um marcador com dois
+                        aspetos é o leitor a aprender a marca duas vezes. Dentro
+                        do badge, que já é uma âncora, uma segunda âncora não é
+                        HTML (Emenda 2), e por isso este ramo mostra a data
+                        quando ela existe e não se desenha quando não existe: a
+                        linha do trabalho leva o seu marcador UMA VEZ, na fila da
+                        data, e é lá que ele tem a porta.
+                        Hoje este ramo não se rende nunca: os doze trabalhos ou
+                        têm uma data só ou não têm nenhuma, e `umaSoData` é
+                        verdade nos doze. Fica para o dia em que duas edições do
+                        mesmo trabalho tiverem datas diferentes.
+                        A DATA VAI NA FORMA DA CASA (dd.mm.aaaa, §1.91). */}
+                    {!tr.umaSoData && e.date && (
                       <span class="arquivo-edicao-data" data-nonledger="data-de-publicacao">
-                        {e.date ?? POR_VERIFICAR}
+                        {dataDaCasa(e.date)}
                       </span>
                     )}
                   </a>
@@ -139,7 +155,13 @@ const trabalhos = WORKS.map((w) => {
               {tr.umaSoData && (
                 <span data-nonledger="data-de-publicacao">
                   {s.estudos.dataLabel}:{' '}
-                  {tr.dataUnica ?? <Marcador lang={lang} />}
+                  {/* dd.mm.aaaa, a regra da casa (§1.91, `src/lib/datas.mjs`).
+                      Saía a cadeia ISO do arquivo, que é a forma de dado.
+                      Sem data, o marcador com a porta da sua página, e uma vez
+                      só por trabalho: `date: null` em `src/data/studies.mjs`
+                      quer dizer que a data de publicação está por decidir pela
+                      direção, e é isso que o marcador diz. */}
+                  {tr.dataUnica ? dataDaCasa(tr.dataUnica) : <Marcador lang={lang} />}
                 </span>
               )}
             </div>
