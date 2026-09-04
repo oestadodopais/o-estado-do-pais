@@ -17,7 +17,7 @@ alteração ficou pela metade, e nada foi deixado com um portão vermelho.
 |---|---|
 | ramo | `lugar-2026-09-04` |
 | ponto de partida | `origin/main` em `306e4c68` |
-| cabeça conferida pela CI | `c0f623c5`, corrida `portao` `33854329164` |
+| última cabeça | a corrida a ler é a primeira linha de `gh run list --branch lugar-2026-09-04` |
 | `main` a fundir na sessão seguinte | `69ba3abf` |
 | `build` · `verify` · `typecheck` sobre `c0f623c5` | **0** · **0** · **0** |
 
@@ -433,8 +433,8 @@ escreve é o do terceiro, que é o que a CI conferiu primeiro.
 | ramo | `lugar-2026-09-04` |
 | ponto de partida | `origin/main` em `306e4c68` |
 | `main` a fundir na sessão seguinte | `69ba3abf` |
-| cabeça conferida pela CI | `c0f623c5` |
-| corrida `portao` | `33854329164` |
+| cabeça com os três portões corridos à mão | `c0f623c5` |
+| corrida `portao` dessa cabeça | `33854329164`, cancelada pelo push seguinte (ver abaixo) |
 
 Os códigos foram lidos dos ficheiros de saída de cada corrida, e não do ecrã.
 
@@ -460,8 +460,14 @@ sessão fechou. **Se ela sair vermelha por tempo, não é um defeito deste ramo:
 fusão do `main` na sessão seguinte resolve-a, e o primeiro sinal a acreditar é a
 corrida que vier depois dessa fusão.
 
-O quarto commit empurra uma cabeça nova, e a corrida do `portao` sobre ela é
-outra ainda (`gh run list --branch lugar-2026-09-04`).
+**A corrida a ler é sempre a ÚLTIMA do ramo, e não a que está nesta tabela.** O
+`portao.yml` tem `concurrency` com `cancel-in-progress: true` sobre
+`${{ github.ref }}`: um segundo push no mesmo ramo **cancela** a corrida do
+primeiro. A corrida `33854329164`, que este relatório nomeia porque é a da cabeça
+que ele podia nomear, foi cancelada pelo push do commit que o escreve. Um
+relatório não pode conter o resumo do seu próprio commit nem o número da corrida
+que esse commit dispara, e é por isso que a regra fica escrita em vez do número:
+`gh run list --branch lugar-2026-09-04`, e lê-se a primeira linha.
 
 **Não se funde em `main`.** O bloco está a meio, e a fusão é do lugar de direção
 depois de o bloco fechar.
