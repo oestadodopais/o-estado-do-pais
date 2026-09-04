@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-03T18:36:48+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/78714fcd-9d7a-49ae-92d0-914347b16683/scratchpad/leituras/f11-pacote",
+ "plantas": [
+  {
+   "id": "P1a",
+   "ficheiro": "src/data/figuras.mjs",
+   "descricao": "a frase do painel do Procedimento perde «Comissão Europeia» na fonte enquanto a página construída ainda a tem: a régua A4 falharia numa reconstrução (cópia inteira)",
+   "sha256_antes": "6d000ce6479d8e59eeccbecbc31d49f4ca3936273b7a566a67c0cb561d08b61b",
+   "sha256_depois": "9bbc0c8d48279917e7fa4665863a7129dcaffffb5264404c0a3fcdef724c7be8",
+   "contexto_antes": "á-as como texto dele).\n */\nexport const CONTEXTO_DOS_PAINEIS = {\n  pdm: {\n    pt: [\n      'Os indicadores do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, com os limiares que o Procedimento publica. Os valores são do Eurostat, confirmados contra a Comissão Europeia, ',\n      { verbatim: 'swd-2026-222' },\n      '.',\n    ],\n    en: [\n      'The indicators of the Macroeconomic Imbalance Procedure scoreboard, with the thresholds ",
+   "contexto_depois": "á-as como texto dele).\n */\nexport const CONTEXTO_DOS_PAINEIS = {\n  pdm: {\n    pt: [\n      'Os indicadores do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, com os limiares que o Procedimento publica. Os valores são do Eurostat, confirmados contra o Relatório por País, ',\n      { verbatim: 'swd-2026-222' },\n      '.',\n    ],\n    en: [\n      'The indicators of the Macroeconomic Imbalance Procedure scoreboard, with the thresholds "
+  },
+  {
+   "id": "P1b",
+   "ficheiro": "diff.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff",
+   "sha256_antes": "dc88813ba633187059d14fbe3200fb0f0fddeaa714126497cdcd6cac596306e2",
+   "sha256_depois": "48c4d0776e1af1f71df1a731ea0981d62917556816d1da01f5b85de6708117d9",
+   "contexto_antes": "como texto dele).\n+ */\n+export const CONTEXTO_DOS_PAINEIS = {\n+  pdm: {\n+    pt: [\n+      'Os indicadores do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, com os limiares que o Procedimento publica. Os valores são do Eurostat, confirmados contra a Comissão Europeia, ',\n+      { verbatim: 'swd-2026-222' },\n+      '.',\n+    ],\n+    en: [\n+      'The indicators of the Macroeconomic Imbalance Procedure scoreboard, with the thresh",
+   "contexto_depois": "como texto dele).\n+ */\n+export const CONTEXTO_DOS_PAINEIS = {\n+  pdm: {\n+    pt: [\n+      'Os indicadores do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, com os limiares que o Procedimento publica. Os valores são do Eurostat, confirmados contra o Relatório por País, ',\n+      { verbatim: 'swd-2026-222' },\n+      '.',\n+    ],\n+    en: [\n+      'The indicators of the Macroeconomic Imbalance Procedure scoreboard, with the thresh"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "tests/inicio/porta.mjs",
+   "descricao": "a régua A3 aceita valores repetidos: a conta dos 21 uma só vez deixa de ser exigida",
+   "sha256_antes": "a53ab94feca1c95cc247b72c9b6591061d2953da5f6ab596db27c32052e3bdf3",
+   "sha256_depois": "ba4de3383709efaaf2f24e950208548fd90f7433d9eaa26feea9f695382f279d",
+   "contexto_antes": ".${ed.chave}`] = {\n      total: AS_VINTE_E_UMA.length,\n      repetidos: repetidos.map((c) => `${c.id}×${c.n}`),\n    };\n    conta(\n      `A3.${ed.chave}`,\n      repetidos.length === 0,\n      `os 21 valores selados uma só vez em ${ed.rota}: ${repetidos.length} fora da conta` +\n        (repetidos.length ? ` (${repetidos.map((c) => `${c.id}×${c.",
+   "contexto_depois": ".${ed.chave}`] = {\n      total: AS_VINTE_E_UMA.length,\n      repetidos: repetidos.map((c) => `${c.id}×${c.n}`),\n    };\n    conta(\n      `A3.${ed.chave}`,\n      repetidos.length <= 21,\n      `os 21 valores selados uma só vez em ${ed.rota}: ${repetidos.length} fora da conta` +\n        (repetidos.length ? ` (${repetidos.map((c) => `${c.id}×${c."
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 5 807 px na tabela A2 e 6 807 no resumo e no §9",
+   "sha256_antes": "6fe207f22f3df1cfaf0574062f99183f3f8057a84c380c4a4c480effc4e4c64b",
+   "sha256_depois": "5ce02c74b56ea71699077dfa3ce1297564e79d324906342772261136c5ae4f70",
+   "contexto_antes": "0,9 · selo 698,5 · porta não existe | nome 97,4 · manchete 297,0 · porta 446,3 · cartão 641,1 · selo 628,7 | ✓ |\n| A2 pt | altura de `/` a 390 | **6 941 px** | **6 807 px** (menos 134) | ✓ |\n| A2 en | altura de `/en` a 390 | 6 890 px | 6 759 px (menos 131) | ✓ |\n| A3 pt | os 21 valores selados uma só vez | **21 de 21 a duplicar** | 0 fora da ",
+   "contexto_depois": "0,9 · selo 698,5 · porta não existe | nome 97,4 · manchete 297,0 · porta 446,3 · cartão 641,1 · selo 628,7 | ✓ |\n| A2 pt | altura de `/` a 390 | **6 941 px** | **5 807 px** (menos 1 134) | ✓ |\n| A2 en | altura de `/en` a 390 | 6 890 px | 6 759 px (menos 131) | ✓ |\n| A3 pt | os 21 valores selados uma só vez | **21 de 21 a duplicar** | 0 fora da "
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/index.html",
+   "descricao": "o formulário da busca perde o action na página construída: a busca deixa de funcionar sem guião",
+   "sha256_antes": "5a7868b37f8ccf65c267d58c32089c59c842ac9f44230be00845caba08dfd43b",
+   "sha256_depois": "299479ce85efd63cfbf3b8c90a5f747bcba2d7cc3dbfa0f52634e8f83d87a59a",
+   "contexto_antes": "itação</span>, em <span data-nonledger=\"data-de-referencia\">2025</span>.</p><div class=\"pesquisa-bloco\" data-pesquisa-bloco><div class=\"pesquisa\" id=\"pesquisa\"><form class=\"pesquisa-forma\" action=\"/municipios\" method=\"get\" role=\"search\" data-porta-concelho><label class=\"pesquisa-rotulo\" for=\"pesquisa-concelho\">Escreva o nome do concelho</label><div class=\"pesquisa-linha\"><input c",
+   "contexto_depois": "itação</span>, em <span data-nonledger=\"data-de-referencia\">2025</span>.</p><div class=\"pesquisa-bloco\" data-pesquisa-bloco><div class=\"pesquisa\" id=\"pesquisa\"><form class=\"pesquisa-forma\" method=\"get\" role=\"search\" data-porta-concelho><label class=\"pesquisa-rotulo\" for=\"pesquisa-concelho\">Escreva o nome do concelho</label><div class=\"pesquisa-linha\"><input c"
+  }
+ ]
+}

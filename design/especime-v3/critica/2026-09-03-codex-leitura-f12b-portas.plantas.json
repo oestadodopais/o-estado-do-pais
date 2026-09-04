@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-03T22:02:22+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/78714fcd-9d7a-49ae-92d0-914347b16683/scratchpad/leituras/f12b-pacote",
+ "plantas": [
+  {
+   "id": "P1a",
+   "ficheiro": "src/lib/dominios.mjs",
+   "descricao": "dominioDaLinha só reconhece uma medida quando ela tem linhas secundárias: os três cartões do domínio voltariam a apontar à linha numa reconstrução; a página construída no pacote aponta ao domínio (cópia inteira)",
+   "sha256_antes": "1c84be1ad9de894519335ab912bbdff2f08e5adda3bd7c95aeff37e9f59ecee1",
+   "sha256_depois": "dbf083102cae8832b901f2a347a435577f40d6b9a9bb71a6bb1b1d0272f5442a",
+   "contexto_antes": " ancora: string }|null}\n */\nexport function dominioDaLinha(id) {\n  for (const d of dominiosComPagina()) {\n    for (const m of medidasDoDominio(d.slug)) {\n      const daMedida = m.claim === id || (m.claims ?? []).some((o) => o.id === id);\n      if (daMedida) return { slug: d.slug, chave: m.chave, ancora: ancoraDaMedida(m.chave) };\n    }\n  }\n  return null;\n}\n",
+   "contexto_depois": " ancora: string }|null}\n */\nexport function dominioDaLinha(id) {\n  for (const d of dominiosComPagina()) {\n    for (const m of medidasDoDominio(d.slug)) {\n      const daMedida = m.claim === id && (m.claims ?? []).some((o) => o.id === id);\n      if (daMedida) return { slug: d.slug, chave: m.chave, ancora: ancoraDaMedida(m.chave) };\n    }\n  }\n  return null;\n}\n"
+  },
+  {
+   "id": "P1b",
+   "ficheiro": "diff.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff",
+   "sha256_antes": "1ed1ad38c74a612114a74dd5df96521c083d8539dc7d1286166446f4748871ba",
+   "sha256_depois": "a216b35b47c1e17bbf63d0b82335b9191e23763f2a4d997f45c78df3c6a02434",
+   "contexto_antes": "ra: string }|null}\n+ */\n+export function dominioDaLinha(id) {\n+  for (const d of dominiosComPagina()) {\n+    for (const m of medidasDoDominio(d.slug)) {\n+      const daMedida = m.claim === id || (m.claims ?? []).some((o) => o.id === id);\n+      if (daMedida) return { slug: d.slug, chave: m.chave, ancora: ancoraDaMedida(m.chave) };\n+    }\n+  }\n+  return null;\n+}\ndiff --git a/src/styles/inicio.cs",
+   "contexto_depois": "ra: string }|null}\n+ */\n+export function dominioDaLinha(id) {\n+  for (const d of dominiosComPagina()) {\n+    for (const m of medidasDoDominio(d.slug)) {\n+      const daMedida = m.claim === id && (m.claims ?? []).some((o) => o.id === id);\n+      if (daMedida) return { slug: d.slug, chave: m.chave, ancora: ancoraDaMedida(m.chave) };\n+    }\n+  }\n+  return null;\n+}\ndiff --git a/src/styles/inicio.cs"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "tests/inicio/porta.mjs",
+   "descricao": "a régua aceita os estudos a 9,5 ecrãs em vez de 1,5",
+   "sha256_antes": "9f7e9e9d5b52a187b86ad9d890b50a89109a1cc9503c4520710368aa66819bd2",
+   "sha256_depois": "04a2a01eeeb2e19e95ccc72a6b6ead925dd26df6fccb4956fc983b515690f842",
+   "contexto_antes": "minioDaLinha`),\n   e o que ela mede é o HTML construído contra ela. */\nconst { dominioDaLinha } = await import(path.join(RAIZ, 'src', 'lib', 'dominios.mjs'));\n\nconst ALTURA_DA_DOBRA = 1.5;\n\n/* A rede de nomes, medida da mesma maneira em qualquer largura: uma função só,\n   para que a leitura a 390 e a 768 não possam divergir por acaso. */\nasync fu",
+   "contexto_depois": "minioDaLinha`),\n   e o que ela mede é o HTML construído contra ela. */\nconst { dominioDaLinha } = await import(path.join(RAIZ, 'src', 'lib', 'dominios.mjs'));\n\nconst ALTURA_DA_DOBRA = 9.5;\n\n/* A rede de nomes, medida da mesma maneira em qualquer largura: uma função só,\n   para que a leitura a 390 e a 768 não possam divergir por acaso. */\nasync fu"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz que a porta dos estudos começa a 6 627 px na prosa e a 662,7 na tabela E3",
+   "sha256_antes": "6ed12df71bbfb7ccf3ef4d8f00f6d8799e7693bef3d8df3eabc6a3345efab533",
+   "sha256_depois": "fb543d10e4dba277942fe6ab5315228419501722b3c131e2aaaf072bb3f249af",
+   "contexto_antes": ", nas duas edições, a **390 × 664** e a **1 280**. Mais duas\n(`*-inicio-390x664-fila-dos-estudos.png`) com a página descida até à fila dos\nestudos: a 390 × 664 ela começa a 662,7 px, ou seja mesmo por baixo da dobra, e\nnão se via em nenhuma das outras.\n\n**As medições**, em `design/especime-v3/medicoes/`:\n\n| ficheiro | o que traz |\n| --- | ",
+   "contexto_depois": ", nas duas edições, a **390 × 664** e a **1 280**. Mais duas\n(`*-inicio-390x664-fila-dos-estudos.png`) com a página descida até à fila dos\nestudos: a 390 × 664 ela começa a 6 627 px, ou seja mesmo por baixo da dobra, e\nnão se via em nenhuma das outras.\n\n**As medições**, em `design/especime-v3/medicoes/`:\n\n| ficheiro | o que traz |\n| --- | "
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/index.html",
+   "descricao": "a entrada «Domínios» do menu aponta a /dominio, que não existe (a do rodapé fica certa)",
+   "sha256_antes": "a2609bb9cfc4a628c2525c33d98ea6af1649509ef9105e05ea960c0b51287f2e",
+   "sha256_depois": "659041fe8f631bd6ce983b6dc44537b3da21fc5fff8ab2e9e1601407f07cc36c",
+   "contexto_antes": "egação principal\"><a href=\"/\" aria-current=\"page\">Início</a><a href=\"/municipios\">Municípios</a><a href=\"/regioes\">Regiões</a><a href=\"/distritos\">Distritos</a><a href=\"/areas\">Áreas</a><a href=\"/dominios\">Domínios</a><a href=\"/estudos\">Estudos</a><a href=\"/livro-razao\">Livro-razão</a><a href=\"/agenda\">Agenda</a><a href=\"/metodo\">Método</a><a href=\"/correcoes\">Correções</a><a",
+   "contexto_depois": "egação principal\"><a href=\"/\" aria-current=\"page\">Início</a><a href=\"/municipios\">Municípios</a><a href=\"/regioes\">Regiões</a><a href=\"/distritos\">Distritos</a><a href=\"/areas\">Áreas</a><a href=\"/dominio\">Domínios</a><a href=\"/estudos\">Estudos</a><a href=\"/livro-razao\">Livro-razão</a><a href=\"/agenda\">Agenda</a><a href=\"/metodo\">Método</a><a href=\"/correcoes\">Correções</a><a"
+  }
+ ]
+}

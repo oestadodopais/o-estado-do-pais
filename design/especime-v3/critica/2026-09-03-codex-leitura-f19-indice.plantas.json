@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-03T13:51:48+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/78714fcd-9d7a-49ae-92d0-914347b16683/scratchpad/leituras/f19-pacote",
+ "plantas": [
+  {
+   "id": "P1a",
+   "ficheiro": "src/views/TextoView.astro",
+   "descricao": "cada ligação do índice de nível 2 aponta a um id que não existe (bloco-N- em vez de bloco-N); a página construída no pacote não tem a planta",
+   "sha256_antes": "5d42e2523eda27cdc1fb6a6ee4514bcded2f89ae359bec85f21b5754fc0ff5e9",
+   "sha256_depois": "1cf128c3a6c353fbda616bc55aaac18bb5b0dbb32b638663015e0ae9f25b5873",
+   "contexto_antes": "marioK}</h2>\n          </summary>\n          <ul class=\"texto-indice-lista\">\n            {arvoreDoIndice.map((titulo) => (\n              <li>\n                <a href={`#bloco-${titulo.i}`} data-registo-indice={`${chave}#${titulo.i}`}>\n                  {titulo.texto}\n                </a>\n                {titulo.filhos.length > 0 && (\n            ",
+   "contexto_depois": "marioK}</h2>\n          </summary>\n          <ul class=\"texto-indice-lista\">\n            {arvoreDoIndice.map((titulo) => (\n              <li>\n                <a href={`#bloco-${titulo.i}-`} data-registo-indice={`${chave}#${titulo.i}`}>\n                  {titulo.texto}\n                </a>\n                {titulo.filhos.length > 0 && (\n            "
+  },
+  {
+   "id": "P1b",
+   "ficheiro": "diff.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff",
+   "sha256_antes": "dfeebf625f815b7cc8b78a0542bc3e500084c8eb49de7e261fbe69ea14b9fed2",
+   "sha256_depois": "49fb25985af8e49432fd7779b4135049b4e21ae2de1deb3d404036ce0780c929",
+   "contexto_antes": " <ul class=\"texto-indice-lista\">\n-            {titulos.map((titulo) => (\n+            {arvoreDoIndice.map((titulo) => (\n               <li>\n                 <a href={`#bloco-${titulo.i}`} data-registo-indice={`${chave}#${titulo.i}`}>\n                   {titulo.texto}\n                 </a>\n+                {titulo.filhos.length > 0 && (\n+        ",
+   "contexto_depois": " <ul class=\"texto-indice-lista\">\n-            {titulos.map((titulo) => (\n+            {arvoreDoIndice.map((titulo) => (\n               <li>\n                 <a href={`#bloco-${titulo.i}-`} data-registo-indice={`${chave}#${titulo.i}`}>\n                   {titulo.texto}\n                 </a>\n+                {titulo.filhos.length > 0 && (\n+        "
+  },
+  {
+   "id": "P2",
+   "ficheiro": "tests/indice.mjs",
+   "descricao": "a régua aceita alvos de 20 px como se fossem 44",
+   "sha256_antes": "4dd6f140da5059f4cea1fb9de14fa1dba9369d7583aa3b041925a55670b41250",
+   "sha256_depois": "ec8ad9b27b11e9d684398ec8ea83bdda5c7bb15dd8c2e643434db321482ef741",
+   "contexto_antes": "nline: 'center' });\n    const r = alvo.getClientRects()[0];\n    if (!r) continue;\n    const cx = r.left + r.width / 2;\n    const cy = r.top + r.height / 2;\n    if (r.width >= 44 && r.height >= 44) continue;\n    if (\n      acerta(alvo, cx, cy) &&\n      acerta(alvo, cx - D, cy) &&\n      acerta(alvo, cx + D, cy) &&\n      acerta(alvo, cx, cy - D) &&\n      acerta(alvo,",
+   "contexto_depois": "nline: 'center' });\n    const r = alvo.getClientRects()[0];\n    if (!r) continue;\n    const cx = r.left + r.width / 2;\n    const cy = r.top + r.height / 2;\n    if (r.width >= 20 && r.height >= 20) continue;\n    if (\n      acerta(alvo, cx, cy) &&\n      acerta(alvo, cx - D, cy) &&\n      acerta(alvo, cx + D, cy) &&\n      acerta(alvo, cx, cy - D) &&\n      acerta(alvo,"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 163 entradas no resumo e 136 na tabela D1",
+   "sha256_antes": "12938f34a92a74fe06502987ab4519d7d58d707e64f9a4df9f6c9d1863ac9258",
+   "sha256_depois": "860ec0259a0feee184679e2d3d1a7ad7b06f21a6a5c3fae03bc556c4b9670167",
+   "contexto_antes": "seis linhas\n\nO índice já existia desde 25.08 e levava só os títulos de nível 2: passa a levar também os de nível 3, e o número de entradas nas oito páginas vai de **79 para 136**. A indicação de progresso não existia: passa a haver **a posição «n/N» ao lado de cada título de nível 2** (79 títulos nas oito páginas), composta pela folha d",
+   "contexto_depois": "seis linhas\n\nO índice já existia desde 25.08 e levava só os títulos de nível 2: passa a levar também os de nível 3, e o número de entradas nas oito páginas vai de **79 para 163**. A indicação de progresso não existia: passa a haver **a posição «n/N» ao lado de cada título de nível 2** (79 títulos nas oito páginas), composta pela folha d"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "depois/texto-pt.html",
+   "descricao": "um carácter do texto do registo mudado na página construída (município para municipio)",
+   "sha256_antes": "cca1ea71a209259b7a69f29dab18f50ff4bb928a38e86dcaf8b50776fa8c9ea0",
+   "sha256_depois": "a4114836093dfe5f09854677628a576a6903af9dce159e60e643b6cc8c3abd7c",
+   "contexto_antes": "/a> riscos estruturais contra ele, isto é, <strong>sem risco estrutural de sobre-correspondência</strong>. Não é um dos dois nomes de município portugueses que pertencem a dois lugares ao mesmo tempo, e não é uma palavra inteira dentro do nome de um município mais longo. O repertório é a lista viva do próprio INE, com <a class=\"texto-figura texto-figura-porta\" href=\"#linha-tc-gazetteer-municipalities\" data-registo=\"evora-promet",
+   "contexto_depois": "/a> riscos estruturais contra ele, isto é, <strong>sem risco estrutural de sobre-correspondência</strong>. Não é um dos dois nomes de município portugueses que pertencem a dois lugares ao mesmo tempo, e não é uma palavra inteira dentro do nome de um municipio mais longo. O repertório é a lista viva do próprio INE, com <a class=\"texto-figura texto-figura-porta\" href=\"#linha-tc-gazetteer-municipalities\" data-registo=\"evora-promet"
+  }
+ ]
+}
