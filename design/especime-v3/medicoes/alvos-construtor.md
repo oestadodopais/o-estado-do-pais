@@ -422,9 +422,14 @@ O `typecheck` apanhou um defeito deste bloco antes de ele chegar a lado nenhum:
 `ultimoTitulo`, em `src/lib/registo-html.mjs`, ficava com um tipo implícito, e o
 programa é estrito sobre `src/lib`. Levou a declaração que lhe faltava.
 
-Cabeça do ramo `alvos-2026-09-04`: `f5bd1eba`.
-A corrida do portão em CI e o seu número ficam no relatório do lugar de direção,
-porque só existem depois do `push`.
+Correram duas vezes: sobre a árvore fundida com `origin/main` em `0b51016d`
+(`f5bd1eba`), e outra vez sobre a cabeça final, depois de a régua ganhar o
+segundo canal do estrago (§5), porque essa mudança é código que o `verify`
+corre. Os seis códigos de saída são zero.
+
+A cabeça do ramo `alvos-2026-09-04` e o número da corrida do portão em CI ficam
+no relatório do lugar de direção e na mensagem do construtor: só existem depois
+do `push`, e um SHA escrito aqui seria sempre o do commit anterior a si próprio.
 
 ## 7 · O que se tocou, e o que se não tocou
 
