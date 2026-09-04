@@ -239,6 +239,12 @@ const ESTRAGOS = [
     celulas: ['H8'],
     faz: (html, rota) =>
       rota.startsWith('/en/') ? html.replace(/\bpeople\b/g, 'pessoas') : html,
+    /* O estrago que a H8 pode ver: o registo de um cartão inglês a dizer que
+       desenhou «pessoas» onde a tabela da casa manda escrever «people». */
+    noDisco: (texto, caminho) =>
+      caminho.includes(`${path.sep}cartoes${path.sep}`) && caminho.endsWith('.json')
+        ? texto.replace(/"people"/g, '"pessoas"').replace(/ people/g, ' pessoas')
+        : texto,
   },
   {
     /* A SEGUNDA LISTA DE VOLTA (H13). O estrago copia a lista agrupada e tira à
@@ -276,6 +282,34 @@ const MIME = {
 
 /** @type {((html: string, rota: string) => string) | null} */
 let ESTRAGO = null;
+
+/**
+ * O SEGUNDO CANAL DO ESTRAGO: O DISCO.
+ *
+ * Metade das células desta régua não lê o navegador: lê os ficheiros. A H8 lê o
+ * REGISTO de cada cartão (`dist/cartoes/*.json`), porque um PNG não tem texto
+ * que se leia; a H3, a H4 e a H10 varrem as 7 237 páginas construídas; a H9
+ * varre as inglesas. Um estrago que só passe pelo servidor de HTTP nunca lhes
+ * chega, e uma planta que não lhes chega **não prova nada** e passa por boa.
+ *
+ * Foi o que aconteceu à primeira corrida com plantas: a planta da unidade em
+ * português trocava «people» por «pessoas» no HTML servido, a H8 nem sequer
+ * olhava para o HTML, e a planta saía com «caíram: nenhuma». Está aqui a
+ * correcção, e está aqui a razão: uma régua com dois caminhos de leitura precisa
+ * de dois caminhos de estrago.
+ *
+ * @type {((texto: string, caminho: string) => string) | null}
+ */
+let ESTRAGO_NO_DISCO = null;
+
+/**
+ * Ler um ficheiro pelo caminho por onde os estragos passam.
+ * @param {string} caminho
+ */
+function leFicheiro(caminho) {
+  const texto = fs.readFileSync(caminho, 'utf8');
+  return ESTRAGO_NO_DISCO ? ESTRAGO_NO_DISCO(texto, caminho) : texto;
+}
 
 const servidor = http.createServer((req, res) => {
   const semQuery = req.url.split('?')[0];
@@ -751,7 +785,7 @@ function varreDist() {
   const exemplos = { h1: [], porta: [], expanded: [] };
   for (const f of paginas(DIST)) {
     n++;
-    const s = fs.readFileSync(f, 'utf8');
+    const s = leFicheiro(f);
     const rel = path.relative(DIST, f);
     const nH1 = (s.match(/<h1[\s>]/g) ?? []).length;
     if (nH1 !== 1) {
@@ -828,7 +862,7 @@ function varreCartoes() {
   for (const f of fs.readdirSync(dir)) {
     if (!f.endsWith('.json')) continue;
     registos++;
-    const r = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
+    const r = JSON.parse(leFicheiro(path.join(dir, f)));
     if (r.edicao !== 'en') continue;
     en++;
     const u = (r.valores ?? []).find((v) => v.campo === 'unit');
@@ -894,7 +928,7 @@ function varreLeis() {
   let semMarca = 0;
   const exemplos = new Map();
   for (const f of paginas(DIST)) {
-    const s = fs.readFileSync(f, 'utf8');
+    const s = leFicheiro(f);
     if (!/<html[^>]*\slang="en/.test(s)) continue;
     if (!feitioDeLei().test(s)) continue;
     /* Um documento alojado não é uma página deste sítio: a casa não lhe escreve
@@ -1333,13 +1367,31 @@ if (VERMELHOS) {
   const amostra = fs.readFileSync(path.join(DIST, 'municipios', 'index.html'), 'utf8');
   const amostraEn = fs.readFileSync(path.join(DIST, 'en', 'ledger', 'evora-populacao-2025', 'index.html'), 'utf8');
   for (const estrago of ESTRAGOS) {
+    const amostraDeCartao = (() => {
+      const dir = path.join(DIST, 'cartoes');
+      const f = fs.readdirSync(dir).find((x) => x.startsWith('en-') && x.endsWith('.json'));
+      return f ? { caminho: path.join(dir, f), texto: fs.readFileSync(path.join(dir, f), 'utf8') } : null;
+    })();
     const mudou =
       estrago.faz(amostra, '/municipios/') !== amostra ||
-      estrago.faz(amostraEn, '/en/ledger/evora-populacao-2025/') !== amostraEn;
+      estrago.faz(amostraEn, '/en/ledger/evora-populacao-2025/') !== amostraEn ||
+      !!(
+        estrago.noDisco &&
+        amostraDeCartao &&
+        estrago.noDisco(amostraDeCartao.texto, amostraDeCartao.caminho) !== amostraDeCartao.texto
+      );
     ESTRAGO = estrago.faz;
+    ESTRAGO_NO_DISCO = estrago.noDisco ?? null;
+    /* Uma planta que mexe no disco obriga a refazer as varreduras: as células
+       que lêem ficheiros lêem-nos uma vez, no princípio, e um estrago que não
+       as refizesse era um estrago que elas nunca viam. */
+    const varridoAgora = estrago.noDisco ? varreDist() : DIST_VARRIDO;
+    const cartoesAgora = estrago.noDisco ? varreCartoes() : CARTOES;
+    const leisAgora = estrago.noDisco ? varreLeis() : LEIS;
     const depois = await passagem();
-    avalia(depois, DIST_VARRIDO, CARTOES, LEIS, FOLHAS);
+    avalia(depois, varridoAgora, cartoesAgora, leisAgora, FOLHAS);
     ESTRAGO = null;
+    ESTRAGO_NO_DISCO = null;
     const caiu = celulas.filter((c) => !c.passa).map((c) => c.nome);
     const nomeadas = estrago.celulas.filter((n) => caiu.includes(n));
     const verdesAntes = estrago.celulas.filter((n) => limpas.find((c) => c.nome === n)?.passa);
