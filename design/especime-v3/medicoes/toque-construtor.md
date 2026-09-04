@@ -6,6 +6,44 @@ deste ramo e sobre a construção de `69ba3abf`, feita na mesma árvore antes de
 linha mudar. Todos os números deste relatório saíram de uma corrida; nenhum foi
 escrito de cabeça.*
 
+## Estado ao pausar (04.09)
+
+*Escrito quando o diretor fechou o portátil, com a corrida do portão ainda a
+correr. O que está aqui é o estado do ramo `toque-2026-09-04` nesse momento.*
+
+**Está feito, e está commitado e empurrado.** A cabeça do ramo é
+`b7afb882519d8ea16fd5c6b34aaef3a9ae5b9a89`, um commit só, com os onze ficheiros
+do bloco. O bloco está inteiro: a folha esconde as dobras fechadas quando o guião
+acende a área, a linha do estado vazio entra e sai com as dobras, o toque, o
+Enter e o botão «voltar» fazem o que o brief manda, e sem guião nada muda.
+
+**Não está a meio nada.** Não há trabalho por acabar neste ramo, e por isso não há
+nada para desfazer: os três comandos correram sobre a árvore final e deram 0
+(`npm run build`, `npm run verify`, `npm run typecheck`), as catorze réguas de
+`tests/inicio` correram sobre a construção final, e as sete plantas de
+`tests/inicio/leitura.mjs` passaram com as três exigências cada uma.
+
+**O que fica por saber é a corrida do portão.** `portao` arrancou no `push` da
+cabeça (corrida `33860583810`,
+`https://github.com/oestadodopais/o-estado-do-pais/actions/runs/33860583810`) e
+estava `in_progress` quando esta secção foi escrita, aos 19 minutos. **Não foi
+lida verde nem vermelha**: quem retomar lê-a com
+`gh run view 33860583810`, e é a única coisa deste bloco que falta conferir.
+
+**Como se retoma, se o portão vier vermelho.** O ramo não foi fundido em `main`.
+As medidas todas estão nas secções abaixo, com o comando que as tirou; a régua
+deste bloco (a que mede alturas e nomes à vista) vive fora do repositório, em
+`.claude/medir-toque.mjs` da árvore de trabalho, e as duas capturas foram tiradas
+por `.claude/capturas-toque.mjs` na mesma árvore. Uma árvore acabada de criar não
+tem `axe-core` sem `npm ci`, e sem ele o `verify` fecha no `check:moldura`: é a
+primeira coisa a conferir numa árvore nova (ver a §7).
+
+**As medidas, em duas linhas.** Altura de `/` a 390 com guião: 4638 → 3700 px;
+`/en`: 4596 → 3649 px; sem guião, igual ao píxel (4578 e 4536). Nomes de medida à
+vista por baixo da faixa, com guião: 21 → 0 em repouso, 21 → 1 depois de um toque
+ou de um Enter, e 0 depois do botão «voltar»; sem guião, 21 nas duas
+construções. Nos dois motores e nas duas edições.
+
 ## 0 · O que se construiu, em três frases
 
 O F1.1b tinha posto por baixo da faixa as 21 leituras breves em `<details>`
@@ -26,7 +64,7 @@ mesma antes e depois, ao píxel, nos dois motores e nas duas edições.
 
 ## 1 · A altura, antes e depois (390 × 664)
 
-Medido com `\.claude/medir-toque.mjs` (a régua deste bloco, fora do repositório)
+Medido com `.claude/medir-toque.mjs` (a régua deste bloco, fora do repositório)
 sobre as duas construções, em Chromium e em WebKit sem cabeça, depois de
 `document.fonts.ready`.
 
