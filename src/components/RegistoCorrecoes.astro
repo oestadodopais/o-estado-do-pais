@@ -63,6 +63,7 @@
  * que o portão continue a comparar só o valor com o do livro-razão.
  */
 import { entradasDoRegisto, motivoDaEntrada } from '../lib/ledger.mjs';
+import { dataDaCasa } from '../lib/datas.mjs';
 import { KIND_LABELS } from '../data/correcoes.mjs';
 import { prova } from '../lib/prova.mjs';
 import Claim from './Claim.astro';
@@ -131,7 +132,7 @@ const palavraRevisoes =
                 data-correcao-n={String(e.n)}
                 data-correcao-campo="date"
               >
-                {e.date}
+                {dataDaCasa(e.date)}
               </span>
               <span class="log-valor log-valor-antigo">
                 <span class="vh">{s.correcoes.valorAnteriorVh}</span>
@@ -209,7 +210,7 @@ const palavraRevisoes =
                 data-correcao-n={String(e.n)}
                 data-correcao-campo="date"
               >
-                {e.date}
+                {dataDaCasa(e.date)}
               </span>
               <span class="registo-salto">
                 <span class="log-valor-antigo">

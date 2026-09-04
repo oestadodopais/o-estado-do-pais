@@ -46,6 +46,7 @@
  * portas para as linhas próprias.
  */
 import Base from '../layouts/Base.astro';
+import { dataDaCasa } from '../lib/datas.mjs';
 import Claim from '../components/Claim.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import ProsaComLeis from '../components/ProsaComLeis.astro';
@@ -337,7 +338,7 @@ const rotuloDoCriterio = (tipo) =>
                                   data-nonledger="data-da-agenda"
                                   data-agenda={`evento:${evento.id}.data`}
                                 >
-                                  {evento.data}
+                                  {dataDaCasa(evento.data)}
                                 </span>
                               ) : evento.janela ? (
                                 <span class="mono">
@@ -346,14 +347,14 @@ const rotuloDoCriterio = (tipo) =>
                                     data-nonledger="data-da-agenda"
                                     data-agenda={`evento:${evento.id}.janela.inicio`}
                                   >
-                                    {evento.janela.inicio}
+                                    {dataDaCasa(evento.janela.inicio)}
                                   </span>{' '}
                                   {s.agenda.janelaE}{' '}
                                   <span
                                     data-nonledger="data-da-agenda"
                                     data-agenda={`evento:${evento.id}.janela.fim`}
                                   >
-                                    {evento.janela.fim}
+                                    {dataDaCasa(evento.janela.fim)}
                                   </span>
                                 </span>
                               ) : (
@@ -424,7 +425,7 @@ const rotuloDoCriterio = (tipo) =>
                                     data-nonledger="data-da-agenda"
                                     data-agenda={`${item.id}.criterios[${n}].limiar.origem.acedido_em`}
                                   >
-                                    {criterio.limiar.origem.acedido_em}
+                                    {dataDaCasa(criterio.limiar.origem.acedido_em)}
                                   </span>{' '}
                                   <q data-agenda={`${item.id}.criterios[${n}].limiar.origem.excerto`}>
                                     {criterio.limiar.origem.excerto}
@@ -481,7 +482,7 @@ const rotuloDoCriterio = (tipo) =>
                         data-nonledger="data-da-agenda"
                         data-agenda={`${item.id}.proposto_em`}
                       >
-                        {item.proposto_em}
+                        {dataDaCasa(item.proposto_em)}
                       </span>
                     </span>
                     {/* Sem decisão, o rótulo sai com ela: «Decidido pela direção
@@ -495,7 +496,7 @@ const rotuloDoCriterio = (tipo) =>
                           data-nonledger="data-da-agenda"
                           data-agenda={`${item.id}.decidido_em`}
                         >
-                          {item.decidido_em}
+                          {dataDaCasa(item.decidido_em)}
                         </span>
                       </span>
                     ) : (
@@ -508,7 +509,7 @@ const rotuloDoCriterio = (tipo) =>
                         data-nonledger="data-da-agenda"
                         data-agenda={`${item.id}.entrada`}
                       >
-                        {item.entrada}
+                        {dataDaCasa(item.entrada)}
                       </span>
                     </span>
                     <span>
@@ -518,7 +519,7 @@ const rotuloDoCriterio = (tipo) =>
                         data-nonledger="data-da-agenda"
                         data-agenda={`${item.id}.ultima_alteracao`}
                       >
-                        {item.ultima_alteracao}
+                        {dataDaCasa(item.ultima_alteracao)}
                       </span>
                     </span>
                   </p>
@@ -553,7 +554,7 @@ const rotuloDoCriterio = (tipo) =>
                           class="mono"
                           data-nonledger="data-da-agenda"
                           data-agenda={`${item.id}.registo_previo_em`}
-                        >{item.registo_previo_em}</span>{item.registo_previo_estado !== 'selado' ? `, ${s.agenda.registoPrevioPorSelar}` : ''}
+                        >{dataDaCasa(item.registo_previo_em)}</span>{item.registo_previo_estado !== 'selado' ? `, ${s.agenda.registoPrevioPorSelar}` : ''}
                       </p>
                     )}
                   </div>
@@ -570,7 +571,7 @@ const rotuloDoCriterio = (tipo) =>
                             data-nonledger="data-da-agenda"
                             data-agenda={`${item.id}.historico[${n}].data`}
                           >
-                            {entrada.data}
+                            {dataDaCasa(entrada.data)}
                           </span>
                           <span class="agenda-historico-tipo">
                             {s.agenda.historicoTipos[entrada.tipo] ?? entrada.tipo}
@@ -742,7 +743,7 @@ const rotuloDoCriterio = (tipo) =>
                         data-nonledger="data-da-agenda"
                         data-agenda={`evento:${n.evento.id}.data`}
                       >
-                        {n.evento.data}
+                        {dataDaCasa(n.evento.data)}
                       </tspan>
                     ) : (
                       <>
@@ -750,14 +751,14 @@ const rotuloDoCriterio = (tipo) =>
                           data-nonledger="data-da-agenda"
                           data-agenda={`evento:${n.evento.id}.janela.inicio`}
                         >
-                          {n.evento.janela.inicio}
+                          {dataDaCasa(n.evento.janela.inicio)}
                         </tspan>
                         <tspan> {s.agenda.janelaE} </tspan>
                         <tspan
                           data-nonledger="data-da-agenda"
                           data-agenda={`evento:${n.evento.id}.janela.fim`}
                         >
-                          {n.evento.janela.fim}
+                          {dataDaCasa(n.evento.janela.fim)}
                         </tspan>
                       </>
                     )}
@@ -785,7 +786,7 @@ const rotuloDoCriterio = (tipo) =>
                       : `evento:${n.evento.id}.janela.inicio`
                   }
                 >
-                  {n.evento.data ?? n.evento.janela.inicio}
+                  {dataDaCasa(n.evento.data ?? n.evento.janela.inicio)}
                 </span>
               </a>
             ))}
@@ -804,7 +805,7 @@ const rotuloDoCriterio = (tipo) =>
                 <span class="mono agenda-evento-data">
                   {evento.data ? (
                     <span data-nonledger="data-da-agenda" data-agenda={`evento:${evento.id}.data`}>
-                      {evento.data}
+                      {dataDaCasa(evento.data)}
                     </span>
                   ) : (
                     <span>
@@ -813,14 +814,14 @@ const rotuloDoCriterio = (tipo) =>
                         data-nonledger="data-da-agenda"
                         data-agenda={`evento:${evento.id}.janela.inicio`}
                       >
-                        {evento.janela.inicio}
+                        {dataDaCasa(evento.janela.inicio)}
                       </span>{' '}
                       {s.agenda.janelaE}{' '}
                       <span
                         data-nonledger="data-da-agenda"
                         data-agenda={`evento:${evento.id}.janela.fim`}
                       >
-                        {evento.janela.fim}
+                        {dataDaCasa(evento.janela.fim)}
                       </span>
                     </span>
                   )}
@@ -846,7 +847,7 @@ const rotuloDoCriterio = (tipo) =>
                     data-nonledger="data-da-agenda"
                     data-agenda={`evento:${evento.id}.origem_da_data.acedido_em`}
                   >
-                    {evento.origem_da_data.acedido_em}
+                    {dataDaCasa(evento.origem_da_data.acedido_em)}
                   </span>
                 </p>
               )}

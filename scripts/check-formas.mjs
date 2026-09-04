@@ -202,6 +202,26 @@ function campoDaData(linha, campo) {
   if (campo === 'reference_date') return typeof linha.reference_date === 'string' ? linha.reference_date : null;
   if (campo === 'access_date') return typeof linha.access_date === 'string' ? linha.access_date : null;
   if (campo === 'published_at') return typeof linha.published_at === 'string' ? linha.published_at : null;
+  /* AS DUAS DATAS DO ALOJAMENTO (bloco F1.4, 04.09.2026). O instantâneo do
+     ficheiro alojado e o de cada ficheiro sobre que a linha foi contada. Entram
+     aqui porque passaram a escrever-se na forma da casa como as outras três, e
+     este portão é quem as reconfere: sem elas, uma data marcada `data-da-linha`
+     caía no ramo do «a linha não tem esse campo» e fechava a construção. */
+  if (campo === 'document.hosted.snapshot_date') {
+    const d = /** @type {{ hosted?: { snapshot_date?: unknown } }} */ (linha.document ?? {})?.hosted
+      ?.snapshot_date;
+    return typeof d === 'string' ? d : null;
+  }
+  const f = /^document\.computed_over\.files\.(\d+)\.snapshot_date$/.exec(campo);
+  if (f) {
+    const co = /** @type {{ computed_over?: { files?: unknown } }} */ (linha.document ?? {})
+      ?.computed_over;
+    const ficheiros = Array.isArray(co?.files) ? co.files : [];
+    const item = ficheiros[Number(f[1])];
+    if (typeof item !== 'object' || item === null) return null;
+    const d = /** @type {{ snapshot_date?: unknown }} */ (item).snapshot_date;
+    return typeof d === 'string' ? d : null;
+  }
   const m = /^verifications\.(\d+)\.date$/.exec(campo);
   if (!m) return null;
   const lista = Array.isArray(linha.verifications) ? linha.verifications : [];
