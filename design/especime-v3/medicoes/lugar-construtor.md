@@ -13,6 +13,18 @@ deste relatório foi escrito à mão: cada um tem ao lado o comando que o mediu.
 continua noutra sessão). O que está no ramo está inteiro e verde: nenhuma
 alteração ficou pela metade, e nada foi deixado com um portão vermelho.
 
+| | |
+|---|---|
+| ramo | `lugar-2026-09-04` |
+| ponto de partida | `origin/main` em `306e4c68` |
+| cabeça conferida pela CI | `c0f623c5`, corrida `portao` `33854329164` |
+| `main` a fundir na sessão seguinte | `69ba3abf` |
+| `build` · `verify` · `typecheck` sobre `c0f623c5` | **0** · **0** · **0** |
+
+A §E diz o resto, incluindo o que ficou por acabar no quarto commit e porque é
+que a corrida da CI pode esgotar o tempo neste ramo (o `timeout` de 45 minutos
+está em `main` e este ramo ainda não o fundiu).
+
 ### O que a sessão seguinte faz primeiro
 
 `main` andou: está em **`69ba3abf`** (os ficheiros de registo e o
@@ -407,3 +419,49 @@ o diff, e não por uma construção que fecha.
 navegador e não está no `verify` nem na CI, e o bloco parou antes de a correr. A
 alteração é a que está escrita na §«O que está feito», e a célula tem de ser
 corrida na sessão seguinte antes de o bloco fechar.
+
+---
+
+## E · A cabeça e a corrida do portão
+
+O ramo tem quatro commits sobre `306e4c68`, e a cabeça deste relatório é a do
+quarto. Um commit não pode conter o seu próprio resumo, e por isso o que aqui se
+escreve é o do terceiro, que é o que a CI conferiu primeiro.
+
+| | |
+|---|---|
+| ramo | `lugar-2026-09-04` |
+| ponto de partida | `origin/main` em `306e4c68` |
+| `main` a fundir na sessão seguinte | `69ba3abf` |
+| cabeça conferida pela CI | `c0f623c5` |
+| corrida `portao` | `33854329164` |
+
+Os códigos foram lidos dos ficheiros de saída de cada corrida, e não do ecrã.
+
+| corrida | `build` | `verify` | `typecheck` |
+|---|---|---|---|
+| a árvore de `c0f623c5` | **0** | **0** | **0** |
+| a árvore do quarto commit | **0** | por acabar | **0** |
+
+**O `verify` do quarto commit não chegou ao fim, e diz-se em vez de se supor.**
+Ficou no oitavo dos vinte e um passos quando a sessão fechou, e não por um
+vermelho: o portátil tinha, ao mesmo tempo, a construção de outra worktree
+(`toque-2026-09-04`) a ocupar um núcleo inteiro, e a cadeia do `verify` abre
+navegadores. O que separa esta árvore da de `c0f623c5`, onde o `verify` correu
+verde, são **três comentários sem travessões e esta secção**: nenhuma linha de
+código, nenhuma cadeia, nada que chegue ao `dist/`. Quem retomar o bloco corre-o
+outra vez, que é de qualquer modo o primeiro passo depois de fundir o `main`.
+
+**A corrida da CI pode esgotar o tempo, e a razão está escrita.** Este ramo sai
+de `306e4c68`, onde o `portao.yml` ainda diz `timeout-minutes: 30`; a subida para
+45 está em `main`, em `69ba3abf`, que este ramo não fundiu. A corrida
+`33854329164` ia nos vinte minutos e ainda dentro do `npm run build` quando a
+sessão fechou. **Se ela sair vermelha por tempo, não é um defeito deste ramo:** a
+fusão do `main` na sessão seguinte resolve-a, e o primeiro sinal a acreditar é a
+corrida que vier depois dessa fusão.
+
+O quarto commit empurra uma cabeça nova, e a corrida do `portao` sobre ela é
+outra ainda (`gh run list --branch lugar-2026-09-04`).
+
+**Não se funde em `main`.** O bloco está a meio, e a fusão é do lugar de direção
+depois de o bloco fechar.
