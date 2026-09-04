@@ -50,3 +50,5 @@ O lugar de direção é o Claude Fable 5 (briefs, revisão, fusão, política, r
 ## 7 · Como esta política se mantém
 
 Lida por cada sessão a seguir à `VISAO.md`. Uma mudança à tabela, às recusas ou à via da divulgação é do diretor, com data, e regista-se aqui e em `DECISIONS.md`. O lugar de direção pode propor; não pode alterar sozinho o que aqui está.
+
+**Emenda de 04.09.2026 (diretor, na conversa; `DECISIONS.md` §1.98).** As decisões que o plano de fiabilidade reservava ao diretor tomam-se no lugar de direção pela recomendação escrita, registam-se com a data em `DECISIONS.md` e nos pendentes, e o diretor corrige a partir do que vê no sítio. Ficam com ele a hora do advogado e o nome da segunda pessoa. As recusas do §6 e as regras que não se quebram do `CLAUDE.md` do projeto não mudam: dinheiro, chaves, envios a terceiros, dados pessoais e a identidade continuam a ser dele.
