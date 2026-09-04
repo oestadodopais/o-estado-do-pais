@@ -1,9 +1,9 @@
 # F1.4 · os nomes humanos, as datas, o índice do livro-razão · relatório do construtor
 
 *Ramo `nomes-2026-09-04`, tirado de `origin/main` em `86632082` e fundido com
-`8b2bbafc` (o F1.2b) antes de qualquer alteração; `1dbd1cef` (registo, sem
-código) e `741e4915` (o `engines.node` e a regra do Vercel) fundidos antes do
-empurrão. Construtor Claude Opus 5, 04.09.2026. O bloco
+`8b2bbafc` (o F1.2b) antes de qualquer alteração; `1dbd1cef` (registo),
+`741e4915` (o `engines.node` e a regra do Vercel) e `4624db04` (a §1.98, que
+fecha o vocabulário e muda o item 5 deste bloco) fundidos antes do empurrão. Construtor Claude Opus 5, 04.09.2026. O bloco
 é o F1.4 de `design/observatorio/BRIEF-F1.4-nomes-datas-indice.md`, e a origem é
 a auditoria de 02.09 (`AUDITORIA-2026-09-02.md`, linhas 66, 67, 68 e 72). Sem
 travessões na prosa.*
@@ -15,8 +15,8 @@ do diretor ou do motor.** Em números medidos sobre as duas construções:
 **484 entradas** do índice do livro-razão e das páginas de área deixaram de se
 chamar pelo nome da máquina, e **460 ganharam um nome humano**; **28 300 datas
 ISO à vista** passaram a **0**; o índice ganhou uma busca e as suas duas parcelas
-ganharam denominador; «peça» ganhou definição na página onde se conta; a página
-de cada uma das 29 unidades da Carta passa a dizer o que tem.
+ganharam denominador; «peça» saiu do rótulo da contagem das áreas, pela §1.98; a
+página de cada uma das 29 unidades da Carta passa a dizer o que tem.
 
 **Nenhum número novo entrou**, e não é uma afirmação: é uma comparação. O
 inventário dos valores selados e dos motivos declarados de todo o `dist/` foi
@@ -112,12 +112,20 @@ A lista dos campos que são datas está declarada em `src/lib/datas.mjs`
 tudo o que parece uma data converteria uma edição de documento («2025-12») e um
 localizador que a fonte escreveu assim.
 
-Três outros portões aprenderam a mesma regra, cada um com a sua cópia local
-(nunca a função do gabarito, que confirmaria a função e não o registo):
+Quatro outras conferências aprenderam a mesma regra, cada uma com a sua cópia
+local (nunca a função do gabarito, que confirmaria a função e não o registo):
 
 * `gate:html`, para a data de uma entrada do registo de correções
   (`data-correcao-campo="date"` passa do modo `exacto` ao modo `data`);
 * `gate:html`, para os campos do registo da agenda que SÃO uma data inteira;
+* `gate:html`, para uma chave da PROVA cujo valor é uma data. Hoje há uma,
+  `painel_reconferido_em`, e era a última data ISO à vista do sítio depois de as
+  outras 28 300 terem convertido: saía no Método, dentro do instrumento do
+  mecanismo e na linha da regra. O comentário do portão dizia «uma data é ISO», e
+  passa a dizer o que a §1.91 diz;
+* `gate:html`, para o mesmo valor DENTRO de um cartão de partilha, porque um
+  cartão é a mesma coisa vista de fora e duas grafias da mesma data seriam duas
+  casas;
 * `check:formas` F1, que ganhou os dois caminhos do instantâneo do alojamento.
 
 **O período de referência continua como a fonte o publica.** `dataDaCasa()`
@@ -175,17 +183,27 @@ vivem em `src/views/LivroView.astro`. As três que viviam no `Masthead`
 hoje são as duas leituras da agenda, que têm a sua página. Um ficheiro que o
 F1.2b também toca ficou por tocar, e é uma fusão a menos.
 
-### 2.5 · «Peça» definida (item 5)
+### 2.5 · «Peça» sai (item 5, com a §1.98 a decidir qual das duas saídas)
 
-A palavra ganha uma definição na página onde aparece («Uma peça é um trabalho,
-um estudo de dados ou uma medida.» · «A piece is a study, a data study or a
-measure.»), e as três palavras da definição são os três títulos de grupo que a
-página de uma área já usa. A definição não acrescenta vocabulário: desfaz.
+O brief dava duas saídas: definir a palavra na página onde aparece, ou tirá-la e
+pôr uma que o inventário já tenha. Este bloco tinha escolhido a primeira e
+escrito a definição; a **`DECISIONS.md` §1.98, de 04.09.2026, chegou a meio** e
+escolhe a segunda por todo o sítio: o vocabulário fechado da casa tem «estudo»
+para um trabalho de autor, «medida» para uma medida e «linha do livro-razão» para
+uma linha, e «peça» e «indicador» saem.
 
-A alternativa era tirar a palavra, e não havia por onde: a contagem é uma só
-sobre três famílias, e o inventário da voz não tem substantivo que as cubra às
-três. Trocar uma palavra por confirmar por outra por confirmar não era ganhar
-nada.
+**A contagem passa a dizer o que conta.** `areasComPecas()` soma três famílias:
+os trabalhos, os estudos de dados e as medidas de cada área. As três dizem-se com
+duas palavras do vocabulário, e é isso que o rótulo passa a dizer: «Saúde ·
+6 estudos e medidas». No singular, «estudo ou medida», porque com uma só não se
+sabe qual das duas é e escolher uma era adivinhar.
+
+**Duas chaves mudaram de texto, e nenhuma chave nova entrou.** `areas.contaUma` e
+`areas.contaMuitas` já existiam; a definição que este bloco tinha escrito
+(`areas.pecaDefinicao`) saiu com a classe do CSS e com as duas linhas do
+inventário. A passagem por todo o sítio (o Método, o Sobre, os documentos
+alojados) é do **bloco F1.10**, e a régua deste bloco conta essas 16 ocorrências
+à parte, para que não fiquem em silêncio.
 
 ### 2.6 · O marcador com um destino (item 6)
 
@@ -257,7 +275,7 @@ correu com `--contra` sobre o «antes», que é o que fecha o G10.
 | G1 | o nome de uma medida não é o identificador | **484 de 560 entradas** encabeçadas pelo identificador (129 no índice do livro-razão e 113 nas páginas de área, em cada edição); 76 com nome; 0 identificadores em metadado | **0 entradas** encabeçadas pelo identificador; **460 com nome**; 100 sem nome (26 no índice e 24 nas páginas de área, por edição: as derivadas e as que só têm o marcador por título de documento); **560 identificadores em metadado**; 0 nomes com a forma de um identificador |
 | G2 | datas ISO à vista | **28 300** elementos cujo texto inteiro é uma data ISO, mais 4 em prosa por marcar | **0** e **0** |
 | G3 | a busca do índice | **0** campos de busca em `/livro-razao` e `/en/ledger` | **1** em cada, dentro de um `<form method="get">` com destino, nome de campo e rótulo preso; e a filtrar no navegador: **149 → 25** com «divida», **0** com uma palavra que não existe, com o estado vazio aceso, nas duas edições |
-| G4 | «peça» com definição | **18** ocorrências como rótulo de contagem (nove por edição), **0** com definição na página | **20** ocorrências (as nove de cada edição mais a da própria definição), **todas** com a definição na mesma página |
+| G4 | «peça» com definição, ou 0 ocorrências | **18** ocorrências como rótulo de contagem (nove por edição) | **0**: a palavra saiu do rótulo pela §1.98 (§2.5). As 16 ocorrências das outras páginas (o Método, o Sobre, três documentos alojados) contam-se à parte na régua e são do bloco F1.10 |
 | G5 | as contagens com denominador | **0 de 2** parcelas com denominador, nas duas edições | **2 de 2** nas duas edições |
 | G6 | o marcador com um destino | **já verde**: 444 ligações do marcador em «pt» (todas para `/a-verificar`), 444 em «en» (todas para `/en/to-verify`), 78 marcadores dentro de um selo e 0 escritos sem marca | igual, e a cadeia escrita à mão saiu do gabarito antes de alguma vez se render |
 | G7 | sem transbordo a 390 nas páginas de linha | *(não medido: a régua nasceu com este bloco)* | **0 px** de transbordo em **60 páginas** medidas no WebKit a 390 × 664 (as 10 com o endereço mais longo, mais 50 a passo fixo sobre as restantes) |
@@ -376,6 +394,12 @@ sem o reescrever.
 | as capturas | `design/especime-v3/capturas/nomes-2026-09-04/`, 32 PNG (escala 2, 390 × 664 e 1 280, as duas edições do índice, de uma área, do índice das áreas, de uma linha e de uma unidade da Carta). A linha capturada é a do endereço mais longo, `pib-pc-acores-2024`, que é onde o item 7 se vê |
 | as chaves novas, PT e EN | `design/especime-v3/CHAVES-EN.md`, secção do bloco F1.4 |
 | as quatro cadeias novas do inventário | `design/especime-v3/INVENTARIO-FRASES.md`, bloco `nomes`, com a entrada em `critica/REVISOES-DO-INVENTARIO.md` |
+
+**A §1.98 chegou a meio do bloco e mudou uma decisão que já estava tomada.** O
+item 5 tinha a definição escrita, com a chave, a classe da folha e as duas linhas
+do inventário; o vocabulário fechado tirou a palavra e as quatro coisas saíram
+com ela. Fica dito aqui porque quem ler o diff vai ver a definição a entrar e a
+sair no mesmo ramo, e a razão não está no código: está na decisão.
 
 **A leitura a frio deste bloco ainda não correu**, e a entrada do inventário
 di-lo por escrito («por ler»). É a régua que fecha o que ela fecharia sozinha, e

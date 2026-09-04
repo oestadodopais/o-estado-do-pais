@@ -36,7 +36,11 @@
  *      `/livro-razao` e em `/en/ledger`, dentro de um `<form method="get">` com
  *      destino, com nome de campo e com um rótulo preso a ele. Com
  *      `--navegador`, a filtragem é medida no navegador.
- * I4 (G4) · **a palavra contada tem definição na página onde aparece.**
+ * I4 (G4) · **a palavra retirada não está no rótulo da contagem.** O brief dava
+ *      duas saídas para «peça», definir ou substituir; a `DECISIONS.md` §1.98
+ *      escolheu a segunda por todo o sítio, e esta célula mede-a onde este bloco
+ *      a aplicou. As ocorrências das outras páginas contam-se à parte, e são do
+ *      bloco F1.10.
  * I5 (G5) · **as contagens do índice com denominador**, nas duas edições.
  * I6 (G6) · **o marcador com um destino só.** Todas as ligações do marcador de
  *      uma edição apontam para a mesma página, e um marcador que NÃO é ligação
@@ -52,7 +56,8 @@
  * ---------------------------------------------------------------------------
  * AS CÓPIAS LOCAIS, E PORQUE SÃO CÓPIAS
  * ---------------------------------------------------------------------------
- * A forma da data, a cadeia do marcador e a frase que define a palavra contada
+ * A forma da data, a cadeia do marcador, as duas páginas do marcador e a palavra
+ * que a §1.98 retirou
  * estão ESCRITAS AQUI, e não importadas do sítio. É a disciplina que
  * `scripts/gate-html.mjs` escreve por extenso: uma régua que leia a regra pela
  * mesma função que a escreve confirma a função, não o sítio. Uma cadeia que mude
@@ -101,12 +106,17 @@ const MARCADOR = '[a verificar]';
 const PORTA_DO_MARCADOR = { pt: '/a-verificar', en: '/en/to-verify' };
 /** A forma de um identificador de linha: minúsculas, algarismos e hífenes. */
 const FORMA_DE_SLUG = /^[a-z0-9]+(?:-[a-z0-9.]+)+$/;
-/** A palavra contada em `/areas`, e a frase que a define, nas duas edições. */
-const PALAVRA_CONTADA = { pt: /\bpeças?\b/i, en: /\bpieces?\b/i };
-const DEFINICAO = {
-  pt: 'Uma peça é um trabalho, um estudo de dados ou uma medida.',
-  en: 'A piece is a study, a data study or a measure.',
-};
+/**
+ * A PALAVRA RETIRADA PELA `DECISIONS.md` §1.98 (04.09.2026).
+ *
+ * O vocabulário fechado da casa tem «estudo», «medida» e «linha do livro-razão»;
+ * «peça» e «indicador» saem. A auditoria de 02.09 tinha apanhado a palavra no
+ * índice das áreas de governo, nove vezes por edição, como o rótulo de uma
+ * contagem, e é aí que este bloco a tira. As duas cadeias estão escritas aqui e
+ * não importadas: a régua tem de ficar vermelha no dia em que a palavra voltar,
+ * e não acompanhá-la.
+ */
+const PALAVRA_RETIRADA = { pt: /\bpeças?\b/i, en: /\bpieces?\b/i };
 /**
  * As marcas que dizem «este texto não é prosa da casa: é uma transcrição».
  * É a lista de `scripts/medir-defeitos.mjs` (`ORIGEM_DECLARADA`), escrita outra
@@ -222,7 +232,7 @@ celula('I1', 'o nome de uma medida não é o identificador', (falhas) => {
     }
   }
   medida.I1 = { paginas: alvo.length, itens, com_nome: comNome, sem_nome: semNome, ids_em_metadado: idEmMetadado };
-  return `${alvo.length} página(s) · ${itens} entrada(s) · ${comNome} com nome · ${semNome} sem nome (linhas derivadas, sem fonte e sem documento) · ${idEmMetadado} identificador(es) em metadado`;
+  return `${alvo.length} página(s) · ${itens} entrada(s) · ${comNome} com nome · ${semNome} sem nome (as derivadas, que não têm fonte nem documento, e as que só têm o marcador por título de documento) · ${idEmMetadado} identificador(es) em metadado`;
 });
 
 /* --------------------------------------------------------------------- I2 */
@@ -313,18 +323,16 @@ celula('I3', 'a busca do índice é um formulário', (falhas) => {
 });
 
 /* --------------------------------------------------------------------- I4 */
-celula('I4', 'a palavra contada tem definição onde aparece', (falhas) => {
-  let ocorrencias = 0;
-  let paginasComPalavra = 0;
+celula('I4', 'a palavra retirada não está no rótulo da contagem', (falhas) => {
+  let noRotulo = 0;
   let foraDoAmbito = 0;
   for (const pag of paginas) {
     const raiz = dom(pag);
-    const corpo = raiz;
-    /* A PALAVRA CONTA QUANDO É DA CASA. Dentro de uma transcrição ela é da fonte,
-       e a casa não edita o que transcreve: um documento alojado que escreva
-       «peça» não põe vocabulário nenhum na boca do sítio. É a mesma fronteira
-       que `scripts/medir-defeitos.mjs` usa para separar a prosa da casa do
-       resto. */
+    /* A PALAVRA CONTA QUANDO É DA CASA. Dentro de uma transcrição ela é da
+       fonte, e a casa não edita o que transcreve: um documento alojado que
+       escreva «peça» não põe vocabulário nenhum na boca do sítio. É a mesma
+       fronteira que `scripts/medir-defeitos.mjs` usa para separar a prosa da
+       casa do resto. */
     const marcados = new Set();
     for (const el of raiz.querySelectorAll(MARCA_DE_TRANSCRICAO)) {
       marcados.add(el);
@@ -337,35 +345,33 @@ celula('I4', 'a palavra contada tem definição onde aparece', (falhas) => {
       if (marcados.has(n)) return;
       for (const f of n.childNodes ?? []) anda(f);
     };
-    anda(corpo);
-    const t = partes.join(' ').replace(/\s+/g, ' ');
-    const re = PALAVRA_CONTADA[pag.lang];
-    const achados = t.match(new RegExp(re.source, 'gi'));
+    anda(raiz);
+    const re = PALAVRA_RETIRADA[pag.lang];
+    const achados = (partes.join(' ').replace(/\s+/g, ' ')).match(new RegExp(re.source, 'gi'));
     if (!achados) continue;
     /**
-     * ONDE A PALAVRA É O RÓTULO DE UMA CONTAGEM, e é aí que a auditoria a
-     * apanhou: o índice das áreas de governo escreve «Saúde · 1 peça» nove
-     * vezes. Fora dali ela aparece em três sítios que este bloco não governa, e
-     * a régua conta-os à parte em vez de os calar:
+     * ESTE BLOCO TIRA A PALAVRA ONDE ELA ERA O RÓTULO DE UMA CONTAGEM, que é
+     * onde a auditoria a apanhou: o índice das áreas de governo escrevia «Saúde
+     * · 1 peça» nove vezes. Fora dali ela vive em três sítios que o F1.4 não
+     * governa, e a régua conta-os à parte em vez de os calar:
      *
-     *   · `/metodo` e `/sobre` são a casa do método, e a Emenda 15 isenta-os por
-     *     escrito: é onde o vocabulário da casa se pode explicar;
-     *   · um documento alojado é o texto da FONTE, e a casa não edita o que
-     *     transcreve.
+     *   · `/metodo` e `/sobre`, que são a casa do método e que a Emenda 15
+     *     isenta por escrito;
+     *   · um documento alojado, que é o texto da FONTE.
+     *
+     * A passagem por todo o sítio é do bloco F1.10, e é ele que leva estes 16 a
+     * zero. Enquanto não for, o número está aqui e não é uma surpresa.
      */
     const eOIndiceDasAreas = pag.rota === '/areas' || pag.rota === '/en/areas';
     if (!eOIndiceDasAreas) {
       foraDoAmbito += achados.length;
       continue;
     }
-    paginasComPalavra++;
-    ocorrencias += achados.length;
-    if (!texto(corpo).includes(DEFINICAO[pag.lang])) {
-      falhas.push(`${pag.rota}: ${achados.length} ocorrência(s) da palavra contada sem a definição na mesma página.`);
-    }
+    noRotulo += achados.length;
+    falhas.push(`${pag.rota}: ${achados.length} ocorrência(s) da palavra retirada pela §1.98.`);
   }
-  medida.I4 = { paginas: paginasComPalavra, ocorrencias, fora_do_ambito: foraDoAmbito };
-  return `${ocorrencias} ocorrência(s) como rótulo de contagem em ${paginasComPalavra} página(s), todas com a definição na mesma página · ${foraDoAmbito} noutras páginas (o Método, o Sobre e os documentos alojados, fora do âmbito deste bloco)`;
+  medida.I4 = { no_rotulo_da_contagem: noRotulo, fora_do_ambito: foraDoAmbito };
+  return `${noRotulo} ocorrência(s) no rótulo da contagem das áreas · ${foraDoAmbito} noutras páginas (o Método, o Sobre e os documentos alojados, que são do bloco F1.10)`;
 });
 
 /* --------------------------------------------------------------------- I5 */

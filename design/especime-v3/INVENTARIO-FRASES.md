@@ -839,8 +839,6 @@ exclusão que a subetapa 3c escreveu para a lista por distritos.
 | conteudo | 2916 claims · 330 of 2916 calculated · 2767 of 2916 municipality rows | nomes | viva | — |
 | navegacao | Nenhuma linha do índice tem essas palavras. | nomes | viva | — |
 | navegacao | No row in this index matches those words. | nomes | viva | — |
-| conteudo | Uma peça é um trabalho, um estudo de dados ou uma medida. | nomes | viva | — |
-| conteudo | A piece is a study, a data study or a measure. | nomes | viva | — |
 | autorreferencia | O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos anteriores. É a lei que o define, não este sítio. | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
 | autorreferencia | The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue. The law defines it, not this site. | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
 

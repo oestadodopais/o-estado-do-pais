@@ -966,14 +966,23 @@ export const STRINGS = {
          A lede, que definia o que uma área é, saiu com ele. */
       h1: 'Por área de governo',
       /* Uma ou muitas, escolhidas na construção com a contagem que o portão vai
-         reconferir. Sem plural inventado. */
-      contaUma: ' peça',
-      contaMuitas: ' peças',
-      /* A DEFINIÇÃO DA PALAVRA CONTADA (bloco F1.4, 04.09.2026), na página onde
-         ela aparece nove vezes. As três palavras são os três títulos de grupo
-         que a página de uma área usa, e por isso a linha não acrescenta
-         vocabulário: explica o que a contagem conta. */
-      pecaDefinicao: 'Uma peça é um trabalho, um estudo de dados ou uma medida.',
+         reconferir. Sem plural inventado.
+
+         «PEÇA» SAIU (DECISIONS.md §1.98, 04.09.2026). O vocabulário fechado da
+         casa tem «estudo» para um trabalho de autor, «medida» para uma medida e
+         «linha do livro-razão» para uma linha; «peça» e «indicador» saem. Esta
+         contagem soma as três famílias que a página de uma área lista (os
+         trabalhos, os estudos de dados e as medidas), e as três dizem-se com
+         duas palavras do vocabulário: são estudos e são medidas. A forma
+         singular é «estudo ou medida» porque com uma só não se sabe qual das
+         duas é, e escolher uma seria adivinhar.
+
+         O bloco F1.4 tinha DEFINIDO a palavra nesta página, que era a outra
+         saída que o brief dava; a decisão do diretor chegou a meio do bloco e
+         fecha-a: a palavra sai, e com ela sai a definição. O resto do sítio é do
+         bloco F1.10. */
+      contaUma: ' estudo ou medida',
+      contaMuitas: ' estudos e medidas',
       /* A cauda do `<head>` de uma área, composta com o nome dela, como as das
          páginas de região e de concelho. A DESCRIÇÃO DEIXOU DE SER UMA FRASE:
          é o nome da área, e mais nada. As duas cadeias que a compunham saíram a
@@ -2223,9 +2232,8 @@ export const STRINGS = {
       metaTitle: 'Government areas · O Estado do País',
       eyebrow: 'Government areas',
       h1: 'By area of government',
-      contaUma: ' piece',
-      contaMuitas: ' pieces',
-      pecaDefinicao: 'A piece is a study, a data study or a measure.',
+      contaUma: ' study or measure',
+      contaMuitas: ' studies and measures',
       metaCauda: 'government area · O Estado do País',
       tipo: 'area of the XXV Constitutional Government',
       trabalhosK: 'The studies',
