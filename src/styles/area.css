@@ -32,15 +32,6 @@
   color: var(--muted);
 }
 
-/* A linha que define a palavra contada (bloco F1.4). É prosa, e compõe-se como
-   prosa: a mesma letra e o mesmo corpo da lede das outras páginas, sem caixa e
-   sem cor. */
-.areas-definicao {
-  margin-top: 10px;
-  max-width: 52ch;
-  color: var(--muted);
-}
-
 /* --------------------------------------------------------------- o índice */
 
 /* A mesma fila de nomes do índice das 29 unidades, com a altura de alvo da casa

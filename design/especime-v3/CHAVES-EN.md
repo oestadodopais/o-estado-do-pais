@@ -1098,18 +1098,27 @@ silêncio é a frase, e é o inventário que o impede.
 
 ### Bloco F1.4 · os nomes, as datas, o índice · 04.09.2026
 
-*Quatro chaves novas e nenhuma renomeada. Uma é um separador de duas letras entre
-dois algarismos declarados; duas são a mobília da busca do índice do livro-razão;
-a quarta é a definição da palavra que o índice das áreas conta. O botão da busca
-NÃO é uma chave nova: reutiliza `ambito.pesquisaSubmeter`, que é a palavra do
-botão da pesquisa dos concelhos e a mesma acção.*
+*Três chaves novas e duas mudadas de texto. Uma das novas é um separador de duas
+letras entre dois algarismos declarados; as outras duas são a mobília da busca do
+índice do livro-razão. O botão da busca NÃO é uma chave nova: reutiliza
+`ambito.pesquisaSubmeter`, que é a palavra do botão da pesquisa dos concelhos e a
+mesma acção.*
 
 | chave | pt | en | nota |
 |---|---|---|---|
 | `livro.contaDe` | de | of | o denominador das duas parcelas do índice do livro-razão: «330 de 2916 calculadas». Os dois algarismos são a mesma chave da prova rendida duas vezes, com a mesma marca e a mesma porta; esta cadeia é a única palavra da forma. Em inglês é «of» e não «out of», como o `inicio.faixa.de` do F1.1 e pela mesma razão: é a forma curta de uma legenda de aparelho |
 | `livro.buscaRotulo` | Procurar por nome, identificador ou fonte | Search by name, identifier or source | o rótulo do campo de busca do índice. Diz o que se escreve e por que campos a comparação se faz, que é o que um rótulo de campo tem de dizer. O inglês nomeia os mesmos três campos pelos nomes que o resto da edição inglesa já lhes dá («name», «identifier», «source») |
 | `livro.buscaSemResultado` | Nenhuma linha do índice tem essas palavras. | No row in this index matches those words. | o estado vazio da busca, que só o guião acende (IDENTIDADE §7). Diz «do índice» e não «do livro-razão», porque é o índice que a busca filtra: as 2 767 linhas dos concelhos saíram desta lista pela decisão D6 e têm índice próprio |
-| `areas.pecaDefinicao` | Uma peça é um trabalho, um estudo de dados ou uma medida. | A piece is a study, a data study or a measure. | a definição da palavra que a contagem de cada área usa. As três palavras são, nas duas edições, os três títulos de grupo que a página de uma área já escreve (`areas.trabalhosK`, `areas.conjuntosK`, `areas.medidasK`): a definição não traduz vocabulário novo, aponta para o que já está escrito |
+
+*A quarta chave que este bloco chegou a criar, `areas.pecaDefinicao`, não existe:
+a `DECISIONS.md` §1.98 chegou a meio do bloco e fechou o vocabulário sem «peça»,
+o que troca a saída do item 5 do brief (definir a palavra) pela outra (tirá-la).
+O que mudou foram duas chaves que já existiam, e o texto delas:*
+
+| chave | pt (antes → depois) | en (antes → depois) | nota |
+|---|---|---|---|
+| `areas.contaUma` | ` peça` → ` estudo ou medida` | ` piece` → ` study or measure` | a contagem de cada área soma os trabalhos, os estudos de dados e as medidas, e as três famílias dizem-se com duas palavras do vocabulário fechado. Com uma só não se sabe qual das duas é, e escolher uma era adivinhar |
+| `areas.contaMuitas` | ` peças` → ` estudos e medidas` | ` pieces` → ` studies and measures` | o plural das duas, na mesma ordem em que a página lista os grupos |
 
 **Nenhuma chave passou a `retirada`.** As duas contagens do índice do livro-razão
 mudaram de texto no `INVENTARIO-FRASES.md` (ganharam o denominador) e continuam
