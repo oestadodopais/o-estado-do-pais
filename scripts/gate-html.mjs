@@ -4633,6 +4633,106 @@ for (const file of ficheirosHtml(DIST)) {
           `Estar na página e não ser vista é o mesmo que não estar.`,
       );
     }
+
+    /**
+     * -------------------------------------------------------------------
+     * E DENTRO DE UM MARCO (bloco F1.7, item 1, 04.09.2026)
+     * -------------------------------------------------------------------
+     * Existir e ser vista não chegava. Medido a 04.09.2026 sobre `dist/`: 739
+     * das 7 237 páginas tinham a porta no vão entre o `</main>` e o
+     * `<footer>`, isto é, dentro de marco nenhum. Quem lê uma página que não
+     * conhece com um leitor de ecrã salta de marco em marco: o `main` acabava
+     * antes da porta e o `contentinfo` começava depois dela, e a porta ficava
+     * numa terra de ninguém que só se encontra lendo a página de cima a baixo.
+     * A auditoria de 02.09 contou 19 nas suas 30 páginas.
+     *
+     * OS MARCOS QUE SERVEM SÃO DOIS, e o `<main>` não é um deles (segunda
+     * passagem, 04.09.2026, achado Blocking 4 da leitura a frio). A primeira
+     * forma desta regra aceitava `main`, e com isso dava por boas as 6 482
+     * páginas que punham a porta na sua coluna de aparelho — nas páginas de
+     * linha, dentro de um `<main><aside>`. O brief não pede «dentro de um
+     * marco»: pede «`<footer>` ou `<nav aria-label>`», e a diferença é a que se
+     * ouve: saltar para o `main` leva ao corpo inteiro da página, não à porta.
+     *
+     * Ficam o `<footer>` (o `contentinfo`, que é onde quem responde pela página
+     * se anuncia) e um `<nav>` COM NOME. Um `<div>` não serve, e uma `<section>`
+     * sem nome também não: uma `section` só é marco quando tem nome acessível, e
+     * uma `region` anónima não aparece na lista de marcos de ninguém.
+     */
+    const marco = porta.closest(
+      'footer,[role="contentinfo"],nav[aria-label],nav[aria-labelledby]',
+    );
+    if (!marco) {
+      const dentroDeMain = porta.closest('main,[role="main"]');
+      err(
+        `a porta de correcções não está dentro do <footer> nem de um <nav> com nome` +
+          (dentroDeMain ? `, e um <main> não conta` : '') +
+          `.\n      O brief F1.7 diz «<footer> ou <nav aria-label>»: saltar para o <main> leva ` +
+          `ao corpo inteiro da página, e não à porta.`,
+      );
+    }
+  }
+
+  /**
+   * ---------------------------------------------------------------------
+   * UM SÓ `<h1>` POR PÁGINA (bloco F1.7, item 3, 04.09.2026)
+   * ---------------------------------------------------------------------
+   * A regra já existia para os documentos alojados (`verificaDocumento()`) e
+   * não existia para as páginas da casa. Medido a 04.09.2026: 7 235 das 7 237
+   * páginas tinham exactamente um, e as duas que não tinham eram as duas
+   * primeiras páginas, com o nome do sítio em `<h1>` no cabeçalho e a manchete
+   * em `<h1>` no corpo. Um documento com dois `<h1>` não diz de que trata.
+   *
+   * A regra é a contagem e mais nada: qual dos dois desce de nível é uma
+   * decisão de desenho, e está escrita onde ela se toma
+   * (`src/components/Masthead.astro`). O que este portão garante é que a
+   * pergunta não volte a ficar sem resposta numa vista nova.
+   */
+  const titulosDaPagina = body0.querySelectorAll('h1');
+  if (titulosDaPagina.length !== 1) {
+    err(
+      `esta página tem ${titulosDaPagina.length} \`<h1>\`; tem de ter exactamente um.\n` +
+        `      ${titulosDaPagina
+          .map((h) => `«${normalizeWhitespace(decodeEntities(textoDe(h))).slice(0, 60)}»`)
+          .join(' · ') || '(nenhum)'}`,
+    );
+  }
+
+  /**
+   * ---------------------------------------------------------------------
+   * `aria-expanded` SÓ ONDE O GUIÃO O ACOMPANHA (bloco F1.7, item 10)
+   * ---------------------------------------------------------------------
+   * Um `aria-expanded` escrito no HTML servido diz «fechado» para sempre a
+   * quem lê o DOM, a menos que alguma coisa o mude quando o estado muda. A
+   * casa tem exactamente um sítio assim, e tem-no com a razão medida e
+   * escrita: um `<summary>` cujo `<details>` abre um IRMÃO e não um filho
+   * (`src/components/Masthead.astro`, `public/js/tema.js`), onde a associação
+   * de árvore se perde e se recupera por `aria-controls`. O guião acompanha o
+   * atributo em todo o `details > summary[aria-controls]`, e é essa a forma
+   * que esta regra deixa passar.
+   *
+   * MEDIDO ANTES DE ESCRITO (04.09.2026, `dist/` fora dos documentos
+   * alojados): 7 221 ocorrências, todas nessa forma, zero fora dela. A regra
+   * não corrige nada hoje; fecha a porta a um `aria-expanded` posto à mão numa
+   * vista nova, que é o feitio do defeito que a auditoria de 02.09 nomeou.
+   *
+   * Os documentos alojados não passam por aqui (o ramo devolve antes): o que
+   * está lá dentro é deles, com o guião deles, e a casa não lhes toca.
+   */
+  for (const el of body0.querySelectorAll('[aria-expanded]')) {
+    const etiqueta = String(el.rawTagName ?? '').toLowerCase();
+    const doGuiao =
+      etiqueta === 'summary' &&
+      el.hasAttribute('aria-controls') &&
+      String(el.parentNode?.rawTagName ?? '').toLowerCase() === 'details';
+    if (!doGuiao) {
+      err(
+        `um <${etiqueta}> leva \`aria-expanded\` e o guião da casa não o acompanha.\n` +
+          `      O guião só acompanha \`details > summary[aria-controls]\` ` +
+          `(public/js/tema.js). Um <details> nativo não precisa do atributo, e um comando ` +
+          `que precise dele tem de o ter acompanhado: um atributo parado mente sobre o estado.`,
+      );
+    }
   }
 
   /**
@@ -7146,12 +7246,48 @@ for (const [nomePng, registo] of REGISTOS_DOS_CARTOES) {
         errC(`o valor "${v.texto}" diz vir do campo "${v.campo}" de "${v.linha}", que está vazio.`);
         continue;
       }
-      if (formaDoValor(String(doDisco)) !== formaDoValor(v.texto)) {
+      /**
+       * ---------------------------------------------------------------------
+       * DUAS CADEIAS, DUAS CONFERÊNCIAS (I96, bloco F1.7, 04.09.2026)
+       * ---------------------------------------------------------------------
+       * `livro` é o campo tal como o livro-razão o guarda, e `texto` é o que o
+       * cartão DESENHOU. Para todos os campos menos um são a mesma cadeia; a
+       * UNIDADE, na edição inglesa, é a da tabela da casa
+       * (`src/i18n/unidades.mjs`), porque a página ao lado já escreve «people»
+       * e um cartão que escrevesse «pessoas» dizia noutra língua o que a página
+       * diz.
+       *
+       * As duas conferências são precisas, e uma sozinha não chegava:
+       *
+       *   · `livro` contra o disco, carácter a carácter — é a conferência que
+       *     já existia, e é ela que impede um cartão de mentir sobre a linha;
+       *   · `texto` contra o que a tabela manda para AQUELA edição, recalculado
+       *     aqui pelo portão. Sem ela, `texto` podia ser qualquer coisa: a
+       *     única cadeia conferida seria uma que já não estava no cartão.
+       *
+       * `livro` pode faltar num registo antigo, e aí vale `texto`, que era o
+       * que esse registo tinha: um portão que rebentasse com um registo de uma
+       * construção anterior fechava a porta a si próprio.
+       */
+      const doRegisto = v.livro ?? v.texto;
+      if (formaDoValor(String(doDisco)) !== formaDoValor(String(doRegisto))) {
         errC(
           `um valor do cartão não é o da sua linha.\n` +
-            `      cartão:      "${v.texto}"\n` +
+            `      cartão:      "${doRegisto}"\n` +
             `      ${v.linha}.${v.campo}: "${String(doDisco)}"\n` +
             `      Um cartão viaja sem a página: um número velho nele fica velho para sempre.`,
+        );
+      }
+      const desenhado =
+        v.campo === 'unit'
+          ? unidadeDaLinha(claim.unit, registo.edicao).texto
+          : String(doDisco);
+      if (formaDoValor(desenhado) !== formaDoValor(String(v.texto))) {
+        errC(
+          `o cartão desenhou "${v.texto}" onde a casa manda escrever "${desenhado}" na edição ` +
+            `"${registo.edicao}".\n` +
+            `      A unidade de uma linha é um rótulo, e a tabela de src/i18n/unidades.mjs diz ` +
+            `qual é em cada edição (I92, I96).`,
         );
       }
       if ((v.unidade ?? null) !== (claim.unit ?? null)) {

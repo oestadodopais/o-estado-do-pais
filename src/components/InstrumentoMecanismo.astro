@@ -158,7 +158,11 @@ for (const no of [...cadeia, ...retornos]) {
 ---
 
 <section class="instr mecanismo" data-instrumento="mecanismo">
-  <div class="svg-scroll">
+  {/* A caixa do desenho desloca-se de lado abaixo de 780 px, e passa a
+      alcançar-se com o teclado (bloco F1.7, item 2). O nome não é uma cadeia
+      nova: é o `<title>` que o próprio `<svg>` já declara, referido pelo `id`
+      que ele já tem. */}
+  <div class="svg-scroll" tabindex="0" role="region" aria-labelledby="mecanismo-titulo">
     <svg
       class="mecanismo-svg"
       viewBox={`0 0 ${W} ${H}`}

@@ -1349,6 +1349,33 @@
   text-underline-offset: 3px;
 }
 
+/* ---------------------------------------------------------------------------
+ * OS ALVOS DE TEXTO A 32 px NA COLUNA (I105, bloco F1.7, 04.09.2026)
+ * ---------------------------------------------------------------------------
+ * A I105 mediu quatro alvos da primeira página a 1024 e a 1280: «O livro-razão
+ * →» a 14 px, «a página inteira →» a 19,2, o endereço de correio a 19 e «O
+ * registo de correções →» a 24. Abaixo de 1024 a rede da Emenda 20c dá-lhes 44
+ * px (e desde este bloco dá-lhos até 1023, e não até 640); a partir de 1024 a
+ * emenda deixa 32 px, que é o alvo do ponteiro, e nenhuma regra lhos dava.
+ *
+ * 32 px E NÃO 44, porque é o que a emenda escreve para a largura da coluna, e
+ * porque 44 px numa linha de 12 px de tipo transborda para a linha de cima e
+ * para a de baixo — é o que a folha já mediu três vezes noutros sítios («uma
+ * caixa de 44px numa linha de 19 transborda para a linha de baixo»).
+ *
+ * O ASPETO NÃO MUDA: `inline-flex` com `align-items: center` cresce a caixa à
+ * volta do texto e deixa o texto onde estava, que é a mesma técnica das regras
+ * dos 44 px em baixo.
+ */
+@media (min-width: 1024px) {
+  .lig,
+  .porta-abrir {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+  }
+}
+
 /* --------------------------------------------------------------------- banda */
 
 .banda {
@@ -2229,7 +2256,10 @@ a.porta:hover .porta-abrir {
     display: flex;
     align-items: center;
     gap: 10px;
-    min-height: 44px;
+    /* O `min-height: 44px` saiu daqui para a rede dos 44 px, no fim desta folha
+       (I104, bloco F1.7): o alvo vale abaixo de 1024 e não abaixo de 641, e uma
+       regra de alvo dentro do bloco do desenho móvel é exactamente o buraco que
+       a issue mediu. O que fica aqui é o desenho. */
     padding: 6px 0;
     cursor: pointer;
     list-style: none;
@@ -2357,7 +2387,7 @@ a.porta:hover .porta-abrir {
   .seg {
     flex: 0 0 auto;
     text-align: center;
-    min-height: 44px;
+    /* O alvo saiu para a rede dos 44 px, no fim desta folha (I104). */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2629,7 +2659,12 @@ a.porta:hover .porta-abrir {
  * `.lig` da lista social («O livro-razão →») está sozinho na sua fila e por isso
  * chega-lhe a altura.
  * ------------------------------------------------------------------------- */
-@media (max-width: 640px) {
+/* A REDE DOS 44 px VAI ATÉ 1023 (I104, bloco F1.7, 04.09.2026). Estas quatro
+   regras viviam numa `@media (max-width: 640px)` e a I104 mediu o que isso
+   deixava de fora: a 641, a 768 e a 1023 as portas voltavam a 14, 19,2 e 24 px
+   de toque, que são três dos quatro alvos que a I105 nomeia. A Emenda 20c
+   escreve a rede abaixo de 1024. */
+@media (max-width: 1023px) {
   .porta-nome,
   .porta-conta,
   .porta-abrir,
@@ -3132,4 +3167,38 @@ a.porta:hover .porta-abrir {
 .dominio-secao .faixa {
   width: fit-content;
   max-width: 100%;
+}
+/* ============================================================================
+ * A REDE DOS 44 px ENTRE 641 E 1023 px (I104, bloco F1.7, 04.09.2026)
+ * ============================================================================
+ * A I104 nomeia duas regras que davam 44 px de alvo e viviam dentro de uma
+ * `@media (max-width: 640px)`, dentro do bloco grande do desenho móvel desta
+ * folha: `.seg`, que são as posições do comando, e `.conv-porta-sum`, que é a
+ * porta da régua da convergência. Medido pela issue: «a 768 há 11 alvos abaixo
+ * de 44 px no corpo da primeira página (as seis posições do comando a 33,6 px,
+ * cinco resultados da busca a 34,9)».
+ *
+ * AS DUAS REGRAS NÃO SOBEM COM O BLOCO ONDE VIVEM, e é essa a razão de estarem
+ * aqui em baixo e não lá em cima: aquele bloco é o DESENHO do telemóvel (a tela
+ * do mapa a tomar a janela, o comando a correr dentro da sua caixa, as medidas
+ * como filas), e nada disso vale a 768. O que sobe é só o ALVO, que é a rede da
+ * Emenda 20c e vale abaixo de 1024.
+ *
+ * `display: flex` com `align-items: center` porque `min-height` sozinho num
+ * elemento com `padding` deixa o texto encostado ao topo da caixa nova: é a
+ * mesma técnica que a folha já usa nas outras seis regras de alvo, e não muda o
+ * tipo, o corpo nem o filete.
+ */
+@media (max-width: 1023px) {
+  .seg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+  }
+  .conv-porta-sum {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
 }

@@ -689,6 +689,66 @@ section {
   color: var(--ink);
 }
 
+/* ---------------------------------------------------------------------------
+ * O ALGARISMO DA MANCHETE É UM ALVO (bloco F1.7, item 7, 04.09.2026)
+ * ---------------------------------------------------------------------------
+ * O selo ao lado do número abria a linha; o número não abria nada. Quem toca no
+ * número — que é a coisa grande e a coisa que interessa — não acontecia nada, e
+ * a porta era o elemento mais pequeno do ecrã (a auditoria de 02.09: «a prova
+ * existe, está a um toque, e é a coisa mais pequena do ecrã»). Desde este bloco
+ * o valor da manchete é uma âncora para a sua própria linha, e esta é a folha
+ * dela.
+ *
+ * O ASPETO NÃO MUDA, E É A CONDIÇÃO DO ITEM. Um `<a>` traz cor e sublinhado do
+ * navegador, e as duas coisas saem: `color: inherit` porque a manchete tem a
+ * tinta da manchete, e `text-decoration: none` porque um sublinhado por baixo do
+ * número seria uma marca nova numa frase que a direção fechou. O que fica de
+ * ligação é o cursor e o anel de foco, que é o que uma porta tem de dar a quem
+ * chega pelo teclado.
+ *
+ * A ÁREA É A MESMA TÉCNICA DO SELO: um `::after` absoluto, centrado, 44 px nos
+ * dois eixos, que alarga o que se toca sem alargar o que se compõe. `100%` de
+ * largura com `min-width: 44px` porque um número longo é mais largo do que 44 e
+ * o alvo é o número inteiro, não um quadrado no meio dele.
+ */
+a.claim-value {
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+}
+a.claim-value::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  min-width: 44px;
+  /* A ALTURA NÃO ENTRA NA LINHA DO VIZINHO (segunda passagem, 04.09.2026,
+     achado Blocking 5 da leitura a frio). `1lh` é a caixa de linha deste
+     elemento, e `min()` com 44 px diz o que a regra quer: 44 px onde a
+     entrelinha os dá, e a linha inteira e nem um píxel a mais onde não dá. Numa
+     manchete que cita duas linhas, os dois algarismos caem a uma entrelinha um do
+     outro e duas áreas de 44 px cruzavam-se: o cruzamento ia para o algarismo que
+     vem depois no documento, e um dedo por baixo do primeiro abria a linha do
+     segundo.
+
+     `1lh` E NÃO `min(44px, 1lh)`, e a diferença é a que faz a prova: a caixa de
+     linha é EXACTAMENTE o avanço entre duas linhas, de modo que as áreas
+     LADRILHAM — encostam e não se cruzam, seja qual for a entrelinha. Com um
+     tecto de 44 px a ladrilhagem parte-se onde a entrelinha é menor do que 44 (a
+     área fica maior do que o avanço e entra na linha de cima), que foi o que a
+     medição de 1023 px mostrou. A razão por extenso está em
+     `src/components/Manchete.astro`. */
+  height: 1lh;
+}
+/* E ONDE A MANCHETE CITA UMA LINHA SÓ, a área é a inteira: não há vizinho com
+   quem cruzar, e o algarismo é a única porta grande da frase. É o caso das 308
+   páginas de concelho. */
+h1[data-citadas='1'] a.claim-value::after {
+  height: 44px;
+}
+
 /* Selo de proveniência. É uma ÂNCORA para a linha do livro-razão — o Método
    promete que o selo é a porta, e uma etiqueta que não abre nada não é um selo
    (IDENTIDADE.md §5).
@@ -3284,11 +3344,14 @@ a.badge-porta:hover {
   display: grid;
   gap: 6px;
 }
+/* A PORTA DO RODAPÉ VIVE DENTRO DO `<footer>` desde 04.09.2026 (bloco F1.7), e
+   por isso perde o fio e a margem que a separavam do corpo: o `<footer>` já traz
+   o seu fio de 1,5px e o seu ar por cima, e dois fios seguidos seriam uma
+   separação a dizer duas vezes a mesma coisa. O que fica é a largura de leitura
+   e o ar até à navegação, que é o irmão de baixo. */
 .porta-correccoes-rodape {
-  margin-top: clamp(30px, 4vw, 46px);
-  border-top: 1px solid var(--rule);
-  padding-top: 16px;
   max-width: 68ch;
+  margin-bottom: clamp(18px, 2.4vw, 26px);
 }
 
 /* ======================================================== índice de concelhos.
@@ -3319,14 +3382,39 @@ a.badge-porta:hover {
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 2px 18px;
 }
+/* ---------------------------------------------------------------------------
+ * A FICHA DE UM CONCELHO É UM ALVO DE 44 px (bloco F1.7, item 4, 04.09.2026)
+ * ---------------------------------------------------------------------------
+ * A auditoria de 02.09 contou «344 alvos abaixo de 44 px em /municipios», e a
+ * medição deste bloco achou o número maior: a ficha media 23,2 px de caixa e
+ * 23,4 px de toque, em todas as larguras, nas duas edições, e o mesmo em
+ * `/distritos/<slug>` e em `/livro-razao/concelhos`, que partilham esta lista.
+ * Uma parede de 308 nomes onde nenhum é tocável é uma parede.
+ *
+ * 44 px EM TODAS AS LARGURAS, e não 44 abaixo de 1024 com 32 acima. A Emenda 20c
+ * deixa 32 px às linhas de nome a partir de 1024, e essas linhas de nome são as
+ * 29 do mapa da primeira página, que é onde a emenda as escreveu e onde
+ * `tests/inicio/lista.mjs` as mede. Esta lista não é essa: é o índice por onde se
+ * chega a um concelho, e o brief pede-lhe os 44 px. Dar-lhe 32 acima de 1024
+ * seria uma segunda regra a decidir a mesma coisa em dois sítios.
+ *
+ * O ALVO É A PORTA E NÃO A FILA. `align-items: center` em vez de `baseline`
+ * porque a porta passa a ter altura própria e a palavra de estado ao lado tem de
+ * ficar a meio dela; o `padding` vertical sai, porque quem dá a altura agora é o
+ * `min-height` da porta e somar os dois dava 52 px de fila sem alvo nenhum a
+ * mais. A fila cresce de 23,2 px para 44: medido em `/municipios` a 1280, a
+ * lista passa de 62 filas de 23,2 px para 62 de 44.
+ */
 .concelho {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 10px;
-  padding: 4px 0;
   border-bottom: 1px solid var(--rule);
+  min-height: 44px;
 }
+/* Uma entrada SEM página não é um alvo: não tem porta nenhuma para abrir. Fica
+   com a altura da fila, que é a da lista, e não com um alvo que não abre nada. */
 .concelho-nome {
   font-size: 14.5px;
   color: var(--ink);
@@ -3343,6 +3431,14 @@ a.badge-porta:hover {
   font-size: 14.5px;
   font-weight: 600;
   color: var(--ink);
+  /* A PORTA ENCHE A FILA, nas duas dimensões. `min-width` também: «Ourém →» mede
+     56 px e «Lagoa →» 52,9, mas um nome curto numa edição que o encurte podia
+     ficar abaixo dos 44 px de largura, e um alvo que é 44 num sentido só é 44 no
+     papel (é a lição que a L5 de `tests/inicio/lista.mjs` já tinha escrito). */
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 44px;
 }
 .concelho-com-pagina .concelho-estado {
   color: var(--ink);
@@ -4191,8 +4287,15 @@ a.marcador::after {
    passa a ser uma caixa flexível que quebra, e uma quebra de caixa flexível
    coloca a fila seguinte POR BAIXO da mais alta da anterior, em vez de a deixar
    sobrepor-se. As duas ligações ganham a altura, e o ponto médio continua onde
-   estava — no documento e à vista. */
-@media (max-width: 640px) {
+   estava — no documento e à vista.
+
+   A FAIXA VAI ATÉ 1023 E NÃO ATÉ 640 (I104, bloco F1.7, 04.09.2026). A regra
+   nasceu numa `@media (max-width: 640px)` e o buraco era esse: a 641, a 768 e a
+   1023 as duas ligações voltavam a medir 24,4 px de toque. Medido antes: 45
+   passagens de «O registo de correções →» e 46 de «The corrections log →» na
+   faixa, mais 24 do endereço de correio. A Emenda 20c diz 44 px abaixo de 1024,
+   e é essa a largura da rede: 1023 é a última que ainda não é a coluna. */
+@media (max-width: 1023px) {
   .porta-correccoes-linha {
     display: flex;
     flex-wrap: wrap;
@@ -4204,6 +4307,19 @@ a.marcador::after {
     display: inline-flex;
     align-items: center;
     min-height: 44px;
+  }
+}
+
+/* OS DOIS ALVOS DA PORTA, NA COLUNA (I105, bloco F1.7, 04.09.2026). Abaixo de
+   1024 as duas ligações têm os 44 px da rede; a partir de 1024 a Emenda 20c
+   deixa 32, que é o alvo do ponteiro, e não havia regra nenhuma a dá-los: o
+   endereço media 19,6 px de toque e «O registo de correções →» 24,4. */
+@media (min-width: 1024px) {
+  .porta-correccoes-linha .ligacao-email,
+  .porta-correccoes-linha > a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
   }
 }
 
@@ -4611,9 +4727,6 @@ a.marcador::after {
   .pesquisa-meta {
     font-size: 12px;
   }
-  .pesquisa-res .chipb {
-    min-height: 44px;
-  }
   /* A FILA DEIXA AR POR BAIXO (bloco dos 308, P2). Cada resultado é um alvo de
      44px, e com um concelho com página a fila tinha um resultado só: o último
      não encostava a nada. Com os 308, a fila mostra oito, e a área de toque do
@@ -4623,6 +4736,18 @@ a.marcador::after {
      etapa 1d: dar espaço à fila em vez de encolher o alvo. */
   .pesquisa-res {
     margin-bottom: 10px;
+  }
+}
+
+/* O ALVO DE UM RESULTADO DA BUSCA VAI ATÉ 1023 (I104, bloco F1.7, 04.09.2026).
+   O corpo do texto da cobertura continua a encolher só no telemóvel, que é onde
+   ele não cabe; o ALVO não é uma questão de caber, é a rede da Emenda 20c, e
+   por isso sobe de 640 para 1023. Foi de longe o maior buraco medido: 3 696 das
+   4 042 passagens em falta na faixa eram estes resultados, em `/municipios` e em
+   `/livro-razao/concelhos`, nas duas edições e nas três larguras. */
+@media (max-width: 1023px) {
+  .pesquisa-res .chipb {
+    min-height: 44px;
   }
 }
 
@@ -4716,7 +4841,9 @@ a.marcador::after {
 /* O alvo de toque da porta da política, pela mesma regra da porta das
    correções: 44px de altura numa linha de 21 obrigava a caixa a transbordar
    para a linha de baixo, e por isso a linha passa a caixa flexível que quebra. */
-@media (max-width: 640px) {
+/* A mesma subida de 640 para 1023 (I104, bloco F1.7): a rede dos 44 px é da
+   Emenda 20c e vale abaixo de 1024, não abaixo de 641. */
+@media (max-width: 1023px) {
   .rotulo-ia-linha {
     display: flex;
     flex-wrap: wrap;
@@ -4817,4 +4944,93 @@ a.marcador::after {
   .masthead-furniture > *:nth-child(n + 2) {
     display: none;
   }
+}
+
+/* ============================================================================
+ * OS ALVOS QUE FALTAVAM NA FAIXA DOS 641 AOS 1023 px
+ * ============================================================================
+ * *Segunda passagem do bloco F1.7, 04.09.2026, achado Blocking 2 da leitura a
+ * frio do Codex.* A primeira passagem tapou o buraco onde ele tinha REGRA — as
+ * cinco `@media` que davam 44 px e acabavam a 640 — e deixou de fora os alvos
+ * que nunca tiveram regra nenhuma e que só chegavam aos 44 px por acidente: uma
+ * ligação de prosa que a 390 quebra em três linhas mede 44 px de caixa, e a 768
+ * cabe numa linha e mede 29. A célula H2 calculava-os e não os punha na sua
+ * condição; o relatório dizia que os que sobravam eram todos áreas do mapa, e
+ * dos 129 só 36 eram.
+ *
+ * O QUE ENTRA AQUI É O QUE FOI MEDIDO, uma classe de cada vez, e não uma regra
+ * geral sobre `a`. Uma regra geral daria 44 px de altura a cada ligação dentro
+ * de cada frase do sítio, e a folha desta casa já mediu três vezes o que isso
+ * faz: «uma caixa de 44px numa linha de 19 transborda para a linha de baixo», e
+ * duas caixas que se cruzam são uma porta que abre o destino do vizinho. As
+ * classes abaixo são as que a régua acusou, e todas elas têm a mesma forma: uma
+ * ligação SOZINHA na sua linha, onde crescer não atropela ninguém.
+ *
+ * A técnica é a que a folha já usa nas outras sete regras de alvo: `inline-flex`
+ * com `align-items: center` cresce a caixa à volta do texto e deixa o texto onde
+ * estava. Nenhuma letra muda de corpo, de peso ou de cor.
+ */
+@media (max-width: 1023px) {
+  /* O título de um trabalho, no arquivo dos estudos: é o `<h2>` inteiro. */
+  .arquivo-titulo a,
+  /* As entradas do sumário do Método e da Agenda, uma por linha. */
+  .metodo-sumario-lista li a,
+  /* O nome de um domínio, no índice dos domínios. */
+  .dominios-nome.dominios-porta,
+  /* O endereço da fonte, na página de uma linha: o rótulo e o endereço em
+     bruto, os dois dentro da mesma âncora, que ocupa a sua própria linha. */
+  .ligacao-externa,
+  /* O endereço de uma fonte na agenda, a seguir ao rótulo «Onde está escrito». */
+  .agenda-nota a[rel='nofollow'],
+  .agenda-criterio a[rel='nofollow'] {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
+/* AS PÁGINAS DE LEITURA FICAM DE FORA DESTA LISTA, e é a única classe medida que
+   fica: `.texto-ligacao` entrou na primeira redação e saiu com a medição. Numa
+   tabela de um documento de leitura, a ligação do relatório vive na MESMA célula
+   que as duas portas «a linha desta figura» (`.texto-figura-porta-apos`), que são
+   âncoras vazias com o seu próprio alvo; dar 44 px à primeira punha o canto dela
+   por cima da segunda, e uma área sobreposta é uma porta que abre o destino do
+   vizinho. Além disso o corpo de uma página de leitura é do bloco F1.9a, e o
+   brief F1.7 diz «nada nas páginas de leitura». Fica medido e nomeado no
+   relatório, e a decisão de dar ar àquela célula é de quem for dono dela. */
+
+/* ---------------------------------------------------------------------------
+ * O SELO DE UMA MANCHETE FICA COM A SUA PRÓPRIA CAIXA
+ * ---------------------------------------------------------------------------
+ * *Segunda passagem, 04.09.2026, achado Blocking 5 da leitura a frio.* Numa
+ * manchete há duas portas para a mesma linha: o algarismo e o selo. Desde o
+ * item 7 deste bloco o algarismo tem uma área de 44 px, e o selo já tinha a
+ * dele; nas páginas de região e de domínio, a 641, 768 e 1023, a frase quebra de
+ * maneira a pôr a fila dos selos a 34 px do último número, e as duas áreas
+ * cruzam-se. O selo vem depois no documento e ganha o cruzamento.
+ *
+ * ISSO NÃO É UMA COLISÃO INOCENTE, e foi o leitor a frio que o mostrou: uma
+ * manchete cita MAIS DO QUE UMA LINHA, e o selo que rouba a área do algarismo é
+ * muitas vezes o de OUTRA linha. Um dedo que caia por baixo de «0,7» abria a
+ * dívida pública. É exactamente o que a regra da casa diz que não pode
+ * acontecer: «uma área sobreposta não é um alvo maior, é uma porta que abre a
+ * linha do vizinho».
+ *
+ * A SAÍDA É DAR O CRUZAMENTO AO ALGARISMO, e não ao selo, e a razão é qual dos
+ * dois é a coisa que se vê: o algarismo é o número grande da frase e o selo são
+ * quatro letras a 12 px. Cada linha citada continua a ter uma porta de 44 px
+ * (a sua), o selo continua a ser a porta declarada e continua a abrir-se, e o
+ * que ele perde é a área que ia buscar à linha de cima.
+ *
+ * SÓ DENTRO DE UMA MANCHETE: `.manchete-selos` é a fila que `Manchete.astro`
+ * põe no fim do `<h1>`, e não existe em mais lado nenhum. Os 22 selos da
+ * primeira página não passam por aqui (a manchete dela não tem selos: os valores
+ * dela são `a.prova-valor`, que não são linhas do livro-razão), e a célula A10 de
+ * `tests/inicio/correcoes-a.mjs`, que exige 44 px a cada `a.src-chip` da
+ * primeira página, mede exactamente esses e não muda.
+ */
+.manchete-selos a.src-chip::after {
+  min-width: 0;
+  width: 100%;
+  height: 100%;
 }

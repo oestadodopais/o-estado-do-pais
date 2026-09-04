@@ -178,7 +178,25 @@ const naHome = normalizePath(home) === aqui;
 const outra = `${outraLingua ?? otherLanguagePath(aqui, lang)}${naHome ? Astro.url.search : ''}`;
 
 const atual = (p) => (normalizePath(p) === aqui ? 'page' : undefined);
-const NomeTag = compact ? 'p' : 'h1';
+/**
+ * ---------------------------------------------------------------------------
+ * O NOME DA CASA NUNCA É O `<h1>` DA PÁGINA (bloco F1.7, 04.09.2026)
+ * ---------------------------------------------------------------------------
+ * Era `<h1>` na primeira página (`compact={false}`) e `<p>` em todas as outras.
+ * Só que a primeira página TAMBÉM tem a manchete, que é o outro `<h1>`, e um
+ * documento com dois `<h1>` não diz de que é que trata: medido a 04.09.2026
+ * sobre `dist/`, eram as duas únicas páginas de 7 237 com mais do que um.
+ *
+ * O que desce é o NOME e não a manchete, e a escolha não é arbitrária: o nome do
+ * sítio está em todas as páginas e é a mesma cadeia em todas: não distingue esta
+ * página de nenhuma outra, que é o trabalho de um título. A manchete distingue,
+ * e por isso fica.
+ *
+ * O TEXTO NÃO MUDA UM CARÁCTER, e o aspeto também não: tudo o que a marca é —
+ * a letra, o corpo, a entrelinha, a margem — está na classe `.wordmark`, e a
+ * classe não muda de nome nem de regras. O que muda é a etiqueta.
+ */
+const NomeTag = 'p';
 
 /**
  * ---------------------------------------------------------------------------

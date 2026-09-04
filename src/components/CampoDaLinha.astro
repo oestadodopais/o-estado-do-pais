@@ -26,10 +26,20 @@
 import { POR_VERIFICAR } from '../lib/ledger.mjs';
 import { t } from '../i18n/strings.mjs';
 import { routePath } from '../lib/routes.mjs';
+import ProsaComLeis from './ProsaComLeis.astro';
 import DataDaLinha from './DataDaLinha.astro';
 import { eCampoDeData } from '../lib/datas.mjs';
 
-const { id, campo, valor, lang = 'pt', class: klass = '', lingua = null, quebras = false } = Astro.props;
+const {
+  id,
+  campo,
+  valor,
+  lang = 'pt',
+  class: klass = '',
+  lingua = null,
+  quebras = false,
+  leis = false,
+} = Astro.props;
 /**
  * UM ENDEREÇO QUEBRA DEPOIS DA BARRA (bloco F1.4, item 7).
  *
@@ -76,6 +86,35 @@ const eData = !porVerificar && eCampoDeData(campo);
    sem ela, a data mudava de composição ao mudar de marca, que seria uma mudança
    de desenho escondida dentro de uma mudança de conferência. */
 const classeDaData = ['campo-valor', klass].filter(Boolean).join(' ');
+
+/**
+ * ---------------------------------------------------------------------------
+ * OS NOMES DE DIPLOMA DENTRO DA PROSA INGLESA DA CASA (I95, bloco F1.7)
+ * ---------------------------------------------------------------------------
+ * `leis` só é verdade onde quem chama sabe que o campo é PROSA DA CASA e não uma
+ * transcrição de uma fonte: hoje é a `derivation`, que o validador do
+ * livro-razão exige nas duas línguas («a explicação da conta é prosa da casa»,
+ * `src/lib/ledger.mjs`). Um `excerpt` não passa por aqui e não deve passar: esse
+ * é a fonte a falar, marca-se inteiro na língua dela, e não se lhe mete markup
+ * por dentro.
+ *
+ * Só na edição inglesa: numa página portuguesa «Lei n.º 51/2018» já está na
+ * língua da página, e um `lang` que repete o do documento é ruído para quem
+ * ouve (é a mesma regra que a unidade segue desde a I92).
+ *
+ * O TEXTO NÃO MUDA UM CARÁCTER. `partesProvadas()` parte a cadeia e prova que a
+ * concatenação das partes é a cadeia de partida; um `<span>` à volta de uma
+ * parte não muda o texto que o portão lê (`textoTranscrito()` junta os nós de
+ * texto sem separador), e é por isso que a conferência de transcrição continua
+ * a comparar exactamente o que comparava.
+ *
+ * `leis` E `quebras` NUNCA SE ENCONTRAM, e é por construção: `quebras` é do
+ * endereço da fonte (um `source_url`) e `leis` é da aritmética de uma linha
+ * derivada (uma `derivation_en`). Se um dia se encontrarem, quem chamar tem de
+ * decidir qual das duas juntas o campo leva, porque as duas partem a cadeia de
+ * maneiras diferentes.
+ */
+const marcaLeis = leis === true && lang === 'en' && !porVerificar;
 ---
 
 {
@@ -106,14 +145,18 @@ const classeDaData = ['campo-valor', klass].filter(Boolean).join(' ');
       data-linha-claim={id}
       data-linha-campo={campo}
     >
-      {pedacos === null
-        ? valor
-        : pedacos.map((pedaco, i) => (
-            <>
-              {i > 0 && <wbr />}
-              {pedaco}
-            </>
-          ))}
+      {marcaLeis ? (
+        <ProsaComLeis texto={valor} lang={lang} onde={`${id}.${campo}`} />
+      ) : pedacos === null ? (
+        valor
+      ) : (
+        pedacos.map((pedaco, i) => (
+          <>
+            {i > 0 && <wbr />}
+            {pedaco}
+          </>
+        ))
+      )}
     </span>
   )
 }

@@ -19,7 +19,9 @@ import { DIMENSOES, cartaoDaPagina, urlDoCartao } from '../lib/cartoes.mjs';
 import { t } from '../i18n/strings.mjs';
 import Masthead from '../components/Masthead.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
+/* `PortaDeCorreccoes` saiu daqui a 04.09.2026 (bloco F1.7): quem a rende no
+   rodapé é o `SiteFooter`, para que ela caia DENTRO do `contentinfo` e não no
+   vão entre o `</main>` e o `<footer>`, que não é marco nenhum. */
 
 // A ordem importa: primeiro os tokens, depois a folha que os usa.
 import '../styles/tokens.css';
@@ -42,15 +44,6 @@ const {
    */
   furniture = true,
   noindex = false,
-  /**
-   * A porta das correções vive no aparelho de cada tipo de página — na coluna
-   * lateral de uma linha, no colofão da primeira página, na coluna do
-   * município. Onde esse sítio existe, a página põe-na lá e passa
-   * `portaNoRodape={false}`; onde não existe, entra aqui, antes do rodapé.
-   *
-   * Uma por página, sempre: é o que o portão de HTML conta.
-   */
-  portaNoRodape = true,
   /**
    * OS PARES DE LÍNGUA, QUANDO A ROTA NÃO EXISTE NAS DUAS.
    *
@@ -286,8 +279,24 @@ const cartaoTwitter = urlDoCartao({ ...cartao, ...DIM_TWITTER });
         <slot />
       </main>
 
-      {portaNoRodape && <PortaDeCorreccoes lang={lang} class="porta-correccoes-rodape" />}
+      {
+        /* A PORTA DAS CORREÇÕES VIVE NO RODAPÉ, E SÓ LÁ (bloco F1.7, 04.09.2026;
+           segunda passagem, achado Blocking 4 da leitura a frio).
 
+           A primeira passagem tirou-a do vão entre o `</main>` e o `<footer>`,
+           onde ela não estava em marco nenhum, e deixou de pé o outro caso: as
+           cinco vistas que a punham no seu próprio aparelho, dentro do `<main>`.
+           O leitor a frio mostrou que isso não cumpre o brief: o brief pede
+           «`<footer>` ou `<nav aria-label>`», e um `<main>` não é nem uma coisa
+           nem outra. Um `<main><aside>` é ainda menos: é a coluna lateral de uma
+           página, e quem salta de marco em marco chega ao `main` inteiro e não
+           àquele canto dele.
+
+           Não há propriedade nenhuma para desligar isto. Era `portaNoRodape`, e
+           saiu: uma porta que cada vista pode pôr noutro sítio é uma porta que
+           volta a sair do marco na vista seguinte. Uma por página, no
+           `contentinfo`, e o portão conta-a. */
+      }
       <SiteFooter lang={lang} path={path} outraLingua={caminhoDaOutraLingua} />
     </div>
 

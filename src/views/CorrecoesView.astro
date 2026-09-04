@@ -26,7 +26,6 @@
 import Base from '../layouts/Base.astro';
 import RegistoCorrecoes from '../components/RegistoCorrecoes.astro';
 import CaixaDeCorrecoes from '../components/CaixaDeCorrecoes.astro';
-import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import Frase from '../components/Frase.astro';
 import { ENDERECO_CORRECOES } from '../data/metodo.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -43,7 +42,6 @@ const path = routePath('correcoes', lang);
   path={path}
   title={s.correcoes.metaTitle}
   description={s.correcoes.metaDescription}
-  portaNoRodape={false}
 >
   <div style="padding-top:clamp(20px,3vw,34px)">
     <span class="eyebrow">{s.correcoes.eyebrow}</span>
@@ -74,7 +72,6 @@ const path = routePath('correcoes', lang);
       <p class="regra-portas">
         <a href={`${routePath('metodo', lang)}#correcoes`}>{s.correcoes.metodoLink} →</a>
       </p>
-      <PortaDeCorreccoes lang={lang} class="aparelho-bloco" />
     </div>
   </section>
 

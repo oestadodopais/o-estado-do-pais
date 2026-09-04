@@ -43,7 +43,6 @@ import CabecaDoLugar from '../components/inicio/CabecaDoLugar.astro';
 import Faixa from '../components/inicio/Faixa.astro';
 import Peca from '../components/inicio/Peca.astro';
 import MapaRespira from '../components/inicio/MapaRespira.astro';
-import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import BarraConcelhoPais from '../components/formas/BarraConcelhoPais.astro';
 import { municipioPorSlug } from '../data/municipios.mjs';
 import { workById, studyTitle } from '../data/studies.mjs';
@@ -448,7 +447,6 @@ const metodoPath = routePath('metodo', lang);
   title={`${nome} · ${s.municipio.metaCauda}`}
   description={`${s.municipio.metaDescricaoA}${nome}${s.municipio.metaDescricaoB}`}
   jsonld={jsonld}
-  portaNoRodape={false}
 >
   {/* ------------------------------------------------------------------------
       A CABEÇA DO CONCELHO É A MESMA DA DO PAÍS (01.09.2026)
@@ -1276,8 +1274,6 @@ const metodoPath = routePath('metodo', lang);
           mandatos: a de que não existe contrafactual para nenhum índice, que é a
           que impede a banda ao lado de uma curva de dívida de se ler como uma
           atribuição. As outras cinco estão na tabela da nota deste bloco. */}
-
-      <PortaDeCorreccoes lang={lang} class="aparelho-bloco" />
 
       {/* AS SAÍDAS (E1 do bloco dos 308). A segunda abre a página de livro-razão
           DESTE concelho: é lá que estão as linhas de que esta página é feita,
