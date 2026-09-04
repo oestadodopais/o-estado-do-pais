@@ -1673,7 +1673,19 @@ export const STRINGS = {
       metaDescription: 'O arquivo de estudos publicados, com as suas edições em português e em inglês.',
       h1: 'Estudos',
       lede: 'Cada estudo publicado, com as suas edições e datas. Os que estão alojados noutro sítio levam a ligação para lá.',
-      aviso: 'Datas de publicação por confirmar.',
+      /* A CAIXA DAS DATAS POR CONFIRMAR PASSA A CONTAR (bloco F1.4b,
+         04.09.2026). Dizia «Datas de publicação por confirmar.» em cima de uma
+         página onde TODAS as linhas mostravam uma data, e por isso era uma frase
+         que já não era verdade sobre nada do que estava por baixo dela. Passa a
+         render-se só quando alguma edição não tem data, e a dizer QUANTAS: a
+         contagem sai do mesmo ficheiro que as datas
+         (`src/data/datas-de-publicacao.json`) e leva a marca desse ficheiro.
+         Hoje as dezasseis edições têm data e a caixa não se rende: por isso as
+         duas frases antigas passaram a «retirada» no `INVENTARIO-FRASES.md`, e
+         estas três só entram no inventário no dia em que se renderem. */
+      avisoA: 'Datas de publicação por confirmar em',
+      avisoUma: 'edição.',
+      avisoVarias: 'edições.',
       /* AS TRÊS CHAVES DO RÓTULO DA DESCRIÇÃO SAÍRAM (bloco B, item B1;
          achado C9). `descricaoRotulo`, `descricaoDoDocumentoRotulo` e
          `descricaoTraduzidaRotulo` diziam ao leitor o que a descrição era —
@@ -2636,7 +2648,9 @@ export const STRINGS = {
       metaDescription: 'The archive of published studies, with their Portuguese and English editions.',
       h1: 'Studies',
       lede: 'Every published study, with its editions and dates. Those hosted elsewhere carry the link to it.',
-      aviso: 'Publication dates not yet confirmed.',
+      avisoA: 'Publication dates not yet confirmed for',
+      avisoUma: 'edition.',
+      avisoVarias: 'editions.',
       dataLabel: 'published on',
       lingua: 'Language',
       verEstudo: 'Study page',

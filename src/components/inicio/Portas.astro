@@ -53,13 +53,28 @@ const temAgenda = agenda.every((a) => p[a.chave].valor !== null);
       sítio — a classe que a emenda nomeia. Fica o TAMANHO do que está do outro
       lado, que é o que uma porta diz: 308 concelhos. As duas contagens de
       cobertura continuam em `/municipios`, que é a página que elas contam. */}
+  {/* O ESPAÇO ENTRE O NÚMERO E O SUBSTANTIVO VIVE DENTRO DE UM ITEM (bloco
+      F1.4b, 04.09.2026; um leitor viu «308concelhos» e «12trabalhos ·16edições»
+      no telemóvel). A folha põe `.porta-conta { display: flex }` abaixo dos
+      1024px (a rede dos 44px do F1.7): num contentor flexível cada corrida de
+      texto solto vira um item anónimo, e o CSS APARA o espaço no princípio e no
+      fim de cada item. O espaço estava lá — vem nas próprias cadeias
+      (`' concelhos'`, `' trabalhos · '`, `' edições'`) e o `textContent` mostra-o
+      —, mas a rendição perdia-o: a 1280 a caixa é `block` e o espaço aparecia, a
+      390 desaparecia. A linha da agenda nunca teve o defeito porque cada conta
+      dela já vivia dentro de um `.porta-conta-item`; é a mesma caixa que estas
+      duas passam a ter, e agora o par número + palavra é UM item, com o espaço
+      no meio dele. A célula I11 de `tests/livro/indice.mjs` lê o texto RENDIDO a
+      390 e exige o espaço. */}
   <a class="porta" href={rotas.municipios}>
     <span class="porta-nome">{s.nav.municipios}</span>
     <span class="porta-conta">
-      <span data-prova="municipios_total" title={p.municipios_total.origem}>
-        {p.municipios_total.valor}
+      <span class="porta-conta-item">
+        <span data-prova="municipios_total" title={p.municipios_total.origem}>
+          {p.municipios_total.valor}
+        </span>
+        {s.inicio.portas.concelhos}
       </span>
-      {s.inicio.portas.concelhos}
     </span>
     <span class="lig porta-abrir">{s.inicio.portas.abrir} →</span>
   </a>
@@ -67,10 +82,12 @@ const temAgenda = agenda.every((a) => p[a.chave].valor !== null);
   <a class="porta" href={rotas.estudos}>
     <span class="porta-nome">{s.nav.estudos}</span>
     <span class="porta-conta">
-      <span data-prova="estudos" title={p.estudos.origem}>{p.estudos.valor}</span>
-      {s.inicio.portas.estudosA}
-      <span data-prova="edicoes" title={p.edicoes.origem}>{p.edicoes.valor}</span>
-      {s.inicio.portas.estudosB}
+      <span class="porta-conta-item">
+        <span data-prova="estudos" title={p.estudos.origem}>{p.estudos.valor}</span>
+        {s.inicio.portas.estudosA}
+        <span data-prova="edicoes" title={p.edicoes.origem}>{p.edicoes.valor}</span>
+        {s.inicio.portas.estudosB}
+      </span>
     </span>
     <span class="lig porta-abrir">{s.inicio.portas.abrir} →</span>
   </a>
