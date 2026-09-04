@@ -132,6 +132,8 @@ Uma nota do brief de 12.08 fica confirmada: as licenças dos dois grandes public
 4. **As fontes**: nada bloqueia o uso não comercial de hoje pelo que se leu; a página de licença da fase 2 diz, fonte a fonte, o que a casa pode redistribuir (o arquivo de versões, `FRESCURA-E-AUTOMACAO.md` §5), e as fontes sem termos ficam listadas sem ficheiro até ao advogado responder.
 5. **As pessoas nomeadas**: a prática escrita (só titulares de cargos públicos na função pública, o partido como a administração eleitoral o publica, sem moradas nem contactos, direito de resposta antes de achados, técnicos não nomeados por defeito) entra no estatuto editorial; o advogado confirma a base.
 
+**Nota de 04.09.2026 (lugar de direção, pela delegação do diretor, `DECISIONS.md` §1.98).** A hora do advogado foi adiada pelo diretor («we can leave for later») com a indexação já aberta desde 13.08. A regra desta memória («nada de indexação aberta antes» do advogado) não se cumpriu na ordem que previa; o que está no ar em vez dela: o rótulo de IA em todas as páginas, a página das correções, os documentos alojados com `noindex`, e as respostas às perguntas 1 a 5 ainda por dar. Fica escrito assim, e não apagado.
+
 ## 8 · O que esta memória não é
 
 Não é parecer jurídico; não leu jurisprudência nem doutrina; não leu o Regulamento da Carteira Profissional de Jornalista, a Lei n.º 26/2016 (acesso e reutilização de documentos administrativos), o regime do depósito legal, nem a versão consolidada do Diário da República das leis citadas (lidas na PGDL). Cada uma dessas lacunas está marcada `[verify]` no lugar. A hora do advogado está decidida (30.08) para antes do lançamento; esta memória é o que a torna curta.
