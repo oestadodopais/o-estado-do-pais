@@ -319,6 +319,10 @@ const fonteSemResposta = estadoDaFonte(claim.source_url) ?? estadoDoAnfitriaoDaL
  * ---------------------------------------------------------------------------
  * O ATRASO DA SÉRIE (bloco F1.6, 04.09.2026; DECISIONS §1.98, decisão (2))
  * ---------------------------------------------------------------------------
+ * A FRASE NÃO FALA DA CASA (segunda passagem, Major 8): «Último período
+ * publicado pela fonte: 2026-07; nesta linha: 2025-12, lido a 26.08.2026». A
+ * segunda metade aponta para a linha em que está, e não para quem a publica.
+ * ---------------------------------------------------------------------------
  * «O IEFP rende o atraso em vez de publicar 2026-07 por conferir.» O desemprego
  * registado por concelho que esta casa publica é o de dezembro de 2025 e o
  * ficheiro que o IEFP serve hoje é o de julho de 2026: são oito períodos, e
@@ -695,9 +699,10 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
           {atraso.periodoDaFonte}
         </span>
         {'; '}
-        <span class="linha-campo-k" data-voz>{s.livro.linha.periodoDaCasaK}</span>{' '}
-        <DataDaLinha id={id} campo="reference_date" valor={claim.reference_date} />{' '}
-        <span class="linha-campo-k" data-voz>{s.livro.linha.periodoDesdeK}</span>{' '}
+        <span class="linha-campo-k" data-voz>{s.livro.linha.periodoDestaLinhaK}</span>{' '}
+        <DataDaLinha id={id} campo="reference_date" valor={claim.reference_date} />
+        {', '}
+        <span class="linha-campo-k" data-voz>{s.livro.linha.periodoLidoK}</span>{' '}
         <DataDaLinha id={id} campo="access_date" valor={claim.access_date} />
       </p>
     )}

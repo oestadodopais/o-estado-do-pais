@@ -59,14 +59,14 @@
  *        nas duas edições. O total lê-se do livro-razão e não da própria
  *        varredura: as duas edições podiam faltar a mesma página e continuar a
  *        bater uma com a outra, que é a razão escrita em F7.
- *   F16 · **a contagem por extenso da frase do Painel Social bate certo com a
- *        lista.** A frase de contexto diz «Oito das dezassete medidas
- *        principais», e a régua dos algarismos não vê palavras: sem isto, a
- *        primeira medida que entrasse ou saísse do painel deixava a frase errada
- *        sem que nada fechasse. A palavra do numerador recompõe-se de
- *        `FIGURAS_SOCIAL.length`; o denominador é da Comissão e não da casa, e o
- *        que se confere dele é que a frase continua a dizer o que a declaração
- *        declara.
+ *   F16 · **as duas contagens por extenso da frase do Painel Social, lidas da
+ *        página construída.** A frase diz «Oito das dezassete medidas
+ *        principais», e a régua dos algarismos não vê palavras. As duas palavras
+ *        recompõem-se aqui de duas fontes independentes, `FIGURAS_SOCIAL.length`
+ *        e `MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL.numero`, e procuram-se no
+ *        `dist/`. Não se lê a declaração da frase: era esse o buraco que a
+ *        leitura a frio mediu (Major 10), porque comparar a frase com o campo com
+ *        que ela foi construída deixa passar as duas mudadas ao mesmo tempo.
  *
  * ---------------------------------------------------------------------------
  * TRÊS CONFERÊNCIAS NOVAS (segunda passagem, 03.09.2026, leitura a frio)
@@ -124,7 +124,6 @@ import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { linhasPorConcelho } from '../src/lib/dominios.mjs';
 import {
   FIGURAS_SOCIAL,
-  CONTEXTO_DOS_PAINEIS,
   MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL,
   numeralPorExtenso,
 } from '../src/data/figuras.mjs';
@@ -285,6 +284,7 @@ const contas = {
   concelhos: /** @type {Record<string, number>} */ ({ pt: 0, en: 0 }),
   linhas_citadas: new Set(),
   periodos_da_fonte: 0,
+  contagens_por_extenso: 0,
   paginas_com_atraso: /** @type {Record<string, number>} */ ({ pt: 0, en: 0 }),
 };
 
@@ -777,35 +777,84 @@ if (contas.paginas > 0) {
 }
 
 /* ---------------------------------------------------------------------------
- * F16 · a contagem por extenso do Painel Social bate certo com a lista
+ * F16 · as duas contagens por extenso, lidas da PÁGINA e não da declaração
  * ---------------------------------------------------------------------------
  * A régua dos algarismos não vê palavras, e é isso que faz esta classe escapar
  * inteira (`DECISIONS.md` §4, «As contagens em palavras da página do
- * município»). A frase de contexto do Painel Social abre com o numerador por
- * extenso; aqui recompõe-se essa palavra de `FIGURAS_SOCIAL.length` e exige-se
- * que a frase declarada comece por ela. O denominador é da Comissão e está
- * declarado com a sua origem: o que se confere dele é que a frase continua a
- * dizer o que a declaração diz.
+ * município»).
+ *
+ * A PRIMEIRA REDAÇÃO DESTA RÉGUA NÃO PODIA APANHAR UM DENOMINADOR FALSO, e a
+ * leitura a frio do Codex mediu-o (Major 10, 04.09.2026): ela comparava a frase
+ * com o campo `palavra` da declaração, que era **o mesmo campo com que a frase
+ * tinha sido construída**. Mudar os dois ao mesmo tempo passava. Duas coisas
+ * mudaram: a declaração deixou de ter `palavra` e passou a ter só `numero`, e
+ * esta régua deixou de ler a declaração da frase e passa a ler o `dist/`.
+ *
+ * O QUE ELA FAZ AGORA, e são duas contas independentes contra o texto rendido:
+ *
+ *   · o NUMERADOR sai de `FIGURAS_SOCIAL.length`, que é a lista das medidas do
+ *     painel, passada por `numeralPorExtenso()`;
+ *   · o DENOMINADOR sai de `MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL.numero`, que é o
+ *     número que a Comissão publica, pela mesma função;
+ *   · as duas palavras têm de estar na frase que a PRIMEIRA PÁGINA rende, nas
+ *     duas edições, e a frase encontra-se pelo nome do painel e não por uma
+ *     classe de CSS, que outro bloco pode mudar sem saber que esta régua a lê.
+ *
+ * O QUE ISTO APANHA que a primeira redação não apanhava: uma medida a entrar ou
+ * a sair do painel sem a frase mudar; o número da Comissão a mudar sem a frase
+ * mudar; e a frase a ser reescrita à mão com outra palavra, que é o caso que o
+ * leitor plantou no papel.
  */
+const NOME_DO_PAINEL_SOCIAL = {
+  pt: 'Painel Social Europeu',
+  en: 'European Social Scoreboard',
+};
+
 for (const lang of LANGS) {
-  const partes = CONTEXTO_DOS_PAINEIS.social[lang];
-  const abertura = typeof partes?.[0] === 'string' ? partes[0] : '';
-  const esperada = numeralPorExtenso(FIGURAS_SOCIAL.length, lang, true);
-  if (!abertura.startsWith(`${esperada} `)) {
-    err(
-      `a frase do Painel Social na edição "${lang}" não começa pela contagem das medidas que a ` +
-        `lista tem.\n      FIGURAS_SOCIAL tem ${FIGURAS_SOCIAL.length}, por extenso ` +
-        `«${esperada}»\n      a frase abre com «${abertura.slice(0, 40)}…»`,
-    );
+  const rota = routePath('home', lang);
+  const ficheiro = path.join(DIST, rota.replace(/^\//, ''), 'index.html');
+  if (!fs.existsSync(ficheiro)) {
+    err(`a primeira página da edição "${lang}" não foi construída, e é ela que rende a frase do Painel Social.`);
+    continue;
   }
-  if (!abertura.includes(MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL.palavra[lang])) {
+  const corpo = texto(parse(fs.readFileSync(ficheiro, 'utf8')).querySelector('body') ?? parse(''));
+  const nome = NOME_DO_PAINEL_SOCIAL[lang];
+  if (!corpo.includes(nome)) {
     err(
-      `a frase do Painel Social na edição "${lang}" já não diz o número das medidas principais ` +
-        `que MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL declara ` +
-        `(«${MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL.palavra[lang]}»), e é esse número que traz a ` +
-        `origem da Comissão atrás dele.`,
+      `a primeira página da edição "${lang}" não nomeia «${nome}». Sem o nome do painel não há ` +
+        `frase para conferir, e um zero aqui seria a régua a passar por estar cega.`,
     );
+    continue;
   }
+  /* O NOME DO PAINEL APARECE MAIS DO QUE UMA VEZ na primeira página: é o
+     cabeçalho do painel e é a frase de contexto, e a primeira ocorrência é o
+     cabeçalho. Por isso percorrem-se TODAS, e o que se exige é que uma delas
+     traga as duas palavras no que vem antes. Ler só a primeira era a régua a
+     medir o sítio errado, e foi o que a primeira corrida desta conferência fez.
+     A janela de 120 caracteres é a distância do numeral ao nome na frase que a
+     página rende («Oito das dezassete medidas principais do Painel Social
+     Europeu»), com folga. */
+  const numerador = numeralPorExtenso(FIGURAS_SOCIAL.length, lang, true);
+  const denominador = numeralPorExtenso(MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL.numero, lang);
+  const janelas = [];
+  for (let i = corpo.indexOf(nome); i !== -1; i = corpo.indexOf(nome, i + 1)) {
+    janelas.push(corpo.slice(Math.max(0, i - 120), i + nome.length));
+  }
+  const comNumerador = janelas.filter((j) => j.includes(numerador));
+  const boa = comNumerador.find((j) => j.includes(denominador));
+  if (!boa) {
+    const perto = comNumerador[0] ?? janelas[janelas.length - 1] ?? '';
+    err(
+      `a frase do Painel Social na edição "${lang}" não traz as duas contagens por extenso.\n` +
+        `      medidas rendidas: ${FIGURAS_SOCIAL.length}, por extenso «${numerador}» ` +
+        `${comNumerador.length > 0 ? '(está na página)' : '(NÃO está na página)'}\n` +
+        `      medidas principais da Comissão: ${MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL.numero}, ` +
+        `por extenso «${denominador}»\n` +
+        `      ${janelas.length} ocorrência(s) de «${nome}»; a mais próxima diz «…${perto}»`,
+    );
+    continue;
+  }
+  contas.contagens_por_extenso++;
 }
 
 /* F6 · as linhas de cada medida de concelho são alcançáveis pela porta do mapa. */
@@ -840,6 +889,7 @@ console.log(
         ` · ${contas.ausencias} ausências · ganho médio em ${contas.concelhos_com_ganho.pt}/${contas.concelhos.pt} concelhos` +
         ` (controlo: população em ${contas.concelhos_com_populacao.pt})` +
         ` · atraso: ${SERIES_ATRASADAS.length} série(s), ${idsAtrasados.size} linha(s),` +
-        ` ${contas.periodos_da_fonte} período(s) da fonte conferido(s)`,
+        ` ${contas.periodos_da_fonte} período(s) da fonte conferido(s)` +
+        ` · ${contas.contagens_por_extenso} frase(s) com contagem por extenso conferida(s)`,
     ),
 );

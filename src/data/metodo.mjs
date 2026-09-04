@@ -175,11 +175,11 @@ export const REGRAS = [
     limite: {
       pt: [
         'Nem todas as linhas têm já a proveniência completa: a que não tem leva o marcador no campo que falta, e a conta ao lado diz quantas são.',
-        ' Uma fonte, o Portal BASE, recusa os pedidos que se identificam com o nome da casa: a casa lê-a com a identidade de um navegador comum, e é a única fonte lida assim.',
+        ' Uma fonte, o Portal BASE, recusa os pedidos que se identificam com o nome da casa: é lida com a identidade de um navegador, e nenhuma outra o é.',
       ],
       en: [
         'Not every row has its provenance complete yet: one that does not carries the marker in the missing field, and the count beside says how many there are.',
-        ' One source, Portal BASE, refuses requests that identify themselves with the house’s name: the house reads it with the identity of an ordinary browser, and it is the only source read that way.',
+        ' One source, Portal BASE, refuses requests that identify themselves with the house’s name: it is read with the identity of a browser, and no other source is.',
       ],
     },
     prova: [

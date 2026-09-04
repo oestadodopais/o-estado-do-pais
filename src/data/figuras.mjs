@@ -751,8 +751,15 @@ export function comparacaoComOLimiar(claim, limiar) {
  * inteira está declarada no inventário, e no dia em que ela mudar, muda a linha.
  */
 export const MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL = {
+  /* UM CAMPO SÓ, E A PALAVRA COMPÕE-SE DELE (segunda passagem, 04.09.2026,
+     Major 10 da leitura a frio do Codex). A primeira redação tinha `numero: 17` e
+     `palavra: { pt: 'dezassete', … }` lado a lado, e a régua F16 comparava a
+     frase com o campo `palavra`, que era o mesmo campo com que a frase tinha sido
+     construída: mudar os dois para uma palavra errada passava. Agora só existe o
+     número, a palavra sai de `numeralPorExtenso()`, e a régua lê o número, compõe
+     a palavra por conta própria e procura-a na PÁGINA CONSTRUÍDA. Os dois lados
+     da comparação deixaram de ser o mesmo. */
   numero: 17,
-  palavra: { pt: 'dezassete', en: 'seventeen' },
   origem: {
     documento: 'Joint Employment Report 2026, COM(2025) 958, Annex 2',
     publicador: 'Comissão Europeia',
@@ -823,14 +830,19 @@ export const CONTEXTO_DOS_PAINEIS = {
        do painel. O denominador é o da Comissão, declarado logo acima com o
        documento, o endereço e a data em que foi lido. */
     pt: [
-      `${numeralPorExtenso(FIGURAS_SOCIAL.length, 'pt', true)} das ${MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL.palavra.pt} medidas principais do Painel Social Europeu: as que o livro-razão guarda e cujo registo nomeia esse painel, sem cor porque não tem limiares. Os valores são do Eurostat, confirmados contra o `,
+      `${numeralPorExtenso(FIGURAS_SOCIAL.length, 'pt', true)} das ${numeralPorExtenso(MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL.numero, 'pt')} medidas principais do Painel Social Europeu: as que o livro-razão guarda e cujo registo nomeia esse painel, sem cor porque não tem limiares. Os valores são do Eurostat, confirmados contra o `,
       { verbatim: 'relatorio-por-pais-2026' },
       ' da Comissão Europeia, ',
       { verbatim: 'swd-2026-222' },
       '.',
     ],
+    /* A EDIÇÃO INGLESA DIZ «MEASURES» (segunda passagem, Major 9). Dizia
+       «headline indicators», que é o termo da Comissão e não a palavra desta
+       casa: a §1.98 fecha o vocabulário e «indicador» sai dele, nas duas
+       edições. O termo da fonte entra uma vez, entre aspas e atribuído, porque é
+       por ele que um leitor encontra a lista no documento da Comissão. */
     en: [
-      `${numeralPorExtenso(FIGURAS_SOCIAL.length, 'en', true)} of the ${MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL.palavra.en} headline indicators of the European Social Scoreboard: the ones the ledger holds whose record names that scoreboard, with no colour because it has no thresholds. The values are from Eurostat, confirmed against the European Commission’s country report, `,
+      `${numeralPorExtenso(FIGURAS_SOCIAL.length, 'en', true)} of the ${numeralPorExtenso(MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL.numero, 'en')} headline measures of the European Social Scoreboard, which the Commission calls “headline indicators”: the ones the ledger holds whose record names that scoreboard, with no colour because it has no thresholds. The values are from Eurostat, confirmed against the European Commission’s country report, `,
       { verbatim: 'swd-2026-222' },
       '.',
     ],

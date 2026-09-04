@@ -11942,11 +11942,13 @@ Nada muda no ar nesta sessão além do carimbo semanal de 31.08.
 
 **Afecta:** metodo
 
-**Texto:** metodo 8c9aa6a9b7b9
+**Texto:** metodo b4cc3594f960
 
 **A decisão** (lugar de direção, 04.09.2026, pela delegação da §1.98; decisão (3) da mesma entrada: «o Portal BASE fica como fonte e a identidade de navegador com que se lê declara-se no Método, em vez de se deixar cair a fonte»). O limite da regra 1 do Método («As fontes») ganha uma segunda frase, nas duas edições, e mais nada muda no texto governado.
 
-**O que passou a estar escrito**, em português e em inglês: «Uma fonte, o Portal BASE, recusa os pedidos que se identificam com o nome da casa: a casa lê-a com a identidade de um navegador comum, e é a única fonte lida assim.» · «One source, Portal BASE, refuses requests that identify themselves with the house’s name: the house reads it with the identity of an ordinary browser, and it is the only source read that way.»
+**O que passou a estar escrito**, em português e em inglês: «Uma fonte, o Portal BASE, recusa os pedidos que se identificam com o nome da casa: é lida com a identidade de um navegador, e nenhuma outra o é.» · «One source, Portal BASE, refuses requests that identify themselves with the house’s name: it is read with the identity of a browser, and no other source is.»
+
+**A redação é a da segunda passagem** (04.09.2026, Major 7 da leitura a frio do Codex, `design/especime-v3/critica/2026-09-04-codex-leitura-f16-frescura.md`). A primeira dizia «navegador comum» e «a única fonte lida assim», e as duas são adjetivos que o brief proibia. Saíram os dois e a informação ficou: «um navegador» diz o que a identidade é, e «nenhuma outra o é» diz o facto que o adjetivo dizia, sem o ser. A contagem que o sustenta não entra na página porque o texto governado não leva algarismos; entra aqui, no parágrafo seguinte, que é onde ela é conferível.
 
 **Cada metade da frase é medida e não suposta.** A recusa está registada no motor, em `core/sources.py`, com a data e o que se mediu: «medido a 26.07.2026 (learnings.md): o Portal BASE responde 404 a TODOS os caminhos quando o User-Agent não é de navegador». A exclusividade também: desde 03.09.2026 (bloco F0.8) o `core/http.py` recusa qualquer `User-Agent` que não seja o desta casa, e a única exceção é uma fonte que declare no registo as duas coisas, a bandeira `browser_ua` e a razão por escrito. Contadas hoje no ficheiro: treze fontes, uma com a bandeira. O que o F0.8 deixou aberto era esta decisão, e o próprio comentário do motor a nomeia como sendo do diretor, com duas portas, declarar ou deixar cair a fonte; a §1.98 delegou-a no lugar de direção e a porta escolhida é declarar.
 

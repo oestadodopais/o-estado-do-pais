@@ -2085,22 +2085,33 @@ de `VOZ_DECLARADA` em `scripts/medir-defeitos.mjs`.*
 superfície pública desde a I79, e a frase que diz COMO um número é obtido é
 prosa da casa.*
 
+*SETE DESTAS CADEIAS SÃO DA SEGUNDA PASSAGEM (04.09.2026, Major 8 e Major 9 da
+leitura a frio do Codex), e as sete que elas substituem não chegaram a sair
+deste ramo. A primeira redação dizia «a casa publica 2025-12 desde 26.08.2026» e
+«séries que a casa publica atrás do último período da fonte»: a Emenda 15 tira da
+página do leitor as frases sobre a casa, e vale num `title` como vale num
+parágrafo. A forma nova é deíctica, «nesta linha: … lido a …», e aponta para a
+linha em que está. A oitava é a frase inglesa do Painel Social, que dizia
+«headline indicators»: «indicador» sai do vocabulário do sítio pela §1.98, e o
+termo da Comissão entra uma vez, entre aspas e atribuído, porque é por ele que
+um leitor encontra a lista no documento dela.*
+
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
 | conteudo | Séries atrasadas: | frescura | viva | — |
 | conteudo | Series behind: | frescura | viva | — |
-| conteudo | séries que a casa publica atrás do último período da fonte | frescura | viva | — |
-| conteudo | series the house publishes behind the source’s latest period | frescura | viva | — |
+| conteudo | séries publicadas atrás do último período da fonte | frescura | viva | — |
+| conteudo | series published behind the source’s latest period | frescura | viva | — |
 | conteudo | linhas do livro-razão dessas séries | frescura | viva | — |
 | conteudo | ledger rows in those series | frescura | viva | — |
 | conteudo | Último período publicado pela fonte: | frescura | viva | — |
 | conteudo | Latest period published by the source: | frescura | viva | — |
-| conteudo | a casa publica | frescura | viva | — |
-| conteudo | the house publishes | frescura | viva | — |
-| conteudo | desde | frescura | viva | — |
-| conteudo | since | frescura | viva | — |
+| conteudo | nesta linha: | frescura | viva | — |
+| conteudo | this row: | frescura | viva | — |
+| conteudo | lido a | frescura | viva | — |
+| conteudo | read on | frescura | viva | — |
 | conteudo | Oito das dezassete medidas principais do Painel Social Europeu: as que o livro-razão guarda e cujo registo nomeia esse painel, sem cor porque não tem limiares. Os valores são do Eurostat, confirmados contra o da Comissão Europeia, . | frescura | viva | — |
-| conteudo | Eight of the seventeen headline indicators of the European Social Scoreboard: the ones the ledger holds whose record names that scoreboard, with no colour because it has no thresholds. The values are from Eurostat, confirmed against the European Commission’s country report, . | frescura | viva | — |
+| conteudo | Eight of the seventeen headline measures of the European Social Scoreboard, which the Commission calls “headline indicators”: the ones the ledger holds whose record names that scoreboard, with no colour because it has no thresholds. The values are from Eurostat, confirmed against the European Commission’s country report, . | frescura | viva | — |
 
 *AS DUAS ÚLTIMAS LINHAS LEVAM UMA CONTAGEM POR EXTENSO, e o inventário já disse
 uma vez que uma frase com um número que se move não pode ser sentinela. A
