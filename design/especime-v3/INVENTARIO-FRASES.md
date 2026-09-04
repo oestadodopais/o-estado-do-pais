@@ -835,8 +835,22 @@ exclusão que a subetapa 3c escreveu para a lista por distritos.
 | conteudo | No rows yet. | grelha-2 | retirada | a ausência passou a dizer-se em três palavras, «Sem linha ainda.», e a forma longa saiu (item E4 do bloco dos 308, `8b2a260`) |
 | conteudo | A referência do estudo | até 2026-08-26 | viva | — |
 | conteudo | The study’s reference | até 2026-08-26 | viva | — |
-| conteudo | 2916 afirmações · 330 calculadas · 2767 linhas de concelhos | vazios | viva | — |
-| conteudo | 2916 claims · 330 calculated · 2767 municipality rows | vazios | viva | — |
+| conteudo | 2916 afirmações · 330 de 2916 calculadas · 2767 de 2916 linhas de concelhos | nomes | viva | — |
+| conteudo | 2916 claims · 330 of 2916 calculated · 2767 of 2916 municipality rows | nomes | viva | — |
+| navegacao | Nenhuma linha do livro-razão tem essas palavras. | nomes | viva | — |
+| navegacao | No row in the ledger matches those words. | nomes | viva | — |
+| navegacao | Procurar por nome, identificador ou fonte | nomes | viva | — |
+| navegacao | Search by name, identifier or source | nomes | viva | — |
+| navegacao | Linhas que casam | nomes | viva | — |
+| navegacao | Rows that match | nomes | viva | — |
+| navegacao | Há mais linhas do que as que cabem aqui. Escreva mais para estreitar. | nomes | viva | — |
+| navegacao | There are more rows than fit here. Type more to narrow it down. | nomes | viva | — |
+| conteudo | estudo ou medida | nomes | viva | — |
+| conteudo | estudos e medidas | nomes | viva | — |
+| conteudo | study or measure | nomes | viva | — |
+| conteudo | studies and measures | nomes | viva | — |
+| conteudo | publicado a | nomes | viva | — |
+| conteudo | published on | nomes | viva | — |
 | autorreferencia | O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos anteriores. É a lei que o define, não este sítio. | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
 | autorreferencia | The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue. The law defines it, not this site. | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
 
