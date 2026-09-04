@@ -984,9 +984,23 @@ export const STRINGS = {
          A lede, que definia o que uma área é, saiu com ele. */
       h1: 'Por área de governo',
       /* Uma ou muitas, escolhidas na construção com a contagem que o portão vai
-         reconferir. Sem plural inventado. */
-      contaUma: ' peça',
-      contaMuitas: ' peças',
+         reconferir. Sem plural inventado.
+
+         «PEÇA» SAIU (DECISIONS.md §1.98, 04.09.2026). O vocabulário fechado da
+         casa tem «estudo» para um trabalho de autor, «medida» para uma medida e
+         «linha do livro-razão» para uma linha; «peça» e «indicador» saem. Esta
+         contagem soma as três famílias que a página de uma área lista (os
+         trabalhos, os estudos de dados e as medidas), e as três dizem-se com
+         duas palavras do vocabulário: são estudos e são medidas. A forma
+         singular é «estudo ou medida» porque com uma só não se sabe qual das
+         duas é, e escolher uma seria adivinhar.
+
+         O bloco F1.4 tinha DEFINIDO a palavra nesta página, que era a outra
+         saída que o brief dava; a decisão do diretor chegou a meio do bloco e
+         fecha-a: a palavra sai, e com ela sai a definição. O resto do sítio é do
+         bloco F1.10. */
+      contaUma: ' estudo ou medida',
+      contaMuitas: ' estudos e medidas',
       /* A cauda do `<head>` de uma área, composta com o nome dela, como as das
          páginas de região e de concelho. A DESCRIÇÃO DEIXOU DE SER UMA FRASE:
          é o nome da área, e mais nada. As duas cadeias que a compunham saíram a
@@ -1278,11 +1292,30 @@ export const STRINGS = {
          entram por `data-prova`, o portão reconta-os por conta própria, e cada um
          leva a sua porta. As palavras ao lado nomeiam o que é contado. */
       contaAfirmacoes: 'afirmações',
+      /* O DENOMINADOR DAS DUAS PARCELAS (bloco F1.4, 04.09.2026). Uma palavra
+         só, entre a parcela e o total: «330 de 2916 calculadas». O total é a
+         mesma chave da prova que abre a linha, rendida outra vez com a sua
+         marca, e não um número escrito aqui. */
+      contaDe: 'de',
       contaDerivadas: 'calculadas',
       /* A porta da página do conjunto dos concelhos, no índice. Nomeia o que
          está do outro lado, e mais nada. */
       contaConcelhos: 'linhas de concelhos',
       concelhosPorta: 'Concelhos',
+      /* A BUSCA DO ÍNDICE (bloco F1.4, 04.09.2026). Três cadeias: o rótulo do
+         campo, que diz o que se escreve nele e por que campos a comparação se
+         faz; o botão, que é o mesmo verbo da pesquisa dos concelhos; e o estado
+         vazio, que só o guião acende. */
+      buscaRotulo: 'Procurar por nome, identificador ou fonte',
+      buscaSemResultado: 'Nenhuma linha do livro-razão tem essas palavras.',
+      /* O RÓTULO DA FILA DE RESULTADOS (segunda passagem, Major 6). A busca
+         passou a cobrir as 2 916 linhas e não as 149 que a página lista: os
+         resultados são uma fila de portas, e a fila diz o que é. */
+      buscaResultadosK: 'Linhas que casam',
+      /* Quando há mais resultados do que os que cabem na fila. Diz-se por
+         palavras e não por um número: uma contagem de resultados é um número que
+         a casa escreveria sem linha. */
+      buscaMais: 'Há mais linhas do que as que cabem aqui. Escreva mais para estreitar.',
       /* A LEGENDA DO SELO PASSA A NOMEAR OS ESTADOS (direção, 21.08.2026).
          Dizia «Quadrado cheio: a proveniência está completa.» e «Quadrado a
          tracejado: falta pelo menos um campo, e a linha di-lo.» — duas frases a
@@ -1646,7 +1679,15 @@ export const STRINGS = {
          da casa» —, e isso é o sítio a descrever a sua própria descrição
          (Emenda 18(e)). A transcrição continua conferida por `data-verbatim`,
          que é onde a afirmação é prova e não frase. */
-      dataLabel: 'Publicação',
+      /* A DATA DE PUBLICAÇÃO PASSA A DIZER-SE POR EXTENSO, COM A ORIGEM
+         (segunda passagem do F1.4, 04.09.2026). Era «Publicação: 12.08.2026»
+         sobre uma data que o arquivo declarava por confirmar. Passa a ser
+         «publicado a 12.08.2026», e a data é o dia em que o ficheiro da edição
+         entrou neste repositório: um facto que se prova com o `git log`, dito
+         com a marca `data-nonledger="data-do-repositorio"`. A preposição fica
+         fora dessa marca, porque é prosa da casa e o inventário da voz declara-a
+         (a marca `data-voz` recolhe-a). */
+      dataLabel: 'publicado a',
       lingua: 'Língua',
       verEstudo: 'Página do estudo',
       /* AS DUAS FRASES DO ESTADO SAÍRAM (subetapa 4e, a regra da direção de
@@ -2228,8 +2269,8 @@ export const STRINGS = {
       metaTitle: 'Government areas · O Estado do País',
       eyebrow: 'Government areas',
       h1: 'By area of government',
-      contaUma: ' piece',
-      contaMuitas: ' pieces',
+      contaUma: ' study or measure',
+      contaMuitas: ' studies and measures',
       metaCauda: 'government area · O Estado do País',
       tipo: 'area of the XXV Constitutional Government',
       trabalhosK: 'The studies',
@@ -2409,9 +2450,14 @@ export const STRINGS = {
       colunaAfirmacao: 'Claim',
       colunaSelo: 'Provenance',
       contaAfirmacoes: 'claims',
+      contaDe: 'of',
       contaDerivadas: 'calculated',
       contaConcelhos: 'municipality rows',
       concelhosPorta: 'Municipalities',
+      buscaRotulo: 'Search by name, identifier or source',
+      buscaSemResultado: 'No row in the ledger matches those words.',
+      buscaResultadosK: 'Rows that match',
+      buscaMais: 'There are more rows than fit here. Type more to narrow it down.',
       seloK: 'The two states of the seal',
       seloCheio: 'provenance complete',
       seloTracejado: 'one field unconfirmed',
@@ -2589,7 +2635,7 @@ export const STRINGS = {
       h1: 'Studies',
       lede: 'Every published study, with its editions and dates. Those hosted elsewhere carry the link to it.',
       aviso: 'Publication dates not yet confirmed.',
-      dataLabel: 'Published',
+      dataLabel: 'published on',
       lingua: 'Language',
       verEstudo: 'Study page',
       stubEdicoes: 'Editions',

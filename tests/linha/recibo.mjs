@@ -361,7 +361,8 @@ const INDICE = '/livro-razao';
         e.getAttribute('data-linha-campo'),
       );
       const selos = [...el.querySelectorAll('.src-chip')].map((a) => a.getAttribute('href'));
-      return { id, campos: campos.join(','), selos };
+      const datas = el.querySelectorAll('[data-nonledger="data-da-linha"]').length;
+      return { id, campos: campos.join(','), selos, datas };
     };
     const formas = itens.map(forma);
     return {
@@ -374,10 +375,32 @@ const INDICE = '/livro-razao';
          ordem completa. */
       ordens: [...new Set(formas.map((f) => f.campos))].sort(),
       comEstado: itens.filter((e) => e.getAttribute('data-estado')).length,
+      comData: formas.filter((f) => f.datas > 0).length,
     };
   });
-  const COMPLETA_ORDEM = 'id,unit,source,access_date';
-  const prefixos = m.ordens.every((o) => COMPLETA_ORDEM.startsWith(o));
+  /**
+   * A ORDEM MUDOU COM O BLOCO F1.4 (04.09.2026), E ESTA CÉLULA MUDOU COM ELA.
+   *
+   * Duas coisas mudaram na linha-espécime, e as duas estão medidas noutro sítio:
+   * o NOME da medida passou a encabeçar a entrada (o rótulo da fonte, o título
+   * do documento, ou nenhum dos dois quando a linha é derivada e não tem nem um
+   * nem outro), e o identificador desceu para o metadado; e a DATA DE LEITURA
+   * deixou de ser `data-linha-campo="access_date"` e passou a
+   * `data-nonledger="data-da-linha"`, porque a forma da casa (dd.mm.aaaa) não
+   * cabe numa marca que exige a transcrição literal do campo ISO.
+   *
+   * O que esta célula julga continua a ser o mesmo: os campos vêm sempre pela
+   * mesma ordem. O nome, quando existe, é o primeiro e tem duas formas
+   * possíveis; o resto é um prefixo de `id,unit,source`. A data conta-se pela
+   * marca nova, para que a sua saída da lista não passe por «um campo a menos».
+   */
+  const NOMES = ['name', 'document.title'];
+  const COMPLETA_ORDEM = 'id,unit,source';
+  const semNome = (o) => {
+    const partes = o.split(',');
+    return NOMES.includes(partes[0]) ? partes.slice(1).join(',') : o;
+  };
+  const prefixos = m.ordens.every((o) => COMPLETA_ORDEM.startsWith(semNome(o)));
   conta(
     '3b · a linha-espécime: os mesmos campos pela mesma ordem, um selo por linha',
     /* A CONTAGEM LÊ-SE, E NÃO SE FIXA (bloco dos 308, P2). A célula pedia
@@ -390,7 +413,7 @@ const INDICE = '/livro-razao';
        sempre pela mesma ordem. O número imprime-se, para se ler o que ele é. */
     m.n > 0 && m.seloProprio === m.n && m.comEstado === m.n && prefixos,
     `${m.n} linhas · ${m.seloProprio} com o selo da própria linha · ${m.comEstado} com data-estado · ` +
-      `ordens: ${m.ordens.map((o) => `«${o}»`).join(' | ')}`,
+      `${m.comData} com a data na forma da casa · ordens: ${m.ordens.map((o) => `«${o}»`).join(' | ')}`,
   );
   await p.__contexto.close();
 }

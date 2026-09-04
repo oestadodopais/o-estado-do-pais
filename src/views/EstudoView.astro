@@ -31,6 +31,8 @@
  * e linha, em src/data/leituras.mjs e em DECISIONS §1.35.
  */
 import Base from '../layouts/Base.astro';
+import { dataDaCasa } from '../lib/datas.mjs';
+import { dataDaEdicaoNoRepositorio } from '../lib/datas-do-repositorio.mjs';
 import Claim from '../components/Claim.astro';
 import Provenance from '../components/Provenance.astro';
 import Marcador from '../components/Marcador.astro';
@@ -74,6 +76,10 @@ const textoDaqui = temRegisto(slug, lang) ? routePath('texto', lang, { slug }) :
 /** A ficha de uma edição: a sua página, o seu documento, o seu texto, as datas. */
 const edicoes = work.editions.map((e) => ({
   ...e,
+  /* A data de publicação é a do repositório: ver `src/lib/datas-do-repositorio.mjs`
+     e a razão em `EstudosView.astro`. `date`, do arquivo, deixa de chegar à
+     superfície. */
+  publicada: dataDaEdicaoNoRepositorio(slug, e.lang),
   paginaDaEdicao: routePath('estudo', e.lang, { slug }),
   documento: documentos.find((d) => d.lang === e.lang) ?? null,
   texto: temRegisto(slug, e.lang) ? routePath('texto', e.lang, { slug }) : null,
@@ -316,13 +322,19 @@ const jsonld = {
               {/* Um marcador de incerteza usa sempre a mesma classe: é a única
                   linguagem de incerteza do sítio (IDENTIDADE §6). Aqui era
                   texto simples e passava despercebido. */}
-              <span data-nonledger="data-de-publicacao">
-                {s.estudos.dataLabel}:{' '}
-                {e.date ?? <Marcador lang={lang} />}
+              <span class="edicao-data">
+                {/* A preposição fora da marca, a data com a sua origem: ver a
+                    razão em `src/lib/datas-do-repositorio.mjs`. */}
+                <span data-voz>{s.estudos.dataLabel}</span>{' '}
+                {e.publicada ? (
+                  <span data-nonledger="data-do-repositorio">{dataDaCasa(e.publicada)}</span>
+                ) : (
+                  <Marcador lang={lang} />
+                )}
               </span>
               <span data-nonledger="data-de-atualizacao">
                 {s.estudos.atualizadoLabel}:{' '}
-                {e.updated ?? <Marcador lang={lang} />}
+                {e.updated ? dataDaCasa(e.updated) : <Marcador lang={lang} />}
               </span>
               {e.lang !== lang && (
                 <a href={e.paginaDaEdicao} hreflang={e.lang === 'pt' ? 'pt-PT' : 'en'}>

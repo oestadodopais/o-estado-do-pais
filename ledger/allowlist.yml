@@ -20,10 +20,6 @@
 
 # Motivos aceites em data-nonledger="<motivo>".
 contexts:
-  - id: data-de-publicacao
-    why: >-
-      Data de publicação de um estudo, no arquivo. Enquanto não estiver
-      confirmada aparece como "[a verificar]".
   - id: data-de-atualizacao
     why: >-
       Data da última revisão de uma edição de um estudo, na página do estudo. É
@@ -75,6 +71,19 @@ contexts:
       COMO ESTÁ no ficheiro, e o ficheiro guarda ISO: a regra de uma só grafia de
       data no sítio e a comparação literal não cabem na mesma marca. A data ISO
       continua intacta no livro-razão e na página da linha, que é o recibo.
+  - id: data-do-repositorio
+    why: >-
+      O dia em que o ficheiro de uma edição de um trabalho entrou NESTE
+      repositório, `studies-src/<slug>/<lang>.html`, lido do `git log
+      --diff-filter=A` na construção. Acrescentado em 2026-09-04, com a decisão
+      do lugar de direção sobre as datas dos trabalhos. NÃO É a data em que o
+      trabalho foi publicado noutro sítio, nem a data em que foi escrito, e é por
+      isso que a origem vai dita: `src/data/studies.mjs` escreve no cabeçalho que
+      nenhuma data de publicação está confirmada, e treze das dezasseis edições
+      levam `date: null`. O que a casa pode provar é este dia, e prova-o quem
+      tiver o repositório. Sem história (uma cópia rasa) não há data e o marcador
+      volta; a régua do bloco refaz a leitura por conta própria e compara-a com o
+      que a página imprimiu.
   - id: ambito-da-medida
     why: >-
       O intervalo que faz parte da DEFINIÇÃO publicada de um indicador, e não do

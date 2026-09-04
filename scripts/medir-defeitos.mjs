@@ -48,6 +48,8 @@ import { matchPath, routePath } from '../src/lib/routes.mjs';
 import { AREAS } from '../src/data/areas.mjs';
 import { REGIOES } from '../src/data/regioes.mjs';
 import { DOMINIOS } from '../src/data/dominios.mjs';
+import { FIGURAS } from '../src/data/figuras.mjs';
+import { MEDIDAS_DO_DOMINIO_1 } from '../src/data/dominios.mjs';
 import { leMarcadores, analisa, leInventario, FICHEIRO_DOS_MARCADORES } from './voz.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -531,6 +533,27 @@ const LUGAR_DECLARADO = '[data-lugar]';
  * cada fonte se exerce, para que uma fonte por exercer não fique em silêncio.
  */
 const NOME_DECLARADO = '[data-nome]';
+/**
+ * ---------------------------------------------------------------------------
+ * `data-voz` — PROSA DA CASA QUE VIVE ONDE A RÉGUA NÃO OLHA (04.09.2026)
+ * ---------------------------------------------------------------------------
+ * A leitura a frio do F1.4 (Major 11) contou duas cadeias visíveis que o
+ * inventário não tinha e não podia ter: o rótulo do campo de busca do índice do
+ * livro-razão, que vive num `<label>` (e `<label>` não está na definição de
+ * bloco), e o sufixo da contagem de cada área de governo, que vive DENTRO da
+ * âncora da linha (e um bloco cujo texto está todo dentro de um `<a>` é um
+ * destino, não uma frase). As duas são texto que a casa escreve e que o leitor
+ * lê, e nenhuma régua as via: declará-las sem isto era declarar uma linha
+ * «viva» que não se rende, o que fecha a construção.
+ *
+ * ESTA MARCA SÓ ALARGA A PENEIRA, e é por isso que é segura: diz «este texto é
+ * prosa da casa, recolhe-o onde quer que ele esteja». Não dispensa nada, não
+ * esconde nada, e uma marca a mais só pode pôr mais texto por classificar. As
+ * marcas que DISPENSAM (`data-nome`, `data-lugar`, `data-cobertura`) continuam
+ * a ser as que precisam da sua própria conferência; esta não precisa de
+ * nenhuma, porque não afirma nada sobre o texto: aponta para ele.
+ */
+const VOZ_DECLARADA = '[data-voz]';
 /** As fontes que podem sustentar um `data-nome`, e os nomes que cada uma publica. */
 const NOMES_POR_FONTE = {
   areas: new Set(AREAS.flatMap((a) => Object.values(a.nome ?? {}))),
@@ -542,6 +565,40 @@ const NOMES_POR_FONTE = {
      que é a carta escrita outra vez. A régua confere que o texto marcado é,
      carácter a carácter, um nome deste ficheiro. */
   dominios: new Set(DOMINIOS.flatMap((d) => Object.values(d.nome ?? {}))),
+  /* OS NOMES DE CARTÃO DAS MEDIDAS (bloco F1.4, 04.09.2026). O índice do
+     livro-razão e as páginas de área chamavam às medidas o identificador do
+     ficheiro; passam a chamar-lhes o nome do cartão da primeira página, que é o
+     nome de uma entrada de `src/data/figuras.mjs` ou de `src/data/dominios.mjs`.
+     São duas fontes e não uma porque são dois ficheiros, e a marca diz de qual
+     veio: a régua confere o texto contra a lista daquele ficheiro, e uma marca
+     que apontasse ao ficheiro errado passaria em silêncio se as listas fossem
+     uma só. Sem esta fonte, os 31 nomes custavam 62 linhas ao inventário das
+     frases, que é a lista das medidas escrita outra vez. */
+  figuras: new Set(FIGURAS.flatMap((f) => Object.values(f.nome ?? {}))),
+  medidas: new Set(MEDIDAS_DO_DOMINIO_1.flatMap((m) => Object.values(m.nome ?? {}))),
+};
+
+/**
+ * ---------------------------------------------------------------------------
+ * O NOME DE UMA LINHA É O NOME DAQUELA LINHA (leitura a frio do F1.4, Blocking 4)
+ * ---------------------------------------------------------------------------
+ * A conferência acima pergunta «este texto é UM nome deste ficheiro?». Para o
+ * nome de uma área ou de um domínio chega, porque a página tem um só nome e ele
+ * é o assunto dela. Para o nome de uma MEDIDA não chega: o índice do livro-razão
+ * rende 149 nomes numa lista, e trocar o nome de duas linhas passava a peneira
+ * inteira — as duas cadeias estão no ficheiro, e o leitor lia «Dívida pública»
+ * por cima do custo unitário do trabalho.
+ *
+ * A marca do nome de uma medida diz, por isso, DE QUE LINHA ele é
+ * (`data-de-linha`), e esta tabela responde à pergunta certa: «este texto é o
+ * nome DESTA linha, nesta edição?». O par vem dos ficheiros de dados, lidos
+ * aqui, e não da função que compõe a página.
+ *
+ * @type {Record<string, Map<string, Record<string, string>>>}
+ */
+const NOMES_POR_LINHA = {
+  figuras: new Map(FIGURAS.filter((f) => f.claim).map((f) => [f.claim, f.nome])),
+  medidas: new Map(MEDIDAS_DO_DOMINIO_1.filter((m) => m.claim).map((m) => [m.claim, m.nome])),
 };
 /* A CONFERÊNCIA DE `data-nome`, e é o que distingue esta marca da dos lugares.
    Cada elemento marcado diz de que ficheiro vem o nome, e a régua confere que o
@@ -625,6 +682,11 @@ function frasesDaVoz(root) {
     if (el.querySelector(BLOCOS_DA_VOZ)) continue;
     if (marcados.has(el)) continue;
     const t = norm(textoForaDasOrigens(el, marcados));
+    if (t) out.push(t);
+  }
+  /* A prosa marcada `data-voz`, onde quer que ela esteja (04.09.2026). */
+  for (const el of root.querySelectorAll(VOZ_DECLARADA)) {
+    const t = norm(texto(el));
     if (t) out.push(t);
   }
   return out;
@@ -717,6 +779,13 @@ function frasesDaCasa(root, rotaKey) {
     const foraDeLigacoes = temOrigem ? t : norm(textoForaDeComandos(el));
     if (!foraDeLigacoes) continue;
     out.push(t);
+  }
+  /* A PROSA MARCADA `data-voz`, ONDE QUER QUE ELA ESTEJA (04.09.2026). Entra
+     depois dos blocos e pela mesma porta: é uma frase da casa, e a rota onde ela
+     vive conta-a como conta as outras. Ver a razão ao lado de `VOZ_DECLARADA`. */
+  for (const el of root.querySelectorAll(VOZ_DECLARADA)) {
+    const t = norm(texto(el));
+    if (t) out.push(t);
   }
   return out;
 }
@@ -947,6 +1016,33 @@ for (const file of ficheiros) {
       continue;
     }
     nomesPorFonte[fonte] += 1;
+    /* O NOME DE UMA MEDIDA É CONFERIDO CONTRA A SUA PRÓPRIA LINHA (Blocking 4).
+       Quando a marca diz de que linha o nome é, a pergunta deixa de ser «está
+       neste ficheiro?» e passa a ser «é o nome DESTA linha, nesta edição?». */
+    const daLinha = el.getAttribute('data-de-linha');
+    if (daLinha && NOMES_POR_LINHA[fonte]) {
+      const par = NOMES_POR_LINHA[fonte].get(daLinha);
+      const lingua = root.querySelector('html')?.getAttribute('lang') === 'en' ? 'en' : 'pt';
+      const esperado = par ? norm(par[lingua] ?? par.pt ?? '') : null;
+      if (!par) {
+        nomesForaDaFonte.push({
+          caminho: caminho || '/',
+          fonte,
+          texto: t,
+          porque: `a marca diz que o nome é da linha "${daLinha}", que src/data/${fonte}.mjs não nomeia`,
+        });
+      } else if (esperado !== t) {
+        nomesForaDaFonte.push({
+          caminho: caminho || '/',
+          fonte,
+          texto: t,
+          porque:
+            `o texto marcado não é o nome da linha "${daLinha}" nesta edição ` +
+            `(src/data/${fonte}.mjs diz «${esperado}»)`,
+        });
+      }
+      continue;
+    }
     if (!NOMES_POR_FONTE[fonte].has(t)) {
       nomesForaDaFonte.push({
         caminho: caminho || '/',
