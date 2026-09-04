@@ -43,6 +43,32 @@
  *        deixa de ser uma ausência.
  *
  * ---------------------------------------------------------------------------
+ * AS QUATRO CONFERÊNCIAS DO ATRASO (bloco F1.6, 04.09.2026)
+ * ---------------------------------------------------------------------------
+ *   F13 · **o período da fonte é o da série declarada.** Cada
+ *        `[data-nonledger="periodo-da-fonte"]` diz de que série saiu
+ *        (`data-de-serie`); este portão vai buscar a série a
+ *        `src/data/frescura.mjs` e compara o período carácter a carácter. Sem
+ *        isto, o motivo novo do `allowlist.yml` seria uma dispensa.
+ *   F14 · **a série declarada bate certo com a origem que ela nomeia.** A série
+ *        diz o ficheiro, o registo e o campo de onde o período foi lido; este
+ *        portão abre esse ficheiro por conta própria, tira o período do que a
+ *        folha da fonte imprime («Ano Mês: 202607») e compara-o com o declarado.
+ *        Duas contas do mesmo facto, feitas de sítios diferentes.
+ *   F15 · **a frase do atraso está em TODAS as páginas das linhas atrasadas**,
+ *        nas duas edições. O total lê-se do livro-razão e não da própria
+ *        varredura: as duas edições podiam faltar a mesma página e continuar a
+ *        bater uma com a outra, que é a razão escrita em F7.
+ *   F16 · **a contagem por extenso da frase do Painel Social bate certo com a
+ *        lista.** A frase de contexto diz «Oito das dezassete medidas
+ *        principais», e a régua dos algarismos não vê palavras: sem isto, a
+ *        primeira medida que entrasse ou saísse do painel deixava a frase errada
+ *        sem que nada fechasse. A palavra do numerador recompõe-se de
+ *        `FIGURAS_SOCIAL.length`; o denominador é da Comissão e não da casa, e o
+ *        que se confere dele é que a frase continua a dizer o que a declaração
+ *        declara.
+ *
+ * ---------------------------------------------------------------------------
  * TRÊS CONFERÊNCIAS NOVAS (segunda passagem, 03.09.2026, leitura a frio)
  * ---------------------------------------------------------------------------
  * A leitura a frio do Codex mediu que F2 e F8 aceitavam QUALQUER motivo em
@@ -96,6 +122,13 @@ import { slugsDosDominios, medidasDoDominio } from '../src/data/dominios.mjs';
 import { MEDIDAS_DO_CONCELHO } from '../src/data/concelhos.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { linhasPorConcelho } from '../src/lib/dominios.mjs';
+import {
+  FIGURAS_SOCIAL,
+  CONTEXTO_DOS_PAINEIS,
+  MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL,
+  numeralPorExtenso,
+} from '../src/data/figuras.mjs';
+import { SERIES_ATRASADAS } from '../src/data/frescura.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = process.env.OEDP_DIST ?? path.join(RAIZ, 'dist');
@@ -251,6 +284,8 @@ const contas = {
   concelhos_com_populacao: /** @type {Record<string, number>} */ ({ pt: 0, en: 0 }),
   concelhos: /** @type {Record<string, number>} */ ({ pt: 0, en: 0 }),
   linhas_citadas: new Set(),
+  periodos_da_fonte: 0,
+  paginas_com_atraso: /** @type {Record<string, number>} */ ({ pt: 0, en: 0 }),
 };
 
 /* Os rótulos das duas medidas dos 308 que a F7 conta, lidos da declaração e não
@@ -262,6 +297,28 @@ const medidaDoConcelho = (chave) => {
 };
 const ROTULO_GANHO = medidaDoConcelho('ganho').nome;
 const ROTULO_POPULACAO = medidaDoConcelho('populacao').nome;
+
+/* ---------------------------------------------------------------------------
+ * O ATRASO: a série declarada, e as linhas que ela apanha (F13 a F15)
+ * ---------------------------------------------------------------------------
+ * A REGRA DE PERTENÇA ESCREVE-SE AQUI OUTRA VEZ, e é de propósito: este é o
+ * segundo ponto de observação sobre o mesmo facto, como o `gate:html` faz às
+ * chaves da prova. Se `src/lib/frescura.mjs` e este ficheiro se afastarem, é aqui
+ * que isso aparece, em vez de os dois concordarem por serem o mesmo código.
+ */
+const SERIE_POR_ID = new Map(SERIES_ATRASADAS.map((s) => [s.id, s]));
+const idsAtrasados = new Set(
+  [...claims.values()]
+    .filter((c) =>
+      SERIES_ATRASADAS.some(
+        (s) =>
+          c.source === s.fonte &&
+          /** @type {{title?: unknown}} */ (c.document ?? {}).title === s.documento &&
+          c.reference_date === s.periodoDaCasa,
+      ),
+    )
+    .map((c) => c.id),
+);
 
 for (const ficheiro of paginasDe(DIST)) {
   const caminho = '/' + path.relative(DIST, ficheiro).split(path.sep).join('/');
@@ -297,6 +354,40 @@ for (const ficheiro of paginasDe(DIST)) {
           `      no livro-razão: ${bruto} · na forma da casa: ${esperado}\n` +
           `      renderizado:    ${rendido}`,
       );
+    }
+  }
+
+  /* ------------------------------------------------------------- F13, F15 --- */
+  for (const el of root.querySelectorAll('[data-nonledger="periodo-da-fonte"]')) {
+    contas.periodos_da_fonte++;
+    const id = el.getAttribute('data-de-serie') ?? '';
+    const serie = SERIE_POR_ID.get(id);
+    if (!serie) {
+      err(
+        `${rel}: um período diz vir da série "${id}", que não está declarada em ` +
+          `src/data/frescura.mjs. Um período sem série não tem origem nenhuma.`,
+      );
+      continue;
+    }
+    const rendido = texto(el);
+    if (rendido !== serie.periodoDaFonte) {
+      err(
+        `${rel}: o período da fonte da série "${id}" não é o que a declaração traz.\n` +
+          `      em src/data/frescura.mjs: ${serie.periodoDaFonte}\n` +
+          `      renderizado:              ${rendido}`,
+      );
+    }
+  }
+  if (rota?.key === 'linha' && idsAtrasados.has(rota.params.slug ?? '')) {
+    const marcas = root.querySelectorAll('[data-nonledger="periodo-da-fonte"]').length;
+    if (marcas === 0) {
+      err(
+        `${rel}: a linha "${rota.params.slug}" está numa série atrasada e a página não diz o ` +
+          `atraso. Um selo conferido ao lado de um valor de outro período promete uma frescura ` +
+          `que a página não tem.`,
+      );
+    } else {
+      contas.paginas_com_atraso[rota.lang]++;
     }
   }
 
@@ -606,6 +697,117 @@ if (totalDeConcelhos > 0) {
   }
 }
 
+/* ---------------------------------------------------------------------------
+ * F14 · a série declarada bate certo com a origem que ela nomeia
+ * ---------------------------------------------------------------------------
+ * O período que o sítio imprime vem de `src/data/frescura.mjs`; este bloco abre
+ * o ficheiro que a série nomeia como origem, tira de lá o período por conta
+ * própria, e compara. O que se lê do inventário das fontes não é prosa: é o que
+ * a folha da fonte imprime no seu próprio campo, «Ano Mês: 202607», copiado para
+ * o campo `ultimo_periodo` daquele registo. Um período que ali mude e aqui não
+ * fecha a construção, que é o dia em que a casa se atrasa mais um mês sem dar
+ * por isso.
+ */
+for (const serie of SERIES_ATRASADAS) {
+  const caminho = path.join(RAIZ, serie.origem.ficheiro);
+  if (!fs.existsSync(caminho)) {
+    err(
+      `a série "${serie.id}" nomeia a origem ${serie.origem.ficheiro}, que não existe. ` +
+        `Um período sem origem legível é um número escrito à mão.`,
+    );
+    continue;
+  }
+  let registo = null;
+  try {
+    const cru = JSON.parse(fs.readFileSync(caminho, 'utf8'));
+    const linhasDoInventario = Array.isArray(cru?.primeira_vaga) ? cru.primeira_vaga : [];
+    registo = linhasDoInventario.find((x) => x?.id === serie.origem.registo) ?? null;
+  } catch (e) {
+    err(`a série "${serie.id}": ${serie.origem.ficheiro} não se lê (${String(e)}).`);
+    continue;
+  }
+  if (!registo) {
+    err(
+      `a série "${serie.id}" nomeia o registo "${serie.origem.registo}" de ` +
+        `${serie.origem.ficheiro}, que lá não está.`,
+    );
+    continue;
+  }
+  const campo = registo[serie.origem.campo];
+  if (typeof campo !== 'string') {
+    err(
+      `a série "${serie.id}" nomeia o campo "${serie.origem.campo}" do registo ` +
+        `"${serie.origem.registo}", e ele não é texto.`,
+    );
+    continue;
+  }
+  /* O que a folha da fonte imprime, e não a prosa à volta: «Ano Mês: 202607». */
+  const m = /Ano\s*M[êe]s:\s*(\d{4})(\d{2})/.exec(campo);
+  if (!m) {
+    err(
+      `a série "${serie.id}": o campo "${serie.origem.campo}" do registo ` +
+        `"${serie.origem.registo}" já não traz o período tal como a folha da fonte o imprime ` +
+        `(«Ano Mês: AAAAMM»). Sem ele não há segunda conta, e uma cópia sem conferência é um ` +
+        `número escrito à mão.`,
+    );
+    continue;
+  }
+  const lido = `${m[1]}-${m[2]}`;
+  if (lido !== serie.periodoDaFonte) {
+    err(
+      `a série "${serie.id}": o período declarado e o da origem não batem certo.\n` +
+        `      src/data/frescura.mjs:        ${serie.periodoDaFonte}\n` +
+        `      ${serie.origem.ficheiro} (${serie.origem.registo}.${serie.origem.campo}): ${lido}`,
+    );
+  }
+}
+
+/* F15 · a frase do atraso em todas as páginas das linhas atrasadas, nas duas
+   edições. O total lê-se do livro-razão e não da varredura, pela razão de F7. */
+if (contas.paginas > 0) {
+  for (const lang of LANGS) {
+    if (contas.paginas_com_atraso[lang] !== idsAtrasados.size) {
+      err(
+        `a edição "${lang}" tem ${contas.paginas_com_atraso[lang]} página(s) de linha com a ` +
+          `frase do atraso e o livro-razão tem ${idsAtrasados.size} linha(s) em séries ` +
+          `atrasadas. Uma linha atrasada sem a frase é um valor velho com um selo fresco ao lado.`,
+      );
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * F16 · a contagem por extenso do Painel Social bate certo com a lista
+ * ---------------------------------------------------------------------------
+ * A régua dos algarismos não vê palavras, e é isso que faz esta classe escapar
+ * inteira (`DECISIONS.md` §4, «As contagens em palavras da página do
+ * município»). A frase de contexto do Painel Social abre com o numerador por
+ * extenso; aqui recompõe-se essa palavra de `FIGURAS_SOCIAL.length` e exige-se
+ * que a frase declarada comece por ela. O denominador é da Comissão e está
+ * declarado com a sua origem: o que se confere dele é que a frase continua a
+ * dizer o que a declaração diz.
+ */
+for (const lang of LANGS) {
+  const partes = CONTEXTO_DOS_PAINEIS.social[lang];
+  const abertura = typeof partes?.[0] === 'string' ? partes[0] : '';
+  const esperada = numeralPorExtenso(FIGURAS_SOCIAL.length, lang, true);
+  if (!abertura.startsWith(`${esperada} `)) {
+    err(
+      `a frase do Painel Social na edição "${lang}" não começa pela contagem das medidas que a ` +
+        `lista tem.\n      FIGURAS_SOCIAL tem ${FIGURAS_SOCIAL.length}, por extenso ` +
+        `«${esperada}»\n      a frase abre com «${abertura.slice(0, 40)}…»`,
+    );
+  }
+  if (!abertura.includes(MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL.palavra[lang])) {
+    err(
+      `a frase do Painel Social na edição "${lang}" já não diz o número das medidas principais ` +
+        `que MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL declara ` +
+        `(«${MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL.palavra[lang]}»), e é esse número que traz a ` +
+        `origem da Comissão atrás dele.`,
+    );
+  }
+}
+
 /* F6 · as linhas de cada medida de concelho são alcançáveis pela porta do mapa. */
 if (dominios.length > 0 && contas.formas > 0) {
   const porta = routePath('livroConcelhos', 'pt');
@@ -636,6 +838,8 @@ console.log(
       ` ${contas.paginas_de_dominio} páginas de domínio · ${contas.formas} desenhos (${porNome || 'nenhum'})` +
         ` · ${contas.datas_de_linha} datas de linha conferidas · ${contas.medidas_com_leitura} leituras breves` +
         ` · ${contas.ausencias} ausências · ganho médio em ${contas.concelhos_com_ganho.pt}/${contas.concelhos.pt} concelhos` +
-        ` (controlo: população em ${contas.concelhos_com_populacao.pt})`,
+        ` (controlo: população em ${contas.concelhos_com_populacao.pt})` +
+        ` · atraso: ${SERIES_ATRASADAS.length} série(s), ${idsAtrasados.size} linha(s),` +
+        ` ${contas.periodos_da_fonte} período(s) da fonte conferido(s)`,
     ),
 );
