@@ -353,7 +353,14 @@
     : document.querySelectorAll('[data-densidade-bloco] [data-densidade]');
   if (blocoDensidade) blocoDensidade.hidden = false;
   var anuncio = raiz.querySelector('[data-anuncio]');
-  var pecas = document.querySelectorAll('.peca-mais');
+  /* AS DOBRAS QUE A DENSIDADE GOVERNA (F1.1b, item 1, 04.09.2026).
+     Eram as treze `.peca-mais` da grelha do painel. A grelha saiu da primeira
+     página e o que ficou é a área de leitura: 21 `<details data-leitura>`, um por
+     medida. As duas marcas ficam na mesma linha porque este ficheiro serve uma
+     página só e a coisa é a mesma — a dobra que «Relance» fecha e «Leitura
+     breve» abre —, e porque uma lista que só conhecesse a marca nova deixava a
+     antiga sem comando no dia em que uma peça voltasse. */
+  var pecas = document.querySelectorAll('.peca-mais, [data-leitura]');
   var campo = raiz.querySelector('[data-pesquisa]');
   /* ---------------------------------------------------------------------------
    * A GAVETA DA BUSCA (01.09.2026)
@@ -749,6 +756,78 @@
       '',
       normalizado,
     );
+  }
+
+  /* ==========================================================================
+   * UMA LEITURA DE CADA VEZ (F1.1b, item 1, 04.09.2026)
+   * ==========================================================================
+   * O cartão da faixa é o «Relance» e a leitura por baixo é a «Leitura breve» da
+   * mesma medida. Sem guião, o cartão é uma âncora para `#m-<id>`: o navegador
+   * põe o fragmento na barra, rola até lá e — nos motores que o suportam — abre
+   * o `<details>` alvo. Isso é a página inteira, e não falta nada.
+   *
+   * O QUE O GUIÃO ACRESCENTA É UMA COISA SÓ: fechar a leitura que estava aberta
+   * quando se abre outra, para que a área de leitura seja UMA área e não uma
+   * pilha que cresce a cada toque. E abrir o alvo do fragmento nos motores que o
+   * não abrem sozinhos, para que a promessa do endereço citável valha nos dois.
+   *
+   * DENTRO DA REGRA DESTE FICHEIRO, e sem uma excepção: troca-se `open`, que
+   * está na lista do que ele pode tocar desde o primeiro dia. Não se escreve
+   * texto, não se compõe um número, não se monta um destino. E não se
+   * intercepta o clique com `preventDefault`: quem põe `#m-<id>` na barra de
+   * endereço é a própria âncora, como sempre foi, e por isso o endereço fica
+   * citável mesmo que este bloco não corra.
+   *
+   * O COMANDO DA DENSIDADE CONTINUA A MANDAR NAS 21, e as duas coisas não se
+   * atropelam: «Leitura breve» abre todas, e um toque num cartão a seguir fecha
+   * as outras e deixa aberta a daquele cartão. É a regra da prancha — «um toque
+   * numa peça muda só a dela» — com o destino a dizer qual.
+   * ======================================================================== */
+  var leituras = document.querySelectorAll('[data-leitura]');
+  if (leituras.length) {
+    var soEsta = function (alvo) {
+      for (var i11 = 0; i11 < leituras.length; i11++) {
+        leituras[i11].open = leituras[i11] === alvo;
+      }
+    };
+    /* O alvo de um fragmento, e só quando ele é uma leitura desta área: um
+       `#painel` ou um `#dominios` continuam a ser o que sempre foram. */
+    var leituraDoFragmento = function (frag) {
+      if (!frag || frag.charAt(0) !== '#' || frag.length < 2) return null;
+      var el = null;
+      try {
+        el = document.getElementById(decodeURIComponent(frag.slice(1)));
+      } catch (e) {
+        el = null;
+      }
+      return el && el.hasAttribute('data-leitura') ? el : null;
+    };
+
+    /* UM OUVINTE SÓ, NO DOCUMENTO, E NÃO UM POR CARTÃO. A pergunta não é «este
+       elemento é um cartão da faixa»: é «esta ligação vai a uma leitura desta
+       área». Assim o bloco não conhece a faixa nem depende dela — a faixa
+       continua a ser HTML e o guião continua a não a nomear, que é o que a
+       célula F4 da régua da faixa promete —, e QUALQUER porta para uma leitura
+       (a de um cartão hoje, a de outra coisa amanhã) fecha a anterior. */
+    document.addEventListener('click', function (ev) {
+      var el = ev.target;
+      var lig = el && el.closest ? el.closest('a[href]') : null;
+      if (!lig) return;
+      var alvo = leituraDoFragmento(lig.getAttribute('href'));
+      if (alvo) soEsta(alvo);
+    });
+
+    window.addEventListener('hashchange', function () {
+      var alvo = leituraDoFragmento(location.hash);
+      if (alvo) soEsta(alvo);
+    });
+
+    /* À CHEGADA, e depois de `aplica()` ter posto as 21 na densidade do
+       endereço: um endereço com fragmento abre a leitura daquele fragmento, que
+       é o que faz de `/#m-divida-publica-2025` uma citação que abre alguma
+       coisa em qualquer motor. */
+    var doArranque = leituraDoFragmento(location.hash);
+    if (doArranque) doArranque.open = true;
   }
 
   /* ------------------------------------------------------------------ o mapa

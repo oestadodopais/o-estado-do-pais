@@ -1,0 +1,281 @@
+---
+/**
+ * A LEITURA BREVE DE UMA MEDIDA · o que o cartão da faixa abre (F1.1b, item 1).
+ *
+ * ---------------------------------------------------------------------------
+ * O QUE ELA É, E DO QUE VEIO
+ * ---------------------------------------------------------------------------
+ * A faixa é o «Relance» e cada cartão abre a «Leitura breve» daquela medida. Até
+ * 04.09.2026 essa leitura era a PEÇA do painel do Procedimento (13) ou a LINHA
+ * da lista social (8), e os dois blocos ficavam à vista, inteiros, por baixo do
+ * mapa. O diretor viu-os no ar a 04.09 e disse o que eles são: «the cards that
+ * we can scroll on top of the website … then are double just under the map. Now
+ * they don't have the numbers, but the names are still there and the cards are
+ * still there». Tinha razão: o F1.1 tirou os 21 valores aos dois painéis (a
+ * régua A3, «os 21 valores uma só vez») e o que sobrou foi a mesma lista de
+ * nomes, duas vezes na mesma página, a custar milhares de píxeis.
+ *
+ * O QUE ESTE COMPONENTE FAZ é a mesma leitura numa lista COMPACTA: cada medida é
+ * um `<details>` nativo FECHADO cujo `<summary>` é o nome dela. Fechada, a
+ * página é a faixa e uma lista de nomes de uma linha cada; aberta, a leitura tem
+ * o que o brief manda ter.
+ *
+ * ---------------------------------------------------------------------------
+ * O VALOR NÃO ENTRA AQUI, E ISSO É UMA DECISÃO MEDIDA
+ * ---------------------------------------------------------------------------
+ * O §1 do brief escreve o conteúdo de uma leitura como «o valor com selo, o
+ * limiar ou a posição, a frase de contexto do painel a que pertence, as três
+ * datas, a porta para a linha», e o seu item 5 escreve, na mesma página, «os 21
+ * valores da faixa continuam a aparecer uma só vez fora das páginas de linha (a
+ * régua A3)». As duas coisas não podem ser verdade ao mesmo tempo: o valor está
+ * no cartão, e reimprimi-lo aqui era o segundo `data-claim` que a A3 conta e
+ * recusa. Manda a medida de aceitação, que é mecânica e está escrita (J2, «os 21
+ * valores selados uma só vez, A3 verde»): o valor fica no cartão que abre esta
+ * leitura, e a leitura leva tudo o resto.
+ *
+ * O SELO FICA, e é ele a «porta para a linha»: o recibo daquela medida, no pé,
+ * como a peça sempre o teve. Uma leitura sem porta para a linha era uma legenda.
+ *
+ * ---------------------------------------------------------------------------
+ * NENHUMA CADEIA NOVA
+ * ---------------------------------------------------------------------------
+ * Tudo o que se lê aqui já estava declarado: o nome e a unidade da medida vêm de
+ * `src/data/figuras.mjs` com as marcas `data-medida-nome` e `data-medida-unidade`
+ * que a régua da voz conhece; a linha do limiar é, carácter a carácter, a que a
+ * peça imprime («limiar 60% · acima»); e a linha das três datas é a que a página
+ * do domínio imprime desde o F1.2 («período · lido · conferido»), com o mesmo
+ * componente e a mesma origem conferida — `check:formas` (F1) vai buscar o campo
+ * à linha, recompõe a data por conta própria e compara-a carácter a carácter.
+ *
+ * ---------------------------------------------------------------------------
+ * SEM GUIÃO É UM `<details>`, E COM GUIÃO CONTINUA A SER O MESMO
+ * ---------------------------------------------------------------------------
+ * O `id` de cada leitura é `m-<id da linha>`, que é a âncora para onde o cartão
+ * daquela medida já apontava desde 01.09.2026 (a peça e a linha social levavam-no
+ * antes): um endereço `/#m-divida-publica-2025` continua a abrir a mesma coisa
+ * que abria, e o navegador abre o `<details>` alvo de um fragmento nos motores
+ * que o suportam. O guião de `public/js/inicio.js` acrescenta uma coisa só —
+ * fechar a leitura anterior quando se abre outra — e não escreve texto nenhum,
+ * como a regra daquele ficheiro exige.
+ */
+import Frase from '../Frase.astro';
+import Provenance from '../Provenance.astro';
+import DataDaLinha from '../DataDaLinha.astro';
+import Regua from './Regua.astro';
+import { tresDatasDaLinha } from '../../lib/dominios.mjs';
+
+/* `quadro` é a marca do quadro a que estas leituras pertencem («pdm» ou
+   «social»), e serve a régua: é por ela que se conta se cada frase de contexto
+   está antes das leituras do SEU quadro, e não antes de outras. */
+const { s, lang, quadro, medidas } = Astro.props;
+
+/* Os três rótulos das três datas, os mesmos da página do domínio: são nomes de
+   campos do livro-razão, e a página da linha já lhes chama assim. Escrevem-se
+   uma vez, aqui, e não dentro do laço. */
+const ROTULO_DA_DATA = {
+  reference_date: s.dominios.dataPeriodo,
+  published_at: s.dominios.dataLido,
+  access_date: s.dominios.dataLido,
+};
+/** @param {string} campo */
+const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferido;
+
+/* A leitura de cada medida, montada uma vez: o que muda entre uma medida do
+   Procedimento e uma do Painel Social é ter ou não ter limiar publicado, e isso
+   já está na declaração. Não há aqui uma segunda lista de medidas nem uma
+   segunda conta: o que chega é o que a vista já rendeu na faixa. */
+const leituras = medidas.map((m) => ({
+  id: m.claim,
+  nome: m.nome[lang],
+  unidade: m.medida[lang],
+  frase: m.frase?.[lang] ?? null,
+  limiar: m.limiar ?? null,
+  comparacao: m.comparacao ?? null,
+  banda: Boolean(m.limiar && (m.limiar.inferior || m.limiar.superior)),
+  simbolo: m.limiar?.simbolo ?? '%',
+  datas: tresDatasDaLinha(m.claim),
+  estado: m.estado ?? null,
+  /* A RÉGUA CONTRA O LIMIAR, quando o quadro publica um: a barra que a peça
+     desenhava, com a mesma gramática (Emenda 4). Chega calculada da vista, que é
+     quem lê os lados declarados do limiar; aqui não se faz uma segunda conta.
+     Continua `aria-hidden`, e a razão continua de pé: tudo o que ela desenha
+     está escrito ao pé dela em palavras validadas (o limiar com o seu motivo, a
+     palavra do estado no cartão, as pontas da escala), e o valor está na mesma
+     página, no cartão que abre esta leitura. */
+  regua: m.regua ?? null,
+  /* ---------------------------------------------------------------------
+     A MEDIDA QUE VIVE NUM DOMÍNIO GANHA UMA PORTA, E NÃO PERDE A LEITURA
+     (segunda passagem, 04.09.2026, sobre a leitura a frio do Codex)
+     ---------------------------------------------------------------------
+     Três das 21 medidas dos dois quadros são medidas de um domínio COM PÁGINA
+     (a dívida pública, a taxa de emprego e a taxa de desemprego), e o cartão
+     delas leva à página do domínio desde o F1.2b.
+
+     A PRIMEIRA PASSAGEM REDUZIU A LEITURA DELAS A UMA LINHA com essa porta, por
+     instrução do lugar de direção, e o custo mediu-se na leitura a frio
+     (Blocking 3): a primeira página passava de 7 para 5 definições, de 13 para
+     12 limiares, de 13 para 12 réguas e de 21 para 18 selos de fonte na área de
+     leitura. Saíam a definição da dívida pública e a da taxa de emprego, o
+     limiar e a régua da dívida, e três portas para a linha. Nada disso é
+     repetição do domínio: são o que a leitura breve desta página tem para dar.
+
+     A DECISÃO CORRIGIDA (04.09.2026, pela delegação da §1.98): os 21 cartões têm
+     a MESMA leitura breve, e os três do domínio acrescentam a porta «Ver no
+     domínio →» no fim. O que não se repete continua a não se repetir: o valor
+     está no cartão e em mais lado nenhum, porque a régua A3 conta `data-claim`
+     por id e recusa o segundo. */
+  porta: m.porta ?? null,
+}));
+---
+
+<div class="dobras" data-leituras={quadro}>
+  {
+    leituras.map((l) => (
+      <details
+        class="dobra"
+        id={`m-${l.id}`}
+        data-leitura={l.id}
+        data-quadro={quadro}
+        data-estado={l.estado ?? 'sem'}
+        data-limiar={l.limiar ? 'sim' : 'nao'}
+      >
+        {/* O `<summary>` É O NOME DA MEDIDA, E MAIS NADA (brief §0). A palavra
+            «abrir/fechar» da peça não vem com ele: ali o `<summary>` era um
+            comando ao pé de uma peça que já dizia o nome, aqui o `<summary>` É o
+            nome, e uma segunda palavra ao lado dele seria mobília. A seta é a
+            mesma de toda a casa e é `aria-hidden`, porque o estado aberto ou
+            fechado é o do `<details>` e o motor já o diz.
+
+            O NOME LEVA `data-medida-nome`, que é a marca da origem declarada: o
+            texto vem de `src/data/figuras.mjs` e não é uma frase da casa. É
+            também por ela que a medida J1 conta em quantos lugares o nome de
+            cada medida aparece nesta página. */}
+        <summary class="dobra-abrir">
+          <span class="dobra-seta" aria-hidden="true" />
+          <span class="dobra-nome" data-medida-nome>
+            {l.nome}
+          </span>
+        </summary>
+
+        <div class="dobra-corpo">
+          <p class="dobra-unidade" data-medida-unidade>
+            <Frase partes={l.unidade} lang={lang} selos={true} />
+          </p>
+
+          {/* O LIMIAR, ONDE O QUADRO PUBLICA UM (Emenda 1). As oito medidas do
+              Painel Social não têm limiar nenhum — a fonte classifica pela
+              posição na distribuição dos Estados-Membros —, e por isso esta
+              linha não se rende para elas. Escrever-lhes «sem limiar» seria
+              dizer que a casa procurou um limiar e não o encontrou, quando o
+              quadro nunca publicou nenhum; é a mesma razão por que o cartão
+              delas não leva palavra de estado, e a régua A10 conta a palavra
+              dentro dos cartões e das leituras para que não volte. */}
+          {l.limiar && (
+            <p class="dobra-limiar">
+              <span class="dobra-limiar-k">{s.home.numeros.limiar}</span>{' '}
+              <span class="dobra-limiar-v">
+                {l.banda ? (
+                  <>
+                    {l.limiar.inferior.sinal ?? ''}
+                    <span data-nonledger="limiar-do-quadro">{l.limiar.inferior.nl}</span>/
+                    {l.limiar.superior.sinal ?? ''}
+                    <span data-nonledger="limiar-do-quadro">{l.limiar.superior.nl}</span>
+                    {l.simbolo}
+                  </>
+                ) : (
+                  <>
+                    {l.limiar.sinal ?? ''}
+                    <span data-nonledger="limiar-do-quadro">{l.limiar.nl}</span>
+                    {l.simbolo}
+                  </>
+                )}
+              </span>
+              {l.comparacao && <span> · {s.home.numeros[l.comparacao]}</span>}
+            </p>
+          )}
+
+          {/* A frase da medida, onde ela existe: diz o que a coisa é, e não o
+              que a casa fez. Três das oito linhas do Painel Social trazem-na
+              desde a Emenda 16, e uma delas é a ressalva da própria Comissão
+              sobre a sobrecarga do custo da habitação, sem a qual o número se lê
+              ao contrário. */}
+          {l.frase && (
+            <p class="dobra-frase">
+              <Frase partes={l.frase} lang={lang} selos={true} />
+            </p>
+          )}
+
+          {/* AS TRÊS DATAS, na forma da casa, cada uma com a linha e o campo de
+              onde saiu (carta §1, regra 3). As 21 medidas têm as três: o período
+              de referência, a data em que a fonte foi lida e a data da última
+              conferência — medido antes de se escrever esta linha, e não
+              suposto. */}
+          {l.datas.length > 0 && (
+            <p class="dobra-datas">
+              {l.datas.map((d, i) => (
+                <>
+                  {i > 0 && <span class="dobra-sep"> · </span>}
+                  <span class="dobra-data-k">{rotuloDaData(d.campo)}</span>{' '}
+                  <DataDaLinha id={l.id} campo={d.campo} valor={d.valor} />
+                </>
+              ))}
+            </p>
+          )}
+
+          {/* A RÉGUA CONTRA O LIMIAR (Emenda 4), onde o quadro publica um. É a
+              única forma gráfica que o sítio tem para «de que lado do limiar
+              está o valor, e a que distância», e o valor que ela desenha é o do
+              cartão que abre esta leitura. Fica dentro da dobra, e por isso não
+              custa um píxel enquanto a leitura estiver fechada. */}
+          {l.regua && (
+            <Regua
+              valor={l.regua.valor}
+              referencia={l.regua.referencia}
+              estado={l.estado ?? 'sem'}
+              colore={l.estado === 'fora' || l.estado === 'dentro'}
+            >
+              <Fragment slot="referencia">
+                {s.home.numeros.limiar}{' '}
+                {l.banda ? (
+                  <>
+                    {l.limiar.inferior.sinal ?? ''}
+                    <span data-nonledger="limiar-do-quadro">{l.limiar.inferior.nl}</span>/
+                    {l.limiar.superior.sinal ?? ''}
+                    <span data-nonledger="limiar-do-quadro">{l.limiar.superior.nl}</span>
+                    {l.simbolo}
+                  </>
+                ) : (
+                  <>
+                    {l.limiar.sinal ?? ''}
+                    <span data-nonledger="limiar-do-quadro">{l.limiar.nl}</span>
+                    {l.simbolo}
+                  </>
+                )}
+              </Fragment>
+            </Regua>
+          )}
+
+          {/* O PÉ É O SELO, E MAIS NADA (Emenda 15): é a porta para a linha, e é
+              toda a prova que a página mostra. */}
+          <p class="dobra-pe">
+            <Provenance id={l.id} lang={lang} />
+          </p>
+
+          {/* A PORTA, NO FIM E A MAIS (segunda passagem, 04.09.2026). Uma medida
+              que vive num domínio tem a MESMA leitura breve das outras vinte e
+              um, e acrescenta esta linha: a porta para a leitura daquela medida
+              na página do domínio, onde ela vive com a fronteira, a pergunta da
+              carta e a forma gráfica que a fonte permite. Ver a razão por
+              extenso no cabeçalho de `porta`. */}
+          {l.porta && (
+            <p class="dobra-porta">
+              <a class="lig" href={l.porta}>
+                {s.dominios.verNoDominio} →
+              </a>
+            </p>
+          )}
+        </div>
+      </details>
+    ))
+  }
+</div>

@@ -173,12 +173,12 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | conteudo | concelhos · CAOP | frases | viva | — |
 | conteudo | Custo do trabalho por unidade produzida, por hora trabalhada. | frases | viva | — |
 | conteudo | Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu, e a descer. | frases | retirada | o F0.9 tirou «e a descer» a 03.09.2026: era uma tendência, e o livro-razão publica um só valor deste indicador (`grep -rl tipsgo10 ledger/claims/` devolve um ficheiro, o de 2025). Uma tendência volta em F3.1, tipada, com a linha do período anterior ao lado, e não com estas palavras |
-| conteudo | Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu. | frases | viva | — |
+| conteudo | Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu. | leitura | viva | — |
 | navegacao | Encontrou um erro? correcoes@oestadodopais.pt · O registo de correções → | até 2026-08-26 | viva | — |
 | conteudo | Fora do limiar: dívida pública, posição de investimento internacional, custo unitário do trabalho e preços da habitação , em . | frases | viva | — |
 | navegacao | Found an error? correcoes@oestadodopais.pt · The corrections log → | até 2026-08-26 | viva | — |
 | conteudo | General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold, and falling. | frases | retirada | a gémea inglesa da de cima: o F0.9 tirou «and falling» a 03.09.2026, pela mesma razão e no mesmo dia. Uma linha é uma decisão editorial e leva as duas edições da mesma frase |
-| conteudo | General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold. | frases | viva | — |
+| conteudo | General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold. | leitura | viva | — |
 | conteudo | Grande Lisboa · região | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | conteudo | Greater Lisbon · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | navegacao | Hover over a point to read the municipality. Keyboard: Tab to the map, arrow keys to move between neighbouring municipalities, Home to return to Évora. | grelha-2 | retirada | a leitura em voz alta do mapa saiu com os pontos da primeira página (Emenda 20a e 20c; bloco do mapa por distritos) |
@@ -210,14 +210,14 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | conteudo | Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9 . | até 2026-08-26 | viva | — |
 | conteudo | Portugal · country | até 2026-08-26 | retirada | o F1.1 tirou o rótulo do âmbito da cabeça do PAÍS a 03.09.2026: dizia o nome do lugar e o tipo dele por cima de uma manchete que começa pela mesma palavra («Portugal ultrapassa…»), custava uma fila do primeiro ecrã do telemóvel, e era o eco do comando de âmbito, que saiu da página no mesmo bloco. O rótulo fica onde separa alguma coisa: nas páginas de região e de concelho, onde o tipo do lugar não está na manchete |
 | conteudo | Portugal · país | até 2026-08-26 | retirada | o F1.1 tirou o rótulo do âmbito da cabeça do PAÍS a 03.09.2026: dizia o nome do lugar e o tipo dele por cima de uma manchete que começa pela mesma palavra («Portugal ultrapassa…»), custava uma fila do primeiro ecrã do telemóvel, e era o eco do comando de âmbito, que saiu da página no mesmo bloco. O rótulo fica onde separa alguma coisa: nas páginas de região e de concelho, onde o tipo do lugar não está na manchete |
-| conteudo | Proporção das pessoas dos aos anos com emprego. | frases | viva | — |
+| conteudo | Proporção das pessoas dos aos anos com emprego. | leitura | viva | — |
 | conteudo | Proporção que gasta mais de % do rendimento disponível em habitação. | frases | viva | — |
 | navegacao | Relance | até 2026-08-26 | viva | — |
 | conteudo | Setúbal Peninsula · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | conteudo | The convergence rule | regioes | viva | — |
 | conteudo | The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 average. A value below the average means less purchasing power per person; a value above it, more. | regioes | viva | — |
 | navegacao | The regions published on the convergence rule. | grelha-2 | retirada | a régua da convergência saiu da primeira página até haver a página das regiões (Emenda 18, consequência decidida a 25.08; bloco A da auditoria de UI e UX, `696b51a`) |
-| conteudo | The share of people aged to who are in employment. | frases | viva | — |
+| conteudo | The share of people aged to who are in employment. | leitura | viva | — |
 | conteudo | The share spending more than % of disposable income on housing. | frases | viva | — |
 | conteudo | threshold % · above | frases | viva | — |
 | conteudo | threshold % · below | frases | viva | — |
@@ -2111,6 +2111,61 @@ nesse dia esta linha deixa de se render e a construção fecha com o nome dela,
 que é a régua a funcionar e não a falhar. O denominador é da Comissão, declarado
 em `MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL` com o documento, o endereço e a data em
 que foi lido, e o `check:formas` (F16) exige que a frase continue a dizê-lo.*
+
+## As frases da área de leitura da primeira página (bloco F1.1b, 04.09.2026)
+
+**Nenhuma linha nova, e isso mediu-se antes de se escrever.** O bloco tirou os dois
+painéis da primeira página e pôs no lugar deles a área de leitura: 21 `<details>`
+fechados, com o nome da medida como `<summary>`. Todo o texto que ela mostra já
+estava declarado ou já tem origem declarada:
+
+* o **nome** e a **unidade** de cada medida levam `data-medida-nome` e
+  `data-medida-unidade`, que são marcas de origem: a régua não as recolhe, e o
+  texto vem de `src/data/figuras.mjs`;
+* a **definição** de cada medida (a frase que a peça do painel imprimia) é, linha
+  a linha, a que já estava classificada nesta tabela, e continua a render-se: a
+  segunda passagem de 04.09 repô-la nas três leituras que a primeira tinha
+  reduzido a uma porta (ver mais abaixo);
+* a linha do **limiar** («limiar 60% · acima») é, carácter a carácter, a que a
+  peça do painel imprimia, e já estava classificada;
+* a linha das **três datas** («período · lido · conferido») é a mesma que a página
+  do domínio imprime desde o F1.2, e já está na tabela deste ficheiro. O que o
+  bloco acrescentou foi a rota `home` à exceção da raiz «confer» em
+  `VOZ-MARCADORES.md`, que já existia para a rota `dominio` e pela mesma razão: é
+  o nome de um CAMPO da linha, e `npm run check:formas` recompõe-o do livro-razão
+  e compara-o carácter a carácter;
+* a **frase de contexto** de cada um dos dois quadros e o **nome** de cada um deles
+  ficam onde estavam, uma vez cada, e nenhuma mudou uma palavra.
+
+**«Ver no domínio →» / «See it in the domain →» NÃO PODE ser uma linha `viva`, e
+não é falta de tentar: `npm run check:voz` fecha a construção se o for.** É a
+porta que fecha a leitura breve de uma medida que vive num domínio, e leva à
+leitura dela em `/dominios/<slug>#m-<chave>`; está declarada em
+`src/i18n/strings.mjs` (`dominios.verNoDominio`) nas duas línguas, e nomeada aqui
+por essa razão. A medida 8 (os blocos de texto da casa) e a medida 9 (o tripwire)
+excluem, por regra, o texto que vive dentro de um `<a>` ou de um `<button>`, e a
+exclusão corre nos dois sentidos: também impede a régua de confirmar que uma linha
+`viva` SE RENDE. Uma frase cujo texto inteiro é sempre a etiqueta de uma ligação
+não tem como entrar na tabela deste ficheiro enquanto a régua não souber ler
+dentro de `<a>`. É a mesma razão, palavra por palavra, que a segunda passagem do
+F1.9a escreveu para «Subir» / «Back to top», acima. **A cadeia diz o que a coisa é
+e para onde leva, não fala da casa, e usa as palavras do vocabulário fechado da
+§1.98 («domínio»).**
+
+**O que isto deixa por resolver é do F3.1**, e não deste bloco: a régua da voz não
+lê texto dentro de `<a>` em nenhuma rota do sítio, e alargá-la é redesenhar
+`medir-defeitos.mjs` para distinguir «rótulo de comando, sem origem própria» de
+«prosa da casa dentro de uma ligação». Está escrito na secção do F1.9a com o
+tamanho do buraco (190 cadeias em 2 118 ocorrências, medidas pelo F0.9).
+
+**Nenhuma frase saiu do sítio com este bloco.** A primeira passagem passou quatro
+linhas a «retirada» (a definição da dívida pública e a da taxa de emprego, nas
+duas edições), porque a leitura dessas medidas na primeira página tinha sido
+reduzida a uma linha com a porta. A leitura a frio do Codex mediu o custo dessa
+instrução (Blocking 3: a primeira página passava de 7 para 5 definições, de 13
+para 12 limiares e réguas, e de 21 para 18 selos de fonte), o lugar de direção
+corrigiu a decisão no mesmo dia, e as quatro linhas voltaram a «viva»: as 21
+leituras têm a mesma forma, e as três do domínio acrescentam a porta.
 
 ## Bloco F1.7 · acessibilidade e alvos · 04.09.2026
 

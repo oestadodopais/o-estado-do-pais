@@ -941,6 +941,26 @@ export const STRINGS = {
       mapaTabelaAbrir: 'Os valores, concelho a concelho',
       mapaTabelaConcelho: 'Concelho',
       mapaTabelaValor: 'Valor',
+      /* ---------------------------------------------------------------------
+         A PORTA DA MEDIDA QUE VIVE NUM DOMÍNIO (F1.1b, 04.09.2026)
+         ---------------------------------------------------------------------
+         Três das 21 medidas dos dois quadros da União são medidas de um domínio
+         com página, e a leitura inteira delas vive lá. Na área de leitura da
+         primeira página as três têm a MESMA leitura breve das outras dezoito, e
+         ACRESCENTAM esta porta no fim: não trocam a leitura por ela (decisão
+         corrigida a 04.09.2026, depois do Blocking 3 da leitura a frio).
+
+         A CADEIA É NOVA, e isso mediu-se antes de se escrever. O brief e o
+         lugar de direção dizem «a cadeia que o F1.2b já declarou»; o F1.2b
+         declarou o RÓTULO DE DESTINO de um cartão, que é `eyebrow` («Domínios»
+         / «Domains»), a sobrancelha da página de chegada. Uma porta que diga
+         só «Domínios» ao fim de uma leitura não diz para onde leva; a forma da
+         casa para uma porta é o nome do que está do outro lado, com a seta.
+
+         DIZ O QUE A COISA É E NÃO FALA DA CASA (Emenda 18): nomeia o destino,
+         e nada mais. As palavras são as do vocabulário fechado da §1.98 —
+         «domínio» é o nome da coisa na carta dos conteúdos. */
+      verNoDominio: 'Ver no domínio',
       voltarIndice: 'Os domínios',
       voltarPais: 'Portugal',
     },
@@ -2264,6 +2284,9 @@ export const STRINGS = {
       mapaTabelaAbrir: 'The values, municipality by municipality',
       mapaTabelaConcelho: 'Municipality',
       mapaTabelaValor: 'Value',
+      /* O par inglês da porta da medida que vive num domínio (F1.1b). Ver a
+         razão por extenso na edição portuguesa. */
+      verNoDominio: 'See it in the domain',
       voltarIndice: 'The domains',
       voltarPais: 'Portugal',
     },

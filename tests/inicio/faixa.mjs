@@ -16,13 +16,22 @@
  * ---------------------------------------------------------------------------
  * O QUE CADA CÉLULA MEDE, E PORQUE É ASSIM QUE SE MEDE
  * ---------------------------------------------------------------------------
- * F1 · A FAIXA É UMA LISTA NO DOCUMENTO, E OS SEUS CARTÕES SÃO AS MEDIDAS DA
- * PÁGINA. A afinação 2 do brief pede «uma lista no documento (`<ol>` ou `<ul>`)»
- * e a ordem pede que a faixa se encha do conteúdo de hoje. Não basta contar: o
- * conjunto dos ids dos cartões tem de ser, elemento a elemento, o conjunto das
- * medidas que a página rende por baixo (as peças do painel e as linhas da lista
- * social). Uma faixa com o número certo de cartões e um id errado passava numa
+ * F1 · A FAIXA DA CABEÇA É UMA LISTA NO DOCUMENTO, E OS SEUS CARTÕES SÃO AS
+ * MEDIDAS DA PÁGINA. A afinação 2 do brief pede «uma lista no documento (`<ol>`
+ * ou `<ul>`)» e a ordem pede que a faixa se encha do conteúdo de hoje. Não basta
+ * contar: o conjunto dos ids dos cartões tem de ser, elemento a elemento, o
+ * conjunto das medidas que a página rende por baixo (as peças do painel, as
+ * linhas da lista social e, desde 04.09.2026, as leituras breves da primeira
+ * página). Uma faixa com o número certo de cartões e um id errado passava numa
  * contagem e não passa numa comparação de conjuntos.
+ *
+ * A COMPARAÇÃO É SOBRE A FAIXA DA CABEÇA (F1.1b, 04.09.2026). A primeira página
+ * passou a ter duas faixas — a da cabeça e a do domínio, na secção que entrou a
+ * seguir ao mapa —, e as medidas de cabeça de um domínio NÃO têm leitura nesta
+ * página: têm-na na página do domínio, e é para lá que os seus cartões levam.
+ * Comparar o conjunto de todos os cartões da página com o das leituras dela
+ * media a relação errada. As células que medem CADA cartão (F2, F3, F5, F7, F8)
+ * continuam a ler todos: uma faixa nova não podia entrar sem régua.
  *
  * F2 · CADA CARTÃO TEM VALOR COM LINHA E SELO PARA ESSA LINHA. É a promessa da
  * casa vista dentro do cartão: o número está debaixo de `data-claim`, o selo é
@@ -287,13 +296,20 @@ const LEITURA = () => {
     el.closest('#painel, #painel-social, [data-faixa], .painel'),
   );
 
-  /* As medidas que a página rende por baixo da faixa: as peças e as linhas da
-     lista social. É o conjunto contra o qual os cartões se comparam. */
+  /* As medidas que a página rende por baixo da faixa: as peças, as linhas da
+     lista social e — desde 04.09.2026 — as leituras breves da primeira página,
+     que entraram no lugar das duas primeiras. É o conjunto contra o qual os
+     cartões da faixa da CABEÇA se comparam. As três marcas contam-se juntas
+     porque as três são a mesma coisa vista em três páginas: a leitura daquela
+     medida naquele lugar. */
   const daPagina = [
     ...document.querySelectorAll('[data-medida]'),
   ].map((el) => el.getAttribute('data-medida'));
   const daSocial = [...document.querySelectorAll('[data-social]')].map((el) =>
     el.getAttribute('data-social'),
+  );
+  const daLeitura = [...document.querySelectorAll('[data-leitura]')].map((el) =>
+    el.getAttribute('data-leitura'),
   );
 
   const guioes = [...document.querySelectorAll('script')].map((s) => s.textContent ?? '');
@@ -401,7 +417,19 @@ const LEITURA = () => {
         semLinha,
       };
     }),
-    medidasDaPagina: [...new Set([...daPagina, ...daSocial])],
+    medidasDaPagina: [...new Set([...daPagina, ...daSocial, ...daLeitura])],
+    /* OS CARTÕES DA FAIXA DA CABEÇA, À PARTE (F1.1b, 04.09.2026). Desde
+       04.09 a primeira página tem duas faixas: a da cabeça, que é o «Relance»
+       do lugar, e a do domínio, na secção que entrou a seguir ao mapa. As
+       células que comparam CONJUNTOS (F1 e F12, «os cartões da faixa são as
+       medidas que a página rende por baixo») são sobre a primeira: as medidas
+       de cabeça de um domínio não têm leitura NESTA página, têm-na na página do
+       domínio, e é para lá que os seus cartões levam. As células que medem cada
+       cartão (o selo, o alvo, o corpo do número, o destino) continuam a ler
+       `cartoes`, que são TODOS: uma faixa nova não podia entrar sem régua. */
+    idsDaCabeca: [...document.querySelectorAll('[data-grelha] [data-faixa] [data-cartao]')].map((c) =>
+      c.getAttribute('data-cartao'),
+    ),
     ancoras: [...document.querySelectorAll('[id]')].map((el) => el.id),
     manchete: manchete ? cx(manchete) : null,
     mapa: mapa ? cx(mapa) : null,
@@ -522,7 +550,10 @@ async function correTudo(soEstas) {
   if (precisa('F1')) {
     for (const e of EDICOES) {
       const r = lido[`${e.chave}_1280`];
-      const ids = r.cartoes.map((c) => c.id);
+      /* OS CARTÕES DA CABEÇA, e não todos os da página: ver a razão ao pé de
+         `idsDaCabeca`, na sonda. A faixa do domínio tem a sua régua no bloco que
+         a pôs lá (`tests/inicio/leitura.mjs`, J5). */
+      const ids = r.idsDaCabeca;
       const daFaixa = new Set(ids);
       const daPagina = new Set(r.medidasDaPagina);
       const soNaFaixa = [...daFaixa].filter((i) => !daPagina.has(i));
@@ -536,7 +567,7 @@ async function correTudo(soEstas) {
           soNaFaixa.length === 0 &&
           soNaPagina.length === 0 &&
           Boolean(r.rotulo),
-        `<${r.etiqueta}> com ${ids.length} cartões (${daFaixa.size} ids distintos) · ${daPagina.size} medidas na página` +
+        `<${r.etiqueta}> com ${ids.length} cartões na cabeça (${daFaixa.size} ids distintos) · ${daPagina.size} medidas na página` +
           ` · só na faixa: ${soNaFaixa.join(', ') || 'nenhuma'} · só na página: ${soNaPagina.join(', ') || 'nenhuma'}` +
           ` · nome da lista: «${r.rotulo ?? 'nenhum'}»`,
       );
@@ -1058,7 +1089,10 @@ async function correTudo(soEstas) {
         const toque = await p.evaluate(SONDA_TOQUE);
         await p.__ctx.close();
         medidas[`${qual}_${e.chave}`] = r;
-        const ids = r.cartoes.map((c) => c.id);
+        /* Os cartões da CABEÇA, como na F1 e pela mesma razão: esta célula
+           pergunta se a camada herda a cabeça inteira, e a cabeça tem uma faixa
+           só. */
+        const ids = r.idsDaCabeca;
         const daPagina = new Set(r.medidasDaPagina);
         const soltos = ids.filter((i) => !daPagina.has(i));
         const semSelo = r.cartoes.filter((c) => !c.selo);

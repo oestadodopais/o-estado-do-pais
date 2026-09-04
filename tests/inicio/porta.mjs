@@ -73,7 +73,11 @@
  * aconteceu.
  *
  * A10 · «sem limiar» FORA DOS CARTÕES. Contagem a 0 dentro dos cartões da faixa
- * e dentro das peças do painel de `/`, nas duas edições.
+ * e dentro das leituras breves de `/`, nas duas edições, e as duas coleções com
+ * elementos: uma contagem de zero sobre uma coleção vazia não prova nada. O
+ * segundo seletor era `#painel .peca` e passou a `#painel [data-leitura]` a
+ * 04.09.2026, quando a grelha das peças saiu da primeira página e a área de
+ * leitura entrou no lugar dela.
  *
  * A11 · A MOBÍLIA NUMA LINHA A 390. Do topo do documento ao topo do nome da
  * publicação: 64 px, que é o teto do brief.
@@ -93,7 +97,8 @@
  * régua, pela mesma razão: uma planta que tenha de derrubar uma célula tem de
  * viver ao pé da célula que derruba.
  *
- * A13 · O DESTINO DE CADA UM DOS 21 CARTÕES. Um cartão cuja linha pertence a um
+ * A13 · O DESTINO DE CADA UM DOS 21 CARTÕES DA FAIXA DA CABEÇA. Um cartão cuja
+ * linha pertence a um
  * domínio COM PÁGINA abre a leitura daquela medida na página do domínio; os
  * outros abrem a leitura breve desta página, como sempre. A régua não escreve a
  * lista dos que são de domínio: pergunta-a a `dominioDaLinha()`, que é a mesma
@@ -129,10 +134,11 @@
  * é isso que impede que a maneira mais fácil de a passar seja tirar as portas.
  *
  * A17 · O «n DE N» DE CADA FAIXA, nas quatro camadas e nas duas edições: uma
- * posição por cartão, o total igual ao número de cartões DAQUELA página (contado
- * no HTML dela), o ordinal a correr de 1 a N pela ordem do documento, e os dois
- * algarismos com o motivo `numeracao` declarado. É a célula que recusa uma faixa
- * de região a dizer «de 21».
+ * posição por cartão, o total igual ao número de cartões DAQUELA FAIXA (contado
+ * no HTML dela), o ordinal a correr de 1 a N dentro dela, e os dois algarismos
+ * com o motivo `numeracao` declarado. É a célula que recusa uma faixa de região
+ * a dizer «de 21». Lia a página inteira e passou a ler faixa a faixa a
+ * 04.09.2026, quando a primeira página passou a ter duas.
  *
  * ---------------------------------------------------------------------------
  * O QUE `--vermelhos` EXIGE DE CADA ESTRAGO
@@ -400,6 +406,13 @@ const SONDA_A1 = (alturaDoEcra) => {
     };
   };
   const cartoes = [...document.querySelectorAll('[data-faixa] .cartao')];
+  /* OS DA FAIXA DA CABEÇA À PARTE (F1.1b, 04.09.2026). A primeira página passou a
+     ter duas faixas — a da cabeça, com os 21 cartões dos dois quadros, e a do
+     domínio, na secção que entrou a seguir ao mapa. A medida A1 é sobre os 21, e
+     é essa contagem que a célula exige; a exigência do SELO fica sobre TODOS os
+     cartões da página, que é o que a promessa da casa diz («onde aparece um
+     valor, aparece o selo, sem exceção de página»). */
+  const daCabeca = [...document.querySelectorAll('[data-grelha] [data-faixa] .cartao')];
   const cartao = cartoes[0] ?? null;
   /* ---------------------------------------------------------------------------
      O SELO DE TODOS OS CARTÕES, E NÃO SÓ DO PRIMEIRO (Major 9)
@@ -459,6 +472,7 @@ const SONDA_A1 = (alturaDoEcra) => {
     selo: cx(cartao ? cartao.querySelector('.src-chip') : null),
     porta: cx(document.querySelector('[data-porta-concelho]')),
     cartoes: cartoes.length,
+    cartoesDaCabeca: daCabeca.length,
     semSelo,
     ecra: alturaDoEcra,
     altura: document.documentElement.scrollHeight,
@@ -497,12 +511,12 @@ async function corre() {
       .map(([k, c]) => (c === null ? `${k}: não existe` : `${k}: fundo ${c.fundo}`));
     conta(
       `A1.${ed.chave}`,
-      falhas.length === 0 && g.cartoes === 21 && g.semSelo.length === 0,
+      falhas.length === 0 && g.cartoesDaCabeca === 21 && g.semSelo.length === 0,
       (falhas.length === 0
         ? `390×${ALTURA_PEQUENA}: nome, manchete, cartão, selo e porta do concelho dentro do ecrã ` +
           `(fundo máximo ${Math.max(...Object.values(partes).map((c) => c.fundo)).toFixed(1)} px)`
         : `fora do primeiro ecrã: ${falhas.join('; ')}`) +
-        ` · ${g.cartoes} cartões, ${g.semSelo.length} sem selo com caixa` +
+        ` · ${g.cartoesDaCabeca} cartões na cabeça (${g.cartoes} na página), ${g.semSelo.length} sem selo com caixa` +
         (g.semSelo.length ? ` (${g.semSelo.map((c) => c.id).slice(0, 3).join(', ')})` : ''),
     );
 
@@ -644,21 +658,42 @@ async function corre() {
 
     /* A10 mede DENTRO dos cartões e das peças, e não na página inteira: a
        palavra é legítima onde ela é a leitura de uma ausência escrita por
-       extenso, e é ilegítima como estado de um cartão. */
+       extenso, e é ilegítima como estado de um cartão.
+
+       A SEGUNDA METADE MUDOU DE SELETOR COM A COISA QUE ELA MEDE (F1.1b,
+       04.09.2026). Media `#painel .peca`, que era a grelha das treze peças; a
+       grelha saiu da primeira página e no seu lugar está a área de leitura, com
+       um `<details data-leitura>` por medida. Deixar o seletor antigo era a
+       régua a contar zero numa página onde já não há nada daquela forma: uma
+       contagem de zero sobre uma coleção vazia não prova coisa nenhuma (a regra
+       14 da casa), e a palavra podia voltar dentro de uma leitura sem nada
+       cair. Conta-se onde a leitura agora vive.
+
+       AS DUAS COLEÇÕES TÊM DE TER ELEMENTOS, e isso é a outra metade da mesma
+       regra: uma célula que passe por não encontrar nada é uma célula cega. */
     const p2 = await pagina(ed.rota, 390, 844);
     const semLimiar = await p2.evaluate((palavra) => {
       const conta = (sel) =>
         [...document.querySelectorAll(sel)].filter((el) =>
           (el.textContent ?? '').toLowerCase().includes(palavra.toLowerCase()),
         ).length;
-      return { cartoes: conta('[data-faixa] .cartao'), pecas: conta('#painel .peca') };
+      return {
+        cartoes: conta('[data-faixa] .cartao'),
+        pecas: conta('#painel [data-leitura]'),
+        nCartoes: document.querySelectorAll('[data-faixa] .cartao').length,
+        nLeituras: document.querySelectorAll('#painel [data-leitura]').length,
+      };
     }, ed.semLimiar);
     medidas[`A10.${ed.chave}`] = semLimiar;
     conta(
       `A10.${ed.chave}`,
-      semLimiar.cartoes === 0 && semLimiar.pecas === 0,
-      `«${ed.semLimiar}» nos cartões e nas peças de ${ed.rota}: ` +
-        `${semLimiar.cartoes} cartão(ões), ${semLimiar.pecas} peça(s)`,
+      semLimiar.cartoes === 0 &&
+        semLimiar.pecas === 0 &&
+        semLimiar.nCartoes > 0 &&
+        semLimiar.nLeituras > 0,
+      `«${ed.semLimiar}» nos cartões e nas leituras de ${ed.rota}: ` +
+        `${semLimiar.cartoes} de ${semLimiar.nCartoes} cartão(ões), ` +
+        `${semLimiar.pecas} de ${semLimiar.nLeituras} leitura(s)`,
     );
 
     /* ------------------------------------------------------------------- A7 */
@@ -813,13 +848,25 @@ async function corre() {
        não, tem de ser uma âncora DESTA página. E os dois destinos têm de
        responder: a âncora existe no documento, e a página do domínio responde
        200 com o `id` lá dentro. Um destino que não abre nada é pior do que
-       nenhum. */
+       nenhum.
+
+       A FAIXA DA CABEÇA, E NÃO TODAS AS FAIXAS DA PÁGINA (F1.1b, 04.09.2026).
+       Desde 04.09 a primeira página tem DUAS faixas: a da cabeça, com os 21
+       cartões dos dois quadros, e a do domínio, na secção que entrou a seguir ao
+       mapa, com as medidas de cabeça daquele domínio. Esta célula é sobre os 21
+       — «o destino de cada um dos 21 cartões» —, e por isso lê a faixa que está
+       DENTRO da cabeça (`[data-grelha]`, a marca da grelha da cabeça, a mesma
+       por que a régua da faixa a encontra). Sem o recorte a célula contava 23 e
+       caía por uma razão que não é a dela; com o recorte continua a exigir os 21
+       e continua a comparar cartão a cartão. O destino dos cartões da faixa do
+       domínio é medido pela célula J5 de `tests/inicio/leitura.mjs`, que é a
+       régua do bloco que os pôs lá. */
     const pCartoes = await pagina(ed.rota, 390, ALTURA_PEQUENA);
     const cartoes = await pCartoes.evaluate(() => {
       const ancoras = new Set([...document.querySelectorAll('[id]')].map((el) => el.id));
       const cruza = (a, b) =>
         !(a.right <= b.left || b.right <= a.left || a.bottom <= b.top || b.bottom <= a.top);
-      return [...document.querySelectorAll('[data-faixa] [data-cartao]')].map((c) => {
+      return [...document.querySelectorAll('[data-grelha] [data-faixa] [data-cartao]')].map((c) => {
         /* O RÓTULO DO DESTINO SENTA-SE NA MESMA CÉLULA DA GRELHA QUE O SELO, no
            outro extremo dela, para não custar uma fila ao cartão. Os dois têm de
            caber lado a lado: um rótulo por cima de um selo seria a etiqueta a
@@ -1255,55 +1302,79 @@ async function corre() {
            motivo do registo para a numeração de secções e de instrumentos. Um
            algarismo à vista sem origem declarada é o que a casa não deixa
            entrar. */
+    /* O N É O DA FAIXA, E NÃO O DA PÁGINA (F1.1b, 04.09.2026)
+       ------------------------------------------------------------------------
+       A primeira redação contava `[data-faixa] [data-cartao]` na página inteira
+       e comparava o total de cada posição com essa contagem. Era certo enquanto
+       cada página tinha UMA faixa; desde 04.09 a primeira página tem duas — a da
+       cabeça, com os 21, e a do domínio, na secção que entrou a seguir ao mapa —
+       e o mesmo código passava a exigir «de 23» às duas, que é uma frase que
+       nenhuma das duas pode dizer com verdade.
+
+       A CÉLULA PASSA A LER FAIXA A FAIXA. Para cada `[data-faixa]` da página, o
+       N é o número de cartões DAQUELA faixa e o ordinal corre de 1 a N dentro
+       dela. É a mesma definição de sempre («o total é o número de cartões
+       daquela faixa, contado no HTML e não escrito aqui»), aplicada à coisa
+       certa; a planta «a faixa de uma região a dizer de 21» continua a cair, e a
+       faixa do domínio na primeira página tem de dizer o SEU número. */
     const faixas = [];
     for (const [camada, rota] of CAMADAS) {
       const pg = await pagina(rota, 390, ALTURA_PEQUENA);
-      const r = await pg.evaluate(() => {
-        const cartoes = [...document.querySelectorAll('[data-faixa] [data-cartao]')];
-        const posicoes = cartoes.map((c) => {
-          const p = c.querySelector('.cartao-posicao');
-          if (!p) return null;
-          const marcados = [...p.querySelectorAll('[data-nonledger]')].map((x) => ({
-            motivo: x.getAttribute('data-nonledger'),
-            texto: (x.textContent ?? '').trim(),
-          }));
-          return { texto: (p.textContent ?? '').replace(/\s+/g, ' ').trim(), marcados };
-        });
-        return { cartoes: cartoes.length, posicoes };
-      });
+      const r = await pg.evaluate(() =>
+        [...document.querySelectorAll('[data-faixa]')].map((faixa, iF) => {
+          const cartoes = [...faixa.querySelectorAll('[data-cartao]')];
+          const posicoes = cartoes.map((c) => {
+            const p = c.querySelector('.cartao-posicao');
+            if (!p) return null;
+            const marcados = [...p.querySelectorAll('[data-nonledger]')].map((x) => ({
+              motivo: x.getAttribute('data-nonledger'),
+              texto: (x.textContent ?? '').trim(),
+            }));
+            return { texto: (p.textContent ?? '').replace(/\s+/g, ' ').trim(), marcados };
+          });
+          return { faixa: iF + 1, cartoes: cartoes.length, posicoes };
+        }),
+      );
       await pg.__ctx.close();
       const queixas = [];
-      const N = r.cartoes;
-      const semPosicao = r.posicoes.filter((x) => x === null).length;
-      if (N === 0) queixas.push('a página não tem faixa nenhuma');
-      if (semPosicao > 0) queixas.push(`${semPosicao} cartão(ões) sem posição`);
-      r.posicoes.forEach((x, i) => {
-        if (!x) return;
-        const nums = x.marcados.map((m) => m.texto);
-        const motivos = x.marcados.map((m) => m.motivo);
-        if (x.marcados.length !== 2) {
-          queixas.push(`o cartão ${i + 1} tem ${x.marcados.length} algarismo(s) declarado(s)`);
-          return;
-        }
-        if (motivos.some((m) => m !== 'numeracao')) {
-          queixas.push(`o cartão ${i + 1} declara «${motivos.join(', ')}» e não «numeracao»`);
-        }
-        if (nums[0] !== String(i + 1)) {
-          queixas.push(`o cartão ${i + 1} diz que é o «${nums[0]}»`);
-        }
-        if (nums[1] !== String(N)) {
-          queixas.push(`o cartão ${i + 1} diz «de ${nums[1]}» numa faixa de ${N}`);
-        }
-      });
-      faixas.push({ camada, rota, cartoes: N, queixas });
+      if (r.length === 0) queixas.push('a página não tem faixa nenhuma');
+      for (const f of r) {
+        const N = f.cartoes;
+        const semPosicao = f.posicoes.filter((x) => x === null).length;
+        if (N === 0) queixas.push(`a faixa ${f.faixa} não tem cartão nenhum`);
+        if (semPosicao > 0) queixas.push(`a faixa ${f.faixa} tem ${semPosicao} cartão(ões) sem posição`);
+        f.posicoes.forEach((x, i) => {
+          if (!x) return;
+          const nums = x.marcados.map((m) => m.texto);
+          const motivos = x.marcados.map((m) => m.motivo);
+          if (x.marcados.length !== 2) {
+            queixas.push(
+              `o cartão ${i + 1} da faixa ${f.faixa} tem ${x.marcados.length} algarismo(s) declarado(s)`,
+            );
+            return;
+          }
+          if (motivos.some((m) => m !== 'numeracao')) {
+            queixas.push(
+              `o cartão ${i + 1} da faixa ${f.faixa} declara «${motivos.join(', ')}» e não «numeracao»`,
+            );
+          }
+          if (nums[0] !== String(i + 1)) {
+            queixas.push(`o cartão ${i + 1} da faixa ${f.faixa} diz que é o «${nums[0]}»`);
+          }
+          if (nums[1] !== String(N)) {
+            queixas.push(`o cartão ${i + 1} da faixa ${f.faixa} diz «de ${nums[1]}» numa faixa de ${N}`);
+          }
+        });
+      }
+      faixas.push({ camada, rota, faixas: r.map((f) => f.cartoes), queixas });
     }
     const faixasComQueixa = faixas.filter((f) => f.queixas.length > 0);
     medidas[`A17.${ed.chave}`] = { faixas };
     conta(
       `A17.${ed.chave}`,
       faixas.length === 4 && faixasComQueixa.length === 0,
-      `o «n de N» das quatro faixas em ${ed.chave}: ` +
-        faixas.map((f) => `${f.camada} 1..${f.cartoes} de ${f.cartoes}`).join(' · ') +
+      `o «n de N» das faixas das quatro camadas em ${ed.chave}: ` +
+        faixas.map((f) => `${f.camada} ${f.faixas.map((n) => `1..${n} de ${n}`).join(' + ')}`).join(' · ') +
         (faixasComQueixa.length
           ? ` · QUEIXAS: ${faixasComQueixa.map((f) => `${f.camada}: ${f.queixas.slice(0, 3).join('; ')}`).join(' | ')}`
           : ''),
@@ -1336,14 +1407,24 @@ const PLANTAS = [
   {
     nome: 'um segundo cartão com o mesmo valor (a cópia)',
     celulas: ['A3.pt'],
-    /* Repõe uma segunda rendição do valor da dívida pública dentro do painel,
-       que é exactamente a cópia que o bloco veio tirar. */
+    /* Repõe uma segunda rendição do valor da dívida pública dentro da área de
+       leitura, que é exactamente a cópia que o F1.1 veio tirar do painel.
+
+       O ALVO MUDOU COM A PÁGINA (F1.1b, 04.09.2026): a planta enxertava-se antes
+       de `<div class="painel"`, que era a grelha das treze peças; a grelha saiu
+       e a marca deixou de existir, e uma planta que não encontra o seu alvo é um
+       `replace` que falha em silêncio — o modo mais comum de um estrago não ser
+       estrago nenhum. O novo alvo é a área de leitura, que é o que está no lugar
+       dela. E foi preciso mudá-lo DUAS vezes no mesmo dia: a primeira redação
+       apontava a `class="leituras"`, e a classe passou a `dobras` porque
+       `.leitura` já existia em `site.css`. Quem o disse foi a conferência do
+       «html mudou» desta mesma corrida. */
     f: (h, rota) =>
       rota.startsWith('/en')
         ? h
         : h.replace(
-            /<div class="painel"/,
-            '<p class="peca-valor claim-value" data-claim="divida-publica-2025">96,4</p><div class="painel"',
+            /<div class="dobras"/,
+            '<p class="claim-value" data-claim="divida-publica-2025">96,4</p><div class="dobras"',
           ),
   },
   {
@@ -1384,8 +1465,15 @@ const PLANTAS = [
     /* A2 SÓ EXIGIA UM NÚMERO (Major 8), e a planta P3 da leitura a frio mostrou
        que o relatório podia dizer um valor e a régua outro sem nada cair. Com o
        teto medido escrito na régua, uma página que cresça acima dele fecha a
-       célula, e esta planta prova-o: mil píxeis de papel no fim do corpo. */
-    f: (h) => h.replace(/<\/body>/, '<div style="height:1000px"></div></body>'),
+       célula, e esta planta prova-o: papel a mais no fim do corpo.
+
+       O PAPEL É GRANDE DE PROPÓSITO, E NÃO É UMA MEDIDA (F1.1b, 04.09.2026).
+       Eram mil píxeis, e deixaram de chegar: este bloco tirou 2 292 px à página
+       (`/` a 390 passou de 6 959 para 4 667), e mil píxeis de papel já não a
+       levam acima do teto. Uma planta que dependa da folga do dia apodrece com
+       ela; cem mil píxeis são maiores do que qualquer teto que a casa venha a
+       escrever, e a planta volta a provar o que promete. */
+    f: (h) => h.replace(/<\/body>/, '<div style="height:100000px"></div></body>'),
   },
   /* -------------------------------------------------------------------------
      AS QUATRO PLANTAS DO F1.2b (E6 do brief, 03.09.2026)
