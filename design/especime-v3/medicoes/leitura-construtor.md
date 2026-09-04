@@ -148,8 +148,8 @@ duas coisas:
 
 * a **leitura inteira** de uma medida que só vive nesta página: a unidade, o
   limiar onde o quadro publica um (com a comparação, na forma que a peça
-  imprimia), a frase da medida onde ela existe, as três datas da carta e o selo,
-  que é a porta para a linha;
+  imprimia), a frase da medida onde ela existe, as três datas da carta, a régua
+  contra o limiar onde ela existe, e o selo, que é a porta para a linha;
 * a **porta** de uma medida que vive num domínio: uma ligação, e mais nada.
 
 ### 3.2 · `src/views/HomeView.astro`
@@ -358,8 +358,17 @@ bytes diferentes) e **vermelho depois** (todas as células nomeadas caem).
 | a leitura de uma medida do domínio com a leitura inteira de volta | J12.pt |
 | a faixa do domínio com um valor selado repetido | J5.pt |
 
-A quinta é a que o brief pede e a quarta é da decisão do lugar de direção de
-04.09; as outras três são as do §4 do brief.
+**As cinco passaram**, com as três exigências cada uma. A quinta é a que o brief
+pede e a quarta é da decisão do lugar de direção de 04.09; as outras três são as
+do §4 do brief.
+
+**E as treze plantas de `porta.mjs` também**, depois de duas mudarem de alvo: a
+da A3 apontava a uma marca que saiu da página com o painel (e mudou duas vezes no
+mesmo dia, porque a classe da área de leitura também mudou), e a da A2 punha mil
+píxeis de papel no fim do corpo, que deixaram de levar a página acima do teto
+quando ela encolheu 2 292 px. Passou a cem mil, que é maior do que qualquer teto
+que a casa venha a escrever. As sete plantas de `faixa.mjs` passaram sem
+mudança.
 
 ## 7 · O que não se fez, e porquê
 
