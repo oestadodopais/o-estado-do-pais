@@ -273,7 +273,7 @@ construção de `1dbd1cef`, medida numa árvore própria (`git worktree add
 | J3 | sem guião: as 21 leituras presentes, fechadas, com `id` | não havia leituras | 21 de 21, 0 abertas, 0 sem id, 0 com id errado, 21 com `<summary>`, **nas duas edições e nos dois motores** (quatro células) | `leitura.mjs` J3 |
 | J4 | com guião: um toque abre a sua e fecha a anterior, e o endereço passa a `#<id>` | não havia | **os 21 cartões tocados em português e 5 em inglês, nos dois motores**: 18 abrem a sua leitura aqui, uma de cada vez, com `#m-<id>` na barra; 3 vão à página do domínio, à âncora daquela medida | `leitura.mjs` J4 |
 | J5 | a secção dos domínios a seguir ao mapa | não havia | 1 domínio, depois do mapa e antes da área de leitura, com a porta para `/dominios/economia-e-financas-publicas` (e o par inglês) e a faixa de 2 cartões com «n de 2»; nenhum valor selado repetido | `leitura.mjs` J5, `porta.mjs` A17 |
-| J6 | a altura de `/` a 390 menor do que hoje | **6 959 px** (`/`) · **6 911 px** (`/en`) | **4 638 px** (menos 2 321) · **4 596 px** (menos 2 315). A segunda passagem não mexeu na altura (§9.1); os últimos 29 px caíram depois, com a regra que fecha o corpo de uma dobra fechada (§10.5) | `leitura.mjs` J6, `porta.mjs` A2 |
+| J6 | a altura de `/` a 390 menor do que hoje | **6 959 px** (`/`) · **6 911 px** (`/en`) | **4 638 px** (menos 2 321) · **4 596 px** (menos 2 315). A segunda passagem não mexeu na altura (§9.1); os últimos 29 px caíram com a fusão do F1.7, e não com uma linha deste bloco (§8) | `leitura.mjs` J6, `porta.mjs` A2 |
 | J7 | o primeiro ecrã a 390 × 664 igual ao do F1.1 | fundo máximo 653,7 px (`/`) · 641,1 px (`/en`) | **653,7 px · 641,1 px**, os mesmos | `leitura.mjs` J7, `porta.mjs` A1 |
 | J8 | `/estudos` a ≤ 1 toque e ≤ 1,5 ecrãs | a porta mais acima a 662,7 px (1 ecrã) em `/`, 650,1 px (0,98) em `/en` | **os mesmos** | `porta.mjs` A15 |
 | J9 | nenhum número novo, com as diferenças ditas | *(ver a §5.1)* | *(ver a §5.1)* | `numeros-novos.mjs` |
@@ -480,13 +480,13 @@ construção final:
 | `inicio-390x664-primeiro-ecra-pt.png` | o primeiro ecrã, sem rolar | igual |
 | `inicio-390x664-primeiro-ecra-en.png` | o primeiro ecrã, sem rolar | igual |
 
-**As seis alturas mudaram na última passagem, e as duas causas separam-se.** A 390
-e a 1280 a página ENCOLHEU, e é deste bloco: a regra que fecha o corpo de uma
-dobra fechada (§10.5) tirou 29 px a 390 e 23 a 1280. **A 768 a página CRESCEU 189
-px em português e 145 em inglês, e não é deste bloco**: é a rede dos 44 px do F1.7
-entre 641 e 1023 (`.seg` e `.conv-porta-sum`), que sobe o alvo do comando e da
-porta da régua da convergência nessa faixa. As duas larguras que este bloco mede
-(390, pela J6, e 1280) só desceram.
+**As seis alturas mudaram na última passagem, e a causa é a fusão do F1.7, não
+este bloco.** O F1.7 mexeu em quatro peças que a primeira página rende (o
+`Masthead`, a `Manchete`, o `Claim` e o `SiteFooter`) e subiu alvos entre 641 e
+1023 px: a 390 e a 1280 a página encolheu 29 e 23 px, e a 768 cresceu 189 px em
+português e 145 em inglês, que é onde a rede nova dos 44 px começa a valer.
+**A regra desta passagem (a dobra fechada sem caixa, §10.5) contribui 0 px**, e
+isso está medido com ela ligada e desligada sobre a mesma construção.
 
 ## 9 · A segunda passagem, sobre a leitura a frio do Codex (04.09.2026)
 
@@ -527,9 +527,10 @@ selos) vive DENTRO de um `<details>` fechado, e uma dobra fechada mede o seu
 píxel a quem não abre a leitura, e é essa a forma que o bloco escolheu.
 
 *Os números finais deste relatório são outros (**4 638** e **4 596 px**), e a
-diferença não é da reposição: são 29 px que caíram mais tarde, com a regra que
-manda o corpo de uma dobra fechada não ocupar caixa nenhuma (§10.5). A comparação
-desta secção, reposição contra não reposição, é a que está escrita.*
+diferença não é da reposição nem de nenhuma linha deste bloco: são 29 px que
+caíram com a fusão do bloco F1.7, que mexeu em quatro peças que esta página rende
+(§8). A comparação desta secção, reposição contra não reposição, é a que está
+escrita.*
 
 ### 9.2 · Major 4 · a ordem, decidida
 
@@ -763,10 +764,17 @@ correção é deste lado e é uma regra:
 ```
 
 Com ela a caixa vai a zero e a régua salta o que não está na página, que é o que
-ela já fazia com tudo o resto. **Não muda um píxel do que se vê**: a altura de `/`
-a 390 e as oito capturas ficam iguais, medidas depois. E não mexe no `<details>`
-nativo: a regra deixa de valer no instante em que o `[open]` aparece, sem guião
-nenhum.
+ela já fazia com tudo o resto. **Não muda um píxel da página, e isso mediu-se em
+vez de se afirmar**: a mesma construção, com a regra ligada e desligada, nas duas
+edições e a 390, 768 e 1280 px, dá **diferença de 0 px nas seis medidas** (a regra
+desliga-se com uma folha injetada que repõe o `display` do corpo fechado). E não
+mexe no `<details>` nativo: a regra deixa de valer no instante em que o `[open]`
+aparece, sem guião nenhum.
+
+**As alturas da §8 mudaram nesta passagem, e não é esta regra.** É a fusão do
+F1.7, que mexeu no `Masthead`, na `Manchete`, no `Claim` e no `SiteFooter`, que a
+primeira página rende, e que subiu alvos entre 641 e 1023. A conta acima é a que
+separa uma coisa da outra.
 
 **Não se mexeu na régua do F1.7.** Tirar do caminho dela um alvo que o leitor não
 alcança seria enfraquecê-la para passar, e o que aqui se fez foi o contrário:
