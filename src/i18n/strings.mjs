@@ -1459,8 +1459,16 @@ export const STRINGS = {
            e não a data em que a fonte publicou o dela: são duas coisas, e a
            segunda já se diz no recibo («Publicado pela fonte a»). */
         periodoDaFonteK: 'Último período publicado pela fonte:',
-        periodoDaCasaK: 'a casa publica',
-        periodoDesdeK: 'desde',
+        /* A SEGUNDA METADE É DEÍCTICA E NÃO FALA DA CASA (segunda passagem,
+           04.09.2026, Major 8 da leitura a frio do Codex). Dizia «a casa publica
+           2025-12 desde 26.08.2026», e a Emenda 15 tira da página do leitor as
+           frases sobre a casa: o leitor não precisa de saber quem publica, precisa
+           de saber que ESTA linha mede outro período e quando ele foi lido. As
+           duas cadeias apontam para a linha em que estão, e o mesmo par serve a
+           página da linha e o cartão do concelho, que é o mesmo facto sobre a
+           mesma linha do livro-razão. */
+        periodoDestaLinhaK: 'nesta linha:',
+        periodoLidoK: 'lido a',
         /* A conferência contra a cópia arquivada de um ficheiro (F0.12): o que
            ela prova é que os bytes da cópia continuam a ser os que a linha
            declara, e não que a fonte viva ainda serve o mesmo ficheiro. */
@@ -2549,8 +2557,8 @@ export const STRINGS = {
         aEstaMaquinaK: 'to this machine',
         aoCorredorK: 'to the runner',
         periodoDaFonteK: 'Latest period published by the source:',
-        periodoDaCasaK: 'the house publishes',
-        periodoDesdeK: 'since',
+        periodoDestaLinhaK: 'this row:',
+        periodoLidoK: 'read on',
         contraCopiaArquivadaK: 'against the archived copy of',
         verificacaoPor: {
           'leitura-independente': 'independent reading',

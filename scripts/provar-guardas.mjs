@@ -35,6 +35,8 @@ import { eManifestoDosRegistos, eRegistoDeConteudo } from '../src/lib/registos.m
 import { ePaisDoMapa, eDistritoDoMapa, eManifestoDoMapa } from '../src/lib/mapa.mjs';
 import { eNomeDeMedida, nomeDaMedida } from '../src/lib/nomes.mjs';
 import { eSerieAtrasada } from '../src/data/frescura.mjs';
+import { serieDaLinha, contagens } from '../src/lib/frescura.mjs';
+import { numeralPorExtenso } from '../src/data/figuras.mjs';
 
 /** @param {string} s */
 const verde = (s) => `\x1b[32m${s}\x1b[0m`;
@@ -522,6 +524,132 @@ caso(
   false,
   eSerieAtrasada([SERIE_BOA]),
   'uma lista não é uma série, e um molde sobre ela escondia isso.',
+);
+
+/* ------------- o casamento das linhas e o contador (F1.6, segunda passagem) --- */
+
+/* A LEITURA A FRIO PEDIU ESTES CASOS (Major 11, 04.09.2026): «os casos provam só
+   a forma de `eSerieAtrasada`, e não o casamento das linhas, os contadores, os
+   períodos rendidos ou os carimbos». Os períodos rendidos e o carimbo têm as
+   suas réguas sobre o `dist/` e o `DECISIONS.md` (F13 a F15 do `check:formas` e
+   a amarra do `check-ledger`), e as plantas guardadas provam que elas mordem. O
+   que faltava provar aqui era a conta, e a conta é isto.
+
+   AS LINHAS SÃO ESCRITAS À MÃO e não lidas do disco, porque este ficheiro não
+   toca no disco: o que se prova é a REGRA, e não o conteúdo do livro-razão. */
+const SERIE_DA_PROVA = {
+  id: 'serie-da-prova',
+  fonte: 'Organismo A',
+  documento: 'Ficheiro mensal',
+  periodoDaCasa: '2025-12',
+  periodoDaFonte: '2026-07',
+  origem: SERIE_BOA.origem,
+};
+/** @type {any} */
+const LINHA_DA_SERIE = {
+  id: 'x-2025-12',
+  source: 'Organismo A',
+  document: { title: 'Ficheiro mensal' },
+  reference_date: '2025-12',
+};
+const SERIES = [SERIE_DA_PROVA];
+
+caso(
+  'serieDaLinha/com-periodo',
+  true,
+  serieDaLinha(LINHA_DA_SERIE, SERIES)?.id === 'serie-da-prova',
+  'uma linha com os três campos certos pertence à série, e é ela que rende a frase do atraso.',
+);
+caso(
+  'serieDaLinha/sem-periodo',
+  false,
+  serieDaLinha({ ...LINHA_DA_SERIE, reference_date: null }, SERIES) !== null,
+  'uma linha sem período não se pode dizer atrasada: não há com que comparar o período da fonte. ' +
+    'É a planta que a leitura a frio pôs no casamento das linhas, ao contrário.',
+);
+caso(
+  'serieDaLinha/outro-periodo',
+  false,
+  serieDaLinha({ ...LINHA_DA_SERIE, reference_date: '2013-12' }, SERIES) !== null,
+  'um ponto histórico de uma série não está atrasado por a fonte ter publicado 2026: ' +
+    'é o caso das duas linhas de Évora, de 2013 e de 2024.',
+);
+caso(
+  'serieDaLinha/outra-fonte',
+  false,
+  serieDaLinha({ ...LINHA_DA_SERIE, source: 'Organismo B' }, SERIES) !== null,
+  'as trinta linhas das ilhas têm outra fonte, que publica o seu próprio ficheiro: ' +
+    'o atraso deste publicador não é o daquele.',
+);
+caso(
+  'serieDaLinha/outro-documento',
+  false,
+  serieDaLinha({ ...LINHA_DA_SERIE, document: { title: 'Outro ficheiro' } }, SERIES) !== null,
+  'o mesmo organismo publica mais do que um ficheiro, e o atraso é de um deles.',
+);
+caso(
+  'serieDaLinha/sem-documento',
+  false,
+  serieDaLinha({ ...LINHA_DA_SERIE, document: null }, SERIES) !== null,
+  'sem título de documento não há como saber de que ficheiro a linha veio.',
+);
+
+/* O CONTADOR: as duas contagens contam coisas diferentes, e é essa a razão de
+   serem duas. Três linhas da série e uma de fora dão «1 série · 3 linhas». */
+const CONTA = contagens(
+  [
+    LINHA_DA_SERIE,
+    { ...LINHA_DA_SERIE, id: 'y-2025-12' },
+    { ...LINHA_DA_SERIE, id: 'z-2025-12' },
+    { ...LINHA_DA_SERIE, id: 'w-2013-12', reference_date: '2013-12' },
+  ],
+  SERIES,
+);
+caso(
+  'contagens/series',
+  true,
+  CONTA.series === 1,
+  'três linhas da mesma série são UMA série atrasada, e não três.',
+);
+caso(
+  'contagens/linhas',
+  true,
+  CONTA.linhas === 3,
+  'e são três linhas: é o número que o cabeçalho rende ao lado do das séries.',
+);
+caso(
+  'contagens/zero',
+  true,
+  contagens([{ ...LINHA_DA_SERIE, reference_date: '2013-12' }], SERIES).series === 0,
+  'sem linha apanhada não há série atrasada, e o cabeçalho rende zero em vez de um lugar vazio.',
+);
+caso(
+  'contagens/serie-sem-linhas',
+  true,
+  contagens([], SERIES).series === 0,
+  'uma série declarada que não apanhe linha nenhuma não conta: um atraso sem linha não se vê ' +
+    'em página nenhuma.',
+);
+
+/* Os numerais por extenso, que são a única maneira de um número entrar numa
+   frase da casa sem ser algarismo. A régua F16 compõe as duas palavras destes. */
+caso(
+  'numeralPorExtenso/oito',
+  true,
+  numeralPorExtenso(8, 'pt', true) === 'Oito' && numeralPorExtenso(8, 'en', true) === 'Eight',
+  'o numerador da frase do Painel Social, com maiúscula porque abre a frase.',
+);
+caso(
+  'numeralPorExtenso/dezassete',
+  true,
+  numeralPorExtenso(17, 'pt') === 'dezassete' && numeralPorExtenso(17, 'en') === 'seventeen',
+  'o denominador, que é o número que a Comissão publica.',
+);
+atira(
+  'numeralPorExtenso/fora-da-lista',
+  () => numeralPorExtenso(99, 'pt'),
+  'não há numeral por extenso',
+  'um número fora da lista fecha a construção em vez de render um algarismo dentro de uma frase.',
 );
 
 /* ------------------------------------------ as listas de que os tipos derivam */

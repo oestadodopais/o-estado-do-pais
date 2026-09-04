@@ -469,9 +469,13 @@ const FRASES = {
      editorial (que ficheiro da fonte a casa publica) e uma linha é um valor no
      ecrã de um leitor; escrever «séries» ao lado da contagem das linhas seria o
      nome a dizer uma coisa e o número a contar outra. */
+  /* A DICA NÃO FALA DA CASA (segunda passagem, 04.09.2026, Major 8 da leitura a
+     frio do Codex). Dizia «séries que a casa publica atrás do último período da
+     fonte»: um `title` é superfície pública desde a I79, e a Emenda 15 vale nele
+     como vale num parágrafo. O que a dica tem de dizer é o que o número conta. */
   series_atrasadas: {
-    pt: 'séries que a casa publica atrás do último período da fonte',
-    en: 'series the house publishes behind the source’s latest period',
+    pt: 'séries publicadas atrás do último período da fonte',
+    en: 'series published behind the source’s latest period',
   },
   linhas_atrasadas: {
     pt: 'linhas do livro-razão dessas séries',
