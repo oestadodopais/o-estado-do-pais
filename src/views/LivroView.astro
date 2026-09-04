@@ -229,8 +229,18 @@ const p = prova(lang);
         Filtrar do lado do servidor pediria uma página por pergunta, e este sítio
         é estático. O relatório do bloco escreve-o.
         ---------------------------------------------------------------------- */}
-    <form class="livro-busca" role="search" method="get" action={path}>
-      <label class="livro-busca-k" for="livro-busca">{s.livro.buscaRotulo}</label>
+    <form
+      class="livro-busca"
+      role="search"
+      method="get"
+      action={path}
+      data-livro-indice={`/dados/livro-indice.${lang}.json`}
+    >
+      {/* O RÓTULO É PROSA DA CASA, E DIZ QUE O É (leitura a frio do F1.4,
+          Major 11). `<label>` não está na definição de bloco da régua da voz, e
+          por isso este texto visível não podia ser declarado; `data-voz`
+          recolhe-o. */}
+      <label class="livro-busca-k" for="livro-busca"><span data-voz>{s.livro.buscaRotulo}</span></label>
       <span class="livro-busca-linha">
         <input
           class="livro-busca-campo"
@@ -315,6 +325,40 @@ const p = prova(lang);
           </div>
         ))}
       </div>
+      {/* ------------------------------------------------------------------
+          OS RESULTADOS DA BUSCA SOBRE O LIVRO-RAZÃO INTEIRO (Major 6)
+          ------------------------------------------------------------------
+          A lista acima é o índice: as 149 linhas gerais, pela ordem do
+          livro-razão, com o valor e o selo de cada uma. A busca cobre as 2 916,
+          e as 2 767 dos concelhos não estão no documento: os resultados dela
+          vivem aqui, e cada um é uma porta para a página da sua linha.
+
+          VEM VAZIO DO SERVIDOR, E É O GUIÃO QUE O ENCHE. É a primeira vez que
+          um guião deste sítio escreve texto visível, e a regra que ele quebra
+          está escrita nos outros três («trocar `hidden`, e mais nada»,
+          resposta 3 da direção de 20.08.2026). Quebra-se por decisão do bloco
+          F1.10 («uma coisa, um lugar»: procurar uma linha faz-se num sítio), e
+          com três amarras:
+
+            · o guião não compõe uma cadeia: escreve, por `textContent`, o que
+              o ficheiro `/dados/livro-indice.<edição>.json` lhe dá, e esse
+              ficheiro é gerado na construção a partir de `ledger/claims/*.yml`;
+            · o ficheiro não leva um único VALOR do livro-razão, e por isso o
+              guião não pode escrever um algarismo de Portugal: quem quer o
+              número abre a linha, que é o que o resultado abre;
+            · a régua do bloco (`tests/livro/indice.mjs`, célula I3) confere o
+              ficheiro contra `ledger/claims/` linha a linha, e o `npm run
+              verify` corre-a.
+
+          NENHUMA CONTAGEM SE ESCREVE. Quando há mais resultados do que os que
+          cabem, acende-se uma frase declarada que o diz por palavras: um número
+          de resultados de uma pergunta do leitor continua a ser um número que a
+          casa escreveria sem linha.
+          ------------------------------------------------------------------ */}
+      <p class="livro-busca-k" data-livro-resultados-k hidden><span data-voz>{s.livro.buscaResultadosK}</span></p>
+      <ol class="livro-busca-res" data-livro-resultados hidden></ol>
+      <p class="livro-busca-vazio" data-livro-mais hidden>{s.livro.buscaMais}</p>
+
       {/* O ESTADO VAZIO DA BUSCA (IDENTIDADE §7). Vem escondido do servidor e só
           o guião o acende, porque sem guião nunca há filtro e por isso nunca há
           «nenhuma»: uma frase de estado vazio numa página que mostra a lista

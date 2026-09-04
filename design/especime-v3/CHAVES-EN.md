@@ -1108,7 +1108,7 @@ mesma acção.*
 |---|---|---|---|
 | `livro.contaDe` | de | of | o denominador das duas parcelas do índice do livro-razão: «330 de 2916 calculadas». Os dois algarismos são a mesma chave da prova rendida duas vezes, com a mesma marca e a mesma porta; esta cadeia é a única palavra da forma. Em inglês é «of» e não «out of», como o `inicio.faixa.de` do F1.1 e pela mesma razão: é a forma curta de uma legenda de aparelho |
 | `livro.buscaRotulo` | Procurar por nome, identificador ou fonte | Search by name, identifier or source | o rótulo do campo de busca do índice. Diz o que se escreve e por que campos a comparação se faz, que é o que um rótulo de campo tem de dizer. O inglês nomeia os mesmos três campos pelos nomes que o resto da edição inglesa já lhes dá («name», «identifier», «source») |
-| `livro.buscaSemResultado` | Nenhuma linha do índice tem essas palavras. | No row in this index matches those words. | o estado vazio da busca, que só o guião acende (IDENTIDADE §7). Diz «do índice» e não «do livro-razão», porque é o índice que a busca filtra: as 2 767 linhas dos concelhos saíram desta lista pela decisão D6 e têm índice próprio |
+| `livro.buscaSemResultado` | Nenhuma linha do livro-razão tem essas palavras. | No row in the ledger matches those words. | o estado vazio da busca, que só o guião acende (IDENTIDADE §7). **O texto mudou na segunda passagem**: dizia «do índice» enquanto a busca filtrava as 149 entradas listadas, e passa a dizer «do livro-razão» porque é isso que ela passou a cobrir. As 2 767 linhas dos concelhos continuam a sair da LISTA pela decisão D6; deixaram de sair da BUSCA |
 
 *A quarta chave que este bloco chegou a criar, `areas.pecaDefinicao`, não existe:
 a `DECISIONS.md` §1.98 chegou a meio do bloco e fechou o vocabulário sem «peça»,
@@ -1124,3 +1124,28 @@ O que mudou foram duas chaves que já existiam, e o texto delas:*
 mudaram de texto no `INVENTARIO-FRASES.md` (ganharam o denominador) e continuam
 `viva`: é a mesma linha com o número de hoje, como o ficheiro já fazia com
 «2916 afirmações · 330 calculadas».
+
+### Bloco F1.4, segunda passagem · a busca de 2 916 e a data do repositório · 04.09.2026
+
+*Duas chaves novas e duas mudadas de texto, da leitura a frio do Codex (Major 6,
+Major 10 e a decisão sobre as datas dos trabalhos). As duas novas são a mobília
+da fila de resultados: a busca deixou de filtrar as 149 entradas listadas e passa
+a percorrer as 2 916 linhas do livro-razão, e uma fila de portas precisa de um
+rótulo e de uma frase para quando não cabem todas.*
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `livro.buscaResultadosK` | Linhas que casam | Rows that match | o rótulo da fila de resultados. É um cabeçalho de lista e não uma contagem: a fila diz o que é, e quantas são vê-se nela. Em inglês «rows» e não «entries», que é a palavra que a edição inglesa já usa para uma linha do livro-razão |
+| `livro.buscaMais` | Há mais linhas do que as que cabem aqui. Escreva mais para estreitar. | There are more rows than fit here. Type more to narrow it down. | quando a pergunta casa com mais do que o tecto da fila. **Diz-se por palavras e não por um número**: uma contagem de resultados seria um número escrito pelo guião, e um número do sítio resolve numa linha do livro-razão ou não se escreve. A segunda frase diz o que fazer, porque um limite sem saída é uma parede |
+
+*E as duas que mudaram de texto:*
+
+| chave | pt (antes → depois) | en (antes → depois) | nota |
+|---|---|---|---|
+| `livro.buscaSemResultado` | Nenhuma linha do índice… → Nenhuma linha do livro-razão… | No row in this index… → No row in the ledger… | o alcance da busca mudou, e a frase do estado vazio dizia o alcance antigo |
+| `estudos.dataLabel` | Publicação → publicado a | Published → published on | de rótulo de campo a frase, porque a data mudou de origem. Era o campo `date` do arquivo, que o próprio ficheiro declara por confirmar; passa a ser o dia em que `studies-src/<slug>/<lang>.html` entrou neste repositório, lido na construção com `git log --diff-filter=A`. A preposição fica FORA da marca `data-nonledger="data-do-repositorio"`, porque é prosa da casa e o inventário da voz declara-a; a data fica dentro, porque a origem dela tem de ir dita. Em inglês «published on» e não «published», pela mesma razão: é uma frase e não uma etiqueta |
+
+**Nenhuma chave passou a `retirada` nesta passagem.** O motivo `data-de-publicacao`
+saiu de `ledger/allowlist.yml` porque deixou de se render em página nenhuma, e o
+portão de HTML fecha a construção quando um motivo declarado não se rende: um
+motivo morto é uma dispensa que ninguém pediu.

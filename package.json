@@ -37,7 +37,7 @@
     "verify": "npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && npm run gate:html && npm run check:moldura && npm run check:fontes && npm run check:cadeia && npm run check:dados && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:alcance && npm run check:voz && npm run check:lingua && npm run provar:eyetext && npm run provar:guardas && npm run check:mortos && npm run check:indice && npm run design:feixe",
     "check:mortos": "node scripts/check-mortos.mjs --prova",
     "check:fontes": "node tests/linha/sem-resposta.mjs",
-    "check:indice": "node tests/livro/indice.mjs"
+    "check:indice": "node tests/livro/indice.mjs --navegador"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",

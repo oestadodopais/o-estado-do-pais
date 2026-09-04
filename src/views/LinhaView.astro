@@ -516,6 +516,12 @@ const atribuicaoPecas = [
         campo: 'document.title',
         valor: claim.document.title,
         lingua: linguaDoTituloDoDocumento(claim.document.title, lang),
+        /* O TÍTULO ABRE O DOCUMENTO AQUI TAMBÉM (leitura a frio, Major 9).
+           A primeira passagem pôs a porta no título da ficha e deixou o título
+           desta frase em texto morto: o mesmo nome, na mesma página, uma vez
+           clicável e outra não. O portão passou a EXIGIR a âncora onde a linha
+           declara `document.url`, e por isso as duas ocorrências a têm. */
+        porta: typeof claim.document?.url === 'string' ? claim.document.url : null,
       }
     : null,
   presente(claim.document?.edition)
@@ -675,13 +681,25 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                 {i > 0 && (peca.apos ? ' · ' : peca.entreParenteses ? ' ' : ', ')}
                 {peca.k && `${peca.k} `}
                 {peca.entreParenteses && '('}
-                <CampoDaLinha
-                  id={id}
-                  campo={peca.campo}
-                  valor={peca.valor}
-                  lang={lang}
-                  lingua={peca.lingua ?? null}
-                />
+                {peca.porta ? (
+                  <a class="ligacao-externa" href={peca.porta} rel="noopener noreferrer external">
+                    <CampoDaLinha
+                      id={id}
+                      campo={peca.campo}
+                      valor={peca.valor}
+                      lang={lang}
+                      lingua={peca.lingua ?? null}
+                    />
+                  </a>
+                ) : (
+                  <CampoDaLinha
+                    id={id}
+                    campo={peca.campo}
+                    valor={peca.valor}
+                    lang={lang}
+                    lingua={peca.lingua ?? null}
+                  />
+                )}
                 {peca.entreParenteses && ')'}
               </>
             ))}

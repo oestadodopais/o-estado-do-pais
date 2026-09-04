@@ -7,11 +7,13 @@
  * nome uma coisa conferida em vez de uma dispensa:
  *
  *   · um nome de cartão vem de um ficheiro de dados da casa e leva
- *     `data-nome="figuras"` ou `data-nome="medidas"`. `scripts/medir-defeitos.mjs`
- *     lê o ficheiro que a marca nomeia e confere, carácter a carácter, que o
- *     texto rendido é um nome que ele publica; `scripts/check-voz.mjs` fecha a
- *     construção quando não é. É a mesma marca que o nome de uma área, de uma
- *     região e de um domínio já levam;
+ *     `data-nome="figuras"` ou `data-nome="medidas"`, **mais o identificador da
+ *     linha de que ele é** (`data-de-linha`). `scripts/medir-defeitos.mjs` lê o
+ *     ficheiro que a marca nomeia e confere, carácter a carácter, que o texto
+ *     rendido é o nome DAQUELA linha nesta edição; `scripts/check-voz.mjs` fecha
+ *     a construção quando não é. O identificador entrou na segunda passagem
+ *     (leitura a frio, Blocking 4): sem ele a conferência perguntava «este texto
+ *     está no ficheiro?», e trocar o nome de duas linhas do índice passava;
  *   · um nome que É um campo do livro-razão (`name`, `document.title`) rende-se
  *     por `CampoDaLinha`, com `data-linha-campo`, e o portão de HTML compara-o
  *     com a linha carácter a carácter. Não se toca no texto: um campo transcrito
@@ -45,7 +47,7 @@ const lingua =
 {
   nome !== null &&
     (nome.campo === null ? (
-      <span class="livro-item-nome" data-nome={nome.fonte}>
+      <span class="livro-item-nome" data-nome={nome.fonte} data-de-linha={c.id}>
         {nome.texto}
       </span>
     ) : (

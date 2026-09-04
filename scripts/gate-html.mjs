@@ -5416,6 +5416,32 @@ for (const file of ficheirosHtml(DIST)) {
     if (campo === 'document.title') {
       const ancora = el.parentNode?.rawTagName?.toLowerCase() === 'a' ? el.parentNode : null;
       const destino = ancora?.getAttribute('href') ?? null;
+      /**
+       * A PORTA É EXIGIDA, E NÃO SÓ CONFERIDA (leitura a frio do F1.4, Major 9).
+       *
+       * A primeira passagem conferia o destino QUANDO havia âncora, e não exigia
+       * a âncora: o título da frase de atribuição ficou em texto morto e o da
+       * ficha ficou clicável, o mesmo nome duas vezes na mesma página com duas
+       * naturezas. Passa a ser um erro render o título de uma linha que declara
+       * `document.url` SEM a porta.
+       *
+       * NA PÁGINA DA LINHA, E SÓ AÍ. No índice do livro-razão e nas páginas de
+       * área o título é o NOME da medida numa lista de nomes (a escada do
+       * `src/lib/nomes.mjs`), e uma lista de nomes não é uma lista de portas: a
+       * porta de cada entrada é o selo, que abre a linha. Exigir ali a porta do
+       * documento punha o leitor a sair do sítio a partir de um índice.
+       */
+      if (destino === null && claimDaPagina && claimDaPagina.id === id) {
+        const url = campoDaLinha(claim, 'document.url', linguaPagina);
+        if (url !== null && url !== undefined) {
+          err(
+            `o título do documento de "${id}" está sem porta, e a linha declara ` +
+              `"document.url" ("${String(url).slice(0, 90)}").\n` +
+              `      Na página de uma linha, um título cujo documento tem endereço abre-o: ` +
+              `envolva o campo numa <a class="ligacao-externa" href="…">.`,
+          );
+        }
+      }
       if (destino !== null) {
         const url = campoDaLinha(claim, 'document.url', linguaPagina);
         if (url === null || url === undefined) {

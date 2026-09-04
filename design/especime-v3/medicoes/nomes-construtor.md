@@ -389,11 +389,13 @@ sem o reescrever.
 | a escada dos nomes | `src/lib/nomes.mjs`, `src/components/NomeDaMedida.astro` |
 | a regra da data, declarada | `src/lib/datas.mjs` (`eCampoDeData`), e as três cópias locais nos portões |
 | a busca do índice | `src/views/LivroView.astro`, `public/js/livro.js`, `src/styles/linha.css` |
-| a régua do bloco | `tests/livro/indice.mjs`, corrida no `verify` como `check:indice` |
-| as quatro plantas | `design/especime-v3/medicoes/nomes-plantas.py` |
-| as capturas | `design/especime-v3/capturas/nomes-2026-09-04/`, 32 PNG (escala 2, 390 × 664 e 1 280, as duas edições do índice, de uma área, do índice das áreas, de uma linha e de uma unidade da Carta). A linha capturada é a do endereço mais longo, `pib-pc-acores-2024`, que é onde o item 7 se vê |
+| o índice da busca | `src/lib/indice-da-busca.mjs`, `src/pages/dados/livro-indice.{pt,en}.json.js` (146 KB por edição) |
+| a data do repositório | `src/lib/datas-do-repositorio.mjs`, o motivo `data-do-repositorio` em `ledger/allowlist.yml`, o `fetch-depth: 0` em `.github/workflows/portao.yml` |
+| a régua do bloco | `tests/livro/indice.mjs`, corrida no `verify` como `check:indice --navegador` |
+| as sete plantas | `design/especime-v3/medicoes/nomes-plantas.py`, que EXIGE a célula de cada uma e sai com 1 quando ela não acende |
+| as capturas | `design/especime-v3/capturas/nomes-2026-09-04/`, **40 PNG** (escala 2, 390 × 664 e 1 280, as duas edições do índice, de uma área, do índice das áreas, de uma linha, de uma unidade da Carta e, desde a segunda passagem, do arquivo, que é onde a decisão das datas se vê). A linha capturada é a do endereço mais longo, `pib-pc-acores-2024`, que é onde o item 7 se vê |
 | as chaves novas, PT e EN | `design/especime-v3/CHAVES-EN.md`, secção do bloco F1.4 |
-| as quatro cadeias novas do inventário | `design/especime-v3/INVENTARIO-FRASES.md`, bloco `nomes`, com a entrada em `critica/REVISOES-DO-INVENTARIO.md` |
+| as dezasseis cadeias novas do inventário | `design/especime-v3/INVENTARIO-FRASES.md`, bloco `nomes`, com a entrada em `critica/REVISOES-DO-INVENTARIO.md`; a marca `data-voz` em `scripts/medir-defeitos.mjs` |
 
 **A §1.98 chegou a meio do bloco e mudou uma decisão que já estava tomada.** O
 item 5 tinha a definição escrita, com a chave, a classe da folha e as duas linhas
@@ -427,3 +429,156 @@ empurrão, e a corrida dele fica no registo do ramo.*
 **A leitura a frio deste bloco ainda não correu**, e a entrada do inventário
 di-lo por escrito («por ler»). É a régua que fecha o que ela fecharia sozinha, e
 não a substitui.
+
+---
+
+# Segunda passagem · a leitura a frio do Codex (04.09.2026)
+
+*A leitura está em `design/especime-v3/critica/2026-09-04-codex-leitura-f14-nomes.md`,
+com a triagem do lugar de direção na cabeça. O leitor viu as cinco plantas das
+três classes (5 de 5) e escreveu treze achados. Esta secção diz o que cada um
+passou a ser. Sem travessões na prosa.*
+
+## 9 · Os treze achados, um a um
+
+| # | achado | o que ficou |
+| --- | --- | --- |
+| B1, B2, B3 | do pacote (o HTML entregue não vinha da fonte entregue; a régua com o `Z` na data) | eram as plantas: apanhadas, e é o que elas existem para fazer |
+| **B4** | a régua conferia que o nome rendido está NO ficheiro, e não que é o nome DAQUELA linha | a marca do nome passa a dizer de que linha ele é (`data-de-linha`), e `scripts/medir-defeitos.mjs` compara o par; a régua tem a sua própria escada e compara entrada a entrada |
+| M5 | só duas das três contagens levam denominador | fica como está: o total é o denominador de si próprio (triagem) |
+| **M6** | a busca cobria 149 linhas e não 2 916 | um índice compacto por edição, gerado da construção, que o guião carrega; os resultados são portas para as páginas das linhas |
+| M7 | o marcador dentro do selo | fica como está: é texto da ligação da linha, e a régua di-lo (triagem) |
+| M8 | «peça» fora de `/areas` | é do bloco F1.10 (triagem) |
+| **M9** | o título do documento era ligação num sítio e texto morto no outro | é ligação nos dois, e o portão EXIGE a âncora quando a linha declara `document.url` |
+| **M10** | a conta dos estudos discordava de si própria; a régua contava só o marcador da data | a conta diz-se uma vez, medida; a régua conta todos os marcadores da linha de cada trabalho |
+| **M11** | o inventário da voz não tinha o rótulo da busca nem os sufixos da contagem das áreas | a marca `data-voz` recolhe-os, e as catorze cadeias estão declaradas |
+| **M12** | o corredor das plantas imprimia, não exigia; as células do navegador fora do `verify` | o corredor exige a célula de cada planta e sai com 1; as duas células do navegador correm no `verify` |
+| **M13** | as réguas passavam os equivalentes semânticos | seis peneiras novas, e três plantas novas que as provam |
+| decisão | as datas de publicação dos trabalhos | a data em que o ficheiro da edição entrou neste repositório, dita com essa origem |
+
+## 10 · O que a segunda passagem construiu
+
+### 10.1 · A busca cobre o livro-razão inteiro (M6)
+
+`src/lib/indice-da-busca.mjs` escreve, na construção, um índice por edição em
+`/dados/livro-indice.<edição>.json`. Por linha: o identificador, o nome (a escada
+do `src/lib/nomes.mjs`), a fonte e o concelho. **Nenhum valor**: um número entra
+numa página por `<Claim/>`, com o seu selo, e quem quer o número abre a linha,
+que é o que o resultado abre.
+
+**O TAMANHO, MEDIDO:** `livro-indice.pt.json` tem **150 070 bytes (146,6 KB)** e
+`livro-indice.en.json` **149 824 (146,3 KB)**, com 2 916 entradas cada. As mesmas
+2 916 linhas com os três textos e a cadeia de busca escritos por extenso pesam
+**966 546 bytes**, seis vezes e meia: os três campos passam por dicionário e cada
+linha guarda três índices. Medido: **75 nomes distintos** cobrem 2 583 linhas (o
+mais repetido é o nome de 614), **19 fontes** cobrem 2 587 (o INE é a de 1 238) e
+**307 concelhos** cobrem 2 766. Cada dicionário tem um gémeo já em caixa baixa e
+sem acentos, porque a regra da casa é que o guião normaliza só o que o LEITOR
+escreve.
+
+**A REGRA QUE ISTO QUEBRA, DITA ONDE ELA VIVE.** `public/js/livro.js` é o único
+guião deste sítio que escreve texto visível; os outros três podem trocar `hidden`
+e mais nada (resposta 3 da direção, 20.08.2026). Quebra-se pela decisão do F1.10
+(«uma coisa, um lugar»), e com três amarras escritas no topo do ficheiro: nada é
+composto no cliente (cada cadeia vem do índice, por `textContent`), o índice não
+leva um valor, e não se escreve nenhuma contagem de resultados (quando há mais do
+que os que cabem, acende-se uma frase declarada). A alternativa era pôr 2 916
+entradas escondidas no documento, e são cerca de 350 KB de HTML em cada visita.
+
+**SEM GUIÃO a página é a que era:** as 149 linhas gerais, inteiras, com a porta
+para a coleção dos concelhos por cima delas.
+
+### 10.2 · As datas dos trabalhos (a decisão)
+
+A data de publicação de uma edição passa a ser **o dia em que o ficheiro
+`studies-src/<slug>/<lang>.html` entrou neste repositório**, lido na construção
+com `git log --diff-filter=A --format=%ad --date=short`. A página escreve
+«publicado a dd.mm.aaaa», com a preposição fora da marca (para o inventário da
+voz a poder declarar) e a data dentro de
+`data-nonledger="data-do-repositorio"`, cujo motivo em `ledger/allowlist.yml` diz
+de onde ela vem.
+
+| | antes | depois |
+| --- | --- | --- |
+| edições com data à vista | 3 de 16 | **16 de 16** |
+| marcadores no índice do arquivo | 13 | **1** (a descrição que falta a «Onde está a água?») |
+
+**UM VALOR MUDOU, E FICA DITO.** «Évora — Prometido, Pago, Auditado 2026»
+mostrava 04.08.2026, que era o campo `date` do arquivo; passa a mostrar
+15.08.2026, que é o dia em que o ficheiro entrou no repositório. Não é a mesma
+coisa dita de outra maneira: é outro facto, e é o que a página agora nomeia. O
+`date` de `src/data/studies.mjs` fica onde está e deixa de chegar à superfície,
+porque o próprio ficheiro escreve no cabeçalho que **nenhuma data de publicação
+está confirmada**. Se a direção quiser publicar as datas verdadeiras, elas voltam
+por `date` com a sua própria origem, e esta sai.
+
+**O `fetch-depth: 0` DO PORTÃO.** O `actions/checkout` traz um só commit por
+omissão; com essa cópia o `git log` devolve vazio e as dezasseis edições voltavam
+ao marcador **sem erro nenhum**. O `.github/workflows/portao.yml` passa a pedir a
+história inteira, com a razão escrita ao lado. E há duas redes por baixo: o
+portão de HTML fecha a construção quando um motivo declarado não se rende em
+página nenhuma (foi ele que apanhou a primeira versão desta leitura, que devolvia
+`null` por causa de um `import.meta.url` empacotado), e a célula I9 da régua refaz
+o `git log` por conta própria e compara-o com o que a página imprimiu.
+
+### 10.3 · G1 a G12, remedidos
+
+| # | segunda passagem |
+| --- | --- |
+| G1 | **0** entradas pelo identificador; 460 com nome; 560 identificadores em metadado; e cada nome é agora conferido contra a SUA linha, nas duas contas (a marca `data-de-linha` na régua da voz, a escada refeita na régua do bloco) |
+| G2 | **0** datas fora da forma da casa como valor e **0** em prosa por marcar; 918 dentro de texto transcrito e 193 em documentos alojados. A régua passou a apanhar `12/08/2026` e `2026/08/12` |
+| G3 | 1 campo por edição, num `<form method="get">` cujo destino EXISTE em `dist/`; **5 832 entradas** nos dois ficheiros do índice, 2 916 por edição, cada uma com página e com o nome da sua linha |
+| G3b | no navegador, nas DUAS edições: 149 entradas no documento · por nome 1 · **por concelho 9** · por fonte 46 · sem resultado 0, com o estado vazio aceso |
+| G4 | **0** ocorrências no rótulo da contagem; 16 noutras páginas, que são do F1.10 |
+| G5 | 2 de 2 parcelas com denominador (o total é o denominador de si próprio) |
+| G6 | 421 ligações do marcador por edição, uma página cada; 78 dentro de um selo |
+| G7 | **0 px** de transbordo a 390, em 60 páginas de linha (as 10 do endereço mais longo e 50 a passo fixo) |
+| G8 | 58 páginas com a frase, sem uma linha que não seja a da Carta e **sem um algarismo fora de origem declarada** |
+| G9 | 24 linhas de trabalho, **2 marcadores ao todo** (era 20), nenhuma com dois; **16 edições com a data do repositório conferida contra o `git`**, 0 sem história |
+| G10 | 2 916 linhas citadas em **31 244 ocorrências**, 16 motivos; a comparação passou a ser de valores e de contagens, e não de presença de chaves |
+| G11 | `build` 0 · `verify` 0 (com as duas células do navegador lá dentro) · `typecheck` 0 |
+| G12 | **7 plantas, 7 vermelhas na célula certa**, e o corredor sai com 1 quando não acontece |
+
+### 10.4 · As sete plantas, com a saída do corredor
+
+```
+  (sem planta)     código=0  células vermelhas=[]
+  slug             código=1  células vermelhas=['I1']  esperada=I1
+  data             código=1  células vermelhas=['I2']  esperada=I2
+  forma            código=1  células vermelhas=['I3']  esperada=I3
+  marcador         código=1  células vermelhas=['I6']  esperada=I6
+  nome-trocado     código=1  células vermelhas=['I1']  esperada=I1
+  data-barras      código=1  células vermelhas=['I2']  esperada=I2
+  destino-morto    código=1  células vermelhas=['I3']  esperada=I3
+
+  ✓ a construção limpa é verde e as 7 plantas acendem cada uma a sua célula.
+```
+
+As três últimas são os equivalentes semânticos que a leitura a frio disse que
+passavam: o nome de OUTRA linha (as duas cadeias continuam a ser nomes legítimos
+do sítio), a mesma data noutra grafia, e um destino de formulário para uma página
+que não existe.
+
+### 10.5 · A marca `data-voz`, e porque ela só alarga
+
+O inventário da voz não tinha o rótulo da busca nem os sufixos da contagem das
+áreas, e **não os podia ter**: um `<label>` não é um bloco para a régua, e um
+texto todo dentro de um `<a>` é um destino e não uma frase. Declarar uma linha
+que a régua não vê fecha a construção pelo outro lado («viva que não se rende»).
+
+`data-voz` diz «este texto é prosa da casa, recolhe-o onde quer que esteja». É a
+única marca deste sítio que só ALARGA a peneira: não dispensa nada, não esconde
+nada, e uma marca a mais só pode pôr mais texto por classificar. As catorze
+cadeias estão declaradas, e a régua da voz passou de 802 para **816 frases
+distintas**, com «nada por classificar» e autorreferência 0.
+
+### 10.6 · O que continua por fazer
+
+1. **O «peça» das outras dezasseis ocorrências** (o Método, o Sobre, três
+   documentos alojados) é do bloco F1.10, e a régua conta-as à parte para que não
+   fiquem em silêncio.
+2. **As datas verdadeiras de publicação dos trabalhos** continuam por confirmar:
+   o que a página diz agora é o dia em que o ficheiro entrou no repositório, e
+   di-lo com esse nome.
+3. **A ronda de leitores (F1.3)** não aconteceu.
+4. **A leitura a frio desta segunda passagem** ainda não correu.

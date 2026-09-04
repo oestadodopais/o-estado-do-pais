@@ -1289,7 +1289,15 @@ export const STRINGS = {
          faz; o botão, que é o mesmo verbo da pesquisa dos concelhos; e o estado
          vazio, que só o guião acende. */
       buscaRotulo: 'Procurar por nome, identificador ou fonte',
-      buscaSemResultado: 'Nenhuma linha do índice tem essas palavras.',
+      buscaSemResultado: 'Nenhuma linha do livro-razão tem essas palavras.',
+      /* O RÓTULO DA FILA DE RESULTADOS (segunda passagem, Major 6). A busca
+         passou a cobrir as 2 916 linhas e não as 149 que a página lista: os
+         resultados são uma fila de portas, e a fila diz o que é. */
+      buscaResultadosK: 'Linhas que casam',
+      /* Quando há mais resultados do que os que cabem na fila. Diz-se por
+         palavras e não por um número: uma contagem de resultados é um número que
+         a casa escreveria sem linha. */
+      buscaMais: 'Há mais linhas do que as que cabem aqui. Escreva mais para estreitar.',
       /* A LEGENDA DO SELO PASSA A NOMEAR OS ESTADOS (direção, 21.08.2026).
          Dizia «Quadrado cheio: a proveniência está completa.» e «Quadrado a
          tracejado: falta pelo menos um campo, e a linha di-lo.» — duas frases a
@@ -1653,7 +1661,15 @@ export const STRINGS = {
          da casa» —, e isso é o sítio a descrever a sua própria descrição
          (Emenda 18(e)). A transcrição continua conferida por `data-verbatim`,
          que é onde a afirmação é prova e não frase. */
-      dataLabel: 'Publicação',
+      /* A DATA DE PUBLICAÇÃO PASSA A DIZER-SE POR EXTENSO, COM A ORIGEM
+         (segunda passagem do F1.4, 04.09.2026). Era «Publicação: 12.08.2026»
+         sobre uma data que o arquivo declarava por confirmar. Passa a ser
+         «publicado a 12.08.2026», e a data é o dia em que o ficheiro da edição
+         entrou neste repositório: um facto que se prova com o `git log`, dito
+         com a marca `data-nonledger="data-do-repositorio"`. A preposição fica
+         fora dessa marca, porque é prosa da casa e o inventário da voz declara-a
+         (a marca `data-voz` recolhe-a). */
+      dataLabel: 'publicado a',
       lingua: 'Língua',
       verEstudo: 'Página do estudo',
       /* AS DUAS FRASES DO ESTADO SAÍRAM (subetapa 4e, a regra da direção de
@@ -2418,7 +2434,9 @@ export const STRINGS = {
       contaConcelhos: 'municipality rows',
       concelhosPorta: 'Municipalities',
       buscaRotulo: 'Search by name, identifier or source',
-      buscaSemResultado: 'No row in this index matches those words.',
+      buscaSemResultado: 'No row in the ledger matches those words.',
+      buscaResultadosK: 'Rows that match',
+      buscaMais: 'There are more rows than fit here. Type more to narrow it down.',
       seloK: 'The two states of the seal',
       seloCheio: 'provenance complete',
       seloTracejado: 'one field unconfirmed',
@@ -2596,7 +2614,7 @@ export const STRINGS = {
       h1: 'Studies',
       lede: 'Every published study, with its editions and dates. Those hosted elsewhere carry the link to it.',
       aviso: 'Publication dates not yet confirmed.',
-      dataLabel: 'Published',
+      dataLabel: 'published on',
       lingua: 'Language',
       verEstudo: 'Study page',
       stubEdicoes: 'Editions',
