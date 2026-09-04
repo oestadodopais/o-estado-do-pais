@@ -10,13 +10,18 @@ comando que o mediu.*
 
 Os dois painéis de baixo saíram da primeira página e no lugar deles ficou uma
 área de leitura: 21 `<details>` nativos fechados, um por medida, com o nome da
-medida como `<summary>` e, dentro, a unidade, o limiar onde o quadro publica um,
-a frase da medida, as três datas, a régua contra o limiar e o selo que abre a
-linha. A seguir ao mapa
-entrou a secção dos domínios, com o domínio que hoje tem página, o seu nome como
-porta e a faixa das suas medidas de cabeça que não se rendem já nesta página. As
-três medidas dos dois quadros que pertencem a um domínio com página não têm aqui
-uma segunda leitura: têm uma linha com a porta para a leitura delas no domínio.
+medida como `<summary>` e, dentro, a unidade, o limiar onde o quadro publica um
+com a sua régua, a definição da medida, as três datas e o selo que abre a linha.
+A seguir ao mapa entrou a secção dos domínios, com o domínio que hoje tem página,
+o seu nome como porta e a faixa das suas medidas de cabeça que não se rendem já
+nesta página. As três medidas dos dois quadros que pertencem a um domínio com
+página têm **a mesma leitura das outras dezoito** e acrescentam, no fim, a porta
+«Ver no domínio →».
+
+*Este relatório cobre as duas passagens. A segunda, de 04.09.2026, corrige uma
+decisão do lugar de direção depois da leitura a frio do Codex
+(`design/especime-v3/critica/2026-09-04-codex-leitura-f11b-leitura.md`), e está
+na §9.*
 
 ## 1 · O que o brief supunha e o que a medição encontrou
 
@@ -146,11 +151,12 @@ o nome da medida como `<summary>` e o `id` `m-<id da linha>`, que é a âncora p
 onde o cartão daquela medida já apontava desde 01.09.2026. Uma leitura é uma de
 duas coisas:
 
-* a **leitura inteira** de uma medida que só vive nesta página: a unidade, o
-  limiar onde o quadro publica um (com a comparação, na forma que a peça
-  imprimia), a frase da medida onde ela existe, as três datas da carta, a régua
-  contra o limiar onde ela existe, e o selo, que é a porta para a linha;
-* a **porta** de uma medida que vive num domínio: uma ligação, e mais nada.
+**A leitura é a mesma para as 21** (decisão corrigida de 04.09.2026): a unidade,
+o limiar onde o quadro publica um (com a comparação, na forma que a peça
+imprimia) e a sua régua, a definição da medida onde ela existe, as três datas da
+carta, e o selo, que é a porta para a linha. **As três medidas que vivem num
+domínio acrescentam, no fim, a porta «Ver no domínio →»**, e não trocam a leitura
+por ela.
 
 ### 3.2 · `src/views/HomeView.astro`
 
@@ -201,7 +207,7 @@ carácter, o de `.peca-seta`.
 
 | ficheiro | o que mudou |
 |---|---|
-| `tests/inicio/leitura.mjs` | **novo**, com as células J1, J3, J4, J5, J6, J7 e J12 e cinco estragos plantados |
+| `tests/inicio/leitura.mjs` | **novo**, com as células J1, J3, J4, J5, J6, J7 e J12 e cinco estragos plantados. Na segunda passagem, 18 células: a J3 e a J4 passaram a correr nas duas edições e nos dois motores, e a J4 a tocar nos 21 cartões em português |
 | `tests/inicio/porta.mjs` | A10 passa a contar dentro das leituras (contava dentro das peças, que saíram) e a exigir as duas coleções não vazias; A13 lê a faixa DA CABEÇA (a página passou a ter duas); A17 lê faixa a faixa em vez de página a página; a planta da A3 muda de alvo, porque o alvo antigo saiu da página |
 | `tests/inicio/faixa.mjs` | F1 e F12 comparam os cartões da faixa da cabeça com as leituras da página; as células que medem cada cartão (F2, F3, F5, F7, F8) continuam a ler todos os cartões das duas faixas |
 | `tests/inicio/lista.mjs` | L8 conta as leituras de cada metade em vez das peças e das linhas sociais |
@@ -217,16 +223,13 @@ a entrada do bloco `leitura`.
 
 ## 4 · O que se perde, dito
 
-**Duas frases saem do sítio.** A definição da dívida pública («Dívida bruta das
-administrações públicas, no conceito do Procedimento dos Défices Excessivos.
-Está acima do limiar do painel europeu.») e a da taxa de emprego («Proporção das
-pessoas dos 20 aos 64 anos com emprego.»), nas duas edições. As duas viviam na
-peça do painel; as duas medidas passaram a ter, na área de leitura, uma linha só
-com a porta para o domínio, e a página do domínio não rende a frase de
-`figuras.mjs` (rende a pergunta da carta, que é outra coisa). As quatro linhas do
-inventário passaram a «retirada» com esta razão escrita, e o portão da voz confere
-que não voltam em silêncio. **É uma perda de conteúdo, e a decisão é do lugar de
-direção de 04.09.2026.**
+**Nenhuma frase sai do sítio, e por pouco.** A primeira passagem tirou duas: a
+definição da dívida pública e a da taxa de emprego, nas duas edições, porque a
+leitura dessas medidas na primeira página tinha sido reduzida a uma linha com a
+porta para o domínio. A leitura a frio do Codex mediu o que essa instrução
+custava (Blocking 3), o lugar de direção corrigiu a decisão no mesmo dia, e as
+duas voltaram com a leitura inteira. As quatro linhas do inventário voltaram a
+«viva». **A §9 conta a passagem por extenso.**
 
 **A régua contra o limiar quase saiu do sítio inteiro, e voltou.** A primeira
 redação deste bloco deixou-a cair com a peça, porque o §1 do brief não a lista
@@ -266,15 +269,15 @@ construção de `1dbd1cef`, medida numa árvore própria (`git worktree add
 |---|---|---|---|---|
 | J1 | os 21 nomes em exactamente dois lugares, por id | 2 lugares: o cartão da faixa e a peça do painel (ou a linha social) · 42 `[data-medida-nome]` no documento | 2 lugares: o cartão da faixa da cabeça e o `<summary>` da sua leitura · 44 no documento (os 2 que sobram são os cartões da faixa do domínio, que não são medidas destas) · **0 fora dos dois lugares, nas duas edições** | `leitura.mjs` J1 |
 | J2 | os 21 valores selados uma só vez, e a Comissão em cada frase de contexto | A3 0 fora da conta · A4 2 frases, 0 sem a Comissão | **igual** | `porta.mjs` A3, A4 |
-| J3 | sem guião: as 21 leituras presentes, fechadas, com `id` | não havia leituras | 21 de 21, 0 abertas, 0 sem id, 0 com id errado, 21 com `<summary>`, em Chromium e em WebKit | `leitura.mjs` J3 |
-| J4 | com guião: um toque abre a sua e fecha a anterior, e o endereço passa a `#<id>` | não havia | dois toques, dois endereços (`#m-<id>`), uma leitura aberta de cada vez | `leitura.mjs` J4 |
+| J3 | sem guião: as 21 leituras presentes, fechadas, com `id` | não havia leituras | 21 de 21, 0 abertas, 0 sem id, 0 com id errado, 21 com `<summary>`, **nas duas edições e nos dois motores** (quatro células) | `leitura.mjs` J3 |
+| J4 | com guião: um toque abre a sua e fecha a anterior, e o endereço passa a `#<id>` | não havia | **os 21 cartões tocados em português e 5 em inglês, nos dois motores**: 18 abrem a sua leitura aqui, uma de cada vez, com `#m-<id>` na barra; 3 vão à página do domínio, à âncora daquela medida | `leitura.mjs` J4 |
 | J5 | a secção dos domínios a seguir ao mapa | não havia | 1 domínio, depois do mapa e antes da área de leitura, com a porta para `/dominios/economia-e-financas-publicas` (e o par inglês) e a faixa de 2 cartões com «n de 2»; nenhum valor selado repetido | `leitura.mjs` J5, `porta.mjs` A17 |
-| J6 | a altura de `/` a 390 menor do que hoje | **6 959 px** (`/`) · **6 911 px** (`/en`) | **4 667 px** (menos 2 292) · **4 625 px** (menos 2 286) | `leitura.mjs` J6, `porta.mjs` A2 |
+| J6 | a altura de `/` a 390 menor do que hoje | **6 959 px** (`/`) · **6 911 px** (`/en`) | **4 667 px** (menos 2 292) · **4 625 px** (menos 2 286), e **os mesmos depois da segunda passagem**: o conteúdo reposto vive dentro de dobras fechadas e não custa altura (§9.1) | `leitura.mjs` J6, `porta.mjs` A2 |
 | J7 | o primeiro ecrã a 390 × 664 igual ao do F1.1 | fundo máximo 653,7 px (`/`) · 641,1 px (`/en`) | **653,7 px · 641,1 px**, os mesmos | `leitura.mjs` J7, `porta.mjs` A1 |
 | J8 | `/estudos` a ≤ 1 toque e ≤ 1,5 ecrãs | a porta mais acima a 662,7 px (1 ecrã) em `/`, 650,1 px (0,98) em `/en` | **os mesmos** | `porta.mjs` A15 |
 | J9 | nenhum número novo, com as diferenças ditas | *(ver a §5.1)* | *(ver a §5.1)* | `numeros-novos.mjs` |
 | J10 | `build`, `verify` e `typecheck` a 0, e as réguas de `tests/inicio` | *(ver a §5.2)* | *(ver a §5.2)* | os três comandos |
-| J11 | as plantas vermelhas e depois verdes | não havia | 5 de 5 | `leitura.mjs --vermelhos` |
+| J11 | as plantas vermelhas e depois verdes | não havia | 5 de 5, e cada uma diz agora QUAL das células nomeadas não estava verde antes | `leitura.mjs --vermelhos` |
 
 ### 5.1 · J9 · o inventário das classes de algarismos
 
@@ -289,7 +292,7 @@ node tests/inicio/numeros-novos.mjs --so index.html,en/index.html --json <fichei
 |---|---|---|
 | `data-claim` | 2 916 → 2 916 | 31 244 → 31 248 |
 | `data-prova` | 47 → 47 | 14 584 → 14 584 |
-| `data-nonledger` | 16 → 16 | 74 690 → 74 786 |
+| `data-nonledger` | 16 → 16 | 74 690 → 74 832 |
 | `data-verbatim` | 6 → 6 | 23 → 23 |
 
 **Em `/` e `/en`, as diferenças, uma a uma, e cada uma reconciliada:**
@@ -298,12 +301,19 @@ node tests/inicio/numeros-novos.mjs --so index.html,en/index.html --json <fichei
 |---|---|---|---|
 | `data-claim` (distintos) | 22 | **24** | entram `saldo-das-administracoes-publicas-2025` e `ganho-medio-mensal-2024`, os dois cartões da faixa do domínio. **Nenhum dos 21 é contado duas vezes** (a régua A3) |
 | `data-claim` (ocorrências) | 44 | 48 | os dois valores novos, nas duas edições |
-| `data-nonledger="data-da-linha"` | 0 | **108** | as três datas de cada uma das 18 leituras inteiras, nas duas edições (18 × 3 × 2) |
+| `data-nonledger="data-da-linha"` | 0 | **126** | as três datas de cada uma das 21 leituras, nas duas edições (21 × 3 × 2) |
 | `data-nonledger="numeracao"` | 84 | 92 | o «n de N» dos dois cartões da faixa do domínio (2 × 2 × 2) |
-| `data-nonledger="escala-de-instrumento"` | 62 | 50 | as três leituras que passaram a porta levavam 6 marcas por edição (2 na régua da dívida pública, 4 nos escalões etários da taxa de emprego) |
-| `data-nonledger="limiar-do-quadro"` | 60 | 56 | as 2 marcas do limiar da dívida pública (a linha e a referência da régua), por edição |
-| `data-nonledger="data-de-referencia"` | 88 | 86 | saem 3 por edição (a unidade das três leituras que passaram a porta) e entram 2 (os dois cartões novos) |
-| `data-nonledger="proveniencia"` | 86 | 84 | saem 3 selos por edição (o pé das três leituras que passaram a porta) e entram 2 (os selos dos dois cartões novos) |
+| `data-nonledger="data-de-referencia"` | 88 | 92 | a unidade dos dois cartões novos, nas duas edições |
+| `data-nonledger="proveniencia"` | 86 | 90 | os selos dos dois cartões novos, nas duas edições |
+| `data-nonledger="escala-de-instrumento"` | 62 | **62** | sem diferença |
+| `data-nonledger="limiar-do-quadro"` | 60 | **60** | sem diferença |
+
+**As duas últimas linhas são a prova da segunda passagem.** Durante a primeira,
+com as três leituras reduzidas a uma porta, `escala-de-instrumento` caía de 62
+para 50 e `limiar-do-quadro` de 60 para 56, e `proveniencia` e
+`data-de-referencia` desciam em vez de subirem: eram a régua e o limiar da dívida,
+os escalões etários da taxa de emprego e três selos a sair da página. Com a
+leitura inteira reposta, as quatro contas fecham no sítio certo.
 
 As contagens de antes saíram da construção de `1dbd1cef` numa árvore própria; as
 de depois, desta. Cada linha da segunda tabela fecha à unidade.
@@ -353,14 +363,18 @@ bytes diferentes) e **vermelho depois** (todas as células nomeadas caem).
 | planta | células |
 |---|---|
 | um painel de baixo de volta (a peça com o nome da medida) | J1.pt |
-| um `<details>` da área de leitura sem id | J3.chromium, J3.webkit |
+| um `<details>` da área de leitura sem id | J3.pt.chromium, J3.pt.webkit, J12.pt |
 | a secção dos domínios sem a porta | J5.pt |
-| a leitura de uma medida do domínio com a leitura inteira de volta | J12.pt |
+| a leitura de uma medida do domínio reduzida a uma linha com a porta | J12.pt |
 | a faixa do domínio com um valor selado repetido | J5.pt |
 
-**As cinco passaram**, com as três exigências cada uma. A quinta é a que o brief
-pede e a quarta é da decisão do lugar de direção de 04.09; as outras três são as
-do §4 do brief.
+**As cinco passaram**, com as três exigências cada uma, e cada linha diz agora
+QUAL das células nomeadas não estava verde antes (Major 7 da leitura a frio: um
+relatório de plantas que não o diga não é reproduzível por quem lê). A quinta é a
+que o brief pede; a quarta inverteu-se na segunda passagem, e passou a repor o
+defeito que a leitura a frio mediu (a leitura de uma medida do domínio reduzida a
+uma linha), que é o que a J12 tem de recusar; as outras três são as do §4 do
+brief.
 
 **E as treze plantas de `porta.mjs` também**, depois de duas mudarem de alvo: a
 da A3 apontava a uma marca que saiu da página com o painel (e mudou duas vezes no
@@ -380,12 +394,17 @@ mudança.
    `data-claim` por id. Ver a §2.3.
 3. **O valor com selo dentro da leitura breve** (§1, item 1). Mesma razão, e a
    medida J2 exige a A3 verde. Ver a §2.1.
-4. **A fila dos estudos não mudou de sítio.** O item 4 do brief diz duas coisas
-   que não podem ser as duas verdade: «fica onde o F1.2b a pôs» e «depois da
-   secção dos domínios». O F1.2b pô-la dentro do bloco da faixa, logo por baixo
-   dos cartões, e é lá que ela cumpre a medida J8 (a ≤ 1 toque e ≤ 1,5 ecrãs, que
-   a célula A15 de `porta.mjs` mede). Depois da secção dos domínios ela ficaria a
-   mais de três ecrãs, e a J8 cairia. Fica onde estava.
+4. **A fila dos estudos não mudou de sítio, e a decisão está tomada.** O item 4
+   do brief diz duas coisas que não podem ser as duas verdade: «fica onde o F1.2b
+   a pôs» e «depois da secção dos domínios». O F1.2b pô-la dentro do bloco da
+   faixa, logo por baixo dos cartões, e é lá que ela cumpre a medida J8 (a ≤ 1
+   toque e ≤ 1,5 ecrãs, que a célula A15 de `porta.mjs` mede); depois da secção
+   dos domínios ficaria a mais de três ecrãs, e a J8 cairia. A leitura a frio
+   apanhou o conflito (Major 4) e **o lugar de direção decidiu a 04.09.2026: a
+   fila dos estudos fica logo a seguir à faixa, onde o F1.2b a pôs e onde cumpre
+   o ecrã e meio, e a secção dos domínios vem depois do mapa.** É o que a página
+   faz, e a célula J5 mede a ordem («depois do mapa» e «antes da área de
+   leitura»).
 5. **A cadeia «Ver o domínio →» não existia.** O brief e o lugar de direção dizem
    que o F1.2b a declarou; medido, o que ele declarou foi `s.dominios.eyebrow`,
    que é o rótulo de destino de um cartão. Declarou-se uma cadeia nova para a
@@ -430,4 +449,118 @@ construção final:
 | `inicio-1280-en.png` | 3 370 px |
 | `inicio-390x664-primeiro-ecra-pt.png` | o primeiro ecrã, sem rolar |
 | `inicio-390x664-primeiro-ecra-en.png` | o primeiro ecrã, sem rolar |
+
+## 9 · A segunda passagem, sobre a leitura a frio do Codex (04.09.2026)
+
+A leitura está em
+`design/especime-v3/critica/2026-09-04-codex-leitura-f11b-leitura.md`. O leitor
+viu **as cinco plantas de três classes** (5 de 5) e trouxe nove achados
+distintos. A triagem é do lugar de direção, pela delegação da §1.98, e está no
+cabeçalho daquele ficheiro. O que esta passagem mudou:
+
+### 9.1 · Blocking 3 (com o Blocking 2) · a leitura das três medidas do domínio volta inteira
+
+**O achado.** Reduzir a leitura dos três cartões do domínio a uma linha com a
+porta apagou conteúdo do leitor, e não o compactou. Medido pelo leitor, por
+edição: a primeira página passava de **7 para 5 definições**, de **13 para 12
+limiares**, de **13 para 12 réguas** e de **21 para 18 selos de fonte** na área de
+leitura. Saíam a definição da dívida pública e a da taxa de emprego, o limiar e a
+régua da dívida, e três portas para a linha.
+
+**A origem.** A instrução era do lugar de direção, de 04.09, e não do brief; o
+brief §1 item 1 manda cada cartão abrir a sua leitura com o limiar ou a posição,
+o contexto, as datas e a porta para a linha. A primeira passagem seguiu a
+instrução e escreveu a perda na §4; o leitor mostrou que a perda era maior do que
+o que estava escrito.
+
+**A decisão corrigida** (lugar de direção, 04.09.2026): **os 21 cartões têm a
+mesma leitura breve** (a definição, o limiar ou a posição com a régua, as três
+datas, o selo da fonte; o valor fica só no cartão), **e os três do domínio
+acrescentam a porta «Ver no domínio →» no fim.** É o que a página faz agora, e é
+o que a célula J12 mede leitura a leitura. A planta que media a forma antiga
+inverteu-se: passou a repor a linha única com a porta, e a J12 tem de a recusar.
+
+**A altura não subiu com o conteúdo reposto, e isso mediu-se.** O lugar de
+direção esperava que a J6 subisse; não subiu: `/` a 390 continua a **4 667 px** e
+`/en` a **4 625 px**, os mesmos números da primeira passagem. A razão é a forma:
+tudo o que voltou (as duas definições, o limiar e a régua da dívida, os três
+selos) vive DENTRO de um `<details>` fechado, e uma dobra fechada mede o seu
+`<summary>` e mais nada. O que a segunda passagem devolveu ao leitor não custa um
+píxel a quem não abre a leitura, e é essa a forma que o bloco escolheu.
+
+### 9.2 · Major 4 · a ordem, decidida
+
+Ver a §7, item 4. A fila dos estudos fica logo a seguir à faixa; a secção dos
+domínios vem depois do mapa. A J5 mede as duas metades da ordem.
+
+### 9.3 · Major 7 · as réguas passam a provar o que dizem
+
+| o que o leitor mediu | o que mudou |
+|---|---|
+| a J3 corria só em português: uma leitura inglesa sem `id` não caía em célula nenhuma | **J3 corre nas duas edições e nos dois motores** (quatro células) |
+| a J12 nunca lia o `id` | **a J12 lê o `id` duas vezes**: conta `id="m-<id>"` no HTML servido, uma vez por medida, e compara-o com o `id` do `<details>` no navegador |
+| a J4 tocava nos dois primeiros cartões locais em Chromium | **a J4 toca nos 21 em português e numa amostra de cinco em inglês, nos dois motores**, e exige de cada cartão o que a sua classe promete: o que leva a uma âncora desta página abre a sua leitura e fecha a anterior; o que leva à página do domínio chega à âncora daquela medida lá dentro. A amostra inglesa apanha as duas classes de propósito |
+| o relatório das plantas não era reproduzível quando uma célula já estava vermelha | **cada planta diz agora QUAL das células nomeadas não estava verde**, ou que ela não existe |
+
+### 9.4 · Major 6 · a porta declarada em prosa, como o F1.9a
+
+A cadeia «Ver no domínio →» / «See it in the domain →» **não pode** ser uma linha
+`viva` do `INVENTARIO-FRASES.md`: as medidas 8 e 9 da régua da voz excluem o
+texto que vive dentro de um `<a>`, e a exclusão corre nos dois sentidos, de modo
+que uma linha `viva` assim fecha a construção. A declaração passou a ter a forma
+que o F1.9a usou para «Subir» / «Back to top»: um parágrafo com o nome, as duas
+edições, a origem (`src/i18n/strings.mjs`, `dominios.verNoDominio`), o limite
+mecânico por extenso, e a nota de que **o buraco é do F3.1** e não deste bloco.
+
+### 9.5 · O que a reposição obrigou a mexer nas réguas, e nada mais
+
+Repor a leitura inteira nas três medidas do domínio mudou o que quatro células da
+`matriz` contavam, e as quatro seguem a coisa em vez de a esconder:
+
+| célula | antes da reposição | depois |
+|---|---|---|
+| «sem JavaScript» (cinco endereços) | a área de leitura levava **18** selos | leva **21**, um por leitura |
+| «a régua de uma leitura aberta» (768 e 1280) | as leituras com porta saíam da conta, porque não tinham régua | **todas as que têm limiar entram**: onde há linha de limiar há régua |
+| «nenhum par de áreas de toque sobrepostas na leitura» | o selo e a porta ficavam a 17 px, e as áreas efectivas cruzavam-se por 1,4 px | **27 px de ar por cima da porta**, medidos: as duas áreas deixam de se tocar |
+| «o selo é o maior alvo do corpo da leitura» | o selo mede 52,5 × 19,2 px e a porta 105,8 × 32 | **a porta sai da conta, com a razão escrita**: não é aparelho da leitura, é um destino sozinho na sua linha, e a célula acima já mede que os dois não se tocam |
+
+### 9.6 · Major 8 e Minor 9 · ficam, e diz-se porquê
+
+**Major 8**: o comando da densidade abre as 21 leituras de uma vez, e é de
+propósito. Ele é a DENSIDADE («Relance» e «Leitura breve», as duas palavras da
+casa desde a Emenda 2), e não um toque num cartão: o estado `?densidade=leitura`
+é partilhável desde a Emenda 7 e continua a resolver. A promessa de «uma de cada
+vez» é a do TOQUE NUM CARTÃO, e é essa que a J4 mede, agora nos 21.
+
+**Minor 9**: «Domínios» aparece como título da secção e outra vez no rótulo de
+destino dos cartões do domínio. Fica: é o nome da família de páginas, é a
+sobrancelha com que a página de chegada se nomeia, e é a palavra que o menu já
+usa. Não é conteúdo de medida repetido: as duas medidas da faixa do domínio são
+novas na primeira página e não duplicam nenhuma das 21.
+
+### 9.7 · O que a segunda passagem mediu
+
+`node tests/inicio/leitura.mjs --vermelhos`, sobre a construção final:
+
+```
+  leitura ✓ 18 de 18 célula(s) · plantas ✓
+```
+
+* **J12** · 21 leituras inteiras (unidade, três datas e selo em todas; **13 com
+  limiar e régua**, e **7 com a definição da medida**), e 3 delas acrescentam a
+  porta para o domínio. Os números que o leitor mediu do outro lado eram 12
+  limiares, 12 réguas, 5 definições e 18 selos; voltaram a 13, 13, 7 e 21;
+* **J3** · quatro células (`pt`/`en` × Chromium/WebKit), 21 leituras de 21, 0 sem
+  `id`, 0 com `id` errado, e as 21 âncoras contadas no HTML servido;
+* **J4** · quatro células. Em português, **21 cartões tocados** nos dois motores:
+  18 abrem a sua leitura aqui, uma de cada vez, e 3 vão à página do domínio. Em
+  inglês, a amostra de cinco (2 de domínio e 3 locais), nos dois motores;
+* **as cinco plantas**, com «verde antes» célula a célula.
+
+### 9.8 · O que era planta, e não achado
+
+O Blocking 1 (as leituras sem `id`, na fonte e no diff), a parte do Major 7 sobre
+o `!d.id` trocado por `false`, e o Major 5 (o relatório a dizer 5 667 px numa
+tabela e 4 667 noutra) são as plantas P1a, P1b, P2, P3 e P4 do pacote. O leitor
+viu as cinco.
 

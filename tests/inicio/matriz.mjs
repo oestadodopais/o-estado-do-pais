@@ -576,9 +576,16 @@ const estadoDaPagina = (p) =>
        que o selo fosse maior do que ele era exigir que o comando que abre a
        leitura fosse mais pequeno do que o recibo lá dentro, que é o contrário do
        que a casa desenha. O que a regra protege continua protegido: dentro do
-       corpo da leitura, o selo é o maior alvo, e é o que a I13 pede. */
+       corpo da leitura, o selo é o maior alvo, e é o que a I13 pede.
+
+       A PORTA PARA O DOMÍNIO TAMBÉM SAI (segunda passagem, 04.09.2026), e por
+       outra razão: é uma porta que a casa decidiu pôr ali, no fim e sozinha na
+       sua linha, e não aparelho da leitura. Mede 105,8 × 32 px e o selo 52,5 ×
+       19,2, e nenhum dos dois esconde o outro: a célula acima mede que as duas
+       áreas efectivas não se tocam. Uma leitura com porta tem exactamente dois
+       alvos no corpo, e os dois são destinos declarados. */
     const outros = [...peca.querySelectorAll('.dobra-corpo a, .dobra-corpo button')].filter(
-      (e) => e !== selo,
+      (e) => e !== selo && !e.closest('.dobra-porta'),
     );
     /* A área de um alvo, e para o selo é a do `::after` que a folha lhe dá: é
        ele que apanha o toque, e não a caixa da unidade em linha. */
@@ -632,11 +639,13 @@ const estadoDaPagina = (p) =>
        (F1.1b, 04.09.2026): sem guião a página continua a ser o País em Relance,
        completa e correcta. O que a célula conta é a área de leitura inteira (21
        leituras, o primeiro bloco é o do Procedimento) e os selos que ela leva:
-       18, porque as três medidas que vivem num domínio têm por leitura uma
-       porta, e o selo delas está na página do domínio. Os VALORES são zero nesta
-       área desde o F1.1: os 21 valores selados aparecem uma vez só, no cartão da
-       faixa. */
-    const completo = e.bloco === 'pais' && e.painel === 'pdm' && e.pecas === 21 && e.selos === 18;
+       21, um por leitura, porque desde a segunda passagem de 04.09.2026 as 21
+       têm a mesma leitura breve e as três que vivem num domínio ACRESCENTAM a
+       porta em vez de trocarem a leitura por ela. Foram 18 durante a primeira
+       passagem, e a leitura a frio do Codex mediu o que isso custava. Os VALORES
+       são zero nesta área desde o F1.1: os 21 valores selados aparecem uma vez
+       só, no cartão da faixa. */
+    const completo = e.bloco === 'pais' && e.painel === 'pdm' && e.pecas === 21 && e.selos === 21;
     conta(
       `sem JavaScript · ${q}`,
       completo && e.ligacoes.every(Boolean) && e.transbordo <= 0,
@@ -786,12 +795,11 @@ for (const largura of [768, 1280]) {
     const reguas = [...document.querySelectorAll('[data-leituras] .regua-svg')].map((e) =>
       Math.round(e.getBoundingClientRect().width),
     );
-    /* AS QUE TÊM LIMIAR E NÃO SÃO PORTA. Uma medida que vive num domínio tem
-       limiar publicado e tem por leitura, nesta página, uma linha só com a porta
-       para o domínio: a régua dela desenha-se lá, ao pé da leitura inteira. */
-    const comLimiar = [...document.querySelectorAll('[data-leituras] .dobra[data-limiar="sim"]')].filter(
-      (e) => !e.querySelector('.dobra-porta a[href]'),
-    ).length;
+    /* TODAS AS QUE TÊM LIMIAR, sem excepção. A primeira passagem tirava desta
+       conta as leituras que levam porta, porque nessa forma elas não tinham
+       régua; desde a segunda passagem de 04.09.2026 têm, como todas as outras, e
+       a excepção deixou de ter objecto. Onde há linha de limiar há régua. */
+    const comLimiar = document.querySelectorAll('[data-leituras] .dobra[data-limiar="sim"]').length;
     return {
       reguas,
       comLimiar,

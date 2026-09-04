@@ -104,27 +104,26 @@ const leituras = medidas.map((m) => ({
      página, no cartão que abre esta leitura. */
   regua: m.regua ?? null,
   /* ---------------------------------------------------------------------
-     A MEDIDA QUE VIVE NUM DOMÍNIO NÃO TEM AQUI UMA SEGUNDA LEITURA
-     (decisão do lugar de direção, 04.09.2026)
+     A MEDIDA QUE VIVE NUM DOMÍNIO GANHA UMA PORTA, E NÃO PERDE A LEITURA
+     (segunda passagem, 04.09.2026, sobre a leitura a frio do Codex)
      ---------------------------------------------------------------------
      Três das 21 medidas dos dois quadros são medidas de um domínio COM PÁGINA
-     — a dívida pública, a taxa de emprego e a taxa de desemprego —, e a leitura
-     delas vive lá, com a fronteira do domínio, a pergunta da carta, as três
-     datas e a forma gráfica que a fonte permite. É para lá que o cartão delas
-     leva desde o F1.2b, e não para esta página.
+     (a dívida pública, a taxa de emprego e a taxa de desemprego), e o cartão
+     delas leva à página do domínio desde o F1.2b.
 
-     Escrever-lhes aqui uma leitura inteira era a mesma coisa duas vezes em duas
-     páginas, que é o defeito que este bloco veio fechar noutro sítio. O que
-     fica é UMA LINHA: a porta para a leitura daquela medida no domínio.
+     A PRIMEIRA PASSAGEM REDUZIU A LEITURA DELAS A UMA LINHA com essa porta, por
+     instrução do lugar de direção, e o custo mediu-se na leitura a frio
+     (Blocking 3): a primeira página passava de 7 para 5 definições, de 13 para
+     12 limiares, de 13 para 12 réguas e de 21 para 18 selos de fonte na área de
+     leitura. Saíam a definição da dívida pública e a da taxa de emprego, o
+     limiar e a régua da dívida, e três portas para a linha. Nada disso é
+     repetição do domínio: são o que a leitura breve desta página tem para dar.
 
-     O `<details>` FICA, e com o seu `id`: `/#m-divida-publica-2025` é um
-     endereço que já existia e continua a abrir alguma coisa (Emenda 7), o nome
-     da medida continua a aparecer em dois lugares e não em três (a medida J1), e
-     as 21 leituras continuam a estar as 21 na área de leitura. O que muda é o
-     que está lá dentro.
-
-     O VALOR NÃO ENTRA, e a razão é a mesma de todas as outras: ele está no
-     cartão, e a régua A3 conta `data-claim` por id e recusa o segundo. */
+     A DECISÃO CORRIGIDA (04.09.2026, pela delegação da §1.98): os 21 cartões têm
+     a MESMA leitura breve, e os três do domínio acrescentam a porta «Ver no
+     domínio →» no fim. O que não se repete continua a não se repetir: o valor
+     está no cartão e em mais lado nenhum, porque a régua A3 conta `data-claim`
+     por id e recusa o segundo. */
   porta: m.porta ?? null,
 }));
 ---
@@ -159,18 +158,6 @@ const leituras = medidas.map((m) => ({
         </summary>
 
         <div class="dobra-corpo">
-          {l.porta ? (
-            /* A LINHA ÚNICA DE UMA MEDIDA QUE VIVE NUM DOMÍNIO. Um destino, e
-               mais nada: o bloco inteiro é a ligação, e por isso a régua da voz
-               não o recolhe («uma ligação inteira não é uma frase, é um
-               destino»). Ver a razão no cabeçalho de `porta`, acima. */
-            <p class="dobra-porta">
-              <a class="lig" href={l.porta}>
-                {s.dominios.verNoDominio} →
-              </a>
-            </p>
-          ) : (
-            <>
           <p class="dobra-unidade" data-medida-unidade>
             <Frase partes={l.unidade} lang={lang} selos={true} />
           </p>
@@ -273,7 +260,19 @@ const leituras = medidas.map((m) => ({
           <p class="dobra-pe">
             <Provenance id={l.id} lang={lang} />
           </p>
-            </>
+
+          {/* A PORTA, NO FIM E A MAIS (segunda passagem, 04.09.2026). Uma medida
+              que vive num domínio tem a MESMA leitura breve das outras vinte e
+              um, e acrescenta esta linha: a porta para a leitura daquela medida
+              na página do domínio, onde ela vive com a fronteira, a pergunta da
+              carta e a forma gráfica que a fonte permite. Ver a razão por
+              extenso no cabeçalho de `porta`. */}
+          {l.porta && (
+            <p class="dobra-porta">
+              <a class="lig" href={l.porta}>
+                {s.dominios.verNoDominio} →
+              </a>
+            </p>
           )}
         </div>
       </details>
