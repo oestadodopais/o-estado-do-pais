@@ -717,6 +717,90 @@ export function comparacaoComOLimiar(claim, limiar) {
  * As frases são um rascunho da casa e ficam nos pendentes do diretor como
  * frase a substituir pelas palavras dele (o plano §7 dá-as como texto dele).
  */
+/**
+ * ===========================================================================
+ * QUANTAS MEDIDAS PRINCIPAIS TEM O PAINEL SOCIAL EUROPEU (bloco F1.6, 04.09.2026)
+ * ===========================================================================
+ *
+ * Decisão (5) da `DECISIONS.md` §1.98: «a do Painel Social passa a dizer a
+ * seleção ("oito das dezassete medidas principais") quando o número das medidas
+ * principais estiver conferido na página da Comissão ou do Eurostat, e não
+ * antes». Está conferido, e a origem vai aqui e não numa frase do relatório.
+ *
+ * A FONTE É O DOCUMENTO OPERATIVO DA COMISSÃO, e não uma página de navegação: o
+ * Anexo 2 do Relatório Conjunto sobre o Emprego de 2026, COM(2025) 958, que
+ * imprime a lista das medidas principais «endorsed by the Council» por baixo dos
+ * três capítulos do Pilar. Contadas na lista: seis em «Equal opportunities»,
+ * quatro em «Fair working conditions», sete em «Social protection and
+ * inclusion».
+ *
+ * O DOCUMENTO NÃO IMPRIME O NÚMERO, IMPRIME A LISTA, e isso diz-se em vez de se
+ * esconder: dezassete é a contagem da lista dele, não uma cadeia copiada de uma
+ * página. O relatório do bloco traz o excerto e a contagem por capítulo.
+ *
+ * NENHUM PEDIDO SAIU DESTE PORTÁTIL PARA A COMISSÃO. O ficheiro foi descarregado
+ * pelo motor a 2026-08-18 e está lá com o seu recibo
+ * (`content/10 Housing/Technical Source/raw/MANIFEST.json`): estado 200,
+ * 1 702 896 bytes, sha256 `0d49c0bc…e2eaa` (o resumo inteiro está no relatório).
+ *
+ * O NÚMERO NÃO SE RENDE COMO ALGARISMO, rende-se por extenso, e é a única maneira
+ * honesta de ele entrar: não é uma medição de Portugal (não tem linha), não é um
+ * número deste sítio sobre si próprio (não há nada que o portão possa recontar
+ * aqui), e um `data-nonledger` novo seria uma dispensa que nada reconfere. Por
+ * extenso, o que o guarda é o `check:formas` (F16) e a régua da voz: a frase
+ * inteira está declarada no inventário, e no dia em que ela mudar, muda a linha.
+ */
+export const MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL = {
+  numero: 17,
+  palavra: { pt: 'dezassete', en: 'seventeen' },
+  origem: {
+    documento: 'Joint Employment Report 2026, COM(2025) 958, Annex 2',
+    publicador: 'Comissão Europeia',
+    url: 'https://employment-social-affairs.ec.europa.eu/document/download/82702c6c-135c-4042-ae74-4afd6432e83f_en?filename=COM_2025_958_1_EN_annexe.pdf',
+    lidoEm: '2026-08-18',
+  },
+};
+
+/**
+ * Os numerais por extenso de que as frases dos painéis precisam.
+ *
+ * A LISTA É CURTA E FECHADA de propósito: o que ela serve é o numerador de uma
+ * frase que conta medidas de um painel, e um painel com mais de vinte e uma
+ * medidas não existe neste sítio. Um número fora da lista fecha a construção em
+ * vez de render um algarismo por dentro de uma frase, que é exactamente o que a
+ * casa não escreve à mão.
+ *
+ * O GÉNERO É O DE «MEDIDAS», que é feminino: «uma medida», «duas medidas».
+ */
+const NUMERAIS = {
+  pt: ['zero', 'uma', 'duas', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez',
+    'onze', 'doze', 'treze', 'catorze', 'quinze', 'dezasseis', 'dezassete', 'dezoito',
+    'dezanove', 'vinte', 'vinte e uma'],
+  en: ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten',
+    'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen',
+    'nineteen', 'twenty', 'twenty-one'],
+};
+
+/**
+ * Um numeral por extenso, com a primeira letra maiúscula quando abre a frase.
+ *
+ * @param {number} n
+ * @param {'pt'|'en'} lang
+ * @param {boolean} [maiuscula]
+ * @returns {string}
+ */
+export function numeralPorExtenso(n, lang, maiuscula = false) {
+  const lista = NUMERAIS[lang] ?? NUMERAIS.pt;
+  const palavra = lista[n];
+  if (palavra === undefined) {
+    throw new Error(
+      `figuras: não há numeral por extenso para ${n} em "${lang}". A lista fechada vai até ` +
+        `${lista.length - 1}; um painel maior do que isso é uma decisão, não um acidente.`,
+    );
+  }
+  return maiuscula ? palavra.charAt(0).toUpperCase() + palavra.slice(1) : palavra;
+}
+
 export const CONTEXTO_DOS_PAINEIS = {
   pdm: {
     pt: [
@@ -733,15 +817,20 @@ export const CONTEXTO_DOS_PAINEIS = {
     ],
   },
   social: {
+    /* A SELEÇÃO ABRE A FRASE (decisão (5) da §1.98, cumprida no bloco F1.6).
+       O numerador NÃO ESTÁ ESCRITO: compõe-se de `FIGURAS_SOCIAL.length`, pelo
+       que a frase não pode ficar errada no dia em que uma medida entrar ou sair
+       do painel. O denominador é o da Comissão, declarado logo acima com o
+       documento, o endereço e a data em que foi lido. */
     pt: [
-      'Os indicadores que o livro-razão guarda e cujo registo nomeia o Painel Social Europeu, sem cor porque não tem limiares. Os valores são do Eurostat, confirmados contra o ',
+      `${numeralPorExtenso(FIGURAS_SOCIAL.length, 'pt', true)} das ${MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL.palavra.pt} medidas principais do Painel Social Europeu: as que o livro-razão guarda e cujo registo nomeia esse painel, sem cor porque não tem limiares. Os valores são do Eurostat, confirmados contra o `,
       { verbatim: 'relatorio-por-pais-2026' },
       ' da Comissão Europeia, ',
       { verbatim: 'swd-2026-222' },
       '.',
     ],
     en: [
-      'The indicators the ledger holds whose record names the European Social Scoreboard, with no colour because it has no thresholds. The values are from Eurostat, confirmed against the European Commission’s country report, ',
+      `${numeralPorExtenso(FIGURAS_SOCIAL.length, 'en', true)} of the ${MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL.palavra.en} headline indicators of the European Social Scoreboard: the ones the ledger holds whose record names that scoreboard, with no colour because it has no thresholds. The values are from Eurostat, confirmed against the European Commission’s country report, `,
       { verbatim: 'swd-2026-222' },
       '.',
     ],
