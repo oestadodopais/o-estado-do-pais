@@ -36,7 +36,6 @@
  */
 import Base from '../layouts/Base.astro';
 import Provenance from '../components/Provenance.astro';
-import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import RotuloDeIA from '../components/RotuloDeIA.astro';
 import { workById } from '../data/studies.mjs';
 import { FONTE_DIGITAL_GERADA_POR_IA } from '../data/politica-ia.mjs';
@@ -187,7 +186,6 @@ const conta = (nome) => `${chave}=${nome}`;
   description={work.description[lang]}
   jsonld={jsonld}
   noindex={true}
-  portaNoRodape={false}
   alternativas={alternativas}
   caminhoDaOutraLingua={caminhoDaOutraLingua}
 >
@@ -424,8 +422,6 @@ const conta = (nome) => `${chave}=${nome}`;
         </a>{' '}
         {s.estudos.textoContaComLinha}
       </p>
-
-      <PortaDeCorreccoes lang={lang} class="aparelho-bloco" />
 
       <p class="rodape-nav aparelho-saidas">
         <a href={estudoPath}>{s.estudos.documentoVoltar}</a>

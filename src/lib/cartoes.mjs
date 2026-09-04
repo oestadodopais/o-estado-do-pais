@@ -79,6 +79,7 @@ import { dataDaCasa } from './datas.mjs';
 import { ESTUDOS_DE_DADOS, studyLabel } from '../data/studies.mjs';
 import { getClaim, loadClaims } from './ledger.mjs';
 import { valorComUnidade } from './livro.mjs';
+import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { estadoDaMedida } from './estado.mjs';
 import { prova } from './prova.mjs';
 import { matchPath, routePath, LANGS } from './routes.mjs';
@@ -249,12 +250,34 @@ export function cartoesAConstruir(rotasDoSitio) {
  * exactamente o que um cartão de partilha não pode ser.
  */
 /**
+ * ---------------------------------------------------------------------------
+ * `texto` É O QUE O CARTÃO DESENHA, E `livro` É O QUE A LINHA GUARDA (I96)
+ * ---------------------------------------------------------------------------
+ * Até 04.09.2026 eram a mesma coisa, e para todos os campos menos um continuam a
+ * ser: o valor, o id, a data e o organismo desenham-se tal como o livro-razão os
+ * guarda. A UNIDADE não: desde a I92 a casa tem uma tabela que lhe dá o inglês
+ * onde há um facto de dicionário (`src/i18n/unidades.mjs`), e a página de uma
+ * linha na edição inglesa escreve «620 people» há dias. O cartão de partilha
+ * dessa mesma página continuava a escrever «620 pessoas» — medido a 04.09.2026:
+ * 204 dos 302 registos de cartão da edição inglesa.
+ *
+ * O registo passa a levar as DUAS cadeias, e o portão passa a conferir as duas:
+ * `livro` contra o campo lido do disco (a conferência que já existia, palavra
+ * por palavra), e `texto` contra o que a tabela da casa manda escrever naquela
+ * edição, recalculado pelo portão. Uma só cadeia não chegava: com o inglês em
+ * `texto` a conferência antiga acusava o cartão de mentir sobre a sua linha, e
+ * com o português a conferência passava a comparar uma cadeia que já não estava
+ * no cartão — que é a maneira mais silenciosa de um portão deixar de valer.
+ *
  * @param {Linha} claim
  * @param {CampoDaLinha} campo
+ * @param {Lingua} lang
  */
-function valorDaLinha(claim, campo) {
+function valorDaLinha(claim, campo, lang) {
+  const doLivro = String(claim[campo]);
   return {
-    texto: String(claim[campo]),
+    texto: campo === 'unit' ? unidadeDaLinha(claim.unit, lang).texto : doLivro,
+    livro: doLivro,
     origem: 'linha',
     linha: claim.id,
     campo,
@@ -373,12 +396,12 @@ function modeloDaLinha(id, lang) {
   const figura = FIGURAS_PDM.find((f) => f.claim === id) ?? null;
   const estado = figura ? (estadoDaMedida(claim, figura.limiar) ?? 'sem') : 'sem';
 
-  const valores = [valorDaLinha(claim, 'value')];
-  if (claim.unit) valores.push(valorDaLinha(claim, 'unit'));
-  valores.push(valorDaLinha(claim, 'id'));
-  if (claim.reference_date) valores.push(valorDaLinha(claim, 'reference_date'));
-  if (claim.source) valores.push(valorDaLinha(claim, 'source'));
-  if (claim.access_date) valores.push(valorDaLinha(claim, 'access_date'));
+  const valores = [valorDaLinha(claim, 'value', lang)];
+  if (claim.unit) valores.push(valorDaLinha(claim, 'unit', lang));
+  valores.push(valorDaLinha(claim, 'id', lang));
+  if (claim.reference_date) valores.push(valorDaLinha(claim, 'reference_date', lang));
+  if (claim.source) valores.push(valorDaLinha(claim, 'source', lang));
+  if (claim.access_date) valores.push(valorDaLinha(claim, 'access_date', lang));
 
   const PALAVRA = {
     fora: s.estado.foraDoLimiar,
@@ -398,7 +421,11 @@ function modeloDaLinha(id, lang) {
     rota: routePath('linha', lang, { slug: id }),
     marca: SITE_NAME,
     sobrancelha: s.livro.linha.eyebrow,
-    manchete: valorComUnidade(claim),
+    /* A MANCHETE PASSA A LEVAR A LÍNGUA (I96, 04.09.2026). Não levava, e a
+       razão estava escrita em `src/lib/livro.mjs` como uma dívida: «traduzir a
+       unidade ali é reconstruir os cartões todos, trabalho de outro bloco». É
+       este o bloco. */
+    manchete: valorComUnidade(claim, lang),
     fila: null,
     aparelho,
     estado: { estado, palavra: PALAVRA[estado] },

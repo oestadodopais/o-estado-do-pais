@@ -33,8 +33,12 @@
 import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
-import Pesquisa from '../components/inicio/Pesquisa.astro';
-import { concelhos as concelhosDaCarta, coberturaDistingue, slugDeConcelho } from '../lib/inicio.mjs';
+import {
+  concelhos as concelhosDaCarta,
+  coberturaDistingue,
+  slugDeConcelho,
+  semAcentos,
+} from '../lib/inicio.mjs';
 import { MUNICIPIOS, DISTRITOS, regiaoDe } from '../data/caop-centroids.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
 import { VERBATIM } from '../data/verbatim.mjs';
@@ -160,23 +164,23 @@ const parcelas = [
  * nomes, um deles com página, e nenhuma maneira de chegar a esse um sem varrer
  * a lista. As duas correções são as que a decisão 5 pede, aplicadas ao índice:
  *
- *   · a PESQUISA que a primeira página já tem, no topo, e é a mesma peça
- *     (`components/inicio/Pesquisa.astro`) com a mesma lista de resultados;
+ *   · a PESQUISA que a primeira página já tem, no topo;
  *   · os concelhos COM PÁGINA primeiro, numa secção com nome, com a lista
  *     inteira por distritos por baixo, como está.
  *
- * A LISTA DOS RESULTADOS É A DA CARTA, e é a mesma função que a primeira página
- * chama: `concelhos()` devolve os 308 na ordem da Carta, com o nome, o `slug` e
- * o pedaço sem acentos por que a pesquisa compara. Uma segunda lista escrita
- * aqui divergiria da primeira à primeira alteração.
+ * ---------------------------------------------------------------------------
+ * A SEGUNDA LISTA SAIU (bloco F1.7, 04.09.2026)
+ * ---------------------------------------------------------------------------
+ * A peça `Pesquisa` da primeira página trazia consigo a fila dos 308 resultados,
+ * e esta página passou a ter os 308 concelhos duas vezes: uma na fila e outra na
+ * lista agrupada pelas 29 unidades. O diretor viu-o no sítio no ar a 04.09.
+ * Fica uma lista só, a agrupada, e o campo filtra-a no sítio.
  *
- * UM RESULTADO É UMA LIGAÇÃO, e não um botão: nesta página um resultado abre a
- * página do concelho, e isso é uma porta que funciona sem script nenhum. Os 307
- * sem página saem sem porta, com as duas palavras do estado.
+ * `resultados` continua a ser a lista da Carta, e continua a servir para uma
+ * coisa: `coberturaDistingue()`, que decide se a etiqueta de estado se rende.
+ * Não rende nada por si.
  */
 const resultados = concelhosDaCarta();
-const destinoDoConcelho = (c) =>
-  c.pagina ? routePath('municipio', lang, { slug: c.pagina.slug }) : null;
 
 /* A ETIQUETA DE ESTADO DE CADA LINHA SÓ SE RENDE SE A LISTA DISTINGUIR (item E8,
    P2). Eram 308 «tem página» nesta lista, mais uma por resultado da pesquisa:
@@ -204,19 +208,46 @@ const distingue = coberturaDistingue(resultados);
       <span data-cobertura="com-pagina">{s.cobertura.temPagina}</span>
     </p>
 
-    {/* A PESQUISA, LOGO A SEGUIR À COBERTURA (item C4).
-        Vem antes da contagem por parcelas porque é o caminho e a contagem é a
-        legenda: a 390 o campo tem de estar no primeiro ecrã, e é aí que ele
-        cabe.
+    {/* -------------------------------------------------------------------
+        A PESQUISA FILTRA A LISTA QUE JÁ CÁ ESTÁ (bloco F1.7, 04.09.2026)
+        -------------------------------------------------------------------
+        Até hoje esta página tinha os 308 concelhos DUAS VEZES: uma na fila de
+        resultados da peça `Pesquisa` (308 `<li>` com 308 portas, acesos oito de
+        cada vez pelo guião) e outra na lista agrupada pelas 29 unidades da
+        Carta. Duas listas da mesma coisa são duas listas para divergirem, o
+        dobro das portas para quem percorre a página com o teclado, e a mesma
+        pergunta com duas respostas.
 
-        A CAIXA CHEGA COM O SCRIPT, E SÓ COM ELE. Sem script a pesquisa não
-        pesquisa, porque os resultados estão na página e o que os acende é
-        `public/js/municipios.js`, e a regra da casa já está escrita na peça:
-        «uma caixa de pesquisa que não pesquisa é pior do que nenhuma». Sem
-        script esta página é a que era: a lista dos 308 por distritos, inteira,
-        com a porta de Évora dentro dela. */}
-    <div class="concelhos-pesquisa" data-pesquisa-bloco hidden>
-      <Pesquisa s={s} concelhos={resultados} destino={destinoDoConcelho} />
+        Fica UMA: a agrupada, que é a que diz onde cada concelho está. O campo
+        filtra-a no sítio — esconde as entradas que não casam e as unidades que
+        ficam sem nenhuma —, e o guião continua a fazer uma coisa só, trocar
+        `hidden`, que é a regra desta casa para o código que corre no leitor.
+
+        SEM GUIÃO, O CAMPO NÃO DESAPARECE: é um `<form>` `GET` para esta mesma
+        página, e quem o submeter volta a esta página com a lista inteira e
+        legível, que é a resposta completa à pergunta que ele faz. É a forma que
+        o lugar de direção mandou a 04.09; a regra antiga da peça («uma caixa de
+        pesquisa que não pesquisa é pior do que nenhuma») nasceu na primeira
+        página, onde a lista NÃO está à vista, e aqui a lista é a página.
+        ------------------------------------------------------------------- */}
+    <div class="concelhos-pesquisa" data-pesquisa-bloco>
+      <div class="pesquisa" id="pesquisa">
+        <form class="pesquisa-forma" action={path} method="get" role="search" data-porta-concelho>
+          <label class="pesquisa-rotulo" for="pesquisa-concelho">{s.ambito.pesquisaRotulo}</label>
+          <div class="pesquisa-linha">
+            <input
+              class="pesquisa-campo"
+              id="pesquisa-concelho"
+              name="concelho"
+              type="search"
+              autocomplete="off"
+              data-pesquisa
+            />
+            <button class="pesquisa-submeter" type="submit">{s.ambito.pesquisaSubmeter}</button>
+          </div>
+        </form>
+        <p class="pesquisa-vazio" data-sem-resultado hidden>{s.ambito.pesquisaSemResultado}</p>
+      </div>
     </div>
 
     {/* A contagem por parcelas, numa linha só, por baixo da cabeça da lista.
@@ -260,10 +291,10 @@ const distingue = coberturaDistingue(resultados);
       pesquisa em cima, a linha de cobertura com as suas duas contagens, e a
       lista por distrito, que é a ordem da Carta. As duas palavras de estado
       ficam onde sempre estiveram, na linha de cada concelho. */}
-  <div class="concelhos">
+  <div class="concelhos" data-lista-agrupada>
     {
       comEntradas.map((g) => (
-        <section class="concelhos-grupo">
+        <section class="concelhos-grupo" data-concelhos-grupo>
           {/* O CABEÇALHO DE GRUPO PASSA A SER UMA PORTA (Emenda 20, D3).
               Era o nome da unidade e mais nada, e agora há uma página por
               unidade: a lista dos concelhos daquele distrito, com o mapa deles.
@@ -276,7 +307,11 @@ const distingue = coberturaDistingue(resultados);
           <ul class="concelhos-lista">
             {g.entradas.map((e) =>
               e.pagina ? (
-                <li class="concelho concelho-com-pagina">
+                <li
+                  class="concelho concelho-com-pagina"
+                  data-concelho
+                  data-normal={semAcentos(e.pagina.nome[lang] ?? e.pagina.nome.pt)}
+                >
                   {/* A SETA ENTRA NA PORTA (item E8). Ficava fora dela, ao pé da
                       etiqueta de estado; sem a etiqueta, o que ficava fora da
                       ligação era uma seta sozinha, e o inventário de frases
@@ -292,7 +327,7 @@ const distingue = coberturaDistingue(resultados);
                   )}
                 </li>
               ) : (
-                <li class="concelho">
+                <li class="concelho" data-concelho data-normal={semAcentos(e.nome)}>
                   <span class="concelho-nome">{e.nome}</span>
                   {distingue && (
                     <span class="concelho-estado" data-cobertura="sem-pagina">

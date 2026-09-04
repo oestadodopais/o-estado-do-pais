@@ -1,0 +1,36 @@
+---
+/**
+ * Prosa da casa que cita um diploma português pelo nome (I95, bloco F1.7).
+ *
+ * Rende a cadeia tal como ela é, com um `<span lang="pt-PT">` à volta de cada
+ * nome de diploma e nada à volta do resto. Na edição portuguesa não rende
+ * marca nenhuma: ali o nome já está na língua da página, e um `lang` que repete
+ * o do documento é ruído para quem ouve (é a regra que a unidade segue desde a
+ * I92, e a mesma que `linguaDoTitulo()` aplica aos títulos das fontes).
+ *
+ * O TEXTO NÃO MUDA UM CARÁCTER, e é `src/i18n/nomes-de-lei.mjs` que o prova:
+ * `partesProvadas()` parte a cadeia e atira quando a concatenação das partes
+ * não é a cadeia de partida. É essa prova que separa «marcar um fragmento» de
+ * «editar o que se transcreve»: os campos onde isto entra vão marcados para o
+ * portão os comparar com o registo, carácter a carácter, e continuam a passar
+ * porque o portão junta os nós de texto sem separador.
+ *
+ * ONDE ENTRA, e onde não entra. Entra na prosa que a CASA escreve: a
+ * `derivation_en` de uma linha derivada (por `CampoDaLinha`) e a nota de um
+ * evento da agenda. Não entra num `excerpt` nem no corpo de um documento
+ * alojado: esses são a fonte a falar, marcam-se inteiros na língua dela, e a
+ * casa não lhes mete markup por dentro.
+ */
+import { partesProvadas } from '../i18n/nomes-de-lei.mjs';
+
+const { texto, lang = 'pt', onde = 'prosa' } = Astro.props;
+const partes = lang === 'en' ? partesProvadas(texto, onde) : null;
+---
+
+{
+  partes
+    ? partes.map((parte) =>
+        parte.lei ? <span lang="pt-PT">{parte.texto}</span> : <Fragment>{parte.texto}</Fragment>,
+      )
+    : texto
+}

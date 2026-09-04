@@ -49,6 +49,7 @@ import Base from '../layouts/Base.astro';
 import { dataDaCasa } from '../lib/datas.mjs';
 import Claim from '../components/Claim.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
+import ProsaComLeis from '../components/ProsaComLeis.astro';
 import '../styles/leitura.css';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -642,8 +643,17 @@ const rotuloDoCriterio = (tipo) =>
     {
       temEixo && (
         <div class="agenda-eixo">
-          <p class="layer-tag">{s.agenda.eixoK}</p>
-          <div class="agenda-eixo-caixa">
+          <p class="layer-tag" id="agenda-eixo-k">{s.agenda.eixoK}</p>
+          {/* A caixa do eixo desloca-se de lado no telemóvel e até aos 768 px, e
+              passa a alcançar-se com o teclado (bloco F1.7, item 2). O nome é o
+              rótulo que já está por cima dela, referido pelo `id`: nenhuma
+              cadeia nova. */}
+          <div
+            class="agenda-eixo-caixa"
+            tabindex="0"
+            role="region"
+            aria-labelledby="agenda-eixo-k"
+          >
             <svg
               class="agenda-eixo-svg"
               viewBox={`0 0 ${EIXO.W} ${EIXO.H}`}
@@ -860,7 +870,17 @@ const rotuloDoCriterio = (tipo) =>
               {evento.nota && (
                 <p class="agenda-nota">
                   <span class="agenda-k-inline">{s.agenda.notaK}</span>{' '}
-                  <span data-agenda={`evento:${evento.id}.nota`}>{ed(evento.nota)}</span>
+                  <span data-agenda={`evento:${evento.id}.nota`}>
+                    {/* A nota é prosa da casa e, na edição inglesa, cita
+                        diplomas pelo nome português (I95): o componente
+                        marca-lhes a língua sem mudar um carácter do campo que o
+                        portão compara. */}
+                    <ProsaComLeis
+                      texto={ed(evento.nota)}
+                      lang={lang}
+                      onde={`evento:${evento.id}.nota`}
+                    />
+                  </span>
                 </p>
               )}
               {(evento.afecta_linhas ?? []).length > 0 && (
@@ -916,7 +936,17 @@ const rotuloDoCriterio = (tipo) =>
               {evento.nota && (
                 <p class="agenda-nota">
                   <span class="agenda-k-inline">{s.agenda.notaK}</span>{' '}
-                  <span data-agenda={`evento:${evento.id}.nota`}>{ed(evento.nota)}</span>
+                  <span data-agenda={`evento:${evento.id}.nota`}>
+                    {/* A nota é prosa da casa e, na edição inglesa, cita
+                        diplomas pelo nome português (I95): o componente
+                        marca-lhes a língua sem mudar um carácter do campo que o
+                        portão compara. */}
+                    <ProsaComLeis
+                      texto={ed(evento.nota)}
+                      lang={lang}
+                      onde={`evento:${evento.id}.nota`}
+                    />
+                  </span>
                 </p>
               )}
               {(evento.afecta_linhas ?? []).length > 0 && (

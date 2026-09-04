@@ -54,10 +54,43 @@
  * marco, e pô-la fora escondia-a de quem a procura pelo caminho normal. A
  * navegação continua a ser navegação e mais nada: o rótulo é irmão dela dentro
  * do rodapé, e não um item da lista.
+ *
+ * ---------------------------------------------------------------------------
+ * A PORTA DAS CORREÇÕES ENTRA AQUI, PELA MESMA RAZÃO (bloco F1.7, 04.09.2026)
+ * ---------------------------------------------------------------------------
+ * O parágrafo acima descreve a porta como estando FORA do rodapé, e era: o
+ * invólucro rendia-a entre o `</main>` e o `<footer>`, isto é, dentro de marco
+ * nenhum. Medido a 04.09.2026 sobre `dist/`: 739 das 7 237 páginas construídas
+ * tinham a porta fora de qualquer marco, e a auditoria de 02.09 contou 19 nas
+ * suas 30. Quem navega por marcos — que é como se lê uma página desconhecida com
+ * um leitor de ecrã — passava por cima dela sem nunca a encontrar: o `<main>`
+ * acabava antes e o `contentinfo` começava depois.
+ *
+ * Entra no `<footer>` e não num `<nav>` próprio: a porta não é navegação, é a
+ * maneira de responder a quem publica, que é exactamente o que um `contentinfo`
+ * é. Vem PRIMEIRO, antes da navegação e do rótulo, porque é essa a ordem em que
+ * ela já se via na página, e a ordem do documento é a ordem em que se ouve.
+ *
+ * ---------------------------------------------------------------------------
+ * E AS 6 482 QUE A TINHAM DENTRO DO `<main>` TAMBÉM VÊM PARA CÁ
+ * ---------------------------------------------------------------------------
+ * *Segunda passagem, 04.09.2026, achado Blocking 4 da leitura a frio.* A
+ * primeira redação desta nota dizia que essas não mudavam nada, «dentro de um
+ * marco desde sempre». O brief não diz «dentro de um marco»: diz «`<footer>` ou
+ * `<nav aria-label>`», e um `<main>` não é nem uma coisa nem outra. Nas páginas
+ * de linha do livro-razão a porta estava dentro de um `<main><aside>`, que é a
+ * coluna do aparelho: quem salta de marco em marco chega ao `main` inteiro, e
+ * uma porta metida num canto dele encontra-se lendo a página, que é o que a
+ * navegação por marcos existe para poupar.
+ *
+ * As cinco vistas que a rendiam (`LinhaView`, `MunicipioView`, `EstudoView`,
+ * `TextoView`, `CorrecoesView`) deixam de a render, e a propriedade que lhes
+ * permitia fazê-lo saiu do invólucro. Uma por página, aqui, e o portão conta-a.
  */
 import { routePath, otherLanguagePath, normalizePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import RotuloDeIA from './RotuloDeIA.astro';
+import PortaDeCorreccoes from './PortaDeCorreccoes.astro';
 
 const { lang = 'pt', path, outraLingua = null } = Astro.props;
 const s = t(lang);
@@ -92,6 +125,8 @@ const secoes = [
 ---
 
 <footer class="rodape">
+  <PortaDeCorreccoes lang={lang} class="porta-correccoes-rodape" />
+
   <nav class="rodape-nav" aria-label={s.nav.rotuloRodape}>
     {secoes.map(([rota, rotulo]) => <a href={routePath(rota, lang)}>{rotulo}</a>)}
     {/* O NOME DA OUTRA EDIÇÃO ESTÁ NA OUTRA LÍNGUA, e o atributo di-lo
