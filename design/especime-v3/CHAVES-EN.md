@@ -1149,3 +1149,38 @@ rótulo e de uma frase para quando não cabem todas.*
 saiu de `ledger/allowlist.yml` porque deixou de se render em página nenhuma, e o
 portão de HTML fecha a construção quando um motivo declarado não se rende: um
 motivo morto é uma dispensa que ninguém pediu.
+
+### Bloco F1.10 · uma coisa, um lugar (04.09.2026)
+
+*As chaves da segunda emenda da `DECISIONS.md` §1.98, pela delegação do diretor
+de 04.09.2026. O bloco parou a meio (o portátil fechou-se): **as nove chaves
+novas estão escritas e ainda não se rendem em página nenhuma**, e por isso
+nenhuma está no `INVENTARIO-FRASES.md` — uma linha `viva` que não se rende fecha
+a construção. Quem as render declara-as no mesmo commit.*
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `hierarquia.territorio` | O país lê-se em quatro níveis: país, região NUTS II, distrito ou ilha, concelho. | The country is read at four levels: country, NUTS II region, district or island, municipality. | a frase de hierarquia de `/municipios`, `/distritos` e `/regioes`. **Pára nos quatro níveis:** o brief escreve uma segunda oração («as regiões não contêm distritos inteiros») e manda conferi-la nos dados do sítio; foi conferida e não se escreve, porque o repositório não tem correspondência nenhuma entre as 29 unidades da Carta e as 9 regiões NUTS II |
+| `hierarquia.dominio` | Um domínio é um assunto da carta dos conteúdos; uma área de governo é um ministério. | A domain is a subject from the content charter; a government area is a ministry. | a frase de hierarquia de `/dominios`. Em inglês «content charter» e não «charter of contents»: é o nome do documento, dito na ordem inglesa |
+| `hierarquia.area` | Uma área de governo é um ministério; um domínio é um assunto da carta dos conteúdos. | A government area is a ministry; a domain is a subject from the content charter. | a mesma, invertida, em `/areas`, que é o que o brief pede |
+| `secoes.medidas` | As medidas | The measures | o título da secção dos cartões, onde hoje se lê «Relance». «Relance» e «Leitura breve» ficam só como os nomes das duas densidades de um cartão (§1.98) |
+| `secoes.leitura` | A leitura de cada medida | The reading of each measure | o título da secção das leituras, onde hoje se lê «Leitura breve». Um título por densidade, o mesmo em todas as camadas: sem isto cada página voltava a inventar o seu |
+| `nav.rotuloCaminho` | Onde está | Where you are | o nome da região de navegação do caminho, que só se ouve. Em inglês «Where you are» e não «Breadcrumb»: o leitor ouve onde está, não o nome do padrão |
+| `regioes.compararPorta` | Comparar as regiões | Compare the regions | a porta da página de uma região para a régua inteira, que passa a viver só em `/regioes` |
+| `municipio.estudosPorta` | Os estudos sobre este concelho, no arquivo | The studies about this municipality, in the archive | a porta para `/estudos?concelho=`. **Sem o «n» que o brief esboça:** um número que se vê no sítio resolve numa linha do livro-razão ou numa chave da prova que o portão reconta, e a contagem dos estudos de um concelho não é nem uma coisa nem outra |
+| `estudos.filtroConcelhoA` · `filtroConcelhoB` · `filtroTudo` | Mostram-se só os estudos sobre  · . · Ver o arquivo inteiro | Showing only the studies about  · . · See the whole archive | o estado do arquivo filtrado por concelho. Chega escondido do servidor e é o guião que o acende; sem guião o leitor cai no arquivo inteiro, que é a resposta completa à mesma pergunta |
+
+*E as que mudaram de texto:*
+
+| chave | pt (antes → depois) | en (antes → depois) | nota |
+|---|---|---|---|
+| `identidade` | Um observatório de Portugal. → Um observatório de Portugal: cada número com a sua fonte, lido por território, por domínio e em estudos. | An observatory of Portugal. → An observatory of Portugal: every number with its source, read by territory, by domain and in studies. | a frase de identidade da Emenda 18 passa a ser a frase de **definição** do sítio (§1.98, segunda emenda, item 3). O que a Emenda 18 decide continua de pé: uma vez, por baixo da marca, na primeira página e em mais lado nenhum, sem quem a faz, sem adjetivos, sem porta, sem algarismo e sem selo |
+| `nav.municipios` | Municípios → Concelhos | Municipalities *(sem mudança)* | o vocabulário fechado dá ao território quatro palavras e a visível é «concelho». O endereço `/municipios` não muda. **O inglês não muda:** «municipality» é a tradução de «concelho», e o defeito que o leitor de primeira vez mediu é do português |
+| `municipios.metaTitle` · `municipios.eyebrow` | Municípios → Concelhos | *(sem mudança)* | a mesma decisão, no índice |
+| `municipio.eyebrow` · `metaCauda` · `metaDescricaoA` · `voltarMapa` · `municipioLink` | Município → Concelho, e as frases com ele | *(sem mudança)* | a mesma decisão, na página de um concelho |
+| `municipio.contasK` · `contasV` · `contasDivergenciaV` · `contasDivergenciaMunicipio` | «do município» → «da câmara» | *(sem mudança)* | **a exceção escrita ao vocabulário fechado:** um concelho não orçamenta, não cobra, não paga e não presta contas; quem o faz é a câmara, que é a palavra que a página do domínio já usava. Trocá-la por «concelho» seria trocar uma palavra certa por uma falsa |
+| `rodape.estudos` | trabalhos no arquivo → estudos no arquivo | works in the archive → studies in the archive | «estudo» é a palavra do vocabulário fechado para o trabalho de autor, nas duas edições |
+| `inicio.portas.estudosA` | ` trabalhos · ` → ` estudos · ` | ` works · ` → ` studies · ` | a mesma |
+| `area.trabalhosK` | Os trabalhos → Os estudos | The studies *(sem mudança)* | o inglês já dizia a palavra certa |
+| `municipio.estudosK` | Os trabalhos sobre este concelho → Os estudos sobre este concelho | The works about this municipality → The studies about this municipality | «estudo» nas duas edições. A secção muda de forma no resto do bloco (os títulos ficam, as sinopses saem, entra a porta do arquivo filtrado); o nome dela muda aqui |
+| `inicio.mapa.svgLabel` · `readoutHint` · `tecladoHint` | «municípios» → «concelhos» | *(sem mudança)* | as três cadeias do mapa. As duas últimas não se rendem hoje (a linha do inventário está `retirada` desde a Emenda 20a) |
