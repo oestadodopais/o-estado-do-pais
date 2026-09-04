@@ -639,8 +639,8 @@ for (const edicao of ['pt', 'en']) {
      de identidade passou a ser a frase de DEFINIÇÃO do sítio, por decisão do
      lugar de direção (`DECISIONS.md` §1.98, segunda emenda, item 3): diz as três
      maneiras de ler o sítio e a origem de cada número. O que a célula media
-     continua a valer todo — uma vez, na letra da prosa, sem porta, sem algarismo
-     — menos a contagem de linhas: uma frase de dezasseis palavras não cabe numa
+     continua a valer todo (uma vez, na letra da prosa, sem porta, sem algarismo),
+     menos a contagem de linhas: uma frase de dezasseis palavras não cabe numa
      linha a 390 px, e exigir que coubesse era exigir que a frase não mudasse. Em
      vez do «uma linha» fica um TECTO medido, que é o que a composição promete:
      não mais de três linhas a 390 px. */

@@ -68,8 +68,8 @@ export const STRINGS = {
      * Não leva algarismo nem selo.
      *
      * A FRASE DO TERRITÓRIO PÁRA NOS QUATRO NÍVEIS, E A RAZÃO É UMA MEDIÇÃO. O
-     * brief escreve-a com uma segunda oração — «as regiões não contêm distritos
-     * inteiros» — e manda conferi-la nos dados do sítio antes de a escrever. Foi
+     * brief escreve-a com uma segunda oração, «as regiões não contêm distritos
+     * inteiros», e manda conferi-la nos dados do sítio antes de a escrever. Foi
      * conferida e NÃO SE ESCREVE: o repositório não tem correspondência nenhuma
      * entre as 29 unidades da Carta e as 9 regiões NUTS II. `regiaoDe()`, em
      * `src/data/caop-centroids.mjs`, devolve «continente», «acores» ou «madeira»,
@@ -108,7 +108,7 @@ export const STRINGS = {
       inicio: 'Início',
       /* «Concelhos» E NÃO «MUNICÍPIOS» (bloco F1.10, 04.09.2026; `DECISIONS.md`
          §1.98, segunda emenda). O vocabulário fechado do sítio dá ao território
-         quatro palavras — país, região, distrito, concelho — e a palavra visível
+         quatro palavras (país, região, distrito, concelho) e a palavra visível
          para esta é «concelho». O ENDEREÇO NÃO MUDA (`/municipios`), que é o que
          a decisão escreve à letra: o que muda é o que se lê, não o que se
          partilha. */
