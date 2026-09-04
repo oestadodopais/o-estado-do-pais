@@ -115,8 +115,10 @@
  * Uma leitura desta página é uma de duas coisas, e nunca as duas nem nenhuma:
  *
  *   · a leitura INTEIRA de uma medida que só vive aqui: a unidade, o limiar
- *     quando o quadro publica um, as TRÊS datas da carta (§1, regra 3) e o selo,
- *     que é a porta para a linha;
+ *     quando o quadro publica um, as TRÊS datas da carta (§1, regra 3), a régua
+ *     contra o limiar quando ele existe, e o selo, que é a porta para a linha. A
+ *     célula exige as datas, o selo e a unidade; quem mede a régua é a matriz, na
+ *     célula «a régua de uma leitura aberta tem largura de régua»;
  *   · a PORTA de uma medida que vive num domínio: uma ligação, e mais nada, para
  *     a leitura daquela medida na página do domínio.
  *
