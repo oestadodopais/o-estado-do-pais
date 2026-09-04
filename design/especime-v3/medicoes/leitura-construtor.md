@@ -273,7 +273,7 @@ construção de `1dbd1cef`, medida numa árvore própria (`git worktree add
 | J3 | sem guião: as 21 leituras presentes, fechadas, com `id` | não havia leituras | 21 de 21, 0 abertas, 0 sem id, 0 com id errado, 21 com `<summary>`, **nas duas edições e nos dois motores** (quatro células) | `leitura.mjs` J3 |
 | J4 | com guião: um toque abre a sua e fecha a anterior, e o endereço passa a `#<id>` | não havia | **os 21 cartões tocados em português e 5 em inglês, nos dois motores**: 18 abrem a sua leitura aqui, uma de cada vez, com `#m-<id>` na barra; 3 vão à página do domínio, à âncora daquela medida | `leitura.mjs` J4 |
 | J5 | a secção dos domínios a seguir ao mapa | não havia | 1 domínio, depois do mapa e antes da área de leitura, com a porta para `/dominios/economia-e-financas-publicas` (e o par inglês) e a faixa de 2 cartões com «n de 2»; nenhum valor selado repetido | `leitura.mjs` J5, `porta.mjs` A17 |
-| J6 | a altura de `/` a 390 menor do que hoje | **6 959 px** (`/`) · **6 911 px** (`/en`) | **4 667 px** (menos 2 292) · **4 625 px** (menos 2 286), e **os mesmos depois da segunda passagem**: o conteúdo reposto vive dentro de dobras fechadas e não custa altura (§9.1) | `leitura.mjs` J6, `porta.mjs` A2 |
+| J6 | a altura de `/` a 390 menor do que hoje | **6 959 px** (`/`) · **6 911 px** (`/en`) | **4 638 px** (menos 2 321) · **4 596 px** (menos 2 315). A segunda passagem não mexeu na altura (§9.1); os últimos 29 px caíram depois, com a regra que fecha o corpo de uma dobra fechada (§10.5) | `leitura.mjs` J6, `porta.mjs` A2 |
 | J7 | o primeiro ecrã a 390 × 664 igual ao do F1.1 | fundo máximo 653,7 px (`/`) · 641,1 px (`/en`) | **653,7 px · 641,1 px**, os mesmos | `leitura.mjs` J7, `porta.mjs` A1 |
 | J8 | `/estudos` a ≤ 1 toque e ≤ 1,5 ecrãs | a porta mais acima a 662,7 px (1 ecrã) em `/`, 650,1 px (0,98) em `/en` | **os mesmos** | `porta.mjs` A15 |
 | J9 | nenhum número novo, com as diferenças ditas | *(ver a §5.1)* | *(ver a §5.1)* | `numeros-novos.mjs` |
@@ -379,8 +379,9 @@ medidas na árvore de partida com o mesmo comando.
 mesmas **3 de 84** com os mesmos três nomes. As cinco plantas da `leitura` e as
 treze da `porta` também. **Correr outra vez não era formalidade**: o F1.4 mexeu em
 `ValorDaProva.astro` e em `NomeDaMedida.astro`, que a primeira página usa. As oito
-capturas refeitas sobre a árvore fundida saem byte a byte iguais às que já estavam
-no ramo, e as seis alturas da §8 não mudam.
+capturas refeitas sobre a árvore fundida com o F1.4 saíram byte a byte iguais às
+que já estavam no ramo, e as seis alturas não mudaram nessa fusão. **Na fusão
+seguinte, com o F1.7, mudaram**, e a §8 separa as duas causas.
 
 ## 6 · Os estragos plantados (J11)
 
@@ -409,7 +410,7 @@ brief.
 da A3 apontava a uma marca que saiu da página com o painel (e mudou duas vezes no
 mesmo dia, porque a classe da área de leitura também mudou), e a da A2 punha mil
 píxeis de papel no fim do corpo, que deixaram de levar a página acima do teto
-quando ela encolheu 2 292 px. Passou a cem mil, que é maior do que qualquer teto
+quando ela encolheu (2 321 px na medida de hoje). Passou a cem mil, que é maior do que qualquer teto
 que a casa venha a escrever. As sete plantas de `faixa.mjs` passaram sem
 mudança.
 
@@ -450,7 +451,7 @@ mudança.
    defeito não fecha construção nenhuma. É um achado para `ISSUES.md`.
 7. **O teto da A2 ficou com folga, e não se mexeu.** A célula A2 de `porta.mjs`
    mede a altura contra «o teto da árvore de partida do F1.1 mais a altura da fila
-   dos estudos» (6 991 px em `/`), e a página passou a medir 4 667: sobram 2 324 px
+   dos estudos» (6 991 px em `/`), e a página passou a medir 4 638: sobram 2 353 px
    de folga, e a planta «a página mais alta do que a árvore de partida» deixou de
    a derrubar com mil píxeis de papel (passou a cem mil, com a razão escrita ao
    lado). **Não se mexeu no teto**, porque o número é o do F1.1 e a fórmula é a do
@@ -468,16 +469,24 @@ mudança.
 `design/especime-v3/capturas/leitura-2026-09-04/`, oito PNG, tema claro, sobre a
 construção final:
 
-| ficheiro | altura da página |
-|---|---|
-| `inicio-390-pt.png` | 4 667 px |
-| `inicio-390-en.png` | 4 625 px |
-| `inicio-768-pt.png` | 4 114 px |
-| `inicio-768-en.png` | 4 114 px |
-| `inicio-1280-pt.png` | 3 389 px |
-| `inicio-1280-en.png` | 3 370 px |
-| `inicio-390x664-primeiro-ecra-pt.png` | o primeiro ecrã, sem rolar |
-| `inicio-390x664-primeiro-ecra-en.png` | o primeiro ecrã, sem rolar |
+| ficheiro | altura da página | antes da fusão do F1.7 |
+|---|---|---|
+| `inicio-390-pt.png` | **4 638 px** | 4 667 |
+| `inicio-390-en.png` | **4 596 px** | 4 625 |
+| `inicio-768-pt.png` | **4 303 px** | 4 114 |
+| `inicio-768-en.png` | **4 259 px** | 4 114 |
+| `inicio-1280-pt.png` | **3 366 px** | 3 389 |
+| `inicio-1280-en.png` | **3 347 px** | 3 370 |
+| `inicio-390x664-primeiro-ecra-pt.png` | o primeiro ecrã, sem rolar | igual |
+| `inicio-390x664-primeiro-ecra-en.png` | o primeiro ecrã, sem rolar | igual |
+
+**As seis alturas mudaram na última passagem, e as duas causas separam-se.** A 390
+e a 1280 a página ENCOLHEU, e é deste bloco: a regra que fecha o corpo de uma
+dobra fechada (§10.5) tirou 29 px a 390 e 23 a 1280. **A 768 a página CRESCEU 189
+px em português e 145 em inglês, e não é deste bloco**: é a rede dos 44 px do F1.7
+entre 641 e 1023 (`.seg` e `.conv-porta-sum`), que sobe o alvo do comando e da
+porta da régua da convergência nessa faixa. As duas larguras que este bloco mede
+(390, pela J6, e 1280) só desceram.
 
 ## 9 · A segunda passagem, sobre a leitura a frio do Codex (04.09.2026)
 
@@ -510,12 +519,17 @@ o que a célula J12 mede leitura a leitura. A planta que media a forma antiga
 inverteu-se: passou a repor a linha única com a porta, e a J12 tem de a recusar.
 
 **A altura não subiu com o conteúdo reposto, e isso mediu-se.** O lugar de
-direção esperava que a J6 subisse; não subiu: `/` a 390 continua a **4 667 px** e
-`/en` a **4 625 px**, os mesmos números da primeira passagem. A razão é a forma:
-tudo o que voltou (as duas definições, o limiar e a régua da dívida, os três
+direção esperava que a J6 subisse; não subiu: no fim da segunda passagem `/` a 390
+media **4 667 px** e `/en` **4 625 px**, os mesmos números da primeira. A razão é a
+forma: tudo o que voltou (as duas definições, o limiar e a régua da dívida, os três
 selos) vive DENTRO de um `<details>` fechado, e uma dobra fechada mede o seu
 `<summary>` e mais nada. O que a segunda passagem devolveu ao leitor não custa um
 píxel a quem não abre a leitura, e é essa a forma que o bloco escolheu.
+
+*Os números finais deste relatório são outros (**4 638** e **4 596 px**), e a
+diferença não é da reposição: são 29 px que caíram mais tarde, com a regra que
+manda o corpo de uma dobra fechada não ocupar caixa nenhuma (§10.5). A comparação
+desta secção, reposição contra não reposição, é a que está escrita.*
 
 ### 9.2 · Major 4 · a ordem, decidida
 
@@ -604,7 +618,10 @@ tabela e 4 667 noutra) são as plantas P1a, P1b, P2, P3 e P4 do pacote. O leitor
 viu as cinco.
 
 
-## 10 · A cabeça, a fusão do `main` e a corrida do portão
+## 10 · A cabeça, as duas fusões do `main` e as corridas do portão
+
+*O `main` andou duas vezes enquanto este bloco corria, e as duas entraram no ramo:
+`95d5ca95` (F1.4) na §10.1 a §10.3, e `6d63adfd` (F1.7) na §10.4 a §10.6.*
 
 **`8400fbec`, verde na corrida `portao` n.º 33837745555**, das 04:41:36 às
 05:05:35 UTC de 04.09.2026 (23m59s). Esta cabeça é a fusão de `origin/main`
@@ -690,6 +707,95 @@ tecto é uma decisão do diretor. **As corridas não levam todas o mesmo**: a
 seguinte, sobre a mesma árvore mais prosa, levou 18m15s, e a diferença é do
 anfitrião e da cache do `npm`, não da árvore. Quem decidir mexer no tecto tem de
 olhar para a pior e não para a média.
+
+### 10.4 · A segunda fusão do `main`, com o bloco F1.7, e o que a régua dele apanhou
+
+`origin/main` voltou a andar no mesmo dia, para `6d63adfd`, com o bloco F1.7 (a
+acessibilidade e os alvos), e o ramo fundiu-o.
+
+**Dois conflitos, e os dois da mesma espécie**: os dois blocos acrescentaram ao
+FIM do mesmo ficheiro. Em `design/especime-v3/INVENTARIO-FRASES.md`, uma secção
+de prosa cada um; em `src/styles/inicio.css`, um bloco documentado cada um (o
+deste bloco, a área de leitura e a fila dos domínios; o do F1.7, a rede dos 44 px
+entre 641 e 1023). **Os dois resolvidos com as duas partes**, a deste bloco
+primeiro e a do F1.7 a seguir, sem apagar uma linha de nenhum dos lados. Não
+ficou nenhuma marca de conflito na árvore, medido com a peneira e com um positivo
+conhecido ao lado.
+
+**O F1.7 mexeu em duas coisas que esta página usa, e as duas foram medidas.**
+`src/components/inicio/Faixa.astro` ganhou `tabindex="0"` no `<ol>`, e a faixa da
+secção dos domínios é uma `Faixa`: passa a alcançar-se com o teclado, como a da
+cabeça. E o `.lig` ganhou, a partir de 1024, `inline-flex` com `min-height: 32px`;
+as duas regras deste bloco que tocam `.lig` (`.dobra-porta .lig` e
+`.dominio-secao-nome .lig`) dizem 44 px abaixo de 1024 e 32 a partir dali, são
+mais específicas e vêm depois na folha: o resultado é o mesmo número dos dois
+lados, e nenhuma regra apaga a outra.
+
+### 10.5 · A célula H6 ficou vermelha, e tinha razão: as caixas fantasma de uma dobra fechada
+
+**O `verify` da árvore fundida fechou com 1 na primeira corrida**, e a célula foi
+a **H6** da régua nova do F1.7 (`tests/acessibilidade/alvos.mjs`), que mede os
+alvos de texto da I105 na primeira página a partir de 1024:
+
+```
+✗ H6  primeira página, a 1280: 14 alvo(s) da I105 medidos, 6 abaixo de 32 px
+      (3× a.lig «Ver no domínio →» · não medido (caixa 105.8×32);
+       3× a.lig «See it in the domain →» · não medido (caixa 133.6×32))
+```
+
+**O que estava a acontecer, medido e não deduzido.** A porta de cada leitura vive
+dentro de um `<details>` fechado. O navegador não a pinta e não a deixa tocar
+(`document.elementFromPoint()` no centro dela devolve `null` com a dobra fechada e
+devolve a própria porta com ela aberta), **mas a caixa fica lá**: o Chromium
+guarda a última caixa do conteúdo escondido e `getBoundingClientRect()` continua a
+devolver uma caixa de 32 px de altura (118,4 × 32 na sonda deste bloco, com as
+letras carregadas; 105,8 × 32 e 133,6 × 32 no que a régua imprime, que mede noutro
+momento). A régua salta os elementos de caixa zero, e por isso via
+estas três como alvos que existem e não se alcançam. **Nesta página são 22 as
+âncoras com caixa fantasma** (os selos e as portas das 21 leituras), e a H6 só
+apanhou três porque só ela mede `a.lig`.
+
+**A régua não estava errada, a folha é que não dizia o que já era verdade.** A
+correção é deste lado e é uma regra:
+
+```css
+.dobra:not([open]) .dobra-corpo { display: none; }
+```
+
+Com ela a caixa vai a zero e a régua salta o que não está na página, que é o que
+ela já fazia com tudo o resto. **Não muda um píxel do que se vê**: a altura de `/`
+a 390 e as oito capturas ficam iguais, medidas depois. E não mexe no `<details>`
+nativo: a regra deixa de valer no instante em que o `[open]` aparece, sem guião
+nenhum.
+
+**Não se mexeu na régua do F1.7.** Tirar do caminho dela um alvo que o leitor não
+alcança seria enfraquecê-la para passar, e o que aqui se fez foi o contrário:
+pôr a folha a dizer a verdade e deixar a célula medir o que resta.
+
+### 10.6 · Os três comandos sobre a árvore fundida, e as réguas
+
+O `verify` cresceu duas vezes num dia: leva agora `check:alvos` (a régua dos
+alvos do F1.7, que mede `home` entre as famílias) além da `check:indice` do F1.4.
+A árvore fundida levou um `npm ci` novo, porque o `package.json` mudou.
+
+| comando | código |
+| --- | --- |
+| `npm run build` | **0** |
+| `npm run verify` | **0**, com a `check:alvos` e a `check:indice` lá dentro |
+| `npm run typecheck` | **0** |
+
+**As treze réguas de `tests/inicio` correram outra vez sobre a construção desta
+árvore**, e as vinte e cinco plantas com elas: `leitura` 18 de 18 e 5 plantas,
+`porta` 34 de 34 e 13 plantas, `faixa` 80 de 80 e 7 plantas, `lista` 94 de 94,
+`app` 39 de 39, `areas` 22 de 22, `correcoes-a` 32 de 32, `mapa-distritos` 43 de
+43, `mapa-navegacao` 9 de 9, `regioes` 30 de 30, `rotulo` 7 de 7, `numeros-novos`
+verde, e a `matriz` nas mesmas **3 de 84** com os mesmos três nomes. As contagens
+das quatro classes de algarismos no sítio inteiro são as mesmas da fusão anterior
+(`data-claim` 31 248, `data-prova` 14 588, `data-nonledger` 108 832,
+`data-verbatim` 23): o F1.7 não acrescentou um algarismo a nenhuma delas.
+
+**As oito capturas foram refeitas** sobre esta construção, e as seis alturas estão
+na §8, com as duas causas separadas.
 
 *Esta secção é ela própria um commit, e por isso a cabeça que ele faz não é a que
 está escrita acima: é a mesma disciplina que o F1.4 seguiu na §10.6 do relatório

@@ -3033,6 +3033,27 @@ a.porta:hover .porta-abrir {
   padding: 12px 0 14px 21px;
   max-width: 46em;
 }
+/* UMA DOBRA FECHADA NÃO TEM CORPO, E ISSO TEM DE SE DIZER À FOLHA (04.09.2026,
+   depois de a régua dos alvos do F1.7 apanhar o contrário).
+
+   O navegador não pinta o corpo de um `<details>` fechado, e também não o deixa
+   tocar: medido em Chromium sobre a construção, `document.elementFromPoint()` no
+   centro da porta «Ver no domínio →» devolve `null` com a dobra fechada e devolve
+   a própria porta com ela aberta. MAS A CAIXA FICA LÁ: o Chromium guarda a última
+   caixa do conteúdo escondido (`::details-content { content-visibility: hidden }`)
+   e `getBoundingClientRect()` continua a devolver 118,4 × 32 px. São 22 âncoras
+   com caixa fantasma nesta página, e a célula H6 da régua dos alvos
+   (`tests/acessibilidade/alvos.mjs`) contou três delas como alvos que não se
+   alcançam, o que é verdade e não é um defeito: o que não está na página não é
+   alvo nenhum, e assim que a dobra abre a porta mede os 32 px que a folha lhe dá.
+
+   `display: none` no corpo fechado põe a caixa a zero e faz a folha dizer o que
+   já era verdade. NÃO MUDA UM PÍXEL do que se vê (a altura de `/` a 390 e as oito
+   capturas ficam iguais, medidas), não mexe no `<details>` nativo (a regra deixa
+   de valer no instante em que o `[open]` aparece) e não precisa de guião. */
+.dobra:not([open]) .dobra-corpo {
+  display: none;
+}
 .dobra-unidade,
 .dobra-limiar,
 .dobra-datas {
