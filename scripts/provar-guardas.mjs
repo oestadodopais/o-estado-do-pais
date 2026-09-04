@@ -33,6 +33,7 @@ import {
 } from '../src/lib/ledger.mjs';
 import { eManifestoDosRegistos, eRegistoDeConteudo } from '../src/lib/registos.mjs';
 import { ePaisDoMapa, eDistritoDoMapa, eManifestoDoMapa } from '../src/lib/mapa.mjs';
+import { eNomeDeMedida, nomeDaMedida } from '../src/lib/nomes.mjs';
 
 /** @param {string} s */
 const verde = (s) => `\x1b[32m${s}\x1b[0m`;
@@ -376,6 +377,104 @@ caso(
   false,
   eManifestoDoMapa({ fonte: { licenca: 'CC BY 4.0', carta: 'CAOP 2025' } }),
   'sem a menção da entidade proprietária o mapa não pode ser servido.',
+);
+
+/* ---------------------------------------------------- o nome de uma medida */
+
+/* `eNomeDeMedida` decide MARKUP: um nome de cartão leva `data-nome`, que a régua
+   da voz confere contra o ficheiro de dados, e um campo do livro-razão leva
+   `data-linha-campo`, que o portão confere contra a linha. Um objecto meio
+   construído escolhia a marca errada em silêncio, que é a classe de defeito que
+   nenhum dos dois portões apanharia: a marca estaria bem formada e a apontar
+   para o sítio errado. */
+caso(
+  'eNomeDeMedida/cartao',
+  true,
+  eNomeDeMedida({ texto: 'Dívida pública', fonte: 'figuras', campo: null }),
+  'um nome de cartão: a fonte é o ficheiro de dados e não há campo.',
+);
+caso(
+  'eNomeDeMedida/campo',
+  true,
+  eNomeDeMedida({ texto: 'PMP (N.º dias)', fonte: null, campo: 'name' }),
+  'um rótulo da fonte: é um campo do livro-razão e não tem ficheiro de dados.',
+);
+caso(
+  'eNomeDeMedida/os-dois',
+  false,
+  eNomeDeMedida({ texto: 'Dívida pública', fonte: 'figuras', campo: 'name' }),
+  'as duas marcas ao mesmo tempo: o texto não pode ser conferido contra as duas.',
+);
+caso(
+  'eNomeDeMedida/nenhum',
+  false,
+  eNomeDeMedida({ texto: 'Dívida pública', fonte: null, campo: null }),
+  'um texto sem origem nenhuma é prosa da casa por classificar, não um nome.',
+);
+caso(
+  'eNomeDeMedida/fonte-desconhecida',
+  false,
+  eNomeDeMedida({ texto: 'Dívida pública', fonte: 'inventado', campo: null }),
+  'uma fonte que a régua da voz não sabe abrir não sustenta a marca.',
+);
+caso(
+  'eNomeDeMedida/vazio',
+  false,
+  eNomeDeMedida({ texto: '', fonte: 'figuras', campo: null }),
+  'um nome vazio é um elemento vazio na cabeça da linha.',
+);
+caso('eNomeDeMedida/nulo', false, eNomeDeMedida(null), 'null não é um nome.');
+
+/* E a escada, sobre linhas escritas aqui: a ordem dos degraus é o que decide o
+   que o leitor lê, e uma troca silenciosa entre eles não se vê em página
+   nenhuma. */
+const LINHA_BASE = {
+  id: 'x-1',
+  value: '1',
+  unit: '%',
+  source: null,
+  document: null,
+  source_url: null,
+  access_date: null,
+  reference_date: null,
+  excerpt: null,
+  derivation: null,
+  derived_from: [],
+  check: null,
+  study: 'x',
+  corrections: [],
+};
+caso(
+  'nomeDaMedida/degrau-do-rotulo',
+  true,
+  nomeDaMedida({ ...LINHA_BASE, name: 'Total' }, 'pt')?.campo === 'name',
+  'sem cartão, o rótulo que a fonte imprime.',
+);
+caso(
+  'nomeDaMedida/degrau-do-documento',
+  true,
+  nomeDaMedida({ ...LINHA_BASE, document: { title: 'Prestação de Contas 2025' } }, 'pt')?.campo ===
+    'document.title',
+  'sem cartão e sem rótulo, o título do documento de onde a linha foi lida.',
+);
+caso(
+  'nomeDaMedida/marcador-nao-e-nome',
+  true,
+  nomeDaMedida({ ...LINHA_BASE, document: { title: '[a verificar]' } }, 'pt') === null,
+  'quatro linhas têm o marcador por título de documento: o marcador não é um nome.',
+);
+caso(
+  'nomeDaMedida/derivada-sem-nome',
+  true,
+  nomeDaMedida(LINHA_BASE, 'pt') === null,
+  'uma linha derivada sem fonte e sem documento não ganha um nome inventado.',
+);
+caso(
+  'nomeDaMedida/cartao-ganha',
+  true,
+  nomeDaMedida({ ...LINHA_BASE, id: 'divida-publica-2025', name: 'Total' }, 'pt')?.fonte ===
+    'figuras',
+  'o nome do cartão ganha ao rótulo da fonte: é o nome que o leitor já viu na primeira página.',
 );
 
 /* ------------------------------------------ as listas de que os tipos derivam */

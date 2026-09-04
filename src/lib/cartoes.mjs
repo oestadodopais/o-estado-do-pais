@@ -75,6 +75,7 @@
  */
 
 import { SITE_NAME, canonicalUrl } from '../../site.config.mjs';
+import { dataDaCasa } from './datas.mjs';
 import { ESTUDOS_DE_DADOS, studyLabel } from '../data/studies.mjs';
 import { getClaim, loadClaims } from './ledger.mjs';
 import { valorComUnidade } from './livro.mjs';
@@ -268,7 +269,11 @@ function valorDaLinha(claim, campo) {
  */
 function valorDaProva(p, chave) {
   return {
-    texto: String(p[chave].valor),
+    /* A DATA DE UMA CHAVE DA PROVA VAI NA FORMA DA CASA (bloco F1.4,
+       04.09.2026), como vai na página: um cartão de partilha é a mesma coisa
+       vista de fora, e duas grafias da mesma data seriam duas casas.
+       `dataDaCasa()` é identidade para as contagens, que são a maior parte. */
+    texto: dataDaCasa(String(p[chave].valor)),
     origem: 'prova',
     chave,
     unidade: null,

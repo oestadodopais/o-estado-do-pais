@@ -1,0 +1,63 @@
+---
+/**
+ * O NOME DE UMA MEDIDA, NA CABEÇA DA SUA LINHA (bloco F1.4, 04.09.2026).
+ *
+ * A escolha do nome não está aqui: está em `src/lib/nomes.mjs`, que é a escada
+ * de quatro degraus e a única cópia dela. Aqui está a MARCA, e é ela que faz do
+ * nome uma coisa conferida em vez de uma dispensa:
+ *
+ *   · um nome de cartão vem de um ficheiro de dados da casa e leva
+ *     `data-nome="figuras"` ou `data-nome="medidas"`, **mais o identificador da
+ *     linha de que ele é** (`data-de-linha`). `scripts/medir-defeitos.mjs` lê o
+ *     ficheiro que a marca nomeia e confere, carácter a carácter, que o texto
+ *     rendido é o nome DAQUELA linha nesta edição; `scripts/check-voz.mjs` fecha
+ *     a construção quando não é. O identificador entrou na segunda passagem
+ *     (leitura a frio, Blocking 4): sem ele a conferência perguntava «este texto
+ *     está no ficheiro?», e trocar o nome de duas linhas do índice passava;
+ *   · um nome que É um campo do livro-razão (`name`, `document.title`) rende-se
+ *     por `CampoDaLinha`, com `data-linha-campo`, e o portão de HTML compara-o
+ *     com a linha carácter a carácter. Não se toca no texto: um campo transcrito
+ *     rende-se como a fonte o escreveu.
+ *
+ * NADA SE RENDE onde a escada não dá texto. Não há aqui um traço, um «sem nome»
+ * nem o identificador promovido outra vez: a linha fica com o valor, a unidade e
+ * o identificador no metadado, que é o que ela tem.
+ */
+import CampoDaLinha from './CampoDaLinha.astro';
+import { nomeDaMedida, eNomeDeMedida } from '../lib/nomes.mjs';
+import { linguaDoRotuloDaFonte, linguaDoTituloDoDocumento } from '../i18n/lingua-dos-titulos.mjs';
+
+const { linha: c, lang = 'pt' } = Astro.props;
+const nome = nomeDaMedida(c, lang);
+if (nome !== null && !eNomeDeMedida(nome)) {
+  throw new Error(`nomes: nome mal formado para a linha "${c.id}"`);
+}
+/* A LÍNGUA DO CAMPO É DE QUEM CHAMA, e as duas tabelas são diferentes: um
+   rótulo da fonte e um título de documento estão em listas próprias
+   (`src/i18n/lingua-dos-titulos.mjs`), e `check:lingua` fecha a construção
+   quando um texto novo chega sem língua declarada. */
+const lingua =
+  nome === null || nome.campo === null
+    ? null
+    : nome.campo === 'name'
+      ? linguaDoRotuloDaFonte(nome.texto, lang)
+      : linguaDoTituloDoDocumento(nome.texto, lang);
+---
+
+{
+  nome !== null &&
+    (nome.campo === null ? (
+      <span class="livro-item-nome" data-nome={nome.fonte} data-de-linha={c.id}>
+        {nome.texto}
+      </span>
+    ) : (
+      <CampoDaLinha
+        id={c.id}
+        campo={nome.campo}
+        valor={nome.texto}
+        lang={lang}
+        class="livro-item-nome"
+        lingua={lingua}
+      />
+    ))
+}

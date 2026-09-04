@@ -387,6 +387,28 @@ const ficha = [
        se traduz, e diz em que língua está. A tabela é
        `src/i18n/lingua-dos-titulos.mjs`. */
     lingua: linguaDoTituloDoDocumento(claim.document?.title ?? null, lang),
+    /**
+     * O TÍTULO ABRE O DOCUMENTO, QUANDO A LINHA DIZ ONDE ELE ESTÁ (bloco F1.4,
+     * item 7).
+     *
+     * A auditoria de 02.09.2026 mediu o título de um documento impresso como
+     * texto morto ao lado de um endereço cru que abre. São 358 das 2 916 linhas
+     * que declaram `document.url`, e nas 358 o título é o nome daquilo que
+     * aquele endereço abre: pô-lo a abrir é a porta que o leitor procura no
+     * primeiro sítio onde olha.
+     *
+     * A PORTA É CONFERIDA COMO AS OUTRAS. `scripts/gate-html.mjs` passou a
+     * exigir que a âncora que embrulha `data-linha-campo="document.title"`
+     * aponte para o `document.url` daquela linha, carácter a carácter, como já
+     * exigia da âncora do `source_url`. Uma porta que se abre sem ser conferida
+     * é a mentira que nenhum outro varrimento apanha.
+     *
+     * NÃO É A MESMA PORTA DO BLOCO «a página do indicador», e as duas ficam: o
+     * bloco do corpo mostra o ENDEREÇO, que é o que serve quem confere; esta
+     * mostra o NOME, que é o que serve quem lê. É a divisão que a própria página
+     * já tinha escrita entre a porta humana e o pedido exato.
+     */
+    porta: typeof claim.document?.url === 'string' ? claim.document.url : null,
   },
   /* A EDIÇÃO TAMBÉM (I97), e é o campo onde a tabela precisa de uma terceira
      resposta: um ano, uma data e um código de série não estão em língua nenhuma
@@ -494,6 +516,12 @@ const atribuicaoPecas = [
         campo: 'document.title',
         valor: claim.document.title,
         lingua: linguaDoTituloDoDocumento(claim.document.title, lang),
+        /* O TÍTULO ABRE O DOCUMENTO AQUI TAMBÉM (leitura a frio, Major 9).
+           A primeira passagem pôs a porta no título da ficha e deixou o título
+           desta frase em texto morto: o mesmo nome, na mesma página, uma vez
+           clicável e outra não. O portão passou a EXIGIR a âncora onde a linha
+           declara `document.url`, e por isso as duas ocorrências a têm. */
+        porta: typeof claim.document?.url === 'string' ? claim.document.url : null,
       }
     : null,
   presente(claim.document?.edition)
@@ -653,13 +681,25 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                 {i > 0 && (peca.apos ? ' · ' : peca.entreParenteses ? ' ' : ', ')}
                 {peca.k && `${peca.k} `}
                 {peca.entreParenteses && '('}
-                <CampoDaLinha
-                  id={id}
-                  campo={peca.campo}
-                  valor={peca.valor}
-                  lang={lang}
-                  lingua={peca.lingua ?? null}
-                />
+                {peca.porta ? (
+                  <a class="ligacao-externa" href={peca.porta} rel="noopener noreferrer external">
+                    <CampoDaLinha
+                      id={id}
+                      campo={peca.campo}
+                      valor={peca.valor}
+                      lang={lang}
+                      lingua={peca.lingua ?? null}
+                    />
+                  </a>
+                ) : (
+                  <CampoDaLinha
+                    id={id}
+                    campo={peca.campo}
+                    valor={peca.valor}
+                    lang={lang}
+                    lingua={peca.lingua ?? null}
+                  />
+                )}
                 {peca.entreParenteses && ')'}
               </>
             ))}
@@ -677,7 +717,13 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
             <h2 class="linha-bloco-titulo" id="serie">{s.prov.paginaDaSerie}</h2>
             <p class="linha-pagina-serie">
               <a class="ligacao-externa" href={paginaDaSerie} rel="noopener noreferrer external">
-                <CampoDaLinha id={id} campo="document.url" valor={paginaDaSerie} lang={lang} />
+                <CampoDaLinha
+                  id={id}
+                  campo="document.url"
+                  valor={paginaDaSerie}
+                  lang={lang}
+                  quebras={true}
+                />
               </a>
             </p>
           </section>
@@ -739,6 +785,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                       valor={claim.source_url}
                       lang={lang}
                       class="linha-endereco-bruto"
+                      quebras={true}
                     />
                   </a>
                 )}
@@ -772,6 +819,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                   valor={claim.source_url}
                   lang={lang}
                   class="linha-endereco-bruto"
+                  quebras={true}
                 />
               </a>
             </p>
@@ -1026,10 +1074,22 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                 /* Uma âncora só, como na prova: é o `href` dela que o portão
                    confere contra `source_url`. */
                 <a class="ligacao-externa" href={url} rel="noopener noreferrer external">
-                  <CampoDaLinha id={id} campo="source_url" valor={claim.source_url} lang={lang} />
+                  <CampoDaLinha
+                    id={id}
+                    campo="source_url"
+                    valor={claim.source_url}
+                    lang={lang}
+                    quebras={true}
+                  />
                 </a>
               ) : (
-                <CampoDaLinha id={id} campo="source_url" valor={claim.source_url} lang={lang} />
+                <CampoDaLinha
+                  id={id}
+                  campo="source_url"
+                  valor={claim.source_url}
+                  lang={lang}
+                  quebras={true}
+                />
               )}
             </p>
           </section>
@@ -1207,13 +1267,25 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
             <>
               <dt>{l.k}</dt>
               <dd>
-                <CampoDaLinha
-                  id={id}
-                  campo={l.campo}
-                  valor={l.valor}
-                  lang={lang}
-                  lingua={l.lingua ?? null}
-                />
+                {l.porta ? (
+                  <a class="ligacao-externa" href={l.porta} rel="noopener noreferrer external">
+                    <CampoDaLinha
+                      id={id}
+                      campo={l.campo}
+                      valor={l.valor}
+                      lang={lang}
+                      lingua={l.lingua ?? null}
+                    />
+                  </a>
+                ) : (
+                  <CampoDaLinha
+                    id={id}
+                    campo={l.campo}
+                    valor={l.valor}
+                    lang={lang}
+                    lingua={l.lingua ?? null}
+                  />
+                )}
               </dd>
             </>
           ))

@@ -741,6 +741,22 @@ function textoTranscrito(el) {
 }
 
 /**
+ * A FORMA DA CASA DE UMA DATA: a cópia própria do portão (bloco F1.4).
+ *
+ * A regra é a da §1.91 e vive em `src/lib/datas.mjs`: dd.mm.aaaa, e o que não é
+ * uma data completa passa como está (um ano é um ano). Está escrita OUTRA VEZ
+ * aqui, e é de propósito: um portão que recompusesse a data pela mesma função
+ * que o gabarito usa confirmava a função e não o registo. É a mesma razão do
+ * separador de `attributed_to` (§1.31) e da página do `#page=`.
+ *
+ * @param {string} valor
+ */
+function dataDaCasaGate(valor) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(valor);
+  return m ? `${m[3]}.${m[2]}.${m[1]}` : valor;
+}
+
+/**
  * A FORMA DE UM VALOR — a cópia própria do portão, e o que ela normaliza.
  *
  * Bloco T, T4. Até 18.08.2026 um `data-claim` era conferido por `digitsOf`, que
@@ -5069,7 +5085,13 @@ for (const file of ficheirosHtml(DIST)) {
   };
 
   const CAMPOS_CORRECAO = {
-    date: 'exacto',
+    /* A DATA DE UMA ENTRADA ESCREVE-SE NA FORMA DA CASA (bloco F1.4,
+       04.09.2026). O registo guarda-a em ISO, como o livro-razão guarda as
+       suas, e a superfície escreve-a dd.mm.aaaa pela regra única da §1.91. O
+       portão recompõe-a por conta própria (a cópia local da regra está em
+       `dataDaCasaGate`, mais abaixo) e compara-a carácter a carácter: continua a
+       provar a transcrição, e passa a provar também a forma. */
+    date: 'data',
     kind: 'natureza',
     /* Numa revisão de proveniência, `field` diz qual o campo que mudou, e
        `old_value`/`new_value` são os valores DESSE campo — endereços, por
@@ -5207,7 +5229,9 @@ for (const file of ficheirosHtml(DIST)) {
     const bate =
       modo === 'algarismos'
         ? digitsOf(renderizado) === digitsOf(esperado)
-        : renderizado === normalizeWhitespace(esperado);
+        : modo === 'data'
+          ? renderizado === dataDaCasaGate(normalizeWhitespace(esperado))
+          : renderizado === normalizeWhitespace(esperado);
     if (!bate) {
       err(
         `no registo de correções, "${campo}" de "${id}" foi renderizado como ` +
@@ -5370,6 +5394,68 @@ for (const file of ficheirosHtml(DIST)) {
             `"${String(esperado).slice(0, 90)}" mas a ligação aponta para ` +
             `"${decodeEntities(destino).slice(0, 90)}".`,
         );
+      }
+    }
+
+    /**
+     * O TÍTULO DE UM DOCUMENTO, QUANDO ABRE, ABRE O DOCUMENTO (bloco F1.4,
+     * 04.09.2026).
+     *
+     * O bloco F1.4 pôs o título do documento a abrir o `document.url` da linha,
+     * que é a porta que o leitor procura no primeiro sítio onde olha. Uma porta
+     * é a única coisa desta página que se segue sem se ler, e por isso vale aqui
+     * a mesma excepção estreita que o endereço já tinha: o `href` da âncora que
+     * embrulha o título tem de ser, carácter a carácter, o `document.url` DESTA
+     * linha. Um título a abrir outro documento seria uma atribuição errada com a
+     * forma de uma comodidade, e nenhum outro varrimento a apanha.
+     *
+     * A GUARDA É NOS DOIS SENTIDOS: uma âncora à volta do título numa linha que
+     * não declara `document.url` também fecha a construção, porque não há
+     * endereço nenhum contra que a conferir.
+     */
+    if (campo === 'document.title') {
+      const ancora = el.parentNode?.rawTagName?.toLowerCase() === 'a' ? el.parentNode : null;
+      const destino = ancora?.getAttribute('href') ?? null;
+      /**
+       * A PORTA É EXIGIDA, E NÃO SÓ CONFERIDA (leitura a frio do F1.4, Major 9).
+       *
+       * A primeira passagem conferia o destino QUANDO havia âncora, e não exigia
+       * a âncora: o título da frase de atribuição ficou em texto morto e o da
+       * ficha ficou clicável, o mesmo nome duas vezes na mesma página com duas
+       * naturezas. Passa a ser um erro render o título de uma linha que declara
+       * `document.url` SEM a porta.
+       *
+       * NA PÁGINA DA LINHA, E SÓ AÍ. No índice do livro-razão e nas páginas de
+       * área o título é o NOME da medida numa lista de nomes (a escada do
+       * `src/lib/nomes.mjs`), e uma lista de nomes não é uma lista de portas: a
+       * porta de cada entrada é o selo, que abre a linha. Exigir ali a porta do
+       * documento punha o leitor a sair do sítio a partir de um índice.
+       */
+      if (destino === null && claimDaPagina && claimDaPagina.id === id) {
+        const url = campoDaLinha(claim, 'document.url', linguaPagina);
+        if (url !== null && url !== undefined) {
+          err(
+            `o título do documento de "${id}" está sem porta, e a linha declara ` +
+              `"document.url" ("${String(url).slice(0, 90)}").\n` +
+              `      Na página de uma linha, um título cujo documento tem endereço abre-o: ` +
+              `envolva o campo numa <a class="ligacao-externa" href="…">.`,
+          );
+        }
+      }
+      if (destino !== null) {
+        const url = campoDaLinha(claim, 'document.url', linguaPagina);
+        if (url === null || url === undefined) {
+          err(
+            `o título do documento de "${id}" é uma ligação para ` +
+              `"${decodeEntities(destino).slice(0, 90)}" e a linha não declara "document.url". ` +
+              `Um título só abre o documento quando a linha diz onde ele está.`,
+          );
+        } else if (decodeEntities(destino) !== String(url)) {
+          err(
+            `o título do documento de "${id}" abre "${decodeEntities(destino).slice(0, 90)}" e o ` +
+              `"document.url" da linha é "${String(url).slice(0, 90)}".`,
+          );
+        }
       }
     }
   }
@@ -5816,11 +5902,29 @@ for (const file of ficheirosHtml(DIST)) {
 
     const renderizado = textoTranscrito(el);
     const esperado = normalizeWhitespace(String(resolvido.texto));
-    if (renderizado !== esperado) {
+    /**
+     * UM CAMPO QUE É UMA DATA ESCREVE-SE NA FORMA DA CASA (bloco F1.4,
+     * 04.09.2026).
+     *
+     * O registo guarda as datas em ISO, como o livro-razão guarda as suas, e a
+     * superfície escreve-as dd.mm.aaaa pela regra única da §1.91. A conferência
+     * não afrouxa: o portão recompõe a data por conta própria e continua a
+     * comparar carácter a carácter, e por isso passa a provar duas coisas onde
+     * provava uma: que o texto é o do registo, e que está na forma da casa.
+     *
+     * SÓ QUANDO O CAMPO É A DATA INTEIRA. Uma data dentro de uma frase do
+     * registo («A direção leu a pergunta a 2026-08-18…») fica como o registo a
+     * escreveu: a casa não edita o que transcreve.
+     */
+    const esperadoNaPagina = /^\d{4}-\d{2}-\d{2}$/.test(esperado)
+      ? dataDaCasaGate(esperado)
+      : esperado;
+    if (renderizado !== esperadoNaPagina) {
       err(
         `o campo "${chave}" não foi transcrito fielmente do registo da agenda.\n` +
-          `      no registo:  ${esperado.slice(0, 150)}\n` +
-          `      renderizado: ${renderizado.slice(0, 150)}`,
+          `      no registo:  ${esperado.slice(0, 150)}` +
+          (esperadoNaPagina === esperado ? '' : ` · na forma da casa: ${esperadoNaPagina}`) +
+          `\n      renderizado: ${renderizado.slice(0, 150)}`,
       );
     }
 
@@ -6867,12 +6971,32 @@ for (const [chave, item] of Object.entries(PROVA)) {
 for (const o of ocorrenciasDaProva) {
   const esperado = CONTAS[o.chave];
   if (esperado === undefined || esperado === null) continue; // já dito acima
-  if (o.texto !== String(esperado)) {
+  /**
+   * UMA CHAVE DA PROVA QUE É UMA DATA ESCREVE-SE NA FORMA DA CASA (bloco F1.4,
+   * 04.09.2026).
+   *
+   * O comentário acima dizia «uma data é ISO», e era a regra até aqui: a única
+   * chave com valor de data (`painel_reconferido_em`) saía em ISO na página do
+   * Método, e era a última data ISO à vista do sítio. A regra da §1.91 é uma só,
+   * e passa a valer também aqui.
+   *
+   * A CONFERÊNCIA NÃO AFROUXA: o portão recompõe a data com a SUA cópia da regra
+   * (`dataDaCasaGate`, no topo deste ficheiro) e continua a comparar carácter a
+   * carácter. O que ele passa a provar são duas coisas onde provava uma: que o
+   * valor é o que o portão conta, e que está escrito na forma da casa. Uma
+   * chave que não seja uma data completa não é tocada, e por isso as contagens
+   * comparam-se exactamente como antes.
+   */
+  const cru = String(esperado);
+  const naForma = /^\d{4}-\d{2}-\d{2}$/.test(cru) ? dataDaCasaGate(cru) : cru;
+  if (o.texto !== naForma) {
     erros.push({
       rel: o.rel,
       msg:
         `o número da prova "${o.chave}" foi renderizado como "${o.texto.slice(0, 60)}" e o ` +
-        `portão escreve-o "${String(esperado)}".\n` +
+        `portão escreve-o "${naForma}"` +
+        (naForma === cru ? '' : ` (o registo diz "${cru}")`) +
+        `.\n` +
         `      Não é só o valor que tem de bater certo: é a forma. Uma vírgula, um sinal ou ` +
         `uma escala trocados são um número diferente.`,
     });
@@ -7048,11 +7172,22 @@ for (const [nomePng, registo] of REGISTOS_DOS_CARTOES) {
         errC(`o valor "${v.texto}" diz vir da chave da prova "${v.chave}", que o portão não conta.`);
         continue;
       }
-      if (String(contado) !== String(v.texto)) {
+      /* A MESMA REGRA DA DATA, DO LADO DO CARTÃO (bloco F1.4, 04.09.2026).
+         Um cartão de partilha é a mesma coisa vista de fora, e a data de uma
+         chave da prova escreve-se lá como se escreve na página: dd.mm.aaaa. O
+         portão recompõe-a com a sua cópia da regra e continua a comparar
+         carácter a carácter. */
+      const cruDoCartao = String(contado);
+      const contadoNaForma = /^\d{4}-\d{2}-\d{2}$/.test(cruDoCartao)
+        ? dataDaCasaGate(cruDoCartao)
+        : cruDoCartao;
+      if (contadoNaForma !== String(v.texto)) {
         errC(
           `um valor do cartão não é o que o portão conta.\n` +
             `      cartão: "${v.texto}"\n` +
-            `      portão: "${String(contado)}" (chave "${v.chave}")`,
+            `      portão: "${contadoNaForma}"` +
+            (contadoNaForma === cruDoCartao ? '' : ` (o registo diz "${cruDoCartao}")`) +
+            ` (chave "${v.chave}")`,
         );
       }
     } else {
