@@ -2059,11 +2059,58 @@ quando a busca subiu para debaixo da manchete.
 | conteudo | Os indicadores do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, com os limiares que o Procedimento publica. Os valores são do Eurostat, confirmados contra a Comissão Europeia, . | porta | retirada | a segunda passagem do F1.1 apertou os verbos a 03.09.2026, depois do Blocking 6 da leitura a frio do Codex: «com os limiares que o Procedimento publica» e «que não publica limiares» são dois verbos que as linhas não sustentam. Uma nota do livro-razão diz que o limiar É do Procedimento, não que ele o publica; e a Emenda 16 diz que o Painel Social «não tem limiares», que é outra coisa de «não publica limiares». A frase que ficou diz o que a nota e a emenda dizem, palavra por palavra, e nomeia o documento contra o qual os valores foram confirmados, que a primeira redação deixava por dizer |
 | conteudo | Os indicadores do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, cada um com o limiar do Procedimento. Os valores são do Eurostat, confirmados contra o da Comissão Europeia, . | porta | viva | — |
 | conteudo | Os indicadores do Painel Social Europeu, que não publica limiares. Os valores são do Eurostat, confirmados contra a Comissão Europeia, . | porta | retirada | a segunda passagem do F1.1 apertou os verbos a 03.09.2026, depois do Blocking 6 da leitura a frio do Codex: «com os limiares que o Procedimento publica» e «que não publica limiares» são dois verbos que as linhas não sustentam. Uma nota do livro-razão diz que o limiar É do Procedimento, não que ele o publica; e a Emenda 16 diz que o Painel Social «não tem limiares», que é outra coisa de «não publica limiares». A frase que ficou diz o que a nota e a emenda dizem, palavra por palavra, e nomeia o documento contra o qual os valores foram confirmados, que a primeira redação deixava por dizer |
-| conteudo | Os indicadores que o livro-razão guarda e cujo registo nomeia o Painel Social Europeu, sem cor porque não tem limiares. Os valores são do Eurostat, confirmados contra o da Comissão Europeia, . | porta | viva | — |
+| conteudo | Os indicadores que o livro-razão guarda e cujo registo nomeia o Painel Social Europeu, sem cor porque não tem limiares. Os valores são do Eurostat, confirmados contra o da Comissão Europeia, . | porta | retirada | o bloco F1.6 pôs a seleção à cabeça da frase (decisão (5) da §1.98, cumprida a 04.09.2026): a frase passou a abrir por «Oito das dezassete medidas principais do Painel Social Europeu», com o numerador composto de `FIGURAS_SOCIAL.length` e o denominador declarado com a origem da Comissão. Esta redação não pode voltar: sem a seleção, o leitor lê oito cartões e não sabe que são oito de dezassete |
 | conteudo | The indicators of the Macroeconomic Imbalance Procedure scoreboard, with the thresholds the Procedure publishes. The values are from Eurostat, confirmed against the European Commission, . | porta | retirada | a segunda passagem do F1.1 apertou os verbos a 03.09.2026, depois do Blocking 6 da leitura a frio do Codex: «com os limiares que o Procedimento publica» e «que não publica limiares» são dois verbos que as linhas não sustentam. Uma nota do livro-razão diz que o limiar É do Procedimento, não que ele o publica; e a Emenda 16 diz que o Painel Social «não tem limiares», que é outra coisa de «não publica limiares». A frase que ficou diz o que a nota e a emenda dizem, palavra por palavra, e nomeia o documento contra o qual os valores foram confirmados, que a primeira redação deixava por dizer |
 | conteudo | The indicators of the Macroeconomic Imbalance Procedure scoreboard, each with the threshold of the Procedure. The values are from Eurostat, confirmed against the European Commission’s country report, . | porta | viva | — |
 | conteudo | The indicators of the European Social Scoreboard, which publishes no thresholds. The values are from Eurostat, confirmed against the European Commission, . | porta | retirada | a segunda passagem do F1.1 apertou os verbos a 03.09.2026, depois do Blocking 6 da leitura a frio do Codex: «com os limiares que o Procedimento publica» e «que não publica limiares» são dois verbos que as linhas não sustentam. Uma nota do livro-razão diz que o limiar É do Procedimento, não que ele o publica; e a Emenda 16 diz que o Painel Social «não tem limiares», que é outra coisa de «não publica limiares». A frase que ficou diz o que a nota e a emenda dizem, palavra por palavra, e nomeia o documento contra o qual os valores foram confirmados, que a primeira redação deixava por dizer |
-| conteudo | The indicators the ledger holds whose record names the European Social Scoreboard, with no colour because it has no thresholds. The values are from Eurostat, confirmed against the European Commission’s country report, . | porta | viva | — |
+| conteudo | The indicators the ledger holds whose record names the European Social Scoreboard, with no colour because it has no thresholds. The values are from Eurostat, confirmed against the European Commission’s country report, . | porta | retirada | o bloco F1.6 pôs a seleção à cabeça da frase (decisão (5) da §1.98, cumprida a 04.09.2026): a frase passou a abrir por «Oito das dezassete medidas principais do Painel Social Europeu», com o numerador composto de `FIGURAS_SOCIAL.length` e o denominador declarado com a origem da Comissão. Esta redação não pode voltar: sem a seleção, o leitor lê oito cartões e não sabe que são oito de dezassete |
+
+## Bloco F1.6 · o atraso do IEFP e a seleção do Painel Social · 04.09.2026
+
+*O bloco escreveu três frases novas e reescreveu uma. **O atraso de uma série**
+diz-se com três rótulos e três valores lidos, na página de cada linha atrasada e
+no cartão dela na página do concelho: «Último período publicado pela fonte:
+2026-07; a casa publica 2025-12 desde 26.08.2026». **O contador** do cabeçalho
+diz quantas séries estão nesse estado e quantas linhas do livro-razão elas
+apanham. **A frase do Painel Social** passou a abrir pela seleção.*
+
+*AS CADEIAS DOS RÓTULOS SÃO MARCADAS `data-voz`, e é a única maneira de elas
+poderem estar aqui: a régua salta um bloco com uma marca de origem lá dentro em
+qualquer rota fora de `ROTAS_COM_ORIGEM_LIDA` (e `municipio` não está nessa
+lista), e o rótulo do contador vive dentro de uma âncora, que é um destino e não
+uma frase. A marca só alarga a peneira e não dispensa nada: ver a razão ao lado
+de `VOZ_DECLARADA` em `scripts/medir-defeitos.mjs`.*
+
+*AS DUAS DICAS DAS CHAVES DA PROVA entram como as outras: um `title` é
+superfície pública desde a I79, e a frase que diz COMO um número é obtido é
+prosa da casa.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Séries atrasadas: | frescura | viva | — |
+| conteudo | Series behind: | frescura | viva | — |
+| conteudo | séries que a casa publica atrás do último período da fonte | frescura | viva | — |
+| conteudo | series the house publishes behind the source’s latest period | frescura | viva | — |
+| conteudo | linhas do livro-razão dessas séries | frescura | viva | — |
+| conteudo | ledger rows in those series | frescura | viva | — |
+| conteudo | Último período publicado pela fonte: | frescura | viva | — |
+| conteudo | Latest period published by the source: | frescura | viva | — |
+| conteudo | a casa publica | frescura | viva | — |
+| conteudo | the house publishes | frescura | viva | — |
+| conteudo | desde | frescura | viva | — |
+| conteudo | since | frescura | viva | — |
+| conteudo | Oito das dezassete medidas principais do Painel Social Europeu: as que o livro-razão guarda e cujo registo nomeia esse painel, sem cor porque não tem limiares. Os valores são do Eurostat, confirmados contra o da Comissão Europeia, . | frescura | viva | — |
+| conteudo | Eight of the seventeen headline indicators of the European Social Scoreboard: the ones the ledger holds whose record names that scoreboard, with no colour because it has no thresholds. The values are from Eurostat, confirmed against the European Commission’s country report, . | frescura | viva | — |
+
+*AS DUAS ÚLTIMAS LINHAS LEVAM UMA CONTAGEM POR EXTENSO, e o inventário já disse
+uma vez que uma frase com um número que se move não pode ser sentinela. A
+diferença está medida e não afirmada: nenhum dos dois números é escrito na
+frase. O numerador compõe-se de `FIGURAS_SOCIAL.length` no próprio ficheiro de
+dados, pelo que a frase muda sozinha se uma medida entrar ou sair do painel, e
+nesse dia esta linha deixa de se render e a construção fecha com o nome dela,
+que é a régua a funcionar e não a falhar. O denominador é da Comissão, declarado
+em `MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL` com o documento, o endereço e a data em
+que foi lido, e o `check:formas` (F16) exige que a frase continue a dizê-lo.*
 
 ## Bloco F1.7 · acessibilidade e alvos · 04.09.2026
 
