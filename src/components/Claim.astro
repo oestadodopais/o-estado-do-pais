@@ -95,6 +95,29 @@ const {
      que é outra coisa e não se pode confundir com um identificador de HTML. */
   elemId = null,
   sufixoId = null,
+  /**
+   * A PORTA DO PRÓPRIO ALGARISMO (bloco F1.7, item 7, 04.09.2026).
+   *
+   * Só no modo `plano`, que é o da manchete. Quando vem escrita, o elemento do
+   * valor deixa de ser um `<span>` e passa a ser um `<a href>`: o algarismo da
+   * manchete abre a linha dele, que é o que o selo ao lado já fazia e o número
+   * não fazia. O selo continua onde está e continua a ser a porta declarada; o
+   * que muda é que o número passa a ser tocável, com uma área de 44 px que a
+   * folha lhe dá sem lhe mudar o aspeto.
+   *
+   * PORQUE NÃO PARTE NADA, e são três coisas medidas e não três suposições:
+   *
+   *   · `auditaSelo()` procura o selo dentro do PAI do elemento do valor. Trocar
+   *     a etiqueta do elemento não lhe muda o pai: continua a ser o `<h1>`, que
+   *     é onde os selos da manchete estão. Um invólucro novo é que mudaria o
+   *     pai, e é por isso que a porta é a própria etiqueta e não um embrulho;
+   *   · a conferência da transcrição compara o TEXTO dentro de `[data-claim]`, e
+   *     o texto não muda;
+   *   · o nome acessível do `<h1>` sai de um `aria-labelledby` que refere este
+   *     elemento pelo `id`. Uma referência a um `<a>` dá o texto do `<a>`, que é
+   *     o mesmo de antes.
+   */
+  porta = null,
   lang,
   class: klass = '',
   as = 'span',
@@ -131,6 +154,8 @@ if (!lang) {
 const claim = getClaim(id);
 const s = t(lang);
 const Tag = as;
+/* A etiqueta do VALOR, que é a única que a porta muda, e só no modo plano. */
+const TagDoValor = porta && plano && !chip ? 'a' : Tag;
 
 /**
  * ---------------------------------------------------------------------------
@@ -200,9 +225,16 @@ const estilo = escala
        número é a classe PO da UAX #14). Medido na manchete das duas edições a
        390 px. */
     <>
-      <Tag class:list={['claim-value', klass]} id={elemId ?? undefined} data-claim={id} style={estilo} {...rest}>
+      <TagDoValor
+        class:list={['claim-value', klass, porta && 'claim-porta']}
+        id={elemId ?? undefined}
+        href={porta ?? undefined}
+        data-claim={id}
+        style={estilo}
+        {...rest}
+      >
         {valor}
-      </Tag>
+      </TagDoValor>
       {sufixo && <span class="claim-sufixo" id={sufixoId ?? undefined} set:text={sufixo} />}
       {provisorio && <span class="claim-provisorio">{s.prov.provisorio}</span>}
     </>

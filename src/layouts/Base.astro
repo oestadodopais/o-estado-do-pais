@@ -19,7 +19,9 @@ import { DIMENSOES, cartaoDaPagina, urlDoCartao } from '../lib/cartoes.mjs';
 import { t } from '../i18n/strings.mjs';
 import Masthead from '../components/Masthead.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
+/* `PortaDeCorreccoes` saiu daqui a 04.09.2026 (bloco F1.7): quem a rende no
+   rodapé é o `SiteFooter`, para que ela caia DENTRO do `contentinfo` e não no
+   vão entre o `</main>` e o `<footer>`, que não é marco nenhum. */
 
 // A ordem importa: primeiro os tokens, depois a folha que os usa.
 import '../styles/tokens.css';
@@ -286,9 +288,20 @@ const cartaoTwitter = urlDoCartao({ ...cartao, ...DIM_TWITTER });
         <slot />
       </main>
 
-      {portaNoRodape && <PortaDeCorreccoes lang={lang} class="porta-correccoes-rodape" />}
-
-      <SiteFooter lang={lang} path={path} outraLingua={caminhoDaOutraLingua} />
+      {
+        /* A PORTA DAS CORREÇÕES PASSA A IR DENTRO DO RODAPÉ (bloco F1.7,
+           04.09.2026). Estava aqui, entre o `</main>` e o `<footer>`, isto é,
+           dentro de marco nenhum: quem navega uma página por marcos passava por
+           cima dela. Medido antes: 739 das 7 237 páginas construídas. A razão
+           por extenso está em `SiteFooter.astro`; o que muda aqui é só quem a
+           rende. */
+      }
+      <SiteFooter
+        lang={lang}
+        path={path}
+        outraLingua={caminhoDaOutraLingua}
+        porta={portaNoRodape}
+      />
     </div>
 
     {

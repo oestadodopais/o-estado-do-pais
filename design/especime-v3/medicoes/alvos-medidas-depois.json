@@ -1,0 +1,204 @@
+{
+  "quando": "2026-09-04T00:34:28.290Z",
+  "rotas": [
+    "/",
+    "/en/",
+    "/municipios/",
+    "/en/municipalities/",
+    "/municipios/evora/",
+    "/en/municipalities/evora/",
+    "/distritos/",
+    "/en/districts/",
+    "/distritos/evora/",
+    "/en/districts/evora/",
+    "/regioes/",
+    "/en/regions/",
+    "/regioes/alentejo/",
+    "/en/regions/alentejo/",
+    "/areas/",
+    "/en/areas/",
+    "/areas/administracao-interna/",
+    "/en/areas/administracao-interna/",
+    "/dominios/",
+    "/en/domains/",
+    "/dominios/economia-e-financas-publicas/",
+    "/en/domains/economia-e-financas-publicas/",
+    "/livro-razao/",
+    "/en/ledger/",
+    "/livro-razao/concelhos/",
+    "/en/ledger/municipalities/",
+    "/livro-razao/concelhos/evora/",
+    "/en/ledger/municipalities/evora/",
+    "/livro-razao/evora-populacao-2025/",
+    "/en/ledger/evora-populacao-2025/",
+    "/estudos/",
+    "/en/studies/",
+    "/estudos/agua-nao-faturada/",
+    "/en/studies/agua-nao-faturada/",
+    "/estudos/evora-prometido-pago-auditado-2026/texto/",
+    "/en/studies/evora-prometido-pago-auditado-2026/text/",
+    "/agenda/",
+    "/en/agenda/",
+    "/metodo/",
+    "/en/method/",
+    "/sobre/",
+    "/en/about/",
+    "/correcoes/",
+    "/en/corrections/",
+    "/a-verificar/",
+    "/en/to-verify/"
+  ],
+  "larguras": [
+    390,
+    641,
+    768,
+    1023,
+    1280
+  ],
+  "celulas": [
+    {
+      "nome": "H1",
+      "passa": true,
+      "prova": "0 nó(s) graves em 46 rotas × 2 larguras · nenhuma violação"
+    },
+    {
+      "nome": "H2",
+      "passa": false,
+      "prova": "fichas de concelho: 6300 medidas, 0 sem o alvo (nenhum) · a folha: 44 bloco(s) @media com tecto, 3 com uma regra de 44 px que acaba antes de 1024 (inicio.css: @media (max-width: 640px) (tecto 640px); inicio.css: @media (max-width: 640px)` e a I104 mediu o que isso\n   deixava de fora: a 641, a 768 e a 1023 as portas voltavam a 14, 19,2 e 24 px\n   de toque, que são três dos quatro alvos que a I105 nomeia. A Emenda 20c\n   escreve a rede abaixo de 1024. */\n@media (max-width: 1023px) (tecto 640px); site.css: @media (max-width: 640px)` e o buraco era esse: a 641, a 768 e a\n   1023 as duas ligações voltavam a medir 24,4 px de toque. Medido antes: 45\n   passagens de «O registo de correções →» e 46 de «The corrections log →» na\n   faixa, mais 24 do endereço de correio. A Emenda 20c diz 44 px abaixo de 1024,\n   e é essa a largura da rede: 1023 é a última que ainda não é a coluna. */\n@media (max-width: 1023px) (tecto 640px)) · no ecrã, na faixa 641 a 1023: 17215 alvos medidos, 7413 deles com 44 px a 390, 129 sem eles na faixa (6× a.uni-porta «Castelo Branco» · 47.8×36.4 de toque (caixa 63.3×50.8); 6× a.uni-porta «Évora» · 61.4×35.9 de toque (caixa 68.7×49.4); 6× a.uni-porta «Guarda» · 33.7×41.1 de toque (caixa 47.2×55.5); 6× a.uni-porta «Portalegre» · 42.3×41.9 de toque (caixa 61.6×52.1)) · 2409 não medido(s)"
+    },
+    {
+      "nome": "H3",
+      "passa": true,
+      "prova": "7237 página(s) do dist/: 0 com um número de <h1> diferente de 1 · nas rotas medidas: 0 de 230 passagens"
+    },
+    {
+      "nome": "H4",
+      "passa": true,
+      "prova": "7237 página(s) do dist/: 7221 com a porta dentro de um marco, 0 fora, 16 sem porta (os documentos alojados) · nas rotas medidas: 0 fora de marco"
+    },
+    {
+      "nome": "H5",
+      "passa": true,
+      "prova": "54 caixa(s) com deslocamento horizontal medidas, 0 sem teclado, nome ou papel"
+    },
+    {
+      "nome": "H6",
+      "passa": true,
+      "prova": "primeira página, a 1280: 8 alvo(s) da I105 medidos, 0 abaixo de 32 px (nenhum)"
+    },
+    {
+      "nome": "H7",
+      "passa": true,
+      "prova": "70 algarismo(s) de manchete medidos, 61 com 44 px inteiros, 9 com a área partilhada com outra porta da MESMA manchete (3× a.claim-value.claim-porta «0,7» · 44.7×35.6 de toque (caixa 41.1×33); 2× a.claim-value.claim-porta «22» · 44.7×35.6 de toque (caixa 34.7×33); 1× a.claim-value.claim-porta «23» · 44.7×32.1 de toque (caixa 34.7×33); 1× a.claim-value.claim-porta «23» · 44.7×37.5 de toque (caixa 40.6×40)), 0 sem alvo e sem essa razão (nenhum)"
+    },
+    {
+      "nome": "H8",
+      "passa": true,
+      "prova": "604 registo(s) de cartão, 302 da edição inglesa, 298 com unidade · 0 com a unidade em português na manchete · 210 sem tradução na tabela da casa, e a tabela manda ficarem em português"
+    },
+    {
+      "nome": "H9",
+      "passa": true,
+      "prova": "1250 nome(s) de diploma em páginas inglesas: 1247 com lang=\"pt-PT\", 3 dentro de uma transcrição da fonte (marca-se inteira, na língua da fonte: não é deste bloco), 0 sem marca"
+    },
+    {
+      "nome": "H13",
+      "passa": true,
+      "prova": "/municipios nas duas edições e nas 5 larguras: 10 passagem(ns) · portas de concelho por página: 308 (esperado 308) · dentro da lista agrupada: 308"
+    },
+    {
+      "nome": "H10",
+      "passa": true,
+      "prova": "aria-expanded no dist/: 7221 ocorrência(s), 0 fora do feitio que o guião acompanha (details > summary[aria-controls]) · Método: 10 passagem(ns), 0 com <title> ou <h1> vazio · <title> = «Método · O Estado do País»"
+    }
+  ],
+  "axe": {},
+  "graves": 0,
+  "dist_varrido": {
+    "n": 7237,
+    "h1Errado": 0,
+    "semPorta": 16,
+    "portaEmMarco": 7221,
+    "portaForaDeMarco": 0,
+    "expanded": 7221,
+    "expandedForaDoGuiao": 0,
+    "exemplos": {
+      "h1": [],
+      "porta": [],
+      "expanded": []
+    }
+  },
+  "cartoes": {
+    "registos": 604,
+    "en": 302,
+    "comUnidade": 298,
+    "semTraducao": 210,
+    "emPortugues": 0,
+    "exemplos": []
+  },
+  "leis": {
+    "comMarca": 1247,
+    "emTranscricao": 3,
+    "semMarca": 0,
+    "exemplos": []
+  },
+  "folhas": {
+    "blocos": 44,
+    "maus": [
+      "inicio.css: @media (max-width: 640px) (tecto 640px)",
+      "inicio.css: @media (max-width: 640px)` e a I104 mediu o que isso\n   deixava de fora: a 641, a 768 e a 1023 as portas voltavam a 14, 19,2 e 24 px\n   de toque, que são três dos quatro alvos que a I105 nomeia. A Emenda 20c\n   escreve a rede abaixo de 1024. */\n@media (max-width: 1023px) (tecto 640px)",
+      "site.css: @media (max-width: 640px)` e o buraco era esse: a 641, a 768 e a\n   1023 as duas ligações voltavam a medir 24,4 px de toque. Medido antes: 45\n   passagens de «O registo de correções →» e 46 de «The corrections log →» na\n   faixa, mais 24 do endereço de correio. A Emenda 20c diz 44 px abaixo de 1024,\n   e é essa a largura da rede: 1023 é a última que ainda não é a coluna. */\n@media (max-width: 1023px) (tecto 640px)"
+    ]
+  },
+  "caixas_que_se_deslocam": {
+    "div.agenda-eixo-caixa | focavel=true nomeada=true papel=region": 6,
+    "div.svg-scroll | focavel=true nomeada=true papel=region": 6,
+    "div.svg-scroll.conv-eixo | focavel=true nomeada=true papel=region": 4,
+    "div.texto-tabela | focavel=true nomeada=true papel=group": 6,
+    "ol.faixa | focavel=true nomeada=true papel=(ol)": 32
+  },
+  "alvos_maus_por_classe": {
+    "a": 6903,
+    "a.texto-figura.texto-figura-porta": 2888,
+    "a.src-chip": 2398,
+    "a.prova-valor": 628,
+    "a.mob-leitura-porta": 414,
+    "a.uni-porta": 282,
+    "a.marcador": 271,
+    "a.lang": 230,
+    "a.texto-figura-porta-apos": 210,
+    "a.mob-leitura-k": 184,
+    "a.texto-ligacao": 125,
+    "a.ligacao-dados": 100,
+    "summary.regra-cabeca": 88,
+    "a.src-chip.is-unverified": 83,
+    "a.agenda-eixo-porta": 80,
+    "a.ligacao-email": 66,
+    "a.mun-banda-porta": 50,
+    "a.ligacao-externa": 48,
+    "a.texto-conta": 30,
+    "summary": 22,
+    "a.dominios-nome.dominios-porta": 18,
+    "a.chipb": 16,
+    "a.cartao-porta": 14,
+    "a.lig": 12,
+    "button.pesquisa-submeter": 10,
+    "button.botao-correcao": 10,
+    "a.claim-value.claim-porta": 9,
+    "button.densidade-b": 4,
+    "a.porta-nome": 2,
+    "a.lig.porta-abrir": 2
+  },
+  "alvos_maus_total": 15197,
+  "buraco_por_classe": {
+    "a": 63,
+    "a.uni-porta": 36,
+    "a.claim-value.claim-porta": 9,
+    "a.texto-ligacao": 8,
+    "a.dominios-nome.dominios-porta": 6,
+    "a.ligacao-externa": 6,
+    "a.src-chip": 1
+  },
+  "buraco_total": 129,
+  "plantas": []
+}

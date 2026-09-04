@@ -1,0 +1,217 @@
+{
+  "quando": "2026-09-03T23:55:34.099Z",
+  "rotas": [
+    "/",
+    "/en/",
+    "/municipios/",
+    "/en/municipalities/",
+    "/municipios/evora/",
+    "/en/municipalities/evora/",
+    "/distritos/",
+    "/en/districts/",
+    "/distritos/evora/",
+    "/en/districts/evora/",
+    "/regioes/",
+    "/en/regions/",
+    "/regioes/alentejo/",
+    "/en/regions/alentejo/",
+    "/areas/",
+    "/en/areas/",
+    "/areas/administracao-interna/",
+    "/en/areas/administracao-interna/",
+    "/dominios/",
+    "/en/domains/",
+    "/dominios/economia-e-financas-publicas/",
+    "/en/domains/economia-e-financas-publicas/",
+    "/livro-razao/",
+    "/en/ledger/",
+    "/livro-razao/concelhos/",
+    "/en/ledger/municipalities/",
+    "/livro-razao/concelhos/evora/",
+    "/en/ledger/municipalities/evora/",
+    "/livro-razao/evora-populacao-2025/",
+    "/en/ledger/evora-populacao-2025/",
+    "/estudos/",
+    "/en/studies/",
+    "/estudos/agua-nao-faturada/",
+    "/en/studies/agua-nao-faturada/",
+    "/estudos/evora-prometido-pago-auditado-2026/texto/",
+    "/en/studies/evora-prometido-pago-auditado-2026/text/",
+    "/agenda/",
+    "/en/agenda/",
+    "/metodo/",
+    "/en/method/",
+    "/sobre/",
+    "/en/about/",
+    "/correcoes/",
+    "/en/corrections/",
+    "/a-verificar/",
+    "/en/to-verify/"
+  ],
+  "larguras": [
+    390,
+    641,
+    768,
+    1023,
+    1280
+  ],
+  "celulas": [
+    {
+      "nome": "H1",
+      "passa": false,
+      "prova": "4 nó(s) graves em 46 rotas × 2 larguras · region [moderate]=72 · scrollable-region-focusable [serious]=4 · empty-heading [minor]=4"
+    },
+    {
+      "nome": "H2",
+      "passa": false,
+      "prova": "fichas de concelho: 6300 medidas, 6300 sem o alvo (40× a «Lagoa →» · 44×23.7 de toque (caixa 52.8×23.2); 30× a «Alandroal →» · 44×23.7 de toque (caixa 78.8×23.2); 30× a «Arraiolos →» · 44×23.7 de toque (caixa 75×23.2); 30× a «Borba →» · 44×23.7 de toque (caixa 52.9×23.2)) · buraco 641 a 1023: 20696 alvos medidos, 6414 deles com 44 px a 390, 4042 sem eles na faixa (46× a «The corrections log →» · 44×24.8 de toque (caixa 152.4×24); 45× a «O registo de correções →» · 44×24.8 de toque (caixa 172.8×24); 24× a.src-chip «fonte · Quadro institucional de in» · 31.6×44 de toque (caixa 39.5×44.4); 24× a.src-chip «source · Institutional indicator f» · 30.6×44 de toque (caixa 48×44.4)) · 58 não medido(s)"
+    },
+    {
+      "nome": "H3",
+      "passa": false,
+      "prova": "7237 página(s) do dist/: 2 com um número de <h1> diferente de 1 (en/index.html (2); index.html (2)) · nas rotas medidas: 10 de 230 passagens"
+    },
+    {
+      "nome": "H4",
+      "passa": false,
+      "prova": "7237 página(s) do dist/: 6482 com a porta dentro de um marco, 739 fora (a-verificar/index.html; agenda/index.html; areas/administracao-interna/index.html; areas/ambiente-e-energia/index.html; areas/economia-e-coesao-territorial/index.html), 16 sem porta (os documentos alojados) · nas rotas medidas: 180 fora de marco"
+    },
+    {
+      "nome": "H5",
+      "passa": false,
+      "prova": "54 caixa(s) com deslocamento horizontal medidas, 54 sem teclado, nome ou papel (home/pt@390 ol.faixa «fora do limiar1 de 2189,7fonte · Q» sem tabindex sem papel; home/pt@641 ol.faixa «fora do limiar1 de 2189,7fonte · Q» sem tabindex sem papel; home/pt@768 ol.faixa «fora do limiar1 de 2189,7fonte · Q» sem tabindex sem papel; home/pt@1023 ol.faixa «fora do limiar1 de 2189,7fonte · Q» sem tabindex sem papel)"
+    },
+    {
+      "nome": "H6",
+      "passa": false,
+      "prova": "primeira página, a 1280: 8 alvo(s) da I105 medidos, 8 abaixo de 32 px (1× a.lig «O livro-razão →» · 44×15.1 de toque (caixa 92.6×14); 1× a.lig.porta-abrir «a página inteira →» · 44×19.6 de toque (caixa 108.2×19.2); 1× a.ligacao-email «correcoes@oestadodopais.pt» · 44×19.6 de toque (caixa 216.6×19); 1× a «O registo de correções →» · 44×24.4 de toque (caixa 172.8×24))"
+    },
+    {
+      "nome": "H7",
+      "passa": false,
+      "prova": "20 algarismo(s) de manchete medidos, 16 sem alvo de 44 px (6× a.prova-valor «4» · 43.7×43.3 de toque (caixa 17.5×35); 6× a.prova-valor «9» · 43.7×43.3 de toque (caixa 17.5×35); 2× a.prova-valor «4» · 43.7×43.3 de toque (caixa 20.5×42); 2× a.prova-valor «9» · 43.7×43.3 de toque (caixa 20.5×42))"
+    },
+    {
+      "nome": "H8",
+      "passa": false,
+      "prova": "604 registo(s) de cartão, 302 da edição inglesa, 298 com unidade · 204 com a unidade em português na manchete (6× «29 pontos de índice» devia trazer «index points»; 6× «3 lugares» devia trazer «seats»; 6× «7 pelouros» devia trazer «portfolios»; 4× «4 lugares» devia trazer «seats») · 6 sem tradução na tabela da casa, e a tabela manda ficarem em português"
+    },
+    {
+      "nome": "H9",
+      "passa": false,
+      "prova": "1250 nome(s) de diploma em páginas inglesas: 934 com lang=\"pt-PT\", 3 dentro de uma transcrição da fonte (marca-se inteira, na língua da fonte: não é deste bloco), 313 sem marca (Lei n.º 51/2018 @ en/agenda/index.html; Lei n.º 73/2013 @ en/agenda/index.html; Lei n.º 73/2013 @ en/ledger/abrantes-indice-de-divida-2024/index.html; Lei n.º 73/2013 @ en/ledger/agueda-indice-de-divida-2024/index.html)"
+    },
+    {
+      "nome": "H10",
+      "passa": true,
+      "prova": "aria-expanded no dist/: 7221 ocorrência(s), 0 fora do feitio que o guião acompanha (details > summary[aria-controls]) · Método: 10 passagem(ns), 0 com <title> ou <h1> vazio · <title> = «Método · O Estado do País»"
+    }
+  ],
+  "axe": {
+    "region [moderate]": 72,
+    "scrollable-region-focusable [serious]": 4,
+    "empty-heading [minor]": 4
+  },
+  "graves": 4,
+  "dist_varrido": {
+    "n": 7237,
+    "h1Errado": 2,
+    "semPorta": 16,
+    "portaEmMarco": 6482,
+    "portaForaDeMarco": 739,
+    "expanded": 7221,
+    "expandedForaDoGuiao": 0,
+    "exemplos": {
+      "h1": [
+        "en/index.html (2)",
+        "index.html (2)"
+      ],
+      "porta": [
+        "a-verificar/index.html",
+        "agenda/index.html",
+        "areas/administracao-interna/index.html",
+        "areas/ambiente-e-energia/index.html",
+        "areas/economia-e-coesao-territorial/index.html"
+      ],
+      "expanded": []
+    }
+  },
+  "cartoes": {
+    "registos": 604,
+    "en": 302,
+    "comUnidade": 298,
+    "semTraducao": 6,
+    "emPortugues": 204,
+    "exemplos": [
+      "6× «29 pontos de índice» devia trazer «index points»",
+      "6× «3 lugares» devia trazer «seats»",
+      "6× «7 pelouros» devia trazer «portfolios»",
+      "4× «4 lugares» devia trazer «seats»"
+    ]
+  },
+  "leis": {
+    "comMarca": 934,
+    "emTranscricao": 3,
+    "semMarca": 313,
+    "exemplos": [
+      "Lei n.º 51/2018 @ en/agenda/index.html",
+      "Lei n.º 73/2013 @ en/agenda/index.html",
+      "Lei n.º 73/2013 @ en/ledger/abrantes-indice-de-divida-2024/index.html",
+      "Lei n.º 73/2013 @ en/ledger/agueda-indice-de-divida-2024/index.html"
+    ]
+  },
+  "folhas": null,
+  "caixas_que_se_deslocam": {
+    "div.agenda-eixo-caixa | focavel=false nomeada=false papel=null": 6,
+    "div.svg-scroll | focavel=false nomeada=false papel=null": 6,
+    "div.svg-scroll.conv-eixo | focavel=false nomeada=false papel=null": 4,
+    "div.texto-tabela | focavel=false nomeada=false papel=null": 6,
+    "ol.faixa | focavel=false nomeada=true papel=null": 32
+  },
+  "alvos_maus_por_classe": {
+    "a": 13930,
+    "a.chipb": 4928,
+    "a.texto-figura.texto-figura-porta": 2888,
+    "a.src-chip": 2483,
+    "a.prova-valor": 804,
+    "a.mob-leitura-porta": 414,
+    "a.uni-porta": 334,
+    "a.marcador": 271,
+    "a.ligacao-email": 242,
+    "a.lang": 230,
+    "a.texto-figura-porta-apos": 210,
+    "a.mob-leitura-k": 184,
+    "a.texto-ligacao": 142,
+    "a.ligacao-dados": 100,
+    "summary.regra-cabeca": 88,
+    "a.src-chip.is-unverified": 83,
+    "a.agenda-eixo-porta": 80,
+    "a.mun-banda-porta": 50,
+    "a.ligacao-externa": 48,
+    "a.texto-conta": 30,
+    "summary": 22,
+    "a.cartao-porta": 20,
+    "a.lig": 18,
+    "a.dominios-nome.dominios-porta": 18,
+    "button.botao-correcao": 10,
+    "a.porta-nome": 8,
+    "a.lig.porta-abrir": 8,
+    "button.densidade-b": 4
+  },
+  "alvos_maus_total": 27647,
+  "buraco_por_classe": {
+    "a.chipb": 3696,
+    "a": 207,
+    "a.src-chip": 49,
+    "a.uni-porta": 30,
+    "a.ligacao-email": 24,
+    "a.lig": 6,
+    "a.porta-nome": 6,
+    "a.lig.porta-abrir": 6,
+    "a.dominios-nome.dominios-porta": 6,
+    "a.ligacao-externa": 6,
+    "a.texto-ligacao": 6
+  },
+  "buraco_total": 4042,
+  "plantas": []
+}

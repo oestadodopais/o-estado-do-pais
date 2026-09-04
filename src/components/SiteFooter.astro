@@ -54,12 +54,33 @@
  * marco, e pô-la fora escondia-a de quem a procura pelo caminho normal. A
  * navegação continua a ser navegação e mais nada: o rótulo é irmão dela dentro
  * do rodapé, e não um item da lista.
+ *
+ * ---------------------------------------------------------------------------
+ * A PORTA DAS CORREÇÕES ENTRA AQUI, PELA MESMA RAZÃO (bloco F1.7, 04.09.2026)
+ * ---------------------------------------------------------------------------
+ * O parágrafo acima descreve a porta como estando FORA do rodapé, e era: o
+ * invólucro rendia-a entre o `</main>` e o `<footer>`, isto é, dentro de marco
+ * nenhum. Medido a 04.09.2026 sobre `dist/`: 739 das 7 237 páginas construídas
+ * tinham a porta fora de qualquer marco, e a auditoria de 02.09 contou 19 nas
+ * suas 30. Quem navega por marcos — que é como se lê uma página desconhecida com
+ * um leitor de ecrã — passava por cima dela sem nunca a encontrar: o `<main>`
+ * acabava antes e o `contentinfo` começava depois.
+ *
+ * Entra no `<footer>` e não num `<nav>` próprio: a porta não é navegação, é a
+ * maneira de responder a quem publica, que é exactamente o que um `contentinfo`
+ * é. Vem PRIMEIRO, antes da navegação e do rótulo, porque é essa a ordem em que
+ * ela já se via na página, e a ordem do documento é a ordem em que se ouve.
+ *
+ * As 6 482 páginas que já a punham no seu próprio aparelho, dentro do `<main>`,
+ * não mudam nada: essas passam `portaNoRodape={false}` e continuam a tê-la onde
+ * a tinham, dentro de um marco desde sempre.
  */
 import { routePath, otherLanguagePath, normalizePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import RotuloDeIA from './RotuloDeIA.astro';
+import PortaDeCorreccoes from './PortaDeCorreccoes.astro';
 
-const { lang = 'pt', path, outraLingua = null } = Astro.props;
+const { lang = 'pt', path, outraLingua = null, porta = false } = Astro.props;
 const s = t(lang);
 const aqui = normalizePath(path ?? Astro.url.pathname);
 /* Escrito, quando a rota não existe nas duas edições (a página de leitura).
@@ -92,6 +113,8 @@ const secoes = [
 ---
 
 <footer class="rodape">
+  {porta && <PortaDeCorreccoes lang={lang} class="porta-correccoes-rodape" />}
+
   <nav class="rodape-nav" aria-label={s.nav.rotuloRodape}>
     {secoes.map(([rota, rotulo]) => <a href={routePath(rota, lang)}>{rotulo}</a>)}
     {/* O NOME DA OUTRA EDIÇÃO ESTÁ NA OUTRA LÍNGUA, e o atributo di-lo

@@ -579,6 +579,20 @@ export function pecasDoCorpo({
   /* A porta em fluxo fecha a secção ANTERIOR quando uma nova de nível 2 abre, e
      fecha a ÚLTIMA depois do laço: por isso o marcador fica fora dele. */
   let seccaoPorFechar = false;
+  /**
+   * O ÚLTIMO TÍTULO VISTO, para dar nome à caixa que se desloca (bloco F1.7,
+   * item 2, 04.09.2026). Uma tabela larga corre dentro do seu `<div>` no
+   * telemóvel, e uma caixa que se desloca e não é focável deixa de fora quem
+   * não tem rato: o axe conta-o como violação grave. O nome dela não pode ser
+   * uma cadeia nova — o brief não deixa —, e não precisa de ser: é o título da
+   * secção onde a tabela vive, referido pelo `id` que ele já tem
+   * (`bloco-<i>`). Antes do primeiro título não há nome nenhum, e aí a caixa
+   * fica só focável, que é o que o axe exige; um `role="region"` sem nome era
+   * um marco anónimo, que é pior do que nenhum.
+   *
+   * @type {string | null}
+   */
+  let ultimoTitulo = null;
   const fechaSeccaoEmFluxo = () => {
     if (!seccaoPorFechar || !rotuloDoFimDeSeccao) return;
     saida.html(
@@ -622,6 +636,7 @@ export function pecasDoCorpo({
          mesma coordenada que o `data-registo-bloco` já declara: um id feito do
          texto mudaria no dia em que o documento mudasse uma palavra, e uma
          âncora partilhada que muda é uma âncora partida. */
+      ultimoTitulo = `bloco-${bloco.i}`;
       saida.html(`<h${nivel} id="bloco-${bloco.i}"${marcaDoBloco}${atributosDaUnidade(base)}${aria}>`);
       escreveUnidade(bloco, base, saida, ctx);
       saida.html(`</h${nivel}>`);
@@ -647,8 +662,23 @@ export function pecasDoCorpo({
     }
     if (bloco.kind === 'table') {
       /* A caixa que rola no móvel. Não é um bloco para a leitura do olho, e por
-         isso não leva marca nenhuma: a marca do bloco é da `<table>`. */
-      saida.html(`<div class="texto-tabela"><table${marcaDoBloco}>`);
+         isso não leva marca de registo nenhuma: a marca do bloco é da
+         `<table>`. O que ela leva, desde o bloco F1.7, é o que uma caixa que se
+         desloca tem de levar para se alcançar sem rato: `tabindex`, e o papel e
+         o nome quando há um título por cima que lho dê. */
+      /* `group` E NÃO `region`, e é uma medição e não um gosto. `region` é um
+         marco, e dois marcos com o mesmo nome na mesma página mandam quem ouve
+         escolher entre coisas que soam iguais (o axe chama-lhe
+         `landmark-unique`). Medido a 04.09.2026 em
+         `evora-prometido-pago-auditado-2026`: duas secções do documento têm o
+         MESMO título, e as duas tabelas por baixo delas ficavam com o mesmo
+         nome. Distingui-las obrigava a escrever uma cadeia nova, que este bloco
+         não pode. `group` não é marco, não entra na lista de marcos, continua a
+         ser um papel próprio e não vazio, e leva o nome do título por cima. */
+      const alcance = ultimoTitulo
+        ? ` tabindex="0" role="group" aria-labelledby="${ultimoTitulo}"`
+        : ' tabindex="0"';
+      saida.html(`<div class="texto-tabela"${alcance}><table${marcaDoBloco}>`);
       bloco.rows.forEach((linha, r) => {
         saida.html('<tr>');
         linha.forEach((celula, c) => {

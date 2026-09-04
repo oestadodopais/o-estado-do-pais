@@ -192,7 +192,8 @@ const ilhaJson = JSON.stringify(ilha).replace(/</g, '\\u003c');
       `data-contorno` é o único atributo que separa uma marca das outras, e ele
       só existe na página daquela região.
       ---------------------------------------------------------------------- */}
-  <div class="svg-scroll conv-eixo">
+  {/* Idem (bloco F1.7, item 2): o nome é o `<title>` do próprio desenho. */}
+  <div class="svg-scroll conv-eixo" tabindex="0" role="region" aria-labelledby="ruleTitle">
     <svg
       class="rule-svg"
       viewBox={`0 0 ${largura} ${altura}`}

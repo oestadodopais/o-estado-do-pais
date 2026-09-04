@@ -82,7 +82,18 @@ const destino = (l) => (l.prova ? CAMINHO_DA_PROVA : routePath(l.rota, lang));
 
   {/* ===================================== o sumário: o índice desta página */}
   <nav class="metodo-sumario" aria-labelledby="sumario" style="margin-top:clamp(22px,3vw,32px)">
-    <h2 class="metodo-sumario-k" id="sumario">{s.metodo.sumarioK}</h2>
+    {/* O TÍTULO DO SUMÁRIO ESTAVA VAZIO, E ERA UMA CHAVE QUE MUDOU DE CASA
+        (bloco F1.7, 04.09.2026; a auditoria de 02.09 mediu-o como «um título
+        vazio no Método»). A cadeia nasceu aqui como `metodo.sumarioK` e desceu
+        para `leitura.sumarioK` quando a Agenda passou a precisar das mesmas duas
+        palavras (o comentário está em `src/i18n/strings.mjs`); esta linha ficou
+        a pedir a chave antiga, que já não existe, e rendia a cadeia vazia. O
+        resultado: um `<h2>` sem texto, e um `<nav aria-labelledby="sumario">`
+        cujo nome acessível era o nada.
+
+        Nenhuma palavra nova: é a MESMA cadeia que a Agenda e a página de leitura
+        já imprimem para o mesmo sumário. */}
+    <h2 class="metodo-sumario-k" id="sumario">{s.leitura.sumarioK}</h2>
     <ol class="metodo-sumario-lista">
       {
         REGRAS.map((r) => (
