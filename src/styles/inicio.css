@@ -3048,9 +3048,10 @@ a.porta:hover .porta-abrir {
    alvo nenhum, e assim que a dobra abre a porta mede os 32 px que a folha lhe dá.
 
    `display: none` no corpo fechado põe a caixa a zero e faz a folha dizer o que
-   já era verdade. NÃO MUDA UM PÍXEL do que se vê (a altura de `/` a 390 e as oito
-   capturas ficam iguais, medidas), não mexe no `<details>` nativo (a regra deixa
-   de valer no instante em que o `[open]` aparece) e não precisa de guião. */
+   já era verdade. NÃO MUDA UM PÍXEL DA PÁGINA, e isso mediu-se com a regra ligada
+   e desligada sobre a MESMA construção, nas duas edições e a 390, 768 e 1280:
+   diferença de 0 px nas seis medidas. Não mexe no `<details>` nativo (a regra
+   deixa de valer no instante em que o `[open]` aparece) e não precisa de guião. */
 .dobra:not([open]) .dobra-corpo {
   display: none;
 }
