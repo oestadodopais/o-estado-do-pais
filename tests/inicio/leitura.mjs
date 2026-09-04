@@ -118,10 +118,12 @@
  * `/` a 390 menor do que hoje», e um bloco que tira dois painéis de uma página e
  * a deixa na mesma altura não fez o que veio fazer.
  *
- * J12 · A FORMA DE CADA LEITURA (uma célula a mais do que as onze do brief, para
- * a decisão do lugar de direção de 04.09.2026: «para os três cartões da primeira
- * página que pertencem ao domínio, a área de leitura mostra uma linha só, com a
- * porta, e não uma segunda leitura inteira»).
+ * J12 · A FORMA DE CADA LEITURA (uma célula a mais do que as onze do brief).
+ * Nasceu para medir a primeira instrução do lugar de direção de 04.09.2026
+ * («para os três cartões da primeira página que pertencem ao domínio, a área de
+ * leitura mostra uma linha só, com a porta, e não uma segunda leitura inteira»),
+ * e é hoje a célula que RECUSA essa forma, porque a decisão foi corrigida no
+ * mesmo dia depois do Blocking 3 da leitura a frio.
  *
  * A LEITURA BREVE É A MESMA PARA AS 21 (decisão corrigida de 04.09.2026, depois
  * do Blocking 3 da leitura a frio): a unidade, o limiar onde o quadro publica um

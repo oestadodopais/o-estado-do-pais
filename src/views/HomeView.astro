@@ -147,11 +147,19 @@ const regioesComPorta = slugsDasRegioes().join(' ');
    «não encontrei uma peça fora do limiar com régua». Ela vive agora dentro da
    dobra da leitura, onde não custa um píxel enquanto a leitura estiver fechada. */
 /* ---------------------------------------------------------------------------
- * A LEITURA DE UMA MEDIDA QUE VIVE NUM DOMÍNIO É UMA PORTA (04.09.2026)
+ * A LEITURA DE UMA MEDIDA QUE VIVE NUM DOMÍNIO ACRESCENTA UMA PORTA (04.09.2026)
  * ---------------------------------------------------------------------------
- * Decisão do lugar de direção de 04.09: «para os três cartões da primeira página
- * que pertencem ao domínio, a área de leitura mostra uma linha só, com a porta,
- * e não uma segunda leitura inteira».
+ * A LEITURA BREVE É A MESMA PARA AS 21, e as três que vivem num domínio
+ * ACRESCENTAM, no fim, a porta «Ver no domínio →». Não trocam a leitura por ela.
+ *
+ * A DECISÃO FOI CORRIGIDA NO PRÓPRIO DIA, e fica escrito porque é a razão de
+ * esta porta existir. A primeira instrução do lugar de direção dizia «para os
+ * três cartões da primeira página que pertencem ao domínio, a área de leitura
+ * mostra uma linha só, com a porta, e não uma segunda leitura inteira». A
+ * leitura a frio do Codex mediu o que isso custava (Blocking 3): a primeira
+ * página passava de 7 para 5 definições, de 13 para 12 limiares e réguas, e de
+ * 21 para 18 selos de fonte. Não era compactar, era apagar. O lugar de direção
+ * corrigiu a decisão a 04.09.2026, e a página faz o que está escrito acima.
  *
  * QUEM DECIDE É A MESMA TABELA QUE DECIDE O DESTINO DO CARTÃO,
  * `dominioDaLinha()`, e não uma segunda lista escrita aqui: a leitura de uma
@@ -161,11 +169,11 @@ const regioesComPorta = slugsDasRegioes().join(' ');
  * Painel Social); amanhã são as que a primeira vaga puser no ar, sem uma linha
  * mudar aqui.
  *
- * O VALOR NÃO VAI NA LINHA, e a decisão dizia «uma linha com o valor e a porta».
- * A régua A3 conta `data-claim` por id e exige um por página; o valor daquela
- * medida está no cartão da faixa, que é o «Relance» dela nesta página, e uma
- * segunda rendição do mesmo id fecha a medida de aceitação J2. Fica a porta, e o
- * relatório do bloco diz porquê.
+ * O VALOR NÃO VAI NA LEITURA, em nenhuma das 21, e a primeira instrução dizia
+ * «uma linha com o valor e a porta». A régua A3 conta `data-claim` por id e exige
+ * um por página; o valor daquela medida está no cartão da faixa, que é o
+ * «Relance» dela nesta página, e uma segunda rendição do mesmo id fecha a medida
+ * de aceitação J2. Fica a porta, e o relatório do bloco diz porquê.
  *
  * @param {string} claim
  * @returns {string|null}
