@@ -362,7 +362,39 @@ correcção de fundo e não se faz aqui: traria à régua todas as frases das pe
 `src/styles/inicio.css` nem `tests/inicio/*`, que são do bloco que corre em
 paralelo.
 
-## 9 · As capturas
+## 9 · As duas fusões e os três códigos de saída
+
+O ramo saiu de `origin/main` em `6d63adfd` e fundiu `main` duas vezes enquanto o
+bloco corria, as duas sem conflito e nenhuma a tocar um ficheiro deste bloco:
+
+* `306e4c68`, o F1.1b (a primeira página: `HomeView`, os componentes do início, o
+  guião e a folha do início, as réguas de `tests/inicio/`). O que os dois blocos
+  partilham é o inventário da voz e o registo das revisões, e cada um escreveu a
+  sua secção própria;
+* `69ba3abf`, ficheiros de registo e o `portao.yml` a subir o `timeout-minutes`
+  de 30 para 45.
+
+Os três portões correram sobre a cabeça fundida, e os códigos de saída foram
+lidos de ficheiro e não do ecrã (`cmd > log 2>&1; echo $? > ficheiro.exit`):
+
+```
+npm run build      → 0
+npm run typecheck  → 0
+npm run verify     → 0   (89 células verdes)
+```
+
+**A ordem dos commits foi escolhida para que cada um seja verde por
+construção**: a máquina do atraso antes do que a rende, o que a rende antes das
+cadeias que o inventário declara, e cada frase nova no mesmo commit da linha do
+inventário que a declara. Os três portões correram inteiros sobre a cabeça, que é
+a árvore que segue para o `portao` do GitHub.
+
+**O Método não é rota inventariada**, e por isso a frase nova do Portal BASE não
+passa pela régua da voz: a Emenda 15 isenta o Método, o Sobre e o recibo, e
+`ROTAS_DO_INVENTARIO` não os traz. O que a governa é a amarra das decisões, que
+prende os bytes do ficheiro ao carimbo da §1.99.
+
+## 10 · As capturas
 
 Doze, em `design/especime-v3/capturas/frescura-2026-09-04/`, todas PNG, tema
 claro, página inteira: `linha-iefp`, `metodo` e `concelho`, a 390 e a 1280, nas
