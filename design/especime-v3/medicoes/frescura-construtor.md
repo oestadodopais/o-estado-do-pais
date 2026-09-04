@@ -5,6 +5,58 @@ Claude Opus 5, 04.09.2026. O bloco é o F1.6 do
 `design/observatorio/PLANO-fiabilidade-2026-09-02.md` §3 e cumpre as decisões
 (2), (3) e (5) da `DECISIONS.md` §1.98. Sem travessões na prosa.*
 
+## 0 · Estado ao pausar (04.09)
+
+*O diretor fechou o portátil a meio da segunda passagem. Esta secção diz o que
+está feito, o que está a meio e por onde se retoma. Escrita antes do último
+commit, e a cabeça que ela nomeia é a que ficou empurrada.*
+
+**A primeira passagem está inteira e correu o `portao` verde** (corrida
+`33854747585`, cabeça `cdcd445a`). Tudo o que está abaixo desta secção descreve
+essa passagem, com as correções da segunda já aplicadas onde elas mudaram o
+resultado.
+
+**A segunda passagem responde à leitura a frio do Codex de 04.09.2026**
+(`design/especime-v3/critica/2026-09-04-codex-leitura-f16-frescura.md`, na árvore
+principal). O leitor viu as cinco plantas de três classes; os Blocking 1 e 2 e o
+Major 3 são elas. A triagem do lugar de direção dá seis itens reais.
+
+| item | estado | o que falta |
+| --- | --- | --- |
+| **Major 7** · o Método sem adjetivos | **feito** | nada. Saíram «navegador comum» e «a única fonte lida assim»; ficou «um navegador» e «nenhuma outra o é». A §1.99 tem o resumo novo, `b4cc3594f960` |
+| **Major 8** · nenhuma cadeia fala da casa | **feito** | nada. A frase do atraso é deíctica («nesta linha: 2025-12, lido a 26.08.2026»), a dica do contador deixou de dizer quem publica, e as sete linhas do inventário foram trocadas |
+| **Major 9** · a frase inglesa com «measures» | **feito** | nada. «headline measures», com «headline indicators» citado uma vez e atribuído à Comissão |
+| **Major 10** · a régua F16 a ler a página | **feito** | nada. A declaração perdeu o campo `palavra`; a régua compõe as duas palavras de `numero` e de `FIGURAS_SOCIAL.length` e procura-as no `dist/` |
+| **Major 11** · as plantas com registo e os guardas | **feito** | nada. Três `.patch` e três saídas em `design/especime-v3/medicoes/frescura-plantas/`, com o `README.md` que diz como se repetem; treze casos novos em `provar-guardas.mjs` (54 para 67) |
+| **Minor 12** · o excerto com a lista das dezassete | **feito** | nada. A lista está na §5 deste relatório, copiada do texto extraído |
+
+**O que fica por fazer, e é só isto:**
+
+1. **`npm run verify` não voltou a correr depois da segunda passagem.** O
+   `build` e o `typecheck` correram e saíram a 0; o `verify` leva cerca de treze
+   minutos e não cabia na paragem. **Ao retomar, corre-se primeiro**, antes de
+   qualquer outra coisa. Os códigos dos três estão na §9.
+2. **O `portao` não correu sobre a cabeça da segunda passagem.** Correu sobre
+   `cdcd445a`, que é a primeira. A corrida nova é do empurrão desta paragem, e
+   não se esperou por ela.
+3. **A entrada do `DECISIONS.md` passa de §1.99 a §1.100 ao retomar.** O lugar de
+   direção compromete o registo do dia como §1.99 primeiro. **O carimbo não
+   muda**, `metodo b4cc3594f960`; muda só o número da secção, no título e em
+   todas as referências a ela (este relatório, a mensagem do commit do Método e a
+   própria entrada). A amarra confere o resumo e não o número, por isso a
+   renumeração é segura desde que o `**Texto:**` fique igual.
+4. **A leitura cruzada do inventário continua «por ler»** para o bloco
+   `frescura`, como para outros seis blocos.
+
+**Os três achados que a triagem manda deixar como estão**, e a razão de cada um:
+o **Major 4** (o contador diz duas contagens e não uma) fica, porque é mais claro
+do que o brief pedia; o **Major 5** (o contador escondido a 390) é do **F1.10**,
+que tira as linhas de frescura do cabeçalho de todas as páginas e leva o contador
+para a página da medida e para o Método, onde cabe no telemóvel, e até lá fica
+escondido e dito; o **Major 6** (a proveniência não se fecha a partir do pacote)
+é do pacote e não do ramo, porque o inventário das fontes e a linha de Évora não
+foram enviados ao leitor.
+
 ## 1 · O resultado, em cinco linhas
 
 **O atraso do IEFP diz-se**, nas 278 páginas de linha do continente e nos 278
@@ -124,8 +176,11 @@ outras saem do telemóvel»). O contador é a terceira leitura, e por isso a 390
 aparece, como já não aparecem a leitura das fontes nem a linha da agenda.
 Medido nas capturas `linha-iefp-390-*.png` e `metodo-390-*.png`. **Não mudei
 essa regra**: mudá-la mexe na altura do cabeçalho de todas as páginas, que é
-exactamente o que o bloco F1.1b está a medir em paralelo hoje. Fica escrito para
-a direção decidir se a leitura da frescura merece o lugar no primeiro ecrã.
+exactamente o que o bloco F1.1b está a medir em paralelo hoje. **A triagem de
+04.09 dá isto ao F1.10** (Major 5 da leitura a frio): o leitor de primeira vez
+pediu as linhas de frescura fora do cabeçalho de todas as páginas, e o contador
+passa então à página da medida e ao Método, onde cabe no telemóvel. Até lá fica
+escondido a 390 e dito aqui.
 
 ## 4 · O Portal BASE no Método
 
@@ -189,13 +244,34 @@ Contadas por capítulo, mecanicamente, sobre o texto extraído do PDF:
  17  total
 ```
 
-Os seis do primeiro capítulo: adult participation in learning; early leavers from
-education and training; basic or above basic overall digital skills; NEET rate;
-gender employment gap; income quintile ratio (S80/S20). Os quatro do segundo:
-employment rate; unemployment rate; long-term unemployment rate; GDHI per capita
-growth. Os sete do terceiro: AROPE rate; AROPE rate for children; impact of
-social transfers; disability employment gap; housing cost overburden; children
-under 3 in formal childcare; self-reported unmet need for medical care.
+**A lista, tal como o Anexo 2 a imprime** (Minor 12 da leitura a frio: o excerto
+citado dizia que uma lista se seguia e não trazia a lista, pelo que a contagem
+estava na prosa e não na prova). Copiada do texto extraído, com as três alíneas
+do documento:
+
+> • Equal opportunities
+>   o Adults' participation in learning during the last 12 months (% of population aged 25-64)
+>   o Early leavers from education and training (% of population aged 18-24)
+>   o Share of individuals who have basic or above basic overall digital skills (% of population aged 16-74)
+>   o Young people neither in employment nor in education and training (NEET) rate (% of population aged 15-29)
+>   o Gender employment gap (pps, population aged 20-64)
+>   o Income quintile ratio (S80/S20)
+> • Fair working conditions
+>   o Employment rate (% of population aged 20-64)
+>   o Unemployment rate (% of active population aged 15-74)
+>   o Long-term unemployment rate (% active population aged 15-74)
+>   o Gross disposable household income (GDHI) per capita growth (2008=100)
+> • Social protection and inclusion
+>   o At-risk-of-poverty or social exclusion (AROPE) rate (% of total population)
+>   o At-risk-of-poverty or social exclusion (AROPE) rate for children (% of population aged 0-17)
+>   o Impact of social transfers (other than pensions) on poverty reduction (% reduction of AROP)
+>   o Disability employment gap (pps, population aged 20-64)
+>   o Housing cost overburden (% of total population)
+>   o Children aged less than 3 years in formal childcare (% of population aged 0-3)
+>   o Self-reported unmet need for medical care (% of population aged 16+)
+
+São dezassete itens, e a contagem por alínea acima sai de os contar neste texto e
+não de os contar à mão.
 
 **Nenhum pedido saiu deste portátil, e o brief autorizava um.** O ficheiro já
 estava no motor, descarregado pelo caminho normal dele e com recibo em
@@ -314,8 +390,9 @@ desenho do bloco F0.11, hoje visível em quatro linhas do livro-razão, e mudá-
 sem brief era mexer no que outro bloco mediu. É uma linha de folha de estilo no
 dia em que a direção a quiser.
 
-**O contador não chega ao telemóvel**, e a razão está na §3: a regra dos 640px é
-de outro bloco e mexe na altura do cabeçalho que o F1.1b está a medir hoje.
+**O contador não chega ao telemóvel**, e a razão está na §3. A triagem de 04.09
+dá o conserto ao **F1.10**, que tira as linhas de frescura do cabeçalho de todas
+as páginas.
 
 **A rota `linha` continua fora de `ROTAS_DO_INVENTARIO`**, e por isso os três
 rótulos novos da página da linha não são lidos pela régua da voz naquela rota;
@@ -378,10 +455,17 @@ Os três portões correram sobre a cabeça fundida, e os códigos de saída fora
 lidos de ficheiro e não do ecrã (`cmd > log 2>&1; echo $? > ficheiro.exit`):
 
 ```
-npm run build      → 0
-npm run typecheck  → 0
-npm run verify     → 0   (89 células verdes)
+                       primeira passagem      segunda passagem (paragem)
+npm run build      →   0                      0
+npm run typecheck  →   0                      0
+npm run verify     →   0  (89 células)        NÃO CORREU
 ```
+
+**A coluna da segunda passagem é a da paragem de 04.09**, e o `verify` não cabia
+nela: leva cerca de treze minutos e o diretor fechou o portátil. As réguas que a
+segunda passagem mexeu correram uma a uma e saíram a zero antes do commit
+(`check-ledger`, `check-formas`, `check-voz`, `provar-guardas`), e o `build` corre
+quatro delas por dentro. **Ao retomar, o `verify` é a primeira coisa.**
 
 **A ordem dos commits foi escolhida para que cada um seja verde por
 construção**: a máquina do atraso antes do que a rende, o que a rende antes das

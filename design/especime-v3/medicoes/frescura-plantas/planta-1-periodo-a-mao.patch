@@ -1,0 +1,13 @@
+diff --git a/src/views/LinhaView.astro b/src/views/LinhaView.astro
+index 93e03351..3bc9f967 100644
+--- a/src/views/LinhaView.astro
++++ b/src/views/LinhaView.astro
+@@ -696,7 +696,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
+       <p class="linha-selo-atraso">
+         <span class="linha-campo-k" data-voz>{s.livro.linha.periodoDaFonteK}</span>{' '}
+         <span data-nonledger="periodo-da-fonte" data-de-serie={atraso.id}>
+-          {atraso.periodoDaFonte}
++          2026-08
+         </span>
+         {'; '}
+         <span class="linha-campo-k" data-voz>{s.livro.linha.periodoDestaLinhaK}</span>{' '}

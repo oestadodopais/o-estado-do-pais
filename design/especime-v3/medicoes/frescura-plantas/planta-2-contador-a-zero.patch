@@ -1,0 +1,13 @@
+diff --git a/src/lib/prova.mjs b/src/lib/prova.mjs
+index 3574055f..97245526 100644
+--- a/src/lib/prova.mjs
++++ b/src/lib/prova.mjs
+@@ -916,7 +916,7 @@ export function prova(lang = 'pt') {
+        para onde a leitura das fontes ao lado já abre no mesmo cabeçalho. */
+     series_atrasadas: k(
+       'series_atrasadas',
+-      atraso.series,
++      0,
+       ancora(routePath('metodo', lang), 'releitura'),
+     ),
+     linhas_atrasadas: k(

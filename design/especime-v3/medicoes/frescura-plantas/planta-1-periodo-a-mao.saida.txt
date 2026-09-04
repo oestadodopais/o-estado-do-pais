@@ -1,0 +1,50 @@
+[31m
+  PORTÃO DAS FORMAS · 556 problema(s):
+[0m
+  · dist/en/ledger/abrantes-desemprego-registado-2025-12/index.html: o período da fonte da série "iefp-desemprego-registado-concelhos" não é o que a declaração traz.
+      em src/data/frescura.mjs: 2026-07
+      renderizado:              2026-08
+  · dist/en/ledger/agueda-desemprego-registado-2025-12/index.html: o período da fonte da série "iefp-desemprego-registado-concelhos" não é o que a declaração traz.
+      em src/data/frescura.mjs: 2026-07
+      renderizado:              2026-08
+  · dist/en/ledger/aguiar-da-beira-desemprego-registado-2025-12/index.html: o período da fonte da série "iefp-desemprego-registado-concelhos" não é o que a declaração traz.
+      em src/data/frescura.mjs: 2026-07
+      renderizado:              2026-08
+  · dist/en/ledger/alandroal-desemprego-registado-2025-12/index.html: o período da fonte da série "iefp-desemprego-registado-concelhos" não é o que a declaração traz.
+      em src/data/frescura.mjs: 2026-07
+      renderizado:              2026-08
+  · dist/en/ledger/albergaria-a-velha-desemprego-registado-2025-12/index.html: o período da fonte da série "iefp-desemprego-registado-concelhos" não é o que a declaração traz.
+      em src/data/frescura.mjs: 2026-07
+      renderizado:              2026-08
+  · dist/en/ledger/albufeira-desemprego-registado-2025-12/index.html: o período da fonte da série "iefp-desemprego-registado-concelhos" não é o que a declaração traz.
+      em src/data/frescura.mjs: 2026-07
+      renderizado:              2026-08
+  · dist/en/ledger/alcacer-do-sal-desemprego-registado-2025-12/index.html: o período da fonte da série "iefp-desemprego-registado-concelhos" não é o que a declaração traz.
+      em src/data/frescura.mjs: 2026-07
+      renderizado:              2026-08
+  · dist/en/ledger/alcanena-desemprego-registado-2025-12/index.html: o período da fonte da série "iefp-desemprego-registado-concelhos" não é o que a declaração traz.
+      em src/data/frescura.mjs: 2026-07
+      renderizado:              2026-08
+  · dist/en/ledger/alcobaca-desemprego-registado-2025-12/index.html: o período da fonte da série "iefp-desemprego-registado-concelhos" não é o que a declaração traz.
+      em src/data/frescura.mjs: 2026-07
+      renderizado:              2026-08
+  · dist/en/ledger/alcochete-desemprego-registado-2025-12/index.html: o período da fonte da série "iefp-desemprego-registado-concelhos" não é o que a declaração traz.
+      em src/data/frescura.mjs: 2026-07
+      renderizado:              2026-08
+  · dist/en/ledger/alcoutim-desemprego-registado-2025-12/index.html: o período da fonte da série "iefp-desemprego-registado-concelhos" não é o que a declaração traz.
+      em src/data/frescura.mjs: 2026-07
+      renderizado:              2026-08
+  · dist/en/ledger/alenquer-desemprego-registado-2025-12/index.html: o período da fonte da série "iefp-desemprego-registado-concelhos" não é o que a declaração traz.
+      em src/data/frescura.mjs: 2026-07
+      renderizado:              2026-08
+  · dist/en/ledger/alfandega-da-fe-desemprego-registado-2025-12/index.html: o período da fonte da série "iefp-desemprego-registado-concelhos" não é o que a declaração traz.
+      em src/data/frescura.mjs: 2026-07
+      renderizado:              2026-08
+  · dist/en/ledger/alijo-desemprego-registado-2025-12/index.html: o período da fonte da série "iefp-desemprego-registado-concelhos" não é o que a declaração traz.
+      em src/data/frescura.mjs: 2026-07
+      renderizado:              2026-08
+  · dist/en/ledger/aljezur-desemprego-registado-2025-12/index.html: o período da fonte da série "iefp-desemprego-registado-concelhos" não é o que a declaração traz.
+      em src/data/frescura.mjs: 2026-07
+      renderizado:              2026-08
+  · dist/en/ledger/aljustrel-desemprego-registado-2025-12/index.html: o período da fonte da série "iefp-desemprego-registad
+[código de saída: 1]
