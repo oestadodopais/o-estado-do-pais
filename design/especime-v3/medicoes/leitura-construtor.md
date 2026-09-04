@@ -148,8 +148,7 @@ toque de distância, que é onde ela é a manchete de alguma coisa.
 
 A área de leitura: uma lista de `<details>` nativos fechados, um por medida, com
 o nome da medida como `<summary>` e o `id` `m-<id da linha>`, que é a âncora para
-onde o cartão daquela medida já apontava desde 01.09.2026. Uma leitura é uma de
-duas coisas:
+onde o cartão daquela medida já apontava desde 01.09.2026.
 
 **A leitura é a mesma para as 21** (decisão corrigida de 04.09.2026): a unidade,
 o limiar onde o quadro publica um (com a comparação, na forma que a peça
@@ -217,9 +216,11 @@ carácter, o de `.peca-seta`.
 
 `VOZ-MARCADORES.md`: a exceção da raiz «confer» no rótulo da terceira data ganha a
 rota `home` (já valia em `dominio`, e pela mesma razão). `INVENTARIO-FRASES.md`:
-quatro linhas passam a «retirada» com a razão escrita, e uma secção nova diz o que
-o bloco acrescentou e o que não pode ser linha. `critica/REVISOES-DO-INVENTARIO.md`:
-a entrada do bloco `leitura`.
+**nenhuma linha nova e nenhuma linha retirada** depois da segunda passagem (as
+quatro que a primeira tinha passado a «retirada» voltaram a «viva», e o que mudou
+nelas foi só a coluna do bloco, que nomeia quem reclassificou), mais uma secção
+nova que diz o que o bloco acrescentou e o que não pode ser linha.
+`critica/REVISOES-DO-INVENTARIO.md`: a entrada do bloco `leitura`.
 
 ## 4 · O que se perde, dito
 
@@ -295,6 +296,16 @@ node tests/inicio/numeros-novos.mjs --so index.html,en/index.html --json <fichei
 | `data-nonledger` | 16 → 16 | 74 690 → 74 832 |
 | `data-verbatim` | 6 → 6 | 23 → 23 |
 
+**Estas contagens do sítio inteiro são as deste bloco, medidas antes de
+`origin/main` em `95d5ca95` entrar no ramo**, porque é assim que a diferença é só
+dele. Sobre a árvore já fundida o mesmo comando dá `data-prova` **14 588** e
+`data-nonledger` **108 832** (`data-claim` e `data-verbatim` não mudam): as duas
+subidas são do bloco F1.4, que acrescentou a busca do índice do livro-razão e as
+datas de publicação lidas do repositório, e nenhuma delas passa por `/` nem por
+`/en`. **As contagens de `/` e de `/en`, que são as que este bloco mexeu, são
+iguais nas duas árvores**, motivo a motivo, medidas com
+`--so index.html,en/index.html` nas duas.
+
 **Em `/` e `/en`, as diferenças, uma a uma, e cada uma reconciliada:**
 
 | classe · valor | antes | depois | porquê |
@@ -320,8 +331,9 @@ de depois, desta. Cada linha da segunda tabela fecha à unidade.
 
 ### 5.2 · J10 · os três comandos e as réguas
 
-Os três, sobre a árvore final (com `origin/main` fundido), com os códigos lidos
-de ficheiros e não de um `echo` a seguir a um comando em segundo plano:
+Os três, sobre a árvore da primeira passagem, já com `origin/main` em `0b51016d`
+fundido, com os códigos lidos de ficheiros e não de um `echo` a seguir a um
+comando em segundo plano:
 
 ```
 npm run build     > build-final.log 2>&1; echo $? > build-final.code   →  0
@@ -329,8 +341,14 @@ npm run verify    > verify-final.log 2>&1; echo $? > verify-final.code →  0
 npm run typecheck > tc-final.log 2>&1; echo $? > tc-final.code         →  0
 ```
 
+Depois da segunda passagem, e da fusão de `origin/main` em `95d5ca95` (o bloco
+F1.4, que pôs a `check:indice` dentro da `verify` e mudou o `package.json`), os
+três voltaram a correr sobre a árvore fundida, com um `npm ci` novo pelo meio: os
+códigos estão na §10.2, e são os mesmos.
+
 **As treze réguas de `tests/inicio`**, corridas sobre a construção final. O
-«antes» de cinco delas está medido: `porta` e `faixa` correram na árvore deste
+décimo quarto ficheiro da pasta, `capturas.mjs`, não conta aqui porque não mede:
+fotografa, e o que ele deu está na §8. O «antes» de cinco delas está medido: `porta` e `faixa` correram na árvore deste
 ramo antes de uma linha mudar, e `matriz`, `correcoes-a` e `mapa-navegacao`
 correram numa árvore própria construída em `1dbd1cef`, para que a diferença fosse
 do bloco e não de outra coisa. Das outras oito não há medida de partida, e a
@@ -345,13 +363,24 @@ coluna diz isso em vez de a inventar.
 | `matriz` | **3 de 84 vermelhas** | **as mesmas 3** | dezassete sítios seguem a coisa que agora lá está; nenhuma célula nova ficou vermelha |
 | `correcoes-a` | 32 de 32 | 32 de 32 | nenhuma mudança na régua; o alvo do nome do domínio foi feito de 44 px depois de ela o recusar |
 | `mapa-navegacao` | 9 de 9 | 9 de 9 | N3 lê o corpo da página na área de leitura |
-| `app`, `areas`, `mapa-distritos`, `regioes`, `rotulo`, `capturas`, `numeros-novos` | não medidas na partida | verdes | nada |
+| `app`, `areas`, `mapa-distritos`, `regioes`, `rotulo`, `numeros-novos` | não medidas na partida | verdes | nada |
 
 **As três células vermelhas da matriz são as mesmas antes e depois**, e nenhuma é
 deste bloco: «a linha da reconferência», «Emenda 14 · um concelho sem estudos
 rende as sete peças» (a página de Águeda rende oito) e «a língua de um título
 citado» (a exceção aprovada da §1.91, decisão 6). As duas primeiras foram
 medidas na árvore de partida com o mesmo comando.
+
+**As treze correram outra vez sobre a construção da árvore com `origin/main` em
+`95d5ca95` fundido**, e deram os mesmos números, célula a célula: `leitura` 18 de
+18, `porta` 34 de 34, `faixa` 80 de 80, `lista` 94 de 94, `app` 39 de 39, `areas`
+22 de 22, `correcoes-a` 32 de 32, `mapa-distritos` 43 de 43, `mapa-navegacao` 9 de
+9, `regioes` 30 de 30, `rotulo` 7 de 7, `numeros-novos` verde, e a `matriz` as
+mesmas **3 de 84** com os mesmos três nomes. As cinco plantas da `leitura` e as
+treze da `porta` também. **Correr outra vez não era formalidade**: o F1.4 mexeu em
+`ValorDaProva.astro` e em `NomeDaMedida.astro`, que a primeira página usa. As oito
+capturas refeitas sobre a árvore fundida saem byte a byte iguais às que já estavam
+no ramo, e as seis alturas da §8 não mudam.
 
 ## 6 · Os estragos plantados (J11)
 
@@ -564,3 +593,88 @@ o `!d.id` trocado por `false`, e o Major 5 (o relatório a dizer 5 667 px numa
 tabela e 4 667 noutra) são as plantas P1a, P1b, P2, P3 e P4 do pacote. O leitor
 viu as cinco.
 
+
+## 10 · A cabeça, a fusão do `main` e a corrida do portão
+
+**`8400fbec`, verde na corrida `portao` n.º 33837745555**, das 04:41:36 às
+05:05:35 UTC de 04.09.2026 (23m59s). Esta cabeça é a fusão de `origin/main`
+em `95d5ca95` (o bloco F1.4: os nomes, as datas e a busca do índice do
+livro-razão) dentro deste ramo.
+
+### 10.1 · O que a fusão trouxe, e o único conflito
+
+O F1.4 mexeu nas vistas do livro-razão e das áreas, na `LinhaView`, em
+`datas.mjs`, no `gate-html.mjs`, no `package.json`, no fluxo de trabalho e nos
+ficheiros da voz. **Não tocou na `HomeView`, nem em `src/components/inicio/`, nem
+em `inicio.css`, nem em `public/js/inicio.js`** (medido com
+`git diff --name-only`, com um positivo conhecido ao lado a provar que o comando
+apanha).
+
+**Mas tocou em duas peças partilhadas que a primeira página usa**, e isso mediu-se
+em vez de se supor: `NomeDaMedida.astro` (peça nova) e `ValorDaProva.astro`, que
+passou a escrever `dd.mm.aaaa` numa chave da prova que é uma data. A chave é
+`painel_reconferido_em`, e ela não se rende em `/` nem em `/en`: as onze chaves da
+prova destas duas páginas estão medidas, e não é nenhuma delas. **A consequência
+medida é nenhuma**: as treze réguas dão os mesmos números sobre a árvore fundida
+(§5.2), as contagens das quatro classes de algarismos em `/` e `/en` são iguais
+motivo a motivo (§5.1), e as oito capturas refeitas saem byte a byte iguais às que
+já estavam no ramo.
+
+Houve **um conflito, e num ficheiro de registo**:
+`design/especime-v3/critica/REVISOES-DO-INVENTARIO.md`, onde os dois blocos
+acrescentaram uma linha a seguir à do bloco `porta`. Resolveu-se apagando as três
+marcas do conflito e mais nada: ficaram as duas linhas, a `leitura` deste bloco e
+a `nomes` do F1.4, por esta ordem. Não ficou nenhuma marca de conflito em ficheiro
+nenhum da árvore: `git grep -nE '^(<{7} |={7}$|>{7} )'` não devolve nada, e a
+mesma peneira corrida sobre um ficheiro com um conflito a sério devolve as três
+linhas, que é o que prova que ela apanha.
+
+### 10.2 · Os três comandos, outra vez, sobre a árvore fundida
+
+O F1.4 pôs a `check:indice` dentro da `verify` e mudou o `package.json`, e por
+isso a árvore fundida levou um `npm ci` novo antes dos comandos.
+
+| comando | código |
+| --- | --- |
+| `npm run build` | **0** |
+| `npm run verify` | **0**, já com a `check:indice` lá dentro, verde |
+| `npm run typecheck` | **0** |
+
+Os três códigos foram lidos dos ficheiros de cada comando (`build-p5.code`,
+`verify-p5.code`, `tc-p5.code`), e não do que o terminal disse a seguir a um
+comando em segundo plano. Sobre a árvore do commit que escreve esta secção
+correram outra vez, e deram **0, 0 e 0** (`build-p7.code`, `verify-p7.code`,
+`tc-p7.code`), com as treze plantas da `porta` e as cinco da `leitura` verdes
+depois deles. **Uma nota de método, porque custou uma medição errada:** a primeira
+corrida das plantas da `porta` sobre a árvore fundida caiu com um tempo esgotado à
+espera de `[data-grelha] h1`, e não era defeito nenhum: um `npm run build` corria
+ao mesmo tempo e reescreve `dist/`, que é o que as plantas servem. Uma régua que
+lê `dist/` não corre ao lado de um comando que o refaz.
+
+### 10.3 · As corridas deste ramo
+
+| corrida | cabeça | como acabou |
+| --- | --- | --- |
+| 33828544853 | `0ef0a291` | cancelada pelo empurrão seguinte |
+| 33829193640 | `a3d53ac8` | **verde** em 22m17s (primeira passagem) |
+| 33836453244 | `9f3998fd` | cancelada pelo empurrão seguinte |
+| 33837061176 | `9b20a2b8` | cancelada pelo empurrão seguinte |
+| 33837745555 | `8400fbec` | **verde** em 23m59s (segunda passagem, com o `main` fundido) |
+
+Os três cancelamentos são o `cancel-in-progress` do fluxo de trabalho: cada
+empurrão novo mata a corrida da cabeça anterior. Nenhuma corrida deste ramo ficou
+vermelha.
+
+**A corrida verde leva 23m59s contra o tecto de 30 minutos** do
+`timeout-minutes` em `.github/workflows/portao.yml`: a construção 12m47s e a
+`verify` 5m48s, e o resto é o anfitrião, o `npm ci` e o Chromium. O F1.4 mediu
+20m30s no mesmo dia, e a corrida da primeira passagem deste ramo levou 22m17s. Não
+é uma regressão de um bloco, é a soma deles: seis minutos de folga é pouco, e o
+tecto é uma decisão do diretor.
+
+*Esta secção é ela própria um commit, e por isso a cabeça que ele faz não é a que
+está escrita acima: é a mesma disciplina que o F1.4 seguiu na §10.6 do relatório
+dele. Os três comandos correram outra vez sobre a árvore dele antes do empurrão, e
+a corrida dele fica no registo do ramo.*
+
+**O bloco não foi fundido em `main`.**
