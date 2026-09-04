@@ -52,6 +52,7 @@ import { medidaPelaChave } from '../data/dominios.mjs';
 import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
 import { barraConcelhoPais } from '../lib/dominios.mjs';
 import { concelhos, pecasDoConcelho } from '../lib/inicio.mjs';
+import { atrasoDaLinha } from '../lib/frescura.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { canonicalUrl, SITE_NAME, SITE_URL } from '../../site.config.mjs';
@@ -154,6 +155,55 @@ const indicePartes = temIndice
  * agora as sete, pela ordem declarada, cada uma a dizer se tem linha.
  */
 const pecas = pecasDoConcelho(m);
+
+/* ---------------------------------------------------------------------------
+ * O ATRASO DE UMA MEDIDA, NO CARTÃO DELA (bloco F1.6, 04.09.2026)
+ * ---------------------------------------------------------------------------
+ * A decisão (2) da `DECISIONS.md` §1.98 manda render o atraso «na linha e no
+ * concelho». Na linha é o recibo, e a razão está escrita em `LinhaView.astro`;
+ * aqui é a peça daquela medida, que é onde o número dela aparece nesta página.
+ *
+ * VAI PELA `frase` DA PEÇA, que é o lugar que a peça já tem para a ressalva de
+ * uma medida, e não por um desenho novo: o desemprego registado de um concelho é
+ * o mesmo número com a mesma ressalva nas 278 páginas, e uma segunda gramática
+ * visual para a mesma coisa era uma decisão de identidade que este bloco não
+ * tem. `src/components/inicio/Peca.astro` não muda um carácter.
+ *
+ * A NOTA DA MEDIDA NÃO É SUBSTITUÍDA. Onde a peça já tem nota, o atraso vai a
+ * seguir dela: são duas ressalvas diferentes e nenhuma apaga a outra. Hoje
+ * nenhuma das duas medidas em causa tem nota, e a ordem está escrita para o dia
+ * em que tiver.
+ *
+ * NENHUM DOS TRÊS VALORES É ESCRITO AQUI: o período da fonte vem da série
+ * declarada em `src/data/frescura.mjs`, e os outros dois são o `reference_date`
+ * e o `access_date` da própria linha, marcados e reconferidos pelo
+ * `check:formas` como qualquer outra data da casa.
+ */
+/** @param {{ vazia: boolean, claim?: string, linha?: any, derivada?: boolean, nota?: any }} tile */
+const fraseDaPeca = (tile) => {
+  const nota = tile.derivada || !tile.nota ? null : tile.nota[lang];
+  const atraso = tile.vazia ? null : atrasoDaLinha(tile.linha);
+  if (!atraso) return nota;
+  /* OS RÓTULOS VÃO MARCADOS `data-voz`, e não é decoração: a régua da voz salta
+     um bloco que tenha uma marca de origem lá dentro em qualquer rota fora de
+     `ROTAS_COM_ORIGEM_LIDA`, e `municipio` não está nessa lista. Sem a marca,
+     estas três cadeias eram texto visível que nenhuma régua via e que o
+     inventário não podia declarar. A marca só alarga a peneira. */
+  const partes = [
+    { voz: s.livro.linha.periodoDaFonteK },
+    ' ',
+    { serie: atraso.id, periodo: atraso.periodoDaFonte },
+    '; ',
+    { voz: s.livro.linha.periodoDaCasaK },
+    ' ',
+    { data: { id: tile.claim, campo: 'reference_date', valor: tile.linha.reference_date } },
+    ' ',
+    { voz: s.livro.linha.periodoDesdeK },
+    ' ',
+    { data: { id: tile.claim, campo: 'access_date', valor: tile.linha.access_date } },
+  ];
+  return nota ? [...nota, ' ', ...partes] : partes;
+};
 
 /* ---------------------------------------------------------------------------
  * A BARRA DO GANHO MÉDIO CONTRA O PAÍS (bloco F1.2, segunda passagem,
@@ -591,7 +641,7 @@ const metodoPath = routePath('metodo', lang);
               id={tile.claim}
               nome={tile.nome[lang]}
               medida={tile.medida[lang]}
-              frase={tile.derivada || !tile.nota ? null : tile.nota[lang]}
+              frase={fraseDaPeca(tile)}
               estado={tile.estado}
               colore={tile.colore}
               regua={tile.regua}
