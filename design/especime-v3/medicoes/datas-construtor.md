@@ -5,6 +5,61 @@ Claude Opus 5, 04.09.2026. É uma correção urgente do bloco F1.4
 (`nomes-construtor.md`, item 8 e §10), e não um bloco novo: o âmbito é o defeito
 e mais nada. Sem travessões na prosa.*
 
+## 0 · Estado ao pausar (04.09)
+
+*O diretor fechou o portátil. Este bloco está **inteiro e commitado**; o que
+falta é a confirmação da CI e a decisão da fusão, que é dele.*
+
+**Cabeça: `fb0d79b337b3246c5a29f3c0b2b444eb2355d572` (`fb0d79b3`)**, no ramo
+`datas-2026-09-04`, empurrado. A árvore está limpa e não há nada por commitar.
+
+**Os três portões correram nesta cabeça, na máquina, e deram 0**: `npm run build`
+(0), `npm run verify` (0), `npm run typecheck` (0), com as saídas lidas de
+ficheiro de registo. A secção 0 que está a ler é a única coisa que entrou depois
+deles, e é prosa num relatório: dos passos da cadeia, os únicos que lêem
+`design/` são o `check:ledger` (os selos sha256) e o `check:voz` (o inventário
+das frases e o registo das revisões), e nenhum deles lê `medicoes/`. Os dois
+foram corridos outra vez com esta secção escrita, e deram 0.
+
+**O `portao` no GitHub: corrida `33861077107`, aberta às 10:00 UTC, ainda a
+correr quando esta secção foi escrita.** Não ficou confirmada. Antes de fundir,
+`gh run view 33861077107` tem de dizer `success` na cabeça `fb0d79b3` (e a
+corrida seguinte, se esta secção acrescentou uma).
+
+### O que está feito, item a item
+
+| # | o item | estado |
+| --- | --- | --- |
+| 1 | `scripts/datas-de-publicacao.mjs`, com a origem declarada no cabeçalho, a recusa em cópia rasa, e o JSON commitado com slug, língua, data, commit e caminho | **feito**, e corrido nesta árvore: 16 edições, 0 sem commit de adição |
+| 2 | a construção lê o JSON e nunca chama o `git`; uma edição ausente do JSON fica com `[a verificar]` | **feito** (`src/lib/datas-do-repositorio.mjs`, com guarda de execução e prova) |
+| 3 | o portão recusa páginas que discordem do JSON, e o JSON que discorde do `git` quando há história; com história rasa confia no ficheiro e di-lo no registo | **feito** (`scripts/check-datas.mjs`, na cadeia do `build` e do `verify`), com os três estragos plantados apanhados e o caminho da cópia rasa corrido num clone raso |
+| 4 | a caixa «Datas de publicação por confirmar.» só aparece se alguma edição não tiver data, e conta-as | **feito**; hoje as dezasseis têm data e a caixa não se rende, e as duas frases passaram a «retirada» no inventário da voz |
+| 5 | o script corrido nesta árvore, o JSON commitado, as dezasseis datas contra o que estava no ar e contra `studies.mjs` | **feito** (§3) |
+| 6 | os números colados na primeira página («308concelhos») | **feito** (§4): causa medida no navegador, correção numa linha de marcação em `Portas.astro`, régua I11 com o defeito plantado |
+
+### O que fica por fazer, e por quem
+
+1. **Confirmar o `portao` na corrida `33861077107`** (ou na seguinte). É a única
+   coisa que falta para o ramo estar pronto a fundir. Se ficar vermelha, o
+   registo da corrida diz em que passo, e os três portões locais estão verdes
+   nesta mesma cabeça.
+2. **Fundir e lançar** é do diretor. Enquanto não lançar, o defeito das datas
+   continua no ar: a exposição conta desde as 04:41 UTC de 04.09 e ainda não
+   fechou (I113).
+3. **Um projecto vazio a mais no Vercel, criado por engano por este construtor.**
+   Ao tentar ler o estado do lançamento com `vercel ls`, o CLI ligou a worktree a
+   um projecto NOVO com o nome do ramo, `datas-2026-09-04` (sem lançamentos, sem
+   URL de produção). O `.vercel/` local foi apagado; o projecto **fica lá**,
+   porque apagar é irreversível e as definições do Vercel são do diretor. É de
+   apagar quando ele quiser. **Nada do sítio foi tocado**: o projecto
+   `o-estado-do-pais` ficou como estava.
+
+### Nada ficou a meio
+
+Não há trabalho pela metade neste ramo, e por isso não houve nada a desfazer: a
+única coisa que não está feita é esperar pela CI e fundir, e as duas são de quem
+lê isto.
+
 ## 1 · O que estava no ar, e porquê
 
 **O sítio publicado dizia, nos doze trabalhos de `/estudos`, «PUBLICADO A
