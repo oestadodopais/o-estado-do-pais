@@ -34,6 +34,7 @@ import {
 import { eManifestoDosRegistos, eRegistoDeConteudo } from '../src/lib/registos.mjs';
 import { ePaisDoMapa, eDistritoDoMapa, eManifestoDoMapa } from '../src/lib/mapa.mjs';
 import { eNomeDeMedida, nomeDaMedida } from '../src/lib/nomes.mjs';
+import { eSerieAtrasada } from '../src/data/frescura.mjs';
 
 /** @param {string} s */
 const verde = (s) => `\x1b[32m${s}\x1b[0m`;
@@ -475,6 +476,52 @@ caso(
   nomeDaMedida({ ...LINHA_BASE, id: 'divida-publica-2025', name: 'Total' }, 'pt')?.fonte ===
     'figuras',
   'o nome do cartão ganha ao rótulo da fonte: é o nome que o leitor já viu na primeira página.',
+);
+
+/* --------------------------------- eSerieAtrasada (bloco F1.6, 04.09.2026) --- */
+
+/* Uma série atrasada é um dado de ficheiro, como uma linha do livro-razão: o
+   tipo diz o que a casa espera e o guarda é quem o exige. O que ele tem de
+   recusar é a entrada meia escrita, porque o que sai dela não é um erro é uma
+   frase incompleta na página de 278 linhas. */
+const SERIE_BOA = {
+  id: 'serie-de-prova',
+  fonte: 'Um organismo',
+  documento: 'Um ficheiro mensal',
+  periodoDaCasa: '2025-12',
+  periodoDaFonte: '2026-07',
+  origem: {
+    ficheiro: 'design/observatorio/inventario/INVENTARIO-DAS-FONTES.json',
+    registo: 'T2',
+    campo: 'ultimo_periodo',
+    lidoEm: '2026-09-01',
+    url: 'https://exemplo.invalido/ficheiro.ods',
+  },
+};
+caso('eSerieAtrasada/boa', true, eSerieAtrasada(SERIE_BOA), 'a forma inteira passa.');
+caso(
+  'eSerieAtrasada/sem-origem',
+  false,
+  eSerieAtrasada({ ...SERIE_BOA, origem: undefined }),
+  'um período sem origem é um número escrito à mão: a origem é a metade que conta.',
+);
+caso(
+  'eSerieAtrasada/periodo-com-dia',
+  false,
+  eSerieAtrasada({ ...SERIE_BOA, periodoDaFonte: '2026-07-20' }),
+  'o período de uma série mensal é AAAA-MM; inventar-lhe um dia é inventar um facto.',
+);
+caso(
+  'eSerieAtrasada/origem-sem-data',
+  false,
+  eSerieAtrasada({ ...SERIE_BOA, origem: { ...SERIE_BOA.origem, lidoEm: 'ontem' } }),
+  'a data em que a origem foi lida escreve-se AAAA-MM-DD, ou não se sabe quando foi.',
+);
+caso(
+  'eSerieAtrasada/nao-e-objeto',
+  false,
+  eSerieAtrasada([SERIE_BOA]),
+  'uma lista não é uma série, e um molde sobre ela escondia isso.',
 );
 
 /* ------------------------------------------ as listas de que os tipos derivam */
