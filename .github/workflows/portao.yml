@@ -58,7 +58,11 @@ jobs:
     # decidir nada. QUANDO MUDAR: por decisão registada, quando a casa quiser o
     # maior seguinte, e nunca a meio de um bloco; a par com o `.nvmrc`.
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    # 45 desde 04.09.2026: a corrida chegou a 28 m 58 s de trabalho (npm ci 5 m 50 s,
+    # build 12 m 25 s, verify 9 m 54 s com check:alvos, check:indice e check:moldura)
+    # contra os 30 de teto, medido pelo construtor do F1.1b; 62 segundos de folga
+    # não são folga. O teto sobe; o que entra no verify a seguir mede o seu custo.
+    timeout-minutes: 45
     steps:
       # `fetch-depth: 0` E NÃO A CÓPIA RASA (bloco F1.4, segunda passagem,
       # 04.09.2026). A data de publicação de cada edição de um trabalho é o dia
