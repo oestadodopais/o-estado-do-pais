@@ -378,19 +378,53 @@ cumprir as três exigências da casa: **verde antes**, **o HTML mudou**, **verme
 depois** numa célula que a planta nomeia. Uma planta que não cumpra as três faz a
 corrida sair a 1.
 
-| planta | célula que tem de cair | resultado |
-|---|---|---|
-| `h1-a-dobrar` · um segundo `<h1>` na página | H3 | *(§6)* |
-| `ficha-a-30` · a ficha de um concelho a 30 px | H2 | *(§6)* |
-| `porta-fora-do-marco` · a porta de correções fora do rodapé | H4 | *(§6)* |
-| `unidade-em-portugues` · a unidade de um cartão inglês em português | H8 | *(§6)* |
-| `lista-a-dobrar` · a segunda lista dos 308 concelhos de volta | H13 | *(§6)* |
+| planta | célula que tem de cair | o HTML mudou | verde antes | caiu |
+|---|---|---|---|---|
+| `h1-a-dobrar` · um segundo `<h1>` na página | H3 | sim | H3 | **H3** |
+| `ficha-a-30` · a ficha de um concelho a 30 px | H2 | sim | H2 | **H2** |
+| `porta-fora-do-marco` · a porta de correções fora do rodapé | H4 | sim | H4 | **H4** |
+| `unidade-em-portugues` · a unidade de um cartão inglês em português | H8 | sim | H8 | **H8** |
+| `lista-a-dobrar` · a segunda lista dos 308 concelhos de volta | H13 | sim | H13 | **H13** |
+
+**Cinco de cinco. À primeira corrida foram quatro de cinco, e o que falhou vale a
+pena ficar escrito, porque é um defeito de régua e não de sítio.** A planta da
+unidade trocava «people» por «pessoas» no HTML servido, e a H8 **não lê o HTML**:
+lê o REGISTO de cada cartão (`dist/cartoes/*.json`), porque um PNG não tem texto
+que se leia. O estrago passava pelo servidor e nunca chegava à célula, e a planta
+saía com «caíram: nenhuma».
+
+Metade das células desta régua lê ficheiros e não o navegador (a H3, a H4, a H8,
+a H9 e a H10), de modo que um só canal de estrago deixava metade das plantas sem
+poder existir. A régua ganha um **segundo canal**, `ESTRAGO_NO_DISCO`, por onde
+passam todas as leituras de ficheiro das varreduras, e a planta da unidade ganha
+o seu estrago do lado do disco. As varreduras refazem-se dentro do laço das
+plantas quando a planta mexe no disco: uma varredura que se faz uma vez no
+princípio nunca veria um estrago posto depois.
 
 A régua entra em `npm run verify` como `check:alvos`, a seguir a `check:moldura`.
+`--vermelhos` fica de fora do `verify` por custo, como a régua da moldura.
 
 ## 6 · Os três comandos, o SHA e a corrida
 
-*(preenchido no fim da passagem)*
+Os três, corridos por esta ordem sobre a árvore fundida, com os códigos de saída
+lidos dos registos e não do ecrã:
+
+| comando | saída |
+|---|---|
+| `npm run build` | **0** |
+| `npm run verify` (com `check:alvos` lá dentro, a seguir a `check:moldura`) | **0** |
+| `npm run typecheck` | **0** |
+
+`check:alvos` dentro do `verify`, na corrida que conta: **todas as doze células
+verdes** (H1 a H10 e H13; a H11 são estes três comandos e a H12 são as plantas).
+
+O `typecheck` apanhou um defeito deste bloco antes de ele chegar a lado nenhum:
+`ultimoTitulo`, em `src/lib/registo-html.mjs`, ficava com um tipo implícito, e o
+programa é estrito sobre `src/lib`. Levou a declaração que lhe faltava.
+
+Cabeça do ramo `alvos-2026-09-04`: `f5bd1eba`.
+A corrida do portão em CI e o seu número ficam no relatório do lugar de direção,
+porque só existem depois do `push`.
 
 ## 7 · O que se tocou, e o que se não tocou
 
