@@ -48,6 +48,8 @@ import { matchPath, routePath } from '../src/lib/routes.mjs';
 import { AREAS } from '../src/data/areas.mjs';
 import { REGIOES } from '../src/data/regioes.mjs';
 import { DOMINIOS } from '../src/data/dominios.mjs';
+import { FIGURAS } from '../src/data/figuras.mjs';
+import { MEDIDAS_DO_DOMINIO_1 } from '../src/data/dominios.mjs';
 import { leMarcadores, analisa, leInventario, FICHEIRO_DOS_MARCADORES } from './voz.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -542,6 +544,17 @@ const NOMES_POR_FONTE = {
      que é a carta escrita outra vez. A régua confere que o texto marcado é,
      carácter a carácter, um nome deste ficheiro. */
   dominios: new Set(DOMINIOS.flatMap((d) => Object.values(d.nome ?? {}))),
+  /* OS NOMES DE CARTÃO DAS MEDIDAS (bloco F1.4, 04.09.2026). O índice do
+     livro-razão e as páginas de área chamavam às medidas o identificador do
+     ficheiro; passam a chamar-lhes o nome do cartão da primeira página, que é o
+     nome de uma entrada de `src/data/figuras.mjs` ou de `src/data/dominios.mjs`.
+     São duas fontes e não uma porque são dois ficheiros, e a marca diz de qual
+     veio: a régua confere o texto contra a lista daquele ficheiro, e uma marca
+     que apontasse ao ficheiro errado passaria em silêncio se as listas fossem
+     uma só. Sem esta fonte, os 31 nomes custavam 62 linhas ao inventário das
+     frases, que é a lista das medidas escrita outra vez. */
+  figuras: new Set(FIGURAS.flatMap((f) => Object.values(f.nome ?? {}))),
+  medidas: new Set(MEDIDAS_DO_DOMINIO_1.flatMap((m) => Object.values(m.nome ?? {}))),
 };
 /* A CONFERÊNCIA DE `data-nome`, e é o que distingue esta marca da dos lugares.
    Cada elemento marcado diz de que ficheiro vem o nome, e a régua confere que o

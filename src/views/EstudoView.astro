@@ -31,6 +31,7 @@
  * e linha, em src/data/leituras.mjs e em DECISIONS §1.35.
  */
 import Base from '../layouts/Base.astro';
+import { dataDaCasa } from '../lib/datas.mjs';
 import Claim from '../components/Claim.astro';
 import Provenance from '../components/Provenance.astro';
 import Marcador from '../components/Marcador.astro';
@@ -318,11 +319,12 @@ const jsonld = {
                   texto simples e passava despercebido. */}
               <span data-nonledger="data-de-publicacao">
                 {s.estudos.dataLabel}:{' '}
-                {e.date ?? <Marcador lang={lang} />}
+                {/* dd.mm.aaaa, a regra da casa (§1.91). */}
+                {e.date ? dataDaCasa(e.date) : <Marcador lang={lang} />}
               </span>
               <span data-nonledger="data-de-atualizacao">
                 {s.estudos.atualizadoLabel}:{' '}
-                {e.updated ?? <Marcador lang={lang} />}
+                {e.updated ? dataDaCasa(e.updated) : <Marcador lang={lang} />}
               </span>
               {e.lang !== lang && (
                 <a href={e.paginaDaEdicao} hreflang={e.lang === 'pt' ? 'pt-PT' : 'en'}>

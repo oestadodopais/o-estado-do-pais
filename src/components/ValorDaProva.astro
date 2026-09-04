@@ -18,16 +18,32 @@
  * esconde: rende-se por palavras, sem marca e sem porta, porque não há nada
  * para abrir. IDENTIDADE §7.
  */
+import { dataDaCasa } from '../lib/datas.mjs';
+
 const { chave, item, vazio = null, lang = 'pt' } = Astro.props;
 
 const valor = item?.valor ?? null;
 const existe = valor !== null && valor !== undefined;
+/**
+ * UMA CHAVE DA PROVA QUE É UMA DATA ESCREVE-SE dd.mm.aaaa (bloco F1.4,
+ * 04.09.2026).
+ *
+ * `painel_reconferido_em` é a única, hoje: a data que o motor escreve na última
+ * reconferência do painel. Saía em ISO, que é a forma do dado, e era a última
+ * data ISO à vista do sítio depois de este bloco converter as outras 28 300.
+ *
+ * `dataDaCasa()` deixa passar sem tocar tudo o que não é uma data completa, e
+ * por isso as outras vinte e tal chaves, que são contagens, não mudam um
+ * carácter. O portão continua a comparar o texto rendido com a conta que ele
+ * próprio faz, e ganhou a mesma regra escrita outra vez do lado dele.
+ */
+const escrito = existe ? dataDaCasa(valor) : null;
 ---
 
 {
   existe ? (
     <a class="prova-valor" href={item.porta} data-prova={chave} title={item.origem}>
-      {valor}
+      {escrito}
     </a>
   ) : (
     <span class="prova-vazio">{vazio?.[lang] ?? vazio}</span>

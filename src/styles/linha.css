@@ -260,6 +260,16 @@
 .livro-item {
   grid-template-columns: minmax(0, 22ch) minmax(0, 1fr);
 }
+/* `hidden` GANHA À GRELHA (bloco F1.4, 04.09.2026).
+   `.livro-item` é `display: grid`, e uma regra de classe ganha ao `display:
+   none` que o navegador dá ao atributo `hidden`. Sem esta linha, a busca do
+   índice punha `hidden` em cada entrada que não casa e as 149 continuavam
+   todas à vista: o guião fazia o seu trabalho e a folha desfazia-o. Foi a
+   célula I3b da régua, medida no navegador, que o apanhou; a leitura do HTML
+   construído não o podia ver, porque no HTML o atributo estava lá. */
+.livro-item[hidden] {
+  display: none;
+}
 .livro-item-valor {
   display: flex;
   flex-wrap: wrap;
@@ -303,6 +313,85 @@
   text-transform: lowercase;
   color: var(--muted);
 }
+/* O IDENTIFICADOR, DEPOIS DE DESCER A METADADO (bloco F1.4, 04.09.2026).
+   Compõe-se como a unidade, que é a sua vizinha na fila e a outra coisa técnica
+   da linha: mesma letra de instrumento, mesmo corpo, mesma tinta. Ficar a 12px e
+   em tinta cheia dentro de uma fila de 11px era continuar a ser o primeiro
+   elemento que o olho encontra, que é o defeito que este bloco veio fechar. O
+   chão de 12px do telemóvel continua a valer: a regra de `@media` mais abaixo
+   nomeia `.livro-item-id` e sobe-a com as outras. */
+.livro-item-meta .livro-item-id {
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+/* ----------------------------------------------------------------------------
+ * A BUSCA DO ÍNDICE (bloco F1.4, 04.09.2026)
+ * ----------------------------------------------------------------------------
+ * A composição é a da pesquisa dos concelhos, escrita nesta folha porque é esta
+ * que a página do índice carrega: `inicio.css` é da primeira página e uma classe
+ * que só lá existe deixava este campo sem forma. Os dois alvos têm 44px, que é a
+ * regra da casa para o que se toca.
+ * ------------------------------------------------------------------------- */
+.livro-busca {
+  display: grid;
+  gap: 6px;
+  margin-top: 16px;
+}
+.livro-busca-k {
+  font-family: var(--f-versal);
+  font-size: 13px;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  font-weight: 600;
+  color: var(--muted);
+}
+.livro-busca-linha {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+.livro-busca-campo {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 15px;
+  padding: 9px 11px;
+  border: 1px solid var(--rule-strong);
+  background: var(--paper);
+  color: var(--ink);
+  max-width: 340px;
+  min-height: 44px;
+}
+.livro-busca-campo:focus {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+.livro-busca-submeter {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--f-versal);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+}
+.livro-busca-submeter:hover {
+  background: var(--paper);
+  color: var(--ink);
+}
+/* O estado vazio da busca: prosa, e não instrumento. */
+.livro-busca-vazio {
+  margin-top: 14px;
+  color: var(--muted);
+}
 
 /* As contagens deste índice: números do próprio sítio, com a sua porta. Vão numa
    linha só, fora da prosa, para que a régua das frases da casa continue a ver a
@@ -333,6 +422,11 @@
   .livro-item-meta,
   .livro-item-meta .campo-valor,
   .livro-item-id,
+  /* A MESMA ESPECIFICIDADE DA REGRA QUE DESCE O IDENTIFICADOR A 10px (F1.4).
+     `.livro-item-id` sozinho tem uma classe e perdia para `.livro-item-meta
+     .livro-item-id`, que tem duas: o chão de 12px do telemóvel deixava de valer
+     para o identificador em silêncio. */
+  .livro-item-meta .livro-item-id,
   .livro-item-k {
     font-size: 12px;
   }

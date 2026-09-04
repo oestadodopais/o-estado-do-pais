@@ -1095,3 +1095,23 @@ que era o nome da gaveta da busca. **As duas chaves ficam em `strings.mjs`**, e 
 razão é a mesma que a casa já escreveu para as outras: a forma que elas nomeiam
 pode voltar, e uma chave apagada é uma decisão perdida. O que não pode voltar em
 silêncio é a frase, e é o inventário que o impede.
+
+### Bloco F1.4 · os nomes, as datas, o índice · 04.09.2026
+
+*Quatro chaves novas e nenhuma renomeada. Uma é um separador de duas letras entre
+dois algarismos declarados; duas são a mobília da busca do índice do livro-razão;
+a quarta é a definição da palavra que o índice das áreas conta. O botão da busca
+NÃO é uma chave nova: reutiliza `ambito.pesquisaSubmeter`, que é a palavra do
+botão da pesquisa dos concelhos e a mesma acção.*
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `livro.contaDe` | de | of | o denominador das duas parcelas do índice do livro-razão: «330 de 2916 calculadas». Os dois algarismos são a mesma chave da prova rendida duas vezes, com a mesma marca e a mesma porta; esta cadeia é a única palavra da forma. Em inglês é «of» e não «out of», como o `inicio.faixa.de` do F1.1 e pela mesma razão: é a forma curta de uma legenda de aparelho |
+| `livro.buscaRotulo` | Procurar por nome, identificador ou fonte | Search by name, identifier or source | o rótulo do campo de busca do índice. Diz o que se escreve e por que campos a comparação se faz, que é o que um rótulo de campo tem de dizer. O inglês nomeia os mesmos três campos pelos nomes que o resto da edição inglesa já lhes dá («name», «identifier», «source») |
+| `livro.buscaSemResultado` | Nenhuma linha do índice tem essas palavras. | No row in this index matches those words. | o estado vazio da busca, que só o guião acende (IDENTIDADE §7). Diz «do índice» e não «do livro-razão», porque é o índice que a busca filtra: as 2 767 linhas dos concelhos saíram desta lista pela decisão D6 e têm índice próprio |
+| `areas.pecaDefinicao` | Uma peça é um trabalho, um estudo de dados ou uma medida. | A piece is a study, a data study or a measure. | a definição da palavra que a contagem de cada área usa. As três palavras são, nas duas edições, os três títulos de grupo que a página de uma área já escreve (`areas.trabalhosK`, `areas.conjuntosK`, `areas.medidasK`): a definição não traduz vocabulário novo, aponta para o que já está escrito |
+
+**Nenhuma chave passou a `retirada`.** As duas contagens do índice do livro-razão
+mudaram de texto no `INVENTARIO-FRASES.md` (ganharam o denominador) e continuam
+`viva`: é a mesma linha com o número de hoje, como o ficheiro já fazia com
+«2916 afirmações · 330 calculadas».
