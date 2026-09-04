@@ -4646,20 +4646,29 @@ for (const file of ficheirosHtml(DIST)) {
      * numa terra de ninguém que só se encontra lendo a página de cima a baixo.
      * A auditoria de 02.09 contou 19 nas suas 30 páginas.
      *
-     * Os marcos que servem: o `<main>` (as páginas que a põem no seu próprio
-     * aparelho), o `<footer>` (o invólucro, desde este bloco) e um `<nav>` com
-     * nome. Um `<div>` não serve, e uma `<section>` sem nome também não: uma
-     * `section` só é marco quando tem nome acessível, e uma `region` anónima
-     * não aparece na lista de marcos de ninguém.
+     * OS MARCOS QUE SERVEM SÃO DOIS, e o `<main>` não é um deles (segunda
+     * passagem, 04.09.2026, achado Blocking 4 da leitura a frio). A primeira
+     * forma desta regra aceitava `main`, e com isso dava por boas as 6 482
+     * páginas que punham a porta na sua coluna de aparelho — nas páginas de
+     * linha, dentro de um `<main><aside>`. O brief não pede «dentro de um
+     * marco»: pede «`<footer>` ou `<nav aria-label>`», e a diferença é a que se
+     * ouve: saltar para o `main` leva ao corpo inteiro da página, não à porta.
+     *
+     * Ficam o `<footer>` (o `contentinfo`, que é onde quem responde pela página
+     * se anuncia) e um `<nav>` COM NOME. Um `<div>` não serve, e uma `<section>`
+     * sem nome também não: uma `section` só é marco quando tem nome acessível, e
+     * uma `region` anónima não aparece na lista de marcos de ninguém.
      */
     const marco = porta.closest(
-      'footer,main,[role="contentinfo"],[role="main"],nav[aria-label],nav[aria-labelledby]',
+      'footer,[role="contentinfo"],nav[aria-label],nav[aria-labelledby]',
     );
     if (!marco) {
+      const dentroDeMain = porta.closest('main,[role="main"]');
       err(
-        `a porta de correcções não está dentro de nenhum marco.\n` +
-          `      Tem de estar dentro do <main>, do <footer> ou de um <nav> com nome: quem ` +
-          `navega por marcos passa por cima do que está entre eles.`,
+        `a porta de correcções não está dentro do <footer> nem de um <nav> com nome` +
+          (dentroDeMain ? `, e um <main> não conta` : '') +
+          `.\n      O brief F1.7 diz «<footer> ou <nav aria-label>»: saltar para o <main> leva ` +
+          `ao corpo inteiro da página, e não à porta.`,
       );
     }
   }

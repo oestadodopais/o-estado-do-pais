@@ -1,5 +1,5 @@
 {
-  "quando": "2026-09-04T00:34:28.290Z",
+  "quando": "2026-09-04T04:54:20.955Z",
   "rotas": [
     "/",
     "/en/",
@@ -59,12 +59,12 @@
     {
       "nome": "H1",
       "passa": true,
-      "prova": "0 nó(s) graves em 46 rotas × 2 larguras · nenhuma violação"
+      "prova": "0 nó(s) em violação (0 graves) em 46 rotas × 2 larguras · nenhuma violação"
     },
     {
       "nome": "H2",
-      "passa": false,
-      "prova": "fichas de concelho: 6300 medidas, 0 sem o alvo (nenhum) · a folha: 44 bloco(s) @media com tecto, 3 com uma regra de 44 px que acaba antes de 1024 (inicio.css: @media (max-width: 640px) (tecto 640px); inicio.css: @media (max-width: 640px)` e a I104 mediu o que isso\n   deixava de fora: a 641, a 768 e a 1023 as portas voltavam a 14, 19,2 e 24 px\n   de toque, que são três dos quatro alvos que a I105 nomeia. A Emenda 20c\n   escreve a rede abaixo de 1024. */\n@media (max-width: 1023px) (tecto 640px); site.css: @media (max-width: 640px)` e o buraco era esse: a 641, a 768 e a\n   1023 as duas ligações voltavam a medir 24,4 px de toque. Medido antes: 45\n   passagens de «O registo de correções →» e 46 de «The corrections log →» na\n   faixa, mais 24 do endereço de correio. A Emenda 20c diz 44 px abaixo de 1024,\n   e é essa a largura da rede: 1023 é a última que ainda não é a coluna. */\n@media (max-width: 1023px) (tecto 640px)) · no ecrã, na faixa 641 a 1023: 17215 alvos medidos, 7413 deles com 44 px a 390, 129 sem eles na faixa (6× a.uni-porta «Castelo Branco» · 47.8×36.4 de toque (caixa 63.3×50.8); 6× a.uni-porta «Évora» · 61.4×35.9 de toque (caixa 68.7×49.4); 6× a.uni-porta «Guarda» · 33.7×41.1 de toque (caixa 47.2×55.5); 6× a.uni-porta «Portalegre» · 42.3×41.9 de toque (caixa 61.6×52.1)) · 2409 não medido(s)"
+      "passa": true,
+      "prova": "fichas de concelho: 6300 medidas, 0 sem o alvo (nenhum) · a folha: 46 bloco(s) @media com tecto, 0 com uma regra de 44 px que acaba antes de 1024 · faixa 641 a 1023: 17167 alvos medidos, 7449 deles com 44 px a 390, 13 sem eles na faixa · destes, 0 são caixas e falham (nenhum) e 6 são áreas de desenho, cujo alvo é a rede de nomes por baixo do mapa (6× a.uni-porta «Beja» · 54.7×45.2 de toque (caixa 83.6×56.7)), 4 estão numa página de leitura, que o brief põe fora deste bloco (1× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×17.9 de toque (caixa 248.4×36.6); 1× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×18.2 de toque (caixa 288.9×17); 1× a.src-chip «source · Évora — Promised, Paid, A» · 49×15.3 de toque (caixa 525.8×44.4); 1× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×18.4 de toque (caixa 248.4×36.6)) e 3 quebram de linha dentro de uma frase, que é a dispensa que a WCAG 2.5.5 escreve para um alvo em linha (3× a «Alert Mechanism Report and Macroec» · 88×23.4 de toque (caixa 528.8×45.5)) · 2143 não medido(s)"
     },
     {
       "nome": "H3",
@@ -74,7 +74,7 @@
     {
       "nome": "H4",
       "passa": true,
-      "prova": "7237 página(s) do dist/: 7221 com a porta dentro de um marco, 0 fora, 16 sem porta (os documentos alojados) · nas rotas medidas: 0 fora de marco"
+      "prova": "7237 página(s) do dist/: 7221 com a porta dentro do <footer>, 0 fora dele (0 dentro de um <main>, que não conta), 16 sem porta (os documentos alojados) · nas rotas medidas: 0 fora do <footer> ou de um <nav> com nome, 0 dentro de um <main>"
     },
     {
       "nome": "H5",
@@ -89,17 +89,17 @@
     {
       "nome": "H7",
       "passa": true,
-      "prova": "70 algarismo(s) de manchete medidos, 61 com 44 px inteiros, 9 com a área partilhada com outra porta da MESMA manchete (3× a.claim-value.claim-porta «0,7» · 44.7×35.6 de toque (caixa 41.1×33); 2× a.claim-value.claim-porta «22» · 44.7×35.6 de toque (caixa 34.7×33); 1× a.claim-value.claim-porta «23» · 44.7×32.1 de toque (caixa 34.7×33); 1× a.claim-value.claim-porta «23» · 44.7×37.5 de toque (caixa 40.6×40)), 0 sem alvo e sem essa razão (nenhum)"
+      "prova": "70 algarismo(s) de manchete medidos · 30 em manchetes de uma linha citada, 0 sem os 44 px (nenhum) · 40 em manchetes de várias, 0 sem a largura ou sem a caixa de linha (nenhum) · 0 com uma porta de OUTRA linha dentro da sua área (nenhum)"
     },
     {
       "nome": "H8",
       "passa": true,
-      "prova": "604 registo(s) de cartão, 302 da edição inglesa, 298 com unidade · 0 com a unidade em português na manchete · 210 sem tradução na tabela da casa, e a tabela manda ficarem em português"
+      "prova": "cartões: 604 registo(s), 302 da edição inglesa, 298 com unidade · 0 desenharam uma cadeia diferente da que a tabela manda · 6 ficam em português por decisão da tabela («avisos» em 4: sem inglês do organismo: as duas linhas têm fonte e documento «[a verificar]»; «factor» em 2: é o nome que o relatório citado dá ao número, e não uma unidade de contagem) · páginas inglesas: 875 unidade(s) rendida(s), 0 diferentes do que a tabela manda"
     },
     {
       "nome": "H9",
       "passa": true,
-      "prova": "1250 nome(s) de diploma em páginas inglesas: 1247 com lang=\"pt-PT\", 3 dentro de uma transcrição da fonte (marca-se inteira, na língua da fonte: não é deste bloco), 0 sem marca"
+      "prova": "3615 página(s) inglesas lidas: 1247 com um nome de diploma, 2368 sem nenhum, 1 documento(s) alojado(s) fora da conta · 1250 nome(s): 1247 com lang=\"pt-PT\", 3 dentro de uma transcrição da fonte (marca-se inteira, na língua da fonte: não é deste bloco), 0 sem marca"
     },
     {
       "nome": "H13",
@@ -109,7 +109,7 @@
     {
       "nome": "H10",
       "passa": true,
-      "prova": "aria-expanded no dist/: 7221 ocorrência(s), 0 fora do feitio que o guião acompanha (details > summary[aria-controls]) · Método: 10 passagem(ns), 0 com <title> ou <h1> vazio · <title> = «Método · O Estado do País»"
+      "prova": "aria-expanded no dist/: 7221 ocorrência(s), 0 fora do feitio que o guião acompanha (details > summary[aria-controls]) · o guião /js/tema.js está em dist/, e 0 página(s) com o atributo não o pedem · abrir e fechar o <details>: 46 prova(s) no navegador, 0 em que o atributo não seguiu o estado · Método: 10 passagem(ns), 0 com <title> ou <h1> vazio · <title> = «Método · O Estado do País»"
     }
   ],
   "axe": {},
@@ -120,8 +120,11 @@
     "semPorta": 16,
     "portaEmMarco": 7221,
     "portaForaDeMarco": 0,
+    "portaEmMain": 0,
     "expanded": 7221,
     "expandedForaDoGuiao": 0,
+    "paginasComExpandedSemGuiao": 0,
+    "guiaoNoDist": true,
     "exemplos": {
       "h1": [],
       "porta": [],
@@ -132,23 +135,35 @@
     "registos": 604,
     "en": 302,
     "comUnidade": 298,
-    "semTraducao": 210,
-    "emPortugues": 0,
+    "semLivro": 0,
+    "ficamEmPortugues": 6,
+    "ficamPorUnidade": {
+      "avisos": {
+        "cartoes": 4,
+        "razao": "sem inglês do organismo: as duas linhas têm fonte e documento «[a verificar]»"
+      },
+      "factor": {
+        "cartoes": 2,
+        "razao": "é o nome que o relatório citado dá ao número, e não uma unidade de contagem"
+      }
+    },
+    "desenharamOutraCoisa": 0,
     "exemplos": []
   },
   "leis": {
     "comMarca": 1247,
     "emTranscricao": 3,
     "semMarca": 0,
+    "paginasEn": 3615,
+    "paginasComDiploma": 1247,
+    "paginasSemDiploma": 2368,
+    "documentosAlojados": 1,
+    "especies": [],
     "exemplos": []
   },
   "folhas": {
-    "blocos": 44,
-    "maus": [
-      "inicio.css: @media (max-width: 640px) (tecto 640px)",
-      "inicio.css: @media (max-width: 640px)` e a I104 mediu o que isso\n   deixava de fora: a 641, a 768 e a 1023 as portas voltavam a 14, 19,2 e 24 px\n   de toque, que são três dos quatro alvos que a I105 nomeia. A Emenda 20c\n   escreve a rede abaixo de 1024. */\n@media (max-width: 1023px) (tecto 640px)",
-      "site.css: @media (max-width: 640px)` e o buraco era esse: a 641, a 768 e a\n   1023 as duas ligações voltavam a medir 24,4 px de toque. Medido antes: 45\n   passagens de «O registo de correções →» e 46 de «The corrections log →» na\n   faixa, mais 24 do endereço de correio. A Emenda 20c diz 44 px abaixo de 1024,\n   e é essa a largura da rede: 1023 é a última que ainda não é a coluna. */\n@media (max-width: 1023px) (tecto 640px)"
-    ]
+    "blocos": 46,
+    "maus": []
   },
   "caixas_que_se_deslocam": {
     "div.agenda-eixo-caixa | focavel=true nomeada=true papel=region": 6,
@@ -158,47 +173,227 @@
     "ol.faixa | focavel=true nomeada=true papel=(ol)": 32
   },
   "alvos_maus_por_classe": {
-    "a": 6903,
+    "a": 6669,
     "a.texto-figura.texto-figura-porta": 2888,
-    "a.src-chip": 2398,
+    "a.src-chip": 2453,
     "a.prova-valor": 628,
     "a.mob-leitura-porta": 414,
-    "a.uni-porta": 282,
-    "a.marcador": 271,
+    "a.uni-porta": 368,
     "a.lang": 230,
     "a.texto-figura-porta-apos": 210,
     "a.mob-leitura-k": 184,
-    "a.texto-ligacao": 125,
+    "a.texto-ligacao": 158,
+    "a.marcador": 151,
     "a.ligacao-dados": 100,
     "summary.regra-cabeca": 88,
     "a.src-chip.is-unverified": 83,
     "a.agenda-eixo-porta": 80,
     "a.ligacao-email": 66,
     "a.mun-banda-porta": 50,
-    "a.ligacao-externa": 48,
+    "a.claim-value.claim-porta": 32,
     "a.texto-conta": 30,
     "summary": 22,
-    "a.dominios-nome.dominios-porta": 18,
     "a.chipb": 16,
     "a.cartao-porta": 14,
     "a.lig": 12,
     "button.pesquisa-submeter": 10,
+    "a.ligacao-externa": 10,
     "button.botao-correcao": 10,
-    "a.claim-value.claim-porta": 9,
     "button.densidade-b": 4,
+    "a.dominios-nome.dominios-porta": 4,
     "a.porta-nome": 2,
     "a.lig.porta-abrir": 2
   },
-  "alvos_maus_total": 15197,
+  "alvos_maus_total": 14988,
   "buraco_por_classe": {
-    "a": 63,
-    "a.uni-porta": 36,
-    "a.claim-value.claim-porta": 9,
-    "a.texto-ligacao": 8,
-    "a.dominios-nome.dominios-porta": 6,
-    "a.ligacao-externa": 6,
+    "a.uni-porta": 6,
+    "a.texto-ligacao": 3,
+    "a": 3,
     "a.src-chip": 1
   },
-  "buraco_total": 129,
-  "plantas": []
+  "buraco_total": 13,
+  "buraco": [
+    {
+      "chave": "home/pt",
+      "largura": 641,
+      "marca": "a.uni-porta «Beja»",
+      "caminho": "div:1/main:1/div:0/div:0/div:3/figure:0/div:0/div:0/svg:0/g:1/a:1",
+      "caixa": {
+        "w": 83.6,
+        "h": 56.7
+      },
+      "toque": {
+        "w": 54.7,
+        "h": 45.2
+      }
+    },
+    {
+      "chave": "home/pt",
+      "largura": 768,
+      "marca": "a.uni-porta «Beja»",
+      "caminho": "div:1/main:1/div:0/div:0/div:3/figure:0/div:0/div:0/svg:0/g:1/a:1",
+      "caixa": {
+        "w": 83.6,
+        "h": 56.7
+      },
+      "toque": {
+        "w": 54.7,
+        "h": 45.2
+      }
+    },
+    {
+      "chave": "home/pt",
+      "largura": 1023,
+      "marca": "a.uni-porta «Beja»",
+      "caminho": "div:1/main:1/div:0/div:0/div:3/figure:0/div:0/div:0/svg:0/g:1/a:1",
+      "caixa": {
+        "w": 83.6,
+        "h": 56.7
+      },
+      "toque": {
+        "w": 54.7,
+        "h": 45.2
+      }
+    },
+    {
+      "chave": "home/en",
+      "largura": 641,
+      "marca": "a.uni-porta «Beja»",
+      "caminho": "div:1/main:1/div:0/div:0/div:3/figure:0/div:0/div:0/svg:0/g:1/a:1",
+      "caixa": {
+        "w": 83.6,
+        "h": 56.7
+      },
+      "toque": {
+        "w": 54.7,
+        "h": 45.2
+      }
+    },
+    {
+      "chave": "home/en",
+      "largura": 768,
+      "marca": "a.uni-porta «Beja»",
+      "caminho": "div:1/main:1/div:0/div:0/div:3/figure:0/div:0/div:0/svg:0/g:1/a:1",
+      "caixa": {
+        "w": 83.6,
+        "h": 56.7
+      },
+      "toque": {
+        "w": 54.7,
+        "h": 45.2
+      }
+    },
+    {
+      "chave": "home/en",
+      "largura": 1023,
+      "marca": "a.uni-porta «Beja»",
+      "caminho": "div:1/main:1/div:0/div:0/div:3/figure:0/div:0/div:0/svg:0/g:1/a:1",
+      "caixa": {
+        "w": 83.6,
+        "h": 56.7
+      },
+      "toque": {
+        "w": 54.7,
+        "h": 45.2
+      }
+    },
+    {
+      "chave": "texto/en",
+      "largura": 641,
+      "marca": "a.texto-ligacao «Kohesio, via the EU Cohesion Open »",
+      "caminho": "div:1/main:1/div:1/div:1/article:0/div:111/table:0/tbody:0/tr:7/td:1/a:0",
+      "caixa": {
+        "w": 248.4,
+        "h": 36.6
+      },
+      "toque": {
+        "w": 88,
+        "h": 17.9
+      }
+    },
+    {
+      "chave": "texto/en",
+      "largura": 768,
+      "marca": "a.texto-ligacao «Kohesio, via the EU Cohesion Open »",
+      "caminho": "div:1/main:1/div:1/div:1/article:0/div:111/table:0/tbody:0/tr:7/td:1/a:0",
+      "caixa": {
+        "w": 288.9,
+        "h": 17
+      },
+      "toque": {
+        "w": 88,
+        "h": 18.2
+      }
+    },
+    {
+      "chave": "texto/en",
+      "largura": 1023,
+      "marca": "a.src-chip «source · Évora — Promised, Paid, A»",
+      "caminho": "div:1/main:1/div:1/div:1/article:0/p:103/a:3",
+      "caixa": {
+        "w": 525.8,
+        "h": 44.4
+      },
+      "toque": {
+        "w": 49,
+        "h": 15.3
+      }
+    },
+    {
+      "chave": "texto/en",
+      "largura": 1023,
+      "marca": "a.texto-ligacao «Kohesio, via the EU Cohesion Open »",
+      "caminho": "div:1/main:1/div:1/div:1/article:0/div:111/table:0/tbody:0/tr:7/td:1/a:0",
+      "caixa": {
+        "w": 248.4,
+        "h": 36.6
+      },
+      "toque": {
+        "w": 88,
+        "h": 18.4
+      }
+    },
+    {
+      "chave": "agenda/en",
+      "largura": 641,
+      "marca": "a «Alert Mechanism Report and Macroec»",
+      "caminho": "div:1/main:1/div:3/div:1/article:0/details:0/div:2/ul:1/li:9/span:1/a:0",
+      "caixa": {
+        "w": 528.8,
+        "h": 45.5
+      },
+      "toque": {
+        "w": 88,
+        "h": 23.4
+      }
+    },
+    {
+      "chave": "agenda/en",
+      "largura": 768,
+      "marca": "a «Alert Mechanism Report and Macroec»",
+      "caminho": "div:1/main:1/div:3/div:1/article:0/details:0/div:2/ul:1/li:9/span:1/a:0",
+      "caixa": {
+        "w": 528.8,
+        "h": 45.5
+      },
+      "toque": {
+        "w": 88,
+        "h": 23.4
+      }
+    },
+    {
+      "chave": "agenda/en",
+      "largura": 1023,
+      "marca": "a «Alert Mechanism Report and Macroec»",
+      "caminho": "div:1/main:1/div:3/div:1/article:0/details:0/div:2/ul:1/li:9/span:1/a:0",
+      "caixa": {
+        "w": 528.8,
+        "h": 45.5
+      },
+      "toque": {
+        "w": 88,
+        "h": 23.4
+      }
+    }
+  ]
 }

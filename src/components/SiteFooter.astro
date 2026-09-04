@@ -71,16 +71,28 @@
  * é. Vem PRIMEIRO, antes da navegação e do rótulo, porque é essa a ordem em que
  * ela já se via na página, e a ordem do documento é a ordem em que se ouve.
  *
- * As 6 482 páginas que já a punham no seu próprio aparelho, dentro do `<main>`,
- * não mudam nada: essas passam `portaNoRodape={false}` e continuam a tê-la onde
- * a tinham, dentro de um marco desde sempre.
+ * ---------------------------------------------------------------------------
+ * E AS 6 482 QUE A TINHAM DENTRO DO `<main>` TAMBÉM VÊM PARA CÁ
+ * ---------------------------------------------------------------------------
+ * *Segunda passagem, 04.09.2026, achado Blocking 4 da leitura a frio.* A
+ * primeira redação desta nota dizia que essas não mudavam nada, «dentro de um
+ * marco desde sempre». O brief não diz «dentro de um marco»: diz «`<footer>` ou
+ * `<nav aria-label>`», e um `<main>` não é nem uma coisa nem outra. Nas páginas
+ * de linha do livro-razão a porta estava dentro de um `<main><aside>`, que é a
+ * coluna do aparelho: quem salta de marco em marco chega ao `main` inteiro, e
+ * uma porta metida num canto dele encontra-se lendo a página, que é o que a
+ * navegação por marcos existe para poupar.
+ *
+ * As cinco vistas que a rendiam (`LinhaView`, `MunicipioView`, `EstudoView`,
+ * `TextoView`, `CorrecoesView`) deixam de a render, e a propriedade que lhes
+ * permitia fazê-lo saiu do invólucro. Uma por página, aqui, e o portão conta-a.
  */
 import { routePath, otherLanguagePath, normalizePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import RotuloDeIA from './RotuloDeIA.astro';
 import PortaDeCorreccoes from './PortaDeCorreccoes.astro';
 
-const { lang = 'pt', path, outraLingua = null, porta = false } = Astro.props;
+const { lang = 'pt', path, outraLingua = null } = Astro.props;
 const s = t(lang);
 const aqui = normalizePath(path ?? Astro.url.pathname);
 /* Escrito, quando a rota não existe nas duas edições (a página de leitura).
@@ -113,7 +125,7 @@ const secoes = [
 ---
 
 <footer class="rodape">
-  {porta && <PortaDeCorreccoes lang={lang} class="porta-correccoes-rodape" />}
+  <PortaDeCorreccoes lang={lang} class="porta-correccoes-rodape" />
 
   <nav class="rodape-nav" aria-label={s.nav.rotuloRodape}>
     {secoes.map(([rota, rotulo]) => <a href={routePath(rota, lang)}>{rotulo}</a>)}

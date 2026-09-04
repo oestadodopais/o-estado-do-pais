@@ -87,9 +87,10 @@ import { chromium } from 'playwright';
 import { parse, NodeType } from 'node-html-parser';
 
 import { routePath, LANGS } from '../../src/lib/routes.mjs';
-import { unidadeDaLinha } from '../../src/i18n/unidades.mjs';
+import { unidadeDaLinha, UNIDADES_EM_PORTUGUES } from '../../src/i18n/unidades.mjs';
 import { feitioDeLei } from '../../src/i18n/nomes-de-lei.mjs';
 import { MUNICIPIOS } from '../../src/data/caop-centroids.mjs';
+import { loadClaims } from '../../src/lib/ledger.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = process.env.OEDP_DIST ? path.resolve(process.env.OEDP_DIST) : path.join(RAIZ, 'dist');
@@ -187,6 +188,23 @@ const PREFIXO_DO_CONCELHO = Object.fromEntries(
  */
 const CONCELHOS_DA_CARTA = MUNICIPIOS.length;
 
+/**
+ * O GUIÃO QUE ACOMPANHA O `aria-expanded`. O nome está escrito aqui e a régua
+ * exige que ele exista em `dist/` e que as páginas que levam o atributo o
+ * peçam: uma régua que confira só o feitio do elemento dá por bom um atributo
+ * escrito à mão numa página sem guião nenhum (Major 10).
+ */
+const GUIAO_DO_TEMA = '/js/tema.js';
+
+/**
+ * O LIVRO-RAZÃO, para a H8 poder perguntar qual é a unidade de uma linha.
+ * A régua não o reescreve nem o resume: lê-o pela mesma porta que o portão de
+ * HTML usa, e uma linha que ele não tenha devolve `null` em vez de atirar.
+ */
+const CLAIMS = loadClaims();
+/** @param {string} id */
+const claimOuNulo = (id) => CLAIMS.get(id) ?? null;
+
 const ROTAS = [];
 for (const [chave, params] of FAMILIAS) {
   for (const lang of LANGS) {
@@ -215,32 +233,48 @@ const ESTRAGOS = [
     faz: (html) => html.replace('<main id="conteudo">', '<main id="conteudo"><h1>O Estado do País</h1>'),
   },
   {
-    nome: 'ficha-a-30 · a ficha de um concelho a 30 px',
+    /* 30 px CONTRA O LIMIAR REAL DE 44. A folha do estrago fixa a altura em 30 e
+       tira ao alvo qualquer folga (`::after` nenhum, `padding` nenhum), de modo
+       que a ficha mede 30 px de toque contra os 44 que a célula exige. Um
+       estrago de 30 px contra um limiar de 20 não provava nada, e é o que a
+       leitura a frio nomeou no Major 8. */
+    nome: 'ficha-a-30 · a ficha de um concelho a 30 px, contra os 44 exigidos',
     celulas: ['H2'],
     faz: (html) =>
       html.replace(
         '</head>',
-        '<style>.concelho,.concelho-com-pagina a,.concelho-nome{min-height:30px!important;height:30px!important}</style></head>',
+        '<style>.concelho{min-height:30px!important;height:30px!important}' +
+          '.concelho-com-pagina a{min-height:30px!important;height:30px!important;' +
+          'padding:0!important;display:inline-block!important}' +
+          '.concelho-com-pagina a::after{content:none!important}</style></head>',
       ),
   },
   {
-    nome: 'porta-fora-do-marco · a porta de correções fora de qualquer marco',
+    /* A PORTA DENTRO DO `<main>`, que é o caso que a primeira passagem aceitava
+       (segunda passagem, achado Major 8: a planta antiga tirava-a de TODOS os
+       marcos, e provava a regra fácil; o que a régua tinha de errado era aceitar
+       o `<main>`, e é esse o caso que esta planta põe à prova). */
+    nome: 'porta-no-main · a porta de correções dentro do <main>',
     celulas: ['H4'],
-    faz: (html) =>
-      /* Tira a porta de dentro do rodapé e põe-na entre o `</main>` e o
-         `<footer>`, que é exactamente onde ela estava antes deste bloco. */
-      html.replace(
-        /(<footer class="rodape">)([\s\S]*?)(<div class="porta-correccoes[\s\S]*?<\/div>)/,
-        '$3$1$2',
-      ),
+    faz: (html) => {
+      const bloco = html.match(
+        /<div class="porta-correccoes[^"]*"[^>]*data-porta-correccoes>[\s\S]*?<\/p><\/div>/,
+      );
+      if (!bloco) return html;
+      return html.replace(bloco[0], '').replace('</main>', `${bloco[0]}</main>`);
+    },
   },
   {
     nome: 'unidade-em-portugues · a unidade de um cartão inglês em português',
     celulas: ['H8'],
     faz: (html, rota) =>
       rota.startsWith('/en/') ? html.replace(/\bpeople\b/g, 'pessoas') : html,
-    /* O estrago que a H8 pode ver: o registo de um cartão inglês a dizer que
-       desenhou «pessoas» onde a tabela da casa manda escrever «people». */
+    /* DOIS ESTRAGOS PARA DOIS CANAIS (segunda passagem, achado Major 8). O do
+       disco põe o registo de um cartão inglês a dizer que desenhou «pessoas»
+       onde a tabela manda «people»; o do HTML, acima, põe a página inglesa a
+       render «pessoas» na unidade da linha. A célula tem de cair pelos dois
+       lados, e por isso a planta ataca os dois: um estrago que só passasse por
+       um deles provava metade da régua. */
     noDisco: (texto, caminho) =>
       caminho.includes(`${path.sep}cartoes${path.sep}`) && caminho.endsWith('.json')
         ? texto.replace(/"people"/g, '"pessoas"').replace(/ people/g, ' pessoas')
@@ -372,6 +406,42 @@ function medeNaPagina(cfg) {
   };
 
   /**
+   * A CAIXA DE ONDE SE MEDE UM ALVO.
+   *
+   * `getBoundingClientRect()` de um elemento EM LINHA devolve a união das caixas
+   * das suas linhas, e o centro dessa união pode cair no espaço entre duas
+   * linhas — isto é, em cima de outro elemento ou de nada. Medido a 04.09.2026:
+   * três ligações da agenda e um selo de uma página de leitura, todos com o texto
+   * a partir em duas linhas, davam «não medido» por esta razão, e a régua
+   * contava-os como alvos por medir quando eles são alvos grandes.
+   *
+   * Onde a união não serve, mede-se a PRIMEIRA caixa de linha, que é uma caixa a
+   * sério e é onde o dedo cai primeiro.
+   *
+   * @param {Element} el
+   */
+  const caixaDoAlvo = (el) => {
+    const uniao = el.getBoundingClientRect();
+    const rects = el.getClientRects();
+    if (rects.length <= 1) return uniao;
+    const cx = (uniao.left + uniao.right) / 2;
+    const cy = (uniao.top + uniao.bottom) / 2;
+    /* A PERGUNTA É AO NAVEGADOR E NÃO À ARITMÉTICA. Um centro que caia
+       exactamente na fronteira entre duas linhas está DENTRO de um rectângulo e
+       fora do elemento, e é isso que acontece a uma ligação de duas linhas: o
+       ponto médio fica na costura, e quem responde é o irmão. Medido a
+       04.09.2026 em `/en/agenda`: a ligação do relatório da Comissão dava «não
+       medido» por esta razão. */
+    const quem = document.elementFromPoint(cx, cy);
+    if (quem && (quem === el || el.contains(quem))) return uniao;
+    /* A maior caixa de linha: é a que dá mais espaço a um alvo, e é uma caixa a
+       sério. */
+    let maior = rects[0];
+    for (const r of rects) if (r.width * r.height > maior.width * maior.height) maior = r;
+    return maior;
+  };
+
+  /**
    * A CAIXA DE TOQUE DE UM ELEMENTO, MEDIDA E NÃO CALCULADA.
    *
    * Do centro do elemento, anda-se para os quatro lados e pergunta-se ao
@@ -415,7 +485,7 @@ function medeNaPagina(cfg) {
    * @returns {{ w: number, h: number, limitada: boolean } | null}
    */
   const caixaDeToque = (el, limite) => {
-    const r = el.getBoundingClientRect();
+    const r = caixaDoAlvo(el);
     const cx = (r.left + r.right) / 2;
     const cy = (r.top + r.bottom) / 2;
     const vw = document.documentElement.clientWidth;
@@ -458,6 +528,15 @@ function medeNaPagina(cfg) {
     return {
       w: e.d + d.d,
       h: c.d + b.d,
+      /* AS QUATRO EXTENSÕES, e não só as somas: um alvo pode ter a medida e
+         estar deslocado (o `::after` do algarismo da manchete tem 44 px e fica
+         1 px acima do centro da caixa). Quem quiser conferir os CANTOS da caixa
+         medida precisa de saber onde ela começa e onde acaba, e não de metade
+         da largura para cada lado. */
+      esq: e.d,
+      dir: d.d,
+      cima: c.d,
+      baixo: b.d,
       limitada: e.limitado || d.limitado || c.limitado || b.limitado,
     };
   };
@@ -465,20 +544,82 @@ function medeNaPagina(cfg) {
   /**
    * ALCANÇA `n` PÍXEIS? A pergunta directa, e a barata.
    *
-   * Quatro pontos a `n/2 - 0.5` do centro. Quando os quatro respondem o
-   * elemento, o alvo tem pelo menos `n - 1` px nos dois eixos e não é preciso
-   * medir mais nada. Quando não respondem, a resposta ainda pode ser sim: o
-   * alvo pode ser grande e estar deslocado (é o caso do algarismo da manchete),
-   * e aí é `caixaDeToque()` que decide, somando os dois lados.
+   * OITO PONTOS a `n/2 - 0.5` do centro: os quatro meios das arestas E OS
+   * QUATRO CANTOS. Os cantos entraram na segunda passagem (04.09.2026, achado
+   * Major 9 da leitura a frio): com quatro pontos axiais só, um alvo cujos
+   * cantos estivessem tapados por um vizinho passava por inteiro, e um alvo
+   * tapado num canto não é um alvo inteiro para o dedo que lá cai.
+   *
+   * Quando os oito respondem o elemento, o alvo tem `n - 1` px nos dois eixos e
+   * a área toda; não é preciso medir mais nada. Quando não respondem, a resposta
+   * ainda pode ser sim: o alvo pode ser grande e estar deslocado (é o caso do
+   * algarismo da manchete), e aí é `caixaDeToque()` que mede e `cumpre()` que
+   * decide, conferindo os cantos da caixa MEDIDA.
    *
    * @param {Element} el
    * @param {number} n
-   * @returns {boolean | null}
+   * @returns {boolean}
    */
   const alcanca = (el, n) => {
-    const r = el.getBoundingClientRect();
+    const r = caixaDoAlvo(el);
     const cx = (r.left + r.right) / 2;
     const cy = (r.top + r.bottom) / 2;
+    const vw = document.documentElement.clientWidth;
+    const vh = document.documentElement.clientHeight;
+    const meio = n / 2 - 0.5;
+    /** @param {number} x @param {number} y */
+    const meu = (x, y) => {
+      if (x < 0 || y < 0 || x >= vw || y >= vh) return false;
+      const quem = document.elementFromPoint(x, y);
+      if (!quem) return false;
+      return quem === el || el.contains(quem);
+    };
+    for (const [x, y] of [
+      [cx - meio, cy],
+      [cx + meio, cy],
+      [cx, cy - meio],
+      [cx, cy + meio],
+      [cx - meio, cy - meio],
+      [cx + meio, cy - meio],
+      [cx - meio, cy + meio],
+      [cx + meio, cy + meio],
+    ]) {
+      if (!meu(x, y)) return false;
+    }
+    return true;
+  };
+
+  /**
+   * A RESPOSTA SOBRE UM ALVO: `true`, `false`, ou `null` para não medido.
+   *
+   * O caminho barato são os oito pontos de `alcanca()`, centrados na caixa do
+   * elemento. Quando falham, a resposta ainda pode ser sim, e por uma razão
+   * medida: a área alcançável pode ter a medida e não estar centrada na caixa
+   * (o `::after` do algarismo da manchete tem 44 px de altura e fica 1 px acima
+   * do centro). Aí mede-se a área pelos quatro lados, RECENTRA-SE o quadrado de
+   * `n × n` no meio do que se alcançou, e perguntam-se outra vez os oito pontos.
+   *
+   * O QUADRADO RECENTRA-SE, E NÃO SE CONFEREM OS CANTOS DA CAIXA MEDIDA. A caixa
+   * medida é a união de duas leituras axiais, e a área de um alvo da casa não é
+   * um rectângulo: um valor com `::after` de 44 px dentro de uma linha de 50 px
+   * de texto alcança 44 de largura no meio e 50 de altura ao centro, e a união
+   * dessas duas leituras é uma cruz, cujos cantos estão vazios com toda a razão.
+   * Conferir os cantos DESSA caixa reprovava um alvo que tem os 44 px inteiros
+   * (medido: os quatro algarismos da manchete da primeira página). O que a WCAG
+   * pede é que EXISTA uma área de `n × n`; o que isto pergunta é se ela existe.
+   *
+   * @param {Element} el
+   * @param {number} n
+   * @param {{w:number,h:number,esq:number,dir:number,cima:number,baixo:number,limitada:boolean}|null} medida
+   */
+  const cumpre = (el, n, medida) => {
+    if (alcanca(el, n)) return true;
+    if (!medida) return null;
+    if (!(medida.w >= n - 1 && medida.h >= n - 1)) return medida.limitada ? null : false;
+    const r = caixaDoAlvo(el);
+    /* O meio do que se alcançou, que é onde o quadrado cabe se couber. */
+    const cx = (r.left + r.right) / 2 + (medida.dir - medida.esq) / 2;
+    const cy = (r.top + r.bottom) / 2 + (medida.baixo - medida.cima) / 2;
     const vw = document.documentElement.clientWidth;
     const vh = document.documentElement.clientHeight;
     const meio = n / 2 - 0.5;
@@ -494,21 +635,16 @@ function medeNaPagina(cfg) {
       [cx + meio, cy],
       [cx, cy - meio],
       [cx, cy + meio],
+      [cx - meio, cy - meio],
+      [cx + meio, cy - meio],
+      [cx - meio, cy + meio],
+      [cx + meio, cy + meio],
     ]) {
-      if (meu(x, y) !== true) return false;
+      const res = meu(x, y);
+      if (res === null) return medida.limitada ? null : false;
+      if (!res) return false;
     }
     return true;
-  };
-
-  /**
-   * A RESPOSTA SOBRE UM ALVO: `true`, `false`, ou `null` para não medido.
-   * @param {Element} el @param {number} n @param {{w:number,h:number,limitada:boolean}|null} medida
-   */
-  const cumpre = (el, n, medida) => {
-    if (alcanca(el, n)) return true;
-    if (!medida) return null;
-    if (medida.w >= n - 1 && medida.h >= n - 1) return true;
-    return medida.limitada ? null : false;
   };
 
   /** Uma marca curta e estável para o relatório dizer QUAL alvo falhou. */
@@ -569,22 +705,44 @@ function medeNaPagina(cfg) {
    * inteiro, e é isso que a célula diz; mas não é o mesmo defeito que uma área
    * roubada por prosa ou por um comando de outra secção.
    *
+   * A CAIXA POR QUE SE PERGUNTA É A QUE O ALVO RECLAMA, e não um quadrado de 44
+   * (segunda passagem, 04.09.2026). Numa manchete que cita várias linhas o alvo
+   * reclama 44 px de largura e a caixa da sua linha de altura: perguntar a 22 px
+   * do centro na vertical era perguntar por um ponto FORA da área dele, na linha
+   * seguinte, e achar lá o vizinho — que é onde o vizinho tem todo o direito de
+   * estar. A pergunta certa é se alguém entra na área reclamada.
+   *
+   * E A CAIXA RECENTRA-SE NO QUE SE ALCANÇOU, como em `cumpre()`: a área de um
+   * alvo não é simétrica em relação à caixa do elemento (o `::after` é centrado,
+   * a caixa do texto não é), e perguntar por um ponto meio píxel acima do que o
+   * alvo alcança acha lá o vizinho e chama-lhe intrusão. Medido a 04.09.2026 na
+   * manchete de `/en/regions/alentejo` a 768: a área media 32,8 px, a caixa
+   * reclamada 33,6, e a assimetria de 0,3 px dava uma falha onde as duas áreas
+   * ladrilham.
+   *
    * @param {Element} el
-   * @param {number} n
+   * @param {number} w
+   * @param {number} h
+   * @param {{esq:number,dir:number,cima:number,baixo:number}|null} [medida]
    */
-  const quemOcupa = (el, n) => {
-    const r = el.getBoundingClientRect();
-    const cx = (r.left + r.right) / 2;
-    const cy = (r.top + r.bottom) / 2;
+  const quemOcupa = (el, w, h, medida) => {
+    const r = caixaDoAlvo(el);
+    const cx = (r.left + r.right) / 2 + (medida ? (medida.dir - medida.esq) / 2 : 0);
+    const cy = (r.top + r.bottom) / 2 + (medida ? (medida.baixo - medida.cima) / 2 : 0);
     const vw = document.documentElement.clientWidth;
     const vh = document.documentElement.clientHeight;
-    const meio = n / 2 - 0.5;
+    const meioX = w / 2 - 0.5;
+    const meioY = h / 2 - 0.5;
     const achados = [];
     for (const [x, y] of [
-      [cx - meio, cy],
-      [cx + meio, cy],
-      [cx, cy - meio],
-      [cx, cy + meio],
+      [cx - meioX, cy],
+      [cx + meioX, cy],
+      [cx, cy - meioY],
+      [cx, cy + meioY],
+      [cx - meioX, cy - meioY],
+      [cx + meioX, cy - meioY],
+      [cx - meioX, cy + meioY],
+      [cx + meioX, cy + meioY],
     ]) {
       if (x < 0 || y < 0 || x >= vw || y >= vh) continue;
       const quem = document.elementFromPoint(x, y);
@@ -594,6 +752,13 @@ function medeNaPagina(cfg) {
         marca: quem.tagName.toLowerCase() + '.' + (quem.getAttribute('class') ?? ''),
         href: ancora ? ancora.getAttribute('href') : null,
         noMesmoTitulo: !!(ancora && el.closest('h1') && el.closest('h1').contains(ancora)),
+        /* O DESTINO, e não só a vizinhança (segunda passagem, Blocking 5). A
+           exceção da H7 só vale quando quem ocupa a área abre A MESMA LINHA que
+           o algarismo: um selo do mesmo título que abra OUTRA linha manda o dedo
+           para outro número, que é precisamente o defeito que a regra da casa
+           nomeia («uma área sobreposta não é um alvo maior, é uma porta que abre
+           a linha do vizinho»). */
+        mesmaPorta: !!(ancora && el.getAttribute('href') && ancora.getAttribute('href') === el.getAttribute('href')),
       });
     }
     return achados;
@@ -601,6 +766,18 @@ function medeNaPagina(cfg) {
 
   const eFicha = (el) => !!el.closest('.concelho');
   const eManchete = (el) => !!el.closest('h1') && (el.matches('[data-claim]') || el.matches('a.prova-valor'));
+  /**
+   * A manchete cita mais do que uma linha? A regra do alvo é outra nesse caso, e
+   * está escrita em `src/components/Manchete.astro`: com duas portas em linhas
+   * seguidas a 35 px uma da outra, duas áreas de 44 px cruzam-se e o cruzamento
+   * abre a linha do vizinho. O `data-citadas` do `<h1>` é a contagem, escrita
+   * pelo componente que compõe a frase.
+   */
+  const manchetePlural = (el) => {
+    const h1 = el.closest('h1');
+    const n = h1 ? Number(h1.getAttribute('data-citadas') ?? '1') : 1;
+    return Number.isFinite(n) && n > 1;
+  };
   /**
    * OS QUATRO ALVOS DE TEXTO DA I105, pela classe e não pela cadeia.
    *
@@ -655,6 +832,15 @@ function medeNaPagina(cfg) {
       const toque = barato ? null : caixaDeToque(el, alvo);
       const ok44 = barato ? true : cumpre(el, alvo, toque);
       const ok32 = ok44 === true ? true : cumpre(el, alvoPonteiro, toque);
+      /**
+       * A ÁREA QUE ESTE ALVO RECLAMA. É 44 × 44 em toda a parte, menos num
+       * algarismo de manchete que cita várias linhas: aí a folha dá-lhe 44 px de
+       * largura e a caixa da sua linha de altura, para que a área não entre na
+       * linha do vizinho (a razão está em `src/components/Manchete.astro`).
+       */
+      const linha = manchete ? parseFloat(getComputedStyle(el).lineHeight) || alvo : alvo;
+      const reclamaW = alvo;
+      const reclamaH = manchete && manchetePlural(el) ? linha : alvo;
       medidos.set(el, {
         marca: marcaDe(el),
         caminho: caminhoDe(el),
@@ -668,9 +854,26 @@ function medeNaPagina(cfg) {
         manchete,
         texto,
         i105: eI105(el),
+        /* Um alvo DENTRO DE UM DESENHO é uma forma e não uma caixa: a medida
+           dele é a do polígono. A H2 conta-os à parte, com a razão. */
+        noDesenho: !!el.closest('svg'),
+        /* UM ALVO QUE QUEBRA DE LINHA é um alvo EM LINHA dentro de prosa, e a
+           sua altura é a da caixa de linha por definição: a WCAG 2.5.5 e a 2.5.8
+           dispensam-no por isso mesmo («Inline: the target is in a sentence or
+           its size is otherwise constrained by the line-height of non-target
+           text»). Dar-lhe 44 px obrigava a torná-lo um bloco, e um bloco não
+           quebra dentro da frase. Conta-se à parte, com a razão. */
+        emVariasLinhas: el.getClientRects().length > 1,
         /* Só para as manchetes, e só quando falham: é a informação de que a
            célula H7 precisa para separar as duas espécies de colisão. */
-        ocupada: manchete && ok44 !== true ? quemOcupa(el, alvo) : null,
+        /* Quem entra na área RECLAMADA, e não num quadrado de 44 por cima dela. */
+        ocupada: manchete ? quemOcupa(el, reclamaW, reclamaH, toque) : null,
+        manchetePlural: manchete ? manchetePlural(el) : false,
+        reclamaW,
+        reclamaH,
+        /* A caixa da linha, que é o tecto que a folha dá ao alvo de um algarismo
+           numa manchete que cita mais do que uma linha. */
+        alturaDaLinha: manchete ? linha : null,
       });
     }
   }
@@ -714,6 +917,24 @@ function medeNaPagina(cfg) {
 
   /* ------------------------------------------------------- o que mais conta */
 
+  /* ---------------- H8, segundo canal · a unidade DESENHADA na página --------
+   *
+   * Um cartão é um PNG e não tem texto que se leia: a única leitura possível é a
+   * do registo ao lado. Um registo que mentisse sobre o que foi desenhado
+   * passava, e uma planta que mudasse a página não era vista (segunda passagem,
+   * 04.09.2026, achado Major 8 da leitura a frio: «a régua lê o HTML rendido, e
+   * não só o JSON ao lado»).
+   *
+   * A página da linha desenha a MESMA unidade, pela mesma função e pela mesma
+   * tabela, e essa lê-se. A régua colhe-a aqui e o juízo faz-se em Node, contra
+   * a tabela e contra o campo do livro-razão. Dois canais, a mesma exigência: um
+   * estrago tem de passar pelos dois para não ser visto. */
+  const unidades = [...document.querySelectorAll('[data-linha-campo="unit"]')].map((el) => ({
+    id: el.getAttribute('data-linha-claim'),
+    texto: (el.textContent ?? '').replace(/\s+/g, ' ').trim(),
+    lingua: el.getAttribute('lang'),
+  }));
+
   /* -------------------------------- H13 · as portas dos concelhos numa página */
 
   const portasDeConcelho = [...document.querySelectorAll('a[href]')].filter((el) => {
@@ -727,13 +948,15 @@ function medeNaPagina(cfg) {
   const naListaAgrupada = portasDeConcelho.filter((el) => !!el.closest('[data-lista-agrupada]'));
 
   const h1 = [...document.querySelectorAll('h1')];
+  /* O MARCO DA PORTA: `<footer>` ou `<nav>` com nome, e mais nada. Um `<main>`
+     não conta (segunda passagem, achado Blocking 4): saltar para o `main` leva
+     ao corpo inteiro da página, e não à porta. */
   const porta = document.querySelector('[data-porta-correccoes]');
-  const marcoDaPorta = porta
-    ? porta.closest('footer,main,[role="contentinfo"],[role="main"],nav[aria-label],nav[aria-labelledby]')
-      ? (porta.closest('footer,main,[role="contentinfo"],[role="main"],nav[aria-label],nav[aria-labelledby]') ?? {})
-          .tagName?.toLowerCase() ?? null
-      : null
+  const noMarco = porta
+    ? porta.closest('footer,[role="contentinfo"],nav[aria-label],nav[aria-labelledby]')
     : null;
+  const marcoDaPorta = noMarco ? noMarco.tagName.toLowerCase() : null;
+  const portaEmMain = !!(porta && !noMarco && porta.closest('main,[role="main"]'));
 
   /* `aria-expanded` no HTML servido: quantos há, e quantos deles são de um
      `details > summary[aria-controls]`, que é o único feitio que o guião da
@@ -744,6 +967,7 @@ function medeNaPagina(cfg) {
   return {
     alvos,
     caixas,
+    unidades,
     portasDeConcelho: portasDeConcelho.length,
     naListaAgrupada: naListaAgrupada.length,
     h1: h1.length,
@@ -751,6 +975,7 @@ function medeNaPagina(cfg) {
     h1Texto: h1.map((e) => (e.textContent ?? '').replace(/\s+/g, ' ').trim()),
     portaExiste: !!porta,
     marcoDaPorta,
+    portaEmMain,
     expanded: comExpanded.length,
     expandedDoGuiao: expandedDoGuiao.length,
     expandedForaDoGuiao: comExpanded
@@ -780,8 +1005,10 @@ function varreDist() {
   let semPorta = 0;
   let portaEmMarco = 0;
   let portaForaDeMarco = 0;
+  let portaEmMain = 0;
   let expanded = 0;
   let expandedForaDoGuiao = 0;
+  let paginasComExpandedSemGuiao = 0;
   const exemplos = { h1: [], porta: [], expanded: [] };
   for (const f of paginas(DIST)) {
     n++;
@@ -795,17 +1022,23 @@ function varreDist() {
     const i = s.indexOf('data-porta-correccoes');
     if (i < 0) semPorta++;
     else {
-      /* Dentro de um marco: `<main>` ou `<footer>`. Lê-se pela posição das
-         etiquetas, que é barato e chega para um documento que a casa compõe;
-         a forma completa, com a árvore, é a do portão de HTML. */
-      const mo = s.lastIndexOf('<main', i);
-      const mc = s.lastIndexOf('</main>', i);
+      /* DENTRO DO `<footer>`, e mais nada (segunda passagem, Blocking 4). A
+         primeira forma aceitava `<main>` e por isso dava por boas as 6 482
+         páginas que a punham na sua coluna de aparelho. Lê-se pela posição das
+         etiquetas, que é barato e chega para um documento que a casa compõe; a
+         forma completa, com a árvore, é a do portão de HTML e a da medição no
+         navegador, e as três têm de dizer o mesmo. */
       const fo = s.lastIndexOf('<footer', i);
       const fc = s.lastIndexOf('</footer>', i);
-      if ((mo >= 0 && mo > mc) || (fo >= 0 && fo > fc)) portaEmMarco++;
+      const mo = s.lastIndexOf('<main', i);
+      const mc = s.lastIndexOf('</main>', i);
+      if (fo >= 0 && fo > fc) portaEmMarco++;
       else {
         portaForaDeMarco++;
-        if (exemplos.porta.length < 5) exemplos.porta.push(rel);
+        if (mo >= 0 && mo > mc) portaEmMain++;
+        if (exemplos.porta.length < 5) {
+          exemplos.porta.push(`${rel}${mo >= 0 && mo > mc ? ' (dentro do <main>)' : ''}`);
+        }
       }
     }
     /* OS DOCUMENTOS ALOJADOS FICAM DE FORA DESTA CONTA, e não é uma folga: um
@@ -817,6 +1050,13 @@ function varreDist() {
        do próprio documento). É a mesma exclusão que `scripts/check-lingua.mjs`
        faz, e pela mesma razão. */
     if (/[\\/](documento|document)[\\/]index\.html$/.test(rel)) continue;
+    const temExpanded = s.includes(' aria-expanded=');
+    if (temExpanded && !s.includes(GUIAO_DO_TEMA)) {
+      paginasComExpandedSemGuiao++;
+      if (exemplos.expanded.length < 5) {
+        exemplos.expanded.push(`${rel}: leva aria-expanded e não pede ${GUIAO_DO_TEMA}`);
+      }
+    }
     for (const m of s.matchAll(/\saria-expanded=/g)) {
       expanded++;
       /* O único feitio que o guião acompanha: um `<summary aria-controls>`
@@ -831,7 +1071,19 @@ function varreDist() {
       }
     }
   }
-  return { n, h1Errado, semPorta, portaEmMarco, portaForaDeMarco, expanded, expandedForaDoGuiao, exemplos };
+  return {
+    n,
+    h1Errado,
+    semPorta,
+    portaEmMarco,
+    portaForaDeMarco,
+    portaEmMain,
+    expanded,
+    expandedForaDoGuiao,
+    paginasComExpandedSemGuiao,
+    guiaoNoDist: fs.existsSync(path.join(DIST, GUIAO_DO_TEMA.replace(/^\//, ''))),
+    exemplos,
+  };
 }
 
 /**
@@ -852,12 +1104,25 @@ function varreDist() {
  */
 function varreCartoes() {
   const dir = path.join(DIST, 'cartoes');
-  if (!fs.existsSync(dir)) return { registos: 0, en: 0, comUnidade: 0, semTraducao: 0, emPortugues: 0, exemplos: [] };
+  const vazio = {
+    registos: 0,
+    en: 0,
+    comUnidade: 0,
+    semLivro: 0,
+    ficamEmPortugues: 0,
+    ficamPorUnidade: {},
+    desenharamOutraCoisa: 0,
+    exemplos: [],
+  };
+  if (!fs.existsSync(dir)) return vazio;
   let registos = 0;
   let en = 0;
   let comUnidade = 0;
-  let semTraducao = 0;
-  let emPortugues = 0;
+  let semLivro = 0;
+  let ficamEmPortugues = 0;
+  let desenharamOutraCoisa = 0;
+  /** Quantas vezes cada unidade sem tradução aparece, para a contagem com razão. */
+  const ficamPorUnidade = new Map();
   const exemplos = new Map();
   for (const f of fs.readdirSync(dir)) {
     if (!f.endsWith('.json')) continue;
@@ -868,17 +1133,43 @@ function varreCartoes() {
     const u = (r.valores ?? []).find((v) => v.campo === 'unit');
     if (!u) continue;
     comUnidade++;
-    const esperado = unidadeDaLinha(u.texto, 'en');
+    /**
+     * A PERGUNTA É FEITA À CADEIA DO LIVRO-RAZÃO, e não à que o cartão desenhou
+     * (segunda passagem, 04.09.2026, achado Blocking 3 da leitura a frio). A
+     * primeira forma passava `u.texto` — que depois deste bloco já vem em inglês
+     * — à tabela, que é indexada pelo PORTUGUÊS: nenhuma entrada casava, todos os
+     * cartões saíam «sem tradução», e nem um único cartão traduzido era
+     * conferido. A régua dizia zero em português porque não olhava para nenhum.
+     *
+     * `livro` é o campo que o registo passou a levar exactamente para isto.
+     * `texto` serve de recurso para um registo escrito antes deste bloco, onde
+     * as duas cadeias eram a mesma.
+     */
+    const doLivro = u.livro ?? u.texto;
+    if (u.livro === undefined) semLivro++;
+    const esperado = unidadeDaLinha(doLivro, 'en');
     if (esperado.lingua === 'pt-PT') {
-      semTraducao++;
+      /* A tabela da casa manda esta unidade ficar em português, e diz porquê.
+         Não é uma falha: é uma declaração, e conta-se com a razão ao lado. */
+      ficamEmPortugues++;
+      ficamPorUnidade.set(doLivro, (ficamPorUnidade.get(doLivro) ?? 0) + 1);
+      /* E o cartão tem mesmo de a ter desenhado em português: se a tabela manda
+         ficar e o cartão traduziu, é uma tradução inventada. */
+      if (u.texto !== doLivro) {
+        desenharamOutraCoisa++;
+        const k = `«${u.texto}» onde a tabela manda ficar «${doLivro}»`;
+        exemplos.set(k, (exemplos.get(k) ?? 0) + 1);
+      }
       continue;
     }
-    /* A manchete é a terceira cadeia da cópia: a marca, a sobrancelha, e depois
-       o valor com a unidade (`src/lib/cartoes.mjs`, `modeloDaLinha()`). */
+    /* A unidade desenhada tem de ser a que a tabela dá para esta edição, e a
+       manchete do cartão tem de a trazer. A manchete é a terceira cadeia da
+       cópia: a marca, a sobrancelha, e depois o valor com a unidade
+       (`src/lib/cartoes.mjs`, `modeloDaLinha()`). */
     const manchete = String((r.copia ?? [])[2] ?? '');
-    if (!manchete.includes(esperado.texto)) {
-      emPortugues++;
-      const k = `«${manchete}» devia trazer «${esperado.texto}»`;
+    if (u.texto !== esperado.texto || !manchete.includes(esperado.texto)) {
+      desenharamOutraCoisa++;
+      const k = `«${u.texto}» na manchete «${manchete}», e a tabela dá «${esperado.texto}»`;
       exemplos.set(k, (exemplos.get(k) ?? 0) + 1);
     }
   }
@@ -886,8 +1177,15 @@ function varreCartoes() {
     registos,
     en,
     comUnidade,
-    semTraducao,
-    emPortugues,
+    semLivro,
+    ficamEmPortugues,
+    ficamPorUnidade: Object.fromEntries(
+      [...ficamPorUnidade].sort((a, b) => b[1] - a[1]).map(([k, v]) => [
+        k,
+        { cartoes: v, razao: UNIDADES_EM_PORTUGUES[k] ?? '(sem razão escrita na tabela)' },
+      ]),
+    ),
+    desenharamOutraCoisa,
     exemplos: [...exemplos].sort((a, b) => b[1] - a[1]).slice(0, 4).map(([k, v]) => `${v}× ${k}`),
   };
 }
@@ -926,15 +1224,33 @@ function varreLeis() {
   let comMarca = 0;
   let emTranscricao = 0;
   let semMarca = 0;
+  let paginasEn = 0;
+  let paginasComDiploma = 0;
+  let paginasSemDiploma = 0;
+  let documentosAlojados = 0;
   const exemplos = new Map();
   for (const f of paginas(DIST)) {
     const s = leFicheiro(f);
     if (!/<html[^>]*\slang="en/.test(s)) continue;
-    if (!feitioDeLei().test(s)) continue;
+    paginasEn++;
+    /* AS PÁGINAS SEM DIPLOMA CONTAM-SE, E NÃO SE PERDEM (segunda passagem,
+       04.09.2026, achado Major 11 da leitura a frio). O salto continua a existir
+       porque abrir 3 615 árvores para nada custa tempo; o que muda é que a régua
+       diz quantas leu e quantas saltou, de modo que um reconhecedor demasiado
+       estreito se veja pela contagem em vez de desaparecer com o que não
+       reconhece. */
+    if (!feitioDeLei().test(s)) {
+      paginasSemDiploma++;
+      continue;
+    }
+    paginasComDiploma++;
     /* Um documento alojado não é uma página deste sítio: a casa não lhe escreve
        uma linha e não lhe mete markup por dentro (a mesma exclusão que
        `scripts/check-lingua.mjs` faz, e pela mesma razão). */
-    if (/\/(documento|document)\/index\.html$/.test(f)) continue;
+    if (/\/(documento|document)\/index\.html$/.test(f)) {
+      documentosAlojados++;
+      continue;
+    }
     const root = parse(s);
     const daFonte = new Set();
     for (const el of root.querySelectorAll(TRANSCRICAO_DA_FONTE)) {
@@ -978,6 +1294,13 @@ function varreLeis() {
     comMarca,
     emTranscricao,
     semMarca,
+    paginasEn,
+    paginasComDiploma,
+    paginasSemDiploma,
+    documentosAlojados,
+    especies: [...new Set(
+      [...exemplos.keys()].map((k) => k.replace(/\s+n\.º.*/, '')),
+    )],
     exemplos: [...exemplos].slice(0, 4).map(([k]) => k),
   };
 }
@@ -1076,12 +1399,46 @@ async function passagem() {
           if (v.impacto === 'serious' || v.impacto === 'critical') graves += v.nos;
         }
       }
+      /* ---------------------------------------------------------------------
+         O GUIÃO DO `aria-expanded` EXISTE E MUDA O ESTADO (segunda passagem,
+         04.09.2026, achado Major 10 da leitura a frio)
+         ---------------------------------------------------------------------
+         A régua conferia o FEITIO do elemento («é um `details > summary` com
+         `aria-controls`?») e mais nada. Um `aria-expanded` escrito à mão numa
+         página cujo guião não fosse servido tinha exactamente esse feitio e
+         passava: a régua dizia «o guião acompanha-o» sem nunca ter perguntado se
+         o guião existia.
+
+         Aqui abre-se o `<details>` de verdade e vê-se o atributo mudar. Faz-se
+         uma vez por rota, à largura mais estreita (é onde o comando do menu
+         existe), e só onde há um `<summary>` desses. */
+      const guiao =
+        largura === LARGURAS[0]
+          ? await pagina.evaluate(async () => {
+              const sum = document.querySelector('details > summary[aria-controls]');
+              if (!sum) return null;
+              const porta = sum.parentElement;
+              const antes = sum.getAttribute('aria-expanded');
+              porta.open = !porta.open;
+              /* O `toggle` é assíncrono: dá-se-lhe uma volta do laço de eventos,
+                 que é o que o guião precisa para o ouvir. */
+              await new Promise((r) => setTimeout(r, 0));
+              const depois = sum.getAttribute('aria-expanded');
+              porta.open = !porta.open;
+              await new Promise((r) => setTimeout(r, 0));
+              const reposto = sum.getAttribute('aria-expanded');
+              /* Mudou de verdade quando o atributo seguiu o `open` nos DOIS
+                 sentidos: abriu e mudou, fechou e voltou. Um guião que só
+                 escrevesse «true» uma vez passava a meia conferência. */
+              return { antes, depois, reposto, mudou: antes !== depois && reposto === antes };
+            })
+          : null;
       const medida = await pagina.evaluate(medeNaPagina, {
         alvo: ALVO,
         alvoPonteiro: ALVO_PONTEIRO,
         prefixoDoConcelho: PREFIXO_DO_CONCELHO[r.lang],
       });
-      paginas.push({ ...r, largura, ...medida });
+      paginas.push({ ...r, largura, guiao, ...medida });
       await ctx.close();
     }
   }
@@ -1098,15 +1455,30 @@ const conta = (nome, passa, prova) => celulas.push({ nome, passa: !!passa, prova
 function avalia(p, dist, cartoes, leis, folhas) {
   celulas = [];
   const todosOsAlvos = p.paginas.flatMap((pg) =>
-    pg.alvos.map((a) => ({ ...a, chave: pg.chave, largura: pg.largura, rota: pg.rota })),
+    pg.alvos.map((a) => ({
+      ...a,
+      chave: pg.chave,
+      familia: pg.familia,
+      largura: pg.largura,
+      rota: pg.rota,
+    })),
   );
 
-  /* --- H1 · o axe a zero nas graves --------------------------------------- */
+  /* --- H1 · o axe a zero, e de qualquer grau ------------------------------
+   *
+   * ZERO DE QUALQUER IMPACTO, e não zero de graves com moderadas por baixo
+   * (segunda passagem, 04.09.2026, achado Major 9 da leitura a frio). A primeira
+   * forma exigia só «serious» e «critical», e o relatório do bloco afirmava
+   * «nenhuma violação de qualquer impacto»: a régua e o relatório diziam coisas
+   * diferentes, e a que valia era a mais fraca. Vale a mais forte, que é a que
+   * já se cumpria.
+   */
   const porRegra = Object.entries(p.axe).sort((a, b) => b[1] - a[1]);
+  const nosDeAxe = Object.values(p.axe).reduce((t, v) => t + v, 0);
   conta(
     'H1',
-    p.paginas.length > 0 && p.graves === 0,
-    `${p.graves} nó(s) graves em ${ROTAS.length} rotas × 2 larguras · ` +
+    p.paginas.length > 0 && nosDeAxe === 0,
+    `${nosDeAxe} nó(s) em violação (${p.graves} graves) em ${ROTAS.length} rotas × 2 larguras · ` +
       (porRegra.length ? porRegra.map(([k, v]) => `${k}=${v}`).join(' · ') : 'nenhuma violação'),
   );
 
@@ -1140,20 +1512,52 @@ function avalia(p, dist, cartoes, leis, folhas) {
     return pequeno?.ok44 === true;
   });
   const buracoMau = doBuraco.filter((a) => a.ok44 !== true);
+  /* OS POLÍGONOS DO MAPA CONTAM-SE À PARTE, COM A RAZÃO, e nada mais conta.
+     Um alvo dentro de um `<svg>` é uma FORMA e não uma caixa: a medida dele é a
+     do polígono, e a casa já decidiu como responde por eles — não é alargar o
+     desenho, é a rede de nomes por baixo do mapa (Emenda 20c, e a I82 que manda
+     a régua medir a área inscrita). Cada uma dessas unidades tem o seu nome como
+     alvo de 44 px nessa rede. Tudo o resto que perca os 44 px na faixa é uma
+     falha, e a condição desta célula passou a dizê-lo (segunda passagem,
+     04.09.2026, achado Blocking 2: `buracoMau` era calculado e não entrava na
+     condição, e o relatório dizia que os 129 eram todos polígonos quando 93 não
+     eram). */
+  /* AS PÁGINAS DE LEITURA FICAM DE FORA, e é o brief que o diz, não esta régua:
+     «nada nos documentos alojados (F1.8) nem nas páginas de leitura (F1.9a)». O
+     corpo de uma página de leitura é um documento transcrito com as suas próprias
+     portas, e medido a 04.09.2026 dar 44 px à ligação de um relatório punha-a por
+     cima das duas portas «a linha desta figura» que vivem na mesma célula. Ficam
+     contadas à parte, com a razão, como as áreas do mapa. */
+  const buracoDeLeitura = buracoMau.filter((a) => a.familia === 'texto');
+  const buracoDeDesenho = buracoMau.filter((a) => a.noDesenho && a.familia !== 'texto');
+  const buracoEmLinha = buracoMau.filter(
+    (a) => a.emVariasLinhas && !a.noDesenho && a.familia !== 'texto',
+  );
+  const buracoDeCaixa = buracoMau.filter(
+    (a) => !a.noDesenho && a.familia !== 'texto' && !a.emVariasLinhas,
+  );
   const naoMedidos = todosOsAlvos.filter((a) => a.ok === null);
   conta(
     'H2',
     fichas.length > 0 &&
       fichasMas.length === 0 &&
       folhas.blocos > 0 &&
-      folhas.maus.length === 0,
+      folhas.maus.length === 0 &&
+      doBuraco.length > 0 &&
+      buracoDeCaixa.length === 0,
     `fichas de concelho: ${fichas.length} medidas, ${fichasMas.length} sem o alvo ` +
       `(${resumo(fichasMas)}) · a folha: ${folhas.blocos} bloco(s) @media com tecto, ` +
       `${folhas.maus.length} com uma regra de 44 px que acaba antes de ${LIMIAR_DA_COLUNA}` +
       (folhas.maus.length ? ` (${folhas.maus.join('; ')})` : '') +
-      ` · no ecrã, na faixa 641 a 1023: ${noBuraco.length} alvos medidos, ${doBuraco.length} ` +
-      `deles com ${ALVO} px a 390, ${buracoMau.length} sem eles na faixa (${resumo(buracoMau)}) ` +
-      `· ${naoMedidos.length} não medido(s)`,
+      ` · faixa 641 a 1023: ${noBuraco.length} alvos medidos, ${doBuraco.length} deles com ` +
+      `${ALVO} px a 390, ${buracoMau.length} sem eles na faixa · destes, ` +
+      `${buracoDeCaixa.length} são caixas e falham (${resumo(buracoDeCaixa)}) e ` +
+      `${buracoDeDesenho.length} são áreas de desenho, cujo alvo é a rede de nomes por baixo do ` +
+      `mapa (${resumo(buracoDeDesenho)}), ${buracoDeLeitura.length} estão numa página de ` +
+      `leitura, que o brief põe fora deste bloco (${resumo(buracoDeLeitura)}) e ` +
+      `${buracoEmLinha.length} quebram de linha dentro de uma frase, que é a dispensa que a ` +
+      `WCAG 2.5.5 escreve para um alvo em linha (${resumo(buracoEmLinha)}) · ` +
+      `${naoMedidos.length} não medido(s)`,
   );
 
   /* --- H3 · um só <h1> por página ---------------------------------------- */
@@ -1168,14 +1572,16 @@ function avalia(p, dist, cartoes, leis, folhas) {
 
   /* --- H4 · a porta de correções dentro de um marco ----------------------- */
   const portasMas = p.paginas.filter((pg) => pg.portaExiste && !pg.marcoDaPorta);
+  const portasEmMain = p.paginas.filter((pg) => pg.portaEmMain);
   conta(
     'H4',
     dist.portaForaDeMarco === 0 && portasMas.length === 0 && dist.portaEmMarco > 0,
-    `${dist.n} página(s) do dist/: ${dist.portaEmMarco} com a porta dentro de um marco, ` +
-      `${dist.portaForaDeMarco} fora` +
+    `${dist.n} página(s) do dist/: ${dist.portaEmMarco} com a porta dentro do <footer>, ` +
+      `${dist.portaForaDeMarco} fora dele (${dist.portaEmMain} dentro de um <main>, que não conta)` +
       (dist.exemplos.porta.length ? ` (${dist.exemplos.porta.join('; ')})` : '') +
       `, ${dist.semPorta} sem porta (os documentos alojados) · nas rotas medidas: ` +
-      `${portasMas.length} fora de marco`,
+      `${portasMas.length} fora do <footer> ou de um <nav> com nome, ${portasEmMain.length} ` +
+      `dentro de um <main>`,
   );
 
   /* --- H5 · as caixas que se deslocam, ao teclado ------------------------- */
@@ -1222,59 +1628,117 @@ function avalia(p, dist, cartoes, leis, folhas) {
       `${ALVO_PONTEIRO} px (${resumo(daI105Maus)})`,
   );
 
-  /* --- H7 · os algarismos das manchetes -----------------------------------
+  /* --- H7 · os algarismos das manchetes ------------------------------------
    *
-   * Cada algarismo de uma manchete é uma porta para a sua linha, com 44 px de
-   * área. A EXCEÇÃO, escrita à partida e não depois de falhar: onde a área que
-   * falta está ocupada por OUTRA PORTA DA MESMA MANCHETE — o selo de uma das
-   * linhas que ela cita —, o alvo conta-se como cumprido. A razão é que nesse
-   * ponto o dedo abre uma linha daquela manchete e não uma página qualquer: as
-   * duas portas são a mesma promessa, e a folha da casa não consegue dar 44 px a
-   * duas portas a 34 px uma da outra sem lhes dar altura de fila, que é uma
-   * mudança do aspeto da manchete que o brief F1.7 proíbe («Nada nas manchetes
-   * além do alvo»).
+   * A REGRA TEM DOIS DEGRAUS, e os dois estão escritos aqui e na folha antes de
+   * qualquer medição (segunda passagem, 04.09.2026, achado Blocking 5 da leitura
+   * a frio). Não é uma exceção aplicada depois de falhar: é a geometria de uma
+   * manchete, dita à partida.
    *
-   * Medido a 04.09.2026: dos 70 algarismos medidos, os que caem nesta exceção
-   * caem nas páginas de região e de domínio, a 641, 768 e 1023, onde a manchete
-   * quebra de maneira a pôr a fila dos selos a menos de 44 px do último número.
-   * O relatório do bloco conta-os e nomeia-os; o que fica para a direção é a
-   * escolha entre dar ar à fila dos selos e deixá-los como estão.
+   *   · UMA MANCHETE QUE CITA UMA LINHA — as 308 páginas de concelho — dá ao seu
+   *     algarismo os 44 px inteiros. Não há vizinho com quem cruzar;
+   *   · UMA MANCHETE QUE CITA MAIS DO QUE UMA — a de uma região, a de um
+   *     domínio — dá a cada algarismo a largura de 44 px e a altura da sua
+   *     própria caixa de linha. A entrelinha de uma manchete é 31,36 px e os
+   *     algarismos caem a 35 px um do outro: duas áreas de 44 px cruzam-se por
+   *     11, o cruzamento fica para quem vem depois no documento, e um dedo a 9 px
+   *     por baixo de um número abria a linha do outro. Medido a 768 em
+   *     `/en/regions/alentejo`.
+   *
+   * O QUE A CÉLULA EXIGE NOS DOIS CASOS, e é o que interessa ao leitor: **nenhum
+   * algarismo partilha a sua área com uma porta que abra OUTRA linha**. Era isto
+   * que a primeira passagem não conferia: aceitava qualquer âncora do mesmo
+   * `<h1>` como desculpa, e uma manchete cita mais do que uma linha.
    */
   const manchetes = todosOsAlvos.filter((a) => a.manchete);
-  const manchetesMas = manchetes.filter((a) => a.ok !== true);
-  const porOutraPorta = manchetesMas.filter(
-    (a) => (a.ocupada ?? []).length > 0 && (a.ocupada ?? []).every((o) => o.noMesmoTitulo),
+  const manchetesSimples = manchetes.filter((a) => !a.manchetePlural);
+  const manchetesPlurais = manchetes.filter((a) => a.manchetePlural);
+  /* Uma porta que abra outra linha dentro da área de um algarismo: é a falha, e
+     é a mesma nos dois degraus. */
+  const comPortaAlheia = manchetes.filter((a) =>
+    (a.ocupada ?? []).some((o) => o.href && !o.mesmaPorta),
   );
-  const semDesculpa = manchetesMas.filter((a) => !porOutraPorta.includes(a));
+  const simplesMas = manchetesSimples.filter((a) => a.ok !== true);
+  /* No degrau plural, o que se exige é a largura e a caixa de linha inteira: a
+     altura que a folha lhe dá é `min(44px, 1lh)`, e a régua mede-a contra a
+     entrelinha que a própria página declara, não contra um número escrito aqui. */
+  const pluraisMas = manchetesPlurais.filter(
+    (a) =>
+      a.ok !== true &&
+      (a.toque === null || a.toque.w < a.reclamaW - 1 || a.toque.h < a.reclamaH - 1),
+  );
   conta(
     'H7',
-    manchetes.length > 0 && semDesculpa.length === 0,
-    `${manchetes.length} algarismo(s) de manchete medidos, ${manchetes.length - manchetesMas.length} ` +
-      `com ${ALVO} px inteiros, ${porOutraPorta.length} com a área partilhada com outra porta da ` +
-      `MESMA manchete (${resumo(porOutraPorta)}), ${semDesculpa.length} sem alvo e sem essa razão ` +
-      `(${resumo(semDesculpa)})`,
+    manchetes.length > 0 &&
+      manchetesSimples.length > 0 &&
+      simplesMas.length === 0 &&
+      pluraisMas.length === 0 &&
+      comPortaAlheia.length === 0,
+    `${manchetes.length} algarismo(s) de manchete medidos · ` +
+      `${manchetesSimples.length} em manchetes de uma linha citada, ${simplesMas.length} sem os ` +
+      `${ALVO} px (${resumo(simplesMas)}) · ${manchetesPlurais.length} em manchetes de várias, ` +
+      `${pluraisMas.length} sem a largura ou sem a caixa de linha (${resumo(pluraisMas)}) · ` +
+      `${comPortaAlheia.length} com uma porta de OUTRA linha dentro da sua área ` +
+      `(${resumo(comPortaAlheia)})`,
   );
 
-  /* --- H8 · as unidades dos cartões ingleses (I96) ------------------------ */
+  /* --- H8 · as unidades, nos cartões ingleses e na página (I96) ------------
+   *
+   * DOIS CANAIS, e a célula exige os dois (segunda passagem, achados Blocking 3
+   * e Major 8). O primeiro é o registo de cada cartão, onde a unidade desenhada
+   * se compara com a que a tabela da casa dá para a cadeia do LIVRO-RAZÃO. O
+   * segundo é a página construída, lida no navegador, onde a mesma unidade se
+   * rende e se pode ver: sem ele, um registo que mentisse sobre o PNG passava, e
+   * uma planta que mudasse a página não era vista por ninguém.
+   */
+  const unidadesEn = p.paginas
+    .filter((pg) => pg.lang === 'en')
+    .flatMap((pg) => (pg.unidades ?? []).map((u) => ({ ...u, chave: pg.chave })));
+  const unidadesMas = [];
+  for (const u of unidadesEn) {
+    const claim = u.id ? claimOuNulo(u.id) : null;
+    if (!claim) continue;
+    const esperado = unidadeDaLinha(claim.unit, 'en');
+    if (u.texto !== esperado.texto) {
+      unidadesMas.push(`${u.chave}: «${u.texto}», e a tabela dá «${esperado.texto}»`);
+    } else if ((u.lingua ?? null) !== (esperado.lingua ?? null)) {
+      unidadesMas.push(
+        `${u.chave}: «${u.texto}» com lang=${u.lingua ?? '(nenhum)'}, e devia ser ` +
+          `${esperado.lingua ?? '(nenhum)'}`,
+      );
+    }
+  }
+  const ficam = Object.entries(cartoes.ficamPorUnidade ?? {});
   conta(
     'H8',
-    cartoes.en > 0 && cartoes.emPortugues === 0,
-    `${cartoes.registos} registo(s) de cartão, ${cartoes.en} da edição inglesa, ` +
-      `${cartoes.comUnidade} com unidade · ${cartoes.emPortugues} com a unidade em português ` +
-      `na manchete` +
+    cartoes.en > 0 &&
+      cartoes.comUnidade > 0 &&
+      cartoes.desenharamOutraCoisa === 0 &&
+      unidadesEn.length > 0 &&
+      unidadesMas.length === 0,
+    `cartões: ${cartoes.registos} registo(s), ${cartoes.en} da edição inglesa, ` +
+      `${cartoes.comUnidade} com unidade · ${cartoes.desenharamOutraCoisa} desenharam uma cadeia ` +
+      `diferente da que a tabela manda` +
       (cartoes.exemplos.length ? ` (${cartoes.exemplos.join('; ')})` : '') +
-      ` · ${cartoes.semTraducao} sem tradução na tabela da casa, e a tabela manda ficarem em ` +
-      `português`,
+      ` · ${cartoes.ficamEmPortugues} ficam em português por decisão da tabela` +
+      (ficam.length
+        ? ` (${ficam.map(([k, v]) => `«${k}» em ${v.cartoes}: ${v.razao}`).join('; ')})`
+        : '') +
+      ` · páginas inglesas: ${unidadesEn.length} unidade(s) rendida(s), ${unidadesMas.length} ` +
+      `diferentes do que a tabela manda` +
+      (unidadesMas.length ? ` (${unidadesMas.slice(0, 3).join('; ')})` : ''),
   );
 
   /* --- H9 · os nomes de diploma nas páginas inglesas (I95) ---------------- */
   conta(
     'H9',
     leis.comMarca + leis.emTranscricao + leis.semMarca > 0 && leis.semMarca === 0,
-    `${leis.comMarca + leis.emTranscricao + leis.semMarca} nome(s) de diploma em páginas ` +
-      `inglesas: ${leis.comMarca} com lang="pt-PT", ${leis.emTranscricao} dentro de uma ` +
-      `transcrição da fonte (marca-se inteira, na língua da fonte: não é deste bloco), ` +
-      `${leis.semMarca} sem marca` +
+    `${leis.paginasEn} página(s) inglesas lidas: ${leis.paginasComDiploma} com um nome de ` +
+      `diploma, ${leis.paginasSemDiploma} sem nenhum, ${leis.documentosAlojados} documento(s) ` +
+      `alojado(s) fora da conta · ` +
+      `${leis.comMarca + leis.emTranscricao + leis.semMarca} nome(s): ${leis.comMarca} com ` +
+      `lang="pt-PT", ${leis.emTranscricao} dentro de uma transcrição da fonte (marca-se ` +
+      `inteira, na língua da fonte: não é deste bloco), ${leis.semMarca} sem marca` +
       (leis.exemplos.length ? ` (${leis.exemplos.join('; ')})` : ''),
   );
 
@@ -1310,12 +1774,33 @@ function avalia(p, dist, cartoes, leis, folhas) {
   const metodoSemTitulo = metodo.filter(
     (pg) => !pg.tituloDaPagina || pg.h1Texto.some((t) => t === ''),
   );
+  /**
+   * O GUIÃO EXISTE, E MUDA O ESTADO. Três perguntas, e as três têm de responder
+   * sim (segunda passagem, achado Major 10): o ficheiro está em `dist/`, as
+   * páginas que levam o atributo apontam para ele, e ao abrir o `<details>` o
+   * atributo muda e ao fechar volta. A primeira forma conferia só o FEITIO do
+   * elemento, e um atributo escrito à mão numa página sem guião tinha o mesmo
+   * feitio.
+   */
+  const provasDoGuiao = p.paginas.map((pg) => pg.guiao).filter((g) => g !== null && g !== undefined);
+  const guiaoQueNaoMudou = provasDoGuiao.filter((g) => !g.mudou);
   conta(
     'H10',
-    dist.expandedForaDoGuiao === 0 && metodo.length > 0 && metodoSemTitulo.length === 0,
+    dist.expandedForaDoGuiao === 0 &&
+      dist.guiaoNoDist &&
+      dist.paginasComExpandedSemGuiao === 0 &&
+      provasDoGuiao.length > 0 &&
+      guiaoQueNaoMudou.length === 0 &&
+      metodo.length > 0 &&
+      metodoSemTitulo.length === 0,
     `aria-expanded no dist/: ${dist.expanded} ocorrência(s), ${dist.expandedForaDoGuiao} fora do ` +
       `feitio que o guião acompanha (details > summary[aria-controls])` +
       (dist.exemplos.expanded.length ? ` (${dist.exemplos.expanded.join('; ')})` : '') +
+      ` · o guião ${GUIAO_DO_TEMA} ${dist.guiaoNoDist ? 'está' : 'NÃO ESTÁ'} em dist/, e ` +
+      `${dist.paginasComExpandedSemGuiao} página(s) com o atributo não o pedem · abrir e fechar ` +
+      `o <details>: ${provasDoGuiao.length} prova(s) no navegador, ${guiaoQueNaoMudou.length} em ` +
+      `que o atributo não seguiu o estado` +
+      (guiaoQueNaoMudou.length ? ` (${JSON.stringify(guiaoQueNaoMudou[0])})` : '') +
       ` · Método: ${metodo.length} passagem(ns), ${metodoSemTitulo.length} com <title> ou <h1> vazio` +
       (metodo[0] ? ` · <title> = «${metodo[0].tituloDaPagina.slice(0, 60)}»` : ''),
   );

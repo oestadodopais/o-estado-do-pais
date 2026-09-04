@@ -2064,3 +2064,54 @@ quando a busca subiu para debaixo da manchete.
 | conteudo | The indicators of the Macroeconomic Imbalance Procedure scoreboard, each with the threshold of the Procedure. The values are from Eurostat, confirmed against the European Commission’s country report, . | porta | viva | — |
 | conteudo | The indicators of the European Social Scoreboard, which publishes no thresholds. The values are from Eurostat, confirmed against the European Commission, . | porta | retirada | a segunda passagem do F1.1 apertou os verbos a 03.09.2026, depois do Blocking 6 da leitura a frio do Codex: «com os limiares que o Procedimento publica» e «que não publica limiares» são dois verbos que as linhas não sustentam. Uma nota do livro-razão diz que o limiar É do Procedimento, não que ele o publica; e a Emenda 16 diz que o Painel Social «não tem limiares», que é outra coisa de «não publica limiares». A frase que ficou diz o que a nota e a emenda dizem, palavra por palavra, e nomeia o documento contra o qual os valores foram confirmados, que a primeira redação deixava por dizer |
 | conteudo | The indicators the ledger holds whose record names the European Social Scoreboard, with no colour because it has no thresholds. The values are from Eurostat, confirmed against the European Commission’s country report, . | porta | viva | — |
+
+## Bloco F1.7 · acessibilidade e alvos · 04.09.2026
+
+*O bloco não escreveu uma palavra nova: tudo o que ele mudou à vista é
+estrutura, folha e marcas de língua. Duas cadeias mudam de superfície, e é por
+isso que entram aqui.*
+
+**«PROCURAR» E «SEARCH» PASSAM A VER-SE EM `/municipios`.** A cadeia é
+`ambito.pesquisaSubmeter` de `src/i18n/strings.mjs`, e não é nova: é o botão do
+formulário de busca que a primeira página já rende desde o F1.1 (item 12 do
+brief da porta da frente, a busca como `<form>` com destino). O que muda é a
+superfície. Até 04.09 o índice dos 308 rendia a peça `Pesquisa` sem formulário e
+com a fila de 308 resultados; com a fila fora (uma lista só, item 13 do brief
+F1.7), o campo passa a ser um `<form>` `GET` para a própria página, e o botão
+que o submete passa a ver-se ali. **Origem: a mesma chave, a mesma palavra, uma
+segunda superfície.**
+
+**«UM CONCELHO PELO NOME» E «SEARCH FOR A MUNICIPALITY» continuam a ver-se**, e
+são o rótulo do campo (`ambito.pesquisaRotulo`), que o índice já rendia antes
+deste bloco: não mudam de estado nem de superfície, e ficam onde já estavam.
+
+**NADA MAIS ENTROU.** Os nomes que este bloco pôs em `aria-label` e em
+`aria-labelledby` (as caixas que se deslocam de lado, item 2) não são cadeias
+novas: cada um aponta, pelo `id`, para texto que a página já rendia — o `<title>`
+do próprio desenho, o rótulo por cima do eixo da agenda, o título da secção onde
+uma tabela vive. E o título do sumário do Método, que estava vazio, passou a
+render `leitura.sumarioK`, que é a mesma cadeia que a Agenda e as páginas de
+leitura já imprimem para o mesmo sumário.
+
+**E ESTA DECLARAÇÃO NÃO É UMA LINHA DA TABELA, porque a tabela é a leitura da
+régua e a régua não lê botões.** Medido a 04.09.2026: `frasesDaCasa()` recolhe
+`p, li, dd, dt, h1, h2, h3, h4, figcaption, summary, blockquote, td, th,
+caption` e os rótulos que vivem num `<span>` sozinho
+(`scripts/medir-defeitos.mjs`, `BLOCOS` e `ROTULOS_EM_SPAN`). Um `<button>` e um
+`<label>` não estão nessa lista, e nunca estiveram: uma linha «viva» para
+«Procurar» fecha a construção com «linha viva que não se rende em rota nenhuma»,
+não porque a cadeia não se veja, mas porque a régua não olha para onde ela está.
+
+**O buraco fica medido e nomeado, e é maior do que esta cadeia.** Nas nove rotas
+inventariadas há **doze textos distintos de `<button>` e de `<label>`** fora da
+leitura da régua: «claro» e «escuro» (e «light» e «dark») do controlo do tema,
+«Relance» e «Leitura breve» (e «At a glance» e «Brief reading») da porta do
+telemóvel, «Procurar» e «Search», e «Escreva o nome do concelho» e «Type the
+name of the municipality», que é o rótulo do campo. Quatro deles já têm linha
+nesta tabela por serem lidos noutra superfície; os outros oito não têm.
+
+Alargar `BLOCOS_DA_VOZ` a `button` e a `label` é a correção certa, e não se faz
+aqui: mexe na régua de que dependem os blocos que correm em paralelo, e pede as
+oito linhas novas e a entrada em `critica/REVISOES-DO-INVENTARIO.md` que uma
+leitura cruzada do inventário obriga. **Fica para a direção**, com a contagem
+feita.

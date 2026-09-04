@@ -133,6 +133,7 @@ import {
 import { WORKS, linguaDoTitulo } from '../src/data/studies.mjs';
 import { LINGUA_DO_RESPONSAVEL, RESPONSAVEL_EDITORIAL } from '../src/data/politica-ia.mjs';
 import { matchPath } from '../src/lib/routes.mjs';
+import { feitioDeLei } from '../src/i18n/nomes-de-lei.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = process.env.OEDP_DIST ?? path.join(RAIZ, 'dist');
@@ -384,7 +385,14 @@ const INGLES_DAS_UNIDADES = new Set(Object.values(UNIDADES));
  * de propósito — se ela lesse a cadeia de `src/data/areas.mjs`, confirmava a
  * cadeia e não a página.
  */
-const NOME_DE_LEI = /(?:Decreto-Lei|Lei)\s+n\.º\s*\d+[-\w]*\/\d{4}/g;
+/* O FEITIO DE UM NOME DE DIPLOMA VEM DE `src/i18n/nomes-de-lei.mjs` (bloco F1.7,
+   segunda passagem, 04.09.2026). Era uma cópia local que conhecia duas espécies
+   e cortava o sufixo do ano; o gabarito que MARCA e a régua que CONTA passam a
+   ler o mesmo feitio, porque dois feitios são dois feitios no dia em que um
+   deles mudar. Medido no dia da mudança: nas 3 615 páginas inglesas construídas
+   só existem «Lei» e «Decreto-Lei», de modo que alargar o reconhecedor não muda
+   uma contagem de hoje; muda o que ele vê amanhã. */
+const NOME_DE_LEI = feitioDeLei();
 
 /**
  * As marcas que declaram um texto TRANSCRITO, e não escrito pela casa: um campo

@@ -36,11 +36,24 @@
  * ---------------------------------------------------------------------------
  * O FEITIO, E PORQUE É ESTE
  * ---------------------------------------------------------------------------
- * `Decreto-Lei n.º 12/2004` e `Lei n.º 51/2018`: o nome do diploma, «n.º», o
- * número com um sufixo opcional («n.º 73/2013-A») e o ano. É o mesmo feitio que
- * `scripts/check-lingua.mjs` já usava para os CONTAR, e passa a viver aqui,
- * exportado, para que a régua que conta e o gabarito que marca leiam o mesmo
- * feitio e não dois que se possam separar.
+ * O nome da espécie de diploma, «n.º», o número (com o sufixo que a numeração
+ * portuguesa às vezes lhe dá, «n.º 137-A/2013») e o ano (com o sufixo que às
+ * vezes vai do outro lado, «n.º 73/2013-A»).
+ *
+ * AS ESPÉCIES SÃO SEIS, e a lista cresceu na segunda passagem (04.09.2026,
+ * achado Major 11 da leitura a frio). A primeira forma conhecia duas, «Lei» e
+ * «Decreto-Lei», e cortava o sufixo do ano: um «Despacho n.º 1234/2019» ou uma
+ * «Portaria n.º 123/2020» numa página inglesa não era contado nem marcado, e
+ * como a régua também usava este feitio para DECIDIR que páginas valia a pena
+ * ler, esses nomes não apareciam em lado nenhum — nem como falha nem como
+ * exceção. Um reconhecedor estreito não deixa um erro à vista: apaga-o.
+ *
+ * A ORDEM DAS ALTERNATIVAS É A DA ESPECIFICIDADE, e é obrigatória: numa
+ * alternância, a primeira que casa ganha, e «Lei» antes de «Lei Orgânica»
+ * deixava a segunda metade do nome de fora.
+ *
+ * A lista é a que o lugar de direção nomeou, e não uma varredura do que existe:
+ * uma espécie a mais entra por decisão, com a razão escrita, como esta entrou.
  */
 
 /**
@@ -50,7 +63,8 @@
  * `feitioDeLei()`, porque uma expressão global guarda o `lastIndex` e uma
  * constante partilhada com estado é uma armadilha entre chamadores.
  */
-export const NOME_DE_LEI = /(?:Decreto-Lei|Lei)\s+n\.º\s*\d+[-\w]*\/\d{4}/;
+export const NOME_DE_LEI =
+  /(?:Resolução do Conselho de Ministros|Decreto-Lei|Despacho Normativo|Lei Orgânica|Portaria|Despacho|Lei)\s+n\.º\s*\d+(?:-[A-Za-z]+)?\/\d{4}(?:-[A-Za-z]+)?/;
 
 /** Uma cópia global do feitio, para quem percorre uma cadeia. */
 export function feitioDeLei() {
