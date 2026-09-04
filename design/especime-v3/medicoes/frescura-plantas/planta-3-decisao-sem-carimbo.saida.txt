@@ -1,0 +1,36 @@
+
+[90m  aritmética · 77 conferência(s): a especificação partilhada com o motor e os estragos plantados num livro-razão de mentira[0m
+  [32m✓[0m os quatro empates a meio, a divisão exata e as duas derivações que o float64 aceitava.
+
+[90m  livro-razão · 2916 afirmações[0m
+
+  [32m✓[0m 2916 afirmações válidas · 330 derivadas · 334 com aritmética reavaliada no build · 1865 com o rótulo da fonte
+[33m  3 marcador(es) por resolver em notas não publicadas: disparidade-salarial-entre-sexos-2024, retribuicao-minima-mensal-garantida-continente-2026 (2)[0m
+[90m    O campo "note" não vai à página, e por isso estes 3 não mudam o estado de nenhum selo nem fecham a construção. Ficam aqui para não se perderem.[0m
+
+[33m  Dívida de proveniência: 8 afirmação(ões) com campos "[a verificar]"[0m
+[90m    agua-nao-faturada-portugal-2024 → source_url, excerpt[0m
+[90m    avisos-pt2030-abertos → source, source_url, access_date, excerpt, document.title, document.edition[0m
+[90m    avisos-pt2030-pessoas-singulares → source, source_url, access_date, excerpt, document.title, document.edition[0m
+[90m    ciclo-substituicao-condutas → source, source_url, access_date, reference_date, excerpt, document.title, document.edition[0m
+[90m    evora-prr-aprovado-2026 → excerpt[0m
+[90m    evora-prr-pago-2026 → excerpt[0m
+[90m    evora-prr-vencido-aprovado-2026 → excerpt[0m
+[90m    saldo-natural-portugal-2025 → source_url, access_date, excerpt, document.title, document.edition[0m
+[90m    Isto não impede o build. Impede que se diga que o livro-razão está fechado.[0m
+
+
+[90m  amarra das decisões · 62 entrada(s) a partir da §1.38 · 2 texto(s) governado(s) · 2 citação(ões) da constituição conferida(s), de 43 entre «…»[0m
+
+[31m  A AMARRA DAS DECISÕES NÃO FECHA · 2 erro(s):[0m
+
+    [31m✗[0m §1.99 nomeia metodo e não traz **Texto:** com o resumo de cada um tal como o ficheiro estava quando a entrada foi escrita.
+    [31m✗[0m "metodo": o texto mudou depois da última decisão que o governa, ou a decisão foi registada contra outro texto.
+        §1.99 carimba (nada)
+        src/data/metodo.mjs está hoje em b4cc3594f960
+        Escreva a entrada que regista a mudança, com o resumo de hoje.
+
+  Uma mudança de rumo não sai em silêncio (direção, 2026-08-15).
+
+
+[código de saída: 1]
