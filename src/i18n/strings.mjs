@@ -668,6 +668,22 @@ export const STRINGS = {
       painel: {
         nomeA: 'Procedimento dos Desequilíbrios Macroeconómicos · ',
         nomeFim: ' medidas com limiar',
+        /**
+         * A LINHA DA ÁREA DE LEITURA EM REPOUSO (F1.1c, 04.09.2026)
+         * ------------------------------------------------------------------
+         * Com guião, a área de leitura mostra UMA leitura de cada vez, e
+         * nenhuma antes de o leitor tocar num cartão: as vinte e uma linhas
+         * fechadas eram a mesma lista de nomes dos cartões, uma segunda vez, e
+         * foi o que o diretor viu no ar a 04.09. Quando não há nenhuma aberta,
+         * o que fica no lugar delas é esta linha, e ela diz o que fazer para
+         * ler uma. Sem guião não se rende: ali as vinte e uma continuam à vista,
+         * fechadas, e a linha estaria a mandar tocar no que já está ao alcance.
+         *
+         * NÃO FALA DA CASA (Emenda 15 e Emenda 18): não diz o que o sítio faz,
+         * nem porque se deve confiar nele. Diz o gesto e o que ele abre, com o
+         * vocabulário que a página já usa: um cartão, uma medida.
+         */
+        semLeituraAberta: 'Toque num cartão para ler a medida.',
       },
       social: {
         titulo: 'Painel Social Europeu · ',
@@ -2142,6 +2158,9 @@ export const STRINGS = {
       painel: {
         nomeA: 'Macroeconomic Imbalance Procedure · ',
         nomeFim: ' measures with a threshold',
+        /* A linha da área de leitura em repouso. Ver a razão na edição
+           portuguesa, e o registo em `CHAVES-EN.md`. */
+        semLeituraAberta: 'Tap a card to read the measure.',
       },
       social: {
         titulo: 'European Social Scoreboard · ',

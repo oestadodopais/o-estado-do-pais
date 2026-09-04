@@ -766,7 +766,27 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
       daquela medida já apontava, e por isso nenhuma porta desta página mudou de
       destino: o que mudou foi o tamanho do que a porta abre.
       ---------------------------------------------------------------------- */}
-  <section id="painel">
+  {/* ----------------------------------------------------------------------
+      `data-area-leitura` É A MARCA DA ÁREA, E É O QUE O GUIÃO ACENDE (F1.1c,
+      04.09.2026)
+      ----------------------------------------------------------------------
+      O diretor viu a página no ar a 04.09, depois do F1.1b: «the cards … then
+      are double just under the map … the names are still there». As vinte e uma
+      leituras fechadas liam-se como uma segunda lista dos mesmos vinte e um
+      nomes, por baixo dos cartões que já os dizem.
+
+      COM GUIÃO A ÁREA MOSTRA UMA LEITURA DE CADA VEZ, e nenhuma em repouso: a
+      folha esconde as dobras fechadas e deixa no lugar delas a linha do estado
+      vazio, aqui abaixo. Quem acende essa regra é o guião, com
+      `data-toque="sim"` nesta marca, e por isso ela vale exactamente onde o
+      toque funciona: sem guião a marca não aparece, a regra não pega, e as
+      vinte e uma continuam à vista, fechadas, com `#m-<id>` a abrir a certa.
+
+      A MARCA É DA SECÇÃO E NÃO DA RAIZ DO ESTADO. `[data-inicio]` é a cabeça e
+      fecha antes dos domínios; esta área vive fora dela, como o comando da
+      densidade, e a régua `matriz` exige que assim seja.
+      ---------------------------------------------------------------------- */}
+  <section id="painel" data-area-leitura>
     {/* ------------------------------------------------------------------
         AS PEÇAS GRANDES PASSAM A TER NOME (decisão do diretor, 29.08.2026)
         ------------------------------------------------------------------
@@ -826,6 +846,33 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
         {s.densidade.leitura}
       </button>
     </div>
+
+    {/* ------------------------------------------------------------------
+        A LINHA DO ESTADO VAZIO (F1.1c, item 1)
+        ------------------------------------------------------------------
+        Com guião e sem nenhuma leitura aberta, a área não tem nada dentro: é a
+        decisão do diretor de 04.09 («keep the cards; show nothing under the
+        band until a card is tapped»). Uma área vazia sem uma palavra é um
+        buraco entre o nome do painel e o fio; esta linha diz o gesto que a
+        enche, e desaparece assim que uma leitura abre.
+
+        CHEGA ESCONDIDA DO SERVIDOR E É O GUIÃO QUE A ACENDE, que é a mesma
+        regra do comando da densidade logo acima. Sem guião ela nunca se vê, e
+        tem de ser assim: ali as vinte e uma leituras estão à vista, fechadas, e
+        uma linha a mandar tocar num cartão para ver o que já está no ecrã seria
+        uma instrução falsa.
+
+        UMA SÓ PARA AS DUAS METADES. A área tem dois quadros com as suas vinte e
+        uma leituras, e o que está vazio quando nada está aberto é a área
+        inteira: duas linhas iguais, uma por metade, seriam a mesma frase duas
+        vezes na mesma página, que é o defeito que este bloco veio tirar. Fica
+        no cabeçalho da área, ao pé do comando que também governa as vinte e uma.
+
+        NÃO LEVA ALGARISMO NENHUM e não fala da casa: diz o gesto e o que ele
+        abre. A cadeia está declarada em `src/i18n/strings.mjs` e no inventário
+        das frases, com o bloco que a pôs lá.
+        ------------------------------------------------------------------ */}
+    <p class="dobras-nada" data-leituras-vazio hidden>{s.inicio.painel.semLeituraAberta}</p>
 
     {/* ------------------------------------------------------------------
         A FRASE DE CONTEXTO DO PAINEL (F1.1, item 1; achado C6, decisão 3.4)

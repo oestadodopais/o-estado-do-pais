@@ -251,7 +251,17 @@ const estadoDaPagina = (p) =>
          mede o que sempre mediu: que a ordem do teclado desce a página sem
          saltos para trás. */
       comando: marco('[data-porta-concelho]'),
-      painel: marco('[data-leituras]'),
+      /* O SEGUNDO MARCO É A ÁREA DE LEITURA, E NÃO A LISTA DAS DOBRAS (F1.1c,
+         04.09.2026). Com guião e sem nenhuma leitura aberta, `[data-leituras]`
+         não tem paragem nenhuma: a folha tira da página as dobras fechadas, que é
+         a decisão do diretor de 04.09 («show nothing under the band until a card
+         is tapped»). A área continua a ter a sua paragem no sítio onde sempre
+         esteve — o comando da densidade, que o guião acende —, e quando uma
+         leitura abre é dentro dela que o `<summary>` entra na ordem. O que a
+         célula mede é o mesmo: a ordem do teclado desce a página, da porta do
+         concelho para a área de leitura e desta para as portas, sem saltos para
+         trás. */
+      painel: marco('[data-area-leitura]'),
       portas: marco('.portas'),
       total: alvos.length,
     };
@@ -350,11 +360,32 @@ const estadoDaPagina = (p) =>
   }
   conta('recarga em cada estado', recargaOk, recargas.join(' · '));
 
-  /* A peça abre-se sozinha, e o comando global não apaga a escolha das outras. */
+  /* UMA LEITURA DE CADA VEZ, E O GESTO QUE A ABRE MUDOU (F1.1c, 04.09.2026).
+     A célula media isto com um toque no `<summary>` da primeira leitura. Com
+     guião, em repouso, esse `<summary>` já não está na página: a decisão do
+     diretor de 04.09 é «show nothing under the band until a card is tapped», e a
+     folha tira da página as dobras fechadas. O gesto que abre uma leitura é o
+     toque no CARTÃO dela, e é esse que a célula passa a dar. O que ela mede é o
+     mesmo, e é o que interessa: depois do gesto há UMA leitura aberta, e uma só.
+
+     O CARTÃO É O DA PRIMEIRA MEDIDA QUE ABRE AQUI: três dos vinte e um levam à
+     página do domínio, e um deles mudava de página em vez de abrir uma leitura. */
   await p.goto(`${base}/`, { waitUntil: 'networkidle' });
-  await p.click('[data-leituras] .dobra:first-child .dobra-abrir');
+  const cartaoDaLeitura = await p.evaluate(() => {
+    const c = [...document.querySelectorAll('[data-grelha] [data-faixa] [data-cartao]')].find((x) =>
+      (x.querySelector('.cartao-porta')?.getAttribute('href') ?? '').startsWith('#'),
+    );
+    if (c) c.scrollIntoView({ block: 'center', inline: 'center' });
+    return c ? c.getAttribute('data-cartao') : null;
+  });
+  await p.click(`[data-cartao="${cartaoDaLeitura}"] .cartao-porta`);
+  await p.waitForTimeout(140);
   const uma = await estadoDaPagina(p);
-  conta('uma leitura abre só a sua', uma.abertas === 1, `${uma.abertas} abertas`);
+  conta(
+    'uma leitura abre só a sua',
+    uma.abertas === 1,
+    `${uma.abertas} abertas · toque no cartão «${cartaoDaLeitura}»`,
+  );
   /* O ENDEREÇO ABRE TODAS, e é o que restou do comando global: `?densidade=
      leitura` continua a ser um estado partilhável e o guião continua a abrir as
      peças quando ele chega. O que saiu foi a fila que o escrevia. */
@@ -1526,8 +1557,20 @@ for (const largura of [1280, 390]) {
  * ------------------------------------------------------------------------- */
 {
   const p = await pagina();
-  await p.goto(`${base}/`, { waitUntil: 'networkidle' });
-  await p.focus('[data-leituras] .dobra:first-child .dobra-abrir');
+  /* AS LEITURAS ABREM-SE ANTES, PELO ENDEREÇO (F1.1c, 04.09.2026). Com guião não
+     há `<summary>` nenhum na página enquanto nenhuma leitura estiver aberta: a
+     decisão do diretor de 04.09 é «show nothing under the band until a card is
+     tapped», e a folha tira da página as dobras fechadas. `?densidade=leitura` é
+     o estado partilhável que abre as 21, é o que o comando «Leitura breve» faz, e
+     é a mesma porta que a célula do selo já usa desde o F1.1b.
+
+     A PROMESSA MEDIDA É A MESMA — a tecla age no comando nativo e a página não
+     rola —, e o que muda é o lado para que ela age: com a leitura aberta, o
+     espaço fecha-a. Com as 21 abertas a página é alta e a primeira leitura fica
+     no cimo da área: fechar uma não obriga o navegador a puxar a página para
+     cima, e a rolagem medida continua a ser só a da tecla. */
+  await p.goto(`${base}/?densidade=leitura`, { waitUntil: 'networkidle' });
+  await p.focus('[data-leituras="pdm"] .dobra:first-child .dobra-abrir');
   const antes = await p.evaluate(() => window.scrollY);
   await p.keyboard.press('Space');
   await p.waitForTimeout(80);
@@ -1543,13 +1586,14 @@ for (const largura of [1280, 390]) {
     };
   });
   conta(
-    '2i·5 · o espaço abre a leitura e não rola a página, e o que activa é um comando a sério',
-    a.abertas === 1 &&
+    '2i·5 · o espaço age na leitura e não rola a página, e o que activa é um comando a sério',
+    a.pecas > 0 &&
+      a.abertas === a.pecas - 1 &&
       rolou === 0 &&
       forma.botao === 'button type=submit' &&
       forma.resumo === 'summary' &&
       forma.ligacoesComoBotao === 0,
-    `espaço no resumo da peça → ${a.abertas} aberta(s) (rolagem ${rolou}) · o botão da busca é «${forma.botao}» · o comando da peça é <${forma.resumo}> · ligações com papel de botão: ${forma.ligacoesComoBotao}`,
+    `espaço no resumo da primeira leitura → ${a.abertas} de ${a.pecas} aberta(s) (rolagem ${rolou}) · o botão da busca é «${forma.botao}» · o comando da leitura é <${forma.resumo}> · ligações com papel de botão: ${forma.ligacoesComoBotao}`,
   );
   await p.__contexto.close();
 }

@@ -2170,3 +2170,31 @@ aqui: mexe na régua de que dependem os blocos que correm em paralelo, e pede as
 oito linhas novas e a entrada em `critica/REVISOES-DO-INVENTARIO.md` que uma
 leitura cruzada do inventário obriga. **Fica para a direção**, com a contagem
 feita.
+
+## A linha da área de leitura em repouso (bloco F1.1c, 04.09.2026)
+
+**Uma cadeia nova, nas duas edições, e é a única do bloco.** O F1.1c cumpre a
+segunda metade da decisão do diretor de 04.09, dada depois de ver a página no ar:
+os cartões ficam, e por baixo da faixa não se mostra nada até que um cartão seja
+tocado. Com guião, as vinte e uma leituras fechadas saem da página e no lugar
+delas fica esta linha, que diz o gesto que enche a área.
+
+**A ORIGEM É A DECISÃO E A CHAVE ESTÁ DECLARADA**: `inicio.painel.semLeituraAberta`
+em `src/i18n/strings.mjs`, rendida uma vez por página em `src/views/HomeView.astro`,
+no cabeçalho da área de leitura. Não leva algarismo nenhum, não fala da casa e não
+traz vocabulário novo: um cartão e uma medida são as duas palavras que a página já
+usa.
+
+**É `navegacao` e não `conteudo`**, e a razão é a definição das três classes: não
+diz nada sobre o que se mede, diz o que fazer para chegar ao que se mede. É a
+mesma classe da linha vazia da busca dos concelhos.
+
+**SEM GUIÃO NÃO SE VÊ**, e mesmo assim é declarada: o servidor rende-a `hidden` e
+a régua lê o documento entregue, não o ecrã. Uma linha que a régua recolhe e a
+tabela não declara sai como bloco **por classificar**, que é o portão que a
+apanha.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | Toque num cartão para ler a medida. | toque | viva | — |
+| navegacao | Tap a card to read the measure. | toque | viva | — |
