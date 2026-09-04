@@ -977,7 +977,11 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
           <section class="linha-bloco" aria-labelledby="aritmetica">
             <h2 class="linha-bloco-titulo" id="aritmetica">{s.prov.derivacao}</h2>
             <p class="linha-derivacao">
-              <CampoDaLinha id={id} campo="derivation" valor={derivacao} lang={lang} />
+              {/* `leis`: a aritmética é prosa da casa, e na edição inglesa cita
+                  diplomas pelo nome português. A I95 contou 313 nomes assim sem
+                  marca de língua; o componente marca-os sem mudar um carácter
+                  do campo (a razão por extenso em `src/i18n/nomes-de-lei.mjs`). */}
+              <CampoDaLinha id={id} campo="derivation" valor={derivacao} lang={lang} leis />
             </p>
 
             {claim.check && (

@@ -75,6 +75,7 @@
 import Claim from './Claim.astro';
 import Provenance from './Provenance.astro';
 import { getClaim } from '../lib/ledger.mjs';
+import { routePath } from '../lib/routes.mjs';
 
 const { partes, lang, as: Tag = 'h1', class: klass = '', id = 'manchete' } = Astro.props;
 
@@ -140,6 +141,7 @@ const nomeDoTitulo = pecas
             sufixo={parte.sufixo ?? ''}
             elemId={ref}
             sufixoId={refSufixo}
+            porta={routePath('linha', lang, { slug: parte.claim })}
           />
         );
       if (parte.ref) return <span id={ref} data-nonledger="data-de-referencia">{parte.ref}</span>;

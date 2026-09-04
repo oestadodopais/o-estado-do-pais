@@ -156,7 +156,27 @@ const PALAVRA = {
 ---
 
 <div class="faixa-bloco" data-faixa-bloco>
-  <ol class="faixa" data-faixa aria-label={rotulo}>
+  {/* A CAIXA QUE SE DESLOCA TEM DE SE ALCANÇAR COM O TECLADO (bloco F1.7,
+      item 2, 04.09.2026). A faixa corre de lado por `overflow-x: auto` e sem
+      guião nenhum, o que é bom; mas uma caixa que se desloca e não é focável
+      deixa fora quem não tem rato, e o axe conta-o como uma violação grave
+      («scrollable-region-focusable»). Medido antes: 30 das 54 caixas medidas
+      eram esta, em todas as larguras e nas duas edições.
+
+      `tabindex="0"` põe-na no caminho do `Tab` e o nome já cá estava: é o mesmo
+      `aria-label`. Nada disto muda um píxel do que se vê, e nada disto precisa
+      de JavaScript.
+
+      E NÃO LEVA `role="region"`, que foi a primeira forma e estava errada,
+      medida e desfeita no mesmo dia: um `role` posto num `<ol>` SUBSTITUI o
+      papel de lista, e os 21 `<li>` da faixa ficaram órfãos — o axe contou 144
+      nós de `listitem` graves e 16 de `aria-allowed-role`, onde antes havia 4.
+      Uma lista focável e com nome é uma lista com nome, e é o papel dela que
+      diz o que ela é; a régua do bloco passa a aceitar o papel implícito de uma
+      etiqueta que já tem um, que é a mesma regra que a C3 de
+      `tests/documentos/moldura.mjs` escreve («um papel próprio que a obra já
+      declarava»). */}
+  <ol class="faixa" data-faixa aria-label={rotulo} tabindex="0">
     {
       cartoes.map((c) => {
         const palavra = PALAVRA[c.estado] ?? null;

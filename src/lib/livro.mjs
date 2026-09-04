@@ -59,11 +59,16 @@ export function valorComUnidade(claim, lang = null) {
   /* A LÍNGUA É OPCIONAL, E QUEM NÃO A PASSA FICA COM A CADEIA DO LIVRO-RAZÃO.
      Desde a I92 (29.08.2026) a unidade tem inglês onde há um facto de
      dicionário (`src/i18n/unidades.mjs`), e o título e a descrição da página de
-     uma linha passam a língua para o dizerem na língua da página. Os cartões de
-     partilha NÃO a passam, e é uma dívida escrita e não um esquecimento: a
-     manchete de um cartão é medida em pixels e desenhada em 580 PNG com o seu
-     registo, e traduzir a unidade ali é reconstruir os cartões todos — trabalho
-     de outro bloco, e não de uma passagem de correções pequenas. */
+     uma linha passam a língua para o dizerem na língua da página.
+
+     OS CARTÕES DE PARTILHA TAMBÉM A PASSAM, DESDE 04.09.2026 (I96, bloco F1.7).
+     Até aí não passavam, e era uma dívida escrita e não um esquecimento: a
+     manchete de um cartão é medida em píxeis e desenhada em PNG com o seu
+     registo, e traduzir a unidade ali era reconstruir os cartões todos. Medido
+     antes de a pagar: 204 dos 302 registos da edição inglesa levavam a unidade
+     em português ao lado de uma página que já a escrevia em inglês. O que fica
+     por passar a língua é quem NÃO tem edição: `dados.mjs`, que escreve a
+     descarga em CSV a partir do livro-razão e não de uma página. */
   const unidade = lang === null ? String(claim.unit ?? '') : unidadeDaLinha(claim.unit, lang).texto;
   if (!unidade) return String(claim.value);
   const comecaPorLetra = /^\p{L}/u.test(unidade);
