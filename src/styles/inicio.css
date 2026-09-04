@@ -3019,11 +3019,21 @@ a.porta:hover .porta-abrir {
   color: var(--ink);
   margin: 0;
 }
-/* A LINHA ÚNICA DE UMA MEDIDA QUE VIVE NUM DOMÍNIO: uma porta, e mais nada. O
-   alvo é o da casa abaixo de 1024 (44 px), como o de qualquer outra ligação
-   sozinha na sua linha. */
+/* A PORTA DE UMA MEDIDA QUE VIVE NUM DOMÍNIO, no fim da sua leitura (segunda
+   passagem, 04.09.2026). Não substitui a leitura: acrescenta-se a ela, depois do
+   selo, e por isso leva o fio da casa por cima, que é o que separa o recibo do
+   destino. O alvo é o da casa abaixo de 1024 (44 px), como o de qualquer outra
+   ligação sozinha na sua linha. */
 .dobra-porta {
-  margin: 0;
+  /* O AR POR CIMA É MEDIDO, E NÃO DE GOSTO. A área EFETIVA de um alvo mede-se
+     com o mínimo da casa (44 px) centrado na caixa, e a caixa do selo mede 19,2
+     px: ele transborda 12,4 px para baixo. A porta mede 32 px a partir de 1024 e
+     transborda 6. Com 17 px de ar as duas áreas cruzavam-se por 1,4 px a 1280, e
+     a matriz contou três pares sobrepostos (um por leitura com porta); com 27 px
+     deixam de se tocar. Medido nas duas edições, a 1280 e a 390. */
+  margin: 8px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--g3);
 }
 .dobra-porta .lig {
   display: inline-flex;

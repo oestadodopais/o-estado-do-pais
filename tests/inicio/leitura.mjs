@@ -69,6 +69,11 @@
  * aberto e que cada um tenha o `id` da sua medida. Depois pede-se `/#m-<id>` de
  * uma delas e pergunta-se ao motor se aquele `<details>` está aberto.
  *
+ * DOIS MOTORES E DUAS EDIÇÕES, e a segunda metade é da segunda passagem
+ * (04.09.2026, Major 7 da leitura a frio): a primeira redação corria só em
+ * português com a razão escrita, e uma leitura inglesa sem `id` não caía em
+ * célula nenhuma. Uma razão escrita não substitui uma medição.
+ *
  * DOIS MOTORES PORQUE A RESPOSTA PODE DIFERIR: abrir o `<details>` alvo de um
  * fragmento é comportamento do navegador, e a célula regista o que cada um faz
  * em vez de o presumir. O que ela EXIGE sem guião é a metade que não depende do
@@ -81,11 +86,17 @@
  * uma promessa que só um motor cumprisse não era uma promessa.
  *
  * J4 · COM GUIÃO: UM TOQUE NUM CARTÃO ABRE A SUA LEITURA E FECHA A ANTERIOR, E O
- * ENDEREÇO PASSA A `#<id>`. Dois toques a sério, em dois cartões diferentes, com
- * o cartão trazido à vista como o teclado o traria. Depois do primeiro, uma
- * leitura aberta e o `location.hash` a apontar-lhe; depois do segundo, a
- * primeira fechada, a segunda aberta, e o endereço mudado. Uma célula que só
- * contasse a aberta passava com as duas abertas.
+ * ENDEREÇO PASSA A `#<id>`. Toques a sério, com o cartão trazido à vista como o
+ * teclado o traria: os 21 em português e uma amostra de cinco em inglês, nos
+ * dois motores. A primeira redação tocava em dois, e a leitura a frio tinha
+ * razão (Major 7): dois de vinte e um não são «um toque num cartão».
+ *
+ * UM CARTÃO É UMA DE DUAS COISAS, e a célula exige o que cada uma promete: o que
+ * leva a uma âncora desta página abre a sua leitura, fecha a anterior e põe
+ * `#m-<id>` na barra; o que leva à página do domínio (três, desde o F1.2b) muda
+ * de página e chega à âncora daquela medida lá dentro. A amostra inglesa apanha
+ * as duas classes de propósito. Uma célula que só contasse a leitura aberta
+ * passava com as duas abertas.
  *
  * J5 · A SECÇÃO DOS DOMÍNIOS, A SEGUIR AO MAPA. Cinco coisas, e as cinco no HTML
  * construído: a secção existe e vem DEPOIS do mapa na ordem do documento; tem um
@@ -112,20 +123,25 @@
  * página que pertencem ao domínio, a área de leitura mostra uma linha só, com a
  * porta, e não uma segunda leitura inteira»).
  *
- * Uma leitura desta página é uma de duas coisas, e nunca as duas nem nenhuma:
+ * A LEITURA BREVE É A MESMA PARA AS 21 (decisão corrigida de 04.09.2026, depois
+ * do Blocking 3 da leitura a frio): a unidade, o limiar onde o quadro publica um
+ * COM A SUA RÉGUA, a definição da medida onde ela existe, as TRÊS datas da carta
+ * (§1, regra 3) e o selo, que é a porta para a linha. As três medidas que vivem
+ * num domínio ACRESCENTAM, no fim, a porta «Ver no domínio →»; não trocam a
+ * leitura por ela.
  *
- *   · a leitura INTEIRA de uma medida que só vive aqui: a unidade, o limiar
- *     quando o quadro publica um, as TRÊS datas da carta (§1, regra 3), a régua
- *     contra o limiar quando ele existe, e o selo, que é a porta para a linha. A
- *     célula exige as datas, o selo e a unidade; quem mede a régua é a matriz, na
- *     célula «a régua de uma leitura aberta tem largura de régua»;
- *   · a PORTA de uma medida que vive num domínio: uma ligação, e mais nada, para
- *     a leitura daquela medida na página do domínio.
+ * A célula exige, leitura a leitura: um `id` igual a `m-<id da linha>`, uma
+ * unidade, três datas, um selo, e a régua exactamente onde há linha de limiar
+ * (as duas dizem a mesma coisa e não podem divergir). E exige que o conjunto das
+ * que levam porta seja, elemento a elemento, o conjunto dos cartões da faixa da
+ * cabeça que levam à página de um domínio: as duas metades vêm da mesma tabela
+ * (`dominioDaLinha()`), e uma célula que só contasse «três» passava com os três
+ * errados.
  *
- * E o conjunto das segundas é, elemento a elemento, o conjunto dos cartões da
- * faixa da cabeça que levam à página de um domínio. As duas metades vêm da mesma
- * tabela (`dominioDaLinha()`), e uma célula que só contasse «três» passava com os
- * três errados.
+ * O `id` LÊ-SE DUAS VEZES, e é a segunda passagem que o manda (Major 7): no HTML
+ * SERVIDO, contando `id="m-<id>"` uma vez por medida, e no navegador, no
+ * `<details>` daquela medida. Uma leitura sozinha deixava passar um componente a
+ * render `data-ancora` em vez de `id`.
  *
  * J7 · O PRIMEIRO ECRÃ A 390 × 664 IGUAL AO DO F1.1: o nome da publicação, a
  * manchete inteira, o primeiro cartão inteiro, o selo desse cartão e a porta do
@@ -278,6 +294,11 @@ const EDICOES = [
    de uma segunda lista escrita aqui: uma cópia da lista seria uma régua a medir
    o que ela própria escreveu. */
 const { FIGURAS_PDM, FIGURAS_SOCIAL } = await import(path.join(RAIZ, 'src', 'data', 'figuras.mjs'));
+/* A TABELA DO DESTINO, LIDA DA MESMA FONTE QUE A VISTA USA. É a mesma razão que
+   `porta.mjs` escreve na A13: uma segunda lista de ids escrita aqui era a
+   promessa de divergir de `src/data/dominios.mjs` no dia em que uma medida
+   trocasse de domínio. */
+const { dominioDaLinha } = await import(path.join(RAIZ, 'src', 'lib', 'dominios.mjs'));
 const AS_VINTE_E_UMA = [...FIGURAS_PDM, ...FIGURAS_SOCIAL].map((f) => f.claim);
 
 /* ===========================================================================
@@ -332,10 +353,17 @@ const SONDA_DA_FORMA = () => ({
       datas: d.querySelectorAll('[data-nonledger="data-da-linha"]').length,
       selos: d.querySelectorAll('.src-chip').length,
       unidades: d.querySelectorAll('[data-medida-unidade]').length,
-      /* Quantos filhos tem o corpo: uma porta é UM bloco, e uma leitura inteira
-         tem mais. É a metade que recusa uma porta com a leitura inteira ao lado
-         dela. */
       blocos: corpo ? corpo.children.length : 0,
+      /* O `id` LIDO DO ELEMENTO, para a metade que corre no navegador. A outra
+         metade lê-o do HTML servido, na célula, e as duas têm de concordar: um
+         componente que rendesse `data-ancora` em vez de `id` deixava a âncora
+         de cada leitura sem existir, e foi a planta P1b da leitura a frio. */
+      id_html: d.id || null,
+      /* A régua contra o limiar, onde o quadro publica um: é a única forma
+         gráfica desta página e saiu dela uma vez, sem ninguém pedir. */
+      reguas: d.querySelectorAll('.regua-svg').length,
+      frases: d.querySelectorAll('.dobra-frase').length,
+      limiares: d.querySelectorAll('.dobra-limiar').length,
     };
   }),
   cartoesParaFora: [...document.querySelectorAll('[data-grelha] [data-faixa] [data-cartao]')]
@@ -518,24 +546,50 @@ async function corre() {
     const forma = await p12.evaluate(SONDA_DA_FORMA);
     await p12.__ctx.close();
 
+    /* O `id` DE CADA LEITURA, LIDO DO HTML SERVIDO e não só do navegador
+       (segunda passagem, Major 7). São duas leituras da mesma promessa, e a
+       célula exige as duas: no documento entregue tem de haver exactamente um
+       `id="m-<id da linha>"` por medida, e no navegador o `<details>` daquela
+       medida tem de o levar. Uma delas sozinha deixava passar o componente a
+       render `data-ancora` em vez de `id`, que é a planta P1b da leitura a
+       frio. */
+    const idsNoDocumento = AS_VINTE_E_UMA.map((id) => ({
+      id,
+      n: (doc.texto.match(new RegExp(`id="m-${id}"`, 'g')) ?? []).length,
+    })).filter((x) => x.n !== 1);
+
     const queixas12 = [];
     if (forma.leituras.length !== AS_VINTE_E_UMA.length) {
       queixas12.push(`${forma.leituras.length} leitura(s) de ${AS_VINTE_E_UMA.length}`);
     }
+    for (const x of idsNoDocumento) {
+      queixas12.push(`o HTML servido tem ${x.n} «id="m-${x.id}"»`);
+    }
+    /* A LEITURA BREVE É A MESMA PARA AS 21 (decisão corrigida de 04.09.2026): a
+       unidade, o limiar onde o quadro publica um com a sua régua, a frase da
+       medida onde ela existe, as três datas da carta e o selo, que é a porta
+       para a linha. Uma medida que vive num domínio ACRESCENTA a porta, e não
+       troca a leitura por ela. */
+    const limiaresEsperados = new Set(
+      forma.leituras.filter((l) => l.limiares > 0).map((l) => l.id),
+    );
     for (const l of forma.leituras) {
+      if (l.id_html !== `m-${l.id}`) queixas12.push(`«${l.id}» tem id «${l.id_html}»`);
+      if (l.datas !== 3) queixas12.push(`«${l.id}» tem ${l.datas} data(s) e a carta pede três`);
+      if (l.selos !== 1) queixas12.push(`«${l.id}» tem ${l.selos} selo(s)`);
+      if (l.unidades !== 1) queixas12.push(`«${l.id}» tem ${l.unidades} unidade(s)`);
+      /* Onde há limiar há régua, e onde não há não há nenhuma das duas: as duas
+         dizem a mesma coisa e não podem divergir. */
+      if (l.limiares > 1) queixas12.push(`«${l.id}» tem ${l.limiares} linhas de limiar`);
+      if (l.reguas !== l.limiares) {
+        queixas12.push(`«${l.id}» tem ${l.limiares} limiar(es) e ${l.reguas} régua(s)`);
+      }
       if (l.porta) {
         if (!l.porta.startsWith(ed.dominio)) queixas12.push(`«${l.id}» tem porta «${l.porta}»`);
         if (!l.portaTexto) queixas12.push(`a porta de «${l.id}» não tem texto`);
-        if (l.blocos !== 1) queixas12.push(`«${l.id}» tem porta e ${l.blocos} bloco(s) no corpo`);
-        if (l.datas !== 0 || l.selos !== 0) {
-          queixas12.push(`«${l.id}» tem porta e leitura inteira (${l.datas} data(s), ${l.selos} selo(s))`);
-        }
-      } else {
-        if (l.datas !== 3) queixas12.push(`«${l.id}» tem ${l.datas} data(s) e a carta pede três`);
-        if (l.selos !== 1) queixas12.push(`«${l.id}» tem ${l.selos} selo(s)`);
-        if (l.unidades !== 1) queixas12.push(`«${l.id}» tem ${l.unidades} unidade(s)`);
       }
     }
+    if (limiaresEsperados.size === 0) queixas12.push('nenhuma leitura tem linha de limiar');
     const comPorta = forma.leituras.filter((l) => l.porta).map((l) => l.id).sort();
     const paraFora = [...forma.cartoesParaFora].sort();
     if (comPorta.join('|') !== paraFora.join('|')) {
@@ -544,13 +598,16 @@ async function corre() {
           `para fora (${paraFora.join(', ') || 'nenhum'})`,
       );
     }
-    medidas[`J12.${ed.chave}`] = { forma, queixas: queixas12 };
+    const comFrase = forma.leituras.filter((l) => l.frases > 0).length;
+    medidas[`J12.${ed.chave}`] = { forma, idsNoDocumento, queixas: queixas12 };
     conta(
       `J12.${ed.chave}`,
       forma.leituras.length > 0 && comPorta.length > 0 && queixas12.length === 0,
-      `a forma das leituras em ${ed.rota}: ${forma.leituras.length - comPorta.length} inteira(s) ` +
-        `(unidade, limiar quando há, três datas, selo) e ${comPorta.length} porta(s) para o domínio ` +
-        `(${comPorta.join(', ') || 'nenhuma'})` +
+      `a forma das leituras em ${ed.rota}: ${forma.leituras.length} inteira(s) ` +
+        `(unidade, três datas e selo em todas; ${limiaresEsperados.size} com limiar e régua; ` +
+        `${comFrase} com a definição da medida), e ${comPorta.length} delas acrescentam a porta ` +
+        `para o domínio (${comPorta.join(', ') || 'nenhuma'}) · ` +
+        `${AS_VINTE_E_UMA.length - idsNoDocumento.length} de ${AS_VINTE_E_UMA.length} âncoras no HTML servido` +
         (queixas12.length ? ` · QUEIXAS: ${queixas12.slice(0, 4).join('; ')}` : ''),
     );
 
@@ -591,108 +648,174 @@ async function corre() {
   }
 
   /* --------------------------------------------------------------------- J3 */
-  /* Só na edição portuguesa: o que a célula mede é comportamento do motor sobre
-     um documento, e os dois documentos têm a mesma estrutura (a J1 mede as duas
-     e prova-o). A escolha está escrita para não passar por esquecimento. */
-  const alvoDoFragmento = AS_VINTE_E_UMA[4];
-  for (const [motor, nav] of [
-    ['chromium', chrome],
-    ['webkit', safari],
-  ]) {
-    const p = await pagina(nav, '/', 390, ALTURA_PEQUENA, { comGuiao: false });
-    const r = await p.evaluate(SONDA_DAS_LEITURAS);
-    await p.__ctx.close();
+  /* NAS DUAS EDIÇÕES E NOS DOIS MOTORES (segunda passagem, 04.09.2026, Major 7
+     da leitura a frio). A primeira redação corria só em português, com a razão
+     escrita («os dois documentos têm a mesma estrutura, e a J1 mede as duas»),
+     e o leitor mostrou o que isso deixava passar: uma leitura inglesa sem `id`
+     não caía em célula nenhuma. Uma razão escrita não substitui uma medição, e
+     esta custa quatro corridas em vez de duas. */
+  for (const ed of EDICOES) {
+    /* O ALVO DO FRAGMENTO É UMA MEDIDA QUE NÃO VIVE NUM DOMÍNIO, e escolhe-se
+       assim: o cartão de uma medida de domínio leva para fora desta página, e o
+       que esta célula mede é o endereço `#m-<id>` a abrir a leitura AQUI. */
+    const alvoDoFragmento = AS_VINTE_E_UMA.find((id) => !dominioDaLinha(id)) ?? AS_VINTE_E_UMA[0];
+    for (const [motor, nav] of [
+      ['chromium', chrome],
+      ['webkit', safari],
+    ]) {
+      const chave = `J3.${ed.chave}.${motor}`;
+      const p = await pagina(nav, ed.rota, 390, ALTURA_PEQUENA, { comGuiao: false });
+      const r = await p.evaluate(SONDA_DAS_LEITURAS);
+      await p.__ctx.close();
 
-    const SONDA_DO_FRAGMENTO = (id) => {
-      const d = document.getElementById(`m-${id}`);
-      return {
-        existe: !!d,
-        aberto: !!d && d.open,
-        outrosAbertos: [...document.querySelectorAll('details[data-leitura][open]')].filter(
-          (x) => x.id !== `m-${id}`,
-        ).length,
+      const SONDA_DO_FRAGMENTO = (id) => {
+        const d = document.getElementById(`m-${id}`);
+        return {
+          existe: !!d,
+          aberto: !!d && d.open,
+          outrosAbertos: [...document.querySelectorAll('details[data-leitura][open]')].filter(
+            (x) => x.id !== `m-${id}`,
+          ).length,
+        };
       };
-    };
-    const pf = await pagina(nav, `/#m-${alvoDoFragmento}`, 390, ALTURA_PEQUENA, { comGuiao: false });
-    const semGuiao = await pf.evaluate(SONDA_DO_FRAGMENTO, alvoDoFragmento);
-    await pf.__ctx.close();
+      const pf = await pagina(nav, `${ed.rota}#m-${alvoDoFragmento}`, 390, ALTURA_PEQUENA, {
+        comGuiao: false,
+      });
+      const semGuiao = await pf.evaluate(SONDA_DO_FRAGMENTO, alvoDoFragmento);
+      await pf.__ctx.close();
 
-    /* E O MESMO ENDEREÇO COM GUIÃO, no mesmo motor. É a metade que a página
-       PROMETE em qualquer motor: sem guião, o `<summary>` está a um toque e o
-       motor abre-o se souber; com guião, `public/js/inicio.js` abre a leitura do
-       fragmento à chegada, e `/#m-<id>` é uma citação que abre alguma coisa. */
-    const pg = await pagina(nav, `/#m-${alvoDoFragmento}`, 390, ALTURA_PEQUENA);
-    const comGuiao = await pg.evaluate(SONDA_DO_FRAGMENTO, alvoDoFragmento);
-    await pg.__ctx.close();
+      /* E O MESMO ENDEREÇO COM GUIÃO, no mesmo motor. É a metade que a página
+         PROMETE em qualquer motor: sem guião, o `<summary>` está a um toque e o
+         motor abre-o se souber; com guião, `public/js/inicio.js` abre a leitura
+         do fragmento à chegada, e `/#m-<id>` é uma citação que abre alguma
+         coisa. */
+      const pg = await pagina(nav, `${ed.rota}#m-${alvoDoFragmento}`, 390, ALTURA_PEQUENA);
+      const comGuiao = await pg.evaluate(SONDA_DO_FRAGMENTO, alvoDoFragmento);
+      await pg.__ctx.close();
 
-    medidas[`J3.${motor}`] = {
-      ...r,
-      fragmento: { id: alvoDoFragmento, semGuiao, comGuiao },
-    };
-    conta(
-      `J3.${motor}`,
-      r.total === AS_VINTE_E_UMA.length &&
-        r.abertos.length === 0 &&
-        r.semId.length === 0 &&
-        r.idErrado.length === 0 &&
-        r.comSummary === AS_VINTE_E_UMA.length &&
-        semGuiao.existe &&
-        comGuiao.aberto &&
-        comGuiao.outrosAbertos === 0,
-      `sem guião em ${motor}: ${r.total} leitura(s) de ${AS_VINTE_E_UMA.length}, ` +
-        `${r.abertos.length} aberta(s), ${r.semId.length} sem id, ${r.idErrado.length} com id errado, ` +
-        `${r.comSummary} com <summary> · o fragmento «#m-${alvoDoFragmento}» existe: ${semGuiao.existe}, ` +
-        `e o motor abre o <details> alvo de um fragmento sem guião: ` +
-        `${semGuiao.aberto ? 'sim' : 'NÃO (o <summary> está a um toque)'} · ` +
-        `com guião abre: ${comGuiao.aberto} (e ${comGuiao.outrosAbertos} outra(s) aberta(s))`,
-    );
+      medidas[chave] = { ...r, fragmento: { id: alvoDoFragmento, semGuiao, comGuiao } };
+      conta(
+        chave,
+        r.total === AS_VINTE_E_UMA.length &&
+          r.abertos.length === 0 &&
+          r.semId.length === 0 &&
+          r.idErrado.length === 0 &&
+          r.comSummary === AS_VINTE_E_UMA.length &&
+          semGuiao.existe &&
+          comGuiao.aberto &&
+          comGuiao.outrosAbertos === 0,
+        `sem guião em ${ed.rota} · ${motor}: ${r.total} leitura(s) de ${AS_VINTE_E_UMA.length}, ` +
+          `${r.abertos.length} aberta(s), ${r.semId.length} sem id, ${r.idErrado.length} com id errado, ` +
+          `${r.comSummary} com <summary> · o fragmento «#m-${alvoDoFragmento}» existe: ${semGuiao.existe}, ` +
+          `e o motor abre o <details> alvo de um fragmento sem guião: ` +
+          `${semGuiao.aberto ? 'sim' : 'NÃO (o <summary> está a um toque)'} · ` +
+          `com guião abre: ${comGuiao.aberto} (e ${comGuiao.outrosAbertos} outra(s) aberta(s))`,
+      );
+    }
   }
 
   /* --------------------------------------------------------------------- J4 */
-  {
-    const p = await pagina(chrome, '/', 390, ALTURA_PEQUENA);
-    /* Os dois primeiros cartões cuja porta é uma âncora DESTA página: os que
-       levam à página do domínio saem desta medida, porque o que eles abrem é
-       outra página. */
-    const doisCartoes = await p.evaluate(() =>
-      [...document.querySelectorAll('[data-grelha] [data-faixa] [data-cartao]')]
-        .map((c) => ({
+  /* OS 21 CARTÕES EM PORTUGUÊS E UMA AMOSTRA DE CINCO EM INGLÊS, NOS DOIS
+     MOTORES (segunda passagem, 04.09.2026, Major 7). A primeira redação tocava
+     nos dois primeiros cartões locais em Chromium, e o leitor tinha razão: dois
+     de vinte e um não são «um toque num cartão».
+     ------------------------------------------------------------------------
+     UM CARTÃO É UMA DE DUAS COISAS, e a célula exige a promessa de cada uma:
+       · o que leva a uma âncora DESTA página abre a sua leitura, fecha a que
+         estava aberta, e põe `#m-<id>` na barra de endereço;
+       · o que leva à página do domínio (três, desde o F1.2b) muda de página e
+         chega à âncora daquela medida lá dentro.
+     Depois de um cartão de domínio a página é outra, e por isso a corrida volta
+     à primeira página antes do cartão seguinte; a cadeia do «fecha a anterior»
+     mede-se entre toques locais consecutivos, que é onde ela existe. */
+  for (const [ed, quantos] of [
+    [EDICOES[0], null],
+    [EDICOES[1], 5],
+  ]) {
+    for (const [motor, nav] of [
+      ['chromium', chrome],
+      ['webkit', safari],
+    ]) {
+      const chave = `J4.${ed.chave}.${motor}`;
+      const p = await pagina(nav, ed.rota, 390, ALTURA_PEQUENA);
+      const todos = await p.evaluate(() =>
+        [...document.querySelectorAll('[data-grelha] [data-faixa] [data-cartao]')].map((c) => ({
           id: c.getAttribute('data-cartao'),
           href: c.querySelector('.cartao-porta')?.getAttribute('href') ?? '',
-        }))
-        .filter((c) => c.href.startsWith('#'))
-        .slice(0, 2),
-    );
-    const passos = [];
-    for (const c of doisCartoes) {
-      await p.evaluate((id) => {
-        const el = document.querySelector(`[data-cartao="${id}"]`);
-        if (el) el.scrollIntoView({ block: 'center', inline: 'center' });
-      }, c.id);
-      await p.click(`[data-cartao="${c.id}"] .cartao-porta`);
-      await p.waitForTimeout(120);
-      const estado = await p.evaluate(() => ({
-        hash: location.hash,
-        abertas: [...document.querySelectorAll('details[data-leitura][open]')].map((d) => d.id),
-      }));
-      passos.push({ cartao: c.id, ...estado });
-    }
-    await p.__ctx.close();
+        })),
+      );
+      /* A AMOSTRA INGLESA APANHA AS DUAS CLASSES, e não os cinco primeiros: dois
+         cartões que levam à página do domínio e três que abrem aqui. Uma amostra
+         que fosse só do princípio da faixa nunca tocaria num cartão de domínio. */
+      const daFora = todos.filter((c) => !c.href.startsWith('#'));
+      const daCasa = todos.filter((c) => c.href.startsWith('#'));
+      const lista =
+        quantos === null
+          ? todos
+          : [...daFora.slice(0, 2), ...daCasa.slice(0, quantos - Math.min(2, daFora.length))];
 
-    const queixas4 = [];
-    if (doisCartoes.length !== 2) queixas4.push('não há dois cartões com âncora nesta página');
-    passos.forEach((s, i) => {
-      if (s.hash !== `#m-${s.cartao}`) queixas4.push(`o toque ${i + 1} deu «${s.hash}»`);
-      if (s.abertas.length !== 1) queixas4.push(`o toque ${i + 1} deixou ${s.abertas.length} aberta(s)`);
-      else if (s.abertas[0] !== `m-${s.cartao}`) queixas4.push(`o toque ${i + 1} abriu «${s.abertas[0]}»`);
-    });
-    medidas.J4 = { passos, queixas: queixas4 };
-    conta(
-      'J4',
-      passos.length === 2 && queixas4.length === 0,
-      `com guião: ${passos.map((s) => `${s.cartao} → ${s.hash} (${s.abertas.join(', ') || 'nenhuma'})`).join(' · ')}` +
-        (queixas4.length ? ` · QUEIXAS: ${queixas4.join('; ')}` : ''),
-    );
+      const passos = [];
+      let anterior = null;
+      for (const c of lista) {
+        const naPrimeira = new URL(p.url()).pathname.replace(/\/$/, '') === ed.rota.replace(/\/$/, '');
+        if (!naPrimeira) {
+          await p.goto(base + ed.rota, { waitUntil: 'networkidle' });
+          anterior = null;
+        }
+        await p.evaluate((id) => {
+          const el = document.querySelector(`[data-cartao="${id}"]`);
+          if (el) el.scrollIntoView({ block: 'center', inline: 'center' });
+        }, c.id);
+        await p.click(`[data-cartao="${c.id}"] .cartao-porta`);
+        await p.waitForTimeout(140);
+        const local = c.href.startsWith('#');
+        const estado = local
+          ? await p.evaluate(() => ({
+              url: location.pathname + location.hash,
+              hash: location.hash,
+              abertas: [...document.querySelectorAll('details[data-leitura][open]')].map((d) => d.id),
+            }))
+          : { url: new URL(p.url()).pathname + new URL(p.url()).hash, hash: '', abertas: [] };
+        passos.push({ cartao: c.id, local, anterior, ...estado });
+        anterior = local ? c.id : null;
+      }
+      await p.__ctx.close();
+
+      const queixas4 = [];
+      if (lista.length === 0) queixas4.push('a faixa da cabeça não tem cartões');
+      if (quantos === null && lista.length !== AS_VINTE_E_UMA.length) {
+        queixas4.push(`${lista.length} cartões de ${AS_VINTE_E_UMA.length}`);
+      }
+      if (!lista.some((c) => !c.href.startsWith('#'))) {
+        queixas4.push('a amostra não tem nenhum cartão que leve à página do domínio');
+      }
+      for (const s2 of passos) {
+        if (s2.local) {
+          if (s2.hash !== `#m-${s2.cartao}`) queixas4.push(`«${s2.cartao}» deu «${s2.hash}»`);
+          if (s2.abertas.length !== 1) {
+            queixas4.push(`«${s2.cartao}» deixou ${s2.abertas.length} leitura(s) aberta(s)`);
+          } else if (s2.abertas[0] !== `m-${s2.cartao}`) {
+            queixas4.push(`«${s2.cartao}» abriu «${s2.abertas[0]}»`);
+          }
+        } else {
+          const dominio = dominioDaLinha(s2.cartao);
+          const esperado = `${ed.dominio}#${dominio ? dominio.ancora : ''}`;
+          if (s2.url.replace(/\/$/, '') !== esperado) {
+            queixas4.push(`«${s2.cartao}» chegou a «${s2.url}» e não a «${esperado}»`);
+          }
+        }
+      }
+      const locais = passos.filter((x) => x.local).length;
+      medidas[chave] = { passos, queixas: queixas4 };
+      conta(
+        chave,
+        passos.length === lista.length && lista.length > 0 && queixas4.length === 0,
+        `com guião em ${ed.rota} · ${motor}: ${passos.length} cartão(ões) tocados, ` +
+          `${locais} abriram a sua leitura aqui (uma de cada vez) e ${passos.length - locais} ` +
+          `foram à página do domínio` +
+          (queixas4.length ? ` · QUEIXAS: ${queixas4.slice(0, 4).join('; ')}` : ''),
+      );
+    }
   }
 }
 
@@ -719,7 +842,7 @@ const PLANTAS = [
   },
   {
     nome: 'um <details> da área de leitura sem id',
-    celulas: ['J3.chromium', 'J3.webkit'],
+    celulas: ['J3.pt.chromium', 'J3.pt.webkit', 'J12.pt'],
     /* Tira o `id` da primeira leitura. O `<details>` continua lá, continua
        fechado e continua com o seu `<summary>`: o que se perde é a âncora, e com
        ela a promessa de que `#m-<id>` abre alguma coisa. */
@@ -743,22 +866,26 @@ const PLANTAS = [
           ),
   },
   {
-    nome: 'a leitura de uma medida do domínio com a leitura inteira de volta',
+    nome: 'a leitura de uma medida do domínio reduzida a uma linha com a porta',
     celulas: ['J12.pt'],
-    /* Repõe o aparelho de uma leitura inteira dentro da leitura da dívida
-       pública, que desde 04.09 é uma porta e mais nada: as três datas voltam ao
-       corpo, ao lado da porta. É a segunda cópia da leitura que vive na página do
-       domínio, e é o que a decisão do lugar de direção veio tirar. A porta fica,
-       e por isso a planta não passa por acaso: o que cai é a FORMA. */
+    /* O DEFEITO QUE A SEGUNDA PASSAGEM TIROU, REPOSTO (04.09.2026). A primeira
+       passagem reduziu a leitura das três medidas de domínio a uma linha com a
+       porta, e a leitura a frio mediu o que isso custava (Blocking 3): a
+       primeira página perdia a definição da dívida pública, o seu limiar e a sua
+       régua, e a porta para a linha. Esta planta repõe exactamente essa forma na
+       leitura da dívida pública, e a J12 tem de a recusar: a leitura breve é a
+       mesma para as 21, e a porta ACRESCENTA-SE, não substitui. */
     f: (h, rota) =>
       rota.startsWith('/en')
         ? h
-        : h.replace(
-            /(<details class="dobra" id="m-divida-publica-2025"[\s\S]*?<p class="dobra-porta">[\s\S]*?<\/p>)/,
-            '$1<p class="dobra-datas"><span class="dobra-data-k">período</span> ' +
-              '<span class="data-da-linha" data-nonledger="data-da-linha" ' +
-              'data-de-linha="divida-publica-2025" data-de-campo="reference_date">2025</span></p>',
-          ),
+        : (() => {
+            const i = h.indexOf('<details class="dobra" id="m-divida-publica-2025"');
+            if (i < 0) return h;
+            const abre = h.indexOf('<div class="dobra-corpo">', i);
+            const porta = h.indexOf('<p class="dobra-porta">', i);
+            if (abre < 0 || porta < 0) return h;
+            return h.slice(0, abre) + '<div class="dobra-corpo">' + h.slice(porta);
+          })(),
   },
   {
     nome: 'a faixa do domínio com um valor selado repetido',
@@ -795,7 +922,15 @@ if (VERMELHOS) {
   console.log('  estragos plantados:');
   const porNome = new Map(linhas.map((c) => [c.nome, c]));
   for (const planta of PLANTAS) {
-    const verdeAntes = planta.celulas.every((n) => porNome.get(n)?.passa);
+    /* VERDE ANTES, CÉLULA A CÉLULA E COM NOME (segunda passagem, 04.09.2026,
+       Major 7 da leitura a frio). A conferência já existia e dizia «sim» ou
+       «NÃO»; o que faltava era dizer QUAL das células nomeadas não estava verde,
+       para que o relatório da planta seja reproduzível por quem lê e não só por
+       quem correu. Uma planta cuja célula já estava vermelha não prova nada, e
+       agora diz-se qual. */
+    const naoVerdes = planta.celulas.filter((n) => !porNome.get(n)?.passa);
+    const semCelula = planta.celulas.filter((n) => !porNome.has(n));
+    const verdeAntes = naoVerdes.length === 0 && semCelula.length === 0;
     let mudou = false;
     const rotasDaPlanta = planta.rotas ?? EDICOES.map((ed) => ed.doc);
     for (const rota of rotasDaPlanta) {
@@ -812,7 +947,14 @@ if (VERMELHOS) {
     console.log(
       `  ${ok ? verde('✓') : vermelho('✗')} ${planta.nome}  ` +
         cinza(
-          `verde antes: ${verdeAntes ? 'sim' : 'NÃO'} · html mudou: ${mudou ? 'sim' : 'NÃO'} · ` +
+          `verde antes: ${
+            verdeAntes
+              ? 'sim'
+              : `NÃO (${[
+                  ...naoVerdes.map((n) => `${n} já vermelha`),
+                  ...semCelula.map((n) => `${n} não existe`),
+                ].join(', ')})`
+          } · html mudou: ${mudou ? 'sim' : 'NÃO'} · ` +
             `vermelho depois: ${planta.celulas
               .map((n) => `${n}=${depois.get(n)?.passa ? 'verde' : 'vermelho'}`)
               .join(', ')}`,
