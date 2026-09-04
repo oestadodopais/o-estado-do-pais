@@ -146,13 +146,13 @@ export const MEDIDAS_DO_CONCELHO = [
        diferença entre as duas é de 1,6 % em Évora e de 21 % em Lisboa: sem o
        dizer, dois leitores liam duas medidas com o mesmo nome. */
     chave: 'divida',
-    nome: { pt: 'Dívida total do município', en: 'Total municipal debt' },
+    nome: { pt: 'Dívida total da câmara', en: 'Total municipal debt' },
     unidade: { pt: 'Euros', en: 'Euros' },
     prefixo: { pt: '', en: '' },
     ref: '2024',
     nota: {
       pt: [
-        'Série anual da Direção-Geral das Autarquias Locais, que publica os dados das contas dos municípios. Exclui dívidas não orçamentais e exceções legais.',
+        'Série anual da Direção-Geral das Autarquias Locais, que publica os dados das contas das câmaras. Exclui dívidas não orçamentais e exceções legais.',
       ],
       en: [
         'The annual series of the local-government directorate, which publishes the municipalities’ accounts data. Excludes non-budgetary debt and legal exceptions.',
@@ -190,7 +190,7 @@ export const MEDIDAS_DO_CONCELHO = [
     prefixo: { pt: 'dezembro de ', en: 'December ' },
     ref: '2025',
     nota: {
-      pt: ['Lista anual da Direção-Geral das Autarquias Locais, que publica os dados das contas dos municípios.'],
+      pt: ['Lista anual da Direção-Geral das Autarquias Locais, que publica os dados das contas das câmaras.'],
       en: ['The annual list of the local-government directorate, which publishes the municipalities’ accounts data.'],
     },
   },

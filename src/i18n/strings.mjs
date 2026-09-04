@@ -18,6 +18,26 @@ export const STRINGS = {
     outraLinguaCodigo: 'EN',
 
     /* -----------------------------------------------------------------------
+     * A FRASE DE DEFINIÇÃO (bloco F1.10, 04.09.2026)
+     * -----------------------------------------------------------------------
+     * A Emenda 18 fixou «Um observatório de Portugal.», e a leitura de um leitor
+     * de primeira vez (`critica/2026-09-04-codex-leitor-de-primeira-vez.md`)
+     * mediu o que lhe falta: «It does not explain that ledger-backed claims are
+     * reused in territorial views, thematic views and studies.» A frase passa a
+     * dizer as três maneiras de ler o sítio e a origem de cada número, e mais
+     * nada.
+     *
+     * A DECISÃO É DO LUGAR DE DIREÇÃO, pela delegação do diretor de 04.09.2026
+     * (`DECISIONS.md` §1.98, segunda emenda, item 3). A Emenda 18 continua de pé
+     * no que ela decide: uma frase, por baixo da marca, NA PRIMEIRA PÁGINA e em
+     * mais lado nenhum; sem quem a faz, sem como, sem adjetivos, sem porta, sem
+     * algarismo e sem selo. O que cresce é a definição, não a classe: continua a
+     * ser navegação, e a rota `home` continua com autorreferência a zero.
+     *
+     * A SENTINELA DO ARAME DA CLASSE MUDA COM ELA, em `scripts/check-voz.mjs`:
+     * é esta cadeia que prova que a leitura da primeira página não se partiu.
+     */
+    /* -----------------------------------------------------------------------
      * A FRASE DE IDENTIDADE (Emenda 18, 25.08.2026)
      * -----------------------------------------------------------------------
      * «O sítio tem um nome e uma frase de identidade, por baixo da marca na
@@ -30,11 +50,69 @@ export const STRINGS = {
      * verificação nem das intenções da casa (Emenda 15), fala do que a coisa é.
      * Não leva porta, não leva algarismo, não leva selo.
      */
-    identidade: 'Um observatório de Portugal.',
+    identidade:
+      'Um observatório de Portugal: cada número com a sua fonte, lido por território, por domínio e em estudos.',
+
+
+    /* -----------------------------------------------------------------------
+     * AS FRASES DE HIERARQUIA, UMA POR ÍNDICE (bloco F1.10, 04.09.2026)
+     * -----------------------------------------------------------------------
+     * Origem: decisão do lugar de direção, `DECISIONS.md` §1.98, segunda emenda,
+     * item 3, pela delegação do diretor de 04.09.2026. O leitor de primeira vez
+     * mediu a falta: «neither index explains that a domain is a subject and an
+     * area is a ministerial portfolio», e «the site … never states which
+     * classifications contain or overlap which others».
+     *
+     * Cada frase diz o que as coisas SÃO, e mais nada: não fala da casa, não diz
+     * como ela trabalha nem porque se deve confiar nela (Emenda 15 e Emenda 18).
+     * Não leva algarismo nem selo.
+     *
+     * A FRASE DO TERRITÓRIO PÁRA NOS QUATRO NÍVEIS, E A RAZÃO É UMA MEDIÇÃO. O
+     * brief escreve-a com uma segunda oração — «as regiões não contêm distritos
+     * inteiros» — e manda conferi-la nos dados do sítio antes de a escrever. Foi
+     * conferida e NÃO SE ESCREVE: o repositório não tem correspondência nenhuma
+     * entre as 29 unidades da Carta e as 9 regiões NUTS II. `regiaoDe()`, em
+     * `src/data/caop-centroids.mjs`, devolve «continente», «acores» ou «madeira»,
+     * que são as três parcelas do mapa e não as regiões da régua; e
+     * `src/data/regioes.mjs` declara as nove regiões sem uma lista de distritos
+     * nem de concelhos. Uma afirmação sobre a sobreposição das duas divisões não
+     * resolve em dado nenhum desta árvore, e a regra da casa é não escrever o que
+     * não se pode conferir aqui.
+     */
+    hierarquia: {
+      territorio: 'O país lê-se em quatro níveis: país, região NUTS II, distrito ou ilha, concelho.',
+      dominio: 'Um domínio é um assunto da carta dos conteúdos; uma área de governo é um ministério.',
+      area: 'Uma área de governo é um ministério; um domínio é um assunto da carta dos conteúdos.',
+    },
+
+    /* -----------------------------------------------------------------------
+     * OS TÍTULOS DAS DUAS SECÇÕES DE MEDIDAS (bloco F1.10, 04.09.2026)
+     * -----------------------------------------------------------------------
+     * «"Relance" e "Leitura breve" ficam só como os nomes das duas densidades de
+     * um cartão, nunca como títulos de secção» (`DECISIONS.md` §1.98, segunda
+     * emenda, item 2). As duas palavras continuam onde são a densidade: no
+     * comando das duas densidades da primeira página e no rótulo de cada camada
+     * de um instrumento. O que sai são os `<h2>`: três, medidos, na página do
+     * concelho (dois) e na do domínio (um).
+     *
+     * O QUE OS SUBSTITUI DIZ O QUE A SECÇÃO É, com duas palavras do vocabulário
+     * fechado («medida», e a leitura de cada uma). Um título por densidade, o
+     * mesmo em todas as camadas: sem isto, cada página voltava a inventar o seu.
+     */
+    secoes: {
+      medidas: 'As medidas',
+      leitura: 'A leitura de cada medida',
+    },
 
     nav: {
       inicio: 'Início',
-      municipios: 'Municípios',
+      /* «Concelhos» E NÃO «MUNICÍPIOS» (bloco F1.10, 04.09.2026; `DECISIONS.md`
+         §1.98, segunda emenda). O vocabulário fechado do sítio dá ao território
+         quatro palavras — país, região, distrito, concelho — e a palavra visível
+         para esta é «concelho». O ENDEREÇO NÃO MUDA (`/municipios`), que é o que
+         a decisão escreve à letra: o que muda é o que se lê, não o que se
+         partilha. */
+      municipios: 'Concelhos',
       /* «Domínios» entra no rodapé no commit em que as páginas dos domínios
          ganham porta comum (bloco F1.2, segunda passagem, 03.09.2026). A mesma
          razão das «Áreas» ao lado: o rodapé é o índice do sítio, e uma família
@@ -72,6 +150,10 @@ export const STRINGS = {
          ou «English», e um leitor de ecrã que percorra as regiões de uma
          página ouvia o mesmo nome três vezes. */
       rotuloPrincipal: 'Navegação principal',
+      /* O nome da região de navegação do CAMINHO (bloco F1.10, item 5 do brief).
+         Só se ouve: o caminho vê-se, e quem o ouve precisa de saber que aquilo
+         é o caminho da página e não mais uma fila de portas. */
+      rotuloCaminho: 'Onde está',
       rotuloRodape: 'Navegação do rodapé',
       rotuloIdioma: 'Idioma',
       rotuloErro: 'Por onde continuar',
@@ -207,7 +289,7 @@ export const STRINGS = {
      * passaram do cabeçalho para a página dos estudos.
      */
     rodape: {
-      estudos: 'trabalhos no arquivo',
+      estudos: 'estudos no arquivo',
       edicoes: 'edições',
     },
 
@@ -578,7 +660,7 @@ export const STRINGS = {
         rotulo: 'As páginas',
         abrir: 'a página inteira',
         concelhos: ' concelhos',
-        estudosA: ' trabalhos · ',
+        estudosA: ' estudos · ',
         estudosB: ' edições',
       },
 
@@ -594,9 +676,9 @@ export const STRINGS = {
            nomes por baixo do mapa (I81, 27.08.2026). As outras duas já existiam
            porque têm moldura; esta não tem, e a lista passou a ser por parcela. */
         continente: 'Continente',
-        readoutHint: 'Passe o cursor sobre um ponto para ler o município.',
+        readoutHint: 'Passe o cursor sobre um ponto para ler o concelho.',
         tecladoHint:
-          'Teclado: Tab até ao mapa, setas para percorrer os municípios vizinhos, Home para voltar a Évora.',
+          'Teclado: Tab até ao mapa, setas para percorrer os concelhos vizinhos, Home para voltar a Évora.',
         /* A INSTRUÇÃO DE TECLADO SAIU DO RÓTULO (commit 4-0, 21.08.2026).
            Dizia «Mapa de pontos dos municípios de Portugal. Use as setas para
            percorrer os municípios.» — e as setas só percorrem alguma coisa onde
@@ -606,7 +688,7 @@ export const STRINGS = {
            rótulo passa a nomear o que o desenho é; a instrução continua escrita,
            uma vez só, em `tecladoHint`, que vive dentro de `#mapa-descricao` e
            só se constrói na postura inteira. */
-        svgLabel: 'Mapa de pontos dos municípios de Portugal.',
+        svgLabel: 'Mapa de pontos dos concelhos de Portugal.',
         /* O NOME DO MAPA DA PRIMEIRA PÁGINA, QUE MUDOU DE DESENHO (Emenda 20).
            O mapa de pontos fica onde a Emenda 20d o deixa, no cartão localizador
            da página do concelho, e continua com o `svgLabel` acima. O da
@@ -720,14 +802,14 @@ export const STRINGS = {
 
     /** O índice dos concelhos. */
     municipios: {
-      metaTitle: 'Municípios · O Estado do País',
+      metaTitle: 'Concelhos · O Estado do País',
       /* A DESCRIÇÃO APARA-SE, e vai assinalada em vez de decidida (Emenda 15).
          Dizia, a seguir: «Os que já têm página do observatório levam a ela; os
          outros dizem que ainda não têm.» — a cobertura do próprio sítio, que é
          uma das cinco classes que a emenda nomeia. Nenhuma palavra mudou: a
          primeira frase é a que já lá estava. */
       metaDescription: 'Todos os concelhos de Portugal, pela Carta Administrativa Oficial.',
-      eyebrow: 'Municípios',
+      eyebrow: 'Concelhos',
       h1: 'Os concelhos de Portugal',
       lede: 'Todos os concelhos, pela Carta Administrativa Oficial de Portugal.',
       /* A CONTAGEM DA COBERTURA, com as duas chaves da prova (IDENTIDADE.md §10).
@@ -857,6 +939,12 @@ export const STRINGS = {
       /* A unidade da peça da distância. O índice traz a sua de
          `home.instr1.glanceUnidade`, que é a mesma do instrumento. */
       distanciaUnidade: 'pontos do índice',
+      /* A PORTA DA COMPARAÇÃO (bloco F1.10, §1 do brief). A régua inteira das
+         nove regiões vive em `/regioes` e em mais lado nenhum; a página de uma
+         região mostra o valor dela e abre esta porta, em vez de copiar a régua e
+         a lista. É uma porta e não uma frase: o texto dela vive dentro do `<a>`,
+         que a régua da voz deixa cair dos dois lados. */
+      compararPorta: 'Comparar as regiões',
       voltarIndice: 'As regiões de Portugal',
       voltarPais: 'Portugal',
     },
@@ -1010,7 +1098,7 @@ export const STRINGS = {
       metaCauda: 'área de governo · O Estado do País',
       /* O tipo da coisa, e não o que fizemos com ela (Emenda 18b). */
       tipo: 'área do XXV Governo Constitucional',
-      trabalhosK: 'Os trabalhos',
+      trabalhosK: 'Os estudos',
       conjuntosK: 'Os estudos de dados',
       medidasK: 'As medidas',
       /* A porta do texto de um trabalho, quando ele existe nesta edição. */
@@ -1487,17 +1575,17 @@ export const STRINGS = {
        */
       mancheteA: ' tem ',
       mancheteB: ' pessoas.',
-      eyebrow: 'Município',
+      eyebrow: 'Concelho',
       /* O título e a descrição do <head> não podem ter algarismos: o portão só
          tolera aí as cadeias que calcula do registo. Compõem-se com o nome do
          concelho, que não tem nenhum. */
-      metaCauda: 'o município, medido · O Estado do País',
+      metaCauda: 'o concelho, medido · O Estado do País',
       /* A DESCRIÇÃO DO `<head>` PERDE A SEGUNDA FRASE (commit 4-0). Dizia ainda
          «Cada valor tem linha no livro-razão, com fonte, documento e data de
          acesso.» — o método do sítio escrito na descrição, que é superfície
          pública e é medida pela mesma régua desde o commit 3-0 (decisão 1 do
          diretor). O que fica nomeia o que a página traz. */
-      metaDescricaoA: 'O que as fontes publicam sobre o município de ',
+      metaDescricaoA: 'O que as fontes publicam sobre o concelho de ',
       metaDescricaoB:
         ': população, poder de compra, emprego, empresas, dívida e execução orçamental.',
       /* A ABERTURA E AS CONTAGENS POR EXTENSO SAÍRAM (direção, 21.08.2026,
@@ -1555,9 +1643,14 @@ export const STRINGS = {
 
       fundoK: 'Fundo',
 
-      contasK: 'A última prestação de contas do município',
+      /* A CÂMARA E NÃO O CONCELHO, e é a exceção escrita ao vocabulário fechado
+         (bloco F1.10): «concelho» é o território e não publica nada; quem
+         orçamenta, cobra, paga e presta contas é a câmara, que é a palavra que a
+         página do domínio já usa («Quanto deve a minha câmara?»). Escrever «o
+         concelho publica» seria trocar uma palavra certa por uma falsa. */
+      contasK: 'A última prestação de contas da câmara',
       contasV:
-        'O que o município orçamentou, o que cobrou, o que pagou, e o que dizia dever no fim do ano. São números do próprio município sobre si mesmo: a prestação de contas é dele.',
+        'O que a câmara orçamentou, o que cobrou, o que pagou, e o que dizia dever no fim do ano. São números da própria câmara sobre si mesma: a prestação de contas é dela.',
       contasOrcamento: 'Orçamento corrigido',
       contasReceita: 'Receita cobrada',
       contasDespesa: 'Despesa paga',
@@ -1573,9 +1666,9 @@ export const STRINGS = {
       contasPrazoMedioUnidade: 'dias',
       contasDivergenciaK: 'A diferença entre as duas contas da mesma dívida',
       contasDivergenciaV:
-        'A Direção-Geral das Autarquias Locais e o município publicam a dívida do mesmo ano com uma diferença. A diferença é pequena.',
+        'A Direção-Geral das Autarquias Locais e a câmara publicam a dívida do mesmo ano com uma diferença. A diferença é pequena.',
       contasDivergenciaRegulador: 'A Direção-Geral publica',
-      contasDivergenciaMunicipio: 'O município publica',
+      contasDivergenciaMunicipio: 'A câmara publica',
       contasDivergenciaDiferenca: 'Diferença',
 
       tempoIndice: 'índice',
@@ -1662,10 +1755,20 @@ export const STRINGS = {
       tempoAtribuicaoK: 'Quem responde pelo quê',
 
       provenienciaK: 'Proveniência',
-      estudosK: 'Os trabalhos sobre este concelho',
+      estudosK: 'Os estudos sobre este concelho',
       estudoLink: 'Abrir a leitura',
+      /* A PORTA DO ARQUIVO FILTRADO (bloco F1.10, §1 do brief). Os estudos
+         inteiros vivem em `/estudos`; a página do concelho lista os títulos e
+         abre esta porta.
 
-      voltarMapa: 'Voltar ao mapa dos municípios',
+         SEM O «n» QUE O BRIEF ESBOÇA, e a razão é a regra da casa: um número que
+         se vê no sítio resolve numa linha do livro-razão ou numa chave da prova
+         que o portão reconta, e a contagem dos estudos de um concelho não é nem
+         uma coisa nem outra. Escrevê-la aqui era um algarismo sem origem; a
+         lista logo acima é a contagem, e conta-se nela. */
+      estudosPorta: 'Os estudos sobre este concelho, no arquivo',
+
+      voltarMapa: 'Voltar ao mapa dos concelhos',
     },
 
     estudos: {
@@ -1674,6 +1777,15 @@ export const STRINGS = {
       h1: 'Estudos',
       lede: 'Cada estudo publicado, com as suas edições e datas. Os que estão alojados noutro sítio levam a ligação para lá.',
       aviso: 'Datas de publicação por confirmar.',
+      /* O ARQUIVO FILTRADO POR CONCELHO (bloco F1.10). `/estudos?concelho=<slug>`
+         é a porta que a página do concelho abre. A frase chega escondida do
+         servidor e é o guião que a acende, que é a regra da casa para o código
+         que corre no leitor: sem guião o leitor cai no arquivo inteiro, que é a
+         resposta completa à mesma pergunta, e nada nesta página precisa de
+         guião para se ler. */
+      filtroConcelhoA: 'Mostram-se só os estudos sobre ',
+      filtroConcelhoB: '.',
+      filtroTudo: 'Ver o arquivo inteiro',
       /* AS TRÊS CHAVES DO RÓTULO DA DESCRIÇÃO SAÍRAM (bloco B, item B1;
          achado C9). `descricaoRotulo`, `descricaoDoDocumentoRotulo` e
          `descricaoTraduzidaRotulo` diziam ao leitor o que a descrição era —
@@ -1729,7 +1841,7 @@ export const STRINGS = {
          o gabarito passou a ler esta chave, que já existia e não se rendia. */
       leituraBreveK: 'Leitura breve',
       municipioK: 'O concelho de que trata',
-      municipioLink: 'A página do município',
+      municipioLink: 'A página do concelho',
 
       documentoK: 'O documento original',
       /* `documentoV` saiu: dizia com que cuidado o documento foi alojado. A
@@ -1842,7 +1954,23 @@ export const STRINGS = {
 
     /* A frase de identidade da Emenda 18, na edição inglesa, nas palavras do
        diretor: «An observatory of Portugal.» */
-    identidade: 'An observatory of Portugal.',
+    identidade:
+      'An observatory of Portugal: every number with its source, read by territory, by domain and in studies.',
+
+
+    /* As frases de hierarquia, na edição inglesa. Ver a razão, e a medição que
+       tirou a segunda oração da frase do território, na edição portuguesa. */
+    hierarquia: {
+      territorio: 'The country is read at four levels: country, NUTS II region, district or island, municipality.',
+      dominio: 'A domain is a subject from the content charter; a government area is a ministry.',
+      area: 'A government area is a ministry; a domain is a subject from the content charter.',
+    },
+
+    /* Os títulos das duas secções de medidas. Ver a razão na edição portuguesa. */
+    secoes: {
+      medidas: 'The measures',
+      leitura: 'The reading of each measure',
+    },
 
     nav: {
       inicio: 'Home',
@@ -1861,6 +1989,8 @@ export const STRINGS = {
       saltar: 'Skip to content',
       menu: 'Menu',
       rotuloPrincipal: 'Main navigation',
+      /* Ver a razão na edição portuguesa. */
+      rotuloCaminho: 'Where you are',
       rotuloRodape: 'Footer navigation',
       rotuloIdioma: 'Language',
       rotuloErro: 'Where to continue',
@@ -1930,7 +2060,7 @@ export const STRINGS = {
     },
 
     rodape: {
-      estudos: 'works in the archive',
+      estudos: 'studies in the archive',
       edicoes: 'editions',
     },
 
@@ -2111,7 +2241,7 @@ export const STRINGS = {
         rotulo: 'The pages',
         abrir: 'the whole page',
         concelhos: ' municipalities',
-        estudosA: ' works · ',
+        estudosA: ' studies · ',
         estudosB: ' editions',
       },
 
@@ -2223,6 +2353,8 @@ export const STRINGS = {
       indiceK: 'GDP per capita index',
       distanciaK: 'Distance from the EU-27 average',
       distanciaUnidade: 'index points',
+      /* Ver a razão na edição portuguesa. */
+      compararPorta: 'Compare the regions',
       voltarIndice: 'The regions of Portugal',
       voltarPais: 'Portugal',
     },
@@ -2625,8 +2757,10 @@ export const STRINGS = {
       tempoAtribuicaoK: 'Who answers for what',
 
       provenienciaK: 'Provenance',
-      estudosK: 'The works about this municipality',
+      estudosK: 'The studies about this municipality',
       estudoLink: 'Open the reading',
+      /* Ver a razão na edição portuguesa. */
+      estudosPorta: 'The studies about this municipality, in the archive',
 
       voltarMapa: 'Back to the map of municipalities',
     },
@@ -2637,6 +2771,10 @@ export const STRINGS = {
       h1: 'Studies',
       lede: 'Every published study, with its editions and dates. Those hosted elsewhere carry the link to it.',
       aviso: 'Publication dates not yet confirmed.',
+      /* Ver a razão na edição portuguesa. */
+      filtroConcelhoA: 'Showing only the studies about ',
+      filtroConcelhoB: '.',
+      filtroTudo: 'See the whole archive',
       dataLabel: 'published on',
       lingua: 'Language',
       verEstudo: 'Study page',

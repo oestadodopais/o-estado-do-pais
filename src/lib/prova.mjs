@@ -422,8 +422,8 @@ const FRASES = {
     en: 'rows written before any crossing record existed, and so without one',
   },
   leituras: {
-    pt: 'trabalhos do arquivo com leitura do observatório escrita',
-    en: 'archive works with an observatory reading written',
+    pt: 'estudos do arquivo com leitura do observatório escrita',
+    en: 'archive studies with an observatory reading written',
   },
   afirmacoes: {
     pt: 'linhas do livro-razão',
@@ -524,8 +524,8 @@ const FRASES = {
     en: 'concelhos in the coordinates file of the official administrative map',
   },
   estudos: {
-    pt: 'trabalhos no arquivo',
-    en: 'works in the archive',
+    pt: 'estudos no arquivo',
+    en: 'studies in the archive',
   },
   edicoes: {
     pt: 'edições no arquivo',
@@ -640,8 +640,8 @@ export const CHAVE_DAS_PECAS = (slug) => `areas_pecas_${slug.replace(/-/g, '_')}
    peças da página que a linha abre, e o nome da área está na própria linha. */
 for (const a of AREAS) {
   FRASES[CHAVE_DAS_PECAS(a.slug)] = {
-    pt: 'peças na página desta área de governo',
-    en: 'pieces on this area of government’s page',
+    pt: 'estudos e medidas na página desta área de governo',
+    en: 'studies and measures on this area of government’s page',
   };
 }
 

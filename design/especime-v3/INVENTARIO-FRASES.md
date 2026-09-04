@@ -162,7 +162,8 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
 | conteudo | A régua da convergência | regioes | viva | — |
-| navegacao | An observatory of Portugal. | até 2026-08-26 | viva | — |
+| navegacao | An observatory of Portugal. | lugar | retirada | a frase de identidade passou a ser a frase de DEFINIÇÃO do sítio (`DECISIONS.md` §1.98, segunda emenda, item 3): diz as três maneiras de ler o sítio e a origem de cada número, que é o que a leitura de um leitor de primeira vez mediu em falta |
+| navegacao | An observatory of Portugal: every number with its source, read by territory, by domain and in studies. | lugar | viva | — |
 | conteudo | Alentejo · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | conteudo | Alentejo · região | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | conteudo | Algarve · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
@@ -248,7 +249,8 @@ língua em que é rendida.*
 | conteudo | The ledger | até 2026-08-26 | viva | — |
 | conteudo | The licence covers the dataset: its structure, the house values, the derivations and the descriptions. Excerpts transcribed from sources remain under their publishers’ terms. | até 2026-08-26 | viva | — |
 | conteudo | The two states of the seal | até 2026-08-26 | viva | — |
-| navegacao | Um observatório de Portugal. | até 2026-08-26 | viva | — |
+| navegacao | Um observatório de Portugal. | lugar | retirada | a frase de identidade passou a ser a frase de DEFINIÇÃO do sítio (`DECISIONS.md` §1.98, segunda emenda, item 3): diz as três maneiras de ler o sítio e a origem de cada número, que é o que a leitura de um leitor de primeira vez mediu em falta |
+| navegacao | Um observatório de Portugal: cada número com a sua fonte, lido por território, por domínio e em estudos. | lugar | viva | — |
 | conteudo | With fields to confirm | grelha-2 | retirada | a legenda dos dois estados do selo de proveniência saiu das páginas do leitor (`46608f4`, 25.08, e a decisão do diretor de 27.08 que tirou as contagens de proveniência dos índices, `ef8a78e`) |
 | conteudo | [a verificar] | até 2026-08-26 | viva | — |
 | conteudo | [a verificar] (to verify) | até 2026-08-26 | viva | — |
@@ -357,7 +359,8 @@ quem escreveu a página.*
 | --- | --- | --- | --- | --- |
 | conteudo | A diferença entre as duas contas da mesma dívida | até 2026-08-26 | viva | — |
 | conteudo | A dívida contra o teto legal | até 2026-08-26 | viva | — |
-| conteudo | A última prestação de contas do município | até 2026-08-26 | viva | — |
+| conteudo | A última prestação de contas do município | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | A última prestação de contas da câmara | lugar | viva | — |
 | conteudo | Accounts of the year before last | até 2026-08-26 | viva | — |
 | navegacao | Background | até 2026-08-26 | viva | — |
 | conteudo | Borrowing margin | até 2026-08-26 | viva | — |
@@ -388,14 +391,17 @@ quem escreveu a página.*
 | conteudo | Limite de dívida | até 2026-08-26 | viva | — |
 | conteudo | Lugares | até 2026-08-26 | viva | — |
 | conteudo | Margem de endividamento | até 2026-08-26 | viva | — |
-| conteudo | O município publica | até 2026-08-26 | viva | — |
+| conteudo | O município publica | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | A câmara publica | lugar | viva | — |
 | conteudo | O que foi orçamentado, o que foi pago e o que ficou em dívida no município de Évora. | até 2026-08-26 | viva | — |
-| conteudo | O que o município orçamentou, o que cobrou, o que pagou, e o que dizia dever no fim do ano. São números do próprio município sobre si mesmo: a prestação de contas é dele. | até 2026-08-26 | viva | — |
+| conteudo | O que o município orçamentou, o que cobrou, o que pagou, e o que dizia dever no fim do ano. São números do próprio município sobre si mesmo: a prestação de contas é dele. | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | O que a câmara orçamentou, o que cobrou, o que pagou, e o que dizia dever no fim do ano. São números da própria câmara sobre si mesma: a prestação de contas é dela. | lugar | viva | — |
 | conteudo | O regulador | grelha-2 | retirada | a Direção-Geral das Autarquias Locais deixou de ser chamada «o regulador» e passou a ter o seu nome (item E11 do bloco dos 308, `8b55bd3`; as cadeias que ele não alcançou saíram no G5 da grelha da voz, `e470212`) |
 | conteudo | O regulador publica | grelha-2 | retirada | a Direção-Geral das Autarquias Locais deixou de ser chamada «o regulador» e passou a ter o seu nome (item E11 do bloco dos 308, `8b55bd3`; as cadeias que ele não alcançou saíram no G5 da grelha da voz, `e470212`) |
 | conteudo | O traço fino é a dívida total que o regulador publica para o concelho; a barra é a distância até ao limite legal do mesmo ano, que é o fio da direita. O índice mede uma contra o outro numa escala em que o teto é o valor permitido. | grelha-2 | retirada | a Direção-Geral das Autarquias Locais deixou de ser chamada «o regulador» e passou a ter o seu nome (item E11 do bloco dos 308, `8b55bd3`; as cadeias que ele não alcançou saíram no G5 da grelha da voz, `e470212`) |
 | conteudo | Orçamento corrigido | até 2026-08-26 | viva | — |
-| conteudo | Os trabalhos sobre este concelho | até 2026-08-26 | viva | — |
+| conteudo | Os trabalhos sobre este concelho | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | Os estudos sobre este concelho | lugar | viva | — |
 | conteudo | Pelouros | até 2026-08-26 | viva | — |
 | conteudo | Poder de compra per capita, publicado pelo INE para todos os concelhos. | até 2026-08-26 | viva | — |
 | conteudo | Portfolios | até 2026-08-26 | viva | — |
@@ -750,7 +756,8 @@ mudou**, e que a régua lê como blocos novos porque o texto mudou:
 | --- | --- | --- | --- | --- |
 | conteudo | € approved and attributed to the municipality by the recovery-plan register | até 2026-08-26 | viva | — |
 | conteudo | € of gross value added by enterprises in the municipality | voz-dos-documentos | viva | — |
-| conteudo | The works about this municipality | até 2026-08-26 | viva | — |
+| conteudo | The works about this municipality | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | The studies about this municipality | lugar | viva | — |
 | conteudo | The thin line is the total debt the regulator publishes for the municipality; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. | grelha-2 | retirada | a Direção-Geral das Autarquias Locais deixou de ser chamada «o regulador» e passou a ter o seu nome (item E11 do bloco dos 308, `8b55bd3`; as cadeias que ele não alcançou saíram no G5 da grelha da voz, `e470212`) |
 
 **O que este bloco NÃO acrescentou ao inventário, e é uma leitura e não um
@@ -802,7 +809,8 @@ exclusão que a subetapa 3c escreveu para a lista por distritos.
 | conteudo | Integrated business accounts; each enterprise counts in a single municipality. | até 2026-08-26 | viva | — |
 | conteudo | Linhas sem concelho declarado | grelha-2 | retirada | o grupo «Linhas sem concelho declarado» saiu do índice dos concelhos do livro-razão (bloco dos 308, `44ef280`) |
 | conteudo | Rows with no municipality declared | grelha-2 | retirada | o grupo «Linhas sem concelho declarado» saiu do índice dos concelhos do livro-razão (bloco dos 308, `44ef280`) |
-| conteudo | O que as fontes publicam sobre o município de <lugar>: população, poder de compra, emprego, empresas, dívida e execução orçamental. | até 2026-08-26 | viva | — |
+| conteudo | O que as fontes publicam sobre o município de <lugar>: população, poder de compra, emprego, empresas, dívida e execução orçamental. | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | O que as fontes publicam sobre o concelho de <lugar>: população, poder de compra, emprego, empresas, dívida e execução orçamental. | lugar | viva | — |
 | conteudo | What the sources publish about the municipality of <lugar>: population, purchasing power, employment, enterprises, debt and budget execution. | até 2026-08-26 | viva | — |
 | conteudo | Concelhos: as medidas centrais | até 2026-08-26 | viva | — |
 | conteudo | Municipalities: the central measures | até 2026-08-26 | viva | — |
@@ -820,10 +828,12 @@ exclusão que a subetapa 3c escreveu para a lista por distritos.
 | conteudo | A Direção-Geral | até 2026-08-26 | viva | — |
 | conteudo | A Direção-Geral publica | até 2026-08-26 | viva | — |
 | conteudo | A série anual da Direção-Geral das Autarquias Locais ainda não chegou a este mandato. | até 2026-08-26 | viva | — |
-| conteudo | Lista anual da Direção-Geral das Autarquias Locais, que publica os dados das contas dos municípios. | até 2026-08-26 | viva | — |
+| conteudo | Lista anual da Direção-Geral das Autarquias Locais, que publica os dados das contas dos municípios. | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | Lista anual da Direção-Geral das Autarquias Locais, que publica os dados das contas das câmaras. | lugar | viva | — |
 | conteudo | O limite é fixado no artigo 52.º da Lei n.º 73/2013 : uma vez e meia a média da receita corrente líquida dos três anos anteriores. | pequenas-5 | viva | — |
 | conteudo | O traço fino é a dívida total que a Direção-Geral das Autarquias Locais publica para o concelho; a barra é a distância até ao limite legal do mesmo ano, que é o fio da direita. O índice mede uma contra o outro numa escala em que o teto é o valor permitido. | até 2026-08-26 | viva | — |
-| conteudo | Série anual da Direção-Geral das Autarquias Locais, que publica os dados das contas dos municípios. Exclui dívidas não orçamentais e exceções legais. | até 2026-08-26 | viva | — |
+| conteudo | Série anual da Direção-Geral das Autarquias Locais, que publica os dados das contas dos municípios. Exclui dívidas não orçamentais e exceções legais. | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | Série anual da Direção-Geral das Autarquias Locais, que publica os dados das contas das câmaras. Exclui dívidas não orçamentais e exceções legais. | lugar | viva | — |
 | conteudo | The annual list of the local-government directorate, which publishes the municipalities’ accounts data. | até 2026-08-26 | viva | — |
 | conteudo | The annual series of the local-government directorate, which publishes the municipalities’ accounts data. Excludes non-budgetary debt and legal exceptions. | até 2026-08-26 | viva | — |
 | conteudo | The directorate-general | até 2026-08-26 | viva | — |
@@ -878,7 +888,8 @@ E7, E10 e E11 daquele bloco corrigiram e deixaram para trás.
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | A Direção-Geral das Autarquias Locais e o município publicam a dívida do mesmo ano com uma diferença. A diferença é pequena. | grelha-da-voz | viva | — |
+| conteudo | A Direção-Geral das Autarquias Locais e o município publicam a dívida do mesmo ano com uma diferença. A diferença é pequena. | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | A Direção-Geral das Autarquias Locais e a câmara publicam a dívida do mesmo ano com uma diferença. A diferença é pequena. | lugar | viva | — |
 | conteudo | A série anual da Direção-Geral das Autarquias Locais começa depois deste mandato. | grelha-da-voz | viva | — |
 | conteudo | How far the debt exceeded the legal limit, in the first and the last year in which the report publishes it as a positive figure. After that the table turns negative, and a negative there is no longer excess but borrowing capacity. | grelha-da-voz | viva | — |
 | conteudo | O que a dívida excedia o limite legal, no primeiro e no último ano em que o relatório o publica como um valor positivo. Depois disso o quadro passa a números negativos, que já não são excesso mas capacidade de endividamento. | grelha-da-voz | viva | — |
@@ -1164,7 +1175,8 @@ página do leitor.*
 | navegacao | Mandatos, no tempo | grelha-2 | viva | — |
 | navegacao | Map of the districts and islands of Portugal, one area per unit. | grelha-2 | viva | — |
 | navegacao | Map of the municipalities, one area per municipality. | grelha-2 | viva | — |
-| navegacao | Mapa de pontos dos municípios de Portugal. | grelha-2 | viva | — |
+| navegacao | Mapa de pontos dos municípios de Portugal. | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| navegacao | Mapa de pontos dos concelhos de Portugal. | lugar | viva | — |
 | navegacao | Mapa dos concelhos, com uma área por concelho. | grelha-2 | viva | — |
 | navegacao | Mapa dos distritos e das ilhas de Portugal, com uma área por unidade. | grelha-2 | viva | — |
 | navegacao | Menu · Main navigation | grelha-2 | viva | — |
@@ -1200,10 +1212,12 @@ página do leitor.*
 | conteudo | municipalities with at least one row of that study | grelha-2 | viva | — |
 | conteudo | panel measures whose value is inside the published threshold | grelha-2 | viva | — |
 | conteudo | panel measures whose value is outside the published threshold | grelha-2 | viva | — |
-| conteudo | trabalhos no arquivo | grelha-2 | viva | — |
+| conteudo | trabalhos no arquivo | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | estudos no arquivo | lugar | viva | — |
 | conteudo | unidades da Carta Administrativa: os distritos e as ilhas | grelha-2 | viva | — |
 | conteudo | units of the official administrative map: the districts and the islands | grelha-2 | viva | — |
-| conteudo | works in the archive | grelha-2 | viva | — |
+| conteudo | works in the archive | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | studies in the archive | lugar | viva | — |
 
 ## Bloco «As regiões» · Emenda 21 · 27.08.2026
 
@@ -1451,8 +1465,10 @@ um CAMPO de uma linha, e não uma afirmação sobre o que este sítio cobre.*
 | conteudo | An area of government is the set of matters of one ministry, as the Government’s organic law fixes it. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): definia o que uma área de governo é, e uma definição do vocabulário do sítio é o sítio a explicar-se (Emenda 15) |
 | conteudo | As áreas de governo de Portugal, e os trabalhos e as medidas cujo assunto é matéria de cada uma. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
 | conteudo | The areas of government of Portugal, and the studies and measures whose subject is a matter of each one. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
-| conteudo | peças na página desta área de governo | areas | viva | — |
-| conteudo | pieces on this area of government’s page | areas | viva | — |
+| conteudo | peças na página desta área de governo | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | estudos e medidas na página desta área de governo | lugar | viva | — |
+| conteudo | pieces on this area of government’s page | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | studies and measures on this area of government’s page | lugar | viva | — |
 | conteudo | Os trabalhos e as medidas cujo assunto é matéria de Finanças, área de governo. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
 | conteudo | The studies and measures whose subject is a matter of Finance, an area of government. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
 | conteudo | Os trabalhos e as medidas cujo assunto é matéria de Economia e Coesão Territorial, área de governo. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
@@ -1473,7 +1489,8 @@ um CAMPO de uma linha, e não uma afirmação sobre o que este sítio cobre.*
 | conteudo | The studies and measures whose subject is a matter of Environment and Energy, an area of government. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
 | conteudo | área do XXV Governo Constitucional | areas | viva | — |
 | conteudo | area of the XXV Constitutional Government | areas | viva | — |
-| conteudo | Os trabalhos | areas | viva | — |
+| conteudo | Os trabalhos | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | Os estudos | lugar | viva | — |
 | conteudo | The studies | areas | viva | — |
 | conteudo | Os estudos de dados | areas | viva | — |
 | conteudo | The data studies | areas | viva | — |
@@ -1552,9 +1569,10 @@ grelha da voz).*
 | --- | --- | --- | --- | --- |
 | navegacao | Livro-razão | pequenas-4 | viva | — |
 | navegacao | Ledger | pequenas-4 | viva | — |
-| navegacao | Município | pequenas-4 | viva | — |
+| navegacao | Concelho | lugar | viva | — |
 | navegacao | Municipality | pequenas-4 | viva | — |
-| navegacao | Municípios | pequenas-4 | viva | — |
+| navegacao | Municípios | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| navegacao | Concelhos | lugar | viva | — |
 | navegacao | Municipalities | pequenas-4 | viva | — |
 | navegacao | Distritos e ilhas | pequenas-4 | viva | — |
 | navegacao | Districts and islands | pequenas-4 | viva | — |
@@ -1870,7 +1888,8 @@ que a régua não passasse a ter uma linha cujo texto é a letra «a».
 | conteudo | Government debt is % of GDP, outside the threshold of %; the general government balance is % of GDP, within the threshold of − %. | dominio | viva | — |
 | conteudo | As medidas de <nome>, com a fonte, o período e a data de cada uma. | dominio | viva | — |
 | conteudo | The measures of <nome>, with the source, the period and the dates of each one. | dominio | viva | — |
-| conteudo | Este domínio mede as contas do Estado, o que a economia produz por pessoa, a dívida dos municípios e o que se ganha e se trabalha em Portugal; não mede a produtividade, que é pergunta de estudo, nem o produto abaixo das regiões, nem a disparidade salarial entre sexos ao nível do concelho, que nenhum publicador oficial calcula. | dominio | viva | — |
+| conteudo | Este domínio mede as contas do Estado, o que a economia produz por pessoa, a dívida dos municípios e o que se ganha e se trabalha em Portugal; não mede a produtividade, que é pergunta de estudo, nem o produto abaixo das regiões, nem a disparidade salarial entre sexos ao nível do concelho, que nenhum publicador oficial calcula. | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | Este domínio mede as contas do Estado, o que a economia produz por pessoa, a dívida das câmaras e o que se ganha e se trabalha em Portugal; não mede a produtividade, que é pergunta de estudo, nem o produto abaixo das regiões, nem a disparidade salarial entre sexos ao nível do concelho, que nenhum publicador oficial calcula. | lugar | viva | — |
 | conteudo | This domain measures the State’s accounts, what the economy produces per person, municipal debt, and what is earned and worked in Portugal; it does not measure productivity, which is a question for a study, nor output below the regions, nor the gender pay gap at municipal level, which no official publisher computes. | dominio | viva | — |
 | conteudo | Quanto cresce a economia por pessoa? | dominio | viva | — |
 | conteudo | As contas públicas estão em equilíbrio? | dominio | viva | — |
@@ -2170,3 +2189,41 @@ aqui: mexe na régua de que dependem os blocos que correm em paralelo, e pede as
 oito linhas novas e a entrada em `critica/REVISOES-DO-INVENTARIO.md` que uma
 leitura cruzada do inventário obriga. **Fica para a direção**, com a contagem
 feita.
+
+## Bloco F1.10 · uma coisa, um lugar · 04.09.2026
+
+**O que este bloco mexeu na tabela.** Trinta e nove linhas: dezanove passaram a
+`retirada` e vinte entraram `viva`, e são os dois lados das mesmas vinte
+mudanças. Dezanove delas são o **vocabulário fechado** do sítio, que a
+`DECISIONS.md` §1.98, segunda emenda, item 2, decide pela delegação do diretor de
+04.09.2026: a palavra visível do território é «concelho», o trabalho de autor é
+um «estudo», e quem tem a dívida e presta contas é a **câmara**, que é o
+organismo e não o território. A vigésima é a **frase de definição** da primeira
+página (§1.98, segunda emenda, item 3), que cresceu a partir da frase de
+identidade da Emenda 18 sem sair do lugar onde a Emenda a pôs.
+
+**Uma linha saiu do ficheiro em vez de passar a `retirada`, e a razão é a régua.**
+Era `| navegacao | Município | pequenas-4 | viva | — |`, o antetítulo da página de
+um concelho, que passou a dizer «Concelho». `retirada` não serve: `ondeVolta()`,
+em `scripts/medir-defeitos.mjs`, procura a frase retirada **por palavra inteira
+dentro de qualquer frase rendida**, e a varredura das dicas (I79) recolhe o
+`title` de cada campo do livro-razão — onde vive «Município de Évora», que é o
+`source` de dezenas de linhas do estudo dos concelhos. Uma linha `retirada` que a
+régua acha por dentro de um campo transcrito fecharia a construção para sempre, e
+a casa não edita o que transcreve. A linha sai, que é a outra saída que este
+ficheiro já escreve («ou a linha sai do ficheiro, ou passa a `retirada` com a
+razão escrita»).
+
+**O que impede a palavra de voltar não é esta tabela: é a régua do bloco.** A L3
+do brief F1.10 mede «município(s)» visível a zero fora dos endereços, sobre o
+`dist/` e nas duas edições, com as exceções escritas. Essa régua ainda não existe
+— o bloco parou a meio — e é ela que fecha este caso; enquanto não existir, a
+proteção desta palavra é a leitura de quem revê o diff.
+
+**As chaves novas deste bloco não estão aqui, e é de propósito.** Nove cadeias
+novas entraram em `src/i18n/strings.mjs` (as frases de hierarquia, os dois
+títulos de secção, o rótulo do caminho e as três portas) e **nenhuma se rende
+ainda**: a vista que as usa é a parte do bloco que ficou por construir. Uma linha
+`viva` que não se rende fecha a construção, e é a régua a dizer a verdade sobre o
+sítio. Estão listadas em `design/especime-v3/CHAVES-EN.md`, e quem as render
+declara-as aqui no mesmo commit.

@@ -332,7 +332,7 @@ export const MEDIDAS_DO_DOMINIO_1 = /** @type {const} */ ([
       en: 'How much does my municipality owe, and what is the cap?',
     },
     nome: {
-      pt: 'Dívida do município contra o limite legal',
+      pt: 'Dívida da câmara contra o limite legal',
       en: 'Municipal debt against the legal cap',
     },
     unidade: { pt: 'Percentagem', en: 'Percentage' },
@@ -535,7 +535,7 @@ export const FAIXA_DO_DOMINIO_1 = /** @type {const} */ (['E3', 'E2', 'T1', 'T2',
  * número da casa entra por `data-prova`, com quem o reconte.
  */
 export const FRONTEIRA_DO_DOMINIO_1 = {
-  pt: 'Este domínio mede as contas do Estado, o que a economia produz por pessoa, a dívida dos municípios e o que se ganha e se trabalha em Portugal; não mede a produtividade, que é pergunta de estudo, nem o produto abaixo das regiões, nem a disparidade salarial entre sexos ao nível do concelho, que nenhum publicador oficial calcula.',
+  pt: 'Este domínio mede as contas do Estado, o que a economia produz por pessoa, a dívida das câmaras e o que se ganha e se trabalha em Portugal; não mede a produtividade, que é pergunta de estudo, nem o produto abaixo das regiões, nem a disparidade salarial entre sexos ao nível do concelho, que nenhum publicador oficial calcula.',
   en: 'This domain measures the State’s accounts, what the economy produces per person, municipal debt, and what is earned and worked in Portugal; it does not measure productivity, which is a question for a study, nor output below the regions, nor the gender pay gap at municipal level, which no official publisher computes.',
 };
 
