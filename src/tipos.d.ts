@@ -594,6 +594,40 @@ interface RegistoDoCalendario {
 }
 
 /* ========================================================================== */
+/* A frescura                                                                 */
+/* ========================================================================== */
+
+/**
+ * Onde é que o período que a casa publica foi lido, e quando.
+ *
+ * Não é uma dispensa: `scripts/check-formas.mjs` abre `ficheiro`, procura
+ * `registo` e `campo`, e compara o período que lá está com o que
+ * `src/data/frescura.mjs` declara.
+ */
+interface OrigemDaSerieAtrasada {
+  ficheiro: string;
+  registo: string;
+  campo: string;
+  lidoEm: string;
+  url: string;
+}
+
+/**
+ * Uma série mensal que a casa publica atrás da fonte.
+ *
+ * `fonte`, `documento` e `periodoDaCasa` são a regra que decide que linhas do
+ * livro-razão pertencem à série; nenhuma lista de ids é escrita à mão.
+ */
+interface SerieAtrasada {
+  id: string;
+  fonte: string;
+  documento: string;
+  periodoDaCasa: string;
+  periodoDaFonte: string;
+  origem: OrigemDaSerieAtrasada;
+}
+
+/* ========================================================================== */
 /* A prova                                                                    */
 /* ========================================================================== */
 

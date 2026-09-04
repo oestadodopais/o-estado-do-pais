@@ -67,6 +67,7 @@ import { areasComPecas } from './areas.mjs';
 import { AREAS } from '../data/areas.mjs';
 import { VERIFICACAO } from '../data/verificacao.mjs';
 import { CONFERENCIA, FONTES_SEM_RESPOSTA } from '../data/fontes.mjs';
+import { contagensDoAtraso } from './frescura.mjs';
 import { ENDERECO_CORRECOES } from '../data/metodo.mjs';
 
 /**
@@ -461,6 +462,21 @@ const FRASES = {
     pt: 'data escrita pelo motor na última reconferência do painel',
     en: 'date written by the engine at the last panel re-check',
   },
+  /* AS DUAS CONTAGENS DO ATRASO (bloco F1.6, 04.09.2026; DECISIONS §1.98, (2)).
+     São duas e não uma porque contam coisas diferentes e o cabeçalho rende as
+     duas na mesma leitura: quantas SÉRIES a casa publica atrás da fonte, e
+     quantas LINHAS do livro-razão essas séries apanham. Uma série é uma decisão
+     editorial (que ficheiro da fonte a casa publica) e uma linha é um valor no
+     ecrã de um leitor; escrever «séries» ao lado da contagem das linhas seria o
+     nome a dizer uma coisa e o número a contar outra. */
+  series_atrasadas: {
+    pt: 'séries que a casa publica atrás do último período da fonte',
+    en: 'series the house publishes behind the source’s latest period',
+  },
+  linhas_atrasadas: {
+    pt: 'linhas do livro-razão dessas séries',
+    en: 'ledger rows in those series',
+  },
   correcoes: {
     pt: 'entradas de natureza correção no livro-razão',
     en: 'entries of kind correction in the ledger',
@@ -666,6 +682,7 @@ export function prova(lang = 'pt') {
   const verificacao = estadoDaVerificacao();
   const dosConcelhos = contagensDosConcelhos();
   const ag = agenda();
+  const atraso = contagensDoAtraso();
 
   /** @type {Record<string, number>} */
   const porTipo = {};
@@ -887,6 +904,21 @@ export function prova(lang = 'pt') {
          ela abre. */
       ancora(routePath('home', lang), 'painel'),
       { vencida: verificacao.vencida, dias: verificacao.dias },
+    ),
+    /* AS DUAS CONTAGENS DO ATRASO, e a porta das duas é a regra da releitura no
+       Método. Não é o livro-razão: o que estas contagens dizem não é quantas
+       linhas existem, é que a fonte já publicou um período mais recente do que
+       o que elas medem, e a regra que governa isso é a 6 («A releitura»), que é
+       para onde a leitura das fontes ao lado já abre no mesmo cabeçalho. */
+    series_atrasadas: k(
+      'series_atrasadas',
+      atraso.series,
+      ancora(routePath('metodo', lang), 'releitura'),
+    ),
+    linhas_atrasadas: k(
+      'linhas_atrasadas',
+      atraso.linhas,
+      ancora(routePath('metodo', lang), 'releitura'),
     ),
 
     /* ---- o registo ---- */

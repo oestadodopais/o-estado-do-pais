@@ -136,6 +136,7 @@ import {
   textoDoRotulo,
 } from '../src/data/politica-ia.mjs';
 import { VERIFICACAO } from '../src/data/verificacao.mjs';
+import { SERIES_ATRASADAS } from '../src/data/frescura.mjs';
 import { prova, CAMINHO_DA_PROVA } from '../src/lib/prova.mjs';
 import {
   carregaFormas,
@@ -3719,6 +3720,32 @@ function contasDoPortao(claims) {
       'ledger',
     ),
     conta('painel_reconferido_em', VERIFICACAO.verificadoEm, 'modulo'),
+    /* AS DUAS CONTAGENS DO ATRASO (bloco F1.6, 04.09.2026), recontadas AQUI e
+       não pedidas a `src/lib/frescura.mjs`: este é o segundo ponto de
+       observação, sobre o livro-razão que este portão leu por conta própria e
+       sobre a declaração das séries, com a regra dos três campos escrita outra
+       vez. Se as duas implementações se afastarem, é aqui que isso aparece.
+
+       A regra é a mesma e diz-se por extenso: uma linha pertence a uma série
+       quando a fonte, o título do documento e o período de referência batem
+       certo com o que a série declara. É o que faz entrar as do continente e
+       deixar de fora as das ilhas (outra fonte) e os pontos históricos de uma
+       série (outro período). */
+    ...(() => {
+      const daSerie = (c) =>
+        SERIES_ATRASADAS.find(
+          (s) =>
+            c.source === s.fonte &&
+            (c.document ?? {}).title === s.documento &&
+            c.reference_date === s.periodoDaCasa,
+        ) ?? null;
+      const atrasadas = linhas.filter((c) => daSerie(c) !== null);
+      const series = new Set(atrasadas.map((c) => daSerie(c).id));
+      return [
+        conta('series_atrasadas', series.size, 'ledger'),
+        conta('linhas_atrasadas', atrasadas.length, 'ledger'),
+      ];
+    })(),
     conta('correcoes', porNatureza.correcao, 'ledger'),
     conta('atualizacoes', porNatureza.atualizacao, 'ledger'),
     conta('revisoes_de_proveniencia', porNatureza.proveniencia, 'ledger'),
