@@ -1,0 +1,41 @@
+# Leitura a frio do Codex ao bloco F1.9a (o índice das páginas de leitura), 03.09.2026
+
+*Codex `gpt-5.6-sol`, xhigh, só leitura, 13:52 a 14:05 UTC, sobre um pacote com cinco plantas de três classes (5 de 5 vistas; o registo está no `.plantas.json` ao lado): P1a e P1b, cada ligação do índice de nível 2 a apontar a um id que não existe (`bloco-N-`), na cópia e no diff, apanhada no Blocking 2 (o leitor refez o hash da cópia e mostrou que tirar o hífen devolve o hash do cabeçalho do diff); P2, a régua a aceitar alvos de 20 px como 44, apanhada no Major 5; P3, o relatório a dizer 163 entradas no resumo e 136 na tabela, apanhada no Major 6; P4, um carácter do texto do registo mudado na página construída («municipio» por «município», bloco 71), apanhada no Blocking 1. Triagem do lugar de direção: o Blocking 3 é real e é a decisão deste bloco (a área de toque dos selos e das ligações dentro do texto cresce para 44 px por uma técnica que não mexe na caixa de linha, como a Emenda 20c já faz noutros tipos de página, e o que sobrar, as portas adjacentes a 24 px, diz-se com o número); o Blocking 4 é real (a subida deixa de ser fixa a 390, onde não há goteira, e passa a viver no fim de cada secção de nível 2; fixa só a partir de 1 024, onde há goteira; a régua exige zero sobreposição); os Major 6 a 9 e o Minor 10 são reais e consertam-se na segunda passagem (os comentários da folha com os números medidos e os registos da medição no relatório; os rótulos da subida no inventário da voz com origem e o par inglês; a indicação de progresso legível por tecnologia de apoio, como texto real ou texto só para leitores de ecrã; as réguas a exigir ids únicos, os 44 px do corpo e zero sobreposição; a afirmação «todos os títulos» qualificada aos níveis 2 e 3, com o nível 4 dito). O texto do leitor fica como veio.*
+
+---
+
+# Blocking
+
+1. The Portuguese record text changed. Block 71 says “município” in the record and `antes`, but “municipio” in `depois`; this is the only changed character inside the article. L2 would reject it, so the claimed green gate cannot describe the supplied HTML. `registos/evora-prometido-pago-auditado-2026/pt.record.json:5645`, `antes/texto-pt.html:1`, `depois/texto-pt.html:1`, `scripts/gate-html.mjs:1669-1703`, `relatorio-construtor.md:33`
+
+2. The candidate source, diff and post-build are not the same candidate. Every top-level index link in the copied view and patch has a stray trailing hyphen, `#bloco-${titulo.i}-`, while headings are emitted as `id="bloco-${bloco.i}"`; the supplied `depois` HTML instead contains correct fragments. The copied view hashes to `1fddd580`, not the patch header’s `403fb858`; removing that one hyphen produces `403fb858`. Rebuilding the supplied source would break every level-2 index link and fail L8. `src/views/TextoView.astro:248`, `src/lib/registo-html.mjs:544-550`, `diff.patch:521`, `diff.patch:580`, `depois/texto-pt.html:1`, `scripts/gate-html.mjs:2122-2133`
+
+3. The requested 44 px treatment for seals and links inside the reading text was not implemented. Ordinary document links only get wrapping; adjacent figure doors remain 24 px; seals only get a margin. The coarse-pointer rule covers the fold door and three counters, not `.texto-ligacao`, `.texto-figura-porta*` or `.src-chip`. The report itself counts 291 figure doors, 21 adjacent doors, 16 document links and 12 seals still small. The common stylesheet means this failure affects both editions; the seal remains visually unchanged because its target was not enlarged. `src/styles/texto.css:163-169`, `src/styles/texto.css:195-233`, `src/styles/texto.css:720-760`, `relatorio-construtor.md:79-88`, `brief.md:14`, `brief.md:32`
+
+4. The back-to-top door violates D3 by covering the record at 390 px: 12–26 line boxes across 6–9 of ten sampled positions, up to 67.8 × 26.6 px. The ruler deliberately treats that measurement as informational and passes whenever ten positions were sampled, regardless of overlap. `brief.md:31`, `relatorio-construtor.md:92-103`, `tests/indice.mjs:485-495`
+
+# Major
+
+5. The supplied touch ruler was altered from 44 px to 20 px. The diff tests `>= 44`; the copy tests `>= 20`, so I8 can bless any 20–43.9 px target. For the reported 79.2 × 21.2 px planted door, I7a/I7b would still fail, but I8 would pass, contrary to the report. `diff.patch:940`, `tests/indice.mjs:239-255`, `tests/indice.mjs:465-480`, `tests/indice.mjs:604-614`, `relatorio-construtor.md:128`
+
+6. The measurements disagree internally. The copied report says 79→163 entries, while its D1 table and eight rows total 79→136, and the diff says 136. Its CSS commentary also says `+58 px` and a `60 px` index band while the report says `+44 px` and `46 px`; the next CSS comment itself returns to 46 px. Only the two sample HTML files substantiate 9→13 entries. The eight-page heights and geometry are unsupported here: the report cites logs and captures not supplied, while the ruler requires `dist/` and every manifest record. `relatorio-construtor.md:7`, `relatorio-construtor.md:29`, `relatorio-construtor.md:40-51`, `diff.patch:13`, `src/styles/texto.css:737-750`, `tests/indice.mjs:93-95`, `tests/indice.mjs:125-145`, `relatorio-construtor.md:142-152`
+
+7. The voice inventory does not satisfy the brief. “Nesta página” and “On this page” have table entries and origins, but the back-to-top labels have no table entry, origin, or English counterpart; the inventory explicitly excludes “Subir ↑” because it is inside a link. The report nevertheless marks D7 compliant by declaring that there are no new strings. `brief.md:15`, `inventario-frases.md:510-530`, `inventario-frases.md:756-760`, `relatorio-construtor.md:105-114`
+
+8. The progress indication is unavailable to assistive technology in the target engines. The counter’s CSS alternative text is explicitly empty and the bar is `aria-hidden`; the report confirms the accessible heading name excludes `n/N`. `src/styles/texto.css:582-615`, `src/views/TextoView.astro:430-442`, `relatorio-construtor.md:63-65`, `relatorio-construtor.md:112`
+
+9. The rulers do not enforce all claimed invariants. I1 catches the exact missing-ID and missing-heading plants, and I7 catches the exact 20 px back-to-top plant, but I1 uses only `querySelector`, so duplicate destination IDs pass; the global gate also collapses IDs into a `Set`. I9 passes merely when at least one pair exists, not when body targets satisfy 44 px, and I10a does not require zero overlap. The removed plants described in prose are therefore not retained proof of full coverage. `tests/indice.mjs:153-208`, `tests/indice.mjs:471-495`, `tests/indice.mjs:674-684`, `scripts/gate-html.mjs:3788-3795`, `relatorio-construtor.md:122-130`
+
+# Minor
+
+10. “Every heading” is literally false: the implementation indexes only levels 2 and 3, and the report admits deliberately omitting ten level-4 headings in one edition. This matches the narrower brief, but not an unqualified all-headings claim. `brief.md:11`, `src/lib/registo-html.mjs:191-201`, `relatorio-construtor.md:55`
+
+## «What is fine»
+
+- In each supplied `depois` sample, the index has all 13 required level-2/3 headings in record order, with exact labels and one matching destination ID; `antes` has only the nine level-2 entries. `depois/texto-pt.html:1`, `depois/texto-en.html:1`, `registos/evora-prometido-pago-auditado-2026/pt.record.json:30`, `registos/evora-prometido-pago-auditado-2026/pt.record.json:6523`
+
+- The English article is byte-identical before and after. The new index, native `<details>`, door and bar are static HTML/CSS and require no new production JavaScript. `antes/texto-en.html:1`, `depois/texto-en.html:1`, `src/views/TextoView.astro:239-267`, `src/views/TextoView.astro:428-442`
+
+- The visible `n/N` values are derived rather than invented: `N` is the record’s level-2 count, `n` is a CSS counter, and the gate independently rechecks `N`. The existing navigation labels contain no site or trust claim. `src/views/TextoView.astro:107-115`, `src/styles/texto.css:594-615`, `scripts/gate-html.mjs:2075-2092`, `inventario-frases.md:521`, `inventario-frases.md:530`
+
+Distinct findings: **10**.
