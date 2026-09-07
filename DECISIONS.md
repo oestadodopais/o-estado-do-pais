@@ -11962,6 +11962,24 @@ Nada muda no ar nesta sessão além do carimbo semanal de 31.08.
 
 **O custo do dia, pelo contador do harness ao pausar:** F1.4b ≈237 mil símbolos (Opus, uma passagem); F1.1c ≈308 mil (Opus, uma passagem); os contadores das duas passagens do F1.4, do F1.7 e do F1.1b, e os das primeiras passagens do F1.6, do M1 e do F2.6, ficaram no registo da sessão e não foram copiados para aqui antes de o portátil fechar; a sessão seguinte lê-os dos relatórios dos construtores onde estiverem, e onde não estiverem a conta fica por dizer.
 
+### 1.100 O Portal BASE declarado no Método: a única fonte que a casa lê com a identidade de um navegador
+
+**Afecta:** metodo
+
+**Texto:** metodo b4cc3594f960
+
+**A decisão** (lugar de direção, 04.09.2026, pela delegação da §1.98; decisão (3) da mesma entrada: «o Portal BASE fica como fonte e a identidade de navegador com que se lê declara-se no Método, em vez de se deixar cair a fonte»). O limite da regra 1 do Método («As fontes») ganha uma segunda frase, nas duas edições, e mais nada muda no texto governado.
+
+**O que passou a estar escrito**, em português e em inglês: «Uma fonte, o Portal BASE, recusa os pedidos que se identificam com o nome da casa: é lida com a identidade de um navegador, e nenhuma outra o é.» · «One source, Portal BASE, refuses requests that identify themselves with the house’s name: it is read with the identity of a browser, and no other source is.»
+
+**A redação é a da segunda passagem** (04.09.2026, Major 7 da leitura a frio do Codex, `design/especime-v3/critica/2026-09-04-codex-leitura-f16-frescura.md`). A primeira dizia «navegador comum» e «a única fonte lida assim», e as duas são adjetivos que o brief proibia. Saíram os dois e a informação ficou: «um navegador» diz o que a identidade é, e «nenhuma outra o é» diz o facto que o adjetivo dizia, sem o ser. A contagem que o sustenta não entra na página porque o texto governado não leva algarismos; entra aqui, no parágrafo seguinte, que é onde ela é conferível.
+
+**Cada metade da frase é medida e não suposta.** A recusa está registada no motor, em `core/sources.py`, com a data e o que se mediu: «medido a 26.07.2026 (learnings.md): o Portal BASE responde 404 a TODOS os caminhos quando o User-Agent não é de navegador». A exclusividade também: desde 03.09.2026 (bloco F0.8) o `core/http.py` recusa qualquer `User-Agent` que não seja o desta casa, e a única exceção é uma fonte que declare no registo as duas coisas, a bandeira `browser_ua` e a razão por escrito. Contadas hoje no ficheiro: treze fontes, uma com a bandeira. O que o F0.8 deixou aberto era esta decisão, e o próprio comentário do motor a nomeia como sendo do diretor, com duas portas, declarar ou deixar cair a fonte; a §1.98 delegou-a no lugar de direção e a porta escolhida é declarar.
+
+**O que a frase não diz, e é deliberado.** Não fala de confiança, não pede desculpa e não explica a diligência da casa (Emenda 15 e Emenda 18). Não traz o estado HTTP nem o nome do cabeçalho: o texto governado não leva algarismos, e o que o leitor precisa de saber é que uma fonte é lida assim e qual é. A razão técnica inteira vive no motor, que é onde ela é conferível.
+
+**O que fica por fechar**, e escreve-se aqui para não voltar a ser descoberto: o comentário do motor chama a esta exceção «uma dívida e não uma solução». Declará-la não a paga; torna-a visível. Enquanto o Portal BASE responder assim, a casa lê aquela fonte de uma maneira que não é a que promete para todas as outras, e isso está agora no Método em vez de estar só no código.
+
 ## 4. O registo dos defeitos e dos adiamentos
 
 **Defeito registado 2026-08-16 (00:10), encontrado pela direcção no sítio no ar — RESOLVIDO na mesma noite (§1.37, no ar em `4217232`):** os selos acrescentados a 15.08 aos valores do cabeçalho da primeira página (308 · 11 · 15) rendem no cabeçalho com o rótulo inteiro do estudo («O Estado do País — apuramento próprio») e, no caso da contagem CAOP, com o marcador «[a verificar]» ao lado. Certo pela regra (todo o valor tem selo, para a sua linha), errado naquele sítio: no cabeçalho o selo deve ser só o glifo, com o rótulo apenas para leitores de ecrã. **Primeiro item do bloco V**, junto com a saída de «Edição de …», da introdução justificativa da primeira página e de «Estes indicadores não são escolha nossa…» (voz). Sem alteração ao portão: o selo continua ao pé do valor e a apontar para a linha própria.

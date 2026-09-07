@@ -108,6 +108,16 @@ export const FICHEIRO_DAS_DATAS = path.join('src', 'data', 'datas-de-publicacao.
  */
 
 /**
+ * A CHAVE DE UMA EDIÇÃO: o par slug e língua. Está aqui em cima porque o guarda
+ * a usa para recusar chaves repetidas, e o mapa da construção usa a MESMA: se
+ * fossem duas, o guarda conferia uma unicidade que o mapa não tinha.
+ *
+ * @param {string} slug
+ * @param {string} lang
+ */
+const chave = (slug, lang) => `${slug}/${lang}`;
+
+/**
  * O GUARDA DO FICHEIRO (a disciplina do bloco F0.4: nada entra com um molde por
  * cima). Um JSON estragado tem de fechar a construção com a frase do que falta,
  * e não pintar dezasseis marcadores em silêncio.
@@ -119,7 +129,42 @@ export function eDatasDePublicacao(x) {
   if (typeof x !== 'object' || x === null || Array.isArray(x)) return false;
   const m = /** @type {Record<string, unknown>} */ (x);
   if (!Array.isArray(m.edicoes)) return false;
-  return m.edicoes.every((e) => eDataDeEdicao(e));
+  if (!m.edicoes.every((e) => eDataDeEdicao(e))) return false;
+  /**
+   * AS CHAVES SÃO ÚNICAS (leitura a frio do Codex de 07.09.2026, Major 8).
+   *
+   * Cada linha era conferida por si, e a lista não era conferida de todo: duas
+   * linhas com o mesmo `slug/lang` passavam, e o `Map` que a construção monta
+   * logo a seguir guardava SÓ A ÚLTIMA, sem um erro. Duas datas para a mesma
+   * edição não são uma linha a mais: são um ficheiro que não sabe qual é a data,
+   * e a construção escolhia uma pela ordem em que ela calhou estar escrita.
+   */
+  /** @type {Set<string>} */
+  const vistas = new Set();
+  for (const e of m.edicoes) {
+    const k = chave(e.slug, e.lang);
+    if (vistas.has(k)) return false;
+    vistas.add(k);
+  }
+  return true;
+}
+
+/**
+ * UM DIA DO CALENDÁRIO, e não um padrão de algarismos (Major 8, a outra metade).
+ *
+ * O guarda lia `/^\d{4}-\d{2}-\d{2}$/`, e `2026-99-99` passava: a vista
+ * escrevia-o na forma da casa e ia impresso. A conta 3 de `check-datas.mjs` só
+ * corre com história completa e a célula I9 só corre na CI, de modo que numa
+ * construção da Vercel nada o apanhava. Aqui a data tem de voltar de `Date` como
+ * o mesmo dia com que entrou: é a única maneira de recusar 31.02 sem escrever
+ * uma tabela de meses.
+ *
+ * @param {string} iso
+ */
+function eDiaDoCalendario(iso) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(iso)) return false;
+  const d = new Date(`${iso}T00:00:00Z`);
+  return !Number.isNaN(d.getTime()) && d.toISOString().slice(0, 10) === iso;
 }
 
 /**
@@ -136,7 +181,7 @@ export function eDataDeEdicao(e) {
     m.slug.length > 0 &&
     (m.lang === 'pt' || m.lang === 'en') &&
     typeof m.data === 'string' &&
-    /^\d{4}-\d{2}-\d{2}$/.test(m.data) &&
+    eDiaDoCalendario(m.data) &&
     typeof m.commit === 'string' &&
     /^[0-9a-f]{40}$/.test(m.commit) &&
     typeof m.ficheiro === 'string' &&
@@ -146,9 +191,6 @@ export function eDataDeEdicao(e) {
 
 /** @type {Map<string, DataDeEdicao> | null} */
 let _porEdicao = null;
-
-/** A chave do mapa. @param {string} slug @param {string} lang */
-const chave = (slug, lang) => `${slug}/${lang}`;
 
 /** O ficheiro, lido uma vez e conferido. @returns {Map<string, DataDeEdicao>} */
 function mapa() {

@@ -1271,8 +1271,10 @@ async function comNavegador() {
      * E TEM O SEU POSITIVO CONHECIDO, plantado na própria página: com
      * `.porta-conta-item { display: contents }` as caixas que este bloco
      * acrescentou desaparecem e o texto volta a ser um item anónimo, que é
-     * exactamente o defeito que esteve no ar. A célula tem de o ver. Uma régua
-     * que nunca ficou vermelha não prova nada (regra 14 da casa).
+     * exactamente o defeito que esteve no ar. A célula tem de o ver em TODOS os
+     * pares, e não num. Uma régua que nunca ficou vermelha não prova nada
+     * (regra 14 da casa), e uma que fica vermelha por um sétimo da página prova
+     * um sétimo.
      */
     /** @type {string[]} */
     const falhas = [];
@@ -1280,8 +1282,18 @@ async function comNavegador() {
     /** O vão mínimo, em px: um espaço a 13px vale ~3,5 e um aparado vale 0. */
     const VAO_MINIMO = 1.5;
 
-    /* A função corre DENTRO da página. Devolve um par por contagem. */
+    /**
+     * A função corre DENTRO da página. Devolve um par por contagem, e o NÚMERO
+     * DE CONTAGENS QUE A PÁGINA TEM, contado da própria página.
+     *
+     * A segunda passagem conta-o aqui (leitura a frio do Codex de 07.09.2026,
+     * Minor 10): a régua exigia UM par medido e UM par apanhado, e um par em sete
+     * deixava-a verde. Uma contagem que perde a palavra deixa de dar par e
+     * ninguém dava por isso. O sete não se escreve à mão: se a página ganhar uma
+     * contagem, a régua passa a exigir oito.
+     */
     const medeOsVaos = () => {
+      const contagens = document.querySelectorAll('.porta-conta [data-prova]').length;
       /** @type {{onde: string, numero: string, palavra: string, vao: number}[]} */
       const pares = [];
       for (const conta of document.querySelectorAll('.porta-conta')) {
@@ -1319,7 +1331,7 @@ async function comNavegador() {
           }
         }
       }
-      return pares;
+      return { contagens, pares };
     };
 
     const ctx = await nav.newContext({ viewport: { width: 390, height: 800 } });
@@ -1329,9 +1341,20 @@ async function comNavegador() {
       const pag = await ctx.newPage();
       await pag.goto(`${base}${rota}`, { waitUntil: 'networkidle' });
 
-      const pares = await pag.evaluate(medeOsVaos);
-      if (pares.length === 0) {
-        falhas.push(`${rota}: nenhuma contagem medida a 390. A régua não viu nada.`);
+      const { contagens, pares } = await pag.evaluate(medeOsVaos);
+      if (contagens === 0) {
+        falhas.push(
+          `${rota}: a página não tem uma única contagem dentro de \`.porta-conta\`. Sem um ` +
+            `positivo conhecido esta célula não mede nada (regra 14 da casa).`,
+        );
+      }
+      /* OS PARES SÃO TODOS OS DA PÁGINA, e não «pelo menos um». */
+      if (pares.length !== contagens) {
+        falhas.push(
+          `${rota}: a página tem ${contagens} contagem(ns) em \`.porta-conta\` e a régua mediu ` +
+            `${pares.length} par(es) número-palavra. Uma contagem que fica sem par não é medida, ` +
+            `e uma régua que se dá por satisfeita com um par não cobre a página.`,
+        );
       }
       for (const par of pares) {
         if (par.vao < VAO_MINIMO) {
@@ -1342,23 +1365,39 @@ async function comNavegador() {
         }
       }
 
-      /* O POSITIVO CONHECIDO, plantado. */
+      /* O POSITIVO CONHECIDO, plantado. TEM DE APANHAR TODOS OS PARES: com as
+         caixas desfeitas, cada par número-palavra volta a ser texto solto num
+         contentor flexível, e o defeito que esteve no ar não era num par só. */
       await pag.addStyleTag({ content: '.porta-conta-item{display:contents}' });
       const comDefeito = await pag.evaluate(medeOsVaos);
-      const apanhados = comDefeito.filter((x) => x.vao < VAO_MINIMO).length;
-      if (apanhados === 0) {
+      const apanhados = comDefeito.pares.filter((x) => x.vao < VAO_MINIMO).length;
+      if (comDefeito.pares.length !== contagens) {
+        falhas.push(
+          `${rota}: com o defeito plantado a régua mediu ${comDefeito.pares.length} par(es) e a ` +
+            `página tem ${contagens} contagem(ns). A planta não pode fazer desaparecer pares da ` +
+            `medição: o que ela muda é o vão, não o que se mede.`,
+        );
+      }
+      if (apanhados !== comDefeito.pares.length || apanhados === 0) {
         falhas.push(
           `${rota}: com o defeito plantado (\`.porta-conta-item{display:contents}\`, que devolve ` +
-            `o texto a item anónimo) a régua continuou verde. Ela não sabe ver o defeito que ` +
-            `esteve no ar, e por isso não prova nada.`,
+            `o texto a item anónimo) a régua apanhou ${apanhados} de ${comDefeito.pares.length} ` +
+            `par(es). Tinha de apanhar todos: um par apanhado em sete deixava-a verde sobre uma ` +
+            `página inteira por medir, e uma régua assim não prova nada.`,
         );
       }
 
-      medidos[rota] = { pares, plantado_apanhado: apanhados, de: comDefeito.length };
+      medidos[rota] = {
+        contagens,
+        pares,
+        com_defeito: comDefeito.pares,
+        plantado_apanhado: apanhados,
+        de: comDefeito.pares.length,
+      };
       notas.push(
-        `${rota}: ${pares.length} contagem(ns), vão mínimo ` +
+        `${rota}: ${pares.length} par(es) medido(s) para ${contagens} contagem(ns), vão mínimo ` +
           `${pares.length ? Math.min(...pares.map((x) => x.vao)) : 0}px · com o defeito plantado, ` +
-          `${apanhados} de ${comDefeito.length} apanhada(s)`,
+          `${apanhados} de ${comDefeito.pares.length} apanhada(s)`,
       );
       await pag.close();
     }
