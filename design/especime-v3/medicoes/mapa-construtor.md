@@ -298,10 +298,16 @@ por isso que a corrida das plantas correu antes de o bloco fechar.
 
 ## As duas decisões que o brief deixou a medir
 
-**O nível intermédio dos distritos: não entra, e o número é este.** Medi o alvo
-dos 308 concelhos nas 29 páginas de distrito construídas, a 390, com a mesma conta
-do quadrado inscrito: **84 de 308 chegam aos 44 px, mediana 34 px, o menor Câmara
-de Lobos com 4 px** (desenho de 354 px). Um nível intermédio por distrito dentro do
+**O nível intermédio dos distritos: não entra, e o número é este.**
+
+```
+node design/especime-v3/medicoes/mapa-alvos-nos-distritos.mjs
+```
+
+Mede o alvo dos 308 concelhos nas 29 páginas de distrito construídas, a 390, com
+a mesma conta do quadrado inscrito e o mesmo passo de 2 px: **84 de 308 chegam aos
+44 px, mediana 34 px, o menor Câmara de Lobos com 4 px** (desenho de 354 px). O
+ficheiro fica no repositório para que o número se possa refazer. Um nível intermédio por distrito dentro do
 mapa da primeira página subiria a conta de 20 para 84 dos 308 e continuaria longe
 dos 308; e o desenho desse nível **já existe como página** (`/distritos/<slug>`),
 alcançável pela lista dos nomes e pelo menu, que é o que a regra do F1.10 pede
