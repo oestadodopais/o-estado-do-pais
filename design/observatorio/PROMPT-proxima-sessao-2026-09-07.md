@@ -1,0 +1,37 @@
+# Prompt para a sessão seguinte · O Estado do País · depois de 07.09.2026
+
+*Escrito pelo lugar de direção (Claude Fable 5.1) a 07.09.2026, para a sessão que abrir a seguir. A ordem de leitura de sempre: `design/especime-v3/PENDENTES-DO-DIRETOR.md`, `VISAO.md`, `design/observatorio/POLITICA-DA-AUTONOMIA.md` (com a emenda de 04.09), as últimas secções de `DECISIONS.md` (§1.98 a §1.101), `design/observatorio/PLANO-fiabilidade-2026-09-02.md` com as caixas riscadas, e este prompt. O prompt de 04.09 (`PROMPT-proxima-sessao-2026-09-04.md`) está cumprido e fica como registo. Sem travessões na prosa.*
+
+## 0 · O que mudou nas regras e nos hábitos
+
+A delegação de 04.09 (§1.98) continua: as decisões tomam-se no lugar de direção pelas recomendações escritas; ficam com o diretor a hora do advogado e o nome da segunda pessoa. A conversa com o diretor é em inglês; o conteúdo do projeto é em português. Dois hábitos novos, escritos na §1.101 e no `scripts/leituras/README.md`: nunca mais de um pedido por minuto por vigia às corridas do GitHub (`gh run watch --interval 60`), porque seis vigias com o intervalo de 3 s levaram o GitHub a responder 403 a 07.09, e um 403 não é um veredicto; e as leituras do Codex espaçam-se, porque a conta bate no limite de uso à terceira leitura do dia (a 07.09 às 16:44 UTC, «try again at Sep 8th, 2026 10:10 AM», hora da máquina). Os prompts das leituras vivem em `scripts/leituras/` (`PROMPT-comum.md` e dois exemplos) e não se reescrevem.
+
+## 1 · O primeiro gesto
+
+1. `git fetch origin` nos dois repositórios e `git worktree list`. `npm run verify:deploy` para confirmar que o lançamento do fecho de 07.09 (o registo, §1.101) chegou ao ar; se não chegou, `vercel ls 2>&1` diz porquê.
+2. As corridas do corredor das noites que passaram (`gh run list --repo oestadodopais/motor --workflow corredor.yml --limit 6`): o fluxo `ensaio-diario.yml` despacha um `ensaio` às 00:10 UTC (que começa quatro horas depois) nas noites até 14.09. A contagem está na linha F2.1 do plano: 1 de 7 a 07.09; cada noite verde conta mais uma; uma noite vermelha lê-se no artefacto (`gh run download <id> -n corredor-<id>`, `relatorio/corredor_report.json`, chave `concelhos`) antes de decidir. Enquanto o F2.1b não fundir, um INE calado ainda deixa a corrida vermelha.
+3. Quando a janela do Codex abrir (08.09, 10:10 hora da máquina): a leitura a frio do fluxo `ensaio-diario.yml` (o pacote leva os dois ficheiros de `.github/workflows/` do motor e um `contexto.md` com as corridas e a exigência do plano; três plantas: o cron sem o mês, `so_devidas=true`, `contents: write`), e a leitura do bloco F2.1b (o pacote: o brief, `publisher/RELATORIO-leitor-2026-09-07.md`, o diff `8c93abd..0615ef2` do motor, os sete ficheiros mudados, os dois artefactos de 05.09 e 07.09 como contexto; cinco plantas de três classes). Depois: a segunda passagem do F2.1b se a leitura pedir uma, a fusão em `master`, um `ensaio` despachado à mão para o provar (com o motivo escrito), o fecho das issues #1 a #4 do motor com um comentário que aponte à correção, e a emenda do `design/observatorio/FRESCURA-E-AUTOMACAO.md` do sítio (o passo 4 com os dois casos, a fonte que não responde e a que desapareceu).
+4. O F1.1d («o mapa que cresce, e o nome ao lado»): ler o cabeçalho de `design/especime-v3/medicoes/mapa-construtor.md` no ramo `mapa-2026-09-07` (worktree `.claude/worktrees/datas-2026-09-04`); se a primeira passagem está inteira, a leitura a frio do Codex com cinco plantas, a segunda passagem, a fusão e o lançamento conferido; se ficou a meio, o construtor retoma pelo «Estado ao pausar».
+5. O F1.10 («uma coisa, um lugar»), pausado desde 04.09 no ramo `lugar-2026-09-04` (worktree própria, cabeça `af53e966`): um construtor Opus funde `origin/main` (que se moveu muito: o F1.4b, o F1.6, o M1, o F1.1c, o F1.1d), segue o brief `BRIEF-F1.10-uma-coisa-um-lugar.md` e o «Estado ao pausar» do relatório `lugar-construtor.md`; no fim, a releitura do leitor de primeira vez pelo Codex.
+6. As decisões e os blocos pequenos do lugar de direção que ficaram escritos e não feitos: os cinco acontecimentos datados sem linhas do calendário (F2.6; ganham linhas ou saem declarados em `saidas`, pelo H5); o sítio a render a proporção das linhas lidas (`linhasSemResposta` e `anfitrioesCalados` do bloco `CONFERENCIA`, depois de o F2.1b fundir; bloco pequeno, ou dentro do F1.10 que leva o cabeçalho); o vigia de rede do painel (I115); a leitura cruzada do inventário das frases para os oito blocos que o `check:voz` conta por ler.
+7. Apagar o fluxo `ensaio-diario.yml` quando a semana fechar (sete verdes seguidas), e escrever na linha F2.1 do plano as sete corridas.
+
+## 2 · O que está no ar (na data desta nota; conferir com `git log -1` e `npm run verify:deploy`)
+
+`main` do sítio: o painel semanal de 07.09, o F1.6, a segunda passagem do F1.4b, o M1, a segunda passagem do F1.1c e o registo do dia (§1.101). `master` do motor: o painel, o F2.6, o comentário do cron, o cron do fluxo alargado, o M1.
+
+## 3 · O que ficou a meio, e como se retoma
+
+| bloco | ramo | estado | como se retoma |
+|---|---|---|---|
+| F2.1b a fonte calada não é uma corrida vermelha | `leitor-2026-09-07` (motor), cabeça `0615ef2` | construído, os provadores e o `core.gate` a 0, o portão verde (34147985211); por ler a frio | a leitura do Codex (o gesto 3 da §1); a segunda passagem se houver achados reais; a fusão em `master`; um `ensaio` à mão; as issues; a emenda do desenho da frescura |
+| F1.1d o mapa que cresce, e o nome ao lado | `mapa-2026-09-07` (sítio), worktree `datas-2026-09-04` | em construção ao fechar (o estado no relatório `mapa-construtor.md`, que o construtor empurra no fim de cada item) | o gesto 4 da §1 |
+| F1.10 uma coisa, um lugar | `lugar-2026-09-04` (sítio), cabeça `af53e966` | pausado a pedido do diretor desde 04.09 | o gesto 5 da §1 |
+
+## 4 · O que só o diretor pode fazer
+
+A lista está em `PENDENTES-DO-DIRETOR.md`, com o que cada coisa destrava. Os itens que travam blocos: a ronda de leitores (F1.3); como ler o INE para o segundo domínio (F1.5); as chaves e `CORREDOR_ARMADO` (F2.2); o plano do Codex (as leituras a frio param ao terceiro bloco do dia).
+
+## 5 · Onde estão as coisas
+
+O sítio: `~/Instruments/OEstadoDoPais` (`main`); o motor: `~/Instruments/ResearchHub` (`master`); as worktrees do sítio em `.claude/worktrees/` e as do motor em `~/Instruments/ResearchHub-worktrees/`; a nota do cofre: `~/Obsidian/Experiments/O Estado do País.md`; as leituras a frio e as plantas: `design/especime-v3/critica/`.

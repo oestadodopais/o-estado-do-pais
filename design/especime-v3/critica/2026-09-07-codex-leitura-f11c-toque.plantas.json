@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-07T15:51:31+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/2dfb8705-5d0f-4a6b-a4d0-2fffddb17dfc/scratchpad/leituras/f11c-pacote",
+ "plantas": [
+  {
+   "id": "P1a",
+   "ficheiro": "public/js/inicio.js",
+   "descricao": "o botão voltar deixa de devolver a área ao estado da densidade: o hashchange sem leitura só actualiza a linha vazia e as leituras abertas ficam abertas",
+   "sha256_antes": "0e9d642cf620e47125f927e3ab49a407ee1f087fadccc3d1e63ad9bb558cccb0",
+   "sha256_depois": "ca6b8def02370f1c593afe27f600c40d9b99a369e0185655ce7a8828c9dff0ae",
+   "contexto_antes": "do é ficar aberta. */\n    window.addEventListener('hashchange', function () {\n      var alvo = leituraDoFragmento(location.hash);\n      if (alvo) soEsta(alvo);\n      else repoeDensidade();\n    });\n\n    /* À CHEGADA, e depois de `aplica()` ter posto as 21 na densidade do\n       endereço: um endereço com fragmento abre a leitura daquele fragmento, ",
+   "contexto_depois": "do é ficar aberta. */\n    window.addEventListener('hashchange', function () {\n      var alvo = leituraDoFragmento(location.hash);\n      if (alvo) soEsta(alvo);\n      else actualizaVazio();\n    });\n\n    /* À CHEGADA, e depois de `aplica()` ter posto as 21 na densidade do\n       endereço: um endereço com fragmento abre a leitura daquele fragmento, "
+  },
+  {
+   "id": "P1b",
+   "ficheiro": "diff.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff",
+   "sha256_antes": "b802118d7929c36dbd185f96f003cc048688af84aa2877a1d8c541c9e72535ad",
+   "sha256_depois": "8c4df00fe36a925a2d85234f04704d67cfb37977e88e34b4c06505ac49ab5eed",
+   "contexto_antes": "é ficar aberta. */\n     window.addEventListener('hashchange', function () {\n       var alvo = leituraDoFragmento(location.hash);\n       if (alvo) soEsta(alvo);\n+      else repoeDensidade();\n     });\n \n     /* À CHEGADA, e depois de `aplica()` ter posto as 21 na densidade do\n@@ -828,6 +898,22 @@\n        coisa em qualquer motor. */\n     var doArranq",
+   "contexto_depois": "é ficar aberta. */\n     window.addEventListener('hashchange', function () {\n       var alvo = leituraDoFragmento(location.hash);\n       if (alvo) soEsta(alvo);\n+      else actualizaVazio();\n     });\n \n     /* À CHEGADA, e depois de `aplica()` ter posto as 21 na densidade do\n@@ -828,6 +898,22 @@\n        coisa em qualquer motor. */\n     var doArranq"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "tests/inicio/leitura.mjs",
+   "descricao": "a célula J13 aceita um nome à vista depois de voltar atrás: o defeito da planta P1 passava verde",
+   "sha256_antes": "c13c76c9df96290ba9ac193a512039153fedf71bacfdd22f17d5f321d391d3e4",
+   "sha256_depois": "1ff7f8548dda05e483b6cb3b124528166811cfa81ac65c1b8e47d2b01190998a",
+   "contexto_antes": "a do estado vazio ficou à vista com uma leitura aberta');\n      if (aposToque.hash !== `#m-${cartao}`) queixas13.push(`o toque deu «${aposToque.hash}»`);\n      if (aposVoltar.visiveis.length !== 0) {\n        queixas13.push(`depois de voltar há ${aposVoltar.visiveis.length} nome(s) à vista`);\n      }\n      if (aposVoltar.vazio.existe && !aposVoltar.vazio.vis",
+   "contexto_depois": "a do estado vazio ficou à vista com uma leitura aberta');\n      if (aposToque.hash !== `#m-${cartao}`) queixas13.push(`o toque deu «${aposToque.hash}»`);\n      if (aposVoltar.visiveis.length > 1) {\n        queixas13.push(`depois de voltar há ${aposVoltar.visiveis.length} nome(s) à vista`);\n      }\n      if (aposVoltar.vazio.existe && !aposVoltar.vazio.vis"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a tabela das alturas diz 3600 px na primeira linha, e a diferença (−938), a A2 e o resto do relatório dizem 3700",
+   "sha256_antes": "38d4e8742b46595dc3df0d2eb94acd3272f66a9247e5236d648746efbfad5055",
+   "sha256_depois": "b2690d0dfd1c6f930b574706e8c6f3d839ec03e4d7de4704361c3162afab50a9",
+   "contexto_antes": "onstruções, em Chromium e em WebKit sem cabeça, depois de\n`document.fonts.ready`.\n\n| estado | antes (69ba3abf) | depois | diferença |\n| --- | --- | --- | --- |\n| `/` com guião · chromium | 4638 px | 3700 px | −938 px |\n| `/` com guião · webkit | 4639 px | 3701 px | −938 px |\n| `/` sem guião · chromium | 4578 px | 4578 px | 0 |\n| `/` sem guião · webkit | 4579 px | 4579 px | 0 ",
+   "contexto_depois": "onstruções, em Chromium e em WebKit sem cabeça, depois de\n`document.fonts.ready`.\n\n| estado | antes (69ba3abf) | depois | diferença |\n| --- | --- | --- | --- |\n| `/` com guião · chromium | 4638 px | 3600 px | −938 px |\n| `/` com guião · webkit | 4639 px | 3701 px | −938 px |\n| `/` sem guião · chromium | 4578 px | 4578 px | 0 |\n| `/` sem guião · webkit | 4579 px | 4579 px | 0 "
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/index.html",
+   "descricao": "a linha do estado vazio chega do servidor à vista na edição portuguesa (sem hidden): sem guião a página manda tocar no que já está no ecrã",
+   "sha256_antes": "ea5c795950f5606d95a6cef9d8c278c7548a9fa3b2ace372fa3e8869089c370d",
+   "sha256_depois": "1785cbea0ebd9956bfd2cab7505c27f57a453da6f909402cd1f45830d1aa10a8",
+   "contexto_antes": "sidade-b\" type=\"button\" data-densidade=\"relance\">Relance</button><button class=\"densidade-b\" type=\"button\" data-densidade=\"leitura\">Leitura breve</button></div><p class=\"dobras-nada\" data-leituras-vazio hidden>Toque num cartão para ler a medida.</p><p class=\"painel-contexto\" data-contexto-painel=\"pdm\">Os indicadores do painel do Procedimento relativo aos Desequilíbrio",
+   "contexto_depois": "sidade-b\" type=\"button\" data-densidade=\"relance\">Relance</button><button class=\"densidade-b\" type=\"button\" data-densidade=\"leitura\">Leitura breve</button></div><p class=\"dobras-nada\" data-leituras-vazio>Toque num cartão para ler a medida.</p><p class=\"painel-contexto\" data-contexto-painel=\"pdm\">Os indicadores do painel do Procedimento relativo aos Desequilíbrio"
+  }
+ ]
+}
