@@ -887,22 +887,42 @@ function calcula() {
       })
       .sort((a, b) => a.slug.localeCompare(b.slug, 'pt'));
 
-    /* O PONTO REPRESENTATIVO DA REGIÃO é o ponto do seu concelho MAIOR, e as duas
-       metades da regra têm razão escrita. É um ponto de um concelho, e por isso
-       está sempre dentro do desenho da região, que é o que a medida do alvo pede
-       (o maior quadrado inscrito à volta dele, I82); e é o do maior, e não o mais
-       perto do centro da caixa, porque numa região espalhada o centro da caixa
-       cai no mar: nos Açores, a primeira forma desta regra escolhia uma ilha
-       pequena e dava um alvo de 0 px a uma região que se toca. */
+    /* ---------------------------------------------------------------------
+       O PONTO REPRESENTATIVO DA REGIÃO, PELO LANÇAMENTO DE RAIO SOBRE O MAIOR
+       ANEL, que é a definição que o motor já usa para as 29 unidades da Carta
+       (`ResearchHub/publisher/MAPA.md` §4) e a que a régua do alvo pede: o maior
+       quadrado inscrito mede-se À VOLTA DESTE PONTO (I82), e um ponto mal posto
+       dá um alvo pequeno a uma área que se toca bem.
+
+       Duas formas anteriores desta regra foram medidas e saíram: o ponto do
+       concelho mais perto do centro da caixa dava 0 px aos Açores (o centro da
+       caixa daquele arquipélago é mar, e o concelho mais perto dele é de uma ilha
+       pequena), e o ponto do concelho maior dava 8 px à Grande Lisboa (o concelho
+       maior é Mafra, que é estreito). Este toma o maior anel do contorno, corta-o
+       por uma linha horizontal na altura do centro da caixa dele, e fica no meio
+       do troço interior mais comprido.
+       --------------------------------------------------------------------- */
+    const maiorAnel = contorno.reduce((a, b) => (Math.abs(area(b)) > Math.abs(area(a)) ? b : a));
+    const caixaDoAnel = caixaDe([maiorAnel]);
+    const yDoCorte = caixaDoAnel[1] + caixaDoAnel[3] / 2;
+    const cruzamentos = [];
+    for (let k = 0; k < maiorAnel.length; k++) {
+      const [x1, y1] = maiorAnel[k];
+      const [x2, y2] = maiorAnel[(k + 1) % maiorAnel.length];
+      if (y1 > yDoCorte === y2 > yDoCorte) continue;
+      cruzamentos.push(x1 + ((yDoCorte - y1) * (x2 - x1)) / (y2 - y1));
+    }
+    cruzamentos.sort((a, b) => a - b);
     let ponto = null;
-    let maior = -1;
-    for (const c of dados.concelhos) {
-      const areaDele = Math.abs(c.aneis.reduce((t, a) => t + area(a), 0));
-      if (areaDele > maior) {
-        maior = areaDele;
-        ponto = c.ponto;
+    let maisLargo = -1;
+    for (let k = 0; k + 1 < cruzamentos.length; k += 2) {
+      const largura = cruzamentos[k + 1] - cruzamentos[k];
+      if (largura > maisLargo) {
+        maisLargo = largura;
+        ponto = [(cruzamentos[k] + cruzamentos[k + 1]) / 2, yDoCorte];
       }
     }
+    if (!ponto) throw new Falha(`${r.slug}: a linha do corte não atravessa o maior anel`);
 
     regioes.push({
       slug: r.slug,
