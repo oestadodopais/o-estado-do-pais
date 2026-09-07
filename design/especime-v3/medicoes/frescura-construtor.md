@@ -1,0 +1,568 @@
+# F1.6 · o atraso do IEFP e as duas frases · relatório do construtor
+
+*Ramo `frescura-2026-09-04`, tirado de `origin/main` em `6d63adfd`. Construtor
+Claude Opus 5, 04.09.2026. O bloco é o F1.6 do
+`design/observatorio/PLANO-fiabilidade-2026-09-02.md` §3 e cumpre as decisões
+(2), (3) e (5) da `DECISIONS.md` §1.98. Sem travessões na prosa.*
+
+## 0 · Estado ao retomar (07.09)
+
+*Retomado a 07.09.2026 pelo construtor Claude Opus 5. Esta secção diz o que a
+fusão com `main` mudou e o que os portões mediram nesta cabeça. Tudo o que está
+abaixo dela fica como estava a 04.09, e o «Estado ao pausar» a seguir é o registo
+da paragem.*
+
+**A corrida que ficou por ler está lida.** A `portao` sobre `3ff1f75a`, a cabeça
+da paragem, é a **33862830127** e saiu **verde** em 34m11s (`gh run view
+33862830127 --repo oestadodopais/o-estado-do-pais`). Era o segundo dos quatro
+pontos que a paragem deixou abertos.
+
+**A fusão.** `git merge origin/main` sobre `cc79128e`, commit de fusão
+**`a0a9b4e8`**. Cinco ficheiros vinham mudados dos dois lados e quatro fundiram-se
+sozinhos, cada um com as duas partes: `DECISIONS.md`,
+`design/especime-v3/INVENTARIO-FRASES.md`, `ledger/allowlist.yml` e
+`src/i18n/strings.mjs`. Um só deu conflito.
+
+| ficheiro | o conflito | como se resolveu |
+| --- | --- | --- |
+| `scripts/provar-guardas.mjs` | dois sítios, e nos dois os dois ramos escreveram no mesmo lugar: os importes do cabeçalho e o bloco de casos no fim | as duas partes ficaram, por esta ordem. No cabeçalho, os importes de `src/data/frescura.mjs`, de `src/lib/frescura.mjs` e de `src/data/figuras.mjs` deste ramo, e a seguir o de `src/lib/datas-do-repositorio.mjs` do F1.4b. No fim, os casos do `eSerieAtrasada`, do `serieDaLinha`, das `contagens` e do `numeralPorExtenso`, e a seguir os das datas de publicação. `node scripts/provar-guardas.mjs` sai 0 com **80 conferências**, que são as 67 deste ramo mais as 13 do F1.4b |
+
+**A renumeração para §1.100 está feita.** A §1.99 de `main` é a do fecho de
+04.09, que entrou primeiro; a entrada que este ramo escreve para o carimbo do
+Método passa a **§1.100**, no título da própria entrada, nas oito referências
+deste relatório e nas quatro do `BRIEF-F1.6-o-atraso-do-iefp-e-as-duas-frases.md`.
+O `**Texto:** metodo b4cc3594f960` não mudou uma letra: a amarra confere o resumo
+sha256 do texto governado e não o número da secção, e o `ledger:check` saiu 0 no
+`build` e no `verify` desta cabeça sem se lhe tocar.
+
+**Duas coisas que a renumeração pôs a nu, e que ficam consertadas.** A primeira:
+o relatório trazia em três sítios (§1, §4 e a tabela das plantas da §6) o carimbo
+da primeira passagem, `8c9aa6a9b7b9`, quando a segunda passagem já tinha posto
+`b4cc3594f960` na entrada e na saída guardada da planta 3. Os três passam a dizer
+o que a entrada diz. A segunda: a saída guardada da planta 3 imprimia `§1.99`, e
+a partir desta cabeça a planta imprime `§1.100`. Foi refeita aqui, com o `.patch`
+aplicado e revertido pelo caminho do `README.md` das plantas
+(`git apply … && node scripts/check-ledger.mjs && git apply -R …`), e sai na
+mesma a 1; muda só o número da secção e a contagem da amarra, que passa de 62
+para 63 entradas porque `main` acrescentou uma. As plantas 1 e 2 não foram
+refeitas: nenhuma delas nomeia a secção, e cada uma exige uma construção inteira
+para se repetir.
+
+**Os três portões nesta cabeça**, com o comando e a hora a que cada um começou e
+acabou, lidos dos ficheiros de registo e não de memória:
+
+| portão | comando | UTC | código de saída |
+| --- | --- | --- | --- |
+| construção | `npm run build > /tmp/f16-build.log 2>&1` | 2026-09-07 15:53:05 a 16:00:24 | **0** |
+| verificação | `npm run verify > /tmp/f16-verify.log 2>&1` | 2026-09-07 16:00:31 a 16:06:49 | **0** |
+| tipos | `npm run typecheck > /tmp/f16-typecheck.log 2>&1` | 2026-09-07 16:06:55 | **0** |
+
+**O `typecheck` sai a 0 em menos de um segundo, e isso é o compilador e não uma
+régua desligada.** O `node_modules` desta árvore tem TypeScript **7.0.2**, que é
+o compilador nativo, e `tsc -v` responde-o. Confirmou-se com um conhecido
+positivo antes de se acreditar no verde: uma linha com `n.toUpperCase()` sobre um
+parâmetro `@param {number}` acrescentada a `src/lib/frescura.mjs` faz o portão
+sair **1** com «error TS2339: Property 'toUpperCase' does not exist on type
+'number'», e o ficheiro reposto fá-lo voltar a **0**.
+
+**A corrida do portão sobre a cabeça de hoje** é a do empurrão desta sessão. O
+seu número não se pode escrever aqui, porque só existe depois do empurrão que
+leva este ficheiro; fica no relatório da sessão ao lugar de direção, com o
+estado com que acabou.
+
+**O que continua por fazer, e é um só ponto dos quatro da paragem:** a leitura
+cruzada do inventário das frases não está feita para este bloco. O `check:voz`
+conta **oito blocos por ler** nesta cabeça e o `frescura` é um deles; a coluna da
+leitura, em `critica/REVISOES-DO-INVENTARIO.md`, traz a leitura a frio do Codex
+de 04.09 e não a cruzada, que a própria linha diz fazer-se antes da fusão. Não é
+trabalho de quem construiu o bloco, por regra da casa.
+
+## 0b · Estado ao pausar (04.09)
+
+*O diretor fechou o portátil a meio da segunda passagem. Esta secção diz o que
+está feito, o que está a meio e por onde se retoma. Escrita antes do último
+commit, e a cabeça que ela nomeia é a que ficou empurrada.*
+
+**A primeira passagem está inteira e correu o `portao` verde** (corrida
+`33854747585`, cabeça `cdcd445a`). Tudo o que está abaixo desta secção descreve
+essa passagem, com as correções da segunda já aplicadas onde elas mudaram o
+resultado.
+
+**A segunda passagem responde à leitura a frio do Codex de 04.09.2026**
+(`design/especime-v3/critica/2026-09-04-codex-leitura-f16-frescura.md`, na árvore
+principal). O leitor viu as cinco plantas de três classes; os Blocking 1 e 2 e o
+Major 3 são elas. A triagem do lugar de direção dá seis itens reais.
+
+| item | estado | o que falta |
+| --- | --- | --- |
+| **Major 7** · o Método sem adjetivos | **feito** | nada. Saíram «navegador comum» e «a única fonte lida assim»; ficou «um navegador» e «nenhuma outra o é». A §1.100 tem o resumo novo, `b4cc3594f960` |
+| **Major 8** · nenhuma cadeia fala da casa | **feito** | nada. A frase do atraso é deíctica («nesta linha: 2025-12, lido a 26.08.2026»), a dica do contador deixou de dizer quem publica, e as sete linhas do inventário foram trocadas |
+| **Major 9** · a frase inglesa com «measures» | **feito** | nada. «headline measures», com «headline indicators» citado uma vez e atribuído à Comissão |
+| **Major 10** · a régua F16 a ler a página | **feito** | nada. A declaração perdeu o campo `palavra`; a régua compõe as duas palavras de `numero` e de `FIGURAS_SOCIAL.length` e procura-as no `dist/` |
+| **Major 11** · as plantas com registo e os guardas | **feito** | nada. Três `.patch` e três saídas em `design/especime-v3/medicoes/frescura-plantas/`, com o `README.md` que diz como se repetem; treze casos novos em `provar-guardas.mjs` (54 para 67) |
+| **Minor 12** · o excerto com a lista das dezassete | **feito** | nada. A lista está na §5 deste relatório, copiada do texto extraído |
+
+**O que fica por fazer, e é só isto:**
+
+1. **`npm run verify` não voltou a correr depois da segunda passagem.** O
+   `build` e o `typecheck` correram e saíram a 0; o `verify` leva cerca de treze
+   minutos e não cabia na paragem. **Ao retomar, corre-se primeiro**, antes de
+   qualquer outra coisa. Os códigos dos três estão na §9.
+2. **O `portao` não correu sobre a cabeça da segunda passagem.** Correu sobre
+   `cdcd445a`, que é a primeira. A corrida nova é do empurrão desta paragem, e
+   não se esperou por ela.
+3. **A entrada do `DECISIONS.md` passa de §1.99 a §1.100 ao retomar.** O lugar de
+   direção compromete o registo do dia como §1.99 primeiro. **O carimbo não
+   muda**, `metodo b4cc3594f960`; muda só o número da secção, no título e em
+   todas as referências a ela (este relatório, a mensagem do commit do Método e a
+   própria entrada). A amarra confere o resumo e não o número, por isso a
+   renumeração é segura desde que o `**Texto:**` fique igual.
+4. **A leitura cruzada do inventário continua «por ler»** para o bloco
+   `frescura`, como para outros seis blocos.
+
+**Os três achados que a triagem manda deixar como estão**, e a razão de cada um:
+o **Major 4** (o contador diz duas contagens e não uma) fica, porque é mais claro
+do que o brief pedia; o **Major 5** (o contador escondido a 390) é do **F1.10**,
+que tira as linhas de frescura do cabeçalho de todas as páginas e leva o contador
+para a página da medida e para o Método, onde cabe no telemóvel, e até lá fica
+escondido e dito; o **Major 6** (a proveniência não se fecha a partir do pacote)
+é do pacote e não do ramo, porque o inventário das fontes e a linha de Évora não
+foram enviados ao leitor.
+
+## 1 · O resultado, em cinco linhas
+
+**O atraso do IEFP diz-se**, nas 278 páginas de linha do continente e nos 278
+cartões de concelho, nas duas edições: «Último período publicado pela fonte:
+2026-07; a casa publica 2025-12 desde 26.08.2026». Os três valores são lidos, e
+nenhum é literal no gabarito.
+
+**O contador está no cabeçalho**: «Séries atrasadas: 1 · 278 linhas do
+livro-razão», com as duas contagens marcadas `data-prova` e recontadas pelo
+portão a partir do livro-razão.
+
+**O Portal BASE está no Método**, no limite da regra 1, nas duas edições, com a
+§1.100 a carimbar `metodo b4cc3594f960`.
+
+**A frase do Painel Social mudou**, e mudou com a fonte citada: o Anexo 2 do
+Relatório Conjunto sobre o Emprego de 2026 da Comissão, COM(2025) 958, imprime a
+lista das medidas principais e ela tem dezassete. **Nenhum pedido saiu deste
+portátil**: o ficheiro estava no motor, com o seu recibo.
+
+**Um defeito encontrado e não corrigido** está na §7: `.linha-selo-estado`, que é
+do bloco F0.11, rende cada rótulo numa linha própria pela mesma causa que este
+bloco corrigiu na sua.
+
+## 2 · O atraso: onde vive cada um dos três valores
+
+A regra do brief é que nenhum dos três seja escrito à mão. Cada um tem um
+caminho diferente, e os três são conferidos por um portão que os recalcula de um
+segundo ponto de observação.
+
+| valor | de onde vem | quem o reconfere |
+| --- | --- | --- |
+| `2026-07`, o período da fonte | `src/data/frescura.mjs`, com a origem declarada | `check:formas` F13 (contra a declaração) e F14 (a declaração contra a origem que ela nomeia) |
+| `2025-12`, o período da casa | `reference_date` da própria linha, pelo `DataDaLinha` | `check:formas` F1, que vai buscar o campo à linha e aplica `dataDaCasa()` por conta própria |
+| `26.08.2026`, o «desde» | `access_date` da própria linha, pelo `DataDaLinha` | `check:formas` F1, o mesmo caminho |
+
+**A origem do `2026-07`, escrita por extenso.** `src/data/frescura.mjs` declara
+o ficheiro, o registo, o campo e a data em que foram lidos:
+`design/observatorio/inventario/INVENTARIO-DAS-FONTES.json`, registo `T2`, campo
+`ultimo_periodo`, lido a 2026-09-01. O que esse campo diz, palavra por palavra:
+
+> «(a) 2025. (b) julho de 2026 (a folha imprime «Ano Mês: 202607»); não há
+> ficheiro de agosto de 2026 à data de hoje»
+
+e o campo `acesso` do mesmo registo diz quando: «(b) 2026-09-01T08:17:26Z
+(página); 08:18:20Z (ficheiro)». O ficheiro da fonte é
+`https://www.iefp.pt/documents/10181/13482465/SIE+-+Desemprego+registado+por+concelhos+julho+2026.ods/e806f32b-342d-46cd-a23e-38e482f01d59`.
+
+**A conferência F14 não lê a prosa: lê o que a folha da fonte imprime.** Vai
+buscar `Ano Mês: 202607` ao campo por expressão regular e compõe `2026-07`. Se o
+inventário passar a dizer outro mês, ou deixar de trazer o carimbo da folha, a
+construção fecha. É a mesma disciplina do `data-prova` e do `data-da-linha`: duas
+contas do mesmo facto, feitas de sítios diferentes.
+
+**Que linhas a série apanha, e porquê essas.** Por regra e não por lista: a linha
+pertence à série quando `source`, `document.title` e `reference_date` batem certo
+com o que a série declara. Medido no livro-razão:
+
+```
+310 ficheiros ledger/claims/*desemprego-registado*
+278  IEFP · 2025-12   ← a série atrasada
+ 19  DRQPE (Açores) · 2025-12
+ 11  IEM (Madeira) · 2025-12
+  1  IEFP · 2024-12   (evora-desemprego-registado-2024)
+  1  IEFP · 2013-12   (evora-desemprego-registado-2013)
+```
+
+As trinta das ilhas ficam de fora porque a fonte é outra: a DRQPE e o IEM
+publicam os seus próprios ficheiros, e o atraso deste é do IEFP. As duas de Évora
+ficam de fora porque o período é outro: são pontos históricos de uma série dentro
+de um estudo, e um valor de dezembro de 2013 não está atrasado por 2026 existir.
+As 278 do continente são exactamente o que a fonte cobre, e o inventário das
+fontes di-lo com a contagem feita: «sim, 278, só o Continente: contei 278 linhas
+de concelho no Quadro_I e o total é "Continente"».
+
+**Onde a frase aparece.** Na página da linha vai na cabeça, ao pé do selo, pela
+razão que o F0.11 escreveu para o estado da fonte: o leitor tem de ver o atraso
+antes de acreditar no número, e não no bloco das verificações a meia página de
+distância. Na página do concelho vai na `frase` da peça daquela medida, que é o
+lugar que a peça já tem para uma ressalva; `src/components/inicio/Peca.astro` não
+muda um carácter, porque outro construtor trabalha nesse directório hoje. Onde a
+medida já tem nota, o atraso vai a seguir dela e não no lugar dela (é o caso do
+desemprego registado, cuja nota é «Inscritos no fim do mês nos serviços de
+emprego, ficheiro mensal por concelho.»).
+
+## 3 · O contador, e a leitura do brief que eu tomei
+
+O brief pede «um contador público "séries atrasadas: n" no cabeçalho do painel de
+frescura (o `n` contado das linhas com esse estado)», e a medida K2 pede «o `n`
+igual à contagem das linhas nesse estado». **As duas frases não pedem o mesmo
+número:** as séries atrasadas são uma e as linhas que ela apanha são 278.
+Escrever «séries atrasadas: 278» era o rótulo a contar uma coisa e o número
+outra, que é a classe de defeito que a regra da casa sobre o nome e o conteúdo
+existe para apanhar; escrever só «séries atrasadas: 1» escondia o tamanho do que
+está atrasado.
+
+**Rendem-se as duas**, na gramática que a leitura da agenda já usa no mesmo
+cabeçalho desde 16.08.2026:
+
+```
+Séries atrasadas: 1 · 278 linhas do livro-razão
+```
+
+`series_atrasadas` e `linhas_atrasadas` são duas chaves de `src/lib/prova.mjs`, e
+`scripts/gate-html.mjs` reconta as duas a partir do livro-razão com a regra dos
+três campos escrita outra vez, do seu lado. A porta das duas é a regra 6 do
+Método (`#releitura`), que é a mesma para onde a leitura das fontes ao lado já
+abre: o que estas contagens dizem não é quantas linhas existem, é que a fonte já
+publicou um período mais recente do que aquele que elas medem.
+
+**Com zero rende-se o zero**, e o sufixo das linhas sai: zero séries não têm
+linhas. A condição está no componente e não numa folha de estilo.
+
+**O contador não se vê no telemóvel, e isso é uma decisão de outro bloco.** A
+folha esconde toda a mobília a partir da segunda leitura abaixo de 640px
+(`src/styles/site.css`, `@media (max-width: 640px)`, «A primeira leitura fica; as
+outras saem do telemóvel»). O contador é a terceira leitura, e por isso a 390 não
+aparece, como já não aparecem a leitura das fontes nem a linha da agenda.
+Medido nas capturas `linha-iefp-390-*.png` e `metodo-390-*.png`. **Não mudei
+essa regra**: mudá-la mexe na altura do cabeçalho de todas as páginas, que é
+exactamente o que o bloco F1.1b está a medir em paralelo hoje. **A triagem de
+04.09 dá isto ao F1.10** (Major 5 da leitura a frio): o leitor de primeira vez
+pediu as linhas de frescura fora do cabeçalho de todas as páginas, e o contador
+passa então à página da medida e ao Método, onde cabe no telemóvel. Até lá fica
+escondido a 390 e dito aqui.
+
+## 4 · O Portal BASE no Método
+
+**A frase**, nas duas edições, no limite da regra 1 («As fontes»):
+
+> «Uma fonte, o Portal BASE, recusa os pedidos que se identificam com o nome da
+> casa: a casa lê-a com a identidade de um navegador comum, e é a única fonte
+> lida assim.»
+>
+> «One source, Portal BASE, refuses requests that identify themselves with the
+> house's name: the house reads it with the identity of an ordinary browser, and
+> it is the only source read that way.»
+
+**As duas metades são medidas.** A recusa: `core/sources.py` no motor, na entrada
+`portal_base`, com a razão escrita e datada, «medido a 26.07.2026 (learnings.md):
+o Portal BASE responde 404 a TODOS os caminhos quando o User-Agent não é de
+navegador». A exclusividade: contei as bandeiras naquele ficheiro,
+`grep -n "browser_ua" core/sources.py` devolve treze linhas de `browser_ua`, uma
+a `True` e doze a `False`. Desde 03.09.2026 (bloco F0.8) o `core/http.py` recusa
+qualquer `User-Agent` que não seja o desta casa e a única excepção é uma fonte que
+declare as duas coisas, a bandeira e a razão por escrito.
+
+**O que a frase não diz.** Não traz o estado HTTP nem o nome do cabeçalho: o
+texto governado do Método não leva algarismos, por construção. Não fala de
+confiança nem da diligência da casa (Emenda 15 e Emenda 18). O comentário do
+motor chama à excepção «uma dívida e não uma solução», e isso está na §1.100 e não
+na página do leitor: declarar não paga a dívida, torna-a visível.
+
+**O carimbo.** A §1.100 traz `**Afecta:** metodo` e `**Texto:** metodo
+b4cc3594f960`, que é o resumo de `src/data/metodo.mjs` depois da mudança; a
+entrada anterior que governava o texto era a §1.89, com `e327c482c6db`.
+
+## 5 · O Painel Social: a fonte, o excerto e a contagem
+
+**A condição do brief era o número estar conferido na fonte. Está**, e num
+documento operativo da Comissão em vez de numa página de navegação.
+
+**A fonte.** *Joint Employment Report 2026*, COM(2025) 958, **Anexo 2, «Social
+scoreboard headline indicators»**. O parágrafo de abertura, palavra por palavra:
+
+> «The analysis in the 2026 Joint Employment Report relies on the Social
+> Scoreboard headline indicators endorsed by the Council. Headline indicators
+> respond to principles of parsimony, availability, comparability, and
+> statistical robustness. The indicators, linked to each of the three Pillar
+> chapters, are as follows:»
+
+e a nota de rodapé 1, que diz quem os aprovou:
+
+> «The opinion by EMCO and SPC reporting on the agreement reached on the headline
+> indicators of the revised Social Scoreboard was endorsed by the Employment,
+> Social Policy, Health and Consumer Affairs Council on 14 June 2021.»
+
+**O número é a contagem da lista dele, e o documento não o imprime.** Diz-se
+assim em vez de se dizer «a fonte publica dezassete», porque não é a mesma coisa.
+Contadas por capítulo, mecanicamente, sobre o texto extraído do PDF:
+
+```
+  6  Equal opportunities
+  4  Fair working conditions
+  7  Social protection and inclusion
+ 17  total
+```
+
+**A lista, tal como o Anexo 2 a imprime** (Minor 12 da leitura a frio: o excerto
+citado dizia que uma lista se seguia e não trazia a lista, pelo que a contagem
+estava na prosa e não na prova). Copiada do texto extraído, com as três alíneas
+do documento:
+
+> • Equal opportunities
+>   o Adults' participation in learning during the last 12 months (% of population aged 25-64)
+>   o Early leavers from education and training (% of population aged 18-24)
+>   o Share of individuals who have basic or above basic overall digital skills (% of population aged 16-74)
+>   o Young people neither in employment nor in education and training (NEET) rate (% of population aged 15-29)
+>   o Gender employment gap (pps, population aged 20-64)
+>   o Income quintile ratio (S80/S20)
+> • Fair working conditions
+>   o Employment rate (% of population aged 20-64)
+>   o Unemployment rate (% of active population aged 15-74)
+>   o Long-term unemployment rate (% active population aged 15-74)
+>   o Gross disposable household income (GDHI) per capita growth (2008=100)
+> • Social protection and inclusion
+>   o At-risk-of-poverty or social exclusion (AROPE) rate (% of total population)
+>   o At-risk-of-poverty or social exclusion (AROPE) rate for children (% of population aged 0-17)
+>   o Impact of social transfers (other than pensions) on poverty reduction (% reduction of AROP)
+>   o Disability employment gap (pps, population aged 20-64)
+>   o Housing cost overburden (% of total population)
+>   o Children aged less than 3 years in formal childcare (% of population aged 0-3)
+>   o Self-reported unmet need for medical care (% of population aged 16+)
+
+São dezassete itens, e a contagem por alínea acima sai de os contar neste texto e
+não de os contar à mão.
+
+**Nenhum pedido saiu deste portátil, e o brief autorizava um.** O ficheiro já
+estava no motor, descarregado pelo caminho normal dele e com recibo em
+`content/10 Housing/Technical Source/raw/MANIFEST.json`:
+
+```
+file      pdfs/ec_jer_2026_annexes_com_2025_958.pdf
+url       https://employment-social-affairs.ec.europa.eu/document/download/
+          82702c6c-135c-4042-ae74-4afd6432e83f_en?filename=COM_2025_958_1_EN_annexe.pdf
+fetched   2026-08-18T15:07:56+00:00
+status    200
+bytes     1702896
+sha256    0d49c0bc0283ff99cbf7232fe09932c2a42ac3091954e496d8a2368cd2e71f16
+```
+
+Confirmei o resumo do ficheiro em disco antes de o ler (`shasum -a 256`, o mesmo
+sha256). Uma cópia com recibo é uma citação mais forte do que uma página de
+navegação lida hoje, e por isso o pedido que o brief autorizava não foi gasto.
+
+**A frase que passou a estar no ar**, nas duas edições:
+
+> «Oito das dezassete medidas principais do Painel Social Europeu: as que o
+> livro-razão guarda e cujo registo nomeia esse painel, sem cor porque não tem
+> limiares. Os valores são do Eurostat, confirmados contra o Relatório por País
+> 2026 da Comissão Europeia, SWD(2026) 222.»
+>
+> «Eight of the seventeen headline indicators of the European Social Scoreboard:
+> the ones the ledger holds whose record names that scoreboard, with no colour
+> because it has no thresholds. The values are from Eurostat, confirmed against
+> the European Commission's country report, SWD(2026) 222.»
+
+**O numerador não está escrito.** Compõe-se de `FIGURAS_SOCIAL.length` no próprio
+ficheiro de dados, com uma lista fechada de numerais por extenso. Se uma medida
+entrar ou sair do painel, a frase muda sozinha, a linha do inventário da voz
+deixa de se render e a construção fecha com o nome dela. Isto é o que responde à
+objecção que o inventário escreveu contra as contagens por extenso («uma frase
+com um número que se move volta com outro número, e a linha nunca voltaria a
+morder»): esta volta com outro número **e** com outra linha.
+
+**O denominador está declarado com a origem**, em
+`MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL` (`src/data/figuras.mjs`), com o documento,
+o endereço e a data em que foi lido, e a conferência F16 do `check:formas` exige
+que a frase continue a dizê-lo. Não pode ser recontado por nenhum portão deste
+repositório, e isso está escrito no cabeçalho da declaração em vez de ficar
+implícito.
+
+**O que ficou de fora.** A frase do painel do Procedimento não mudou: o brief só
+pede esta. E a régua A4 do F1.1 continua verde (o `check:voz` fecha a construção
+com autorreferência acima de zero, e está a zero).
+
+## 6 · As sete medidas de aceitação
+
+| # | medida | resultado |
+| --- | --- | --- |
+| **K1** | a frase do atraso nas 278 páginas de linha e nos 278 cartões de concelho, nas duas edições, com os três valores a resolverem em ficheiros com origem | **verde** |
+| **K2** | «séries atrasadas: n» no painel de frescura, com o `n` contado | **verde**, com a leitura do brief dita na §3 |
+| **K3** | o parágrafo do Portal BASE nas duas edições, a §1.100 a carimbar `metodo`, `ledger:check` verde | **verde** |
+| **K4** | a frase do Painel Social mudada só com a fonte citada | **verde**, mudada; a fonte, o excerto e a contagem na §5 |
+| **K5** | nenhum número novo fora dos que os ficheiros com origem trazem; `check:voz` com as cadeias novas declaradas | **verde** |
+| **K6** | `build`, `verify`, `typecheck` a 0 | **verde** |
+| **K7** | três plantas vermelhas e depois verdes | **verde**, 3 de 3 |
+
+**K1, medido no `dist/`:**
+
+```
+$ grep -rl 'data-nonledger="periodo-da-fonte"' dist/livro-razao/ | wc -l      → 278
+$ grep -rl 'data-nonledger="periodo-da-fonte"' dist/en/ledger/ | wc -l        → 278
+$ grep -rl 'data-nonledger="periodo-da-fonte"' dist/municipios/ | wc -l       → 278
+$ grep -rl 'data-nonledger="periodo-da-fonte"' dist/en/municipalities/ | wc -l → 278
+```
+
+e o `check:formas` diz o mesmo do seu lado, com a conta feita do livro-razão e
+não da varredura: «atraso: 1 série(s), 278 linha(s), 1112 período(s) da fonte
+conferido(s)». A leitura do código: o gabarito não tem nenhum dos três valores
+escrito; tem `{atraso.periodoDaFonte}`, `<DataDaLinha campo="reference_date">` e
+`<DataDaLinha campo="access_date">`.
+
+**K2, medido no `dist/`:**
+
+```
+$ grep -rl 'data-prova="series_atrasadas"' dist --include="*.html" | wc -l  → 7222
+$ find dist -name "*.html" | wc -l                                          → 7238
+```
+
+As dezasseis páginas sem o contador são os documentos alojados dos estudos, que
+não têm cabeçalho nenhum (a mesma dezena e meia que aparece na conta do
+`check:alvos`, «16 sem porta (os documentos alojados)»). O portão reconta 1 e
+278, e a página rende 1 e 278.
+
+**K5.** O `numeros-novos.mjs` é a régua da primeira página e o bloco não lhe toca
+(nenhuma cadeia nova entra em `/` nem em `/en/`; a frase do Painel Social muda de
+redacção e é declarada). O que mede o resto é o `gate:html`, que recusa qualquer
+algarismo sem origem declarada em qualquer página construída, e ele está verde
+com o motivo novo `periodo-da-fonte` a ser usado 1112 vezes. `check:voz`: «830
+frases distintas … autorreferência 0 · nada por classificar · 784 linhas do
+inventário com bloco (696 vivas, todas rendidas; 88 retiradas, nenhuma rendida)».
+
+**K7, as três plantas.** Cada uma foi plantada, corrida, lida, e revertida; o
+verde a seguir é o da árvore reposta.
+
+| planta | o que se plantou | vermelho | verde |
+| --- | --- | --- | --- |
+| 1 | um período escrito à mão no gabarito (`2026-08` no lugar de `{atraso.periodoDaFonte}`) | `check:formas` sai 1 com **556 problemas**: «o período da fonte da série "iefp-desemprego-registado-concelhos" não é o que a declaração traz. em src/data/frescura.mjs: 2026-07 / renderizado: 2026-08» | sai 0 |
+| 2 | o contador a 0 com linhas atrasadas (`series_atrasadas` forçada a `0` em `prova.mjs`) | `gate:html` sai 1: «o número da prova "series_atrasadas" foi renderizado como "0" e o portão escreve-o "1"» | sai 0 |
+| 3 | a §1.100 sem o carimbo (linha `**Texto:** metodo …` retirada) | `ledger:check` sai 1: «§1.100 nomeia metodo e não traz **Texto:** com o resumo … §1.100 carimba (nada) … src/data/metodo.mjs está hoje em b4cc3594f960» | sai 0 |
+
+## 7 · O que encontrei e não consertei
+
+**`.linha-selo-estado` rende cada rótulo numa linha própria.** `.linha-campo-k` é
+`display: block`, porque no aparelho cada rótulo vive por cima do seu campo; na
+cabeça da página de uma linha, uma frase com rótulos por dentro sai partida.
+Apanhei-o na primeira captura da minha própria frase, que saía em seis linhas, e
+corrigi a minha com `.linha-selo-atraso .linha-campo-k { display: inline }`. **A
+do estado da fonte tem o mesmo problema pela mesma causa e fica como está**: é
+desenho do bloco F0.11, hoje visível em quatro linhas do livro-razão, e mudá-la
+sem brief era mexer no que outro bloco mediu. É uma linha de folha de estilo no
+dia em que a direção a quiser.
+
+**O contador não chega ao telemóvel**, e a razão está na §3. A triagem de 04.09
+dá o conserto ao **F1.10**, que tira as linhas de frescura do cabeçalho de todas
+as páginas.
+
+**A rota `linha` continua fora de `ROTAS_DO_INVENTARIO`**, e por isso os três
+rótulos novos da página da linha não são lidos pela régua da voz naquela rota;
+são-no na rota `municipio`, onde as mesmas cadeias se rendem no cartão, e é por
+isso que estão declarados. A proposta de inventariar a rota `linha` já está na §5
+do relatório do corredor e este bloco não a executa.
+
+**As cadeias que só a marca `data-voz` deixou declarar.** Seis das catorze linhas
+novas do inventário só puderam ser declaradas por levarem `data-voz`: a régua
+salta um bloco com marca de origem lá dentro em qualquer rota fora de
+`ROTAS_COM_ORIGEM_LIDA` (e `municipio` não está nessa lista), e o rótulo do
+contador vive dentro de uma âncora, que a régua lê como destino e não como frase.
+A marca só alarga a peneira. **Pôr `municipio` em `ROTAS_COM_ORIGEM_LIDA`** é a
+correcção de fundo e não se faz aqui: traria à régua todas as frases das peças de
+308 páginas de uma vez, que é uma migração do inventário e não uma correcção.
+
+## 8 · Os ficheiros
+
+| ficheiro | o que mudou |
+| --- | --- |
+| `src/data/frescura.mjs` | **novo.** A declaração das séries atrasadas, com a origem de cada período e o guarda da forma |
+| `src/lib/frescura.mjs` | **novo.** A regra de pertença e as duas contagens, numa conta só |
+| `src/views/LinhaView.astro` | só o bloco do atraso, na cabeça (o F1.4 tocou as datas e o endereço, o F1.7 as unidades e as leis: linhas diferentes) |
+| `src/views/MunicipioView.astro` | só a frase do cartão do desemprego registado (`fraseDaPeca`) |
+| `src/components/SinalDasFontes.astro` | o contador, e o cabeçalho do ficheiro a dizer porque é que ele cabe aqui sem contradizer o parágrafo que recusa contagens |
+| `src/components/Masthead.astro` | uma linha: passar `lang` ao componente |
+| `src/components/Frase.astro` | três pedaços novos, `data`, `serie` e `voz` |
+| `src/data/metodo.mjs` | a segunda frase do limite da regra 1 |
+| `src/data/figuras.mjs` | a declaração do número das medidas principais, os numerais por extenso, e a frase do Painel Social |
+| `src/i18n/strings.mjs` | cinco chaves novas por edição |
+| `src/lib/prova.mjs` | duas chaves novas |
+| `src/tipos.d.ts` | `SerieAtrasada` e `OrigemDaSerieAtrasada` |
+| `src/styles/site.css` | a classe do atraso, com o mesmo desenho do estado da fonte |
+| `scripts/check-formas.mjs` | F13 a F16 |
+| `scripts/gate-html.mjs` | a recontagem das duas chaves novas |
+| `scripts/provar-guardas.mjs` | treze casos novos na segunda passagem, de 54 para 67; a fusão de 07.09 pôs ao lado os treze do F1.4b e o ficheiro sai a 0 com 80 |
+| `ledger/allowlist.yml` | o motivo `periodo-da-fonte`, com a conferência que o impede de ser dispensa |
+| `DECISIONS.md` | só a §1.100 |
+| `design/especime-v3/INVENTARIO-FRASES.md` | catorze linhas novas, duas retiradas |
+| `design/especime-v3/critica/REVISOES-DO-INVENTARIO.md` | a entrada do bloco `frescura` |
+| `design/especime-v3/capturas/frescura-2026-09-04/` | doze capturas |
+| `design/especime-v3/medicoes/frescura-plantas/` | **novo.** Os três `.patch`, as três saídas guardadas e o `README.md` que diz como se repetem; a saída da planta 3 refeita a 07.09 com a secção renumerada |
+| `design/observatorio/BRIEF-F1.6-o-atraso-do-iefp-e-as-duas-frases.md` | só os números: as quatro referências à secção do carimbo passaram de §1.99 a §1.100 a 07.09 |
+
+**Não toquei** em `HomeView.astro`, `src/components/inicio/*`, `public/js/inicio.js`,
+`src/styles/inicio.css` nem `tests/inicio/*`, que são do bloco que corre em
+paralelo.
+
+## 9 · As três fusões e os três códigos de saída
+
+O ramo saiu de `origin/main` em `6d63adfd` e fundiu `main` três vezes. As duas
+primeiras correram enquanto o bloco se construía, sem conflito e sem tocar um
+ficheiro deste bloco:
+
+* `306e4c68`, o F1.1b (a primeira página: `HomeView`, os componentes do início, o
+  guião e a folha do início, as réguas de `tests/inicio/`). O que os dois blocos
+  partilham é o inventário da voz e o registo das revisões, e cada um escreveu a
+  sua secção própria;
+* `69ba3abf`, ficheiros de registo e o `portao.yml` a subir o `timeout-minutes`
+  de 30 para 45.
+
+A terceira é a da retoma, e é a única com conflito:
+
+* `cc79128e`, o fecho de 04.09 (o registo do dia, o bloco F1.4b das datas de
+  publicação, os briefs novos e as leituras a frio). O conflito foi um só,
+  `scripts/provar-guardas.mjs`, e a §0 diz como se resolveu.
+
+Os três portões correram sobre cada cabeça fundida, e os códigos de saída foram
+lidos de ficheiro e não do ecrã (`cmd > log 2>&1; echo $?`):
+
+```
+                       primeira passagem      paragem (04.09)      retoma (07.09)
+npm run build      →   0                      0                    0
+npm run typecheck  →   0                      0                    0
+npm run verify     →   0  (89 células)        NÃO CORREU           0
+```
+
+**A coluna da paragem é a de 04.09**, e o `verify` não cabia nela: leva cerca de
+treze minutos e o diretor fechou o portátil. As réguas que a segunda passagem
+mexeu correram uma a uma e saíram a zero antes do commit (`check-ledger`,
+`check-formas`, `check-voz`, `provar-guardas`), e o `build` corre quatro delas por
+dentro. **A coluna da retoma fecha esse buraco**: o `verify` correu inteiro a
+07.09 sobre a cabeça fundida e saiu a 0, e as horas de cada corrida estão na
+§0.
+
+**A ordem dos commits foi escolhida para que cada um seja verde por
+construção**: a máquina do atraso antes do que a rende, o que a rende antes das
+cadeias que o inventário declara, e cada frase nova no mesmo commit da linha do
+inventário que a declara. Os três portões correram inteiros sobre a cabeça, que é
+a árvore que segue para o `portao` do GitHub.
+
+**O Método não é rota inventariada**, e por isso a frase nova do Portal BASE não
+passa pela régua da voz: a Emenda 15 isenta o Método, o Sobre e o recibo, e
+`ROTAS_DO_INVENTARIO` não os traz. O que a governa é a amarra das decisões, que
+prende os bytes do ficheiro ao carimbo da §1.100.
+
+## 10 · As capturas
+
+Doze, em `design/especime-v3/capturas/frescura-2026-09-04/`, todas PNG, tema
+claro, página inteira: `linha-iefp`, `metodo` e `concelho`, a 390 e a 1280, nas
+duas edições. A linha é `evora-desemprego-registado-2025-12`, que é uma das 278.
