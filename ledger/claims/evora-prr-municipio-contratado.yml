@@ -88,8 +88,7 @@ corrections:
     reason: "O excerto transcreve a linha lida no registo de entidades do PRR. No instantâneo de 2026-08-19 o publicador escreve o nome da entidade «Município de Évora», onde no de 2026-08-17 escrevia «MUNICÍPIO DE ÉVORA». O valor não muda: a grafia é da fonte, e o excerto transcreve o que a fonte escreve."
     reason_en: "The excerpt transcribes the line read in the PRR entities register. In the 2026-08-19 snapshot the publisher writes the entity's name «Município de Évora», where in the 2026-08-17 one it wrote «MUNICÍPIO DE ÉVORA». The value does not change: the spelling is the source's, and the excerpt transcribes what the source writes."
 
-# Reconferências. Escritas pelo motor (indicators/refresh.py e
-# indicators/corredor.py), nunca à mão.
+# Reconferências. Do exportador (registo de releitura) e dos leitores da casa.
 verifications:
   - date: "2026-09-03"
     path: "https://web.archive.org/web/20260820111244/https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx"
