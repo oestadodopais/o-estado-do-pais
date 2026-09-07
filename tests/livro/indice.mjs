@@ -172,6 +172,66 @@ for (const m of MEDIDAS_DO_DOMINIO_1) if (typeof m.claim === 'string' && !CARTOE
 const LINHAS_DA_REGUA = loadClaims();
 
 /**
+ * OS LOCALIZADORES QUE A CASA CONHECE (Major 7 da leitura a frio do Codex ao
+ * bloco M1, segunda passagem, 07.09.2026).
+ *
+ * A primeira passagem desta régua contava o degrau `name` a partir de qualquer
+ * `line.name` não vazio, sem olhar ao `name_source`. O campo `name` só quer
+ * dizer alguma coisa com o localizador ao lado: ele é «o rótulo que o publicador
+ * imprimiu por cima desta figura, copiado carácter a carácter, com `name_source`
+ * a dizer ONDE no ficheiro foi lido». Um rótulo com um localizador que ninguém
+ * reconhece é uma cadeia que ninguém pode ir reler, e a régua contava-o como
+ * nome da fonte na mesma.
+ *
+ * A LISTA É FECHADA e está escrita aqui à mão, com a forma de cada localizador,
+ * porque uma régua que a importasse do motor confirmava o motor e não o sítio.
+ * As quatro formas são as que os leitores da casa produzem, e mais nenhuma:
+ *
+ *   `IndicadorDsg`                    a chave da designação do indicador na
+ *                                     resposta do `json_indicador` do INE
+ *                                     (`publisher/dominios_readers.py`,
+ *                                     `INE_LABEL_KEY`);
+ *   `label`                           a chave da designação da série na resposta
+ *                                     JSON-stat do Eurostat (`EUROSTAT_LABEL_KEY`);
+ *   `p.<n>, linha <n>, campo <n>`     a extração de página de um PDF
+ *                                     (`publisher/concelhos_readers.py`,
+ *                                     `pdf_label`);
+ *   `<folha>, linha <n>, coluna <n>`  a grelha de uma folha ODS
+ *                                     (`ods_label_over`, com o nome da folha à
+ *                                     frente: hoje só `Quadro_I` do IEFP).
+ *
+ * MEDIDO A 07.09.2026 sobre `ledger/claims/*.yml`: 1866 linhas trazem
+ * `name_source`, e as quatro formas cobrem-nas todas (1238 `IndicadorDsg`, 343
+ * coordenadas de página, 278 `Quadro_I, linha 4, coluna 13`, 7 `label`). Uma
+ * forma nova entra aqui à mão, com o leitor que a escreve nomeado ao lado.
+ *
+ * @type {{ nome: string, forma: RegExp, onde: string }[]}
+ */
+const LOCALIZADORES_CONHECIDOS = [
+  { nome: 'IndicadorDsg', forma: /^IndicadorDsg$/, onde: 'a resposta do json_indicador do INE' },
+  { nome: 'label', forma: /^label$/, onde: 'a resposta JSON-stat do Eurostat' },
+  {
+    nome: 'p.<n>, linha <n>, campo <n>',
+    forma: /^p\.\d+, linha \d+, campo \d+$/,
+    onde: 'a extração de página de um PDF',
+  },
+  {
+    nome: '<folha>, linha <n>, coluna <n>',
+    forma: /^[^,]+, linha \d+, coluna \d+$/,
+    onde: 'a grelha de uma folha ODS',
+  },
+];
+
+/** @param {unknown} onde @returns {boolean} */
+function localizadorConhecido(onde) {
+  return (
+    typeof onde === 'string' &&
+    onde.trim() !== '' &&
+    LOCALIZADORES_CONHECIDOS.some((l) => l.forma.test(onde))
+  );
+}
+
+/**
  * O DEGRAU DE ONDE O NOME VEIO, e não só o nome (bloco M1, 04.09.2026).
  *
  * A escada tem quatro degraus e o quarto é o título do DOCUMENTO, que não é o
@@ -195,7 +255,16 @@ function nomeEsperadoComDegrau(id, lang) {
   const linha = LINHAS_DA_REGUA.get(id);
   if (!linha) return null;
   const nome = linha.name;
-  if (typeof nome === 'string' && nome.trim() !== '' && nome !== MARCADOR) {
+  /* O LOCALIZADOR FAZ PARTE DO DEGRAU (Major 7). Um rótulo sem um localizador
+     conhecido não sobe a linha ao degrau `name`: ela desce ao título do
+     documento, como descia antes de o motor lhe dar rótulo nenhum, e a linha
+     é contada como defeito na conferência que fecha esta célula. */
+  if (
+    typeof nome === 'string' &&
+    nome.trim() !== '' &&
+    nome !== MARCADOR &&
+    localizadorConhecido(/** @type {{ name_source?: unknown }} */ (linha).name_source)
+  ) {
     return { texto: nome, degrau: 'name' };
   }
   const titulo = /** @type {{ title?: unknown }} */ (linha.document ?? {})?.title;
@@ -369,6 +438,30 @@ celula('I1', 'o nome de uma medida não é o identificador', (falhas) => {
       }
     }
   }
+  /* E O LOCALIZADOR DE CADA RÓTULO, SOBRE O LIVRO-RAZÃO INTEIRO (Major 7 da
+     leitura a frio do Codex, segunda passagem, 07.09.2026). O degrau `name`
+     acima já não conta uma linha cujo localizador esta régua não conheça; esta
+     volta diz QUAIS são, por identificador, para que uma linha assim pare a
+     construção em vez de descer em silêncio ao título do documento. Corre sobre
+     todas as linhas do livro-razão e não só sobre as do índice: um localizador
+     que ninguém reconhece é um defeito onde quer que a linha esteja. */
+  let comLocalizador = 0;
+  for (const [id, linha] of LINHAS_DA_REGUA) {
+    const rotulo = /** @type {{ name?: unknown, name_source?: unknown }} */ (linha).name;
+    if (!(typeof rotulo === 'string' && rotulo.trim() !== '' && rotulo !== MARCADOR)) continue;
+    const onde = /** @type {{ name_source?: unknown }} */ (linha).name_source;
+    if (localizadorConhecido(onde)) {
+      comLocalizador++;
+      continue;
+    }
+    falhas.push(
+      `ledger/claims/${id}.yml: traz o rótulo "${rotulo.slice(0, 40)}" e o localizador ` +
+        `${JSON.stringify(onde ?? null)}, que não é nenhuma das ${LOCALIZADORES_CONHECIDOS.length} ` +
+        `formas que esta régua conhece (${LOCALIZADORES_CONHECIDOS.map((l) => l.nome).join(' · ')}). ` +
+        `Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador ` +
+        `que ninguém reconhece é uma cadeia a que ninguém pode voltar.`,
+    );
+  }
   const escada = Object.fromEntries(
     ['pt', 'en'].map((lang) => [
       lang,
@@ -383,6 +476,7 @@ celula('I1', 'o nome de uma medida não é o identificador', (falhas) => {
   medida.I1 = {
     paginas: alvo.length, itens, com_nome: comNome, sem_nome: semNome,
     ids_em_metadado: idEmMetadado, escada_do_indice: escada,
+    rotulos_com_localizador_conhecido: comLocalizador,
   };
   const e = escada.pt;
   const total = e.cartao + e.name + e['document.title'] + e.nenhum;
@@ -392,7 +486,8 @@ celula('I1', 'o nome de uma medida não é o identificador', (falhas) => {
     `documento) · ${idEmMetadado} identificador(es) em metadado\n        a escada no índice do ` +
     `livro-razão, por edição (${total} linhas): ${e.cartao} pelo nome do cartão · ${e.name} pelo ` +
     `rótulo da fonte · ${e['document.title']} pelo TÍTULO DO DOCUMENTO, que é o nome do papel e ` +
-    `não o da medida · ${e.nenhum} sem nome`
+    `não o da medida · ${e.nenhum} sem nome\n        ${comLocalizador} rótulo(s) do livro-razão ` +
+    `inteiro com um localizador de uma das ${LOCALIZADORES_CONHECIDOS.length} formas conhecidas`
   );
 });
 
