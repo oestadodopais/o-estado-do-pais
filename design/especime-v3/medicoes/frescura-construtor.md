@@ -5,7 +5,79 @@ Claude Opus 5, 04.09.2026. O bloco é o F1.6 do
 `design/observatorio/PLANO-fiabilidade-2026-09-02.md` §3 e cumpre as decisões
 (2), (3) e (5) da `DECISIONS.md` §1.98. Sem travessões na prosa.*
 
-## 0 · Estado ao pausar (04.09)
+## 0 · Estado ao retomar (07.09)
+
+*Retomado a 07.09.2026 pelo construtor Claude Opus 5. Esta secção diz o que a
+fusão com `main` mudou e o que os portões mediram nesta cabeça. Tudo o que está
+abaixo dela fica como estava a 04.09, e o «Estado ao pausar» a seguir é o registo
+da paragem.*
+
+**A corrida que ficou por ler está lida.** A `portao` sobre `3ff1f75a`, a cabeça
+da paragem, é a **33862830127** e saiu **verde** em 34m11s (`gh run view
+33862830127 --repo oestadodopais/o-estado-do-pais`). Era o segundo dos quatro
+pontos que a paragem deixou abertos.
+
+**A fusão.** `git merge origin/main` sobre `cc79128e`, commit de fusão
+**`a0a9b4e8`**. Cinco ficheiros vinham mudados dos dois lados e quatro fundiram-se
+sozinhos, cada um com as duas partes: `DECISIONS.md`,
+`design/especime-v3/INVENTARIO-FRASES.md`, `ledger/allowlist.yml` e
+`src/i18n/strings.mjs`. Um só deu conflito.
+
+| ficheiro | o conflito | como se resolveu |
+| --- | --- | --- |
+| `scripts/provar-guardas.mjs` | dois sítios, e nos dois os dois ramos escreveram no mesmo lugar: os importes do cabeçalho e o bloco de casos no fim | as duas partes ficaram, por esta ordem. No cabeçalho, os importes de `src/data/frescura.mjs`, de `src/lib/frescura.mjs` e de `src/data/figuras.mjs` deste ramo, e a seguir o de `src/lib/datas-do-repositorio.mjs` do F1.4b. No fim, os casos do `eSerieAtrasada`, do `serieDaLinha`, das `contagens` e do `numeralPorExtenso`, e a seguir os das datas de publicação. `node scripts/provar-guardas.mjs` sai 0 com **80 conferências**, que são as 67 deste ramo mais as 13 do F1.4b |
+
+**A renumeração para §1.100 está feita.** A §1.99 de `main` é a do fecho de
+04.09, que entrou primeiro; a entrada que este ramo escreve para o carimbo do
+Método passa a **§1.100**, no título da própria entrada, nas oito referências
+deste relatório e nas quatro do `BRIEF-F1.6-o-atraso-do-iefp-e-as-duas-frases.md`.
+O `**Texto:** metodo b4cc3594f960` não mudou uma letra: a amarra confere o resumo
+sha256 do texto governado e não o número da secção, e o `ledger:check` saiu 0 no
+`build` e no `verify` desta cabeça sem se lhe tocar.
+
+**Duas coisas que a renumeração pôs a nu, e que ficam consertadas.** A primeira:
+o relatório trazia em três sítios (§1, §4 e a tabela das plantas da §6) o carimbo
+da primeira passagem, `8c9aa6a9b7b9`, quando a segunda passagem já tinha posto
+`b4cc3594f960` na entrada e na saída guardada da planta 3. Os três passam a dizer
+o que a entrada diz. A segunda: a saída guardada da planta 3 imprimia `§1.99`, e
+a partir desta cabeça a planta imprime `§1.100`. Foi refeita aqui, com o `.patch`
+aplicado e revertido pelo caminho do `README.md` das plantas
+(`git apply … && node scripts/check-ledger.mjs && git apply -R …`), e sai na
+mesma a 1; muda só o número da secção e a contagem da amarra, que passa de 62
+para 63 entradas porque `main` acrescentou uma. As plantas 1 e 2 não foram
+refeitas: nenhuma delas nomeia a secção, e cada uma exige uma construção inteira
+para se repetir.
+
+**Os três portões nesta cabeça**, com o comando e a hora a que cada um começou e
+acabou, lidos dos ficheiros de registo e não de memória:
+
+| portão | comando | UTC | código de saída |
+| --- | --- | --- | --- |
+| construção | `npm run build > /tmp/f16-build.log 2>&1` | 2026-09-07 15:53:05 a 16:00:24 | **0** |
+| verificação | `npm run verify > /tmp/f16-verify.log 2>&1` | 2026-09-07 16:00:31 a 16:06:49 | **0** |
+| tipos | `npm run typecheck > /tmp/f16-typecheck.log 2>&1` | 2026-09-07 16:06:55 | **0** |
+
+**O `typecheck` sai a 0 em menos de um segundo, e isso é o compilador e não uma
+régua desligada.** O `node_modules` desta árvore tem TypeScript **7.0.2**, que é
+o compilador nativo, e `tsc -v` responde-o. Confirmou-se com um conhecido
+positivo antes de se acreditar no verde: uma linha com `n.toUpperCase()` sobre um
+parâmetro `@param {number}` acrescentada a `src/lib/frescura.mjs` faz o portão
+sair **1** com «error TS2339: Property 'toUpperCase' does not exist on type
+'number'», e o ficheiro reposto fá-lo voltar a **0**.
+
+**A corrida do portão sobre a cabeça de hoje** é a do empurrão desta sessão. O
+seu número não se pode escrever aqui, porque só existe depois do empurrão que
+leva este ficheiro; fica no relatório da sessão ao lugar de direção, com o
+estado com que acabou.
+
+**O que continua por fazer, e é um só ponto dos quatro da paragem:** a leitura
+cruzada do inventário das frases não está feita para este bloco. O `check:voz`
+conta **oito blocos por ler** nesta cabeça e o `frescura` é um deles; a coluna da
+leitura, em `critica/REVISOES-DO-INVENTARIO.md`, traz a leitura a frio do Codex
+de 04.09 e não a cruzada, que a própria linha diz fazer-se antes da fusão. Não é
+trabalho de quem construiu o bloco, por regra da casa.
+
+## 0b · Estado ao pausar (04.09)
 
 *O diretor fechou o portátil a meio da segunda passagem. Esta secção diz o que
 está feito, o que está a meio e por onde se retoma. Escrita antes do último
@@ -428,21 +500,24 @@ correcção de fundo e não se faz aqui: traria à régua todas as frases das pe
 | `src/styles/site.css` | a classe do atraso, com o mesmo desenho do estado da fonte |
 | `scripts/check-formas.mjs` | F13 a F16 |
 | `scripts/gate-html.mjs` | a recontagem das duas chaves novas |
-| `scripts/provar-guardas.mjs` | cinco casos do guarda novo |
+| `scripts/provar-guardas.mjs` | treze casos novos na segunda passagem, de 54 para 67; a fusão de 07.09 pôs ao lado os treze do F1.4b e o ficheiro sai a 0 com 80 |
 | `ledger/allowlist.yml` | o motivo `periodo-da-fonte`, com a conferência que o impede de ser dispensa |
 | `DECISIONS.md` | só a §1.100 |
 | `design/especime-v3/INVENTARIO-FRASES.md` | catorze linhas novas, duas retiradas |
 | `design/especime-v3/critica/REVISOES-DO-INVENTARIO.md` | a entrada do bloco `frescura` |
 | `design/especime-v3/capturas/frescura-2026-09-04/` | doze capturas |
+| `design/especime-v3/medicoes/frescura-plantas/` | **novo.** Os três `.patch`, as três saídas guardadas e o `README.md` que diz como se repetem; a saída da planta 3 refeita a 07.09 com a secção renumerada |
+| `design/observatorio/BRIEF-F1.6-o-atraso-do-iefp-e-as-duas-frases.md` | só os números: as quatro referências à secção do carimbo passaram de §1.99 a §1.100 a 07.09 |
 
 **Não toquei** em `HomeView.astro`, `src/components/inicio/*`, `public/js/inicio.js`,
 `src/styles/inicio.css` nem `tests/inicio/*`, que são do bloco que corre em
 paralelo.
 
-## 9 · As duas fusões e os três códigos de saída
+## 9 · As três fusões e os três códigos de saída
 
-O ramo saiu de `origin/main` em `6d63adfd` e fundiu `main` duas vezes enquanto o
-bloco corria, as duas sem conflito e nenhuma a tocar um ficheiro deste bloco:
+O ramo saiu de `origin/main` em `6d63adfd` e fundiu `main` três vezes. As duas
+primeiras correram enquanto o bloco se construía, sem conflito e sem tocar um
+ficheiro deste bloco:
 
 * `306e4c68`, o F1.1b (a primeira página: `HomeView`, os componentes do início, o
   guião e a folha do início, as réguas de `tests/inicio/`). O que os dois blocos
@@ -451,21 +526,29 @@ bloco corria, as duas sem conflito e nenhuma a tocar um ficheiro deste bloco:
 * `69ba3abf`, ficheiros de registo e o `portao.yml` a subir o `timeout-minutes`
   de 30 para 45.
 
-Os três portões correram sobre a cabeça fundida, e os códigos de saída foram
-lidos de ficheiro e não do ecrã (`cmd > log 2>&1; echo $? > ficheiro.exit`):
+A terceira é a da retoma, e é a única com conflito:
+
+* `cc79128e`, o fecho de 04.09 (o registo do dia, o bloco F1.4b das datas de
+  publicação, os briefs novos e as leituras a frio). O conflito foi um só,
+  `scripts/provar-guardas.mjs`, e a §0 diz como se resolveu.
+
+Os três portões correram sobre cada cabeça fundida, e os códigos de saída foram
+lidos de ficheiro e não do ecrã (`cmd > log 2>&1; echo $?`):
 
 ```
-                       primeira passagem      segunda passagem (paragem)
-npm run build      →   0                      0
-npm run typecheck  →   0                      0
-npm run verify     →   0  (89 células)        NÃO CORREU
+                       primeira passagem      paragem (04.09)      retoma (07.09)
+npm run build      →   0                      0                    0
+npm run typecheck  →   0                      0                    0
+npm run verify     →   0  (89 células)        NÃO CORREU           0
 ```
 
-**A coluna da segunda passagem é a da paragem de 04.09**, e o `verify` não cabia
-nela: leva cerca de treze minutos e o diretor fechou o portátil. As réguas que a
-segunda passagem mexeu correram uma a uma e saíram a zero antes do commit
-(`check-ledger`, `check-formas`, `check-voz`, `provar-guardas`), e o `build` corre
-quatro delas por dentro. **Ao retomar, o `verify` é a primeira coisa.**
+**A coluna da paragem é a de 04.09**, e o `verify` não cabia nela: leva cerca de
+treze minutos e o diretor fechou o portátil. As réguas que a segunda passagem
+mexeu correram uma a uma e saíram a zero antes do commit (`check-ledger`,
+`check-formas`, `check-voz`, `provar-guardas`), e o `build` corre quatro delas por
+dentro. **A coluna da retoma fecha esse buraco**: o `verify` correu inteiro a
+07.09 sobre a cabeça fundida e saiu a 0, e as horas de cada corrida estão na
+§0.
 
 **A ordem dos commits foi escolhida para que cada um seja verde por
 construção**: a máquina do atraso antes do que a rende, o que a rende antes das
