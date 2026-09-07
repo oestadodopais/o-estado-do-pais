@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-04T09:53:06+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/78714fcd-9d7a-49ae-92d0-914347b16683/scratchpad/leituras/m1-pacote",
+ "plantas": [
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 68 sem nome no resumo e 78 no resto",
+   "sha256_antes": "ffc3d3647e1701527d69a6b9628882b2b2232b841e21a6d67554baf90b996215",
+   "sha256_depois": "8d83065110d274847be087b14ba2779bbe7696bc249c606846cde7624c59422c",
+   "contexto_antes": "**As 79 estão medidas, e uma ganhou nome.** A régua do sítio conta agora, a cada\nconstrução, quantas entradas do índice descem ao quarto degrau da escada: eram\n**79 de 149**, são **78**. A que subiu é `evora-populacao-2021`, e o nome dela\nnão foi composto: é o da linha irmã do mesmo pedido ao INE, carácter a carácter,\ncom o localizador dela.\n\n*",
+   "contexto_depois": "**As 79 estão medidas, e uma ganhou nome.** A régua do sítio conta agora, a cada\nconstrução, quantas entradas do índice descem ao quarto degrau da escada: eram\n**79 de 149**, são **68**. A que subiu é `evora-populacao-2021`, e o nome dela\nnão foi composto: é o da linha irmã do mesmo pedido ao INE, carácter a carácter,\ncom o localizador dela.\n\n*"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "sitio/claims/evora-populacao-2021.yml",
+   "descricao": "a linha herda o nome mas o name_source diz um localizador que não é o da irmã",
+   "sha256_antes": "7d7e63415167ebe141e47e850e6b36667ddd086cf5543235bdb8e06f71d92b10",
+   "sha256_depois": "7ddbca713fefd870db3624d03dbab66b3ce55c7b0ecd4712ccf5d37ec0ee7143",
+   "contexto_antes": "nca à mão.\nname: \"População residente (N.º) por Local de residência (NUTS - 2024), Sexo e Grupo etário; Anual - INE, Estimativas anuais da população residente\"\nname_source: \"IndicadorDsg\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"INE\"\ndocument:\n  title: \"População residente (N.º) × sexo × grupo et",
+   "contexto_depois": "nca à mão.\nname: \"População residente (N.º) por Local de residência (NUTS - 2024), Sexo e Grupo etário; Anual - INE, Estimativas anuais da população residente\"\nname_source: \"Total\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"INE\"\ndocument:\n  title: \"População residente (N.º) × sexo × grupo et"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "motor/publisher/export_site_rows_test.py",
+   "descricao": "o teste das duas irmãs dá à segunda irmã o mesmo rótulo: o desacordo que ele devia medir deixa de existir",
+   "sha256_antes": "94adcad129eb50db28e8986fd5b66091ee1dc434b4f8deebc6524a51c82d323a",
+   "sha256_depois": "85fd6db1cfa7e381b848c77e370fad132013f8f5c7d7b2ab46fab5e75e9762c0",
+   "contexto_antes": "[spec[\"rh_study\"]][\"rows\"]\n        herdeira = rows[spec[\"rh_id\"]]\n        outra = dict(herdeira)\n        outra[\"id\"] = herdeira[\"id\"] + \"-segunda-irma\"\n        outra[\"name\"] = \"Outra designação da mesma resposta\"\n        outra[\"name_source\"] = FONTE_DO_ROTULO\n        rows[outra[\"id\"]] = outra\n        led[spec[\"rh_study\"]].pop(\"_by_url\", None)   # o índice é uma cache\n  ",
+   "contexto_depois": "[spec[\"rh_study\"]][\"rows\"]\n        herdeira = rows[spec[\"rh_id\"]]\n        outra = dict(herdeira)\n        outra[\"id\"] = herdeira[\"id\"] + \"-segunda-irma\"\n        outra[\"name\"] = ROTULO\n        outra[\"name_source\"] = FONTE_DO_ROTULO\n        rows[outra[\"id\"]] = outra\n        led[spec[\"rh_study\"]].pop(\"_by_url\", None)   # o índice é uma cache\n  "
+  },
+  {
+   "id": "P1a",
+   "ficheiro": "motor/publisher/export_site_rows.py",
+   "descricao": "a regra da irmã deixa de exigir o mesmo pedido (fetched_at): uma linha herda o rótulo de outra leitura do mesmo endereço (cópia inteira)",
+   "sha256_antes": "962ed1cf14e9643320382231c3105a8163b3e4f9ea55aab733aba2935c86ba66",
+   "sha256_depois": "c478ac2f0a33a1b57d0064c594622eed76f4995642dc6e134d642cd1f554af9e",
+   "contexto_antes": "as, e a segunda pode trazer\n        # outra designação: é isso que `prove_label` chama «um facto sobre o\n        # publicador», que se relata e não se absorve.\n        if other.get(\"fetched_at\") != at:\n            continue\n        pares.add((other[\"name\"], other.get(\"name_source\")))\n    if len(pares) != 1:\n        return None                      # nenhuma ir",
+   "contexto_depois": "as, e a segunda pode trazer\n        # outra designação: é isso que `prove_label` chama «um facto sobre o\n        # publicador», que se relata e não se absorve.\n        if False and other.get(\"fetched_at\") != at:\n            continue\n        pares.add((other[\"name\"], other.get(\"name_source\")))\n    if len(pares) != 1:\n        return None                      # nenhuma ir"
+  },
+  {
+   "id": "P1b",
+   "ficheiro": "motor/diff.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff",
+   "sha256_antes": "bb5a728bec82d8622940bad990f64e0a89f964e6a2bdefc9308a9b3df661b3ab",
+   "sha256_depois": "ae99155497f7a06af245aa0ed1ad4d5ce62f327db4d5bc9177bc6196ebe35e8d",
+   "contexto_antes": ", e a segunda pode trazer\n+        # outra designação: é isso que `prove_label` chama «um facto sobre o\n+        # publicador», que se relata e não se absorve.\n+        if other.get(\"fetched_at\") != at:\n+            continue\n+        pares.add((other[\"name\"], other.get(\"name_source\")))\n+    if len(pares) != 1:\n+        return None                      # nenhum",
+   "contexto_depois": ", e a segunda pode trazer\n+        # outra designação: é isso que `prove_label` chama «um facto sobre o\n+        # publicador», que se relata e não se absorve.\n+        if False and other.get(\"fetched_at\") != at:\n+            continue\n+        pares.add((other[\"name\"], other.get(\"name_source\")))\n+    if len(pares) != 1:\n+        return None                      # nenhum"
+  }
+ ]
+}

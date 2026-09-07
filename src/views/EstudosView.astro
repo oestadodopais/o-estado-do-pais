@@ -79,6 +79,21 @@ const trabalhos = WORKS.map((w) => {
     estado: leitura ? null : migrado ? s.estudos.migradoEstado : s.estudos.stubEstado,
   };
 });
+
+/**
+ * A CAIXA DAS DATAS POR CONFIRMAR CONTA (bloco F1.4b, 04.09.2026).
+ *
+ * Estava sempre lá, e a 04.09 esteve por cima de doze linhas que mostravam
+ * todas uma data: uma ressalva que não é verdade sobre nada do que está por
+ * baixo dela é ruído, e neste caso era ruído a tapar um defeito. Passa a
+ * render-se SÓ quando alguma edição não tem data, e a dizer quantas são. A
+ * contagem sai do mesmo ficheiro que as datas, e é conferida contra ele por
+ * `scripts/check-datas.mjs`.
+ */
+const edicoesSemData = trabalhos.reduce(
+  (n, tr) => n + tr.edicoes.filter((e) => e.date === null).length,
+  0,
+);
 ---
 
 <Base lang={lang} path={path} title={s.estudos.metaTitle} description={s.estudos.metaDescription}>
@@ -101,7 +116,17 @@ const trabalhos = WORKS.map((w) => {
   </div>
 
   <div style="margin-top:clamp(30px,4vw,44px)">
-    <p class="aviso-editorial">{s.estudos.aviso}</p>
+    {
+      edicoesSemData > 0 && (
+        <p class="aviso-editorial">
+          <span data-voz>{s.estudos.avisoA}</span>{' '}
+          <span data-nonledger="data-do-repositorio">{edicoesSemData}</span>{' '}
+          <span data-voz>
+            {edicoesSemData === 1 ? s.estudos.avisoUma : s.estudos.avisoVarias}
+          </span>
+        </p>
+      )
+    }
 
     <div class="arquivo">
       {

@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-04T09:17:30+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/78714fcd-9d7a-49ae-92d0-914347b16683/scratchpad/leituras/f16-pacote",
+ "plantas": [
+  {
+   "id": "P1a",
+   "ficheiro": "src/lib/frescura.mjs",
+   "descricao": "atrasoDaLinha devolve null para toda a linha com período: nenhuma linha atrasada, contador a 0; a página construída do pacote tem as 278 (cópia inteira)",
+   "sha256_antes": "76cc3bea9a50300fceffe4c156bbe5fdb262fb54e5c4314cb028b6ebff221007",
+   "sha256_depois": "c2095ac7007b48d9143d28072d33f6daad40bde96bc7eaf2e65ae5c97ce077df",
+   "contexto_antes": "nst fonte = typeof linha.source === 'string' ? linha.source : null;\n  const periodo = typeof linha.reference_date === 'string' ? linha.reference_date : null;\n  if (fonte === null || periodo === null) return null;\n  const documento = tituloDoDocumento(linha);\n  if (documento === null) return null;\n  return (\n    seriesAtrasadas().find(\n      (s) => s.fonte === fonte && s",
+   "contexto_depois": "nst fonte = typeof linha.source === 'string' ? linha.source : null;\n  const periodo = typeof linha.reference_date === 'string' ? linha.reference_date : null;\n  if (fonte === null || periodo !== null) return null;\n  const documento = tituloDoDocumento(linha);\n  if (documento === null) return null;\n  return (\n    seriesAtrasadas().find(\n      (s) => s.fonte === fonte && s"
+  },
+  {
+   "id": "P1b",
+   "ficheiro": "diff.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff",
+   "sha256_antes": "52950c971ddc9ac77199b91b958726d845cc0e559e159cfcd2c5dcbcad3c4ebc",
+   "sha256_depois": "21f4ee2c3d1c59697fbd69aca6db03d8b69c9607b6af27693b97b743ce300d48",
+   "contexto_antes": "onst fonte = typeof linha.source === 'string' ? linha.source : null;\n+  const periodo = typeof linha.reference_date === 'string' ? linha.reference_date : null;\n+  if (fonte === null || periodo === null) return null;\n+  const documento = tituloDoDocumento(linha);\n+  if (documento === null) return null;\n+  return (\n+    seriesAtrasadas().find(\n+      (s) => s.fonte === fonte",
+   "contexto_depois": "onst fonte = typeof linha.source === 'string' ? linha.source : null;\n+  const periodo = typeof linha.reference_date === 'string' ? linha.reference_date : null;\n+  if (fonte === null || periodo !== null) return null;\n+  const documento = tituloDoDocumento(linha);\n+  if (documento === null) return null;\n+  return (\n+    seriesAtrasadas().find(\n+      (s) => s.fonte === fonte"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "scripts/check-formas.mjs",
+   "descricao": "o portão deixa de comparar o período rendido com o da série",
+   "sha256_antes": "72af9a843442ace7b85bd2cbc7f68b478ebef4c65021d886a7745ded8b0629ca",
+   "sha256_depois": "c4e316c6dbfc277c6ebc8b819280134320d164b3e1c75615961532628b5a8486",
+   "contexto_antes": "declarada em ` +\n          `src/data/frescura.mjs. Um período sem série não tem origem nenhuma.`,\n      );\n      continue;\n    }\n    const rendido = texto(el);\n    if (rendido !== serie.periodoDaFonte) {\n      err(\n        `${rel}: o período da fonte da série \"${id}\" não é o que a declaração traz.\\n` +\n          `      em src/data/frescura.mjs: ${serie.periodoD",
+   "contexto_depois": "declarada em ` +\n          `src/data/frescura.mjs. Um período sem série não tem origem nenhuma.`,\n      );\n      continue;\n    }\n    const rendido = texto(el);\n    if (false && rendido !== serie.periodoDaFonte) {\n      err(\n        `${rel}: o período da fonte da série \"${id}\" não é o que a declaração traz.\\n` +\n          `      em src/data/frescura.mjs: ${serie.periodoD"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/linha-iefp.html",
+   "descricao": "o período da fonte rendido diz 2026-08 na página construída e a série diz 2026-07",
+   "sha256_antes": "16de0f8d39c0e3891aa3f718b7c228af90593d732b36c90355952c70368ade53",
+   "sha256_depois": "fdfe628b78ccb3fb17a5606dcf88b05b0f6f0bceb59594868a9adadcd9d7b336",
+   "contexto_antes": "n></a></p><p class=\"linha-selo-atraso\"><span class=\"linha-campo-k\" data-voz>Último período publicado pela fonte:</span> <span data-nonledger=\"periodo-da-fonte\" data-de-serie=\"iefp-desemprego-registado-concelhos\">2026-07</span>; <span class=\"linha-campo-k\" data-voz>a casa publica</span> <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"abrantes-desemprego",
+   "contexto_depois": "n></a></p><p class=\"linha-selo-atraso\"><span class=\"linha-campo-k\" data-voz>Último período publicado pela fonte:</span> <span data-nonledger=\"periodo-da-fonte\" data-de-serie=\"iefp-desemprego-registado-concelhos\">2026-08</span>; <span class=\"linha-campo-k\" data-voz>a casa publica</span> <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"abrantes-desemprego"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 277 numa linha das contagens e 278 no resto (plantada 40 s depois do arranque da leitura)",
+   "sha256_antes": "f4de63c1a22da49608dfd1d0ada177f807341ad44de1a7a7efac92feae801e10",
+   "sha256_depois": "aa72af6c8c9ff5acaf2507e849a0102ae14a0c29a2ba86c4f3821cd9501e631b",
+   "contexto_antes": "l 'data-nonledger=\"periodo-da-fonte\"' dist/en/municipalities/ | wc -l → 278\n```\n\ne o `check:formas` diz o mesmo do seu lado, com a conta feita do livro-razão e\nnão da varredura: «atraso: 1 série(s), 278 linha(s), 1112 período(s) da fonte\nconferido(s)». A leitura do código: o gabarito não tem nenhum dos três valores\nescrito; tem `{atraso.periodoDaFonte}`, `<DataDaLinha campo=\"reference_date\">` e",
+   "contexto_depois": "l 'data-nonledger=\"periodo-da-fonte\"' dist/en/municipalities/ | wc -l → 278\n```\n\ne o `check:formas` diz o mesmo do seu lado, com a conta feita do livro-razão e\nnão da varredura: «atraso: 1 série(s), 277 linha(s), 1112 período(s) da fonte\nconferido(s)». A leitura do código: o gabarito não tem nenhum dos três valores\nescrito; tem `{atraso.periodoDaFonte}`, `<DataDaLinha campo=\"reference_date\">` e"
+  }
+ ]
+}

@@ -20,13 +20,13 @@
 [90m    Isto não impede o build. Impede que se diga que o livro-razão está fechado.[0m
 
 
-[90m  amarra das decisões · 62 entrada(s) a partir da §1.38 · 2 texto(s) governado(s) · 2 citação(ões) da constituição conferida(s), de 43 entre «…»[0m
+[90m  amarra das decisões · 63 entrada(s) a partir da §1.38 · 2 texto(s) governado(s) · 2 citação(ões) da constituição conferida(s), de 43 entre «…»[0m
 
 [31m  A AMARRA DAS DECISÕES NÃO FECHA · 2 erro(s):[0m
 
-    [31m✗[0m §1.99 nomeia metodo e não traz **Texto:** com o resumo de cada um tal como o ficheiro estava quando a entrada foi escrita.
+    [31m✗[0m §1.100 nomeia metodo e não traz **Texto:** com o resumo de cada um tal como o ficheiro estava quando a entrada foi escrita.
     [31m✗[0m "metodo": o texto mudou depois da última decisão que o governa, ou a decisão foi registada contra outro texto.
-        §1.99 carimba (nada)
+        §1.100 carimba (nada)
         src/data/metodo.mjs está hoje em b4cc3594f960
         Escreva a entrada que regista a mudança, com o resumo de hoje.
 

@@ -23,7 +23,7 @@ Major 3 são elas. A triagem do lugar de direção dá seis itens reais.
 
 | item | estado | o que falta |
 | --- | --- | --- |
-| **Major 7** · o Método sem adjetivos | **feito** | nada. Saíram «navegador comum» e «a única fonte lida assim»; ficou «um navegador» e «nenhuma outra o é». A §1.99 tem o resumo novo, `b4cc3594f960` |
+| **Major 7** · o Método sem adjetivos | **feito** | nada. Saíram «navegador comum» e «a única fonte lida assim»; ficou «um navegador» e «nenhuma outra o é». A §1.100 tem o resumo novo, `b4cc3594f960` |
 | **Major 8** · nenhuma cadeia fala da casa | **feito** | nada. A frase do atraso é deíctica («nesta linha: 2025-12, lido a 26.08.2026»), a dica do contador deixou de dizer quem publica, e as sete linhas do inventário foram trocadas |
 | **Major 9** · a frase inglesa com «measures» | **feito** | nada. «headline measures», com «headline indicators» citado uma vez e atribuído à Comissão |
 | **Major 10** · a régua F16 a ler a página | **feito** | nada. A declaração perdeu o campo `palavra`; a régua compõe as duas palavras de `numero` e de `FIGURAS_SOCIAL.length` e procura-as no `dist/` |
@@ -69,7 +69,7 @@ livro-razão», com as duas contagens marcadas `data-prova` e recontadas pelo
 portão a partir do livro-razão.
 
 **O Portal BASE está no Método**, no limite da regra 1, nas duas edições, com a
-§1.99 a carimbar `metodo 8c9aa6a9b7b9`.
+§1.100 a carimbar `metodo b4cc3594f960`.
 
 **A frase do Painel Social mudou**, e mudou com a fonte citada: o Anexo 2 do
 Relatório Conjunto sobre o Emprego de 2026 da Comissão, COM(2025) 958, imprime a
@@ -206,11 +206,11 @@ declare as duas coisas, a bandeira e a razão por escrito.
 **O que a frase não diz.** Não traz o estado HTTP nem o nome do cabeçalho: o
 texto governado do Método não leva algarismos, por construção. Não fala de
 confiança nem da diligência da casa (Emenda 15 e Emenda 18). O comentário do
-motor chama à excepção «uma dívida e não uma solução», e isso está na §1.99 e não
+motor chama à excepção «uma dívida e não uma solução», e isso está na §1.100 e não
 na página do leitor: declarar não paga a dívida, torna-a visível.
 
-**O carimbo.** A §1.99 traz `**Afecta:** metodo` e `**Texto:** metodo
-8c9aa6a9b7b9`, que é o resumo de `src/data/metodo.mjs` depois da mudança; a
+**O carimbo.** A §1.100 traz `**Afecta:** metodo` e `**Texto:** metodo
+b4cc3594f960`, que é o resumo de `src/data/metodo.mjs` depois da mudança; a
 entrada anterior que governava o texto era a §1.89, com `e327c482c6db`.
 
 ## 5 · O Painel Social: a fonte, o excerto e a contagem
@@ -328,7 +328,7 @@ com autorreferência acima de zero, e está a zero).
 | --- | --- | --- |
 | **K1** | a frase do atraso nas 278 páginas de linha e nos 278 cartões de concelho, nas duas edições, com os três valores a resolverem em ficheiros com origem | **verde** |
 | **K2** | «séries atrasadas: n» no painel de frescura, com o `n` contado | **verde**, com a leitura do brief dita na §3 |
-| **K3** | o parágrafo do Portal BASE nas duas edições, a §1.99 a carimbar `metodo`, `ledger:check` verde | **verde** |
+| **K3** | o parágrafo do Portal BASE nas duas edições, a §1.100 a carimbar `metodo`, `ledger:check` verde | **verde** |
 | **K4** | a frase do Painel Social mudada só com a fonte citada | **verde**, mudada; a fonte, o excerto e a contagem na §5 |
 | **K5** | nenhum número novo fora dos que os ficheiros com origem trazem; `check:voz` com as cadeias novas declaradas | **verde** |
 | **K6** | `build`, `verify`, `typecheck` a 0 | **verde** |
@@ -376,7 +376,7 @@ verde a seguir é o da árvore reposta.
 | --- | --- | --- | --- |
 | 1 | um período escrito à mão no gabarito (`2026-08` no lugar de `{atraso.periodoDaFonte}`) | `check:formas` sai 1 com **556 problemas**: «o período da fonte da série "iefp-desemprego-registado-concelhos" não é o que a declaração traz. em src/data/frescura.mjs: 2026-07 / renderizado: 2026-08» | sai 0 |
 | 2 | o contador a 0 com linhas atrasadas (`series_atrasadas` forçada a `0` em `prova.mjs`) | `gate:html` sai 1: «o número da prova "series_atrasadas" foi renderizado como "0" e o portão escreve-o "1"» | sai 0 |
-| 3 | a §1.99 sem o carimbo (linha `**Texto:** metodo …` retirada) | `ledger:check` sai 1: «§1.99 nomeia metodo e não traz **Texto:** com o resumo … §1.99 carimba (nada) … src/data/metodo.mjs está hoje em 8c9aa6a9b7b9» | sai 0 |
+| 3 | a §1.100 sem o carimbo (linha `**Texto:** metodo …` retirada) | `ledger:check` sai 1: «§1.100 nomeia metodo e não traz **Texto:** com o resumo … §1.100 carimba (nada) … src/data/metodo.mjs está hoje em b4cc3594f960» | sai 0 |
 
 ## 7 · O que encontrei e não consertei
 
@@ -430,7 +430,7 @@ correcção de fundo e não se faz aqui: traria à régua todas as frases das pe
 | `scripts/gate-html.mjs` | a recontagem das duas chaves novas |
 | `scripts/provar-guardas.mjs` | cinco casos do guarda novo |
 | `ledger/allowlist.yml` | o motivo `periodo-da-fonte`, com a conferência que o impede de ser dispensa |
-| `DECISIONS.md` | só a §1.99 |
+| `DECISIONS.md` | só a §1.100 |
 | `design/especime-v3/INVENTARIO-FRASES.md` | catorze linhas novas, duas retiradas |
 | `design/especime-v3/critica/REVISOES-DO-INVENTARIO.md` | a entrada do bloco `frescura` |
 | `design/especime-v3/capturas/frescura-2026-09-04/` | doze capturas |
@@ -476,7 +476,7 @@ a árvore que segue para o `portao` do GitHub.
 **O Método não é rota inventariada**, e por isso a frase nova do Portal BASE não
 passa pela régua da voz: a Emenda 15 isenta o Método, o Sobre e o recibo, e
 `ROTAS_DO_INVENTARIO` não os traz. O que a governa é a amarra das decisões, que
-prende os bytes do ficheiro ao carimbo da §1.99.
+prende os bytes do ficheiro ao carimbo da §1.100.
 
 ## 10 · As capturas
 
