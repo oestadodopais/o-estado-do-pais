@@ -17,7 +17,7 @@
  *       os que `slugsDaCarta()` devolve;
  *   R3  cada página de distrito com tantas ligações de área quantos concelhos o
  *       seu ficheiro tem, e a lista com as mesmas;
- *   R4  a primeira página com 29 ligações de área, uma por unidade;
+ *   R4  a primeira página com nove ligações de área, uma por região;
  *   R5  nenhum `<a>` debaixo de um `role="img"`;
  *   R6  a atribuição da DGT presente onde o mapa está;
  *   R7  a ordem dos caminhos de cada `svg`, a das unidades do manifesto, e a
@@ -260,16 +260,22 @@ function r3(m) {
 /** R4 · a primeira página com 29 ligações de área, uma por unidade. */
 function r4(m) {
   const erros = [];
-  const esperado = m.pais.unidades.map((u) => u.slug).sort();
+  /* AS ÁREAS DA PRIMEIRA PÁGINA SÃO AS NOVE REGIÕES (F1.1d, 07.09.2026). Eram as
+     29 unidades da Carta desde a Emenda 20; o desenho passou a ter dois níveis, e
+     o do país são as nove. As 29 continuam a ter página e a estar na lista dos
+     nomes, e é a R2 que conta os 308 nas páginas delas. */
+  const esperado = REGIOES.filter((r) => !r.referencia)
+    .map((r) => r.slug)
+    .sort();
   for (const pg of m.paginas.filter((p) => p.tipo === 'inicio')) {
     const areas = areasDaPagina(pg, 'data-uni-porta').sort();
     if (areas.length !== esperado.length) {
-      erros.push(`${pg.rota}: ${areas.length} ligações de área para ${esperado.length} unidades.`);
+      erros.push(`${pg.rota}: ${areas.length} ligações de área para ${esperado.length} regiões.`);
       continue;
     }
     const diferentes = areas.filter((s, i) => s !== esperado[i]);
     if (diferentes.length) {
-      erros.push(`${pg.rota}: as áreas não são as 29 unidades (${diferentes.join(', ')}).`);
+      erros.push(`${pg.rota}: as áreas não são as nove regiões (${diferentes.join(', ')}).`);
     }
   }
   return erros;
@@ -700,6 +706,13 @@ function r9(m) {
       erros.push(`a região "${r.slug}" declara a caixa ${r.caixa.join(', ')} e o caminho dá ${caixa.join(', ')}.`);
     }
 
+    /* O PONTO REPRESENTATIVO DA REGIÃO CAI DENTRO DELA. É por ele que a régua
+       mede o alvo (o maior quadrado inscrito à volta dele, I82), e um ponto fora
+       do desenho daria um alvo de zero a uma região que se toca bem. */
+    if (!dentroDeAneis(aneis, r.ponto)) {
+      erros.push(`o ponto de "${r.slug}" (${r.ponto.join(', ')}) cai fora do desenho dela.`);
+    }
+
     /* NENHUM CONCELHO FORA DA SUA REGIÃO. O ponto representativo de cada
        concelho, que vive na grelha da região, volta ao campo do país pela caixa
        da região e tem de cair dentro do caminho dela. */
@@ -722,7 +735,7 @@ const REGRAS = [
   { id: 'R1', nome: 'os resumos de mapa/ batem com o manifesto', fn: r1 },
   { id: 'R2', nome: 'a junção: 308 concelhos, uma vez cada, com os slugs da Carta', fn: r2 },
   { id: 'R3', nome: 'cada página de distrito com tantas ligações quantos concelhos', fn: r3 },
-  { id: 'R4', nome: 'a primeira página com 29 ligações de área', fn: r4 },
+  { id: 'R4', nome: 'a primeira página com nove ligações de área', fn: r4 },
   { id: 'R5', nome: 'nenhuma ligação debaixo de role="img"', fn: r5 },
   { id: 'R6', nome: 'a atribuição da DGT onde o mapa está', fn: r6 },
   { id: 'R7', nome: 'a colação portuguesa nos artefactos e nas listas construídas', fn: r7 },
@@ -789,7 +802,7 @@ const ESTRAGOS = {
   R4: (m) => {
     const pg = m.paginas.find((p) => p.tipo === 'inicio');
     pg.root.querySelector('[data-uni-porta]').removeAttribute('data-uni-porta');
-    return 'uma unidade a menos nas áreas da primeira página';
+    return 'uma região a menos nas áreas da primeira página';
   },
   R5: (m) => {
     const pg = m.paginas.find((p) => p.tipo === 'inicio');
@@ -914,6 +927,11 @@ const ESTRAGOS = {
     const r = m.regioes.regioes.find((x) => x.slug === 'algarve') ?? m.regioes.regioes[0];
     r.d = r.d.replace(/M(-?\d+) (-?\d+)/g, (_, x, y) => `M${Number(x) + 40} ${y}`);
     return `o caminho de "${r.slug}" deslocado 40 u sem a caixa mudar`;
+  },
+  'R9 (o ponto da região)': (m) => {
+    const r = m.regioes.regioes.find((x) => x.slug === 'norte') ?? m.regioes.regioes[0];
+    r.ponto = [r.caixa[0] - 100, r.caixa[1] - 100];
+    return `o ponto de "${r.slug}" levado para fora do desenho dela`;
   },
   'R9 (um concelho fora)': (m) => {
     const r = m.regioes.regioes.find((x) => x.concelhos > 4);

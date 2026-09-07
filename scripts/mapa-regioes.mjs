@@ -609,7 +609,12 @@ function calcula() {
   const tolerancia = (larguraDoCampo) => (erroPx * larguraDoCampo) / colunaPx;
   const toleranciaDoPais = tolerancia(pais.campo.largura);
 
-  const daCasa = REGIOES.filter((r) => !r.referencia);
+  /* A ORDEM DAS NOVE É A COLAÇÃO PORTUGUESA, E NÃO A DA LISTA DA CASA. Em
+     `src/data/regioes.mjs` as regiões estão pela ordem em que entraram, que é a
+     ordem da régua da convergência e não muda; aqui o que se escreve é o DESENHO,
+     e a I84 fixou que os caminhos de um mapa e as listas que o acompanham vão na
+     colação portuguesa. É a mesma ordem que `mapa/pais.json` traz para as 29. */
+  const daCasa = REGIOES.filter((r) => !r.referencia).sort((a, b) => a.slug.localeCompare(b.slug, 'pt'));
   if (daCasa.length !== 9) throw new Falha(`a lista da casa tem ${daCasa.length} regiões, e não nove`);
 
   /* ------------------------------------------------------- as 29 unidades */
@@ -882,10 +887,28 @@ function calcula() {
       })
       .sort((a, b) => a.slug.localeCompare(b.slug, 'pt'));
 
+    /* O PONTO REPRESENTATIVO DA REGIÃO é o ponto do seu concelho MAIOR, e as duas
+       metades da regra têm razão escrita. É um ponto de um concelho, e por isso
+       está sempre dentro do desenho da região, que é o que a medida do alvo pede
+       (o maior quadrado inscrito à volta dele, I82); e é o do maior, e não o mais
+       perto do centro da caixa, porque numa região espalhada o centro da caixa
+       cai no mar: nos Açores, a primeira forma desta regra escolhia uma ilha
+       pequena e dava um alvo de 0 px a uma região que se toca. */
+    let ponto = null;
+    let maior = -1;
+    for (const c of dados.concelhos) {
+      const areaDele = Math.abs(c.aneis.reduce((t, a) => t + area(a), 0));
+      if (areaDele > maior) {
+        maior = areaDele;
+        ponto = c.ponto;
+      }
+    }
+
     regioes.push({
       slug: r.slug,
       codigo: r.codigo,
       parcela: [...dados.parcelas][0],
+      ponto: [Math.round(ponto[0]), Math.round(ponto[1])],
       concelhos: dados.concelhos.length,
       unidades: [...new Set(dados.unidades)].sort((a, b) => a.localeCompare(b, 'pt')),
       d: caminhoDeAneis(inteiros),

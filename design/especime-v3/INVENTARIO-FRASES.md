@@ -1162,11 +1162,11 @@ página do leitor.*
 | navegacao | Language | grelha-2 | viva | — |
 | navegacao | Main navigation | grelha-2 | viva | — |
 | navegacao | Mandatos, no tempo | grelha-2 | viva | — |
-| navegacao | Map of the districts and islands of Portugal, one area per unit. | grelha-2 | viva | — |
+| navegacao | Map of the districts and islands of Portugal, one area per unit. | grelha-2 | retirada | o F1.1d trocou o desenho da primeira página: o nível do país passou a ser as nove regiões NUTS II e as 29 unidades da Carta deixaram de ter área no mapa (continuam a ter página, a estar no menu e a estar na lista dos nomes). O nome acessível do desenho passou a ser o das nove regiões |
 | navegacao | Map of the municipalities, one area per municipality. | grelha-2 | viva | — |
 | navegacao | Mapa de pontos dos municípios de Portugal. | grelha-2 | viva | — |
 | navegacao | Mapa dos concelhos, com uma área por concelho. | grelha-2 | viva | — |
-| navegacao | Mapa dos distritos e das ilhas de Portugal, com uma área por unidade. | grelha-2 | viva | — |
+| navegacao | Mapa dos distritos e das ilhas de Portugal, com uma área por unidade. | grelha-2 | retirada | o F1.1d trocou o desenho da primeira página: o nível do país passou a ser as nove regiões NUTS II e as 29 unidades da Carta deixaram de ter área no mapa (continuam a ter página, a estar no menu e a estar na lista dos nomes). O nome acessível do desenho passou a ser o das nove regiões |
 | navegacao | Menu · Main navigation | grelha-2 | viva | — |
 | navegacao | Menu · Navegação principal | grelha-2 | viva | — |
 | navegacao | Navegação do rodapé | grelha-2 | viva | — |
@@ -2256,3 +2256,50 @@ apanha.
 | --- | --- | --- | --- | --- |
 | navegacao | Toque num cartão para ler a medida. | toque | viva | — |
 | navegacao | Tap a card to read the measure. | toque | viva | — |
+
+## O lugar do nome do mapa, e o rótulo das nove regiões na lista (F1.1d, 07.09.2026)
+
+O mapa da primeira página passou a ter dois níveis (as nove regiões NUTS II, e
+dentro de cada uma os seus concelhos) e um lugar fixo para o nome da área
+apontada. Seis frases novas, doze linhas com as duas edições.
+
+**AS QUATRO FRASES VAZIAS SÃO QUATRO, E NÃO DUAS**, e a razão é o gesto: quem tem
+rato passa por cima e quem tem dedo toca. As duas formas rendem-se as duas, e é a
+folha que mostra a que serve (`@media (hover: hover) and (pointer: fine)`), sem
+uma linha de guião; um `display: none` é lido pelo leitor de ecrã, e por isso
+quem ouve ouve uma só. O `hidden` que o guião troca diz de que nível é cada uma.
+
+**É `navegacao` e não `conteudo`**: nenhuma diz o que se mede, todas dizem o que
+fazer para chegar ao que se mede. É a mesma classe da linha da área de leitura em
+repouso e da linha vazia da busca dos concelhos.
+
+**«As regiões» é o rótulo do grupo novo da lista dos nomes**, que é o índice do
+desenho: as nove à frente, as 29 unidades da Carta por baixo, como estavam.
+
+**SEM GUIÃO NÃO SE VÊEM AS QUATRO**: o servidor rende o lugar do nome `hidden` e
+o guião acende-o, porque sem ele não há nível de região nem nome a preencher.
+Ficam declaradas na mesma, porque a régua lê o documento entregue, não o ecrã.
+
+**O NOME ACESSÍVEL DO LUGAR ENTRA** («A área apontada no mapa»): é o `aria-label`
+do grupo, e a régua recolhe-o. O nome acessível do próprio desenho, que muda com
+o nível, não é recolhido pela régua e por isso não se declara: uma linha `viva`
+que não se rende em rota nenhuma fecha a construção.
+
+**AS DUAS PORTAS NÃO ENTRAM** («Abrir →» e «← Voltar ao país»): vivem inteiras
+dentro de um `<a>`, e as medidas 8 e 9 da régua excluem esses blocos nos dois
+sentidos, como a leitura do índice de 03.09 escreveu sobre «Subir».
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | Toque numa região | mapa | viva | — |
+| navegacao | Passe o rato por uma região | mapa | viva | — |
+| navegacao | Toque num concelho | mapa | viva | — |
+| navegacao | Passe o rato por um concelho | mapa | viva | — |
+| navegacao | As regiões | mapa | viva | — |
+| navegacao | Tap a region | mapa | viva | — |
+| navegacao | Hover over a region | mapa | viva | — |
+| navegacao | Tap a municipality | mapa | viva | — |
+| navegacao | Hover over a municipality | mapa | viva | — |
+| navegacao | The regions | mapa | viva | — |
+| navegacao | A área apontada no mapa | mapa | viva | — |
+| navegacao | The area pointed at on the map | mapa | viva | — |
