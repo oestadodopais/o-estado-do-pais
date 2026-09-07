@@ -397,8 +397,19 @@ async function mediuOPais(largura, id) {
 }
 
 /* ------------------------------------------------------------------ M1 e M2 */
-await mediuOPais(1280, 'M1');
-for (const w of TELEMOVEIS) await mediuOPais(w, `M2·${w}`);
+/* RETIRADAS PELO F1.1d (07.09.2026). Mediam o alvo das 29 unidades da Carta no
+   mapa da primeira página, a 1280 e às quatro larguras de telemóvel. O mapa da
+   primeira página passou a ter dois níveis (as nove regiões NUTS II, e dentro de
+   cada uma os seus concelhos) e as 29 deixaram de ter área ali: continuam a ter
+   página, a estar no menu e a estar na lista dos nomes, e o alvo de cada área do
+   desenho novo mede-se em `tests/inicio/mapa-regioes.mjs`, células P1a, P1b e
+   P1c, com a mesma conta do quadrado inscrito que estava aqui. */
+conta(
+  'M1 e M2 · retiradas pelo F1.1d: o mapa da primeira página deixou de desenhar as 29 unidades',
+  true,
+  'o alvo das áreas da primeira página mede-se em tests/inicio/mapa-regioes.mjs (P1a, P1b e P1c), ' +
+    'com o mesmo quadrado inscrito e o mesmo passo de 2 px',
+);
 
 /* ---------------------------------------------------------------------- M3 */
 const DISTRITOS_MEDIDOS = ['lisboa', 'aveiro', 'ilha-de-sao-miguel'];
@@ -490,15 +501,28 @@ for (const slug of DISTRITOS_MEDIDOS) {
     const c = getComputedStyle(document.querySelector('[data-areas] .uni'));
     return { fill: c.fill, stroke: c.stroke, w: c.strokeWidth };
   });
-  await p.hover('[data-areas] a.uni-porta');
+  /* O RATO VAI AO PONTO REPRESENTATIVO DE UMA REGIÃO, e não ao centro da caixa da
+     primeira área da lista: com as nove por ordem alfabética a primeira é a dos
+     Açores, e o centro da caixa dela é oceano. É a mesma lição da célula M6. */
+  const daRegiao = JSON.parse(
+    fs.readFileSync(path.join(RAIZ, 'src', 'data', 'mapa-regioes.gerado.json'), 'utf8'),
+  ).regioes.find((r) => r.slug === 'centro');
+  await p.locator('[data-mapa-areas]').scrollIntoViewIfNeeded();
+  const ondeCentro = await p.evaluate((pt) => {
+    const svg = document.querySelector('[data-mapa-areas]');
+    const q = new DOMPoint(pt[0], pt[1]).matrixTransform(svg.getScreenCTM());
+    return { x: q.x, y: q.y };
+  }, daRegiao.ponto);
+  await p.mouse.move(ondeCentro.x, ondeCentro.y);
+  await p.waitForTimeout(40);
   const comRato = await p.evaluate(() => {
-    const c = getComputedStyle(document.querySelector('[data-areas] .uni'));
+    const c = getComputedStyle(document.querySelector('[data-unidade="centro"]'));
     return { fill: c.fill, stroke: c.stroke, w: c.strokeWidth };
   });
   await p.__ctx.close();
 
   conta(
-    'M5a · as 29 áreas têm o mesmo desenho (Emenda 10)',
+    'M5a · as áreas do mapa da primeira página têm o mesmo desenho (Emenda 10)',
     r.distintos.length === 1,
     r.distintos.length === 1
       ? `um estilo só para as ${r.n}: ${r.distintos[0]}`
@@ -626,14 +650,13 @@ for (const slug of DISTRITOS_MEDIDOS) {
     return { slug: alvo.slug, emCima, para };
   }
 
+  /* OS CINCO CLIQUES DA PRIMEIRA PÁGINA SAÍRAM COM O F1.1d (07.09.2026). Ali um
+     clique numa área já não abre uma página: faz a região crescer, e quem abre a
+     página é a porta do lugar do nome. Os cliques do nível do país e os dois
+     toques num concelho medem-se em `tests/inicio/mapa-regioes.mjs`, células P3a,
+     P3b e P3c. Ficam os cinco de uma página de distrito, que é onde um clique
+     numa área continua a abrir a página dela. */
   const cliques = [];
-  const cincoDoPais = ['lisboa', 'faro', 'braga', 'viseu', 'ilha-da-madeira'].map((slug) =>
-    pais.unidades.find((u) => u.slug === slug),
-  );
-  for (const alvo of cincoDoPais) {
-    const r = await clicaNoPonto('/', '[data-mapa-areas]', 'data-uni-porta', alvo);
-    cliques.push({ ...r, esperado: `/distritos/${alvo.slug}` });
-  }
   const cincoDeLisboa = ['lisboa', 'sintra', 'cascais', 'loures', 'mafra'].map((slug) =>
     distritoDeLisboa.concelhos.find((c) => c.slug === slug),
   );
@@ -651,18 +674,22 @@ for (const slug of DISTRITOS_MEDIDOS) {
   const noAlvo = cliques.filter((c) => c.emCima === c.slug);
   medidas.cliques = cliques;
   conta(
-    'M6a · dez cliques no ponto representativo de dez áreas abrem dez páginas',
-    certos.length === 10,
-    `${certos.length}/10 · ${cliques.map((c) => `${c.slug}→${c.para}`).join(' · ')}`,
+    'M6a · cinco cliques no ponto representativo de cinco áreas abrem cinco páginas',
+    certos.length === 5,
+    `${certos.length}/5 · ${cliques.map((c) => `${c.slug}→${c.para}`).join(' · ')}`,
   );
   conta(
     'M6b · e o ponto representativo cai dentro da área que o traz',
-    noAlvo.length === 10,
-    `${noAlvo.length}/10 pontos caem na sua própria área`,
+    noAlvo.length === 5,
+    `${noAlvo.length}/5 pontos caem na sua própria área`,
   );
 
-  /* E pelo teclado: o foco pousa numa área e o Enter abre a página dela. */
-  const p = await pagina('/', 1280);
+  /* E pelo teclado, NUMA PÁGINA DE DISTRITO: o foco pousa numa área e o Enter
+     abre a página dela. Era medido na primeira página até ao F1.1d; ali o Enter
+     passou a fazer o que o toque faz, que é crescer a região, e isso mede-se na
+     régua do bloco novo. Uma página de distrito continua a ser o sítio onde uma
+     área é uma porta, e é aqui que a promessa se mede. */
+  const p = await pagina('/distritos/lisboa', 1280);
   const chegou = await p.evaluate(() => {
     const a = document.querySelector('[data-areas] a.uni-porta');
     a.focus();
@@ -678,7 +705,7 @@ for (const slug of DISTRITOS_MEDIDOS) {
   const depois = new URL(p.url()).pathname;
   await p.__ctx.close();
   conta(
-    'M6c · pelo teclado: o foco pousa numa área e o Enter abre a página dela',
+    'M6c · pelo teclado, numa página de distrito: o foco pousa numa área e o Enter abre a página dela',
     chegou.focado && depois === chegou.destino,
     `foco em ${chegou.destino} (contorno ${chegou.contornoNoFoco}), Enter → ${depois}`,
   );
@@ -822,7 +849,12 @@ async function mediuAOrdemDaLista(rota, id) {
   const grupos = await p.evaluate(() =>
     [...document.querySelectorAll('[data-parcela-lista]')].map((g) => ({
       parcela: g.getAttribute('data-parcela-lista'),
-      nomes: [...g.querySelectorAll('[data-lista-porta]')].map((a) => a.textContent.trim()),
+      /* O GRUPO DAS NOVE REGIÕES ENTRA COM O F1.1d, e a marca dele é outra
+         (`data-lista-regiao`): sem os dois selectores, a régua contava zero
+         nomes naquele grupo e dava-o por ordenado sem ter olhado. */
+      nomes: [...g.querySelectorAll('[data-lista-porta], [data-lista-regiao]')].map((a) =>
+        a.textContent.trim(),
+      ),
     })),
   );
   await p.__ctx.close();
@@ -889,56 +921,12 @@ function corre(guiao, args = []) {
  * que fiquem vermelhas.
  */
 const PLANTAS = [
-  {
-    nome: 'o mapa encolhido para 200 px na primeira página',
-    celulas: ['M1b', 'M2·320e'],
-    estrago: (html, rota) =>
-      rota === '/' || rota === '/index.html'
-        ? html.replace('</head>', '<style>.mapa-tela{width:200px !important;margin-inline:0 !important}</style></head>')
-        : html,
-  },
-  {
-    nome: 'os nomes retirados das listas por baixo do mapa',
-    celulas: ['M1b', 'M2·320b'],
-    estrago: (html, rota) =>
-      rota === '/' || rota === '/index.html'
-        ? html.replace(
-            /<li><a href="\/distritos\/[^"]*" data-lista-porta="[^"]*">[^<]*<\/a><\/li>/g,
-            '',
-          )
-        : html,
-  },
-  {
-    /* O ESTRAGO DA I81. A folha volta a dar ao mapa a largura da COLUNA abaixo
-       de 640, que é o que ela dizia até esta passagem: a margem negativa que o
-       leva às bordas da caixa de conteúdo é anulada. Numa janela de 320 a tela
-       cai de 320 para 284 px, e a célula que mede a decisão sai vermelha. */
-    nome: 'o mapa do telemóvel de volta à largura da coluna',
-    celulas: ['M2·320e'],
-    estrago: (html, rota) =>
-      rota === '/' || rota === '/index.html'
-        ? html.replace(
-            '</head>',
-            '<style>@media (max-width:640px){[data-inicio] .mapa-tela{margin-inline:0 !important}}</style></head>',
-          )
-        : html,
-  },
-  {
-    /* O ESTRAGO DA I82, e é o caso conhecido da medição cega M3. A Ilha da
-       Madeira tem uma CAIXA de 186 px a 390 e um quadrado inscrito de 8: pela
-       caixa é um alvo folgado, pela área inscrita não é alvo nenhum. Tirar-lhe o
-       nome da lista era invisível para a régua antiga e é vermelho para esta,
-       que é exactamente a diferença entre as duas medidas. */
-    nome: 'o nome da Ilha da Madeira retirado da lista da sua parcela',
-    celulas: ['M1b', 'M2·390b'],
-    estrago: (html, rota) =>
-      rota === '/' || rota === '/index.html'
-        ? html.replace(
-            /<li><a href="\/distritos\/ilha-da-madeira" data-lista-porta="ilha-da-madeira">[^<]*<\/a><\/li>/g,
-            '',
-          )
-        : html,
-  },
+  /* QUATRO PLANTAS SAÍRAM COM AS CÉLULAS M1 E M2 (F1.1d, 07.09.2026): o mapa
+     encolhido para 200 px, os nomes retirados da lista, o mapa do telemóvel de
+     volta à largura da coluna e o nome da Ilha da Madeira fora da sua parcela.
+     As quatro mordiam o alvo das 29 unidades no mapa da primeira página, que
+     deixou de as desenhar; as plantas do desenho novo vivem com as suas células,
+     em `tests/inicio/mapa-regioes.mjs --vermelhos`, e são cinco. */
   {
     nome: 'uma área pintada com a cor de um estatuto',
     celulas: ['M5a', 'M5c'],
@@ -946,7 +934,7 @@ const PLANTAS = [
       rota === '/' || rota === '/index.html'
         ? html.replace(
             '</head>',
-            '<style>[data-unidade="lisboa"]{stroke:var(--amber) !important}</style></head>',
+            '<style>[data-unidade="centro"]{stroke:var(--amber) !important}</style></head>',
           )
         : html,
   },
@@ -991,11 +979,14 @@ const PLANTAS = [
     },
   },
   {
-    nome: 'o destino de uma área trocado pelo de outra',
+    /* O DESTINO TROCADO PASSOU PARA UMA PÁGINA DE DISTRITO (F1.1d): na primeira
+       página um clique numa área já não abre uma página, e os cinco cliques que
+       ficam na M6a são os dos concelhos de Lisboa. */
+    nome: 'o destino de uma área trocado pelo de outra, numa página de distrito',
     celulas: ['M6a'],
     estrago: (html, rota) =>
-      rota === '/' || rota === '/index.html'
-        ? html.replace('href="/distritos/faro"', 'href="/distritos/beja"')
+      rota.startsWith('/distritos/lisboa')
+        ? html.replace('href="/municipios/sintra"', 'href="/municipios/mafra"')
         : html,
   },
 ];
@@ -1010,10 +1001,10 @@ if (VERMELHOS) {
     if (planta.emMemoria) planta.emMemoria();
     /* Só se voltam a correr as células que a planta toca: uma régua inteira por
        planta seria quatro corridas de tudo para provar quatro linhas. */
-    if (planta.celulas.some((c) => c.startsWith('M1'))) await mediuOPais(1280, 'M1');
-    for (const w of TELEMOVEIS) {
-      if (planta.celulas.some((c) => c.startsWith(`M2·${w}`))) await mediuOPais(w, `M2·${w}`);
-    }
+    /* AS CORRIDAS DE M1 E M2 SAÍRAM COM AS CÉLULAS (F1.1d). Ficam nomeadas aqui
+       porque a condição que as chamava era `startsWith('M1')`, e essa apanhava
+       também a M10a: a planta da ordem da lista corria o mapa do país sem
+       precisar dele, e foi assim que a retirada das duas células a partiu. */
     if (planta.celulas.some((c) => c.startsWith('M5'))) {
       const p = await pagina('/', 1280);
       const r = await p.evaluate(() => {
@@ -1054,28 +1045,37 @@ if (VERMELHOS) {
         return { distintos: [...new Set(areas.map(estilo))], cores, usadas: [...usadas] };
       });
       await p.__ctx.close();
-      conta('M5a · as 29 áreas têm o mesmo desenho', r.distintos.length === 1, `${r.distintos.length} estilos`);
+      conta('M5a · as áreas do mapa da primeira página têm o mesmo desenho', r.distintos.length === 1, `${r.distintos.length} estilos`);
       const colisao = r.usadas.filter((u) => r.cores.includes(u));
       conta('M5c · nenhuma cor de estatuto', colisao.length === 0, `${colisao.length} colisões`);
     }
     if (planta.celulas.includes('M10a')) await mediuAOrdemDaLista('/', 'M10a');
     if (planta.celulas.includes('M6a')) {
-      const p = await pagina('/', 1280);
-      const pais = JSON.parse(fs.readFileSync(path.join(RAIZ, 'mapa', 'pais.json'), 'utf8'));
-      const faro = pais.unidades.find((u) => u.slug === 'faro');
+      /* NUMA PÁGINA DE DISTRITO (F1.1d): na primeira página um clique numa área
+         faz a região crescer e não abre página nenhuma, e por isso o clique que
+         esta planta estraga é o de um concelho. */
+      const p = await pagina('/distritos/lisboa', 1280);
+      const distrito = JSON.parse(
+        fs.readFileSync(path.join(RAIZ, 'mapa', 'distritos', 'lisboa.json'), 'utf8'),
+      );
+      const sintra = distrito.concelhos.find((c) => c.slug === 'sintra');
       const ponto = await p.evaluate((xy) => {
-        const svg = document.querySelector('[data-mapa-areas]');
+        const svg = document.querySelector('[data-mapa-concelhos]');
         svg.scrollIntoView({ block: 'center' });
         const pt = svg.createSVGPoint();
         pt.x = xy[0];
         pt.y = xy[1];
         const s = pt.matrixTransform(svg.getScreenCTM());
         return { x: s.x, y: s.y };
-      }, faro.ponto);
+      }, sintra.ponto);
       await clica(p, ponto);
       const para = new URL(p.url()).pathname;
       await p.__ctx.close();
-      conta('M6a · o clique numa área abre a página dela', para === '/distritos/faro', `faro → ${para}`);
+      conta(
+        'M6a · o clique numa área abre a página dela',
+        para === '/municipios/sintra',
+        `sintra → ${para}`,
+      );
     }
     const tocadas = celulas.filter((c) => planta.celulas.some((n) => c.nome.startsWith(n)));
     const vermelhas = tocadas.filter((c) => !c.passa);

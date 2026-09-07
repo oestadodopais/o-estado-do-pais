@@ -1,0 +1,651 @@
+{
+  "celulas": [
+    {
+      "nome": "P1a · a 390, as nove regiões medidas pelo quadrado inscrito",
+      "passa": true,
+      "prova": "desenho 390 × 514 px · 9 áreas · 3 de 9 chegam aos 44 px (mediana 20 px; a maior 78 px, a menor 2 px)"
+    },
+    {
+      "nome": "P1a · a 1280, as nove regiões medidas pelo quadrado inscrito",
+      "passa": true,
+      "prova": "desenho 518 × 683 px · 9 áreas · 3 de 9 chegam aos 44 px (mediana 26 px; a maior 102 px, a menor 2 px)"
+    },
+    {
+      "nome": "P1b · a 390, os 308 concelhos medidos região a região, no nível em que se tocam",
+      "passa": true,
+      "prova": "308 de 308 medidos em 9 regiões, todos com o ponto dentro da sua área · 20 chegam aos 44 px · mediana 16 px (16 px sem os de lado zero) · 2 com menos de 2 px · o menor com lado medível pediria um desenho de 8580 px de largura"
+    },
+    {
+      "nome": "P1c · a rede de nomes responde pelas áreas abaixo de 44 px",
+      "passa": true,
+      "prova": "a lista dos nomes tem 9 regiões e 29 unidades da Carta · o índice dos concelhos tem 308 ligações"
+    },
+    {
+      "nome": "P2a · pt: o nome no lugar ao passar e ao focar, nas nove regiões",
+      "passa": true,
+      "prova": "9 de 9 · «Açores» … «Península de Setúbal» · cada porta na sua página"
+    },
+    {
+      "nome": "P2b · pt: o nome no lugar numa amostra de 30 concelhos, nos três níveis de região maiores",
+      "passa": true,
+      "prova": "30 de 30 · «Alfândega da Fé» … «Sousel»"
+    },
+    {
+      "nome": "P2a · en: o nome no lugar ao passar e ao focar, nas nove regiões",
+      "passa": true,
+      "prova": "9 de 9 · «Azores» … «Setúbal Peninsula» · cada porta na sua página"
+    },
+    {
+      "nome": "P2b · en: o nome no lugar numa amostra de 30 concelhos, nos três níveis de região maiores",
+      "passa": true,
+      "prova": "30 de 30 · «Alfândega da Fé» … «Sousel»"
+    },
+    {
+      "nome": "P3a · com o dedo: a região cresce sem navegar, o primeiro toque num concelho diz o nome, o segundo abre",
+      "passa": true,
+      "prova": "a região: nível «regiao», 86 concelhos, endereço «/#regiao=norte», nome «Norte» com a porta «/regioes/norte» · o primeiro toque no concelho deixa o endereço em «/» e diz «Montalegre» · o segundo abre «/municipios/montalegre»"
+    },
+    {
+      "nome": "P3b · com o rato: a porta de voltar sobe um nível, e o botão de voltar do navegador desfaz o que o toque escreveu",
+      "passa": true,
+      "prova": "clique → «#regiao=alentejo» (nível regiao) · «Voltar ao país» → «sem fragmento» (nível pais) · voltar do navegador → «#regiao=alentejo» (nível regiao)"
+    },
+    {
+      "nome": "P3c · a porta do lugar do nome abre a página da região apontada",
+      "passa": true,
+      "prova": "a porta diz «/regioes/algarve» e leva a «/regioes/algarve»"
+    },
+    {
+      "nome": "P4 · pt: sem guião, nove ligações para as nove páginas, a lista fechada e o «#regiao=» ignorado",
+      "passa": true,
+      "prova": "9 áreas, 9 com destino em «/regioes/», 9 de 9 respondem 200 · gaveta fechada com 9 regiões e 29 unidades · o lugar do nome não se rende · o segundo nível tem 0 nós"
+    },
+    {
+      "nome": "P4 · en: sem guião, nove ligações para as nove páginas, a lista fechada e o «#regiao=» ignorado",
+      "passa": true,
+      "prova": "9 áreas, 9 com destino em «/en/regions/», 9 de 9 respondem 200 · gaveta fechada com 9 regiões e 29 unidades · o lugar do nome não se rende · o segundo nível tem 0 nós"
+    },
+    {
+      "nome": "P5 · a altura de `/` a 390 com a gaveta dos nomes fechada é menor do que com ela aberta",
+      "passa": true,
+      "prova": "com a gaveta aberta 3953 px, fechada 3263 px (690 px a menos) · sem guião 4048 px"
+    },
+    {
+      "nome": "P7a · o lugar do nome com contraste de 4,5:1 no tema claro",
+      "passa": true,
+      "prova": "vazio 6.24:1 · nome 16.39:1 · porta 16.39:1"
+    },
+    {
+      "nome": "P7a · o lugar do nome com contraste de 4,5:1 no tema escuro",
+      "passa": true,
+      "prova": "vazio 9.52:1 · nome 15.38:1 · porta 15.38:1"
+    },
+    {
+      "nome": "P7b · o lugar do nome é uma região viva com nome acessível, e o que ela diz muda com a área apontada",
+      "passa": true,
+      "prova": "em repouso: - group \"A área apontada no mapa\": - paragraph: Passe o rato por uma região - paragraph · ao apontar: - group \"A área apontada no mapa\": - paragraph: Norte - paragraph: - link \"Abrir →\": - /ur"
+    },
+    {
+      "nome": "P7c · a frase do lugar declara `aria-live=\"polite\"`",
+      "passa": true,
+      "prova": "aria-live=\"polite\""
+    }
+  ],
+  "medidas": {
+    "alvos": {
+      "regioes_390": {
+        "desenho": [
+          390,
+          514
+        ],
+        "chegam": 3,
+        "areas": 9,
+        "mediana": 20,
+        "unidades": [
+          {
+            "slug": "centro",
+            "inscrito": 78,
+            "caixa": 139
+          },
+          {
+            "slug": "alentejo",
+            "inscrito": 72,
+            "caixa": 184
+          },
+          {
+            "slug": "norte",
+            "inscrito": 54,
+            "caixa": 165
+          },
+          {
+            "slug": "oeste-e-vale-do-tejo",
+            "inscrito": 30,
+            "caixa": 105
+          },
+          {
+            "slug": "algarve",
+            "inscrito": 20,
+            "caixa": 99
+          },
+          {
+            "slug": "peninsula-de-setubal",
+            "inscrito": 16,
+            "caixa": 47
+          },
+          {
+            "slug": "grande-lisboa",
+            "inscrito": 8,
+            "caixa": 41
+          },
+          {
+            "slug": "madeira",
+            "inscrito": 4,
+            "caixa": 224
+          },
+          {
+            "slug": "acores",
+            "inscrito": 2,
+            "caixa": 145
+          }
+        ]
+      },
+      "regioes_1280": {
+        "desenho": [
+          518,
+          683
+        ],
+        "chegam": 3,
+        "areas": 9,
+        "mediana": 26,
+        "unidades": [
+          {
+            "slug": "centro",
+            "inscrito": 102,
+            "caixa": 184
+          },
+          {
+            "slug": "alentejo",
+            "inscrito": 98,
+            "caixa": 244
+          },
+          {
+            "slug": "norte",
+            "inscrito": 70,
+            "caixa": 220
+          },
+          {
+            "slug": "oeste-e-vale-do-tejo",
+            "inscrito": 38,
+            "caixa": 139
+          },
+          {
+            "slug": "algarve",
+            "inscrito": 26,
+            "caixa": 131
+          },
+          {
+            "slug": "peninsula-de-setubal",
+            "inscrito": 22,
+            "caixa": 63
+          },
+          {
+            "slug": "grande-lisboa",
+            "inscrito": 8,
+            "caixa": 54
+          },
+          {
+            "slug": "madeira",
+            "inscrito": 8,
+            "caixa": 297
+          },
+          {
+            "slug": "acores",
+            "inscrito": 2,
+            "caixa": 193
+          }
+        ]
+      },
+      "concelhos_390": {
+        "total": 308,
+        "chegam": 20,
+        "mediana": 16,
+        "porRegiao": {
+          "acores": {
+            "concelhos": 19,
+            "chegam": 0,
+            "mediana": 2,
+            "menor": 0,
+            "abaixo": [
+              "corvo 0",
+              "lagoa-ilha-de-sao-miguel 0",
+              "calheta-de-sao-jorge 2",
+              "lajes-das-flores 2",
+              "lajes-do-pico 2",
+              "nordeste 2",
+              "povoacao 2",
+              "santa-cruz-da-graciosa 2",
+              "santa-cruz-das-flores 2",
+              "sao-roque-do-pico 2",
+              "velas 2",
+              "vila-do-porto 2",
+              "vila-franca-do-campo 2",
+              "angra-do-heroismo 4",
+              "horta 4",
+              "madalena 4",
+              "ponta-delgada 4",
+              "praia-da-vitoria 4",
+              "ribeira-grande 4"
+            ]
+          },
+          "alentejo": {
+            "concelhos": 47,
+            "chegam": 6,
+            "mediana": 28,
+            "menor": 10,
+            "abaixo": [
+              "borba 10",
+              "vila-vicosa 10",
+              "cuba 14",
+              "sines 14",
+              "sousel 14",
+              "barrancos 16",
+              "marvao 16",
+              "vendas-novas 16",
+              "mourao 18",
+              "vidigueira 18",
+              "gaviao 22",
+              "viana-do-alentejo 22",
+              "alter-do-chao 24",
+              "campo-maior 24",
+              "crato 24",
+              "fronteira 24",
+              "alvito 26",
+              "estremoz 26",
+              "monforte 26",
+              "mora 26",
+              "ourique 26",
+              "arronches 28",
+              "castelo-de-vide 28",
+              "portalegre 28",
+              "redondo 28",
+              "avis 30",
+              "reguengos-de-monsaraz 30",
+              "arraiolos 32",
+              "moura 32",
+              "nisa 32",
+              "portel 32",
+              "grandola 34",
+              "alandroal 36",
+              "elvas 36",
+              "ferreira-do-alentejo 36",
+              "ponte-de-sor 36",
+              "aljustrel 38",
+              "castro-verde 38",
+              "almodovar 40",
+              "montemor-o-novo 40",
+              "santiago-do-cacem 42"
+            ]
+          },
+          "algarve": {
+            "concelhos": 16,
+            "chegam": 2,
+            "mediana": 24,
+            "menor": 8,
+            "abaixo": [
+              "vila-real-de-santo-antonio 8",
+              "lagoa-faro 14",
+              "albufeira 16",
+              "faro 16",
+              "olhao 16",
+              "aljezur 20",
+              "sao-bras-de-alportel 20",
+              "vila-do-bispo 22",
+              "portimao 24",
+              "lagos 26",
+              "monchique 28",
+              "castro-marim 32",
+              "alcoutim 34",
+              "tavira 42"
+            ]
+          },
+          "centro": {
+            "concelhos": 77,
+            "chegam": 2,
+            "mediana": 16,
+            "menor": 6,
+            "abaixo": [
+              "castanheira-de-pera 6",
+              "batalha 8",
+              "manteigas 8",
+              "belmonte 10",
+              "estarreja 10",
+              "ilhavo 10",
+              "miranda-do-corvo 10",
+              "oliveira-de-frades 10",
+              "oliveira-do-bairro 10",
+              "sever-do-vouga 10",
+              "vila-nova-de-poiares 10",
+              "albergaria-a-velha 12",
+              "carregal-do-sal 12",
+              "condeixa-a-nova 12",
+              "figueiro-dos-vinhos 12",
+              "fornos-de-algodres 12",
+              "mealhada 12",
+              "murtosa 12",
+              "nelas 12",
+              "pedrogao-grande 12",
+              "penalva-do-castelo 12",
+              "penela 12",
+              "ansiao 14",
+              "aveiro 14",
+              "gois 14",
+              "oliveira-do-hospital 14",
+              "ovar 14",
+              "penacova 14",
+              "santa-comba-dao 14",
+              "satao 14",
+              "vouzela 14",
+              "aguiar-da-beira 16",
+              "alvaiazere 16",
+              "arganil 16",
+              "celorico-da-beira 16",
+              "lousa 16",
+              "mangualde 16",
+              "marinha-grande 16",
+              "mira 16",
+              "tabua 16",
+              "vagos 16",
+              "vila-nova-de-paiva 16",
+              "anadia 18",
+              "montemor-o-velho 18",
+              "porto-de-mos 18",
+              "soure 18",
+              "vila-velha-de-rodao 18",
+              "cantanhede 20",
+              "castro-daire 20",
+              "coimbra 20",
+              "vila-de-rei 20",
+              "covilha 22",
+              "figueira-da-foz 22",
+              "gouveia 22",
+              "meda 22",
+              "mortagua 22",
+              "pampilhosa-da-serra 22",
+              "sao-pedro-do-sul 22",
+              "agueda 24",
+              "oleiros 24",
+              "seia 24",
+              "proenca-a-nova 26",
+              "serta 26",
+              "tondela 26",
+              "almeida 28",
+              "pinhel 28",
+              "pombal 28",
+              "trancoso 28",
+              "fundao 30",
+              "leiria 30",
+              "viseu 30",
+              "figueira-de-castelo-rodrigo 32",
+              "guarda 36",
+              "penamacor 36",
+              "sabugal 36"
+            ]
+          },
+          "grande-lisboa": {
+            "concelhos": 9,
+            "chegam": 5,
+            "mediana": 46,
+            "menor": 20,
+            "abaixo": [
+              "amadora 20",
+              "odivelas 20",
+              "oeiras 28",
+              "cascais 36"
+            ]
+          },
+          "madeira": {
+            "concelhos": 11,
+            "chegam": 0,
+            "mediana": 14,
+            "menor": 8,
+            "abaixo": [
+              "porto-santo 8",
+              "camara-de-lobos 10",
+              "ponta-do-sol 10",
+              "machico 12",
+              "porto-moniz 12",
+              "ribeira-brava 14",
+              "calheta 16",
+              "santa-cruz 16",
+              "sao-vicente 16",
+              "funchal 18",
+              "santana 20"
+            ]
+          },
+          "norte": {
+            "concelhos": 86,
+            "chegam": 0,
+            "mediana": 14,
+            "menor": 2,
+            "abaixo": [
+              "sao-joao-da-madeira 2",
+              "espinho 4",
+              "gondomar 4",
+              "mesao-frio 4",
+              "vizela 4",
+              "maia 6",
+              "matosinhos 6",
+              "porto 6",
+              "santa-marta-de-penaguiao 6",
+              "amares 8",
+              "esposende 8",
+              "pacos-de-ferreira 8",
+              "penedono 8",
+              "peso-da-regua 8",
+              "ponte-da-barca 8",
+              "povoa-de-varzim 8",
+              "tarouca 8",
+              "valongo 8",
+              "armamar 10",
+              "lamego 10",
+              "lousada 10",
+              "murca 10",
+              "povoa-de-lanhoso 10",
+              "santo-tirso 10",
+              "tabuaco 10",
+              "trofa 10",
+              "vila-nova-de-cerveira 10",
+              "baiao 12",
+              "braga 12",
+              "caminha 12",
+              "castelo-de-paiva 12",
+              "felgueiras 12",
+              "freixo-de-espada-a-cinta 12",
+              "marco-de-canaveses 12",
+              "paredes 12",
+              "paredes-de-coura 12",
+              "penafiel 12",
+              "resende 12",
+              "ribeira-de-pena 12",
+              "sabrosa 12",
+              "vale-de-cambra 12",
+              "valenca 12",
+              "vila-do-conde 12",
+              "boticas 14",
+              "celorico-de-basto 14",
+              "cinfaes 14",
+              "melgaco 14",
+              "mondim-de-basto 14",
+              "oliveira-de-azemeis 14",
+              "sernancelhe 14",
+              "vila-nova-de-famalicao 14",
+              "vila-nova-de-gaia 14",
+              "vila-verde 14",
+              "arouca 16",
+              "moimenta-da-beira 16",
+              "moncao 16",
+              "santa-maria-da-feira 16",
+              "sao-joao-da-pesqueira 16",
+              "terras-de-bouro 16",
+              "vieira-do-minho 16",
+              "vila-nova-de-foz-coa 16",
+              "amarante 18",
+              "cabeceiras-de-basto 18",
+              "carrazeda-de-ansiaes 18",
+              "chaves 18",
+              "fafe 18",
+              "guimaraes 18",
+              "miranda-do-douro 18",
+              "ponte-de-lima 18",
+              "vila-flor 18",
+              "alijo 20",
+              "macedo-de-cavaleiros 20",
+              "viana-do-castelo 20",
+              "alfandega-da-fe 22",
+              "barcelos 22",
+              "mirandela 22",
+              "torre-de-moncorvo 22",
+              "valpacos 22",
+              "vila-pouca-de-aguiar 22",
+              "vila-real 22",
+              "vimioso 22",
+              "arcos-de-valdevez 24",
+              "montalegre 26",
+              "mogadouro 30",
+              "vinhais 30",
+              "braganca 42"
+            ]
+          },
+          "oeste-e-vale-do-tejo": {
+            "concelhos": 34,
+            "chegam": 2,
+            "mediana": 20,
+            "menor": 4,
+            "abaixo": [
+              "entroncamento 4",
+              "vila-nova-da-barquinha 6",
+              "sobral-de-monte-agraco 8",
+              "constancia 10",
+              "arruda-dos-vinhos 12",
+              "bombarral 12",
+              "golega 12",
+              "alpiarca 14",
+              "nazare 14",
+              "peniche 14",
+              "alcanena 16",
+              "azambuja 16",
+              "obidos 16",
+              "sardoal 16",
+              "almeirim 18",
+              "cartaxo 18",
+              "caldas-da-rainha 20",
+              "ferreira-do-zezere 20",
+              "lourinha 20",
+              "cadaval 24",
+              "macao 26",
+              "torres-novas 26",
+              "salvaterra-de-magos 28",
+              "alcobaca 30",
+              "ourem 30",
+              "rio-maior 30",
+              "tomar 30",
+              "alenquer 34",
+              "santarem 34",
+              "benavente 36",
+              "torres-vedras 40",
+              "abrantes 42"
+            ]
+          },
+          "peninsula-de-setubal": {
+            "concelhos": 9,
+            "chegam": 3,
+            "mediana": 34,
+            "menor": 16,
+            "abaixo": [
+              "barreiro 16",
+              "almada 26",
+              "moita 26",
+              "setubal 26",
+              "alcochete 34",
+              "seixal 42"
+            ]
+          }
+        }
+      }
+    },
+    "rede": {
+      "regioes": 9,
+      "unidades": 29,
+      "concelhos": 308
+    },
+    "nome": {
+      "pt": {
+        "regioes": 9,
+        "concelhos": 30,
+        "errados": 0
+      },
+      "en": {
+        "regioes": 9,
+        "concelhos": 30,
+        "errados": 0
+      }
+    },
+    "semGuiao_pt": {
+      "areas": 9,
+      "comDestino": 9,
+      "destinos": [
+        "/regioes/acores",
+        "/regioes/alentejo",
+        "/regioes/algarve",
+        "/regioes/centro",
+        "/regioes/grande-lisboa",
+        "/regioes/madeira",
+        "/regioes/norte",
+        "/regioes/oeste-e-vale-do-tejo",
+        "/regioes/peninsula-de-setubal"
+      ],
+      "gaveta": false,
+      "naLista": 29,
+      "regioesNaLista": 9,
+      "lugar": true,
+      "segundoNivel": 0
+    },
+    "semGuiao_en": {
+      "areas": 9,
+      "comDestino": 9,
+      "destinos": [
+        "/en/regions/acores",
+        "/en/regions/alentejo",
+        "/en/regions/algarve",
+        "/en/regions/centro",
+        "/en/regions/grande-lisboa",
+        "/en/regions/madeira",
+        "/en/regions/norte",
+        "/en/regions/oeste-e-vale-do-tejo",
+        "/en/regions/peninsula-de-setubal"
+      ],
+      "gaveta": false,
+      "naLista": 29,
+      "regioesNaLista": 9,
+      "lugar": true,
+      "segundoNivel": 0
+    },
+    "altura": {
+      "antes": 3953,
+      "depois": 3263,
+      "semGuiao": 4048
+    },
+    "contraste": {
+      "light": {
+        "vazio": 6.24,
+        "nome": 16.39,
+        "porta": 16.39
+      },
+      "dark": {
+        "vazio": 9.52,
+        "nome": 15.38,
+        "porta": 15.38
+      }
+    }
+  }
+}
