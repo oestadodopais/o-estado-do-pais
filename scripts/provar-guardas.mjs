@@ -527,6 +527,30 @@ caso(
 );
 caso('eDataDeEdicao/nulo', false, eDataDeEdicao(null), 'null não é uma linha.');
 
+/* A DATA TEM DE SER UM DIA DO CALENDÁRIO, e não só um padrão de algarismos
+   (leitura a frio do Codex de 07.09.2026, Major 8). O guarda antigo lia
+   `/^\d{4}-\d{2}-\d{2}$/` e dava por boa uma data que não existe: a página
+   escrevia-a na forma da casa, o portão comparava-a com o `git` só quando há
+   história, e a I9 comparava-a com o `git` na CI. Fora daí, ia impressa. */
+caso(
+  'eDataDeEdicao/dia-que-nao-existe',
+  false,
+  eDataDeEdicao({ ...EDICAO_BOA, data: '2026-99-99' }),
+  'o mês 99 e o dia 99 passavam no padrão de algarismos e não são um dia do calendário.',
+);
+caso(
+  'eDataDeEdicao/30-de-fevereiro',
+  false,
+  eDataDeEdicao({ ...EDICAO_BOA, data: '2026-02-30' }),
+  'fevereiro de 2026 tem 28 dias: uma data que o calendário não tem não é a data de um commit.',
+);
+caso(
+  'eDataDeEdicao/dia-real',
+  true,
+  eDataDeEdicao({ ...EDICAO_BOA, data: '2024-02-29' }),
+  '2024 é bissexto: o guarda tem de aceitar o dia que existe, e não só recusar o que não existe.',
+);
+
 caso(
   'eDatasDePublicacao/completo',
   true,
@@ -558,6 +582,29 @@ caso(
   'uma linha má estraga o ficheiro: a construção lê-o todo e não pode escolher metade.',
 );
 caso('eDatasDePublicacao/nulo', false, eDatasDePublicacao(null), 'um ficheiro vazio dá null.');
+
+/* AS CHAVES SÃO ÚNICAS (Major 8, a segunda metade). A construção lê o ficheiro
+   para um `Map` com a chave `slug/lang`: duas linhas com a mesma chave não dão
+   erro nenhum, e a segunda apaga a primeira em silêncio. Duas datas para a mesma
+   edição não são um ficheiro com uma linha a mais: são um ficheiro que não sabe
+   qual é a data, e a construção escolhia a última por acidente da ordem. */
+caso(
+  'eDatasDePublicacao/chave-repetida',
+  false,
+  eDatasDePublicacao({ edicoes: [EDICAO_BOA, { ...EDICAO_BOA, data: '2026-09-04' }] }),
+  'duas linhas para onde-esta-a-agua (pt): o mapa da construção guardava só a última.',
+);
+caso(
+  'eDatasDePublicacao/mesmo-trabalho-outra-lingua',
+  true,
+  eDatasDePublicacao({
+    edicoes: [
+      EDICAO_BOA,
+      { ...EDICAO_BOA, lang: 'en', ficheiro: 'studies-src/onde-esta-a-agua/en.html' },
+    ],
+  }),
+  'a chave é o par slug e língua: as duas edições do mesmo trabalho não são uma repetição.',
+);
 
 /* ------------------------------------------ as listas de que os tipos derivam */
 

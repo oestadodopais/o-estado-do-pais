@@ -22,12 +22,15 @@
  * ---------------------------------------------------------------------------
  * AS TRÊS CONTAS
  * ---------------------------------------------------------------------------
- * 1. **as páginas contra o ficheiro** (sempre, com ou sem história). Cada data
- *    impressa com `data-nonledger="data-do-repositorio"` em `dist/` tem de ser
- *    uma data que `src/data/datas-de-publicacao.json` declara; e cada edição
- *    declarada no ficheiro tem de ter a sua data impressa na página dessa
- *    edição. É esta conta que teria fechado a construção da Vercel a 04.09: as
- *    páginas diziam 04.09.2026 e o ficheiro diz 12.08.2026.
+ * 1. **as páginas contra o ficheiro** (sempre, com ou sem história). Em duas
+ *    metades. (1a) Cada data impressa com `data-nonledger="data-do-repositorio"`
+ *    em `dist/` tem de ser uma data que `src/data/datas-de-publicacao.json`
+ *    declara. É esta que teria fechado a construção da Vercel a 04.09: as
+ *    páginas diziam 04.09.2026 e o ficheiro diz 12.08.2026. (1b) E cada data
+ *    impressa vai PRESA À SUA EDIÇÃO, nas linhas dos dois índices e nas páginas
+ *    dos trabalhos, nas duas edições do sítio: uma data trocada por outra data
+ *    já declarada passava a 1a, e passava a 1b antiga, que só olhava à página da
+ *    edição e saltava em silêncio o resto (leitura a frio de 07.09, Major 3).
  *
  * 2. **a caixa que conta** (sempre). A caixa «Datas de publicação por confirmar
  *    em N edições» de `/estudos` rende-se se e só se alguma edição declarada em
@@ -56,6 +59,8 @@ const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(RAIZ, 'dist');
 const FICHEIRO = path.join('src', 'data', 'datas-de-publicacao.json');
 const MARCA = 'data-nonledger="data-do-repositorio"';
+/** A mesma marca, como seletor: escreve-se uma vez e lê-se nos dois sítios. */
+const SELETOR = `[${MARCA}]`;
 
 const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
 const verde = (s) => `\x1b[32m${s}\x1b[0m`;
@@ -123,22 +128,46 @@ const paginas = html(DIST);
 const rotaDe = (f) =>
   '/' + path.relative(DIST, f).replace(/\\/g, '/').replace(/\/?index\.html$/, '').replace(/\.html$/, '');
 
+/* --- as rotas que imprimem datas de edição -------------------------------- */
+
+const INDICES = new Set(['/estudos', '/en/studies']);
+/** `/estudos/<slug>` e `/en/studies/<slug>`, e não `/estudos/<slug>/texto`. */
+const ROTA_DA_EDICAO = /^\/(?:estudos|en\/studies)\/([^/]+)$/;
+
 /* --- 1a. nenhuma data impressa fora do que o ficheiro declara ------------- */
 
 let impressas = 0;
 /** @type {Map<string, Set<string>>} */
 const porRota = new Map();
+/**
+ * AS PÁGINAS QUE A CONTA 1b PRENDE, GUARDADAS JÁ ANALISADAS.
+ *
+ * Entram aqui as que trazem a marca E TAMBÉM os dois índices e as páginas dos
+ * trabalhos que NÃO a trazem. A primeira passagem saltava em silêncio uma página
+ * sem marca (leitura a frio de 07.09, Major 3), e é exactamente aí que mora o
+ * modo de falhar que este bloco veio fechar: uma página que DEIXA de imprimir a
+ * data não é uma página conferida, é uma página que ninguém olhou.
+ *
+ * @type {{rota: string, doc: ReturnType<typeof parse>, slug: string|null}[]}
+ */
+const paraPrender = [];
 
 for (const f of paginas) {
   const cru = fs.readFileSync(f, 'utf8');
-  /* A prova barata primeiro: a marca é uma cadeia, e a esmagadora maioria das
-     páginas do sítio não a tem. Só as que a têm se analisam. */
-  if (!cru.includes(MARCA)) continue;
   const rota = rotaDe(f);
+  const eIndice = INDICES.has(rota);
+  const daEdicao = ROTA_DA_EDICAO.exec(rota);
+  /* A prova barata primeiro: a marca é uma cadeia, e a esmagadora maioria das
+     páginas do sítio não a tem nem é uma das rotas que imprimem datas. */
+  const temMarca = cru.includes(MARCA);
+  if (!temMarca && !eIndice && !daEdicao) continue;
   const doc = parse(cru);
+  if (eIndice || daEdicao) paraPrender.push({ rota, doc, slug: daEdicao ? daEdicao[1] : null });
+  else paraPrender.push({ rota, doc, slug: null });
+  if (!temMarca) continue;
   /** @type {Set<string>} */
   const nesta = new Set();
-  for (const el of doc.querySelectorAll('[data-nonledger="data-do-repositorio"]')) {
+  for (const el of doc.querySelectorAll(SELETOR)) {
     const texto = el.textContent.trim();
     if (!/^\d{2}\.\d{2}\.\d{4}$/.test(texto)) continue;
     impressas++;
@@ -161,25 +190,261 @@ if (impressas === 0) {
   );
 }
 
-/* --- 1b. cada edição declarada tem a sua data na sua página --------------- */
+/* --- 1b. cada data impressa presa à SUA edição, em todas as páginas ------- */
 
-for (const e of edicoes) {
-  const rota = e.lang === 'pt' ? `/estudos/${e.slug}` : `/en/studies/${e.slug}`;
-  const nesta = porRota.get(rota);
-  if (!nesta) {
-    /* Uma edição sem página construída não é uma falha deste passo: o arquivo
-       decide que páginas existem, e `check-registo` mede isso. O que este passo
-       exige é que a página que EXISTA diga a data certa. */
-    continue;
+/**
+ * O QUE A PRIMEIRA PASSAGEM DEIXAVA PASSAR (leitura a frio do Codex de
+ * 07.09.2026, Major 3).
+ *
+ * A conta 1a pergunta se a data impressa PERTENCE AO CONJUNTO das datas
+ * declaradas; e a 1b antiga só olhava à página da edição, saltando EM SILÊNCIO
+ * qualquer página que não trouxesse a marca. As linhas dos dois índices
+ * (`/estudos` e `/en/studies`) imprimem a data de cada trabalho e nenhuma das
+ * duas contas as prendia à edição certa: trocar, numa linha do índice, a data de
+ * um trabalho pela data JÁ DECLARADA de outro ficava verde. Foi plantado e
+ * confirmado a 07.09.
+ *
+ * Agora cada data impressa vai presa à SUA edição, em TODAS as páginas que a
+ * imprimem e nas duas edições do sítio: nos índices pela porta de cada edição
+ * (`a.badge-porta`, cujo `href` dá o slug e a língua), nas páginas de edição pelo
+ * bloco `.edicao` (cujo `.badge` dá a língua e cuja rota dá o slug). Uma data
+ * impressa que nenhuma edição prenda é uma falha, e uma página com a marca cuja
+ * rota este passo não conhece é outra: o silêncio era o defeito.
+ */
+
+/**
+ * As marcas cujo texto É uma data. A mesma marca serve a contagem da caixa das
+ * datas por confirmar, que é um número e não se prende a edição nenhuma.
+ *
+ * @param {{querySelectorAll: (s: string) => {textContent: string}[]}} no
+ */
+const marcasDeData = (no) =>
+  no.querySelectorAll(SELETOR).filter((el) => /^\d{2}\.\d{2}\.\d{4}$/.test(el.textContent.trim()));
+
+/** As edições que o arquivo declara: são as que têm de ter página. */
+const noArquivo = new Set(WORKS.flatMap((w) => w.editions.map((e) => chave(w.slug, e.lang))));
+
+let paginasPrendidas = 0;
+let lacos = 0;
+/** Quantas vezes cada edição ficou presa a uma data impressa. @type {Map<string, number>} */
+const presas = new Map();
+
+/**
+ * UM LAÇO: uma data impressa (ou a ausência dela) presa a uma edição.
+ *
+ * @param {string} rota    a página onde a data está impressa
+ * @param {string} slug    o trabalho da edição a que ela pertence
+ * @param {string} lang    a língua dessa edição
+ * @param {string|null} impressa  a data impressa, na forma da casa, ou `null`
+ * @param {string} onde    o sítio da página, por palavras, para a mensagem
+ */
+function prende(rota, slug, lang, impressa, onde) {
+  lacos++;
+  const k = chave(slug, lang);
+  presas.set(k, (presas.get(k) ?? 0) + 1);
+  const declarada = porEdicao.get(k) ?? null;
+  const esperada = declarada ? naFormaDaCasa(declarada.data) : null;
+  if (esperada === null) {
+    if (impressa !== null) {
+      falhas.push(
+        `${rota}: ${onde} imprime «${impressa}» e ${FICHEIRO} não declara data nenhuma para ` +
+          `${slug} (${lang}). Uma data sem linha no ficheiro é uma data sem origem.`,
+      );
+    }
+    return;
   }
-  const esperada = naFormaDaCasa(e.data);
-  if (!nesta.has(esperada)) {
+  if (impressa === null) {
     falhas.push(
-      `${rota}: ${FICHEIRO} diz que esta edição entrou no repositório a ${esperada} ` +
-        `(commit ${e.commit.slice(0, 8)}) e a página não imprime essa data. ` +
-        `Imprime ${nesta.size ? [...nesta].map((d) => `«${d}»`).join(', ') : 'nenhuma'}.`,
+      `${rota}: ${onde} não imprime data nenhuma e ${FICHEIRO} declara ${esperada} ` +
+        `(commit ${declarada.commit.slice(0, 8)}) para ${slug} (${lang}).`,
+    );
+    return;
+  }
+  if (impressa !== esperada) {
+    falhas.push(
+      `${rota}: ${onde} imprime «${impressa}» e ${FICHEIRO} diz que ${slug} (${lang}) entrou a ` +
+        `${esperada} (commit ${declarada.commit.slice(0, 8)}). Uma data que pertence ao conjunto ` +
+        `das declaradas mas NÃO a esta edição é o que a conta 1a sozinha deixava passar.`,
     );
   }
+}
+
+/**
+ * As marcas de data que sobraram por prender numa página.
+ *
+ * @param {string} rota
+ * @param {{querySelectorAll: (s: string) => {textContent: string}[]}} doc
+ * @param {Set<unknown>} presasAqui
+ */
+function orfas(rota, doc, presasAqui) {
+  for (const el of marcasDeData(doc)) {
+    if (presasAqui.has(el)) continue;
+    falhas.push(
+      `${rota}: a data «${el.textContent.trim()}» está impressa fora de qualquer edição que esta ` +
+        `página nomeie. Uma data sem dono não se confere contra ${FICHEIRO}.`,
+    );
+  }
+}
+
+/**
+ * UM ÍNDICE: uma linha por trabalho, uma porta por edição.
+ *
+ * @param {string} rota
+ * @param {any} doc
+ */
+function prendeNoIndice(rota, doc) {
+  const artigos = doc.querySelectorAll('article.arquivo-item');
+  if (artigos.length === 0) {
+    falhas.push(
+      `${rota}: traz a marca das datas e não tem uma única linha \`article.arquivo-item\`. ` +
+        `Sem as linhas não há a que prender as datas.`,
+    );
+    return;
+  }
+  /** @type {Set<unknown>} */
+  const presasAqui = new Set();
+  for (const artigo of artigos) {
+    /* A DATA ÚNICA DA LINHA: quando as edições do trabalho têm todas a mesma
+       data, a vista imprime-a uma vez em `.arquivo-data` e cada edição da linha
+       responde por ela. */
+    const caixaUnica = artigo.querySelector('.arquivo-data');
+    const unicas = caixaUnica ? marcasDeData(caixaUnica) : [];
+    if (unicas.length > 1) {
+      falhas.push(`${rota}: uma linha do índice imprime ${unicas.length} datas em \`.arquivo-data\`.`);
+    }
+    const marcaUnica = unicas[0] ?? null;
+
+    const portas = artigo.querySelectorAll('a.badge-porta');
+    if (portas.length === 0) {
+      falhas.push(
+        `${rota}: uma linha do índice não tem porta de edição nenhuma (\`a.badge-porta\`), e por ` +
+          `isso a data dela não se prende a edição nenhuma.`,
+      );
+      continue;
+    }
+    for (const porta of portas) {
+      const href = porta.getAttribute('href') ?? '';
+      const m = ROTA_DA_EDICAO.exec(href);
+      if (!m) {
+        falhas.push(`${rota}: a porta de uma edição aponta «${href}», que não é a rota de uma edição.`);
+        continue;
+      }
+      const slug = m[1];
+      const lang = href.startsWith('/en/') ? 'en' : 'pt';
+      /* A data da PRÓPRIA porta, quando as edições do trabalho têm datas
+         diferentes; senão, a data única da linha. */
+      const proprias = marcasDeData(porta);
+      if (proprias.length > 1) {
+        falhas.push(`${rota}: a porta de ${slug} (${lang}) imprime ${proprias.length} datas.`);
+      }
+      const marca = proprias[0] ?? marcaUnica;
+      if (marca) presasAqui.add(marca);
+      prende(
+        rota,
+        slug,
+        lang,
+        marca ? marca.textContent.trim() : null,
+        `a linha de ${slug}, na porta ${lang.toUpperCase()}`,
+      );
+    }
+  }
+  orfas(rota, doc, presasAqui);
+}
+
+/**
+ * UMA PÁGINA DE EDIÇÃO: um bloco `.edicao` por edição do trabalho, nas duas
+ * línguas, e a rota diz o slug.
+ *
+ * @param {string} rota
+ * @param {string} slug
+ * @param {any} doc
+ */
+function prendeNaPaginaDoTrabalho(rota, slug, doc) {
+  const blocos = doc.querySelectorAll('.edicao');
+  if (blocos.length === 0) {
+    falhas.push(
+      `${rota}: traz a marca das datas e não tem um único bloco \`.edicao\`. Sem os blocos não ` +
+        `há a que prender as datas.`,
+    );
+    return;
+  }
+  /** @type {Set<unknown>} */
+  const presasAqui = new Set();
+  for (const bloco of blocos) {
+    const badge = bloco.querySelector('.edicao-cabeca .badge');
+    const lang = badge ? badge.textContent.trim().toLowerCase() : '';
+    if (lang !== 'pt' && lang !== 'en') {
+      falhas.push(
+        `${rota}: um bloco \`.edicao\` sem língua legível (` +
+          `«${badge ? badge.textContent.trim() : 'sem badge'}»).`,
+      );
+      continue;
+    }
+    const marcas = marcasDeData(bloco);
+    if (marcas.length > 1) {
+      falhas.push(`${rota}: o bloco da edição ${lang.toUpperCase()} imprime ${marcas.length} datas.`);
+    }
+    const marca = marcas[0] ?? null;
+    if (marca) presasAqui.add(marca);
+    prende(
+      rota,
+      slug,
+      lang,
+      marca ? marca.textContent.trim() : null,
+      `o bloco da edição ${lang.toUpperCase()}`,
+    );
+  }
+  orfas(rota, doc, presasAqui);
+}
+
+for (const { rota, doc, slug } of paraPrender) {
+  if (INDICES.has(rota)) {
+    paginasPrendidas++;
+    prendeNoIndice(rota, doc);
+    continue;
+  }
+  if (slug !== null) {
+    paginasPrendidas++;
+    prendeNaPaginaDoTrabalho(rota, slug, doc);
+    continue;
+  }
+  /* Uma página com a marca e sem uma data impressa é a caixa das datas por
+     confirmar, que traz a mesma marca sobre um NÚMERO: essa é da conta 2. */
+  if (marcasDeData(doc).length === 0) continue;
+  falhas.push(
+    `${rota}: imprime uma data com a marca \`${MARCA}\` e este passo não sabe a que edição a ` +
+      `prender. A primeira passagem saltava em silêncio as páginas que não conhecia, e uma data ` +
+      `que ninguém prende é uma data que ninguém confere.`,
+  );
+}
+
+/* AS DUAS CONTAGENS DA PRÓPRIA CONTA (regra 14 da casa): uma conta que não
+   conferiu nada tem de o dizer, e não passar por verde. */
+if (paginasPrendidas === 0) {
+  falhas.push(
+    `de ${paginas.length} página(s) de \`dist/\`, nenhuma foi conferida edição a edição: não há ` +
+      `índice (${[...INDICES].join(', ')}) nem página de trabalho. Sem um positivo conhecido a ` +
+      `conta 1b não mede nada.`,
+  );
+}
+if (lacos === 0) {
+  falhas.push(
+    `${paginasPrendidas} página(s) conferida(s) e nenhuma data presa a uma edição: a conta 1b ` +
+      `percorreu-as e não prendeu nada.`,
+  );
+}
+
+/* E NENHUMA EDIÇÃO DO ARQUIVO PODE FICAR SEM PÁGINA QUE A IMPRIMA. Uma linha do
+   ficheiro que não seja edição do arquivo não tem página, e isso mede-se em
+   `check-registo`, não aqui. */
+for (const e of edicoes) {
+  const k = chave(e.slug, e.lang);
+  if (presas.has(k) || !noArquivo.has(k)) continue;
+  falhas.push(
+    `${e.ficheiro}: ${FICHEIRO} declara ${naFormaDaCasa(e.data)} ` +
+      `(commit ${e.commit.slice(0, 8)}) e nenhuma página construída imprime essa data presa a ` +
+      `esta edição.`,
+  );
 }
 
 /* --- 2. a caixa que conta ------------------------------------------------- */
@@ -223,7 +488,7 @@ for (const rota of ['/estudos', '/en/studies']) {
     );
     continue;
   }
-  const dito = caixas[0].querySelector('[data-nonledger="data-do-repositorio"]');
+  const dito = caixas[0].querySelector(SELETOR);
   const n = dito ? Number(dito.textContent.trim()) : NaN;
   if (n !== semData) {
     falhas.push(
@@ -340,6 +605,7 @@ if (falhas.length > 0) {
 
 console.log(
   `${verde('check-datas')} · ${edicoes.length} edição(ões) datadas, ${impressas} data(s) ` +
-    `impressa(s) em ${porRota.size} página(s), ${semData} edição(ões) sem data` +
+    `impressa(s) em ${porRota.size} página(s), ${lacos} laço(s) data-edição em ` +
+    `${paginasPrendidas} página(s) conferida(s), ${semData} edição(ões) sem data` +
     `${semData === 0 ? ' e nenhuma caixa de aviso' : ''}.`,
 );
