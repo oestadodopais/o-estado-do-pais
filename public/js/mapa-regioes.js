@@ -64,18 +64,26 @@
 (function () {
   'use strict';
 
+  /* DUAS SUPERFÍCIES, E A SEGUNDA TEM UM NÍVEL SÓ (F1.1d, item 7). Na primeira
+     página há dois grupos de áreas, o das nove regiões e o dos concelhos da
+     região aberta, e o desenho cresce entre eles; numa página de distrito há um
+     grupo só, com os concelhos daquela unidade, e não há nada para crescer. O
+     que é comum é o lugar do nome, e é isso que este guião faz nas duas. */
   var figura = document.querySelector('[data-mapa-raiz][data-nivel]');
-  var svg = document.querySelector('[data-mapa-areas]');
-  var grupoDoPais = document.querySelector('[data-areas]');
-  var grupoDaRegiao = document.querySelector('[data-areas-concelhos]');
+  var svg = document.querySelector('[data-mapa-areas], [data-mapa-concelhos]');
+  var grupoDoPais = svg ? svg.querySelector('[data-areas]') : null;
+  var grupoDaRegiao = svg ? svg.querySelector('[data-areas-concelhos]') : null;
   var lugar = document.querySelector('[data-mapa-nome]');
-  if (!figura || !svg || !grupoDoPais || !grupoDaRegiao || !lugar) return;
+  if (!figura || !svg || !grupoDoPais || !lugar) return;
+  /** Há dois níveis? Só onde o segundo grupo existe. */
+  var DOIS_NIVEIS = !!grupoDaRegiao;
 
   var texto = lugar.querySelector('[data-mapa-nome-texto]');
   var porta = lugar.querySelector('[data-mapa-porta]');
   var voltar = lugar.querySelector('[data-mapa-voltar]');
   var vazias = lugar.querySelectorAll('[data-mapa-vazio]');
-  if (!texto || !porta || !voltar || vazias.length !== 4) return;
+  if (!texto || !porta || vazias.length !== (DOIS_NIVEIS ? 4 : 2)) return;
+  if (DOIS_NIVEIS && !voltar) return;
 
   var SVGNS = 'http://www.w3.org/2000/svg';
 
@@ -111,9 +119,10 @@
     texto.hidden = true;
     texto.textContent = '';
     porta.hidden = true;
+    var nivel = figura.getAttribute('data-nivel') || 'pais';
     for (var i = 0; i < vazias.length; i++) {
       var qual = vazias[i].getAttribute('data-mapa-vazio') || '';
-      vazias[i].hidden = qual.indexOf(aberta === '' ? 'pais' : 'regiao') !== 0;
+      vazias[i].hidden = qual.indexOf(nivel) !== 0;
     }
   }
 
@@ -122,8 +131,13 @@
    * o desenho da região) já tem escrito na própria área.
    */
   function mostra(area) {
-    var caminho = area.querySelector('path');
-    var nome = caminho ? caminho.getAttribute('data-u') : null;
+    /* O NOME LÊ-SE DO `<title>` DA PRÓPRIA LIGAÇÃO, que é o nome acessível dela e
+       o que o navegador mostra ao parar o cursor. É o nó que o servidor desenhou,
+       e é o mesmo nos dois desenhos: o da primeira página marca o caminho com
+       `data-u` e o de uma página de distrito com `data-m`, e ler o `<title>`
+       poupa saber qual é qual. */
+    var titulo = area.querySelector('title');
+    var nome = titulo ? titulo.textContent.trim() : null;
     var destino = area.getAttribute('href');
     if (!nome || !destino) return;
     texto.textContent = nome;
@@ -264,8 +278,9 @@
   var doApontador = function (ev) {
     return ev.pointerType === 'mouse' || ev.pointerType === 'pen';
   };
-  for (var g = 0; g < 2; g++) {
-    var raiz = g === 0 ? grupoDoPais : grupoDaRegiao;
+  var grupos = DOIS_NIVEIS ? [grupoDoPais, grupoDaRegiao] : [grupoDoPais];
+  for (var g = 0; g < grupos.length; g++) {
+    var raiz = grupos[g];
     raiz.addEventListener('pointerover', function (ev) {
       if (!doApontador(ev)) return;
       var area = areaDe(ev.target);
@@ -302,6 +317,8 @@
   svg.addEventListener('click', function (ev) {
     var area = areaDe(ev.target);
     if (!area) return;
+    /* NUMA PÁGINA DE DISTRITO NÃO HÁ REGIÃO PARA CRESCER: as áreas são concelhos
+       e a regra do primeiro toque é a única que corre. */
     /* UM CLIQUE FEITO PELO ENTER NÃO TEM CONTAGEM DE CLIQUES: é por aí que se
        sabe que o gesto veio do teclado, e é só nesse caso que o foco muda de
        nível. */
@@ -338,17 +355,19 @@
      que o toque faz, que é crescer; num concelho, onde o foco já pôs o nome no
      lugar, segue a ligação, que é o que o navegador faz sozinho. */
 
-  voltar.addEventListener('click', function (ev) {
+  if (voltar) voltar.addEventListener('click', function (ev) {
     ev.preventDefault();
     paraOPais();
     history.pushState(null, '', location.pathname + location.search);
   });
 
-  window.addEventListener('popstate', aplicaFragmento);
-  window.addEventListener('hashchange', aplicaFragmento);
+  if (DOIS_NIVEIS) {
+    window.addEventListener('popstate', aplicaFragmento);
+    window.addEventListener('hashchange', aplicaFragmento);
+  }
 
   /* O lugar do nome só existe com guião, e é aqui que ele passa a existir. */
   lugar.hidden = false;
   mostraVazio();
-  aplicaFragmento();
+  if (DOIS_NIVEIS) aplicaFragmento();
 })();

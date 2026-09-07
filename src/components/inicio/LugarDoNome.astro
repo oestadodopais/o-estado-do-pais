@@ -1,0 +1,91 @@
+---
+/**
+ * O LUGAR DO NOME: o nome da área apontada, e a porta para a página dela.
+ *
+ * ---------------------------------------------------------------------------
+ * O QUE ESTE BLOCO É (F1.1d, itens 1 e 7 do brief, 07.09.2026)
+ * ---------------------------------------------------------------------------
+ * «Um elemento fixo com o nome da unidade apontada e a porta para a sua página;
+ * vazio diz "Toque numa região" / "Passe o rato por uma região".» É irmão do
+ * desenho, dentro da mesma figura, porque o que ele diz é sobre o desenho que
+ * está ao lado; onde ele fica é da folha (ao lado do mapa a partir de 1 024 px,
+ * por baixo dele no telemóvel).
+ *
+ * VIVE NUM COMPONENTE PRÓPRIO PORQUE DUAS SUPERFÍCIES O RENDEM: o mapa da
+ * primeira página, que tem dois níveis, e o mapa de uma página de distrito, que
+ * tem um só (os concelhos daquela unidade). Escrever a mesma marcação nos dois
+ * sítios era a segunda cópia a divergir da primeira à primeira emenda.
+ *
+ * É UMA REGIÃO VIVA (`aria-live="polite"`) E POR ISSO O NOME ANUNCIA-SE. A frase
+ * vive num bloco só, com as formas por baixo dela e uma de cada vez: as vazias
+ * de cada nível e o nome. As portas ficam de fora da região viva, para que mudar
+ * de área não releia «Abrir» de cada vez.
+ *
+ * CHEGA `hidden` DO SERVIDOR, e é a mesma disciplina da linha da área de leitura
+ * (F1.1c): sem guião não há nome a preencher, e um lugar que promete um gesto
+ * que a página não faz é pior do que nenhum. As frases ficam declaradas no
+ * inventário da voz na mesma, porque a régua lê o documento entregue e não o
+ * ecrã.
+ *
+ * CADA FRASE É UM PARÁGRAFO SEU, e isso não é arrumação: a régua da voz lê um
+ * bloco como o elemento de bloco mais fundo, e as frases dentro do mesmo `<p>`
+ * entravam no inventário como uma linha só, com todas coladas.
+ *
+ * AS DUAS FRASES VAZIAS DE CADA NÍVEL SÃO AS DUAS, E A FOLHA MOSTRA UMA. Quem
+ * tem rato passa por cima e quem tem dedo toca: são gestos diferentes e a página
+ * não sabe qual é o do leitor senão pelo `@media (hover: hover) and (pointer:
+ * fine)`. Um `display: none` é lido pelo leitor de ecrã, e por isso quem ouve
+ * ouve uma só.
+ *
+ * `niveis` DIZ QUE FRASES VAZIAS ESTE LUGAR TEM: `['pais', 'regiao']` na
+ * primeira página, `['regiao']` numa página de distrito, onde o único nível é o
+ * dos concelhos. `voltar` é a porta de subir um nível, e só existe onde há dois.
+ */
+/* `lang` NÃO ENTRA AQUI, e é de propósito: nada neste bloco se traduz por si.
+   As frases vêm de `s`, que já é a edição, e o destino da porta de voltar chega
+   feito em `voltar`, porque quem sabe a rota é quem rende o mapa. */
+const { s, niveis = ['pais', 'regiao'], voltar = null } = Astro.props;
+
+/** A frase vazia de cada nível, para o dedo e para o rato. */
+const VAZIAS = {
+  pais: { toque: s.inicio.mapa.nomeVazioToque, rato: s.inicio.mapa.nomeVazioRato },
+  regiao: {
+    toque: s.inicio.mapa.nomeVazioToqueConcelho,
+    rato: s.inicio.mapa.nomeVazioRatoConcelho,
+  },
+};
+---
+
+<div class="mapa-nome" role="group" aria-label={s.inicio.mapa.lugarLabel} data-mapa-nome hidden>
+  <div class="mapa-nome-frase" aria-live="polite" data-mapa-frase>
+    {
+      niveis.map((nivel, i) => (
+        <>
+          <p class="mapa-nome-vazio mapa-so-toque" data-mapa-vazio={`${nivel}-toque`} hidden={i > 0}>
+            {VAZIAS[nivel].toque}
+          </p>
+          <p class="mapa-nome-vazio mapa-so-rato" data-mapa-vazio={`${nivel}-rato`} hidden={i > 0}>
+            {VAZIAS[nivel].rato}
+          </p>
+        </>
+      ))
+    }
+    {/* O nome vai declarado como lugar, pela mesma razão do nome do cartão
+        localizador: é o nome da coisa, e não prosa da casa. */}
+    <p class="mapa-nome-texto" data-mapa-nome-texto data-lugar hidden></p>
+  </div>
+  <p class="mapa-nome-portas">
+    {/* As portas chegam sem destino e escondidas: o destino de cada uma é
+        copiado do `href` que o servidor escreveu na área apontada. */}
+    <a class="lig mapa-nome-porta" href={voltar ?? '/'} data-mapa-porta hidden
+      >{s.inicio.mapa.abrir} →</a
+    >
+    {
+      voltar && (
+        <a class="lig mapa-nome-voltar" href={voltar} data-mapa-voltar hidden>
+          ← {s.inicio.mapa.voltarAoPais}
+        </a>
+      )
+    }
+  </p>
+</div>

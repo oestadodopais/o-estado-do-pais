@@ -49,6 +49,122 @@
 }
 
 /* ---------------------------------------------------------------------------
+ * O LUGAR DO NOME (F1.1d, 07.09.2026)
+ * ---------------------------------------------------------------------------
+ * «Ao lado do mapa a partir de 1 024 px, por baixo dele no telemóvel.» No
+ * documento é irmão da tela, dentro da mesma figura; aqui decide-se onde fica.
+ *
+ * A FIGURA PASSA A SER UMA GRELHA a partir de 1 024, com a tela numa coluna e o
+ * lugar do nome na outra. `.mapa-cartao` é `display: contents` na postura
+ * inteira desde a etapa 2g, e por isso a tela é filha directa da grelha: a
+ * coluna do nome é a segunda, estreita e encostada ao topo, para que o nome
+ * apareça à altura dos olhos e não a meio do desenho.
+ *
+ * O ALVO DAS DUAS PORTAS TEM 44 px, como qualquer porta desta casa desde o
+ * F1.7: a linha mede 44 e o alvo faz-se de `padding`, não de uma linha maior.
+ */
+.mapa-nome {
+  margin-top: 10px;
+  min-height: 76px;
+}
+.mapa-nome-frase {
+  font-family: var(--f-instr);
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--muted);
+  margin: 0;
+}
+.mapa-nome-texto {
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 500;
+}
+.mapa-nome-portas {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 clamp(12px, 2vw, 22px);
+}
+.mapa-nome-portas a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--f-instr);
+  font-size: 14px;
+}
+/* AS DUAS FRASES VAZIAS DE CADA NÍVEL, E A FOLHA MOSTRA UMA. O dedo é o caso por
+   omissão, porque é o do telemóvel e o do portátil com ecrã táctil; o rato só se
+   declara onde o navegador diz que há um apontador fino que pode pairar.
+
+   `:not([hidden])` EM TODAS AS REGRAS, e é o que as faz conviver com o nível: o
+   `hidden` que o guião põe e tira diz de que nível é a frase, e uma regra de
+   classe que declarasse `display: block` ganharia ao `[hidden]` por vir depois na
+   folha. Assim a folha do meio não toca no que está escondido. */
+.mapa-so-rato:not([hidden]) {
+  display: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .mapa-so-toque:not([hidden]) {
+    display: none;
+  }
+  .mapa-so-rato:not([hidden]) {
+    display: block;
+  }
+}
+.mapa-nome-frase p {
+  margin: 0;
+}
+/* ---------------------------------------------------------------------------
+ * A PARTIR DE 1 024 O LUGAR DO NOME VAI PARA O CANTO QUE O ATLÂNTICO DEIXA
+ * ---------------------------------------------------------------------------
+ * «Ao lado do mapa a partir de 1 024 px», e a primeira forma disto fazia da
+ * figura uma grelha de duas colunas. Custou o que a régua mediu: a tela do mapa
+ * caiu de 550 para 368 px de largura (e de 725 para 485 de altura) a 1 280,
+ * porque a coluna do nome lhe comeu 150 px, e com ela caiu o alvo de cada área.
+ * A célula L2 de `tests/inicio/lista.mjs` viu a legenda a descer de 877 para
+ * 1 000 px e a L3 viu a grelha a passar 178 px da coluna do mapa.
+ *
+ * O LUGAR DO NOME PASSA A FLUTUAR NO CANTO VAZIO, que é a mesma decisão que a
+ * legenda já leva desde a etapa 2m («a linha vai para o canto que as ilhas
+ * deixam»), e o canto é mensurável: no campo do desenho o continente vive de
+ * x=2 889 para a direita e as duas molduras dos arquipélagos começam em y=4 526,
+ * e por isso o rectângulo x<2 880, y<4 400 não tem um traço. São 46 % da largura
+ * e 55 % da altura do campo, que a 1 280 dão 260 × 397 px de papel liso.
+ *
+ * O mapa fica com a coluna inteira, e o nome fica ao lado dele.
+ */
+@media (min-width: 1024px) {
+  [data-postura='inteiro'].mapa {
+    position: relative;
+  }
+  /* SÓ NO NÍVEL DO PAÍS, e a razão está numa captura: no nível da região o
+     desenho enche a caixa toda (é uma região dentro da sua própria caixa) e o
+     nome ficava escrito por cima dos concelhos do Norte. O canto vazio é do
+     mapa do país; no nível da região o lugar do nome volta ao fluxo, por baixo
+     do desenho, que é a forma que ele tem no telemóvel. */
+  [data-nivel='pais'] .mapa-nome {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: min(44%, 230px);
+    margin-top: 0;
+    /* Por cima do desenho, para que as duas portas recebam o rato. O que fica
+       por baixo é oceano. */
+    z-index: 1;
+  }
+}
+/* O SEGUNDO NÍVEL: as molduras dos dois arquipélagos são do nível do país e não
+   se desenham dentro de uma região; os dois grupos de áreas trocam de lugar, e é
+   o atributo `hidden` que os troca, posto pelo guião. Uma regra própria, porque
+   a folha do navegador não aplica `[hidden]` a um `<g>` de SVG. */
+.mapa-areas[hidden] {
+  display: none;
+}
+[data-nivel='regiao'] .mapa-molduras {
+  display: none;
+}
+
+/* ---------------------------------------------------------------------------
  * A MENÇÃO DA FONTE (Emenda 20e)
  * ---------------------------------------------------------------------------
  * O mesmo bloco nas duas superfícies, e por isso a mesma regra: letra de

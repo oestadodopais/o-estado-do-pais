@@ -31,6 +31,11 @@
       "prova": "30 de 30 · «Alfândega da Fé» … «Sousel»"
     },
     {
+      "nome": "P2c · pt: numa página de distrito, o lugar do nome diz o concelho apontado",
+      "passa": true,
+      "prova": "16 de 16 concelhos de Lisboa · «Alenquer» … «Vila Franca de Xira» · 0 porta(s) de voltar (uma página de distrito não tem nível de cima)"
+    },
+    {
       "nome": "P2a · en: o nome no lugar ao passar e ao focar, nas nove regiões",
       "passa": true,
       "prova": "9 de 9 · «Azores» … «Setúbal Peninsula» · cada porta na sua página"
@@ -39,6 +44,11 @@
       "nome": "P2b · en: o nome no lugar numa amostra de 30 concelhos, nos três níveis de região maiores",
       "passa": true,
       "prova": "30 de 30 · «Alfândega da Fé» … «Sousel»"
+    },
+    {
+      "nome": "P2c · en: numa página de distrito, o lugar do nome diz o concelho apontado",
+      "passa": true,
+      "prova": "16 de 16 concelhos de Lisboa · «Alenquer» … «Vila Franca de Xira» · 0 porta(s) de voltar (uma página de distrito não tem nível de cima)"
     },
     {
       "nome": "P3a · com o dedo: a região cresce sem navegar, o primeiro toque num concelho diz o nome, o segundo abre",
@@ -54,6 +64,11 @@
       "nome": "P3c · a porta do lugar do nome abre a página da região apontada",
       "passa": true,
       "prova": "a porta diz «/regioes/algarve» e leva a «/regioes/algarve»"
+    },
+    {
+      "nome": "P3d · numa página de distrito, o primeiro toque num concelho diz o nome e o segundo abre",
+      "passa": true,
+      "prova": "o primeiro toque deixa o endereço em «/distritos/lisboa» e diz «Sintra» · o segundo abre «/municipios/sintra»"
     },
     {
       "nome": "P4 · pt: sem guião, nove ligações para as nove páginas, a lista fechada e o «#regiao=» ignorado",
