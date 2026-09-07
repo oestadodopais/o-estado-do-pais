@@ -580,7 +580,7 @@ e por isso conteúdo.*
 | navegacao | A ligação sai deste domínio. | até 2026-08-26 | viva | — |
 | conteudo | As contas do penúltimo ano foram rejeitadas em votação e nunca foram certificadas. | até 2026-08-26 | viva | — |
 | conteudo | Avaliação económica das regiões de Portugal. | até 2026-08-26 | viva | — |
-| conteudo | Datas de publicação por confirmar. | até 2026-08-26 | viva | — |
+| conteudo | Datas de publicação por confirmar. | até 2026-08-26 | retirada | retirada: a caixa passou a render-se só quando alguma edição não tem data, e a contá-las («Datas de publicação por confirmar em N edições»); com as dezasseis edições datadas pelo `src/data/datas-de-publicacao.json` do bloco F1.4b (04.09.2026) a caixa não se rende. A frase contada entra aqui no dia em que voltar a render-se |
 | conteudo | Description: house translation of the document’s opening sentence | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
 | conteudo | Description: opening sentence of the document | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
 | conteudo | Description: restatement of the title | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
@@ -618,7 +618,7 @@ e por isso conteúdo.*
 | conteudo | PT Séries longas sobre a evolução do país. | até 2026-08-26 | viva | — |
 | conteudo | PT Água não faturada nos sistemas de abastecimento em Portugal. | até 2026-08-26 | viva | — |
 | conteudo | Public funding in Portugal. | até 2026-08-26 | viva | — |
-| conteudo | Publication dates not yet confirmed. | até 2026-08-26 | viva | — |
+| conteudo | Publication dates not yet confirmed. | até 2026-08-26 | retirada | retirada: a caixa passou a render-se só quando alguma edição não tem data, e a contá-las («Datas de publicação por confirmar em N edições»); com as dezasseis edições datadas pelo `src/data/datas-de-publicacao.json` do bloco F1.4b (04.09.2026) a caixa não se rende. A frase contada entra aqui no dia em que voltar a render-se |
 | conteudo | Quem teve cada pelouro da Câmara Municipal de Évora ao longo de cinco mandatos, quanto gastaram as contas do próprio município nas áreas que esses pelouros cobrem, e o que os relatórios dizem que essas áreas fizeram. | até 2026-08-26 | viva | — |
 | conteudo | Sem tema atribuído | até 2026-08-26 | viva | — |
 | conteudo | Studies | até 2026-08-26 | viva | — |
