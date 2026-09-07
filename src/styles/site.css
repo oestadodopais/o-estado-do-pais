@@ -2269,7 +2269,15 @@ a.badge-porta:hover {
    campo que o recibo já usa. A letra é a do identificador que está por baixo,
    pela mesma razão que ele a tem: é aparelho, não é leitura, e a cabeça já tem
    uma voz — a do número. */
-.linha-selo-estado {
+/* O ATRASO DE UMA SÉRIE AO PÉ DO SELO (bloco F1.6, 04.09.2026) tem a mesma
+   camada, a mesma posição e o mesmo desenho do estado da fonte: são dois factos
+   do mesmo tipo sobre a mesma linha, e uma segunda gramática visual para o
+   segundo era uma decisão de identidade que aquele bloco não tem. O que muda é
+   só o nome da classe, e a razão está escrita em `LinhaView.astro`: a régua do
+   estado da fonte lê a classe, e duas coisas com o mesmo nome faziam-na contar
+   um silêncio onde ele não existe. */
+.linha-selo-estado,
+.linha-selo-atraso {
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;
   font-size: 11px;
@@ -2277,8 +2285,20 @@ a.badge-porta:hover {
   color: var(--muted);
   margin-top: 2px;
 }
-.linha-selo-estado .linha-campo-k {
+.linha-selo-estado .linha-campo-k,
+.linha-selo-atraso .linha-campo-k {
   font-size: inherit;
+}
+/* O RÓTULO DO ATRASO CORRE NA LINHA, E NÃO POR CIMA DO VALOR. `.linha-campo-k` é
+   `display: block` porque no aparelho cada rótulo vive por cima do seu campo; na
+   cabeça, a frase do atraso é UMA frase com três rótulos e três valores por
+   dentro, e em bloco ela saía em seis linhas com um rótulo em cada uma. Fica
+   escrito no relatório do bloco F1.6 que `.linha-selo-estado` tem o mesmo
+   problema pela mesma causa, e que não se conserta aqui: é o bloco F0.11 que
+   desenhou aquela linha, e mudá-la sem brief era mexer no que outro bloco
+   mediu. */
+.linha-selo-atraso .linha-campo-k {
+  display: inline;
 }
 
 /* ------------------------------------------------------------ o recibo, v2
@@ -4397,6 +4417,7 @@ a.marcador::after {
   .aparelho-titulo,
   .linha-id,
   .linha-selo-estado,
+  .linha-selo-atraso,
   .linha-verificacao,
   .linha-verificacoes dt,
   .linha-verificacoes dd,

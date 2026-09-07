@@ -41,8 +41,7 @@ note: "Cruzado de ResearchHub content/08 Évora Mandates · exec2025-cdu-seats."
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
 
-# Reconferências. Escritas pelo motor (indicators/refresh.py e
-# indicators/corredor.py), nunca à mão.
+# Reconferências. Do exportador (registo de releitura) e dos leitores da casa.
 verifications:
   - date: "2026-09-01"
     path: "https://www.eleicoes.mai.gov.pt/autarquicas2025/assets/static/result/territory-electionId=1-territoryId=1267-organId=4.json"

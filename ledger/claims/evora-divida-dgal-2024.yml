@@ -41,7 +41,7 @@ note: "Coluna (5): dívida total excluindo dívidas não orçamentais, excepçõ
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
 
-# Reconferências. Escritas pelo exportador a partir de um registo de releitura.
+# Reconferências. Do exportador (registo de releitura) e dos leitores da casa.
 verifications:
   - date: "2026-08-15"
     path: "https://portalautarquico.dgal.gov.pt/ficheiros/?schema=f7664ca7-3a1a-4b25-9f46-2056eef44c33&channel=b968cb93-065b-4076-96bd-ee3919432585&content_id=47E7F1B2-F35F-4A27-9850-3BAF922FC36F&field=storage_image&lang=pt&ver=1&filetype=pdf&dtestate=2025-12-18180039"

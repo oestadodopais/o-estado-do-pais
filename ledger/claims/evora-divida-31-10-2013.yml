@@ -46,8 +46,7 @@ note: "A dívida que o executivo entrante registou à data da tomada de posse. �
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
 
-# Reconferências. Escritas pelo motor (indicators/refresh.py e
-# indicators/corredor.py), nunca à mão.
+# Reconferências. Do exportador (registo de releitura) e dos leitores da casa.
 verifications:
   - date: "2026-09-01"
     path: "https://www.cm-evora.pt/wp-content/uploads/2020/06/Relatorio_Gestao_2015.pdf#page=11"
