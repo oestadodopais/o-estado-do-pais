@@ -52,3 +52,20 @@ Ramo `lugar-2026-09-04` numa worktree própria a partir de `origin/main` **depoi
 ## 6 · O que se entrega e a disciplina
 
 O relatório com L1 a L9 antes e depois, capturas de `/`, `/municipios`, uma região e um concelho a 390 × 664 e 1 280 nas duas edições em `design/especime-v3/capturas/lugar-2026-09-04/`, a régua com as plantas, o SHA e a corrida `portao` verde. Empurra e espera o verde; não fundes em `main`. Commits pequenos em português sem travessões, trailers `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>` e `Claude-Session: <o endereço da sessão>`; nunca `git add -A`; nunca um número que não foi medido; o `typecheck` é estrito. Estimativa: Opus, duas passagens, da ordem de 0,8 a 1,2 M símbolos (M a L).
+
+## 7 · O que o leitor de 04.09 acrescentou (a passagem de Fable no navegador, `critica/2026-09-04-fable-leitor-no-navegador.md`)
+
+Entram neste bloco, além da tabela do §1, por decisão do lugar de direção:
+
+1. **A página do concelho**: a faixa do topo e o «Relance» mostram os mesmos oito números; fica a faixa (o instrumento do primeiro ecrã, como na primeira página) e o «Relance» passa a ser a leitura que abre do cartão, como o F1.1b e o F1.1c fizeram na primeira página; «ABRIR/FECHAR» sai e a definição de uma linha fica sob o nome; o cartão «N.d. · Prazo médio de pagamento» contra a prosa «137 dias em 2025» resolve-se dizendo os dois períodos («dezembro de 2025: sem valor publicado; ano de 2025: 137 dias») ou tirando o cartão mensal.
+2. **As duas «fonte»** em cada bloco de medida e em cada linha: o selo «FONTE» é só a porta para a linha; a linha do publicador chama-se «publicado por»; na página da linha, o selo debaixo do número, que liga a `#prova` na mesma página, sai.
+3. **As datas de frescura**: «lido», «conferido», «reconferido» passam a rótulos por palavras («lido na fonte a», «verificado a»), uma vez por lugar; «Painel europeu · 31.08.2026» e «Fontes em atraso · …» saem do cabeçalho de todas as páginas e vivem na página da medida e no Método (a linha «Fontes em atraso» é do F1.6: alinhar com ele).
+4. **Os estudos**: o título da lista vai direto ao texto; a página de capa deixa de existir como paragem obrigatória (o que ela tem, as edições, as descrições, «ler o documento», vai para o painel lateral da página do texto); «Descarregar · Sem ficheiros» não se imprime quando está vazio; um só nome para os estudos («estudo», nunca «trabalho» nem «arquivo» como nome de coisa).
+5. **O menu e o rodapé** com a mesma lista pela mesma ordem; «Áreas» e «Domínios» distinguíveis pelo nome (a frase de hierarquia do §2 e um rótulo «áreas de governo» no menu, se couber).
+6. **As regiões**: a página de uma região sem a faixa e sem «As medidas» a repetirem o mesmo valor (fica o valor uma vez e a porta «Comparar as regiões →»); «provisório» explicado uma vez no índice das regiões.
+7. **O domínio**: a contagem da faixa igual ao número de medidas listadas; o rótulo «Leitura breve» vazio sai ou vira o título da lista; «Os valores, concelho a concelho» e «Os valores concelho a concelho →» fundem-se numa só porta; na manchete, cada selo ao pé do seu número (o F1.2b já os tirou de dentro da frase; falta a posição).
+8. **O índice dos domínios**: as dezasseis linhas «ainda sem medidas conferidas · vaga» passam ao Método («O que se mede a seguir»), e o índice lista os domínios com página; «no ar» e «vaga» saem da voz do leitor.
+9. **O Método no telemóvel**: o diagrama cortado passa à lista das suas caixas com a legenda dentro de cada uma; a fila de palavras soltas por baixo sai.
+10. **Pequenos**: «PROVENIÊNCIA» como título por cima de ligações de navegação na página do concelho sai; «Évora · 308 · FONTE» ganha o substantivo; os rótulos dos gráficos a 390 escrevem-se como texto por baixo; «[a verificar]» com a sua definição ao pé da primeira ocorrência em cada página; «9 regiões» deixa de ser ligação para si próprio.
+
+A régua L7 (a releitura do leitor de primeira vez) passa a contar também estes dez.

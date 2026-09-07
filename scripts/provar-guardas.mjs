@@ -34,6 +34,7 @@ import {
 import { eManifestoDosRegistos, eRegistoDeConteudo } from '../src/lib/registos.mjs';
 import { ePaisDoMapa, eDistritoDoMapa, eManifestoDoMapa } from '../src/lib/mapa.mjs';
 import { eNomeDeMedida, nomeDaMedida } from '../src/lib/nomes.mjs';
+import { eDatasDePublicacao, eDataDeEdicao } from '../src/lib/datas-do-repositorio.mjs';
 
 /** @param {string} s */
 const verde = (s) => `\x1b[32m${s}\x1b[0m`;
@@ -476,6 +477,87 @@ caso(
     'figuras',
   'o nome do cartão ganha ao rótulo da fonte: é o nome que o leitor já viu na primeira página.',
 );
+
+/* ---------------------------------------- as datas de publicação (F1.4b) */
+
+/* O ficheiro `src/data/datas-de-publicacao.json` é a ÚNICA fonte das datas dos
+   trabalhos na construção, desde que a leitura do `git` saiu de lá (o defeito de
+   04.09: a Vercel constrói de uma cópia rasa e o `git` respondeu com o dia da
+   construção). Um ficheiro estragado tem de fechar a construção com a frase do
+   que falta, e não pintar dezasseis marcadores em silêncio. */
+
+const EDICAO_BOA = {
+  slug: 'onde-esta-a-agua',
+  lang: 'pt',
+  data: '2026-08-12',
+  commit: 'b4f45d3f2d02e941dc393bfbc06868c223e35887',
+  ficheiro: 'studies-src/onde-esta-a-agua/pt.html',
+};
+
+caso('eDataDeEdicao/completa', true, eDataDeEdicao(EDICAO_BOA), 'as cinco chaves, na forma.');
+caso(
+  'eDataDeEdicao/data-na-forma-da-casa',
+  false,
+  eDataDeEdicao({ ...EDICAO_BOA, data: '12.08.2026' }),
+  'o ficheiro guarda a data em AAAA-MM-DD; a forma da casa é da vista, e trocá-las escreveria «26.20.0812».',
+);
+caso(
+  'eDataDeEdicao/commit-curto',
+  false,
+  eDataDeEdicao({ ...EDICAO_BOA, commit: 'b4f45d3f' }),
+  'o resumo vai inteiro: é com ele que alguém refaz a leitura, e um resumo curto pode passar a ser ambíguo.',
+);
+caso(
+  'eDataDeEdicao/lingua-desconhecida',
+  false,
+  eDataDeEdicao({ ...EDICAO_BOA, lang: 'fr' }),
+  'o sítio tem duas edições, e uma terceira língua aqui era uma linha que nenhuma página lê.',
+);
+caso(
+  'eDataDeEdicao/ficheiro-de-outro-trabalho',
+  false,
+  eDataDeEdicao({ ...EDICAO_BOA, ficheiro: 'studies-src/agua-nao-faturada/pt.html' }),
+  'o caminho tem de ser o do slug e da língua da própria linha: senão a data é de outra edição.',
+);
+caso(
+  'eDataDeEdicao/sem-data',
+  false,
+  eDataDeEdicao({ ...EDICAO_BOA, data: null }),
+  'uma edição sem data não se escreve com null: não entra no ficheiro, e a página volta ao marcador.',
+);
+caso('eDataDeEdicao/nulo', false, eDataDeEdicao(null), 'null não é uma linha.');
+
+caso(
+  'eDatasDePublicacao/completo',
+  true,
+  eDatasDePublicacao({ edicoes: [EDICAO_BOA] }),
+  'um mapa com a lista das edições é o ficheiro.',
+);
+caso(
+  'eDatasDePublicacao/vazio-e-forma-valida',
+  true,
+  eDatasDePublicacao({ edicoes: [] }),
+  'a forma aceita a lista vazia; quem recusa o ficheiro sem edições é o portão (check-datas), com a contagem.',
+);
+caso(
+  'eDatasDePublicacao/sem-lista',
+  false,
+  eDatasDePublicacao({ origem: {} }),
+  'só o cabeçalho da origem, sem edições, não é o ficheiro que a construção lê.',
+);
+caso(
+  'eDatasDePublicacao/lista-a-nu',
+  false,
+  eDatasDePublicacao([EDICAO_BOA]),
+  'a lista sem o mapa à volta perde o cabeçalho que declara de onde as datas vieram.',
+);
+caso(
+  'eDatasDePublicacao/uma-linha-estragada',
+  false,
+  eDatasDePublicacao({ edicoes: [EDICAO_BOA, { ...EDICAO_BOA, data: 'ontem' }] }),
+  'uma linha má estraga o ficheiro: a construção lê-o todo e não pode escolher metade.',
+);
+caso('eDatasDePublicacao/nulo', false, eDatasDePublicacao(null), 'um ficheiro vazio dá null.');
 
 /* ------------------------------------------ as listas de que os tipos derivam */
 
