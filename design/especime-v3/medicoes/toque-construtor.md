@@ -58,10 +58,19 @@ OEDP_DIST=<dist de 9c34bbb0> node tests/inicio/leitura.mjs   → exit 1
              página (divida-publica-2025, taxa-de-emprego-2025,
              taxa-de-desemprego-2025)
   ✗ J4.pt.chromium  21 cartão(ões) tocados, 18 abriram a sua leitura aqui
+             (uma de cada vez), 3 de medidas que vivem num domínio
              QUEIXAS: «divida-publica-2025» leva para fora desta página
-             («/dominios/economia-e-financas-publicas#m-e3») …
-  leitura ✗ 12 de 26 célula(s)
+             («/dominios/economia-e-financas-publicas#m-e3»);
+             «taxa-de-emprego-2025» …; «taxa-de-desemprego-2025» …
+  ✗ J13.pt.chromium  QUEIXAS: em repouso há 21 nome(s) à vista; não há linha do
+             estado vazio; … o toque em «divida-publica-2025» deu «#m-e3»
+  leitura ✗ 16 de 26 célula(s)
 ```
+
+As dez vermelhas são a J12 nas duas edições, a J4 e a J13 nos dois motores das
+duas edições. **A J3 fica verde nessa corrida**, e é uma coisa que vale a pena
+dizer: a expectativa por motor que o item 4 prendeu é a mesma na construção de
+antes e na deste ramo, porque é dos motores e não desta página.
 
 **Verde depois**, e a planta nova de `porta.mjs` a morder nas duas edições:
 
@@ -302,16 +311,17 @@ um:
 
 | comando | código | começou (UTC) | acabou (UTC) |
 | --- | --- | --- | --- |
-| `npm run build` | 0 | 18:17:36 | 18:23:02 |
-| `npm run verify` | 0 | 18:23:02 | 18:29:09 |
-| `npm run typecheck` | 0 | 18:29:09 | 18:29:09 |
+| `npm run build` | 0 | 18:55:34 | 19:01:00 |
+| `npm run verify` | 0 | 19:01:00 | 19:07:06 |
+| `npm run typecheck` | 0 | 19:07:06 | 19:07:07 |
 
-A corrida foi sobre a árvore desta cabeça. O único ficheiro que mudou depois dela
-é este relatório, e nenhum dos três portões o lê: o `check:voz` lê o inventário
-das frases, o `REVISOES-DO-INVENTARIO.md` e a `direcao.md`, o `check:mortos` lê os
+A cadeia correu QUATRO vezes sobre esta árvore ao longo da tarde de 07.09 (às
+17:31, às 17:43, às 18:17 e às 18:55), e deu 0 nos três comandos das quatro
+vezes; a tabela leva as horas da última. O único ficheiro que mudou depois dela é
+este relatório, e nenhum dos três portões o lê: o `check:voz` lê o inventário das
+frases, o `REVISOES-DO-INVENTARIO.md` e a `direcao.md`, o `check:mortos` lê os
 identificadores do código (e correu verde com os dois guiões novos de `scripts/`),
-e nenhum abre `medicoes/`. A mesma cadeia tinha corrido às 17:43 e às 17:31 do
-mesmo dia, com este relatório já lá dentro, e deu 0 nas três das três vezes.
+e nenhum abre `medicoes/`.
 
 O `typecheck` acaba no mesmo segundo em que começa, e por isso mediu-se se ele
 pode falhar: com uma função de uma linha em `src/lib/` a devolver um número onde
