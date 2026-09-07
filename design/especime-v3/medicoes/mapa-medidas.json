@@ -3,12 +3,12 @@
     {
       "nome": "P1a · a 390, as nove regiões medidas pelo quadrado inscrito",
       "passa": true,
-      "prova": "desenho 390 × 514 px · 9 áreas · 3 de 9 chegam aos 44 px (mediana 20 px; a maior 78 px, a menor 2 px)"
+      "prova": "desenho 390 × 514 px · 9 áreas · 3 de 9 chegam aos 44 px (mediana 18 px; a maior 76 px, a menor 2 px)"
     },
     {
       "nome": "P1a · a 1280, as nove regiões medidas pelo quadrado inscrito",
       "passa": true,
-      "prova": "desenho 518 × 683 px · 9 áreas · 3 de 9 chegam aos 44 px (mediana 26 px; a maior 102 px, a menor 2 px)"
+      "prova": "desenho 518 × 683 px · 9 áreas · 4 de 9 chegam aos 44 px (mediana 24 px; a maior 104 px, a menor 2 px)"
     },
     {
       "nome": "P1b · a 390, os 308 concelhos medidos região a região, no nível em que se tocam",
@@ -115,11 +115,11 @@
         ],
         "chegam": 3,
         "areas": 9,
-        "mediana": 20,
+        "mediana": 18,
         "unidades": [
           {
             "slug": "centro",
-            "inscrito": 78,
+            "inscrito": 76,
             "caixa": 139
           },
           {
@@ -129,18 +129,23 @@
           },
           {
             "slug": "norte",
-            "inscrito": 54,
+            "inscrito": 62,
             "caixa": 165
           },
           {
             "slug": "oeste-e-vale-do-tejo",
-            "inscrito": 30,
+            "inscrito": 34,
             "caixa": 105
           },
           {
             "slug": "algarve",
-            "inscrito": 20,
+            "inscrito": 18,
             "caixa": 99
+          },
+          {
+            "slug": "grande-lisboa",
+            "inscrito": 16,
+            "caixa": 41
           },
           {
             "slug": "peninsula-de-setubal",
@@ -148,13 +153,8 @@
             "caixa": 47
           },
           {
-            "slug": "grande-lisboa",
-            "inscrito": 8,
-            "caixa": 41
-          },
-          {
             "slug": "madeira",
-            "inscrito": 4,
+            "inscrito": 10,
             "caixa": 224
           },
           {
@@ -169,34 +169,39 @@
           518,
           683
         ],
-        "chegam": 3,
+        "chegam": 4,
         "areas": 9,
-        "mediana": 26,
+        "mediana": 24,
         "unidades": [
           {
             "slug": "centro",
-            "inscrito": 102,
+            "inscrito": 104,
             "caixa": 184
           },
           {
             "slug": "alentejo",
-            "inscrito": 98,
+            "inscrito": 96,
             "caixa": 244
           },
           {
             "slug": "norte",
-            "inscrito": 70,
+            "inscrito": 84,
             "caixa": 220
           },
           {
             "slug": "oeste-e-vale-do-tejo",
-            "inscrito": 38,
+            "inscrito": 44,
             "caixa": 139
           },
           {
             "slug": "algarve",
-            "inscrito": 26,
+            "inscrito": 24,
             "caixa": 131
+          },
+          {
+            "slug": "grande-lisboa",
+            "inscrito": 22,
+            "caixa": 54
           },
           {
             "slug": "peninsula-de-setubal",
@@ -204,13 +209,8 @@
             "caixa": 63
           },
           {
-            "slug": "grande-lisboa",
-            "inscrito": 8,
-            "caixa": 54
-          },
-          {
             "slug": "madeira",
-            "inscrito": 8,
+            "inscrito": 12,
             "caixa": 297
           },
           {
