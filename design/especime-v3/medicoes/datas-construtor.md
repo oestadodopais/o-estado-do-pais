@@ -301,8 +301,8 @@ antes e o depois de cada um.*
 ### 6.0 · O que era planta do pacote de leitura, e ficou confirmado
 
 O pacote que foi ao leitor levava cinco estragos plantados. Quatro dos achados
-saem deles, e o código de `main` está certo nesses pontos. Conferido nesta
-árvore, sem mudar nada por causa deles:
+saem deles, e o código de `main` está certo nesses pontos; o quinto (o Minor 11)
+é da montagem do pacote. Conferido nesta árvore, sem mudar nada por causa deles:
 
 | achado | o que a leitura viu | o que `main` tem |
 | --- | --- | --- |
@@ -567,7 +567,9 @@ node -e "const fs=require('fs'); const j=JSON.parse(fs.readFileSync('/tmp/f14b2-
 A leitura não podia refazer nenhuma das dezasseis medições porque o pacote não
 levava a história do repositório. A parte real do achado é que o relatório as
 cite. **São estas, tal como saem nesta árvore, que tem a história completa**
-(831 commits, `git rev-parse --is-shallow-repository` a dizer `false`); a linha
+(831 commits na cabeça de que o ramo saiu, `cc79128e`, e 835 depois da fusão do
+painel semanal; `git rev-parse --is-shallow-repository` diz `false` nas duas, e
+as dezasseis linhas são as mesmas antes e depois da fusão); a linha
 que conta é a mais antiga, e cada um destes ficheiros tem exactamente um commit
 de adição:
 
