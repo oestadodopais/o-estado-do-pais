@@ -279,23 +279,39 @@ certa» diz agora o que se mediu.
 
 ### As réguas e os três comandos da segunda passagem
 
-As quatro réguas da primeira página, sobre a construção deste ramo:
+As treze réguas de `tests/inicio`, corridas sobre a construção deste ramo:
 
 | régua | resultado |
 | --- | --- |
-| `tests/inicio/porta.mjs --vermelhos` | 34 de 34 células · 15 plantas verdes |
-| `tests/inicio/leitura.mjs --vermelhos` | 26 de 26 células · **8** plantas verdes |
-| `tests/inicio/matriz.mjs` | 82 de 85 células (as três vermelhas de sempre) |
-| `tests/inicio/faixa.mjs` | 80 de 80 células |
+| `app.mjs` | 39 de 39 |
+| `areas.mjs` | 22 de 22 |
+| `correcoes-a.mjs` | 32 de 32 |
+| `faixa.mjs` | 80 de 80 |
+| `leitura.mjs --vermelhos` | **26 de 26** · **8** plantas verdes (eram sete) |
+| `lista.mjs` | 94 de 94 |
+| `mapa-distritos.mjs` | 43 de 43 |
+| `mapa-navegacao.mjs` | 9 de 9 |
+| `matriz.mjs` | **82 de 85** (eram 81 de 84: a célula nova, e as mesmas três vermelhas) |
+| `numeros-novos.mjs` | inventário (16 motivos distintos, 6 verbatim) |
+| `porta.mjs --vermelhos` | 34 de 34 · 15 plantas verdes |
+| `regioes.mjs` | 30 de 30 |
+| `rotulo.mjs` | 7 de 7 |
 
 Os três comandos, com os códigos de saída lidos de ficheiro e a hora UTC de cada
 um:
 
-| comando | código | começou | acabou |
+| comando | código | começou (UTC) | acabou (UTC) |
 | --- | --- | --- | --- |
-| `npm run build` | 0 | 17:43:49 | 17:49:14 |
-| `npm run verify` | 0 | 17:49:14 | 17:55:19 |
-| `npm run typecheck` | 0 | 17:55:19 | 17:55:19 |
+| `npm run build` | 0 | 18:17:36 | 18:23:02 |
+| `npm run verify` | 0 | 18:23:02 | 18:29:09 |
+| `npm run typecheck` | 0 | 18:29:09 | 18:29:09 |
+
+A corrida foi sobre a árvore desta cabeça. O único ficheiro que mudou depois dela
+é este relatório, e nenhum dos três portões o lê: o `check:voz` lê o inventário
+das frases, o `REVISOES-DO-INVENTARIO.md` e a `direcao.md`, o `check:mortos` lê os
+identificadores do código (e correu verde com os dois guiões novos de `scripts/`),
+e nenhum abre `medicoes/`. A mesma cadeia tinha corrido às 17:43 e às 17:31 do
+mesmo dia, com este relatório já lá dentro, e deu 0 nas três das três vezes.
 
 O `typecheck` acaba no mesmo segundo em que começa, e por isso mediu-se se ele
 pode falhar: com uma função de uma linha em `src/lib/` a devolver um número onde
