@@ -51,7 +51,12 @@
       "prova": "16 de 16 concelhos de Lisboa · «Alenquer» … «Vila Franca de Xira» · 0 porta(s) de voltar (uma página de distrito não tem nível de cima)"
     },
     {
-      "nome": "P3a · com o dedo: a região cresce sem navegar, o primeiro toque num concelho diz o nome, o segundo abre",
+      "nome": "P3a · Chromium, com o dedo: a região cresce sem navegar, o primeiro toque num concelho diz o nome, o segundo abre",
+      "passa": true,
+      "prova": "a região: nível «regiao», 86 concelhos, endereço «/#regiao=norte», nome «Norte» com a porta «/regioes/norte» · o primeiro toque no concelho deixa o endereço em «/» e diz «Montalegre» · o segundo abre «/municipios/montalegre»"
+    },
+    {
+      "nome": "P3a · WebKit, com o dedo: a região cresce sem navegar, o primeiro toque num concelho diz o nome, o segundo abre",
       "passa": true,
       "prova": "a região: nível «regiao», 86 concelhos, endereço «/#regiao=norte», nome «Norte» com a porta «/regioes/norte» · o primeiro toque no concelho deixa o endereço em «/» e diz «Montalegre» · o segundo abre «/municipios/montalegre»"
     },
