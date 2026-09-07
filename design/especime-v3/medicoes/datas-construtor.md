@@ -716,3 +716,33 @@ dias.
   `main` está certo nesses pontos, e o que se fez foi confirmá-lo.
 - **Não mexeu na Vercel nem lançou nada.** A fusão e o lançamento são do
   diretor, e o projecto vazio criado por engano a 04.09 (§0) continua lá.
+
+### 6.8 · Os portões desta passagem
+
+A fusão de `origin/main` foi feita ANTES dos portões, porque `main` moveu-se hoje
+com o painel semanal (`9c34bbb0`). Não houve conflitos: o painel mexe em 32
+ficheiros de `ledger/claims/` e em `src/data/verificacao.mjs`, e este ramo mexe
+nos dois scripts das datas, no guarda, na régua do índice e no relatório. Nenhum
+ficheiro é dos dois.
+
+Os três correram na cabeça da fusão (`1a4ff311`), nesta máquina, com as saídas
+lidas de ficheiro de registo:
+
+| portão | início (UTC) | fim (UTC) | código |
+| --- | --- | --- | --- |
+| `npm run build` | 16:43:32 | 16:49:37 | **0** |
+| `npm run verify` | 16:49:43 | 16:55:52 | **0** |
+| `npm run typecheck` | 16:56:00 | 16:56:00 | **0** |
+
+A linha que o portão das datas escreveu nos dois:
+
+```
+check-datas: história completa · 16 edição(ões) do ficheiro refeitas do `git`.
+check-datas · 16 edição(ões) datadas, 56 data(s) impressa(s) em 26 página(s), 64 laço(s) data-edição em 26 página(s) conferida(s), 0 edição(ões) sem data e nenhuma caixa de aviso.
+```
+
+Esta secção 6.8 é a única coisa escrita depois deles, e é prosa num relatório.
+Dos passos da cadeia, os únicos que lêem `design/` são o `check:ledger` (os selos
+sha256) e o `check:voz` (o inventário das frases e o registo das revisões), e
+nenhum deles lê `medicoes/`. Os dois foram corridos outra vez com esta secção
+escrita, e deram 0.
