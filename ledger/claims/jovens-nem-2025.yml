@@ -37,10 +37,6 @@ corrections: []
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 verifications:
-  - date: "2026-08-18"
-    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm90?format=JSON&lang=EN&geo=PT&unit=PC_POP"
-    result: "igual"
-    by: "painel-semanal"
   - date: "2026-08-24"
     path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm90?format=JSON&lang=EN&geo=PT&unit=PC_POP"
     result: "igual"
@@ -53,3 +49,7 @@ verifications:
     path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm90?format=JSON&lang=EN&geo=PT&unit=PC_POP"
     result: "igual"
     by: "corredor-diario"
+  - date: "2026-09-07"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm90?format=JSON&lang=EN&geo=PT&unit=PC_POP"
+    result: "igual"
+    by: "painel-semanal"
