@@ -42,19 +42,54 @@
  * próprio formatador (`timeZoneName: 'short'`), pelo que ela acompanha a mudança
  * de verão para inverno sem ninguém se lembrar: WEST no verão, WET no inverno.
  *
- * SEM CORRIDA NENHUMA NÃO SE DESENHA NADA. O ficheiro `src/data/fontes.mjs` é
- * escrito pela corrida; antes da primeira, `conferidoEm` é nulo e este
- * componente não rende. Um lugar vazio com um rótulo é pior do que nenhum, que é
- * o que a linha da agenda já faz ao lado.
+ * SEM CORRIDA NENHUMA NÃO SE DESENHA A DATA. O ficheiro `src/data/fontes.mjs` é
+ * escrito pela corrida; antes da primeira, `conferidoEm` é nulo e a leitura da
+ * data não rende. Um lugar vazio com um rótulo é pior do que nenhum, que é o que
+ * a linha da agenda já faz ao lado.
+ *
+ * ---------------------------------------------------------------------------
+ * O CONTADOR DAS SÉRIES ATRASADAS (bloco F1.6, 04.09.2026)
+ * ---------------------------------------------------------------------------
+ * A segunda leitura deste componente, e a razão de ela caber aqui e não noutro
+ * sítio: o painel da frescura é este, e o que ele mede é o mesmo facto por dois
+ * lados. A data diz QUANDO é que a casa perguntou às fontes; o contador diz
+ * quantas séries continuam a publicar-se atrás do que a fonte já pôs no ar. Uma
+ * casa que pergunta todos os dias e publica um ficheiro de há oito meses tem as
+ * duas coisas verdadeiras ao mesmo tempo, e o leitor precisa das duas.
+ *
+ * **O PARÁGRAFO ACIMA CONTINUA DE PÉ, E ESTE NÃO O CONTRADIZ.** O que ele recusa
+ * é uma FRASE DA CASA com contagens por dentro: «reconferimos 2 577 linhas»,
+ * que é diligência dita e que o inventário da voz não pode guardar como
+ * sentinela. Isto é outra coisa e entra pelo caminho que a casa já tem para ela
+ * (`IDENTIDADE.md` §10): o rótulo é uma cadeia fixa, declarada no inventário, e
+ * cada número vai marcado `data-prova` com a sua porta, recontado pelo portão a
+ * partir do livro-razão. É a mesma gramática da leitura da agenda, ao lado, que
+ * rende duas contagens desde 16.08.2026.
+ *
+ * **DUAS CONTAGENS E NÃO UMA**, e é a diferença entre o nome e o conteúdo: as
+ * séries são uma (o ficheiro mensal do desemprego registado por concelho) e as
+ * linhas que ela apanha são 278. Escrever «séries atrasadas» ao lado do número
+ * das linhas era o rótulo a contar uma coisa e o número outra; escrever só as
+ * séries escondia o tamanho do que está atrasado. Rendem-se as duas, cada uma
+ * com a sua chave.
+ *
+ * **COM ZERO RENDE-SE O ZERO.** Não é um lugar vazio com um rótulo: é o estado,
+ * e é o único estado que o leitor tem de reconhecer quando ele deixar de ser
+ * zero. O sufixo das linhas é que sai, porque zero séries não têm linhas.
  */
-import { estadoDasFontes } from '../lib/prova.mjs';
+import ValorDaProva from './ValorDaProva.astro';
+import { estadoDasFontes, prova } from '../lib/prova.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 
 /* \`lang\` saiu daqui a 03.09.2026 (bloco F0.7, segunda passagem): estava
    desestruturado com omissão e não era lido por nada. Quem chama continua a
    poder passá-lo; este componente compõe-se do \`s\` que recebe. */
-const { s, porta } = Astro.props;
+/* `lang` volta a ser lido por este componente desde o F1.6: o contador das
+   séries atrasadas rende dois números da prova, e a prova é por edição (a dica
+   de cada chave é uma frase na língua da página). Quem chama já o passava. */
+const { s, porta, lang = 'pt' } = Astro.props;
 const fontes = estadoDasFontes();
+const p = prova(lang);
 
 /* dd.mm.aaaa hh:mm, na hora de Lisboa. `Intl` faz a conversão do fuso a partir
    do instante UTC que o motor escreveu; escrever a data à mão a partir da cadeia
@@ -102,3 +137,19 @@ const carimbo = (() => {
     </span>
   )
 }
+{/* O CONTADOR, na gramática da leitura da agenda: o rótulo é uma porta à parte
+    (uma ligação dentro de outra ligação não é HTML, e as contagens já são
+    portas), e cada número é um `data-prova` dentro da sua. */}
+<span class="mob-leitura" data-atrasadas={p.series_atrasadas.valor ? 'sim' : null}>
+  <a class="mob-leitura-k" href={p.series_atrasadas.porta}><span data-voz>{s.sinal.atrasadas}</span></a>
+  <span class="mob-leitura-v">
+    <ValorDaProva chave="series_atrasadas" item={p.series_atrasadas} lang={lang} />
+    {p.series_atrasadas.valor ? (
+      <>
+        {' · '}
+        <ValorDaProva chave="linhas_atrasadas" item={p.linhas_atrasadas} lang={lang} />{' '}
+        <span data-voz>{s.sinal.atrasadasLinhas}</span>
+      </>
+    ) : null}
+  </span>
+</span>

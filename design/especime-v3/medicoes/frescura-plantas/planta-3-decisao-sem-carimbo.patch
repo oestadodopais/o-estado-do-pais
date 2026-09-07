@@ -1,0 +1,13 @@
+diff --git a/DECISIONS.md b/DECISIONS.md
+index eaf359c9..89912fe6 100644
+--- a/DECISIONS.md
++++ b/DECISIONS.md
+@@ -11942,8 +11942,6 @@ Nada muda no ar nesta sessão além do carimbo semanal de 31.08.
+ 
+ **Afecta:** metodo
+ 
+-**Texto:** metodo b4cc3594f960
+-
+ **A decisão** (lugar de direção, 04.09.2026, pela delegação da §1.98; decisão (3) da mesma entrada: «o Portal BASE fica como fonte e a identidade de navegador com que se lê declara-se no Método, em vez de se deixar cair a fonte»). O limite da regra 1 do Método («As fontes») ganha uma segunda frase, nas duas edições, e mais nada muda no texto governado.
+ 
+ **O que passou a estar escrito**, em português e em inglês: «Uma fonte, o Portal BASE, recusa os pedidos que se identificam com o nome da casa: é lida com a identidade de um navegador, e nenhuma outra o é.» · «One source, Portal BASE, refuses requests that identify themselves with the house’s name: it is read with the identity of a browser, and no other source is.»
