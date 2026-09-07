@@ -49,6 +49,12 @@
  * a ausência de linha é a ausência de facto, e a página volta ao marcador
  * `[a verificar]`, que é o modo certo de falhar.
  *
+ * MAS UM ERRO DO `git` NÃO É UMA AUSÊNCIA (segunda passagem, 07.09.2026). Se a
+ * leitura de uma edição sair com código diferente de zero, ou atirar, o script
+ * PÁRA e não escreve nada, dizendo qual foi a edição e o que o `git` respondeu:
+ * escrever o ficheiro sem essa linha apagaria uma data medida e commitada. Só a
+ * saída limpa e vazia deixa a edição de fora, e essa diz-se no registo.
+ *
  * ---------------------------------------------------------------------------
  * A RECUSA
  * ---------------------------------------------------------------------------
@@ -146,21 +152,52 @@ for (const slug of slugs) {
     const ficheiro = `studies-src/${slug}/${lang}.html`;
     if (!fs.existsSync(path.join(RAIZ, ficheiro))) continue;
 
-    let linhas = [];
+    /**
+     * UM ERRO DO `git` NÃO É A AUSÊNCIA DE UM FACTO (leitura a frio do Codex de
+     * 07.09.2026, Major 5).
+     *
+     * A primeira passagem apanhava qualquer excepção desta chamada e punha
+     * `linhas = []`, que o resto do script lê como «esta edição não tem commit
+     * de adição». O `git` a falhar numa edição ficava indistinguível da prova de
+     * que ela nunca foi acrescentada, e o script seguia e ESCREVIA POR CIMA do
+     * ficheiro commitado um resultado parcial, com exit 0. Plantado e
+     * confirmado a 07.09 com um `git` que falha só numa edição: quinze linhas
+     * escritas, uma apagada em silêncio.
+     *
+     * Agora o erro pára o script antes de qualquer escrita, e diz qual foi a
+     * edição e o que o `git` respondeu. Só a saída LIMPA e vazia é ausência.
+     */
+    let saida;
     try {
-      linhas = git([
-        'log',
-        '--diff-filter=A',
-        '--format=%ad %H',
-        '--date=short',
-        '--',
-        ficheiro,
-      ])
-        .split('\n')
-        .map((l) => l.trim())
-        .filter((l) => /^\d{4}-\d{2}-\d{2} [0-9a-f]{40}$/.test(l));
-    } catch {
-      linhas = [];
+      saida = git(['log', '--diff-filter=A', '--format=%ad %H', '--date=short', '--', ficheiro]);
+    } catch (erro) {
+      const e = /** @type {{status?: number, stderr?: Buffer|string}} */ (erro);
+      const codigo = typeof e.status === 'number' ? e.status : 'sem código';
+      const stderr = e.stderr ? String(e.stderr).trim() : '';
+      console.error(
+        vermelho(`datas-de-publicacao: o \`git\` falhou em ${ficheiro}.`) +
+          `\n  \`git log --diff-filter=A --format=%ad %H --date=short -- ${ficheiro}\`` +
+          `\n  saiu com ${codigo}${stderr ? `: ${stderr}` : ''}` +
+          `\n` +
+          `\n  Um erro do \`git\` NÃO é a prova de que esta edição não tem commit de adição, e` +
+          `\n  escrever o ficheiro sem ela apagava uma data que está medida e commitada. Nada foi` +
+          `\n  escrito: ${path.relative(RAIZ, DESTINO)} fica como está.`,
+      );
+      process.exit(1);
+    }
+
+    const cruas = saida.split('\n').map((l) => l.trim()).filter((l) => l.length > 0);
+    const linhas = cruas.filter((l) => /^\d{4}-\d{2}-\d{2} [0-9a-f]{40}$/.test(l));
+
+    /* O `git` respondeu, com código 0, alguma coisa que este script não sabe
+       ler. Também não é ausência: é o formato a mudar por baixo da medição. */
+    if (cruas.length > 0 && linhas.length === 0) {
+      console.error(
+        vermelho(`datas-de-publicacao: o \`git\` respondeu em ${ficheiro} e não na forma lida.`) +
+          `\n  Esperava linhas \`AAAA-MM-DD <40 hexadecimais>\` e a primeira foi «${cruas[0]}».` +
+          `\n  Nada foi escrito: ${path.relative(RAIZ, DESTINO)} fica como está.`,
+      );
+      process.exit(1);
     }
 
     /* A ÚLTIMA LINHA É A MAIS ANTIGA: o `git log` vem do mais recente para trás,
@@ -168,6 +205,11 @@ for (const slug of slugs) {
        vez que ele existiu neste repositório. */
     const ultima = linhas.length > 0 ? linhas[linhas.length - 1] : null;
     if (ultima === null) {
+      /* A AUSÊNCIA LEGÍTIMA: o `git` correu, saiu com 0 e não devolveu uma
+         linha. A edição fica de fora do ficheiro, e di-lo aqui e no fim. */
+      console.log(
+        cinza(`  ${ficheiro}: o \`git\` correu e não deu commit de adição. Fica de fora.`),
+      );
       semCommit.push(ficheiro);
       continue;
     }
