@@ -1,0 +1,396 @@
+{
+  "sobre": "origin/main em 9c34bbb0, a primeira página sem o F1.1c",
+  "dist": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/2dfb8705-5d0f-4a6b-a4d0-2fffddb17dfc/scratchpad/base-9c34bbb0/dist",
+  "medido": "2026-09-07T16:51:43.969Z",
+  "comando": "node scripts/medir-toque.mjs /private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/2dfb8705-5d0f-4a6b-a4d0-2fffddb17dfc/scratchpad/base-9c34bbb0/dist design/especime-v3/medicoes/toque-medidas-antes.json --sobre=origin/main em 9c34bbb0, a primeira página sem o F1.1c",
+  "medidas": {
+    "chromium.pt.com-guiao.repouso": {
+      "altura": 4638,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [
+        "divida-publica-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025"
+      ],
+      "hash": "",
+      "caminho": "/"
+    },
+    "chromium.pt.com-guiao.apos-toque": {
+      "alvo": "posicao-de-investimento-internacional-2025",
+      "altura": 4892,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [
+        "m-posicao-de-investimento-internacional-2025"
+      ],
+      "linhaVazia": {
+        "existe": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [
+        "divida-publica-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025"
+      ],
+      "hash": "#m-posicao-de-investimento-internacional-2025",
+      "caminho": "/"
+    },
+    "chromium.pt.com-guiao.apos-voltar": {
+      "alvo": "posicao-de-investimento-internacional-2025",
+      "altura": 4638,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [
+        "divida-publica-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025"
+      ],
+      "hash": "",
+      "caminho": "/"
+    },
+    "chromium.pt.com-guiao.apos-enter": {
+      "alvo": "posicao-de-investimento-internacional-2025",
+      "altura": 4892,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [
+        "m-posicao-de-investimento-internacional-2025"
+      ],
+      "linhaVazia": {
+        "existe": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [
+        "divida-publica-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025"
+      ],
+      "hash": "#m-posicao-de-investimento-internacional-2025",
+      "caminho": "/"
+    },
+    "chromium.pt.sem-guiao.repouso": {
+      "altura": 4578,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [
+        "divida-publica-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025"
+      ],
+      "hash": "",
+      "caminho": "/"
+    },
+    "chromium.en.com-guiao.repouso": {
+      "altura": 4596,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [
+        "divida-publica-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025"
+      ],
+      "hash": "",
+      "caminho": "/en"
+    },
+    "chromium.en.com-guiao.apos-toque": {
+      "alvo": "posicao-de-investimento-internacional-2025",
+      "altura": 4850,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [
+        "m-posicao-de-investimento-internacional-2025"
+      ],
+      "linhaVazia": {
+        "existe": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [
+        "divida-publica-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025"
+      ],
+      "hash": "#m-posicao-de-investimento-internacional-2025",
+      "caminho": "/en"
+    },
+    "chromium.en.com-guiao.apos-voltar": {
+      "alvo": "posicao-de-investimento-internacional-2025",
+      "altura": 4596,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [
+        "divida-publica-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025"
+      ],
+      "hash": "",
+      "caminho": "/en"
+    },
+    "chromium.en.com-guiao.apos-enter": {
+      "alvo": "posicao-de-investimento-internacional-2025",
+      "altura": 4850,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [
+        "m-posicao-de-investimento-internacional-2025"
+      ],
+      "linhaVazia": {
+        "existe": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [
+        "divida-publica-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025"
+      ],
+      "hash": "#m-posicao-de-investimento-internacional-2025",
+      "caminho": "/en"
+    },
+    "chromium.en.sem-guiao.repouso": {
+      "altura": 4536,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [
+        "divida-publica-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025"
+      ],
+      "hash": "",
+      "caminho": "/en"
+    },
+    "webkit.pt.com-guiao.repouso": {
+      "altura": 4639,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [
+        "divida-publica-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025"
+      ],
+      "hash": "",
+      "caminho": "/"
+    },
+    "webkit.pt.com-guiao.apos-toque": {
+      "alvo": "posicao-de-investimento-internacional-2025",
+      "altura": 4893,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [
+        "m-posicao-de-investimento-internacional-2025"
+      ],
+      "linhaVazia": {
+        "existe": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [
+        "divida-publica-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025"
+      ],
+      "hash": "#m-posicao-de-investimento-internacional-2025",
+      "caminho": "/"
+    },
+    "webkit.pt.com-guiao.apos-voltar": {
+      "alvo": "posicao-de-investimento-internacional-2025",
+      "altura": 4639,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [
+        "divida-publica-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025"
+      ],
+      "hash": "",
+      "caminho": "/"
+    },
+    "webkit.pt.com-guiao.apos-enter": {
+      "alvo": "posicao-de-investimento-internacional-2025",
+      "altura": 4893,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [
+        "m-posicao-de-investimento-internacional-2025"
+      ],
+      "linhaVazia": {
+        "existe": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [
+        "divida-publica-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025"
+      ],
+      "hash": "#m-posicao-de-investimento-internacional-2025",
+      "caminho": "/"
+    },
+    "webkit.pt.sem-guiao.repouso": {
+      "altura": 4579,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [
+        "divida-publica-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025"
+      ],
+      "hash": "",
+      "caminho": "/"
+    },
+    "webkit.en.com-guiao.repouso": {
+      "altura": 4597,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [
+        "divida-publica-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025"
+      ],
+      "hash": "",
+      "caminho": "/en"
+    },
+    "webkit.en.com-guiao.apos-toque": {
+      "alvo": "posicao-de-investimento-internacional-2025",
+      "altura": 4851,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [
+        "m-posicao-de-investimento-internacional-2025"
+      ],
+      "linhaVazia": {
+        "existe": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [
+        "divida-publica-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025"
+      ],
+      "hash": "#m-posicao-de-investimento-internacional-2025",
+      "caminho": "/en"
+    },
+    "webkit.en.com-guiao.apos-voltar": {
+      "alvo": "posicao-de-investimento-internacional-2025",
+      "altura": 4597,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [
+        "divida-publica-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025"
+      ],
+      "hash": "",
+      "caminho": "/en"
+    },
+    "webkit.en.com-guiao.apos-enter": {
+      "alvo": "posicao-de-investimento-internacional-2025",
+      "altura": 4851,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [
+        "m-posicao-de-investimento-internacional-2025"
+      ],
+      "linhaVazia": {
+        "existe": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [
+        "divida-publica-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025"
+      ],
+      "hash": "#m-posicao-de-investimento-internacional-2025",
+      "caminho": "/en"
+    },
+    "webkit.en.sem-guiao.repouso": {
+      "altura": 4537,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [
+        "divida-publica-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025"
+      ],
+      "hash": "",
+      "caminho": "/en"
+    }
+  }
+}

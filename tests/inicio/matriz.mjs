@@ -59,7 +59,11 @@ import { chromium } from 'playwright';
    própria não media nada. */
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
-const DIST = path.join(RAIZ, 'dist');
+/* `OEDP_DIST` COMO AS OUTRAS RÉGUAS DE `tests/inicio/` (07.09.2026). Existe pela
+   mesma razão que existe em `porta.mjs` e em `leitura.mjs`: um conhecido-positivo
+   faz-se numa CÓPIA do `dist/` com o defeito lá dentro, e uma régua que só saiba
+   ler `dist/` obriga a estragar a construção boa para se provar a si própria. */
+const DIST = process.env.OEDP_DIST ? path.resolve(process.env.OEDP_DIST) : path.join(RAIZ, 'dist');
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -272,6 +276,10 @@ const estadoDaPagina = (p) =>
     `porta do concelho ${ordem.comando} · painel ${ordem.painel} · portas ${ordem.portas} · ${ordem.total} paragens`,
   );
 
+  /* A ORDEM COM UMA LEITURA ABERTA mede-se onde a leitura está aberta: na célula
+     «uma leitura abre só a sua», mais abaixo neste mesmo bloco. É a segunda
+     metade desta célula, e não uma célula noutro sítio. */
+
   /* AS MUDANÇAS DE ESTADO PASSAM DE CINCO A TRÊS (correções de UX, bloco A,
      itens A2 e A3, 25.08.2026). Os dois passos que saíram — «âmbito → modo
      região» e «região → Alentejo» — pediam um comando que já não existe.
@@ -368,23 +376,83 @@ const estadoDaPagina = (p) =>
      toque no CARTÃO dela, e é esse que a célula passa a dar. O que ela mede é o
      mesmo, e é o que interessa: depois do gesto há UMA leitura aberta, e uma só.
 
-     O CARTÃO É O DA PRIMEIRA MEDIDA QUE ABRE AQUI: três dos vinte e um levam à
-     página do domínio, e um deles mudava de página em vez de abrir uma leitura. */
+     O CARTÃO É O PRIMEIRO DA FAIXA (07.09.2026). Escolhia-se «o primeiro que
+     abra aqui», porque três dos vinte e um levavam à página do domínio; a
+     decisão (7) da §1.99 e a segunda passagem deste bloco puseram os 21 a fazer
+     o mesmo, e a escolha deixou de ter razão de ser. A célula continua a
+     confirmar que o destino é uma âncora desta página, porque é isso que ela
+     mede: um cartão que mudasse de página não deixava leitura nenhuma aberta. */
   await p.goto(`${base}/`, { waitUntil: 'networkidle' });
   const cartaoDaLeitura = await p.evaluate(() => {
-    const c = [...document.querySelectorAll('[data-grelha] [data-faixa] [data-cartao]')].find((x) =>
-      (x.querySelector('.cartao-porta')?.getAttribute('href') ?? '').startsWith('#'),
-    );
-    if (c) c.scrollIntoView({ block: 'center', inline: 'center' });
-    return c ? c.getAttribute('data-cartao') : null;
+    const c = document.querySelector('[data-grelha] [data-faixa] [data-cartao]');
+    if (!c) return null;
+    c.scrollIntoView({ block: 'center', inline: 'center' });
+    const href = c.querySelector('.cartao-porta')?.getAttribute('href') ?? '';
+    return href.startsWith('#') ? c.getAttribute('data-cartao') : null;
   });
-  await p.click(`[data-cartao="${cartaoDaLeitura}"] .cartao-porta`);
-  await p.waitForTimeout(140);
-  const uma = await estadoDaPagina(p);
+  /* SEM CARTÃO NÃO SE TOCA, E A CÉLULA CAI. Um `click` num selector que não
+     existe espera trinta segundos e rebenta a régua, e uma régua que rebenta não
+     mede nada: se o primeiro cartão levar para fora, o que se quer é a célula
+     vermelha a dizê-lo. */
+  let uma = null;
+  if (cartaoDaLeitura) {
+    await p.click(`[data-cartao="${cartaoDaLeitura}"] .cartao-porta`);
+    await p.waitForTimeout(140);
+    uma = await estadoDaPagina(p);
+  }
   conta(
     'uma leitura abre só a sua',
-    uma.abertas === 1,
-    `${uma.abertas} abertas · toque no cartão «${cartaoDaLeitura}»`,
+    !!uma && uma.abertas === 1,
+    uma
+      ? `${uma.abertas} abertas · toque no cartão «${cartaoDaLeitura}»`
+      : 'o primeiro cartão da faixa não abre uma leitura desta página',
+  );
+
+  /* ---------------------------------------------------------------------------
+     A ORDEM DO TECLADO COM UMA LEITURA ABERTA (segunda passagem do F1.1c,
+     07.09.2026, Major 7 da leitura a frio)
+     ---------------------------------------------------------------------------
+     A célula da ordem do teclado, lá em cima, mede a área em REPOUSO, e em
+     repouso a primeira paragem dela é o comando da densidade: a folha tira da
+     página as dobras fechadas, e o `<summary>` de nenhuma delas está na ordem. O
+     relatório do bloco dizia que «quando uma leitura abre, o `<summary>` dela
+     entra na ordem dentro da área», e isso NÃO ESTAVA MEDIDO por célula nenhuma:
+     aquela célula passaria com o `<summary>` da leitura aberta depois das portas.
+
+     MEDE-SE AQUI, onde o gesto do leitor já abriu uma leitura, e exige-se a
+     ordem inteira: o comando da densidade, o `<summary>` da leitura aberta, e as
+     portas do fim da página. É a mesma promessa da outra célula, que é a ordem do
+     teclado a descer a página sem saltos para trás, no estado em que a área tem
+     alguma coisa dentro. */
+  const ordemAberta =
+    uma && cartaoDaLeitura
+      ? await p.evaluate((id) => {
+          const alvos = [
+            ...document.querySelectorAll('a[href],button,summary,input,[tabindex]'),
+          ].filter((e) => !e.closest('[hidden]') && e.offsetParent !== null);
+          const marco = (sel) => alvos.findIndex((e) => e.matches(sel) || e.closest(sel));
+          const dobra = document.getElementById(`m-${id}`);
+          const sumario = dobra ? dobra.querySelector(':scope > summary') : null;
+          return {
+            aberta: !!dobra && dobra.open,
+            comando: marco('[data-area-leitura]'),
+            sumario: sumario ? alvos.indexOf(sumario) : -1,
+            portas: marco('.portas'),
+            total: alvos.length,
+          };
+        }, cartaoDaLeitura)
+      : null;
+  conta(
+    'ordem do teclado com uma leitura aberta · densidade → o <summary> dela → portas',
+    !!ordemAberta &&
+      ordemAberta.aberta &&
+      ordemAberta.comando >= 0 &&
+      ordemAberta.comando < ordemAberta.sumario &&
+      ordemAberta.sumario < ordemAberta.portas,
+    ordemAberta
+      ? `«${cartaoDaLeitura}» aberta: ${ordemAberta.aberta} · densidade ${ordemAberta.comando} · ` +
+        `<summary> ${ordemAberta.sumario} · portas ${ordemAberta.portas} · ${ordemAberta.total} paragens`
+      : 'não houve cartão para abrir uma leitura',
   );
   /* O ENDEREÇO ABRE TODAS, e é o que restou do comando global: `?densidade=
      leitura` continua a ser um estado partilhável e o guião continua a abrir as

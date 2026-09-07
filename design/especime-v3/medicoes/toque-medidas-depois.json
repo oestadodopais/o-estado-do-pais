@@ -1,0 +1,336 @@
+{
+  "sobre": "toque-2026-09-04, a segunda passagem do F1.1c sobre a fusão de origin/main em 9c34bbb0",
+  "dist": "/Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/toque-2026-09-04/dist",
+  "medido": "2026-09-07T17:20:30.094Z",
+  "comando": "node scripts/medir-toque.mjs dist design/especime-v3/medicoes/toque-medidas-depois.json --sobre=toque-2026-09-04, a segunda passagem do F1.1c sobre a fusão de origin/main em 9c34bbb0",
+  "medidas": {
+    "chromium.pt.com-guiao.repouso": {
+      "altura": 3700,
+      "nomes": 21,
+      "nomesVisiveis": 0,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": true,
+        "visivel": true
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [],
+      "hash": "",
+      "caminho": "/"
+    },
+    "chromium.pt.com-guiao.apos-toque": {
+      "alvo": "divida-publica-2025",
+      "altura": 4050,
+      "nomes": 21,
+      "nomesVisiveis": 1,
+      "detalhes": 21,
+      "abertas": [
+        "m-divida-publica-2025"
+      ],
+      "linhaVazia": {
+        "existe": true,
+        "visivel": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [],
+      "hash": "#m-divida-publica-2025",
+      "caminho": "/"
+    },
+    "chromium.pt.com-guiao.apos-voltar": {
+      "alvo": "divida-publica-2025",
+      "altura": 3700,
+      "nomes": 21,
+      "nomesVisiveis": 0,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": true,
+        "visivel": true
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [],
+      "hash": "",
+      "caminho": "/"
+    },
+    "chromium.pt.com-guiao.apos-enter": {
+      "alvo": "divida-publica-2025",
+      "altura": 4050,
+      "nomes": 21,
+      "nomesVisiveis": 1,
+      "detalhes": 21,
+      "abertas": [
+        "m-divida-publica-2025"
+      ],
+      "linhaVazia": {
+        "existe": true,
+        "visivel": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [],
+      "hash": "#m-divida-publica-2025",
+      "caminho": "/"
+    },
+    "chromium.pt.sem-guiao.repouso": {
+      "altura": 4578,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": true,
+        "visivel": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [],
+      "hash": "",
+      "caminho": "/"
+    },
+    "chromium.en.com-guiao.repouso": {
+      "altura": 3649,
+      "nomes": 21,
+      "nomesVisiveis": 0,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": true,
+        "visivel": true
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [],
+      "hash": "",
+      "caminho": "/en"
+    },
+    "chromium.en.com-guiao.apos-toque": {
+      "alvo": "divida-publica-2025",
+      "altura": 3999,
+      "nomes": 21,
+      "nomesVisiveis": 1,
+      "detalhes": 21,
+      "abertas": [
+        "m-divida-publica-2025"
+      ],
+      "linhaVazia": {
+        "existe": true,
+        "visivel": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [],
+      "hash": "#m-divida-publica-2025",
+      "caminho": "/en"
+    },
+    "chromium.en.com-guiao.apos-voltar": {
+      "alvo": "divida-publica-2025",
+      "altura": 3649,
+      "nomes": 21,
+      "nomesVisiveis": 0,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": true,
+        "visivel": true
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [],
+      "hash": "",
+      "caminho": "/en"
+    },
+    "chromium.en.com-guiao.apos-enter": {
+      "alvo": "divida-publica-2025",
+      "altura": 3999,
+      "nomes": 21,
+      "nomesVisiveis": 1,
+      "detalhes": 21,
+      "abertas": [
+        "m-divida-publica-2025"
+      ],
+      "linhaVazia": {
+        "existe": true,
+        "visivel": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [],
+      "hash": "#m-divida-publica-2025",
+      "caminho": "/en"
+    },
+    "chromium.en.sem-guiao.repouso": {
+      "altura": 4536,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": true,
+        "visivel": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [],
+      "hash": "",
+      "caminho": "/en"
+    },
+    "webkit.pt.com-guiao.repouso": {
+      "altura": 3701,
+      "nomes": 21,
+      "nomesVisiveis": 0,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": true,
+        "visivel": true
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [],
+      "hash": "",
+      "caminho": "/"
+    },
+    "webkit.pt.com-guiao.apos-toque": {
+      "alvo": "divida-publica-2025",
+      "altura": 4051,
+      "nomes": 21,
+      "nomesVisiveis": 1,
+      "detalhes": 21,
+      "abertas": [
+        "m-divida-publica-2025"
+      ],
+      "linhaVazia": {
+        "existe": true,
+        "visivel": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [],
+      "hash": "#m-divida-publica-2025",
+      "caminho": "/"
+    },
+    "webkit.pt.com-guiao.apos-voltar": {
+      "alvo": "divida-publica-2025",
+      "altura": 3701,
+      "nomes": 21,
+      "nomesVisiveis": 0,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": true,
+        "visivel": true
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [],
+      "hash": "",
+      "caminho": "/"
+    },
+    "webkit.pt.com-guiao.apos-enter": {
+      "alvo": "divida-publica-2025",
+      "altura": 4051,
+      "nomes": 21,
+      "nomesVisiveis": 1,
+      "detalhes": 21,
+      "abertas": [
+        "m-divida-publica-2025"
+      ],
+      "linhaVazia": {
+        "existe": true,
+        "visivel": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [],
+      "hash": "#m-divida-publica-2025",
+      "caminho": "/"
+    },
+    "webkit.pt.sem-guiao.repouso": {
+      "altura": 4579,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": true,
+        "visivel": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [],
+      "hash": "",
+      "caminho": "/"
+    },
+    "webkit.en.com-guiao.repouso": {
+      "altura": 3650,
+      "nomes": 21,
+      "nomesVisiveis": 0,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": true,
+        "visivel": true
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [],
+      "hash": "",
+      "caminho": "/en"
+    },
+    "webkit.en.com-guiao.apos-toque": {
+      "alvo": "divida-publica-2025",
+      "altura": 4001,
+      "nomes": 21,
+      "nomesVisiveis": 1,
+      "detalhes": 21,
+      "abertas": [
+        "m-divida-publica-2025"
+      ],
+      "linhaVazia": {
+        "existe": true,
+        "visivel": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [],
+      "hash": "#m-divida-publica-2025",
+      "caminho": "/en"
+    },
+    "webkit.en.com-guiao.apos-voltar": {
+      "alvo": "divida-publica-2025",
+      "altura": 3650,
+      "nomes": 21,
+      "nomesVisiveis": 0,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": true,
+        "visivel": true
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [],
+      "hash": "",
+      "caminho": "/en"
+    },
+    "webkit.en.com-guiao.apos-enter": {
+      "alvo": "divida-publica-2025",
+      "altura": 4001,
+      "nomes": 21,
+      "nomesVisiveis": 1,
+      "detalhes": 21,
+      "abertas": [
+        "m-divida-publica-2025"
+      ],
+      "linhaVazia": {
+        "existe": true,
+        "visivel": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [],
+      "hash": "#m-divida-publica-2025",
+      "caminho": "/en"
+    },
+    "webkit.en.sem-guiao.repouso": {
+      "altura": 4537,
+      "nomes": 21,
+      "nomesVisiveis": 21,
+      "detalhes": 21,
+      "abertas": [],
+      "linhaVazia": {
+        "existe": true,
+        "visivel": false
+      },
+      "cartoes": 21,
+      "cartoesParaFora": [],
+      "hash": "",
+      "caminho": "/en"
+    }
+  }
+}
