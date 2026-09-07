@@ -6,7 +6,9 @@
  *
  * Corre na cadeia do `build`, depois do `gate:html`, sobre o `dist/` construído
  * e sobre os artefactos que o motor atravessou para `mapa/`. É o D5 do
- * `design/especime-v3/briefs/BRIEF-mapa-distritos.md`, e são sete regras:
+ * `design/especime-v3/briefs/BRIEF-mapa-distritos.md`, e são nove regras: sete
+ * dele, e duas do `BRIEF-F1.1d-os-nomes-do-mapa.md` §4 (P6), que entram com as
+ * regiões:
  *
  *   R1  os resumos dos ficheiros de `mapa/` iguais aos do manifesto, e nenhum
  *       ficheiro a mais nem a menos;
@@ -20,7 +22,13 @@
  *   R6  a atribuição da DGT presente onde o mapa está;
  *   R7  a ordem dos caminhos de cada `svg`, a das unidades do manifesto, e a
  *       das listas de `/municipios` e de cada página de distrito, na colação
- *       portuguesa (I84).
+ *       portuguesa (I84);
+ *   R8  as nove regiões da lista da casa, com o seu código, os 308 concelhos uma
+ *       vez cada, cada um na região que a coluna `nuts2` da Carta lhe dá, e o
+ *       ficheiro gerado escrito das fontes que ele diz ter lido;
+ *   R9  a geometria: a área de cada região igual à soma das áreas dos seus
+ *       concelhos, a caixa igual ao caminho, e nenhum concelho com o ponto fora
+ *       do desenho da sua região.
  *
  * ---------------------------------------------------------------------------
  * O LEITOR É PRÓPRIO, E É POR ISSO QUE A CONFERÊNCIA VALE
@@ -41,7 +49,7 @@
  * do mundo que as regras leem, e exige que a regra correspondente falhe. Nada é
  * escrito em disco, e por isso o estrago não pode sobreviver à corrida:
  *
- *   node scripts/check-mapa.mjs                as sete regras
+ *   node scripts/check-mapa.mjs                as nove regras
  *   node scripts/check-mapa.mjs --vermelhos    e a linha de cada estrago
  *
  * Uso: `npm run check:mapa`, e é o que a cadeia do `build` corre.
@@ -54,6 +62,7 @@ import { parse } from 'node-html-parser';
 
 import { routePath, LANGS } from '../src/lib/routes.mjs';
 import { slugsDaCarta } from '../src/lib/inicio.mjs';
+import { REGIOES } from '../src/data/regioes.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -138,7 +147,27 @@ function leMundo() {
     const indice = lePagina(routePath('municipios', lang));
     if (indice) paginas.push({ ...indice, lang, tipo: 'municipios' });
   }
-  return { ficheiros, manifesto, pais, distritos, paginas };
+
+  /* A GEOMETRIA DAS REGIÕES (R8 e R9). O ficheiro gerado, os nove ficheiros que
+     ele nomeia, os três CSV da Carta e a lista dos concelhos com o seu dico. Os
+     nove ficheiros leem-se de `dist/`, que é onde a construção os pôs, porque é
+     de lá que o navegador os pede. */
+  const geradoAbs = path.join(RAIZ, 'src', 'data', 'mapa-regioes.gerado.json');
+  const regioes = fs.existsSync(geradoAbs) ? JSON.parse(fs.readFileSync(geradoAbs, 'utf8')) : null;
+  const clientes = {};
+  for (const r of regioes?.regioes ?? []) {
+    const abs = path.join(DIST, r.ficheiro);
+    if (fs.existsSync(abs)) clientes[r.slug] = JSON.parse(fs.readFileSync(abs, 'utf8'));
+  }
+  const csv = {};
+  for (const parte of ['continente', 'acores', 'madeira']) {
+    const rel = `public/dados/caop-2025-municipios-${parte}.csv`;
+    const abs = path.join(RAIZ, rel);
+    if (fs.existsSync(abs)) csv[rel] = fs.readFileSync(abs, 'utf8');
+  }
+  const concelhos = JSON.parse(fs.readFileSync(path.join(RAIZ, 'src', 'data', 'concelhos.gerado.json'), 'utf8'));
+
+  return { ficheiros, manifesto, pais, distritos, paginas, regioes, clientes, csv, concelhos };
 }
 
 /* ===========================================================================
@@ -438,6 +467,257 @@ function r7(m) {
   return erros;
 }
 
+/* ===========================================================================
+ * AS REGIÕES (R8 e R9), COM LEITOR PRÓPRIO
+ * ===========================================================================
+ * `src/data/mapa-regioes.gerado.json` é escrito por `scripts/mapa-regioes.mjs`,
+ * e nada aqui o importa: a geometria lê-se com o analisador deste ficheiro, a
+ * região de cada concelho lê-se outra vez dos três CSV da Carta, e as áreas
+ * contam-se outra vez dos artefactos de `mapa/`. Uma conferência que chamasse o
+ * gerador confirmava-se a si própria.
+ *
+ * A TOLERÂNCIA DA R9 É MEDIDA E NÃO ESCOLHIDA. A área de uma região é a de um
+ * caminho arredondado ao campo do país e afinado com a tolerância do manifesto;
+ * a dos seus concelhos é a de caminhos arredondados na grelha de cada unidade.
+ * As duas nunca são o mesmo número, e a distância entre elas, medida a
+ * 07.09.2026 sobre os artefactos de `mapa/`, vai de 0,008 % (o Algarve) a
+ * 0,809 % (os Açores, que são a região com mais anéis pequenos), com 0,116 % na
+ * mediana. O tecto abaixo fica no dobro do pior caso medido, que é a distância
+ * entre «arredondou» e «está errada».
+ */
+const TECTO_DA_AREA_PCT = 1.6;
+
+/** Os anéis de um caminho `M x y l dx dy,… Z`, com o analisador deste portão. */
+function aneisDoCaminho(d) {
+  const aneis = [];
+  let anel = null;
+  let i = 0;
+  let cx = 0;
+  let cy = 0;
+  const numero = () => {
+    while (i < d.length && (d[i] === ' ' || d[i] === ',')) i++;
+    const j0 = i;
+    if (d[i] === '-' || d[i] === '+') i++;
+    while (i < d.length && ((d[i] >= '0' && d[i] <= '9') || d[i] === '.')) i++;
+    return Number(d.slice(j0, i));
+  };
+  while (i < d.length) {
+    const c = d[i];
+    if (c === 'M') {
+      i++;
+      cx = numero();
+      cy = numero();
+      anel = [[cx, cy]];
+      aneis.push(anel);
+    } else if (c === 'l') i++;
+    else if (c === 'Z' || c === 'z') {
+      i++;
+      anel = null;
+    } else if (c === ' ' || c === ',') i++;
+    else {
+      cx += numero();
+      cy += numero();
+      anel.push([cx, cy]);
+    }
+  }
+  return aneis;
+}
+
+/** A área absoluta de uma lista de anéis. */
+function areaDeAneis(aneis) {
+  let total = 0;
+  for (const anel of aneis) {
+    let a = 0;
+    for (let k = 0; k < anel.length; k++) {
+      const [x1, y1] = anel[k];
+      const [x2, y2] = anel[(k + 1) % anel.length];
+      a += x1 * y2 - x2 * y1;
+    }
+    total += a / 2;
+  }
+  return Math.abs(total);
+}
+
+/** A caixa de uma lista de anéis. */
+function caixaDeAneis(aneis) {
+  let x0 = Infinity;
+  let y0 = Infinity;
+  let x1 = -Infinity;
+  let y1 = -Infinity;
+  for (const a of aneis) {
+    for (const [x, y] of a) {
+      if (x < x0) x0 = x;
+      if (y < y0) y0 = y;
+      if (x > x1) x1 = x;
+      if (y > y1) y1 = y;
+    }
+  }
+  return [x0, y0, x1 - x0, y1 - y0];
+}
+
+/** Um ponto dentro de uma lista de anéis, pela paridade dos cruzamentos. */
+function dentroDeAneis(aneis, [x, y]) {
+  let dentro = false;
+  for (const anel of aneis) {
+    for (let i = 0, j = anel.length - 1; i < anel.length; j = i++) {
+      const [xi, yi] = anel[i];
+      const [xj, yj] = anel[j];
+      if (yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) dentro = !dentro;
+    }
+  }
+  return dentro;
+}
+
+/** A região de cada concelho, lida outra vez da coluna `nuts2` da Carta. */
+function regiaoDaCarta(m) {
+  const daCasa = new Map();
+  for (const r of REGIOES) {
+    if (r.referencia) continue;
+    daCasa.set(r.nome.pt, r.slug);
+  }
+  /* As duas autónomas vêm da Carta com o nome oficial por extenso. */
+  daCasa.set('Região Autónoma dos Açores', daCasa.get('Açores'));
+  daCasa.set('Região Autónoma da Madeira', daCasa.get('Madeira'));
+  const porDico = new Map();
+  for (const rel of Object.keys(m.csv)) {
+    const linhas = m.csv[rel].split('\n').filter((l) => l.trim() !== '' && !l.startsWith('#'));
+    const cabecalho = linhas[0].split(',');
+    const iDico = cabecalho.indexOf('dtmn');
+    const iNuts = cabecalho.indexOf('nuts2');
+    for (const linha of linhas.slice(1)) {
+      const campos = linha.split(',');
+      porDico.set(campos[iDico], daCasa.get(campos[iNuts]) ?? null);
+    }
+  }
+  return porDico;
+}
+
+/** R8 · as nove regiões, os 308 uma vez cada, e cada um na região da Carta. */
+function r8(m) {
+  const erros = [];
+  const g = m.regioes;
+  if (!g) return ['falta src/data/mapa-regioes.gerado.json (corra `npm run mapa:regioes`).'];
+
+  const daCasa = REGIOES.filter((r) => !r.referencia);
+  const slugsDaCasa = daCasa.map((r) => r.slug).sort();
+  const slugsDoFicheiro = g.regioes.map((r) => r.slug).sort();
+  if (slugsDoFicheiro.join('|') !== slugsDaCasa.join('|')) {
+    erros.push(
+      `as regiões do ficheiro são «${slugsDoFicheiro.join(', ')}» e a lista da casa dá «${slugsDaCasa.join(', ')}».`,
+    );
+  }
+  for (const r of g.regioes) {
+    const daLista = daCasa.find((x) => x.slug === r.slug);
+    if (daLista && daLista.codigo !== r.codigo) {
+      erros.push(`a região "${r.slug}" traz o código ${r.codigo} e a lista da casa diz ${daLista.codigo}.`);
+    }
+  }
+
+  /* Os 308, uma vez cada, e na região que a Carta lhes dá. */
+  const daCarta = regiaoDaCarta(m);
+  const dicoDoSlug = new Map(m.concelhos.map((c) => [c.slug, c.dico]));
+  const vistos = new Map();
+  for (const r of g.regioes) {
+    const cliente = m.clientes[r.slug];
+    if (!cliente) {
+      erros.push(`falta public/${r.ficheiro}, que a região "${r.slug}" nomeia.`);
+      continue;
+    }
+    if (cliente.concelhos.length !== r.concelhos) {
+      erros.push(
+        `a região "${r.slug}" declara ${r.concelhos} concelhos e o seu ficheiro tem ${cliente.concelhos.length}.`,
+      );
+    }
+    for (const c of cliente.concelhos) {
+      vistos.set(c.slug, [...(vistos.get(c.slug) ?? []), r.slug]);
+      const dico = dicoDoSlug.get(c.slug);
+      const esperada = dico ? daCarta.get(dico) : null;
+      if (esperada !== r.slug) {
+        erros.push(`o concelho "${c.slug}" está na região "${r.slug}" e a Carta põe-no em "${esperada}".`);
+      }
+    }
+  }
+  const daCartaTodos = slugsDaCarta();
+  for (const [slug, onde] of vistos) {
+    if (onde.length > 1) erros.push(`o concelho "${slug}" está em ${onde.length} regiões (${onde.join(', ')}).`);
+  }
+  const emFalta = daCartaTodos.filter((s) => !vistos.has(s));
+  if (emFalta.length > 0) {
+    erros.push(`${emFalta.length} concelho(s) sem região: ${emFalta.slice(0, 6).join(', ')}.`);
+  }
+  const aMais = [...vistos.keys()].filter((s) => !daCartaTodos.includes(s));
+  if (aMais.length > 0) erros.push(`${aMais.length} slug(s) que a Carta não tem: ${aMais.slice(0, 6).join(', ')}.`);
+
+  /* O ficheiro foi gerado destas fontes, e não de outras. */
+  for (const [rel, resumo] of Object.entries(g.origem?.lidos ?? {})) {
+    const abs = path.join(RAIZ, rel);
+    const bytes = m.ficheiros[rel] ?? (fs.existsSync(abs) ? fs.readFileSync(abs) : null);
+    if (!bytes) {
+      erros.push(`o ficheiro gerado declara ter lido ${rel}, que não está em disco.`);
+      continue;
+    }
+    const meu = crypto.createHash('sha256').update(bytes).digest('hex');
+    if (meu !== resumo) {
+      erros.push(`${rel} mudou depois de a geometria das regiões ter sido escrita (corra \`npm run mapa:regioes\`).`);
+    }
+  }
+  return erros;
+}
+
+/** R9 · a geometria: a união dos concelhos de cada região é a região. */
+function r9(m) {
+  const erros = [];
+  const g = m.regioes;
+  if (!g) return ['falta src/data/mapa-regioes.gerado.json (corra `npm run mapa:regioes`).'];
+
+  /* A área de cada concelho, recontada dos artefactos de `mapa/`, no campo do
+     país: a caixa dos concelhos de uma unidade na grelha local vai para a caixa
+     dessa unidade em `mapa/pais.json`. É a mesma leitura que o gerador faz, com
+     código próprio, e é a única maneira de comparar as duas geometrias. */
+  const areaNoCampo = new Map();
+  for (const u of m.pais.unidades) {
+    const locais = m.distritos[u.slug].concelhos.map((c) => ({ slug: c.slug, aneis: aneisDoCaminho(c.d) }));
+    const caixa = caixaDeAneis(locais.flatMap((c) => c.aneis));
+    const k = (u.caixa[2] / caixa[2]) * (u.caixa[3] / caixa[3]);
+    for (const c of locais) areaNoCampo.set(c.slug, areaDeAneis(c.aneis) * k);
+  }
+
+  for (const r of g.regioes) {
+    const cliente = m.clientes[r.slug];
+    if (!cliente) continue;
+    const aneis = aneisDoCaminho(r.d);
+    const daRegiao = areaDeAneis(aneis);
+    const dosConcelhos = cliente.concelhos.reduce((s, c) => s + (areaNoCampo.get(c.slug) ?? 0), 0);
+    const desvio = (100 * Math.abs(daRegiao - dosConcelhos)) / dosConcelhos;
+    if (desvio > TECTO_DA_AREA_PCT) {
+      erros.push(
+        `a região "${r.slug}" desenha ${daRegiao.toFixed(0)} u² e os seus concelhos somam ` +
+          `${dosConcelhos.toFixed(0)} u² (${desvio.toFixed(2)} %, e o tecto é ${TECTO_DA_AREA_PCT} %).`,
+      );
+    }
+    const caixa = caixaDeAneis(aneis).map(Math.round);
+    if (caixa.join(',') !== r.caixa.join(',')) {
+      erros.push(`a região "${r.slug}" declara a caixa ${r.caixa.join(', ')} e o caminho dá ${caixa.join(', ')}.`);
+    }
+
+    /* NENHUM CONCELHO FORA DA SUA REGIÃO. O ponto representativo de cada
+       concelho, que vive na grelha da região, volta ao campo do país pela caixa
+       da região e tem de cair dentro do caminho dela. */
+    const kx = r.caixa[2] / r.campo.largura;
+    const ky = r.caixa[3] / r.campo.altura;
+    const fora = cliente.concelhos.filter(
+      (c) => !dentroDeAneis(aneis, [r.caixa[0] + c.ponto[0] * kx, r.caixa[1] + c.ponto[1] * ky]),
+    );
+    if (fora.length > 0) {
+      erros.push(
+        `${fora.length} concelho(s) com o ponto fora do desenho de "${r.slug}": ` +
+          `${fora.slice(0, 6).map((c) => c.slug).join(', ')}.`,
+      );
+    }
+  }
+  return erros;
+}
+
 const REGRAS = [
   { id: 'R1', nome: 'os resumos de mapa/ batem com o manifesto', fn: r1 },
   { id: 'R2', nome: 'a junção: 308 concelhos, uma vez cada, com os slugs da Carta', fn: r2 },
@@ -446,6 +726,8 @@ const REGRAS = [
   { id: 'R5', nome: 'nenhuma ligação debaixo de role="img"', fn: r5 },
   { id: 'R6', nome: 'a atribuição da DGT onde o mapa está', fn: r6 },
   { id: 'R7', nome: 'a colação portuguesa nos artefactos e nas listas construídas', fn: r7 },
+  { id: 'R8', nome: 'as nove regiões, os 308 uma vez cada, na região que a Carta dá', fn: r8 },
+  { id: 'R9', nome: 'a união dos concelhos de cada região é a região', fn: r9 },
 ];
 
 /* ===========================================================================
@@ -476,6 +758,10 @@ function copia(m) {
     pais: JSON.parse(JSON.stringify(m.pais)),
     distritos: JSON.parse(JSON.stringify(m.distritos)),
     paginas: m.paginas.map((p) => ({ ...p, root: parse(p.html) })),
+    regioes: m.regioes ? JSON.parse(JSON.stringify(m.regioes)) : null,
+    clientes: JSON.parse(JSON.stringify(m.clientes)),
+    csv: { ...m.csv },
+    concelhos: JSON.parse(JSON.stringify(m.concelhos)),
   };
 }
 
@@ -592,6 +878,48 @@ const ESTRAGOS = {
     const [a, b] = [semSeta(itens[0].text), semSeta(itens[1].text)];
     trocaIrmaos(lista, itens[0], itens[1]);
     return `«${a}» e «${b}» trocados na lista de ${pg.rota}`;
+  },
+  /* A R8 TEM DOIS ESTRAGOS, um por metade: um concelho que muda de região, e um
+     que aparece em duas. O segundo não é o primeiro com outro nome: um concelho
+     mudado de sítio continua a estar uma vez só, e um concelho repetido continua
+     a estar na região que a Carta lhe dá em pelo menos uma das duas. */
+  R8: (m) => {
+    const r = m.regioes.regioes.find((x) => x.slug !== 'acores' && x.concelhos > 1);
+    const outra = m.regioes.regioes.find((x) => x.slug !== r.slug);
+    const c = m.clientes[r.slug].concelhos.pop();
+    m.clientes[outra.slug].concelhos.push(c);
+    m.regioes.regioes.find((x) => x.slug === r.slug).concelhos -= 1;
+    m.regioes.regioes.find((x) => x.slug === outra.slug).concelhos += 1;
+    return `o concelho "${c.slug}" mudado de "${r.slug}" para "${outra.slug}"`;
+  },
+  'R8 (em duas regiões)': (m) => {
+    const r = m.regioes.regioes[0];
+    const outra = m.regioes.regioes[1];
+    const c = m.clientes[r.slug].concelhos[0];
+    m.clientes[outra.slug].concelhos.push(c);
+    m.regioes.regioes.find((x) => x.slug === outra.slug).concelhos += 1;
+    return `o concelho "${c.slug}" acrescentado a "${outra.slug}" sem sair de "${r.slug}"`;
+  },
+  /* A R9 TEM TRÊS ESTRAGOS, um por metade, e nenhum é apanhado pela conta de
+     outra: um rectângulo tem a caixa certa e a área errada; um caminho deslocado
+     tem a área certa e a caixa errada; um ponto levado para fora deixa as duas
+     certas. Um estrago só deixaria duas metades por provar. */
+  R9: (m) => {
+    const r = m.regioes.regioes.find((x) => x.slug === 'alentejo') ?? m.regioes.regioes[0];
+    const [x, y, w, h] = r.caixa;
+    r.d = `M${x} ${y}l${w} 0,0 ${h},${-w} 0Z`;
+    return `o caminho de "${r.slug}" trocado pelo rectângulo da sua caixa`;
+  },
+  'R9 (a caixa)': (m) => {
+    const r = m.regioes.regioes.find((x) => x.slug === 'algarve') ?? m.regioes.regioes[0];
+    r.d = r.d.replace(/M(-?\d+) (-?\d+)/g, (_, x, y) => `M${Number(x) + 40} ${y}`);
+    return `o caminho de "${r.slug}" deslocado 40 u sem a caixa mudar`;
+  },
+  'R9 (um concelho fora)': (m) => {
+    const r = m.regioes.regioes.find((x) => x.concelhos > 4);
+    const c = m.clientes[r.slug].concelhos[0];
+    c.ponto = [-r.campo.largura, -r.campo.altura];
+    return `o ponto de "${c.slug}" levado para fora do desenho de "${r.slug}"`;
   },
 };
 
