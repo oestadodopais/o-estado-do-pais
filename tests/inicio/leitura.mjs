@@ -75,11 +75,16 @@
  * célula nenhuma. Uma razão escrita não substitui uma medição.
  *
  * DOIS MOTORES PORQUE A RESPOSTA PODE DIFERIR: abrir o `<details>` alvo de um
- * fragmento é comportamento do navegador, e a célula regista o que cada um faz
- * em vez de o presumir. O que ela EXIGE sem guião é a metade que não depende do
- * motor — as 21 lá, fechadas, com `id`, e a âncora a existir —, e o que ela
- * REGISTA é a abertura pelo fragmento, motor a motor, para o relatório. Onde o
- * motor não abrir, o `<summary>` está a um toque, que é o que o brief escreve.
+ * fragmento é comportamento do navegador, e a célula MEDIU o que cada um faz e
+ * EXIGE-O (segunda passagem, 07.09.2026, Major 6 da leitura a frio). Até 07.09 a
+ * abertura sem guião era impressa e não exigida: a célula ficava verde com o
+ * alvo fechado nos dois motores, e uma coisa que se imprime e não se exige está
+ * anotada, não medida. A expectativa por motor está em `ABRE_O_ALVO_SEM_GUIAO`,
+ * com a medição e o comando que a tirou escritos ao lado dela, e a célula exige
+ * também que o motor não abra mais NENHUMA. Onde um motor não abrisse, o
+ * `<summary>` está a um toque, que é o que o brief escreve, e é isso que a
+ * constante diria nesse motor. O que se mediu a 07.09 foi que NENHUM dos dois
+ * abre, e é isso que ela diz.
  *
  * E EXIGE, COM GUIÃO E NOS DOIS MOTORES, que o mesmo endereço abra a leitura
  * certa e só essa: é a promessa que `public/js/inicio.js` cumpre à chegada, e
@@ -91,12 +96,13 @@
  * dois motores. A primeira redação tocava em dois, e a leitura a frio tinha
  * razão (Major 7): dois de vinte e um não são «um toque num cartão».
  *
- * UM CARTÃO É UMA DE DUAS COISAS, e a célula exige o que cada uma promete: o que
- * leva a uma âncora desta página abre a sua leitura, fecha a anterior e põe
- * `#m-<id>` na barra; o que leva à página do domínio (três, desde o F1.2b) muda
- * de página e chega à âncora daquela medida lá dentro. A amostra inglesa apanha
- * as duas classes de propósito. Uma célula que só contasse a leitura aberta
- * passava com as duas abertas.
+ * OS 21 FAZEM O MESMO (segunda passagem, 07.09.2026, Blocking 2 da leitura a
+ * frio). Havia duas classes de cartão: o que levava a uma âncora desta página e
+ * o que levava à página do domínio (três, desde o F1.2b). A decisão (7) da §1.99
+ * pôs as leituras dos três inteiras aqui, com a porta acrescentada, e o mandato
+ * deste bloco é um toque a abrir a leitura daquele cartão: a célula exige a mesma
+ * promessa nos 21, e exige também que NENHUM leve para fora. Uma célula que só
+ * contasse a leitura aberta passava com duas abertas.
  *
  * J5 · A SECÇÃO DOS DOMÍNIOS, A SEGUIR AO MAPA. Cinco coisas, e as cinco no HTML
  * construído: a secção existe e vem DEPOIS do mapa na ordem do documento; tem um
@@ -135,10 +141,11 @@
  * A célula exige, leitura a leitura: um `id` igual a `m-<id da linha>`, uma
  * unidade, três datas, um selo, e a régua exactamente onde há linha de limiar
  * (as duas dizem a mesma coisa e não podem divergir). E exige que o conjunto das
- * que levam porta seja, elemento a elemento, o conjunto dos cartões da faixa da
- * cabeça que levam à página de um domínio: as duas metades vêm da mesma tabela
- * (`dominioDaLinha()`), e uma célula que só contasse «três» passava com os três
- * errados.
+ * que levam porta seja, elemento a elemento, o das medidas que `dominioDaLinha()`
+ * nomeia: uma célula que só contasse «três» passava com os três errados. Até
+ * 07.09.2026 a comparação era com os CARTÕES que levavam para fora, que eram a
+ * outra metade da mesma decisão; desde a segunda passagem nenhum cartão leva
+ * para fora, e é isso que a célula passa a exigir dos 21.
  *
  * O `id` LÊ-SE DUAS VEZES, e é a segunda passagem que o manda (Major 7): no HTML
  * SERVIDO, contando `id="m-<id>"` uma vez por medida, e no navegador, no
@@ -164,12 +171,22 @@
  * J13 · COM GUIÃO, QUANTOS NOMES DE MEDIDA ESTÃO À VISTA POR BAIXO DA FAIXA. Em
  * repouso, zero, e a linha do estado vazio no lugar deles; depois de um toque
  * num cartão, um — o daquele cartão —, e a linha do estado vazio fora; depois de
- * um Enter no mesmo cartão, o mesmo (a promessa do teclado é a promessa do
- * dedo); e depois do botão «voltar» do navegador, zero outra vez, com a linha do
- * estado vazio de volta. A contagem é de NOMES VISÍVEIS e não de `<details>`
+ * um Enter no mesmo cartão, o mesmo, com a linha do estado vazio fora também (a
+ * promessa do teclado é a promessa do dedo, e as três coisas medem-se nos dois
+ * gestos); e depois do botão «voltar» do navegador, zero outra vez, com a linha
+ * do estado vazio de volta. A contagem é de NOMES VISÍVEIS e não de `<details>`
  * abertos: o que o diretor viu foi uma lista de nomes, e é a lista de nomes que
  * a célula conta. Uma célula que contasse dobras abertas passava com as vinte e
  * uma fechadas à vista, que é exactamente o defeito.
+ *
+ * MAIS DO QUE UM CARTÃO, E UM DELES DE UMA MEDIDA DO DOMÍNIO (segunda passagem,
+ * 07.09.2026, Blocking 2 e Major 4). A célula escolhia «um cartão que abra
+ * aqui», porque três dos 21 mudavam de página; desde a decisão (7) da §1.99 os
+ * 21 fazem o mesmo, e a célula mede com o primeiro da faixa, com o primeiro de
+ * uma medida que viva num domínio com página e com o primeiro de uma que não
+ * viva em nenhum (os repetidos tiram-se: hoje os dois primeiros papéis caem no
+ * mesmo cartão). E a linha do estado vazio depois do Enter, que não estava a ser
+ * conferida.
  *
  * «VISÍVEL» É O QUE O MOTOR DIZ, e não uma conta desta régua: `checkVisibility()`
  * onde ele existe, e as caixas do elemento onde não existe. Uma dobra fechada
@@ -306,6 +323,41 @@ const ALTURA_PEQUENA = 664;
  * corrido sobre a construção daquele commit, antes de uma linha mudar. Estão
  * aqui e não no relatório porque é a régua que tem de os recusar. */
 const ALTURA_DA_PARTIDA = { pt: 6959, en: 6911 };
+
+/* ---------------------------------------------------------------------------
+ * O QUE CADA MOTOR FAZ COM `#m-<id>` SEM GUIÃO, MEDIDO E DEPOIS PRESO
+ * ---------------------------------------------------------------------------
+ * (F1.1c, segunda passagem, 07.09.2026, Major 6 da leitura a frio do Codex.)
+ * A J3 imprimia se o motor abre o `<details>` alvo de um fragmento sem guião e
+ * NÃO o exigia: a célula ficava verde qualquer que fosse a resposta, e uma coisa
+ * que se imprime e não se exige não está medida, está anotada.
+ *
+ * A EXPECTATIVA NÃO SE INVENTOU: correu-se a célula, leu-se o que cada motor faz
+ * e é isso que fica preso aqui. A medição é
+ *
+ *     node tests/inicio/leitura.mjs --json /tmp/f11c2-leitura-depois.json
+ *
+ * sobre a construção deste ramo, com os quatro valores de `fragmento.semGuiao`
+ * lidos do JSON. O que se mediu a 07.09.2026, nas duas edições e nos dois
+ * motores (Playwright 1.60.0, Chromium 148.0.7778.96, WebKit 26.4):
+ *
+ *   · chromium · NÃO abre o `<details>` alvo. A âncora existe e o motor rola
+ *     até ela; a dobra fica fechada, e o `<summary>` está a um toque.
+ *   · webkit · NÃO abre o `<details>` alvo, e faz o mesmo que o Chromium.
+ *
+ * OS DOIS DIZEM O MESMO, e é por isso que o parágrafo do relatório que dizia «o
+ * motor abre-o se souber» é uma frase sobre uma coisa que nenhum dos dois faz.
+ * A promessa da página sem guião é a que fica medida: as 21 leituras estão lá,
+ * fechadas, com o seu `id`, o endereço leva o leitor à leitura certa, e abrir
+ * custa-lhe um toque no `<summary>`.
+ *
+ * PORQUE É UMA CONSTANTE E NÃO UM «TANTO FAZ». Se um motor passar a abrir o alvo
+ * numa versão nova, esta célula cai e alguém lê o que mudou; um predicado que só
+ * imprimisse deixava passar exactamente essa mudança, que é o defeito que o
+ * Major 6 nomeia. O dia em que a mudança for boa, muda-se aqui com a medição
+ * nova ao lado.
+ */
+const ABRE_O_ALVO_SEM_GUIAO = { chromium: false, webkit: false };
 
 const EDICOES = [
   {
@@ -650,12 +702,25 @@ async function corre() {
       }
     }
     if (limiaresEsperados.size === 0) queixas12.push('nenhuma leitura tem linha de limiar');
+    /* QUEM LEVA PORTA É QUEM A TABELA DIZ (07.09.2026, Blocking 2). Até 07.09 a
+       célula comparava as leituras com porta com os CARTÕES que levavam para
+       fora, porque eram as duas metades da mesma decisão; desde a segunda
+       passagem nenhum cartão leva para fora, e a comparação passa a ser com
+       `dominioDaLinha()`, que é a tabela de onde a vista tira a porta. E a outra
+       metade fica medida aqui também, e não só na A13: NENHUM dos 21 cartões
+       leva para fora desta página. */
     const comPorta = forma.leituras.filter((l) => l.porta).map((l) => l.id).sort();
-    const paraFora = [...forma.cartoesParaFora].sort();
-    if (comPorta.join('|') !== paraFora.join('|')) {
+    const daTabela = AS_VINTE_E_UMA.filter((id) => dominioDaLinha(id)).sort();
+    if (comPorta.join('|') !== daTabela.join('|')) {
       queixas12.push(
-        `as leituras com porta (${comPorta.join(', ') || 'nenhuma'}) não são os cartões que levam ` +
-          `para fora (${paraFora.join(', ') || 'nenhum'})`,
+        `as leituras com porta (${comPorta.join(', ') || 'nenhuma'}) não são as medidas que vivem ` +
+          `num domínio com página (${daTabela.join(', ') || 'nenhuma'})`,
+      );
+    }
+    if (forma.cartoesParaFora.length) {
+      queixas12.push(
+        `${forma.cartoesParaFora.length} cartão(ões) da faixa da cabeça levam para fora desta ` +
+          `página (${forma.cartoesParaFora.join(', ')})`,
       );
     }
     const comFrase = forma.leituras.filter((l) => l.frases > 0).length;
@@ -715,10 +780,11 @@ async function corre() {
      não caía em célula nenhuma. Uma razão escrita não substitui uma medição, e
      esta custa quatro corridas em vez de duas. */
   for (const ed of EDICOES) {
-    /* O ALVO DO FRAGMENTO É UMA MEDIDA QUE NÃO VIVE NUM DOMÍNIO, e escolhe-se
-       assim: o cartão de uma medida de domínio leva para fora desta página, e o
-       que esta célula mede é o endereço `#m-<id>` a abrir a leitura AQUI. */
-    const alvoDoFragmento = AS_VINTE_E_UMA.find((id) => !dominioDaLinha(id)) ?? AS_VINTE_E_UMA[0];
+    /* O ALVO DO FRAGMENTO É A PRIMEIRA DAS 21 (07.09.2026). Escolhia-se a
+       primeira que não vivesse num domínio, porque o cartão de uma medida de
+       domínio levava para fora; desde a segunda passagem os 21 cartões abrem a
+       sua leitura aqui, e a escolha deixou de ter razão de ser. */
+    const alvoDoFragmento = AS_VINTE_E_UMA[0];
     for (const [motor, nav] of [
       ['chromium', chrome],
       ['webkit', safari],
@@ -745,15 +811,21 @@ async function corre() {
       await pf.__ctx.close();
 
       /* E O MESMO ENDEREÇO COM GUIÃO, no mesmo motor. É a metade que a página
-         PROMETE em qualquer motor: sem guião, o `<summary>` está a um toque e o
-         motor abre-o se souber; com guião, `public/js/inicio.js` abre a leitura
-         do fragmento à chegada, e `/#m-<id>` é uma citação que abre alguma
-         coisa. */
+         PROMETE em qualquer motor: sem guião o `<summary>` está a um toque (e
+         nenhum dos dois motores abre o alvo sozinho, medido a 07.09); com guião,
+         `public/js/inicio.js` abre a leitura do fragmento à chegada, e
+         `/#m-<id>` é uma citação que abre alguma coisa. */
       const pg = await pagina(nav, `${ed.rota}#m-${alvoDoFragmento}`, 390, ALTURA_PEQUENA);
       const comGuiao = await pg.evaluate(SONDA_DO_FRAGMENTO, alvoDoFragmento);
       await pg.__ctx.close();
 
-      medidas[chave] = { ...r, fragmento: { id: alvoDoFragmento, semGuiao, comGuiao } };
+      /* O QUE ESTE MOTOR TEM DE FAZER, medido a 07.09 e preso na constante lá
+         em cima. `semGuiao.aberto` era impresso e não exigido (Major 6). */
+      const esperadoSemGuiao = ABRE_O_ALVO_SEM_GUIAO[motor];
+      medidas[chave] = {
+        ...r,
+        fragmento: { id: alvoDoFragmento, semGuiao, comGuiao, esperadoSemGuiao },
+      };
       conta(
         chave,
         r.total === AS_VINTE_E_UMA.length &&
@@ -762,13 +834,18 @@ async function corre() {
           r.idErrado.length === 0 &&
           r.comSummary === AS_VINTE_E_UMA.length &&
           semGuiao.existe &&
+          semGuiao.aberto === esperadoSemGuiao &&
+          semGuiao.outrosAbertos === 0 &&
           comGuiao.aberto &&
           comGuiao.outrosAbertos === 0,
         `sem guião em ${ed.rota} · ${motor}: ${r.total} leitura(s) de ${AS_VINTE_E_UMA.length}, ` +
           `${r.abertos.length} aberta(s), ${r.semId.length} sem id, ${r.idErrado.length} com id errado, ` +
           `${r.comSummary} com <summary> · o fragmento «#m-${alvoDoFragmento}» existe: ${semGuiao.existe}, ` +
           `e o motor abre o <details> alvo de um fragmento sem guião: ` +
-          `${semGuiao.aberto ? 'sim' : 'NÃO (o <summary> está a um toque)'} · ` +
+          `${semGuiao.aberto ? 'sim' : 'não (o <summary> está a um toque)'} ` +
+          `(medido a 07.09: ${esperadoSemGuiao ? 'sim' : 'não'}${
+            semGuiao.aberto === esperadoSemGuiao ? '' : ' · MUDOU'
+          }), e ${semGuiao.outrosAbertos} outra(s) aberta(s) · ` +
           `com guião abre: ${comGuiao.aberto} (e ${comGuiao.outrosAbertos} outra(s) aberta(s))`,
       );
     }
@@ -780,14 +857,12 @@ async function corre() {
      nos dois primeiros cartões locais em Chromium, e o leitor tinha razão: dois
      de vinte e um não são «um toque num cartão».
      ------------------------------------------------------------------------
-     UM CARTÃO É UMA DE DUAS COISAS, e a célula exige a promessa de cada uma:
-       · o que leva a uma âncora DESTA página abre a sua leitura, fecha a que
-         estava aberta, e põe `#m-<id>` na barra de endereço;
-       · o que leva à página do domínio (três, desde o F1.2b) muda de página e
-         chega à âncora daquela medida lá dentro.
-     Depois de um cartão de domínio a página é outra, e por isso a corrida volta
-     à primeira página antes do cartão seguinte; a cadeia do «fecha a anterior»
-     mede-se entre toques locais consecutivos, que é onde ela existe. */
+     OS 21 FAZEM O MESMO (07.09.2026, Blocking 2): cada um abre a sua leitura,
+     fecha a que estava aberta e põe `#m-<id>` na barra de endereço. Nenhum muda
+     de página, e a célula exige também isso: um `href` que não comece por `#` é
+     um cartão a levar para fora, que é o defeito que a segunda passagem tirou.
+     A cadeia do «fecha a anterior» mede-se entre toques consecutivos, que desde
+     07.09 são todos. */
   for (const [ed, quantos] of [
     [EDICOES[0], null],
     [EDICOES[1], 5],
@@ -804,15 +879,19 @@ async function corre() {
           href: c.querySelector('.cartao-porta')?.getAttribute('href') ?? '',
         })),
       );
-      /* A AMOSTRA INGLESA APANHA AS DUAS CLASSES, e não os cinco primeiros: dois
-         cartões que levam à página do domínio e três que abrem aqui. Uma amostra
-         que fosse só do princípio da faixa nunca tocaria num cartão de domínio. */
-      const daFora = todos.filter((c) => !c.href.startsWith('#'));
-      const daCasa = todos.filter((c) => c.href.startsWith('#'));
+      /* A AMOSTRA INGLESA COMEÇA PELAS MEDIDAS QUE VIVEM NUM DOMÍNIO, e não
+         pelos cinco primeiros: são as três que mudaram de destino a 07.09, e uma
+         amostra que fosse só do princípio da faixa não tocava em nenhuma delas.
+         O resto da amostra vem do princípio, como vinha. */
+      const doDominio = todos.filter((c) => dominioDaLinha(c.id));
+      const asOutras = todos.filter((c) => !dominioDaLinha(c.id));
       const lista =
         quantos === null
           ? todos
-          : [...daFora.slice(0, 2), ...daCasa.slice(0, quantos - Math.min(2, daFora.length))];
+          : [
+              ...doDominio.slice(0, 2),
+              ...asOutras.slice(0, quantos - Math.min(2, doDominio.length)),
+            ];
 
       const passos = [];
       let anterior = null;
@@ -828,16 +907,17 @@ async function corre() {
         }, c.id);
         await p.click(`[data-cartao="${c.id}"] .cartao-porta`);
         await p.waitForTimeout(140);
-        const local = c.href.startsWith('#');
-        const estado = local
-          ? await p.evaluate(() => ({
-              url: location.pathname + location.hash,
-              hash: location.hash,
-              abertas: [...document.querySelectorAll('details[data-leitura][open]')].map((d) => d.id),
-            }))
-          : { url: new URL(p.url()).pathname + new URL(p.url()).hash, hash: '', abertas: [] };
-        passos.push({ cartao: c.id, local, anterior, ...estado });
-        anterior = local ? c.id : null;
+        /* O QUE O TOQUE DEIXOU, MEDIDO SEM PRESUMIR ONDE ESTAMOS. Um cartão que
+           levasse para fora tirava a página debaixo dos pés desta sonda, e é por
+           isso que ela lê o `location` do navegador e não o `href` do cartão: se
+           a página mudar, o `url` di-lo e a queixa nomeia-o. */
+        const estado = await p.evaluate(() => ({
+          url: location.pathname + location.hash,
+          hash: location.hash,
+          abertas: [...document.querySelectorAll('details[data-leitura][open]')].map((d) => d.id),
+        }));
+        passos.push({ cartao: c.id, href: c.href, anterior, ...estado });
+        anterior = c.id;
       }
       await p.__ctx.close();
 
@@ -846,33 +926,39 @@ async function corre() {
       if (quantos === null && lista.length !== AS_VINTE_E_UMA.length) {
         queixas4.push(`${lista.length} cartões de ${AS_VINTE_E_UMA.length}`);
       }
-      if (!lista.some((c) => !c.href.startsWith('#'))) {
-        queixas4.push('a amostra não tem nenhum cartão que leve à página do domínio');
+      /* A AMOSTRA TEM DE APANHAR UMA DAS QUE MUDARAM, e a inglesa é uma amostra:
+         sem isto ela podia deixar de tocar nas três e ninguém dava por isso. */
+      if (!lista.some((c) => dominioDaLinha(c.id))) {
+        queixas4.push('a amostra não tem nenhum cartão de uma medida que viva num domínio');
       }
       for (const s2 of passos) {
-        if (s2.local) {
-          if (s2.hash !== `#m-${s2.cartao}`) queixas4.push(`«${s2.cartao}» deu «${s2.hash}»`);
-          if (s2.abertas.length !== 1) {
-            queixas4.push(`«${s2.cartao}» deixou ${s2.abertas.length} leitura(s) aberta(s)`);
-          } else if (s2.abertas[0] !== `m-${s2.cartao}`) {
-            queixas4.push(`«${s2.cartao}» abriu «${s2.abertas[0]}»`);
-          }
-        } else {
-          const dominio = dominioDaLinha(s2.cartao);
-          const esperado = `${ed.dominio}#${dominio ? dominio.ancora : ''}`;
-          if (s2.url.replace(/\/$/, '') !== esperado) {
-            queixas4.push(`«${s2.cartao}» chegou a «${s2.url}» e não a «${esperado}»`);
-          }
+        /* NENHUM DOS 21 LEVA PARA FORA (07.09.2026). O destino lê-se do próprio
+           cartão, antes do toque, e a página onde o toque nos deixou lê-se
+           depois: as duas metades da mesma promessa. */
+        if (!s2.href.startsWith('#')) {
+          queixas4.push(`«${s2.cartao}» leva para fora desta página («${s2.href}»)`);
+          continue;
+        }
+        if (s2.url.replace(/#.*$/, '').replace(/\/$/, '') !== ed.rota.replace(/\/$/, '')) {
+          queixas4.push(`«${s2.cartao}» mudou de página para «${s2.url}»`);
+          continue;
+        }
+        if (s2.hash !== `#m-${s2.cartao}`) queixas4.push(`«${s2.cartao}» deu «${s2.hash}»`);
+        if (s2.abertas.length !== 1) {
+          queixas4.push(`«${s2.cartao}» deixou ${s2.abertas.length} leitura(s) aberta(s)`);
+        } else if (s2.abertas[0] !== `m-${s2.cartao}`) {
+          queixas4.push(`«${s2.cartao}» abriu «${s2.abertas[0]}»`);
         }
       }
-      const locais = passos.filter((x) => x.local).length;
+      const locais = passos.filter((x) => x.abertas.length === 1 && x.hash === `#m-${x.cartao}`).length;
+      const doDominioTocados = passos.filter((x) => dominioDaLinha(x.cartao)).length;
       medidas[chave] = { passos, queixas: queixas4 };
       conta(
         chave,
         passos.length === lista.length && lista.length > 0 && queixas4.length === 0,
         `com guião em ${ed.rota} · ${motor}: ${passos.length} cartão(ões) tocados, ` +
-          `${locais} abriram a sua leitura aqui (uma de cada vez) e ${passos.length - locais} ` +
-          `foram à página do domínio` +
+          `${locais} abriram a sua leitura aqui (uma de cada vez), ${doDominioTocados} ` +
+          `de medidas que vivem num domínio, 0 mudaram de página` +
           (queixas4.length ? ` · QUEIXAS: ${queixas4.slice(0, 4).join('; ')}` : ''),
       );
     }
@@ -889,38 +975,34 @@ async function corre() {
       ['webkit', safari],
     ]) {
       /* ---------------------------------------------------------------- J13 */
+      /* MAIS DO QUE UM CARTÃO, E UM DELES DE UMA MEDIDA DO DOMÍNIO (segunda
+         passagem, 07.09.2026, Blocking 2). A célula escolhia «um cartão que abra
+         aqui», porque três dos 21 mudavam de página; a decisão (7) da §1.99 e o
+         mandato deste bloco puseram os 21 a fazer o mesmo, e a escolha deixou de
+         existir. Mede-se com o PRIMEIRO da faixa, qualquer que ele seja, com o
+         primeiro de uma medida que viva num domínio com página (que são os que
+         mudaram) e com o primeiro de uma que não viva em nenhum. */
       const chave13 = `J13.${ed.chave}.${motor}`;
       const p13 = await pagina(nav, ed.rota, 390, ALTURA_PEQUENA);
+      const daFaixa = await p13.evaluate(() =>
+        [...document.querySelectorAll('[data-grelha] [data-faixa] [data-cartao]')].map((c) =>
+          c.getAttribute('data-cartao'),
+        ),
+      );
+      /* TRÊS PAPÉIS, E OS REPETIDOS TIRAM-SE. Hoje o primeiro cartão da faixa É
+         uma medida do domínio (a dívida pública), e os dois primeiros papéis
+         caem no mesmo cartão; o terceiro garante que a célula toca sempre numa
+         medida de cada espécie, seja qual for a ordem da faixa amanhã. */
+      const alvos13 = [];
+      for (const [papel, id] of [
+        ['o primeiro da faixa', daFaixa[0] ?? null],
+        ['o primeiro de uma medida do domínio', daFaixa.find((x) => dominioDaLinha(x)) ?? null],
+        ['o primeiro de uma medida sem domínio', daFaixa.find((x) => !dominioDaLinha(x)) ?? null],
+      ]) {
+        if (!alvos13.some((a) => a.id === id)) alvos13.push({ papel, id });
+      }
+
       const repouso = await p13.evaluate(SONDA_DA_AREA);
-
-      /* O CARTÃO QUE ABRE A LEITURA AQUI: os três que levam à página do domínio
-         mudam de página, e o que esta célula mede é a área desta. */
-      const cartao = await p13.evaluate(() => {
-        const c = [...document.querySelectorAll('[data-grelha] [data-faixa] [data-cartao]')].find(
-          (x) => (x.querySelector('.cartao-porta')?.getAttribute('href') ?? '').startsWith('#'),
-        );
-        if (c) c.scrollIntoView({ block: 'center', inline: 'center' });
-        return c ? c.getAttribute('data-cartao') : null;
-      });
-      await p13.click(`[data-cartao="${cartao}"] .cartao-porta`);
-      await p13.waitForTimeout(180);
-      const aposToque = await p13.evaluate(SONDA_DA_AREA);
-
-      /* O BOTÃO «VOLTAR» DO NAVEGADOR, e não o `goBack()` da ferramenta: o que a
-         página promete é que a travessia do histórico devolve o ecrã vazio, e
-         essa travessia é `history.back()` dentro do documento, que é o que
-         dispara o `hashchange` de que o guião vive. */
-      await p13.evaluate(() => history.back());
-      await p13.waitForTimeout(180);
-      const aposVoltar = await p13.evaluate(SONDA_DA_AREA);
-
-      /* E O TECLADO: Enter no mesmo cartão faz o que o dedo faz. */
-      await p13.focus(`[data-cartao="${cartao}"] .cartao-porta`);
-      await p13.keyboard.press('Enter');
-      await p13.waitForTimeout(180);
-      const aposEnter = await p13.evaluate(SONDA_DA_AREA);
-      await p13.__ctx.close();
-
       const queixas13 = [];
       if (!repouso.area) queixas13.push('não há área de leitura marcada');
       if (repouso.detalhes !== AS_VINTE_E_UMA.length) {
@@ -933,40 +1015,101 @@ async function corre() {
       }
       if (!repouso.vazio.existe) queixas13.push('não há linha do estado vazio');
       else if (!repouso.vazio.visivel) queixas13.push('a linha do estado vazio não se vê em repouso');
-      /* Depois do toque: um nome à vista, o daquele cartão, e a linha do estado
-         vazio fora. As três coisas, porque duas delas certas com a terceira
-         errada continua a ser a área a dizer o que não é. */
-      if (aposToque.visiveis.length !== 1 || aposToque.visiveis[0] !== cartao) {
-        queixas13.push(
-          `depois do toque em «${cartao}» há ${aposToque.visiveis.length} nome(s) à vista ` +
-            `(${aposToque.visiveis.slice(0, 3).join(', ') || 'nenhum'})`,
-        );
-      }
-      if (aposToque.vazio.visivel) queixas13.push('a linha do estado vazio ficou à vista com uma leitura aberta');
-      if (aposToque.hash !== `#m-${cartao}`) queixas13.push(`o toque deu «${aposToque.hash}»`);
-      if (aposVoltar.visiveis.length !== 0) {
-        queixas13.push(`depois de voltar há ${aposVoltar.visiveis.length} nome(s) à vista`);
-      }
-      if (aposVoltar.vazio.existe && !aposVoltar.vazio.visivel) {
-        queixas13.push('depois de voltar a linha do estado vazio não voltou');
-      }
-      if (aposEnter.visiveis.length !== 1 || aposEnter.visiveis[0] !== cartao) {
-        queixas13.push(
-          `depois do Enter em «${cartao}» há ${aposEnter.visiveis.length} nome(s) à vista ` +
-            `(${aposEnter.visiveis.slice(0, 3).join(', ') || 'nenhum'})`,
-        );
-      }
-      if (aposEnter.hash !== `#m-${cartao}`) queixas13.push(`o Enter deu «${aposEnter.hash}»`);
 
-      medidas[chave13] = { cartao, repouso, aposToque, aposVoltar, aposEnter, queixas: queixas13 };
+      const porCartao = [];
+      for (const alvo of alvos13) {
+        if (!alvo.id) {
+          queixas13.push(`não há cartão ${alvo.papel}`);
+          continue;
+        }
+        const cartao = alvo.id;
+        /* A CADA VOLTA A PÁGINA VOLTA AO PRINCÍPIO, para que o segundo cartão
+           encontre a área como o primeiro a encontrou. */
+        await p13.goto(base + ed.rota, { waitUntil: 'networkidle' });
+        await p13.evaluate((id) => {
+          const c = document.querySelector(`[data-cartao="${id}"]`);
+          if (c) c.scrollIntoView({ block: 'center', inline: 'center' });
+        }, cartao);
+        await p13.click(`[data-cartao="${cartao}"] .cartao-porta`);
+        await p13.waitForTimeout(180);
+        const aposToque = await p13.evaluate(SONDA_DA_AREA);
+
+        /* O BOTÃO «VOLTAR» DO NAVEGADOR, e não o `goBack()` da ferramenta: o que
+           a página promete é que a travessia do histórico devolve o ecrã vazio, e
+           essa travessia é `history.back()` dentro do documento, que é o que
+           dispara o `hashchange` de que o guião vive. */
+        await p13.evaluate(() => history.back());
+        await p13.waitForTimeout(180);
+        const aposVoltar = await p13.evaluate(SONDA_DA_AREA);
+
+        /* E O TECLADO: Enter no mesmo cartão faz o que o dedo faz. */
+        await p13.focus(`[data-cartao="${cartao}"] .cartao-porta`);
+        await p13.keyboard.press('Enter');
+        await p13.waitForTimeout(180);
+        const aposEnter = await p13.evaluate(SONDA_DA_AREA);
+        porCartao.push({ ...alvo, aposToque, aposVoltar, aposEnter });
+
+        /* Depois do toque: um nome à vista, o daquele cartão, e a linha do estado
+           vazio fora. As três coisas, porque duas delas certas com a terceira
+           errada continua a ser a área a dizer o que não é. */
+        if (aposToque.visiveis.length !== 1 || aposToque.visiveis[0] !== cartao) {
+          queixas13.push(
+            `depois do toque em «${cartao}» há ${aposToque.visiveis.length} nome(s) à vista ` +
+              `(${aposToque.visiveis.slice(0, 3).join(', ') || 'nenhum'})`,
+          );
+        }
+        if (aposToque.vazio.visivel) {
+          queixas13.push(`a linha do estado vazio ficou à vista com «${cartao}» aberta`);
+        }
+        if (aposToque.hash !== `#m-${cartao}`) {
+          queixas13.push(`o toque em «${cartao}» deu «${aposToque.hash}»`);
+        }
+        if (aposVoltar.visiveis.length !== 0) {
+          queixas13.push(
+            `depois de voltar de «${cartao}» há ${aposVoltar.visiveis.length} nome(s) à vista`,
+          );
+        }
+        if (aposVoltar.vazio.existe && !aposVoltar.vazio.visivel) {
+          queixas13.push(`depois de voltar de «${cartao}» a linha do estado vazio não voltou`);
+        }
+        if (aposEnter.visiveis.length !== 1 || aposEnter.visiveis[0] !== cartao) {
+          queixas13.push(
+            `depois do Enter em «${cartao}» há ${aposEnter.visiveis.length} nome(s) à vista ` +
+              `(${aposEnter.visiveis.slice(0, 3).join(', ') || 'nenhum'})`,
+          );
+        }
+        /* E A LINHA DO ESTADO VAZIO DEPOIS DO ENTER (segunda passagem,
+           07.09.2026, Major 4). A célula conferia o nome e o endereço depois do
+           Enter e não conferia a linha, que é a terceira metade da mesma
+           promessa: o teclado tem de deixar a área exactamente como o dedo a
+           deixa, e uma área com uma leitura aberta E a linha «Toque num cartão
+           para ler a medida.» por cima é a página a dizer o que não é. */
+        if (aposEnter.vazio.visivel) {
+          queixas13.push(`a linha do estado vazio ficou à vista depois do Enter em «${cartao}»`);
+        }
+        if (aposEnter.hash !== `#m-${cartao}`) {
+          queixas13.push(`o Enter em «${cartao}» deu «${aposEnter.hash}»`);
+        }
+      }
+
+      await p13.__ctx.close();
+
+      medidas[chave13] = { alvos: alvos13, repouso, porCartao, queixas: queixas13 };
       conta(
         chave13,
-        !!cartao && queixas13.length === 0,
+        alvos13.every((a) => a.id) && porCartao.length === alvos13.length && queixas13.length === 0,
         `com guião em ${ed.rota} · ${motor}: ${repouso.visiveis.length} nome(s) à vista em repouso ` +
-          `(linha do estado vazio: ${repouso.vazio.existe ? (repouso.vazio.visivel ? 'à vista' : 'escondida') : 'não existe'}), ` +
-          `${aposToque.visiveis.length} depois do toque em «${cartao}», ` +
-          `${aposVoltar.visiveis.length} depois de voltar atrás, ${aposEnter.visiveis.length} depois do Enter · ` +
-          `${repouso.detalhes} leitura(s) no documento` +
+          `(linha do estado vazio: ${repouso.vazio.existe ? (repouso.vazio.visivel ? 'à vista' : 'escondida') : 'não existe'}) · ` +
+          porCartao
+            .map(
+              (x) =>
+                `«${x.id}» (${x.papel}): ${x.aposToque.visiveis.length} depois do toque, ` +
+                `${x.aposVoltar.visiveis.length} depois de voltar atrás, ` +
+                `${x.aposEnter.visiveis.length} depois do Enter ` +
+                `(linha do estado vazio ${x.aposEnter.vazio.visivel ? 'À VISTA' : 'fora'})`,
+            )
+            .join(' · ') +
+          ` · ${repouso.detalhes} leitura(s) no documento` +
           (queixas13.length ? ` · QUEIXAS: ${queixas13.slice(0, 4).join('; ')}` : ''),
       );
 
@@ -1069,9 +1212,20 @@ const PLANTAS = [
             return h.slice(0, abre) + '<div class="dobra-corpo">' + h.slice(porta);
           })(),
   },
+  /* -------------------------------------------------------------------------
+     AS DUAS PLANTAS DO F1.1c MORDEM AS QUATRO CÉLULAS (segunda passagem,
+     07.09.2026, Major 5 da leitura a frio)
+     -------------------------------------------------------------------------
+     As duas nomeavam só as células portuguesas e devolviam o HTML inglês
+     intacto: o corredor declarava sucesso pelas células nomeadas, e as duas
+     podiam passar com as células inglesas verdes porque nenhum defeito inglês
+     tinha sido plantado. As duas edições são construídas pelo mesmo componente,
+     e é por isso que a J13 corre nas duas: uma planta que só morde metade delas
+     deixa a outra metade por provar. Os estragos passam a aplicar-se aos dois
+     documentos, e as quatro células têm de ficar vermelhas. */
   {
     nome: 'uma leitura fechada deixada à vista com guião',
-    celulas: ['J13.pt.chromium', 'J13.pt.webkit'],
+    celulas: ['J13.pt.chromium', 'J13.pt.webkit', 'J13.en.chromium', 'J13.en.webkit'],
     /* O DEFEITO QUE O F1.1c VEIO TIRAR, REPOSTO NUMA LEITURA SÓ. A folha esconde
        as dobras fechadas quando o guião acende a área; um estilo em linha na
        primeira dobra ganha à folha e deixa aquela leitura à vista, fechada, por
@@ -1079,20 +1233,37 @@ const PLANTAS = [
        área, que é a unidade do defeito que o diretor viu — e a J13 tem de o
        contar. Sem guião não muda nada: `display: block` é o que o navegador já
        dá a um `<details>`, e por isso a J14 continua verde, como deve. */
-    f: (h, rota) =>
-      rota.startsWith('/en')
-        ? h
-        : h.replace('<details class="dobra" id="m-', '<details style="display:block" class="dobra" id="m-'),
+    f: (h) =>
+      h.replace('<details class="dobra" id="m-', '<details style="display:block" class="dobra" id="m-'),
   },
   {
     nome: 'a área de leitura sem a linha do estado vazio',
-    celulas: ['J13.pt.chromium', 'J13.pt.webkit'],
+    celulas: ['J13.pt.chromium', 'J13.pt.webkit', 'J13.en.chromium', 'J13.en.webkit'],
     /* Tira do documento a linha que a área mostra quando não há nenhuma leitura
        aberta. As dobras continuam a esconder-se, o toque continua a abrir a
        certa: o que fica é uma área sem nada dentro e sem uma palavra a dizer o
        gesto que a enche, que é o buraco que o item 1 do bloco manda fechar. */
-    f: (h, rota) =>
-      rota.startsWith('/en') ? h : h.replace(/<p class="dobras-nada"[^>]*>[\s\S]*?<\/p>/, ''),
+    f: (h) => h.replace(/<p class="dobras-nada"[^>]*>[\s\S]*?<\/p>/, ''),
+  },
+  {
+    nome: 'a linha do estado vazio à vista com uma leitura aberta',
+    celulas: ['J13.pt.chromium', 'J13.pt.webkit', 'J13.en.chromium', 'J13.en.webkit'],
+    /* O CONHECIDO-POSITIVO DO MAJOR 4 (07.09.2026). A J13 conferia, depois do
+       Enter, o nome à vista e o endereço, e não conferia que a linha «Toque num
+       cartão para ler a medida.» tinha saído: uma área com uma leitura aberta e
+       a instrução por cima é a página a dizer o que não é.
+
+       O ESTRAGO É UM `display: block !important` EM LINHA, que ganha ao `hidden`
+       que o guião põe e tira: a linha fica à vista em todos os estados, e não só
+       naquele em que deve estar. Em repouso a célula continua a encontrá-la à
+       vista, como quer; o que cai é o estado com a leitura aberta, pelo toque e
+       pelo Enter, e é a queixa do Enter que este item acrescenta. Nas duas
+       edições, que é a regra que o Major 5 escreveu. */
+    f: (h) =>
+      h.replace(
+        '<p class="dobras-nada" data-leituras-vazio hidden>',
+        '<p class="dobras-nada" style="display:block!important" data-leituras-vazio hidden>',
+      ),
   },
   {
     nome: 'a faixa do domínio com um valor selado repetido',

@@ -6,6 +6,308 @@ deste ramo e sobre a construção de `69ba3abf`, feita na mesma árvore antes de
 linha mudar. Todos os números deste relatório saíram de uma corrida; nenhum foi
 escrito de cabeça.*
 
+## Segunda passagem (07.09)
+
+*Construtor: Claude Opus 5, 07.09.2026, na mesma worktree, depois da leitura a
+frio do Codex (`gpt-5.6-sol`, xhigh, 16:12 a 16:35 UTC,
+`design/especime-v3/critica/2026-09-07-codex-leitura-f11c-toque.md`, cinco
+plantas vistas em cinco) e da triagem do lugar de direção. Sete itens. Cada um
+com o comando que o mediu, o vermelho antes e o verde depois.*
+
+### A fusão de `origin/main`, sem conflitos
+
+`git fetch origin && git merge origin/main`, com `origin/main` em `9c34bbb0` (o
+F1.4b, as datas de publicação medidas uma vez onde a história está, e o painel
+semanal de 07.09). **65 ficheiros mudaram, 2 301 linhas entraram e 239 saíram, e
+não houve um conflito**: nenhum ficheiro deste ramo é tocado pelos dois lados.
+A mensagem do commit de fusão foi reescrita em português com os dois trailers.
+
+E há um número que só se soube por causa dela: a construção de `9c34bbb0` mede
+**4 638 px** em `/` e **4 596 px** em `/en` a 390 com guião, que é ao píxel o
+«antes» que a §1 tinha medido em `69ba3abf`. **A fusão não custou nem devolveu
+um píxel à primeira página**, e as duas colunas da tabela continuam
+comparáveis.
+
+### 1 · Os 21 cartões fazem o mesmo (Blocking 2)
+
+Três dos 21 cartões (a dívida pública, a taxa de emprego e a taxa de desemprego)
+mudavam de página em vez de abrirem a sua leitura, como o F1.2b os tinha posto. A
+decisão (7) da §1.99 pôs as leituras dos três inteiras na primeira página, com a
+porta «Ver no domínio →» acrescentada, e o mandato deste bloco é que um toque num
+cartão abre a leitura daquele cartão: com as duas coisas, o cartão que muda de
+página é a promessa do bloco quebrada em três dos 21.
+
+`destinoDoCartao()` em `src/views/HomeView.astro` passa a devolver `#m-<id>` para
+os 21, e o rótulo do destino sai deles. **A porta para o domínio não se perde**:
+fica dentro da leitura de cada uma das três (`portaDaLeitura()`, cuja regra não
+mudou) e
+na secção dos domínios a seguir ao mapa, cujos cartões continuam a levar para lá.
+`check:alcance` parte da página do domínio e não do cartão, e fica verde.
+
+As réguas mudam com a decisão citada: a A13 de `porta.mjs` (os 21 para `#m-<id>`,
+a âncora local a existir, nenhum rótulo de destino, e a porta do domínio conferida
+onde ela agora vive, com a âncora a existir na página de chegada); a J4, a J12 e a
+J13 de `leitura.mjs`; e a célula «uma leitura abre só a sua» de `matriz.mjs`.
+
+**Vermelho antes** (as réguas novas sobre a construção de `9c34bbb0`, que é a
+primeira página sem este item):
+
+```
+OEDP_DIST=<dist de 9c34bbb0> node tests/inicio/leitura.mjs   → exit 1
+  ✗ J12.pt   QUEIXAS: 3 cartão(ões) da faixa da cabeça levam para fora desta
+             página (divida-publica-2025, taxa-de-emprego-2025,
+             taxa-de-desemprego-2025)
+  ✗ J4.pt.chromium  21 cartão(ões) tocados, 18 abriram a sua leitura aqui
+             QUEIXAS: «divida-publica-2025» leva para fora desta página
+             («/dominios/economia-e-financas-publicas#m-e3») …
+  leitura ✗ 12 de 26 célula(s)
+```
+
+**Verde depois**, e a planta nova de `porta.mjs` a morder nas duas edições:
+
+```
+node tests/inicio/porta.mjs --vermelhos   → exit 0
+  ✓ A13.pt  o destino dos cartões de /: 21 cartão(ões), 21 para a leitura breve
+            desta página, 0 para fora · 3 leitura(s) acrescentam a porta do
+            domínio (divida-publica-2025, taxa-de-emprego-2025,
+            taxa-de-desemprego-2025) · nenhum errado
+  ✓ um cartão a levar à página do domínio em vez de abrir a sua leitura
+            verde antes: sim · html mudou: sim · vermelho depois:
+            A13.pt=vermelho, A13.en=vermelho
+  porta ✓ 34 de 34 célula(s) · plantas ✓
+```
+
+A planta antiga («um cartão do domínio a apontar à linha desta página») plantava
+o contrário do defeito de hoje, e foi virada: o destino certo é a âncora desta
+página, e o defeito é levar para fora. A âncora do domínio lê-se de
+`dominioDaLinha()` e não está escrita na régua.
+
+### 2 · A linha do estado vazio depois do Enter (Major 4)
+
+A J13 conferia, depois do Enter, o nome à vista e o endereço, e não conferia que
+a linha «Toque num cartão para ler a medida.» tinha desaparecido: uma área com
+uma leitura aberta e a instrução por cima é a página a dizer o que não é. A
+exigência entra, e com ela uma planta nova, que é o conhecido-positivo:
+
+```
+node tests/inicio/leitura.mjs --vermelhos   → exit 0
+  ✓ a linha do estado vazio à vista com uma leitura aberta
+            verde antes: sim · html mudou: sim · vermelho depois:
+            J13.pt.chromium=vermelho, J13.pt.webkit=vermelho,
+            J13.en.chromium=vermelho, J13.en.webkit=vermelho
+```
+
+A planta dá à linha um `display: block !important` em linha, que ganha ao
+`hidden` que o guião lhe põe: a linha fica à vista em todos os estados. A queixa
+que a célula escreve nomeia o estado, e é a do Enter que este item acrescenta:
+
+```
+OEDP_DIST=<dist com a linha sempre à vista> node tests/inicio/leitura.mjs
+  ✗ J13.pt.chromium  QUEIXAS: a linha do estado vazio ficou à vista com
+             «divida-publica-2025» aberta; a linha do estado vazio ficou à vista
+             depois do Enter em «divida-publica-2025» …
+```
+
+A outra metade do Major 4 era planta do pacote (a J13 copiada aceitava um nome à
+vista depois de voltar atrás): o código de `b7afb882` exige zero, e não mudou.
+
+### 3 · As duas plantas mordem as quatro células (Major 5)
+
+As duas plantas do F1.1c nomeavam só as células portuguesas e devolviam o HTML
+inglês intacto: podiam passar com as duas células inglesas verdes, porque nenhum
+defeito inglês tinha sido plantado. Os estragos passam a aplicar-se aos dois
+documentos e as quatro células têm de cair.
+
+**Vermelho antes**, com o guião da planta como estava (a mesma régua, com o
+`rota.startsWith('/en') ? h : …` reposto e as quatro células nomeadas):
+
+```
+  ✗ uma leitura fechada deixada à vista com guião
+      html mudou: sim · vermelho depois: J13.pt.chromium=vermelho,
+      J13.pt.webkit=vermelho, J13.en.chromium=verde, J13.en.webkit=verde
+  ✗ a área de leitura sem a linha do estado vazio
+      html mudou: sim · vermelho depois: J13.pt.chromium=vermelho,
+      J13.pt.webkit=vermelho, J13.en.chromium=verde, J13.en.webkit=verde
+```
+
+**Verde depois**, com o estrago nas duas edições:
+
+```
+  ✓ uma leitura fechada deixada à vista com guião
+      verde antes: sim · html mudou: sim · vermelho depois:
+      J13.pt.chromium=vermelho, J13.pt.webkit=vermelho,
+      J13.en.chromium=vermelho, J13.en.webkit=vermelho
+  ✓ a área de leitura sem a linha do estado vazio
+      verde antes: sim · html mudou: sim · vermelho depois:
+      J13.pt.chromium=vermelho, J13.pt.webkit=vermelho,
+      J13.en.chromium=vermelho, J13.en.webkit=vermelho
+```
+
+### 4 · O que cada motor faz com `#m-<id>` sem guião (Major 6)
+
+A J3 imprimia se o motor abre o `<details>` alvo de um fragmento sem guião e não
+o exigia: ficava verde qualquer que fosse a resposta. Mediu-se primeiro, e o que
+se mediu ficou preso na constante `ABRE_O_ALVO_SEM_GUIAO`, com a versão de cada
+motor ao lado.
+
+**O que cada motor faz**, medido a 07.09.2026 com Playwright 1.60.0, Chromium
+148.0.7778.96 e WebKit 26.4, nas duas edições, sobre a construção deste ramo:
+
+| motor | abre o `<details>` alvo de `#m-<id>` sem guião? |
+| --- | --- |
+| chromium | **não** · a âncora existe, a página rola até ela, a dobra fica fechada |
+| webkit | **não** · faz o mesmo que o Chromium |
+
+Os dois dizem o mesmo, e por isso a frase do relatório que dizia «o motor abre-o
+se souber» é uma frase sobre uma coisa que nenhum dos dois faz. O que a página
+promete sem guião fica medido: as 21 leituras lá, fechadas, com o seu `id`, o
+endereço a levar o leitor à leitura certa, e abrir a custar-lhe um toque no
+`<summary>`.
+
+**Vermelho antes e verde depois na própria célula**, que é o conhecido-positivo
+de que ela passou a exigir o valor: com a expectativa por medir (as duas a
+«sim»), as quatro células J3 caem e dizem «MUDOU»; com a medida, ficam verdes.
+
+```
+node tests/inicio/leitura.mjs   (com ABRE_O_ALVO_SEM_GUIAO = { chromium: true, webkit: true })
+  ✗ J3.pt.chromium  … o motor abre o <details> alvo de um fragmento sem guião:
+                    não (o <summary> está a um toque) (medido a 07.09: sim · MUDOU)
+  ✗ J3.pt.webkit  ✗ J3.en.chromium  ✗ J3.en.webkit
+
+node tests/inicio/leitura.mjs   (com { chromium: false, webkit: false })
+  ✓ J3.pt.chromium  … (medido a 07.09: não), e 0 outra(s) aberta(s) ·
+                    com guião abre: true (e 0 outra(s) aberta(s))
+  ✓ J3.pt.webkit  ✓ J3.en.chromium  ✓ J3.en.webkit
+```
+
+A célula passou também a exigir que o motor não abra mais NENHUMA leitura à
+chegada do fragmento.
+
+### 5 · A ordem do teclado com uma leitura aberta (Major 7)
+
+A célula da ordem do teclado da matriz mede a área em repouso, e em repouso a
+primeira paragem dela é o comando da densidade: a folha tira da página as dobras
+fechadas. O relatório dizia que «quando uma leitura abre, o `<summary>` dela entra
+na ordem dentro da área», e isso não estava medido por célula nenhuma. Entra uma
+célula com o caso, medida onde o gesto do leitor já abriu uma leitura, e a
+exigência é a ordem inteira: o comando da densidade, o `<summary>` da leitura
+aberta, e as portas do fim da página.
+
+`tests/inicio/matriz.mjs` ganhou também `OEDP_DIST`, que as outras réguas de
+`tests/inicio/` já tinham: sem ele um conhecido-positivo obriga a estragar a
+construção boa.
+
+**Vermelho antes**, com uma porta plantada por cima da área de leitura numa cópia
+do `dist/`:
+
+```
+OEDP_DIST=<dist com uma porta antes da área> node tests/inicio/matriz.mjs
+  falha  ordem do teclado com uma leitura aberta · densidade → o <summary> dela → portas
+         «divida-publica-2025» aberta: true · densidade 136 · <summary> 139 ·
+         portas 135 · 165 paragens
+```
+
+**Verde depois**, na construção deste ramo:
+
+```
+node tests/inicio/matriz.mjs
+  passa  ordem do teclado com uma leitura aberta · densidade → o <summary> dela → portas
+  3 de 85 células falham.
+```
+
+As três que falham são as mesmas de sempre, e nenhuma é deste bloco: «2l · a
+linha da reconferência saiu da primeira página», «Emenda 14 · um concelho sem
+estudos rende as sete peças e mais nada» e «a língua de um título citado, e a
+porta da outra edição no rodapé». A matriz passou de 84 para 85 células.
+
+### 6 · A régua e as capturas entram no repositório (Major 9)
+
+Viviam em `.claude/` da árvore de trabalho, fora do repositório, e as medidas
+existiam só como conclusões no relatório. Passam para dentro, como medidores e
+não como réguas (não recusam nada, não têm células, não saem com 1):
+
+* `scripts/medir-toque.mjs` · a altura de `/` e de `/en` a 390 × 664 nos dois
+  motores, com e sem guião, e os nomes de medida à vista na área de leitura nos
+  quatro estados (em repouso, depois do toque, depois de voltar atrás e depois do
+  Enter). Aceita `--sobre=<a árvore medida>`, que vai para dentro do ficheiro:
+  um caminho de pasta não diz que construção foi medida;
+* `scripts/capturas-toque.mjs` · as duas capturas do bloco. Não entrou em
+  `tests/inicio/capturas.mjs` porque o fotógrafo da primeira página tira estados
+  que se pedem pelo ENDEREÇO, e estes dois pedem-se com um GESTO.
+
+As medidas ficam guardadas, 20 em cada ficheiro:
+
+```
+node scripts/medir-toque.mjs <dist de 9c34bbb0> \
+  design/especime-v3/medicoes/toque-medidas-antes.json \
+  "--sobre=origin/main em 9c34bbb0, a primeira página sem o F1.1c"
+node scripts/medir-toque.mjs dist \
+  design/especime-v3/medicoes/toque-medidas-depois.json \
+  "--sobre=toque-2026-09-04, a segunda passagem do F1.1c sobre a fusão de origin/main em 9c34bbb0"
+```
+
+| medida (390 × 664) | antes (`9c34bbb0`) | depois (este ramo) |
+| --- | --- | --- |
+| `/` com guião · chromium | 4638 px | 3700 px |
+| `/` com guião · webkit | 4639 px | 3701 px |
+| `/` sem guião · chromium | 4578 px | 4578 px |
+| `/` sem guião · webkit | 4579 px | 4579 px |
+| `/en` com guião · chromium | 4596 px | 3649 px |
+| `/en` com guião · webkit | 4597 px | 3650 px |
+| `/en` sem guião · chromium | 4536 px | 4536 px |
+| `/en` sem guião · webkit | 4537 px | 4537 px |
+| nomes à vista, com guião, em repouso | 21 | 0 |
+| nomes à vista, depois do toque | 21 | 1 |
+| nomes à vista, depois de voltar atrás | 21 | 0 |
+| nomes à vista, depois do Enter | 21 | 1 |
+| nomes à vista, sem guião | 21 | 21 |
+| cartões da faixa da cabeça que levam para fora | 3 de 21 | **0 de 21** |
+
+As duas capturas foram tiradas outra vez com o guião de dentro do repositório, e
+mudaram por causa do item 1: o cartão que se toca é o primeiro da faixa, que é a
+dívida pública, e a leitura que se abre é a dela, com a unidade, o limiar, a
+definição, as três datas, a régua, o selo e a porta «Ver no domínio →».
+
+### 7 · As contas do relatório (Minor 11)
+
+Duas correções no corpo deste ficheiro: as réguas de `tests/inicio` são **treze**
+(a pasta tem catorze ficheiros, e o décimo quarto é `capturas.mjs`, que fotografa
+e não tem células), e a matriz mudou em **três** células e não em duas, que é o
+número que o próprio parágrafo a seguir descrevia. E uma terceira, que veio do
+item 4: a frase do §0 que dizia que sem guião «`#m-<id>` continua a abrir a
+certa» diz agora o que se mediu.
+
+### As réguas e os três comandos da segunda passagem
+
+As quatro réguas da primeira página, sobre a construção deste ramo:
+
+| régua | resultado |
+| --- | --- |
+| `tests/inicio/porta.mjs --vermelhos` | 34 de 34 células · 15 plantas verdes |
+| `tests/inicio/leitura.mjs --vermelhos` | 26 de 26 células · **8** plantas verdes |
+| `tests/inicio/matriz.mjs` | 82 de 85 células (as três vermelhas de sempre) |
+| `tests/inicio/faixa.mjs` | 80 de 80 células |
+
+Os três comandos, com os códigos de saída lidos de ficheiro e a hora UTC de cada
+um:
+
+| comando | código | começou | acabou |
+| --- | --- | --- | --- |
+| `npm run build` | 0 | 17:43:49 | 17:49:14 |
+| `npm run verify` | 0 | 17:49:14 | 17:55:19 |
+| `npm run typecheck` | 0 | 17:55:19 | 17:55:19 |
+
+O `typecheck` acaba no mesmo segundo em que começa, e por isso mediu-se se ele
+pode falhar: com uma função de uma linha em `src/lib/` a devolver um número onde
+a assinatura promete uma cadeia, `npm run typecheck` sai com **1** e diz
+`error TS2322: Type 'number' is not assignable to type 'string'`. O ficheiro foi
+apagado a seguir. (Um ficheiro cujo nome comece por ponto não entra no programa
+do `tsc`, e a primeira tentativa do conhecido-positivo passou por isso: fica dito
+porque é uma armadilha para quem repetir a prova.)
+
+Dentro do `verify`, `check:alcance` diz **314 das 314** linhas da §1.90 apanhadas
+a partir da página do domínio, que é a metade que o item 1 não podia partir.
+
 ## Estado ao pausar (04.09)
 
 *Escrito quando o diretor fechou o portátil, com a corrida do portão ainda a
@@ -19,7 +321,7 @@ Enter e o botão «voltar» fazem o que o brief manda, e sem guião nada muda.
 
 **Não está a meio nada.** Não há trabalho por acabar neste ramo, e por isso não há
 nada para desfazer: os três comandos correram sobre a árvore final e deram 0
-(`npm run build`, `npm run verify`, `npm run typecheck`), as catorze réguas de
+(`npm run build`, `npm run verify`, `npm run typecheck`), as treze réguas de
 `tests/inicio` correram sobre a construção final, e as sete plantas de
 `tests/inicio/leitura.mjs` passaram com as três exigências cada uma.
 
@@ -59,14 +361,20 @@ daquele cartão e fecha a que estava aberta; o botão «voltar» do navegador, o
 próprio `<summary>` da leitura aberta, devolvem a área ao estado vazio.
 
 **Sem guião não muda um píxel**: as 21 leituras continuam à vista, fechadas, com
-o seu `id`, e `#m-<id>` continua a abrir a certa. A altura de `/` sem guião é a
+o seu `id`, e `#m-<id>` continua a levar o leitor à leitura certa, que abre a um
+toque no `<summary>` (nenhum dos dois motores abre sozinho o `<details>` alvo de
+um fragmento: medido na segunda passagem, item 4). A altura de `/` sem guião é a
 mesma antes e depois, ao píxel, nos dois motores e nas duas edições.
 
 ## 1 · A altura, antes e depois (390 × 664)
 
-Medido com `.claude/medir-toque.mjs` (a régua deste bloco, fora do repositório)
-sobre as duas construções, em Chromium e em WebKit sem cabeça, depois de
-`document.fonts.ready`.
+Medido com o medidor deste bloco sobre as duas construções, em Chromium e em
+WebKit sem cabeça, depois de `document.fonts.ready`. A 04.09 ele vivia em
+`.claude/medir-toque.mjs`, fora do repositório; desde a segunda passagem é
+`scripts/medir-toque.mjs`, e as medidas estão em
+`design/especime-v3/medicoes/toque-medidas-antes.json` e `-depois.json` (a
+tabela do item 6 da segunda passagem tem as de 07.09, sobre `9c34bbb0`, e são as
+mesmas ao píxel).
 
 | estado | antes (69ba3abf) | depois | diferença |
 | --- | --- | --- | --- |
@@ -197,7 +505,7 @@ classificar**.
   a linha, e a área fica sem nada dentro e sem uma palavra a dizer o gesto que a
   enche.
 
-`tests/inicio/matriz.mjs` mudou em duas células, e não por gosto: as duas tocavam
+`tests/inicio/matriz.mjs` mudou em três células, e não por gosto: duas tocavam
 ou punham o foco no `<summary>` de uma leitura FECHADA, que com guião deixou de
 estar na página. Está na §5.
 
@@ -221,9 +529,10 @@ portão reconta.
 
 ## 5 · As réguas, antes e depois
 
-As catorze de `tests/inicio`, corridas sobre a construção de `69ba3abf` e sobre a
-deste ramo, na mesma árvore. `capturas.mjs` não é uma régua: fotografa, e por
-isso não tem células.
+As treze de `tests/inicio`, corridas sobre a construção de `69ba3abf` e sobre a
+deste ramo, na mesma árvore. A pasta tem catorze ficheiros, e o décimo quarto é
+`capturas.mjs`, que não é uma régua: fotografa, e por isso não tem células. A
+tabela abaixo tem treze linhas, uma por régua.
 
 | régua | antes | depois |
 | --- | --- | --- |
@@ -240,6 +549,12 @@ isso não tem células.
 | `porta.mjs` | 34 de 34 | 34 de 34 |
 | `regioes.mjs` | 30 de 30 | 30 de 30 |
 | `rotulo.mjs` | 7 de 7 | 7 de 7 |
+
+**Esta tabela é a da primeira passagem.** A segunda mudou três destes números, e
+estão no item 5 e no item 1 lá em cima: `leitura.mjs` tem hoje as mesmas 26
+células e **oito** plantas (as duas do F1.1c mordem as quatro células, e entrou a
+da linha do estado vazio à vista); `matriz.mjs` passou de 84 para 85 células, com
+3 vermelhas; `porta.mjs` continua em 34 de 34, com a planta da A13 virada.
 
 **As três vermelhas da matriz são as mesmas antes e depois**, e nenhuma é deste
 bloco: «2l · a linha da reconferência saiu da primeira página, e a porta abre o
@@ -285,8 +600,12 @@ Duas, a 390 × 664, em português e no tema claro, em
   domínios, e a área de leitura com o nome de cada painel, o comando da
   densidade, a linha «Toque num cartão para ler a medida.» e mais nada;
 * `inicio-390x664-uma-leitura-pt.png` · a mesma página depois de um toque no
-  cartão da posição de investimento internacional: uma leitura aberta, com a
-  unidade, o limiar, a definição, as três datas, a régua e o selo.
+  primeiro cartão da faixa: uma leitura aberta, com a unidade, o limiar, a
+  definição, as três datas, a régua e o selo. **Tirada outra vez a 07.09**, com o
+  guião que passou para `scripts/capturas-toque.mjs`: o cartão tocado deixou de
+  ser o da posição de investimento internacional e passou a ser o da dívida
+  pública, que é o primeiro da faixa e que desde o item 1 abre a leitura aqui
+  como os outros vinte, com a porta «Ver no domínio →» no fim dela.
 
 ## 7 · Os três comandos
 

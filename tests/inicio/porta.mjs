@@ -97,20 +97,26 @@
  * régua, pela mesma razão: uma planta que tenha de derrubar uma célula tem de
  * viver ao pé da célula que derruba.
  *
- * A13 · O DESTINO DE CADA UM DOS 21 CARTÕES DA FAIXA DA CABEÇA. Um cartão cuja
- * linha pertence a um
- * domínio COM PÁGINA abre a leitura daquela medida na página do domínio; os
- * outros abrem a leitura breve desta página, como sempre. A régua não escreve a
- * lista dos que são de domínio: pergunta-a a `dominioDaLinha()`, que é a mesma
- * tabela que a vista usa, e compara CARTÃO A CARTÃO. Uma célula que contasse
- * «três apontam para fora» passava com os três errados. E cada destino tem de
- * responder: a página existe (200) e o `id` da âncora existe nela.
+ * A13 · O DESTINO DE CADA UM DOS 21 CARTÕES DA FAIXA DA CABEÇA. Os 21 fazem o
+ * mesmo: cada um abre a leitura breve daquela medida NESTA página, em `#m-<id>`,
+ * e a âncora existe. Nenhum leva para fora, e por isso nenhum traz o rótulo do
+ * destino.
  *
- * O RÓTULO DO DESTINO ENTRA NA MESMA CÉLULA, e por três exigências: existe em
- * cada cartão que aponta para fora e em nenhum dos outros; tem caixa (um rótulo
- * de largura zero não é um rótulo); e NÃO SE SOBREPÕE ao selo daquele cartão,
- * com quem partilha a fila do pé. As três medem-se a 390, que é onde o cartão é
- * mais estreito.
+ * A EXCEÇÃO SAIU (F1.1c, segunda passagem, 07.09.2026). Até aqui a célula
+ * aceitava três cartões com um segundo destino, a página do domínio, que é o que
+ * o F1.2b (item 1) lhes tinha dado. A decisão (7) da §1.99 pôs as leituras dos
+ * três inteiras na primeira página com a porta «Ver no domínio →» acrescentada,
+ * e o mandato do F1.1c é que um toque num cartão abre a leitura daquele cartão:
+ * um cartão que muda de página quebrava a promessa em três dos 21 (Blocking 2 da
+ * leitura a frio do Codex de 07.09).
+ *
+ * O QUE A CÉLULA MEDIA CONTINUA MEDIDO, no sítio para onde a porta se mudou: a
+ * leitura de uma medida cuja linha pertence a um domínio COM PÁGINA acrescenta a
+ * porta para lá, com a âncora daquela medida, e a âncora existe na página de
+ * chegada. A régua não escreve a lista dos que são de domínio: pergunta-a a
+ * `dominioDaLinha()`, que é a mesma tabela que a vista usa, e compara MEDIDA A
+ * MEDIDA. Uma célula que contasse «três levam porta» passava com os três
+ * errados.
  *
  * A14 · «DOMÍNIOS» NO MENU, nas duas edições, pelo `href` e não pelo texto (a
  * regra da A12), e com a página a responder 200.
@@ -864,30 +870,28 @@ async function corre() {
     const pCartoes = await pagina(ed.rota, 390, ALTURA_PEQUENA);
     const cartoes = await pCartoes.evaluate(() => {
       const ancoras = new Set([...document.querySelectorAll('[id]')].map((el) => el.id));
-      const cruza = (a, b) =>
-        !(a.right <= b.left || b.right <= a.left || a.bottom <= b.top || b.bottom <= a.top);
-      return [...document.querySelectorAll('[data-grelha] [data-faixa] [data-cartao]')].map((c) => {
-        /* O RÓTULO DO DESTINO SENTA-SE NA MESMA CÉLULA DA GRELHA QUE O SELO, no
-           outro extremo dela, para não custar uma fila ao cartão. Os dois têm de
-           caber lado a lado: um rótulo por cima de um selo seria a etiqueta a
-           comer a porta, e uma célula que só contasse rótulos não o via. */
-        const rot = c.querySelector('.cartao-destino');
-        const selo = c.querySelector('.src-chip');
-        const cx = (el) => (el ? el.getBoundingClientRect() : null);
-        const rr = cx(rot);
-        const rs = cx(selo);
-        return {
-          id: c.getAttribute('data-cartao'),
-          href: c.querySelector('.cartao-porta')?.getAttribute('href') ?? null,
-          rotulo: (rot?.textContent ?? '').trim() || null,
-          rotuloComCaixa: !!rr && rr.width > 0 && rr.height > 0,
-          rotuloSobreOSelo: !!(rr && rs) && cruza(rr, rs),
-          ancoraLocal: ancoras.has(
-            String(c.querySelector('.cartao-porta')?.getAttribute('href') ?? '').replace(/^#/, ''),
-          ),
-        };
-      });
+      return [...document.querySelectorAll('[data-grelha] [data-faixa] [data-cartao]')].map((c) => ({
+        id: c.getAttribute('data-cartao'),
+        href: c.querySelector('.cartao-porta')?.getAttribute('href') ?? null,
+        /* O RÓTULO DO DESTINO NÃO PODE ESTAR EM NENHUM DOS 21 (07.09.2026).
+           Ele diz «este cartão leva para fora desta página», e nenhum leva. */
+        rotulo: (c.querySelector('.cartao-destino')?.textContent ?? '').trim() || null,
+        ancoraLocal: ancoras.has(
+          String(c.querySelector('.cartao-porta')?.getAttribute('href') ?? '').replace(/^#/, ''),
+        ),
+      }));
     });
+    /* A PORTA DENTRO DA LEITURA, que é para onde a porta do domínio se mudou.
+       Lê-se na mesma página e na mesma corrida: o que a A13 media era «cada
+       destino responde», e esse destino é hoje o da leitura. */
+    const portasDasLeituras = await pCartoes.evaluate(() =>
+      Object.fromEntries(
+        [...document.querySelectorAll('details[data-leitura]')].map((d) => [
+          d.getAttribute('data-leitura'),
+          d.querySelector('.dobra-porta a[href]')?.getAttribute('href') ?? null,
+        ]),
+      ),
+    );
     await pCartoes.__ctx.close();
 
     /* As páginas de destino lêem-se uma vez, e não uma vez por cartão. */
@@ -897,39 +901,39 @@ async function corre() {
     })();
 
     const errados = [];
-    const rotuloEsperado = t(ed.chave).dominios.eyebrow;
     for (const c of cartoes) {
+      if (c.href !== `#m-${c.id}`) errados.push(`${c.id}: «${c.href}» ≠ «#m-${c.id}»`);
+      else if (!c.ancoraLocal) errados.push(`${c.id}: a âncora «m-${c.id}» não existe nesta página`);
+      else if (c.rotulo) errados.push(`${c.id}: um cartão que abre aqui traz rótulo de destino`);
+      /* E A PORTA DO DOMÍNIO ONDE ELA AGORA VIVE: a leitura de uma medida que
+         pertence a um domínio COM PÁGINA acrescenta a porta para lá, com a
+         âncora daquela medida, e essa âncora tem de existir na página de
+         chegada. Quem não pertence a domínio nenhum não leva porta. */
       const dominio = dominioDaLinha(c.id);
+      const porta = portasDasLeituras[c.id] ?? null;
       if (dominio) {
-        const esperado = `${ed.dominio}#${dominio.ancora}`;
-        if (c.href !== esperado) errados.push(`${c.id}: «${c.href}» ≠ «${esperado}»`);
+        const esperada = `${ed.dominio}#${dominio.ancora}`;
+        if (porta !== esperada) errados.push(`${c.id}: a leitura tem porta «${porta}» ≠ «${esperada}»`);
         else if (!idsDaPaginaDoDominio.has(dominio.ancora))
           errados.push(`${c.id}: a âncora «${dominio.ancora}» não existe na página do domínio`);
-        else if (!c.rotulo) errados.push(`${c.id}: aponta ao domínio e não diz para onde leva`);
-        /* A PALAVRA DO RÓTULO, e não só a sua presença (Minor 12). É a
-           sobrancelha da página de chegada, `dominios.eyebrow`, lida das cadeias
-           da edição: o cartão diz para onde leva com a palavra que a página de
-           chegada usa para se nomear, e uma palavra que ninguém declarou cai. */
-        else if (c.rotulo !== rotuloEsperado)
-          errados.push(`${c.id}: o rótulo diz «${c.rotulo}» e não «${rotuloEsperado}»`);
-        else if (!c.rotuloComCaixa) errados.push(`${c.id}: o rótulo do destino não tem caixa`);
-        else if (c.rotuloSobreOSelo)
-          errados.push(`${c.id}: o rótulo do destino sobrepõe-se ao selo do cartão`);
-      } else {
-        if (c.href !== `#m-${c.id}`) errados.push(`${c.id}: «${c.href}» ≠ «#m-${c.id}»`);
-        else if (!c.ancoraLocal) errados.push(`${c.id}: a âncora «m-${c.id}» não existe nesta página`);
-        else if (c.rotulo) errados.push(`${c.id}: não é de domínio nenhum e traz rótulo de destino`);
+      } else if (porta) {
+        errados.push(`${c.id}: não é de domínio nenhum e a leitura leva porta «${porta}»`);
       }
     }
-    const paraODominio = cartoes.filter((c) => dominioDaLinha(c.id));
-    medidas[`A13.${ed.chave}`] = { cartoes, errados, paraODominio: paraODominio.length };
+    const comPorta = cartoes.filter((c) => dominioDaLinha(c.id));
+    /* CONTADO E NÃO ESCRITO. Um «0 para fora» escrito na frase dizia zero no dia
+       em que fossem três, e a prova de uma célula vermelha tem de dizer o que
+       ela viu. */
+    const paraFora = cartoes.filter((c) => !String(c.href ?? '').startsWith('#'));
+    medidas[`A13.${ed.chave}`] = { cartoes, portasDasLeituras, errados, comPorta: comPorta.length };
     conta(
       `A13.${ed.chave}`,
-      cartoes.length === AS_VINTE_E_UMA.length && paraODominio.length > 0 && errados.length === 0,
+      cartoes.length === AS_VINTE_E_UMA.length && comPorta.length > 0 && errados.length === 0,
       `o destino dos cartões de ${ed.rota}: ${cartoes.length} cartão(ões), ` +
-        `${paraODominio.length} para a página do domínio ` +
-        `(${paraODominio.map((c) => c.id).join(', ') || 'nenhum'}), ` +
-        `${cartoes.length - paraODominio.length} para a leitura breve desta página · ` +
+        `${cartoes.length - paraFora.length} para a leitura breve desta página, ` +
+        `${paraFora.length} para fora · ` +
+        `${comPorta.length} leitura(s) acrescentam a porta do domínio ` +
+        `(${comPorta.map((c) => c.id).join(', ') || 'nenhuma'}) · ` +
         (errados.length ? `errados: ${errados.slice(0, 4).join(' · ')}` : 'nenhum errado'),
     );
 
@@ -1489,16 +1493,27 @@ const PLANTAS = [
      nada. É a mesma regra da própria régua («um estrago que não muda nada nunca
      podia ser apanhado»), alargada às páginas que as células novas abrem. */
   {
-    nome: 'um cartão do domínio a apontar à linha desta página',
+    nome: 'um cartão a levar à página do domínio em vez de abrir a sua leitura',
     celulas: ['A13.pt', 'A13.en'],
-    /* Repõe o destino antigo no cartão da dívida pública: uma âncora desta
-       página, que é o que ele era antes deste bloco. A âncora existe, e por isso
-       a planta não passa por acaso: o que cai é a comparação com a tabela. */
-    f: (h) =>
-      h.replace(
-        /href="[^"]*\/dominios\/economia-e-financas-publicas#m-e3"|href="[^"]*\/en\/domains\/economia-e-financas-publicas#m-e3"/,
-        'href="#m-divida-publica-2025"',
-      ),
+    /* O DEFEITO QUE A SEGUNDA PASSAGEM DO F1.1c TIROU, REPOSTO (07.09.2026).
+       Até 07.09 o cartão da dívida pública mudava de página, e a planta anterior
+       plantava o contrário: repunha nele a âncora desta página. Com a decisão
+       (7) da §1.99 e o mandato do F1.1c, o destino certo é a âncora desta
+       página, e o defeito é levar para fora. A planta repõe exactamente a forma
+       que o F1.2b lhe tinha dado, com a âncora lida da mesma tabela que a vista
+       usa e não escrita aqui: o cartão continua a ser um alvo e a apontar a uma
+       página que existe, e o que cai é a promessa deste bloco. */
+    f: (h, rota) => {
+      const d = dominioDaLinha('divida-publica-2025');
+      if (!d) return h;
+      const pagina = rota.startsWith('/en')
+        ? `/en/domains/${d.slug}`
+        : `/dominios/${d.slug}`;
+      return h.replace(
+        'href="#m-divida-publica-2025" aria-labelledby=',
+        `href="${pagina}#${d.ancora}" aria-labelledby=`,
+      );
+    },
   },
   {
     nome: 'o menu sem «Domínios»',

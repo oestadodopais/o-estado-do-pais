@@ -161,13 +161,18 @@ const regioesComPorta = slugsDasRegioes().join(' ');
  * 21 para 18 selos de fonte. Não era compactar, era apagar. O lugar de direção
  * corrigiu a decisão a 04.09.2026, e a página faz o que está escrito acima.
  *
- * QUEM DECIDE É A MESMA TABELA QUE DECIDE O DESTINO DO CARTÃO,
- * `dominioDaLinha()`, e não uma segunda lista escrita aqui: a leitura de uma
- * medida está NA PÁGINA DO DOMÍNIO exactamente quando o cartão dela leva à
- * página do domínio, e as duas coisas não podem discordar. Hoje são três das 21
- * (a dívida pública, do Procedimento, e as taxas de emprego e de desemprego, do
- * Painel Social); amanhã são as que a primeira vaga puser no ar, sem uma linha
- * mudar aqui.
+ * QUEM DECIDE É `dominioDaLinha()`, e não uma segunda lista escrita aqui: uma
+ * medida acrescenta a porta exactamente quando a linha dela pertence a um
+ * domínio COM PÁGINA, que é a mesma condição por que a página do domínio existe.
+ * Hoje são três das 21 (a dívida pública, do Procedimento, e as taxas de emprego
+ * e de desemprego, do Painel Social); amanhã são as que a primeira vaga puser no
+ * ar, sem uma linha mudar aqui.
+ *
+ * ATÉ 07.09.2026 ERA TAMBÉM A TABELA QUE DECIDIA O DESTINO DO CARTÃO, e este
+ * parágrafo dizia «a leitura de uma medida está na página do domínio exactamente
+ * quando o cartão dela leva à página do domínio». A segunda passagem do F1.1c
+ * pôs os 21 cartões a abrir a leitura aqui (ver `destinoDoCartao()`, mais
+ * abaixo), e a tabela ficou a decidir uma coisa só: quem leva porta.
  *
  * O VALOR NÃO VAI NA LEITURA, em nenhuma das 21, e a primeira instrução dizia
  * «uma linha com o valor e a porta». A régua A3 conta `data-claim` por id e exige
@@ -253,44 +258,38 @@ const sociais = FIGURAS_SOCIAL.map((f) => ({
  * número, e não um algarismo novo na página.
  */
 /* ---------------------------------------------------------------------------
- * O DESTINO DE UM CARTÃO, DECIDIDO NUM SÍTIO SÓ (F1.2b, item 1, 03.09.2026)
+ * OS 21 CARTÕES FAZEM O MESMO (F1.1c, segunda passagem, 07.09.2026)
  * ---------------------------------------------------------------------------
- * Até aqui o destino era sempre a âncora da leitura breve daquela medida NESTA
- * página. Passou a haver um segundo destino possível: a medida cuja linha
- * pertence a um domínio COM PÁGINA leva à leitura daquela medida na página do
- * domínio, que é onde ela vive com a sua fronteira, as suas três datas e a sua
- * forma. Hoje são três das vinte e uma (a dívida pública, a taxa de emprego e a
- * taxa de desemprego do Painel Social), e amanhã são as que a primeira vaga
- * puser no ar, sem uma linha mudar aqui.
+ * UM TOQUE NUM CARTÃO ABRE A LEITURA DAQUELE CARTÃO, nos 21 sem exceção. O
+ * destino é sempre a âncora da leitura breve daquela medida NESTA página.
  *
- * QUEM DECIDE É `dominioDaLinha()`, EM `src/lib/dominios.mjs`, e é a única
- * tabela: ela lê `dominiosComPagina()`, que é a mesma condição por que a página
- * do domínio existe. Uma lista de ids escrita nesta vista era a promessa de
- * apontar para uma página que não foi construída.
+ * A EXCEÇÃO QUE HAVIA, E PORQUE SAIU. O F1.2b (item 1, 03.09.2026) tinha dado a
+ * três dos 21 um segundo destino: a medida cuja linha pertence a um domínio COM
+ * PÁGINA levava à leitura daquela medida na página do domínio (a dívida pública,
+ * a taxa de emprego e a taxa de desemprego). Nessa altura a leitura desses três
+ * na primeira página ia ser uma linha só com a porta, e o cartão que levava para
+ * fora era a única maneira de chegar à medida inteira.
  *
- * A ÂNCORA DENTRO DO DOMÍNIO VAI JUNTO, e não é enfeite: é o mesmo achado que a
- * segunda passagem do F1.2 escreveu para o índice dos domínios (Major 11, «a
- * porta vai à secção, e não só ao topo da página»). Quem toca no cartão da
- * dívida pública quer a dívida pública, e não o princípio de um domínio com dez
- * medidas.
+ * ISSO DEIXOU DE SER VERDADE NO MESMO DIA. A decisão (7) da §1.99 corrigiu a
+ * instrução anterior: «as leituras dos três cartões do domínio na primeira
+ * página são inteiras e acrescentam a porta». As três leituras têm hoje a
+ * unidade, o limiar, a definição, as três datas, a régua e o selo, e ACRESCENTAM
+ * no fim a porta «Ver no domínio →». Com o mandato deste bloco (um toque num
+ * cartão abre a leitura daquele cartão), um cartão que muda de página é a
+ * promessa do bloco quebrada em três dos 21, e é o Blocking 2 da leitura a frio
+ * do Codex de 07.09.
  *
- * O RÓTULO DO DESTINO É UMA PALAVRA QUE JÁ EXISTE. `s.dominios.eyebrow`
- * («Domínios» / «Domains») é a sobrancelha da página do domínio e do índice
- * deles, está declarada desde o F1.2 e é o que o leitor vê quando lá chega: o
- * cartão diz para onde leva com a palavra que a página de chegada usa para se
- * nomear. Nenhuma frase nova, e nada sobre a casa.
+ * A PORTA PARA O DOMÍNIO NÃO SE PERDE, e fica em dois sítios que continuam onde
+ * estavam: dentro da leitura de cada uma das três (`portaDaLeitura()`, acima), e
+ * na secção dos domínios a seguir ao mapa, com o nome do domínio como ligação e
+ * a sua própria faixa. `check:alcance` parte da página do domínio e não do
+ * cartão, e por isso não muda.
+ *
+ * `portaDaLeitura()` FICA A DECIDIR SOZINHA quem leva porta, com
+ * `dominioDaLinha()` por trás: continua a haver uma só tabela e uma só
+ * composição do endereço do domínio nesta vista.
  */
-/* O CARTÃO E A LEITURA COMPÕEM O MESMO ENDEREÇO UMA VEZ (F1.1b, 04.09.2026).
-   Eram duas composições da mesma cadeia — a do destino do cartão, aqui, e a da
-   porta da leitura, acima —, e duas composições da mesma coisa divergem no dia
-   em que uma delas mudar. Fica `portaDaLeitura()`, que é a única, e este bloco
-   decide só o que é DELE: o que fazer quando não há domínio (a âncora da leitura
-   nesta página) e que palavra o cartão diz quando leva para fora. */
-const destinoDoCartao = (claim) => {
-  const porta = portaDaLeitura(claim);
-  if (!porta) return { destino: `#m-${claim}`, destinoRotulo: null };
-  return { destino: porta, destinoRotulo: s.dominios.eyebrow };
-};
+const destinoDoCartao = (claim) => ({ destino: `#m-${claim}`, destinoRotulo: null });
 
 const cartaoDaMedida = (f, estado) => {
   const linha = getClaim(f.claim);
