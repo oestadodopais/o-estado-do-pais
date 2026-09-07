@@ -81,6 +81,7 @@ import { FRAMES, FIELD_W, FIELD_H } from '../../data/caop-centroids.mjs';
 import { routePath } from '../../lib/routes.mjs';
 import { regioesDoMapa } from '../../lib/mapa-regioes.mjs';
 import { REGIOES } from '../../data/regioes.mjs';
+import LugarDoNome from './LugarDoNome.astro';
 
 /* AS DUAS PROPRIEDADES QUE A PÁGINA DE CONCELHO PEDIU (ISSUES I45, etapa 2m).
  *
@@ -596,40 +597,7 @@ const NOME_DA_REGIAO = Object.fromEntries(
       quem ouve ouve uma só.
       ---------------------------------------------------------------------- */}
   {postura === 'inteiro' && (
-  <div class="mapa-nome" role="group" aria-label={s.inicio.mapa.lugarLabel} data-mapa-nome hidden>
-    <div class="mapa-nome-frase" aria-live="polite" data-mapa-frase>
-      {/* CADA FRASE É UM PARÁGRAFO SEU, e isso não é arrumação: a régua da voz
-          lê um bloco como o elemento de bloco mais fundo, e quatro frases dentro
-          do mesmo `<p>` entravam no inventário como uma linha só, com as quatro
-          coladas. São quatro linhas porque são quatro frases. */}
-      <p class="mapa-nome-vazio mapa-so-toque" data-mapa-vazio="pais-toque">
-        {s.inicio.mapa.nomeVazioToque}
-      </p>
-      <p class="mapa-nome-vazio mapa-so-rato" data-mapa-vazio="pais-rato">
-        {s.inicio.mapa.nomeVazioRato}
-      </p>
-      <p class="mapa-nome-vazio mapa-so-toque" data-mapa-vazio="regiao-toque" hidden>
-        {s.inicio.mapa.nomeVazioToqueConcelho}
-      </p>
-      <p class="mapa-nome-vazio mapa-so-rato" data-mapa-vazio="regiao-rato" hidden>
-        {s.inicio.mapa.nomeVazioRatoConcelho}
-      </p>
-      {/* O nome vai declarado como lugar, pela mesma razão do nome do cartão
-          localizador: é o nome da coisa, e não prosa da casa. */}
-      <p class="mapa-nome-texto" data-mapa-nome-texto data-lugar hidden></p>
-    </div>
-    <p class="mapa-nome-portas">
-      {/* As duas portas chegam sem destino e escondidas: o destino de cada uma é
-          copiado do `href` que o servidor escreveu na área apontada, e a de
-          voltar leva à primeira página, que é o nível de cima. */}
-      <a class="lig mapa-nome-porta" href={routePath('home', lang)} data-mapa-porta hidden
-        >{s.inicio.mapa.abrir} →</a
-      >
-      <a class="lig mapa-nome-voltar" href={routePath('home', lang)} data-mapa-voltar hidden
-        >← {s.inicio.mapa.voltarAoPais}</a
-      >
-    </p>
-  </div>
+    <LugarDoNome s={s} niveis={['pais', 'regiao']} voltar={routePath('home', lang)} />
   )}
 
   {/* ------------------------------------------------------------------------

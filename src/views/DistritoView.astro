@@ -45,6 +45,7 @@
 import Base from '../layouts/Base.astro';
 import Provenance from '../components/Provenance.astro';
 import FonteDaCarta from '../components/FonteDaCarta.astro';
+import LugarDoNome from '../components/inicio/LugarDoNome.astro';
 import { distritoDoMapa, unidadeDoMapa } from '../lib/mapa.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -141,7 +142,7 @@ const tipo = unidade.tipo === 'ilha' ? s.distritos.tipoIlha : s.distritos.tipoDi
       achatar o que uma imagem contém. O papel é `group`, que leva nome acessível
       e deixa as portas alcançáveis uma a uma.
       ---------------------------------------------------------------------- */}
-  <figure class="distrito-mapa" data-instrumento="mapa-do-distrito">
+  <figure class="distrito-mapa" data-instrumento="mapa-do-distrito" data-mapa-raiz data-nivel="regiao">
     <div class="distrito-tela">
       <svg
         class="mapa-svg mapa-svg-areas distrito-svg"
@@ -164,6 +165,22 @@ const tipo = unidade.tipo === 'ilha' ? s.distritos.tipoIlha : s.distritos.tipoDi
         </g>
       </svg>
     </div>
+    {/* ------------------------------------------------------------------
+        O LUGAR DO NOME, TAMBÉM AQUI (F1.1d, item 7 do brief, 07.09.2026)
+        ------------------------------------------------------------------
+        «As páginas de distrito e de região ganham o mesmo lugar do nome para os
+        seus concelhos.» É o mesmo componente e o mesmo guião da primeira página,
+        com um nível só: aqui não há país nem região para crescer, e por isso não
+        há porta de voltar. O que ele dá é o que dá lá: o nome do concelho
+        apontado num lugar fixo, a porta para a página dele, e o primeiro toque a
+        dizer o nome em vez de abrir.
+
+        A PÁGINA DE UMA REGIÃO NÃO O GANHA, e a razão é medida e não uma falta:
+        uma região não tem mapa. A Emenda 21 (d) decide que «uma região não tem
+        mapa de pontos nem de áreas; tem a régua», e um lugar para o nome da área
+        apontada num sítio onde não há áreas seria mobília a dizer que há.
+        ------------------------------------------------------------------ */}
+    <LugarDoNome s={s} niveis={['regiao']} />
     {/* A legenda: o nome da Carta, o ano da edição e o selo que abre a linha.
         SEM A CONTAGEM DOS 308, e a razão está na chave: a legenda da primeira
         página é «308 concelhos · CAOP 2025 ■ fonte», que a Emenda 17 fixa para um
@@ -227,4 +244,10 @@ const tipo = unidade.tipo === 'ilha' ? s.distritos.tipoIlha : s.distritos.tipoDi
     <a href={routePath('municipios', lang)}>{s.distritos.voltarConcelhos}</a>
     <a href={`${routePath('home', lang)}#mapa`}>{s.municipios.mapaLink}</a>
   </p>
+
+  {/* O MESMO GUIÃO DA PRIMEIRA PÁGINA (F1.1d, item 7): aqui ele encontra um
+      nível só e faz o que aqui há para fazer, que é escrever no lugar do nome o
+      nome do concelho apontado e segurar o primeiro toque. As regras que ele
+      quebra e as amarras que leva estão escritas no cabeçalho dele. */}
+  <script src="/js/mapa-regioes.js" defer is:inline></script>
 </Base>

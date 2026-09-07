@@ -422,6 +422,42 @@ async function p2() {
     );
     medidas.nome[lang] = { regioes: lidos.length, concelhos: amostra.length, errados: errados.length };
     await q.__ctx.close();
+
+    /* P2c · o item 7 do brief: a página de um distrito tem o mesmo lugar do
+       nome para os seus concelhos. Mede-se em Lisboa, que é a unidade com os
+       concelhos mais apertados do continente. */
+    const d = await pagina(lang === 'pt' ? '/distritos/lisboa' : '/en/districts/lisboa', 1280);
+    const artefacto = JSON.parse(
+      fs.readFileSync(path.join(RAIZ, 'mapa', 'distritos', 'lisboa.json'), 'utf8'),
+    );
+    const noDistrito = [];
+    for (const c of artefacto.concelhos) {
+      await d.locator('[data-mapa-concelhos]').scrollIntoViewIfNeeded();
+      const onde = await d.evaluate((pt) => {
+        const svg = document.querySelector('[data-mapa-concelhos]');
+        const q2 = new DOMPoint(pt[0], pt[1]).matrixTransform(svg.getScreenCTM());
+        return { x: q2.x, y: q2.y };
+      }, c.ponto);
+      await d.mouse.move(onde.x, onde.y);
+      await d.waitForTimeout(20);
+      const nome = await d.evaluate(
+        () => document.querySelector('[data-mapa-nome-texto]')?.textContent.trim() ?? '',
+      );
+      const destino = await d.evaluate(
+        () => document.querySelector('[data-mapa-porta]')?.getAttribute('href') ?? '',
+      );
+      noDistrito.push({ slug: c.slug, esperado: c.nome, nome, destino });
+    }
+    const semVoltar = await d.evaluate(() => document.querySelectorAll('[data-mapa-voltar]').length);
+    const maus2 = noDistrito.filter((x) => x.nome !== x.esperado || !x.destino.endsWith(x.slug));
+    conta(
+      `P2c · ${lang}: numa página de distrito, o lugar do nome diz o concelho apontado`,
+      noDistrito.length === artefacto.concelhos.length && maus2.length === 0 && semVoltar === 0,
+      `${noDistrito.length - maus2.length} de ${noDistrito.length} concelhos de Lisboa · ` +
+        `«${noDistrito[0].nome}» … «${noDistrito[noDistrito.length - 1].nome}» · ` +
+        `${semVoltar} porta(s) de voltar (uma página de distrito não tem nível de cima)`,
+    );
+    await d.__ctx.close();
   }
 }
 
@@ -527,6 +563,38 @@ async function p3() {
     `a porta diz «${daPorta}» e leva a «${chegou}»`,
   );
   await q.__ctx.close();
+
+  /* P3d · o item 7: a mesma regra dos dois toques numa página de distrito. */
+  const d = await pagina('/distritos/lisboa', 390, { toque: true });
+  const artefacto = JSON.parse(
+    fs.readFileSync(path.join(RAIZ, 'mapa', 'distritos', 'lisboa.json'), 'utf8'),
+  );
+  const sintra = artefacto.concelhos.find((c) => c.slug === 'sintra');
+  await d.locator('[data-mapa-concelhos]').scrollIntoViewIfNeeded();
+  const ondeSintra = await d.evaluate((pt) => {
+    const svg = document.querySelector('[data-mapa-concelhos]');
+    const q2 = new DOMPoint(pt[0], pt[1]).matrixTransform(svg.getScreenCTM());
+    return { x: q2.x, y: q2.y };
+  }, sintra.ponto);
+  await d.touchscreen.tap(ondeSintra.x, ondeSintra.y);
+  await d.waitForTimeout(300);
+  const primeiroToque = await d.evaluate(() => ({
+    caminho: location.pathname,
+    nome: document.querySelector('[data-mapa-nome-texto]')?.textContent.trim() ?? null,
+  }));
+  const viagem3 = d.waitForURL('**/municipios/sintra', { timeout: 5000 }).catch(() => null);
+  await d.touchscreen.tap(ondeSintra.x, ondeSintra.y);
+  await viagem3;
+  const segundoToque = await d.evaluate(() => location.pathname);
+  conta(
+    'P3d · numa página de distrito, o primeiro toque num concelho diz o nome e o segundo abre',
+    primeiroToque.caminho === '/distritos/lisboa' &&
+      primeiroToque.nome === sintra.nome &&
+      segundoToque === '/municipios/sintra',
+    `o primeiro toque deixa o endereço em «${primeiroToque.caminho}» e diz «${primeiroToque.nome}» · ` +
+      `o segundo abre «${segundoToque}»`,
+  );
+  await d.__ctx.close();
 }
 
 /* ======================================================================= P4 */
@@ -707,11 +775,18 @@ async function corre(quais) {
  * ------------------------------------------------------------------------- */
 const PLANTAS = [
   {
-    nome: 'uma região sem nome no lugar (o `data-u` de Centro apagado)',
+    /* O NOME DE UMA ÁREA É O `<title>` DA SUA LIGAÇÃO, que é o nome acessível
+       dela e o que o guião copia para o lugar do nome. A primeira forma desta
+       planta apagava o `data-u` do caminho, e deixou de morder quando o guião
+       passou a ler o `<title>`: uma planta que não morde é uma régua que se diz
+       verde sem ter olhado. */
+    nome: 'uma região sem nome no lugar (o `<title>` de Centro apagado)',
     celulas: ['P2a'],
     quais: ['P2'],
     estrago: (texto, rota, ext) =>
-      ext === '.html' ? texto.replace(' data-u="Centro"', '').replace(' data-u="Centre"', '') : texto,
+      ext === '.html'
+        ? texto.replace(/(<a[^>]*data-uni-porta="centro"[^>]*>)<title>[^<]*<\/title>/, '$1')
+        : texto,
   },
   {
     nome: 'o primeiro toque a navegar (o guião deixa de segurar o clique)',
@@ -732,6 +807,15 @@ const PLANTAS = [
       dados.concelhos = dados.concelhos.slice(0, dados.concelhos.length - 1);
       return JSON.stringify(dados);
     },
+  },
+  {
+    nome: 'o lugar do nome retirado da página de um distrito',
+    celulas: ['P2c', 'P3d'],
+    quais: ['P2', 'P3'],
+    estrago: (texto, rota, ext) =>
+      ext === '.html' && rota.indexOf('/distritos/') === 0
+        ? texto.replace(/<div class="mapa-nome"[\s\S]*?<\/div><figcaption/, '<figcaption')
+        : texto,
   },
   {
     nome: 'a lista fechada dos nomes aberta por defeito',
