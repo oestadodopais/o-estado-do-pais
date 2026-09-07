@@ -299,14 +299,20 @@
     });
   }
 
-  /* O GESTO DO CLIQUE, LIDO DO PRÓPRIO CLIQUE E, ONDE ELE NÃO O DIZ, DO GESTO
-     ANTERIOR. Medido a 07.09.2026 no Chromium: um toque dá
-     `pointerover:touch`, `pointerdown:touch`, `touchstart`, `pointerup:touch`,
-     `touchend`, `mouseover` e `click:touch`; um clique de rato dá
-     `pointerover:mouse`, `mouseover`, `pointermove:mouse`, `pointerdown:mouse`,
-     `pointerup:mouse` e `click:mouse`. O `pointerType` do clique chega para os
-     separar; os dois ouvintes abaixo são a rede para um navegador que despache o
-     clique como um `MouseEvent` sem esse campo. */
+  /* O GESTO LÊ-SE DO `pointerdown`, E NÃO DO CLIQUE. Medido a 08.09.2026 nos dois
+     motores, com o mesmo toque:
+
+       Chromium  pointerover:touch, pointerdown:touch, touchstart, pointerup:touch,
+                 touchend, mouseover, click:touch
+       WebKit    pointerover:touch, pointerdown:touch, touchstart, pointerup:touch,
+                 touchend, mouseover, click:MOUSE
+
+     O `pointerType` do clique diz «mouse» no WebKit para um toque de dedo, e a
+     primeira forma desta regra lia-o: no Safari o primeiro toque num concelho
+     abria a página, que é exactamente o que a medida P3 do brief proíbe, e no
+     Chromium não. O `pointerdown` diz «touch» nos dois, e é ele que decide; o
+     `pointerType` do clique fica como segunda leitura, e o `touchstart` como
+     terceira, para um motor que não despache `pointerdown`. */
   svg.addEventListener('pointerdown', function (ev) {
     tipoDoGesto = ev.pointerType || '';
   });
@@ -341,9 +347,11 @@
        O dedo não passa por cima antes de tocar, e por isso o primeiro toque tem
        de ser o que o passar do rato é: dizer o nome. Com rato ou caneta o nome já
        está no lugar desde que o cursor lá entrou, e com o teclado desde que o Tab
-       lá chegou: nesses o clique é o segundo gesto e abre a página. */
-    var toque = (ev.pointerType || tipoDoGesto) === 'touch';
-    if (toque && concelho !== tocada) {
+       lá chegou: nesses o clique é o segundo gesto e abre a página. O Enter não
+       traz gesto nenhum e por isso não herda o do toque anterior, que deixaria o
+       teclado a pedir dois Enter depois de um dedo ter passado por ali. */
+    var toque = tipoDoGesto === 'touch' || ev.pointerType === 'touch';
+    if (!doTeclado && toque && concelho !== tocada) {
       ev.preventDefault();
       tocada = concelho;
       mostra(area);

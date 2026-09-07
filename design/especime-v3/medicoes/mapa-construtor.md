@@ -75,7 +75,7 @@ pede quando o leitor abre uma região.
 O comando de todas as células da régua nova é o mesmo:
 
 ```
-node tests/inicio/mapa-regioes.mjs           # 21 de 21 células passam
+node tests/inicio/mapa-regioes.mjs           # 22 de 22 células passam
 node tests/inicio/mapa-regioes.mjs --vermelhos   # 6 de 6 plantas apanhadas, saída 0
 ```
 
@@ -158,11 +158,22 @@ nível de cima e o botão de voltar do navegador desfaz o que o toque escreveu. 
 porta do lugar do nome abre `/regioes/algarve`. Numa página de distrito, o
 primeiro toque diz «Sintra» e o segundo abre `/municipios/sintra`.
 
-**A distinção entre o dedo e o rato é medida e não suposta.** No Chromium, um
-toque dá `pointerover:touch`, `pointerdown:touch`, `touchstart`, `pointerup:touch`,
-`touchend`, `mouseover` e `click:touch`; um clique de rato dá `pointerover:mouse`,
-`mouseover`, `pointermove:mouse`, `pointerdown:mouse`, `pointerup:mouse` e
-`click:mouse`. O `pointerType` do clique chega para os separar. Com rato ou
+**A distinção entre o dedo e o rato é medida e não suposta, e a primeira forma
+dela caía no Safari.** Com o mesmo toque de dedo, medido nos dois motores a
+08.09.2026:
+
+| motor | a sequência do toque |
+| --- | --- |
+| Chromium | `pointerover:touch`, `pointerdown:touch`, `touchstart`, `pointerup:touch`, `touchend`, `mouseover`, **`click:touch`** |
+| WebKit | `pointerover:touch`, `pointerdown:touch`, `touchstart`, `pointerup:touch`, `touchend`, `mouseover`, **`click:mouse`** |
+
+O `pointerType` do CLIQUE diz «mouse» no WebKit para um dedo, e a primeira forma
+da regra lia-o: no Safari o primeiro toque num concelho abria a página, que é
+exactamente o que a medida P3 proíbe, e no Chromium não. O gesto passa a ler-se
+do `pointerdown`, que diz «touch» nos dois; o `pointerType` do clique fica como
+segunda leitura e o `touchstart` como terceira. **A célula P3a corre agora nos
+dois motores**, e é a única do bloco que o faz: foi ali que a diferença apareceu,
+e o WebKit é o motor de todos os telemóveis da Apple. Com rato ou
 teclado o nome já está no lugar desde que o cursor ou o Tab lá chegaram, e por
 isso o clique é o segundo gesto e abre a página: pedir dois cliques a quem já viu
 o nome seria a regra do dedo aplicada a quem não usa o dedo.
@@ -224,7 +235,7 @@ claro duas vezes, e a régua põe o atributo.*
 
 | régua | comando | resultado |
 | --- | --- | --- |
-| a régua nova | `node tests/inicio/mapa-regioes.mjs` | 21 de 21 |
+| a régua nova | `node tests/inicio/mapa-regioes.mjs` | 22 de 22 |
 | os nomes ao lado do mapa | `node tests/inicio/lista.mjs` | 94 de 94 |
 | o mapa por distritos | `node tests/inicio/mapa-distritos.mjs` | 20 de 20 |
 | o mapa é navegação | `node tests/inicio/mapa-navegacao.mjs` | 9 de 9 |
@@ -249,14 +260,16 @@ claro duas vezes, e a régua põe o atributo.*
 * `design-bundle.mjs` (que corre no `verify`): o cartão do mapa lê as nove regiões
   do ficheiro gerado em vez das 29 do artefacto.
 
-**Os três portões, na árvore do commit `8c139bf3`** (o último de código deste
-ramo; este relatório é o commit seguinte e não toca em código):
+**Os três portões, na árvore do último commit de código deste ramo:**
 
 | portão | comando | saída | hora UTC |
 | --- | --- | --- | --- |
-| construção | `npm run build > /tmp/f11d-build.log 2>&1; echo "build $?"` | 0 | 08.09, 22:59:30 |
-| tipos | `npm run typecheck > /tmp/f11d-typecheck.log 2>&1; echo "typecheck $?"` | 0 | 08.09, 22:59:30 |
-| verificação | `npm run verify > /tmp/f11d-verify.log 2>&1; echo "verify $?"` | 0 | 08.09, 23:05:43 |
+| construção | `npm run build > /tmp/f11d-build.log 2>&1; echo "build $?"` | 0 | 08.09, 23:27:39 |
+| tipos | `npm run typecheck > /tmp/f11d-typecheck.log 2>&1; echo "typecheck $?"` | 0 | 08.09, 23:27:39 |
+| verificação | `npm run verify > /tmp/f11d-verify.log 2>&1; echo "verify $?"` | 0 | 08.09, 23:34:12 |
+
+*As mesmas três correram verdes três vezes ao longo do bloco, e estas são as da
+árvore final. As corridas do portão do GitHub em cada empurrão estão no fim.*
 
 ### P9 · as plantas
 
@@ -272,7 +285,7 @@ nenhum:
 | planta | célula que fica vermelha |
 | --- | --- |
 | uma região sem nome no lugar (o `<title>` de Centro apagado) | P2a, nas duas edições |
-| o primeiro toque a navegar (o guião sem `preventDefault`) | P3a |
+| o primeiro toque a navegar (o guião sem `preventDefault`) | P3a, nos dois motores |
 | um concelho a menos no ficheiro da geometria de uma região | P1b |
 | o lugar do nome retirado da página de um distrito | P2c e P3d |
 | a lista fechada dos nomes aberta por defeito | P4, nas duas edições |
@@ -335,7 +348,11 @@ que a P2c e a P3d medem.
 5. **`hidden` não é uma propriedade de um elemento de SVG.** `el.hidden = false`
    num `<g>` põe uma propriedade nova no objecto e deixa o atributo onde estava.
    Nos dois grupos do mapa troca-se o atributo.
-6. **O guião quebra a regra de `inicio.js`, e por isso vive noutro ficheiro.**
+6. **O `pointerType` de um clique feito com o dedo não é o mesmo nos dois
+   motores.** O Chromium diz «touch» e o WebKit diz «mouse», e a regra do
+   primeiro toque, escrita sobre o clique, passava num e caía no outro. Lê-se
+   agora do `pointerdown`. A tabela está na P3.
+7. **O guião quebra a regra de `inicio.js`, e por isso vive noutro ficheiro.**
    `public/js/mapa-regioes.js` cria elementos e escreve texto, como `livro.js`, e
    pela mesma razão medida: ou o documento leva os 308 concelhos das nove regiões
    escondidos (237 KB), ou o guião desenha os da região que o leitor abriu. Leva

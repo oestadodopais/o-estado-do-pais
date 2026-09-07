@@ -69,7 +69,7 @@ import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { chromium } from 'playwright';
+import { chromium, webkit } from 'playwright';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -132,10 +132,20 @@ await new Promise((r) => servidor.listen(0, '127.0.0.1', r));
 const base = `http://127.0.0.1:${servidor.address().port}`;
 
 const nav = await chromium.launch();
+/* O SEGUNDO MOTOR ABRE-SE UMA VEZ E SÓ ONDE É PRECISO. A célula P3a corre nos
+   dois, e a razão está medida no cabeçalho de `public/js/mapa-regioes.js`: o
+   `pointerType` de um clique feito com o dedo diz «touch» no Chromium e «mouse»
+   no WebKit, e a primeira forma da regra do primeiro toque passava num e caía no
+   outro, que é o motor de todos os telemóveis da Apple. */
+const navWebkit = await webkit.launch();
+const MOTORES = [
+  ['Chromium', nav],
+  ['WebKit', navWebkit],
+];
 
 /** Uma página, com o contexto que a célula pede. */
 async function pagina(rota, largura, opcoes = {}) {
-  const ctx = await nav.newContext({
+  const ctx = await (opcoes.motor ?? nav).newContext({
     viewport: { width: largura, height: opcoes.altura ?? (largura < 640 ? 664 : 900) },
     hasTouch: opcoes.toque ?? false,
     javaScriptEnabled: opcoes.guiao ?? true,
@@ -463,8 +473,13 @@ async function p2() {
 
 /* ======================================================================= P3 */
 async function p3() {
-  /* Com o dedo. */
-  const p = await pagina('/', 390, { toque: true });
+  for (const [motor, browser] of MOTORES) await p3aNum(motor, browser);
+  await p3resto();
+}
+
+/** P3a · com o dedo, num motor. */
+async function p3aNum(motor, browser) {
+  const p = await pagina('/', 390, { toque: true, motor: browser });
   const norte = REGIOES.find((r) => r.slug === 'norte');
   const ondeNorte = await noEcra(p, norte.ponto);
   await p.touchscreen.tap(ondeNorte.x, ondeNorte.y);
@@ -500,7 +515,7 @@ async function p3() {
   await viagem;
   const depoisDoSegundo = await p.evaluate(() => location.pathname);
   conta(
-    'P3a · com o dedo: a região cresce sem navegar, o primeiro toque num concelho diz o nome, o segundo abre',
+    `P3a · ${motor}, com o dedo: a região cresce sem navegar, o primeiro toque num concelho diz o nome, o segundo abre`,
     depoisDaRegiao.nivel === 'regiao' &&
       depoisDaRegiao.caminho === '/' &&
       depoisDaRegiao.hash === '#regiao=norte' &&
@@ -512,7 +527,10 @@ async function p3() {
       `e diz «${depoisDoPrimeiro.nome}» · o segundo abre «${depoisDoSegundo}»`,
   );
   await p.__ctx.close();
+}
 
+/** O resto da P3: o rato, a porta do lugar do nome e a página de um distrito. */
+async function p3resto() {
   /* Com o rato, e o botão de voltar do navegador. */
   const q = await pagina('/', 1280);
   const alentejo = REGIOES.find((r) => r.slug === 'alentejo');
@@ -790,7 +808,7 @@ const PLANTAS = [
   },
   {
     nome: 'o primeiro toque a navegar (o guião deixa de segurar o clique)',
-    celulas: ['P3a'],
+    celulas: ['P3a · Chromium', 'P3a · WebKit'],
     quais: ['P3'],
     estrago: (texto, rota, ext) =>
       ext === '.js' && rota.endsWith('/mapa-regioes.js')
@@ -848,12 +866,14 @@ if (VERMELHOS) {
   }
   console.log('');
   await nav.close();
+  await navWebkit.close();
   servidor.close();
   process.exit(falhou ? 1 : 0);
 }
 
 await corre(['P1', 'P2', 'P3', 'P4', 'P5', 'P7']);
 await nav.close();
+await navWebkit.close();
 servidor.close();
 
 if (FICHEIRO_JSON) fs.writeFileSync(FICHEIRO_JSON, JSON.stringify({ celulas, medidas }, null, 2));
