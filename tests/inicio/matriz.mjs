@@ -1710,32 +1710,68 @@ for (const largura of [1280, 390]) {
   await p.goto(`${base}/uniao-europeia`, { waitUntil: 'networkidle' });
   await p.click('a.cartao-porta');
   await p.waitForSelector('[data-leituras="pdm"] .dobra .dobra-abrir', { state: 'visible' });
+  const abertasDepoisDoToque = (await estadoDaPagina(p)).abertas;
   await p.focus('[data-leituras="pdm"] .dobra .dobra-abrir');
+  /* A ROLAGEM MEDE-SE DEPOIS DO TOQUE, e não antes dele: o cartão é uma âncora
+     `#m-<id>` e o navegador rola a página até à leitura, que é o que ele deve
+     fazer. O que a célula promete é que a TECLA não rola, e por isso o «antes»
+     é o estado com a leitura já aberta. */
   const antes = await p.evaluate(() => window.scrollY);
   await p.keyboard.press('Space');
   await p.waitForTimeout(80);
   const a = await estadoDaPagina(p);
-  const rolou = (await p.evaluate(() => window.scrollY)) - antes;
-  const forma = await p.evaluate(() => {
-    const b = document.querySelector('.pesquisa-submeter');
-    const s2 = document.querySelector('[data-leituras] .dobra:first-child .dobra-abrir');
-    return {
-      botao: b ? `${b.tagName.toLowerCase()} type=${b.getAttribute('type')}` : 'sem botão',
-      resumo: s2 ? s2.tagName.toLowerCase() : 'sem resumo',
-      ligacoesComoBotao: document.querySelectorAll('[data-inicio] a[role="button"]').length,
-    };
-  });
+  const depois = await p.evaluate(() => ({
+    y: window.scrollY,
+    /* O TETO DA ROLAGEM DEPOIS DA TECLA. Fechar a leitura encurta o documento,
+       e o navegador encosta a janela ao novo fundo: isso não é a tecla a rolar,
+       é a página a ficar mais curta. A célula distingue as duas coisas em vez de
+       as somar, porque a promessa é sobre a TECLA. */
+    teto: Math.max(0, document.documentElement.scrollHeight - window.innerHeight),
+    resumo: document.querySelector('[data-leituras] .dobra .dobra-abrir')?.tagName.toLowerCase() ?? 'sem resumo',
+    ligacoesComoBotao: document.querySelectorAll('a[role="button"]').length,
+  }));
+  const esperado = Math.min(antes, depois.teto);
+  const rolou = depois.y - antes;
+  const encostou = antes - esperado;
   conta(
     '2i·5 · o espaço age na leitura e não rola a página, e o que activa é um comando a sério',
     a.pecas > 0 &&
-      a.abertas === a.pecas - 1 &&
-      rolou === 0 &&
-      forma.botao === 'button type=submit' &&
-      forma.resumo === 'summary' &&
-      forma.ligacoesComoBotao === 0,
-    `espaço no resumo da primeira leitura → ${a.abertas} de ${a.pecas} aberta(s) (rolagem ${rolou}) · o botão da busca é «${forma.botao}» · o comando da leitura é <${forma.resumo}> · ligações com papel de botão: ${forma.ligacoesComoBotao}`,
+      abertasDepoisDoToque === 1 &&
+      a.abertas === 0 &&
+      Math.abs(depois.y - esperado) <= 1 &&
+      depois.resumo === 'summary' &&
+      depois.ligacoesComoBotao === 0,
+    `um toque num cartão → ${abertasDepoisDoToque} de ${a.pecas} aberta(s); espaço no resumo dela → ` +
+      `${a.abertas} · a janela passou de ${antes} para ${depois.y} px, e o esperado era ${esperado} ` +
+      `(o teto da rolagem depois de fechar é ${depois.teto}: ${encostou} px são a página a encurtar, ` +
+      `${rolou + encostou} são a tecla) · o comando da leitura é <${depois.resumo}> · ` +
+      `ligações com papel de botão: ${depois.ligacoesComoBotao}`,
   );
   await p.__contexto.close();
+
+  /* O BOTÃO DA BUSCA MUDA DE PÁGINA COM A BUSCA (F1.10, item 8.16, 08.09.2026).
+     A célula acima media o `<button type="submit">` da busca no mesmo passo, e
+     media-o em `/`, onde a busca e os 21 cartões viviam. Os cartões passaram a
+     «Portugal na União Europeia», que não tem busca nenhuma, e um `sem botão`
+     ali não é um defeito: é a régua a procurar uma coisa na página errada. A
+     promessa é a mesma e mede-se onde a busca está. */
+  {
+    const pb = await pagina();
+    await pb.goto(`${base}/`, { waitUntil: 'networkidle' });
+    const b = await pb.evaluate(() => {
+      const el = document.querySelector('.pesquisa-submeter');
+      return {
+        botao: el ? `${el.tagName.toLowerCase()} type=${el.getAttribute('type')}` : 'sem botão',
+        ligacoesComoBotao: document.querySelectorAll('[data-inicio] a[role="button"]').length,
+      };
+    });
+    conta(
+      '2i·5 · o que submete a busca da primeira página é um botão a sério',
+      b.botao === 'button type=submit' && b.ligacoesComoBotao === 0,
+      `o botão da busca é «${b.botao}» · ligações com papel de botão: ${b.ligacoesComoBotao}`,
+    );
+    await pb.__contexto.close();
+  }
 }
 
 /* (2i·5) Nenhuma régua fica com papel de imagem e sem nome. */
@@ -1975,12 +2011,19 @@ for (const largura of [1280, 390]) {
  * de intervalo 1px, com uma sombra a desenhar o fio; são hoje 21 leituras numa
  * LISTA, e o fio é o `border-bottom` de cada uma, que é a mesma forma da lista
  * social a que a área de leitura sucedeu. Uma moldura é um fio nos QUATRO lados;
- * um fio numa aresta só é uma separação, e é o que a casa desenha. */
+ * um fio numa aresta só é uma separação, e é o que a casa desenha.
+ *
+ * E A PÁGINA MUDOU (F1.10, item 8.16, 08.09.2026): as 21 leituras foram com os
+ * 21 cartões para «Portugal na União Europeia», e `[data-leituras="pdm"]` não
+ * existe na primeira página. A célula lia-o lá e chamava `querySelectorAll`
+ * sobre `null`, o que MATAVA a régua inteira a meio: as células medidas antes
+ * dela perdiam-se com o processo. Lê a página onde as leituras estão. */
 {
   const p = await pagina();
-  await p.goto(`${base}/`, { waitUntil: 'networkidle' });
+  await p.goto(`${base}/uniao-europeia`, { waitUntil: 'networkidle' });
   const m = await p.evaluate(() => {
     const painel = document.querySelector('[data-leituras="pdm"]');
+    if (!painel) return null;
     const pecas = [...painel.querySelectorAll('.dobra')];
     const lados = (e) => {
       const c = getComputedStyle(e);
@@ -2001,8 +2044,10 @@ for (const largura of [1280, 390]) {
   });
   conta(
     '2j · as leituras sem caixas, separadas por fios de 1px',
-    m.pecas === 13 && m.comMoldura === 0 && m.semFio === 0,
-    `${m.pecas} leituras · ${m.comMoldura} com moldura · ${m.semFio} sem o fio de 1px`,
+    !!m && m.pecas === 13 && m.comMoldura === 0 && m.semFio === 0,
+    m
+      ? `${m.pecas} leituras · ${m.comMoldura} com moldura · ${m.semFio} sem o fio de 1px`
+      : 'sem `[data-leituras="pdm"]` na página: as 21 leituras foram para «Portugal na União Europeia» com o item 8.16, e a célula lê essa página',
   );
   await p.__contexto.close();
 }
