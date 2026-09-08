@@ -640,12 +640,18 @@ export const STRINGS = {
            apontava para a página em que já se está. */
         trocar: 'trocar de concelho',
         /* ------------------------------------------------------------------
-           O LUGAR DO NOME, E OS DOIS NÍVEIS (F1.1d, 07.09.2026)
+           O LUGAR DO NOME, E OS DOIS NÍVEIS (F1.1d, 07.09; F1.1e, 08.09.2026)
            ------------------------------------------------------------------
-           O mapa da primeira página passa a ter dois níveis (as nove regiões, e
+           O mapa da primeira página tem dois níveis (as 29 unidades da Carta, e
            dentro de cada uma os seus concelhos) e um lugar fixo para o nome da
            área apontada. Estas cadeias são o que esse lugar diz quando não há
            nenhuma apontada, e o que as suas duas portas dizem.
+
+           O NÍVEL DE CIMA VOLTOU ÀS 29 UNIDADES (F1.1e): o F1.1d desenhou lá as
+           nove regiões NUTS II por um dia, e o diretor corrigiu-o a 08.09
+           («the map on the first page we had before was quite alright»), porque
+           um distrito e uma ilha são áreas que se reconhecem pelo nome. As três
+           cadeias que diziam «região» estão `retirada` no inventário.
 
            SÃO DUAS FRASES VAZIAS POR NÍVEL, E NÃO UMA, porque o gesto não é o
            mesmo: quem tem rato passa por cima, e quem tem dedo toca. As duas
@@ -656,31 +662,34 @@ export const STRINGS = {
            «Abrir» É A PORTA E NÃO O GESTO. A seta compõe-se ao lado, como em
            todas as portas da casa; o que a cadeia diz é o que está do outro
            lado, que é a página da área apontada. */
-        nomeVazioToque: 'Toque numa região',
-        nomeVazioRato: 'Passe o rato por uma região',
+        nomeVazioToque: 'Toque num distrito ou numa ilha',
+        nomeVazioRato: 'Passe o rato por um distrito ou por uma ilha',
         nomeVazioToqueConcelho: 'Toque num concelho',
         nomeVazioRatoConcelho: 'Passe o rato por um concelho',
         abrir: 'Abrir',
         voltarAoPais: 'Voltar ao país',
-        /* O QUE O LUGAR DIZ QUANDO O DESENHO DA REGIÃO NÃO CHEGA. O guião pede o
-           ficheiro dos concelhos da região ao tocar nela; se o pedido não voltar
-           (sem rede, uma resposta que não é 200, um ficheiro ilegível), o mapa
-           não cresce e o leitor ficava com um toque sem resposta e sem saber
+        /* O QUE O LUGAR DIZ QUANDO O DESENHO DA UNIDADE NÃO CHEGA. O guião pede
+           o ficheiro dos concelhos da unidade ao tocar nela; se o pedido não
+           voltar (sem rede, uma resposta que não é 200, um ficheiro ilegível), o
+           mapa não cresce e o leitor ficava com um toque sem resposta e sem saber
            porquê. A frase diz o que aconteceu e para onde ir: a porta que já
-           está no lugar leva à página da região, que é a alternativa sem guião.
-           O toque seguinte na mesma área segue a ligação do servidor. */
-        semODesenhoDaRegiao: 'O mapa desta região não abriu. A porta leva à página dela.',
-        /* Os nomes acessíveis dos dois níveis do desenho. Nomeiam o que a coisa
-           é, e não como se usa, que é a regra do `distritosLabel` acima. */
-        regioesLabel: 'Mapa das nove regiões de Portugal, com uma área por região.',
-        concelhosLabel: 'Mapa dos concelhos da região, com uma área por concelho.',
+           está no lugar leva à página da unidade, que é a alternativa sem guião.
+           O toque seguinte na mesma área segue a ligação do servidor.
+
+           «esta área» E NÃO «este distrito»: as 29 são 18 distritos e 11 ilhas, e
+           uma frase que nomeasse o distrito estava errada em onze delas. */
+        semODesenhoDaUnidade: 'O mapa desta área não abriu. A porta leva à página dela.',
+        /* O nome acessível do segundo nível do desenho. O do primeiro é o
+           `distritosLabel` acima, que voltou a ser o do mapa da primeira página.
+           Nomeia o que a coisa é, e não como se usa. */
+        concelhosLabel:
+          'Mapa dos concelhos do distrito ou da ilha, com uma área por concelho.',
         /* O nome acessível do lugar do nome. É uma região viva (`aria-live`), e
            uma região viva sem nome anuncia-se como «região». */
         lugarLabel: 'A área apontada no mapa',
-        /* O rótulo do grupo das nove regiões na lista dos nomes. As 29 unidades
-           continuam agrupadas pela parcela da Carta; as nove ficam num grupo
-           próprio, à frente delas, porque são o primeiro nível do desenho. */
-        regioesK: 'As regiões',
+        /* `regioesK` («As regiões») SAIU COM O GRUPO QUE ELA NOMEAVA (F1.1e). Era
+           o rótulo das nove regiões na lista dos nomes, à frente das 29 unidades;
+           o desenho voltou a ser as 29, e a lista é o índice do desenho. */
       },
 
       banda: {
@@ -2233,17 +2242,16 @@ export const STRINGS = {
         trocar: 'change municipality',
         /* O lugar do nome e os dois níveis. Ver a razão na edição portuguesa, e
            o registo das escolhas em `CHAVES-EN.md`. */
-        nomeVazioToque: 'Tap a region',
-        nomeVazioRato: 'Hover over a region',
+        nomeVazioToque: 'Tap a district or island',
+        nomeVazioRato: 'Hover over a district or island',
         nomeVazioToqueConcelho: 'Tap a municipality',
         nomeVazioRatoConcelho: 'Hover over a municipality',
         abrir: 'Open',
         voltarAoPais: 'Back to the country',
-        semODesenhoDaRegiao: 'This map did not open. The door goes to the region page.',
-        regioesLabel: 'Map of the nine regions of Portugal, one area per region.',
-        concelhosLabel: 'Map of the municipalities of the region, one area per municipality.',
+        semODesenhoDaUnidade: 'This map did not open. The door goes to its own page.',
+        concelhosLabel:
+          'Map of the municipalities of the district or island, one area per municipality.',
         lugarLabel: 'The area pointed at on the map',
-        regioesK: 'The regions',
       },
 
       banda: {

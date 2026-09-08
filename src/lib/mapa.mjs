@@ -292,6 +292,52 @@ export function unidadeDoMapa(slug) {
   return unidadesDoMapa().find((u) => u.slug === slug) ?? null;
 }
 
+/** @type {Map<string, string> | null} */
+let _unidadeDeCadaConcelho = null;
+
+/**
+ * A UNIDADE DE UM CONCELHO, LIDA DO ARTEFACTO QUE O CONTÉM (F1.1e).
+ *
+ * A página de um concelho sabe o nome do distrito ou da ilha dele
+ * (`distritoOuIlha`, da Carta), e o mapa precisa do SLUG da unidade para lhe
+ * desenhar o nível. Em vez de uma segunda lista a casar nomes com slugs, o índice
+ * faz-se dos 29 ficheiros do motor: um concelho está na unidade cujo ficheiro o
+ * desenha, e isso é a Carta e não uma tabela nossa.
+ *
+ * Faz-se uma vez por construção e fica em cache, como os outros leitores deste
+ * ficheiro.
+ *
+ * @param {string} slug o slug da Carta do concelho
+ * @returns {string | null} o slug da unidade, ou `null` se a Carta não o tiver
+ */
+export function unidadeDoConcelho(slug) {
+  if (!_unidadeDeCadaConcelho) {
+    _unidadeDeCadaConcelho = new Map();
+    for (const u of unidadesDoMapa()) {
+      for (const c of distritoDoMapa(u.slug).concelhos) _unidadeDeCadaConcelho.set(c.slug, u.slug);
+    }
+  }
+  return _unidadeDeCadaConcelho.get(slug) ?? null;
+}
+
+/**
+ * O FICHEIRO QUE O NAVEGADOR PEDE PARA O SEGUNDO NÍVEL DE UMA UNIDADE (F1.1e).
+ *
+ * O mapa da primeira página desenha as 29 unidades do servidor e vai buscar os
+ * concelhos de uma delas quando o leitor lhe toca. O ficheiro pedido é uma cópia
+ * byte a byte de `mapa/distritos/<slug>.json`, escrita em `public/` por
+ * `scripts/mapa-unidades.mjs` e reconferida pelo portão do mapa (R8).
+ *
+ * O NOME COMPÕE-SE AQUI E EM MAIS LADO NENHUM: o componente põe-no na área, o
+ * gerador escreve o ficheiro com ele, e o portão compõe o seu por conta própria,
+ * que é o ponto de haver um portão.
+ *
+ * @param {string} slug
+ */
+export function ficheiroDaUnidade(slug) {
+  return `dados/mapa/unidade-${slug}.json`;
+}
+
 /**
  * A ATRIBUIÇÃO DA FONTE, LIDA DO MANIFESTO E NUNCA TRANSCRITA.
  *

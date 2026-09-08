@@ -6,9 +6,9 @@
  *
  * Corre na cadeia do `build`, depois do `gate:html`, sobre o `dist/` construído
  * e sobre os artefactos que o motor atravessou para `mapa/`. É o D5 do
- * `design/especime-v3/briefs/BRIEF-mapa-distritos.md`, e são nove regras: sete
- * dele, e duas do `BRIEF-F1.1d-os-nomes-do-mapa.md` §4 (P6), que entram com as
- * regiões:
+ * `design/especime-v3/briefs/BRIEF-mapa-distritos.md`, e são oito regras: sete
+ * dele, e uma do `BRIEF-F1.1e-os-distritos-voltam-ao-mapa.md` §3 (U6), que entra
+ * com o segundo nível do mapa:
  *
  *   R1  os resumos dos ficheiros de `mapa/` iguais aos do manifesto, e nenhum
  *       ficheiro a mais nem a menos;
@@ -17,22 +17,22 @@
  *       os que `slugsDaCarta()` devolve;
  *   R3  cada página de distrito com tantas ligações de área quantos concelhos o
  *       seu ficheiro tem, e a lista com as mesmas;
- *   R4  a primeira página com nove ligações de área, uma por região;
+ *   R4  a primeira página com 29 ligações de área, uma por unidade da Carta;
  *   R5  nenhum `<a>` debaixo de um `role="img"`;
  *   R6  a atribuição da DGT presente onde o mapa está;
  *   R7  a ordem dos caminhos de cada `svg`, a das unidades do manifesto, e a
  *       das listas de `/municipios` e de cada página de distrito, na colação
  *       portuguesa (I84);
- *   R8  as nove regiões da lista da casa, com o seu código, os 308 concelhos uma
- *       vez cada, cada um na região que a coluna `nuts2` da Carta lhe dá, o
- *       ficheiro gerado escrito das fontes que ele diz ter lido, e o manifesto
- *       de resumos a cobrir os módulos que o gerador importa;
- *   R9  a geometria do nível do país: a área de cada região igual à soma das
- *       áreas dos seus concelhos, a caixa igual ao caminho, e nenhum concelho
- *       com o ponto fora do desenho da sua região;
- *   R10 a geometria do nível da região: os nove ficheiros que o navegador pede
- *       REFEITOS das fontes, com o leitor deste portão, e comparados campo a
- *       campo com os que estão em disco.
+ *   R8  os 29 ficheiros do segundo nível (`public/dados/mapa/unidade-*.json`)
+ *       iguais, byte a byte, aos artefactos `mapa/distritos/*.json`, o que está
+ *       em `dist/` igual ao que está em `public/`, nenhum ficheiro a mais dos
+ *       dois lados, os 308 concelhos uma vez cada na geometria servida, e cada
+ *       área da primeira página a pedir o ficheiro da sua unidade.
+ *
+ * AS R8, R9 E R10 DO F1.1d SAÍRAM COM AS REGIÕES (F1.1e, 08.09.2026). Provavam
+ * que a geometria calculada das nove regiões NUTS II era a união dos seus
+ * concelhos; o nível do país voltou às 29 unidades da Carta e o de baixo deixou
+ * de se calcular, e por isso a prova passa a ser uma comparação de bytes.
  *
  * ---------------------------------------------------------------------------
  * O LEITOR É PRÓPRIO, E É POR ISSO QUE A CONFERÊNCIA VALE
@@ -53,7 +53,7 @@
  * do mundo que as regras leem, e exige que a regra correspondente falhe. Nada é
  * escrito em disco, e por isso o estrago não pode sobreviver à corrida:
  *
- *   node scripts/check-mapa.mjs                as nove regras
+ *   node scripts/check-mapa.mjs                as oito regras
  *   node scripts/check-mapa.mjs --vermelhos    e a linha de cada estrago
  *
  * Uso: `npm run check:mapa`, e é o que a cadeia do `build` corre.
@@ -66,7 +66,6 @@ import { parse } from 'node-html-parser';
 
 import { routePath, LANGS } from '../src/lib/routes.mjs';
 import { slugsDaCarta } from '../src/lib/inicio.mjs';
-import { REGIOES } from '../src/data/regioes.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -152,39 +151,22 @@ function leMundo() {
     if (indice) paginas.push({ ...indice, lang, tipo: 'municipios' });
   }
 
-  /* A GEOMETRIA DAS REGIÕES (R8 e R9). O ficheiro gerado, os nove ficheiros que
-     ele nomeia, os três CSV da Carta e a lista dos concelhos com o seu dico. Os
-     nove ficheiros leem-se de `dist/`, que é onde a construção os pôs, porque é
-     de lá que o navegador os pede. */
-  const geradoAbs = path.join(RAIZ, 'src', 'data', 'mapa-regioes.gerado.json');
-  const regioes = fs.existsSync(geradoAbs) ? JSON.parse(fs.readFileSync(geradoAbs, 'utf8')) : null;
-  const clientes = {};
-  for (const r of regioes?.regioes ?? []) {
-    const abs = path.join(DIST, r.ficheiro);
-    if (fs.existsSync(abs)) clientes[r.slug] = JSON.parse(fs.readFileSync(abs, 'utf8'));
+  /* O SEGUNDO NÍVEL SERVIDO (R8). Os bytes de cada `unidade-<slug>.json` dos
+     dois lados: `public/dados/mapa/`, que é onde o gerador escreve e o que o
+     repositório guarda, e `dist/dados/mapa/`, que é o que o navegador pede. As
+     duas pastas leem-se inteiras, para que um ficheiro A MAIS também se veja. */
+  const servidos = {};
+  const servidosDist = {};
+  for (const u of pais.unidades ?? []) {
+    const rel = `dados/mapa/unidade-${u.slug}.json`;
+    const emPublic = path.join(RAIZ, 'public', rel);
+    const emDist = path.join(DIST, rel);
+    if (fs.existsSync(emPublic)) servidos[u.slug] = fs.readFileSync(emPublic);
+    if (fs.existsSync(emDist)) servidosDist[u.slug] = fs.readFileSync(emDist);
   }
-  const csv = {};
-  for (const parte of ['continente', 'acores', 'madeira']) {
-    const rel = `public/dados/caop-2025-municipios-${parte}.csv`;
-    const abs = path.join(RAIZ, rel);
-    if (fs.existsSync(abs)) csv[rel] = fs.readFileSync(abs, 'utf8');
-  }
-  const concelhos = JSON.parse(fs.readFileSync(path.join(RAIZ, 'src', 'data', 'concelhos.gerado.json'), 'utf8'));
-
-  /* OS BYTES DOS NOVE FICHEIROS, DOS DOIS LADOS (R10). `public/dados/mapa/` é
-     onde o gerador escreve e `dist/dados/mapa/` é o que o navegador pede: a R10
-     refaz o primeiro das fontes e exige que o segundo seja igual ao primeiro. */
-  const clientesTexto = {};
-  const clientesDist = {};
-  for (const r of regioes?.regioes ?? []) {
-    const emPublic = path.join(RAIZ, 'public', r.ficheiro);
-    const emDist = path.join(DIST, r.ficheiro);
-    if (fs.existsSync(emPublic)) clientesTexto[r.slug] = fs.readFileSync(emPublic, 'utf8');
-    if (fs.existsSync(emDist)) clientesDist[r.slug] = fs.readFileSync(emDist, 'utf8');
-  }
-  /* O TEXTO DO GERADOR, para a R8 ler nele os `import` que ele faz. */
-  const geradorRel = 'scripts/mapa-regioes.mjs';
-  const gerador = fs.readFileSync(path.join(RAIZ, geradorRel), 'utf8');
+  const listaDe = (dir) => (fs.existsSync(dir) ? fs.readdirSync(dir).sort() : []);
+  const pastaServida = listaDe(path.join(RAIZ, 'public', 'dados', 'mapa'));
+  const pastaServidaDist = listaDe(path.join(DIST, 'dados', 'mapa'));
 
   return {
     ficheiros,
@@ -192,14 +174,10 @@ function leMundo() {
     pais,
     distritos,
     paginas,
-    regioes,
-    clientes,
-    clientesTexto,
-    clientesDist,
-    gerador,
-    geradorRel,
-    csv,
-    concelhos,
+    servidos,
+    servidosDist,
+    pastaServida,
+    pastaServidaDist,
   };
 }
 
@@ -293,22 +271,20 @@ function r3(m) {
 /** R4 · a primeira página com 29 ligações de área, uma por unidade. */
 function r4(m) {
   const erros = [];
-  /* AS ÁREAS DA PRIMEIRA PÁGINA SÃO AS NOVE REGIÕES (F1.1d, 07.09.2026). Eram as
-     29 unidades da Carta desde a Emenda 20; o desenho passou a ter dois níveis, e
-     o do país são as nove. As 29 continuam a ter página e a estar na lista dos
-     nomes, e é a R2 que conta os 308 nas páginas delas. */
-  const esperado = REGIOES.filter((r) => !r.referencia)
-    .map((r) => r.slug)
-    .sort();
+  /* AS ÁREAS DA PRIMEIRA PÁGINA SÃO AS 29 UNIDADES DA CARTA (Emenda 20; F1.1e,
+     08.09.2026). Foram as nove regiões NUTS II durante um dia (F1.1d) e voltaram
+     às 29 por decisão do diretor. A lista esperada vem de `mapa/pais.json`, que é
+     o artefacto, e não de uma lista da casa. */
+  const esperado = m.pais.unidades.map((u) => u.slug).sort();
   for (const pg of m.paginas.filter((p) => p.tipo === 'inicio')) {
     const areas = areasDaPagina(pg, 'data-uni-porta').sort();
     if (areas.length !== esperado.length) {
-      erros.push(`${pg.rota}: ${areas.length} ligações de área para ${esperado.length} regiões.`);
+      erros.push(`${pg.rota}: ${areas.length} ligações de área para ${esperado.length} unidades.`);
       continue;
     }
     const diferentes = areas.filter((s, i) => s !== esperado[i]);
     if (diferentes.length) {
-      erros.push(`${pg.rota}: as áreas não são as nove regiões (${diferentes.join(', ')}).`);
+      erros.push(`${pg.rota}: as áreas não são as 29 unidades (${diferentes.join(', ')}).`);
     }
   }
   return erros;
@@ -507,576 +483,123 @@ function r7(m) {
 }
 
 /* ===========================================================================
- * AS REGIÕES (R8 e R9), COM LEITOR PRÓPRIO
+ * O SEGUNDO NÍVEL SERVIDO (R8), COM LEITOR PRÓPRIO
  * ===========================================================================
- * `src/data/mapa-regioes.gerado.json` é escrito por `scripts/mapa-regioes.mjs`,
- * e nada aqui o importa: a geometria lê-se com o analisador deste ficheiro, a
- * região de cada concelho lê-se outra vez dos três CSV da Carta, e as áreas
- * contam-se outra vez dos artefactos de `mapa/`. Uma conferência que chamasse o
- * gerador confirmava-se a si própria.
+ * O mapa da primeira página desenha as 29 unidades da Carta e vai buscar os
+ * concelhos de uma delas quando o leitor lhe toca. O ficheiro que ele pede é
+ * `/dados/mapa/unidade-<slug>.json`, escrito por `scripts/mapa-unidades.mjs`, e
+ * esta regra existe para provar que ele é O ARTEFACTO e não uma segunda
+ * geometria: bytes iguais aos de `mapa/distritos/<slug>.json`, que a R1 já
+ * prendeu ao seu resumo sha256 no manifesto do motor.
  *
- * A TOLERÂNCIA DA R9 É MEDIDA E NÃO ESCOLHIDA. A área de uma região é a de um
- * caminho arredondado ao campo do país e afinado com a tolerância do manifesto;
- * a dos seus concelhos é a de caminhos arredondados na grelha de cada unidade.
- * As duas nunca são o mesmo número, e a distância entre elas, medida a
- * 07.09.2026 sobre os artefactos de `mapa/`, vai de 0,008 % (o Algarve) a
- * 0,809 % (os Açores, que são a região com mais anéis pequenos), com 0,116 % na
- * mediana. O tecto abaixo fica no dobro do pior caso medido, que é a distância
- * entre «arredondou» e «está errada».
+ * NADA AQUI IMPORTA O GERADOR. Os bytes leem-se dos três sítios (o artefacto,
+ * `public/` e `dist/`) com o leitor deste ficheiro, e a lista das 29 vem de
+ * `mapa/pais.json`. Uma conferência que chamasse o gerador confirmava-se a si
+ * própria.
+ *
+ * O QUE ESTA REGRA SUBSTITUIU: as R8, R9 e R10 do F1.1d, que provavam que a
+ * geometria calculada das nove regiões NUTS II era a união dos seus concelhos.
+ * Saíram com o cálculo: o nível da unidade não se calcula, copia-se, e uma
+ * comparação de bytes prova mais do que três regras de geometria.
  */
-const TECTO_DA_AREA_PCT = 1.6;
 
-/** Os anéis de um caminho `M x y l dx dy,… Z`, com o analisador deste portão. */
-function aneisDoCaminho(d) {
-  const aneis = [];
-  let anel = null;
-  let i = 0;
-  let cx = 0;
-  let cy = 0;
-  const numero = () => {
-    while (i < d.length && (d[i] === ' ' || d[i] === ',')) i++;
-    const j0 = i;
-    if (d[i] === '-' || d[i] === '+') i++;
-    while (i < d.length && ((d[i] >= '0' && d[i] <= '9') || d[i] === '.')) i++;
-    return Number(d.slice(j0, i));
-  };
-  while (i < d.length) {
-    const c = d[i];
-    if (c === 'M') {
-      i++;
-      cx = numero();
-      cy = numero();
-      anel = [[cx, cy]];
-      aneis.push(anel);
-    } else if (c === 'l') i++;
-    else if (c === 'Z' || c === 'z') {
-      i++;
-      anel = null;
-    } else if (c === ' ' || c === ',') i++;
-    else {
-      cx += numero();
-      cy += numero();
-      anel.push([cx, cy]);
-    }
-  }
-  return aneis;
-}
-
-/** A área absoluta de uma lista de anéis. */
-function areaDeAneis(aneis) {
-  let total = 0;
-  for (const anel of aneis) {
-    let a = 0;
-    for (let k = 0; k < anel.length; k++) {
-      const [x1, y1] = anel[k];
-      const [x2, y2] = anel[(k + 1) % anel.length];
-      a += x1 * y2 - x2 * y1;
-    }
-    total += a / 2;
-  }
-  return Math.abs(total);
-}
-
-/** A caixa de uma lista de anéis. */
-function caixaDeAneis(aneis) {
-  let x0 = Infinity;
-  let y0 = Infinity;
-  let x1 = -Infinity;
-  let y1 = -Infinity;
-  for (const a of aneis) {
-    for (const [x, y] of a) {
-      if (x < x0) x0 = x;
-      if (y < y0) y0 = y;
-      if (x > x1) x1 = x;
-      if (y > y1) y1 = y;
-    }
-  }
-  return [x0, y0, x1 - x0, y1 - y0];
-}
-
-/** Um ponto dentro de uma lista de anéis, pela paridade dos cruzamentos. */
-function dentroDeAneis(aneis, [x, y]) {
-  let dentro = false;
-  for (const anel of aneis) {
-    for (let i = 0, j = anel.length - 1; i < anel.length; j = i++) {
-      const [xi, yi] = anel[i];
-      const [xj, yj] = anel[j];
-      if (yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) dentro = !dentro;
-    }
-  }
-  return dentro;
-}
-
-/** A região de cada concelho, lida outra vez da coluna `nuts2` da Carta. */
-function regiaoDaCarta(m) {
-  const daCasa = new Map();
-  for (const r of REGIOES) {
-    if (r.referencia) continue;
-    daCasa.set(r.nome.pt, r.slug);
-  }
-  /* As duas autónomas vêm da Carta com o nome oficial por extenso. */
-  daCasa.set('Região Autónoma dos Açores', daCasa.get('Açores'));
-  daCasa.set('Região Autónoma da Madeira', daCasa.get('Madeira'));
-  const porDico = new Map();
-  for (const rel of Object.keys(m.csv)) {
-    const linhas = m.csv[rel].split('\n').filter((l) => l.trim() !== '' && !l.startsWith('#'));
-    const cabecalho = linhas[0].split(',');
-    const iDico = cabecalho.indexOf('dtmn');
-    const iNuts = cabecalho.indexOf('nuts2');
-    for (const linha of linhas.slice(1)) {
-      const campos = linha.split(',');
-      porDico.set(campos[iDico], daCasa.get(campos[iNuts]) ?? null);
-    }
-  }
-  return porDico;
-}
-
-/** R8 · as nove regiões, os 308 uma vez cada, e cada um na região da Carta. */
+/** R8 · os 29 ficheiros do segundo nível são os artefactos, byte a byte. */
 function r8(m) {
   const erros = [];
-  const g = m.regioes;
-  if (!g) return ['falta src/data/mapa-regioes.gerado.json (corra `npm run mapa:regioes`).'];
+  const slugs = m.pais.unidades.map((u) => u.slug);
+  const querem = new Set(slugs.map((s) => `unidade-${s}.json`));
 
-  const daCasa = REGIOES.filter((r) => !r.referencia);
-  const slugsDaCasa = daCasa.map((r) => r.slug).sort();
-  const slugsDoFicheiro = g.regioes.map((r) => r.slug).sort();
-  if (slugsDoFicheiro.join('|') !== slugsDaCasa.join('|')) {
-    erros.push(
-      `as regiões do ficheiro são «${slugsDoFicheiro.join(', ')}» e a lista da casa dá «${slugsDaCasa.join(', ')}».`,
-    );
-  }
-  for (const r of g.regioes) {
-    const daLista = daCasa.find((x) => x.slug === r.slug);
-    if (daLista && daLista.codigo !== r.codigo) {
-      erros.push(`a região "${r.slug}" traz o código ${r.codigo} e a lista da casa diz ${daLista.codigo}.`);
+  for (const slug of slugs) {
+    const doMotor = m.ficheiros[`mapa/distritos/${slug}.json`];
+    const servido = m.servidos[slug];
+    const emDist = m.servidosDist[slug];
+    if (!doMotor) {
+      erros.push(`falta o artefacto mapa/distritos/${slug}.json.`);
+      continue;
+    }
+    if (!servido) {
+      erros.push(
+        `falta public/dados/mapa/unidade-${slug}.json (corra \`npm run mapa:unidades\`).`,
+      );
+      continue;
+    }
+    if (!servido.equals(doMotor)) {
+      erros.push(
+        `public/dados/mapa/unidade-${slug}.json não é mapa/distritos/${slug}.json ` +
+          `(${servido.length} B contra ${doMotor.length} B).`,
+      );
+      continue;
+    }
+    if (!emDist) {
+      erros.push(`falta dist/dados/mapa/unidade-${slug}.json, que é o que o navegador pede.`);
+      continue;
+    }
+    if (!emDist.equals(servido)) {
+      erros.push(`dist/dados/mapa/unidade-${slug}.json não é igual ao de public/.`);
     }
   }
 
-  /* Os 308, uma vez cada, e na região que a Carta lhes dá. */
-  const daCarta = regiaoDaCarta(m);
-  const dicoDoSlug = new Map(m.concelhos.map((c) => [c.slug, c.dico]));
+  /* NENHUM FICHEIRO A MAIS, DOS DOIS LADOS: um `unidade-*.json` que já não tenha
+     unidade é geometria servida que ninguém desenha, e um leitor que a peça pelo
+     endereço recebe-a. */
+  for (const [onde, nomes] of [
+    ['public/dados/mapa', m.pastaServida],
+    ['dist/dados/mapa', m.pastaServidaDist],
+  ]) {
+    for (const nome of nomes) {
+      if (!querem.has(nome)) erros.push(`${onde}/${nome} não corresponde a unidade nenhuma.`);
+    }
+  }
+
+  /* OS 308 UMA VEZ CADA, NA GEOMETRIA QUE O LEITOR RECEBE. A R2 conta-os nas
+     páginas construídas; esta conta-os nos ficheiros que o guião desenha, que
+     são outra superfície. Os slugs medem-se contra `slugsDaCarta()`, que é a
+     mesma régua da R2. */
   const vistos = new Map();
-  for (const r of g.regioes) {
-    const cliente = m.clientes[r.slug];
-    if (!cliente) {
-      erros.push(`falta public/${r.ficheiro}, que a região "${r.slug}" nomeia.`);
-      continue;
-    }
-    if (cliente.concelhos.length !== r.concelhos) {
-      erros.push(
-        `a região "${r.slug}" declara ${r.concelhos} concelhos e o seu ficheiro tem ${cliente.concelhos.length}.`,
-      );
-    }
-    for (const c of cliente.concelhos) {
-      vistos.set(c.slug, [...(vistos.get(c.slug) ?? []), r.slug]);
-      const dico = dicoDoSlug.get(c.slug);
-      const esperada = dico ? daCarta.get(dico) : null;
-      if (esperada !== r.slug) {
-        erros.push(`o concelho "${c.slug}" está na região "${r.slug}" e a Carta põe-no em "${esperada}".`);
-      }
-    }
-  }
-  const daCartaTodos = slugsDaCarta();
-  for (const [slug, onde] of vistos) {
-    if (onde.length > 1) erros.push(`o concelho "${slug}" está em ${onde.length} regiões (${onde.join(', ')}).`);
-  }
-  const emFalta = daCartaTodos.filter((s) => !vistos.has(s));
-  if (emFalta.length > 0) {
-    erros.push(`${emFalta.length} concelho(s) sem região: ${emFalta.slice(0, 6).join(', ')}.`);
-  }
-  const aMais = [...vistos.keys()].filter((s) => !daCartaTodos.includes(s));
-  if (aMais.length > 0) erros.push(`${aMais.length} slug(s) que a Carta não tem: ${aMais.slice(0, 6).join(', ')}.`);
-
-  /* O MANIFESTO COBRE OS MÓDULOS QUE O GERADOR IMPORTA, e não só os ficheiros de
-     dados. `src/data/regioes.mjs` dá os nomes, os códigos e a ordem das nove
-     regiões, e molda a saída tanto como um CSV: um manifesto que o deixasse de
-     fora declarava uma proveniência incompleta (leitura a frio do Codex de
-     08.09.2026, achado 13). A lista dos `import` lê-se do PRÓPRIO FICHEIRO do
-     gerador, para que um módulo novo apareça aqui no dia em que alguém o
-     importar, e não no dia em que alguém se lembrar de o escrever à mão. */
-  const declarados = new Set(Object.keys(g.origem?.lidos ?? {}));
-  const dirDoGerador = path.dirname(path.join(RAIZ, m.geradorRel));
-  for (const achado of m.gerador.matchAll(/^\s*import\s[^'"]*['"](\.[^'"]+)['"]/gm)) {
-    const rel = path.relative(RAIZ, path.resolve(dirDoGerador, achado[1])).split(path.sep).join('/');
-    if (!declarados.has(rel)) {
-      erros.push(
-        `o gerador importa ${rel} e o manifesto de resumos do ficheiro gerado não o declara ` +
-          '(corra `npm run mapa:regioes`).',
-      );
-    }
-  }
-
-  /* O ficheiro foi gerado destas fontes, e não de outras. */
-  for (const [rel, resumo] of Object.entries(g.origem?.lidos ?? {})) {
-    const abs = path.join(RAIZ, rel);
-    const bytes = m.ficheiros[rel] ?? (fs.existsSync(abs) ? fs.readFileSync(abs) : null);
-    if (!bytes) {
-      erros.push(`o ficheiro gerado declara ter lido ${rel}, que não está em disco.`);
-      continue;
-    }
-    const meu = crypto.createHash('sha256').update(bytes).digest('hex');
-    if (meu !== resumo) {
-      erros.push(`${rel} mudou depois de a geometria das regiões ter sido escrita (corra \`npm run mapa:regioes\`).`);
-    }
-  }
-  return erros;
-}
-
-/** R9 · a geometria: a união dos concelhos de cada região é a região. */
-function r9(m) {
-  const erros = [];
-  const g = m.regioes;
-  if (!g) return ['falta src/data/mapa-regioes.gerado.json (corra `npm run mapa:regioes`).'];
-
-  /* A área de cada concelho, recontada dos artefactos de `mapa/`, no campo do
-     país: a caixa dos concelhos de uma unidade na grelha local vai para a caixa
-     dessa unidade em `mapa/pais.json`. É a mesma leitura que o gerador faz, com
-     código próprio, e é a única maneira de comparar as duas geometrias. */
-  const areaNoCampo = new Map();
-  for (const u of m.pais.unidades) {
-    const locais = m.distritos[u.slug].concelhos.map((c) => ({ slug: c.slug, aneis: aneisDoCaminho(c.d) }));
-    const caixa = caixaDeAneis(locais.flatMap((c) => c.aneis));
-    const k = (u.caixa[2] / caixa[2]) * (u.caixa[3] / caixa[3]);
-    for (const c of locais) areaNoCampo.set(c.slug, areaDeAneis(c.aneis) * k);
-  }
-
-  for (const r of g.regioes) {
-    const cliente = m.clientes[r.slug];
-    if (!cliente) continue;
-    const aneis = aneisDoCaminho(r.d);
-    const daRegiao = areaDeAneis(aneis);
-    const dosConcelhos = cliente.concelhos.reduce((s, c) => s + (areaNoCampo.get(c.slug) ?? 0), 0);
-    const desvio = (100 * Math.abs(daRegiao - dosConcelhos)) / dosConcelhos;
-    if (desvio > TECTO_DA_AREA_PCT) {
-      erros.push(
-        `a região "${r.slug}" desenha ${daRegiao.toFixed(0)} u² e os seus concelhos somam ` +
-          `${dosConcelhos.toFixed(0)} u² (${desvio.toFixed(2)} %, e o tecto é ${TECTO_DA_AREA_PCT} %).`,
-      );
-    }
-    const caixa = caixaDeAneis(aneis).map(Math.round);
-    if (caixa.join(',') !== r.caixa.join(',')) {
-      erros.push(`a região "${r.slug}" declara a caixa ${r.caixa.join(', ')} e o caminho dá ${caixa.join(', ')}.`);
-    }
-
-    /* O PONTO REPRESENTATIVO DA REGIÃO CAI DENTRO DELA. É por ele que a régua
-       mede o alvo (o maior quadrado inscrito à volta dele, I82), e um ponto fora
-       do desenho daria um alvo de zero a uma região que se toca bem. */
-    if (!dentroDeAneis(aneis, r.ponto)) {
-      erros.push(`o ponto de "${r.slug}" (${r.ponto.join(', ')}) cai fora do desenho dela.`);
-    }
-
-    /* NENHUM CONCELHO FORA DA SUA REGIÃO. O ponto representativo de cada
-       concelho, que vive na grelha da região, volta ao campo do país pela caixa
-       da região e tem de cair dentro do caminho dela. */
-    const kx = r.caixa[2] / r.campo.largura;
-    const ky = r.caixa[3] / r.campo.altura;
-    const fora = cliente.concelhos.filter(
-      (c) => !dentroDeAneis(aneis, [r.caixa[0] + c.ponto[0] * kx, r.caixa[1] + c.ponto[1] * ky]),
-    );
-    if (fora.length > 0) {
-      erros.push(
-        `${fora.length} concelho(s) com o ponto fora do desenho de "${r.slug}": ` +
-          `${fora.slice(0, 6).map((c) => c.slug).join(', ')}.`,
-      );
-    }
-  }
-  return erros;
-}
-
-/* ===========================================================================
- * R10 · OS NOVE FICHEIROS DO SEGUNDO NÍVEL, REFEITOS DAS FONTES
- * ===========================================================================
- * A R8 confere QUEM está em cada ficheiro e a R9 confere o desenho do NÍVEL DO
- * PAÍS. Nenhuma das duas olhava para o desenho que o navegador põe no ecrã
- * quando o leitor abre uma região: os caminhos dos concelhos em
- * `public/dados/mapa/regiao-<slug>.json`, que são 237 KB de geometria que só o
- * gerador tinha visto. A leitura a frio do Codex de 08.09.2026 apanhou-o
- * (achado 4), e esta regra é a resposta.
- *
- * A regra REFAZ os nove ficheiros das fontes, com o leitor deste portão e sem
- * importar uma linha do gerador: os anéis de cada concelho vêm de
- * `mapa/distritos/<unidade>.json`, vão ao campo do país pela caixa daquela
- * unidade em `mapa/pais.json`, e daí à grelha da região; arredondam-se, afinam-
- * -se com a tolerância que o manifesto declara, e escrevem-se na codificação do
- * artefacto. A pertença de cada concelho vem outra vez da coluna `nuts2` da
- * Carta, e não da lista do ficheiro que se está a conferir.
- *
- * O QUE NÃO SE REFAZ, E PORQUÊ. Um número da conta não se lê das fontes: a
- * caixa, no campo do país, do espaço que a grelha da região cobre, porque ela
- * junta a caixa dos concelhos à do contorno da região, e o contorno é a união
- * das peças das unidades, que é a parte cara da conta do gerador. Esse número
- * vem declarado no ficheiro gerado (`caixa_da_grelha`) e a regra prende-o pelos
- * dois lados: tem de conter a caixa dos concelhos desta região, e não pode sair
- * dela por mais do que a tolerância do campo do país. Medido a 08.09.2026, a
- * maior folga é 0,67 u (Península de Setúbal) contra uma tolerância de 3,1071 u.
- * Um `caixa_da_grelha` mexido muda a grelha e faz cair a comparação byte a byte
- * que vem a seguir.
- *
- * A COMPARAÇÃO É BYTE A BYTE SOBRE OS DADOS. Compara-se `slug`, `campo` e a
- * lista inteira dos concelhos (`slug`, `nome`, `d`, `caixa`, `ponto`) pela sua
- * forma JSON. O único campo que não se refaz é o `_`, que é a prosa do cabeçalho
- * e não leva dado nenhum; desse confere-se que ainda diz que o ficheiro é gerado
- * e por quem.
- */
-
-/** A área com sinal de um anel. */
-function areaDoAnel(anel) {
-  let a = 0;
-  for (let k = 0; k < anel.length; k++) {
-    const [x1, y1] = anel[k];
-    const [x2, y2] = anel[(k + 1) % anel.length];
-    a += x1 * y2 - x2 * y1;
-  }
-  return a / 2;
-}
-
-/** Douglas-Peucker sobre uma linha aberta, com o código deste portão. */
-function afinaLinha(pontos, epsilon) {
-  if (pontos.length < 3) return pontos.slice();
-  const guarda = new Uint8Array(pontos.length);
-  guarda[0] = 1;
-  guarda[pontos.length - 1] = 1;
-  const pilha = [[0, pontos.length - 1]];
-  while (pilha.length > 0) {
-    const [a, b] = pilha.pop();
-    if (b - a < 2) continue;
-    const [xa, ya] = pontos[a];
-    const [xb, yb] = pontos[b];
-    const dx = xb - xa;
-    const dy = yb - ya;
-    const norma = Math.hypot(dx, dy);
-    let pior = 0;
-    let onde = -1;
-    for (let i = a + 1; i < b; i++) {
-      const [x, y] = pontos[i];
-      const d =
-        norma === 0
-          ? Math.hypot(x - xa, y - ya)
-          : Math.abs(dy * x - dx * y + xb * ya - yb * xa) / norma;
-      if (d > pior) {
-        pior = d;
-        onde = i;
-      }
-    }
-    if (pior > epsilon && onde > 0) {
-      guarda[onde] = 1;
-      pilha.push([a, onde], [onde, b]);
-    }
-  }
-  return pontos.filter((_, i) => guarda[i] === 1);
-}
-
-/** O mesmo sobre um anel fechado: dois pontos fixos e duas metades. */
-function afinaAnelDoPortao(anel, epsilon) {
-  if (anel.length < 5) return anel;
-  let oposto = 0;
-  let maior = -1;
-  for (let i = 1; i < anel.length; i++) {
-    const d = (anel[i][0] - anel[0][0]) ** 2 + (anel[i][1] - anel[0][1]) ** 2;
-    if (d > maior) {
-      maior = d;
-      oposto = i;
-    }
-  }
-  const a = afinaLinha(anel.slice(0, oposto + 1), epsilon);
-  const b = afinaLinha([...anel.slice(oposto), anel[0]], epsilon);
-  return [...a.slice(0, -1), ...b.slice(0, -1)];
-}
-
-/** O caminho de uma lista de anéis, na codificação do artefacto. */
-function caminhoDeAneisDoPortao(aneis) {
-  const junta = (v) => (v < 0 ? String(v) : ` ${v}`);
-  let d = '';
-  for (const anel of aneis) {
-    d += `M${anel[0][0]}${junta(anel[0][1])}l`;
-    const passos = [];
-    for (let k = 1; k < anel.length; k++) {
-      passos.push(`${anel[k][0] - anel[k - 1][0]}${junta(anel[k][1] - anel[k - 1][1])}`);
-    }
-    d += `${passos.join(',')}Z`;
-  }
-  return d;
-}
-
-/**
- * Os 308 concelhos no campo do país, dos artefactos de `mapa/distritos/` e da
- * caixa de cada unidade em `mapa/pais.json`.
- */
-function concelhosNoCampoDoPais(m) {
-  const fora = new Map();
-  for (const u of m.pais.unidades) {
-    const artefacto = m.distritos[u.slug];
-    const locais = artefacto.concelhos.map((c) => ({
-      slug: c.slug,
-      nome: c.nome,
-      ponto: c.ponto,
-      aneis: aneisDoCaminho(c.d),
-    }));
-    const caixaLocal = caixaDeAneis(locais.flatMap((c) => c.aneis));
-    const kx = u.caixa[2] / caixaLocal[2];
-    const ky = u.caixa[3] / caixaLocal[3];
-    const paraOCampo = ([x, y]) => [
-      u.caixa[0] + (x - caixaLocal[0]) * kx,
-      u.caixa[1] + (y - caixaLocal[1]) * ky,
-    ];
-    for (const c of locais) {
-      fora.set(c.slug, {
-        nome: c.nome,
-        unidade: u.slug,
-        aneis: c.aneis.map((a) => a.map(paraOCampo)),
-        ponto: paraOCampo(c.ponto),
-      });
-    }
-  }
-  return fora;
-}
-
-/** R10 · os nove ficheiros do cliente, refeitos das fontes. */
-function r10(m) {
-  const erros = [];
-  const g = m.regioes;
-  if (!g) return ['falta src/data/mapa-regioes.gerado.json (corra `npm run mapa:regioes`).'];
-
-  const erroPx = m.manifesto.tolerancia?.erro_px;
-  const colunaPx = m.manifesto.tolerancia?.coluna_px;
-  if (typeof erroPx !== 'number' || typeof colunaPx !== 'number') {
-    return ['mapa/manifest.json: sem "tolerancia.erro_px" e "tolerancia.coluna_px".'];
-  }
-  const toleranciaDoPais = (erroPx * m.pais.campo.largura) / colunaPx;
-
-  const noCampo = concelhosNoCampoDoPais(m);
-  const daCarta = regiaoDaCarta(m);
-  const dicoDoSlug = new Map(m.concelhos.map((c) => [c.slug, c.dico]));
-
-  /* A pertença vem da Carta, e não da lista do ficheiro que se confere. */
-  const daRegiao = new Map(g.regioes.map((r) => [r.slug, []]));
-  for (const [slug] of noCampo) {
-    const dico = dicoDoSlug.get(slug);
-    const onde = dico ? daCarta.get(dico) : null;
-    if (!onde || !daRegiao.has(onde)) {
-      erros.push(`o concelho "${slug}" não cai em nenhuma das nove regiões pela coluna "nuts2" da Carta.`);
-      continue;
-    }
-    daRegiao.get(onde).push(slug);
-  }
-
-  let vistos = 0;
-  for (const r of g.regioes) {
-    const texto = m.clientesTexto[r.slug];
-    if (texto === undefined) {
-      erros.push(`falta public/${r.ficheiro}, que a região "${r.slug}" nomeia.`);
-      continue;
-    }
-    let lido;
+  for (const slug of slugs) {
+    const servido = m.servidos[slug];
+    if (!servido) continue;
+    let dados;
     try {
-      lido = JSON.parse(texto);
+      dados = JSON.parse(servido.toString('utf8'));
     } catch {
-      erros.push(`public/${r.ficheiro} não é JSON legível.`);
+      erros.push(`public/dados/mapa/unidade-${slug}.json não é JSON.`);
       continue;
     }
-    if (`${JSON.stringify(lido)}\n` !== texto) {
-      erros.push(`public/${r.ficheiro} não é o JSON que o gerador escreve (espaços, ordem ou fim de linha).`);
-    }
-    if (m.clientesDist[r.slug] !== texto) {
-      erros.push(`dist/${r.ficheiro} não é igual a public/${r.ficheiro}, e é o de dist/ que o navegador pede.`);
-    }
-    if (!Array.isArray(lido._) || !lido._.join(' ').includes('scripts/mapa-regioes.mjs')) {
-      erros.push(`public/${r.ficheiro} deixou de dizer no cabeçalho que é um ficheiro gerado, e por quem.`);
-    }
-
-    /* A caixa da grelha, presa pelos dois lados. */
-    const cg = r.caixa_da_grelha;
-    if (!Array.isArray(cg) || cg.length !== 4 || cg.some((v) => typeof v !== 'number' || !Number.isFinite(v))) {
-      erros.push(`a região "${r.slug}" não declara "caixa_da_grelha" com quatro números.`);
+    if (!Array.isArray(dados.concelhos) || !dados.campo) {
+      erros.push(`public/dados/mapa/unidade-${slug}.json não traz campo e concelhos.`);
       continue;
     }
-    const meus = daRegiao.get(r.slug) ?? [];
-    vistos += meus.length;
-    const caixaDosConcelhos = caixaDeAneis(meus.flatMap((slug) => noCampo.get(slug).aneis));
-    const folgas = [
-      caixaDosConcelhos[0] - cg[0],
-      caixaDosConcelhos[1] - cg[1],
-      cg[0] + cg[2] - (caixaDosConcelhos[0] + caixaDosConcelhos[2]),
-      cg[1] + cg[3] - (caixaDosConcelhos[1] + caixaDosConcelhos[3]),
-    ];
-    if (folgas.some((f) => f < 0)) {
-      erros.push(`a "caixa_da_grelha" de "${r.slug}" não contém a caixa dos seus concelhos.`);
-    } else if (folgas.some((f) => f > toleranciaDoPais)) {
+    for (const c of dados.concelhos) {
+      if (vistos.has(c.slug)) erros.push(`"${c.slug}" em ${vistos.get(c.slug)} e em ${slug}.`);
+      else vistos.set(c.slug, slug);
+    }
+  }
+  const daCarta = slugsDaCarta();
+  if (erros.length === 0) {
+    if (vistos.size !== daCarta.length) {
       erros.push(
-        `a "caixa_da_grelha" de "${r.slug}" sai da caixa dos seus concelhos por ${Math.max(...folgas).toFixed(4)} u, ` +
-          `e a tolerância do campo do país é ${toleranciaDoPais.toFixed(4)} u.`,
+        `os 29 ficheiros servem ${vistos.size} concelhos, e a Carta tem ${daCarta.length}.`,
       );
     }
+    const fora = daCarta.filter((s) => !vistos.has(s));
+    if (fora.length) erros.push(`fora dos ficheiros servidos: ${fora.slice(0, 6).join(', ')}.`);
+  }
 
-    /* A grelha da região, e os concelhos refeitos nela. */
-    const k = 2000 / Math.max(cg[2], cg[3]);
-    const paraAGrelha = ([x, y]) => [Math.round((x - cg[0]) * k), Math.round((y - cg[1]) * k)];
-    const campo = { largura: Math.round(cg[2] * k), altura: Math.round(cg[3] * k) };
-    const toleranciaDaRegiao = (erroPx * campo.largura) / colunaPx;
-    const refeitos = meus
-      .map((slug) => {
-        const c = noCampo.get(slug);
-        const aneis = c.aneis
-          .map((a) => {
-            const pontos = [];
-            for (const q of a.map(paraAGrelha)) {
-              const ultimo = pontos[pontos.length - 1];
-              if (!ultimo || ultimo[0] !== q[0] || ultimo[1] !== q[1]) pontos.push(q);
-            }
-            while (
-              pontos.length > 1 &&
-              pontos[0][0] === pontos[pontos.length - 1][0] &&
-              pontos[0][1] === pontos[pontos.length - 1][1]
-            ) {
-              pontos.pop();
-            }
-            return afinaAnelDoPortao(pontos, toleranciaDaRegiao);
-          })
-          .filter((a) => a.length >= 3 && Math.abs(areaDoAnel(a)) >= 1);
-        return {
-          slug,
-          nome: c.nome,
-          d: caminhoDeAneisDoPortao(aneis),
-          caixa: caixaDeAneis(aneis),
-          ponto: paraAGrelha(c.ponto),
-        };
-      })
-      .sort((a, b) => a.slug.localeCompare(b.slug, 'pt'));
-
-    if (lido.slug !== r.slug) {
-      erros.push(`public/${r.ficheiro} diz ser de "${lido.slug}" e a entrada da região diz "${r.slug}".`);
-    }
-    if (JSON.stringify(lido.campo) !== JSON.stringify(campo)) {
-      erros.push(
-        `o campo de "${r.slug}" está escrito ${JSON.stringify(lido.campo)} e as fontes dão ${JSON.stringify(campo)}.`,
-      );
-    }
-    const dosLidos = Array.isArray(lido.concelhos) ? lido.concelhos : [];
-    if (dosLidos.length !== refeitos.length) {
-      erros.push(
-        `o ficheiro de "${r.slug}" tem ${dosLidos.length} concelhos e a Carta põe-lhe ${refeitos.length}.`,
-      );
-    }
-    for (let i = 0; i < Math.min(dosLidos.length, refeitos.length); i++) {
-      const a = JSON.stringify(dosLidos[i]);
-      const b = JSON.stringify(refeitos[i]);
-      if (a === b) continue;
-      const qual = dosLidos[i]?.slug ?? `posição ${i}`;
-      const campos = ['slug', 'nome', 'd', 'caixa', 'ponto'].filter(
-        (chave) => JSON.stringify(dosLidos[i]?.[chave]) !== JSON.stringify(refeitos[i][chave]),
-      );
-      erros.push(
-        `em "${r.slug}", o concelho "${qual}" não é o que as fontes dão: ` +
-          `${campos.length > 0 ? campos.join(', ') : 'a forma do registo'} diferente(s) ` +
-          `(o refeito é "${refeitos[i].slug}").`,
-      );
-      if (erros.length > 12) break;
+  /* CADA ÁREA DA PRIMEIRA PÁGINA APONTA PARA O FICHEIRO DA SUA UNIDADE. É o que
+     liga o desenho ao que se serve: sem isto, um mapa correcto podia pedir a
+     geometria de outra unidade e a R8 continuava verde. */
+  for (const pg of m.paginas.filter((p) => p.tipo === 'inicio')) {
+    for (const a of pg.root.querySelectorAll('[data-uni-porta]')) {
+      const slug = a.getAttribute('data-uni-porta');
+      const esperado = `/dados/mapa/unidade-${slug}.json`;
+      const tem = a.getAttribute('data-ficheiro');
+      if (tem !== esperado) {
+        erros.push(`${pg.rota}: a área de "${slug}" pede "${tem}" e não "${esperado}".`);
+      }
     }
   }
 
-  if (vistos !== 308 && erros.length === 0) {
-    erros.push(`a Carta repartiu ${vistos} concelhos pelas nove regiões, e não 308.`);
-  }
   return erros;
 }
 
@@ -1084,13 +607,11 @@ const REGRAS = [
   { id: 'R1', nome: 'os resumos de mapa/ batem com o manifesto', fn: r1 },
   { id: 'R2', nome: 'a junção: 308 concelhos, uma vez cada, com os slugs da Carta', fn: r2 },
   { id: 'R3', nome: 'cada página de distrito com tantas ligações quantos concelhos', fn: r3 },
-  { id: 'R4', nome: 'a primeira página com nove ligações de área', fn: r4 },
+  { id: 'R4', nome: 'a primeira página com 29 ligações de área', fn: r4 },
   { id: 'R5', nome: 'nenhuma ligação debaixo de role="img"', fn: r5 },
   { id: 'R6', nome: 'a atribuição da DGT onde o mapa está', fn: r6 },
   { id: 'R7', nome: 'a colação portuguesa nos artefactos e nas listas construídas', fn: r7 },
-  { id: 'R8', nome: 'as nove regiões, os 308 uma vez cada, na região que a Carta dá', fn: r8 },
-  { id: 'R9', nome: 'a união dos concelhos de cada região é a região', fn: r9 },
-  { id: 'R10', nome: 'os nove ficheiros do segundo nível refeitos das fontes', fn: r10 },
+  { id: 'R8', nome: 'os 29 ficheiros do segundo nível são os artefactos', fn: r8 },
 ];
 
 /* ===========================================================================
@@ -1121,14 +642,12 @@ function copia(m) {
     pais: JSON.parse(JSON.stringify(m.pais)),
     distritos: JSON.parse(JSON.stringify(m.distritos)),
     paginas: m.paginas.map((p) => ({ ...p, root: parse(p.html) })),
-    regioes: m.regioes ? JSON.parse(JSON.stringify(m.regioes)) : null,
-    clientes: JSON.parse(JSON.stringify(m.clientes)),
-    clientesTexto: { ...m.clientesTexto },
-    clientesDist: { ...m.clientesDist },
-    gerador: m.gerador,
-    geradorRel: m.geradorRel,
-    csv: { ...m.csv },
-    concelhos: JSON.parse(JSON.stringify(m.concelhos)),
+    servidos: Object.fromEntries(Object.entries(m.servidos).map(([k, v]) => [k, Buffer.from(v)])),
+    servidosDist: Object.fromEntries(
+      Object.entries(m.servidosDist).map(([k, v]) => [k, Buffer.from(v)]),
+    ),
+    pastaServida: [...m.pastaServida],
+    pastaServidaDist: [...m.pastaServidaDist],
   };
 }
 
@@ -1156,7 +675,7 @@ const ESTRAGOS = {
   R4: (m) => {
     const pg = m.paginas.find((p) => p.tipo === 'inicio');
     pg.root.querySelector('[data-uni-porta]').removeAttribute('data-uni-porta');
-    return 'uma região a menos nas áreas da primeira página';
+    return 'uma unidade a menos nas áreas da primeira página';
   },
   R5: (m) => {
     const pg = m.paginas.find((p) => p.tipo === 'inicio');
@@ -1246,105 +765,35 @@ const ESTRAGOS = {
     trocaIrmaos(lista, itens[0], itens[1]);
     return `«${a}» e «${b}» trocados na lista de ${pg.rota}`;
   },
-  /* A R8 TEM DOIS ESTRAGOS, um por metade: um concelho que muda de região, e um
-     que aparece em duas. O segundo não é o primeiro com outro nome: um concelho
-     mudado de sítio continua a estar uma vez só, e um concelho repetido continua
-     a estar na região que a Carta lhe dá em pelo menos uma das duas. */
+  /* A R8 TEM QUATRO ESTRAGOS, um por cada coisa que ela existe para apanhar: um
+     byte mudado nos dois lados (o ficheiro servido deixa de ser o artefacto), um
+     byte mudado só em `dist/` (o que o navegador pede deixa de ser o que o
+     repositório guarda), um ficheiro a mais (geometria servida que ninguém
+     desenha), e uma área da primeira página a pedir o ficheiro de outra unidade.
+     Nenhum é apanhado pela contabilidade de outra regra: a R1 lê `mapa/` e não
+     `public/`, e a R4 conta as áreas sem olhar para o que elas pedem. */
   R8: (m) => {
-    const r = m.regioes.regioes.find((x) => x.slug !== 'acores' && x.concelhos > 1);
-    const outra = m.regioes.regioes.find((x) => x.slug !== r.slug);
-    const c = m.clientes[r.slug].concelhos.pop();
-    m.clientes[outra.slug].concelhos.push(c);
-    m.regioes.regioes.find((x) => x.slug === r.slug).concelhos -= 1;
-    m.regioes.regioes.find((x) => x.slug === outra.slug).concelhos += 1;
-    return `o concelho "${c.slug}" mudado de "${r.slug}" para "${outra.slug}"`;
+    const slug = Object.keys(m.servidos)[0];
+    const texto = m.servidos[slug].toString('utf8').replace('"nome":"', '"nome":"X');
+    m.servidos[slug] = Buffer.from(texto);
+    m.servidosDist[slug] = Buffer.from(texto);
+    return `um nome mudado dentro de public/ e dist/ dados/mapa/unidade-${slug}.json`;
   },
-  'R8 (em duas regiões)': (m) => {
-    const r = m.regioes.regioes[0];
-    const outra = m.regioes.regioes[1];
-    const c = m.clientes[r.slug].concelhos[0];
-    m.clientes[outra.slug].concelhos.push(c);
-    m.regioes.regioes.find((x) => x.slug === outra.slug).concelhos += 1;
-    return `o concelho "${c.slug}" acrescentado a "${outra.slug}" sem sair de "${r.slug}"`;
+  'R8 (dist diferente de public)': (m) => {
+    const slug = Object.keys(m.servidosDist)[1] ?? Object.keys(m.servidosDist)[0];
+    m.servidosDist[slug] = Buffer.concat([m.servidosDist[slug], Buffer.from('\n')]);
+    return `dist/dados/mapa/unidade-${slug}.json com mais um byte do que o de public/`;
   },
-  /* A R9 TEM TRÊS ESTRAGOS, um por metade, e nenhum é apanhado pela conta de
-     outra: um rectângulo tem a caixa certa e a área errada; um caminho deslocado
-     tem a área certa e a caixa errada; um ponto levado para fora deixa as duas
-     certas. Um estrago só deixaria duas metades por provar. */
-  R9: (m) => {
-    const r = m.regioes.regioes.find((x) => x.slug === 'alentejo') ?? m.regioes.regioes[0];
-    const [x, y, w, h] = r.caixa;
-    r.d = `M${x} ${y}l${w} 0,0 ${h},${-w} 0Z`;
-    return `o caminho de "${r.slug}" trocado pelo rectângulo da sua caixa`;
+  'R8 (um ficheiro a mais)': (m) => {
+    m.pastaServida.push('unidade-condado-portucalense.json');
+    return 'public/dados/mapa/unidade-condado-portucalense.json servido a mais';
   },
-  'R9 (a caixa)': (m) => {
-    const r = m.regioes.regioes.find((x) => x.slug === 'algarve') ?? m.regioes.regioes[0];
-    r.d = r.d.replace(/M(-?\d+) (-?\d+)/g, (_, x, y) => `M${Number(x) + 40} ${y}`);
-    return `o caminho de "${r.slug}" deslocado 40 u sem a caixa mudar`;
-  },
-  'R9 (o ponto da região)': (m) => {
-    const r = m.regioes.regioes.find((x) => x.slug === 'norte') ?? m.regioes.regioes[0];
-    r.ponto = [r.caixa[0] - 100, r.caixa[1] - 100];
-    return `o ponto de "${r.slug}" levado para fora do desenho dela`;
-  },
-  'R9 (um concelho fora)': (m) => {
-    const r = m.regioes.regioes.find((x) => x.concelhos > 4);
-    const c = m.clientes[r.slug].concelhos[0];
-    c.ponto = [-r.campo.largura, -r.campo.altura];
-    return `o ponto de "${c.slug}" levado para fora do desenho de "${r.slug}"`;
-  },
-  /* A R10 TEM TRÊS ESTRAGOS, um por cada coisa que ela existe para apanhar: um
-     concelho que muda de ficheiro, um caminho alterado sem sair do sítio, e um
-     campo trocado. Os três mexem NO TEXTO dos ficheiros que o navegador pede,
-     que é o que a regra refaz das fontes, e nenhum deles é apanhado pela conta
-     da R8 nem pela da R9, que nunca olharam para os caminhos dos concelhos.
-     Os dois lados (public/ e dist/) mudam juntos, para que o que morda seja a
-     comparação com as fontes e não a comparação entre os dois lados. */
-  R10: (m) => {
-    const de = m.regioes.regioes.find((x) => x.concelhos > 4);
-    const para = m.regioes.regioes.find((x) => x.slug !== de.slug && x.concelhos > 4);
-    const daqui = JSON.parse(m.clientesTexto[de.slug]);
-    const dali = JSON.parse(m.clientesTexto[para.slug]);
-    const c = daqui.concelhos.pop();
-    dali.concelhos.push(c);
-    dali.concelhos.sort((a, b) => a.slug.localeCompare(b.slug, 'pt'));
-    for (const [slug, dados] of [
-      [de.slug, daqui],
-      [para.slug, dali],
-    ]) {
-      const texto = `${JSON.stringify(dados)}\n`;
-      m.clientesTexto[slug] = texto;
-      m.clientesDist[slug] = texto;
-    }
-    return `o concelho "${c.slug}" mudado do ficheiro de "${de.slug}" para o de "${para.slug}"`;
-  },
-  'R10 (um caminho alterado)': (m) => {
-    const r = m.regioes.regioes.find((x) => x.concelhos > 4);
-    const dados = JSON.parse(m.clientesTexto[r.slug]);
-    const c = dados.concelhos[0];
-    /* Um vértice puxado 3 u para o lado: a caixa fica na mesma e o caminho não. */
-    c.d = c.d.replace(/l(-?\d+)/, (_, n) => `l${Number(n) + 3}`);
-    const texto = `${JSON.stringify(dados)}\n`;
-    m.clientesTexto[r.slug] = texto;
-    m.clientesDist[r.slug] = texto;
-    return `o caminho de "${c.slug}" alterado dentro do ficheiro de "${r.slug}"`;
-  },
-  'R10 (o campo errado)': (m) => {
-    const r = m.regioes.regioes.find((x) => x.concelhos > 4);
-    const dados = JSON.parse(m.clientesTexto[r.slug]);
-    dados.campo = { largura: dados.campo.largura, altura: dados.campo.altura + 2 };
-    const texto = `${JSON.stringify(dados)}\n`;
-    m.clientesTexto[r.slug] = texto;
-    m.clientesDist[r.slug] = texto;
-    return `o campo de "${r.slug}" com mais 2 u de altura`;
-  },
-  /* O ESTRAGO DO MANIFESTO É O ACHADO 13 POSTO A CORRER: o gerador importa
-     `src/data/regioes.mjs`, que dá os nomes, os códigos e a ordem das nove, e o
-     manifesto de resumos deixa de o declarar. */
-  'R8 (um módulo fora do manifesto)': (m) => {
-    const fora = Object.keys(m.regioes.origem.lidos).find((k) => k.endsWith('.mjs'));
-    delete m.regioes.origem.lidos[fora];
-    return `${fora} apagado do manifesto de resumos do ficheiro gerado`;
+  'R8 (a área a pedir outro ficheiro)': (m) => {
+    const pg = m.paginas.find((p) => p.tipo === 'inicio');
+    const a = pg.root.querySelector('[data-uni-porta]');
+    const slug = a.getAttribute('data-uni-porta');
+    a.setAttribute('data-ficheiro', '/dados/mapa/unidade-evora.json');
+    return `a área de "${slug}" em ${pg.rota} a pedir o ficheiro de "evora"`;
   },
 };
 
