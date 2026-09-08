@@ -120,7 +120,18 @@ const base = `http://127.0.0.1:${servidor.address().port}`;
 const navegador = await chromium.launch({ headless: true });
 const celulas = [];
 const despejos = {};
-const conta = (nome, passa, prova) => celulas.push({ nome, passa: !!passa, prova: String(prova) });
+/* CADA CÉLULA IMPRIME-SE QUANDO É MEDIDA, e não só no fim (F1.10, 08.09.2026).
+   Esta régua guardava tudo para o relatório final: quando uma célula do meio
+   REBENTA — e rebentaram duas nesta noite, porque os itens 8.14, 8.16 e 8.17
+   deste bloco mudaram as páginas que elas leem —, o processo morre e perdem-se
+   as oitenta e tal medições já feitas. Uma régua que não diz nada do que mediu
+   é indistinguível de uma régua que não mediu nada, e essa confusão é a regra
+   14 da casa ao contrário. A linha vai para o erro padrão, para que o relatório
+   final na saída padrão continue a ser o que se lê e o que se guarda. */
+const conta = (nome, passa, prova) => {
+  process.stderr.write(`  ${passa ? 'passa' : 'falha'}  ${nome}\n         ${String(prova)}\n`);
+  return celulas.push({ nome, passa: !!passa, prova: String(prova) });
+};
 
 /** Uma página nova, com as opções do contexto que a célula pede. */
 async function pagina({
@@ -1450,6 +1461,23 @@ for (const largura of [1280, 390]) {
       const outroSemPagina =
         outros.find((x) => x.getAttribute('data-pagina') !== 'sim') ?? outros[0];
       const comPagina = document.querySelector('[data-pontos] [data-pagina="sim"]');
+      /* SEM MAPA DE PONTOS A CÉLULA DIZ-NO, E NÃO REBENTA (F1.10, item 8.17,
+         08.09.2026). O cartão localizador dos 308 pontos saiu da página do
+         concelho e no lugar dele está o mapa de áreas da região, com o concelho
+         da página marcado. Esta célula lia `[data-pontos] [data-caop=…]` e, sem
+         ele, chamava `classList` sobre `null`: a régua INTEIRA rebentava, e uma
+         régua que rebenta não diz nada sobre as outras oitenta e tal células.
+         Passa a devolver a ausência, e quem conta transforma-a numa falha com
+         nome. A célula fica por reescrever para o mapa de áreas, e a dívida
+         está no relatório do bloco: é do passo do 8.17b, que é o que volta a
+         tocar nesta página. */
+      if (!escolhido || !outroSemPagina || !comPagina) {
+        return {
+          semPontos: true,
+          pontos: document.querySelectorAll('[data-pontos] .mun').length,
+          areas: document.querySelectorAll('[data-areas] .uni').length,
+        };
+      }
       const est = (el) => {
         const cs = getComputedStyle(el);
         return {
@@ -1482,6 +1510,16 @@ for (const largura of [1280, 390]) {
     const p = await pagina({ largura });
     await p.goto(base + rota, { waitUntil: 'networkidle' });
     const r = await leituraDoPonto(p, slug);
+    if (r.semPontos) {
+      bem = false;
+      linhas.push(
+        `${nome}: sem mapa de pontos nesta página (${r.pontos} ponto(s), ${r.areas} área(s)): ` +
+          `o item 8.17 do F1.10 tirou o cartão dos 308 pontos e pôs o mapa de áreas da região. ` +
+          `A célula fica por reescrever para o mapa de áreas.`,
+      );
+      await p.__contexto.close();
+      continue;
+    }
     const ok =
       r.temClasse &&
       r.escolhido.fill === 'none' &&
@@ -1662,8 +1700,17 @@ for (const largura of [1280, 390]) {
      espaço fecha-a. Com as 21 abertas a página é alta e a primeira leitura fica
      no cimo da área: fechar uma não obriga o navegador a puxar a página para
      cima, e a rolagem medida continua a ser só a da tecla. */
-  await p.goto(`${base}/?densidade=leitura`, { waitUntil: 'networkidle' });
-  await p.focus('[data-leituras="pdm"] .dobra:first-child .dobra-abrir');
+  /* A PÁGINA MUDOU E O ESTADO PARTILHÁVEL DESAPARECEU (F1.10, itens 8.14 e
+     8.16, 08.09.2026). A célula ia a `/?densidade=leitura`: os 21 cartões
+     passaram para «Portugal na União Europeia» e o comando das duas densidades
+     saiu, e com ele o estado do endereço. A promessa medida é a mesma — a tecla
+     age no comando nativo e a página não rola — e o que muda é como se chega a
+     uma leitura aberta: toca-se num cartão, que é a única interação que a
+     página tem desde o item 8.14. */
+  await p.goto(`${base}/uniao-europeia`, { waitUntil: 'networkidle' });
+  await p.click('a.cartao-porta');
+  await p.waitForSelector('[data-leituras="pdm"] .dobra .dobra-abrir', { state: 'visible' });
+  await p.focus('[data-leituras="pdm"] .dobra .dobra-abrir');
   const antes = await p.evaluate(() => window.scrollY);
   await p.keyboard.press('Space');
   await p.waitForTimeout(80);
