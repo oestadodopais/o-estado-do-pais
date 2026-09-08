@@ -1,0 +1,308 @@
+{
+  "sobre": "F1.1d · o alvo de cada concelho na página do seu distrito, a 390 px",
+  "comando": "node design/especime-v3/medicoes/mapa-alvos-nos-distritos.mjs",
+  "medido": "2026-09-08T08:03:42.281Z",
+  "passoPx": 2,
+  "alvoPx": 44,
+  "larguraDaJanelaPx": 390,
+  "unidades": 29,
+  "concelhos": 308,
+  "chegamA44": 84,
+  "mediana": 34,
+  "menor": {
+    "slug": "camara-de-lobos",
+    "inscrito": 4
+  },
+  "porUnidade": [
+    {
+      "unidade": "aveiro",
+      "concelhos": 19,
+      "chegam": 9,
+      "menor": {
+        "slug": "sao-joao-da-madeira",
+        "inscrito": 10
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "beja",
+      "concelhos": 14,
+      "chegam": 4,
+      "menor": {
+        "slug": "barrancos",
+        "inscrito": 14
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "braga",
+      "concelhos": 14,
+      "chegam": 5,
+      "menor": {
+        "slug": "vizela",
+        "inscrito": 12
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "braganca",
+      "concelhos": 12,
+      "chegam": 6,
+      "menor": {
+        "slug": "freixo-de-espada-a-cinta",
+        "inscrito": 24
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "castelo-branco",
+      "concelhos": 11,
+      "chegam": 4,
+      "menor": {
+        "slug": "belmonte",
+        "inscrito": 14
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "coimbra",
+      "concelhos": 17,
+      "chegam": 0,
+      "menor": {
+        "slug": "miranda-do-corvo",
+        "inscrito": 18
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "evora",
+      "concelhos": 14,
+      "chegam": 2,
+      "menor": {
+        "slug": "borba",
+        "inscrito": 12
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "faro",
+      "concelhos": 16,
+      "chegam": 0,
+      "menor": {
+        "slug": "vila-real-de-santo-antonio",
+        "inscrito": 8
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "guarda",
+      "concelhos": 14,
+      "chegam": 9,
+      "menor": {
+        "slug": "manteigas",
+        "inscrito": 18
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "ilha-da-graciosa",
+      "concelhos": 1,
+      "chegam": 1,
+      "menor": {
+        "slug": "santa-cruz-da-graciosa",
+        "inscrito": 166
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "ilha-da-madeira",
+      "concelhos": 10,
+      "chegam": 0,
+      "menor": {
+        "slug": "camara-de-lobos",
+        "inscrito": 4
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "ilha-das-flores",
+      "concelhos": 2,
+      "chegam": 2,
+      "menor": {
+        "slug": "santa-cruz-das-flores",
+        "inscrito": 154
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "ilha-de-porto-santo",
+      "concelhos": 1,
+      "chegam": 1,
+      "menor": {
+        "slug": "porto-santo",
+        "inscrito": 104
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "ilha-de-santa-maria",
+      "concelhos": 1,
+      "chegam": 1,
+      "menor": {
+        "slug": "vila-do-porto",
+        "inscrito": 132
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "ilha-de-sao-jorge",
+      "concelhos": 2,
+      "chegam": 0,
+      "menor": {
+        "slug": "calheta-de-sao-jorge",
+        "inscrito": 28
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "ilha-de-sao-miguel",
+      "concelhos": 6,
+      "chegam": 1,
+      "menor": {
+        "slug": "lagoa-ilha-de-sao-miguel",
+        "inscrito": 20
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "ilha-do-corvo",
+      "concelhos": 1,
+      "chegam": 1,
+      "menor": {
+        "slug": "corvo",
+        "inscrito": 264
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "ilha-do-faial",
+      "concelhos": 1,
+      "chegam": 1,
+      "menor": {
+        "slug": "horta",
+        "inscrito": 168
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "ilha-do-pico",
+      "concelhos": 3,
+      "chegam": 1,
+      "menor": {
+        "slug": "sao-roque-do-pico",
+        "inscrito": 36
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "ilha-terceira",
+      "concelhos": 2,
+      "chegam": 2,
+      "menor": {
+        "slug": "praia-da-vitoria",
+        "inscrito": 76
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "leiria",
+      "concelhos": 16,
+      "chegam": 0,
+      "menor": {
+        "slug": "castanheira-de-pera",
+        "inscrito": 10
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "lisboa",
+      "concelhos": 16,
+      "chegam": 8,
+      "menor": {
+        "slug": "amadora",
+        "inscrito": 16
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "portalegre",
+      "concelhos": 15,
+      "chegam": 2,
+      "menor": {
+        "slug": "sousel",
+        "inscrito": 20
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "porto",
+      "concelhos": 18,
+      "chegam": 1,
+      "menor": {
+        "slug": "gondomar",
+        "inscrito": 14
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "santarem",
+      "concelhos": 21,
+      "chegam": 5,
+      "menor": {
+        "slug": "entroncamento",
+        "inscrito": 8
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "setubal",
+      "concelhos": 13,
+      "chegam": 3,
+      "menor": {
+        "slug": "barreiro",
+        "inscrito": 8
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "viana-do-castelo",
+      "concelhos": 10,
+      "chegam": 6,
+      "menor": {
+        "slug": "ponte-da-barca",
+        "inscrito": 26
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "vila-real",
+      "concelhos": 14,
+      "chegam": 6,
+      "menor": {
+        "slug": "mesao-frio",
+        "inscrito": 10
+      },
+      "desenhoPx": 354
+    },
+    {
+      "unidade": "viseu",
+      "concelhos": 24,
+      "chegam": 3,
+      "menor": {
+        "slug": "carregal-do-sal",
+        "inscrito": 22
+      },
+      "desenhoPx": 354
+    }
+  ]
+}

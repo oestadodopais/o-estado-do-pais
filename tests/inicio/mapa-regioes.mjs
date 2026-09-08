@@ -27,19 +27,35 @@
  *   P1c  a rede de nomes responde por TODAS: as nove estão na lista fechada dos
  *        nomes e os 308 estão no índice dos concelhos.
  *
- * P1a e P1b IMPRIMEM O NÚMERO E NÃO EXIGEM OS 44 px, e isso está medido e
- * escrito no relatório do bloco: com o desenho à largura de um telemóvel, 3 das
- * 9 regiões e 20 dos 308 concelhos chegam aos 44 px, e levar o pior dos 308 lá
- * pediria um desenho de cerca de 8 600 px de largura. O que as duas células
- * exigem é que a medição corra sobre 9 de 9 e 308 de 308 e que nenhuma área
- * fique com alvo de 0 px, que é o sinal de um ponto representativo fora da sua
- * área. Quem responde pelas que não chegam é a P1c, que é a mesma decisão da
- * Emenda 20c e da I82: a rede dos nomes.
+ * A MEDIDA P1 DO BRIEF É MEDIDA E NÃO EXIGIDA, POR DECISÃO DO LUGAR DE DIREÇÃO
+ * DE 08.09.2026. O brief pede 9 de 9 regiões e 308 de 308 concelhos aos 44 px, e
+ * essa medida é geometricamente impossível no desenho de um telemóvel: levar o
+ * menor concelho com lado medível aos 44 px pediria um desenho de 8 580 px de
+ * largura. As duas células P1a e P1b IMPRIMEM O NÚMERO e não se declaram verdes
+ * como se a medida estivesse cumprida: dizem-no no próprio nome. O que exigem é
+ * que a medição corra sobre 9 de 9 e 308 de 308 e que nenhum ponto
+ * representativo caia fora da sua área. Quem responde pelas áreas que não chegam
+ * é a P1c, e é uma exigência: é a mesma decisão da Emenda 20c e da I82, a rede
+ * dos nomes.
+ *
+ * O QUADRADO QUE ESTA RÉGUA MEDE É O MAIOR QUADRADO DA GRELHA DE 2 px QUE CONTÉM
+ * O PONTO REPRESENTATIVO, e não o maior quadrado CENTRADO nele. A grelha alinha-
+ * -se ao ponto (ele é sempre um nó dela) e a busca corre todos os quadrados da
+ * grelha que o contêm, e não só os que o têm no meio: um ponto encostado a uma
+ * costa dá zero com a segunda definição e dá o quadrado do lado com esta. As
+ * duas são medidas honestas de coisas diferentes, e a do centro é o limite
+ * inferior estrito da desta. A medição às cegas de 08.09.2026 usou a do centro e
+ * deu 2 de 9 regiões (mediana 12 px) contra as 3 de 9 (mediana 18) desta, e 4 de
+ * 308 concelhos (mediana 10) contra 20 de 308 (mediana 16); as duas leituras
+ * estão no relatório do bloco, lado a lado.
  *
  * P2 · o nome no lugar, pelos três gestos e nas duas edições. O rato mede-se com
  * `pointerover`, o teclado com o foco, e o dedo com um toque num contexto com
  * `hasTouch`. As três leituras têm de dar o mesmo nome, que é o da lista da casa
- * para uma região e o da Carta para um concelho.
+ * para uma região e o da Carta para um concelho. O DEDO MEDE-SE NAS DUAS EDIÇÕES
+ * E NAS NOVE REGIÕES, e não numa: a P2d faz o gesto do telemóvel em 9 de 9
+ * regiões e numa amostra de 30 concelhos, e AFIRMA o nome e a porta que o lugar
+ * mostra depois do toque.
  *
  * P3 · o primeiro toque nunca navega. Mede-se com O DEDO e não com o rato, e a
  * distinção não é um preciosismo: um toque faz o navegador disparar os eventos
@@ -48,18 +64,35 @@
  * está no lugar desde que o cursor entrou na área, e o clique é o segundo gesto:
  * a célula mede os dois caminhos, e escreve os dois.
  *
+ * A PÁGINA DE UMA REGIÃO ABRE-SE PELA PORTA DO LUGAR DO NOME, E NÃO POR UM
+ * SEGUNDO TOQUE NA REGIÃO. O brief pedia o segundo toque, e a decisão do lugar
+ * de direção de 08.09.2026 é escrita e não é uma falta de código: ao primeiro
+ * toque a região CRESCE, o seu contorno sai do ecrã e o desenho passa a ser o
+ * dos seus concelhos, e o alvo do segundo toque já lá não está para o receber.
+ * Quem quer a página da região tem a porta «Abrir →», que ficou no lugar do nome
+ * com o mesmo gesto, e é a P3c que a mede. A regra dos dois toques continua a
+ * valer inteira para um CONCELHO, que não cresce, e é a P3a e a P3d que a medem.
+ *
  * P4 · sem guião. O contexto corre com `javaScriptEnabled: false`, que é o
  * leitor sem script: as nove áreas continuam a ser ligações para as nove
  * páginas, a lista fica fechada, e um `#regiao=` no endereço não parte nada.
  *
- * P5 · a altura da primeira página a 390, antes e depois. O «antes» é a gaveta
- * dos nomes aberta, que é a forma que este bloco fechou, e mede-se na MESMA
- * construção: comparar com um número medido noutra construção mediria também
- * tudo o que mudou pelo meio.
+ * P5 · a altura da primeira página a 390, ANTES E DEPOIS DO BLOCO. O «antes» é a
+ * página como o F1.1c a deixou, e o número não se mede outra vez: lê-se do
+ * artefacto que esse bloco gravou (`toque-medidas-depois.json`, cabeça
+ * `9c34bbb0` fundida no ramo `toque-2026-09-04`, 390 × 664 em Chromium), que é a
+ * mesma largura e o mesmo motor desta célula. O «depois» é esta árvore. A célula
+ * escreve também a altura com a gaveta dos nomes aberta e sem guião, que são
+ * duas leituras da MESMA construção e servem para saber quanto pesa a gaveta,
+ * não para dizer de onde a página veio.
  *
  * P7 · o contraste do lugar do nome nos dois temas, pela fórmula da WCAG sobre
- * as cores que o navegador resolve, e o `aria-live` a anunciar, conferido com o
- * `ariaSnapshot` da própria página.
+ * as cores que o navegador resolve, e O QUE SE MEDE DO ANÚNCIO DIZ-SE PELO NOME.
+ * Nenhuma destas células ouve um leitor de ecrã: uma confere que a frase declara
+ * `aria-live="polite"`, que é o atributo por onde um leitor de ecrã sabe que há
+ * ali algo a reler, e a outra confere que A ÁRVORE DE ACESSIBILIDADE DO LUGAR
+ * MUDA quando a área apontada muda (`ariaSnapshot` antes e depois). Dizer que um
+ * leitor de ecrã anunciou seria afirmar o que esta régua não mede.
  *
  * P9 · as plantas. Cada uma é a coisa que uma célula existe para apanhar, posta
  * na resposta que o servidor dá e em mais lado nenhum; a régua volta a correr as
@@ -285,9 +318,9 @@ async function p1() {
         .map(([slug, v]) => ({ slug, inscrito: v.inscrito, caixa: v.caixa })),
     };
     conta(
-      `P1a · a ${largura}, as nove regiões medidas pelo quadrado inscrito`,
+      `P1a · medida, não exigida (decisão de 08.09.2026) · a ${largura}, o alvo das nove regiões`,
       entradas.length === 9 && zeros.length === 0,
-      `desenho ${desenho[0]} × ${desenho[1]} px · ${entradas.length} áreas · ${chegam.length} de 9 chegam aos ${ALVO} px ` +
+      `desenho ${desenho[0]} × ${desenho[1]} px · ${entradas.length} áreas · ${chegam.length} de 9 chegam aos ${ALVO} px (medido, não exigido) ` +
         `(mediana ${mediana(entradas.map(([, v]) => v.inscrito))} px; a maior ${Math.max(...entradas.map(([, v]) => v.inscrito))} px, ` +
         `a menor ${Math.min(...entradas.map(([, v]) => v.inscrito))} px)` +
         (zeros.length ? ` · ${zeros.length} com o ponto fora da área` : ''),
@@ -339,12 +372,17 @@ async function p1() {
      uma condição: com o desenho à largura de um telemóvel ele não chega aos 44 px
      para a maior parte, e quem responde por esses é a rede de nomes (P1c). Um
      alvo de 0 px é uma área menor do que o passo da grelha, e no arquipélago dos
-     Açores há duas: é uma medida do desenho, e está no relatório. */
+     Açores há duas: é uma medida do desenho, e está no relatório.
+
+     A DECISÃO DE 08.09.2026 ESTÁ NO NOME DA CÉLULA e não só aqui: uma célula
+     verde com um nome que promete os 44 px seria a régua a dizer que a medida do
+     brief está cumprida quando ela não está, e foi a leitura a frio do Codex que
+     o apanhou (achado 5). */
   const semNome = mediana(todos.filter((v) => v > 0));
   conta(
-    'P1b · a 390, os 308 concelhos medidos região a região, no nível em que se tocam',
+    'P1b · medida, não exigida (decisão de 08.09.2026) · a 390, o alvo dos 308 concelhos, região a região',
     total === 308 && foraDaArea.length === 0,
-    `${total} de 308 medidos em ${REGIOES.length} regiões, todos com o ponto dentro da sua área · ${chegam} chegam aos ${ALVO} px · ` +
+    `${total} de 308 medidos em ${REGIOES.length} regiões, todos com o ponto dentro da sua área · ${chegam} chegam aos ${ALVO} px (medido, não exigido) · ` +
       `mediana ${mediana(todos)} px (${semNome} px sem os de lado zero) · ${todos.filter((v) => v === 0).length} com menos de 2 px · ` +
       `o menor com lado medível pediria um desenho de ${Math.round((390 * ALVO) / Math.max(1, Math.min(...todos.filter((v) => v > 0))))} px de largura`,
   );
@@ -468,6 +506,107 @@ async function p2() {
         `${semVoltar} porta(s) de voltar (uma página de distrito não tem nível de cima)`,
     );
     await d.__ctx.close();
+
+    /* -----------------------------------------------------------------------
+       P2d · O NOME NO LUGAR AO TOCAR, NAS NOVE REGIÕES E EM 30 CONCELHOS.
+       -----------------------------------------------------------------------
+       A P2a e a P2b medem o rato e o teclado; sem esta célula o gesto do
+       telemóvel ficava medido numa região e num concelho, e só em português (a
+       leitura a frio do Codex de 08.09.2026, achado 7). O contexto tem
+       `hasTouch` e a largura de um telemóvel, e a célula AFIRMA as duas coisas
+       que o lugar mostra depois do toque: o nome e a porta.
+
+       O NOME ESPERADO DE UMA REGIÃO LÊ-SE DO `<title>` DA SUA ÁREA, que é o nome
+       acessível que o servidor desenhou; o de um concelho lê-se do ficheiro da
+       região, que é a Carta. Assim a célula não guarda uma lista de nomes que
+       teria de acompanhar a lista da casa à mão. */
+    const t = await pagina(casa, 390, { toque: true });
+    /* «Não navegou» é ter ficado na mesma casa, com ou sem barra no fim: a
+       primeira página em inglês responde tanto em «/en» como em «/en/». */
+    const naCasa = (caminho) => (caminho ?? '').replace(/\/+$/, '') === casa.replace(/\/+$/, '');
+    const toqueNasRegioes = [];
+    for (const r of REGIOES) {
+      const alvo = `[data-uni-porta="${r.slug}"]`;
+      const esperado = await t.evaluate(
+        (sel) => document.querySelector(sel)?.querySelector('title')?.textContent.trim() ?? null,
+        alvo,
+      );
+      const onde = await noEcra(t, r.ponto);
+      await t.touchscreen.tap(onde.x, onde.y);
+      await t.waitForTimeout(250);
+      const lido = await t.evaluate(() => ({
+        nome: document.querySelector('[data-mapa-nome-texto]')?.textContent.trim() ?? null,
+        porta: document.querySelector('[data-mapa-porta]')?.getAttribute('href') ?? null,
+        caminho: location.pathname,
+      }));
+      toqueNasRegioes.push({ slug: r.slug, esperado, ...lido });
+      /* VOLTA AO NÍVEL DO PAÍS PELO ENDEREÇO, E NÃO POR UM CLIQUE NA PORTA DE
+         SUBIR: um `click` do Playwright é um gesto DE RATO, e num telemóvel não
+         há rato nenhum. Medido a 08.09.2026: com o clique de rato pelo meio, 2
+         das 9 regiões (Alentejo e Norte) devolvem o nome de um CONCELHO em vez
+         do da região, porque o cursor do rato ficou parado sobre o mapa e o
+         navegador reavalia o que está debaixo dele quando o desenho da região
+         nasce; com o fragmento, que é o mesmo caminho que o botão de voltar do
+         navegador percorre, são 9 de 9. O que a célula mede é o dedo, e um rato
+         a meio media outro gesto. A observação fica no relatório. */
+      await t.evaluate(() => {
+        location.hash = '';
+      });
+      await t.waitForTimeout(150);
+    }
+    const masRegioes = toqueNasRegioes.filter(
+      (x) => !x.esperado || x.nome !== x.esperado || !x.porta || !x.porta.endsWith(x.slug) || !naCasa(x.caminho),
+    );
+    conta(
+      `P2d · ${lang}: com o dedo, o nome e a porta no lugar nas nove regiões`,
+      toqueNasRegioes.length === 9 && masRegioes.length === 0,
+      masRegioes.length === 0
+        ? `9 de 9 · «${toqueNasRegioes[0].nome}» → «${toqueNasRegioes[0].porta}» … ` +
+          `«${toqueNasRegioes[8].nome}» → «${toqueNasRegioes[8].porta}» · nenhum toque navegou`
+        : `${masRegioes.length} falham: ${masRegioes
+            .map((x) => `${x.slug} diz «${x.nome}» e a porta «${x.porta}»`)
+            .join('; ')}`,
+    );
+
+    /* A amostra de 30 concelhos, dez em cada uma das três regiões maiores. Cada
+       toque é o PRIMEIRO naquele concelho, e por isso nenhum navega. */
+    const toqueNosConcelhos = [];
+    for (const slug of ['norte', 'centro', 'alentejo']) {
+      const cliente = JSON.parse(
+        fs.readFileSync(path.join(DIST, REGIOES.find((r) => r.slug === slug).ficheiro), 'utf8'),
+      );
+      await t.goto(`${base}${casa === '/' ? '' : casa}/#regiao=${slug}`, { waitUntil: 'networkidle' });
+      await t.waitForSelector('[data-areas-concelhos] [data-concelho-porta]', { timeout: 5000 });
+      for (let i = 0; i < 10; i++) {
+        const c = cliente.concelhos[Math.floor((i * cliente.concelhos.length) / 10)];
+        const onde = await noEcra(t, c.ponto);
+        await t.touchscreen.tap(onde.x, onde.y);
+        await t.waitForTimeout(80);
+        const lido = await t.evaluate(() => ({
+          nome: document.querySelector('[data-mapa-nome-texto]')?.textContent.trim() ?? null,
+          porta: document.querySelector('[data-mapa-porta]')?.getAttribute('href') ?? null,
+          caminho: location.pathname,
+        }));
+        toqueNosConcelhos.push({ slug: c.slug, esperado: c.nome, ...lido });
+      }
+    }
+    const masConcelhos = toqueNosConcelhos.filter(
+      (x) => x.nome !== x.esperado || !x.porta || !x.porta.endsWith(x.slug) || !naCasa(x.caminho),
+    );
+    conta(
+      `P2d · ${lang}: com o dedo, o nome e a porta no lugar numa amostra de 30 concelhos`,
+      toqueNosConcelhos.length === 30 && masConcelhos.length === 0,
+      masConcelhos.length === 0
+        ? `30 de 30 · «${toqueNosConcelhos[0].nome}» → «${toqueNosConcelhos[0].porta}» … ` +
+          `«${toqueNosConcelhos[29].nome}» → «${toqueNosConcelhos[29].porta}» · nenhum primeiro toque navegou`
+        : `${masConcelhos.length} falham: ${masConcelhos
+            .slice(0, 6)
+            .map((x) => `${x.slug} diz «${x.nome}»`)
+            .join('; ')}`,
+    );
+    medidas.nome[lang].toqueRegioes = toqueNasRegioes.length - masRegioes.length;
+    medidas.nome[lang].toqueConcelhos = toqueNosConcelhos.length - masConcelhos.length;
+    await t.__ctx.close();
   }
 }
 
@@ -481,6 +620,13 @@ async function p3() {
 async function p3aNum(motor, browser) {
   const p = await pagina('/', 390, { toque: true, motor: browser });
   const norte = REGIOES.find((r) => r.slug === 'norte');
+  /* O NOME ESPERADO LÊ-SE DO `<title>` DA ÁREA ANTES DO GESTO, e a célula
+     AFIRMA-O depois: escrever o nome na prova e não o comparar era a régua a
+     imprimir o que quer que o lugar dissesse (leitura a frio do Codex de
+     08.09.2026, achado 7). */
+  const nomeDoNorte = await p.evaluate(
+    () => document.querySelector('[data-uni-porta="norte"]')?.querySelector('title')?.textContent.trim() ?? null,
+  );
   const ondeNorte = await noEcra(p, norte.ponto);
   await p.touchscreen.tap(ondeNorte.x, ondeNorte.y);
   await p.waitForTimeout(500);
@@ -520,11 +666,16 @@ async function p3aNum(motor, browser) {
       depoisDaRegiao.caminho === '/' &&
       depoisDaRegiao.hash === '#regiao=norte' &&
       depoisDaRegiao.concelhos === 86 &&
+      !!nomeDoNorte &&
+      depoisDaRegiao.nome === nomeDoNorte &&
+      depoisDaRegiao.porta === '/regioes/norte' &&
       depoisDoPrimeiro.caminho === '/' &&
+      depoisDoPrimeiro.nome === maior.nome &&
       depoisDoSegundo === `/municipios/${primeiro}`,
     `a região: nível «${depoisDaRegiao.nivel}», ${depoisDaRegiao.concelhos} concelhos, endereço «${depoisDaRegiao.caminho}${depoisDaRegiao.hash}», ` +
-      `nome «${depoisDaRegiao.nome}» com a porta «${depoisDaRegiao.porta}» · o primeiro toque no concelho deixa o endereço em «${depoisDoPrimeiro.caminho}» ` +
-      `e diz «${depoisDoPrimeiro.nome}» · o segundo abre «${depoisDoSegundo}»`,
+      `nome «${depoisDaRegiao.nome}» (esperado «${nomeDoNorte}») com a porta «${depoisDaRegiao.porta}» · ` +
+      `o primeiro toque no concelho deixa o endereço em «${depoisDoPrimeiro.caminho}» ` +
+      `e diz «${depoisDoPrimeiro.nome}» (esperado «${maior.nome}») · o segundo abre «${depoisDoSegundo}»`,
   );
   await p.__ctx.close();
 }
@@ -575,10 +726,18 @@ async function p3resto() {
   if (daPorta) await q.click('[data-mapa-porta]');
   await viagem2;
   const chegou = await q.evaluate(() => location.pathname);
+  /* ESTA É A PROVA DA DECISÃO DE 08.09.2026 SOBRE O SEGUNDO TOQUE NUMA REGIÃO.
+     O brief pedia que um segundo toque na região abrisse a página dela; o lugar
+     de direção decidiu que não, e a razão é do desenho e não do código: ao
+     primeiro toque a região cresce, o grupo do nível do país esconde-se e o
+     contorno da região deixa de estar no ecrã, de maneira que não há alvo nenhum
+     para receber um segundo toque. A porta «Abrir →» é o caminho, e ficou no
+     lugar do nome com o mesmo gesto que fez crescer a região. */
   conta(
-    'P3c · a porta do lugar do nome abre a página da região apontada',
+    'P3c · a página de uma região abre-se pela porta do lugar do nome, e não por um segundo toque na região',
     daPorta === '/regioes/algarve' && chegou === '/regioes/algarve',
-    `a porta diz «${daPorta}» e leva a «${chegou}»`,
+    `a porta diz «${daPorta}» e leva a «${chegou}» · uma região que cresceu já não tem contorno no ecrã ` +
+      'para receber um segundo toque, e a regra dos dois toques vale para um concelho (P3a e P3d)',
   );
   await q.__ctx.close();
 
@@ -613,6 +772,57 @@ async function p3resto() {
       `o segundo abre «${segundoToque}»`,
   );
   await d.__ctx.close();
+
+  await p3eFalha();
+}
+
+/**
+ * P3e · UM PEDIDO QUE NÃO VOLTA NÃO DEIXA A LIGAÇÃO MORTA.
+ *
+ * O guião segura o clique numa região para a fazer crescer, e só depois pede o
+ * ficheiro dos seus concelhos. Se o pedido não voltar, a primeira forma do guião
+ * segurava o clique seguinte, e o seguinte, e a área ficava sem destino nenhum
+ * (leitura a frio do Codex de 08.09.2026, achado 9). A célula põe uma região a
+ * responder 404 com `page.route`, que é o que uma rede caída faz, e mede as três
+ * coisas que a saída tem de dar: o desenho não cresce, o lugar do nome diz o que
+ * aconteceu, e O TOQUE SEGUINTE ABRE A PÁGINA DA REGIÃO pela ligação que o
+ * servidor escreveu.
+ */
+async function p3eFalha() {
+  const p = await pagina('/', 390, { toque: true });
+  const algarve = REGIOES.find((r) => r.slug === 'algarve');
+  await p.route(`**/${algarve.ficheiro}`, (rota) => rota.fulfill({ status: 404, body: '404' }));
+  const onde = await noEcra(p, algarve.ponto);
+  await p.touchscreen.tap(onde.x, onde.y);
+  await p.waitForTimeout(500);
+  const depoisDoPrimeiro = await p.evaluate(() => ({
+    nivel: document.querySelector('[data-mapa-raiz]')?.getAttribute('data-nivel') ?? null,
+    caminho: location.pathname,
+    aviso: document.querySelector('[data-mapa-aviso]')
+      ? !document.querySelector('[data-mapa-aviso]').hidden
+      : null,
+    nome: document.querySelector('[data-mapa-nome-texto]')?.textContent.trim() ?? null,
+    porta: document.querySelector('[data-mapa-porta]')?.getAttribute('href') ?? null,
+  }));
+  const viagem = p.waitForURL('**/regioes/algarve', { timeout: 5000 }).catch(() => null);
+  await p.touchscreen.tap(onde.x, onde.y);
+  await viagem;
+  const depoisDoSegundo = await p.evaluate(() => location.pathname);
+  conta(
+    'P3e · com o ficheiro de uma região a responder 404, o mapa não cresce, o lugar do nome di-lo e o toque seguinte abre a página dela',
+    depoisDoPrimeiro.nivel === 'pais' &&
+      depoisDoPrimeiro.caminho === '/' &&
+      depoisDoPrimeiro.aviso === true &&
+      depoisDoPrimeiro.nome === 'Algarve' &&
+      depoisDoPrimeiro.porta === '/regioes/algarve' &&
+      depoisDoSegundo === '/regioes/algarve',
+    `o primeiro toque deixa o nível em «${depoisDoPrimeiro.nivel}» e o endereço em «${depoisDoPrimeiro.caminho}», ` +
+      `com o nome «${depoisDoPrimeiro.nome}», a porta «${depoisDoPrimeiro.porta}» e o aviso ${
+        depoisDoPrimeiro.aviso ? 'à vista' : 'escondido'
+      } · o toque seguinte abre «${depoisDoSegundo}»`,
+  );
+  medidas.semFicheiro = depoisDoPrimeiro;
+  await p.__ctx.close();
 }
 
 /* ======================================================================= P4 */
@@ -661,13 +871,38 @@ async function p4() {
         `gaveta ${r.gaveta ? 'aberta' : 'fechada'} com ${r.regioesNaLista} regiões e ${r.naLista} unidades · ` +
         `o lugar do nome ${r.lugar ? 'não se rende' : 'rende-se'} · o segundo nível tem ${r.segundoNivel} nós`,
     );
-    medidas[`semGuiao_${lang}`] = r;
+    /* OS CÓDIGOS ENTRAM NO ARTEFACTO, e não só na prova impressa. A célula
+       decidia com eles e guardava só os destinos: o ficheiro reproduzia nove
+       endereços e não nove respostas (leitura a frio do Codex de 08.09.2026,
+       achado 17). */
+    medidas[`semGuiao_${lang}`] = { ...r, codigos };
     await p.__ctx.close();
   }
 }
 
 /* ======================================================================= P5 */
+/**
+ * O «ANTES» DESTE BLOCO É A PÁGINA COMO O F1.1c A DEIXOU, e o número lê-se do
+ * artefacto que esse bloco gravou. Medir o «antes» abrindo a gaveta dos nomes na
+ * construção nova media o peso da gaveta e não o que o bloco fez à página: a
+ * página de partida tinha o mapa das 29 unidades e a lista dos 29 nomes ABERTA,
+ * e essa forma não se reconstrói abrindo a gaveta nova, que tem 38 nomes
+ * (leitura a frio do Codex de 08.09.2026, achado 11).
+ *
+ * O artefacto é do mesmo motor e da mesma largura desta célula (Chromium,
+ * 390 × 664), e a leitura é a da primeira página portuguesa com guião, em
+ * repouso.
+ */
+const ANTES_DO_F11C = {
+  ficheiro: 'design/especime-v3/medicoes/toque-medidas-depois.json',
+  chave: 'chromium.pt.com-guiao.repouso',
+  cabeca: '9c34bbb0, a fusão de origin/main no ramo toque-2026-09-04',
+};
+
 async function p5() {
+  const doF11c = JSON.parse(fs.readFileSync(path.join(RAIZ, ANTES_DO_F11C.ficheiro), 'utf8'));
+  const antes = doF11c.medidas?.[ANTES_DO_F11C.chave]?.altura ?? null;
+
   const p = await pagina('/', 390);
   const depois = await p.evaluate(() => document.documentElement.scrollHeight);
   await p.evaluate(() => {
@@ -675,17 +910,26 @@ async function p5() {
     if (d) d.open = true;
   });
   await p.waitForTimeout(150);
-  const antes = await p.evaluate(() => document.documentElement.scrollHeight);
+  const comAGavetaAberta = await p.evaluate(() => document.documentElement.scrollHeight);
+  await p.__ctx.close();
   const semGuiao = await pagina('/', 390, { guiao: false });
   const sem = await semGuiao.evaluate(() => document.documentElement.scrollHeight);
   await semGuiao.__ctx.close();
-  medidas.altura = { antes, depois, semGuiao: sem };
+
+  medidas.altura = {
+    antes,
+    antesDe: ANTES_DO_F11C,
+    depois,
+    comAGavetaAberta,
+    semGuiao: sem,
+  };
   conta(
-    'P5 · a altura de `/` a 390 com a gaveta dos nomes fechada é menor do que com ela aberta',
-    depois < antes,
-    `com a gaveta aberta ${antes} px, fechada ${depois} px (${antes - depois} px a menos) · sem guião ${sem} px`,
+    'P5 · a altura de `/` a 390 depois deste bloco é menor do que a que o F1.1c deixou',
+    typeof antes === 'number' && depois < antes,
+    `antes ${antes} px (${ANTES_DO_F11C.ficheiro}, «${ANTES_DO_F11C.chave}», cabeça ${ANTES_DO_F11C.cabeca}) · ` +
+      `depois ${depois} px, na mesma largura e no mesmo motor (${antes - depois} px a menos) · ` +
+      `na mesma construção, a gaveta dos nomes aberta dá ${comAGavetaAberta} px e sem guião ${sem} px`,
   );
-  await p.__ctx.close();
 }
 
 /* ======================================================================= P7 */
@@ -721,6 +965,7 @@ const CONTRASTE = () => {
     ['vazio', '[data-mapa-vazio="pais-toque"]'],
     ['nome', '[data-mapa-nome-texto]'],
     ['porta', '[data-mapa-porta]'],
+    ['aviso', '[data-mapa-aviso]'],
   ]) {
     const el = document.querySelector(sel);
     if (!el) continue;
@@ -751,7 +996,7 @@ async function p7() {
     const piores = Object.entries(r).sort((a, b) => a[1] - b[1]);
     conta(
       `P7a · o lugar do nome com contraste de 4,5:1 no tema ${tema === 'light' ? 'claro' : 'escuro'}`,
-      piores.length === 3 && piores[0][1] >= 4.5,
+      piores.length === 4 && piores[0][1] >= 4.5,
       piores.map(([k, v]) => `${k} ${v.toFixed(2)}:1`).join(' · '),
     );
     await p.__ctx.close();
@@ -764,8 +1009,14 @@ async function p7() {
   await p.mouse.move(onde.x, onde.y);
   await p.waitForTimeout(120);
   const depois = await p.locator('[data-mapa-nome]').ariaSnapshot();
+  /* O QUE ESTA CÉLULA MEDE É A ÁRVORE DE ACESSIBILIDADE, E NÃO UM ANÚNCIO.
+     `ariaSnapshot()` dá o que a árvore de acessibilidade da página tem naquele
+     lugar; que um leitor de ecrã leia a mudança em voz alta é o que o
+     `aria-live` da P7c pede ao navegador, e não é coisa que esta régua oiça.
+     Dizer «anunciado» seria afirmar o que não se mediu (leitura a frio do Codex
+     de 08.09.2026, achado 12). */
   conta(
-    'P7b · o lugar do nome é uma região viva com nome acessível, e o que ela diz muda com a área apontada',
+    'P7b · o lugar do nome é uma região com nome acessível, e a árvore de acessibilidade dele muda com a área apontada',
     /group/.test(antes) && !/Norte/.test(antes) && /Norte/.test(depois),
     `em repouso: ${antes.replace(/\s+/g, ' ').slice(0, 90)} · ao apontar: ${depois.replace(/\s+/g, ' ').slice(0, 90)}`,
   );
@@ -773,9 +1024,9 @@ async function p7() {
     () => document.querySelector('[data-mapa-frase]').getAttribute('aria-live'),
   );
   conta(
-    'P7c · a frase do lugar declara `aria-live="polite"`',
+    'P7c · a frase do lugar declara `aria-live="polite"`, que é o atributo por onde um leitor de ecrã sabe que há ali algo a reler',
     vivo === 'polite',
-    `aria-live="${vivo}"`,
+    `aria-live="${vivo}" · o atributo mede-se; o anúncio em voz alta é do navegador e do leitor de ecrã, e não desta régua`,
   );
   await p.__ctx.close();
 }
@@ -807,31 +1058,55 @@ const PLANTAS = [
         : texto,
   },
   {
-    nome: 'o primeiro toque a navegar (o guião deixa de segurar o clique)',
+    /* A PLANTA TIRA A REGRA DO TOQUE NUM CONCELHO, E MAIS NADA. A primeira forma
+       apagava TODOS os `preventDefault` do guião, e com ela o primeiro toque na
+       REGIÃO já navegava: a célula ficava vermelha antes de chegar ao concelho, e
+       o defeito que ela diz medir nunca chegava a ser medido (leitura a frio do
+       Codex de 08.09.2026, achado 10). Agora tira uma linha só, a do concelho. */
+    nome: 'o primeiro toque num concelho a navegar (o guião deixa de segurar esse clique)',
     celulas: ['P3a · Chromium', 'P3a · WebKit'],
     quais: ['P3'],
     estrago: (texto, rota, ext) =>
       ext === '.js' && rota.endsWith('/mapa-regioes.js')
-        ? texto.replace(/ev\.preventDefault\(\);/g, ';')
+        ? texto.replace(
+            'if (!doTeclado && toque && concelho !== tocada) {\n      ev.preventDefault();',
+            'if (!doTeclado && toque && concelho !== tocada) {\n      ;',
+          )
         : texto,
   },
   {
-    nome: 'um concelho fora da sua região no ficheiro da geometria',
+    /* UM PEDIDO FALHADO A DEIXAR A LIGAÇÃO MORTA: a marca da região que falhou
+       deixa de se pôr, e o clique seguinte volta a ser segurado para sempre. */
+    nome: 'a região cujo ficheiro não veio a ficar sem destino (o guião sem a saída da falha)',
+    celulas: ['P3e'],
+    quais: ['P3'],
+    estrago: (texto, rota, ext) =>
+      ext === '.js' && rota.endsWith('/mapa-regioes.js')
+        ? texto.replace('falhadas[slug] = true;', ';')
+        : texto,
+  },
+  {
+    /* O CONCELHO QUE SAI É O PRIMEIRO DA LISTA, e não o último: a amostra da P2b
+       toma os concelhos por posição, e tirar o último deixava-a a apontar aos
+       mesmos e a passar, com a planta a declarar que a mordia. */
+    nome: 'um concelho a menos no ficheiro da geometria de uma região',
     celulas: ['P1b', 'P2b'],
     quais: ['P1', 'P2'],
     estrago: (texto, rota, ext) => {
       if (ext !== '.json' || !rota.endsWith('/regiao-norte.json')) return texto;
       const dados = JSON.parse(texto);
-      dados.concelhos = dados.concelhos.slice(0, dados.concelhos.length - 1);
+      dados.concelhos = dados.concelhos.slice(1);
       return JSON.stringify(dados);
     },
   },
   {
+    /* AS DUAS EDIÇÕES, e não só a portuguesa: a P2c corre nas duas e a planta só
+       mexia em `/distritos/`, de maneira que a célula inglesa passava. */
     nome: 'o lugar do nome retirado da página de um distrito',
     celulas: ['P2c', 'P3d'],
     quais: ['P2', 'P3'],
     estrago: (texto, rota, ext) =>
-      ext === '.html' && rota.indexOf('/distritos/') === 0
+      ext === '.html' && (rota.indexOf('/distritos/') === 0 || rota.indexOf('/en/districts/') === 0)
         ? texto.replace(/<div class="mapa-nome"[\s\S]*?<\/div><figcaption/, '<figcaption')
         : texto,
   },
@@ -858,11 +1133,20 @@ if (VERMELHOS) {
     ESTRAGO = planta.estrago;
     await corre(planta.quais);
     ESTRAGO = null;
+    /* TODAS AS CÉLULAS QUE A PLANTA NOMEIA TÊM DE FICAR VERMELHAS, e não uma
+       delas. Com `some`, uma planta que dissesse morder nas duas edições ou nos
+       dois motores era aceite quando só um lado caía, e a régua declarava
+       provada uma cobertura que não tinha (leitura a frio do Codex de
+       08.09.2026, achado 10). Uma planta que nomeia uma célula que não morde
+       corrige-se na planta: ou o estrago passa a morder, ou a lista das células
+       passa a dizer a verdade. */
     const tocadas = celulas.filter((c) => planta.celulas.some((k) => c.nome.startsWith(k)));
-    const apanhou = tocadas.some((c) => !c.passa);
+    const semNenhuma = tocadas.length === 0;
+    const apanhou = !semNenhuma && tocadas.every((c) => !c.passa);
     if (!apanhou) falhou = true;
     console.log(`  ${apanhou ? verde('vermelho ✓') : vermelho('NÃO APANHOU ✗')}  ${planta.nome}`);
-    for (const c of tocadas) console.log(cinza(`              ${c.passa ? 'passa' : 'FALHA'} ${c.nome}`));
+    if (semNenhuma) console.log(vermelho(`              nenhuma célula com os nomes ${planta.celulas.join(', ')}`));
+    for (const c of tocadas) console.log(cinza(`              ${c.passa ? 'PASSA (e devia falhar)' : 'falha ✓'} ${c.nome}`));
   }
   console.log('');
   await nav.close();
