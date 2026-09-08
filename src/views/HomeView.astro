@@ -647,10 +647,22 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
 
       <MapaRespira slot="instrumento" s={s} lang={lang} p={p} concelhos={cs} />
 
-      {/* A banda dos 29 nomes, aberta, fora da grelha da cabeça. A razão e a
-          medida que a puseram aqui estão em `CabecaDoLugar.astro`. */}
+      {/* A BANDA DOS NOMES FECHA-SE (F1.1d, item 5 do brief, 07.09.2026). Chegava
+          aberta desde o F1.1, e a razão era medida: abaixo de 1 024 nenhuma das
+          29 unidades do desenho chegava aos 44 px pelo quadrado inscrito (I82) e
+          a rede de nomes era o único alvo que respondia por elas. O desenho
+          passou a ter nove áreas e dois níveis, e a lista deixa de ser a rede de
+          alvos para voltar a ser o que o seu nome diz: o índice do desenho.
+          Fica fechada, com o `<summary>` como alvo de 44 px, e a página encolhe.
+
+          A LISTA GANHA AS NOVE REGIÕES à frente das 29 unidades, porque as nove
+          são agora o primeiro nível do mapa e a lista é o índice dele. As 29
+          continuam onde estavam, pela decisão do item 6 do brief: continuam a
+          ter página e a estar no menu, e o que saiu foi a sua camada no desenho.
+          A razão e a medida da colocação desta banda estão em
+          `CabecaDoLugar.astro`. */}
       <div class="cabeca-nomes" slot="nomes" data-cabeca-nomes>
-        <Gaveta chave="nomes" rotulo={s.inicio.mapa.nomesGaveta} aberta={true}>
+        <Gaveta chave="nomes" rotulo={s.inicio.mapa.nomesGaveta} aberta={false}>
           <ListaDosNomes s={s} lang={lang} />
         </Gaveta>
       </div>
@@ -1063,4 +1075,11 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
       execução depois da análise do documento.
       ---------------------------------------------------------------------- */}
   <script src="/js/inicio.js" defer is:inline></script>
+  {/* O MAPA QUE CRESCE VIVE NUM FICHEIRO PRÓPRIO, e não dentro de `inicio.js`,
+      pela mesma razão que a busca do índice vive em `livro.js`: `inicio.js` tem
+      escrito no cabeçalho que nunca cria texto visível, e o segundo nível do
+      mapa desenha os concelhos de uma região de um ficheiro gerado. Uma regra
+      que se quebra fica no ficheiro que a quebra, com as suas amarras escritas,
+      e não a apagar a regra do ficheiro ao lado. */}
+  <script src="/js/mapa-regioes.js" defer is:inline></script>
 </Base>

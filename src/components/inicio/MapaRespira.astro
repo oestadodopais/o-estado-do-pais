@@ -79,7 +79,9 @@
 import Claim from '../Claim.astro';
 import { FRAMES, FIELD_W, FIELD_H } from '../../data/caop-centroids.mjs';
 import { routePath } from '../../lib/routes.mjs';
-import { paisDoMapa } from '../../lib/mapa.mjs';
+import { regioesDoMapa } from '../../lib/mapa-regioes.mjs';
+import { REGIOES } from '../../data/regioes.mjs';
+import LugarDoNome from './LugarDoNome.astro';
 
 /* AS DUAS PROPRIEDADES QUE A PÁGINA DE CONCELHO PEDIU (ISSUES I45, etapa 2m).
  *
@@ -163,7 +165,25 @@ const pontos = concelhos.map((c) => ({ ...c, r: RAIO }));
  * o caminho de cada unidade vêm de `mapa/pais.json`, que o motor escreveu; o
  * `viewBox` é o campo desse ficheiro e mais nada. Ver `src/lib/mapa.mjs`.
  */
-const doPais = postura === 'inteiro' ? paisDoMapa() : null;
+/* ---------------------------------------------------------------------------
+ * A POSTURA INTEIRA PASSA A TER DOIS NÍVEIS (F1.1d, 07.09.2026)
+ * ---------------------------------------------------------------------------
+ * «O nível do país desenha as nove regiões NUTS II; o nível da região desenha os
+ * concelhos dessa região.» O primeiro vem do servidor, inteiro e sem guião: nove
+ * áreas, cada uma a ligação da sua página. O segundo é o mesmo `<svg>` com outro
+ * `viewBox` e outro grupo de áreas, que `public/js/mapa-regioes.js` desenha do
+ * ficheiro que cada região nomeia.
+ *
+ * AS 29 UNIDADES SAÍRAM DO DESENHO E NÃO DO SÍTIO: continuam a ter página, a
+ * estar no menu e a estar na lista dos nomes por baixo do mapa (item 6 do
+ * brief). O que sai é a sua camada no mapa da primeira página, onde 13 das 29
+ * áreas não chegavam a um dedo e a rede de nomes era o único alvo delas.
+ *
+ * O GABARITO DA ROTA DE UM CONCELHO VAI PARA O DOCUMENTO, e o guião põe o slug
+ * no lugar que o `:slug` marca. É a disciplina que a Emenda 21b já pôs no
+ * comando «Região»: o cliente não sabe a rota de edição nenhuma. */
+const doPais = postura === 'inteiro' ? regioesDoMapa() : null;
+const rotaDoConcelho = routePath('municipio', lang, { slug: ':slug' });
 
 /* A ESCALA ENTRE OS DOIS CAMPOS, para que o rótulo de uma moldura se leia do
    mesmo tamanho nos dois desenhos à mesma largura. O rótulo do mapa de pontos
@@ -176,6 +196,14 @@ const CORPO_DO_ARQ = Math.round(13 * uDoCampo);
 /* O nome de cada moldura na língua da edição. A caixa e a escala são do
    artefacto; o nome é uma cadeia da casa, e as duas já existem. */
 const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.mapa.acores };
+/* O NOME DE CADA REGIÃO VEM DA LISTA DA CASA, na língua da edição, e não do
+   ficheiro da geometria: `src/data/regioes.mjs` é onde as nove vivem, com o seu
+   slug, o seu código NUTS II e o seu nome nas duas edições. O ficheiro gerado
+   traz o slug e o código, e é por eles que os dois se encontram: uma segunda
+   lista de nomes ao lado da primeira é o que a fronteira do mapa proíbe. */
+const NOME_DA_REGIAO = Object.fromEntries(
+  REGIOES.filter((r) => !r.referencia).map((r) => [r.slug, r.nome[lang] ?? r.nome.pt]),
+);
 /* `NOME_DA_PARCELA` SAIU COM A LISTA (29.08.2026). Era o nome do continente, a
    parcela sem moldura, e servia só o rótulo daquele grupo: mudou-se com ele para
    `ListaDosNomes.astro`. O que fica aqui é o nome das duas molduras, que é o que
@@ -188,6 +216,11 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
   data-instrumento="mapa"
   data-mapa-raiz
   data-postura={postura}
+  {/* O NÍVEL EM QUE O MAPA ESTÁ, e é o servidor que o declara: `pais` é o que a
+      página entrega, e o guião troca-o por `regiao` quando uma região cresce. A
+      folha lê-o para esconder as molduras, para trocar as duas frases vazias e
+      para acender a porta de voltar. */}
+  data-nivel={postura === 'inteiro' ? 'pais' : undefined}
   aria-describedby={postura === 'inteiro' ? 'mapa-legenda' : undefined}
 >
   {/* «FECHAR» SAIU COM A VISTA DE ESCOLHA (Emenda 19b, 26.08.2026).
@@ -256,9 +289,12 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
           nenhum `<a>` debaixo de `role="img"`.
           -------------------------------------------------------------------- */}
       role="group"
-      aria-label={s.inicio.mapa.distritosLabel}
+      aria-label={s.inicio.mapa.regioesLabel}
       data-mapa
       data-mapa-areas
+      data-rotulo-pais={s.inicio.mapa.regioesLabel}
+      data-rotulo-regiao={s.inicio.mapa.concelhosLabel}
+      data-rota-concelho={rotaDoConcelho}
     >
       {/* AS DUAS MOLDURAS VÊM DO ARTEFACTO, com a sua caixa e a sua escala. A
           quebra de escala é para declarar e não para esconder (MAPA.md §7): a
@@ -292,41 +328,52 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
       </g>
 
       {/* ----------------------------------------------------------------------
-          AS 29 ÁREAS SÃO IGUAIS, E CADA UMA É UMA LIGAÇÃO (Emendas 10 e 20b)
+          AS NOVE ÁREAS SÃO IGUAIS, E CADA UMA É UMA LIGAÇÃO (Emendas 10 e 20b)
           ----------------------------------------------------------------------
           «Todas iguais, nenhuma destacada por estatuto ou por cobertura; o que
           muda ao passar o rato ou ao chegar pelo teclado é o contorno, e só
-          ele.» O desenho de uma área não sabe se a unidade é a capital, se é
-          ilha ou se tem concelhos com página: leva a mesma classe, o mesmo
-          traço e o mesmo enchimento que as outras 28.
+          ele.» O desenho de uma área não sabe quantos concelhos a região tem
+          nem quantos deles têm página: leva a mesma classe, o mesmo traço e o
+          mesmo enchimento que as outras oito.
 
           O `<title>` dá o nome acessível da ligação e o nome que o navegador
-          mostra ao parar o cursor. É o nome da Carta, que já está no `data-u`
-          do mesmo caminho: não há aqui uma segunda lista de nomes.
+          mostra ao parar o cursor. É o nome da lista da casa, que também está no
+          `data-u` do mesmo caminho: o guião copia-o de lá para o lugar do nome, e
+          não há aqui uma segunda lista de nomes.
+
+          `data-ficheiro` É O CAMINHO DO SEGUNDO NÍVEL, e vem do próprio ficheiro
+          gerado: é o guião que o vai buscar quando a região cresce, e por isso o
+          documento não leva os concelhos de nenhuma região.
 
           `fill-rule` NÃO SE ESCREVE (MAPA.md §1): os anéis vêm orientados do
           motor, o exterior no sentido directo e os buracos no inverso, e a
           regra por omissão deixa um buraco vazio.
           ---------------------------------------------------------------------- */}
       <g class="mapa-areas" data-areas>
-        {doPais.unidades.map((u) => (
+        {doPais.regioes.map((r) => (
           <a
             class="uni-porta"
-            href={routePath('distrito', lang, { slug: u.slug })}
-            data-uni-porta={u.slug}
+            href={routePath('regiao', lang, { slug: r.slug })}
+            data-uni-porta={r.slug}
+            data-ficheiro={`/${r.ficheiro}`}
           >
-            <title>{u.nome}</title>
+            <title>{NOME_DA_REGIAO[r.slug]}</title>
             <path
               class="uni"
-              d={u.d}
-              data-u={u.nome}
-              data-tipo={u.tipo}
-              data-parcela={u.parcela}
-              data-unidade={u.slug}
+              d={r.d}
+              data-u={NOME_DA_REGIAO[r.slug]}
+              data-tipo="regiao"
+              data-parcela={r.parcela}
+              data-unidade={r.slug}
             />
           </a>
         ))}
       </g>
+      {/* O SEGUNDO NÍVEL CHEGA VAZIO, e é o guião que o enche do ficheiro da
+          região tocada. Sem guião fica vazio e escondido, e o mapa é o das nove
+          áreas, cada uma a porta da sua página: é a mesma promessa da Emenda 7,
+          que nenhuma navegação precisa de guião. */}
+      <g class="mapa-areas" data-areas-concelhos hidden></g>
     </svg>
     ) : (
     <svg
@@ -521,6 +568,37 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
     </div>
     )}
   </div>
+
+  {/* ------------------------------------------------------------------------
+      O LUGAR DO NOME (F1.1d, item 1 do brief)
+      ------------------------------------------------------------------------
+      «Um elemento fixo com o nome da unidade apontada e a porta para a sua
+      página; vazio diz "Toque numa região" / "Passe o rato por uma região".»
+      Fica ao lado do mapa a partir de 1 024 px e por baixo dele no telemóvel, e
+      quem decide isso é a folha: no documento é irmão da tela, dentro da mesma
+      figura, porque o que ele diz é sobre o desenho que está ao lado.
+
+      É UMA REGIÃO VIVA (`aria-live="polite"`) E POR ISSO O NOME ANUNCIA-SE. A
+      frase vive num parágrafo só, com as três formas por baixo dela e uma de
+      cada vez: a vazia do nível do país, a vazia do nível da região e o nome. As
+      portas ficam de fora da região viva, para que mudar de área não releia
+      «Abrir» de cada vez.
+
+      CHEGA `hidden` DO SERVIDOR, e é a mesma disciplina da linha da área de
+      leitura (F1.1c): sem guião não há nível de região nem nome a preencher, e
+      um lugar que promete um gesto que a página não faz é pior do que nenhum.
+      As quatro frases vazias ficam declaradas no inventário da voz na mesma,
+      porque a régua lê o documento entregue e não o ecrã.
+
+      AS DUAS FRASES VAZIAS DE CADA NÍVEL SÃO AS DUAS, E A FOLHA MOSTRA UMA. Quem
+      tem rato passa por cima e quem tem dedo toca: são gestos diferentes e a
+      página não sabe qual é o do leitor senão pelo `@media (hover: hover) and
+      (pointer: fine)`. Um `display: none` é lido pelo leitor de ecrã, e por isso
+      quem ouve ouve uma só.
+      ---------------------------------------------------------------------- */}
+  {postura === 'inteiro' && (
+    <LugarDoNome s={s} niveis={['pais', 'regiao']} voltar={routePath('home', lang)} />
+  )}
 
   {/* ------------------------------------------------------------------------
       UMA LINHA POR BAIXO DO MAPA (Emenda 17, 21.08.2026)

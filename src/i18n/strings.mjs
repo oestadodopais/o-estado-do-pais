@@ -639,6 +639,48 @@ export const STRINGS = {
            quando o concelho escolhido tinha página, e onde o cartão se rende ela
            apontava para a página em que já se está. */
         trocar: 'trocar de concelho',
+        /* ------------------------------------------------------------------
+           O LUGAR DO NOME, E OS DOIS NÍVEIS (F1.1d, 07.09.2026)
+           ------------------------------------------------------------------
+           O mapa da primeira página passa a ter dois níveis (as nove regiões, e
+           dentro de cada uma os seus concelhos) e um lugar fixo para o nome da
+           área apontada. Estas cadeias são o que esse lugar diz quando não há
+           nenhuma apontada, e o que as suas duas portas dizem.
+
+           SÃO DUAS FRASES VAZIAS POR NÍVEL, E NÃO UMA, porque o gesto não é o
+           mesmo: quem tem rato passa por cima, e quem tem dedo toca. As duas
+           rendem-se, e é a folha que mostra a que serve (`@media (hover: hover)
+           and (pointer: fine)`), sem uma linha de guião: um `display: none` é
+           lido pelo leitor de ecrã, e por isso quem ouve ouve uma só.
+
+           «Abrir» É A PORTA E NÃO O GESTO. A seta compõe-se ao lado, como em
+           todas as portas da casa; o que a cadeia diz é o que está do outro
+           lado, que é a página da área apontada. */
+        nomeVazioToque: 'Toque numa região',
+        nomeVazioRato: 'Passe o rato por uma região',
+        nomeVazioToqueConcelho: 'Toque num concelho',
+        nomeVazioRatoConcelho: 'Passe o rato por um concelho',
+        abrir: 'Abrir',
+        voltarAoPais: 'Voltar ao país',
+        /* O QUE O LUGAR DIZ QUANDO O DESENHO DA REGIÃO NÃO CHEGA. O guião pede o
+           ficheiro dos concelhos da região ao tocar nela; se o pedido não voltar
+           (sem rede, uma resposta que não é 200, um ficheiro ilegível), o mapa
+           não cresce e o leitor ficava com um toque sem resposta e sem saber
+           porquê. A frase diz o que aconteceu e para onde ir: a porta que já
+           está no lugar leva à página da região, que é a alternativa sem guião.
+           O toque seguinte na mesma área segue a ligação do servidor. */
+        semODesenhoDaRegiao: 'O mapa desta região não abriu. A porta leva à página dela.',
+        /* Os nomes acessíveis dos dois níveis do desenho. Nomeiam o que a coisa
+           é, e não como se usa, que é a regra do `distritosLabel` acima. */
+        regioesLabel: 'Mapa das nove regiões de Portugal, com uma área por região.',
+        concelhosLabel: 'Mapa dos concelhos da região, com uma área por concelho.',
+        /* O nome acessível do lugar do nome. É uma região viva (`aria-live`), e
+           uma região viva sem nome anuncia-se como «região». */
+        lugarLabel: 'A área apontada no mapa',
+        /* O rótulo do grupo das nove regiões na lista dos nomes. As 29 unidades
+           continuam agrupadas pela parcela da Carta; as nove ficam num grupo
+           próprio, à frente delas, porque são o primeiro nível do desenho. */
+        regioesK: 'As regiões',
       },
 
       banda: {
@@ -2189,6 +2231,19 @@ export const STRINGS = {
         nomesGaveta: 'The names on the map',
         buscaGaveta: 'A municipality by name',
         trocar: 'change municipality',
+        /* O lugar do nome e os dois níveis. Ver a razão na edição portuguesa, e
+           o registo das escolhas em `CHAVES-EN.md`. */
+        nomeVazioToque: 'Tap a region',
+        nomeVazioRato: 'Hover over a region',
+        nomeVazioToqueConcelho: 'Tap a municipality',
+        nomeVazioRatoConcelho: 'Hover over a municipality',
+        abrir: 'Open',
+        voltarAoPais: 'Back to the country',
+        semODesenhoDaRegiao: 'This map did not open. The door goes to the region page.',
+        regioesLabel: 'Map of the nine regions of Portugal, one area per region.',
+        concelhosLabel: 'Map of the municipalities of the region, one area per municipality.',
+        lugarLabel: 'The area pointed at on the map',
+        regioesK: 'The regions',
       },
 
       banda: {
