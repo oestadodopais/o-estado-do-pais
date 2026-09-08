@@ -30,6 +30,11 @@
  * descido: `TETO_FROUXO` diz quantas unidades de folga um teto pode ter antes de
  * ser um teto que já não mede nada. Um teto frouxo é uma régua a dormir.
  *
+ * UM TETO SÓ SOBE POR UMA RAZÃO, E ELA ESCREVE-SE: o sítio ganhou uma página, e
+ * a página nova traz a mesma mobília que todas as outras trazem. Um teto que
+ * suba porque uma página ANTIGA piorou é a régua a ser desligada, e isso não se
+ * faz: corrige-se a página.
+ *
  * ---------------------------------------------------------------------------
  * AS EXCEÇÕES, ESCRITAS POR NOME
  * ---------------------------------------------------------------------------
@@ -77,7 +82,7 @@ const TETOS = {
      TODOS os tetos desta tabela foram medidos a 08.09.2026 sobre o `dist/` da
      fusão de `origin/main` (43f4b52a) na cabeça `47d957f6`, com
      `node scripts/check-lugar.mjs`, e nenhum foi escrito à mão. */
-  l1_paginas: 6596,
+  l1_paginas: 6598,
   /* L2a · páginas, fora de `/municipios`, que ligam a mais de `L2_LIMITE_NOMES`
      concelhos fora de uma lista fechada. */
   l2_segundas_listas: 2,
@@ -91,18 +96,24 @@ const TETOS = {
   /* L4 · falhas: uma frase de definição ou de hierarquia que não está a 1 onde
      o §2 do brief a manda estar. */
   l4_falhas: 10,
-  /* L5 · páginas abaixo da primeira sem caminho no cabeçalho. */
-  l5_sem_caminho: 7211,
+  /* L5 · páginas abaixo da primeira sem caminho no cabeçalho.
+     SOBE DE 7 211 PARA 7 213 a 08.09.2026, e a razão é a única que faz um teto
+     subir: o sítio ganhou DUAS PÁGINAS («Portugal na União Europeia» nas duas
+     edições, item 8.16), e nenhuma delas tem ainda o caminho no cabeçalho, que
+     é o que a L5 mede e que nenhuma página do sítio tem ainda. Não é uma
+     regressão: é o mesmo número dividido por mais duas páginas. A mesma razão,
+     e o mesmo dia, valem para a L1, a L6, a 8.5 e a 8.8. */
+  l5_sem_caminho: 7213,
   /* L6 · selos cuja etiqueta não é o publicador da linha. */
-  l6_selos: 26168,
+  l6_selos: 26174,
   /* 8.5 · blocos com «limiar» sem o qualificador nem a frase ao lado. */
-  d85_limiar_sozinho: 706,
+  d85_limiar_sozinho: 708,
   /* 8.8 · «livro-razão» nos menus, nos rodapés e nos títulos das páginas. */
-  d88_livro_razao: 24172,
+  d88_livro_razao: 24177,
   /* 8.13 · valores selados na secção dos domínios da primeira página. */
-  d813_selos_nos_dominios: 4,
+  d813_selos_nos_dominios: 0,
   /* 8.14 · «Relance» e «Leitura breve» nas páginas do leitor. */
-  d814_densidades: 1304,
+  d814_densidades: 1300,
 };
 
 /* Quantos concelhos ligados fora de uma lista fechada fazem uma segunda lista.

@@ -770,18 +770,22 @@ export function prova(lang = 'pt') {
        limiar publicado do lado que a linha declara. Nenhum algarismo é gerado
        aqui: contam-se medidas, não distâncias.
 
-       A porta é a âncora do painel na própria página (IDENTIDADE §10, v2): o
-       que estas três contam vê-se ali mesmo, mais abaixo. */
-    painel_total: k('painel_total', FIGURAS_PDM.length, ancora(routePath('home', lang), 'painel')),
+       A PORTA PASSA DA PRIMEIRA PÁGINA PARA A PÁGINA EUROPEIA (bloco F1.10,
+       item 8.16, 08.09.2026). Era a âncora do painel na própria página, «o que
+       estas três contam vê-se ali mesmo, mais abaixo», e os 21 cartões dos dois
+       quadros da União mudaram-se para «Portugal na União Europeia». A regra
+       não muda, e é ela que obriga à mudança: a porta de uma chave da prova é o
+       sítio onde o que ela conta se vê. */
+    painel_total: k('painel_total', FIGURAS_PDM.length, ancora(routePath('uniaoEuropeia', lang), 'painel')),
     painel_com_limiar: k(
       'painel_com_limiar',
       FIGURAS_PDM.filter((f) => f.limiar).length,
-      ancora(routePath('home', lang), 'painel'),
+      ancora(routePath('uniaoEuropeia', lang), 'painel'),
     ),
     painel_fora_do_limiar: k(
       'painel_fora_do_limiar',
       FIGURAS_PDM.filter((f) => estadoDaMedida(claims.get(f.claim), f.limiar) === 'fora').length,
-      ancora(routePath('home', lang), 'painel'),
+      ancora(routePath('uniaoEuropeia', lang), 'painel'),
     ),
     /* A OUTRA METADE DA MANCHETE (Emenda 16). «Portugal ultrapassa 4 limiares
        … e cumpre 9»: as duas contagens são chaves da prova, e nenhuma das duas
@@ -792,7 +796,7 @@ export function prova(lang = 'pt') {
     painel_dentro_do_limiar: k(
       'painel_dentro_do_limiar',
       FIGURAS_PDM.filter((f) => estadoDaMedida(claims.get(f.claim), f.limiar) === 'dentro').length,
-      ancora(routePath('home', lang), 'painel'),
+      ancora(routePath('uniaoEuropeia', lang), 'painel'),
     ),
     /* O Painel Social Europeu tem lista própria, e a sua porta é a lista. Sem
        limiares publicados não há estado a contar: conta-se quantas medidas
@@ -800,7 +804,7 @@ export function prova(lang = 'pt') {
     painel_social_total: k(
       'painel_social_total',
       FIGURAS_SOCIAL.length,
-      ancora(routePath('home', lang), 'painel-social'),
+      ancora(routePath('uniaoEuropeia', lang), 'painel-social'),
     ),
 
     /* ---- a cobertura ---- */
@@ -906,7 +910,7 @@ export function prova(lang = 'pt') {
          data que a mobília já diz em todas as páginas; a emenda tirou-a, e com
          ela a âncora. O que esta data cobre é o painel, e é para o painel que
          ela abre. */
-      ancora(routePath('home', lang), 'painel'),
+      ancora(routePath('uniaoEuropeia', lang), 'painel'),
       { vencida: verificacao.vencida, dias: verificacao.dias },
     ),
     /* AS DUAS CONTAGENS DO ATRASO, e a porta das duas é a regra da releitura no

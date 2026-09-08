@@ -170,6 +170,16 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | conteudo | Algarve · região | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | navegacao | As regiões publicadas na régua da convergência. | grelha-2 | retirada | a régua da convergência saiu da primeira página até haver a página das regiões (Emenda 18, consequência decidida a 25.08; bloco A da auditoria de UI e UX, `696b51a`) |
 | navegacao | At a glance | até 2026-08-26 | viva | — |
+| navegacao | Portugal na União Europeia | lugar | viva | — |
+| navegacao | Portugal in the European Union | lugar | viva | — |
+| conteudo | Os dois quadros da União Europeia que medem Portugal: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu, cada uma com a sua linha. | lugar | viva | — |
+| conteudo | The two European Union frameworks that measure Portugal: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard, each with its ledger row. | lugar | viva | — |
+| conteudo | no ar | lugar | viva | — |
+| conteudo | live | lugar | viva | — |
+| conteudo | ainda sem medidas conferidas | lugar | viva | — |
+| conteudo | no verified measures yet | lugar | viva | — |
+| conteudo | as medidas estão em | lugar | viva | — |
+| conteudo | the measures are in | lugar | viva | — |
 | navegacao | Brief reading | até 2026-08-26 | viva | — |
 | conteudo | concelhos · CAOP | frases | viva | — |
 | conteudo | Custo do trabalho por unidade produzida, por hora trabalhada. | frases | viva | — |
@@ -2275,6 +2285,35 @@ apanha.
 | --- | --- | --- | --- | --- |
 | navegacao | Toque num cartão para ler a medida. | toque | viva | — |
 | navegacao | Tap a card to read the measure. | toque | viva | — |
+## Bloco F1.10 · segunda sessão · a página europeia e o índice dos domínios · 08.09.2026
+
+**Dez linhas novas, e nenhuma retirada.** São as do item 8.16 (a página
+«Portugal na União Europeia») e as do item 8.13 (a secção dos domínios da
+primeira página passa a ser o índice dos domínios).
+
+**As quatro da página nova.** O nome dela, nas duas edições, que é a mesma cadeia
+no `<h1>`, no `<title>`, no menu, no rodapé e na porta da faixa: a regra §0 do
+brief é «um nome por coisa em todo o sítio», e uma abreviatura no menu seriam
+dois nomes para a mesma coisa. E a descrição da página, nas duas edições, que diz
+o que a página tem e não o que a casa faz. **As vinte e uma leituras, os dois
+nomes de quadro, as duas frases de contexto e a linha do repouso não entram aqui:
+já estavam declaradas, e o que mudou foi a página que as rende.**
+
+**As seis do índice dos domínios.** «no ar», «ainda sem medidas conferidas» e «as
+medidas estão em», nas duas edições. São as mesmas três palavras de estado que
+`/dominios` já rende, e são vocabulário fechado com marca (`data-dominio-estado`):
+o que muda é que agora se leem também na primeira página. Não podiam herdar as
+linhas de `/dominios`, porque ali o bloco de texto leva a vaga colada ao estado
+(«ainda sem medidas conferidas primeira vaga») e aqui não leva: a secção da
+primeira página é a porta para o que existe, e o calendário das vagas fica no
+índice, onde ele é o assunto.
+
+**Duas exceções de marcador ganharam uma rota** em `VOZ-MARCADORES.md`, nenhuma
+nova: a raiz «confer» na ausência declarada de um domínio passa a valer também em
+`home` (o índice dos domínios entrou na primeira página), e a mesma raiz no rótulo
+da terceira data de uma medida passa a valer em `uniaoEuropeia` (as vinte e uma
+leituras mudaram-se para lá).
+
 ## Bloco F1.10 · uma coisa, um lugar · 04.09.2026
 
 **O que este bloco mexeu na tabela.** Trinta e nove linhas: dezanove passaram a

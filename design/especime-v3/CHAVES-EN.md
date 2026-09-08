@@ -1184,3 +1184,22 @@ a construção. Quem as render declara-as no mesmo commit.*
 | `area.trabalhosK` | Os trabalhos → Os estudos | The studies *(sem mudança)* | o inglês já dizia a palavra certa |
 | `municipio.estudosK` | Os trabalhos sobre este concelho → Os estudos sobre este concelho | The works about this municipality → The studies about this municipality | «estudo» nas duas edições. A secção muda de forma no resto do bloco (os títulos ficam, as sinopses saem, entra a porta do arquivo filtrado); o nome dela muda aqui |
 | `inicio.mapa.svgLabel` · `readoutHint` · `tecladoHint` | «municípios» → «concelhos» | *(sem mudança)* | as três cadeias do mapa. As duas últimas não se rendem hoje (a linha do inventário está `retirada` desde a Emenda 20a) |
+
+### Bloco F1.10 · segunda sessão · «Portugal na União Europeia» (08.09.2026)
+
+*As chaves do item 8.16 do brief, pela decisão do lugar de direção que o diretor
+aceitou a 07.09 à noite. **Estas rendem-se**, e por isso estão no
+`INVENTARIO-FRASES.md` no mesmo commit em que a página nasce.*
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `nav.uniaoEuropeia` | Portugal na União Europeia | Portugal in the European Union | o item do menu e do rodapé. É o NOME DA PÁGINA por extenso, e não uma abreviatura: a regra §0 do brief é «um nome por coisa em todo o sítio», e «União Europeia» ao lado de uma página chamada «Portugal na União Europeia» seriam dois nomes para a mesma coisa |
+| `uniaoEuropeia.h1` · `uniaoEuropeia.porta` | Portugal na União Europeia | Portugal in the European Union | o título da página e a porta da faixa da primeira página. A mesma cadeia nos três sítios, pela mesma regra |
+| `uniaoEuropeia.metaTitle` | Portugal na União Europeia · O Estado do País | Portugal in the European Union · O Estado do País | a forma da casa para um título de página |
+| `uniaoEuropeia.metaDescription` | Os dois quadros da União Europeia que medem Portugal: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu, cada uma com a sua linha. | The two European Union frameworks that measure Portugal: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard, each with its ledger row. | diz o que a página tem, e não o que a casa faz. Os dois nomes de quadro são os oficiais, que o sítio já rende no cabeçalho de cada metade |
+
+**O caminho da rota traduz-se e a chave não** (`src/lib/routes.mjs`): a chave é
+`uniaoEuropeia`, portuguesa como todas as outras, e cada edição tem o seu caminho
+na sua língua, `/uniao-europeia` e `/en/european-union`. É a regra desta tabela,
+escrita nas regiões, nas áreas, nos concelhos e nos domínios: «o que se traduz é
+o rótulo e nunca a chave».

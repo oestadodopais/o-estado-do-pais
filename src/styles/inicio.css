@@ -312,6 +312,41 @@
 }
 
 /* ---------------------------------------------------------------------------
+   A ENTRELINHA DE UMA MANCHETE QUE CITA DUAS LINHAS (bloco F1.10, 08.09.2026)
+   ---------------------------------------------------------------------------
+   É a CONCLUSÃO do achado Blocking 5 de 04.09, e não uma segunda tentativa. A
+   correção daquele dia deu ao alvo de um algarismo a altura da caixa de linha
+   (`height: 1lh` no `::after`, em `site.css`), para que duas áreas seguidas
+   LADRILHEM em vez de se cruzarem. Mede-se agora que isso não chega quando os
+   dois algarismos ficam UM POR CIMA DO OUTRO: com `line-height: 1.12`, a caixa
+   PRÓPRIA de cada algarismo (48 px a 40 px de corpo, que é o que a métrica do
+   tipo dá) é MAIOR do que o avanço entre as duas linhas (46,8 px), e as duas
+   caixas sobrepõem-se 1,2 px. O navegador, ao perguntar quem está no ponto de
+   baixo da área do primeiro, responde «o segundo»: um dedo por baixo do 23 abre
+   a linha do 22.
+
+   MEDIDO, E POR ISSO ESCRITO. `/en/regions/alentejo` a 1280 px: a caixa do «23»
+   vai de 350,3 a 398,3 e a do «22» começa a 397,1, e os dois pontos de baixo da
+   área do «23» (378,396 e 399,396) respondem `a.claim-value` da OUTRA linha. Na
+   edição portuguesa a mesma manchete quebra com os dois algarismos desencontrados
+   e o cruzamento não acontece: é uma colisão que depende da quebra, e por isso
+   uma que muda de lado a cada mudança de altura do cabeçalho.
+
+   A CORREÇÃO É A ENTRELINHA, e é a única que resolve a causa: a caixa própria de
+   um algarismo não se pode encolher (é a métrica do tipo), e por isso o avanço
+   entre linhas tem de ser MAIOR do que ela. `1.25` dá 50 px a 40 px de corpo,
+   dois píxeis acima da caixa, e vale só onde a manchete cita mais do que uma
+   linha: a manchete de uma linha citada não tem vizinho com quem cruzar e fica
+   com a composição que a direção fechou.
+
+   O TAMANHO DO TIPO NÃO MUDA, e a regra da manchete também não: o que muda é o
+   ar entre as linhas de uma frase que cita dois números.
+   --------------------------------------------------------------------------- */
+h1.cabeca-h1[data-citadas]:not([data-citadas='1']) {
+  line-height: 1.25;
+}
+
+/* ---------------------------------------------------------------------------
    OS SELOS DA MANCHETE, NA LINHA DE BAIXO (F1.2b, item 3, 03.09.2026)
    ---------------------------------------------------------------------------
    «A manchete é uma frase; o selo vai ao pé do número, na linha de baixo»

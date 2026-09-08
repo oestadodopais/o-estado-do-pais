@@ -89,6 +89,7 @@ import { parse } from 'node-html-parser';
 
 import { SITE_HOST_DISPLAY, SITE_NAME } from '../site.config.mjs';
 import { t } from '../src/i18n/strings.mjs';
+import { routePath } from '../src/lib/routes.mjs';
 /* Os números do mapa não se escrevem aqui: leem-se do artefacto que o motor
    atravessou, pela mesma porta que o sítio usa (`src/lib/mapa.mjs`). */
 import { manifestoDoMapa, unidadesDoMapa, distritoDoMapa } from '../src/lib/mapa.mjs';
@@ -1443,18 +1444,23 @@ ${tabelaTipos}
      era a dobra da peça do painel da primeira página, e é agora a dobra da
      leitura breve, que entrou no lugar dele. É o MESMO componente `Regua.astro`
      com a mesma gramática (Emenda 4) e as mesmas três formas; o que mudou foi a
-     caixa à volta. As três continuam a viver na primeira página, que é a única
-     onde há limiar do quadro publicado. */
-  const casa = arvore('index.html');
+     caixa à volta.
+
+     E MUDOU DE PÁGINA (F1.10, item 8.16, 08.09.2026): as vinte e uma leituras
+     dos dois quadros da União passaram da primeira página para «Portugal na
+     União Europeia», e é ali que vive o único limiar publicado por um quadro.
+     O feixe vai buscá-las onde elas estão, e não onde estavam. */
+  const CASA_DA_REGUA = routePath('uniaoEuropeia', 'pt').replace(/^\//, '') + '/index.html';
+  const casa = arvore(CASA_DA_REGUA);
   const escolhe = (filtro, oQue) => {
     const p = casa.querySelectorAll('.dobra').filter(filtro)[0];
-    if (!p) morre(`não encontrei em \`dist/index.html\` ${oQue}.`);
+    if (!p) morre(`não encontrei em \`dist/${CASA_DA_REGUA}\` ${oQue}.`);
     const nome = p.querySelector('.dobra-nome')?.text?.trim() ?? '';
     const limiar = p.querySelector('.dobra-limiar');
     const regua = p.querySelector('.regua');
-    if (!regua) morre(`a leitura «${nome}» de \`dist/index.html\` deixou de trazer régua.`);
+    if (!regua) morre(`a leitura «${nome}» de \`dist/${CASA_DA_REGUA}\` deixou de trazer régua.`);
     tiraCodigo(regua);
-    absolutizaLigacoes(regua, `dist/index.html → .leitura[${nome}] .regua`);
+    absolutizaLigacoes(regua, `dist/${CASA_DA_REGUA} → .leitura[${nome}] .regua`);
     return { nome, limiar: limiar ? limiar.outerHTML : '', regua: regua.outerHTML, estado: p.getAttribute('data-estado') };
   };
 
@@ -1771,8 +1777,12 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
     'uma peça sem limiar',
   );
   const semPeca = peca(ondeSem, '.peca[data-estado="sem"]');
-  const social = peca('index.html', '[data-leituras="social"] .dobra');
-  const socialTitulo = peca('index.html', '.social-titulo');
+  /* O PAINEL SOCIAL MUDOU DE PÁGINA (F1.10, item 8.16, 08.09.2026): as suas oito
+     leituras e o seu nome passaram da primeira página para «Portugal na União
+     Europeia». O cartão do feixe mostra o mesmo, do sítio onde ele está. */
+  const CASA_DO_SOCIAL = routePath('uniaoEuropeia', 'pt').replace(/^\//, '') + '/index.html';
+  const social = peca(CASA_DO_SOCIAL, '[data-leituras="social"] .dobra');
+  const socialTitulo = peca(CASA_DO_SOCIAL, '.social-titulo');
 
   const casa = arvore('index.html');
   const conta = (estado) => casa.querySelectorAll(`.cartao[data-estado="${estado}"]`).length;
