@@ -814,7 +814,7 @@ artefacto, que é a mesma lição que a célula M6 tem escrita desde 26.08).
 ## Segunda passagem (08.09)
 
 *A leitura a frio do Codex (`gpt-5.6-sol`, xhigh) sobre a cabeça da primeira
-passagem, `635e6d7f`, deu 25 pontos: três Blocking, nove Major, cinco Minor e
+passagem, `635e6d7f`, deu 25 pontos: três Blocking, nove Major, seis Minor e
 sete confirmações. **Cinco deles eram estragos plantados pelo lugar de direção no
 pacote e não achados**, e o construtor conferiu no ramo que cada um tem o
 contrário do que o pacote mostrava: o Blocking 2 (o `aria-label` trocado entre os
@@ -823,7 +823,9 @@ Blocking 3 (a R8 a comparar comprimentos; no ramo é `servido.equals(doMotor)`),
 Major 5 (o fragmento sem o `[a-z0-9-]+`; no ramo o padrão é
 `/^#unidade=([a-z0-9-]+)$/`), o Major 7 (a U1a a aceitar nove áreas; no ramo é
 `entradas.length === 29`) e a parte do Minor 13 que dizia «28 de 29» (a cadeia
-não existe no relatório). Os restantes vinte estão nesta tabela.*
+não existe no relatório; as outras duas partes dele eram reais). Quatro pontos
+saem inteiros por serem plantas, e os **vinte e um** que ficam estão nesta
+tabela.*
 
 *Na coluna do número, `B` é Blocking, `M` é Major e `m` é Minor, com o número
 que a leitura lhes deu.*
