@@ -7,20 +7,20 @@ deste relatório foi escrito à mão: cada um tem ao lado o comando que o mediu.
 
 ---
 
-## Estado · 08.09.2026 · as definições dos dois painéis e das 21 medidas, e os dois limiares com o seu fixador
+## Estado · 08.09.2026, noite · as quatro leituras de aparelho fora do cabeçalho de todas as páginas
 
 | | |
 |---|---|
 | cabeça | a última do ramo (`git rev-parse HEAD`) |
-| `main` fundido | `fe6478aa` (só documentos: a §1.102 com as emendas, o §10 do brief com o 8.17 emendado, o brief do F1.1e) |
+| `main` fundido | `fe6478aa` (só documentos: a §1.102 com as emendas, o §10 do brief com o 8.17 emendado, o brief do F1.1e). **`origin/main` continua sem o F1.1e** (medido, com o conhecido-positivo, na secção do 8.17b) |
 | `build` · `verify` · `typecheck` | **0** · **0** · **0** (códigos lidos de `build.exit`, `verify.exit`, `typecheck.exit`) |
-| a corrida da CI | **34256869318 verde** sobre `1d903212`, que é a penúltima cabeça desta sessão; a da última (`a66cea74`) é a 34259775241, e lê-se na primeira linha de `gh run list --branch lugar-2026-09-04`. Um commit não pode conter o número da corrida que ele dispara |
-| feito nas sessões anteriores | a régua (encargo (b)); **§9.1**; **8.8**; **8.9**; **§7.5**; **8.16**; **8.13**; **8.12**; **8.14 inteiro**; **§2.2**; **8.15**; **8.5**; **§7.1**; **8.17** |
-| feito nesta sessão | **os dois limiares sem fixador** (a decisão do fecho do dia: `porRegistar` sai, entram `pacto` e `conselho`, cada um com o excerto do documento que a linha cita; o motivo `limiar-do-quadro` do `allowlist.yml` corrigido); **8.4 e a segunda metade do 8.14** (a definição de cada painel e das 21 medidas, citada da Comissão e do Eurostat, com o documento, o endereço, a data de acesso e o excerto literal declarados); **§9.3**, **§9.4**, **§9.5**, **§9.8** e **§9.9**; a etiqueta da agenda do F2.6b; **a régua do primeiro ecrã a 390 × 664 do item 8.11, com o «antes» medido nas quatro páginas do leitor e nas duas edições**; **§7.3** (as três datas de uma medida por palavras) |
-| a seguir | **8.11 e §7.3**; o resto do §9 (2, 6, 7 e 10); as outras páginas (a região, o domínio, os índices, os estudos, o Método); o item 5 do encargo (o caminho, a busca única, «fonte» diz o publicador, as datas); o fecho |
-| nada a meio | **nada ficou por acabar.** Os três portões a 0 nesta árvore, com os códigos lidos dos ficheiros; não há `git stash` nem ficheiro por commitar. **Uma régua de fora da cadeia mudou e não foi corrida** (a célula A4 de `tests/inicio/porta.mjs`, que abre navegador e não está no `verify` nem na CI): corre-se à mão no fecho do bloco, com as outras medidas de 390 px |
-| a régua, na cabeça desta sessão | L1 6 598 · L2a 2 · L2b 18 · L2c 10 · L3 **30** · L4 **0** · L5 7 213 · L6 26 178 · 8.5 **0** · 8.8 **0** · 8.13 **0** · 8.14 **0** · 8.17 **0** e **0** (`node scripts/check-lugar.mjs`, verde) |
-| o modelo e o custo | Claude Opus 5. O contador do harness dava 15 000 000 símbolos no arranque da sessão e cerca de 14 527 000 ao escrever esta linha: **da ordem de 470 mil**. É o contador da janela e não a fatura; o número da fatura é o que o harness disser |
+| a corrida da CI | lê-se na primeira linha de `gh run list --branch lugar-2026-09-04`. Um commit não pode conter o número da corrida que ele dispara, e por isso o que aqui fica é o comando |
+| feito nas sessões anteriores | a régua (encargo (b)); **§9.1**; **8.8**; **8.9**; **§7.5**; **8.16**; **8.13**; **8.12**; **8.14 inteiro**; **§2.2**; **8.15**; **8.5**; **§7.1**; **8.17**; os dois limiares com o seu fixador; **8.4** e a segunda metade do **8.14**; **§9.3**, **§9.4**, **§9.5**, **§9.8** e **§9.9**; **§7.3** (as três datas de uma medida por palavras); a régua do primeiro ecrã com o «antes» medido |
+| feito nesta sessão | **os três achados da sessão anterior** (a definição da posição de investimento internacional, com origem no Banco de Portugal; a célula A4 corrida e a sua comparação metida no `verify`; `ListaSocial.astro` fora do repositório); **o item 8.11 e o §7.3**, as quatro leituras de aparelho fora do cabeçalho das 7 240 páginas e postas na página da medida e no Método, com a §1.103 a registar o texto governado que muda; a **A7** de `correcoes-a.mjs` verde, a **A11** de `porta.mjs` verde na metade que é deste item, e a **2l** de `matriz.mjs` reescrita e verde |
+| a seguir | **o resto do §9** (2, 6, 7 e 10); **as outras páginas** (a região, o domínio, os índices, os estudos, o Método); **o item 5 do encargo** (o caminho, a busca única, «fonte» diz o publicador, as datas); **a passagem à `matriz.mjs`**, que este bloco desatualizou; **o 8.17b**, que espera pelo F1.1e; o fecho |
+| nada a meio | **nada ficou por acabar.** Os três portões a 0 nesta árvore, com os códigos lidos dos ficheiros; não há `git stash` nem ficheiro por commitar. **Três réguas de fora da cadeia foram corridas nesta sessão** (`porta.mjs`, `correcoes-a.mjs`, `matriz.mjs`), e o que cada uma diz está na secção 3 da sessão |
+| a régua, na cabeça desta sessão | L1 6 598 · L2a 2 · L2b 18 · L2c 10 · L3 **30** · L4 **0** · L5 7 213 · L6 26 178 · 8.5 **0** · 8.8 **0** · 8.13 **0** · 8.14 **0** · 8.17 **0** e **0** · **8.11 0** · **8.4 0** (`node scripts/check-lugar.mjs`, verde) |
+| o modelo e o custo | Claude Opus 5. O contador do harness ao arrancar e ao fechar está na última linha da secção da sessão |
 
 ## A tabela das medidas (decisão do lugar de direção, 07.09)
 
@@ -51,6 +51,8 @@ dormir.
 | 8.14 · «Relance» e «Leitura breve» nas páginas do leitor | 1 304 | **0** · feito | idem |
 | 8.17 · pontos do mapa dos 308 numa página de concelho | não medido sobre um `dist/` (ver abaixo) | **0** · feito | idem |
 | 8.17 · páginas de concelho sem o mapa da sua região | não medido sobre um `dist/` (ver abaixo) | **0** · feito | idem |
+| 8.11 e §7.3 · leituras de aparelho no cabeçalho, somadas sobre as 7 240 páginas | **28 892** | **0** · feito | idem |
+| 8.4 · definições de painel fora da declaração (a comparação da A4, metida no `verify`) | nasce a 0 no commit em que entra | **0** · feito, com duas plantas a morder | idem |
 
 **A L6 é o único teto que subiu nesta sessão, e a razão escreve-se.** A manchete
 de `/` passou a citar duas linhas (a dívida pública e a taxa de desemprego), e
@@ -105,6 +107,279 @@ A quarta é o contador das séries atrasadas que o F1.6 pôs na mobília
 então. O item 8.1 e o §7.3 deste brief mandam essas linhas SAIR do cabeçalho de
 todas as páginas para a página da medida e para o Método: a célula reescreve-se
 quando esse item entrar, e não antes.
+
+---
+
+## Quarta sessão (08.09, noite)
+
+*A quarta sessão de construção pela conta do lugar de direção. Este ficheiro
+numera as passagens de outra maneira, e por isso a secção «O que a quarta sessão
+fez, item a item», mais abaixo, é a da sessão que acabou ao fim da tarde: são
+duas contas da mesma coisa, e ficam as duas ditas em vez de se escolher uma em
+silêncio. O que esta sessão fez está aqui.*
+
+### 1 · Os três achados da sessão anterior, com as decisões do lugar de direção
+
+**Achado 1 · a posição de investimento internacional ganhou definição, e a
+origem é o compilador nacional.** O lugar de direção alargou as origens
+autorizadas, por ordem de preferência, ao Banco de Portugal e depois ao BPM6 do
+FMI ou ao glossário do BCE. **O Banco de Portugal tem o texto**, e é dele que a
+frase sai:
+
+| | |
+|---|---|
+| documento | Banco de Portugal, «BPstat · O que é a posição de investimento internacional (PII)?» |
+| endereço | `https://bpstat.bportugal.pt/conteudos/paginas/940` |
+| lido | 2026-09-08, por `curl` (código **200**, **21 142** bytes), e não pelo resumo de um fetch |
+| excerto (pt) | «A posição de investimento internacional, também conhecida por PII, apresenta o saldo entre os ativos financeiros e os passivos que os residentes de uma economia têm relativamente ao resto do mundo. … A diferença entre os ativos financeiros e os passivos corresponde ao valor líquido da posição de investimento internacional.» |
+| excerto (en) | «The international investment position, also known as IIP, represents the difference between financial assets and liabilities that residents of an economy have vis-à-vis the rest of the world. … The difference between the value of these assets and liabilities corresponds to the net value of the international investment position.» |
+
+A frase que ficou, nas duas edições: «A diferença entre os ativos financeiros e
+os passivos que os residentes de uma economia têm relativamente ao resto do
+mundo, em percentagem do PIB.» e «The difference between the financial assets
+and liabilities that residents of an economy have vis-à-vis the rest of the
+world, as a percentage of GDP.» Nenhuma das 21 medidas diz agora só o rótulo.
+
+**As duas origens que não se deixaram ler, e ficam ditas em vez de supostas.** O
+glossário do Banco em `www.bportugal.pt` responde **403** a `curl`, duas vezes,
+a segunda com os cabeçalhos de um navegador inteiros (`User-Agent`, `Accept`,
+`Accept-Language`, `Sec-Fetch-*`): o corpo devolvido é a página «A verificar se
+a ligação é segura / Checking if the site connection is secure». O PDF do BPM6
+em `www.imf.org` responde **403** nos dois endereços conhecidos. O documento
+metodológico do Banco (`https://bpstat.bportugal.pt/api/media/files/documentos/
+dm_est_bop_pii.pdf`, código 200, 773 098 bytes, 23 páginas, sha256
+`74de577f…6c5b01`) **leu-se inteiro** e não serve: descreve a operação
+estatística, quem a compila e com que fontes, e não define o que a posição é.
+
+**Achado 2 · a célula A4 correu, e a comparação entrou no `verify`.** A decisão
+era «entra no `verify` ou a razão de não entrar fica escrita na régua», e
+entrou, porque a comparação não precisa de navegador nenhum: é texto contra
+texto sobre o HTML construído.
+
+* **Correu-se a célula como estava** (`node tests/inicio/porta.mjs`): **passa
+  nas duas edições** («a definição declarada de cada painel em
+  `/uniao-europeia`: 2 frase(s), 0 diferente(s) da declaração»; a inglesa igual
+  em `/en/european-union`).
+* **A mesma comparação passou a ser uma medida de `check:lugar`**, que corre no
+  `verify` e na CI: «8.4 · definições de painel fora da declaração», a comparar
+  cada parágrafo `data-contexto-painel` com `DEFINICAO_DOS_PAINEIS`, carácter a
+  carácter, na edição da página.
+* **E ela morde, provado com duas plantas** sobre o `dist/`, e não afirmado:
+  * trocada uma palavra da definição do Procedimento na página construída
+    («limitado» por «limitadissimo»), a medida sobe de **0 para 1** e a régua sai
+    a **1**;
+  * tirada a marca `data-contexto-painel` de um dos quatro parágrafos, a medida
+    fica em **0** e a régua sai a **1** por outra via, a que conta a coleção: «a
+    régua viu 3 parágrafo(s) [data-contexto-painel] em dist/, e esperava 4 (2
+    painéis × 2 edições)». Uma comparação sobre uma coleção vazia não prova nada,
+    e é a régua a dizê-lo em vez de passar por não encontrar.
+  * reposto o ficheiro, a medida volta a **0** e a régua sai a **0**.
+* A célula A4 **fica onde está**: mede o mesmo em Chromium, com a página
+  composta e as folhas aplicadas, que é o que um navegador acrescenta a um
+  ficheiro. O que deixou de existir é a dependência de alguém se lembrar de a
+  correr.
+
+**Achado 3 · `ListaSocial.astro` saiu do repositório.** Medido, com o
+conhecido-positivo antes de se acreditar na ausência:
+
+```
+grep -rn "ListaSocial" src scripts tests        → sem saída, código 1
+grep -rln "MapaRespira" src scripts tests       → 5 ficheiros (a régua morde)
+grep -rn "CONTEXTO_DOS_PAINEIS" src scripts tests
+   → src/components/inicio/ListaSocial.astro:71 (um comentário, e mais nada)
+```
+
+### 2 · O item 8.11 e o §7.3: as quatro leituras saem do cabeçalho de todas as páginas
+
+Eram **quatro** e não três, e é por isso que a célula A7 de `correcoes-a.mjs`
+estava vermelha desde 04.09: o painel europeu com a data da última
+reconferência, as fontes com o carimbo da última corrida, o contador das séries
+atrasadas que o F1.6 acrescentou, e as duas contagens da agenda. **Para onde
+foram**, que é o que o §7.3 manda («a página da medida e o Método»):
+
+| a leitura | para onde foi | porquê ali |
+|---|---|---|
+| «Painel europeu · <data>» | «Portugal na União Europeia», dentro do `#painel`, **sem porta** | é a página da medida desde o item 8.16, e é este painel que a data cobre; a leitura era uma porta para `#painel` e está agora dentro dele, e o §7.10 manda tirar uma ligação para o sítio onde ela já está |
+| «Fontes · <carimbo>» e «Séries atrasadas: n · n linhas» | o Método, na regra 6 («A releitura»), no componente que já eram | a porta das três chaves já era `/metodo#releitura`, escrita em `src/lib/prova.mjs` no dia em que o F1.6 as pôs: a leitura passou a viver onde a sua porta sempre apontou |
+| «Agenda: n em curso · n a seguir» | ficam onde já estavam: as portas da primeira página e a regra 8 do Método | as duas chaves continuam a render-se onde o que elas contam se vê, que era a condição escrita no «por fazer» |
+
+**A medida, com o comando** (`node scripts/check-lugar.mjs`, sobre o `dist/`):
+
+| | antes | depois |
+|---|---|---|
+| 8.11 · leituras de aparelho no cabeçalho, sobre as 7 240 páginas | **28 892** | **0** |
+
+O «antes» correu-se com a régua já escrita e o cabeçalho ainda por tocar, para
+que os dois números sejam a mesma conta. A medida conta ELEMENTOS e não páginas:
+tirar uma das quatro não é o mesmo que tirar as quatro, e uma medida por página
+não distinguia as duas coisas.
+
+**O que a mobília perdeu, e o que ela ficou a ser.** Ficou o controlo do tema,
+que não é uma leitura: é um comando, e é o único caminho para o tema escuro.
+Abaixo de 640 px a caixa inteira deixa de se desenhar, e a razão está na folha:
+o controlo já vivia dentro do menu nessa largura, e o que sobrava era um fio de
+1,5 px a tinta debaixo da marca a separar o nome de coisa nenhuma.
+
+**O texto governado do Método mudou em duas frases, e a §1.103 regista-o.** A
+regra 6 dizia «o cabeçalho de todas as páginas mostra-a» e «o cabeçalho di-lo
+por palavras», e o cabeçalho deixou de a mostrar; e dizia «O painel da primeira
+página», e o painel mudou de página com o item 8.16. Um mecanismo que descreve
+um lugar que já não existe é a página a mentir sobre si própria, e o Método é a
+página onde a casa promete o contrário. O carimbo passou de
+`metodo b4cc3594f960` a `metodo 1b20443f130b`.
+
+**A voz, na mesma construção:** 879 frases distintas (eram 885), 37 227
+ocorrências em 1 384 rotas (eram 44 141), autorreferência 0, nada por
+classificar, 752 linhas vivas todas rendidas e 155 retiradas nenhuma rendida.
+Nenhuma linha do inventário mudou de estado com este item: as cadeias são as
+mesmas e mudaram de página, e as duas que o inventário guarda («Séries
+atrasadas:» e «Series behind:») continuam vivas porque `/metodo` é uma rota
+inventariada.
+
+### 3 · As réguas de fora da cadeia, corridas e não supostas
+
+**`tests/inicio/correcoes-a.mjs` · a A7 ficou verde nas duas edições**, e estava
+vermelha desde 04.09. A célula mudou de medida com o item: pedia três leituras
+no documento e uma à vista, e passa a pedir **zero no `<header>` inteiro**, que é
+mais apertado do que o que ela media (uma leitura que voltasse para a barra de
+cima, ou escondida por uma folha, cai na mesma). Corrida inteira: **10 de 32
+réguas falham**, e as dez são da família do mapa e dos alvos (A4 «o mapa
+rende-se a 390 e a pesquisa fica à vista», A5 «uma unidade com página é uma
+porta com nome» e «o leitor de teclado chega à porta do mapa», A10 «zero alvos
+efetivos abaixo de 44 px»), nas duas edições e nas duas larguras. **Não se mediu
+nesta sessão se elas já falhavam antes dela**, e por isso não se diz que são
+antigas: diz-se o que elas nomeiam.
+
+**`tests/inicio/porta.mjs` · 24 de 34 células passam, antes e depois**, e o que
+mudou está dentro dos números:
+
+* **A11**, a segunda metade, fica verde: «as leituras por baixo do nome em 0
+  fila(s) com 0 à vista, 0 px». A primeira metade continua vermelha e não é deste
+  item: «mobília acima do nome a 390: 98,4 px (teto 64) · a barra em 2 fila(s)
+  com 3 item(ns)», e 132,8 px na edição inglesa. É a barra do menu em dois pesos
+  do item 8.9, e o teto de 64 px do brief não está cumprido.
+* **A1** melhora e continua vermelha por outra razão. O fundo máximo das cinco
+  coisas do primeiro ecrã em `/` desceu de **647,5 para 615,3 px**, e em `/en`
+  as duas que estavam de fora entraram (era «cartao: fundo 678,9; selo: fundo
+  666,5» e é agora «fundo máximo 646,8», dentro dos 664). O que a mantém
+  vermelha é a manchete: **5 linhas em `/` e 6 em `/en`**, contra o teto de 3 do
+  item 8.15.
+* **A4** passa nas duas edições (ver o achado 2).
+* As outras vermelhas são A5 e A7 (as 29 unidades e as fichas da busca de `/`,
+  que mudaram com o F1.1d) e A15.
+
+**`tests/inicio/matriz.mjs` · a célula 2l passa, e a régua não chega ao fim.** A
+célula 2l mudou de pergunta com o item: media a leitura na mobília do cabeçalho
+e mede agora as duas metades do que o §7.3 manda, e **passa**: «em `/`: 0 na
+página, 0 no cabeçalho · em `/uniao-europeia`: 1 leitura dentro de `#painel`,
+marca «data-de-atualizacao», 0 âncoras». Para a poder correr foram precisas três
+coisas, e as três ficam escritas:
+
+1. **A régua rebentava** na célula do ponto escolhido, porque o item 8.17 tirou o
+   mapa dos 308 pontos da página do concelho e ela chamava `classList` sobre
+   `null`. Passa a devolver a ausência e a contar uma falha com nome.
+2. **A célula 2i·5 rebentava** a seguir, porque ia a `/?densidade=leitura`, e o
+   item 8.14 tirou o comando das densidades e com ele o estado do endereço, e o
+   8.16 levou os 21 cartões para outra página. Vai agora a `/uniao-europeia` e
+   toca num cartão, que é a única interação que a página tem: a promessa medida
+   é a mesma.
+3. **Cada célula passou a imprimir-se quando é medida**, no erro padrão, em vez
+   de só no relatório final. Uma régua que rebenta a meio perdia as oitenta e tal
+   medições já feitas, e uma régua que não diz nada do que mediu é
+   indistinguível de uma que não mediu nada.
+
+**Com isso, a régua diz o que mediu: 45 células passam, 24 falham, e ela pára na
+setenta.** Pára numa célula que lê `[data-leituras="pdm"]` em `/`, e essa marca
+saiu da primeira página com o item 8.16. **A dívida é deste bloco e fica
+nomeada:** `matriz.mjs` tem ainda oito navegações a `/?densidade=leitura` e um
+punhado de células que supõem os 21 cartões na primeira página. É uma passagem
+sua, e não cabia nesta sessão.
+
+### 4 · O 8.17b continua por fechar, e a razão é a mesma medida outra vez
+
+O lugar de direção mandou fundir `origin/main` quando o F1.1e lá estiver e
+fechar o 8.17b com uma linha (`nivel="unidade"` na chamada de `MapaRespira` de
+`src/views/MunicipioView.astro`); e disse o que fazer se ele não estivesse:
+dizê-lo e parar. **Não está.** Medido a 08.09.2026 ao fim da noite, com o
+conhecido-positivo:
+
+```
+git fetch origin && git log origin/main --oneline -1
+  → fe6478aa   (o mesmo em que este ramo já estava fundido de manhã)
+
+git grep -l "MapaRespira" origin/main -- src            ← o conhecido-positivo
+  → origin/main:src/components/inicio/ListaDosNomes.astro
+    origin/main:src/styles/inicio.css
+    origin/main:src/views/HomeView.astro   (a régua morde)
+
+git grep -l "unidadeDoConcelho" origin/main             → sem saída, código 1
+git show origin/main:src/components/inicio/MapaRespira.astro | grep -n nivel
+  → 223:  data-nivel={postura === 'inteiro' ? 'pais' : undefined}
+```
+
+O componente em `origin/main` não tem o parâmetro `nivel` e o índice
+`unidadeDoConcelho()` não existe em ficheiro nenhum. **Nenhuma mensagem do lugar
+de direção chegou nesta sessão.** A linha não se escreveu, e a página do
+concelho continua a mostrar o nível da REGIÃO, que é o que a emenda de 08.09 à
+tarde diz que serve até o F1.1e existir.
+
+### 5 · Os achados desta sessão contra o brief
+
+**1. O item 8.15 não está cumprido, e a régua di-lo.** A manchete a 390 px tem
+**5 linhas em `/` e 6 em `/en`**, contra o teto de 3 que o item escreve («no
+telemóvel a manchete do país fica com no máximo dois algarismos selados e cabe
+em três linhas, medido»). A A1 de `porta.mjs` mede-o e está vermelha. A terceira
+sessão deu o item por feito no seu relatório; a célula que o mede não foi corrida
+nesse dia.
+
+**2. O item 8.9 não está cumprido no número que ele fixa.** A barra acima do
+nome mede **98,4 px** em `/` e **132,8 px** em `/en`, em duas filas, contra o
+teto de 64 px da A11. Os três destinos do leitor estão no primeiro ecrã, que é a
+outra metade da medida do item, mas «sem mais de uma linha de mobília» não está
+cumprido.
+
+**3. `tests/inicio/matriz.mjs` está largamente desatualizada por causa deste
+bloco**, e é a régua com mais células do sítio. Os itens 8.13, 8.14, 8.16 e 8.17
+mudaram as páginas que ela lê, e ela pára a meio. Precisa de uma passagem sua,
+antes do fecho do bloco.
+
+**4. O `?densidade=leitura` já não existe em página nenhuma**, e o item 8.14
+previa exactamente esta bifurcação («o estado `?densidade=leitura` fica só se as
+réguas precisarem dele sem comando visível, ou reescreve-se a célula 2i·5 da
+matriz»). Reescreveu-se a 2i·5; as outras oito navegações que o usam ficam por
+reescrever.
+
+### 6 · O modelo, o custo e as corridas
+
+**Claude Opus 5.** O contador do harness dava 15 000 000 de símbolos no arranque
+da sessão e cerca de 14 643 000 ao escrever esta linha: **da ordem de 357 mil**.
+É o contador da janela e não a fatura; o número da fatura é o que o harness
+disser.
+
+**Os três portões, com os códigos lidos dos ficheiros e não do ecrã**, na árvore
+do penúltimo commit desta sessão (a régua `check:lugar` com as duas medidas
+novas lá dentro):
+
+```
+npm run build     > build.log 2>&1;     echo $? > build.exit     → 0
+npm run verify    > verify.log 2>&1;    echo $? > verify.exit    → 0
+npm run typecheck > typecheck.log 2>&1; echo $? > typecheck.exit → 0
+```
+
+O `verify` corre `check:lugar` e imprime lá dentro as duas medidas novas: «8.11
+· leituras de aparelho no cabeçalho 0 (teto 0) ok» e «8.4 · definições de painel
+fora da declaração 0 (teto 0) ok».
+
+**Os cinco commits desta sessão**, por ordem: o componente órfão fora; a
+definição da posição de investimento internacional; as quatro leituras fora do
+cabeçalho; a comparação da A4 no `verify`; a matriz a andar. Os três portões
+correram-se na árvore do quarto, que contém os três primeiros; o quinto toca só
+numa régua de fora da cadeia, e essa régua foi corrida à mão, que é o que a
+governa.
+
+**A corrida da CI** lê-se na primeira linha de `gh run list --branch
+lugar-2026-09-04`: um commit não pode conter o número da corrida que ele dispara,
+e o `portao.yml` cancela a corrida anterior a cada empurrão.
 
 ---
 
@@ -802,17 +1077,27 @@ régua a ser desligada.
 
 ## O que fica por fazer, pela ordem em que se faz
 
-A régua imprime os catorze números a qualquer momento
+A régua imprime os dezasseis números a qualquer momento
 (`node scripts/check-lugar.mjs`), e é por ela que se sabe onde o bloco está.
 
-**O item 1 desta lista saiu a 08.09.2026: o 8.4 está feito**, com as vinte e uma
-definições e as duas dos painéis citadas e declaradas, e com o §9.3 e o §9.4 que
-andavam com ele. O que fica dele é o achado 1 acima (a posição de investimento
-internacional, sem uma definição em palavras simples com origem autorizada).
+**Dois itens desta lista saíram a 08.09.2026.** O **8.4** está feito, com as
+vinte e uma definições e as duas dos painéis citadas e declaradas, com o §9.3 e
+o §9.4 que andavam com ele, e desde a noite de 08.09 com a posição de
+investimento internacional também (a origem é o Banco de Portugal, e está na
+secção da quarta sessão). O **8.11 e o §7.3** ficaram feitos na noite de 08.09:
+as quatro leituras de aparelho saíram do cabeçalho das 7 240 páginas
+(28 892 → 0) e foram para a página da medida e para o Método, a A7 de
+`correcoes-a.mjs` ficou verde, e a §1.103 registou o texto governado do Método
+que muda com elas.
+
+**E um item novo entrou, e é dívida deste bloco:** `tests/inicio/matriz.mjs`
+está largamente desatualizada, porque os itens 8.13, 8.14, 8.16 e 8.17 mudaram
+as páginas que ela lê. Ela mede 69 das suas células e pára; a razão está na
+secção 3 da quarta sessão.
 
 | # | o que falta | onde se toca | a nota de quem retoma |
 |---|---|---|---|
-| 1 | **8.11 e §7.3** · as três leituras da mobília fora do cabeçalho de todas as páginas | `Masthead.astro`, `SinalDasFontes.astro`, `MetodoView`, `AgendaView`, `src/lib/prova.mjs`, `tests/inicio/porta.mjs` (A7) e `tests/inicio/correcoes-a.mjs` (A7) | **a primeira metade do item está feita, e a medição prova-o**: a prosa da casa no primeiro ecrã das quatro páginas do leitor está entre 0 e 33 caracteres, e nenhum deles é uma explicação (ver a secção da medição acima). **O que falta é a segunda metade**: «Painel europeu · <data>», «Fontes em atraso · …» e as duas contagens da agenda saem do cabeçalho de todas as páginas e vão para a página da medida e para o Método. Quatro coisas andam com elas, e nenhuma é opcional: as duas chaves da prova da agenda têm de continuar a render-se onde o que elas contam se vê; as linhas do inventário mudam de rota ou passam a `retirada`; a célula A7 de `correcoes-a.mjs` (vermelha desde o F1.6, quatro leituras onde ela exige três) reescreve-se para o que ficar; e a A7 de `porta.mjs` mede a cabeça. O «antes» está medido e escrito em `primeiro-ecra-antes.json` |
+| 1 | **a passagem à `matriz.mjs`**, que este bloco desatualizou | `tests/inicio/matriz.mjs` | ela mede 69 células e pára numa que lê `[data-leituras="pdm"]` em `/`, e essa marca saiu da primeira página com o item 8.16. Ficam oito navegações a `/?densidade=leitura`, que o item 8.14 apagou, e as células que supõem os 21 cartões na primeira página. Cada célula já se imprime quando é medida, e por isso o que ela mede não se perde quando ela pára |
 | 2 | **o resto do §9** (2, 6, 7 e 10) | o inventário da voz, `DominioView`, `Pesquisa.astro` | o 3, o 4, o 5, o 8 e o 9 estão feitos. O 2 e o 6 andam com o 8.11; o 7 anda com a busca única do §2.6; o 10 é a dívida da linha F1.2 e fica para o F3.3, como o próprio §9 escreve |
 | 3 | **as outras páginas** (o item 4 do encargo) | `RegiaoView`, `DominioView`, os índices, `EstudoView`, `MetodoView` | a região (§1 e §7.6), o domínio (§7.7), os índices (§7.8), os estudos (§7.4 e 8.6), o Método no telemóvel (§7.9). **A do concelho está feita** (§7.1, 8.10, 8.17); falta-lhe a linha dos estudos (§1 e 8.6), que anda com os estudos |
 | 4 | **item 5 do encargo** · o caminho no cabeçalho (§2.5, com o desenho da §C), a busca é uma (§2.6), «fonte» diz o publicador (§2.4, §7.2, a L6), as datas de frescura (§7.3) | `Caminho.astro` (por escrever), `Pesquisa.astro`, `Provenance.astro`, `gate-html.mjs` | a L5 (7 213) e a L6 (26 178) são os dois números grandes que ainda não desceram, e são estes dois itens |
