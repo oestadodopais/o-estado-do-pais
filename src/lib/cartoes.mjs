@@ -418,9 +418,11 @@ function modeloDaLinha(id, lang) {
       ? s.estado.comissao
       : fixador === 'lei'
         ? s.estado.lei
-        : fixador === 'porRegistar'
-          ? s.estado.porRegistar
-          : null;
+        : fixador === 'pacto'
+          ? s.estado.pacto
+          : fixador === 'conselho'
+            ? s.estado.conselho
+            : null;
   const PALAVRA = {
     fora: par?.fora ?? s.estado.semLimiar,
     dentro: par?.dentro ?? s.estado.semLimiar,

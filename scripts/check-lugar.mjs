@@ -122,8 +122,10 @@ const TETOS = {
      declara quem o fixou (`limiarFixadoPor`, lista fechada em
      `src/data/figuras.mjs`), o cartão e a linha do limiar dizem-no em palavras
      («dentro do limiar da Comissão», «dentro do limite legal», «dentro do limiar
-     publicado») e a leitura das treze medidas do Procedimento diz numa frase o
-     que o limiar é e quem o fixou. Os blocos que a casa já qualificava por outra
+     do Pacto de Estabilidade e Crescimento», «fora do limiar recomendado pelo
+     Conselho da UE») e a leitura diz numa frase o que o limiar é e quem o fixou,
+     em todos os fixadores menos o `lei`, que já tem a sua frase na página do
+     concelho. Os blocos que a casa já qualificava por outra
      via — o Método, a agenda das fontes, a manchete e o cabeçalho da página
      europeia — estão na lista dos qualificadores, escritos por extenso. */
   d85_limiar_sozinho: 0,
@@ -281,13 +283,19 @@ const BLOCOS = 'p,li,dd,dt,h1,h2,h3,h4,figcaption,summary,blockquote,td,th,capti
  * e a frase que diz o que o limiar é («O limiar é …»).
  */
 const QUALIFICADORES_DO_LIMIAR = [
-  /* os três fixadores do limiar, nas duas edições */
+  /* os quatro fixadores do limiar, nas duas edições. Eram três, e o
+     `porRegistar` («limiar publicado») saiu a 08.09.2026 quando se leram os
+     documentos que as suas duas linhas citam: um diz o Pacto de Estabilidade e
+     Crescimento, o outro diz o Conselho da União Europeia. A régua conta a
+     forma que se rende, e por isso a lista muda com eles. */
   'limiar da comissão',
   'commission threshold',
   'limite legal',
   'legal limit',
-  'limiar publicado',
-  'published threshold',
+  'limiar do pacto de estabilidade e crescimento',
+  'stability and growth pact threshold',
+  'limiar recomendado pelo conselho da ue',
+  'threshold recommended by the council of the eu',
   /* A AUSÊNCIA DECLARADA. «sem limiar» é uma das três palavras do vocabulário
      fechado do estado, e «não tem limiares» é a frase do Painel Social. */
   'sem limiar',

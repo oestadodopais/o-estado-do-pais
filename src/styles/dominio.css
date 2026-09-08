@@ -135,6 +135,21 @@
   font-size: 14px;
   color: var(--muted);
 }
+/* A FRASE QUE DIZ O QUE O LIMIAR É E QUEM O FIXOU (F1.10, item 8.5, segunda
+   passagem de 08.09.2026). Vem logo abaixo da linha do limiar, na mesma letra de
+   instrumentação e na mesma cor de mobília: é a referência contra a qual o valor
+   se lê, e não a definição da medida. É a gémea de `.dobra-limiar-frase` na
+   leitura da primeira página e da página europeia; a medida do bloco (a largura
+   máxima da leitura) é a mesma. */
+.dominio-limiar-frase {
+  margin: 4px 0 0;
+  font-family: var(--f-instr);
+  font-size: 12px;
+  line-height: 1.45;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  max-width: 60ch;
+}
 .dominio-limiar-k,
 .dominio-data-k {
   text-transform: lowercase;

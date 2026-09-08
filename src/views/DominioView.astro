@@ -438,6 +438,19 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
             </p>
           )}
 
+          {/* A FRASE QUE DIZ O QUE O LIMIAR É E QUEM O FIXOU (F1.10, item 8.5,
+              segunda passagem de 08.09.2026). A primeira passagem pô-la na
+              leitura da primeira página, da página europeia e da página do
+              concelho, e esta página ficou de fora: as três medidas com limiar
+              que ela mostra têm três fixadores diferentes, e é aqui que o saldo
+              e a despesa líquida vivem. A frase vem do par do fixador e a vista
+              não escolhe: um par com frase rende-a, um par sem frase não a
+              rende. Só o `lei` não tem, porque a página do concelho já diz a
+              sua, uma vez, e o §0 do brief manda uma coisa num lugar só. */}
+          {medida.limiar && parDoEstado(medida)?.frase && (
+            <p class="dominio-limiar-frase">{parDoEstado(medida)?.frase}</p>
+          )}
+
           {outras.map((o) => (
             <>
               <p class="dominio-valor dominio-valor-irmao">

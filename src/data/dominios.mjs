@@ -235,7 +235,7 @@ export const DOMINIOS = /** @type {const} */ ([
  *   ambito?: ParDeLinguas,
  *   rotuloDoValor?: ParDeLinguas,
  *   limiar?: Limiar|null,
- *   limiarFixadoPor?: 'comissao'|'lei'|'porRegistar'|null,
+ *   limiarFixadoPor?: 'comissao'|'lei'|'pacto'|'conselho'|null,
  *   porConcelho?: 'ganho'|'indice'|null,
  *   forma?: 'barra-concelho'|'mapa'|null,
  *   ausencia?: ParDeLinguas|null,
@@ -281,18 +281,25 @@ export const MEDIDAS_DO_DOMINIO_1 = /** @type {const} */ ([
       en: 'General government balance',
     },
     unidade: { pt: 'Percentagem do PIB', en: 'Percentage of GDP' },
-    /* O limiar de 3 % do Protocolo n.º 12, do lado do défice: um saldo abaixo de
+    /* O limite de défice de 3 % do PIB, do lado do défice: um saldo abaixo de
        −3 % está fora. O sinal escreve-se, porque o limiar é negativo. */
     limiar: { nl: '3', sinal: '−', lado: 'inferior', simbolo: '%' },
-    /* `porRegistar` E NÃO `comissao` (F1.10, item 8.5). Esta linha não é do
-       painel do Procedimento, e quem fixou o seu limiar não está registado nesta
-       casa: a `note` da linha escreve «O limiar de 3 % do PIB não está nesta
-       resposta: está na página Statistics Explained do Eurostat, alojada neste
-       estudo, e não tem linha própria», e o Protocolo n.º 12 que o comentário
-       acima nomeia é a leitura de quem escreveu o comentário, e não uma linha do
-       livro-razão nem uma decisão registada. O cartão diz «dentro do limiar
-       publicado», que é o que a linha prova, e a leitura não afirma um autor. */
-    limiarFixadoPor: 'porRegistar',
+    /* `pacto`, E A ORIGEM É O DOCUMENTO QUE A LINHA CITA (F1.10, item 8.5,
+       segunda passagem de 08.09.2026). A entrada dizia `porRegistar` enquanto
+       ninguém tinha lido esse documento; a decisão do lugar de direção é que o
+       fixador vem dele e de mais lado nenhum. A `note` da linha escreve «O
+       limiar de 3 % do PIB não está nesta resposta: está na página Statistics
+       Explained do Eurostat, alojada neste estudo, e não tem linha própria», e
+       essa página diz, palavra por palavra: «Under the terms of the EU's
+       Stability and Growth Pact (SGP), Member States pledged to keep their
+       deficits and debt below certain limits: a Member State's government
+       deficit may not exceed 3% of its gross domestic product (GDP), while its
+       debt may not exceed 60% of GDP.» O cartão diz de que lado do limiar do
+       Pacto o valor está, que é o que o documento prova. O Protocolo n.º 12, que
+       é onde o limite está em direito, continua por ler (o EUR-Lex devolveu 202
+       com corpo vazio ao verificador de 01.09.2026) e por isso não é ele que a
+       página nomeia. */
+    limiarFixadoPor: 'pacto',
     porConcelho: null,
     forma: null,
   },
@@ -323,11 +330,18 @@ export const MEDIDAS_DO_DOMINIO_1 = /** @type {const} */ ([
        Conselho das Finanças Públicas. É um limiar publicado, como os do
        Procedimento, e entra pelo mesmo motivo declarado. */
     limiar: { nl: '5', lado: 'superior', simbolo: '%' },
-    /* `porRegistar` PELA MESMA RAZÃO DE E2 (F1.10, item 8.5): o excerto da linha
+    /* `conselho`, E A ORIGEM É O MESMO DOCUMENTO QUE A LINHA CITA (F1.10, item
+       8.5, segunda passagem de 08.09.2026). O excerto da linha, na p. 9 do PDF,
        escreve «superando em 1,4 p.p. a taxa de crescimento de 5% recomendada» e
-       não diz por quem; o Conselho da UE que o comentário acima nomeia não está
-       no excerto, nem na nota, nem numa decisão registada. */
-    limiarFixadoPor: 'porRegistar',
+       não diz por quem; a p. 6 do MESMO parecer di-lo, palavra por palavra:
+       «Nesse documento comprometeu-se com uma determinada trajetória de
+       crescimento da despesa líquida, que depois foi aprovada pelo Conselho da
+       UE, passando a ser a trajetória assumida nos termos da Recomendação do
+       Conselho da União Europeia de janeiro de 2025.» A p. 9 repete a
+       atribuição na frase de que o excerto é a segunda metade: «a taxa de
+       crescimento em 2025 foi superior à prevista no compromisso assumido por
+       Portugal e endossado pelo Conselho da UE». */
+    limiarFixadoPor: 'conselho',
     porConcelho: null,
     forma: null,
   },

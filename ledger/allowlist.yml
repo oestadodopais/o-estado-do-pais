@@ -52,11 +52,22 @@ contexts:
       medição. O valor medido em cima da régua vem sempre do livro-razão.
   - id: limiar-do-quadro
     why: >-
-      Limiar publicado num quadro institucional — o valor de referência do
-      Procedimento relativo aos Desequilíbrios Macroeconómicos, fixado no
-      Regulamento (UE) n.º 1176/2011 e revisto pela Comissão. É a regra contra a
-      qual a medição é lida, não uma medição de Portugal: mesma natureza que a
-      escala de um instrumento. A medição vem sempre do livro-razão, ao lado.
+      Limiar publicado por um quadro institucional. É a regra contra a qual a
+      medição é lida, não uma medição de Portugal: mesma natureza que a escala de
+      um instrumento. A medição vem sempre do livro-razão, ao lado. O motivo
+      cobre três famílias, e cada uma tem a sua origem, porque uma dispensa que
+      descrevesse só a primeira estaria a justificar as outras duas com uma
+      frase que não é sobre elas (achado 2 do F1.10, 08.09.2026): (1) os treze
+      valores de referência do painel do Procedimento relativo aos
+      Desequilíbrios Macroeconómicos, fixados no Regulamento (UE) n.º 1176/2011
+      e revistos pela Comissão, que a nota de cada uma dessas treze linhas
+      escreve; (2) o limite de défice de 3 % do PIB do saldo das administrações
+      públicas, que a página Statistics Explained do Eurostat nomeada pela nota
+      dessa linha atribui ao Pacto de Estabilidade e Crescimento; (3) a taxa de
+      crescimento de 5 % da despesa líquida, que o Parecer n.º 02/2026 do
+      Conselho das Finanças Públicas, citado por essa linha, atribui à trajetória
+      aprovada pelo Conselho da União Europeia. Quem fixou cada um está
+      declarado em `limiarFixadoPor`, na declaração da medida.
   - id: data-da-linha
     why: >-
       Uma das três datas de uma linha do livro-razão (o período de referência, a
