@@ -112,9 +112,9 @@ quando esse item entrar, e não antes.
 ### A manchete do país, e a manchete da página europeia (decisão 1; itens 8.15 e 8.16)
 
 **A manchete de `/` é agora uma frase com duas medidas de cabeça do domínio
-vivo.** «A dívida pública é 89,7% do PIB e a taxa de desemprego é 6% da população
-ativa.» / «Government debt is 89.7% of GDP and the unemployment rate is 6% of the
-labour force.» Dois algarismos selados, sem adjetivo, na forma da regra da
+vivo.** Lida do `dist/` desta cabeça: «A dívida pública é 89,7% do PIB e a taxa de
+desemprego é 6% da população ativa.» / «Government debt is 89,7% of GDP and the
+unemployment rate is 6% of the labour force.» Dois algarismos selados, sem adjetivo, na forma da regra da
 manchete, com cada valor a abrir a sua linha e o selo na fila de baixo. As duas
 linhas não se escolhem na vista: são lidas de `FAIXA_DO_DOMINIO_1`, e a
 construção pára se alguma delas deixar de ser medida de cabeça de um domínio
