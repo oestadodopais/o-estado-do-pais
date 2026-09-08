@@ -55,7 +55,7 @@ import { concelhos, pecasDoConcelho } from '../lib/inicio.mjs';
 import { atrasoDaLinha } from '../lib/frescura.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { routePath } from '../lib/routes.mjs';
-import { regiaoDoConcelho } from '../lib/mapa-regioes.mjs';
+import { unidadeDoConcelho } from '../lib/mapa.mjs';
 import { canonicalUrl, SITE_NAME, SITE_URL } from '../../site.config.mjs';
 import { t } from '../i18n/strings.mjs';
 /* A folha da primeira página, porque é dela que vêm a peça e a régua. As duas
@@ -79,11 +79,11 @@ const nome = m.nome[lang] ?? m.nome.pt;
    uma segunda tabela. Um concelho fora das nove fecha a construção: o mapa desta
    página é o da região dele, e um mapa de outra região seria a página a mostrar
    um sítio onde ela não está. */
-const regiaoDoMapaDeste = regiaoDoConcelho(slug);
-if (!regiaoDoMapaDeste) {
+const unidadeDoMapaDeste = unidadeDoConcelho(slug);
+if (!unidadeDoMapaDeste) {
   throw new Error(
-    `municípios: o concelho "${slug}" não está em nenhuma das nove regiões do mapa. ` +
-      'O mapa desta página é o da região dele (item 8.17 do F1.10), e sem região não há mapa.',
+    `municípios: o concelho "${slug}" não está em nenhuma das 29 unidades da Carta. ` +
+      'O mapa desta página é o da unidade dele (item 8.17b do F1.10), e sem unidade não há mapa.',
   );
 }
 
@@ -676,18 +676,27 @@ const metodoPath = routePath('metodo', lang);
         do concelho apontado. É isso que passa a ser «trocar de concelho»; a lista
         de `/municipios` fica como a alternativa sem guião, com a busca.
 
-        A REGIÃO NÃO SE ESCREVE AQUI: lê-se dos mesmos nove ficheiros que o guião
-        da primeira página lê (`regiaoDoConcelho()`), e uma página cujo concelho
-        não esteja em nenhuma das nove fecha a construção em vez de render um mapa
-        de outro sítio.
+        E O NÍVEL PASSOU DA REGIÃO À UNIDADE (item 8.17b, 08.09.2026). A primeira
+        passagem pôs aqui o nível da REGIÃO, porque era o que o mapa daquele dia
+        tinha; a emenda de 08.09 à tarde diz que ele serve «até o F1.1e existir»,
+        e o F1.1e existe: `origin/main` traz o `MapaRespira` com o parâmetro
+        `nivel` e o índice `unidadeDoConcelho()`, e o desenho da primeira página
+        voltou às 29 unidades da Carta. A página do concelho pede o nível da
+        UNIDADE dele, que é o seu distrito ou a sua ilha, com os concelhos dela e
+        o da página marcado.
+
+        A UNIDADE NÃO SE ESCREVE AQUI: lê-se do mesmo artefacto que o mapa da
+        primeira página lê (`unidadeDoConcelho()`, sobre a Carta), e uma página
+        cujo concelho não esteja em nenhuma das 29 fecha a construção em vez de
+        render um mapa de outro sítio.
         ------------------------------------------------------------------ */}
     <MapaRespira
       slot="instrumento"
       s={s}
       lang={lang}
       concelhos={concelhos()}
-      postura="regiao"
-      regiao={regiaoDoMapaDeste}
+      postura="localizador"
+      nivel="unidade"
       escolhido={slug}
     />
   </CabecaDoLugar>
@@ -1405,5 +1414,5 @@ const metodoPath = routePath('metodo', lang);
       área apontada no lugar fixo, copiado do `<title>` que o servidor desenhou, e
       o destino da porta, copiado do `href` dela. Sem ele o mapa continua a ser
       quarenta e sete portas, uma por concelho. */}
-  <script src="/js/mapa-regioes.js" defer is:inline></script>
+  <script src="/js/mapa-unidades.js" defer is:inline></script>
 </Base>

@@ -1701,7 +1701,7 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
 
      O QUE O CARTÃO RETRATA MUDA COM A PÁGINA, e o que ele confere muda com ele:
      eram os 308 pontos e um anel; são as áreas da região e uma marca de
-     escolhido. A contagem não é escrita — é a do desenho daquela região, lida do
+     escolhido. A contagem não é escrita: é a do desenho daquela unidade, lida do
      mesmo ficheiro que a página lê — e a corrida pára se ela for zero ou se a
      marca não estiver numa área só. Os pontos continuam a existir no componente,
      na postura do selo, que hoje nenhuma página rende; o dia em que voltarem, o
@@ -1715,16 +1715,23 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
         `retratá-los.`,
     );
   }
-  const areasDaRegiao = localizadorRaiz.querySelectorAll('#mapa path.uni').length;
-  if (areasDaRegiao === 0 || areasDaRegiao >= CONCELHOS_DA_CARTA) {
+  /* A UNIDADE E NÃO A REGIÃO, E O ANEL POR CLASSE (item 8.17b, 08.09.2026). A
+     primeira passagem pôs aqui o nível da REGIÃO, porque era o que o mapa
+     daquele dia tinha; o F1.1e devolveu o desenho às 29 unidades da Carta e
+     reescreveu o componente, e a página do concelho passou a pedir o nível da
+     UNIDADE dele. A conta não muda (uma unidade tem menos concelhos do que os
+     308 e mais do que nenhum); mudam a palavra e a marca do anel, que era
+     `data-escolhido` e é a classe `uni-escolhida` no `<path>`. */
+  const areasDaUnidade = localizadorRaiz.querySelectorAll('#mapa path.uni').length;
+  if (areasDaUnidade === 0 || areasDaUnidade >= CONCELHOS_DA_CARTA) {
     morre(
-      `o mapa de \`dist/municipios/evora/index.html\` tem ${areasDaRegiao} área(s) (\`path.uni\`), e ` +
-        `uma região tem menos concelhos do que os ${CONCELHOS_DA_CARTA} da Carta e mais do que ` +
-        `nenhum. O item 8.17 do F1.10 põe ali o nível da REGIÃO do mapa do F1.1d; um desenho com ` +
+      `o mapa de \`dist/municipios/evora/index.html\` tem ${areasDaUnidade} área(s) (\`path.uni\`), e ` +
+        `uma unidade tem menos concelhos do que os ${CONCELHOS_DA_CARTA} da Carta e mais do que ` +
+        `nenhum. O item 8.17b do F1.10 põe ali o nível da UNIDADE do mapa do F1.1e; um desenho com ` +
         `todos os concelhos do país seria o mapa do país outra vez.`,
     );
   }
-  const aneis = localizadorRaiz.querySelectorAll('#mapa [data-escolhido]').length;
+  const aneis = localizadorRaiz.querySelectorAll('#mapa path.uni-escolhida').length;
   if (aneis !== 1) morre(`o mapa de \`dist/municipios/evora/index.html\` marca ${aneis} concelho(s) escolhido(s), e devia marcar um.`);
 
   /* A LEGENDA DE NEUTRALIDADE JÁ NÃO RENDE, e a corrida confere-o antes de o
@@ -1775,7 +1782,7 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   <section class="ds-bloco">
     <h2>Um lugar escolhido é um contorno, e não um enchimento</h2>
     <div class="ds-mostra ds-mostra-larga">${localizador}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/municipios/evora/index.html</code> · o mapa da região daquele concelho, que substituiu o cartão dos 308 pontos a 08.09.2026 (item 8.17 do F1.10): ${areasDaRegiao} áreas, que são os concelhos que o ficheiro daquela região desenha, de entre os ${CONCELHOS_DA_CARTA} da Carta, e ${aneis} marcado. Na primeira página nenhum lugar vem escolhido; aqui a marca é posta na construção, porque a página é de um concelho. O glifo continua a ser o da Emenda 10: o mesmo traço, mais grosso, e nunca um enchimento. Medido nesta corrida: ${pontos} pontos do mapa dos 308 nesta página.</p>
+    <p class="ds-nota"><code class="ds-mono">dist/municipios/evora/index.html</code> · o mapa da unidade daquele concelho (o seu distrito ou a sua ilha), que substituiu o cartão dos 308 pontos a 08.09.2026 (item 8.17 do F1.10, e o nível da unidade com o 8.17b): ${areasDaUnidade} áreas, que são os concelhos que o ficheiro daquela unidade desenha, de entre os ${CONCELHOS_DA_CARTA} da Carta, e ${aneis} marcado. Na primeira página nenhum lugar vem escolhido; aqui a marca é posta na construção, porque a página é de um concelho. O glifo continua a ser o da Emenda 10: o mesmo traço, mais grosso, e nunca um enchimento. Medido nesta corrida: ${pontos} pontos do mapa dos 308 nesta página.</p>
   </section>
 
   <section class="ds-bloco">
@@ -1789,7 +1796,7 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
     'Disposições',
     1240,
     cartao({ grupo: 'Disposições', viewport: 1240, titulo: 'O mapa por unidades', corpo, familias: ['inicio', 'municipio'] }),
-    `${unidades} unidades, ${concelhosDoDistrito} concelhos e ${areasDaRegiao} áreas de uma região, três mapas de dist/`
+    `${unidades} unidades, ${concelhosDoDistrito} concelhos e ${areasDaUnidade} áreas de uma unidade, três mapas de dist/`
   );
 }
 

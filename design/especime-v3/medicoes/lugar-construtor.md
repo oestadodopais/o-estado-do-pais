@@ -12,12 +12,12 @@ deste relatório foi escrito à mão: cada um tem ao lado o comando que o mediu.
 | | |
 |---|---|
 | cabeça | a última do ramo (`git rev-parse HEAD`) |
-| `main` fundido | `fe6478aa` (só documentos: a §1.102 com as emendas, o §10 do brief com o 8.17 emendado, o brief do F1.1e). **`origin/main` continua sem o F1.1e** (medido, com o conhecido-positivo, na secção do 8.17b) |
+| `main` fundido | **`13372937`**, com o F1.1e inteiro (a fusão trouxe cinco conflitos, e a resolução de cada um está na secção 4 da quarta sessão) |
 | `build` · `verify` · `typecheck` | **0** · **0** · **0** (códigos lidos de `build.exit`, `verify.exit`, `typecheck.exit`) |
 | a corrida da CI | lê-se na primeira linha de `gh run list --branch lugar-2026-09-04`. Um commit não pode conter o número da corrida que ele dispara, e por isso o que aqui fica é o comando |
 | feito nas sessões anteriores | a régua (encargo (b)); **§9.1**; **8.8**; **8.9**; **§7.5**; **8.16**; **8.13**; **8.12**; **8.14 inteiro**; **§2.2**; **8.15**; **8.5**; **§7.1**; **8.17**; os dois limiares com o seu fixador; **8.4** e a segunda metade do **8.14**; **§9.3**, **§9.4**, **§9.5**, **§9.8** e **§9.9**; **§7.3** (as três datas de uma medida por palavras); a régua do primeiro ecrã com o «antes» medido |
-| feito nesta sessão | **os três achados da sessão anterior** (a definição da posição de investimento internacional, com origem no Banco de Portugal; a célula A4 corrida e a sua comparação metida no `verify`; `ListaSocial.astro` fora do repositório); **o item 8.11 e o §7.3**, as quatro leituras de aparelho fora do cabeçalho das 7 240 páginas e postas na página da medida e no Método, com a §1.103 a registar o texto governado que muda; a **A7** de `correcoes-a.mjs` verde, a **A11** de `porta.mjs` verde na metade que é deste item, e a **2l** de `matriz.mjs` reescrita e verde |
-| a seguir | **o resto do §9** (2, 6, 7 e 10); **as outras páginas** (a região, o domínio, os índices, os estudos, o Método); **o item 5 do encargo** (o caminho, a busca única, «fonte» diz o publicador, as datas); **a passagem à `matriz.mjs`**, que este bloco desatualizou; **o 8.17b**, que espera pelo F1.1e; o fecho |
+| feito nesta sessão | **os três achados da sessão anterior** (a definição da posição de investimento internacional, com origem no Banco de Portugal; a célula A4 corrida e a sua comparação metida no `verify`; `ListaSocial.astro` fora do repositório); **o item 8.11 e o §7.3**, as quatro leituras de aparelho fora do cabeçalho das 7 240 páginas e postas na página da medida e no Método, com a §1.103 a registar o texto governado que muda; a **A7** de `correcoes-a.mjs` verde, a **A11** de `porta.mjs` verde na metade que é deste item, e a **2l** de `matriz.mjs` reescrita e verde; **o 8.17b**, depois de o F1.1e aterrar em `main`: a página do concelho mostra a unidade dele, com 14 áreas, 0 pontos e o anel em Évora, medido na página real |
+| a seguir | **o resto do §9** (2, 6, 7 e 10); **as outras páginas** (a região, o domínio, os índices, os estudos, o Método); **o item 5 do encargo** (o caminho, a busca única, «fonte» diz o publicador, as datas); **a passagem à `matriz.mjs`**, que este bloco desatualizou; o fecho (as capturas, as plantas da L9 corridas outra vez, o `REVISOES-DO-INVENTARIO.md`) |
 | nada a meio | **nada ficou por acabar.** Os três portões a 0 nesta árvore, com os códigos lidos dos ficheiros; não há `git stash` nem ficheiro por commitar. **Três réguas de fora da cadeia foram corridas nesta sessão** (`porta.mjs`, `correcoes-a.mjs`, `matriz.mjs`), e o que cada uma diz está na secção 3 da sessão |
 | a régua, na cabeça desta sessão | L1 6 598 · L2a 2 · L2b 18 · L2c 10 · L3 **30** · L4 **0** · L5 7 213 · L6 26 178 · 8.5 **0** · 8.8 **0** · 8.13 **0** · 8.14 **0** · 8.17 **0** e **0** · **8.11 0** · **8.4 0** (`node scripts/check-lugar.mjs`, verde) |
 | o modelo e o custo | Claude Opus 5. O contador do harness ao arrancar e ao fechar está na última linha da secção da sessão |
@@ -50,7 +50,7 @@ dormir.
 | 8.13 · valores selados na secção dos domínios de `/` | 4 (2 por edição) | **0** · feito | idem |
 | 8.14 · «Relance» e «Leitura breve» nas páginas do leitor | 1 304 | **0** · feito | idem |
 | 8.17 · pontos do mapa dos 308 numa página de concelho | não medido sobre um `dist/` (ver abaixo) | **0** · feito | idem |
-| 8.17 · páginas de concelho sem o mapa da sua região | não medido sobre um `dist/` (ver abaixo) | **0** · feito | idem |
+| 8.17 · páginas de concelho sem o mapa da sua unidade (era «da sua região» até ao 8.17b) | não medido sobre um `dist/` (ver abaixo) | **0** · feito | idem |
 | 8.11 e §7.3 · leituras de aparelho no cabeçalho, somadas sobre as 7 240 páginas | **28 892** | **0** · feito | idem |
 | 8.4 · definições de painel fora da declaração (a comparação da A4, metida no `verify`) | nasce a 0 no commit em que entra | **0** · feito, com duas plantas a morder | idem |
 
@@ -324,33 +324,80 @@ nomeada:** `matriz.mjs` tem ainda oito navegações a `/?densidade=leitura` e um
 punhado de células que supõem os 21 cartões na primeira página. É uma passagem
 sua, e não cabia nesta sessão.
 
-### 4 · O 8.17b continua por fechar, e a razão é a mesma medida outra vez
+### 4 · O 8.17b fechou: a página do concelho passou a mostrar a unidade dele
 
-O lugar de direção mandou fundir `origin/main` quando o F1.1e lá estiver e
-fechar o 8.17b com uma linha (`nivel="unidade"` na chamada de `MapaRespira` de
-`src/views/MunicipioView.astro`); e disse o que fazer se ele não estivesse:
-dizê-lo e parar. **Não está.** Medido a 08.09.2026 ao fim da noite, com o
-conhecido-positivo:
+**Duas vezes medido no mesmo serão, e a segunda mudou a resposta.** Ao fim da
+noite, `origin/main` estava em `fe6478aa` e o F1.1e não lá estava (`git grep -l
+"unidadeDoConcelho" origin/main` sem saída, com o conhecido-positivo do
+`MapaRespira` a devolver três ficheiros); o item ficou por fechar e escreveu-se
+porquê. **Depois o lugar de direção mandou dizer que o F1.1e tinha aterrado**, e
+a segunda medição confirmou-o:
 
 ```
 git fetch origin && git log origin/main --oneline -1
-  → fe6478aa   (o mesmo em que este ramo já estava fundido de manhã)
-
-git grep -l "MapaRespira" origin/main -- src            ← o conhecido-positivo
-  → origin/main:src/components/inicio/ListaDosNomes.astro
-    origin/main:src/styles/inicio.css
-    origin/main:src/views/HomeView.astro   (a régua morde)
-
-git grep -l "unidadeDoConcelho" origin/main             → sem saída, código 1
-git show origin/main:src/components/inicio/MapaRespira.astro | grep -n nivel
-  → 223:  data-nivel={postura === 'inteiro' ? 'pais' : undefined}
+  → 13372937   Fusão do ramo distritos-2026-09-08 (o F1.1e …)
+grep -rn "unidadeDoConcelho" src/lib/*.mjs   → src/lib/mapa.mjs:313
 ```
 
-O componente em `origin/main` não tem o parâmetro `nivel` e o índice
-`unidadeDoConcelho()` não existe em ficheiro nenhum. **Nenhuma mensagem do lugar
-de direção chegou nesta sessão.** A linha não se escreveu, e a página do
-concelho continua a mostrar o nível da REGIÃO, que é o que a emenda de 08.09 à
-tarde diz que serve até o F1.1e existir.
+**A fusão trouxe cinco conflitos, e não os dois que se esperavam.** Os dois
+esperados eram as cadeias e o inventário; os outros três são a colisão de dois
+blocos no mesmo componente:
+
+| ficheiro | como se resolveu |
+|---|---|
+| `package.json` | os dois lados: o `mapa:unidades` de `main` e o `check:lugar` deste ramo, no mesmo sítio do encadeado |
+| `DECISIONS.md` | os dois lados: a emenda de 08.09 ao fim da tarde da §1.102, que é de `main`, e a §1.103 deste ramo a seguir |
+| `INVENTARIO-FRASES.md` | os dois lados, com uma decisão em cada bloco: a linha das 29 unidades volta a `viva` (o F1.1e devolveu-lhes o desenho da primeira página, e este ramo tinha-a posto `retirada` com o F1.1d), e as seis linhas do F1.1e ficam como `main` as escreveu, com o bloco inteiro do F1.10 a seguir |
+| `src/components/inicio/MapaRespira.astro` | **o lado de `main`, inteiro.** O item 8.17 deste ramo tinha posto ali uma postura `regiao`; o F1.1e reescreveu o componente com o parâmetro `nivel` e os três desenhos. O desenho novo é o autorizado, e a linha do 8.17b é escrita contra ele |
+| `src/lib/mapa-regioes.mjs` | apagado, como em `main`: o F1.1e trocou os nove ficheiros das regiões pelos 29 das unidades, e o índice que este ramo usava vive agora em `src/lib/mapa.mjs` |
+
+**A mudança na página do concelho é a que o lugar de direção escreveu, e mais o
+que a fusão obrigou:** `nivel="unidade"` na chamada do `MapaRespira`, a postura
+`regiao` a passar a `localizador`, o índice `regiaoDoConcelho()` a passar a
+`unidadeDoConcelho()`, a guarda que fechava a construção quando um concelho não
+estava em nenhuma das nove regiões a passar às 29 unidades, e o guião
+`/js/mapa-regioes.js` a passar a `/js/mapa-unidades.js`.
+
+**Medido na página real, e não numa página de prova** (`/municipios/evora` e a
+gémea inglesa, no `dist/` desta cabeça):
+
+| | `/municipios/evora` | `/en/municipalities/evora` |
+|---|---|---|
+| áreas do mapa (`a.uni-porta`) | **14** | **14** |
+| pontos (`<circle>` no documento) | **0** | **0** |
+| áreas com o anel (`path.uni-escolhida`) | **1**, e é Évora | **1**, e é Évora |
+| portas | as 14 abrem `/municipios/<vizinho>` | as 14 abrem `/en/municipalities/<vizinho>` |
+
+As catorze são os concelhos do distrito de Évora: Alandroal, Arraiolos, Borba,
+Estremoz, Évora, Montemor-o-Novo, Mora, Mourão, Portel, Redondo, Reguengos de
+Monsaraz, Vendas Novas, Viana do Alentejo e Vila Viçosa.
+
+**A régua do bloco mudou com a coisa que ela mede, e a planta prova-o.** A
+medida «páginas de concelho sem o mapa da sua região» passou a dizer «da sua
+unidade» e a procurar o anel onde o componente novo o escreve (a classe
+`uni-escolhida` no `<path>`, com o `data-concelho-porta` da âncora a nomeá-lo),
+e não onde o componente antigo o escrevia (`data-escolhido` com `data-caop`).
+**A régua não corrigida contava 616 páginas sem anel em 616 páginas que o
+têm**, que é uma régua a mentir ao contrário: corrigida, conta 0. Tirado o anel
+de `/municipios/alcobaca` no `dist/`, a medida sobe de 0 para **1** e a régua
+sai a **1**; reposto, volta a **0**.
+
+**E o cartão do feixe do desenho também media a marca antiga, e o `verify`
+apanhou-o.** `scripts/design-bundle.mjs` retrata o localizador da página de
+Évora e confere três coisas antes de o afirmar: zero pontos, um número de áreas
+entre um e 308, e um anel. A terceira procurava `[data-escolhido]` e saía a
+`✗` com «marca 0 concelho(s) escolhido(s), e devia marcar um». Passa a procurar
+`path.uni-escolhida`, e a nota do cartão passa a dizer «unidade» onde dizia
+«região», porque é o que ele retrata. **Foi o portão a apanhar, e não a
+leitura**: a régua do bloco já estava corrigida, e esta não.
+
+**Duas cadeias mudaram de estado no inventário**, e é o que o rótulo acessível
+do mapa desta página passou a ser: «Mapa dos concelhos da região, com uma área
+por concelho.» e a inglesa passam a `retirada` com a razão, e o par do F1.1e
+(«Mapa dos concelhos do distrito ou da ilha, com uma área por concelho.») entra
+como `viva`. É uma cadeia que existia e que nunca tinha sido um bloco do
+documento: na primeira página o nível da unidade só aparece depois de um toque,
+e é o guião que o põe; aqui rende-se do servidor.
 
 ### 5 · Os achados desta sessão contra o brief
 
@@ -1180,7 +1227,7 @@ secção 3 da quarta sessão.
 | 2 | **o resto do §9** (2, 6, 7 e 10) | o inventário da voz, `DominioView`, `LinhaView`, `MetodoView`, `Pesquisa.astro` | o 3, o 4, o 5, o 8 e o 9 estão feitos. **A primeira metade do 2 está feita e está medida** (a página do domínio tem 0 caracteres de prosa da casa no primeiro ecrã, nas duas edições); **o que falta é a segunda**, e as três frases estão nomeadas, com o sítio onde estão hoje, na secção 6 da quarta sessão: as três estão fora de qualquer dobra, e duas levam `[a verificar]`. O 7 anda com a busca única do §2.6; o 10 é a dívida da linha F1.2 e fica para o F3.3, como o próprio §9 escreve |
 | 3 | **as outras páginas** (o item 4 do encargo) | `RegiaoView`, `DominioView`, os índices, `EstudoView`, `MetodoView` | a região (§1 e §7.6), o domínio (§7.7), os índices (§7.8), os estudos (§7.4 e 8.6), o Método no telemóvel (§7.9). **A do concelho está feita** (§7.1, 8.10, 8.17); falta-lhe a linha dos estudos (§1 e 8.6), que anda com os estudos |
 | 4 | **item 5 do encargo** · o caminho no cabeçalho (§2.5, com o desenho da §C), a busca é uma (§2.6), «fonte» diz o publicador (§2.4, §7.2, a L6), as datas de frescura (§7.3) | `Caminho.astro` (por escrever), `Pesquisa.astro`, `Provenance.astro`, `gate-html.mjs` | a L5 (7 213) e a L6 (26 178) são os dois números grandes que ainda não desceram, e são estes dois itens |
-| 5 | **o 8.17b** · `nivel="unidade"` na chamada de `MapaRespira` da página do concelho | `src/views/MunicipioView.astro` | **uma linha**, e espera pelo F1.1e: a 08.09 ao fim do dia o `origin/main` estava em `fe6478aa` e os dois commits do F1.1e que lá estão são só documentos (medido, com o conhecido-positivo, na secção acima). Mede-se na página construída de Évora e na gémea inglesa |
+| 5 | **as réguas do mapa na página do concelho**, depois do 8.17b | `tests/inicio/matriz.mjs`, `tests/inicio/correcoes-a.mjs` | o 8.17b está feito e medido (secção 4 da quarta sessão). O que ele deixa é a célula do ponto escolhido da matriz, que este bloco pôs a devolver a ausência em vez de rebentar e que agora tem um mapa de ÁREAS para medir; e as células A4, A5 e A10 de `correcoes-a.mjs`, que falham na família do mapa e dos alvos e que não se mediram antes desta sessão |
 | 6 | **o fecho** | as capturas, as plantas da L9, o `REVISOES-DO-INVENTARIO.md` | as capturas de `/`, `/municipios`, uma região, **um concelho com o mapa da região**, a página europeia e um estudo a 390 × 664 e 1 280 nas duas edições; as medidas de 390 px de `tests/inicio/porta.mjs` corridas à mão (a A1 com o teto das três linhas da manchete, a A3 e a A13 na página europeia, **e a A4, que mudou de medida nesta sessão e não foi corrida**) |
 
 ---|---|---|---|
