@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-04T09:33:03+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/78714fcd-9d7a-49ae-92d0-914347b16683/scratchpad/leituras/f26-pacote",
+ "plantas": [
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 16 de 79 na tabela C1 e 6 no resto",
+   "sha256_antes": "428f20a43ee3dc4f0e12626be86650fdeeb8168550193ebfc29451ade5a0169c",
+   "sha256_depois": "5b455456095e62e708502267702dbe2c5c69f3f54d86e46fa131e1e175bf12bb",
+   "contexto_antes": "azão de outra ordem, que\nestá em §3.1.\n\n| # | medida | resultado |\n|---|---|---|\n| C1 | `calendar.json` com n dos 79 endereços cobertos por uma data com origem | **6 de 79** (eram 5); meta do plano 40; mais 2 que o §3.1 explica |\n| C2 | as 19 datas do inventário presentes, ou substituídas por uma data lida | **19 de 19 presentes**, com origem «inventário de ",
+   "contexto_depois": "azão de outra ordem, que\nestá em §3.1.\n\n| # | medida | resultado |\n|---|---|---|\n| C1 | `calendar.json` com n dos 79 endereços cobertos por uma data com origem | **16 de 79** (eram 5); meta do plano 40; mais 2 que o §3.1 explica |\n| C2 | as 19 datas do inventário presentes, ou substituídas por uma data lida | **19 de 19 presentes**, com origem «inventário de "
+  },
+  {
+   "id": "P4",
+   "ficheiro": "indicators/calendar.json",
+   "descricao": "o evento inventario-2026-06-22 perde a origem da data (a chave passa a origem_da_data_apagada): uma data sem origem no calendário",
+   "sha256_antes": "018f14833267ee0001d1ff14818134795bf0f656f0e2f20ccf68a253f7282a41",
+   "sha256_depois": "be1a85fdc994c405c2a633cfbc440babac62b9ddfdcdb491d0030480453a4c75",
+   "contexto_antes": " M2\"\n   },\n   \"serie\": [],\n   \"afecta_linhas\": [],\n   \"data\": \"2026-06-22\",\n   \"janela\": null,\n   \"precisao\": \"dia\",\n   \"origem_da_data\": {\n    \"url\": \"https://www.ine.pt/xportal/x",
+   "contexto_depois": " M2\"\n   },\n   \"serie\": [],\n   \"afecta_linhas\": [],\n   \"data\": \"2026-06-22\",\n   \"janela\": null,\n   \"precisao\": \"dia\",\n   \"origem_da_data_apagada\": {\n    \"url\": \"https://www.ine.pt/xportal/xma"
+  },
+  {
+   "id": "P1a",
+   "ficheiro": "indicators/calendario.py",
+   "descricao": "o caminho da difusão atrasada volta a cair da corrida: pedir deixa de incluir os atrasados enquanto as razões continuam a contá-los (cópia inteira)",
+   "sha256_antes": "97d9f3805d3e8228dce673732e46d7b26a136f86f782f6e0c41f3ba1f53fc139",
+   "sha256_depois": "4d98e76e4ad8f25a6d1f681f9f29625049630341bdd169e558884b01a0626aa9",
+   "contexto_antes": "os\n\n    devidos: set[str] = set()\n    do_dia = eventos_do_dia(calendario, hoje)\n    for e in do_dia:\n        devidos |= _enderecos_do_evento(e, url_por_linha)\n\n    pedir = (devidos | atrasados | sem_calendario) & todos\n    razoes = {\n        \"enderecos_no_livro_razao\": len(todos),\n        \"com_calendario_datado\": len(com_calendario & todos),\n        \"sem_calendario_publicado\"",
+   "contexto_depois": "os\n\n    devidos: set[str] = set()\n    do_dia = eventos_do_dia(calendario, hoje)\n    for e in do_dia:\n        devidos |= _enderecos_do_evento(e, url_por_linha)\n\n    pedir = (devidos | sem_calendario) & todos\n    razoes = {\n        \"enderecos_no_livro_razao\": len(todos),\n        \"com_calendario_datado\": len(com_calendario & todos),\n        \"sem_calendario_publicado\""
+  },
+  {
+   "id": "P1b",
+   "ficheiro": "diff.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff",
+   "sha256_antes": "4227bd1a7cc70bc203c2b86a4b2fcd466aad1a68018e648bda0569880ba29549",
+   "sha256_depois": "f50ed6a46b94045f595875525ce86320931d12066e7bb5fae2f00f93ffed33b3",
+   "contexto_antes": "dia = eventos_do_dia(calendario, hoje)\n+    for e in do_dia:\n+        devidos |= _enderecos_do_evento(e, url_por_linha)\n \n-    pedir = devidos | sem_calendario\n+    pedir = (devidos | atrasados | sem_calendario) & todos\n     razoes = {\n         \"enderecos_no_livro_razao\": len(todos),\n-        \"com_calendario_datado\": len(com_calendario),\n+        \"com_calendario_datado\": len(c",
+   "contexto_depois": "dia = eventos_do_dia(calendario, hoje)\n+    for e in do_dia:\n+        devidos |= _enderecos_do_evento(e, url_por_linha)\n \n-    pedir = devidos | sem_calendario\n+    pedir = (devidos | sem_calendario) & todos\n     razoes = {\n         \"enderecos_no_livro_razao\": len(todos),\n-        \"com_calendario_datado\": len(com_calendario),\n+        \"com_calendario_datado\": len(c"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "indicators/calendario.py",
+   "descricao": "a célula do provador da difusão atrasada passa quando só uma das duas contagens está certa (plantada no arranque da leitura)",
+   "sha256_antes": "4d98e76e4ad8f25a6d1f681f9f29625049630341bdd169e558884b01a0626aa9",
+   "sha256_depois": "a4c036b760b8fea4748ae81382453cc4b942bdbc14ef7f747ce9dcb074accf68",
+   "contexto_antes": "mada, deixou a \"\n                      \"fonte fora da corrida de setembro: uma data que já passou \"\n                      \"estava a valer como calendário\")\n    elif razoes4[\"difusao_atrasada\"] != 1 or razoes4[\"a_pedir\"] != 1:\n        falhas.append(f\"a difusão atrasada deu {razoes4}\")\n    else:\n        vistos.append(f\"{'uma difusão anunciada que já devia ter sido':<40} volta à \"\n    ",
+   "contexto_depois": "mada, deixou a \"\n                      \"fonte fora da corrida de setembro: uma data que já passou \"\n                      \"estava a valer como calendário\")\n    elif razoes4[\"difusao_atrasada\"] != 1 and razoes4[\"a_pedir\"] != 1:\n        falhas.append(f\"a difusão atrasada deu {razoes4}\")\n    else:\n        vistos.append(f\"{'uma difusão anunciada que já devia ter sido':<40} volta à \"\n    "
+  }
+ ]
+}

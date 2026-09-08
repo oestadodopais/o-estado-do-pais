@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-04T02:45:39+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/78714fcd-9d7a-49ae-92d0-914347b16683/scratchpad/leituras/f11b-pacote",
+ "plantas": [
+  {
+   "id": "P1a",
+   "ficheiro": "src/components/inicio/LeituraBreve.astro",
+   "descricao": "as leituras perdem o id: #m-<id> deixa de abrir a certa numa reconstrução; a página construída do pacote tem os ids (cópia inteira)",
+   "sha256_antes": "fad5642f3a3cfb5de382b997ac9f0f6d3c8f63133b18d10408becbab1d79da95",
+   "sha256_depois": "50ca414198182165a014a3157bc3e847390434b35744d82124d9410f1a7a0e2a",
+   "contexto_antes": ". */\n  porta: m.porta ?? null,\n}));\n---\n\n<div class=\"dobras\" data-leituras={quadro}>\n  {\n    leituras.map((l) => (\n      <details\n        class=\"dobra\"\n        id={`m-${l.id}`}\n        data-leitura={l.id}\n        data-quadro={quadro}\n        data-estado={l.estado ?? 'sem'}\n        data-limiar={l.limiar ? 'sim' : 'nao'}\n      >\n       ",
+   "contexto_depois": ". */\n  porta: m.porta ?? null,\n}));\n---\n\n<div class=\"dobras\" data-leituras={quadro}>\n  {\n    leituras.map((l) => (\n      <details\n        class=\"dobra\"\n        data-ancora={`m-${l.id}`}\n        data-leitura={l.id}\n        data-quadro={quadro}\n        data-estado={l.estado ?? 'sem'}\n        data-limiar={l.limiar ? 'sim' : 'nao'}\n      >\n       "
+  },
+  {
+   "id": "P1b",
+   "ficheiro": "diff.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff",
+   "sha256_antes": "1f90a75cb2008b35dcbeb244992e2d1be25b6ebc1a50833cc94459a5eed16ed3",
+   "sha256_depois": "291712bbd8d41fd73fcfb630df1fa4edfd87393e9858db3a7599169a5c4204fa",
+   "contexto_antes": " */\n+  porta: m.porta ?? null,\n+}));\n+---\n+\n+<div class=\"dobras\" data-leituras={quadro}>\n+  {\n+    leituras.map((l) => (\n+      <details\n+        class=\"dobra\"\n+        id={`m-${l.id}`}\n+        data-leitura={l.id}\n+        data-quadro={quadro}\n+        data-estado={l.estado ?? 'sem'}\n+        data-limiar={l.limiar ? 'sim' : 'nao'}\n+      >\n+ ",
+   "contexto_depois": " */\n+  porta: m.porta ?? null,\n+}));\n+---\n+\n+<div class=\"dobras\" data-leituras={quadro}>\n+  {\n+    leituras.map((l) => (\n+      <details\n+        class=\"dobra\"\n+        data-ancora={`m-${l.id}`}\n+        data-leitura={l.id}\n+        data-quadro={quadro}\n+        data-estado={l.estado ?? 'sem'}\n+        data-limiar={l.limiar ? 'sim' : 'nao'}\n+      >\n+ "
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 5 667 px na tabela J6 e 4 667 no §5 e nas capturas",
+   "sha256_antes": "1a2c182b8cabf20ed63e031761ce07250f8636422a0d562f80e15a0383badf13",
+   "sha256_depois": "0afdc0f83806267318f824d154ace144a4bda284866e7c0123f7518b9620f906",
+   "contexto_antes": "nenhum valor selado repetido | `leitura.mjs` J5, `porta.mjs` A17 |\n| J6 | a altura de `/` a 390 menor do que hoje | **6 959 px** (`/`) · **6 911 px** (`/en`) | **4 667 px** (menos 2 292) · **4 625 px** (menos 2 286) | `leitura.mjs` J6, `porta.mjs` A2 |\n| J7 | o primeiro ecrã a 390 × 664 igual ao do F1.1 | fundo máximo 653,7 px (`/`) · 641,1 px ",
+   "contexto_depois": "nenhum valor selado repetido | `leitura.mjs` J5, `porta.mjs` A17 |\n| J6 | a altura de `/` a 390 menor do que hoje | **6 959 px** (`/`) · **6 911 px** (`/en`) | **5 667 px** (menos 1 292) · **4 625 px** (menos 2 286) | `leitura.mjs` J6, `porta.mjs` A2 |\n| J7 | o primeiro ecrã a 390 × 664 igual ao do F1.1 | fundo máximo 653,7 px (`/`) · 641,1 px "
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/index.html",
+   "descricao": "a leitura da dívida pública perde o id na página construída: #m-divida-publica-2025 deixa de abrir",
+   "sha256_antes": "781f9175d9b5cffc70e631bc038a44cadc2cd58311a0ac4a425a92151d18cfee",
+   "sha256_depois": "d68815ba861de66d2aa0d8fc3ea9d1934df69e787df9614b89265cf55ad338d0",
+   "contexto_antes": "-2026\">Relatório por País 2026</span> da Comissão Europeia, <span data-verbatim=\"swd-2026-222\">SWD(2026) 222</span>.</p><div class=\"dobras\" data-leituras=\"pdm\"><details class=\"dobra\" id=\"m-divida-publica-2025\" data-leitura=\"divida-publica-2025\" data-quadro=\"pdm\" data-estado=\"fora\" data-limiar=\"sim\"><summary class=\"dobra-abrir\"><span class=\"dobra-seta\" aria-hidden=\"tr",
+   "contexto_depois": "-2026\">Relatório por País 2026</span> da Comissão Europeia, <span data-verbatim=\"swd-2026-222\">SWD(2026) 222</span>.</p><div class=\"dobras\" data-leituras=\"pdm\"><details class=\"dobra\" data-leitura=\"divida-publica-2025\" data-quadro=\"pdm\" data-estado=\"fora\" data-limiar=\"sim\"><summary class=\"dobra-abrir\"><span class=\"dobra-seta\" aria-hidden=\"tr"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "tests/inicio/leitura.mjs",
+   "descricao": "a régua deixa de contar as leituras sem id",
+   "sha256_antes": "972acd3ce59399a568211c83687c0b8dec8cba5d4ac0e1506f588a257765e617",
+   "sha256_depois": "055f4aec019bbdeaf6d7d7d5d377f8b55d35958280928f7eb573d9ce99849915",
+   "contexto_antes": "rySelectorAll('details[data-leitura]')];\n  return {\n    total: ds.length,\n    abertos: ds.filter((d) => d.open).map((d) => d.getAttribute('data-leitura')),\n    semId: ds.filter((d) => !d.id).map((d) => d.getAttribute('data-leitura')),\n    /* O `id` de uma leitura é `m-<id da linha>`, que é a âncora para onde o\n       cartão daquela medida aponta: são as duas metades da mesma promessa, e\n    ",
+   "contexto_depois": "rySelectorAll('details[data-leitura]')];\n  return {\n    total: ds.length,\n    abertos: ds.filter((d) => d.open).map((d) => d.getAttribute('data-leitura')),\n    semId: ds.filter((d) => false).map((d) => d.getAttribute('data-leitura')),\n    /* O `id` de uma leitura é `m-<id da linha>`, que é a âncora para onde o\n       cartão daquela medida aponta: são as duas metades da mesma promessa, e\n    "
+  }
+ ]
+}

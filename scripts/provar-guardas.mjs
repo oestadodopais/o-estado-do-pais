@@ -34,6 +34,10 @@ import {
 import { eManifestoDosRegistos, eRegistoDeConteudo } from '../src/lib/registos.mjs';
 import { ePaisDoMapa, eDistritoDoMapa, eManifestoDoMapa } from '../src/lib/mapa.mjs';
 import { eNomeDeMedida, nomeDaMedida } from '../src/lib/nomes.mjs';
+import { eSerieAtrasada } from '../src/data/frescura.mjs';
+import { serieDaLinha, contagens } from '../src/lib/frescura.mjs';
+import { numeralPorExtenso } from '../src/data/figuras.mjs';
+import { eDatasDePublicacao, eDataDeEdicao } from '../src/lib/datas-do-repositorio.mjs';
 
 /** @param {string} s */
 const verde = (s) => `\x1b[32m${s}\x1b[0m`;
@@ -475,6 +479,306 @@ caso(
   nomeDaMedida({ ...LINHA_BASE, id: 'divida-publica-2025', name: 'Total' }, 'pt')?.fonte ===
     'figuras',
   'o nome do cartão ganha ao rótulo da fonte: é o nome que o leitor já viu na primeira página.',
+);
+
+/* --------------------------------- eSerieAtrasada (bloco F1.6, 04.09.2026) --- */
+
+/* Uma série atrasada é um dado de ficheiro, como uma linha do livro-razão: o
+   tipo diz o que a casa espera e o guarda é quem o exige. O que ele tem de
+   recusar é a entrada meia escrita, porque o que sai dela não é um erro é uma
+   frase incompleta na página de 278 linhas. */
+const SERIE_BOA = {
+  id: 'serie-de-prova',
+  fonte: 'Um organismo',
+  documento: 'Um ficheiro mensal',
+  periodoDaCasa: '2025-12',
+  periodoDaFonte: '2026-07',
+  origem: {
+    ficheiro: 'design/observatorio/inventario/INVENTARIO-DAS-FONTES.json',
+    registo: 'T2',
+    campo: 'ultimo_periodo',
+    lidoEm: '2026-09-01',
+    url: 'https://exemplo.invalido/ficheiro.ods',
+  },
+};
+caso('eSerieAtrasada/boa', true, eSerieAtrasada(SERIE_BOA), 'a forma inteira passa.');
+caso(
+  'eSerieAtrasada/sem-origem',
+  false,
+  eSerieAtrasada({ ...SERIE_BOA, origem: undefined }),
+  'um período sem origem é um número escrito à mão: a origem é a metade que conta.',
+);
+caso(
+  'eSerieAtrasada/periodo-com-dia',
+  false,
+  eSerieAtrasada({ ...SERIE_BOA, periodoDaFonte: '2026-07-20' }),
+  'o período de uma série mensal é AAAA-MM; inventar-lhe um dia é inventar um facto.',
+);
+caso(
+  'eSerieAtrasada/origem-sem-data',
+  false,
+  eSerieAtrasada({ ...SERIE_BOA, origem: { ...SERIE_BOA.origem, lidoEm: 'ontem' } }),
+  'a data em que a origem foi lida escreve-se AAAA-MM-DD, ou não se sabe quando foi.',
+);
+caso(
+  'eSerieAtrasada/nao-e-objeto',
+  false,
+  eSerieAtrasada([SERIE_BOA]),
+  'uma lista não é uma série, e um molde sobre ela escondia isso.',
+);
+
+/* ------------- o casamento das linhas e o contador (F1.6, segunda passagem) --- */
+
+/* A LEITURA A FRIO PEDIU ESTES CASOS (Major 11, 04.09.2026): «os casos provam só
+   a forma de `eSerieAtrasada`, e não o casamento das linhas, os contadores, os
+   períodos rendidos ou os carimbos». Os períodos rendidos e o carimbo têm as
+   suas réguas sobre o `dist/` e o `DECISIONS.md` (F13 a F15 do `check:formas` e
+   a amarra do `check-ledger`), e as plantas guardadas provam que elas mordem. O
+   que faltava provar aqui era a conta, e a conta é isto.
+
+   AS LINHAS SÃO ESCRITAS À MÃO e não lidas do disco, porque este ficheiro não
+   toca no disco: o que se prova é a REGRA, e não o conteúdo do livro-razão. */
+const SERIE_DA_PROVA = {
+  id: 'serie-da-prova',
+  fonte: 'Organismo A',
+  documento: 'Ficheiro mensal',
+  periodoDaCasa: '2025-12',
+  periodoDaFonte: '2026-07',
+  origem: SERIE_BOA.origem,
+};
+/** @type {any} */
+const LINHA_DA_SERIE = {
+  id: 'x-2025-12',
+  source: 'Organismo A',
+  document: { title: 'Ficheiro mensal' },
+  reference_date: '2025-12',
+};
+const SERIES = [SERIE_DA_PROVA];
+
+caso(
+  'serieDaLinha/com-periodo',
+  true,
+  serieDaLinha(LINHA_DA_SERIE, SERIES)?.id === 'serie-da-prova',
+  'uma linha com os três campos certos pertence à série, e é ela que rende a frase do atraso.',
+);
+caso(
+  'serieDaLinha/sem-periodo',
+  false,
+  serieDaLinha({ ...LINHA_DA_SERIE, reference_date: null }, SERIES) !== null,
+  'uma linha sem período não se pode dizer atrasada: não há com que comparar o período da fonte. ' +
+    'É a planta que a leitura a frio pôs no casamento das linhas, ao contrário.',
+);
+caso(
+  'serieDaLinha/outro-periodo',
+  false,
+  serieDaLinha({ ...LINHA_DA_SERIE, reference_date: '2013-12' }, SERIES) !== null,
+  'um ponto histórico de uma série não está atrasado por a fonte ter publicado 2026: ' +
+    'é o caso das duas linhas de Évora, de 2013 e de 2024.',
+);
+caso(
+  'serieDaLinha/outra-fonte',
+  false,
+  serieDaLinha({ ...LINHA_DA_SERIE, source: 'Organismo B' }, SERIES) !== null,
+  'as trinta linhas das ilhas têm outra fonte, que publica o seu próprio ficheiro: ' +
+    'o atraso deste publicador não é o daquele.',
+);
+caso(
+  'serieDaLinha/outro-documento',
+  false,
+  serieDaLinha({ ...LINHA_DA_SERIE, document: { title: 'Outro ficheiro' } }, SERIES) !== null,
+  'o mesmo organismo publica mais do que um ficheiro, e o atraso é de um deles.',
+);
+caso(
+  'serieDaLinha/sem-documento',
+  false,
+  serieDaLinha({ ...LINHA_DA_SERIE, document: null }, SERIES) !== null,
+  'sem título de documento não há como saber de que ficheiro a linha veio.',
+);
+
+/* O CONTADOR: as duas contagens contam coisas diferentes, e é essa a razão de
+   serem duas. Três linhas da série e uma de fora dão «1 série · 3 linhas». */
+const CONTA = contagens(
+  [
+    LINHA_DA_SERIE,
+    { ...LINHA_DA_SERIE, id: 'y-2025-12' },
+    { ...LINHA_DA_SERIE, id: 'z-2025-12' },
+    { ...LINHA_DA_SERIE, id: 'w-2013-12', reference_date: '2013-12' },
+  ],
+  SERIES,
+);
+caso(
+  'contagens/series',
+  true,
+  CONTA.series === 1,
+  'três linhas da mesma série são UMA série atrasada, e não três.',
+);
+caso(
+  'contagens/linhas',
+  true,
+  CONTA.linhas === 3,
+  'e são três linhas: é o número que o cabeçalho rende ao lado do das séries.',
+);
+caso(
+  'contagens/zero',
+  true,
+  contagens([{ ...LINHA_DA_SERIE, reference_date: '2013-12' }], SERIES).series === 0,
+  'sem linha apanhada não há série atrasada, e o cabeçalho rende zero em vez de um lugar vazio.',
+);
+caso(
+  'contagens/serie-sem-linhas',
+  true,
+  contagens([], SERIES).series === 0,
+  'uma série declarada que não apanhe linha nenhuma não conta: um atraso sem linha não se vê ' +
+    'em página nenhuma.',
+);
+
+/* Os numerais por extenso, que são a única maneira de um número entrar numa
+   frase da casa sem ser algarismo. A régua F16 compõe as duas palavras destes. */
+caso(
+  'numeralPorExtenso/oito',
+  true,
+  numeralPorExtenso(8, 'pt', true) === 'Oito' && numeralPorExtenso(8, 'en', true) === 'Eight',
+  'o numerador da frase do Painel Social, com maiúscula porque abre a frase.',
+);
+caso(
+  'numeralPorExtenso/dezassete',
+  true,
+  numeralPorExtenso(17, 'pt') === 'dezassete' && numeralPorExtenso(17, 'en') === 'seventeen',
+  'o denominador, que é o número que a Comissão publica.',
+);
+atira(
+  'numeralPorExtenso/fora-da-lista',
+  () => numeralPorExtenso(99, 'pt'),
+  'não há numeral por extenso',
+  'um número fora da lista fecha a construção em vez de render um algarismo dentro de uma frase.',
+);
+
+/* ---------------------------------------- as datas de publicação (F1.4b) */
+
+/* O ficheiro `src/data/datas-de-publicacao.json` é a ÚNICA fonte das datas dos
+   trabalhos na construção, desde que a leitura do `git` saiu de lá (o defeito de
+   04.09: a Vercel constrói de uma cópia rasa e o `git` respondeu com o dia da
+   construção). Um ficheiro estragado tem de fechar a construção com a frase do
+   que falta, e não pintar dezasseis marcadores em silêncio. */
+
+const EDICAO_BOA = {
+  slug: 'onde-esta-a-agua',
+  lang: 'pt',
+  data: '2026-08-12',
+  commit: 'b4f45d3f2d02e941dc393bfbc06868c223e35887',
+  ficheiro: 'studies-src/onde-esta-a-agua/pt.html',
+};
+
+caso('eDataDeEdicao/completa', true, eDataDeEdicao(EDICAO_BOA), 'as cinco chaves, na forma.');
+caso(
+  'eDataDeEdicao/data-na-forma-da-casa',
+  false,
+  eDataDeEdicao({ ...EDICAO_BOA, data: '12.08.2026' }),
+  'o ficheiro guarda a data em AAAA-MM-DD; a forma da casa é da vista, e trocá-las escreveria «26.20.0812».',
+);
+caso(
+  'eDataDeEdicao/commit-curto',
+  false,
+  eDataDeEdicao({ ...EDICAO_BOA, commit: 'b4f45d3f' }),
+  'o resumo vai inteiro: é com ele que alguém refaz a leitura, e um resumo curto pode passar a ser ambíguo.',
+);
+caso(
+  'eDataDeEdicao/lingua-desconhecida',
+  false,
+  eDataDeEdicao({ ...EDICAO_BOA, lang: 'fr' }),
+  'o sítio tem duas edições, e uma terceira língua aqui era uma linha que nenhuma página lê.',
+);
+caso(
+  'eDataDeEdicao/ficheiro-de-outro-trabalho',
+  false,
+  eDataDeEdicao({ ...EDICAO_BOA, ficheiro: 'studies-src/agua-nao-faturada/pt.html' }),
+  'o caminho tem de ser o do slug e da língua da própria linha: senão a data é de outra edição.',
+);
+caso(
+  'eDataDeEdicao/sem-data',
+  false,
+  eDataDeEdicao({ ...EDICAO_BOA, data: null }),
+  'uma edição sem data não se escreve com null: não entra no ficheiro, e a página volta ao marcador.',
+);
+caso('eDataDeEdicao/nulo', false, eDataDeEdicao(null), 'null não é uma linha.');
+
+/* A DATA TEM DE SER UM DIA DO CALENDÁRIO, e não só um padrão de algarismos
+   (leitura a frio do Codex de 07.09.2026, Major 8). O guarda antigo lia
+   `/^\d{4}-\d{2}-\d{2}$/` e dava por boa uma data que não existe: a página
+   escrevia-a na forma da casa, o portão comparava-a com o `git` só quando há
+   história, e a I9 comparava-a com o `git` na CI. Fora daí, ia impressa. */
+caso(
+  'eDataDeEdicao/dia-que-nao-existe',
+  false,
+  eDataDeEdicao({ ...EDICAO_BOA, data: '2026-99-99' }),
+  'o mês 99 e o dia 99 passavam no padrão de algarismos e não são um dia do calendário.',
+);
+caso(
+  'eDataDeEdicao/30-de-fevereiro',
+  false,
+  eDataDeEdicao({ ...EDICAO_BOA, data: '2026-02-30' }),
+  'fevereiro de 2026 tem 28 dias: uma data que o calendário não tem não é a data de um commit.',
+);
+caso(
+  'eDataDeEdicao/dia-real',
+  true,
+  eDataDeEdicao({ ...EDICAO_BOA, data: '2024-02-29' }),
+  '2024 é bissexto: o guarda tem de aceitar o dia que existe, e não só recusar o que não existe.',
+);
+
+caso(
+  'eDatasDePublicacao/completo',
+  true,
+  eDatasDePublicacao({ edicoes: [EDICAO_BOA] }),
+  'um mapa com a lista das edições é o ficheiro.',
+);
+caso(
+  'eDatasDePublicacao/vazio-e-forma-valida',
+  true,
+  eDatasDePublicacao({ edicoes: [] }),
+  'a forma aceita a lista vazia; quem recusa o ficheiro sem edições é o portão (check-datas), com a contagem.',
+);
+caso(
+  'eDatasDePublicacao/sem-lista',
+  false,
+  eDatasDePublicacao({ origem: {} }),
+  'só o cabeçalho da origem, sem edições, não é o ficheiro que a construção lê.',
+);
+caso(
+  'eDatasDePublicacao/lista-a-nu',
+  false,
+  eDatasDePublicacao([EDICAO_BOA]),
+  'a lista sem o mapa à volta perde o cabeçalho que declara de onde as datas vieram.',
+);
+caso(
+  'eDatasDePublicacao/uma-linha-estragada',
+  false,
+  eDatasDePublicacao({ edicoes: [EDICAO_BOA, { ...EDICAO_BOA, data: 'ontem' }] }),
+  'uma linha má estraga o ficheiro: a construção lê-o todo e não pode escolher metade.',
+);
+caso('eDatasDePublicacao/nulo', false, eDatasDePublicacao(null), 'um ficheiro vazio dá null.');
+
+/* AS CHAVES SÃO ÚNICAS (Major 8, a segunda metade). A construção lê o ficheiro
+   para um `Map` com a chave `slug/lang`: duas linhas com a mesma chave não dão
+   erro nenhum, e a segunda apaga a primeira em silêncio. Duas datas para a mesma
+   edição não são um ficheiro com uma linha a mais: são um ficheiro que não sabe
+   qual é a data, e a construção escolhia a última por acidente da ordem. */
+caso(
+  'eDatasDePublicacao/chave-repetida',
+  false,
+  eDatasDePublicacao({ edicoes: [EDICAO_BOA, { ...EDICAO_BOA, data: '2026-09-04' }] }),
+  'duas linhas para onde-esta-a-agua (pt): o mapa da construção guardava só a última.',
+);
+caso(
+  'eDatasDePublicacao/mesmo-trabalho-outra-lingua',
+  true,
+  eDatasDePublicacao({
+    edicoes: [
+      EDICAO_BOA,
+      { ...EDICAO_BOA, lang: 'en', ficheiro: 'studies-src/onde-esta-a-agua/en.html' },
+    ],
+  }),
+  'a chave é o par slug e língua: as duas edições do mesmo trabalho não são uma repetição.',
 );
 
 /* ------------------------------------------ as listas de que os tipos derivam */

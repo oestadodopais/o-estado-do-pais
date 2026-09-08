@@ -182,6 +182,16 @@ export const STRINGS = {
          e quando ela deixa de mudar é isso que o leitor tem de ver. */
       fontes: 'Fontes ·',
       fontesVencidas: 'Fontes em atraso ·',
+      /* O CONTADOR DAS SÉRIES ATRASADAS (bloco F1.6, 04.09.2026).
+         Duas contagens numa leitura, como a da agenda ao lado, e pela mesma
+         razão: uma série é uma decisão editorial e uma linha é um valor no ecrã
+         de um leitor. O rótulo conta séries e o sufixo conta linhas, e nenhum
+         dos dois números está escrito aqui: os dois são chaves da prova, que o
+         portão reconta por conta própria. Com zero séries atrasadas rende-se o
+         zero e mais nada: é o estado, e é ele que o leitor tem de ver quando
+         deixar de ser zero. */
+      atrasadas: 'Séries atrasadas:',
+      atrasadasLinhas: 'linhas do livro-razão',
       agenda: 'Agenda:',
       agendaEmCurso: 'em curso',
       agendaASeguir: 'a seguir',
@@ -750,6 +760,22 @@ export const STRINGS = {
       painel: {
         nomeA: 'Procedimento dos Desequilíbrios Macroeconómicos · ',
         nomeFim: ' medidas com limiar',
+        /**
+         * A LINHA DA ÁREA DE LEITURA EM REPOUSO (F1.1c, 04.09.2026)
+         * ------------------------------------------------------------------
+         * Com guião, a área de leitura mostra UMA leitura de cada vez, e
+         * nenhuma antes de o leitor tocar num cartão: as vinte e uma linhas
+         * fechadas eram a mesma lista de nomes dos cartões, uma segunda vez, e
+         * foi o que o diretor viu no ar a 04.09. Quando não há nenhuma aberta,
+         * o que fica no lugar delas é esta linha, e ela diz o que fazer para
+         * ler uma. Sem guião não se rende: ali as vinte e uma continuam à vista,
+         * fechadas, e a linha estaria a mandar tocar no que já está ao alcance.
+         *
+         * NÃO FALA DA CASA (Emenda 15 e Emenda 18): não diz o que o sítio faz,
+         * nem porque se deve confiar nele. Diz o gesto e o que ele abre, com o
+         * vocabulário que a página já usa: um cartão, uma medida.
+         */
+        semLeituraAberta: 'Toque num cartão para ler a medida.',
       },
       social: {
         titulo: 'Painel Social Europeu · ',
@@ -1527,6 +1553,26 @@ export const STRINGS = {
         respondeuComErroK: 'Respondeu com erro desde',
         aEstaMaquinaK: 'a esta máquina',
         aoCorredorK: 'ao corredor',
+        /* O ATRASO DE UMA SÉRIE, DITO AO PÉ DO VALOR (bloco F1.6, 04.09.2026;
+           DECISIONS §1.98, decisão (2)). Três rótulos e três valores lidos, e
+           nenhum algarismo nesta cadeia: o período da fonte vem de
+           `src/data/frescura.mjs`, o da casa é o `reference_date` da linha e a
+           data do «desde» é o `access_date` dela.
+
+           «desde» É A DATA EM QUE A CASA LEU O FICHEIRO que continua a publicar,
+           e não a data em que a fonte publicou o dela: são duas coisas, e a
+           segunda já se diz no recibo («Publicado pela fonte a»). */
+        periodoDaFonteK: 'Último período publicado pela fonte:',
+        /* A SEGUNDA METADE É DEÍCTICA E NÃO FALA DA CASA (segunda passagem,
+           04.09.2026, Major 8 da leitura a frio do Codex). Dizia «a casa publica
+           2025-12 desde 26.08.2026», e a Emenda 15 tira da página do leitor as
+           frases sobre a casa: o leitor não precisa de saber quem publica, precisa
+           de saber que ESTA linha mede outro período e quando ele foi lido. As
+           duas cadeias apontam para a linha em que estão, e o mesmo par serve a
+           página da linha e o cartão do concelho, que é o mesmo facto sobre a
+           mesma linha do livro-razão. */
+        periodoDestaLinhaK: 'nesta linha:',
+        periodoLidoK: 'lido a',
         /* A conferência contra a cópia arquivada de um ficheiro (F0.12): o que
            ela prova é que os bytes da cópia continuam a ser os que a linha
            declara, e não que a fonte viva ainda serve o mesmo ficheiro. */
@@ -1776,7 +1822,6 @@ export const STRINGS = {
       metaDescription: 'O arquivo de estudos publicados, com as suas edições em português e em inglês.',
       h1: 'Estudos',
       lede: 'Cada estudo publicado, com as suas edições e datas. Os que estão alojados noutro sítio levam a ligação para lá.',
-      aviso: 'Datas de publicação por confirmar.',
       /* O ARQUIVO FILTRADO POR CONCELHO (bloco F1.10). `/estudos?concelho=<slug>`
          é a porta que a página do concelho abre. A frase chega escondida do
          servidor e é o guião que a acende, que é a regra da casa para o código
@@ -1786,6 +1831,19 @@ export const STRINGS = {
       filtroConcelhoA: 'Mostram-se só os estudos sobre ',
       filtroConcelhoB: '.',
       filtroTudo: 'Ver o arquivo inteiro',
+      /* A CAIXA DAS DATAS POR CONFIRMAR PASSA A CONTAR (bloco F1.4b,
+         04.09.2026). Dizia «Datas de publicação por confirmar.» em cima de uma
+         página onde TODAS as linhas mostravam uma data, e por isso era uma frase
+         que já não era verdade sobre nada do que estava por baixo dela. Passa a
+         render-se só quando alguma edição não tem data, e a dizer QUANTAS: a
+         contagem sai do mesmo ficheiro que as datas
+         (`src/data/datas-de-publicacao.json`) e leva a marca desse ficheiro.
+         Hoje as dezasseis edições têm data e a caixa não se rende: por isso as
+         duas frases antigas passaram a «retirada» no `INVENTARIO-FRASES.md`, e
+         estas três só entram no inventário no dia em que se renderem. */
+      avisoA: 'Datas de publicação por confirmar em',
+      avisoUma: 'edição.',
+      avisoVarias: 'edições.',
       /* AS TRÊS CHAVES DO RÓTULO DA DESCRIÇÃO SAÍRAM (bloco B, item B1;
          achado C9). `descricaoRotulo`, `descricaoDoDocumentoRotulo` e
          `descricaoTraduzidaRotulo` diziam ao leitor o que a descrição era —
@@ -2001,6 +2059,8 @@ export const STRINGS = {
       vencido: 'European panel overdue ·',
       fontes: 'Sources ·',
       fontesVencidas: 'Sources overdue ·',
+      atrasadas: 'Series behind:',
+      atrasadasLinhas: 'ledger rows',
       agenda: 'Agenda:',
       agendaEmCurso: 'under way',
       agendaASeguir: 'next',
@@ -2272,6 +2332,9 @@ export const STRINGS = {
       painel: {
         nomeA: 'Macroeconomic Imbalance Procedure · ',
         nomeFim: ' measures with a threshold',
+        /* A linha da área de leitura em repouso. Ver a razão na edição
+           portuguesa, e o registo em `CHAVES-EN.md`. */
+        semLeituraAberta: 'Tap a card to read the measure.',
       },
       social: {
         titulo: 'European Social Scoreboard · ',
@@ -2656,6 +2719,9 @@ export const STRINGS = {
         respondeuComErroK: 'Answering with an error since',
         aEstaMaquinaK: 'to this machine',
         aoCorredorK: 'to the runner',
+        periodoDaFonteK: 'Latest period published by the source:',
+        periodoDestaLinhaK: 'this row:',
+        periodoLidoK: 'read on',
         contraCopiaArquivadaK: 'against the archived copy of',
         verificacaoPor: {
           'leitura-independente': 'independent reading',
@@ -2770,11 +2836,13 @@ export const STRINGS = {
       metaDescription: 'The archive of published studies, with their Portuguese and English editions.',
       h1: 'Studies',
       lede: 'Every published study, with its editions and dates. Those hosted elsewhere carry the link to it.',
-      aviso: 'Publication dates not yet confirmed.',
       /* Ver a razão na edição portuguesa. */
       filtroConcelhoA: 'Showing only the studies about ',
       filtroConcelhoB: '.',
       filtroTudo: 'See the whole archive',
+      avisoA: 'Publication dates not yet confirmed for',
+      avisoUma: 'edition.',
+      avisoVarias: 'editions.',
       dataLabel: 'published on',
       lingua: 'Language',
       verEstudo: 'Study page',

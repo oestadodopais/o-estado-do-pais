@@ -1,0 +1,28 @@
+
+[90m  portão de HTML · 7238 páginas · 2893/2916 afirmações citadas fora do livro-razão · 5832 páginas de linha · 16 documento(s) de estudo, conferidos contra a origem · 8 página(s) de leitura, conferidas contra o seu registo de conteúdo[0m
+[90m  allowlist · 17 motivo(s) e 5 token(s), com os usos que os provam vivos: data-de-atualizacao 7232 · data-da-conferencia 7250 · referencia-legal 18 · titulo-de-estudo 190 · escala-de-instrumento 894 · limiar-do-quadro 72 · data-da-linha 36416 · data-do-repositorio 56 · ambito-da-medida 4 · periodo-da-fonte 1112 · data-de-referencia 10766 · numeracao 10080 · proveniencia 1025 · data-da-agenda 146 · identificador-tecnico 1451 · fonte-da-carta 64 · licenca-do-conjunto 2 · UE-27 (scope: any) 48 · EU-27 (scope: any) 48 · 73/2013 (scope: body) 614 · sha256 (scope: body) 24 · 52.º (scope: body) 614
+  rótulo de IA · 7222 no rodapé (de 7222 páginas fora dos documentos alojados) · 8 no topo das páginas de leitura · 2 ficha(s) da primeira página · 4 frase(s) da política, comparadas com o texto aprovado[0m
+[90m  ortografia · Acordo de 1990 como se aplica em Portugal · 254 pares, 50 iguais · restante: 0 ocorrência(s) em 0 rota(s), todas de linhas cruzadas · 8 dispensada(s) por estarem entre «…»[0m
+[90m  factos por verificar · 2 campo(s) declarados, com o marcador na página e a porta da edição certa[0m
+[90m  as duas edições · 24 peça(s) de página de leitura com os mesmos ids pela mesma ordem[0m
+
+[33m  23 aviso(s):[0m
+[90m    · a afirmação "agua-nao-faturada-portugal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "avisos-pt2030-abertos" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "avisos-pt2030-pessoas-singulares" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "ciclo-substituicao-condutas" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "competencias-digitais-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "credito-malparado-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "crescimento-da-despesa-liquida-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "criancas-em-creche-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "despesa-em-id-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "disparidade-de-emprego-entre-sexos-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "disparidade-salarial-entre-sexos-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "distancia-portugal-ue27-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "formacao-bruta-de-capital-fixo-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "independencia-da-justica-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "indice-de-percepcao-da-corrupcao-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "municipios-com-estudo-aprofundado" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "municipios-sem-estudo-aprofundado" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "ne
+[código de saída: 1]

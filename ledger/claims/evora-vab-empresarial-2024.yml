@@ -46,7 +46,7 @@ note: "[derivation do motor] gross value added of enterprises headquartered in t
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
 
-# Reconferências. Escritas pelo exportador a partir de um registo de releitura.
+# Reconferências. Do exportador (registo de releitura) e dos leitores da casa.
 verifications:
   - date: "2026-08-15"
     path: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0013863&Dim1=S7A2024&Dim2=1C40705&Dim3=TOT&lang=PT"

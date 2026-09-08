@@ -1,0 +1,45 @@
+# Leitura a frio do Codex ao bloco M1 (o `name` das entradas do índice sem nome, motor e sítio), 04.09.2026
+
+*Codex `gpt-5.6-sol`, xhigh, só leitura, 09:54 a 10:05 UTC, sobre um pacote dos dois repositórios com cinco plantas de três classes (5 de 5 vistas; o registo está no `.plantas.json` ao lado): P1a e P1b, a regra da irmã a deixar de exigir o mesmo pedido, na cópia e no diff, apanhada no Blocking 1; P2, o teste das duas irmãs a dar à segunda o mesmo rótulo, apanhada no Blocking 5; P3, o relatório a dizer 68 no resumo e 78 no resto, apanhada no Minor 9; P4, a linha herdeira com um `name_source` que não é o da irmã, apanhada no Blocking 3. Triagem do lugar de direção (pela delegação de 04.09, §1.98): o Blocking 2 é real e é o ponto (um localizador sem algarismos não prova que a designação cobre a resposta inteira; a herança passa a exigir que o localizador seja uma designação de resposta de uma lista fechada, hoje só `IndicadorDsg` do INE, e que as duas linhas leiam o mesmo indicador); o Blocking 4 é do pacote (os manifestos e os textos brutos não foram; as 78 recusas ficam listadas no relatório e a régua do sítio conta-as em cada construção); os Major 6 a 8 e os Minor 10 e 11 são reais e consertam-se na segunda passagem (o conhecido-positivo da escrita a exigir código 0 e o ficheiro escrito; a régua do sítio a exigir `name_source` não vazio e de uma lista conhecida; o teste do exportador a dizer que a ocorrência do nome na fonte é do `core.gate`, e a citá-lo; a afirmação «desde 01.09» conferida no `git log` ou dita como inferência; a referência à §1.5 corrigida). O achado do `--write` recusado desde 01.09 (uma `elif` que mudou de dono quando a guarda da cópia versionada entrou no meio) fica registado como defeito da casa apanhado por este bloco. O texto do leitor fica como veio.*
+
+---
+
+## Blocking
+
+1. The same-fetch guard is disabled. `if False and other.get("fetched_at") != at` means rows from different fetches are treated as sisters, contrary to the six stated conditions. The supplied different-fetch test should therefore fail, making the reported green run incompatible with the supplied code. `motor/publisher/export_site_rows.py:1966`, `motor/publisher/export_site_rows.py:1970`, `motor/publisher/export_site_rows.py:1977`, `motor/publisher/export_site_rows_test.py:1843`, `motor/publisher/export_site_rows_test.py:1848`, `relatorio-construtor.md:193`
+
+2. “Locator without digits” does not prove that a label covers the entire response. The code accepts any non-empty digit-free `name_source`; with one labelled sister from a different figure, there is no disagreement to detect and its label is inherited. The documentation’s leap from “no digits” to “response-wide key” is unsafe under the strict house rule. `motor/publisher/export_site_rows.py:1913`, `motor/publisher/export_site_rows.py:1921`, `motor/publisher/export_site_rows.py:1937`, `motor/publisher/export_site_rows.py:1979`, `motor/publisher/export_site_rows.py:1983`
+
+3. The supplied named row is false as delivered. Its `name` matches the sister, but its `name_source` is `"Total"` rather than the sister’s and patch’s `"IndicadorDsg"`; therefore the pair was not copied character for character. The site diff and crossing hash describe the corrected post-image, not the supplied copy. `sitio/claims/evora-populacao-2021.yml:14`, `sitio/claims/evora-populacao-2021.yml:15`, `sitio/claims/evora-populacao-2025.yml:14`, `sitio/claims/evora-populacao-2025.yml:15`, `sitio/diff.patch:652`, `sitio/diff.patch:653`, `sitio/diff.patch:1547`
+
+4. The 78 refusal reasons are not auditable from this package. The report says they depend on four manifests, raw JSON/PDF text and `table_row_label`, but none of those inputs or captured extractor results is supplied; consequently no individual refusal can be confirmed or shown wrong. The 2,916-row `document.edition`/`document.title` counterexamples are likewise report assertions rather than reproducible evidence. `relatorio-construtor.md:69`, `relatorio-construtor.md:102`, `relatorio-construtor.md:116`, `relatorio-construtor.md:118`, `relatorio-construtor.md:123`, `relatorio-construtor.md:231`, `relatorio-construtor.md:239`
+
+5. The claimed `PASS — 111 checks` is neither reproducible nor consistent with the copies. The motor diff plants a genuinely different sister label, while the test copy plants the same `ROTULO`; correct code would inherit it and the test would report failure. The packaged test also cannot start without the omitted `core` package. `relatorio-construtor.md:255`, `relatorio-construtor.md:258`, `motor/diff.patch:280`, `motor/publisher/export_site_rows_test.py:43`, `motor/publisher/export_site_rows_test.py:1826`, `motor/publisher/export_site_rows_test.py:1833`, `motor/publisher/export_site_rows_test.py:1839`
+
+## Major
+
+6. The valid-destination `--write` known-positive can pass a silent refusal. It catches and discards every exception, ignores the return code and checks only that one particular error phrase was not printed. A return of `1`, an exception, or an empty refusal therefore passes this half. `motor/publisher/export_site_rows_test.py:2104`, `motor/publisher/export_site_rows_test.py:2110`, `motor/publisher/export_site_rows_test.py:2121`, `motor/publisher/export_site_rows_test.py:2123`
+
+7. The site ruler measures presence, not truth. Any non-empty `line.name` becomes the `name` rung; it checks neither `name_source` nor whether the text occurs in evidence, and it asserts no expected rung count. The bad `"Total"` sample is consequently rendered and counted as a source name in the built index. `sitio/diff.patch:1783`, `sitio/diff.patch:1794`, `sitio/diff.patch:1814`, `sitio/diff.patch:1821`, `sitio/diff.patch:1853`, `sitio/diff.patch:1863`, `sitio/claims/evora-populacao-2021.yml:15`, `sitio/livro-razao.html:1`
+
+8. The exporter test can accept a composed or invented motor-side name. Case 18b(e) plants the arbitrary literal `"O rótulo próprio desta linha"` with `IndicadorDsg` and requires it to cross; this suite checks preservation and shape, not occurrence in the source. The report relies on a separate `core.gate`, which is not supplied or runnable here. `motor/publisher/export_site_rows_test.py:1856`, `motor/publisher/export_site_rows_test.py:1864`, `motor/publisher/export_site_rows_test.py:1869`, `motor/publisher/export_site_rows.py:2361`, `motor/publisher/export_site_rows.py:2379`, `relatorio-construtor.md:391`, `relatorio-construtor.md:398`
+
+## Minor
+
+9. The headline says the ruler fell from 79 to **68**, while the measured table and later conclusion say **78**. The latter is what the HTML supports. `relatorio-construtor.md:10`, `relatorio-construtor.md:14`, `relatorio-construtor.md:293`, `relatorio-construtor.md:300`, `sitio/livro-razao.html:1`
+
+10. The immediate `--write` diagnosis is supported, but the historical claims “since 01.09.2026” and “born in `a75f2a7`” cannot be verified without repository history. The patch proves only that the pre-change `elif write` hung from `if recusa`. `relatorio-construtor.md:345`, `relatorio-construtor.md:354`, `motor/diff.patch:132`, `motor/diff.patch:153`
+
+11. The report points to §1.5, which does not exist; the refusal subsections end at §1.4 before §2 begins. `relatorio-construtor.md:116`, `relatorio-construtor.md:166`, `relatorio-construtor.md:299`
+
+## «What is fine»
+
+- The count structure reconciles after correcting 68 to 78: 31 + 30 + 17 refusals, plus one named row, equals 79; the 78 listed IDs exactly match the built index’s 78 `document.title` entries. `relatorio-construtor.md:53`, `relatorio-construtor.md:61`, `relatorio-construtor.md:77`, `relatorio-construtor.md:143`, `sitio/livro-razao.html:1`
+
+- The code refuses distinct sister pairs, locators containing digits, derived targets and rows already carrying their own label. `motor/publisher/export_site_rows.py:1964`, `motor/publisher/export_site_rows.py:1980`, `motor/publisher/export_site_rows.py:1983`, `motor/publisher/export_site_rows.py:2397`
+
+- The old `--write` chain did refuse every write, and the replacement condition correctly distinguishes named from unnamed destinations. Both test destinations are temporary and the previous site pointer is restored. `motor/diff.patch:132`, `motor/diff.patch:156`, `motor/publisher/export_site_rows.py:2753`, `motor/publisher/export_site_rows.py:2794`, `motor/publisher/export_site_rows_test.py:2098`, `motor/publisher/export_site_rows_test.py:2120`
+
+- The site diff contains 61 claim files. Exactly one row adds the two YAML fields `name` and `name_source`; the remaining 60 are comment-only, although the named row also receives that comment update. No claim hunk changes value, unit, source or date. `sitio/ficheiros-mudados.txt:1`, `sitio/ficheiros-mudados.txt:61`, `sitio/diff.patch:650`, `sitio/diff.patch:665`, `relatorio-construtor.md:304`, `relatorio-construtor.md:321`
+
+**Distinct findings: 11.**

@@ -59,7 +59,11 @@ import { chromium } from 'playwright';
    própria não media nada. */
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
-const DIST = path.join(RAIZ, 'dist');
+/* `OEDP_DIST` COMO AS OUTRAS RÉGUAS DE `tests/inicio/` (07.09.2026). Existe pela
+   mesma razão que existe em `porta.mjs` e em `leitura.mjs`: um conhecido-positivo
+   faz-se numa CÓPIA do `dist/` com o defeito lá dentro, e uma régua que só saiba
+   ler `dist/` obriga a estragar a construção boa para se provar a si própria. */
+const DIST = process.env.OEDP_DIST ? path.resolve(process.env.OEDP_DIST) : path.join(RAIZ, 'dist');
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -251,7 +255,17 @@ const estadoDaPagina = (p) =>
          mede o que sempre mediu: que a ordem do teclado desce a página sem
          saltos para trás. */
       comando: marco('[data-porta-concelho]'),
-      painel: marco('[data-leituras]'),
+      /* O SEGUNDO MARCO É A ÁREA DE LEITURA, E NÃO A LISTA DAS DOBRAS (F1.1c,
+         04.09.2026). Com guião e sem nenhuma leitura aberta, `[data-leituras]`
+         não tem paragem nenhuma: a folha tira da página as dobras fechadas, que é
+         a decisão do diretor de 04.09 («show nothing under the band until a card
+         is tapped»). A área continua a ter a sua paragem no sítio onde sempre
+         esteve — o comando da densidade, que o guião acende —, e quando uma
+         leitura abre é dentro dela que o `<summary>` entra na ordem. O que a
+         célula mede é o mesmo: a ordem do teclado desce a página, da porta do
+         concelho para a área de leitura e desta para as portas, sem saltos para
+         trás. */
+      painel: marco('[data-area-leitura]'),
       portas: marco('.portas'),
       total: alvos.length,
     };
@@ -261,6 +275,10 @@ const estadoDaPagina = (p) =>
     ordem.comando >= 0 && ordem.comando < ordem.painel && ordem.painel < ordem.portas,
     `porta do concelho ${ordem.comando} · painel ${ordem.painel} · portas ${ordem.portas} · ${ordem.total} paragens`,
   );
+
+  /* A ORDEM COM UMA LEITURA ABERTA mede-se onde a leitura está aberta: na célula
+     «uma leitura abre só a sua», mais abaixo neste mesmo bloco. É a segunda
+     metade desta célula, e não uma célula noutro sítio. */
 
   /* AS MUDANÇAS DE ESTADO PASSAM DE CINCO A TRÊS (correções de UX, bloco A,
      itens A2 e A3, 25.08.2026). Os dois passos que saíram — «âmbito → modo
@@ -350,11 +368,92 @@ const estadoDaPagina = (p) =>
   }
   conta('recarga em cada estado', recargaOk, recargas.join(' · '));
 
-  /* A peça abre-se sozinha, e o comando global não apaga a escolha das outras. */
+  /* UMA LEITURA DE CADA VEZ, E O GESTO QUE A ABRE MUDOU (F1.1c, 04.09.2026).
+     A célula media isto com um toque no `<summary>` da primeira leitura. Com
+     guião, em repouso, esse `<summary>` já não está na página: a decisão do
+     diretor de 04.09 é «show nothing under the band until a card is tapped», e a
+     folha tira da página as dobras fechadas. O gesto que abre uma leitura é o
+     toque no CARTÃO dela, e é esse que a célula passa a dar. O que ela mede é o
+     mesmo, e é o que interessa: depois do gesto há UMA leitura aberta, e uma só.
+
+     O CARTÃO É O PRIMEIRO DA FAIXA (07.09.2026). Escolhia-se «o primeiro que
+     abra aqui», porque três dos vinte e um levavam à página do domínio; a
+     decisão (7) da §1.99 e a segunda passagem deste bloco puseram os 21 a fazer
+     o mesmo, e a escolha deixou de ter razão de ser. A célula continua a
+     confirmar que o destino é uma âncora desta página, porque é isso que ela
+     mede: um cartão que mudasse de página não deixava leitura nenhuma aberta. */
   await p.goto(`${base}/`, { waitUntil: 'networkidle' });
-  await p.click('[data-leituras] .dobra:first-child .dobra-abrir');
-  const uma = await estadoDaPagina(p);
-  conta('uma leitura abre só a sua', uma.abertas === 1, `${uma.abertas} abertas`);
+  const cartaoDaLeitura = await p.evaluate(() => {
+    const c = document.querySelector('[data-grelha] [data-faixa] [data-cartao]');
+    if (!c) return null;
+    c.scrollIntoView({ block: 'center', inline: 'center' });
+    const href = c.querySelector('.cartao-porta')?.getAttribute('href') ?? '';
+    return href.startsWith('#') ? c.getAttribute('data-cartao') : null;
+  });
+  /* SEM CARTÃO NÃO SE TOCA, E A CÉLULA CAI. Um `click` num selector que não
+     existe espera trinta segundos e rebenta a régua, e uma régua que rebenta não
+     mede nada: se o primeiro cartão levar para fora, o que se quer é a célula
+     vermelha a dizê-lo. */
+  let uma = null;
+  if (cartaoDaLeitura) {
+    await p.click(`[data-cartao="${cartaoDaLeitura}"] .cartao-porta`);
+    await p.waitForTimeout(140);
+    uma = await estadoDaPagina(p);
+  }
+  conta(
+    'uma leitura abre só a sua',
+    !!uma && uma.abertas === 1,
+    uma
+      ? `${uma.abertas} abertas · toque no cartão «${cartaoDaLeitura}»`
+      : 'o primeiro cartão da faixa não abre uma leitura desta página',
+  );
+
+  /* ---------------------------------------------------------------------------
+     A ORDEM DO TECLADO COM UMA LEITURA ABERTA (segunda passagem do F1.1c,
+     07.09.2026, Major 7 da leitura a frio)
+     ---------------------------------------------------------------------------
+     A célula da ordem do teclado, lá em cima, mede a área em REPOUSO, e em
+     repouso a primeira paragem dela é o comando da densidade: a folha tira da
+     página as dobras fechadas, e o `<summary>` de nenhuma delas está na ordem. O
+     relatório do bloco dizia que «quando uma leitura abre, o `<summary>` dela
+     entra na ordem dentro da área», e isso NÃO ESTAVA MEDIDO por célula nenhuma:
+     aquela célula passaria com o `<summary>` da leitura aberta depois das portas.
+
+     MEDE-SE AQUI, onde o gesto do leitor já abriu uma leitura, e exige-se a
+     ordem inteira: o comando da densidade, o `<summary>` da leitura aberta, e as
+     portas do fim da página. É a mesma promessa da outra célula, que é a ordem do
+     teclado a descer a página sem saltos para trás, no estado em que a área tem
+     alguma coisa dentro. */
+  const ordemAberta =
+    uma && cartaoDaLeitura
+      ? await p.evaluate((id) => {
+          const alvos = [
+            ...document.querySelectorAll('a[href],button,summary,input,[tabindex]'),
+          ].filter((e) => !e.closest('[hidden]') && e.offsetParent !== null);
+          const marco = (sel) => alvos.findIndex((e) => e.matches(sel) || e.closest(sel));
+          const dobra = document.getElementById(`m-${id}`);
+          const sumario = dobra ? dobra.querySelector(':scope > summary') : null;
+          return {
+            aberta: !!dobra && dobra.open,
+            comando: marco('[data-area-leitura]'),
+            sumario: sumario ? alvos.indexOf(sumario) : -1,
+            portas: marco('.portas'),
+            total: alvos.length,
+          };
+        }, cartaoDaLeitura)
+      : null;
+  conta(
+    'ordem do teclado com uma leitura aberta · densidade → o <summary> dela → portas',
+    !!ordemAberta &&
+      ordemAberta.aberta &&
+      ordemAberta.comando >= 0 &&
+      ordemAberta.comando < ordemAberta.sumario &&
+      ordemAberta.sumario < ordemAberta.portas,
+    ordemAberta
+      ? `«${cartaoDaLeitura}» aberta: ${ordemAberta.aberta} · densidade ${ordemAberta.comando} · ` +
+        `<summary> ${ordemAberta.sumario} · portas ${ordemAberta.portas} · ${ordemAberta.total} paragens`
+      : 'não houve cartão para abrir uma leitura',
+  );
   /* O ENDEREÇO ABRE TODAS, e é o que restou do comando global: `?densidade=
      leitura` continua a ser um estado partilhável e o guião continua a abrir as
      peças quando ele chega. O que saiu foi a fila que o escrevia. */
@@ -1526,8 +1625,20 @@ for (const largura of [1280, 390]) {
  * ------------------------------------------------------------------------- */
 {
   const p = await pagina();
-  await p.goto(`${base}/`, { waitUntil: 'networkidle' });
-  await p.focus('[data-leituras] .dobra:first-child .dobra-abrir');
+  /* AS LEITURAS ABREM-SE ANTES, PELO ENDEREÇO (F1.1c, 04.09.2026). Com guião não
+     há `<summary>` nenhum na página enquanto nenhuma leitura estiver aberta: a
+     decisão do diretor de 04.09 é «show nothing under the band until a card is
+     tapped», e a folha tira da página as dobras fechadas. `?densidade=leitura` é
+     o estado partilhável que abre as 21, é o que o comando «Leitura breve» faz, e
+     é a mesma porta que a célula do selo já usa desde o F1.1b.
+
+     A PROMESSA MEDIDA É A MESMA — a tecla age no comando nativo e a página não
+     rola —, e o que muda é o lado para que ela age: com a leitura aberta, o
+     espaço fecha-a. Com as 21 abertas a página é alta e a primeira leitura fica
+     no cimo da área: fechar uma não obriga o navegador a puxar a página para
+     cima, e a rolagem medida continua a ser só a da tecla. */
+  await p.goto(`${base}/?densidade=leitura`, { waitUntil: 'networkidle' });
+  await p.focus('[data-leituras="pdm"] .dobra:first-child .dobra-abrir');
   const antes = await p.evaluate(() => window.scrollY);
   await p.keyboard.press('Space');
   await p.waitForTimeout(80);
@@ -1543,13 +1654,14 @@ for (const largura of [1280, 390]) {
     };
   });
   conta(
-    '2i·5 · o espaço abre a leitura e não rola a página, e o que activa é um comando a sério',
-    a.abertas === 1 &&
+    '2i·5 · o espaço age na leitura e não rola a página, e o que activa é um comando a sério',
+    a.pecas > 0 &&
+      a.abertas === a.pecas - 1 &&
       rolou === 0 &&
       forma.botao === 'button type=submit' &&
       forma.resumo === 'summary' &&
       forma.ligacoesComoBotao === 0,
-    `espaço no resumo da peça → ${a.abertas} aberta(s) (rolagem ${rolou}) · o botão da busca é «${forma.botao}» · o comando da peça é <${forma.resumo}> · ligações com papel de botão: ${forma.ligacoesComoBotao}`,
+    `espaço no resumo da primeira leitura → ${a.abertas} de ${a.pecas} aberta(s) (rolagem ${rolou}) · o botão da busca é «${forma.botao}» · o comando da leitura é <${forma.resumo}> · ligações com papel de botão: ${forma.ligacoesComoBotao}`,
   );
   await p.__contexto.close();
 }

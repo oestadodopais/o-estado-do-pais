@@ -1,0 +1,205 @@
+{
+  "origem": {
+    "o_que_e": "A saída da célula I11 de tests/livro/indice.mjs (o espaço entre o número e a palavra, a 390 px), guardada pela segunda passagem do bloco F1.4b, 07.09.2026, leitura a frio do Codex, Minor 10.",
+    "o_que_nao_e": "Não é uma leitura de texto: cada vão é medido no navegador entre a borda direita da caixa do número e a primeira letra que vem a seguir, com um Range de um carácter. O espaço está sempre no HTML; o que se mede é a rendição.",
+    "comando": "node tests/livro/indice.mjs --navegador --json <ficheiro>",
+    "como_refazer": "Correr o comando acima e copiar para aqui a entrada de celulas com id I11 e o campo medida.I11 do ficheiro que ele escreve, debaixo deste cabeçalho. As duas linhas exactas desta corrida estão no relatório do bloco, design/especime-v3/medicoes/datas-construtor.md, secção da segunda passagem.",
+    "dist": "dist/ desta árvore",
+    "paginas_lidas": 7238
+  },
+  "celula": {
+    "id": "I11",
+    "nome": "o espaço entre o número e a palavra, a 390",
+    "passa": true,
+    "nota": "/: 7 par(es) medido(s) para 7 contagem(ns), vão mínimo 2.59px · com o defeito plantado, 7 de 7 apanhada(s) · /en/: 7 par(es) medido(s) para 7 contagem(ns), vão mínimo 2.59px · com o defeito plantado, 7 de 7 apanhada(s)",
+    "falhas": []
+  },
+  "medida": {
+    "/": {
+      "contagens": 7,
+      "pares": [
+        {
+          "onde": "municipios_total",
+          "numero": "308",
+          "palavra": "concelhos",
+          "vao": 2.59
+        },
+        {
+          "onde": "estudos",
+          "numero": "12",
+          "palavra": "trabalhos ·",
+          "vao": 2.59
+        },
+        {
+          "onde": "edicoes",
+          "numero": "16",
+          "palavra": "edições",
+          "vao": 2.59
+        },
+        {
+          "onde": "agenda_em_curso",
+          "numero": "4",
+          "palavra": "em curso",
+          "vao": 2.59
+        },
+        {
+          "onde": "agenda_a_seguir",
+          "numero": "0",
+          "palavra": "a seguir",
+          "vao": 2.59
+        },
+        {
+          "onde": "agenda_concluido",
+          "numero": "1",
+          "palavra": "concluído",
+          "vao": 2.59
+        },
+        {
+          "onde": "agenda_retirado",
+          "numero": "0",
+          "palavra": "retirado",
+          "vao": 2.59
+        }
+      ],
+      "com_defeito": [
+        {
+          "onde": "municipios_total",
+          "numero": "308",
+          "palavra": "concelhos",
+          "vao": 0
+        },
+        {
+          "onde": "estudos",
+          "numero": "12",
+          "palavra": "trabalhos ·",
+          "vao": 0
+        },
+        {
+          "onde": "edicoes",
+          "numero": "16",
+          "palavra": "edições",
+          "vao": 0
+        },
+        {
+          "onde": "agenda_em_curso",
+          "numero": "4",
+          "palavra": "em curso",
+          "vao": 0
+        },
+        {
+          "onde": "agenda_a_seguir",
+          "numero": "0",
+          "palavra": "a seguir",
+          "vao": 0
+        },
+        {
+          "onde": "agenda_concluido",
+          "numero": "1",
+          "palavra": "concluído",
+          "vao": 0
+        },
+        {
+          "onde": "agenda_retirado",
+          "numero": "0",
+          "palavra": "retirado",
+          "vao": 0
+        }
+      ],
+      "plantado_apanhado": 7,
+      "de": 7
+    },
+    "/en/": {
+      "contagens": 7,
+      "pares": [
+        {
+          "onde": "municipios_total",
+          "numero": "308",
+          "palavra": "municipaliti",
+          "vao": 2.59
+        },
+        {
+          "onde": "estudos",
+          "numero": "12",
+          "palavra": "works ·",
+          "vao": 2.59
+        },
+        {
+          "onde": "edicoes",
+          "numero": "16",
+          "palavra": "editions",
+          "vao": 2.59
+        },
+        {
+          "onde": "agenda_em_curso",
+          "numero": "4",
+          "palavra": "under way",
+          "vao": 2.59
+        },
+        {
+          "onde": "agenda_a_seguir",
+          "numero": "0",
+          "palavra": "next",
+          "vao": 2.59
+        },
+        {
+          "onde": "agenda_concluido",
+          "numero": "1",
+          "palavra": "concluded",
+          "vao": 2.59
+        },
+        {
+          "onde": "agenda_retirado",
+          "numero": "0",
+          "palavra": "withdrawn",
+          "vao": 2.59
+        }
+      ],
+      "com_defeito": [
+        {
+          "onde": "municipios_total",
+          "numero": "308",
+          "palavra": "municipaliti",
+          "vao": 0
+        },
+        {
+          "onde": "estudos",
+          "numero": "12",
+          "palavra": "works ·",
+          "vao": 0
+        },
+        {
+          "onde": "edicoes",
+          "numero": "16",
+          "palavra": "editions",
+          "vao": 0
+        },
+        {
+          "onde": "agenda_em_curso",
+          "numero": "4",
+          "palavra": "under way",
+          "vao": 0
+        },
+        {
+          "onde": "agenda_a_seguir",
+          "numero": "0",
+          "palavra": "next",
+          "vao": 0
+        },
+        {
+          "onde": "agenda_concluido",
+          "numero": "1",
+          "palavra": "concluded",
+          "vao": 0
+        },
+        {
+          "onde": "agenda_retirado",
+          "numero": "0",
+          "palavra": "withdrawn",
+          "vao": 0
+        }
+      ],
+      "plantado_apanhado": 7,
+      "de": 7
+    }
+  }
+}

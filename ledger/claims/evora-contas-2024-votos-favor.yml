@@ -46,8 +46,7 @@ note: "Cruzado de ResearchHub content/07 Évora Municipal Accounts · clc-2024-v
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
 
-# Reconferências. Escritas pelo motor (indicators/refresh.py e
-# indicators/corredor.py), nunca à mão.
+# Reconferências. Do exportador (registo de releitura) e dos leitores da casa.
 verifications:
   - date: "2026-09-01"
     path: "https://www.cm-evora.pt/wp-content/uploads/2026/05/Municipio-Evora-CLC-2025.pdf#page=2"

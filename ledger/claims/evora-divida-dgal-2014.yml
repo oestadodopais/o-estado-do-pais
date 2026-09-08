@@ -41,7 +41,7 @@ note: "Pai de evora-indice-de-divida-2014: a página que imprimir o índice deve
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
 
-# Reconferências. Escritas pelo exportador a partir de um registo de releitura.
+# Reconferências. Do exportador (registo de releitura) e dos leitores da casa.
 verifications:
   - date: "2026-08-15"
     path: "https://portalautarquico.dgal.gov.pt/ficheiros/?schema=f7664ca7-3a1a-4b25-9f46-2056eef44c33&channel=a7187039-4863-4c6c-9ef0-1422b677728d&content_id=80B6C319-F1C8-4A6C-95F8-D93E11A38D63&field=storage_image&lang=pt&ver=1&filetype=pdf&dtestate=2017-02-17113411"

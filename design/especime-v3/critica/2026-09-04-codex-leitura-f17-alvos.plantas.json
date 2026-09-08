@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-04T02:21:00+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/78714fcd-9d7a-49ae-92d0-914347b16683/scratchpad/leituras/f17-pacote",
+ "plantas": [
+  {
+   "id": "P2",
+   "ficheiro": "tests/acessibilidade/alvos.mjs",
+   "descricao": "a régua dos alvos aceita 20 px como 44",
+   "sha256_antes": "f219250cf19e273c528a71fe6cf51d166a84f2f97494ea83797b9005992ea201",
+   "sha256_depois": "461df47dd51bb7dfd309b192dac20b6699f300bdd14b322c12077a810fa6e91d",
+   "contexto_antes": "\n\n/* ------------------------------------------------------------- as medidas */\n\n/** O alvo do toque, e o alvo do ponteiro nas linhas de nome (Emenda 20c). */\nconst ALVO = 44;\nconst ALVO_PONTEIRO = 32;\n/** A largura a partir da qual a casa desenha para o ponteiro (Emenda 20c). */\nconst LIMIAR_DA_COLUNA = 1024;\n/**\n * AS CINCO LARGURA",
+   "contexto_depois": "\n\n/* ------------------------------------------------------------- as medidas */\n\n/** O alvo do toque, e o alvo do ponteiro nas linhas de nome (Emenda 20c). */\nconst ALVO = 20;\nconst ALVO_PONTEIRO = 32;\n/** A largura a partir da qual a casa desenha para o ponteiro (Emenda 20c). */\nconst LIMIAR_DA_COLUNA = 1024;\n/**\n * AS CINCO LARGURA"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 20 unidades em português na tabela H8 e 0 no resumo",
+   "sha256_antes": "3383926f28b55da5fb8cc20ae287bb0caa09432ecf648e4fbd4469a4cf63e501",
+   "sha256_depois": "853b751342863eac9f2207d01e0bbee100cd7c1c0e3032e2d95eb5ee1bef5b99",
+   "contexto_antes": " sem alvo e sem essa razão |\n| H8 | I96: unidades portuguesas nos cartões ingleses | 302 registos ingleses, 298 com unidade, **204 com a unidade em português** | **0**; 210 sem tradução na tabela, que manda ficarem em português |\n| H9 | I95: nomes de diploma sem língua em páginas inglesas | 1 250 nomes: 934 com marca, **313 sem marca**, 3 em transcrição",
+   "contexto_depois": " sem alvo e sem essa razão |\n| H8 | I96: unidades portuguesas nos cartões ingleses | 302 registos ingleses, 298 com unidade, **204 com a unidade em português** | **20**; 210 sem tradução na tabela, que manda ficarem em português |\n| H9 | I95: nomes de diploma sem língua em páginas inglesas | 1 250 nomes: 934 com marca, **313 sem marca**, 3 em transcrição"
+  },
+  {
+   "id": "P1a",
+   "ficheiro": "src/lib/cartoes.mjs",
+   "descricao": "o registo dos cartões escreve a unidade do livro-razão em vez da traduzida: numa reconstrução os cartões ingleses voltam ao português; as páginas construídas do pacote têm o inglês (cópia inteira)",
+   "sha256_antes": "88d31afdbc235bf989079887eb376c4ba3f699f081198bd2c010af9520cc86e3",
+   "sha256_depois": "260bd1f35e5ef36f66cccf5e6a85e15ad81cdeacadab3dd15091d0f5d33342e2",
+   "contexto_antes": "m\n * @param {CampoDaLinha} campo\n * @param {Lingua} lang\n */\nfunction valorDaLinha(claim, campo, lang) {\n  const doLivro = String(claim[campo]);\n  return {\n    texto: campo === 'unit' ? unidadeDaLinha(claim.unit, lang).texto : doLivro,\n    livro: doLivro,\n    origem: 'linha',\n    linha: claim.id,\n    campo,\n    unidade: claim.unit ?? null,\n    periodo: claim.reference_date ?? null,\n  };\n}\n\n/*",
+   "contexto_depois": "m\n * @param {CampoDaLinha} campo\n * @param {Lingua} lang\n */\nfunction valorDaLinha(claim, campo, lang) {\n  const doLivro = String(claim[campo]);\n  return {\n    texto: campo === 'unit' ? doLivro : doLivro,\n    livro: doLivro,\n    origem: 'linha',\n    linha: claim.id,\n    campo,\n    unidade: claim.unit ?? null,\n    periodo: claim.reference_date ?? null,\n  };\n}\n\n/*"
+  },
+  {
+   "id": "P1b",
+   "ficheiro": "diff.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff",
+   "sha256_antes": "a97a5396b888b3b0a2316a47dc2eb014c9448d4ebcc22fdfdb9026095bbd00cf",
+   "sha256_depois": "b13801dba570303768c4402742e8fd03dd4b5fd6ed388c4c7546bd5f6f655eb8",
+   "contexto_antes": "aLinha(claim, campo) {\n+function valorDaLinha(claim, campo, lang) {\n+  const doLivro = String(claim[campo]);\n   return {\n-    texto: String(claim[campo]),\n+    texto: campo === 'unit' ? unidadeDaLinha(claim.unit, lang).texto : doLivro,\n+    livro: doLivro,\n     origem: 'linha',\n     linha: claim.id,\n     campo,\n@@ -368,12 +391,12 @@ function modeloDaLinha(id, lang) {\n   const figura = FIGURAS",
+   "contexto_depois": "aLinha(claim, campo) {\n+function valorDaLinha(claim, campo, lang) {\n+  const doLivro = String(claim[campo]);\n   return {\n-    texto: String(claim[campo]),\n+    texto: campo === 'unit' ? doLivro : doLivro,\n+    livro: doLivro,\n     origem: 'linha',\n     linha: claim.id,\n     campo,\n@@ -368,12 +391,12 @@ function modeloDaLinha(id, lang) {\n   const figura = FIGURAS"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "depois/linha-en.html",
+   "descricao": "a unidade de um cartão inglês volta ao português na página construída",
+   "sha256_antes": "aabb05163ade3fde711eb4e4bbc707c6e1998f03131b541f77197fd30756b15d",
+   "sha256_depois": "5d850bc0e8fefd2f0099e9a1055b141ee7aa22d8c5e70416d936d9b6a3bb4e81",
+   "contexto_antes": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>89,7% of GDP · Ledger · O Estado do País</title><meta name=\"description\" content=\"Ledger row divida-publica-2025 · 89,7% of GDP · Source: Eurostat · General government gros",
+   "contexto_depois": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>89,7% do PIB · Ledger · O Estado do País</title><meta name=\"description\" content=\"Ledger row divida-publica-2025 · 89,7% of GDP · Source: Eurostat · General government gros"
+  }
+ ]
+}
