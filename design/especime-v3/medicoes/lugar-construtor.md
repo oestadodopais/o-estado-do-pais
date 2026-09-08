@@ -7,6 +7,68 @@ deste relatório foi escrito à mão: cada um tem ao lado o comando que o mediu.
 
 ---
 
+## Estado · 08.09.2026, 06:14 UTC · segunda sessão, a régua do bloco no lugar
+
+| | |
+|---|---|
+| cabeça | a última do ramo (`git rev-parse HEAD`) |
+| `main` fundido | `43f4b52a`, na fusão `47d957f6` |
+| `build` · `verify` · `typecheck` sobre `47d957f6` | **0** · **0** · **0** (códigos lidos de `build.exit`, `verify.exit`, `typecheck.exit`) |
+| a régua do bloco | `scripts/check-lugar.mjs`, no `verify`, **7,84 s** (`/usr/bin/time -p node scripts/check-lugar.mjs`) |
+| a seguir | o §8 da primeira página, pela ordem do encargo: 8.16, 8.13, 8.12 e 8.14, 8.4 e 8.5, 8.15, 8.11 |
+
+---
+
+## A tabela das medidas (decisão do lugar de direção, 07.09)
+
+**O «antes» é o `dist/` da fusão de `origin/main` (`43f4b52a`) na cabeça
+`47d957f6`, medido a 08.09.2026.** Nenhum destes números foi escrito à mão: cada
+um sai do comando que está na última coluna. A régua imprime os doze de uma vez,
+e cada um tem um teto escrito ao lado no próprio ficheiro, com a data em que foi
+medido: a régua falha quando a medição passa do teto **e também quando ela fica
+mais de oito abaixo dele**, porque um teto com folga a mais é uma régua a dormir.
+
+| medida | antes | depois | o comando |
+|---|---|---|---|
+| L1 · páginas com dois destinos iguais fora do cabeçalho e do rodapé | 6 596 | por medir | `node scripts/check-lugar.mjs` |
+| L2a · segundas listas dos 308 concelhos (fora de `/municipios`, fora de uma lista fechada) | 2 (`/` e `/en`) | por medir | idem |
+| L2b · réguas inteiras da convergência fora de `/regioes` | 18 | por medir | idem |
+| L2c · sinopses de estudo fora de `/estudos` | 10 (5 em `/municipios/evora`, 5 na inglesa) | por medir | idem |
+| L3 · palavras fora do vocabulário fechado, no texto da casa | 51 | por medir | idem |
+| L4 · frases de definição e de hierarquia em falta | 10 (as cinco de hierarquia × 2 edições; a de definição já está a 1) | por medir | idem |
+| L5 · páginas abaixo da primeira sem caminho no cabeçalho | 7 211 | por medir | idem |
+| L6 · selos cuja etiqueta não é o publicador da linha | 26 168 | por medir | idem |
+| L7 · a releitura do leitor de primeira vez | é do lugar de direção | — | a leitura do Codex |
+| L8 · os três portões | **0 · 0 · 0** | 0 · 0 · 0 | `npm run build\|verify\|typecheck > x.log 2>&1; echo $? > x.exit` |
+| L9 · as plantas vermelhas e depois verdes | conhecido-positivo corrido (ver abaixo) | por fechar | `node scripts/check-lugar.mjs` sobre o `dist/` com o estrago |
+| 8.5 · blocos com «limiar» sem o qualificador nem a frase ao lado | 706 | por medir | idem |
+| 8.8 · «livro-razão» nos menus, nos rodapés e nos títulos | 24 172 | por medir | idem |
+| 8.13 · valores selados na secção dos domínios de `/` | 4 (2 por edição) | por medir | idem |
+| 8.14 · «Relance» e «Leitura breve» nas páginas do leitor | 1 304 (325 + 327 por edição) | por medir | idem |
+
+**O conhecido-positivo da L9 já correu, e a régua viu-o.** Com dois estragos
+plantados no `dist/` (`<p>O município de Évora.</p>` e
+`<p class="mun-estudo-frase">Uma sinopse plantada.</p>` dentro do `</main>` de
+`/regioes/alentejo`), a régua sobe a L3 de 51 para 52 e a L2c de 10 para 11 e sai
+com **1**; restaurada a página, volta a **0**. As cinco plantas que a L9 escreve
+correm no fecho do bloco, contra os tetos finais.
+
+**A célula A11 correu, e passa nas duas edições.** `node
+tests/inicio/correcoes-a.mjs`: «a frase de definição, uma vez, na letra da prosa
+e sem porta», 1 ocorrência, Spectral 12 px, **2 linhas** a 390 px (o teto da
+célula é 3), 0 ligações, 0 algarismos.
+
+**Duas células da mesma régua estão vermelhas, e não são deste ramo.** A7 («a
+cabeça e a manchete começam antes de 40% do ecrã») falha nas duas edições, e a
+razão está no que ela imprime: **4 leituras no documento** onde a célula exige 3.
+A quarta é o contador das séries atrasadas que o F1.6 pôs na mobília
+(04.09.2026); a célula não corre no `verify` nem na CI e ninguém a correu desde
+então. O item 8.1 e o §7.3 deste brief mandam essas linhas SAIR do cabeçalho de
+todas as páginas para a página da medida e para o Método: a célula reescreve-se
+quando esse item entrar, e não antes.
+
+---
+
 ## Estado ao pausar (04.09, manhã)
 
 **O bloco parou a meio, por ordem do diretor** (o portátil fecha-se; o bloco
