@@ -1,0 +1,535 @@
+{
+  "linksDentroDoMapa": [
+    {
+      "href": "/distritos/aveiro",
+      "uniPorta": "aveiro",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/beja",
+      "uniPorta": "beja",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/braga",
+      "uniPorta": "braga",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/braganca",
+      "uniPorta": "braganca",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/castelo-branco",
+      "uniPorta": "castelo-branco",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/coimbra",
+      "uniPorta": "coimbra",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/evora",
+      "uniPorta": "evora",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/faro",
+      "uniPorta": "faro",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/guarda",
+      "uniPorta": "guarda",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/ilha-da-graciosa",
+      "uniPorta": "ilha-da-graciosa",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/ilha-da-madeira",
+      "uniPorta": "ilha-da-madeira",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/ilha-das-flores",
+      "uniPorta": "ilha-das-flores",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/ilha-de-porto-santo",
+      "uniPorta": "ilha-de-porto-santo",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/ilha-de-santa-maria",
+      "uniPorta": "ilha-de-santa-maria",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/ilha-de-sao-jorge",
+      "uniPorta": "ilha-de-sao-jorge",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/ilha-de-sao-miguel",
+      "uniPorta": "ilha-de-sao-miguel",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/ilha-do-corvo",
+      "uniPorta": "ilha-do-corvo",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/ilha-do-faial",
+      "uniPorta": "ilha-do-faial",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/ilha-do-pico",
+      "uniPorta": "ilha-do-pico",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/ilha-terceira",
+      "uniPorta": "ilha-terceira",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/leiria",
+      "uniPorta": "leiria",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/lisboa",
+      "uniPorta": "lisboa",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/portalegre",
+      "uniPorta": "portalegre",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/porto",
+      "uniPorta": "porto",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/santarem",
+      "uniPorta": "santarem",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/setubal",
+      "uniPorta": "setubal",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/viana-do-castelo",
+      "uniPorta": "viana-do-castelo",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/vila-real",
+      "uniPorta": "vila-real",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/distritos/viseu",
+      "uniPorta": "viseu",
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/",
+      "uniPorta": null,
+      "concelhoPorta": null,
+      "mapaPorta": true,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/",
+      "uniPorta": null,
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": true
+    }
+  ],
+  "contagemPortasDeUnidade": 29,
+  "contagemTotalLinksNoMapa": 31,
+  "outrosLinksNoMapa": [
+    {
+      "href": "/",
+      "uniPorta": null,
+      "concelhoPorta": null,
+      "mapaPorta": true,
+      "mapaVoltar": false
+    },
+    {
+      "href": "/",
+      "uniPorta": null,
+      "concelhoPorta": null,
+      "mapaPorta": false,
+      "mapaVoltar": true
+    }
+  ],
+  "estadosDosDestinos": [
+    {
+      "href": "/distritos/aveiro",
+      "status": 200
+    },
+    {
+      "href": "/distritos/beja",
+      "status": 200
+    },
+    {
+      "href": "/distritos/braga",
+      "status": 200
+    },
+    {
+      "href": "/distritos/braganca",
+      "status": 200
+    },
+    {
+      "href": "/distritos/castelo-branco",
+      "status": 200
+    },
+    {
+      "href": "/distritos/coimbra",
+      "status": 200
+    },
+    {
+      "href": "/distritos/evora",
+      "status": 200
+    },
+    {
+      "href": "/distritos/faro",
+      "status": 200
+    },
+    {
+      "href": "/distritos/guarda",
+      "status": 200
+    },
+    {
+      "href": "/distritos/ilha-da-graciosa",
+      "status": 200
+    },
+    {
+      "href": "/distritos/ilha-da-madeira",
+      "status": 200
+    },
+    {
+      "href": "/distritos/ilha-das-flores",
+      "status": 200
+    },
+    {
+      "href": "/distritos/ilha-de-porto-santo",
+      "status": 200
+    },
+    {
+      "href": "/distritos/ilha-de-santa-maria",
+      "status": 200
+    },
+    {
+      "href": "/distritos/ilha-de-sao-jorge",
+      "status": 200
+    },
+    {
+      "href": "/distritos/ilha-de-sao-miguel",
+      "status": 200
+    },
+    {
+      "href": "/distritos/ilha-do-corvo",
+      "status": 200
+    },
+    {
+      "href": "/distritos/ilha-do-faial",
+      "status": 200
+    },
+    {
+      "href": "/distritos/ilha-do-pico",
+      "status": 200
+    },
+    {
+      "href": "/distritos/ilha-terceira",
+      "status": 200
+    },
+    {
+      "href": "/distritos/leiria",
+      "status": 200
+    },
+    {
+      "href": "/distritos/lisboa",
+      "status": 200
+    },
+    {
+      "href": "/distritos/portalegre",
+      "status": 200
+    },
+    {
+      "href": "/distritos/porto",
+      "status": 200
+    },
+    {
+      "href": "/distritos/santarem",
+      "status": 200
+    },
+    {
+      "href": "/distritos/setubal",
+      "status": 200
+    },
+    {
+      "href": "/distritos/viana-do-castelo",
+      "status": 200
+    },
+    {
+      "href": "/distritos/vila-real",
+      "status": 200
+    },
+    {
+      "href": "/distritos/viseu",
+      "status": 200
+    }
+  ],
+  "contagem200": 29,
+  "gavetaDosNomes": {
+    "dentroDeDetails": true,
+    "detailsAberta": false,
+    "numLinks": 29,
+    "links": [
+      {
+        "slug": "aveiro",
+        "href": "/distritos/aveiro",
+        "texto": "Aveiro"
+      },
+      {
+        "slug": "beja",
+        "href": "/distritos/beja",
+        "texto": "Beja"
+      },
+      {
+        "slug": "braga",
+        "href": "/distritos/braga",
+        "texto": "Braga"
+      },
+      {
+        "slug": "braganca",
+        "href": "/distritos/braganca",
+        "texto": "Bragança"
+      },
+      {
+        "slug": "castelo-branco",
+        "href": "/distritos/castelo-branco",
+        "texto": "Castelo Branco"
+      },
+      {
+        "slug": "coimbra",
+        "href": "/distritos/coimbra",
+        "texto": "Coimbra"
+      },
+      {
+        "slug": "evora",
+        "href": "/distritos/evora",
+        "texto": "Évora"
+      },
+      {
+        "slug": "faro",
+        "href": "/distritos/faro",
+        "texto": "Faro"
+      },
+      {
+        "slug": "guarda",
+        "href": "/distritos/guarda",
+        "texto": "Guarda"
+      },
+      {
+        "slug": "leiria",
+        "href": "/distritos/leiria",
+        "texto": "Leiria"
+      },
+      {
+        "slug": "lisboa",
+        "href": "/distritos/lisboa",
+        "texto": "Lisboa"
+      },
+      {
+        "slug": "portalegre",
+        "href": "/distritos/portalegre",
+        "texto": "Portalegre"
+      },
+      {
+        "slug": "porto",
+        "href": "/distritos/porto",
+        "texto": "Porto"
+      },
+      {
+        "slug": "santarem",
+        "href": "/distritos/santarem",
+        "texto": "Santarém"
+      },
+      {
+        "slug": "setubal",
+        "href": "/distritos/setubal",
+        "texto": "Setúbal"
+      },
+      {
+        "slug": "viana-do-castelo",
+        "href": "/distritos/viana-do-castelo",
+        "texto": "Viana do Castelo"
+      },
+      {
+        "slug": "vila-real",
+        "href": "/distritos/vila-real",
+        "texto": "Vila Real"
+      },
+      {
+        "slug": "viseu",
+        "href": "/distritos/viseu",
+        "texto": "Viseu"
+      },
+      {
+        "slug": "ilha-da-madeira",
+        "href": "/distritos/ilha-da-madeira",
+        "texto": "Ilha da Madeira"
+      },
+      {
+        "slug": "ilha-de-porto-santo",
+        "href": "/distritos/ilha-de-porto-santo",
+        "texto": "Ilha de Porto Santo"
+      },
+      {
+        "slug": "ilha-da-graciosa",
+        "href": "/distritos/ilha-da-graciosa",
+        "texto": "Ilha da Graciosa"
+      },
+      {
+        "slug": "ilha-das-flores",
+        "href": "/distritos/ilha-das-flores",
+        "texto": "Ilha das Flores"
+      },
+      {
+        "slug": "ilha-de-santa-maria",
+        "href": "/distritos/ilha-de-santa-maria",
+        "texto": "Ilha de Santa Maria"
+      },
+      {
+        "slug": "ilha-de-sao-jorge",
+        "href": "/distritos/ilha-de-sao-jorge",
+        "texto": "Ilha de São Jorge"
+      },
+      {
+        "slug": "ilha-de-sao-miguel",
+        "href": "/distritos/ilha-de-sao-miguel",
+        "texto": "Ilha de São Miguel"
+      },
+      {
+        "slug": "ilha-do-corvo",
+        "href": "/distritos/ilha-do-corvo",
+        "texto": "Ilha do Corvo"
+      },
+      {
+        "slug": "ilha-do-faial",
+        "href": "/distritos/ilha-do-faial",
+        "texto": "Ilha do Faial"
+      },
+      {
+        "slug": "ilha-do-pico",
+        "href": "/distritos/ilha-do-pico",
+        "texto": "Ilha do Pico"
+      },
+      {
+        "slug": "ilha-terceira",
+        "href": "/distritos/ilha-terceira",
+        "texto": "Ilha Terceira"
+      }
+    ]
+  },
+  "nuts2": {
+    "slugsProcurados": [
+      "grande-lisboa",
+      "peninsula-de-setubal",
+      "algarve",
+      "madeira",
+      "alentejo",
+      "norte",
+      "centro",
+      "oeste-e-vale-do-tejo",
+      "acores"
+    ],
+    "encontradosNoMapa": [],
+    "encontradosNaGaveta": [],
+    "hrefsParaRegioes": []
+  },
+  "fragmentoUnidadeEvoraSemGuiao": {
+    "nivelDoDataset": "pais",
+    "numAreasPaisVisiveisNoDom": 29,
+    "grupoConcelhosExiste": true,
+    "grupoConcelhosHidden": true,
+    "grupoConcelhosFilhos": 0,
+    "hash": "#unidade=evora",
+    "pathname": "/"
+  }
+}
