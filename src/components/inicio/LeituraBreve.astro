@@ -260,15 +260,14 @@ for (let i = 0; i < RANHURAS.length; i++) {
               o limiar é, e a leitura diz, numa frase, o que ele é e quem o
               fixou.
 
-              SÓ O FIXADOR `comissao` A LEVA, e as outras duas não é por
-              esquecimento. O `lei` tem a sua frase na página do concelho, uma
-              vez («O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez
-              e meia a média da receita corrente líquida dos três anos
-              anteriores.»), e o §0 do brief manda uma coisa num lugar só. O
-              `porRegistar` não tem autor a nomear, e uma frase que dissesse
-              quem fixou aqueles dois limiares seria inventada. */}
-          {l.fixador === 'comissao' && (
-            <p class="dobra-limiar-frase">{s.estado.fraseDoLimiarDaComissao}</p>
+              A FRASE VIVE DENTRO DO PAR DO FIXADOR, e a vista não escolhe: um
+              par com frase rende-a, um par sem frase não a rende. Só o `lei` não
+              tem, e não é por esquecimento: a página do concelho já diz a sua,
+              uma vez («O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma
+              vez e meia a média da receita corrente líquida dos três anos
+              anteriores.»), e o §0 do brief manda uma coisa num lugar só. */}
+          {parDo(l.fixador)?.frase && (
+            <p class="dobra-limiar-frase">{parDo(l.fixador)?.frase}</p>
           )}
 
           {/* A frase da medida, onde ela existe: diz o que a coisa é, e não o

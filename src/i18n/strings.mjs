@@ -946,11 +946,23 @@ export const STRINGS = {
          declaração da medida, e uma medida com limiar e sem fixador fecha a
          construção.
 
-         `porRegistar` É UM PAR HONESTO E NÃO UM ATALHO: duas medidas do domínio
-         (o saldo das administrações públicas e o crescimento da despesa líquida)
-         têm limiar publicado e nenhuma linha nem decisão desta casa diz quem o
-         fixou. O que elas dizem é o que se prova — que o limiar está publicado —
-         e a razão de cada uma está na sua entrada em `src/data/dominios.mjs`. */
+         `porRegistar` SAIU A 08.09.2026, na segunda passagem do item. Era o par
+         das duas medidas do domínio cujo limiar está publicado e cujo autor não
+         estava registado aqui («dentro do limiar publicado»); leram-se os
+         documentos que as duas linhas citam, e os dois dizem quem fixou o
+         limiar. A razão de cada um está na sua entrada em `src/data/dominios.mjs`
+         e no cabeçalho de `FIXADORES_DO_LIMIAR`, em `src/data/figuras.mjs`.
+
+         A FRASE DA LEITURA VIVE DENTRO DO PAR, e não à parte: é a segunda metade
+         do item 8.5 (o cartão diz de que lado do limiar o valor está e de quem
+         ele é; a leitura diz numa frase o que ele é e quem o fixou), e um par sem
+         frase não a rende. O `lei` não tem: a página do concelho já diz a sua,
+         uma vez, com o artigo e a conta que ele manda fazer, e o §0 do brief
+         manda uma coisa num lugar só.
+
+         NENHUMA DAS FRASES LEVA UM ALGARISMO. O número de um diploma, de um
+         limiar ou de uma data seria um algarismo sem marca numa página do
+         leitor, e a régua dos algarismos fechava a construção. */
       comissao: {
         fora: 'fora do limiar da Comissão',
         dentro: 'dentro do limiar da Comissão',
@@ -958,33 +970,43 @@ export const STRINGS = {
            passa a dizer de quem ele é, pela mesma razão e no mesmo gesto. A
            linha lê-se «limiar da Comissão 60% · acima». */
         rotulo: 'limiar da Comissão',
+        /* As palavras são as do motivo `limiar-do-quadro` de
+           `ledger/allowlist.yml`, com «revisto» a dizer o que o registo diz, que
+           não é «fixado pela Comissão». */
+        frase:
+          'O limiar é o valor de referência do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, fixado no regulamento que criou o Procedimento e revisto pela Comissão Europeia.',
       },
       lei: {
         fora: 'fora do limite legal',
         dentro: 'dentro do limite legal',
         rotulo: 'limite legal',
       },
-      porRegistar: {
-        fora: 'fora do limiar publicado',
-        dentro: 'dentro do limiar publicado',
-        rotulo: 'limiar publicado',
+      /* O limite de défice do saldo das administrações públicas. A frase é a da
+         página Statistics Explained do Eurostat que a `note` da linha nomeia:
+         «Under the terms of the EU's Stability and Growth Pact (SGP), Member
+         States pledged to keep their deficits and debt below certain limits: a
+         Member State's government deficit may not exceed 3% of its gross
+         domestic product (GDP)». */
+      pacto: {
+        fora: 'fora do limiar do Pacto de Estabilidade e Crescimento',
+        dentro: 'dentro do limiar do Pacto de Estabilidade e Crescimento',
+        rotulo: 'limiar do Pacto de Estabilidade e Crescimento',
+        frase:
+          'O limiar é o limite de défice que os Estados-Membros se comprometeram a respeitar no Pacto de Estabilidade e Crescimento.',
+      },
+      /* A taxa de crescimento da despesa líquida. A frase é a da p. 6 do parecer
+         do Conselho das Finanças Públicas que a linha cita: «comprometeu-se com
+         uma determinada trajetória de crescimento da despesa líquida, que depois
+         foi aprovada pelo Conselho da UE». */
+      conselho: {
+        fora: 'fora do limiar recomendado pelo Conselho da UE',
+        dentro: 'dentro do limiar recomendado pelo Conselho da UE',
+        rotulo: 'limiar recomendado pelo Conselho da UE',
+        frase:
+          'O limiar é a taxa de crescimento da trajetória da despesa líquida com que Portugal se comprometeu e que o Conselho da União Europeia aprovou.',
       },
       semLimiar: 'sem limiar',
       porConfirmar: 'por confirmar',
-      /* A FRASE QUE DIZ O QUE O LIMIAR É E QUEM O FIXOU (item 8.5), na leitura
-         de uma medida e não no cartão. Só o fixador `comissao` a leva: o `lei`
-         tem a sua na página do concelho, uma vez, e o `porRegistar` não tem
-         autor a nomear.
-
-         SEM UM ALGARISMO NOVO. O número do regulamento não se escreve: seria um
-         algarismo sem marca numa página do leitor, e a régua dos algarismos
-         fechava a construção. O que fica é a afirmação que o motivo
-         `limiar-do-quadro` de `ledger/allowlist.yml` já regista, palavra por
-         palavra: «fixado no Regulamento (UE) n.º 1176/2011 e revisto pela
-         Comissão» — sem o número do diploma, e com «revisto» a dizer o que o
-         registo diz, que não é «fixado pela Comissão». */
-      fraseDoLimiarDaComissao:
-        'O limiar é o valor de referência do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, fixado no regulamento que criou o Procedimento e revisto pela Comissão Europeia.',
     },
 
     cobertura: {
@@ -2584,21 +2606,30 @@ export const STRINGS = {
         fora: 'outside the Commission threshold',
         dentro: 'within the Commission threshold',
         rotulo: 'Commission threshold',
+        frase:
+          'The threshold is the reference value of the Macroeconomic Imbalance Procedure scoreboard, set in the regulation that created the Procedure and revised by the European Commission.',
       },
       lei: {
         fora: 'outside the legal limit',
         dentro: 'within the legal limit',
         rotulo: 'legal limit',
       },
-      porRegistar: {
-        fora: 'outside the published threshold',
-        dentro: 'within the published threshold',
-        rotulo: 'published threshold',
+      pacto: {
+        fora: 'outside the Stability and Growth Pact threshold',
+        dentro: 'within the Stability and Growth Pact threshold',
+        rotulo: 'Stability and Growth Pact threshold',
+        frase:
+          'The threshold is the deficit limit that Member States pledged to keep to under the Stability and Growth Pact.',
+      },
+      conselho: {
+        fora: 'outside the threshold recommended by the Council of the EU',
+        dentro: 'within the threshold recommended by the Council of the EU',
+        rotulo: 'threshold recommended by the Council of the EU',
+        frase:
+          'The threshold is the growth rate of the net expenditure path that Portugal committed to and that the Council of the European Union approved.',
       },
       semLimiar: 'no threshold',
       porConfirmar: 'unconfirmed',
-      fraseDoLimiarDaComissao:
-        'The threshold is the reference value of the Macroeconomic Imbalance Procedure scoreboard, set in the regulation that created the Procedure and revised by the European Commission.',
     },
 
     cobertura: {

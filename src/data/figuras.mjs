@@ -667,20 +667,46 @@ export function comparacaoComOLimiar(claim, limiar) {
  *              este fixador não escreve uma segunda: o §0 do brief manda uma
  *              coisa num lugar só.
  *
- * `porRegistar` o limiar existe e está publicado na fonte que a linha cita, e
- *              **quem o fixou não está registado nesta casa**. São duas medidas
- *              do domínio, e não se inventa um fixador para nenhuma: o saldo das
- *              administrações públicas (E2), cuja linha escreve «O limiar de 3 %
+ * `pacto`      o limite de défice do saldo das administrações públicas (E2). A
+ *              origem é a que a `note` da própria linha nomeia: «O limiar de 3 %
  *              do PIB não está nesta resposta: está na página Statistics
- *              Explained do Eurostat … e não tem linha própria», e o crescimento
- *              da despesa líquida (E4), cujo excerto escreve «a taxa de
- *              crescimento de 5% recomendada» sem dizer por quem. O cartão delas
- *              diz «dentro do limiar publicado» / «fora do limiar publicado»,
- *              que é o que a linha prova, e a leitura não afirma um autor.
- *              **Fica no relatório do bloco como achado para o lugar de
- *              direção**: quem fixou estes dois limiares é uma linha do
- *              livro-razão ou uma decisão registada, e não uma escolha de quem
- *              constrói a página.
+ *              Explained do Eurostat, alojada neste estudo, e não tem linha
+ *              própria». Essa página é `source/eurostat/statistics-explained-
+ *              government-finance-statistics.html` do estudo `13 Dominios` do
+ *              motor, alojada com o sha256 dos seus bytes em
+ *              `source/MANIFEST.sha256`, e diz, palavra por palavra: «Under the
+ *              terms of the EU's Stability and Growth Pact (SGP), Member States
+ *              pledged to keep their deficits and debt below certain limits: a
+ *              Member State's government deficit may not exceed 3% of its gross
+ *              domestic product (GDP), while its debt may not exceed 60% of
+ *              GDP.» O documento diz de onde o limite é (o Pacto) e não nomeia
+ *              um corpo que o tenha fixado, e a página escreve o que ele diz e
+ *              nada mais. **O Protocolo n.º 12, que é onde o limiar está em
+ *              direito, continua por ler**: o EUR-Lex devolveu 202 com corpo
+ *              vazio ao verificador de 01.09.2026, e por isso não é ele que a
+ *              página cita.
+ *
+ * `conselho`   a taxa de crescimento da despesa líquida (E4). A origem é o
+ *              MESMO documento que a linha cita, o Parecer n.º 02/2026 do
+ *              Conselho das Finanças Públicas: a linha lê o excerto na p. 9 do
+ *              PDF («superando em 1,4 p.p. a taxa de crescimento de 5%
+ *              recomendada»), e a p. 6 do mesmo PDF diz quem a recomendou,
+ *              palavra por palavra: «Nesse documento comprometeu-se com uma
+ *              determinada trajetória de crescimento da despesa líquida, que
+ *              depois foi aprovada pelo Conselho da UE, passando a ser a
+ *              trajetória assumida nos termos da Recomendação do Conselho da
+ *              União Europeia de janeiro de 2025.» A p. 9 repete a atribuição na
+ *              frase do próprio excerto: «a taxa de crescimento em 2025 foi
+ *              superior à prevista no compromisso assumido por Portugal e
+ *              endossado pelo Conselho da UE».
+ *
+ * **`porRegistar` SAIU DA LISTA A 08.09.2026, E A RAZÃO ESCREVE-SE.** Era o par
+ * honesto das duas medidas acima enquanto ninguém tinha lido os documentos que
+ * as linhas citam. A decisão do lugar de direção do fecho do dia (§1.102): o
+ * fixador vem do documento que a linha cita, e de mais lado nenhum; leram-se os
+ * dois, e os dois dizem-no. Um valor sem utilizador numa lista fechada é uma
+ * porta aberta para o próximo que não quiser procurar; volta com a origem ao
+ * lado no dia em que uma medida tenha limiar publicado e um documento calado.
  *
  * O GUARDA ESTÁ EM `fixadorDoLimiar()`, e fecha a construção: uma medida com
  * limiar e sem fixador declarado não se rende, porque a alternativa é a palavra
@@ -689,7 +715,8 @@ export function comparacaoComOLimiar(claim, limiar) {
 export const FIXADORES_DO_LIMIAR = /** @type {const} */ ([
   'comissao',
   'lei',
-  'porRegistar',
+  'pacto',
+  'conselho',
 ]);
 
 /**
@@ -707,7 +734,7 @@ export const FIXADORES_DO_LIMIAR = /** @type {const} */ ([
  *
  * @param {{ limiar?: unknown, tecto?: unknown, limiarFixadoPor?: unknown }} medida
  * @param {string} onde  o nome do sítio que declarou a medida, para o erro
- * @returns {'comissao'|'lei'|'porRegistar'|null}
+ * @returns {'comissao'|'lei'|'pacto'|'conselho'|null}
  */
 export function fixadorDoLimiar(medida, onde) {
   const fixador = medida?.limiarFixadoPor ?? null;
@@ -729,7 +756,7 @@ export function fixadorDoLimiar(medida, onde) {
         `origem escrita ao lado, em src/data/figuras.mjs.`,
     );
   }
-  return /** @type {'comissao'|'lei'|'porRegistar'} */ (fixador);
+  return /** @type {'comissao'|'lei'|'pacto'|'conselho'} */ (fixador);
 }
 
 /**
