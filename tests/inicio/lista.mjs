@@ -228,18 +228,18 @@ const EDICOES = [
    mesmo ponto que a régua do mapa usa para clicar: o que aqui se mede é a marca
    à volta do sítio onde o rato de verdade pousa. */
 const PONTOS = Object.fromEntries(
-  JSON.parse(
-    fs.readFileSync(path.join(RAIZ, 'src', 'data', 'mapa-regioes.gerado.json'), 'utf8'),
-  ).regioes.map((r) => [r.slug, r.ponto]),
+  JSON.parse(fs.readFileSync(path.join(RAIZ, 'mapa', 'pais.json'), 'utf8')).unidades.map((u) => [
+    u.slug,
+    u.ponto,
+  ]),
 );
-/* AS ÁREAS DO DESENHO SÃO AS NOVE REGIÕES DESDE O F1.1d (07.09.2026), e não as
-   29 unidades da Carta: o par de estado é entre o desenho e a lista, e o desenho
-   mudou. As 29 continuam na lista, por baixo das nove, e continuam a ser
-   medidas como nomes; o que deixou de existir é o par delas, porque o outro lado
-   do par saiu do mapa. */
+/* AS ÁREAS DO DESENHO SÃO AS 29 UNIDADES DA CARTA (Emenda 20; F1.1e, 08.09.2026),
+   e foram as nove regiões NUTS II durante um dia (F1.1d). O par de estado é entre
+   o desenho e a lista, e os dois lados voltaram a ser as mesmas 29. */
 const PARES = Object.keys(PONTOS).length;
-/* Os nomes da lista: as nove regiões do desenho e as 29 unidades da Carta. */
-const NOMES_DA_LISTA = 38;
+/* Os nomes da lista são as 29 unidades do desenho, e mais nenhum: a lista é o
+   índice do desenho. */
+const NOMES_DA_LISTA = PARES;
 
 /** Tudo o que uma página diz sobre a lista, a uma largura. */
 const LEITURA = () => {
@@ -272,9 +272,8 @@ const LEITURA = () => {
     caixa: cx(g),
     formaDaFila: getComputedStyle(g.querySelector('ul')).display,
   }));
-  const nomes = [...document.querySelectorAll('[data-lista-porta], [data-lista-regiao]')].map((a) => ({
-    slug: a.getAttribute('data-lista-porta') ?? a.getAttribute('data-lista-regiao'),
-    daRegiao: a.hasAttribute('data-lista-regiao'),
+  const nomes = [...document.querySelectorAll('[data-lista-porta]')].map((a) => ({
+    slug: a.getAttribute('data-lista-porta'),
     parcela: a.closest('[data-parcela-lista]')?.getAttribute('data-parcela-lista') ?? null,
     visivel: visivel(a),
     caixa: cx(a),
@@ -282,7 +281,7 @@ const LEITURA = () => {
   }));
   /* A pontuação decorativa, dos dois lados de cada item e de cada ligação. */
   const pontuacao = [];
-  for (const el of document.querySelectorAll('[data-mapa-ilhas] li, [data-lista-porta], [data-lista-regiao]')) {
+  for (const el of document.querySelectorAll('[data-mapa-ilhas] li, [data-lista-porta]')) {
     for (const onde of ['::before', '::after']) {
       const c = conteudoDe(el, onde);
       if (c) pontuacao.push(`${el.tagName.toLowerCase()}${onde} = ${c}`);
@@ -295,7 +294,7 @@ const LEITURA = () => {
   /* A ORDEM DO DOCUMENTO entre a lista e o mapa, lida na árvore e não na folha:
      `compareDocumentPosition` diz qual vem primeiro, e é isso que o teclado e o
      leitor de ecrã seguem. */
-  const primeiroNome = document.querySelector('[data-lista-porta], [data-lista-regiao]');
+  const primeiroNome = document.querySelector('[data-lista-porta]');
   const primeiraArea = document.querySelector('a.uni-porta');
   const ordemDoDocumento =
     primeiroNome && primeiraArea
@@ -356,14 +355,14 @@ const LEITURA = () => {
 const ESTADO = (slug) => {
   const n = (v) => Number.parseFloat(String(v)) || 0;
   const uni = document.querySelector(`.uni[data-unidade="${slug}"]`);
-  const nome = document.querySelector(`[data-lista-regiao="${slug}"]`);
+  const nome = document.querySelector(`[data-lista-porta="${slug}"]`);
   let outroTraco = 0;
   for (const el of document.querySelectorAll('[data-areas] .uni')) {
     if (el === uni) continue;
     outroTraco = Math.max(outroTraco, n(getComputedStyle(el).strokeWidth));
   }
   let outroSublinhado = 0;
-  for (const el of document.querySelectorAll('[data-lista-regiao]')) {
+  for (const el of document.querySelectorAll('[data-lista-porta]')) {
     if (el === nome) continue;
     outroSublinhado = Math.max(outroSublinhado, n(getComputedStyle(el).textDecorationThickness));
   }
@@ -424,18 +423,21 @@ async function correTudo(soEstas) {
       const r = lido[`${e.chave}_1280`];
       const daLista = new Set(r.nomes.map((n) => n.slug));
       const doMapa = new Set(r.areas.map((a) => a.slug));
-      /* O QUE SE EXIGE MUDOU COM O F1.1d: a lista tem as nove regiões do desenho
-         E as 29 unidades da Carta, e o desenho tem as nove. Já não são o mesmo
-         conjunto: o que tem de ser verdade é que nenhuma área do desenho fica
-         sem nome na lista, e que a lista não inventa uma área. */
+      /* A LISTA E O DESENHO VOLTAM A SER O MESMO CONJUNTO (F1.1e): as 29 unidades
+         da Carta dos dois lados. Com o F1.1d eram conjuntos diferentes (nove
+         áreas, 38 nomes), e a célula exigia só que nenhuma área ficasse sem
+         nome; agora exige-se a igualdade, que é mais forte e é o que a lista é:
+         o índice do desenho. */
       const soNoMapa = [...doMapa].filter((s) => !daLista.has(s));
+      const soNaLista = [...daLista].filter((s) => !doMapa.has(s));
       const destinos = new Set(r.nomes.map((n) => n.destino));
       conta(
-        `L1·${e.chave} · uma lista só, com as nove áreas do desenho e as 29 unidades da Carta, depois do mapa no documento`,
+        `L1·${e.chave} · uma lista só, com as mesmas 29 unidades do desenho, depois do mapa no documento`,
         r.nomes.length === NOMES_DA_LISTA &&
           daLista.size === NOMES_DA_LISTA &&
           doMapa.size === PARES &&
           soNoMapa.length === 0 &&
+          soNaLista.length === 0 &&
           destinos.size === NOMES_DA_LISTA &&
           /* A ORDEM DO DOCUMENTO INVERTEU-SE COM O F1.1 (03.09.2026), e a razão
              que a fixava caducou com a forma. A lista vinha antes do mapa porque
@@ -455,7 +457,9 @@ async function correTudo(soEstas) {
              era a lista fechada que precisava de vir primeiro. */
           r.ordemDoDocumento === 'mapa antes dos nomes',
         `${r.nomes.length} ligações, ${daLista.size} slugs na lista e ${doMapa.size} no mapa, ${destinos.size} destinos distintos` +
-          `${soNoMapa.length ? ` · no mapa e não na lista: ${soNoMapa.join(', ')}` : ' · as nove áreas do desenho estão todas na lista'}` +
+          `${soNoMapa.length ? ` · no mapa e não na lista: ${soNoMapa.join(', ')}` : ''}` +
+          `${soNaLista.length ? ` · na lista e não no mapa: ${soNaLista.join(', ')}` : ''}` +
+          `${soNoMapa.length + soNaLista.length === 0 ? ' · a lista e o desenho são as mesmas unidades' : ''}` +
           ` · ordem do documento: ${r.ordemDoDocumento}`,
       );
     }
@@ -538,16 +542,16 @@ async function correTudo(soEstas) {
         const escondidos = r.grupos.filter((g) => !g.visivel);
         const nomesEscondidos = r.nomes.filter((n) => !n.visivel);
         conta(
-          `L4·${e.chave}·${w} · nenhuma área sem alvo tocável: os ${parcelas.size + 1} grupos e os ${NOMES_DA_LISTA} nomes à vista`,
-          /* OS GRUPOS SÃO AS PARCELAS DO DESENHO MAIS UM (F1.1d): o das nove
-             regiões, que são as áreas do mapa, à frente dos três das 29 unidades
-             da Carta, que são as parcelas em que ele as arruma. */
-          r.grupos.length === parcelas.size + 1 &&
+          `L4·${e.chave}·${w} · nenhuma área sem alvo tocável: os ${parcelas.size} grupos e os ${NOMES_DA_LISTA} nomes à vista`,
+          /* OS GRUPOS SÃO AS PARCELAS DO DESENHO (F1.1e): as 29 unidades da Carta
+             arrumadas pela parcela a que pertencem, e mais nenhum. O grupo das
+             nove regiões saiu com elas do desenho. */
+          r.grupos.length === parcelas.size &&
             parcelas.size > 0 &&
             escondidos.length === 0 &&
             nomesEscondidos.length === 0 &&
             r.nomes.length === NOMES_DA_LISTA,
-          `${r.grupos.length} grupo(s): o das regiões e ${parcelas.size} parcela(s) da Carta, ${escondidos.length} escondido(s)` +
+          `${r.grupos.length} grupo(s), ${parcelas.size} parcela(s) da Carta, ${escondidos.length} escondido(s)` +
             `${escondidos.length ? ` (${escondidos.map((g) => g.parcela).join(', ')})` : ''} · ` +
             `${r.nomes.length} nome(s), ${nomesEscondidos.length} escondido(s)`,
         );
@@ -759,24 +763,32 @@ async function correTudo(soEstas) {
   if (daMao.length) {
     for (const e of EDICOES) {
       const p = await pagina(e.rota, 1280, true);
-      /* O REPOUSO LÊ-SE NUMA REGIÃO, que é o que o desenho tem desde o F1.1d:
-         lido numa unidade da Carta, o lado do mapa vinha `null` e a comparação
-         com «os outros» passava a comparar um número com nada. */
-      const repouso = await p.evaluate(ESTADO, 'centro');
+      /* O REPOUSO LÊ-SE NUMA UNIDADE DA CARTA, que é o que o desenho tem: lido
+         numa área que o mapa não desenha, o lado do mapa vinha `null` e a
+         comparação com «os outros» passava a comparar um número com nada. */
+      const repouso = await p.evaluate(ESTADO, 'evora');
 
       /* O rato do lado do mapa vai ao ponto representativo, e por isso o desenho
          entra em vista uma vez e os pontos leem-se DEPOIS disso: um rolamento a
          meio invalidaria as coordenadas de ecrã já calculadas. */
       await p.evaluate(() => document.querySelector('[data-mapa-areas]').scrollIntoView({ block: 'center' }));
+      /* A MATRIZ É A DO PRÓPRIO CAMINHO E NÃO A DO `svg` (F1.1e, segunda
+         passagem, 08.09.2026). As unidades dos dois arquipélagos levam a
+         translação da arrumação dos insertos, escrita pelo servidor em cada
+         caminho, e um ponto do campo levado ao ecrã pela matriz do `svg` caía
+         onde a ilha ESTAVA: o rato pousava no mar e as nove ilhas dos Açores
+         falhavam a L6b. A matriz de um caminho traz as transformações dos seus
+         antepassados e a dele, e é a única que responde por «onde está este
+         ponto desta área no ecrã». */
       const noEcra = await p.evaluate((pontos) => {
         const svg = document.querySelector('[data-mapa-areas]');
-        const m = svg.getScreenCTM();
         const out = {};
         for (const [slug, xy] of Object.entries(pontos)) {
+          const el = svg.querySelector(`[data-areas] .uni[data-unidade="${slug}"]`) ?? svg;
           const pt = svg.createSVGPoint();
           pt.x = xy[0];
           pt.y = xy[1];
-          const s = pt.matrixTransform(m);
+          const s = pt.matrixTransform(el.getScreenCTM());
           out[slug] = { x: s.x, y: s.y };
         }
         return out;
@@ -809,7 +821,7 @@ async function correTudo(soEstas) {
         }
         await p.mouse.move(0, 0);
         conta(
-          'L6b · o rato em cada uma das nove áreas marca o nome daquela região, e só dele',
+          'L6b · o rato em cada uma das 29 áreas marca o nome daquela unidade, e só dele',
           falhasRatoNaArea.length === 0,
           falhasRatoNaArea.length === 0
             ? `${PARES}/${PARES} · sublinhado ${repouso.sublinhado} px → 3 px no nome apontado, ${repouso.sublinhado} px nos outros`
@@ -834,7 +846,7 @@ async function correTudo(soEstas) {
           }
         }
         conta(
-          'L6d · o foco do teclado em cada uma das nove áreas marca o nome daquela região',
+          'L6d · o foco do teclado em cada uma das 29 áreas marca o nome daquela unidade',
           falhasFocoNaArea.length === 0,
           falhasFocoNaArea.length === 0
             ? `${PARES}/${PARES} pelo Tab`
@@ -845,7 +857,7 @@ async function correTudo(soEstas) {
         await repousa();
         const falhasRatoNoNome = [];
         for (const slug of slugs) {
-          const el = await p.$(`[data-lista-regiao="${slug}"]`);
+          const el = await p.$(`[data-lista-porta="${slug}"]`);
           let chegou = false;
           try {
             if (el) {
@@ -862,7 +874,7 @@ async function correTudo(soEstas) {
         }
         await p.mouse.move(0, 0);
         conta(
-          'L6a · o rato em cada um dos nove nomes de região contorna a área dela, e só dela',
+          'L6a · o rato em cada um dos 29 nomes contorna a área daquela unidade, e só dela',
           falhasRatoNoNome.length === 0,
           falhasRatoNoNome.length === 0
             ? `${PARES}/${PARES} · contorno ${repouso.traco} px → 3 px na área apontada, ${repouso.traco} px nas outras`
@@ -872,19 +884,19 @@ async function correTudo(soEstas) {
         /* o foco do teclado em cada nome → a área daquela unidade */
         await repousa();
         const ordemDosNomes = await p.evaluate(() =>
-          [...document.querySelectorAll('[data-lista-regiao]')].map((a) =>
-            a.getAttribute('data-lista-regiao'),
+          [...document.querySelectorAll('[data-lista-porta]')].map((a) =>
+            a.getAttribute('data-lista-porta'),
           ),
         );
         const falhasFocoNoNome = [];
         for (let i = 0; i < ordemDosNomes.length; i++) {
           await p.evaluate((i) => {
-            const as = [...document.querySelectorAll('[data-lista-regiao]')];
+            const as = [...document.querySelectorAll('[data-lista-porta]')];
             as[i === 0 ? 1 : i - 1].focus();
           }, i);
           await p.keyboard.press(i === 0 ? 'Shift+Tab' : 'Tab');
           const pousou = await p.evaluate(
-            (slug) => document.activeElement?.getAttribute('data-lista-regiao') === slug,
+            (slug) => document.activeElement?.getAttribute('data-lista-porta') === slug,
             ordemDosNomes[i],
           );
           const s = await p.evaluate(ESTADO, ordemDosNomes[i]);
@@ -893,7 +905,7 @@ async function correTudo(soEstas) {
           }
         }
         conta(
-          'L6c · o foco do teclado em cada um dos nove nomes de região contorna a área dela',
+          'L6c · o foco do teclado em cada um dos 29 nomes contorna a área daquela unidade',
           falhasFocoNoNome.length === 0,
           falhasFocoNoNome.length === 0
             ? `${PARES}/${PARES} pelo Tab`
@@ -904,13 +916,12 @@ async function correTudo(soEstas) {
       if (precisa('L7')) {
         await p.mouse.move(0, 0);
         await p.evaluate(() => document.activeElement?.blur?.());
-        /* O PAR MEDE-SE NUMA REGIÃO, e o Centro é a que o desenho dá com mais
-           folga: era «lisboa», que era uma unidade da Carta e deixou de ter área
-           no desenho com o F1.1d. */
-        const alvo = 'centro';
+        /* O PAR MEDE-SE NUMA UNIDADE, e Évora é a que o desenho dá com mais
+           folga: uma área grande, convexa e no meio do continente. */
+        const alvo = 'evora';
         let chegouAoNome = false;
         try {
-          const el = await p.$(`[data-lista-regiao="${alvo}"]`);
+          const el = await p.$(`[data-lista-porta="${alvo}"]`);
           if (el) {
             await el.hover({ timeout: 2000 });
             chegouAoNome = true;
@@ -921,14 +932,15 @@ async function correTudo(soEstas) {
         const comRatoNoNome = await p.evaluate(ESTADO, alvo);
         await p.mouse.move(0, 0);
         await p.evaluate(() => document.querySelector('[data-mapa-areas]').scrollIntoView({ block: 'center' }));
-        const ponto = await p.evaluate((xy) => {
+        const ponto = await p.evaluate(([xy, slug]) => {
           const svg = document.querySelector('[data-mapa-areas]');
+          const el = svg.querySelector(`[data-areas] .uni[data-unidade="${slug}"]`) ?? svg;
           const pt = svg.createSVGPoint();
           pt.x = xy[0];
           pt.y = xy[1];
-          const s = pt.matrixTransform(svg.getScreenCTM());
+          const s = pt.matrixTransform(el.getScreenCTM());
           return { x: s.x, y: s.y };
-        }, PONTOS[alvo]);
+        }, [PONTOS[alvo], alvo]);
         await p.mouse.move(ponto.x, ponto.y);
         const comRatoNaArea = await p.evaluate(ESTADO, alvo);
         medidas[`par_${e.chave}`] = { repouso, comRatoNoNome, comRatoNaArea };
@@ -960,6 +972,41 @@ const soNaPrimeira = (rota) =>
 const comFolha = (css) => (html, rota) =>
   soNaPrimeira(rota) ? html.replace('</head>', `<style>${css}</style></head>`) : html;
 
+/* ---------------------------------------------------------------------------
+ * MOVER UM BLOCO NO DOCUMENTO, CONTANDO AS ETIQUETAS
+ * ---------------------------------------------------------------------------
+ * Três plantas precisam de trocar a ordem de dois blocos no HTML construído, e
+ * o fim de um `<div>` encontra-se a contar as `<div>` que abrem e as que fecham,
+ * que é a única maneira honesta de o saber num documento: um corte por índice
+ * deixaria etiquetas por fechar e o analisador leria outra árvore.
+ */
+function fimDoBloco(texto, inicio) {
+  let nivel = 0;
+  const re = /<div\b|<\/div>/g;
+  re.lastIndex = inicio;
+  let m;
+  while ((m = re.exec(texto))) {
+    nivel += m[0] === '</div>' ? -1 : 1;
+    if (nivel === 0) return m.index + 6;
+  }
+  return -1;
+}
+
+/** O bloco que começa em `abre` movido para antes (ou depois) de `alvo`. */
+function moveBloco(html, abre, alvo, onde) {
+  const i = html.indexOf(abre);
+  if (i < 0) return html;
+  const f = fimDoBloco(html, i);
+  if (f < 0) return html;
+  const bloco = html.slice(i, f);
+  const sem = html.slice(0, i) + html.slice(f);
+  const j = sem.indexOf(alvo);
+  if (j < 0) return html;
+  const g = onde === 'depois' ? fimDoBloco(sem, j) : j;
+  if (g < 0) return html;
+  return sem.slice(0, g) + bloco + sem.slice(g);
+}
+
 const PLANTAS = [
   {
     nome: 'uma ligação duplicada: o mesmo nome duas vezes na lista',
@@ -971,39 +1018,22 @@ const PLANTAS = [
     },
   },
   {
-    /* A COLUNA DAS GAVETAS DEPOIS DO MAPA NO DOCUMENTO. Era «o mapa antes dos
-       nomes», e o corte era entre `<div class="mapa-ilhas">` e
-       `<div class="cabeca-inst">`; com a lista dentro de uma gaveta dentro da
-       coluna, esse corte deixaria de fechar as etiquetas do meio. O bloco que
-       se move é o `.cabeca-lado` inteiro, e o fim dele encontra-se a contar as
-       `<div>` que abrem e as que fecham, que é a única maneira honesta de o
-       saber num documento. */
-    nome: 'a coluna das gavetas depois do mapa no documento',
+    /* A BANDA DOS NOMES ANTES DO MAPA NO DOCUMENTO.
+       ----------------------------------------------------------------------
+       ESTA PLANTA MUDAVA O HTML E NÃO MORDIA (F1.1e, segunda passagem,
+       08.09.2026). Trocava a coluna da legenda (`.cabeca-lado`) com a coluna do
+       mapa (`.cabeca-inst`), que era onde a lista vivia quando a planta foi
+       escrita; desde o F1.1 (03.09.2026) a lista saiu da grelha para uma banda
+       de largura inteira (`.cabeca-nomes`), e trocar aquelas duas colunas deixou
+       de mexer na ordem entre os NOMES e o MAPA, que é o que a L1 mede. Foi a
+       leitura a frio do Codex a apanhá-lo (achado 10), e a correção é a planta e
+       não a célula: o bloco que se move passa a ser a banda dos nomes. */
+    nome: 'a banda dos nomes antes do mapa no documento',
     celulas: ['L1'],
-    estrago: (html, rota) => {
-      if (!soNaPrimeira(rota)) return html;
-      const fimDoBloco = (texto, inicio) => {
-        let nivel = 0;
-        const re = /<div\b|<\/div>/g;
-        re.lastIndex = inicio;
-        let m;
-        while ((m = re.exec(texto))) {
-          nivel += m[0] === '</div>' ? -1 : 1;
-          if (nivel === 0) return m.index + 6;
-        }
-        return -1;
-      };
-      const i = html.indexOf('<div class="cabeca-lado"');
-      if (i < 0) return html;
-      const f = fimDoBloco(html, i);
-      const j = html.indexOf('<div class="cabeca-inst"', f);
-      if (f < 0 || j < 0) return html;
-      const g = fimDoBloco(html, j);
-      if (g < 0) return html;
-      const lado = html.slice(i, f);
-      const inst = html.slice(j, g);
-      return html.slice(0, i) + inst + html.slice(f, j) + lado + html.slice(g);
-    },
+    estrago: (html, rota) =>
+      soNaPrimeira(rota)
+        ? moveBloco(html, '<div class="cabeca-nomes"', '<div class="cabeca-inst"', 'antes')
+        : html,
   },
   {
     nome: 'a coluna das gavetas de volta para a coluna do mapa, a 1280',
@@ -1042,13 +1072,22 @@ const PLANTAS = [
     ),
   },
   {
-    /* A legenda ao princípio da coluna em vez do fim: era «de volta para a
-       coluna do mapa» por `grid-column`, e a legenda deixou de ser filha da
-       grelha (01.09.2026). O que a põe no sítio errado agora é a ordem dentro
-       da coluna das gavetas. */
-    nome: 'a legenda por cima dos nomes em vez de por baixo',
+    /* A LEGENDA POR BAIXO DOS NOMES EM VEZ DE POR CIMA.
+       ----------------------------------------------------------------------
+       ESTA PLANTA MUDAVA O HTML E NÃO MORDIA (F1.1e, segunda passagem,
+       08.09.2026). Punha `order:-1` na legenda dentro de `.cabeca-lado`, e isso
+       muda a ordem dela DENTRO daquela coluna; o que a L12 mede desde o F1.1 é a
+       legenda contra a BANDA DOS NOMES, que vive fora da grelha e sempre depois
+       dela, de maneira que nenhuma ordenação dentro da coluna a podia inverter
+       (leitura a frio do Codex de 08.09.2026, achado 10). A planta passa a fazer
+       o que o seu nome diz: move a legenda para depois da banda dos nomes, que é
+       a forma que o defeito teria. */
+    nome: 'a legenda por baixo dos nomes em vez de por cima',
     celulas: ['L12'],
-    estrago: comFolha('.cabeca-lado .mapa-legenda{order:-1 !important;margin-top:0 !important}'),
+    estrago: (html, rota) =>
+      soNaPrimeira(rota)
+        ? moveBloco(html, '<div class="mapa-legenda', '<div class="cabeca-nomes"', 'depois')
+        : html,
   },
   {
     nome: 'o mapa mais largo do que a coluna, a 1280',
@@ -1058,21 +1097,27 @@ const PLANTAS = [
     ),
   },
   {
+    /* A RAIZ DO PAR É `:root` DESDE O F1.1 (03.09.2026), e as duas plantas ainda
+       procuravam `.cabeca-grelha`, que era a raiz de antes: o `replace` não
+       encontrava nada, o HTML saía intacto e as duas plantas declaravam-se a
+       morder sem terem mexido em coisa nenhuma. Apanhado ao correr
+       `--vermelhos` no F1.1e (08.09.2026), que é a primeira vez que ele corre
+       nesta régua desde essa mudança. */
     nome: 'o rato num nome sem resposta do mapa (a folha do par retirada)',
     celulas: ['L6', 'L7'],
     estrago: (html, rota) =>
-      soNaPrimeira(rota) ? html.replace(/<style>\.cabeca-grelha:has[\s\S]*?<\/style>/, '') : html,
+      soNaPrimeira(rota) ? html.replace(/<style>:root:has[\s\S]*?<\/style>/, '') : html,
   },
   {
     nome: 'a marca só por cor',
     celulas: ['L6', 'L7'],
     estrago: (html, rota) => {
       if (!soNaPrimeira(rota)) return html;
-      const sem = html.replace(/<style>\.cabeca-grelha:has[\s\S]*?<\/style>/, '');
+      const sem = html.replace(/<style>:root:has[\s\S]*?<\/style>/, '');
       return sem.replace(
         '</head>',
-        '<style>.cabeca-grelha:has([data-lista-porta="lisboa"]:hover) .uni[data-unidade="lisboa"]{stroke:#c00}' +
-          '.cabeca-grelha:has([data-uni-porta="lisboa"]:hover) [data-lista-porta="lisboa"]{color:#c00}' +
+        '<style>:root:has([data-lista-porta="lisboa"]:hover) .uni[data-unidade="lisboa"]{stroke:#c00}' +
+          ':root:has([data-uni-porta="lisboa"]:hover) [data-lista-porta="lisboa"]{color:#c00}' +
           '.mapa-ilhas-lista a:hover{text-decoration-thickness:1px !important}</style></head>',
       );
     },
@@ -1097,11 +1142,22 @@ const PLANTAS = [
         : html,
   },
   {
-    nome: 'a forma em linha a 1024 e a 1280 (as duas formas na mesma largura)',
+    /* AS DUAS FORMAS NA MESMA LARGURA.
+       ----------------------------------------------------------------------
+       ESTA PLANTA PLANTAVA O ESTADO CERTO (F1.1e, segunda passagem,
+       08.09.2026). Punha a rede EM LINHA a partir de 1024, que era o defeito
+       enquanto a forma acima de 1024 era a lista em coluna; desde o F1.1
+       (03.09.2026) a forma é uma só em todas as larguras e é precisamente a
+       linha, de maneira que a planta plantava o que a célula exige (leitura a
+       frio do Codex de 08.09.2026, achado 10). O nome dela sempre prometeu a
+       coisa certa, «as duas formas na mesma largura», e é isso que ela passa a
+       fazer: o continente em linha e os arquipélagos em coluna, ao mesmo tempo,
+       que é o estado que a L9 existe para recusar. */
+    nome: 'as duas formas na mesma largura (o continente em linha e os arquipélagos em coluna)',
     celulas: ['L9'],
     estrago: comFolha(
-      '@media (min-width:1024px){.mapa-ilhas-lista{display:flex !important;column-gap:0.75em !important;columns:auto !important}' +
-        '.mapa-ilhas-lista a{min-height:44px !important;line-height:20px !important;padding-block:12px !important}}',
+      '.mapa-ilhas-grupo:not([data-parcela-lista="continente"]) .mapa-ilhas-lista' +
+        '{display:block !important;columns:2 !important}',
     ),
   },
   {
