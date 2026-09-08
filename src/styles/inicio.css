@@ -2892,6 +2892,31 @@ a.porta:hover .porta-abrir {
    A frase de cada painel, entre o nome dele e os seus cartões. É prosa, e por
    isso é do tipo da prosa; o corpo é o da lede em pequeno, e a medida de linha
    trava-se para que ela não atravesse o ecrã largo de ponta a ponta. */
+/* O NOME OFICIAL DO PAINEL, EM SUBTÍTULO (F1.10, item 8.4, 08.09.2026). O
+   cabeçalho passou a dizer o que o painel é, em palavras simples, e o nome
+   oficial com a contagem das medidas desceu uma linha. É mobília e não prosa: a
+   letra é a da instrumentação, na cor da mobília, e por isso não disputa a
+   leitura com a definição que vem a seguir. */
+.painel-oficial {
+  margin: 0 0 6px;
+  font-family: var(--f-instr);
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+
+/* A LINHA DO ALCANCE DO PAINEL SOCIAL (F1.10, item 8.4, 08.09.2026): quantas
+   das medidas principais do painel é que o livro-razão guarda. Segue a
+   definição, na letra e na cor da mobília, porque é uma conta sobre a lista e
+   não a definição do painel. */
+.painel-alcance {
+  margin: -10px 0 16px;
+  font-family: var(--f-instr);
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+
 .painel-contexto {
   margin: 0 0 16px;
   font-size: 15px;
@@ -3159,6 +3184,20 @@ a.porta:hover .porta-abrir {
    (`.mun-distancia`, `.mun-ganho`, em `municipio.css`). */
 .dobra-instrumento {
   margin-top: 12px;
+}
+
+/* A DEFINIÇÃO DA MEDIDA, À CABEÇA DA LEITURA (F1.10, item 8.4, 08.09.2026). É a
+   única frase da leitura que é PROSA: diz o que a coisa é, com as palavras da
+   descrição da Comissão ou do Eurostat. Por isso leva o tipo da prosa e a tinta
+   cheia, e é ela que ganha a primeira leitura do olho; o que vem depois (a
+   unidade, o limiar, as datas) é instrumentação. */
+.dobra-definicao {
+  font-family: var(--f-prosa);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0 0 8px;
+  max-width: 46em;
 }
 
 /* A FRASE QUE DIZ O QUE O LIMIAR É E QUEM O FIXOU (F1.10, item 8.5, 08.09.2026).

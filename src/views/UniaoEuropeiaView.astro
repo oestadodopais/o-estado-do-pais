@@ -57,7 +57,8 @@ import Frase from '../components/Frase.astro';
 import {
   FIGURAS_PDM,
   FIGURAS_SOCIAL,
-  CONTEXTO_DOS_PAINEIS,
+  DEFINICAO_DOS_PAINEIS,
+  ALCANCE_DO_PAINEL_SOCIAL,
   comparacaoComOLimiar,
   ladosDoLimiar,
   fixadorDoLimiar,
@@ -209,14 +210,21 @@ const lede = ledeDoPainel(medidas, s.inicio.cabeca.ledePais, lang);
   <section id="painel" data-area-leitura>
     <p class="dobras-nada" data-leituras-vazio hidden>{s.inicio.painel.semLeituraAberta}</p>
 
+    {/* O CABEÇALHO DO PAINEL, PELO ITEM 8.4: o que ele É vem primeiro, em
+        palavras simples, e o nome oficial com a contagem das medidas fica no
+        subtítulo, que é onde a chave da prova continua a viver. A frase de
+        contexto do F1.1 saiu (§9.3): dizia contra o que a casa conferiu os
+        valores, e uma definição cita a Comissão como fonte da definição e não
+        como testemunha do trabalho desta casa. */}
     <div data-contexto-quadro="pdm">
-      <h2 class="painel-nome">
+      <h2 class="painel-nome">{DEFINICAO_DOS_PAINEIS.pdm.titulo[lang]}</h2>
+      <p class="painel-oficial">
         {s.inicio.painel.nomeA}
         <ValorDaProva chave="painel_com_limiar" item={p.painel_com_limiar} lang={lang} />
         {s.inicio.painel.nomeFim}
-      </h2>
+      </p>
       <p class="painel-contexto" data-contexto-painel="pdm">
-        <Frase partes={CONTEXTO_DOS_PAINEIS.pdm[lang]} lang={lang} />
+        <Frase partes={DEFINICAO_DOS_PAINEIS.pdm[lang]} lang={lang} />
       </p>
     </div>
 
@@ -230,13 +238,21 @@ const lede = ledeDoPainel(medidas, s.inicio.cabeca.ledePais, lang);
         existe na página. */}
     <section class="social" id="painel-social">
       <div data-contexto-quadro="social">
-        <h2 class="social-titulo">
+        <h2 class="social-titulo">{DEFINICAO_DOS_PAINEIS.social.titulo[lang]}</h2>
+        <p class="painel-oficial">
           {s.inicio.social.titulo}
           <ValorDaProva chave="painel_social_total" item={p.painel_social_total} lang={lang} />
           {s.inicio.social.tituloFim}
-        </h2>
+        </p>
         <p class="painel-contexto" data-contexto-painel="social">
-          <Frase partes={CONTEXTO_DOS_PAINEIS.social[lang]} lang={lang} />
+          <Frase partes={DEFINICAO_DOS_PAINEIS.social[lang]} lang={lang} />
+        </p>
+        {/* A FRAÇÃO FICA, E É HONESTIDADE E NÃO FORMA: o subtítulo diz «Painel
+            Social Europeu · 8 medidas», e sem esta linha um leitor fica a pensar
+            que o painel tem oito. Tem dezassete principais. Ver a razão em
+            `ALCANCE_DO_PAINEL_SOCIAL`, em `src/data/figuras.mjs`. */}
+        <p class="painel-alcance">
+          <Frase partes={ALCANCE_DO_PAINEL_SOCIAL[lang]} lang={lang} />
         </p>
       </div>
 

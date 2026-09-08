@@ -476,7 +476,13 @@ export const STRINGS = {
       janelaE: 'e',
       origemDaDataK: 'Onde está escrito',
       acedidoK: 'Lido a',
-      afectaK: 'Linhas que isto move',
+      /* «LINHAS A QUE ISTO DIZ RESPEITO», E NÃO «LINHAS QUE ISTO MOVE» (decisão
+         do lugar de direção de 08.09.2026, da leitura a frio do bloco F2.6b do
+         motor). O motor passou a pôr neste campo as linhas do último período
+         publicado de cada fonte, que um ficheiro novo torna desatualizadas, e
+         não linhas que o acontecimento MUDE. O verbo prometia mais do que o
+         campo entrega, e a etiqueta passa a dizer o que ele é. */
+      afectaK: 'Linhas a que isto diz respeito',
       notaK: 'Nota',
       voltarALista: 'Voltar à agenda',
     },
@@ -1222,7 +1228,12 @@ export const STRINGS = {
       vagaTerceira: 'terceira vaga',
       metaCauda: 'domínio · O Estado do País',
       metaDescricaoA: 'As medidas de ',
-      metaDescricaoB: ', com a fonte, o período e a data de cada uma.',
+      /* «AS DATAS» E NÃO «A DATA» (§9.9 do brief do F1.10, 08.09.2026): a gémea
+         inglesa dizia «the dates of each one» e esta dizia «a data», e a página
+         imprime TRÊS datas por medida (o período, a data de leitura e a da
+         última conferência). As duas passam a dizer o mesmo, e o que elas dizem
+         é o que a página tem. */
+      metaDescricaoB: ', com a fonte, o período e as datas de cada uma.',
       tipo: 'domínio da carta dos conteúdos',
       fronteiraK: 'A fronteira deste domínio',
       ausenciaK: 'Sem número público',
@@ -2429,7 +2440,8 @@ export const STRINGS = {
       janelaE: 'and',
       origemDaDataK: 'Where it is written',
       acedidoK: 'Read on',
-      afectaK: 'Rows this moves',
+      /* Ver a razão na edição portuguesa, e o registo em `CHAVES-EN.md`. */
+      afectaK: 'Rows this concerns',
       notaK: 'Note',
       voltarALista: 'Back to the agenda',
     },
