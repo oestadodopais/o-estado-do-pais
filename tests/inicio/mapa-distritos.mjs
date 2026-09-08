@@ -923,20 +923,72 @@ function corre(guiao, args = []) {
  * que fiquem vermelhas.
  */
 const PLANTAS = [
-  /* QUATRO PLANTAS SAÍRAM COM AS CÉLULAS M1 E M2 (F1.1d, 07.09.2026): o mapa
-     encolhido para 200 px, os nomes retirados da lista, o mapa do telemóvel de
-     volta à largura da coluna e o nome da Ilha da Madeira fora da sua parcela.
-     As quatro mordiam o alvo das 29 unidades no mapa da primeira página, que
-     deixou de as desenhar; as plantas do desenho novo vivem com as suas células,
-     em `tests/inicio/mapa-unidades.mjs --vermelhos`, e são cinco. */
+  /* AS QUATRO PLANTAS DAS CÉLULAS M1 E M2 VOLTAM COM ELAS (F1.1e, 08.09.2026): o
+     mapa encolhido para 200 px, os nomes retirados da lista, o mapa do telemóvel
+     de volta à largura da coluna e o nome da Ilha da Madeira fora da sua parcela.
+     Saíram durante um dia, com as células, quando o F1.1d trocou as 29 unidades
+     pelas nove regiões no mapa da primeira página; o desenho voltou às 29, e uma
+     célula sem planta é uma célula por provar. */
   {
+    nome: 'o mapa encolhido para 200 px na primeira página',
+    celulas: ['M1b', 'M2·320e'],
+    estrago: (html, rota) =>
+      rota === '/' || rota === '/index.html'
+        ? html.replace('</head>', '<style>.mapa-tela{width:200px !important;margin-inline:0 !important}</style></head>')
+        : html,
+  },
+  {
+    nome: 'os nomes retirados das listas por baixo do mapa',
+    celulas: ['M1b', 'M2·320b'],
+    estrago: (html, rota) =>
+      rota === '/' || rota === '/index.html'
+        ? html.replace(
+            /<li><a href="\/distritos\/[^"]*" data-lista-porta="[^"]*">[^<]*<\/a><\/li>/g,
+            '',
+          )
+        : html,
+  },
+  {
+    /* O ESTRAGO DA I81. A folha volta a dar ao mapa a largura da COLUNA abaixo
+       de 640, que é o que ela dizia até esta passagem: a margem negativa que o
+       leva às bordas da caixa de conteúdo é anulada. Numa janela de 320 a tela
+       cai de 320 para 284 px, e a célula que mede a decisão sai vermelha. */
+    nome: 'o mapa do telemóvel de volta à largura da coluna',
+    celulas: ['M2·320e'],
+    estrago: (html, rota) =>
+      rota === '/' || rota === '/index.html'
+        ? html.replace(
+            '</head>',
+            '<style>@media (max-width:640px){[data-inicio] .mapa-tela{margin-inline:0 !important}}</style></head>',
+          )
+        : html,
+  },
+  {
+    /* O ESTRAGO DA I82, e é o caso conhecido da medição cega M3. A Ilha da
+       Madeira tem uma CAIXA de 186 px a 390 e um quadrado inscrito de 8: pela
+       caixa é um alvo folgado, pela área inscrita não é alvo nenhum. Tirar-lhe o
+       nome da lista era invisível para a régua antiga e é vermelho para esta,
+       que é exactamente a diferença entre as duas medidas. */
+    nome: 'o nome da Ilha da Madeira retirado da lista da sua parcela',
+    celulas: ['M1b', 'M2·390b'],
+    estrago: (html, rota) =>
+      rota === '/' || rota === '/index.html'
+        ? html.replace(
+            /<li><a href="\/distritos\/ilha-da-madeira" data-lista-porta="ilha-da-madeira">[^<]*<\/a><\/li>/g,
+            '',
+          )
+        : html,
+  },
+  {
+    /* A UNIDADE PINTADA É ÉVORA, e não «centro»: «centro» era o slug de uma das
+       nove regiões do desenho do F1.1d, e um selector sem alvo não pinta nada. */
     nome: 'uma área pintada com a cor de um estatuto',
     celulas: ['M5a', 'M5c'],
     estrago: (html, rota) =>
       rota === '/' || rota === '/index.html'
         ? html.replace(
             '</head>',
-            '<style>[data-unidade="centro"]{stroke:var(--amber) !important}</style></head>',
+            '<style>[data-unidade="evora"]{stroke:var(--amber) !important}</style></head>',
           )
         : html,
   },
@@ -1003,10 +1055,16 @@ if (VERMELHOS) {
     if (planta.emMemoria) planta.emMemoria();
     /* Só se voltam a correr as células que a planta toca: uma régua inteira por
        planta seria quatro corridas de tudo para provar quatro linhas. */
-    /* AS CORRIDAS DE M1 E M2 SAÍRAM COM AS CÉLULAS (F1.1d). Ficam nomeadas aqui
-       porque a condição que as chamava era `startsWith('M1')`, e essa apanhava
-       também a M10a: a planta da ordem da lista corria o mapa do país sem
-       precisar dele, e foi assim que a retirada das duas células a partiu. */
+    /* AS CORRIDAS DE M1 E M2 VOLTAM COM AS CÉLULAS (F1.1e). A condição que as
+       chamava era `startsWith('M1')`, e essa apanhava também a M10a: a planta da
+       ordem da lista corria o mapa do país sem precisar dele. A condição passa a
+       excluir a M10, que é a única outra célula cujo nome começa por «M1». */
+    if (planta.celulas.some((c) => c.startsWith('M1') && !c.startsWith('M10'))) {
+      await mediuOPais(1280, 'M1');
+    }
+    for (const w of TELEMOVEIS) {
+      if (planta.celulas.some((c) => c.startsWith(`M2·${w}`))) await mediuOPais(w, `M2·${w}`);
+    }
     if (planta.celulas.some((c) => c.startsWith('M5'))) {
       const p = await pagina('/', 1280);
       const r = await p.evaluate(() => {
