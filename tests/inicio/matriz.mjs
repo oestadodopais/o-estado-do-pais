@@ -227,30 +227,89 @@ const estadoDaPagina = (p) =>
   await p.goto(`${base}/`, { waitUntil: 'networkidle' });
   const inicial = await estadoDaPagina(p);
   conta('estado inicial · País · Relance', inicial.ambito === 'pais' && inicial.densidade === 'relance', `${inicial.ambito} · ${inicial.densidade} · ${inicial.pecas} peças`);
-  /* A MANCHETE DA EMENDA 16: duas contagens, e o nome do Procedimento por
-     extenso. A célula lê o texto e as duas chaves da prova que o compõem. */
-  const manchete = await p.evaluate(() => {
+  /* A MANCHETE DA EMENDA 16 MUDOU DE PÁGINA (F1.10, item 8.16, 08.09.2026), E A
+     DE `/` MUDOU DE PROMESSA (item 8.15).
+     ---------------------------------------------------------------------------
+     A manchete com as duas contagens do Procedimento foi com os 21 cartões para
+     «Portugal na União Europeia»; a manchete de `/` passou a citar as medidas de
+     cabeça dos domínios vivos. A célula seguia a Emenda 16 nesta página e falhava
+     por medir uma frase que aqui já não vive.
+
+     PARTEM-SE EM DUAS, e nenhuma passa por não encontrar: a promessa da Emenda 16
+     mede-se onde a frase está, e a de `/` passa a ser a do item 8.15, que é o que
+     esta página promete hoje: uma frase só, com NO MÁXIMO DOIS algarismos
+     selados, cada um com o seu selo. O teto das três linhas a 390 px é da A1 de
+     `porta.mjs`, que mede em píxeis; esta conta os algarismos, que é o que o
+     documento diz de si. */
+  const mancheteDoPais = await p.evaluate(() => {
     const h1 = document.querySelector('[data-cabeca]:not([hidden]) h1');
+    if (!h1) return null;
+    /* A FRASE CONTA-SE SEM OS SELOS, e a razão é o documento: os selos são
+       `<a>` dentro do `<h1>`, com a palavra «fonte» e o nome do publicador para
+       quem lê com um leitor de ecrã, e o `textContent` cola-os ao ponto final da
+       frase («…ativa.fonte · Quadro…»). Contar pontos no texto inteiro dizia
+       zero frases numa manchete que tem uma. */
+    const clone = h1.cloneNode(true);
+    for (const s of clone.querySelectorAll('.manchete-selos, a.src-chip')) s.remove();
+    const frase = clone.textContent.replace(/\s+/g, ' ').trim();
     return {
-      texto: h1.textContent.replace(/\s+/g, ' ').trim(),
-      provas: [...h1.querySelectorAll('[data-prova]')].map((e) => e.getAttribute('data-prova')),
+      texto: frase,
+      citadas: Number(h1.getAttribute('data-citadas') ?? -1),
+      claims: h1.querySelectorAll('[data-claim]').length,
+      selos: h1.querySelectorAll('a.src-chip').length,
+      frases: (frase.match(/\.(\s|$)/g) ?? []).length,
     };
   });
   conta(
-    '2l · a manchete do País leva as duas contagens da Emenda 16',
-    /Procedimento dos Desequil|Macroeconomic Imbalance Procedure/.test(manchete.texto) &&
-      manchete.provas.join(',') === 'painel_fora_do_limiar,painel_dentro_do_limiar',
-    `${manchete.texto} · ${manchete.provas.join(' + ')}`,
+    '8.15 · a manchete de `/` é uma frase com dois algarismos selados no máximo',
+    !!mancheteDoPais &&
+      mancheteDoPais.claims <= 2 &&
+      mancheteDoPais.claims === mancheteDoPais.citadas &&
+      mancheteDoPais.selos === mancheteDoPais.claims &&
+      mancheteDoPais.frases === 1,
+    mancheteDoPais
+      ? `«${mancheteDoPais.texto}» · ${mancheteDoPais.claims} algarismo(s) selado(s), ` +
+        `${mancheteDoPais.selos} selo(s), ${mancheteDoPais.frases} frase(s)`
+      : 'sem manchete na primeira página',
   );
-  /* AS TREZE DA EMENDA 16 CONTAM-SE ONDE ELAS AGORA ESTÃO: na primeira metade
-     da área de leitura, que é a do Procedimento. A área inteira tem 21, que são
-     as 13 do Procedimento mais as 8 do Painel Social, e as duas contagens
-     medem-se para que uma medida que troque de metade não passe. */
-  conta(
-    'a área de leitura do País com 13 leituras do Procedimento e 21 ao todo (Emenda 16)',
-    inicial.pdm === 13 && inicial.pecas === 21,
-    `${inicial.pdm} do Procedimento · ${inicial.pecas} ao todo`,
-  );
+  /* AS TREZE DA EMENDA 16 CONTAM-SE ONDE ELAS AGORA ESTÃO (item 8.16): na
+     primeira metade da área de leitura de «Portugal na União Europeia», que é a
+     do Procedimento. A área inteira tem 21, que são as 13 do Procedimento mais as
+     8 do Painel Social, e as duas contagens medem-se para que uma medida que
+     troque de metade não passe. A célula lia-as em `/`, onde a área já não está,
+     e dizia «0 do Procedimento · 0 ao todo»: um zero que ninguém recusa.
+
+     E MEDE-SE TAMBÉM O QUE ISSO DEIXOU EM `/`: zero leituras dos painéis na
+     primeira página, que é o facto que mudou a célula de porta. */
+  {
+    const q = await pagina();
+    await q.goto(`${base}/uniao-europeia`, { waitUntil: 'networkidle' });
+    const naUniao = await estadoDaPagina(q);
+    const mancheteDaUniao = await q.evaluate(() => {
+      const h1 = document.querySelector('h1');
+      return {
+        texto: h1 ? h1.textContent.replace(/\s+/g, ' ').trim() : '',
+        provas: h1 ? [...h1.querySelectorAll('[data-prova]')].map((e) => e.getAttribute('data-prova')) : [],
+      };
+    });
+    conta(
+      '2l · a manchete da União leva as duas contagens da Emenda 16',
+      /Procedimento dos Desequil|Macroeconomic Imbalance Procedure/.test(mancheteDaUniao.texto) &&
+        mancheteDaUniao.provas.join(',') === 'painel_fora_do_limiar,painel_dentro_do_limiar',
+      `${mancheteDaUniao.texto} · ${mancheteDaUniao.provas.join(' + ')}`,
+    );
+    conta(
+      'a área de leitura da União com 13 leituras do Procedimento e 21 ao todo (Emenda 16)',
+      naUniao.pdm === 13 && naUniao.pecas === 21,
+      `${naUniao.pdm} do Procedimento · ${naUniao.pecas} ao todo`,
+    );
+    conta(
+      '8.16 · a primeira página não tem leitura nenhuma dos painéis',
+      inicial.pdm === 0 && inicial.pecas === 0 && inicial.painel === null,
+      `em /: ${inicial.pecas} leitura(s), marca «${inicial.painel}»`,
+    );
+    await q.__contexto.close();
+  }
 
   /* Ordem do teclado: da linha de comando até às portas, sem saltos para trás. */
   const ordem = await p.evaluate(() => {
@@ -266,25 +325,27 @@ const estadoDaPagina = (p) =>
          mede o que sempre mediu: que a ordem do teclado desce a página sem
          saltos para trás. */
       comando: marco('[data-porta-concelho]'),
-      /* O SEGUNDO MARCO É A ÁREA DE LEITURA, E NÃO A LISTA DAS DOBRAS (F1.1c,
-         04.09.2026). Com guião e sem nenhuma leitura aberta, `[data-leituras]`
-         não tem paragem nenhuma: a folha tira da página as dobras fechadas, que é
-         a decisão do diretor de 04.09 («show nothing under the band until a card
-         is tapped»). A área continua a ter a sua paragem no sítio onde sempre
-         esteve — o comando da densidade, que o guião acende —, e quando uma
-         leitura abre é dentro dela que o `<summary>` entra na ordem. O que a
-         célula mede é o mesmo: a ordem do teclado desce a página, da porta do
-         concelho para a área de leitura e desta para as portas, sem saltos para
-         trás. */
-      painel: marco('[data-area-leitura]'),
+      /* O SEGUNDO MARCO ERA A ÁREA DE LEITURA, E ELA MUDOU DE PÁGINA (F1.10,
+         item 8.16, 08.09.2026). Os 21 cartões e a área que eles abrem foram para
+         «Portugal na União Europeia», e em `/` `marco('[data-area-leitura]')`
+         devolvia −1: a célula falhava por medir uma coisa que aqui não está, e
+         não por a ordem do teclado ter saltos para trás.
+
+         O MARCO DO MEIO PASSA A SER A FAIXA, que é o que ficou entre a porta do
+         concelho e as portas do fim: as medidas de cabeça dos domínios vivos
+         (item 8.16), que são o instrumento do primeiro ecrã desta página. A
+         pergunta é a mesma — a ordem do teclado desce a página sem saltos para
+         trás — medida na coisa que agora lá está. A ordem com uma leitura aberta
+         mede-se em `/uniao-europeia`, que é onde uma leitura abre. */
+      painel: marco('[data-faixa]'),
       portas: marco('.portas'),
       total: alvos.length,
     };
   });
   conta(
-    'ordem do teclado · porta do concelho → painel → portas',
+    'ordem do teclado · porta do concelho → faixa → portas',
     ordem.comando >= 0 && ordem.comando < ordem.painel && ordem.painel < ordem.portas,
-    `porta do concelho ${ordem.comando} · painel ${ordem.painel} · portas ${ordem.portas} · ${ordem.total} paragens`,
+    `porta do concelho ${ordem.comando} · faixa ${ordem.painel} · portas ${ordem.portas} · ${ordem.total} paragens`,
   );
 
   /* A ORDEM COM UMA LEITURA ABERTA mede-se onde a leitura está aberta: na célula
@@ -329,8 +390,20 @@ const estadoDaPagina = (p) =>
      A CÉLULA DO FOCO E A DO ANÚNCIO SÃO SUBSTITUÍDAS POR UMA: que a página não
      tem comando nenhum de estado. É a prova de que a subtracção aconteceu e não
      ficou meia. */
+  /* O PASSO DA DENSIDADE SAIU, E O FACTO QUE O TIROU FICA MEDIDO (F1.10, itens
+     8.14 e 8.16, 08.09.2026). `?densidade=leitura` era um estado desta página
+     porque havia aqui 21 leituras para abrir; o item 8.16 levou-as para «Portugal
+     na União Europeia» e o 8.14 tirou o comando que escrevia o estado. Um
+     endereço que não muda nada não é um estado, e um passo que o percorresse
+     mediria uma navegação sem objecto: sai, com a razão escrita aqui, e o que o
+     tirou é medido pela célula «`?densidade=leitura` já não muda nada em `/`»,
+     mais abaixo neste bloco.
+
+     O ESTADO DE DEFEITO OCUPA O LUGAR DELE, e não fica a lista com um passo só:
+     as células da história andam para trás e para a frente entre dois estados, e
+     os dois que a página tem são o país e a busca aberta. */
   const passos = [
-    ['/?densidade=leitura', 'densidade → leitura'],
+    ['/', 'estado de defeito · país'],
     ['/?ambito=municipio', 'âmbito → modo concelho'],
   ];
   const historia = [];
@@ -351,6 +424,32 @@ const estadoDaPagina = (p) =>
     semComando.comandos === 0 && semComando.modos === 0 && semComando.densidades === 0,
     `${semComando.comandos} linha(s) de comando · ${semComando.modos} comando(s) de âmbito · ${semComando.densidades} de densidade`,
   );
+
+  /* O FACTO QUE TIROU O PASSO DA DENSIDADE, MEDIDO E NÃO SUPOSTO (itens 8.14 e
+     8.16). Um endereço com `?densidade=leitura` chega a `/` e a página fica
+     exactamente a mesma: nenhuma leitura aberta, porque nenhuma leitura vive
+     aqui. É a prova de que a subtracção aconteceu, e é o que fica no lugar das
+     oito navegações que este bloco tirou da régua. */
+  {
+    await p.goto(`${base}/`, { waitUntil: 'networkidle' });
+    const semEstado = await estadoDaPagina(p);
+    await p.goto(`${base}/?densidade=leitura`, { waitUntil: 'networkidle' });
+    const comEstado = await estadoDaPagina(p);
+    conta(
+      '`?densidade=leitura` já não muda nada em `/` (itens 8.14 e 8.16)',
+      semEstado.pecas === 0 &&
+        comEstado.pecas === 0 &&
+        comEstado.abertas === 0 &&
+        comEstado.bloco === semEstado.bloco,
+      `sem o estado: ${semEstado.pecas} leitura(s), ${semEstado.abertas} aberta(s) · ` +
+        `com o estado: ${comEstado.pecas} leitura(s), ${comEstado.abertas} aberta(s) · ` +
+        `bloco «${semEstado.bloco}» nos dois`,
+    );
+    /* E a história volta ao estado em que estas duas células a encontraram, para
+       que as células de andar para trás e para a frente meçam os dois passos e
+       não estas duas navegações. */
+    for (const [endereco] of passos) await p.goto(base + endereco, { waitUntil: 'networkidle' });
+  }
 
   /* O PAINEL DE ÉVORA SAIU DA PRIMEIRA PÁGINA (Emenda 19a). A célula media que o
      âmbito de um concelho abria as suas peças aqui; as peças do concelho vivem em
@@ -392,10 +491,19 @@ const estadoDaPagina = (p) =>
      decisão (7) da §1.99 e a segunda passagem deste bloco puseram os 21 a fazer
      o mesmo, e a escolha deixou de ter razão de ser. A célula continua a
      confirmar que o destino é uma âncora desta página, porque é isso que ela
-     mede: um cartão que mudasse de página não deixava leitura nenhuma aberta. */
-  await p.goto(`${base}/`, { waitUntil: 'networkidle' });
+     mede: um cartão que mudasse de página não deixava leitura nenhuma aberta.
+
+     E A PÁGINA MUDOU (F1.10, item 8.16, 08.09.2026): os 21 cartões e as 21
+     leituras foram para «Portugal na União Europeia». A célula procurava o
+     cartão em `[data-grelha] [data-faixa]` de `/`, onde a faixa leva hoje as
+     medidas de cabeça dos domínios, cada uma com porta para a página do seu
+     domínio: não há ali leitura para abrir, e a célula dizia «o primeiro cartão
+     da faixa não abre uma leitura desta página», que é verdade e não é o defeito
+     que ela existe para apanhar. Muda de porta e mantém a pergunta, medida onde
+     uma leitura abre. */
+  await p.goto(`${base}/uniao-europeia`, { waitUntil: 'networkidle' });
   const cartaoDaLeitura = await p.evaluate(() => {
-    const c = document.querySelector('[data-grelha] [data-faixa] [data-cartao]');
+    const c = document.querySelector('[data-faixa] [data-cartao]');
     if (!c) return null;
     c.scrollIntoView({ block: 'center', inline: 'center' });
     const href = c.querySelector('.cartao-porta')?.getAttribute('href') ?? '';
@@ -431,10 +539,16 @@ const estadoDaPagina = (p) =>
      aquela célula passaria com o `<summary>` da leitura aberta depois das portas.
 
      MEDE-SE AQUI, onde o gesto do leitor já abriu uma leitura, e exige-se a
-     ordem inteira: o comando da densidade, o `<summary>` da leitura aberta, e as
-     portas do fim da página. É a mesma promessa da outra célula, que é a ordem do
-     teclado a descer a página sem saltos para trás, no estado em que a área tem
-     alguma coisa dentro. */
+     ordem inteira: a faixa dos cartões, o `<summary>` da leitura aberta, e o
+     rodapé do sítio. É a mesma promessa da outra célula, que é a ordem do teclado
+     a descer a página sem saltos para trás, no estado em que a área tem alguma
+     coisa dentro.
+
+     OS DOIS MARCOS MUDARAM COM A PÁGINA (F1.10, itens 8.14 e 8.16, 08.09.2026).
+     O primeiro era o comando da densidade, que saiu do sítio; o último eram as
+     `.portas` da primeira página, que «Portugal na União Europeia» não tem. Os
+     dois que ficam são os que a página tem e que envolvem a área: a FAIXA por
+     cima e o RODAPÉ por baixo. O que se mede é o mesmo. */
   const ordemAberta =
     uma && cartaoDaLeitura
       ? await p.evaluate((id) => {
@@ -446,31 +560,65 @@ const estadoDaPagina = (p) =>
           const sumario = dobra ? dobra.querySelector(':scope > summary') : null;
           return {
             aberta: !!dobra && dobra.open,
-            comando: marco('[data-area-leitura]'),
+            faixa: marco('[data-faixa]'),
             sumario: sumario ? alvos.indexOf(sumario) : -1,
-            portas: marco('.portas'),
+            fim: marco('footer'),
             total: alvos.length,
           };
         }, cartaoDaLeitura)
       : null;
   conta(
-    'ordem do teclado com uma leitura aberta · densidade → o <summary> dela → portas',
+    'ordem do teclado com uma leitura aberta · faixa → o <summary> dela → rodapé',
     !!ordemAberta &&
       ordemAberta.aberta &&
-      ordemAberta.comando >= 0 &&
-      ordemAberta.comando < ordemAberta.sumario &&
-      ordemAberta.sumario < ordemAberta.portas,
+      ordemAberta.faixa >= 0 &&
+      ordemAberta.faixa < ordemAberta.sumario &&
+      ordemAberta.sumario < ordemAberta.fim,
     ordemAberta
-      ? `«${cartaoDaLeitura}» aberta: ${ordemAberta.aberta} · densidade ${ordemAberta.comando} · ` +
-        `<summary> ${ordemAberta.sumario} · portas ${ordemAberta.portas} · ${ordemAberta.total} paragens`
+      ? `«${cartaoDaLeitura}» aberta: ${ordemAberta.aberta} · faixa ${ordemAberta.faixa} · ` +
+        `<summary> ${ordemAberta.sumario} · rodapé ${ordemAberta.fim} · ${ordemAberta.total} paragens`
       : 'não houve cartão para abrir uma leitura',
   );
-  /* O ENDEREÇO ABRE TODAS, e é o que restou do comando global: `?densidade=
-     leitura` continua a ser um estado partilhável e o guião continua a abrir as
-     peças quando ele chega. O que saiu foi a fila que o escrevia. */
-  await p.goto(`${base}/?densidade=leitura`, { waitUntil: 'networkidle' });
-  const todas = await estadoDaPagina(p);
-  conta('o endereço da leitura breve abre todas', todas.abertas === todas.pecas && todas.pecas > 0, `${todas.abertas} de ${todas.pecas}`);
+  /* «O ENDEREÇO ABRE TODAS» É RETIRADA, E O QUE FICA NO LUGAR É O FACTO QUE A
+     RETIROU (F1.10, item 8.14, 08.09.2026).
+     ---------------------------------------------------------------------------
+     A célula media `?densidade=leitura` a abrir as 21 leituras de uma vez. A
+     decisão 8.14 é que esse estado deixa de existir: «fica UMA interação, um
+     toque num cartão abre a leitura daquele cartão, e nenhuma está aberta antes
+     disso», e `public/js/leituras.js` não tem `repoeDensidade()` por causa dela.
+     Um estado que a casa decidiu tirar não se mede como se ele devesse voltar.
+
+     O QUE FICA MEDIDO É O REPOUSO, que é a promessa nova: chegada à página sem
+     fragmento, nenhuma das 21 está aberta, a linha do repouso está à vista e os
+     dois cabeçalhos dos painéis estão escondidos (item 8.12). É a mesma coisa que
+     `tests/inicio/leitura.mjs` mede sobre o `dist/`, medida aqui com guião e num
+     navegador, que é onde a marca `data-toque` existe. */
+  await p.goto(`${base}/uniao-europeia`, { waitUntil: 'networkidle' });
+  const repouso = await p.evaluate(() => {
+    const area = document.querySelector('[data-area-leitura]');
+    const vazio = document.querySelector('[data-leituras-vazio]');
+    const contextos = [...document.querySelectorAll('[data-contexto-quadro]')];
+    return {
+      pecas: document.querySelectorAll('[data-leitura]').length,
+      abertas: [...document.querySelectorAll('[data-leitura]')].filter((d) => d.open).length,
+      toque: area ? area.getAttribute('data-toque') : null,
+      linhaDoRepouso: !!vazio && !vazio.hidden && vazio.getClientRects().length > 0,
+      contextos: contextos.length,
+      contextosAVista: contextos.filter((c) => !c.hidden && c.getClientRects().length > 0).length,
+    };
+  });
+  conta(
+    '8.12 e 8.14 · em repouso nenhuma leitura aberta e nenhum cabeçalho de painel à vista',
+    repouso.pecas === 21 &&
+      repouso.abertas === 0 &&
+      repouso.toque === 'sim' &&
+      repouso.linhaDoRepouso &&
+      repouso.contextos === 2 &&
+      repouso.contextosAVista === 0,
+    `${repouso.abertas} de ${repouso.pecas} abertas · marca da área «${repouso.toque}» · ` +
+      `linha do repouso à vista: ${repouso.linhaDoRepouso} · ` +
+      `${repouso.contextosAVista} de ${repouso.contextos} cabeçalhos de painel à vista`,
+  );
 
   await p.__contexto.close();
 }
@@ -531,14 +679,21 @@ const estadoDaPagina = (p) =>
        de ser um estado desta página: um endereço com ele reencaminha, e uma
        célula que o lê do endereço mediria uma página que já lá não está. Os dois
        estados que ficam são os dois que o esquema tem, e a pergunta é a mesma —
-       o estado sobrevive à troca de edição. */
-    await p.goto(`${base}${rota}?ambito=municipio&densidade=leitura`, { waitUntil: 'networkidle' });
+       o estado sobrevive à troca de edição.
+
+       E FICA UM SÓ (F1.10, itens 8.14 e 8.16, 08.09.2026). A densidade deixou de
+       ter objecto nesta página: as 21 leituras que ela abria foram para «Portugal
+       na União Europeia» e o comando que a escrevia saiu. Um endereço com ela
+       chega e não muda nada, e a metade da célula que a exigia mediria um estado
+       sem coisa. A PERGUNTA NÃO SE ENFRAQUECE: continua a ser «o estado sobrevive
+       à troca de edição», medida no estado que a página tem. */
+    await p.goto(`${base}${rota}?ambito=municipio`, { waitUntil: 'networkidle' });
     const e = await estadoDaPagina(p);
-    conta(`edição ${edicao} · estado do endereço`, e.ambito === 'municipio' && e.densidade === 'leitura', `${e.ambito} · ${e.densidade}`);
+    conta(`edição ${edicao} · estado do endereço`, e.ambito === 'municipio', `${e.ambito} · ${e.densidade}`);
     const href = await p.evaluate(() => document.querySelector('a.lang')?.getAttribute('href') ?? '');
     conta(
       `edição ${edicao} · a ligação de idioma leva o estado`,
-      href.includes('ambito=municipio') && href.includes('densidade=leitura'),
+      href.includes('ambito=municipio'),
       href,
     );
     despejos[`edicao:${edicao}`] = e.texto;
@@ -586,8 +741,12 @@ const estadoDaPagina = (p) =>
     await p.__contexto.close();
   }
   {
+    /* A LEITURA MUDOU DE PÁGINA E A CÉLULA VAI COM ELA (item 8.16). `.dobra` não
+       existe em `/` desde que as 21 leituras foram para «Portugal na União
+       Europeia»: a célula lia `null` e dizia «transition-duration null», que é
+       uma célula vermelha por não haver o que medir. A promessa é a mesma. */
     const p = await pagina({ movimento: 'reduce' });
-    await p.goto(`${base}/`, { waitUntil: 'networkidle' });
+    await p.goto(`${base}/uniao-europeia`, { waitUntil: 'networkidle' });
     const t = await p.evaluate(() => {
       const peca = document.querySelector('.dobra');
       return peca ? getComputedStyle(peca).transitionDuration : null;
@@ -608,58 +767,46 @@ const estadoDaPagina = (p) =>
 /* --------------------------------------------------------- 5. o selo, alvo e aninho */
 /* A LEITURA ABRE-SE ANTES DE SE MEDIR (F1.1b, 04.09.2026). O selo de uma medida
    vive hoje no pé da sua leitura breve, que é um `<details>` fechado: o conteúdo
-   de uma dobra fechada não tem caixa nenhuma, e medir o alvo ali dava zero. O
-   endereço `?densidade=leitura` é o estado partilhável que abre as 21, e é como
-   um leitor as abre. É a mesma coisa que a célula sempre mediu — o selo é alvo
-   de 44×44, não está dentro de outro alvo, e é o maior alvo da sua leitura —,
-   medida onde o leitor a vê. */
+   de uma dobra fechada não tem caixa nenhuma, e medir o alvo ali dava zero.
+
+   A PORTA MUDOU DUAS VEZES, E A PERGUNTA NENHUMA (F1.10, itens 8.14 e 8.16,
+   08.09.2026). Era `/?densidade=leitura`, o estado que abria as 21 de uma vez:
+   as 21 leituras foram para «Portugal na União Europeia» e o estado deixou de
+   existir, e a célula media zero selos numa página sem selo nenhum de leitura.
+   O GESTO QUE ABRE UMA LEITURA É HOJE O TOQUE NUM CARTÃO, uma de cada vez, e é
+   esse que a célula dá: percorre os 21 cartões, toca em cada um, e mede o selo da
+   leitura que abriu. Medir as 21 de uma vez seria medir um estado que a página
+   não tem; e medir só a primeira deixava vinte selos por medir. É a mesma coisa
+   que a célula sempre mediu — o selo é alvo de 44×44, não está dentro de outro
+   alvo, e é o maior alvo do corpo da sua leitura —, medida onde o leitor a vê. */
 {
   const p = await pagina();
-  await p.goto(`${base}/?densidade=leitura`, { waitUntil: 'networkidle' });
-  const selos = await p.evaluate(() => {
-    const out = [];
-    for (const a of document.querySelectorAll('.dobra a.src-chip')) {
-      const antes = getComputedStyle(a, '::after');
-      const r = a.getBoundingClientRect();
-      /* A área de toque vem de um `::after` posicionado e centrado no elemento.
-         Mede-se a caixa do elemento e a da área, e fica a maior das duas. */
-      const larguraArea = Math.max(r.width, parseFloat(antes.width) || 0, parseFloat(antes.minWidth) || 0);
-      const alturaArea = Math.max(r.height, parseFloat(antes.height) || 0);
-      let aninhado = null;
-      for (let no = a.parentElement; no; no = no.parentElement) {
-        const t = no.tagName.toLowerCase();
-        if (t === 'a' || t === 'button' || t === 'summary') {
-          aninhado = t;
-          break;
-        }
-      }
-      out.push({ w: +larguraArea.toFixed(1), h: +alturaArea.toFixed(1), aninhado });
-    }
-    return out;
-  });
-  const com44 = selos.filter((s) => s.w >= 44 && s.h >= 44).length;
-  const aninhados = selos.filter((s) => s.aninhado).length;
-  conta(
-    'o selo de cada leitura é alvo de 44×44',
-    selos.length > 0 && com44 === selos.length,
-    `${com44} de ${selos.length} selos de leitura · mínimo ${Math.min(...selos.map((s) => s.w))}×${Math.min(...selos.map((s) => s.h))}`,
+  await p.goto(`${base}/uniao-europeia`, { waitUntil: 'networkidle' });
+  const cartoes = await p.evaluate(() =>
+    [...document.querySelectorAll('[data-faixa] [data-cartao]')].map((c) => c.getAttribute('data-cartao')),
   );
-  conta('nenhum selo dentro de outro alvo', aninhados === 0, `${aninhados} aninhados em ${selos.length}`);
-
-  /* Duas áreas de toque sobrepostas não são um alvo maior: são uma porta que
-     abre a linha do vizinho (medição da etapa 1d, ISSUES I13). */
-  const sobrepostos = await p.evaluate(() => {
-    const caixa = (e) => {
-      const r = e.getBoundingClientRect();
-      const cx = r.left + r.width / 2;
-      const cy = r.top + r.height / 2;
-      const w = Math.max(r.width, e.matches('a.src-chip') ? 160 : 44);
-      const h = Math.max(r.height, 44);
-      return { x1: cx - w / 2, x2: cx + w / 2, y1: cy - h / 2, y2: cy + h / 2 };
-    };
-    let pares = 0;
-    for (const peca of document.querySelectorAll('[data-leituras] .dobra')) {
-      const alvos = [...peca.querySelectorAll('a,button,summary')].map(caixa);
+  const selos = [];
+  let sobrepostos = 0;
+  let semDobra = 0;
+  for (const id of cartoes) {
+    await p.click(`[data-cartao="${id}"] .cartao-porta`);
+    await p.waitForTimeout(40);
+    const m = await p.evaluate((alvo) => {
+      const peca = document.getElementById(`m-${alvo}`);
+      if (!peca || !peca.open) return null;
+      const caixaDoAlvo = (e) => {
+        const r = e.getBoundingClientRect();
+        const cx = r.left + r.width / 2;
+        const cy = r.top + r.height / 2;
+        const w = Math.max(r.width, e.matches('a.src-chip') ? 160 : 44);
+        const h = Math.max(r.height, 44);
+        return { x1: cx - w / 2, x2: cx + w / 2, y1: cy - h / 2, y2: cy + h / 2 };
+      };
+      /* Duas áreas de toque sobrepostas não são um alvo maior: são uma porta que
+         abre a linha do vizinho (medição da etapa 1d, ISSUES I13). Contam-se
+         dentro da leitura ABERTA, que é a única que tem caixas. */
+      const alvos = [...peca.querySelectorAll('a,button,summary')].map(caixaDoAlvo);
+      let pares = 0;
       for (let i = 0; i < alvos.length; i++) {
         for (let j = i + 1; j < alvos.length; j++) {
           const a = alvos[i];
@@ -667,16 +814,56 @@ const estadoDaPagina = (p) =>
           if (a.x1 < b.x2 && b.x1 < a.x2 && a.y1 < b.y2 && b.y1 < a.y2) pares++;
         }
       }
+      const out = [];
+      for (const a of peca.querySelectorAll('a.src-chip')) {
+        const antes = getComputedStyle(a, '::after');
+        const r = a.getBoundingClientRect();
+        /* A área de toque vem de um `::after` posicionado e centrado no elemento.
+           Mede-se a caixa do elemento e a da área, e fica a maior das duas. */
+        const larguraArea = Math.max(r.width, parseFloat(antes.width) || 0, parseFloat(antes.minWidth) || 0);
+        const alturaArea = Math.max(r.height, parseFloat(antes.height) || 0);
+        let aninhado = null;
+        for (let no = a.parentElement; no; no = no.parentElement) {
+          const t = no.tagName.toLowerCase();
+          if (t === 'a' || t === 'button' || t === 'summary') {
+            aninhado = t;
+            break;
+          }
+        }
+        out.push({ id: alvo, w: +larguraArea.toFixed(1), h: +alturaArea.toFixed(1), aninhado });
+      }
+      return { selos: out, pares };
+    }, id);
+    if (!m) {
+      semDobra++;
+      continue;
     }
-    return pares;
-  });
-  conta('nenhum par de áreas de toque sobrepostas na leitura', sobrepostos === 0, `${sobrepostos} pares`);
+    selos.push(...m.selos);
+    sobrepostos += m.pares;
+  }
+  const com44 = selos.filter((s) => s.w >= 44 && s.h >= 44).length;
+  const aninhados = selos.filter((s) => s.aninhado).length;
+  conta(
+    'o selo de cada leitura é alvo de 44×44',
+    selos.length > 0 && semDobra === 0 && com44 === selos.length,
+    `${com44} de ${selos.length} selos de leitura em ${cartoes.length} cartão(ões)` +
+      (semDobra ? `, ${semDobra} sem leitura aberta` : '') +
+      ` · mínimo ${Math.min(...selos.map((s) => s.w))}×${Math.min(...selos.map((s) => s.h))}`,
+  );
+  conta('nenhum selo dentro de outro alvo', selos.length > 0 && aninhados === 0, `${aninhados} aninhados em ${selos.length}`);
+  conta(
+    'nenhum par de áreas de toque sobrepostas na leitura',
+    cartoes.length > 0 && sobrepostos === 0,
+    `${sobrepostos} pares em ${cartoes.length} leitura(s) abertas uma a uma`,
+  );
 
   const maiorDaFila = await p.evaluate(() => {
-    /* A PRIMEIRA LEITURA COM SELO, e não a primeira de todas: as três medidas que
-       vivem num domínio têm por leitura uma porta, sem selo e sem pé, e a
-       pergunta desta célula é sobre a leitura que tem um. */
-    const peca = [...document.querySelectorAll('.dobra')].find((e) => e.querySelector('a.src-chip'));
+    /* A LEITURA COM SELO QUE ESTÁ ABERTA, e não a primeira de todas: a página tem
+       uma leitura aberta de cada vez, e o corpo de uma dobra fechada não tem
+       caixa nenhuma. É a última que o ciclo dos cartões abriu. */
+    const peca = [...document.querySelectorAll('.dobra')].find(
+      (e) => e.open && e.querySelector('a.src-chip'),
+    );
     if (!peca) return null;
     const selo = peca.querySelector('a.src-chip');
     /* OS OUTROS ALVOS DO CORPO DA LEITURA, E NÃO O `<summary>` (F1.1b,
@@ -729,9 +916,21 @@ const estadoDaPagina = (p) =>
     '/?ambito=regiao:alentejo',
     '/?ambito=municipio:beja',
     /* E o estado que ficou, com o significado que lhe resta: sem script a
-       pesquisa não pesquisa, e os comandos são ligações que abrem. */
+       pesquisa não pesquisa, e os comandos são ligações que abrem.
+
+       `?densidade=leitura` SAIU DA LISTA (F1.10, itens 8.14 e 8.16, 08.09.2026).
+       Sem as 21 leituras e sem o comando que o escrevia, este endereço é `/` com
+       um par a mais na consulta: percorrê-lo era medir `/` duas vezes com nomes
+       diferentes. O facto que o tirou está medido na célula
+       «`?densidade=leitura` já não muda nada em `/`», no bloco 1.
+
+       E A PÁGINA DAS LEITURAS ENTRA NA LISTA, porque a promessa de que ela se
+       rende inteira sem guião é a promessa que esta secção existe para medir, e
+       ela mudou de página com as leituras: sem guião as 21 ficam à VISTA,
+       fechadas, e cada uma com o seu selo (`public/js/leituras.js` di-lo à letra:
+       «sem guião a página não perde nada»). */
     '/?ambito=municipio',
-    '/?densidade=leitura',
+    '/uniao-europeia',
   ]) {
     const p = await pagina({ js: false });
     await p.goto(base + q, { waitUntil: 'load' });
@@ -741,27 +940,37 @@ const estadoDaPagina = (p) =>
       pecas: document.querySelectorAll('[data-leituras] [data-leitura]').length,
       valores: document.querySelectorAll('[data-leituras] [data-claim]').length,
       selos: document.querySelectorAll('[data-leituras] a.src-chip').length,
+      cartoes: document.querySelectorAll('[data-faixa] [data-cartao]').length,
       ligacoes: [...document.querySelectorAll('[data-comando] a')].map((a) => a.getAttribute('href')),
       nota: document.querySelector('[data-sem-js]') ? true : false,
       transbordo: document.documentElement.scrollWidth - document.documentElement.clientWidth,
     }));
     /* O QUE «COMPLETO» QUER DIZER MUDOU COM A FORMA, E NÃO COM A PROMESSA
-       (F1.1b, 04.09.2026): sem guião a página continua a ser o País em Relance,
-       completa e correcta. O que a célula conta é a área de leitura inteira (21
-       leituras, o primeiro bloco é o do Procedimento) e os selos que ela leva:
-       21, um por leitura, porque desde a segunda passagem de 04.09.2026 as 21
-       têm a mesma leitura breve e as três que vivem num domínio ACRESCENTAM a
-       porta em vez de trocarem a leitura por ela. Foram 18 durante a primeira
-       passagem, e a leitura a frio do Codex mediu o que isso custava. Os VALORES
-       são zero nesta área desde o F1.1: os 21 valores selados aparecem uma vez
-       só, no cartão da faixa. */
-    const completo = e.bloco === 'pais' && e.painel === 'pdm' && e.pecas === 21 && e.selos === 21;
+       (F1.1b, 04.09.2026): sem guião a página continua a ser completa e correcta.
+       O que a célula conta na página das leituras é a área inteira (21 leituras,
+       o primeiro bloco é o do Procedimento) e os selos que ela leva: 21, um por
+       leitura, porque desde a segunda passagem de 04.09.2026 as 21 têm a mesma
+       leitura breve e as três que vivem num domínio ACRESCENTAM a porta em vez de
+       trocarem a leitura por ela. Foram 18 durante a primeira passagem, e a
+       leitura a frio do Codex mediu o que isso custava. Os VALORES são zero nesta
+       área desde o F1.1: os 21 valores selados aparecem uma vez só, no cartão.
+
+       E EM `/` O COMPLETO É OUTRO DESDE O ITEM 8.16: a faixa das medidas de
+       cabeça dos domínios vivos, com um cartão por medida e nenhuma leitura de
+       painel. Uma célula que continuasse a exigir 21 leituras aqui exigia à
+       primeira página que desfizesse a decisão. */
+    const naUniao = q === '/uniao-europeia';
+    const completo = naUniao
+      ? e.painel === 'pdm' && e.pecas === 21 && e.selos === 21
+      : e.bloco === 'pais' && e.pecas === 0 && e.cartoes > 0;
     conta(
       `sem JavaScript · ${q}`,
       completo && e.ligacoes.every(Boolean) && e.transbordo <= 0,
-      q === '/'
+      naUniao
         ? `completo e correcto: ${e.pecas} leituras, ${e.valores} valores, ${e.selos} selos`
-        : `mostra o defeito (${e.bloco}), com os comandos como ligações que abrem: ${e.ligacoes.join(' · ')}`,
+        : q === '/'
+          ? `completo e correcto: ${e.cartoes} cartão(ões) na faixa, ${e.pecas} leituras de painel`
+          : `mostra o defeito (${e.bloco}), com os comandos como ligações que abrem: ${e.ligacoes.join(' · ')}`,
     );
     /* A NOTA «SEM JAVASCRIPT» SAIU (Emenda 15). A célula deixa de exigir que ela
        esteja à vista e passa a exigir o contrário: que não exista, e que o que
@@ -922,32 +1131,50 @@ const estadoDaPagina = (p) =>
  * e é essa que fica, com a razão escrita aqui em vez de a célula desaparecer.
  *
  * O NÚMERO DE RÉGUAS É O DAS MEDIDAS COM LIMIAR PUBLICADO, e conta-se aqui em vez
- * de se escrever: são as leituras do Procedimento cujo quadro publica um limiar. */
+ * de se escrever: são as leituras do Procedimento cujo quadro publica um limiar.
+ *
+ * E A PÁGINA MUDOU, E COM ELA O GESTO (F1.10, itens 8.14 e 8.16, 08.09.2026). As
+ * leituras foram para «Portugal na União Europeia» e o estado que abria as 21 de
+ * uma vez deixou de existir: a célula ia a `/?densidade=leitura` e contava «0
+ * régua(s) em 0 leitura(s) com limiar». Abre-se UMA DE CADA VEZ, tocando no
+ * cartão, que é o gesto que a página tem, e mede-se a régua de cada leitura
+ * aberta: o corpo de uma dobra fechada tem `display: none` por folha, com guião
+ * ou sem ele, e uma régua sem caixa mede zero. */
 for (const largura of [768, 1280]) {
   const p = await pagina({ largura });
-  await p.goto(base + '/?densidade=leitura', { waitUntil: 'networkidle' });
-  const r = await p.evaluate(() => {
-    const reguas = [...document.querySelectorAll('[data-leituras] .regua-svg')].map((e) =>
-      Math.round(e.getBoundingClientRect().width),
-    );
-    /* TODAS AS QUE TÊM LIMIAR, sem excepção. A primeira passagem tirava desta
-       conta as leituras que levam porta, porque nessa forma elas não tinham
-       régua; desde a segunda passagem de 04.09.2026 têm, como todas as outras, e
-       a excepção deixou de ter objecto. Onde há linha de limiar há régua. */
-    const comLimiar = document.querySelectorAll('[data-leituras] .dobra[data-limiar="sim"]').length;
-    return {
-      reguas,
-      comLimiar,
-      transbordo: document.documentElement.scrollWidth - document.documentElement.clientWidth,
-    };
-  });
+  await p.goto(base + '/uniao-europeia', { waitUntil: 'networkidle' });
+  /* TODAS AS QUE TÊM LIMIAR, sem excepção. A primeira passagem tirava desta
+     conta as leituras que levam porta, porque nessa forma elas não tinham
+     régua; desde a segunda passagem de 04.09.2026 têm, como todas as outras, e
+     a excepção deixou de ter objecto. Onde há linha de limiar há régua. */
+  const comLimiar = await p.evaluate(
+    () => [...document.querySelectorAll('[data-leituras] .dobra[data-limiar="sim"]')].map((e) => e.getAttribute('data-leitura')),
+  );
+  const reguas = [];
+  let transbordo = 0;
+  for (const id of comLimiar) {
+    await p.click(`[data-cartao="${id}"] .cartao-porta`);
+    await p.waitForTimeout(40);
+    const r = await p.evaluate((alvo) => {
+      const peca = document.getElementById(`m-${alvo}`);
+      const svg = peca && peca.open ? peca.querySelector('.regua-svg') : null;
+      return {
+        largura: svg ? Math.round(svg.getBoundingClientRect().width) : null,
+        transbordo: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      };
+    }, id);
+    reguas.push(r.largura);
+    transbordo = Math.max(transbordo, r.transbordo);
+  }
+  const medidas = reguas.filter((w) => typeof w === 'number');
   conta(
     `largura ${largura} · a régua de uma leitura aberta tem largura de régua`,
-    r.reguas.length > 0 &&
-      r.reguas.length === r.comLimiar &&
-      r.reguas.every((w) => w > 400) &&
-      r.transbordo <= 0,
-    `${r.reguas.length} régua(s) em ${r.comLimiar} leitura(s) com limiar · a mais estreita ${Math.min(...r.reguas)}px · transbordo ${r.transbordo}`,
+    comLimiar.length > 0 &&
+      medidas.length === comLimiar.length &&
+      medidas.every((w) => w > 400) &&
+      transbordo <= 0,
+    `${medidas.length} régua(s) em ${comLimiar.length} leitura(s) com limiar, abertas uma a uma · ` +
+      `a mais estreita ${medidas.length ? Math.min(...medidas) : 'nenhuma'}px · transbordo ${transbordo}`,
   );
   await p.__contexto.close();
 }
@@ -1077,7 +1304,10 @@ for (const largura of [1280, 390]) {
   let bem = true;
   for (const [rota, nome] of [
     ['/', 'país'],
-    ['/?densidade=leitura', 'país · leitura'],
+    /* «país · leitura» SAIU (F1.10, itens 8.14 e 8.16, 08.09.2026): a densidade
+       deixou de ser um estado desta página, e `/?densidade=leitura` é hoje a
+       mesma página que a linha de cima já percorre. Percorrê-la duas vezes com
+       nomes diferentes seria a régua a contar-se a si própria. */
     ['/?ambito=municipio', 'pesquisa aberta'],
     /* O estado «região» saiu da lista com a Emenda 21b: um endereço de região
        reencaminha, e o que esta célula mediria era a página de destino. Os três
@@ -1222,7 +1452,14 @@ for (const largura of [1280, 390]) {
 {
   const ESTADOS_DE_TRANSBORDO = [
     ['pais-relance', '/'],
-    ['pais-leitura', '/?densidade=leitura'],
+    /* `pais-leitura` E `pesquisa-aberta-leitura` SAÍRAM (F1.10, itens 8.14 e
+       8.16, 08.09.2026): a densidade deixou de ser um estado desta página, e os
+       dois endereços são hoje os dois que ficaram, com um par a mais na consulta.
+       O RÓTULO DA RÉGUA, QUE É O QUE ESTA CÉLULA EXISTE PARA MEDIR, foi com as
+       réguas para «Portugal na União Europeia»: nestes estados de `/` não há
+       `.regua-ref-rotulo` nenhum, e a conta do rótulo passava por não encontrar.
+       A página das leituras entra na lista, e nela abre-se cada leitura com
+       limiar, porque o corpo de uma dobra fechada tem `display: none`. */
     /* `regiao-alentejo-leitura` SAIU (Emenda 21b): não é um estado desta página.
        O transbordo da régua nas quatro larguras mede-se onde ela vive, em
        `tests/inicio/regioes.mjs` (M2 e M3). */
@@ -1230,38 +1467,68 @@ for (const largura of [1280, 390]) {
        lugar deles: eram `municipio:evora` em relance e em leitura e
        `municipio:beja`, e nenhum é um estado desta página. */
     ['pesquisa-aberta', '/?ambito=municipio'],
-    ['pesquisa-aberta-leitura', '/?ambito=municipio&densidade=leitura'],
+    ['uniao-europeia', '/uniao-europeia'],
   ];
+  const LARGURAS_DE_TRANSBORDO = [320, 390, 768, 1024, 1280];
+  const medeOTransbordo = (p) =>
+    p.evaluate(() => {
+      const d = document.documentElement.scrollWidth - document.documentElement.clientWidth;
+      /* E, para lá do transbordo da página, o rótulo tem de caber na caixa da
+         própria régua: uma régua dentro de um contentor que rolasse esconderia
+         o mesmo defeito em vez de o fechar. */
+      let fora = 0;
+      let rotulos = 0;
+      for (const e of document.querySelectorAll('.regua-ref-rotulo')) {
+        const caixa = e.closest('.regua');
+        if (!caixa || !e.getClientRects().length) continue;
+        rotulos++;
+        const a = e.getBoundingClientRect();
+        const b = caixa.getBoundingClientRect();
+        if (a.right > b.right + 0.5 || a.left < b.left - 0.5) fora++;
+      }
+      return { d, fora, rotulos };
+    });
   const linhas = [];
   let piores = 0;
+  let rotulosMedidos = 0;
   for (const [nome, q] of ESTADOS_DE_TRANSBORDO) {
-    for (const largura of [320, 390, 768, 1024, 1280]) {
+    for (const largura of LARGURAS_DE_TRANSBORDO) {
       const p = await pagina({ largura });
       await p.goto(base + q, { waitUntil: 'networkidle' });
-      const m = await p.evaluate(() => {
-        const d = document.documentElement.scrollWidth - document.documentElement.clientWidth;
-        /* E, para lá do transbordo da página, o rótulo tem de caber na caixa da
-           própria régua: uma régua dentro de um contentor que rolasse esconderia
-           o mesmo defeito em vez de o fechar. */
-        let fora = 0;
-        for (const e of document.querySelectorAll('.regua-ref-rotulo')) {
-          const caixa = e.closest('.regua');
-          if (!caixa || !e.getClientRects().length) continue;
-          const a = e.getBoundingClientRect();
-          const b = caixa.getBoundingClientRect();
-          if (a.right > b.right + 0.5 || a.left < b.left - 0.5) fora++;
+      let d = 0;
+      let fora = 0;
+      if (q === '/uniao-europeia') {
+        /* UMA LEITURA DE CADA VEZ, que é o que a página faz: abre-se cada uma das
+           que têm limiar e mede-se a régua dela. Sem abrir, o rótulo não tem
+           caixa e a conta passava a zero por não haver nada para contar. */
+        const comLimiar = await p.evaluate(() =>
+          [...document.querySelectorAll('[data-leituras] .dobra[data-limiar="sim"]')].map((e) =>
+            e.getAttribute('data-leitura'),
+          ),
+        );
+        for (const id of comLimiar) {
+          await p.click(`[data-cartao="${id}"] .cartao-porta`);
+          await p.waitForTimeout(30);
+          const m = await medeOTransbordo(p);
+          d = Math.max(d, m.d);
+          fora += m.fora;
+          rotulosMedidos += m.rotulos;
         }
-        return { d, fora };
-      });
-      if (m.d > 0 || m.fora > 0) piores++;
-      linhas.push(`${nome}@${largura}:${m.d}${m.fora ? ` (${m.fora} fora da régua)` : ''}`);
+      } else {
+        const m = await medeOTransbordo(p);
+        d = m.d;
+        fora = m.fora;
+        rotulosMedidos += m.rotulos;
+      }
+      if (d > 0 || fora > 0) piores++;
+      linhas.push(`${nome}@${largura}:${d}${fora ? ` (${fora} fora da régua)` : ''}`);
       await p.__contexto.close();
     }
   }
   conta(
-    'ISSUES I20 · seis estados × cinco larguras sem transbordo, e o rótulo dentro da régua',
-    piores === 0,
-    `${linhas.length - piores} de ${linhas.length} a zero · ${linhas.join(' · ')}`,
+    `ISSUES I20 · ${ESTADOS_DE_TRANSBORDO.length} estados × ${LARGURAS_DE_TRANSBORDO.length} larguras sem transbordo, e o rótulo dentro da régua`,
+    piores === 0 && rotulosMedidos > 0,
+    `${linhas.length - piores} de ${linhas.length} a zero · ${rotulosMedidos} rótulo(s) de régua medidos · ${linhas.join(' · ')}`,
   );
 }
 
@@ -1402,39 +1669,59 @@ for (const largura of [1280, 390]) {
      27.08.2026). Os 308 pontos saíram da primeira página, que desenha agora as
      29 unidades da Carta como áreas; a Emenda 20d deixa-os exactamente onde
      estavam, no cartão da página do concelho, e é lá que a regra da Emenda 10
-     tem objecto. A célula não muda de pergunta: muda de porta. */
+     tem objecto. A célula não muda de pergunta: muda de porta.
+
+     E O CARTÃO DOS PONTOS SAIU TAMBÉM DALI (F1.10, itens 8.17b e a emenda de
+     08.09 à tarde). O diretor, na página de Évora no telemóvel: «the dotted map
+     shows up but with no useful purpose». No lugar dele entrou o mapa da UNIDADE
+     do concelho (o distrito ou a ilha, com os seus concelhos, o da página
+     marcado), que o F1.1e desenha; a Emenda 20d cai nesta parte, e com ela o
+     objecto desta célula: não há 308 pontos em página nenhuma do sítio.
+
+     A CÉLULA É RETIRADA COMO ELA ESTAVA E MEDE O FACTO QUE A RETIROU, com a
+     regra da Emenda 10 transposta para a coisa que ficou: zero pontos na página
+     do concelho, um mapa de áreas, e as áreas todas com o MESMO desenho, sem
+     nenhuma cheia. O que distingue a do concelho da página é o anel, e isso é a
+     célula a seguir. Uma área não tem raio, e por isso o raio sai da conta e o
+     que entra no lugar dele é a espessura do contorno: é a mesma pergunta, que
+     é «nenhuma se distingue das outras por si». */
   const p = await pagina();
   await p.goto(`${base}/municipios/evora`, { waitUntil: 'networkidle' });
   const m = await p.evaluate(() => {
-    const pontos = [...document.querySelectorAll('[data-pontos] .mun')];
-    const etiquetas = new Set(pontos.map((x) => x.tagName.toLowerCase()));
-    const raios = new Set(pontos.map((x) => x.getAttribute('r')));
-    const enchimentos = new Set(pontos.map((x) => getComputedStyle(x).fill));
-    const comPagina = pontos.filter((x) => x.getAttribute('data-pagina') === 'sim');
+    const pontos = [...document.querySelectorAll('[data-pontos] .mun, circle.mun')];
+    const areas = [...document.querySelectorAll('[data-areas] .uni')];
+    const outras = areas.filter((x) => !x.classList.contains('uni-escolhida'));
+    const etiquetas = new Set(areas.map((x) => x.tagName.toLowerCase()));
+    const enchimentos = new Set(outras.map((x) => getComputedStyle(x).fill));
+    const contornos = new Set(
+      outras.map((x) => [getComputedStyle(x).stroke, getComputedStyle(x).strokeWidth].join('|')),
+    );
+    const comPorta = areas.filter((x) => x.closest('a.uni-porta[href]')).length;
     return {
-      n: pontos.length,
+      pontos: pontos.length,
+      n: areas.length,
       etiquetas: [...etiquetas],
-      raios: [...raios],
       enchimentos: [...enchimentos],
-      comPagina: comPagina.length,
+      contornos: [...contornos],
+      comPorta,
     };
   });
   conta(
-    '2j·a · os 308 pontos são círculos iguais e nenhum vem cheio (Emendas 3 e 10)',
-    m.n === 308 &&
+    '2j·a · RETIRADA (item 8.17b) · as áreas da unidade são iguais e nenhuma vem cheia (Emendas 3 e 10)',
+    m.pontos === 0 &&
+      m.n > 1 &&
       m.etiquetas.length === 1 &&
-      m.etiquetas[0] === 'circle' &&
-      m.raios.length === 1 &&
+      m.etiquetas[0] === 'path' &&
       m.enchimentos.length === 1 &&
       m.enchimentos[0] === 'none' &&
-      /* QUANTOS têm página é cobertura, e a Emenda 10 não fala de cobertura:
-         fala de um só raio e um só enchimento para os 308. A célula media
-         `comPagina === 1`, que era a cobertura da tarde em que nasceu, e ficava
-         vermelha no dia em que o sítio crescesse — por ter acertado. Mede-se o
-         que é regra: pelo menos um ponto declarado com página, e nenhum ponto a
-         distinguir-se dos outros pelo raio ou pelo enchimento. */
-      m.comPagina >= 1,
-    `no cartão localizador de /municipios/evora: ${m.n} <${m.etiquetas.join('/')}> · 1 raio: ${m.raios.join(', ')} · enchimento ${m.enchimentos.join(', ')} · ${m.comPagina} declarado(s) com página`,
+      m.contornos.length === 1 &&
+      /* QUANTAS têm porta é cobertura, e a Emenda 10 não fala de cobertura: fala
+         de um só desenho para todas. Mede-se o que é regra: cada área é uma
+         porta, e nenhuma se distingue das outras pelo enchimento ou pelo
+         contorno. */
+      m.comPorta === m.n,
+    `em /municipios/evora: ${m.pontos} ponto(s) e ${m.n} <${m.etiquetas.join('/')}> de área · ` +
+      `enchimento ${m.enchimentos.join(', ')} · contorno ${m.contornos.join(' ; ')} · ${m.comPorta} com porta`,
   );
   await p.__contexto.close();
 }
@@ -1447,53 +1734,47 @@ for (const largura of [1280, 390]) {
  * declara com página. Os três têm de ter o mesmo enchimento — nenhum — e o mesmo
  * raio; o que distingue o escolhido é a espessura do contorno, que é o anel. */
 {
-  const leituraDoPonto = (p, slug) =>
-    p.evaluate((s) => {
-      const escolhido = document.querySelector(`[data-pontos] [data-caop="${s}"]`);
-      /* O ponto de comparação é OUTRO PONTO, e prefere-se um sem página quando
-         ainda há algum: com os 308 construídos não há, e a célula compararia o
-         escolhido com nada. A regra que ela mede não é sobre a cobertura — é
-         que o escolhido se distingue dos outros pelo contorno e por mais nada
-         (Emenda 10). */
-      const outros = [...document.querySelectorAll('[data-pontos] .mun')].filter(
+  /* O OBJECTO MUDOU DE FORMA (F1.10, item 8.17b, 08.09.2026): o concelho da
+     página deixou de ser um PONTO com anel no cartão dos 308 e passou a ser uma
+     ÁREA com anel no mapa da sua unidade, que o F1.1e desenha. A regra da Emenda
+     10 é a mesma e a célula guarda-a: o escolhido distingue-se dos outros pelo
+     CONTORNO e por mais nada — mesmo enchimento (nenhum), contorno mais grosso.
+     O raio sai da conta porque uma área não tem raio. */
+  const leituraDoEscolhido = (p) =>
+    p.evaluate(() => {
+      const escolhido = document.querySelector('[data-areas] .uni-escolhida');
+      const outras = [...document.querySelectorAll('[data-areas] .uni')].filter(
         (x) => x !== escolhido,
       );
-      const outroSemPagina =
-        outros.find((x) => x.getAttribute('data-pagina') !== 'sim') ?? outros[0];
-      const comPagina = document.querySelector('[data-pontos] [data-pagina="sim"]');
-      /* SEM MAPA DE PONTOS A CÉLULA DIZ-NO, E NÃO REBENTA (F1.10, item 8.17,
-         08.09.2026). O cartão localizador dos 308 pontos saiu da página do
-         concelho e no lugar dele está o mapa de áreas da região, com o concelho
-         da página marcado. Esta célula lia `[data-pontos] [data-caop=…]` e, sem
-         ele, chamava `classList` sobre `null`: a régua INTEIRA rebentava, e uma
-         régua que rebenta não diz nada sobre as outras oitenta e tal células.
-         Passa a devolver a ausência, e quem conta transforma-a numa falha com
-         nome. A célula fica por reescrever para o mapa de áreas, e a dívida
-         está no relatório do bloco: é do passo do 8.17b, que é o que volta a
-         tocar nesta página. */
-      if (!escolhido || !outroSemPagina || !comPagina) {
+      /* SEM MAPA DE ÁREAS A CÉLULA DIZ-NO, E NÃO REBENTA. É a lição do dia em que
+         o cartão dos pontos saiu e esta célula chamou `classList` sobre `null`: a
+         régua INTEIRA rebentava, e uma régua que rebenta não diz nada sobre as
+         outras oitenta e tal células. */
+      if (!escolhido || !outras.length) {
         return {
-          semPontos: true,
-          pontos: document.querySelectorAll('[data-pontos] .mun').length,
+          semMapa: true,
+          pontos: document.querySelectorAll('[data-pontos] .mun, circle.mun').length,
           areas: document.querySelectorAll('[data-areas] .uni').length,
         };
       }
       const est = (el) => {
         const cs = getComputedStyle(el);
-        return {
-          fill: cs.fill,
-          stroke: cs.stroke,
-          largura: parseFloat(cs.strokeWidth),
-          raio: el.getAttribute('r'),
-        };
+        return { fill: cs.fill, stroke: cs.stroke, largura: parseFloat(cs.strokeWidth) };
       };
+      const porta = escolhido.closest('a.uni-porta');
       return {
-        temClasse: escolhido.classList.contains('mun-escolhido'),
+        /* O ANEL É UMA CLASSE DO `<path>`, e a porta que o embrulha nomeia o
+           concelho: as duas coisas ditas, porque um anel na área errada é o mesmo
+           defeito que anel nenhum. */
+        temClasse: escolhido.classList.contains('uni-escolhida'),
+        concelho: porta ? porta.getAttribute('data-concelho-porta') : null,
+        aneis: document.querySelectorAll('[data-areas] .uni-escolhida').length,
         escolhido: est(escolhido),
-        papel: est(outroSemPagina),
-        tinta: est(comPagina),
+        papel: est(outras[0]),
+        outrasIguais:
+          new Set(outras.map((x) => [est(x).fill, est(x).stroke, est(x).largura].join('|'))).size === 1,
       };
-    }, slug);
+    });
 
   const linhas = [];
   let bem = true;
@@ -1509,26 +1790,26 @@ for (const largura of [1280, 390]) {
   ]) {
     const p = await pagina({ largura });
     await p.goto(base + rota, { waitUntil: 'networkidle' });
-    const r = await leituraDoPonto(p, slug);
-    if (r.semPontos) {
+    const r = await leituraDoEscolhido(p);
+    if (r.semMapa) {
       bem = false;
       linhas.push(
-        `${nome}: sem mapa de pontos nesta página (${r.pontos} ponto(s), ${r.areas} área(s)): ` +
-          `o item 8.17 do F1.10 tirou o cartão dos 308 pontos e pôs o mapa de áreas da região. ` +
-          `A célula fica por reescrever para o mapa de áreas.`,
+        `${nome}: sem mapa de áreas nesta página (${r.pontos} ponto(s), ${r.areas} área(s))`,
       );
       await p.__contexto.close();
       continue;
     }
     const ok =
       r.temClasse &&
+      r.aneis === 1 &&
+      r.concelho === slug &&
       r.escolhido.fill === 'none' &&
       r.papel.fill === 'none' &&
-      r.escolhido.raio === r.papel.raio &&
+      r.outrasIguais &&
       r.escolhido.largura > r.papel.largura;
     if (!ok) bem = false;
     linhas.push(
-      `${nome}: enchimento ${r.escolhido.fill} (os outros ${r.papel.fill}) · raio ${r.escolhido.raio} = ${r.papel.raio} · anel ${r.escolhido.largura} contra ${r.papel.largura}`,
+      `${nome}: ${r.aneis} anel em «${r.concelho}» · enchimento ${r.escolhido.fill} (as outras ${r.papel.fill}, todas iguais ${r.outrasIguais}) · anel ${r.escolhido.largura} contra ${r.papel.largura}`,
     );
     await p.__contexto.close();
   }
@@ -1550,7 +1831,7 @@ for (const largura of [1280, 390]) {
       }),
     );
     return {
-      pontos: document.querySelectorAll('[data-pontos] .mun').length,
+      pontos: document.querySelectorAll('[data-pontos] .mun, circle.mun').length,
       areas: areas.length,
       estilos: [...estilos],
     };
@@ -1564,7 +1845,7 @@ for (const largura of [1280, 390]) {
   await pi.__contexto.close();
 
   conta(
-    '2j·a · o ponto escolhido é um anel na página do concelho, e na primeira página as 29 áreas são uma só',
+    '2j·a · a área do concelho é um anel na página dele, e na primeira página as 29 áreas são uma só',
     bem,
     linhas.join(' · '),
   );
@@ -1774,10 +2055,15 @@ for (const largura of [1280, 390]) {
   }
 }
 
-/* (2i·5) Nenhuma régua fica com papel de imagem e sem nome. */
+/* (2i·5) Nenhuma régua fica com papel de imagem e sem nome.
+ *
+ * A PÁGINA MUDOU (F1.10, item 8.16, 08.09.2026): as réguas foram com as 21
+ * leituras para «Portugal na União Europeia», e a célula lia «0 réguas» em `/`.
+ * Não é preciso abrir dobra nenhuma para esta pergunta: os atributos de um `svg`
+ * são os mesmos com ou sem caixa, e o que se conta é o documento. */
 {
   const p = await pagina();
-  await p.goto(`${base}/?densidade=leitura`, { waitUntil: 'networkidle' });
+  await p.goto(`${base}/uniao-europeia`, { waitUntil: 'networkidle' });
   const r = await p.evaluate(() => {
     const svgs = [...document.querySelectorAll('svg.regua-svg')];
     const semNome = (s) =>
@@ -1952,12 +2238,24 @@ for (const largura of [1280, 390]) {
  * contagens ficaram onde a emenda as manda estar: no rótulo e na manchete, por
  * chave da prova. E cada peça continua com o seu marcador e a sua palavra. */
 {
+  /* A PÁGINA DOS ESTADOS MUDOU (F1.10, item 8.16, 08.09.2026). As chaves da prova
+     e os cartões pintados foram com os 21 para «Portugal na União Europeia»: em
+     `/` a célula lia zero chaves e dois cartões pintados, que são as medidas de
+     cabeça dos domínios, e falhava por medir uma página que já não tem o que ela
+     pergunta. A PERGUNTA DA EMENDA 13 É A MESMA — a fila de estados não existe, o
+     estado diz-se ao lado do valor a que se refere — e mede-se onde os estados
+     estão. A ausência da fila continua a medir-se nas duas páginas, porque uma
+     fila que voltasse a `/` não podia passar por esta célula ter mudado de porta. */
   const p = await pagina();
   await p.goto(`${base}/`, { waitUntil: 'networkidle' });
+  const filasEmCasa = await p.evaluate(
+    () => document.querySelectorAll('.fila, [class*="fila-"]').length,
+  );
+  await p.goto(`${base}/uniao-europeia`, { waitUntil: 'networkidle' });
   const m = await p.evaluate(() => {
     const filas = document.querySelectorAll('.fila, [class*="fila-"]');
     const raiz = document.querySelector('[data-inicio]');
-    const provas = [...document.querySelectorAll('[data-cabeca] [data-prova]')].map((e) =>
+    const provas = [...document.querySelectorAll('h1 [data-prova]')].map((e) =>
       e.getAttribute('data-prova'),
     );
     /* O MARCADOR E A PALAVRA DE ESTADO VIVEM NO CARTÃO DA FAIXA (F1.1b,
@@ -1972,7 +2270,7 @@ for (const largura of [1280, 390]) {
        1), e o quadrado só nos dois estados pintados (Emenda 13 alargada pelo item
        B8). A célula compara os marcadores com os cartões pintados, contados no
        próprio documento. */
-    const faixa = document.querySelector('[data-grelha] [data-faixa]');
+    const faixa = document.querySelector('[data-faixa]');
     const cartoes = [...faixa.querySelectorAll('.cartao')];
     const marcadores = faixa.querySelectorAll('.cartao-topo .sq').length;
     const pintados = cartoes.filter((c) =>
@@ -1992,13 +2290,14 @@ for (const largura of [1280, 390]) {
   });
   conta(
     '2j · Emenda 13 · a fila de estados saiu da cabeça, e as contagens ficaram',
-    m.filas === 0 &&
+    filasEmCasa === 0 &&
+      m.filas === 0 &&
       m.provas.includes('painel_fora_do_limiar') &&
       m.provas.includes('painel_dentro_do_limiar') &&
       m.marcadores === m.pintados &&
       m.marcadores > 0 &&
       m.palavras === 13,
-    `${m.filas} filas · chaves da prova na cabeça: ${m.provas.join(', ')} · ${m.marcadores} marcadores em ${m.pintados} cartões pintados e ${m.palavras} palavras de estado na faixa`,
+    `${filasEmCasa} filas em / e ${m.filas} em /uniao-europeia · chaves da prova na manchete: ${m.provas.join(', ')} · ${m.marcadores} marcadores em ${m.pintados} cartões pintados e ${m.palavras} palavras de estado na faixa`,
   );
   await p.__contexto.close();
 }
@@ -2221,10 +2520,18 @@ for (const largura of [1280, 390]) {
  * 2l · A SEGUNDA LEITURA DA PRÉ-VISUALIZAÇÃO N.º 1 (Emendas 15 a 17)
  * ========================================================================= */
 
-/* (a) As duas bandas desenham DUAS referências, e a régua não transborda. */
+/* (a) As duas bandas desenham DUAS referências, e a régua não transborda.
+ *
+ * A PÁGINA MUDOU (F1.10, item 8.16, 08.09.2026). A célula ia a
+ * `/?densidade=leitura` e procurava `[data-leitura="saldo-da-balanca-corrente-
+ * 2025"]` na primeira página: as 21 leituras foram para «Portugal na União
+ * Europeia», o selector devolvia `null` e a régua REBENTAVA aqui, com todas as
+ * células medidas depois desta perdidas com o processo. A pergunta é a mesma,
+ * medida onde as duas bandas estão. Não é preciso abrir dobra nenhuma: o que se
+ * lê são atributos e texto, e os dois existem com a dobra fechada. */
 {
   const p = await pagina();
-  await p.goto(base + '/?densidade=leitura', { waitUntil: 'networkidle' });
+  await p.goto(base + '/uniao-europeia', { waitUntil: 'networkidle' });
   const b = await p.evaluate(() => {
     const alvo = ['saldo-da-balanca-corrente-2025', 'taxa-de-cambio-efectiva-real-2025'];
     return alvo.map((id) => {
@@ -2233,10 +2540,15 @@ for (const largura of [1280, 390]) {
          leitura. A marca da medida é `data-leitura`, que é o que a área de
          leitura escreve. */
       const peca = document.querySelector(`[data-leitura="${id}"]`);
+      /* E UMA AUSÊNCIA DIZ-SE, EM VEZ DE MATAR A RÉGUA. Uma medida que mudasse de
+         página outra vez punha aqui um `null`, e um `null` sobre o qual se chama
+         `querySelector` leva consigo as células todas que vinham a seguir. */
+      if (!peca) return { id, ausente: true, refs: 0, distintas: 0, dentroDaCaixa: false, linha: '', algarismos: [], estado: null };
       const svg = peca.querySelector('.regua-svg');
+      if (!svg) return { id, semRegua: true, refs: 0, distintas: 0, dentroDaCaixa: false, linha: '', algarismos: [], estado: null };
       const refs = [...svg.querySelectorAll('.regua-ref')];
       const xs = refs.map((r) => Number(r.getAttribute('x1')));
-      const linha = peca.querySelector('.dobra-limiar').textContent.replace(/\s+/g, ' ').trim();
+      const linha = (peca.querySelector('.dobra-limiar')?.textContent ?? '').replace(/\s+/g, ' ').trim();
       const algarismos = [...peca.querySelectorAll('.dobra-limiar [data-nonledger="limiar-do-quadro"]')].map(
         (e) => e.textContent.trim(),
       );
@@ -2254,7 +2566,15 @@ for (const largura of [1280, 390]) {
   conta(
     '2l · a banda desenha duas referências, e os dois algarismos vão marcados',
     b.every((r) => r.refs === 2 && r.distintas === 2 && r.dentroDaCaixa && r.algarismos.length === 2 && r.estado === 'dentro'),
-    b.map((r) => `${r.id}: ${r.refs} referências em ${r.distintas} posições · «${r.linha}»`).join(' · '),
+    b
+      .map((r) =>
+        r.ausente
+          ? `${r.id}: a medida não está nesta página`
+          : r.semRegua
+            ? `${r.id}: sem régua na leitura`
+            : `${r.id}: ${r.refs} referências em ${r.distintas} posições · «${r.linha}»`,
+      )
+      .join(' · '),
   );
   await p.__contexto.close();
 }
@@ -2268,10 +2588,48 @@ for (const largura of [1280, 390]) {
    e o que mudou foi a forma: em vez de oito `<li>` à vista, oito `<details>`
    fechados com o nome como `<summary>`. A célula abre-os para medir o selo, pela
    mesma razão que a célula dos selos das leituras do Procedimento os abre: o
-   conteúdo de uma dobra fechada não tem caixa nenhuma. */
+   conteúdo de uma dobra fechada não tem caixa nenhuma.
+
+   E A PÁGINA MUDOU, E COM ELA O GESTO (F1.10, itens 8.14 e 8.16, 08.09.2026). O
+   Painel Social foi com os 21 cartões para «Portugal na União Europeia», e o
+   estado que abria as oito de uma vez deixou de existir: abre-se cada uma
+   tocando no seu cartão, que é a única interação que a página tem. */
 {
   const p = await pagina();
-  await p.goto(base + '/?densidade=leitura', { waitUntil: 'networkidle' });
+  await p.goto(base + '/uniao-europeia', { waitUntil: 'networkidle' });
+  const doSocial = await p.evaluate(() =>
+    [...document.querySelectorAll('[data-leituras="social"] .dobra')].map((e) => e.getAttribute('data-leitura')),
+  );
+  for (const id of doSocial) {
+    await p.click(`[data-cartao="${id}"] .cartao-porta`);
+    await p.waitForTimeout(30);
+    /* A MEDIÇÃO DO SELO FICA GUARDADA NO PRÓPRIO ELEMENTO enquanto ele está
+       aberto, porque a leitura seguinte fecha esta: sem isto, a conta final via
+       sete dobras fechadas e um selo com caixa, e sete zeros não são sete
+       defeitos. É a marca que a célula lê a seguir, e sai da página com ela. */
+    await p.evaluate((alvo) => {
+      const peca = document.getElementById(`m-${alvo}`);
+      const a = peca && peca.open ? peca.querySelector('a.src-chip') : null;
+      if (!peca) return;
+      if (!a) {
+        peca.setAttribute('data-medida-do-selo', 'sem selo');
+        return;
+      }
+      const depois = getComputedStyle(a, '::after');
+      const r = a.getBoundingClientRect();
+      const largura = Math.max(r.width, parseFloat(depois.width) || 0, parseFloat(depois.minWidth) || 0);
+      const altura = Math.max(r.height, parseFloat(depois.height) || 0);
+      let aninhado = null;
+      for (let no = a.parentElement; no; no = no.parentElement) {
+        const t = no.tagName.toLowerCase();
+        if (t === 'a' || t === 'button' || t === 'summary') { aninhado = t; break; }
+      }
+      peca.setAttribute(
+        'data-medida-do-selo',
+        JSON.stringify({ largura: +largura.toFixed(1), altura: +altura.toFixed(1), aninhado }),
+      );
+    }, id);
+  }
   const soc = await p.evaluate(() => {
     const lista = [...document.querySelectorAll('[data-leituras="social"] .dobra')];
     /* AS OITO TÊM SELO, E DUAS TÊM TAMBÉM A PORTA (decisão corrigida do lugar de
@@ -2287,22 +2645,17 @@ for (const largura of [1280, 390]) {
        dos selos passa a correr sobre as oito, e a das portas fica ao lado, com o
        seu próprio número exigido: uma régua não se enfraquece. */
     const portas = lista.filter((l) => l.querySelector('.dobra-porta a[href]')).length;
-    const selos = lista
-      .map((l) => {
-      const a = l.querySelector('a.src-chip');
-      if (!a) return null;
-      const depois = getComputedStyle(a, '::after');
-      const r = a.getBoundingClientRect();
-      /* A mesma medição da célula dos selos da peça: a caixa do elemento e a da
-         área de toque, e fica a maior das duas. */
-      const largura = Math.max(r.width, parseFloat(depois.width) || 0, parseFloat(depois.minWidth) || 0);
-      const altura = Math.max(r.height, parseFloat(depois.height) || 0);
-      let aninhado = null;
-      for (let no = a.parentElement; no; no = no.parentElement) {
-        const t = no.tagName.toLowerCase();
-        if (t === 'a' || t === 'button' || t === 'summary') { aninhado = t; break; }
+    /* A mesma medição da célula dos selos da peça: a caixa do elemento e a da
+       área de toque, e fica a maior das duas. Cada uma foi medida com a sua
+       leitura aberta, e o que se lê aqui é a marca que ficou. */
+    const selos = lista.map((l) => {
+      const bruto = l.getAttribute('data-medida-do-selo');
+      if (!bruto || bruto === 'sem selo') return null;
+      try {
+        return JSON.parse(bruto);
+      } catch (e) {
+        return null;
       }
-      return { largura: +largura.toFixed(1), altura: +altura.toFixed(1), aninhado };
     });
     return {
       n: lista.length,
@@ -2365,41 +2718,66 @@ for (const largura of [1280, 390]) {
   );
   if (!outro) {
     conta(
-      'Emenda 14 · um concelho sem estudos rende as sete peças e mais nada',
+      'Emenda 14 · um concelho sem estudos rende as suas medidas e mais nada',
       false,
       'sem objecto: só há uma página de concelho construída. Corra com o ficheiro dos 308 ' +
         '(src/data/concelhos.gerado.json, ou CONCELHOS_GERADO=<ficheiro>).',
     );
   } else {
+    /* A FORMA DA PÁGINA MUDOU (F1.10, §7.1 e item 8.17a, 08.09.2026), E A
+       PROMESSA NÃO. A grelha das peças grandes saiu da página do concelho: o
+       diretor viu os mesmos oito números três vezes (a faixa, os cartões
+       grandes, a prosa corrida), e a decisão foi ficar a faixa e a leitura de
+       cada medida a abrir do seu cartão. `.peca` e `.peca-vazia` deixaram de
+       existir, e a célula lia «0 peças», que é uma célula vermelha por não haver
+       o que medir. O QUE ELA MEDE CONTINUA A SER O MESMO: a página de um
+       concelho é a mesma página que a de outro com dados diferentes — as
+       medidas rendem-se sempre, todas, pela mesma ordem, cada uma com o seu
+       cartão e a sua leitura; as secções de um concelho COM trabalho publicado
+       não se rendem num que não o tem; e a coluna do corpo só existe se houver
+       corpo. `#breve` saiu da conta pela mesma razão: era a secção da leitura
+       breve, que passou a ser a área das leituras, e o que decide a coluna do
+       corpo passou a ser o trabalho publicado. */
     await p.goto(base + outro, { waitUntil: 'networkidle' });
-    const m = await p.evaluate(() => ({
-      pecas: document.querySelectorAll('.peca').length,
-      vazias: document.querySelectorAll('.peca-vazia').length,
-      vaziasLimpas: [...document.querySelectorAll('.peca-vazia')].every(
-        (e) => e.querySelector('[data-cobertura="sem-linha"]') && !/[0-9]/.test(e.textContent ?? ''),
-      ),
-      doTrabalho:
-        document.querySelectorAll('#contas').length +
-        document.querySelectorAll('#tempo').length +
-        document.querySelectorAll('#metodo').length +
-        document.querySelectorAll('#trabalhos').length +
-        document.querySelectorAll('.aparelho-estado').length,
-      breve: document.querySelectorAll('#breve').length,
-      distancia: document.querySelectorAll('.mun-distancia').length,
-      corpo: document.querySelectorAll('.municipio-corpo').length,
-      cartao: document.querySelectorAll('[data-mapa-cartao]').length,
-    }));
+    const m = await p.evaluate(() => {
+      const cartoes = [...document.querySelectorAll('[data-faixa] [data-cartao]')].map((c) =>
+        c.getAttribute('data-cartao'),
+      );
+      const leituras = [...document.querySelectorAll('[data-leitura]')].map((c) =>
+        c.getAttribute('data-leitura'),
+      );
+      return {
+        cartoes: cartoes.length,
+        leituras: leituras.length,
+        /* CADA CARTÃO ABRE A SUA LEITURA, e é a mesma ordem: uma medida sem
+           leitura, ou uma leitura sem cartão, é a página a partir-se ao meio. */
+        emparelhados: cartoes.length === leituras.length && cartoes.every((id, i) => leituras[i] === id),
+        semValor: [...document.querySelectorAll('[data-faixa] [data-cartao]')].filter(
+          (c) => !c.querySelector('[data-claim]'),
+        ).length,
+        doTrabalho:
+          document.querySelectorAll('#contas').length +
+          document.querySelectorAll('#tempo').length +
+          document.querySelectorAll('#metodo').length +
+          document.querySelectorAll('#trabalhos').length +
+          document.querySelectorAll('.aparelho-estado').length,
+        distancia: document.querySelectorAll('.mun-distancia').length,
+        corpo: document.querySelectorAll('.municipio-corpo').length,
+        cartao: document.querySelectorAll('[data-mapa-cartao]').length,
+      };
+    });
     conta(
-      'Emenda 14 · um concelho sem estudos rende as sete peças e mais nada',
-      m.pecas === 7 &&
-        m.vaziasLimpas &&
+      'Emenda 14 · um concelho sem estudos rende as suas medidas e mais nada',
+      m.cartoes === 8 &&
+        m.emparelhados &&
+        m.semValor === 0 &&
         m.doTrabalho === 0 &&
-        m.breve === m.distancia &&
-        m.corpo === (m.breve > 0 ? 1 : 0) &&
+        m.distancia === 1 &&
+        m.corpo === 0 &&
         m.cartao === 1,
-      `${outro}: ${m.pecas} peças (${m.vazias} vazias, sem algarismo ${m.vaziasLimpas}) · ` +
-        `secções de trabalho ${m.doTrabalho} · leitura breve ${m.breve} / distância ${m.distancia} · ` +
-        `colunas de corpo ${m.corpo} · cartão ${m.cartao}`,
+      `${outro}: ${m.cartoes} cartões e ${m.leituras} leituras, emparelhados pela ordem ${m.emparelhados} ` +
+        `(${m.semValor} cartão(ões) sem valor) · secções de trabalho ${m.doTrabalho} · ` +
+        `distância ${m.distancia} · colunas de corpo ${m.corpo} · cartão do mapa ${m.cartao}`,
     );
   }
   await p.__contexto.close();
@@ -2440,8 +2818,12 @@ for (const largura of [1280, 390]) {
    que o portão escreveu. A célula não recalcula nada: compara o que a página
    escreve com o que o portão gravou, que são duas contas independentes. */
 {
+  /* A PÁGINA DAS DUAS CHAVES MUDOU (F1.10, item 8.16, 08.09.2026): a manchete que
+     as rende foi com os 21 cartões para «Portugal na União Europeia», e em `/`
+     `[data-prova]` não devolvia nem uma. A célula dizia «fora undefined/4», que é
+     a página a não ter o que ela compara. O `prova.json` é o mesmo ficheiro. */
   const p = await pagina();
-  await p.goto(base + '/', { waitUntil: 'networkidle' });
+  await p.goto(base + '/uniao-europeia', { waitUntil: 'networkidle' });
   const provaJson = await p.evaluate(async () => (await fetch('/prova.json')).json());
   const na = await p.evaluate(() =>
     [...document.querySelectorAll('[data-prova]')].map((e) => [
@@ -2660,6 +3042,11 @@ const CANTO_DAS_ILHAS = (() => {
           url: location.pathname + location.search,
           cabeca: document.querySelector('[data-cabeca]:not([hidden])')?.getAttribute('data-cabeca'),
           painel: document.querySelector('[data-leituras]')?.getAttribute('data-leituras'),
+          /* O CORPO DA PRIMEIRA PÁGINA PASSOU A SER A FAIXA (F1.10, item 8.16,
+             08.09.2026): a área de leitura foi com os 21 cartões para «Portugal
+             na União Europeia», e o que fica aqui é a faixa das medidas de cabeça
+             dos domínios vivos. Conta-se o que ela leva. */
+          cartoes: document.querySelectorAll('[data-faixa] [data-cartao]').length,
           /* A BUSCA ABRE POR BAIXO DO MAPA, E ABRE MESMO (01.09.2026).
              Era um bloco que a folha mostrava pelo `data-modo` da raiz e que
              ficava ACIMA do mapa; com a afinação 1 do brief da forma dos
@@ -2688,12 +3075,15 @@ const CANTO_DAS_ILHAS = (() => {
         m.ambito === 'municipio' &&
         /\?ambito=municipio$/.test(m.url) &&
         m.cabeca === 'pais' &&
-        /* O CORPO DA PÁGINA É A ÁREA DE LEITURA (F1.1b, 04.09.2026), e o
-           primeiro bloco dela é o do Procedimento: era `data-painel="pais"`, da
-           grelha das treze peças, que saiu. A célula continua a exigir que o
-           corpo esteja lá com o estado aceso, e lê-o na coisa que agora lá
-           está. */
-        m.painel === 'pdm' &&
+        /* O CORPO DA PÁGINA ERA A ÁREA DE LEITURA (F1.1b, 04.09.2026), e o
+           primeiro bloco dela era o do Procedimento: antes disso era
+           `data-painel="pais"`, da grelha das treze peças. AS DUAS SAÍRAM DESTA
+           PÁGINA (F1.10, item 8.16, 08.09.2026) e o que fica é a faixa. A célula
+           continua a exigir que o corpo esteja lá com o estado aceso, e lê-o na
+           coisa que agora lá está: `[data-leituras]` não existe aqui, e exigi-lo
+           era pedir à página que desfizesse a decisão. */
+        m.painel === undefined &&
+        m.cartoes > 0 &&
         /* A BUSCA SUBIU PARA DEBAIXO DA MANCHETE (F1.1, itens 3 e 12,
            03.09.2026). Era uma gaveta ao lado do mapa, fechada, e a célula
            media que o estado `?ambito=municipio` a abria por baixo do desenho.
@@ -2715,7 +3105,7 @@ const CANTO_DAS_ILHAS = (() => {
         m.transbordo <= 0;
       if (!ok) bem = false;
       linhas.push(
-        `${largura}${rota === '/' ? ' pt' : ' en'}: ${m.url} · gaveta da busca ${m.gavetaAberta === null ? 'não existe' : m.gavetaAberta}, busca à vista ${m.pesquisaVisivel} · mapa ${m.mapa} na coluna de ${m.coluna} (no país ${noPais}) · caixa das ${antes?.n} áreas ${antes?.largura}×${antes?.altura} → ${depois?.largura}×${depois?.altura} · transbordo ${m.transbordo}`,
+        `${largura}${rota === '/' ? ' pt' : ' en'}: ${m.url} · gaveta da busca ${m.gavetaAberta === null ? 'não existe' : m.gavetaAberta}, busca à vista ${m.pesquisaVisivel} · ${m.cartoes} cartão(ões) na faixa, ${m.painel === undefined ? 0 : 1} área(s) de leitura · mapa ${m.mapa} na coluna de ${m.coluna} (no país ${noPais}) · caixa das ${antes?.n} áreas ${antes?.largura}×${antes?.altura} → ${depois?.largura}×${depois?.altura} · transbordo ${m.transbordo}`,
       );
       await p.__contexto.close();
     }
@@ -2804,9 +3194,10 @@ const CANTO_DAS_ILHAS = (() => {
  * primeira página deixou de os ter; o cartão localizador da página do concelho,
  * onde a Emenda 20d deixou os pontos, não carrega este script e nunca teve
  * leitura em voz alta. A regra continua medida onde ela tem objecto: o anel do
- * concelho ESCOLHIDO está na célula «2j·a · o ponto escolhido é um anel na
- * página do concelho», que mede o enchimento, o raio e o contorno em
- * `/municipios/evora`; e a neutralidade das áreas da primeira página está em
+ * concelho ESCOLHIDO está na célula «2j·a · a área do concelho é um anel na
+ * página dele», que mede o enchimento e o contorno em `/municipios/evora` (o
+ * cartão dos pontos saiu de lá com o item 8.17b do F1.10, e no lugar dele está o
+ * mapa da unidade do concelho); e a neutralidade das áreas da primeira página está em
  * `tests/inicio/mapa-distritos.mjs`, células M5a a M5c, com o seu estrago
  * plantado.
  *
@@ -2853,7 +3244,15 @@ const CANTO_DAS_ILHAS = (() => {
 {
   const linhas = [];
   let bem = true;
-  for (const [rota, edicao, ultimo] of [['/', 'pt', ' e '], ['/en/', 'en', ' and ']]) {
+  /* A LEDE MUDOU DE PÁGINA COM A FAIXA DOS PAINÉIS (F1.10, item 8.16,
+     08.09.2026). Era a lede da primeira página, e a lista dos nomes que ela conta
+     era a dos cartões dos dois quadros da União: os 21 foram para «Portugal na
+     União Europeia» e a lede foi com eles. Em `/` a célula lia «manchete
+     undefined · lista de 1 — “”», que é uma página sem o que ela compara. */
+  for (const [rota, edicao, ultimo] of [
+    ['/uniao-europeia', 'pt', ' e '],
+    ['/en/european-union', 'en', ' and '],
+  ]) {
     const p = await pagina({ largura: 1280 });
     await p.goto(base + rota, { waitUntil: 'networkidle' });
     const e = await p.evaluate(() => ({
@@ -2861,7 +3260,7 @@ const CANTO_DAS_ILHAS = (() => {
          04.09.2026). Eram as peças do painel; a grelha saiu da primeira página e
          o estado de uma medida diz-se no cartão, que é onde o valor vive. A
          ordem é a mesma, porque a faixa e o painel rendiam a mesma lista. */
-      fora: [...document.querySelectorAll('[data-grelha] [data-faixa] .cartao[data-estado="fora"]')].map(
+      fora: [...document.querySelectorAll('[data-faixa] .cartao[data-estado="fora"]')].map(
         (a) => a.querySelector('[data-medida-nome]').textContent.trim(),
       ),
       lista: document.querySelector('[data-prova-lista]')?.textContent.trim() ?? null,
@@ -2872,7 +3271,7 @@ const CANTO_DAS_ILHAS = (() => {
       ano: document.querySelector('.cabeca-lede [data-nonledger="data-de-referencia"]')?.textContent.trim() ?? null,
       /* … e tem de ser o período que os próprios cartões declaram, na fila da
          unidade, que é onde ele passou a viver para todas as 21. */
-      periodos: [...document.querySelectorAll('[data-grelha] [data-faixa] .cartao[data-estado="fora"]')].map(
+      periodos: [...document.querySelectorAll('[data-faixa] .cartao[data-estado="fora"]')].map(
         (a) => a.querySelector('[data-medida-unidade]')?.textContent.trim() ?? '',
       ),
     }));
@@ -2980,15 +3379,29 @@ const CANTO_DAS_ILHAS = (() => {
          «Concelhos: as medidas centrais») existe nas duas edições: não leva
          marca, e não é aqui que se julga. */
       if (!linguas) continue;
-      /* A MESMA CADEIA PODE SER O TÍTULO DE DUAS EDIÇÕES. «Água Não Faturada» e
+      /* A REGRA É A DO TEXTO, E NÃO A DA EDIÇÃO (ISSUES I91, 29.08.2026).
+         ---------------------------------------------------------------------
+         A MESMA CADEIA PODE SER O TÍTULO DE DUAS EDIÇÕES: «Água Não Faturada» e
          «Onde está a água?» têm edição inglesa cujo título inglês não é
-         conhecido: fica o original. Uma cadeia que também é título português não
-         está em inglês, e não leva marca nenhuma. */
-      if (linguas.has(daPagina)) {
+         conhecido, e fica o original. A redacção antiga desta célula dizia que
+         uma cadeia que também é título da edição da língua da página não leva
+         marca nenhuma, e o sítio deixou de fazer isso a 29.08.2026: a I91 mediu
+         onze cadeias portuguesas sem marca dentro das páginas inglesas, e
+         `linguaDoTitulo()` em `src/data/studies.mjs` passou a marcá-las
+         `pt-PT`, porque a língua do TEXTO é o português sempre que a mesma
+         cadeia é o título de uma edição portuguesa. A célula media a regra
+         antiga e nomeava as MESMAS onze ocorrências ao contrário, como se a
+         correcção fosse o defeito. Passa a medir a regra que o sítio tem, que é
+         a mesma função escrita aqui por outra mão: uma régua que discorda de um
+         portão tem de dizer qual das duas contas está a fazer.
+         (F1.10, 08.09.2026: a célula ficou por endireitar quando a I91 fechou, e
+         só se viu quando esta régua voltou a chegar ao fim.) */
+      const doTexto = linguas.has('pt-PT') ? 'pt-PT' : [...linguas][0];
+      const esperada = doTexto === daPagina ? null : doTexto;
+      if (esperada === null) {
         if (marca) comMarcaARepetir.push(`${rel} «${texto.slice(0, 40)}» lang=${marca}`);
-      } else {
-        const esperada = [...linguas][0];
-        if (marca !== esperada) semMarca.push(`${rel} «${texto.slice(0, 40)}» lang=${marca ?? '(nenhum)'} esperava ${esperada}`);
+      } else if (marca !== esperada) {
+        semMarca.push(`${rel} «${texto.slice(0, 40)}» lang=${marca ?? '(nenhum)'} esperava ${esperada}`);
       }
     }
     const rodape = RODAPE.exec(html)?.[1];
