@@ -386,6 +386,35 @@ function leTexto(absoluto) {
 const leJson = (absoluto) => JSON.parse(leTexto(absoluto));
 
 /**
+ * OS MÓDULOS QUE O GERADOR IMPORTA TAMBÉM MOLDAM A SAÍDA, E POR ISSO ENTRAM NO
+ * MANIFESTO.
+ *
+ * `src/data/regioes.mjs` dá os nomes, os códigos, a ordem e a pertença das nove
+ * regiões: uma linha mudada ali muda o ficheiro gerado, e um manifesto que só
+ * apanhasse os ficheiros de dados declarava uma proveniência incompleta (leitura
+ * a frio do Codex de 08.09.2026, achado 13). A lista não se escreve à mão: lê-se
+ * do próprio ficheiro do gerador e segue os `import` relativos até ao fim, para
+ * que um módulo novo entre sozinho no dia em que alguém o importar. O portão
+ * confere a cobertura (`check-mapa.mjs`, R8).
+ *
+ * @param {string} entrada o ficheiro por onde a busca começa
+ */
+function hashaOsModulosImportados(entrada) {
+  const porVer = [entrada];
+  const vistos = new Set([entrada]);
+  while (porVer.length > 0) {
+    const abs = porVer.pop();
+    const texto = abs === entrada ? fs.readFileSync(abs, 'utf8') : leTexto(abs);
+    for (const m of texto.matchAll(/^\s*import\s[^'"]*['"](\.[^'"]+)['"]/gm)) {
+      const seguinte = path.resolve(path.dirname(abs), m[1]);
+      if (vistos.has(seguinte)) continue;
+      vistos.add(seguinte);
+      porVer.push(seguinte);
+    }
+  }
+}
+
+/**
  * A região de cada concelho, lida da coluna `nuts2` da Carta.
  *
  * OS DOIS NOMES QUE A CARTA ESCREVE POR EXTENSO. Sete das nove regiões vêm da
@@ -437,11 +466,15 @@ function regiaoDeCadaConcelho() {
  * A FRONTEIRA DE UM DISTRITO É A DO ARTEFACTO, E NÃO A DOS SEUS CONCELHOS
  * ==========================================================================
  * As 29 unidades de `mapa/pais.json` ladrilham o campo do desenho ponto por
- * ponto: das 5 537 arestas, 3 781 têm a gémea inversa numa unidade vizinha, que
- * são todas as de fronteira interior. Os concelhos de duas unidades diferentes
- * NÃO ladrilham entre si, porque cada unidade foi desenhada na sua grelha e a
- * mesma fronteira foi arredondada de duas maneiras: o desvio medido chega a 1,4
- * u no campo do país.
+ * ponto, e os concelhos de duas unidades diferentes NÃO ladrilham entre si,
+ * porque cada unidade foi desenhada na sua grelha e a mesma fronteira foi
+ * arredondada de duas maneiras. As DUAS CONTAS ESTÃO MEDIDAS e vão para
+ * `ajuste` no ficheiro gerado (`npm run mapa:regioes`): as arestas das 29 e as
+ * que têm gémea inversa, as arestas dos 308 no campo do país e as que têm
+ * gémea, e a distância entre as duas leituras da mesma fronteira, unidade a
+ * unidade. A prosa desta casa dizia «1,4 u» sem medida ao lado, e a leitura a
+ * frio do Codex de 08.09.2026 apanhou-o (achado 18): o número está agora no
+ * ficheiro, e é maior do que essa prosa dizia.
  *
  * Por isso a região não se faz da união dos 308 concelhos no campo do país. Faz-
  * -se assim, e o resultado é uma fronteira exacta:
@@ -591,6 +624,7 @@ function linhaDeCorte(deA, deB) {
  * ========================================================================== */
 
 function calcula() {
+  hashaOsModulosImportados(fileURLToPath(import.meta.url));
   const pais = leJson(path.join(MAPA, 'pais.json'));
   const manifesto = leJson(path.join(MAPA, 'manifest.json'));
   const concelhos = leJson(path.join(RAIZ, 'src', 'data', 'concelhos.gerado.json'));
@@ -652,6 +686,78 @@ function calcula() {
     return { u, locais, paraOCampo, grupos, aneisDoPais: aneisDoCaminho(u.d) };
   });
   if (vistos !== 308) throw new Falha(`os artefactos deram ${vistos} concelhos, e não 308`);
+
+  /* -------------------------------------------- o desvio entre as duas grelhas
+     O NÚMERO QUE DECIDE A CONTA MEDE-SE AQUI, e não se escreve em prosa. A mesma
+     fronteira existe duas vezes: no caminho da unidade em `mapa/pais.json`, e na
+     união dos caminhos dos seus concelhos, que vieram da grelha local de
+     `mapa/distritos/<unidade>.json`. As duas foram arredondadas em grelhas
+     diferentes, e a distância entre elas é o que proíbe fazer a região da união
+     dos 308 no campo do país. Mede-se assim: a união dos concelhos de cada
+     unidade, e a distância de cada vértice dela ao caminho do artefacto daquela
+     unidade. O maior de todos vai para `ajuste`, com o comando que o refaz.
+
+       npm run mapa:regioes   (e o número fica em src/data/mapa-regioes.gerado.json) */
+  let desvioEntreGrelhas = 0;
+  let ondeODesvio = '';
+  const porUnidade = [];
+  const arestasDos308 = new Map();
+  const chaveDeAresta = (p, q) => `${p[0]},${p[1]}|${q[0]},${q[1]}`;
+  for (const d of unidades) {
+    const noCampo = d.locais.flatMap((c) => c.aneis.map((a) => a.map(d.paraOCampo)));
+    for (const anel of noCampo) {
+      for (let k = 0; k < anel.length; k++) {
+        const a = anel[k];
+        const b = anel[(k + 1) % anel.length];
+        if (a[0] === b[0] && a[1] === b[1]) continue;
+        const c = chaveDeAresta(a, b);
+        arestasDos308.set(c, (arestasDos308.get(c) ?? 0) + 1);
+      }
+    }
+    let pior = 0;
+    for (const anel of uniaoPorArestas(noCampo)) {
+      for (const v of anel) pior = Math.max(pior, projeta(d.aneisDoPais, v).distancia);
+    }
+    porUnidade.push(pior);
+    if (pior > desvioEntreGrelhas) {
+      desvioEntreGrelhas = pior;
+      ondeODesvio = d.u.slug;
+    }
+  }
+  porUnidade.sort((a, b) => a - b);
+  const desvioMediano = porUnidade[Math.floor(porUnidade.length / 2)];
+
+  /* AS ARESTAS QUE SE ANULAM, DOS DOIS LADOS. As 29 unidades ladrilham ponto por
+     ponto e a sua conta é a prova disso; os 308 concelhos no campo do país não,
+     e a diferença entre as duas contas é a razão da conta das peças. */
+  const contaDasArestas = (aneis) => {
+    const arestas = new Map();
+    for (const anel of aneis) {
+      for (let k = 0; k < anel.length; k++) {
+        const a = anel[k];
+        const b = anel[(k + 1) % anel.length];
+        if (a[0] === b[0] && a[1] === b[1]) continue;
+        const c = chaveDeAresta(a, b);
+        arestas.set(c, (arestas.get(c) ?? 0) + 1);
+      }
+    }
+    let total = 0;
+    let comGemea = 0;
+    for (const [c, n] of arestas) {
+      total += n;
+      const [a, b] = c.split('|');
+      if (arestas.has(`${b}|${a}`)) comGemea += n;
+    }
+    return { total, comGemea };
+  };
+  const das29 = contaDasArestas(unidades.flatMap((d) => d.aneisDoPais));
+  let totalDos308 = 0;
+  let gemeasDos308 = 0;
+  for (const [c, n] of arestasDos308) {
+    totalDos308 += n;
+    const [a, b] = c.split('|');
+    if (arestasDos308.has(`${b}|${a}`)) gemeasDos308 += n;
+  }
 
   /* ------------------------------------- as linhas de corte das repartidas */
   const repartidas = unidades.filter((d) => d.grupos.size === 2);
@@ -933,6 +1039,16 @@ function calcula() {
       unidades: [...new Set(dados.unidades)].sort((a, b) => a.localeCompare(b, 'pt')),
       d: caminhoDeAneis(inteiros),
       caixa: caixaDe(inteiros).map(Math.round),
+      /* A CAIXA DA GRELHA DESTA REGIÃO, NO CAMPO DO PAÍS, COM AS CASAS TODAS.
+         É o que leva um ponto do campo do país à grelha da região, e é o único
+         número da conta dos nove ficheiros do cliente que não se lê das fontes:
+         junta a caixa do contorno à dos concelhos, e as duas vêm de
+         arredondamentos diferentes da mesma fronteira. Fica escrita para que o
+         portão possa REFAZER os nove ficheiros das fontes, byte a byte, sem
+         importar este gerador (`check-mapa.mjs`, R10). A caixa arredondada
+         acima (`caixa`) não serve para isso: a Península de Setúbal dá 1 446 de
+         altura de grelha com esta e 1 444 com aquela, medido a 08.09.2026. */
+      caixa_da_grelha: caixaNoCampo,
       campo: campoDaRegiao,
       ficheiro: `dados/mapa/regiao-${r.slug}.json`,
     });
@@ -979,6 +1095,13 @@ function calcula() {
       erro_px: erroPx,
       coluna_px: colunaPx,
       tolerancia_do_pais: Number(toleranciaDoPais.toFixed(4)),
+      desvio_entre_as_duas_grelhas_u: Number(desvioEntreGrelhas.toFixed(4)),
+      desvio_entre_as_duas_grelhas_mediana_u: Number(desvioMediano.toFixed(4)),
+      unidade_do_maior_desvio: ondeODesvio,
+      arestas_das_29_unidades: das29.total,
+      arestas_das_29_com_gemea: das29.comGemea,
+      arestas_dos_308_no_campo_do_pais: totalDos308,
+      arestas_dos_308_com_gemea: gemeasDos308,
       desvio_de_area_ao_arredondar_e_afinar_pct: Number((piorArea * 100).toFixed(6)),
     },
     campo: pais.campo,
