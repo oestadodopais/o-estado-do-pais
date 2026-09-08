@@ -93,6 +93,7 @@ import { routePath } from '../src/lib/routes.mjs';
 /* Os números do mapa não se escrevem aqui: leem-se do artefacto que o motor
    atravessou, pela mesma porta que o sítio usa (`src/lib/mapa.mjs`). */
 import { manifestoDoMapa, unidadesDoMapa, distritoDoMapa } from '../src/lib/mapa.mjs';
+import { regioesDoMapa } from '../src/lib/mapa-regioes.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -1598,15 +1599,21 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   const UNIDADES_DA_CARTA = unidadesDoMapa().length;
   const CONCELHOS_DA_CARTA = manifestoDoMapa().concelhos.n;
   const CONCELHOS_DO_DISTRITO = distritoDoMapa('evora').concelhos.length;
+  /* AS ÁREAS DA PRIMEIRA PÁGINA SÃO AS NOVE REGIÕES (F1.1d, 07.09.2026), e as 29
+     unidades da Carta continuam na lista dos nomes por baixo do mapa, com as nove
+     à frente delas. O número não se escreve: lê-se do ficheiro que a construção
+     gera dos concelhos da Carta, como o das 29 se lê do artefacto do motor. */
+  const REGIOES_DO_DESENHO = regioesDoMapa().regioes.length;
+  const NOMES_DA_LISTA = REGIOES_DO_DESENHO + UNIDADES_DA_CARTA;
 
   const casaMapa = arvore('index.html');
   const areas = casaMapa.querySelectorAll('#mapa path.uni');
   const unidades = areas.length;
-  if (unidades !== UNIDADES_DA_CARTA) {
+  if (unidades !== REGIOES_DO_DESENHO) {
     morre(
-      `o mapa de \`dist/index.html\` tem ${unidades} unidades (\`path.uni\`) e a Carta tem ` +
-        `${UNIDADES_DA_CARTA}. O cartão retrata o mapa do país inteiro, e um mapa a que falte uma ` +
-        `unidade não é esse mapa.`,
+      `o mapa de \`dist/index.html\` tem ${unidades} áreas (\`path.uni\`) e as regiões NUTS II são ` +
+        `${REGIOES_DO_DESENHO}. O cartão retrata o mapa do país inteiro, e um mapa a que falte uma ` +
+        `região não é esse mapa.`,
     );
   }
 
@@ -1631,8 +1638,8 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
      caminho e uma âncora vazia dariam a mesma conta. Conta-se por âncora. */
   const portasDoMapa = casaMapa.querySelectorAll('#mapa a.uni-porta');
   const portas = portasDoMapa.length;
-  if (portas !== UNIDADES_DA_CARTA) {
-    morre(`o mapa de \`dist/index.html\` tem ${portas} portas (\`a.uni-porta\`) para as ${UNIDADES_DA_CARTA} unidades da Carta. A Emenda 20a diz que cada unidade é uma ligação para a sua página.`);
+  if (portas !== REGIOES_DO_DESENHO) {
+    morre(`o mapa de \`dist/index.html\` tem ${portas} portas (\`a.uni-porta\`) para as ${REGIOES_DO_DESENHO} regiões do desenho. A Emenda 20a diz que cada área é uma ligação para a sua página, e o F1.1d trocou as 29 unidades pelas nove regiões.`);
   }
   const semUmCaminho = portasDoMapa.filter((a) => a.querySelectorAll('path.uni').length !== 1).length;
   if (semUmCaminho) {
@@ -1650,8 +1657,8 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   /* E OS NOMES ESTÃO POR BAIXO, um por unidade: é a rede da Emenda 20c, e a
      decisão de 29.08 sobre a I101 diz que ela não se esconde. */
   const nomes = casaMapa.querySelectorAll('.mapa-ilhas-lista li').length;
-  if (nomes !== UNIDADES_DA_CARTA) {
-    morre(`a lista de nomes por baixo do mapa de \`dist/index.html\` tem ${nomes} nomes para as ${UNIDADES_DA_CARTA} unidades da Carta.`);
+  if (nomes !== NOMES_DA_LISTA) {
+    morre(`a lista de nomes por baixo do mapa de \`dist/index.html\` tem ${nomes} nomes para as ${REGIOES_DO_DESENHO} regiões do desenho e as ${UNIDADES_DA_CARTA} unidades da Carta.`);
   }
 
   /* O DISTRITO ABERTO: os concelhos daquela unidade, também como áreas. */
@@ -1703,7 +1710,7 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   <section class="ds-bloco">
     <h2>O mapa inteiro, na primeira página</h2>
     <div class="ds-mostra ds-mostra-larga">${mapa}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/index.html</code> · ${unidades} unidades, que são as ${UNIDADES_DA_CARTA} da Carta lidas do artefacto do mapa nesta corrida, todas com a mesma classe e o mesmo desenho de traço e enchimento, nenhuma destacada. Cada uma está dentro da SUA ligação, e isso é contado por âncora e não pelo total: ${portas} portas, cada uma com um caminho só lá dentro. Por baixo do mapa estão os ${nomes} nomes, um por unidade, que são a rede da Emenda 20c. Não há preenchimento de cobertura e não há capital: nem a do país, nem as de distrito.</p>
+    <p class="ds-nota"><code class="ds-mono">dist/index.html</code> · ${unidades} áreas, que são as ${REGIOES_DO_DESENHO} regiões NUTS II lidas do ficheiro que a construção gera dos concelhos da Carta, todas com a mesma classe e o mesmo desenho de traço e enchimento, nenhuma destacada. Cada uma está dentro da SUA ligação, e isso é contado por âncora e não pelo total: ${portas} portas, cada uma com um caminho só lá dentro. Por baixo do mapa estão os ${nomes} nomes, que são as ${REGIOES_DO_DESENHO} regiões do desenho e as ${UNIDADES_DA_CARTA} unidades da Carta. Não há preenchimento de cobertura e não há capital: nem a do país, nem as de distrito.</p>
     <div class="ds-mostra">${linha}</div>
     <p class="ds-nota">A única linha por baixo do mapa, e é a da Emenda 17.</p>
   </section>
