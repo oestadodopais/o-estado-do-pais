@@ -605,12 +605,22 @@ for (const ficheiro of paginas) {
   }
 
   /* ------------------------------------------------------------------- 8.17 */
-  /* O MAPA DA PÁGINA DE UM CONCELHO É O DA SUA REGIÃO, E NÃO OS 308 PONTOS.
+  /* O MAPA DA PÁGINA DE UM CONCELHO É O DA SUA UNIDADE, E NÃO OS 308 PONTOS.
      Três coisas, e as três nesta página: nenhum ponto do mapa de pontos; um
-     mapa de áreas, e um só; e o concelho DESTA página entre as áreas, com a
-     marca de escolhido e com a porta de cada área a abrir uma página que
-     existe. Uma delas em falta é a régua a dizer que o cartão dos pontos
-     voltou, ou que o mapa é o de outra região. */
+     mapa de áreas, e um só; e o concelho DESTA página entre as áreas, com o
+     anel e com a porta de cada área a abrir uma página que existe. Uma delas em
+     falta é a régua a dizer que o cartão dos pontos voltou, ou que o mapa é o de
+     outro sítio.
+
+     A MEDIDA PASSOU DA REGIÃO À UNIDADE, E A MARCA DO ANEL MUDOU COM ELA (item
+     8.17b, 08.09.2026). A primeira passagem media o mapa da REGIÃO, que era o
+     que o mapa daquele dia tinha, e procurava a marca `data-escolhido` que
+     aquele componente escrevia. O F1.1e devolveu o mapa às 29 unidades da Carta
+     e reescreveu o componente: a área escolhida distingue-se pela classe
+     `uni-escolhida` no seu `<path>`, e quem a nomeia é o `data-concelho-porta` da
+     âncora que a embrulha. A régua lê o que o componente escreve hoje; se
+     lesse o que ele escrevia ontem contaria zero anéis em 616 páginas que os
+     têm, que é a régua a mentir ao contrário. */
   if (chaveDaRota === 'municipio') {
     const pontos = corpo.querySelectorAll('circle.mun').length;
     if (pontos) {
@@ -620,14 +630,16 @@ for (const ficheiro of paginas) {
     const areas = corpo.querySelectorAll('[data-mapa-concelhos] [data-areas] a.uni-porta');
     const mapas = corpo.querySelectorAll('[data-mapa-concelhos]').length;
     const meu = rota?.params?.slug ?? '';
-    const escolhidos = corpo.querySelectorAll('[data-mapa-concelhos] [data-escolhido]');
-    const meuEstaLa = escolhidos.some((e) => e.getAttribute('data-caop') === meu);
+    const escolhidos = areas.filter((a) =>
+      (a.querySelector('path')?.getAttribute('class') ?? '').split(/\s+/).includes('uni-escolhida'),
+    );
+    const meuEstaLa = escolhidos.some((a) => a.getAttribute('data-concelho-porta') === meu);
     if (mapas !== 1 || areas.length === 0 || escolhidos.length !== 1 || !meuEstaLa) {
       medidas.d817_concelhos_sem_mapa++;
       anota(
         'd817_concelhos_sem_mapa',
         `${url} · ${mapas} mapa(s) de área, ${areas.length} área(s), ` +
-          `${escolhidos.length} escolhido(s)${meuEstaLa ? '' : ', e nenhum é este concelho'}`,
+          `${escolhidos.length} com anel${meuEstaLa ? '' : ', e nenhum é este concelho'}`,
       );
     }
     for (const a of areas) {
@@ -842,7 +854,7 @@ const NOMES = {
   l6_selos: 'L6 · selos que não dizem o publicador',
   d85_limiar_sozinho: '8.5 · «limiar» sozinho',
   d817_pontos_no_concelho: '8.17 · pontos dos 308 na página de um concelho',
-  d817_concelhos_sem_mapa: '8.17 · páginas de concelho sem o mapa da sua região',
+  d817_concelhos_sem_mapa: '8.17 · páginas de concelho sem o mapa da sua unidade',
   d88_livro_razao: '8.8 · «livro-razão» nos menus e nos títulos',
   d813_selos_nos_dominios: '8.13 · valores selados na secção dos domínios de /',
   d814_densidades: '8.14 · «Relance» e «Leitura breve» nas páginas do leitor',
