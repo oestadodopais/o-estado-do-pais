@@ -397,19 +397,20 @@ async function mediuOPais(largura, id) {
 }
 
 /* ------------------------------------------------------------------ M1 e M2 */
-/* RETIRADAS PELO F1.1d (07.09.2026). Mediam o alvo das 29 unidades da Carta no
-   mapa da primeira página, a 1280 e às quatro larguras de telemóvel. O mapa da
-   primeira página passou a ter dois níveis (as nove regiões NUTS II, e dentro de
-   cada uma os seus concelhos) e as 29 deixaram de ter área ali: continuam a ter
-   página, a estar no menu e a estar na lista dos nomes, e o alvo de cada área do
-   desenho novo mede-se em `tests/inicio/mapa-regioes.mjs`, células P1a, P1b e
-   P1c, com a mesma conta do quadrado inscrito que estava aqui. */
-conta(
-  'M1 e M2 · retiradas pelo F1.1d: o mapa da primeira página deixou de desenhar as 29 unidades',
-  true,
-  'o alvo das áreas da primeira página mede-se em tests/inicio/mapa-regioes.mjs (P1a, P1b e P1c), ' +
-    'com o mesmo quadrado inscrito e o mesmo passo de 2 px',
-);
+/* VOLTARAM COM O DESENHO (F1.1e, 08.09.2026). Estiveram retiradas um dia: o
+   F1.1d trocou as 29 unidades da Carta pelas nove regiões NUTS II no mapa da
+   primeira página, e uma célula que mede um desenho que não existe é uma célula
+   a declarar-se verde sem ter olhado. O diretor devolveu o desenho às 29 a
+   08.09, e as duas células voltam tal e qual: a mesma conta do quadrado inscrito
+   e o mesmo passo de 2 px, a 1280 e às quatro larguras de telemóvel.
+
+   O QUE ELAS MEDEM E A U1 DO F1.1e NÃO MEDE: aqui o alvo é o do NÍVEL DO PAÍS
+   com a rede de nomes ao lado (a célula b exige que nenhuma unidade abaixo dos
+   44 px fique sem nome na lista, e a c que cada nome seja um alvo). A U1 mede o
+   mesmo número no nível do país e mede também o dos 308 concelhos no nível da
+   sua unidade, que aqui não existe. */
+await mediuOPais(1280, 'M1');
+for (const w of TELEMOVEIS) await mediuOPais(w, `M2·${w}`);
 
 /* ---------------------------------------------------------------------- M3 */
 const DISTRITOS_MEDIDOS = ['lisboa', 'aveiro', 'ilha-de-sao-miguel'];
@@ -501,12 +502,13 @@ for (const slug of DISTRITOS_MEDIDOS) {
     const c = getComputedStyle(document.querySelector('[data-areas] .uni'));
     return { fill: c.fill, stroke: c.stroke, w: c.strokeWidth };
   });
-  /* O RATO VAI AO PONTO REPRESENTATIVO DE UMA REGIÃO, e não ao centro da caixa da
-     primeira área da lista: com as nove por ordem alfabética a primeira é a dos
-     Açores, e o centro da caixa dela é oceano. É a mesma lição da célula M6. */
+  /* O RATO VAI AO PONTO REPRESENTATIVO DE UMA UNIDADE, e não ao centro da caixa
+     da primeira área da lista: com as 29 pela colação portuguesa a primeira é
+     Aveiro, e o centro da caixa de uma unidade côncava pode ser oceano ou o
+     vizinho. É a mesma lição da célula M6. */
   const daRegiao = JSON.parse(
-    fs.readFileSync(path.join(RAIZ, 'src', 'data', 'mapa-regioes.gerado.json'), 'utf8'),
-  ).regioes.find((r) => r.slug === 'centro');
+    fs.readFileSync(path.join(RAIZ, 'mapa', 'pais.json'), 'utf8'),
+  ).unidades.find((u) => u.slug === 'evora');
   await p.locator('[data-mapa-areas]').scrollIntoViewIfNeeded();
   const ondeCentro = await p.evaluate((pt) => {
     const svg = document.querySelector('[data-mapa-areas]');
@@ -516,7 +518,7 @@ for (const slug of DISTRITOS_MEDIDOS) {
   await p.mouse.move(ondeCentro.x, ondeCentro.y);
   await p.waitForTimeout(40);
   const comRato = await p.evaluate(() => {
-    const c = getComputedStyle(document.querySelector('[data-unidade="centro"]'));
+    const c = getComputedStyle(document.querySelector('[data-unidade="evora"]'));
     return { fill: c.fill, stroke: c.stroke, w: c.strokeWidth };
   });
   await p.__ctx.close();
@@ -651,10 +653,10 @@ for (const slug of DISTRITOS_MEDIDOS) {
   }
 
   /* OS CINCO CLIQUES DA PRIMEIRA PÁGINA SAÍRAM COM O F1.1d (07.09.2026). Ali um
-     clique numa área já não abre uma página: faz a região crescer, e quem abre a
+     clique numa área já não abre uma página: faz a unidade crescer, e quem abre a
      página é a porta do lugar do nome. Os cliques do nível do país e os dois
-     toques num concelho medem-se em `tests/inicio/mapa-regioes.mjs`, células P3a,
-     P3b e P3c. Ficam os cinco de uma página de distrito, que é onde um clique
+     toques num concelho medem-se em `tests/inicio/mapa-unidades.mjs`, células U3a,
+     U3b e U3c. Ficam os cinco de uma página de distrito, que é onde um clique
      numa área continua a abrir a página dela. */
   const cliques = [];
   const cincoDeLisboa = ['lisboa', 'sintra', 'cascais', 'loures', 'mafra'].map((slug) =>
@@ -926,7 +928,7 @@ const PLANTAS = [
      volta à largura da coluna e o nome da Ilha da Madeira fora da sua parcela.
      As quatro mordiam o alvo das 29 unidades no mapa da primeira página, que
      deixou de as desenhar; as plantas do desenho novo vivem com as suas células,
-     em `tests/inicio/mapa-regioes.mjs --vermelhos`, e são cinco. */
+     em `tests/inicio/mapa-unidades.mjs --vermelhos`, e são cinco. */
   {
     nome: 'uma área pintada com a cor de um estatuto',
     celulas: ['M5a', 'M5c'],

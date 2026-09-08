@@ -488,7 +488,7 @@ if (!HA_PONTOS) {
   conta(
     'N4 · retirada pela Emenda 20: a primeira página deixou de ter os 308 pontos',
     true,
-    'o mapa da primeira página são as nove regiões NUTS II como áreas (F1.1d, 07.09.2026), e antes disso eram as 29 unidades da Carta; o que esta secção media passou a ser medido em tests/inicio/mapa-regioes.mjs, células P1, P2 e P3',
+    'o mapa da primeira página são as 29 unidades da Carta como áreas, cada uma a crescer para os seus concelhos (Emenda 20; F1.1d, 07.09.2026; F1.1e, 08.09.2026, que trouxe as 29 de volta ao nível de cima); o que esta secção media passou a ser medido em tests/inicio/mapa-unidades.mjs, células U1, U2 e U3',
   );
 } else {
 
