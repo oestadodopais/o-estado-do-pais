@@ -110,8 +110,11 @@ const TETOS = {
   l6_selos: 26174,
   /* 8.5 · blocos com «limiar» sem o qualificador nem a frase ao lado. */
   d85_limiar_sozinho: 708,
-  /* 8.8 · «livro-razão» nos menus, nos rodapés e nos títulos das páginas. */
-  d88_livro_razao: 24177,
+  /* 8.8 · «livro-razão» nos menus, nos rodapés e nos títulos das páginas.
+     DESCE DE 24 177 PARA 0 a 08.09.2026: o nome visível do índice e da entrada
+     do menu passou a «Números e fontes», e os títulos das páginas do livro-razão
+     e dos seus concelhos foram com ele. */
+  d88_livro_razao: 0,
   /* 8.13 · valores selados na secção dos domínios da primeira página. */
   d813_selos_nos_dominios: 0,
   /* 8.14 · «Relance» e «Leitura breve» nas páginas do leitor. DESCE DE 1 304
@@ -500,7 +503,15 @@ for (const ficheiro of paginas) {
 
   /* ------------------------------------------------------------------- 8.8 */
   /* «livro-razão» nos menus, nos rodapés e nos títulos das páginas do leitor.
-     O termo técnico continua a valer no Método, no JSON e nos endereços. */
+     O termo técnico continua a valer no Método, no JSON e nos endereços.
+
+     «LINHA DO LIVRO-RAZÃO» NÃO CONTA, e é a decisão à letra: o item 8.8 escreve
+     que «"linha do livro-razão" continua a ser o nome de uma linha dentro do
+     Método e das páginas de linha», e o mesmo nome aparece na mobília do
+     cabeçalho, no contador das séries atrasadas que o F1.6 lá pôs («278 linhas
+     do livro-razão»). O que a medida conta é o NOME DA PÁGINA, e por isso tira
+     as ocorrências que são o nome de uma LINHA antes de contar. O inglês segue a
+     mesma regra com a sua forma, «ledger row(s)». */
   if (!transcricao && chaveDaRota !== 'metodo') {
     const superficies = [];
     if (cabecalho) superficies.push(cabecalho.text);
@@ -508,7 +519,10 @@ for (const ficheiro of paginas) {
     const titulo = raiz.querySelector('title');
     if (titulo) superficies.push(titulo.text);
     for (const h of corpo.querySelectorAll('h1')) superficies.push(h.text);
-    const junto = superficies.join(' ');
+    const junto = superficies
+      .join(' ')
+      .replace(/linhas? do livro-razão/gi, ' ')
+      .replace(/ledger rows?/gi, ' ');
     const n = conta(junto, 'Livro-razão') + conta(junto, 'livro-razão') + conta(junto, 'Ledger');
     if (n) {
       medidas.d88_livro_razao += n;

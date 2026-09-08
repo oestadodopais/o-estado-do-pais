@@ -51,6 +51,7 @@ import SinalDasFontes from './SinalDasFontes.astro';
 import ControloDeTema from './ControloDeTema.astro';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { t } from '../i18n/strings.mjs';
+import { GRUPOS_NAV, ETIQUETA_NAV } from '../lib/navegacao.mjs';
 
 const { lang = 'pt', path, compact = false, furniture = false, outraLingua = null } = Astro.props;
 const s = t(lang);
@@ -121,45 +122,6 @@ const agenda = routePath('agenda', lang);
  * pelo F1.2 para o rodapé, nas duas edições, com a nota que dizia «o menu do
  * cabeçalho fica para depois do F1.1». Ficou, e é este o commit.
  */
-const OITAVO_ITEM = 'correcoes';
-const ROTAS_NAV = [
-  'home',
-  'municipios',
-  'regioes',
-  'distritos',
-  'areas',
-  'dominios',
-  /* A página dos dois quadros da União (bloco F1.10, item 8.16, 08.09.2026):
-     «alcançável da faixa (uma porta) e do menu». Esta é a do menu. */
-  'uniaoEuropeia',
-  'estudos',
-  'livro',
-  'agenda',
-  'metodo',
-  ...(OITAVO_ITEM ? [OITAVO_ITEM] : []),
-  'sobre',
-];
-const ETIQUETA_NAV = {
-  home: 'inicio',
-  municipios: 'municipios',
-  regioes: 'regioes',
-  distritos: 'distritos',
-  areas: 'areas',
-  dominios: 'dominios',
-  uniaoEuropeia: 'uniaoEuropeia',
-  estudos: 'estudos',
-  livro: 'livro',
-  agenda: 'agenda',
-  metodo: 'metodo',
-  correcoes: 'correcoes',
-  sobre: 'sobre',
-};
-const itensNav = ROTAS_NAV.map((chave) => ({
-  chave,
-  href: routePath(chave, lang),
-  rotulo: s.nav[ETIQUETA_NAV[chave]],
-}));
-
 /**
  * A LIGAÇÃO DE IDIOMA LEVA O ESTADO DA PRIMEIRA PÁGINA CONSIGO.
  *
@@ -307,10 +269,17 @@ const releitura = `${routePath('metodo', lang)}#releitura`;
     </details>
     <nav class="nav nav-principal" id="nav-principal" aria-label={s.nav.rotuloPrincipal}>
       {
-        itensNav.map((item) => (
-          <a href={item.href} aria-current={atual(item.href)}>
-            {item.rotulo}
-          </a>
+        GRUPOS_NAV.map((g) => (
+          <span class:list={['nav-grupo', `nav-${g.chave}`]} data-nav-grupo={g.chave}>
+            {g.rotas.map((chave) => {
+              const href = routePath(chave, lang);
+              return (
+                <a href={href} aria-current={atual(href)}>
+                  {s.nav[ETIQUETA_NAV[chave]]}
+                </a>
+              );
+            })}
+          </span>
         ))
       }
       {/* O comando de tema, dentro do menu, abaixo de 640px (bloco A, item A7).

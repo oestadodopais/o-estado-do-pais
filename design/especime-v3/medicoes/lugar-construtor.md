@@ -7,7 +7,7 @@ deste relatório foi escrito à mão: cada um tem ao lado o comando que o mediu.
 
 ---
 
-## Estado · 08.09.2026, 08:56 UTC · a régua, a página europeia, o índice dos domínios, o vocabulário das secções e as frases de hierarquia
+## Estado · 08.09.2026, 09:52 UTC · a régua, a página europeia, o índice dos domínios, o vocabulário, as frases de hierarquia, o nome do índice e o menu em dois pesos
 
 | | |
 |---|---|
@@ -15,8 +15,8 @@ deste relatório foi escrito à mão: cada um tem ao lado o comando que o mediu.
 | `main` fundido | `43f4b52a`, na fusão `47d957f6` |
 | `build` · `verify` · `typecheck` | **0** · **0** · **0** (códigos lidos de `build.exit`, `verify.exit`, `typecheck.exit`) |
 | a régua do bloco | `scripts/check-lugar.mjs`, no `verify`, **7,84 s** (`/usr/bin/time -p node scripts/check-lugar.mjs`) |
-| feito | a régua (encargo (b)); **8.16** (a página «Portugal na União Europeia», a faixa da primeira página com as medidas de cabeça do domínio vivo); **8.13** (a secção dos domínios passa a índice, 0 valores selados); **8.12** (em repouso só a linha do toque; o cabeçalho e o contexto de um painel só junto de uma leitura dele); **8.14 inteiro** (o comando de densidade fora e as duas palavras a 0 nas páginas do leitor); **§2.2** (as cinco frases de hierarquia nos cinco índices) |
-| a seguir | o menu e o rodapé (8.9, 8.8, §7.5); depois 8.4 e 8.5, 8.15, 8.11, e as páginas |
+| feito | a régua (encargo (b)); **8.8** («Números e fontes» / «Numbers and sources» como nome visível do índice e da entrada do menu); **8.9** (o menu em dois pesos, com os três destinos do leitor à vista a 390 e os outros dez a um toque); **§7.5** (o menu e o rodapé com a mesma lista pela mesma ordem, e «Áreas de governo» por extenso); **8.16** (a página «Portugal na União Europeia», a faixa da primeira página com as medidas de cabeça do domínio vivo); **8.13** (a secção dos domínios passa a índice, 0 valores selados); **8.12** (em repouso só a linha do toque; o cabeçalho e o contexto de um painel só junto de uma leitura dele); **8.14 inteiro** (o comando de densidade fora e as duas palavras a 0 nas páginas do leitor); **§2.2** (as cinco frases de hierarquia nos cinco índices) |
+| a seguir | fundir o `main` em `d9066379` (o F1.1d e o **§9 do brief**, a leitura cruzada do inventário) e aplicar o §9; depois 8.4 e 8.5, 8.15, 8.11, e as páginas |
 
 ---
 
@@ -43,7 +43,7 @@ mais de oito abaixo dele**, porque um teto com folga a mais é uma régua a dorm
 | L8 · os três portões | **0 · 0 · 0** | 0 · 0 · 0 | `npm run build\|verify\|typecheck > x.log 2>&1; echo $? > x.exit` |
 | L9 · as plantas vermelhas e depois verdes | conhecido-positivo corrido (ver abaixo) | por fechar | `node scripts/check-lugar.mjs` sobre o `dist/` com o estrago |
 | 8.5 · blocos com «limiar» sem o qualificador nem a frase ao lado | 706 | **708** (+2: as duas páginas novas) | idem |
-| 8.8 · «livro-razão» nos menus, nos rodapés e nos títulos | 24 172 | **24 177** (+5: as duas páginas novas) | idem |
+| 8.8 · «livro-razão» nos menus, nos rodapés e nos títulos | 24 172 | **0** · feito | idem |
 | 8.13 · valores selados na secção dos domínios de `/` | 4 (2 por edição) | **0** · feito | idem |
 | 8.14 · «Relance» e «Leitura breve» nas páginas do leitor | 1 304 (325 + 327 por edição) | **0** · feito | idem |
 
@@ -170,6 +170,61 @@ a L4 desce de 10 para 0. A frase do território **pára nos quatro níveis**, e 
 decisão medida da primeira sessão: o repositório não tem correspondência nenhuma
 entre as 29 unidades da Carta e as 9 regiões NUTS II, e uma afirmação sobre a
 sobreposição das duas divisões não resolve em dado nenhum desta árvore.
+
+
+### 8.8, 8.9 e §7.5 · o nome do índice, e o menu em dois pesos
+
+**«Números e fontes» / «Numbers and sources»** passa a ser o nome visível do
+índice e da entrada do menu, e os títulos das páginas vão com ele (o índice, o
+índice dos concelhos e a página de cada concelho no índice). **«livro-razão» fica
+onde a decisão o manda ficar:** no Método (o `<h2>` «O livro-razão» continua
+`viva` no inventário), no JSON, nos endereços, e em «linha do livro-razão», que
+continua a ser o nome de uma linha. A régua desceu de **24 177 para 0**.
+
+**A medida 8.8 da régua aprendeu a não contar o nome de uma LINHA**, e é a
+decisão à letra: a mobília do cabeçalho leva o contador das séries atrasadas do
+F1.6 («278 linhas do livro-razão»), e contar aquilo era contar o termo que fica.
+A régua tira «linha(s) do livro-razão» e «ledger row(s)» antes de contar.
+
+**Duas linhas do inventário saíram do ficheiro em vez de passarem a `retirada`**,
+e a razão é a mesma que a primeira sessão escreveu para «Município»:
+`ondeVolta()` procura a frase retirada por palavra inteira dentro de qualquer
+frase rendida, e a varredura das dicas recolhe «linhas do livro-razão dessas
+séries» do `title` de uma contagem da prova. Uma linha `retirada` que a régua acha
+por dentro de uma dica fecharia a construção para sempre.
+
+**O menu passa a ter três grupos** (`src/lib/navegacao.mjs`, uma lista só para o
+menu e para o rodapé): o do leitor (Concelhos, Estudos, Números e fontes), o do
+país (Regiões, Distritos, Domínios, Áreas de governo, Portugal na União Europeia)
+e o da casa (Sobre, Método, Correções, Agenda). «Início» fica num grupo seu, à
+cabeça, e abaixo de 640 px sai da barra para dentro do menu: não é um dos três
+destinos, e ali cada posição custa uma linha de 44 px.
+
+**Medido, a 390 × 664 e a 1 280 × 800**, com a página construída num servidor
+local e o Chromium:
+
+| | antes | depois |
+|---|---|---|
+| a cabeça a 390 | 177,5 px | **213,9 px** |
+| a barra a 390 | 54,0 px | **90,4 px** |
+| destinos do leitor à vista a 390, sem abrir o menu | 0 | **3** (Concelhos, Estudos, Números e fontes) |
+| ligações à vista a 390 com o menu aberto | 12 | **13** |
+| a cabeça a 1 280 | 397,9 px | **396,3 px** |
+| a barra a 1 280 | 123,2 px | **121,6 px** |
+
+O «antes» a 390 é a mesma página com a navegação escondida, que é exactamente o
+que a folha fazia abaixo de 640 px; o «antes» a 1 280 é a mesma página com os
+grupos em `display: contents` e um só corpo de letra, que é a fila plana que lá
+estava. **A cabeça cresce 36,4 px a 390 e é isso que compra os três destinos no
+primeiro ecrã**; a 1 280 não muda (menos 1,6 px).
+
+**O axe continua a 0** (`npm run check:alvos`: 0 nós em violação, 0 graves, em 46
+rotas × 2 larguras), e os grupos são `<span>` e não listas de propósito: envolver
+as âncoras em `<ul>` dava a cada grupo um papel que um leitor de ecrã anuncia três
+vezes por página.
+
+**O rodapé passou a ler a mesma lista** (§7.5). Eram duas listas escritas em dois
+ficheiros, e tinham divergido: «Distritos» estava no menu e não estava no rodapé.
 
 ---
 

@@ -123,7 +123,13 @@ export const STRINGS = {
          construídas. O rodapé é o índice do sítio (ver `SiteFooter.astro`), e
          uma família de páginas que existe e não está nele é uma família sem
          porta comum. */
-      areas: 'Áreas',
+      /* «ÁREAS DE GOVERNO», POR EXTENSO (bloco F1.10, §7.5, 08.09.2026). É o
+         que o leitor de 04.09 mediu: «"Áreas" e "Domínios" distinguíveis pelo
+         nome». Com o menu em dois pesos (item 8.9) a fila do país é a mais leve
+         e o nome inteiro cabe lá, que é o «se couber» do brief. A frase de
+         hierarquia dos dois índices diz o resto: uma área de governo é um
+         ministério; um domínio é um assunto da carta dos conteúdos. */
+      areas: 'Áreas de governo',
       /* AS TRÊS FAMÍLIAS QUE EXISTIAM SEM PORTA NO MENU (F1.1, item 11,
          03.09.2026). As páginas das regiões, dos distritos e das áreas estão
          construídas desde 28 e 29.08.2026 e só se alcançavam pelo rodapé ou por
@@ -142,7 +148,20 @@ export const STRINGS = {
          Europeia» seriam dois nomes para a mesma coisa. */
       uniaoEuropeia: 'Portugal na União Europeia',
       estudos: 'Estudos',
-      livro: 'Livro-razão',
+      /* «NÚMEROS E FONTES» E NÃO «LIVRO-RAZÃO» (bloco F1.10, item 8.8,
+         08.09.2026). É o tropeço R2 da ronda de leitores de 07.09 («the
+         livro-razão doesn't really match what it is; people don't really
+         understand it»), e a decisão que o diretor aceitou nessa noite
+         («Números e fontes sounds quite alright … I'll leave it to you»): o
+         nome VISÍVEL do índice e da entrada do menu passa a dizer o que a
+         página tem. «livro-razão» fica como o termo técnico no Método, no JSON
+         e nos endereços, que não mudam, e «linha do livro-razão» continua a ser
+         o nome de uma linha dentro do Método e das páginas de linha.
+
+         NÃO SE USA «Fontes» SOZINHO, e a razão é a §1.98: «fonte» diz sempre o
+         publicador de uma linha, e uma página chamada «Fontes» prometia a lista
+         dos publicadores. São os números E as fontes deles. */
+      livro: 'Números e fontes',
       agenda: 'Agenda',
       metodo: 'Método',
       correcoes: 'Correções',
@@ -1161,7 +1180,7 @@ export const STRINGS = {
       /* A porta do texto de um trabalho, quando ele existe nesta edição. */
       textoDoTrabalho: 'O texto',
       voltarIndice: 'As áreas de governo',
-      voltarLivro: 'O livro-razão',
+      voltarLivro: 'Números e fontes',
       voltarConcelhos: 'Os concelhos',
     },
 
@@ -1347,14 +1366,14 @@ export const STRINGS = {
      * portas de saída.
      */
     livroConcelhos: {
-      metaTitle: 'Concelhos · Livro-razão · O Estado do País',
+      metaTitle: 'Concelhos · Números e fontes · O Estado do País',
       /* A DESCRIÇÃO NOMEIA A PÁGINA (27.08.2026), como a do índice do
          livro-razão. Dizia «As linhas do livro-razão com as medidas que as
          fontes centrais publicam para cada concelho, uma linha cada.», que
          explica a cobertura da página em vez de a nomear, e o `<head>` é
          superfície pública como o corpo. Sai também no Open Graph, que é a
          mesma cadeia. */
-      metaDescription: 'Livro-razão dos concelhos · O Estado do País',
+      metaDescription: 'Os números e as fontes dos concelhos · O Estado do País',
       /* A LEDE SAIU (decisão do diretor, 27.08.2026). Dizia «Uma linha por
          medida e por concelho, com o valor tal como a fonte o publicou, a
          unidade, quem o produziu e a data em que foi lido.»: é o que uma linha
@@ -1368,12 +1387,12 @@ export const STRINGS = {
       contaLinhas: 'linhas',
       contaConcelhos: 'concelhos',
       naoDeclaradasK: 'Linhas sem concelho declarado',
-      voltarLivro: 'O livro-razão inteiro',
+      voltarLivro: 'Números e fontes, o índice inteiro',
       indiceLink: 'O índice dos concelhos',
       /* A PÁGINA DE UM CONCELHO NO LIVRO-RAZÃO (diretor, 26.08.2026). O título é
          o nome do concelho; estas são as palavras à volta. A cauda do `<head>`
          não pode ter algarismos, e não tem. */
-      metaCaudaDoConcelho: 'as linhas do livro-razão · O Estado do País',
+      metaCaudaDoConcelho: 'os números e as fontes · O Estado do País',
       metaDescricaoDoConcelhoA: 'As linhas do livro-razão com as medidas que as fontes centrais publicam para o concelho de ',
       metaDescricaoDoConcelhoB: '.',
       /* A LEDE DA PÁGINA DE UM CONCELHO SAIU, PELA MESMA DECISÃO. Dizia «Uma
@@ -1390,11 +1409,11 @@ export const STRINGS = {
          calculam: é a referência do estudo, e não a medida de um concelho. */
       referenciaK: 'A referência do estudo',
       paginaDoConcelho: 'A página do concelho',
-      voltarAoIndice: 'Os concelhos no livro-razão',
+      voltarAoIndice: 'Os concelhos em Números e fontes',
     },
 
     livro: {
-      metaTitle: 'Livro-razão · O Estado do País',
+      metaTitle: 'Números e fontes · O Estado do País',
       /* A DESCRIÇÃO DO `<head>` NOMEIA A PÁGINA (decisão do diretor,
          27.08.2026). Dizia «Todas as afirmações publicadas neste sítio, uma
          linha cada: o valor tal como foi publicado, a fonte, o documento, o
@@ -1402,9 +1421,13 @@ export const STRINGS = {
          superfície pública, e o `<head>` é superfície pública como o corpo. O
          gabarito pede uma descrição, e a decisão diz de que feitio ela é: o nome
          da página, e nunca o método. */
-      metaDescription: 'Livro-razão · O Estado do País',
-      eyebrow: 'Livro-razão',
-      h1: 'O livro-razão',
+      metaDescription: 'Números e fontes · O Estado do País',
+      eyebrow: 'Números e fontes',
+      /* O TÍTULO DIZ O QUE A PÁGINA É (item 8.8): todos os números do sítio,
+         cada um com a sua fonte. A lede saiu a 27.08 por decisão do diretor e
+         não volta: o que a página é diz-se no título, e o que uma linha guarda
+         diz-se na linha, à vista de quem a abre. */
+      h1: 'Números e fontes',
       /* A LEDE SAIU, COM A MESMA DECISÃO. Dizia «Uma linha por número publicado.
          Cada linha guarda o valor tal como a fonte o publicou, quem o produziu,
          o documento e a edição, o endereço, a data em que o lemos e um excerto
@@ -1531,7 +1554,7 @@ export const STRINGS = {
         completaK: 'Estado da proveniência',
         completaV: 'Completa.',
         marcadorLink: 'O que quer dizer este marcador',
-        voltar: 'Voltar ao livro-razão',
+        voltar: 'Voltar a Números e fontes',
         /* A porta para os dados desta linha. Só existe com licença decidida:
            sem ela não há bloco nenhum, porque uma ausência não se desenha
            (IDENTIDADE.md §6). */
@@ -2065,14 +2088,16 @@ export const STRINGS = {
       inicio: 'Home',
       municipios: 'Municipalities',
       dominios: 'Domains',
-      areas: 'Areas',
+      /* Ver a razão na edição portuguesa. */
+      areas: 'Government areas',
       /* As três famílias no menu. Ver a razão na edição portuguesa. */
       regioes: 'Regions',
       distritos: 'Districts',
       /* Ver a razão na edição portuguesa. */
       uniaoEuropeia: 'Portugal in the European Union',
       estudos: 'Studies',
-      livro: 'Ledger',
+      /* Ver a razão na edição portuguesa. */
+      livro: 'Numbers and sources',
       agenda: 'Agenda',
       metodo: 'Method',
       correcoes: 'Corrections',
@@ -2517,7 +2542,7 @@ export const STRINGS = {
       medidasK: 'The measures',
       textoDoTrabalho: 'The text',
       voltarIndice: 'The areas of government',
-      voltarLivro: 'The ledger',
+      voltarLivro: 'Numbers and sources',
       voltarConcelhos: 'The municipalities',
     },
 
@@ -2657,31 +2682,31 @@ export const STRINGS = {
     },
 
     livroConcelhos: {
-      metaTitle: 'Municipalities · Ledger · O Estado do País',
+      metaTitle: 'Municipalities · Numbers and sources · O Estado do País',
       /* A gémea da portuguesa (27.08.2026). */
-      metaDescription: 'Municipalities ledger · O Estado do País',
+      metaDescription: 'The numbers and sources of the municipalities · O Estado do País',
       /* A gémea da lede portuguesa, e sai com ela (27.08.2026). */
       contaLinhas: 'rows',
       contaConcelhos: 'municipalities',
       naoDeclaradasK: 'Rows with no municipality declared',
-      voltarLivro: 'The whole ledger',
+      voltarLivro: 'Numbers and sources, the whole index',
       indiceLink: 'The index of municipalities',
-      metaCaudaDoConcelho: 'the ledger rows · O Estado do País',
+      metaCaudaDoConcelho: 'the numbers and sources · O Estado do País',
       metaDescricaoDoConcelhoA: 'The ledger rows with the measures central sources publish for the municipality of ',
       metaDescricaoDoConcelhoB: '.',
       /* A gémea da lede da página de um concelho, e sai com ela (27.08.2026). */
       vazioDoConcelho: 'No rows yet.',
       referenciaK: 'The study’s reference',
       paginaDoConcelho: 'The municipality page',
-      voltarAoIndice: 'The municipalities in the ledger',
+      voltarAoIndice: 'The municipalities in Numbers and sources',
     },
 
     livro: {
-      metaTitle: 'Ledger · O Estado do País',
+      metaTitle: 'Numbers and sources · O Estado do País',
       /* A descrição nomeia a página, e é a gémea da portuguesa (27.08.2026). */
-      metaDescription: 'Ledger · O Estado do País',
-      eyebrow: 'Ledger',
-      h1: 'The ledger',
+      metaDescription: 'Numbers and sources · O Estado do País',
+      eyebrow: 'Numbers and sources',
+      h1: 'Numbers and sources',
       /* A lede e os dois títulos de grupo saíram com as gémeas portuguesas
          (27.08.2026): `lede1`, `contaDe`, `grupoCompletasFrase` e
          `grupoPorConfirmarFrase`. */
@@ -2742,7 +2767,7 @@ export const STRINGS = {
         completaK: 'Provenance',
         completaV: 'Complete.',
         marcadorLink: 'What this marker means',
-        voltar: 'Back to the ledger',
+        voltar: 'Back to Numbers and sources',
         dadosK: 'Access to the data',
         linhaEmJson: 'This row as JSON',
         conjuntoK: 'The whole dataset',
