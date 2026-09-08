@@ -14,12 +14,13 @@ deste relatório foi escrito à mão: cada um tem ao lado o comando que o mediu.
 | cabeça | a última do ramo (`git rev-parse HEAD`) |
 | `main` fundido | `fe6478aa` (só documentos: a §1.102 com as emendas, o §10 do brief com o 8.17 emendado, o brief do F1.1e) |
 | `build` · `verify` · `typecheck` | **0** · **0** · **0** (códigos lidos de `build.exit`, `verify.exit`, `typecheck.exit`) |
-| a corrida da CI | a primeira linha de `gh run list --branch lugar-2026-09-04` |
+| a corrida da CI | **34256869318 verde** sobre `1d903212`, que é a penúltima cabeça desta sessão; a da última (`a66cea74`) é a 34259775241, e lê-se na primeira linha de `gh run list --branch lugar-2026-09-04`. Um commit não pode conter o número da corrida que ele dispara |
 | feito nas sessões anteriores | a régua (encargo (b)); **§9.1**; **8.8**; **8.9**; **§7.5**; **8.16**; **8.13**; **8.12**; **8.14 inteiro**; **§2.2**; **8.15**; **8.5**; **§7.1**; **8.17** |
 | feito nesta sessão | **os dois limiares sem fixador** (a decisão do fecho do dia: `porRegistar` sai, entram `pacto` e `conselho`, cada um com o excerto do documento que a linha cita; o motivo `limiar-do-quadro` do `allowlist.yml` corrigido); **8.4 e a segunda metade do 8.14** (a definição de cada painel e das 21 medidas, citada da Comissão e do Eurostat, com o documento, o endereço, a data de acesso e o excerto literal declarados); **§9.3**, **§9.4**, **§9.5**, **§9.8** e **§9.9**; a etiqueta da agenda do F2.6b; **a régua do primeiro ecrã a 390 × 664 do item 8.11, com o «antes» medido nas quatro páginas do leitor e nas duas edições**; **§7.3** (as três datas de uma medida por palavras) |
 | a seguir | **8.11 e §7.3**; o resto do §9 (2, 6, 7 e 10); as outras páginas (a região, o domínio, os índices, os estudos, o Método); o item 5 do encargo (o caminho, a busca única, «fonte» diz o publicador, as datas); o fecho |
 | nada a meio | **nada ficou por acabar.** Os três portões a 0 nesta árvore, com os códigos lidos dos ficheiros; não há `git stash` nem ficheiro por commitar. **Uma régua de fora da cadeia mudou e não foi corrida** (a célula A4 de `tests/inicio/porta.mjs`, que abre navegador e não está no `verify` nem na CI): corre-se à mão no fecho do bloco, com as outras medidas de 390 px |
 | a régua, na cabeça desta sessão | L1 6 598 · L2a 2 · L2b 18 · L2c 10 · L3 **30** · L4 **0** · L5 7 213 · L6 26 178 · 8.5 **0** · 8.8 **0** · 8.13 **0** · 8.14 **0** · 8.17 **0** e **0** (`node scripts/check-lugar.mjs`, verde) |
+| o modelo e o custo | Claude Opus 5. O contador do harness dava 15 000 000 símbolos no arranque da sessão e cerca de 14 527 000 ao escrever esta linha: **da ordem de 470 mil**. É o contador da janela e não a fatura; o número da fatura é o que o harness disser |
 
 ## A tabela das medidas (decisão do lugar de direção, 07.09)
 
