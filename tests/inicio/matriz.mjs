@@ -769,26 +769,51 @@ const estadoDaPagina = (p) =>
 
 /* (1) O sinal de tempo do painel europeu não se lê fora do âmbito País. */
 {
-  /* A CÉLULA MUDA DE PERGUNTA COM A EMENDA 15. Media que a linha «Painel
-     europeu reconferido a …» só se lia no âmbito País; a emenda tirou-a da
-     primeira página inteira, porque a mobília do cabeçalho já a leva em todas as
-     páginas. O que a célula mede agora é isso: zero na primeira página, uma no
-     cabeçalho, e a porta da chave a resolver para o painel. */
+  /* A CÉLULA MUDA DE PERGUNTA DUAS VEZES, E A SEGUNDA É DE 08.09.2026.
+
+     Com a Emenda 15 media que a linha «Painel europeu reconferido a …» tinha
+     saído da primeira página e vivia na mobília do cabeçalho, uma vez, com a
+     porta do painel. Com o item 8.11 e o §7.3 do F1.10 ela sai TAMBÉM do
+     cabeçalho, de todas as páginas, e vai para a página da medida: «Portugal na
+     União Europeia», dentro do `#painel` que ela cobre, e sem porta, porque
+     chegou ao destino.
+
+     O QUE A CÉLULA MEDE AGORA são as duas metades disso: zero na primeira
+     página (a de sempre) e zero no cabeçalho dela, e a leitura à vista na
+     página do painel, dentro da secção certa, com a marca de origem que ela já
+     levava (`data-nonledger="data-de-atualizacao"`) e sem âncora nenhuma.
+     A chave `painel_reconferido_em` continua a render-se no Método, e a porta
+     dela continua a abrir esta secção. */
   const p = await pagina();
   await p.goto(base + '/', { waitUntil: 'networkidle' });
-  /* O sinal de tempo da mobília não é uma chave da prova: é a mesma data,
-     marcada `data-nonledger="data-de-atualizacao"`, com a porta do painel. A
-     chave `painel_reconferido_em` rende-se no Método, e a sua porta é a mesma. */
-  const sinal = await p.evaluate(() => ({
+  const naHome = await p.evaluate(() => ({
     naPagina: document.querySelectorAll('.verificacao').length,
-    naMobilia: document.querySelectorAll('header [data-sinal-de-tempo] .mob-leitura-porta .mob-leitura-v').length,
-    porta: document.querySelector('header [data-sinal-de-tempo] .mob-leitura-porta')?.getAttribute('href') ?? null,
-    ancora: !!document.querySelector('#painel'),
+    naCabeca: document.querySelectorAll('header .mob-leitura').length,
   }));
+  await p.goto(base + '/uniao-europeia', { waitUntil: 'networkidle' });
+  const noPainel = await p.evaluate(() => {
+    const cx = document.querySelector('#painel [data-leitura-de-estado="painel"]');
+    const v = cx?.querySelector('.mob-leitura-v') ?? null;
+    return {
+      leituras: cx ? cx.querySelectorAll('.mob-leitura').length : 0,
+      marca: v?.getAttribute('data-nonledger') ?? null,
+      texto: (v?.textContent ?? '').trim(),
+      ancoras: cx ? cx.querySelectorAll('a').length : null,
+      ancora: !!document.querySelector('#painel'),
+    };
+  });
   conta(
-    '2l · a linha da reconferência saiu da primeira página, e a porta abre o painel',
-    sinal.naPagina === 0 && sinal.naMobilia === 1 && /#painel$/.test(sinal.porta ?? '') && sinal.ancora,
-    `na página ${sinal.naPagina} · na mobília ${sinal.naMobilia} · porta ${sinal.porta}`,
+    '2l · a data da reconferência saiu da primeira página e do cabeçalho, e vive dentro do painel',
+    naHome.naPagina === 0 &&
+      naHome.naCabeca === 0 &&
+      noPainel.leituras === 1 &&
+      noPainel.marca === 'data-de-atualizacao' &&
+      /\d/.test(noPainel.texto) &&
+      noPainel.ancoras === 0 &&
+      noPainel.ancora,
+    `em / : ${naHome.naPagina} na página, ${naHome.naCabeca} no cabeçalho · ` +
+      `em /uniao-europeia: ${noPainel.leituras} leitura(s) dentro de #painel, marca «${noPainel.marca}», ` +
+      `texto «${noPainel.texto}», ${noPainel.ancoras} âncora(s)`,
   );
   await p.__contexto.close();
 }

@@ -58,6 +58,7 @@
 import Base from '../layouts/Base.astro';
 import Frase from '../components/Frase.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
+import SinalDasFontes from '../components/SinalDasFontes.astro';
 import InstrumentoMecanismo from '../components/InstrumentoMecanismo.astro';
 import { REGRAS, ABERTURA, FECHO } from '../data/metodo.mjs';
 import { ANCORA_DA_POLITICA, FRASE, POLITICA } from '../data/politica-ia.mjs';
@@ -195,6 +196,28 @@ const destino = (l) => (l.prova ? CAMINHO_DA_PROVA : routePath(l.rota, lang));
                   {r.provaNota && <span class="regra-prova-nota">{r.provaNota[lang]}</span>}
                 </p>
               </div>
+
+              {/* --------------------------------------------------------------
+                  A LEITURA DAS FONTES VEIO PARA AQUI (F1.10, item 8.11 e §7.3,
+                  08.09.2026).
+
+                  Vivia no cabeçalho de 7 224 páginas: «Fontes · <carimbo>» e o
+                  contador das séries atrasadas. O item manda-a para «a página da
+                  medida e o Método», e esta é a regra que ela cobre: a porta das
+                  três chaves já era `/metodo#releitura`, escrita em
+                  `src/lib/prova.mjs` no dia em que o F1.6 as pôs. A leitura
+                  passa a viver onde a sua porta sempre apontou.
+
+                  O COMPONENTE É O MESMO, e é por isso que ele existe num
+                  ficheiro seu: «uma leitura que vive num ficheiro seu tira-se e
+                  põe-se com uma linha». As cadeias, as marcas e as chaves da
+                  prova não mudaram um carácter; mudou a página.
+                  -------------------------------------------------------------- */}
+              {r.id === 'releitura' && (
+                <div class="leituras-de-estado" data-leitura-de-estado="fontes">
+                  <SinalDasFontes s={s} lang={lang} porta={`${path}#releitura`} />
+                </div>
+              )}
 
               {r.ligacoes.length > 0 && (
                 <p class="regra-portas">

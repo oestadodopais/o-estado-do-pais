@@ -579,19 +579,18 @@ for (const edicao of ['pt', 'en']) {
       ecra: innerHeight,
       temaNoMenu: !!temaNoMenu,
       temaNaMobiliaVisivel: !!temaNaMobilia && temaNaMobilia.getBoundingClientRect().width > 0,
-      leituras: [...document.querySelectorAll('.masthead-furniture .mob-leitura')].length,
-      /* AS LEITURAS VISÍVEIS, E NÃO AS DO DOCUMENTO (F1.1, item 10, 03.09.2026).
-         A mobília tem três leituras desde o bloco do corredor (01.09.2026) e a
-         célula exigia duas: estava vermelha desde esse dia, e a leitura de
-         partida deste bloco mediu-a vermelha na árvore de origem. O achado D6 de
-         25.08 pede a mobília numa linha no telemóvel, e a folha passa a mostrar
-         ali UMA das três; as outras duas voltam a partir de 641 px, com as
-         mesmas cadeias e as mesmas portas, e nenhuma sai do documento. A célula
-         mede as duas coisas: quantas o documento tem, e quantas o ecrã pequeno
-         mostra. */
-      leiturasVisiveis: [...document.querySelectorAll('.masthead-furniture .mob-leitura')].filter(
-        (e) => e.checkVisibility({ contentVisibilityAuto: true, visibilityProperty: true }),
-      ).length,
+      /* AS LEITURAS DO CABEÇALHO INTEIRO, E NÃO SÓ AS DA MOBÍLIA (F1.10, item
+         8.11 e §7.3, 08.09.2026). A célula pedia três no documento e uma à
+         vista, e estava VERMELHA desde 04.09: o F1.6 pôs uma quarta leitura na
+         mobília e ninguém correu a célula desde então. O item 8.11 não conserta
+         o número: tira as leituras todas do cabeçalho de todas as páginas e
+         manda-as para a página da medida e para o Método. A célula passa a
+         medir isso, e mede-o no `<header>` inteiro e não dentro de
+         `.masthead-furniture`: uma leitura que voltasse para a barra de cima, ou
+         para o lado da marca, caía na mesma. Zero no documento é mais apertado
+         do que zero à vista, e por isso a segunda medida sai: uma leitura
+         escondida por uma folha continua a estar no cabeçalho. */
+      leituras: [...document.querySelectorAll('header .mob-leitura')].length,
       marcaLinhas: (() => {
         const m = document.querySelector('.wordmark');
         if (!m) return null;
@@ -607,14 +606,13 @@ for (const edicao of ['pt', 'en']) {
     cabeca.cabecaAlt < limiar40 &&
       cabeca.manchete !== null &&
       cabeca.manchete < limiar40 &&
-      cabeca.leituras === 3 &&
-      cabeca.leiturasVisiveis === 1 &&
+      cabeca.leituras === 0 &&
       cabeca.marcaLinhas === 1 &&
       cabeca.temaNoMenu &&
       !cabeca.temaNaMobiliaVisivel,
     `cabeça ${cabeca.cabecaAlt}px · manchete a ${cabeca.manchete}px · 40% = ${limiar40.toFixed(
       1,
-    )}px · marca em ${cabeca.marcaLinhas} linha(s) · ${cabeca.leituras} leituras no documento, ${cabeca.leiturasVisiveis} à vista · tema dentro do menu ${cabeca.temaNoMenu}, fora da mobília ${!cabeca.temaNaMobiliaVisivel}`,
+    )}px · marca em ${cabeca.marcaLinhas} linha(s) · ${cabeca.leituras} leitura(s) de aparelho no cabeçalho (o item 8.11 exige 0) · tema dentro do menu ${cabeca.temaNoMenu}, fora da mobília ${!cabeca.temaNaMobiliaVisivel}`,
   );
   if (edicao === 'pt') medidas.cabeca390 = cabeca;
 

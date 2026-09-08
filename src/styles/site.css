@@ -615,6 +615,45 @@ section {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+/* ------------------------------- as leituras de aparelho fora do cabeçalho
+
+   F1.10, item 8.11 e §7.3 (08.09.2026). As quatro leituras saíram da mobília
+   de 7 224 páginas e foram para a página da medida e para o Método. A GRAMÁTICA
+   VISUAL É A MESMA — rótulo em `--muted`, valor em `--ink`, monoespaçada,
+   algarismos tabulares, ponto médio entre leituras —, porque é a MESMA coisa
+   noutro sítio: uma segunda maneira de desenhar uma leitura de aparelho seria
+   uma decisão de identidade que este bloco não tem.
+
+   O QUE MUDA É A MOLDURA, e muda por causa do lugar. No cabeçalho a leitura
+   vinha por baixo do nome da publicação, e o fio de cima era grosso e a tinta
+   (`1.5px solid var(--ink)`), porque separava a marca do resto. Aqui vem no pé
+   de uma secção, e o fio é o fio comum das secções (`var(--rule)`): um fio de
+   marca no meio de uma página seria a leitura a fazer-se passar por cabeçalho. */
+.leituras-de-estado {
+  margin-top: 18px;
+  padding-top: 10px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+.leituras-de-estado > .mob-leitura:not(:first-child)::before {
+  content: '· ';
+  color: var(--rule-strong);
+}
+.leituras-de-estado a.mob-leitura-k:hover,
+.leituras-de-estado .mob-leitura-porta:hover .mob-leitura-k {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 /* ------------------------------------------------------- o controlo do tema
 
    Emenda 12, 21.08.2026 (`DECISIONS.md` §1.52): claro por defeito para todos, e
@@ -654,6 +693,16 @@ section {
   margin-left: 0;
 }
 @media (max-width: 640px) {
+  /* A MOBÍLIA INTEIRA SAI DO TELEMÓVEL (F1.10, item 8.11, 08.09.2026). Desde
+     que as quatro leituras foram para a página da medida e para o Método, o
+     único filho desta caixa é o controlo do tema, e a regra abaixo já o
+     escondia aqui abaixo de 640 (ele vive dentro do menu). Sobrava a CAIXA: um
+     fio de 1.5px a tinta, com margem e enchimento, debaixo do nome da
+     publicação, a separar a marca de coisa nenhuma. Uma caixa que não mostra
+     nada não desenha um fio. */
+  .masthead-furniture {
+    display: none;
+  }
   .masthead-furniture > .tema {
     display: none;
   }
@@ -718,7 +767,8 @@ section {
 }
 /* Verificação em atraso: a frase é mais longa e deixa de caber em versaletes
    espaçados. Mesma regra da linha da primeira página. */
-.masthead-furniture [data-vencida='sim'] {
+.masthead-furniture [data-vencida='sim'],
+.leituras-de-estado [data-vencida='sim'] {
   letter-spacing: 0.06em;
   text-transform: none;
   font-size: 11px;
@@ -5062,13 +5112,6 @@ a.marcador::after {
     padding-top: 6px;
     flex-wrap: nowrap;
     gap: 4px 12px;
-  }
-  /* A primeira leitura fica; as outras saem do telemóvel. O selector conta a
-     partir do segundo filho e não nomeia classes, porque as três leituras
-     partilham a classe: quem as separa é a ordem, que é a do documento e a
-     mesma em todas as páginas. */
-  .masthead-furniture > *:nth-child(n + 2) {
-    display: none;
   }
 }
 
