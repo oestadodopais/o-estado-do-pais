@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-08T08:48:24+00:00",
+ "copia": "f21c-pacote",
+ "plantas": [
+  {
+   "id": "K1",
+   "ficheiro": ".github/workflows/corredor.yml",
+   "descricao": "a condição da segunda retoma invertida: retoma2 só corre quando a retoma NÃO deixou anfitriões calados, e nunca quando deixou",
+   "sha256_antes": "cda77fcdee05766e3db4aeb1efd092cd3902202cb9c40cf89f584a7eb6becfb9",
+   "sha256_depois": "1a78889854b745259979a0f546c9830ded31683a7ec8802790b01beee8550a1a",
+   "contexto_antes": "uxo não se escreve sobre uma leitura\n  # ambígua. O NOME que aparece na corrida é o do brief.\n  retoma2:\n    name: retoma-2\n    needs: [modo, corredor, retoma]\n    if: needs.retoma.result == 'success' && needs.retoma.outputs.anfitrioes_calados != ''\n    runs-on: ubuntu-latest\n    timeout-minutes: 30\n    outputs:\n      anfitrioes_calados: ${{ steps.retomar.outputs.anfitrioes_calados }}\n      alcancou_tudo: ",
+   "contexto_depois": "uxo não se escreve sobre uma leitura\n  # ambígua. O NOME que aparece na corrida é o do brief.\n  retoma2:\n    name: retoma-2\n    needs: [modo, corredor, retoma]\n    if: needs.retoma.result == 'success' && needs.retoma.outputs.anfitrioes_calados == ''\n    runs-on: ubuntu-latest\n    timeout-minutes: 30\n    outputs:\n      anfitrioes_calados: ${{ steps.retomar.outputs.anfitrioes_calados }}\n      alcancou_tudo: "
+  },
+  {
+   "id": "K2",
+   "ficheiro": "indicators/corredor.py",
+   "descricao": "o silêncio simulado deixa de se distinguir de um real: a classe da entrada passa de simulada a tempo, contra o relatório e o comentário",
+   "sha256_antes": "2e643ae7fd6c51d94666046a47856fef2f1ac41d599bc31f96beb38d3296ba32",
+   "sha256_depois": "0ecf5ea17b3cdef7c5f00075cc23ac9e0fb49df5b6f3ee1b7eae5884178a4e15",
+   "contexto_antes": ".\")\n    quando = agora()\n    for h in hosts:\n        sem_resposta[h] = {\n            \"host\": h, \"desde\": quando, \"erro\": \"nenhum pedido foi feito\",\n            \"classe\": \"simulada\", \"simulada\": True, \"falhas\": 0,\n            \"primeiro_endereco\": None, \"segundos_da_espera\": 0.0,\n            \"enderecos_poupados\": 0, \"linhas_poupadas\": 0}\n\n\n# ------------------------------",
+   "contexto_depois": ".\")\n    quando = agora()\n    for h in hosts:\n        sem_resposta[h] = {\n            \"host\": h, \"desde\": quando, \"erro\": \"nenhum pedido foi feito\",\n            \"classe\": \"tempo\", \"simulada\": True, \"falhas\": 0,\n            \"primeiro_endereco\": None, \"segundos_da_espera\": 0.0,\n            \"enderecos_poupados\": 0, \"linhas_poupadas\": 0}\n\n\n# ------------------------------"
+  },
+  {
+   "id": "K3",
+   "ficheiro": "indicators/provar_fluxo.py",
+   "descricao": "a conferência da retoma enfraquecida: aceita qualquer condição que mencione a saída, incluindo a invertida, e deixa de exigir o dormente",
+   "sha256_antes": "fc80faaa113006f5f32b1423a308b0747f04f32fd8895e4506c276c48dc3da38",
+   "sha256_depois": "07ea86579cab55602c6a778d5e30ec218edb6e981855806af9888b769e80a879",
+   "contexto_antes": " saltado: 0 trabalhos a mais.\n    if_retoma = str(trabalhos[\"retoma\"].get(\"if\"))\n    confere(\"a retoma só nasce de uma saída da corrida principal\",\n            \"needs.corredor.outputs.anfitrioes_calados != ''\" in if_retoma\n            and \"dormente\" in if_retoma,\n            if_retoma[:78])\n    if_retoma2 = str(trabalhos[\"retoma2\"].get(\"if\"))\n    confere(\"a retoma-2 só nasce de uma saída da retoma\",\n            \"needs.r",
+   "contexto_depois": " saltado: 0 trabalhos a mais.\n    if_retoma = str(trabalhos[\"retoma\"].get(\"if\"))\n    confere(\"a retoma só nasce de uma saída da corrida principal\",\n            \"needs.corredor.outputs.anfitrioes_calados\" in if_retoma,\n            if_retoma[:78])\n    if_retoma2 = str(trabalhos[\"retoma2\"].get(\"if\"))\n    confere(\"a retoma-2 só nasce de uma saída da retoma\",\n            \"needs.r"
+  },
+  {
+   "id": "K4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "um chão do relatório contradiz o ficheiro: o chão do fluxo depois passa de 79 a 97",
+   "sha256_antes": "ecfde47dee4f368d7942289c71b940661732aeecf28de8e17cad89fcddd458e4",
+   "sha256_depois": "4e28e6e4b7d5672324945841c1f2d0d575ea86f58e02742bfaef8ed16900014f",
+   "contexto_antes": "on3 -m core.gate` a 0 | 0 (na worktree acabada de criar, depois de copiadas as três caches de recortes) | 0 | `python3 -m core.gate; echo $? > gate-final.rc` |\n| O chão do fluxo | 58 | 79 | `python3 indicators/provar_fluxo.py \\| tail -1` |\n| O chão do corredor | 36 (contagem 51) | 42 (contagem 57) | `python3 indicators/corredor.py --provar \\| tail ",
+   "contexto_depois": "on3 -m core.gate` a 0 | 0 (na worktree acabada de criar, depois de copiadas as três caches de recortes) | 0 | `python3 -m core.gate; echo $? > gate-final.rc` |\n| O chão do fluxo | 58 | 97 | `python3 indicators/provar_fluxo.py \\| tail -1` |\n| O chão do corredor | 36 (contagem 51) | 42 (contagem 57) | `python3 indicators/corredor.py --provar \\| tail "
+  },
+  {
+   "id": "K5",
+   "ficheiro": ".github/actions/corredor-retomar/action.yml",
+   "descricao": "a retoma herda a simulação: o comando da retoma leva --simular-calado com os mesmos anfitriões, contra o cabeçalho da ação e o relatório",
+   "sha256_antes": "2f9963685eccb127b5b9ba81424bbc1f38239c0a103102737da46b884d2a9c7b",
+   "sha256_depois": "3fda1f99fdf6825bb9ec1fe6e183ad4f6051f73076124d83d553c6db9fedd613",
+   "contexto_antes": "        set +e\n        python3 indicators/corredor.py \\\n          --site \"${SITIO}\" \\\n          --arquivo \"${ARQUIVO}\" \\\n          --relatorio \"${RELATORIO}\" \\\n          --so-conferir --so-anfitrioes \"${ANFITRIOES}\" \\\n          --verboso 2>&1 | tee \"${RELATORIO}/retoma.log\"\n        codigo=${PIPESTATUS[0]}\n        set -e\n        echo \"codigo=${codigo}\" >> \"$GITHUB_OUTPUT\"\n   ",
+   "contexto_depois": "        set +e\n        python3 indicators/corredor.py \\\n          --site \"${SITIO}\" \\\n          --arquivo \"${ARQUIVO}\" \\\n          --relatorio \"${RELATORIO}\" \\\n          --so-conferir --so-anfitrioes \"${ANFITRIOES}\" --simular-calado \"${ANFITRIOES}\" \\\n          --verboso 2>&1 | tee \"${RELATORIO}/retoma.log\"\n        codigo=${PIPESTATUS[0]}\n        set -e\n        echo \"codigo=${codigo}\" >> \"$GITHUB_OUTPUT\"\n   "
+  }
+ ]
+}
