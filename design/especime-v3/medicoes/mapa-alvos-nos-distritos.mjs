@@ -90,6 +90,17 @@ for (const u of pais.unidades) {
   console.log(u.slug.padEnd(22), es.length, 'concelhos ·', es.filter(([,v])=>v.inscrito>=44).length, 'com 44 px · pior', Math.min(...es.map(([,v])=>v.inscrito)), 'px · desenho', svgW, 'px');
 }
 todos.sort((a,b)=>a[1]-b[1]);
+/* A MEDIANA COM `n` PAR É A MÉDIA DOS DOIS DO MEIO (F1.1e, segunda passagem,
+   08.09.2026). Este guião devolvia o observado de cima, `todos[floor(n/2)]`, que
+   é um quantil e não a mediana: com 308 concelhos o número saía do lugar 154 e a
+   mediana é a média dos lugares 153 e 154 (leitura a frio do Codex, achado 15).
+   É a mesma emenda que a régua do bloco levou, e as duas dizem-no. */
+const mediana = (ns) => {
+  if (ns.length === 0) return null;
+  const meio = Math.floor(ns.length / 2);
+  return ns.length % 2 === 1 ? ns[meio] : (ns[meio - 1] + ns[meio]) / 2;
+};
+const MEDIANA = mediana(todos.map((t) => t[1]));
 if (porUnidade.length !== pais.unidades.length) falhas.push(`mediu ${porUnidade.length} unidades e a Carta tem ${pais.unidades.length}`);
 if (total !== esperados) falhas.push(`mediu ${total} concelhos e os artefactos têm ${esperados}`);
 if (esperados !== 308) falhas.push(`os artefactos somam ${esperados} concelhos, e não 308`);
@@ -103,13 +114,13 @@ const artefacto = {
   unidades: porUnidade.length,
   concelhos: total,
   chegamA44: ok,
-  mediana: todos.length ? todos[Math.floor(todos.length/2)][1] : null,
+  mediana: MEDIANA,
   menor: todos.length ? { slug: todos[0][0], inscrito: todos[0][1] } : null,
   porUnidade,
 };
 const SAIDA = path.join(RAIZ,'design/especime-v3/medicoes/mapa-alvos-nos-distritos.json');
 fs.writeFileSync(SAIDA, `${JSON.stringify(artefacto,null,2)}\n`);
-console.log(`TOTAL nas páginas de distrito a 390: ${ok} de ${total} com 44 px · mediana ${todos[Math.floor(todos.length/2)][1]} px · pior ${todos[0][0]} ${todos[0][1]} px`);
+console.log(`TOTAL nas páginas de distrito a 390: ${ok} de ${total} com 44 px · mediana ${MEDIANA} px · pior ${todos[0][0]} ${todos[0][1]} px`);
 console.log(`escrito ${path.relative(RAIZ,SAIDA)} · ${porUnidade.length} unidades, ${total} concelhos`);
 await nav.close(); servidor.close();
 if (falhas.length) { console.error('\n  MEDIDA INCOMPLETA:'); for (const f of falhas) console.error('    · '+f); process.exit(1); }
