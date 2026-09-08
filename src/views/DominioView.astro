@@ -369,12 +369,14 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
 
   <section class="dominio-leitura" id="leitura" aria-labelledby="leitura-k">
     <div class="sec-head">
-      {/* O NOME DA CAMADA É O DA CASA, e não uma cadeia nova: «Leitura breve» e
-          «Brief reading» são as duas palavras da densidade (Emenda 2), estão
-          declaradas em `strings.mjs` desde a etapa 2 e no inventário da voz
-          desde 26.08.2026. Uma chave própria para dizer o mesmo era uma segunda
-          cadeia para a mesma coisa. */}
-      <h2 class="eyebrow" id="leitura-k">{s.densidade.leitura}</h2>
+      {/* O TÍTULO DIZ O QUE A SECÇÃO TEM (bloco F1.10, itens 8.14 e §1.98).
+          Dizia «Leitura breve», que é o nome de uma DENSIDADE de um cartão e não
+          o nome de um conteúdo, e a nota anterior deste sítio dizia que uma
+          chave própria «era uma segunda cadeia para a mesma coisa»: não era a
+          mesma coisa, era a palavra errada. A decisão de 07.09 tira as duas
+          palavras das páginas do leitor, e `secoes.leitura` é a cadeia que a
+          §1.98 declarou para este título, a mesma em todas as camadas. */}
+      <h2 class="eyebrow" id="leitura-k">{s.secoes.leitura}</h2>
     </div>
 
     {
