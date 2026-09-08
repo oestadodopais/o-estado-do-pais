@@ -1,0 +1,88 @@
+{
+  "inicio.pt": {
+    "rota": "/",
+    "caracteresDaCasa": 33,
+    "blocosDaCasa": 2,
+    "caracteresDeProsa": 269,
+    "blocosDeProsa": 12,
+    "caracteres": 977,
+    "prosaVisivel": [
+      "EstudosPortugal na União Europeia",
+      ""
+    ]
+  },
+  "inicio.en": {
+    "rota": "/en/",
+    "caracteresDaCasa": 37,
+    "blocosDaCasa": 2,
+    "caracteresDeProsa": 276,
+    "blocosDeProsa": 12,
+    "caracteres": 989,
+    "prosaVisivel": [
+      "StudiesPortugal in the European Union",
+      ""
+    ]
+  },
+  "concelho.pt": {
+    "rota": "/municipios/evora",
+    "caracteresDaCasa": 0,
+    "blocosDaCasa": 0,
+    "caracteresDeProsa": 448,
+    "blocosDeProsa": 17,
+    "caracteres": 1143,
+    "prosaVisivel": []
+  },
+  "concelho.en": {
+    "rota": "/en/municipalities/evora",
+    "caracteresDaCasa": 0,
+    "blocosDaCasa": 0,
+    "caracteresDeProsa": 455,
+    "blocosDeProsa": 17,
+    "caracteres": 1184,
+    "prosaVisivel": []
+  },
+  "estudo.pt": {
+    "rota": "/estudos/onde-esta-a-agua",
+    "caracteresDaCasa": 13,
+    "blocosDaCasa": 1,
+    "caracteresDeProsa": 52,
+    "blocosDeProsa": 2,
+    "caracteres": 321,
+    "prosaVisivel": [
+      "[a verificar]"
+    ]
+  },
+  "estudo.en": {
+    "rota": "/en/studies/onde-esta-a-agua",
+    "caracteresDaCasa": 13,
+    "blocosDaCasa": 1,
+    "caracteresDeProsa": 56,
+    "blocosDeProsa": 2,
+    "caracteres": 322,
+    "prosaVisivel": [
+      "[a verificar]"
+    ]
+  },
+  "numeros.pt": {
+    "rota": "/livro-razao",
+    "caracteresDaCasa": 11,
+    "blocosDaCasa": 1,
+    "caracteresDeProsa": 86,
+    "blocosDeProsa": 2,
+    "caracteres": 511,
+    "prosaVisivel": [
+      "Concelhos →"
+    ]
+  },
+  "numeros.en": {
+    "rota": "/en/ledger",
+    "caracteresDaCasa": 16,
+    "blocosDaCasa": 1,
+    "caracteresDeProsa": 85,
+    "blocosDeProsa": 2,
+    "caracteres": 505,
+    "prosaVisivel": [
+      "Municipalities →"
+    ]
+  }
+}
