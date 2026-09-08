@@ -132,6 +132,13 @@ const TETOS = {
      do menu passou a «Números e fontes», e os títulos das páginas do livro-razão
      e dos seus concelhos foram com ele. */
   d88_livro_razao: 0,
+  /* 8.17 · o cartão localizador dos 308 pontos na página de um concelho.
+     Conta, nas 616 páginas de concelho, os pontos do mapa de pontos e as páginas
+     sem o mapa de áreas da sua região. Nasce a 0 a 08.09.2026, no commit em que
+     o item entra: o mapa da página de um concelho passa a ser o nível da região
+     do mapa do F1.1d, e não os 308 pontos. */
+  d817_pontos_no_concelho: 0,
+  d817_concelhos_sem_mapa: 0,
   /* 8.13 · valores selados na secção dos domínios da primeira página. */
   d813_selos_nos_dominios: 0,
   /* 8.14 · «Relance» e «Leitura breve» nas páginas do leitor. DESCE DE 1 304
@@ -365,6 +372,8 @@ const medidas = {
   d88_livro_razao: 0,
   d813_selos_nos_dominios: 0,
   d814_densidades: 0,
+  d817_pontos_no_concelho: 0,
+  d817_concelhos_sem_mapa: 0,
 };
 /** As amostras de cada medida, para que um número tenha sempre um sítio. */
 const amostras = Object.fromEntries(Object.keys(medidas).map((k) => [k, []]));
@@ -460,6 +469,17 @@ for (const ficheiro of paginas) {
     for (const d of corpo.querySelectorAll('details')) {
       for (const x of d.querySelectorAll('*')) dentroDeLista.add(x);
     }
+    /* AS ÁREAS DE UM MAPA NÃO SÃO UMA LISTA (F1.10, item 8.17, 08.09.2026). O §1
+       do brief decide isto para os 29 nomes da primeira página e para as tabelas
+       dos mapas do domínio, com a mesma frase: «uma fonte, duas formas». Um mapa
+       com uma área por concelho é o desenho do território, e cada área é a porta
+       do lugar que ela desenha; contá-las como um índice dos 308 punha a régua a
+       chamar segunda lista ao instrumento que este bloco veio pôr no lugar da
+       lista. O que a régua continua a recusar é uma FILA DE NOMES fora de
+       `/municipios`, que é o que ela mede em todas as outras páginas. */
+    for (const svg of corpo.querySelectorAll('[data-mapa], [data-mapa-concelhos]')) {
+      for (const x of svg.querySelectorAll('*')) dentroDeLista.add(x);
+    }
     const nomes = new Set();
     for (const a of corpo.querySelectorAll('a[href]')) {
       if (daMobilia.has(a) || dentroDeLista.has(a)) continue;
@@ -531,6 +551,41 @@ for (const ficheiro of paginas) {
       if (qualificado) continue;
       medidas.d85_limiar_sozinho++;
       anota('d85_limiar_sozinho', `${url} · ${b.slice(0, 90)}`);
+    }
+  }
+
+  /* ------------------------------------------------------------------- 8.17 */
+  /* O MAPA DA PÁGINA DE UM CONCELHO É O DA SUA REGIÃO, E NÃO OS 308 PONTOS.
+     Três coisas, e as três nesta página: nenhum ponto do mapa de pontos; um
+     mapa de áreas, e um só; e o concelho DESTA página entre as áreas, com a
+     marca de escolhido e com a porta de cada área a abrir uma página que
+     existe. Uma delas em falta é a régua a dizer que o cartão dos pontos
+     voltou, ou que o mapa é o de outra região. */
+  if (chaveDaRota === 'municipio') {
+    const pontos = corpo.querySelectorAll('circle.mun').length;
+    if (pontos) {
+      medidas.d817_pontos_no_concelho += pontos;
+      anota('d817_pontos_no_concelho', `${url} · ${pontos} ponto(s) do mapa dos 308`);
+    }
+    const areas = corpo.querySelectorAll('[data-mapa-concelhos] [data-areas] a.uni-porta');
+    const mapas = corpo.querySelectorAll('[data-mapa-concelhos]').length;
+    const meu = rota?.params?.slug ?? '';
+    const escolhidos = corpo.querySelectorAll('[data-mapa-concelhos] [data-escolhido]');
+    const meuEstaLa = escolhidos.some((e) => e.getAttribute('data-caop') === meu);
+    if (mapas !== 1 || areas.length === 0 || escolhidos.length !== 1 || !meuEstaLa) {
+      medidas.d817_concelhos_sem_mapa++;
+      anota(
+        'd817_concelhos_sem_mapa',
+        `${url} · ${mapas} mapa(s) de área, ${areas.length} área(s), ` +
+          `${escolhidos.length} escolhido(s)${meuEstaLa ? '' : ', e nenhum é este concelho'}`,
+      );
+    }
+    for (const a of areas) {
+      const href = (a.getAttribute('href') ?? '').split('#')[0];
+      if (!href.startsWith('/')) continue;
+      if (!fs.existsSync(path.join(DIST, normalizePath(href).slice(1), 'index.html'))) {
+        falhas.push(`8.17 · ${url}: a porta de uma área aponta para "${href}", que não existe em dist/.`);
+      }
     }
   }
 
@@ -670,6 +725,8 @@ const NOMES = {
   l5_sem_caminho: 'L5 · páginas sem caminho no cabeçalho',
   l6_selos: 'L6 · selos que não dizem o publicador',
   d85_limiar_sozinho: '8.5 · «limiar» sozinho',
+  d817_pontos_no_concelho: '8.17 · pontos dos 308 na página de um concelho',
+  d817_concelhos_sem_mapa: '8.17 · páginas de concelho sem o mapa da sua região',
   d88_livro_razao: '8.8 · «livro-razão» nos menus e nos títulos',
   d813_selos_nos_dominios: '8.13 · valores selados na secção dos domínios de /',
   d814_densidades: '8.14 · «Relance» e «Leitura breve» nas páginas do leitor',

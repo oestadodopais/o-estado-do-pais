@@ -47,6 +47,16 @@
 .uni-porta:focus-visible {
   outline: none;
 }
+/* O CONCELHO DA PÁGINA LEVA O CONTORNO GROSSO (F1.10, item 8.17, 08.09.2026).
+   «Um lugar escolhido é um anel, nunca um preenchimento» (Emenda 10): numa área
+   o anel é o contorno, que é a mesma distinção que o rato e o teclado já fazem.
+   Não é uma cor nova nem um enchimento: é o mesmo traço, do mesmo tom, mais
+   grosso, e quem passa o rato por outra área vê as duas grossas ao mesmo tempo,
+   que é o que se quer — uma diz onde o leitor está e a outra diz o que ele
+   aponta. */
+.uni[data-escolhido] {
+  stroke-width: 3;
+}
 
 /* ---------------------------------------------------------------------------
  * O LUGAR DO NOME (F1.1d, 07.09.2026)

@@ -1200,14 +1200,16 @@ página do leitor.*
 | navegacao | Map of the districts and islands of Portugal, one area per unit. | grelha-2 | retirada | o F1.1d trocou o desenho da primeira página: o nível do país passou a ser as nove regiões NUTS II e as 29 unidades da Carta deixaram de ter área no mapa (continuam a ter página, a estar no menu e a estar na lista dos nomes). O nome acessível do desenho passou a ser o das nove regiões |
 | navegacao | Map of the municipalities, one area per municipality. | grelha-2 | viva | — |
 | navegacao | Mapa de pontos dos municípios de Portugal. | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
-| navegacao | Mapa de pontos dos concelhos de Portugal. | lugar | viva | — |
+| navegacao | Mapa de pontos dos concelhos de Portugal. | lugar | retirada | o rótulo acessível do MAPA DE PONTOS, que só se rendia no cartão localizador da página de um concelho. O cartão saiu com o item 8.17 do F1.10 (08.09.2026): o diretor viu-o a 08.09 («the dotted map shows up but with no useful purpose») e no lugar dele entrou o nível da região do mapa do F1.1d, com o seu rótulo. Os 308 pontos continuam a existir no componente, na postura do selo, que hoje nenhuma página rende; se voltarem a render-se, a linha volta a `viva` com a rota que a rende |
 | navegacao | Mapa dos concelhos, com uma área por concelho. | grelha-2 | viva | — |
+| navegacao | Mapa dos concelhos da região, com uma área por concelho. | lugar | viva | o rótulo acessível do mapa da região, que a página de um concelho passa a render do servidor (bloco F1.10, item 8.17, 08.09.2026): o cartão localizador dos 308 pontos saiu e no lugar dele entrou o nível da região do mapa do F1.1d. A cadeia já existia em `src/i18n/strings.mjs` desde o F1.1d, onde era o rótulo que o guião escreve no `<svg>` quando uma região cresce na primeira página; ali nunca chegou ao documento entregue, e por isso nunca esteve nesta tabela |
+| navegacao | Map of the municipalities of the region, one area per municipality. | lugar | viva | o rótulo acessível do mapa da região, que a página de um concelho passa a render do servidor (bloco F1.10, item 8.17, 08.09.2026): o cartão localizador dos 308 pontos saiu e no lugar dele entrou o nível da região do mapa do F1.1d. A cadeia já existia em `src/i18n/strings.mjs` desde o F1.1d, onde era o rótulo que o guião escreve no `<svg>` quando uma região cresce na primeira página; ali nunca chegou ao documento entregue, e por isso nunca esteve nesta tabela |
 | navegacao | Mapa dos distritos e das ilhas de Portugal, com uma área por unidade. | grelha-2 | retirada | o F1.1d trocou o desenho da primeira página: o nível do país passou a ser as nove regiões NUTS II e as 29 unidades da Carta deixaram de ter área no mapa (continuam a ter página, a estar no menu e a estar na lista dos nomes). O nome acessível do desenho passou a ser o das nove regiões |
 | navegacao | Menu · Main navigation | grelha-2 | viva | — |
 | navegacao | Menu · Navegação principal | grelha-2 | viva | — |
 | navegacao | Navegação do rodapé | grelha-2 | viva | — |
 | navegacao | Navegação principal | grelha-2 | viva | — |
-| navegacao | Point map of the municipalities of Portugal. | grelha-2 | viva | — |
+| navegacao | Point map of the municipalities of Portugal. | lugar | retirada | o rótulo acessível do MAPA DE PONTOS, que só se rendia no cartão localizador da página de um concelho. O cartão saiu com o item 8.17 do F1.10 (08.09.2026): o diretor viu-o a 08.09 («the dotted map shows up but with no useful purpose») e no lugar dele entrou o nível da região do mapa do F1.1d, com o seu rótulo. Os 308 pontos continuam a existir no componente, na postura do selo, que hoje nenhuma página rende; se voltarem a render-se, a linha volta a `viva` com a rota que a rende |
 | navegacao | Tema | grelha-2 | viva | — |
 | navegacao | Terms, in time | grelha-2 | viva | — |
 | navegacao | The pages | grelha-2 | viva | — |
@@ -2520,3 +2522,33 @@ do motivo `limiar-do-quadro` de `ledger/allowlist.yml` — «fixado no Regulamen
 (UE) n.º 1176/2011 e revisto pela Comissão» —, **sem o número do diploma**, que
 seria um algarismo sem marca numa página do leitor, e com «revisto» a dizer o que
 o registo diz, que não é «fixado pela Comissão».
+
+## Bloco F1.10 · terceira sessão · a página do concelho e o mapa da região · 08.09.2026
+
+**Duas linhas novas, duas retiradas, e nenhuma cadeia nova em `strings.mjs`.** É
+o §7.1 do brief e o item 8.17, que o lugar de direção decidiu a 08.09 depois de o
+diretor andar pela página de Évora no telemóvel.
+
+**As duas novas são o rótulo acessível do mapa da região**, nas duas edições
+(«Mapa dos concelhos da região, com uma área por concelho.» / «Map of the
+municipalities of the region, one area per municipality.»). A cadeia já existia
+em `src/i18n/strings.mjs` desde o F1.1d, onde era o rótulo que o guião escreve no
+`<svg>` quando uma região cresce na primeira página: ali nunca chegou ao documento
+entregue, e por isso nunca esteve nesta tabela. Com o item 8.17 ela passa a ser
+rendida pelo servidor em 616 páginas.
+
+**As duas retiradas são o rótulo do mapa de pontos**, nas duas edições («Mapa de
+pontos dos concelhos de Portugal.»). O cartão localizador dos 308 pontos saiu da
+página do concelho e era o único sítio que o rendia. Os pontos continuam a existir
+no componente, na postura do selo, que hoje nenhuma página rende; se voltarem, a
+linha volta a `viva` com a rota que a rende.
+
+**Nenhuma frase da página do concelho mudou de texto, e todas mudaram de lugar.**
+A grelha das oito peças grandes saiu, e a prosa que corria por baixo dela passou a
+ser a leitura que abre do cartão de cada medida. A régua da voz lê o documento
+entregue e não o ecrã: as mesmas frases, no mesmo número de rotas, dentro de
+`<details>` em vez de `<p>` soltos. O que mudou na régua foi uma exceção de
+marcador, e é a única: **a raiz «confer» no rótulo da terceira data ganha a rota
+`municipio`** em `VOZ-MARCADORES.md` (eram três rotas, são quatro), porque cada
+leitura leva as três datas da carta, como as da página do domínio e as da página
+europeia.

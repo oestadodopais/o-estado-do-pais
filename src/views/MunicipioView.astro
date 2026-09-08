@@ -41,7 +41,7 @@ import Manchete from '../components/Manchete.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import CabecaDoLugar from '../components/inicio/CabecaDoLugar.astro';
 import Faixa from '../components/inicio/Faixa.astro';
-import Peca from '../components/inicio/Peca.astro';
+import LeituraBreve from '../components/inicio/LeituraBreve.astro';
 import MapaRespira from '../components/inicio/MapaRespira.astro';
 import BarraConcelhoPais from '../components/formas/BarraConcelhoPais.astro';
 import { municipioPorSlug } from '../data/municipios.mjs';
@@ -55,6 +55,7 @@ import { concelhos, pecasDoConcelho } from '../lib/inicio.mjs';
 import { atrasoDaLinha } from '../lib/frescura.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { routePath } from '../lib/routes.mjs';
+import { regiaoDoConcelho } from '../lib/mapa-regioes.mjs';
 import { canonicalUrl, SITE_NAME, SITE_URL } from '../../site.config.mjs';
 import { t } from '../i18n/strings.mjs';
 /* A folha da primeira página, porque é dela que vêm a peça e a régua. As duas
@@ -72,6 +73,19 @@ if (!m) throw new Error(`município desconhecido: "${slug}"`);
 
 const path = routePath('municipio', lang, { slug });
 const nome = m.nome[lang] ?? m.nome.pt;
+
+/* A REGIÃO DESTE CONCELHO (F1.10, item 8.17). Lê-se dos nove ficheiros do mapa
+   das regiões, que são a mesma fonte que o guião da primeira página lê, e não de
+   uma segunda tabela. Um concelho fora das nove fecha a construção: o mapa desta
+   página é o da região dele, e um mapa de outra região seria a página a mostrar
+   um sítio onde ela não está. */
+const regiaoDoMapaDeste = regiaoDoConcelho(slug);
+if (!regiaoDoMapaDeste) {
+  throw new Error(
+    `municípios: o concelho "${slug}" não está em nenhuma das nove regiões do mapa. ` +
+      'O mapa desta página é o da região dele (item 8.17 do F1.10), e sem região não há mapa.',
+  );
+}
 
 /* --- a distância desenhada: a dívida contra o tecto legal ------------------
    A geometria sai dos dois valores do livro-razão. Nenhum número é escrito à
@@ -277,6 +291,68 @@ const cartoes = pecas
     fixador: tile.fixador,
     glifos: [...String(tile.linha.value)].length,
     posicao: i + 1,
+  }));
+
+/* ---------------------------------------------------------------------------
+ * A LEITURA DE CADA MEDIDA, QUE ABRE DO CARTÃO (F1.10, §7.1, 08.09.2026)
+ * ---------------------------------------------------------------------------
+ * O diretor, 08.09, nesta página no telemóvel: «we have the scroll cards on top,
+ * and then the same information is repeated just afterwards, and then we have
+ * another view of the same thing in running text: three versions of the same
+ * thing». As três eram a faixa, a grelha de peças grandes («As medidas») e as
+ * frases corridas («A leitura de cada medida»).
+ *
+ * A DECISÃO do lugar de direção, pela delegação da §1.98: fica a faixa, que é o
+ * instrumento do primeiro ecrã; a grelha de peças SAI; e a leitura de cada
+ * medida abre do cartão da faixa, uma de cada vez, como o F1.1b e o F1.1c
+ * fizeram na primeira página. A prosa que era a terceira apresentação passa a
+ * ser essa leitura: cada frase diz agora que medida lê (`chave`, em
+ * `src/data/municipios.mjs`), e rende-se dentro da leitura dessa medida.
+ *
+ * O QUE CADA LEITURA LEVA: a unidade e o período, a nota da medida com o atraso
+ * da série, a frase que a lê, as três datas da linha, a forma daquela medida
+ * quando ela tem uma, e o selo. O VALOR NÃO: está no cartão que abre a leitura,
+ * e é a regra que a primeira página segue desde o F1.1 (o item 2 daquele bloco).
+ *
+ * `frasesProntas` E NÃO `frase`: as frases desta página compõem-se aqui, na
+ * língua da edição, com o atraso da série e as datas da linha lá dentro, e
+ * chegam ao componente já escolhidas. Ver a razão em `LeituraBreve.astro`.
+ */
+const prosaDaMedida = (chave) =>
+  (m.leitura ?? []).filter((l) => l.chave === chave).map((l) => l[lang] ?? l.pt);
+
+/* O GUARDA DAS CHAVES: uma frase que diga ler uma medida que este concelho não
+   tem não se rende em lado nenhum, e uma frase que não se rende é uma frase que
+   ninguém volta a ler. Fecha a construção com o nome dela. */
+const CHAVES_DA_LEITURA = new Set([...pecas.map((t) => t.chave), 'contas']);
+for (const l of m.leitura ?? []) {
+  if (!l.chave || !CHAVES_DA_LEITURA.has(l.chave)) {
+    throw new Error(
+      `municípios: a frase da leitura de "${slug}" declara \`chave: ${JSON.stringify(l.chave)}\`, ` +
+        `que não é nenhuma das medidas deste concelho nem "contas". As frases da leitura são a ` +
+        `leitura de uma medida (F1.10, §7.1) e cada uma tem de dizer qual.`,
+    );
+  }
+}
+
+const leiturasDasMedidas = pecas
+  .filter((tile) => !tile.vazia)
+  .map((tile) => ({
+    claim: tile.claim,
+    nome: tile.nome,
+    medida: tile.medida,
+    frasesProntas: [fraseDaPeca(tile), ...prosaDaMedida(tile.chave)].filter(Boolean),
+    limiar: null,
+    comparacao: null,
+    estado: tile.estado,
+    limiarFixadoPor: tile.fixador,
+    /* A RÉGUA GENÉRICA NÃO ENTRA ONDE JÁ HÁ UMA FORMA. O índice de dívida leva a
+       distância desenhada, que é a mesma comparação com mais informação (os dois
+       valores com os seus selos, as pontas nomeadas e a frase da lei); duas
+       réguas da mesma coisa dentro da mesma leitura era a repetição que este
+       item veio tirar. */
+    regua: tile.chave === 'indice' ? null : tile.regua,
+    porta: null,
   }));
 
 /* --- os trabalhos sobre o concelho ---------------------------------------
@@ -488,9 +564,12 @@ const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
    trabalho publicado: a leitura breve, a distância desenhada, as contas do
    município, a linha do tempo e os trabalhos. A secção do método saiu com o G6
    de 26.08.2026, e saiu daqui também. */
-const temCorpo = Boolean(
-  m.leitura || temDistancia || barraGanho || m.contas || temTempo || estudos.length > 0,
-);
+/* O CORPO DEIXOU DE CONTAR A LEITURA E AS DUAS FORMAS (F1.10, §7.1, 08.09.2026).
+   As três mudaram-se para a área de leitura, que fica por baixo da faixa e fora
+   desta disposição: contá-las aqui punha a coluna do corpo aberta e vazia num
+   concelho que só tem as suas oito medidas. O que faz corpo é o que continua a
+   viver na coluna: as contas do município, a linha do tempo e os estudos. */
+const temCorpo = Boolean(m.contas || temTempo || estudos.length > 0);
 
 const metodoPath = routePath('metodo', lang);
 ---
@@ -580,131 +659,77 @@ const metodoPath = routePath('metodo', lang);
       total={cartoes.length}
     />
 
+    {/* ------------------------------------------------------------------
+        O MAPA DA REGIÃO, NO LUGAR DO CARTÃO DOS 308 PONTOS (F1.10, item 8.17,
+        08.09.2026)
+        ------------------------------------------------------------------
+        O diretor, 08.09, nesta página no telemóvel: «the dotted map shows up but
+        with no useful purpose, and if we choose to change municipalities we have
+        a list of municípios which isn't as easy to use». Os 308 pontos diziam
+        onde fica o concelho num mapa em que ele é um ponto de 4,5 px, e a única
+        maneira de trocar de concelho era ir à lista.
+
+        A DECISÃO do lugar de direção, pela delegação da §1.98: entra o NÍVEL DA
+        REGIÃO do mapa do F1.1d — a região deste concelho com os seus concelhos
+        desenhados como áreas, o desta página com o contorno grosso, o nome no
+        lugar ao passar, ao focar ou ao tocar, e a porta do lugar a abrir a página
+        do concelho apontado. É isso que passa a ser «trocar de concelho»; a lista
+        de `/municipios` fica como a alternativa sem guião, com a busca.
+
+        A REGIÃO NÃO SE ESCREVE AQUI: lê-se dos mesmos nove ficheiros que o guião
+        da primeira página lê (`regiaoDoConcelho()`), e uma página cujo concelho
+        não esteja em nenhuma das nove fecha a construção em vez de render um mapa
+        de outro sítio.
+        ------------------------------------------------------------------ */}
     <MapaRespira
       slot="instrumento"
       s={s}
       lang={lang}
       concelhos={concelhos()}
-      postura="localizador"
+      postura="regiao"
+      regiao={regiaoDoMapaDeste}
       escolhido={slug}
     />
   </CabecaDoLugar>
 
-  <!-- ===================================================== CAMADA 1 — RELANCE -->
-  <section id="relance" aria-labelledby="relance-k">
+  <!-- ========================= A LEITURA DE CADA MEDIDA, QUE ABRE DO CARTÃO -->
+  {/* ------------------------------------------------------------------------
+      AS TRÊS APRESENTAÇÕES PASSAM A SER DUAS (F1.10, §7.1, 08.09.2026)
+      ------------------------------------------------------------------------
+      Aqui estava a grelha das oito peças grandes, com o título «As medidas»:
+      o mesmo valor, o mesmo nome, a mesma unidade e o mesmo estado que os
+      cartões da faixa mostram três centímetros acima, mais um comando
+      «ABRIR/FECHAR» que abria a régua. O diretor leu-a por aquilo que ela era
+      («the same information is repeated just afterwards»), e a decisão do lugar
+      de direção tira-a.
+
+      NO LUGAR DELA FICA A ÁREA DE LEITURA, com a mesma forma que a primeira
+      página e a página europeia têm desde o F1.1c: em repouso, com guião, a
+      linha que diz o gesto; ao toque num cartão, a leitura daquela medida, uma
+      de cada vez. Sem guião as oito ficam à vista, fechadas, e `#m-<id>` abre a
+      certa.
+
+      AS DUAS FORMAS DESTA PÁGINA vão dentro da leitura da medida que cada uma
+      desenha: a distância da dívida ao limite legal na do índice, e a barra do
+      ganho contra o país na do ganho médio. Era a secção que vinha a seguir, e
+      era a terceira apresentação.
+      ------------------------------------------------------------------------ */}
+  <section id="leitura" aria-labelledby="leitura-k" data-area-leitura>
     <div class="sec-head">
-      {/* O TÍTULO DESTA SECÇÃO DIZ O QUE ELA TEM (bloco F1.10, itens 8.14 e
-          §1.98). Dizia «Relance», que é o nome de uma DENSIDADE de um cartão e
-          não o nome de um conteúdo: o diretor viu-o a 07.09 à noite («we click
-          one and the other, and in one we don't have any content whatsoever»), e
-          a decisão tira as duas palavras das páginas do leitor. O que está por
-          baixo são as medidas do concelho, e é isso que o título diz.
-
-          O `h2` FICA, e a razão de 21.08 continua de pé: as medidas por baixo são
-          `h3`, e sem um `h2` aqui o sumário de cabeçalhos saltava de h1 para h3.
-          O que muda é a cadeia; o desenho é o mesmo. */}
-      <h2 class="eyebrow" id="relance-k">{s.secoes.medidas}</h2>
-      {/* AS CONTAGENS POR EXTENSO SAÍRAM (direção, 21.08.2026, tarde;
-          `DECISIONS.md` §4 item Q). Diziam «Oito medidas. Seis vêm de organismos
-          que publicam para todos os concelhos do país; duas só existem porque o
-          próprio município as publica, e cada uma dessas di-lo na sua linha.» —
-          contagens escritas à mão, que a `IDENTIDADE.md` §10 proíbe, e a casa a
-          explicar a sua própria cobertura, que a Emenda 15 proíbe. Cada medida
-          que só existe porque o município a publica continua a dizê-lo na sua
-          linha, que é onde essa ressalva é verdade. */}
+      <h2 class="eyebrow" id="leitura-k">{s.secoes.leitura}</h2>
     </div>
 
-    {/* ---------------------------------------------------------------------
-        A NOTA DE UMA MEDIDA CALCULADA SAI DA PÁGINA (Emenda 15; decisão 5 da
-        direção, 21.08.2026; ISSUES I35)
-        ---------------------------------------------------------------------
-        «Calculado sobre duas colunas do mesmo ficheiro do regulador. A
-        aritmética está na linha.» é a nota do índice de dívida em
-        `src/data/municipios.mjs`. Explica o que a casa fez em vez de nomear a
-        medida, e o que ela promete já está em dois sítios que a página abre: o
-        rótulo do selo, que numa linha derivada escreve «calculado ·», e o
-        recibo dessa linha, onde a aritmética está escrita e é reavaliada a
-        cada construção.
+    <p class="dobras-nada" data-leituras-vazio hidden>{s.inicio.painel.semLeituraAberta}</p>
 
-        A CONDIÇÃO LÊ-SE DA LINHA, e nunca de uma lista escrita à mão:
-        `eDerivada()` sobre a linha do livro-razão. É a mesma regra que a
-        primeira página aplica desde a 2l (`HomeView.astro`, `m.derivada`), e é
-        por isso que a cadeia continua onde está: retirá-la do ficheiro de dados
-        mudaria as duas superfícies de uma vez, e a condição é sobre a linha e
-        não sobre a frase. Amanhã uma medida deixa de ser calculada, e a nota
-        volta sozinha.
-        --------------------------------------------------------------------- */}
-    <div class="painel">
-      {
-        pecas.map((tile) =>
-          tile.vazia ? (
-            <Peca
-              s={s}
-              vazio={true}
-              nome={tile.nome[lang] ?? tile.nome.pt}
-              unidade={tile.unidade[lang] ?? tile.unidade.pt}
-            />
-          ) : (
-            <Peca
-              s={s}
-              lang={lang}
-              id={tile.claim}
-              nome={tile.nome[lang]}
-              medida={tile.medida[lang]}
-              frase={fraseDaPeca(tile)}
-              estado={tile.estado}
-              colore={tile.colore}
-              fixador={tile.fixador}
-              regua={tile.regua}
-              selosNaMedida={true}
-            />
-          ),
-        )
-      }
-    </div>
-  </section>
-
-  <!-- ================================================ disposição B: corpo + aparelho -->
-  {/* A DISPOSIÇÃO B PRECISA DE CORPO (bloco dos 308, P2). «Corpo e aparelho»
-      são duas colunas, e num concelho sem leitura, sem contas, sem linha do
-      tempo, sem método e sem trabalhos a primeira fica vazia: 68ch de nada ao
-      lado de um cartão de 300px, que é uma célula vazia numa grelha e é o que a
-      IDENTIDADE §7 recusa. Sem corpo, a página não pede duas colunas: o
-      aparelho segue as sete peças, com a sua largura, e a disposição continua a
-      ser a B — o que muda é que ela não desenha uma coluna que não tem nada. */}
-  <div class:list={['municipio', !temCorpo && 'municipio-so-aparelho']}>
-    {temCorpo && (
-    <div class="municipio-corpo">
-      <!-- ============================================ CAMADA 2 — LEITURA BREVE -->
-      {/* A CAMADA RENDE-SE SE TIVER CORPO (bloco dos 308, P2; barra do ganho
-          acrescentada no F1.2, segunda passagem, 03.09.2026). São três coisas
-          diferentes: as frases da leitura breve, que só existem onde alguém as
-          escreveu; a distância desenhada, que existe onde há as duas linhas
-          da dívida e do limite; e a barra do ganho contra o país, que existe
-          onde a linha do concelho é um número. Sem nenhuma das três, a secção
-          não se rende, nem título nem caixa vazia (IDENTIDADE §7: uma
-          página por escrever declara o que lhe falta, e o que lhe falta está
-          dito nas oito peças). */}
-      {(m.leitura || temDistancia || barraGanho) && (
-      <section class="linha-bloco" aria-labelledby="breve">
-        {/* O TÍTULO DIZ O QUE A SECÇÃO TEM (bloco F1.10, item 8.14). Dizia
-            «Leitura breve» / «Brief reading», que é o nome de uma densidade de
-            um cartão e não o nome de um conteúdo. `secoes.leitura` é a cadeia
-            que a §1.98 declarou para este título, a mesma em todas as camadas. */}
-        <h2 class="linha-bloco-titulo" id="breve">{s.secoes.leitura}</h2>
-        {/* A SUB-LINHA DA LEITURA BREVE SAIU (Emenda 15; mesma decisão de
-            21.08.2026 que tirou a do Relance). Dizia «Uma frase por medida.
-            Todos os números são citações do livro-razão.» — a segunda metade é o
-            trabalho do selo, dito outra vez em prosa, e a primeira descreve a
-            forma da secção em vez de dizer o que ela mede. */}
-        {
-          (m.leitura ?? []).map((frase) => (
-            <p class="deep-v"><Frase partes={frase[lang]} lang={lang} selos={true} /></p>
-          ))
-        }
-
-        <!-- a distância desenhada -->
-        {temDistancia && (
+    <LeituraBreve
+      s={s}
+      lang={lang}
+      quadro="concelho"
+      medidas={leiturasDasMedidas}
+      formas={[temDistancia ? D.indice : null, barraGanho ? ganhoTile.claim : null]}
+    >
+      {temDistancia && (
+      <Fragment slot="extra-a">
         <div class="mun-distancia">
           <p class="layer-tag">{s.municipio.distanciaK}</p>
           <svg
@@ -768,14 +793,10 @@ const metodoPath = routePath('metodo', lang);
               seja o mesmo de antes, carácter a carácter. */}
           <p class="mun-distancia-legenda">{s.municipio.distanciaLeiAntes}<span lang={lang === 'pt' ? undefined : 'pt-PT'}>{s.municipio.distanciaLeiDiploma}</span>{s.municipio.distanciaLeiDepois}</p>
         </div>
-        )}
-
-        {/* A BARRA DO GANHO MÉDIO CONTRA O PAÍS (bloco F1.2, segunda passagem,
-            03.09.2026, Blocking 2): o valor deste concelho e o valor nacional,
-            lado a lado, na forma 3 do brief da forma dos domínios. É a mesma
-            comparação que a página do domínio mostra com Évora como exemplo;
-            aqui é a de cada um dos 308. */}
-        {barraGanho && (
+      </Fragment>
+      )}
+      {barraGanho && (
+      <Fragment slot="extra-b">
         <div class="mun-ganho">
           <p class="layer-tag" id={`m-${ganhoTile.claim}-nome`} data-medida-nome>{ganhoTile.nome[lang]}</p>
           <BarraConcelhoPais
@@ -787,10 +808,23 @@ const metodoPath = routePath('metodo', lang);
             nomeada={`m-${ganhoTile.claim}-nome`}
           />
         </div>
-        )}
-      </section>
+      </Fragment>
       )}
+    </LeituraBreve>
+  </section>
 
+
+  <!-- ================================================ disposição B: corpo + aparelho -->
+  {/* A DISPOSIÇÃO B PRECISA DE CORPO (bloco dos 308, P2). «Corpo e aparelho»
+      são duas colunas, e num concelho sem leitura, sem contas, sem linha do
+      tempo, sem método e sem trabalhos a primeira fica vazia: 68ch de nada ao
+      lado de um cartão de 300px, que é uma célula vazia numa grelha e é o que a
+      IDENTIDADE §7 recusa. Sem corpo, a página não pede duas colunas: o
+      aparelho segue as sete peças, com a sua largura, e a disposição continua a
+      ser a B — o que muda é que ela não desenha uma coluna que não tem nada. */}
+  <div class:list={['municipio', !temCorpo && 'municipio-so-aparelho']}>
+    {temCorpo && (
+    <div class="municipio-corpo">
       <!-- ================================================== CAMADA 3 — FUNDO -->
       {/* AS CONTAS DO PRÓPRIO MUNICÍPIO SÃO DE QUEM AS TEM (bloco dos 308, P2).
           São lidas da prestação de contas de um município, documento a
@@ -805,6 +839,16 @@ const metodoPath = routePath('metodo', lang);
             facto por sujeito, ao pé dos números a que ela muda a leitura. É
             deste concelho e por isso vive nos dados dele, não na língua. */}
         {m.contas.nota && <p class="linha-nota">{m.contas.nota[lang]}</p>}
+
+        {/* A FRASE QUE LÊ UMA MEDIDA DESTA CAMADA (F1.10, §7.1, 08.09.2026).
+            As frases da leitura passaram a viver dentro da leitura da medida que
+            cada uma lê; a que lê a execução da receita não tem cartão na faixa,
+            porque essa medida desceu das peças para esta camada a 26.08.2026
+            (decisão D2 do diretor), e desce com ela. É a mesma disciplina: uma
+            frase fica onde está a medida que ela lê. */}
+        {prosaDaMedida('contas').map((frase) => (
+          <p class="deep-v"><Frase partes={frase} lang={lang} selos={true} /></p>
+        ))}
 
         <dl class="mun-campos">
           <dt>{s.municipio.contasOrcamento}</dt>
@@ -1355,4 +1399,11 @@ const metodoPath = routePath('metodo', lang);
       </p>
     </aside>
   </div>
+
+  {/* O GUIÃO DO LUGAR DO NOME (F1.10, item 8.17). É o mesmo de `DistritoView` e
+      da primeira página, e faz aqui o que faz lá com um nível só: põe o nome da
+      área apontada no lugar fixo, copiado do `<title>` que o servidor desenhou, e
+      o destino da porta, copiado do `href` dela. Sem ele o mapa continua a ser
+      quarenta e sete portas, uma por concelho. */}
+  <script src="/js/mapa-regioes.js" defer is:inline></script>
 </Base>

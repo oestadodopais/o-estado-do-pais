@@ -67,7 +67,7 @@ import { tresDatasDaLinha } from '../../lib/dominios.mjs';
 /* `quadro` é a marca do quadro a que estas leituras pertencem («pdm» ou
    «social»), e serve a régua: é por ela que se conta se cada frase de contexto
    está antes das leituras do SEU quadro, e não antes de outras. */
-const { s, lang, quadro, medidas } = Astro.props;
+const { s, lang, quadro, medidas, formas = null } = Astro.props;
 
 /* Os três rótulos das três datas, os mesmos da página do domínio: são nomes de
    campos do livro-razão, e a página da linha já lhes chama assim. Escrevem-se
@@ -93,7 +93,14 @@ const leituras = medidas.map((m) => ({
   id: m.claim,
   nome: m.nome[lang],
   unidade: m.medida[lang],
-  frase: m.frase?.[lang] ?? null,
+  /* AS FRASES DE UMA LEITURA, uma ou várias (F1.10, §7.1, 08.09.2026). Os dois
+     quadros da União trazem `frase`, um par de línguas com uma frase só, que é o
+     que a declaração de cada medida guarda. A página de um concelho traz
+     `frasesProntas`, uma lista de frases JÁ NA LÍNGUA DA EDIÇÃO: ali cada
+     leitura leva a nota da medida e a frase que a lê, e as duas compõem-se na
+     vista, com o atraso da série e as datas da linha lá dentro. Um par de
+     línguas escolhe-se aqui; uma frase pronta não se escolhe duas vezes. */
+  frases: m.frasesProntas ?? (m.frase?.[lang] ? [m.frase[lang]] : []),
   limiar: m.limiar ?? null,
   comparacao: m.comparacao ?? null,
   banda: Boolean(m.limiar && (m.limiar.inferior || m.limiar.superior)),
@@ -138,6 +145,47 @@ const leituras = medidas.map((m) => ({
      por id e recusa o segundo. */
   porta: m.porta ?? null,
 }));
+
+/* ---------------------------------------------------------------------------
+ * O INSTRUMENTO DE UMA MEDIDA, DENTRO DA LEITURA DELA (F1.10, §7.1, 08.09.2026)
+ * ---------------------------------------------------------------------------
+ * A página de um concelho tem duas formas que não são cartões nem frases: a
+ * distância da dívida ao limite legal e a barra do ganho contra o país. Viviam
+ * numa secção à parte, por baixo das frases corridas, e era essa secção que o
+ * diretor lia como a terceira apresentação das mesmas medidas.
+ *
+ * Cada uma passa a viver DENTRO da leitura da sua medida, e é a vista que a
+ * entrega por uma ranhura: `<Fragment slot="extra-a">` e `<Fragment
+ * slot="extra-b">`.
+ *
+ * OS NOMES DAS RANHURAS SÃO FIXOS, E A LIGAÇÃO É UMA PROPRIEDADE (`formas`, a
+ * lista dos ids das linhas, pela mesma ordem). Um nome de ranhura composto do id
+ * da linha seria mais direto de ler e é o que a primeira redação fez; fica assim
+ * porque um `slot` com nome composto é uma promessa sobre o compilador que este
+ * ficheiro não tem como provar, e uma lista de dois ids com um guarda ao lado
+ * prova-se sozinha: uma forma que nomeie uma medida que a área não tem fecha a
+ * construção.
+ *
+ * RENDE-SE NA CONSTRUÇÃO E NÃO NO GABARITO, porque `Astro.slots.render()` é
+ * assíncrono e a expressão de um gabarito não espera: o HTML de cada ranhura
+ * compõe-se aqui, uma vez, e o gabarito escreve-o onde ele pertence.
+ */
+/** As duas ranhuras de nome fixo, e a lista diz de que leitura é cada uma. */
+const RANHURAS = ['extra-a', 'extra-b'];
+/** @type {Record<string, string>} */
+const instrumentos = {};
+for (let i = 0; i < RANHURAS.length; i++) {
+  const id = (formas ?? [])[i];
+  if (!id) continue;
+  if (!leituras.some((l) => l.id === id)) {
+    throw new Error(
+      `<LeituraBreve>: \`formas[${i}]\` nomeia "${id}", que não é nenhuma das medidas desta ` +
+        `área de leitura. A forma de uma medida vive dentro da leitura dela, e uma forma sem ` +
+        `leitura não se rende em lado nenhum.`,
+    );
+  }
+  if (Astro.slots.has(RANHURAS[i])) instrumentos[id] = await Astro.slots.render(RANHURAS[i]);
+}
 ---
 
 <div class="dobras" data-leituras={quadro}>
@@ -228,11 +276,11 @@ const leituras = medidas.map((m) => ({
               desde a Emenda 16, e uma delas é a ressalva da própria Comissão
               sobre a sobrecarga do custo da habitação, sem a qual o número se lê
               ao contrário. */}
-          {l.frase && (
+          {l.frases.map((frase) => (
             <p class="dobra-frase">
-              <Frase partes={l.frase} lang={lang} selos={true} />
+              <Frase partes={frase} lang={lang} selos={true} />
             </p>
-          )}
+          ))}
 
           {/* AS TRÊS DATAS, na forma da casa, cada uma com a linha e o campo de
               onde saiu (carta §1, regra 3). As 21 medidas têm as três: o período
@@ -282,6 +330,13 @@ const leituras = medidas.map((m) => ({
                 )}
               </Fragment>
             </Regua>
+          )}
+
+          {/* A FORMA DESTA MEDIDA, onde ela existe (F1.10, §7.1). Ver a razão no
+              cabeçalho de `instrumentos`, acima: é a vista que a entrega pela
+              ranhura, e uma medida sem forma não rende nada aqui. */}
+          {instrumentos[l.id] && (
+            <div class="dobra-instrumento" set:html={instrumentos[l.id]} />
           )}
 
           {/* O PÉ É O SELO, E MAIS NADA (Emenda 15): é a porta para a linha, e é
