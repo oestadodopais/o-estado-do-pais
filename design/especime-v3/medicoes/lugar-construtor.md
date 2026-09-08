@@ -317,12 +317,32 @@ coisas, e as três ficam escritas:
    medições já feitas, e uma régua que não diz nada do que mediu é
    indistinguível de uma que não mediu nada.
 
-**Com isso, a régua diz o que mediu: 45 células passam, 24 falham, e ela pára na
-setenta.** Pára numa célula que lê `[data-leituras="pdm"]` em `/`, e essa marca
-saiu da primeira página com o item 8.16. **A dívida é deste bloco e fica
-nomeada:** `matriz.mjs` tem ainda oito navegações a `/?densidade=leitura` e um
-punhado de células que supõem os 21 cartões na primeira página. É uma passagem
-sua, e não cabia nesta sessão.
+**Com isso a régua diz o que mediu: 45 células passam, 24 falham, e ela pára na
+setenta**, numa célula que lê `[data-leituras="pdm"]` em `/`, marca que saiu da
+primeira página com o item 8.16.
+
+**Depois do 8.17b voltou-se a ela, e mais quatro células passaram a medir a
+coisa que existe:**
+
+* a **2i·5 do espaço** tinha duas promessas numa só, e uma delas mudou de
+  página: a tecla age no comando nativo (na página das leituras) e o que
+  submete a busca é um botão a sério (na primeira página, que é onde a busca
+  está). São duas células, cada uma medida onde a coisa vive;
+* e a **rolagem passa a distinguir a tecla da página**: fechar a leitura
+  encurta o documento e o navegador encosta a janela ao novo fundo. A célula
+  imprime os dois números em vez de os somar («484 px são a página a encurtar,
+  0 são a tecla») e passa;
+* a **célula das leituras sem caixas** lia `[data-leituras="pdm"]` na primeira
+  página e morria sobre `null`: lê a página onde elas estão, e diz a ausência em
+  vez de matar a régua;
+* a **célula do ponto escolhido** diz agora o que encontrou na página do
+  concelho depois do 8.17b: «0 ponto(s), 14 área(s)», e fica por reescrever para
+  o mapa de áreas.
+
+**A régua passou de 69 células medidas para 73, e de 45 a passar para 53.** Pára
+agora numa das oito navegações a `/?densidade=leitura` que restam. **A dívida
+continua a ser deste bloco e continua nomeada:** é uma passagem sua, e não cabia
+nesta sessão.
 
 ### 4 · O 8.17b fechou: a página do concelho passou a mostrar a unidade dele
 
@@ -491,7 +511,9 @@ fora da declaração 0 (teto 0) ok».
 posição de investimento internacional; as quatro leituras fora do cabeçalho; a
 comparação da A4 no `verify`; a matriz a andar; o relatório; o primeiro ecrã
 medido depois; o §9.2 e o §9.6 medidos; a marca do sinal de tempo fora da
-mobília, com os dois cabeçalhos de ficheiro a dizerem o que os ficheiros fazem.
+mobília, com os dois cabeçalhos de ficheiro a dizerem o que os ficheiros fazem;
+a lista dos commits e a construção que falhou pelo meio; **a fusão de
+`origin/main` com o F1.1e**; **o 8.17b**; e as quatro células da matriz.
 **Os três portões correram-se três vezes ao longo da sessão**, e a última é a
 que conta: na árvore do último commit de código, com os códigos lidos dos
 ficheiros.
