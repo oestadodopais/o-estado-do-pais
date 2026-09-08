@@ -212,7 +212,7 @@ const base = `http://127.0.0.1:${servidor.address().port}`;
 
 const nav = await chromium.launch();
 /* O SEGUNDO MOTOR ABRE-SE UMA VEZ E SÓ ONDE É PRECISO. A célula P3a corre nos
-   dois, e a razão está medida no cabeçalho de `public/js/mapa-regioes.js`: o
+   dois, e a razão está medida no cabeçalho de `public/js/mapa-unidades.js`: o
    `pointerType` de um clique feito com o dedo diz «touch» no Chromium e «mouse»
    no WebKit, e a primeira forma da regra do primeiro toque passava num e caía no
    outro, que é o motor de todos os telemóveis da Apple. */

@@ -15,7 +15,7 @@
  * Corre sobre `dist/` e mede, nas 29 páginas de distrito construídas e a 390 px,
  * o MAIOR QUADRADO INSCRITO à volta do ponto representativo de cada concelho
  * (I82), que é a mesma conta de `tests/inicio/mapa-distritos.mjs` e de
- * `tests/inicio/mapa-regioes.mjs`, com o mesmo passo de 2 px. Não é um portão e
+ * `tests/inicio/mapa-unidades.mjs`, com o mesmo passo de 2 px. Não é um portão e
  * não é uma régua: imprime, e sai com 0.
  *
  * O QUE ELE MEDIU A 08.09.2026: 84 de 308 concelhos chegam aos 44 px, a mediana

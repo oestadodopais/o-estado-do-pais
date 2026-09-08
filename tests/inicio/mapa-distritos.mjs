@@ -851,12 +851,11 @@ async function mediuAOrdemDaLista(rota, id) {
   const grupos = await p.evaluate(() =>
     [...document.querySelectorAll('[data-parcela-lista]')].map((g) => ({
       parcela: g.getAttribute('data-parcela-lista'),
-      /* O GRUPO DAS NOVE REGIÕES ENTRA COM O F1.1d, e a marca dele é outra
-         (`data-lista-regiao`): sem os dois selectores, a régua contava zero
-         nomes naquele grupo e dava-o por ordenado sem ter olhado. */
-      nomes: [...g.querySelectorAll('[data-lista-porta], [data-lista-regiao]')].map((a) =>
-        a.textContent.trim(),
-      ),
+      /* O GRUPO DAS NOVE REGIÕES SAIU COM O F1.1e, e com ele a sua marca
+         (`data-lista-regiao`), que este selector também lia. Fica um selector
+         só, que é o das 29 unidades: um selector para uma marca que já não se
+         rende é uma régua a dizer que ainda olha para lá. */
+      nomes: [...g.querySelectorAll('[data-lista-porta]')].map((a) => a.textContent.trim()),
     })),
   );
   await p.__ctx.close();
