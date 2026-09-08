@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-08T05:59:57+00:00",
+ "copia": "f11d-pacote",
+ "plantas": [
+  {
+   "id": "M1",
+   "ficheiro": "public/js/mapa-regioes.js",
+   "descricao": "o gesto volta a ler-se só do pointerType do clique: no WebKit um dedo diz mouse e o primeiro toque num concelho navega, o defeito que o relatório diz consertado nos dois motores",
+   "sha256_antes": "00dc3e2a63a9f5bc43d1b05e1f60ffe8d5298262493c9ab605b03d14e6ee27b4",
+   "sha256_depois": "8d345152da831a2772a4c77e984f2000729488db125238366449f0d75025830f",
+   "contexto_antes": "     traz gesto nenhum e por isso não herda o do toque anterior, que deixaria o\n       teclado a pedir dois Enter depois de um dedo ter passado por ali. */\n    var toque = tipoDoGesto === 'touch' || ev.pointerType === 'touch';\n    if (!doTeclado && toque && concelho !== tocada) {\n      ev.preventDefault();\n      tocada = concelho;\n      mostra(area);\n    }\n  });\n\n  /* O TECLADO NÃO P",
+   "contexto_depois": "     traz gesto nenhum e por isso não herda o do toque anterior, que deixaria o\n       teclado a pedir dois Enter depois de um dedo ter passado por ali. */\n    var toque = ev.pointerType === 'touch';\n    if (!doTeclado && toque && concelho !== tocada) {\n      ev.preventDefault();\n      tocada = concelho;\n      mostra(area);\n    }\n  });\n\n  /* O TECLADO NÃO P"
+  },
+  {
+   "id": "M2",
+   "ficheiro": "scripts/check-mapa.mjs",
+   "descricao": "o tecto da R9 alargado dez vezes: 1,6 por cento passa a 16, e o relatório diz que o tecto é o dobro do pior caso medido",
+   "sha256_antes": "348ac662f00cf0a03cebe932127645f2faa05863c962c065bbf7caf0de1ffe06",
+   "sha256_depois": "e0fa562d135269b9b019c3669192ad94e619feae1e1dc6ed09a996c6b4a1d4b4",
+   "contexto_antes": "mais anéis pequenos), com 0,116 % na\n * mediana. O tecto abaixo fica no dobro do pior caso medido, que é a distância\n * entre «arredondou» e «está errada».\n */\nconst TECTO_DA_AREA_PCT = 1.6;\n\n/** Os anéis de um caminho `M x y l dx dy,… Z`, com o analisador deste portão. */\nfunction aneisDoCaminho(d) {\n  const aneis = [];\n  let anel = null;\n  let i ",
+   "contexto_depois": "mais anéis pequenos), com 0,116 % na\n * mediana. O tecto abaixo fica no dobro do pior caso medido, que é a distância\n * entre «arredondou» e «está errada».\n */\nconst TECTO_DA_AREA_PCT = 16;\n\n/** Os anéis de um caminho `M x y l dx dy,… Z`, com o analisador deste portão. */\nfunction aneisDoCaminho(d) {\n  const aneis = [];\n  let anel = null;\n  let i "
+  },
+  {
+   "id": "M3",
+   "ficheiro": "tests/inicio/mapa-regioes.mjs",
+   "descricao": "a planta do primeiro toque deixa de exigir o vermelho no WebKit: só a célula do Chromium fica na lista, contra o relatório que diz que a P3a corre nos dois motores",
+   "sha256_antes": "9f3d40ae9b3cc50bbf901a7af763f1f33b9327524ed95312b793b3763168c29f",
+   "sha256_depois": "5d9b9bd87fa07d169383e8e34a922c81686f626b9fff6dbb3732ebd307faf8a1",
+   "contexto_antes": "ni-porta=\"centro\"[^>]*>)<title>[^<]*<\\/title>/, '$1')\n        : texto,\n  },\n  {\n    nome: 'o primeiro toque a navegar (o guião deixa de segurar o clique)',\n    celulas: ['P3a · Chromium', 'P3a · WebKit'],\n    quais: ['P3'],\n    estrago: (texto, rota, ext) =>\n      ext === '.js' && rota.endsWith('/mapa-regioes.js')\n        ? texto.replace(/ev\\.preventDefault\\(\\);",
+   "contexto_depois": "ni-porta=\"centro\"[^>]*>)<title>[^<]*<\\/title>/, '$1')\n        : texto,\n  },\n  {\n    nome: 'o primeiro toque a navegar (o guião deixa de segurar o clique)',\n    celulas: ['P3a · Chromium'],\n    quais: ['P3'],\n    estrago: (texto, rota, ext) =>\n      ext === '.js' && rota.endsWith('/mapa-regioes.js')\n        ? texto.replace(/ev\\.preventDefault\\(\\);"
+  },
+  {
+   "id": "M4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "um número do relatório contradiz a tabela por região e o ficheiro das medidas: 20 concelhos aos 44 px passam a 120",
+   "sha256_antes": "fd153a95a61c5efcdc211570c39b8964c1e0951f559244248b5861bdb6b94d6d",
+   "sha256_depois": "ee105182025faa16439cf79c871e22918553547dc5add17f0b5c53426df058a7",
+   "contexto_antes": "o 518 × 683 px) chegam 4 de 9, mediana 24 px.\n\n**Os 308 concelhos, a 390, no nível em que se tocam:** 308 de 308 medidos, todos\ncom o ponto dentro da sua área, **20 chegam aos 44 px**, mediana 16 px.\n\n| região | concelhos | chegam aos 44 px | mediana | menor |\n| --- | --- | --- | --- | --- |\n| Grande Lisboa | 9 | 5 | 46 px | 20 px |\n| Península de Setúbal |",
+   "contexto_depois": "o 518 × 683 px) chegam 4 de 9, mediana 24 px.\n\n**Os 308 concelhos, a 390, no nível em que se tocam:** 308 de 308 medidos, todos\ncom o ponto dentro da sua área, **120 chegam aos 44 px**, mediana 16 px.\n\n| região | concelhos | chegam aos 44 px | mediana | menor |\n| --- | --- | --- | --- | --- |\n| Grande Lisboa | 9 | 5 | 46 px | 20 px |\n| Península de Setúbal |"
+  },
+  {
+   "id": "M5",
+   "ficheiro": "built/index.html",
+   "descricao": "sem guião, a ligação dos Açores aponta a uma página que não existe (azores), contra a P4 que diz nove de nove a responder 200",
+   "sha256_antes": "1a00f5363ed59f3a1d832d59f7fb475ce1bcfd2fb6bcffa28ecc5ccfe47e6090",
+   "sha256_depois": "47d3ada15ac6f627683cc26e2a9bde74502b93070d96af7f09d746d04e5f6363",
+   "contexto_antes": "=\"4465\" style=\"font-size:132px\">Madeira</text><text class=\"mapa-arq\" x=\"280\" y=\"6035\" style=\"font-size:132px\">Açores</text></g><g class=\"mapa-areas\" data-areas><a class=\"uni-porta\" href=\"/regioes/acores\" data-uni-porta=\"acores\" data-ficheiro=\"/dados/mapa/regiao-acores.json\"><title>Açores</title><path class=\"uni\" d=\"M1466 6427l-8 6,-14-7,-10 1,-13-21,7-12,20 2ZM313 6222l-17 38,-29 1,-7",
+   "contexto_depois": "=\"4465\" style=\"font-size:132px\">Madeira</text><text class=\"mapa-arq\" x=\"280\" y=\"6035\" style=\"font-size:132px\">Açores</text></g><g class=\"mapa-areas\" data-areas><a class=\"uni-porta\" href=\"/regioes/azores\" data-uni-porta=\"acores\" data-ficheiro=\"/dados/mapa/regiao-acores.json\"><title>Açores</title><path class=\"uni\" d=\"M1466 6427l-8 6,-14-7,-10 1,-13-21,7-12,20 2ZM313 6222l-17 38,-29 1,-7"
+  }
+ ]
+}
