@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-08T15:44:55+00:00",
+ "copia": "f26b-pacote",
+ "plantas": [
+  {
+   "id": "K1",
+   "ficheiro": "indicators/calendario.py",
+   "descricao": "a guarda da agenda deixa de segurar: um acontecimento que a agenda ainda nomeia sai na mesma, e a marca data-agenda do sítio deixa de resolver",
+   "sha256_antes": "ac208afb79dc80dd3fbe484fd0eac01305575a763ebd01533acb100311201c87",
+   "sha256_depois": "7530d613ed6796720f566b5610e59656675dd779b1019c72d63d223b594f39e2",
+   "contexto_antes": " contas = {\"sairam\": 0, \"presas_pela_agenda\": [], \"ja_declaradas\": 0}\n    for decidida in decididas:\n        ident = decidida[\"id\"]\n        if ident in presos:\n            contas[\"presas_pela_agenda\"].append(ident)\n            continue\n        if ident in saidas:\n            contas[\"ja_declaradas\"] += 1\n        else:\n            saidas[ident] = {\"id\": ident, \"substituido_por\": None, \"retirado",
+   "contexto_depois": " contas = {\"sairam\": 0, \"presas_pela_agenda\": [], \"ja_declaradas\": 0}\n    for decidida in decididas:\n        ident = decidida[\"id\"]\n        if ident in presos:\n            contas[\"presas_pela_agenda\"].append(ident)\n        if ident in saidas:\n            contas[\"ja_declaradas\"] += 1\n        else:\n            saidas[ident] = {\"id\": ident, \"substituido_por\": None, \"retirado"
+  },
+  {
+   "id": "K2",
+   "ficheiro": "indicators/calendar.json",
+   "descricao": "uma linha a menos no acontecimento da DGAL: o calendário nomeia três linhas onde o relatório diz quatro",
+   "sha256_antes": "fa166208457d584d32c744e9cb37d6cad52a9fa98cfe8bb31e87baf1cb3b0992",
+   "sha256_depois": "5ccef0fd94e77909734b31a65fe01d015b49a9131c6c147c1bcbdbf519ccc847",
+   "contexto_antes": "\n    \"en\": \"File 'Evolução endividamento total 2025' on the Portal Autárquico\"\n   },\n   \"serie\": [],\n   \"afecta_linhas\": [\n    \"abrantes-divida-dgal-2024\",\n    \"evora-divida-dgal-2014\",\n    \"evora-divida-dgal-2017\",\n    \"evora-divida-dgal-2021\"\n   ],\n   \"data\": null,\n   \"janela\": null,\n   \"precisao\": \"desconhecida\",\n   \"origem_da_data\": null,\n",
+   "contexto_depois": "\n    \"en\": \"File 'Evolução endividamento total 2025' on the Portal Autárquico\"\n   },\n   \"serie\": [],\n   \"afecta_linhas\": [\n    \"abrantes-divida-dgal-2024\",\n    \n    \"evora-divida-dgal-2017\",\n    \"evora-divida-dgal-2021\"\n   ],\n   \"data\": null,\n   \"janela\": null,\n   \"precisao\": \"desconhecida\",\n   \"origem_da_data\": null,\n"
+  },
+  {
+   "id": "K3",
+   "ficheiro": "indicators/provas_test.py",
+   "descricao": "o chão do calendário fica a 23: as nove conferências novas podem desaparecer sem o portão ver",
+   "sha256_antes": "85fcd96e551b4ce647ee9cf5d5b0a76f120ffec70c10c2a28cf0101d597416c9",
+   "sha256_depois": "755c11a94357c2f9484214e9b38d1e7e6dd3d6b2183a48afb28e2b91fe0a4ff3",
+   "contexto_antes": "nomeia linhas»\n    # com a planta de um acontecimento sem linhas a voltar; e as `saidas` do\n    # ficheiro entregue medidas com a régua do portão do sítio.\n    (\"calendario\", [\"indicators/calendario.py\", \"--provar\"], 32),\n    # O chão do fluxo subiu de 53 para 58 a 08.09.2026, depois da leitura a frio\n    # ao `ensaio-diario.yml`: o motivo escrito antes de qualquer saída do\n    ",
+   "contexto_depois": "nomeia linhas»\n    # com a planta de um acontecimento sem linhas a voltar; e as `saidas` do\n    # ficheiro entregue medidas com a régua do portão do sítio.\n    (\"calendario\", [\"indicators/calendario.py\", \"--provar\"], 23),\n    # O chão do fluxo subiu de 53 para 58 a 08.09.2026, depois da leitura a frio\n    # ao `ensaio-diario.yml`: o motivo escrito antes de qualquer saída do\n    "
+  },
+  {
+   "id": "K5",
+   "ficheiro": "indicators/calendario.py",
+   "descricao": "a data de saída de uma decisão anterior à decisão: 2026-08-09 onde a decisão é de 2026-09-08",
+   "sha256_antes": "7530d613ed6796720f566b5610e59656675dd779b1019c72d63d223b594f39e2",
+   "sha256_depois": "2a3904e30c91f03685727131c2aab0b20e0fde02a7b677742b1fd297bac813ec",
+   "contexto_antes": "w `precos-da-habitacao-2025` \"\n               \"publishes Eurostat's annual table. It comes back when the housing \"\n               \"domain opens (F1.5).\"}},\n    {\"id\": \"evora-contas-2024-pagina\", \"saiu_em\": \"2026-09-08\",\n     \"nota\": {\n         \"pt\": \"É o leitor do estudo 12 quem vigia esta fonte, todos os dias, pelo \"\n               \"veredicto «período novo»; um acontecimento ",
+   "contexto_depois": "w `precos-da-habitacao-2025` \"\n               \"publishes Eurostat's annual table. It comes back when the housing \"\n               \"domain opens (F1.5).\"}},\n    {\"id\": \"evora-contas-2024-pagina\", \"saiu_em\": \"2026-08-09\",\n     \"nota\": {\n         \"pt\": \"É o leitor do estudo 12 quem vigia esta fonte, todos os dias, pelo \"\n               \"veredicto «período novo»; um acontecimento "
+  },
+  {
+   "id": "K4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "um número do relatório contradiz o ficheiro: três presas pela agenda onde a conta dá cinco",
+   "sha256_antes": "1947cd7a37e2df20fbab91eba00fb6f716d1970a3654ed60cb856341c9760dd6",
+   "sha256_depois": "9219e6f5a46b33c51515360b233a60f9ae2df5e8cd9698b9ad45fba30b89c84f",
+   "contexto_antes": " No dia em\nque a agenda deixar de os nomear, saem sozinhos, com esta razão e esta data, sem\nque ninguém volte a este ficheiro. A saída do `--montar` conta-as:\n`presas_pela_agenda 5`.\n\n**O que o lugar de direção tem de decidir**, e é uma coisa só: o que acontece\naos três itens da agenda. Ou os critérios `calendario_das_fontes` saem dos ite",
+   "contexto_depois": " No dia em\nque a agenda deixar de os nomear, saem sozinhos, com esta razão e esta data, sem\nque ninguém volte a este ficheiro. A saída do `--montar` conta-as:\n`presas_pela_agenda 3`.\n\n**O que o lugar de direção tem de decidir**, e é uma coisa só: o que acontece\naos três itens da agenda. Ou os critérios `calendario_das_fontes` saem dos ite"
+  }
+ ]
+}
