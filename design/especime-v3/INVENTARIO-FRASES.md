@@ -171,6 +171,12 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | navegacao | As regiões publicadas na régua da convergência. | grelha-2 | retirada | a régua da convergência saiu da primeira página até haver a página das regiões (Emenda 18, consequência decidida a 25.08; bloco A da auditoria de UI e UX, `696b51a`) |
 | navegacao | At a glance | até 2026-08-26 | retirada | as duas palavras da densidade de um cartão saem das páginas do leitor (bloco F1.10, item 8.14, 08.09.2026): o diretor viu a 07.09 à noite que o comando «Relance · Leitura breve» mostrava, num estado, cabeçalhos com explicações e nada, e no outro as vinte e uma leituras de uma vez. O comando saiu da primeira página e os títulos de secção que as usavam passaram a dizer o que a secção tem («As medidas», «A leitura de cada medida»), que são as cadeias que a `DECISIONS.md` §1.98 declarou. O termo continua a existir na decisão e no brief; o que sai é a superfície |
 | navegacao | Portugal na União Europeia | lugar | viva | — |
+| navegacao | Números e fontes | lugar | viva | — |
+| navegacao | Numbers and sources | lugar | viva | — |
+| conteudo | Números e fontes · O Estado do País | lugar | viva | — |
+| conteudo | Numbers and sources · O Estado do País | lugar | viva | — |
+| conteudo | Os números e as fontes dos concelhos · O Estado do País | lugar | viva | — |
+| conteudo | The numbers and sources of the municipalities · O Estado do País | lugar | viva | — |
 | navegacao | Portugal in the European Union | lugar | viva | — |
 | conteudo | Os dois quadros da União Europeia que medem Portugal: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu, cada uma com a sua linha. | lugar | viva | — |
 | conteudo | The two European Union frameworks that measure Portugal: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard, each with its ledger row. | lugar | viva | — |
@@ -1072,8 +1078,8 @@ estiver vazio.*
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | Livro-razão · O Estado do País | voz-do-livro-razao | viva | — |
-| conteudo | Ledger · O Estado do País | voz-do-livro-razao | viva | — |
+| conteudo | Livro-razão · O Estado do País | voz-do-livro-razao | retirada | o nome visível do índice e da entrada do menu passa a «Números e fontes» / «Numbers and sources» (bloco F1.10, item 8.8, 08.09.2026), pelo tropeço R2 da ronda de leitores de 07.09 («the livro-razão doesn't really match what it is; people don't really understand it») e pela decisão que o diretor aceitou nessa noite. «livro-razão» fica como o termo técnico no Método, no JSON e nos endereços, que não mudam, e «linha do livro-razão» continua a ser o nome de uma linha |
+| conteudo | Ledger · O Estado do País | voz-do-livro-razao | retirada | o nome visível do índice e da entrada do menu passa a «Números e fontes» / «Numbers and sources» (bloco F1.10, item 8.8, 08.09.2026), pelo tropeço R2 da ronda de leitores de 07.09 («the livro-razão doesn't really match what it is; people don't really understand it») e pela decisão que o diretor aceitou nessa noite. «livro-razão» fica como o termo técnico no Método, no JSON e nos endereços, que não mudam, e «linha do livro-razão» continua a ser o nome de uma linha |
 | conteudo | 2767 linhas · 308 concelhos | vazios | viva | — |
 | conteudo | 2767 rows · 308 municipalities | vazios | viva | — |
 
@@ -1096,8 +1102,8 @@ frase corrigida que continue declarada volta em silêncio.*
 | --- | --- | --- | --- | --- |
 | conteudo | Todas as linhas. | voz-do-livro-razao | viva | — |
 | conteudo | Every row. | voz-do-livro-razao | viva | — |
-| conteudo | Livro-razão dos concelhos · O Estado do País | voz-do-livro-razao | viva | — |
-| conteudo | Municipalities ledger · O Estado do País | voz-do-livro-razao | viva | — |
+| conteudo | Livro-razão dos concelhos · O Estado do País | voz-do-livro-razao | retirada | o nome visível do índice e da entrada do menu passa a «Números e fontes» / «Numbers and sources» (bloco F1.10, item 8.8, 08.09.2026), pelo tropeço R2 da ronda de leitores de 07.09 («the livro-razão doesn't really match what it is; people don't really understand it») e pela decisão que o diretor aceitou nessa noite. «livro-razão» fica como o termo técnico no Método, no JSON e nos endereços, que não mudam, e «linha do livro-razão» continua a ser o nome de uma linha |
+| conteudo | Municipalities ledger · O Estado do País | voz-do-livro-razao | retirada | o nome visível do índice e da entrada do menu passa a «Números e fontes» / «Numbers and sources» (bloco F1.10, item 8.8, 08.09.2026), pelo tropeço R2 da ronda de leitores de 07.09 («the livro-razão doesn't really match what it is; people don't really understand it») e pela decisão que o diretor aceitou nessa noite. «livro-razão» fica como o termo técnico no Método, no JSON e nos endereços, que não mudam, e «linha do livro-razão» continua a ser o nome de uma linha |
 
 ## Bloco «O mapa por distritos» · Emenda 20 · 27.08.2026
 
@@ -1585,8 +1591,6 @@ grelha da voz).*
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| navegacao | Livro-razão | pequenas-4 | viva | — |
-| navegacao | Ledger | pequenas-4 | viva | — |
 | navegacao | Concelho | lugar | viva | — |
 | navegacao | Municipality | pequenas-4 | viva | — |
 | navegacao | Municípios | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
@@ -2293,6 +2297,41 @@ apanha.
 | --- | --- | --- | --- | --- |
 | navegacao | Toque num cartão para ler a medida. | toque | viva | — |
 | navegacao | Tap a card to read the measure. | toque | viva | — |
+## Bloco F1.10 · «Números e fontes» e o menu em dois pesos · 08.09.2026
+
+**Seis linhas novas, quatro passadas a `retirada`, e duas APAGADAS do ficheiro.**
+São as do item 8.8 (o nome visível do índice do livro-razão) e as do 8.9 (o menu
+em dois pesos), com o §7.5 («Áreas de governo» por extenso).
+
+**O que muda, e o que não muda.** O nome VISÍVEL do índice e da entrada do menu
+passa a «Números e fontes» / «Numbers and sources», pelo tropeço R2 da ronda de
+leitores de 07.09 e pela decisão que o diretor aceitou nessa noite. **«livro-razão»
+fica como o termo técnico no Método, no JSON e nos endereços**, que não mudam, e
+por isso as duas linhas «O livro-razão» e «The ledger» continuam `viva`: rendem-se
+no `<h2>` do Método, que é onde a decisão as manda ficar. «Linha do livro-razão»
+também fica, pela mesma razão.
+
+**Duas linhas saíram do ficheiro em vez de passarem a `retirada`, e a razão é a
+régua.** Eram `| navegacao | Livro-razão | pequenas-4 |` e a gémea inglesa, o
+rótulo do menu. `retirada` não serve: `ondeVolta()`, em
+`scripts/medir-defeitos.mjs`, procura a frase retirada **por palavra inteira
+dentro de qualquer frase rendida**, e a varredura das dicas recolhe o `title` de
+cada contagem da prova, onde vive «linhas do livro-razão dessas séries». Uma
+linha `retirada` que a régua acha por dentro de uma dica fecharia a construção
+para sempre. É a mesma saída que o «Município» da primeira sessão tomou, e este
+ficheiro já a escreve: «ou a linha sai do ficheiro, ou passa a `retirada` com a
+razão escrita».
+
+**As quatro que passaram a `retirada`** são os títulos de página, que agora dizem
+o nome novo: «Livro-razão · O Estado do País», «Ledger · O Estado do País»,
+«Livro-razão dos concelhos · O Estado do País» e «Municipalities ledger · O
+Estado do País».
+
+**«Áreas de governo» por extenso** (§7.5): a etiqueta do menu era «Áreas», e o
+leitor de 04.09 mediu que «Áreas» e «Domínios» não se distinguem pelo nome. Com o
+menu em dois pesos a fila do país é a mais leve e o nome inteiro cabe lá, que é o
+«se couber» do brief; a frase de hierarquia dos dois índices diz o resto.
+
 ## Bloco F1.10 · segunda sessão · a página europeia e o índice dos domínios · 08.09.2026
 
 **Dez linhas novas, e nenhuma retirada.** São as do item 8.16 (a página

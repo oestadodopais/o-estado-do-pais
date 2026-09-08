@@ -572,9 +572,15 @@ for (const r of ROTAS_DA_CLASSE) {
 
 console.log('');
 if (erros.length) {
+  /* QUANTOS ERROS SE IMPRIMEM. Quarenta chegam para um bloco pequeno e escondem
+     um bloco grande: uma mudança que toque no cabeçalho de 7 000 páginas enche
+     a lista com a mesma frase repetida e deixa as outras por dizer.
+     `OEDP_VOZ_ERROS` abre a torneira quando é preciso ver a lista inteira, e o
+     defeito continua a ser quarenta. */
+  const LIMITE_DOS_ERROS = Number(process.env.OEDP_VOZ_ERROS ?? 40) || 40;
   console.error(vermelho(`  PORTÃO DA VOZ · ${erros.length} problema(s)\n`));
-  for (const e of erros.slice(0, 40)) console.error(vermelho('    · ') + e);
-  if (erros.length > 40) console.error(cinza(`    … e mais ${erros.length - 40}`));
+  for (const e of erros.slice(0, LIMITE_DOS_ERROS)) console.error(vermelho('    · ') + e);
+  if (erros.length > LIMITE_DOS_ERROS) console.error(cinza(`    … e mais ${erros.length - LIMITE_DOS_ERROS}`));
   console.error('');
   process.exit(1);
 }

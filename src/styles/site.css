@@ -289,6 +289,49 @@ section {
   color: var(--ink);
   box-shadow: inset 0 -1.5px 0 var(--ink);
 }
+
+/* ---------------------------------------------------------------------------
+   O MENU EM DOIS PESOS (bloco F1.10, item 8.9, 08.09.2026)
+   ---------------------------------------------------------------------------
+   «In the headers … they all have the same weight visually, kind of looking the
+   same content, which makes it hard to navigate» (a ronda de leitores, 07.09).
+   Os três grupos de `src/lib/navegacao.mjs` desenham-se com dois pesos: o do
+   leitor com a tinta e o corpo da barra, os outros dois mais leves e um pouco
+   mais pequenos. Nada sai do menu: o que muda é a ordem de leitura.
+
+   OS GRUPOS SÃO `<span>` E NÃO LISTAS, e é medido: a navegação é uma caixa
+   flexível de âncoras desde a etapa 1e, e envolvê-las em `<ul>` dava a cada
+   grupo um papel de lista que o axe conta e que um leitor de ecrã anuncia três
+   vezes por página. Um `<span>` não tem papel nenhum, e a fila continua a
+   ouvir-se como uma fila só, pela ordem do documento.
+   --------------------------------------------------------------------------- */
+.nav-grupo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 18px;
+}
+.nav-principal {
+  gap: 4px 22px;
+}
+.nav-leitor a {
+  color: var(--ink);
+}
+.nav-pais a,
+.nav-casa a,
+.nav-inicio a {
+  font-size: 13px;
+}
+
+@media (min-width: 640px) {
+  /* O fio entre os grupos, a partir da largura em que os três se veem ao mesmo
+     tempo: separa sem acrescentar palavra nenhuma. */
+  .nav-pais,
+  .nav-casa {
+    padding-left: 22px;
+    box-shadow: inset 1px 0 0 var(--rule);
+  }
+}
 .nav .lang {
   color: var(--ink);
 }
@@ -355,19 +398,57 @@ section {
   .nav-idioma {
     order: 2;
   }
+  /* ABAIXO DE 640 OS TRÊS DESTINOS DO LEITOR FICAM À VISTA, E O RESTO A UM
+     TOQUE (bloco F1.10, item 8.9). A medida do item é essa à letra: «a fila do
+     menu com os três destinos visíveis no primeiro ecrã a 390 sem mais de uma
+     linha de mobília; os nove restantes alcançáveis a um toque». Até aqui a
+     fila inteira vivia dentro do `<details>` fechado, e o concelho — que é a
+     primeira das três tarefas do leitor — custava dois toques a partir do menu.
+
+     O GRUPO DO LEITOR É UMA FILA HORIZONTAL na barra, ao lado do comando; os
+     outros dois só se desenham com o menu aberto, e aí a fila inteira passa a
+     coluna, como já passava. */
   .nav-principal {
+    /* DEPOIS DO COMANDO DO MENU E DO DE LÍNGUA, e não entre os dois: com a
+       ordem 2 a fila do leitor empurrava o comando de língua para uma terceira
+       linha. A mobília fica na primeira linha, os três destinos na segunda. */
+    order: 3;
+    display: flex;
+    /* A FILA DO LEITOR TOMA A SUA LINHA, e não a partilha com o comando do menu
+       e o de língua: com eles ao lado, os três destinos quebravam para uma
+       segunda linha e a barra crescia duas vezes. Uma linha para a mobília, uma
+       para os três destinos. */
+    flex-basis: 100%;
+    gap: 0 14px;
+    padding-top: 0;
+  }
+  .nav-principal .nav-inicio,
+  .nav-principal .nav-pais,
+  .nav-principal .nav-casa,
+  /* O COMANDO DO TEMA SÓ SE VÊ COM O MENU ABERTO. Vive dentro da navegação desde
+     o bloco A (item A7), e a navegação estava escondida abaixo de 640: com a
+     fila do leitor à vista, ele passava a ver-se sempre e custava mais uma linha
+     de 44 px na barra. */
+  .nav-principal .tema-no-menu {
     display: none;
+  }
+  .nav-menu[open] ~ .nav-principal {
     order: 3;
     flex-basis: 100%;
-    gap: 0;
     flex-direction: column;
     align-items: stretch;
     padding-top: 4px;
   }
-  .nav-menu[open] ~ .nav-principal {
+  .nav-menu[open] ~ .nav-principal .nav-grupo {
     display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
   }
-  .nav-principal a {
+  .nav-menu[open] ~ .nav-principal .tema-no-menu:not([hidden]) {
+    display: inline-flex;
+  }
+  .nav-menu[open] ~ .nav-principal a {
     border-top: 1px solid var(--rule);
   }
 }
@@ -576,7 +657,11 @@ section {
   .masthead-furniture > .tema {
     display: none;
   }
-  .tema-no-menu:not([hidden]) {
+  /* SÓ COM O MENU ABERTO (bloco F1.10, item 8.9, 08.09.2026). O comando vive
+     dentro da navegação desde o bloco A (item A7), e a navegação estava toda
+     escondida abaixo de 640: com os três destinos do leitor à vista, ele passava
+     a ver-se sempre e custava mais uma linha de 44 px na barra. */
+  .nav-menu[open] ~ .nav-principal .tema-no-menu:not([hidden]) {
     display: inline-flex;
     width: 100%;
   }
