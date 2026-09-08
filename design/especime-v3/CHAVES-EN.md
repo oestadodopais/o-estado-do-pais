@@ -1226,6 +1226,7 @@ no `INVENTARIO-FRASES.md` no mesmo commit.*
 | chave | pt (antes → depois) | en (antes → depois) | nota |
 |---|---|---|---|
 | `inicio.cabeca.ledePais.abre` | Fora do limiar:  → Fora do limiar da Comissão:  | Outside the threshold:  → Outside the Commission threshold:  | a lede nomeia as medidas do painel do Procedimento que passaram o seu limiar, e o limiar delas é o desse painel. «Fora do limiar:» sozinho era a palavra sem dono que o item 8.5 veio tirar |
+| `agenda.afectaK` | Linhas que isto move → Linhas a que isto diz respeito | Rows this moves → Rows this concerns | decisão do lugar de direção de 08.09.2026, da leitura a frio do bloco F2.6b do motor: o campo `afecta_linhas` de um acontecimento passou a levar as linhas do último período publicado de cada fonte, que um ficheiro novo torna desatualizadas, e não linhas que o acontecimento MUDE. O verbo prometia mais do que o campo entrega. **Não tem linha no inventário da voz**, e não é por esquecimento: a etiqueta rende-se dentro de um `<p class="agenda-nota">` cuja origem já está declarada por `data-agenda`, e o bloco inteiro é que é classificado; o portão da voz não conta a etiqueta como frase própria (medido: a construção fica verde sem linha nova) |
 
 **As quatro peças da manchete antiga não mudaram de palavra, mudaram de página.**
 `inicio.cabeca.tituloPaisA`, `tituloPaisUm`, `tituloPaisMuitos` e `tituloPaisFim`

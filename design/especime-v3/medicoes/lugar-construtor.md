@@ -7,19 +7,19 @@ deste relatório foi escrito à mão: cada um tem ao lado o comando que o mediu.
 
 ---
 
-## Estado · 08.09.2026 · a manchete do país, «limiar» com quem o fixou, a página do concelho e o mapa da região
+## Estado · 08.09.2026 · as definições dos dois painéis e das 21 medidas, e os dois limiares com o seu fixador
 
 | | |
 |---|---|
 | cabeça | a última do ramo (`git rev-parse HEAD`) |
-| `main` fundido | `43f4b52a` (fusão `47d957f6`) e `d9066379` (fusão `5757746f`, o F1.1d e o §9 do brief) |
+| `main` fundido | `fe6478aa` (só documentos: a §1.102 com as emendas, o §10 do brief com o 8.17 emendado, o brief do F1.1e) |
 | `build` · `verify` · `typecheck` | **0** · **0** · **0** (códigos lidos de `build.exit`, `verify.exit`, `typecheck.exit`) |
-| a corrida da CI | `34228140699` **verde** sobre `d2deb968` (a primeira das duas cabeças desta sessão) |
-| feito nas sessões anteriores | a régua (encargo (b)); **§9.1**; **8.8**; **8.9**; **§7.5**; **8.16**; **8.13**; **8.12**; **8.14 inteiro**; **§2.2** |
-| feito nesta sessão | **8.15 e a manchete do país** (a decisão 1: `/` passa a uma frase com as duas medidas de cabeça do domínio vivo, e as duas contagens do painel são a manchete da página europeia); **8.5** (a decisão 2: `limiarFixadoPor`, o guarda, as palavras do cartão por fixador e a frase da leitura); **§7.1** (a página do concelho: a grelha das oito peças grandes sai, a leitura de cada medida abre do cartão); **8.17** (o cartão dos 308 pontos sai da página do concelho e entra o nível da região do mapa do F1.1d) |
-| a seguir | **8.4** (a definição de uma linha de cada painel e das 21 medidas, citada da Comissão); **8.11 e §7.3**; o resto do §9 (pontos 2 a 10); as outras páginas (a região, o domínio, os índices, os estudos, o Método); o item 5 do encargo (o caminho, a busca única, «fonte» diz o publicador, as datas); o fecho |
-| nada a meio | **nada ficou por acabar.** As duas cabeças desta sessão são inteiras: a primeira (`d2deb968`) é a das duas decisões, e a corrida `34228140699` fechou-a verde; a segunda é a da página do concelho e do mapa da região, com os três portões a 0 nesta árvore. Não há `git stash` nem ficheiro por commitar |
-| a régua, na cabeça desta sessão | L1 6 598 · L2a 2 · L2b 18 · L2c 10 · L3 51 · L4 **0** · L5 7 213 · L6 26 178 · 8.5 **0** · 8.8 **0** · 8.13 **0** · 8.14 **0** · 8.17 **0** e **0** (`node scripts/check-lugar.mjs`) |
+| a corrida da CI | a primeira linha de `gh run list --branch lugar-2026-09-04` |
+| feito nas sessões anteriores | a régua (encargo (b)); **§9.1**; **8.8**; **8.9**; **§7.5**; **8.16**; **8.13**; **8.12**; **8.14 inteiro**; **§2.2**; **8.15**; **8.5**; **§7.1**; **8.17** |
+| feito nesta sessão | **os dois limiares sem fixador** (a decisão do fecho do dia: `porRegistar` sai, entram `pacto` e `conselho`, cada um com o excerto do documento que a linha cita; o motivo `limiar-do-quadro` do `allowlist.yml` corrigido); **8.4 e a segunda metade do 8.14** (a definição de cada painel e das 21 medidas, citada da Comissão e do Eurostat, com o documento, o endereço, a data de acesso e o excerto literal declarados); **§9.3**, **§9.4**, **§9.5**, **§9.8** e **§9.9**; a etiqueta da agenda do F2.6b |
+| a seguir | **8.11 e §7.3**; o resto do §9 (2, 6, 7 e 10); as outras páginas (a região, o domínio, os índices, os estudos, o Método); o item 5 do encargo (o caminho, a busca única, «fonte» diz o publicador, as datas); o fecho |
+| nada a meio | **nada ficou por acabar.** Os três portões a 0 nesta árvore, com os códigos lidos dos ficheiros; não há `git stash` nem ficheiro por commitar. **Uma régua de fora da cadeia mudou e não foi corrida** (a célula A4 de `tests/inicio/porta.mjs`, que abre navegador e não está no `verify` nem na CI): corre-se à mão no fecho do bloco, com as outras medidas de 390 px |
+| a régua, na cabeça desta sessão | L1 6 598 · L2a 2 · L2b 18 · L2c 10 · L3 **30** · L4 **0** · L5 7 213 · L6 26 178 · 8.5 **0** · 8.8 **0** · 8.13 **0** · 8.14 **0** · 8.17 **0** e **0** (`node scripts/check-lugar.mjs`, verde) |
 
 ## A tabela das medidas (decisão do lugar de direção, 07.09)
 
@@ -37,7 +37,7 @@ dormir.
 | L2a · segundas listas dos 308 concelhos (fora de `/municipios`, fora de uma lista fechada) | 2 (`/` e `/en`) | 2 (por fazer) | idem |
 | L2b · réguas inteiras da convergência fora de `/regioes` | 18 | 18 (por fazer) | idem |
 | L2c · sinopses de estudo fora de `/estudos` | 10 (5 em `/municipios/evora`, 5 na inglesa) | 10 (por fazer) | idem |
-| L3 · palavras fora do vocabulário fechado, no texto da casa | 51 | 51 (por fazer) | idem |
+| L3 · palavras fora do vocabulário fechado, no texto da casa | 51 | **30** (o item 8.4 tirou as 22 de «indicadores») | idem |
 | L4 · frases de definição e de hierarquia em falta | 10 | **0** · feito | idem |
 | L5 · páginas abaixo da primeira sem caminho no cabeçalho | 7 211 | **7 213** (+2: as duas páginas novas) | idem |
 | L6 · selos cuja etiqueta não é o publicador da linha | 26 168 | **26 178** (+6 das duas páginas novas, +4 da manchete nova) | idem |
@@ -104,6 +104,168 @@ A quarta é o contador das séries atrasadas que o F1.6 pôs na mobília
 então. O item 8.1 e o §7.3 deste brief mandam essas linhas SAIR do cabeçalho de
 todas as páginas para a página da medida e para o Método: a célula reescreve-se
 quando esse item entrar, e não antes.
+
+---
+
+## O que a quarta sessão fez, item a item
+
+### Os dois limiares sem fixador: leram-se os documentos, e os dois dizem quem os fixou
+
+**A decisão do lugar de direção no fecho do dia** (§1.102): o fixador vem do
+documento que a linha cita, e de mais lado nenhum; escreve-se só se o documento o
+disser, e senão fica «limiar publicado», que é honesto. **Leram-se os dois, e os
+dois dizem-no.**
+
+| medida | o documento que a linha cita | o que ele diz, palavra por palavra | o fixador |
+|---|---|---|---|
+| o saldo das administrações públicas (E2) | a `note` da linha nomeia a página Statistics Explained do Eurostat, alojada com o sha256 dos seus bytes no estudo `13 Dominios` do motor | «Under the terms of the EU's Stability and Growth Pact (SGP), Member States pledged to keep their deficits and debt below certain limits: a Member State's government deficit may not exceed 3% of its gross domestic product (GDP), while its debt may not exceed 60% of GDP.» | `pacto` |
+| o crescimento da despesa líquida (E4) | o Parecer n.º 02/2026 do Conselho das Finanças Públicas, que é o documento da própria linha (o excerto está na p. 9 do PDF) | a p. 6 do MESMO parecer: «Nesse documento comprometeu-se com uma determinada trajetória de crescimento da despesa líquida, que depois foi aprovada pelo Conselho da UE, passando a ser a trajetória assumida nos termos da Recomendação do Conselho da União Europeia de janeiro de 2025.»; e a p. 9 repete a atribuição na frase de que o excerto é a segunda metade: «a taxa de crescimento em 2025 foi superior à prevista no compromisso assumido por Portugal e endossado pelo Conselho da UE» | `conselho` |
+
+**`porRegistar` saiu da lista fechada**, e a razão fica escrita no ficheiro: um
+valor sem utilizador numa lista fechada é uma porta aberta para o próximo que não
+quiser procurar. Volta com a origem ao lado no dia em que uma medida tenha limiar
+publicado e um documento calado.
+
+**A frase que diz o que o limiar é e quem o fixou passou a viver dentro do par de
+cada fixador**, e a vista deixou de escolher: um par com frase rende-a, um par
+sem frase não a rende. Só o `lei` não tem, porque a página do concelho já diz a
+sua uma vez. **Nenhuma das três leva um algarismo:** o número do diploma, o do
+limiar e a data da Recomendação seriam algarismos sem marca numa página do
+leitor.
+
+**A página do domínio passou a render essa frase, e não rendia nenhuma.** É onde
+as três medidas com limiar vivem, e as três têm três fixadores diferentes; a
+primeira passagem pusera a frase na leitura da primeira página, da página europeia
+e da página do concelho, e esta página ficara de fora.
+
+**O motivo `limiar-do-quadro` de `ledger/allowlist.yml` deixou de descrever só o
+Procedimento** (o achado 2 da sessão anterior). Passa a dizer as três famílias que
+justifica, cada uma com a sua origem: os treze valores de referência do painel do
+Procedimento, o limite de défice do Pacto, e a taxa de crescimento da trajetória
+que o Conselho aprovou.
+
+### 8.4 e a segunda metade do 8.14 · a definição de cada painel e de cada uma das 21 medidas
+
+**Nenhuma destas frases foi escrita de cabeça, e é a única regra do bloco novo.**
+Cada uma diz o que uma descrição da Comissão Europeia ou do Eurostat diz, e mais
+nada; a descrição está ao lado dela em `ORIGENS_DAS_DEFINICOES`, palavra por
+palavra, com o documento, o endereço e a data em que foi lido. As duas famílias
+de origem são documentação do publicador e não fontes do corredor, que é o que o
+brief autoriza ler pela rede.
+
+| origem | o que serve | conferido |
+|---|---|---|
+| Comissão Europeia, «Scoreboard · Macroeconomic Imbalance Procedure» | o painel do Procedimento, e onze das treze medidas dele | o excerto foi lido do HTML da página com `curl` e conferido no texto, e não só pelo resumo de quem a foi buscar |
+| Eurostat, «European pillar of social rights · Information on data» | o Painel Social | idem |
+| Eurostat, Statistics Explained, dez páginas de glossário | duas medidas do Procedimento (o índice de preços da habitação, a taxa de atividade) e as oito do Painel Social | idem, uma a uma |
+
+**O cabeçalho de cada painel inverteu-se, como o item 8.4 manda:** o `<h2>` passa
+a dizer o que aquilo é, em palavras simples («O painel dos desequilíbrios da
+economia», «O painel do emprego e das condições sociais»), e o nome oficial com a
+contagem das medidas desceu ao subtítulo, onde continua a levar a chave da prova
+que o portão reconta. Por baixo, a definição de uma linha.
+
+**As duas frases de contexto do F1.1 saíram (§9.3).** Diziam contra que documento
+da Comissão a casa tinha confirmado os valores, e a Emenda 15 não deixa a página
+do leitor falar do trabalho da casa. A definição cita a Comissão como FONTE DA
+DEFINIÇÃO, e não como testemunha desta casa.
+
+**O que não podia sair com elas é a fração, e ficou.** O subtítulo do Painel
+Social diz «Painel Social Europeu · 8 medidas», e um leitor que só leia isso fica
+a pensar que o painel TEM oito medidas: tem dezassete principais, e o livro-razão
+guarda oito. A frase ficou sozinha numa linha (`ALCANCE_DO_PAINEL_SOCIAL`), sem a
+glosa que o §9.4 tirou e sem uma palavra sobre a conferência. É ela que a régua
+F16 do `check:formas` continua a ler no `dist/` com as duas contagens compostas
+por conta própria: a régua não perdeu o sujeito.
+
+**As sete frases que a casa tinha escrito de si própria saíram**, e as vinte e
+uma definições citadas tomaram-lhes o lugar. As sete eram boas e não tinham
+origem nenhuma. No inventário são **dezoito linhas a passar a `retirada`** com a
+razão escrita (as catorze das sete frases, nas duas edições, e as quatro das
+frases de contexto dos painéis) e **cinquenta a entrar**; o portão da voz fecha a
+construção sobre cada uma das duas contas, e foi ele que as pediu uma a uma.
+
+**A definição abre a leitura**, antes da unidade, do limiar e das datas, que é
+onde o item 8.14 a manda estar; é a única frase de uma leitura que é prosa, e por
+isso leva o tipo da prosa e a tinta cheia, com a instrumentação a seguir.
+
+**Um guarda fecha a construção sem definição**, como o `fixadorDoLimiar()` faz sem
+fixador: uma medida sem definição declarada, ou uma definição que diga vir de uma
+origem que não existe, não se rende.
+
+### O resto do §9 que andava com o 8.4
+
+* **§9.3** · as duas frases de contexto substituídas, acima.
+* **§9.4** · as quatro contagens dos cabeçalhos dos painéis passam a `navegacao`
+  (dizem quantos cartões há abaixo), e as duas glosas do Painel Social saíram.
+* **§9.5** · os cinco rótulos («Por domínio», «By domain», «Concelho», «Valor»,
+  «Value») passam a `navegacao`, como a gémea «Municipality» já estava.
+* **§9.8** · a prosa da segunda secção do bloco `cabeca` dizia «sete» e a tabela
+  tem nove desde que o F1.1 tirou a gaveta da busca: a prosa corrige-se, e diz o
+  que a tabela tem.
+* **§9.9** · a descrição da página do domínio dizia «a data de cada uma» em
+  português e «the dates of each one» em inglês; a página imprime três datas por
+  medida, e as duas passam a dizer «as datas».
+
+### A etiqueta da agenda (pedido do lugar de direção, da leitura a frio do F2.6b)
+
+`agenda.afectaK` passa de «Linhas que isto move» a **«Linhas a que isto diz
+respeito»**, e de «Rows this moves» a **«Rows this concerns»**. O motor passou a
+pôr no campo `afecta_linhas` as linhas do último período publicado de cada fonte,
+que um ficheiro novo torna desatualizadas, e não linhas que o acontecimento mude:
+o verbo prometia mais do que o campo entrega.
+
+**A mudança não tem linha no inventário da voz, e não é por esquecimento.** A
+etiqueta rende-se dentro de um `<p class="agenda-nota">` cuja origem já está
+declarada por `data-agenda`, e é o bloco inteiro que é classificado: o portão da
+voz não a conta como frase própria. Medido, e não suposto: a construção fica
+verde sem linha nova. A mudança fica declarada em `CHAVES-EN.md`, que é o registo
+das chaves que mudam de texto.
+
+---
+
+## Os achados da quarta sessão contra o brief
+
+**1. Uma das 21 medidas ficou sem definição em palavras simples, e nenhuma fonte
+autorizada a dá.** A posição de investimento internacional. A página da Comissão
+sobre o painel publica «net international investment position as percent of GDP»
+e mais nada, e o Eurostat não tem página de glossário para o conceito: procurado
+a 08.09.2026 em `Glossary:Net_international_investment_position`,
+`Glossary:Net_international_investment_position_(NIIP)` e
+`Glossary:International_investment_position_(IIP)`, as três respondem «Page not
+found». A frase que a página tinha antes deste bloco («o que o país tem a haver
+do exterior menos o que lhe deve: negativo quando deve mais do que tem a haver»)
+explicava bem e **não tinha origem nenhuma**: saiu, e a definição que ficou diz o
+rótulo. **Fica para o lugar de direção**, que pode alargar as origens
+autorizadas (o manual do FMI, BPM6, ou o glossário do Banco Central Europeu
+definem-na) ou aceitar o rótulo.
+
+**2. A célula A4 de `tests/inicio/porta.mjs` perdeu o que media, e mudou de
+medida.** Exigia «Comissão Europeia» dentro de cada uma das duas frases de
+contexto, porque essas frases diziam contra que documento da Comissão a casa
+tinha confirmado os valores. **Com o §9.3 essas frases saíram**, e as duas
+definições que ficaram não têm o mesmo publicador: a do Procedimento sai da
+página da Comissão e nomeia-a, a do Painel Social sai da página do Eurostat sobre
+o Pilar. Continuar a exigir a mesma cadeia nas duas era exigir que a segunda
+dissesse o que a sua origem não diz. A célula passa a comparar cada parágrafo
+`data-contexto-painel` com a definição DECLARADA daquele painel, carácter a
+carácter, o que é mais apertado do que o que ela media: uma frase reescrita à mão
+na vista cai, uma frase que perca a Comissão cai, uma frase que troque de painel
+cai. **A régua não corre no `verify` nem na CI, e não foi corrida:** corre-se à
+mão no fecho do bloco.
+
+**3. `src/components/inicio/ListaSocial.astro` é um componente órfão.** Nenhum
+ficheiro do sítio o importa (`grep -rln "ListaSocial" src/` devolve só o próprio
+ficheiro), e ele ainda recebe um `contexto` por propriedade e nomeia num
+comentário o `CONTEXTO_DOS_PAINEIS` que este bloco apagou. Não foi tocado: não é
+ficheiro deste item, e apagar um componente é uma decisão de quem sabe se algum
+ramo a correr em paralelo o vai buscar. **Fica dito.**
+
+**4. A L3 desceu 21 sem que nenhum item a fosse buscar.** As duas frases de
+contexto dos painéis rendiam «os indicadores» vinte e duas vezes nas duas
+edições, e saíram com o §9.3; as definições que entraram no lugar delas usam o
+vocabulário fechado. O teto desceu de 51 para 30 com a data, que é o que a régua
+exige de um teto frouxo.
 
 ---
 
@@ -526,8 +688,20 @@ régua a ser desligada.
 A régua imprime os catorze números a qualquer momento
 (`node scripts/check-lugar.mjs`), e é por ela que se sabe onde o bloco está.
 
+**O item 1 desta lista saiu a 08.09.2026: o 8.4 está feito**, com as vinte e uma
+definições e as duas dos painéis citadas e declaradas, e com o §9.3 e o §9.4 que
+andavam com ele. O que fica dele é o achado 1 acima (a posição de investimento
+internacional, sem uma definição em palavras simples com origem autorizada).
+
 | # | o que falta | onde se toca | a nota de quem retoma |
 |---|---|---|---|
+| 1 | **8.11 e §7.3** · a prosa e as linhas de frescura fora do primeiro ecrã | `Masthead.astro` (as três leituras da mobília), `MunicipioView`, `DominioView`, `EstudoView`, `LivroView` | é o que endireita a célula A7 de `correcoes-a.mjs`, vermelha desde o F1.6 por a mobília ter quatro leituras onde a célula exige três. **A página do concelho ficou mais perto**: a prosa que estava corrida por baixo das peças está hoje dentro das dobras, e o que resta medir é o primeiro ecrã a 390 × 664, antes e depois, em `/`, num concelho, num estudo e no índice dos números. **A página europeia ganhou duas linhas de cabeçalho por painel** com o 8.4 (o subtítulo e a definição), e as duas só se rendem com uma leitura aberta (8.12): não estão no primeiro ecrã em repouso, e a medição tem de o confirmar |
+| 2 | **o resto do §9** (2, 6, 7 e 10) | o inventário da voz, `DominioView`, `Pesquisa.astro` | o 3, o 4, o 5, o 8 e o 9 estão feitos. O 2 e o 6 andam com o 8.11; o 7 anda com a busca única do §2.6; o 10 é a dívida da linha F1.2 e fica para o F3.3, como o próprio §9 escreve |
+| 3 | **as outras páginas** (o item 4 do encargo) | `RegiaoView`, `DominioView`, os índices, `EstudoView`, `MetodoView` | a região (§1 e §7.6), o domínio (§7.7), os índices (§7.8), os estudos (§7.4 e 8.6), o Método no telemóvel (§7.9). **A do concelho está feita** (§7.1, 8.10, 8.17); falta-lhe a linha dos estudos (§1 e 8.6), que anda com os estudos |
+| 4 | **item 5 do encargo** · o caminho no cabeçalho (§2.5, com o desenho da §C), a busca é uma (§2.6), «fonte» diz o publicador (§2.4, §7.2, a L6), as datas de frescura (§7.3) | `Caminho.astro` (por escrever), `Pesquisa.astro`, `Provenance.astro`, `gate-html.mjs` | a L5 (7 213) e a L6 (26 178) são os dois números grandes que ainda não desceram, e são estes dois itens |
+| 5 | **o fecho** | as capturas, as plantas da L9, o `REVISOES-DO-INVENTARIO.md` | as capturas de `/`, `/municipios`, uma região, **um concelho com o mapa da região**, a página europeia e um estudo a 390 × 664 e 1 280 nas duas edições; as medidas de 390 px de `tests/inicio/porta.mjs` corridas à mão (a A1 com o teto das três linhas da manchete, a A3 e a A13 na página europeia, **e a A4, que mudou de medida nesta sessão e não foi corrida**) |
+
+---|---|---|---|
 | 1 | **8.4** · a definição de uma linha de cada painel e de cada uma das 21 medidas | `src/data/figuras.mjs`, `UniaoEuropeiaView.astro`, o inventário da voz | cada definição sai da descrição da PRÓPRIA Comissão e é citada com o documento, o endereço, a data de acesso e o excerto literal; a origem tem de ser um documento que o livro-razão já cita para essas linhas, ou a página da Comissão sobre o painel; onde não houver uma frase da Comissão que sirva, a definição escreve-se só com os campos da linha e di-lo. **Nunca se inventa.** O §9.3 acrescenta: sem uma palavra sobre a conferência da casa. É o item mais caro do que falta, e o que precisa de leitura das fontes primárias. **A leitura de cada medida já tem o sítio onde a definição entra**: é a `.dobra-frase` que hoje leva a frase da medida, e as vinte e uma dobras existem |
 | 2 | **8.11 e §7.3** · a prosa e as linhas de frescura fora do primeiro ecrã | `Masthead.astro` (as três leituras da mobília), `MunicipioView`, `DominioView`, `EstudoView`, `LivroView` | é o que endireita a célula A7 de `correcoes-a.mjs`, vermelha desde o F1.6 por a mobília ter quatro leituras onde a célula exige três. **A página do concelho ficou mais perto**: a prosa que estava corrida por baixo das peças está hoje dentro das dobras, e o que resta medir é o primeiro ecrã a 390 × 664, antes e depois, em `/`, num concelho, num estudo e no índice dos números |
 | 3 | **o resto do §9** (pontos 2 a 10) | o inventário da voz, `DominioView`, `Pesquisa.astro` | os pontos 5, 8 e 9 são reclassificações e correções de prosa no inventário e custam pouco; o 2 e o 6 andam com o 8.11; o 7 anda com a busca única do §2.6. **O ponto 4 (as quatro contagens dos cabeçalhos dos painéis a `navegacao`) e o ponto 3 (as duas frases de contexto) andam com o 8.4**, que é o item que lhes toca |

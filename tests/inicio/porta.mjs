@@ -163,6 +163,12 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium, webkit } from 'playwright';
 
+/* A DECLARAÇÃO DAS DEFINIÇÕES DOS DOIS PAINÉIS (F1.10, item 8.4, 08.09.2026). A
+   célula A4 compara o que a página rende com o que a declaração diz, e por isso
+   lê-a: os dois lados da comparação deixam de ser o mesmo texto escrito duas
+   vezes na régua. */
+import { DEFINICAO_DOS_PAINEIS } from '../../src/data/figuras.mjs';
+
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = process.env.OEDP_DIST
   ? path.resolve(process.env.OEDP_DIST)
@@ -680,40 +686,52 @@ async function corre() {
     );
 
     /* ------------------------------------------------------------------------
-       A COMISSÃO EM CADA UMA DAS DUAS FRASES, E NÃO NO DOCUMENTO (Major 9)
+       A DEFINIÇÃO DE CADA PAINEL, CARÁCTER A CARÁCTER (F1.10, item 8.4)
        ------------------------------------------------------------------------
-       A primeira redação contava a cadeia no documento inteiro. A leitura a frio
-       apanhou o que isso deixava passar: «Commission presence is counted
-       anywhere in the document, not in each context sentence», e a planta P1
-       provou-o — a frase do Procedimento perdeu a Comissão na fonte e a célula
-       continuou verde, porque a frase do Painel Social ainda a tinha.
+       A CÉLULA MUDOU DE MEDIDA A 08.09.2026, E A RAZÃO ESCREVE-SE. Ela exigia
+       «Comissão Europeia» dentro de cada uma das duas frases de contexto, porque
+       essas frases diziam contra que documento da Comissão a casa tinha
+       confirmado os valores. **Essas duas frases saíram** (§9.3 do brief, sobre a
+       leitura cruzada do inventário): a Emenda 15 não deixa a página do leitor
+       falar do trabalho da casa. No lugar delas está a DEFINIÇÃO de cada painel,
+       e as duas definições não têm o mesmo publicador: a do Procedimento sai da
+       página da Comissão sobre o painel e nomeia-a; a do Painel Social sai da
+       página do Eurostat sobre o Pilar. Continuar a exigir a mesma cadeia nas
+       duas era exigir que a segunda dissesse o que a sua origem não diz.
 
-       A medida do brief é por frase: «as duas frases de contexto têm de nomear
-       "Comissão Europeia" / "European Commission"». A célula lê os dois
-       parágrafos pela marca que eles levam, `data-contexto-painel`, e exige a
-       cadeia dentro de CADA um. A contagem no documento fica ao lado, para o
-       relatório, e não decide nada. */
+       O QUE A CÉLULA MEDE AGORA é mais apertado do que o que media: cada
+       parágrafo `data-contexto-painel` tem de render, CARÁCTER A CARÁCTER, a
+       definição que `DEFINICAO_DOS_PAINEIS` declara para aquele painel naquela
+       edição. Uma frase reescrita à mão na vista cai; uma frase que perca a
+       Comissão cai; uma frase que troque de painel cai. A contagem da Comissão no
+       documento fica ao lado, para o relatório, e não decide nada. */
     const nComissao = ocorrencias(docDoPainel, ed.comissao);
+    const declaradas = Object.fromEntries(
+      Object.entries(DEFINICAO_DOS_PAINEIS).map(([chave, d]) => [
+        chave,
+        d[ed.chave].join('').replace(/\s+/g, ' ').trim(),
+      ]),
+    );
     const p4 = await pagina(ed.painel, 1280, 900);
     const frases = await p4.evaluate(
-      ({ palavra }) =>
-        [...document.querySelectorAll('[data-contexto-painel]')].map((el) => ({
-          painel: el.getAttribute('data-contexto-painel'),
-          tem: (el.textContent ?? '').includes(palavra),
-          texto: (el.textContent ?? '').replace(/\s+/g, ' ').trim().slice(0, 60),
-        })),
-      { palavra: ed.comissao },
+      ({ esperado }) =>
+        [...document.querySelectorAll('[data-contexto-painel]')].map((el) => {
+          const painel = el.getAttribute('data-contexto-painel') ?? '';
+          const texto = (el.textContent ?? '').replace(/\s+/g, ' ').trim();
+          return { painel, texto, tem: texto === esperado[painel] };
+        }),
+      { esperado: declaradas },
     );
     await p4.__ctx.close();
-    const semComissao = frases.filter((f) => !f.tem);
-    medidas[`A4.${ed.chave}`] = { noDocumento: nComissao, frases };
+    const fora = frases.filter((f) => !f.tem);
+    medidas[`A4.${ed.chave}`] = { noDocumento: nComissao, frases, declaradas };
     conta(
       `A4.${ed.chave}`,
-      frases.length === 2 && semComissao.length === 0,
-      `«${ed.comissao}» em cada frase de contexto de ${ed.painel}: ${frases.length} frase(s), ` +
-        `${semComissao.length} sem a Comissão` +
-        (semComissao.length ? ` (${semComissao.map((f) => f.painel).join(', ')})` : '') +
-        ` · no documento inteiro: ${nComissao}`,
+      frases.length === 2 && fora.length === 0,
+      `a definição declarada de cada painel em ${ed.painel}: ${frases.length} frase(s), ` +
+        `${fora.length} diferente(s) da declaração` +
+        (fora.length ? ` (${fora.map((f) => `${f.painel}: «${f.texto.slice(0, 50)}»`).join('; ')})` : '') +
+        ` · «${ed.comissao}» no documento inteiro: ${nComissao}`,
     );
 
     const nCasa = ed.casa.map((w) => `${w}=${ocorrencias(doc, w)}`);
@@ -1494,12 +1512,13 @@ const PLANTAS = [
           ),
   },
   {
-    nome: 'a frase do Procedimento sem «Comissão Europeia» (a outra frase fica com ela)',
+    nome: 'a definição do Procedimento sem «Comissão Europeia» (a do Painel Social fica intacta)',
     celulas: ['A4.pt', 'A4.en'],
     /* A PLANTA MUDOU PARA A FORMA QUE A PRIMEIRA CÉLULA DEIXAVA PASSAR (Major 9,
-       e a planta P1 da leitura a frio). Tira a Comissão SÓ da frase do
-       Procedimento, e deixa-a na do Painel Social: a célula que contava a cadeia
-       no documento inteiro continuava verde, e a que a exige em cada frase cai. */
+       e a planta P1 da leitura a frio). Tira a Comissão SÓ da definição do
+       Procedimento, e deixa a do Painel Social como está: a célula que contava a
+       cadeia no documento inteiro continuava verde, e a que compara cada
+       parágrafo com a declaração cai. */
     f: (h, rota) => {
       const palavra = rota.startsWith('/en') ? 'European Commission' : 'Comissão Europeia';
       const troca = rota.startsWith('/en') ? 'European Board' : 'Junta Europeia';

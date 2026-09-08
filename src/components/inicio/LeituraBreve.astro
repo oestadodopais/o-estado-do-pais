@@ -100,6 +100,16 @@ const leituras = medidas.map((m) => ({
      leitura leva a nota da medida e a frase que a lê, e as duas compõem-se na
      vista, com o atraso da série e as datas da linha lá dentro. Um par de
      línguas escolhe-se aqui; uma frase pronta não se escolhe duas vezes. */
+  /* A DEFINIÇÃO DA MEDIDA (F1.10, item 8.4 e a segunda metade do 8.14). As 21
+     medidas dos dois quadros da União trazem-na na declaração, tirada da
+     descrição da própria Comissão ou do Eurostat e citada com o documento, o
+     endereço, a data de leitura e o excerto literal
+     (`DEFINICOES_DAS_MEDIDAS` e `ORIGENS_DAS_DEFINICOES`, em
+     `src/data/figuras.mjs`). É a PRIMEIRA linha da leitura, porque nomes como
+     «jovens NEM» ou «rácio S80/S20» não se entendem sem ela. As medidas de um
+     concelho não trazem definição: as frases delas são a leitura da medida, e
+     vêm por `frasesProntas`. */
+  definicao: m.definicao?.[lang] ?? null,
   frases: m.frasesProntas ?? (m.frase?.[lang] ? [m.frase[lang]] : []),
   limiar: m.limiar ?? null,
   comparacao: m.comparacao ?? null,
@@ -218,6 +228,15 @@ for (let i = 0; i < RANHURAS.length; i++) {
         </summary>
 
         <div class="dobra-corpo">
+          {/* A DEFINIÇÃO ABRE A LEITURA (item 8.14): antes da unidade, antes do
+              limiar e antes das datas. O valor não está aqui, está no cartão que
+              esta leitura abre. */}
+          {l.definicao && (
+            <p class="dobra-definicao">
+              <Frase partes={l.definicao} lang={lang} selos={true} />
+            </p>
+          )}
+
           <p class="dobra-unidade" data-medida-unidade>
             <Frase partes={l.unidade} lang={lang} selos={true} />
           </p>

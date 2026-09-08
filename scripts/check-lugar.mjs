@@ -91,8 +91,16 @@ const TETOS = {
   /* L2c · sinopses de estudo fora de `/estudos`. */
   l2_sinopses: 10,
   /* L3 · ocorrências do vocabulário fechado no texto da casa, fora das
-     exceções e das duas famílias de transcrição. */
-  l3_vocabulario: 51,
+     exceções e das duas famílias de transcrição.
+     DESCE DE 51 PARA 30 a 08.09.2026, com o item 8.4: as duas frases de contexto
+     dos painéis saíram (§9.3), e eram elas que rendiam «os indicadores» vinte e
+     duas vezes nas duas edições da página europeia. As definições que entraram no
+     lugar delas usam o vocabulário fechado («medida»). O que fica são as
+     dezoito ocorrências de «município» nas sinopses dos estudos, as duas de
+     «indicador» que são campos da fonte na página do domínio, e as dez de
+     «trabalho» e «trabalhos» que o §3 do brief e a §A.4 do relatório põem fora
+     deste bloco. */
+  l3_vocabulario: 30,
   /* L4 · falhas: uma frase de definição ou de hierarquia que não está a 1 onde
      o §2 do brief a manda estar. DESCE DE 10 PARA 0 a 08.09.2026: as cinco
      frases de hierarquia passaram a render-se nos cinco índices, nas duas
@@ -208,7 +216,7 @@ const EXCECOES_DO_VOCABULARIO = [
        «trabalho(s)» como nome de estudo. */
     conta: 'trabalho',
     porque: '«trabalho» no sentido de emprego, que não é o nome de um estudo',
-    padrao: /procuram trabalho|custo unitário do trabalho|Trabalho, Solidariedade e Segurança Social|mercado de trabalho|postos de trabalho/,
+    padrao: /procuram trabalho|custo unitário do trabalho|custo nominal do trabalho|Trabalho, Solidariedade e Segurança Social|mercado de trabalho|postos de trabalho/,
   },
 ];
 
@@ -296,6 +304,13 @@ const QUALIFICADORES_DO_LIMIAR = [
   'stability and growth pact threshold',
   'limiar recomendado pelo conselho da ue',
   'threshold recommended by the council of the eu',
+  /* A DEFINIÇÃO DO PAINEL DO PROCEDIMENTO (item 8.4, 08.09.2026) diz de quem os
+     limiares são no mesmo bloco: o sujeito da frase é «a Comissão Europeia» e o
+     que ela põe em cada medida é «o seu limiar indicativo», que é a palavra da
+     página da Comissão («indicative thresholds»). Entra por extenso, como os
+     outros blocos que a casa já qualificava por outra via. */
+  'com o seu limiar indicativo',
+  'with its indicative threshold',
   /* A AUSÊNCIA DECLARADA. «sem limiar» é uma das três palavras do vocabulário
      fechado do estado, e «não tem limiares» é a frase do Painel Social. */
   'sem limiar',
