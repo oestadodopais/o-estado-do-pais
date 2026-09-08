@@ -290,7 +290,14 @@ if (cartoes.length === 0) {
  * da página: na página do domínio. Fica escrito no relatório do bloco.
  */
 const comPagina = new Set(dominiosComPagina().map((d) => d.slug));
-const indiceDosDominios = DOMINIOS.map((d) => {
+/* A LISTA É A DOS DOMÍNIOS COM PÁGINA (bloco F1.10, §9.1, 08.09.2026, pela
+   leitura cruzada do inventário das frases). Era a dos dezoito, com o estado de
+   cada um: as dezasseis linhas «ainda sem medidas conferidas» são a casa a falar
+   da sua cobertura numa página do leitor, e passaram ao Método, à secção «O que
+   se mede a seguir». O que fica é o nome, a contagem das medidas e a porta. */
+const indiceDosDominios = DOMINIOS.filter(
+  (d) => comPagina.has(d.slug) || (d.estado === 'dentro-de' && d.dentroDe && comPagina.has(d.dentroDe)),
+).map((d) => {
   const dentro = d.estado === 'dentro-de' && d.dentroDe ? dominioDeclarado(d.dentroDe) : null;
   const porta =
     d.estado === 'no-ar' && comPagina.has(d.slug)
@@ -298,7 +305,7 @@ const indiceDosDominios = DOMINIOS.map((d) => {
       : dentro !== null && comPagina.has(dentro.slug)
         ? `${routePath('dominio', lang, { slug: dentro.slug })}${d.ancoraDentro ? `#${d.ancoraDentro}` : ''}`
         : null;
-  return { dominio: d, dentro, porta };
+  return { dominio: d, dentro, porta, medidas: medidasDoDominio(d.slug).length };
 });
 
 /* A guarda da declaração: um domínio com página e nenhuma medida declarada é uma
@@ -622,6 +629,12 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
       domínio vivo estão na faixa desta página desde o item 8.16, e as linhas
       continuam onde estavam, na página do domínio e nas dos concelhos.
 
+      A LISTA É A DOS DOMÍNIOS COM PÁGINA, e não a dos dezoito (§9.1, 08.09.2026,
+      pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda
+      sem medidas conferidas» são a casa a falar da sua cobertura, e passaram ao
+      Método, à secção «O que se mede a seguir». Cada linha diz o nome, a
+      contagem das medidas da página de chegada e a porta.
+
       O NOME VEM DA DECLARAÇÃO, com a marca `data-nome` que o portão da voz
       confere contra `src/data/dominios.mjs` (regra 9: «um `data-nome` cujo texto
       não é um nome desse ficheiro» fecha a construção). O estado é vocabulário
@@ -638,7 +651,7 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
     </h2>
     <ol class="dominios-lista">
       {
-        indiceDosDominios.map(({ dominio, dentro, porta }) => (
+        indiceDosDominios.map(({ dominio, dentro, porta, medidas }) => (
           <li class="dominios-item" data-dominio={dominio.slug}>
             {porta === null ? (
               <span class="dominios-nome" data-nome="dominios">
@@ -650,8 +663,11 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
               </a>
             )}
             <span class="dominios-estado" data-dominio-estado={dominio.estado}>
-              {dominio.estado === 'no-ar' && s.dominios.estadoNoAr}
-              {dominio.estado === 'sem' && s.dominios.estadoSem}
+              {medidas > 0 && (
+                <>
+                  <span data-nonledger="numeracao">{medidas}</span> {s.dominios.medidasRotulo}
+                </>
+              )}
               {dominio.estado === 'dentro-de' && dentro !== null && (
                 <>
                   {s.dominios.estadoDentroDe}{' '}

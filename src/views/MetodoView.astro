@@ -64,9 +64,29 @@ import { ANCORA_DA_POLITICA, FRASE, POLITICA } from '../data/politica-ia.mjs';
 import { prova, CAMINHO_DA_PROVA } from '../lib/prova.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
+import { DOMINIOS, dominiosComPagina } from '../data/dominios.mjs';
 import '../styles/leitura.css';
 
 const { lang = 'pt' } = Astro.props;
+
+/* ---------------------------------------------------------------------------
+ * O QUE SE MEDE A SEGUIR (bloco F1.10, §7.8 e §9.1, 08.09.2026)
+ * ---------------------------------------------------------------------------
+ * As dezasseis linhas «ainda sem medidas conferidas · vaga» saíram do índice
+ * dos domínios: são a casa a falar da sua própria cobertura, e a Emenda 15 tira
+ * isso das páginas do leitor. Vêm para aqui, que é a casa do método e onde a
+ * Emenda deixa a casa falar de si.
+ *
+ * A LISTA É A MESMA DE `src/data/dominios.mjs`, e a condição é a que o índice
+ * usava: um domínio sem página e sem medidas noutro domínio. Uma segunda lista
+ * escrita aqui divergia da primeira ao primeiro domínio que entrasse.
+ *
+ * SEM CONTAGEM E SEM ALGARISMO: os nomes vão marcados `data-nome="dominios"`,
+ * que a régua da voz confere contra o ficheiro de dados, e a vaga é a palavra
+ * que o próprio domínio declara.
+ */
+const comPaginaNoMetodo = new Set(dominiosComPagina().map((d) => d.slug));
+const porVir = DOMINIOS.filter((d) => d.estado === 'sem' && !comPaginaNoMetodo.has(d.slug));
 const s = t(lang);
 const path = routePath('metodo', lang);
 const p = prova(lang);
@@ -300,4 +320,38 @@ const destino = (l) => (l.prova ? CAMINHO_DA_PROVA : routePath(l.rota, lang));
       }
     </div>
   </section>
+
+  {/* ===================================== o que se mede a seguir
+      §7.8 e §9.1 do brief F1.10. O índice dos domínios é uma página do leitor e
+      lista os domínios com página; o calendário do que ainda não tem medidas
+      conferidas é do método, e vive aqui.
+
+      OS NOMES VÃO MARCADOS `data-nome="dominios"`, que é a marca que a régua da
+      voz confere contra `src/data/dominios.mjs`: sem ela, dezasseis nomes
+      custavam trinta e duas linhas ao inventário das frases, que é a carta dos
+      conteúdos escrita outra vez. */}
+  {porVir.length > 0 && (
+    <section class="metodo-secao" id="a-seguir">
+      <div class="regra-cabeca">
+        <h2>{s.metodo.proximosK}</h2>
+      </div>
+      <div class="metodo-corpo">
+        <p class="metodo-p">{s.metodo.proximosLede}</p>
+        <ul class="metodo-proximos">
+          {
+            porVir.map((d) => (
+              <li>
+                <span data-nome="dominios">{d.nome[lang] ?? d.nome.pt}</span>
+                <span class="dominios-vaga" data-dominio-vaga-rot>
+                  {d.vaga === 'primeira' && s.dominios.vagaPrimeira}
+                  {d.vaga === 'segunda' && s.dominios.vagaSegunda}
+                  {d.vaga === 'terceira' && s.dominios.vagaTerceira}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+  )}
 </Base>
