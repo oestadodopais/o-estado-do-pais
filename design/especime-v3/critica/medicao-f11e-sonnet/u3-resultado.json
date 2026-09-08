@@ -1,0 +1,27 @@
+{
+  "toqueNaUnidade": {
+    "antes": "/",
+    "depois": {
+      "pathname": "/",
+      "hash": "#unidade=aveiro"
+    },
+    "ok": true
+  },
+  "toqueDuploNoConcelho": {
+    "antesDoPrimeiroToque": "/",
+    "depoisDoPrimeiroToque": {
+      "pathname": "/",
+      "nome": "Évora"
+    },
+    "primeiroTequeNaoNavegou": true,
+    "nomeCorreto": true,
+    "depoisDoSegundoToque": "/municipios/evora",
+    "segundoToqueNavegou": true
+  },
+  "portaAbrir": {
+    "antes": "/",
+    "hrefDaPorta": "/distritos/evora",
+    "depois": "/distritos/evora",
+    "navegouParaDistritoEvora": true
+  }
+}
