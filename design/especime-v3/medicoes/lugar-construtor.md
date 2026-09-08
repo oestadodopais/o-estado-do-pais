@@ -271,13 +271,18 @@ inventariada.
 vermelha desde 04.09. A célula mudou de medida com o item: pedia três leituras
 no documento e uma à vista, e passa a pedir **zero no `<header>` inteiro**, que é
 mais apertado do que o que ela media (uma leitura que voltasse para a barra de
-cima, ou escondida por uma folha, cai na mesma). Corrida inteira: **10 de 32
+cima, ou escondida por uma folha, cai na mesma). Corrida inteira antes da fusão: **10 de 32
 réguas falham**, e as dez são da família do mapa e dos alvos (A4 «o mapa
 rende-se a 390 e a pesquisa fica à vista», A5 «uma unidade com página é uma
 porta com nome» e «o leitor de teclado chega à porta do mapa», A10 «zero alvos
 efetivos abaixo de 44 px»), nas duas edições e nas duas larguras. **Não se mediu
 nesta sessão se elas já falhavam antes dela**, e por isso não se diz que são
 antigas: diz-se o que elas nomeiam.
+
+**Depois da fusão do F1.1e, a mesma régua desce a 6 de 32.** As quatro células
+da A5 passaram: o F1.1e devolveu à primeira página as 29 unidades da Carta, que
+é o que aquela célula procura, e ela não as encontrava desde que o F1.1d as
+tirou. Ficam a A4 e as duas A10, nas duas edições, e a A7 continua verde.
 
 **`tests/inicio/porta.mjs` · 24 de 34 células passam, antes e depois**, e o que
 mudou está dentro dos números:
