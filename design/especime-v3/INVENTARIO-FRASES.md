@@ -1162,11 +1162,11 @@ página do leitor.*
 | navegacao | Language | grelha-2 | viva | — |
 | navegacao | Main navigation | grelha-2 | viva | — |
 | navegacao | Mandatos, no tempo | grelha-2 | viva | — |
-| navegacao | Map of the districts and islands of Portugal, one area per unit. | grelha-2 | retirada | o F1.1d tirou esta cadeia da lista das rendidas quando trocou o desenho da primeira página pelas nove regiões NUTS II; o F1.1e devolveu o desenho às 29 unidades da Carta a 08.09.2026 e o nome acessível voltou a ser este. A linha fica `retirada` porque a régua da voz NÃO recolhe o `aria-label` do `<svg>` da primeira página (recolhe o da página de um distrito, que é outra cadeia): uma linha `viva` que a régua não vê em rota nenhuma fecha a construção. O que a linha proíbe é a frase voltar a um bloco de texto, e é isso que continua a valer |
+| navegacao | Map of the districts and islands of Portugal, one area per unit. | grelha-2 | viva | — |
 | navegacao | Map of the municipalities, one area per municipality. | grelha-2 | viva | — |
 | navegacao | Mapa de pontos dos municípios de Portugal. | grelha-2 | viva | — |
 | navegacao | Mapa dos concelhos, com uma área por concelho. | grelha-2 | viva | — |
-| navegacao | Mapa dos distritos e das ilhas de Portugal, com uma área por unidade. | grelha-2 | retirada | o F1.1d tirou esta cadeia da lista das rendidas quando trocou o desenho da primeira página pelas nove regiões NUTS II; o F1.1e devolveu o desenho às 29 unidades da Carta a 08.09.2026 e o nome acessível voltou a ser este. A linha fica `retirada` porque a régua da voz NÃO recolhe o `aria-label` do `<svg>` da primeira página (recolhe o da página de um distrito, que é outra cadeia): uma linha `viva` que a régua não vê em rota nenhuma fecha a construção. O que a linha proíbe é a frase voltar a um bloco de texto, e é isso que continua a valer |
+| navegacao | Mapa dos distritos e das ilhas de Portugal, com uma área por unidade. | grelha-2 | viva | — |
 | navegacao | Menu · Main navigation | grelha-2 | viva | — |
 | navegacao | Menu · Navegação principal | grelha-2 | viva | — |
 | navegacao | Navegação do rodapé | grelha-2 | viva | — |
@@ -2299,9 +2299,16 @@ e as do nível de baixo («Toque num concelho», «Passe o rato por um concelho�
 não mudam: o que está lá dentro continua a ser um concelho.
 
 **O NOME ACESSÍVEL DO LUGAR ENTRA** («A área apontada no mapa»): é o `aria-label`
-do grupo, e a régua recolhe-o. O nome acessível do próprio desenho, que muda com
-o nível, não é recolhido pela régua e por isso não se declara: uma linha `viva`
-que não se rende em rota nenhuma fecha a construção.
+do grupo, e a régua recolhe-o. **E O DO PRÓPRIO DESENHO TAMBÉM, DESDE A SEGUNDA
+PASSAGEM DE 08.09.2026**: a primeira passagem escreveu aqui que a régua não o
+recolhia, e a razão verdadeira não era essa. A régua lê os `aria-label` desde a
+I79; o que ela deita fora é a dica igual a um `data-` do PRÓPRIO elemento,
+porque essa é composta do livro-razão, e o `<svg>` levava um `data-rotulo-pais`
+com a mesma cadeia do seu `aria-label`. A cópia saiu (o guião lê o `aria-label`
+que o servidor desenhou), a régua vê a frase, e as duas linhas do nome do mapa
+da primeira página voltaram a `viva` no bloco `grelha-2`. O rótulo do nível de
+baixo continua a viver num `data-` e não se declara: quando ele se render como
+`aria-label`, com o F1.10 na página do concelho, declara-se então.
 
 **AS DUAS PORTAS NÃO ENTRAM** («Abrir →» e «← Voltar ao país»): vivem inteiras
 dentro de um `<a>`, e as medidas 8 e 9 da régua excluem esses blocos nos dois
@@ -2319,7 +2326,12 @@ das outras: não diz o que se mede, diz o que fazer.
 **E MUDOU DE PALAVRA NO F1.1e**: «O mapa desta ÁREA não abriu», porque as 29
 unidades são 18 distritos e 11 ilhas, e uma frase que nomeasse o distrito estava
 errada em onze delas. Com «As regiões» fora, o bloco fica com **seis frases e
-doze linhas** vivas, e oito linhas `retirada` com a razão.
+doze linhas** vivas, e **seis linhas `retirada`** com a razão: as quatro frases
+que diziam «região» nas duas edições e as duas do aviso do pedido que não volta.
+(A primeira passagem escreveu aqui «oito», por ter contado as duas linhas do nome
+do mapa que já estavam `retirada` desde o F1.1d e que só mudaram de razão; a
+leitura a frio do Codex de 08.09.2026 apanhou-o, achado 13, e as duas voltaram a
+`viva` na segunda passagem.)
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
