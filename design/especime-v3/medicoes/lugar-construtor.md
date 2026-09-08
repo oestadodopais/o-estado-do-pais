@@ -16,7 +16,7 @@ deste relatório foi escrito à mão: cada um tem ao lado o comando que o mediu.
 | `build` · `verify` · `typecheck` | **0** · **0** · **0** (códigos lidos de `build.exit`, `verify.exit`, `typecheck.exit`) |
 | a corrida da CI | a primeira linha de `gh run list --branch lugar-2026-09-04` |
 | feito nas sessões anteriores | a régua (encargo (b)); **§9.1**; **8.8**; **8.9**; **§7.5**; **8.16**; **8.13**; **8.12**; **8.14 inteiro**; **§2.2**; **8.15**; **8.5**; **§7.1**; **8.17** |
-| feito nesta sessão | **os dois limiares sem fixador** (a decisão do fecho do dia: `porRegistar` sai, entram `pacto` e `conselho`, cada um com o excerto do documento que a linha cita; o motivo `limiar-do-quadro` do `allowlist.yml` corrigido); **8.4 e a segunda metade do 8.14** (a definição de cada painel e das 21 medidas, citada da Comissão e do Eurostat, com o documento, o endereço, a data de acesso e o excerto literal declarados); **§9.3**, **§9.4**, **§9.5**, **§9.8** e **§9.9**; a etiqueta da agenda do F2.6b |
+| feito nesta sessão | **os dois limiares sem fixador** (a decisão do fecho do dia: `porRegistar` sai, entram `pacto` e `conselho`, cada um com o excerto do documento que a linha cita; o motivo `limiar-do-quadro` do `allowlist.yml` corrigido); **8.4 e a segunda metade do 8.14** (a definição de cada painel e das 21 medidas, citada da Comissão e do Eurostat, com o documento, o endereço, a data de acesso e o excerto literal declarados); **§9.3**, **§9.4**, **§9.5**, **§9.8** e **§9.9**; a etiqueta da agenda do F2.6b; **a régua do primeiro ecrã a 390 × 664 do item 8.11, com o «antes» medido nas quatro páginas do leitor e nas duas edições** |
 | a seguir | **8.11 e §7.3**; o resto do §9 (2, 6, 7 e 10); as outras páginas (a região, o domínio, os índices, os estudos, o Método); o item 5 do encargo (o caminho, a busca única, «fonte» diz o publicador, as datas); o fecho |
 | nada a meio | **nada ficou por acabar.** Os três portões a 0 nesta árvore, com os códigos lidos dos ficheiros; não há `git stash` nem ficheiro por commitar. **Uma régua de fora da cadeia mudou e não foi corrida** (a célula A4 de `tests/inicio/porta.mjs`, que abre navegador e não está no `verify` nem na CI): corre-se à mão no fecho do bloco, com as outras medidas de 390 px |
 | a régua, na cabeça desta sessão | L1 6 598 · L2a 2 · L2b 18 · L2c 10 · L3 **30** · L4 **0** · L5 7 213 · L6 26 178 · 8.5 **0** · 8.8 **0** · 8.13 **0** · 8.14 **0** · 8.17 **0** e **0** (`node scripts/check-lugar.mjs`, verde) |
@@ -221,6 +221,50 @@ declarada por `data-agenda`, e é o bloco inteiro que é classificado: o portão
 voz não a conta como frase própria. Medido, e não suposto: a construção fica
 verde sem linha nova. A mudança fica declarada em `CHAVES-EN.md`, que é o registo
 das chaves que mudam de texto.
+
+### O primeiro ecrã a 390 × 664, medido antes de se lhe tocar (item 8.11)
+
+**A medição vem primeiro, e a definição da conta vem com ela.** «Caracteres de
+prosa» não é uma coisa que um navegador saiba, e por isso a régua nova
+(`design/especime-v3/medicoes/lugar-2026-09-04/primeiro-ecra.mjs`) escreve a
+definição no seu cabeçalho, para que o «antes» e o «depois» sejam a mesma conta:
+a janela de 390 × 664 sem rolar; um bloco conta quando a sua caixa COMEÇA acima
+dos 664 px; um bloco de prosa é um `p`, `li`, `dd`, `dt`, `blockquote` ou
+`figcaption` fora de `nav`, `header` e `footer`; o que está escondido não conta;
+e **a prosa DA CASA** é a que sobra depois de tirar os blocos com marca de origem
+declarada, que são os nomes e as unidades dos cartões, instrumento e não
+explicação.
+
+**O «antes», sobre o `dist/` desta cabeça** (`--json primeiro-ecra-antes.json`):
+
+| página | prosa da casa | blocos da casa | prosa com os cartões | caracteres no ecrã |
+|---|---|---|---|---|
+| `/` | **33** | 2 | 269 | 996 |
+| `/en/` | **0** | 1 | 239 | 1 015 |
+| `/municipios/evora` | **0** | 0 | 448 | 1 169 |
+| `/en/municipalities/evora` | **0** | 0 | 455 | 1 210 |
+| `/estudos/onde-esta-a-agua` | **13** | 1 | 52 | 324 |
+| `/en/studies/onde-esta-a-agua` | **13** | 1 | 56 | 329 |
+| `/livro-razao` | **11** | 1 | 86 | 501 |
+| `/en/ledger` | **16** | 1 | 85 | 500 |
+
+**E o que a medição diz é que a primeira metade do 8.11 já está feita, e não por
+este item.** A prosa da casa no primeiro ecrã das quatro páginas do leitor vai de
+**0 a 33 caracteres**, e os 33 de `/` são a fila das portas («Estudos», «Portugal
+na União Europeia»), que é navegação e não explicação; os 13 de uma página de
+estudo são o marcador `[a verificar]`; os 11 do índice dos números são a porta
+«Concelhos →». **Não há uma frase de contexto, uma definição ou uma ressalva no
+primeiro ecrã de nenhuma delas**: o F1.1, o F1.1b, o F1.1c e o §7.1 deste bloco
+foram-nas metendo dentro das dobras à medida que passaram.
+
+**O que ficou no primeiro ecrã, e é o que o item 8.1 e o §7.3 mandam sair, é a
+MOBÍLIA.** Em `/` são 727 dos 996 caracteres do ecrã (a diferença entre as duas
+últimas colunas): a marca, o menu de treze posições, e as três leituras do
+cabeçalho («Painel europeu · <data>», «Fontes em atraso · …» e as duas contagens
+da agenda). Essas três são as que o brief manda mudar de página, e são o item
+que a sessão seguinte pega. **A régua já está escrita e o «antes» já está
+medido**, com a data e o ficheiro, para que o «depois» seja a mesma conta e não
+uma segunda.
 
 ---
 
@@ -695,7 +739,7 @@ internacional, sem uma definição em palavras simples com origem autorizada).
 
 | # | o que falta | onde se toca | a nota de quem retoma |
 |---|---|---|---|
-| 1 | **8.11 e §7.3** · a prosa e as linhas de frescura fora do primeiro ecrã | `Masthead.astro` (as três leituras da mobília), `MunicipioView`, `DominioView`, `EstudoView`, `LivroView` | é o que endireita a célula A7 de `correcoes-a.mjs`, vermelha desde o F1.6 por a mobília ter quatro leituras onde a célula exige três. **A página do concelho ficou mais perto**: a prosa que estava corrida por baixo das peças está hoje dentro das dobras, e o que resta medir é o primeiro ecrã a 390 × 664, antes e depois, em `/`, num concelho, num estudo e no índice dos números. **A página europeia ganhou duas linhas de cabeçalho por painel** com o 8.4 (o subtítulo e a definição), e as duas só se rendem com uma leitura aberta (8.12): não estão no primeiro ecrã em repouso, e a medição tem de o confirmar |
+| 1 | **8.11 e §7.3** · as três leituras da mobília fora do cabeçalho de todas as páginas | `Masthead.astro`, `SinalDasFontes.astro`, `MetodoView`, `AgendaView`, `src/lib/prova.mjs`, `tests/inicio/porta.mjs` (A7) e `tests/inicio/correcoes-a.mjs` (A7) | **a primeira metade do item está feita, e a medição prova-o**: a prosa da casa no primeiro ecrã das quatro páginas do leitor está entre 0 e 33 caracteres, e nenhum deles é uma explicação (ver a secção da medição acima). **O que falta é a segunda metade**: «Painel europeu · <data>», «Fontes em atraso · …» e as duas contagens da agenda saem do cabeçalho de todas as páginas e vão para a página da medida e para o Método. Quatro coisas andam com elas, e nenhuma é opcional: as duas chaves da prova da agenda têm de continuar a render-se onde o que elas contam se vê; as linhas do inventário mudam de rota ou passam a `retirada`; a célula A7 de `correcoes-a.mjs` (vermelha desde o F1.6, quatro leituras onde ela exige três) reescreve-se para o que ficar; e a A7 de `porta.mjs` mede a cabeça. O «antes» está medido e escrito em `primeiro-ecra-antes.json` |
 | 2 | **o resto do §9** (2, 6, 7 e 10) | o inventário da voz, `DominioView`, `Pesquisa.astro` | o 3, o 4, o 5, o 8 e o 9 estão feitos. O 2 e o 6 andam com o 8.11; o 7 anda com a busca única do §2.6; o 10 é a dívida da linha F1.2 e fica para o F3.3, como o próprio §9 escreve |
 | 3 | **as outras páginas** (o item 4 do encargo) | `RegiaoView`, `DominioView`, os índices, `EstudoView`, `MetodoView` | a região (§1 e §7.6), o domínio (§7.7), os índices (§7.8), os estudos (§7.4 e 8.6), o Método no telemóvel (§7.9). **A do concelho está feita** (§7.1, 8.10, 8.17); falta-lhe a linha dos estudos (§1 e 8.6), que anda com os estudos |
 | 4 | **item 5 do encargo** · o caminho no cabeçalho (§2.5, com o desenho da §C), a busca é uma (§2.6), «fonte» diz o publicador (§2.4, §7.2, a L6), as datas de frescura (§7.3) | `Caminho.astro` (por escrever), `Pesquisa.astro`, `Provenance.astro`, `gate-html.mjs` | a L5 (7 213) e a L6 (26 178) são os dois números grandes que ainda não desceram, e são estes dois itens |
