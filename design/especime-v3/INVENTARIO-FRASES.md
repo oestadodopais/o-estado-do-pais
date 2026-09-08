@@ -2261,7 +2261,8 @@ apanha.
 
 O mapa da primeira página passou a ter dois níveis (as nove regiões NUTS II, e
 dentro de cada uma os seus concelhos) e um lugar fixo para o nome da área
-apontada. Seis frases novas, doze linhas com as duas edições.
+apontada. Sete frases novas, catorze linhas com as duas edições (seis na
+primeira passagem, a sétima na segunda, a 08.09.2026).
 
 **AS QUATRO FRASES VAZIAS SÃO QUATRO, E NÃO DUAS**, e a razão é o gesto: quem tem
 rato passa por cima e quem tem dedo toca. As duas formas rendem-se as duas, e é a
@@ -2289,6 +2290,16 @@ que não se rende em rota nenhuma fecha a construção.
 dentro de um `<a>`, e as medidas 8 e 9 da régua excluem esses blocos nos dois
 sentidos, como a leitura do índice de 03.09 escreveu sobre «Subir».
 
+**A SÉTIMA FRASE ENTROU NA SEGUNDA PASSAGEM (08.09.2026)**: «O mapa desta região
+não abriu. A porta leva à página dela.» O guião pede o ficheiro dos concelhos ao
+tocar numa região, e um pedido que não volta deixava o leitor com um toque sem
+resposta e sem explicação (leitura a frio do Codex, achado 9). A frase vive
+dentro da região viva do lugar do nome, para que quem ouve a oiça como oiria o
+nome, e diz as duas coisas que o leitor precisa de saber: o que aconteceu, e que
+a porta que está ali leva à página da região. É `navegacao` pela mesma razão das
+outras: não diz o que se mede, diz o que fazer. São mais duas linhas, uma por
+edição, e o total do bloco passa a sete frases e catorze linhas.
+
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
 | navegacao | Toque numa região | mapa | viva | — |
@@ -2303,3 +2314,5 @@ sentidos, como a leitura do índice de 03.09 escreveu sobre «Subir».
 | navegacao | The regions | mapa | viva | — |
 | navegacao | A área apontada no mapa | mapa | viva | — |
 | navegacao | The area pointed at on the map | mapa | viva | — |
+| navegacao | O mapa desta região não abriu. A porta leva à página dela. | mapa | viva | — |
+| navegacao | This map did not open. The door goes to the region page. | mapa | viva | — |

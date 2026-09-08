@@ -73,6 +73,15 @@ const VAZIAS = {
     {/* O nome vai declarado como lugar, pela mesma razão do nome do cartão
         localizador: é o nome da coisa, e não prosa da casa. */}
     <p class="mapa-nome-texto" data-mapa-nome-texto data-lugar hidden></p>
+    {/* O AVISO DE QUE O DESENHO DA REGIÃO NÃO CHEGOU. Só existe onde há um
+        segundo nível para descarregar: numa página de distrito o desenho vem
+        com o documento e não há pedido nenhum que possa falhar. Está dentro da
+        região viva, para que quem ouve o oiça como oiria o nome. */}
+    {niveis.includes('pais') && (
+      <p class="mapa-nome-aviso" data-mapa-aviso hidden>
+        {s.inicio.mapa.semODesenhoDaRegiao}
+      </p>
+    )}
   </div>
   <p class="mapa-nome-portas">
     {/* As portas chegam sem destino e escondidas: o destino de cada uma é
