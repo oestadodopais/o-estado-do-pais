@@ -106,7 +106,16 @@
   }
   var CAMPO_DO_PAIS = svg.getAttribute('viewBox');
   var ROTA_DO_CONCELHO = svg.getAttribute('data-rota-concelho') || '';
-  var ROTULO_PAIS = svg.getAttribute('data-rotulo-pais') || '';
+  /* O RÓTULO DO PAÍS É O QUE O SERVIDOR DESENHOU, e não uma segunda cópia dele
+     num `data-`. Era `data-rotulo-pais`, com a mesma cadeia do `aria-label` do
+     mesmo elemento, e a cópia tinha um custo que não se via: a régua da voz
+     recolhe as dicas e os rótulos de acessibilidade, e deita fora a dica que é
+     igual a um `data-` do PRÓPRIO elemento, porque essa é composta do
+     livro-razão. O rótulo do mapa é uma frase da casa, e a cópia fazia-o passar
+     por composto: as duas linhas do inventário ficavam `retirada` com o rótulo
+     a render-se (leitura a frio do Codex de 08.09.2026, achado 14). Sem a
+     cópia, a régua vê a frase e as duas linhas voltam a `viva`. */
+  var ROTULO_PAIS = svg.getAttribute('aria-label') || '';
   var ROTULO_UNIDADE = svg.getAttribute('data-rotulo-unidade') || '';
 
   /** As unidades já descarregadas, uma entrada por slug. */
@@ -119,6 +128,49 @@
   var tipoDoGesto = '';
   /** As unidades cujo ficheiro não veio: o clique seguinte segue a ligação. */
   var falhadas = {};
+
+  /* ---------------------------------------------------------------------------
+   * CADA GESTO LEVA UM NÚMERO, E UMA RESPOSTA ATRASADA NÃO MANDA NO DESENHO
+   * ---------------------------------------------------------------------------
+   * A primeira forma deste guião pedia o ficheiro de uma unidade e aplicava o
+   * que voltasse, sem perguntar se aquele pedido ainda era o da vez. Com a rede
+   * lenta bastava tocar em Évora e a seguir em Beja para o desenho acabar em
+   * Évora, porque a resposta dela chegava depois; e limpar o fragmento com um
+   * pedido a meio reabria a unidade em cima da primeira página, desfazendo o
+   * botão de voltar do navegador. O histórico ficava pela ordem das RESPOSTAS e
+   * não pela ordem dos GESTOS (leitura a frio do Codex de 08.09.2026, achado 6).
+   *
+   * A regra passa a ser uma só, com duas condições, e ela vale para o desenho e
+   * para o histórico ao mesmo tempo, porque o `pushState` vive dentro da mesma
+   * resposta:
+   *
+   *   1. o número: a resposta só se aplica se for a do ÚLTIMO gesto. Cada gesto
+   *      (um clique numa unidade, um fragmento aplicado, a porta de voltar)
+   *      leva o número seguinte, e uma resposta de um gesto anterior cai;
+   *   2. o fragmento: e só se o endereço ainda for o que aquele gesto tinha
+   *      quando pediu. É a rede para uma mudança de endereço que não passe por
+   *      aqui, e é o que faz o fragmento limpo a meio DESCARTAR a resposta.
+   *
+   * As duas medem-se: a U3f da régua do bloco troca a ordem de duas respostas
+   * com `page.route`, e a U3g limpa o fragmento a meio de um pedido lento.
+   * ------------------------------------------------------------------------- */
+  /** O número do último gesto. */
+  var gesto = 0;
+  /** O endereço que o último gesto tinha quando pediu. */
+  var fragmentoDoGesto = '';
+
+  /** Marca um gesto novo e devolve o número dele. */
+  function marcaGesto() {
+    fragmentoDoGesto = location.hash;
+    return ++gesto;
+  }
+
+  /** A resposta que chegou é a do último gesto, e o endereço não mudou? */
+  function eODoUltimoGesto(meu) {
+    if (meu !== gesto) return false;
+    if (location.hash !== fragmentoDoGesto) return false;
+    return true;
+  }
 
   /* ---------------------------------------------------------------- o nome */
 
@@ -206,7 +258,6 @@
   }
 
   function paraAUnidade(slug, dados, doTeclado) {
-    guardadas[slug] = dados;
     aberta = slug;
     tocada = '';
     desenha(dados);
@@ -251,10 +302,16 @@
     if (aviso) aviso.hidden = false;
   }
 
-  /** A unidade, do que já foi descarregado ou do ficheiro que a área nomeia. */
-  function abre(slug, ficheiro, entao) {
+  /**
+   * A unidade, do que já foi descarregado ou do ficheiro que a área nomeia.
+   *
+   * `meu` é o número do gesto que a pediu, e é ele que decide se a resposta
+   * ainda manda. O ficheiro GUARDA-SE sempre, mesmo quando a resposta já não é
+   * a da vez: são os bytes daquela unidade, e não dependem do gesto.
+   */
+  function abre(slug, ficheiro, meu, entao) {
     if (guardadas[slug]) {
-      entao(guardadas[slug]);
+      if (eODoUltimoGesto(meu)) entao(guardadas[slug]);
       return;
     }
     if (!ficheiro) {
@@ -270,9 +327,12 @@
         if (!dados || !dados.campo || !dados.concelhos || !dados.concelhos.length) {
           throw new Error('sem desenho');
         }
+        guardadas[slug] = dados;
+        if (!eODoUltimoGesto(meu)) return;
         entao(dados);
       })
       .catch(function () {
+        if (!eODoUltimoGesto(meu)) return;
         falhou(slug);
       });
   }
@@ -286,6 +346,9 @@
   }
 
   function aplicaFragmento() {
+    /* O GESTO MARCA-SE ANTES DE SE OLHAR PARA O FRAGMENTO, e é isso que faz o
+       fragmento limpo a meio descartar o pedido que estava a caminho. */
+    var meu = marcaGesto();
     var slug = slugDoFragmento(location.hash);
     if (!slug) {
       if (aberta) paraOPais();
@@ -294,7 +357,7 @@
     if (slug === aberta) return;
     var area = grupoDoPais.querySelector('[data-uni-porta="' + slug + '"]');
     if (typeof fetch !== 'function') return;
-    abre(slug, area.getAttribute('data-ficheiro'), function (dados) {
+    abre(slug, area.getAttribute('data-ficheiro'), meu, function (dados) {
       paraAUnidade(slug, dados);
     });
   }
@@ -377,7 +440,10 @@
          página dela, e ficou lá com o nome no mesmo gesto. */
       ev.preventDefault();
       mostra(area);
-      abre(slug, area.getAttribute('data-ficheiro'), function (dados) {
+      /* O HISTÓRICO ESCREVE-SE PELA ORDEM DOS GESTOS, e não pela das respostas:
+         o `pushState` vive dentro da resposta que a marca do gesto deixou
+         passar, e por isso uma resposta atrasada não escreve entrada nenhuma. */
+      abre(slug, area.getAttribute('data-ficheiro'), marcaGesto(), function (dados) {
         paraAUnidade(slug, dados, doTeclado);
         history.pushState(null, '', location.pathname + location.search + '#unidade=' + slug);
       });
@@ -407,6 +473,9 @@
 
   if (voltar) voltar.addEventListener('click', function (ev) {
     ev.preventDefault();
+    /* SUBIR É UM GESTO, e por isso leva número: um pedido a caminho quando se
+       sobe não pode reabrir a unidade em cima da primeira página. */
+    marcaGesto();
     paraOPais();
     history.pushState(null, '', location.pathname + location.search);
   });
