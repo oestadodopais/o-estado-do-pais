@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-08T05:59:46+00:00",
+ "copia": "f21b-pacote",
+ "plantas": [
+  {
+   "id": "Q1",
+   "ficheiro": "publisher/releitura_concelhos.py",
+   "descricao": "a fonte calada volta a contar como alarme: o canário existence devolve ALARME onde a correção põe ESTADO, e o leitor sai com 1 com o INE calado",
+   "sha256_antes": "f5c8d235f6d4af4aff373df0e5c5fba4385bd64eb0aa5501eb00e6c5e1618102",
+   "sha256_depois": "20f075124ecc596a71df9cdda0fad1cd440c46a9be2cc96b6f1f3e9a6bf52434",
+   "contexto_antes": " out: list[tuple[str, str, str]] = []\n    if vivo.get(\"erro\"):\n        if vivo.get(\"porque\") == SEM_RESPOSTA:\n            quando = vivo.get(\"desde\") or agora()\n            return [(\"existence\", ESTADO,\n                     f\"sem resposta às {quando}: {vivo['erro']}\")]\n        return [(\"existence\", ALARME, vivo[\"erro\"])]\n    if local.get(\"erro\"):\n        # O F",
+   "contexto_depois": " out: list[tuple[str, str, str]] = []\n    if vivo.get(\"erro\"):\n        if vivo.get(\"porque\") == SEM_RESPOSTA:\n            quando = vivo.get(\"desde\") or agora()\n            return [(\"existence\", ALARME,\n                     f\"sem resposta às {quando}: {vivo['erro']}\")]\n        return [(\"existence\", ALARME, vivo[\"erro\"])]\n    if local.get(\"erro\"):\n        # O F"
+  },
+  {
+   "id": "Q2",
+   "ficheiro": "indicators/corredor.py",
+   "descricao": "a lista dos calados perde o instante: o corredor passa só o anfitrião ao leitor, contra a docstring que diz que o instante vai junto para o leitor não inventar uma hora sua",
+   "sha256_antes": "e2b824891c7bea8a38086a9a3093fde823f90458ed1c0dcb717a2a91f8892eed",
+   "sha256_depois": "d0ebeaf1cba3e28c53047bab5825bee9e37eb0b510aa279fee56c20fecd6d404",
+   "contexto_antes": "diverge da\n    primeira. O instante vai junto porque é o que deixa o leitor escrever\n    «calado desde <hora UTC>» em vez de inventar uma hora sua.\n    \"\"\"\n    return \",\".join(f\"{c['host']}={c['desde']}\" for c in (caidos or []) if c.get(\"host\"))\n\n\ndef comando_dos_concelhos(args, calados: str, resumo: Path | None) -> list[str]:\n    \"\"\"O comando do leitor dos concelhos, composto e não corrido.\n\n    Uma f",
+   "contexto_depois": "diverge da\n    primeira. O instante vai junto porque é o que deixa o leitor escrever\n    «calado desde <hora UTC>» em vez de inventar uma hora sua.\n    \"\"\"\n    return \",\".join(f\"{c['host']}\" for c in (caidos or []) if c.get(\"host\"))\n\n\ndef comando_dos_concelhos(args, calados: str, resumo: Path | None) -> list[str]:\n    \"\"\"O comando do leitor dos concelhos, composto e não corrido.\n\n    Uma f"
+  },
+  {
+   "id": "Q3",
+   "ficheiro": "publisher/releitura_concelhos.py",
+   "descricao": "o conhecido-positivo da fonte calada aceita um alarme: != 0 passa a > 1, e a régua deixa de morder no caso que o bloco existe para provar",
+   "sha256_antes": "20f075124ecc596a71df9cdda0fad1cd440c46a9be2cc96b6f1f3e9a6bf52434",
+   "sha256_depois": "957af6a636dae643b74090306e7f94827c0280f64caf557faaccc5fb37a0754f",
+   "contexto_antes": "M_RESPOSTA:\n        falhas.append(f\"um anfitrião que não atendeu deu o veredicto \"\n                      f\"{veredicto(calada)!r} e devia dar {SEM_RESPOSTA!r}\")\n    elif alarmes_de(calada) != 0:\n        falhas.append(f\"uma fonte calada contou {alarmes_de(calada)} alarme(s): um \"\n                      f\"estado da rede não é uma falha desta fonte, e o có",
+   "contexto_depois": "M_RESPOSTA:\n        falhas.append(f\"um anfitrião que não atendeu deu o veredicto \"\n                      f\"{veredicto(calada)!r} e devia dar {SEM_RESPOSTA!r}\")\n    elif alarmes_de(calada) > 1:\n        falhas.append(f\"uma fonte calada contou {alarmes_de(calada)} alarme(s): um \"\n                      f\"estado da rede não é uma falha desta fonte, e o có"
+  },
+  {
+   "id": "Q4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "um número do relatório contradiz o artefacto: os segundos do leitor dos concelhos passam de 417,7 a 41,7 na tabela, e o artefacto de 05.09 diz 417.7",
+   "sha256_antes": "7af7701720704405231f698c9e100e4d03fd490ffd745725b14e31302d150300",
+   "sha256_depois": "b0b2aeafce3bed29627dc42f5d6303f47ede3ad711bd48b1ec5962585b121632",
+   "contexto_antes": "o disjuntor poupou no INE | 10 endereços, 931 linhas do livro-razão |\n| a espera que a primeira falha do INE custou | 90,348 s |\n| segundos da fase 1 | 277,3 |\n| segundos do leitor dos concelhos | 417,7 |\n| código de saída do leitor | 1 |\n| conferências compostas e adiadas | 1 242 |\n| carimbo do cabeçalho | `false` |\n\nOs 417,7 s são a mesma ausência comprada uma",
+   "contexto_depois": "o disjuntor poupou no INE | 10 endereços, 931 linhas do livro-razão |\n| a espera que a primeira falha do INE custou | 90,348 s |\n| segundos da fase 1 | 277,3 |\n| segundos do leitor dos concelhos | 41,7 |\n| código de saída do leitor | 1 |\n| conferências compostas e adiadas | 1 242 |\n| carimbo do cabeçalho | `false` |\n\nOs 417,7 s são a mesma ausência comprada uma"
+  },
+  {
+   "id": "Q5",
+   "ficheiro": "content/12 Concelhos/RELEITURA.md",
+   "descricao": "a nota do estudo diz o contrário do código e do brief: sem resposta passa a contar como alarme",
+   "sha256_antes": "718b8ceb46652e639a88cebc08cb3b09ebf058684ec23621eeeeab3edc7a8697",
+   "sha256_depois": "473def3f74db62fe4f1527d87f15b3747fd43e958d84da224e348c0e2b33e26b",
+   "contexto_antes": " já sabe dos seus 79 endereços, e «o índice do\npublicador já não nomeia o ficheiro», que é uma mudança na fonte. A primeira\nescreve-se com o anfitrião e a hora e **não conta como alarme**; a segunda\ncontinua a parar o ciclo e a sair com 1. Quando quem lança o leitor já sabe um\nanfitrião calado, di-lo com `--anfitrioes-calados <anfitrião>=<instant",
+   "contexto_depois": " já sabe dos seus 79 endereços, e «o índice do\npublicador já não nomeia o ficheiro», que é uma mudança na fonte. A primeira\nescreve-se com o anfitrião e a hora e **conta como alarme**; a segunda\ncontinua a parar o ciclo e a sair com 1. Quando quem lança o leitor já sabe um\nanfitrião calado, di-lo com `--anfitrioes-calados <anfitrião>=<instant"
+  }
+ ]
+}
