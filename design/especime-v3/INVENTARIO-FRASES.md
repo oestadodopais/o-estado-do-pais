@@ -1247,14 +1247,16 @@ página do leitor.*
 | navegacao | Language | grelha-2 | viva | — |
 | navegacao | Main navigation | grelha-2 | viva | — |
 | navegacao | Mandatos, no tempo | grelha-2 | viva | — |
-| navegacao | Map of the districts and islands of Portugal, one area per unit. | grelha-2 | retirada | o F1.1d trocou o desenho da primeira página: o nível do país passou a ser as nove regiões NUTS II e as 29 unidades da Carta deixaram de ter área no mapa (continuam a ter página, a estar no menu e a estar na lista dos nomes). O nome acessível do desenho passou a ser o das nove regiões |
+| navegacao | Map of the districts and islands of Portugal, one area per unit. | grelha-2 | viva | — |
 | navegacao | Map of the municipalities, one area per municipality. | grelha-2 | viva | — |
 | navegacao | Mapa de pontos dos municípios de Portugal. | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
 | navegacao | Mapa de pontos dos concelhos de Portugal. | lugar | retirada | o rótulo acessível do MAPA DE PONTOS, que só se rendia no cartão localizador da página de um concelho. O cartão saiu com o item 8.17 do F1.10 (08.09.2026): o diretor viu-o a 08.09 («the dotted map shows up but with no useful purpose») e no lugar dele entrou o nível da região do mapa do F1.1d, com o seu rótulo. Os 308 pontos continuam a existir no componente, na postura do selo, que hoje nenhuma página rende; se voltarem a render-se, a linha volta a `viva` com a rota que a rende |
 | navegacao | Mapa dos concelhos, com uma área por concelho. | grelha-2 | viva | — |
-| navegacao | Mapa dos concelhos da região, com uma área por concelho. | lugar | viva | o rótulo acessível do mapa da região, que a página de um concelho passa a render do servidor (bloco F1.10, item 8.17, 08.09.2026): o cartão localizador dos 308 pontos saiu e no lugar dele entrou o nível da região do mapa do F1.1d. A cadeia já existia em `src/i18n/strings.mjs` desde o F1.1d, onde era o rótulo que o guião escreve no `<svg>` quando uma região cresce na primeira página; ali nunca chegou ao documento entregue, e por isso nunca esteve nesta tabela |
-| navegacao | Map of the municipalities of the region, one area per municipality. | lugar | viva | o rótulo acessível do mapa da região, que a página de um concelho passa a render do servidor (bloco F1.10, item 8.17, 08.09.2026): o cartão localizador dos 308 pontos saiu e no lugar dele entrou o nível da região do mapa do F1.1d. A cadeia já existia em `src/i18n/strings.mjs` desde o F1.1d, onde era o rótulo que o guião escreve no `<svg>` quando uma região cresce na primeira página; ali nunca chegou ao documento entregue, e por isso nunca esteve nesta tabela |
-| navegacao | Mapa dos distritos e das ilhas de Portugal, com uma área por unidade. | grelha-2 | retirada | o F1.1d trocou o desenho da primeira página: o nível do país passou a ser as nove regiões NUTS II e as 29 unidades da Carta deixaram de ter área no mapa (continuam a ter página, a estar no menu e a estar na lista dos nomes). O nome acessível do desenho passou a ser o das nove regiões |
+| navegacao | Mapa dos concelhos da região, com uma área por concelho. | lugar | retirada | o item 8.17b do F1.10 (08.09.2026): a página do concelho passou a render o nível da UNIDADE do mapa do F1.1e (o distrito ou a ilha do concelho, com os concelhos dela e o da página marcado) e não o nível da região, que era o que o mapa daquele dia tinha. A emenda de 08.09 à tarde dizia que a região servia «até o F1.1e existir», e ele existe: o rótulo acessível do mapa desta página é agora o `concelhosLabel` da unidade, que já estava declarado |
+| navegacao | Map of the municipalities of the region, one area per municipality. | lugar | retirada | o item 8.17b do F1.10 (08.09.2026): a página do concelho passou a render o nível da UNIDADE do mapa do F1.1e (o distrito ou a ilha do concelho, com os concelhos dela e o da página marcado) e não o nível da região, que era o que o mapa daquele dia tinha. A emenda de 08.09 à tarde dizia que a região servia «até o F1.1e existir», e ele existe: o rótulo acessível do mapa desta página é agora o `concelhosLabel` da unidade, que já estava declarado |
+| navegacao | Mapa dos concelhos do distrito ou da ilha, com uma área por concelho. | lugar | viva | o item 8.17b do F1.10 (08.09.2026): é o `concelhosLabel` que o F1.1e escreveu para o nível da unidade do mapa, e que até aqui só existia depois de um toque na primeira página, onde o guião o põe. A página do concelho rende esse nível DO SERVIDOR, com os concelhos do distrito ou da ilha e o da página marcado, e por isso a cadeia passa a ser um bloco do documento e entra nesta lista. Substitui as duas do mapa da região, que ficaram `retirada` acima |
+| navegacao | Map of the municipalities of the district or island, one area per municipality. | lugar | viva | o item 8.17b do F1.10 (08.09.2026): é o `concelhosLabel` que o F1.1e escreveu para o nível da unidade do mapa, e que até aqui só existia depois de um toque na primeira página, onde o guião o põe. A página do concelho rende esse nível DO SERVIDOR, com os concelhos do distrito ou da ilha e o da página marcado, e por isso a cadeia passa a ser um bloco do documento e entra nesta lista. Substitui as duas do mapa da região, que ficaram `retirada` acima |
+| navegacao | Mapa dos distritos e das ilhas de Portugal, com uma área por unidade. | grelha-2 | viva | — |
 | navegacao | Menu · Main navigation | grelha-2 | viva | — |
 | navegacao | Menu · Navegação principal | grelha-2 | viva | — |
 | navegacao | Navegação do rodapé | grelha-2 | viva | — |
@@ -2385,48 +2387,85 @@ quem ouve ouve uma só. O `hidden` que o guião troca diz de que nível é cada 
 fazer para chegar ao que se mede. É a mesma classe da linha da área de leitura em
 repouso e da linha vazia da busca dos concelhos.
 
-**«As regiões» é o rótulo do grupo novo da lista dos nomes**, que é o índice do
-desenho: as nove à frente, as 29 unidades da Carta por baixo, como estavam.
+**«As regiões» SAIU COM O GRUPO QUE NOMEAVA (F1.1e, 08.09.2026)**: era o rótulo
+das nove regiões na lista dos nomes, à frente das 29 unidades da Carta. O desenho
+da primeira página voltou a ser as 29, por decisão do diretor, e a lista é o
+índice do desenho: um nome sem área no mapa não pertence ao índice dele.
+
+**AS SUAS DUAS LINHAS SAEM DO FICHEIRO, E NÃO PASSAM A `retirada`**, e a razão é
+o que a régua da voz mede: as rotas medidas por classe são `/` e `/en/`, e a
+prova do estado varre o sítio inteiro. «As regiões» deixou de se render na
+primeira página e continua a render-se em `/regioes`, que é outra superfície: uma
+linha `viva` neste bloco falharia por não render na rota dele, e uma `retirada`
+falharia por render fora dela. A frase não foi retirada da casa; foi retirada
+deste bloco, e é o bloco que a declara.
 
 **SEM GUIÃO NÃO SE VÊEM AS QUATRO**: o servidor rende o lugar do nome `hidden` e
-o guião acende-o, porque sem ele não há nível de região nem nome a preencher.
+o guião acende-o, porque sem ele não há nível de unidade nem nome a preencher.
 Ficam declaradas na mesma, porque a régua lê o documento entregue, não o ecrã.
 
+**AS FRASES DO NÍVEL DE CIMA MUDARAM COM O DESENHO (F1.1e, 08.09.2026)**: «Toque
+numa região» e «Passe o rato por uma região» passam a «Toque num distrito ou numa
+ilha» e «Passe o rato por um distrito ou por uma ilha», porque o que cresce
+passou a ser uma unidade da Carta. As duas antigas ficam `retirada` com a razão,
+e as do nível de baixo («Toque num concelho», «Passe o rato por um concelho»)
+não mudam: o que está lá dentro continua a ser um concelho.
+
 **O NOME ACESSÍVEL DO LUGAR ENTRA** («A área apontada no mapa»): é o `aria-label`
-do grupo, e a régua recolhe-o. O nome acessível do próprio desenho, que muda com
-o nível, não é recolhido pela régua e por isso não se declara: uma linha `viva`
-que não se rende em rota nenhuma fecha a construção.
+do grupo, e a régua recolhe-o. **E O DO PRÓPRIO DESENHO TAMBÉM, DESDE A SEGUNDA
+PASSAGEM DE 08.09.2026**: a primeira passagem escreveu aqui que a régua não o
+recolhia, e a razão verdadeira não era essa. A régua lê os `aria-label` desde a
+I79; o que ela deita fora é a dica igual a um `data-` do PRÓPRIO elemento,
+porque essa é composta do livro-razão, e o `<svg>` levava um `data-rotulo-pais`
+com a mesma cadeia do seu `aria-label`. A cópia saiu (o guião lê o `aria-label`
+que o servidor desenhou), a régua vê a frase, e as duas linhas do nome do mapa
+da primeira página voltaram a `viva` no bloco `grelha-2`. O rótulo do nível de
+baixo continua a viver num `data-` e não se declara: quando ele se render como
+`aria-label`, com o F1.10 na página do concelho, declara-se então.
 
 **AS DUAS PORTAS NÃO ENTRAM** («Abrir →» e «← Voltar ao país»): vivem inteiras
 dentro de um `<a>`, e as medidas 8 e 9 da régua excluem esses blocos nos dois
 sentidos, como a leitura do índice de 03.09 escreveu sobre «Subir».
 
-**A SÉTIMA FRASE ENTROU NA SEGUNDA PASSAGEM (08.09.2026)**: «O mapa desta região
-não abriu. A porta leva à página dela.» O guião pede o ficheiro dos concelhos ao
-tocar numa região, e um pedido que não volta deixava o leitor com um toque sem
-resposta e sem explicação (leitura a frio do Codex, achado 9). A frase vive
-dentro da região viva do lugar do nome, para que quem ouve a oiça como oiria o
-nome, e diz as duas coisas que o leitor precisa de saber: o que aconteceu, e que
-a porta que está ali leva à página da região. É `navegacao` pela mesma razão das
-outras: não diz o que se mede, diz o que fazer. São mais duas linhas, uma por
-edição, e o total do bloco passa a sete frases e catorze linhas.
+**A SÉTIMA FRASE ENTROU NA SEGUNDA PASSAGEM DO F1.1d (08.09.2026)**: «O mapa
+desta região não abriu. A porta leva à página dela.» O guião pede o ficheiro dos
+concelhos ao tocar numa área, e um pedido que não volta deixava o leitor com um
+toque sem resposta e sem explicação (leitura a frio do Codex, achado 9). A frase
+vive dentro da região viva do lugar do nome, para que quem ouve a oiça como oiria
+o nome, e diz as duas coisas que o leitor precisa de saber: o que aconteceu, e
+que a porta que está ali leva à página da área. É `navegacao` pela mesma razão
+das outras: não diz o que se mede, diz o que fazer.
+
+**E MUDOU DE PALAVRA NO F1.1e**: «O mapa desta ÁREA não abriu», porque as 29
+unidades são 18 distritos e 11 ilhas, e uma frase que nomeasse o distrito estava
+errada em onze delas. Com «As regiões» fora, o bloco fica com **seis frases e
+doze linhas** vivas, e **seis linhas `retirada`** com a razão: as quatro frases
+que diziam «região» nas duas edições e as duas do aviso do pedido que não volta.
+(A primeira passagem escreveu aqui «oito», por ter contado as duas linhas do nome
+do mapa que já estavam `retirada` desde o F1.1d e que só mudaram de razão; a
+leitura a frio do Codex de 08.09.2026 apanhou-o, achado 13, e as duas voltaram a
+`viva` na segunda passagem.)
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| navegacao | Toque numa região | mapa | viva | — |
-| navegacao | Passe o rato por uma região | mapa | viva | — |
+| navegacao | Toque num distrito ou numa ilha | mapa | viva | — |
+| navegacao | Passe o rato por um distrito ou por uma ilha | mapa | viva | — |
 | navegacao | Toque num concelho | mapa | viva | — |
 | navegacao | Passe o rato por um concelho | mapa | viva | — |
-| navegacao | As regiões | mapa | viva | — |
-| navegacao | Tap a region | mapa | viva | — |
-| navegacao | Hover over a region | mapa | viva | — |
+| navegacao | Tap a district or island | mapa | viva | — |
+| navegacao | Hover over a district or island | mapa | viva | — |
 | navegacao | Tap a municipality | mapa | viva | — |
 | navegacao | Hover over a municipality | mapa | viva | — |
-| navegacao | The regions | mapa | viva | — |
 | navegacao | A área apontada no mapa | mapa | viva | — |
 | navegacao | The area pointed at on the map | mapa | viva | — |
-| navegacao | O mapa desta região não abriu. A porta leva à página dela. | mapa | viva | — |
-| navegacao | This map did not open. The door goes to the region page. | mapa | viva | — |
+| navegacao | O mapa desta área não abriu. A porta leva à página dela. | mapa | viva | — |
+| navegacao | This map did not open. The door goes to its own page. | mapa | viva | — |
+| navegacao | Toque numa região | mapa | retirada | o F1.1e devolveu o desenho da primeira página às 29 unidades da Carta, por decisão do diretor de 08.09.2026 («the map on the first page we had before was quite alright»); as nove regiões NUTS II saíram do desenho e da lista dos nomes, e com elas as frases que as nomeavam. Continuam a ter página, régua e menu |
+| navegacao | Passe o rato por uma região | mapa | retirada | o F1.1e devolveu o desenho da primeira página às 29 unidades da Carta, por decisão do diretor de 08.09.2026 («the map on the first page we had before was quite alright»); as nove regiões NUTS II saíram do desenho e da lista dos nomes, e com elas as frases que as nomeavam. Continuam a ter página, régua e menu |
+| navegacao | Tap a region | mapa | retirada | o F1.1e devolveu o desenho da primeira página às 29 unidades da Carta, por decisão do diretor de 08.09.2026 («the map on the first page we had before was quite alright»); as nove regiões NUTS II saíram do desenho e da lista dos nomes, e com elas as frases que as nomeavam. Continuam a ter página, régua e menu |
+| navegacao | Hover over a region | mapa | retirada | o F1.1e devolveu o desenho da primeira página às 29 unidades da Carta, por decisão do diretor de 08.09.2026 («the map on the first page we had before was quite alright»); as nove regiões NUTS II saíram do desenho e da lista dos nomes, e com elas as frases que as nomeavam. Continuam a ter página, régua e menu |
+| navegacao | O mapa desta região não abriu. A porta leva à página dela. | mapa | retirada | o F1.1e devolveu o desenho da primeira página às 29 unidades da Carta, por decisão do diretor de 08.09.2026 («the map on the first page we had before was quite alright»); as nove regiões NUTS II saíram do desenho e da lista dos nomes, e com elas as frases que as nomeavam. Continuam a ter página, régua e menu; a frase continua, com «desta área» em vez de «desta região», porque as 29 são 18 distritos e 11 ilhas |
+| navegacao | This map did not open. The door goes to the region page. | mapa | retirada | o F1.1e devolveu o desenho da primeira página às 29 unidades da Carta, por decisão do diretor de 08.09.2026 («the map on the first page we had before was quite alright»); as nove regiões NUTS II saíram do desenho e da lista dos nomes, e com elas as frases que as nomeavam. Continuam a ter página, régua e menu; a frase continua, com «its own page» em vez de «the region page» |
 
 ## Bloco F1.10 · «Números e fontes» e o menu em dois pesos · 08.09.2026
 

@@ -35,3 +35,21 @@ As sub-regiões NUTS III (a primeira versão deste brief; não é o que o direto
 ## 4 · A disciplina e o custo
 
 Como nos outros blocos do mapa: commits pequenos em português sem travessões, os trailers `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>` e `Claude-Session: <o endereço da sessão>`, nunca `git add -A`, nunca um número que não foi medido, o `typecheck` estrito, cada cadeia nova no inventário da voz, o relatório a começar pela tabela das medidas. Estimativa: Opus, duas passagens, da ordem de 0,4 a 0,7 M símbolos (S a M): a geometria existe, e o guião já sabe crescer uma área.
+
+## 5 · Emenda de 08.09 (segunda passagem)
+
+*Escrita pelo lugar de direção a 08.09.2026 à noite, depois da leitura a frio do Codex sobre a primeira passagem. Emenda o brief; não o reescreve. O que está acima fica como estava, e o que esta secção decide prevalece sobre ele onde os dois se cruzam.*
+
+**(a) Uma unidade abre-se pela porta, e não por um segundo toque.** O item 2 escreve «o segundo toque, ou a porta, abre o concelho», e a leitura a frio apanhou que o construído não dá um segundo toque numa UNIDADE. A regra fica como está construída, por decisão: o primeiro toque numa unidade cresce-a, e o segundo toque não existe porque a área deixou de estar no desenho (o grupo do nível do país esconde-se e o contorno dela sai do ecrã, de maneira que não há alvo para o receber). Quem quer a página da unidade tem a porta «Abrir →», que ficou no lugar do nome com o mesmo gesto. A regra dos dois toques vale inteira para um **concelho**, que não cresce. A U3c da régua mede a porta e diz o que mede e porquê; a U3a e a U3d medem os dois toques no concelho.
+
+**(b) As respostas do segundo nível chegam pela ordem que a rede quiser.** Cada gesto leva um número; a resposta de um pedido só se aplica se for a do último gesto e se o fragmento ainda for o dela; o histórico escreve-se pela ordem dos gestos; limpar o fragmento com um pedido pendente descarta a resposta. Duas células novas: a **U3f** (duas respostas atrasadas por `page.route`, a ordem trocada) e a **U3g** (o fragmento limpo a meio de um pedido lento), cada uma com a sua planta.
+
+**(c) Uma página esperada em falta é vermelho, e não silêncio.** O portão do mapa ganha a regra **R9**: as duas edições da primeira página, as 29 páginas de unidade nas duas edições (58 afirmados e não impressos), as páginas de concelho que a Carta dá nas duas edições, os dois índices dos concelhos e as duas páginas da linha da Carta. Três plantas, uma por família: apagar uma página construída e ver a célula vermelha.
+
+**(d) As molduras da Madeira e dos Açores não se intersectam.** Vem do F1.1c e não deste bloco, e é o bloco do mapa que o corrige. A 390, a 768 e a 1280 as duas molduras não se cruzam, e cada polígono das duas unidades da Madeira (incluindo as Selvagens, que fazem a moldura alta) e das nove ilhas fica dentro da sua moldura. A disposição recomendada, e não imposta, é os Açores por cima da Madeira e os dois à esquerda do continente, que é a geográfica. A medida entra na régua (célula **U10**) e as capturas do país refazem-se.
+
+**(e) O copiador e a R8 são donos só do padrão `unidade-*.json`.** Um `unidade-*.json` fora do conjunto das 29 sai com mensagem; qualquer outro ficheiro de `public/dados/mapa/` não se toca nem se conta. Conhecido-positivo com um ficheiro estranho na pasta que sobrevive: célula **U11**.
+
+**(f) As três plantas de `lista.mjs` que não mordiam** (L1, L12 e L9) passam a morder, ou saem com a razão escrita na régua; `lista.mjs --vermelhos` sai a 0 e o relatório diz a conta.
+
+**(g) O que se mede e como se conta.** Os nomes esperados da U2 leem-se da Carta e nunca do `<title>` do SVG; a U1c compara os 308 slugs como conjunto exacto, uma ligação cada; a mediana com `n` par é a média dos dois do meio, nos dois guiões. O relatório ganha a secção «O que um pacote de leitura não reproduz», e `distritos-medidas.json` guarda os resumos das quatro réguas com a data.

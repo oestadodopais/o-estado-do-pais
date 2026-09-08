@@ -1,0 +1,105 @@
+{
+  "sobre": "F1.1e · as oito capturas do mapa, o recorte de cada uma",
+  "comando": "node design/especime-v3/medicoes/capturas-do-mapa.mjs",
+  "medido": "2026-09-08T18:42:10.619Z",
+  "pasta": "design/especime-v3/capturas/distritos-2026-09-08",
+  "escala": 1,
+  "capturas": [
+    {
+      "ficheiro": "pais-pt-390.png",
+      "lang": "pt",
+      "largura": 390,
+      "nivel": "pais",
+      "recorte": {
+        "x": 0,
+        "y": 28,
+        "width": 390,
+        "height": 608
+      }
+    },
+    {
+      "ficheiro": "unidade-evora-pt-390.png",
+      "lang": "pt",
+      "largura": 390,
+      "nivel": "unidade-evora",
+      "recorte": {
+        "x": 0,
+        "y": 145,
+        "width": 390,
+        "height": 375
+      }
+    },
+    {
+      "ficheiro": "pais-pt-1280.png",
+      "lang": "pt",
+      "largura": 1280,
+      "nivel": "pais",
+      "recorte": {
+        "x": 668,
+        "y": 217,
+        "width": 518,
+        "height": 683
+      }
+    },
+    {
+      "ficheiro": "unidade-evora-pt-1280.png",
+      "lang": "pt",
+      "largura": 1280,
+      "nivel": "unidade-evora",
+      "recorte": {
+        "x": 668,
+        "y": 392,
+        "width": 518,
+        "height": 467
+      }
+    },
+    {
+      "ficheiro": "pais-en-390.png",
+      "lang": "en",
+      "largura": 390,
+      "nivel": "pais",
+      "recorte": {
+        "x": 0,
+        "y": 28,
+        "width": 390,
+        "height": 608
+      }
+    },
+    {
+      "ficheiro": "unidade-evora-en-390.png",
+      "lang": "en",
+      "largura": 390,
+      "nivel": "unidade-evora",
+      "recorte": {
+        "x": 0,
+        "y": 145,
+        "width": 390,
+        "height": 375
+      }
+    },
+    {
+      "ficheiro": "pais-en-1280.png",
+      "lang": "en",
+      "largura": 1280,
+      "nivel": "pais",
+      "recorte": {
+        "x": 668,
+        "y": 217,
+        "width": 518,
+        "height": 683
+      }
+    },
+    {
+      "ficheiro": "unidade-evora-en-1280.png",
+      "lang": "en",
+      "largura": 1280,
+      "nivel": "unidade-evora",
+      "recorte": {
+        "x": 668,
+        "y": 392,
+        "width": 518,
+        "height": 467
+      }
+    }
+  ]
+}

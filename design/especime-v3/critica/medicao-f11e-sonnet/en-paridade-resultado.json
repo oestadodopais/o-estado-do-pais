@@ -1,0 +1,82 @@
+{
+  "homeEn": {
+    "numAreas": 29,
+    "ariaLabel": "Map of the districts and islands of Portugal, one area per unit.",
+    "nomes": [
+      {
+        "slug": "aveiro",
+        "nome": "Aveiro"
+      },
+      {
+        "slug": "beja",
+        "nome": "Beja"
+      },
+      {
+        "slug": "braga",
+        "nome": "Braga"
+      },
+      {
+        "slug": "braganca",
+        "nome": "Bragança"
+      },
+      {
+        "slug": "castelo-branco",
+        "nome": "Castelo Branco"
+      }
+    ]
+  },
+  "hoverAmostraEn": [
+    {
+      "slug": "evora",
+      "esperado": "Évora",
+      "obtido": "Évora",
+      "ok": true
+    },
+    {
+      "slug": "faro",
+      "esperado": "Faro",
+      "obtido": "Faro",
+      "ok": true
+    },
+    {
+      "slug": "ilha-de-sao-miguel",
+      "esperado": "Ilha de São Miguel",
+      "obtido": "Ilha de São Miguel",
+      "ok": true
+    }
+  ],
+  "evoraCrescidaEn": {
+    "numConcelhos": 14,
+    "portaHref": "/en/districts/evora",
+    "portaTexto": "Open →",
+    "hrefEsperadoComecaCom": "/en/districts/evora",
+    "hrefOk": true,
+    "amostraNomes": [
+      {
+        "slug": "alandroal",
+        "nome": "Alandroal"
+      },
+      {
+        "slug": "arraiolos",
+        "nome": "Arraiolos"
+      },
+      {
+        "slug": "borba",
+        "nome": "Borba"
+      }
+    ],
+    "nomesBatemComPt": true
+  },
+  "semGuiaoEn": {
+    "numLinks": 29,
+    "contagem200": 29,
+    "naoOk": [],
+    "numNaGaveta": 29
+  },
+  "paginaConcelhoEn": {
+    "status": 200,
+    "postura": "localizador",
+    "numCirculos": 308,
+    "cartaoNome": "Évora"
+  }
+}

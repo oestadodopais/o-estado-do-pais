@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "postura": "localizador",
+  "nivel": null,
+  "temSvgDeAreas": false,
+  "temSvgDePontos": true,
+  "numCirculosDePonto": 308,
+  "numAreasDeConcelho": 0,
+  "temElementoEscolhido": true,
+  "escolhidoTag": "circle",
+  "escolhidoDataM": "Évora",
+  "cartaoNome": "Évora",
+  "figureClass": "mapa"
+}
