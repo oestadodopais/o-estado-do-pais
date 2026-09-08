@@ -457,7 +457,9 @@ async function correTudo(soEstas) {
              era a lista fechada que precisava de vir primeiro. */
           r.ordemDoDocumento === 'mapa antes dos nomes',
         `${r.nomes.length} ligações, ${daLista.size} slugs na lista e ${doMapa.size} no mapa, ${destinos.size} destinos distintos` +
-          `${soNoMapa.length ? ` · no mapa e não na lista: ${soNoMapa.join(', ')}` : ' · as nove áreas do desenho estão todas na lista'}` +
+          `${soNoMapa.length ? ` · no mapa e não na lista: ${soNoMapa.join(', ')}` : ''}` +
+          `${soNaLista.length ? ` · na lista e não no mapa: ${soNaLista.join(', ')}` : ''}` +
+          `${soNoMapa.length + soNaLista.length === 0 ? ' · a lista e o desenho são as mesmas unidades' : ''}` +
           ` · ordem do documento: ${r.ordemDoDocumento}`,
       );
     }
@@ -1059,21 +1061,27 @@ const PLANTAS = [
     ),
   },
   {
+    /* A RAIZ DO PAR É `:root` DESDE O F1.1 (03.09.2026), e as duas plantas ainda
+       procuravam `.cabeca-grelha`, que era a raiz de antes: o `replace` não
+       encontrava nada, o HTML saía intacto e as duas plantas declaravam-se a
+       morder sem terem mexido em coisa nenhuma. Apanhado ao correr
+       `--vermelhos` no F1.1e (08.09.2026), que é a primeira vez que ele corre
+       nesta régua desde essa mudança. */
     nome: 'o rato num nome sem resposta do mapa (a folha do par retirada)',
     celulas: ['L6', 'L7'],
     estrago: (html, rota) =>
-      soNaPrimeira(rota) ? html.replace(/<style>\.cabeca-grelha:has[\s\S]*?<\/style>/, '') : html,
+      soNaPrimeira(rota) ? html.replace(/<style>:root:has[\s\S]*?<\/style>/, '') : html,
   },
   {
     nome: 'a marca só por cor',
     celulas: ['L6', 'L7'],
     estrago: (html, rota) => {
       if (!soNaPrimeira(rota)) return html;
-      const sem = html.replace(/<style>\.cabeca-grelha:has[\s\S]*?<\/style>/, '');
+      const sem = html.replace(/<style>:root:has[\s\S]*?<\/style>/, '');
       return sem.replace(
         '</head>',
-        '<style>.cabeca-grelha:has([data-lista-porta="lisboa"]:hover) .uni[data-unidade="lisboa"]{stroke:#c00}' +
-          '.cabeca-grelha:has([data-uni-porta="lisboa"]:hover) [data-lista-porta="lisboa"]{color:#c00}' +
+        '<style>:root:has([data-lista-porta="lisboa"]:hover) .uni[data-unidade="lisboa"]{stroke:#c00}' +
+          ':root:has([data-uni-porta="lisboa"]:hover) [data-lista-porta="lisboa"]{color:#c00}' +
           '.mapa-ilhas-lista a:hover{text-decoration-thickness:1px !important}</style></head>',
       );
     },
