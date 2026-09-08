@@ -157,6 +157,17 @@ const TETOS = {
      passaram a dizer o que a secção tem. As quatro linhas do inventário da voz
      passaram a «retirada» com a razão escrita. */
   d814_densidades: 0,
+  /* 8.11 e §7.3 · leituras de aparelho no cabeçalho, somadas sobre as páginas.
+     DESCE DE 28 892 PARA 0 a 08.09.2026. Eram quatro por página em 7 223 das
+     7 240 (o painel europeu, as fontes, as séries atrasadas e a agenda) e são
+     zero: a data da reconferência foi para «Portugal na União Europeia», dentro
+     do painel que ela cobre, e a leitura das fontes com o seu contador foi para
+     a regra 6 do Método, que é a âncora para onde as portas das três já
+     apontavam. As duas contagens da agenda ficam onde já estavam, nas portas da
+     primeira página e na regra 8 do Método. O «antes» não foi contado de
+     cabeça: correu-se esta régua sobre o `dist/` desta árvore ANTES de se tocar
+     no cabeçalho, e ela imprimiu 28 892 em 7 240 páginas. */
+  d811_leituras_na_cabeca: 0,
 };
 
 /* Quantos concelhos ligados fora de uma lista fechada fazem uma segunda lista.
@@ -397,6 +408,7 @@ const medidas = {
   d814_densidades: 0,
   d817_pontos_no_concelho: 0,
   d817_concelhos_sem_mapa: 0,
+  d811_leituras_na_cabeca: 0,
 };
 /** As amostras de cada medida, para que um número tenha sempre um sítio. */
 const amostras = Object.fromEntries(Object.keys(medidas).map((k) => [k, []]));
@@ -612,6 +624,20 @@ for (const ficheiro of paginas) {
     }
   }
 
+  /* ------------------------------------------------------------------ 8.11 */
+  /* AS LEITURAS DE APARELHO NO CABEÇALHO DE TODAS AS PÁGINAS.
+     O item 8.11 e o §7.3 mandam-nas para a página da medida e para o Método: o
+     que esta medida conta é quantas ficaram no `<header>`, página a página.
+     Conta ELEMENTOS e não páginas, porque eram quatro por página e uma medida
+     por página não distinguiria tirar uma de tirar as quatro. */
+  if (cabecalho) {
+    const leituras = cabecalho.querySelectorAll('.mob-leitura').length;
+    if (leituras) {
+      medidas.d811_leituras_na_cabeca += leituras;
+      anota('d811_leituras_na_cabeca', `${url} · ${leituras} leitura(s) de aparelho no cabeçalho`);
+    }
+  }
+
   /* -------------------------------------------------------------------- L5 */
   const primeira = chaveDaRota === 'home';
   if (!primeira && !transcricao) {
@@ -753,6 +779,7 @@ const NOMES = {
   d88_livro_razao: '8.8 · «livro-razão» nos menus e nos títulos',
   d813_selos_nos_dominios: '8.13 · valores selados na secção dos domínios de /',
   d814_densidades: '8.14 · «Relance» e «Leitura breve» nas páginas do leitor',
+  d811_leituras_na_cabeca: '8.11 · leituras de aparelho no cabeçalho',
 };
 
 console.log(`check:lugar · ${paginas.length} páginas em dist/`);

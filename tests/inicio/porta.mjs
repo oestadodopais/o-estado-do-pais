@@ -601,16 +601,26 @@ async function corre() {
         ` (${g.altura <= teto ? `menos ${teto - g.altura}` : `MAIS ${g.altura - teto}`} px)`,
     );
 
+    /* A SEGUNDA METADE DA CÉLULA MUDA DE NÚMERO COM O ITEM 8.11 (F1.10,
+       08.09.2026). Exigia UMA fila de leituras por baixo do nome a 390, que era
+       a folha a mostrar ali uma das quatro. As quatro saíram do cabeçalho de
+       todas as páginas e foram para a página da medida e para o Método: por
+       baixo do nome não fica leitura nenhuma, e a caixa da mobília não se
+       desenha abaixo de 640 (o seu único filho, o controlo do tema, vive dentro
+       do menu). A célula passa a exigir ZERO filas, que é o que o item manda, e
+       continua a imprimir a altura para que uma caixa vazia com fio se veja no
+       número em vez de passar despercebida. */
     medidas[`A11.${ed.chave}`] = { acimaDoNome: g.mobilia, barra: g.barra, leituras: g.leituras };
     conta(
       `A11.${ed.chave}`,
       g.mobilia !== null &&
         g.mobilia <= TETO_DA_MOBILIA &&
         g.barra.filas === 1 &&
-        g.leituras.filas === 1,
+        g.leituras.filas === 0 &&
+        g.leituras.altura === 0,
       `mobília acima do nome a 390: ${g.mobilia} px (teto ${TETO_DA_MOBILIA})` +
         ` · a barra em ${g.barra.filas} fila(s) com ${g.barra.itens} item(ns), ${g.barra.altura} px` +
-        ` · as leituras por baixo do nome em ${g.leituras.filas} fila(s) com ${g.leituras.itens} à vista, ${g.leituras.altura} px`,
+        ` · as leituras por baixo do nome em ${g.leituras.filas} fila(s) com ${g.leituras.itens} à vista, ${g.leituras.altura} px (o item 8.11 exige 0 e 0)`,
     );
 
     /* ------------------------------------------------------------------- A5 */

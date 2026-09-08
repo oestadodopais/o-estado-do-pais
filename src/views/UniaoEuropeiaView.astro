@@ -67,7 +67,8 @@ import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
 import { estadoDaMedida } from '../lib/estado.mjs';
 import { ledeDoPainel } from '../lib/inicio.mjs';
 import { dominioDaLinha } from '../lib/dominios.mjs';
-import { prova } from '../lib/prova.mjs';
+import { estadoDaVerificacao, prova } from '../lib/prova.mjs';
+import { dataDaCasa } from '../lib/datas.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import '../styles/inicio.css';
@@ -76,6 +77,10 @@ const { lang = 'pt' } = Astro.props;
 const s = t(lang);
 const path = routePath('uniaoEuropeia', lang);
 const p = prova(lang);
+/* O ESTADO DA RECONFERIÇÃO DO PAINEL, que era lido pelo `Masthead.astro` e é
+   lido aqui desde o item 8.11: a data e se ela passou do prazo. É a mesma
+   função e a mesma leitura; o que mudou foi a página que a mostra. */
+const verificacao = estadoDaVerificacao();
 
 /* A PORTA DE UMA MEDIDA QUE VIVE NUM DOMÍNIO. É a mesma função que a primeira
    página tinha, e a mesma tabela por trás (`dominioDaLinha()`): uma medida
@@ -258,6 +263,42 @@ const lede = ledeDoPainel(medidas, s.inicio.cabeca.ledePais, lang);
 
       <LeituraBreve s={s} lang={lang} quadro="social" medidas={sociais} />
     </section>
+
+    {/* ------------------------------------------------------------------
+        A DATA DA ÚLTIMA RECONFERÊNCIA DO PAINEL (F1.10, item 8.11 e §7.3,
+        08.09.2026)
+        ------------------------------------------------------------------
+        Vivia no cabeçalho de 7 224 páginas, com uma porta para
+        `#painel` desta página. O item manda-a para «a página da medida», e a
+        página da medida é esta: as 21 medidas dos dois quadros vivem aqui
+        desde o item 8.16, e é este painel que aquela data cobre.
+
+        SEM PORTA, porque chegou ao destino. A leitura era uma porta para
+        `#painel` e está DENTRO de `#painel`: uma ligação para o sítio onde ela
+        já está é o defeito que o §7.10 deste mesmo brief manda tirar («"9
+        regiões" deixa de ser ligação para si próprio»). O rótulo e o valor
+        ficam; a âncora sai.
+
+        NO FIM DO PAINEL E NÃO NO PRINCÍPIO: o item 8.11 tira do primeiro ecrã
+        a prosa, as definições e as ressalvas das páginas do leitor, e uma data
+        de estado por cima dos números seria a mesma coisa noutro sítio. Quem
+        quer a data desce até ela; quem quer os números vê-os primeiro.
+
+        A DATA CONTINUA A LER-SE NO MÉTODO, pela chave `painel_reconferido_em`
+        da regra 6, que é a outra metade do que o §7.3 manda («a página da
+        medida e o Método»). Ali é uma chave da prova, com a sua porta para
+        aqui; aqui é a leitura, sem porta.
+        ------------------------------------------------------------------ */}
+    <div class="leituras-de-estado" data-leitura-de-estado="painel">
+      <span class="mob-leitura" data-vencida={verificacao.vencida ? 'sim' : null}>
+        <span class="mob-leitura-k">
+          {verificacao.vencida ? s.sinal.vencido : s.sinal.reconferido}
+        </span>
+        <span class="mob-leitura-v" data-nonledger="data-de-atualizacao">
+          {dataDaCasa(verificacao.verificadoEm)}
+        </span>
+      </span>
+    </div>
   </section>
 
   <script src="/js/leituras.js" defer is:inline></script>

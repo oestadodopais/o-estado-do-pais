@@ -405,18 +405,25 @@ export const REGRAS = [
     titulo: { pt: 'A releitura', en: 'The re-reading' },
     regra: {
       pt: [
-        'Os números publicados são relidos na fonte por um caminho diferente e por quem não os escreveu, linha a linha, e cada linha diz se já o foi, quando e com que resultado. O painel da primeira página é reconferido contra a fonte todas as semanas, e a página diz quando foi a última vez.',
+        'Os números publicados são relidos na fonte por um caminho diferente e por quem não os escreveu, linha a linha, e cada linha diz se já o foi, quando e com que resultado. O painel europeu é reconferido contra a fonte todas as semanas, e a página dele diz quando foi a última vez.',
       ],
       en: [
-        'Published figures are read again at the source by a different route and by someone who did not write them, row by row, and each row says whether it has been yet, when and with what result. The panel on the front page is re-checked against the source every week, and the page says when the last time was.',
+        'Published figures are read again at the source by a different route and by someone who did not write them, row by row, and each row says whether it has been yet, when and with what result. The European panel is re-checked against the source every week, and its page says when the last time was.',
       ],
     },
+    /* AS DUAS FRASES DIZIAM «o cabeçalho de todas as páginas», E DEIXOU DE SER
+       VERDADE (F1.10, item 8.11 e §7.3, 08.09.2026). As quatro leituras de
+       aparelho saíram da mobília e vieram para a página da medida e para aqui;
+       a data do painel vive em «Portugal na União Europeia», dentro da secção
+       que ela cobre, e a leitura das fontes vive nesta regra, ao lado das suas
+       contagens. A frase acompanha o sítio: um mecanismo que descreve um lugar
+       que já não existe é a página a mentir sobre si própria. */
     mecanismo: {
       pt: [
-        'A data da última reconferência é escrita pelo motor a cada verificação, e o cabeçalho de todas as páginas mostra-a. Quando passa do prazo, o cabeçalho di-lo por palavras, em vez de mostrar uma data que parece fresca.',
+        'A data da última reconferência é escrita pelo motor a cada verificação, e a página do painel mostra-a. Quando passa do prazo, a página di-lo por palavras, em vez de mostrar uma data que parece fresca.',
       ],
       en: [
-        'The date of the last re-check is written by the engine at each verification, and the masthead of every page shows it. Once it is overdue, the masthead says so in words, instead of showing a date that looks fresh.',
+        'The date of the last re-check is written by the engine at each verification, and the panel page shows it. Once it is overdue, the page says so in words, instead of showing a date that looks fresh.',
       ],
     },
     limite: {
