@@ -69,12 +69,34 @@
  * rede mostra-se sempre, em linha; a partir de 1024 mostra-se a lista da coluna
  * esquerda. Nenhuma largura mostra as duas formas, e nenhuma esconde a lista.
  */
-import { paisDoMapa, parcelasDoMapa } from '../../lib/mapa.mjs';
+import { parcelasDoMapa } from '../../lib/mapa.mjs';
 import { routePath } from '../../lib/routes.mjs';
+import { REGIOES } from '../../data/regioes.mjs';
 
 const { s, lang } = Astro.props;
 
 const parcelas = parcelasDoMapa();
+
+/* ---------------------------------------------------------------------------
+ * AS NOVE REGIÕES ENTRAM À FRENTE DAS 29 UNIDADES (F1.1d, item 5, 07.09.2026)
+ * ---------------------------------------------------------------------------
+ * «Uma lista fechada ("Os nomes") com as nove regiões e as 29 unidades fica por
+ * baixo.» O desenho da primeira página passou a ser as nove regiões, e esta
+ * lista é o índice do desenho: as nove vêm primeiro porque são o primeiro nível
+ * dele, e as 29 continuam por baixo, agrupadas pela parcela da Carta, porque
+ * continuam a ter página e a estar no menu (item 6 do brief).
+ *
+ * OS NOMES SÃO OS DA LISTA DA CASA (`src/data/regioes.mjs`), na língua da
+ * edição, e a referência (Portugal, que é o país e não uma região NUTS II) fica
+ * de fora pelo campo que ela própria declara. Não há aqui uma segunda lista.
+ */
+const regioes = REGIOES.filter((r) => !r.referencia)
+  .map((r) => ({ slug: r.slug, nome: r.nome[lang] ?? r.nome.pt }))
+  /* PELA COLAÇÃO PORTUGUESA, e não pela ordem da lista da casa: em
+     `src/data/regioes.mjs` as nove estão pela ordem em que entraram, que é a da
+     régua da convergência; uma lista de nomes lê-se por ordem, e a I84 fixou que
+     é esta a ordem das listas do mapa. É a mesma que o desenho leva. */
+  .sort((a, b) => a.nome.localeCompare(b.nome, 'pt'));
 
 /* Os nomes de lugar das três parcelas, na língua da edição. São as mesmas
    cadeias que o mapa põe por cima das molduras: entram pela chave da parcela e
@@ -83,38 +105,33 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
 const NOME_DA_PARCELA = { continente: s.inicio.mapa.continente };
 
 /* ---------------------------------------------------------------------------
- * AS 58 REGRAS DO PAR, COMPOSTAS DAS 29 UNIDADES DO ARTEFACTO
+ * AS 18 REGRAS DO PAR, COMPOSTAS DAS NOVE REGIÕES DA LISTA DA CASA
  * ---------------------------------------------------------------------------
- * Duas famílias, uma por sentido, cada uma com um bloco de declarações só e 29
- * selectores. Escrever 58 blocos seria 58 vezes as mesmas duas declarações.
+ * Duas famílias, uma por sentido, cada uma com um bloco de declarações só e
+ * nove selectores. Escrever 18 blocos seria 18 vezes as mesmas duas declarações.
  *
- * O SUJEITO É `.cabeca-grelha`, que é o antepassado comum dos dois lados: o mapa
- * está na coluna do instrumento e a lista é irmã dela. Abaixo de 640 a folha
- * dissolve a grelha (`display: contents`), e isso não muda nada aqui, porque um
- * selector lê a árvore e não a caixa.
+ * ERAM 58, UMA POR CADA SENTIDO DAS 29 UNIDADES (Emenda 20c). O desenho passou a
+ * ser as nove regiões (F1.1d), e as 29 deixaram de ter área no mapa: uma regra
+ * que aponta para `.uni[data-unidade="aveiro"]` deixou de ter alvo, e um par de
+ * estado sem um dos lados é bytes que não acendem nada. Os nomes das 29 ficam na
+ * lista, que é o índice das páginas delas; o par de estado é das nove, que são o
+ * que o desenho tem.
+ *
+ * `:root` É A RAIZ DO PAR (F1.1, 03.09.2026), porque é a que contém sempre os
+ * dois lados, seja qual for a arrumação da cabeça; o que torna a regra precisa é
+ * o PAR de atributos, que é o mesmo slug dos dois lados.
  */
-const alvos = paisDoMapa().unidades.map((u) => u.slug);
-/* A RAIZ DO PAR PASSOU A SER O DOCUMENTO (F1.1, 03.09.2026).
-   Era `.cabeca-grelha`, porque a lista dos nomes e o mapa viviam os dois dentro
-   dela. Com a lista a passar a uma banda de largura inteira FORA da grelha (item
-   4 do brief; a razão medida está em `CabecaDoLugar.astro`), o `:has()` da
-   grelha deixou de ver os nomes e as vinte e nove marcas de estado deixaram de
-   acender nos dois sentidos: a régua `tests/inicio/lista.mjs` (L6a a L6d e L7)
-   contou 29 falhas de 29.
-
-   `:root` é a raiz que contém sempre os dois lados, seja qual for a arrumação da
-   cabeça, e não alarga o que a regra apanha: o que a torna precisa é o PAR de
-   atributos, que continua a ser o mesmo slug dos dois lados. */
+const alvos = regioes.map((r) => r.slug);
 const paraOMapa = alvos
   .map(
     (slug) =>
-      `:root:has([data-lista-porta="${slug}"]:is(:hover,:focus-visible)) .uni[data-unidade="${slug}"]`,
+      `:root:has([data-lista-regiao="${slug}"]:is(:hover,:focus-visible)) .uni[data-unidade="${slug}"]`,
   )
   .join(',');
 const paraALista = alvos
   .map(
     (slug) =>
-      `:root:has([data-uni-porta="${slug}"]:is(:hover,:focus-visible)) [data-lista-porta="${slug}"]`,
+      `:root:has([data-uni-porta="${slug}"]:is(:hover,:focus-visible)) [data-lista-regiao="${slug}"]`,
   )
   .join(',');
 const parDeEstado =
@@ -123,6 +140,20 @@ const parDeEstado =
 ---
 
 <div class="mapa-ilhas" data-mapa-ilhas>
+  <div class="mapa-ilhas-grupo" data-parcela-lista="regioes">
+    <p class="mapa-ilhas-k">{s.inicio.mapa.regioesK}</p>
+    <ul class="mapa-ilhas-lista">
+      {
+        regioes.map((r) => (
+          <li>
+            <a href={routePath('regiao', lang, { slug: r.slug })} data-lista-regiao={r.slug}>
+              {r.nome}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
   {
     parcelas.map((p) => (
       <div class="mapa-ilhas-grupo" data-parcela-lista={p.chave}>

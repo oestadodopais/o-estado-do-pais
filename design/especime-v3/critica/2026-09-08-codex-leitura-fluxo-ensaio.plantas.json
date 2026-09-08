@@ -1,0 +1,33 @@
+{
+ "registado_em": "2026-09-08T05:55:36+00:00",
+ "copia": "ensaio-pacote",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": ".github/workflows/ensaio-diario.yml",
+   "descricao": "o cron sem o mês: dispara nos dias 5 a 14 de todos os meses, e o comentário diz só setembro",
+   "sha256_antes": "bf77d5c1928aaa24ba0fa83d793bea8cda90a5f573da7b3205a3089a2abb3d7f",
+   "sha256_depois": "813c06a8d07ac22d98cb90c3e4cdb531c1874503f9f9b82f0986ff4e47556bae",
+   "contexto_antes": "o F2.1b) e a semana passou\n    # a fechar a 13.09 se tudo for verde. A contagem (n de 7) faz-se na linha\n    # F2.1 do plano do sítio, com as corridas citadas.\n    - cron: \"10 0 5-14 9 *\"\n  workflow_dispatch:\n    inputs:\n      motivo:\n        description: \"porque é que este despacho à mão existe (fica no registo das duas corridas)\"\n        type:",
+   "contexto_depois": "o F2.1b) e a semana passou\n    # a fechar a 13.09 se tudo for verde. A contagem (n de 7) faz-se na linha\n    # F2.1 do plano do sítio, com as corridas citadas.\n    - cron: \"10 0 5-14 * *\"\n  workflow_dispatch:\n    inputs:\n      motivo:\n        description: \"porque é que este despacho à mão existe (fica no registo das duas corridas)\"\n        type:"
+  },
+  {
+   "id": "P2",
+   "ficheiro": ".github/workflows/ensaio-diario.yml",
+   "descricao": "o despacho pede só as fontes devidas: o ensaio deixa de pedir os 79 endereços que o plano exige",
+   "sha256_antes": "813c06a8d07ac22d98cb90c3e4cdb531c1874503f9f9b82f0986ff4e47556bae",
+   "sha256_depois": "1a4ad25d9f1fc5971a850b303897ef3fc4a5287ab2133961be82f2e9acc49c37",
+   "contexto_antes": "/${GITHUB_REPOSITORY}/actions/workflows/corredor.yml/dispatches\" \\\n            -f ref=\"${GITHUB_REF_NAME}\" \\\n            -f \"inputs[modo]=ensaio\" \\\n            -f \"inputs[so_devidas]=false\" \\\n            -f \"inputs[corpos]=nao\" \\\n            -f \"inputs[motivo]=${motivo}\"\n          echo \"despachado no ramo ${GITHUB_REF_NAME}; a corrida do corredor ",
+   "contexto_depois": "/${GITHUB_REPOSITORY}/actions/workflows/corredor.yml/dispatches\" \\\n            -f ref=\"${GITHUB_REF_NAME}\" \\\n            -f \"inputs[modo]=ensaio\" \\\n            -f \"inputs[so_devidas]=true\" \\\n            -f \"inputs[corpos]=nao\" \\\n            -f \"inputs[motivo]=${motivo}\"\n          echo \"despachado no ramo ${GITHUB_REF_NAME}; a corrida do corredor "
+  },
+  {
+   "id": "P3",
+   "ficheiro": ".github/workflows/ensaio-diario.yml",
+   "descricao": "a permissão errada: contents em vez de actions, e o despacho REST falharia com 403 apesar do comentário",
+   "sha256_antes": "1a4ad25d9f1fc5971a850b303897ef3fc4a5287ab2133961be82f2e9acc49c37",
+   "sha256_depois": "dada9cca4e571346e051d135982a01990b45c31013b4701a0dfd677b81d3bb3b",
+   "contexto_antes": ":\n      motivo:\n        description: \"porque é que este despacho à mão existe (fica no registo das duas corridas)\"\n        type: string\n        required: true\n\npermissions:\n  actions: write\n\njobs:\n  despachar:\n    runs-on: ubuntu-latest\n    timeout-minutes: 5\n    steps:\n      - name: Despachar um ensaio do corredor\n        env:\n          GH_TOKEN:",
+   "contexto_depois": ":\n      motivo:\n        description: \"porque é que este despacho à mão existe (fica no registo das duas corridas)\"\n        type: string\n        required: true\n\npermissions:\n  contents: write\n\njobs:\n  despachar:\n    runs-on: ubuntu-latest\n    timeout-minutes: 5\n    steps:\n      - name: Despachar um ensaio do corredor\n        env:\n          GH_TOKEN:"
+  }
+ ]
+}

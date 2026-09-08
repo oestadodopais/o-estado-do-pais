@@ -514,6 +514,33 @@ interface DistritoDoMapa {
   concelhos: UnidadeDoMapa[];
 }
 
+/**
+ * Uma das nove regiões NUTS II no mapa da primeira página.
+ *
+ * `d` e `caixa` vivem no campo do país; `campo` é a grelha própria da região, em
+ * que os seus concelhos são desenhados, e `ficheiro` é o caminho, dentro de
+ * `public/`, do ficheiro que os traz.
+ */
+interface RegiaoDoMapa {
+  slug: string;
+  codigo: string;
+  parcela: string;
+  ponto: [number, number];
+  concelhos: number;
+  unidades: string[];
+  d: string;
+  caixa: CaixaDoMapa;
+  campo: CampoDoMapa;
+  ficheiro: string;
+}
+
+/** O nível do país por regiões: o campo, as molduras e as nove áreas. */
+interface MapaDasRegioes {
+  campo: CampoDoMapa;
+  molduras: MolduraDoMapa[];
+  regioes: RegiaoDoMapa[];
+}
+
 /** A menção da fonte que a licença da CAOP obriga, lida do manifesto. */
 interface FonteDoMapa {
   atribuicao: string;

@@ -1088,6 +1088,11 @@ h1.cabeca-h1[data-citadas]:not([data-citadas='1']) {
   font-size: 13px;
   fill: var(--muted);
 }
+
+/* O LUGAR DO NOME E OS DOIS GRUPOS DE ÁREAS VIVEM EM `mapa.css` (F1.1d), pela
+   mesma razão que a língua das áreas: a página de um distrito rende o mesmo
+   lugar do nome e não importa esta folha. */
+
 /* Os 308 pontos são iguais (Emenda 3) e nenhum vem cheio (Emenda 10). O glifo é
    um círculo, porque o ponto redondo marca um lugar e o quadrado ficou a marcar
    prova e estado; o enchimento saiu com a cobertura, que passou a dizer-se por

@@ -1,0 +1,33 @@
+{
+ "registado_em": "2026-09-08T06:03:45+00:00",
+ "copia": "inventario-pacote",
+ "plantas": [
+  {
+   "id": "V1",
+   "ficheiro": "design/especime-v3/INVENTARIO-FRASES.md",
+   "descricao": "a classe errada: a linha do estado vazio da área de leitura declarada conteudo, quando não diz nada sobre o que se mede",
+   "sha256_antes": "ff8885e7a257046b86ee97768857b38dfa788336d94595992747f2751fe11d84",
+   "sha256_depois": "72164953b051a2e3debb05062a6b0081d40546e3f2b8d0180fdff2d6bf0f2456",
+   "contexto_antes": "abela não declara sai como bloco **por classificar**, que é o portão que a\napanha.\n\n| classe | texto | bloco | estado | razão |\n| --- | --- | --- | --- | --- |\n| navegacao | Toque num cartão para ler a medida. | toque | viva | — |\n| navegacao | Tap a card to read the measure. | toque | viva | — |\n",
+   "contexto_depois": "abela não declara sai como bloco **por classificar**, que é o portão que a\napanha.\n\n| classe | texto | bloco | estado | razão |\n| --- | --- | --- | --- | --- |\n| conteudo | Toque num cartão para ler a medida. | toque | viva | — |\n| navegacao | Tap a card to read the measure. | toque | viva | — |\n"
+  },
+  {
+   "id": "V2",
+   "ficheiro": "design/especime-v3/INVENTARIO-FRASES.md",
+   "descricao": "uma linha viva que já não é o que a página rende: a gémea inglesa com measures no lugar de measure",
+   "sha256_antes": "72164953b051a2e3debb05062a6b0081d40546e3f2b8d0180fdff2d6bf0f2456",
+   "sha256_depois": "381238f18237bdaffb4c995e21d789d74c5e61e68a1f81677dea00661e45360d",
+   "contexto_antes": "ue a\napanha.\n\n| classe | texto | bloco | estado | razão |\n| --- | --- | --- | --- | --- |\n| conteudo | Toque num cartão para ler a medida. | toque | viva | — |\n| navegacao | Tap a card to read the measure. | toque | viva | — |\n",
+   "contexto_depois": "ue a\napanha.\n\n| classe | texto | bloco | estado | razão |\n| --- | --- | --- | --- | --- |\n| conteudo | Toque num cartão para ler a medida. | toque | viva | — |\n| navegacao | Tap a card to read the measures. | toque | viva | — |\n"
+  },
+  {
+   "id": "V3",
+   "ficheiro": "built/index.html",
+   "descricao": "a página rende uma frase da casa a falar de si que o inventário não tem: a linha de repouso ganha «conferida pela casa»",
+   "sha256_antes": "c5a75275c16806ef5c575f5dc22d656ee986c987cad4fb1ae3e1c9f149c62d21",
+   "sha256_depois": "64ede333c4611c86c88a037213916ab9289ee223214edbd95d38ae0a378d5d47",
+   "contexto_antes": "elance</button><button class=\"densidade-b\" type=\"button\" data-densidade=\"leitura\">Leitura breve</button></div><p class=\"dobras-nada\" data-leituras-vazio hidden>Toque num cartão para ler a medida.</p><p class=\"painel-contexto\" data-contexto-painel=\"pdm\">Os indicadores do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, cada um com o li",
+   "contexto_depois": "elance</button><button class=\"densidade-b\" type=\"button\" data-densidade=\"leitura\">Leitura breve</button></div><p class=\"dobras-nada\" data-leituras-vazio hidden>Toque num cartão para ler a medida, conferida pela casa.</p><p class=\"painel-contexto\" data-contexto-painel=\"pdm\">Os indicadores do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, cada um com o li"
+  }
+ ]
+}

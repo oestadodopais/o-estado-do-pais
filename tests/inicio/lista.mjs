@@ -228,11 +228,18 @@ const EDICOES = [
    mesmo ponto que a régua do mapa usa para clicar: o que aqui se mede é a marca
    à volta do sítio onde o rato de verdade pousa. */
 const PONTOS = Object.fromEntries(
-  JSON.parse(fs.readFileSync(path.join(RAIZ, 'mapa', 'pais.json'), 'utf8')).unidades.map((u) => [
-    u.slug,
-    u.ponto,
-  ]),
+  JSON.parse(
+    fs.readFileSync(path.join(RAIZ, 'src', 'data', 'mapa-regioes.gerado.json'), 'utf8'),
+  ).regioes.map((r) => [r.slug, r.ponto]),
 );
+/* AS ÁREAS DO DESENHO SÃO AS NOVE REGIÕES DESDE O F1.1d (07.09.2026), e não as
+   29 unidades da Carta: o par de estado é entre o desenho e a lista, e o desenho
+   mudou. As 29 continuam na lista, por baixo das nove, e continuam a ser
+   medidas como nomes; o que deixou de existir é o par delas, porque o outro lado
+   do par saiu do mapa. */
+const PARES = Object.keys(PONTOS).length;
+/* Os nomes da lista: as nove regiões do desenho e as 29 unidades da Carta. */
+const NOMES_DA_LISTA = 38;
 
 /** Tudo o que uma página diz sobre a lista, a uma largura. */
 const LEITURA = () => {
@@ -265,8 +272,9 @@ const LEITURA = () => {
     caixa: cx(g),
     formaDaFila: getComputedStyle(g.querySelector('ul')).display,
   }));
-  const nomes = [...document.querySelectorAll('[data-lista-porta]')].map((a) => ({
-    slug: a.getAttribute('data-lista-porta'),
+  const nomes = [...document.querySelectorAll('[data-lista-porta], [data-lista-regiao]')].map((a) => ({
+    slug: a.getAttribute('data-lista-porta') ?? a.getAttribute('data-lista-regiao'),
+    daRegiao: a.hasAttribute('data-lista-regiao'),
     parcela: a.closest('[data-parcela-lista]')?.getAttribute('data-parcela-lista') ?? null,
     visivel: visivel(a),
     caixa: cx(a),
@@ -274,7 +282,7 @@ const LEITURA = () => {
   }));
   /* A pontuação decorativa, dos dois lados de cada item e de cada ligação. */
   const pontuacao = [];
-  for (const el of document.querySelectorAll('[data-mapa-ilhas] li, [data-lista-porta]')) {
+  for (const el of document.querySelectorAll('[data-mapa-ilhas] li, [data-lista-porta], [data-lista-regiao]')) {
     for (const onde of ['::before', '::after']) {
       const c = conteudoDe(el, onde);
       if (c) pontuacao.push(`${el.tagName.toLowerCase()}${onde} = ${c}`);
@@ -287,7 +295,7 @@ const LEITURA = () => {
   /* A ORDEM DO DOCUMENTO entre a lista e o mapa, lida na árvore e não na folha:
      `compareDocumentPosition` diz qual vem primeiro, e é isso que o teclado e o
      leitor de ecrã seguem. */
-  const primeiroNome = document.querySelector('[data-lista-porta]');
+  const primeiroNome = document.querySelector('[data-lista-porta], [data-lista-regiao]');
   const primeiraArea = document.querySelector('a.uni-porta');
   const ordemDoDocumento =
     primeiroNome && primeiraArea
@@ -344,18 +352,18 @@ const LEITURA = () => {
   };
 };
 
-/** O estado de um par, e o máximo das outras 28, numa chamada só. */
+/** O estado de um par, e o máximo das outras oito, numa chamada só. */
 const ESTADO = (slug) => {
   const n = (v) => Number.parseFloat(String(v)) || 0;
   const uni = document.querySelector(`.uni[data-unidade="${slug}"]`);
-  const nome = document.querySelector(`[data-lista-porta="${slug}"]`);
+  const nome = document.querySelector(`[data-lista-regiao="${slug}"]`);
   let outroTraco = 0;
   for (const el of document.querySelectorAll('[data-areas] .uni')) {
     if (el === uni) continue;
     outroTraco = Math.max(outroTraco, n(getComputedStyle(el).strokeWidth));
   }
   let outroSublinhado = 0;
-  for (const el of document.querySelectorAll('[data-lista-porta]')) {
+  for (const el of document.querySelectorAll('[data-lista-regiao]')) {
     if (el === nome) continue;
     outroSublinhado = Math.max(outroSublinhado, n(getComputedStyle(el).textDecorationThickness));
   }
@@ -416,17 +424,19 @@ async function correTudo(soEstas) {
       const r = lido[`${e.chave}_1280`];
       const daLista = new Set(r.nomes.map((n) => n.slug));
       const doMapa = new Set(r.areas.map((a) => a.slug));
-      const soNaLista = [...daLista].filter((s) => !doMapa.has(s));
+      /* O QUE SE EXIGE MUDOU COM O F1.1d: a lista tem as nove regiões do desenho
+         E as 29 unidades da Carta, e o desenho tem as nove. Já não são o mesmo
+         conjunto: o que tem de ser verdade é que nenhuma área do desenho fica
+         sem nome na lista, e que a lista não inventa uma área. */
       const soNoMapa = [...doMapa].filter((s) => !daLista.has(s));
       const destinos = new Set(r.nomes.map((n) => n.destino));
       conta(
-        `L1·${e.chave} · uma lista só, os seus slugs são os das áreas do mapa, e vem depois dele no documento`,
-        r.nomes.length === 29 &&
-          daLista.size === 29 &&
-          doMapa.size === 29 &&
-          soNaLista.length === 0 &&
+        `L1·${e.chave} · uma lista só, com as nove áreas do desenho e as 29 unidades da Carta, depois do mapa no documento`,
+        r.nomes.length === NOMES_DA_LISTA &&
+          daLista.size === NOMES_DA_LISTA &&
+          doMapa.size === PARES &&
           soNoMapa.length === 0 &&
-          destinos.size === 29 &&
+          destinos.size === NOMES_DA_LISTA &&
           /* A ORDEM DO DOCUMENTO INVERTEU-SE COM O F1.1 (03.09.2026), e a razão
              que a fixava caducou com a forma. A lista vinha antes do mapa porque
              estava FECHADA: era o índice do desenho, e a leitura cruzada de
@@ -445,7 +455,7 @@ async function correTudo(soEstas) {
              era a lista fechada que precisava de vir primeiro. */
           r.ordemDoDocumento === 'mapa antes dos nomes',
         `${r.nomes.length} ligações, ${daLista.size} slugs na lista e ${doMapa.size} no mapa, ${destinos.size} destinos distintos` +
-          `${soNaLista.length || soNoMapa.length ? ` · só na lista: ${soNaLista.join(', ') || 'nenhum'} · só no mapa: ${soNoMapa.join(', ') || 'nenhum'}` : ' · os dois conjuntos são o mesmo'}` +
+          `${soNoMapa.length ? ` · no mapa e não na lista: ${soNoMapa.join(', ')}` : ' · as nove áreas do desenho estão todas na lista'}` +
           ` · ordem do documento: ${r.ordemDoDocumento}`,
       );
     }
@@ -528,13 +538,16 @@ async function correTudo(soEstas) {
         const escondidos = r.grupos.filter((g) => !g.visivel);
         const nomesEscondidos = r.nomes.filter((n) => !n.visivel);
         conta(
-          `L4·${e.chave}·${w} · nenhuma unidade sem alvo tocável: os ${parcelas.size} grupos e os 29 nomes à vista`,
-          r.grupos.length === parcelas.size &&
+          `L4·${e.chave}·${w} · nenhuma área sem alvo tocável: os ${parcelas.size + 1} grupos e os ${NOMES_DA_LISTA} nomes à vista`,
+          /* OS GRUPOS SÃO AS PARCELAS DO DESENHO MAIS UM (F1.1d): o das nove
+             regiões, que são as áreas do mapa, à frente dos três das 29 unidades
+             da Carta, que são as parcelas em que ele as arruma. */
+          r.grupos.length === parcelas.size + 1 &&
             parcelas.size > 0 &&
             escondidos.length === 0 &&
             nomesEscondidos.length === 0 &&
-            r.nomes.length === 29,
-          `${r.grupos.length} grupo(s) para ${parcelas.size} parcela(s) do desenho, ${escondidos.length} escondido(s)` +
+            r.nomes.length === NOMES_DA_LISTA,
+          `${r.grupos.length} grupo(s): o das regiões e ${parcelas.size} parcela(s) da Carta, ${escondidos.length} escondido(s)` +
             `${escondidos.length ? ` (${escondidos.map((g) => g.parcela).join(', ')})` : ''} · ` +
             `${r.nomes.length} nome(s), ${nomesEscondidos.length} escondido(s)`,
         );
@@ -564,8 +577,8 @@ async function correTudo(soEstas) {
         const menorLargo = vistos.length ? Math.min(...vistos.map((n) => n.caixa.w)) : 0;
         conta(
           `L5·${e.chave}·${w} · cada nome é um alvo de ${alvo} × ${alvo} px, e nenhum se interseta`,
-          vistos.length === 29 && baixos.length === 0 && altos.length === 0 && estreitos.length === 0 && colisoes === 0,
-          `${vistos.length}/29 à vista · o mais baixo ${menorAlto.toFixed(1)} px, o mais estreito ${menorLargo.toFixed(1)} px · ` +
+          vistos.length === NOMES_DA_LISTA && baixos.length === 0 && altos.length === 0 && estreitos.length === 0 && colisoes === 0,
+          `${vistos.length}/${NOMES_DA_LISTA} à vista · o mais baixo ${menorAlto.toFixed(1)} px, o mais estreito ${menorLargo.toFixed(1)} px · ` +
             `${baixos.length} sob ${alvo} de altura, ${altos.length} acima de ${alvo + 2}, ${estreitos.length} sob ${alvo} de largura, ${colisoes} interseção(ões)`,
         );
       }
@@ -689,7 +702,7 @@ async function correTudo(soEstas) {
           `L9·${e.chave}·${w} · uma forma de cada vez: a rede em linha`,
           r.nomes.every((n) => n.visivel) && formaCerta && linhasCertas,
           `fila em «${[...formas].join(', ')}» (${formas.size} forma no bloco) · os 18 do continente em ${linhas} linha(s) · ` +
-            `${r.nomes.filter((n) => n.visivel).length}/29 à vista`,
+            `${r.nomes.filter((n) => n.visivel).length}/${NOMES_DA_LISTA} à vista`,
         );
       }
     }
@@ -746,7 +759,10 @@ async function correTudo(soEstas) {
   if (daMao.length) {
     for (const e of EDICOES) {
       const p = await pagina(e.rota, 1280, true);
-      const repouso = await p.evaluate(ESTADO, 'lisboa');
+      /* O REPOUSO LÊ-SE NUMA REGIÃO, que é o que o desenho tem desde o F1.1d:
+         lido numa unidade da Carta, o lado do mapa vinha `null` e a comparação
+         com «os outros» passava a comparar um número com nada. */
+      const repouso = await p.evaluate(ESTADO, 'centro');
 
       /* O rato do lado do mapa vai ao ponto representativo, e por isso o desenho
          entra em vista uma vez e os pontos leem-se DEPOIS disso: um rolamento a
@@ -793,10 +809,10 @@ async function correTudo(soEstas) {
         }
         await p.mouse.move(0, 0);
         conta(
-          'L6b · o rato em cada uma das 29 áreas marca o nome daquela unidade, e só dele',
+          'L6b · o rato em cada uma das nove áreas marca o nome daquela região, e só dele',
           falhasRatoNaArea.length === 0,
           falhasRatoNaArea.length === 0
-            ? `29/29 · sublinhado ${repouso.sublinhado} px → 3 px no nome apontado, ${repouso.sublinhado} px nos outros 28`
+            ? `${PARES}/${PARES} · sublinhado ${repouso.sublinhado} px → 3 px no nome apontado, ${repouso.sublinhado} px nos outros`
             : `${falhasRatoNaArea.length} falha(s): ${falhasRatoNaArea.slice(0, 4).join(', ')}`,
         );
 
@@ -818,10 +834,10 @@ async function correTudo(soEstas) {
           }
         }
         conta(
-          'L6d · o foco do teclado em cada uma das 29 áreas marca o nome daquela unidade',
+          'L6d · o foco do teclado em cada uma das nove áreas marca o nome daquela região',
           falhasFocoNaArea.length === 0,
           falhasFocoNaArea.length === 0
-            ? '29/29 pelo Tab'
+            ? `${PARES}/${PARES} pelo Tab`
             : `${falhasFocoNaArea.length} falha(s): ${falhasFocoNaArea.slice(0, 4).join(', ')}`,
         );
 
@@ -829,7 +845,7 @@ async function correTudo(soEstas) {
         await repousa();
         const falhasRatoNoNome = [];
         for (const slug of slugs) {
-          const el = await p.$(`[data-lista-porta="${slug}"]`);
+          const el = await p.$(`[data-lista-regiao="${slug}"]`);
           let chegou = false;
           try {
             if (el) {
@@ -846,29 +862,29 @@ async function correTudo(soEstas) {
         }
         await p.mouse.move(0, 0);
         conta(
-          'L6a · o rato em cada um dos 29 nomes contorna a área daquela unidade, e só dela',
+          'L6a · o rato em cada um dos nove nomes de região contorna a área dela, e só dela',
           falhasRatoNoNome.length === 0,
           falhasRatoNoNome.length === 0
-            ? `29/29 · contorno ${repouso.traco} px → 3 px na área apontada, ${repouso.traco} px nas outras 28`
+            ? `${PARES}/${PARES} · contorno ${repouso.traco} px → 3 px na área apontada, ${repouso.traco} px nas outras`
             : `${falhasRatoNoNome.length} falha(s): ${falhasRatoNoNome.slice(0, 4).join(', ')}`,
         );
 
         /* o foco do teclado em cada nome → a área daquela unidade */
         await repousa();
         const ordemDosNomes = await p.evaluate(() =>
-          [...document.querySelectorAll('[data-lista-porta]')].map((a) =>
-            a.getAttribute('data-lista-porta'),
+          [...document.querySelectorAll('[data-lista-regiao]')].map((a) =>
+            a.getAttribute('data-lista-regiao'),
           ),
         );
         const falhasFocoNoNome = [];
         for (let i = 0; i < ordemDosNomes.length; i++) {
           await p.evaluate((i) => {
-            const as = [...document.querySelectorAll('[data-lista-porta]')];
+            const as = [...document.querySelectorAll('[data-lista-regiao]')];
             as[i === 0 ? 1 : i - 1].focus();
           }, i);
           await p.keyboard.press(i === 0 ? 'Shift+Tab' : 'Tab');
           const pousou = await p.evaluate(
-            (slug) => document.activeElement?.getAttribute('data-lista-porta') === slug,
+            (slug) => document.activeElement?.getAttribute('data-lista-regiao') === slug,
             ordemDosNomes[i],
           );
           const s = await p.evaluate(ESTADO, ordemDosNomes[i]);
@@ -877,10 +893,10 @@ async function correTudo(soEstas) {
           }
         }
         conta(
-          'L6c · o foco do teclado em cada um dos 29 nomes contorna a área daquela unidade',
+          'L6c · o foco do teclado em cada um dos nove nomes de região contorna a área dela',
           falhasFocoNoNome.length === 0,
           falhasFocoNoNome.length === 0
-            ? '29/29 pelo Tab'
+            ? `${PARES}/${PARES} pelo Tab`
             : `${falhasFocoNoNome.length} falha(s): ${falhasFocoNoNome.slice(0, 4).join(', ')}`,
         );
       }
@@ -888,10 +904,13 @@ async function correTudo(soEstas) {
       if (precisa('L7')) {
         await p.mouse.move(0, 0);
         await p.evaluate(() => document.activeElement?.blur?.());
-        const alvo = 'lisboa';
+        /* O PAR MEDE-SE NUMA REGIÃO, e o Centro é a que o desenho dá com mais
+           folga: era «lisboa», que era uma unidade da Carta e deixou de ter área
+           no desenho com o F1.1d. */
+        const alvo = 'centro';
         let chegouAoNome = false;
         try {
-          const el = await p.$(`[data-lista-porta="${alvo}"]`);
+          const el = await p.$(`[data-lista-regiao="${alvo}"]`);
           if (el) {
             await el.hover({ timeout: 2000 });
             chegouAoNome = true;
