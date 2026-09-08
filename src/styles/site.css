@@ -395,8 +395,25 @@ section {
     display: block;
     order: 1;
   }
+  /* O COMANDO DE LÍNGUA ENTRA NO MENU ABAIXO DE 640 (bloco F1.10, item 8.9,
+     segunda passagem, 08.09.2026). A decisão do lugar de direção é «os três
+     destinos de leitor visíveis e o resto (o território, a casa, A LÍNGUA)
+     atrás de um só comando de abertura»: a fila da língua ocupava 63,7 px em
+     português e 87,3 em inglês na primeira linha da barra, e era esse espaço que
+     faltava aos três destinos para caberem ao lado do comando. Sai da barra e
+     não do sítio: com o menu aberto vive lá dentro, como as outras nove portas,
+     e a partir de 641 px volta ao sítio onde a Emenda 12 a pôs. */
   .nav-idioma {
-    order: 2;
+    display: none;
+  }
+  .nav-menu[open] ~ .nav-idioma {
+    display: block;
+    order: 4;
+    flex-basis: 100%;
+  }
+  .nav-menu[open] ~ .nav-idioma .lang {
+    border-top: 1px solid var(--rule);
+    display: block;
   }
   /* ABAIXO DE 640 OS TRÊS DESTINOS DO LEITOR FICAM À VISTA, E O RESTO A UM
      TOQUE (bloco F1.10, item 8.9). A medida do item é essa à letra: «a fila do
@@ -409,18 +426,28 @@ section {
      outros dois só se desenham com o menu aberto, e aí a fila inteira passa a
      coluna, como já passava. */
   .nav-principal {
-    /* DEPOIS DO COMANDO DO MENU E DO DE LÍNGUA, e não entre os dois: com a
-       ordem 2 a fila do leitor empurrava o comando de língua para uma terceira
-       linha. A mobília fica na primeira linha, os três destinos na segunda. */
+    /* A SEGUIR AO COMANDO DO MENU, NA MESMA FILA (item 8.9, segunda passagem,
+       08.09.2026). A primeira redação deste bloco dava-lhe `flex-basis: 100%` e
+       uma fila própria, com a razão escrita: com o comando do menu E o de língua
+       ao lado, os três destinos não cabiam. A decisão do lugar de direção manda
+       UMA linha nas duas edições, e o que a paga é o comando de língua, que
+       passou para dentro do menu logo acima. */
     order: 3;
     display: flex;
-    /* A FILA DO LEITOR TOMA A SUA LINHA, e não a partilha com o comando do menu
-       e o de língua: com eles ao lado, os três destinos quebravam para uma
-       segunda linha e a barra crescia duas vezes. Uma linha para a mobília, uma
-       para os três destinos. */
-    flex-basis: 100%;
-    gap: 0 14px;
+    gap: 0 10px;
     padding-top: 0;
+  }
+  /* O CORPO DA FILA DESCE AO CHÃO DA ESCALA DO TELEMÓVEL (item 8.9). Os três
+     destinos corriam a 14 px, que é o corpo da barra do computador; a 12 px, que
+     é o chão que a regra A9 fixou para o telemóvel («num telemóvel 9,5 px não se
+     lê»), a fila portuguesa mede 345,7 px numa barra de 354 e cabe ao lado do
+     comando. Nenhum tipo muda e nenhuma palavra muda: muda o corpo por largura,
+     que é o que o item 8.15 já separou da identidade fechada. */
+  .nav-principal .nav-leitor a {
+    font-size: 12px;
+  }
+  .nav-principal .nav-leitor {
+    gap: 4px 10px;
   }
   .nav-principal .nav-inicio,
   .nav-principal .nav-pais,
@@ -5099,7 +5126,18 @@ a.marcador::after {
 @media (max-width: 640px) {
   .topbar {
     padding-top: 10px;
-    gap: 6px 22px;
+    /* A GOTEIRA DA BARRA ENCOLHE COM A FILA (item 8.9, segunda passagem): os 22
+       px separavam duas filas de coisas diferentes, e agora separam o comando de
+       abertura dos três destinos dentro da mesma fila. */
+    gap: 6px 10px;
+  }
+  /* O COMANDO DE ABERTURA DESCE AO MESMO CORPO DA FILA que ele abre (item 8.9,
+     segunda passagem): eram 14 px ao lado de 12, e os 62 px que ele media
+     deixavam a fila portuguesa 1,2 px fora da barra. A 12 px mede 58,3, e a
+     altura do alvo não muda, porque ela vem do `min-height: 44px` e não da
+     letra. */
+  .nav-menu > summary {
+    font-size: 12px;
   }
   .masthead {
     padding: 8px 0 10px;
