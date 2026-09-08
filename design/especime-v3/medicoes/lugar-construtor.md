@@ -220,6 +220,35 @@ Abaixo de 640 px a caixa inteira deixa de se desenhar, e a razão está na folha
 o controlo já vivia dentro do menu nessa largura, e o que sobrava era um fio de
 1,5 px a tinta debaixo da marca a separar o nome de coisa nenhuma.
 
+**O primeiro ecrã a 390 × 664, com a mesma conta que a sessão anterior
+escreveu** (`node design/especime-v3/medicoes/lugar-2026-09-04/primeiro-ecra.mjs`,
+com o «antes» em `primeiro-ecra-antes.json` e o «depois» em
+`primeiro-ecra-depois.json`, os dois no repositório):
+
+| página | prosa da casa | blocos da casa | prosa com os cartões | caracteres no ecrã |
+|---|---|---|---|---|
+| `/` | 33 | 2 | 269 | 996 → **977** |
+| `/en/` | 0 → **37** | 1 → **2** | 239 → **276** | 1 015 → **989** |
+| `/municipios/evora` | 0 | 0 | 448 | 1 169 → **1 143** |
+| `/en/municipalities/evora` | 0 | 0 | 455 | 1 210 → **1 184** |
+| `/estudos/onde-esta-a-agua` | 13 | 1 | 52 | 324 → **321** |
+| `/en/studies/onde-esta-a-agua` | 13 | 1 | 56 | 329 → **322** |
+| `/livro-razao` | 11 | 1 | 86 | 501 → **511** |
+| `/en/ledger` | 16 | 1 | 85 | 500 → **505** |
+
+**E o que esta tabela diz não é o que se esperava dela, e diz-se assim.** A
+prosa da casa no primeiro ecrã não desceu, porque já estava entre 0 e 33
+caracteres e nenhum deles era uma explicação: a sessão anterior mediu-o e
+escreveu-o. O que mudou foi o ESPAÇO: o cabeçalho encolheu e o conteúdo subiu.
+Em `/en/` a prosa da casa passa de 0 para 37 e os blocos de 1 para 2, e isso é
+uma MELHORIA e não uma regressão: a fila das portas («Studies», «Portugal in the
+European Union»), que é navegação e não explicação, passou a COMEÇAR dentro do
+primeiro ecrã, como já acontecia em `/`. Nos dois índices dos números cabem
+agora mais caracteres no ecrã (501 → 511 e 500 → 505) pela mesma razão. As
+quatro leituras que saíram não eram blocos de prosa — eram `span` dentro de um
+`div` —, e por isso nunca contaram na coluna da prosa: contavam nos píxeis, e é
+nos píxeis que a mudança se lê.
+
 **O texto governado do Método mudou em duas frases, e a §1.103 regista-o.** A
 regra 6 dizia «o cabeçalho de todas as páginas mostra-a» e «o cabeçalho di-lo
 por palavras», e o cabeçalho deixou de a mostrar; e dizia «O painel da primeira
