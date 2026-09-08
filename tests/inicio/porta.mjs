@@ -503,10 +503,22 @@ const SONDA_A1 = (alturaDoEcra) => {
      `<h1>` sem os selos, que vivem numa fila própria por baixo dela e não são
      texto da manchete.
 
-     A CONTAGEM É DE RECTÂNGULOS DISTINTOS, e não de rectângulos: um `Range` dá
-     um rectângulo por corrida de texto, e uma linha com três nós dá três
-     rectângulos com o mesmo topo. Arredonda-se o topo ao píxel, porque uma
-     linha desenhada em subpíxeis não é duas linhas. */
+     A CONTAGEM É DE LINHAS, E O TOPO NÃO AS DISTINGUE (corrigido a 08.09.2026,
+     no mesmo item). A primeira redação contava TOPOS DISTINTOS, e isso conta a
+     mais: a frase da manchete corre no tipo de leitura e os dois algarismos
+     correm no tipo de instrumento, que tem outra métrica, e na MESMA linha o
+     rectângulo do algarismo começa 4 px abaixo do rectângulo da prosa. Medido em
+     `/` a 390 px: a manchete tem rectângulos nos topos 189, 193, 225 e 229, que
+     são DUAS linhas (189 com 193, 225 com 229) e não quatro. A célula dizia
+     cinco linhas em `/` e seis em `/en` numa manchete que tinha três e quatro, e
+     um teto medido com uma conta errada é um teto que não se cumpre nunca.
+
+     A CONTA CERTA É PELO CENTRO DE CADA RECTÂNGULO, com a tolerância tirada da
+     própria medição: dois rectângulos estão na mesma linha quando os centros
+     distam menos de metade da menor altura de rectângulo da frase. Na mesma
+     medição, os centros da mesma linha distam 1 px e os de linhas seguidas
+     distam 36; a menor altura é 33, e a tolerância 16,5. Nenhum número está
+     escrito aqui: os dois saem do que o motor desenhou. */
   const linhasDaFrase = (() => {
     const h1 = document.querySelector('.cabeca-h1');
     if (!h1) return 0;
@@ -514,10 +526,19 @@ const SONDA_A1 = (alturaDoEcra) => {
     const r = document.createRange();
     r.selectNodeContents(h1);
     if (selos) r.setEndBefore(selos);
-    const topos = new Set(
-      [...r.getClientRects()].filter((x) => x.width > 0 && x.height > 0).map((x) => Math.round(x.top)),
-    );
-    return topos.size;
+    const caixas = [...r.getClientRects()].filter((x) => x.width > 0 && x.height > 0);
+    if (!caixas.length) return 0;
+    const tolerancia = Math.min(...caixas.map((x) => x.height)) / 2;
+    const centros = caixas.map((x) => x.top + x.height / 2).sort((a, b) => a - b);
+    let linhas = 1;
+    let doDaLinha = centros[0];
+    for (const c of centros.slice(1)) {
+      if (c - doDaLinha > tolerancia) {
+        linhas++;
+        doDaLinha = c;
+      }
+    }
+    return linhas;
   })();
   return {
     nome: cx(document.querySelector('.wordmark')),

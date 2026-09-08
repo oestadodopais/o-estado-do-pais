@@ -608,14 +608,43 @@ export const STRINGS = {
            percentagem entra pelo sufixo do valor, como na manchete do domínio.
 
            AS DUAS ORAÇÕES DIZEM A UNIDADE DA LINHA POR EXTENSO. «do PIB» é a
-           unidade `% do PIB` e «da população ativa» é `% da população ativa`,
-           transcritas do campo `unit` de cada linha: uma manchete é uma frase e
-           não uma ficha, e a unidade escrita por extenso é o que faz o algarismo
-           dizer alguma coisa. */
+           unidade `% do PIB`, transcrita do campo `unit` da linha: uma manchete é
+           uma frase e não uma ficha, e a unidade escrita por extenso é o que faz
+           o algarismo dizer alguma coisa.
+
+           A FRASE ENCURTOU, E A REGRA NÃO (item 8.15, decisão do lugar de
+           direção, 08.09.2026). O diretor, 07.09 à noite, com o sítio no ar: a
+           manchete «with all that bold text takes quite a lot of the first page
+           … when we see it on the phone». A decisão manda que ela caiba em TRÊS
+           linhas a 390 px, nas duas edições e nos dois motores, e dá dois
+           caminhos por esta ordem: descer um degrau da escala de tipos, e, se
+           isso não bastar, encurtar a frase sem mudar a regra (uma frase só,
+           algarismos selados, sem adjetivo, dois algarismos no máximo).
+
+           MEDIU-SE O PRIMEIRO CAMINHO, E NÃO BASTA. A 390 px a manchete corre a
+           28 px (o mínimo do `clamp`); a 26 px e a 24 px a frase antiga continua
+           em CINCO linhas em português nos dois motores, e passa de seis a cinco
+           em inglês. Um degrau de tipo não vale uma linha em português e vale uma
+           em inglês, e o teto é três.
+
+           O SEGUNDO CAMINHO CHEGA, E É O QUE FICA. Tirada a segunda unidade por
+           extenso («da população ativa») e o substantivo repetido da segunda
+           medida («a taxa de»), a frase fica em DUAS linhas em português e TRÊS
+           em inglês, nos dois motores, ao corpo que ela já tinha: o tipo não
+           muda, e a identidade dos corpos fica onde estava. A unidade da segunda
+           medida continua escrita por extenso onde ela é a ficha da medida, que é
+           o cartão da faixa e a leitura dele.
+
+           A DÍVIDA QUE ISTO ABRE, DITA E NÃO ESCONDIDA: a segunda oração passa a
+           dizer «o desemprego» onde dizia «a taxa de desemprego», que é o nome da
+           medida no vocabulário fechado (§2.3). É a frase da manchete a dizer a
+           coisa por extenso uma vez menos, e não um nome novo para ela: o nome da
+           medida continua a ser «taxa de desemprego» no cartão, na leitura, no
+           domínio e na linha. */
         manchetePais: {
           abre: 'A dívida pública é ',
-          meio: ' do PIB e a taxa de desemprego é ',
-          fecha: ' da população ativa.',
+          meio: ' do PIB e o desemprego é ',
+          fecha: '.',
         },
         /* AS CADEIAS DOS DOIS BLOCOS DE CONCELHO SAÍRAM (Emenda 19a, 26.08.2026).
            Eram `municipioSufixo`, `municipioPalavra`, `tituloEvora`,
@@ -2522,11 +2551,14 @@ export const STRINGS = {
         tituloPaisUm: ' threshold of the Macroeconomic Imbalance Procedure and meets ',
         tituloPaisMuitos: ' thresholds of the Macroeconomic Imbalance Procedure and meets ',
         tituloPaisFim: '.',
-        /** Ver a razão na edição portuguesa, e o registo em `CHAVES-EN.md`. */
+        /** Ver a razão na edição portuguesa, e o registo em `CHAVES-EN.md`. A
+            frase inglesa encurtou com a portuguesa (item 8.15, 08.09.2026), e
+            pela mesma medida: seis linhas a 390 px, cinco com um degrau de tipo a
+            menos, três com a frase curta ao corpo de sempre. */
         manchetePais: {
           abre: 'Government debt is ',
-          meio: ' of GDP and the unemployment rate is ',
-          fecha: ' of the labour force.',
+          meio: ' of GDP and unemployment is ',
+          fecha: '.',
         },
         /* As cadeias dos dois blocos de concelho saíram (Emenda 19a). Ver a
            razão na edição portuguesa, e o registo em `CHAVES-EN.md`. */
