@@ -2005,8 +2005,8 @@ que a régua não passasse a ter uma linha cujo texto é a letra «a».
 | conteudo | The indicator the publisher gives by municipality is a coefficient of variation of earnings, not the gap between sexes. | dominio | viva | — |
 | conteudo | procurado em INE, Quadros de Pessoal do MTSSS/GEP, indicador | dominio | viva | — |
 | conteudo | looked for in Statistics Portugal, MTSSS/GEP staff records, indicator | dominio | viva | — |
-| conteudo | período · lido · conferido | dominio | viva | — |
-| conteudo | period · read · checked | dominio | viva | — |
+| conteudo | período de referência · lido na fonte a · verificado a | dominio | viva | o §7.3 do brief do F1.10 (08.09.2026): as três datas de uma medida eram três palavras soltas ao pé de três datas («período · lido · conferido»), e o leitor de 04.09 no navegador não soube o que cada uma dizia. Passam a rótulos por palavras, dois deles com as palavras que o brief escreve à letra |
+| conteudo | reference period · read at the source on · verified on | dominio | viva | o §7.3 do brief do F1.10 (08.09.2026): as três datas de uma medida eram três palavras soltas ao pé de três datas («período · lido · conferido»), e o leitor de 04.09 no navegador não soube o que cada uma dizia. Passam a rótulos por palavras, dois deles com as palavras que o brief escreve à letra |
 | conteudo | fonte · · | dominio | viva | — |
 | conteudo | source · · | dominio | viva | — |
 | conteudo | limiar da Comissão % · fora do limiar da Comissão | dominio | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
