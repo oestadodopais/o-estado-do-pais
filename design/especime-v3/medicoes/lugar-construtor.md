@@ -378,7 +378,48 @@ réguas precisarem dele sem comando visível, ou reescreve-se a célula 2i·5 da
 matriz»). Reescreveu-se a 2i·5; as outras oito navegações que o usam ficam por
 reescrever.
 
-### 6 · O modelo, o custo e as corridas
+### 6 · O §9.2 e o §9.6 medidos antes de se lhes tocar, e o que a medição diz
+
+Os pontos 2 e 6 do §9 «andam com o 8.11», e por isso mediram-se nesta sessão,
+com a mesma conta do primeiro ecrã e sobre o `dist/` desta cabeça (390 × 664, um
+bloco conta quando a sua caixa COMEÇA acima dos 664 px, a prosa da casa é a que
+sobra depois de tirar os blocos com marca de origem declarada):
+
+| página | prosa da casa no primeiro ecrã | blocos da casa | prosa toda |
+|---|---|---|---|
+| `/dominios/economia-e-financas-publicas` | **0** | **0** | 884 em 16 blocos |
+| `/en/domains/economia-e-financas-publicas` | **0** | **0** | 906 em 16 blocos |
+| `/regioes/alentejo` | **14** | 1 | 364 em 8 blocos |
+| `/en/regions/alentejo` | **14** | 1 | 360 em 8 blocos |
+
+**A primeira metade do §9.2 está feita, e não por este item:** a página do
+domínio não tem uma única frase da casa no primeiro ecrã, e os 884 caracteres de
+prosa que lá estão são todos de blocos com marca de origem declarada, que são o
+aparelho de cada medida e não explicação. Os 14 caracteres da página da região
+são o rótulo «região NUTS II», que é o nome da camada.
+
+**A segunda metade NÃO está feita, e o que falta mede-se assim.** O item 8.11
+manda a prosa sair do primeiro ecrã **e ficar a um toque**, dentro de uma dobra;
+o §9.2 diz para onde vai a da página do domínio («a página da linha ou o
+Método»). **As três frases que ele nomeia estão na página do domínio, fora de
+qualquer dobra**, medido contando os `<details>` abertos antes de cada uma no
+HTML construído:
+
+| a frase | onde está |
+|---|---|
+| «As classes são marcas redondas da escala, e não um limite oficial.» | dentro de **0** `<details>` |
+| «Este valor é o do território continental. Os Açores e a Madeira fixam o seu por diploma regional próprio, que não foi lido: [a verificar].» | dentro de **0** `<details>` |
+| «A meta desta medida é da União Europeia no seu conjunto e não de Portugal; uma meta nacional própria permanece [a verificar].» | dentro de **0** `<details>` |
+
+**Não se moveram nesta sessão, e a razão escreve-se em vez de se fazer à
+pressa.** Duas das três levam o marcador `[a verificar]`, que é dívida de
+proveniência governada por outras réguas, e a decisão de para onde cada uma vai
+(a página da linha, que é o recibo daquela linha, ou o Método, que é a casa do
+método) muda o que o portão de HTML tem de conferir de cada lado. É um item com
+o seu desenho, e a medição de partida fica escrita para que o «depois» seja a
+mesma conta.
+
+### 7 · O modelo, o custo e as corridas
 
 **Claude Opus 5.** O contador do harness dava 15 000 000 de símbolos no arranque
 da sessão e cerca de 14 643 000 ao escrever esta linha: **da ordem de 357 mil**.
@@ -1127,7 +1168,7 @@ secção 3 da quarta sessão.
 | # | o que falta | onde se toca | a nota de quem retoma |
 |---|---|---|---|
 | 1 | **a passagem à `matriz.mjs`**, que este bloco desatualizou | `tests/inicio/matriz.mjs` | ela mede 69 células e pára numa que lê `[data-leituras="pdm"]` em `/`, e essa marca saiu da primeira página com o item 8.16. Ficam oito navegações a `/?densidade=leitura`, que o item 8.14 apagou, e as células que supõem os 21 cartões na primeira página. Cada célula já se imprime quando é medida, e por isso o que ela mede não se perde quando ela pára |
-| 2 | **o resto do §9** (2, 6, 7 e 10) | o inventário da voz, `DominioView`, `Pesquisa.astro` | o 3, o 4, o 5, o 8 e o 9 estão feitos. O 2 e o 6 andam com o 8.11; o 7 anda com a busca única do §2.6; o 10 é a dívida da linha F1.2 e fica para o F3.3, como o próprio §9 escreve |
+| 2 | **o resto do §9** (2, 6, 7 e 10) | o inventário da voz, `DominioView`, `LinhaView`, `MetodoView`, `Pesquisa.astro` | o 3, o 4, o 5, o 8 e o 9 estão feitos. **A primeira metade do 2 está feita e está medida** (a página do domínio tem 0 caracteres de prosa da casa no primeiro ecrã, nas duas edições); **o que falta é a segunda**, e as três frases estão nomeadas, com o sítio onde estão hoje, na secção 6 da quarta sessão: as três estão fora de qualquer dobra, e duas levam `[a verificar]`. O 7 anda com a busca única do §2.6; o 10 é a dívida da linha F1.2 e fica para o F3.3, como o próprio §9 escreve |
 | 3 | **as outras páginas** (o item 4 do encargo) | `RegiaoView`, `DominioView`, os índices, `EstudoView`, `MetodoView` | a região (§1 e §7.6), o domínio (§7.7), os índices (§7.8), os estudos (§7.4 e 8.6), o Método no telemóvel (§7.9). **A do concelho está feita** (§7.1, 8.10, 8.17); falta-lhe a linha dos estudos (§1 e 8.6), que anda com os estudos |
 | 4 | **item 5 do encargo** · o caminho no cabeçalho (§2.5, com o desenho da §C), a busca é uma (§2.6), «fonte» diz o publicador (§2.4, §7.2, a L6), as datas de frescura (§7.3) | `Caminho.astro` (por escrever), `Pesquisa.astro`, `Provenance.astro`, `gate-html.mjs` | a L5 (7 213) e a L6 (26 178) são os dois números grandes que ainda não desceram, e são estes dois itens |
 | 5 | **o 8.17b** · `nivel="unidade"` na chamada de `MapaRespira` da página do concelho | `src/views/MunicipioView.astro` | **uma linha**, e espera pelo F1.1e: a 08.09 ao fim do dia o `origin/main` estava em `fe6478aa` e os dois commits do F1.1e que lá estão são só documentos (medido, com o conhecido-positivo, na secção acima). Mede-se na página construída de Évora e na gémea inglesa |
