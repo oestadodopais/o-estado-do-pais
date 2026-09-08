@@ -79,7 +79,7 @@
 import Claim from '../Claim.astro';
 import { FRAMES, FIELD_W, FIELD_H } from '../../data/caop-centroids.mjs';
 import { routePath } from '../../lib/routes.mjs';
-import { regioesDoMapa } from '../../lib/mapa-regioes.mjs';
+import { regioesDoMapa, desenhoDaRegiao } from '../../lib/mapa-regioes.mjs';
 import { REGIOES } from '../../data/regioes.mjs';
 import LugarDoNome from './LugarDoNome.astro';
 
@@ -101,7 +101,58 @@ import LugarDoNome from './LugarDoNome.astro';
    duas coisas: o nome de defeito do cartão, quando nenhum estava escolhido, e a
    porta «a página inteira, com quem governou». As duas eram da vista de escolha.
    O cartão rende-se agora só onde há um concelho escolhido, e o nome vem dele. */
-const { s, lang, p, concelhos, postura = 'inteiro', escolhido = null } = Astro.props;
+/* ---------------------------------------------------------------------------
+ * A QUARTA POSTURA: O NÍVEL DA REGIÃO (F1.10, item 8.17, 08.09.2026)
+ * ---------------------------------------------------------------------------
+ * O diretor, 08.09, na página de Évora no telemóvel: «the dotted map shows up
+ * but with no useful purpose, and if we choose to change municipalities we have
+ * a list of municípios which isn't as easy to use». A decisão do lugar de
+ * direção, pela delegação da §1.98: o cartão localizador dos 308 pontos sai da
+ * página do concelho, e no lugar dele entra o NÍVEL DA REGIÃO do mapa do F1.1d
+ * — a região do concelho com os seus concelhos desenhados, o da página marcado,
+ * o nome no lugar ao passar ou ao tocar, e a porta do lugar a abrir a página do
+ * concelho apontado. É isso que passa a ser «trocar de concelho»; a lista de
+ * `/municipios` fica como a alternativa sem guião, com a busca.
+ *
+ * É UMA POSTURA E NÃO UM COMPONENTE NOVO, pela mesma razão que as outras três:
+ * o mapa não se desenha quatro vezes, desenha-se uma, e a postura decide qual
+ * dos campos se desenha e o que está à volta. O que ela acrescenta são DUAS
+ * PROPRIEDADES e um ramo de desenho; o mapa de pontos e o das nove áreas ficam
+ * onde estavam, sem uma linha mudada.
+ *
+ *   `regiao`  o slug da região a desenhar. Só nesta postura, e obrigatório nela.
+ *
+ * `escolhido` JÁ EXISTIA e passa a servir as duas: na postura do localizador põe
+ * o anel no ponto do concelho; nesta põe o contorno grosso na área dele.
+ *
+ * A GEOMETRIA VEM DO MESMO FICHEIRO QUE O GUIÃO LÊ (`public/dados/mapa/
+ * regiao-<slug>.json`), pela porta única de `src/lib/mapa-regioes.mjs`: uma
+ * segunda cópia dos caminhos, escrita para o servidor, divergia da do cliente na
+ * primeira reexportação da Carta.
+ */
+const {
+  s,
+  lang,
+  p,
+  concelhos,
+  postura = 'inteiro',
+  escolhido = null,
+  regiao = null,
+} = Astro.props;
+
+if (postura === 'regiao' && !regiao) {
+  throw new Error(
+    '<MapaRespira postura="regiao">: sem `regiao`. Quem rende esta postura é uma página que já ' +
+      'sabe a sua região, e o slug dela chega de fora: o mapa não o adivinha.',
+  );
+}
+const daRegiao = postura === 'regiao' ? desenhoDaRegiao(regiao) : null;
+if (postura === 'regiao' && !daRegiao) {
+  throw new Error(
+    `<MapaRespira postura="regiao">: a região "${regiao}" não tem desenho em ` +
+      'public/dados/mapa/. As nove escrevem-se com `npm run mapa:regioes`.',
+  );
+}
 
 /* O concelho do anel, quando o servidor o declara. É lido da mesma lista que o
    mapa desenha, e não de uma segunda: um slug que não exista não põe anel
@@ -220,7 +271,7 @@ const NOME_DA_REGIAO = Object.fromEntries(
       página entrega, e o guião troca-o por `regiao` quando uma região cresce. A
       folha lê-o para esconder as molduras, para trocar as duas frases vazias e
       para acender a porta de voltar. */}
-  data-nivel={postura === 'inteiro' ? 'pais' : undefined}
+  data-nivel={postura === 'inteiro' ? 'pais' : postura === 'regiao' ? 'regiao' : undefined}
   aria-describedby={postura === 'inteiro' ? 'mapa-legenda' : undefined}
 >
   {/* «FECHAR» SAIU COM A VISTA DE ESCOLHA (Emenda 19b, 26.08.2026).
@@ -273,7 +324,54 @@ const NOME_DA_REGIAO = Object.fromEntries(
         escreveu no artefacto. Um `viewBox` só para os dois seria um dos dois
         desenhos fora do sítio.
         ---------------------------------------------------------------------- */}
-    {postura === 'inteiro' ? (
+    {postura === 'regiao' ? (
+    /* ----------------------------------------------------------------------
+       O NÍVEL DA REGIÃO, DO SERVIDOR (F1.10, item 8.17)
+       ----------------------------------------------------------------------
+       É o mesmo desenho que o guião faz crescer na primeira página, e a mesma
+       marcação que a página de um distrito já rende (`DistritoView.astro`): um
+       grupo só, uma área por concelho, cada uma uma ligação com o seu `<title>`.
+       O guião `mapa-regioes.js` reconhece-o pelo que já procura (`[data-mapa-
+       concelhos]` e `[data-areas]`) e trata-o como a segunda superfície de um
+       nível só: põe o nome no lugar ao passar, ao focar ou ao tocar, e não tem
+       nada para crescer nem porta de voltar.
+
+       SEM GUIÃO, O MAPA É O QUE É: nove ou quarenta e sete áreas, cada uma a
+       porta da sua página. É a promessa da Emenda 7, e é ela que faz deste mapa
+       uma navegação e não uma ilustração.
+       ---------------------------------------------------------------------- */
+    <svg
+      class="mapa-svg mapa-svg-areas"
+      viewBox={`0 0 ${daRegiao.campo.largura} ${daRegiao.campo.altura}`}
+      role="group"
+      aria-label={s.inicio.mapa.concelhosLabel}
+      data-mapa
+      data-mapa-concelhos
+    >
+      <g class="mapa-areas" data-areas>
+        {daRegiao.concelhos.map((c) => (
+          <a
+            class="uni-porta"
+            href={routePath('municipio', lang, { slug: c.slug })}
+            data-concelho-porta={c.slug}
+          >
+            <title>{c.nome}</title>
+            {/* O CONCELHO DESTA PÁGINA LEVA O CONTORNO GROSSO, e mais nada
+                (Emenda 10): «um lugar escolhido é um anel, nunca um
+                preenchimento». Numa área o anel é o contorno, que é a mesma
+                distinção que a folha já dá ao passar o rato. */}
+            <path
+              class="uni"
+              d={c.d}
+              data-m={c.nome}
+              data-caop={c.slug}
+              data-escolhido={c.slug === escolhido ? 'sim' : null}
+            />
+          </a>
+        ))}
+      </g>
+    </svg>
+    ) : postura === 'inteiro' ? (
     <svg
       class="mapa-svg mapa-svg-areas"
       viewBox={`0 0 ${doPais.campo.largura} ${doPais.campo.altura}`}
@@ -548,7 +646,12 @@ const NOME_DA_REGIAO = Object.fromEntries(
       {/* O nome do concelho escolhido vai declarado como lugar (bloco dos 308,
           P2): é o nome da coisa, transcrito da Carta, e não prosa da casa. Sem
           isso, o inventário de frases ganhava 308 entradas, uma por nome. */}
-      <p class="mapa-cartao-nome" data-lugar>{escolha?.nome}</p>
+      {/* O NOME SAI NA POSTURA DA REGIÃO (F1.10, item 8.17). Ali quem diz o nome
+          da área apontada é o lugar do nome, e o nome do concelho DESTA página é
+          a manchete dela: escrevê-lo aqui era a terceira vez na mesma página, que
+          é a regra §0 do brief a ser quebrada dentro do instrumento que a veio
+          cumprir. */}
+      {postura !== 'regiao' && <p class="mapa-cartao-nome" data-lugar>{escolha?.nome}</p>}
       {/* A COBERTURA E A NEUTRALIDADE SAÍRAM (Emenda 15). A primeira era uma
           frase sobre a cobertura do próprio sítio, que a emenda nomeia; a
           segunda dizia o que a casa NÃO afirma, que a emenda nomeia também
@@ -562,6 +665,11 @@ const NOME_DA_REGIAO = Object.fromEntries(
           quando o concelho escolhido tinha página. Sem concelho escolhido nunca
           acendia; e onde o cartão se rende, na página do concelho, ela apontava
           para a página em que já se está. Fica a porta que leva a algum lado. */}
+      {/* A PORTA «TROCAR DE CONCELHO» FICA NAS DUAS POSTURAS, e na da região é o
+          que a decisão do item 8.17 lhe manda ser: a alternativa SEM GUIÃO ao
+          mapa. Quem tem guião troca de concelho no próprio mapa, pelo lugar do
+          nome; quem não tem vai à lista dos 308, que é uma página inteira e tem
+          a busca. */}
       <p class="mapa-cartao-portas">
         <a class="lig" href={rotaDaEscolha} data-trocar>{s.inicio.mapa.trocar} →</a>
       </p>
@@ -599,6 +707,11 @@ const NOME_DA_REGIAO = Object.fromEntries(
   {postura === 'inteiro' && (
     <LugarDoNome s={s} niveis={['pais', 'regiao']} voltar={routePath('home', lang)} />
   )}
+  {/* O LUGAR DO NOME COM UM NÍVEL SÓ (F1.10, item 8.17). É o mesmo componente e
+      o mesmo guião, com as duas frases vazias do nível da região: aqui não há
+      país para crescer nem para onde voltar, e por isso não há porta de voltar.
+      É a mesma chamada que a página de um distrito faz desde o F1.1d. */}
+  {postura === 'regiao' && <LugarDoNome s={s} niveis={['regiao']} />}
 
   {/* ------------------------------------------------------------------------
       UMA LINHA POR BAIXO DO MAPA (Emenda 17, 21.08.2026)

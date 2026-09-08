@@ -1273,8 +1273,45 @@ h1.cabeca-h1[data-citadas]:not([data-citadas='1']) {
    cartão (a do concelho, ISSUES I45) mostrava a legenda dos 308 por baixo de um
    localizador. A postura já está no atributo; a folha lê-a. */
 [data-postura='localizador'] .mapa-linha,
-[data-postura='localizador'] .mapa-rodape {
+[data-postura='localizador'] .mapa-rodape,
+[data-postura='regiao'] .mapa-linha,
+[data-postura='regiao'] .mapa-rodape {
   display: none;
+}
+
+/* ---------------------------------------------------------------------------
+ * O MAPA DA REGIÃO NA PÁGINA DE UM CONCELHO (F1.10, item 8.17, 08.09.2026)
+ * ---------------------------------------------------------------------------
+ * A postura do localizador punha o mapa numa tela de 170 px, ao lado do nome do
+ * concelho e da porta: era um cartão a dizer ONDE fica o concelho, e um ponto de
+ * 4,5 px num campo de 170 px é o que o diretor viu a 08.09 («the dotted map
+ * shows up but with no useful purpose»).
+ *
+ * A postura da região é outra coisa: é o instrumento por onde se troca de
+ * concelho, e por isso ocupa a coluna do instrumento com a largura que a página
+ * do distrito já deu ao mesmo desenho (490 px de tecto, altura livre até 560). O
+ * cartão continua a ser um cartão — a mesma moldura, a mesma respiração —, mas
+ * numa coluna só: o que estava ao lado do mapa era o nome de um concelho que não
+ * muda, e o que fica por baixo dele é o lugar do nome, que muda.
+ */
+[data-postura='regiao'] .mapa-cartao {
+  grid-column: 1 / -1;
+  border: 1px solid var(--g3);
+  padding: 14px 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: 12px;
+}
+[data-postura='regiao'] .mapa-tela {
+  width: 100%;
+  max-width: 490px;
+}
+[data-postura='regiao'] .mapa-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 560px;
+  overflow: visible;
 }
 
 /* ---------------------------------------------------------------------------
@@ -3116,6 +3153,14 @@ a.porta:hover .porta-abrir {
   color: var(--ink);
   margin: 0;
 }
+/* A FORMA DE UMA MEDIDA, DENTRO DA LEITURA DELA (F1.10, §7.1, 08.09.2026). Não
+   traz desenho nem moldura: o que ela dá é o ar que separa a forma das frases e
+   das datas que estão por cima dela. As formas trazem as suas próprias regras
+   (`.mun-distancia`, `.mun-ganho`, em `municipio.css`). */
+.dobra-instrumento {
+  margin-top: 12px;
+}
+
 /* A FRASE QUE DIZ O QUE O LIMIAR É E QUEM O FIXOU (F1.10, item 8.5, 08.09.2026).
    Vai no corpo da instrumentação e não no da prosa, e é a mesma decisão que pôs
    ali a linha do limiar por cima dela: é a referência contra a qual o valor se

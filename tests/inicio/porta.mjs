@@ -328,6 +328,13 @@ const EDICOES = [
     estudos: '/estudos',
     regiao: '/regioes/alentejo',
     paginaDoConcelho: '/municipios/evora',
+    /* A PÁGINA DOS DOIS QUADROS DA UNIÃO (F1.10, item 8.16, 08.09.2026). Os 21
+       cartões e as suas leituras saíram da primeira página para aqui, e com eles
+       saíram as células que os medem: a A3 (os 21 valores uma só vez), a A4 (a
+       Comissão em cada frase de contexto), a A10 («sem limiar» fora dos cartões)
+       e a A13 (o destino de cada um dos 21). O que a A1 mede continua a ser a
+       primeira página, que é onde o primeiro ecrã do telemóvel é. */
+    painel: '/uniao-europeia',
   },
   {
     chave: 'en',
@@ -344,6 +351,7 @@ const EDICOES = [
     estudos: '/en/studies',
     regiao: '/en/regions/alentejo',
     paginaDoConcelho: '/en/municipalities/evora',
+    painel: '/en/european-union',
   },
 ];
 
@@ -354,6 +362,14 @@ const { FIGURAS_PDM, FIGURAS_SOCIAL } = await import(
   path.join(RAIZ, 'src', 'data', 'figuras.mjs')
 );
 const AS_VINTE_E_UMA = [...FIGURAS_PDM, ...FIGURAS_SOCIAL].map((f) => f.claim);
+
+/* OS CARTÕES DA FAIXA DA PRIMEIRA PÁGINA, LIDOS DA DECLARAÇÃO DO DOMÍNIO (F1.10,
+   item 8.16, 08.09.2026). Eram os 21 dos dois quadros da União; passaram a ser
+   as medidas de cabeça dos domínios vivos, e a vista compõe a lista da mesma
+   declaração. Um número escrito aqui («cinco») ficava errado no dia em que um
+   domínio novo ficasse vivo, e é exactamente o que esta célula não pode fazer. */
+const { FAIXA_DO_DOMINIO_1 } = await import(path.join(RAIZ, 'src', 'data', 'dominios.mjs'));
+const CARTOES_DA_CABECA = FAIXA_DO_DOMINIO_1.length;
 
 /* A TABELA DO DESTINO, LIDA DA MESMA FONTE QUE A VISTA USA (A13). Uma segunda
    lista escrita aqui («estas três são de domínio») era a régua a medir o que ela
@@ -471,9 +487,36 @@ const SONDA_A1 = (alturaDoEcra) => {
       altura: +p.getBoundingClientRect().height.toFixed(1),
     };
   };
+  /* ---------------------------------------------------------------------------
+     QUANTAS LINHAS TEM A FRASE DA MANCHETE (item 8.15, 08.09.2026)
+     ---------------------------------------------------------------------------
+     «No telemóvel a manchete do país fica com no máximo dois algarismos selados
+     e cabe em três linhas, medido.» A altura da caixa não diz o número de
+     linhas: diz a altura, e a altura muda com o corpo do tipo. Contam-se as
+     linhas como o motor as desenha, com um `Range` sobre a FRASE — e a frase é o
+     `<h1>` sem os selos, que vivem numa fila própria por baixo dela e não são
+     texto da manchete.
+
+     A CONTAGEM É DE RECTÂNGULOS DISTINTOS, e não de rectângulos: um `Range` dá
+     um rectângulo por corrida de texto, e uma linha com três nós dá três
+     rectângulos com o mesmo topo. Arredonda-se o topo ao píxel, porque uma
+     linha desenhada em subpíxeis não é duas linhas. */
+  const linhasDaFrase = (() => {
+    const h1 = document.querySelector('.cabeca-h1');
+    if (!h1) return 0;
+    const selos = h1.querySelector('.manchete-selos');
+    const r = document.createRange();
+    r.selectNodeContents(h1);
+    if (selos) r.setEndBefore(selos);
+    const topos = new Set(
+      [...r.getClientRects()].filter((x) => x.width > 0 && x.height > 0).map((x) => Math.round(x.top)),
+    );
+    return topos.size;
+  })();
   return {
     nome: cx(document.querySelector('.wordmark')),
     manchete: cx(document.querySelector('.cabeca-h1')),
+    linhasDaManchete: linhasDaFrase,
     cartao: cx(cartao),
     selo: cx(cartao ? cartao.querySelector('.src-chip') : null),
     porta: cx(document.querySelector('[data-porta-concelho]')),
@@ -515,14 +558,24 @@ async function corre() {
     const falhas = Object.entries(partes)
       .filter(([, c]) => !dentro(c))
       .map(([k, c]) => (c === null ? `${k}: não existe` : `${k}: fundo ${c.fundo}`));
+    /* O TETO DAS LINHAS DA MANCHETE (item 8.15). Três, medidas em Chromium e em
+       WebKit, nas duas edições; o teto está escrito uma vez e não por edição. */
+    const TETO_DAS_LINHAS = 3;
     conta(
       `A1.${ed.chave}`,
-      falhas.length === 0 && g.cartoesDaCabeca === 21 && g.semSelo.length === 0,
+      falhas.length === 0 &&
+        g.cartoesDaCabeca === CARTOES_DA_CABECA &&
+        g.semSelo.length === 0 &&
+        g.linhasDaManchete > 0 &&
+        g.linhasDaManchete <= TETO_DAS_LINHAS,
       (falhas.length === 0
         ? `390×${ALTURA_PEQUENA}: nome, manchete, cartão, selo e porta do concelho dentro do ecrã ` +
           `(fundo máximo ${Math.max(...Object.values(partes).map((c) => c.fundo)).toFixed(1)} px)`
         : `fora do primeiro ecrã: ${falhas.join('; ')}`) +
-        ` · ${g.cartoesDaCabeca} cartões na cabeça (${g.cartoes} na página), ${g.semSelo.length} sem selo com caixa` +
+        ` · a manchete em ${g.linhasDaManchete} linha(s) (teto ${TETO_DAS_LINHAS}), ` +
+        `${g.manchete ? g.manchete.altura : 0} px de altura` +
+        ` · ${g.cartoesDaCabeca} cartões na cabeça (${g.cartoes} na página, ` +
+        `${CARTOES_DA_CABECA} declarados pelo domínio), ${g.semSelo.length} sem selo com caixa` +
         (g.semSelo.length ? ` (${g.semSelo.map((c) => c.id).slice(0, 3).join(', ')})` : ''),
     );
 
@@ -604,10 +657,16 @@ async function corre() {
 
     /* -------------------------------------------------------- A3, A4, A6, A10 */
     const doc = await html(ed.rota === '/' ? '/index.html' : `${ed.rota}/index.html`);
+    /* AS CÉLULAS DOS 21 LEEM A PÁGINA ONDE OS 21 ESTÃO (F1.10, item 8.16). Os
+       dois quadros da União saíram da primeira página para «Portugal na União
+       Europeia», e uma régua que continuasse a contá-los aqui contava zero numa
+       coleção vazia, que é a regra 14 da casa a ser quebrada dentro da própria
+       régua. O que muda é a pasta que ela lê; o teste é o mesmo. */
+    const docDoPainel = await html(`${ed.painel}/index.html`);
 
     const repetidos = AS_VINTE_E_UMA.map((id) => ({
       id,
-      n: ocorrencias(doc, `data-claim="${id}"`),
+      n: ocorrencias(docDoPainel, `data-claim="${id}"`),
     })).filter((c) => c.n !== 1);
     medidas[`A3.${ed.chave}`] = {
       total: AS_VINTE_E_UMA.length,
@@ -616,7 +675,7 @@ async function corre() {
     conta(
       `A3.${ed.chave}`,
       repetidos.length === 0,
-      `os 21 valores selados uma só vez em ${ed.rota}: ${repetidos.length} fora da conta` +
+      `os 21 valores selados uma só vez em ${ed.painel}: ${repetidos.length} fora da conta` +
         (repetidos.length ? ` (${repetidos.map((c) => `${c.id}×${c.n}`).join(', ')})` : ''),
     );
 
@@ -634,8 +693,8 @@ async function corre() {
        parágrafos pela marca que eles levam, `data-contexto-painel`, e exige a
        cadeia dentro de CADA um. A contagem no documento fica ao lado, para o
        relatório, e não decide nada. */
-    const nComissao = ocorrencias(doc, ed.comissao);
-    const p4 = await pagina(ed.rota, 1280, 900);
+    const nComissao = ocorrencias(docDoPainel, ed.comissao);
+    const p4 = await pagina(ed.painel, 1280, 900);
     const frases = await p4.evaluate(
       ({ palavra }) =>
         [...document.querySelectorAll('[data-contexto-painel]')].map((el) => ({
@@ -651,7 +710,7 @@ async function corre() {
     conta(
       `A4.${ed.chave}`,
       frases.length === 2 && semComissao.length === 0,
-      `«${ed.comissao}» em cada frase de contexto de ${ed.rota}: ${frases.length} frase(s), ` +
+      `«${ed.comissao}» em cada frase de contexto de ${ed.painel}: ${frases.length} frase(s), ` +
         `${semComissao.length} sem a Comissão` +
         (semComissao.length ? ` (${semComissao.map((f) => f.painel).join(', ')})` : '') +
         ` · no documento inteiro: ${nComissao}`,
@@ -677,7 +736,7 @@ async function corre() {
 
        AS DUAS COLEÇÕES TÊM DE TER ELEMENTOS, e isso é a outra metade da mesma
        regra: uma célula que passe por não encontrar nada é uma célula cega. */
-    const p2 = await pagina(ed.rota, 390, 844);
+    const p2 = await pagina(ed.painel, 390, 844);
     const semLimiar = await p2.evaluate((palavra) => {
       const conta = (sel) =>
         [...document.querySelectorAll(sel)].filter((el) =>
@@ -697,7 +756,7 @@ async function corre() {
         semLimiar.pecas === 0 &&
         semLimiar.nCartoes > 0 &&
         semLimiar.nLeituras > 0,
-      `«${ed.semLimiar}» nos cartões e nas leituras de ${ed.rota}: ` +
+      `«${ed.semLimiar}» nos cartões e nas leituras de ${ed.painel}: ` +
         `${semLimiar.cartoes} de ${semLimiar.nCartoes} cartão(ões), ` +
         `${semLimiar.pecas} de ${semLimiar.nLeituras} leitura(s)`,
     );
@@ -867,10 +926,13 @@ async function corre() {
        e continua a comparar cartão a cartão. O destino dos cartões da faixa do
        domínio é medido pela célula J5 de `tests/inicio/leitura.mjs`, que é a
        régua do bloco que os pôs lá. */
-    const pCartoes = await pagina(ed.rota, 390, ALTURA_PEQUENA);
+    /* A FAIXA DOS 21 MUDOU DE PÁGINA (F1.10, item 8.16, 08.09.2026), e a célula
+       vai com ela: os 21 vivem em «Portugal na União Europeia», onde a faixa é a
+       única da página e não precisa do recorte da grelha da cabeça. */
+    const pCartoes = await pagina(ed.painel, 390, ALTURA_PEQUENA);
     const cartoes = await pCartoes.evaluate(() => {
       const ancoras = new Set([...document.querySelectorAll('[id]')].map((el) => el.id));
-      return [...document.querySelectorAll('[data-grelha] [data-faixa] [data-cartao]')].map((c) => ({
+      return [...document.querySelectorAll('[data-faixa] [data-cartao]')].map((c) => ({
         id: c.getAttribute('data-cartao'),
         href: c.querySelector('.cartao-porta')?.getAttribute('href') ?? null,
         /* O RÓTULO DO DESTINO NÃO PODE ESTAR EM NENHUM DOS 21 (07.09.2026).
@@ -929,7 +991,7 @@ async function corre() {
     conta(
       `A13.${ed.chave}`,
       cartoes.length === AS_VINTE_E_UMA.length && comPorta.length > 0 && errados.length === 0,
-      `o destino dos cartões de ${ed.rota}: ${cartoes.length} cartão(ões), ` +
+      `o destino dos cartões de ${ed.painel}: ${cartoes.length} cartão(ões), ` +
         `${cartoes.length - paraFora.length} para a leitura breve desta página, ` +
         `${paraFora.length} para fora · ` +
         `${comPorta.length} leitura(s) acrescentam a porta do domínio ` +

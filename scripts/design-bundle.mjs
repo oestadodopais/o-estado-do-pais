@@ -630,8 +630,16 @@ function peca(rota, seletor, { indice = 0, filtro = null, raiz = null } = {}) {
    lugar: na página de um concelho, na de uma região e na de uma área. `index.html`
    fica em primeiro lugar em todas as listas porque é a página mais barata de ler
    e porque o dia em que a peça lá voltar a lista não tem de mudar. */
+/* A PÁGINA DE UM CONCELHO DEIXOU DE TER PEÇAS a 08.09.2026 (bloco F1.10, §7.1):
+   a grelha das oito peças grandes saiu, pela mesma razão e com a mesma forma que
+   a da primeira página, e no lugar dela ficou a área de leitura. A peça continua
+   inteira onde ela é a leitura de uma medida naquele lugar: na página de uma
+   REGIÃO, que rende duas sem limiar. A entrada do concelho fica na lista, e não é
+   um resto: uma candidata que não tem a peça não custa nada, e o dia em que a
+   peça lá voltar a lista não tem de mudar. */
 const CANDIDATAS_DA_PECA_SEM_LIMIAR = [
   'index.html',
+  'regioes/alentejo/index.html',
   'municipios/evora/index.html',
   'areas/economia-e-coesao-territorial/index.html',
 ];
@@ -1502,12 +1510,27 @@ ${tabelaTipos}
     );
   }
 
+  /* A DISTÂNCIA DE ÉVORA MUDOU DE CASA (bloco F1.10, §7.1, 08.09.2026), e não de
+     gramática. A grelha das oito peças grandes saiu da página de um concelho, e
+     com ela a `.peca` que levava a régua contra o teto legal; a mesma distância
+     desenha-se hoje DENTRO da leitura da medida que ela mede, com a forma
+     própria daquela página (`.mun-distancia`), que é mais do que a régua
+     genérica: leva os dois valores com os seus selos, as duas pontas nomeadas e
+     a frase do artigo que fixa o limite. É essa que o cartão retrata. */
   const evoraRaiz = arvore('municipios/evora/index.html');
-  const evoraPeca = evoraRaiz.querySelectorAll('.peca').filter((p) => p.querySelector('.regua'))[0];
-  if (!evoraPeca) morre('não encontrei em `dist/municipios/evora/index.html` nenhuma peça com régua.');
-  const evoraNome = evoraPeca.querySelector('.peca-nome')?.text?.trim() ?? '';
+  const evoraPeca = evoraRaiz.querySelector('.dobra-instrumento .mun-distancia');
+  if (!evoraPeca) {
+    morre(
+      'não encontrei em `dist/municipios/evora/index.html` a distância contra o teto legal ' +
+        '(`.dobra-instrumento .mun-distancia`). Ou ela saiu da página, e este cartão tem de ser ' +
+        'revisto, ou mudou-se outra vez de casa.',
+    );
+  }
+  const evoraNome =
+    evoraRaiz.querySelector('.dobra-instrumento')?.closest('.dobra')?.querySelector('.dobra-nome')
+      ?.text?.trim() ?? '';
   tiraCodigo(evoraPeca);
-  absolutizaLigacoes(evoraPeca, 'dist/municipios/evora/index.html → .peca com régua');
+  absolutizaLigacoes(evoraPeca, 'dist/municipios/evora/index.html → .mun-distancia');
 
   const umaRegua = (p, legenda) => `    <div class="ds-mostra">
       <p class="ds-legenda">${escapa(p.nome)} · ${escapa(legenda)}</p>
@@ -1551,7 +1574,7 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   <section class="ds-bloco">
     <h2>O tecto legal, na página do concelho</h2>
     <div class="ds-mostra">${evoraPeca.outerHTML}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/municipios/evora/index.html</code> · a peça «${escapa(evoraNome)}». A referência é um limiar formal (o limite legal do índice de dívida), e por isso esta colore; a base 100 de um índice cuja unidade é uma média não coloriria.</p>
+    <p class="ds-nota"><code class="ds-mono">dist/municipios/evora/index.html</code> · a distância, dentro da leitura de «${escapa(evoraNome)}». A referência é um limiar formal (o limite legal do índice de dívida), e por isso a palavra do estado no cartão colore; a base 100 de um índice cuja unidade é uma média não coloriria.</p>
   </section>`;
 
   regista(
@@ -1672,16 +1695,39 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   }
   const distrito = peca('distritos/evora/index.html', 'figure.distrito-mapa');
 
+  /* O CARTÃO LOCALIZADOR DOS 308 PONTOS SAIU DA PÁGINA DE UM CONCELHO (bloco
+     F1.10, item 8.17, 08.09.2026). O diretor viu-o a 08.09 («the dotted map shows
+     up but with no useful purpose»), e no lugar dele entrou o NÍVEL DA REGIÃO do
+     mapa do F1.1d: a região daquele concelho com os seus concelhos como áreas, o
+     da página com o contorno grosso, e o lugar do nome ao lado.
+
+     O QUE O CARTÃO RETRATA MUDA COM A PÁGINA, e o que ele confere muda com ele:
+     eram os 308 pontos e um anel; são as áreas da região e uma marca de
+     escolhido. A contagem não é escrita — é a do desenho daquela região, lida do
+     mesmo ficheiro que a página lê — e a corrida pára se ela for zero ou se a
+     marca não estiver numa área só. Os pontos continuam a existir no componente,
+     na postura do selo, que hoje nenhuma página rende; o dia em que voltarem, o
+     cartão volta com eles. */
   const localizadorRaiz = arvore('municipios/evora/index.html');
   const pontos = localizadorRaiz.querySelectorAll('#mapa circle.mun').length;
-  if (pontos !== CONCELHOS_DA_CARTA) {
+  if (pontos !== 0) {
     morre(
-      `o localizador de \`dist/municipios/evora/index.html\` tem ${pontos} pontos e a Carta tem ` +
-        `${CONCELHOS_DA_CARTA} concelhos. O cartão diz que estão lá todos.`,
+      `o mapa de \`dist/municipios/evora/index.html\` tem ${pontos} pontos do mapa dos 308. O item ` +
+        `8.17 do F1.10 tirou-os da página de um concelho; ou eles saem, ou este cartão volta a ` +
+        `retratá-los.`,
     );
   }
-  const aneis = localizadorRaiz.querySelectorAll('#mapa .mun-escolhido').length;
-  if (aneis !== 1) morre(`o localizador de \`dist/municipios/evora/index.html\` tem ${aneis} anéis, e devia ter um.`);
+  const areasDaRegiao = localizadorRaiz.querySelectorAll('#mapa path.uni').length;
+  if (areasDaRegiao === 0 || areasDaRegiao >= CONCELHOS_DA_CARTA) {
+    morre(
+      `o mapa de \`dist/municipios/evora/index.html\` tem ${areasDaRegiao} área(s) (\`path.uni\`), e ` +
+        `uma região tem menos concelhos do que os ${CONCELHOS_DA_CARTA} da Carta e mais do que ` +
+        `nenhum. O item 8.17 do F1.10 põe ali o nível da REGIÃO do mapa do F1.1d; um desenho com ` +
+        `todos os concelhos do país seria o mapa do país outra vez.`,
+    );
+  }
+  const aneis = localizadorRaiz.querySelectorAll('#mapa [data-escolhido]').length;
+  if (aneis !== 1) morre(`o mapa de \`dist/municipios/evora/index.html\` marca ${aneis} concelho(s) escolhido(s), e devia marcar um.`);
 
   /* A LEGENDA DE NEUTRALIDADE JÁ NÃO RENDE, e a corrida confere-o antes de o
      cartão o dizer. A frase é lida da própria Emenda 3, e não escrita aqui. */
@@ -1697,7 +1743,7 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   const corpo = `  <header class="ds-cabeca">
     <span class="eyebrow">Disposições</span>
     <h1>O mapa por unidades</h1>
-    <p class="sec-sub">A primeira página mostra as ${unidades} unidades da Carta, cada uma a porta da sua página. Os pontos não saíram do sítio: são o localizador da página de um concelho, e estão aqui em baixo.</p>
+    <p class="sec-sub">A primeira página mostra as ${unidades} unidades da Carta, cada uma a porta da sua página; uma unidade aberta mostra os seus concelhos; e a página de um concelho mostra a região dele, com o seu concelho marcado.</p>
   </header>
 
   <section class="ds-bloco">
@@ -1729,9 +1775,9 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   </section>
 
   <section class="ds-bloco">
-    <h2>Um lugar escolhido é um anel</h2>
+    <h2>Um lugar escolhido é um contorno, e não um enchimento</h2>
     <div class="ds-mostra ds-mostra-larga">${localizador}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/municipios/evora/index.html</code> · o cartão localizador, que é onde os pontos vivem desde a Emenda 20d: ${pontos} pontos, que são os ${CONCELHOS_DA_CARTA} concelhos da Carta, e ${aneis} anel. Os dois desenhos têm campos diferentes, porque o dos pontos não guarda os polígonos, e por isso são dois e não um. Na primeira página nenhum lugar vem escolhido; aqui o anel é posto na construção, porque a página é de um concelho.</p>
+    <p class="ds-nota"><code class="ds-mono">dist/municipios/evora/index.html</code> · o mapa da região daquele concelho, que substituiu o cartão dos 308 pontos a 08.09.2026 (item 8.17 do F1.10): ${areasDaRegiao} áreas, que são os concelhos que o ficheiro daquela região desenha, de entre os ${CONCELHOS_DA_CARTA} da Carta, e ${aneis} marcado. Na primeira página nenhum lugar vem escolhido; aqui a marca é posta na construção, porque a página é de um concelho. O glifo continua a ser o da Emenda 10: o mesmo traço, mais grosso, e nunca um enchimento. Medido nesta corrida: ${pontos} pontos do mapa dos 308 nesta página.</p>
   </section>
 
   <section class="ds-bloco">
@@ -1745,7 +1791,7 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
     'Disposições',
     1240,
     cartao({ grupo: 'Disposições', viewport: 1240, titulo: 'O mapa por unidades', corpo, familias: ['inicio', 'municipio'] }),
-    `${unidades} unidades, ${concelhosDoDistrito} concelhos e ${pontos} pontos, três mapas de dist/`
+    `${unidades} unidades, ${concelhosDoDistrito} concelhos e ${areasDaRegiao} áreas de uma região, três mapas de dist/`
   );
 }
 
