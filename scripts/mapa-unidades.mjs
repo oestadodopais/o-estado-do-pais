@@ -137,13 +137,16 @@ for (const u of unidades) {
   feitos.push({ slug: u.slug, concelhos: lido.concelhos.length, bytes: bruto.length });
 }
 
-/* NENHUM FICHEIRO A MAIS: um `unidade-*.json` que já não tenha unidade é lixo
-   servido, e o portão do mapa recusa-o. Aqui apaga-se, para que a construção
-   deixe a pasta como as fontes a mandam. */
+/* NENHUM FICHEIRO A MAIS, E A CONTA É A MESMA DO PORTÃO. Um ficheiro nesta pasta
+   que não seja o segundo nível de uma das 29 é geometria servida que ninguém
+   desenha, e um leitor que a peça pelo endereço recebe-a. A regra R8 do portão do
+   mapa recusa qualquer nome que não esteja na lista, e não só os que começam por
+   `unidade-`: se este gerador limpasse menos do que ela, deixava a construção
+   vermelha sem ter maneira de a arrumar. Aqui apaga-se o mesmo conjunto. */
 if (fs.existsSync(SAIDA)) {
   const querem = new Set(unidades.map((u) => `unidade-${u.slug}.json`));
   for (const nome of fs.readdirSync(SAIDA)) {
-    if (!nome.startsWith('unidade-') || querem.has(nome)) continue;
+    if (querem.has(nome)) continue;
     if (VERIFICA) erros.push(`public/dados/mapa/${nome} não corresponde a unidade nenhuma.`);
     else fs.unlinkSync(path.join(SAIDA, nome));
   }
