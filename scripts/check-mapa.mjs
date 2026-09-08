@@ -6,9 +6,10 @@
  *
  * Corre na cadeia do `build`, depois do `gate:html`, sobre o `dist/` construído
  * e sobre os artefactos que o motor atravessou para `mapa/`. É o D5 do
- * `design/especime-v3/briefs/BRIEF-mapa-distritos.md`, e são oito regras: sete
- * dele, e uma do `BRIEF-F1.1e-os-distritos-voltam-ao-mapa.md` §3 (U6), que entra
- * com o segundo nível do mapa:
+ * `design/especime-v3/briefs/BRIEF-mapa-distritos.md`, e são nove regras: sete
+ * dele, uma do `BRIEF-F1.1e-os-distritos-voltam-ao-mapa.md` §3 (U6), que entra
+ * com o segundo nível do mapa, e uma da emenda de 08.09.2026 a esse brief (a
+ * segunda passagem), que fecha o silêncio de uma página em falta:
  *
  *   R1  os resumos dos ficheiros de `mapa/` iguais aos do manifesto, e nenhum
  *       ficheiro a mais nem a menos;
@@ -25,9 +26,12 @@
  *       portuguesa (I84);
  *   R8  os 29 ficheiros do segundo nível (`public/dados/mapa/unidade-*.json`)
  *       iguais, byte a byte, aos artefactos `mapa/distritos/*.json`, o que está
- *       em `dist/` igual ao que está em `public/`, nenhum ficheiro a mais dos
- *       dois lados, os 308 concelhos uma vez cada na geometria servida, e cada
- *       área da primeira página a pedir o ficheiro da sua unidade.
+ *       em `dist/` igual ao que está em `public/`, nenhum `unidade-*.json` a mais
+ *       dos dois lados, os 308 concelhos uma vez cada na geometria servida, e
+ *       cada área da primeira página a pedir o ficheiro da sua unidade;
+ *   R9  as páginas que o mapa promete estão construídas: as duas edições da
+ *       primeira página, as 29 de unidade e as 308 de concelho nas duas, os dois
+ *       índices dos concelhos e as duas páginas da linha da Carta.
  *
  * AS R8, R9 E R10 DO F1.1d SAÍRAM COM AS REGIÕES (F1.1e, 08.09.2026). Provavam
  * que a geometria calculada das nove regiões NUTS II era a união dos seus
@@ -121,6 +125,51 @@ function lePagina(rota) {
   return { rota, rel, html, root: parse(html) };
 }
 
+/**
+ * ---------------------------------------------------------------------------
+ * AS PÁGINAS QUE O MAPA PROMETE (R9, F1.1e, segunda passagem, 08.09.2026)
+ * ---------------------------------------------------------------------------
+ * `lePagina()` devolve `null` quando a página não está construída, e `leMundo()`
+ * só juntava ao mundo as que existiam: uma edição da primeira página em falta
+ * deixava a R4 sem nada para conferir, e uma página de distrito em falta saía da
+ * conta da R3. O portão dizia-se verde por não ter olhado, e a linha do fim
+ * IMPRIMIA o número de páginas de distrito construídas em vez de o afirmar
+ * (leitura a frio do Codex de 08.09.2026, achado 8).
+ *
+ * O MUNDO PASSA A DECLARAR O QUE ESPERA. Cada rota que o mapa promete entra em
+ * `esperadas` com um `existe`, e a R9 recusa qualquer uma que falte:
+ *
+ *   · as duas edições da primeira página, que é onde o mapa vive;
+ *   · as 29 páginas de unidade nas duas edições, 58, que são o destino das 29
+ *     áreas e a superfície que a R2 e a R3 medem;
+ *   · as páginas de concelho que a Carta dá, nas duas edições, que são o destino
+ *     de cada área do segundo nível;
+ *   · os dois índices dos concelhos e as duas páginas da linha da Carta, que são
+ *     o que a R7 e a R6 leem.
+ *
+ * A EXISTÊNCIA MEDE-SE EM DISCO E NÃO PELO CONTEÚDO, e é de propósito: as 616
+ * páginas de concelho não se analisam (seriam 616 árvores para uma pergunta de
+ * sim ou não), e o que cada uma tem lá dentro é de outras regras e de outros
+ * portões.
+ *
+ * @returns {{ tipo: string, lang: string, rota: string, existe: boolean }[]}
+ */
+function paginasEsperadas(pais) {
+  const fora = [];
+  const junta = (tipo, lang, rota) => {
+    const abs = path.join(DIST, rota.replace(/^\//, ''), 'index.html');
+    fora.push({ tipo, lang, rota, existe: fs.existsSync(abs) });
+  };
+  for (const lang of LANGS) {
+    junta('inicio', lang, routePath('home', lang));
+    junta('municipios', lang, routePath('municipios', lang));
+    junta('linha', lang, routePath('linha', lang, { slug: LINHA_DA_CARTA }));
+    for (const u of pais.unidades) junta('distrito', lang, routePath('distrito', lang, { slug: u.slug }));
+    for (const slug of slugsDaCarta()) junta('municipio', lang, routePath('municipio', lang, { slug }));
+  }
+  return fora;
+}
+
 function leMundo() {
   const ficheiros = {};
   for (const rel of ficheirosDoMapa()) ficheiros[rel] = fs.readFileSync(path.join(RAIZ, rel));
@@ -174,6 +223,7 @@ function leMundo() {
     pais,
     distritos,
     paginas,
+    esperadas: paginasEsperadas(pais),
     servidos,
     servidosDist,
     pastaServida,
@@ -539,14 +589,26 @@ function r8(m) {
     }
   }
 
-  /* NENHUM FICHEIRO A MAIS, DOS DOIS LADOS: um `unidade-*.json` que já não tenha
-     unidade é geometria servida que ninguém desenha, e um leitor que a peça pelo
-     endereço recebe-a. */
+  /* NENHUM `unidade-*.json` A MAIS, DOS DOIS LADOS: um ficheiro com esse nome que
+     já não tenha unidade é geometria servida que ninguém desenha, e um leitor que
+     a peça pelo endereço recebe-a.
+
+     E SÓ ESSE PADRÃO (F1.1e, segunda passagem, 08.09.2026). A primeira forma
+     desta metade recusava QUALQUER nome que não estivesse na lista das 29, e com
+     ela o gerador apagava tudo o resto para a construção poder fechar: a pasta
+     dos dados do mapa passava a ser deste bloco, e um artefacto que lá viesse a
+     viver com outro nome desaparecia em silêncio (leitura a frio do Codex,
+     achado 11). A regra e o gerador são donos de `unidade-*.json`, e o que tiver
+     outro nome não se conta nem se toca. O conhecido-positivo é a célula U11 de
+     `tests/inicio/mapa-unidades.mjs`, que põe um ficheiro estranho na pasta e
+     exige que ele sobreviva ao gerador e a este portão. */
+  const NOSSO = /^unidade-.*\.json$/;
   for (const [onde, nomes] of [
     ['public/dados/mapa', m.pastaServida],
     ['dist/dados/mapa', m.pastaServidaDist],
   ]) {
     for (const nome of nomes) {
+      if (!NOSSO.test(nome)) continue;
       if (!querem.has(nome)) erros.push(`${onde}/${nome} não corresponde a unidade nenhuma.`);
     }
   }
@@ -603,6 +665,22 @@ function r8(m) {
   return erros;
 }
 
+/** R9 · as páginas que o mapa promete estão todas construídas. */
+function r9(m) {
+  const erros = [];
+  const emFalta = m.esperadas.filter((e) => !e.existe);
+  const porTipo = new Map();
+  for (const e of emFalta) porTipo.set(e.tipo, (porTipo.get(e.tipo) ?? 0) + 1);
+  for (const [tipo, n] of porTipo) {
+    const exemplos = emFalta.filter((e) => e.tipo === tipo).slice(0, 4).map((e) => e.rota);
+    erros.push(
+      `${n} página(s) de tipo "${tipo}" que o mapa promete não estão em dist/: ${exemplos.join(', ')}` +
+        (n > exemplos.length ? `, e mais ${n - exemplos.length}.` : '.'),
+    );
+  }
+  return erros;
+}
+
 const REGRAS = [
   { id: 'R1', nome: 'os resumos de mapa/ batem com o manifesto', fn: r1 },
   { id: 'R2', nome: 'a junção: 308 concelhos, uma vez cada, com os slugs da Carta', fn: r2 },
@@ -612,6 +690,7 @@ const REGRAS = [
   { id: 'R6', nome: 'a atribuição da DGT onde o mapa está', fn: r6 },
   { id: 'R7', nome: 'a colação portuguesa nos artefactos e nas listas construídas', fn: r7 },
   { id: 'R8', nome: 'os 29 ficheiros do segundo nível são os artefactos', fn: r8 },
+  { id: 'R9', nome: 'as páginas que o mapa promete estão todas construídas', fn: r9 },
 ];
 
 /* ===========================================================================
@@ -642,6 +721,7 @@ function copia(m) {
     pais: JSON.parse(JSON.stringify(m.pais)),
     distritos: JSON.parse(JSON.stringify(m.distritos)),
     paginas: m.paginas.map((p) => ({ ...p, root: parse(p.html) })),
+    esperadas: m.esperadas.map((e) => ({ ...e })),
     servidos: Object.fromEntries(Object.entries(m.servidos).map(([k, v]) => [k, Buffer.from(v)])),
     servidosDist: Object.fromEntries(
       Object.entries(m.servidosDist).map(([k, v]) => [k, Buffer.from(v)]),
@@ -795,6 +875,26 @@ const ESTRAGOS = {
     a.setAttribute('data-ficheiro', '/dados/mapa/unidade-evora.json');
     return `a área de "${slug}" em ${pg.rota} a pedir o ficheiro de "evora"`;
   },
+  /* A R9 TEM TRÊS ESTRAGOS, um por cada família de páginas que ela promete: a
+     primeira página de uma edição, uma página de unidade, e uma página de
+     concelho. Cada um apaga UMA página construída da cópia em memória, que é a
+     forma que o defeito tinha quando ele existia: a página não estava lá e o
+     portão continuava verde por não olhar. */
+  R9: (m) => {
+    const e = m.esperadas.find((x) => x.tipo === 'inicio' && x.lang === 'en');
+    e.existe = false;
+    return `a primeira página inglesa (${e.rota}) por construir`;
+  },
+  'R9 (uma página de unidade)': (m) => {
+    const e = m.esperadas.find((x) => x.tipo === 'distrito');
+    e.existe = false;
+    return `a página de unidade ${e.rota} por construir`;
+  },
+  'R9 (uma página de concelho)': (m) => {
+    const e = m.esperadas.find((x) => x.tipo === 'municipio');
+    e.existe = false;
+    return `a página de concelho ${e.rota} por construir`;
+  },
 };
 
 /* ===========================================================================
@@ -845,11 +945,16 @@ if (erros.length) {
   process.exit(1);
 }
 
-const nDistritos = mundo.paginas.filter((p) => p.tipo === 'distrito').length;
+/* A LINHA DO FIM AFIRMA, E NÃO IMPRIME. As contagens que ela escreve são as que
+   a R9 acabou de exigir: se uma página faltasse, o portão já teria fechado a
+   vermelho antes de chegar aqui. */
+const nDistritos = mundo.esperadas.filter((p) => p.tipo === 'distrito').length;
+const nConcelhos = mundo.esperadas.filter((p) => p.tipo === 'municipio').length;
 console.log(
   cinza(
     `\n  mapa · ${Object.keys(mundo.manifesto.ficheiros).length} ficheiros conferidos · ` +
       `${mundo.pais.unidades.length} unidades · ${slugsDaCarta().length} concelhos, uma vez cada · ` +
-      `${nDistritos} páginas de distrito construídas\n`,
+      `${mundo.esperadas.length} páginas prometidas e construídas ` +
+      `(${nDistritos} de unidade e ${nConcelhos} de concelho, nas duas edições)\n`,
   ),
 );

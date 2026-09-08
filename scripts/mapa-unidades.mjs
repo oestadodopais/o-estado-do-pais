@@ -137,18 +137,38 @@ for (const u of unidades) {
   feitos.push({ slug: u.slug, concelhos: lido.concelhos.length, bytes: bruto.length });
 }
 
-/* NENHUM FICHEIRO A MAIS, E A CONTA É A MESMA DO PORTÃO. Um ficheiro nesta pasta
-   que não seja o segundo nível de uma das 29 é geometria servida que ninguém
-   desenha, e um leitor que a peça pelo endereço recebe-a. A regra R8 do portão do
-   mapa recusa qualquer nome que não esteja na lista, e não só os que começam por
-   `unidade-`: se este gerador limpasse menos do que ela, deixava a construção
-   vermelha sem ter maneira de a arrumar. Aqui apaga-se o mesmo conjunto. */
+/* ---------------------------------------------------------------------------
+ * DE QUEM É ESTA PASTA (F1.1e, segunda passagem, 08.09.2026)
+ * ---------------------------------------------------------------------------
+ * A primeira forma disto apagava, em modo de escrita, TUDO o que estivesse em
+ * `public/dados/mapa/` e não fosse uma das 29 unidades. A pasta não é deste
+ * bloco: é a pasta dos dados do mapa que o sítio serve, e um artefacto que lá
+ * viesse a viver com outro nome desaparecia em silêncio na construção seguinte,
+ * sem uma linha a dizê-lo (leitura a frio do Codex de 08.09.2026, achado 11).
+ *
+ * A REGRA PASSA A SER O PADRÃO, e é a mesma da regra R8 do portão do mapa: este
+ * gerador e aquela regra são donos de `unidade-*.json` e de mais nada.
+ *
+ *   · um `unidade-*.json` que não seja de uma das 29 SAI, com a linha a dizê-lo
+ *     (é geometria servida que ninguém desenha, e um leitor que a peça pelo
+ *     endereço recebe-a);
+ *   · qualquer outro ficheiro da pasta NÃO SE TOCA NEM SE CONTA.
+ *
+ * O conhecido-positivo está na célula U11 de `tests/inicio/mapa-unidades.mjs`,
+ * e é em disco: um ficheiro estranho na pasta sobrevive ao gerador e ao portão,
+ * e um `unidade-*.json` a mais sai com a linha.
+ */
+const NOSSO = /^unidade-.*\.json$/;
+const apagados = [];
 if (fs.existsSync(SAIDA)) {
   const querem = new Set(unidades.map((u) => `unidade-${u.slug}.json`));
   for (const nome of fs.readdirSync(SAIDA)) {
-    if (querem.has(nome)) continue;
+    if (!NOSSO.test(nome) || querem.has(nome)) continue;
     if (VERIFICA) erros.push(`public/dados/mapa/${nome} não corresponde a unidade nenhuma.`);
-    else fs.unlinkSync(path.join(SAIDA, nome));
+    else {
+      fs.unlinkSync(path.join(SAIDA, nome));
+      apagados.push(nome);
+    }
   }
 }
 
@@ -168,3 +188,10 @@ console.log(
     `${bytes.toLocaleString('pt-PT')} B em public/dados/mapa/ · ` +
     (VERIFICA ? 'conferidos' : escritos === 0 ? 'nenhum mudou' : `${escritos} escritos`),
 );
+/* UM FICHEIRO APAGADO NUNCA É SILENCIOSO. */
+for (const nome of apagados) {
+  console.log(
+    cinza('    · ') +
+      `public/dados/mapa/${nome} não corresponde a unidade nenhuma da Carta: apagado.`,
+  );
+}
