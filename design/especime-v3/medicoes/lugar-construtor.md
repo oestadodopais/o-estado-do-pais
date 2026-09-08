@@ -7,16 +7,16 @@ deste relatório foi escrito à mão: cada um tem ao lado o comando que o mediu.
 
 ---
 
-## Estado · 08.09.2026, 09:52 UTC · a régua, a página europeia, o índice dos domínios, o vocabulário, as frases de hierarquia, o nome do índice e o menu em dois pesos
+## Estado · 08.09.2026, 10:46 UTC · a régua, a página europeia, o índice dos domínios, o vocabulário, as frases de hierarquia, o nome do índice, o menu em dois pesos e o §9
 
 | | |
 |---|---|
 | cabeça | a última do ramo (`git rev-parse HEAD`) |
-| `main` fundido | `43f4b52a`, na fusão `47d957f6` |
+| `main` fundido | `43f4b52a` (fusão `47d957f6`) e `d9066379` (fusão `5757746f`, o F1.1d e o §9 do brief) |
 | `build` · `verify` · `typecheck` | **0** · **0** · **0** (códigos lidos de `build.exit`, `verify.exit`, `typecheck.exit`) |
 | a régua do bloco | `scripts/check-lugar.mjs`, no `verify`, **7,84 s** (`/usr/bin/time -p node scripts/check-lugar.mjs`) |
-| feito | a régua (encargo (b)); **8.8** («Números e fontes» / «Numbers and sources» como nome visível do índice e da entrada do menu); **8.9** (o menu em dois pesos, com os três destinos do leitor à vista a 390 e os outros dez a um toque); **§7.5** (o menu e o rodapé com a mesma lista pela mesma ordem, e «Áreas de governo» por extenso); **8.16** (a página «Portugal na União Europeia», a faixa da primeira página com as medidas de cabeça do domínio vivo); **8.13** (a secção dos domínios passa a índice, 0 valores selados); **8.12** (em repouso só a linha do toque; o cabeçalho e o contexto de um painel só junto de uma leitura dele); **8.14 inteiro** (o comando de densidade fora e as duas palavras a 0 nas páginas do leitor); **§2.2** (as cinco frases de hierarquia nos cinco índices) |
-| a seguir | fundir o `main` em `d9066379` (o F1.1d e o **§9 do brief**, a leitura cruzada do inventário) e aplicar o §9; depois 8.4 e 8.5, 8.15, 8.11, e as páginas |
+| feito | a régua (encargo (b)); **§9.1** (o índice dos domínios deixa de falar da cobertura da casa); **8.8** («Números e fontes» / «Numbers and sources» como nome visível do índice e da entrada do menu); **8.9** (o menu em dois pesos, com os três destinos do leitor à vista a 390 e os outros dez a um toque); **§7.5** (o menu e o rodapé com a mesma lista pela mesma ordem, e «Áreas de governo» por extenso); **8.16** (a página «Portugal na União Europeia», a faixa da primeira página com as medidas de cabeça do domínio vivo); **8.13** (a secção dos domínios passa a índice, 0 valores selados); **8.12** (em repouso só a linha do toque; o cabeçalho e o contexto de um painel só junto de uma leitura dele); **8.14 inteiro** (o comando de densidade fora e as duas palavras a 0 nas páginas do leitor); **§2.2** (as cinco frases de hierarquia nos cinco índices) |
+| a seguir | o resto do §9 (os pontos 2 a 10), 8.4 e 8.5, 8.15, 8.11, e as páginas (item 4 do encargo) |
 
 ---
 
@@ -225,6 +225,44 @@ vezes por página.
 
 **O rodapé passou a ler a mesma lista** (§7.5). Eram duas listas escritas em dois
 ficheiros, e tinham divergido: «Distritos» estava no menu e não estava no rodapé.
+
+
+### §9.1 · o índice dos domínios deixa de falar da cobertura da casa
+
+O §9 do brief chegou com o `main` de 08.09 (a leitura cruzada do inventário das
+frases pelo Codex) e o ponto 1 toca exactamente nas linhas que este bloco estava
+a escrever: **as linhas do índice dos domínios que falam de vagas, de «no ar», de
+«publicado» e de «conferido** saem da voz do leitor com o 8.13 e o §7.8.
+
+**O que mudou.** Os dois índices dos domínios (o de `/dominios` e a secção da
+primeira página) passam a listar **os domínios com página**: o nome, a
+**contagem das suas medidas** e a porta; e o domínio cujas medidas vivem dentro de
+outro, com a porta para a secção onde elas estão. As dezasseis linhas «ainda sem
+medidas conferidas · vaga» passaram ao **Método**, à secção nova «O que se mede a
+seguir» (`/metodo#a-seguir`), que é a casa do método e onde a Emenda 15 deixa a
+casa falar de si.
+
+**A contagem não é um número da casa sobre o mundo, e por isso não precisa de uma
+chave da prova:** é a numeração de uma lista rendida — quantas medidas a página de
+chegada lista —, e leva a marca que a casa já usa para isso,
+`data-nonledger="numeracao"`, a mesma da posição de um cartão na faixa. É a
+correção do que a primeira redação do 8.13 nesta sessão deixou por fazer, com a
+razão escrita.
+
+**A descrição de `/dominios` perdeu a segunda metade.** Dizia «As áreas da vida
+do país com medidas publicadas, e as que ainda não têm medidas conferidas.», e
+desde que as dezasseis passaram ao Método isso deixou de ser verdade sobre o que
+está por baixo dela.
+
+**Uma exceção de `VOZ-MARCADORES.md` saiu, e foi o portão a dizê-lo.** A raiz
+«confer» na ausência declarada de um domínio deixou de ser precisa quando a frase
+saiu do índice; o `check:voz` imprimiu-a como «exceção por exercer» e ela saiu do
+ficheiro. **Eram onze, são dez.**
+
+**Mais uma linha saiu do ficheiro do inventário em vez de passar a `retirada`**,
+pela armadilha do `ondeVolta()`: «no verified measures yet» vivia por dentro da
+descrição inglesa de `/dominios`. Com a descrição corrigida, a armadilha
+desapareceu e a linha pôde passar a `retirada` como as outras treze.
 
 ---
 

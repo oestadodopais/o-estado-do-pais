@@ -41,7 +41,12 @@
  * de observação. A lista diz os nomes e os estados; quem quiser contar, conta.
  */
 import Base from '../layouts/Base.astro';
-import { DOMINIOS, dominiosComPagina, dominioDeclarado } from '../data/dominios.mjs';
+import {
+  DOMINIOS,
+  dominiosComPagina,
+  dominioDeclarado,
+  medidasDoDominio,
+} from '../data/dominios.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import '../styles/dominio.css';
@@ -55,13 +60,32 @@ const comPagina = new Set(dominiosComPagina().map((d) => d.slug));
 /* A porta de cada domínio, quando ele tem uma. Um domínio «dentro de» outro leva
    à página onde as suas medidas estão, e não a uma página que não existe: é o
    destino que a frase dele promete. */
-const VAGA = {
-  primeira: s.dominios.vagaPrimeira,
-  segunda: s.dominios.vagaSegunda,
-  terceira: s.dominios.vagaTerceira,
-};
+/* A TABELA DAS VAGAS SAIU DAQUI e vive no Método, que é onde as dezasseis
+   linhas foram (§7.8): uma tabela que ninguém lê é um mecanismo a fingir. */
 
-const linhas = DOMINIOS.map((d) => {
+/* ---------------------------------------------------------------------------
+ * O ÍNDICE LISTA OS DOMÍNIOS COM PÁGINA (bloco F1.10, §7.8 e §9.1, 08.09.2026)
+ * ---------------------------------------------------------------------------
+ * Listava os dezoito, com o estado de cada um e a vaga em que entra. A leitura
+ * cruzada do inventário das frases de 08.09 mediu o que isso é: a casa a falar
+ * da sua própria cobertura numa página do leitor, que é o que a Emenda 15
+ * proíbe. As dezasseis linhas «ainda sem medidas conferidas · vaga» passam ao
+ * Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do
+ * leitor.
+ *
+ * O QUE FICA: os domínios com página, o nome de cada um, a CONTAGEM DAS SUAS
+ * MEDIDAS e a porta; e o domínio cujas medidas vivem dentro de outro, com a
+ * porta para a secção onde elas estão. É o que o §9.1 escreve à letra.
+ *
+ * A CONTAGEM É A NUMERAÇÃO DE UMA LISTA RENDIDA, e leva a marca que a casa já
+ * usa para isso: `data-nonledger="numeracao"`, a mesma da posição de um cartão
+ * na faixa. Não é uma medição de Portugal nem um número da casa sobre o mundo:
+ * é quantas medidas a página de chegada lista, contadas da mesma lista que ela
+ * rende (`medidasDoDominio()`).
+ */
+const linhas = DOMINIOS.filter(
+  (d) => comPagina.has(d.slug) || (d.estado === 'dentro-de' && d.dentroDe && comPagina.has(d.dentroDe)),
+).map((d) => {
   const dentro = d.estado === 'dentro-de' && d.dentroDe ? dominioDeclarado(d.dentroDe) : null;
   /* A PORTA DE UM DOMÍNIO «DENTRO DE» OUTRO VAI À SUA SECÇÃO, e não só ao topo
      da página onde as suas medidas vivem (segunda passagem, 03.09.2026,
@@ -75,7 +99,7 @@ const linhas = DOMINIOS.map((d) => {
       : dentro !== null && comPagina.has(dentro.slug)
         ? `${routePath('dominio', lang, { slug: dentro.slug })}${d.ancoraDentro ? `#${d.ancoraDentro}` : ''}`
         : null;
-  return { dominio: d, dentro, porta, vaga: VAGA[d.vaga] };
+  return { dominio: d, dentro, porta, medidas: medidasDoDominio(d.slug).length };
 });
 ---
 
@@ -96,8 +120,8 @@ const linhas = DOMINIOS.map((d) => {
 
   <ol class="dominios-lista">
     {
-      linhas.map(({ dominio, dentro, porta, vaga }) => (
-        <li class="dominios-item" data-dominio={dominio.slug} data-dominio-vaga={dominio.vaga}>
+      linhas.map(({ dominio, dentro, porta, medidas }) => (
+        <li class="dominios-item" data-dominio={dominio.slug}>
           {porta === null ? (
             <span class="dominios-nome" data-nome="dominios">
               {dominio.nome[lang] ?? dominio.nome.pt}
@@ -108,8 +132,14 @@ const linhas = DOMINIOS.map((d) => {
             </a>
           )}
           <span class="dominios-estado" data-dominio-estado={dominio.estado}>
-            {dominio.estado === 'no-ar' && s.dominios.estadoNoAr}
-            {dominio.estado === 'sem' && s.dominios.estadoSem}
+            {/* A CONTAGEM DAS MEDIDAS de um domínio com página, e a frase de
+                pertença de um domínio cujas medidas vivem noutro. «no ar» e
+                «ainda sem medidas conferidas» saíram (§9.1). */}
+            {medidas > 0 && (
+              <>
+                <span data-nonledger="numeracao">{medidas}</span> {s.dominios.medidasRotulo}
+              </>
+            )}
             {dominio.estado === 'dentro-de' && dentro !== null && (
               <>
                 {s.dominios.estadoDentroDe}{' '}
@@ -117,7 +147,6 @@ const linhas = DOMINIOS.map((d) => {
               </>
             )}
           </span>
-          <span class="dominios-vaga" data-dominio-vaga-rot>{vaga}</span>
         </li>
       ))
     }

@@ -1093,9 +1093,25 @@ export const STRINGS = {
          superfície pública desde a etapa 3, e o que ela diz é o que a página
          tem, não quem a publica. */
       metaDescription:
-        'As áreas da vida do país com medidas publicadas, e as que ainda não têm medidas conferidas.',
+        /* A SEGUNDA METADE SAIU (bloco F1.10, §7.8 e §9.1, 08.09.2026). A frase
+           dizia que o índice mostra também as áreas que ainda não têm medidas
+           conferidas, e desde que essas dezasseis passaram ao Método isso deixou
+           de ser verdade sobre o que está por baixo dela. Uma frase que descreve
+           a página tem de ser verdadeira sobre a página. */
+        'As áreas da vida do país com medidas publicadas.',
       eyebrow: 'Domínios',
       h1: 'Por domínio',
+      /* «no ar» SAI DA VOZ DO LEITOR (bloco F1.10, §9.1 do brief, 08.09.2026,
+         pela leitura cruzada do inventário das frases). É a casa a falar da sua
+         própria cobertura, e a Emenda 15 tira isso das páginas do leitor: o
+         índice diz os nomes, a contagem das medidas de cada domínio vivo e a
+         porta, e quem tem porta está no ar por ter porta. A cadeia fica
+         declarada e passa a `retirada` no inventário. */
+      /* O RÓTULO DA CONTAGEM DAS MEDIDAS de um domínio no índice (§9.1). É a
+         numeração da lista que a página de chegada rende, e não uma medição de
+         Portugal: a marca é `data-nonledger="numeracao"`, a mesma da posição de
+         um cartão na faixa. */
+      medidasRotulo: 'medidas',
       estadoNoAr: 'no ar',
       estadoDentroDe: 'as medidas estão em',
       estadoSem: 'ainda sem medidas conferidas',
@@ -1296,6 +1312,16 @@ export const STRINGS = {
     },
 
     metodo: {
+      /* O QUE SE MEDE A SEGUIR (bloco F1.10, §7.8 e §9.1, 08.09.2026). As
+         dezasseis linhas «ainda sem medidas conferidas · vaga» saem do índice
+         dos domínios, que é uma página do leitor, e vêm para o Método, que é a
+         casa do método e onde a Emenda 15 deixa a casa falar de si. O índice
+         passa a listar os domínios com página; o calendário do que falta é
+         aqui. */
+      proximosK: 'O que se mede a seguir',
+      proximosLede:
+        'Os domínios da carta dos conteúdos que ainda não têm medidas conferidas, pela vaga em que entram.',
+
       metaTitle: 'Método · O Estado do País',
       metaDescription:
         'As dez regras deste observatório, o mecanismo que impõe cada uma e os números que o provam nesta construção.',
@@ -2547,9 +2573,12 @@ export const STRINGS = {
     dominios: {
       metaTitle: 'Domains · O Estado do País',
       metaDescription:
-        'The areas of the country’s life with published measures, and the ones with no verified measures yet.',
+        /* Ver a razão na edição portuguesa. */
+        'The areas of the country’s life with published measures.',
       eyebrow: 'Domains',
       h1: 'By domain',
+      /* Ver a razão na edição portuguesa. */
+      medidasRotulo: 'measures',
       estadoNoAr: 'live',
       estadoDentroDe: 'the measures are in',
       estadoSem: 'no verified measures yet',
@@ -2644,6 +2673,11 @@ export const STRINGS = {
     },
 
     metodo: {
+      /* Ver a razão na edição portuguesa. */
+      proximosK: 'What gets measured next',
+      proximosLede:
+        'The domains of the content charter that do not have verified measures yet, by the wave they enter in.',
+
       metaTitle: 'Method · O Estado do País',
       metaDescription:
         'The ten rules of this observatory, the mechanism that enforces each one and the figures that prove it in this build.',
