@@ -75,13 +75,21 @@
  * a célula mede os dois caminhos, e escreve os dois.
  *
  * A PÁGINA DE UMA UNIDADE ABRE-SE PELA PORTA DO LUGAR DO NOME, E NÃO POR UM
- * SEGUNDO TOQUE NA ÁREA. É a decisão escrita do lugar de direção de 08.09.2026,
- * e não é uma falta de código: ao primeiro toque a unidade CRESCE, o seu contorno
- * sai do ecrã e o desenho passa a ser o dos seus concelhos, e o alvo do segundo
- * toque já lá não está para o receber. Quem quer a página tem a porta «Abrir →»,
- * que ficou no lugar do nome com o mesmo gesto, e é a U3c que a mede. A regra dos
- * dois toques continua a valer inteira para um CONCELHO, que não cresce, e é a
- * U3a e a U3d que a medem.
+ * SEGUNDO TOQUE NA ÁREA. É a Emenda de 08.09.2026 (segunda passagem) ao brief,
+ * escrita pelo lugar de direção depois de a leitura a frio do Codex ter apanhado
+ * que o item 2 pedia um segundo toque que o construído não dá (achado 4). Não é
+ * uma falta de código: ao primeiro toque a unidade CRESCE, o seu contorno sai do
+ * ecrã e o desenho passa a ser o dos seus concelhos, e o alvo do segundo toque já
+ * lá não está para o receber. Quem quer a página tem a porta «Abrir →», que ficou
+ * no lugar do nome com o mesmo gesto, e é a U3c que a mede. A regra dos dois
+ * toques vale inteira para um CONCELHO, que não cresce, e é a U3a e a U3d que a
+ * medem.
+ *
+ * E AS RESPOSTAS CHEGAM PELA ORDEM QUE A REDE QUISER. A U3f e a U3g medem a
+ * regra do gesto do guião: dois pedidos com a ordem trocada por `page.route`
+ * (o desenho fica no do último gesto, e o histórico também), e o fragmento
+ * limpo a meio de um pedido lento (a resposta descarta-se). Era a queixa 6 da
+ * leitura a frio de 08.09.2026.
  *
  * U4 · sem guião. O contexto corre com `javaScriptEnabled: false`, que é o
  * leitor sem script: as 29 áreas continuam a ser ligações para as 29 páginas de
@@ -121,6 +129,19 @@
  * nomeia estão lá: uma unidade sem nome, um concelho na unidade errada, o
  * primeiro toque a navegar, a lista aberta por defeito e uma região a voltar ao
  * desenho.
+ *
+ * ---------------------------------------------------------------------------
+ * AS DUAS CÉLULAS DA SEGUNDA PASSAGEM (08.09.2026), QUE NÃO ESTÃO NO BRIEF
+ * ---------------------------------------------------------------------------
+ * U10 · as duas molduras não se cruzam a 390, a 768 e a 1280, e cada polígono
+ * das duas unidades da Madeira e das nove ilhas fica dentro da sua. Vem do
+ * achado 9 da leitura a frio do Codex, e a emenda do brief nomeia-a.
+ *
+ * U11 · a pasta do segundo nível servido é do sítio e não deste bloco: o
+ * copiador e a R8 são donos de `unidade-*.json` e de mais nada. Vem do achado
+ * 11, e é a única célula desta régua que escreve em disco: planta um ficheiro
+ * estranho e um `unidade-*` a mais, corre o copiador e o portão de verdade, e
+ * mede o que sobrou. É por isso a sua própria planta.
  */
 import fs from 'node:fs';
 import http from 'node:http';
@@ -157,7 +178,11 @@ const ALVO = 44;
  * e o guião pede ao navegador. A régua lê o artefacto e não a cópia, para que uma
  * cópia errada dê célula vermelha e não uma comparação de um ficheiro consigo
  * próprio; que os dois sejam iguais byte a byte é a R8 do portão do mapa. */
-const UNIDADES = JSON.parse(fs.readFileSync(path.join(RAIZ, 'mapa', 'pais.json'), 'utf8')).unidades;
+const PAIS = JSON.parse(fs.readFileSync(path.join(RAIZ, 'mapa', 'pais.json'), 'utf8'));
+const UNIDADES = PAIS.unidades;
+/* AS DUAS MOLDURAS DO ARTEFACTO, com a caixa que o motor lhes deu. É a fonte da
+   planta da U10: desfazer a arrumação é pôr cada moldura onde o ficheiro a põe. */
+const MOLDURAS = PAIS.molduras;
 const ficheiroDaUnidade = (slug) => `dados/mapa/unidade-${slug}.json`;
 const concelhosDe = (slug) =>
   JSON.parse(fs.readFileSync(path.join(RAIZ, 'mapa', 'distritos', `${slug}.json`), 'utf8')).concelhos;
@@ -169,6 +194,9 @@ const AS_TRES_MAIORES = UNIDADES.map((u) => ({ slug: u.slug, n: concelhosDe(u.sl
   .map((x) => x.slug);
 /** A unidade de um slug. */
 const uni = (slug) => UNIDADES.find((u) => u.slug === slug);
+/* OS 308 SLUGS DA CARTA, lidos dos 29 ficheiros do motor e não escritos aqui: é
+   contra eles que a U1c mede o índice dos concelhos, como conjunto exacto. */
+const OS_308 = UNIDADES.flatMap((u) => concelhosDe(u.slug).map((c) => c.slug));
 
 /* --------------------------------------------------------------- o servidor */
 const MIME = {
@@ -318,26 +346,63 @@ const QUADRADO_INSCRITO = ({ pontos, PASSO, seletor }) => {
  * o mesmo por onde o alvo se mede, e é a mesma lição que a célula M6 de
  * `mapa-distritos.mjs` tem escrita desde 26.08.
  *
+ * A MATRIZ É A DO PRÓPRIO ELEMENTO E NÃO A DO `svg` (F1.1e, segunda passagem,
+ * 08.09.2026). As unidades dos dois arquipélagos levam a translação da arrumação
+ * dos insertos (`arrumacaoDasMolduras()`), e um ponto do campo levado ao ecrã
+ * pela matriz do `svg` caía onde a ilha ESTAVA e não onde ela está. A matriz de
+ * um caminho traz as transformações dos seus antepassados e a dele: é a única
+ * que responde pela pergunta «onde está este ponto desta área no ecrã».
+ *
  * @param {import('playwright').Page} p
  * @param {number[]} ponto
+ * @param {string} [seletor] o elemento em cuja grelha o ponto vive
  */
-async function noEcra(p, ponto) {
+async function noEcra(p, ponto, seletor = '[data-mapa-areas]') {
   /* O MAPA ENTRA NO ECRÃ ANTES DE SE MEDIR ONDE ELE ESTÁ. A 390 o desenho começa
      a uns 719 px do topo do documento, e um ponto do campo dava uma coordenada
      fora da janela: o gesto caía no nada e a célula acusava o desenho de um
      defeito que era da medição. O Playwright faz isto sozinho quando se lhe dá um
      selector; quando se lhe dá um ponto, faz-se aqui. */
   await p.locator('[data-mapa-areas]').scrollIntoViewIfNeeded();
-  return p.evaluate((pt) => {
-    const svg = document.querySelector('[data-mapa-areas]');
-    const q = new DOMPoint(pt[0], pt[1]).matrixTransform(svg.getScreenCTM());
-    return { x: q.x, y: q.y };
-  }, ponto);
+  return p.evaluate(
+    ([pt, sel]) => {
+      /* A ÁREA QUE NÃO ESTÁ NO DESENHO NÃO REBENTA A MEDIÇÃO. Uma planta que
+         tire um concelho da geometria servida deixa a régua a apontar a um
+         elemento que já lá não está, e uma exceção aqui matava a corrida antes
+         de a célula poder ficar vermelha. Sem o elemento, o ponto vai pela
+         matriz do `svg`, que é a grelha em que ele foi escrito: o gesto cai onde
+         a área ESTARIA, não aponta coisa nenhuma, e a célula fica vermelha pelo
+         nome, que é o que ela existe para medir. */
+      const el = document.querySelector(sel) ?? document.querySelector('[data-mapa-areas]');
+      if (!el) return { x: 1, y: 1 };
+      const q = new DOMPoint(pt[0], pt[1]).matrixTransform(el.getScreenCTM());
+      return { x: q.x, y: q.y };
+    },
+    [ponto, seletor],
+  );
 }
 
+/** O ponto de ecrã do ponto representativo de uma unidade do nível do país. */
+const noEcraDaUnidade = (p, u) => noEcra(p, u.ponto, `[data-areas] .uni[data-unidade="${u.slug}"]`);
+/** O mesmo, para um concelho do nível da unidade. */
+const noEcraDoConcelho = (p, c) =>
+  noEcra(p, c.ponto, `[data-areas-concelhos] .uni[data-unidade="${c.slug}"]`);
+
+/**
+ * A MEDIANA COM `n` PAR É A MÉDIA DOS DOIS DO MEIO (F1.1e, segunda passagem).
+ *
+ * A primeira forma desta função devolvia o de cima, `s[Math.floor(n / 2)]`, que
+ * é a definição de um quantil e não a da mediana: com 308 concelhos e com várias
+ * unidades de contagem par, o número que o relatório chamava mediana era o
+ * observado logo acima dela (leitura a frio do Codex de 08.09.2026, achado 15).
+ * Os valores são inteiros pares (o lado é múltiplo do passo de 2 px), e por isso
+ * a média de dois deles é inteira ou meia unidade: escreve-se como sai.
+ */
 const mediana = (ns) => {
   const s = [...ns].sort((a, b) => a - b);
-  return s.length === 0 ? 0 : s[Math.floor(s.length / 2)];
+  if (s.length === 0) return 0;
+  const meio = Math.floor(s.length / 2);
+  return s.length % 2 === 1 ? s[meio] : (s[meio - 1] + s[meio]) / 2;
 };
 
 /* ======================================================================= U1 */
@@ -444,26 +509,62 @@ async function u1() {
       `o menor com lado medível pediria um desenho de ${Math.round((390 * ALVO) / Math.max(1, Math.min(...todos.filter((v) => v > 0))))} px de largura`,
   );
 
-  /* U1c · a rede de nomes responde por todas. */
+  /* -------------------------------------------------------------------------
+     U1c · A REDE DE NOMES RESPONDE POR TODAS, E É UM CONJUNTO EXACTO
+     -------------------------------------------------------------------------
+     A primeira forma desta célula contava as ligações do índice dos concelhos e
+     aceitava `>= 308`: um concelho em falta compensado por um repetido, ou
+     qualquer número de ligações a mais, ficava verde (leitura a frio do Codex de
+     08.09.2026, achado 16). O que a rede promete é que CADA uma das áreas que
+     não chega ao dedo tem um nome alcançável, e isso é uma igualdade de
+     conjuntos e não uma desigualdade de contagens: os 308 slugs do índice são os
+     308 slugs da Carta, UMA LIGAÇÃO CADA, e as 29 da lista fechada são as 29 do
+     artefacto. Os slugs esperados leem-se dos 29 ficheiros do motor, que é a
+     Carta, e não de uma lista escrita aqui. */
   const semGuiao = await pagina('/', 390, { guiao: false });
   const rede = await semGuiao.evaluate(() => ({
     unidades: [...document.querySelectorAll('[data-mapa-ilhas] [data-lista-porta]')].map((a) => a.getAttribute('data-lista-porta')),
   }));
   await semGuiao.__ctx.close();
   const indice = await pagina('/municipios', 390, { guiao: false });
-  const nosConcelhos = await indice.evaluate(
-    () => document.querySelectorAll('a[href^="/municipios/"]').length,
+  const ligacoes = await indice.evaluate(() =>
+    [...document.querySelectorAll('a[href^="/municipios/"]')]
+      .map((a) => (a.getAttribute('href') ?? '').replace(/^\/municipios\//, '').replace(/\/$/, ''))
+      .filter((s) => s !== ''),
   );
   await indice.__ctx.close();
+  const contaPorSlug = new Map();
+  for (const s of ligacoes) contaPorSlug.set(s, (contaPorSlug.get(s) ?? 0) + 1);
+  const repetidos = [...contaPorSlug.entries()].filter(([, n]) => n > 1).map(([s, n]) => `${s} ×${n}`);
+  const semLigacao = OS_308.filter((s) => !contaPorSlug.has(s));
+  const aMais = [...contaPorSlug.keys()].filter((s) => !OS_308.includes(s));
   const emFalta = UNIDADES.map((u) => u.slug).filter((s) => !rede.unidades.includes(s));
+  const naListaAMais = rede.unidades.filter((s) => !UNIDADES.some((u) => u.slug === s));
   conta(
-    'U1c · a rede de nomes responde pelas áreas abaixo de 44 px',
-    emFalta.length === 0 && rede.unidades.length === 29 && nosConcelhos >= 308,
+    'U1c · a rede de nomes responde pelas áreas abaixo de 44 px: as 29 na lista fechada e os 308 no índice, uma ligação cada',
+    emFalta.length === 0 &&
+      naListaAMais.length === 0 &&
+      rede.unidades.length === 29 &&
+      semLigacao.length === 0 &&
+      aMais.length === 0 &&
+      repetidos.length === 0 &&
+      contaPorSlug.size === OS_308.length,
     `a lista dos nomes tem ${rede.unidades.length} unidades da Carta · ` +
-      `o índice dos concelhos tem ${nosConcelhos} ligações` +
-      (emFalta.length ? ` · em falta: ${emFalta.join(', ')}` : ''),
+      `o índice dos concelhos tem ${ligacoes.length} ligações para ${contaPorSlug.size} de ${OS_308.length} slugs da Carta` +
+      (emFalta.length ? ` · unidades em falta: ${emFalta.join(', ')}` : '') +
+      (naListaAMais.length ? ` · unidades a mais na lista: ${naListaAMais.join(', ')}` : '') +
+      (semLigacao.length ? ` · concelhos sem ligação: ${semLigacao.slice(0, 6).join(', ')}` : '') +
+      (aMais.length ? ` · ligações que não são da Carta: ${aMais.slice(0, 6).join(', ')}` : '') +
+      (repetidos.length ? ` · repetidas: ${repetidos.slice(0, 6).join(', ')}` : ''),
   );
-  medidas.rede = { unidades: rede.unidades.length, concelhos: nosConcelhos };
+  medidas.rede = {
+    unidades: rede.unidades.length,
+    concelhos: contaPorSlug.size,
+    ligacoes: ligacoes.length,
+    repetidos: repetidos.length,
+    semLigacao: semLigacao.length,
+    aMais: aMais.length,
+  };
 }
 
 /* ======================================================================= U2 */
@@ -477,7 +578,7 @@ async function u2() {
     const lidos = [];
     for (const r of UNIDADES) {
       const alvo = `[data-uni-porta="${r.slug}"]`;
-      const onde = await noEcra(p, r.ponto);
+      const onde = await noEcraDaUnidade(p, r);
       await p.mouse.move(onde.x, onde.y);
       await p.waitForTimeout(30);
       const noRato = await p.evaluate(() => document.querySelector('[data-mapa-nome-texto]').textContent.trim());
@@ -485,15 +586,26 @@ async function u2() {
       await p.evaluate((s) => document.querySelector(s).focus(), alvo);
       const noFoco = await p.evaluate(() => document.querySelector('[data-mapa-nome-texto]').textContent.trim());
       const porta = await p.evaluate(() => document.querySelector('[data-mapa-porta]').getAttribute('href'));
-      lidos.push({ slug: r.slug, noRato, noFoco, porta });
+      lidos.push({ slug: r.slug, esperado: r.nome, noRato, noFoco, porta });
     }
-    const maus = lidos.filter((l) => !l.noRato || l.noRato !== l.noFoco || !l.porta.endsWith(l.slug));
+    /* O NOME ESPERADO É O DA CARTA, E NÃO O QUE A PÁGINA DIZ DE SI PRÓPRIA. A
+       primeira forma desta célula exigia só que o rato e o foco repetissem o
+       mesmo texto não vazio: um nome errado, copiado igual para os dois gestos,
+       passava (leitura a frio do Codex de 08.09.2026, achado 17). O esperado
+       lê-se de `mapa/pais.json`, que é o artefacto do motor, e a régua lê-o com o
+       seu próprio leitor; o `<title>` da área é o que está a ser conferido, e por
+       isso não pode ser também a régua. */
+    const maus = lidos.filter(
+      (l) => !l.noRato || l.noRato !== l.esperado || l.noFoco !== l.esperado || !l.porta.endsWith(l.slug),
+    );
     conta(
-      `U2a · ${lang}: o nome no lugar ao passar e ao focar, nas 29 unidades`,
+      `U2a · ${lang}: o nome da Carta no lugar ao passar e ao focar, nas 29 unidades`,
       lidos.length === 29 && maus.length === 0,
       maus.length === 0
-        ? `29 de 29 · «${lidos[0].noRato}» … «${lidos[28].noRato}» · cada porta na sua página`
-        : `${maus.length} falham: ${maus.map((m) => m.slug).join(', ')}`,
+        ? `29 de 29 · «${lidos[0].noRato}» … «${lidos[28].noRato}» · cada um o nome de mapa/pais.json, cada porta na sua página`
+        : `${maus.length} falham: ${maus
+            .map((m) => `${m.slug} diz «${m.noRato}»/«${m.noFoco}» e a Carta diz «${m.esperado}»`)
+            .join('; ')}`,
     );
     await p.__ctx.close();
 
@@ -506,7 +618,7 @@ async function u2() {
       await q.waitForSelector('[data-areas-concelhos] [data-concelho-porta]', { timeout: 5000 });
       for (let i = 0; i < 10; i++) {
         const c = cliente.concelhos[Math.floor((i * cliente.concelhos.length) / 10)];
-        const onde = await noEcra(q, c.ponto);
+        const onde = await noEcraDoConcelho(q, c);
         await q.mouse.move(onde.x, onde.y);
         await q.waitForTimeout(20);
         const nome = await q.evaluate(() => document.querySelector('[data-mapa-nome-texto]').textContent.trim());
@@ -570,22 +682,23 @@ async function u2() {
        `hasTouch` e a largura de um telemóvel, e a célula AFIRMA as duas coisas
        que o lugar mostra depois do toque: o nome e a porta.
 
-       O NOME ESPERADO DE UMA UNIDADE LÊ-SE DO `<title>` DA SUA ÁREA, que é o nome
-       acessível que o servidor desenhou; o de um concelho lê-se do ficheiro da
-       unidade, que é a Carta. Assim a célula não guarda uma lista de nomes que
-       teria de acompanhar o artefacto à mão. */
+       O NOME ESPERADO LÊ-SE DA CARTA, dos dois lados: o de uma unidade de
+       `mapa/pais.json` e o de um concelho do ficheiro da sua unidade. Era o
+       `<title>` da própria área que dava o esperado de uma unidade, e um
+       `<title>` errado confirmava-se a si próprio (leitura a frio do Codex de
+       08.09.2026, achado 17). Assim a célula não guarda uma lista de nomes que
+       teria de acompanhar o artefacto à mão, e não é o desenho a corrigir a
+       prova. */
     const t = await pagina(casa, 390, { toque: true });
     /* «Não navegou» é ter ficado na mesma casa, com ou sem barra no fim: a
        primeira página em inglês responde tanto em «/en» como em «/en/». */
     const naCasa = (caminho) => (caminho ?? '').replace(/\/+$/, '') === casa.replace(/\/+$/, '');
     const toqueNasUnidades = [];
     for (const r of UNIDADES) {
-      const alvo = `[data-uni-porta="${r.slug}"]`;
-      const esperado = await t.evaluate(
-        (sel) => document.querySelector(sel)?.querySelector('title')?.textContent.trim() ?? null,
-        alvo,
-      );
-      const onde = await noEcra(t, r.ponto);
+      /* O ESPERADO É O NOME DE `mapa/pais.json` (achado 17): era o `<title>` da
+         própria área, e a célula confirmava o desenho contra ele próprio. */
+      const esperado = r.nome;
+      const onde = await noEcraDaUnidade(t, r);
       await t.touchscreen.tap(onde.x, onde.y);
       await t.waitForTimeout(250);
       const lido = await t.evaluate(() => ({
@@ -631,7 +744,7 @@ async function u2() {
       await t.waitForSelector('[data-areas-concelhos] [data-concelho-porta]', { timeout: 5000 });
       for (let i = 0; i < 10; i++) {
         const c = cliente.concelhos[Math.floor((i * cliente.concelhos.length) / 10)];
-        const onde = await noEcra(t, c.ponto);
+        const onde = await noEcraDoConcelho(t, c);
         await t.touchscreen.tap(onde.x, onde.y);
         await t.waitForTimeout(80);
         const lido = await t.evaluate(() => ({
@@ -666,6 +779,7 @@ async function u2() {
 async function u3() {
   for (const [motor, browser] of MOTORES) await u3aNum(motor, browser);
   await u3resto();
+  await u3ordem();
 }
 
 /* A UNIDADE QUE CRESCE NA U3a É ÉVORA, e não é uma escolha de acaso: é a que o
@@ -677,15 +791,13 @@ const A_QUE_CRESCE = 'evora';
 async function u3aNum(motor, browser) {
   const p = await pagina('/', 390, { toque: true, motor: browser });
   const norte = uni(A_QUE_CRESCE);
-  /* O NOME ESPERADO LÊ-SE DO `<title>` DA ÁREA ANTES DO GESTO, e a célula
-     AFIRMA-O depois: escrever o nome na prova e não o comparar era a régua a
-     imprimir o que quer que o lugar dissesse (leitura a frio do Codex de
-     08.09.2026, achado 7). */
-  const nomeDoNorte = await p.evaluate(
-    (sel) => document.querySelector(sel)?.querySelector('title')?.textContent.trim() ?? null,
-    `[data-uni-porta="${A_QUE_CRESCE}"]`,
-  );
-  const ondeNorte = await noEcra(p, norte.ponto);
+  /* O NOME ESPERADO É O DA CARTA (`mapa/pais.json`), e a célula AFIRMA-O depois:
+     escrever o nome na prova e não o comparar era a régua a imprimir o que quer
+     que o lugar dissesse (leitura a frio do Codex de 08.09.2026, achado 7), e
+     lê-lo do `<title>` da própria área era o desenho a confirmar-se a si próprio
+     (a segunda leitura, achado 17). */
+  const nomeDoNorte = norte.nome;
+  const ondeNorte = await noEcraDaUnidade(p, norte);
   await p.touchscreen.tap(ondeNorte.x, ondeNorte.y);
   await p.waitForTimeout(500);
   /* AS LEITURAS SÃO DEFENSIVAS DE PROPÓSITO: com a planta que tira o
@@ -707,7 +819,7 @@ async function u3aNum(motor, browser) {
     .map((c) => ({ ...c, lado: Math.min(c.caixa[2], c.caixa[3]) }))
     .sort((a, b) => b.lado - a.lado)[0];
   const primeiro = maior.slug;
-  const ondeConcelho = depoisDaUnidade.concelhos > 0 ? await noEcra(p, maior.ponto) : { x: 1, y: 1 };
+  const ondeConcelho = depoisDaUnidade.concelhos > 0 ? await noEcraDoConcelho(p, maior) : { x: 1, y: 1 };
   await p.touchscreen.tap(ondeConcelho.x, ondeConcelho.y);
   await p.waitForTimeout(300);
   const depoisDoPrimeiro = await p.evaluate(() => ({
@@ -744,7 +856,7 @@ async function u3resto() {
   /* Com o rato, e o botão de voltar do navegador. */
   const q = await pagina('/', 1280);
   const alentejo = uni('beja');
-  const ondeAlentejo = await noEcra(q, alentejo.ponto);
+  const ondeAlentejo = await noEcraDaUnidade(q, alentejo);
   await q.mouse.click(ondeAlentejo.x, ondeAlentejo.y);
   await q.waitForTimeout(400);
   const leEstado = () => ({
@@ -775,7 +887,7 @@ async function u3resto() {
   /* A porta do lugar do nome abre a página da unidade. */
   await q.goto(`${base}/`, { waitUntil: 'networkidle' });
   const algarve = uni('faro');
-  const ondeAlgarve = await noEcra(q, algarve.ponto);
+  const ondeAlgarve = await noEcraDaUnidade(q, algarve);
   await q.mouse.move(ondeAlgarve.x, ondeAlgarve.y);
   await q.waitForTimeout(50);
   const daPorta = await q.evaluate(
@@ -785,15 +897,28 @@ async function u3resto() {
   if (daPorta) await q.click('[data-mapa-porta]');
   await viagem2;
   const chegou = await q.evaluate(() => location.pathname);
-  /* ESTA É A PROVA DA DECISÃO DE 08.09.2026 SOBRE O SEGUNDO TOQUE NUMA ÁREA DO
-     NÍVEL DE CIMA. O brief do F1.1d pedia que um segundo toque nela abrisse a sua
-     página; o lugar de direção decidiu que não, e a razão é do desenho e não do
-     código: ao primeiro toque a área cresce, o grupo do nível do país esconde-se
-     e o contorno dela deixa de estar no ecrã, de maneira que não há alvo nenhum
-     para receber um segundo toque. A porta «Abrir →» é o caminho, e ficou no
-     lugar do nome com o mesmo gesto que fez crescer a unidade. */
+  /* -------------------------------------------------------------------------
+     O QUE ESTA CÉLULA MEDE, E PORQUÊ (Emenda de 08.09.2026, segunda passagem)
+     -------------------------------------------------------------------------
+     O item 2 do brief do F1.1e escreve «o segundo toque, ou a porta, abre o
+     concelho», e a leitura a frio do Codex de 08.09.2026 apanhou que o construído
+     não dá um segundo toque numa UNIDADE (achado 4). O lugar de direção decidiu,
+     nesse dia e na segunda passagem, que a regra fica como está construída, e
+     escreveu-a na secção «Emenda de 08.09 (segunda passagem)» do brief:
+
+       · UMA UNIDADE ABRE-SE PELA PORTA. O primeiro toque cresce-a, e o segundo
+         toque não existe porque a área deixou de estar no desenho: o grupo do
+         nível do país esconde-se e o contorno dela sai do ecrã, de maneira que
+         não há alvo nenhum para o receber. A porta «Abrir →» é o caminho, e
+         ficou no lugar do nome com o mesmo gesto que fez crescer a unidade;
+       · «o segundo toque, ou a porta, abre» VALE PARA O CONCELHO, que não
+         cresce, e é a U3a e a U3d que o medem.
+
+     Esta célula mede a primeira metade: que a porta existe, diz o destino certo
+     e leva lá. A decisão não é do brief original, e a régua não a apresenta como
+     se fosse. */
   conta(
-    'U3c · a página de uma unidade abre-se pela porta do lugar do nome, e não por um segundo toque na área',
+    'U3c · emenda de 08.09 (segunda passagem) · a página de uma unidade abre-se pela porta do lugar do nome, e não por um segundo toque na área',
     daPorta === '/distritos/faro' && chegou === '/distritos/faro',
     `a porta diz «${daPorta}» e leva a «${chegou}» · uma unidade que cresceu já não tem contorno no ecrã ` +
       'para receber um segundo toque, e a regra dos dois toques vale para um concelho (U3a e U3d)',
@@ -851,7 +976,7 @@ async function u3eFalha() {
   const p = await pagina('/', 390, { toque: true });
   const algarve = uni('faro');
   await p.route(`**/${ficheiroDaUnidade(algarve.slug)}`, (rota) => rota.fulfill({ status: 404, body: '404' }));
-  const onde = await noEcra(p, algarve.ponto);
+  const onde = await noEcraDaUnidade(p, algarve);
   await p.touchscreen.tap(onde.x, onde.y);
   await p.waitForTimeout(500);
   const depoisDoPrimeiro = await p.evaluate(() => ({
@@ -882,6 +1007,108 @@ async function u3eFalha() {
   );
   medidas.semFicheiro = depoisDoPrimeiro;
   await p.__ctx.close();
+}
+
+/* ---------------------------------------------------------------------------
+ * U3f E U3g · AS RESPOSTAS CHEGAM PELA ORDEM QUE A REDE QUISER
+ * ---------------------------------------------------------------------------
+ * A leitura a frio do Codex de 08.09.2026 (achado 6) mediu duas coisas no guião:
+ * uma resposta atrasada podia mandar no desenho depois de outro gesto, e um
+ * pedido a meio podia reabrir uma unidade depois de o fragmento ter sido limpo,
+ * desfazendo o botão de voltar do navegador. As duas medem-se aqui, e as duas
+ * atrasam-se com `page.route`, que é o que uma rede lenta faz.
+ *
+ * O ATRASO É DE VERDADE E NÃO UM CORPO INVENTADO: `route.continue()` depois de
+ * uma espera deixa o servidor da régua responder com os bytes que ele tem, de
+ * maneira que o que a célula muda é só QUANDO a resposta chega. Um `fulfill` com
+ * corpo escrito à mão media outro ficheiro.
+ */
+const ATRASO_LONGO = 1200;
+const ATRASO_CURTO = 60;
+
+/** Um ficheiro de unidade que só responde depois de `ms`. */
+async function comAtraso(p, slug, ms) {
+  await p.route(`**/${ficheiroDaUnidade(slug)}`, async (rota) => {
+    await new Promise((r) => setTimeout(r, ms));
+    await rota.continue();
+  });
+}
+
+async function u3ordem() {
+  const A = 'evora';
+  const B = 'beja';
+
+  /* U3f · duas respostas com a ordem trocada. */
+  const p = await pagina('/', 390, { toque: true });
+  await comAtraso(p, A, ATRASO_LONGO);
+  await comAtraso(p, B, ATRASO_CURTO);
+  const ondeA = await noEcraDaUnidade(p, uni(A));
+  await p.touchscreen.tap(ondeA.x, ondeA.y);
+  await p.waitForTimeout(150);
+  const ondeB = await noEcraDaUnidade(p, uni(B));
+  await p.touchscreen.tap(ondeB.x, ondeB.y);
+  /* Espera-se o dobro do atraso longo: o que se mede é o estado DEPOIS de a
+     resposta atrasada ter chegado, e não antes dela. */
+  await p.waitForTimeout(ATRASO_LONGO * 2);
+  const doB = JSON.parse(fs.readFileSync(path.join(DIST, ficheiroDaUnidade(B)), 'utf8'));
+  const depois = await p.evaluate(() => ({
+    nivel: document.querySelector('[data-mapa-raiz]')?.getAttribute('data-nivel') ?? null,
+    hash: location.hash,
+    concelhos: document.querySelectorAll('[data-areas-concelhos] [data-concelho-porta]').length,
+    primeiro:
+      document.querySelector('[data-areas-concelhos] [data-concelho-porta]')?.getAttribute('data-concelho-porta') ?? null,
+  }));
+  /* E O HISTÓRICO ESCREVE-SE PELA ORDEM DOS GESTOS: o passo atrás do navegador
+     tem de dar a primeira página, e não a unidade cuja resposta chegou tarde. */
+  await p.goBack();
+  await p.waitForTimeout(400);
+  const atras = await p.evaluate(() => ({
+    nivel: document.querySelector('[data-mapa-raiz]')?.getAttribute('data-nivel') ?? null,
+    hash: location.hash,
+  }));
+  conta(
+    'U3f · com duas respostas atrasadas e a ordem trocada, o desenho fica no último gesto e o histórico escreve-se pela ordem dos gestos',
+    depois.nivel === 'unidade' &&
+      depois.hash === `#unidade=${B}` &&
+      depois.concelhos === doB.concelhos.length &&
+      depois.primeiro === doB.concelhos[0].slug &&
+      atras.nivel === 'pais' &&
+      atras.hash === '',
+    `toque em «${A}» (a responder em ${ATRASO_LONGO} ms) e a seguir em «${B}» (em ${ATRASO_CURTO} ms) · ` +
+      `${ATRASO_LONGO * 2} ms depois: nível «${depois.nivel}», endereço «${depois.hash}», ` +
+      `${depois.concelhos} concelhos (o ficheiro de «${B}» tem ${doB.concelhos.length}), o primeiro «${depois.primeiro}» ` +
+      `(esperado «${doB.concelhos[0].slug}») · um passo atrás: nível «${atras.nivel}», endereço «${atras.hash || 'sem fragmento'}»`,
+  );
+  await p.__ctx.close();
+
+  /* U3g · o fragmento limpo com um pedido a meio. */
+  const q = await pagina('/', 390);
+  await comAtraso(q, A, ATRASO_LONGO);
+  await q.evaluate((s) => {
+    location.hash = `#unidade=${s}`;
+  }, A);
+  await q.waitForTimeout(200);
+  await q.evaluate(() => {
+    location.hash = '';
+  });
+  await q.waitForTimeout(ATRASO_LONGO * 2);
+  const limpo = await q.evaluate(() => ({
+    nivel: document.querySelector('[data-mapa-raiz]')?.getAttribute('data-nivel') ?? null,
+    hash: location.hash,
+    concelhos: document.querySelectorAll('[data-areas-concelhos] [data-concelho-porta]').length,
+    voltar: document.querySelector('[data-mapa-voltar]')
+      ? !document.querySelector('[data-mapa-voltar]').hidden
+      : null,
+  }));
+  conta(
+    'U3g · o fragmento limpo a meio de um pedido lento descarta a resposta, e a unidade não reabre em cima da primeira página',
+    limpo.nivel === 'pais' && limpo.hash === '' && limpo.concelhos === 0 && limpo.voltar === false,
+    `«#unidade=${A}» com o ficheiro a responder em ${ATRASO_LONGO} ms, o fragmento limpo 200 ms depois · ` +
+      `${ATRASO_LONGO * 2} ms depois: nível «${limpo.nivel}», endereço «${limpo.hash || 'sem fragmento'}», ` +
+      `${limpo.concelhos} concelhos desenhados, a porta de voltar ${limpo.voltar ? 'à vista' : 'escondida'}`,
+  );
+  medidas.foraDeOrdem = { depois, atras, limpo };
+  await q.__ctx.close();
 }
 
 /* ======================================================================= U4 */
@@ -1231,7 +1458,7 @@ async function u8() {
       await p.waitForTimeout(80);
     }
     const centro = uni('evora');
-    const ondeCentro = await noEcra(p, centro.ponto);
+    const ondeCentro = await noEcraDaUnidade(p, centro);
     await p.mouse.move(ondeCentro.x, ondeCentro.y);
     await p.waitForTimeout(50);
     const r = await p.evaluate(CONTRASTE);
@@ -1248,7 +1475,7 @@ async function u8() {
   const p = await pagina('/', 1280);
   const antes = await p.locator('[data-mapa-nome]').ariaSnapshot();
   const doNorte = uni('evora');
-  const onde = await noEcra(p, doNorte.ponto);
+  const onde = await noEcraDaUnidade(p, doNorte);
   await p.mouse.move(onde.x, onde.y);
   await p.waitForTimeout(120);
   const depois = await p.locator('[data-mapa-nome]').ariaSnapshot();
@@ -1274,11 +1501,219 @@ async function u8() {
   await p.__ctx.close();
 }
 
+/* ====================================================================== U10 */
+/**
+ * ---------------------------------------------------------------------------
+ * AS DUAS MOLDURAS NÃO SE CRUZAM, E CADA POLÍGONO FICA DENTRO DA SUA
+ * ---------------------------------------------------------------------------
+ * Emenda de 08.09.2026 (segunda passagem), a partir do achado 9 da leitura a
+ * frio do Codex: as caixas do artefacto cruzavam-se, porque a da Madeira desce
+ * até às Selvagens, e o leitor via dois rectângulos desenhados um por cima do
+ * outro. A arrumação está em `arrumacaoDasMolduras()`; esta célula mede-a onde
+ * ela conta, que é NA PÁGINA e não no ficheiro.
+ *
+ * MEDE-SE ÀS TRÊS LARGURAS que o brief e as folhas separam (390, 768 e 1280),
+ * porque uma folha pode mover uma coisa a uma largura e não a outra, e a caixa
+ * lida é a do ecrã (`getBoundingClientRect`), que traz o `viewBox`, a coluna e
+ * qualquer transformação pelo caminho.
+ *
+ * E MEDE AS DUAS METADES. Duas molduras que não se cruzam não valem nada se uma
+ * ilha ficar de fora da sua: a segunda metade exige que a caixa de CADA um dos
+ * onze polígonos das duas parcelas com moldura caiba dentro da moldura da sua
+ * parcela. As Selvagens entram nesta conta, porque são elas que fazem a moldura
+ * alta e o problema todo.
+ *
+ * A FOLGA É DE UM PÍXEL, E É O TRAÇO. `.uni` e `.mapa-moldura` declaram as duas
+ * `vector-effect: non-scaling-stroke` com `stroke-width: 1`, de maneira que a
+ * caixa de ecrã de um caminho e a de uma moldura crescem meio píxel para cada
+ * lado; um píxel cobre o traço dos dois e o arredondamento a duas casas.
+ */
+const TOLERANCIA_DA_MOLDURA = 1;
+
+async function u10() {
+  medidas.molduras = {};
+  for (const largura of [390, 768, 1280]) {
+    const p = await pagina('/', largura);
+    const r = await p.evaluate(() => {
+      const cx = (el) => {
+        const b = el.getBoundingClientRect();
+        return {
+          x: +b.x.toFixed(2),
+          y: +b.y.toFixed(2),
+          w: +b.width.toFixed(2),
+          h: +b.height.toFixed(2),
+        };
+      };
+      const molduras = [...document.querySelectorAll('[data-mapa-areas] [data-moldura]')].map((el) => ({
+        nome: el.getAttribute('data-moldura'),
+        parcela: el.getAttribute('data-parcela'),
+        caixa: cx(el),
+      }));
+      const areas = [...document.querySelectorAll('[data-areas] .uni')].map((el) => ({
+        slug: el.getAttribute('data-unidade'),
+        parcela: el.getAttribute('data-parcela'),
+        caixa: cx(el),
+      }));
+      return { molduras, areas };
+    });
+    await p.__ctx.close();
+
+    /* O cruzamento de duas caixas, em píxeis do ecrã. */
+    const cruzamento = (a, b) => {
+      const w = Math.min(a.x + a.w, b.x + b.w) - Math.max(a.x, b.x);
+      const h = Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y);
+      return w > 0 && h > 0 ? { w: +w.toFixed(1), h: +h.toFixed(1) } : null;
+    };
+    const cruzados = [];
+    for (let i = 0; i < r.molduras.length; i++) {
+      for (let j = i + 1; j < r.molduras.length; j++) {
+        const c = cruzamento(r.molduras[i].caixa, r.molduras[j].caixa);
+        if (c) cruzados.push(`${r.molduras[i].nome} × ${r.molduras[j].nome} em ${c.w} × ${c.h} px`);
+      }
+    }
+    const cabe = (a, m) =>
+      a.x >= m.x - TOLERANCIA_DA_MOLDURA &&
+      a.y >= m.y - TOLERANCIA_DA_MOLDURA &&
+      a.x + a.w <= m.x + m.w + TOLERANCIA_DA_MOLDURA &&
+      a.y + a.h <= m.y + m.h + TOLERANCIA_DA_MOLDURA;
+    const comMoldura = r.areas.filter((a) => r.molduras.some((m) => m.parcela === a.parcela));
+    const fora = comMoldura.filter((a) => {
+      const m = r.molduras.find((x) => x.parcela === a.parcela);
+      return !cabe(a.caixa, m.caixa);
+    });
+    medidas.molduras[largura] = { molduras: r.molduras, cruzados, comMoldura: comMoldura.length, fora: fora.map((a) => a.slug) };
+    conta(
+      `U10 · emenda de 08.09 (segunda passagem) · a ${largura}, as molduras não se cruzam e cada ilha fica dentro da sua`,
+      r.molduras.length === 2 && cruzados.length === 0 && comMoldura.length === 11 && fora.length === 0,
+      `${r.molduras.length} molduras · ` +
+        r.molduras
+          .map((m) => `${m.nome} ${m.caixa.w.toFixed(0)} × ${m.caixa.h.toFixed(0)} px em y ${m.caixa.y.toFixed(0)}`)
+          .join(' · ') +
+        ` · ${cruzados.length ? `cruzam-se: ${cruzados.join(', ')}` : 'não se cruzam'} · ` +
+        `${comMoldura.length} polígonos nas parcelas com moldura, ${fora.length} fora da sua` +
+        (fora.length ? ` (${fora.map((a) => a.slug).join(', ')})` : ''),
+    );
+  }
+}
+
+/* ====================================================================== U11 */
+/**
+ * ---------------------------------------------------------------------------
+ * DE QUEM É A PASTA DO SEGUNDO NÍVEL SERVIDO
+ * ---------------------------------------------------------------------------
+ * Emenda de 08.09.2026 (segunda passagem), a partir do achado 11 da leitura a
+ * frio do Codex: o copiador apagava, em `public/dados/mapa/`, tudo o que não
+ * fosse uma das 29 unidades, e a R8 do portão recusava tudo o que lá estivesse
+ * com outro nome. A pasta é do sítio e não deste bloco: um artefacto de mapa que
+ * lá viesse a viver com outro nome desaparecia em silêncio na construção
+ * seguinte.
+ *
+ * A REGRA PASSA A SER O PADRÃO: o copiador e a R8 são donos de `unidade-*.json`
+ * e de mais nada. Um `unidade-*.json` que não seja de uma das 29 SAI, com a
+ * linha a dizê-lo; qualquer outro ficheiro da pasta não se toca nem se conta.
+ *
+ * E O CONHECIDO-POSITIVO É EM DISCO, porque é em disco que o defeito estava.
+ * A célula põe dois ficheiros na pasta servida, corre o copiador nos dois modos
+ * e o portão do mapa, e mede o que sobrou. O `finally` apaga os dois e a célula
+ * compara a listagem do fim com a do princípio: uma régua que deixasse lixo na
+ * pasta era pior do que o defeito que veio fechar.
+ *
+ * ESTA CÉLULA É A SUA PRÓPRIA PLANTA, e por isso não tem nenhuma na lista da U9:
+ * as plantas desta régua vivem na resposta que o servidor dá, e esta corre o
+ * copiador e o portão de verdade, com dois ficheiros de verdade em disco.
+ */
+const PASTA_SERVIDA = path.join(RAIZ, 'public', 'dados', 'mapa');
+const ESTRANHO = 'leia-me-do-mapa.txt';
+const INTRUSO = 'unidade-condado-portucalense.json';
+
+async function u11() {
+  const antes = fs.readdirSync(PASTA_SERVIDA).sort();
+  let r = null;
+  try {
+    fs.writeFileSync(path.join(PASTA_SERVIDA, ESTRANHO), 'a régua do F1.1e passou por aqui\n');
+    fs.writeFileSync(path.join(PASTA_SERVIDA, INTRUSO), '{"campo":{},"concelhos":[]}\n');
+    const escreve = spawnSync(process.execPath, [path.join(RAIZ, 'scripts', 'mapa-unidades.mjs')], {
+      cwd: RAIZ,
+      encoding: 'utf8',
+    });
+    const depoisDeEscrever = fs.readdirSync(PASTA_SERVIDA).sort();
+    /* E depois de o intruso ter saído, o modo de conferência tem de estar verde
+       com o ficheiro estranho ainda lá: é a metade que prova que ele não conta. */
+    const confere = spawnSync(
+      process.execPath,
+      [path.join(RAIZ, 'scripts', 'mapa-unidades.mjs'), '--verifica'],
+      { cwd: RAIZ, encoding: 'utf8' },
+    );
+    /* E A R8 DO PORTÃO TEM DE FICAR VERDE COM O ESTRANHO NA PASTA: é a outra
+       metade da mesma regra, e mede-se com o portão a correr de verdade. */
+    const portao = spawnSync(process.execPath, [path.join(RAIZ, 'scripts', 'check-mapa.mjs')], {
+      cwd: RAIZ,
+      encoding: 'utf8',
+    });
+    r = {
+      estranhoSobreviveu: depoisDeEscrever.includes(ESTRANHO),
+      intrusoSaiu: !depoisDeEscrever.includes(INTRUSO),
+      disseOIntruso: `${escreve.stdout ?? ''}${escreve.stderr ?? ''}`.includes(INTRUSO),
+      escreveu: escreve.status,
+      conferiu: confere.status,
+      portao: portao.status,
+      unidades: depoisDeEscrever.filter((n) => /^unidade-.*\.json$/.test(n)).length,
+    };
+  } finally {
+    for (const nome of [ESTRANHO, INTRUSO]) {
+      const abs = path.join(PASTA_SERVIDA, nome);
+      if (fs.existsSync(abs)) fs.unlinkSync(abs);
+    }
+  }
+  const depois = fs.readdirSync(PASTA_SERVIDA).sort();
+  const igual = depois.length === antes.length && depois.every((n, i) => n === antes[i]);
+  medidas.donoDaPasta = { ...r, ficheirosAntes: antes.length, pastaComoEstava: igual };
+  conta(
+    'U11 · emenda de 08.09 (segunda passagem) · o copiador é dono só do padrão `unidade-*.json`: um ficheiro estranho sobrevive e um `unidade-*` a mais sai com a linha a dizê-lo',
+    r !== null &&
+      r.estranhoSobreviveu &&
+      r.intrusoSaiu &&
+      r.disseOIntruso &&
+      r.escreveu === 0 &&
+      r.conferiu === 0 &&
+      r.portao === 0 &&
+      r.unidades === UNIDADES.length &&
+      igual,
+    r === null
+      ? 'a célula não chegou a correr'
+      : `«${ESTRANHO}» ${r.estranhoSobreviveu ? 'sobreviveu' : 'FOI APAGADO'} · ` +
+        `«${INTRUSO}» ${r.intrusoSaiu ? 'saiu' : 'FICOU'} e a linha ${r.disseOIntruso ? 'disse-o' : 'CALOU-SE'} · ` +
+        `${r.unidades} ficheiros de unidade · o copiador saiu a ${r.escreveu}, a conferência a ${r.conferiu} ` +
+        `e o portão do mapa a ${r.portao} (com o ficheiro estranho ainda na pasta) · ` +
+        `a pasta ficou ${igual ? 'como estava' : 'DIFERENTE'} (${antes.length} ficheiros)`,
+  );
+}
+
 /* --------------------------------------------------------------- a corrida */
 async function corre(quais) {
   celulas = [];
   medidas = {};
-  const todas = { U1: u1, U2: u2, U3: u3, U4: u4, U5: u5, U7: u7, U8: u8 };
+  /* `U3fg` É UMA CHAVE DE PLANTA E NÃO UMA SUÍTE NOVA: a U3f e a U3g correm
+     dentro da U3, e esta entrada existe para uma planta poder correr só as duas.
+     A U3 abre dois motores, e correr a suíte inteira por causa de uma planta era
+     multiplicar o tempo de `--vermelhos`.
+
+     A U10 E A U11 SÃO DA SEGUNDA PASSAGEM (08.09.2026) e não estão no brief: a
+     U10 mede a arrumação das duas molduras (achado 9 da leitura a frio) e a U11
+     mede de quem é a pasta do segundo nível servido (achado 11). As duas entram
+     com a razão escrita na sua secção, e a emenda do brief nomeia-as. */
+  const todas = {
+    U1: u1,
+    U2: u2,
+    U3: u3,
+    U4: u4,
+    U5: u5,
+    U7: u7,
+    U8: u8,
+    U10: u10,
+    U11: u11,
+    U3fg: u3ordem,
+  };
   for (const nome of quais) await todas[nome]();
 }
 
@@ -1433,6 +1868,56 @@ const PLANTAS = [
         ? texto.replace('uni uni-escolhida', 'uni')
         : texto,
   },
+  {
+    /* O GUIÃO SEM A MARCA DO GESTO. As duas condições saem, e com elas sai a
+       regra inteira: uma resposta atrasada volta a mandar no desenho e no
+       histórico. Morde as duas células da ordem, e a lista di-lo. */
+    nome: 'o guião sem a marca do gesto (uma resposta atrasada volta a mandar)',
+    celulas: ['U3f', 'U3g'],
+    quais: ['U3fg'],
+    estrago: (texto, rota, ext) =>
+      ext === '.js' && rota.endsWith('/mapa-unidades.js')
+        ? texto
+            .split('if (meu !== gesto) return false;')
+            .join(';')
+            .split('if (location.hash !== fragmentoDoGesto) return false;')
+            .join(';')
+        : texto,
+  },
+  {
+    /* O NÚMERO DO GESTO QUE NÃO AVANÇA. É a metade que responde pelo fragmento
+       limpo a meio: com o número parado, o gesto que limpa o fragmento não
+       invalida o pedido que estava a caminho, e a segunda condição deixa passar
+       a resposta porque o endereço voltou a ser o mesmo que ela tinha. A U3f
+       continua verde, porque ali o endereço MUDOU entre um gesto e outro: é
+       assim que se vê que as duas condições não são a mesma. */
+    nome: 'o número do gesto a não avançar (o fragmento limpo deixa de invalidar o pedido)',
+    celulas: ['U3g'],
+    quais: ['U3fg'],
+    estrago: (texto, rota, ext) =>
+      ext === '.js' && rota.endsWith('/mapa-unidades.js')
+        ? texto.replace('return ++gesto;', 'return gesto;')
+        : texto,
+  },
+  {
+    /* A ARRUMAÇÃO DOS INSERTOS DESFEITA: as duas molduras voltam ao sítio que o
+       artefacto lhes dá, e as ilhas com elas. É o desenho que a leitura a frio
+       do Codex encontrou a 08.09.2026, com os dois rectângulos cruzados.
+
+       O `y` DE CADA MOLDURA VEM DO ARTEFACTO e não de um número escrito aqui: a
+       planta lê `mapa/pais.json`, que é onde as caixas estão. */
+    nome: 'a arrumação dos insertos desfeita (as duas molduras como o artefacto as traz, cruzadas)',
+    celulas: ['U10'],
+    quais: ['U10'],
+    estrago: (texto, rota, ext) => {
+      if (ext !== '.html') return texto;
+      const semTranslacao = texto.replace(/\s+transform="translate\([^"]*\)"/g, '');
+      return semTranslacao.replace(/<rect\b[^>]*data-moldura="([^"]+)"[^>]*>/g, (todo, nome) => {
+        const m = MOLDURAS.find((x) => x.nome === nome);
+        return m ? todo.replace(/\by="[^"]*"/, `y="${m.caixa[1]}"`) : todo;
+      });
+    },
+  },
 ];
 
 if (VERMELHOS) {
@@ -1465,7 +1950,7 @@ if (VERMELHOS) {
   process.exit(falhou ? 1 : 0);
 }
 
-await corre(['U1', 'U2', 'U3', 'U4', 'U5', 'U7', 'U8']);
+await corre(['U1', 'U2', 'U3', 'U4', 'U5', 'U7', 'U8', 'U10', 'U11']);
 limpaAProva();
 await nav.close();
 await navWebkit.close();

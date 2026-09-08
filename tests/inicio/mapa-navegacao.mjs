@@ -25,7 +25,30 @@
  * N2 · o mapa não cresce, e a roda é da página. As duas medem-se com números e
  * não com uma captura: a largura da tela nos dois estados, e o `scrollY` depois
  * de cinco entalhes da roda com o cursor DENTRO do mapa. A segunda parte da
- * prova é que nenhum nó do mapa tem `transform`, que é o que a lente escrevia.
+ * prova é que O MAPA NÃO TEM LENTE.
+ *
+ * A PROVA DA LENTE ERA UMA APROXIMAÇÃO, E PASSA A SER A COISA (F1.1e, segunda
+ * passagem, 08.09.2026). Ela dizia «nenhum nó do mapa tem `transform`», que era
+ * a marca que a lente deixava: um `<g data-campo>` com um `transform` de 1× a 4×
+ * escrito pelo guião. Com a arrumação dos dois insertos (`arrumacaoDasMolduras()`,
+ * a emenda de 08.09 ao brief do F1.1e), o SERVIDOR passou a escrever uma
+ * translação inteira em cada caminho dos dois arquipélagos, para que as molduras
+ * da Madeira e dos Açores deixem de se cruzar. Nenhuma lente voltou, e a
+ * contagem a zero deixou de ser verdade: uma régua que continuasse a contar
+ * media a marca e não a coisa.
+ *
+ * O QUE ELA MEDE AGORA É A LENTE, e em quatro conferências que juntas são mais
+ * fortes do que a contagem:
+ *
+ *   1. nenhuma transformação com ESCALA, rotação ou inclinação: só `translate`,
+ *      que é a única que uma arrumação de insertos precisa. Uma lente escala,
+ *      e é ali que ela morre;
+ *   2. cada `translate` com argumentos INTEIROS, que é o que uma colocação no
+ *      campo é, e não um número de gesto;
+ *   3. as MESMAS transformações nos dois estados (o país e a pesquisa aberta):
+ *      uma lente muda com o estado, e uma arrumação escrita pelo servidor não;
+ *   4. e as mesmas DEPOIS de cinco entalhes da roda com o cursor dentro do mapa,
+ *      que é o gesto por onde a lente entrava.
  *
  * N3 · «Concelho» abre a pesquisa nas duas larguras. O que se mede é o que o
  * leitor recebe: o bloco da pesquisa dentro do ecrã, o foco no campo, o anúncio
@@ -97,6 +120,23 @@ const servidor = http.createServer((req, res) => {
 });
 await new Promise((r) => servidor.listen(0, '127.0.0.1', r));
 const base = `http://127.0.0.1:${servidor.address().port}`;
+
+/* ---------------------------------------------------------------------------
+ * A PROVA DA LENTE (N2), EM TRÊS FUNÇÕES
+ * ---------------------------------------------------------------------------
+ * `TRANSFORMACOES` lê a lista das transformações escritas no mapa da página;
+ * `semLente` recusa tudo o que não seja uma translação de inteiros; `iguais`
+ * compara duas listas na ordem em que estão. A razão está no cabeçalho, na N2.
+ */
+const TRANSFORMACOES = () =>
+  [...document.querySelectorAll('[data-mapa] *')]
+    .filter((e) => e.hasAttribute('transform'))
+    .map((e) => e.getAttribute('transform'));
+
+/** Uma translação de inteiros, e nada mais: `translate(0 -3059)`. */
+const SO_TRANSLACAO = /^translate\(\s*-?\d+(?:\s*[ ,]\s*-?\d+)?\s*\)$/;
+const semLente = (lista) => lista.every((t) => SO_TRANSLACAO.test(String(t).trim()));
+const iguais = (a, b) => a.length === b.length && a.every((t, i) => t === b[i]);
 
 const reguas = [];
 const medidas = {};
@@ -237,11 +277,13 @@ for (const { edicao, rota, evora, indice } of EDICOES) {
             w: +t.width.toFixed(1),
             h: +t.height.toFixed(1),
             ambito: document.querySelector('[data-inicio]').getAttribute('data-ambito'),
-            /* Nenhum nó do mapa pode ter uma transformação: era o que a lente
-               escrevia, e é a marca que ela deixava. */
-            transformados: [...document.querySelectorAll('[data-mapa] *')].filter((e) =>
-              e.hasAttribute('transform'),
-            ).length,
+            /* AS TRANSFORMAÇÕES DO MAPA, TAL COMO ESTÃO ESCRITAS. Uma lente
+               escalava e mudava com o gesto; a arrumação dos insertos é uma
+               translação inteira, igual em todos os estados. Lê-se a lista, e
+               são as quatro conferências do cabeçalho que decidem. */
+            transformacoes: [...document.querySelectorAll('[data-mapa] *')]
+              .filter((e) => e.hasAttribute('transform'))
+              .map((e) => e.getAttribute('transform')),
           };
         });
       };
@@ -251,11 +293,14 @@ for (const { edicao, rota, evora, indice } of EDICOES) {
         Math.abs(pais.w - pesquisa.w) < 0.5 &&
         Math.abs(pais.h - pesquisa.h) < 0.5 &&
         pesquisa.ambito === 'municipio' &&
-        pais.transformados === 0 &&
-        pesquisa.transformados === 0;
+        semLente(pais.transformacoes) &&
+        semLente(pesquisa.transformacoes) &&
+        iguais(pais.transformacoes, pesquisa.transformacoes);
       if (!ok) bem = false;
       linhas.push(
-        `${largura} ${edicao}: país ${pais.w}×${pais.h} · pesquisa aberta ${pesquisa.w}×${pesquisa.h} (${pesquisa.ambito}) · nós com transform ${pais.transformados}/${pesquisa.transformados}`,
+        `${largura} ${edicao}: país ${pais.w}×${pais.h} · pesquisa aberta ${pesquisa.w}×${pesquisa.h} (${pesquisa.ambito}) · ` +
+          `${pais.transformacoes.length} translação(ões) do servidor, as mesmas nos dois estados: ${iguais(pais.transformacoes, pesquisa.transformacoes)} · ` +
+          `sem lente: ${semLente(pais.transformacoes)} (${[...new Set(pais.transformacoes)].join(', ') || 'nenhuma'})`,
       );
       if (largura === 1280 && edicao === 'pt') medidas.n2Tamanho = { pais, pesquisa };
       await p.__ctx.close();
@@ -282,21 +327,21 @@ for (const { edicao, rota, evora, indice } of EDICOES) {
       return { x: r.left + r.width / 2, y: r.top + r.height / 2, dentro: r.height > 0 };
     });
     await p.mouse.move(sitio.x, sitio.y);
+    const antesDaRoda = await p.evaluate(TRANSFORMACOES);
     const antes = await p.evaluate(() => window.scrollY);
     for (let i = 0; i < 5; i++) await p.mouse.wheel(0, 100);
     await p.waitForTimeout(150);
     const depois = await p.evaluate(() => window.scrollY);
-    const t = await p.evaluate(
-      () =>
-        [...document.querySelectorAll('[data-mapa] *')].filter((e) => e.hasAttribute('transform'))
-          .length,
-    );
-    const ok = sitio.dentro && depois > antes && t === 0;
+    const t = await p.evaluate(TRANSFORMACOES);
+    /* AS TRANSFORMAÇÕES DEPOIS DA RODA SÃO AS DE ANTES DELA: é aqui que a lente
+       morria, porque era a roda que a fazia crescer. Lê-se antes e depois. */
+    const ok = sitio.dentro && depois > antes && semLente(t) && iguais(t, antesDaRoda);
     if (!ok) bem = false;
     linhas.push(
-      `«/${q}»: o cursor no meio do mapa, cinco entalhes para baixo, scrollY ${antes} → ${depois}, ${t} nós com transform`,
+      `«/${q}»: o cursor no meio do mapa, cinco entalhes para baixo, scrollY ${antes} → ${depois}, ` +
+        `${t.length} translação(ões), as mesmas de antes da roda: ${iguais(t, antesDaRoda)} · sem lente: ${semLente(t)}`,
     );
-    if (q === '?ambito=municipio') medidas.n2Roda = { antes, depois, transformados: t };
+    if (q === '?ambito=municipio') medidas.n2Roda = { antes, depois, transformacoes: t };
     await p.__ctx.close();
   }
   conta('N2 · a roda do rato sobre o mapa rola a página, nos dois estados', bem, linhas.join(' · '));

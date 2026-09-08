@@ -772,15 +772,23 @@ async function correTudo(soEstas) {
          entra em vista uma vez e os pontos leem-se DEPOIS disso: um rolamento a
          meio invalidaria as coordenadas de ecrã já calculadas. */
       await p.evaluate(() => document.querySelector('[data-mapa-areas]').scrollIntoView({ block: 'center' }));
+      /* A MATRIZ É A DO PRÓPRIO CAMINHO E NÃO A DO `svg` (F1.1e, segunda
+         passagem, 08.09.2026). As unidades dos dois arquipélagos levam a
+         translação da arrumação dos insertos, escrita pelo servidor em cada
+         caminho, e um ponto do campo levado ao ecrã pela matriz do `svg` caía
+         onde a ilha ESTAVA: o rato pousava no mar e as nove ilhas dos Açores
+         falhavam a L6b. A matriz de um caminho traz as transformações dos seus
+         antepassados e a dele, e é a única que responde por «onde está este
+         ponto desta área no ecrã». */
       const noEcra = await p.evaluate((pontos) => {
         const svg = document.querySelector('[data-mapa-areas]');
-        const m = svg.getScreenCTM();
         const out = {};
         for (const [slug, xy] of Object.entries(pontos)) {
+          const el = svg.querySelector(`[data-areas] .uni[data-unidade="${slug}"]`) ?? svg;
           const pt = svg.createSVGPoint();
           pt.x = xy[0];
           pt.y = xy[1];
-          const s = pt.matrixTransform(m);
+          const s = pt.matrixTransform(el.getScreenCTM());
           out[slug] = { x: s.x, y: s.y };
         }
         return out;
@@ -924,14 +932,15 @@ async function correTudo(soEstas) {
         const comRatoNoNome = await p.evaluate(ESTADO, alvo);
         await p.mouse.move(0, 0);
         await p.evaluate(() => document.querySelector('[data-mapa-areas]').scrollIntoView({ block: 'center' }));
-        const ponto = await p.evaluate((xy) => {
+        const ponto = await p.evaluate(([xy, slug]) => {
           const svg = document.querySelector('[data-mapa-areas]');
+          const el = svg.querySelector(`[data-areas] .uni[data-unidade="${slug}"]`) ?? svg;
           const pt = svg.createSVGPoint();
           pt.x = xy[0];
           pt.y = xy[1];
-          const s = pt.matrixTransform(svg.getScreenCTM());
+          const s = pt.matrixTransform(el.getScreenCTM());
           return { x: s.x, y: s.y };
-        }, PONTOS[alvo]);
+        }, [PONTOS[alvo], alvo]);
         await p.mouse.move(ponto.x, ponto.y);
         const comRatoNaArea = await p.evaluate(ESTADO, alvo);
         medidas[`par_${e.chave}`] = { repouso, comRatoNoNome, comRatoNaArea };
@@ -963,6 +972,41 @@ const soNaPrimeira = (rota) =>
 const comFolha = (css) => (html, rota) =>
   soNaPrimeira(rota) ? html.replace('</head>', `<style>${css}</style></head>`) : html;
 
+/* ---------------------------------------------------------------------------
+ * MOVER UM BLOCO NO DOCUMENTO, CONTANDO AS ETIQUETAS
+ * ---------------------------------------------------------------------------
+ * Três plantas precisam de trocar a ordem de dois blocos no HTML construído, e
+ * o fim de um `<div>` encontra-se a contar as `<div>` que abrem e as que fecham,
+ * que é a única maneira honesta de o saber num documento: um corte por índice
+ * deixaria etiquetas por fechar e o analisador leria outra árvore.
+ */
+function fimDoBloco(texto, inicio) {
+  let nivel = 0;
+  const re = /<div\b|<\/div>/g;
+  re.lastIndex = inicio;
+  let m;
+  while ((m = re.exec(texto))) {
+    nivel += m[0] === '</div>' ? -1 : 1;
+    if (nivel === 0) return m.index + 6;
+  }
+  return -1;
+}
+
+/** O bloco que começa em `abre` movido para antes (ou depois) de `alvo`. */
+function moveBloco(html, abre, alvo, onde) {
+  const i = html.indexOf(abre);
+  if (i < 0) return html;
+  const f = fimDoBloco(html, i);
+  if (f < 0) return html;
+  const bloco = html.slice(i, f);
+  const sem = html.slice(0, i) + html.slice(f);
+  const j = sem.indexOf(alvo);
+  if (j < 0) return html;
+  const g = onde === 'depois' ? fimDoBloco(sem, j) : j;
+  if (g < 0) return html;
+  return sem.slice(0, g) + bloco + sem.slice(g);
+}
+
 const PLANTAS = [
   {
     nome: 'uma ligação duplicada: o mesmo nome duas vezes na lista',
@@ -974,39 +1018,22 @@ const PLANTAS = [
     },
   },
   {
-    /* A COLUNA DAS GAVETAS DEPOIS DO MAPA NO DOCUMENTO. Era «o mapa antes dos
-       nomes», e o corte era entre `<div class="mapa-ilhas">` e
-       `<div class="cabeca-inst">`; com a lista dentro de uma gaveta dentro da
-       coluna, esse corte deixaria de fechar as etiquetas do meio. O bloco que
-       se move é o `.cabeca-lado` inteiro, e o fim dele encontra-se a contar as
-       `<div>` que abrem e as que fecham, que é a única maneira honesta de o
-       saber num documento. */
-    nome: 'a coluna das gavetas depois do mapa no documento',
+    /* A BANDA DOS NOMES ANTES DO MAPA NO DOCUMENTO.
+       ----------------------------------------------------------------------
+       ESTA PLANTA MUDAVA O HTML E NÃO MORDIA (F1.1e, segunda passagem,
+       08.09.2026). Trocava a coluna da legenda (`.cabeca-lado`) com a coluna do
+       mapa (`.cabeca-inst`), que era onde a lista vivia quando a planta foi
+       escrita; desde o F1.1 (03.09.2026) a lista saiu da grelha para uma banda
+       de largura inteira (`.cabeca-nomes`), e trocar aquelas duas colunas deixou
+       de mexer na ordem entre os NOMES e o MAPA, que é o que a L1 mede. Foi a
+       leitura a frio do Codex a apanhá-lo (achado 10), e a correção é a planta e
+       não a célula: o bloco que se move passa a ser a banda dos nomes. */
+    nome: 'a banda dos nomes antes do mapa no documento',
     celulas: ['L1'],
-    estrago: (html, rota) => {
-      if (!soNaPrimeira(rota)) return html;
-      const fimDoBloco = (texto, inicio) => {
-        let nivel = 0;
-        const re = /<div\b|<\/div>/g;
-        re.lastIndex = inicio;
-        let m;
-        while ((m = re.exec(texto))) {
-          nivel += m[0] === '</div>' ? -1 : 1;
-          if (nivel === 0) return m.index + 6;
-        }
-        return -1;
-      };
-      const i = html.indexOf('<div class="cabeca-lado"');
-      if (i < 0) return html;
-      const f = fimDoBloco(html, i);
-      const j = html.indexOf('<div class="cabeca-inst"', f);
-      if (f < 0 || j < 0) return html;
-      const g = fimDoBloco(html, j);
-      if (g < 0) return html;
-      const lado = html.slice(i, f);
-      const inst = html.slice(j, g);
-      return html.slice(0, i) + inst + html.slice(f, j) + lado + html.slice(g);
-    },
+    estrago: (html, rota) =>
+      soNaPrimeira(rota)
+        ? moveBloco(html, '<div class="cabeca-nomes"', '<div class="cabeca-inst"', 'antes')
+        : html,
   },
   {
     nome: 'a coluna das gavetas de volta para a coluna do mapa, a 1280',
@@ -1045,13 +1072,22 @@ const PLANTAS = [
     ),
   },
   {
-    /* A legenda ao princípio da coluna em vez do fim: era «de volta para a
-       coluna do mapa» por `grid-column`, e a legenda deixou de ser filha da
-       grelha (01.09.2026). O que a põe no sítio errado agora é a ordem dentro
-       da coluna das gavetas. */
-    nome: 'a legenda por cima dos nomes em vez de por baixo',
+    /* A LEGENDA POR BAIXO DOS NOMES EM VEZ DE POR CIMA.
+       ----------------------------------------------------------------------
+       ESTA PLANTA MUDAVA O HTML E NÃO MORDIA (F1.1e, segunda passagem,
+       08.09.2026). Punha `order:-1` na legenda dentro de `.cabeca-lado`, e isso
+       muda a ordem dela DENTRO daquela coluna; o que a L12 mede desde o F1.1 é a
+       legenda contra a BANDA DOS NOMES, que vive fora da grelha e sempre depois
+       dela, de maneira que nenhuma ordenação dentro da coluna a podia inverter
+       (leitura a frio do Codex de 08.09.2026, achado 10). A planta passa a fazer
+       o que o seu nome diz: move a legenda para depois da banda dos nomes, que é
+       a forma que o defeito teria. */
+    nome: 'a legenda por baixo dos nomes em vez de por cima',
     celulas: ['L12'],
-    estrago: comFolha('.cabeca-lado .mapa-legenda{order:-1 !important;margin-top:0 !important}'),
+    estrago: (html, rota) =>
+      soNaPrimeira(rota)
+        ? moveBloco(html, '<div class="mapa-legenda', '<div class="cabeca-nomes"', 'depois')
+        : html,
   },
   {
     nome: 'o mapa mais largo do que a coluna, a 1280',
@@ -1106,11 +1142,22 @@ const PLANTAS = [
         : html,
   },
   {
-    nome: 'a forma em linha a 1024 e a 1280 (as duas formas na mesma largura)',
+    /* AS DUAS FORMAS NA MESMA LARGURA.
+       ----------------------------------------------------------------------
+       ESTA PLANTA PLANTAVA O ESTADO CERTO (F1.1e, segunda passagem,
+       08.09.2026). Punha a rede EM LINHA a partir de 1024, que era o defeito
+       enquanto a forma acima de 1024 era a lista em coluna; desde o F1.1
+       (03.09.2026) a forma é uma só em todas as larguras e é precisamente a
+       linha, de maneira que a planta plantava o que a célula exige (leitura a
+       frio do Codex de 08.09.2026, achado 10). O nome dela sempre prometeu a
+       coisa certa, «as duas formas na mesma largura», e é isso que ela passa a
+       fazer: o continente em linha e os arquipélagos em coluna, ao mesmo tempo,
+       que é o estado que a L9 existe para recusar. */
+    nome: 'as duas formas na mesma largura (o continente em linha e os arquipélagos em coluna)',
     celulas: ['L9'],
     estrago: comFolha(
-      '@media (min-width:1024px){.mapa-ilhas-lista{display:flex !important;column-gap:0.75em !important;columns:auto !important}' +
-        '.mapa-ilhas-lista a{min-height:44px !important;line-height:20px !important;padding-block:12px !important}}',
+      '.mapa-ilhas-grupo:not([data-parcela-lista="continente"]) .mapa-ilhas-lista' +
+        '{display:block !important;columns:2 !important}',
     ),
   },
   {
