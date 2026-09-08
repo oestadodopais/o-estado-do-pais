@@ -662,6 +662,14 @@ export const STRINGS = {
         nomeVazioRatoConcelho: 'Passe o rato por um concelho',
         abrir: 'Abrir',
         voltarAoPais: 'Voltar ao país',
+        /* O QUE O LUGAR DIZ QUANDO O DESENHO DA REGIÃO NÃO CHEGA. O guião pede o
+           ficheiro dos concelhos da região ao tocar nela; se o pedido não voltar
+           (sem rede, uma resposta que não é 200, um ficheiro ilegível), o mapa
+           não cresce e o leitor ficava com um toque sem resposta e sem saber
+           porquê. A frase diz o que aconteceu e para onde ir: a porta que já
+           está no lugar leva à página da região, que é a alternativa sem guião.
+           O toque seguinte na mesma área segue a ligação do servidor. */
+        semODesenhoDaRegiao: 'O mapa desta região não abriu. A porta leva à página dela.',
         /* Os nomes acessíveis dos dois níveis do desenho. Nomeiam o que a coisa
            é, e não como se usa, que é a regra do `distritosLabel` acima. */
         regioesLabel: 'Mapa das nove regiões de Portugal, com uma área por região.',
@@ -2231,6 +2239,7 @@ export const STRINGS = {
         nomeVazioRatoConcelho: 'Hover over a municipality',
         abrir: 'Open',
         voltarAoPais: 'Back to the country',
+        semODesenhoDaRegiao: 'This map did not open. The door goes to the region page.',
         regioesLabel: 'Map of the nine regions of Portugal, one area per region.',
         concelhosLabel: 'Map of the municipalities of the region, one area per municipality.',
         lugarLabel: 'The area pointed at on the map',

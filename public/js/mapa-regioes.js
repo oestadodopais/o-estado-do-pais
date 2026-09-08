@@ -82,6 +82,7 @@
   var porta = lugar.querySelector('[data-mapa-porta]');
   var voltar = lugar.querySelector('[data-mapa-voltar]');
   var vazias = lugar.querySelectorAll('[data-mapa-vazio]');
+  var aviso = lugar.querySelector('[data-mapa-aviso]');
   if (!texto || !porta || vazias.length !== (DOIS_NIVEIS ? 4 : 2)) return;
   if (DOIS_NIVEIS && !voltar) return;
 
@@ -109,6 +110,8 @@
   var tocada = '';
   /** O gesto do último apontador, para os navegadores em que o clique não o diz. */
   var tipoDoGesto = '';
+  /** As regiões cujo ficheiro não veio: o clique seguinte segue a ligação. */
+  var falhadas = {};
 
   /* ---------------------------------------------------------------- o nome */
 
@@ -116,6 +119,7 @@
      rato. O `hidden` diz de que nível é cada uma, e a folha escolhe entre o dedo
      e o rato pelo apontador do leitor. */
   function mostraVazio() {
+    if (aviso) aviso.hidden = true;
     texto.hidden = true;
     texto.textContent = '';
     porta.hidden = true;
@@ -140,6 +144,7 @@
     var nome = titulo ? titulo.textContent.trim() : null;
     var destino = area.getAttribute('href');
     if (!nome || !destino) return;
+    if (aviso) aviso.hidden = true;
     texto.textContent = nome;
     texto.hidden = false;
     porta.setAttribute('href', destino);
@@ -222,25 +227,47 @@
     }
   }
 
+  /* UM PEDIDO QUE NÃO VOLTA NÃO PODE DEIXAR A LIGAÇÃO MORTA. A primeira forma
+     desta função segurava o clique (`preventDefault`) e depois pedia o ficheiro;
+     quando o pedido falhava, nada acendia e o clique seguinte era segurado
+     outra vez, e outra: a área ficava sem destino nenhum, e o comentário que
+     dizia que o toque seguinte seguia o `href` do servidor era falso. A leitura
+     a frio do Codex de 08.09.2026 apanhou-o (achado 9).
+
+     A regra passa a ser: a região que falhou fica marcada, o lugar do nome diz
+     o que aconteceu, e O CLIQUE SEGUINTE NAQUELA ÁREA NÃO É SEGURADO, isto é,
+     segue a ligação que o servidor escreveu e abre a página da região, que é a
+     alternativa sem guião. Sem `fetch` no navegador nem se chega a segurar o
+     primeiro. */
+  function falhou(slug) {
+    falhadas[slug] = true;
+    if (aviso) aviso.hidden = false;
+  }
+
   /** A região, do que já foi descarregado ou do ficheiro que a área nomeia. */
   function abre(slug, ficheiro, entao) {
     if (guardadas[slug]) {
       entao(guardadas[slug]);
       return;
     }
-    if (!ficheiro || typeof fetch !== 'function') return;
+    if (!ficheiro) {
+      falhou(slug);
+      return;
+    }
     fetch(ficheiro)
       .then(function (r) {
         if (!r.ok) throw new Error('sem resposta');
         return r.json();
       })
       .then(function (dados) {
-        if (!dados || !dados.campo || !dados.concelhos || !dados.concelhos.length) return;
+        if (!dados || !dados.campo || !dados.concelhos || !dados.concelhos.length) {
+          throw new Error('sem desenho');
+        }
         entao(dados);
       })
-      /* SEM O FICHEIRO, A LIGAÇÃO FAZ O QUE FARIA SEM GUIÃO: nada se acende e o
-         toque seguinte na mesma área segue o `href` que o servidor escreveu. */
-      .catch(function () {});
+      .catch(function () {
+        falhou(slug);
+      });
   }
 
   /* ---------------------------------------------------------- o endereço */
@@ -259,6 +286,7 @@
     }
     if (slug === aberta) return;
     var area = grupoDoPais.querySelector('[data-uni-porta="' + slug + '"]');
+    if (typeof fetch !== 'function') return;
     abre(slug, area.getAttribute('data-ficheiro'), function (dados) {
       paraARegiao(slug, dados);
     });
@@ -331,6 +359,13 @@
     var doTeclado = ev.detail === 0;
     var slug = area.getAttribute('data-uni-porta');
     if (slug) {
+      /* A REGIÃO CUJO FICHEIRO NÃO VEIO NÃO SE SEGURA OUTRA VEZ: o clique segue
+         a ligação do servidor e abre a página dela. O mesmo vale para um
+         navegador sem `fetch`, onde não há sequer um pedido a fazer. */
+      if (falhadas[slug] || typeof fetch !== 'function') {
+        mostra(area);
+        return;
+      }
       /* UMA REGIÃO CRESCE, E NÃO NAVEGA. A porta do lugar do nome é que abre a
          página dela, e ficou lá com o nome no mesmo gesto. */
       ev.preventDefault();
