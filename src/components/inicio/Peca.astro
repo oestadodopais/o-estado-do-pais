@@ -80,6 +80,13 @@ const {
   estado = 'sem',
   colore = estado === 'fora' || estado === 'dentro',
   regua = null,
+  /* QUEM FIXOU O LIMIAR DESTA MEDIDA (F1.10, item 8.5). Chega da vista, lido da
+     declaração da medida por `fixadorDoLimiar()`, e é ele que escolhe o par de
+     palavras do estado: «dentro do limiar da Comissão» num quadro da União,
+     «dentro do limite legal» no índice de dívida de uma câmara. Uma peça com
+     estado «fora» ou «dentro» e sem fixador fecha a construção: sem ele a peça
+     escreveria «dentro do limiar» sozinho. */
+  fixador = null,
   ambito = null,
   selosNaMedida = false,
   /* ---------------------------------------------------------------------
@@ -110,12 +117,22 @@ const {
   valor = true,
 } = Astro.props;
 
-const PALAVRA = {
-  fora: s.estado.foraDoLimiar,
-  dentro: s.estado.dentroDoLimiar,
-  sem: s.estado.semLimiar,
-};
-const palavra = PALAVRA[estado] ?? null;
+/* A PALAVRA DO ESTADO, ESCOLHIDA PELO FIXADOR (F1.10, item 8.5). Ver a razão em
+   `src/data/figuras.mjs`, no cabeçalho de `FIXADORES_DO_LIMIAR`. «sem limiar»
+   não tem fixador porque não há limiar nenhum para atribuir. */
+const parDoEstado = fixador ? s.estado[fixador] : null;
+if ((estado === 'fora' || estado === 'dentro') && !parDoEstado) {
+  throw new Error(
+    `<Peca>: a medida «${id}» está ${estado} do limiar e não diz de quem o limiar é ` +
+      `(chegou sem \`fixador\`). A vista lê-o da declaração da medida com ` +
+      `\`fixadorDoLimiar()\`; sem ele a peça escreveria «${estado} do limiar» sozinho.`,
+  );
+}
+const palavra =
+  estado === 'sem' ? s.estado.semLimiar : parDoEstado ? parDoEstado[estado] ?? null : null;
+/* O RÓTULO DA LINHA DO LIMIAR diz de quem ele é, pela mesma razão: «limiar da
+   Comissão 60% · acima» em vez de «limiar 60% · acima». */
+const rotuloDoLimiar = parDoEstado?.rotulo ?? s.home.numeros.limiar;
 
 const glifos = vazio ? 0 : [...String(getClaim(id).value)].length;
 /* O CORPO DO VALOR, COM TECTO EM 56px E ESCALA FLUIDA (direção, 21.08.2026).
@@ -207,7 +224,7 @@ const simbolo = limiar?.simbolo ?? '%';
   {
     limiar && (
       <p class="peca-limiar">
-        <span class="peca-limiar-k">{s.home.numeros.limiar}</span>{' '}
+        <span class="peca-limiar-k">{rotuloDoLimiar}</span>{' '}
         <span class="peca-limiar-v">
           {banda ? (
             <>
@@ -258,7 +275,7 @@ const simbolo = limiar?.simbolo ?? '%';
           >
             {regua.rotulo === 'limiar' && limiar && (
               <Fragment slot="referencia">
-                {s.home.numeros.limiar}{' '}
+                {rotuloDoLimiar}{' '}
                 {banda ? (
                   <>
                     {limiar.inferior.sinal ?? ''}

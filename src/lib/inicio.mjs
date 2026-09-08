@@ -21,6 +21,7 @@ import { MUNICIPIOS, DISTRITOS } from '../data/caop-centroids.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
 import { getClaim, parsePtNumber, eDerivada, eValorTextual } from './ledger.mjs';
 import { estadoDaRegua } from './estado.mjs';
+import { fixadorDoLimiar } from '../data/figuras.mjs';
 
 /**
  * O nome de um concelho, sem acentos e em caixa baixa.
@@ -225,7 +226,7 @@ export function pecasDoConcelho(municipio) {
          derivada, a página do concelho também não. */
       const derivada = eDerivada(linha);
       if (medida.claim !== alvo.indice) {
-        return { ...medida, vazia: false, linha, derivada, estado: 'sem', colore: false, regua: null };
+        return { ...medida, vazia: false, linha, derivada, estado: 'sem', colore: false, regua: null, fixador: null };
       }
       /* ----------------------------------------------------------------------
          UM VALOR QUE NÃO É NÚMERO NÃO SE COMPARA COM NADA (28.08.2026, regra 2)
@@ -247,8 +248,13 @@ export function pecasDoConcelho(municipio) {
          vista distinguir «não há referência publicada» de «não há valor para
          comparar», e as duas caíam na mesma palavra. */
       if (eValorTextual(linha.value)) {
-        return { ...medida, vazia: false, linha, derivada, estado: null, colore: false, regua: null };
+        return { ...medida, vazia: false, linha, derivada, estado: null, colore: false, regua: null, fixador: null };
       }
+      /* QUEM FIXOU O TETO DESTA MEDIDA (F1.10, item 8.5). Lê-se da declaração da
+         medida, com o guarda que fecha a construção se ela tiver teto e não
+         disser quem o fixou: é a lei, e a peça passa a dizer «dentro do limite
+         legal» em vez de «dentro do limiar». */
+      const fixador = fixadorDoLimiar(medida, `concelhos: a medida "${medida.chave}"`);
       const tecto = getClaim(alvo.tecto);
       const r = estadoDaRegua(linha, { valor: tecto.value, lado: 'superior', colore: true });
       return {
@@ -258,6 +264,7 @@ export function pecasDoConcelho(municipio) {
         derivada,
         estado: r.estado ?? 'sem',
         colore: r.colore,
+        fixador,
         regua: {
           valor: parsePtNumber(linha.value),
           referencia: parsePtNumber(tecto.value),
@@ -408,4 +415,48 @@ export const chaveDoConcelho = (slug) => `municipio:${slug}`;
 /** A lista fechada dos âmbitos, na ordem em que a página os desenha. */
 export function ambitos() {
   return [AMBITO_POR_DEFEITO, ...concelhos().map((c) => chaveDoConcelho(c.slug))];
+}
+
+/**
+ * ===========================================================================
+ * A MANCHETE DO PAÍS, NUM SÍTIO SÓ (F1.10, decisão do lugar de direção,
+ * 08.09.2026)
+ * ===========================================================================
+ *
+ * Duas superfícies dizem a mesma frase: a primeira página, onde os dois
+ * algarismos vão selados e com porta para a sua linha, e o cartão de partilha
+ * dela, onde vão escritos com o valor à vista. Um cartão que diga uma frase e
+ * uma página que diga outra são duas casas, e é exactamente o defeito que a
+ * primeira redação deste bloco deixou aberto quando a manchete mudou.
+ *
+ * AS DUAS LINHAS NÃO SE ESCOLHEM AQUI. São as duas primeiras medidas de cabeça
+ * do primeiro domínio vivo — a dívida pública e a taxa de desemprego —, e quem
+ * as declara é `FAIXA_DO_DOMINIO_1` em `src/data/dominios.mjs`. A vista confere
+ * que as duas continuam a ser medidas de cabeça antes de as citar: uma manchete
+ * que nomeie uma medida que a página não mostra é a manchete a falar de outra
+ * página.
+ *
+ * AS PALAVRAS SÃO DA EDIÇÃO (`s.inicio.cabeca.manchetePais`) e o símbolo da
+ * percentagem entra pelo sufixo do valor, como na manchete do domínio: a régua
+ * da §11 cola o símbolo ao número e o texto entre os dois valores é prosa.
+ */
+export const MANCHETE_DO_PAIS = {
+  divida: 'divida-publica-2025',
+  desemprego: 'taxa-de-desemprego-2025',
+  sufixo: '%',
+};
+
+/**
+ * Os pedaços da manchete do país, na forma que `<Manchete>` lê.
+ *
+ * @param {{ abre: string, meio: string, fecha: string }} palavras
+ */
+export function partesDaManchetePais(palavras) {
+  return [
+    palavras.abre,
+    { claim: MANCHETE_DO_PAIS.divida, sufixo: MANCHETE_DO_PAIS.sufixo },
+    palavras.meio,
+    { claim: MANCHETE_DO_PAIS.desemprego, sufixo: MANCHETE_DO_PAIS.sufixo },
+    palavras.fecha,
+  ];
 }

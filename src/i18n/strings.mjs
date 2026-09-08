@@ -582,10 +582,35 @@ export const STRINGS = {
            a frase parte-se onde elas entram. O singular e o plural do primeiro
            são escolhidos na construção, com a contagem que o portão reconta; o
            segundo não tem substantivo a seguir e serve os dois. */
+        /* AS QUATRO PEÇAS MUDARAM DE PÁGINA, E NÃO DE PALAVRA (F1.10, item
+           8.16, 08.09.2026). Com os 21 cartões dos dois quadros da União em
+           «Portugal na União Europeia», a frase das duas contagens é a manchete
+           DESSA página, e é `UniaoEuropeiaView.astro` que a rende. As chaves
+           ficam onde estão, e o nome delas também: renomeá-las mudava treze
+           sítios para não mudar uma letra do que se lê, e a linha do inventário
+           da voz é a mesma frase. */
         tituloPaisA: 'Portugal ultrapassa ',
         tituloPaisUm: ' limiar do Procedimento dos Desequilíbrios Macroeconómicos e cumpre ',
         tituloPaisMuitos: ' limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre ',
         tituloPaisFim: '.',
+        /* ------------------------------------------------------------------
+           A MANCHETE DO PAÍS (F1.10, decisão do lugar de direção, 08.09.2026)
+           ------------------------------------------------------------------
+           Uma frase, dois algarismos selados, sem adjetivo, com as duas medidas
+           de cabeça do domínio vivo: a dívida pública e a taxa de desemprego. As
+           três peças são o que fica ENTRE os dois valores, e o símbolo da
+           percentagem entra pelo sufixo do valor, como na manchete do domínio.
+
+           AS DUAS ORAÇÕES DIZEM A UNIDADE DA LINHA POR EXTENSO. «do PIB» é a
+           unidade `% do PIB` e «da população ativa» é `% da população ativa`,
+           transcritas do campo `unit` de cada linha: uma manchete é uma frase e
+           não uma ficha, e a unidade escrita por extenso é o que faz o algarismo
+           dizer alguma coisa. */
+        manchetePais: {
+          abre: 'A dívida pública é ',
+          meio: ' do PIB e a taxa de desemprego é ',
+          fecha: ' da população ativa.',
+        },
         /* AS CADEIAS DOS DOIS BLOCOS DE CONCELHO SAÍRAM (Emenda 19a, 26.08.2026).
            Eram `municipioSufixo`, `municipioPalavra`, `tituloEvora`,
            `tituloVazioA`, `tituloVazioB`, `ledeVazioA` e `ledeVazioB`: o rótulo,
@@ -610,7 +635,11 @@ export const STRINGS = {
          * é o ano, e esse é o `reference_date` das linhas, marcado como em toda
          * a casa. Os nomes vêm de `figuras.mjs` e mais de lado nenhum. */
         ledePais: {
-          abre: 'Fora do limiar: ',
+          /* «DA COMISSÃO» ENTRA NA ABERTURA (F1.10, item 8.5, 08.09.2026): a
+             lede nomeia as medidas do painel do Procedimento que passaram o seu
+             limiar, e o limiar delas é o desse painel. «Fora do limiar:» sozinho
+             era exactamente a palavra sem dono que o item veio tirar. */
+          abre: 'Fora do limiar da Comissão: ',
           separador: ', ',
           ultimo: ' e ',
           ano: ', em ',
@@ -901,10 +930,61 @@ export const STRINGS = {
      * `medir-defeitos.mjs` conte quantas cadeias distintas existem por estado.
      */
     estado: {
-      foraDoLimiar: 'fora do limiar',
-      dentroDoLimiar: 'dentro do limiar',
+      /* ------------------------------------------------------------------
+         «LIMIAR» NUNCA SOZINHO (F1.10, item 8.5, 08.09.2026)
+         ------------------------------------------------------------------
+         O diretor, 07.09 à noite: a palavra «limiar» «doesn't really reflect
+         exactly what they mean». A decisão (2) da emenda à §1.101: a palavra
+         fica, porque é a que a Comissão e o INE usam, e nunca aparece sozinha.
+
+         AS DUAS PALAVRAS PASSAM A SER TRÊS PARES, um por FIXADOR do limiar, e
+         não um par para tudo. «dentro do limiar» servia, com a mesma cadeia, os
+         dois quadros da União E o índice de dívida de uma câmara, cujo limiar é
+         o limite que a lei portuguesa fixa: escrever «limiar da Comissão» em 616
+         páginas de concelho seria dar à Comissão um número que não é dela. Quem
+         escolhe o par é `fixadorDoLimiar()`, sobre o campo `limiarFixadoPor` da
+         declaração da medida, e uma medida com limiar e sem fixador fecha a
+         construção.
+
+         `porRegistar` É UM PAR HONESTO E NÃO UM ATALHO: duas medidas do domínio
+         (o saldo das administrações públicas e o crescimento da despesa líquida)
+         têm limiar publicado e nenhuma linha nem decisão desta casa diz quem o
+         fixou. O que elas dizem é o que se prova — que o limiar está publicado —
+         e a razão de cada uma está na sua entrada em `src/data/dominios.mjs`. */
+      comissao: {
+        fora: 'fora do limiar da Comissão',
+        dentro: 'dentro do limiar da Comissão',
+        /* O rótulo da LINHA do limiar, dentro de uma leitura: era «limiar» e
+           passa a dizer de quem ele é, pela mesma razão e no mesmo gesto. A
+           linha lê-se «limiar da Comissão 60% · acima». */
+        rotulo: 'limiar da Comissão',
+      },
+      lei: {
+        fora: 'fora do limite legal',
+        dentro: 'dentro do limite legal',
+        rotulo: 'limite legal',
+      },
+      porRegistar: {
+        fora: 'fora do limiar publicado',
+        dentro: 'dentro do limiar publicado',
+        rotulo: 'limiar publicado',
+      },
       semLimiar: 'sem limiar',
       porConfirmar: 'por confirmar',
+      /* A FRASE QUE DIZ O QUE O LIMIAR É E QUEM O FIXOU (item 8.5), na leitura
+         de uma medida e não no cartão. Só o fixador `comissao` a leva: o `lei`
+         tem a sua na página do concelho, uma vez, e o `porRegistar` não tem
+         autor a nomear.
+
+         SEM UM ALGARISMO NOVO. O número do regulamento não se escreve: seria um
+         algarismo sem marca numa página do leitor, e a régua dos algarismos
+         fechava a construção. O que fica é a afirmação que o motivo
+         `limiar-do-quadro` de `ledger/allowlist.yml` já regista, palavra por
+         palavra: «fixado no Regulamento (UE) n.º 1176/2011 e revisto pela
+         Comissão» — sem o número do diploma, e com «revisto» a dizer o que o
+         registo diz, que não é «fixado pela Comissão». */
+      fraseDoLimiarDaComissao:
+        'O limiar é o valor de referência do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, fixado no regulamento que criou o Procedimento e revisto pela Comissão Europeia.',
     },
 
     cobertura: {
@@ -2390,10 +2470,17 @@ export const STRINGS = {
         tituloPaisUm: ' threshold of the Macroeconomic Imbalance Procedure and meets ',
         tituloPaisMuitos: ' thresholds of the Macroeconomic Imbalance Procedure and meets ',
         tituloPaisFim: '.',
+        /** Ver a razão na edição portuguesa, e o registo em `CHAVES-EN.md`. */
+        manchetePais: {
+          abre: 'Government debt is ',
+          meio: ' of GDP and the unemployment rate is ',
+          fecha: ' of the labour force.',
+        },
         /* As cadeias dos dois blocos de concelho saíram (Emenda 19a). Ver a
            razão na edição portuguesa, e o registo em `CHAVES-EN.md`. */
         ledePais: {
-          abre: 'Outside the threshold: ',
+          /** Ver a razão na edição portuguesa. */
+          abre: 'Outside the Commission threshold: ',
           separador: ', ',
           ultimo: ' and ',
           ano: ', in ',
@@ -2492,10 +2579,26 @@ export const STRINGS = {
     },
 
     estado: {
-      foraDoLimiar: 'outside the threshold',
-      dentroDoLimiar: 'within the threshold',
+      /** Ver a razão na edição portuguesa, e o registo em `CHAVES-EN.md`. */
+      comissao: {
+        fora: 'outside the Commission threshold',
+        dentro: 'within the Commission threshold',
+        rotulo: 'Commission threshold',
+      },
+      lei: {
+        fora: 'outside the legal limit',
+        dentro: 'within the legal limit',
+        rotulo: 'legal limit',
+      },
+      porRegistar: {
+        fora: 'outside the published threshold',
+        dentro: 'within the published threshold',
+        rotulo: 'published threshold',
+      },
       semLimiar: 'no threshold',
       porConfirmar: 'unconfirmed',
+      fraseDoLimiarDaComissao:
+        'The threshold is the reference value of the Macroeconomic Imbalance Procedure scoreboard, set in the regulation that created the Procedure and revised by the European Commission.',
     },
 
     cobertura: {

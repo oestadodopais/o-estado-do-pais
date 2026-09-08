@@ -27,13 +27,23 @@
  * vez. Em mais lado nenhum do sítio elas aparecem com valor selado: na primeira
  * página fica UMA porta para aqui, e é essa a única aparição.
  *
- * NÃO TRAZ MANCHETE. A manchete do país continua na primeira página, que é onde
- * ela é a manchete de alguma coisa; e as duas contagens que ela usa
- * (`painel_dentro_do_limiar`, `painel_fora_do_limiar`) continuam a render-se
- * lá. O que muda de porta é a das três chaves cuja âncora era o painel:
- * `painel_total`, `painel_com_limiar`, `painel_fora_do_limiar`,
- * `painel_dentro_do_limiar`, `painel_social_total` e `painel_reconferido_em`
- * passam a abrir aqui, que é onde o que elas contam se vê (`src/lib/prova.mjs`).
+ * A MANCHETE É A DAS DUAS CONTAGENS, e chegou com a decisão do lugar de direção
+ * de 08.09.2026 (a segunda metade do item 8.16). Enquanto os 21 cartões viviam
+ * na primeira página, a manchete do país era «Portugal ultrapassa 4 limiares do
+ * Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9», com as duas
+ * contagens do painel e a lede que nomeia as medidas fora do limiar. Com os
+ * cartões aqui, a frase é a manchete desta página: é aqui que o que ela conta se
+ * vê. A frase não mudou uma palavra; mudou de página.
+ *
+ * O NOME DA PÁGINA FICA NA SOBRANCELHA, por cima da manchete, como nas páginas
+ * de região e de concelho: um leitor que chega por uma porta tem de saber onde
+ * está, e o caminho no cabeçalho (§2.5 do brief) ainda não existe. É a mesma
+ * cadeia do menu e do título, e não uma segunda.
+ *
+ * As seis chaves da prova cuja âncora era o painel — `painel_total`,
+ * `painel_com_limiar`, `painel_fora_do_limiar`, `painel_dentro_do_limiar`,
+ * `painel_social_total` e `painel_reconferido_em` — abrem aqui, que é onde o que
+ * elas contam se vê (`src/lib/prova.mjs`).
  *
  * NÃO TRAZ COMANDO DE DENSIDADE. O item 8.14 tira-o: fica uma só interação, o
  * toque num cartão a abrir a leitura daquele cartão. O guião é
@@ -50,9 +60,11 @@ import {
   CONTEXTO_DOS_PAINEIS,
   comparacaoComOLimiar,
   ladosDoLimiar,
+  fixadorDoLimiar,
 } from '../data/figuras.mjs';
 import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
 import { estadoDaMedida } from '../lib/estado.mjs';
+import { ledeDoPainel } from '../lib/inicio.mjs';
 import { dominioDaLinha } from '../lib/dominios.mjs';
 import { prova } from '../lib/prova.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -117,6 +129,11 @@ const cartaoDaMedida = (f, estado) => {
     nome: f.nome[lang],
     medida: f.medida[lang],
     estado,
+    /* QUEM FIXOU O LIMIAR (F1.10, item 8.5): as treze do Procedimento dizem-no na
+       declaração, e as oito do Painel Social não têm limiar nenhum, e por isso
+       não têm fixador. `fixadorDoLimiar()` devolve `null` a essas e fecha a
+       construção a qualquer medida com limiar que o não declare. */
+    fixador: fixadorDoLimiar(f, `uniao-europeia: a medida "${f.claim}"`),
     glifos: [...String(linha.value)].length,
   };
 };
@@ -124,6 +141,29 @@ const cartoes = [
   ...medidas.map((f) => cartaoDaMedida(f, f.estado ?? 'sem')),
   ...sociais.map((f) => cartaoDaMedida(f, null)),
 ].map((c, i) => ({ ...c, posicao: i + 1 }));
+
+/* ---------------------------------------------------------------------------
+ * A MANCHETE E A LEDE, VINDAS DA PRIMEIRA PÁGINA (F1.10, 08.09.2026)
+ * ---------------------------------------------------------------------------
+ * Uma ou muitas: a frase certa escolhe-se na construção, com a contagem que o
+ * portão vai reconferir. Sem plural inventado no cliente. É a mesma conta que
+ * `Cabeca.astro` fazia, com as mesmas cadeias.
+ *
+ * A LEDE É CONSTRUÍDA e não escrita: `ledeDoPainel()` nomeia as medidas cujo
+ * estado é «fora», pela ordem do painel, com as palavras de gramática da edição
+ * e o ano só quando as linhas partilham um. `data-prova-lista` é a marca que o
+ * portão lê: parte o texto pelos separadores que conhece, conta os itens e
+ * compara-os com `painel_fora_do_limiar`, que é a mesma contagem que a manchete
+ * leva. A marca fica só à volta da LISTA.
+ *
+ * `null` quando nenhuma medida está fora do limiar, e a página não rende lede
+ * nenhuma nesse dia: uma frase que abre «Fora do limiar:» e não nomeia nada não
+ * é uma frase.
+ */
+const foraDoLimiar = p.painel_fora_do_limiar.valor;
+const cauda =
+  foraDoLimiar === 1 ? s.inicio.cabeca.tituloPaisUm : s.inicio.cabeca.tituloPaisMuitos;
+const lede = ledeDoPainel(medidas, s.inicio.cabeca.ledePais, lang);
 ---
 
 <Base
@@ -133,7 +173,17 @@ const cartoes = [
   description={s.uniaoEuropeia.metaDescription}
 >
   <header class="sec-head">
-    <h1>{s.uniaoEuropeia.h1}</h1>
+    <p class="eyebrow">{s.uniaoEuropeia.h1}</p>
+    <h1 class="cabeca-h1">
+      {s.inicio.cabeca.tituloPaisA}
+      <ValorDaProva chave="painel_fora_do_limiar" item={p.painel_fora_do_limiar} lang={lang} />
+      {cauda}
+      <ValorDaProva chave="painel_dentro_do_limiar" item={p.painel_dentro_do_limiar} lang={lang} />
+      {s.inicio.cabeca.tituloPaisFim}
+    </h1>
+    {lede && (
+      <p class="cabeca-lede">{s.inicio.cabeca.ledePais.abre}<span data-prova-lista="painel_fora_do_limiar">{lede.itens}</span><Frase partes={lede.cauda} lang={lang} /></p>
+    )}
   </header>
 
   <Faixa

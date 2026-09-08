@@ -196,7 +196,11 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | conteudo | Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu, e a descer. | frases | retirada | o F0.9 tirou «e a descer» a 03.09.2026: era uma tendência, e o livro-razão publica um só valor deste indicador (`grep -rl tipsgo10 ledger/claims/` devolve um ficheiro, o de 2025). Uma tendência volta em F3.1, tipada, com a linha do período anterior ao lado, e não com estas palavras |
 | conteudo | Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu. | leitura | viva | — |
 | navegacao | Encontrou um erro? correcoes@oestadodopais.pt · O registo de correções → | até 2026-08-26 | viva | — |
-| conteudo | Fora do limiar: dívida pública, posição de investimento internacional, custo unitário do trabalho e preços da habitação , em . | frases | viva | — |
+| conteudo | Fora do limiar da Comissão: dívida pública, posição de investimento internacional, custo unitário do trabalho e preços da habitação , em . | frases | viva | o item 8.5 do F1.10 (08.09.2026): «limiar» nunca aparece sozinho, e a abertura da lede passa a dizer de quem é o limiar que as medidas nomeadas passaram. A lede mudou de página com as duas contagens da manchete: vive agora em «Portugal na União Europeia» |
+| conteudo | A dívida pública é % do PIB e a taxa de desemprego é % da população ativa. | lugar | viva | a manchete do país, depois de os 21 cartões dos dois quadros da União mudarem de página (decisão do lugar de direção de 08.09.2026, pela delegação da §1.98; itens 8.15 e 8.16 do F1.10). Uma frase, dois algarismos selados, sem adjetivo, com as duas medidas de cabeça do domínio vivo. A frase antiga («Portugal ultrapassa … e cumpre …») não saiu do sítio: é agora a manchete de «Portugal na União Europeia», que é onde o que ela conta se vê |
+| conteudo | Government debt is % of GDP and the unemployment rate is % of the labour force. | lugar | viva | a manchete do país, depois de os 21 cartões dos dois quadros da União mudarem de página (decisão do lugar de direção de 08.09.2026, pela delegação da §1.98; itens 8.15 e 8.16 do F1.10). Uma frase, dois algarismos selados, sem adjetivo, com as duas medidas de cabeça do domínio vivo. A frase antiga («Portugal ultrapassa … e cumpre …») não saiu do sítio: é agora a manchete de «Portugal na União Europeia», que é onde o que ela conta se vê |
+| conteudo | O limiar é o valor de referência do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, fixado no regulamento que criou o Procedimento e revisto pela Comissão Europeia. | lugar | viva | a frase que diz o que o limiar é e quem o fixou, na leitura de cada uma das treze medidas do painel do Procedimento (item 8.5 do F1.10, 08.09.2026). As palavras são as do motivo `limiar-do-quadro` de `ledger/allowlist.yml` («fixado no Regulamento (UE) n.º 1176/2011 e revisto pela Comissão»), sem o número do diploma, que seria um algarismo sem marca numa página do leitor |
+| conteudo | The threshold is the reference value of the Macroeconomic Imbalance Procedure scoreboard, set in the regulation that created the Procedure and revised by the European Commission. | lugar | viva | a frase que diz o que o limiar é e quem o fixou, na leitura de cada uma das treze medidas do painel do Procedimento (item 8.5 do F1.10, 08.09.2026). As palavras são as do motivo `limiar-do-quadro` de `ledger/allowlist.yml` («fixado no Regulamento (UE) n.º 1176/2011 e revisto pela Comissão»), sem o número do diploma, que seria um algarismo sem marca numa página do leitor |
 | navegacao | Found an error? correcoes@oestadodopais.pt · The corrections log → | até 2026-08-26 | viva | — |
 | conteudo | General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold, and falling. | frases | retirada | a gémea inglesa da de cima: o F0.9 tirou «and falling» a 03.09.2026, pela mesma razão e no mesmo dia. Uma linha é uma decisão editorial e leva as duas edições da mesma frase |
 | conteudo | General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold. | leitura | viva | — |
@@ -207,12 +211,12 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | conteudo | Jovens que deixaram a escola com o secundário incompleto e não estão em formação. | frases | viva | — |
 | conteudo | Labour cost per unit of output, per hour worked. | frases | viva | — |
 | navegacao | Leitura breve | até 2026-08-26 | retirada | as duas palavras da densidade de um cartão saem das páginas do leitor (bloco F1.10, item 8.14, 08.09.2026): o diretor viu a 07.09 à noite que o comando «Relance · Leitura breve» mostrava, num estado, cabeçalhos com explicações e nada, e no outro as vinte e uma leituras de uma vez. O comando saiu da primeira página e os títulos de secção que as usavam passaram a dizer o que a secção tem («As medidas», «A leitura de cada medida»), que são as cadeias que a `DECISIONS.md` §1.98 declarou. O termo continua a existir na decisão e no brief; o que sai é a superfície |
-| conteudo | limiar % · abaixo | frases | viva | — |
-| conteudo | limiar % · acima | frases | viva | — |
-| conteudo | limiar − % · abaixo | frases | viva | — |
-| conteudo | limiar − % · acima | frases | viva | — |
-| conteudo | limiar − /+ % | frases | viva | — |
-| conteudo | limiar − pp · acima | frases | viva | — |
+| conteudo | limiar da Comissão % · abaixo | frases | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
+| conteudo | limiar da Comissão % · acima | frases | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
+| conteudo | limiar da Comissão − % · abaixo | frases | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
+| conteudo | limiar da Comissão − % · acima | frases | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
+| conteudo | limiar da Comissão − /+ % | frases | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
+| conteudo | limiar da Comissão − pp · acima | frases | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
 | conteudo | Madeira · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | conteudo | Madeira · região | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | conteudo | municipalities · CAOP | frases | viva | — |
@@ -222,7 +226,7 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | navegacao | O Estado do País | até 2026-08-26 | viva | — |
 | conteudo | O que o país tem a haver do exterior menos o que lhe deve: negativo quando deve mais do que tem a haver. | até 2026-08-26 | viva | — |
 | conteudo | O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27. Um valor abaixo da média significa menos poder de compra por pessoa; um valor acima, mais. | regioes | viva | — |
-| conteudo | Outside the threshold: government debt, net international investment position, unit labour cost and house prices , in . | frases | viva | — |
+| conteudo | Outside the Commission threshold: government debt, net international investment position, unit labour cost and house prices , in . | frases | viva | o item 8.5 do F1.10 (08.09.2026): «limiar» nunca aparece sozinho, e a abertura da lede passa a dizer de quem é o limiar que as medidas nomeadas passaram. A lede mudou de página com as duas contagens da manchete: vive agora em «Portugal na União Europeia» |
 | navegacao | Passe o cursor sobre um ponto para ler o município. Teclado: Tab até ao mapa, setas para percorrer os municípios vizinhos, Home para voltar a Évora. | grelha-2 | retirada | a leitura em voz alta do mapa saiu com os pontos da primeira página (Emenda 20a e 20c; bloco do mapa por distritos) |
 | conteudo | Península de Setúbal · região | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | conteudo | Portugal breaches 4 thresholds of the Macroeconomic Imbalance Procedure and meets 9 . | até 2026-08-26 | viva | — |
@@ -240,12 +244,12 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | navegacao | The regions published on the convergence rule. | grelha-2 | retirada | a régua da convergência saiu da primeira página até haver a página das regiões (Emenda 18, consequência decidida a 25.08; bloco A da auditoria de UI e UX, `696b51a`) |
 | conteudo | The share of people aged to who are in employment. | leitura | viva | — |
 | conteudo | The share spending more than % of disposable income on housing. | frases | viva | — |
-| conteudo | threshold % · above | frases | viva | — |
-| conteudo | threshold % · below | frases | viva | — |
-| conteudo | threshold − % · above | frases | viva | — |
-| conteudo | threshold − % · below | frases | viva | — |
-| conteudo | threshold − /+ % | frases | viva | — |
-| conteudo | threshold − pp · above | frases | viva | — |
+| conteudo | Commission threshold % · above | frases | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
+| conteudo | Commission threshold % · below | frases | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
+| conteudo | Commission threshold − % · above | frases | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
+| conteudo | Commission threshold − % · below | frases | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
+| conteudo | Commission threshold − /+ % | frases | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
+| conteudo | Commission threshold − pp · above | frases | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
 | conteudo | What the country is owed from abroad minus what it owes abroad: negative when it owes more than it is owed. | até 2026-08-26 | viva | — |
 
 ## `/livro-razao` · `/en/ledger` (etapa 3, subetapa 3b)
@@ -1910,8 +1914,8 @@ que a régua não passasse a ter uma linha cujo texto é a letra «a».
 | conteudo | no verified measures yet first wave | dominio| retirada | o índice dos domínios deixa de falar da cobertura da casa (bloco F1.10, §7.8 e §9.1, 08.09.2026, pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda sem medidas conferidas · vaga» passaram ao Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do leitor. O índice lista os domínios com página, cada um com o nome, a contagem das suas medidas e a porta. O Método não é uma rota do inventário (Emenda 15: é a casa do método), e por isso a mesma frase ali não é uma linha deste ficheiro |
 | conteudo | no verified measures yet second wave | dominio| retirada | o índice dos domínios deixa de falar da cobertura da casa (bloco F1.10, §7.8 e §9.1, 08.09.2026, pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda sem medidas conferidas · vaga» passaram ao Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do leitor. O índice lista os domínios com página, cada um com o nome, a contagem das suas medidas e a porta. O Método não é uma rota do inventário (Emenda 15: é a casa do método), e por isso a mesma frase ali não é uma linha deste ficheiro |
 | conteudo | no verified measures yet third wave | dominio| retirada | o índice dos domínios deixa de falar da cobertura da casa (bloco F1.10, §7.8 e §9.1, 08.09.2026, pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda sem medidas conferidas · vaga» passaram ao Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do leitor. O índice lista os domínios com página, cada um com o nome, a contagem das suas medidas e a porta. O Método não é uma rota do inventário (Emenda 15: é a casa do método), e por isso a mesma frase ali não é uma linha deste ficheiro |
-| conteudo | A dívida pública é % do PIB, fora do limiar de %; o saldo das administrações públicas é % do PIB, dentro do limiar de − %. | dominio | viva | — |
-| conteudo | Government debt is % of GDP, outside the threshold of %; the general government balance is % of GDP, within the threshold of − %. | dominio | viva | — |
+| conteudo | A dívida pública é % do PIB, fora do limiar da Comissão de %; o saldo das administrações públicas é % do PIB, dentro do limiar publicado de − %. | dominio | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean». As duas medidas da manchete têm fixadores diferentes: a dívida pública é uma das treze do painel do Procedimento, e o saldo das administrações públicas tem limiar publicado sem que nenhuma linha nem decisão desta casa diga quem o fixou |
+| conteudo | Government debt is % of GDP, outside the Commission threshold of %; the general government balance is % of GDP, within the published threshold of − %. | dominio | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
 | conteudo | As medidas de <nome>, com a fonte, o período e a data de cada uma. | dominio | viva | — |
 | conteudo | The measures of <nome>, with the source, the period and the dates of each one. | dominio | viva | — |
 | conteudo | Este domínio mede as contas do Estado, o que a economia produz por pessoa, a dívida dos municípios e o que se ganha e se trabalha em Portugal; não mede a produtividade, que é pergunta de estudo, nem o produto abaixo das regiões, nem a disparidade salarial entre sexos ao nível do concelho, que nenhum publicador oficial calcula. | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
@@ -1949,14 +1953,16 @@ que a régua não passasse a ter uma linha cujo texto é a letra «a».
 | conteudo | period · read · checked | dominio | viva | — |
 | conteudo | fonte · · | dominio | viva | — |
 | conteudo | source · · | dominio | viva | — |
-| conteudo | limiar % · fora do limiar | dominio | viva | — |
-| conteudo | limiar − % · dentro do limiar | dominio | viva | — |
-| conteudo | threshold % · outside the threshold | dominio | viva | — |
-| conteudo | threshold − % · within the threshold | dominio | viva | — |
-| conteudo | dentro do limiar | dominio | viva | — |
-| conteudo | fora do limiar | dominio | viva | — |
-| conteudo | within the threshold | dominio | viva | — |
-| conteudo | outside the threshold | dominio | viva | — |
+| conteudo | limiar da Comissão % · fora do limiar da Comissão | dominio | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
+| conteudo | limiar publicado − % · dentro do limiar publicado | dominio | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
+| conteudo | limiar publicado % · fora do limiar publicado | dominio | viva | o item 8.5 do F1.10 (08.09.2026): o crescimento da despesa líquida tem limiar publicado (o excerto da linha escreve «a taxa de crescimento de 5% recomendada») e nenhuma linha nem decisão desta casa diz quem o fixou; o cartão e a leitura dizem o que se prova, e não um autor |
+| conteudo | published threshold % · outside the published threshold | dominio | viva | o item 8.5 do F1.10 (08.09.2026): o crescimento da despesa líquida tem limiar publicado (o excerto da linha escreve «a taxa de crescimento de 5% recomendada») e nenhuma linha nem decisão desta casa diz quem o fixou; o cartão e a leitura dizem o que se prova, e não um autor |
+| conteudo | Commission threshold % · outside the Commission threshold | dominio | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
+| conteudo | published threshold − % · within the published threshold | dominio | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
+| conteudo | dentro do limite legal | dominio | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean». As duas classes do mapa do índice de dívida são o teto legal, e não um limiar da Comissão |
+| conteudo | fora do limite legal | dominio | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean». As duas classes do mapa do índice de dívida são o teto legal, e não um limiar da Comissão |
+| conteudo | within the legal limit | dominio | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
+| conteudo | outside the legal limit | dominio | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
 | conteudo | o limite legal | dominio | viva | — |
 | conteudo | the legal cap | dominio | viva | — |
 | conteudo | em doze meses, na base do Eurostat | dominio | viva | — |
@@ -2463,3 +2469,54 @@ ainda**: a vista que as usa é a parte do bloco que ficou por construir. Uma lin
 `viva` que não se rende fecha a construção, e é a régua a dizer a verdade sobre o
 sítio. Estão listadas em `design/especime-v3/CHAVES-EN.md`, e quem as render
 declara-as aqui no mesmo commit.
+
+## Bloco F1.10 · terceira sessão · a manchete do país e quem fixou o limiar · 08.09.2026
+
+**Quatro linhas novas, vinte e quatro mudadas, nenhuma retirada.** São as duas
+decisões do lugar de direção de 08.09.2026, pela delegação da §1.98.
+
+**A manchete do país (itens 8.15 e 8.16).** Com os 21 cartões dos dois quadros da
+União em «Portugal na União Europeia», a manchete de `/` deixou de falar do
+Procedimento e passou a ser uma frase com as duas medidas de cabeça do domínio
+vivo: a dívida pública e a taxa de desemprego, as duas primeiras linhas da faixa
+desta página. Uma frase, dois algarismos selados, sem adjetivo, que é a regra da
+manchete sem uma emenda. **A frase antiga não saiu do sítio nem mudou uma
+palavra:** «Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios
+Macroeconómicos e cumpre 9» é agora a manchete da página europeia, e a lede que
+nomeia as medidas fora do limiar foi com ela. As linhas dessas duas frases ficam
+onde estavam na tabela, `viva`, porque continuam a render-se; o que mudou foi a
+página que as rende, e uma linha do inventário é sobre a frase e não sobre a
+rota.
+
+**«limiar» nunca sozinho (item 8.5).** A decisão (2) da emenda de 07.09 à §1.101,
+depois de o diretor dizer que a palavra «doesn't really reflect exactly what they
+mean»: a palavra fica, porque é a que a Comissão e o INE usam, e nunca aparece
+sozinha. **Não foi uma troca de duas cadeias.** «dentro do limiar» servia, com a
+mesma cadeia, os dois quadros da União E o índice de dívida de uma câmara, cujo
+limiar é o limite que a lei portuguesa fixa: escrever «limiar da Comissão» em 616
+páginas de concelho seria dar à Comissão um número que não é dela. Cada medida
+com limiar passou a declarar quem o fixou (`limiarFixadoPor`, lista fechada em
+`src/data/figuras.mjs`, com um guarda que fecha a construção sem ele), e o par de
+palavras do estado e o rótulo da linha do limiar saem daí. Vinte e duas linhas da
+tabela mudaram de texto por causa disso, e cada uma leva a razão na sua coluna.
+
+**Duas medidas do domínio dizem «limiar publicado», e isso é um achado escrito e
+não uma escolha de forma.** O saldo das administrações públicas e o crescimento
+da despesa líquida têm limiar publicado na fonte que a linha cita, e **nenhuma
+linha do livro-razão nem decisão registada desta casa diz quem o fixou**: a nota
+da primeira escreve «O limiar de 3 % do PIB não está nesta resposta: está na
+página Statistics Explained do Eurostat … e não tem linha própria», e o excerto da
+segunda escreve «a taxa de crescimento de 5% recomendada» sem dizer por quem. O
+cartão e a linha do limiar dizem o que se prova; a leitura não afirma um autor.
+Quem fixou estes dois limiares fica no relatório do bloco como achado para o
+lugar de direção.
+
+**A frase que diz o que o limiar é e quem o fixou** rende-se na leitura de cada
+uma das treze medidas do painel do Procedimento, e só nessas: o fixador `lei` tem
+a sua frase na página do concelho, uma vez («O limite é fixado no artigo 52.º da
+Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos
+anteriores.»), e o §0 do brief manda uma coisa num lugar só. As palavras são as
+do motivo `limiar-do-quadro` de `ledger/allowlist.yml` — «fixado no Regulamento
+(UE) n.º 1176/2011 e revisto pela Comissão» —, **sem o número do diploma**, que
+seria um algarismo sem marca numa página do leitor, e com «revisto» a dizer o que
+o registo diz, que não é «fixado pela Comissão».

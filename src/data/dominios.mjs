@@ -211,6 +211,10 @@ export const DOMINIOS = /** @type {const} */ ([
  *              medida»: E5 mostra o limite legal, e o rótulo di-lo.
  * `limiar`     o limiar publicado pelo quadro, quando existe, na forma que
  *              `Peca.astro` já lê.
+ * `limiarFixadoPor` quem fixou esse limiar, da lista fechada de
+ *              `FIXADORES_DO_LIMIAR` (F1.10, item 8.5). Obrigatório onde há
+ *              limiar: `fixadorDoLimiar()` fecha a construção sem ele, porque a
+ *              palavra «limiar» não volta a aparecer sozinha.
  * `porConcelho` a chave das 308 linhas desta medida, quando existem.
  * `forma`      a forma gráfica admitida que esta medida ganha (`§3` do brief da
  *              forma dos domínios), ou `null`.
@@ -231,6 +235,7 @@ export const DOMINIOS = /** @type {const} */ ([
  *   ambito?: ParDeLinguas,
  *   rotuloDoValor?: ParDeLinguas,
  *   limiar?: Limiar|null,
+ *   limiarFixadoPor?: 'comissao'|'lei'|'porRegistar'|null,
  *   porConcelho?: 'ganho'|'indice'|null,
  *   forma?: 'barra-concelho'|'mapa'|null,
  *   ausencia?: ParDeLinguas|null,
@@ -279,6 +284,15 @@ export const MEDIDAS_DO_DOMINIO_1 = /** @type {const} */ ([
     /* O limiar de 3 % do Protocolo n.º 12, do lado do défice: um saldo abaixo de
        −3 % está fora. O sinal escreve-se, porque o limiar é negativo. */
     limiar: { nl: '3', sinal: '−', lado: 'inferior', simbolo: '%' },
+    /* `porRegistar` E NÃO `comissao` (F1.10, item 8.5). Esta linha não é do
+       painel do Procedimento, e quem fixou o seu limiar não está registado nesta
+       casa: a `note` da linha escreve «O limiar de 3 % do PIB não está nesta
+       resposta: está na página Statistics Explained do Eurostat, alojada neste
+       estudo, e não tem linha própria», e o Protocolo n.º 12 que o comentário
+       acima nomeia é a leitura de quem escreveu o comentário, e não uma linha do
+       livro-razão nem uma decisão registada. O cartão diz «dentro do limiar
+       publicado», que é o que a linha prova, e a leitura não afirma um autor. */
+    limiarFixadoPor: 'porRegistar',
     porConcelho: null,
     forma: null,
   },
@@ -289,6 +303,10 @@ export const MEDIDAS_DO_DOMINIO_1 = /** @type {const} */ ([
     nome: { pt: 'Dívida pública', en: 'Government debt' },
     unidade: { pt: 'Percentagem do PIB', en: 'Percentage of GDP' },
     limiar: { nl: '60', lado: 'superior', simbolo: '%' },
+    /* A MESMA LINHA DO PAINEL, E POR ISSO O MESMO FIXADOR: `divida-publica-2025`
+       é uma das treze do Procedimento, e a sua `note` abre «Limiar do
+       Procedimento relativo aos Desequilíbrios Macroeconómicos: 60%». */
+    limiarFixadoPor: 'comissao',
     porConcelho: null,
     forma: null,
   },
@@ -305,6 +323,11 @@ export const MEDIDAS_DO_DOMINIO_1 = /** @type {const} */ ([
        Conselho das Finanças Públicas. É um limiar publicado, como os do
        Procedimento, e entra pelo mesmo motivo declarado. */
     limiar: { nl: '5', lado: 'superior', simbolo: '%' },
+    /* `porRegistar` PELA MESMA RAZÃO DE E2 (F1.10, item 8.5): o excerto da linha
+       escreve «superando em 1,4 p.p. a taxa de crescimento de 5% recomendada» e
+       não diz por quem; o Conselho da UE que o comentário acima nomeia não está
+       no excerto, nem na nota, nem numa decisão registada. */
+    limiarFixadoPor: 'porRegistar',
     porConcelho: null,
     forma: null,
   },

@@ -84,6 +84,11 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
    Procedimento e uma do Painel Social é ter ou não ter limiar publicado, e isso
    já está na declaração. Não há aqui uma segunda lista de medidas nem uma
    segunda conta: o que chega é o que a vista já rendeu na faixa. */
+/* O par de palavras do fixador, e o rótulo da linha do limiar com ele. Onde não
+   há limiar não há fixador, e a linha não se rende. */
+/** @param {string|null} fixador */
+const parDo = (fixador) => (fixador ? s.estado[fixador] ?? null : null);
+
 const leituras = medidas.map((m) => ({
   id: m.claim,
   nome: m.nome[lang],
@@ -93,6 +98,13 @@ const leituras = medidas.map((m) => ({
   comparacao: m.comparacao ?? null,
   banda: Boolean(m.limiar && (m.limiar.inferior || m.limiar.superior)),
   simbolo: m.limiar?.simbolo ?? '%',
+  /* QUEM FIXOU O LIMIAR (F1.10, item 8.5). Chega da vista, lido da declaração da
+     medida por `fixadorDoLimiar()`. Serve duas coisas nesta leitura: o rótulo da
+     linha do limiar, que passa a dizer de quem ele é («limiar da Comissão 60% ·
+     acima»), e a frase que diz o que o limiar é e quem o fixou. Uma medida com
+     limiar e sem fixador não chega aqui: `fixadorDoLimiar()` fecha a construção
+     antes, na vista. */
+  fixador: m.limiarFixadoPor ?? null,
   datas: tresDatasDaLinha(m.claim),
   estado: m.estado ?? null,
   /* A RÉGUA CONTRA O LIMIAR, quando o quadro publica um: a barra que a peça
@@ -172,7 +184,7 @@ const leituras = medidas.map((m) => ({
               dentro dos cartões e das leituras para que não volte. */}
           {l.limiar && (
             <p class="dobra-limiar">
-              <span class="dobra-limiar-k">{s.home.numeros.limiar}</span>{' '}
+              <span class="dobra-limiar-k">{parDo(l.fixador)?.rotulo ?? s.home.numeros.limiar}</span>{' '}
               <span class="dobra-limiar-v">
                 {l.banda ? (
                   <>
@@ -192,6 +204,23 @@ const leituras = medidas.map((m) => ({
               </span>
               {l.comparacao && <span> · {s.home.numeros[l.comparacao]}</span>}
             </p>
+          )}
+
+          {/* A FRASE QUE DIZ O QUE O LIMIAR É E QUEM O FIXOU (F1.10, item 8.5,
+              08.09.2026). É a segunda metade da decisão (2) da emenda de 07.09
+              à §1.101: o cartão diz de que lado do limiar o valor está e de quem
+              o limiar é, e a leitura diz, numa frase, o que ele é e quem o
+              fixou.
+
+              SÓ O FIXADOR `comissao` A LEVA, e as outras duas não é por
+              esquecimento. O `lei` tem a sua frase na página do concelho, uma
+              vez («O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez
+              e meia a média da receita corrente líquida dos três anos
+              anteriores.»), e o §0 do brief manda uma coisa num lugar só. O
+              `porRegistar` não tem autor a nomear, e uma frase que dissesse
+              quem fixou aqueles dois limiares seria inventada. */}
+          {l.fixador === 'comissao' && (
+            <p class="dobra-limiar-frase">{s.estado.fraseDoLimiarDaComissao}</p>
           )}
 
           {/* A frase da medida, onde ela existe: diz o que a coisa é, e não o
@@ -235,7 +264,7 @@ const leituras = medidas.map((m) => ({
               colore={l.estado === 'fora' || l.estado === 'dentro'}
             >
               <Fragment slot="referencia">
-                {s.home.numeros.limiar}{' '}
+                {parDo(l.fixador)?.rotulo ?? s.home.numeros.limiar}{' '}
                 {l.banda ? (
                   <>
                     {l.limiar.inferior.sinal ?? ''}

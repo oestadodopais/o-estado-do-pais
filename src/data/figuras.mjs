@@ -123,6 +123,7 @@ export const FIGURAS_PDM = [
     },
     /* nota: «Limiar do Procedimento relativo aos Desequilíbrios Macroeconómicos: 60%.» */
     limiar: { nl: '60', lado: 'superior', simbolo: '%' },
+    limiarFixadoPor: 'comissao',
     /* «E A DESCER» SAI (F0.9, 03.09.2026). Era uma tendência, e o sítio publica
        um valor de 2025 e mais nenhum: não há linha de 2024 no livro-razão
        (`grep -rl tipsgo10 ledger/claims/` devolve este ficheiro e mais nenhum),
@@ -150,6 +151,7 @@ export const FIGURAS_PDM = [
     },
     /* nota: «… -35%.» */
     limiar: { nl: '35', sinal: '−', lado: 'inferior', simbolo: '%' },
+    limiarFixadoPor: 'comissao',
     /* A frase dizia o contrário do valor publicado, e dizia duas coisas que a
        página não pode mostrar.
 
@@ -181,6 +183,7 @@ export const FIGURAS_PDM = [
     },
     /* nota: «… +9% (EA).» */
     limiar: { nl: '9', lado: 'superior', simbolo: '%' },
+    limiarFixadoPor: 'comissao',
     /* A MUDANÇA DE DEFINIÇÃO SAI (F0.9, 03.09.2026). É a oitava frase da §1.44,
        a «de outra natureza»: não compara valores nem afirma um sentido, mas
        afirma o que a FONTE media antes e quando mudou, e a página não tem nem o
@@ -203,6 +206,7 @@ export const FIGURAS_PDM = [
     },
     /* nota: «… +9%.» */
     limiar: { nl: '9', lado: 'superior', simbolo: '%' },
+    limiarFixadoPor: 'comissao',
     /* A SEGUNDA ORAÇÃO SAI INTEIRA (F0.9, 03.09.2026), e são duas afirmações
        numa só: um valor de 2024, que a página não tem, e a comparação entre
        2024 e 2025, que sem ele não existe. `grep -rl tipsho20 ledger/claims/`
@@ -225,6 +229,7 @@ export const FIGURAS_PDM = [
     },
     /* nota: «… -3%.» */
     limiar: { nl: '3', sinal: '−', lado: 'inferior', simbolo: '%' },
+    limiarFixadoPor: 'comissao',
   },
   {
     claim: 'divida-das-empresas-2025',
@@ -236,6 +241,7 @@ export const FIGURAS_PDM = [
     },
     /* nota: «… 85%.» */
     limiar: { nl: '85', lado: 'superior', simbolo: '%' },
+    limiarFixadoPor: 'comissao',
   },
   {
     claim: 'divida-das-familias-2025',
@@ -247,6 +253,7 @@ export const FIGURAS_PDM = [
     },
     /* nota: «… 55%.» */
     limiar: { nl: '55', lado: 'superior', simbolo: '%' },
+    limiarFixadoPor: 'comissao',
   },
   {
     claim: 'fluxo-de-credito-as-empresas-2025',
@@ -258,6 +265,7 @@ export const FIGURAS_PDM = [
     },
     /* nota: «… 13%.» */
     limiar: { nl: '13', lado: 'superior', simbolo: '%' },
+    limiarFixadoPor: 'comissao',
   },
   {
     claim: 'fluxo-de-credito-as-familias-2025',
@@ -269,6 +277,7 @@ export const FIGURAS_PDM = [
     },
     /* nota: «… 14%.» */
     limiar: { nl: '14', lado: 'superior', simbolo: '%' },
+    limiarFixadoPor: 'comissao',
   },
   {
     claim: 'saldo-da-balanca-corrente-2025',
@@ -285,6 +294,7 @@ export const FIGURAS_PDM = [
       superior: { nl: '6', sinal: '+' },
       simbolo: '%',
     },
+    limiarFixadoPor: 'comissao',
   },
   {
     claim: 'taxa-de-actividade-2025',
@@ -298,6 +308,7 @@ export const FIGURAS_PDM = [
        dela que o algarismo sai: −0,2, com o símbolo «pp» que ela usa e que não
        é o «%» das outras doze. */
     limiar: { nl: '0,2', sinal: '−', lado: 'inferior', simbolo: ' pp' },
+    limiarFixadoPor: 'comissao',
   },
   {
     claim: 'taxa-de-cambio-efectiva-real-2025',
@@ -313,6 +324,7 @@ export const FIGURAS_PDM = [
       superior: { nl: '3', sinal: '+' },
       simbolo: '%',
     },
+    limiarFixadoPor: 'comissao',
   },
   {
     claim: 'taxa-de-desemprego-mip-2025',
@@ -324,6 +336,7 @@ export const FIGURAS_PDM = [
     },
     /* nota: «… 10%.» */
     limiar: { nl: '10', lado: 'superior', simbolo: '%' },
+    limiarFixadoPor: 'comissao',
   },
 ];
 
@@ -598,6 +611,125 @@ export function comparacaoComOLimiar(claim, limiar) {
   if (valor > alvo) return 'acima';
   if (valor < alvo) return 'abaixo';
   return 'noLimiar';
+}
+
+/**
+ * ===========================================================================
+ * QUEM FIXOU O LIMIAR (F1.10, item 8.5, 08.09.2026)
+ * ===========================================================================
+ *
+ * O diretor, a 07.09 à noite, sobre a palavra «limiar»: «doesn't really reflect
+ * exactly what they mean». A decisão (2) da emenda de 07.09 à §1.101, tomada
+ * pelo lugar de direção pela delegação da §1.98: a palavra fica, porque é a que
+ * a Comissão e o INE usam, mas **nunca aparece sozinha** — o cartão diz em
+ * palavras de que lado dela o valor está E de quem ela é, e a leitura diz numa
+ * frase o que o limiar é e quem o fixou.
+ *
+ * ---------------------------------------------------------------------------
+ * PORQUE É UM CAMPO DECLARADO, E NÃO UMA TROCA DE DUAS CADEIAS
+ * ---------------------------------------------------------------------------
+ * «dentro do limiar» e «fora do limiar» serviam, com as mesmas duas cadeias,
+ * medidas de limiares de origens diferentes: os dois quadros da União, o
+ * domínio, e o ÍNDICE DE DÍVIDA de uma câmara, cujo limiar é o limite que a lei
+ * portuguesa fixa e não é da Comissão. Uma troca de cadeias teria posto «limiar
+ * da Comissão» debaixo de 616 páginas de concelho onde a Comissão não tem nada
+ * que ver com o número.
+ *
+ * Por isso o qualificador vem de QUEM FIXOU o limiar daquela medida, que é um
+ * campo da declaração, ao lado do `lado` e do `simbolo`, e é **declarado e nunca
+ * inferido** pela mesma razão que o `lado`: uma regra que lesse «é do painel,
+ * logo é da Comissão» acertaria hoje e erraria no primeiro limiar que o painel
+ * ganhasse de outra origem.
+ *
+ * ---------------------------------------------------------------------------
+ * A LISTA É FECHADA, E CADA VALOR TRAZ A ORIGEM
+ * ---------------------------------------------------------------------------
+ * `comissao`   as treze medidas do painel do Procedimento e a E3 do domínio, que
+ *              é a mesma linha. A origem está em dois sítios do repositório e
+ *              não numa frase escrita aqui: o campo `note` de cada uma das treze
+ *              linhas abre «Limiar do Procedimento relativo aos Desequilíbrios
+ *              Macroeconómicos: <n>», e o motivo `limiar-do-quadro` de
+ *              `ledger/allowlist.yml` — que é a dispensa registada com que estes
+ *              algarismos entram na página — escreve, palavra por palavra,
+ *              «fixado no Regulamento (UE) n.º 1176/2011 e revisto pela
+ *              Comissão». É por causa dessa segunda metade que a frase da
+ *              leitura diz «fixado no regulamento que criou o Procedimento e
+ *              revisto pela Comissão Europeia» e não «fixado pela Comissão»: o
+ *              registo distingue quem fixou de quem revê, e a página também.
+ *
+ * `lei`        o limite de dívida total de um município. A origem é a linha
+ *              `indice-de-divida-limite-legal`, cujo localizador cita o quadro
+ *              «LIMITE À DÍVIDA TOTAL — LEI 73/2013 (ART. 52º)» e cuja
+ *              derivação, nas 308 linhas do índice, escreve «art. 52.º da Lei
+ *              n.º 73/2013». A página do concelho já rende a frase que diz o que
+ *              o limite é e quem o fixou (`s.municipio.distanciaLeiAntes` e as
+ *              duas peças seguintes), e por isso a leitura de uma medida com
+ *              este fixador não escreve uma segunda: o §0 do brief manda uma
+ *              coisa num lugar só.
+ *
+ * `porRegistar` o limiar existe e está publicado na fonte que a linha cita, e
+ *              **quem o fixou não está registado nesta casa**. São duas medidas
+ *              do domínio, e não se inventa um fixador para nenhuma: o saldo das
+ *              administrações públicas (E2), cuja linha escreve «O limiar de 3 %
+ *              do PIB não está nesta resposta: está na página Statistics
+ *              Explained do Eurostat … e não tem linha própria», e o crescimento
+ *              da despesa líquida (E4), cujo excerto escreve «a taxa de
+ *              crescimento de 5% recomendada» sem dizer por quem. O cartão delas
+ *              diz «dentro do limiar publicado» / «fora do limiar publicado»,
+ *              que é o que a linha prova, e a leitura não afirma um autor.
+ *              **Fica no relatório do bloco como achado para o lugar de
+ *              direção**: quem fixou estes dois limiares é uma linha do
+ *              livro-razão ou uma decisão registada, e não uma escolha de quem
+ *              constrói a página.
+ *
+ * O GUARDA ESTÁ EM `fixadorDoLimiar()`, e fecha a construção: uma medida com
+ * limiar e sem fixador declarado não se rende, porque a alternativa é a palavra
+ * «limiar» a voltar a aparecer sozinha sem que nada o diga.
+ */
+export const FIXADORES_DO_LIMIAR = /** @type {const} */ ([
+  'comissao',
+  'lei',
+  'porRegistar',
+]);
+
+/**
+ * O fixador declarado de uma medida, ou `null` quando ela não tem limiar.
+ *
+ * NÃO DEVOLVE UMA PALAVRA. Devolve a chave, e é o gabarito que escolhe a cadeia
+ * da edição em `s.estado`, como já faz com `'fora'`, `'dentro'` e `'sem'`: as
+ * palavras vivem no inventário da voz e não num ficheiro de dados.
+ *
+ * OS DOIS NOMES DO MESMO CAMPO. Um limiar chama-se `limiar` nos dois quadros da
+ * União e nas medidas do domínio, e chama-se `tecto` na medida do concelho, onde
+ * a referência é uma LINHA do livro-razão e não um algarismo declarado. São a
+ * mesma coisa para esta pergunta, e por isso o guarda olha para os dois: uma
+ * medida com `tecto` e sem fixador fecha a construção como uma com `limiar`.
+ *
+ * @param {{ limiar?: unknown, tecto?: unknown, limiarFixadoPor?: unknown }} medida
+ * @param {string} onde  o nome do sítio que declarou a medida, para o erro
+ * @returns {'comissao'|'lei'|'porRegistar'|null}
+ */
+export function fixadorDoLimiar(medida, onde) {
+  const fixador = medida?.limiarFixadoPor ?? null;
+  const temLimiar = Boolean(medida?.limiar ?? medida?.tecto);
+  if (fixador === null) {
+    if (!temLimiar) return null;
+    throw new Error(
+      `${onde}: esta medida declara um limiar e não declara quem o fixou. ` +
+        `Acrescenta \`limiarFixadoPor\`, com um dos valores fechados ` +
+        `(${FIXADORES_DO_LIMIAR.join(', ')}) e a origem escrita ao lado. ` +
+        `Sem ele o cartão escreveria «dentro do limiar» sem dizer de quem, que é ` +
+        `o que o item 8.5 do F1.10 veio tirar da página.`,
+    );
+  }
+  if (!FIXADORES_DO_LIMIAR.includes(/** @type {never} */ (fixador))) {
+    throw new Error(
+      `${onde}: "${String(fixador)}" não é um fixador de limiar declarado. ` +
+        `A lista é fechada (${FIXADORES_DO_LIMIAR.join(', ')}) e cresce com a ` +
+        `origem escrita ao lado, em src/data/figuras.mjs.`,
+    );
+  }
+  return /** @type {'comissao'|'lei'|'porRegistar'} */ (fixador);
 }
 
 /**

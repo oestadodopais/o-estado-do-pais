@@ -170,6 +170,15 @@ export const MEDIDAS_DO_CONCELHO = [
     ref: '2024',
     tecto: 'indice-de-divida-limite-legal',
     tectoTexto: { pt: ', teto legal = ', en: ', legal cap = ' },
+    /* QUEM FIXOU ESTE LIMIAR É A LEI (F1.10, item 8.5). O teto desta medida não
+       é da Comissão: é o limite de dívida total de um município, e a linha que o
+       publica cita, no seu localizador, o quadro «LIMITE À DÍVIDA TOTAL — LEI
+       73/2013 (ART. 52º)». O cartão passa a dizer «dentro do limite legal» em
+       vez de «dentro do limiar», e a frase que diz o que o limite é e quem o
+       fixou já está na página do concelho, uma vez
+       (`s.municipio.distanciaLeiAntes` e as duas peças seguintes): o §0 do brief
+       manda uma coisa num lugar só, e por isso a leitura não escreve a segunda. */
+    limiarFixadoPor: 'lei',
     nota: {
       pt: ['Calculado sobre duas colunas do mesmo ficheiro da Direção-Geral das Autarquias Locais. A aritmética está na linha.'],
       en: ['Computed from two columns of the same local-government directorate file. The arithmetic is on the row.'],
@@ -315,6 +324,11 @@ export function relanceDoConcelho(linhas = {}, refs = {}) {
       unidade: medida.unidade,
       medida: linhaDaMedida(medida, ref),
       nota: medida.nota,
+      /* O FIXADOR ATRAVESSA COM A MEDIDA (F1.10, item 8.5). É declarado uma vez,
+         na medida, e chega às 308 páginas e à de Évora pela mesma lista: uma
+         segunda declaração no registo de cada concelho era a promessa de duas
+         palavras diferentes para o mesmo teto. */
+      limiarFixadoPor: medida.limiarFixadoPor ?? null,
     };
   });
 }

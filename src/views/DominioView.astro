@@ -73,6 +73,7 @@ import {
   CABECA_DO_DOMINIO_1,
   FAIXA_DO_DOMINIO_1,
 } from '../data/dominios.mjs';
+import { fixadorDoLimiar } from '../data/figuras.mjs';
 import {
   medidasComLeitura,
   mapaPorConcelho,
@@ -126,25 +127,35 @@ const segunda = medidaPelaChave('E2');
 if (!cabeca?.claim || !cabeca.limiar || !segunda?.claim || !segunda.limiar) {
   throw new Error('dominios: a manchete precisa das duas medidas com limiar publicado.');
 }
-const PALAVRA = {
-  fora: s.estado.foraDoLimiar,
-  dentro: s.estado.dentroDoLimiar,
-  sem: s.estado.semLimiar,
+/* A PALAVRA DO ESTADO E O RÓTULO DO LIMIAR, PELO FIXADOR (F1.10, item 8.5).
+   Duas das três medidas com limiar desta página não são do painel do
+   Procedimento, e a palavra tem de dizer de quem o limiar é. Ver a razão no
+   cabeçalho de `FIXADORES_DO_LIMIAR`, em `src/data/figuras.mjs`. */
+/** @param {{ chave?: string, limiar?: unknown, limiarFixadoPor?: unknown }} m */
+const parDoEstado = (m) => {
+  const fixador = fixadorDoLimiar(m, `dominios: a medida "${m.chave ?? '?'}"`);
+  return fixador ? s.estado[fixador] : null;
 };
-/** @param {string} id @param {Limiar} limiar */
-const palavraDoEstado = (id, limiar) => PALAVRA[estadoDaMedida(getClaim(id), limiar) ?? 'sem'];
+/** @param {{ chave?: string, claim: string, limiar: Limiar, limiarFixadoPor?: unknown }} m */
+const palavraDoEstado = (m) => {
+  const estado = estadoDaMedida(getClaim(m.claim), m.limiar) ?? 'sem';
+  if (estado === 'sem') return s.estado.semLimiar;
+  const par = parDoEstado(m);
+  if (!par) throw new Error(`dominios: a medida "${m.chave ?? m.claim}" está ${estado} do limiar e não diz de quem.`);
+  return par[estado];
+};
 const manchete = {
   pt: [
     'A dívida pública é ',
     { claim: cabeca.claim, sufixo: '%' },
     ' do PIB, ',
-    palavraDoEstado(cabeca.claim, cabeca.limiar),
+    palavraDoEstado(cabeca),
     ' de ',
     { nl: String(cabeca.limiar.nl), motivo: 'limiar-do-quadro' },
     '%; o saldo das administrações públicas é ',
     { claim: segunda.claim, sufixo: '%' },
     ' do PIB, ',
-    palavraDoEstado(segunda.claim, segunda.limiar),
+    palavraDoEstado(segunda),
     ' de ',
     `${segunda.limiar.sinal ?? ''}`,
     { nl: String(segunda.limiar.nl), motivo: 'limiar-do-quadro' },
@@ -154,13 +165,13 @@ const manchete = {
     'Government debt is ',
     { claim: cabeca.claim, sufixo: '%' },
     ' of GDP, ',
-    palavraDoEstado(cabeca.claim, cabeca.limiar),
+    palavraDoEstado(cabeca),
     ' of ',
     { nl: String(cabeca.limiar.nl), motivo: 'limiar-do-quadro' },
     '%; the general government balance is ',
     { claim: segunda.claim, sufixo: '%' },
     ' of GDP, ',
-    palavraDoEstado(segunda.claim, segunda.limiar),
+    palavraDoEstado(segunda),
     ' of ',
     `${segunda.limiar.sinal ?? ''}`,
     { nl: String(segunda.limiar.nl), motivo: 'limiar-do-quadro' },
@@ -192,6 +203,9 @@ const cartoes = FAIXA_DO_DOMINIO_1.map((chave, i) => {
     nome: m.nome[lang] ?? m.nome.pt,
     medida: [`${m.unidade[lang] ?? m.unidade.pt} · `, { ref: linha.reference_date }],
     estado: m.limiar ? estadoDaMedida(linha, m.limiar) : 'sem',
+    /* QUEM FIXOU O LIMIAR (F1.10, item 8.5): lido da declaração da medida, com o
+       guarda que fecha a construção se ela tiver limiar e não o disser. */
+    fixador: fixadorDoLimiar(m, `dominios: a medida "${chave}"`),
     glifos: [...String(linha.value)].length,
   };
 });
@@ -257,7 +271,11 @@ const escalaDeClasses = (cortes) => [
 ];
 const ROTULOS = {
   ganho: escalaDeClasses(CORTES.ganho),
-  indice: [[s.estado.dentroDoLimiar], [s.estado.foraDoLimiar]],
+  /* AS DUAS CLASSES DO MAPA DO ÍNDICE DIZEM DE QUEM É O LIMIAR (F1.10, item
+     8.5). O corte é o teto legal da dívida de um município, e por isso as duas
+     palavras são as do fixador `lei`: «dentro do limite legal» e «fora do limite
+     legal». Lidas do mesmo sítio de que sai a palavra do cartão. */
+  indice: [[s.estado.lei.dentro], [s.estado.lei.fora]],
 };
 
 const comMapa = leituras.filter((l) => l.desenho !== null);
@@ -409,16 +427,14 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
 
           {medida.limiar && (
             <p class="dominio-limiar">
-              <span class="dominio-limiar-k">{s.home.numeros.limiar}</span>{' '}
+              <span class="dominio-limiar-k">{parDoEstado(medida)?.rotulo ?? s.home.numeros.limiar}</span>{' '}
               <span class="dominio-limiar-v">
                 {medida.limiar.sinal ?? ''}
                 <span data-nonledger="limiar-do-quadro">{String(medida.limiar.nl)}</span>
                 {medida.limiar.simbolo ?? ''}
               </span>
               {' · '}
-              <span class="dominio-estado">
-                {PALAVRA[estadoDaMedida(getClaim(medida.claim), medida.limiar) ?? 'sem']}
-              </span>
+              <span class="dominio-estado">{palavraDoEstado(medida)}</span>
             </p>
           )}
 
