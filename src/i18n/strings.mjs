@@ -1239,11 +1239,20 @@ export const STRINGS = {
       ausenciaK: 'Sem número público',
       ausenciaResposta: 'Não há número público para isto.',
       ausenciaProcurado: 'procurado em',
-      /* Os três rótulos das três datas. São nomes de campos do livro-razão, e a
-         página da linha já lhes chama assim: «período», «lido», «conferido». */
-      dataPeriodo: 'período',
-      dataLido: 'lido',
-      dataConferido: 'conferido',
+      /* OS TRÊS RÓTULOS DAS TRÊS DATAS, POR PALAVRAS (F1.10, §7.3, 08.09.2026).
+         Eram os nomes dos campos do livro-razão, ditos como o livro-razão lhes
+         chama: «período», «lido», «conferido». O leitor de 04.09 no navegador
+         leu-os como três palavras soltas ao pé de três datas e não soube o que
+         cada uma dizia; o brief manda-os passar a rótulos por palavras, e dá
+         dois deles à letra («lido na fonte a», «verificado a»).
+
+         O TERCEIRO ACOMPANHA-OS, e não é uma invenção: «período de referência» é
+         o nome que o próprio campo tem no livro-razão (`reference_date`), dito
+         por extenso como os outros dois. Os três continuam a ser o nome do
+         campo, e não uma frase sobre o que a casa faz. */
+      dataPeriodo: 'período de referência',
+      dataLido: 'lido na fonte a',
+      dataConferido: 'verificado a',
       fonteK: 'fonte',
       mapaSemValor: 'sem valor publicado',
       mapaMenosDe: 'menos de ',
@@ -2739,9 +2748,10 @@ export const STRINGS = {
       ausenciaK: 'No published figure',
       ausenciaResposta: 'There is no published figure for this.',
       ausenciaProcurado: 'looked for in',
-      dataPeriodo: 'period',
-      dataLido: 'read',
-      dataConferido: 'checked',
+      /* Ver a razão na edição portuguesa, e o registo em `CHAVES-EN.md`. */
+      dataPeriodo: 'reference period',
+      dataLido: 'read at the source on',
+      dataConferido: 'verified on',
       fonteK: 'source',
       mapaSemValor: 'no published value',
       mapaMenosDe: 'less than ',

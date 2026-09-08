@@ -16,7 +16,7 @@ deste relatório foi escrito à mão: cada um tem ao lado o comando que o mediu.
 | `build` · `verify` · `typecheck` | **0** · **0** · **0** (códigos lidos de `build.exit`, `verify.exit`, `typecheck.exit`) |
 | a corrida da CI | a primeira linha de `gh run list --branch lugar-2026-09-04` |
 | feito nas sessões anteriores | a régua (encargo (b)); **§9.1**; **8.8**; **8.9**; **§7.5**; **8.16**; **8.13**; **8.12**; **8.14 inteiro**; **§2.2**; **8.15**; **8.5**; **§7.1**; **8.17** |
-| feito nesta sessão | **os dois limiares sem fixador** (a decisão do fecho do dia: `porRegistar` sai, entram `pacto` e `conselho`, cada um com o excerto do documento que a linha cita; o motivo `limiar-do-quadro` do `allowlist.yml` corrigido); **8.4 e a segunda metade do 8.14** (a definição de cada painel e das 21 medidas, citada da Comissão e do Eurostat, com o documento, o endereço, a data de acesso e o excerto literal declarados); **§9.3**, **§9.4**, **§9.5**, **§9.8** e **§9.9**; a etiqueta da agenda do F2.6b; **a régua do primeiro ecrã a 390 × 664 do item 8.11, com o «antes» medido nas quatro páginas do leitor e nas duas edições** |
+| feito nesta sessão | **os dois limiares sem fixador** (a decisão do fecho do dia: `porRegistar` sai, entram `pacto` e `conselho`, cada um com o excerto do documento que a linha cita; o motivo `limiar-do-quadro` do `allowlist.yml` corrigido); **8.4 e a segunda metade do 8.14** (a definição de cada painel e das 21 medidas, citada da Comissão e do Eurostat, com o documento, o endereço, a data de acesso e o excerto literal declarados); **§9.3**, **§9.4**, **§9.5**, **§9.8** e **§9.9**; a etiqueta da agenda do F2.6b; **a régua do primeiro ecrã a 390 × 664 do item 8.11, com o «antes» medido nas quatro páginas do leitor e nas duas edições**; **§7.3** (as três datas de uma medida por palavras) |
 | a seguir | **8.11 e §7.3**; o resto do §9 (2, 6, 7 e 10); as outras páginas (a região, o domínio, os índices, os estudos, o Método); o item 5 do encargo (o caminho, a busca única, «fonte» diz o publicador, as datas); o fecho |
 | nada a meio | **nada ficou por acabar.** Os três portões a 0 nesta árvore, com os códigos lidos dos ficheiros; não há `git stash` nem ficheiro por commitar. **Uma régua de fora da cadeia mudou e não foi corrida** (a célula A4 de `tests/inicio/porta.mjs`, que abre navegador e não está no `verify` nem na CI): corre-se à mão no fecho do bloco, com as outras medidas de 390 px |
 | a régua, na cabeça desta sessão | L1 6 598 · L2a 2 · L2b 18 · L2c 10 · L3 **30** · L4 **0** · L5 7 213 · L6 26 178 · 8.5 **0** · 8.8 **0** · 8.13 **0** · 8.14 **0** · 8.17 **0** e **0** (`node scripts/check-lugar.mjs`, verde) |
@@ -222,6 +222,32 @@ voz não a conta como frase própria. Medido, e não suposto: a construção fic
 verde sem linha nova. A mudança fica declarada em `CHAVES-EN.md`, que é o registo
 das chaves que mudam de texto.
 
+### As três datas de uma medida passam a rótulos por palavras (§7.3)
+
+Eram os nomes dos campos do livro-razão, ditos como o livro-razão lhes chama:
+«período · lido · conferido» ao pé de três datas. O leitor de 04.09 no navegador
+leu-os como três palavras soltas e não soube o que cada uma dizia, e o §7.3
+manda-os passar a rótulos por palavras, com dois deles escritos à letra no brief.
+
+| campo da linha | antes | depois |
+|---|---|---|
+| `reference_date` | período · period | **período de referência** · **reference period** |
+| `access_date` / `published_at` | lido · read | **lido na fonte a** · **read at the source on** |
+| a última entrada de `verifications` | conferido · checked | **verificado a** · **verified on** |
+
+**O terceiro rótulo acompanha os dois do brief, e não é uma invenção:** «período
+de referência» é o nome que o próprio campo tem no livro-razão, dito por extenso
+como os outros dois.
+
+**A exceção do portão da voz mudou de raiz com a palavra, e a razão dela não
+mudou uma vírgula.** «conferido» mordia a raiz `confer` e tinha exceção escrita
+desde o F1.2 («é o nome de um campo da linha, e não a casa a dizer que
+confere»); «verificado a» morde a raiz `verific`, que existe para apanhar a casa
+a dizer que conferiu. A exceção passou de uma raiz para a outra com o mesmo
+texto de razão e as mesmas quatro rotas, e a antiga não ficou ao lado: uma
+exceção que já não é precisa é uma porta aberta esquecida, e o portão mede-a por
+exercer. **São dez exceções antes e dez depois.**
+
 ### O primeiro ecrã a 390 × 664, medido antes de se lhe tocar (item 8.11)
 
 **A medição vem primeiro, e a definição da conta vem com ela.** «Caracteres de
@@ -257,14 +283,17 @@ estudo são o marcador `[a verificar]`; os 11 do índice dos números são a por
 primeiro ecrã de nenhuma delas**: o F1.1, o F1.1b, o F1.1c e o §7.1 deste bloco
 foram-nas metendo dentro das dobras à medida que passaram.
 
-**O que ficou no primeiro ecrã, e é o que o item 8.1 e o §7.3 mandam sair, é a
-MOBÍLIA.** Em `/` são 727 dos 996 caracteres do ecrã (a diferença entre as duas
-últimas colunas): a marca, o menu de treze posições, e as três leituras do
-cabeçalho («Painel europeu · <data>», «Fontes em atraso · …» e as duas contagens
-da agenda). Essas três são as que o brief manda mudar de página, e são o item
-que a sessão seguinte pega. **A régua já está escrita e o «antes» já está
-medido**, com a data e o ficheiro, para que o «depois» seja a mesma conta e não
-uma segunda.
+**O que ocupa o primeiro ecrã não é prosa.** Em `/` são 727 dos 996 caracteres
+do ecrã que não estão em nenhum bloco de prosa (a diferença entre as duas últimas
+colunas), e essa diferença é a marca, o menu, a manchete, os títulos e **as três
+leituras do cabeçalho** («Painel europeu · <data>», «Fontes em atraso · …» e as
+duas contagens da agenda). A régua não separa hoje a mobília do resto dessa
+diferença, e por isso o número dela não se atribui só às três leituras: o que se
+pode dizer com o que está medido é que a prosa da casa não é o que enche o ecrã.
+**As três leituras são as que o item 8.1 e o §7.3 mandam mudar de página**, e são
+o primeiro item da lista do que falta; **a régua já está escrita e o «antes» já
+está medido**, com a data e o ficheiro, para que o «depois» seja a mesma conta e
+não uma segunda.
 
 ---
 
