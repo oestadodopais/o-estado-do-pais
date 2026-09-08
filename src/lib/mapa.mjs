@@ -292,6 +292,52 @@ export function unidadeDoMapa(slug) {
   return unidadesDoMapa().find((u) => u.slug === slug) ?? null;
 }
 
+/** @type {Map<string, string> | null} */
+let _unidadeDeCadaConcelho = null;
+
+/**
+ * A UNIDADE DE UM CONCELHO, LIDA DO ARTEFACTO QUE O CONTÉM (F1.1e).
+ *
+ * A página de um concelho sabe o nome do distrito ou da ilha dele
+ * (`distritoOuIlha`, da Carta), e o mapa precisa do SLUG da unidade para lhe
+ * desenhar o nível. Em vez de uma segunda lista a casar nomes com slugs, o índice
+ * faz-se dos 29 ficheiros do motor: um concelho está na unidade cujo ficheiro o
+ * desenha, e isso é a Carta e não uma tabela nossa.
+ *
+ * Faz-se uma vez por construção e fica em cache, como os outros leitores deste
+ * ficheiro.
+ *
+ * @param {string} slug o slug da Carta do concelho
+ * @returns {string | null} o slug da unidade, ou `null` se a Carta não o tiver
+ */
+export function unidadeDoConcelho(slug) {
+  if (!_unidadeDeCadaConcelho) {
+    _unidadeDeCadaConcelho = new Map();
+    for (const u of unidadesDoMapa()) {
+      for (const c of distritoDoMapa(u.slug).concelhos) _unidadeDeCadaConcelho.set(c.slug, u.slug);
+    }
+  }
+  return _unidadeDeCadaConcelho.get(slug) ?? null;
+}
+
+/**
+ * O FICHEIRO QUE O NAVEGADOR PEDE PARA O SEGUNDO NÍVEL DE UMA UNIDADE (F1.1e).
+ *
+ * O mapa da primeira página desenha as 29 unidades do servidor e vai buscar os
+ * concelhos de uma delas quando o leitor lhe toca. O ficheiro pedido é uma cópia
+ * byte a byte de `mapa/distritos/<slug>.json`, escrita em `public/` por
+ * `scripts/mapa-unidades.mjs` e reconferida pelo portão do mapa (R8).
+ *
+ * O NOME COMPÕE-SE AQUI E EM MAIS LADO NENHUM: o componente põe-no na área, o
+ * gerador escreve o ficheiro com ele, e o portão compõe o seu por conta própria,
+ * que é o ponto de haver um portão.
+ *
+ * @param {string} slug
+ */
+export function ficheiroDaUnidade(slug) {
+  return `dados/mapa/unidade-${slug}.json`;
+}
+
 /**
  * A ATRIBUIÇÃO DA FONTE, LIDA DO MANIFESTO E NUNCA TRANSCRITA.
  *
@@ -457,6 +503,69 @@ export function parcelaDaMoldura(moldura, unidades) {
 export function unidadesDaMoldura(moldura, unidades) {
   const parcela = parcelaDaMoldura(moldura, unidades);
   return unidades.filter((u) => u.parcela === parcela);
+}
+
+/**
+ * ---------------------------------------------------------------------------
+ * AS DUAS MOLDURAS ARRUMAM-SE, PORQUE NO ARTEFACTO ELAS CRUZAM-SE (F1.1e, 2ª
+ * passagem, 08.09.2026)
+ * ---------------------------------------------------------------------------
+ * MEDIDO no artefacto: a moldura da Madeira é `[1527, 4526, 1358, 3496]` e a
+ * dos Açores é `[260, 6096, 2271, 1296]`. As duas caixas cruzam-se em 1 004 por
+ * 1 296 unidades do campo, e no ecrã isso são dois rectângulos desenhados um
+ * por cima do outro: 64 por 83 px a 390 e 85 por 110 px a 1280, medido às cegas
+ * pelo Sonnet a 08.09.2026. Um rectângulo declara «este arquipélago está a
+ * outra escala», e dois rectângulos cruzados não declaram coisa nenhuma.
+ *
+ * A CULPA NÃO É DE UM ERRO: a moldura de uma parcela é, por construção do motor
+ * (MAPA.md §2), a caixa dos polígonos dela, e a caixa da Madeira desce da costa
+ * norte da ilha até às SELVAGENS, 3 496 unidades quase todas de mar. O mapa dos
+ * 308 pontos, que é de onde a colocação das parcelas vem por ajuste, nunca viu
+ * este cruzamento porque as Selvagens não são concelho e não têm ponto: as suas
+ * duas molduras não se tocam. O cruzamento nasce quando o desenho passa a ser de
+ * ÁREAS, e é por isso que ele aparece com o mapa das unidades.
+ *
+ * O QUE ESTA FUNÇÃO FAZ, E O QUE NÃO FAZ. Não mexe numa coordenada do
+ * artefacto: nenhum polígono muda de forma, de escala ou de vizinho, e a
+ * geometria continua a ser byte a byte a que o motor exportou. O que ela decide
+ * é ONDE cada inserto se coloca dentro do campo, que é uma decisão de arrumação
+ * do sítio, e devolve-a como uma translação inteira por parcela.
+ *
+ * A REGRA É UMA SÓ, e a arrumação que ela dá é forçada pelo desenho: as
+ * molduras encostam-se ao fundo do campo pela ordem em que o artefacto as traz,
+ * a primeira fica onde está e as seguintes sobem para cima dela, com a folga de
+ * uma linha de nome entre o fundo de uma e o topo da outra. A primeira não tem
+ * para onde ir (a caixa da Madeira acaba a 8 unidades do fundo do campo) e a
+ * segunda não cabe ao lado (os Açores medem 2 271 de largura e a Madeira começa
+ * em x 1 527), de maneira que a única arrumação possível é a que sai daqui: os
+ * Açores por cima da Madeira, os dois à esquerda do continente, que é também a
+ * disposição geográfica.
+ *
+ * @param {PaisDoMapa} pais
+ * @param {number} folga a distância entre o fundo de uma moldura e o topo da
+ *   seguinte, em unidades do campo; é a linha do nome do arquipélago.
+ * @returns {{ nome: string, parcela: string, caixa: CaixaDoMapa, dy: number }[]}
+ */
+export function arrumacaoDasMolduras(pais, folga) {
+  /** @type {{ nome: string, parcela: string, caixa: CaixaDoMapa, dy: number }[]} */
+  const saida = [];
+  /** O topo da moldura já colocada mais em baixo, ou o fundo do campo. */
+  let tectoLivre = Number.POSITIVE_INFINITY;
+  for (const m of pais.molduras) {
+    const [x, y, w, h] = m.caixa;
+    /* A PRIMEIRA FICA ONDE ESTÁ (`dy` de 0) e as seguintes sobem só o que for
+       preciso: uma moldura que já esteja acima do tecto livre não se mexe, e a
+       arrumação é a identidade quando o artefacto já não se cruza. */
+    const dy = tectoLivre === Number.POSITIVE_INFINITY ? 0 : Math.min(0, tectoLivre - (y + h));
+    saida.push({
+      nome: m.nome,
+      parcela: parcelaDaMoldura(m, pais.unidades),
+      caixa: [x, y + dy, w, h],
+      dy,
+    });
+    tectoLivre = y + dy - folga;
+  }
+  return saida;
 }
 
 /**

@@ -79,8 +79,13 @@
 import Claim from '../Claim.astro';
 import { FRAMES, FIELD_W, FIELD_H } from '../../data/caop-centroids.mjs';
 import { routePath } from '../../lib/routes.mjs';
-import { regioesDoMapa } from '../../lib/mapa-regioes.mjs';
-import { REGIOES } from '../../data/regioes.mjs';
+import {
+  paisDoMapa,
+  distritoDoMapa,
+  unidadeDoConcelho,
+  ficheiroDaUnidade,
+  arrumacaoDasMolduras,
+} from '../../lib/mapa.mjs';
 import LugarDoNome from './LugarDoNome.astro';
 
 /* AS DUAS PROPRIEDADES QUE A PÁGINA DE CONCELHO PEDIU (ISSUES I45, etapa 2m).
@@ -101,7 +106,39 @@ import LugarDoNome from './LugarDoNome.astro';
    duas coisas: o nome de defeito do cartão, quando nenhum estava escolhido, e a
    porta «a página inteira, com quem governou». As duas eram da vista de escolha.
    O cartão rende-se agora só onde há um concelho escolhido, e o nome vem dele. */
-const { s, lang, p, concelhos, postura = 'inteiro', escolhido = null } = Astro.props;
+/* ---------------------------------------------------------------------------
+ * `nivel`: QUAL DOS TRÊS DESENHOS SE RENDE (F1.1e, 08.09.2026)
+ * ---------------------------------------------------------------------------
+ * O brief do F1.1e manda que «o componente do mapa ganhe o nível como
+ * parâmetro», para que a página do concelho possa render o nível da unidade
+ * dele com o mesmo componente que a primeira página usa. São três valores, e
+ * nenhum é novo como desenho: os três já existiam, presos à postura.
+ *
+ *   `pais`     as 29 unidades da Carta como áreas, cada uma a porta da sua
+ *              página, com o segundo nível vazio à espera do guião. É o mapa da
+ *              primeira página.
+ *   `unidade`  os concelhos de uma unidade, cada um a porta da sua página, com
+ *              `escolhido` a levar o anel. É o que o guião desenha ao segundo
+ *              nível, e o que a página de um concelho quer ver do servidor.
+ *   `pontos`   os 308 pontos da Emenda 3, que é o cartão localizador.
+ *
+ * O DEFEITO NÃO MUDA O QUE JÁ HAVIA: a postura inteira rende `pais` e as outras
+ * duas rendem `pontos`, que é exactamente o que este ficheiro fazia antes de o
+ * nível existir. Quem quiser o nível da unidade pede-o.
+ *
+ * `unidade` É O SLUG DA UNIDADE, e não se exige: com `nivel="unidade"` e um
+ * concelho escolhido, a unidade lê-se do artefacto que o contém
+ * (`unidadeDoConcelho()`), que é a Carta e não uma segunda lista. */
+const {
+  s,
+  lang,
+  p,
+  concelhos,
+  postura = 'inteiro',
+  escolhido = null,
+  nivel = postura === 'inteiro' ? 'pais' : 'pontos',
+  unidade = null,
+} = Astro.props;
 
 /* O concelho do anel, quando o servidor o declara. É lido da mesma lista que o
    mapa desenha, e não de uma segunda: um slug que não exista não põe anel
@@ -166,23 +203,42 @@ const pontos = concelhos.map((c) => ({ ...c, r: RAIO }));
  * `viewBox` é o campo desse ficheiro e mais nada. Ver `src/lib/mapa.mjs`.
  */
 /* ---------------------------------------------------------------------------
- * A POSTURA INTEIRA PASSA A TER DOIS NÍVEIS (F1.1d, 07.09.2026)
+ * A POSTURA INTEIRA PASSA A TER DOIS NÍVEIS (F1.1d, 07.09; F1.1e, 08.09.2026)
  * ---------------------------------------------------------------------------
- * «O nível do país desenha as nove regiões NUTS II; o nível da região desenha os
- * concelhos dessa região.» O primeiro vem do servidor, inteiro e sem guião: nove
+ * «O nível do país desenha as 29 unidades da Carta; o nível da unidade desenha os
+ * concelhos dessa unidade.» O primeiro vem do servidor, inteiro e sem guião: 29
  * áreas, cada uma a ligação da sua página. O segundo é o mesmo `<svg>` com outro
- * `viewBox` e outro grupo de áreas, que `public/js/mapa-regioes.js` desenha do
- * ficheiro que cada região nomeia.
+ * `viewBox` e outro grupo de áreas, que `public/js/mapa-unidades.js` desenha do
+ * ficheiro que cada unidade nomeia.
  *
- * AS 29 UNIDADES SAÍRAM DO DESENHO E NÃO DO SÍTIO: continuam a ter página, a
- * estar no menu e a estar na lista dos nomes por baixo do mapa (item 6 do
- * brief). O que sai é a sua camada no mapa da primeira página, onde 13 das 29
- * áreas não chegavam a um dedo e a rede de nomes era o único alvo delas.
+ * AS NOVE REGIÕES NUTS II ESTIVERAM AQUI UM DIA, e saíram por decisão do diretor
+ * de 08.09.2026: «the map on the first page we had before was quite alright …
+ * we can select Évora and we have all the municipalities … the other one, a full
+ * Alentejo with all the things, it's not easy to go about». A unidade da Carta é
+ * a área que um leitor português reconhece pelo nome, e é ela que cresce. As
+ * nove regiões continuam a ter página, régua e menu, e saíram do DESENHO e não
+ * do sítio.
  *
  * O GABARITO DA ROTA DE UM CONCELHO VAI PARA O DOCUMENTO, e o guião põe o slug
  * no lugar que o `:slug` marca. É a disciplina que a Emenda 21b já pôs no
  * comando «Região»: o cliente não sabe a rota de edição nenhuma. */
-const doPais = postura === 'inteiro' ? regioesDoMapa() : null;
+const doPais = nivel === 'pais' ? paisDoMapa() : null;
+/* A UNIDADE DO DESENHO, quando o nível é o dela: o slug que a página deu, ou o
+   do artefacto que contém o concelho escolhido. Sem um nem outro não há desenho
+   possível, e a construção fecha com a frase do que falta em vez de render um
+   mapa vazio. */
+const slugDaUnidade =
+  nivel === 'unidade' ? (unidade ?? (escolhido ? unidadeDoConcelho(escolhido) : null)) : null;
+if (nivel === 'unidade' && !slugDaUnidade) {
+  throw new Error(
+    'MapaRespira: `nivel="unidade"` precisa de `unidade` (o slug do distrito ou da ilha) ' +
+      'ou de um `escolhido` que a Carta ponha numa unidade.',
+  );
+}
+const daUnidade = slugDaUnidade ? distritoDoMapa(slugDaUnidade) : null;
+/* O CAMPO DO DESENHO É O DO FICHEIRO QUE SE DESENHA, e nunca um número escrito
+   aqui: o do país no nível do país, o da grelha local da unidade no nível dela. */
+const campoDoDesenho = doPais?.campo ?? daUnidade?.campo ?? null;
 const rotaDoConcelho = routePath('municipio', lang, { slug: ':slug' });
 
 /* A ESCALA ENTRE OS DOIS CAMPOS, para que o rótulo de uma moldura se leia do
@@ -190,20 +246,40 @@ const rotaDoConcelho = routePath('municipio', lang, { slug: ':slug' });
    mede 13 unidades num campo de 600; o mesmo rótulo no campo do desenho mede a
    mesma fracção dele. Sem esta conta, um `font-size: 13px` dentro de um campo
    dez vezes maior sairia dez vezes mais pequeno na página. */
-const uDoCampo = doPais ? doPais.campo.largura / FIELD_W : 1;
+const uDoCampo = campoDoDesenho ? campoDoDesenho.largura / FIELD_W : 1;
 const CORPO_DO_ARQ = Math.round(13 * uDoCampo);
+/* O nome de uma moldura fica seis unidades por cima do topo dela. */
+const ACIMA_DO_ARQ = Math.round(6 * uDoCampo);
+
+/* ---------------------------------------------------------------------------
+ * A ARRUMAÇÃO DOS DOIS INSERTOS (F1.1e, segunda passagem, 08.09.2026)
+ * ---------------------------------------------------------------------------
+ * As duas caixas do artefacto cruzam-se, e a razão está escrita em
+ * `arrumacaoDasMolduras()`: a moldura da Madeira desce até às Selvagens. Aqui
+ * decide-se ONDE cada inserto se coloca, e mais nada: os polígonos e a escala
+ * são os do artefacto, e o que se escreve no desenho é uma translação inteira
+ * por parcela.
+ *
+ * A FOLGA ENTRE DUAS MOLDURAS É A LINHA DO NOME, e não um número escolhido: o
+ * nome de um arquipélago mede `CORPO_DO_ARQ` e fica `ACIMA_DO_ARQ` por cima do
+ * topo da sua moldura, e a folga é a soma dos dois, para que a moldura de cima
+ * acabe antes de o nome da de baixo começar.
+ */
+const FOLGA_DA_MOLDURA = CORPO_DO_ARQ + ACIMA_DO_ARQ;
+const molduras = doPais ? arrumacaoDasMolduras(doPais, FOLGA_DA_MOLDURA) : [];
+/** A translação da parcela de uma unidade, ou `undefined` para o continente. */
+const deslocacaoDe = (/** @type {string | undefined} */ parcela) => {
+  const m = molduras.find((x) => x.parcela === parcela);
+  return m && m.dy !== 0 ? `translate(0 ${m.dy})` : undefined;
+};
 
 /* O nome de cada moldura na língua da edição. A caixa e a escala são do
    artefacto; o nome é uma cadeia da casa, e as duas já existem. */
 const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.mapa.acores };
-/* O NOME DE CADA REGIÃO VEM DA LISTA DA CASA, na língua da edição, e não do
-   ficheiro da geometria: `src/data/regioes.mjs` é onde as nove vivem, com o seu
-   slug, o seu código NUTS II e o seu nome nas duas edições. O ficheiro gerado
-   traz o slug e o código, e é por eles que os dois se encontram: uma segunda
-   lista de nomes ao lado da primeira é o que a fronteira do mapa proíbe. */
-const NOME_DA_REGIAO = Object.fromEntries(
-  REGIOES.filter((r) => !r.referencia).map((r) => [r.slug, r.nome[lang] ?? r.nome.pt]),
-);
+/* `NOME_DA_REGIAO` SAIU COM AS REGIÕES DO DESENHO (F1.1e). Era a lista da casa a
+   dar o nome das nove áreas na língua da edição, porque uma região é uma coisa
+   que a casa nomeia. O nome de um distrito, de uma ilha ou de um concelho é o da
+   CARTA, e vem no próprio artefacto: não há nome nenhum a compor aqui. */
 /* `NOME_DA_PARCELA` SAIU COM A LISTA (29.08.2026). Era o nome do continente, a
    parcela sem moldura, e servia só o rótulo daquele grupo: mudou-se com ele para
    `ListaDosNomes.astro`. O que fica aqui é o nome das duas molduras, que é o que
@@ -220,7 +296,7 @@ const NOME_DA_REGIAO = Object.fromEntries(
       página entrega, e o guião troca-o por `regiao` quando uma região cresce. A
       folha lê-o para esconder as molduras, para trocar as duas frases vazias e
       para acender a porta de voltar. */}
-  data-nivel={postura === 'inteiro' ? 'pais' : undefined}
+  data-nivel={nivel === 'pontos' ? undefined : nivel}
   aria-describedby={postura === 'inteiro' ? 'mapa-legenda' : undefined}
 >
   {/* «FECHAR» SAIU COM A VISTA DE ESCOLHA (Emenda 19b, 26.08.2026).
@@ -273,10 +349,10 @@ const NOME_DA_REGIAO = Object.fromEntries(
         escreveu no artefacto. Um `viewBox` só para os dois seria um dos dois
         desenhos fora do sítio.
         ---------------------------------------------------------------------- */}
-    {postura === 'inteiro' ? (
+    {nivel !== 'pontos' ? (
     <svg
       class="mapa-svg mapa-svg-areas"
-      viewBox={`0 0 ${doPais.campo.largura} ${doPais.campo.altura}`}
+      viewBox={`0 0 ${campoDoDesenho.largura} ${campoDoDesenho.altura}`}
       {/* --------------------------------------------------------------------
           O `svg` EXPÕE AS SUAS LIGAÇÕES, E POR ISSO NÃO É UMA IMAGEM
           --------------------------------------------------------------------
@@ -289,18 +365,41 @@ const NOME_DA_REGIAO = Object.fromEntries(
           nenhum `<a>` debaixo de `role="img"`.
           -------------------------------------------------------------------- */}
       role="group"
-      aria-label={s.inicio.mapa.regioesLabel}
+      aria-label={nivel === 'pais' ? s.inicio.mapa.distritosLabel : s.inicio.mapa.concelhosLabel}
       data-mapa
-      data-mapa-areas
-      data-rotulo-pais={s.inicio.mapa.regioesLabel}
-      data-rotulo-regiao={s.inicio.mapa.concelhosLabel}
-      data-rota-concelho={rotaDoConcelho}
+      data-mapa-areas={nivel === 'pais' ? true : undefined}
+      data-mapa-concelhos={nivel === 'unidade' ? true : undefined}
+      {/* O RÓTULO DO NÍVEL DE BAIXO E O GABARITO DA ROTA SÓ EXISTEM ONDE HÁ DOIS
+          NÍVEIS: é o guião que troca o nome acessível do desenho quando uma
+          unidade cresce, e que põe o slug de um concelho no lugar que o `:slug`
+          marca.
+
+          O RÓTULO DO PAÍS NÃO SE COPIA PARA UM `data-`, e a razão é da régua da
+          voz: ela recolhe os `aria-label` e deita fora a dica que é igual a um
+          `data-` do PRÓPRIO elemento, porque essa é composta do livro-razão.
+          Havia aqui um `data-rotulo-pais` com a mesma cadeia do `aria-label`, e
+          a cópia fazia a frase da casa passar por composta: as duas linhas do
+          inventário ficavam `retirada` com o rótulo a render-se (leitura a frio
+          do Codex de 08.09.2026, achado 14). O guião lê o `aria-label` que o
+          servidor desenhou, que é o rótulo do país por construção. */}
+      data-rotulo-unidade={nivel === 'pais' ? s.inicio.mapa.concelhosLabel : undefined}
+      data-rota-concelho={nivel === 'pais' ? rotaDoConcelho : undefined}
     >
       {/* AS DUAS MOLDURAS VÊM DO ARTEFACTO, com a sua caixa e a sua escala. A
           quebra de escala é para declarar e não para esconder (MAPA.md §7): a
-          moldura desenha-se, e o nome do arquipélago fica por cima dela. */}
+          moldura desenha-se, e o nome do arquipélago fica por cima dela.
+
+          A CAIXA É A DO ARTEFACTO ARRUMADA, e não outra caixa: a altura, a
+          largura e a abcissa são as que o motor escreveu, e o que a arrumação
+          muda é a ordenada, para que as duas deixem de se cruzar. A razão está
+          em `arrumacaoDasMolduras()`.
+
+          SÓ NO NÍVEL DO PAÍS: uma moldura declara que aquele arquipélago está
+          desenhado a outra escala do que o resto do campo, e dentro da grelha de
+          uma unidade não há duas escalas nem outro arquipélago para enquadrar. */}
+      {doPais && (
       <g class="mapa-molduras">
-        {doPais.molduras.map((m) => (
+        {molduras.map((m) => (
           <rect
             class="mapa-moldura"
             x={m.caixa[0]}
@@ -308,13 +407,14 @@ const NOME_DA_REGIAO = Object.fromEntries(
             width={m.caixa[2]}
             height={m.caixa[3]}
             data-moldura={m.nome}
+            data-parcela={m.parcela}
           />
         ))}
-        {doPais.molduras.map((m) => (
+        {molduras.map((m) => (
           <text
             class="mapa-arq"
             x={m.caixa[0] + Math.round(2 * uDoCampo)}
-            y={m.caixa[1] - Math.round(6 * uDoCampo)}
+            y={m.caixa[1] - ACIMA_DO_ARQ}
             {/* O CORPO VAI EM ESTILO E NÃO EM ATRIBUTO, porque `.mapa-arq` já
                 declara um `font-size` na folha e uma regra de classe ganha
                 sempre a um atributo de apresentação. O que este estilo diz não é
@@ -326,54 +426,98 @@ const NOME_DA_REGIAO = Object.fromEntries(
           </text>
         ))}
       </g>
+      )}
 
       {/* ----------------------------------------------------------------------
-          AS NOVE ÁREAS SÃO IGUAIS, E CADA UMA É UMA LIGAÇÃO (Emendas 10 e 20b)
+          AS 29 ÁREAS SÃO IGUAIS, E CADA UMA É UMA LIGAÇÃO (Emendas 10 e 20b)
           ----------------------------------------------------------------------
           «Todas iguais, nenhuma destacada por estatuto ou por cobertura; o que
           muda ao passar o rato ou ao chegar pelo teclado é o contorno, e só
-          ele.» O desenho de uma área não sabe quantos concelhos a região tem
-          nem quantos deles têm página: leva a mesma classe, o mesmo traço e o
-          mesmo enchimento que as outras oito.
+          ele.» O desenho de uma área não sabe se a unidade é a capital, se é
+          ilha ou se tem concelhos com página: leva a mesma classe, o mesmo traço
+          e o mesmo enchimento que as outras 28.
 
           O `<title>` dá o nome acessível da ligação e o nome que o navegador
-          mostra ao parar o cursor. É o nome da lista da casa, que também está no
-          `data-u` do mesmo caminho: o guião copia-o de lá para o lugar do nome, e
-          não há aqui uma segunda lista de nomes.
+          mostra ao parar o cursor. É o nome da Carta, que também está no `data-u`
+          do mesmo caminho: o guião copia-o de lá para o lugar do nome, e não há
+          aqui uma segunda lista de nomes.
 
-          `data-ficheiro` É O CAMINHO DO SEGUNDO NÍVEL, e vem do próprio ficheiro
-          gerado: é o guião que o vai buscar quando a região cresce, e por isso o
-          documento não leva os concelhos de nenhuma região.
+          `data-ficheiro` É O CAMINHO DO SEGUNDO NÍVEL, e compõe-se num sítio só
+          (`ficheiroDaUnidade()`): é o guião que o vai buscar quando a unidade
+          cresce, e por isso o documento não leva os concelhos de unidade
+          nenhuma.
 
           `fill-rule` NÃO SE ESCREVE (MAPA.md §1): os anéis vêm orientados do
           motor, o exterior no sentido directo e os buracos no inverso, e a
           regra por omissão deixa um buraco vazio.
           ---------------------------------------------------------------------- */}
+      {doPais && (
       <g class="mapa-areas" data-areas>
-        {doPais.regioes.map((r) => (
+        {doPais.unidades.map((u) => (
           <a
             class="uni-porta"
-            href={routePath('regiao', lang, { slug: r.slug })}
-            data-uni-porta={r.slug}
-            data-ficheiro={`/${r.ficheiro}`}
+            href={routePath('distrito', lang, { slug: u.slug })}
+            data-uni-porta={u.slug}
+            data-ficheiro={`/${ficheiroDaUnidade(u.slug)}`}
           >
-            <title>{NOME_DA_REGIAO[r.slug]}</title>
+            <title>{u.nome}</title>
+            {/* A TRANSLAÇÃO VAI NO CAMINHO, E NÃO NUM GRUPO POR PARCELA: um
+                grupo por parcela mudava a ordem do documento, que é a ordem em
+                que o teclado visita as 29, e a ordem é a do artefacto. O `d`
+                não se toca; o que a arrumação escreve é uma translação inteira,
+                a mesma para todas as unidades daquele inserto. */}
             <path
               class="uni"
-              d={r.d}
-              data-u={NOME_DA_REGIAO[r.slug]}
-              data-tipo="regiao"
-              data-parcela={r.parcela}
-              data-unidade={r.slug}
+              d={u.d}
+              transform={deslocacaoDe(u.parcela)}
+              data-u={u.nome}
+              data-tipo={u.tipo}
+              data-parcela={u.parcela}
+              data-unidade={u.slug}
             />
           </a>
         ))}
       </g>
+      )}
+      {/* ----------------------------------------------------------------------
+          O NÍVEL DA UNIDADE, DO SERVIDOR (F1.1e, item 4 do brief)
+          ----------------------------------------------------------------------
+          Os concelhos de uma unidade, cada um a porta da sua página, com o mesmo
+          desenho que o guião faz nascer no segundo nível da primeira página. É a
+          mesma marcação, e é de propósito: assim o guião do lugar do nome corre
+          nas duas superfícies sem saber qual é qual, e o que aqui vem do
+          servidor é o que lá vem do ficheiro.
+
+          O CONCELHO ESCOLHIDO LEVA UM ANEL, NUNCA UM ENCHIMENTO (Emenda 10). Num
+          desenho de áreas o anel é o mesmo contorno mais grosso, que é a
+          distinção que a folha já usa para a área apontada.
+          ---------------------------------------------------------------------- */}
+      {daUnidade && (
+      <g class="mapa-areas" data-areas>
+        {daUnidade.concelhos.map((c) => (
+          <a
+            class="uni-porta"
+            href={routePath('municipio', lang, { slug: c.slug })}
+            data-concelho-porta={c.slug}
+          >
+            <title>{c.nome}</title>
+            <path
+              class={c.slug === escolhido ? 'uni uni-escolhida' : 'uni'}
+              d={c.d}
+              data-u={c.nome}
+              data-tipo="concelho"
+              data-unidade={c.slug}
+            />
+          </a>
+        ))}
+      </g>
+      )}
       {/* O SEGUNDO NÍVEL CHEGA VAZIO, e é o guião que o enche do ficheiro da
-          região tocada. Sem guião fica vazio e escondido, e o mapa é o das nove
+          unidade tocada. Sem guião fica vazio e escondido, e o mapa é o das 29
           áreas, cada uma a porta da sua página: é a mesma promessa da Emenda 7,
-          que nenhuma navegação precisa de guião. */}
-      <g class="mapa-areas" data-areas-concelhos hidden></g>
+          que nenhuma navegação precisa de guião. Só existe no nível do país, que
+          é o único que tem um nível por baixo. */}
+      {doPais && <g class="mapa-areas" data-areas-concelhos hidden></g>}
     </svg>
     ) : (
     <svg
@@ -596,9 +740,29 @@ const NOME_DA_REGIAO = Object.fromEntries(
       (pointer: fine)`. Um `display: none` é lido pelo leitor de ecrã, e por isso
       quem ouve ouve uma só.
       ---------------------------------------------------------------------- */}
-  {postura === 'inteiro' && (
-    <LugarDoNome s={s} niveis={['pais', 'regiao']} voltar={routePath('home', lang)} />
+  {nivel === 'pais' && (
+    <LugarDoNome s={s} niveis={['pais', 'unidade']} voltar={routePath('home', lang)} />
   )}
+  {/* NO NÍVEL DA UNIDADE HÁ UM NÍVEL SÓ, e por isso não há porta de voltar: o
+      desenho não cresceu de lado nenhum. É a mesma forma que a página de um
+      distrito já rende desde o F1.1d. */}
+  {nivel === 'unidade' && <LugarDoNome s={s} niveis={['unidade']} />}
+
+  {/* ------------------------------------------------------------------------
+      O MAPA TRAZ O SEU GUIÃO (F1.1e, 08.09.2026)
+      ------------------------------------------------------------------------
+      O guião do lugar do nome era pedido pela VISTA que rendia o mapa
+      (`HomeView`), e por isso uma segunda vista que quisesse o mesmo mapa tinha
+      de saber pedi-lo também: duas linhas em dois sítios para uma coisa só, e a
+      segunda a esquecer-se. Passa a ser pedido por quem rende o lugar do nome,
+      que é quem precisa dele; onde não há lugar do nome (o cartão localizador de
+      pontos) não se pede guião nenhum.
+
+      `is:inline` para que o empacotador o deixe onde está, e `defer` porque ele
+      lê o documento inteiro: é a mesma forma que a vista lhe dava. A página de
+      um distrito continua a pedi-lo por sua conta, porque desenha o seu mapa e
+      não usa este componente. */}
+  {nivel !== 'pontos' && <script src="/js/mapa-unidades.js" defer is:inline></script>}
 
   {/* ------------------------------------------------------------------------
       UMA LINHA POR BAIXO DO MAPA (Emenda 17, 21.08.2026)
