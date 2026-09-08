@@ -296,6 +296,49 @@ o primeiro item da lista do que falta; **a régua já está escrita e o «antes�
 está medido**, com a data e o ficheiro, para que o «depois» seja a mesma conta e
 não uma segunda.
 
+### O 8.17b não fechou, e a razão é que o F1.1e ainda não está em `main`
+
+O lugar de direção pediu, para o fim deste bloco: fundir `origin/main` depois de
+o F1.1e lá estar e fechar o item 8.17b com **uma linha** em
+`src/views/MunicipioView.astro` — `nivel="unidade"` na chamada de
+`MapaRespira` —, que dá o distrito ou a ilha do concelho em vez da região, com os
+concelhos dela e o da página marcado; e medir na página real (as áreas, 0 pontos,
+o anel do concelho da página, a porta a abrir o vizinho apontado). E disse o que
+fazer se não estivesse: dizê-lo e parar, em vez de o fazer sobre o ramo do outro
+bloco.
+
+**Não está.** Medido a 08.09.2026 ao fim do dia, e não suposto:
+
+```
+git fetch origin && git log origin/main --oneline -1
+  → fe6478aa   (o mesmo em que este ramo já estava fundido)
+
+git grep -l "MapaRespira" origin/main | head -3      ← o conhecido-positivo
+  → origin/main:DECISIONS.md
+    origin/main:design/especime-v3/ISSUES.md
+    origin/main:design/especime-v3/PLANO-redesenho-v3.md
+
+git grep -l "unidadeDoConcelho" origin/main          → sem saída
+git grep -l 'nivel="unidade"' origin/main            → sem saída
+git show origin/main:src/components/inicio/MapaRespira.astro | grep -n nivel
+  → 223:  data-nivel={postura === 'inteiro' ? 'pais' : undefined}
+```
+
+Os dois commits do F1.1e que estão em `main` (`79887471` e `fe6478aa`) são **só
+documentos**: o brief, a linha do plano, o 8.17 emendado e a §1.102. O que a
+mudança precisa — o parâmetro `nivel` do `MapaRespira` e o índice
+`unidadeDoConcelho()` — está no ramo `distritos-2026-09-08`, que existe no
+remoto e ainda não aterrou. **A linha não se escreveu**, e o que a página do
+concelho mostra continua a ser o nível da REGIÃO, que é o que a emenda de 08.09 à
+tarde diz que serve até o F1.1e existir.
+
+**O que a sessão seguinte faz, e por esta ordem:** funde `origin/main` com o
+F1.1e lá dentro, põe `nivel="unidade"` na chamada de `MapaRespira` de
+`MunicipioView.astro`, e mede na página construída de Évora e na gémea inglesa —
+as áreas do distrito, 0 pontos, o anel no concelho da página e a porta a abrir o
+vizinho apontado —, escrevendo o comando ao lado de cada número. É a U7 do brief
+do F1.1e, que aquele bloco só mediu numa página de prova.
+
 ---
 
 ## Os achados da quarta sessão contra o brief
@@ -773,7 +816,8 @@ internacional, sem uma definição em palavras simples com origem autorizada).
 | 2 | **o resto do §9** (2, 6, 7 e 10) | o inventário da voz, `DominioView`, `Pesquisa.astro` | o 3, o 4, o 5, o 8 e o 9 estão feitos. O 2 e o 6 andam com o 8.11; o 7 anda com a busca única do §2.6; o 10 é a dívida da linha F1.2 e fica para o F3.3, como o próprio §9 escreve |
 | 3 | **as outras páginas** (o item 4 do encargo) | `RegiaoView`, `DominioView`, os índices, `EstudoView`, `MetodoView` | a região (§1 e §7.6), o domínio (§7.7), os índices (§7.8), os estudos (§7.4 e 8.6), o Método no telemóvel (§7.9). **A do concelho está feita** (§7.1, 8.10, 8.17); falta-lhe a linha dos estudos (§1 e 8.6), que anda com os estudos |
 | 4 | **item 5 do encargo** · o caminho no cabeçalho (§2.5, com o desenho da §C), a busca é uma (§2.6), «fonte» diz o publicador (§2.4, §7.2, a L6), as datas de frescura (§7.3) | `Caminho.astro` (por escrever), `Pesquisa.astro`, `Provenance.astro`, `gate-html.mjs` | a L5 (7 213) e a L6 (26 178) são os dois números grandes que ainda não desceram, e são estes dois itens |
-| 5 | **o fecho** | as capturas, as plantas da L9, o `REVISOES-DO-INVENTARIO.md` | as capturas de `/`, `/municipios`, uma região, **um concelho com o mapa da região**, a página europeia e um estudo a 390 × 664 e 1 280 nas duas edições; as medidas de 390 px de `tests/inicio/porta.mjs` corridas à mão (a A1 com o teto das três linhas da manchete, a A3 e a A13 na página europeia, **e a A4, que mudou de medida nesta sessão e não foi corrida**) |
+| 5 | **o 8.17b** · `nivel="unidade"` na chamada de `MapaRespira` da página do concelho | `src/views/MunicipioView.astro` | **uma linha**, e espera pelo F1.1e: a 08.09 ao fim do dia o `origin/main` estava em `fe6478aa` e os dois commits do F1.1e que lá estão são só documentos (medido, com o conhecido-positivo, na secção acima). Mede-se na página construída de Évora e na gémea inglesa |
+| 6 | **o fecho** | as capturas, as plantas da L9, o `REVISOES-DO-INVENTARIO.md` | as capturas de `/`, `/municipios`, uma região, **um concelho com o mapa da região**, a página europeia e um estudo a 390 × 664 e 1 280 nas duas edições; as medidas de 390 px de `tests/inicio/porta.mjs` corridas à mão (a A1 com o teto das três linhas da manchete, a A3 e a A13 na página europeia, **e a A4, que mudou de medida nesta sessão e não foi corrida**) |
 
 ---|---|---|---|
 | 1 | **8.4** · a definição de uma linha de cada painel e de cada uma das 21 medidas | `src/data/figuras.mjs`, `UniaoEuropeiaView.astro`, o inventário da voz | cada definição sai da descrição da PRÓPRIA Comissão e é citada com o documento, o endereço, a data de acesso e o excerto literal; a origem tem de ser um documento que o livro-razão já cita para essas linhas, ou a página da Comissão sobre o painel; onde não houver uma frase da Comissão que sirva, a definição escreve-se só com os campos da linha e di-lo. **Nunca se inventa.** O §9.3 acrescenta: sem uma palavra sobre a conferência da casa. É o item mais caro do que falta, e o que precisa de leitura das fontes primárias. **A leitura de cada medida já tem o sítio onde a definição entra**: é a `.dobra-frase` que hoje leva a frase da medida, e as vinte e uma dobras existem |
