@@ -16,14 +16,14 @@
       "prova": "308 de 308 medidos em 29 unidades, todos com o ponto dentro da sua área · 105 chegam aos 44 px (medido, não exigido) · mediana 36 px (36 px sem os de lado zero) · 0 com menos de 2 px · o menor com lado medível pediria um desenho de 2145 px de largura"
     },
     {
-      "nome": "U1c · a rede de nomes responde pelas áreas abaixo de 44 px",
+      "nome": "U1c · a rede de nomes responde pelas áreas abaixo de 44 px: as 29 na lista fechada e os 308 no índice, uma ligação cada",
       "passa": true,
-      "prova": "a lista dos nomes tem 29 unidades da Carta · o índice dos concelhos tem 308 ligações"
+      "prova": "a lista dos nomes tem 29 unidades da Carta · o índice dos concelhos tem 308 ligações para 308 de 308 slugs da Carta"
     },
     {
-      "nome": "U2a · pt: o nome no lugar ao passar e ao focar, nas 29 unidades",
+      "nome": "U2a · pt: o nome da Carta no lugar ao passar e ao focar, nas 29 unidades",
       "passa": true,
-      "prova": "29 de 29 · «Aveiro» … «Viseu» · cada porta na sua página"
+      "prova": "29 de 29 · «Aveiro» … «Viseu» · cada um o nome de mapa/pais.json, cada porta na sua página"
     },
     {
       "nome": "U2b · pt: o nome no lugar numa amostra de 30 concelhos, nos níveis das três unidades maiores",
@@ -46,9 +46,9 @@
       "prova": "30 de 30 · «Armamar» → «/municipios/armamar» … «Vagos» → «/municipios/vagos» · nenhum primeiro toque navegou"
     },
     {
-      "nome": "U2a · en: o nome no lugar ao passar e ao focar, nas 29 unidades",
+      "nome": "U2a · en: o nome da Carta no lugar ao passar e ao focar, nas 29 unidades",
       "passa": true,
-      "prova": "29 de 29 · «Aveiro» … «Viseu» · cada porta na sua página"
+      "prova": "29 de 29 · «Aveiro» … «Viseu» · cada um o nome de mapa/pais.json, cada porta na sua página"
     },
     {
       "nome": "U2b · en: o nome no lugar numa amostra de 30 concelhos, nos níveis das três unidades maiores",
@@ -86,7 +86,7 @@
       "prova": "clique → «#unidade=beja» (nível unidade) · «Voltar ao país» → «sem fragmento» (nível pais) · voltar do navegador → «#unidade=beja» (nível unidade)"
     },
     {
-      "nome": "U3c · a página de uma unidade abre-se pela porta do lugar do nome, e não por um segundo toque na área",
+      "nome": "U3c · emenda de 08.09 (segunda passagem) · a página de uma unidade abre-se pela porta do lugar do nome, e não por um segundo toque na área",
       "passa": true,
       "prova": "a porta diz «/distritos/faro» e leva a «/distritos/faro» · uma unidade que cresceu já não tem contorno no ecrã para receber um segundo toque, e a regra dos dois toques vale para um concelho (U3a e U3d)"
     },
@@ -99,6 +99,16 @@
       "nome": "U3e · com o ficheiro de uma unidade a responder 404, o mapa não cresce, o lugar do nome di-lo e o toque seguinte abre a página dela",
       "passa": true,
       "prova": "o primeiro toque deixa o nível em «pais» e o endereço em «/», com o nome «Faro», a porta «/distritos/faro» e o aviso à vista · o toque seguinte abre «/distritos/faro»"
+    },
+    {
+      "nome": "U3f · com duas respostas atrasadas e a ordem trocada, o desenho fica no último gesto e o histórico escreve-se pela ordem dos gestos",
+      "passa": true,
+      "prova": "toque em «evora» (a responder em 1200 ms) e a seguir em «beja» (em 60 ms) · 2400 ms depois: nível «unidade», endereço «#unidade=beja», 14 concelhos (o ficheiro de «beja» tem 14), o primeiro «aljustrel» (esperado «aljustrel») · um passo atrás: nível «pais», endereço «sem fragmento»"
+    },
+    {
+      "nome": "U3g · o fragmento limpo a meio de um pedido lento descarta a resposta, e a unidade não reabre em cima da primeira página",
+      "passa": true,
+      "prova": "«#unidade=evora» com o ficheiro a responder em 1200 ms, o fragmento limpo 200 ms depois · 2400 ms depois: nível «pais», endereço «sem fragmento», 0 concelhos desenhados, a porta de voltar escondida"
     },
     {
       "nome": "U4 · pt: sem guião, 29 ligações para as 29 páginas, a lista fechada com as 29, zero regiões desenhadas e o «#unidade=» ignorado",
@@ -139,6 +149,26 @@
       "nome": "U8c · herdada do F1.1d (P7c) · a frase do lugar declara `aria-live=\"polite\"`, que é o atributo por onde um leitor de ecrã sabe que há ali algo a reler",
       "passa": true,
       "prova": "aria-live=\"polite\" · o atributo mede-se; o anúncio em voz alta é do navegador e do leitor de ecrã, e não desta régua"
+    },
+    {
+      "nome": "U10 · emenda de 08.09 (segunda passagem) · a 390, as molduras não se cruzam e cada ilha fica dentro da sua",
+      "passa": true,
+      "prova": "2 molduras · Madeira 87 × 224 px em y 1009 · Açores 145 × 83 px em y 913 · não se cruzam · 11 polígonos nas parcelas com moldura, 0 fora da sua"
+    },
+    {
+      "nome": "U10 · emenda de 08.09 (segunda passagem) · a 768, as molduras não se cruzam e cada ilha fica dentro da sua",
+      "passa": true,
+      "prova": "2 molduras · Madeira 63 × 161 px em y 1127 · Açores 105 × 60 px em y 1058 · não se cruzam · 11 polígonos nas parcelas com moldura, 0 fora da sua"
+    },
+    {
+      "nome": "U10 · emenda de 08.09 (segunda passagem) · a 1280, as molduras não se cruzam e cada ilha fica dentro da sua",
+      "passa": true,
+      "prova": "2 molduras · Madeira 116 × 297 px em y 776 · Açores 193 × 110 px em y 650 · não se cruzam · 11 polígonos nas parcelas com moldura, 0 fora da sua"
+    },
+    {
+      "nome": "U11 · emenda de 08.09 (segunda passagem) · o copiador é dono só do padrão `unidade-*.json`: um ficheiro estranho sobrevive e um `unidade-*` a mais sai com a linha a dizê-lo",
+      "passa": true,
+      "prova": "«leia-me-do-mapa.txt» sobreviveu · «unidade-condado-portucalense.json» saiu e a linha disse-o · 29 ficheiros de unidade · o copiador saiu a 0, a conferência a 0 e o portão do mapa a 0 (com o ficheiro estranho ainda na pasta) · a pasta ficou como estava (29 ficheiros)"
     }
   ],
   "medidas": {
@@ -567,7 +597,7 @@
           "evora": {
             "concelhos": 14,
             "chegam": 3,
-            "mediana": 36,
+            "mediana": 35,
             "menor": 14,
             "abaixo": [
               "borba 14",
@@ -586,7 +616,7 @@
           "faro": {
             "concelhos": 16,
             "chegam": 2,
-            "mediana": 24,
+            "mediana": 23,
             "menor": 8,
             "abaixo": [
               "vila-real-de-santo-antonio 8",
@@ -608,7 +638,7 @@
           "guarda": {
             "concelhos": 14,
             "chegam": 9,
-            "mediana": 52,
+            "mediana": 51,
             "menor": 20,
             "abaixo": [
               "manteigas 20",
@@ -628,7 +658,7 @@
           "ilha-da-madeira": {
             "concelhos": 10,
             "chegam": 0,
-            "mediana": 16,
+            "mediana": 15,
             "menor": 10,
             "abaixo": [
               "camara-de-lobos 10",
@@ -646,7 +676,7 @@
           "ilha-das-flores": {
             "concelhos": 2,
             "chegam": 2,
-            "mediana": 180,
+            "mediana": 174,
             "menor": 168,
             "abaixo": []
           },
@@ -667,7 +697,7 @@
           "ilha-de-sao-jorge": {
             "concelhos": 2,
             "chegam": 0,
-            "mediana": 34,
+            "mediana": 33,
             "menor": 32,
             "abaixo": [
               "calheta-de-sao-jorge 32",
@@ -677,7 +707,7 @@
           "ilha-de-sao-miguel": {
             "concelhos": 6,
             "chegam": 1,
-            "mediana": 34,
+            "mediana": 32,
             "menor": 22,
             "abaixo": [
               "lagoa-ilha-de-sao-miguel 22",
@@ -714,14 +744,14 @@
           "ilha-terceira": {
             "concelhos": 2,
             "chegam": 2,
-            "mediana": 100,
+            "mediana": 93,
             "menor": 86,
             "abaixo": []
           },
           "leiria": {
             "concelhos": 16,
             "chegam": 2,
-            "mediana": 24,
+            "mediana": 22,
             "menor": 12,
             "abaixo": [
               "castanheira-de-pera 12",
@@ -743,7 +773,7 @@
           "lisboa": {
             "concelhos": 16,
             "chegam": 8,
-            "mediana": 50,
+            "mediana": 46,
             "menor": 18,
             "abaixo": [
               "amadora 18",
@@ -841,7 +871,7 @@
           "viana-do-castelo": {
             "concelhos": 10,
             "chegam": 6,
-            "mediana": 54,
+            "mediana": 51,
             "menor": 28,
             "abaixo": [
               "ponte-da-barca 28",
@@ -853,7 +883,7 @@
           "vila-real": {
             "concelhos": 14,
             "chegam": 7,
-            "mediana": 44,
+            "mediana": 40,
             "menor": 12,
             "abaixo": [
               "mesao-frio 12",
@@ -868,7 +898,7 @@
           "viseu": {
             "concelhos": 24,
             "chegam": 5,
-            "mediana": 34,
+            "mediana": 33,
             "menor": 24,
             "abaixo": [
               "oliveira-de-frades 24",
@@ -897,7 +927,11 @@
     },
     "rede": {
       "unidades": 29,
-      "concelhos": 308
+      "concelhos": 308,
+      "ligacoes": 308,
+      "repetidos": 0,
+      "semLigacao": 0,
+      "aMais": 0
     },
     "nome": {
       "pt": {
@@ -921,6 +955,24 @@
       "aviso": true,
       "nome": "Faro",
       "porta": "/distritos/faro"
+    },
+    "foraDeOrdem": {
+      "depois": {
+        "nivel": "unidade",
+        "hash": "#unidade=beja",
+        "concelhos": 14,
+        "primeiro": "aljustrel"
+      },
+      "atras": {
+        "nivel": "pais",
+        "hash": ""
+      },
+      "limpo": {
+        "nivel": "pais",
+        "hash": "",
+        "concelhos": 0,
+        "voltar": false
+      }
     },
     "semGuiao_pt": {
       "areas": 29,
@@ -1122,6 +1174,152 @@
         "porta": 15.38,
         "aviso": 15.38
       }
+    },
+    "molduras": {
+      "390": {
+        "molduras": [
+          {
+            "nome": "Madeira",
+            "parcela": "madeira",
+            "caixa": {
+              "x": 97.79,
+              "y": 1008.53,
+              "w": 86.97,
+              "h": 223.88
+            }
+          },
+          {
+            "nome": "Açores",
+            "parcela": "acores",
+            "caixa": {
+              "x": 16.65,
+              "y": 913.17,
+              "w": 145.43,
+              "h": 82.99
+            }
+          }
+        ],
+        "cruzados": [],
+        "comMoldura": 11,
+        "fora": []
+      },
+      "768": {
+        "molduras": [
+          {
+            "nome": "Madeira",
+            "parcela": "madeira",
+            "caixa": {
+              "x": 101.18,
+              "y": 1127.14,
+              "w": 62.66,
+              "h": 161.3
+            }
+          },
+          {
+            "nome": "Açores",
+            "parcela": "acores",
+            "caixa": {
+              "x": 42.72,
+              "y": 1058.44,
+              "w": 104.78,
+              "h": 59.8
+            }
+          }
+        ],
+        "cruzados": [],
+        "comMoldura": 11,
+        "fora": []
+      },
+      "1280": {
+        "molduras": [
+          {
+            "nome": "Madeira",
+            "parcela": "madeira",
+            "caixa": {
+              "x": 797.88,
+              "y": 776.46,
+              "w": 115.51,
+              "h": 297.36
+            }
+          },
+          {
+            "nome": "Açores",
+            "parcela": "acores",
+            "caixa": {
+              "x": 690.12,
+              "y": 649.82,
+              "w": 193.16,
+              "h": 110.23
+            }
+          }
+        ],
+        "cruzados": [],
+        "comMoldura": 11,
+        "fora": []
+      }
+    },
+    "donoDaPasta": {
+      "estranhoSobreviveu": true,
+      "intrusoSaiu": true,
+      "disseOIntruso": true,
+      "escreveu": 0,
+      "conferiu": 0,
+      "portao": 0,
+      "unidades": 29,
+      "ficheirosAntes": 29,
+      "pastaComoEstava": true
+    }
+  },
+  "reguas": {
+    "_": "O resumo das quatro réguas do bloco. Refaz-se com `node design/especime-v3/medicoes/resumo-das-reguas.mjs`.",
+    "medido": "2026-09-08T19:18:57.883Z",
+    "mapa-unidades": {
+      "nome": "a régua do bloco",
+      "comandoDasCelulas": "node tests/inicio/mapa-unidades.mjs --json design/especime-v3/medicoes/distritos-medidas.json",
+      "comandoDasPlantas": "node tests/inicio/mapa-unidades.mjs --vermelhos",
+      "celulas": 34,
+      "celulasQueFalham": 0,
+      "saidaDasCelulas": 0,
+      "plantas": 13,
+      "plantasApanhadas": 13,
+      "plantasQueEscaparam": 0,
+      "saidaDasPlantas": 0
+    },
+    "lista": {
+      "nome": "os nomes ao lado do mapa",
+      "comandoDasCelulas": "node tests/inicio/lista.mjs --json ../../../../../../../var/folders/st/9ys1198j2qbbhjh282gzntkh0000gn/T/reguas-f11e-LDmma1/lista.json",
+      "comandoDasPlantas": "node tests/inicio/lista.mjs --vermelhos",
+      "celulas": 94,
+      "celulasQueFalham": 0,
+      "saidaDasCelulas": 0,
+      "plantas": 15,
+      "plantasApanhadas": 15,
+      "plantasQueEscaparam": 0,
+      "saidaDasPlantas": 0
+    },
+    "mapa-distritos": {
+      "nome": "o mapa por distritos",
+      "comandoDasCelulas": "node tests/inicio/mapa-distritos.mjs --json ../../../../../../../var/folders/st/9ys1198j2qbbhjh282gzntkh0000gn/T/reguas-f11e-LDmma1/mapa-distritos.json",
+      "comandoDasPlantas": "node tests/inicio/mapa-distritos.mjs --vermelhos",
+      "celulas": 43,
+      "celulasQueFalham": 0,
+      "saidaDasCelulas": 0,
+      "plantas": 8,
+      "plantasApanhadas": 8,
+      "plantasQueEscaparam": 0,
+      "saidaDasPlantas": 0
+    },
+    "mapa-navegacao": {
+      "nome": "o mapa é navegação",
+      "comandoDasCelulas": "node tests/inicio/mapa-navegacao.mjs --json ../../../../../../../var/folders/st/9ys1198j2qbbhjh282gzntkh0000gn/T/reguas-f11e-LDmma1/mapa-navegacao.json",
+      "comandoDasPlantas": null,
+      "celulas": 9,
+      "celulasQueFalham": 0,
+      "saidaDasCelulas": 0,
+      "plantas": null,
+      "plantasApanhadas": null,
+      "plantasQueEscaparam": null,
+      "saidaDasPlantas": null
     }
   }
 }
