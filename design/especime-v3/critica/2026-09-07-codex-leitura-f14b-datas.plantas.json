@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-07T15:51:31+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/2dfb8705-5d0f-4a6b-a4d0-2fffddb17dfc/scratchpad/leituras/f14b-pacote",
+ "plantas": [
+  {
+   "id": "P1a",
+   "ficheiro": "scripts/check-datas.mjs",
+   "descricao": "a terceira conta do portão invertida: com história completa o ficheiro nunca se confere contra o git, e o registo diz RASA onde há história",
+   "sha256_antes": "82e59318cc280b5c7a43089e0a8715f6287a8ad326b67aa831eb1a98d092e255",
+   "sha256_depois": "cb9c86193ecb64d70c05e188d0422d76ac8ac54f11c9a4b6fc9bc0e557bf16cf",
+   "contexto_antes": "rse', '--is-shallow-repository'], {\n    cwd: RAIZ,\n    encoding: 'utf8',\n    stdio: ['ignore', 'pipe', 'ignore'],\n  }).trim();\n} catch {\n  raso = 'sem git';\n}\n\nconst comHistoria = raso === 'false';\n\nif (comHistoria) {\n  const dir = path.join(RAIZ, 'studies-src');\n  const slugs = fs.existsSync(dir)\n    ? fs\n        .readdirSync(dir, { withFileTypes: true }",
+   "contexto_depois": "rse', '--is-shallow-repository'], {\n    cwd: RAIZ,\n    encoding: 'utf8',\n    stdio: ['ignore', 'pipe', 'ignore'],\n  }).trim();\n} catch {\n  raso = 'sem git';\n}\n\nconst comHistoria = raso === 'true';\n\nif (comHistoria) {\n  const dir = path.join(RAIZ, 'studies-src');\n  const slugs = fs.existsSync(dir)\n    ? fs\n        .readdirSync(dir, { withFileTypes: true }"
+  },
+  {
+   "id": "P1b",
+   "ficheiro": "diff.patch",
+   "descricao": "a mesma planta na linha acrescentada do diff",
+   "sha256_antes": "9a10ba3cd01a3752f1e7e05832591b4a8b994e8c9707c819d048f7948f5d0095",
+   "sha256_depois": "f1f084f64ea428f8bf73c1e668e3b54d0c79a581be318036989efaa3196afe1d",
+   "contexto_antes": "is-shallow-repository'], {\n+    cwd: RAIZ,\n+    encoding: 'utf8',\n+    stdio: ['ignore', 'pipe', 'ignore'],\n+  }).trim();\n+} catch {\n+  raso = 'sem git';\n+}\n+\n+const comHistoria = raso === 'false';\n+\n+if (comHistoria) {\n+  const dir = path.join(RAIZ, 'studies-src');\n+  const slugs = fs.existsSync(dir)\n+    ? fs\n+        .readdirSync(dir, { withFileTypes: ",
+   "contexto_depois": "is-shallow-repository'], {\n+    cwd: RAIZ,\n+    encoding: 'utf8',\n+    stdio: ['ignore', 'pipe', 'ignore'],\n+  }).trim();\n+} catch {\n+  raso = 'sem git';\n+}\n+\n+const comHistoria = raso === 'true';\n+\n+if (comHistoria) {\n+  const dir = path.join(RAIZ, 'studies-src');\n+  const slugs = fs.existsSync(dir)\n+    ? fs\n+        .readdirSync(dir, { withFileTypes: "
+  },
+  {
+   "id": "P2",
+   "ficheiro": "tests/livro/indice.mjs",
+   "descricao": "a régua I9 compara só o ano da data do ficheiro com o git: um dia errado passa em silêncio",
+   "sha256_antes": "b22e43f0edc6c9793c6aaa74973a40f1abf030657e9cf87309d5e5e6e8933f7d",
+   "sha256_depois": "9a6b97582c69f051185e4c4d6f12db093c842bca26d043f41bf4b7e0431f3ad1",
+   "contexto_antes": "`não a declara. A construção lê o ficheiro: uma edição que falte lá volta ao marcador.`,\n        );\n      } else {\n        conferidasContraOFicheiro++;\n        if (declarada.data !== data) {\n          falhas.push(\n            `${rel}: ${FICHEIRO_DAS_DATAS} declara ${declarada.data} e o \\`git\\` diz ${data}.`,\n          );\n        }\n        if (decla",
+   "contexto_depois": "`não a declara. A construção lê o ficheiro: uma edição que falte lá volta ao marcador.`,\n        );\n      } else {\n        conferidasContraOFicheiro++;\n        if (declarada.data.slice(0, 4) !== data.slice(0, 4)) {\n          falhas.push(\n            `${rel}: ${FICHEIRO_DAS_DATAS} declara ${declarada.data} e o \\`git\\` diz ${data}.`,\n          );\n        }\n        if (decla"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a tabela do relatório diz 14.08.2026 na edição inglesa de evora-prometido-pago-auditado-2026, e o JSON e a página dizem 15.08.2026",
+   "sha256_antes": "5bf4ee3be7b87dde15ea8bb164f911fc368847aef5bcf304a37e4f3172d621cf",
+   "sha256_depois": "68b0c3c4b071feb9c47fd304d75866d4273b709299409125bc9ddd9ba89c2b88",
+   "contexto_antes": "26** | `b4f45d3f` | `2026-08-12` |\n| evora-prometido-pago-auditado-2026 (pt) | 04.09.2026 | **15.08.2026** | `ec152217` | `2026-08-04` |\n| evora-prometido-pago-auditado-2026 (en) | 04.09.2026 | **15.08.2026** | `ec152217` | `2026-08-04` |\n| evora-quinze-anos-cinco-mandatos (pt) | 04.09.2026 | **12.08.2026** | `b4f45d3f` | `null` |\n| onde-esta-a-agua (pt) | 04.09.202",
+   "contexto_depois": "26** | `b4f45d3f` | `2026-08-12` |\n| evora-prometido-pago-auditado-2026 (pt) | 04.09.2026 | **15.08.2026** | `ec152217` | `2026-08-04` |\n| evora-prometido-pago-auditado-2026 (en) | 04.09.2026 | **14.08.2026** | `ec152217` | `2026-08-04` |\n| evora-quinze-anos-cinco-mandatos (pt) | 04.09.2026 | **12.08.2026** | `b4f45d3f` | `null` |\n| onde-esta-a-agua (pt) | 04.09.202"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/estudos/index.html",
+   "descricao": "o defeito de 04.09 de volta na página construída: uma edição (evora-economia-investidores-portas-abertas-2026, pt) imprime 04.09.2026 onde o JSON declara 2026-08-12",
+   "sha256_antes": "b784b71c9c8bc9ff2d060f26c8cb55fa38efe4d332b9df4a3322f09c629fa40a",
+   "sha256_depois": "467fc4d88a6a407a01ebcf520fda932fe24970c955e96f65da846bddd8134a12",
+   "contexto_antes": "ores-portas-abertas-2026\" hreflang=\"pt-PT\">PT</a></span><span class=\"arquivo-data\"><span data-voz>publicado a</span> <span data-nonledger=\"data-do-repositorio\">12.08.2026</span></span></div></article><article class=\"arquivo-item\"><div><h2 class=\"arquivo-titulo\"><a href=\"/estudos/evora-orcamentado-pago-devido-2025\"><span data-nonledger=\"titulo-de-estudo\">Évora — Orçamentado, Pago, Devido 2025</span></a></h2><p class=\"arquivo-desc\">O que foi orçamentado, o que foi pago e o ",
+   "contexto_depois": "ores-portas-abertas-2026\" hreflang=\"pt-PT\">PT</a></span><span class=\"arquivo-data\"><span data-voz>publicado a</span> <span data-nonledger=\"data-do-repositorio\">04.09.2026</span></span></div></article><article class=\"arquivo-item\"><div><h2 class=\"arquivo-titulo\"><a href=\"/estudos/evora-orcamentado-pago-devido-2025\"><span data-nonledger=\"titulo-de-estudo\">Évora — Orçamentado, Pago, Devido 2025</span></a></h2><p class=\"arquivo-desc\">O que foi orçamentado, o que foi pago e o "
+  }
+ ]
+}
