@@ -57,6 +57,10 @@ import { parse, NodeType } from 'node-html-parser';
 import { matchPath, routePath, normalizePath, LANGS } from '../src/lib/routes.mjs';
 import { loadClaims } from '../src/lib/ledger.mjs';
 import { t } from '../src/i18n/strings.mjs';
+/* A DECLARAÇÃO DAS DEFINIÇÕES DOS DOIS PAINÉIS (item 8.4). A régua lê-a em vez
+   de guardar uma segunda cópia do texto: os dois lados da comparação deixam de
+   ser a mesma frase escrita duas vezes. */
+import { DEFINICAO_DOS_PAINEIS } from '../src/data/figuras.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -168,6 +172,13 @@ const TETOS = {
      cabeça: correu-se esta régua sobre o `dist/` desta árvore ANTES de se tocar
      no cabeçalho, e ela imprimiu 28 892 em 7 240 páginas. */
   d811_leituras_na_cabeca: 0,
+  /* 8.4 · parágrafos `data-contexto-painel` cujo texto não é, carácter a
+     carácter, a definição que `DEFINICAO_DOS_PAINEIS` declara para aquele
+     painel naquela edição. Nasce a 0 a 08.09.2026, no commit em que a
+     comparação entra no `verify`: é a mesma medida da célula A4 de
+     `tests/inicio/porta.mjs`, que abre um navegador e não corre em portão
+     nenhum, feita aqui sobre o HTML construído. */
+  d84_definicoes_fora: 0,
 };
 
 /* Quantos concelhos ligados fora de uma lista fechada fazem uma segunda lista.
@@ -409,7 +420,11 @@ const medidas = {
   d817_pontos_no_concelho: 0,
   d817_concelhos_sem_mapa: 0,
   d811_leituras_na_cabeca: 0,
+  d84_definicoes_fora: 0,
 };
+/** Quantos parágrafos de definição de painel a régua viu (regra 14: uma
+    contagem de zero sobre uma coleção vazia não prova nada). */
+let definicoesVistas = 0;
 /** As amostras de cada medida, para que um número tenha sempre um sítio. */
 const amostras = Object.fromEntries(Object.keys(medidas).map((k) => [k, []]));
 /** Quantas vezes cada exceção foi usada: uma exceção a zero é uma porta esquecida. */
@@ -624,6 +639,44 @@ for (const ficheiro of paginas) {
     }
   }
 
+  /* ------------------------------------------------------------------- 8.4 */
+  /* A DEFINIÇÃO DE CADA PAINEL, CARÁCTER A CARÁCTER, DENTRO DO `verify`.
+
+     A comparação nasceu na célula A4 de `tests/inicio/porta.mjs`, que abre um
+     navegador e não corre nem no `build` nem na CI: a célula foi escrita a
+     08.09 e não foi corrida no dia em que mudou de medida. O lugar de direção
+     decidiu que ela entra no `verify` ou que a razão de não entrar fica escrita
+     na régua, e entra: a comparação não precisa de navegador nenhum, porque é
+     texto contra texto sobre o HTML construído.
+
+     A CÉLULA A4 FICA ONDE ESTÁ, e não é uma segunda cópia desta: ela mede o
+     mesmo em Chromium, com a página composta e as folhas aplicadas, e é isso
+     que uma régua de navegador acrescenta a uma de ficheiro. O que muda é que
+     a conferência deixa de depender de alguém se lembrar de a correr.
+
+     E A COLEÇÃO TEM DE TER ELEMENTOS: uma contagem de zero diferenças sobre
+     zero parágrafos não prova coisa nenhuma. O total dos parágrafos vistos
+     confere-se no fim contra o número que as duas edições têm de render. */
+  for (const el of corpo.querySelectorAll('[data-contexto-painel]')) {
+    definicoesVistas++;
+    const chave = el.getAttribute('data-contexto-painel') ?? '';
+    const partes = DEFINICAO_DOS_PAINEIS[chave]?.[lang];
+    const declarada = Array.isArray(partes)
+      ? partes.join('').replace(/\s+/g, ' ').trim()
+      : null;
+    const rendida = el.text.replace(/\s+/g, ' ').trim();
+    if (declarada === null) {
+      medidas.d84_definicoes_fora++;
+      anota('d84_definicoes_fora', `${url} · «${chave}» não é um painel declarado`);
+    } else if (rendida !== declarada) {
+      medidas.d84_definicoes_fora++;
+      anota(
+        'd84_definicoes_fora',
+        `${url} · «${chave}»: a página diz «${rendida.slice(0, 60)}…» e a declaração diz «${declarada.slice(0, 60)}…»`,
+      );
+    }
+  }
+
   /* ------------------------------------------------------------------ 8.11 */
   /* AS LEITURAS DE APARELHO NO CABEÇALHO DE TODAS AS PÁGINAS.
      O item 8.11 e o §7.3 mandam-nas para a página da medida e para o Método: o
@@ -761,6 +814,20 @@ for (const alvo of INDICES_DA_HIERARQUIA) {
   }
 }
 
+/* -------------------------------------------------------------------- 8.4 */
+/* A COLEÇÃO TEM DE TER ELEMENTOS. São dois parágrafos por edição da página
+   europeia, e duas edições: quatro. Zero diferenças sobre zero parágrafos é
+   uma régua cega, e a regra 14 da casa fecha a construção em vez de a deixar
+   passar por não ter encontrado nada. */
+const DEFINICOES_ESPERADAS = Object.keys(DEFINICAO_DOS_PAINEIS).length * LANGS.length;
+if (definicoesVistas !== DEFINICOES_ESPERADAS) {
+  falhas.push(
+    `8.4 · a régua viu ${definicoesVistas} parágrafo(s) [data-contexto-painel] em dist/, e ` +
+      `esperava ${DEFINICOES_ESPERADAS} (${Object.keys(DEFINICAO_DOS_PAINEIS).length} painéis × ` +
+      `${LANGS.length} edições). Uma comparação sobre uma coleção vazia não prova nada.`,
+  );
+}
+
 /* ---------------------------------------------------------------------------
  * O RELATÓRIO
  * --------------------------------------------------------------------------- */
@@ -780,6 +847,7 @@ const NOMES = {
   d813_selos_nos_dominios: '8.13 · valores selados na secção dos domínios de /',
   d814_densidades: '8.14 · «Relance» e «Leitura breve» nas páginas do leitor',
   d811_leituras_na_cabeca: '8.11 · leituras de aparelho no cabeçalho',
+  d84_definicoes_fora: '8.4 · definições de painel fora da declaração',
 };
 
 console.log(`check:lugar · ${paginas.length} páginas em dist/`);

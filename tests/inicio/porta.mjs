@@ -709,6 +709,16 @@ async function corre() {
        página do Eurostat sobre o Pilar. Continuar a exigir a mesma cadeia nas
        duas era exigir que a segunda dissesse o que a sua origem não diz.
 
+       A MESMA COMPARAÇÃO ENTROU NO `verify` A 08.09.2026, e a razão é que esta
+       célula abre um navegador e não corre em portão nenhum: foi escrita num dia
+       e não foi corrida nesse dia. O lugar de direção decidiu que ela entra no
+       `verify` ou que a razão de não entrar fica escrita, e a comparação entrou:
+       `scripts/check-lugar.mjs` faz o mesmo teste sobre o HTML construído
+       (medida «8.4 · definições de painel fora da declaração», com a conferência
+       de que os quatro parágrafos existem, e com duas plantas que a fazem morder).
+       ESTA CÉLULA FICA, e não é uma cópia: mede o mesmo com a página composta e
+       as folhas aplicadas, que é o que um navegador acrescenta a um ficheiro.
+
        O QUE A CÉLULA MEDE AGORA é mais apertado do que o que media: cada
        parágrafo `data-contexto-painel` tem de render, CARÁCTER A CARÁCTER, a
        definição que `DEFINICAO_DOS_PAINEIS` declara para aquele painel naquela
