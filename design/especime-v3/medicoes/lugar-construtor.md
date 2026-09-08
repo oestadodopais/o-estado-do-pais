@@ -440,12 +440,21 @@ O `verify` corre `check:lugar` e imprime lá dentro as duas medidas novas: «8.1
 · leituras de aparelho no cabeçalho 0 (teto 0) ok» e «8.4 · definições de painel
 fora da declaração 0 (teto 0) ok».
 
-**Os cinco commits desta sessão**, por ordem: o componente órfão fora; a
-definição da posição de investimento internacional; as quatro leituras fora do
-cabeçalho; a comparação da A4 no `verify`; a matriz a andar. Os três portões
-correram-se na árvore do quarto, que contém os três primeiros; o quinto toca só
-numa régua de fora da cadeia, e essa régua foi corrida à mão, que é o que a
-governa.
+**Os commits desta sessão**, por ordem: o componente órfão fora; a definição da
+posição de investimento internacional; as quatro leituras fora do cabeçalho; a
+comparação da A4 no `verify`; a matriz a andar; o relatório; o primeiro ecrã
+medido depois; o §9.2 e o §9.6 medidos; a marca do sinal de tempo fora da
+mobília, com os dois cabeçalhos de ficheiro a dizerem o que os ficheiros fazem.
+**Os três portões correram-se três vezes ao longo da sessão**, e a última é a
+que conta: na árvore do último commit de código, com os códigos lidos dos
+ficheiros.
+
+**Uma construção falhou pelo meio, e diz-se em vez de se esconder.** Ao tirar
+`data-sinal-de-tempo` pôs-se um comentário `{/* … */}` entre o `&&` e o `<div>`
+de uma expressão do Astro, que só admite uma raiz: o `astro build` parou com
+«Expected `,` or `)` but found `class`» em `Masthead.astro:316`. O comentário
+passou para dentro da caixa, ao pé do que ele explica, e a construção seguinte
+saiu a 0. Nenhum commit levou a árvore partida.
 
 **A corrida da CI** lê-se na primeira linha de `gh run list --branch
 lugar-2026-09-04`: um commit não pode conter o número da corrida que ele dispara,
