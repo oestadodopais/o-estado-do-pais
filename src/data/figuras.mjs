@@ -442,10 +442,20 @@ const LISTA_SOCIAL = [
  * ---------------------------------------------------------------------------
  * AS ORIGENS
  * ---------------------------------------------------------------------------
- * Duas famílias, e as duas são documentação do publicador e não uma fonte do
- * corredor: a página da Comissão sobre o painel do Procedimento, e as páginas
- * do Eurostat sobre o Pilar e sobre cada conceito (Statistics Explained). O
+ * Três famílias, e as três são documentação do publicador e não uma fonte do
+ * corredor: a página da Comissão sobre o painel do Procedimento, as páginas do
+ * Eurostat sobre o Pilar e sobre cada conceito (Statistics Explained), e a
+ * página do Banco de Portugal que explica a posição de investimento
+ * internacional, que é a estatística que o Banco compila para Portugal. O
  * brief autoriza lê-las pela rede por serem isso mesmo.
+ *
+ * A TERCEIRA FAMÍLIA ENTROU A 08.09.2026, e a razão escreve-se. A quarta
+ * sessão do bloco fechou sem definição para a posição de investimento
+ * internacional, porque a página da Comissão sobre o painel publica só o
+ * rótulo e o Eurostat não tem glossário para o conceito. O lugar de direção
+ * alargou as origens autorizadas, por esta ordem de preferência, ao compilador
+ * nacional (o Banco de Portugal) e depois ao manual do FMI (BPM6) ou ao
+ * glossário do BCE. O compilador nacional tem o texto, e é ele que fica.
  */
 export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
   'painel-pdm': {
@@ -545,6 +555,16 @@ export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
     excerto:
       "The housing cost overburden rate is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances).",
   },
+  'bdp-pii': {
+    publicador: 'Banco de Portugal',
+    documento: 'BPstat · O que é a posição de investimento internacional (PII)?',
+    url: 'https://bpstat.bportugal.pt/conteudos/paginas/940',
+    lido: '2026-09-08',
+    excerto:
+      'A posição de investimento internacional, também conhecida por PII, apresenta o saldo entre os ativos financeiros e os passivos que os residentes de uma economia têm relativamente ao resto do mundo. … A diferença entre os ativos financeiros e os passivos corresponde ao valor líquido da posição de investimento internacional.',
+    excertoEn:
+      'The international investment position, also known as IIP, represents the difference between financial assets and liabilities that residents of an economy have vis-à-vis the rest of the world. … The difference between the value of these assets and liabilities corresponds to the net value of the international investment position.',
+  },
 });
 
 /**
@@ -593,16 +613,17 @@ export const DEFINICAO_DOS_PAINEIS = /** @type {const} */ ({
  * frase junta duas origens (o conceito num glossário do Eurostat e o recorte que
  * o painel usa), as duas estão declaradas, pela ordem em que a frase as usa.
  *
- * **UMA ENTRADA DIZ SÓ O RÓTULO, e a razão escreve-se:** a posição de
- * investimento internacional. A página do painel publica «net international
- * investment position as percent of GDP» e mais nada, e o Eurostat não tem
- * página de glossário para o conceito (procurado a 08.09.2026 em
- * `Glossary:Net_international_investment_position`,
- * `…_(NIIP)` e `Glossary:International_investment_position_(IIP)`: as três
- * respondem «Page not found»). A frase que a página tinha antes deste bloco
- * («o que o país tem a haver do exterior menos o que lhe deve») explicava bem e
- * não tinha origem nenhuma: saiu. Fica no relatório do bloco, para quem tenha
- * uma origem que sirva.
+ * **NENHUMA ENTRADA DIZ SÓ O RÓTULO.** A da posição de investimento
+ * internacional esteve assim durante a quarta sessão do bloco, e deixou de
+ * estar a 08.09.2026: a página do painel publica «net international investment
+ * position as percent of GDP» e mais nada, e o Eurostat não tem página de
+ * glossário para o conceito (procurado em
+ * `Glossary:Net_international_investment_position`, `…_(NIIP)` e
+ * `Glossary:International_investment_position_(IIP)`: as três respondem «Page
+ * not found»). O lugar de direção alargou as origens ao compilador nacional, e
+ * o Banco de Portugal, que compila a posição de investimento internacional de
+ * Portugal, publica uma página que a explica nas duas línguas: é dela que a
+ * frase sai agora, palavra por palavra, com o endereço e o excerto ao lado.
  */
 const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
   'divida-publica-2025': {
@@ -611,9 +632,13 @@ const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
     en: ['General government sector debt, as a percentage of GDP.'],
   },
   'posicao-de-investimento-internacional-2025': {
-    origens: ['painel-pdm'],
-    pt: ['A posição de investimento internacional líquida do país, em percentagem do PIB.'],
-    en: ['The country’s net international investment position, as a percentage of GDP.'],
+    origens: ['bdp-pii'],
+    pt: [
+      'A diferença entre os ativos financeiros e os passivos que os residentes de uma economia têm relativamente ao resto do mundo, em percentagem do PIB.',
+    ],
+    en: [
+      'The difference between the financial assets and liabilities that residents of an economy have vis-à-vis the rest of the world, as a percentage of GDP.',
+    ],
   },
   'custo-unitario-do-trabalho-2025': {
     origens: ['painel-pdm'],
