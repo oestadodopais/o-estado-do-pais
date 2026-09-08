@@ -154,11 +154,11 @@
   [data-postura='inteiro'].mapa {
     position: relative;
   }
-  /* SÓ NO NÍVEL DO PAÍS, e a razão está numa captura: no nível da região o
-     desenho enche a caixa toda (é uma região dentro da sua própria caixa) e o
-     nome ficava escrito por cima dos concelhos do Norte. O canto vazio é do
-     mapa do país; no nível da região o lugar do nome volta ao fluxo, por baixo
-     do desenho, que é a forma que ele tem no telemóvel. */
+  /* SÓ NO NÍVEL DO PAÍS, e a razão está numa captura: no nível da unidade o
+     desenho enche a caixa toda (é uma unidade dentro da sua própria caixa) e o
+     nome ficava escrito por cima dos concelhos. O canto vazio é do mapa do país;
+     no nível da unidade o lugar do nome volta ao fluxo, por baixo do desenho,
+     que é a forma que ele tem no telemóvel. */
   [data-nivel='pais'] .mapa-nome {
     position: absolute;
     top: 0;
@@ -171,14 +171,23 @@
   }
 }
 /* O SEGUNDO NÍVEL: as molduras dos dois arquipélagos são do nível do país e não
-   se desenham dentro de uma região; os dois grupos de áreas trocam de lugar, e é
-   o atributo `hidden` que os troca, posto pelo guião. Uma regra própria, porque
+   se desenham dentro de uma unidade; os dois grupos de áreas trocam de lugar, e
+   é o atributo `hidden` que os troca, posto pelo guião. Uma regra própria, porque
    a folha do navegador não aplica `[hidden]` a um `<g>` de SVG. */
 .mapa-areas[hidden] {
   display: none;
 }
-[data-nivel='regiao'] .mapa-molduras {
+[data-nivel='unidade'] .mapa-molduras {
   display: none;
+}
+
+/* O CONCELHO ESCOLHIDO É UM ANEL, NUNCA UM ENCHIMENTO (Emenda 10, F1.1e). Num
+   desenho de áreas o anel é o mesmo contorno mais grosso, que é a distinção que
+   `.uni-porta:hover .uni` já usa: um só traço a dizer duas coisas em dois
+   estados, e nenhuma cor nova. Serve o mapa do nível da unidade, onde a página
+   de um concelho marca o seu. */
+.uni-escolhida {
+  stroke-width: 3;
 }
 
 /* ---------------------------------------------------------------------------

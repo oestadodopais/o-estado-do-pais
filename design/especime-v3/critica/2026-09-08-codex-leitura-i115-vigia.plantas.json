@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-08T15:44:02+00:00",
+ "copia": "i115-pacote",
+ "plantas": [
+  {
+   "id": "V1",
+   "ficheiro": "indicators/refresh.py",
+   "descricao": "a guarda do HTTPError desligada: uma resposta de erro da fonte passa a contar como sem rede, e o vigia tapa a fonte",
+   "sha256_antes": "6e206073192c8f83db7284c2ecbefd84bb4896f21818b3ad6f80ca76af20a7a1",
+   "sha256_depois": "4448d5ce43600ff48d4b40c71f3a36768950b3ce7730f8e65c9bfa80db16c8e2",
+   "contexto_antes": "ngolir.\n    `HTTPError` é subclasse de `URLError`, que é subclasse de `OSError`, por\n    isso a ordem dos `isinstance` aqui não é arrumação: é a regra.\n    \"\"\"\n    if isinstance(err, urllib.error.HTTPError):\n        return None\n    if isinstance(err, socket.gaierror):\n        return f\"o nome não resolve ({err})\"\n    if isinstance(err, urllib.error.URLError):\n      ",
+   "contexto_depois": "ngolir.\n    `HTTPError` é subclasse de `URLError`, que é subclasse de `OSError`, por\n    isso a ordem dos `isinstance` aqui não é arrumação: é a regra.\n    \"\"\"\n    if False and isinstance(err, urllib.error.HTTPError):\n        return None\n    if isinstance(err, socket.gaierror):\n        return f\"o nome não resolve ({err})\"\n    if isinstance(err, urllib.error.URLError):\n      "
+  },
+  {
+   "id": "V2",
+   "ficheiro": "indicators/refresh.py",
+   "descricao": "a etiqueta do observador cai no nome da máquina quando a variável não existe: o nome do portátil iria para o repositório público, contra o relatório",
+   "sha256_antes": "4448d5ce43600ff48d4b40c71f3a36768950b3ce7730f8e65c9bfa80db16c8e2",
+   "sha256_depois": "121934acfc3d71200763e7727076e04c102fb3de06edac2b85a4774fd3b4d11a",
+   "contexto_antes": "r()\n    return etiqueta or platform.node() or \"(máquina sem nome)\"\n\n\ndef etiqueta_do_observador() -> str:\n    \"\"\"A etiqueta que o diretor escolheu, ou `\"\"`.\"\"\"\n    return (os.environ.get(\"OEDP_OBSERVADOR\") or \"\").strip()\n\n\ndef observador_publicavel() -> str | None:\n    \"\"\"O que pode ir para o SÍTIO, que é um repositório PÚBLICO, ou `None`.\n\n    E NÃO É O MESMO QUE `observador()",
+   "contexto_depois": "r()\n    return etiqueta or platform.node() or \"(máquina sem nome)\"\n\n\ndef etiqueta_do_observador() -> str:\n    \"\"\"A etiqueta que o diretor escolheu, ou `\"\"`.\"\"\"\n    return (os.environ.get(\"OEDP_OBSERVADOR\") or platform.node()).strip()\n\n\ndef observador_publicavel() -> str | None:\n    \"\"\"O que pode ir para o SÍTIO, que é um repositório PÚBLICO, ou `None`.\n\n    E NÃO É O MESMO QUE `observador()"
+  },
+  {
+   "id": "V5",
+   "ficheiro": "indicators/refresh.py",
+   "descricao": "a corrida sem rede sai com 0 em vez do código próprio, e o registo do launchd deixa de a distinguir de uma corrida boa",
+   "sha256_antes": "121934acfc3d71200763e7727076e04c102fb3de06edac2b85a4774fd3b4d11a",
+   "sha256_depois": "4e52f7072813bdbf65ff52ab42147a3c0af4a5ce433c1e50d52a9eb23486daf9",
+   "contexto_antes": "       \"legível.\\n\")\n            return 1\n        problema = vigia_de_rede(anfitrioes[0])\n        if problema:\n            diz_sem_rede(problema, now()[11:16])\n            return SEM_REDE\n\n    base_all = json.loads(BASELINE.read_text()) if BASELINE.exists() else {}\n    # Lido duas vezes de propósito: `vint_antes` é o que estava em disco antes\n  ",
+   "contexto_depois": "       \"legível.\\n\")\n            return 1\n        problema = vigia_de_rede(anfitrioes[0])\n        if problema:\n            diz_sem_rede(problema, now()[11:16])\n            return 0\n\n    base_all = json.loads(BASELINE.read_text()) if BASELINE.exists() else {}\n    # Lido duas vezes de propósito: `vint_antes` é o que estava em disco antes\n  "
+  },
+  {
+   "id": "V3",
+   "ficheiro": "indicators/provas_test.py",
+   "descricao": "o chão do provador do painel a 30 em vez de 36: seis conferências podem desaparecer sem o portão ver",
+   "sha256_antes": "d9ff9f15462cbfde3e3d589e120c10ca57b5a98f0ceeef822f184a19848f6dea",
+   "sha256_depois": "e45dfcee467a15030c80e2bf3f17e4afae8a2041f7dd2403bea5b342e33cecd2",
+   "contexto_antes": "repositório público, e a etiqueta\n    # que vai quando alguém a escolhe), duas do homem morto, duas da lista dos\n    # anfitriões e duas do `--do-arquivo`.\n    (\"painel\", [\"-m\", \"indicators.refresh\", \"--prova-vigia\"], 36),\n)\n\n# A soma dos chãos, escrita à parte de propósito: se alguém mexer num chão sem\n# mexer neste, o teste falha e a pergunta «quantas conferências é que a casa ",
+   "contexto_depois": "repositório público, e a etiqueta\n    # que vai quando alguém a escolhe), duas do homem morto, duas da lista dos\n    # anfitriões e duas do `--do-arquivo`.\n    (\"painel\", [\"-m\", \"indicators.refresh\", \"--prova-vigia\"], 30),\n)\n\n# A soma dos chãos, escrita à parte de propósito: se alguém mexer num chão sem\n# mexer neste, o teste falha e a pergunta «quantas conferências é que a casa "
+  },
+  {
+   "id": "V4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "um número do relatório contradiz o ficheiro: 63 conferências onde o provador e o chão dizem 36",
+   "sha256_antes": "da20617bb5be248d46ec1ccd987d099e64a957dbaca096f0107ccebbf163f3c6",
+   "sha256_depois": "02d1d8573a056827d00253ea955b897aefa6861dab442e0a95f241eff3849c07",
+   "contexto_antes": " o que fala com o\nmundo corre com dublês, e a prova diz-o na última linha.*\n\n## A tabela das medidas\n\n| medida | antes | depois | o comando |\n|---|---|---|---|\n| conferências da prova do vigia | 0 (não existia) | **36** | `python3 -m indicators.refresh --prova-vigia` |\n| provadores no portão do motor | 4 | **5** | `python3 -m indicators.provas_test` |\n| conferências somadas dos ",
+   "contexto_depois": " o que fala com o\nmundo corre com dublês, e a prova diz-o na última linha.*\n\n## A tabela das medidas\n\n| medida | antes | depois | o comando |\n|---|---|---|---|\n| conferências da prova do vigia | 0 (não existia) | **63** | `python3 -m indicators.refresh --prova-vigia` |\n| provadores no portão do motor | 4 | **5** | `python3 -m indicators.provas_test` |\n| conferências somadas dos "
+  }
+ ]
+}

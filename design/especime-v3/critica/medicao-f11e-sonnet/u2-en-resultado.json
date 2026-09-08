@@ -1,0 +1,788 @@
+{
+  "rPais": [
+    {
+      "slug": "aveiro",
+      "esperado": "Aveiro",
+      "obtido": "Aveiro",
+      "ok": true
+    },
+    {
+      "slug": "beja",
+      "esperado": "Beja",
+      "obtido": "Beja",
+      "ok": true
+    },
+    {
+      "slug": "braga",
+      "esperado": "Braga",
+      "obtido": "Braga",
+      "ok": true
+    },
+    {
+      "slug": "braganca",
+      "esperado": "Bragança",
+      "obtido": "Bragança",
+      "ok": true
+    },
+    {
+      "slug": "castelo-branco",
+      "esperado": "Castelo Branco",
+      "obtido": "Castelo Branco",
+      "ok": true
+    },
+    {
+      "slug": "coimbra",
+      "esperado": "Coimbra",
+      "obtido": "Coimbra",
+      "ok": true
+    },
+    {
+      "slug": "evora",
+      "esperado": "Évora",
+      "obtido": "Évora",
+      "ok": true
+    },
+    {
+      "slug": "faro",
+      "esperado": "Faro",
+      "obtido": "Faro",
+      "ok": true
+    },
+    {
+      "slug": "guarda",
+      "esperado": "Guarda",
+      "obtido": "Guarda",
+      "ok": true
+    },
+    {
+      "slug": "ilha-da-graciosa",
+      "esperado": "Ilha da Graciosa",
+      "obtido": "Ilha da Graciosa",
+      "ok": true
+    },
+    {
+      "slug": "ilha-da-madeira",
+      "esperado": "Ilha da Madeira",
+      "obtido": "Ilha da Madeira",
+      "ok": true
+    },
+    {
+      "slug": "ilha-das-flores",
+      "esperado": "Ilha das Flores",
+      "obtido": "Ilha das Flores",
+      "ok": true
+    },
+    {
+      "slug": "ilha-de-porto-santo",
+      "esperado": "Ilha de Porto Santo",
+      "obtido": "Ilha de Porto Santo",
+      "ok": true
+    },
+    {
+      "slug": "ilha-de-santa-maria",
+      "esperado": "Ilha de Santa Maria",
+      "obtido": "Ilha de Santa Maria",
+      "ok": true
+    },
+    {
+      "slug": "ilha-de-sao-jorge",
+      "esperado": "Ilha de São Jorge",
+      "obtido": "Ilha de São Jorge",
+      "ok": true
+    },
+    {
+      "slug": "ilha-de-sao-miguel",
+      "esperado": "Ilha de São Miguel",
+      "obtido": "Ilha de São Miguel",
+      "ok": true
+    },
+    {
+      "slug": "ilha-do-corvo",
+      "esperado": "Ilha do Corvo",
+      "obtido": "Ilha do Corvo",
+      "ok": true
+    },
+    {
+      "slug": "ilha-do-faial",
+      "esperado": "Ilha do Faial",
+      "obtido": "Ilha do Faial",
+      "ok": true
+    },
+    {
+      "slug": "ilha-do-pico",
+      "esperado": "Ilha do Pico",
+      "obtido": "Ilha do Pico",
+      "ok": true
+    },
+    {
+      "slug": "ilha-terceira",
+      "esperado": "Ilha Terceira",
+      "obtido": "Ilha Terceira",
+      "ok": true
+    },
+    {
+      "slug": "leiria",
+      "esperado": "Leiria",
+      "obtido": "Leiria",
+      "ok": true
+    },
+    {
+      "slug": "lisboa",
+      "esperado": "Lisboa",
+      "obtido": "Lisboa",
+      "ok": true
+    },
+    {
+      "slug": "portalegre",
+      "esperado": "Portalegre",
+      "obtido": "Portalegre",
+      "ok": true
+    },
+    {
+      "slug": "porto",
+      "esperado": "Porto",
+      "obtido": "Porto",
+      "ok": true
+    },
+    {
+      "slug": "santarem",
+      "esperado": "Santarém",
+      "obtido": "Santarém",
+      "ok": true
+    },
+    {
+      "slug": "setubal",
+      "esperado": "Setúbal",
+      "obtido": "Setúbal",
+      "ok": true
+    },
+    {
+      "slug": "viana-do-castelo",
+      "esperado": "Viana do Castelo",
+      "obtido": "Viana do Castelo",
+      "ok": true
+    },
+    {
+      "slug": "vila-real",
+      "esperado": "Vila Real",
+      "obtido": "Vila Real",
+      "ok": true
+    },
+    {
+      "slug": "viseu",
+      "esperado": "Viseu",
+      "obtido": "Viseu",
+      "ok": true
+    }
+  ],
+  "rEvora": [
+    {
+      "slug": "alandroal",
+      "esperado": "Alandroal",
+      "obtido": "Alandroal",
+      "ok": true
+    },
+    {
+      "slug": "arraiolos",
+      "esperado": "Arraiolos",
+      "obtido": "Arraiolos",
+      "ok": true
+    },
+    {
+      "slug": "borba",
+      "esperado": "Borba",
+      "obtido": "Borba",
+      "ok": true
+    },
+    {
+      "slug": "estremoz",
+      "esperado": "Estremoz",
+      "obtido": "Estremoz",
+      "ok": true
+    },
+    {
+      "slug": "evora",
+      "esperado": "Évora",
+      "obtido": "Évora",
+      "ok": true
+    },
+    {
+      "slug": "montemor-o-novo",
+      "esperado": "Montemor-o-Novo",
+      "obtido": "Montemor-o-Novo",
+      "ok": true
+    },
+    {
+      "slug": "mora",
+      "esperado": "Mora",
+      "obtido": "Mora",
+      "ok": true
+    },
+    {
+      "slug": "mourao",
+      "esperado": "Mourão",
+      "obtido": "Mourão",
+      "ok": true
+    },
+    {
+      "slug": "portel",
+      "esperado": "Portel",
+      "obtido": "Portel",
+      "ok": true
+    },
+    {
+      "slug": "redondo",
+      "esperado": "Redondo",
+      "obtido": "Redondo",
+      "ok": true
+    },
+    {
+      "slug": "reguengos-de-monsaraz",
+      "esperado": "Reguengos de Monsaraz",
+      "obtido": "Reguengos de Monsaraz",
+      "ok": true
+    },
+    {
+      "slug": "vendas-novas",
+      "esperado": "Vendas Novas",
+      "obtido": "Vendas Novas",
+      "ok": true
+    },
+    {
+      "slug": "viana-do-alentejo",
+      "esperado": "Viana do Alentejo",
+      "obtido": "Viana do Alentejo",
+      "ok": true
+    },
+    {
+      "slug": "vila-vicosa",
+      "esperado": "Vila Viçosa",
+      "obtido": "Vila Viçosa",
+      "ok": true
+    }
+  ],
+  "kPais": [
+    {
+      "slug": "aveiro",
+      "esperado": "Aveiro",
+      "obtido": "Aveiro",
+      "ok": true
+    },
+    {
+      "slug": "beja",
+      "esperado": "Beja",
+      "obtido": "Beja",
+      "ok": true
+    },
+    {
+      "slug": "braga",
+      "esperado": "Braga",
+      "obtido": "Braga",
+      "ok": true
+    },
+    {
+      "slug": "braganca",
+      "esperado": "Bragança",
+      "obtido": "Bragança",
+      "ok": true
+    },
+    {
+      "slug": "castelo-branco",
+      "esperado": "Castelo Branco",
+      "obtido": "Castelo Branco",
+      "ok": true
+    },
+    {
+      "slug": "coimbra",
+      "esperado": "Coimbra",
+      "obtido": "Coimbra",
+      "ok": true
+    },
+    {
+      "slug": "evora",
+      "esperado": "Évora",
+      "obtido": "Évora",
+      "ok": true
+    },
+    {
+      "slug": "faro",
+      "esperado": "Faro",
+      "obtido": "Faro",
+      "ok": true
+    },
+    {
+      "slug": "guarda",
+      "esperado": "Guarda",
+      "obtido": "Guarda",
+      "ok": true
+    },
+    {
+      "slug": "ilha-da-graciosa",
+      "esperado": "Ilha da Graciosa",
+      "obtido": "Ilha da Graciosa",
+      "ok": true
+    },
+    {
+      "slug": "ilha-da-madeira",
+      "esperado": "Ilha da Madeira",
+      "obtido": "Ilha da Madeira",
+      "ok": true
+    },
+    {
+      "slug": "ilha-das-flores",
+      "esperado": "Ilha das Flores",
+      "obtido": "Ilha das Flores",
+      "ok": true
+    },
+    {
+      "slug": "ilha-de-porto-santo",
+      "esperado": "Ilha de Porto Santo",
+      "obtido": "Ilha de Porto Santo",
+      "ok": true
+    },
+    {
+      "slug": "ilha-de-santa-maria",
+      "esperado": "Ilha de Santa Maria",
+      "obtido": "Ilha de Santa Maria",
+      "ok": true
+    },
+    {
+      "slug": "ilha-de-sao-jorge",
+      "esperado": "Ilha de São Jorge",
+      "obtido": "Ilha de São Jorge",
+      "ok": true
+    },
+    {
+      "slug": "ilha-de-sao-miguel",
+      "esperado": "Ilha de São Miguel",
+      "obtido": "Ilha de São Miguel",
+      "ok": true
+    },
+    {
+      "slug": "ilha-do-corvo",
+      "esperado": "Ilha do Corvo",
+      "obtido": "Ilha do Corvo",
+      "ok": true
+    },
+    {
+      "slug": "ilha-do-faial",
+      "esperado": "Ilha do Faial",
+      "obtido": "Ilha do Faial",
+      "ok": true
+    },
+    {
+      "slug": "ilha-do-pico",
+      "esperado": "Ilha do Pico",
+      "obtido": "Ilha do Pico",
+      "ok": true
+    },
+    {
+      "slug": "ilha-terceira",
+      "esperado": "Ilha Terceira",
+      "obtido": "Ilha Terceira",
+      "ok": true
+    },
+    {
+      "slug": "leiria",
+      "esperado": "Leiria",
+      "obtido": "Leiria",
+      "ok": true
+    },
+    {
+      "slug": "lisboa",
+      "esperado": "Lisboa",
+      "obtido": "Lisboa",
+      "ok": true
+    },
+    {
+      "slug": "portalegre",
+      "esperado": "Portalegre",
+      "obtido": "Portalegre",
+      "ok": true
+    },
+    {
+      "slug": "porto",
+      "esperado": "Porto",
+      "obtido": "Porto",
+      "ok": true
+    },
+    {
+      "slug": "santarem",
+      "esperado": "Santarém",
+      "obtido": "Santarém",
+      "ok": true
+    },
+    {
+      "slug": "setubal",
+      "esperado": "Setúbal",
+      "obtido": "Setúbal",
+      "ok": true
+    },
+    {
+      "slug": "viana-do-castelo",
+      "esperado": "Viana do Castelo",
+      "obtido": "Viana do Castelo",
+      "ok": true
+    },
+    {
+      "slug": "vila-real",
+      "esperado": "Vila Real",
+      "obtido": "Vila Real",
+      "ok": true
+    },
+    {
+      "slug": "viseu",
+      "esperado": "Viseu",
+      "obtido": "Viseu",
+      "ok": true
+    }
+  ],
+  "kEvora": [
+    {
+      "slug": "alandroal",
+      "esperado": "Alandroal",
+      "obtido": "Alandroal",
+      "ok": true
+    },
+    {
+      "slug": "arraiolos",
+      "esperado": "Arraiolos",
+      "obtido": "Arraiolos",
+      "ok": true
+    },
+    {
+      "slug": "borba",
+      "esperado": "Borba",
+      "obtido": "Borba",
+      "ok": true
+    },
+    {
+      "slug": "estremoz",
+      "esperado": "Estremoz",
+      "obtido": "Estremoz",
+      "ok": true
+    },
+    {
+      "slug": "evora",
+      "esperado": "Évora",
+      "obtido": "Évora",
+      "ok": true
+    },
+    {
+      "slug": "montemor-o-novo",
+      "esperado": "Montemor-o-Novo",
+      "obtido": "Montemor-o-Novo",
+      "ok": true
+    },
+    {
+      "slug": "mora",
+      "esperado": "Mora",
+      "obtido": "Mora",
+      "ok": true
+    },
+    {
+      "slug": "mourao",
+      "esperado": "Mourão",
+      "obtido": "Mourão",
+      "ok": true
+    },
+    {
+      "slug": "portel",
+      "esperado": "Portel",
+      "obtido": "Portel",
+      "ok": true
+    },
+    {
+      "slug": "redondo",
+      "esperado": "Redondo",
+      "obtido": "Redondo",
+      "ok": true
+    },
+    {
+      "slug": "reguengos-de-monsaraz",
+      "esperado": "Reguengos de Monsaraz",
+      "obtido": "Reguengos de Monsaraz",
+      "ok": true
+    },
+    {
+      "slug": "vendas-novas",
+      "esperado": "Vendas Novas",
+      "obtido": "Vendas Novas",
+      "ok": true
+    },
+    {
+      "slug": "viana-do-alentejo",
+      "esperado": "Viana do Alentejo",
+      "obtido": "Viana do Alentejo",
+      "ok": true
+    },
+    {
+      "slug": "vila-vicosa",
+      "esperado": "Vila Viçosa",
+      "obtido": "Vila Viçosa",
+      "ok": true
+    }
+  ],
+  "tPais": [
+    {
+      "slug": "aveiro",
+      "esperado": "Aveiro",
+      "obtido": "Aveiro",
+      "ok": true
+    },
+    {
+      "slug": "beja",
+      "esperado": "Beja",
+      "obtido": "Beja",
+      "ok": true
+    },
+    {
+      "slug": "braga",
+      "esperado": "Braga",
+      "obtido": "Braga",
+      "ok": true
+    },
+    {
+      "slug": "braganca",
+      "esperado": "Bragança",
+      "obtido": "Bragança",
+      "ok": true
+    },
+    {
+      "slug": "castelo-branco",
+      "esperado": "Castelo Branco",
+      "obtido": "Castelo Branco",
+      "ok": true
+    },
+    {
+      "slug": "coimbra",
+      "esperado": "Coimbra",
+      "obtido": "Coimbra",
+      "ok": true
+    },
+    {
+      "slug": "evora",
+      "esperado": "Évora",
+      "obtido": "Évora",
+      "ok": true
+    },
+    {
+      "slug": "faro",
+      "esperado": "Faro",
+      "obtido": "Faro",
+      "ok": true
+    },
+    {
+      "slug": "guarda",
+      "esperado": "Guarda",
+      "obtido": "Guarda",
+      "ok": true
+    },
+    {
+      "slug": "ilha-da-graciosa",
+      "esperado": "Ilha da Graciosa",
+      "obtido": "Ilha da Graciosa",
+      "ok": true
+    },
+    {
+      "slug": "ilha-da-madeira",
+      "esperado": "Ilha da Madeira",
+      "obtido": "Ilha da Madeira",
+      "ok": true
+    },
+    {
+      "slug": "ilha-das-flores",
+      "esperado": "Ilha das Flores",
+      "obtido": "Ilha das Flores",
+      "ok": true
+    },
+    {
+      "slug": "ilha-de-porto-santo",
+      "esperado": "Ilha de Porto Santo",
+      "obtido": "Ilha de Porto Santo",
+      "ok": true
+    },
+    {
+      "slug": "ilha-de-santa-maria",
+      "esperado": "Ilha de Santa Maria",
+      "obtido": "Ilha de Santa Maria",
+      "ok": true
+    },
+    {
+      "slug": "ilha-de-sao-jorge",
+      "esperado": "Ilha de São Jorge",
+      "obtido": "Ilha de São Jorge",
+      "ok": true
+    },
+    {
+      "slug": "ilha-de-sao-miguel",
+      "esperado": "Ilha de São Miguel",
+      "obtido": "Ilha de São Miguel",
+      "ok": true
+    },
+    {
+      "slug": "ilha-do-corvo",
+      "esperado": "Ilha do Corvo",
+      "obtido": "Ilha do Corvo",
+      "ok": true
+    },
+    {
+      "slug": "ilha-do-faial",
+      "esperado": "Ilha do Faial",
+      "obtido": "Ilha do Faial",
+      "ok": true
+    },
+    {
+      "slug": "ilha-do-pico",
+      "esperado": "Ilha do Pico",
+      "obtido": "Ilha do Pico",
+      "ok": true
+    },
+    {
+      "slug": "ilha-terceira",
+      "esperado": "Ilha Terceira",
+      "obtido": "Ilha Terceira",
+      "ok": true
+    },
+    {
+      "slug": "leiria",
+      "esperado": "Leiria",
+      "obtido": "Leiria",
+      "ok": true
+    },
+    {
+      "slug": "lisboa",
+      "esperado": "Lisboa",
+      "obtido": "Lisboa",
+      "ok": true
+    },
+    {
+      "slug": "portalegre",
+      "esperado": "Portalegre",
+      "obtido": "Portalegre",
+      "ok": true
+    },
+    {
+      "slug": "porto",
+      "esperado": "Porto",
+      "obtido": "Porto",
+      "ok": true
+    },
+    {
+      "slug": "santarem",
+      "esperado": "Santarém",
+      "obtido": "Santarém",
+      "ok": true
+    },
+    {
+      "slug": "setubal",
+      "esperado": "Setúbal",
+      "obtido": "Setúbal",
+      "ok": true
+    },
+    {
+      "slug": "viana-do-castelo",
+      "esperado": "Viana do Castelo",
+      "obtido": "Viana do Castelo",
+      "ok": true
+    },
+    {
+      "slug": "vila-real",
+      "esperado": "Vila Real",
+      "obtido": "Vila Real",
+      "ok": true
+    },
+    {
+      "slug": "viseu",
+      "esperado": "Viseu",
+      "obtido": "Viseu",
+      "ok": true
+    }
+  ],
+  "tEvora": [
+    {
+      "slug": "alandroal",
+      "esperado": "Alandroal",
+      "obtido": "Alandroal",
+      "ok": true
+    },
+    {
+      "slug": "arraiolos",
+      "esperado": "Arraiolos",
+      "obtido": "Arraiolos",
+      "ok": true
+    },
+    {
+      "slug": "borba",
+      "esperado": "Borba",
+      "obtido": "Borba",
+      "ok": true
+    },
+    {
+      "slug": "estremoz",
+      "esperado": "Estremoz",
+      "obtido": "Estremoz",
+      "ok": true
+    },
+    {
+      "slug": "evora",
+      "esperado": "Évora",
+      "obtido": "Évora",
+      "ok": true
+    },
+    {
+      "slug": "montemor-o-novo",
+      "esperado": "Montemor-o-Novo",
+      "obtido": "Montemor-o-Novo",
+      "ok": true
+    },
+    {
+      "slug": "mora",
+      "esperado": "Mora",
+      "obtido": "Mora",
+      "ok": true
+    },
+    {
+      "slug": "mourao",
+      "esperado": "Mourão",
+      "obtido": "Mourão",
+      "ok": true
+    },
+    {
+      "slug": "portel",
+      "esperado": "Portel",
+      "obtido": "Portel",
+      "ok": true
+    },
+    {
+      "slug": "redondo",
+      "esperado": "Redondo",
+      "obtido": "Redondo",
+      "ok": true
+    },
+    {
+      "slug": "reguengos-de-monsaraz",
+      "esperado": "Reguengos de Monsaraz",
+      "obtido": "Reguengos de Monsaraz",
+      "ok": true
+    },
+    {
+      "slug": "vendas-novas",
+      "esperado": "Vendas Novas",
+      "obtido": "Vendas Novas",
+      "ok": true
+    },
+    {
+      "slug": "viana-do-alentejo",
+      "esperado": "Viana do Alentejo",
+      "obtido": "Viana do Alentejo",
+      "ok": true
+    },
+    {
+      "slug": "vila-vicosa",
+      "esperado": "Vila Viçosa",
+      "obtido": "Vila Viçosa",
+      "ok": true
+    }
+  ]
+}

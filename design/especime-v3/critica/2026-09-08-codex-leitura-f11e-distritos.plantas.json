@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-08T17:20:10+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/03b60307-0dde-431e-a47a-48f0a93dfe6c/scratchpad/leituras/f11e-pacote",
+ "plantas": [
+  {
+   "id": "K1",
+   "ficheiro": "public/js/mapa-unidades.js",
+   "descricao": "o fragmento #unidade= deixa de exigir um slug [a-z0-9-] (o que vier vai para o caminho do fetch)",
+   "sha256_antes": "0c924411ba3faab56e7bf3b7b70340325125a5837ffeeb2fed1274f287eb51ad",
+   "sha256_depois": "5ce756e7148b5269bf95ca8cedb6e0cc6f831060be272f4aa9291b6144adf74a",
+   "contexto_antes": "        falhou(slug);\n      });\n  }\n\n  /* ---------------------------------------------------------- o endereço */\n\n  function slugDoFragmento(fragmento) {\n    var m = /^#unidade=([a-z0-9-]+)$/.exec(fragmento || '');\n    if (!m) return '';\n    return grupoDoPais.querySelector('[data-uni-porta=\"' + m[1] + '\"]') ? m[1] : '';\n  }\n\n  function aplicaFragmento() {\n    var slug = ",
+   "contexto_depois": "        falhou(slug);\n      });\n  }\n\n  /* ---------------------------------------------------------- o endereço */\n\n  function slugDoFragmento(fragmento) {\n    var m = /^#unidade=(.+)$/.exec(fragmento || '');\n    if (!m) return '';\n    return grupoDoPais.querySelector('[data-uni-porta=\"' + m[1] + '\"]') ? m[1] : '';\n  }\n\n  function aplicaFragmento() {\n    var slug = "
+  },
+  {
+   "id": "K2",
+   "ficheiro": "scripts/check-mapa.mjs",
+   "descricao": "a R8 compara comprimentos em vez de bytes",
+   "sha256_antes": "9b7dc8d3acd9dc3b36abb4b2f5c7b892df3774404c2df7482bfd37f577a23bcb",
+   "sha256_depois": "9cdeab73c219bb011b6f8d1c19333fea628bf7ec49c4461fb0dbeb44fceeb043",
+   "contexto_antes": "if (!servido) {\n      erros.push(\n        `falta public/dados/mapa/unidade-${slug}.json (corra \\`npm run mapa:unidades\\`).`,\n      );\n      continue;\n    }\n    if (!servido.equals(doMotor)) {\n      erros.push(\n        `public/dados/mapa/unidade-${slug}.json não é mapa/distritos/${slug}.json ` +\n          `(${servido.length} B contra ${doMotor.length",
+   "contexto_depois": "if (!servido) {\n      erros.push(\n        `falta public/dados/mapa/unidade-${slug}.json (corra \\`npm run mapa:unidades\\`).`,\n      );\n      continue;\n    }\n    if (servido.length !== doMotor.length) {\n      erros.push(\n        `public/dados/mapa/unidade-${slug}.json não é mapa/distritos/${slug}.json ` +\n          `(${servido.length} B contra ${doMotor.length"
+  },
+  {
+   "id": "K3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a tabela diz 28 de 29 respondem 200 e o resto do relatório diz 29",
+   "sha256_antes": "2727d84c6e46819f1ca4976d8b3fbedeba96ed22e6819760f339661c8934fd5f",
+   "sha256_depois": "b4812cdd23649289bfea0b65ad7a5c65a5d292cef5c3a4008deb4988f9c30bad",
+   "contexto_antes": " continua a ser navegação | 9 ligações para as páginas de região; a gaveta fechada com 9 regiões e 29 unidades | **29 ligações** para as 29 páginas de unidade, **29 de 29 respondem 200**, a gaveta **fechada** com as **29** unidades e mais nada, **0 regiões** desenhadas ou listadas, o segundo nível com **0 nós**, `#unidade=` ignorado sem erro | ",
+   "contexto_depois": " continua a ser navegação | 9 ligações para as páginas de região; a gaveta fechada com 9 regiões e 29 unidades | **29 ligações** para as 29 páginas de unidade, **28 de 29 respondem 200**, a gaveta **fechada** com as **29** unidades e mais nada, **0 regiões** desenhadas ou listadas, o segundo nível com **0 nós**, `#unidade=` ignorado sem erro | "
+  },
+  {
+   "id": "K4",
+   "ficheiro": "tests/inicio/mapa-unidades.mjs",
+   "descricao": "a U1a aceita 9 áreas em vez de exigir 29",
+   "sha256_antes": "9c11b37e0467da31dc0dc54031d5ddfc7101b7117632fbf4b9131acb9d7d0c80",
+   "sha256_depois": "77b07600fdd3a36db3fae9d4add4cb2f0c859e1309ade653132281c80d459950",
+   "contexto_antes": "rito: v.inscrito, caixa: v.caixa })),\n    };\n    conta(\n      `U1a · medida, não exigida (decisão de 08.09.2026) · a ${largura}, o alvo das 29 unidades`,\n      entradas.length === 29 && fora.length === 0,\n      `desenho ${desenho[0]} × ${desenho[1]} px · ${entradas.length} áreas · ${chegam.length} de 29 chegam aos ${ALVO} px (medido, não exigido) ` +\n        `(m",
+   "contexto_depois": "rito: v.inscrito, caixa: v.caixa })),\n    };\n    conta(\n      `U1a · medida, não exigida (decisão de 08.09.2026) · a ${largura}, o alvo das 29 unidades`,\n      entradas.length >= 9 && fora.length === 0,\n      `desenho ${desenho[0]} × ${desenho[1]} px · ${entradas.length} áreas · ${chegam.length} de 29 chegam aos ${ALVO} px (medido, não exigido) ` +\n        `(m"
+  },
+  {
+   "id": "K5",
+   "ficheiro": "src/components/inicio/MapaRespira.astro",
+   "descricao": "o aria-label do mapa trocado entre os dois níveis",
+   "sha256_antes": "67131c3cce2fdba150b201cf9232934acd1610ae977a32d7c044b385d8b7f78e",
+   "sha256_depois": "a9f866577fa160f32652e802f9ea65ea9516438cae190a39043b289ef8f22eb7",
+   "contexto_antes": "-a:\n          nenhum `<a>` debaixo de `role=\"img\"`.\n          -------------------------------------------------------------------- */}\n      role=\"group\"\n      aria-label={nivel === 'pais' ? s.inicio.mapa.distritosLabel : s.inicio.mapa.concelhosLabel}\n      data-mapa\n      data-mapa-areas={nivel === 'pais' ? true : undefined}\n      data-mapa-concelhos={nivel === 'unidade' ? true : undefined}\n      {/* OS DOI",
+   "contexto_depois": "-a:\n          nenhum `<a>` debaixo de `role=\"img\"`.\n          -------------------------------------------------------------------- */}\n      role=\"group\"\n      aria-label={nivel === 'pais' ? s.inicio.mapa.concelhosLabel : s.inicio.mapa.distritosLabel}\n      data-mapa\n      data-mapa-areas={nivel === 'pais' ? true : undefined}\n      data-mapa-concelhos={nivel === 'unidade' ? true : undefined}\n      {/* OS DOI"
+  }
+ ]
+}

@@ -760,11 +760,13 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
       execução depois da análise do documento.
       ---------------------------------------------------------------------- */}
   <script src="/js/inicio.js" defer is:inline></script>
-  {/* O MAPA QUE CRESCE VIVE NUM FICHEIRO PRÓPRIO, e não dentro de `inicio.js`,
-      pela mesma razão que a busca do índice vive em `livro.js`: `inicio.js` tem
-      escrito no cabeçalho que nunca cria texto visível, e o segundo nível do
-      mapa desenha os concelhos de uma região de um ficheiro gerado. Uma regra
-      que se quebra fica no ficheiro que a quebra, com as suas amarras escritas,
-      e não a apagar a regra do ficheiro ao lado. */}
-  <script src="/js/mapa-regioes.js" defer is:inline></script>
+  {/* O GUIÃO DO MAPA PASSOU A VIR COM O MAPA (F1.1e, 08.09.2026). Era pedido
+      aqui, e uma segunda vista que rendesse o mesmo mapa tinha de saber pedi-lo
+      também: `MapaRespira.astro` rende-o agora onde rende o lugar do nome, que é
+      quem precisa dele. O ficheiro continua a ser próprio, e não dentro de
+      `inicio.js`, pela mesma razão que a busca do índice vive em `livro.js`:
+      `inicio.js` tem escrito no cabeçalho que nunca cria texto visível, e o
+      segundo nível do mapa desenha os concelhos de uma unidade de um ficheiro
+      servido. Uma regra que se quebra fica no ficheiro que a quebra, com as suas
+      amarras escritas, e não a apagar a regra do ficheiro ao lado. */}
 </Base>
