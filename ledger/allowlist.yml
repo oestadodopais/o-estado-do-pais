@@ -74,16 +74,29 @@ contexts:
   - id: data-do-repositorio
     why: >-
       O dia em que o ficheiro de uma edição de um trabalho entrou NESTE
-      repositório, `studies-src/<slug>/<lang>.html`, lido do `git log
-      --diff-filter=A` na construção. Acrescentado em 2026-09-04, com a decisão
-      do lugar de direção sobre as datas dos trabalhos. NÃO É a data em que o
-      trabalho foi publicado noutro sítio, nem a data em que foi escrito, e é por
-      isso que a origem vai dita: `src/data/studies.mjs` escreve no cabeçalho que
-      nenhuma data de publicação está confirmada, e treze das dezasseis edições
-      levam `date: null`. O que a casa pode provar é este dia, e prova-o quem
-      tiver o repositório. Sem história (uma cópia rasa) não há data e o marcador
-      volta; a régua do bloco refaz a leitura por conta própria e compara-a com o
-      que a página imprimiu.
+      repositório, `studies-src/<slug>/<lang>.html`. Acrescentado em 2026-09-04,
+      com a decisão do lugar de direção sobre as datas dos trabalhos. NÃO É a
+      data em que o trabalho foi publicado noutro sítio, nem a data em que foi
+      escrito, e é por isso que a origem vai dita: `src/data/studies.mjs` escreve
+      no cabeçalho que nenhuma data de publicação está confirmada, e treze das
+      dezasseis edições levam `date: null`. O que a casa pode provar é este dia,
+      e prova-o quem tiver o repositório. A CONSTRUÇÃO JÁ NÃO CHAMA O `git`
+      (bloco F1.4b, no mesmo dia): a leitura fazia-se a cada construção e a
+      Vercel constrói de uma cópia RASA, onde o commit de agosto não existe e o
+      `git log --diff-filter=A` responde com o commit mais antigo que a cópia
+      tem; as dezasseis edições ficaram com a data do dia e o sítio publicado
+      disse-a. O facto mede-se uma vez, numa árvore com história completa
+      (`scripts/datas-de-publicacao.mjs`, que se recusa a correr numa cópia
+      rasa), fica escrito com o commit de origem em
+      `src/data/datas-de-publicacao.json`, e é esse ficheiro que a construção lê.
+      Uma edição que não esteja lá não tem data e o marcador volta.
+      O MESMO MOTIVO COBRE A CONTAGEM da caixa de `/estudos` («Datas de
+      publicação por confirmar em N edições»), que é o número de edições sem
+      linha nesse ficheiro, contado do próprio ficheiro e conferido contra ele
+      por `scripts/check-datas.mjs`. `check-datas` confere ainda cada data
+      impressa contra o JSON, e o JSON contra o `git` quando a árvore tem
+      história; a célula I9 de `tests/livro/indice.mjs` refaz as duas contas por
+      sua conta.
   - id: ambito-da-medida
     why: >-
       O intervalo que faz parte da DEFINIÇÃO publicada de um indicador, e não do
@@ -97,6 +110,21 @@ contexts:
       Acrescentado em 2026-09-03, com a página do primeiro domínio. O intervalo é
       declarado em `src/data/dominios.mjs`, ao lado do id da linha cujo
       `source_url` traz a dimensão.
+  - id: periodo-da-fonte
+    why: >-
+      O último período que a fonte de uma série publicou, quando a casa continua
+      a publicar um período anterior: «Último período publicado pela fonte:
+      2026-07». Acrescentado em 2026-09-04, com o bloco F1.6 e a decisão (2) da
+      §1.98 («o IEFP rende o atraso em vez de publicar 2026-07 por conferir»).
+      NÃO É uma medição de Portugal e não é uma das três datas da linha, que já
+      têm o seu motivo: é o estado da FONTE, como a data desde a qual ela deixou
+      de responder, e a diferença entre este período e o `reference_date` da
+      linha é o atraso que a página existe para dizer. NÃO É UMA DISPENSA: o
+      elemento diz de que série o período saiu (`data-de-serie`), a série está
+      declarada em `src/data/frescura.mjs` com o ficheiro, o registo e o campo de
+      onde foi lida, e `npm run check:formas` abre esse ficheiro por conta
+      própria e compara os dois. Duas contas do mesmo facto, feitas de sítios
+      diferentes, como no `data-prova` e no `data-da-linha`.
   - id: data-de-referencia
     why: >-
       Ano ou período a que os dados se referem, quando aparece no meio de uma

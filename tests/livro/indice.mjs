@@ -55,8 +55,14 @@
  *      número nenhum: as linhas citadas continuam a ser só a da Carta.
  * I9 (G9) · **as datas dos trabalhos, e o marcador que resta.** Conta TODOS os
  *      marcadores da linha de cada trabalho (o da descrição e o da data), e não
- *      só os do campo da data; e refaz, com o `git log`, a data em que o ficheiro
- *      de cada edição entrou no repositório, exigindo que a página a diga.
+ *      só os do campo da data; refaz, com o `git log`, a data em que o ficheiro
+ *      de cada edição entrou no repositório, exigindo que a página a diga; e
+ *      confere, linha a linha, o `src/data/datas-de-publicacao.json` que a
+ *      construção passou a ler (bloco F1.4b) contra esse mesmo `git`.
+ * I11 (G11) · **o espaço entre o número e a palavra, a 390** (com
+ *      `--navegador`). Lê-se o texto RENDIDO das contagens das portas da
+ *      primeira página, e não o `textContent`: o espaço estava nas cadeias e a
+ *      caixa flexível aparava-o.
  * I10 (G10) · **nenhum número novo.** O inventário dos valores selados e dos
  *      motivos `data-nonledger` sai em `--json`; com `--contra` compara-se com o
  *      de antes e a diferença fecha a régua.
@@ -165,20 +171,112 @@ for (const m of MEDIDAS_DO_DOMINIO_1) if (typeof m.claim === 'string' && !CARTOE
 
 const LINHAS_DA_REGUA = loadClaims();
 
-/** @param {string} id @param {'pt'|'en'} lang */
-function nomeEsperado(id, lang) {
+/**
+ * OS LOCALIZADORES QUE A CASA CONHECE (Major 7 da leitura a frio do Codex ao
+ * bloco M1, segunda passagem, 07.09.2026).
+ *
+ * A primeira passagem desta régua contava o degrau `name` a partir de qualquer
+ * `line.name` não vazio, sem olhar ao `name_source`. O campo `name` só quer
+ * dizer alguma coisa com o localizador ao lado: ele é «o rótulo que o publicador
+ * imprimiu por cima desta figura, copiado carácter a carácter, com `name_source`
+ * a dizer ONDE no ficheiro foi lido». Um rótulo com um localizador que ninguém
+ * reconhece é uma cadeia que ninguém pode ir reler, e a régua contava-o como
+ * nome da fonte na mesma.
+ *
+ * A LISTA É FECHADA e está escrita aqui à mão, com a forma de cada localizador,
+ * porque uma régua que a importasse do motor confirmava o motor e não o sítio.
+ * As quatro formas são as que os leitores da casa produzem, e mais nenhuma:
+ *
+ *   `IndicadorDsg`                    a chave da designação do indicador na
+ *                                     resposta do `json_indicador` do INE
+ *                                     (`publisher/dominios_readers.py`,
+ *                                     `INE_LABEL_KEY`);
+ *   `label`                           a chave da designação da série na resposta
+ *                                     JSON-stat do Eurostat (`EUROSTAT_LABEL_KEY`);
+ *   `p.<n>, linha <n>, campo <n>`     a extração de página de um PDF
+ *                                     (`publisher/concelhos_readers.py`,
+ *                                     `pdf_label`);
+ *   `<folha>, linha <n>, coluna <n>`  a grelha de uma folha ODS
+ *                                     (`ods_label_over`, com o nome da folha à
+ *                                     frente: hoje só `Quadro_I` do IEFP).
+ *
+ * MEDIDO A 07.09.2026 sobre `ledger/claims/*.yml`: 1866 linhas trazem
+ * `name_source`, e as quatro formas cobrem-nas todas (1238 `IndicadorDsg`, 343
+ * coordenadas de página, 278 `Quadro_I, linha 4, coluna 13`, 7 `label`). Uma
+ * forma nova entra aqui à mão, com o leitor que a escreve nomeado ao lado.
+ *
+ * @type {{ nome: string, forma: RegExp, onde: string }[]}
+ */
+const LOCALIZADORES_CONHECIDOS = [
+  { nome: 'IndicadorDsg', forma: /^IndicadorDsg$/, onde: 'a resposta do json_indicador do INE' },
+  { nome: 'label', forma: /^label$/, onde: 'a resposta JSON-stat do Eurostat' },
+  {
+    nome: 'p.<n>, linha <n>, campo <n>',
+    forma: /^p\.\d+, linha \d+, campo \d+$/,
+    onde: 'a extração de página de um PDF',
+  },
+  {
+    nome: '<folha>, linha <n>, coluna <n>',
+    forma: /^[^,]+, linha \d+, coluna \d+$/,
+    onde: 'a grelha de uma folha ODS',
+  },
+];
+
+/** @param {unknown} onde @returns {boolean} */
+function localizadorConhecido(onde) {
+  return (
+    typeof onde === 'string' &&
+    onde.trim() !== '' &&
+    LOCALIZADORES_CONHECIDOS.some((l) => l.forma.test(onde))
+  );
+}
+
+/**
+ * O DEGRAU DE ONDE O NOME VEIO, e não só o nome (bloco M1, 04.09.2026).
+ *
+ * A escada tem quatro degraus e o quarto é o título do DOCUMENTO, que não é o
+ * nome da medida: é o nome do papel de onde ela foi lida, e por isso dez
+ * entradas do índice se chamavam «Prestação de Contas 2025». Contar quantas
+ * entradas descem até esse degrau é a medida da dívida do nome, e ela move-se
+ * quando o motor lhe dá rótulo: por isso a contagem sai aqui, a cada
+ * construção, em vez de ser recontada por uma auditoria de quando em quando.
+ *
+ * @param {string} id @param {'pt'|'en'} lang
+ * @returns {{ texto: string, degrau: 'cartao'|'name'|'document.title' }|null}
+ */
+function nomeEsperadoComDegrau(id, lang) {
   const cartao = CARTOES_DA_REGUA.get(id);
   if (cartao) {
     const t = cartao[lang] ?? cartao.pt;
-    if (typeof t === 'string' && t.trim() !== '' && t !== MARCADOR) return t;
+    if (typeof t === 'string' && t.trim() !== '' && t !== MARCADOR) {
+      return { texto: t, degrau: 'cartao' };
+    }
   }
   const linha = LINHAS_DA_REGUA.get(id);
   if (!linha) return null;
   const nome = linha.name;
-  if (typeof nome === 'string' && nome.trim() !== '' && nome !== MARCADOR) return nome;
+  /* O LOCALIZADOR FAZ PARTE DO DEGRAU (Major 7). Um rótulo sem um localizador
+     conhecido não sobe a linha ao degrau `name`: ela desce ao título do
+     documento, como descia antes de o motor lhe dar rótulo nenhum, e a linha
+     é contada como defeito na conferência que fecha esta célula. */
+  if (
+    typeof nome === 'string' &&
+    nome.trim() !== '' &&
+    nome !== MARCADOR &&
+    localizadorConhecido(/** @type {{ name_source?: unknown }} */ (linha).name_source)
+  ) {
+    return { texto: nome, degrau: 'name' };
+  }
   const titulo = /** @type {{ title?: unknown }} */ (linha.document ?? {})?.title;
-  if (typeof titulo === 'string' && titulo.trim() !== '' && titulo !== MARCADOR) return titulo;
+  if (typeof titulo === 'string' && titulo.trim() !== '' && titulo !== MARCADOR) {
+    return { texto: titulo, degrau: 'document.title' };
+  }
   return null;
+}
+
+/** @param {string} id @param {'pt'|'en'} lang */
+function nomeEsperado(id, lang) {
+  return nomeEsperadoComDegrau(id, lang)?.texto ?? null;
 }
 
 /**
@@ -273,12 +371,25 @@ celula('I1', 'o nome de uma medida não é o identificador', (falhas) => {
   let comNome = 0;
   let semNome = 0;
   let idEmMetadado = 0;
+  /* A ESCADA, CONTADA DEGRAU A DEGRAU (bloco M1). Por edição e sobre as linhas
+     DISTINTAS do índice do livro-razão, que é onde o número de 79 foi medido a
+     04.09.2026: contar as entrada rendidas somava as duas edições, e contar
+     também as páginas de área somava a mesma linha duas vezes. */
+  const degraus = new Map();
+  const contarDegrau = (lang, id) => {
+    const chave = `${lang}:${id}`;
+    if (degraus.has(chave)) return;
+    degraus.set(chave, nomeEsperadoComDegrau(id, lang)?.degrau ?? 'nenhum');
+  };
+  const porDegrau = (lang, degrau) =>
+    [...degraus].filter(([k, d]) => k.startsWith(`${lang}:`) && d === degrau).length;
   const alvo = paginas.filter((p) => ePaginaDeIndiceDoLivro(p.rota) || ePaginaDeArea(p.rota));
   if (alvo.length === 0) falhas.push('não há páginas de índice do livro-razão nem de área em dist/.');
   for (const pag of alvo) {
     for (const item of dom(pag).querySelectorAll('.livro-item')) {
       itens++;
       const id = item.getAttribute('data-linha-id') ?? '';
+      if (ePaginaDeIndiceDoLivro(pag.rota)) contarDegrau(pag.lang, id);
       const corpo = item.querySelector('.livro-item-corpo');
       const primeiro = corpo?.childNodes?.find((n) => n.nodeType === 1) ?? null;
       const classePrimeiro = String(primeiro?.getAttribute?.('class') ?? '');
@@ -327,8 +438,57 @@ celula('I1', 'o nome de uma medida não é o identificador', (falhas) => {
       }
     }
   }
-  medida.I1 = { paginas: alvo.length, itens, com_nome: comNome, sem_nome: semNome, ids_em_metadado: idEmMetadado };
-  return `${alvo.length} página(s) · ${itens} entrada(s) · ${comNome} com nome · ${semNome} sem nome (as derivadas, que não têm fonte nem documento, e as que só têm o marcador por título de documento) · ${idEmMetadado} identificador(es) em metadado`;
+  /* E O LOCALIZADOR DE CADA RÓTULO, SOBRE O LIVRO-RAZÃO INTEIRO (Major 7 da
+     leitura a frio do Codex, segunda passagem, 07.09.2026). O degrau `name`
+     acima já não conta uma linha cujo localizador esta régua não conheça; esta
+     volta diz QUAIS são, por identificador, para que uma linha assim pare a
+     construção em vez de descer em silêncio ao título do documento. Corre sobre
+     todas as linhas do livro-razão e não só sobre as do índice: um localizador
+     que ninguém reconhece é um defeito onde quer que a linha esteja. */
+  let comLocalizador = 0;
+  for (const [id, linha] of LINHAS_DA_REGUA) {
+    const rotulo = /** @type {{ name?: unknown, name_source?: unknown }} */ (linha).name;
+    if (!(typeof rotulo === 'string' && rotulo.trim() !== '' && rotulo !== MARCADOR)) continue;
+    const onde = /** @type {{ name_source?: unknown }} */ (linha).name_source;
+    if (localizadorConhecido(onde)) {
+      comLocalizador++;
+      continue;
+    }
+    falhas.push(
+      `ledger/claims/${id}.yml: traz o rótulo "${rotulo.slice(0, 40)}" e o localizador ` +
+        `${JSON.stringify(onde ?? null)}, que não é nenhuma das ${LOCALIZADORES_CONHECIDOS.length} ` +
+        `formas que esta régua conhece (${LOCALIZADORES_CONHECIDOS.map((l) => l.nome).join(' · ')}). ` +
+        `Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador ` +
+        `que ninguém reconhece é uma cadeia a que ninguém pode voltar.`,
+    );
+  }
+  const escada = Object.fromEntries(
+    ['pt', 'en'].map((lang) => [
+      lang,
+      {
+        cartao: porDegrau(lang, 'cartao'),
+        name: porDegrau(lang, 'name'),
+        'document.title': porDegrau(lang, 'document.title'),
+        nenhum: porDegrau(lang, 'nenhum'),
+      },
+    ]),
+  );
+  medida.I1 = {
+    paginas: alvo.length, itens, com_nome: comNome, sem_nome: semNome,
+    ids_em_metadado: idEmMetadado, escada_do_indice: escada,
+    rotulos_com_localizador_conhecido: comLocalizador,
+  };
+  const e = escada.pt;
+  const total = e.cartao + e.name + e['document.title'] + e.nenhum;
+  return (
+    `${alvo.length} página(s) · ${itens} entrada(s) · ${comNome} com nome · ${semNome} sem nome ` +
+    `(as derivadas, que não têm fonte nem documento, e as que só têm o marcador por título de ` +
+    `documento) · ${idEmMetadado} identificador(es) em metadado\n        a escada no índice do ` +
+    `livro-razão, por edição (${total} linhas): ${e.cartao} pelo nome do cartão · ${e.name} pelo ` +
+    `rótulo da fonte · ${e['document.title']} pelo TÍTULO DO DOCUMENTO, que é o nome do papel e ` +
+    `não o da medida · ${e.nenhum} sem nome\n        ${comLocalizador} rótulo(s) do livro-razão ` +
+    `inteiro com um localizador de uma das ${LOCALIZADORES_CONHECIDOS.length} formas conhecidas`
+  );
 });
 
 /* --------------------------------------------------------------------- I2 */
@@ -728,6 +888,38 @@ celula('I9', 'as datas dos trabalhos, e o marcador que resta', (falhas) => {
    * concordam, e a contagem de datas resolvidas, impressa, diz o que aconteceu).
    */
   const RAIZ_DO_REPO = path.resolve(RAIZ);
+  /**
+   * E O FICHEIRO QUE A CONSTRUÇÃO LÊ, CONFERIDO CONTRA O MESMO `git` (F1.4b).
+   *
+   * Desde 04.09 a construção já não chama o `git`: lê
+   * `src/data/datas-de-publicacao.json`, escrito uma vez numa árvore com
+   * história completa. Foi essa a saída do defeito (a Vercel constrói de uma
+   * cópia rasa e o `git` respondia com o dia da construção), e traz uma dívida
+   * nova: um ficheiro que ninguém volta a conferir envelhece em silêncio. Esta
+   * célula é quem o confere, e não pergunta ao sítio o que ele leu de lá: lê o
+   * ficheiro por sua conta e compara-o, entrada a entrada, com o `git` desta
+   * árvore.
+   */
+  const FICHEIRO_DAS_DATAS = path.join('src', 'data', 'datas-de-publicacao.json');
+  /** @type {Map<string, {data: string, commit: string}>} */
+  const declaradas = new Map();
+  {
+    const caminho = path.join(RAIZ_DO_REPO, FICHEIRO_DAS_DATAS);
+    if (!fs.existsSync(caminho)) {
+      falhas.push(
+        `falta ${FICHEIRO_DAS_DATAS}, que é de onde a construção tira as datas das edições.`,
+      );
+    } else {
+      const bruto = JSON.parse(fs.readFileSync(caminho, 'utf8'));
+      for (const e of Array.isArray(bruto?.edicoes) ? bruto.edicoes : []) {
+        declaradas.set(`${e.slug}/${e.lang}`, { data: e.data, commit: e.commit });
+      }
+      if (declaradas.size === 0) {
+        falhas.push(`${FICHEIRO_DAS_DATAS} não declara edição nenhuma.`);
+      }
+    }
+  }
+  let conferidasContraOFicheiro = 0;
   let comData = 0;
   let semHistoria = 0;
   const dirDosTrabalhos = path.join(RAIZ_DO_REPO, 'studies-src');
@@ -741,22 +933,47 @@ celula('I9', 'as datas dos trabalhos, e o marcador que resta', (falhas) => {
       const rel = `studies-src/${slug}/${edicao}.html`;
       if (!fs.existsSync(path.join(RAIZ_DO_REPO, rel))) continue;
       let data = null;
+      /** O resumo do commit que acrescentou o ficheiro (F1.4b). */
+      let commit = null;
       try {
         const saida = execFileSync(
           'git',
-          ['log', '--diff-filter=A', '--format=%ad', '--date=short', '--', rel],
+          ['log', '--diff-filter=A', '--format=%ad %H', '--date=short', '--', rel],
           { cwd: RAIZ_DO_REPO, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] },
         );
-        const linhas = saida.split('\n').map((l) => l.trim()).filter((l) => /^\d{4}-\d{2}-\d{2}$/.test(l));
-        data = linhas.length ? linhas[linhas.length - 1] : null;
+        const linhas = saida.split('\n').map((l) => l.trim()).filter((l) => /^\d{4}-\d{2}-\d{2} [0-9a-f]{40}$/.test(l));
+        const ultima = linhas.length ? linhas[linhas.length - 1] : null;
+        if (ultima !== null) [data, commit] = ultima.split(' ');
       } catch {
         data = null;
+        commit = null;
       }
-      if (data === null) {
+      if (data === null || commit === null) {
         semHistoria++;
         continue;
       }
       comData++;
+      /* O FICHEIRO CONTRA O `git`, entrada a entrada. */
+      const declarada = declaradas.get(`${slug}/${edicao}`) ?? null;
+      if (declarada === null) {
+        falhas.push(
+          `${rel}: o \`git\` diz que esta edição entrou a ${data} e ${FICHEIRO_DAS_DATAS} ` +
+            `não a declara. A construção lê o ficheiro: uma edição que falte lá volta ao marcador.`,
+        );
+      } else {
+        conferidasContraOFicheiro++;
+        if (declarada.data !== data) {
+          falhas.push(
+            `${rel}: ${FICHEIRO_DAS_DATAS} declara ${declarada.data} e o \`git\` diz ${data}.`,
+          );
+        }
+        if (declarada.commit !== commit) {
+          falhas.push(
+            `${rel}: ${FICHEIRO_DAS_DATAS} aponta o commit ${String(declarada.commit).slice(0, 8)} ` +
+              `e o commit que acrescentou o ficheiro é ${commit.slice(0, 8)}.`,
+          );
+        }
+      }
       const naForma = `${data.slice(8, 10)}.${data.slice(5, 7)}.${data.slice(0, 4)}`;
       const rota = edicao === 'pt' ? `/estudos/${slug}` : `/en/studies/${slug}`;
       const pag = paginas.find((p) => p.rota === rota);
@@ -776,14 +993,32 @@ celula('I9', 'as datas dos trabalhos, e o marcador que resta', (falhas) => {
     );
   }
 
+  /* O FICHEIRO NÃO PODE TRAZER EDIÇÕES QUE A ÁRVORE NÃO TEM. */
+  for (const k of declaradas.keys()) {
+    const [slug, edicao] = k.split('/');
+    if (!fs.existsSync(path.join(RAIZ_DO_REPO, `studies-src/${slug}/${edicao}.html`))) {
+      falhas.push(
+        `${FICHEIRO_DAS_DATAS} declara ${k} e studies-src/${slug}/${edicao}.html não existe.`,
+      );
+    }
+  }
+  if (comData > 0 && conferidasContraOFicheiro === 0) {
+    falhas.push(
+      `${comData} edição(ões) com data no \`git\` e nenhuma conferida contra ` +
+        `${FICHEIRO_DAS_DATAS}: a segunda conta desta célula não mediu nada.`,
+    );
+  }
+
   medida.I9 = {
     trabalhos,
     com_marcador: comMarcador,
     marcadores: marcadoresAoTodo,
     edicoes_com_data_do_repositorio: comData,
     edicoes_sem_historia: semHistoria,
+    edicoes_no_ficheiro: declaradas.size,
+    edicoes_do_ficheiro_conferidas_contra_o_git: conferidasContraOFicheiro,
   };
-  return `${trabalhos} linha(s) de trabalho · ${marcadoresAoTodo} marcador(es) ao todo, ${comMarcador} linha(s) com um e nenhuma com dois · ${comData} edição(ões) com a data do repositório conferida contra o git, ${semHistoria} sem história`;
+  return `${trabalhos} linha(s) de trabalho · ${marcadoresAoTodo} marcador(es) ao todo, ${comMarcador} linha(s) com um e nenhuma com dois · ${comData} edição(ões) com a data do repositório conferida contra o git, ${semHistoria} sem história · ${conferidasContraOFicheiro} de ${declaradas.size} linha(s) de ${FICHEIRO_DAS_DATAS} refeitas do git`;
 });
 
 /* -------------------------------------------------------------------- I10 */
@@ -1011,6 +1246,168 @@ async function comNavegador() {
       nota: AMOSTRA_LARGA
         ? `${amostra.length} página(s) medidas (as 10 com o endereço mais longo, mais 50 a passo fixo)`
         : `${amostra.length} página(s) medida (a do endereço mais longo; a amostra de 60 corre com --amostra-larga)`,
+      falhas,
+    });
+  }
+
+  /* ------------------------------------------------------------------ I11 */
+  {
+    /**
+     * O ESPAÇO ENTRE O NÚMERO E A PALAVRA, MEDIDO ONDE ELE SE PERDE (F1.4b).
+     *
+     * Um leitor viu «308concelhos» e «12trabalhos ·16edições» na primeira página
+     * do telemóvel; a 1280 os espaços estavam lá. Nenhuma régua da casa o podia
+     * ver, porque o espaço ESTÁ no HTML: vem dentro das cadeias
+     * (`' concelhos'`), e o `textContent` mostra-o. Quem o apagava era a
+     * rendição: abaixo dos 1024 a folha põe `.porta-conta { display: flex }`, e
+     * num contentor flexível cada corrida de texto solto vira um item anónimo,
+     * com o espaço aparado no princípio e no fim.
+     *
+     * POR ISSO ESTA CÉLULA NÃO LÊ TEXTO: MEDE. Para cada contagem, o vão entre a
+     * borda direita da caixa do número e a primeira LETRA que vem a seguir, com
+     * um `Range` de um carácter. Um espaço rendido a 13px vale uns 3,5px; um
+     * espaço aparado vale zero.
+     *
+     * E TEM O SEU POSITIVO CONHECIDO, plantado na própria página: com
+     * `.porta-conta-item { display: contents }` as caixas que este bloco
+     * acrescentou desaparecem e o texto volta a ser um item anónimo, que é
+     * exactamente o defeito que esteve no ar. A célula tem de o ver em TODOS os
+     * pares, e não num. Uma régua que nunca ficou vermelha não prova nada
+     * (regra 14 da casa), e uma que fica vermelha por um sétimo da página prova
+     * um sétimo.
+     */
+    /** @type {string[]} */
+    const falhas = [];
+    const notas = [];
+    /** O vão mínimo, em px: um espaço a 13px vale ~3,5 e um aparado vale 0. */
+    const VAO_MINIMO = 1.5;
+
+    /**
+     * A função corre DENTRO da página. Devolve um par por contagem, e o NÚMERO
+     * DE CONTAGENS QUE A PÁGINA TEM, contado da própria página.
+     *
+     * A segunda passagem conta-o aqui (leitura a frio do Codex de 07.09.2026,
+     * Minor 10): a régua exigia UM par medido e UM par apanhado, e um par em sete
+     * deixava-a verde. Uma contagem que perde a palavra deixa de dar par e
+     * ninguém dava por isso. O sete não se escreve à mão: se a página ganhar uma
+     * contagem, a régua passa a exigir oito.
+     */
+    const medeOsVaos = () => {
+      const contagens = document.querySelectorAll('.porta-conta [data-prova]').length;
+      /** @type {{onde: string, numero: string, palavra: string, vao: number}[]} */
+      const pares = [];
+      for (const conta of document.querySelectorAll('.porta-conta')) {
+        const nos = [];
+        const andarilho = document.createTreeWalker(conta, NodeFilter.SHOW_ALL);
+        while (andarilho.nextNode()) nos.push(andarilho.currentNode);
+        for (let i = 0; i < nos.length; i++) {
+          const el = nos[i];
+          if (el.nodeType !== 1 || !(/** @type {Element} */ (el)).hasAttribute('data-prova')) continue;
+          const caixa = (/** @type {Element} */ (el)).getBoundingClientRect();
+          /* A primeira letra depois deste número, saltando o que for espaço. */
+          for (let j = i + 1; j < nos.length; j++) {
+            const n = nos[j];
+            if (n.nodeType === 1 && (/** @type {Element} */ (n)).hasAttribute('data-prova')) break;
+            if (n.nodeType !== 3) continue;
+            /* O texto do PRÓPRIO número vem depois dele na ordem do documento
+               (o «308» é filho do `<span data-prova>`): salta-se, senão a régua
+               media o vão entre a caixa e o algarismo que ela contém. */
+            if (el.contains(n)) continue;
+            const s = n.textContent ?? '';
+            const k = s.search(/[^\s]/);
+            if (k < 0) continue;
+            if (!/[\p{L}]/u.test(s[k])) break;
+            const r = document.createRange();
+            r.setStart(n, k);
+            r.setEnd(n, k + 1);
+            const letra = r.getBoundingClientRect();
+            pares.push({
+              onde: (/** @type {Element} */ (el)).getAttribute('data-prova') ?? '?',
+              numero: (el.textContent ?? '').trim(),
+              palavra: s.slice(k, k + 12).trim(),
+              vao: Math.round((letra.left - caixa.right) * 100) / 100,
+            });
+            break;
+          }
+        }
+      }
+      return { contagens, pares };
+    };
+
+    const ctx = await nav.newContext({ viewport: { width: 390, height: 800 } });
+    /** @type {Record<string, unknown>} */
+    const medidos = {};
+    for (const rota of ['/', '/en/']) {
+      const pag = await ctx.newPage();
+      await pag.goto(`${base}${rota}`, { waitUntil: 'networkidle' });
+
+      const { contagens, pares } = await pag.evaluate(medeOsVaos);
+      if (contagens === 0) {
+        falhas.push(
+          `${rota}: a página não tem uma única contagem dentro de \`.porta-conta\`. Sem um ` +
+            `positivo conhecido esta célula não mede nada (regra 14 da casa).`,
+        );
+      }
+      /* OS PARES SÃO TODOS OS DA PÁGINA, e não «pelo menos um». */
+      if (pares.length !== contagens) {
+        falhas.push(
+          `${rota}: a página tem ${contagens} contagem(ns) em \`.porta-conta\` e a régua mediu ` +
+            `${pares.length} par(es) número-palavra. Uma contagem que fica sem par não é medida, ` +
+            `e uma régua que se dá por satisfeita com um par não cobre a página.`,
+        );
+      }
+      for (const par of pares) {
+        if (par.vao < VAO_MINIMO) {
+          falhas.push(
+            `${rota}: «${par.numero}» e «${par.palavra}» ficam a ${par.vao}px a 390. ` +
+              `O espaço está no texto e a rendição apara-o.`,
+          );
+        }
+      }
+
+      /* O POSITIVO CONHECIDO, plantado. TEM DE APANHAR TODOS OS PARES: com as
+         caixas desfeitas, cada par número-palavra volta a ser texto solto num
+         contentor flexível, e o defeito que esteve no ar não era num par só. */
+      await pag.addStyleTag({ content: '.porta-conta-item{display:contents}' });
+      const comDefeito = await pag.evaluate(medeOsVaos);
+      const apanhados = comDefeito.pares.filter((x) => x.vao < VAO_MINIMO).length;
+      if (comDefeito.pares.length !== contagens) {
+        falhas.push(
+          `${rota}: com o defeito plantado a régua mediu ${comDefeito.pares.length} par(es) e a ` +
+            `página tem ${contagens} contagem(ns). A planta não pode fazer desaparecer pares da ` +
+            `medição: o que ela muda é o vão, não o que se mede.`,
+        );
+      }
+      if (apanhados !== comDefeito.pares.length || apanhados === 0) {
+        falhas.push(
+          `${rota}: com o defeito plantado (\`.porta-conta-item{display:contents}\`, que devolve ` +
+            `o texto a item anónimo) a régua apanhou ${apanhados} de ${comDefeito.pares.length} ` +
+            `par(es). Tinha de apanhar todos: um par apanhado em sete deixava-a verde sobre uma ` +
+            `página inteira por medir, e uma régua assim não prova nada.`,
+        );
+      }
+
+      medidos[rota] = {
+        contagens,
+        pares,
+        com_defeito: comDefeito.pares,
+        plantado_apanhado: apanhados,
+        de: comDefeito.pares.length,
+      };
+      notas.push(
+        `${rota}: ${pares.length} par(es) medido(s) para ${contagens} contagem(ns), vão mínimo ` +
+          `${pares.length ? Math.min(...pares.map((x) => x.vao)) : 0}px · com o defeito plantado, ` +
+          `${apanhados} de ${comDefeito.pares.length} apanhada(s)`,
+      );
+      await pag.close();
+    }
+    await ctx.close();
+    medida.I11 = medidos;
+    celulas.push({
+      id: 'I11',
+      nome: 'o espaço entre o número e a palavra, a 390',
+      passa: falhas.length === 0,
+      nota: notas.join(' · '),
       falhas,
     });
   }

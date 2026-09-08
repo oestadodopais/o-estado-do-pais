@@ -1,0 +1,123 @@
+{
+  "origem": {
+    "escrito_por": "scripts/datas-de-publicacao.mjs",
+    "o_que_e": "O dia em que o ficheiro de cada edição de um trabalho entrou NESTE repositório, medido numa árvore com a história completa e escrito aqui para que a construção não dependa da profundidade da cópia que a corre.",
+    "o_que_nao_e": "Não é a data em que o trabalho foi publicado noutro sítio, nem a data em que foi escrito. Nenhuma data de publicação está confirmada em src/data/studies.mjs.",
+    "comando": "git log --diff-filter=A --format=%ad %H --date=short -- <ficheiro>",
+    "como_refazer": "node scripts/datas-de-publicacao.mjs, numa árvore com git fetch --unshallow. scripts/check-datas.mjs confere este ficheiro contra o git quando a história é completa, e contra as páginas construídas sempre."
+  },
+  "edicoes": [
+    {
+      "slug": "agua-nao-faturada",
+      "lang": "pt",
+      "data": "2026-08-12",
+      "commit": "b4f45d3f2d02e941dc393bfbc06868c223e35887",
+      "ficheiro": "studies-src/agua-nao-faturada/pt.html"
+    },
+    {
+      "slug": "agua-nao-faturada",
+      "lang": "en",
+      "data": "2026-08-12",
+      "commit": "b4f45d3f2d02e941dc393bfbc06868c223e35887",
+      "ficheiro": "studies-src/agua-nao-faturada/en.html"
+    },
+    {
+      "slug": "alentejo-algarve",
+      "lang": "en",
+      "data": "2026-08-12",
+      "commit": "b4f45d3f2d02e941dc393bfbc06868c223e35887",
+      "ficheiro": "studies-src/alentejo-algarve/en.html"
+    },
+    {
+      "slug": "avaliacao-economica-regional-de-portugal-2026",
+      "lang": "pt",
+      "data": "2026-08-12",
+      "commit": "b4f45d3f2d02e941dc393bfbc06868c223e35887",
+      "ficheiro": "studies-src/avaliacao-economica-regional-de-portugal-2026/pt.html"
+    },
+    {
+      "slug": "evolucao-de-portugal-desde-1981",
+      "lang": "pt",
+      "data": "2026-08-12",
+      "commit": "b4f45d3f2d02e941dc393bfbc06868c223e35887",
+      "ficheiro": "studies-src/evolucao-de-portugal-desde-1981/pt.html"
+    },
+    {
+      "slug": "evora-economia-investidores-portas-abertas-2026",
+      "lang": "pt",
+      "data": "2026-08-12",
+      "commit": "f30cf277e17c0af8c6096f53fd55d8cda573acf5",
+      "ficheiro": "studies-src/evora-economia-investidores-portas-abertas-2026/pt.html"
+    },
+    {
+      "slug": "evora-orcamentado-pago-devido-2025",
+      "lang": "pt",
+      "data": "2026-08-12",
+      "commit": "b4f45d3f2d02e941dc393bfbc06868c223e35887",
+      "ficheiro": "studies-src/evora-orcamentado-pago-devido-2025/pt.html"
+    },
+    {
+      "slug": "evora-orcamentado-pago-devido-2025",
+      "lang": "en",
+      "data": "2026-08-12",
+      "commit": "b4f45d3f2d02e941dc393bfbc06868c223e35887",
+      "ficheiro": "studies-src/evora-orcamentado-pago-devido-2025/en.html"
+    },
+    {
+      "slug": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
+      "lang": "pt",
+      "data": "2026-08-12",
+      "commit": "b4f45d3f2d02e941dc393bfbc06868c223e35887",
+      "ficheiro": "studies-src/evora-os-pelouros-quem-os-teve-o-que-fizeram/pt.html"
+    },
+    {
+      "slug": "evora-prometido-pago-auditado-2026",
+      "lang": "pt",
+      "data": "2026-08-15",
+      "commit": "ec152217f0ab7a8490b49cede57886e07f14c8cd",
+      "ficheiro": "studies-src/evora-prometido-pago-auditado-2026/pt.html"
+    },
+    {
+      "slug": "evora-prometido-pago-auditado-2026",
+      "lang": "en",
+      "data": "2026-08-15",
+      "commit": "ec152217f0ab7a8490b49cede57886e07f14c8cd",
+      "ficheiro": "studies-src/evora-prometido-pago-auditado-2026/en.html"
+    },
+    {
+      "slug": "evora-quinze-anos-cinco-mandatos",
+      "lang": "pt",
+      "data": "2026-08-12",
+      "commit": "b4f45d3f2d02e941dc393bfbc06868c223e35887",
+      "ficheiro": "studies-src/evora-quinze-anos-cinco-mandatos/pt.html"
+    },
+    {
+      "slug": "onde-esta-a-agua",
+      "lang": "pt",
+      "data": "2026-08-12",
+      "commit": "b4f45d3f2d02e941dc393bfbc06868c223e35887",
+      "ficheiro": "studies-src/onde-esta-a-agua/pt.html"
+    },
+    {
+      "slug": "onde-esta-a-agua",
+      "lang": "en",
+      "data": "2026-08-12",
+      "commit": "b4f45d3f2d02e941dc393bfbc06868c223e35887",
+      "ficheiro": "studies-src/onde-esta-a-agua/en.html"
+    },
+    {
+      "slug": "penalizacoes-por-reforma-antecipada-2026",
+      "lang": "pt",
+      "data": "2026-08-24",
+      "commit": "5cb083eda12859ca40558dd68dde4e457a010c27",
+      "ficheiro": "studies-src/penalizacoes-por-reforma-antecipada-2026/pt.html"
+    },
+    {
+      "slug": "which-door-is-yours",
+      "lang": "en",
+      "data": "2026-08-12",
+      "commit": "b4f45d3f2d02e941dc393bfbc06868c223e35887",
+      "ficheiro": "studies-src/which-door-is-yours/en.html"
+    }
+  ]
+}

@@ -586,7 +586,7 @@ e por isso conteúdo.*
 | navegacao | A ligação sai deste domínio. | até 2026-08-26 | viva | — |
 | conteudo | As contas do penúltimo ano foram rejeitadas em votação e nunca foram certificadas. | até 2026-08-26 | viva | — |
 | conteudo | Avaliação económica das regiões de Portugal. | até 2026-08-26 | viva | — |
-| conteudo | Datas de publicação por confirmar. | até 2026-08-26 | viva | — |
+| conteudo | Datas de publicação por confirmar. | até 2026-08-26 | retirada | retirada: a caixa passou a render-se só quando alguma edição não tem data, e a contá-las («Datas de publicação por confirmar em N edições»); com as dezasseis edições datadas pelo `src/data/datas-de-publicacao.json` do bloco F1.4b (04.09.2026) a caixa não se rende. A frase contada entra aqui no dia em que voltar a render-se |
 | conteudo | Description: house translation of the document’s opening sentence | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
 | conteudo | Description: opening sentence of the document | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
 | conteudo | Description: restatement of the title | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
@@ -624,7 +624,7 @@ e por isso conteúdo.*
 | conteudo | PT Séries longas sobre a evolução do país. | até 2026-08-26 | viva | — |
 | conteudo | PT Água não faturada nos sistemas de abastecimento em Portugal. | até 2026-08-26 | viva | — |
 | conteudo | Public funding in Portugal. | até 2026-08-26 | viva | — |
-| conteudo | Publication dates not yet confirmed. | até 2026-08-26 | viva | — |
+| conteudo | Publication dates not yet confirmed. | até 2026-08-26 | retirada | retirada: a caixa passou a render-se só quando alguma edição não tem data, e a contá-las («Datas de publicação por confirmar em N edições»); com as dezasseis edições datadas pelo `src/data/datas-de-publicacao.json` do bloco F1.4b (04.09.2026) a caixa não se rende. A frase contada entra aqui no dia em que voltar a render-se |
 | conteudo | Quem teve cada pelouro da Câmara Municipal de Évora ao longo de cinco mandatos, quanto gastaram as contas do próprio município nas áreas que esses pelouros cobrem, e o que os relatórios dizem que essas áreas fizeram. | até 2026-08-26 | viva | — |
 | conteudo | Sem tema atribuído | até 2026-08-26 | viva | — |
 | conteudo | Studies | até 2026-08-26 | viva | — |
@@ -2078,11 +2078,69 @@ quando a busca subiu para debaixo da manchete.
 | conteudo | Os indicadores do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, com os limiares que o Procedimento publica. Os valores são do Eurostat, confirmados contra a Comissão Europeia, . | porta | retirada | a segunda passagem do F1.1 apertou os verbos a 03.09.2026, depois do Blocking 6 da leitura a frio do Codex: «com os limiares que o Procedimento publica» e «que não publica limiares» são dois verbos que as linhas não sustentam. Uma nota do livro-razão diz que o limiar É do Procedimento, não que ele o publica; e a Emenda 16 diz que o Painel Social «não tem limiares», que é outra coisa de «não publica limiares». A frase que ficou diz o que a nota e a emenda dizem, palavra por palavra, e nomeia o documento contra o qual os valores foram confirmados, que a primeira redação deixava por dizer |
 | conteudo | Os indicadores do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, cada um com o limiar do Procedimento. Os valores são do Eurostat, confirmados contra o da Comissão Europeia, . | porta | viva | — |
 | conteudo | Os indicadores do Painel Social Europeu, que não publica limiares. Os valores são do Eurostat, confirmados contra a Comissão Europeia, . | porta | retirada | a segunda passagem do F1.1 apertou os verbos a 03.09.2026, depois do Blocking 6 da leitura a frio do Codex: «com os limiares que o Procedimento publica» e «que não publica limiares» são dois verbos que as linhas não sustentam. Uma nota do livro-razão diz que o limiar É do Procedimento, não que ele o publica; e a Emenda 16 diz que o Painel Social «não tem limiares», que é outra coisa de «não publica limiares». A frase que ficou diz o que a nota e a emenda dizem, palavra por palavra, e nomeia o documento contra o qual os valores foram confirmados, que a primeira redação deixava por dizer |
-| conteudo | Os indicadores que o livro-razão guarda e cujo registo nomeia o Painel Social Europeu, sem cor porque não tem limiares. Os valores são do Eurostat, confirmados contra o da Comissão Europeia, . | porta | viva | — |
+| conteudo | Os indicadores que o livro-razão guarda e cujo registo nomeia o Painel Social Europeu, sem cor porque não tem limiares. Os valores são do Eurostat, confirmados contra o da Comissão Europeia, . | porta | retirada | o bloco F1.6 pôs a seleção à cabeça da frase (decisão (5) da §1.98, cumprida a 04.09.2026): a frase passou a abrir por «Oito das dezassete medidas principais do Painel Social Europeu», com o numerador composto de `FIGURAS_SOCIAL.length` e o denominador declarado com a origem da Comissão. Esta redação não pode voltar: sem a seleção, o leitor lê oito cartões e não sabe que são oito de dezassete |
 | conteudo | The indicators of the Macroeconomic Imbalance Procedure scoreboard, with the thresholds the Procedure publishes. The values are from Eurostat, confirmed against the European Commission, . | porta | retirada | a segunda passagem do F1.1 apertou os verbos a 03.09.2026, depois do Blocking 6 da leitura a frio do Codex: «com os limiares que o Procedimento publica» e «que não publica limiares» são dois verbos que as linhas não sustentam. Uma nota do livro-razão diz que o limiar É do Procedimento, não que ele o publica; e a Emenda 16 diz que o Painel Social «não tem limiares», que é outra coisa de «não publica limiares». A frase que ficou diz o que a nota e a emenda dizem, palavra por palavra, e nomeia o documento contra o qual os valores foram confirmados, que a primeira redação deixava por dizer |
 | conteudo | The indicators of the Macroeconomic Imbalance Procedure scoreboard, each with the threshold of the Procedure. The values are from Eurostat, confirmed against the European Commission’s country report, . | porta | viva | — |
 | conteudo | The indicators of the European Social Scoreboard, which publishes no thresholds. The values are from Eurostat, confirmed against the European Commission, . | porta | retirada | a segunda passagem do F1.1 apertou os verbos a 03.09.2026, depois do Blocking 6 da leitura a frio do Codex: «com os limiares que o Procedimento publica» e «que não publica limiares» são dois verbos que as linhas não sustentam. Uma nota do livro-razão diz que o limiar É do Procedimento, não que ele o publica; e a Emenda 16 diz que o Painel Social «não tem limiares», que é outra coisa de «não publica limiares». A frase que ficou diz o que a nota e a emenda dizem, palavra por palavra, e nomeia o documento contra o qual os valores foram confirmados, que a primeira redação deixava por dizer |
-| conteudo | The indicators the ledger holds whose record names the European Social Scoreboard, with no colour because it has no thresholds. The values are from Eurostat, confirmed against the European Commission’s country report, . | porta | viva | — |
+| conteudo | The indicators the ledger holds whose record names the European Social Scoreboard, with no colour because it has no thresholds. The values are from Eurostat, confirmed against the European Commission’s country report, . | porta | retirada | o bloco F1.6 pôs a seleção à cabeça da frase (decisão (5) da §1.98, cumprida a 04.09.2026): a frase passou a abrir por «Oito das dezassete medidas principais do Painel Social Europeu», com o numerador composto de `FIGURAS_SOCIAL.length` e o denominador declarado com a origem da Comissão. Esta redação não pode voltar: sem a seleção, o leitor lê oito cartões e não sabe que são oito de dezassete |
+
+## Bloco F1.6 · o atraso do IEFP e a seleção do Painel Social · 04.09.2026
+
+*O bloco escreveu três frases novas e reescreveu uma. **O atraso de uma série**
+diz-se com três rótulos e três valores lidos, na página de cada linha atrasada e
+no cartão dela na página do concelho: «Último período publicado pela fonte:
+2026-07; a casa publica 2025-12 desde 26.08.2026». **O contador** do cabeçalho
+diz quantas séries estão nesse estado e quantas linhas do livro-razão elas
+apanham. **A frase do Painel Social** passou a abrir pela seleção.*
+
+*AS CADEIAS DOS RÓTULOS SÃO MARCADAS `data-voz`, e é a única maneira de elas
+poderem estar aqui: a régua salta um bloco com uma marca de origem lá dentro em
+qualquer rota fora de `ROTAS_COM_ORIGEM_LIDA` (e `municipio` não está nessa
+lista), e o rótulo do contador vive dentro de uma âncora, que é um destino e não
+uma frase. A marca só alarga a peneira e não dispensa nada: ver a razão ao lado
+de `VOZ_DECLARADA` em `scripts/medir-defeitos.mjs`.*
+
+*AS DUAS DICAS DAS CHAVES DA PROVA entram como as outras: um `title` é
+superfície pública desde a I79, e a frase que diz COMO um número é obtido é
+prosa da casa.*
+
+*SETE DESTAS CADEIAS SÃO DA SEGUNDA PASSAGEM (04.09.2026, Major 8 e Major 9 da
+leitura a frio do Codex), e as sete que elas substituem não chegaram a sair
+deste ramo. A primeira redação dizia «a casa publica 2025-12 desde 26.08.2026» e
+«séries que a casa publica atrás do último período da fonte»: a Emenda 15 tira da
+página do leitor as frases sobre a casa, e vale num `title` como vale num
+parágrafo. A forma nova é deíctica, «nesta linha: … lido a …», e aponta para a
+linha em que está. A oitava é a frase inglesa do Painel Social, que dizia
+«headline indicators»: «indicador» sai do vocabulário do sítio pela §1.98, e o
+termo da Comissão entra uma vez, entre aspas e atribuído, porque é por ele que
+um leitor encontra a lista no documento dela.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Séries atrasadas: | frescura | viva | — |
+| conteudo | Series behind: | frescura | viva | — |
+| conteudo | séries publicadas atrás do último período da fonte | frescura | viva | — |
+| conteudo | series published behind the source’s latest period | frescura | viva | — |
+| conteudo | linhas do livro-razão dessas séries | frescura | viva | — |
+| conteudo | ledger rows in those series | frescura | viva | — |
+| conteudo | Último período publicado pela fonte: | frescura | viva | — |
+| conteudo | Latest period published by the source: | frescura | viva | — |
+| conteudo | nesta linha: | frescura | viva | — |
+| conteudo | this row: | frescura | viva | — |
+| conteudo | lido a | frescura | viva | — |
+| conteudo | read on | frescura | viva | — |
+| conteudo | Oito das dezassete medidas principais do Painel Social Europeu: as que o livro-razão guarda e cujo registo nomeia esse painel, sem cor porque não tem limiares. Os valores são do Eurostat, confirmados contra o da Comissão Europeia, . | frescura | viva | — |
+| conteudo | Eight of the seventeen headline measures of the European Social Scoreboard, which the Commission calls “headline indicators”: the ones the ledger holds whose record names that scoreboard, with no colour because it has no thresholds. The values are from Eurostat, confirmed against the European Commission’s country report, . | frescura | viva | — |
+
+*AS DUAS ÚLTIMAS LINHAS LEVAM UMA CONTAGEM POR EXTENSO, e o inventário já disse
+uma vez que uma frase com um número que se move não pode ser sentinela. A
+diferença está medida e não afirmada: nenhum dos dois números é escrito na
+frase. O numerador compõe-se de `FIGURAS_SOCIAL.length` no próprio ficheiro de
+dados, pelo que a frase muda sozinha se uma medida entrar ou sair do painel, e
+nesse dia esta linha deixa de se render e a construção fecha com o nome dela,
+que é a régua a funcionar e não a falhar. O denominador é da Comissão, declarado
+em `MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL` com o documento, o endereço e a data em
+que foi lido, e o `check:formas` (F16) exige que a frase continue a dizê-lo.*
 
 ## As frases da área de leitura da primeira página (bloco F1.1b, 04.09.2026)
 
@@ -2190,6 +2248,33 @@ oito linhas novas e a entrada em `critica/REVISOES-DO-INVENTARIO.md` que uma
 leitura cruzada do inventário obriga. **Fica para a direção**, com a contagem
 feita.
 
+## A linha da área de leitura em repouso (bloco F1.1c, 04.09.2026)
+
+**Uma cadeia nova, nas duas edições, e é a única do bloco.** O F1.1c cumpre a
+segunda metade da decisão do diretor de 04.09, dada depois de ver a página no ar:
+os cartões ficam, e por baixo da faixa não se mostra nada até que um cartão seja
+tocado. Com guião, as vinte e uma leituras fechadas saem da página e no lugar
+delas fica esta linha, que diz o gesto que enche a área.
+
+**A ORIGEM É A DECISÃO E A CHAVE ESTÁ DECLARADA**: `inicio.painel.semLeituraAberta`
+em `src/i18n/strings.mjs`, rendida uma vez por página em `src/views/HomeView.astro`,
+no cabeçalho da área de leitura. Não leva algarismo nenhum, não fala da casa e não
+traz vocabulário novo: um cartão e uma medida são as duas palavras que a página já
+usa.
+
+**É `navegacao` e não `conteudo`**, e a razão é a definição das três classes: não
+diz nada sobre o que se mede, diz o que fazer para chegar ao que se mede. É a
+mesma classe da linha vazia da busca dos concelhos.
+
+**SEM GUIÃO NÃO SE VÊ**, e mesmo assim é declarada: o servidor rende-a `hidden` e
+a régua lê o documento entregue, não o ecrã. Uma linha que a régua recolhe e a
+tabela não declara sai como bloco **por classificar**, que é o portão que a
+apanha.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | Toque num cartão para ler a medida. | toque | viva | — |
+| navegacao | Tap a card to read the measure. | toque | viva | — |
 ## Bloco F1.10 · uma coisa, um lugar · 04.09.2026
 
 **O que este bloco mexeu na tabela.** Trinta e nove linhas: dezanove passaram a
