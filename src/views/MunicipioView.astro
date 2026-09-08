@@ -271,6 +271,10 @@ const cartoes = pecas
     nome: tile.nome[lang],
     medida: tile.medida[lang],
     estado: tile.estado,
+    /* QUEM FIXOU O TETO (F1.10, item 8.5): vem da mesma conta que dá o estado,
+       `pecasDoConcelho()`, e é a lei. O cartão do índice de dívida passa a dizer
+       «dentro do limite legal». */
+    fixador: tile.fixador,
     glifos: [...String(tile.linha.value)].length,
     posicao: i + 1,
   }));
@@ -650,6 +654,7 @@ const metodoPath = routePath('metodo', lang);
               frase={fraseDaPeca(tile)}
               estado={tile.estado}
               colore={tile.colore}
+              fixador={tile.fixador}
               regua={tile.regua}
               selosNaMedida={true}
             />

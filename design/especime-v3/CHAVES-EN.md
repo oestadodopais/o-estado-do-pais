@@ -1203,3 +1203,37 @@ aceitou a 07.09 à noite. **Estas rendem-se**, e por isso estão no
 na sua língua, `/uniao-europeia` e `/en/european-union`. É a regra desta tabela,
 escrita nas regiões, nas áreas, nos concelhos e nos domínios: «o que se traduz é
 o rótulo e nunca a chave».
+
+### Bloco F1.10 · terceira sessão · a manchete do país e quem fixou o limiar (08.09.2026)
+
+*As duas decisões do lugar de direção de 08.09.2026, pela delegação da §1.98: a
+manchete de `/` depois de os 21 cartões passarem à página europeia (itens 8.15 e
+8.16), e «limiar» nunca sozinho, com quem o fixou (item 8.5, que executa a
+decisão (2) da emenda de 07.09 à §1.101). **Todas se rendem**, e por isso estão
+no `INVENTARIO-FRASES.md` no mesmo commit.*
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `inicio.cabeca.manchetePais` (`abre` · `meio` · `fecha`) | A dívida pública é  ·  do PIB e a taxa de desemprego é  ·  da população ativa. | Government debt is  ·  of GDP and the unemployment rate is  ·  of the labour force. | as três peças da manchete do país, entre e depois dos dois valores selados. As duas orações dizem a UNIDADE de cada linha por extenso («% do PIB» e «% da população ativa», transcritas do campo `unit`): uma manchete é uma frase e não uma ficha. O símbolo da percentagem entra pelo sufixo do valor, como na manchete do domínio |
+| `estado.comissao` (`fora` · `dentro` · `rotulo`) | fora do limiar da Comissão · dentro do limiar da Comissão · limiar da Comissão | outside the Commission threshold · within the Commission threshold · Commission threshold | o par de palavras do estado e o rótulo da linha do limiar, para as medidas cujo limiar é o do painel do Procedimento. Em inglês «Commission threshold» e não «the Commission's threshold»: é um rótulo de instrumento, e um genitivo com apóstrofo dentro de uma fila de estados lê-se pior do que o composto |
+| `estado.lei` (`fora` · `dentro` · `rotulo`) | fora do limite legal · dentro do limite legal · limite legal | outside the legal limit · within the legal limit · legal limit | o mesmo, para o teto de dívida de uma câmara, que a lei fixa. «limite» e não «limiar», porque é a palavra que a página do concelho já usa na frase do artigo 52.º |
+| `estado.porRegistar` (`fora` · `dentro` · `rotulo`) | fora do limiar publicado · dentro do limiar publicado · limiar publicado | outside the published threshold · within the published threshold · published threshold | o mesmo, para as duas medidas do domínio cujo limiar está publicado na fonte que a linha cita e cujo FIXADOR nenhuma linha nem decisão desta casa regista. Diz o que se prova, e não um autor |
+| `estado.fraseDoLimiarDaComissao` | O limiar é o valor de referência do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, fixado no regulamento que criou o Procedimento e revisto pela Comissão Europeia. | The threshold is the reference value of the Macroeconomic Imbalance Procedure scoreboard, set in the regulation that created the Procedure and revised by the European Commission. | a frase da leitura, que diz o que o limiar é e quem o fixou. As palavras são as do motivo `limiar-do-quadro` de `ledger/allowlist.yml`, **sem o número do diploma**: escrevê-lo seria um algarismo sem marca numa página do leitor |
+
+*E as que mudaram de texto:*
+
+| chave | pt (antes → depois) | en (antes → depois) | nota |
+|---|---|---|---|
+| `inicio.cabeca.ledePais.abre` | Fora do limiar:  → Fora do limiar da Comissão:  | Outside the threshold:  → Outside the Commission threshold:  | a lede nomeia as medidas do painel do Procedimento que passaram o seu limiar, e o limiar delas é o desse painel. «Fora do limiar:» sozinho era a palavra sem dono que o item 8.5 veio tirar |
+
+**As quatro peças da manchete antiga não mudaram de palavra, mudaram de página.**
+`inicio.cabeca.tituloPaisA`, `tituloPaisUm`, `tituloPaisMuitos` e `tituloPaisFim`
+compõem «Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios
+Macroeconómicos e cumpre 9», e essa frase é agora a manchete de «Portugal na
+União Europeia», que é onde o que ela conta se vê. As chaves ficam com o nome que
+têm: renomeá-las mudava treze sítios para não mudar uma letra do que se lê.
+
+**Três chaves saíram do uso.** `estado.foraDoLimiar`, `estado.dentroDoLimiar` (as
+duas em cada edição) deixaram de existir: cada uma passou a ser três, uma por
+fixador do limiar. `estado.semLimiar` e `estado.porConfirmar` ficam como estavam,
+porque uma ausência de limiar não tem fixador a nomear.

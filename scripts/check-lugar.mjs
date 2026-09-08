@@ -106,10 +106,27 @@ const TETOS = {
      regressão: é o mesmo número dividido por mais duas páginas. A mesma razão,
      e o mesmo dia, valem para a L1, a L6, a 8.5 e a 8.8. */
   l5_sem_caminho: 7213,
-  /* L6 · selos cuja etiqueta não é o publicador da linha. */
-  l6_selos: 26174,
-  /* 8.5 · blocos com «limiar» sem o qualificador nem a frase ao lado. */
-  d85_limiar_sozinho: 708,
+  /* L6 · selos cuja etiqueta não é o publicador da linha.
+     SOBE DE 26 174 PARA 26 178 a 08.09.2026, e a razão escreve-se porque um teto
+     que sobe tem sempre de a ter: a manchete da primeira página passou a citar
+     DUAS LINHAS (a dívida pública e a taxa de desemprego, decisão do lugar de
+     direção pelos itens 8.15 e 8.16), e cada valor selado leva o seu selo. São
+     quatro selos novos, dois por edição, com a MESMA etiqueta errada que os
+     outros 26 174: o selo diz o nome do estudo e não o publicador da linha.
+     Nenhuma etiqueta antiga mudou, e nenhum selo antigo piorou: o que aumentou
+     foi o número de sítios onde a dívida da §2.4 se lê. Esta medida desce a 0 no
+     item «"fonte" diz o publicador», que é o que ela existe para medir. */
+  l6_selos: 26178,
+  /* 8.5 · blocos com «limiar» sem o qualificador nem a frase ao lado.
+     DESCE DE 708 PARA 0 a 08.09.2026, com o item 8.5: cada medida com limiar
+     declara quem o fixou (`limiarFixadoPor`, lista fechada em
+     `src/data/figuras.mjs`), o cartão e a linha do limiar dizem-no em palavras
+     («dentro do limiar da Comissão», «dentro do limite legal», «dentro do limiar
+     publicado») e a leitura das treze medidas do Procedimento diz numa frase o
+     que o limiar é e quem o fixou. Os blocos que a casa já qualificava por outra
+     via — o Método, a agenda das fontes, a manchete e o cabeçalho da página
+     europeia — estão na lista dos qualificadores, escritos por extenso. */
+  d85_limiar_sozinho: 0,
   /* 8.8 · «livro-razão» nos menus, nos rodapés e nos títulos das páginas.
      DESCE DE 24 177 PARA 0 a 08.09.2026: o nome visível do índice e da entrada
      do menu passou a «Números e fontes», e os títulos das páginas do livro-razão
@@ -239,6 +256,62 @@ function textoDaCasa(raiz) {
  * título. É o mesmo corte de `BLOCOS_DA_VOZ` em `medir-defeitos.mjs`.
  */
 const BLOCOS = 'p,li,dd,dt,h1,h2,h3,h4,figcaption,summary,blockquote,td,th,caption';
+
+/* ---------------------------------------------------------------------------
+ * O QUE QUALIFICA A PALAVRA «LIMIAR» (medida 8.5)
+ * ---------------------------------------------------------------------------
+ * A lista está ESCRITA AQUI, palavra por palavra, e não lida de
+ * `src/i18n/strings.mjs`. É de propósito: uma régua que fosse buscar o seu
+ * critério ao mesmo ficheiro que a página lê teria os dois lados da comparação
+ * do mesmo lado, e passar a dizer «dentro do limiar» outra vez em `strings.mjs`
+ * mudaria a régua e a página ao mesmo tempo, em silêncio. Escrita aqui, a régua
+ * fica vermelha no dia em que a cadeia mudar, e quem a muda tem de vir cá dizer
+ * porquê.
+ *
+ * SÃO OS TRÊS FIXADORES DO LIMIAR (F1.10, item 8.5, e `FIXADORES_DO_LIMIAR` em
+ * `src/data/figuras.mjs`), nas duas edições, mais as duas formas em que a
+ * palavra já se qualificava a si própria: a ausência declarada («sem limiar»)
+ * e a frase que diz o que o limiar é («O limiar é …»).
+ */
+const QUALIFICADORES_DO_LIMIAR = [
+  /* os três fixadores do limiar, nas duas edições */
+  'limiar da comissão',
+  'commission threshold',
+  'limite legal',
+  'legal limit',
+  'limiar publicado',
+  'published threshold',
+  /* A AUSÊNCIA DECLARADA. «sem limiar» é uma das três palavras do vocabulário
+     fechado do estado, e «não tem limiares» é a frase do Painel Social. */
+  'sem limiar',
+  'no threshold',
+  'não tem limiares',
+  'has no thresholds',
+  /* A FRASE QUE DIZ O QUE O LIMIAR É E QUEM O FIXOU, na leitura de uma medida e
+     nos dois lugares onde a casa já a dizia antes deste bloco (o Método e a
+     agenda das fontes). */
+  'o limiar é',
+  'the threshold is',
+  'limiar fixado',
+  'a fonte publica um limiar',
+  'the source publishes a threshold',
+  'limiar que a própria comissão publica',
+  'threshold the commission itself publishes',
+  /* O QUADRO NOMEADO DENTRO DO BLOCO. Um bloco que nomeia o painel do
+     Procedimento diz de quem é o limiar de que fala, e é a forma em que a
+     manchete da página europeia, o cabeçalho do quadro e a frase de contexto já
+     o diziam antes deste bloco. */
+  'limiar do procedimento',
+  'limiares do procedimento',
+  'threshold of the macroeconomic imbalance procedure',
+  'thresholds of the macroeconomic imbalance procedure',
+  'procedimento relativo aos desequilíbrios macroeconómicos',
+  'procedimento dos desequilíbrios macroeconómicos',
+  'macroeconomic imbalance procedure',
+  "procedure's threshold",
+  'limiar do painel europeu',
+  'european scoreboard threshold',
+];
 
 /** @param {import('node-html-parser').HTMLElement} raiz */
 function blocosDaCasa(raiz) {
@@ -453,10 +526,8 @@ for (const ficheiro of paginas) {
     for (const b of blocos) {
       const temLimiar = /limiar|threshold/i.test(b);
       if (!temLimiar) continue;
-      const qualificado =
-        /limiar d[ao] Comissão|threshold of the Commission|Commission'?s threshold|limiar que a Comissão|limiar publicado|limiar fixado|sem limiar|no threshold|limiar é|threshold is/i.test(
-          b,
-        );
+      const minusculas = b.toLowerCase();
+      const qualificado = QUALIFICADORES_DO_LIMIAR.some((q) => minusculas.includes(q));
       if (qualificado) continue;
       medidas.d85_limiar_sozinho++;
       anota('d85_limiar_sozinho', `${url} · ${b.slice(0, 90)}`);

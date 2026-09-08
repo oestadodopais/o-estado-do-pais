@@ -84,7 +84,8 @@ import { estadoDaMedida } from './estado.mjs';
 import { prova } from './prova.mjs';
 import { matchPath, routePath, LANGS } from './routes.mjs';
 import { t } from '../i18n/strings.mjs';
-import { FIGURAS_PDM } from '../data/figuras.mjs';
+import { FIGURAS_PDM, fixadorDoLimiar } from '../data/figuras.mjs';
+import { MANCHETE_DO_PAIS } from './inicio.mjs';
 
 /**
  * As duas medidas, e porque são duas.
@@ -307,16 +308,25 @@ function valorDaProva(p, chave) {
 /**
  * O MODELO DA PRIMEIRA PÁGINA.
  *
- * A manchete é a da cabeça, peça por peça: `tituloPaisA` + a contagem de fora +
- * a cauda (singular ou plural, escolhida pela contagem como `Cabeca.astro` a
- * escolhe) + a contagem de dentro + `tituloPaisFim`. Nada é traduzido aqui e
- * nada é composto de novo: são as mesmas cadeias, pela mesma ordem.
+ * A MANCHETE MUDOU COM A DA PÁGINA (F1.10, 08.09.2026). Era a das duas contagens
+ * do painel do Procedimento, peça por peça; com o item 8.16 os 21 cartões
+ * passaram para «Portugal na União Europeia» e a manchete do país passou a ser a
+ * frase das duas medidas de cabeça do domínio vivo. Um cartão de partilha é a
+ * mesma coisa vista de fora: se a página diz uma frase e o cartão dela diz
+ * outra, são duas casas.
  *
- * A fila de quadrados é a das treze medidas do painel, cada uma com o estado que
- * `estadoDaMedida()` lhe dá. A Emenda 13 tirou a fila da CABEÇA da página, e a
- * §5 do plano põe-na no CARTÃO — que é outra superfície e outro problema: no
- * cartão não há peças onde o marcador de cada medida possa viver, e sem a fila o
- * cartão diria a contagem sem mostrar de que tamanho é o painel.
+ * AS PALAVRAS SÃO AS DA VISTA, sem uma cadeia nova: `HomeView.astro` compõe a
+ * manchete com estes mesmos pedaços, e o que muda aqui é que o cartão escreve o
+ * VALOR onde a página escreve o selo. Os dois algarismos são os das duas linhas,
+ * declarados em `valores` — a regra mais dura do cartão é que nenhum algarismo
+ * da cópia visível fique sem valor declarado, e é ela que impede que esta frase
+ * se afaste do livro-razão.
+ *
+ * A FILA DE QUADRADOS SAIU COM O PAINEL. Contava as treze medidas do
+ * Procedimento, e as treze mudaram de página: uma fila que descrevesse o painel
+ * europeu no cartão da primeira página dizia o tamanho de um quadro que a página
+ * já não mostra. O que fica é a manchete com os dois valores e a data da última
+ * reconferência, que é o rodapé do cartão.
  *
  * @param {Lingua} lang
  */
@@ -324,38 +334,25 @@ function modeloDoInicio(lang) {
   const s = t(lang);
   const p = prova(lang);
 
-  const fora = p.painel_fora_do_limiar.valor;
-  const cauda = fora === 1 ? s.inicio.cabeca.tituloPaisUm : s.inicio.cabeca.tituloPaisMuitos;
-
-  const estados = FIGURAS_PDM.map((f) => estadoDaMedida(getClaim(f.claim), f.limiar));
-  const quadrados = {
-    fora: estados.filter((e) => e === 'fora').length,
-    dentro: estados.filter((e) => e === 'dentro').length,
-    sem: estados.filter((e) => e !== 'fora' && e !== 'dentro').length,
-  };
+  const divida = getClaim(MANCHETE_DO_PAIS.divida);
+  const desemprego = getClaim(MANCHETE_DO_PAIS.desemprego);
 
   const valores = [
-    valorDaProva(p, 'painel_fora_do_limiar'),
-    valorDaProva(p, 'painel_dentro_do_limiar'),
+    valorDaLinha(divida, 'value', lang),
+    valorDaLinha(desemprego, 'value', lang),
     valorDaProva(p, 'painel_reconferido_em'),
   ];
 
+  const frase = s.inicio.cabeca.manchetePais;
+  const sufixo = MANCHETE_DO_PAIS.sufixo;
   const manchete =
-    s.inicio.cabeca.tituloPaisA +
+    frase.abre +
     valores[0].texto +
-    cauda +
+    sufixo +
+    frase.meio +
     valores[1].texto +
-    s.inicio.cabeca.tituloPaisFim;
-
-  /* As palavras do estado, ao lado da fila. A direção pediu-as por escrito no
-     cartão E na fila: «the state is written in words on the card as well as
-     shown in the strip». Uma fila sem palavras é cor a fazer o trabalho todo,
-     que é o que a §3 da constituição proíbe. */
-  const fila = [
-    { estado: 'fora', quantos: quadrados.fora, palavra: s.estado.foraDoLimiar },
-    { estado: 'dentro', quantos: quadrados.dentro, palavra: s.estado.dentroDoLimiar },
-    { estado: 'sem', quantos: quadrados.sem, palavra: s.estado.semLimiar },
-  ].filter((g) => g.quantos > 0);
+    sufixo +
+    frase.fecha;
 
   return {
     tipo: 'inicio',
@@ -364,12 +361,17 @@ function modeloDoInicio(lang) {
     marca: SITE_NAME,
     sobrancelha: s.inicio.cabeca.paisA,
     manchete,
-    fila,
+    /* SEM FILA, e o tipo escreve-se: um `[]` cru dá `never[]`, e `copiaVisivel()`
+       percorre a fila de qualquer modelo. */
+    fila: /** @type {{ estado: string, quantos: number, palavra: string }[]} */ ([]),
     aparelho: null,
     estado: null,
     meta: [`${s.sinal.reconferido} ${valores[2].texto}`],
     valores,
-    quadrados,
+    /* `null` E NÃO ZEROS: o portão só reconta a fila quando ela existe, e uma
+       fila de três zeros era um cartão a dizer que o painel tem zero medidas.
+       O painel mudou de página, e este cartão deixou de o descrever. */
+    quadrados: null,
   };
 }
 
@@ -403,9 +405,25 @@ function modeloDaLinha(id, lang) {
   if (claim.source) valores.push(valorDaLinha(claim, 'source', lang));
   if (claim.access_date) valores.push(valorDaLinha(claim, 'access_date', lang));
 
+  /* O ESTADO DE UMA LINHA DO PAINEL, com as palavras do fixador que a declaração
+     dela traz (F1.10, item 8.5). Uma linha fora do painel não tem limiar
+     publicado e fica em «sem limiar», que não tem fixador. */
+  const fixador = figura ? fixadorDoLimiar(figura, `cartoes: a linha "${id}"`) : null;
+  /* A ESCOLHA ESCREVE-SE, e não se indexa: `s.estado[fixador]` seria um índice de
+     cadeia sobre um objeto de chaves fixas, e o `typecheck` estrito recusa-o com
+     razão — a lista dos fixadores é fechada, e escrevê-la aqui faz o compilador
+     conferir que ela continua a ser a mesma dos dois lados. */
+  const par =
+    fixador === 'comissao'
+      ? s.estado.comissao
+      : fixador === 'lei'
+        ? s.estado.lei
+        : fixador === 'porRegistar'
+          ? s.estado.porRegistar
+          : null;
   const PALAVRA = {
-    fora: s.estado.foraDoLimiar,
-    dentro: s.estado.dentroDoLimiar,
+    fora: par?.fora ?? s.estado.semLimiar,
+    dentro: par?.dentro ?? s.estado.semLimiar,
     sem: s.estado.semLimiar,
   };
 

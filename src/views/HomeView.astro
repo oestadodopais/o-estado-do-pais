@@ -46,10 +46,10 @@ import Pesquisa from '../components/inicio/Pesquisa.astro';
 import MapaRespira from '../components/inicio/MapaRespira.astro';
 import ListaDosNomes from '../components/inicio/ListaDosNomes.astro';
 import LegendaDoMapa from '../components/inicio/LegendaDoMapa.astro';
-import { FIGURAS_PDM } from '../data/figuras.mjs';
+import { fixadorDoLimiar } from '../data/figuras.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import { estadoDaMedida } from '../lib/estado.mjs';
-import { concelhos, ledeDoPainel } from '../lib/inicio.mjs';
+import { concelhos, MANCHETE_DO_PAIS, partesDaManchetePais } from '../lib/inicio.mjs';
 import { slugsDasRegioes } from '../lib/regioes.mjs';
 import { ancoraDaMedida } from '../lib/dominios.mjs';
 import {
@@ -166,33 +166,55 @@ const regioesComPorta = slugsDasRegioes().join(' ');
  * página.
  *
  * ---------------------------------------------------------------------------
- * A LEDE E A MANCHETE CONTINUAM A FALAR DO PROCEDIMENTO, e isso está por
- * decidir. A manchete do país é «Portugal ultrapassa N limiares do Procedimento
- * dos Desequilíbrios Macroeconómicos e cumpre M» e a lede nomeia as medidas fora
- * do limiar: as duas são do quadro que acabou de mudar de página. O brief não
- * diz o que a manchete do país passa a ser, e uma manchete nova é uma frase nova
- * sobre o país, que não é decisão desta vista. Fica no relatório do bloco como
- * achado, com as duas contagens já a abrir a página nova.
+ * A LEDE E A MANCHETE FORAM COM ELES (decisão do lugar de direção, 08.09.2026,
+ * pela delegação da §1.98). A primeira redação deste bloco deixou-as aqui e
+ * escreveu o achado: a manchete falava do Procedimento e o Procedimento tinha
+ * mudado de página. A decisão está no comentário da manchete, mais abaixo, e a
+ * frase antiga vive agora em `UniaoEuropeiaView.astro`, onde as duas contagens
+ * são a manchete do que a página mostra.
  */
-const medidas = FIGURAS_PDM.map((f) => ({
-  ...f,
-  linha: getClaim(f.claim),
-  estado: estadoDaMedida(getClaim(f.claim), f.limiar),
-}));
-
-/* ------------------------------------------------------------------- a lede
+/* ---------------------------------------------------------------------------
+ * A MANCHETE DO PAÍS, COMPOSTA AQUI (F1.10, decisão do lugar de direção,
+ * 08.09.2026; itens 8.15 e 8.16)
+ * ---------------------------------------------------------------------------
+ * A manchete era «Portugal ultrapassa 4 limiares do Procedimento dos
+ * Desequilíbrios Macroeconómicos e cumpre 9», com as duas contagens do painel, e
+ * a lede que nomeava as quatro medidas fora do limiar. Com o item 8.16 os 21
+ * cartões dos dois quadros da União passaram para «Portugal na União Europeia»,
+ * e a manchete ficou a falar de um quadro que mudou de página.
  *
- * A lede do País deixa de ser uma frase escrita e passa a ser construída dos
- * nomes das medidas cujo estado é «fora» (etapa 2m, brief §2). Constrói-se aqui,
- * uma vez, com as mesmas `medidas` que o painel rende: se a lista mudar, mudam
- * as duas ao mesmo tempo, porque são a mesma lista.
+ * A DECISÃO: a manchete do país passa a ser UMA FRASE com as duas MEDIDAS DE
+ * CABEÇA do domínio vivo — a dívida pública e a taxa de desemprego —, que são as
+ * duas primeiras linhas da faixa desta página. As duas contagens e a lede foram
+ * com os cartões, e são a manchete da página nova.
  *
- * `null` quando nenhuma medida está fora do limiar, e a cabeça não rende lede
- * nenhuma nesse dia: uma frase que abre «Fora do limiar:» e não nomeia nada não
- * é uma frase. Qual é a forma desse estado é decisão da direção, e está escrita
- * na nota e em ISSUES em vez de inventada aqui.
+ * A REGRA DA MANCHETE NÃO MUDA (identidade §11, e o item 8.15): uma frase, só
+ * algarismos selados, sem adjetivo. O que muda é o número de algarismos — dois —
+ * e a extensão, que a célula A1 de `tests/inicio/porta.mjs` mede a 390.
+ *
+ * AS DUAS LINHAS NÃO SE ESCOLHEM AQUI: são `FAIXA_DO_DOMINIO_1[0]` e a medida de
+ * cabeça do trabalho, lidas da declaração do domínio, e a frase pára se alguma
+ * delas deixar de existir. As palavras de ligação são as da unidade de cada
+ * linha, escritas por extenso porque uma manchete é uma frase e não uma ficha:
+ * «do PIB» é a unidade `% do PIB` e «da população ativa» é `% da população
+ * ativa`, as duas transcritas do campo `unit` da linha.
+ *
+ * O MESMO VALOR APARECE NA FAIXA, e não é repetição no sentido do §0 do brief: é
+ * a mesma regra da página do domínio, cuja manchete cita as duas medidas que a
+ * sua faixa também mostra. A manchete é a frase do lugar; a faixa é o
+ * instrumento. O que o brief proíbe é a mesma APRESENTAÇÃO INTEIRA em dois
+ * sítios, e um algarismo dentro de uma frase não é a leitura de uma medida.
  */
-const lede = ledeDoPainel(medidas, s.inicio.cabeca.ledePais, lang);
+for (const id of [MANCHETE_DO_PAIS.divida, MANCHETE_DO_PAIS.desemprego]) {
+  if (!FAIXA_DO_DOMINIO_1.some((chave) => medidaPelaChave(chave)?.claim === id)) {
+    throw new Error(
+      `inicio: a manchete do país cita "${id}", que já não é uma medida de cabeça de ` +
+        `nenhum domínio vivo. A manchete é das duas primeiras da faixa, e uma frase que ` +
+        `nomeie uma medida que a página não mostra é a manchete a falar de outra página.`,
+    );
+  }
+}
+const manchete = partesDaManchetePais(s.inicio.cabeca.manchetePais);
 
 /* ---------------------------------------------------------------------------
  * OS CARTÕES DA FAIXA: AS MEDIDAS DE CABEÇA DOS DOMÍNIOS VIVOS (item 8.16)
@@ -241,6 +263,11 @@ const cartoes = dominiosComPagina()
            «sem limiar» num cartão é dizer que a casa procurou um limiar e não o
            encontrou, quando o quadro nunca publicou nenhum. */
         estado: m.limiar ? estadoDaMedida(linha, m.limiar) : null,
+        /* QUEM FIXOU O LIMIAR (F1.10, item 8.5): lido da declaração da medida,
+           com o guarda que fecha a construção se ela tiver limiar e não o disser.
+           É ele que escolhe entre «dentro do limiar da Comissão» e «dentro do
+           limiar publicado» nas duas medidas da faixa que têm limiar. */
+        fixador: fixadorDoLimiar(m, `inicio: a medida "${chave}" do domínio "${d.slug}"`),
         glifos: [...String(linha.value)].length,
       };
     });
@@ -415,7 +442,7 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
           manchete do componente: ela é a única das três que tem ESTADO (a lista
           de blocos que o guião acende) e duas contagens da prova dentro da
           manchete. O que as três partilham é a moldura, a ordem e as classes. */}
-      <Cabeca slot="col" s={s} lang={lang} p={p} blocos={blocos} ambito="pais" lede={lede}>
+      <Cabeca slot="col" lang={lang} blocos={blocos} ambito="pais" manchete={manchete}>
         {/* ----------------------------------------------------------------
             A PORTA PARA O CONCELHO (F1.1, itens 3 e 12)
             ----------------------------------------------------------------

@@ -3116,6 +3116,20 @@ a.porta:hover .porta-abrir {
   color: var(--ink);
   margin: 0;
 }
+/* A FRASE QUE DIZ O QUE O LIMIAR É E QUEM O FIXOU (F1.10, item 8.5, 08.09.2026).
+   Vai no corpo da instrumentação e não no da prosa, e é a mesma decisão que pôs
+   ali a linha do limiar por cima dela: é a referência contra a qual o valor se
+   lê, e não a definição da medida, que é a `.dobra-frase` abaixo. A cor é a da
+   mobília, para que a leitura de uma medida tenha um só bloco em tinta cheia. */
+.dobra-limiar-frase {
+  font-family: var(--f-instr);
+  font-size: 12px;
+  line-height: 1.45;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  margin: 0;
+  max-width: 60ch;
+}
 /* A PORTA DE UMA MEDIDA QUE VIVE NUM DOMÍNIO, no fim da sua leitura (segunda
    passagem, 04.09.2026). Não substitui a leitura: acrescenta-se a ela, depois do
    selo, e por isso leva o fio da casa por cima, que é o que separa o recibo do

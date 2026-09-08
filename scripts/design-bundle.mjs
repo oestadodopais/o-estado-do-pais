@@ -1797,20 +1797,35 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   const dentroN = conta('dentro');
   if (!foraN || !dentroN) morre('a faixa da primeira página deixou de trazer cartões nos dois estados pintados.');
 
+  /* O VOCABULÁRIO DO ESTADO PASSOU A TER UM PAR POR FIXADOR DO LIMIAR (F1.10,
+     item 8.5, 08.09.2026): «dentro do limiar» servia, com a mesma cadeia, os
+     dois quadros da União e o índice de dívida de uma câmara. As chaves são
+     agora caminhos, e o feixe lê-as pelo caminho: uma chave que desapareça
+     continua a matar o gerador, que é o que esta lista existe para fazer. */
+  /** @param {Record<string, unknown>} raiz @param {string} caminho */
+  const porCaminho = (raiz, caminho) =>
+    caminho.split('.').reduce((n, k) => (n && typeof n === 'object' ? n[k] : undefined), raiz);
   const vocabulario = [
-    ['estado', 'foraDoLimiar'],
-    ['estado', 'dentroDoLimiar'],
-    ['estado', 'semLimiar'],
-    ['estado', 'porConfirmar'],
-    ['cobertura', 'temPagina'],
-    ['cobertura', 'semPaginaAinda'],
-    ['cobertura', 'semLinhaAinda'],
+    'estado.comissao.fora',
+    'estado.comissao.dentro',
+    'estado.comissao.rotulo',
+    'estado.lei.fora',
+    'estado.lei.dentro',
+    'estado.lei.rotulo',
+    'estado.porRegistar.fora',
+    'estado.porRegistar.dentro',
+    'estado.porRegistar.rotulo',
+    'estado.semLimiar',
+    'estado.porConfirmar',
+    'cobertura.temPagina',
+    'cobertura.semPaginaAinda',
+    'cobertura.semLinhaAinda',
   ]
-    .map(([grupo, chave]) => {
-      const pt = PT[grupo]?.[chave];
-      const en = EN[grupo]?.[chave];
-      if (!pt || !en) morre(`a chave \`${grupo}.${chave}\` deixou de existir em \`src/i18n/strings.mjs\`; o vocabulário fechado mudou.`);
-      return `        <tr><td class="ds-mono">${escapa(grupo)}.${escapa(chave)}</td><td>${escapa(pt)}</td><td>${escapa(en)}</td></tr>`;
+    .map((caminho) => {
+      const pt = porCaminho(PT, caminho);
+      const en = porCaminho(EN, caminho);
+      if (!pt || !en) morre(`a chave \`${caminho}\` deixou de existir em \`src/i18n/strings.mjs\`; o vocabulário fechado mudou.`);
+      return `        <tr><td class="ds-mono">${escapa(caminho)}</td><td>${escapa(String(pt))}</td><td>${escapa(String(en))}</td></tr>`;
     })
     .join('\n');
 

@@ -145,13 +145,33 @@ for (const c of cartoes) {
   }
 }
 
-/* As três palavras de estado da casa, como na peça. Uma medida sem estado (o
-   valor é uma marca da fonte, «N.d.») não tem palavra nem quadrado: as duas
-   condições são a mesma, e por isso escrevem-se uma vez. */
-const PALAVRA = {
-  fora: s.estado.foraDoLimiar,
-  dentro: s.estado.dentroDoLimiar,
-  sem: s.estado.semLimiar,
+/* ---------------------------------------------------------------------------
+   AS PALAVRAS DE ESTADO, UMA POR FIXADOR DO LIMIAR (F1.10, item 8.5)
+   ---------------------------------------------------------------------------
+   Eram três cadeias para todas as medidas do sítio. Passam a ser escolhidas
+   pelo FIXADOR do limiar daquela medida, porque «dentro do limiar» servia, com
+   a mesma cadeia, os dois quadros da União e o índice de dívida de uma câmara,
+   cujo limiar é o limite que a lei portuguesa fixa. Quem traz o fixador é a
+   vista, na lista dos cartões, lido da declaração da medida por
+   `fixadorDoLimiar()`; a faixa não decide nada e não adivinha nada.
+
+   Uma medida sem estado (o valor é uma marca da fonte, «N.d.») não tem palavra
+   nem quadrado: as duas condições são a mesma, e por isso escrevem-se uma vez.
+   «sem limiar» não tem fixador porque não há limiar nenhum para atribuir. */
+/** @param {string|null|undefined} estado @param {string|null|undefined} fixador @param {string} id */
+const palavraDoEstado = (estado, fixador, id) => {
+  if (estado === 'sem') return s.estado.semLimiar;
+  if (estado !== 'fora' && estado !== 'dentro') return null;
+  const par = fixador ? s.estado[fixador] : null;
+  if (!par) {
+    throw new Error(
+      `<Faixa>: o cartão «${id}» está ${estado} do limiar e não diz de quem o limiar é ` +
+        `(chegou sem \`fixador\`). A vista lê-o da declaração da medida com ` +
+        `\`fixadorDoLimiar()\`, e sem ele o cartão escreveria «${estado} do limiar» sozinho, ` +
+        `que é o que o item 8.5 do F1.10 veio tirar da página.`,
+    );
+  }
+  return par[estado];
 };
 ---
 
@@ -179,7 +199,7 @@ const PALAVRA = {
   <ol class="faixa" data-faixa aria-label={rotulo} tabindex="0">
     {
       cartoes.map((c) => {
-        const palavra = PALAVRA[c.estado] ?? null;
+        const palavra = palavraDoEstado(c.estado, c.fixador, c.id);
         const pintado = c.estado === 'fora' || c.estado === 'dentro';
         return (
           <li
