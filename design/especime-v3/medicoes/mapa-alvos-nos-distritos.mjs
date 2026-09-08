@@ -23,6 +23,18 @@
  * No nível da região da primeira página, à mesma largura, são 20 de 308 com uma
  * mediana de 16 px. Um nível intermédio por distrito subiria a conta de 20 para
  * 84 e continuaria longe dos 308; e o desenho desse nível já existe como página.
+ *
+ * ---------------------------------------------------------------------------
+ * ELE EXIGE AS 29 E OS 308, E ESCREVE O QUE MEDIU
+ * ---------------------------------------------------------------------------
+ * A primeira forma deste ficheiro saltava um distrito cujo `svg` não respondesse,
+ * imprimia um total mais pequeno e saía com 0: uma medida parcial com cara de
+ * medida inteira, e o número só existia em prosa no relatório (leitura a frio do
+ * Codex de 08.09.2026, achado 16). Agora conta as unidades e os concelhos, SAI
+ * COM 1 se não forem 29 e 308, e grava
+ * `design/especime-v3/medicoes/mapa-alvos-nos-distritos.json` com a conta por
+ * unidade, para que o número do relatório se leia de um ficheiro e não de uma
+ * frase.
  */
 import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path'; import { chromium } from 'playwright';
 import { fileURLToPath } from 'node:url';
@@ -60,18 +72,44 @@ const ctx = await nav.newContext({ viewport:{width:390,height:664} });
 const p = await ctx.newPage();
 let total=0, ok=0; const todos=[];
 let svgW = 0;
+const porUnidade = []; const falhas = [];
+const esperados = pais.unidades.reduce((s,u)=>s+JSON.parse(fs.readFileSync(path.join(RAIZ,'mapa/distritos',u.slug+'.json'),'utf8')).concelhos.length, 0);
 for (const u of pais.unidades) {
   const art = JSON.parse(fs.readFileSync(path.join(RAIZ,'mapa/distritos',u.slug+'.json'),'utf8'));
   const pts = Object.fromEntries(art.concelhos.map(c=>[c.slug,c.ponto]));
   await p.goto(`${base}/distritos/${u.slug}`,{waitUntil:'domcontentloaded'});
   const seletor = '[data-mapa-concelhos]';
   const r = await p.evaluate(INSCRITO, { pontos: pts, PASSO: 2, seletor });
-  if (r.erro) { console.log(u.slug, r.erro); continue; }
+  if (r.erro) { falhas.push(`${u.slug}: ${r.erro}`); console.log(u.slug, r.erro); continue; }
   svgW = await p.evaluate((sel)=>Math.round(document.querySelector(sel).getBoundingClientRect().width), seletor);
   const es = Object.entries(r); total+=es.length; ok+=es.filter(([,v])=>v.inscrito>=44).length;
+  if (es.length !== art.concelhos.length) falhas.push(`${u.slug}: mediu ${es.length} concelhos e o artefacto tem ${art.concelhos.length}`);
   todos.push(...es.map(([s,v])=>[s,v.inscrito]));
+  const menor = es.reduce((a,b)=>b[1].inscrito<a[1].inscrito?b:a);
+  porUnidade.push({ unidade: u.slug, concelhos: es.length, chegam: es.filter(([,v])=>v.inscrito>=44).length, menor: { slug: menor[0], inscrito: menor[1].inscrito }, desenhoPx: svgW });
   console.log(u.slug.padEnd(22), es.length, 'concelhos ·', es.filter(([,v])=>v.inscrito>=44).length, 'com 44 px · pior', Math.min(...es.map(([,v])=>v.inscrito)), 'px · desenho', svgW, 'px');
 }
 todos.sort((a,b)=>a[1]-b[1]);
+if (porUnidade.length !== pais.unidades.length) falhas.push(`mediu ${porUnidade.length} unidades e a Carta tem ${pais.unidades.length}`);
+if (total !== esperados) falhas.push(`mediu ${total} concelhos e os artefactos têm ${esperados}`);
+if (esperados !== 308) falhas.push(`os artefactos somam ${esperados} concelhos, e não 308`);
+const artefacto = {
+  sobre: 'F1.1d · o alvo de cada concelho na página do seu distrito, a 390 px',
+  comando: 'node design/especime-v3/medicoes/mapa-alvos-nos-distritos.mjs',
+  medido: new Date().toISOString(),
+  passoPx: 2,
+  alvoPx: 44,
+  larguraDaJanelaPx: 390,
+  unidades: porUnidade.length,
+  concelhos: total,
+  chegamA44: ok,
+  mediana: todos.length ? todos[Math.floor(todos.length/2)][1] : null,
+  menor: todos.length ? { slug: todos[0][0], inscrito: todos[0][1] } : null,
+  porUnidade,
+};
+const SAIDA = path.join(RAIZ,'design/especime-v3/medicoes/mapa-alvos-nos-distritos.json');
+fs.writeFileSync(SAIDA, `${JSON.stringify(artefacto,null,2)}\n`);
 console.log(`TOTAL nas páginas de distrito a 390: ${ok} de ${total} com 44 px · mediana ${todos[Math.floor(todos.length/2)][1]} px · pior ${todos[0][0]} ${todos[0][1]} px`);
+console.log(`escrito ${path.relative(RAIZ,SAIDA)} · ${porUnidade.length} unidades, ${total} concelhos`);
 await nav.close(); servidor.close();
+if (falhas.length) { console.error('\n  MEDIDA INCOMPLETA:'); for (const f of falhas) console.error('    · '+f); process.exit(1); }

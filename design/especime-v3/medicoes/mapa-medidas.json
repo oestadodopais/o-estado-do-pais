@@ -1,19 +1,19 @@
 {
   "celulas": [
     {
-      "nome": "P1a · a 390, as nove regiões medidas pelo quadrado inscrito",
+      "nome": "P1a · medida, não exigida (decisão de 08.09.2026) · a 390, o alvo das nove regiões",
       "passa": true,
-      "prova": "desenho 390 × 514 px · 9 áreas · 3 de 9 chegam aos 44 px (mediana 18 px; a maior 76 px, a menor 2 px)"
+      "prova": "desenho 390 × 514 px · 9 áreas · 3 de 9 chegam aos 44 px (medido, não exigido) (mediana 18 px; a maior 76 px, a menor 2 px)"
     },
     {
-      "nome": "P1a · a 1280, as nove regiões medidas pelo quadrado inscrito",
+      "nome": "P1a · medida, não exigida (decisão de 08.09.2026) · a 1280, o alvo das nove regiões",
       "passa": true,
-      "prova": "desenho 518 × 683 px · 9 áreas · 4 de 9 chegam aos 44 px (mediana 24 px; a maior 104 px, a menor 2 px)"
+      "prova": "desenho 518 × 683 px · 9 áreas · 4 de 9 chegam aos 44 px (medido, não exigido) (mediana 24 px; a maior 104 px, a menor 2 px)"
     },
     {
-      "nome": "P1b · a 390, os 308 concelhos medidos região a região, no nível em que se tocam",
+      "nome": "P1b · medida, não exigida (decisão de 08.09.2026) · a 390, o alvo dos 308 concelhos, região a região",
       "passa": true,
-      "prova": "308 de 308 medidos em 9 regiões, todos com o ponto dentro da sua área · 20 chegam aos 44 px · mediana 16 px (16 px sem os de lado zero) · 2 com menos de 2 px · o menor com lado medível pediria um desenho de 8580 px de largura"
+      "prova": "308 de 308 medidos em 9 regiões, todos com o ponto dentro da sua área · 20 chegam aos 44 px (medido, não exigido) · mediana 16 px (16 px sem os de lado zero) · 2 com menos de 2 px · o menor com lado medível pediria um desenho de 8580 px de largura"
     },
     {
       "nome": "P1c · a rede de nomes responde pelas áreas abaixo de 44 px",
@@ -36,6 +36,16 @@
       "prova": "16 de 16 concelhos de Lisboa · «Alenquer» … «Vila Franca de Xira» · 0 porta(s) de voltar (uma página de distrito não tem nível de cima)"
     },
     {
+      "nome": "P2d · pt: com o dedo, o nome e a porta no lugar nas nove regiões",
+      "passa": true,
+      "prova": "9 de 9 · «Açores» → «/regioes/acores» … «Península de Setúbal» → «/regioes/peninsula-de-setubal» · nenhum toque navegou"
+    },
+    {
+      "nome": "P2d · pt: com o dedo, o nome e a porta no lugar numa amostra de 30 concelhos",
+      "passa": true,
+      "prova": "30 de 30 · «Alfândega da Fé» → «/municipios/alfandega-da-fe» … «Sousel» → «/municipios/sousel» · nenhum primeiro toque navegou"
+    },
+    {
       "nome": "P2a · en: o nome no lugar ao passar e ao focar, nas nove regiões",
       "passa": true,
       "prova": "9 de 9 · «Azores» … «Setúbal Peninsula» · cada porta na sua página"
@@ -51,14 +61,24 @@
       "prova": "16 de 16 concelhos de Lisboa · «Alenquer» … «Vila Franca de Xira» · 0 porta(s) de voltar (uma página de distrito não tem nível de cima)"
     },
     {
+      "nome": "P2d · en: com o dedo, o nome e a porta no lugar nas nove regiões",
+      "passa": true,
+      "prova": "9 de 9 · «Azores» → «/en/regions/acores» … «Setúbal Peninsula» → «/en/regions/peninsula-de-setubal» · nenhum toque navegou"
+    },
+    {
+      "nome": "P2d · en: com o dedo, o nome e a porta no lugar numa amostra de 30 concelhos",
+      "passa": true,
+      "prova": "30 de 30 · «Alfândega da Fé» → «/en/municipalities/alfandega-da-fe» … «Sousel» → «/en/municipalities/sousel» · nenhum primeiro toque navegou"
+    },
+    {
       "nome": "P3a · Chromium, com o dedo: a região cresce sem navegar, o primeiro toque num concelho diz o nome, o segundo abre",
       "passa": true,
-      "prova": "a região: nível «regiao», 86 concelhos, endereço «/#regiao=norte», nome «Norte» com a porta «/regioes/norte» · o primeiro toque no concelho deixa o endereço em «/» e diz «Montalegre» · o segundo abre «/municipios/montalegre»"
+      "prova": "a região: nível «regiao», 86 concelhos, endereço «/#regiao=norte», nome «Norte» (esperado «Norte») com a porta «/regioes/norte» · o primeiro toque no concelho deixa o endereço em «/» e diz «Montalegre» (esperado «Montalegre») · o segundo abre «/municipios/montalegre»"
     },
     {
       "nome": "P3a · WebKit, com o dedo: a região cresce sem navegar, o primeiro toque num concelho diz o nome, o segundo abre",
       "passa": true,
-      "prova": "a região: nível «regiao», 86 concelhos, endereço «/#regiao=norte», nome «Norte» com a porta «/regioes/norte» · o primeiro toque no concelho deixa o endereço em «/» e diz «Montalegre» · o segundo abre «/municipios/montalegre»"
+      "prova": "a região: nível «regiao», 86 concelhos, endereço «/#regiao=norte», nome «Norte» (esperado «Norte») com a porta «/regioes/norte» · o primeiro toque no concelho deixa o endereço em «/» e diz «Montalegre» (esperado «Montalegre») · o segundo abre «/municipios/montalegre»"
     },
     {
       "nome": "P3b · com o rato: a porta de voltar sobe um nível, e o botão de voltar do navegador desfaz o que o toque escreveu",
@@ -66,14 +86,19 @@
       "prova": "clique → «#regiao=alentejo» (nível regiao) · «Voltar ao país» → «sem fragmento» (nível pais) · voltar do navegador → «#regiao=alentejo» (nível regiao)"
     },
     {
-      "nome": "P3c · a porta do lugar do nome abre a página da região apontada",
+      "nome": "P3c · a página de uma região abre-se pela porta do lugar do nome, e não por um segundo toque na região",
       "passa": true,
-      "prova": "a porta diz «/regioes/algarve» e leva a «/regioes/algarve»"
+      "prova": "a porta diz «/regioes/algarve» e leva a «/regioes/algarve» · uma região que cresceu já não tem contorno no ecrã para receber um segundo toque, e a regra dos dois toques vale para um concelho (P3a e P3d)"
     },
     {
       "nome": "P3d · numa página de distrito, o primeiro toque num concelho diz o nome e o segundo abre",
       "passa": true,
       "prova": "o primeiro toque deixa o endereço em «/distritos/lisboa» e diz «Sintra» · o segundo abre «/municipios/sintra»"
+    },
+    {
+      "nome": "P3e · com o ficheiro de uma região a responder 404, o mapa não cresce, o lugar do nome di-lo e o toque seguinte abre a página dela",
+      "passa": true,
+      "prova": "o primeiro toque deixa o nível em «pais» e o endereço em «/», com o nome «Algarve», a porta «/regioes/algarve» e o aviso à vista · o toque seguinte abre «/regioes/algarve»"
     },
     {
       "nome": "P4 · pt: sem guião, nove ligações para as nove páginas, a lista fechada e o «#regiao=» ignorado",
@@ -86,29 +111,29 @@
       "prova": "9 áreas, 9 com destino em «/en/regions/», 9 de 9 respondem 200 · gaveta fechada com 9 regiões e 29 unidades · o lugar do nome não se rende · o segundo nível tem 0 nós"
     },
     {
-      "nome": "P5 · a altura de `/` a 390 com a gaveta dos nomes fechada é menor do que com ela aberta",
+      "nome": "P5 · a altura de `/` a 390 depois deste bloco é menor do que a que o F1.1c deixou",
       "passa": true,
-      "prova": "com a gaveta aberta 3953 px, fechada 3263 px (690 px a menos) · sem guião 4048 px"
+      "prova": "antes 3700 px (design/especime-v3/medicoes/toque-medidas-depois.json, «chromium.pt.com-guiao.repouso», cabeça 9c34bbb0, a fusão de origin/main no ramo toque-2026-09-04) · depois 3263 px, na mesma largura e no mesmo motor (437 px a menos) · na mesma construção, a gaveta dos nomes aberta dá 3953 px e sem guião 4048 px"
     },
     {
       "nome": "P7a · o lugar do nome com contraste de 4,5:1 no tema claro",
       "passa": true,
-      "prova": "vazio 6.24:1 · nome 16.39:1 · porta 16.39:1"
+      "prova": "vazio 6.24:1 · nome 16.39:1 · porta 16.39:1 · aviso 16.39:1"
     },
     {
       "nome": "P7a · o lugar do nome com contraste de 4,5:1 no tema escuro",
       "passa": true,
-      "prova": "vazio 9.52:1 · nome 15.38:1 · porta 15.38:1"
+      "prova": "vazio 9.52:1 · nome 15.38:1 · porta 15.38:1 · aviso 15.38:1"
     },
     {
-      "nome": "P7b · o lugar do nome é uma região viva com nome acessível, e o que ela diz muda com a área apontada",
+      "nome": "P7b · o lugar do nome é uma região com nome acessível, e a árvore de acessibilidade dele muda com a área apontada",
       "passa": true,
       "prova": "em repouso: - group \"A área apontada no mapa\": - paragraph: Passe o rato por uma região - paragraph · ao apontar: - group \"A área apontada no mapa\": - paragraph: Norte - paragraph: - link \"Abrir →\": - /ur"
     },
     {
-      "nome": "P7c · a frase do lugar declara `aria-live=\"polite\"`",
+      "nome": "P7c · a frase do lugar declara `aria-live=\"polite\"`, que é o atributo por onde um leitor de ecrã sabe que há ali algo a reler",
       "passa": true,
-      "prova": "aria-live=\"polite\""
+      "prova": "aria-live=\"polite\" · o atributo mede-se; o anúncio em voz alta é do navegador e do leitor de ecrã, e não desta régua"
     }
   ],
   "medidas": {
@@ -602,13 +627,24 @@
       "pt": {
         "regioes": 9,
         "concelhos": 30,
-        "errados": 0
+        "errados": 0,
+        "toqueRegioes": 9,
+        "toqueConcelhos": 30
       },
       "en": {
         "regioes": 9,
         "concelhos": 30,
-        "errados": 0
+        "errados": 0,
+        "toqueRegioes": 9,
+        "toqueConcelhos": 30
       }
+    },
+    "semFicheiro": {
+      "nivel": "pais",
+      "caminho": "/",
+      "aviso": true,
+      "nome": "Algarve",
+      "porta": "/regioes/algarve"
     },
     "semGuiao_pt": {
       "areas": 9,
@@ -628,7 +664,18 @@
       "naLista": 29,
       "regioesNaLista": 9,
       "lugar": true,
-      "segundoNivel": 0
+      "segundoNivel": 0,
+      "codigos": [
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200
+      ]
     },
     "semGuiao_en": {
       "areas": 9,
@@ -648,23 +695,42 @@
       "naLista": 29,
       "regioesNaLista": 9,
       "lugar": true,
-      "segundoNivel": 0
+      "segundoNivel": 0,
+      "codigos": [
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200
+      ]
     },
     "altura": {
-      "antes": 3953,
+      "antes": 3700,
+      "antesDe": {
+        "ficheiro": "design/especime-v3/medicoes/toque-medidas-depois.json",
+        "chave": "chromium.pt.com-guiao.repouso",
+        "cabeca": "9c34bbb0, a fusão de origin/main no ramo toque-2026-09-04"
+      },
       "depois": 3263,
+      "comAGavetaAberta": 3953,
       "semGuiao": 4048
     },
     "contraste": {
       "light": {
         "vazio": 6.24,
         "nome": 16.39,
-        "porta": 16.39
+        "porta": 16.39,
+        "aviso": 16.39
       },
       "dark": {
         "vazio": 9.52,
         "nome": 15.38,
-        "porta": 15.38
+        "porta": 15.38,
+        "aviso": 15.38
       }
     }
   }
