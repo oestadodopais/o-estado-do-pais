@@ -7,15 +7,16 @@ deste relatório foi escrito à mão: cada um tem ao lado o comando que o mediu.
 
 ---
 
-## Estado · 08.09.2026, 06:14 UTC · segunda sessão, a régua do bloco no lugar
+## Estado · 08.09.2026, 08:00 UTC · a régua, a página europeia e o índice dos domínios
 
 | | |
 |---|---|
 | cabeça | a última do ramo (`git rev-parse HEAD`) |
 | `main` fundido | `43f4b52a`, na fusão `47d957f6` |
-| `build` · `verify` · `typecheck` sobre `47d957f6` | **0** · **0** · **0** (códigos lidos de `build.exit`, `verify.exit`, `typecheck.exit`) |
+| `build` · `verify` · `typecheck` | **0** · **0** · **0** (códigos lidos de `build.exit`, `verify.exit`, `typecheck.exit`) |
 | a régua do bloco | `scripts/check-lugar.mjs`, no `verify`, **7,84 s** (`/usr/bin/time -p node scripts/check-lugar.mjs`) |
-| a seguir | o §8 da primeira página, pela ordem do encargo: 8.16, 8.13, 8.12 e 8.14, 8.4 e 8.5, 8.15, 8.11 |
+| feito | a régua (encargo (b)); **8.16** (a página «Portugal na União Europeia», a faixa da primeira página com as medidas de cabeça do domínio vivo); **8.13** (a secção dos domínios passa a índice, 0 valores selados); **8.12** (em repouso só a linha do toque; o cabeçalho e o contexto de um painel só junto de uma leitura dele); **metade de 8.14** (o comando de densidade saiu da primeira página) |
+| a seguir | o resto de 8.14 (as duas palavras nas páginas do concelho e do domínio), 8.4 e 8.5, 8.15, 8.11; depois o menu e o rodapé (8.9, 8.8, §7.5) |
 
 ---
 
@@ -30,21 +31,21 @@ mais de oito abaixo dele**, porque um teto com folga a mais é uma régua a dorm
 
 | medida | antes | depois | o comando |
 |---|---|---|---|
-| L1 · páginas com dois destinos iguais fora do cabeçalho e do rodapé | 6 596 | por medir | `node scripts/check-lugar.mjs` |
-| L2a · segundas listas dos 308 concelhos (fora de `/municipios`, fora de uma lista fechada) | 2 (`/` e `/en`) | por medir | idem |
-| L2b · réguas inteiras da convergência fora de `/regioes` | 18 | por medir | idem |
-| L2c · sinopses de estudo fora de `/estudos` | 10 (5 em `/municipios/evora`, 5 na inglesa) | por medir | idem |
-| L3 · palavras fora do vocabulário fechado, no texto da casa | 51 | por medir | idem |
-| L4 · frases de definição e de hierarquia em falta | 10 (as cinco de hierarquia × 2 edições; a de definição já está a 1) | por medir | idem |
-| L5 · páginas abaixo da primeira sem caminho no cabeçalho | 7 211 | por medir | idem |
-| L6 · selos cuja etiqueta não é o publicador da linha | 26 168 | por medir | idem |
+| L1 · páginas com dois destinos iguais fora do cabeçalho e do rodapé | 6 596 | **6 598** (+2: as duas páginas novas) | `node scripts/check-lugar.mjs` |
+| L2a · segundas listas dos 308 concelhos (fora de `/municipios`, fora de uma lista fechada) | 2 (`/` e `/en`) | 2 (por fazer) | idem |
+| L2b · réguas inteiras da convergência fora de `/regioes` | 18 | 18 (por fazer) | idem |
+| L2c · sinopses de estudo fora de `/estudos` | 10 (5 em `/municipios/evora`, 5 na inglesa) | 10 (por fazer) | idem |
+| L3 · palavras fora do vocabulário fechado, no texto da casa | 51 | 51 (por fazer) | idem |
+| L4 · frases de definição e de hierarquia em falta | 10 (as cinco de hierarquia × 2 edições; a de definição já está a 1) | 10 (por fazer) | idem |
+| L5 · páginas abaixo da primeira sem caminho no cabeçalho | 7 211 | **7 213** (+2: as duas páginas novas) | idem |
+| L6 · selos cuja etiqueta não é o publicador da linha | 26 168 | **26 174** (+6: as duas páginas novas) | idem |
 | L7 · a releitura do leitor de primeira vez | é do lugar de direção | — | a leitura do Codex |
 | L8 · os três portões | **0 · 0 · 0** | 0 · 0 · 0 | `npm run build\|verify\|typecheck > x.log 2>&1; echo $? > x.exit` |
 | L9 · as plantas vermelhas e depois verdes | conhecido-positivo corrido (ver abaixo) | por fechar | `node scripts/check-lugar.mjs` sobre o `dist/` com o estrago |
-| 8.5 · blocos com «limiar» sem o qualificador nem a frase ao lado | 706 | por medir | idem |
-| 8.8 · «livro-razão» nos menus, nos rodapés e nos títulos | 24 172 | por medir | idem |
-| 8.13 · valores selados na secção dos domínios de `/` | 4 (2 por edição) | por medir | idem |
-| 8.14 · «Relance» e «Leitura breve» nas páginas do leitor | 1 304 (325 + 327 por edição) | por medir | idem |
+| 8.5 · blocos com «limiar» sem o qualificador nem a frase ao lado | 706 | **708** (+2: as duas páginas novas) | idem |
+| 8.8 · «livro-razão» nos menus, nos rodapés e nos títulos | 24 172 | **24 177** (+5: as duas páginas novas) | idem |
+| 8.13 · valores selados na secção dos domínios de `/` | 4 (2 por edição) | **0** · feito | idem |
+| 8.14 · «Relance» e «Leitura breve» nas páginas do leitor | 1 304 (325 + 327 por edição) | **1 300** (−4: o comando de densidade saiu de `/` e de `/en`) | idem |
 
 **O conhecido-positivo da L9 já correu, e a régua viu-o.** Com dois estragos
 plantados no `dist/` (`<p>O município de Évora.</p>` e
@@ -66,6 +67,125 @@ A quarta é o contador das séries atrasadas que o F1.6 pôs na mobília
 então. O item 8.1 e o §7.3 deste brief mandam essas linhas SAIR do cabeçalho de
 todas as páginas para a página da medida e para o Método: a célula reescreve-se
 quando esse item entrar, e não antes.
+
+---
+
+## O que a segunda sessão fez, item a item
+
+### 8.16 · «Portugal na União Europeia», e a faixa devolvida aos domínios
+
+**A página nova** (`src/views/UniaoEuropeiaView.astro`, `/uniao-europeia` e
+`/en/european-union`) leva os 21 cartões dos dois quadros da União e as suas
+leituras, a faixa em cima e a área de leitura por baixo, como a primeira página
+as tinha. **A chave da rota não se traduz e o caminho sim** (`uniaoEuropeia`,
+`/uniao-europeia`, `/en/european-union`): é a regra desta tabela, escrita nas
+regiões, nas áreas, nos concelhos e nos domínios, «o que se traduz é o rótulo e
+nunca a chave». Sem `:slug`, e por isso sem a questão que os domínios deixaram
+nos pendentes.
+
+**A faixa da primeira página** passa a levar as medidas de cabeça dos domínios
+vivos, lidas da declaração do próprio domínio (`FAIXA_DO_DOMINIO_1` em
+`src/data/dominios.mjs`, hoje E3, E2, T1, T2 e T3): a dívida pública, o saldo das
+administrações públicas, a taxa de emprego, a taxa de desemprego e o ganho médio
+mensal. Cada cartão leva à leitura daquela medida **na página do domínio**, com a
+âncora composta pela mesma função que a página do domínio usa. Um domínio novo
+traz as suas sem uma linha mudar na vista.
+
+**A porta para a página nova** fica ao pé da faixa, na fila de portas que o F1.2b
+pôs por baixo dos cartões, e no menu e no rodapé. **Uma porta, e mais nada:** sem
+contagem ao lado (seria um algarismo a mais) e sem frase a dizer o que a página é
+(seria uma frase nova sobre a casa).
+
+**As seis chaves da prova cuja porta era a âncora do painel** (`painel_total`,
+`painel_com_limiar`, `painel_fora_do_limiar`, `painel_dentro_do_limiar`,
+`painel_social_total`, `painel_reconferido_em`) passam a abrir a página nova. A
+regra não mudou, e é ela que obriga: a porta de uma chave da prova é o sítio onde
+o que ela conta se vê.
+
+**Três réguas foram atrás da mudança, e nenhuma foi enfraquecida:** a F16 do
+`check:formas` (as duas contagens por extenso da frase do Painel Social) e duas
+secções do feixe do sistema de desenho (a régua contra o limiar e o cartão do
+Painel Social) passam a ler a página onde o conteúdo está, com o mesmo teste.
+
+### 8.13 · a secção dos domínios passa a ser o índice dos domínios
+
+**0 valores selados**, medido: a régua desceu de 4 para **0**. A secção lista os
+dezoito nomes com o seu estado e a porta de quem tem página, e é a mesma leitura
+que `/dominios` faz, com a mesma tabela por trás.
+
+**Sem a contagem das medidas, e a razão é a regra da casa.** O item 8.13 escreve
+«o que está vivo com a contagem das suas medidas». Uma contagem é um número da
+casa, e um número da casa entra por `data-prova`, com quem o reconte de outro
+ponto de observação: `scripts/gate-html.mjs` percorre as chaves da prova e fecha
+a construção quando não sabe contar uma. A prova é uma tabela de CHAVES FIXAS, e
+uma contagem por domínio pedia dezoito chaves novas para um índice de navegação.
+A contagem das medidas de um domínio lê-se onde ela é o conteúdo da página: na
+página do domínio. **Fica para decisão do lugar de direção se a quiser na
+primeira página.**
+
+### 8.12 e a primeira metade de 8.14
+
+Na página nova, em repouso a área de leitura mostra **só** a linha «Toque num
+cartão para ler a medida.»; o cabeçalho de um painel e a sua frase de contexto
+rendem-se **junto de uma leitura daquele painel**, e nunca sozinhos. Quem os
+acende é `public/js/leituras.js`, pela marca `data-contexto-quadro`, que é a
+mesma que cada dobra leva em `data-quadro`. **Sem guião nada muda:** as vinte e
+uma ficam à vista, fechadas, com os dois cabeçalhos por cima das suas.
+
+**O comando de densidade saiu**, e com ele as palavras «Relance» e «Leitura
+breve» da primeira página (a régua desceu de 1 304 para 1 300). O que falta da
+8.14 são as duas palavras nas páginas do concelho e do domínio, que é o item 4 do
+encargo, e as vinte e uma frases de definição da Comissão, que é o 8.4.
+
+**O bloco das leituras saiu de `public/js/inicio.js`** e está inteiro em
+`public/js/leituras.js`, que é o guião da página nova. **O que ficou por tirar, e
+diz-se:** `inicio.js` ainda tem a máquina de estado da densidade
+(`?densidade=`), que nenhuma marca da primeira página acende. Sai com o resto da
+8.14, junto com as células da matriz que a medem, para que a régua e o guião
+saiam no mesmo commit.
+
+---
+
+## Os achados desta sessão contra o brief
+
+**1. A manchete do país continua a falar do Procedimento, e o brief não diz o que
+ela passa a ser.** Com os 21 cartões fora da primeira página, a manchete «Portugal
+ultrapassa N limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre
+M» e a lede que nomeia as medidas fora do limiar ficaram a falar de um quadro que
+mudou de página. As duas contagens já abrem a página nova, e nenhuma é um valor
+selado (são chaves da prova), por isso nenhuma régua cai. **Uma manchete nova é
+uma frase nova sobre o país, e isso é decisão de quem escreve o brief.** O item
+8.15 vai medir a manchete no telemóvel; a pergunta de que quadro ela fala fica
+para o lugar de direção.
+
+**2. Uma célula da régua dos alvos ficou vermelha por causa de UM item de menu, e
+a causa era antiga.** Acrescentar «Portugal na União Europeia» ao menu fez a
+cabeça crescer, e a H7 de `tests/acessibilidade/alvos.mjs` («uma porta de OUTRA
+linha dentro da área de um algarismo de manchete») caiu em `/en/regions/alentejo`
+a 1 280 px. **A causa não era o menu:** com `line-height: 1.12`, a caixa PRÓPRIA
+de um algarismo da manchete (48 px a 40 px de corpo, que é a métrica do tipo) é
+maior do que o avanço entre as duas linhas (46,8 px), e as caixas dos dois
+algarismos sobrepõem-se 1,2 px. Medido: a caixa do «23» vai de 350,3 a 398,3 e a
+do «22» começa a 397,1, e os dois pontos de baixo da área do «23» respondem
+`a.claim-value` da outra linha. **Na edição portuguesa a mesma manchete quebra
+com os algarismos desencontrados e não acontece**: é uma colisão que muda de lado
+a cada mudança de altura do cabeçalho, e por isso ia voltar em qualquer item deste
+bloco que mexa na cabeça (8.9 e 8.11 mexem).
+
+A correção de 04.09 (Blocking 5) dera ao alvo a altura da caixa de linha, para
+que duas áreas seguidas ladrilhem; não chega quando os dois algarismos ficam um
+por cima do outro. **A correção é a entrelinha**, e é a única que resolve a
+causa: a caixa própria de um algarismo não se encolhe (é a métrica do tipo), e
+por isso o avanço tem de ser maior do que ela. `line-height: 1.25` numa manchete
+que cita mais do que uma linha (`h1.cabeca-h1[data-citadas]:not([data-citadas='1'])`),
+que dá 50 px a 40 px de corpo. O tamanho do tipo não muda e a regra da manchete
+não muda: muda o ar entre as linhas de uma frase que cita dois números.
+
+**3. Cinco tetos da régua subiram, e a razão é a única que faz um teto subir.** O
+sítio ganhou duas páginas, e a página nova traz a mesma mobília que todas as
+outras: L1 +2, L5 +2, L6 +6, 8.5 +2, 8.8 +5. Nenhuma página antiga piorou. A
+régua diz por escrito que um teto que suba porque uma página antiga piorou é a
+régua a ser desligada.
 
 ---
 

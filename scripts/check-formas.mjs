@@ -810,19 +810,27 @@ const NOME_DO_PAINEL_SOCIAL = {
   en: 'European Social Scoreboard',
 };
 
+/* A PÁGINA QUE RENDE A FRASE MUDOU (bloco F1.10, item 8.16, 08.09.2026). Era a
+   primeira página; os 21 cartões dos dois quadros da União passaram a «Portugal
+   na União Europeia», e a frase de contexto do Painel Social foi com eles. O
+   que a conferência mede não muda um carácter: muda o ficheiro que ela abre. */
 for (const lang of LANGS) {
-  const rota = routePath('home', lang);
+  const rota = routePath('uniaoEuropeia', lang);
   const ficheiro = path.join(DIST, rota.replace(/^\//, ''), 'index.html');
   if (!fs.existsSync(ficheiro)) {
-    err(`a primeira página da edição "${lang}" não foi construída, e é ela que rende a frase do Painel Social.`);
+    err(
+      `a página «Portugal na União Europeia» da edição "${lang}" não foi construída, e é ela ` +
+        `que rende a frase do Painel Social.`,
+    );
     continue;
   }
   const corpo = texto(parse(fs.readFileSync(ficheiro, 'utf8')).querySelector('body') ?? parse(''));
   const nome = NOME_DO_PAINEL_SOCIAL[lang];
   if (!corpo.includes(nome)) {
     err(
-      `a primeira página da edição "${lang}" não nomeia «${nome}». Sem o nome do painel não há ` +
-        `frase para conferir, e um zero aqui seria a régua a passar por estar cega.`,
+      `a página «Portugal na União Europeia» da edição "${lang}" não nomeia «${nome}». Sem o ` +
+        `nome do painel não há frase para conferir, e um zero aqui seria a régua a passar por ` +
+        `estar cega.`,
     );
     continue;
   }

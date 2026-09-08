@@ -1,0 +1,198 @@
+---
+/**
+ * PORTUGAL NA UNIÃO EUROPEIA · a página dos dois quadros (F1.10, item 8.16).
+ *
+ * Uma só fonte para as duas edições: recebe `lang` e nada mais.
+ *
+ * ---------------------------------------------------------------------------
+ * PORQUE É QUE ESTA PÁGINA EXISTE
+ * ---------------------------------------------------------------------------
+ * O diretor perguntou-o a 07.09 à noite, a olhar para a primeira página: «why
+ * did you choose the indicators we have on the landing page?». Os 21 cartões
+ * são os dois quadros da União, escolhidos a 12.08.2026 pelo lugar de direção
+ * PELA PROVA — um só publicador, o valor, o limiar e a posição de Portugal
+ * citáveis linha a linha — e não pelo que um leitor português vem procurar.
+ *
+ * A decisão que ele aceitou («I accept your recommendations, so we can go ahead
+ * as you think is better») é a do item 8.16: a faixa da primeira página passa a
+ * levar as medidas de cabeça dos domínios vivos, e os dois quadros passam a ter
+ * esta página, alcançável da faixa e do menu, onde os limiares mantêm o seu
+ * valor.
+ *
+ * ---------------------------------------------------------------------------
+ * O QUE ESTA PÁGINA É, E O QUE ELA NÃO REPETE
+ * ---------------------------------------------------------------------------
+ * É O LUGAR DE APRESENTAÇÃO INTEIRA das 21 medidas, no sentido do §0 do brief:
+ * a faixa com os 21 cartões, e a leitura de cada uma debaixo dela, uma de cada
+ * vez. Em mais lado nenhum do sítio elas aparecem com valor selado: na primeira
+ * página fica UMA porta para aqui, e é essa a única aparição.
+ *
+ * NÃO TRAZ MANCHETE. A manchete do país continua na primeira página, que é onde
+ * ela é a manchete de alguma coisa; e as duas contagens que ela usa
+ * (`painel_dentro_do_limiar`, `painel_fora_do_limiar`) continuam a render-se
+ * lá. O que muda de porta é a das três chaves cuja âncora era o painel:
+ * `painel_total`, `painel_com_limiar`, `painel_fora_do_limiar`,
+ * `painel_dentro_do_limiar`, `painel_social_total` e `painel_reconferido_em`
+ * passam a abrir aqui, que é onde o que elas contam se vê (`src/lib/prova.mjs`).
+ *
+ * NÃO TRAZ COMANDO DE DENSIDADE. O item 8.14 tira-o: fica uma só interação, o
+ * toque num cartão a abrir a leitura daquele cartão. O guião é
+ * `public/js/leituras.js`, e sem ele as vinte e uma ficam à vista, fechadas.
+ */
+import Base from '../layouts/Base.astro';
+import Faixa from '../components/inicio/Faixa.astro';
+import LeituraBreve from '../components/inicio/LeituraBreve.astro';
+import ValorDaProva from '../components/ValorDaProva.astro';
+import Frase from '../components/Frase.astro';
+import {
+  FIGURAS_PDM,
+  FIGURAS_SOCIAL,
+  CONTEXTO_DOS_PAINEIS,
+  comparacaoComOLimiar,
+  ladosDoLimiar,
+} from '../data/figuras.mjs';
+import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
+import { estadoDaMedida } from '../lib/estado.mjs';
+import { dominioDaLinha } from '../lib/dominios.mjs';
+import { prova } from '../lib/prova.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+import '../styles/inicio.css';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+const path = routePath('uniaoEuropeia', lang);
+const p = prova(lang);
+
+/* A PORTA DE UMA MEDIDA QUE VIVE NUM DOMÍNIO. É a mesma função que a primeira
+   página tinha, e a mesma tabela por trás (`dominioDaLinha()`): uma medida
+   acrescenta a porta exactamente quando a linha dela pertence a um domínio COM
+   PÁGINA. Hoje são três das 21. */
+const portaDaLeitura = (claim) => {
+  const dominio = dominioDaLinha(claim);
+  if (!dominio) return null;
+  return `${routePath('dominio', lang, { slug: dominio.slug })}#${dominio.ancora}`;
+};
+
+const medidas = FIGURAS_PDM.map((f) => {
+  const linha = getClaim(f.claim);
+  const lados = f.limiar ? ladosDoLimiar(f.limiar) : null;
+  const refs = lados
+    ? [lados.inferior, lados.superior].filter((l) => l !== null).map((l) => parsePtNumber(l))
+    : [];
+  return {
+    ...f,
+    linha,
+    estado: estadoDaMedida(linha, f.limiar),
+    comparacao: f.limiar ? comparacaoComOLimiar(linha, f.limiar) : null,
+    porta: portaDaLeitura(f.claim),
+    regua: refs.length
+      ? {
+          valor: parsePtNumber(linha.value),
+          referencia: refs.length > 1 ? refs : refs[0],
+        }
+      : null,
+  };
+});
+
+const sociais = FIGURAS_SOCIAL.map((f) => ({
+  ...f,
+  linha: getClaim(f.claim),
+  porta: portaDaLeitura(f.claim),
+}));
+
+/* OS CARTÕES SÃO AS MESMAS MEDIDAS QUE AS LEITURAS RENDEM, pela mesma ordem e
+   da mesma lista: 13 do Procedimento e 8 do Painel Social. Não é uma segunda
+   lista, é a mesma lida uma vez, e por isso um cartão nunca pode nomear uma
+   medida que a área de leitura não tenha, nem o contrário.
+
+   O DESTINO DE CADA UM é a âncora da leitura daquela medida NESTA página, nos
+   21 sem exceção: é a decisão do F1.1c que o F1.10 traz consigo para aqui. */
+const cartaoDaMedida = (f, estado) => {
+  const linha = getClaim(f.claim);
+  return {
+    id: f.claim,
+    destino: `#m-${f.claim}`,
+    destinoRotulo: null,
+    nome: f.nome[lang],
+    medida: f.medida[lang],
+    estado,
+    glifos: [...String(linha.value)].length,
+  };
+};
+const cartoes = [
+  ...medidas.map((f) => cartaoDaMedida(f, f.estado ?? 'sem')),
+  ...sociais.map((f) => cartaoDaMedida(f, null)),
+].map((c, i) => ({ ...c, posicao: i + 1 }));
+---
+
+<Base
+  lang={lang}
+  path={path}
+  title={s.uniaoEuropeia.metaTitle}
+  description={s.uniaoEuropeia.metaDescription}
+>
+  <header class="sec-head">
+    <h1>{s.uniaoEuropeia.h1}</h1>
+  </header>
+
+  <Faixa
+    s={s}
+    lang={lang}
+    rotulo={s.inicio.faixa.rotulo}
+    cartoes={cartoes}
+    total={cartoes.length}
+  />
+
+  {/* ----------------------------------------------------------------------
+      A ÁREA DE LEITURA (F1.1c, e o item 8.12 deste bloco)
+      ----------------------------------------------------------------------
+      Com guião, uma leitura de cada vez e nenhuma em repouso: em repouso fica a
+      linha que diz o gesto, e mais nada. O cabeçalho de cada quadro e a sua
+      frase de contexto rendem-se JUNTO DA LEITURA daquele quadro, como contexto
+      dela, e nunca sozinhos: era isso que o diretor via a 07.09 à noite («a text
+      underneath, but there's no content»).
+
+      SEM GUIÃO NADA MUDA: as vinte e uma ficam à vista, fechadas, os dois
+      cabeçalhos ficam por cima das suas, e `#m-<id>` abre a certa.
+      ---------------------------------------------------------------------- */}
+  <section id="painel" data-area-leitura>
+    <p class="dobras-nada" data-leituras-vazio hidden>{s.inicio.painel.semLeituraAberta}</p>
+
+    <div data-contexto-quadro="pdm">
+      <h2 class="painel-nome">
+        {s.inicio.painel.nomeA}
+        <ValorDaProva chave="painel_com_limiar" item={p.painel_com_limiar} lang={lang} />
+        {s.inicio.painel.nomeFim}
+      </h2>
+      <p class="painel-contexto" data-contexto-painel="pdm">
+        <Frase partes={CONTEXTO_DOS_PAINEIS.pdm[lang]} lang={lang} />
+      </p>
+    </div>
+
+    <LeituraBreve s={s} lang={lang} quadro="pdm" medidas={medidas} />
+
+    <hr class="paineis-separador" data-separador-paineis />
+
+    {/* A MOLDURA DA SEGUNDA METADE É A QUE JÁ ERA: `id="painel-social"` é a
+        âncora da porta da chave da prova `painel_social_total`, e o portão de
+        HTML fecha a construção quando uma porta aponta para uma âncora que não
+        existe na página. */}
+    <section class="social" id="painel-social">
+      <div data-contexto-quadro="social">
+        <h2 class="social-titulo">
+          {s.inicio.social.titulo}
+          <ValorDaProva chave="painel_social_total" item={p.painel_social_total} lang={lang} />
+          {s.inicio.social.tituloFim}
+        </h2>
+        <p class="painel-contexto" data-contexto-painel="social">
+          <Frase partes={CONTEXTO_DOS_PAINEIS.social[lang]} lang={lang} />
+        </p>
+      </div>
+
+      <LeituraBreve s={s} lang={lang} quadro="social" medidas={sociais} />
+    </section>
+  </section>
+
+  <script src="/js/leituras.js" defer is:inline></script>
+</Base>

@@ -135,6 +135,12 @@ export const STRINGS = {
          o plural do que a página lista, e mais nada. */
       regioes: 'Regiões',
       distritos: 'Distritos',
+      /* A PÁGINA DOS DOIS QUADROS DA UNIÃO (bloco F1.10, item 8.16, 08.09.2026).
+         O nome do item do menu é O NOME DA PÁGINA, por extenso, e não uma
+         abreviatura: a regra §0 do brief é «um nome por coisa em todo o sítio»,
+         e «União Europeia» ao lado de uma página que se chama «Portugal na União
+         Europeia» seriam dois nomes para a mesma coisa. */
+      uniaoEuropeia: 'Portugal na União Europeia',
       estudos: 'Estudos',
       livro: 'Livro-razão',
       agenda: 'Agenda',
@@ -782,6 +788,31 @@ export const STRINGS = {
         tituloFim: ' medidas',
         porta: 'O livro-razão',
       },
+    },
+
+    /**
+     * ---------------------------------------------------------------------
+     * PORTUGAL NA UNIÃO EUROPEIA (bloco F1.10, item 8.16, 08.09.2026)
+     * ---------------------------------------------------------------------
+     * A página dos dois quadros da União. Os 21 cartões viviam na primeira
+     * página desde 12.08.2026; a decisão do lugar de direção que o diretor
+     * aceitou a 07.09 à noite («I accept your recommendations») dá-lhes página
+     * própria e devolve a faixa da primeira página às medidas de cabeça dos
+     * domínios vivos.
+     *
+     * O `h1` É O NOME DA PÁGINA E MAIS NADA. Não diz o que a casa faz nem
+     * porque escolheu estes quadros: o que cada quadro é diz-se na definição de
+     * uma linha de cada painel (item 8.4), com a origem citada.
+     */
+    uniaoEuropeia: {
+      metaTitle: 'Portugal na União Europeia · O Estado do País',
+      metaDescription:
+        'Os dois quadros da União Europeia que medem Portugal: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu, cada uma com a sua linha.',
+      h1: 'Portugal na União Europeia',
+      /* A PORTA DA FAIXA DA PRIMEIRA PÁGINA para esta página. É o nome da página
+         de chegada com a seta, que é a forma da casa para uma porta («O
+         livro-razão →» na lista social, «Estudos» na fila dos estudos). */
+      porta: 'Portugal na União Europeia',
     },
 
     /**
@@ -2038,6 +2069,8 @@ export const STRINGS = {
       /* As três famílias no menu. Ver a razão na edição portuguesa. */
       regioes: 'Regions',
       distritos: 'Districts',
+      /* Ver a razão na edição portuguesa. */
+      uniaoEuropeia: 'Portugal in the European Union',
       estudos: 'Studies',
       livro: 'Ledger',
       agenda: 'Agenda',
@@ -2341,6 +2374,15 @@ export const STRINGS = {
         tituloFim: ' measures',
         porta: 'The ledger',
       },
+    },
+
+    /** Ver a razão na edição portuguesa. */
+    uniaoEuropeia: {
+      metaTitle: 'Portugal in the European Union · O Estado do País',
+      metaDescription:
+        'The two European Union frameworks that measure Portugal: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard, each with its ledger row.',
+      h1: 'Portugal in the European Union',
+      porta: 'Portugal in the European Union',
     },
 
     estado: {

@@ -382,6 +382,14 @@ const ROTAS_COM_ORIGEM_LIDA = new Set([
 const MEDIDA_DECLARADA = '[data-medida-nome],[data-medida-unidade]';
 const ROTAS_DO_INVENTARIO = new Set([
   'home',
+  /* «Portugal na União Europeia» entra no commit em que a sua página nasce, que
+     é a regra desta lista (bloco F1.10, item 8.16, 08.09.2026). É uma página do
+     leitor como as outras: a Emenda 15 governa-a e a sua autorreferência vai a
+     zero. As cadeias que ela rende já estavam todas declaradas — os dois nomes
+     de quadro, as duas frases de contexto, as vinte e uma leituras e a linha do
+     repouso vieram inteiras da primeira página —, e as duas novas são o seu
+     título e a porta que leva a ela. */
+  'uniaoEuropeia',
   'livro',
   'municipios',
   /* Évora entra no commit 4-0: a decisão da direção de 21.08.2026 tirou-lhe a
