@@ -307,6 +307,25 @@ outras: L1 +2, L5 +2, L6 +6, 8.5 +2, 8.8 +5. Nenhuma página antiga piorou. A
 régua diz por escrito que um teto que suba porque uma página antiga piorou é a
 régua a ser desligada.
 
+
+---
+
+## O que fica por fazer, pela ordem em que se faz
+
+A régua imprime os doze números a qualquer momento
+(`node scripts/check-lugar.mjs`), e é por ela que se sabe onde o bloco está.
+
+| # | o que falta | onde se toca | a nota de quem retoma |
+|---|---|---|---|
+| 1 | **8.5** · «limiar» nunca sozinho | `src/i18n/strings.mjs` (`estado.*`), `Faixa.astro`, `LeituraBreve.astro`, `Peca.astro` | **NÃO é uma troca de duas cadeias.** «dentro do limiar» e «fora do limiar» servem os cartões dos dois quadros da União E os do domínio e do concelho, e nestes o limiar é o LIMITE LEGAL da dívida de uma câmara, que não é da Comissão. O qualificador tem de vir de QUEM FIXOU o limiar daquela medida, e isso é um campo que a declaração da medida ainda não tem. É o primeiro sítio onde este bloco precisa de uma decisão do lugar de direção |
+| 2 | **8.4** · a definição de uma linha de cada painel e de cada uma das 21 medidas | `src/data/figuras.mjs`, `UniaoEuropeiaView.astro`, o inventário da voz | cada definição sai da descrição da PRÓPRIA Comissão e é citada com o documento, o endereço, a data de acesso e o excerto literal; onde não houver frase da Comissão que sirva, escreve-se só com os campos da linha e di-lo. **Nunca se inventa.** O §9.3 acrescenta: sem uma palavra sobre a conferência da casa. É o item mais caro do que falta, e o que precisa de leitura das fontes primárias |
+| 3 | **8.15** · a manchete no telemóvel | `Manchete.astro`, `src/data/`, a célula A1 de `tests/inicio/porta.mjs` | e com ela a pergunta que o achado 1 desta sessão deixa: **de que quadro fala a manchete do país agora que os 21 cartões mudaram de página** |
+| 4 | **8.11 e §7.3** · a prosa e as linhas de frescura fora do primeiro ecrã | `Masthead.astro` (as três leituras da mobília), `MunicipioView`, `DominioView`, `EstudoView`, `LivroView` | é o que endireita a célula A7 de `correcoes-a.mjs`, vermelha desde o F1.6 por a mobília ter quatro leituras onde a célula exige três |
+| 5 | **o resto do §9** (pontos 2 a 10) | o inventário da voz, `DominioView`, `Pesquisa.astro` | os pontos 5, 8 e 9 são reclassificações e correções de prosa no inventário e custam pouco; o 2 e o 6 andam com o 8.11; o 7 anda com a busca única do §2.6 |
+| 6 | **item 4 do encargo** · as páginas | `MunicipioView`, `RegiaoView`, `DominioView`, os índices, `EstudoView`, `MetodoView` | a linha dos estudos do concelho (§1 e 8.6), a régua da região (§7.6), o domínio (§7.7), os estudos (§7.4 e 8.6), o Método no telemóvel (§7.9) |
+| 7 | **item 5 do encargo** · o caminho no cabeçalho (§2.5, com o desenho da §C), a busca é uma (§2.6), «fonte» diz o publicador (§2.4, §7.2, a L6), as datas de frescura (§7.3) | `Caminho.astro` (por escrever), `Pesquisa.astro`, `Provenance.astro`, `gate-html.mjs` | a L5 (7 213) e a L6 (26 174) são os dois números grandes que ainda não desceram, e são estes dois itens |
+| 8 | **o fecho** | as capturas, as plantas da L9, o `REVISOES-DO-INVENTARIO.md` | as capturas de `/`, `/municipios`, uma região, um concelho, **a página europeia** e um estudo a 390 × 664 e 1 280 nas duas edições |
+
 ---
 
 ## Estado ao pausar (04.09, manhã)
