@@ -42,6 +42,28 @@
  * O ESPAÇO DA AGENDA encheu-se a 16.08.2026 (§1.40) e, desde a v2, as duas
  * leituras são rotuladas: rótulo e valor, os dois em monoespaçada, cada uma
  * com a sua porta. Sem caixa à volta do cabeçalho: um fio (IDENTIDADE.md §3).
+ *
+ * ---------------------------------------------------------------------------
+ * E A MOBÍLIA DEIXOU DE SER O SINAL DE TEMPO (F1.10, item 8.11 e §7.3,
+ * 08.09.2026; `DECISIONS.md` §1.103)
+ * ---------------------------------------------------------------------------
+ * As duas secções acima ficam, porque contam como se chegou aqui, e as duas
+ * deixaram de descrever o que este ficheiro faz. As quatro leituras de aparelho
+ * saíram do cabeçalho de todas as páginas: a data da reconferência do painel
+ * vive em «Portugal na União Europeia», dentro do painel que ela cobre; a
+ * leitura das fontes e o contador das séries atrasadas vivem na regra 6 do
+ * Método, que é a âncora para onde as portas das três chaves já apontavam; as
+ * duas contagens da agenda ficaram onde já estavam, nas portas da primeira
+ * página e na regra 8 do Método.
+ *
+ * O QUE SOBROU NA MOBÍLIA é o controlo do tema, que não é uma leitura: é um
+ * comando, e o único caminho para o tema escuro. Abaixo de 640 px a caixa
+ * inteira não se desenha, porque o comando vive dentro do menu nessa largura e
+ * o que sobrava era um fio a tinta a separar a marca de coisa nenhuma.
+ *
+ * A razão é a do item: a página do leitor não se explica, e quatro linhas de
+ * estado da casa por cima do nome da coisa, antes do primeiro número, em 7 224
+ * páginas, eram a casa a falar de si à entrada de todas elas.
  */
 import { SITE_NAME } from '../../site.config.mjs';
 import { routePath, otherLanguagePath, normalizePath } from '../lib/routes.mjs';
@@ -306,10 +328,18 @@ const NomeTag = 'p';
 
     {
       furniture && (
-        <div class="masthead-furniture" data-sinal-de-tempo>
+        <div class="masthead-furniture">
           {/* --------------------------------------------------------------
               AS QUATRO LEITURAS SAÍRAM DAQUI (F1.10, item 8.11 e §7.3,
               08.09.2026).
+
+              E `data-sinal-de-tempo` SAIU COM ELAS, da caixa acima: era a marca
+              por onde as réguas encontravam a data da reconferência do painel,
+              e a data foi para «Portugal na União Europeia». Uma marca que
+              nomeia uma coisa que já não está ali é uma mentira escrita em
+              7 224 páginas, e o nome não é o conteúdo. Conferido antes de sair:
+              `grep -rn "data-sinal-de-tempo" src scripts tests public` só a
+              encontrava nesta linha.
 
               Viviam aqui, em 7 224 páginas: o painel europeu com a data da
               última reconferência, as fontes com o carimbo da última corrida,
