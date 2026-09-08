@@ -6,15 +6,17 @@
  * O QUE ESTE BLOCO É (F1.1d, itens 1 e 7 do brief, 07.09.2026)
  * ---------------------------------------------------------------------------
  * «Um elemento fixo com o nome da unidade apontada e a porta para a sua página;
- * vazio diz "Toque numa região" / "Passe o rato por uma região".» É irmão do
+ * vazio diz "Toque num distrito ou numa ilha" / "Passe o rato por um distrito ou
+ * por uma ilha".» É irmão do
  * desenho, dentro da mesma figura, porque o que ele diz é sobre o desenho que
  * está ao lado; onde ele fica é da folha (ao lado do mapa a partir de 1 024 px,
  * por baixo dele no telemóvel).
  *
- * VIVE NUM COMPONENTE PRÓPRIO PORQUE DUAS SUPERFÍCIES O RENDEM: o mapa da
- * primeira página, que tem dois níveis, e o mapa de uma página de distrito, que
- * tem um só (os concelhos daquela unidade). Escrever a mesma marcação nos dois
- * sítios era a segunda cópia a divergir da primeira à primeira emenda.
+ * VIVE NUM COMPONENTE PRÓPRIO PORQUE VÁRIAS SUPERFÍCIES O RENDEM: o mapa da
+ * primeira página, que tem dois níveis, e o mapa de uma página de distrito ou de
+ * concelho, que tem um só (os concelhos daquela unidade). Escrever a mesma
+ * marcação nos dois sítios era a segunda cópia a divergir da primeira à primeira
+ * emenda.
  *
  * É UMA REGIÃO VIVA (`aria-live="polite"`) E POR ISSO O NOME ANUNCIA-SE. A frase
  * vive num bloco só, com as formas por baixo dela e uma de cada vez: as vazias
@@ -37,19 +39,25 @@
  * fine)`. Um `display: none` é lido pelo leitor de ecrã, e por isso quem ouve
  * ouve uma só.
  *
- * `niveis` DIZ QUE FRASES VAZIAS ESTE LUGAR TEM: `['pais', 'regiao']` na
- * primeira página, `['regiao']` numa página de distrito, onde o único nível é o
- * dos concelhos. `voltar` é a porta de subir um nível, e só existe onde há dois.
+ * `niveis` DIZ QUE FRASES VAZIAS ESTE LUGAR TEM: `['pais', 'unidade']` na
+ * primeira página, `['unidade']` numa página de distrito ou de concelho, onde o
+ * único nível é o dos concelhos. `voltar` é a porta de subir um nível, e só
+ * existe onde há dois.
+ *
+ * O SEGUNDO NÍVEL CHAMA-SE `unidade` E NÃO `regiao` (F1.1e, 08.09.2026): o que
+ * cresce no mapa da primeira página passou a ser um distrito ou uma ilha, e um
+ * nome que diz outra coisa é um nome a mentir sobre o que a folha e o guião
+ * fazem com ele.
  */
 /* `lang` NÃO ENTRA AQUI, e é de propósito: nada neste bloco se traduz por si.
    As frases vêm de `s`, que já é a edição, e o destino da porta de voltar chega
    feito em `voltar`, porque quem sabe a rota é quem rende o mapa. */
-const { s, niveis = ['pais', 'regiao'], voltar = null } = Astro.props;
+const { s, niveis = ['pais', 'unidade'], voltar = null } = Astro.props;
 
 /** A frase vazia de cada nível, para o dedo e para o rato. */
 const VAZIAS = {
   pais: { toque: s.inicio.mapa.nomeVazioToque, rato: s.inicio.mapa.nomeVazioRato },
-  regiao: {
+  unidade: {
     toque: s.inicio.mapa.nomeVazioToqueConcelho,
     rato: s.inicio.mapa.nomeVazioRatoConcelho,
   },
@@ -73,13 +81,13 @@ const VAZIAS = {
     {/* O nome vai declarado como lugar, pela mesma razão do nome do cartão
         localizador: é o nome da coisa, e não prosa da casa. */}
     <p class="mapa-nome-texto" data-mapa-nome-texto data-lugar hidden></p>
-    {/* O AVISO DE QUE O DESENHO DA REGIÃO NÃO CHEGOU. Só existe onde há um
-        segundo nível para descarregar: numa página de distrito o desenho vem
-        com o documento e não há pedido nenhum que possa falhar. Está dentro da
-        região viva, para que quem ouve o oiça como oiria o nome. */}
+    {/* O AVISO DE QUE O DESENHO DA UNIDADE NÃO CHEGOU. Só existe onde há um
+        segundo nível para descarregar: numa página de distrito ou de concelho o
+        desenho vem com o documento e não há pedido nenhum que possa falhar. Está
+        dentro da região viva, para que quem ouve o oiça como oiria o nome. */}
     {niveis.includes('pais') && (
       <p class="mapa-nome-aviso" data-mapa-aviso hidden>
-        {s.inicio.mapa.semODesenhoDaRegiao}
+        {s.inicio.mapa.semODesenhoDaUnidade}
       </p>
     )}
   </div>

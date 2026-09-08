@@ -1,15 +1,21 @@
 /* =============================================================================
- * O MAPA QUE CRESCE, E O NOME AO LADO (bloco F1.1d, 07.09.2026)
+ * O MAPA QUE CRESCE, E O NOME AO LADO (blocos F1.1d e F1.1e, 07 e 08.09.2026)
  *
  * ---------------------------------------------------------------------------
  * O QUE ESTE FICHEIRO FAZ
  * ---------------------------------------------------------------------------
  *   · escreve no lugar do nome o nome da área apontada, COPIADO do `data-u` que
  *     o servidor desenhou, e o destino da porta, COPIADO do `href` dela;
- *   · faz crescer uma região: troca o `viewBox` do mesmo `<svg>` e desenha os
- *     concelhos dessa região do ficheiro que a área nomeia;
+ *   · faz crescer uma unidade da Carta (um distrito ou uma ilha): troca o
+ *     `viewBox` do mesmo `<svg>` e desenha os concelhos dessa unidade do
+ *     ficheiro que a área nomeia;
  *   · mexe no endereço com `history.pushState`, para que o nível se possa citar
  *     e o botão de voltar do navegador funcione.
+ *
+ * O NÍVEL DO PAÍS SÃO AS 29 UNIDADES DA CARTA (F1.1e, 08.09.2026), e não as nove
+ * regiões NUTS II que o F1.1d desenhou por um dia: «the map on the first page we
+ * had before was quite alright», e a unidade é a área que um leitor português
+ * reconhece pelo nome. O que este ficheiro faz não mudou; mudou o que cresce.
  *
  * ---------------------------------------------------------------------------
  * A REGRA QUE ELE QUEBRA, E AS TRÊS AMARRAS
@@ -18,65 +24,66 @@
  * nada: nunca `innerHTML`, nunca criar texto visível (resposta 3 da direção,
  * 20.08.2026). Este cria elementos e escreve texto, como `livro.js` faz para a
  * busca do índice, e pela mesma razão medida: ou o documento leva os 308
- * concelhos das nove regiões escondidos, ou o guião desenha os da região que o
- * leitor abriu. Os nove ficheiros pesam 237 KB, e o segundo caminho é o que não
+ * concelhos das 29 unidades escondidos, ou o guião desenha os da unidade que o
+ * leitor abriu. Os 29 ficheiros pesam 394 614 B, e o segundo caminho é o que não
  * os põe em cada visita à primeira página.
  *
  * As amarras são as de `livro.js`, e são três:
  *
  *   1. **nada é composto aqui.** Cada cadeia escrita vem, tal e qual, do
- *      ficheiro `/dados/mapa/regiao-<slug>.json`, e escreve-se por `textContent`,
- *      nunca por `innerHTML`. Os nove ficheiros são escritos na construção por
- *      `scripts/mapa-regioes.mjs`, dos artefactos da CAOP 2025 que o motor
- *      exportou, e o portão `check:mapa` (R8 e R9) reconfere-os: os 308 uma vez
- *      cada, cada um na região que a Carta lhe dá, e a geometria de cada região
- *      igual à união dos seus concelhos;
+ *      ficheiro `/dados/mapa/unidade-<slug>.json`, e escreve-se por
+ *      `textContent`, nunca por `innerHTML`. Os 29 ficheiros são, byte a byte, os
+ *      artefactos `mapa/distritos/<slug>.json` que o motor exportou da CAOP 2025,
+ *      copiados para `public/` por `scripts/mapa-unidades.mjs`, e o portão
+ *      `check:mapa` (R8) reconfere-os contra os artefactos e contra o manifesto
+ *      de resumos;
  *   2. **nenhum valor.** Os ficheiros não levam um único número do livro-razão:
  *      levam nomes de lugar e geometria. Quem quer o número de um concelho abre
  *      a página dele, que é o que a porta abre;
  *   3. **nenhuma contagem.** Não se escreve «86 concelhos» em lado nenhum.
  *
  * O QUE MAIS NÃO SE FAZ: não se monta o endereço de página nenhuma. O destino de
- * uma região é o `href` que o servidor escreveu na sua área; o de um concelho é o
+ * uma unidade é o `href` que o servidor escreveu na sua área; o de um concelho é o
  * gabarito da rota (`data-rota-concelho`), com o slug no lugar que o `:slug`
  * marca, que é a disciplina que a Emenda 21b já pôs no comando «Região».
  *
  * ---------------------------------------------------------------------------
  * O PRIMEIRO TOQUE NUNCA NAVEGA
  * ---------------------------------------------------------------------------
- * A medida P3 do brief: «o primeiro toque numa região ou num concelho nunca
- * navega; o segundo, ou a porta, abre a página certa». Uma região cresce ao
+ * A medida U3 do brief: «o primeiro toque numa unidade ou num concelho nunca
+ * navega; o segundo, ou a porta, abre a página certa». Uma unidade cresce ao
  * primeiro toque (é o que o diretor pediu a 04.09: «once we press a region,
  * we'll have the name of the region and then it opens the map with the
+ * municipalities», e a 08.09 «we can select Évora and we have all the
  * municipalities»), e crescer não é navegar: a porta do lugar do nome é que abre
- * a página da região. Um concelho diz o nome ao primeiro toque e abre ao
+ * a página da unidade. Um concelho diz o nome ao primeiro toque e abre ao
  * segundo, no mesmo concelho.
  *
  * PELO TECLADO, O FOCO É O PRIMEIRO TOQUE. Chegar a uma área com Tab põe-lhe o
  * nome no lugar, que é o que o primeiro toque faz; o Enter é o segundo, e faz o
- * que o segundo toque faz: cresce a região, ou abre a página do concelho. É
+ * que o segundo toque faz: cresce a unidade, ou abre a página do concelho. É
  * assim que «Enter faz o que o toque faz» sem pedir dois Enter a quem já viu o
  * nome ao chegar.
  *
- * SEM ESTE FICHEIRO a primeira página é o nível do país, inteiro: nove áreas,
- * cada uma a ligação da sua página, e a lista fechada dos nomes por baixo.
+ * SEM ESTE FICHEIRO a primeira página é o nível do país, inteiro: 29 áreas, cada
+ * uma a ligação da sua página, e a lista fechada dos nomes por baixo.
  * ========================================================================== */
 (function () {
   'use strict';
 
-  /* DUAS SUPERFÍCIES, E A SEGUNDA TEM UM NÍVEL SÓ (F1.1d, item 7). Na primeira
-     página há dois grupos de áreas, o das nove regiões e o dos concelhos da
-     região aberta, e o desenho cresce entre eles; numa página de distrito há um
+  /* DUAS SUPERFÍCIES, E A SEGUNDA TEM UM NÍVEL SÓ. Na primeira página há dois
+     grupos de áreas, o das 29 unidades e o dos concelhos da unidade aberta, e o
+     desenho cresce entre eles; numa página de distrito ou de concelho há um
      grupo só, com os concelhos daquela unidade, e não há nada para crescer. O
      que é comum é o lugar do nome, e é isso que este guião faz nas duas. */
   var figura = document.querySelector('[data-mapa-raiz][data-nivel]');
   var svg = document.querySelector('[data-mapa-areas], [data-mapa-concelhos]');
   var grupoDoPais = svg ? svg.querySelector('[data-areas]') : null;
-  var grupoDaRegiao = svg ? svg.querySelector('[data-areas-concelhos]') : null;
+  var grupoDaUnidade = svg ? svg.querySelector('[data-areas-concelhos]') : null;
   var lugar = document.querySelector('[data-mapa-nome]');
   if (!figura || !svg || !grupoDoPais || !lugar) return;
   /** Há dois níveis? Só onde o segundo grupo existe. */
-  var DOIS_NIVEIS = !!grupoDaRegiao;
+  var DOIS_NIVEIS = !!grupoDaUnidade;
 
   var texto = lugar.querySelector('[data-mapa-nome-texto]');
   var porta = lugar.querySelector('[data-mapa-porta]');
@@ -100,17 +107,17 @@
   var CAMPO_DO_PAIS = svg.getAttribute('viewBox');
   var ROTA_DO_CONCELHO = svg.getAttribute('data-rota-concelho') || '';
   var ROTULO_PAIS = svg.getAttribute('data-rotulo-pais') || '';
-  var ROTULO_REGIAO = svg.getAttribute('data-rotulo-regiao') || '';
+  var ROTULO_UNIDADE = svg.getAttribute('data-rotulo-unidade') || '';
 
-  /** As regiões já descarregadas, uma entrada por slug. */
+  /** As unidades já descarregadas, uma entrada por slug. */
   var guardadas = {};
-  /** O slug da região aberta, ou vazio no nível do país. */
+  /** O slug da unidade aberta, ou vazio no nível do país. */
   var aberta = '';
   /** O concelho que o dedo já tocou uma vez, para saber se o toque é o segundo. */
   var tocada = '';
   /** O gesto do último apontador, para os navegadores em que o clique não o diz. */
   var tipoDoGesto = '';
-  /** As regiões cujo ficheiro não veio: o clique seguinte segue a ligação. */
+  /** As unidades cujo ficheiro não veio: o clique seguinte segue a ligação. */
   var falhadas = {};
 
   /* ---------------------------------------------------------------- o nome */
@@ -132,7 +139,7 @@
 
   /**
    * O nome e o destino da área apontada, os dois copiados do que o servidor (ou
-   * o desenho da região) já tem escrito na própria área.
+   * o desenho da unidade) já tem escrito na própria área.
    */
   function mostra(area) {
     /* O NOME LÊ-SE DO `<title>` DA PRÓPRIA LIGAÇÃO, que é o nome acessível dela e
@@ -154,9 +161,9 @@
 
   /* ------------------------------------------------------------- os níveis */
 
-  /** O desenho de uma região, do ficheiro que a sua área nomeia. */
+  /** O desenho de uma unidade, do ficheiro que a sua área nomeia. */
   function desenha(dados) {
-    while (grupoDaRegiao.firstChild) grupoDaRegiao.removeChild(grupoDaRegiao.firstChild);
+    while (grupoDaUnidade.firstChild) grupoDaUnidade.removeChild(grupoDaUnidade.firstChild);
     for (var i = 0; i < dados.concelhos.length; i++) {
       var c = dados.concelhos[i];
       var a = document.createElementNS(SVGNS, 'a');
@@ -173,7 +180,7 @@
       caminho.setAttribute('data-tipo', 'concelho');
       caminho.setAttribute('data-unidade', c.slug);
       a.appendChild(caminho);
-      grupoDaRegiao.appendChild(a);
+      grupoDaUnidade.appendChild(a);
     }
     svg.setAttribute('viewBox', '0 0 ' + dados.campo.largura + ' ' + dados.campo.altura);
   }
@@ -185,36 +192,36 @@
     aberta = '';
     svg.setAttribute('viewBox', CAMPO_DO_PAIS);
     if (ROTULO_PAIS) svg.setAttribute('aria-label', ROTULO_PAIS);
-    esconde(grupoDaRegiao, true);
+    esconde(grupoDaUnidade, true);
     esconde(grupoDoPais, false);
     figura.setAttribute('data-nivel', 'pais');
     voltar.hidden = true;
     mostraVazio();
-    /* E volta com ele: quem estava dentro da região, ou na porta de voltar, fica
-       na área da região de onde saiu. */
-    if (voltarTinhaFoco || grupoDaRegiao.contains(document.activeElement)) {
+    /* E volta com ele: quem estava dentro da unidade, ou na porta de voltar,
+       fica na área da unidade de onde saiu. */
+    if (voltarTinhaFoco || grupoDaUnidade.contains(document.activeElement)) {
       var area = grupoDoPais.querySelector('[data-uni-porta="' + saiuDe + '"]');
       if (area && area.focus) area.focus({ preventScroll: true });
     }
   }
 
-  function paraARegiao(slug, dados, doTeclado) {
+  function paraAUnidade(slug, dados, doTeclado) {
     guardadas[slug] = dados;
     aberta = slug;
     tocada = '';
     desenha(dados);
-    if (ROTULO_REGIAO) svg.setAttribute('aria-label', ROTULO_REGIAO);
+    if (ROTULO_UNIDADE) svg.setAttribute('aria-label', ROTULO_UNIDADE);
     esconde(grupoDoPais, true);
-    esconde(grupoDaRegiao, false);
-    figura.setAttribute('data-nivel', 'regiao');
+    esconde(grupoDaUnidade, false);
+    figura.setAttribute('data-nivel', 'unidade');
     voltar.hidden = false;
-    /* O nome da região fica no lugar, com a porta da página dela: quem acabou de
-       a abrir vê onde está e tem a porta à mão. */
+    /* O nome da unidade fica no lugar, com a porta da página dela: quem acabou
+       de a abrir vê onde está e tem a porta à mão. */
     var area = grupoDoPais.querySelector('[data-uni-porta="' + slug + '"]');
     if (area) mostra(area);
     else mostraVazio();
     /* O FOCO ACOMPANHA O NÍVEL, E SÓ QUANDO VEIO DO TECLADO. Quem cresceu a
-       região com o Enter tinha o foco na área que acabou de desaparecer, e um
+       unidade com o Enter tinha o foco na área que acabou de desaparecer, e um
        foco dentro de um grupo escondido é um foco perdido: passa para a primeira
        área do nível novo, sem rolar a página. Quem tocou ou clicou não leva o
        foco a lado nenhum, e a razão é medida: o navegador também põe o foco na
@@ -222,7 +229,7 @@
        do nível novo, que escrevia no lugar do nome o nome de um concelho que
        ninguém apontou. */
     if (doTeclado && grupoDoPais.contains(document.activeElement)) {
-      var primeira = grupoDaRegiao.querySelector('[data-concelho-porta]');
+      var primeira = grupoDaUnidade.querySelector('[data-concelho-porta]');
       if (primeira && primeira.focus) primeira.focus({ preventScroll: true });
     }
   }
@@ -234,9 +241,9 @@
      dizia que o toque seguinte seguia o `href` do servidor era falso. A leitura
      a frio do Codex de 08.09.2026 apanhou-o (achado 9).
 
-     A regra passa a ser: a região que falhou fica marcada, o lugar do nome diz
+     A regra passa a ser: a unidade que falhou fica marcada, o lugar do nome diz
      o que aconteceu, e O CLIQUE SEGUINTE NAQUELA ÁREA NÃO É SEGURADO, isto é,
-     segue a ligação que o servidor escreveu e abre a página da região, que é a
+     segue a ligação que o servidor escreveu e abre a página da unidade, que é a
      alternativa sem guião. Sem `fetch` no navegador nem se chega a segurar o
      primeiro. */
   function falhou(slug) {
@@ -244,7 +251,7 @@
     if (aviso) aviso.hidden = false;
   }
 
-  /** A região, do que já foi descarregado ou do ficheiro que a área nomeia. */
+  /** A unidade, do que já foi descarregado ou do ficheiro que a área nomeia. */
   function abre(slug, ficheiro, entao) {
     if (guardadas[slug]) {
       entao(guardadas[slug]);
@@ -273,7 +280,7 @@
   /* ---------------------------------------------------------- o endereço */
 
   function slugDoFragmento(fragmento) {
-    var m = /^#regiao=([a-z0-9-]+)$/.exec(fragmento || '');
+    var m = /^#unidade=([a-z0-9-]+)$/.exec(fragmento || '');
     if (!m) return '';
     return grupoDoPais.querySelector('[data-uni-porta="' + m[1] + '"]') ? m[1] : '';
   }
@@ -288,7 +295,7 @@
     var area = grupoDoPais.querySelector('[data-uni-porta="' + slug + '"]');
     if (typeof fetch !== 'function') return;
     abre(slug, area.getAttribute('data-ficheiro'), function (dados) {
-      paraARegiao(slug, dados);
+      paraAUnidade(slug, dados);
     });
   }
 
@@ -301,12 +308,12 @@
   /* O RATO APONTA, O DEDO TOCA, E OS DOIS NÃO SÃO O MESMO GESTO. Um toque num
      ecrã táctil faz o navegador disparar os eventos do rato antes do clique, e
      sem esta distinção o «primeiro toque» já teria apontado a área e o clique
-     seguinte abriria a página: a medida P3 do brief cairia num telemóvel e
+     seguinte abriria a página: a medida U3 do brief cairia num telemóvel e
      passaria num portátil. `pointerType` é o que separa os dois. */
   var doApontador = function (ev) {
     return ev.pointerType === 'mouse' || ev.pointerType === 'pen';
   };
-  var grupos = DOIS_NIVEIS ? [grupoDoPais, grupoDaRegiao] : [grupoDoPais];
+  var grupos = DOIS_NIVEIS ? [grupoDoPais, grupoDaUnidade] : [grupoDoPais];
   for (var g = 0; g < grupos.length; g++) {
     var raiz = grupos[g];
     raiz.addEventListener('pointerover', function (ev) {
@@ -351,28 +358,28 @@
   svg.addEventListener('click', function (ev) {
     var area = areaDe(ev.target);
     if (!area) return;
-    /* NUMA PÁGINA DE DISTRITO NÃO HÁ REGIÃO PARA CRESCER: as áreas são concelhos
-       e a regra do primeiro toque é a única que corre. */
+    /* NUMA PÁGINA DE DISTRITO OU DE CONCELHO NÃO HÁ UNIDADE PARA CRESCER: as
+       áreas são concelhos e a regra do primeiro toque é a única que corre. */
     /* UM CLIQUE FEITO PELO ENTER NÃO TEM CONTAGEM DE CLIQUES: é por aí que se
        sabe que o gesto veio do teclado, e é só nesse caso que o foco muda de
        nível. */
     var doTeclado = ev.detail === 0;
     var slug = area.getAttribute('data-uni-porta');
     if (slug) {
-      /* A REGIÃO CUJO FICHEIRO NÃO VEIO NÃO SE SEGURA OUTRA VEZ: o clique segue
-         a ligação do servidor e abre a página dela. O mesmo vale para um
+      /* A UNIDADE CUJO FICHEIRO NÃO VEIO NÃO SE SEGURA OUTRA VEZ: o clique
+         segue a ligação do servidor e abre a página dela. O mesmo vale para um
          navegador sem `fetch`, onde não há sequer um pedido a fazer. */
       if (falhadas[slug] || typeof fetch !== 'function') {
         mostra(area);
         return;
       }
-      /* UMA REGIÃO CRESCE, E NÃO NAVEGA. A porta do lugar do nome é que abre a
+      /* UMA UNIDADE CRESCE, E NÃO NAVEGA. A porta do lugar do nome é que abre a
          página dela, e ficou lá com o nome no mesmo gesto. */
       ev.preventDefault();
       mostra(area);
       abre(slug, area.getAttribute('data-ficheiro'), function (dados) {
-        paraARegiao(slug, dados, doTeclado);
-        history.pushState(null, '', location.pathname + location.search + '#regiao=' + slug);
+        paraAUnidade(slug, dados, doTeclado);
+        history.pushState(null, '', location.pathname + location.search + '#unidade=' + slug);
       });
       return;
     }
@@ -394,7 +401,7 @@
   });
 
   /* O TECLADO NÃO PRECISA DE OUVINTE NENHUM: o Enter sobre uma ligação com foco
-     dispara um clique, e o clique é o que está escrito acima. Numa região faz o
+     dispara um clique, e o clique é o que está escrito acima. Numa unidade faz o
      que o toque faz, que é crescer; num concelho, onde o foco já pôs o nome no
      lugar, segue a ligação, que é o que o navegador faz sozinho. */
 
