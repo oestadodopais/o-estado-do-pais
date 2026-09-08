@@ -589,11 +589,17 @@ const metodoPath = routePath('metodo', lang);
   <!-- ===================================================== CAMADA 1 — RELANCE -->
   <section id="relance" aria-labelledby="relance-k">
     <div class="sec-head">
-      {/* «Relance» é o título desta secção, e não só uma sobrancelha: as sete
-          medidas por baixo são `h3`, e sem um `h2` aqui o sumário de
-          cabeçalhos saltava de h1 para h3. O nível passa a existir; o desenho
-          é o mesmo, medido. */}
-      <h2 class="eyebrow" id="relance-k">{s.municipio.relanceK}</h2>
+      {/* O TÍTULO DESTA SECÇÃO DIZ O QUE ELA TEM (bloco F1.10, itens 8.14 e
+          §1.98). Dizia «Relance», que é o nome de uma DENSIDADE de um cartão e
+          não o nome de um conteúdo: o diretor viu-o a 07.09 à noite («we click
+          one and the other, and in one we don't have any content whatsoever»), e
+          a decisão tira as duas palavras das páginas do leitor. O que está por
+          baixo são as medidas do concelho, e é isso que o título diz.
+
+          O `h2` FICA, e a razão de 21.08 continua de pé: as medidas por baixo são
+          `h3`, e sem um `h2` aqui o sumário de cabeçalhos saltava de h1 para h3.
+          O que muda é a cadeia; o desenho é o mesmo. */}
+      <h2 class="eyebrow" id="relance-k">{s.secoes.medidas}</h2>
       {/* AS CONTAGENS POR EXTENSO SAÍRAM (direção, 21.08.2026, tarde;
           `DECISIONS.md` §4 item Q). Diziam «Oito medidas. Seis vêm de organismos
           que publicam para todos os concelhos do país; duas só existem porque o
@@ -676,7 +682,11 @@ const metodoPath = routePath('metodo', lang);
           dito nas oito peças). */}
       {(m.leitura || temDistancia || barraGanho) && (
       <section class="linha-bloco" aria-labelledby="breve">
-        <h2 class="linha-bloco-titulo" id="breve">{s.municipio.breveK}</h2>
+        {/* O TÍTULO DIZ O QUE A SECÇÃO TEM (bloco F1.10, item 8.14). Dizia
+            «Leitura breve» / «Brief reading», que é o nome de uma densidade de
+            um cartão e não o nome de um conteúdo. `secoes.leitura` é a cadeia
+            que a §1.98 declarou para este título, a mesma em todas as camadas. */}
+        <h2 class="linha-bloco-titulo" id="breve">{s.secoes.leitura}</h2>
         {/* A SUB-LINHA DA LEITURA BREVE SAIU (Emenda 15; mesma decisão de
             21.08.2026 que tirou a do Relance). Dizia «Uma frase por medida.
             Todos os números são citações do livro-razão.» — a segunda metade é o
@@ -862,7 +872,9 @@ const metodoPath = routePath('metodo', lang);
         <div class="instr" data-instrumento="mandatos">
           <div class="instr-top">
             <!-- CAMADA 1 do instrumento -->
-            <p class="layer-tag">{s.municipio.relanceK}</p>
+            {/* O rótulo da camada de um instrumento é o nome do que ela mostra
+                (item 8.14): «Relance» sai das páginas do leitor. */}
+            <p class="layer-tag">{s.secoes.medidas}</p>
             {/* O PAR «242,6 → 105,5» (bloco B, item B9; achado C2).
                 A 390 e a 1280 o par não cabe numa linha, e o que se via era a
                 seta pendurada no fim da primeira linha (medido: a seta a
@@ -896,7 +908,8 @@ const metodoPath = routePath('metodo', lang);
             </div>
 
             <!-- CAMADA 2 do instrumento: uma frase, e a distância desenhada -->
-            <p class="layer-tag">{s.municipio.breveK}</p>
+            {/* O rótulo da camada diz o que ela mostra (item 8.14). */}
+            <p class="layer-tag">{s.secoes.leitura}</p>
             <p class="deep-v" style="margin:6px 0 12px">
               <Frase partes={indiceSeriePartes} lang={lang} selos={true} />
             </p>

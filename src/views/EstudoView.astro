@@ -196,7 +196,10 @@ const jsonld = {
     leitura && (
       <div class="leitura">
         <div class="leitura-topo">
-          <p class="layer-tag">{s.estudos.leituraRelanceK}</p>
+          {/* O rótulo da camada diz o que ela mostra (bloco F1.10, item 8.14):
+              «Relance» é o nome de uma densidade de um cartão, e sai das páginas
+              do leitor. */}
+          <p class="layer-tag">{s.secoes.medidas}</p>
           <div class="leitura-medidas">
             {leitura.medidas.map((med) => (
               <div class="leitura-medida">
@@ -230,7 +233,8 @@ const jsonld = {
               que nada existe para mostrar diligência. Que a frase é da casa
               continua conferível onde é prova: cada número dela leva selo, e uma
               descrição transcrita leva `data-verbatim`. */}
-          <p class="layer-tag">{s.estudos.leituraBreveK}</p>
+          {/* O mesmo, na camada de baixo (item 8.14). */}
+          <p class="layer-tag">{s.secoes.leitura}</p>
           <p class="leitura-frase"><Frase partes={leitura.frase[lang]} lang={lang} selos={true} /></p>
         </div>
 

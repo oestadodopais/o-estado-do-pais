@@ -94,8 +94,10 @@ const TETOS = {
      exceções e das duas famílias de transcrição. */
   l3_vocabulario: 51,
   /* L4 · falhas: uma frase de definição ou de hierarquia que não está a 1 onde
-     o §2 do brief a manda estar. */
-  l4_falhas: 10,
+     o §2 do brief a manda estar. DESCE DE 10 PARA 0 a 08.09.2026: as cinco
+     frases de hierarquia passaram a render-se nos cinco índices, nas duas
+     edições, e a de definição já estava a 1 na primeira página. */
+  l4_falhas: 0,
   /* L5 · páginas abaixo da primeira sem caminho no cabeçalho.
      SOBE DE 7 211 PARA 7 213 a 08.09.2026, e a razão é a única que faz um teto
      subir: o sítio ganhou DUAS PÁGINAS («Portugal na União Europeia» nas duas
@@ -112,8 +114,12 @@ const TETOS = {
   d88_livro_razao: 24177,
   /* 8.13 · valores selados na secção dos domínios da primeira página. */
   d813_selos_nos_dominios: 0,
-  /* 8.14 · «Relance» e «Leitura breve» nas páginas do leitor. */
-  d814_densidades: 1300,
+  /* 8.14 · «Relance» e «Leitura breve» nas páginas do leitor. DESCE DE 1 304
+     PARA 0 a 08.09.2026: o comando de densidade saiu da primeira página e os
+     seis títulos de secção e rótulos de camada que usavam as duas palavras
+     passaram a dizer o que a secção tem. As quatro linhas do inventário da voz
+     passaram a «retirada» com a razão escrita. */
+  d814_densidades: 0,
 };
 
 /* Quantos concelhos ligados fora de uma lista fechada fazem uma segunda lista.

@@ -169,7 +169,7 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | conteudo | Algarve · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | conteudo | Algarve · região | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | navegacao | As regiões publicadas na régua da convergência. | grelha-2 | retirada | a régua da convergência saiu da primeira página até haver a página das regiões (Emenda 18, consequência decidida a 25.08; bloco A da auditoria de UI e UX, `696b51a`) |
-| navegacao | At a glance | até 2026-08-26 | viva | — |
+| navegacao | At a glance | até 2026-08-26 | retirada | as duas palavras da densidade de um cartão saem das páginas do leitor (bloco F1.10, item 8.14, 08.09.2026): o diretor viu a 07.09 à noite que o comando «Relance · Leitura breve» mostrava, num estado, cabeçalhos com explicações e nada, e no outro as vinte e uma leituras de uma vez. O comando saiu da primeira página e os títulos de secção que as usavam passaram a dizer o que a secção tem («As medidas», «A leitura de cada medida»), que são as cadeias que a `DECISIONS.md` §1.98 declarou. O termo continua a existir na decisão e no brief; o que sai é a superfície |
 | navegacao | Portugal na União Europeia | lugar | viva | — |
 | navegacao | Portugal in the European Union | lugar | viva | — |
 | conteudo | Os dois quadros da União Europeia que medem Portugal: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu, cada uma com a sua linha. | lugar | viva | — |
@@ -180,7 +180,7 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | conteudo | no verified measures yet | lugar | viva | — |
 | conteudo | as medidas estão em | lugar | viva | — |
 | conteudo | the measures are in | lugar | viva | — |
-| navegacao | Brief reading | até 2026-08-26 | viva | — |
+| navegacao | Brief reading | até 2026-08-26 | retirada | as duas palavras da densidade de um cartão saem das páginas do leitor (bloco F1.10, item 8.14, 08.09.2026): o diretor viu a 07.09 à noite que o comando «Relance · Leitura breve» mostrava, num estado, cabeçalhos com explicações e nada, e no outro as vinte e uma leituras de uma vez. O comando saiu da primeira página e os títulos de secção que as usavam passaram a dizer o que a secção tem («As medidas», «A leitura de cada medida»), que são as cadeias que a `DECISIONS.md` §1.98 declarou. O termo continua a existir na decisão e no brief; o que sai é a superfície |
 | conteudo | concelhos · CAOP | frases | viva | — |
 | conteudo | Custo do trabalho por unidade produzida, por hora trabalhada. | frases | viva | — |
 | conteudo | Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu, e a descer. | frases | retirada | o F0.9 tirou «e a descer» a 03.09.2026: era uma tendência, e o livro-razão publica um só valor deste indicador (`grep -rl tipsgo10 ledger/claims/` devolve um ficheiro, o de 2025). Uma tendência volta em F3.1, tipada, com a linha do período anterior ao lado, e não com estas palavras |
@@ -196,7 +196,7 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | conteudo | Índice nominal de preços da habitação. | frases | viva | — |
 | conteudo | Jovens que deixaram a escola com o secundário incompleto e não estão em formação. | frases | viva | — |
 | conteudo | Labour cost per unit of output, per hour worked. | frases | viva | — |
-| navegacao | Leitura breve | até 2026-08-26 | viva | — |
+| navegacao | Leitura breve | até 2026-08-26 | retirada | as duas palavras da densidade de um cartão saem das páginas do leitor (bloco F1.10, item 8.14, 08.09.2026): o diretor viu a 07.09 à noite que o comando «Relance · Leitura breve» mostrava, num estado, cabeçalhos com explicações e nada, e no outro as vinte e uma leituras de uma vez. O comando saiu da primeira página e os títulos de secção que as usavam passaram a dizer o que a secção tem («As medidas», «A leitura de cada medida»), que são as cadeias que a `DECISIONS.md` §1.98 declarou. O termo continua a existir na decisão e no brief; o que sai é a superfície |
 | conteudo | limiar % · abaixo | frases | viva | — |
 | conteudo | limiar % · acima | frases | viva | — |
 | conteudo | limiar − % · abaixo | frases | viva | — |
@@ -223,7 +223,7 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | conteudo | Portugal · país | até 2026-08-26 | retirada | o F1.1 tirou o rótulo do âmbito da cabeça do PAÍS a 03.09.2026: dizia o nome do lugar e o tipo dele por cima de uma manchete que começa pela mesma palavra («Portugal ultrapassa…»), custava uma fila do primeiro ecrã do telemóvel, e era o eco do comando de âmbito, que saiu da página no mesmo bloco. O rótulo fica onde separa alguma coisa: nas páginas de região e de concelho, onde o tipo do lugar não está na manchete |
 | conteudo | Proporção das pessoas dos aos anos com emprego. | leitura | viva | — |
 | conteudo | Proporção que gasta mais de % do rendimento disponível em habitação. | frases | viva | — |
-| navegacao | Relance | até 2026-08-26 | viva | — |
+| navegacao | Relance | até 2026-08-26 | retirada | as duas palavras da densidade de um cartão saem das páginas do leitor (bloco F1.10, item 8.14, 08.09.2026): o diretor viu a 07.09 à noite que o comando «Relance · Leitura breve» mostrava, num estado, cabeçalhos com explicações e nada, e no outro as vinte e uma leituras de uma vez. O comando saiu da primeira página e os títulos de secção que as usavam passaram a dizer o que a secção tem («As medidas», «A leitura de cada medida»), que são as cadeias que a `DECISIONS.md` §1.98 declarou. O termo continua a existir na decisão e no brief; o que sai é a superfície |
 | conteudo | Setúbal Peninsula · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | conteudo | The convergence rule | regioes | viva | — |
 | conteudo | The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 average. A value below the average means less purchasing power per person; a value above it, more. | regioes | viva | — |
@@ -1283,6 +1283,14 @@ lhes mexeu no número.*
 | conteudo | região NUTS II | regioes | viva | — |
 | conteudo | NUTS II region | regioes | viva | — |
 | conteudo | As medidas | regioes | viva | — |
+| navegacao | O país lê-se em quatro níveis: país, região NUTS II, distrito ou ilha, concelho. | lugar | viva | — |
+| navegacao | The country is read at four levels: country, NUTS II region, district or island, municipality. | lugar | viva | — |
+| navegacao | Um domínio é um assunto da carta dos conteúdos; uma área de governo é um ministério. | lugar | viva | — |
+| navegacao | A domain is a subject from the content charter; a government area is a ministry. | lugar | viva | — |
+| navegacao | Uma área de governo é um ministério; um domínio é um assunto da carta dos conteúdos. | lugar | viva | — |
+| navegacao | A government area is a ministry; a domain is a subject from the content charter. | lugar | viva | — |
+| conteudo | A leitura de cada medida | lugar | viva | — |
+| conteudo | The reading of each measure | lugar | viva | — |
 | conteudo | The measures | regioes | viva | — |
 | conteudo | regiões com linhas publicadas no livro-razão | regioes | retirada | a frase falava da cobertura da casa e não do que conta («com linhas publicadas», «no livro-razão»), e a Emenda 15 manda a autorreferência a zero numa página do leitor; fica o número e o que ele conta (leitura cruzada do Codex, 28.08.2026) |
 | conteudo | regions with rows published in the ledger | regioes | retirada | a frase falava da cobertura da casa e não do que conta («com linhas publicadas», «no livro-razão»), e a Emenda 15 manda a autorreferência a zero numa página do leitor; fica o número e o que ele conta (leitura cruzada do Codex, 28.08.2026) |

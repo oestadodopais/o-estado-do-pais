@@ -7,7 +7,7 @@ deste relatório foi escrito à mão: cada um tem ao lado o comando que o mediu.
 
 ---
 
-## Estado · 08.09.2026, 08:00 UTC · a régua, a página europeia e o índice dos domínios
+## Estado · 08.09.2026, 08:56 UTC · a régua, a página europeia, o índice dos domínios, o vocabulário das secções e as frases de hierarquia
 
 | | |
 |---|---|
@@ -15,8 +15,8 @@ deste relatório foi escrito à mão: cada um tem ao lado o comando que o mediu.
 | `main` fundido | `43f4b52a`, na fusão `47d957f6` |
 | `build` · `verify` · `typecheck` | **0** · **0** · **0** (códigos lidos de `build.exit`, `verify.exit`, `typecheck.exit`) |
 | a régua do bloco | `scripts/check-lugar.mjs`, no `verify`, **7,84 s** (`/usr/bin/time -p node scripts/check-lugar.mjs`) |
-| feito | a régua (encargo (b)); **8.16** (a página «Portugal na União Europeia», a faixa da primeira página com as medidas de cabeça do domínio vivo); **8.13** (a secção dos domínios passa a índice, 0 valores selados); **8.12** (em repouso só a linha do toque; o cabeçalho e o contexto de um painel só junto de uma leitura dele); **metade de 8.14** (o comando de densidade saiu da primeira página) |
-| a seguir | o resto de 8.14 (as duas palavras nas páginas do concelho e do domínio), 8.4 e 8.5, 8.15, 8.11; depois o menu e o rodapé (8.9, 8.8, §7.5) |
+| feito | a régua (encargo (b)); **8.16** (a página «Portugal na União Europeia», a faixa da primeira página com as medidas de cabeça do domínio vivo); **8.13** (a secção dos domínios passa a índice, 0 valores selados); **8.12** (em repouso só a linha do toque; o cabeçalho e o contexto de um painel só junto de uma leitura dele); **8.14 inteiro** (o comando de densidade fora e as duas palavras a 0 nas páginas do leitor); **§2.2** (as cinco frases de hierarquia nos cinco índices) |
+| a seguir | o menu e o rodapé (8.9, 8.8, §7.5); depois 8.4 e 8.5, 8.15, 8.11, e as páginas |
 
 ---
 
@@ -36,7 +36,7 @@ mais de oito abaixo dele**, porque um teto com folga a mais é uma régua a dorm
 | L2b · réguas inteiras da convergência fora de `/regioes` | 18 | 18 (por fazer) | idem |
 | L2c · sinopses de estudo fora de `/estudos` | 10 (5 em `/municipios/evora`, 5 na inglesa) | 10 (por fazer) | idem |
 | L3 · palavras fora do vocabulário fechado, no texto da casa | 51 | 51 (por fazer) | idem |
-| L4 · frases de definição e de hierarquia em falta | 10 (as cinco de hierarquia × 2 edições; a de definição já está a 1) | 10 (por fazer) | idem |
+| L4 · frases de definição e de hierarquia em falta | 10 (as cinco de hierarquia × 2 edições; a de definição já está a 1) | **0** · feito | idem |
 | L5 · páginas abaixo da primeira sem caminho no cabeçalho | 7 211 | **7 213** (+2: as duas páginas novas) | idem |
 | L6 · selos cuja etiqueta não é o publicador da linha | 26 168 | **26 174** (+6: as duas páginas novas) | idem |
 | L7 · a releitura do leitor de primeira vez | é do lugar de direção | — | a leitura do Codex |
@@ -45,7 +45,7 @@ mais de oito abaixo dele**, porque um teto com folga a mais é uma régua a dorm
 | 8.5 · blocos com «limiar» sem o qualificador nem a frase ao lado | 706 | **708** (+2: as duas páginas novas) | idem |
 | 8.8 · «livro-razão» nos menus, nos rodapés e nos títulos | 24 172 | **24 177** (+5: as duas páginas novas) | idem |
 | 8.13 · valores selados na secção dos domínios de `/` | 4 (2 por edição) | **0** · feito | idem |
-| 8.14 · «Relance» e «Leitura breve» nas páginas do leitor | 1 304 (325 + 327 por edição) | **1 300** (−4: o comando de densidade saiu de `/` e de `/en`) | idem |
+| 8.14 · «Relance» e «Leitura breve» nas páginas do leitor | 1 304 (325 + 327 por edição) | **0** · feito | idem |
 
 **O conhecido-positivo da L9 já correu, e a régua viu-o.** Com dois estragos
 plantados no `dist/` (`<p>O município de Évora.</p>` e
@@ -143,6 +143,33 @@ diz-se:** `inicio.js` ainda tem a máquina de estado da densidade
 (`?densidade=`), que nenhuma marca da primeira página acende. Sai com o resto da
 8.14, junto com as células da matriz que a medem, para que a régua e o guião
 saiam no mesmo commit.
+
+
+### 8.14 (o resto) e §2.2 · as duas palavras saem, e as frases de hierarquia entram
+
+**«Relance» e «Leitura breve» a 0 nas páginas do leitor**, medido (1 304 antes, 0
+depois). Eram seis superfícies, e as seis passaram a dizer o que a secção tem, com
+as duas cadeias que a §1.98 declarou (`secoes.medidas`, `secoes.leitura`):
+
+```
+src/views/MunicipioView.astro          o «h2» do relance, o do «breve» e dois rótulos de camada
+src/views/DominioView.astro            o «h2» da secção das leituras
+src/views/EstudoView.astro             os dois rótulos de camada da leitura de um estudo
+src/components/InstrumentoConvergencia.astro  os dois rótulos de camada, que eram as duas
+                                       únicas cadeias visíveis deste componente escritas à
+                                       mão fora de `strings.mjs` (achado B.4.1)
+```
+
+As quatro linhas do inventário da voz («Relance», «Leitura breve», «At a glance»,
+«Brief reading») passaram a `retirada` com a razão escrita. O termo continua a
+existir na decisão e no brief: o que sai é a superfície.
+
+**As cinco frases de hierarquia rendem-se nos cinco índices** (`/municipios`,
+`/distritos`, `/regioes`, `/dominios`, `/areas`), uma vez cada, nas duas edições:
+a L4 desce de 10 para 0. A frase do território **pára nos quatro níveis**, e é a
+decisão medida da primeira sessão: o repositório não tem correspondência nenhuma
+entre as 29 unidades da Carta e as 9 regiões NUTS II, e uma afirmação sobre a
+sobreposição das duas divisões não resolve em dado nenhum desta árvore.
 
 ---
 
