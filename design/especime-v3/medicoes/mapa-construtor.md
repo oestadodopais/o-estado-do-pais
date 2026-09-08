@@ -264,12 +264,26 @@ claro duas vezes, e a régua põe o atributo.*
 
 | portão | comando | saída | hora UTC |
 | --- | --- | --- | --- |
-| construção | `npm run build > /tmp/f11d-build.log 2>&1; echo "build $?"` | 0 | 08.09, 23:27:39 |
-| tipos | `npm run typecheck > /tmp/f11d-typecheck.log 2>&1; echo "typecheck $?"` | 0 | 08.09, 23:27:39 |
-| verificação | `npm run verify > /tmp/f11d-verify.log 2>&1; echo "verify $?"` | 0 | 08.09, 23:34:12 |
+| construção | `npm run build > /tmp/f11d-build.log 2>&1; echo "build $?"` | 0 | 08.09, 00:32:18 UTC |
+| tipos | `npm run typecheck > /tmp/f11d-typecheck.log 2>&1; echo "typecheck $?"` | 0 | 08.09, 00:32:18 UTC |
+| verificação | `npm run verify > /tmp/f11d-verify.log 2>&1; echo "verify $?"` | 0 | 08.09, 00:38:42 UTC |
 
-*As mesmas três correram verdes três vezes ao longo do bloco, e estas são as da
-árvore final. As corridas do portão do GitHub em cada empurrão estão no fim.*
+*As horas são UTC, e o relógio da máquina anda uma hora à frente (WEST). As
+mesmas três correram verdes cinco vezes ao longo do bloco, e estas são as da
+árvore final.*
+
+**As corridas do portão do GitHub**, uma por empurrão, todas em
+`oestadodopais/o-estado-do-pais`, ramo `mapa-2026-09-07`:
+
+| corrida | commit | estado |
+| --- | --- | --- |
+| 34158597653 | `4f48283d` a geometria | verde |
+| 34165392815 | `a4283021` os dois níveis | verde |
+| 34167777812 | `08788742` o lugar do nome no distrito | verde |
+| 34169496408 | `53fcda09` o relatório | cancelada pelo empurrão seguinte |
+| 34170522631 | `21834314` o conserto do WebKit | verde |
+| 34171768865 | `2e1b1b52` a medida do nível intermédio | verde |
+| a última | o commit deste relatório | a correr ao fechar o bloco |
 
 ### P9 · as plantas
 
