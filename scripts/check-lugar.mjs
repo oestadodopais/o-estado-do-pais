@@ -134,16 +134,21 @@ const TETOS = {
      existe, e a medida fecha em 0. */
   l5_sem_caminho: 0,
   /* L6 · selos cuja etiqueta não é o publicador da linha.
-     SOBE DE 26 174 PARA 26 178 a 08.09.2026, e a razão escreve-se porque um teto
-     que sobe tem sempre de a ter: a manchete da primeira página passou a citar
-     DUAS LINHAS (a dívida pública e a taxa de desemprego, decisão do lugar de
-     direção pelos itens 8.15 e 8.16), e cada valor selado leva o seu selo. São
-     quatro selos novos, dois por edição, com a MESMA etiqueta errada que os
-     outros 26 174: o selo diz o nome do estudo e não o publicador da linha.
-     Nenhuma etiqueta antiga mudou, e nenhum selo antigo piorou: o que aumentou
-     foi o número de sítios onde a dívida da §2.4 se lê. Esta medida desce a 0 no
-     item «"fonte" diz o publicador», que é o que ela existe para medir. */
-  l6_selos: 26178,
+     DESCE DE 26 178 PARA 0 a 09.09.2026, com o item 5 do encargo (§2.4 e §7.2 do
+     brief): a etiqueta do selo deixa de ser o nome do TRABALHO em que a casa leu
+     a linha e passa a ser o nome do PUBLICADOR dela, o campo `source`. Uma linha
+     calculada não tem publicador e a etiqueta di-lo com a palavra que já dizia
+     («calculado»); as cinco linhas cujo publicador é a própria casa levam a
+     palavra «linha» em vez de «fonte», que é o que a §2.4 escreve à letra.
+     `scripts/gate-html.mjs` compõe a mesma cadeia do registo e compara-a
+     carácter a carácter, e o rótulo do campo na página da linha passou a
+     «Publicado por», que é a segunda metade do §7.2.
+
+     O POSITIVO CONHECIDO desta medida está na sua própria história: contou
+     26 168, 26 174 e 26 178 em construções deste ramo, com a amostra impressa
+     («o selo diz "Quadro institucional de indicadores" e o publicador é
+     "Eurostat"»), antes de descer a 0. */
+  l6_selos: 0,
   /* 8.5 · blocos com «limiar» sem o qualificador nem a frase ao lado.
      DESCE DE 708 PARA 0 a 08.09.2026, com o item 8.5: cada medida com limiar
      declara quem o fixou (`limiarFixadoPor`, lista fechada em

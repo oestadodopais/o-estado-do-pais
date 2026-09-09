@@ -3309,18 +3309,42 @@ function seloDaLinha(id, lang) {
   const claim = claims.get(id);
   if (!claim) return null;
   const s = t(lang);
-  const trabalho = studyLabel(claim.study, lang);
+  /* A ETIQUETA DIZ O PUBLICADOR (F1.10, §2.4, 09.09.2026), e não o trabalho em
+     que a casa leu a linha. A composição é a de `Provenance.astro`, escrita aqui
+     de novo porque é isso que uma comparação é: o portão não importa o gabarito,
+     compõe do livro-razão a cadeia que espera e compara-a com a que a página
+     rende. Uma linha sem publicador é uma linha calculada, e a etiqueta dela é a
+     palavra que já dizia. */
+  const publicador = typeof claim.source === 'string' ? claim.source : null;
+  const porConfirmar = publicador === POR_VERIFICAR;
+  const conhecido = publicador !== null && !porConfirmar;
   const calculado = eDerivada(claim) ? `${s.prov.calculado} · ` : '';
   /* Sem espaço antes do marcador: o gabarito põe-no no elemento a seguir e o
      DOM não traz espaço nenhum entre os dois, e é o DOM que o leitor vê. */
   const marcador = provenienciaIncompleta(claim) ? POR_VERIFICAR : '';
-  const etiqueta = normalizeWhitespace(`${calculado}${trabalho}`);
+  const etiqueta = normalizeWhitespace(
+    conhecido ? `${calculado}${publicador}` : porConfirmar ? POR_VERIFICAR : s.prov.calculado,
+  );
+  /* E ONDE O PUBLICADOR É A CASA, a palavra do selo é «linha» e não «fonte»: são
+     as cinco linhas cujo `source` é o nome deste sítio, e o §2.4 escreve-o à
+     letra. A comparação da palavra visível segue a mesma regra. */
+  const palavra = publicador === SITE_NAME ? s.prov.seloDaCasa : s.prov.selo;
+  /* UM PUBLICADOR POR CONFIRMAR NÃO SE ESCREVE DUAS VEZES: a etiqueta declara o
+     marcador, porque é o que o campo tem, e o texto do selo não o repete ao lado
+     do que a proveniência incompleta já lhe põe. */
   return {
     etiqueta,
-    palavra: s.prov.selo,
-    visivel: normalizeWhitespace(`${s.prov.selo}${marcador}`),
-    inteiro: normalizeWhitespace(`${s.prov.selo} · ${etiqueta}${marcador}`),
+    palavra,
+    visivel: normalizeWhitespace(`${palavra}${marcador}`),
+    inteiro: normalizeWhitespace(
+      porConfirmar ? `${palavra}${marcador}` : `${palavra} · ${etiqueta}${marcador}`,
+    ),
   };
+}
+
+/** A porta de um selo, sem o fragmento: é a chave de `LINHA_POR_PORTA`. */
+function portaDoSelo(el) {
+  return decodeEntities(el.getAttribute('href') ?? '').split('#')[0];
 }
 
 /**
@@ -6595,6 +6619,26 @@ for (const file of ficheirosHtml(DIST)) {
          O que conta um uso é o motivo a fazer o seu trabalho: haver um algarismo
          no elemento que ele isenta. */
       usou(USOS.contextos, motivo);
+    } else if (motivo === 'proveniencia' && LINHA_POR_PORTA.has(portaDoSelo(el))) {
+      /* E O SELO DEIXOU DE TER ALGARISMOS (F1.10, §2.4, 09.09.2026), sem deixar
+         de dispensar. A etiqueta era o nome do TRABALHO («Avaliação Económica
+         Regional de Portugal 2026») e passou a ser o do PUBLICADOR («Eurostat»,
+         «Direção-Geral das Autarquias Locais (DGAL)»): nenhum dos dezanove
+         publicadores do livro-razão tem um algarismo no nome, e o contador dos
+         algarismos foi a zero num motivo que continua a fazer trabalho a sério.
+
+         O QUE ELE DISPENSA HOJE é um NOME transcrito do livro-razão do
+         varrimento da ortografia: um publicador chama-se «CICF/IPCA — Anuário
+         Financeiro dos Municípios Portugueses», com o travessão que a fonte lhe
+         deu, e a casa não edita o que transcreve.
+
+         E O QUE CONTA UM USO CONTINUA A SER O MOTIVO A FAZER O SEU TRABALHO,
+         medido de uma maneira mais forte do que a dispensa: o selo cuja porta
+         resolve numa linha do livro-razão é comparado, três parágrafos abaixo,
+         carácter a carácter com a etiqueta que o registo escreve. Uma marca
+         inerte não passa por aqui, porque uma marca inerte não tem porta para
+         linha nenhuma. */
+      usou(USOS.contextos, motivo);
     }
     /**
      * `proveniencia` deixa de ser uma dispensa e passa a ser uma comparação.
@@ -6614,8 +6658,7 @@ for (const file of ficheirosHtml(DIST)) {
          (IDENTIDADE.md §5.3 e §10, v2; `design/DECISAO.md`, «abertura do
          recibo»). O fragmento não muda de que linha o selo é porta, e é isso
          que esta comparação verifica. */
-      const porta = decodeEntities(el.getAttribute('href') ?? '').split('#')[0];
-      const alvo = LINHA_POR_PORTA.get(porta);
+      const alvo = LINHA_POR_PORTA.get(portaDoSelo(el));
       if (alvo) {
         const selo = seloDaLinha(alvo.id, alvo.lang);
         const declarada = el.getAttribute('data-selo-etiqueta');

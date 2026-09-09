@@ -64,7 +64,8 @@
  */
 import { getClaim, provenienciaIncompleta, eDerivada, POR_VERIFICAR } from '../lib/ledger.mjs';
 import { caminhoDaLinha } from '../lib/livro.mjs';
-import { studyLabel, linguaDoTitulo } from '../data/studies.mjs';
+import { linguaDaFonte } from '../i18n/lingua-dos-titulos.mjs';
+import { SITE_NAME } from '../../site.config.mjs';
 import { t } from '../i18n/strings.mjs';
 
 const { id, lang, ancora = null } = Astro.props;
@@ -106,21 +107,68 @@ const porta = `${caminhoDaLinha(id, lang)}${ancora ?? ''}`;
 
 const derivada = eDerivada(claim);
 const incompleta = provenienciaIncompleta(claim);
-const estudo = studyLabel(claim.study, lang);
+
+/**
+ * ---------------------------------------------------------------------------
+ * A ETIQUETA DIZ O PUBLICADOR, E NÃO O ESTUDO (F1.10, §2.4, 09.09.2026)
+ * ---------------------------------------------------------------------------
+ * «"fonte" diz sempre o publicador da linha (o `source` da linha), nunca um
+ * estudo intermediário nem "Quadro institucional".» Até aqui a etiqueta era o
+ * nome do TRABALHO em que a linha foi lida, e a régua L6 do bloco contou 26 178
+ * selos a dizer «Évora — Quinze Anos, Cinco Mandatos» por cima de um número
+ * publicado pela Secretaria-Geral do Ministério da Administração Interna, e
+ * «Quadro institucional de indicadores» por cima de um número do Eurostat. O
+ * estudo é onde a casa leu; a fonte é quem publicou, e é isso que a palavra
+ * promete.
+ *
+ * O ESTUDO NÃO SE PERDE: continua a ser um campo da linha, com o seu rótulo, na
+ * página dela, que é a página inteira daquela evidência (§1 do brief).
+ *
+ * UMA LINHA CALCULADA NÃO TEM PUBLICADOR, e a etiqueta di-lo com a palavra que
+ * já dizia: «calculado». São as 329 linhas derivadas do livro-razão, todas sem
+ * `source`, e a única derivada COM publicador leva as duas coisas, por esta
+ * ordem, porque as duas são verdade sobre ela.
+ *
+ * E ONDE O PUBLICADOR É A CASA, o selo não diz «fonte»: diz «linha». São cinco
+ * linhas (as contagens do arquivo e do registo de correções), e o §2.4 escreve-o
+ * à letra. A etiqueta continua a nomear o publicador, porque é ele, e a porta
+ * continua a abrir a linha, que é onde a proveniência se lê.
+ */
+const publicador = typeof claim.source === 'string' ? claim.source : null;
+const daCasa = publicador === SITE_NAME;
+const palavraDoSelo = daCasa ? s.prov.seloDaCasa : s.prov.selo;
+
+/**
+ * E UM PUBLICADOR POR CONFIRMAR NÃO SE ESCREVE DUAS VEZES. Três linhas declaram
+ * o marcador no campo `source`, e o selo dessas já diz o que há para dizer: a
+ * palavra e o marcador, que é o mesmo marcador que a proveniência incompleta lhe
+ * põe no fim. A etiqueta declara-o (é o que o livro-razão escreve naquele campo),
+ * e o texto oculto não o repete: «fonte[a verificar]» e não «fonte · [a
+ * verificar][a verificar]».
+ */
+const porConfirmar = publicador === POR_VERIFICAR;
+const conhecido = publicador !== null && !porConfirmar;
 
 /* A etiqueta desta linha, e é uma cadeia só: é ela que vai no atributo, no
    `title` e no texto oculto, e é ela que o portão reconstrói do livro-razão. */
-const etiqueta = `${derivada ? `${s.prov.calculado} · ` : ''}${estudo}`;
+const etiqueta = conhecido
+  ? `${derivada ? `${s.prov.calculado} · ` : ''}${publicador}`
+  : porConfirmar
+    ? POR_VERIFICAR
+    : s.prov.calculado;
 
 /**
- * A LÍNGUA DO NOME DO TRABALHO, NO TEXTO QUE SÓ SE OUVE (I91, 29.08.2026).
+ * A LÍNGUA DO NOME, NO TEXTO QUE SÓ SE OUVE (I91, 29.08.2026; F1.10 §2.4).
  *
  * O texto oculto do selo repetia «Avaliação Económica Regional de Portugal 2026»
  * dentro de uma página inglesa, sem dizer em que língua está: 382 ocorrências
- * medidas em `dist/en`. À vista, o mesmo título já levava a marca há dois dias,
- * por `TituloDeTrabalho`; aqui não, porque o oculto é uma cadeia composta e não
- * um título sozinho. **Uma superfície não deixa de ser superfície por não se
+ * medidas em `dist/en`. **Uma superfície não deixa de ser superfície por não se
  * ver** — é ela que um leitor de ecrã lê, e é ele quem esta marca serve.
+ *
+ * O NOME MUDOU DE ESPÉCIE E A REGRA NÃO. Era o título de um trabalho e a tabela
+ * era a dos títulos; passa a ser o nome de um ORGANISMO, e a tabela é a das
+ * fontes (`LINGUA_DAS_FONTES`, a mesma que o campo `source` da página da linha
+ * já usa, e que `check:lingua` confere nos dois sentidos, L2c e L4d).
  *
  * SÓ O NOME LEVA A MARCA. A palavra «calculated» e o separador são prosa da casa
  * na língua da página, e marcá-los português era trocar um defeito por outro. O
@@ -131,7 +179,7 @@ const etiqueta = `${derivada ? `${s.prov.calculado} · ` : ''}${estudo}`;
  * O `title` e o `data-selo-etiqueta` levam a mesma cadeia e ficam como estão: um
  * atributo não tem onde pendurar uma marca de língua.
  */
-const linguaDoEstudo = linguaDoTitulo(estudo, lang);
+const linguaDoPublicador = conhecido ? linguaDaFonte(publicador, lang) : null;
 ---
 
 <a
@@ -162,7 +210,9 @@ const linguaDoEstudo = linguaDoTitulo(estudo, lang);
       edições, porque a palavra que abre o texto oculto passa a ser a mesma que
       o selo já escreve à vista.
       ---------------------------------------------------------------------- */}
-  <span class="src-chip-texto">{s.prov.selo}</span>
-  <span class="vh"> · {derivada && `${s.prov.calculado} · `}<span lang={linguaDoEstudo}>{estudo}</span></span>
+  <span class="src-chip-texto">{palavraDoSelo}</span>
+  {!porConfirmar && (
+    <span class="vh"> · {conhecido ? <>{derivada && `${s.prov.calculado} · `}<span lang={linguaDoPublicador}>{publicador}</span></> : s.prov.calculado}</span>
+  )}
   {incompleta && <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>}
 </a>

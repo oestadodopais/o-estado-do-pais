@@ -114,7 +114,13 @@ console.log('');
     }
     return marcas;
   });
-  const esperada = ['valor', 'selo', 'id', 'atribuicao', 'serie', 'prova', 'pedido', 'verificacoes', 'historico'];
+  /* O «SELO» SAIU DA ORDEM ESPERADA (F1.10, §7.2, 09.09.2026), e não é a régua a
+     ceder: o selo debaixo do número, que ligava a `#prova` na mesma página, saiu
+     da página da linha por decisão do brief («o selo "FONTE" é só a porta para a
+     linha; na página da linha, o selo debaixo do número sai»). Uma coisa que
+     deixou de existir tira-se da ordem, e o que a mediria passa a medir o FACTO
+     QUE A TIROU, na célula 5. */
+  const esperada = ['valor', 'id', 'atribuicao', 'serie', 'prova', 'pedido', 'verificacoes', 'historico'];
   conta(
     '3a · a ordem do recibo é a da §11',
     ordem.join(',') === esperada.join(','),
@@ -211,50 +217,66 @@ console.log('');
 {
   const p = await pagina();
   await p.goto(base + COMPLETA, { waitUntil: 'networkidle' });
-  const portas = await p.evaluate(() =>
-    [...document.querySelectorAll('.aparelho a[href]')].map((a) => a.getAttribute('href')),
-  );
+  /* A PORTA DAS CORREÇÕES MUDOU DE MARCO (F1.7, 04.09.2026), e esta célula ficou
+     a pedi-la onde ela já não está. O brief daquele bloco escreve porquê: «a
+     porta das correções vive no rodapé, e só lá», dentro do `contentinfo`, e não
+     num `<aside>` do meio da página, que não é marco nenhum. Uma célula cujo
+     objeto mudou de superfície MUDA DE PORTA e mantém a pergunta: as portas do
+     aparelho continuam a ser medidas onde vivem, e a das correções passa a ser
+     medida no rodapé, com a exigência acrescida de NÃO estar no aparelho, que é
+     o facto que a mudou. Medido a 09.09.2026, com o `dist/` deste ramo. */
+  const m = await p.evaluate(() => {
+    const href = (el) => el.getAttribute('href');
+    const rodape = document.querySelector('footer.rodape, [role="contentinfo"], footer');
+    return {
+      aparelho: [...document.querySelectorAll('.aparelho a[href]')].map(href),
+      correccoesNoRodape: rodape
+        ? [...rodape.querySelectorAll('a[href]')].map(href).filter((h) => h.startsWith('mailto:') || h === '/correcoes')
+        : [],
+    };
+  });
+  const portas = m.aparelho;
   const tem = (s) => portas.some((h) => h === s || h.startsWith(s));
+  const noAparelho = portas.filter((h) => h.startsWith('mailto:') || h === '/correcoes');
   conta(
-    '3a · o aparelho leva o JSON da linha, o conjunto, esta linha na outra edição e a porta das correções',
+    '3a · o aparelho leva o JSON da linha, o conjunto e esta linha na outra edição; a porta das correções vive no rodapé',
     tem('/livro-razao/divida-publica-2025.json') &&
       tem('/livro-razao.csv') &&
       tem('/livro-razao.json') &&
       tem('/en/ledger/divida-publica-2025') &&
-      tem('mailto:') &&
-      tem('/correcoes'),
-    portas.join(' · '),
+      noAparelho.length === 0 &&
+      m.correccoesNoRodape.length > 0,
+    `aparelho: ${portas.join(' · ')} · correções no aparelho: ${noAparelho.length} · ` +
+      `no rodapé: ${m.correccoesNoRodape.join(' · ') || '(nenhuma)'}`,
   );
   await p.__contexto.close();
 }
 
-/* 5 · O SELO DO VALOR DE CABEÇA, e o seu alvo. */
+/* 5 · O SELO DO VALOR DE CABEÇA SAIU, E É ISSO QUE ESTA CÉLULA MEDE.
+ *
+ * Media a porta do selo debaixo do número, o seu alvo de 44 px e a ausência de
+ * aninhamento. O objeto DEIXOU DE EXISTIR (F1.10, §7.2, 09.09.2026): a página da
+ * linha tinha duas coisas chamadas «fonte» — o selo e o campo `source` — e o
+ * brief tira a primeira, porque «uma porta para a divisão onde já se está é a
+ * única que não leva a lado nenhum».
+ *
+ * A REGRA DA CASA PARA UMA CÉLULA ASSIM está escrita em `tests/inicio/matriz.mjs`
+ * desde a Emenda 20: retira-se com a razão no lugar dela, e o que ela passa a
+ * medir é o FACTO QUE A RETIROU, nunca um sim vazio. O facto é este: zero selos
+ * na página de uma linha, e a porta da prova continua a existir como âncora do
+ * documento (é ela que o índice «Nesta página» e as outras portas usam). */
 {
   const p = await pagina();
   await p.goto(base + COMPLETA, { waitUntil: 'networkidle' });
-  const m = await p.evaluate(() => {
-    const selo = document.querySelector('.linha-selo .src-chip');
-    if (!selo) return null;
-    const r = selo.getBoundingClientRect();
-    const depois = getComputedStyle(selo, '::after');
-    let ancestral = selo.parentElement;
-    let aninhado = false;
-    while (ancestral) {
-      const tag = ancestral.tagName.toLowerCase();
-      if (tag === 'a' || tag === 'button') aninhado = true;
-      ancestral = ancestral.parentElement;
-    }
-    return {
-      href: selo.getAttribute('href'),
-      largura: Math.round(r.width * 10) / 10,
-      altura: Math.round(depois.height ? parseFloat(depois.height) : r.height),
-      aninhado,
-    };
-  });
+  const m = await p.evaluate(() => ({
+    selos: document.querySelectorAll('.src-chip').length,
+    seloNaCabeca: document.querySelectorAll('.linha-cabeca .src-chip').length,
+    ancoraDaProva: !!document.querySelector('#prova'),
+  }));
   conta(
-    '3a · o selo do valor de cabeça: âncora para o bloco da prova, alvo de 44px, sem aninhamento',
-    m && m.href === '/livro-razao/divida-publica-2025#prova' && m.altura >= 44 && !m.aninhado,
-    m ? `href ${m.href} · ${m.largura}×${m.altura}px · aninhado ${m.aninhado}` : '(sem selo)',
+    '3a · o selo saiu da página da linha (§7.2), e a âncora da prova ficou',
+    m.selos === 0 && m.seloNaCabeca === 0 && m.ancoraDaProva,
+    `${m.selos} selo(s) na página, ${m.seloNaCabeca} na cabeça · âncora #prova ${m.ancoraDaProva}`,
   );
   await p.__contexto.close();
 }
@@ -266,20 +288,22 @@ console.log('');
   const m = await p.evaluate(() => {
     const cabeca = document.querySelector('.linha-cabeca');
     const valor = document.querySelector('.linha-valor');
-    const selo = document.querySelector('.linha-selo');
     const id = document.querySelector('.linha-id');
     const r = (e) => e.getBoundingClientRect();
     return {
       alturaDoGrupo: Math.round(r(id).bottom - r(valor).top),
-      seloAbaixoDoValor: r(selo).top >= r(valor).bottom - 1,
+      idAbaixoDoValor: r(id).top >= r(valor).bottom - 1,
       grupoNaJanela: r(id).bottom <= window.innerHeight,
       larguraDaCabeca: Math.round(r(cabeca).width),
     };
   });
+  /* O SELO SAIU DO GRUPO com o §7.2 (ver a célula 5): o grupo da cabeça é hoje o
+     valor e o identificador, e a pergunta é a mesma — cabem os dois no primeiro
+     ecrã do telemóvel, pela ordem em que se leem. */
   conta(
-    '3a · 390: o valor, o selo e o id num só grupo visível',
-    m.seloAbaixoDoValor && m.grupoNaJanela,
-    `grupo de ${m.alturaDoGrupo}px · selo por baixo do valor ${m.seloAbaixoDoValor} · ` +
+    '3a · 390: o valor e o id num só grupo visível',
+    m.idAbaixoDoValor && m.grupoNaJanela,
+    `grupo de ${m.alturaDoGrupo}px · id por baixo do valor ${m.idAbaixoDoValor} · ` +
       `dentro da janela ${m.grupoNaJanela} · cabeça ${m.larguraDaCabeca}px`,
   );
   await p.__contexto.close();
@@ -395,7 +419,15 @@ const INDICE = '/livro-razao';
    * marca nova, para que a sua saída da lista não passe por «um campo a menos».
    */
   const NOMES = ['name', 'document.title'];
-  const COMPLETA_ORDEM = 'id,unit,source';
+  /* E A DATA DE LEITURA VOLTA À LISTA QUANDO ELA FALTA (medido a 09.09.2026,
+     nesta régua, que ninguém tinha corrido desde que a data saiu). A data saiu
+     de `data-linha-campo="access_date"` para `data-nonledger="data-da-linha"`
+     porque a forma da casa (dd.mm.aaaa) não cabe numa marca que exige a
+     transcrição literal do campo ISO — mas um campo POR CONFIRMAR não é uma
+     data: `CampoDaLinha` rende o marcador com a porta da sua página e com a
+     marca do campo, que é o que o portão compara. São quatro entradas das 149, e
+     a ordem delas continua a ser a mesma, com o campo em último. */
+  const COMPLETA_ORDEM = 'id,unit,source,access_date';
   const semNome = (o) => {
     const partes = o.split(',');
     return NOMES.includes(partes[0]) ? partes.slice(1).join(',') : o;

@@ -4863,7 +4863,7 @@ a.marcador::after {
  * O QUE FICOU EM `inicio.css` é o que é da primeira página: `.pesquisa-bloco`,
  * que é o mecanismo do comando de âmbito, e as regras presas a `[data-inicio]`.
  * ------------------------------------------------------------------------- */
-.pesquisa-rotulo {
+.busca-k {
   font-family: var(--f-versal);
   font-size: 13px;
   line-height: 1.4;
@@ -4933,7 +4933,7 @@ a.marcador::after {
   align-items: flex-start;
 }
 
-.pesquisa-campo {
+.busca-campo {
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;
   font-size: 15px;
@@ -4944,7 +4944,7 @@ a.marcador::after {
   width: min(340px, 100%);
   min-height: 44px;
 }
-.pesquisa-campo:focus {
+.busca-campo:focus {
   outline: 2px solid var(--focus);
   outline-offset: 2px;
 }

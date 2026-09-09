@@ -1,0 +1,106 @@
+---
+/**
+ * ---------------------------------------------------------------------------
+ * A BUSCA É UMA (F1.10, §2.6, 09.09.2026)
+ * ---------------------------------------------------------------------------
+ * «O campo da primeira página e o de `/municipios` são o mesmo componente; o
+ * índice do livro-razão tem o seu (F1.4), com o mesmo aspeto.» Este ficheiro é
+ * as duas metades dessa frase: é o componente que a primeira página e o índice
+ * dos 308 partilham, e é a única forma da caixa de busca do sítio, por isso o
+ * índice dos números tem o mesmo aspeto por construção e não por coincidência.
+ *
+ * O QUE ELE ERA, MEDIDO. `MunicipiosView.astro` repetia a marcação da peça
+ * `Pesquisa.astro` linha a linha (o formulário, o rótulo, a fila, o campo, o
+ * botão), porque a peça trazia consigo a fila dos 308 resultados e aquela página
+ * tem a sua lista agrupada; e `LivroView.astro` tinha uma terceira marcação com
+ * uma terceira família de classes (`.livro-busca-*`) cujas regras de folha eram,
+ * valor a valor, as mesmas de `.pesquisa-*`. Três marcações, uma forma: a
+ * primeira divergência que alguém escrevesse ficava por descobrir até alguém
+ * olhar para as três ao lado uma da outra.
+ *
+ * A FILA DE RESULTADOS NÃO ENTRA AQUI, e é o que faz o componente servir as três
+ * superfícies: o que cada busca procura e o que faz com o que encontra é de cada
+ * página (os 308 concelhos numa, as 2 916 linhas noutra), e o que é comum é a
+ * CAIXA. `Pesquisa.astro` compõe esta caixa com a sua fila; `LivroView` compõe-a
+ * com a dele.
+ *
+ * SEM FORMULÁRIO ONDE NÃO HÁ PARA ONDE SUBMETER. `/livro-razao/concelhos` é já a
+ * lista inteira e um formulário apontaria para a página em que se está: nessa
+ * superfície a caixa é um rótulo e um campo, e o guião filtra o que já está no
+ * documento. A razão inteira está em `Pesquisa.astro`, que é quem decide.
+ *
+ * O CAMPO NÃO EMPURRA A PÁGINA, e é uma medição de 09.09.2026: um `<input>` sem
+ * `size` tem uma largura intrínseca de 196 px, e um item de caixa flexível
+ * contribui com a sua largura mínima para o mínimo do pai mesmo com
+ * `min-width: 0`. A 320 px o formulário do índice dos números media 315,5 px de
+ * mínimo e empurrava a página inteira 14 px para fora (medido em Chromium, com
+ * `document.documentElement.scrollWidth` a 334 numa janela de 320). O `size` do
+ * campo desce a 4, que é o que tira a largura intrínseca da conta sem tocar na
+ * largura que a folha lhe dá.
+ */
+const {
+  rotulo,
+  submeter,
+  id,
+  name = null,
+  accao = null,
+  campo = {},
+  forma = {},
+} = Astro.props;
+
+if (!rotulo || !id) {
+  throw new Error('<CampoDeBusca> precisa de "rotulo" e de "id": um campo sem nome não se anuncia.');
+}
+if (accao && !submeter) {
+  throw new Error(
+    '<CampoDeBusca> com "accao" e sem "submeter": um formulário sem a palavra do botão ' +
+      'submete-se com a tecla e não se vê.',
+  );
+}
+---
+
+{
+  accao ? (
+    <form class="busca" action={accao} method="get" role="search" {...forma}>
+      {/* AS CADEIAS DA BUSCA LEVAM `data-voz` (F1.10, §9.7, 08.09.2026). A
+          leitura cruzada do inventário das frases (Codex, 08.09, Major 8) contou
+          doze textos de `<button>` e de `<label>` fora da leitura da régua,
+          porque `BLOCOS_DA_VOZ` não olha para essas duas etiquetas. Quatro deles
+          são da busca, e o §9.7 manda-os entrar com a marca que a régua lê onde
+          quer que a frase esteja. Alargar `BLOCOS_DA_VOZ` continua a ser a
+          correção certa para os outros oito, e continua a ser da direção. */}
+      <label class="busca-k" for={id}>
+        <span data-voz>{rotulo}</span>
+      </label>
+      <span class="busca-linha">
+        <input
+          class="busca-campo"
+          id={id}
+          name={name ?? undefined}
+          type="search"
+          size="4"
+          autocomplete="off"
+          {...campo}
+        />
+        <button class="busca-submeter" type="submit">
+          <span data-voz>{submeter}</span>
+        </button>
+      </span>
+    </form>
+  ) : (
+    <div class="busca" {...forma}>
+      <label class="busca-k" for={id}>
+        <span data-voz>{rotulo}</span>
+      </label>
+      <input
+        class="busca-campo"
+        id={id}
+        name={name ?? undefined}
+        type="search"
+        size="4"
+        autocomplete="off"
+        {...campo}
+      />
+    </div>
+  )
+}

@@ -464,7 +464,7 @@ for (const edicao of ['pt', 'en']) {
       pontos,
       pesquisaVisivel: !!rp && rp.width > 0 && !pesquisa.closest('[hidden]'),
       pesquisaDepoisDaLede: !!lede && !!rp && rp.top + scrollY > lede.getBoundingClientRect().top + scrollY,
-      rotulo: document.querySelector('.pesquisa-rotulo')?.textContent.trim() ?? null,
+      rotulo: document.querySelector('.busca-k')?.textContent.trim() ?? null,
       linhaVisivel: !!rl && rl.width > 0,
       distanciaDaLinha: rl && rp ? +(rl.top - rp.bottom).toFixed(1) : null,
     };

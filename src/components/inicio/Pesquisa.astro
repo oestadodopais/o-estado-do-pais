@@ -61,6 +61,7 @@
  * que aceitasse não a receber voltaria a ter dois feitios, e o segundo não teria
  * quem o rendesse.
  */
+import CampoDeBusca from './CampoDeBusca.astro';
 import { coberturaDistingue, eIlha } from '../../lib/inicio.mjs';
 
 const { s, concelhos, destino, forma = null, resultadosOcultos = false } = Astro.props;
@@ -118,41 +119,20 @@ const distingue = coberturaDistingue(concelhos);
     servidor e é o guião que o acende.
     --------------------------------------------------------------------------- */}
 <div class="pesquisa" id="pesquisa">
-  {forma ? (
-    <form class="pesquisa-forma" action={forma} method="get" role="search" data-porta-concelho>
-      {/* AS DUAS CADEIAS DA BUSCA ENTRAM NO INVENTÁRIO (bloco F1.10, §9.7,
-          08.09.2026). A leitura cruzada do inventário das frases (Codex, 08.09,
-          Major 8) contou doze textos de `<button>` e de `<label>` fora da leitura
-          da régua, porque `BLOCOS_DA_VOZ` não olha para essas duas etiquetas.
-          Quatro deles são da busca, e o §9.7 manda-os entrar «com `data-voz`»,
-          que é a marca que a régua lê onde quer que ela esteja. Alargar
-          `BLOCOS_DA_VOZ` continua a ser a correção certa para os outros oito, e
-          continua a ser da direção. */}
-      <label class="pesquisa-rotulo" for="pesquisa-concelho"><span data-voz>{s.ambito.pesquisaRotulo}</span></label>
-      <div class="pesquisa-linha">
-        <input
-          class="pesquisa-campo"
-          id="pesquisa-concelho"
-          name="concelho"
-          type="search"
-          autocomplete="off"
-          data-pesquisa
-        />
-        <button class="pesquisa-submeter" type="submit"><span data-voz>{s.ambito.pesquisaSubmeter}</span></button>
-      </div>
-    </form>
-  ) : (
-    <>
-      <label class="pesquisa-rotulo" for="pesquisa-concelho"><span data-voz>{s.ambito.pesquisaRotulo}</span></label>
-      <input
-        class="pesquisa-campo"
-        id="pesquisa-concelho"
-        type="search"
-        autocomplete="off"
-        data-pesquisa
-      />
-    </>
-  )}
+  {/* A CAIXA É O COMPONENTE, E A FILA É DESTA PEÇA (F1.10, §2.6, 09.09.2026).
+      A marcação do rótulo, do campo e do botão vive em `CampoDeBusca.astro`, que
+      é a mesma caixa que o índice dos 308 e o índice dos números rendem. O que
+      fica aqui é o que é desta peça: os 308 resultados já rendidos e a regra de
+      quando cada um se acende. */}
+  <CampoDeBusca
+    rotulo={s.ambito.pesquisaRotulo}
+    submeter={s.ambito.pesquisaSubmeter}
+    id="pesquisa-concelho"
+    name={forma ? 'concelho' : null}
+    accao={forma}
+    forma={forma ? { 'data-porta-concelho': true } : {}}
+    campo={{ 'data-pesquisa': true }}
+  />
 
   <ul class="pesquisa-res" data-resultados hidden={resultadosOcultos || undefined}>
     {
