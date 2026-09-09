@@ -102,6 +102,16 @@ export const STRINGS = {
     secoes: {
       medidas: 'As medidas',
       leitura: 'A leitura de cada medida',
+      /* A DOBRA DA PROSA DA CASA (bloco F1.10, item 8.11; decisão do lugar de
+         direção de 09.09.2026). O item 8.11 manda que «a prosa de contexto, as
+         definições e as ressalvas saem do primeiro ecrã das páginas do leitor e
+         ficam a um toque (uma dobra "Como ler" ou a leitura breve)», e nomeia a
+         dobra. A frase da fronteira de um domínio ficava três píxeis dentro do
+         primeiro ecrã inglês, medida a 390 × 664 na sexta sessão do bloco; a
+         saída não é afinar a margem até ao 664, é a estrutural que o item
+         escreve. O rótulo é o nome da dobra e mais nada: não diz o que está lá
+         dentro nem porque é que está. */
+      comoLer: 'Como ler',
     },
 
     nav: {
@@ -347,7 +357,7 @@ export const STRINGS = {
      * passaram do cabeçalho para a página dos estudos.
      */
     rodape: {
-      estudos: 'estudos no arquivo',
+      estudos: 'estudos publicados',
       edicoes: 'edições',
     },
 
@@ -2163,7 +2173,7 @@ export const STRINGS = {
 
     estudos: {
       metaTitle: 'Estudos · O Estado do País',
-      metaDescription: 'O arquivo de estudos publicados, com as suas edições em português e em inglês.',
+      metaDescription: 'Os estudos publicados, com as suas edições em português e em inglês.',
       h1: 'Estudos',
       lede: 'Cada estudo publicado, com as suas edições e datas. Os que estão alojados noutro sítio levam a ligação para lá.',
       /* O ARQUIVO FILTRADO POR CONCELHO (bloco F1.10). `/estudos?concelho=<slug>`
@@ -2174,7 +2184,7 @@ export const STRINGS = {
          guião para se ler. */
       filtroConcelhoA: 'Mostram-se só os estudos sobre ',
       filtroConcelhoB: '.',
-      filtroTudo: 'Ver o arquivo inteiro',
+      filtroTudo: 'Ver todos os estudos',
       /* A CAIXA DAS DATAS POR CONFIRMAR PASSA A CONTAR (bloco F1.4b,
          04.09.2026). Dizia «Datas de publicação por confirmar.» em cima de uma
          página onde TODAS as linhas mostravam uma data, e por isso era uma frase
@@ -2214,7 +2224,21 @@ export const STRINGS = {
          faz ninguém ler melhor um número, e o rótulo é a ausência dita em duas
          palavras, que é o que a Emenda 15 manda. */
       stubEdicoes: 'Edições',
-      stubVoltar: 'Voltar ao arquivo',
+      /* A FRASE QUE DIZ O QUE CADA PORTA ABRE (item 8.6, 09.09.2026). O diretor
+         viu a página de «Onde está a água» e disse que a apresentação dos
+         estudos «is a bit ambiguous»: as mesmas duas portas rendiam-se duas
+         vezes, com duas formas e sem nada que dissesse o que cada uma abre.
+         Passa a haver uma forma só, e esta frase por cima dela. É navegação:
+         nomeia dois destinos e diz o que se encontra em cada um. */
+      /* É UMA LEGENDA E NÃO UMA PROMESSA. A primeira redação dizia «Cada edição
+         leva as suas portas: …», e oito das dezasseis edições não têm texto
+         composto: a frase nomeava, nessas páginas, uma porta que não estava lá.
+         A forma que fica diz o que cada NOME de porta abre, como a legenda de um
+         mapa diz o que cada marca é, e por isso é verdadeira em todas as doze
+         páginas sem mudar de palavras. */
+      edicoesFrase:
+        'O que cada porta abre: «Ler no sítio», o texto composto aqui; «Ler o documento», a edição tal como foi publicada.',
+      stubVoltar: 'Voltar aos estudos',
       stubEstado: 'Rascunho · sem conteúdo',
       stubForaK: 'Publicado fora deste sítio',
       /* A primeira metade saiu: contava a fase do projecto. A segunda FICA, e
@@ -2245,11 +2269,18 @@ export const STRINGS = {
       municipioK: 'O concelho de que trata',
       municipioLink: 'A página do concelho',
 
-      documentoK: 'O documento original',
-      /* `documentoV` saiu: dizia com que cuidado o documento foi alojado. A
-         porta («Ler o documento →») é o que o leitor precisa, e a faixa que o
-         documento leva no topo vê-se quando ele abre. */
-      documentoVazio: 'O documento deste estudo ainda não foi alojado aqui.',
+      /* AS DUAS CHAVES DO BLOCO «O documento original» SAÍRAM (bloco F1.10,
+         §7.4 e item 8.6, 09.09.2026). O bloco era a primeira das duas
+         apresentações das mesmas portas na página de um estudo, e o item 8.6
+         manda que as edições se apresentem «de uma só forma em todos os
+         estudos»: a forma que fica é a lista das edições
+         (`EdicoesDoEstudo.astro`), e as portas vivem lá dentro, uma linha por
+         edição. `documentoK` («O documento original») era o título desse bloco
+         e do painel lateral da página de leitura, que passa a levar a mesma
+         lista com o mesmo título dela; `documentoVazio` dizia por palavras uma
+         ausência que a decisão 9 do diretor de 24.08.2026 manda dizer pela
+         porta que falta, e nunca se rendeu (as dezasseis edições têm todas
+         documento alojado). */
       documentoLink: 'Ler o documento',
       /* O RÓTULO DA EDIÇÃO ARQUIVADA SAIU (G6, decisão do diretor de
          26.08.2026). Dizia «A edição de registo, tal como foi publicada.», por
@@ -2324,13 +2355,23 @@ export const STRINGS = {
       textoContaAlgarismos: 'algarismos',
       textoContaComLinha: 'com linha do livro-razão',
 
-      edicaoIrma: 'Ver esta edição',
-      atualizadoLabel: 'Última atualização',
+      /* TRÊS CHAVES SAÍRAM DA FILA DE UMA EDIÇÃO (bloco F1.10, §7.4 e item
+         8.6, 09.09.2026).
+         `edicaoIrma` («Ver esta edição») levava à página do estudo na outra
+         língua, que é o que o comando de língua do cabeçalho faz em todas as
+         páginas: um segundo caminho para o mesmo destino, que é o que a §0
+         deste bloco proíbe.
+         `atualizadoLabel` («Última atualização») rendia-se em todas as linhas e
+         em onze das dezasseis não tinha data nenhuma para mostrar: era um campo
+         com um marcador de ausência ao lado da data que o leitor veio ver.
+         `descarregarK` e `descarregarVazio` são o «Descarregar · Sem ficheiros»
+         que o §7.4 manda não imprimir quando está vazio: não há, neste sítio,
+         nenhuma fonte de ficheiros de um estudo, e por isso o bloco estava
+         vazio nas doze páginas e nas duas edições. Sai o bloco, e não a frase
+         que o enchia. */
       temaK: 'Tema',
       temaNenhum: 'Sem tema atribuído',
       descricoesK: 'Descrições',
-      descarregarK: 'Descarregar',
-      descarregarVazio: 'Sem ficheiros.',
     },
 
     erro404: {
@@ -2372,6 +2413,8 @@ export const STRINGS = {
     secoes: {
       medidas: 'The measures',
       leitura: 'The reading of each measure',
+      /* Ver a razão na edição portuguesa (item 8.11). */
+      comoLer: 'How to read',
     },
 
     nav: {
@@ -2469,7 +2512,7 @@ export const STRINGS = {
     },
 
     rodape: {
-      estudos: 'studies in the archive',
+      estudos: 'published studies',
       edicoes: 'editions',
     },
 
@@ -3246,13 +3289,13 @@ export const STRINGS = {
 
     estudos: {
       metaTitle: 'Studies · O Estado do País',
-      metaDescription: 'The archive of published studies, with their Portuguese and English editions.',
+      metaDescription: 'The published studies, with their Portuguese and English editions.',
       h1: 'Studies',
       lede: 'Every published study, with its editions and dates. Those hosted elsewhere carry the link to it.',
       /* Ver a razão na edição portuguesa. */
       filtroConcelhoA: 'Showing only the studies about ',
       filtroConcelhoB: '.',
-      filtroTudo: 'See the whole archive',
+      filtroTudo: 'See all the studies',
       avisoA: 'Publication dates not yet confirmed for',
       avisoUma: 'edition.',
       avisoVarias: 'editions.',
@@ -3260,7 +3303,10 @@ export const STRINGS = {
       lingua: 'Language',
       verEstudo: 'Study page',
       stubEdicoes: 'Editions',
-      stubVoltar: 'Back to the archive',
+      /* Ver a razão na edição portuguesa (item 8.6). */
+      edicoesFrase:
+        'What each door opens: “Read on the site”, the text composed here; “Read the document”, the edition as it was published.',
+      stubVoltar: 'Back to the studies',
       stubEstado: 'Draft · no content',
       stubForaK: 'Published outside this site',
       stubForaV: 'The link leaves this domain.',
@@ -3273,8 +3319,7 @@ export const STRINGS = {
       municipioK: 'The municipality it is about',
       municipioLink: 'The municipality page',
 
-      documentoK: 'The original document',
-      documentoVazio: 'The document for this study has not been hosted here yet.',
+      /* Ver a razão na edição portuguesa (§7.4 e item 8.6). */
       documentoLink: 'Read the document',
       documentoFaixa: 'Study document · edition of record',
       documentoVoltar: 'Back to the study page',
@@ -3300,13 +3345,10 @@ export const STRINGS = {
       textoContaAlgarismos: 'figures',
       textoContaComLinha: 'with a ledger row',
 
-      edicaoIrma: 'See this edition',
-      atualizadoLabel: 'Last updated',
+      /* Ver a razão na edição portuguesa (§7.4 e item 8.6). */
       temaK: 'Subject',
       temaNenhum: 'No subject assigned',
       descricoesK: 'Descriptions',
-      descarregarK: 'Downloads',
-      descarregarVazio: 'No files.',
     },
 
     erro404: {
