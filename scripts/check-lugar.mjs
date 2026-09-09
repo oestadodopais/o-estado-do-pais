@@ -95,10 +95,21 @@ const TETOS = {
      TODOS os tetos desta tabela foram medidos a 08.09.2026 sobre o `dist/` da
      fusão de `origin/main` (43f4b52a) na cabeça `47d957f6`, com
      `node scripts/check-lugar.mjs`, e nenhum foi escrito à mão. */
-  l1_paginas: 6598,
+  /* DESCE DE 6 598 PARA 6 580 a 09.09.2026, e não por se ter medido melhor: as
+     24 páginas de estudo tinham as mesmas portas duas vezes (o bloco «O
+     documento original» em cima e a fila de cada edição em baixo), e o item 8.6
+     fundiu-as numa forma só. Dezoito páginas deixaram de ter dois destinos
+     iguais. */
+  l1_paginas: 6580,
   /* L2a · páginas, fora de `/municipios`, que ligam a mais de `L2_LIMITE_NOMES`
-     concelhos fora de uma lista fechada. */
-  l2_segundas_listas: 2,
+     concelhos fora de uma lista fechada.
+     DESCE DE 2 PARA 0 a 09.09.2026, por decisão do lugar de direção, e a régua
+     ganhou três conferências em vez de perder uma: as duas páginas eram `/` e
+     `/en`, e os 308 de cada uma são a fila de resultados da busca que o §1 do
+     brief autoriza. A fila só sai da conta se ela chegar fechada do servidor e
+     se a página tiver o formulário que submete para o índice dos concelhos; a
+     razão inteira, e as três condições, estão ao pé do código que as mede. */
+  l2_segundas_listas: 0,
   /* L2b · rendições da régua inteira da convergência fora de `/regioes`.
      DESCE DE 18 PARA 0 a 09.09.2026 (§1 e §7.6): a régua saiu das dezoito páginas
      de região, onde era a lista das nove copiada para dentro de cada uma, e no
@@ -213,6 +224,13 @@ const TETOS = {
      `tests/inicio/porta.mjs`, que abre um navegador e não corre em portão
      nenhum, feita aqui sobre o HTML construído. */
   d84_definicoes_fora: 0,
+  /* §7.4 e 8.6 · superfícies de estudo que não apresentam as edições na forma
+     única, e linhas do índice dos estudos sem a porta da leitura.
+     NASCE A 0 a 09.09.2026, no commit em que o item entra. O que ela conta está
+     escrito ao pé da medida, no corpo da régua; os cinco defeitos que ela
+     apanha são os cinco que a sétima sessão do bloco corrigiu, e a planta da L9
+     põe cada um de volta. */
+  d86_estudos_forma: 0,
 };
 
 /* Quantos concelhos ligados fora de uma lista fechada fazem uma segunda lista.
@@ -245,7 +263,32 @@ const VOCABULARIO = [
   { palavra: 'trabalho', porque: 'o trabalho de autor é um «estudo» (§1.98)' },
   { palavra: 'trabalhos', porque: 'o trabalho de autor é um «estudo» (§1.98)' },
   { palavra: 'Trabalhos', porque: 'o trabalho de autor é um «estudo» (§1.98)' },
+  /* «ARQUIVO» ENTRA A 09.09.2026, com o §7.4: «um só nome para os estudos,
+     "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A palavra
+     estava em seis cadeias da casa (a descrição das duas páginas de índice, a
+     porta que devolve a lista inteira, a porta de volta da página de um estudo e
+     as duas glosas das contagens), e cada uma delas era o segundo nome da mesma
+     coisa. A régua passa a contá-la, e a L3 mede-a a 0. */
+  { palavra: 'arquivo', porque: 'os estudos chamam-se «estudos» (§7.4 do F1.10)' },
+  { palavra: 'Arquivo', porque: 'os estudos chamam-se «estudos» (§7.4 do F1.10)' },
+  { palavra: 'arquivos', porque: 'os estudos chamam-se «estudos» (§7.4 do F1.10)' },
+  { palavra: 'Arquivos', porque: 'os estudos chamam-se «estudos» (§7.4 do F1.10)' },
 ];
+
+/* ---------------------------------------------------------------------------
+ * OS RÓTULOS QUE SAÍRAM DAS PÁGINAS DE ESTUDO (§7.4 e item 8.6, 09.09.2026)
+ * ---------------------------------------------------------------------------
+ * «Descarregar · Sem ficheiros» não se imprime quando está vazio, e estava vazio
+ * sempre; «O documento original» era o título da primeira das duas apresentações
+ * das mesmas portas, e a que fica é a lista das edições. As quatro cadeias
+ * saíram de `src/i18n/strings.mjs` no mesmo commit em que esta lista entrou.
+ */
+const ROTULOS_QUE_SAIRAM = new Set([
+  'Descarregar',
+  'Downloads',
+  'O documento original',
+  'The original document',
+]);
 
 /* As duas palavras das densidades, que o item 8.14 tira das páginas do leitor. */
 const DENSIDADES = ['Relance', 'Leitura breve', 'At a glance', 'Brief reading'];
@@ -455,7 +498,11 @@ const medidas = {
   d817_concelhos_sem_mapa: 0,
   d811_leituras_na_cabeca: 0,
   d84_definicoes_fora: 0,
+  d86_estudos_forma: 0,
 };
+/** Quantas superfícies de estudo a régua viu (regra 14: zero defeitos sobre
+    zero páginas não prova nada). */
+const vistas = { estudo: 0, texto: 0, indice: 0, edicoes: 0, linhas: 0 };
 /** Quantos parágrafos de definição de painel a régua viu (regra 14: uma
     contagem de zero sobre uma coleção vazia não prova nada). */
 let definicoesVistas = 0;
@@ -564,9 +611,51 @@ for (const ficheiro of paginas) {
     for (const svg of corpo.querySelectorAll('[data-mapa], [data-mapa-concelhos]')) {
       for (const x of svg.querySelectorAll('*')) dentroDeLista.add(x);
     }
+    /* -----------------------------------------------------------------------
+       A FILA DE RESULTADOS DA BUSCA NÃO É UMA SEGUNDA LISTA (decisão do lugar de
+       direção, 09.09.2026, sobre a L2a do F1.10)
+       -----------------------------------------------------------------------
+       A régua contava 2: `/` e `/en`, cada uma com «308 concelhos ligados fora
+       de uma lista fechada». Os 308 são a fila de resultados da busca, que o §1
+       do brief autoriza na primeira página («na primeira página, a busca
+       (submete para `/municipios`) e o mapa com os 29 nomes»). A decisão do
+       lugar de direção diz o que ela é: «a busca em repouso não rende uma lista
+       dos 308 no HTML; sem guião, o caminho é o formulário a submeter a consulta
+       ao índice dos concelhos (`/municipios` com a consulta), não uma lista; com
+       guião, as sugestões aparecem só depois de escrever».
+
+       A EXCEÇÃO NÃO É UM SALTO, É UMA MEDIÇÃO, e é isso que a impede de ser a
+       régua a enfraquecer. A fila só sai da conta quando as três coisas que a
+       decisão afirma se confirmam NESTA página, uma a uma:
+
+         1. cada uma das portas contadas está dentro da fila (`[data-resultados]`);
+         2. a fila chega FECHADA do servidor (o atributo `hidden` no `<ul>`), que
+            é o mesmo estado de um `<details>` fechado, e a razão pela qual um já
+            estava fora da conta;
+         3. a página tem uma busca com destino: um `<form role="search">` com
+            `method="get"` e `action` para o índice dos concelhos desta edição.
+
+       Se qualquer uma delas deixar de ser verdade, a fila volta a contar e a L2a
+       sobe. Uma lista de 308 nomes escrita à mão numa página, aberta ou sem
+       formulário, continua a ser o que a régua veio proibir: a planta da L9
+       prova-o. */
+    const filaFechadaDaBusca = new Set();
+    const formaDaBusca = corpo
+      .querySelectorAll('form[role="search"]')
+      .find(
+        (f) =>
+          (f.getAttribute('method') ?? '').toLowerCase() === 'get' &&
+          normalizePath(f.getAttribute('action') ?? '') === normalizePath(routePath('municipios', lang)),
+      );
+    if (formaDaBusca) {
+      for (const fila of corpo.querySelectorAll('[data-resultados]')) {
+        if (!fila.hasAttribute('hidden')) continue;
+        for (const x of fila.querySelectorAll('*')) filaFechadaDaBusca.add(x);
+      }
+    }
     const nomes = new Set();
     for (const a of corpo.querySelectorAll('a[href]')) {
-      if (daMobilia.has(a) || dentroDeLista.has(a)) continue;
+      if (daMobilia.has(a) || dentroDeLista.has(a) || filaFechadaDaBusca.has(a)) continue;
       const href = (a.getAttribute('href') ?? '').split('#')[0];
       const m = href ? matchPath(href) : null;
       if (m?.key === 'municipio') nomes.add(href);
@@ -737,6 +826,88 @@ for (const ficheiro of paginas) {
     }
   }
 
+  /* ------------------------------------------------------- §7.4 e 8.6 · os estudos */
+  /* A FORMA ÚNICA DAS EDIÇÕES, E A PORTA DA LEITURA NO ÍNDICE.
+     ---------------------------------------------------------------------------
+     O diretor viu a 07.09.2026 à noite que a apresentação dos estudos «is a bit
+     ambiguous», e o item 8.6 decide a forma: «na página de cada estudo, as
+     edições (as línguas, os documentos, a página de leitura) apresentam-se de
+     uma só forma em todos os estudos, com uma frase que diga o que cada porta
+     abre». O §7.4 acrescenta duas coisas: «o título da lista vai direto ao
+     texto; a página de capa deixa de existir como paragem obrigatória» e
+     «"Descarregar · Sem ficheiros" não se imprime quando está vazio».
+
+     A MEDIDA CONTA DEFEITOS, e são cinco espécies:
+       1. uma página de estudo ou de leitura sem exatamente uma frase das portas;
+       2. uma fila de edição com as portas fora da ordem única (a leitura no
+          sítio primeiro, o documento a seguir) ou com uma porta que não é
+          nenhuma das duas;
+       3. um dos rótulos que saíram de volta à página (o bloco «Descarregar» e o
+          bloco «O documento original», que era a segunda apresentação das
+          mesmas portas);
+       4. uma linha do índice dos estudos sem a porta da leitura, ou com mais do
+          que uma;
+       5. uma porta da leitura que aponta para uma página que não existe.
+
+     OS RÓTULOS QUE SAÍRAM ESTÃO ESCRITOS AQUI À MÃO, e é de propósito: as
+     cadeias saíram de `src/i18n/strings.mjs` no mesmo commit, e uma régua que
+     lesse a chave que já não existe não media nada. São quatro cadeias fixas, e
+     o que elas guardam é o regresso do defeito. */
+  if (chaveDaRota === 'estudo' || chaveDaRota === 'texto') {
+    vistas[chaveDaRota]++;
+    const frases = corpo.querySelectorAll('.edicoes-frase').length;
+    if (frases !== 1) {
+      medidas.d86_estudos_forma++;
+      anota('d86_estudos_forma', `${url} · ${frases} frase(s) das portas (esperada 1)`);
+    }
+    const s = S[lang];
+    const ORDEM = [s.estudos.textoLink, s.estudos.documentoLink];
+    for (const fila of corpo.querySelectorAll('.edicao-meta')) {
+      vistas.edicoes++;
+      const portas = fila
+        .querySelectorAll('a')
+        .map((a) => (a.text ?? '').replace(/\s+/g, ' ').replace(/\s*→\s*$/, '').trim());
+      let i = 0;
+      let boa = true;
+      for (const porta of portas) {
+        const j = ORDEM.indexOf(porta, i);
+        if (j < 0) {
+          boa = false;
+          break;
+        }
+        i = j + 1;
+      }
+      if (!boa) {
+        medidas.d86_estudos_forma++;
+        anota('d86_estudos_forma', `${url} · portas fora da forma única: ${portas.join(' | ')}`);
+      }
+    }
+    for (const k of corpo.querySelectorAll('.log-vazio-k')) {
+      const texto = (k.text ?? '').trim();
+      if (!ROTULOS_QUE_SAIRAM.has(texto)) continue;
+      medidas.d86_estudos_forma++;
+      anota('d86_estudos_forma', `${url} · o rótulo «${texto}» voltou à página`);
+    }
+  }
+  if (chaveDaRota === 'estudos') {
+    vistas.indice++;
+    for (const linha of corpo.querySelectorAll('.arquivo-item')) {
+      vistas.linhas++;
+      const portas = linha.querySelectorAll('.arquivo-porta');
+      if (portas.length !== 1) {
+        medidas.d86_estudos_forma++;
+        anota('d86_estudos_forma', `${url} · uma linha com ${portas.length} porta(s) da leitura`);
+        continue;
+      }
+      const href = (portas[0].getAttribute('href') ?? '').split('#')[0];
+      const alvo = path.join(DIST, normalizePath(href).slice(1), 'index.html');
+      if (!href.startsWith('/') || !fs.existsSync(alvo)) {
+        medidas.d86_estudos_forma++;
+        anota('d86_estudos_forma', `${url} · a porta da leitura aponta para "${href}", que não existe em dist/`);
+      }
+    }
+  }
+
   /* -------------------------------------------------------------------- L5 */
   const primeira = chaveDaRota === 'home';
   if (!primeira && !transcricao) {
@@ -874,6 +1045,21 @@ if (definicoesVistas !== DEFINICOES_ESPERADAS) {
   );
 }
 
+/* --------------------------------------------------------------- §7.4 e 8.6 */
+/* A COLEÇÃO TEM DE TER ELEMENTOS (regra 14 da casa). São doze estudos em duas
+   edições (24 páginas de estudo), oito páginas de leitura, dois índices e as
+   filas de edição de todas elas. Zero defeitos sobre zero páginas é uma régua
+   cega, e a construção fecha em vez de a deixar passar por não ter encontrado
+   nada. Os números não estão escritos: o que se exige é que cada coleção tenha
+   pelo menos um elemento, e a contagem imprime-se. */
+for (const [nome, n] of Object.entries(vistas)) {
+  if (n > 0) continue;
+  falhas.push(
+    `§7.4 e 8.6 · a régua viu 0 «${nome}» em dist/. Uma contagem de defeitos sobre ` +
+      `uma coleção vazia não prova nada.`,
+  );
+}
+
 /* ---------------------------------------------------------------------------
  * O RELATÓRIO
  * --------------------------------------------------------------------------- */
@@ -894,6 +1080,7 @@ const NOMES = {
   d814_densidades: '8.14 · «Relance» e «Leitura breve» nas páginas do leitor',
   d811_leituras_na_cabeca: '8.11 · leituras de aparelho no cabeçalho',
   d84_definicoes_fora: '8.4 · definições de painel fora da declaração',
+  d86_estudos_forma: '§7.4 e 8.6 · estudos fora da forma única',
 };
 
 console.log(`check:lugar · ${paginas.length} páginas em dist/`);
@@ -911,6 +1098,13 @@ for (const [chave, valor] of Object.entries(medidas)) {
     );
   }
 }
+
+console.log(
+  '  §7.4 e 8.6, o que a régua leu: ' +
+    Object.entries(vistas)
+      .map(([k, n]) => `${k} ${n}`)
+      .join(' · '),
+);
 
 console.log('  as exceções, e quantas vezes cada uma foi precisa:');
 for (const [i, e] of EXCECOES_DO_VOCABULARIO.entries()) {

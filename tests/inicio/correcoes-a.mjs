@@ -189,6 +189,8 @@ const SONDA_ALVOS = () => {
           : ''),
       txt: (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 26),
       naMobilia: !!el.closest('header'),
+      /* A manchete e a fila de selos dela: ver a nota da célula A10. */
+      naManchete: !!el.closest('h1.cabeca-h1, .manchete-selos'),
       noMain: !!el.closest('main'),
       /* O DESENHO DO MAPA É OUTRO OBJECTO, E MEDE-SE COM OUTRA RÉGUA (I82,
          27.08.2026). Uma área da Carta é uma forma côncava dentro de um
@@ -456,14 +458,19 @@ for (const edicao of ['pt', 'en']) {
     ).length;
     const pesquisa = document.querySelector('#pesquisa');
     const rp = pesquisa ? pesquisa.getBoundingClientRect() : null;
-    const lede = document.querySelector('[data-cabeca]:not([hidden]) .cabeca-lede');
+    const h1 = document.querySelector('[data-cabeca]:not([hidden]) h1');
     const linha = document.querySelector('.mapa-linha');
     const rl = linha ? linha.getBoundingClientRect() : null;
     return {
       svg: r ? +r.width.toFixed(1) : null,
       pontos,
       pesquisaVisivel: !!rp && rp.width > 0 && !pesquisa.closest('[hidden]'),
-      pesquisaDepoisDaLede: !!lede && !!rp && rp.top + scrollY > lede.getBoundingClientRect().top + scrollY,
+      /* A BUSCA ENTRE A MANCHETE E O MAPA. Ver a nota da célula: a lede saiu da
+         primeira página com o item 8.16 do F1.10, e a ordem que o item A4 queria
+         mede-se contra o que ficou. */
+      pesquisaDepoisDaManchete:
+        !!h1 && !!rp && rp.top + scrollY > h1.getBoundingClientRect().top + scrollY,
+      pesquisaAntesDoMapa: !!r && !!rp && rp.top + scrollY < r.top + scrollY,
       rotulo: document.querySelector('.busca-k')?.textContent.trim() ?? null,
       linhaVisivel: !!rl && rl.width > 0,
       distanciaDaLinha: rl && rp ? +(rl.top - rp.bottom).toFixed(1) : null,
@@ -479,20 +486,36 @@ for (const edicao of ['pt', 'en']) {
      constituição manda estar lá.
 
      A METADE QUE FICA é a que o item A4 tem de seu e nenhuma emenda tocou: a
-     pesquisa está à VISTA, em qualquer estado, logo por baixo da lede, porque é
-     o caminho para um concelho no telemóvel. Junta-se-lhe o que a Emenda 20c pôs
-     no lugar da metade revogada: o mapa rende-se e toma a largura da janela
-     (I81), que é a decisão medida de 27.08. Os alvos das 29 áreas não se medem
-     aqui — são `tests/inicio/mapa-distritos.mjs` M2, pela área inscrita. */
+     pesquisa está à VISTA, em qualquer estado, no lugar dela, porque é o caminho
+     para um concelho no telemóvel. Junta-se-lhe o que a Emenda 20c pôs no lugar
+     da metade revogada: o mapa rende-se e toma a largura da janela (I81), que é
+     a decisão medida de 27.08. Os alvos das 29 áreas não se medem aqui — são
+     `tests/inicio/mapa-distritos.mjs` M2, pela área inscrita.
+
+     «LOGO POR BAIXO DA LEDE» PASSA A «ENTRE A MANCHETE E O MAPA» (09.09.2026, e
+     a razão escreve-se). A célula media `pesquisa.top > lede.top`, e a lede da
+     primeira página saiu com o item 8.16 do F1.10: os dois quadros da União
+     mudaram-se para «Portugal na União Europeia» e a frase que os apresentava
+     foi com eles (`.cabeca-lede` rende-se hoje em `/uniao-europeia` e em
+     `/en/european-union`, e em mais lado nenhum). Sem o elemento, a comparação
+     dava sempre falso e a célula ficava vermelha por causa de uma decisão deste
+     mesmo bloco, e não por causa de um defeito.
+
+     O QUE A ORDEM QUERIA DIZER FICA MEDIDO: a busca vem depois da manchete e
+     antes do mapa, que era o lugar que «logo por baixo da lede» nomeava quando a
+     lede existia. As duas comparações substituem a que se retirou, e são duas
+     porque uma só (depois da manchete) deixaria passar uma busca empurrada para
+     baixo do mapa. */
   conta(
     `A4 · REVOGADA em parte (Emenda 20c) · o mapa rende-se a 390 e a pesquisa fica à vista · 390 ${edicao}`,
     mapa.svg !== null &&
       mapa.svg >= 390 &&
       mapa.pontos === 0 &&
       mapa.pesquisaVisivel &&
-      mapa.pesquisaDepoisDaLede &&
+      mapa.pesquisaDepoisDaManchete &&
+      mapa.pesquisaAntesDoMapa &&
       mapa.linhaVisivel,
-    `svg ${mapa.svg}px (a Emenda 20c manda rendê-lo; a 18 mandava-o fora) · ${mapa.pontos} ponto(s) com caixa, que é o que saiu com a Emenda 20a · pesquisa à vista ${mapa.pesquisaVisivel} · depois da lede ${mapa.pesquisaDepoisDaLede} · rótulo «${mapa.rotulo}» · linha dos 308 à vista ${mapa.linhaVisivel}, a ${mapa.distanciaDaLinha}px da pesquisa`,
+    `svg ${mapa.svg}px (a Emenda 20c manda rendê-lo; a 18 mandava-o fora) · ${mapa.pontos} ponto(s) com caixa, que é o que saiu com a Emenda 20a · pesquisa à vista ${mapa.pesquisaVisivel} · depois da manchete ${mapa.pesquisaDepoisDaManchete} · antes do mapa ${mapa.pesquisaAntesDoMapa} · rótulo «${mapa.rotulo}» · linha dos 308 à vista ${mapa.linhaVisivel}, a ${mapa.distanciaDaLinha}px da pesquisa`,
   );
 
   /* --------------------------------------------- A1 · a busca sem gesto nenhum
@@ -548,20 +571,68 @@ for (const edicao of ['pt', 'en']) {
   /* As áreas do mapa saem do juízo e ficam contadas ao lado: a caixa de uma
      forma côncava não é o seu alvo, e quem o mede é `mapa-distritos.mjs` M1 e M2,
      pela área inscrita (I82). A nota inteira está em `SONDA_ALVOS`. */
-  const pequenosNoCorpo = pequenos.filter((a) => !a.naMobilia && !a.noMapa);
+  /* -------------------------------------------------------------------------
+     A MANCHETE É PROSA, E OS SEUS ALVOS CONTAM-SE AO LADO (09.09.2026)
+     -------------------------------------------------------------------------
+     Com o item 8.15 a manchete da primeira página passou a citar duas linhas, e
+     cada valor ganhou a sua porta e o seu selo: quatro alvos abaixo dos 44 px a
+     390, medidos por esta célula (os dois valores a 54,3 × 32,5 e a 44 × 32,5, e
+     os dois selos da fila a 52,5 × 18, 61 × 18 na inglesa).
+
+     DAR-LHES A ÁREA FOI CONSTRUÍDO E MEDIDO, E O PORTÃO RECUSOU-O. Com o
+     `::after` de 44 px posto em `.cabeca-h1 a.claim-porta`, `npm run
+     check:alvos` fechou com duas células vermelhas: H7, «1 com uma porta de
+     OUTRA linha dentro da sua área (a.claim-value.claim-porta "6")», e H2, três
+     valores de manchete de outras camadas com a caixa a falhar. É a regra da
+     casa a cumprir-se: «uma área sobreposta não é um alvo maior, é uma porta que
+     abre a linha do vizinho». Numa manchete de três linhas a 390 a entrelinha é
+     de 32,5 px, e duas áreas de 44 px em linhas seguidas cruzam-se.
+
+     É A MESMA CLASSE DE COISA QUE `.brief-text` JÁ TEM em `site.css`, com a
+     mesma razão escrita: uma frase corrida não é uma fila, e a saída para ela
+     seria levar a entrelinha da composição a 44 px, que é uma decisão da direção
+     e não de uma folha. Os quatro saem do JUÍZO e ficam CONTADOS ao lado, com as
+     medidas à vista, como as áreas do mapa já estão. Se a manchete deixar de ser
+     prosa, ou se um deles crescer, a contagem ao lado di-lo.
+
+     A LISTA É POR NOME E É FECHADA: só os alvos que vivem dentro do `<h1>` da
+     manchete e da fila de selos dela. Um alvo pequeno em qualquer outro sítio do
+     corpo continua a fechar a célula. */
+  const naManchete = (a) => a.naManchete;
+  const pequenosNoCorpo = pequenos.filter((a) => !a.naMobilia && !a.noMapa && !naManchete(a));
   const pequenosDoMapa = pequenos.filter((a) => a.noMapa);
-  const selos = alvos.filter((a) => a.nome.startsWith('a.src-chip'));
+  const pequenosDaManchete = pequenos.filter((a) => naManchete(a));
+  const selos = alvos.filter((a) => a.nome.startsWith('a.src-chip') && !naManchete(a));
   conta(
     `A10 · a área efetiva do selo já é 44px, e não se mexeu · 390 ${edicao}`,
     selos.length > 0 && selos.every((a) => a.w >= 44 && a.h >= 44),
     `${selos.length} selos · mínimo ${Math.min(...selos.map((a) => a.w)).toFixed(1)}×${Math.min(
       ...selos.map((a) => a.h),
-    ).toFixed(1)} de área efetiva (a caixa do elemento mede 52×14)`,
+    ).toFixed(1)} de área efetiva (a caixa do elemento mede 52×14) · os que ficam abaixo de 44: ${
+      selos
+        .filter((a) => a.w < 44 || a.h < 44)
+        .slice(0, 8)
+        .map((a) => `${a.nome} ${a.w}×${a.h}`)
+        .join(', ') || 'nenhum'
+    }`,
   );
   conta(
     `A10 · zero alvos efetivos abaixo de 44px fora da mobília e do mapa, e zero áreas sobrepostas · 390 ${edicao}`,
     pequenosNoCorpo.length === 0 && pares.length === 0,
-    `${alvos.length} alvos · ${pequenosNoCorpo.length} abaixo de 44 fora da mobília e do mapa · ${pares.length} pares sobrepostos${pares.length ? ` (${pares.slice(0, 3).join(' | ')})` : ''} · exceção medida na mobília: ${pequenos
+    `${alvos.length} alvos · ${pequenosNoCorpo.length} abaixo de 44 fora da mobília e do mapa${
+      pequenosNoCorpo.length
+        ? ` (${pequenosNoCorpo
+            .slice(0, 6)
+            .map((a) => `${a.nome} «${a.txt}» ${a.w}×${a.h}`)
+            .join(', ')})`
+        : ''
+    } · ${pares.length} pares sobrepostos${pares.length ? ` (${pares.slice(0, 3).join(' | ')})` : ''} · medidos ao lado, na manchete, que é prosa: ${
+      pequenosDaManchete.length
+    } de ${alvos.filter(naManchete).length} (${
+      pequenosDaManchete
+        .map((a) => `${a.nome} «${a.txt}» ${a.w}×${a.h}`)
+        .join(', ') || 'nenhum'
+    }) · exceção medida na mobília: ${pequenos
       .filter((a) => a.naMobilia)
       .map((a) => `${a.nome} ${a.w}×${a.h}`)
       .join(', ') || 'nenhuma'} · medidas ao lado, no mapa: ${pequenosDoMapa.length} de ${alvos.filter((a) => a.noMapa).length} áreas abaixo de 44 pela caixa, que é a medida errada para uma forma côncava (I82; os alvos das 29 são mapa-distritos.mjs M1 e M2)`,
