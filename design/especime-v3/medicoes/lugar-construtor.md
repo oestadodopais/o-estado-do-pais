@@ -7,6 +7,29 @@ deste relatório foi escrito à mão: cada um tem ao lado o comando que o mediu.
 
 ---
 
+## Estado · 09.09.2026, manhã · **feito**
+
+**A palavra do cabeçalho é «feito».** O item que faltava ao encargo, os estudos
+(§7.4 e 8.6), está construído e medido, e as quatro decisões que o lugar de
+direção tomou a 09.09 sobre o que a sexta sessão deixou estão aplicadas, uma a
+uma, com o número ao lado. As quatro réguas de fora da cadeia saem verdes pela
+primeira vez neste bloco: `porta.mjs` 34 de 34, `correcoes-a.mjs` 32 de 32,
+`matriz.mjs` 89 de 89, `recibo.mjs` 13 de 13.
+
+| | |
+|---|---|
+| cabeça | a última do ramo (`git -C <worktree> rev-parse --short HEAD`) |
+| `main` fundido | **`13372937`**, com o F1.1e inteiro |
+| `build` · `verify` · `typecheck` | **0** · **0** · **0** (códigos lidos de `build.exit`, `verify.exit`, `typecheck.exit`) |
+| a corrida da CI | **34324532988**, na cabeça do código desta sessão (`29ec83fd`). A cabeça deste relatório é a do commit que o escreve, e um commit não pode conter o número da corrida que ele dispara |
+| feito nas sessões anteriores | a régua (encargo (b)); **§9.1**; **8.8**; **§7.5**; **8.16**; **8.13**; **8.12**; **8.14 inteiro**; **§2.2**; **8.5**; **§7.1**; **8.17** e **8.17b**; os dois limiares com o seu fixador; **8.4**; **§9.3**, **§9.4**, **§9.5**, **§9.8** e **§9.9**; **8.11** e **§7.3**; **8.15**; **§9.2**; **§9.7**; a dívida da `matriz.mjs`; o **item 5 do encargo** (o caminho, a busca única, «fonte» diz o publicador, as datas); as outras páginas menos os estudos; a decisão da mobília inglesa (8.9) |
+| feito nesta sessão | **os estudos** (§7.4 e 8.6): as edições numa só forma nas duas superfícies, com a frase que diz o que cada porta abre; a página de capa deixa de ser paragem obrigatória (a leitura a um toque do índice); o «Descarregar · Sem ficheiros» fora; **«arquivo» fora do vocabulário** (§7.4), nas seis cadeias em que vivia, com a §1.105 a registar o texto governado; **as quatro decisões de 09.09**: o §7.7 item 4 desfeito e registado, a **L2a de 2 para 0** com três conferências no lugar de uma isenção, as **quatro células de `porta.mjs`** e as **seis de `correcoes-a.mjs`** a medirem o que os blocos decidiram, e a **frase da fronteira do domínio** na dobra «Como ler» (o §9.6 inglês de **317** para **0**); **a célula dos estudos** na régua da cadeia; **o fecho**: as 52 capturas, as **14 plantas da L9** (14 de 14 morderam), o `REVISOES-DO-INVENTARIO.md`, o `CHAVES-EN.md` e este relatório |
+| a seguir | **nada deste bloco.** O que fica nomeado para o lugar de direção são duas coisas que esta sessão mediu e não decidiu: o **§7.7 item 4** (o selo ao pé do número na manchete, desfeito com a medida) e o **alvo dos quatro elementos da manchete**, que o `check:alvos` recusou crescer e que só se resolve mudando a composição da manchete |
+| nada a meio | **nada ficou por acabar.** Os três portões a 0 nesta árvore, com os códigos lidos dos ficheiros; não há `git stash` nem ficheiro por commitar |
+| a régua, na cabeça desta sessão | L1 **6 580** · L2a **0** · L2b 0 · L2c 0 · L3 26 · L4 0 · L5 0 · L6 0 · 8.5 0 · 8.8 0 · 8.13 0 · 8.14 0 · 8.17 0 e 0 · 8.11 0 · 8.4 0 · **§7.4 e 8.6 0** (`node scripts/check-lugar.mjs`, verde) |
+| as réguas de fora da cadeia | `porta.mjs` **34 de 34** (era 30) · `correcoes-a.mjs` **32 de 32** (era 26) · `matriz.mjs` 89 de 89 · `recibo.mjs` 13 de 13 |
+| o modelo e o custo | Claude Opus 5. O contador está na última linha da secção da sessão |
+
 ## Estado · 09.09.2026, madrugada · **por fazer**, e o que falta são os estudos
 
 **A palavra do cabeçalho é «por fazer», e o que falta é UMA família de páginas e
@@ -83,17 +106,17 @@ dormir.
 
 | medida | antes | depois | o comando |
 |---|---|---|---|
-| L1 · páginas com dois destinos iguais fora do cabeçalho e do rodapé | 6 596 | **6 598** (+2: as duas páginas novas) | `node scripts/check-lugar.mjs` |
-| L2a · segundas listas dos 308 concelhos (fora de `/municipios`, fora de uma lista fechada) | 2 (`/` e `/en`) | 2 (por fazer) | idem |
+| L1 · páginas com dois destinos iguais fora do cabeçalho e do rodapé | 6 596 | **6 580** (+2 das duas páginas novas, −18 das páginas de estudo que tinham as portas duas vezes) | `node scripts/check-lugar.mjs` |
+| L2a · segundas listas dos 308 concelhos (fora de `/municipios`, fora de uma lista fechada) | 2 (`/` e `/en`) | **0** · feito, por decisão do lugar de direção de 09.09, e com três conferências no lugar de uma isenção (secção 7 da sétima sessão) | idem |
 | L2b · réguas inteiras da convergência fora de `/regioes` | 18 | **0** · feito (§1 e §7.6) | idem |
 | L2c · sinopses de estudo fora de `/estudos` | 10 (5 em `/municipios/evora`, 5 na inglesa) | **0** · feito (§1, 8.6 e 8.10) | idem |
-| L3 · palavras fora do vocabulário fechado, no texto da casa | 51 | **26** (o item 8.4 tirou as 22 de «indicadores»; as sinopses dos estudos levaram as 4 de «município» que rendiam na página do concelho) | idem |
+| L3 · palavras fora do vocabulário fechado, no texto da casa | 51 | **26**, com **«arquivo» a entrar no vocabulário a 09.09 e a medir 0** (o item 8.4 tinha tirado as 22 de «indicadores»; as sinopses dos estudos levaram as 4 de «município» que rendiam na página do concelho) | idem |
 | L4 · frases de definição e de hierarquia em falta | 10 | **0** · feito | idem |
 | L5 · páginas abaixo da primeira sem caminho no cabeçalho | 7 211, depois 7 213 (+2: as duas páginas novas) | **0** · feito (§2.5) | idem |
 | L6 · selos cuja etiqueta não é o publicador da linha | 26 168, depois 26 178 (+6 das duas páginas novas, +4 da manchete nova) | **0** · feito (§2.4 e §7.2) | idem |
 | L7 · a releitura do leitor de primeira vez | é do lugar de direção | — | a leitura do Codex |
 | L8 · os três portões | **0 · 0 · 0** | **0 · 0 · 0** | `npm run build\|verify\|typecheck > x.log 2>&1; echo $? > x.exit` |
-| L9 · as plantas vermelhas e depois verdes | conhecido-positivo corrido (ver abaixo) | **6 de 6 morderam** a 09.09 (ver a sexta sessão) | `node scripts/check-lugar.mjs` sobre o `dist/` com o estrago |
+| L9 · as plantas vermelhas e depois verdes | conhecido-positivo corrido (ver abaixo) | **14 de 14 morderam** a 09.09 de manhã (as 6 da sexta sessão mais 8 novas: as três da L2a, a de «arquivo» e as cinco espécies da célula dos estudos) | `node scripts/check-lugar.mjs` sobre o `dist/` com o estrago |
 | 8.5 · blocos com «limiar» sem o qualificador nem a frase ao lado | 706 | **0** · feito | idem |
 | 8.8 · «livro-razão» nos menus, nos rodapés e nos títulos | 24 172 | **0** · feito | idem |
 | 8.13 · valores selados na secção dos domínios de `/` | 4 (2 por edição) | **0** · feito | idem |
@@ -112,7 +135,14 @@ dormir.
 | **§9.7 · as quatro cadeias da busca no inventário da voz** | **0** das quatro declaradas | **4** de 4, com `data-voz` · feito na parte que não depende do §2.6 | `npm run check:voz` |
 | **a matriz da primeira página** | **73** células medidas, **53** a passar, e a régua a rebentar na septuagésima quarta | **89** medidas, **89** a passar | `node tests/inicio/matriz.mjs` |
 | **a régua da porta** | **24** de 34 células | **29** de 34 | `node tests/inicio/porta.mjs` |
-| **a régua das correções** | **26** de 32 células | **26** de 32 (nenhuma mudou nesta sessão) | `node tests/inicio/correcoes-a.mjs` |
+| **a régua das correções** | **26** de 32 células | **32 de 32** (a A4 reescrita contra o que o item 8.16 decidiu, e os quatro alvos da manchete contados ao lado do juízo, com a recusa do `check:alvos` por razão) | `node tests/inicio/correcoes-a.mjs` |
+| **§7.4 e 8.6 · estudos fora da forma única** | a medida nasce a 09.09, no commit em que o item entra | **0**, sobre 24 páginas de estudo, 8 de leitura, 2 índices, 44 filas de edição e 24 linhas do índice | `node scripts/check-lugar.mjs` |
+| **§7.4 · a página de capa como paragem obrigatória** | **12 de 12** estudos com a leitura a dois toques do índice, nas duas edições | **0 de 12**: cada linha do índice leva a porta da leitura, e o texto chega-se a **um** toque | idem (a mesma célula) |
+| **§7.4 · «Descarregar · Sem ficheiros» impresso vazio** | **24** blocos (12 estudos × 2 edições) | **0** · o bloco sai, e não só a frase que o enchia | idem |
+| **§7.4 · «arquivo» como nome de coisa, no texto da casa** | **6** cadeias, **1** ocorrência visível no `dist/` fora da origem declarada | **0** · feito, com a palavra dentro do vocabulário da L3 | idem |
+| **§9.6 · prosa da casa no primeiro ecrã da página do domínio, a 390 × 664** | **0** (pt) e **317** (en) caracteres | **0** e **0** · feito, com a dobra «Como ler» que o item 8.11 nomeia | `node design/especime-v3/medicoes/lugar-2026-09-04/primeiro-ecra.mjs` |
+| **a régua da porta** (segunda linha: depois da sétima sessão) | **30** de 34 células | **34 de 34** (a A5 reescrita contra o F1.1d e o F1.1e, a A7 e a A12 postas a ler a página que nomeiam) | `node tests/inicio/porta.mjs` |
+| **a régua do recibo** | **13** de 13 | **13** de 13 (nenhuma mudou nesta sessão) | `node tests/linha/recibo.mjs` |
 
 **A L6 é o único teto que subiu nesta sessão, e a razão escreve-se.** A manchete
 de `/` passou a citar duas linhas (a dívida pública e a taxa de desemprego), e
@@ -167,6 +197,392 @@ A quarta é o contador das séries atrasadas que o F1.6 pôs na mobília
 então. O item 8.1 e o §7.3 deste brief mandam essas linhas SAIR do cabeçalho de
 todas as páginas para a página da medida e para o Método: a célula reescreve-se
 quando esse item entrar, e não antes.
+
+---
+
+## Sétima sessão (09.09, manhã)
+
+*A sétima sessão de construção pela conta do lugar de direção, e a última do
+bloco. O que ela fez está aqui, pela ordem em que o encargo o pediu.*
+
+### 1 · Os estudos: as edições numa só forma, nas duas superfícies
+
+**O que o diretor viu.** A 07.09 à noite, na página de «Onde está a água»: a
+apresentação dos estudos «is a bit ambiguous». A causa, medida na página
+construída: as mesmas duas portas rendiam-se **duas vezes e com duas formas**.
+Em cima, um bloco «O documento original» com uma fila de portas soltas («Ler no
+sítio →», «Ler o documento →», «Ler o documento · EN →»); mais abaixo, um bloco
+«Edições» com uma linha por edição e, dentro dela, outra vez as mesmas portas.
+Quatro caminhos para dois destinos, com nomes quase iguais e sem nada que
+dissesse o que cada um abre.
+
+**O que entrou.** `src/components/EdicoesDoEstudo.astro`, que é a forma única e
+a única: uma linha por edição, com a língua, o título dessa edição, a data em que
+ela entrou no repositório, e as portas **sempre pela mesma ordem** (a leitura
+composta no sítio primeiro, o documento tal como foi publicado a seguir). Não há
+segundo ficheiro que possa divergir: a página do estudo rende-o no lugar do bloco
+que saiu, e a página de leitura rende-o no painel lateral, que é o que o §7.4
+manda à letra («o que ela tem, as edições, as descrições, "ler o documento", vai
+para o painel lateral da página do texto»).
+
+**A frase que diz o que cada porta abre é uma legenda, e não uma promessa.** A
+primeira redação dizia «Cada edição leva as suas portas: …», e oito das dezasseis
+edições não têm texto composto: nessas páginas a frase nomeava uma porta que não
+estava lá. A forma que fica diz o que cada NOME de porta abre, como a legenda de
+um mapa diz o que cada marca é, e por isso é verdadeira nas doze páginas sem
+mudar de palavras: «O que cada porta abre: "Ler no sítio", o texto composto aqui;
+"Ler o documento", a edição tal como foi publicada.»
+
+**Três chaves saíram com a razão escrita.** `estudos.edicaoIrma` levava à página
+do estudo na outra língua, que é o que o comando de língua do cabeçalho faz em
+todas as páginas do sítio: um segundo caminho para o mesmo destino, que é o que a
+§0 do brief proíbe. `estudos.atualizadoLabel` rendia-se em todas as filas e em
+**onze das dezasseis** edições não tinha data nenhuma para mostrar, só o marcador
+de ausência ao lado da data que o leitor veio ver. E `estudos.documentoK` era o
+título do bloco que saiu.
+
+### 2 · A página de capa deixa de ser paragem obrigatória
+
+O §7.4 diz «o título da lista vai direto ao texto; a página de capa deixa de
+existir como paragem obrigatória». **O título continua a abrir a página do
+estudo**, e a razão é que ela não é uma capa: é a página do observatório sobre o
+estudo, com a leitura da casa, os seus valores selados e o concelho de que trata.
+O que muda é que ela deixa de ser o caminho ÚNICO: **cada linha do índice leva a
+porta da leitura**, e o texto chega-se a um toque.
+
+A escolha da porta é a mesma regra do componente, para o leitor aprender uma
+ordem e não duas: primeiro a leitura composta neste sítio, depois o documento tal
+como foi publicado; e primeiro a edição desta língua, depois a outra, porque um
+estudo publicado só em inglês não tem edição portuguesa nenhuma para abrir.
+
+| | antes | depois |
+|---|---|---|
+| estudos com a leitura a dois toques do índice, por edição | **12 de 12** | **0 de 12** |
+| linhas do índice com a porta da leitura | 0 de 24 | **24 de 24** |
+
+### 3 · «Descarregar · Sem ficheiros» sai, e sai o bloco inteiro
+
+O §7.4 manda que ele «não se imprime quando está vazio». **Não estava vazio às
+vezes: estava vazio sempre**, nas doze páginas e nas duas edições, porque não há
+neste sítio nenhuma fonte de ficheiros de um estudo. Um rótulo com a sua própria
+negação por baixo é uma linha que não responde a nada: sai o bloco, e não só a
+frase. **24 blocos → 0.**
+
+### 4 · «arquivo» sai como nome de coisa (§7.4)
+
+O §7.4 fecha o vocabulário dos estudos com três palavras: «um só nome para os
+estudos, "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A régua
+media «trabalho» e não media «arquivo». A palavra entra no vocabulário da L3, e
+as **seis cadeias** onde ela vivia mudam:
+
+| onde | antes | depois |
+|---|---|---|
+| a descrição de `/estudos` e de `/en/studies` | O arquivo de estudos publicados… | Os estudos publicados… |
+| a porta que devolve a lista inteira depois do filtro | Ver o arquivo inteiro | Ver todos os estudos |
+| a porta de volta, no fim de uma página de estudo | Voltar ao arquivo | Voltar aos estudos |
+| as glosas das duas contagens, na página dos estudos | estudos no arquivo · edições | estudos publicados · edições |
+| as mesmas glosas no `title` da primeira página (`src/lib/prova.mjs`) | estudos no arquivo · edições no arquivo | estudos publicados · edições publicadas |
+| a porta da secção dos estudos no Método (texto governado) | Ver o arquivo | Ver os estudos |
+
+O Método é texto governado, e a amarra das decisões fechou a construção a pedir a
+entrada: **`DECISIONS.md` §1.105**, com o carimbo de `metodo 854a1c9e5393` a
+passar a `metodo f2e44f1ed56a`.
+
+**A L3 fica em 26 e «arquivo» mede 0.** As duas ocorrências que ficam no `dist/`
+são de origem declarada e a régua não as conta: uma no registo de uma correção
+(«Pela distinção entre trabalho e edição que o arquivo usa…») e outra na
+aritmética de uma linha do livro-razão.
+
+### 5 · A célula dos estudos, nova na régua da cadeia
+
+`scripts/check-lugar.mjs` ganha «§7.4 e 8.6 · estudos fora da forma única», que
+conta **cinco espécies de defeito**, e não uma:
+
+1. uma página de estudo ou de leitura sem exatamente uma frase das portas;
+2. uma fila de edição com as portas fora da ordem única, ou com uma porta que não
+   é nenhuma das duas;
+3. um dos rótulos que saíram de volta à página (o bloco «Descarregar» e o bloco
+   «O documento original»);
+4. uma linha do índice dos estudos sem a porta da leitura, ou com mais do que uma;
+5. uma porta da leitura que aponta para uma página que não existe.
+
+Nasce a **0**, com a guarda da regra 14 da casa: zero defeitos sobre zero páginas
+fecha a construção, e a contagem imprime-se para que o número tenha um sítio —
+**24** páginas de estudo, **8** de leitura, **2** índices, **44** filas de edição,
+**24** linhas do índice. Os rótulos que saíram estão escritos à mão na régua, e é
+de propósito: as cadeias saíram de `strings.mjs` no mesmo commit, e uma régua que
+lesse a chave que já não existe não media nada.
+
+### 6 · A decisão 1: o §7.7 item 4 fica desfeito, e assim registado
+
+**Decisão do lugar de direção de 09.09.2026:** o selo ao pé do seu número na
+manchete «fica desfeito e assim registado», porque a 390 em inglês leva a
+manchete a quatro linhas e o teto de três do item 8.15 prevalece. A medida está
+na secção 8 da sexta sessão e repete-se aqui:
+
+| | com os selos no fim | com os selos ao pé do número |
+|---|---|---|
+| a manchete de `/` a 390 | 3 linhas, 97,5 px | 3 linhas |
+| a manchete de `/en` a 390 | 3 linhas, 97,5 px | **4 linhas, 130 px** |
+
+### 7 · A decisão 2: a L2a a 0, com três conferências no lugar de uma isenção
+
+**Decisão do lugar de direção de 09.09.2026:** «a busca em repouso não rende uma
+lista dos 308 no HTML; sem guião, o caminho é o formulário a submeter a consulta
+ao índice dos concelhos, não uma lista; com guião, as sugestões aparecem só
+depois de escrever. L2a a 0, medido».
+
+**A régua ganhou três conferências em vez de perder uma**, e é isso que a impede
+de ser um portão enfraquecido. A fila de resultados só sai da conta quando as
+três coisas que a decisão afirma se confirmam nessa página, uma a uma:
+
+1. cada uma das portas contadas está dentro da fila (`[data-resultados]`);
+2. a fila chega **fechada** do servidor (o atributo `hidden` no `<ul>`), que é o
+   mesmo estado de um `<details>` fechado, e a razão pela qual um já estava fora
+   da conta;
+3. a página tem uma busca com destino: um `<form role="search">` com
+   `method="get"` e `action` para o índice dos concelhos daquela edição.
+
+Se qualquer uma deixar de ser verdade, a fila volta a contar. **Duas plantas
+novas provam-no** (a fila aberta; o formulário tirado), e as duas morderam.
+
+**E a A9 confirma o outro lado**, na cabeça desta sessão: «com guião, a partir de
+`/`: 2 toque(s), sem rolar, chegou a `/municipios/evora` · sem guião, pela
+submissão nativa: `/municipios?concelho=%C3%89vora`».
+
+| | antes | depois |
+|---|---|---|
+| L2a | 2 (`/` e `/en`) | **0** |
+
+### 8 · A decisão 3: as células herdadas medem o que os blocos decidiram
+
+**A5 (`porta.mjs`), as 29 unidades.** A célula nasceu com o F1.1, que mandava a
+lista dos nomes **aberta**, porque abaixo de 1 024 nenhuma das 29 áreas do desenho
+chegava aos 44 px pelo quadrado inscrito (I82) e a rede de nomes era o único alvo
+que respondia por elas. O F1.1d e o F1.1e mudaram esse facto e a decisão que dele
+saía: «A lista aberta dos 29 nomes sai; fica uma lista fechada como alternativa
+sem guião» (F1.1d §0), e «sem guião as unidades são ligações para as suas páginas
+com a lista fechada dos nomes por baixo» (F1.1e §0). Uma célula que continuasse a
+exigir os 29 nomes visíveis em repouso media o que o bloco anterior queria e não o
+que os dois seguintes decidiram.
+
+A expectativa «visível em repouso» **retira-se com a razão escrita**, e no lugar
+dela fica o que a decisão promete a quem não tem rato nem guião, medido:
+
+```
+✓ A5.pt  a gaveta dos nomes abre com um toque e leva as 29 unidades com alvo ≥ 44 px …
+         em repouso 29 nome(s), 29 invisível(eis) (a gaveta chega fechada, F1.1d/F1.1e);
+         a 390 abriu true, 29 nome(s), 0 fora do alvo; a 768 abriu true, 29 nome(s), 0 fora
+         do alvo; 29 porta(s), 0 fora de «/distritos/», 0 sem resposta
+```
+
+O toque é um `click` a sério sobre o `<summary>`, e não um `open = true` escrito
+por fora: um estado forçado não prova gesto nenhum. **O alvo de 44 px dentro da
+gaveta é a exigência do lugar de direção**, e diz-se: os briefs do F1.1d e do
+F1.1e fixam os 44 px para as áreas desenhadas e não escrevem nada sobre os nomes
+da gaveta (a P1 do F1.1d ficou, aliás, «medida e não exigida», §1.102 item 7).
+
+**A7 e A12 (`porta.mjs`): as duas liam a página errada, e o texto delas dizia
+outra.** As duas corriam sobre `p2`, que até ao item 8.16 era a primeira página e
+passou a ser «Portugal na União Europeia» quando os 21 cartões mudaram de casa. O
+texto continuou a dizer «em /» e «no menu de /». A A7 ficou a contar fichas de
+busca numa página que não tem busca nenhuma: **vermelha desde então, e não por
+causa do sítio**. A A12 passava, porque o menu é o mesmo em todas as páginas, e
+por isso o defeito só se via numa delas.
+
+As duas passam a abrir a página que nomeiam. **A A7 continua a valer à letra, e o
+distrito já estava nas sugestões**: não foi preciso devolvê-lo, foi preciso ir vê-lo
+onde ele está.
+
+```
+✓ A7.pt  as duas fichas de «Lagoa» na busca de /: 308 ficha(s) na lista, 2 com o nome
+         «Lagoa», 2 texto(s) distinto(s), 1 com «Faro» e 1 com «São Miguel»
+         [Lagoadistrito de Faro | LagoaIlha de São Miguel]
+```
+
+A célula ganhou uma conferência que não tinha: **as 308 fichas antes de procurar
+as duas Lagoas**, porque contar zero Lagoas numa lista vazia é a régua a dormir.
+E uma planta nova (o `<span class="pesquisa-distrito">` tirado) prova que ela
+morde. `porta.mjs` sai a **34 de 34**.
+
+**As seis de `correcoes-a.mjs`, uma a uma.**
+
+*A4 (duas células, uma por edição).* Media «a pesquisa está à vista, logo por
+baixo da lede». A lede **saiu da primeira página com o item 8.16 deste bloco**:
+os dois quadros da União mudaram-se para «Portugal na União Europeia» e a frase
+que os apresentava foi com eles (`.cabeca-lede` rende-se hoje em `/uniao-europeia`
+e em `/en/european-union`, e em mais lado nenhum, medido no `dist/`). Sem o
+elemento, a comparação dava sempre falso. A expectativa passa a ser a que a ordem
+queria dizer, e são **duas** e não uma, porque uma só deixaria passar uma busca
+empurrada para baixo do mapa: **depois da manchete e antes do mapa**. As duas
+células passam.
+
+*A10, quatro células (o selo e os alvos, por edição).* A célula contava cinco
+alvos abaixo de 44 px no corpo da primeira página. **Um era um defeito a sério e
+consertou-se:** o título da secção dos domínios, que também é porta, media 14,4 px
+de altura; a caixa cresce para o alvo do toque sem tocar na letra. **Os outros
+quatro são da manchete**, que o item 8.15 pôs a citar duas linhas: os dois valores
+(«89,7» a 54,3 × 32,5 e «6» a 44 × 32,5) e os dois selos da fila (52,5 × 18 em
+português, 61 × 18 em inglês).
+
+**Dar-lhes a área foi construído, e o portão recusou-o.** Com o `::after` de
+44 px em `.cabeca-h1 a.claim-porta`, `npm run check:alvos` fechou com duas
+células vermelhas:
+
+```
+✗ H7  1 com uma porta de OUTRA linha dentro da sua área
+      (1× a.claim-value.claim-porta «6» · não medido (caixa 24.8×48))
+✗ H2  3 são caixas e falham (a.claim-value.claim-porta «22» · 44.7×35.8 de toque
+      (caixa 32.3×31); «23» · 44.7×32.3; «23» · 44.7×41.8)
+```
+
+É a regra da casa a cumprir-se à letra: «uma área sobreposta não é um alvo maior,
+é uma porta que abre a linha do vizinho». Numa manchete de três linhas a 390 a
+entrelinha é de 32,5 px, e duas áreas de 44 px em linhas seguidas cruzam-se
+sempre que as colunas também se cruzam. É a mesma classe de coisa que a nota de
+`.brief-text` já descreve para a frase da leitura breve, com a mesma saída: **a
+manchete é prosa e não uma fila**, e dar-lhe altura é mudar a composição da
+manchete, que é decisão da direção e não de uma folha.
+
+Os quatro saem do **juízo** e ficam **contados ao lado**, com as medidas à vista,
+como as áreas do mapa já estão, e a lista é fechada por nome (só o que vive dentro
+do `<h1>` da manchete e da fila de selos dela). `correcoes-a.mjs` sai a **32 de
+32**, e as duas células dos alvos imprimem agora o nome e o texto de cada alvo
+pequeno, que era o que faltava para saber de que se falava.
+
+### 9 · A decisão 4: a frase da fronteira do domínio entra na dobra «Como ler»
+
+**Decisão do lugar de direção de 09.09.2026:** a frase «sai estruturalmente para
+a dobra "Como ler" da página do domínio, fechada por omissão, como o 8.11 manda
+para a prosa da casa; §9.6 a 0 nas duas edições, medido».
+
+A sexta sessão tinha-a medido a 390 × 664: começava a **679 px** em português
+(quinze fora do primeiro ecrã) e a **661** em inglês, três dentro. Empurrar a
+margem mais dez píxeis para caber num teto era a folha a obedecer a uma régua, e
+o número seguinte que mudasse a altura da cabeça desfazia-o. A saída é a
+estrutural que o próprio item 8.11 escreve: «uma dobra "Como ler" ou a leitura
+breve».
+
+A dobra é o `<details>` da casa (`Gaveta.astro`), sem uma linha de guião, com o
+`<summary>` como alvo de 44 px; fechada, quem usa o teclado e quem ouve continuam
+a chegar-lhe, e a régua do primeiro ecrã não a conta porque o leitor não a lê sem
+a abrir. **O que a frase É não muda:** continua `conteudo` pela carta (§9.2), e o
+que mudou foi onde ela começa.
+
+| §9.6 · prosa da casa no primeiro ecrã da página do domínio, a 390 × 664 | antes | depois |
+|---|---|---|
+| `/dominios/economia-e-financas-publicas` | 0 caracteres, 0 blocos | **0** e **0** |
+| `/en/domains/economia-e-financas-publicas` | **317** caracteres, 1 bloco | **0** e **0** |
+
+### 10 · As catorze plantas da L9, e as catorze morderam
+
+Corridas sobre o `dist/` desta cabeça, cada uma com o resumo do ficheiro antes,
+com o estrago e depois de reposto, e **todas repuseram byte a byte**:
+
+| a planta | a medida | antes → depois |
+|---|---|---|
+| uma segunda lista dos 308 de volta (as 29 listas de `/municipios` copiadas para `/regioes/alentejo`) | L2a | 0 → **1** |
+| a fila da busca aberta na primeira página (o `hidden` do `<ul data-resultados>` tirado) | L2a | 0 → **1** |
+| a busca da primeira página sem o formulário que submete para o índice | L2a | 0 → **1** |
+| a régua das regiões copiada numa região | L2b | 0 → **1** |
+| uma sinopse na página do concelho | L2c | 0 → **1** |
+| «município» visível | L3 | 26 → **27** |
+| «arquivo» visível | L3 | 26 → **27** |
+| o caminho a faltar numa página (o `aria-label` tirado do `<nav class="caminho">` de `/municipios/evora`) | L5 | 0 → **1** |
+| um selo que não diz o publicador (a etiqueta de uma linha trocada em `/agenda`) | L6 | 0 → **1** |
+| a frase das portas tirada da página de um estudo | §7.4 e 8.6 | 0 → **1** |
+| as portas de uma edição fora da ordem única (o documento antes da leitura) | §7.4 e 8.6 | 0 → **1** |
+| o bloco «Descarregar · Sem ficheiros» de volta | §7.4 e 8.6 | 0 → **1** |
+| uma linha do índice dos estudos sem a porta da leitura | §7.4 e 8.6 | 0 → **1** |
+| a porta da leitura a apontar para uma página que não existe | §7.4 e 8.6 | 0 → **1** |
+
+**Duas falharam à primeira, e as duas falhas eram da planta e não da régua:** a
+lista dos 308 procurava `.mun-grupo-lista` e a classe da página é
+`.concelhos-lista`; e o caminho procurava `<nav aria-label="Onde está"` sem a
+classe que vem antes do atributo. Corrigidas, morderam as duas. Reposto tudo, a
+régua sai onde estava.
+
+### 11 · O primeiro ecrã a 390 × 664, depois desta sessão
+
+`node design/especime-v3/medicoes/lugar-2026-09-04/primeiro-ecra.mjs`:
+
+| página | prosa da casa | blocos da casa | prosa com os cartões | caracteres no ecrã |
+|---|---|---|---|---|
+| `/` | 33 | 2 | 269 | 804 |
+| `/en/` | 37 | 2 | 276 | 819 |
+| `/municipios/evora` | 55 | 3 | 591 | 1 070 |
+| `/en/municipalities/evora` | 21 | 1 | 560 | 1 073 |
+| `/estudos/onde-esta-a-agua` | **126** | 2 | 126 | 387 |
+| `/en/studies/onde-esta-a-agua` | **132** | 2 | 132 | 397 |
+| `/livro-razao` | 11 | 1 | 86 | 500 |
+| `/en/ledger` | 16 | 1 | 85 | 503 |
+| `/dominios/economia-e-financas-publicas` | **0** | **0** | 578 | 1 397 |
+| `/en/domains/economia-e-financas-publicas` | **0** | **0** | 532 | 1 377 |
+| `/regioes/alentejo` | 14 | 1 | 59 | 329 |
+| `/en/regions/alentejo` | 14 | 1 | 58 | 339 |
+
+**Duas linhas mexeram-se, e nas duas o número diz o que se decidiu.** A página
+inglesa do domínio desceu de **317** para **0**, com a dobra «Como ler» (secção
+9). A página de um estudo subiu de **13** para **126** (132 na inglesa), e a
+subida é a frase que o item 8.6 manda pôr lá: **os dois itens do mesmo brief
+puxam em sentidos contrários nesta página**, e o 8.6 é o que fala dela. O que
+subiu não é prosa de contexto nem ressalva: é a legenda de duas portas, com 126
+caracteres, por cima das portas que ela nomeia. Fica medido e dito, para o lugar
+de direção decidir se quer o contrário.
+
+### 12 · As capturas
+
+**52 capturas** em `design/especime-v3/capturas/lugar-2026-09-09/`: treze famílias
+de página (a primeira, o índice dos concelhos, um concelho, o índice das regiões,
+uma região, um domínio, o índice dos números, uma linha, o índice dos estudos, um
+estudo, **a página de leitura de um estudo**, a página europeia e o Método), nas
+duas edições, a 390 × 664 (o primeiro ecrã) e a 1 280 (a página inteira). As
+quatro da página de leitura são novas: é a superfície que passou a levar a lista
+das edições no painel lateral.
+
+### 13 · O que o bloco NÃO tocou, e é preciso dizer
+
+**Duas coisas ficam medidas e não decididas, e as duas são da manchete.**
+
+O **§7.7 item 4** (o selo ao pé do seu número) está desfeito por decisão do lugar
+de direção de 09.09, com o número que o desfez.
+
+O **alvo dos quatro elementos da manchete** (os dois valores citados e os dois
+selos da fila) fica abaixo dos 44 px a 390, e crescer não é uma opção desta folha:
+o `check:alvos` recusou-o com a H7 e a H2. A saída, se a direção a quiser, é levar
+a entrelinha da manchete de 32,5 px para 44, que é mudar a composição.
+
+**E uma terceira, que é uma leitura por fazer:** a L7 do brief (a releitura das
+treze páginas pelo leitor de primeira vez, a contar as repetições que ficaram) é
+do lugar de direção, e não desta sessão.
+
+### 14 · O modelo, o custo, os commits e os portões
+
+**Claude Opus 5.** O contador do harness dava 15 000 000 de símbolos no arranque
+da sessão e cerca de 14 565 000 ao escrever esta linha: **da ordem de 435 mil**. É
+o contador da janela e não a fatura; o número da fatura é o que o harness disser.
+
+**Os commits desta sessão**, por ordem: as edições de um estudo numa só forma; a
+célula dos estudos na régua com a L2a e as células herdadas; «arquivo» fora do
+vocabulário e a dobra «Como ler»; e o fecho, que é esta linha.
+
+**Os três portões, com os códigos lidos dos ficheiros e não do ecrã**, na árvore
+do último commit de código desta sessão:
+
+```
+npm run build     > build.log 2>&1;     echo $? > build.exit     → 0
+npm run verify    > verify.log 2>&1;    echo $? > verify.exit    → 0
+npm run typecheck > typecheck.log 2>&1; echo $? > typecheck.exit → 0
+```
+
+**A corrida da CI da cabeça do código** é a **34324532988**, na cabeça
+`29ec83fd`. Um commit não pode conter o número da corrida que ele dispara, e por
+isso o número de uma corrida escreve-se sempre no commit seguinte.
+
+**O aviso de ambiente cumpriu-se outra vez:** todos os comandos de `git` e de
+`npm` desta sessão correram com o caminho da worktree à frente ou dentro dela, e
+a cabeça foi confirmada com `git -C <worktree> rev-parse --short HEAD` antes do
+empurrão.
 
 ---
 
@@ -980,7 +1396,13 @@ naquela família diz-se na mesma linha.*
 | «estudo» é o nome, e «trabalho» sai como nome de coisa | §2.3 e §7.4 |
 | o índice ganha o filtro por concelho (`?concelho=`), que o guião aplica e que sem guião não corta nada, e a porta que devolve a lista inteira | §1 e 8.10 |
 | o caminho no cabeçalho | §2.5 |
-| **por fazer, e é o que falta do bloco:** a página de capa deixa de ser paragem obrigatória; as edições apresentadas de uma só forma, com uma frase que diga o que cada porta abre; «Descarregar · Sem ficheiros» não se imprime quando está vazio | §7.4 e 8.6 |
+| **as edições apresentam-se de uma só forma**, num componente único (`EdicoesDoEstudo.astro`) que a página do estudo e o painel lateral da página de leitura rendem: uma linha por edição, com a língua, o título, a data do repositório e as portas sempre pela mesma ordem | 8.6 |
+| **a frase que diz o que cada porta abre**, uma vez, por cima da lista: é uma legenda («O que cada porta abre: …») e não uma promessa, porque oito das dezasseis edições não têm texto composto | 8.6 |
+| **a página de capa deixa de ser paragem obrigatória**: cada linha do índice leva a porta da leitura, e o texto chega-se a um toque (era dois em 12 de 12) | §7.4 |
+| **o bloco «Descarregar · Sem ficheiros» sai** (24 blocos → 0): não estava vazio às vezes, estava vazio sempre | §7.4 |
+| saem o bloco «O documento original» (era a segunda apresentação das mesmas portas), a porta da edição irmã (o comando de língua faz o mesmo) e a «Última atualização» (sem data em 11 das 16 edições) | 8.6 |
+| **«arquivo» sai** da descrição do índice, da porta que devolve a lista inteira, da porta de volta e das duas glosas das contagens | §7.4 |
+| a página de leitura passa a imprimir as datas do repositório das suas edições, e `check-datas.mjs` aprendeu a quarta rota para as prender | 8.6 |
 
 ### O índice dos números (`/livro-razao`) e a página de uma linha (`/livro-razao/<id>`)
 
@@ -1013,21 +1435,33 @@ naquela família diz-se na mesma linha.*
 | a legenda do instrumento diz «verificado a» e não «reconferido a», que é a palavra da terceira data de uma medida | §7.3 |
 | o caminho no cabeçalho | §2.5 |
 
+### O domínio, o que a sétima sessão lhe acrescentou
+
+| o que muda | o item |
+|---|---|
+| **a frase da fronteira passa para dentro de uma dobra «Como ler»**, fechada por omissão: a prosa da casa no primeiro ecrã a 390 × 664 desce de 317 para 0 na edição inglesa, e fica em 0 na portuguesa | 8.11 e §9.6 |
+
+### A primeira página, o que a sétima sessão lhe acrescentou
+
+| o que muda | o item |
+|---|---|
+| o título da secção dos domínios, que também é porta, cresce de 14,4 px para o alvo do toque | a célula A10 de `correcoes-a.mjs` |
+| as duas glosas das contagens, no `title` ao lado do número, deixam de dizer «arquivo» | §7.4 |
+
 ### O que o bloco NÃO tocou, e é preciso dizer
 
-**Os estudos (§7.4 e 8.6).** A página de capa de um estudo continua a ser uma
-paragem obrigatória entre a lista e o texto, as edições apresentam-se de maneiras
-diferentes em estudos diferentes, e «Descarregar · Sem ficheiros» imprime-se
-vazio. É a família que falta, e é a mais estrutural do que resta.
+**Duas coisas ficam medidas e não decididas, e as duas são da manchete.** O §7.7
+item 4 (o selo ao pé do seu número) está desfeito por decisão do lugar de direção
+de 09.09, com o número que o desfez: em linha, a manchete inglesa passa de três
+para quatro linhas a 390, e o teto do item 8.15 são três. E o alvo dos quatro
+elementos da manchete (os dois valores citados e os dois selos da fila) fica
+abaixo dos 44 px a 390: crescer não é opção da folha, porque o `check:alvos` o
+recusou com a H7 («uma porta de OUTRA linha dentro da sua área») e com a H2, e a
+saída seria mudar a composição da manchete.
 
-**A L2a mede 2**, e são os 308 resultados da busca da primeira página, rendidos
-escondidos do servidor. O §1 autoriza a busca ali; o que a régua conta é a fila de
-resultados dela, e a decisão de a isentar com a razão ou de tirar as portas é do
-lugar de direção.
-
-**O §7.7 item 4** (o selo ao pé do seu número na manchete) foi construído, medido
-e desfeito: em linha, a manchete inglesa passa de três para quatro linhas a 390, e
-o teto do item 8.15 são três. A medida está na secção 8 da sexta sessão.
+**A L7 do brief** (a releitura das treze páginas pelo leitor de primeira vez, a
+contar as repetições que ficaram) é do lugar de direção e não de nenhuma sessão
+de construção.
 
 ---
 

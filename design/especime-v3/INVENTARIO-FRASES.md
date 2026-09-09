@@ -691,7 +691,8 @@ e por isso conteúdo.*
 | conteudo | Long series on the country’s evolution. | até 2026-08-26 | viva | — |
 | conteudo | No subject assigned | até 2026-08-26 | viva | — |
 | conteudo | Non-revenue water in Portugal’s public supply systems. | até 2026-08-26 | viva | — |
-| conteudo | O arquivo de estudos publicados, com as suas edições em português e em inglês. | até 2026-08-26 | viva | — |
+| conteudo | Os estudos publicados, com as suas edições em português e em inglês. | lugar | viva | — |
+| conteudo | O arquivo de estudos publicados, com as suas edições em português e em inglês. | até 2026-08-26 | retirada | o §7.4 do F1.10 (09.09.2026): «um só nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A frase mudou de palavras e não de sentido, e a linha nova está no bloco `lugar` |
 | conteudo | PT [a verificar] | até 2026-08-26 | viva | — |
 | conteudo | PT Avaliação económica das regiões de Portugal. | até 2026-08-26 | viva | — |
 | conteudo | PT Economia, investidores e portas abertas no município de Évora. | até 2026-08-26 | viva | — |
@@ -708,7 +709,8 @@ e por isso conteúdo.*
 | conteudo | Studies | até 2026-08-26 | viva | — |
 | conteudo | Séries longas sobre a evolução do país. | até 2026-08-26 | viva | — |
 | conteudo | The accounts of the second-to-last year were rejected in a vote and were never certified. | até 2026-08-26 | viva | — |
-| conteudo | The archive of published studies, with their Portuguese and English editions. | até 2026-08-26 | viva | — |
+| conteudo | The published studies, with their Portuguese and English editions. | lugar | viva | — |
+| conteudo | The archive of published studies, with their Portuguese and English editions. | até 2026-08-26 | retirada | o §7.4 do F1.10 (09.09.2026): «um só nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A frase mudou de palavras e não de sentido, e a linha nova está no bloco `lugar` |
 | navegacao | The link leaves this domain. | até 2026-08-26 | viva | — |
 | conteudo | Uma leitura transversal do município de Évora: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado. | voz-dos-documentos | viva | — |
 | conteudo | Água não faturada nos sistemas de abastecimento em Portugal. | até 2026-08-26 | viva | — |
@@ -745,10 +747,14 @@ portão reconta do registo em disco.*
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
 | conteudo | As linhas deste documento | até 2026-08-26 | viva | — |
-| conteudo | O documento original | até 2026-08-26 | viva | — |
+| navegacao | O que cada porta abre: «Ler no sítio», o texto composto aqui; «Ler o documento», a edição tal como foi publicada. | lugar | viva | — |
+| navegacao | Como ler | lugar | viva | — |
+| navegacao | What each door opens: “Read on the site”, the text composed here; “Read the document”, the edition as it was published. | lugar | viva | — |
+| navegacao | How to read | lugar | viva | — |
+| conteudo | O documento original | até 2026-08-26 | retirada | o item 8.6 do F1.10 (09.09.2026): as edições de um estudo passam a apresentar-se «de uma só forma em todos os estudos», e o bloco «O documento original» era a primeira das duas apresentações das mesmas portas. A forma que fica é a lista das edições (`EdicoesDoEstudo.astro`), e as portas vivem lá dentro |
 | conteudo | O registo de conteúdo | até 2026-08-26 | viva | — |
 | conteudo | The content record | até 2026-08-26 | viva | — |
-| conteudo | The original document | até 2026-08-26 | viva | — |
+| conteudo | The original document | até 2026-08-26 | retirada | o item 8.6 do F1.10 (09.09.2026): as edições de um estudo passam a apresentar-se «de uma só forma em todos os estudos», e o bloco «O documento original» era a primeira das duas apresentações das mesmas portas. A forma que fica é a lista das edições (`EdicoesDoEstudo.astro`), e as portas vivem lá dentro |
 | conteudo | The rows of this document | até 2026-08-26 | viva | — |
 | conteudo | as this document prints it | até 2026-08-26 | viva | — |
 | conteudo | como este documento o imprime | até 2026-08-26 | viva | — |
@@ -1105,8 +1111,8 @@ os dois estados vazios encolhem para a ausência em duas palavras.
 | conteudo | Every published study, with its editions and dates. Those hosted elsewhere carry the link to it. | grelha-da-voz | viva | — |
 | conteudo | Documento alojado | grelha-da-voz | viva | — |
 | conteudo | Document hosted | grelha-da-voz | viva | — |
-| conteudo | Sem ficheiros. | grelha-da-voz | viva | — |
-| conteudo | No files. | grelha-da-voz | viva | — |
+| conteudo | Sem ficheiros. | grelha-da-voz | retirada | o §7.4 do F1.10 (09.09.2026): «"Descarregar · Sem ficheiros" não se imprime quando está vazio». Não estava vazio às vezes: estava vazio sempre, nas doze páginas e nas duas edições, porque não há neste sítio nenhuma fonte de ficheiros de um estudo. Saiu o bloco, e não só a frase |
+| conteudo | No files. | grelha-da-voz | retirada | o §7.4 do F1.10 (09.09.2026): «"Descarregar · Sem ficheiros" não se imprime quando está vazio». Não estava vazio às vezes: estava vazio sempre, nas doze páginas e nas duas edições, porque não há neste sítio nenhuma fonte de ficheiros de um estudo. Saiu o bloco, e não só a frase |
 
 ## Bloco «A voz do livro-razão» · 27.08.2026
 
@@ -1281,8 +1287,10 @@ página do leitor.*
 | conteudo | concelhos | grelha-2 | viva | — |
 | conteudo | concelhos in the coordinates file of the official administrative map | grelha-2 | viva | — |
 | conteudo | concelhos no ficheiro de coordenadas da Carta Administrativa | grelha-2 | viva | — |
-| conteudo | editions in the archive | grelha-2 | viva | — |
-| conteudo | edições no arquivo | grelha-2 | viva | — |
+| navegacao | published editions | lugar | viva | — |
+| conteudo | editions in the archive | grelha-2 | retirada | o §7.4 do F1.10 (09.09.2026): «um só nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A frase mudou de palavras e não de sentido, e a linha nova está no bloco `lugar` |
+| navegacao | edições publicadas | lugar | viva | — |
+| conteudo | edições no arquivo | grelha-2 | retirada | o §7.4 do F1.10 (09.09.2026): «um só nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A frase mudou de palavras e não de sentido, e a linha nova está no bloco `lugar` |
 | conteudo | entradas de natureza revisão de proveniência no livro-razão | grelha-2 | viva | — |
 | conteudo | entries of kind provenance revision in the ledger | grelha-2 | viva | — |
 | conteudo | itens da agenda | grelha-2 | viva | — |
@@ -1297,11 +1305,13 @@ página do leitor.*
 | conteudo | panel measures whose value is inside the published threshold | grelha-2 | viva | — |
 | conteudo | panel measures whose value is outside the published threshold | grelha-2 | viva | — |
 | conteudo | trabalhos no arquivo | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
-| conteudo | estudos no arquivo | lugar | viva | — |
+| navegacao | estudos publicados | lugar | viva | — |
+| conteudo | estudos no arquivo | lugar | retirada | o §7.4 do F1.10 (09.09.2026): «um só nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A frase mudou de palavras e não de sentido, e a linha nova está no bloco `lugar` |
 | conteudo | unidades da Carta Administrativa: os distritos e as ilhas | grelha-2 | viva | — |
 | conteudo | units of the official administrative map: the districts and the islands | grelha-2 | viva | — |
 | conteudo | works in the archive | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
-| conteudo | studies in the archive | lugar | viva | — |
+| navegacao | published studies | lugar | viva | — |
+| conteudo | studies in the archive | lugar | retirada | o §7.4 do F1.10 (09.09.2026): «um só nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A frase mudou de palavras e não de sentido, e a linha nova está no bloco `lugar` |
 
 ## Bloco «As regiões» · Emenda 21 · 27.08.2026
 
