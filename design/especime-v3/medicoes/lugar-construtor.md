@@ -406,7 +406,8 @@ npm run typecheck > typecheck.log 2>&1; echo $? > typecheck.exit → 0
 ```
 
 **Os commits desta sessão**, por ordem: a matriz inteira com o rótulo da régua
-preso à caixa; o item 8.15 com a régua da manchete corrigida; o item 8.9; o §9.2
+preso à caixa; o item 8.15 com a régua da manchete corrigida (e a segunda vez,
+com a decisão refeita depois de a régua estar certa); o item 8.9; o §9.2
 com a §1.104; o §9.7; a A15 com o apontador grosso; e o relatório.
 
 **A corrida da CI** lê-se na primeira linha de `gh run list --repo
@@ -487,7 +488,7 @@ naquela família diz-se na mesma linha.*
 | o que muda | o item |
 |---|---|
 | a faixa passa a levar as **medidas de cabeça dos domínios vivos** (hoje cinco: a dívida pública, o saldo, a taxa de emprego, a taxa de desemprego, o ganho médio); os 21 cartões dos dois quadros da União saem para a página nova | 8.16 |
-| a manchete é uma frase com dois algarismos selados, e cabe em **2 linhas** a 390 (era 3) | 8.15 |
+| a manchete é uma frase com dois algarismos selados, e cabe em **3 linhas** a 390 (teto 3), pelo degrau da escala de tipos e sem mudar a frase | 8.15 |
 | a secção dos domínios passa a ser o **índice dos domínios**: os dezoito nomes, a contagem das medidas de cada um que está vivo, e a porta. **0 valores selados** | 8.13 e §9.1 |
 | o comando de densidade sai da página, e com ele o estado `?densidade=leitura`, que já não muda nada | 8.14 |
 | a frase de definição, uma vez, por baixo do nome | §2.1 |
@@ -767,7 +768,11 @@ mudou está dentro dos números:
   as duas que estavam de fora entraram (era «cartao: fundo 678,9; selo: fundo
   666,5» e é agora «fundo máximo 646,8», dentro dos 664). O que a mantém
   vermelha é a manchete: **5 linhas em `/` e 6 em `/en`**, contra o teto de 3 do
-  item 8.15.
+  item 8.15. *(Estes dois números são os que a régua dava nesse dia, e são a
+  mais: a quinta sessão mediu que a A1 contava topos de rectângulo e que a
+  manchete tinha três linhas e quatro. A célula estava vermelha com razão — a
+  inglesa passava mesmo do teto —, e o número não era o certo. Ver a secção 4 da
+  quinta sessão.)*
 * **A4** passa nas duas edições (ver o achado 2).
 * As outras vermelhas são A5 e A7 (as 29 unidades e as fichas da busca de `/`,
   que mudaram com o F1.1d) e A15.
@@ -901,7 +906,10 @@ e é o guião que o põe; aqui rende-se do servidor.
 telemóvel a manchete do país fica com no máximo dois algarismos selados e cabe
 em três linhas, medido»). A A1 de `porta.mjs` mede-o e está vermelha. A terceira
 sessão deu o item por feito no seu relatório; a célula que o mede não foi corrida
-nesse dia.
+nesse dia. *(Os dois números são os que a régua dava, e são a mais: a quinta
+sessão mediu que a A1 contava topos de rectângulo e que a manchete tinha três
+linhas e quatro. O achado fica de pé — a inglesa passava do teto —, e o item
+fechou-se nessa sessão com um degrau da escala de tipos.)*
 
 **2. O item 8.9 não está cumprido no número que ele fixa.** A barra acima do
 nome mede **98,4 px** em `/` e **132,8 px** em `/en`, em duas filas, contra o
