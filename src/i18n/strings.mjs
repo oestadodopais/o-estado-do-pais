@@ -1235,6 +1235,16 @@ export const STRINGS = {
          a lista. É uma porta e não uma frase: o texto dela vive dentro do `<a>`,
          que a régua da voz deixa cair dos dois lados. */
       compararPorta: 'Comparar as regiões',
+      /* «PROVISÓRIO» EXPLICADO UMA VEZ (F1.10, §7.6, 09.09.2026). A palavra
+         aparece ao lado de onze valores do livro-razão e em lado nenhum se dizia
+         de quem ela é. É da FONTE: `source_flag` é a bandeira tal como a fonte a
+         escreve, e a nota de cada linha (`source_flag_note`) é o que a fonte
+         escreveu sobre aquele valor, transcrito. A frase diz de quem a marca é, e
+         mais nada: a primeira redação acrescentava onde ler a nota da fonte, e o
+         portão da voz apanhou-a («a página», o marcador da casa a falar de si).
+         Vive no índice das regiões, que é onde a régua vive e onde a palavra se vê
+         mais vezes. */
+      provisorioNota: '«Provisório» é a marca que a própria fonte põe ao valor.',
       voltarIndice: 'As regiões de Portugal',
       voltarPais: 'Portugal',
     },
@@ -1328,7 +1338,12 @@ export const STRINGS = {
          do mapa cuja paleta é `limiar` (o índice de dívida contra o teto
          legal), que fica ao lado dele com a mesma forma visual. Sem a frase, a
          diferença entre as duas paletas só se lê pela cor. */
-      porConcelhoPorta: 'Os valores concelho a concelho →',
+      /* «Os valores concelho a concelho →» SAIU (F1.10, §7.7, 09.09.2026): era a
+         porta ao lado da tabela do mapa, com quase o mesmo nome do comando que a
+         abre, e o §7.7 funde as duas numa só. O que ela dava (as outras linhas de
+         cada concelho) passa a estar onde o leitor já está a olhar: cada nome da
+         tabela é a porta da página do seu concelho. A cadeia sai porque uma
+         declarada que nada rende é uma porta aberta esquecida. */
       /* A ALTERNATIVA EM TEXTO DO MAPA, DENTRO DA PÁGINA (segunda passagem,
          03.09.2026, Major 7): uma tabela com os valores de cada concelho,
          recolhida na própria página e não só uma porta para outro sítio. SEM
@@ -2122,17 +2137,26 @@ export const STRINGS = {
 
       provenienciaK: 'Proveniência',
       estudosK: 'Os estudos sobre este concelho',
-      estudoLink: 'Abrir a leitura',
-      /* A PORTA DO ARQUIVO FILTRADO (bloco F1.10, §1 do brief). Os estudos
-         inteiros vivem em `/estudos`; a página do concelho lista os títulos e
-         abre esta porta.
+      /* A PORTA PARA O ÍNDICE DOS ESTUDOS, FILTRADO POR ESTE CONCELHO (F1.10,
+         §1 e 8.10, 09.09.2026). A página do concelho lista os TÍTULOS; a
+         apresentação inteira de um estudo é `/estudos` e a página dele, e esta é
+         a porta que lá leva com o filtro do concelho no endereço. O texto vive
+         todo dentro de um `<a>`, e por isso não entra no inventário das frases:
+         é um destino, e não uma frase da casa.
 
          SEM O «n» QUE O BRIEF ESBOÇA, e a razão é a regra da casa: um número que
          se vê no sítio resolve numa linha do livro-razão ou numa chave da prova
          que o portão reconta, e a contagem dos estudos de um concelho não é nem
          uma coisa nem outra. Escrevê-la aqui era um algarismo sem origem; a
-         lista logo acima é a contagem, e conta-se nela. */
-      estudosPorta: 'Os estudos sobre este concelho, no arquivo',
+         lista logo acima é a contagem, e conta-se nela.
+
+         E NÃO DIZ «ARQUIVO», que era a palavra da primeira redação desta cadeia,
+         escrita numa sessão anterior deste mesmo bloco e nunca rendida: o §7.4
+         fixa «um só nome para os estudos, "estudo", nunca "trabalho" nem
+         "arquivo" como nome de coisa». As duas cadeias estavam declaradas ao lado
+         uma da outra, com o mesmo nome, e o `typecheck` apanhou-o. */
+      estudosPorta: 'Ver estes estudos no índice',
+      estudoLink: 'Abrir a leitura',
 
       voltarMapa: 'Voltar ao mapa dos concelhos',
     },
@@ -2800,6 +2824,7 @@ export const STRINGS = {
       distanciaUnidade: 'index points',
       /* Ver a razão na edição portuguesa. */
       compararPorta: 'Compare the regions',
+      provisorioNota: '“Provisional” is the flag the source itself puts on the value.',
       voltarIndice: 'The regions of Portugal',
       voltarPais: 'Portugal',
     },
@@ -2836,7 +2861,6 @@ export const STRINGS = {
       mapaMenosDe: 'less than ',
       mapaA: ' to ',
       mapaOuMais: ' or more',
-      porConcelhoPorta: 'The values municipality by municipality →',
       mapaTabelaAbrir: 'The values, municipality by municipality',
       mapaTabelaConcelho: 'Municipality',
       mapaTabelaValor: 'Value',
@@ -3214,9 +3238,8 @@ export const STRINGS = {
 
       provenienciaK: 'Provenance',
       estudosK: 'The studies about this municipality',
+      estudosPorta: 'See these studies in the index',
       estudoLink: 'Open the reading',
-      /* Ver a razão na edição portuguesa. */
-      estudosPorta: 'The studies about this municipality, in the archive',
 
       voltarMapa: 'Back to the map of municipalities',
     },

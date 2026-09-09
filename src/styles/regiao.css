@@ -212,6 +212,22 @@
 
 /* ----------------------------------------------------------------- as portas */
 
+/* A PORTA DA RÉGUA (F1.10, §1 e §7.6, 09.09.2026): a régua inteira vive no
+   índice, e a página de uma região leva lá. Fica acima das portas de volta,
+   porque não é uma delas: é a continuação da leitura desta página. */
+.regiao-comparar {
+  margin-top: clamp(18px, 2.4vw, 26px);
+}
+
+/* «Provisório» dito uma vez, por baixo da régua do índice. É a legenda de uma
+   marca, e leva o corpo e a tinta de uma legenda. */
+.regiao-provisorio {
+  margin-top: 14px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
 .regiao-portas {
   margin-top: clamp(22px, 3vw, 32px);
 }

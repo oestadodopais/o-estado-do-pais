@@ -291,7 +291,32 @@ const ocorrencias = (texto, agulha) => texto.split(agulha).length - 1;
 const ALTURA_PEQUENA = 664;
 const ALVO_TOQUE = 44;
 const ALVO_PONTEIRO = 32;
-const TETO_DA_MOBILIA = 64;
+/**
+ * ---------------------------------------------------------------------------
+ * A MOBÍLIA TEM DOIS TETOS, UM POR EDIÇÃO (F1.10, item 8.9, decisão do lugar de
+ * direção de 09.09.2026)
+ * ---------------------------------------------------------------------------
+ * O teto do brief é 64 px, e a edição portuguesa cumpre-o numa fila (62 px,
+ * medido na quinta sessão). A inglesa não cabe, e a conta está feita ao píxel: a
+ * barra mede 354 px a 390; o comando de abertura mede 55,7 e a goteira 10, e as
+ * duas goteiras da fila 20, o que deixa **268,3 px** para as três etiquetas; e as
+ * três etiquetas inglesas medem, a 12 px com o entreletra da casa,
+ * **311,3 px** («Municipalities» 105,4 + «Studies» 53,4 + «Numbers and sources»
+ * 152,5). Faltam 43,0 px, e a contração que o brief autoriza («Numbers &
+ * sources») fecha 18,8 dos 43: ficavam 24,2 por fechar.
+ *
+ * A DECISÃO É DO LUGAR DE DIREÇÃO, PELA DELEGAÇÃO DA §1.98: as etiquetas
+ * inglesas ficam fiéis («Municipalities», «Studies», «Numbers and sources») —
+ * não se encurta o nome que o diretor escolheu para a página dos números — e o
+ * corpo não desce abaixo dos 12 px que a regra A9 fixou para o telemóvel. A
+ * edição inglesa aceita DUAS FILAS a 390, e o teto dela é a altura medida dessas
+ * duas filas: **95,2 px**. Uma terceira fila fica vermelha, que é o que este
+ * número existe para impedir.
+ *
+ * O DIRETOR PODE REABRIR ISTO com um nome inglês mais curto para a página dos
+ * números: com ele, a fila inglesa cabe numa linha e o teto volta a ser um só.
+ */
+const TETO_DA_MOBILIA = { pt: 64, en: 95.2 };
 const LIMIAR_DA_COLUNA = 1024;
 
 /* ---------------------------------------------------------------------------
@@ -659,15 +684,21 @@ async function corre() {
        continua a imprimir a altura para que uma caixa vazia com fio se veja no
        número em vez de passar despercebida. */
     medidas[`A11.${ed.chave}`] = { acimaDoNome: g.mobilia, barra: g.barra, leituras: g.leituras };
+    /* AS FILAS DA BARRA SÃO DUAS POR EDIÇÃO, E É A MESMA DECISÃO (item 8.9): uma
+       em português, duas em inglês. O número da barra é o que o teto mede, e
+       por isso a célula pede as duas coisas ao mesmo par. */
+    const tetoDaMobilia = TETO_DA_MOBILIA[ed.chave];
+    const filasDaBarra = ed.chave === 'pt' ? 1 : 2;
     conta(
       `A11.${ed.chave}`,
       g.mobilia !== null &&
-        g.mobilia <= TETO_DA_MOBILIA &&
-        g.barra.filas === 1 &&
+        g.mobilia <= tetoDaMobilia &&
+        g.barra.filas === filasDaBarra &&
         g.leituras.filas === 0 &&
         g.leituras.altura === 0,
-      `mobília acima do nome a 390: ${g.mobilia} px (teto ${TETO_DA_MOBILIA})` +
+      `mobília acima do nome a 390: ${g.mobilia} px (teto ${tetoDaMobilia})` +
         ` · a barra em ${g.barra.filas} fila(s) com ${g.barra.itens} item(ns), ${g.barra.altura} px` +
+        ` (esta edição cabe em ${filasDaBarra})` +
         ` · as leituras por baixo do nome em ${g.leituras.filas} fila(s) com ${g.leituras.itens} à vista, ${g.leituras.altura} px (o item 8.11 exige 0 e 0)`,
     );
 
@@ -1492,6 +1523,31 @@ async function corre() {
       );
       await pg.__ctx.close();
       const queixas = [];
+      /* A CAMADA DA REGIÃO DEIXOU DE TER FAIXA (F1.10, §1 e §7.6, 09.09.2026), e
+         a célula mede o FACTO em vez de pedir de volta o que a casa tirou. A
+         página de uma região tinha os seus dois valores três vezes — na faixa, em
+         «As medidas» e, um deles, dentro da manchete — e o §7.6 manda ficar «o
+         valor uma vez e a porta "Comparar as regiões →"». Das duas apresentações
+         ficou a que leva a unidade e o período ao lado do valor.
+         O que aqui se exige daquela camada é o contrário do que se exige das
+         outras três: zero faixas, e a porta da régua no lugar dela. Uma célula
+         que só contasse «n de N» onde há faixa passaria com a faixa de volta. */
+      const semFaixa = camada === 'regiao';
+      if (semFaixa) {
+        if (r.length !== 0) queixas.push(`a página tem ${r.length} faixa(s), e o §7.6 tirou-lha`);
+        const temPorta = await pagina(rota, 390, ALTURA_PEQUENA).then(async (pg2) => {
+          const v = await pg2.evaluate(() =>
+            [...document.querySelectorAll('main a[href], a[href]')].some((a) =>
+              (a.getAttribute('href') ?? '').includes('#regua'),
+            ),
+          );
+          await pg2.__ctx.close();
+          return v;
+        });
+        if (!temPorta) queixas.push('a página não tem a porta para a régua do índice');
+        faixas.push({ camada, rota, faixas: [], queixas });
+        continue;
+      }
       if (r.length === 0) queixas.push('a página não tem faixa nenhuma');
       for (const f of r) {
         const N = f.cartoes;

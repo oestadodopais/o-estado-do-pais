@@ -37,9 +37,7 @@
  * conta registada e selo, como qualquer outro valor do livro-razão.
  */
 import Base from '../layouts/Base.astro';
-import InstrumentoConvergencia from '../components/InstrumentoConvergencia.astro';
 import CabecaDoLugar from '../components/inicio/CabecaDoLugar.astro';
-import Faixa from '../components/inicio/Faixa.astro';
 import Manchete from '../components/Manchete.astro';
 import Peca from '../components/inicio/Peca.astro';
 import { regiaoDoSlug } from '../lib/regioes.mjs';
@@ -74,7 +72,6 @@ if (!regiao) throw new Error(`regioes: região desconhecida ou sem linhas "${slu
 const path = routePath('regiao', lang, { slug });
 const nome = regiao.nome[lang];
 const indice = getClaim(regiao.valor);
-const distancia = getClaim(regiao.distancia);
 
 /* ---------------------------------------------------------------------------
  * UM SEPARADOR SÓ EXISTE ENTRE DUAS COISAS (leitura cruzada do Codex, 28.08.2026)
@@ -93,46 +90,16 @@ const medidaDeUmaLinha = (unidade, linha) =>
   linha.reference_date ? [unidade, ' · ', { ref: linha.reference_date }] : [unidade];
 
 /* ---------------------------------------------------------------------------
- * A FAIXA DA REGIÃO (01.09.2026)
+ * A FAIXA DA REGIÃO SAIU (F1.10, §7.6, 09.09.2026)
  * ---------------------------------------------------------------------------
- * A cabeça nova é a mesma nas três páginas — a do país, a da região e a do
- * concelho —, e cada uma tem a sua faixa: «a faixa da região com a régua de
- * hoje». As medidas de hoje de uma região são as duas que a entrada dela traz, e
- * são as MESMAS que as peças rendem por baixo, da mesma lista e pela mesma
- * ordem: a faixa é o «Relance» e as peças são a «Leitura breve».
- *
- * NENHUMA LEVA ESTADO, e a razão é a que as peças já escrevem: não há limiar
- * publicado numa média (Emenda 1), e o que a régua desenha é a posição e não um
- * juízo. Sem estado não há palavra nem quadrado, e o cartão fica com o valor, a
- * unidade, o nome e o selo.
+ * A lista dos seus dois cartões vivia aqui, e ela e «As medidas» eram a mesma
+ * lista, da mesma fonte e pela mesma ordem: o próprio comentário de 01.09
+ * escrevia-o («são as MESMAS que as peças rendem por baixo, da mesma lista e
+ * pela mesma ordem»). O que era um par de densidades passou a ser o mesmo valor
+ * duas vezes no mesmo ecrã, e é o que o §7.6 vem tirar. A razão de ficar «As
+ * medidas» e não a faixa está escrita na página, ao lado do sítio onde a faixa
+ * se rendia.
  */
-/* A POSIÇÃO DE CADA CARTÃO ENTRA NA FAIXA DA REGIÃO (F1.2b, item 3,
-   03.09.2026): o ordinal é o índice nesta lista e o total é o comprimento dela,
-   contados abaixo e não escritos. Uma região tem outra lista e outro número, e é
-   por isso que a posição se conta em cada faixa e nunca se copia da primeira
-   página. */
-const cartoes = [
-  {
-    id: regiao.valor,
-    /* A leitura breve daquela medida vive por baixo, nesta mesma página. */
-    destino: `#m-${regiao.valor}`,
-    nome: s.regioes.indiceK,
-    medida: medidaDeUmaLinha(
-      { nl: s.home.instr1.glanceUnidade, motivo: 'escala-de-instrumento' },
-      indice,
-    ),
-    estado: null,
-    glifos: [...String(indice.value)].length,
-  },
-  {
-    id: regiao.distancia,
-    destino: `#m-${regiao.distancia}`,
-    nome: s.regioes.distanciaK,
-    medida: medidaDeUmaLinha(s.regioes.distanciaUnidade, distancia),
-    estado: null,
-    glifos: [...String(distancia.value)].length,
-  },
-].map((c, i) => ({ ...c, posicao: i + 1 }));
 ---
 
 <Base
@@ -191,19 +158,34 @@ const cartoes = [
       </div>
     </div>
 
-    <Faixa
-      slot="faixa"
-      s={s}
-      lang={lang}
-      rotulo={s.inicio.faixa.rotulo}
-      cartoes={cartoes}
-      total={cartoes.length}
-    />
+    {/* ------------------------------------------------------------------
+        A FAIXA E A RÉGUA SAÍRAM DAQUI (F1.10, §1 e §7.6, 09.09.2026)
+        ------------------------------------------------------------------
+        Esta página tinha as MESMAS DUAS MEDIDAS três vezes: na faixa de cartões,
+        em «As medidas» por baixo, e — a segunda delas — dentro da manchete. E
+        tinha, por cima disso, a régua inteira da convergência, com as nove
+        regiões e o país: nove valores selados que são de outra página, copiados
+        para dentro de cada uma das nove.
 
-    <section slot="instrumento" class="regiao-instr" id="regua" aria-labelledby="regua-k">
-      <h2 class="regiao-instr-k" id="regua-k">{s.home.instr1.h2}</h2>
-      <InstrumentoConvergencia lang={lang} distinguida={slug} leituraNaCabeca={true} />
-    </section>
+        A REGRA §0 DO BRIEF DECIDE AS DUAS COISAS. «Cada conteúdo tem um lugar de
+        apresentação inteira; em todo o outro sítio aparece como uma porta.» A
+        régua inteira é de `/regioes` (§1, a linha das 9 regiões), e aqui fica a
+        porta «Comparar as regiões →». As duas medidas desta região ficam UMA
+        VEZ, em «As medidas», com o valor, a unidade, o período e o selo de cada
+        uma, que é a apresentação inteira delas.
+
+        A FAIXA É QUE SAI, E NÃO «As medidas», e a razão é a que o §7.6 escreve
+        pela ordem em que escreve («sem a faixa e sem "As medidas" a repetirem o
+        mesmo valor»): das duas formas, a que fica é a que leva a unidade e o
+        período ao lado do valor. E há uma segunda razão, de construção: cada
+        cartão da faixa tem de levar a uma leitura daquela medida, e uma região
+        não tem leitura por medida — a sua frase é a manchete. Com «As medidas»
+        fora, os cartões ficavam a apontar para âncoras que já não existiam.
+
+        A EMENDA 21 (d) MUDA NESTA PARTE, e é o brief que a muda: dizia «uma
+        região não tem mapa; tem a régua». A régua continua a ser o instrumento
+        desta camada; o que muda é onde ela vive, que é o mandato deste bloco.
+        ------------------------------------------------------------------ */}
   </CabecaDoLugar>
 
   <section class="regiao-pecas" id="pecas" aria-labelledby="pecas-k">
@@ -220,16 +202,25 @@ const cartoes = [
         )}
         estado="sem"
       />
-      <Peca
-        s={s}
-        lang={lang}
-        id={regiao.distancia}
-        nome={s.regioes.distanciaK}
-        medida={medidaDeUmaLinha(s.regioes.distanciaUnidade, distancia)}
-        estado="sem"
-      />
+      {/* A DISTÂNCIA SAIU DAQUI, E ESTÁ NA MANCHETE (F1.10, §7.6, 09.09.2026).
+          «Fica o valor uma vez.» A frase desta região É a distância, com o seu
+          selo, no topo da página («O Alentejo está 23 pontos abaixo da média da
+          UE-27»), e uma peça a repeti-la punha o mesmo valor selado duas vezes na
+          mesma página, que é o que a régua A3 proíbe e o que o item 8.13 aplicou
+          à primeira página. O que fica aqui é o valor que a manchete NÃO diz: o
+          índice de PIB per capita, com a sua unidade, o seu período e o seu
+          selo. */}
     </div>
   </section>
+
+  {/* A PORTA DA RÉGUA (F1.10, §1 e §7.6): «uma porta "Comparar as regiões →" em
+      vez de copiar a régua e a lista inteiras». Vai para a âncora da régua no
+      índice, que é onde ela vive, e leva a seta que a casa usa para uma porta
+      que muda de página. A cadeia já estava declarada e não se rendia em lado
+      nenhum. */}
+  <p class="regiao-comparar">
+    <a href={`${routePath('regioes', lang)}#regua`}>{s.regioes.compararPorta} →</a>
+  </p>
 
   <p class="rodape-nav regiao-portas">
     <a href={routePath('regioes', lang)}>{s.regioes.voltarIndice}</a>

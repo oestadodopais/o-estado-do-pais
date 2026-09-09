@@ -99,10 +99,19 @@ const TETOS = {
   /* L2a · páginas, fora de `/municipios`, que ligam a mais de `L2_LIMITE_NOMES`
      concelhos fora de uma lista fechada. */
   l2_segundas_listas: 2,
-  /* L2b · rendições da régua inteira da convergência fora de `/regioes`. */
-  l2_reguas: 18,
-  /* L2c · sinopses de estudo fora de `/estudos`. */
-  l2_sinopses: 10,
+  /* L2b · rendições da régua inteira da convergência fora de `/regioes`.
+     DESCE DE 18 PARA 0 a 09.09.2026 (§1 e §7.6): a régua saiu das dezoito páginas
+     de região, onde era a lista das nove copiada para dentro de cada uma, e no
+     lugar dela ficou a porta «Comparar as regiões →». `check:regioes` mede o
+     facto do outro lado, linha a linha e desenho a desenho, e exige a porta. */
+  l2_reguas: 0,
+  /* L2c · sinopses de estudo fora de `/estudos`.
+     DESCE DE 10 PARA 0 a 09.09.2026 (§1 e 8.6): a página do concelho listava
+     cinco cartões com o título, a sinopse e uma segunda porta; passa a listar os
+     TÍTULOS, cada um a abrir o seu estudo, com uma porta para o índice filtrado
+     por este concelho. As cinco sinopses (dez, nas duas edições) vivem em
+     `/estudos` e na página de cada estudo. */
+  l2_sinopses: 0,
   /* L3 · ocorrências do vocabulário fechado no texto da casa, fora das
      exceções e das duas famílias de transcrição.
      DESCE DE 51 PARA 30 a 08.09.2026, com o item 8.4: as duas frases de contexto
@@ -112,8 +121,13 @@ const TETOS = {
      dezoito ocorrências de «município» nas sinopses dos estudos, as duas de
      «indicador» que são campos da fonte na página do domínio, e as dez de
      «trabalho» e «trabalhos» que o §3 do brief e a §A.4 do relatório põem fora
-     deste bloco. */
-  l3_vocabulario: 30,
+     deste bloco.
+     DESCE DE 30 PARA 26 a 09.09.2026, e não por se ter tocado numa palavra: as
+     sinopses dos estudos saíram da página do concelho (§1 e 8.6), e com elas as
+     quatro ocorrências de «município» que elas rendiam ali. As catorze que ficam
+     são as mesmas de sempre, nas páginas dos estudos, onde a sinopse é a frase de
+     abertura do documento, transcrita. */
+  l3_vocabulario: 26,
   /* L4 · falhas: uma frase de definição ou de hierarquia que não está a 1 onde
      o §2 do brief a manda estar. DESCE DE 10 PARA 0 a 08.09.2026: as cinco
      frases de hierarquia passaram a render-se nos cinco índices, nas duas

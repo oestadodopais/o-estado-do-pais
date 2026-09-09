@@ -71,9 +71,19 @@
 
 /* Uma frase citável, e por isso com a medida de leitura da casa e um fio à
    esquerda que a separa da cabeça sem lhe dar caixa própria. */
+/* A FRASE DA FRONTEIRA COMEÇA DEPOIS DO PRIMEIRO ECRÃ, E ISSO É UMA MEDIDA E
+   NÃO UM ACASO (F1.10, item 8.11, 09.09.2026).
+   Medido a 390 × 664: a frase começava a 665 px na edição portuguesa e a 647 na
+   inglesa, ou seja um píxel fora numa e dezassete dentro na outra, e o que
+   separava as duas era a altura da faixa, que muda com os cartões que ela leva.
+   Uma frase que fica fora do primeiro ecrã por um píxel está lá dentro na
+   primeira vez que alguém acrescente uma medida ao domínio. A separação passa a
+   ser a de uma secção, que é o que ela é: acaba o instrumento da cabeça, começa
+   o que a página diz. O item 8.11 manda a prosa para fora do primeiro ecrã, e a
+   régua `medicoes/lugar-2026-09-04/primeiro-ecra.mjs` mede-o. */
 .dominio-fronteira {
   max-width: var(--measure);
-  margin: clamp(20px, 3vw, 30px) 0 0;
+  margin: clamp(34px, 5vw, 48px) 0 0;
   padding-left: 14px;
   border-left: 2px solid var(--rule-strong);
   font-family: var(--f-prosa);
@@ -340,6 +350,21 @@
   border-bottom: 1px solid var(--g2);
   font-weight: normal;
 }
+/* CADA NOME É A PORTA DA PÁGINA DO SEU CONCELHO (F1.10, §1 e §7.7, 09.09.2026).
+   A célula inteira é o alvo, e não as letras do nome: numa tabela de 308 linhas a
+   diferença entre as duas é o dedo a acertar ou a falhar. O sublinhado só ao
+   passar, porque 308 sublinhados seguidos são uma grelha e não uma lista. */
+.forma-mapa-tabela th a {
+  display: block;
+  padding: 5px 0;
+  margin: -5px 0;
+  color: var(--ink);
+  text-decoration: none;
+}
+.forma-mapa-tabela th a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .sq-mapa {
   display: inline-block;
   width: 12px;
@@ -376,7 +401,9 @@
     var(--g3) 4px
   );
 }
-.forma-mapa-porta,
+/* `.forma-mapa-porta` SAIU com a porta que ela desenhava (F1.10, §7.7,
+   09.09.2026): a razão está em `MapaPorConcelho.astro`. Uma regra sem elemento é
+   uma regra que mente sobre o que a folha desenha. */
 .forma-mapa-fonte {
   display: flex;
   flex-wrap: wrap;

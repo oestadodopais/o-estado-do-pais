@@ -1331,29 +1331,43 @@ const metodoPath = routePath('metodo', lang);
         {/* A NOTA DOS TRABALHOS SAIU (Emenda 15). Dizia «Cada um tem a sua
             página, com a medida que o faz valer a pena, a frase do que concluiu,
             o método e o documento original quando está alojado aqui.» — o sítio a
-            descrever as suas próprias páginas antes de as dar. Cada cartão leva o
-            título do trabalho, a sua frase e a porta. */}
-        <div class="mun-estudos">
+            descrever as suas próprias páginas antes de as dar.
+
+            E AS SINOPSES SAÍRAM (F1.10, §1 e 8.6, 09.09.2026). «Os estudos →
+            `/estudos`; a página do concelho lista os títulos dos estudos sobre ele
+            (só títulos, com ligação) e uma porta; as sinopses saem.» A régua L2c
+            contava dez sinopses de estudo fora de `/estudos`, cinco por edição,
+            todas nesta página: a mesma frase de abertura de cada trabalho, escrita
+            no arquivo, no cartão do concelho e outra vez na página do estudo. O
+            lugar de apresentação inteira de um estudo é `/estudos` e a página
+            dele; aqui é uma porta com o nome dela.
+
+            O TÍTULO É A PORTA, e não um título ao lado de uma porta com outro
+            nome. Era um `<h3>` com o título e, por baixo, uma ligação a dizer
+            «Abrir a leitura» ou «Página do estudo»: duas coisas para o mesmo
+            destino no mesmo cartão, que é o que a medida L1 conta. O nome do
+            estudo é o que o leitor procura, e é ele que abre. */}
+        <ul class="mun-estudos">
           {
             estudos.map((e) => (
-              <article class="mun-estudo">
-                <TituloDeTrabalho as="h3" class="mun-estudo-titulo" titulo={e.titulo} lang={lang} />
-                <p class="mun-estudo-frase">
-                  {e.verbatimDaAbertura ? (
-                    <span data-verbatim={e.verbatimDaAbertura}>{e.descricao}</span>
-                  ) : (
-                    e.descricao
-                  )}
-                </p>
-                <p>
-                  <a class="ligacao-dados" href={e.rota}>
-                    {e.temLeitura ? s.municipio.estudoLink : s.estudos.verEstudo} →
-                  </a>
-                </p>
-              </article>
+              <li class="mun-estudo">
+                <a href={e.rota}>
+                  <TituloDeTrabalho class="mun-estudo-titulo" titulo={e.titulo} lang={lang} />
+                </a>
+              </li>
             ))
           }
-        </div>
+        </ul>
+        {/* A PORTA PARA O ÍNDICE DOS ESTUDOS, FILTRADO POR ESTE CONCELHO
+            (F1.10, §1 e 8.10). SEM O NÚMERO que o brief escreve («os n estudos»),
+            e a razão é a primeira regra da casa: um número na página resolve numa
+            linha do livro-razão, e a contagem dos estudos de um concelho qualquer
+            não tem linha — só Évora tem a sua, e escrever «5» aqui a partir do
+            comprimento de uma lista seria um número que ninguém conta. A porta diz
+            o que abre, e o que ela abre diz quantos são. */}
+        <p class="mun-estudos-porta">
+          <a href={`${routePath('estudos', lang)}?concelho=${slug}`}>{s.municipio.estudosPorta} →</a>
+        </p>
       </section>
       )}
     </div>

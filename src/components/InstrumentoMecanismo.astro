@@ -259,7 +259,59 @@ for (const no of [...cadeia, ...retornos]) {
     </svg>
   </div>
 
-  {/* ============ a legenda: uma porta por chave desenhada ============ */}
+  {/* ======================================================================
+      O DIAGRAMA, EM LISTA, PARA O TELEMÓVEL (F1.10, §7.9, 09.09.2026)
+      ======================================================================
+      «O Método no telemóvel: o diagrama cortado passa à lista das suas caixas
+      com a legenda dentro de cada uma; a fila de palavras soltas por baixo sai.»
+      É o que o leitor de 04.09 no navegador mediu: a 390 px o desenho é uma
+      caixa que se arrasta de lado, e o que sobra por baixo dela é uma fila de
+      quatro ou cinco palavras sem sujeito, que eram as portas da legenda.
+
+      AS MESMAS CAIXAS, PELA MESMA ORDEM, E DA MESMA LISTA. `cadeia` e `retornos`
+      são as duas listas que o desenho percorre, e são estas: uma segunda lista
+      escrita à mão divergiria do desenho à primeira alteração. O que muda é a
+      forma — de `<g>` para `<li>` — e o sítio da porta, que passa a estar dentro
+      da caixa a que pertence, ao pé do número que ela abre.
+
+      AS DUAS FORMAS ESTÃO NO DOCUMENTO, e é a folha que escolhe qual se vê, pela
+      largura: é a mesma decisão do mapa por concelho, que rende o desenho e a
+      tabela e mostra os dois a quem os pode ler. Nenhuma das duas é uma
+      alternativa pobre da outra: as duas dizem os mesmos números, com as mesmas
+      marcas de prova, e o portão reconta-os nas duas.
+      ====================================================================== */}
+  <ul class="mecanismo-lista">
+    {
+      [...cadeia.map((n) => ({ ...n, y: Y })), ...retornos].map((no) => (
+        <li class="mecanismo-item">
+          <p class="mecanismo-item-k">{no.rotulo}</p>
+          {no.valores.map((v) => (
+            <p class="mecanismo-item-v">
+              <a
+                class="mecanismo-item-porta"
+                href={p[v.chave].porta}
+                title={p[v.chave].origem}
+              >
+                <span
+                  class="mecanismo-item-num"
+                  data-prova={p[v.chave].valor === null ? undefined : v.chave}
+                >
+                  {p[v.chave].valor === null ? m.semRegisto : dataDaCasa(p[v.chave].valor)}
+                </span>{' '}
+                <span class="mecanismo-item-cap">{v.rotulo}</span>
+              </a>
+            </p>
+          ))}
+          {no.nota && <p class="mecanismo-item-nota">{no.nota}</p>}
+        </li>
+      ))
+    }
+  </ul>
+
+  {/* ============ a legenda: uma porta por chave desenhada ============
+      Fica com o DESENHO, e desaparece com ele abaixo de 780 px: é a legenda de
+      um `<svg>`, onde uma porta não cabe, e a lista acima já leva a sua dentro de
+      cada caixa (F1.10, §7.9). */}
   <p class="mecanismo-legenda" data-legenda-prova>
     <span class="mecanismo-legenda-k">{m.legendaK}</span>
     {

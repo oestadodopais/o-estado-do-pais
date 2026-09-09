@@ -72,6 +72,11 @@ const conta = p.regioes_com_linha.valor === 1 ? s.regioes.contaUma : s.regioes.c
   <section class="regiao-instr" id="regua" aria-labelledby="regua-k">
     <h2 class="regiao-instr-k" id="regua-k">{s.home.instr1.h2}</h2>
     <InstrumentoConvergencia lang={lang} />
+    {/* «PROVISÓRIO» DITO UMA VEZ, E AQUI (F1.10, §7.6, 09.09.2026). A palavra
+        aparece ao lado de onze valores do sítio e nunca dizia de quem era. Fica
+        POR BAIXO da régua, e não na cabeça: é a legenda de uma marca que só se vê
+        depois de se ver a marca, e o item 8.11 tira a prosa do primeiro ecrã. */}
+    <p class="regiao-provisorio">{s.regioes.provisorioNota}</p>
   </section>
 
   <p class="rodape-nav regiao-portas">
