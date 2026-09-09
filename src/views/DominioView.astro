@@ -73,7 +73,12 @@ import {
   fronteiraDoDominio,
   CABECA_DO_DOMINIO_1,
 } from '../data/dominios.mjs';
-import { fixadorDoLimiar } from '../data/figuras.mjs';
+import {
+  fixadorDoLimiar,
+  DEFINICOES_DAS_MEDIDAS,
+  origensDaDefinicao,
+} from '../data/figuras.mjs';
+import OrigemDaDefinicao from '../components/OrigemDaDefinicao.astro';
 import {
   medidasComLeitura,
   mapaPorConcelho,
@@ -84,7 +89,7 @@ import {
 import { estadoDaMedida } from '../lib/estado.mjs';
 import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
-import { linguaDoTituloDoDocumento, linguaDaFonte } from '../i18n/lingua-dos-titulos.mjs';
+import { linguaDaFonte } from '../i18n/lingua-dos-titulos.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { canonicalUrl, SITE_NAME, SITE_URL } from '../../site.config.mjs';
 import { FONTE_DIGITAL_GERADA_POR_IA } from '../data/politica-ia.mjs';
@@ -96,6 +101,14 @@ import '../styles/inicio.css';
 import '../styles/dominio.css';
 
 const { lang = 'pt', slug } = Astro.props;
+
+/* A DEFINIÇÃO DECLARADA DE UMA LINHA, OU `null` (decisão 24, 09.09.2026). Não
+   há definição escrita nesta página: o que há é a leitura da declaração única
+   que a página europeia já cita, com a origem que a prova. Uma linha sem
+   definição declarada não recebe uma inventada aqui. */
+const definicaoDaMedida = (claim) =>
+  /** @type {Record<string, { origens: readonly string[] }>} */ (DEFINICOES_DAS_MEDIDAS)[claim] ??
+  null;
 const s = t(lang);
 
 const dominio = dominioDoSlug(slug);
@@ -385,6 +398,7 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
       rotulo={s.inicio.faixa.rotulo}
       cartoes={cartoes}
       total={cartoes.length}
+      conjunto={s.inicio.faixa.conjuntoDominio}
     />
   </CabecaDoLugar>
 
@@ -446,6 +460,41 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
               </>
             )}
           </p>
+
+          {/* ------------------------------------------------------------------
+              A DEFINIÇÃO DA MEDIDA, EM PALAVRAS (decisão 24 da releitura do
+              leitor de primeira vez, 09.09.2026)
+              ------------------------------------------------------------------
+              O leitor de primeira vez perguntou-o na página deste domínio: «The
+              domain asks "Quanto deve o Estado?" but supplies no Portuguese
+              definition beyond an English dataset title.» O título inglês saiu
+              hoje da linha da fonte (decisão 16), e o que ele mal fazia não pode
+              ficar por fazer: onde a casa TEM uma definição declarada para
+              aquela linha, ela rende-se aqui, uma vez, ao pé do nome, com a
+              origem que a prova.
+
+              ONDE NÃO TEM, NÃO SE INVENTA. As definições declaradas são as das
+              21 medidas dos dois quadros da União
+              (`DEFINICOES_DAS_MEDIDAS`, em `src/data/figuras.mjs`), cada uma
+              tirada da descrição da Comissão ou do Eurostat e citada com o
+              documento, o endereço, a data de leitura e o excerto. Três das dez
+              medidas deste domínio são as mesmas linhas e trazem-na; as outras
+              sete não têm definição declarada em lado nenhum, e o relatório do
+              bloco lista-as pelo nome. Escrever-lhes uma frase de cabeça seria
+              inventar a definição de uma medida do Estado.
+              ------------------------------------------------------------------ */}
+          {definicaoDaMedida(medida.claim) && (
+            <div class="dominio-definicao" data-definicao={medida.claim}>
+              <p class="dobra-definicao">
+                <Frase partes={definicaoDaMedida(medida.claim)[lang]} lang={lang} selos={true} />
+              </p>
+              <OrigemDaDefinicao
+                origens={origensDaDefinicao(definicaoDaMedida(medida.claim), lang)}
+                s={s}
+                lang={lang}
+              />
+            </div>
+          )}
 
           {linha !== null && (
             <p class="dominio-valor">
@@ -510,8 +559,16 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
                   ))}
                 </p>
               )}
+              {/* «PUBLICADO POR», E SEM O TÍTULO DO DOCUMENTO (terceira
+                  repetição da releitura do leitor de primeira vez, 09.09.2026).
+                  A linha dizia «fonte Eurostat · General government gross debt…»
+                  e tinha os dois defeitos de uma vez: a palavra «fonte», que o
+                  §7.2 reserva para o SELO, e o título do documento, que o §1
+                  reserva para a página da linha. O que fica é o publicador, com
+                  o nome que o §7.2 lhe dá, e a unidade. O título do documento
+                  lê-se onde ele vive: a um toque, na página da linha. */}
               <p class="dominio-fonte dominio-fonte-irmao">
-                <span class="dominio-data-k">{s.dominios.fonteK}</span>{' '}
+                <span class="dominio-data-k">{s.prov.fonte}</span>{' '}
                 <CampoDaLinha
                   id={o.id}
                   campo="source"
@@ -519,18 +576,6 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
                   lang={lang}
                   lingua={linguaDaFonte(o.linha.source, lang)}
                 />
-                {o.linha.document?.title && (
-                  <>
-                    <span class="dominio-sep"> · </span>
-                    <CampoDaLinha
-                      id={o.id}
-                      campo="document.title"
-                      valor={o.linha.document.title}
-                      lang={lang}
-                      lingua={linguaDoTituloDoDocumento(o.linha.document.title, lang)}
-                    />
-                  </>
-                )}
                 <span class="dominio-sep"> · </span>
                 <CampoDaLinha
                   id={o.id}
@@ -576,9 +621,11 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
 
           {/* A FONTE, COM O NOME DO PUBLICADOR COMO A LINHA O DIZ, pela marca
               forte que o portão compara carácter a carácter. */}
+          {/* «PUBLICADO POR», E SEM O TÍTULO DO DOCUMENTO (09.09.2026): ver
+              a razão por extenso no bloco gémeo das medidas partilhadas. */}
           {linha !== null && (
             <p class="dominio-fonte">
-              <span class="dominio-data-k">{s.dominios.fonteK}</span>{' '}
+              <span class="dominio-data-k">{s.prov.fonte}</span>{' '}
               <CampoDaLinha
                 id={medida.claim}
                 campo="source"
@@ -586,18 +633,6 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
                 lang={lang}
                 lingua={linguaDaFonte(linha.source, lang)}
               />
-              {linha.document?.title && (
-                <>
-                  <span class="dominio-sep"> · </span>
-                  <CampoDaLinha
-                    id={medida.claim}
-                    campo="document.title"
-                    valor={linha.document.title}
-                    lang={lang}
-                    lingua={linguaDoTituloDoDocumento(linha.document.title, lang)}
-                  />
-                </>
-              )}
               <span class="dominio-sep"> · </span>
               <CampoDaLinha
                 id={medida.claim}

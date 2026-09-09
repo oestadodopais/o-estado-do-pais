@@ -10,6 +10,52 @@
  * exactamente igual ao texto aqui registado (espaços normalizados). Não é um
  * passe livre para números: é uma verificação de transcrição.
  */
+import { ORIGENS_DAS_DEFINICOES } from './figuras.mjs';
+
+/**
+ * ---------------------------------------------------------------------------
+ * AS ORIGENS DAS DEFINIÇÕES DA PÁGINA EUROPEIA (F1.10, segunda passagem,
+ * 09.09.2026)
+ * ---------------------------------------------------------------------------
+ * A leitura a frio de 09.09.2026 abriu o Blocking 1 contra a primeira passagem:
+ * as 21 definições das medidas e as duas dos painéis eram apresentadas como
+ * citadas da Comissão e do Eurostat, e a página não rendia uma única prova
+ * disso. A decisão do lugar de direção manda a página render, ao pé de cada
+ * definição, o publicador, o documento como porta para o endereço, a data de
+ * leitura e o excerto literal.
+ *
+ * TRÊS DESSES QUATRO CAMPOS SÃO TRANSCRIÇÃO, e passam por aqui, que é o registo
+ * que o portão de HTML confere carácter a carácter. O nome de um organismo, o
+ * título de um documento e um excerto da fonte não são prosa da casa.
+ *
+ * A TABELA NÃO É UMA SEGUNDA CÓPIA. As cadeias são as de
+ * `ORIGENS_DAS_DEFINICOES`, em `src/data/figuras.mjs`, lidas daqui: escrever o
+ * excerto outra vez neste ficheiro era criar duas versões da mesma citação para
+ * divergirem à primeira correção. O que este bloco acrescenta é a CHAVE que o
+ * portão conhece, uma por campo e por origem.
+ *
+ * `lang`: a página da Comissão e as do Eurostat estão em inglês; a do Banco de
+ * Portugal publica as duas, e a declaração traz `excertoEn` para a edição
+ * inglesa. O campo é documental (nenhum código o lê), e diz a verdade.
+ */
+/** @type {Record<string, { lang: string|null, origem: string, text: string }>} */
+const ORIGENS_TRANSCRITAS = Object.fromEntries(
+  Object.entries(ORIGENS_DAS_DEFINICOES).flatMap(([chave, origem]) => {
+    const o = /** @type {{ publicador: string, documento: string, excerto: string, excertoEn?: string }} */ (
+      /** @type {unknown} */ (origem)
+    );
+    const onde = `\`ORIGENS_DAS_DEFINICOES['${chave}']\`, em src/data/figuras.mjs.`;
+    const lingua = chave === 'bdp-pii' ? 'pt' : 'en';
+    return [
+      [`origem-${chave}-publicador`, { lang: null, origem: onde, text: o.publicador }],
+      [`origem-${chave}-documento`, { lang: lingua, origem: onde, text: o.documento }],
+      [`origem-${chave}-excerto`, { lang: lingua, origem: onde, text: o.excerto }],
+      ...(o.excertoEn
+        ? [[`origem-${chave}-excerto-en`, { lang: 'en', origem: onde, text: o.excertoEn }]]
+        : []),
+    ];
+  }),
+);
 
 export const VERBATIM = {
   /**
@@ -140,6 +186,8 @@ Posições projetadas em Web Mercator e normalizadas para o referencial da pági
      (DECISIONS §1.44) com a secção que as rendia. Eram comentário de
      implementação numa página pública, e o portão só exige que uma chave
      renderizada exista aqui: uma entrada que ninguém rende não guarda nada. */
+
+  ...ORIGENS_TRANSCRITAS,
 };
 
 /**

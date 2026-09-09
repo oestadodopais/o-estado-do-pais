@@ -201,6 +201,14 @@ const MOTIVOS_DO_DOMINIO = new Set([
   MOTIVO_DE_AUSENCIA,
   'proveniencia',
   'fonte-da-carta',
+  /* A DATA EM QUE A CASA LEU A DESCRIÇÃO DE ONDE SAIU UMA DEFINIÇÃO (F1.10,
+     segunda passagem, 09.09.2026). A página do domínio passou a render a
+     definição em palavras das medidas cuja linha tem uma declarada, com a
+     origem que a prova: o publicador, o documento como porta, a data de leitura
+     e o excerto (decisão 24 da releitura do leitor de primeira vez). A data é
+     um `data-nonledger` novo, e entra nas duas listas ao mesmo tempo, como o
+     cabeçalho acima manda: aqui e em `ledger/allowlist.yml`. */
+  'data-de-leitura-de-uma-definicao',
 ]);
 
 const claims = loadClaims();

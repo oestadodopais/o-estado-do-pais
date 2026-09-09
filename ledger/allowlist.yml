@@ -164,6 +164,18 @@ contexts:
       `data-agenda="<id>.<campo>"` e o portão compara-a com o registo, carácter
       a carácter. O motivo diz porque é admissível; a comparação prova que é a
       do registo. Ver DECISIONS §1.40.
+  - id: data-de-leitura-de-uma-definicao
+    why: >-
+      A data em que a casa leu, na fonte, a descrição de que uma definição saiu.
+      Rende-se ao pé da definição de um painel ou de uma medida, na página
+      "Portugal na União Europeia" e nas páginas de domínio, com o publicador, o
+      documento e o excerto literal (F1.10, decisão do lugar de direção de
+      2026-09-09). Não é uma medição do país nem uma data do livro-razão: é a
+      data de acesso a um documento de referência, declarada em
+      ORIGENS_DAS_DEFINICOES, em src/data/figuras.mjs. A data que o publicador
+      carimba num dado é outra coisa e continua a ser o campo published_at do
+      livro-razão; a data em que a casa leu uma LINHA é access_date, e vai com a
+      marca data-da-linha.
   - id: identificador-tecnico
     why: >-
       Identificadores técnicos: códigos de cor, códigos de língua, versões,
