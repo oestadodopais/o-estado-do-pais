@@ -235,7 +235,12 @@ const distingue = coberturaDistingue(resultados);
     <div class="concelhos-pesquisa" data-pesquisa-bloco>
       <div class="pesquisa" id="pesquisa">
         <form class="pesquisa-forma" action={path} method="get" role="search" data-porta-concelho>
-          <label class="pesquisa-rotulo" for="pesquisa-concelho">{s.ambito.pesquisaRotulo}</label>
+          {/* As duas cadeias da busca com a marca do inventário (F1.10, §9.7).
+              A razão está em `src/components/inicio/Pesquisa.astro`, que é o
+              componente que o §2.6 manda que esta página passe a usar; enquanto
+              a fusão dos dois não se faz, a marca está nos dois sítios, porque a
+              cadeia rende-se nos dois. */}
+          <label class="pesquisa-rotulo" for="pesquisa-concelho"><span data-voz>{s.ambito.pesquisaRotulo}</span></label>
           <div class="pesquisa-linha">
             <input
               class="pesquisa-campo"
@@ -245,7 +250,7 @@ const distingue = coberturaDistingue(resultados);
               autocomplete="off"
               data-pesquisa
             />
-            <button class="pesquisa-submeter" type="submit">{s.ambito.pesquisaSubmeter}</button>
+            <button class="pesquisa-submeter" type="submit"><span data-voz>{s.ambito.pesquisaSubmeter}</span></button>
           </div>
         </form>
         <p class="pesquisa-vazio" data-sem-resultado hidden>{s.ambito.pesquisaSemResultado}</p>
