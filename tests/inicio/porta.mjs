@@ -677,7 +677,35 @@ async function corre() {
       .filter(([, c]) => !dentro(c))
       .map(([k, c]) => (c === null ? `${k}: não existe` : `${k}: fundo ${c.fundo}`));
     /* O TETO DAS LINHAS DA MANCHETE (item 8.15). Três, medidas em Chromium e em
-       WebKit, nas duas edições; o teto está escrito uma vez e não por edição. */
+       WebKit, nas duas edições; o teto está escrito uma vez e não por edição.
+
+       O SEGUNDO MOTOR MEDE-SE AQUI, DESDE 09.09.2026 (Major 16 da leitura a
+       frio). O relatório do bloco afirmava «3 linhas nas duas edições e nos dois
+       motores» e esta célula abria UM navegador, o Chromium: a medida em WebKit
+       era uma afirmação sem régua. O bloco do WebTKit que existia mais abaixo
+       (célula A16) compara o NOME acessível do `<h1>`, e o nome de um `<h1>` não
+       diz quantas linhas ele ocupa.
+
+       A CONTA É A MESMA SONDA, corrida no outro motor sobre a mesma página e o
+       mesmo ecrã. O que os motores podem fazer diferente é a quebra de linha, e
+       é isso que esta segunda medição existe para apanhar: um teto cumprido num
+       motor e rompido no outro é um teto que não se cumpre. */
+    const linhasEmWebkit = await (async () => {
+      const nav2 = await webkit.launch({ headless: true });
+      try {
+        const ctx = await nav2.newContext({ viewport: { width: 390, height: ALTURA_PEQUENA } });
+        const pg = await ctx.newPage();
+        await pg.goto(base + ed.rota, { waitUntil: 'networkidle' });
+        await pg.evaluate(() => document.fonts.ready);
+        const gw = await pg.evaluate(SONDA_A1, ALTURA_PEQUENA);
+        await ctx.close();
+        return gw.linhasDaManchete;
+      } finally {
+        await nav2.close();
+      }
+    })();
+    medidas[`A1.${ed.chave}`].linhasDaMancheteWebkit = linhasEmWebkit;
+
     const TETO_DAS_LINHAS = 3;
     conta(
       `A1.${ed.chave}`,
@@ -685,12 +713,15 @@ async function corre() {
         g.cartoesDaCabeca === CARTOES_DA_CABECA &&
         g.semSelo.length === 0 &&
         g.linhasDaManchete > 0 &&
-        g.linhasDaManchete <= TETO_DAS_LINHAS,
+        g.linhasDaManchete <= TETO_DAS_LINHAS &&
+        linhasEmWebkit > 0 &&
+        linhasEmWebkit <= TETO_DAS_LINHAS,
       (falhas.length === 0
         ? `390×${ALTURA_PEQUENA}: nome, manchete, cartão, selo e porta do concelho dentro do ecrã ` +
           `(fundo máximo ${Math.max(...Object.values(partes).map((c) => c.fundo)).toFixed(1)} px)`
         : `fora do primeiro ecrã: ${falhas.join('; ')}`) +
-        ` · a manchete em ${g.linhasDaManchete} linha(s) (teto ${TETO_DAS_LINHAS}), ` +
+        ` · a manchete em ${g.linhasDaManchete} linha(s) em Chromium e ` +
+        `${linhasEmWebkit} em WebKit (teto ${TETO_DAS_LINHAS}), ` +
         `${g.manchete ? g.manchete.altura : 0} px de altura` +
         ` · ${g.cartoesDaCabeca} cartões na cabeça (${g.cartoes} na página, ` +
         `${CARTOES_DA_CABECA} declarados pelo domínio), ${g.semSelo.length} sem selo com caixa` +
