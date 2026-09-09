@@ -261,7 +261,16 @@ export const STRINGS = {
          da página da linha, e continua lá inteira. Esta é a palavra que viaja
          com o número para onde quer que ele vá. */
       provisorio: 'provisório',
-      lido: 'Lido a',
+      /* AS DATAS DE FRESCURA DIZEM-SE POR PALAVRAS (F1.10, §7.3, 09.09.2026).
+         «"lido", "conferido", "reconferido" passam a rótulos por palavras
+         ("lido na fonte a", "verificado a"), uma vez por lugar.» O leitor de
+         04.09 no navegador leu «lido» e «conferido» como palavras soltas e não
+         soube o que cada uma dizia. As três datas de uma medida mudaram na quarta
+         sessão deste bloco; esta é a mesma frase, no mesmo campo, nos outros
+         lugares onde ele se rende: o índice dos números, o recibo de uma linha, o
+         cartão de partilha e a agenda das fontes. É a mesma cadeia, e por isso
+         uma só: um nome por coisa em todo o sítio (§0 do brief). */
+      lido: 'Lido na fonte a',
       /* «PUBLICADO POR» E NÃO «FONTE» (F1.10, §7.2, 09.09.2026). O leitor de
          04.09 contou duas «fonte» em cada bloco de medida e em cada linha: o
          selo, que é a PORTA para a linha, e o rótulo do campo `source`, que é o
@@ -489,7 +498,8 @@ export const STRINGS = {
       janelaEntre: 'entre',
       janelaE: 'e',
       origemDaDataK: 'Onde está escrito',
-      acedidoK: 'Lido a',
+      /* A MESMA FRASE DA DATA DE ACESSO (F1.10, §7.3): ver `prov.lido`. */
+      acedidoK: 'Lido na fonte a',
       /* «LINHAS A QUE ISTO DIZ RESPEITO», E NÃO «LINHAS QUE ISTO MOVE» (decisão
          do lugar de direção de 08.09.2026, da leitura a frio do bloco F2.6b do
          motor). O motor passou a pôr neste campo as linhas do último período
@@ -1527,7 +1537,8 @@ export const STRINGS = {
         capNoMapa: 'linhas no mapa do sítio',
         capItens: 'itens',
         capRegistadas: 'registadas',
-        capReconferido: 'reconferido a',
+        /* A MESMA PALAVRA DA TERCEIRA DATA (F1.10, §7.3): ver `livro.linha.reconferidoK`. */
+      capReconferido: 'verificado a',
         capEmAtraso: 'em atraso desde',
         capPublicadas: 'publicadas',
         capSemContagem: 'não é contado',
@@ -1820,9 +1831,21 @@ export const STRINGS = {
         publicadoPor: 'Publicado por',
         publicadoEm: 'em',
         publicadoPagina: 'p.',
-        publicadoLido: 'lido a',
+        /* ESTAS DUAS FICAM CURTAS, E É A MESMA REGRA DO §7.3 lida com cuidado: o
+         rótulo diz-se por palavras onde ele está SOZINHO antes de uma data. Aqui
+         não está: a frase da atribuição já nomeou o organismo («Publicado por X,
+         <documento>, <edição>, lido a <data>») e a do atraso já disse «publicado
+         pela fonte». Escrever «lido na fonte a» dentro delas era dizer a mesma
+         coisa duas vezes na mesma frase. */
+      publicadoLido: 'lido a',
         verificacoesK: 'Verificações',
-        reconferidoK: 'Reconferido a',
+        /* «VERIFICADO A» E NÃO «RECONFERIDO A» (F1.10, §7.3, 09.09.2026). É a
+         data da última entrada de `verifications` desta linha, o mesmo campo que
+         a terceira data de uma medida rende com esta mesma palavra desde a quarta
+         sessão deste bloco. Duas palavras para o mesmo campo eram dois nomes para
+         a mesma coisa, e o prefixo «re-» dizia uma diferença que o campo não tem:
+         a linha guarda todas as verificações, e esta é a última. */
+      reconferidoK: 'Verificado a',
         releituraPorta: 'A regra da releitura',
         /* A TERCEIRA DATA (01.09.2026). O recibo mostrava duas: o período, no
            bloco de cima, e as leituras da casa. Esta é a do publicador. */
@@ -2380,7 +2403,7 @@ export const STRINGS = {
       selo: 'source',
       seloDaCasa: 'row',
       provisorio: 'provisional',
-      lido: 'Read on',
+      lido: 'Read at the source on',
       fonte: 'Published by',
       documento: 'Document',
       edicao: 'Edition',
@@ -2502,7 +2525,7 @@ export const STRINGS = {
       janelaEntre: 'between',
       janelaE: 'and',
       origemDaDataK: 'Where it is written',
-      acedidoK: 'Read on',
+      acedidoK: 'Read at the source on',
       /* Ver a razão na edição portuguesa, e o registo em `CHAVES-EN.md`. */
       afectaK: 'Rows this concerns',
       notaK: 'Note',
@@ -2918,7 +2941,7 @@ export const STRINGS = {
         capNoMapa: 'rows in the sitemap',
         capItens: 'items',
         capRegistadas: 'on record',
-        capReconferido: 're-checked on',
+        capReconferido: 'verified on',
         capEmAtraso: 'overdue since',
         capPublicadas: 'published',
         capSemContagem: 'not counted',
@@ -3079,7 +3102,7 @@ export const STRINGS = {
         publicadoPagina: 'p.',
         publicadoLido: 'read on',
         verificacoesK: 'Verifications',
-        reconferidoK: 'Re-checked on',
+        reconferidoK: 'Verified on',
         releituraPorta: 'The re-reading rule',
         publicadoEmK: 'Published by the source on',
         semRespostaK: 'No answer since',
