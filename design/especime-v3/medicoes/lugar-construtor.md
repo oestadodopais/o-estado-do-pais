@@ -7,6 +7,30 @@ deste relatório foi escrito à mão: cada um tem ao lado o comando que o mediu.
 
 ---
 
+## Estado · 08.09.2026, noite (segunda parte) · **por fazer**, e o que falta está nomeado
+
+**A palavra do cabeçalho é «por fazer», e o que falta são três coisas:** o item 5
+do encargo (o caminho no cabeçalho, a busca única, «fonte» a dizer o publicador,
+as datas de frescura), as outras páginas (a região, o domínio, os índices, os
+estudos, o Método no telemóvel) e o fecho (as capturas, as plantas da L9 corridas
+outra vez, o `REVISOES-DO-INVENTARIO.md`). E uma quarta, que é uma decisão e não
+uma construção: a mobília inglesa a 390 (item 8.9), medida e com o que lhe falta
+escrito ao número.
+
+| | |
+|---|---|
+| cabeça | a última do ramo (`git -C <worktree> rev-parse --short HEAD`) |
+| `main` fundido | **`13372937`**, com o F1.1e inteiro |
+| `build` · `verify` · `typecheck` | **0** · **0** · **0** (códigos lidos de `build.exit`, `verify.exit`, `typecheck.exit`) |
+| a corrida da CI | lê-se na primeira linha de `gh run list --repo oestadodopais/o-estado-do-pais --branch lugar-2026-09-04`. Um commit não pode conter o número da corrida que ele dispara |
+| feito nas sessões anteriores | a régua (encargo (b)); **§9.1**; **8.8**; **§7.5**; **8.16**; **8.13**; **8.12**; **8.14 inteiro**; **§2.2**; **8.5**; **§7.1**; **8.17** e **8.17b**; os dois limiares com o seu fixador; **8.4**; **§9.3**, **§9.4**, **§9.5**, **§9.8** e **§9.9**; **8.11** e **§7.3** |
+| feito nesta sessão | **a dívida da `matriz.mjs`**: as oito navegações a `/?densidade=leitura` saíram com a razão escrita, e a régua passa de 73 células medidas (53 a passar, e a rebentar na septuagésima quarta) para **89 medidas e 89 a passar**; **o item 8.15**, com os dois caminhos medidos: o degrau de tipo não basta e a frase encurta, e a manchete fica em **2 linhas** em `/` e **3** em `/en` (teto 3), com a A1 verde nas duas edições; **o item 8.9** em português, com a mobília a **62 px numa fila** (teto 64), e o que falta à inglesa medido ao píxel; **o §9.2**, com as três frases na página da linha e no Método; **o §9.7**, com as quatro cadeias da busca no inventário; e três defeitos que as réguas encontraram por chegarem mais longe (a segunda metade da ISSUES I20, a célula da língua de um título citado, e o apontador fino da A15) |
+| a seguir | **o item 5 do encargo** (o caminho, a busca única, «fonte» diz o publicador, as datas); **as outras páginas** (a região, o domínio, os índices, os estudos, o Método); **o resto do §9** (o 6 está medido e o 10 é do F3.3); **o fecho** (as capturas, as plantas da L9, o `REVISOES-DO-INVENTARIO.md`); e a **decisão do lugar de direção** sobre a mobília inglesa |
+| nada a meio | **nada ficou por acabar.** Os três portões a 0 nesta árvore, com os códigos lidos dos ficheiros; não há `git stash` nem ficheiro por commitar |
+| a régua, na cabeça desta sessão | L1 6 598 · L2a 2 · L2b 18 · L2c 10 · L3 **30** · L4 **0** · L5 7 213 · L6 26 178 · 8.5 **0** · 8.8 **0** · 8.13 **0** · 8.14 **0** · 8.17 **0** e **0** · 8.11 **0** · 8.4 **0** (`node scripts/check-lugar.mjs`, verde) |
+| as réguas de fora da cadeia | `matriz.mjs` **89 de 89** (era 73 medidas e 53 a passar) · `porta.mjs` **29 de 34** (era 24) · `correcoes-a.mjs` **26 de 32** (era 26; nenhuma mudou) |
+| o modelo e o custo | Claude Opus 5. O contador está na última linha da secção da sessão |
+
 ## Estado · 08.09.2026, noite · as quatro leituras de aparelho fora do cabeçalho de todas as páginas
 
 | | |
@@ -53,6 +77,14 @@ dormir.
 | 8.17 · páginas de concelho sem o mapa da sua unidade (era «da sua região» até ao 8.17b) | não medido sobre um `dist/` (ver abaixo) | **0** · feito | idem |
 | 8.11 e §7.3 · leituras de aparelho no cabeçalho, somadas sobre as 7 240 páginas | **28 892** | **0** · feito | idem |
 | 8.4 · definições de painel fora da declaração (a comparação da A4, metida no `verify`) | nasce a 0 no commit em que entra | **0** · feito, com duas plantas a morder | idem |
+| **8.15 · linhas da manchete a 390, nas duas edições e nos dois motores** | **3** em `/` e **4** em `/en` (Chromium e WebKit) | **2** e **3** (teto 3) · feito | `node tests/inicio/porta.mjs`, célula A1 |
+| **8.9 · a mobília acima do nome a 390** | 98,4 px em 2 filas em `/`, 132,8 px em 2 filas em `/en` | **62 px em 1 fila** em `/` (teto 64) · feito; **95,2 px em 2 filas** em `/en` · falta uma decisão, medida ao píxel | `node tests/inicio/porta.mjs`, célula A11 |
+| **§9.2 · as três frases de diligência da página do domínio** | 3 frases na página do domínio, **0** dentro de uma dobra | **0** na página do domínio; a da escala no Método e as duas ressalvas na página da sua linha · feito | `grep` sobre o `dist/`, e `node design/especime-v3/medicoes/lugar-2026-09-04/primeiro-ecra.mjs` |
+| **§9.6 · prosa da casa no primeiro ecrã da página do domínio, a 390 × 664** | **0** caracteres em **0** blocos | **0** e **0** · feito (a frase da ausência fica `conteudo` pela carta, e a prosa que a explica já não começa no primeiro ecrã) | `node design/especime-v3/medicoes/lugar-2026-09-04/primeiro-ecra.mjs` |
+| **§9.7 · as quatro cadeias da busca no inventário da voz** | **0** das quatro declaradas | **4** de 4, com `data-voz` · feito na parte que não depende do §2.6 | `npm run check:voz` |
+| **a matriz da primeira página** | **73** células medidas, **53** a passar, e a régua a rebentar na septuagésima quarta | **89** medidas, **89** a passar | `node tests/inicio/matriz.mjs` |
+| **a régua da porta** | **24** de 34 células | **29** de 34 | `node tests/inicio/porta.mjs` |
+| **a régua das correções** | **26** de 32 células | **26** de 32 (nenhuma mudou nesta sessão) | `node tests/inicio/correcoes-a.mjs` |
 
 **A L6 é o único teto que subiu nesta sessão, e a razão escreve-se.** A manchete
 de `/` passou a citar duas linhas (a dívida pública e a taxa de desemprego), e
@@ -107,6 +139,433 @@ A quarta é o contador das séries atrasadas que o F1.6 pôs na mobília
 então. O item 8.1 e o §7.3 deste brief mandam essas linhas SAIR do cabeçalho de
 todas as páginas para a página da medida e para o Método: a célula reescreve-se
 quando esse item entrar, e não antes.
+
+---
+
+## Quinta sessão (08.09, noite, segunda parte)
+
+*A quinta sessão de construção pela conta do lugar de direção, na mesma noite da
+quarta. O que ela fez está aqui, pela ordem em que o encargo o pediu.*
+
+### 1 · A dívida da `matriz.mjs`: as oito navegações saíram, e a régua chega ao fim
+
+**Onde ela parava, e porquê.** A régua morria numa célula que procurava
+`[data-leitura="saldo-da-balanca-corrente-2025"]` em `/` e chamava
+`querySelector` sobre `null`. As 21 leituras foram com os 21 cartões para
+«Portugal na União Europeia» (item 8.16), e a célula continuava a lê-las na
+primeira página.
+
+**A regra que decidiu cada célula é a que esta régua já tinha escrita** no seu
+próprio cabeçalho, desde a Emenda 20: uma célula cujo objeto NÃO mudou continua a
+medir o que media; uma cujo objeto MUDOU DE SUPERFÍCIE muda de porta e mantém a
+pergunta; uma cujo objeto DEIXOU DE EXISTIR é retirada com a razão escrita no
+lugar dela, e o que ela passa a medir é o FACTO QUE A RETIROU, nunca um sim
+vazio.
+
+| a célula | o que lhe aconteceu |
+|---|---|
+| a manchete das duas contagens da Emenda 16 | mudou de porta: a frase foi para «Portugal na União Europeia» com o item 8.16. E em `/` entrou uma célula nova, que é a promessa que esta página tem hoje: a manchete é uma frase com **dois algarismos selados no máximo**, cada um com o seu selo (item 8.15) |
+| as 13 leituras do Procedimento e as 21 ao todo | mudou de porta, e ganhou a gémea: **0 leituras de painel em `/`**, que é o facto que a mudou |
+| a ordem do teclado em repouso | o marco do meio era `[data-area-leitura]`, que devolvia −1 em `/`: passa a ser a **faixa**, que é o que ficou entre a porta do concelho e as portas do fim |
+| o passo «densidade → leitura» da história dos estados | **retirado**: um endereço que não muda nada não é um estado. No lugar dele entra o estado de defeito, para que as células de andar para trás e para a frente continuem a ter dois passos, e uma célula nova mede o facto: «`?densidade=leitura` já não muda nada em `/`» |
+| «uma leitura abre só a sua» e a ordem do teclado com uma leitura aberta | mudaram de porta para `/uniao-europeia`, e os dois marcos da segunda passaram a ser a faixa e o rodapé, porque `.portas` não existe naquela página |
+| «o endereço da leitura breve abre todas» | **retirada**: o item 8.14 tirou o estado de propósito («fica UMA interação»), e uma régua não pede de volta o que a casa decidiu tirar. No lugar dela mede-se o repouso do item 8.12: 21 leituras, **0 abertas**, a linha do repouso à vista e **0 de 2 cabeçalhos de painel** à vista |
+| a densidade na troca de edição | ficou o estado que a página tem (`?ambito=municipio`), com a pergunta intacta |
+| o selo de cada leitura, o aninho e as áreas sobrepostas | mudaram de porta e mudaram de GESTO: percorrem os 21 cartões, tocam em cada um e medem o selo da leitura que abriu. Medir as 21 de uma vez seria medir um estado que a página não tem; medir só a primeira deixava vinte selos por medir |
+| a régua de uma leitura aberta, a 768 e a 1280 | o mesmo gesto, uma de cada vez: o corpo de uma dobra fechada tem `display: none` por folha, com guião ou sem ele |
+| a página sem guião | `/?densidade=leitura` saiu da lista (era `/` com um par a mais) e `/uniao-europeia` entrou, porque é ali que a promessa vive: sem guião as 21 ficam à vista, fechadas, cada uma com o seu selo |
+| a postura do mapa e o transbordo do rótulo da régua | «país · leitura» e «pesquisa aberta · leitura» saíram (eram as mesmas páginas com outro nome) e `/uniao-europeia` entrou, com cada leitura de limiar aberta uma a uma |
+| o Painel Social, as duas bandas, as chaves da prova, a lede e a Emenda 13 | mudaram de porta para `/uniao-europeia`. A Emenda 13 mede a ausência da fila de estados nas DUAS páginas, porque uma fila que voltasse a `/` não podia passar por a célula ter mudado de porta |
+| as duas células do mapa da página do concelho | o cartão dos 308 pontos saiu com o item 8.17b: a primeira é **retirada** e mede o facto (0 pontos, um mapa de áreas, todas com o mesmo desenho), e a segunda mede o anel na ÁREA do concelho da página, com a porta a nomeá-lo |
+| «um concelho sem estudos rende as sete peças» | a grelha das peças saiu com o §7.1: passa a medir as **8 medidas sempre, emparelhadas com as 8 leituras pela mesma ordem**, sem secções de trabalho e sem coluna de corpo |
+
+**A medida, antes e depois** (`node tests/inicio/matriz.mjs`):
+
+| | antes | depois |
+|---|---|---|
+| células medidas | **73** | **89** |
+| células a passar | **53** | **89** |
+| onde ela pára | rebenta na septuagésima quarta, num `null` | chega ao fim |
+
+### 2 · Dois defeitos que a régua encontrou por chegar mais longe, e não eram dela
+
+**A ISSUES I20 tinha uma segunda metade por fechar.** A célula do transbordo do
+rótulo da régua passou a medir onde as réguas vivem, e apanhou-o: em «Portugal na
+União Europeia», a 320 e a 390 px, o rótulo «limiar da Comissão −0,2 pp» da taxa
+de atividade fica **fora da caixa da sua régua**.
+
+| | |
+|---|---|
+| o rótulo | 149,9 px, na régua da taxa de atividade, cuja referência calha aos **20 %** da escala |
+| a caixa da escala | **271 px** a 320, **341 px** a 390 |
+| quanto ficava de fora | **20,8 px** pela esquerda a 320, e **6,8 px** a 390 |
+| porque é que a regra antiga não o apanhava | os limites de 18 % e 82 % resolvem as PONTAS, e este calha no meio. Um rótulo comprido numa caixa estreita transborda muito antes dos 18 % |
+| a correção | a folha prende o rótulo à caixa com `clamp(−pr·cqw, −50%, 100cqw − pr·cqw − 100%)`, que é, por esta ordem, «não passes da aresta esquerda», «senta-te no traço» e «não passes da direita». Onde cabe centrado, nada muda |
+| a planta | tirado o `clamp` do `dist/`, as duas medições voltam (320 e 390); reposto, desaparecem |
+
+**A célula da língua de um título citado media uma regra que a casa mudou a
+29.08.2026.** A ISSUES I91 fechou nesse dia com `linguaDoTitulo()` a marcar
+`pt-PT` as cadeias portuguesas que são também o título da edição inglesa («Água
+Não Faturada», «Onde está a água?»), porque a língua é a do TEXTO e não a da
+edição. A célula continuava a medir a regra antiga e nomeava as **mesmas onze
+ocorrências ao contrário**, como se a correção fosse o defeito. Passa a fazer a
+conta que a função faz.
+
+**E a A15 media um alvo de toque com um apontador fino.** A folha dá os 44 px
+dentro de `@media (pointer: coarse)`; um Chromium com `viewport` e mais nada
+declara um apontador fino, e a célula media 27,2 px numa porta que o telemóvel dá
+a 44. Medido nos dois: **57,9 × 27,2 px** com o fino e **57,9 × 44,0 px** com o
+grosso. A célula passa a pedir o apontador grosso, como `correcoes-a.mjs` já
+fazia; as de geometria (A1, A2, A11) ficam com o fino, porque medem a composição
+e não alturas de alvo. A planta morde: trocado o `min-height: 44px` por 20 px no
+`dist/`, a A15 volta a vermelho nas duas edições.
+
+### 3 · O item 8.15: os dois caminhos medidos, e qual bastou
+
+**O primeiro caminho não basta, e o número di-lo.** A 390 px a manchete corre a
+28 px, que é o mínimo do `clamp(28px, 3.2vw, 40px)`. Descida um degrau (26 px) e
+dois (24 px), a frase antiga fica na MESMA contagem de linhas em português nos
+dois motores, e ganha uma em inglês:
+
+| | 28 px | 26 px | 24 px |
+|---|---|---|---|
+| `/` (Chromium e WebKit) | 5 | 5 | 5 |
+| `/en` (Chromium e WebKit) | 6 | 5 | 5 |
+
+*(as contagens desta tabela são as da régua como ela estava, que contava a mais;
+a leitura certa está na secção 4, e a conclusão não muda: o degrau de tipo não
+vale uma linha em português.)*
+
+**O segundo caminho basta, e é o que ficou.** A frase encurta sem mudar a regra
+da manchete (uma frase só, algarismos selados, sem adjetivo, dois algarismos no
+máximo): sai a segunda unidade por extenso e o substantivo repetido da segunda
+medida.
+
+| | antes | depois |
+|---|---|---|
+| `/` | «A dívida pública é 89,7 % do PIB e a taxa de desemprego é 6 % da população ativa.» | **«A dívida pública é 89,7 % do PIB e o desemprego é 6 %.»** |
+| `/en` | «Government debt is 89,7 % of GDP and the unemployment rate is 6 % of the labour force.» | **«Government debt is 89,7 % of GDP and unemployment is 6 %.»** |
+
+**O TIPO NÃO MUDA**: a identidade dos corpos fica onde estava, e a decisão do
+item («a manchete desce um degrau») fica medida e não aplicada, porque não
+resolve o que ela existe para resolver. Os dois selos apontam às mesmas duas
+linhas do livro-razão, e nenhum algarismo mudou.
+
+**A dívida que isto abre, dita e não escondida:** a segunda oração passa a dizer
+«o desemprego» onde dizia «a taxa de desemprego», que é o nome da medida no
+vocabulário fechado (§2.3). É a frase da manchete a dizer a coisa por extenso uma
+vez menos, e não um nome novo para ela: o nome da medida continua a ser «taxa de
+desemprego» no cartão, na leitura, no domínio e na linha.
+
+**A medida, com o comando** (`node tests/inicio/porta.mjs`, célula A1, a 390 ×
+664):
+
+| | antes | depois |
+|---|---|---|
+| A1.pt | 5 linhas (a conta errada), **3** (a conta certa), 135 px, fundo máximo do primeiro ecrã 615,3 px | **2 linhas**, 100 px, fundo máximo **543,9 px** · passa |
+| A1.en | 6 linhas (a conta errada), **4** (a conta certa), 170 px, fundo máximo 646,8 px | **3 linhas**, 135 px, fundo máximo **574,2 px** · passa |
+
+### 4 · A régua que media a manchete contava a mais, e a conta certa está escrita
+
+A A1 contava **topos distintos de rectângulo**. A frase da manchete corre no tipo
+de leitura e os dois algarismos correm no tipo de instrumento, que tem outra
+métrica: na MESMA linha o rectângulo do algarismo começa 4 px abaixo do da prosa.
+Medido em `/` a 390 px, com a frase antiga: rectângulos nos topos 189, 193, 224,
+260 e 264, que são TRÊS linhas (189 com 193, 224, 260 com 264) e não cinco.
+
+**A célula dizia cinco linhas em `/` e seis em `/en` numa manchete que tinha três
+e quatro**, e um teto medido com uma conta errada é um teto que não se cumpre
+nunca. Passa a contar pelos CENTROS, com a tolerância tirada da própria medição
+(metade da menor altura de rectângulo da frase): os centros da mesma linha distam
+1 px e os de linhas seguidas distam 36, e a menor altura é 33. Nenhum número está
+escrito na régua: os dois saem do que o motor desenhou.
+
+### 5 · O item 8.9: uma linha em português, e o que falta à inglesa medido ao píxel
+
+**O que mudou**, e cada peça com a sua razão:
+
+* **o comando de língua sai da barra e passa para dentro do menu** abaixo de
+  640 px. Era ele que ocupava a primeira linha ao lado do comando de abertura
+  (63,7 px em português, 87,3 em inglês), e é esse espaço que os três destinos
+  precisavam. Sai da barra e não do sítio: com o menu aberto está lá, e a partir
+  de 641 volta ao sítio onde a Emenda 12 o pôs;
+* **a fila dos três destinos deixa de tomar uma linha própria** (`flex-basis:
+  100%`, que a primeira redação deste item escreveu com a razão certa para a
+  barra que havia então) e passa a correr ao lado do comando;
+* **os três destinos e o comando descem a 12 px**, que é o chão que a regra A9
+  fixou para o telemóvel; as goteiras da barra passam de 22 a 10 px e as da fila
+  de 14 a 10. Nenhum tipo muda e nenhuma palavra muda.
+
+**A medida** (`node tests/inicio/porta.mjs`, célula A11, a 390 px):
+
+| | antes | depois |
+|---|---|---|
+| A11.pt | 98,4 px em **2 filas** | **62 px em 1 fila** (teto 64) · passa |
+| A11.en | 132,8 px em **2 filas** | **95,2 px em 2 filas** · falha |
+
+**As catorze portas continuam alcançáveis a um toque** nas duas edições a 390,
+com o menu aberto, e o comando de língua com elas (medido no navegador, com o
+menu fechado e aberto).
+
+**E o que falta à inglesa diz-se com o número, em vez de se forçar.** A barra
+mede 354 px; o comando de abertura mede 55,7 e a goteira 10, e as duas goteiras
+da fila 20: sobram **268,3 px** para as três etiquetas.
+
+| a etiqueta | a 12 px, com o entreletra da casa |
+|---|---|
+| «Municipalities» | 105,4 px |
+| «Studies» | 53,4 px |
+| «Numbers and sources» | 152,5 px |
+| **o total** | **311,3 px**, que é **43,0 px** a mais do que cabe |
+| com «Numbers & sources» (a contração que o brief autoriza) | 133,7 px, e o total desce a **292,5** · ficam **24,2 px** por fechar |
+
+**A contração NÃO se aplicou**, e a razão é a do próprio brief: ela vale «se e só
+se a medida o exigir», e a medida exige-a E MAIS 24,2 px. Mudar uma etiqueta que
+o item 8.8 acabou de fixar sem chegar à linha é churn com o nome de correção.
+«Municipalities» fica, por decisão do brief, e «Studies» não encolhe.
+
+**Os 24,2 px que faltam só saem de um destes três, e nenhum é do construtor:**
+uma terceira etiqueta inglesa mais curta que o lugar de direção autorize; um
+corpo abaixo dos 12 px do chão do telemóvel; ou duas filas em inglês. Fica medido
+para a decisão.
+
+### 6 · O §9.2 e o §9.6: as três frases foram para onde o brief manda
+
+| a frase | para onde foi, e porquê |
+|---|---|
+| «As classes são marcas redondas da escala, e não um limite oficial.» | para o **Método**, no fecho «A forma», como terceira entrada ao pé da cor e da letra (`a-escala`). Não é uma coisa daquele mapa: é a regra com que a casa desenha uma escala em qualquer mapa. A cadeia não se duplicou: saiu de `src/i18n/strings.mjs` e vive em `src/data/metodo.mjs` |
+| «Este valor é o do território continental. Os Açores e a Madeira fixam o seu por diploma regional próprio, que não foi lido: [a verificar].» | para a **página da sua linha**. É de UMA linha, e o recibo de uma linha é o sítio onde o perímetro do que o número cobre se lê, ao pé do valor e das datas |
+| «A meta desta medida é da União Europeia no seu conjunto e não de Portugal; uma meta nacional própria permanece [a verificar].» | idem |
+
+**Nenhuma mudou uma palavra.** Duas levam o marcador `[a verificar]`, que é
+dívida de proveniência e palavra pendente do diretor, e a instrução do lugar de
+direção é explícita: «não lhes toques além do lugar».
+
+**A medida** (`grep` sobre o `dist/`): a página do domínio rende **0 das três**
+nas duas edições; `/metodo` rende a da escala nas duas; e cada ressalva rende-se
+na página da sua linha. São **329 caracteres** que saem da página do domínio em
+português e **337** em inglês.
+
+**E uma régua estava incompleta, e a mudança destapou-a.**
+`ROTAS_QUE_PROVAM_A_RENDICAO`, em `scripts/medir-defeitos.mjs`, nasceu a 01.09
+com DUAS das três rotas que a Emenda 15 nomeia («o Método, o Sobre e o recibo da
+página de linha»), porque nesse dia só o Método e o Sobre precisavam dela. Sem a
+terceira, as quatro linhas das ressalvas eram «vivas que não se rendem» e
+fechavam a construção. O recibo entra, com o mesmo alcance das outras duas: prova
+que uma linha viva se rende, e mais nada.
+
+**O §9.6 está medido e não precisou de trabalho.** A frase da ausência fica
+`conteudo` pela carta (§1, regra 6), como a tabela do inventário já dizia; e a
+prosa que a explica (o campo `procurado`, «onde a casa procurou») não começa no
+primeiro ecrã: a página do domínio mede **0 caracteres de prosa da casa em 0
+blocos** no primeiro ecrã a 390 × 664, nas duas edições, antes e depois.
+
+### 7 · O §9.7: as quatro cadeias da busca entram no inventário
+
+«Escreva o nome do concelho», «Type the name of the municipality», «Procurar» e
+«Search» rendiam-se num `<label>` e num `<button>`, e `BLOCOS_DA_VOZ` não olha
+para essas duas etiquetas: a régua não as via. Passam a ter `data-voz`, que é a
+marca que a régua lê onde quer que a frase esteja, e entram na tabela como
+`navegacao`.
+
+**A marca está em dois sítios porque a busca ainda são dois desenhos.** O §2.6
+(«o campo da primeira página e o de `/municipios` são o mesmo componente») é o
+item 5 do encargo e não está feito: `MunicipiosView.astro` repete a marcação em
+vez de chamar o componente, porque o componente rende também a fila dos 308
+resultados, que aquela página não quer. Fica nomeado, com a razão, para quem
+fizer o §2.6.
+
+**Os outros oito textos que a leitura contou continuam fora da régua**, e a
+correção deles continua a ser a que o inventário já escreveu: alargar
+`BLOCOS_DA_VOZ` a `button` e a `label`, que é uma decisão da direção porque mexe
+na régua de que dependem os blocos que correm em paralelo.
+
+### 10 · O modelo, o custo, os commits e os portões
+
+**Claude Opus 5.** O contador do harness dava 15 000 000 de símbolos no arranque
+da sessão e cerca de 14 498 000 ao escrever esta linha: **da ordem de 502 mil**.
+É o contador da janela e não a fatura; o número da fatura é o que o harness
+disser.
+
+**Os três portões, com os códigos lidos dos ficheiros e não do ecrã**, na árvore
+do último commit de código desta sessão:
+
+```
+npm run build     > build.log 2>&1;     echo $? > build.exit     → 0
+npm run verify    > verify.log 2>&1;    echo $? > verify.exit    → 0
+npm run typecheck > typecheck.log 2>&1; echo $? > typecheck.exit → 0
+```
+
+**Os commits desta sessão**, por ordem: a matriz inteira com o rótulo da régua
+preso à caixa; o item 8.15 com a régua da manchete corrigida; o item 8.9; o §9.2
+com a §1.104; o §9.7; a A15 com o apontador grosso; e o relatório.
+
+**A corrida da CI** lê-se na primeira linha de `gh run list --repo
+oestadodopais/o-estado-do-pais --branch lugar-2026-09-04`: um commit não pode
+conter o número da corrida que ele dispara, e o `portao.yml` cancela a corrida
+anterior a cada empurrão.
+
+**Um aviso de ambiente, deixado pela quarta sessão e cumprido nesta.** O
+diretório de trabalho do shell pode resolver para outra worktree; todos os
+comandos de `git` e de `npm` desta sessão correram com o caminho da worktree à
+frente, e a cabeça foi confirmada com `git -C <worktree> rev-parse --short HEAD`
+antes de cada empurrão.
+
+### 8 · O primeiro ecrã a 390 × 664, depois desta sessão
+
+`node design/especime-v3/medicoes/lugar-2026-09-04/primeiro-ecra.mjs`, com as
+duas páginas que a quarta sessão media à parte (o domínio e a região) agora
+dentro da mesma conta:
+
+| página | prosa da casa | blocos da casa | prosa com os cartões | caracteres no ecrã |
+|---|---|---|---|---|
+| `/` | 33 | 2 | 269 | 970 |
+| `/en/` | 37 | 2 | 276 | 989 |
+| `/municipios/evora` | 55 | 3 | 567 | 1 246 |
+| `/en/municipalities/evora` | 46 | 2 | 558 | 1 276 |
+| `/estudos/onde-esta-a-agua` | 13 | 1 | 52 | 380 |
+| `/en/studies/onde-esta-a-agua` | 13 | 1 | 56 | 335 |
+| `/livro-razao` | 11 | 1 | 86 | 526 |
+| `/en/ledger` | 16 | 1 | 85 | 525 |
+| `/dominios/economia-e-financas-publicas` | **0** | **0** | 275 | 948 |
+| `/en/domains/economia-e-financas-publicas` | **0** | **0** | 276 | 969 |
+| `/regioes/alentejo` | 24 | 2 | 135 | 587 |
+| `/en/regions/alentejo` | 26 | 2 | 133 | 584 |
+
+**Os números das quatro primeiras subiram, e a razão é a mobília.** O item 8.9
+tirou 36,4 px da barra em português (98,4 → 62) e 37,6 em inglês (132,8 → 95,2),
+e o conteúdo subiu com ela: cabem mais caracteres no primeiro ecrã do que cabiam
+na quarta sessão. É a mesma conta e a mesma página, com menos papel por cima.
+
+### 9 · As cadeias do inventário da voz que esta sessão mudou
+
+| cadeia | estado | origem |
+|---|---|---|
+| «A dívida pública é % do PIB e a taxa de desemprego é % da população ativa.» e a gémea inglesa | **retirada** | o item 8.15: a frase encurta para caber em três linhas a 390, e a medição dos dois caminhos está na secção 3 |
+| «A dívida pública é % do PIB e o desemprego é % .» e a gémea inglesa | **viva** (novas) | a manchete do país na frase curta do item 8.15 |
+| «Escreva o nome do concelho», «Type the name of the municipality», «Procurar», «Search» | **vivas** (novas) | o §9.7: as quatro cadeias da busca entram com `data-voz` |
+| as três frases do §9.2 e as suas gémeas (seis linhas) | **vivas**, com a razão do lugar escrita | o §9.2: mudaram de página e não de palavra; a rota nova é uma das três que a Emenda 15 isenta da contagem |
+
+**A voz, na construção do fim da sessão:** 877 frases distintas (eram 879),
+37 233 ocorrências em 1 384 rotas, autorreferência 0, nada por classificar, 917
+linhas do inventário com bloco (756 vivas, todas rendidas; 161 retiradas, nenhuma
+rendida), lido do `check:voz`.
+
+---
+
+## O que o bloco muda, família de página a família de página
+
+*Escrito no fecho da quinta sessão, para o pacote da leitura a frio. É o estado
+do RAMO, e não o do sítio no ar: o que está aqui está em `lugar-2026-09-04` e não
+em `main`. Cada linha diz o item do brief que a decidiu, e o que fica por fazer
+naquela família diz-se na mesma linha.*
+
+### Todas as páginas (a mobília e a voz)
+
+| o que muda | o item |
+|---|---|
+| as quatro leituras de aparelho saem do cabeçalho de todas as páginas (o painel europeu com a data da reconferência, as fontes com o carimbo, o contador das séries atrasadas, as duas contagens da agenda) e vão para a página da medida e para o Método | 8.11 e §7.3 |
+| a mobília acima do nome passa a **uma fila** a 390 em português (62 px, teto 64); o comando de língua passa para dentro do menu abaixo de 640 px; os três destinos de leitor (Concelhos, Estudos, Números e fontes) ficam à vista e as outras onze portas a um toque. **A inglesa fica em duas filas**, e o que lhe falta está medido | 8.9 |
+| «livro-razão» a **0** nos menus, nos rodapés e nos títulos das páginas do leitor; o nome visível do índice passa a «Números e fontes» | 8.8 |
+| «Relance» e «Leitura breve» a **0** nas páginas do leitor | 8.14 |
+| o vocabulário fechado: «concelho» e não «município» na palavra visível, «estudo» e não «trabalho», «medida» e «linha do livro-razão» | §2.3 |
+| o menu e o rodapé com a mesma lista pela mesma ordem, exportada de um só sítio | §7.5 |
+
+### A primeira página (`/`, `/en/`)
+
+| o que muda | o item |
+|---|---|
+| a faixa passa a levar as **medidas de cabeça dos domínios vivos** (hoje cinco: a dívida pública, o saldo, a taxa de emprego, a taxa de desemprego, o ganho médio); os 21 cartões dos dois quadros da União saem para a página nova | 8.16 |
+| a manchete é uma frase com dois algarismos selados, e cabe em **2 linhas** a 390 (era 3) | 8.15 |
+| a secção dos domínios passa a ser o **índice dos domínios**: os dezoito nomes, a contagem das medidas de cada um que está vivo, e a porta. **0 valores selados** | 8.13 e §9.1 |
+| o comando de densidade sai da página, e com ele o estado `?densidade=leitura`, que já não muda nada | 8.14 |
+| a frase de definição, uma vez, por baixo do nome | §2.1 |
+| a busca dos 308 submete para `/municipios` | §1 |
+| **por fazer:** a segunda lista dos 308 concelhos (a L2a mede 2, uma por edição) | §1 |
+
+### A página nova · «Portugal na União Europeia» (`/uniao-europeia`, `/en/european-union`)
+
+| o que muda | o item |
+|---|---|
+| **a página nasce** com os 21 cartões dos dois quadros da União, as suas 21 leituras e a manchete das duas contagens do Procedimento | 8.16 |
+| cada um dos dois painéis ganha uma **definição de uma linha citada da própria Comissão**, com o documento, o endereço, a data de leitura e o excerto; e cada uma das 21 medidas ganha a sua | 8.4 |
+| em repouso a área de leitura mostra só a linha do repouso: **0 cabeçalhos de painel e 0 frases de contexto à vista**; uma leitura abre ao toque num cartão, uma de cada vez | 8.12 e 8.14 |
+| «limiar» nunca aparece sozinho: o cartão diz por palavras de que lado do limiar o país está, e a leitura diz o que o limiar é e quem o fixou | 8.5 |
+| a data da última reconferência do painel vive dentro do `#painel` que ela cobre, sem porta | 8.11 |
+
+### O concelho (`/municipios/<slug>`)
+
+| o que muda | o item |
+|---|---|
+| os mesmos oito números deixam de aparecer três vezes: fica a **faixa**, os cartões grandes saem, e a leitura de cada medida abre do cartão, uma de cada vez. «ABRIR/FECHAR» sai | §7.1 e 8.17a |
+| o cartão localizador dos **308 pontos sai**, e no lugar dele entra o mapa da **unidade** do concelho (o distrito ou a ilha), com os seus concelhos, o da página marcado por um anel e cada área a abrir a página do vizinho. É o «trocar de concelho» | 8.17b |
+| as três datas de uma medida passam a rótulos por palavras («lido na fonte a», «verificado a») | §7.3 |
+| **por fazer:** a linha dos estudos que citam o concelho, só com os títulos e uma porta filtrada; as sinopses saem (a L2c mede 10) | §1, 8.6 e 8.10 |
+
+### O distrito ou a ilha (`/distritos`, `/distritos/<slug>`)
+
+| o que muda | o item |
+|---|---|
+| a frase de hierarquia no índice | §2.2 |
+| a mobília e a voz, como em todas as páginas | 8.9, 8.11, §2.3 |
+
+### A região (`/regioes`, `/regioes/<slug>`)
+
+| o que muda | o item |
+|---|---|
+| a frase de hierarquia no índice | §2.2 |
+| **por fazer:** a régua inteira da convergência só em `/regioes`, e a página de uma região com o seu valor uma vez e a porta «Comparar as regiões →» (a L2b mede 18); «provisório» explicado uma vez no índice | §1 e §7.6 |
+
+### O domínio (`/dominios`, `/dominios/<slug>`)
+
+| o que muda | o item |
+|---|---|
+| o índice deixa de falar da cobertura da casa: as dezasseis linhas «ainda sem medidas conferidas · vaga» passam ao Método, e o índice lista os domínios com página, com a contagem e a porta | §9.1 e §7.8 |
+| as três frases de diligência saem da página: a legenda da escala vai para o Método, e as duas ressalvas de alcance para a página da sua linha. **0 caracteres de prosa da casa no primeiro ecrã** a 390 × 664 | §9.2 e §9.6 |
+| «limiar» nunca sozinho, na manchete e nas leituras | 8.5 |
+| a frase de hierarquia no índice | §2.2 |
+| **por fazer:** a contagem da faixa igual ao número de medidas listadas; «Os valores, concelho a concelho» e a porta gémea fundidas numa só | §7.7 |
+
+### O estudo (`/estudos`, `/estudos/<slug>`, `/estudos/<slug>/texto`)
+
+| o que muda | o item |
+|---|---|
+| «estudo» é o nome, e «trabalho» sai como nome de coisa | §2.3 e §7.4 |
+| **por fazer:** a página de capa deixa de ser paragem obrigatória; as edições apresentadas de uma só forma, com uma frase que diga o que cada porta abre; «Descarregar · Sem ficheiros» não se imprime quando está vazio | §7.4 e 8.6 |
+
+### O índice dos números (`/livro-razao`) e a página de uma linha (`/livro-razao/<id>`)
+
+| o que muda | o item |
+|---|---|
+| o nome visível do índice e da entrada do menu passa a «Números e fontes» / «Numbers and sources»; «livro-razão» fica como o termo técnico no Método, no JSON e nos endereços | 8.8 |
+| as quatro cadeias da busca entram no inventário da voz com `data-voz` | §9.7 |
+| a página de uma linha recebe a **ressalva de alcance** daquela linha, que estava na página do domínio | §9.2 |
+| **por fazer:** «fonte» a dizer sempre o publicador (a L6 mede 26 178 selos); o selo debaixo do número que liga a `#prova` na mesma página sai | §2.4 e §7.2 |
+
+### A agenda (`/agenda`)
+
+| o que muda | o item |
+|---|---|
+| a etiqueta da agenda, pedida pelo lugar de direção na leitura a frio do F2.6b | fora do brief, na quarta sessão |
+| as duas contagens («Agenda: n em curso · n a seguir») ficam onde já estavam: as portas da primeira página e a regra 8 do Método, e saem do cabeçalho de todas as páginas | 8.11 |
+
+### As páginas da casa (`/sobre`, `/metodo`, `/correcoes`)
+
+| o que muda | o item |
+|---|---|
+| a regra 6 do Método («A releitura») recebe as fontes com o carimbo da última corrida e o contador das séries atrasadas, que era para onde a porta delas sempre apontou | 8.11 e §7.3 |
+| o fecho do Método, «A forma», ganha uma terceira entrada, «A escala», com a legenda que saiu do mapa do domínio | §9.2 |
+| a secção «O que se mede a seguir» recebe as dezasseis linhas de cobertura que saíram do índice dos domínios | §9.1 |
+| o texto governado do Método está registado em `DECISIONS.md` §1.103 e §1.104, com o carimbo antes e depois | a amarra das decisões |
+| **por fazer:** o Método no telemóvel (o diagrama cortado passa à lista das suas caixas) | §7.9 |
+
+### O que o bloco NÃO tocou, e é preciso dizer
+
+O caminho no cabeçalho (§2.5) não existe em página nenhuma: a L5 mede **7 213**
+páginas abaixo da primeira sem ele, e o desenho está escrito na §C deste
+relatório, por construir. A busca ainda são dois desenhos (§2.6). E «fonte»
+continua a dizer o nome do estudo onde devia dizer o publicador da linha: a L6
+mede **26 178** selos, e é o outro número grande que ainda não desceu.
 
 ---
 
@@ -1247,6 +1706,21 @@ que muda com elas.
 está largamente desatualizada, porque os itens 8.13, 8.14, 8.16 e 8.17 mudaram
 as páginas que ela lê. Ela mede 69 das suas células e pára; a razão está na
 secção 3 da quarta sessão.
+
+---
+
+**A LISTA DEPOIS DA QUINTA SESSÃO (08.09, noite, segunda parte).** Saíram dela
+quatro itens, e o que resta são três mais uma decisão:
+
+| # | o estado |
+|---|---|
+| **1 · a passagem à `matriz.mjs`** | **feito.** 89 células medidas e 89 a passar; era 73 medidas, 53 a passar, e a régua a rebentar na septuagésima quarta. As oito navegações a `/?densidade=leitura` saíram com a razão escrita, e as duas células do mapa da página do concelho medem o mapa de áreas |
+| **2 · o resto do §9** | **o 2 e o 7 estão feitos**, o 6 está medido e não precisou de trabalho, e o 10 é a dívida da linha F1.2 e fica para o F3.3, como o próprio §9 escreve. **O §9 está fechado neste bloco** |
+| **3 · as outras páginas** | **por fazer**: a região (§1 e §7.6), o domínio (§7.7), os índices (§7.8, a parte que o §9.1 não fez), os estudos (§7.4 e 8.6), o Método no telemóvel (§7.9). A do concelho está feita, e falta-lhe a linha dos estudos, que anda com os estudos |
+| **4 · o item 5 do encargo** | **por fazer**, e é o maior: o caminho no cabeçalho (§2.5, com o desenho da §C; a L5 mede 7 213), a busca única (§2.6; o §9.7 deixou-a nomeada), «fonte» diz o publicador (§2.4, §7.2; a L6 mede 26 178), as datas de frescura (§7.3, na parte que falta) |
+| **5 · as réguas do mapa na página do concelho** | **feito** na matriz (as duas células medem o mapa de áreas da unidade). Ficam as A4, A5 e A10 de `correcoes-a.mjs`, que falham na família do mapa e dos alvos e que são do F1.1d e do F1.1e, não deste bloco |
+| **6 · o fecho** | **por fazer**: as capturas de `/`, `/municipios`, uma região, um concelho com o mapa da sua unidade, a página europeia e um estudo a 390 × 664 e 1 280 nas duas edições; as plantas da L9 corridas outra vez; o `REVISOES-DO-INVENTARIO.md` |
+| **7 · uma decisão, e não uma construção** | **a mobília inglesa a 390** (item 8.9): sobram 268,3 px para três etiquetas que medem 311,3, e a contração que o brief autoriza fecha 18,8 dos 43,0. Os 24,2 px que faltam são do lugar de direção, e a secção 5 da quinta sessão diz as três saídas |
 
 | # | o que falta | onde se toca | a nota de quem retoma |
 |---|---|---|---|
