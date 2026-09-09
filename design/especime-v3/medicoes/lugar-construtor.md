@@ -1356,7 +1356,10 @@ naquela família diz-se na mesma linha.*
 | a frase de definição, uma vez, por baixo do nome | §2.1 |
 | a busca dos 308 submete para `/municipios` | §1 |
 | o CAMINHO no cabeçalho não se rende aqui, porque a primeira página não tem caminho: é o princípio dele | §2.5 |
-| **por fazer:** a segunda lista dos 308 concelhos (a L2a mede 2, uma por edição): são os resultados da busca, rendidos escondidos do servidor, e a decisão de os tirar ou de os isentar é do lugar de direção | §1 |
+| a fila de resultados da busca **deixa de contar como segunda lista** (a L2a de 2 para 0), e a régua conta em vez disso três coisas: cada porta dentro da fila, a fila fechada do servidor e o formulário que submete para o índice | §1 e a decisão do lugar de direção de 09.09 |
+| o título da secção dos domínios, que também é porta, cresce de 14,4 px para o alvo do toque | a célula A10 de `correcoes-a.mjs` |
+| as duas glosas das contagens, no `title` ao lado do número, deixam de dizer «arquivo» | §7.4 |
+| **fica medido e não decidido:** os quatro alvos da manchete (os dois valores citados e os dois selos da fila) ficam abaixo dos 44 px a 390, e crescer não é opção da folha, porque o `check:alvos` o recusou | 8.15 |
 
 ### A página nova · «Portugal na União Europeia» (`/uniao-europeia`, `/en/european-union`)
 
@@ -1404,7 +1407,7 @@ naquela família diz-se na mesma linha.*
 | a frase de hierarquia no índice | §2.2 |
 | a contagem da faixa passa a ser a das medidas DESTA página: «1 de 10» por cima de dez, e não «1 de 5» por cima de onze artigos | §7.7 |
 | as duas portas «Os valores, concelho a concelho» fundem-se numa: a tabela do mapa fica, e **cada nome dela é a porta da página do seu concelho** (616 na página) | §7.7 e §1 |
-| a frase da fronteira ganha a separação de uma secção, para começar fora do primeiro ecrã nas duas edições | 8.11 |
+| a frase da fronteira **passa para dentro de uma dobra «Como ler»**, fechada por omissão: a prosa da casa no primeiro ecrã a 390 × 664 desce de 317 para 0 na edição inglesa e fica em 0 na portuguesa | 8.11 e §9.6 |
 | o caminho no cabeçalho | §2.5 |
 
 ### O estudo (`/estudos`, `/estudos/<slug>`, `/estudos/<slug>/texto`)
@@ -1452,19 +1455,6 @@ naquela família diz-se na mesma linha.*
 | o Método no telemóvel: abaixo de 780 px o diagrama cortado dá lugar à **lista das suas caixas**, com a porta de cada chave dentro da caixa a que pertence, e a fila de palavras soltas sai com ele | §7.9 |
 | a legenda do instrumento diz «verificado a» e não «reconferido a», que é a palavra da terceira data de uma medida | §7.3 |
 | o caminho no cabeçalho | §2.5 |
-
-### O domínio, o que a sétima sessão lhe acrescentou
-
-| o que muda | o item |
-|---|---|
-| **a frase da fronteira passa para dentro de uma dobra «Como ler»**, fechada por omissão: a prosa da casa no primeiro ecrã a 390 × 664 desce de 317 para 0 na edição inglesa, e fica em 0 na portuguesa | 8.11 e §9.6 |
-
-### A primeira página, o que a sétima sessão lhe acrescentou
-
-| o que muda | o item |
-|---|---|
-| o título da secção dos domínios, que também é porta, cresce de 14,4 px para o alvo do toque | a célula A10 de `correcoes-a.mjs` |
-| as duas glosas das contagens, no `title` ao lado do número, deixam de dizer «arquivo» | §7.4 |
 
 ### O que o bloco NÃO tocou, e é preciso dizer
 
