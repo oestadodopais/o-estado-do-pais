@@ -1240,3 +1240,38 @@ têm: renomeá-las mudava treze sítios para não mudar uma letra do que se lê.
 duas em cada edição) deixaram de existir: cada uma passou a ser três, uma por
 fixador do limiar. `estado.semLimiar` e `estado.porConfirmar` ficam como estavam,
 porque uma ausência de limiar não tem fixador a nomear.
+
+
+### Bloco F1.10 · uma coisa, um lugar · a sétima sessão (09.09.2026): os estudos
+
+*Três chaves novas e seis que mudam de texto, todas do item 1 do encargo (§7.4 e
+8.6 do brief). O `assertKeyParity()` continua a ver a paridade; o que este
+quadro mostra é se o inglês foi pensado.*
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `estudos.edicoesFrase` | O que cada porta abre: «Ler no sítio», o texto composto aqui; «Ler o documento», a edição tal como foi publicada. | What each door opens: “Read on the site”, the text composed here; “Read the document”, the edition as it was published. | a frase que o item 8.6 manda pôr por cima da lista das edições: «com uma frase que diga o que cada porta abre». **É uma legenda e não uma promessa:** a primeira redação dizia «Cada edição leva as suas portas: …», e oito das dezasseis edições não têm texto composto, ou seja a frase nomeava, nessas páginas, uma porta que não estava lá. A forma que fica diz o que cada NOME de porta abre, como a legenda de um mapa diz o que cada marca é, e é verdadeira nas doze páginas sem mudar de palavras. Cita as duas portas pelas palavras exactas que elas levam (`estudos.textoLink` e `estudos.documentoLink`); as aspas são as de cada edição (angulares em português, curvas em inglês). É `navegacao` no inventário: nomeia dois destinos e diz o que se encontra em cada um, e não fala do método nem da casa |
+| `secoes.comoLer` | Como ler | How to read | o nome da dobra da página do domínio para onde a frase da fronteira passou. É o nome que o item 8.11 do brief escreve à letra («uma dobra "Como ler"»). Em inglês a forma é a do imperativo sem sujeito, como os outros rótulos de secção do sítio; «How to read it» acrescentava um objecto que a dobra não nomeia |
+
+*E as que mudaram de texto:*
+
+| chave | pt (antes → depois) | en (antes → depois) | nota |
+|---|---|---|---|
+| `estudos.metaDescription` | O arquivo de estudos publicados, com as suas edições em português e em inglês. → Os estudos publicados, com as suas edições em português e em inglês. | The archive of published studies, with their Portuguese and English editions. → The published studies, with their Portuguese and English editions. | o §7.4: «um só nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A frase perde a palavra e não perde nada do que dizia |
+| `estudos.filtroTudo` | Ver o arquivo inteiro → Ver todos os estudos | See the whole archive → See all the studies | a mesma razão. A porta que devolve a lista inteira depois de um filtro por concelho |
+| `estudos.stubVoltar` | Voltar ao arquivo → Voltar aos estudos | Back to the archive → Back to the studies | a mesma razão. A porta de volta, no fim da página de um estudo |
+| `rodape.estudos` · `rodape.edicoes` | estudos no arquivo → estudos publicados · edições → edições | studies in the archive → published studies · editions → editions | as glosas das duas contagens do livro-razão, na página dos estudos. As palavras novas são as que as próprias linhas já se chamam (`estudos-publicados`, `edicoes-publicadas`), e por isso a glosa deixou de ser um segundo nome |
+| `prova.FRASES.estudos` · `prova.FRASES.edicoes` (`src/lib/prova.mjs`) | estudos no arquivo → estudos publicados · edições no arquivo → edições publicadas | studies in the archive → published studies · editions in the archive → published editions | as mesmas duas glosas onde elas saem num `title` ao lado do número, na primeira página. Um `title` é texto do leitor como qualquer outro |
+| `metodo` · a porta da secção dos estudos (`src/data/metodo.mjs`) | Ver o arquivo → Ver os estudos | See the archive → See the studies | a mesma razão, no texto governado do Método. A mudança do carimbo está registada na `DECISIONS.md` §1.105 |
+
+**Seis chaves saíram do uso, e nenhuma saiu por esquecimento.**
+`estudos.documentoK` e `estudos.documentoVazio` eram o bloco «O documento
+original», a primeira das DUAS apresentações das mesmas portas na página de um
+estudo, que o item 8.6 funde numa forma só; `estudos.edicaoIrma` levava à página
+do estudo na outra língua, que é o que o comando de língua do cabeçalho já faz
+em todas as páginas; `estudos.atualizadoLabel` rendia-se em todas as filas e em
+onze das dezasseis edições não tinha data nenhuma para mostrar;
+`estudos.descarregarK` e `estudos.descarregarVazio` são o «Descarregar · Sem
+ficheiros» que o §7.4 manda não imprimir quando está vazio, e que estava vazio
+sempre. As dez linhas do inventário da voz que elas rendiam passaram a
+`retirada`, com a razão escrita em cada uma.
