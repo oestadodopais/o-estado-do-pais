@@ -489,7 +489,7 @@ for (const edicao of ['pt', 'en']) {
      pesquisa está à VISTA, em qualquer estado, no lugar dela, porque é o caminho
      para um concelho no telemóvel. Junta-se-lhe o que a Emenda 20c pôs no lugar
      da metade revogada: o mapa rende-se e toma a largura da janela (I81), que é
-     a decisão medida de 27.08. Os alvos das 29 áreas não se medem aqui — são
+     a decisão medida de 27.08. Os alvos das 29 áreas não se medem aqui: são
      `tests/inicio/mapa-distritos.mjs` M2, pela área inscrita.
 
      «LOGO POR BAIXO DA LEDE» PASSA A «ENTRE A MANCHETE E O MAPA» (09.09.2026, e

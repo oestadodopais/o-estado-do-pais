@@ -21,7 +21,7 @@ primeira vez neste bloco: `porta.mjs` 34 de 34, `correcoes-a.mjs` 32 de 32,
 | cabeça | a última do ramo (`git -C <worktree> rev-parse --short HEAD`) |
 | `main` fundido | **`13372937`**, com o F1.1e inteiro |
 | `build` · `verify` · `typecheck` | **0** · **0** · **0** (códigos lidos de `build.exit`, `verify.exit`, `typecheck.exit`) |
-| a corrida da CI | **34324532988**, na cabeça do código desta sessão (`29ec83fd`). A cabeça deste relatório é a do commit que o escreve, e um commit não pode conter o número da corrida que ele dispara |
+| a corrida da CI | **34324895358, verde**, na cabeça `1c29d1c1`, que é a árvore inteira desta sessão. A corrida da cabeça do código (`29ec83fd`, a 34324532988) foi **cancelada pelo próprio grupo de concorrência** quando o empurrão seguinte entrou, e por isso a que conta é esta |
 | feito nas sessões anteriores | a régua (encargo (b)); **§9.1**; **8.8**; **§7.5**; **8.16**; **8.13**; **8.12**; **8.14 inteiro**; **§2.2**; **8.5**; **§7.1**; **8.17** e **8.17b**; os dois limiares com o seu fixador; **8.4**; **§9.3**, **§9.4**, **§9.5**, **§9.8** e **§9.9**; **8.11** e **§7.3**; **8.15**; **§9.2**; **§9.7**; a dívida da `matriz.mjs`; o **item 5 do encargo** (o caminho, a busca única, «fonte» diz o publicador, as datas); as outras páginas menos os estudos; a decisão da mobília inglesa (8.9) |
 | feito nesta sessão | **os estudos** (§7.4 e 8.6): as edições numa só forma nas duas superfícies, com a frase que diz o que cada porta abre; a página de capa deixa de ser paragem obrigatória (a leitura a um toque do índice); o «Descarregar · Sem ficheiros» fora; **«arquivo» fora do vocabulário** (§7.4), nas seis cadeias em que vivia, com a §1.105 a registar o texto governado; **as quatro decisões de 09.09**: o §7.7 item 4 desfeito e registado, a **L2a de 2 para 0** com três conferências no lugar de uma isenção, as **quatro células de `porta.mjs`** e as **seis de `correcoes-a.mjs`** a medirem o que os blocos decidiram, e a **frase da fronteira do domínio** na dobra «Como ler» (o §9.6 inglês de **317** para **0**); **a célula dos estudos** na régua da cadeia; **o fecho**: as 52 capturas, as **14 plantas da L9** (14 de 14 morderam), o `REVISOES-DO-INVENTARIO.md`, o `CHAVES-EN.md` e este relatório |
 | a seguir | **nada deste bloco.** O que fica nomeado para o lugar de direção são duas coisas que esta sessão mediu e não decidiu: o **§7.7 item 4** (o selo ao pé do número na manchete, desfeito com a medida) e o **alvo dos quatro elementos da manchete**, que o `check:alvos` recusou crescer e que só se resolve mudando a composição da manchete |
@@ -139,7 +139,7 @@ dormir.
 | **§7.4 e 8.6 · estudos fora da forma única** | a medida nasce a 09.09, no commit em que o item entra | **0**, sobre 24 páginas de estudo, 8 de leitura, 2 índices, 44 filas de edição e 24 linhas do índice | `node scripts/check-lugar.mjs` |
 | **§7.4 · a página de capa como paragem obrigatória** | **12 de 12** estudos com a leitura a dois toques do índice, nas duas edições | **0 de 12**: cada linha do índice leva a porta da leitura, e o texto chega-se a **um** toque | idem (a mesma célula) |
 | **§7.4 · «Descarregar · Sem ficheiros» impresso vazio** | **24** blocos (12 estudos × 2 edições) | **0** · o bloco sai, e não só a frase que o enchia | idem |
-| **§7.4 · «arquivo» como nome de coisa, no texto da casa** | **6** cadeias, **1** ocorrência visível no `dist/` fora da origem declarada | **0** · feito, com a palavra dentro do vocabulário da L3 | idem |
+| **§7.4 · «arquivo» como nome de coisa** | **6 lugares** do texto da casa (catorze cadeias, contando as duas edições), e a régua não media a palavra | **0** · a palavra entra no vocabulário fechado da L3 e mede 0 no texto da casa; as **49** ocorrências que ficam no `dist/`, em 12 páginas, são todas de origem declarada (as transcrições dos documentos, a aritmética de três linhas e o registo de uma correção), e a casa não edita o que transcreve | idem |
 | **§9.6 · prosa da casa no primeiro ecrã da página do domínio, a 390 × 664** | **0** (pt) e **317** (en) caracteres | **0** e **0** · feito, com a dobra «Como ler» que o item 8.11 nomeia | `node design/especime-v3/medicoes/lugar-2026-09-04/primeiro-ecra.mjs` |
 | **a régua da porta** (segunda linha: depois da sétima sessão) | **30** de 34 células | **34 de 34** (a A5 reescrita contra o F1.1d e o F1.1e, a A7 e a A12 postas a ler a página que nomeiam) | `node tests/inicio/porta.mjs` |
 | **a régua do recibo** | **13** de 13 | **13** de 13 (nenhuma mudou nesta sessão) | `node tests/linha/recibo.mjs` |
@@ -288,10 +288,13 @@ O Método é texto governado, e a amarra das decisões fechou a construção a p
 entrada: **`DECISIONS.md` §1.105**, com o carimbo de `metodo 854a1c9e5393` a
 passar a `metodo f2e44f1ed56a`.
 
-**A L3 fica em 26 e «arquivo» mede 0.** As duas ocorrências que ficam no `dist/`
-são de origem declarada e a régua não as conta: uma no registo de uma correção
-(«Pela distinção entre trabalho e edição que o arquivo usa…») e outra na
-aritmética de uma linha do livro-razão.
+**A L3 fica em 26 e «arquivo» mede 0 no texto da casa.** Ficam **49**
+ocorrências visíveis no `dist/`, em **12 páginas**, e nenhuma é da casa: 30 estão
+dentro das transcrições dos documentos dos estudos (a página de leitura e o
+documento alojado), 17 na aritmética de três linhas do livro-razão, e 2 no registo
+de uma correção («Pela distinção entre trabalho e edição que o arquivo usa…»).
+São todas de origem declarada, e a régua não as conta pela mesma razão pela qual
+a casa não lhes toca: o que se copia de uma fonte fica como a fonte o escreveu.
 
 ### 5 · A célula dos estudos, nova na régua da cadeia
 
@@ -307,7 +310,7 @@ conta **cinco espécies de defeito**, e não uma:
 5. uma porta da leitura que aponta para uma página que não existe.
 
 Nasce a **0**, com a guarda da regra 14 da casa: zero defeitos sobre zero páginas
-fecha a construção, e a contagem imprime-se para que o número tenha um sítio —
+fecha a construção, e a contagem imprime-se para que o número tenha um sítio:
 **24** páginas de estudo, **8** de leitura, **2** índices, **44** filas de edição,
 **24** linhas do índice. Os rótulos que saíram estão escritos à mão na régua, e é
 de propósito: as cadeias saíram de `strings.mjs` no mesmo commit, e uma régua que
@@ -575,9 +578,15 @@ npm run verify    > verify.log 2>&1;    echo $? > verify.exit    → 0
 npm run typecheck > typecheck.log 2>&1; echo $? > typecheck.exit → 0
 ```
 
-**A corrida da CI da cabeça do código** é a **34324532988**, na cabeça
-`29ec83fd`. Um commit não pode conter o número da corrida que ele dispara, e por
-isso o número de uma corrida escreve-se sempre no commit seguinte.
+**A corrida da CI** é a **34324895358**, e saiu **verde** (`gh run view --repo
+oestadodopais/o-estado-do-pais 34324895358`), na cabeça `1c29d1c1`, que é a
+árvore inteira desta sessão. A corrida da cabeça do código, a **34324532988** em
+`29ec83fd`, foi **cancelada pelo próprio grupo de concorrência** («Canceling
+since a higher priority waiting request for portão-push-refs/heads/lugar-2026-09-04
+exists») quando o empurrão do fecho entrou quatro minutos depois: não falhou,
+cedeu o lugar à corrida da árvore que a contém. Um commit não pode conter o
+número da corrida que ele dispara, e por isso o número escreve-se sempre no
+commit seguinte.
 
 **O aviso de ambiente cumpriu-se outra vez:** todos os comandos de `git` e de
 `npm` desta sessão correram com o caminho da worktree à frente ou dentro dela, e
