@@ -120,7 +120,15 @@ const distingue = coberturaDistingue(concelhos);
 <div class="pesquisa" id="pesquisa">
   {forma ? (
     <form class="pesquisa-forma" action={forma} method="get" role="search" data-porta-concelho>
-      <label class="pesquisa-rotulo" for="pesquisa-concelho">{s.ambito.pesquisaRotulo}</label>
+      {/* AS DUAS CADEIAS DA BUSCA ENTRAM NO INVENTÁRIO (bloco F1.10, §9.7,
+          08.09.2026). A leitura cruzada do inventário das frases (Codex, 08.09,
+          Major 8) contou doze textos de `<button>` e de `<label>` fora da leitura
+          da régua, porque `BLOCOS_DA_VOZ` não olha para essas duas etiquetas.
+          Quatro deles são da busca, e o §9.7 manda-os entrar «com `data-voz`»,
+          que é a marca que a régua lê onde quer que ela esteja. Alargar
+          `BLOCOS_DA_VOZ` continua a ser a correção certa para os outros oito, e
+          continua a ser da direção. */}
+      <label class="pesquisa-rotulo" for="pesquisa-concelho"><span data-voz>{s.ambito.pesquisaRotulo}</span></label>
       <div class="pesquisa-linha">
         <input
           class="pesquisa-campo"
@@ -130,12 +138,12 @@ const distingue = coberturaDistingue(concelhos);
           autocomplete="off"
           data-pesquisa
         />
-        <button class="pesquisa-submeter" type="submit">{s.ambito.pesquisaSubmeter}</button>
+        <button class="pesquisa-submeter" type="submit"><span data-voz>{s.ambito.pesquisaSubmeter}</span></button>
       </div>
     </form>
   ) : (
     <>
-      <label class="pesquisa-rotulo" for="pesquisa-concelho">{s.ambito.pesquisaRotulo}</label>
+      <label class="pesquisa-rotulo" for="pesquisa-concelho"><span data-voz>{s.ambito.pesquisaRotulo}</span></label>
       <input
         class="pesquisa-campo"
         id="pesquisa-concelho"
