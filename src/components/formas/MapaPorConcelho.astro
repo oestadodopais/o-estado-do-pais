@@ -137,10 +137,14 @@ const linhas = mapa.unidades.flatMap((u) => u.concelhos);
       </li>
     </ul>
 
-    {/* A NOTA DA ESCALA, SÓ NA PALETA QUE NÃO É LIMIAR: as classes deste mapa
-        são marcas redondas e não uma referência publicada, ao contrário do
-        mapa cujo corte é a lei. */}
-    {paleta === 'escala' && <p class="forma-mapa-nota">{s.dominios.mapaEscalaNota}</p>}
+    {/* A NOTA DA ESCALA SAIU DAQUI (bloco F1.10, §9.2, 08.09.2026). Dizia, na
+        paleta que não é limiar, que as classes deste mapa são marcas redondas e
+        não uma referência publicada. É a legenda da escala a explicar as
+        classes, que o §9.2 nomeia como prosa de diligência da página do domínio,
+        e a decisão do lugar de direção manda-a para o Método: é a regra com que
+        a casa desenha uma escala em qualquer mapa, e não uma coisa deste. Vive
+        no fecho do Método, «A forma», ao pé da cor e da letra
+        (`src/data/metodo.mjs`, entrada `a-escala`), com as mesmas palavras. */}
 
     {/* A ALTERNATIVA EM TEXTO, NA PRÓPRIA PÁGINA (segunda passagem, 03.09.2026,
         Major 7): uma tabela com o valor de cada concelho, com o seu selo, fechada

@@ -332,8 +332,17 @@ const CLASSES = ['conteudo', 'navegacao', 'autorreferencia', 'divulgacao'];
  * frase retirada de uma página do leitor continua a poder ser citada no Método,
  * que é onde o método se explica, e alargar-lhe a proibição mudava uma regra que
  * ninguém mandou mudar.
+ *
+ * E O RECIBO ERA O TERCEIRO, E FALTAVA (bloco F1.10, §9.2, 08.09.2026). A Emenda
+ * 15 nomeia três e não dois: «o Método, o Sobre e o RECIBO da página de linha são
+ * onde o método vive», e «a terceira classe vai a zero fora do Método, do Sobre e
+ * do recibo». Este conjunto nasceu a 01.09 com dois, porque nesse dia só duas
+ * frases precisavam dele; a terceira rota só ficou a fazer falta quando o §9.2
+ * mandou as duas ressalvas de alcance da página do domínio para a página da sua
+ * linha, que é o recibo daquela linha. Entra pela mesma razão e com o mesmo
+ * alcance das outras duas: prova que uma linha viva se rende, e mais nada.
  */
-const ROTAS_QUE_PROVAM_A_RENDICAO = new Set(['sobre', 'metodo']);
+const ROTAS_QUE_PROVAM_A_RENDICAO = new Set(['sobre', 'metodo', 'linha']);
 /**
  * ---------------------------------------------------------------------------
  * AS ROTAS ONDE UM BLOCO COM MARCA DE ORIGEM JÁ É LIDO (F0.9, 03.09.2026)

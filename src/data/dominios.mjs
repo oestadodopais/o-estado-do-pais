@@ -659,3 +659,29 @@ export function dominioDeclarado(slug) {
 export function medidaPelaChave(chave) {
   return MEDIDAS_DO_DOMINIO_1.find((m) => m.chave === chave) ?? null;
 }
+
+/**
+ * A RESSALVA DE ALCANCE DE UMA LINHA, PARA A PÁGINA DELA (F1.10, §9.2,
+ * 08.09.2026)
+ * ---------------------------------------------------------------------------
+ * O §9.2 do brief manda a prosa de diligência da página do domínio («a ressalva
+ * do decreto "não lido"», entre outras) sair de lá e ir «para a página da linha
+ * ou para o Método». Estas duas são de UMA LINHA cada — o território que o
+ * diploma de T5 não cobre, e a meta que é da União e não de Portugal —, e por
+ * isso o destino é a página da linha, que é o recibo daquela linha e o sítio
+ * onde o alcance dela se lê.
+ *
+ * AS PALAVRAS NÃO MUDAM. As duas levam o marcador `[a verificar]`, que é dívida
+ * de proveniência e palavra pendente do diretor: o que muda é o lugar.
+ *
+ * A LIGAÇÃO É PELO `claim`, que é o identificador da linha, e não por uma
+ * segunda tabela: a ressalva continua declarada na medida a que pertence, e esta
+ * função é só o índice que a página da linha usa para a encontrar.
+ *
+ * @param {string} id o identificador da linha
+ * @returns {{ pt: readonly unknown[], en: readonly unknown[] }|null}
+ */
+export function ressalvaDaLinha(id) {
+  const m = MEDIDAS_DO_DOMINIO_1.find((x) => x.claim === id && x.ressalva);
+  return m && m.ressalva ? m.ressalva : null;
+}

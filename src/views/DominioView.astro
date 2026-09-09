@@ -507,15 +507,22 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
             </>
           ))}
 
-          {/* A RESSALVA DE ALCANCE, QUANDO A MEDIDA A TEM (segunda passagem,
-              03.09.2026, Blocking 4): a meta que a União tem e Portugal ainda
-              não tem (T1), o território que o diploma de T5 não cobre. O
-              marcador da casa fica à vista, como as linhas o têm. */}
-          {medida.ressalva && (
-            <p class="dominio-ressalva">
-              <Frase partes={medida.ressalva[lang] ?? medida.ressalva.pt} lang={lang} />
-            </p>
-          )}
+          {/* A RESSALVA DE ALCANCE SAIU DESTA PÁGINA (bloco F1.10, §9.2,
+              08.09.2026).
+
+              Era a meta que a União tem e Portugal ainda não tem (T1) e o
+              território que o diploma de T5 não cobre, as duas rendidas aqui
+              desde a segunda passagem de 03.09.2026 (Blocking 4), à vista e fora
+              de qualquer dobra. A leitura cruzada do inventário das frases de
+              08.09 classificou-as como prosa de diligência da página do domínio,
+              e a decisão do lugar de direção é que ela «sai do primeiro ecrã e
+              vai para a página da linha ou para o Método».
+
+              CADA UMA É DE UMA LINHA, e por isso o destino é a página da linha:
+              `LinhaView.astro` rende-a pelo identificador, com as MESMAS
+              palavras e o mesmo marcador. A declaração continua onde estava, na
+              medida a que pertence (`ressalva`, em `src/data/dominios.mjs`); o
+              que mudou foi quem a lê. */}
 
           {/* AS TRÊS DATAS, na forma da casa, cada uma com a linha e o campo de
               onde saiu. Ver `DataDaLinha.astro`. */}

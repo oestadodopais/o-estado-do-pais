@@ -70,6 +70,8 @@ import { atrasoDaLinha } from '../lib/frescura.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { studyTitle } from '../data/studies.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
+import Frase from '../components/Frase.astro';
+import { ressalvaDaLinha } from '../data/dominios.mjs';
 import {
   linguaDoTituloDoDocumento,
   linguaDoRotuloDaFonte,
@@ -109,6 +111,10 @@ const bandeira = notaDeBandeira(claim, lang);
    «Nenhum rótulo partidário atravessou». A frase falava de uma coisa que não
    estava na página. Volta com o campo, não com uma adivinha. */
 const atribuicao = atribuicaoDaLinha(claim);
+/* A RESSALVA DE ALCANCE DESTA LINHA, se ela tiver uma (F1.10, §9.2,
+   08.09.2026). Declarada na medida do domínio a que a linha pertence, e lida
+   aqui pelo identificador: a razão do lugar está ao pé de onde ela se rende. */
+const ressalvaDeAlcance = ressalvaDaLinha(id);
 
 /* O endereço só é ligação quando é mesmo um endereço. "[a verificar]" não é. */
 const url = typeof claim.source_url === 'string' && /^https?:\/\//.test(claim.source_url)
@@ -757,6 +763,32 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                 {peca.entreParenteses && ')'}
               </>
             ))}
+          </p>
+        )
+      }
+
+      {/* ------------------------------------- ii(b) · o alcance desta linha
+
+          A RESSALVA DE ALCANCE CHEGOU AQUI DA PÁGINA DO DOMÍNIO (bloco F1.10,
+          §9.2, 08.09.2026). O §9.2 manda a prosa de diligência da página do
+          domínio («a ressalva do decreto "não lido"», e a irmã dela, a meta que
+          é da União e não de Portugal) sair de lá e ir «para a página da linha
+          ou para o Método». Estas duas são de UMA LINHA cada, e por isso o
+          destino é esta página: o recibo daquela linha é o sítio onde o alcance
+          dela se lê, ao pé do valor e das datas, e não a página que lista as
+          medidas de um domínio.
+
+          AS PALAVRAS NÃO MUDAM, e é a instrução à letra: as duas levam o
+          marcador `[a verificar]`, que é dívida de proveniência e palavra
+          pendente do diretor. O que muda é o lugar.
+
+          FICA ANTES DA PROVA E DEPOIS DO VALOR, porque é isso que ela é: o
+          perímetro do que o número cobre. Quem chega aqui pelo selo de um cartão
+          lê o valor, o que ele mede e onde ele não chega, por esta ordem. */}
+      {
+        ressalvaDeAlcance && (
+          <p class="linha-nota linha-alcance">
+            <Frase partes={ressalvaDeAlcance[lang] ?? ressalvaDeAlcance.pt} lang={lang} />
           </p>
         )
       }

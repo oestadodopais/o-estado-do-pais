@@ -121,6 +121,30 @@ export const FECHO = {
       ],
     },
     {
+      /* A ESCALA ENTRA AQUI COM O §9.2 DO F1.10 (08.09.2026).
+         ---------------------------------------------------------------------
+         A frase vivia por baixo da legenda do mapa por concelho da página do
+         domínio, à vista e fora de qualquer dobra. A leitura cruzada do
+         inventário das frases de 08.09 classificou-a como prosa de diligência da
+         página do domínio («a legenda da escala a explicar as classes»), e a
+         decisão do lugar de direção é que ela «sai do primeiro ecrã e vai para a
+         página da linha ou para o Método». Esta não é de UMA linha: é a regra
+         com que a casa desenha uma escala em qualquer mapa, e por isso o destino
+         é o Método, ao pé da cor e da letra, que são as outras duas decisões de
+         forma que a página fecha a dizer.
+
+         AS PALAVRAS NÃO MUDAM, e a cadeia não se duplica: saiu de
+         `src/i18n/strings.mjs` (`dominios.mapaEscalaNota`, nas duas edições) e
+         vive aqui, que é o único sítio onde ela se rende. */
+      id: 'a-escala',
+      titulo: { pt: 'A escala', en: 'The scale' },
+      texto: {
+        pt: ['As classes são marcas redondas da escala, e não um limite oficial.'],
+        en: ['The classes are round scale marks, not an official limit.'],
+      },
+      ligacoes: [],
+    },
+    {
       id: 'a-letra',
       titulo: { pt: 'A letra', en: 'The type' },
       texto: {

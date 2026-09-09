@@ -72,6 +72,16 @@ const PAGINAS = [
   { nome: 'concelho', pt: '/municipios/evora', en: '/en/municipalities/evora' },
   { nome: 'estudo', pt: '/estudos/onde-esta-a-agua', en: '/en/studies/onde-esta-a-agua' },
   { nome: 'numeros', pt: '/livro-razao', en: '/en/ledger' },
+  /* E AS DUAS QUE O §9.2 E O §9.6 NOMEIAM (quinta sessão, 08.09.2026). A quarta
+     sessão mediu-as à parte, com esta mesma conta escrita duas vezes; medidas
+     aqui, o «antes» e o «depois» delas são a mesma conta das outras quatro, e a
+     medição do §9.2 refaz-se com um comando só. */
+  {
+    nome: 'dominio',
+    pt: '/dominios/economia-e-financas-publicas',
+    en: '/en/domains/economia-e-financas-publicas',
+  },
+  { nome: 'regiao', pt: '/regioes/alentejo', en: '/en/regions/alentejo' },
 ];
 
 const LARGURA = 390;
