@@ -392,9 +392,8 @@ na régua de que dependem os blocos que correm em paralelo.
 ### 10 · O modelo, o custo, os commits e os portões
 
 **Claude Opus 5.** O contador do harness dava 15 000 000 de símbolos no arranque
-da sessão e cerca de 14 498 000 ao escrever esta linha: **da ordem de 502 mil**.
-É o contador da janela e não a fatura; o número da fatura é o que o harness
-disser.
+da sessão e cerca de 14 461 000 ao fechar: **da ordem de 539 mil**. É o contador
+da janela e não a fatura; o número da fatura é o que o harness disser.
 
 **Os três portões, com os códigos lidos dos ficheiros e não do ecrã**, na árvore
 do último commit de código desta sessão:
