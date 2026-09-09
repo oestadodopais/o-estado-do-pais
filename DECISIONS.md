@@ -12079,6 +12079,20 @@ Nada muda no ar nesta sessão além do carimbo semanal de 31.08.
 **Nada mais muda no Método**, e a régua mede-o: a L3 de `scripts/check-lugar.mjs` passou a contar «arquivo» como palavra fora do vocabulário fechado, e mede-a a 0 nas páginas do leitor. O carimbo passa de `metodo 854a1c9e5393` a `metodo f2e44f1ed56a`.
 
 
+### 1.106 «Trabalho» sai do Método como nome de um estudo, e «vaga» sai da voz do leitor
+
+**Afecta:** metodo
+
+**Texto:** metodo 92b0fbdbc5fb
+
+**A decisão** (lugar de direção, 09.09.2026, pela delegação da §1.98; Major 5 da leitura a frio do bloco F1.10 e decisão 21 da releitura do leitor de primeira vez, aplicadas pela segunda passagem do bloco). Duas cadeias do texto governado do Método davam um segundo nome à mesma coisa, e a L3 contava-as:
+
+- o rótulo da prova `leituras` dizia «trabalhos com leitura do observatório» / «works with an observatory reading», e passa a dizer «estudos com leitura do observatório» / «studies with an observatory reading». A contagem não muda; muda a palavra que a nomeia;
+- a regra da agenda dizia «A pergunta de um trabalho é fixada e guardada no motor antes da recolha» / «The question of a piece of work is fixed…», e passa a dizer «de um estudo» / «of a study».
+
+**Nada mais muda no Método.** O carimbo passa de `metodo f2e44f1ed56a` a `metodo 92b0fbdbc5fb`.
+
+
 ## 4. O registo dos defeitos e dos adiamentos
 
 **Defeito registado 2026-08-16 (00:10), encontrado pela direcção no sítio no ar — RESOLVIDO na mesma noite (§1.37, no ar em `4217232`):** os selos acrescentados a 15.08 aos valores do cabeçalho da primeira página (308 · 11 · 15) rendem no cabeçalho com o rótulo inteiro do estudo («O Estado do País — apuramento próprio») e, no caso da contagem CAOP, com o marcador «[a verificar]» ao lado. Certo pela regra (todo o valor tem selo, para a sua linha), errado naquele sítio: no cabeçalho o selo deve ser só o glifo, com o rótulo apenas para leitores de ecrã. **Primeiro item do bloco V**, junto com a saída de «Edição de …», da introdução justificativa da primeira página e de «Estes indicadores não são escolha nossa…» (voz). Sem alteração ao portão: o selo continua ao pé do valor e a apontar para a linha própria.

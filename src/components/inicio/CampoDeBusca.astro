@@ -46,6 +46,10 @@ const {
   accao = null,
   campo = {},
   forma = {},
+  /* A FRASE DO `<noscript>` (Major 7, 09.09.2026): o que este botão faz quando
+     o guião não corre. É opcional porque nem todas as buscas fazem o mesmo sem
+     guião, e cada página que a passa diz a sua. */
+  semGuiao = null,
 } = Astro.props;
 
 if (!rotulo || !id) {
@@ -86,6 +90,11 @@ if (accao && !submeter) {
           <span data-voz>{submeter}</span>
         </button>
       </span>
+      {semGuiao && (
+        <noscript>
+          <p class="busca-sem-guiao">{semGuiao}</p>
+        </noscript>
+      )}
     </form>
   ) : (
     <div class="busca" {...forma}>

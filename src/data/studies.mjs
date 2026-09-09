@@ -77,7 +77,7 @@ export const WORKS = [
       { lang: 'pt', title: 'Évora — Economia, Investidores, Portas Abertas 2026', date: null, updated: null },
     ],
     description: {
-      pt: 'Economia, investidores e portas abertas no município de Évora.',
+      pt: 'Economia, investidores e portas abertas no concelho de Évora.',
       en: 'Economy, investors and open doors in the municipality of Évora.',
     },
   },
@@ -102,7 +102,7 @@ export const WORKS = [
       { lang: 'en', title: 'Évora — Budgeted, Paid, Owed 2025', date: null, updated: '2026-08-20' },
     ],
     description: {
-      pt: 'O que foi orçamentado, o que foi pago e o que ficou em dívida no município de Évora.',
+      pt: 'O que foi orçamentado, o que foi pago e o que ficou em dívida no concelho de Évora.',
       en: 'What was budgeted, what was paid and what was left owing in the municipality of Évora.',
     },
   },
@@ -137,6 +137,14 @@ export const WORKS = [
     descricaoDoDocumento: { pt: 'verbatim', en: 'traducao' },
     verbatimDaAbertura: { pt: 'estudo-pelouros-abertura-pt' },
     description: {
+      /* «MUNICÍPIO» FICA AQUI, E É A REGRA E NÃO UMA EXCEÇÃO (Major 5 da
+         leitura a frio, 09.09.2026): «o que for citação de um título ou de um
+         documento fica como a fonte escreve, marcado como tal». Esta descrição
+         É a frase de abertura do documento, transcrita, e está registada em
+         `src/data/verbatim.mjs` (`estudo-pelouros-abertura-pt`), onde o portão
+         a compara carácter a carácter. A segunda passagem trocou a palavra por
+         «concelho» e o portão apanhou-a no mesmo dia: a casa não edita o que
+         transcreve. */
       pt: 'Quem teve cada pelouro da Câmara Municipal de Évora ao longo de cinco mandatos, quanto gastaram as contas do próprio município nas áreas que esses pelouros cobrem, e o que os relatórios dizem que essas áreas fizeram.',
       en: 'Who held each portfolio of the Câmara Municipal de Évora across five terms, how much the municipality’s own accounts spent in the areas those portfolios cover, and what the reports say those areas did.',
     },
@@ -181,6 +189,7 @@ export const WORKS = [
       en: 'estudo-prometido-abertura-en',
     },
     description: {
+      /* Transcrição, como a do estudo dos pelouros: ver a razão lá em cima. */
       pt: 'Uma leitura transversal do município de Évora: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado.',
       en: "A cross-cutting reading of the municipality of Évora: the recovery-plan project register, the public-contracts register and the state auditor's catalogue.",
     },

@@ -132,6 +132,7 @@ const distingue = coberturaDistingue(concelhos);
     accao={forma}
     forma={forma ? { 'data-porta-concelho': true } : {}}
     campo={{ 'data-pesquisa': true }}
+    semGuiao={forma ? s.ambito.pesquisaSemGuiao : null}
   />
 
   <ul class="pesquisa-res" data-resultados hidden={resultadosOcultos || undefined}>
