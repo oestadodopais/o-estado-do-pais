@@ -4067,6 +4067,8 @@ a.badge-porta:hover {
   /* O DESENHO E A SUA LEGENDA SAEM, E A LISTA ENTRA. Era o desenho a arrastar-se
      de lado dentro de uma caixa de 390 px, com uma fila de palavras soltas por
      baixo: as portas da legenda, sem o sujeito de cada uma. */
+  /* A LEGENDA VIVE DENTRO DO `.svg-scroll` desde 09.09.2026, e some com ele:
+     a segunda regra fica escrita para o caso de ela voltar a sair de lá. */
   .mecanismo .svg-scroll,
   .mecanismo-legenda {
     display: none;

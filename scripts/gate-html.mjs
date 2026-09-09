@@ -6410,6 +6410,24 @@ for (const file of ficheirosHtml(DIST)) {
      */
     const destino = PROVA_POR_LINGUA[linguaPagina ?? 'pt'][chave].porta;
     const base = baseDeResolucao(rel, caminho);
+    /**
+     * UMA PORTA PARA A PÁGINA ONDE JÁ SE ESTÁ NÃO É UMA PORTA (§7.10 do brief
+     * F1.10, e a decisão 22 da releitura do leitor de primeira vez, 09.09.2026).
+     *
+     * «"9 regiões" deixa de ser ligação para si próprio.» O índice das regiões
+     * rendia a sua contagem como âncora para `/regioes#regua`, que é a própria
+     * página; a página europeia tinha o mesmo defeito na data da reconferência e
+     * resolveu-o à mão, tirando a marca da prova. Tirar a marca é pior do que o
+     * defeito: o portão deixa de recontar o número.
+     *
+     * A REGRA CERTA É ESTA: onde a porta de uma chave é a PÁGINA em que ela se
+     * rende, a porta não se exige. O número continua marcado, continua
+     * recontado, e deixa de ser uma ligação para o sítio onde o leitor já está.
+     * Onde a porta é outra página, ela continua obrigatória como sempre foi.
+     */
+    const naPropriaPagina =
+      normalizaCaminho(resolveLigacao(base, destino)?.caminho ?? '') ===
+      normalizaCaminho(caminho);
     /* A âncora da porta, guardada para o fim: é contra os `id` do destino que
        ela se confere, e os `id` de todas as páginas só existem quando o
        varrimento acabar. */
@@ -6423,7 +6441,7 @@ for (const file of ficheirosHtml(DIST)) {
       for (const legenda of raiz?.querySelectorAll?.('[data-legenda-prova]') ?? []) {
         if (temPortaPara(legenda, destino, base)) temPorta = true;
       }
-      if (!temPorta) {
+      if (!temPorta && !naPropriaPagina) {
         err(
           `o número da prova "${chave}" está desenhado dentro de um <svg> e não tem porta na ` +
             `legenda do seu instrumento.\n` +
@@ -6444,7 +6462,7 @@ for (const file of ficheirosHtml(DIST)) {
         }
         no = no.parentNode;
       }
-      if (!temPorta) {
+      if (!temPorta && !naPropriaPagina) {
         err(
           `o número da prova "${chave}" aparece sem a sua porta.\n` +
             `      esperava-se que fosse, ou estivesse dentro de, <a href="${destino}">. ` +

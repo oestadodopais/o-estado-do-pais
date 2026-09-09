@@ -698,8 +698,16 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
           segunda dizia o que a casa NÃO afirma, que a emenda nomeia também
           («nunca o que não afirmamos»). O cartão fica com o nome do concelho, o
           selo da Carta e a porta. */}
+      {/* O SUBSTANTIVO AO PÉ DO NÚMERO (§7.10 do brief, e decisão 22 da
+          releitura do leitor de primeira vez, 09.09.2026). O cartão dizia
+          «Évora · 308 · fonte», e trezentos e oito de quê nunca esteve escrito.
+          A palavra é a que o índice dos concelhos já usa na sua contagem
+          (`municipios.coberturaB`, «308 de 308 concelhos · tem página»), sem o
+          separador que ali a segue: não é uma cadeia nova, é a mesma palavra do
+          mesmo sítio. */}
       <p class="mapa-cartao-selo">
         <Claim id="municipios-portugal-caop-2025" lang={lang} chip={true} />
+        <span class="mapa-cartao-selo-k">{s.municipios.coberturaB.replace(/\s*·\s*$/, '')}</span>
       </p>
       {/* A PORTA «A PÁGINA INTEIRA, COM QUEM GOVERNOU» SAIU (Emenda 19a). Era a
           segunda porta deste cartão, escondida do servidor e acesa pelo script

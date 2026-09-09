@@ -257,6 +257,30 @@ for (const no of [...cadeia, ...retornos]) {
         ))
       }
     </svg>
+
+    {/* ============ a legenda: uma porta por chave desenhada ============
+        É A LEGENDA DO DESENHO, E VIVE DENTRO DELE (decisão 21 da releitura do
+        leitor de primeira vez, 09.09.2026). Estava DEPOIS da lista das caixas, e
+        por isso a folha escondia-a com o desenho mas o documento continuava a
+        pô-la por baixo das caixas: quem lia a página em texto encontrava, no fim
+        do mecanismo, uma fila de palavras sem sujeito — «Portas · organismos ·
+        linhas atravessadas · linhas · por confirmar…» —, que é exactamente o que
+        o §7.9 mandou tirar. Passa a ser o que é: a legenda daquele `<svg>`, ao
+        pé dele, e some com ele.
+
+        O PORTÃO CONTINUA A ENCONTRÁ-LA: `gate-html.mjs` exige, para cada número
+        de prova desenhado dentro de um `<svg>`, uma porta num `[data-legenda-prova]`
+        do mesmo instrumento, e a raiz do instrumento é a mesma. */}
+    <p class="mecanismo-legenda" data-legenda-prova>
+      <span class="mecanismo-legenda-k">{m.legendaK}</span>
+      {
+        desenhadas.map((v) => (
+          <a href={p[v.chave].porta} title={p[v.chave].origem}>
+            {v.rotulo}
+          </a>
+        ))
+      }
+    </p>
   </div>
 
   {/* ======================================================================
@@ -307,21 +331,6 @@ for (const no of [...cadeia, ...retornos]) {
       ))
     }
   </ul>
-
-  {/* ============ a legenda: uma porta por chave desenhada ============
-      Fica com o DESENHO, e desaparece com ele abaixo de 780 px: é a legenda de
-      um `<svg>`, onde uma porta não cabe, e a lista acima já leva a sua dentro de
-      cada caixa (F1.10, §7.9). */}
-  <p class="mecanismo-legenda" data-legenda-prova>
-    <span class="mecanismo-legenda-k">{m.legendaK}</span>
-    {
-      desenhadas.map((v) => (
-        <a href={p[v.chave].porta} title={p[v.chave].origem}>
-          {v.rotulo}
-        </a>
-      ))
-    }
-  </p>
 
   {/* ============ leitura breve: uma frase, e mais nada ============ */}
   <p class="brief-text mecanismo-breve">{LEITURA_BREVE[lang]}</p>

@@ -110,7 +110,18 @@ import Frase from '../Frase.astro';
    CONTINUA OPCIONAL, e não é indecisão: uma faixa de um cartão só não tem
    posição para dizer, e o dia em que uma página renda uma faixa dessas o `null`
    é a resposta certa. */
-const { s, lang, rotulo, cartoes, total = null } = Astro.props;
+/* `conjunto` — o nome do conjunto a que estes cartões pertencem (decisão 23 da
+   releitura do leitor de primeira vez, 09.09.2026). Vai no texto oculto do
+   contador de cada cartão: «1 de 5 das medidas de cabeça dos domínios». Ver a
+   razão por extenso ao pé de `inicio.faixa.conjuntoCabeca` em
+   `src/i18n/strings.mjs`. */
+const { s, lang, rotulo, cartoes, total = null, conjunto = null } = Astro.props;
+if (total !== null && !conjunto) {
+  throw new Error(
+    '<Faixa> com total e sem "conjunto": um contador que diz «1 de 5» sem dizer de que ' +
+      'cinco fala é o defeito que a decisão 23 de 09.09.2026 veio fechar.',
+  );
+}
 
 /* O DESTINO DE CADA CARTÃO CHEGA ESCRITO, E A FAIXA NÃO O COMPÕE (F1.2b, item 1,
    03.09.2026).
@@ -269,6 +280,7 @@ const palavraDoEstado = (estado, fixador, id) => {
                         sobrepostas a 390, e um alvo sobreposto não é um alvo
                         maior: é uma porta que abre a coisa do lado. */}
                     <span data-nonledger="numeracao">{total}</span>
+                    <span class="vh"> {conjunto}</span>
                   </span>
                 )}
               </div>
@@ -303,6 +315,7 @@ const palavraDoEstado = (estado, fixador, id) => {
                         sobrepostas a 390, e um alvo sobreposto não é um alvo
                         maior: é uma porta que abre a coisa do lado. */}
                     <span data-nonledger="numeracao">{total}</span>
+                    <span class="vh"> {conjunto}</span>
                   </span>
                 )}
               </div>

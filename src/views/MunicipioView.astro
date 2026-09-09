@@ -49,7 +49,7 @@ import { workById, studyTitle } from '../data/studies.mjs';
 import { leituraDe } from '../data/leituras.mjs';
 import { FONTE_DIGITAL_GERADA_POR_IA } from '../data/politica-ia.mjs';
 import { medidaPelaChave } from '../data/dominios.mjs';
-import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
+import { getClaim, parsePtNumber, marcaDoValor } from '../lib/ledger.mjs';
 import { barraConcelhoPais } from '../lib/dominios.mjs';
 import { concelhos, pecasDoConcelho } from '../lib/inicio.mjs';
 import { atrasoDaLinha } from '../lib/frescura.mjs';
@@ -196,8 +196,18 @@ const pecas = pecasDoConcelho(m);
 /** @param {{ vazia: boolean, claim?: string, linha?: any, derivada?: boolean, nota?: any }} tile */
 const fraseDaPeca = (tile) => {
   const nota = tile.derivada || !tile.nota ? null : tile.nota[lang];
+  /* O QUE «N.d.» QUER DIZER, AO PÉ DO CARTÃO QUE O MOSTRA (decisão 18 da
+     releitura do leitor de primeira vez, 09.09.2026). Ver a razão inteira ao
+     pé de `municipio.marcaSemFigura` em `src/i18n/strings.mjs`: o cartão do
+     prazo médio dizia «N.d.» e a leitura debaixo dele dizia «137 dias em
+     2025», que é outra linha, de outro publicador e de outro período. A frase
+     entra ANTES da nota e das datas, porque é o que o leitor precisa de saber
+     para ler o valor que está a ver. */
+  const marca = tile.vazia ? null : marcaDoValor(tile.linha?.value);
+  const semFigura = marca ? [s.municipio.marcaSemFigura] : null;
   const atraso = tile.vazia ? null : atrasoDaLinha(tile.linha);
-  if (!atraso) return nota;
+  const abre = semFigura ? (nota ? [...semFigura, ' ', ...nota] : semFigura) : nota;
+  if (!atraso) return abre;
   /* OS RÓTULOS VÃO MARCADOS `data-voz`, e não é decoração: a régua da voz salta
      um bloco que tenha uma marca de origem lá dentro em qualquer rota fora de
      `ROTAS_COM_ORIGEM_LIDA`, e `municipio` não está nessa lista. Sem a marca,
@@ -216,7 +226,7 @@ const fraseDaPeca = (tile) => {
     ' ',
     { data: { id: tile.claim, campo: 'access_date', valor: tile.linha.access_date } },
   ];
-  return nota ? [...nota, ' ', ...partes] : partes;
+  return abre ? [...abre, ' ', ...partes] : partes;
 };
 
 /* ---------------------------------------------------------------------------
@@ -657,6 +667,7 @@ const metodoPath = routePath('metodo', lang);
       rotulo={s.inicio.faixa.rotulo}
       cartoes={cartoes}
       total={cartoes.length}
+      conjunto={s.inicio.faixa.conjuntoConcelho}
     />
 
     {/* ------------------------------------------------------------------
@@ -1374,7 +1385,14 @@ const metodoPath = routePath('metodo', lang);
     )}
 
     <!-- ============================================== aparelho: o que a página sabe de si -->
-    <aside class="aparelho" aria-labelledby="aparelho">
+    {/* «PROVENIÊNCIA» SAIU DE CIMA DE TRÊS PORTAS DE NAVEGAÇÃO (§7.10 do brief,
+        e decisão 22 da releitura do leitor de primeira vez, 09.09.2026). O que
+        restava dentro deste bloco eram três saídas — o índice dos concelhos, os
+        números deste concelho e o Método —, e um título a chamar-lhes
+        «Proveniência» prometia uma prova e entregava um menu. As portas ficam,
+        e ficam com o nome que a casa dá a uma fila de saídas: `rodape-nav`, como
+        no fim de todas as outras páginas. O `<aside>` sai com o título, porque
+        um `<aside>` sem nome acessível é uma região sem nome. */}
       {/* A FRASE DA PROVENIÊNCIA SAIU (Emenda 15, 21.08.2026). Dizia «Cada valor
           desta página tem uma linha no livro-razão. O selo ao lado do número é a
           porta para essa linha, onde estão a fonte, o documento… Nenhuma data de
@@ -1401,8 +1419,6 @@ const metodoPath = routePath('metodo', lang);
           fim da página. A chamada é a mesma, com as mesmas duas propriedades, e
           está em `CabecaDoLugar`. */}
 
-      <h2 class="aparelho-titulo" id="aparelho">{s.municipio.provenienciaK}</h2>
-
       {/* A LISTA «O QUE ESTA PÁGINA NÃO SABE» SAIU (G6, decisão do diretor de
           26.08.2026), com a secção do método a que ela levava. Das seis
           entradas, uma ficou, como UMA frase na nota do instrumento dos
@@ -1415,12 +1431,11 @@ const metodoPath = routePath('metodo', lang);
           cada uma com o seu selo e a sua porta. Apontava para a página do
           conjunto, que a 26.08 passou a ser o índice dos 308; a porta de uma
           página é para a coisa dela, e o índice está a uma saída de distância. */}
-      <p class="rodape-nav aparelho-saidas">
-        <a href={routePath('municipios', lang)}>{s.municipio.voltarMapa}</a>
-        <a href={routePath('livroConcelho', lang, { slug: m.slug })}>{s.livro.eyebrow}</a>
-        <a href={`${metodoPath}#livro-razao`}>{s.livro.metodoLink}</a>
-      </p>
-    </aside>
+    <p class="rodape-nav aparelho-saidas">
+      <a href={routePath('municipios', lang)}>{s.municipio.voltarMapa}</a>
+      <a href={routePath('livroConcelho', lang, { slug: m.slug })}>{s.livro.eyebrow}</a>
+      <a href={`${metodoPath}#livro-razao`}>{s.livro.metodoLink}</a>
+    </p>
   </div>
 
   {/* O GUIÃO DO LUGAR DO NOME (F1.10, item 8.17). É o mesmo de `DistritoView` e

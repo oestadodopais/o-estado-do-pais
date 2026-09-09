@@ -258,6 +258,13 @@ const simbolo = limiar?.simbolo ?? '%';
   <h3 class="peca-nome" data-medida-nome>{nome}</h3>
   {frase && <p class="peca-frase"><Frase partes={frase} lang={lang} selos={true} /></p>}
 
+  {/* A DOBRA SÓ EXISTE SE TIVER O QUE ABRIR (decisão 19 da releitura do leitor
+      de primeira vez, 09.09.2026). Na página de uma região o leitor encontrava
+      um comando «abrir/fechar» cujo corpo era um `<div class="peca-leitura">`
+      vazio: um controlo que promete e não entrega, que é pior do que não haver
+      controlo nenhum. A dobra passa a render-se quando tem régua ou âmbito, e
+      quando não tem não se desenha. */}
+  {(regua || ambito) && (
   <details class="peca-mais">
     <summary class="peca-abrir">
       <span class="peca-seta" aria-hidden="true"></span>
@@ -316,6 +323,7 @@ const simbolo = limiar?.simbolo ?? '%';
       {ambito && <p class="peca-ambito">{ambito}</p>}
     </div>
   </details>
+  )}
 
   {/* O PÉ É O SELO, E MAIS NADA (Emenda 15). A linha do recibo — «o recibo
       completo está na linha» — dizia por palavras o que o selo é, ao lado do
