@@ -20,7 +20,19 @@
  */
 import { dataDaCasa } from '../lib/datas.mjs';
 
-const { chave, item, vazio = null, lang = 'pt' } = Astro.props;
+/**
+ * `semPorta` — o número rende-se sem âncora (§7.10 do brief F1.10, e a decisão
+ * 22 da releitura do leitor de primeira vez, 09.09.2026).
+ *
+ * «"9 regiões" deixa de ser ligação para si próprio.» Onde a porta de uma chave
+ * é a PÁGINA em que ela se rende, a ligação não leva o leitor a lado nenhum: é
+ * o defeito que o §7.10 nomeia, e o mesmo que a página europeia já tinha
+ * resolvido à mão na data da reconferência do painel. A marca `data-prova` FICA,
+ * e por isso o portão continua a recontar o número por conta própria; o que sai
+ * é a âncora. `scripts/gate-html.mjs` deixou de exigir a porta exactamente nesse
+ * caso, e continua a exigi-la em todos os outros.
+ */
+const { chave, item, vazio = null, lang = 'pt', semPorta = false } = Astro.props;
 
 const valor = item?.valor ?? null;
 const existe = valor !== null && valor !== undefined;
@@ -42,9 +54,15 @@ const escrito = existe ? dataDaCasa(valor) : null;
 
 {
   existe ? (
-    <a class="prova-valor" href={item.porta} data-prova={chave} title={item.origem}>
-      {escrito}
-    </a>
+    semPorta ? (
+      <span class="prova-valor" data-prova={chave} title={item.origem}>
+        {escrito}
+      </span>
+    ) : (
+      <a class="prova-valor" href={item.porta} data-prova={chave} title={item.origem}>
+        {escrito}
+      </a>
+    )
   ) : (
     <span class="prova-vazio">{vazio?.[lang] ?? vazio}</span>
   )

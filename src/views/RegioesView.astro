@@ -63,8 +63,9 @@ const conta = p.regioes_com_linha.valor === 1 ? s.regioes.contaUma : s.regioes.c
     <p class="lede">{s.regioes.lede}</p>
     {/* A frase de hierarquia do §2.2 do brief F1.10, uma vez por índice. */}
     <p class="hierarquia">{s.hierarquia.territorio}</p>
+    {/* SEM PORTA: a porta desta chave é esta página (§7.10, 09.09.2026). */}
     <p class="regiao-conta">
-      <ValorDaProva chave="regioes_com_linha" item={p.regioes_com_linha} lang={lang} />
+      <ValorDaProva chave="regioes_com_linha" item={p.regioes_com_linha} lang={lang} semPorta={true} />
       {conta}
     </p>
   </div>
