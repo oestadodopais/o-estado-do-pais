@@ -296,8 +296,12 @@ export const REGRAS = [
       {
         chave: 'leituras',
         rotulo: {
-          pt: 'trabalhos com leitura do observatório',
-          en: 'works with an observatory reading',
+          /* «TRABALHOS» SAI COMO NOME DE COISA (F1.10, §2.3 e Major 5 da
+             leitura a frio de 09.09.2026): o trabalho de autor é um «estudo»,
+             e este rótulo era o último sítio do Método onde ele tinha um
+             segundo nome. A contagem não muda; muda a palavra que a nomeia. */
+          pt: 'estudos com leitura do observatório',
+          en: 'studies with an observatory reading',
         },
       },
     ],
@@ -546,10 +550,10 @@ export const REGRAS = [
        a esconder, e a frase abaixo diz isso porque é o que lá está. */
     mecanismo: {
       pt: [
-        'A pergunta de um trabalho é fixada e guardada no motor antes da recolha, e a agenda mostra, item a item, o critério que o pôs lá, quem o propôs, quem o decidiu, e cada mudança de estado com a sua data e o seu motivo. Onde não há critério, ou onde não há ainda decisão da direção, a página di-lo.',
+        'A pergunta de um estudo é fixada e guardada no motor antes da recolha, e a agenda mostra, item a item, o critério que o pôs lá, quem o propôs, quem o decidiu, e cada mudança de estado com a sua data e o seu motivo. Onde não há critério, ou onde não há ainda decisão da direção, a página di-lo.',
       ],
       en: [
-        'The question of a piece of work is fixed and stored in the engine before collection begins, and the agenda shows, item by item, the criterion that put it there, who proposed it, who decided it, and every change of state with its date and its reason. Where there is no criterion, or no director decision yet, the page says so.',
+        'The question of a study is fixed and stored in the engine before collection begins, and the agenda shows, item by item, the criterion that put it there, who proposed it, who decided it, and every change of state with its date and its reason. Where there is no criterion, or no director decision yet, the page says so.',
       ],
     },
     /* A prova desta regra são as contagens da agenda, e mais nada. A contagem
