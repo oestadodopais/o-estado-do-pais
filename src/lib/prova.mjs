@@ -543,13 +543,20 @@ const FRASES = {
     pt: 'concelhos no ficheiro de coordenadas da Carta Administrativa',
     en: 'concelhos in the coordinates file of the official administrative map',
   },
+  /* «ARQUIVO» SAI COMO NOME DE COISA (bloco F1.10, §7.4, 09.09.2026): «um só
+     nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome de
+     coisa». As duas glosas rendiam-se num `title` ao lado das contagens da
+     primeira página e ao lado das duas contagens da página dos estudos, e eram
+     o segundo nome da mesma coisa. Passam a dizer o que as linhas do
+     livro-razão que elas glosam já se chamam (`estudos-publicados` e
+     `edicoes-publicadas`). */
   estudos: {
-    pt: 'estudos no arquivo',
-    en: 'studies in the archive',
+    pt: 'estudos publicados',
+    en: 'published studies',
   },
   edicoes: {
-    pt: 'edições no arquivo',
-    en: 'editions in the archive',
+    pt: 'edições publicadas',
+    en: 'published editions',
   },
   agenda: {
     pt: 'itens da agenda',

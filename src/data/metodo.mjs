@@ -301,7 +301,10 @@ export const REGRAS = [
         },
       },
     ],
-    ligacoes: [{ rota: 'estudos', rotulo: { pt: 'Ver o arquivo', en: 'See the archive' } }],
+    /* «ARQUIVO» SAI COMO NOME DE COISA (bloco F1.10, §7.4, 09.09.2026): «um só
+       nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome
+       de coisa». A porta passa a chamar o que ela abre pelo nome da página. */
+    ligacoes: [{ rota: 'estudos', rotulo: { pt: 'Ver os estudos', en: 'See the studies' } }],
   },
 
   {

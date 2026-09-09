@@ -12068,6 +12068,17 @@ Nada muda no ar nesta sessão além do carimbo semanal de 31.08.
 **O texto governado do Método muda numa entrada, e nada mais muda nele.** «A forma» tinha duas entradas, a cor e a letra, e passa a ter três. O carimbo passa de `metodo 1b20443f130b` a `metodo 854a1c9e5393`.
 
 
+### 1.105 A porta do Método para os estudos chama a página pelo nome dela
+
+**Afecta:** metodo
+
+**Texto:** metodo f2e44f1ed56a
+
+**A decisão** (lugar de direção, 09.09.2026, pela delegação da §1.98; §7.4 do brief do F1.10, aplicado pela sétima sessão de construção). O §7.4 fixa «um só nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A palavra «arquivo» vivia em seis cadeias da casa, e uma delas é o texto governado do Método: a porta da secção dos estudos dizia «Ver o arquivo» / «See the archive». Passa a dizer «Ver os estudos» / «See the studies», que é o nome da página que ela abre.
+
+**Nada mais muda no Método**, e a régua mede-o: a L3 de `scripts/check-lugar.mjs` passou a contar «arquivo» como palavra fora do vocabulário fechado, e mede-a a 0 nas páginas do leitor. O carimbo passa de `metodo 854a1c9e5393` a `metodo f2e44f1ed56a`.
+
+
 ## 4. O registo dos defeitos e dos adiamentos
 
 **Defeito registado 2026-08-16 (00:10), encontrado pela direcção no sítio no ar — RESOLVIDO na mesma noite (§1.37, no ar em `4217232`):** os selos acrescentados a 15.08 aos valores do cabeçalho da primeira página (308 · 11 · 15) rendem no cabeçalho com o rótulo inteiro do estudo («O Estado do País — apuramento próprio») e, no caso da contagem CAOP, com o marcador «[a verificar]» ao lado. Certo pela regra (todo o valor tem selo, para a sua linha), errado naquele sítio: no cabeçalho o selo deve ser só o glifo, com o rótulo apenas para leitores de ecrã. **Primeiro item do bloco V**, junto com a saída de «Edição de …», da introdução justificativa da primeira página e de «Estes indicadores não são escolha nossa…» (voz). Sem alteração ao portão: o selo continua ao pé do valor e a apontar para a linha própria.

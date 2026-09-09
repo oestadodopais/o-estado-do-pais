@@ -407,6 +407,41 @@ h1.cabeca-h1[data-citadas]:not([data-citadas='1']) {
   white-space: nowrap;
 }
 
+/* ---------------------------------------------------------------------------
+   O ALVO DO VALOR SELADO DA MANCHETE: CONSTRUÍDO, MEDIDO E DESFEITO (09.09.2026)
+   ---------------------------------------------------------------------------
+   A célula A10 de `tests/inicio/correcoes-a.mjs` mediu, a 390 e nas duas
+   edições, quatro alvos do corpo da primeira página abaixo dos 44 px, e os
+   quatro são desta manchete: os dois valores citados («89,7» e «6») a
+   54,3 × 32,5 e a 44 × 32,5, e os dois selos da fila a 52,5 × 18 (61 × 18 na
+   inglesa). São deste bloco: a manchete passou a citar duas linhas com o item
+   8.15, e cada valor ganhou a sua porta e o seu selo.
+
+   A ÁREA FOI POSTA A CRESCER PARA OS 44 PX, com o mesmo `::after` posicionado
+   que o selo já tem, E O PORTÃO RECUSOU-A. `npm run check:alvos` mediu, sobre a
+   construção com a regra:
+
+     · H7 · «1 com uma porta de OUTRA linha dentro da sua área
+       (a.claim-value.claim-porta «6»)»
+     · H2 · três valores de manchete de outras camadas com a caixa a falhar
+       («22» 44,7 × 35,8 sobre uma caixa de 32,3 × 31; «23» duas vezes)
+
+   É a regra que `site.css` já escreve ao pé do selo, e que aqui se cumpre à
+   letra: «uma área sobreposta não é um alvo maior, é uma porta que abre a linha
+   do vizinho». Numa manchete de três linhas a 390 a entrelinha é de 32,5 px, e
+   duas áreas de 44 px em linhas seguidas cruzam-se sempre que as colunas também
+   se cruzam. É exactamente o caso que a nota de `.brief-text` descreve para a
+   frase da leitura breve, e a saída é a mesma: a manchete é PROSA e não uma
+   fila, e dar-lhe altura é mudar a composição da manchete, que é uma decisão da
+   direção e não desta folha.
+
+   A REGRA SAI, E O NÚMERO FICA ESCRITO. A célula A10 conta os quatro ao lado do
+   juízo, como já conta as áreas do mapa, com esta medição por razão. */
+
+/* O TÍTULO DA SECÇÃO DOS DOMÍNIOS FICA, e é o outro alvo que a mesma medição
+   encontrou: ver `.dominios-secao-k .lig`, acima. Esse não é prosa, é o nome de
+   uma secção que também é porta, e cresceu sem tocar em vizinho nenhum. */
+
 .cabeca-lede {
   font-size: clamp(16px, 1.4vw, 18px);
   line-height: 1.5;
@@ -3337,6 +3372,16 @@ a.porta:hover .porta-abrir {
   margin: 0 0 12px 0;
   border-top: 1px solid var(--ink);
   padding-top: 12px;
+}
+/* O TÍTULO DA SECÇÃO É UMA PORTA, E UMA PORTA É UM ALVO (09.09.2026, com a
+   célula A10 de `correcoes-a.mjs`). A secção nasceu com o item 8.13 e o seu
+   título ficou a 14,4 px de altura, medidos a 390: é o único alvo do corpo da
+   primeira página abaixo dos 44 px que não é prosa. A caixa cresce para o alvo
+   do toque; a letra não muda, e por isso a composição fica onde estava. */
+.dominios-secao-k .lig {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 .dominio-secao + .dominio-secao {
   margin-top: 24px;
