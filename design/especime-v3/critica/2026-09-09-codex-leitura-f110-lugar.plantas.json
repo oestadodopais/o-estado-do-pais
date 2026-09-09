@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-09T08:44:22+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/03b60307-0dde-431e-a47a-48f0a93dfe6c/scratchpad/leituras/f110-pacote",
+ "plantas": [
+  {
+   "id": "K1",
+   "ficheiro": "scripts/check-lugar.mjs",
+   "descricao": "a folga dos tetos de 8 para 800: o portão do bloco deixa de morder",
+   "sha256_antes": "23244dd2b0913a3b5ae350ac0e6c5f03e02b8866670a6b72fc1ab11763dae3ec",
+   "sha256_depois": "dd6811820a4fb93614b3cfb7defa40041f15f4dc21004e946a6c9bafff98d1a2",
+   "contexto_antes": "---------\n * Cada linha diz: a medida, o teto, e a data em que o número foi medido. O\n * número é sempre o que a própria régua imprime, e nunca um palpite.\n */\nconst TETO_FROUXO = 8;\nconst TETOS = {\n  /* L1 · páginas com dois destinos iguais fora do cabeçalho e do rodapé.\n     TODOS os tetos desta tabela foram medidos a 08.09.2026 sobre o `",
+   "contexto_depois": "---------\n * Cada linha diz: a medida, o teto, e a data em que o número foi medido. O\n * número é sempre o que a própria régua imprime, e nunca um palpite.\n */\nconst TETO_FROUXO = 800;\nconst TETOS = {\n  /* L1 · páginas com dois destinos iguais fora do cabeçalho e do rodapé.\n     TODOS os tetos desta tabela foram medidos a 08.09.2026 sobre o `"
+  },
+  {
+   "id": "K2",
+   "ficheiro": "src/components/inicio/CampoDeBusca.astro",
+   "descricao": "a busca sem guião passa a submeter por POST a um sítio estático",
+   "sha256_antes": "7c2014a382bc7852c5fa70e4af07f6b357569f383f09dc22d4fac502e1319dfa",
+   "sha256_depois": "d375ee7e52f53f681a4e120239a52d81042b2cf64a664f651cdaf3f6aee15713",
+   "contexto_antes": "bmeter\": um formulário sem a palavra do botão ' +\n      'submete-se com a tecla e não se vê.',\n  );\n}\n---\n\n{\n  accao ? (\n    <form class=\"busca\" action={accao} method=\"get\" role=\"search\" {...forma}>\n      {/* AS CADEIAS DA BUSCA LEVAM `data-voz` (F1.10, §9.7, 08.09.2026). A\n          leitura cruzada do inventário das frases (Codex",
+   "contexto_depois": "bmeter\": um formulário sem a palavra do botão ' +\n      'submete-se com a tecla e não se vê.',\n  );\n}\n---\n\n{\n  accao ? (\n    <form class=\"busca\" action={accao} method=\"post\" role=\"search\" {...forma}>\n      {/* AS CADEIAS DA BUSCA LEVAM `data-voz` (F1.10, §9.7, 08.09.2026). A\n          leitura cruzada do inventário das frases (Codex"
+  },
+  {
+   "id": "K3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a tabela diz teto 46 para 62 px medidos e «passa»",
+   "sha256_antes": "0bce1f05c261bfc74d0a45ef40968c376234338678136f5ff1b05d7e95c10d32",
+   "sha256_depois": "0da6c11c569af19eae43212cae086bbd0b89255679cefb8c687fded7b9222656",
+   "contexto_antes": "  de 14 a 10. Nenhum tipo muda e nenhuma palavra muda.\n\n**A medida** (`node tests/inicio/porta.mjs`, célula A11, a 390 px):\n\n| | antes | depois |\n|---|---|---|\n| A11.pt | 98,4 px em **2 filas** | **62 px em 1 fila** (teto 64) · passa |\n| A11.en | 132,8 px em **2 filas** | **95,2 px em 2 filas** · falha |\n\n**As catorze portas continuam alcançáveis a um toque** nas duas edições a 390,\ncom o men",
+   "contexto_depois": "  de 14 a 10. Nenhum tipo muda e nenhuma palavra muda.\n\n**A medida** (`node tests/inicio/porta.mjs`, célula A11, a 390 px):\n\n| | antes | depois |\n|---|---|---|\n| A11.pt | 98,4 px em **2 filas** | **62 px em 1 fila** (teto 46) · passa |\n| A11.en | 132,8 px em **2 filas** | **95,2 px em 2 filas** · falha |\n\n**As catorze portas continuam alcançáveis a um toque** nas duas edições a 390,\ncom o men"
+  },
+  {
+   "id": "K4",
+   "ficheiro": "tests/inicio/porta.mjs",
+   "descricao": "a A9 aceita três toques em vez de dois",
+   "sha256_antes": "c0de11a3221d85539c247942949e91661a568f395cae144a849961c0f910e9e7",
+   "sha256_depois": "104e5c872baf4ce0a7af268709dee29f18b9be35ad05ab5bb9fbfe89bbb98ef8",
+   "contexto_antes": "ice = ed.indiceDosConcelhos.replace(/\\/$/, '');\n\n    medidas[`A9.${ed.chave}`] = { toques, dentroDoEcra, chegou, semGuiao };\n    conta(\n      `A9.${ed.chave}`,\n      toques <= 2 &&\n        chegou === alvo &&\n        dentroDoEcra &&\n        semGuiao.caminho === indice &&\n        semGuiao.query.includes('concelho='),\n      `com guião, a par",
+   "contexto_depois": "ice = ed.indiceDosConcelhos.replace(/\\/$/, '');\n\n    medidas[`A9.${ed.chave}`] = { toques, dentroDoEcra, chegou, semGuiao };\n    conta(\n      `A9.${ed.chave}`,\n      toques <= 3 &&\n        chegou === alvo &&\n        dentroDoEcra &&\n        semGuiao.caminho === indice &&\n        semGuiao.query.includes('concelho='),\n      `com guião, a par"
+  },
+  {
+   "id": "K5",
+   "ficheiro": "src/i18n/strings.mjs",
+   "descricao": "a etiqueta inglesa da agenda volta a «moves»: as duas edições divergem",
+   "sha256_antes": "509ce42e87907f1359480f5cbb4bc53d41f5add347da7f023c77505834b63640",
+   "sha256_depois": "e06bae214c3d64b7566ba34acf113689688364e67bc63607d77c38150ad45fa1",
+   "contexto_antes": "    origemDaDataK: 'Where it is written',\n      acedidoK: 'Read at the source on',\n      /* Ver a razão na edição portuguesa, e o registo em `CHAVES-EN.md`. */\n      afectaK: 'Rows this concerns',\n      notaK: 'Note',\n      voltarALista: 'Back to the agenda',\n    },\n\n    marcador: {\n      metaTitle: 'The [a verificar] marker · O Estado do País',\n      me",
+   "contexto_depois": "    origemDaDataK: 'Where it is written',\n      acedidoK: 'Read at the source on',\n      /* Ver a razão na edição portuguesa, e o registo em `CHAVES-EN.md`. */\n      afectaK: 'Rows this moves',\n      notaK: 'Note',\n      voltarALista: 'Back to the agenda',\n    },\n\n    marcador: {\n      metaTitle: 'The [a verificar] marker · O Estado do País',\n      me"
+  }
+ ]
+}
