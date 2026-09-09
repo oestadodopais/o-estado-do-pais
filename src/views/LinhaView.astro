@@ -496,7 +496,9 @@ const ficha = [
     valor: claim.name_source ?? null,
     lingua: linguaDoTituloDoDocumento(claim.document?.title ?? null, lang),
   },
-  { k: s.prov.lido, campo: 'access_date', valor: claim.access_date },
+  /* A DATA DE LEITURA NÃO ENTRA NA FICHA (09.09.2026, decisão 17): vive uma vez
+     só, no bloco das verificações. O período de referência fica, porque é uma
+     propriedade do número e não uma data da casa. */
   { k: s.prov.referencia, campo: 'reference_date', valor: claim.reference_date },
 ].filter((l) => l.valor !== null && l.valor !== undefined);
 
@@ -573,9 +575,12 @@ const atribuicaoPecas = [
   paginaDoPdf
     ? { k: s.livro.linha.publicadoPagina, campo: 'source_url.page', valor: paginaDoPdf }
     : null,
-  presente(claim.access_date)
-    ? { k: s.livro.linha.publicadoLido, campo: 'access_date', valor: claim.access_date, apos: true }
-    : null,
+  /* A DATA DE LEITURA SAIU DESTA FRASE a 09.09.2026 (releitura do leitor de
+     primeira vez, decisão 17): a página dizia a mesma data três vezes, «lido a»
+     aqui, «Lido na fonte a» no bloco das verificações e outra vez na ficha do
+     aparelho. Fica UMA, e fica onde as datas contam a história: no bloco das
+     verificações, entre o que a fonte publicou e o que a casa releu. A frase de
+     atribuição diz quem publicou, onde e em que edição, que é o que ela é. */
 ].filter(Boolean);
 /* Sem organismo não há atribuição: a frase começaria por «Publicado em», que
    atribui a um documento sem dizer de quem ele é. */
@@ -1338,9 +1343,31 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                         </span>{' '}
                       </>
                     )}
-                    <a class="ligacao-externa" href={v.path} rel="noopener noreferrer external">
-                      {s.livro.linha.verificacaoPorta} →
-                    </a>
+                    {/* A PORTA DA CONFERÊNCIA, SÓ QUANDO ELA LEVA A OUTRO SÍTIO
+                        (Blocking 3 da leitura a frio, 09.09.2026).
+
+                        Cada conferência trazia a sua porta para `v.path`, e em
+                        3 606 das 3 625 conferências do livro-razão `v.path` É o
+                        `source_url` da linha, que a página já dá como porta no
+                        bloco do endereço, por cima desta lista. Eram duas, três
+                        e quatro portas para o mesmo destino na mesma página, em
+                        5 022 pares, e a L1 do brief («nenhum ecrã com dois
+                        destinos iguais fora da mobília») contava-as todas: é o
+                        padrão maior das 6 580 páginas, e é este.
+
+                        A INFORMAÇÃO NÃO SE PERDE: o que a conferência diz é a
+                        data, quem a fez e o que deu, e isso fica; o endereço
+                        contra o qual ela foi feita é o da linha, e está uma vez
+                        na página, no seu lugar. Quando a conferência foi feita
+                        contra OUTRA coisa — uma cópia arquivada, outro caminho
+                        —, a porta fica, porque aí ela leva a um sítio que a
+                        página não tem em mais lado nenhum; e a linha ao lado já
+                        diz que cópia foi (`contraCopiaArquivadaK`). */}
+                    {v.path !== claim.source_url && (
+                      <a class="ligacao-externa" href={v.path} rel="noopener noreferrer external">
+                        {s.livro.linha.verificacaoPorta} →
+                      </a>
+                    )}
                   </dd>
                 </>
               ))
