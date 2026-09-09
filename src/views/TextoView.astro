@@ -37,6 +37,7 @@
 import Base from '../layouts/Base.astro';
 import Provenance from '../components/Provenance.astro';
 import RotuloDeIA from '../components/RotuloDeIA.astro';
+import EdicoesDoEstudo from '../components/EdicoesDoEstudo.astro';
 import { workById } from '../data/studies.mjs';
 import { FONTE_DIGITAL_GERADA_POR_IA } from '../data/politica-ia.mjs';
 import { registoDaEdicao, manifestoDosRegistos, temRegisto } from '../lib/registos.mjs';
@@ -134,7 +135,6 @@ const seccoes = titulos.filter((t) => t.nivel === 2).length;
    trabalho, que já é prosa aprovada. */
 const tituloDoDocumento = registo.blocks[0]?.text ?? '';
 
-const documentoPath = routePath('documento', lang, { slug });
 const estudoPath = routePath('estudo', lang, { slug });
 
 /**
@@ -391,11 +391,20 @@ const conta = (nome) => `${chave}=${nome}`;
 
     {/* ==================================================== o aparelho, a 300px */}
     <aside class="aparelho" aria-labelledby="aparelho">
+      {/* ================================= as edições, no painel lateral
+          O §7.4 do bloco F1.10 (09.09.2026) manda que a página de capa de um
+          estudo deixe de ser paragem obrigatória, e que «o que ela tem, as
+          edições, as descrições, "ler o documento", vai para o painel lateral da
+          página do texto». O painel tinha aqui um bloco com uma porta só, a do
+          documento desta língua; passa a levar a MESMA lista de edições que a
+          página do estudo rende, pelo mesmo componente, com a mesma frase a
+          dizer o que cada porta abre. Quem chega aqui pelo título da lista dos
+          estudos tem à mão, sem voltar atrás, a outra língua e o documento.
+
+          É mobília e vive fora do `<article>`, como o índice e o rótulo de IA:
+          o portão compara o corpo com o registo do motor bloco a bloco. */}
       <div class="aparelho-bloco">
-        <h2 class="aparelho-titulo" id="aparelho">{s.estudos.documentoK}</h2>
-        <p>
-          <a class="ligacao-dados" href={documentoPath}>{s.estudos.documentoLink} →</a>
-        </p>
+        <EdicoesDoEstudo lang={lang} work={work} idDoTitulo="aparelho" />
       </div>
 
       {/* A faixa das contagens: recontadas pelo portão, nunca escritas

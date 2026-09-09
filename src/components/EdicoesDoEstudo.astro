@@ -1,0 +1,114 @@
+---
+/**
+ * AS EDIÇÕES DE UM ESTUDO, NUMA SÓ FORMA (bloco F1.10, §7.4 e item 8.6).
+ *
+ * O diretor andou pela página de «Onde está a água» a 07.09.2026 à noite e
+ * disse que a apresentação dos estudos «is a bit ambiguous». O que ele viu:
+ * numa página de estudo as mesmas portas rendiam-se DUAS VEZES e com DUAS
+ * FORMAS diferentes. Em cima, um bloco «O documento original» com uma fila de
+ * portas soltas («Ler no sítio →», «Ler o documento →», «Ler o documento · EN
+ * →»); mais abaixo, um bloco «Edições» com uma linha por edição e, dentro dela,
+ * outra vez as mesmas portas. Quatro caminhos para dois destinos, com nomes
+ * quase iguais e sem nada que dissesse o que cada um abre.
+ *
+ * O item 8.6 decide a forma: «na página de cada estudo, as edições (as línguas,
+ * os documentos, a página de leitura) apresentam-se de uma só forma em todos os
+ * estudos, com uma frase que diga o que cada porta abre».
+ *
+ * ESTE COMPONENTE É ESSA FORMA, E É A ÚNICA. Uma linha por edição; dentro dela,
+ * a língua, o título dessa edição, a data em que ela entrou no repositório, e as
+ * portas SEMPRE PELA MESMA ORDEM: primeiro a leitura composta neste sítio,
+ * depois o documento tal como foi publicado. A frase que diz o que cada uma
+ * abre está uma vez, por cima da lista.
+ *
+ * ONDE SE RENDE: na página do estudo (`/estudos/<slug>`) e no painel lateral da
+ * página de leitura (`/estudos/<slug>/texto`), que é o que o §7.4 manda («o que
+ * ela tem, as edições, as descrições, "ler o documento", vai para o painel
+ * lateral da página do texto»). É o mesmo componente nos dois sítios, e por isso
+ * a forma não pode divergir: divergir exigia dois ficheiros.
+ *
+ * A AUSÊNCIA DIZ-SE PELA PORTA QUE FALTA, e não por uma frase (decisão 9 do
+ * diretor de 24.08.2026, e a Emenda 15). Oito das dezasseis edições não têm
+ * texto composto: a linha dessa edição mostra a porta do documento e mais nada.
+ *
+ * A PORTA DA EDIÇÃO IRMÃ SAIU. Levava à página do estudo na outra língua, que é
+ * o mesmo que o comando de língua do cabeçalho já faz em todas as páginas do
+ * sítio: era um segundo caminho para o mesmo destino, que é o que a §0 deste
+ * bloco proíbe. O que a linha da edição estrangeira mostra agora são as portas
+ * dela, que é o que o leitor veio buscar.
+ */
+import TituloDeTrabalho from './TituloDeTrabalho.astro';
+import Marcador from './Marcador.astro';
+import { dataDaCasa } from '../lib/datas.mjs';
+import { dataDaEdicaoNoRepositorio } from '../lib/datas-do-repositorio.mjs';
+import { documentosDoEstudo } from '../lib/documentos.mjs';
+import { temRegisto } from '../lib/registos.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+
+/**
+ * `idDoTitulo` é o único parâmetro de apresentação, e existe por uma razão de
+ * acessibilidade e não de desenho: no painel lateral da página de leitura o
+ * `<aside>` nomeia-se pelo rótulo deste bloco (`aria-labelledby`), e um
+ * `aria-labelledby` só aponta para um `id`. Onde ele não é preciso, o rótulo
+ * fica sem `id`, como todos os outros rótulos das páginas de estudo.
+ */
+const { lang = 'pt', work, idDoTitulo } = Astro.props;
+const s = t(lang);
+
+const documentos = documentosDoEstudo(work.slug);
+
+/** A ficha de uma edição: a língua, o título, a data, e as duas portas. */
+const edicoes = work.editions.map((e) => ({
+  lang: e.lang,
+  title: e.title,
+  /* A data de uma edição é a do repositório: ver `src/lib/datas-do-repositorio.mjs`
+     e a razão em `EstudosView.astro`. O campo `date` do arquivo não chega à
+     superfície. */
+  publicada: dataDaEdicaoNoRepositorio(work.slug, e.lang),
+  texto: temRegisto(work.slug, e.lang) ? routePath('texto', e.lang, { slug: work.slug }) : null,
+  documento: documentos.find((d) => d.lang === e.lang) ?? null,
+}));
+---
+
+<div class="log-vazio">
+  <div class="log-vazio-k" id={idDoTitulo}>{s.estudos.stubEdicoes}</div>
+  {/* A FRASE QUE DIZ O QUE CADA PORTA ABRE (item 8.6). É navegação: nomeia dois
+      destinos e diz o que se encontra em cada um. Não fala do método, da
+      verificação nem da casa (Emenda 15). */}
+  <p class="edicoes-frase">{s.estudos.edicoesFrase}</p>
+  {
+    edicoes.map((e) => (
+      <div class="edicao">
+        <div class="edicao-cabeca">
+          <span class="badge">{e.lang.toUpperCase()}</span>
+          <TituloDeTrabalho class="edicao-titulo" titulo={e.title} lang={lang} />
+        </div>
+        <div class="edicao-meta">
+          <span class="edicao-data">
+            {/* A preposição fora da marca, a data com a sua origem: ver a razão
+                em `src/lib/datas-do-repositorio.mjs`. */}
+            <span data-voz>{s.estudos.dataLabel}</span>{' '}
+            {e.publicada ? (
+              <span data-nonledger="data-do-repositorio">{dataDaCasa(e.publicada)}</span>
+            ) : (
+              <Marcador lang={lang} />
+            )}
+          </span>
+          {/* SEMPRE ESTA ORDEM, EM TODOS OS ESTUDOS: a leitura no sítio primeiro
+              (bloco B, item B2; Codex 10), a edição de registo a seguir. */}
+          {e.texto && (
+            <a href={e.texto} hreflang={e.lang === 'pt' ? 'pt-PT' : 'en'}>
+              {s.estudos.textoLink} →
+            </a>
+          )}
+          {e.documento && (
+            <a href={e.documento.rota} hreflang={e.lang === 'pt' ? 'pt-PT' : 'en'}>
+              {s.estudos.documentoLink} →
+            </a>
+          )}
+        </div>
+      </div>
+    ))
+  }
+</div>

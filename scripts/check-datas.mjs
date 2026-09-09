@@ -131,8 +131,22 @@ const rotaDe = (f) =>
 /* --- as rotas que imprimem datas de edição -------------------------------- */
 
 const INDICES = new Set(['/estudos', '/en/studies']);
-/** `/estudos/<slug>` e `/en/studies/<slug>`, e não `/estudos/<slug>/texto`. */
-const ROTA_DA_EDICAO = /^\/(?:estudos|en\/studies)\/([^/]+)$/;
+/**
+ * AS ROTAS QUE IMPRIMEM UM BLOCO POR EDIÇÃO.
+ *
+ * Eram duas, a página do trabalho nas duas edições; passam a quatro com o §7.4
+ * do bloco F1.10 (09.09.2026), que manda «o que ela tem, as edições, as
+ * descrições, "ler o documento", vai para o painel lateral da página do texto».
+ * A página de leitura passou a render o MESMO componente
+ * (`src/components/EdicoesDoEstudo.astro`) no seu painel lateral, e com ele as
+ * mesmas datas de repositório: sem esta rota aqui, oito páginas imprimiam uma
+ * data que este passo não sabia prender, e a conta fecha a construção quando isso
+ * acontece, que é exactamente o que ela fez.
+ *
+ * A MARCAÇÃO É A MESMA E POR ISSO A CONTA É A MESMA: um `.edicao` por edição do
+ * trabalho, com o `.badge` a dizer a língua; a rota diz o slug nos quatro casos.
+ */
+const ROTA_DA_EDICAO = /^\/(?:estudos|en\/studies)\/([^/]+)(?:\/(?:texto|text))?$/;
 
 /* --- 1a. nenhuma data impressa fora do que o ficheiro declara ------------- */
 

@@ -27,6 +27,7 @@ import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import { WORKS, POR_VERIFICAR } from '../data/studies.mjs';
 import { leituraDe } from '../data/leituras.mjs';
 import { documentosDoEstudo } from '../lib/documentos.mjs';
+import { temRegisto } from '../lib/registos.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { dataDaEdicaoNoRepositorio } from '../lib/datas-do-repositorio.mjs';
@@ -62,8 +63,50 @@ const trabalhos = WORKS.map((w) => {
      que a casa pode provar é o dia em que o ficheiro da edição entrou neste
      repositório, e é isso que a página diz, com a origem dita. */
   const datas = [...new Set(w.editions.map((e) => dataDaEdicaoNoRepositorio(w.slug, e.lang)))];
-  const migrado = documentosDoEstudo(w.slug).length > 0;
+  const documentos = documentosDoEstudo(w.slug);
+  const migrado = documentos.length > 0;
   const leitura = leituraDe(w.id);
+  /**
+   * A PORTA DA LEITURA, PARA QUE A PÁGINA DE CAPA DEIXE DE SER PARAGEM
+   * OBRIGATÓRIA (bloco F1.10, §7.4, 09.09.2026).
+   *
+   * Até aqui, chegar ao texto de um estudo a partir desta lista custava sempre
+   * dois toques: o título abria a página do estudo, e era lá dentro que estavam
+   * as portas. O §7.4 manda que «o título da lista vai direto ao texto; a página
+   * de capa deixa de existir como paragem obrigatória».
+   *
+   * O TÍTULO CONTINUA A ABRIR A PÁGINA DO ESTUDO, e a razão é que ela não é uma
+   * capa: é a página do observatório sobre o estudo, com a leitura da casa, os
+   * seus valores selados e o concelho de que trata. O que muda é que ela deixa
+   * de ser o caminho ÚNICO: cada linha leva a porta da leitura, e ela chega-se
+   * num toque.
+   *
+   * A ESCOLHA DA PORTA É A MESMA REGRA DE `EdicoesDoEstudo.astro`, para que o
+   * leitor aprenda uma ordem e não duas: primeiro a leitura composta neste
+   * sítio, depois o documento tal como foi publicado; e primeiro a edição desta
+   * língua, depois a outra, porque um estudo publicado só em inglês não tem
+   * edição portuguesa nenhuma para abrir.
+   */
+  const ordemDasLinguas = [
+    principal.lang,
+    ...w.editions.map((e) => e.lang).filter((l) => l !== principal.lang),
+  ];
+  let porta = null;
+  for (const l of ordemDasLinguas) {
+    if (temRegisto(w.slug, l)) {
+      porta = { href: routePath('texto', l, { slug: w.slug }), rotulo: s.estudos.textoLink, lang: l };
+      break;
+    }
+  }
+  if (!porta) {
+    for (const l of ordemDasLinguas) {
+      const d = documentos.find((x) => x.lang === l);
+      if (d) {
+        porta = { href: d.rota, rotulo: s.estudos.documentoLink, lang: l };
+        break;
+      }
+    }
+  }
   return {
     work: w,
     titulo: principal.title,
@@ -74,6 +117,7 @@ const trabalhos = WORKS.map((w) => {
       date: dataDaEdicaoNoRepositorio(w.slug, e.lang),
       pagina: routePath('estudo', e.lang, { slug: w.slug }),
     })),
+    porta,
     dataUnica: datas.length === 1 ? datas[0] : null,
     umaSoData: datas.length === 1,
     estado: leitura ? null : migrado ? s.estudos.migradoEstado : s.estudos.stubEstado,
@@ -197,6 +241,18 @@ const edicoesSemData = trabalhos.reduce(
                   </a>
                 ))}
               </span>
+              {/* A PORTA DA LEITURA (§7.4). Uma por linha, e a última coisa da
+                  fila: a língua e a data dizem o que a edição é, e esta diz
+                  onde ela se lê. */}
+              {tr.porta && (
+                <a
+                  class="arquivo-porta"
+                  href={tr.porta.href}
+                  hreflang={tr.porta.lang === 'pt' ? 'pt-PT' : 'en'}
+                >
+                  {tr.porta.rotulo} →
+                </a>
+              )}
               {tr.umaSoData && (
                 <span class="arquivo-data">
                   {/* A PREPOSIÇÃO É PROSA DA CASA E FICA FORA DA MARCA DA DATA

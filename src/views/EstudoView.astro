@@ -31,19 +31,17 @@
  * e linha, em src/data/leituras.mjs e em DECISIONS §1.35.
  */
 import Base from '../layouts/Base.astro';
-import { dataDaCasa } from '../lib/datas.mjs';
-import { dataDaEdicaoNoRepositorio } from '../lib/datas-do-repositorio.mjs';
 import Claim from '../components/Claim.astro';
 import Provenance from '../components/Provenance.astro';
 import Marcador from '../components/Marcador.astro';
 import Frase from '../components/Frase.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
+import EdicoesDoEstudo from '../components/EdicoesDoEstudo.astro';
 import { workById, POR_VERIFICAR, subjectLabel } from '../data/studies.mjs';
 import { leituraDe } from '../data/leituras.mjs';
 import { FONTE_DIGITAL_GERADA_POR_IA } from '../data/politica-ia.mjs';
 import { municipioPorSlug } from '../data/municipios.mjs';
 import { documentosDoEstudo } from '../lib/documentos.mjs';
-import { temRegisto } from '../lib/registos.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { canonicalUrl, SITE_NAME, SITE_URL } from '../../site.config.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -56,33 +54,17 @@ if (!work) throw new Error(`estudo desconhecido: "${slug}"`);
 const path = routePath('estudo', lang, { slug });
 const principal = work.editions.find((e) => e.lang === lang) ?? work.editions[0];
 
-/* O documento existe ou não existe. Não há meio-termo, e a página não finge. */
-const documentos = documentosDoEstudo(slug);
-const documentoDaqui = documentos.find((d) => d.lang === lang) ?? null;
-const migrado = documentos.length > 0;
-
 /**
- * A PORTA DA PÁGINA DE LEITURA, e a ausência dita pela porta que falta.
+ * AS EDIÇÕES SAÍRAM DESTA VISTA E PASSARAM A UM COMPONENTE (bloco F1.10, §7.4 e
+ * item 8.6, 09.09.2026).
  *
- * Uma edição com registo de conteúdo tem o documento composto no sítio, em
- * `/estudos/<slug>/texto`; uma sem registo não tem, e a diferença diz-se por
- * ausência e não por uma frase (decisão 9 do diretor de 24.08.2026, e a Emenda
- * 15: «a ausência diz-se em duas palavras, não num parágrafo»). Nenhuma linha
- * desta página explica porque é que umas têm e outras não.
+ * Esta página montava as edições duas vezes e com duas formas: uma fila de
+ * portas soltas debaixo de «O documento original», e uma linha por edição com as
+ * mesmas portas lá dentro. `EdicoesDoEstudo.astro` é agora a forma única, e é a
+ * mesma que o painel lateral da página de leitura rende. O que esta vista
+ * calcula sobre documentos fica só no que ela ainda decide: o estado da página.
  */
-const textoDaqui = temRegisto(slug, lang) ? routePath('texto', lang, { slug }) : null;
-
-/** A ficha de uma edição: a sua página, o seu documento, o seu texto, as datas. */
-const edicoes = work.editions.map((e) => ({
-  ...e,
-  /* A data de publicação é a do repositório: ver `src/lib/datas-do-repositorio.mjs`
-     e a razão em `EstudosView.astro`. `date`, do arquivo, deixa de chegar à
-     superfície. */
-  publicada: dataDaEdicaoNoRepositorio(slug, e.lang),
-  paginaDaEdicao: routePath('estudo', e.lang, { slug }),
-  documento: documentos.find((d) => d.lang === e.lang) ?? null,
-  texto: temRegisto(slug, e.lang) ? routePath('texto', e.lang, { slug }) : null,
-}));
+const migrado = documentosDoEstudo(slug).length > 0;
 
 const tema = subjectLabel(work.subject, lang);
 
@@ -243,44 +225,12 @@ const jsonld = {
   }
 
   <div class="estudo-blocos">
-    <!-- ======================================= o documento original -->
-    <div class="log-vazio">
-      <div class="log-vazio-k">{s.estudos.documentoK}</div>
-      {
-        migrado ? (
-          <>
-            {/* A LEITURA NO SÍTIO VEM PRIMEIRO (bloco B, item B2; Codex 10).
-                Os dois destinos estavam pela ordem em que foram construídos, e
-                o leitor de outra família não soube a diferença entre eles antes
-                de abrir os dois: escolheu «Ler o documento» e caiu na edição de
-                registo, que abre com o vocabulário da produção. A porta
-                principal passa a ser a leitura composta no sítio; a edição
-                arquivada vem a seguir, com o rótulo a dizer o que é. */}
-            <p class="estudo-accoes">
-              {textoDaqui && (
-                <a class="ligacao-dados estudo-accao-principal" href={textoDaqui}>
-                  {s.estudos.textoLink} →
-                </a>
-              )}
-              {documentoDaqui && (
-                <a class="ligacao-dados" href={documentoDaqui.rota}>
-                  {s.estudos.documentoLink} →
-                </a>
-              )}
-              {documentos
-                .filter((d) => d.lang !== lang)
-                .map((d) => (
-                  <a class="ligacao-dados" href={d.rota} hreflang={d.lang === 'pt' ? 'pt-PT' : 'en'}>
-                    {s.estudos.documentoLink} · <span data-nonledger="identificador-tecnico">{d.lang.toUpperCase()}</span> →
-                  </a>
-                ))}
-            </p>
-          </>
-        ) : (
-          <p class="log-vazio-v">{s.estudos.documentoVazio}</p>
-        )
-      }
-    </div>
+    {/* ======================================= as edições, numa só forma
+        O bloco «O documento original» que estava aqui saiu com o item 8.6: era a
+        primeira das duas apresentações das mesmas portas. A lista das edições
+        vem para o lugar dele, que é o primeiro bloco da página, porque é ela que
+        responde à pergunta com que o leitor chega («onde leio isto?»). */}
+    <EdicoesDoEstudo lang={lang} work={work} />
 
     <!-- ======================================= publicado fora daqui -->
     {
@@ -310,57 +260,6 @@ const jsonld = {
       )
     }
 
-    <!-- ======================================= as edições -->
-    <div class="log-vazio">
-      <div class="log-vazio-k">{s.estudos.stubEdicoes}</div>
-      {
-        edicoes.map((e) => (
-          <div class="edicao">
-            <div class="edicao-cabeca">
-              <span class="badge">{e.lang.toUpperCase()}</span>
-              <TituloDeTrabalho class="edicao-titulo" titulo={e.title} lang={lang} />
-            </div>
-            <div class="edicao-meta">
-              {/* Um marcador de incerteza usa sempre a mesma classe: é a única
-                  linguagem de incerteza do sítio (IDENTIDADE §6). Aqui era
-                  texto simples e passava despercebido. */}
-              <span class="edicao-data">
-                {/* A preposição fora da marca, a data com a sua origem: ver a
-                    razão em `src/lib/datas-do-repositorio.mjs`. */}
-                <span data-voz>{s.estudos.dataLabel}</span>{' '}
-                {e.publicada ? (
-                  <span data-nonledger="data-do-repositorio">{dataDaCasa(e.publicada)}</span>
-                ) : (
-                  <Marcador lang={lang} />
-                )}
-              </span>
-              <span data-nonledger="data-de-atualizacao">
-                {s.estudos.atualizadoLabel}:{' '}
-                {e.updated ? dataDaCasa(e.updated) : <Marcador lang={lang} />}
-              </span>
-              {e.lang !== lang && (
-                <a href={e.paginaDaEdicao} hreflang={e.lang === 'pt' ? 'pt-PT' : 'en'}>
-                  {s.estudos.edicaoIrma} →
-                </a>
-              )}
-              {/* A MESMA ORDEM DA CABEÇA (bloco B, item B2): a leitura no sítio
-                  primeiro, a edição de registo a seguir. */}
-              {e.texto && (
-                <a href={e.texto} hreflang={e.lang === 'pt' ? 'pt-PT' : 'en'}>
-                  {s.estudos.textoLink} →
-                </a>
-              )}
-              {e.documento && (
-                <a href={e.documento.rota} hreflang={e.lang === 'pt' ? 'pt-PT' : 'en'}>
-                  {s.estudos.documentoLink} →
-                </a>
-              )}
-            </div>
-          </div>
-        ))
-      }
-    </div>
-
     <!-- ======================================= tema e descrições -->
     <div class="log-vazio">
       <div class="log-vazio-k">{s.estudos.temaK}</div>
@@ -389,12 +288,11 @@ const jsonld = {
       </p>
     </div>
 
-    <!-- ======================================= descargas -->
-    <div class="log-vazio">
-      <div class="log-vazio-k">{s.estudos.descarregarK}</div>
-      <p class="log-vazio-v">{s.estudos.descarregarVazio}</p>
-    </div>
-
+    {/* O BLOCO «Descarregar · Sem ficheiros» SAIU (§7.4: «"Descarregar · Sem
+        ficheiros" não se imprime quando está vazio»). Não estava vazio às vezes:
+        estava vazio sempre, nas doze páginas e nas duas edições, porque não há
+        neste sítio nenhuma fonte de ficheiros de um estudo. Um rótulo com a sua
+        própria negação por baixo é uma linha que não responde a nada. */}
     <p class="rodape-nav">
       <a href={routePath('estudos', lang)}>{s.estudos.stubVoltar}</a>
     </p>

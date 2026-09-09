@@ -2004,6 +2004,22 @@ a.src-chip.is-unverified:hover::before {
    escrita e sem documento, rascunho; com documento e sem leitura, «documento
    alojado · página por escrever»; com leitura, nada, porque o trabalho está à
    vista. */
+/* A PORTA DA LEITURA NA LINHA DO ÍNDICE (bloco F1.10, §7.4, 09.09.2026): o
+   texto de um estudo a um toque desta lista, sem passar pela página do estudo.
+   Tem a forma das portas da fila de uma edição (`.edicao-meta a`), porque é a
+   mesma porta com o mesmo nome noutro sítio. */
+.arquivo-porta {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-strong);
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.arquivo-porta:hover {
+  border-bottom-color: currentColor;
+}
 .arquivo-estado {
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;
@@ -2063,6 +2079,16 @@ a.badge-porta:hover {
   flex-wrap: wrap;
   gap: 8px 22px;
   margin-top: 2px;
+}
+/* A FRASE QUE DIZ O QUE CADA PORTA ABRE (bloco F1.10, item 8.6, 09.09.2026).
+   Vive por cima da lista das edições, uma vez. Tem a letra da prosa e não a do
+   aparelho: é uma frase que se lê, e não um rótulo que se varre. */
+.edicoes-frase {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 58ch;
+  margin: 4px 0 12px;
 }
 /* A PORTA PRINCIPAL É A DA LEITURA NO SÍTIO (bloco B, item B2). Não muda de
    cor nem ganha caixa: ganha o peso da letra, que é o que esta casa usa para
