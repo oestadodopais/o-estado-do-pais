@@ -71,8 +71,17 @@ const DIST = path.join(RAIZ, 'dist');
 const ROTAS_DE_TRANSCRICAO = new Set(['documento', 'texto']);
 
 /* A página de erro não tem caminho na tabela de rotas e não é uma página do
-   leitor: é o que o servidor devolve quando não há página nenhuma. */
-const FICHEIROS_SEM_ROTA = new Set(['404.html', 'en/404.html']);
+   leitor: é o que o servidor devolve quando não há página nenhuma.
+
+   O NOME DO FICHEIRO INGLÊS ESTAVA ERRADO, e ninguém o via (09.09.2026). A lista
+   dizia `en/404.html`, e esse ficheiro não existe: a Astro escreve a página de
+   erro portuguesa em `dist/404.html`, por ser a da raiz, e a inglesa em
+   `dist/en/404/index.html`, como todas as outras. Enquanto NENHUMA página tinha
+   caminho, a exceção que falhava não se notava: a página de erro inglesa contava
+   como mais uma das 7 213. Com o caminho posto, ficou a ser a única, e o nome
+   errado veio à superfície. Conferido no `dist/` antes de se corrigir:
+   `ls dist/404.html dist/en/404*`. */
+const FICHEIROS_SEM_ROTA = new Set(['404.html', 'en/404/index.html']);
 
 /* ---------------------------------------------------------------------------
  * OS TETOS
@@ -111,13 +120,19 @@ const TETOS = {
      edições, e a de definição já estava a 1 na primeira página. */
   l4_falhas: 0,
   /* L5 · páginas abaixo da primeira sem caminho no cabeçalho.
-     SOBE DE 7 211 PARA 7 213 a 08.09.2026, e a razão é a única que faz um teto
-     subir: o sítio ganhou DUAS PÁGINAS («Portugal na União Europeia» nas duas
-     edições, item 8.16), e nenhuma delas tem ainda o caminho no cabeçalho, que
-     é o que a L5 mede e que nenhuma página do sítio tem ainda. Não é uma
-     regressão: é o mesmo número dividido por mais duas páginas. A mesma razão,
-     e o mesmo dia, valem para a L1, a L6, a 8.5 e a 8.8. */
-  l5_sem_caminho: 7213,
+     DESCE DE 7 213 PARA 0 a 09.09.2026, com o item 5 do encargo (§2.5 do brief):
+     o `Caminho.astro` entra no `<header>` de todas as páginas, com os degraus da
+     tabela de `src/lib/caminho.mjs` e a folha com a sua marca de origem. As duas
+     famílias de transcrição (`documento` e `texto`) ficam de fora pelo §3 do
+     brief, e a página de erro fica de fora por não ser uma página do leitor: as
+     três exceções estão nomeadas acima, com a razão, e não se saltam em silêncio.
+
+     O NÚMERO DE PARTIDA ESTAVA CERTO E A EXCEÇÃO INGLESA ESTAVA ERRADA: as 7 213
+     incluíam a página de erro inglesa, porque `en/404.html` não é o nome do
+     ficheiro que a Astro escreve. Com o caminho posto, as 7 212 páginas do leitor
+     ficaram a 0 e sobrou ela; a lista das exceções passou a nomear o ficheiro que
+     existe, e a medida fecha em 0. */
+  l5_sem_caminho: 0,
   /* L6 · selos cuja etiqueta não é o publicador da linha.
      SOBE DE 26 174 PARA 26 178 a 08.09.2026, e a razão escreve-se porque um teto
      que sobe tem sempre de a ter: a manchete da primeira página passou a citar

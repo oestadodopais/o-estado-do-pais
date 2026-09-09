@@ -5421,6 +5421,25 @@ for (const file of ficheirosHtml(DIST)) {
   }
 
   /* --- os campos de uma linha do livro-razão, na página dessa linha --- */
+  /**
+   * O CAMINHO DO CABEÇALHO É UMA LISTA DE NOMES (F1.10, §2.5, 09.09.2026).
+   *
+   * A regra do título do documento (mais abaixo) escreve, ela própria, a
+   * distinção que decide isto: «no índice do livro-razão e nas páginas de área o
+   * título é o NOME da medida numa lista de nomes, e uma lista de nomes não é uma
+   * lista de portas». O caminho do cabeçalho é o terceiro sítio onde o nome de
+   * uma medida se rende como nome, e o primeiro que fica na PÁGINA DA PRÓPRIA
+   * LINHA: «Início › Números e fontes › <o nome desta medida>». Ele responde à
+   * pergunta «onde estou», e não «onde está o documento».
+   *
+   * O QUE SE DISPENSA É A PORTA, E MAIS NADA. A transcrição continua conferida
+   * carácter a carácter contra a linha, a marca continua a ser exigida, e a
+   * âncora que ali existisse continuaria a ter de apontar para o `document.url`.
+   * A dispensa é de UM elemento por página, dentro de `nav.caminho`, e é por
+   * isso um conjunto e não uma condição solta: um `data-linha-campo` noutro
+   * ponto do cabeçalho não entra aqui.
+   */
+  const noCaminho = new Set(body.querySelectorAll('nav.caminho [data-linha-claim]'));
   const camposRenderizados = new Set();
   for (const el of body.querySelectorAll('[data-linha-claim]')) {
     const id = el.getAttribute('data-linha-claim');
@@ -5558,7 +5577,7 @@ for (const file of ficheirosHtml(DIST)) {
        * porta de cada entrada é o selo, que abre a linha. Exigir ali a porta do
        * documento punha o leitor a sair do sítio a partir de um índice.
        */
-      if (destino === null && claimDaPagina && claimDaPagina.id === id) {
+      if (destino === null && claimDaPagina && claimDaPagina.id === id && !noCaminho.has(el)) {
         const url = campoDaLinha(claim, 'document.url', linguaPagina);
         if (url !== null && url !== undefined) {
           err(

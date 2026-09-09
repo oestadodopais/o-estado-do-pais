@@ -553,6 +553,71 @@ section {
   color: var(--muted);
 }
 
+/* ---------------------------------------------------------------------------
+ * O CAMINHO DESTA PÁGINA, POR BAIXO DA MARCA (F1.10, §2.5; medida L5)
+ * ---------------------------------------------------------------------------
+ * «Início › Concelhos › Évora», em texto com ligações. Fica no corpo da frase de
+ * identidade (12 px, prosa, `--muted`) e não no da barra, e a razão é a mesma que
+ * pôs a frase ali: o que está por baixo da marca pertence à marca, e uma segunda
+ * voz grande debaixo do nome seriam duas marcas.
+ *
+ * NA LETRA DA PROSA E NÃO NAS VERSALETES DA BARRA. A barra vai em Spectral SC com
+ * `text-transform: lowercase`, e o caminho leva nomes próprios: «Évora» em caixa
+ * baixa é o nome escrito errado. As versaletes são para a fila de etiquetas, que
+ * é o que elas são.
+ *
+ * O ALVO DE TOQUE É O DA NAVEGAÇÃO, e vive na mesma condição: dentro de
+ * `pointer: coarse`, porque é o dedo que precisa dos 44 px e num cursor a regra
+ * não muda coisa nenhuma. A fila é uma caixa flexível, e por isso a altura
+ * mínima vale nos seus itens.
+ */
+.caminho {
+  margin: 8px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 6px;
+  font-family: var(--f-prosa);
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--muted);
+}
+.caminho a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.caminho a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.caminho-sep {
+  color: var(--rule-strong);
+}
+/* A PÁGINA EM QUE SE ESTÁ FICA A TINTA E SEM PORTA. É a marca do lugar, e é a
+   mesma decisão do §7.10 do brief («"9 regiões" deixa de ser ligação para si
+   próprio») aplicada à mobília: uma ligação para a página que já está aberta é
+   uma porta que não abre nada. */
+.caminho-aqui {
+  color: var(--ink);
+}
+/* O nome de uma medida entra pelo componente que lhe põe a marca, e a
+   composição dele é a do caminho e não a de uma linha do índice. */
+.caminho-medida {
+  color: inherit;
+  font: inherit;
+}
+
+@media (pointer: coarse) {
+  .caminho a,
+  .caminho .caminho-aqui {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
 /* A regra `.method-line` saiu a 21.08.2026 com a linha que ela compunha
    (Emenda 11, DECISIONS §1.52): a linha de método deixou de se render por baixo
    da marca, e uma regra sem elemento é uma regra que mente sobre o que a folha
