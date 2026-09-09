@@ -68,6 +68,7 @@
 import { SITE_NAME } from '../../site.config.mjs';
 import { routePath, otherLanguagePath, normalizePath } from '../lib/routes.mjs';
 import ControloDeTema from './ControloDeTema.astro';
+import Caminho from './Caminho.astro';
 import { t } from '../i18n/strings.mjs';
 import { GRUPOS_NAV, ETIQUETA_NAV } from '../lib/navegacao.mjs';
 
@@ -325,6 +326,25 @@ const NomeTag = 'p';
         autorreferência a zero.
         ------------------------------------------------------------------ */}
     {!compact && naHome && <p class="masthead-identidade">{s.identidade}</p>}
+
+    {/* ------------------------------------------------------------------
+        O CAMINHO DESTA PÁGINA (F1.10, §2.5; medida L5)
+        ------------------------------------------------------------------
+        «Cada página abaixo da primeira mostra o seu caminho.» Vive aqui, a
+        seguir à marca, e não acima dela: a medida A11 conta os píxeis do topo
+        do documento ao topo do nome da publicação (teto 64 a 390), e uma fila
+        de portas por cima do nome gastava-os todos. Por baixo do nome, o
+        caminho é a primeira coisa que se lê DEPOIS de saber em que sítio se
+        está, que é a ordem em que a pergunta se faz.
+
+        NA PRIMEIRA PÁGINA NÃO SE RENDE, e não é uma condição escrita aqui: o
+        componente pergunta a rota a `matchPath()` e a tabela de
+        `src/lib/caminho.mjs` não dá pai a `home` nem às duas famílias de
+        transcrição (§3 do brief). Uma segunda maneira de perguntar a mesma
+        coisa divergiria da primeira, que é a razão que a frase de identidade
+        aqui ao lado já escreve.
+        ------------------------------------------------------------------ */}
+    <Caminho lang={lang} path={aqui} />
 
     {
       furniture && (
