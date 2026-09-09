@@ -23,7 +23,7 @@ inglesa em quatro linhas onde o item 8.15 tem um teto de três.
 | cabeça | a última do ramo (`git -C <worktree> rev-parse --short HEAD`) |
 | `main` fundido | **`13372937`**, com o F1.1e inteiro |
 | `build` · `verify` · `typecheck` | **0** · **0** · **0** (códigos lidos de `build.exit`, `verify.exit`, `typecheck.exit`) |
-| a corrida da CI | lê-se na primeira linha de `gh run list --repo oestadodopais/o-estado-do-pais --branch lugar-2026-09-04`. Um commit não pode conter o número da corrida que ele dispara |
+| a corrida da CI | **34315983862, verde**, na cabeça do código desta sessão (`87b71288`). A cabeça deste relatório é a do commit que o escreve, e um commit não pode conter o número da corrida que ele dispara |
 | feito nas sessões anteriores | a régua (encargo (b)); **§9.1**; **8.8**; **§7.5**; **8.16**; **8.13**; **8.12**; **8.14 inteiro**; **§2.2**; **8.5**; **§7.1**; **8.17** e **8.17b**; os dois limiares com o seu fixador; **8.4**; **§9.3**, **§9.4**, **§9.5**, **§9.8** e **§9.9**; **8.11** e **§7.3**; **8.15**; **§9.2**; **§9.7**; a dívida da `matriz.mjs` |
 | feito nesta sessão | **o item 5 do encargo inteiro**: o caminho no cabeçalho (L5 de **7 213** para **0**), a busca única (§2.6), «fonte» a dizer o publicador (L6 de **26 178** para **0**) e as datas de frescura por palavras nos lugares que faltavam (§7.3); **as outras páginas** menos os estudos: a região (§1 e §7.6, a L2b de **18** para **0**), o domínio (§7.7, itens 1 e 3), os estudos na página do concelho (§1, 8.6 e 8.10, a L2c de **10** para **0**), e o Método no telemóvel (§7.9); **a decisão da mobília inglesa** (item 8.9), escrita na régua com os dois tetos; **o fecho**: as 48 capturas, as **6 plantas da L9** (6 de 6 morderam), o `REVISOES-DO-INVENTARIO.md` e este relatório |
 | a seguir | **os estudos** (§7.4 e 8.6), que é o que falta do encargo; e três coisas que este relatório mede e deixa nomeadas para o lugar de direção: o **§7.7 item 4** (o selo ao pé do número na manchete, que colide com o teto do 8.15), a **L2a** (a segunda lista dos 308 em `/`, que é a fila de resultados da busca) e as **quatro células vermelhas** de `porta.mjs` que são do F1.1d e do F1.1e |
@@ -536,7 +536,20 @@ resta: muda o que uma família de páginas é, e não o que ela diz.
 
 ### 15 · O modelo, o custo, os commits e os portões
 
-**Claude Opus 5.** O contador do harness está na última linha desta secção.
+**Claude Opus 5.** O contador do harness dava 15 000 000 de símbolos no arranque
+da sessão e cerca de 14 339 000 ao fechar: **da ordem de 661 mil**. É o contador
+da janela e não a fatura; o número da fatura é o que o harness disser.
+
+**Os commits desta sessão**, por ordem: o caminho no cabeçalho; «fonte» a dizer o
+publicador e a busca única; as datas de frescura; as outras páginas com a decisão
+da mobília inglesa e o fecho; e esta linha.
+
+**A corrida da CI da cabeça do código** é a **34315983862**, e saiu **verde**
+(`gh run view --repo oestadodopais/o-estado-do-pais 34315983862`). A corrida
+anterior, a 34307203030, saiu vermelha na célula H2 de
+`tests/acessibilidade/alvos.mjs`, e o que ela apanhou está na secção 3: as regras
+da caixa da busca tinham ficado na folha da primeira página, que três das quatro
+superfícies não carregam.
 
 **Os três portões, com os códigos lidos dos ficheiros e não do ecrã**, na árvore do
 último commit de código desta sessão:
