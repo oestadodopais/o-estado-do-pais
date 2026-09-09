@@ -560,12 +560,16 @@ do lugar de direção, e não desta sessão.
 ### 14 · O modelo, o custo, os commits e os portões
 
 **Claude Opus 5.** O contador do harness dava 15 000 000 de símbolos no arranque
-da sessão e cerca de 14 565 000 ao escrever esta linha: **da ordem de 435 mil**. É
+da sessão e cerca de 14 515 000 ao escrever esta linha: **da ordem de 485 mil**. É
 o contador da janela e não a fatura; o número da fatura é o que o harness disser.
 
-**Os commits desta sessão**, por ordem: as edições de um estudo numa só forma; a
-célula dos estudos na régua com a L2a e as células herdadas; «arquivo» fora do
-vocabulário e a dobra «Como ler»; e o fecho, que é esta linha.
+**Os seis commits desta sessão**, por ordem: as edições de um estudo numa só
+forma (`e4561d48`); a célula dos estudos na régua, com a L2a e as células
+herdadas (`8b1411e7`); «arquivo» fora do vocabulário e a dobra «Como ler»
+(`29ec83fd`, a cabeça do código); o fecho, com o inventário, as chaves, as
+capturas e este relatório (`1c29d1c1`); a corrida verde lida ao fechar e a conta
+certa de «arquivo» (`ff9da544`); e as duas linhas repetidas da tabela das
+medidas, fundidas (`b4c73896`).
 
 **Os três portões, com os códigos lidos dos ficheiros e não do ecrã**, na árvore
 do último commit de código desta sessão:
@@ -576,15 +580,22 @@ npm run verify    > verify.log 2>&1;    echo $? > verify.exit    → 0
 npm run typecheck > typecheck.log 2>&1; echo $? > typecheck.exit → 0
 ```
 
-**A corrida da CI** é a **34324895358**, e saiu **verde** (`gh run view --repo
+**A corrida da CI que conta é a 34324895358, e saiu verde** (`gh run view --repo
 oestadodopais/o-estado-do-pais 34324895358`), na cabeça `1c29d1c1`, que é a
-árvore inteira desta sessão. A corrida da cabeça do código, a **34324532988** em
-`29ec83fd`, foi **cancelada pelo próprio grupo de concorrência** («Canceling
-since a higher priority waiting request for portão-push-refs/heads/lugar-2026-09-04
-exists») quando o empurrão do fecho entrou quatro minutos depois: não falhou,
-cedeu o lugar à corrida da árvore que a contém. Um commit não pode conter o
-número da corrida que ele dispara, e por isso o número escreve-se sempre no
-commit seguinte.
+árvore com todo o código, todas as réguas, o inventário, as chaves, as capturas e
+este relatório. Os commits seguintes (`ff9da544` e `b4c73896`) só mexem em prosa
+deste ficheiro e num comentário de uma régua de fora da cadeia: não tocam numa
+linha que a construção leia.
+
+**E o grupo de concorrência cancelou duas corridas pelo caminho, que é preciso
+dizer para que ninguém as leia como falhas.** A da cabeça do código, a
+**34324532988** em `29ec83fd`, foi cancelada quando o empurrão do fecho entrou
+quatro minutos depois; a **34327017536** em `ff9da544` foi cancelada da mesma
+maneira pelo empurrão seguinte. A mensagem é a do GitHub: «Canceling since a
+higher priority waiting request for portão-push-refs/heads/lugar-2026-09-04
+exists». Nenhuma falhou: as duas cederam o lugar à corrida da árvore que as
+contém. Um commit não pode conter o número da corrida que ele dispara, e por isso
+o número escreve-se sempre no commit seguinte.
 
 **O aviso de ambiente cumpriu-se outra vez:** todos os comandos de `git` e de
 `npm` desta sessão correram com o caminho da worktree à frente ou dentro dela, e
