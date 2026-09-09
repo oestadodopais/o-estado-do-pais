@@ -12049,6 +12049,25 @@ Nada muda no ar nesta sessão além do carimbo semanal de 31.08.
 **A razão de a frase mudar com o sítio.** Um mecanismo que descreve um lugar que já não existe é a página a mentir sobre si própria, e o Método é a página onde a casa promete o contrário. As duas frases não ganharam nem perderam informação: dizem o mesmo facto no lugar certo.
 
 
+### 1.104 A legenda da escala sai do mapa do domínio e entra no fecho do Método, e as duas ressalvas de alcance vão para a página da sua linha
+
+**Afecta:** metodo
+
+**Texto:** metodo 854a1c9e5393
+
+**A decisão** (lugar de direção, 08.09.2026, pela delegação da §1.98; §9.2 do brief do F1.10, aplicado pela quinta sessão de construção). O §9.2 nasce da leitura cruzada do inventário das frases que o Codex fez a 08.09: a prosa de diligência da página do domínio «sai do primeiro ecrã e vai para a página da linha ou para o Método». São três frases, e cada uma vai para onde o que ela diz vive.
+
+**A legenda da escala vai para o Método.** «As classes são marcas redondas da escala, e não um limite oficial.» rendia-se por baixo da legenda do mapa por concelho, na paleta que não é limiar, à vista e fora de qualquer dobra. Não é uma coisa daquele mapa: é a regra com que a casa desenha uma escala em qualquer mapa, e por isso entra no fecho do Método, «A forma», como terceira entrada ao pé da cor e da letra, com o id `a-escala`. A cadeia não se duplicou: saiu de `src/i18n/strings.mjs` (`dominios.mapaEscalaNota`, nas duas edições) e passou a viver em `src/data/metodo.mjs`, que é o único sítio onde ela se rende.
+
+**As duas ressalvas de alcance vão para a página da sua linha.** «Este valor é o do território continental. Os Açores e a Madeira fixam o seu por diploma regional próprio, que não foi lido: [a verificar].» e «A meta desta medida é da União Europeia no seu conjunto e não de Portugal; uma meta nacional própria permanece [a verificar].» são de UMA linha cada, e o recibo de uma linha é a página dela: é ali que o perímetro do que o número cobre se lê, ao pé do valor e das datas. A declaração fica onde estava, na medida a que pertence (`ressalva`, em `src/data/dominios.mjs`); o que mudou foi quem a lê (`ressalvaDaLinha()`, e `LinhaView.astro` a rendê-la).
+
+**Nenhuma das três mudou uma palavra.** Duas levam o marcador `[a verificar]`, que é dívida de proveniência e palavra pendente do diretor, e a instrução do lugar de direção é explícita: «não lhes toques além do lugar».
+
+**O que isto faz ao inventário da voz, e a régua que faltava.** As três cadeias rendiam-se na rota `dominio`, que é uma rota inventariada, e passam a render-se em `/metodo` e em `/livro-razao/<id>`, que não são: a Emenda 15 isenta os três, «o Método, o Sobre e o recibo da página de linha». As seis linhas (três frases × duas edições) ficam «viva», que é o que elas são, com a razão do lugar escrita ao lado. O que a mudança destapou foi uma régua incompleta: `ROTAS_QUE_PROVAM_A_RENDICAO`, em `scripts/medir-defeitos.mjs`, nasceu a 01.09 com DUAS das três rotas que a Emenda 15 nomeia, porque nesse dia só o Método e o Sobre precisavam dela; sem a terceira, as quatro linhas das ressalvas eram «vivas que não se rendem» e fechavam a construção. O recibo entra, com o mesmo alcance das outras duas: prova que uma linha viva se rende, e mais nada.
+
+**O texto governado do Método muda numa entrada, e nada mais muda nele.** «A forma» tinha duas entradas, a cor e a letra, e passa a ter três. O carimbo passa de `metodo 1b20443f130b` a `metodo 854a1c9e5393`.
+
+
 ## 4. O registo dos defeitos e dos adiamentos
 
 **Defeito registado 2026-08-16 (00:10), encontrado pela direcção no sítio no ar — RESOLVIDO na mesma noite (§1.37, no ar em `4217232`):** os selos acrescentados a 15.08 aos valores do cabeçalho da primeira página (308 · 11 · 15) rendem no cabeçalho com o rótulo inteiro do estudo («O Estado do País — apuramento próprio») e, no caso da contagem CAOP, com o marcador «[a verificar]» ao lado. Certo pela regra (todo o valor tem selo, para a sua linha), errado naquele sítio: no cabeçalho o selo deve ser só o glifo, com o rótulo apenas para leitores de ecrã. **Primeiro item do bloco V**, junto com a saída de «Edição de …», da introdução justificativa da primeira página e de «Estes indicadores não são escolha nossa…» (voz). Sem alteração ao portão: o selo continua ao pé do valor e a apontar para a linha própria.

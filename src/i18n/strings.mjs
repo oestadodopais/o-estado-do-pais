@@ -1302,7 +1302,6 @@ export const STRINGS = {
          do mapa cuja paleta é `limiar` (o índice de dívida contra o teto
          legal), que fica ao lado dele com a mesma forma visual. Sem a frase, a
          diferença entre as duas paletas só se lê pela cor. */
-      mapaEscalaNota: 'As classes são marcas redondas da escala, e não um limite oficial.',
       porConcelhoPorta: 'Os valores concelho a concelho →',
       /* A ALTERNATIVA EM TEXTO DO MAPA, DENTRO DA PÁGINA (segunda passagem,
          03.09.2026, Major 7): uma tabela com os valores de cada concelho,
@@ -2797,7 +2796,6 @@ export const STRINGS = {
       mapaMenosDe: 'less than ',
       mapaA: ' to ',
       mapaOuMais: ' or more',
-      mapaEscalaNota: 'The classes are round scale marks, not an official limit.',
       porConcelhoPorta: 'The values municipality by municipality →',
       mapaTabelaAbrir: 'The values, municipality by municipality',
       mapaTabelaConcelho: 'Municipality',

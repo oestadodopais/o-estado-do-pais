@@ -5,7 +5,7 @@
     "blocosDaCasa": 2,
     "caracteresDeProsa": 269,
     "blocosDeProsa": 12,
-    "caracteres": 977,
+    "caracteres": 970,
     "prosaVisivel": [
       "EstudosPortugal na União Europeia",
       ""
@@ -25,21 +25,28 @@
   },
   "concelho.pt": {
     "rota": "/municipios/evora",
-    "caracteresDaCasa": 0,
-    "blocosDaCasa": 0,
-    "caracteresDeProsa": 448,
-    "blocosDeProsa": 17,
-    "caracteres": 1143,
-    "prosaVisivel": []
+    "caracteresDaCasa": 55,
+    "blocosDaCasa": 3,
+    "caracteresDeProsa": 567,
+    "blocosDeProsa": 22,
+    "caracteres": 1246,
+    "prosaVisivel": [
+      "trocar de concelho →",
+      "Passe o rato por um concelho",
+      "Abrir →"
+    ]
   },
   "concelho.en": {
     "rota": "/en/municipalities/evora",
-    "caracteresDaCasa": 0,
-    "blocosDaCasa": 0,
-    "caracteresDeProsa": 455,
-    "blocosDeProsa": 17,
-    "caracteres": 1184,
-    "prosaVisivel": []
+    "caracteresDaCasa": 46,
+    "blocosDaCasa": 2,
+    "caracteresDeProsa": 558,
+    "blocosDeProsa": 21,
+    "caracteres": 1276,
+    "prosaVisivel": [
+      "change municipality →",
+      "Hover over a municipality"
+    ]
   },
   "estudo.pt": {
     "rota": "/estudos/onde-esta-a-agua",
@@ -47,7 +54,7 @@
     "blocosDaCasa": 1,
     "caracteresDeProsa": 52,
     "blocosDeProsa": 2,
-    "caracteres": 321,
+    "caracteres": 380,
     "prosaVisivel": [
       "[a verificar]"
     ]
@@ -58,7 +65,7 @@
     "blocosDaCasa": 1,
     "caracteresDeProsa": 56,
     "blocosDeProsa": 2,
-    "caracteres": 322,
+    "caracteres": 335,
     "prosaVisivel": [
       "[a verificar]"
     ]
@@ -69,7 +76,7 @@
     "blocosDaCasa": 1,
     "caracteresDeProsa": 86,
     "blocosDeProsa": 2,
-    "caracteres": 511,
+    "caracteres": 526,
     "prosaVisivel": [
       "Concelhos →"
     ]
@@ -80,9 +87,51 @@
     "blocosDaCasa": 1,
     "caracteresDeProsa": 85,
     "blocosDeProsa": 2,
-    "caracteres": 505,
+    "caracteres": 525,
     "prosaVisivel": [
       "Municipalities →"
+    ]
+  },
+  "dominio.pt": {
+    "rota": "/dominios/economia-e-financas-publicas",
+    "caracteresDaCasa": 0,
+    "blocosDaCasa": 0,
+    "caracteresDeProsa": 275,
+    "blocosDeProsa": 11,
+    "caracteres": 948,
+    "prosaVisivel": []
+  },
+  "dominio.en": {
+    "rota": "/en/domains/economia-e-financas-publicas",
+    "caracteresDaCasa": 0,
+    "blocosDaCasa": 0,
+    "caracteresDeProsa": 276,
+    "blocosDeProsa": 11,
+    "caracteres": 969,
+    "prosaVisivel": []
+  },
+  "regiao.pt": {
+    "rota": "/regioes/alentejo",
+    "caracteresDaCasa": 24,
+    "blocosDaCasa": 2,
+    "caracteresDeProsa": 135,
+    "blocosDeProsa": 7,
+    "caracteres": 587,
+    "prosaVisivel": [
+      "região NUTS II",
+      "As medidas"
+    ]
+  },
+  "regiao.en": {
+    "rota": "/en/regions/alentejo",
+    "caracteresDaCasa": 26,
+    "blocosDaCasa": 2,
+    "caracteresDeProsa": 133,
+    "blocosDeProsa": 7,
+    "caracteres": 584,
+    "prosaVisivel": [
+      "NUTS II region",
+      "The measures"
     ]
   }
 }
