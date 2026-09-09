@@ -3448,3 +3448,22 @@ console.log(
     : vermelho(`  ${falhas} de ${celulas.length} células falham.`),
 );
 console.log('');
+
+/* ---------------------------------------------------------------------------
+ * O ESTADO DO PROCESSO DIZ O QUE A MATRIZ DIZ (Major 10 da leitura a frio,
+ * 09.09.2026)
+ * ---------------------------------------------------------------------------
+ * A matriz imprimia «n de N células falham» em vermelho e saía com 0. Quem a
+ * corresse num guião, ou lesse só o código de saída, via uma régua verde com
+ * células vermelhas lá dentro, e o relatório do bloco citava «89 de 89» com o
+ * estado do processo como prova. Não era prova de nada.
+ *
+ * E O POSITIVO CONHECIDO CORRE-SE AQUI, com a variável `MATRIZ_ROMPE`: ela
+ * finge uma célula falhada e a régua tem de sair com 1. Uma saída que só se
+ * testa no dia em que houver um defeito é uma saída por testar.
+ */
+if (process.env.MATRIZ_ROMPE) {
+  falhas += 1;
+  console.log(vermelho('  positivo conhecido: uma célula falhada a mais (MATRIZ_ROMPE).'));
+}
+process.exit(falhas === 0 ? 0 : 1);

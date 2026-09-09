@@ -568,4 +568,16 @@ servidor.close();
 console.log('');
 console.log(`  ${passam === total ? verde(`${passam} de ${total} células passam.`) : vermelho(`${passam} de ${total} células passam.`)}`);
 console.log('');
-process.exit(0);
+
+/* ---------------------------------------------------------------------------
+ * O ESTADO DO PROCESSO DIZ O QUE O RECIBO DIZ (Major 10, 09.09.2026)
+ * ---------------------------------------------------------------------------
+ * Era `process.exit(0)` incondicional: a régua imprimia «9 de 13 células
+ * passam» e saía verde. A mesma correção da matriz, pela mesma razão, e com o
+ * mesmo positivo conhecido (`RECIBO_ROMPE`).
+ */
+if (process.env.RECIBO_ROMPE) {
+  passam -= 1;
+  console.log(vermelho('  positivo conhecido: uma célula a menos a passar (RECIBO_ROMPE).'));
+}
+process.exit(passam === total ? 0 : 1);
