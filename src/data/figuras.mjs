@@ -456,6 +456,46 @@ const LISTA_SOCIAL = [
  * alargou as origens autorizadas, por esta ordem de preferência, ao compilador
  * nacional (o Banco de Portugal) e depois ao manual do FMI (BPM6) ou ao
  * glossário do BCE. O compilador nacional tem o texto, e é ele que fica.
+ *
+ * ---------------------------------------------------------------------------
+ * UM EXCERTO POR DEFINIÇÃO, E NÃO UM EXCERTO POR DOCUMENTO (09.09.2026)
+ * ---------------------------------------------------------------------------
+ * A leitura a frio do bloco, a 09.09.2026, encontrou o defeito mais grave desta
+ * página: dez das treze medidas do Procedimento declaravam a origem
+ * `painel-pdm`, cujo excerto descreve o painel («a scoreboard of 13 headline
+ * indicators…») e NÃO contém nenhuma das dez definições. Um excerto que não
+ * contém a frase não a prova; era uma paráfrase apresentada como citada, que é
+ * exactamente o que a regra da casa proíbe.
+ *
+ * A DECISÃO DO LUGAR DE DIREÇÃO (09.09.2026) manda que «cada uma das 21
+ * definições e das duas dos painéis tenha a sua origem própria declarada
+ * (documento, endereço, data de acesso, excerto literal que contenha a
+ * substância da definição)». A página da Comissão publica as treze medidas de
+ * cabeça uma a uma, cada uma numa linha própria com o seu limiar: cada uma
+ * dessas linhas passa a ser a origem da definição da sua medida, lida na fonte
+ * a 09.09.2026 com `curl` e copiada carácter a carácter. `painel-pdm` fica, e é
+ * agora só o que sempre foi: a origem da definição DO PAINEL.
+ *
+ * TRÊS DEFINIÇÕES FORAM REESCRITAS PARA O QUE O EXCERTO DIZ, e é a outra metade
+ * da mesma decisão («se não houver texto que a sustente, a definição
+ * reescreve-se para o que o excerto diz»):
+ *
+ *   · o desempenho das exportações dizia «a quota do país nas exportações das
+ *     economias avançadas», e a linha da Comissão diz «export performance
+ *     against advanced economies». Uma quota é uma coisa que a fonte não
+ *     escreve;
+ *   · o custo unitário do trabalho dizia «o custo nominal do trabalho por
+ *     unidade produzida», e a linha diz «nominal unit labour cost index, per
+ *     hour worked». «Por unidade produzida» acrescentava a produção, que não
+ *     está lá;
+ *   · a taxa de câmbio efetiva real dizia «face às moedas dos outros países
+ *     industriais», e a linha diz «relative to 41 other industrial countries».
+ *     As moedas eram da casa; os países são da fonte, e o número deles entra
+ *     com a marca de escala de instrumento.
+ *
+ * E DUAS GANHARAM UMA SEGUNDA ORIGEM, pela mesma razão: a linha da Comissão
+ * abrevia («NFC», «incl. NPISH») e a definição em português escreve o nome por
+ * extenso. O nome por extenso é do glossário do Eurostat, e é ele que o declara.
  */
 export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
   'painel-pdm': {
@@ -465,6 +505,108 @@ export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
     lido: '2026-09-08',
     excerto:
       'The analysis in the alert mechanism report (AMR) builds on the economic reading of a scoreboard of 13 headline indicators covering the most relevant areas of macroeconomic imbalances, competitiveness, and adjustment issues. … The scoreboard is designed to capture the most relevant internal and external aspects of macroeconomic imbalances through a limited set of relevant indicators of high statistical quality. … The headline indicators consist of the following 13 indicators and indicative thresholds, covering the major sources of macroeconomic imbalances:',
+  },
+  /* AS TREZE LINHAS DA LISTA DA COMISSÃO, uma por medida de cabeça, lidas a
+     09.09.2026 no mesmo endereço do `painel-pdm` e copiadas carácter a
+     carácter da lista «The headline indicators consist of the following 13
+     indicators and indicative thresholds». Dez delas são a origem de uma
+     definição desta casa; as outras três medidas do Procedimento têm glossário
+     próprio no Eurostat ou no Banco de Portugal, e é dele que a frase sai. */
+  'pdm-divida-publica': {
+    publicador: 'Comissão Europeia',
+    documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
+    url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',
+    lido: '2026-09-09',
+    excerto: 'general government sector debt in % of GDP with a threshold of 60%.',
+  },
+  'pdm-custo-do-trabalho': {
+    publicador: 'Comissão Europeia',
+    documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
+    url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',
+    lido: '2026-09-09',
+    excerto:
+      'nominal unit labour cost index, per hour worked (3-year percentage change), with thresholds of +9% for euro area countries and +12% for non-euro area countries.',
+  },
+  'pdm-exportacoes': {
+    publicador: 'Comissão Europeia',
+    documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
+    url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',
+    lido: '2026-09-09',
+    excerto:
+      'export performance against advanced economies (3-year percentage change), with a threshold of -3%.',
+  },
+  'pdm-divida-das-empresas': {
+    publicador: 'Comissão Europeia',
+    documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
+    url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',
+    lido: '2026-09-09',
+    excerto: 'NFC consolidated debt in % of GDP with a threshold of 85%.',
+  },
+  'pdm-divida-das-familias': {
+    publicador: 'Comissão Europeia',
+    documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
+    url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',
+    lido: '2026-09-09',
+    excerto: 'household (incl. NPISH) consolidated debt in % of GDP with a threshold of 55%.',
+  },
+  'pdm-credito-as-empresas': {
+    publicador: 'Comissão Europeia',
+    documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
+    url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',
+    lido: '2026-09-09',
+    excerto:
+      'NFC (excl. FDI) consolidated credit flow in % of NFC debt stock in t-1 (excl. FDI), with a threshold of 13%.',
+  },
+  'pdm-credito-as-familias': {
+    publicador: 'Comissão Europeia',
+    documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
+    url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',
+    lido: '2026-09-09',
+    excerto:
+      'household (incl. NPISH) consolidated credit flow in % of household debt stock in t-1 with a threshold of 14%.',
+  },
+  'pdm-balanca-corrente': {
+    publicador: 'Comissão Europeia',
+    documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
+    url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',
+    lido: '2026-09-09',
+    excerto:
+      'current account balance as percent of GDP (3-year backward moving average), with thresholds of +6% and -4%.',
+  },
+  'pdm-taxa-de-actividade': {
+    publicador: 'Comissão Europeia',
+    documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
+    url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',
+    lido: '2026-09-09',
+    excerto: 'labour force participation rate (3-year change in pps), with a threshold of -0.2%',
+  },
+  'pdm-cambio-efectivo-real': {
+    publicador: 'Comissão Europeia',
+    documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
+    url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',
+    lido: '2026-09-09',
+    excerto:
+      'real effective exchange rates (3-year percentage change) based on HICP/CPI deflators, relative to 41 other industrial countries, with thresholds of -/+3% for euro area countries and -/+10% for non-euro area countries.',
+  },
+  /* OS DOIS NOMES POR EXTENSO que a linha da Comissão abrevia. Lidos a
+     09.09.2026 no glossário do Eurostat, e são a segunda origem das duas
+     definições que os escrevem por extenso. */
+  'glossario-nfc': {
+    publicador: 'Eurostat',
+    documento: 'Statistics Explained · Glossary: Non-financial corporations sector',
+    url: 'https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Non-financial_corporations_sector',
+    lido: '2026-09-09',
+    excerto:
+      'The non-financial corporations sector consists of institutional units which are independent legal entities and market producers, and whose principal activity is the production of goods and non-financial services.',
+  },
+  'glossario-npish': {
+    publicador: 'Eurostat',
+    documento:
+      'Statistics Explained · Glossary: Non-profit institutions serving households (NPISH)',
+    url: 'https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Non-profit_institutions_serving_households_(NPISH)',
+    lido: '2026-09-09',
+    excerto:
+      'Non-profit institutions serving households, abbreviated as NPISH, make up an institutional sector in the context of national accounts consisting of non-profit institutions which are not mainly financed and controlled by government and which provide goods or services to households for free or at prices that are not economically significant.',
   },
   'pilar-social': {
     publicador: 'Eurostat',
@@ -625,9 +767,9 @@ export const DEFINICAO_DOS_PAINEIS = /** @type {const} */ ({
  * Portugal, publica uma página que a explica nas duas línguas: é dela que a
  * frase sai agora, palavra por palavra, com o endereço e o excerto ao lado.
  */
-const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
+export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
   'divida-publica-2025': {
-    origens: ['painel-pdm'],
+    origens: ['pdm-divida-publica'],
     pt: ['A dívida do setor das administrações públicas, em percentagem do PIB.'],
     en: ['General government sector debt, as a percentage of GDP.'],
   },
@@ -641,9 +783,12 @@ const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
     ],
   },
   'custo-unitario-do-trabalho-2025': {
-    origens: ['painel-pdm'],
+    /* REESCRITA A 09.09.2026: dizia «o custo nominal do trabalho por unidade
+       produzida», e a linha da Comissão diz «nominal unit labour cost index,
+       per hour worked». A produção era da casa. */
+    origens: ['pdm-custo-do-trabalho'],
     pt: [
-      'O índice do custo nominal do trabalho por unidade produzida, por hora trabalhada, e quanto ele mudou em três anos.',
+      'O índice nominal do custo unitário do trabalho, por hora trabalhada, e quanto ele mudou em três anos.',
     ],
     en: [
       'The nominal unit labour cost index, per hour worked, and how much it changed over three years.',
@@ -659,21 +804,28 @@ const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
     ],
   },
   'desempenho-das-exportacoes-2025': {
-    origens: ['painel-pdm'],
+    /* REESCRITA A 09.09.2026: dizia «a quota do país nas exportações das
+       economias avançadas», e a linha da Comissão diz «export performance
+       against advanced economies». A quota era da casa. */
+    origens: ['pdm-exportacoes'],
     pt: [
-      'A quota do país nas exportações das economias avançadas, e quanto ela mudou em três anos.',
+      'O desempenho das exportações do país face às economias avançadas, e quanto ele mudou em três anos.',
     ],
     en: [
-      'The country’s share of the exports of advanced economies, and how much it changed over three years.',
+      'The country’s export performance against advanced economies, and how much it changed over three years.',
     ],
   },
   'divida-das-empresas-2025': {
-    origens: ['painel-pdm'],
+    /* DUAS ORIGENS: a linha da Comissão abrevia «NFC», e o nome por extenso é o
+       do glossário do Eurostat. */
+    origens: ['pdm-divida-das-empresas', 'glossario-nfc'],
     pt: ['A dívida consolidada das sociedades não financeiras, em percentagem do PIB.'],
     en: ['Non-financial corporations’ consolidated debt, as a percentage of GDP.'],
   },
   'divida-das-familias-2025': {
-    origens: ['painel-pdm'],
+    /* DUAS ORIGENS: a linha da Comissão abrevia «incl. NPISH», e o nome por
+       extenso é o do glossário do Eurostat. */
+    origens: ['pdm-divida-das-familias', 'glossario-npish'],
     pt: [
       'A dívida consolidada das famílias, incluindo as instituições sem fim lucrativo ao serviço delas, em percentagem do PIB.',
     ],
@@ -682,32 +834,36 @@ const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
     ],
   },
   'fluxo-de-credito-as-empresas-2025': {
-    origens: ['painel-pdm'],
+    /* REESCRITA A 09.09.2026 na primeira oração: dizia «o crédito novo», e a
+       linha da Comissão diz «consolidated credit flow». Novo era da casa. */
+    origens: ['pdm-credito-as-empresas', 'glossario-nfc'],
     pt: [
-      'O crédito novo às sociedades não financeiras no ano, sem o investimento direto estrangeiro, em percentagem da dívida que elas tinham no fim do ano anterior.',
+      'O fluxo de crédito consolidado às sociedades não financeiras, sem o investimento direto estrangeiro, em percentagem da dívida que elas tinham no fim do ano anterior.',
     ],
     en: [
-      'The consolidated credit flow to non-financial corporations in the year, excluding foreign direct investment, as a percentage of their debt stock at the end of the previous year.',
+      'The consolidated credit flow to non-financial corporations, excluding foreign direct investment, as a percentage of their debt stock at the end of the previous year.',
     ],
   },
   'fluxo-de-credito-as-familias-2025': {
-    origens: ['painel-pdm'],
+    /* REESCRITA A 09.09.2026 na primeira oração, pela mesma razão da anterior, e
+       com o «incl. NPISH» que a linha da Comissão traz e a frase omitia. */
+    origens: ['pdm-credito-as-familias', 'glossario-npish'],
     pt: [
-      'O crédito novo às famílias no ano, em percentagem da dívida que elas tinham no fim do ano anterior.',
+      'O fluxo de crédito consolidado às famílias, incluindo as instituições sem fim lucrativo ao serviço delas, em percentagem da dívida que elas tinham no fim do ano anterior.',
     ],
     en: [
-      'The consolidated credit flow to households in the year, as a percentage of their debt stock at the end of the previous year.',
+      'The consolidated credit flow to households, including non-profit institutions serving households, as a percentage of their debt stock at the end of the previous year.',
     ],
   },
   'saldo-da-balanca-corrente-2025': {
-    origens: ['painel-pdm'],
+    origens: ['pdm-balanca-corrente'],
     pt: ['O saldo da balança corrente em percentagem do PIB, na média dos três anos anteriores.'],
     en: [
       'The current account balance as a percentage of GDP, on a three-year backward moving average.',
     ],
   },
   'taxa-de-actividade-2025': {
-    origens: ['glossario-atividade', 'painel-pdm'],
+    origens: ['glossario-atividade', 'pdm-taxa-de-actividade'],
     pt: [
       'A percentagem de pessoas ativas, empregadas ou desempregadas, na população comparável, e quanto ela mudou em três anos.',
     ],
@@ -716,12 +872,20 @@ const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
     ],
   },
   'taxa-de-cambio-efectiva-real-2025': {
-    origens: ['painel-pdm'],
+    /* REESCRITA A 09.09.2026: dizia «face às moedas dos outros países
+       industriais», e a linha da Comissão diz «relative to 41 other industrial
+       countries». As moedas eram da casa; o número dos países é da fonte e
+       entra com a marca de escala de instrumento. */
+    origens: ['pdm-cambio-efectivo-real'],
     pt: [
-      'A taxa de câmbio efetiva real face às moedas dos outros países industriais, com base nos deflatores dos preços no consumidor, e quanto ela mudou em três anos.',
+      'A taxa de câmbio efetiva real face a outros ',
+      { nl: '41', motivo: 'escala-de-instrumento' },
+      ' países industriais, com base nos deflatores dos índices de preços no consumidor, e quanto ela mudou em três anos.',
     ],
     en: [
-      'The real effective exchange rate against the currencies of other industrial countries, based on HICP/CPI deflators, and how much it changed over three years.',
+      'The real effective exchange rate relative to ',
+      { nl: '41', motivo: 'escala-de-instrumento' },
+      ' other industrial countries, based on consumer price index deflators, and how much it changed over three years.',
     ],
   },
   'taxa-de-desemprego-mip-2025': {
@@ -833,6 +997,60 @@ const comDefinicao = (f) => {
   }
   return { ...f, definicao: d };
 };
+
+/**
+ * AS ORIGENS DE UMA DEFINIÇÃO, RESOLVIDAS PARA QUEM AS RENDE (09.09.2026).
+ *
+ * A decisão do lugar de direção de 09.09.2026 manda que «a página renda a
+ * origem ao pé de cada definição, nas duas edições: o nome do documento como
+ * porta para o endereço, a data de leitura por palavras, e o excerto na dobra
+ * da leitura». Esta função é o único sítio onde a chave de uma origem se
+ * transforma no registo dela: a vista pede as origens de uma definição e recebe
+ * os quatro campos, pela ordem em que a definição as declara.
+ *
+ * FECHA A CONSTRUÇÃO em vez de render uma origem incompleta: um documento sem
+ * endereço, sem data ou sem excerto é uma citação sem prova, e é exactamente o
+ * que a leitura a frio de 09.09 encontrou. O `comDefinicao()` já fecha quando a
+ * chave não existe; esta fecha quando ela existe e está coxa.
+ *
+ * O EXCERTO DA EDIÇÃO INGLESA: `bdp-pii` é a única origem em português, e o
+ * Banco de Portugal publica a mesma página nas duas línguas. Onde a origem
+ * declara `excertoEn`, a edição inglesa cita esse; onde não declara, as duas
+ * edições citam o mesmo excerto, que é o que a fonte publica.
+ *
+ * @param {{ origens: readonly string[] }} definicao
+ * @param {'pt'|'en'} lang
+ */
+export const origensDaDefinicao = (definicao, lang = 'pt') =>
+  definicao.origens.map((chave) => {
+    const o = /** @type {Record<string, { publicador: string, documento: string, url: string, lido: string, excerto: string, excertoEn?: string }>} */ (
+      ORIGENS_DAS_DEFINICOES
+    )[chave];
+    if (!o) {
+      throw new Error(
+        `figuras: a origem "${chave}" não está em \`ORIGENS_DAS_DEFINICOES\`.`,
+      );
+    }
+    const campos = /** @type {Record<string, string|undefined>} */ (
+      /** @type {unknown} */ (o)
+    );
+    for (const campo of ['publicador', 'documento', 'url', 'lido', 'excerto']) {
+      if (typeof campos[campo] === 'string' && campos[campo].length > 0) continue;
+      throw new Error(
+        `figuras: a origem "${chave}" não declara "${campo}". Uma definição citada ` +
+          `sem documento, endereço, data de leitura e excerto literal é uma paráfrase ` +
+          `apresentada como citação (decisão do lugar de direção de 09.09.2026).`,
+      );
+    }
+    return {
+      chave,
+      publicador: o.publicador,
+      documento: o.documento,
+      url: o.url,
+      lido: o.lido,
+      excerto: lang === 'en' && o.excertoEn ? o.excertoEn : o.excerto,
+    };
+  });
 
 export const FIGURAS_PDM = LISTA_PDM.map(comDefinicao);
 export const FIGURAS_SOCIAL = LISTA_SOCIAL.map(comDefinicao);

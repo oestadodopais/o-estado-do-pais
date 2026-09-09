@@ -3250,6 +3250,63 @@ a.porta:hover .porta-abrir {
   max-width: 46em;
 }
 
+/* ---------------------------------------------------------------------------
+   A ORIGEM DE UMA DEFINIÇÃO (F1.10, segunda passagem, 09.09.2026)
+   ---------------------------------------------------------------------------
+   Vai debaixo da definição e leva o tipo da instrumentação, como o limiar e as
+   datas: é o recibo da frase de cima, não a frase. O excerto fica atrás de uma
+   dobra fechada, e por isso não custa um píxel a quem só quer a definição. */
+.def-origem {
+  margin: 0 0 10px;
+}
+.def-origem-linha {
+  font-family: var(--f-instr);
+  font-size: 12px;
+  line-height: 1.45;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  margin: 0;
+  max-width: 60ch;
+}
+.def-origem-k {
+  text-transform: lowercase;
+}
+.def-excerto {
+  margin: 2px 0 0;
+}
+.def-excerto-abrir {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-family: var(--f-instr);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  min-height: 44px;
+  list-style: none;
+}
+.def-excerto-abrir::-webkit-details-marker {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .def-excerto-abrir {
+    min-height: 32px;
+  }
+}
+/* O EXCERTO É A FONTE A FALAR, e o desenho di-lo: o fio à esquerda é o mesmo de
+   qualquer citação da casa, e o tipo é o da prosa, porque é prosa de outrem. */
+.def-excerto-texto {
+  font-family: var(--f-prosa);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 4px 0 0;
+  padding-left: 12px;
+  border-left: 2px solid var(--g3);
+  max-width: 60em;
+}
+
 /* A FRASE QUE DIZ O QUE O LIMIAR É E QUEM O FIXOU (F1.10, item 8.5, 08.09.2026).
    Vai no corpo da instrumentação e não no da prosa, e é a mesma decisão que pôs
    ali a linha do limiar por cima dela: é a referência contra a qual o valor se
@@ -3467,4 +3524,28 @@ a.porta:hover .porta-abrir {
     align-items: center;
     min-height: 44px;
   }
+}
+
+/* ---------------------------------------------------------------------------
+   O QUE A BUSCA E O FILTRO FAZEM SEM GUIÃO (F1.10, Major 7, 09.09.2026)
+   ---------------------------------------------------------------------------
+   Uma linha de instrumentação dentro de um `<noscript>`: só se vê onde ela é
+   verdade, e por isso não custa um píxel a quem tem guião. */
+.busca-sem-guiao,
+.arquivo-sem-guiao {
+  font-family: var(--f-instr);
+  font-size: 12px;
+  line-height: 1.45;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  margin: 6px 0 0;
+  max-width: 60ch;
+}
+
+/* O substantivo ao pé do número do cartão do mapa (F1.10, §7.10, 09.09.2026). */
+.mapa-cartao-selo-k {
+  font-family: var(--f-instr);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--muted);
 }

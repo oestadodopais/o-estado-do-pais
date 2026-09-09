@@ -54,11 +54,13 @@ import Faixa from '../components/inicio/Faixa.astro';
 import LeituraBreve from '../components/inicio/LeituraBreve.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
 import Frase from '../components/Frase.astro';
+import OrigemDaDefinicao from '../components/OrigemDaDefinicao.astro';
 import {
   FIGURAS_PDM,
   FIGURAS_SOCIAL,
   DEFINICAO_DOS_PAINEIS,
   ALCANCE_DO_PAINEL_SOCIAL,
+  origensDaDefinicao,
   comparacaoComOLimiar,
   ladosDoLimiar,
   fixadorDoLimiar,
@@ -198,6 +200,7 @@ const lede = ledeDoPainel(medidas, s.inicio.cabeca.ledePais, lang);
     rotulo={s.inicio.faixa.rotulo}
     cartoes={cartoes}
     total={cartoes.length}
+    conjunto={s.inicio.faixa.conjuntoUniao}
   />
 
   {/* ----------------------------------------------------------------------
@@ -231,6 +234,14 @@ const lede = ledeDoPainel(medidas, s.inicio.cabeca.ledePais, lang);
       <p class="painel-contexto" data-contexto-painel="pdm">
         <Frase partes={DEFINICAO_DOS_PAINEIS.pdm[lang]} lang={lang} />
       </p>
+      {/* A ORIGEM DA DEFINIÇÃO DO PAINEL (segunda passagem, 09.09.2026): o
+          mesmo componente e a mesma regra das 21 medidas. A definição de um
+          painel era citada da Comissão sem uma prova na página. */}
+      <OrigemDaDefinicao
+        origens={origensDaDefinicao(DEFINICAO_DOS_PAINEIS.pdm, lang)}
+        s={s}
+        lang={lang}
+      />
     </div>
 
     <LeituraBreve s={s} lang={lang} quadro="pdm" medidas={medidas} />
@@ -252,6 +263,11 @@ const lede = ledeDoPainel(medidas, s.inicio.cabeca.ledePais, lang);
         <p class="painel-contexto" data-contexto-painel="social">
           <Frase partes={DEFINICAO_DOS_PAINEIS.social[lang]} lang={lang} />
         </p>
+        <OrigemDaDefinicao
+          origens={origensDaDefinicao(DEFINICAO_DOS_PAINEIS.social, lang)}
+          s={s}
+          lang={lang}
+        />
         {/* A FRAÇÃO FICA, E É HONESTIDADE E NÃO FORMA: o subtítulo diz «Painel
             Social Europeu · 8 medidas», e sem esta linha um leitor fica a pensar
             que o painel tem oito. Tem dezassete principais. Ver a razão em

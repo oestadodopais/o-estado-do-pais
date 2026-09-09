@@ -59,10 +59,12 @@
  * como a regra daquele ficheiro exige.
  */
 import Frase from '../Frase.astro';
+import OrigemDaDefinicao from '../OrigemDaDefinicao.astro';
 import Provenance from '../Provenance.astro';
 import DataDaLinha from '../DataDaLinha.astro';
 import Regua from './Regua.astro';
 import { tresDatasDaLinha } from '../../lib/dominios.mjs';
+import { origensDaDefinicao } from '../../data/figuras.mjs';
 
 /* `quadro` é a marca do quadro a que estas leituras pertencem («pdm» ou
    «social»), e serve a régua: é por ela que se conta se cada frase de contexto
@@ -110,6 +112,12 @@ const leituras = medidas.map((m) => ({
      concelho não trazem definição: as frases delas são a leitura da medida, e
      vêm por `frasesProntas`. */
   definicao: m.definicao?.[lang] ?? null,
+  /* A ORIGEM DE CADA DEFINIÇÃO (segunda passagem, 09.09.2026). Chega resolvida
+     de `src/data/figuras.mjs`, com os quatro campos conferidos ali: uma
+     definição citada sem documento, endereço, data de leitura e excerto fecha a
+     construção em vez de se render. As medidas de um concelho não trazem
+     definição, e por isso também não trazem origem. */
+  origens: m.definicao ? origensDaDefinicao(m.definicao, lang) : [],
   frases: m.frasesProntas ?? (m.frase?.[lang] ? [m.frase[lang]] : []),
   limiar: m.limiar ?? null,
   comparacao: m.comparacao ?? null,
@@ -235,6 +243,16 @@ for (let i = 0; i < RANHURAS.length; i++) {
             <p class="dobra-definicao">
               <Frase partes={l.definicao} lang={lang} selos={true} />
             </p>
+          )}
+
+          {/* A ORIGEM DA DEFINIÇÃO, AO PÉ DELA (segunda passagem, 09.09.2026).
+              A leitura a frio do bloco encontrou 21 definições apresentadas como
+              citadas sem uma única prova na página: o documento, o endereço, a
+              data de leitura e o excerto viviam na declaração e não chegavam ao
+              leitor. Agora chegam, e o excerto fica atrás de uma dobra, porque é
+              a prova e não a leitura. */}
+          {l.origens.length > 0 && (
+            <OrigemDaDefinicao origens={l.origens} s={s} lang={lang} />
           )}
 
           <p class="dobra-unidade" data-medida-unidade>

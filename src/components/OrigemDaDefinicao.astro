@@ -1,0 +1,97 @@
+---
+/**
+ * A ORIGEM DE UMA DEFINIÇÃO, RENDIDA AO PÉ DELA (F1.10, segunda passagem,
+ * 09.09.2026).
+ *
+ * ---------------------------------------------------------------------------
+ * PORQUE É QUE ISTO EXISTE
+ * ---------------------------------------------------------------------------
+ * A leitura a frio do bloco, a 09.09.2026, abriu com o defeito mais grave da
+ * página europeia: as 21 definições das medidas e as duas dos painéis eram
+ * apresentadas como citadas da Comissão e do Eurostat, e a página não rendia
+ * uma única prova disso. O documento, o endereço, a data de leitura e o excerto
+ * literal existiam em `src/data/figuras.mjs` e não chegavam ao leitor; e dez
+ * delas declaravam uma origem cujo excerto não continha a definição.
+ *
+ * A DECISÃO DO LUGAR DE DIREÇÃO (09.09.2026) manda as duas coisas: cada
+ * definição com a sua origem própria, e «a página rende a origem ao pé de cada
+ * definição, nas duas edições: o nome do documento como porta para o endereço,
+ * a data de leitura por palavras, e o excerto na dobra da leitura».
+ *
+ * ---------------------------------------------------------------------------
+ * O QUE ELE RENDE
+ * ---------------------------------------------------------------------------
+ * Uma linha por origem (uma definição pode ter duas, quando o nome por extenso
+ * vem de um glossário e o recorte vem do painel), com o publicador, o documento
+ * como porta para o endereço e a data em que a casa o leu; e, debaixo dela, o
+ * excerto atrás de uma dobra fechada, porque o excerto é a prova e não a
+ * leitura: quem quer a definição lê a frase, quem quer conferi-la abre a dobra.
+ *
+ * ---------------------------------------------------------------------------
+ * NENHUMA FRASE NOVA DA CASA
+ * ---------------------------------------------------------------------------
+ * O nome do publicador e o do documento são NOMES, e saem da declaração com
+ * `data-verbatim`; o excerto é a fonte a falar, e sai com a mesma marca e com a
+ * língua dele declarada, que na maioria dos casos não é a da página. A régua da
+ * voz salta os blocos que contêm uma marca de origem declarada, e por isso os
+ * dois rótulos («publicado por», «lido na fonte a») não entram no inventário
+ * como frases próprias: são a mesma família da etiqueta da agenda, cuja razão
+ * está escrita em `design/especime-v3/CHAVES-EN.md`.
+ */
+import { dataDaCasa } from '../lib/datas.mjs';
+
+const { origens, s, lang = 'pt' } = Astro.props;
+
+/* A língua de cada excerto. As páginas da Comissão e do Eurostat estão em
+   inglês; a do Banco de Portugal tem as duas, e a declaração escolhe. Um
+   excerto sem a marca da sua língua é lido com a fonética errada. */
+const linguaDoExcerto = (o) => (o.chave === 'bdp-pii' ? (lang === 'en' ? 'en' : 'pt-PT') : 'en');
+
+/* A CHAVE DO EXCERTO NO REGISTO DAS TRANSCRIÇÕES. `bdp-pii` é a única origem que
+   publica o mesmo texto nas duas línguas, e a declaração traz as duas: a chave
+   diz qual delas a página rende, para que o portão compare a certa. */
+const chaveDoExcerto = (o) =>
+  o.chave === 'bdp-pii' && lang === 'en'
+    ? `origem-${o.chave}-excerto-en`
+    : `origem-${o.chave}-excerto`;
+---
+
+{
+  origens.map((o) => (
+    <div class="def-origem" data-def-origem={o.chave}>
+      <p class="def-origem-linha">
+        <span class="def-origem-k">{s.prov.fonte}</span>{' '}
+        <span data-verbatim={`origem-${o.chave}-publicador`}>{o.publicador}</span>
+        {' · '}
+        <a
+          class="lig def-origem-doc"
+          href={o.url}
+          rel="noopener noreferrer external"
+          data-verbatim={`origem-${o.chave}-documento`}
+          lang={linguaDoExcerto(o) === 'en' ? 'en' : undefined}
+        >
+          {o.documento}
+        </a>
+        {' · '}
+        <span class="def-origem-k">{s.dominios.dataLido}</span>{' '}
+        <span data-nonledger="data-de-leitura-de-uma-definicao">{dataDaCasa(o.lido)}</span>
+      </p>
+      <details class="def-excerto">
+        <summary class="def-excerto-abrir">
+          <span class="dobra-seta" aria-hidden="true" />
+          <span class="def-excerto-k">{s.prov.excerto}</span>
+        </summary>
+        {/* SEM `cite`: o endereço da fonte está uma vez nesta linha, na porta do
+            documento, e o feixe do desenho recusa um endereço dentro de um
+            atributo de `<blockquote>`. Uma porta chega. */}
+        <blockquote
+          class="def-excerto-texto"
+          lang={linguaDoExcerto(o)}
+          data-verbatim={chaveDoExcerto(o)}
+        >
+          {o.excerto}
+        </blockquote>
+      </details>
+    </div>
+  ))
+}
