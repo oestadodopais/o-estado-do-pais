@@ -127,8 +127,23 @@ function leMundo() {
 
 /** Todas as páginas que rendem o instrumento: os dois índices e as de região. */
 function paginasComRegua(m) {
+  /* A RÉGUA VIVE NUM SÍTIO SÓ, E DESDE 09.09.2026 SÃO OS DOIS ÍNDICES (F1.10,
+     §1 e §7.6). Esta função devolvia também as dezoito páginas de região, porque
+     cada uma copiava a régua inteira: as nove regiões e o país, nove valores
+     selados de outra página, dentro de cada uma das nove. A regra §0 do brief
+     («cada conteúdo tem um lugar de apresentação inteira; em todo o outro sítio
+     aparece como uma porta») tira-a de lá e põe no lugar a porta «Comparar as
+     regiões →». O que a régua promete continua medido, no sítio onde ela está; e
+     o facto que a tirou das páginas de região mede-se na R3, que é a regra da
+     casa para uma célula cujo objeto mudou de superfície. */
   const out = [];
   for (const lang of LANGS) if (m.indices[lang]) out.push({ lang, slug: null, ...m.indices[lang] });
+  return out;
+}
+
+/** As páginas de uma região, que é onde a régua DEIXOU de estar. */
+function paginasDeRegiao(m) {
+  const out = [];
   for (const [chave, p] of Object.entries(m.paginas)) {
     const [lang, slug] = chave.split(':');
     out.push({ lang, slug, ...p });
@@ -239,6 +254,27 @@ function R3(m) {
       }
     }
   }
+  /* E O FACTO QUE TIROU A RÉGUA DAS PÁGINAS DE REGIÃO (F1.10, §1 e §7.6,
+     09.09.2026): zero linhas de régua e zero desenhos em cada uma das dezoito, e
+     a porta para a régua no índice, que é o que ficou no lugar dela. Uma medida
+     que só contasse a régua onde ela está passaria com ela copiada para as
+     dezoito, que é o defeito que este bloco veio fechar. */
+  for (const p of paginasDeRegiao(m)) {
+    const raiz = parse(p.html);
+    const linhas = raiz.querySelectorAll('[data-conv-linha]').length;
+    const desenhos = raiz.querySelectorAll('svg.rule-svg').length;
+    if (linhas || desenhos) {
+      erros.push(
+        `${p.rota}: a página de uma região tem ${linhas} linha(s) de régua e ${desenhos} ` +
+          `desenho(s), e a régua inteira vive só no índice.`,
+      );
+    }
+    const porta = `${routePath('regioes', p.lang)}#regua`;
+    const portas = raiz.querySelectorAll('a[href]').map((el) => el.getAttribute('href'));
+    if (!portas.includes(porta)) {
+      erros.push(`${p.rota}: não tem a porta para a régua (${porta}).`);
+    }
+  }
   return erros;
 }
 
@@ -264,27 +300,20 @@ function R4(m) {
     for (const barra of raiz.querySelectorAll('.conv-b')) {
       classes.add((barra.getAttribute('class') ?? '').trim());
     }
+    /* O CONTORNO NÃO TEM ONDE MORDER, E É POR ISSO QUE A METADE DELE SAIU
+       (F1.10, §1 e §7.6, 09.09.2026). A Emenda 21c diz que «na página de uma
+       região o que a distingue na régua é o contorno, e só ele»; a régua saiu da
+       página de uma região, e uma régua que não está não distingue ninguém. O que
+       fica é a metade que continua a ter objeto: o índice não distingue região
+       nenhuma, porque nele nenhuma é a região da página. A outra metade não se
+       transforma num sim vazio: o facto de a régua não estar lá é medido na R3,
+       linha a linha e desenho a desenho. */
     const contornos = raiz.querySelectorAll('[data-contorno="sim"]');
-    if (!p.slug) {
-      if (contornos.length) {
-        erros.push(
-          `${p.rota}: o índice tem ${contornos.length} marca(s) de contorno, e nenhuma região ` +
-            `é a região desta página.`,
-        );
-      }
-      continue;
-    }
-    if (!contornos.length) {
-      erros.push(`${p.rota}: a região da página não está distinguida pelo contorno.`);
-    }
-    for (const el of contornos) {
-      const linha = el.closest ? el.closest('[data-conv-linha]') : null;
-      const marca = el.getAttribute('data-mk') ?? (linha ? linha.getAttribute('data-conv-linha') : null);
-      const daPagina = m.entradas.find((e) => e.slug === p.slug);
-      const id = el.getAttribute('data-conv-linha') ?? marca;
-      if (id && daPagina && id !== daPagina.id) {
-        erros.push(`${p.rota}: o contorno está em "${id}" e a região da página é "${daPagina.id}".`);
-      }
+    if (contornos.length) {
+      erros.push(
+        `${p.rota}: o índice tem ${contornos.length} marca(s) de contorno, e nenhuma região ` +
+          `é a região desta página.`,
+      );
     }
   }
   if (classes.size > 1) {

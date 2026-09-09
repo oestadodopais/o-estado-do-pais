@@ -63,17 +63,22 @@ import Frase from '../Frase.astro';
 import Provenance from '../Provenance.astro';
 import Claim from '../Claim.astro';
 
-const {
-  s,
-  lang,
-  mapa,
-  paleta = 'escala',
-  rotulos,
-  porta,
-  portaRotulo,
-  nomeada,
-  chave,
-} = Astro.props;
+/* A PORTA PARA `/livro-razao/concelhos` SAIU DAQUI (F1.10, §7.7, 09.09.2026).
+   Eram duas coisas com o mesmo nome no mesmo canto do mapa: «Os valores, concelho
+   a concelho», que abre a tabela aqui mesmo, e «Os valores concelho a concelho
+   →», que levava ao índice das linhas de cada concelho. O diretor leu as duas
+   como duas maneiras de chegar ao mesmo sítio («fundem-se numa só porta»), e a
+   §0 do brief decide qual fica: a tabela É o conteúdo, e o que ela precisava era
+   de portas, não de uma porta ao lado. Cada NOME da tabela passa a ser a porta da
+   página daquele concelho, que é onde as outras linhas dele vivem (§1 do brief, a
+   linha dos 308 concelhos). */
+const { s, lang, mapa, paleta = 'escala', rotulos, nomeada, chave, rota } = Astro.props;
+if (typeof rota !== 'function') {
+  throw new Error(
+    '<MapaPorConcelho> sem "rota": cada nome da tabela é a porta da página do seu ' +
+      'concelho, e quem sabe compor um caminho é a vista que conhece a edição.',
+  );
+}
 const campo = mapa.campo;
 
 /* A ALTERNATIVA EM TEXTO, DENTRO DA PÁGINA (segunda passagem, 03.09.2026,
@@ -163,7 +168,11 @@ const linhas = mapa.unidades.flatMap((u) => u.concelhos);
           {
             linhas.map((c) => (
               <tr>
-                <th scope="row" data-lugar>{c.nome}</th>
+                <th scope="row">
+                  <a href={rota(c.slug)} data-lugar>
+                    {c.nome}
+                  </a>
+                </th>
                 <td>
                   {c.id === null ? (
                     <span>{s.dominios.mapaSemValor}</span>
@@ -177,11 +186,6 @@ const linhas = mapa.unidades.flatMap((u) => u.concelhos);
         </tbody>
       </table>
     </details>
-
-    {/* A PORTA DA LISTA COMPLETA DO LIVRO-RAZÃO, à parte da tabela acima: a
-        tabela dá o valor desta medida; esta porta dá as OUTRAS linhas que cada
-        concelho tem. */}
-    <p class="forma-mapa-porta"><a href={porta}>{portaRotulo}</a></p>
 
     {/* O SELO DA CARTA E A MENÇÃO DA FONTE. A obrigação da licença da CAOP é
         escrita e vive onde o mapa está (Emenda 20e), e o selo do desenho abre a

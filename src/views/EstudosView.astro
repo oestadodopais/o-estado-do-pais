@@ -128,10 +128,23 @@ const edicoesSemData = trabalhos.reduce(
       )
     }
 
-    <div class="arquivo">
+    {/* A PORTA QUE DEVOLVE A LISTA INTEIRA (F1.10, §1 e 8.10, 09.09.2026).
+        Chega escondida do servidor e é o guião que a acende, quando o endereço
+        traz `?concelho=` e alguma entrada casa. Sem guião não há filtro e a porta
+        não faz falta; com ele, é a única coisa que diz que a lista está cortada,
+        e di-lo com o nome desta página em vez de uma frase nova. */}
+    <p class="arquivo-todos" data-arquivo-todos hidden>
+      <a href={path}>{s.estudos.h1} →</a>
+    </p>
+
+    {/* O OBJETO DE UM ESTUDO, DECLARADO EM CADA ENTRADA (F1.10, §1): é o
+        `subject` do registo dos trabalhos, que é o slug de um concelho quando o
+        trabalho é sobre um. É por ele que o filtro do endereço escolhe, e não por
+        uma segunda lista escrita à mão. */}
+    <div class="arquivo" data-arquivo>
       {
         trabalhos.map((tr) => (
-          <article class="arquivo-item">
+          <article class="arquivo-item" data-concelho={tr.work.subject ?? undefined}>
             <div>
               <h2 class="arquivo-titulo">
                 <a href={routePath('estudo', lang, { slug: tr.work.slug })}>
@@ -207,4 +220,6 @@ const edicoesSemData = trabalhos.reduce(
       }
     </div>
   </div>
+
+  <script src="/js/estudos.js" defer is:inline></script>
 </Base>

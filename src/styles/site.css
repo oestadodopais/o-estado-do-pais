@@ -3478,26 +3478,42 @@ a.badge-porta:hover {
 }
 
 
-/* Os trabalhos que tomaram o concelho por objecto. */
+/* Os estudos que tomaram o concelho por objecto: uma lista de TÍTULOS, e cada
+   título é a porta do seu estudo (F1.10, §1 e 8.6, 09.09.2026). As sinopses
+   saíram para `/estudos`, que é o lugar de apresentação inteira delas, e com
+   elas saiu a segunda porta de cada cartão, que era um destino repetido. */
 .mun-estudos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: grid;
   border-top: 1px solid var(--rule);
 }
 .mun-estudo {
   border-bottom: 1px solid var(--rule);
+}
+.mun-estudo a {
+  display: block;
   padding: 14px 0;
-  display: grid;
-  gap: 5px;
+  text-decoration: none;
 }
 .mun-estudo-titulo {
   font-size: 15.5px;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
-.mun-estudo-frase {
-  font-size: 14px;
-  line-height: 1.55;
-  color: var(--muted);
+.mun-estudo a:hover .mun-estudo-titulo {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+/* A porta para o índice dos estudos, filtrado por este concelho. */
+.mun-estudos-porta {
+  margin-top: 14px;
+}
+/* A porta que devolve a lista inteira do índice dos estudos, quando o endereço
+   traz `?concelho=`. Chega escondida do servidor. */
+.arquivo-todos {
+  margin-bottom: clamp(14px, 2vw, 20px);
 }
 
 /* ------------------------------------------------ leitura de um estudo
@@ -3963,6 +3979,83 @@ a.badge-porta:hover {
 .mecanismo-breve {
   margin-top: 16px;
   max-width: 60ch;
+}
+
+/* ---------------------------------------------------------------------------
+   O DIAGRAMA EM LISTA, PARA O TELEMÓVEL (F1.10, §7.9, 09.09.2026)
+   ---------------------------------------------------------------------------
+   As duas formas estão no documento e a largura escolhe qual se vê: a 780 px
+   para cima, o desenho e a sua legenda; abaixo, a lista das mesmas caixas, cada
+   uma com a sua porta lá dentro. 780 é a largura em que `.svg-scroll` deixa de
+   arrastar de lado, e por isso é onde o desenho deixa de estar cortado.
+
+   A LISTA NÃO TEM MARCA NEM RECUO: são caixas, e cada uma é um bloco com o seu
+   fio, como as do desenho. */
+.mecanismo-lista {
+  display: none;
+}
+.mecanismo-item-k {
+  font-family: var(--f-instr);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.mecanismo-item-v {
+  margin-top: 4px;
+}
+.mecanismo-item-porta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 8px;
+  min-height: 44px;
+  align-content: center;
+  color: var(--ink);
+  text-decoration: none;
+}
+.mecanismo-item-num {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 17px;
+  font-weight: 600;
+}
+.mecanismo-item-cap {
+  font-family: var(--f-instr);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+.mecanismo-item-porta:hover .mecanismo-item-cap {
+  color: var(--ink);
+}
+.mecanismo-item-nota {
+  margin-top: 2px;
+  font-family: var(--f-instr);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+@media (max-width: 779px) {
+  /* O DESENHO E A SUA LEGENDA SAEM, E A LISTA ENTRA. Era o desenho a arrastar-se
+     de lado dentro de uma caixa de 390 px, com uma fila de palavras soltas por
+     baixo: as portas da legenda, sem o sujeito de cada uma. */
+  .mecanismo .svg-scroll,
+  .mecanismo-legenda {
+    display: none;
+  }
+  .mecanismo-lista {
+    display: grid;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--rule);
+  }
+  .mecanismo-item {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+  }
 }
 
 /* ------------------------------------------------------------ /estudos */
@@ -4748,7 +4841,10 @@ a.marcador::after {
      área sobreposta é uma porta que abre a linha do vizinho. */
   /* o concelho: a legenda da banda e as portas dos trabalhos */
   .mun-banda-porta,
-  .mun-estudo a.ligacao-dados,
+  /* A porta de um estudo é hoje o próprio título, num `<li>` da lista (F1.10,
+     §1): o alvo é o bloco inteiro, e o `padding` já lhe dá mais do que 44 px. A
+     regra fica para o caso de a composição encolher. */
+  .mun-estudo a,
   /* a agenda: a legenda do eixo */
   .agenda-eixo-porta,
   /* o livro-razão: as portas do conjunto de dados */
@@ -4931,6 +5027,43 @@ a.marcador::after {
   flex-direction: column;
   gap: 10px;
   align-items: flex-start;
+}
+
+/* A CAIXA DA BUSCA É UMA (F1.10, §2.6, 09.09.2026), e por isso estas regras
+   deixam de ter o nome da primeira página: a mesma caixa rende-se em `/`, em
+   `/municipios`, em `/livro-razao` e em `/livro-razao/concelhos`, e as regras
+   que a desenhavam estavam escritas duas vezes, aqui e em `linha.css`, valor a
+   valor. Uma segunda cópia é uma divergência à espera de acontecer. */
+.busca {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.busca-linha {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+.busca-linha .busca-campo {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.busca-submeter {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--f-versal);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+}
+.busca-submeter:hover {
+  background: var(--paper);
+  color: var(--ink);
 }
 
 .busca-campo {

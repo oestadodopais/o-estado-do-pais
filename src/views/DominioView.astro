@@ -71,7 +71,6 @@ import {
   ausenciasDoDominio,
   fronteiraDoDominio,
   CABECA_DO_DOMINIO_1,
-  FAIXA_DO_DOMINIO_1,
 } from '../data/dominios.mjs';
 import { fixadorDoLimiar } from '../data/figuras.mjs';
 import {
@@ -180,7 +179,7 @@ const manchete = {
 };
 
 /* ---------------------------------------------------------------------------
- * A FAIXA: AS CINCO MEDIDAS DA SUPOSIÇÃO, PELA ORDEM DECLARADA
+ * A FAIXA: AS MEDIDAS DESTE DOMÍNIO, PELA ORDEM DECLARADA
  * ---------------------------------------------------------------------------
  * Cada cartão é um alvo inteiro e abre a leitura breve daquela medida, na mesma
  * página. Um cartão sem linha não existe: a régua da faixa recusa-o com razão,
@@ -188,12 +187,28 @@ const manchete = {
  */
 /* A POSIÇÃO DE CADA CARTÃO ENTRA NA FAIXA DO DOMÍNIO (F1.2b, item 3,
    03.09.2026): o ordinal é o índice nesta lista e o total é o comprimento dela.
-   Cada faixa conta a sua, e é por isso que «1 de 5» aqui e «1 de 21» na primeira
-   página são o mesmo cálculo sobre listas diferentes. */
-const cartoes = FAIXA_DO_DOMINIO_1.map((chave, i) => {
-  const m = medidaPelaChave(chave);
-  if (!m?.claim) throw new Error(`dominios: a faixa nomeia "${chave}", que não tem linha.`);
-  const linha = getClaim(m.claim);
+   Cada faixa conta a sua, e é por isso que «1 de 11» aqui e «1 de 21» na página
+   europeia são o mesmo cálculo sobre listas diferentes.
+
+   A LISTA DA FAIXA É A DAS MEDIDAS DESTA PÁGINA (F1.10, §7.7, 09.09.2026), e não
+   a das cinco medidas de cabeça. O diretor leu-o a 07.09: «a contagem da faixa
+   igual ao número de medidas listadas». A faixa dizia «1 de 5» por cima de onze
+   leituras, porque a lista dela era `FAIXA_DO_DOMINIO_1`, que é a lista das
+   medidas de cabeça DESTE domínio para a faixa da primeira página (item 8.16). É
+   uma lista com um trabalho, e não é este: a faixa de uma página é o «Relance»
+   do que a página tem, e o que esta página tem são as suas medidas, todas, cada
+   uma com a sua leitura por baixo e a âncora que o cartão abre.
+
+   `FAIXA_DO_DOMINIO_1` FICA ONDE FAZ FALTA, em `src/data/dominios.mjs` e na
+   primeira página: uma lista declarada para uma superfície não se apaga por
+   outra superfície deixar de a ler.
+
+   UM CARTÃO SÓ EXISTE COM LINHA: uma medida sem `claim` é uma ausência declarada,
+   e as ausências rendem-se na sua própria secção, sem valor e sem selo. */
+const cartoes = leituras
+  .filter(({ medida }) => medida.claim !== null)
+  .map(({ medida: m, linha }, i) => {
+  const chave = m.chave;
   return {
     posicao: i + 1,
     id: m.claim,
@@ -592,8 +607,7 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
               mapa={desenhos.get(medida.chave)}
               paleta={PALETA[desenho.chave]}
               rotulos={ROTULOS[desenho.chave]}
-              porta={routePath('livroConcelhos', lang)}
-              portaRotulo={s.dominios.porConcelhoPorta}
+              rota={(slugDoConcelho) => routePath('municipio', lang, { slug: slugDoConcelho })}
               nomeada={`k-${medida.chave.toLowerCase()}`}
               chave={desenho.chave}
             />

@@ -380,6 +380,10 @@ h1.cabeca-h1[data-citadas]:not([data-citadas='1']) {
    fila tinha 14,6 px de altura de linha para as segurar. Medido no que ficou: os
    dois selos da manchete do domínio a 390 medem 52,5 × 44 px (61 × 44 na edição
    inglesa) e não se sobrepõem. */
+/* A FILA DOS SELOS NO FIM DA MANCHETE. O §7.7 (item 4) pede um selo ao pé de
+   cada número, e a medida diz que não cabe: em linha, os dois selos põem a
+   manchete inglesa em 4 linhas a 390 px, e o teto do item 8.15 são 3. A razão
+   inteira está em `src/components/Manchete.astro`. */
 .manchete-selos {
   display: flex;
   flex-wrap: wrap;
@@ -2836,42 +2840,13 @@ a.porta:hover .porta-abrir {
    não encolher: a 320 px o campo fica com o que sobra e o botão continua a
    caber inteiro. Os dois têm 44 px de altura, que é o alvo da casa abaixo de
    1024, e o botão tem-nos também acima, porque é um comando e não um nome. */
-/* A CAIXA DA BUSCA É UMA (F1.10, §2.6, 09.09.2026), e por isso estas regras
-   deixam de ter o nome da primeira página: a mesma caixa rende-se em `/`, em
-   `/municipios`, em `/livro-razao` e em `/livro-razao/concelhos`, e as regras
-   que a desenhavam estavam escritas duas vezes, aqui e em `linha.css`, valor a
-   valor. Uma segunda cópia é uma divergência à espera de acontecer. */
-.busca {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.busca-linha {
-  display: flex;
-  gap: 8px;
-  align-items: stretch;
-}
-.busca-linha .busca-campo {
-  flex: 1 1 auto;
-  min-width: 0;
-}
-.busca-submeter {
-  flex: 0 0 auto;
-  min-height: 44px;
-  padding: 0 16px;
-  border: 1px solid var(--ink);
-  background: var(--ink);
-  color: var(--paper);
-  font-family: var(--f-versal);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  cursor: pointer;
-}
-.busca-submeter:hover {
-  background: var(--paper);
-  color: var(--ink);
-}
+/* AS REGRAS DA CAIXA DA BUSCA MUDARAM-SE PARA `site.css` (F1.10, §2.6, segunda
+   passagem, 09.09.2026), e foi um defeito medido em CI: esta folha é a da
+   PRIMEIRA PÁGINA, e `/municipios`, `/livro-razao` e `/livro-razao/concelhos`
+   não a carregam. Com a caixa unificada e as regras aqui, três das quatro
+   superfícies da busca ficaram sem a fila, sem o alvo do botão e sem a regra que
+   deixa o campo encolher. Uma peça partilhada tem de ter a folha na folha que
+   todas as páginas carregam. */
 
 /* O distrito de um nome que se repete, na ficha da busca. Vai a seguir ao nome,
    no corpo da unidade e na cor recuada: separa duas fichas e não compete com o
@@ -3037,7 +3012,9 @@ a.porta:hover .porta-abrir {
   .faixa {
     padding-bottom: 2px;
   }
-  .busca {
+  /* Ver a nota acima: esta ficou aqui porque é da primeira página e do seu
+     primeiro ecrã, e a folha dela é esta. */
+  .inicio .busca {
     gap: 4px;
   }
   .inicio {
