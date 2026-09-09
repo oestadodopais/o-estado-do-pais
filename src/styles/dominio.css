@@ -81,9 +81,16 @@
    ser a de uma secção, que é o que ela é: acaba o instrumento da cabeça, começa
    o que a página diz. O item 8.11 manda a prosa para fora do primeiro ecrã, e a
    régua `medicoes/lugar-2026-09-04/primeiro-ecra.mjs` mede-o. */
+/* A DOBRA «COMO LER» (bloco F1.10, item 8.11, 09.09.2026). O ar da secção fica
+   na dobra, e a frase lá dentro perde a sua margem de topo: a distância que
+   separava a frase da faixa passa a separar o comando que a abre. */
+.dominio-como-ler {
+  margin-top: clamp(34px, 5vw, 48px);
+  max-width: var(--measure);
+}
 .dominio-fronteira {
   max-width: var(--measure);
-  margin: clamp(34px, 5vw, 48px) 0 0;
+  margin: 0;
   padding-left: 14px;
   border-left: 2px solid var(--rule-strong);
   font-family: var(--f-prosa);

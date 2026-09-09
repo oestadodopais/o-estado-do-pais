@@ -57,6 +57,7 @@
 import Base from '../layouts/Base.astro';
 import CabecaDoLugar from '../components/inicio/CabecaDoLugar.astro';
 import Faixa from '../components/inicio/Faixa.astro';
+import Gaveta from '../components/inicio/Gaveta.astro';
 import Claim from '../components/Claim.astro';
 import Frase from '../components/Frase.astro';
 import Manchete from '../components/Manchete.astro';
@@ -388,15 +389,35 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
   </CabecaDoLugar>
 
   {/* ------------------------------------------------------------------------
-      A FRASE DA FRONTEIRA, UMA VEZ, COM ID
+      A FRASE DA FRONTEIRA, UMA VEZ, COM ID, DENTRO DA DOBRA «COMO LER»
       ------------------------------------------------------------------------
       «O que este domínio mede e o que não mede, uma frase, impressa uma vez,
       citável.» Tem id para se poder apontar, e é a única vez que aparece na
       página: `npm run check:formas` fecha a construção se aparecer duas.
+
+      A DOBRA ENTRA A 09.09.2026 (decisão do lugar de direção sobre o §9.6 do
+      brief F1.10, pelo item 8.11). A sexta sessão do bloco mediu a frase a
+      390 × 664 depois de a faixa mudar de lista: começava a 679 px em português
+      (quinze fora do primeiro ecrã) e a 661 em inglês, três dentro. Empurrar a
+      margem mais dez píxeis para caber num teto era a folha a obedecer a uma
+      régua, e o número seguinte que mudasse a altura da cabeça desfazia-o. A
+      saída é a que o item 8.11 escreve: «a prosa de contexto, as definições e as
+      ressalvas saem do primeiro ecrã das páginas do leitor e ficam a um toque
+      (uma dobra "Como ler" ou a leitura breve)».
+
+      O QUE A FRASE É NÃO MUDA: continua `conteudo` pela carta (§9.2 do brief), e
+      o que muda é onde ela começa. A dobra é o `<details>` da casa, sem uma
+      linha de guião, com o `<summary>` como alvo de 44 px; fechada, o leitor do
+      teclado e quem ouve continuam a chegar-lhe, e a régua do primeiro ecrã não
+      a conta porque o leitor não a lê sem a abrir.
       ------------------------------------------------------------------------ */}
-  <p class="dominio-fronteira" id="fronteira" data-fronteira={slug}>
-    {fronteira[lang] ?? fronteira.pt}
-  </p>
+  <div class="dominio-como-ler">
+    <Gaveta chave="como-ler" rotulo={s.secoes.comoLer} aberta={false}>
+      <p class="dominio-fronteira" id="fronteira" data-fronteira={slug}>
+        {fronteira[lang] ?? fronteira.pt}
+      </p>
+    </Gaveta>
+  </div>
 
   {geometria !== null && <GeometriaDosConcelhos mapa={geometria} />}
 
