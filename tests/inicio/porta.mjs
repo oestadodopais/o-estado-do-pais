@@ -49,10 +49,33 @@
  * ocorrências, e não de linhas: o HTML construído é quase todo uma linha só, e
  * `grep -c` contaria 1 onde há dez.
  *
- * A5 · AS 29 UNIDADES COM NOME VISÍVEL E ALVO. Abaixo de 1024, cada uma das 29
- * unidades da Carta tem de ter um nome com caixa (visível, e não apenas
- * presente) e alvo de 44 × 44 px. A lista mede-se COMO ELA CHEGA AO LEITOR:
- * sem abrir gaveta nenhuma, porque o item 4 do brief manda a lista aberta.
+ * A5 · A GAVETA DOS NOMES ABRE COM UM TOQUE, E OS 29 ESTÃO LÁ COM ALVO E PORTA.
+ * Abaixo de 1024, um toque no `<summary>` da gaveta «Os nomes no mapa» abre-a, e
+ * lá dentro as 29 unidades da Carta têm cada uma um nome visível, um alvo de
+ * 44 × 44 px e uma porta para a sua página, que responde.
+ *
+ * A EXPECTATIVA «VISÍVEL EM REPOUSO» RETIROU-SE, e a razão escreve-se
+ * (decisão do lugar de direção, 09.09.2026, sobre o F1.10). A célula nasceu com
+ * o F1.1, que mandava a lista dos nomes ABERTA: «o item 4 do brief manda a lista
+ * aberta», porque abaixo de 1 024 nenhuma das 29 áreas do desenho chegava aos
+ * 44 px pelo quadrado inscrito (I82) e a rede de nomes era o único alvo que
+ * respondia por elas. O F1.1d e o F1.1e mudaram esse facto e a decisão que dele
+ * saía: «A lista aberta dos 29 nomes sai; fica uma lista fechada como
+ * alternativa sem guião» (`BRIEF-F1.1d-os-nomes-do-mapa.md`, §0), e «sem guião
+ * as unidades são ligações para as suas páginas com a lista fechada dos nomes
+ * por baixo» (`BRIEF-F1.1e-os-distritos-voltam-ao-mapa.md`, §0). O nome de uma
+ * unidade aparece agora no lugar fixo ao passar, ao focar ou ao tocar, e a lista
+ * voltou a ser o que o nome dela diz: o índice do desenho.
+ *
+ * Uma célula que continuasse a exigir os 29 nomes VISÍVEIS EM REPOUSO media o
+ * que o bloco anterior queria e não o que os dois blocos seguintes decidiram: é
+ * a régua a contradizer a decisão em vez de a medir. O que fica medido é o que
+ * a decisão promete a quem não tem rato nem guião: que a gaveta se abre com um
+ * toque, que os 29 lá estão com o alvo do toque, e que cada um leva à sua
+ * página. O alvo de 44 px dentro da gaveta é a exigência do lugar de direção de
+ * 09.09.2026: os briefs do F1.1d e do F1.1e fixam os 44 px para as áreas
+ * desenhadas e não escrevem nada sobre os nomes da gaveta, e a decisão fecha o
+ * silêncio pelo lado do leitor.
  *
  * A6 · «Âmbito» E «Densidade» FORA DA PÁGINA. Contagem de ocorrências a 0 nas
  * duas edições, com as palavras de cada edição.
@@ -470,6 +493,22 @@ async function medeOsNomes(pg, alvo) {
   }, alvo);
 }
 
+/**
+ * UM TOQUE NO COMANDO DA GAVETA DOS NOMES, e diz se ela ficou aberta.
+ *
+ * É um toque a sério (`click` sobre o `<summary>`), e não um `open = true`
+ * escrito por fora: o que a célula A5 promete é que quem não tem rato nem guião
+ * chega aos 29 nomes com UM gesto, e um estado forçado não prova gesto nenhum.
+ */
+async function abreAGaveta(pg) {
+  const cmd = pg.locator('[data-gaveta="nomes"] > summary');
+  if ((await cmd.count()) !== 1) return false;
+  await cmd.click();
+  return await pg.evaluate(
+    () => document.querySelector('[data-gaveta="nomes"]')?.hasAttribute('open') ?? false,
+  );
+}
+
 /* ===========================================================================
  * A SONDA DO PRIMEIRO ECRÃ · corre dentro da página
  * ======================================================================== */
@@ -723,22 +762,52 @@ async function corre() {
        dava verde com a lista fechada, que é exactamente o estado que este bloco
        veio abrir. `checkVisibility({ contentVisibilityAuto: true })` responde
        pelo que o leitor vê. */
+    const antes = await medeOsNomes(p, ALVO_TOQUE);
+    const abriu390 = await abreAGaveta(p);
     const nomes = await medeOsNomes(p, ALVO_TOQUE);
-    medidas[`A5.${ed.chave}.390`] = nomes;
+    medidas[`A5.${ed.chave}.390`] = { antes, abriu: abriu390, depois: nomes };
     const p768 = await pagina(ed.rota, 768, 900);
+    const abriu768 = await abreAGaveta(p768);
     const nomes768 = await medeOsNomes(p768, ALVO_TOQUE);
-    medidas[`A5.${ed.chave}.768`] = nomes768;
+    medidas[`A5.${ed.chave}.768`] = { abriu: abriu768, depois: nomes768 };
     await p768.__ctx.close();
+    /* CADA NOME LEVA À SUA PÁGINA, e o destino confere-se contra o que a Carta
+       diz: a porta de uma unidade é `/distritos/<slug>` na edição portuguesa e
+       `/en/districts/<slug>` na inglesa, com o mesmo slug que a marca declara. A
+       página pede-se ao servidor: uma porta que não abre não é uma porta. */
+    const portas = await p.evaluate(() =>
+      [...document.querySelectorAll('[data-lista-porta]')].map((a) => ({
+        slug: a.getAttribute('data-lista-porta'),
+        href: (a.getAttribute('href') ?? '').split('#')[0],
+      })),
+    );
+    const prefixo = ed.chave === 'pt' ? '/distritos/' : '/en/districts/';
+    const forasDoSitio = portas.filter((x) => x.href !== `${prefixo}${x.slug}`);
+    let semResposta = 0;
+    for (const x of portas) {
+      const r = await fetch(base + x.href);
+      if (!r.ok) semResposta++;
+    }
     conta(
       `A5.${ed.chave}`,
-      nomes.total === 29 &&
+      abriu390 &&
+        abriu768 &&
+        antes.total === 29 &&
+        antes.invisiveis === 29 &&
+        nomes.total === 29 &&
         nomes.pequenos.length === 0 &&
         nomes768.total === 29 &&
-        nomes768.pequenos.length === 0,
-      `as 29 unidades com nome visível e alvo ≥ ${ALVO_TOQUE} px, sem gesto, abaixo de ${LIMIAR_DA_COLUNA} ` +
-        `(a partir de ${LIMIAR_DA_COLUNA} a regra é ${ALVO_PONTEIRO} px, Emenda 20c): ` +
-        `a 390 ${nomes.total} nome(s), ${nomes.invisiveis} invisível(eis), ${nomes.pequenos.length} fora do alvo; ` +
-        `a 768 ${nomes768.total} nome(s), ${nomes768.invisiveis} invisível(eis), ${nomes768.pequenos.length} fora do alvo` +
+        nomes768.pequenos.length === 0 &&
+        portas.length === 29 &&
+        forasDoSitio.length === 0 &&
+        semResposta === 0,
+      `a gaveta dos nomes abre com um toque e leva as 29 unidades com alvo ≥ ${ALVO_TOQUE} px, ` +
+        `abaixo de ${LIMIAR_DA_COLUNA} (a partir de ${LIMIAR_DA_COLUNA} a regra é ${ALVO_PONTEIRO} px, ` +
+        `Emenda 20c): em repouso ${antes.total} nome(s), ${antes.invisiveis} invisível(eis) ` +
+        `(a gaveta chega fechada, F1.1d/F1.1e); a 390 abriu ${abriu390}, ${nomes.total} nome(s), ` +
+        `${nomes.pequenos.length} fora do alvo; a 768 abriu ${abriu768}, ${nomes768.total} nome(s), ` +
+        `${nomes768.pequenos.length} fora do alvo; ${portas.length} porta(s), ` +
+        `${forasDoSitio.length} fora de «${prefixo}», ${semResposta} sem resposta` +
         (nomes.pequenos.length || nomes768.pequenos.length
           ? ` (${[...nomes.pequenos, ...nomes768.pequenos]
               .slice(0, 3)
@@ -878,36 +947,59 @@ async function corre() {
         `${semLimiar.pecas} de ${semLimiar.nLeituras} leitura(s)`,
     );
 
-    /* ------------------------------------------------------------------- A7 */
-    /* AS DUAS LAGOAS DIZEM QUAL É QUAL (Major 9). A primeira redação exigia dois
+    await p2.__ctx.close();
+
+    /* ------------------------------------------------------------- A7 e A12 */
+    /* AS DUAS CÉLULAS LEEM A PÁGINA QUE O SEU TEXTO NOMEIA (09.09.2026).
+       ------------------------------------------------------------------------
+       Estavam as duas a ler `p2`, que até ao item 8.16 era a primeira página e
+       passou a ser «Portugal na União Europeia» quando os 21 cartões mudaram de
+       casa. O texto das duas continuou a dizer «em /» e «no menu de /», e a A7
+       ficou a contar fichas de busca numa página que não tem busca nenhuma:
+       vermelha desde então, e não por causa do sítio. A A12 passava, porque o
+       menu é o mesmo em todas as páginas, e por isso o defeito só se via numa
+       delas. As duas passam a abrir a página que dizem, e a A7 exige que a
+       coleção tenha as 308 fichas antes de procurar as duas Lagoas: contar zero
+       Lagoas numa lista vazia é a régua a dormir (regra 14 da casa).
+
+       AS DUAS LAGOAS DIZEM QUAL É QUAL (Major 9). A primeira redação exigia dois
        textos DIFERENTES, e a leitura a frio apanhou-o: «Lagoa passes when the
        two complete texts differ for any reason, without checking Faro and São
        Miguel.» Dois textos diferentes por acaso não distinguem nada. A célula
-       passa a exigir os dois lugares da Carta pelo nome: uma ficha traz «Faro»,
-       a outra «São Miguel», e são fichas diferentes. */
-    const lagoas = await p2.evaluate(() =>
-      [...document.querySelectorAll('.pesquisa-item')]
-        .filter((li) => (li.querySelector('.pesquisa-nome')?.textContent ?? '').trim() === 'Lagoa')
-        .map((li) => (li.textContent ?? '').replace(/\s+/g, ' ').trim()),
-    );
+       exige os dois lugares da Carta pelo nome: uma ficha traz «Faro», a outra
+       «São Miguel», e são fichas diferentes. O distrito nas fichas dos homónimos
+       é o item 7 do `BRIEF-F1.1-porta-da-frente.md`, e continua a valer: o
+       F1.1d e o F1.1e não lhe tocaram («nenhuma mudança à manchete, à faixa, às
+       leituras ou à busca», §2 dos dois briefs). */
+    const pBusca = await pagina(ed.rota, 390, 844);
+    const busca = await pBusca.evaluate(() => {
+      const itens = [...document.querySelectorAll('.pesquisa-item')];
+      return {
+        total: itens.length,
+        lagoas: itens
+          .filter((li) => (li.querySelector('.pesquisa-nome')?.textContent ?? '').trim() === 'Lagoa')
+          .map((li) => (li.textContent ?? '').replace(/\s+/g, ' ').trim()),
+      };
+    });
+    const lagoas = busca.lagoas;
     const distintas = new Set(lagoas);
-    const comFaro = lagoas.filter((t) => t.includes('Faro'));
-    const comMiguel = lagoas.filter((t) => t.includes('São Miguel'));
-    medidas[`A7.${ed.chave}`] = lagoas;
+    const comFaro = lagoas.filter((x) => x.includes('Faro'));
+    const comMiguel = lagoas.filter((x) => x.includes('São Miguel'));
+    medidas[`A7.${ed.chave}`] = busca;
     conta(
       `A7.${ed.chave}`,
-      lagoas.length === 2 &&
+      busca.total > 2 &&
+        lagoas.length === 2 &&
         distintas.size === 2 &&
         comFaro.length === 1 &&
         comMiguel.length === 1 &&
         comFaro[0] !== comMiguel[0],
-      `as duas fichas de «Lagoa» em ${ed.rota}: ${lagoas.length} ficha(s), ` +
-        `${distintas.size} texto(s) distinto(s), ${comFaro.length} com «Faro» e ` +
-        `${comMiguel.length} com «São Miguel» [${lagoas.join(' | ')}]`,
+      `as duas fichas de «Lagoa» na busca de ${ed.rota}: ${busca.total} ficha(s) na lista, ` +
+        `${lagoas.length} com o nome «Lagoa», ${distintas.size} texto(s) distinto(s), ` +
+        `${comFaro.length} com «Faro» e ${comMiguel.length} com «São Miguel» [${lagoas.join(' | ')}]`,
     );
 
-    /* ------------------------------------------------------------------- A12 */
-    const menu = await p2.evaluate(() =>
+    const menu = await pBusca.evaluate(() =>
       [...document.querySelectorAll('.nav-principal a')].map((a) => a.getAttribute('href')),
     );
     const emFalta = ed.menu.filter((h) => !menu.includes(h));
@@ -918,7 +1010,7 @@ async function corre() {
       `regiões, distritos e áreas no menu de ${ed.rota}: ` +
         (emFalta.length ? `faltam ${emFalta.join(', ')}` : 'as três lá estão'),
     );
-    await p2.__ctx.close();
+    await pBusca.__ctx.close();
 
     /* ------------------------------------------------------------------- A8 */
     const forms = [...doc.matchAll(/<form\b[^>]*>/g)].map((m) => m[0]);
@@ -1670,6 +1762,27 @@ const PLANTAS = [
     celulas: ['A5.pt', 'A5.en'],
     /* Tira a ligação de UMA unidade da lista dos nomes: fica com 28. */
     f: (h) => h.replace(/<li><a href="[^"]*" data-lista-porta="[^"]*">[^<]*<\/a><\/li>/, ''),
+  },
+  {
+    /* A GAVETA SEM COMANDO (09.09.2026, com a A5 reescrita). A célula deixou de
+       exigir os 29 nomes visíveis em repouso e passou a exigir que UM TOQUE os
+       abra: sem esta planta, a promessa nova não tinha positivo conhecido. Tira
+       o `<summary>` da gaveta dos nomes, e o toque deixa de ter onde bater. */
+    nome: 'a gaveta dos nomes sem comando',
+    celulas: ['A5.pt', 'A5.en'],
+    f: (h) =>
+      h.replace(
+        /(<details class="gaveta"[^>]*data-gaveta="nomes"[^>]*>)<summary[\s\S]*?<\/summary>/,
+        '$1',
+      ),
+  },
+  {
+    /* O DISTRITO FORA DAS FICHAS DOS HOMÓNIMOS (09.09.2026, com a A7 posta a ler
+       a página que ela nomeia). Tira os `<span class="pesquisa-distrito">` da
+       busca: as duas Lagoas voltam a dizer «Lagoa» e mais nada. */
+    nome: 'as duas Lagoas sem distrito',
+    celulas: ['A7.pt', 'A7.en'],
+    f: (h) => h.replace(/<span class="pesquisa-distrito"[^>]*>[\s\S]*?<\/span>/g, ''),
   },
   {
     nome: 'a página mais alta do que a árvore de partida',
