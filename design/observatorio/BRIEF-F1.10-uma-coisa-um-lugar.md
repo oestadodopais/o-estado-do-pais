@@ -45,9 +45,45 @@ Ramo `lugar-2026-09-04` numa worktree própria a partir de `origin/main` **depoi
 | L4 | a frase de definição a 1 em `/` e `/en`; a frase de hierarquia a 1 em cada um dos cinco índices | grep |
 | L5 | o caminho no cabeçalho em 100 % das páginas abaixo da primeira, com ligações que existem | script |
 | L6 | «fonte» a dizer o publicador em 100 % dos selos (comparado com o `source` da linha) | script |
-| L7 | o Codex a reler as mesmas treze páginas depois e a contar as repetições que ficaram (o lugar de direção corre a leitura; a régua do bloco é a contagem a descer de 6 para 0 fora do que a §1 decide manter) | a leitura |
+| L7 | o Codex a reler as mesmas treze páginas depois e a contar as repetições que ficaram (o lugar de direção corre a leitura; a régua do bloco é a contagem a descer de 6 para 0 fora do que a §1 decide manter) | a leitura. **Correu a 09.09.2026, e o resultado escreve-se:** 2 das 6 repetições ficaram, e a segunda está DECIDIDA pelo item 8.16 (as 21 medidas do país deixaram de ter um lugar único porque os dois quadros passaram a página própria e a faixa passou às medidas de cabeça: o «saldo» e o «ganho médio» aparecem na faixa da primeira página e na lista do domínio, que é a repetição que o 8.13 escolheu); a primeira é a linha do livro-razão, e a segunda passagem fecha-a (decisão 16). Das dez mudanças do §7: 2 feitas, 7 em parte, 1 por fazer. As sete em parte e a que faltava são o encargo da segunda passagem |
 | L8 | `npm run build`, `verify`, `typecheck` a 0, com os códigos lidos dos registos; todas as réguas verdes ou reescritas com a razão; `check:voz` com as cadeias novas e mudadas declaradas | os três comandos |
 | L9 | plantas vermelhas e depois verdes: uma segunda lista dos 308 de volta; «município» visível; a régua das regiões copiada numa região; uma sinopse na página do concelho; o caminho a faltar numa página | a régua |
+
+**Emenda de 09.09 · a L1 é uma catraca, com o horizonte a zero.** A leitura a
+frio de 09.09.2026 abriu o Blocking 3 contra a primeira passagem, e tinha razão:
+a medida diz «nenhum ecrã com duas ligações para o mesmo destino», o relatório
+registou 6 580 páginas com dois destinos iguais, e a régua fechou exactamente
+6 580 como teto. Um teto igual à medição transforma uma proibição num inventário.
+
+**A decisão do lugar de direção** (09.09.2026, pela delegação da §1.98) é esta, e
+substitui a leitura anterior da L1:
+
+1. **O horizonte é zero, e não muda.** A L1 continua a ser o que o §0 escreve.
+2. **O teto é uma CATRACA**: escreve-se o número medido no dia, e ele só desce.
+   Uma passagem que o faça subir fecha a construção; uma que o faça descer
+   escreve o novo número com a data e a razão. Enquanto o horizonte não chegar, o
+   teto diz onde o trabalho está, e não que o trabalho acabou.
+3. **A composição mede-se antes de se tocar em qualquer padrão**, para que o que
+   se corrige seja o maior e não o mais fácil. A composição de 09.09.2026, sobre
+   o `dist/` da cabeça `31656c8b`
+   (`node l1-composicao.mjs`, a régua da composição, cujo resultado está no
+   relatório do bloco):
+
+   | famílias de página | páginas | o par de portas que repete o destino |
+   |---|---:|---|
+   | `linha` | 5 832 | a porta externa de cada conferência (`v.path`) e a porta externa do bloco do endereço (`source_url`), que em 3 606 das 3 625 conferências do livro-razão são o MESMO endereço |
+   | `municipio` | 616 | o selo do cartão e o selo do pé da leitura que aquele cartão abre, os dois para a mesma linha |
+   | `distrito` | 58 | a área do mapa e a fila de nomes, as duas para a página do mesmo concelho |
+   | as outras | 74 | dispersas por dez famílias |
+
+4. **O padrão maior corrige-se nesta passagem**, e é o primeiro: na página de uma
+   linha, a porta de uma conferência só se rende quando o que foi lido NÃO é o
+   endereço da linha. O que a conferência diz (a data, quem a fez, o resultado)
+   fica; o endereço fica uma vez, no bloco que é dele. Onde a conferência foi
+   feita contra outra coisa — uma cópia arquivada, outro caminho — a porta fica,
+   porque leva a um sítio que a página não tem em mais lado nenhum.
+5. **O relatório do bloco deixa de dar a L1 por feita**, e escreve o número, o
+   horizonte e o padrão seguinte.
 
 ## 6 · O que se entrega e a disciplina
 
@@ -69,6 +105,16 @@ Entram neste bloco, além da tabela do §1, por decisão do lugar de direção:
 10. **Pequenos**: «PROVENIÊNCIA» como título por cima de ligações de navegação na página do concelho sai; «Évora · 308 · FONTE» ganha o substantivo; os rótulos dos gráficos a 390 escrevem-se como texto por baixo; «[a verificar]» com a sua definição ao pé da primeira ocorrência em cada página; «9 regiões» deixa de ser ligação para si próprio.
 
 A régua L7 (a releitura do leitor de primeira vez) passa a contar também estes dez.
+
+**Emenda de 09.09 ao item 4 do §7.7 (o selo ao pé do seu número na manchete):
+fica como está, e é uma decisão e não uma dívida.** A sexta sessão construiu-o,
+mediu-o e desfê-lo com o número ao lado: em linha, a manchete inglesa passa de
+três para quatro linhas a 390 px (97,5 → 130 px), e o teto do item 8.15 são três
+linhas. As duas coisas não cabem ao mesmo tempo, e entre a posição de um selo e
+a altura da manchete no telemóvel o lugar de direção escolhe a altura, que é o
+que o diretor viu a 07.09 à noite. Os selos ficam numa fila no fim do título. O
+item deixa de estar pendente e passa a estar decidido; se a composição da
+manchete mudar, reabre-se com a medida ao lado.
 
 ## 8 · O que o diretor viu a 07.09 à noite, e as decisões do lugar de direção (pela delegação da §1.98)
 
