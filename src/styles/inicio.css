@@ -302,8 +302,26 @@
   color: var(--muted);
 }
 
+/* O CHÃO DA MANCHETE DESCE UM DEGRAU (bloco F1.10, item 8.15, 08.09.2026).
+   ---------------------------------------------------------------------------
+   O diretor, 07.09 à noite, com o sítio no ar: a manchete «with all that bold
+   text takes quite a lot of the first page … when we see it on the phone». A
+   decisão do lugar de direção fixa três linhas a 390 px, nas duas edições e nos
+   dois motores, e manda tentar o TAMANHO primeiro: «a manchete desce um degrau
+   da escala de tipos a 390 (a identidade fechada é dos tipos e da marca, não dos
+   corpos por largura)».
+
+   O DEGRAU CHEGA, E ESTÁ MEDIDO. A 390 px o `clamp` dava o seu mínimo, que era
+   28 px, e a manchete do país media 3 linhas em `/` e 4 em `/en`. Com o mínimo a
+   26 px são 3 e 3, nos dois motores. A 24 px seriam 3 e 3 também: o degrau que
+   resolve é o primeiro, e é o que se dá.
+
+   ONDE ISTO BATE, E É DE PROPÓSITO: o mínimo do `clamp` vale abaixo dos 812 px
+   de janela, que é onde `3.2vw` passa os 26. Acima disso nada muda, e a manchete
+   do computador é a mesma que a direção fechou. É um corpo por largura, e é a
+   mesma manchete em todas as camadas, porque é o mesmo componente. */
 .cabeca-h1 {
-  font-size: clamp(28px, 3.2vw, 40px);
+  font-size: clamp(26px, 3.2vw, 40px);
   line-height: 1.12;
   font-weight: 500;
   letter-spacing: -0.005em;

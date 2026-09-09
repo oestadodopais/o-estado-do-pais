@@ -621,30 +621,32 @@ export const STRINGS = {
            isso não bastar, encurtar a frase sem mudar a regra (uma frase só,
            algarismos selados, sem adjetivo, dois algarismos no máximo).
 
-           MEDIU-SE O PRIMEIRO CAMINHO, E NÃO BASTA. A 390 px a manchete corre a
-           28 px (o mínimo do `clamp`); a 26 px e a 24 px a frase antiga continua
-           em CINCO linhas em português nos dois motores, e passa de seis a cinco
-           em inglês. Um degrau de tipo não vale uma linha em português e vale uma
-           em inglês, e o teto é três.
+           O PRIMEIRO CAMINHO BASTA, E A FRASE NÃO MUDA. Medido com a régua já
+           corrigida (a A1 contava topos de rectângulo e contava a mais; a razão
+           está em `tests/inicio/porta.mjs`), a 390 px, nos dois motores:
 
-           O SEGUNDO CAMINHO CHEGA, E É O QUE FICA. Tirada a segunda unidade por
-           extenso («da população ativa») e o substantivo repetido da segunda
-           medida («a taxa de»), a frase fica em DUAS linhas em português e TRÊS
-           em inglês, nos dois motores, ao corpo que ela já tinha: o tipo não
-           muda, e a identidade dos corpos fica onde estava. A unidade da segunda
-           medida continua escrita por extenso onde ela é a ficha da medida, que é
-           o cartão da faixa e a leitura dele.
+             corpo        `/`   `/en`
+             28 px         3      4
+             26 px         3      3
+             24 px         3      3
 
-           A DÍVIDA QUE ISTO ABRE, DITA E NÃO ESCONDIDA: a segunda oração passa a
-           dizer «o desemprego» onde dizia «a taxa de desemprego», que é o nome da
-           medida no vocabulário fechado (§2.3). É a frase da manchete a dizer a
-           coisa por extenso uma vez menos, e não um nome novo para ela: o nome da
-           medida continua a ser «taxa de desemprego» no cartão, na leitura, no
-           domínio e na linha. */
+           Um degrau da escala de tipos a 390 px, de 28 para 26, põe a manchete
+           inglesa dentro do teto de três linhas, e a portuguesa já lá estava. A
+           frase fica como a direção a escreveu, com a unidade de cada uma das
+           duas medidas por extenso, e o que muda é o corpo por largura, que o
+           próprio item separa da identidade fechada («a identidade fechada é dos
+           tipos e da marca, não dos corpos por largura»). O degrau está em
+           `src/styles/inicio.css`, no `clamp` de `.cabeca-h1`.
+
+           A SEGUNDA SAÍDA FICA MEDIDA E POR USAR. Encurtar a frase («A dívida
+           pública é 89,7 % do PIB e o desemprego é 6 %.») daria duas linhas em
+           português e três em inglês ao corpo de 28 px, e custaria a unidade da
+           segunda medida por extenso e o nome dela no vocabulário fechado. O item
+           manda tentar o tamanho primeiro, e o tamanho chegou. */
         manchetePais: {
           abre: 'A dívida pública é ',
-          meio: ' do PIB e o desemprego é ',
-          fecha: '.',
+          meio: ' do PIB e a taxa de desemprego é ',
+          fecha: ' da população ativa.',
         },
         /* AS CADEIAS DOS DOIS BLOCOS DE CONCELHO SAÍRAM (Emenda 19a, 26.08.2026).
            Eram `municipioSufixo`, `municipioPalavra`, `tituloEvora`,
@@ -2551,13 +2553,13 @@ export const STRINGS = {
         tituloPaisMuitos: ' thresholds of the Macroeconomic Imbalance Procedure and meets ',
         tituloPaisFim: '.',
         /** Ver a razão na edição portuguesa, e o registo em `CHAVES-EN.md`. A
-            frase inglesa encurtou com a portuguesa (item 8.15, 08.09.2026), e
-            pela mesma medida: seis linhas a 390 px, cinco com um degrau de tipo a
-            menos, três com a frase curta ao corpo de sempre. */
+            frase inglesa é a que fica em quatro linhas a 390 px ao corpo de 28 e
+            em três ao corpo de 26, que é o degrau do item 8.15: é ela que decide
+            o degrau, porque a portuguesa já cabia em três. */
         manchetePais: {
           abre: 'Government debt is ',
-          meio: ' of GDP and unemployment is ',
-          fecha: '.',
+          meio: ' of GDP and the unemployment rate is ',
+          fecha: ' of the labour force.',
         },
         /* As cadeias dos dois blocos de concelho saíram (Emenda 19a). Ver a
            razão na edição portuguesa, e o registo em `CHAVES-EN.md`. */

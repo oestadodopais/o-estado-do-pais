@@ -24,7 +24,7 @@ escrito ao número.
 | `build` · `verify` · `typecheck` | **0** · **0** · **0** (códigos lidos de `build.exit`, `verify.exit`, `typecheck.exit`) |
 | a corrida da CI | lê-se na primeira linha de `gh run list --repo oestadodopais/o-estado-do-pais --branch lugar-2026-09-04`. Um commit não pode conter o número da corrida que ele dispara |
 | feito nas sessões anteriores | a régua (encargo (b)); **§9.1**; **8.8**; **§7.5**; **8.16**; **8.13**; **8.12**; **8.14 inteiro**; **§2.2**; **8.5**; **§7.1**; **8.17** e **8.17b**; os dois limiares com o seu fixador; **8.4**; **§9.3**, **§9.4**, **§9.5**, **§9.8** e **§9.9**; **8.11** e **§7.3** |
-| feito nesta sessão | **a dívida da `matriz.mjs`**: as oito navegações a `/?densidade=leitura` saíram com a razão escrita, e a régua passa de 73 células medidas (53 a passar, e a rebentar na septuagésima quarta) para **89 medidas e 89 a passar**; **o item 8.15**, com os dois caminhos medidos: o degrau de tipo não basta e a frase encurta, e a manchete fica em **2 linhas** em `/` e **3** em `/en` (teto 3), com a A1 verde nas duas edições; **o item 8.9** em português, com a mobília a **62 px numa fila** (teto 64), e o que falta à inglesa medido ao píxel; **o §9.2**, com as três frases na página da linha e no Método; **o §9.7**, com as quatro cadeias da busca no inventário; e três defeitos que as réguas encontraram por chegarem mais longe (a segunda metade da ISSUES I20, a célula da língua de um título citado, e o apontador fino da A15) |
+| feito nesta sessão | **a dívida da `matriz.mjs`**: as oito navegações a `/?densidade=leitura` saíram com a razão escrita, e a régua passa de 73 células medidas (53 a passar, e a rebentar na septuagésima quarta) para **89 medidas e 89 a passar**; **o item 8.15**, com os dois caminhos medidos: o degrau de tipo BASTA (o chão do `clamp` da manchete desce de 28 para 26 px a 390) e a frase da direção não muda, e a manchete fica em **3 linhas** nas duas edições (teto 3), com a A1 verde; **o item 8.9** em português, com a mobília a **62 px numa fila** (teto 64), e o que falta à inglesa medido ao píxel; **o §9.2**, com as três frases na página da linha e no Método; **o §9.7**, com as quatro cadeias da busca no inventário; e três defeitos que as réguas encontraram por chegarem mais longe (a segunda metade da ISSUES I20, a célula da língua de um título citado, e o apontador fino da A15) |
 | a seguir | **o item 5 do encargo** (o caminho, a busca única, «fonte» diz o publicador, as datas); **as outras páginas** (a região, o domínio, os índices, os estudos, o Método); **o resto do §9** (o 6 está medido e o 10 é do F3.3); **o fecho** (as capturas, as plantas da L9, o `REVISOES-DO-INVENTARIO.md`); e a **decisão do lugar de direção** sobre a mobília inglesa |
 | nada a meio | **nada ficou por acabar.** Os três portões a 0 nesta árvore, com os códigos lidos dos ficheiros; não há `git stash` nem ficheiro por commitar |
 | a régua, na cabeça desta sessão | L1 6 598 · L2a 2 · L2b 18 · L2c 10 · L3 **30** · L4 **0** · L5 7 213 · L6 26 178 · 8.5 **0** · 8.8 **0** · 8.13 **0** · 8.14 **0** · 8.17 **0** e **0** · 8.11 **0** · 8.4 **0** (`node scripts/check-lugar.mjs`, verde) |
@@ -77,7 +77,7 @@ dormir.
 | 8.17 · páginas de concelho sem o mapa da sua unidade (era «da sua região» até ao 8.17b) | não medido sobre um `dist/` (ver abaixo) | **0** · feito | idem |
 | 8.11 e §7.3 · leituras de aparelho no cabeçalho, somadas sobre as 7 240 páginas | **28 892** | **0** · feito | idem |
 | 8.4 · definições de painel fora da declaração (a comparação da A4, metida no `verify`) | nasce a 0 no commit em que entra | **0** · feito, com duas plantas a morder | idem |
-| **8.15 · linhas da manchete a 390, nas duas edições e nos dois motores** | **3** em `/` e **4** em `/en` (Chromium e WebKit) | **2** e **3** (teto 3) · feito | `node tests/inicio/porta.mjs`, célula A1 |
+| **8.15 · linhas da manchete a 390, nas duas edições e nos dois motores** | **3** em `/` e **4** em `/en` (Chromium e WebKit) | **3** e **3** (teto 3) · feito, pelo degrau de tipo e sem tocar na frase | `node tests/inicio/porta.mjs`, célula A1 |
 | **8.9 · a mobília acima do nome a 390** | 98,4 px em 2 filas em `/`, 132,8 px em 2 filas em `/en` | **62 px em 1 fila** em `/` (teto 64) · feito; **95,2 px em 2 filas** em `/en` · falta uma decisão, medida ao píxel | `node tests/inicio/porta.mjs`, célula A11 |
 | **§9.2 · as três frases de diligência da página do domínio** | 3 frases na página do domínio, **0** dentro de uma dobra | **0** na página do domínio; a da escala no Método e as duas ressalvas na página da sua linha · feito | `grep` sobre o `dist/`, e `node design/especime-v3/medicoes/lugar-2026-09-04/primeiro-ecra.mjs` |
 | **§9.6 · prosa da casa no primeiro ecrã da página do domínio, a 390 × 664** | **0** caracteres em **0** blocos | **0** e **0** · feito (a frase da ausência fica `conteudo` pela carta, e a prosa que a explica já não começa no primeiro ecrã) | `node design/especime-v3/medicoes/lugar-2026-09-04/primeiro-ecra.mjs` |
@@ -222,48 +222,57 @@ e não alturas de alvo. A planta morde: trocado o `min-height: 44px` por 20 px n
 
 ### 3 · O item 8.15: os dois caminhos medidos, e qual bastou
 
-**O primeiro caminho não basta, e o número di-lo.** A 390 px a manchete corre a
-28 px, que é o mínimo do `clamp(28px, 3.2vw, 40px)`. Descida um degrau (26 px) e
-dois (24 px), a frase antiga fica na MESMA contagem de linhas em português nos
-dois motores, e ganha uma em inglês:
+**Esta secção foi escrita duas vezes na mesma sessão, e a segunda contradiz a
+primeira.** A primeira redação dizia que o degrau de tipo não bastava e que a
+frase tinha de encurtar, e a frase encurtou. Estava errada, e a razão é a régua:
+a A1 contava linhas a mais (a secção 4 diz como), e com a conta errada o degrau
+parecia não valer nada. Corrigida a régua e refeita a medição, a conclusão
+inverteu-se: **o primeiro caminho basta, e a frase não muda**. O que foi feito
+com a conta errada foi desfeito, e o que fica é o que o item manda.
 
-| | 28 px | 26 px | 24 px |
-|---|---|---|---|
-| `/` (Chromium e WebKit) | 5 | 5 | 5 |
-| `/en` (Chromium e WebKit) | 6 | 5 | 5 |
+**As duas medições, com a régua corrigida** (`node tests/inicio/porta.mjs`,
+célula A1, e uma sonda que repõe cada frase no documento construído; Chromium e
+WebKit dão o mesmo número em todas as células):
 
-*(as contagens desta tabela são as da régua como ela estava, que contava a mais;
-a leitura certa está na secção 4, e a conclusão não muda: o degrau de tipo não
-vale uma linha em português.)*
+| corpo da manchete a 390 | `/` frase da direção | `/en` frase da direção | `/` frase curta | `/en` frase curta |
+|---|---|---|---|---|
+| **28 px** (o mínimo do `clamp` que lá estava) | **3** | **4** | 2 | 3 |
+| **26 px** (um degrau abaixo) | **3** | **3** | 2 | 3 |
+| 24 px (dois degraus) | 3 | 3 | 2 | 2 |
 
-**O segundo caminho basta, e é o que ficou.** A frase encurta sem mudar a regra
-da manchete (uma frase só, algarismos selados, sem adjetivo, dois algarismos no
-máximo): sai a segunda unidade por extenso e o substantivo repetido da segunda
-medida.
+**O que a tabela diz, e é o contrário do que a primeira redação escreveu.** A
+manchete portuguesa JÁ CABIA em três linhas; quem passava do teto era a inglesa,
+com quatro. Um degrau da escala de tipos a 390, de 28 para 26 px, põe a inglesa
+em três, e a portuguesa fica onde estava. **A frase da direção fica intacta**,
+com a unidade de cada uma das duas medidas por extenso.
 
-| | antes | depois |
-|---|---|---|
-| `/` | «A dívida pública é 89,7 % do PIB e a taxa de desemprego é 6 % da população ativa.» | **«A dívida pública é 89,7 % do PIB e o desemprego é 6 %.»** |
-| `/en` | «Government debt is 89,7 % of GDP and the unemployment rate is 6 % of the labour force.» | **«Government debt is 89,7 % of GDP and unemployment is 6 %.»** |
+**O que se mudou, e é uma linha:** o chão do `clamp` de `.cabeca-h1` passa de
+28 px a 26 px. Vale abaixo dos 812 px de janela, que é onde `3.2vw` passa os 26;
+acima disso nada muda, e a manchete do computador é a mesma que a direção fechou.
+É um corpo por largura, que é o que o próprio item separa da identidade fechada
+(«a identidade fechada é dos tipos e da marca, não dos corpos por largura»).
 
-**O TIPO NÃO MUDA**: a identidade dos corpos fica onde estava, e a decisão do
-item («a manchete desce um degrau») fica medida e não aplicada, porque não
-resolve o que ela existe para resolver. Os dois selos apontam às mesmas duas
-linhas do livro-razão, e nenhum algarismo mudou.
-
-**A dívida que isto abre, dita e não escondida:** a segunda oração passa a dizer
-«o desemprego» onde dizia «a taxa de desemprego», que é o nome da medida no
-vocabulário fechado (§2.3). É a frase da manchete a dizer a coisa por extenso uma
-vez menos, e não um nome novo para ela: o nome da medida continua a ser «taxa de
-desemprego» no cartão, na leitura, no domínio e na linha.
+**A segunda saída fica medida e por usar.** A frase curta («A dívida pública é
+89,7 % do PIB e o desemprego é 6 %.» e «Government debt is 89,7 % of GDP and
+unemployment is 6 %.») daria duas linhas em português e três em inglês ao corpo
+de 28 px. Custaria a unidade da segunda medida por extenso e trocaria «a taxa de
+desemprego», que é o nome da medida no vocabulário fechado, por «o desemprego». O
+item manda tentar o tamanho primeiro, e o tamanho chegou.
 
 **A medida, com o comando** (`node tests/inicio/porta.mjs`, célula A1, a 390 ×
 664):
 
 | | antes | depois |
 |---|---|---|
-| A1.pt | 5 linhas (a conta errada), **3** (a conta certa), 135 px, fundo máximo do primeiro ecrã 615,3 px | **2 linhas**, 100 px, fundo máximo **543,9 px** · passa |
-| A1.en | 6 linhas (a conta errada), **4** (a conta certa), 170 px, fundo máximo 646,8 px | **3 linhas**, 135 px, fundo máximo **574,2 px** · passa |
+| A1.pt | **3 linhas**, 135 px de altura, fundo máximo do primeiro ecrã 615,3 px | **3 linhas** (teto 3), 125,5 px, fundo máximo **569,4 px** · passa |
+| A1.en | **4 linhas**, 170 px, fundo máximo 646,8 px | **3 linhas** (teto 3), 125,5 px, fundo máximo **564,7 px** · passa |
+
+*(o «antes» destas duas linhas é a contagem CERTA sobre a construção antiga,
+refeita com a régua corrigida; a régua, no dia em que a célula estava vermelha,
+dizia cinco e seis.)*
+
+**Nenhuma cadeia mudou no inventário da voz por causa deste item**, e é isso que
+a decisão certa custa: zero.
 
 ### 4 · A régua que media a manchete contava a mais, e a conta certa está escrita
 
@@ -441,10 +450,12 @@ na quarta sessão. É a mesma conta e a mesma página, com menos papel por cima.
 
 | cadeia | estado | origem |
 |---|---|---|
-| «A dívida pública é % do PIB e a taxa de desemprego é % da população ativa.» e a gémea inglesa | **retirada** | o item 8.15: a frase encurta para caber em três linhas a 390, e a medição dos dois caminhos está na secção 3 |
-| «A dívida pública é % do PIB e o desemprego é % .» e a gémea inglesa | **viva** (novas) | a manchete do país na frase curta do item 8.15 |
 | «Escreva o nome do concelho», «Type the name of the municipality», «Procurar», «Search» | **vivas** (novas) | o §9.7: as quatro cadeias da busca entram com `data-voz` |
 | as três frases do §9.2 e as suas gémeas (seis linhas) | **vivas**, com a razão do lugar escrita | o §9.2: mudaram de página e não de palavra; a rota nova é uma das três que a Emenda 15 isenta da contagem |
+
+**O item 8.15 não mudou cadeia nenhuma**, e é isso que a decisão certa custa: a
+frase da manchete é a que a direção escreveu, e o que mudou foi um corpo por
+largura.
 
 **A voz, na construção do fim da sessão:** 877 frases distintas (eram 879),
 37 233 ocorrências em 1 384 rotas, autorreferência 0, nada por classificar, 917
