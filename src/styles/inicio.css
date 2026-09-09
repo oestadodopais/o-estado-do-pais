@@ -72,7 +72,7 @@
   gap: 12px;
 }
 
-/* `.pesquisa-rotulo` saiu desta lista a 25.08.2026 (passo C, item C4): a peça
+/* `.pesquisa-rotulo` (hoje `.busca-k`, F1.10 §2.6) saiu desta lista a 25.08.2026 (passo C, item C4): a peça
    da pesquisa passou a servir duas rotas e mudou-se inteira para `site.css`,
    com as mesmas declarações. */
 .cmd-k,
@@ -2836,21 +2836,26 @@ a.porta:hover .porta-abrir {
    não encolher: a 320 px o campo fica com o que sobra e o botão continua a
    caber inteiro. Os dois têm 44 px de altura, que é o alvo da casa abaixo de
    1024, e o botão tem-nos também acima, porque é um comando e não um nome. */
-.pesquisa-forma {
+/* A CAIXA DA BUSCA É UMA (F1.10, §2.6, 09.09.2026), e por isso estas regras
+   deixam de ter o nome da primeira página: a mesma caixa rende-se em `/`, em
+   `/municipios`, em `/livro-razao` e em `/livro-razao/concelhos`, e as regras
+   que a desenhavam estavam escritas duas vezes, aqui e em `linha.css`, valor a
+   valor. Uma segunda cópia é uma divergência à espera de acontecer. */
+.busca {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
-.pesquisa-linha {
+.busca-linha {
   display: flex;
   gap: 8px;
   align-items: stretch;
 }
-.pesquisa-linha .pesquisa-campo {
+.busca-linha .busca-campo {
   flex: 1 1 auto;
   min-width: 0;
 }
-.pesquisa-submeter {
+.busca-submeter {
   flex: 0 0 auto;
   min-height: 44px;
   padding: 0 16px;
@@ -2863,7 +2868,7 @@ a.porta:hover .porta-abrir {
   letter-spacing: 0.03em;
   cursor: pointer;
 }
-.pesquisa-submeter:hover {
+.busca-submeter:hover {
   background: var(--paper);
   color: var(--ink);
 }
@@ -3032,7 +3037,7 @@ a.porta:hover .porta-abrir {
   .faixa {
     padding-bottom: 2px;
   }
-  .pesquisa-forma {
+  .busca {
     gap: 4px;
   }
   .inicio {

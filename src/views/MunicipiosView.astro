@@ -33,6 +33,7 @@
 import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
+import CampoDeBusca from '../components/inicio/CampoDeBusca.astro';
 import {
   concelhos as concelhosDaCarta,
   coberturaDistingue,
@@ -234,25 +235,21 @@ const distingue = coberturaDistingue(resultados);
         ------------------------------------------------------------------- */}
     <div class="concelhos-pesquisa" data-pesquisa-bloco>
       <div class="pesquisa" id="pesquisa">
-        <form class="pesquisa-forma" action={path} method="get" role="search" data-porta-concelho>
-          {/* As duas cadeias da busca com a marca do inventário (F1.10, §9.7).
-              A razão está em `src/components/inicio/Pesquisa.astro`, que é o
-              componente que o §2.6 manda que esta página passe a usar; enquanto
-              a fusão dos dois não se faz, a marca está nos dois sítios, porque a
-              cadeia rende-se nos dois. */}
-          <label class="pesquisa-rotulo" for="pesquisa-concelho"><span data-voz>{s.ambito.pesquisaRotulo}</span></label>
-          <div class="pesquisa-linha">
-            <input
-              class="pesquisa-campo"
-              id="pesquisa-concelho"
-              name="concelho"
-              type="search"
-              autocomplete="off"
-              data-pesquisa
-            />
-            <button class="pesquisa-submeter" type="submit"><span data-voz>{s.ambito.pesquisaSubmeter}</span></button>
-          </div>
-        </form>
+        {/* A CAIXA É A MESMA DA PRIMEIRA PÁGINA (F1.10, §2.6, 09.09.2026).
+            Esta página repetia a marcação da peça `Pesquisa.astro` linha a linha,
+            com a razão escrita: a peça trazia consigo a fila dos 308 resultados e
+            esta página tem a sua lista agrupada. A fusão faz-se pelo lado certo:
+            a CAIXA saiu para `CampoDeBusca.astro`, a fila ficou na peça, e as
+            duas páginas rendem a mesma caixa. */}
+        <CampoDeBusca
+          rotulo={s.ambito.pesquisaRotulo}
+          submeter={s.ambito.pesquisaSubmeter}
+          id="pesquisa-concelho"
+          name="concelho"
+          accao={path}
+          forma={{ 'data-porta-concelho': true }}
+          campo={{ 'data-pesquisa': true }}
+        />
         <p class="pesquisa-vazio" data-sem-resultado hidden>{s.ambito.pesquisaSemResultado}</p>
       </div>
     </div>

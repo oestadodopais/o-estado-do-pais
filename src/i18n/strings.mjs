@@ -248,13 +248,27 @@ export const STRINGS = {
          escondida para leitores de ecrã até à v2, e um leitor com vista via só
          um título de estudo em cinzento. */
       selo: 'fonte',
+      /* O SELO DE UMA LINHA QUE A PRÓPRIA CASA PUBLICA (F1.10, §2.4, 09.09.2026).
+         «"fonte" diz sempre o publicador da linha; onde a linha vem de um estudo
+         da casa, o selo diz "linha" e a página da linha diz a proveniência.» São
+         cinco linhas do livro-razão cujo publicador é este sítio (as contagens do
+         arquivo e do registo de correções), e um selo a dizer «fonte · O Estado
+         do País» era a casa a citar-se a si própria como fonte. A porta não muda:
+         continua a abrir a linha, que é onde a proveniência se lê. */
+      seloDaCasa: 'linha',
       /* A ressalva da fonte, dita por palavras ao pé do valor (decisão (d) da
          direção, 20.08.2026). Não é a nota: a nota é o campo `source_flag_note`
          da página da linha, e continua lá inteira. Esta é a palavra que viaja
          com o número para onde quer que ele vá. */
       provisorio: 'provisório',
       lido: 'Lido a',
-      fonte: 'Fonte',
+      /* «PUBLICADO POR» E NÃO «FONTE» (F1.10, §7.2, 09.09.2026). O leitor de
+         04.09 contou duas «fonte» em cada bloco de medida e em cada linha: o
+         selo, que é a PORTA para a linha, e o rótulo do campo `source`, que é o
+         nome do ORGANISMO que publicou o número. A palavra fica com o selo, e o
+         campo passa a dizer o que faz: quem publicou. Nenhum campo muda, nenhuma
+         transcrição muda; muda o rótulo que a casa escreve por cima dele. */
+      fonte: 'Publicado por',
       documento: 'Documento',
       edicao: 'Edição',
       localizacao: 'Onde no documento',
@@ -2364,9 +2378,10 @@ export const STRINGS = {
     prov: {
       calculado: 'calculated',
       selo: 'source',
+      seloDaCasa: 'row',
       provisorio: 'provisional',
       lido: 'Read on',
-      fonte: 'Source',
+      fonte: 'Published by',
       documento: 'Document',
       edicao: 'Edition',
       localizacao: 'Where in the document',

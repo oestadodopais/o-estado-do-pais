@@ -2040,7 +2040,7 @@ for (const largura of [1280, 390]) {
     const pb = await pagina();
     await pb.goto(`${base}/`, { waitUntil: 'networkidle' });
     const b = await pb.evaluate(() => {
-      const el = document.querySelector('.pesquisa-submeter');
+      const el = document.querySelector('.busca-submeter');
       return {
         botao: el ? `${el.tagName.toLowerCase()} type=${el.getAttribute('type')}` : 'sem botão',
         ligacoesComoBotao: document.querySelectorAll('[data-inicio] a[role="button"]').length,

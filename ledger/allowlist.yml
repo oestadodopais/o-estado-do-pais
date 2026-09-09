@@ -145,8 +145,13 @@ contexts:
       Numeração de secções e de instrumentos ("Instrumento n.º 1").
   - id: proveniencia
     why: >-
-      Etiqueta de proveniência gerada a partir do próprio livro-razão (nome do
-      estudo, edição do documento, data de acesso). Não é texto escrito à mão.
+      Etiqueta de proveniência gerada a partir do próprio livro-razão. Desde
+      2026-09-09 (bloco F1.10, §2.4) é o nome do PUBLICADOR da linha, o campo
+      `source`, e já não o do estudo em que a casa a leu: «"fonte" diz sempre o
+      publicador da linha, nunca um estudo intermediário». Não é texto escrito à
+      mão, e um publicador chama-se como a fonte o escreve, travessão incluído
+      («CICF/IPCA — Anuário Financeiro dos Municípios Portugueses»). O portão
+      compara-a, carácter a carácter, com a etiqueta que compõe do registo.
   - id: data-da-agenda
     why: >-
       Datas do registo da agenda e do calendário das fontes: quando um item foi

@@ -45,7 +45,6 @@
 import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
-import Provenance from '../components/Provenance.astro';
 import Marcador from '../components/Marcador.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import HistoricoDaLinha from '../components/HistoricoDaLinha.astro';
@@ -646,13 +645,27 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
         lingua={unidade.lingua}
       />
     </h1>
-    {/* O selo ao lado do valor de cabeça, na sua própria página. §5.3 não abre
-        exceção de página: a porta é uma âncora para o bloco da prova, aqui
-        mesmo. O quadrado desenha o estado desta linha, como em qualquer outro
-        sítio onde o valor apareça. */}
-    <p class="linha-selo">
-      <Provenance id={id} lang={lang} ancora="#prova" />
-    </p>
+    {/* ------------------------------------------------------------------
+        O SELO DEBAIXO DO NÚMERO SAIU (F1.10, §7.2, 09.09.2026)
+        ------------------------------------------------------------------
+        Viveu aqui desde a v2, com a porta a apontar para `#prova` na própria
+        página: «estar já na página certa não dispensa a porta, dispensa a
+        viagem». O leitor de 04.09 mediu o preço dessa fidelidade: a página de
+        uma linha tinha DUAS coisas chamadas «fonte» — este selo, debaixo do
+        valor, e o campo `source` no recibo — e nenhuma delas dizia a mesma
+        coisa que a outra. O §7.2 decide: «o selo "FONTE" é só a porta para a
+        linha; a linha do publicador chama-se "publicado por"; na página da
+        linha, o selo debaixo do número, que liga a `#prova` na mesma página,
+        sai».
+
+        NADA SE PERDE, e é por isso que o selo podia sair daqui e não de outro
+        sítio qualquer: uma porta para a divisão onde já se está é a única que
+        não leva a lado nenhum. O estado da proveniência desta linha continua a
+        dizer-se, no recibo, com o marcador no campo que falta; o publicador
+        continua a ler-se, com o rótulo novo; e o portão já isentava as páginas
+        do livro-razão da exigência de um selo ao pé de cada valor, pela mesma
+        razão («a página de uma linha É a linha»).
+        ------------------------------------------------------------------ */}
     {/* O ESTADO DA FONTE AO PÉ DO SELO, quando ela não responde (bloco F0.11).
 
         O selo diz de onde veio o número e leva à prova; sozinho, ao lado de um

@@ -24,6 +24,7 @@ import CampoDaLinha from '../components/CampoDaLinha.astro';
 import NomeDaMedida from '../components/NomeDaMedida.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
 import Marcador from '../components/Marcador.astro';
+import CampoDeBusca from '../components/inicio/CampoDeBusca.astro';
 import { allClaims, provenienciaIncompleta } from '../lib/ledger.mjs';
 import { ESTUDO_DOS_CONCELHOS } from '../lib/livro-concelhos.mjs';
 import { caminhoDoLivro } from '../lib/livro.mjs';
@@ -229,34 +230,27 @@ const p = prova(lang);
         Filtrar do lado do servidor pediria uma página por pergunta, e este sítio
         é estático. O relatório do bloco escreve-o.
         ---------------------------------------------------------------------- */}
-    <form
-      class="livro-busca"
-      role="search"
-      method="get"
-      action={path}
-      data-livro-indice={`/dados/livro-indice.${lang}.json`}
-    >
-      {/* O RÓTULO É PROSA DA CASA, E DIZ QUE O É (leitura a frio do F1.4,
-          Major 11). `<label>` não está na definição de bloco da régua da voz, e
-          por isso este texto visível não podia ser declarado; `data-voz`
-          recolhe-o. */}
-      <label class="livro-busca-k" for="livro-busca"><span data-voz>{s.livro.buscaRotulo}</span></label>
-      <span class="livro-busca-linha">
-        <input
-          class="livro-busca-campo"
-          id="livro-busca"
-          name="q"
-          type="search"
-          autocomplete="off"
-          data-livro-busca
-        />
-        {/* O VERBO DO BOTÃO É O QUE JÁ EXISTE. `ambito.pesquisaSubmeter` é a
-            palavra do botão da pesquisa dos concelhos, e é a mesma acção: uma
-            chave nova para a mesma palavra era a mesma decisão tomada duas
-            vezes, e duas coisas para manter em dia. */}
-        <button class="livro-busca-submeter" type="submit"><span data-voz>{s.ambito.pesquisaSubmeter}</span></button>
-      </span>
-    </form>
+    {/* A CAIXA É A MESMA DAS OUTRAS DUAS (F1.10, §2.6, 09.09.2026).
+        O §2.6 escreve que «o índice do livro-razão tem o seu, com o mesmo
+        aspeto», e esta é a maneira de o cumprir sem o repetir: a marcação era a
+        terceira do sítio e a sua família de classes (`.livro-busca-*`) tinha,
+        valor a valor, as mesmas regras de folha da primeira. Passa a render a
+        caixa comum, e o aspeto é o mesmo por construção. O que ela procura
+        continua a ser desta página: as 2 916 linhas, pelo índice que o
+        `data-livro-indice` nomeia.
+
+        O VERBO DO BOTÃO É O QUE JÁ EXISTE. `ambito.pesquisaSubmeter` é a palavra
+        do botão da busca dos concelhos, e é a mesma acção: uma chave nova para a
+        mesma palavra era a mesma decisão tomada duas vezes. */}
+    <CampoDeBusca
+      rotulo={s.livro.buscaRotulo}
+      submeter={s.ambito.pesquisaSubmeter}
+      id="livro-busca"
+      name="q"
+      accao={path}
+      forma={{ 'data-livro-indice': `/dados/livro-indice.${lang}.json` }}
+      campo={{ 'data-livro-busca': true }}
+    />
   </div>
 
   <div class="linha">
