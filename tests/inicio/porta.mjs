@@ -242,8 +242,35 @@ const conta = (nome, passa, prova) => celulas.push({ nome, passa: !!passa, prova
 
 const nav = await chromium.launch({ headless: true });
 
-async function pagina(rota, largura, altura = 844) {
-  const ctx = await nav.newContext({ viewport: { width: largura, height: altura } });
+/**
+ * O DEDO É UM APONTADOR GROSSO, E UMA CÉLULA QUE MEDE UM ALVO DE TOQUE TEM DE O
+ * DIZER AO NAVEGADOR (F1.10, 08.09.2026)
+ * ---------------------------------------------------------------------------
+ * A folha desta casa dá os 44 px de alvo dentro de `@media (pointer: coarse)`,
+ * que é a regra certa: num cursor uma ligação de barra não cresce, e crescer ali
+ * empurrava linhas. Um Chromium com `viewport` e mais nada declara um apontador
+ * FINO, e por isso essa regra nunca valia nesta régua: a A15 media o alvo da
+ * porta dos estudos em 30,4 px e falhava por uma altura que o telemóvel dá.
+ * Medido nos dois: 57,9 × 27,2 px com o apontador fino e 57,9 × 44,0 px com o
+ * grosso, na mesma construção e na mesma largura.
+ *
+ * `toque` NÃO É O DEFEITO desta função, e é de propósito: as células da
+ * geometria (A1, A2, A11) medem a COMPOSIÇÃO, e a composição é a mesma nos dois
+ * apontadores menos nas alturas de alvo, que não são o que elas medem. Quem pede
+ * o apontador grosso é a célula que mede um alvo de toque, e é a A15. A mesma
+ * decisão está tomada em `tests/inicio/correcoes-a.mjs`, que corre as suas
+ * células de telemóvel com `devices['iPhone 13']`.
+ *
+ * @param {string} rota
+ * @param {number} largura
+ * @param {number} [altura]
+ * @param {{ toque?: boolean }} [opcoes]
+ */
+async function pagina(rota, largura, altura = 844, opcoes = {}) {
+  const ctx = await nav.newContext({
+    viewport: { width: largura, height: altura },
+    ...(opcoes.toque ? { hasTouch: true, isMobile: true } : {}),
+  });
   const p = await ctx.newPage();
   p.__ctx = ctx;
   await p.goto(base + rota, { waitUntil: 'networkidle' });
@@ -1134,7 +1161,10 @@ async function corre() {
        e é essa a razão pela qual a porta do menu não passava esta medida. Do que
        fica, mede-se a que está MAIS ACIMA, em píxeis de documento e em ecrãs de
        664 px, e depois toca-se-lhe: a página que chega tem de ser o arquivo. */
-    const pEstudos = await pagina(ed.rota, 390, ALTURA_PEQUENA);
+    /* COM O APONTADOR GROSSO, que é o que a promessa desta célula pede: ela
+       mede um alvo de TOQUE, e a folha só dá os 44 px onde o apontador é grosso.
+       A razão inteira está em `pagina()`, mais acima. */
+    const pEstudos = await pagina(ed.rota, 390, ALTURA_PEQUENA, { toque: true });
     const portasDosEstudos = await pEstudos.evaluate((alvo) => {
       const fechado = (el) => {
         for (let p = el.parentElement; p; p = p.parentElement) {
