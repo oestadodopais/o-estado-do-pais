@@ -30,6 +30,15 @@ check:lugar · 2 falha(s):
   ✗ §7.10 · «[a verificar]» sem definição ao pé do primeiro: 1, acima do teto 0.
 
 check:lugar · 1 falha(s):
+  ✗ 8.4 · definições de painel fora da declaração: 1, acima do teto 0.
+
+check:lugar · 1 falha(s):
+  ✗ 8.4 · definições de painel fora da declaração: 1, acima do teto 0.
+
+check:lugar · 1 falha(s):
+  ✗ 8.4 · definições de painel fora da declaração: 1, acima do teto 0.
+
+check:lugar · 1 falha(s):
   ✗ L3 · palavras fora do vocabulário fechado: 1, acima do teto 0.
 
 check:lugar · 1 falha(s):
@@ -45,7 +54,10 @@ check:lugar · 1 falha(s):
     mordeu                     d84  0 → 1  um bloco de origem A MAIS na página (a régua ignorava os que sobravam)
     mordeu                     d84  0 → 1  a data de leitura fora do campo dela, com o texto na mesma (a régua procurava-a no bloco todo)
     mordeu                     d84  0 → 1  o marcador tirado de dentro de uma definição (o texto declarado di-lo e a página não)
+    mordeu                     d84  0 → 1  texto colado ao publicador de uma origem (a contenção não via, a igualdade vê)
+    mordeu                     d84  0 → 1  texto colado ao documento de uma origem (a contenção não via, a igualdade vê)
+    mordeu                     d84  0 → 1  texto colado ao excerto de uma origem (a contenção não via, a igualdade vê)
     mordeu                     l3   0 → 1  a palavra proibida na descrição pública do <head> (a L3 começava no <body>)
     mordeu                     l1   2170 → 2171  a porta da conferência de volta ao endereço da própria linha (o padrão maior da L1)
 
-  11 de 11 morderam, e todas repuseram byte a byte.
+  14 de 14 morderam, e todas repuseram byte a byte.
