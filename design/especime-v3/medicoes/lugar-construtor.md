@@ -143,11 +143,30 @@ onde tinha 10, e a célula voltou a **0 pares em 21 leituras**.
 | 5 · a data de leitura das origens | sai da linha à vista e entra na dobra do excerto, onde é o «acedido a» daquela citação; o rótulo continua vivo, sozinho, dentro da dobra, com a classe que a linha da origem já tinha; a régua 8.4 continua a exigi-la, agora por igualdade | a célula 8.4 a **0** com 52 definições e 60 origens |
 | 6 · as oito linhas de cobertura e de estrutura | seis são cobertura e saem da voz do leitor (`retirada`, com a descrição pública reescrita para dizer o que a página tem); duas são a estrutura da página e ficam, reclassificadas para `navegacao` com a razão | inventário e `check:voz` |
 | 7 | é o 12 da leitura das definições | ver a linha do achado 12, acima |
-| 8 · as dez linhas vivas que o leitor não achou | **as dez rendem-se**, e o que faltava era o pacote: `check:voz` confere cada linha viva contra o `dist/` inteiro e não contra uma amostra de 31 páginas, e a construção fecha quando uma não se rende. Nesta cabeça: **999 linhas com bloco, 782 vivas, todas rendidas** | a saída do `check:voz` |
+| 8 · as dez linhas vivas que o leitor não achou | **as dez rendem-se**, e cada uma foi conferida contra o `dist/` inteiro (7 239 páginas), uma a uma, e não só pela conta global do `check:voz` (**999 linhas com bloco, 782 vivas, todas rendidas**). O que faltava era o pacote, que levava 31 páginas | a tabela abaixo, com o número de páginas e uma delas |
 | 9 · a conta do registo das revisões | reconciliada por commit, e a secção nova do registo escreve-a: **179** linhas com `bloco` = `lugar` na cabeça `2da5212d` (o mesmo número que a leitura contou), das quais 158 de texto novo e 21 reclassificadas de outro bloco; as quatro entradas que diziam 39, 10, 4 e 26 cobriam quatro dos dezassete commits deste ramo que mexeram no inventário. Depois desta sessão são **213** | `git show -U0 <sha> -- INVENTARIO-FRASES.md` por commit, e o conjunto dos textos da cabeça menos o dos acrescentados é **vazio** |
 | 10 · «nenhum publicador oficial calcula» | a frase da fronteira do domínio passa a dizer a ausência na forma da casa («para a qual não há número público»), pela regra 6 da carta; onde a casa procurou continua no cartão T4a da mesma página | o cartão rende-se **1 vez em cada edição**, com «procurado em» e o código do indicador |
 | 11 · a frase dos quatro níveis | fica `navegacao`, com a razão escrita na linha | inventário |
 | 12 · fora da planta V1 | os dois títulos da página dos números e as duas cadeias de «as medidas estão em» passam a `navegacao`, com a razão | inventário |
+
+
+**As dez linhas do achado 8, uma a uma, contra o `dist/` inteiro.** Quatro delas
+não estão em texto de página nenhuma: estão em atributos (a descrição pública do
+`<head>` e a dica de uma chave da prova), que é a razão por que uma leitura que
+só olhe para o corpo das páginas não as encontra.
+
+| a linha, na cabeça `2da5212d` | páginas que a rendem | uma delas |
+|---|---:|---|
+| 232 · «Os números e as fontes dos concelhos · O Estado do País» | 1 | `/livro-razao/concelhos` |
+| 233 · a gémea inglesa | 1 | `/en/ledger/municipalities` |
+| 1374 · «Uma área de governo é um ministério; um domínio é um assunto da carta dos conteúdos.» | 1 | `/areas` |
+| 1375 · a gémea inglesa | 1 | `/en/areas` |
+| 1571 · «estudos e medidas na página desta área de governo» | 1 | `/areas`, na dica de uma chave da prova |
+| 1573 · a gémea inglesa | 1 | `/en/areas` |
+| 2693 · a ausência da DGAL com a série e a exclusão | 9 | `/municipios/penedono` |
+| 2705 · «PT Economia, investidores e portas abertas no concelho de Évora.» | 2 | `/estudos/evora-economia-investidores-portas-abertas-2026` |
+| 2706 · «PT O que foi orçamentado, o que foi pago e o que ficou em dívida no concelho de Évora.» | 2 | `/estudos/evora-orcamentado-pago-devido-2025` |
+| 2718 · a gémea inglesa da 2693 | 9 | `/en/municipalities/penedono` |
 
 ### O que ficou fora, e porquê
 
