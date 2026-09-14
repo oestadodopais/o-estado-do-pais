@@ -496,6 +496,25 @@ h1.cabeca-h1[data-citadas]:not([data-citadas='1']) {
   padding: 0 0 4px;
   display: flex;
   gap: 1px;
+  /* --------------------------------------------------------------------------
+     A FILA É O BLOCO QUE CONTÉM O QUE ESTÁ DENTRO DELA (14.09.2026, medido)
+     --------------------------------------------------------------------------
+     A célula «sem transbordo horizontal» da matriz falhava nas quatro larguras
+     abaixo de 1280 desde antes desta passagem, e a causa mediu-se aqui: os
+     `<span class="vh">` do texto oculto de cada cartão (o nome do conjunto no
+     contador, e os rótulos dos selos) são `position: absolute`, e sem um
+     antepassado posicionado o bloco que os contém era o `<body>`. Um elemento
+     absoluto só é cortado por um `overflow` que esteja na cadeia do bloco que o
+     contém: os destes cartões não estavam, e por isso a página inteira ganhava a
+     largura da fila (859 px a 390, 840 a 320, 405 a 768, 109 a 1024) e o leitor
+     podia arrastá-la de lado.
+
+     `position: relative` faz da fila o bloco que os contém, e o `overflow-x`
+     dela passa a cortá-los. Medido com o `dist/` desta cabeça, a 390:
+     `document.documentElement.scrollWidth` de 1 249 para 390, e
+     `window.scrollTo(2000, 0)` deixa de mover a página. Não é uma dispensa nem
+     um `overflow: hidden` no corpo: é o sítio certo do corte. */
+  position: relative;
   overflow-x: auto;
   overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
@@ -3257,7 +3276,13 @@ a.porta:hover .porta-abrir {
    datas: é o recibo da frase de cima, não a frase. O excerto fica atrás de uma
    dobra fechada, e por isso não custa um píxel a quem só quer a definição. */
 .def-origem {
-  margin: 0 0 10px;
+  /* CATORZE, E NÃO DEZ (14.09.2026, medido). Com a data de leitura fora da linha
+     à vista, a linha da origem encurtou e o comando da dobra subiu: as áreas de
+     toque de 44 px do documento de uma origem e do comando da origem seguinte
+     passaram a sobrepor-se, e duas áreas de toque sobrepostas não são um alvo
+     maior (é a célula da matriz que o mede, e foi ela que o disse). Com 14 px os
+     centros ficam a 46 px, que é mais do que os 44 que as duas áreas ocupam. */
+  margin: 0 0 14px;
 }
 .def-origem-linha {
   font-family: var(--f-instr);
@@ -3272,7 +3297,10 @@ a.porta:hover .porta-abrir {
   text-transform: lowercase;
 }
 .def-excerto {
-  margin: 2px 0 0;
+  /* CATORZE, PELA MESMA MEDIÇÃO DE 14.09.2026 e pela mesma razão da regra de
+     cima: entre a porta do documento e o comando da dobra havia 2 px, e as duas
+     áreas de toque de 44 px sobrepunham-se em 10 px. */
+  margin: 14px 0 0;
 }
 .def-excerto-abrir {
   display: inline-flex;

@@ -1,0 +1,363 @@
+  passa  estado inicial · País · Relance
+         pais · relance · 0 peças
+  passa  8.15 · a manchete de `/` é uma frase com dois algarismos selados no máximo
+         «A dívida pública é 89,7% do PIB e a taxa de desemprego é 6% da população ativa.» · 2 algarismo(s) selado(s), 2 selo(s), 1 frase(s)
+  passa  2l · a manchete da União leva as duas contagens da Emenda 16
+         Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9. · painel_fora_do_limiar + painel_dentro_do_limiar
+  passa  a área de leitura da União com 13 leituras do Procedimento e 21 ao todo (Emenda 16)
+         13 do Procedimento · 21 ao todo
+  passa  8.16 · a primeira página não tem leitura nenhuma dos painéis
+         em /: 0 leitura(s), marca «null»
+  passa  ordem do teclado · porta do concelho → faixa → portas
+         porta do concelho 21 · faixa 23 · portas 99 · 124 paragens
+  passa  mudança · estado de defeito · país
+         / · pais
+  passa  mudança · âmbito → modo concelho
+         /?ambito=municipio · pais
+  passa  a página não tem comando de estado nenhum
+         0 linha(s) de comando · 0 comando(s) de âmbito · 0 de densidade
+  passa  `?densidade=leitura` já não muda nada em `/` (itens 8.14 e 8.16)
+         sem o estado: 0 leitura(s), 0 aberta(s) · com o estado: 0 leitura(s), 0 aberta(s) · bloco «pais» nos dois
+  passa  para trás, cinco vezes
+         cada passo repôs o seu estado
+  passa  para a frente
+         /?ambito=municipio
+  passa  recarga em cada estado
+         / → pais · /?ambito=municipio → pais
+  passa  uma leitura abre só a sua
+         1 abertas · toque no cartão «divida-publica-2025»
+  passa  ordem do teclado com uma leitura aberta · faixa → o <summary> dela → rodapé
+         «divida-publica-2025» aberta: true · faixa 21 · <summary> 67 · rodapé 72 · 89 paragens
+  passa  8.12 e 8.14 · em repouso nenhuma leitura aberta e nenhum cabeçalho de painel à vista
+         0 de 21 abertas · marca da área «sim» · linha do repouso à vista: true · 0 de 2 cabeçalhos de painel à vista
+  passa  valor inválido · ambito=lisboa
+         caiu em pais/relance, endereço normalizado para "/", e o valor não é ecoado na página
+  passa  valor inválido · densidade=fundo
+         caiu em pais/relance, endereço normalizado para "/", e o valor não é ecoado na página
+  passa  valor inválido · ambito com injecção
+         caiu em pais/relance, endereço normalizado para "/", e o valor não é ecoado na página
+  passa  valor inválido · o plural de um valor válido
+         caiu em pais/relance, endereço normalizado para "/", e o valor não é ecoado na página
+  passa  valor inválido · o prefixo sem concelho
+         caiu em pais/relance, endereço normalizado para "/", e o valor não é ecoado na página
+  passa  valor inválido · ambito de 2 000 caracteres
+         caiu em pais/relance, endereço normalizado para "/", e o valor não é ecoado na página
+  passa  edição pt · estado do endereço
+         municipio · relance
+  passa  edição pt · a ligação de idioma leva o estado
+         /en?ambito=municipio
+  passa  edição en · estado do endereço
+         municipio · relance
+  passa  edição en · a ligação de idioma leva o estado
+         /?ambito=municipio
+  passa  largura 320 · sem transbordo horizontal
+         scrollWidth − clientWidth = 0
+  passa  largura 390 · sem transbordo horizontal
+         scrollWidth − clientWidth = 0
+  passa  largura 768 · sem transbordo horizontal
+         scrollWidth − clientWidth = 0
+  passa  largura 1024 · sem transbordo horizontal
+         scrollWidth − clientWidth = 0
+  passa  largura 1280 · sem transbordo horizontal
+         scrollWidth − clientWidth = 0
+  passa  tema claro · papel e tinta
+         papel rgb(246, 247, 244) · tinta rgb(23, 25, 27)
+  passa  tema claro · o contorno do marcador é a tinta do tema
+         contorno rgb(23, 25, 27)
+  passa  tema escuro · papel e tinta
+         papel rgb(21, 23, 26) · tinta rgb(236, 238, 234)
+  passa  tema escuro · o contorno do marcador é a tinta do tema
+         contorno rgb(236, 238, 234)
+  passa  movimento reduzido · a leitura não tem transição
+         transition-duration 1e-05s
+  passa  o selo de cada leitura é alvo de 44×44
+         21 de 21 selos de leitura em 21 cartão(ões) · mínimo 52.5×44
+  passa  nenhum selo dentro de outro alvo
+         0 aninhados em 21
+  passa  nenhum par de áreas de toque sobrepostas na leitura
+         0 pares em 21 leitura(s) abertas uma a uma
+  passa  cada leitura tem o seu selo e uma porta por origem declarada (09.09.2026, no lugar do «selo maior»)
+         21 de 21 leitura(s) abertas · 25 bloco(s) de origem · 0 sem selo · 0 sem origem · 0 com um bloco de origem que não tem uma porta · 0 com uma porta abaixo de 44px
+  passa  sem JavaScript · /
+         completo e correcto: 5 cartão(ões) na faixa, 0 leituras de painel
+  passa  sem JavaScript · nenhuma nota de mecânica · /
+         nota no documento: false
+  passa  sem JavaScript · /?ambito=regiao:alentejo
+         mostra o defeito (pais), com os comandos como ligações que abrem: 
+  passa  sem JavaScript · nenhuma nota de mecânica · /?ambito=regiao:alentejo
+         nota no documento: false
+  passa  sem JavaScript · /?ambito=municipio:beja
+         mostra o defeito (pais), com os comandos como ligações que abrem: 
+  passa  sem JavaScript · nenhuma nota de mecânica · /?ambito=municipio:beja
+         nota no documento: false
+  passa  sem JavaScript · /?ambito=municipio
+         mostra o defeito (pais), com os comandos como ligações que abrem: 
+  passa  sem JavaScript · nenhuma nota de mecânica · /?ambito=municipio
+         nota no documento: false
+  passa  sem JavaScript · /uniao-europeia
+         completo e correcto: 21 leituras, 0 valores, 21 selos
+  passa  sem JavaScript · nenhuma nota de mecânica · /uniao-europeia
+         nota no documento: false
+  passa  2l · a data da reconferência saiu da primeira página e do cabeçalho, e vive dentro do painel
+         em / : 0 na página, 0 no cabeçalho · em /uniao-europeia: 1 leitura(s) dentro de #painel, marca «data-de-atualizacao», texto «07.09.2026», 0 âncora(s)
+  passa  2l · Emenda 17 · por baixo do mapa uma só linha, com o selo
+         «308 concelhos · CAOP 2025 fonte · calculado · Direção-Geral do Território (DGT)» · ficha 56px · camada de aparelho 0 · citação na página 0 · CSV false
+  passa  2l · RETIRADA (Emenda 20a) · as dicas descreviam o mapa de pontos, que saiu da primeira página
+         0 dicas no documento · aria-describedby null · 29 áreas e 0 pontos no mapa da primeira página · a leitura pelo teclado passou a mapa-distritos.mjs M6c
+  passa  largura 768 · a régua de uma leitura aberta tem largura de régua
+         13 régua(s) em 13 leitura(s) com limiar, abertas uma a uma · a mais estreita 686px · transbordo 0
+  passa  largura 1280 · a régua de uma leitura aberta tem largura de régua
+         13 régua(s) em 13 leitura(s) com limiar, abertas uma a uma · a mais estreita 715px · transbordo 0
+  passa  largura 1280 · a pesquisa com a caixa vazia não mostra nada, e um resultado com e sem página
+         caixa vazia: 0 resultado(s) · a lista distingue: false · com «beja» escrito: Beja (porta true, «null»)
+  passa  largura 390 · a pesquisa com a caixa vazia não mostra nada, e um resultado com e sem página
+         caixa vazia: 0 resultado(s) · a lista distingue: false · com «beja» escrito: Beja (porta true, «null»)
+  passa  2m · a primeira página é sempre `inteiro`, e o cartão localizador vive na página do concelho
+         país: inteiro, 518px numa coluna de 518px, 1 mapa, ficha true, texto de cartão 0 · pesquisa aberta: inteiro, 518px numa coluna de 518px, 1 mapa, ficha true, texto de cartão 0 · /municipios/evora: localizador 170px dentro do cartão (moldura 1px), 0 fichas, «trocar de concelho» → /municipios
+  passa  o rótulo do distrito segue uma regra só nos 308 (ISSUES I18)
+         Beja «distrito de Beja» · Horta «Ilha do Faial» · Lagoa «Ilha de São Miguel» · Évora «distrito de Évora · Alentejo Central»
+  passa  ISSUES I20 · 3 estados × 5 larguras sem transbordo, e o rótulo dentro da régua
+         15 de 15 a zero · 65 rótulo(s) de régua medidos · pais-relance@320:0 · pais-relance@390:0 · pais-relance@768:0 · pais-relance@1024:0 · pais-relance@1280:0 · pesquisa-aberta@320:0 · pesquisa-aberta@390:0 · pesquisa-aberta@768:0 · pesquisa-aberta@1024:0 · pesquisa-aberta@1280:0 · uniao-europeia@320:0 · uniao-europeia@390:0 · uniao-europeia@768:0 · uniao-europeia@1024:0 · uniao-europeia@1280:0
+  passa  2i·1 · a primeira página não tem região, e um endereço antigo leva à página dela
+         0 cabeças e 0 painéis de região · índice das regiões → /regioes (no menu: true) · banda e pastilhas fora da página (0 pontos, 0 pastilhas) · destinos /regioes/alentejo, /regioes, /regioes
+  passa  2i·2 · a palavra do provisório segue a edição, nas duas
+         pt {"provisório":10} · en {"provisional":10}
+  passa  2j·a · RETIRADA (item 8.17b) · as áreas da unidade são iguais e nenhuma vem cheia (Emendas 3 e 10)
+         em /municipios/evora: 0 ponto(s) e 14 <path> de área · enchimento none · contorno rgb(23, 25, 27)|1px · 14 com porta
+  passa  2j·a · a área do concelho é um anel na página dele, e na primeira página as 29 áreas são uma só
+         Évora · 1280 · localizador: 1 anel em «evora» · enchimento none (as outras none, todas iguais true) · anel 3 contra 1 · Évora · 390: 1 anel em «evora» · enchimento none (as outras none, todas iguais true) · anel 3 contra 1 · Évora · 1280 · en: 1 anel em «evora» · enchimento none (as outras none, todas iguais true) · anel 3 contra 1 · primeira página: 0 pontos, 29 áreas com 1 estilo (none|rgb(23, 25, 27)|1px)
+  passa  2l · Emenda 15 · a neutralidade e a cobertura saíram do mapa, em todas as posturas
+         País · inteiro (inteiro): 0 neutras, 0 de cobertura · pesquisa aberta · inteiro (inteiro): 0 neutras, 0 de cobertura · Évora · localizador (localizador): 0 neutras, 0 de cobertura · Évora · localizador · 390 (localizador): 0 neutras, 0 de cobertura · País · 390 (inteiro): 0 neutras, 0 de cobertura
+  passa  2i·3d · RETIRADA (Emenda 20c) · o mapa rende-se nas duas larguras, toma a janela no telemóvel (I81), e não tem pontos
+         320: tela 320px · 390: tela 390px · 430: tela 430px · 3/3 à largura da janela · 29 áreas com caixa, 0 pontos, 0 leituras, 29 nomes nas listas · 1280: tela 518px, 29 áreas · os alvos das 29 passaram a mapa-distritos.mjs M1 e M2, medidos pela área inscrita
+  passa  2i·5 · o espaço age na leitura e não rola a página, e o que activa é um comando a sério
+         um toque num cartão → 1 de 21 aberta(s); espaço no resumo dela → 0 · a janela passou de 1068 para 435 px, e o esperado era 435 (o teto da rolagem depois de fechar é 435: 633 px são a página a encurtar, 0 são a tecla) · o comando da leitura é <summary> · ligações com papel de botão: 0
+  passa  2i·5 · o que submete a busca da primeira página é um botão a sério
+         o botão da busca é «button type=submit» · ligações com papel de botão: 0
+  passa  2i·5 · nenhuma régua com papel de imagem e sem nome acessível
+         13 réguas · 13 com aria-hidden · 0 com role="img" sem nome · 0 com conteúdo focável dentro
+  passa  2j · Emenda 12 · claro por defeito, com o sistema em escuro e sem escolha
+         pt: data-theme null · papel rgb(246, 247, 244) · guardado null · light:true dark:false · en: data-theme null · papel rgb(246, 247, 244) · guardado null · light:true dark:false
+  passa  2j · Emenda 12 · a escolha do tema persiste, nas duas edições
+         pt: carregou rgb(21, 23, 26) (dark) · recarga rgb(21, 23, 26) · /metodo rgb(21, 23, 26) · voltou a claro rgb(246, 247, 244) (light) · en: carregou rgb(21, 23, 26) (dark) · recarga rgb(21, 23, 26) · /en/method rgb(21, 23, 26) · voltou a claro rgb(246, 247, 244) (light)
+  passa  2j · Emenda 12 · sem JavaScript o controlo do tema não se vê, e a página é clara
+         existe true · hidden true · altura 0 · data-theme null
+  passa  2j · Emenda 13 · a fila de estados saiu da cabeça, e as contagens ficaram
+         0 filas em / e 0 em /uniao-europeia · chaves da prova na manchete: painel_fora_do_limiar, painel_dentro_do_limiar · 13 marcadores em 13 cartões pintados e 13 palavras de estado na faixa
+  passa  2j · as leituras sem caixas, separadas por fios de 1px
+         13 leituras · 0 com moldura · 0 sem o fio de 1px
+  passa  2j · os algarismos do valor têm tecto de 56px e crescem sem saltos
+         320: 30.0px (menor 30.0) · 390: 30.0px (menor 30.0) · 768: 30.0px (menor 30.0) · 1024: 40.0px (menor 40.0) · 1280: 40.0px (menor 40.0)
+  passa  2k · as divulgações por irmão: aria-controls resolve e aria-expanded acompanha
+         pt: 390 · nav-principal resolve:true irmão:true false→true corpo:true · 1280 · comando à vista:false navegação à vista:true · en: 390 · nav-principal resolve:true irmão:true false→true corpo:true · 1280 · comando à vista:false navegação à vista:true
+  passa  2l · a banda desenha duas referências, e os dois algarismos vão marcados
+         saldo-da-balanca-corrente-2025: 2 referências em 2 posições · «limiar da Comissão −4/+6%» · taxa-de-cambio-efectiva-real-2025: 2 referências em 2 posições · «limiar da Comissão −3/+3%»
+  passa  2l · Emenda 16 · o Painel Social tem oito leituras, sem cor, sem o valor repetido e com o selo fora de outro alvo
+         8 leituras, todas com selo (2 acrescentam a porta para o domínio) · 0 valores (o valor vive no cartão da faixa) · selo 52.5×44px · aninhados 0 · marcadores 0
+  passa  Emenda 14 · um concelho sem estudos rende as suas medidas e mais nada
+         /municipios/agueda: 8 cartões e 8 leituras, emparelhados pela ordem true (0 cartão(ões) sem valor) · secções de trabalho 0 · distância 1 · colunas de corpo 0 · cartão do mapa 1
+  passa  2l · Emenda 17 · o texto à esquerda e o mapa à direita, de 1024 para cima
+         1024 pt: 582px 340.094px · mapa a 643px (340px) · transbordo 0 · 1024 en: 582px 340.094px · mapa a 643px (340px) · transbordo 0 · 1180 pt: 582px 490px · mapa a 646px (490px) · transbordo 0 · 1180 en: 582px 490px · mapa a 646px (490px) · transbordo 0 · 1280 pt: 550px 518px · mapa a 668px (518px) · transbordo 0 · 1280 en: 550px 518px · mapa a 668px (518px) · transbordo 0
+  passa  2l · as chaves novas da prova: a página e o portão dizem o mesmo
+         fora 4/4 · dentro 9/9 · total 13 · social 8
+  passa  2l · Emenda 15 · zero frases de autorreferência em todas as rotas medidas
+         1384 rotas medidas · autorreferência > 0 em 0 · por classificar em 0 rota(s) · /: conteúdo 7 · navegação 36 · autorreferência 0 · /en: conteúdo 7 · navegação 36 · autorreferência 0
+  passa  2m · o mapa enche a coluna da cabeça, e a legenda fica fora do desenho
+         1024 pt: coluna 340.1 · mapa 340.1×448.4 em x=643 · legenda em x=41 y=1022.6, cruza o desenho: false · transbordo 0 · 1024 en: coluna 340.1 · mapa 340.1×448.4 em x=643 · legenda em x=41 y=985.5, cruza o desenho: false · transbordo 0 · 1180 pt: coluna 490 · mapa 490×646.1 em x=646 · legenda em x=44 y=1016.9, cruza o desenho: false · transbordo 0 · 1180 en: coluna 490 · mapa 490×646.1 em x=646 · legenda em x=44 y=1014.5, cruza o desenho: false · transbordo 0 · 1280 pt: coluna 518 · mapa 518×683 em x=668 · legenda em x=94 y=1051.5, cruza o desenho: false · transbordo 0 · 1280 en: coluna 518 · mapa 518×683 em x=668 · legenda em x=94 y=1051.5, cruza o desenho: false · transbordo 0 · 1440 pt: coluna 518 · mapa 518×683 em x=748 · legenda em x=174 y=1051.5, cruza o desenho: false · transbordo 0 · 1440 en: coluna 518 · mapa 518×683 em x=748 · legenda em x=174 y=1051.5, cruza o desenho: false · transbordo 0
+  passa  2m · a busca está à vista por cima do mapa, e o mapa fica onde estava
+         1024 pt: /?ambito=municipio · gaveta da busca não existe, busca à vista true · 5 cartão(ões) na faixa, 0 área(s) de leitura · mapa 340.1 na coluna de 340.1 (no país 340.1) · caixa das 29 áreas 325.2×419.8 → 325.2×419.8 · transbordo 0 · 1024 en: /en/?ambito=municipio · gaveta da busca não existe, busca à vista true · 5 cartão(ões) na faixa, 0 área(s) de leitura · mapa 340.1 na coluna de 340.1 (no país 340.1) · caixa das 29 áreas 325.2×419.8 → 325.2×419.8 · transbordo 0 · 1280 pt: /?ambito=municipio · gaveta da busca não existe, busca à vista true · 5 cartão(ões) na faixa, 0 área(s) de leitura · mapa 518 na coluna de 518 (no país 518) · caixa das 29 áreas 495.3×639.5 → 495.3×639.5 · transbordo 0 · 1280 en: /en/?ambito=municipio · gaveta da busca não existe, busca à vista true · 5 cartão(ões) na faixa, 0 área(s) de leitura · mapa 518 na coluna de 518 (no país 518) · caixa das 29 áreas 495.3×639.5 → 495.3×639.5 · transbordo 0 · 1440 pt: /?ambito=municipio · gaveta da busca não existe, busca à vista true · 5 cartão(ões) na faixa, 0 área(s) de leitura · mapa 518 na coluna de 518 (no país 518) · caixa das 29 áreas 495.3×639.5 → 495.3×639.5 · transbordo 0 · 1440 en: /en/?ambito=municipio · gaveta da busca não existe, busca à vista true · 5 cartão(ões) na faixa, 0 área(s) de leitura · mapa 518 na coluna de 518 (no país 518) · caixa das 29 áreas 495.3×639.5 → 495.3×639.5 · transbordo 0
+  passa  Emenda 19e · RETIRADA (Emenda 20a, ISSUES I70 fechada) · a densidade dos pontos deixou de ser uma pergunta desta página
+         0 pontos e 29 áreas na coluna de 518px, 29 ligações · o maior lado da CAIXA das áreas vai de 2.3px a 272.26px, e o alvo já não se mede pela caixa: quantas chegam aos 44 px de área inscrita é mapa-distritos.mjs M1 e M2 (I82)
+  passa  2m · o Escape da pesquisa limpa a caixa, e não há mais nenhum Escape na página
+         caixa «» · âmbito municipio · endereço «/?ambito=municipio» · 0 comandos de fechar no documento
+  passa  2m · RETIRADA (Emenda 20a) · o anel de leitura era do mapa de pontos, que saiu da primeira página
+         0 anéis e 0 caixas de leitura no documento · 0 pontos · o enchimento das 29 áreas é none · o anel do concelho escolhido continua medido em /municipios/evora
+  passa  2m · a lede nomeia as medidas que o painel marca fora, pela ordem do painel, nas duas edições
+         pt: manchete 4 · lista de 4 — «dívida pública | posição de investimento internacional | custo unitário do trabalho | preços da habitação» · cartões fora: «dívida pública | posição de investimento internacional | custo unitário do trabalho | preços da habitação» · ano 2025, em todas as unidades dos cartões: true · lede «Fora do limiar da Comissão: dívida pública, posição de investimento internacional, custo unitário do trabalho e preços da habitação, em 2025.» · en: manchete 4 · lista de 4 — «government debt | net international investment position | unit labour cost | house prices» · cartões fora: «government debt | net international investment position | unit labour cost | house prices» · ano 2025, em todas as unidades dos cartões: true · lede «Outside the Commission threshold: government debt, net international investment position, unit labour cost and house prices, in 2025.»
+  passa  a língua de um título citado, e a porta da outra edição no rodapé
+         7240 páginas · 5992 títulos citados, 133 com lang · 0 sem a marca que precisam · 0 a repetir a língua da página · 7224 portas de rodapé, 0 sem língua
+
+[90m  matriz de aceitação · 89 células[0m
+
+  [32mpassa[0m  estado inicial · País · Relance
+[90m         pais · relance · 0 peças[0m
+  [32mpassa[0m  8.15 · a manchete de `/` é uma frase com dois algarismos selados no máximo
+[90m         «A dívida pública é 89,7% do PIB e a taxa de desemprego é 6% da população ativa.» · 2 algarismo(s) selado(s), 2 selo(s), 1 frase(s)[0m
+  [32mpassa[0m  2l · a manchete da União leva as duas contagens da Emenda 16
+[90m         Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9. · painel_fora_do_limiar + painel_dentro_do_limiar[0m
+  [32mpassa[0m  a área de leitura da União com 13 leituras do Procedimento e 21 ao todo (Emenda 16)
+[90m         13 do Procedimento · 21 ao todo[0m
+  [32mpassa[0m  8.16 · a primeira página não tem leitura nenhuma dos painéis
+[90m         em /: 0 leitura(s), marca «null»[0m
+  [32mpassa[0m  ordem do teclado · porta do concelho → faixa → portas
+[90m         porta do concelho 21 · faixa 23 · portas 99 · 124 paragens[0m
+  [32mpassa[0m  mudança · estado de defeito · país
+[90m         / · pais[0m
+  [32mpassa[0m  mudança · âmbito → modo concelho
+[90m         /?ambito=municipio · pais[0m
+  [32mpassa[0m  a página não tem comando de estado nenhum
+[90m         0 linha(s) de comando · 0 comando(s) de âmbito · 0 de densidade[0m
+  [32mpassa[0m  `?densidade=leitura` já não muda nada em `/` (itens 8.14 e 8.16)
+[90m         sem o estado: 0 leitura(s), 0 aberta(s) · com o estado: 0 leitura(s), 0 aberta(s) · bloco «pais» nos dois[0m
+  [32mpassa[0m  para trás, cinco vezes
+[90m         cada passo repôs o seu estado[0m
+  [32mpassa[0m  para a frente
+[90m         /?ambito=municipio[0m
+  [32mpassa[0m  recarga em cada estado
+[90m         / → pais · /?ambito=municipio → pais[0m
+  [32mpassa[0m  uma leitura abre só a sua
+[90m         1 abertas · toque no cartão «divida-publica-2025»[0m
+  [32mpassa[0m  ordem do teclado com uma leitura aberta · faixa → o <summary> dela → rodapé
+[90m         «divida-publica-2025» aberta: true · faixa 21 · <summary> 67 · rodapé 72 · 89 paragens[0m
+  [32mpassa[0m  8.12 e 8.14 · em repouso nenhuma leitura aberta e nenhum cabeçalho de painel à vista
+[90m         0 de 21 abertas · marca da área «sim» · linha do repouso à vista: true · 0 de 2 cabeçalhos de painel à vista[0m
+  [32mpassa[0m  valor inválido · ambito=lisboa
+[90m         caiu em pais/relance, endereço normalizado para "/", e o valor não é ecoado na página[0m
+  [32mpassa[0m  valor inválido · densidade=fundo
+[90m         caiu em pais/relance, endereço normalizado para "/", e o valor não é ecoado na página[0m
+  [32mpassa[0m  valor inválido · ambito com injecção
+[90m         caiu em pais/relance, endereço normalizado para "/", e o valor não é ecoado na página[0m
+  [32mpassa[0m  valor inválido · o plural de um valor válido
+[90m         caiu em pais/relance, endereço normalizado para "/", e o valor não é ecoado na página[0m
+  [32mpassa[0m  valor inválido · o prefixo sem concelho
+[90m         caiu em pais/relance, endereço normalizado para "/", e o valor não é ecoado na página[0m
+  [32mpassa[0m  valor inválido · ambito de 2 000 caracteres
+[90m         caiu em pais/relance, endereço normalizado para "/", e o valor não é ecoado na página[0m
+  [32mpassa[0m  edição pt · estado do endereço
+[90m         municipio · relance[0m
+  [32mpassa[0m  edição pt · a ligação de idioma leva o estado
+[90m         /en?ambito=municipio[0m
+  [32mpassa[0m  edição en · estado do endereço
+[90m         municipio · relance[0m
+  [32mpassa[0m  edição en · a ligação de idioma leva o estado
+[90m         /?ambito=municipio[0m
+  [32mpassa[0m  largura 320 · sem transbordo horizontal
+[90m         scrollWidth − clientWidth = 0[0m
+  [32mpassa[0m  largura 390 · sem transbordo horizontal
+[90m         scrollWidth − clientWidth = 0[0m
+  [32mpassa[0m  largura 768 · sem transbordo horizontal
+[90m         scrollWidth − clientWidth = 0[0m
+  [32mpassa[0m  largura 1024 · sem transbordo horizontal
+[90m         scrollWidth − clientWidth = 0[0m
+  [32mpassa[0m  largura 1280 · sem transbordo horizontal
+[90m         scrollWidth − clientWidth = 0[0m
+  [32mpassa[0m  tema claro · papel e tinta
+[90m         papel rgb(246, 247, 244) · tinta rgb(23, 25, 27)[0m
+  [32mpassa[0m  tema claro · o contorno do marcador é a tinta do tema
+[90m         contorno rgb(23, 25, 27)[0m
+  [32mpassa[0m  tema escuro · papel e tinta
+[90m         papel rgb(21, 23, 26) · tinta rgb(236, 238, 234)[0m
+  [32mpassa[0m  tema escuro · o contorno do marcador é a tinta do tema
+[90m         contorno rgb(236, 238, 234)[0m
+  [32mpassa[0m  movimento reduzido · a leitura não tem transição
+[90m         transition-duration 1e-05s[0m
+  [32mpassa[0m  o selo de cada leitura é alvo de 44×44
+[90m         21 de 21 selos de leitura em 21 cartão(ões) · mínimo 52.5×44[0m
+  [32mpassa[0m  nenhum selo dentro de outro alvo
+[90m         0 aninhados em 21[0m
+  [32mpassa[0m  nenhum par de áreas de toque sobrepostas na leitura
+[90m         0 pares em 21 leitura(s) abertas uma a uma[0m
+  [32mpassa[0m  cada leitura tem o seu selo e uma porta por origem declarada (09.09.2026, no lugar do «selo maior»)
+[90m         21 de 21 leitura(s) abertas · 25 bloco(s) de origem · 0 sem selo · 0 sem origem · 0 com um bloco de origem que não tem uma porta · 0 com uma porta abaixo de 44px[0m
+  [32mpassa[0m  sem JavaScript · /
+[90m         completo e correcto: 5 cartão(ões) na faixa, 0 leituras de painel[0m
+  [32mpassa[0m  sem JavaScript · nenhuma nota de mecânica · /
+[90m         nota no documento: false[0m
+  [32mpassa[0m  sem JavaScript · /?ambito=regiao:alentejo
+[90m         mostra o defeito (pais), com os comandos como ligações que abrem: [0m
+  [32mpassa[0m  sem JavaScript · nenhuma nota de mecânica · /?ambito=regiao:alentejo
+[90m         nota no documento: false[0m
+  [32mpassa[0m  sem JavaScript · /?ambito=municipio:beja
+[90m         mostra o defeito (pais), com os comandos como ligações que abrem: [0m
+  [32mpassa[0m  sem JavaScript · nenhuma nota de mecânica · /?ambito=municipio:beja
+[90m         nota no documento: false[0m
+  [32mpassa[0m  sem JavaScript · /?ambito=municipio
+[90m         mostra o defeito (pais), com os comandos como ligações que abrem: [0m
+  [32mpassa[0m  sem JavaScript · nenhuma nota de mecânica · /?ambito=municipio
+[90m         nota no documento: false[0m
+  [32mpassa[0m  sem JavaScript · /uniao-europeia
+[90m         completo e correcto: 21 leituras, 0 valores, 21 selos[0m
+  [32mpassa[0m  sem JavaScript · nenhuma nota de mecânica · /uniao-europeia
+[90m         nota no documento: false[0m
+  [32mpassa[0m  2l · a data da reconferência saiu da primeira página e do cabeçalho, e vive dentro do painel
+[90m         em / : 0 na página, 0 no cabeçalho · em /uniao-europeia: 1 leitura(s) dentro de #painel, marca «data-de-atualizacao», texto «07.09.2026», 0 âncora(s)[0m
+  [32mpassa[0m  2l · Emenda 17 · por baixo do mapa uma só linha, com o selo
+[90m         «308 concelhos · CAOP 2025 fonte · calculado · Direção-Geral do Território (DGT)» · ficha 56px · camada de aparelho 0 · citação na página 0 · CSV false[0m
+  [32mpassa[0m  2l · RETIRADA (Emenda 20a) · as dicas descreviam o mapa de pontos, que saiu da primeira página
+[90m         0 dicas no documento · aria-describedby null · 29 áreas e 0 pontos no mapa da primeira página · a leitura pelo teclado passou a mapa-distritos.mjs M6c[0m
+  [32mpassa[0m  largura 768 · a régua de uma leitura aberta tem largura de régua
+[90m         13 régua(s) em 13 leitura(s) com limiar, abertas uma a uma · a mais estreita 686px · transbordo 0[0m
+  [32mpassa[0m  largura 1280 · a régua de uma leitura aberta tem largura de régua
+[90m         13 régua(s) em 13 leitura(s) com limiar, abertas uma a uma · a mais estreita 715px · transbordo 0[0m
+  [32mpassa[0m  largura 1280 · a pesquisa com a caixa vazia não mostra nada, e um resultado com e sem página
+[90m         caixa vazia: 0 resultado(s) · a lista distingue: false · com «beja» escrito: Beja (porta true, «null»)[0m
+  [32mpassa[0m  largura 390 · a pesquisa com a caixa vazia não mostra nada, e um resultado com e sem página
+[90m         caixa vazia: 0 resultado(s) · a lista distingue: false · com «beja» escrito: Beja (porta true, «null»)[0m
+  [32mpassa[0m  2m · a primeira página é sempre `inteiro`, e o cartão localizador vive na página do concelho
+[90m         país: inteiro, 518px numa coluna de 518px, 1 mapa, ficha true, texto de cartão 0 · pesquisa aberta: inteiro, 518px numa coluna de 518px, 1 mapa, ficha true, texto de cartão 0 · /municipios/evora: localizador 170px dentro do cartão (moldura 1px), 0 fichas, «trocar de concelho» → /municipios[0m
+  [32mpassa[0m  o rótulo do distrito segue uma regra só nos 308 (ISSUES I18)
+[90m         Beja «distrito de Beja» · Horta «Ilha do Faial» · Lagoa «Ilha de São Miguel» · Évora «distrito de Évora · Alentejo Central»[0m
+  [32mpassa[0m  ISSUES I20 · 3 estados × 5 larguras sem transbordo, e o rótulo dentro da régua
+[90m         15 de 15 a zero · 65 rótulo(s) de régua medidos · pais-relance@320:0 · pais-relance@390:0 · pais-relance@768:0 · pais-relance@1024:0 · pais-relance@1280:0 · pesquisa-aberta@320:0 · pesquisa-aberta@390:0 · pesquisa-aberta@768:0 · pesquisa-aberta@1024:0 · pesquisa-aberta@1280:0 · uniao-europeia@320:0 · uniao-europeia@390:0 · uniao-europeia@768:0 · uniao-europeia@1024:0 · uniao-europeia@1280:0[0m
+  [32mpassa[0m  2i·1 · a primeira página não tem região, e um endereço antigo leva à página dela
+[90m         0 cabeças e 0 painéis de região · índice das regiões → /regioes (no menu: true) · banda e pastilhas fora da página (0 pontos, 0 pastilhas) · destinos /regioes/alentejo, /regioes, /regioes[0m
+  [32mpassa[0m  2i·2 · a palavra do provisório segue a edição, nas duas
+[90m         pt {"provisório":10} · en {"provisional":10}[0m
+  [32mpassa[0m  2j·a · RETIRADA (item 8.17b) · as áreas da unidade são iguais e nenhuma vem cheia (Emendas 3 e 10)
+[90m         em /municipios/evora: 0 ponto(s) e 14 <path> de área · enchimento none · contorno rgb(23, 25, 27)|1px · 14 com porta[0m
+  [32mpassa[0m  2j·a · a área do concelho é um anel na página dele, e na primeira página as 29 áreas são uma só
+[90m         Évora · 1280 · localizador: 1 anel em «evora» · enchimento none (as outras none, todas iguais true) · anel 3 contra 1 · Évora · 390: 1 anel em «evora» · enchimento none (as outras none, todas iguais true) · anel 3 contra 1 · Évora · 1280 · en: 1 anel em «evora» · enchimento none (as outras none, todas iguais true) · anel 3 contra 1 · primeira página: 0 pontos, 29 áreas com 1 estilo (none|rgb(23, 25, 27)|1px)[0m
+  [32mpassa[0m  2l · Emenda 15 · a neutralidade e a cobertura saíram do mapa, em todas as posturas
+[90m         País · inteiro (inteiro): 0 neutras, 0 de cobertura · pesquisa aberta · inteiro (inteiro): 0 neutras, 0 de cobertura · Évora · localizador (localizador): 0 neutras, 0 de cobertura · Évora · localizador · 390 (localizador): 0 neutras, 0 de cobertura · País · 390 (inteiro): 0 neutras, 0 de cobertura[0m
+  [32mpassa[0m  2i·3d · RETIRADA (Emenda 20c) · o mapa rende-se nas duas larguras, toma a janela no telemóvel (I81), e não tem pontos
+[90m         320: tela 320px · 390: tela 390px · 430: tela 430px · 3/3 à largura da janela · 29 áreas com caixa, 0 pontos, 0 leituras, 29 nomes nas listas · 1280: tela 518px, 29 áreas · os alvos das 29 passaram a mapa-distritos.mjs M1 e M2, medidos pela área inscrita[0m
+  [32mpassa[0m  2i·5 · o espaço age na leitura e não rola a página, e o que activa é um comando a sério
+[90m         um toque num cartão → 1 de 21 aberta(s); espaço no resumo dela → 0 · a janela passou de 1068 para 435 px, e o esperado era 435 (o teto da rolagem depois de fechar é 435: 633 px são a página a encurtar, 0 são a tecla) · o comando da leitura é <summary> · ligações com papel de botão: 0[0m
+  [32mpassa[0m  2i·5 · o que submete a busca da primeira página é um botão a sério
+[90m         o botão da busca é «button type=submit» · ligações com papel de botão: 0[0m
+  [32mpassa[0m  2i·5 · nenhuma régua com papel de imagem e sem nome acessível
+[90m         13 réguas · 13 com aria-hidden · 0 com role="img" sem nome · 0 com conteúdo focável dentro[0m
+  [32mpassa[0m  2j · Emenda 12 · claro por defeito, com o sistema em escuro e sem escolha
+[90m         pt: data-theme null · papel rgb(246, 247, 244) · guardado null · light:true dark:false · en: data-theme null · papel rgb(246, 247, 244) · guardado null · light:true dark:false[0m
+  [32mpassa[0m  2j · Emenda 12 · a escolha do tema persiste, nas duas edições
+[90m         pt: carregou rgb(21, 23, 26) (dark) · recarga rgb(21, 23, 26) · /metodo rgb(21, 23, 26) · voltou a claro rgb(246, 247, 244) (light) · en: carregou rgb(21, 23, 26) (dark) · recarga rgb(21, 23, 26) · /en/method rgb(21, 23, 26) · voltou a claro rgb(246, 247, 244) (light)[0m
+  [32mpassa[0m  2j · Emenda 12 · sem JavaScript o controlo do tema não se vê, e a página é clara
+[90m         existe true · hidden true · altura 0 · data-theme null[0m
+  [32mpassa[0m  2j · Emenda 13 · a fila de estados saiu da cabeça, e as contagens ficaram
+[90m         0 filas em / e 0 em /uniao-europeia · chaves da prova na manchete: painel_fora_do_limiar, painel_dentro_do_limiar · 13 marcadores em 13 cartões pintados e 13 palavras de estado na faixa[0m
+  [32mpassa[0m  2j · as leituras sem caixas, separadas por fios de 1px
+[90m         13 leituras · 0 com moldura · 0 sem o fio de 1px[0m
+  [32mpassa[0m  2j · os algarismos do valor têm tecto de 56px e crescem sem saltos
+[90m         320: 30.0px (menor 30.0) · 390: 30.0px (menor 30.0) · 768: 30.0px (menor 30.0) · 1024: 40.0px (menor 40.0) · 1280: 40.0px (menor 40.0)[0m
+  [32mpassa[0m  2k · as divulgações por irmão: aria-controls resolve e aria-expanded acompanha
+[90m         pt: 390 · nav-principal resolve:true irmão:true false→true corpo:true · 1280 · comando à vista:false navegação à vista:true · en: 390 · nav-principal resolve:true irmão:true false→true corpo:true · 1280 · comando à vista:false navegação à vista:true[0m
+  [32mpassa[0m  2l · a banda desenha duas referências, e os dois algarismos vão marcados
+[90m         saldo-da-balanca-corrente-2025: 2 referências em 2 posições · «limiar da Comissão −4/+6%» · taxa-de-cambio-efectiva-real-2025: 2 referências em 2 posições · «limiar da Comissão −3/+3%»[0m
+  [32mpassa[0m  2l · Emenda 16 · o Painel Social tem oito leituras, sem cor, sem o valor repetido e com o selo fora de outro alvo
+[90m         8 leituras, todas com selo (2 acrescentam a porta para o domínio) · 0 valores (o valor vive no cartão da faixa) · selo 52.5×44px · aninhados 0 · marcadores 0[0m
+  [32mpassa[0m  Emenda 14 · um concelho sem estudos rende as suas medidas e mais nada
+[90m         /municipios/agueda: 8 cartões e 8 leituras, emparelhados pela ordem true (0 cartão(ões) sem valor) · secções de trabalho 0 · distância 1 · colunas de corpo 0 · cartão do mapa 1[0m
+  [32mpassa[0m  2l · Emenda 17 · o texto à esquerda e o mapa à direita, de 1024 para cima
+[90m         1024 pt: 582px 340.094px · mapa a 643px (340px) · transbordo 0 · 1024 en: 582px 340.094px · mapa a 643px (340px) · transbordo 0 · 1180 pt: 582px 490px · mapa a 646px (490px) · transbordo 0 · 1180 en: 582px 490px · mapa a 646px (490px) · transbordo 0 · 1280 pt: 550px 518px · mapa a 668px (518px) · transbordo 0 · 1280 en: 550px 518px · mapa a 668px (518px) · transbordo 0[0m
+  [32mpassa[0m  2l · as chaves novas da prova: a página e o portão dizem o mesmo
+[90m         fora 4/4 · dentro 9/9 · total 13 · social 8[0m
+  [32mpassa[0m  2l · Emenda 15 · zero frases de autorreferência em todas as rotas medidas
+[90m         1384 rotas medidas · autorreferência > 0 em 0 · por classificar em 0 rota(s) · /: conteúdo 7 · navegação 36 · autorreferência 0 · /en: conteúdo 7 · navegação 36 · autorreferência 0[0m
+  [32mpassa[0m  2m · o mapa enche a coluna da cabeça, e a legenda fica fora do desenho
+[90m         1024 pt: coluna 340.1 · mapa 340.1×448.4 em x=643 · legenda em x=41 y=1022.6, cruza o desenho: false · transbordo 0 · 1024 en: coluna 340.1 · mapa 340.1×448.4 em x=643 · legenda em x=41 y=985.5, cruza o desenho: false · transbordo 0 · 1180 pt: coluna 490 · mapa 490×646.1 em x=646 · legenda em x=44 y=1016.9, cruza o desenho: false · transbordo 0 · 1180 en: coluna 490 · mapa 490×646.1 em x=646 · legenda em x=44 y=1014.5, cruza o desenho: false · transbordo 0 · 1280 pt: coluna 518 · mapa 518×683 em x=668 · legenda em x=94 y=1051.5, cruza o desenho: false · transbordo 0 · 1280 en: coluna 518 · mapa 518×683 em x=668 · legenda em x=94 y=1051.5, cruza o desenho: false · transbordo 0 · 1440 pt: coluna 518 · mapa 518×683 em x=748 · legenda em x=174 y=1051.5, cruza o desenho: false · transbordo 0 · 1440 en: coluna 518 · mapa 518×683 em x=748 · legenda em x=174 y=1051.5, cruza o desenho: false · transbordo 0[0m
+  [32mpassa[0m  2m · a busca está à vista por cima do mapa, e o mapa fica onde estava
+[90m         1024 pt: /?ambito=municipio · gaveta da busca não existe, busca à vista true · 5 cartão(ões) na faixa, 0 área(s) de leitura · mapa 340.1 na coluna de 340.1 (no país 340.1) · caixa das 29 áreas 325.2×419.8 → 325.2×419.8 · transbordo 0 · 1024 en: /en/?ambito=municipio · gaveta da busca não existe, busca à vista true · 5 cartão(ões) na faixa, 0 área(s) de leitura · mapa 340.1 na coluna de 340.1 (no país 340.1) · caixa das 29 áreas 325.2×419.8 → 325.2×419.8 · transbordo 0 · 1280 pt: /?ambito=municipio · gaveta da busca não existe, busca à vista true · 5 cartão(ões) na faixa, 0 área(s) de leitura · mapa 518 na coluna de 518 (no país 518) · caixa das 29 áreas 495.3×639.5 → 495.3×639.5 · transbordo 0 · 1280 en: /en/?ambito=municipio · gaveta da busca não existe, busca à vista true · 5 cartão(ões) na faixa, 0 área(s) de leitura · mapa 518 na coluna de 518 (no país 518) · caixa das 29 áreas 495.3×639.5 → 495.3×639.5 · transbordo 0 · 1440 pt: /?ambito=municipio · gaveta da busca não existe, busca à vista true · 5 cartão(ões) na faixa, 0 área(s) de leitura · mapa 518 na coluna de 518 (no país 518) · caixa das 29 áreas 495.3×639.5 → 495.3×639.5 · transbordo 0 · 1440 en: /en/?ambito=municipio · gaveta da busca não existe, busca à vista true · 5 cartão(ões) na faixa, 0 área(s) de leitura · mapa 518 na coluna de 518 (no país 518) · caixa das 29 áreas 495.3×639.5 → 495.3×639.5 · transbordo 0[0m
+  [32mpassa[0m  Emenda 19e · RETIRADA (Emenda 20a, ISSUES I70 fechada) · a densidade dos pontos deixou de ser uma pergunta desta página
+[90m         0 pontos e 29 áreas na coluna de 518px, 29 ligações · o maior lado da CAIXA das áreas vai de 2.3px a 272.26px, e o alvo já não se mede pela caixa: quantas chegam aos 44 px de área inscrita é mapa-distritos.mjs M1 e M2 (I82)[0m
+  [32mpassa[0m  2m · o Escape da pesquisa limpa a caixa, e não há mais nenhum Escape na página
+[90m         caixa «» · âmbito municipio · endereço «/?ambito=municipio» · 0 comandos de fechar no documento[0m
+  [32mpassa[0m  2m · RETIRADA (Emenda 20a) · o anel de leitura era do mapa de pontos, que saiu da primeira página
+[90m         0 anéis e 0 caixas de leitura no documento · 0 pontos · o enchimento das 29 áreas é none · o anel do concelho escolhido continua medido em /municipios/evora[0m
+  [32mpassa[0m  2m · a lede nomeia as medidas que o painel marca fora, pela ordem do painel, nas duas edições
+[90m         pt: manchete 4 · lista de 4 — «dívida pública | posição de investimento internacional | custo unitário do trabalho | preços da habitação» · cartões fora: «dívida pública | posição de investimento internacional | custo unitário do trabalho | preços da habitação» · ano 2025, em todas as unidades dos cartões: true · lede «Fora do limiar da Comissão: dívida pública, posição de investimento internacional, custo unitário do trabalho e preços da habitação, em 2025.» · en: manchete 4 · lista de 4 — «government debt | net international investment position | unit labour cost | house prices» · cartões fora: «government debt | net international investment position | unit labour cost | house prices» · ano 2025, em todas as unidades dos cartões: true · lede «Outside the Commission threshold: government debt, net international investment position, unit labour cost and house prices, in 2025.»[0m
+  [32mpassa[0m  a língua de um título citado, e a porta da outra edição no rodapé
+[90m         7240 páginas · 5992 títulos citados, 133 com lang · 0 sem a marca que precisam · 0 a repetir a língua da página · 7224 portas de rodapé, 0 sem língua[0m
+
+[32m  89 de 89 células passam.[0m
+
+[31m  positivo conhecido: uma célula falhada a mais (MATRIZ_ROMPE).[0m
