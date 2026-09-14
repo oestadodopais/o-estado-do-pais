@@ -32,10 +32,63 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { parse } from 'node-html-parser';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../../..');
 const DIST = path.join(RAIZ, 'dist');
 const REGUA = path.join(RAIZ, 'scripts', 'check-lugar.mjs');
+
+/**
+ * ---------------------------------------------------------------------------
+ * A PÁGINA DA PLANTA DA L1 ESCOLHE-SE, E NÃO SE ESCREVE À MÃO (14.09.2026)
+ * ---------------------------------------------------------------------------
+ * A primeira corrida destas plantas (14.09.2026) deu «NÃO MORDEU» na planta da
+ * L1, com 2 170 → 2 170, e a culpa era da planta e não da régua: a L1 conta
+ * PÁGINAS com dois destinos iguais, a planta estragava
+ * `livro-razao/divida-publica-2025`, e essa página já era uma das 1 422 da
+ * família `linha` que contam. Um segundo destino repetido numa página que já
+ * conta não muda a contagem, e a planta não prova nada.
+ *
+ * A planta passa a escolher uma página de linha que a régua NÃO conte: a
+ * primeira, por ordem alfabética, sem nenhum destino repetido fora do cabeçalho
+ * e do rodapé, e com os dois sítios de que a troca precisa. A conta é a mesma da
+ * régua, escrita aqui outra vez de propósito: se ela mudar de definição, esta
+ * escolha deixa de encontrar página nenhuma e o guião di-lo.
+ *
+ * @returns {string|null} o caminho relativo em `dist/`, ou `null`
+ */
+function paginaDeLinhaSemRepetidos() {
+  const raizDoLivro = path.join(DIST, 'livro-razao');
+  if (!fs.existsSync(raizDoLivro)) return null;
+  for (const nome of fs.readdirSync(raizDoLivro).sort()) {
+    const rel = path.join('livro-razao', nome, 'index.html');
+    const ficheiro = path.join(DIST, rel);
+    if (!fs.existsSync(ficheiro)) continue;
+    const cru = fs.readFileSync(ficheiro, 'utf8');
+    if (!/<p class="linha-pedido">[\s\S]*?<a class="ligacao-externa" href="[^"]+"/.test(cru)) continue;
+    if (!cru.includes('<dl class="linha-verificacoes">')) continue;
+    const raiz = parse(cru);
+    const corpo = raiz.querySelector('body');
+    if (!corpo) continue;
+    const mobilia = new Set();
+    for (const marco of [raiz.querySelector('header'), raiz.querySelector('footer')]) {
+      if (!marco) continue;
+      mobilia.add(marco);
+      for (const d of marco.querySelectorAll('*')) mobilia.add(d);
+    }
+    const destinos = new Map();
+    for (const a of corpo.querySelectorAll('a[href]')) {
+      if (mobilia.has(a)) continue;
+      const href = (a.getAttribute('href') ?? '').split('#')[0];
+      if (!href || href.startsWith('mailto:')) continue;
+      destinos.set(href, (destinos.get(href) ?? 0) + 1);
+    }
+    if ([...destinos.values()].some((n) => n > 1)) continue;
+    return rel;
+  }
+  return null;
+}
+const PAGINA_DA_L1 = paginaDeLinhaSemRepetidos();
 
 if (!fs.existsSync(DIST)) {
   console.error('não existe dist/. Corra o build primeiro.');
@@ -79,11 +132,20 @@ const PLANTAS = [
     medida: 'l2a',
     ficheiro: 'regioes/alentejo/index.html',
     troca: (s, tudo) => {
-      const lista = tudo('municipios/index.html').match(/<ul class="concelhos-lista">[\s\S]*?<\/ul>/);
-      if (!lista) return null;
+      /* AS PORTAS DOS 308, E NÃO AS DA PRIMEIRA UNIDADE (14.09.2026). A troca
+         copiava `<ul class="concelhos-lista">…</ul>` com um regex não-guloso, e
+         o índice tem VINTE E NOVE listas com esse nome, uma por unidade da
+         Carta: o que ela plantava eram 19 portas, e o teto da régua são 30. A
+         planta dizia «NÃO MORDEU» e a régua estava certa. Agora planta-se a
+         lista inteira: todas as portas de concelho do índice, que são 308. */
+      const portas = [
+        ...new Set(tudo('municipios/index.html').match(/href="\/municipios\/[a-z0-9-]+"/g) ?? []),
+      ];
+      if (portas.length <= 30) return null;
       const i = s.indexOf('</main>');
       if (i < 0) return null;
-      return `${s.slice(0, i)}<details open><summary>x</summary>${lista[0]}</details>${s.slice(i)}`;
+      const itens = portas.map((h) => `<li><a ${h}>x</a></li>`).join('');
+      return `${s.slice(0, i)}<details open><summary>x</summary><ul>${itens}</ul></details>${s.slice(i)}`;
     },
   },
   {
@@ -149,7 +211,7 @@ const PLANTAS = [
   {
     nome: 'a porta da conferência de volta ao endereço da própria linha (o padrão maior da L1)',
     medida: 'l1',
-    ficheiro: 'livro-razao/divida-publica-2025/index.html',
+    ficheiro: PAGINA_DA_L1 ?? 'livro-razao/divida-publica-2025/index.html',
     troca: (s) => {
       const m = s.match(/<p class="linha-pedido">[\s\S]*?<a class="ligacao-externa" href="([^"]+)"/);
       if (!m) return null;
