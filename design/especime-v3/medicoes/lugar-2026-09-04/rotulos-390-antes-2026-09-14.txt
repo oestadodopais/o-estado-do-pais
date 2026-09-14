@@ -1,0 +1,13 @@
+pt.390
+  rótulos desenhados: 6, à vista 4 · altura de letra com que chegam ao leitor: 0 · 5.2 px
+  valores na legenda: 0, à vista 0
+pt.1280
+  rótulos desenhados: 6, à vista 4 · altura de letra com que chegam ao leitor: 0 · 7.97 px
+  valores na legenda: 0, à vista 0
+en.390
+  rótulos desenhados: 6, à vista 4 · altura de letra com que chegam ao leitor: 0 · 5.2 px
+  valores na legenda: 0, à vista 0
+en.1280
+  rótulos desenhados: 6, à vista 4 · altura de letra com que chegam ao leitor: 0 · 7.97 px
+  valores na legenda: 0, à vista 0
+{"pt.390":{"desenhados":6,"desenhadosAVista":4,"letraDesenhada":[0,0,5.2,5.2,5.2,5.2],"legenda":0,"legendaAVista":0,"letraDaLegenda":[],"textoDaLegenda":[]},"pt.1280":{"desenhados":6,"desenhadosAVista":4,"letraDesenhada":[0,0,7.97,7.97,7.97,7.97],"legenda":0,"legendaAVista":0,"letraDaLegenda":[],"textoDaLegenda":[]},"en.390":{"desenhados":6,"desenhadosAVista":4,"letraDesenhada":[0,0,5.2,5.2,5.2,5.2],"legenda":0,"legendaAVista":0,"letraDaLegenda":[],"textoDaLegenda":[]},"en.1280":{"desenhados":6,"desenhadosAVista":4,"letraDesenhada":[0,0,7.97,7.97,7.97,7.97],"legenda":0,"legendaAVista":0,"letraDaLegenda":[],"textoDaLegenda":[]}}
