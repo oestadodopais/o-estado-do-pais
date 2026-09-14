@@ -89,11 +89,17 @@
  * um caminho que existe no `dist/` (pede-se ao servidor e espera-se 200) e com
  * `method="get"`, que é o que a torna uma busca e não uma escrita.
  *
- * A9 · ENCONTRAR O CONCELHO EM ≤ 2 TOQUES E ≤ 1 ECRÃ, a 390 × 664. O percurso
- * corre-se: toque 1 no campo, escreve-se o nome, toque 2 no resultado, e a
- * página que chega é a do concelho. Cada toque é um `click` a sério, e a régua
- * confere que o alvo do toque estava dentro do primeiro ecrã quando o toque
- * aconteceu.
+ * A9 · ENCONTRAR O CONCELHO EM DOIS TOQUES E ≤ 1 ECRÃ, a 390 × 664, E O QUE A
+ * PÁGINA DE CHEGADA FAZ COM O ENDEREÇO. O percurso corre-se: toque 1 no campo,
+ * escreve-se o nome, toque 2 no resultado. Cada toque é um `click` a sério, a
+ * régua confere que o alvo estava dentro do primeiro ecrã quando o toque
+ * aconteceu, e são DOIS e não «até dois»: uma chegada com um toque ou com
+ * nenhum não é o percurso que o brief escreve. A página que chega tem de RENDER
+ * aquele concelho, e não apenas de ter o endereço dele. Sem guião, a submissão
+ * nativa tem de levar ao índice dos 308 com o que foi escrito no endereço, e o
+ * documento que chega tem de trazer os 308 nomes com porta e a frase do
+ * `<noscript>` que diz o que o botão fez. E a porta filtrada dos estudos mede-se
+ * de facto, nos dois leitores. A razão inteira está ao pé da célula.
  *
  * A10 · «sem limiar» FORA DOS CARTÕES. Contagem a 0 dentro dos cartões da faixa
  * e dentro das leituras breves de `/`, nas duas edições, e as duas coleções com
@@ -185,6 +191,7 @@ import http from 'node:http';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium, webkit } from 'playwright';
+import { parse } from 'node-html-parser';
 
 /* A DECLARAÇÃO DAS DEFINIÇÕES DOS DOIS PAINÉIS (F1.10, item 8.4, 08.09.2026). A
    célula A4 compara o que a página rende com o que a declaração diz, e por isso
@@ -309,6 +316,22 @@ async function html(rota) {
   return await r.text();
 }
 
+/* O DOCUMENTO COMO O NAVEGADOR SEM GUIÃO O TEM (A9, 14.09.2026). Num contexto
+   com `javaScriptEnabled: false` não há `page.evaluate()`: o que se pode ler é
+   o `content()`, e é nele que se conta.
+
+   AS ETIQUETAS DO `<noscript>` CAEM ANTES DE SE LER, e é uma medição e não uma
+   preferência: `node-html-parser` trata o `<noscript>` como bloco de texto cru
+   e nenhuma das suas opções o abre como marcação (`blockTextElements:
+   { noscript: false }` APAGA o conteúdo, e foi o que deu zero na primeira
+   corrida desta célula, com a frase na página). Tirar as duas etiquetas deixa os
+   filhos serem o que já são num navegador sem guião: elementos do documento. */
+const documento = (conteudo) => parse(conteudo.replace(/<\/?noscript>/gi, ''));
+
+/* O texto de um nó que pode não existir, normalizado. Uma frase que não está na
+   página tem zero caracteres, e é assim que a célula a conta. */
+const texto = (no) => (no ? no.textContent.replace(/\s+/g, ' ').trim() : '');
+
 const ocorrencias = (texto, agulha) => texto.split(agulha).length - 1;
 
 const ALTURA_PEQUENA = 664;
@@ -401,6 +424,10 @@ const EDICOES = [
     concelho: 'Évora',
     destinoDoConcelho: '/municipios/evora',
     indiceDosConcelhos: '/municipios',
+    /* O slug do concelho, que é o que a porta filtrada dos estudos leva no
+       endereço (`?concelho=`) e o que cada entrada do índice declara em
+       `data-concelho`. É o mesmo nas duas edições: um slug é um identificador. */
+    slugDoConcelho: 'evora',
     /* As rotas que as células do F1.2b abrem. Escritas aqui e não compostas:
        esta régua lê o `dist/` e não a tabela de rotas do sítio, que é o que a
        torna capaz de ver um caminho que mudou sem ninguém dar por isso. */
@@ -427,6 +454,7 @@ const EDICOES = [
     concelho: 'Évora',
     destinoDoConcelho: '/en/municipalities/evora',
     indiceDosConcelhos: '/en/municipalities',
+    slugDoConcelho: 'evora',
     indiceDosDominios: '/en/domains',
     dominio: '/en/domains/economia-e-financas-publicas',
     estudos: '/en/studies',
@@ -1065,10 +1093,52 @@ async function corre() {
     );
 
     /* ------------------------------------------------------------------- A9 */
+    /* A CÉLULA REESCRITA A 14.09.2026 (Major 7 da leitura a frio de 09.09.2026,
+       e a decisão 6 do lugar de direção sobre a segunda passagem do F1.10).
+
+       O QUE ELA MEDIA ATÉ AQUI, e porque é que não chegava. `toques <= 2` dá por
+       boa uma chegada com um toque ou com nenhum, e o percurso sem guião era
+       conferido pelo CAMINHO e pela presença de `concelho=` no endereço, sem
+       nunca perguntar o que a página de chegada faz com o que lá vai escrito. A
+       leitura a frio: «its no-script assertion checks only the destination path
+       and the presence of `concelho=` in the URL, never whether the page uses
+       it. A green A9 therefore does not prove either the requested answer or the
+       filtered door.»
+
+       O QUE ELA MEDE AGORA, em três pernas, cada uma com o seu número impresso:
+
+       1. COM GUIÃO, DOIS TOQUES E NÃO TRÊS. `toques === 2` — o toque no campo e
+          o toque no resultado —, cada um com o alvo dentro do primeiro ecrã no
+          momento em que aconteceu, e A PÁGINA DE CHEGADA A USAR MESMO O
+          ENDEREÇO: não basta que o `location` seja o que se clicou (é sempre),
+          exige-se que a página que chegou RENDA aquele concelho, pela cabeça de
+          lugar (`data-cabeca-lugar="concelho"`) e pelo nome dentro da manchete.
+
+       2. SEM GUIÃO, A SUBMISSÃO NATIVA. O endereço que chega é o índice dos 308
+          com `concelho=<o que foi escrito>`, e o documento que chega tem os 308
+          nomes com porta, a porta daquele concelho entre eles, e a frase do
+          `<noscript>` que diz o que o botão fez. É a promessa da casa medida
+          onde ela é verdade: a decisão de 09.09 mantém «a busca sem guião leva à
+          lista inteira agrupada (uma página estática não filtra)», e por isso o
+          que se exige é a RESPOSTA COMPLETA e a palavra que a explica, e não um
+          filtro que ninguém prometeu. Sem guião não há `evaluate`: lê-se o
+          documento como o navegador o tem, com o `<noscript>` aberto, e conta-se
+          nele.
+
+       3. A PORTA FILTRADA DOS ESTUDOS, O FILTRO DE FACTO. Com guião, o índice
+          dos estudos aberto em `?concelho=<slug>` esconde as entradas que não
+          casam e ACENDE a porta que devolve a lista inteira; sem guião, as
+          entradas estão todas à vista e a frase do `<noscript>` diz porquê. A
+          régua conta as entradas e as que casam, e exige que as escondidas sejam
+          exatamente as que não casam. HOJE SÃO ZERO, e o número fica impresso:
+          os cinco estudos do índice são os cinco do mesmo concelho, e por isso
+          o filtro deste endereço não tem nada para esconder. O que ele faz de
+          observável é acender a porta da volta, e é isso que a célula exige. */
     const p3 = await pagina(ed.rota, 390, ALTURA_PEQUENA);
     let toques = 0;
     let dentroDoEcra = true;
     let chegou = null;
+    let cabecaDaChegada = null;
     try {
       const campo = await p3.$('[data-pesquisa]');
       if (campo) {
@@ -1088,6 +1158,14 @@ async function corre() {
           await Promise.all([p3.waitForNavigation({ waitUntil: 'load' }), res.click()]);
           toques += 1;
           chegou = new URL(p3.url()).pathname.replace(/\/$/, '');
+          cabecaDaChegada = await p3.evaluate(() => {
+            const c = document.querySelector('[data-cabeca-lugar]');
+            const h = document.querySelector('h1');
+            return {
+              lugar: c ? c.getAttribute('data-cabeca-lugar') : null,
+              manchete: h ? h.textContent.replace(/\s+/g, ' ').trim() : null,
+            };
+          });
         }
       }
     } catch (e) {
@@ -1095,17 +1173,14 @@ async function corre() {
     }
     const alvo = ed.destinoDoConcelho.replace(/\/$/, '');
     await p3.__ctx.close();
+    const rendeOConcelho =
+      !!cabecaDaChegada &&
+      cabecaDaChegada.lugar === 'concelho' &&
+      String(cabecaDaChegada.manchete ?? '').includes(ed.concelho);
 
     /* ------------------------------------------------------------------------
-       O MESMO PERCURSO SEM GUIÃO, PELA SUBMISSÃO NATIVA (Major 9)
-       ------------------------------------------------------------------------
-       A leitura a frio: «A9 exercises the JavaScript autocomplete, not native
-       form submission.» O caminho de cima é o do leitor com guião, e é o que a
-       medida do brief conta em toques; este é o do leitor sem guião, e é o que
-       a promessa do item 12 sustenta. Corre com `javaScriptEnabled: false`,
-       escreve no campo e carrega em Enter, que é a submissão que o navegador
-       faz sozinho: o formulário tem de levar ao índice dos 308, com o que foi
-       escrito no endereço, e a página que chega tem de existir. */
+       O MESMO PERCURSO SEM GUIÃO, PELA SUBMISSÃO NATIVA (Major 9 e Major 7)
+       ------------------------------------------------------------------------ */
     const ctxSemGuiao = await nav.newContext({
       viewport: { width: 390, height: ALTURA_PEQUENA },
       javaScriptEnabled: false,
@@ -1120,28 +1195,104 @@ async function corre() {
         pg.press('[data-pesquisa]', 'Enter'),
       ]);
       const u = new URL(pg.url());
+      const doc = documento(await pg.content());
       semGuiao = {
         caminho: u.pathname.replace(/\/$/, ''),
         query: u.search,
         titulo: await pg.title(),
+        nomes: doc.querySelectorAll('.concelhos-lista a[href]').length,
+        portaDoConcelho: doc.querySelectorAll(`a[href="${ed.destinoDoConcelho}"]`).length,
+        frase: texto(doc.querySelector('.busca-sem-guiao')).length,
       };
     } catch (e) {
-      semGuiao = { caminho: `erro: ${e.message.split('\n')[0]}`, query: '', titulo: '' };
+      semGuiao = {
+        caminho: `erro: ${e.message.split('\n')[0]}`,
+        query: '',
+        titulo: '',
+        nomes: 0,
+        portaDoConcelho: 0,
+        frase: 0,
+      };
     }
     await ctxSemGuiao.close();
     const indice = ed.indiceDosConcelhos.replace(/\/$/, '');
 
-    medidas[`A9.${ed.chave}`] = { toques, dentroDoEcra, chegou, semGuiao };
+    /* ------------------------------------------------------------------------
+       A PORTA FILTRADA DOS ESTUDOS, NOS DOIS LEITORES
+       ------------------------------------------------------------------------ */
+    const rotaFiltrada = `${ed.estudos}?concelho=${ed.slugDoConcelho}`;
+    const pDoFiltro = await pagina(rotaFiltrada, 390, ALTURA_PEQUENA);
+    const filtro = await pDoFiltro.evaluate(() => {
+      const itens = [...document.querySelectorAll('[data-concelho]')];
+      const porta = document.querySelector('[data-arquivo-todos]');
+      return {
+        entradas: itens.length,
+        visiveis: itens.filter((i) => !i.hasAttribute('hidden')).length,
+        casam: itens.filter(
+          (i) =>
+            i.getAttribute('data-concelho') ===
+            new URL(window.location.href).searchParams.get('concelho'),
+        ).length,
+        portaDaVolta: !!porta && !porta.hasAttribute('hidden'),
+      };
+    });
+    await pDoFiltro.__ctx.close();
+
+    const ctxDoFiltroSemGuiao = await nav.newContext({
+      viewport: { width: 390, height: ALTURA_PEQUENA },
+      javaScriptEnabled: false,
+    });
+    const pgDoFiltro = await ctxDoFiltroSemGuiao.newPage();
+    await pgDoFiltro.goto(base + rotaFiltrada, { waitUntil: 'load' });
+    const docDoFiltro = documento(await pgDoFiltro.content());
+    const filtroSemGuiao = {
+      entradas: docDoFiltro.querySelectorAll('[data-concelho]').length,
+      escondidas: docDoFiltro
+        .querySelectorAll('[data-concelho]')
+        .filter((i) => i.hasAttribute('hidden')).length,
+      frase: texto(docDoFiltro.querySelector('.arquivo-sem-guiao')).length,
+    };
+    await ctxDoFiltroSemGuiao.close();
+
+    medidas[`A9.${ed.chave}`] = {
+      toques,
+      dentroDoEcra,
+      chegou,
+      rendeOConcelho,
+      cabeca: cabecaDaChegada,
+      semGuiao,
+      filtro,
+      filtroSemGuiao,
+    };
     conta(
       `A9.${ed.chave}`,
-      toques <= 2 &&
+      toques === 2 &&
         chegou === alvo &&
+        rendeOConcelho &&
         dentroDoEcra &&
         semGuiao.caminho === indice &&
-        semGuiao.query.includes('concelho='),
+        semGuiao.query.includes(`concelho=`) &&
+        semGuiao.nomes === 308 &&
+        semGuiao.portaDoConcelho >= 1 &&
+        semGuiao.frase > 0 &&
+        filtro.entradas > 0 &&
+        filtro.visiveis === filtro.casam &&
+        filtro.portaDaVolta === (filtro.casam > 0) &&
+        filtroSemGuiao.entradas === filtro.entradas &&
+        filtroSemGuiao.escondidas === 0 &&
+        filtroSemGuiao.frase > 0,
       `com guião, a partir de ${ed.rota}: ${toques} toque(s), ` +
         `${dentroDoEcra ? 'sem rolar' : 'com rolar'}, chegou a «${chegou ?? 'lado nenhum'}»` +
-        ` · sem guião, pela submissão nativa: «${semGuiao.caminho}${semGuiao.query}»`,
+        ` e a página rende «${cabecaDaChegada?.lugar ?? 'sem cabeça de lugar'} · ` +
+        `${cabecaDaChegada?.manchete ?? 'sem manchete'}»` +
+        ` · sem guião, pela submissão nativa: «${semGuiao.caminho}${semGuiao.query}» ` +
+        `com ${semGuiao.nomes} nomes, ${semGuiao.portaDoConcelho} porta(s) do concelho e ` +
+        `${semGuiao.frase} caracteres de frase do <noscript>` +
+        ` · o filtro dos estudos em «${rotaFiltrada}»: ${filtro.entradas} entradas, ` +
+        `${filtro.casam} casam, ${filtro.visiveis} à vista, porta da volta ` +
+        `${filtro.portaDaVolta ? 'acesa' : 'apagada'}; sem guião ${filtroSemGuiao.entradas} ` +
+        `entradas, ${filtroSemGuiao.escondidas} escondidas e ${filtroSemGuiao.frase} ` +
+        `caracteres de frase`,
     );
 
     /* ------------------------------------------------------------------ A13
