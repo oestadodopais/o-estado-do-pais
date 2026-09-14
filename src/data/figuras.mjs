@@ -917,15 +917,25 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        E OUTRA VEZ A 14.09.2026, duas vezes: a expansão da sigla passa a
        `[a verificar]` (achado 6, a razão está na gémea da dívida das empresas),
        e o tempo passa a ser o do excerto (achado 4, a razão está na gémea das
-       famílias). */
+       famílias).
+
+       E UMA TERCEIRA, ao fim do dia (achado 3 da releitura do Codex sobre a
+       cabeça `7b85bb7f`). A linha da Comissão repete a exclusão depois do
+       «t-1», e a definição dizia-a uma vez só: «NFC (excl. FDI) consolidated
+       credit flow in % of NFC debt stock in t-1 (excl. FDI)». Com uma
+       exclusão só, o que a frase qualificava era o FLUXO, e o denominador
+       ficava por qualificar: o stock de dívida do período anterior também é
+       sem o investimento direto estrangeiro, e a fonte di-lo por extenso. A
+       frase passa a dizer os dois lados, e não acrescenta nada: a palavra
+       «também» é o que a repetição do parêntese faz na fonte. */
     origens: ['pdm-credito-as-empresas', 'glossario-fdi'],
     pt: [
-      'O fluxo de crédito consolidado às NFC, sem o investimento direto estrangeiro, em percentagem da dívida que elas tinham no período anterior; o nome por extenso da sigla permanece ',
+      'O fluxo de crédito consolidado às NFC, sem o investimento direto estrangeiro, em percentagem da dívida que elas tinham no período anterior, também sem o investimento direto estrangeiro; o nome por extenso da sigla permanece ',
       { marcador: 'a verificar', gloss: 'to verify' },
       '.',
     ],
     en: [
-      'The consolidated credit flow to NFC, excluding foreign direct investment, as a percentage of their debt stock in the previous period; the full name behind the abbreviation remains ',
+      'The consolidated credit flow to NFC, excluding foreign direct investment, as a percentage of their debt stock in the previous period, also excluding foreign direct investment; the full name behind the abbreviation remains ',
       { marcador: 'a verificar', gloss: 'to verify' },
       '.',
     ],

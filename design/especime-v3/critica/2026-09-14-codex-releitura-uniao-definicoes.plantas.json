@@ -1,0 +1,33 @@
+{
+ "registado_em": "2026-09-14T16:41:21+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/pacote-uniao-2",
+ "plantas": [
+  {
+   "id": "R1",
+   "ficheiro": "src/data/figuras.mjs",
+   "descricao": "o excerto de pdm-divida-das-familias com o limiar trocado (55% para 50%): o excerto deixa de estar na fonte",
+   "sha256_antes": "abd0f67d56091a085f555815c6ddb5363b9c531f2fec19b3425b37f300bc1b12",
+   "sha256_depois": "9da50bbeb2f0844e3d340e9e6b7f0ed9457673f320f9d65bdcf8b1f0c0bc1d41",
+   "contexto_antes": "e',\n    url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',\n    lido: '2026-09-09',\n    excerto: 'household (incl. NPISH) consolidated debt in % of GDP with a threshold of 55%.',\n  },\n  'pdm-credito-as-empresas': {\n    publicador: 'Comissão Europeia',\n    documento: 'Scoreboard · Macroeconomic Imbalance Procedure',\n    url: 'https://ec",
+   "contexto_depois": "e',\n    url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',\n    lido: '2026-09-09',\n    excerto: 'household (incl. NPISH) consolidated debt in % of GDP with a threshold of 50%.',\n  },\n  'pdm-credito-as-empresas': {\n    publicador: 'Comissão Europeia',\n    documento: 'Scoreboard · Macroeconomic Imbalance Procedure',\n    url: 'https://ec"
+  },
+  {
+   "id": "R2",
+   "ficheiro": "built/en/european-union/index.html",
+   "descricao": "a página inglesa rende «counted twice» na definição do risco de pobreza onde os dados e o excerto dizem «counted only once»",
+   "sha256_antes": "a6e8fc21e78122bb569d503f36b711904921d691e2523fe3a67b0f0ae8956233",
+   "sha256_depois": "44869f0126a776de0a8bfe3a55b472f60caa83c792c56ab2365da37febc16c90",
+   "contexto_antes": " the total population who are either at risk of poverty, or severely materially and socially deprived, or living in a household with a very low work intensity; people are counted only once even if they are in more than one of these situations.</p><div class=\"def-origem\" data-def-origem=\"glossario-arope\"><p class=\"def-origem-linha\"><span class=\"def-origem-k\">Published by</span> <span data-verbatim=\"or",
+   "contexto_depois": " the total population who are either at risk of poverty, or severely materially and socially deprived, or living in a household with a very low work intensity; people are counted twice even if they are in more than one of these situations.</p><div class=\"def-origem\" data-def-origem=\"glossario-arope\"><p class=\"def-origem-linha\"><span class=\"def-origem-k\">Published by</span> <span data-verbatim=\"or"
+  },
+  {
+   "id": "R3",
+   "ficheiro": "scripts/check-lugar.mjs",
+   "descricao": "a guarda da data da régua 8.4 deixa passar uma origem sem data rendida (só compara quando há campo)",
+   "sha256_antes": "4cff781030e1dfe480db86b0922e5d8b5e1cb08e37fbb48891e343344a7e1bb6",
+   "sha256_depois": "ffd1e94ecc09bc808e5523eeb8124c1f4492d343f82b8dc3560ef91c949d241c",
+   "contexto_antes": "aData = bloco.querySelector(`[data-def-lido=\"${o.chave}\"]`);\n      const dataRendida = campoDaData ? campoDaData.text.replace(/\\s+/g, ' ').trim() : null;\n      if (dataRendida !== data) {\n        medidas.d84_definicoes_fora++;\n        anota(\n          'd84_definicoes_fora',\n          `${url} · «${nome}»: a origem «${o.chave}» rende a data de lei",
+   "contexto_depois": "aData = bloco.querySelector(`[data-def-lido=\"${o.chave}\"]`);\n      const dataRendida = campoDaData ? campoDaData.text.replace(/\\s+/g, ' ').trim() : null;\n      if (dataRendida !== null && dataRendida !== data) {\n        medidas.d84_definicoes_fora++;\n        anota(\n          'd84_definicoes_fora',\n          `${url} · «${nome}»: a origem «${o.chave}» rende a data de lei"
+  }
+ ]
+}

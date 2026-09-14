@@ -176,6 +176,47 @@ escrito na secção abaixo.*
 
 ---
 
+### A releitura de verificação, e os dois achados que ela deixou (14.09.2026, ao fim do dia)
+
+*A releitura do Codex sobre a cabeça `7b85bb7f`
+(`critica/2026-09-14-codex-releitura-uniao-definicoes.md`, com o `.plantas.json`
+ao lado) viu as três plantas do lugar de direção, 3 de 3, e deixou dois achados
+reais. Os dois fecharam-se na mesma worktree, antes da aterragem.*
+
+**O achado 3 · o fluxo de crédito às empresas dizia metade da exclusão.** A linha
+da Comissão repete o parêntese depois do «t-1» («NFC (excl. FDI) consolidated
+credit flow in % of NFC debt stock in t-1 (excl. FDI)») e as duas definições
+diziam-no uma vez só: o que ficava qualificado era o FLUXO, e o denominador
+ficava por qualificar. As duas passam a dizer os dois lados, e não acrescentam
+nada: a palavra «também» é o que a repetição do parêntese faz na fonte. As duas
+linhas do inventário passam a `retirada` com a razão, e as duas novas estão
+vivas; `check:voz` diz **nada por classificar** e **autorreferência 0**.
+
+**O achado 6 · a régua 8.4 comparava três campos por contenção.** O publicador,
+o documento e o excerto eram procurados no texto do bloco inteiro, e a releitura
+mediu as duas frestas: «a changed field can pass if the expected text appears
+elsewhere, and additional text is allowed». Os três passam a ser comparados **por
+igualdade contra o elemento marcado de cada campo**
+(`data-verbatim="origem-<chave>-publicador"`, `-documento` e `-excerto`, ou
+`-excerto-en` onde a origem publica o mesmo texto nas duas línguas), com a régua
+a exigir que exista **um** elemento por campo.
+
+**O positivo conhecido escolhe a fresta de propósito**, porque é ela que
+distingue as duas comparações: cada uma das três plantas novas COLA texto ao fim
+do campo, e o esperado continua lá inteiro. Medido sobre o `dist/` desta cabeça,
+campo a campo: **a contenção PASSA e a igualdade FALHA** nos três. As plantas do
+bloco passam de 11 para **14 de 14**, e a régua continua a ler **52 definições
+(esperadas 52) e 62 origens (esperadas 62)**.
+
+*Os outros achados da releitura são as três plantas (o limiar da dívida das
+famílias trocado para 50 %, a página inglesa a dizer «counted twice» no risco de
+pobreza, e a guarda da data da régua a deixar passar uma origem sem data) e três
+consequências delas ou do pacote: a conta das chaves no cabeçalho do prompt, a
+página do glossário do «FDI» que o pacote não levava, e a inconsistência que as
+duas primeiras plantas criam entre os dados e as páginas construídas.*
+
+---
+
 ### As três decisões de fecho (14.09.2026, depois do relatório acima)
 
 **1 · A régua `tests/inicio/leitura.mjs` passa a medir as leituras onde elas
