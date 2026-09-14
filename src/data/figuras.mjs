@@ -627,6 +627,29 @@ export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
      duas definições que escreviam o nome por extenso passam a publicar a sigla
      da fonte e, no lugar da expansão, o marcador da casa. O dia em que uma
      fonte escrever a sigla ao lado do nome, a chave volta com o excerto. */
+  /* A SIGLA DO INVESTIMENTO DIRETO ESTRANGEIRO, PROVADA (14.09.2026, decisão do
+     lugar de direção depois do relatório desta passagem). A linha da Comissão
+     escreve «(excl. FDI)» e a definição da casa escreve o nome por extenso: é a
+     mesma pergunta do «NFC», e aqui a fonte responde. Lida por `curl` com o
+     agente da casa a 14.09.2026: HTTP 200, 67 386 bytes, sha256
+     `445ac4b76ada3c722e54e561239d81147dd84b7a449cfbbd1533edf4e3e062a5`, com 20
+     ocorrências de «FDI» e uma de «abbreviated». A primeira frase escreve a
+     sigla ao lado do nome, e é ela que entra, carácter a carácter, do HTML em
+     bruto.
+
+     E A DO «NFC» NÃO EXISTE, e isso também foi medido no mesmo dia, para que a
+     diferença entre as duas não fique por conta de ninguém ter procurado:
+     `Glossary:Non-financial_corporation_(NFC)`, `…corporations_(NFC)` e
+     `…corporations_sector_(NFC)` respondem 404 com «Page not found», e
+     `Glossary:NFC` responde 500. A expansão de «NFC» fica `[a verificar]`. */
+  'glossario-fdi': {
+    publicador: 'Eurostat',
+    documento: 'Statistics Explained · Glossary: Foreign direct investment (FDI)',
+    url: 'https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Foreign_direct_investment_(FDI)',
+    lido: '2026-09-14',
+    excerto:
+      'Foreign direct investment, abbreviated as FDI, is an international investment within the balance of payment accounts.',
+  },
   'glossario-npish': {
     publicador: 'Eurostat',
     documento:
@@ -895,7 +918,7 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        `[a verificar]` (achado 6, a razão está na gémea da dívida das empresas),
        e o tempo passa a ser o do excerto (achado 4, a razão está na gémea das
        famílias). */
-    origens: ['pdm-credito-as-empresas'],
+    origens: ['pdm-credito-as-empresas', 'glossario-fdi'],
     pt: [
       'O fluxo de crédito consolidado às NFC, sem o investimento direto estrangeiro, em percentagem da dívida que elas tinham no período anterior; o nome por extenso da sigla permanece ',
       { marcador: 'a verificar', gloss: 'to verify' },

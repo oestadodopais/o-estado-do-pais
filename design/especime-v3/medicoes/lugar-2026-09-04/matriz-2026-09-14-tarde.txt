@@ -77,7 +77,7 @@
   passa  nenhum par de áreas de toque sobrepostas na leitura
          0 pares em 21 leitura(s) abertas uma a uma
   passa  cada leitura tem o seu selo e uma porta por origem declarada (09.09.2026, no lugar do «selo maior»)
-         21 de 21 leitura(s) abertas · 25 bloco(s) de origem · 0 sem selo · 0 sem origem · 0 com um bloco de origem que não tem uma porta · 0 com uma porta abaixo de 44px
+         21 de 21 leitura(s) abertas · 26 bloco(s) de origem · 0 sem selo · 0 sem origem · 0 com um bloco de origem que não tem uma porta · 0 com uma porta abaixo de 44px
   passa  sem JavaScript · /
          completo e correcto: 5 cartão(ões) na faixa, 0 leituras de painel
   passa  sem JavaScript · nenhuma nota de mecânica · /
@@ -258,7 +258,7 @@
   [32mpassa[0m  nenhum par de áreas de toque sobrepostas na leitura
 [90m         0 pares em 21 leitura(s) abertas uma a uma[0m
   [32mpassa[0m  cada leitura tem o seu selo e uma porta por origem declarada (09.09.2026, no lugar do «selo maior»)
-[90m         21 de 21 leitura(s) abertas · 25 bloco(s) de origem · 0 sem selo · 0 sem origem · 0 com um bloco de origem que não tem uma porta · 0 com uma porta abaixo de 44px[0m
+[90m         21 de 21 leitura(s) abertas · 26 bloco(s) de origem · 0 sem selo · 0 sem origem · 0 com um bloco de origem que não tem uma porta · 0 com uma porta abaixo de 44px[0m
   [32mpassa[0m  sem JavaScript · /
 [90m         completo e correcto: 5 cartão(ões) na faixa, 0 leituras de painel[0m
   [32mpassa[0m  sem JavaScript · nenhuma nota de mecânica · /

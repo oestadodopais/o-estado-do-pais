@@ -47,7 +47,7 @@ esta cabeça. A prova de cada linha é um ficheiro em
 | §7.10 · valores desenhados sem o seu texto na legenda | 0 (teto 0) | **0** (teto 0) | o mesmo |
 | L7 · a releitura do leitor de primeira vez | não corrida | **não corrida**: é leitura, e a leitura é do lugar de direção | `critica/2026-09-09-codex-releitura-l7-f110.md` |
 | L8 · os três portões e as réguas | portões 0·0·0; `porta` 34/34, `recibo` 13/13, `correcoes-a` 32/32, **`matriz` 12 de 89 falham** | **portões 0·0·0**; `porta` 34/34, `recibo` 13/13, `correcoes-a` 32/32, **`matriz` 89 de 89 passam** e sai a 0 | `porta-`, `recibo-`, `correcoes-a-` e `matriz-2026-09-14-tarde.txt` |
-| L8 · a régua que faltava à conta | *(não estava na tabela)* | **`leitura` 4 de 26 células**, vermelha desde 08.09 por decisão do item 8.16, e **não é desta sessão**: mede as 21 leituras em `/`, e elas estão em «Portugal na União Europeia» desde `3139099f`. Relatada, não corrigida | `leitura-2026-09-14-tarde.txt` |
+| L8 · a régua `leitura` | **4 de 26 células**, vermelha desde 08.09 por decisão do item 8.16: media as 21 leituras em `/`, e elas estão em «Portugal na União Europeia» desde `3139099f` | **26 de 26 células**, e as suas plantas **8 de 8 mordem**: por decisão do lugar de direção de 14.09 a régua passou a medir as leituras onde elas vivem, e a J5 passou a medir o índice dos domínios que o 8.13 fez | `leitura-2026-09-14-tarde.txt`, `leitura-plantas-2026-09-14-tarde.txt` |
 | L9 · plantas vermelhas e depois verdes | 7 de 7 | **11 de 11 morderam, e todas repuseram byte a byte** | `plantas-2026-09-14-tarde.txt`, e `positivos-8-4-2026-09-14.txt` com as seis da declaração |
 
 **A L1 continua a ser uma catraca, e nesta passagem não desceu nem subiu: 2 170,
@@ -122,7 +122,7 @@ onde tinha 10, e a célula voltou a **0 pares em 21 leituras**.
 
 | achado | o que se fez | como se mediu |
 |---|---|---|
-| 3 · a posição de investimento internacional «em percentagem do PIB» | a definição ganha uma segunda origem, `pdm-posicao-de-investimento`, com a linha da Comissão copiada carácter a carácter: «net international investment position as percent of GDP, with a threshold of -35%.» | a régua 8.4 lê **60 origens (esperadas 60)**; eram 62, e a conta fecha: menos duas de `glossario-nfc`, mais esta |
+| 3 · a posição de investimento internacional «em percentagem do PIB» | a definição ganha uma segunda origem, `pdm-posicao-de-investimento`, com a linha da Comissão copiada carácter a carácter: «net international investment position as percent of GDP, with a threshold of -35%.» | a régua 8.4 lê **62 origens (esperadas 62)**; eram 62, e a conta fecha: menos duas de `glossario-nfc`, mais esta e mais a do FDI |
 | 4 · os dois fluxos de crédito | «no fim do ano anterior» passa a «no período anterior» nas duas edições, porque o excerto diz «debt stock in t-1» e «t-1» não escreve nem «fim» nem «ano» | as quatro linhas do inventário (duas por edição) passam a `retirada` com a razão, e as novas estão vivas; `check:voz` fecha a construção se uma linha viva não se render |
 | 5 · a sobrecarga do custo da habitação | «líquido de subsídios à habitação» entra nos dois lados, nas duas edições, como o excerto | o mesmo |
 | 6 · «NFC» | **nenhuma das duas fontes declaradas liga a sigla ao nome**, e mediu-se: o glossário do Eurostat (HTTP 200, 68 554 bytes, revisão 623303) tem **0** ocorrências de «NFC» e **0** de «abbreviat»; a página do painel da Comissão (HTTP 200, 74 463 bytes, sha256 `1d034821…c9db`, a mesma cópia da leitura da manhã) tem **3** de «NFC» e **0** de «non-financial». As duas definições publicam a sigla da fonte e a expansão fica `[a verificar]`; a origem que não sustentava nada saiu com ela | `curl -sSL` com o agente da casa, e uma contagem das ocorrências sobre as respostas |
@@ -170,18 +170,57 @@ só olhe para o corpo das páginas não as encontra.
 
 ### O que ficou fora, e porquê
 
-- **A régua `tests/inicio/leitura.mjs` sai a 1, com 4 de 26 células.** Mede as 21
-  leituras em `/`, e elas mudaram-se para «Portugal na União Europeia» com o item
-  8.16, no commit `3139099f` de 08.09. Não é desta sessão (o `HomeView.astro` não
-  está no `diff` de `2da5212d..HEAD`) e não está neste encargo: é a mesma espécie
-  de decisão que o §1 reservou para a matriz, e é do lugar de direção.
-- **A expansão de «FDI» na definição do fluxo de crédito às empresas.** É o mesmo
-  defeito do achado 6: a linha da Comissão escreve «(excl. FDI)» e a casa escreve
-  «sem o investimento direto estrangeiro», e nenhum excerto declarado liga a sigla
-  ao nome. A triagem abriu o «NFC» e não abriu este, e a decisão é do lugar de
-  direção.
+*As três coisas que esta secção relatava por decidir foram decididas pelo lugar
+de direção a 14.09.2026, e fecharam-se na mesma cabeça. O que cada uma ficou está
+escrito na secção abaixo.*
 
 ---
+
+### As três decisões de fecho (14.09.2026, depois do relatório acima)
+
+**1 · A régua `tests/inicio/leitura.mjs` passa a medir as leituras onde elas
+vivem.** Estava a medir `/`, e as 21 leituras mudaram-se para «Portugal na União
+Europeia» com o item 8.16 no commit `3139099f` de 08.09: saía a **4 de 26**, com
+as 22 células que procuram leituras a dizer «0 leitura(s) de 21». As seis células
+das leituras (J1, J3, J4, J12, J13 e J14) passam a `/uniao-europeia` e
+`/en/european-union`, com a decisão citada na própria régua; as três que medem a
+PRIMEIRA PÁGINA ficam onde estão (J6, a altura de `/` a 390; J7, o primeiro ecrã;
+e a J5). O selector da faixa deixa de ser `[data-grelha] [data-faixa]` e passa a
+ser `[data-faixa]`, porque a marca da grelha é da cabeça de `/` e existia para
+distinguir a faixa da cabeça das faixas por domínio, que o 8.13 tirou: a célula
+J1 passa a exigir que a página tenha **uma** faixa, para que o selector não fique
+ambíguo em silêncio. **A J5 mudou de objecto**, e a razão está escrita no corpo
+dela: media uma secção POR DOMÍNIO com a sua faixa de cartões, e o item 8.13 fez
+dela um índice; passa a medir a decisão (a secção existe, vem depois do mapa,
+lista domínios com nome, porta e estado, e não tem lá dentro cartão nenhum nem
+valor selado nenhum). Depois: **26 de 26 células**, e as **8 plantas mordem**, as
+duas da J5 reescritas para o alvo novo (um nome sem porta, e um valor selado
+dentro do índice).
+
+**2 · «FDI»: a fonte responde, e a expansão fica provada.** A página do glossário
+do Eurostat foi lida por `curl` com o agente da casa a 14.09.2026: HTTP 200,
+67 386 bytes, sha256
+`445ac4b76ada3c722e54e561239d81147dd84b7a449cfbbd1533edf4e3e062a5`, com **20**
+ocorrências de «FDI» e **uma** de «abbreviated», e a primeira frase escreve
+«Foreign direct investment, abbreviated as FDI, is an international investment
+within the balance of payment accounts.» Entra como segunda origem do fluxo de
+crédito às empresas (`glossario-fdi`), com o excerto carácter a carácter lido do
+HTML em bruto, como as medidas que já têm duas origens. **E a do «NFC» não
+existe**, e isso mediu-se no mesmo dia para que a diferença não fique por conta de
+ninguém ter procurado: `Glossary:Non-financial_corporation_(NFC)`,
+`…corporations_(NFC)` e `…corporations_sector_(NFC)` respondem **404** com «Page
+not found», e `Glossary:NFC` responde **500**. A expansão de «NFC» fica
+`[a verificar]`. A régua 8.4 passa a ler **62 origens (esperadas 62)**.
+
+**3 · As quatro linhas do inventário escritas `lugar|` sem espaço** (237 a 240 na
+cabeça `2da5212d`): normalizadas para `| lugar |`, sem uma letra mudada no texto.
+Antes, `grep -c '| lugar |'` dava **209** e a conta real era **213**; depois, as
+duas dão **213**, com **150 vivas** e **63 retiradas**, que é exactamente a
+contagem de antes. O `check:voz` lê-as como antes: **999 linhas do inventário com
+bloco, 782 vivas, todas rendidas; 217 retiradas, nenhuma rendida**.
+
+---
+
 
 ## Estado · 14.09.2026 · **feito**
 
