@@ -2392,6 +2392,19 @@ a.badge-porta:hover {
   white-space: normal;
   letter-spacing: 0.02em;
 }
+/* A DEFINIÇÃO DO MARCADOR, AO PÉ DA PRIMEIRA OCORRÊNCIA DE CADA PÁGINA (§7.10
+   do brief F1.10, 14.09.2026). Não é uma segunda etiqueta: é prosa curta, na
+   letra do instrumento e na cor do texto secundário, a dizer o que o sinal
+   quer dizer para quem o vê pela primeira vez. `<DefinicaoDoMarcador>` rende-a
+   uma vez por página, e a régua do bloco confere que é ao pé do primeiro. */
+.marcador-definicao {
+  font-family: var(--f-instr);
+  font-size: 10.5px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  margin-left: 6px;
+}
+
 .marcador-gloss {
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;
@@ -3607,6 +3620,57 @@ a.badge-porta:hover {
   gap: 6px 12px;
   margin-top: 4px;
 }
+/* -----------------------------------------------------------------------
+   OS RÓTULOS DOS DESENHOS DO CONCELHO, COMO TEXTO POR BAIXO A 390
+   -----------------------------------------------------------------------
+   §7.10 do brief F1.10, 14.09.2026, e o penúltimo dos cinco pequenos. Os dois
+   desenhos desta página têm 720 unidades de largura e a folha dá-lhes 100 % da
+   coluna: o que o SVG escreve a 12 px chega ao leitor muito mais pequeno do que
+   isso. MEDIDO, nas duas edições, com
+   `design/especime-v3/medicoes/lugar-2026-09-04/rotulos-390.mjs`: dos seis
+   rótulos desenhados da página, quatro estão à vista, e a altura de letra com
+   que chegam ao leitor é de 5,2 px a 390 e de 7,97 px a 1 280. Os outros dois,
+   os da barra da distância, medem 0 porque a dobra que os contém abre ao toque
+   e a medição é com ela fechada.
+
+   A TROCA É DA FOLHA E NÃO DO SERVIDOR: o documento manda sempre os dois, e a
+   largura decide qual se lê. Acima de 640 lêem-se os do desenho, que é onde
+   cada número está ao pé da sua barra; a 640 ou abaixo saem os do desenho e
+   entram os da legenda, ao pé do selo de cada valor. O mesmo número visível
+   duas vezes na mesma largura seria a bifurcação que a L1 deste bloco conta. */
+.mun-legenda-e {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.mun-legenda-k,
+.mun-legenda-val {
+  display: none;
+}
+@media (max-width: 640px) {
+  .mun-distancia .mun-barra-rot,
+  .mun-distancia .mun-tecto-rot,
+  .mun-serie-val {
+    display: none;
+  }
+  .mun-legenda-k,
+  .mun-legenda-val {
+    display: inline;
+    font-family: var(--f-instr);
+    font-variant-numeric: tabular-nums lining-nums;
+    font-size: 12px;
+  }
+  .mun-legenda-k {
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+  }
+  .mun-legenda-val {
+    font-weight: 600;
+    color: var(--ink);
+  }
+}
+
 .mun-selo-rot {
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;

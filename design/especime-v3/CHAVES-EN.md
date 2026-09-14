@@ -1275,3 +1275,18 @@ onze das dezasseis edições não tinha data nenhuma para mostrar;
 ficheiros» que o §7.4 manda não imprimir quando está vazio, e que estava vazio
 sempre. As dez linhas do inventário da voz que elas rendiam passaram a
 `retirada`, com a razão escrita em cada uma.
+
+### F1.10 · segunda passagem, o fecho de 14.09.2026
+
+**Uma chave nova, e nenhuma mudada.** A sessão fechou os seis itens que faltavam
+à segunda passagem do bloco, e cinco deles são medição, régua ou fotografia: não
+escrevem uma palavra. O que escreve é o último dos cinco pequenos do §7.10.
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `marcador.definicao` | um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado | a field not confirmed against the source, not a doubt about what is published | a definição que se rende ao pé da PRIMEIRA ocorrência de `[a verificar]` em cada página (§7.10 do brief; a releitura do leitor de primeira vez de 09.09.2026: «`[a verificar]` is not defined beside first occurrences»). É a frase da página do marcador encurtada às duas coisas que ela abre, o que ele é e o que ele não é, e o inglês diz as mesmas duas com as palavras da própria página inglesa (`a field has not been confirmed against the source`, da lede; `not a doubt about the published figure`, do `queEV`). **A palavra é «campo» e não «campo da proveniência»:** a régua do bloco apanhou o marcador a render-se onze vezes na agenda, onde o que falta é a data de um acontecimento e não um campo de uma linha, e uma definição que falasse só de proveniência era falsa ali. **Não é** o `marcador-gloss`, que continua a ser a glosa inglesa do próprio marcador («to verify»), nem a palavra de estado `estado.porConfirmar`: o marcador fica em português nas duas edições, e a definição é da língua da página. Rende-se por `<DefinicaoDoMarcador>`, uma vez por página, e a régua do bloco (`check:lugar`, célula §7.10) exige que esteja ao pé do primeiro marcador do documento |
+
+*As duas chaves que o §7.10 poderia ter pedido e não pediu:* os rótulos dos
+gráficos a 390 escrevem-se com os valores que já existem (cada um é um `<Claim>`
+da sua linha do livro-razão) e com o ano que o próprio ponto da série traz, e por
+isso o pequeno dos rótulos entra sem uma palavra nova em nenhuma das edições.
