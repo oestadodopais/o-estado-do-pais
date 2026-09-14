@@ -211,6 +211,10 @@ export const DOMINIOS = /** @type {const} */ ([
  *              medida»: E5 mostra o limite legal, e o rótulo di-lo.
  * `limiar`     o limiar publicado pelo quadro, quando existe, na forma que
  *              `Peca.astro` já lê.
+ * `limiarFixadoPor` quem fixou esse limiar, da lista fechada de
+ *              `FIXADORES_DO_LIMIAR` (F1.10, item 8.5). Obrigatório onde há
+ *              limiar: `fixadorDoLimiar()` fecha a construção sem ele, porque a
+ *              palavra «limiar» não volta a aparecer sozinha.
  * `porConcelho` a chave das 308 linhas desta medida, quando existem.
  * `forma`      a forma gráfica admitida que esta medida ganha (`§3` do brief da
  *              forma dos domínios), ou `null`.
@@ -231,6 +235,7 @@ export const DOMINIOS = /** @type {const} */ ([
  *   ambito?: ParDeLinguas,
  *   rotuloDoValor?: ParDeLinguas,
  *   limiar?: Limiar|null,
+ *   limiarFixadoPor?: 'comissao'|'lei'|'pacto'|'conselho'|null,
  *   porConcelho?: 'ganho'|'indice'|null,
  *   forma?: 'barra-concelho'|'mapa'|null,
  *   ausencia?: ParDeLinguas|null,
@@ -276,9 +281,25 @@ export const MEDIDAS_DO_DOMINIO_1 = /** @type {const} */ ([
       en: 'General government balance',
     },
     unidade: { pt: 'Percentagem do PIB', en: 'Percentage of GDP' },
-    /* O limiar de 3 % do Protocolo n.º 12, do lado do défice: um saldo abaixo de
+    /* O limite de défice de 3 % do PIB, do lado do défice: um saldo abaixo de
        −3 % está fora. O sinal escreve-se, porque o limiar é negativo. */
     limiar: { nl: '3', sinal: '−', lado: 'inferior', simbolo: '%' },
+    /* `pacto`, E A ORIGEM É O DOCUMENTO QUE A LINHA CITA (F1.10, item 8.5,
+       segunda passagem de 08.09.2026). A entrada dizia `porRegistar` enquanto
+       ninguém tinha lido esse documento; a decisão do lugar de direção é que o
+       fixador vem dele e de mais lado nenhum. A `note` da linha escreve «O
+       limiar de 3 % do PIB não está nesta resposta: está na página Statistics
+       Explained do Eurostat, alojada neste estudo, e não tem linha própria», e
+       essa página diz, palavra por palavra: «Under the terms of the EU's
+       Stability and Growth Pact (SGP), Member States pledged to keep their
+       deficits and debt below certain limits: a Member State's government
+       deficit may not exceed 3% of its gross domestic product (GDP), while its
+       debt may not exceed 60% of GDP.» O cartão diz de que lado do limiar do
+       Pacto o valor está, que é o que o documento prova. O Protocolo n.º 12, que
+       é onde o limite está em direito, continua por ler (o EUR-Lex devolveu 202
+       com corpo vazio ao verificador de 01.09.2026) e por isso não é ele que a
+       página nomeia. */
+    limiarFixadoPor: 'pacto',
     porConcelho: null,
     forma: null,
   },
@@ -289,6 +310,10 @@ export const MEDIDAS_DO_DOMINIO_1 = /** @type {const} */ ([
     nome: { pt: 'Dívida pública', en: 'Government debt' },
     unidade: { pt: 'Percentagem do PIB', en: 'Percentage of GDP' },
     limiar: { nl: '60', lado: 'superior', simbolo: '%' },
+    /* A MESMA LINHA DO PAINEL, E POR ISSO O MESMO FIXADOR: `divida-publica-2025`
+       é uma das treze do Procedimento, e a sua `note` abre «Limiar do
+       Procedimento relativo aos Desequilíbrios Macroeconómicos: 60%». */
+    limiarFixadoPor: 'comissao',
     porConcelho: null,
     forma: null,
   },
@@ -305,6 +330,18 @@ export const MEDIDAS_DO_DOMINIO_1 = /** @type {const} */ ([
        Conselho das Finanças Públicas. É um limiar publicado, como os do
        Procedimento, e entra pelo mesmo motivo declarado. */
     limiar: { nl: '5', lado: 'superior', simbolo: '%' },
+    /* `conselho`, E A ORIGEM É O MESMO DOCUMENTO QUE A LINHA CITA (F1.10, item
+       8.5, segunda passagem de 08.09.2026). O excerto da linha, na p. 9 do PDF,
+       escreve «superando em 1,4 p.p. a taxa de crescimento de 5% recomendada» e
+       não diz por quem; a p. 6 do MESMO parecer di-lo, palavra por palavra:
+       «Nesse documento comprometeu-se com uma determinada trajetória de
+       crescimento da despesa líquida, que depois foi aprovada pelo Conselho da
+       UE, passando a ser a trajetória assumida nos termos da Recomendação do
+       Conselho da União Europeia de janeiro de 2025.» A p. 9 repete a
+       atribuição na frase de que o excerto é a segunda metade: «a taxa de
+       crescimento em 2025 foi superior à prevista no compromisso assumido por
+       Portugal e endossado pelo Conselho da UE». */
+    limiarFixadoPor: 'conselho',
     porConcelho: null,
     forma: null,
   },
@@ -332,7 +369,7 @@ export const MEDIDAS_DO_DOMINIO_1 = /** @type {const} */ ([
       en: 'How much does my municipality owe, and what is the cap?',
     },
     nome: {
-      pt: 'Dívida do município contra o limite legal',
+      pt: 'Dívida da câmara contra o limite legal',
       en: 'Municipal debt against the legal cap',
     },
     unidade: { pt: 'Percentagem', en: 'Percentage' },
@@ -531,12 +568,22 @@ export const FAIXA_DO_DOMINIO_1 = /** @type {const} */ (['E3', 'E2', 'T1', 'T2',
  * coluna «concelho» da linha E1 diz não existir; e a disparidade salarial por
  * concelho, que o inventário mostrou não ser publicada.
  *
+ * A TERCEIRA EXCLUSÃO MUDOU DE PALAVRAS A 14.09.2026 (achado 10 da leitura
+ * cruzada do inventário). Dizia «que nenhum publicador oficial calcula», e isso
+ * é uma afirmação sobre TODOS os publicadores do país, que a casa não pode
+ * provar: o que ela leu foi um indicador, o `0012661` do INE sobre os Quadros de
+ * Pessoal do MTSSS/GEP, e o que esse indicador dá por concelho é um coeficiente
+ * de variação do ganho. A frase passa a dizer a ausência na forma da casa, que é
+ * a da regra 6 da carta e a mesma palavra do cartão da ausência («Não há número
+ * público para isto»), e quem quiser saber onde a casa procurou tem o cartão
+ * T4a na mesma página, com a fonte e o código do indicador.
+ *
  * NÃO TRAZ ALGARISMOS. Uma contagem das medidas seria um número da casa, e um
  * número da casa entra por `data-prova`, com quem o reconte.
  */
 export const FRONTEIRA_DO_DOMINIO_1 = {
-  pt: 'Este domínio mede as contas do Estado, o que a economia produz por pessoa, a dívida dos municípios e o que se ganha e se trabalha em Portugal; não mede a produtividade, que é pergunta de estudo, nem o produto abaixo das regiões, nem a disparidade salarial entre sexos ao nível do concelho, que nenhum publicador oficial calcula.',
-  en: 'This domain measures the State’s accounts, what the economy produces per person, municipal debt, and what is earned and worked in Portugal; it does not measure productivity, which is a question for a study, nor output below the regions, nor the gender pay gap at municipal level, which no official publisher computes.',
+  pt: 'Este domínio mede as contas do Estado, o que a economia produz por pessoa, a dívida das câmaras e o que se ganha e se trabalha em Portugal; não mede a produtividade, que é pergunta de estudo, nem o produto abaixo das regiões, nem a disparidade salarial entre sexos ao nível do concelho, para a qual não há número público.',
+  en: 'This domain measures the State’s accounts, what the economy produces per person, municipal debt, and what is earned and worked in Portugal; it does not measure productivity, which is a question for a study, nor output below the regions, nor the gender pay gap at municipal level, for which there is no published figure.',
 };
 
 /**
@@ -621,4 +668,30 @@ export function dominioDeclarado(slug) {
  */
 export function medidaPelaChave(chave) {
   return MEDIDAS_DO_DOMINIO_1.find((m) => m.chave === chave) ?? null;
+}
+
+/**
+ * A RESSALVA DE ALCANCE DE UMA LINHA, PARA A PÁGINA DELA (F1.10, §9.2,
+ * 08.09.2026)
+ * ---------------------------------------------------------------------------
+ * O §9.2 do brief manda a prosa de diligência da página do domínio («a ressalva
+ * do decreto "não lido"», entre outras) sair de lá e ir «para a página da linha
+ * ou para o Método». Estas duas são de UMA LINHA cada — o território que o
+ * diploma de T5 não cobre, e a meta que é da União e não de Portugal —, e por
+ * isso o destino é a página da linha, que é o recibo daquela linha e o sítio
+ * onde o alcance dela se lê.
+ *
+ * AS PALAVRAS NÃO MUDAM. As duas levam o marcador `[a verificar]`, que é dívida
+ * de proveniência e palavra pendente do diretor: o que muda é o lugar.
+ *
+ * A LIGAÇÃO É PELO `claim`, que é o identificador da linha, e não por uma
+ * segunda tabela: a ressalva continua declarada na medida a que pertence, e esta
+ * função é só o índice que a página da linha usa para a encontrar.
+ *
+ * @param {string} id o identificador da linha
+ * @returns {{ pt: readonly unknown[], en: readonly unknown[] }|null}
+ */
+export function ressalvaDaLinha(id) {
+  const m = MEDIDAS_DO_DOMINIO_1.find((x) => x.claim === id && x.ressalva);
+  return m && m.ressalva ? m.ressalva : null;
 }

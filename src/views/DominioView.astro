@@ -57,6 +57,7 @@
 import Base from '../layouts/Base.astro';
 import CabecaDoLugar from '../components/inicio/CabecaDoLugar.astro';
 import Faixa from '../components/inicio/Faixa.astro';
+import Gaveta from '../components/inicio/Gaveta.astro';
 import Claim from '../components/Claim.astro';
 import Frase from '../components/Frase.astro';
 import Manchete from '../components/Manchete.astro';
@@ -71,8 +72,13 @@ import {
   ausenciasDoDominio,
   fronteiraDoDominio,
   CABECA_DO_DOMINIO_1,
-  FAIXA_DO_DOMINIO_1,
 } from '../data/dominios.mjs';
+import {
+  fixadorDoLimiar,
+  DEFINICOES_DAS_MEDIDAS,
+  origensDaDefinicao,
+} from '../data/figuras.mjs';
+import OrigemDaDefinicao from '../components/OrigemDaDefinicao.astro';
 import {
   medidasComLeitura,
   mapaPorConcelho,
@@ -83,7 +89,7 @@ import {
 import { estadoDaMedida } from '../lib/estado.mjs';
 import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
-import { linguaDoTituloDoDocumento, linguaDaFonte } from '../i18n/lingua-dos-titulos.mjs';
+import { linguaDaFonte } from '../i18n/lingua-dos-titulos.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { canonicalUrl, SITE_NAME, SITE_URL } from '../../site.config.mjs';
 import { FONTE_DIGITAL_GERADA_POR_IA } from '../data/politica-ia.mjs';
@@ -95,6 +101,14 @@ import '../styles/inicio.css';
 import '../styles/dominio.css';
 
 const { lang = 'pt', slug } = Astro.props;
+
+/* A DEFINIÇÃO DECLARADA DE UMA LINHA, OU `null` (decisão 24, 09.09.2026). Não
+   há definição escrita nesta página: o que há é a leitura da declaração única
+   que a página europeia já cita, com a origem que a prova. Uma linha sem
+   definição declarada não recebe uma inventada aqui. */
+const definicaoDaMedida = (claim) =>
+  /** @type {Record<string, { origens: readonly string[] }>} */ (DEFINICOES_DAS_MEDIDAS)[claim] ??
+  null;
 const s = t(lang);
 
 const dominio = dominioDoSlug(slug);
@@ -126,25 +140,35 @@ const segunda = medidaPelaChave('E2');
 if (!cabeca?.claim || !cabeca.limiar || !segunda?.claim || !segunda.limiar) {
   throw new Error('dominios: a manchete precisa das duas medidas com limiar publicado.');
 }
-const PALAVRA = {
-  fora: s.estado.foraDoLimiar,
-  dentro: s.estado.dentroDoLimiar,
-  sem: s.estado.semLimiar,
+/* A PALAVRA DO ESTADO E O RÓTULO DO LIMIAR, PELO FIXADOR (F1.10, item 8.5).
+   Duas das três medidas com limiar desta página não são do painel do
+   Procedimento, e a palavra tem de dizer de quem o limiar é. Ver a razão no
+   cabeçalho de `FIXADORES_DO_LIMIAR`, em `src/data/figuras.mjs`. */
+/** @param {{ chave?: string, limiar?: unknown, limiarFixadoPor?: unknown }} m */
+const parDoEstado = (m) => {
+  const fixador = fixadorDoLimiar(m, `dominios: a medida "${m.chave ?? '?'}"`);
+  return fixador ? s.estado[fixador] : null;
 };
-/** @param {string} id @param {Limiar} limiar */
-const palavraDoEstado = (id, limiar) => PALAVRA[estadoDaMedida(getClaim(id), limiar) ?? 'sem'];
+/** @param {{ chave?: string, claim: string, limiar: Limiar, limiarFixadoPor?: unknown }} m */
+const palavraDoEstado = (m) => {
+  const estado = estadoDaMedida(getClaim(m.claim), m.limiar) ?? 'sem';
+  if (estado === 'sem') return s.estado.semLimiar;
+  const par = parDoEstado(m);
+  if (!par) throw new Error(`dominios: a medida "${m.chave ?? m.claim}" está ${estado} do limiar e não diz de quem.`);
+  return par[estado];
+};
 const manchete = {
   pt: [
     'A dívida pública é ',
     { claim: cabeca.claim, sufixo: '%' },
     ' do PIB, ',
-    palavraDoEstado(cabeca.claim, cabeca.limiar),
+    palavraDoEstado(cabeca),
     ' de ',
     { nl: String(cabeca.limiar.nl), motivo: 'limiar-do-quadro' },
     '%; o saldo das administrações públicas é ',
     { claim: segunda.claim, sufixo: '%' },
     ' do PIB, ',
-    palavraDoEstado(segunda.claim, segunda.limiar),
+    palavraDoEstado(segunda),
     ' de ',
     `${segunda.limiar.sinal ?? ''}`,
     { nl: String(segunda.limiar.nl), motivo: 'limiar-do-quadro' },
@@ -154,13 +178,13 @@ const manchete = {
     'Government debt is ',
     { claim: cabeca.claim, sufixo: '%' },
     ' of GDP, ',
-    palavraDoEstado(cabeca.claim, cabeca.limiar),
+    palavraDoEstado(cabeca),
     ' of ',
     { nl: String(cabeca.limiar.nl), motivo: 'limiar-do-quadro' },
     '%; the general government balance is ',
     { claim: segunda.claim, sufixo: '%' },
     ' of GDP, ',
-    palavraDoEstado(segunda.claim, segunda.limiar),
+    palavraDoEstado(segunda),
     ' of ',
     `${segunda.limiar.sinal ?? ''}`,
     { nl: String(segunda.limiar.nl), motivo: 'limiar-do-quadro' },
@@ -169,7 +193,7 @@ const manchete = {
 };
 
 /* ---------------------------------------------------------------------------
- * A FAIXA: AS CINCO MEDIDAS DA SUPOSIÇÃO, PELA ORDEM DECLARADA
+ * A FAIXA: AS MEDIDAS DESTE DOMÍNIO, PELA ORDEM DECLARADA
  * ---------------------------------------------------------------------------
  * Cada cartão é um alvo inteiro e abre a leitura breve daquela medida, na mesma
  * página. Um cartão sem linha não existe: a régua da faixa recusa-o com razão,
@@ -177,12 +201,28 @@ const manchete = {
  */
 /* A POSIÇÃO DE CADA CARTÃO ENTRA NA FAIXA DO DOMÍNIO (F1.2b, item 3,
    03.09.2026): o ordinal é o índice nesta lista e o total é o comprimento dela.
-   Cada faixa conta a sua, e é por isso que «1 de 5» aqui e «1 de 21» na primeira
-   página são o mesmo cálculo sobre listas diferentes. */
-const cartoes = FAIXA_DO_DOMINIO_1.map((chave, i) => {
-  const m = medidaPelaChave(chave);
-  if (!m?.claim) throw new Error(`dominios: a faixa nomeia "${chave}", que não tem linha.`);
-  const linha = getClaim(m.claim);
+   Cada faixa conta a sua, e é por isso que «1 de 11» aqui e «1 de 21» na página
+   europeia são o mesmo cálculo sobre listas diferentes.
+
+   A LISTA DA FAIXA É A DAS MEDIDAS DESTA PÁGINA (F1.10, §7.7, 09.09.2026), e não
+   a das cinco medidas de cabeça. O diretor leu-o a 07.09: «a contagem da faixa
+   igual ao número de medidas listadas». A faixa dizia «1 de 5» por cima de onze
+   leituras, porque a lista dela era `FAIXA_DO_DOMINIO_1`, que é a lista das
+   medidas de cabeça DESTE domínio para a faixa da primeira página (item 8.16). É
+   uma lista com um trabalho, e não é este: a faixa de uma página é o «Relance»
+   do que a página tem, e o que esta página tem são as suas medidas, todas, cada
+   uma com a sua leitura por baixo e a âncora que o cartão abre.
+
+   `FAIXA_DO_DOMINIO_1` FICA ONDE FAZ FALTA, em `src/data/dominios.mjs` e na
+   primeira página: uma lista declarada para uma superfície não se apaga por
+   outra superfície deixar de a ler.
+
+   UM CARTÃO SÓ EXISTE COM LINHA: uma medida sem `claim` é uma ausência declarada,
+   e as ausências rendem-se na sua própria secção, sem valor e sem selo. */
+const cartoes = leituras
+  .filter(({ medida }) => medida.claim !== null)
+  .map(({ medida: m, linha }, i) => {
+  const chave = m.chave;
   return {
     posicao: i + 1,
     id: m.claim,
@@ -192,6 +232,9 @@ const cartoes = FAIXA_DO_DOMINIO_1.map((chave, i) => {
     nome: m.nome[lang] ?? m.nome.pt,
     medida: [`${m.unidade[lang] ?? m.unidade.pt} · `, { ref: linha.reference_date }],
     estado: m.limiar ? estadoDaMedida(linha, m.limiar) : 'sem',
+    /* QUEM FIXOU O LIMIAR (F1.10, item 8.5): lido da declaração da medida, com o
+       guarda que fecha a construção se ela tiver limiar e não o disser. */
+    fixador: fixadorDoLimiar(m, `dominios: a medida "${chave}"`),
     glifos: [...String(linha.value)].length,
   };
 });
@@ -257,7 +300,11 @@ const escalaDeClasses = (cortes) => [
 ];
 const ROTULOS = {
   ganho: escalaDeClasses(CORTES.ganho),
-  indice: [[s.estado.dentroDoLimiar], [s.estado.foraDoLimiar]],
+  /* AS DUAS CLASSES DO MAPA DO ÍNDICE DIZEM DE QUEM É O LIMIAR (F1.10, item
+     8.5). O corte é o teto legal da dívida de um município, e por isso as duas
+     palavras são as do fixador `lei`: «dentro do limite legal» e «fora do limite
+     legal». Lidas do mesmo sítio de que sai a palavra do cartão. */
+  indice: [[s.estado.lei.dentro], [s.estado.lei.fora]],
 };
 
 const comMapa = leituras.filter((l) => l.desenho !== null);
@@ -351,30 +398,53 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
       rotulo={s.inicio.faixa.rotulo}
       cartoes={cartoes}
       total={cartoes.length}
+      conjunto={s.inicio.faixa.conjuntoDominio}
     />
   </CabecaDoLugar>
 
   {/* ------------------------------------------------------------------------
-      A FRASE DA FRONTEIRA, UMA VEZ, COM ID
+      A FRASE DA FRONTEIRA, UMA VEZ, COM ID, DENTRO DA DOBRA «COMO LER»
       ------------------------------------------------------------------------
       «O que este domínio mede e o que não mede, uma frase, impressa uma vez,
       citável.» Tem id para se poder apontar, e é a única vez que aparece na
       página: `npm run check:formas` fecha a construção se aparecer duas.
+
+      A DOBRA ENTRA A 09.09.2026 (decisão do lugar de direção sobre o §9.6 do
+      brief F1.10, pelo item 8.11). A sexta sessão do bloco mediu a frase a
+      390 × 664 depois de a faixa mudar de lista: começava a 679 px em português
+      (quinze fora do primeiro ecrã) e a 661 em inglês, três dentro. Empurrar a
+      margem mais dez píxeis para caber num teto era a folha a obedecer a uma
+      régua, e o número seguinte que mudasse a altura da cabeça desfazia-o. A
+      saída é a que o item 8.11 escreve: «a prosa de contexto, as definições e as
+      ressalvas saem do primeiro ecrã das páginas do leitor e ficam a um toque
+      (uma dobra "Como ler" ou a leitura breve)».
+
+      O QUE A FRASE É NÃO MUDA: continua `conteudo` pela carta (§9.2 do brief), e
+      o que muda é onde ela começa. A dobra é o `<details>` da casa, sem uma
+      linha de guião, com o `<summary>` como alvo de 44 px; fechada, o leitor do
+      teclado e quem ouve continuam a chegar-lhe, e a régua do primeiro ecrã não
+      a conta porque o leitor não a lê sem a abrir.
       ------------------------------------------------------------------------ */}
-  <p class="dominio-fronteira" id="fronteira" data-fronteira={slug}>
-    {fronteira[lang] ?? fronteira.pt}
-  </p>
+  <div class="dominio-como-ler">
+    <Gaveta chave="como-ler" rotulo={s.secoes.comoLer} aberta={false}>
+      <p class="dominio-fronteira" id="fronteira" data-fronteira={slug}>
+        {fronteira[lang] ?? fronteira.pt}
+      </p>
+    </Gaveta>
+  </div>
 
   {geometria !== null && <GeometriaDosConcelhos mapa={geometria} />}
 
   <section class="dominio-leitura" id="leitura" aria-labelledby="leitura-k">
     <div class="sec-head">
-      {/* O NOME DA CAMADA É O DA CASA, e não uma cadeia nova: «Leitura breve» e
-          «Brief reading» são as duas palavras da densidade (Emenda 2), estão
-          declaradas em `strings.mjs` desde a etapa 2 e no inventário da voz
-          desde 26.08.2026. Uma chave própria para dizer o mesmo era uma segunda
-          cadeia para a mesma coisa. */}
-      <h2 class="eyebrow" id="leitura-k">{s.densidade.leitura}</h2>
+      {/* O TÍTULO DIZ O QUE A SECÇÃO TEM (bloco F1.10, itens 8.14 e §1.98).
+          Dizia «Leitura breve», que é o nome de uma DENSIDADE de um cartão e não
+          o nome de um conteúdo, e a nota anterior deste sítio dizia que uma
+          chave própria «era uma segunda cadeia para a mesma coisa»: não era a
+          mesma coisa, era a palavra errada. A decisão de 07.09 tira as duas
+          palavras das páginas do leitor, e `secoes.leitura` é a cadeia que a
+          §1.98 declarou para este título, a mesma em todas as camadas. */}
+      <h2 class="eyebrow" id="leitura-k">{s.secoes.leitura}</h2>
     </div>
 
     {
@@ -390,6 +460,41 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
               </>
             )}
           </p>
+
+          {/* ------------------------------------------------------------------
+              A DEFINIÇÃO DA MEDIDA, EM PALAVRAS (decisão 24 da releitura do
+              leitor de primeira vez, 09.09.2026)
+              ------------------------------------------------------------------
+              O leitor de primeira vez perguntou-o na página deste domínio: «The
+              domain asks "Quanto deve o Estado?" but supplies no Portuguese
+              definition beyond an English dataset title.» O título inglês saiu
+              hoje da linha da fonte (decisão 16), e o que ele mal fazia não pode
+              ficar por fazer: onde a casa TEM uma definição declarada para
+              aquela linha, ela rende-se aqui, uma vez, ao pé do nome, com a
+              origem que a prova.
+
+              ONDE NÃO TEM, NÃO SE INVENTA. As definições declaradas são as das
+              21 medidas dos dois quadros da União
+              (`DEFINICOES_DAS_MEDIDAS`, em `src/data/figuras.mjs`), cada uma
+              tirada da descrição da Comissão ou do Eurostat e citada com o
+              documento, o endereço, a data de leitura e o excerto. Três das dez
+              medidas deste domínio são as mesmas linhas e trazem-na; as outras
+              sete não têm definição declarada em lado nenhum, e o relatório do
+              bloco lista-as pelo nome. Escrever-lhes uma frase de cabeça seria
+              inventar a definição de uma medida do Estado.
+              ------------------------------------------------------------------ */}
+          {definicaoDaMedida(medida.claim) && (
+            <div class="dominio-definicao" data-definicao={medida.claim}>
+              <p class="dobra-definicao">
+                <Frase partes={definicaoDaMedida(medida.claim)[lang]} lang={lang} selos={true} />
+              </p>
+              <OrigemDaDefinicao
+                origens={origensDaDefinicao(definicaoDaMedida(medida.claim), lang)}
+                s={s}
+                lang={lang}
+              />
+            </div>
+          )}
 
           {linha !== null && (
             <p class="dominio-valor">
@@ -407,17 +512,28 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
 
           {medida.limiar && (
             <p class="dominio-limiar">
-              <span class="dominio-limiar-k">{s.home.numeros.limiar}</span>{' '}
+              <span class="dominio-limiar-k">{parDoEstado(medida)?.rotulo ?? s.home.numeros.limiar}</span>{' '}
               <span class="dominio-limiar-v">
                 {medida.limiar.sinal ?? ''}
                 <span data-nonledger="limiar-do-quadro">{String(medida.limiar.nl)}</span>
                 {medida.limiar.simbolo ?? ''}
               </span>
               {' · '}
-              <span class="dominio-estado">
-                {PALAVRA[estadoDaMedida(getClaim(medida.claim), medida.limiar) ?? 'sem']}
-              </span>
+              <span class="dominio-estado">{palavraDoEstado(medida)}</span>
             </p>
+          )}
+
+          {/* A FRASE QUE DIZ O QUE O LIMIAR É E QUEM O FIXOU (F1.10, item 8.5,
+              segunda passagem de 08.09.2026). A primeira passagem pô-la na
+              leitura da primeira página, da página europeia e da página do
+              concelho, e esta página ficou de fora: as três medidas com limiar
+              que ela mostra têm três fixadores diferentes, e é aqui que o saldo
+              e a despesa líquida vivem. A frase vem do par do fixador e a vista
+              não escolhe: um par com frase rende-a, um par sem frase não a
+              rende. Só o `lei` não tem, porque a página do concelho já diz a
+              sua, uma vez, e o §0 do brief manda uma coisa num lugar só. */}
+          {medida.limiar && parDoEstado(medida)?.frase && (
+            <p class="dominio-limiar-frase">{parDoEstado(medida)?.frase}</p>
           )}
 
           {outras.map((o) => (
@@ -443,8 +559,16 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
                   ))}
                 </p>
               )}
+              {/* «PUBLICADO POR», E SEM O TÍTULO DO DOCUMENTO (terceira
+                  repetição da releitura do leitor de primeira vez, 09.09.2026).
+                  A linha dizia «fonte Eurostat · General government gross debt…»
+                  e tinha os dois defeitos de uma vez: a palavra «fonte», que o
+                  §7.2 reserva para o SELO, e o título do documento, que o §1
+                  reserva para a página da linha. O que fica é o publicador, com
+                  o nome que o §7.2 lhe dá, e a unidade. O título do documento
+                  lê-se onde ele vive: a um toque, na página da linha. */}
               <p class="dominio-fonte dominio-fonte-irmao">
-                <span class="dominio-data-k">{s.dominios.fonteK}</span>{' '}
+                <span class="dominio-data-k">{s.prov.fonte}</span>{' '}
                 <CampoDaLinha
                   id={o.id}
                   campo="source"
@@ -452,18 +576,6 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
                   lang={lang}
                   lingua={linguaDaFonte(o.linha.source, lang)}
                 />
-                {o.linha.document?.title && (
-                  <>
-                    <span class="dominio-sep"> · </span>
-                    <CampoDaLinha
-                      id={o.id}
-                      campo="document.title"
-                      valor={o.linha.document.title}
-                      lang={lang}
-                      lingua={linguaDoTituloDoDocumento(o.linha.document.title, lang)}
-                    />
-                  </>
-                )}
                 <span class="dominio-sep"> · </span>
                 <CampoDaLinha
                   id={o.id}
@@ -476,15 +588,22 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
             </>
           ))}
 
-          {/* A RESSALVA DE ALCANCE, QUANDO A MEDIDA A TEM (segunda passagem,
-              03.09.2026, Blocking 4): a meta que a União tem e Portugal ainda
-              não tem (T1), o território que o diploma de T5 não cobre. O
-              marcador da casa fica à vista, como as linhas o têm. */}
-          {medida.ressalva && (
-            <p class="dominio-ressalva">
-              <Frase partes={medida.ressalva[lang] ?? medida.ressalva.pt} lang={lang} />
-            </p>
-          )}
+          {/* A RESSALVA DE ALCANCE SAIU DESTA PÁGINA (bloco F1.10, §9.2,
+              08.09.2026).
+
+              Era a meta que a União tem e Portugal ainda não tem (T1) e o
+              território que o diploma de T5 não cobre, as duas rendidas aqui
+              desde a segunda passagem de 03.09.2026 (Blocking 4), à vista e fora
+              de qualquer dobra. A leitura cruzada do inventário das frases de
+              08.09 classificou-as como prosa de diligência da página do domínio,
+              e a decisão do lugar de direção é que ela «sai do primeiro ecrã e
+              vai para a página da linha ou para o Método».
+
+              CADA UMA É DE UMA LINHA, e por isso o destino é a página da linha:
+              `LinhaView.astro` rende-a pelo identificador, com as MESMAS
+              palavras e o mesmo marcador. A declaração continua onde estava, na
+              medida a que pertence (`ressalva`, em `src/data/dominios.mjs`); o
+              que mudou foi quem a lê. */}
 
           {/* AS TRÊS DATAS, na forma da casa, cada uma com a linha e o campo de
               onde saiu. Ver `DataDaLinha.astro`. */}
@@ -502,9 +621,11 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
 
           {/* A FONTE, COM O NOME DO PUBLICADOR COMO A LINHA O DIZ, pela marca
               forte que o portão compara carácter a carácter. */}
+          {/* «PUBLICADO POR», E SEM O TÍTULO DO DOCUMENTO (09.09.2026): ver
+              a razão por extenso no bloco gémeo das medidas partilhadas. */}
           {linha !== null && (
             <p class="dominio-fonte">
-              <span class="dominio-data-k">{s.dominios.fonteK}</span>{' '}
+              <span class="dominio-data-k">{s.prov.fonte}</span>{' '}
               <CampoDaLinha
                 id={medida.claim}
                 campo="source"
@@ -512,18 +633,6 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
                 lang={lang}
                 lingua={linguaDaFonte(linha.source, lang)}
               />
-              {linha.document?.title && (
-                <>
-                  <span class="dominio-sep"> · </span>
-                  <CampoDaLinha
-                    id={medida.claim}
-                    campo="document.title"
-                    valor={linha.document.title}
-                    lang={lang}
-                    lingua={linguaDoTituloDoDocumento(linha.document.title, lang)}
-                  />
-                </>
-              )}
               <span class="dominio-sep"> · </span>
               <CampoDaLinha
                 id={medida.claim}
@@ -554,8 +663,7 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
               mapa={desenhos.get(medida.chave)}
               paleta={PALETA[desenho.chave]}
               rotulos={ROTULOS[desenho.chave]}
-              porta={routePath('livroConcelhos', lang)}
-              portaRotulo={s.dominios.porConcelhoPorta}
+              rota={(slugDoConcelho) => routePath('municipio', lang, { slug: slugDoConcelho })}
               nomeada={`k-${medida.chave.toLowerCase()}`}
               chave={desenho.chave}
             />

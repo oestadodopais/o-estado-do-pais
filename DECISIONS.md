@@ -12050,6 +12050,62 @@ Nada muda no ar nesta sessão além do carimbo semanal de 31.08.
 
 **Emenda de 09.09 à tarde (o diretor no telemóvel, com o sítio no ar, e uma regra nova de processo).** Com quatro capturas (a página de Évora com os oito números na faixa e no «Relance», o mapa de pontos que não faz nada, «Município» e «Painel europeu · 07.09.2026» no cabeçalho; a primeira página com os dois painéis europeus atrás do comando «Relance · Leitura breve», a explicação sem cartões, o Painel Social sem conteúdo à vista), o diretor perguntou se isto está a ser tratado, porque «we've been talking about this for so long now … I don't see many changes on the website». A resposta: tudo o que as capturas mostram está corrigido no ramo do F1.10 (8.17a, 8.17b, 8.11, §2.3, 8.14, 8.16) e nada chegou ao ar porque o bloco inteiro ainda não aterrou; a paragem de meio-dia ficou a seis itens e uma aterragem do fim. **A crítica é justa e fica como regra do lugar de direção:** as correções visíveis que o diretor pede aterram em fatias no próprio dia em que ficam construídas e verdes (um ramo pequeno, uma leitura a frio curta, um portão), e não à espera do bloco inteiro; o trabalho por baixo (o motor, as leituras, as réguas) corre ao lado e nunca à frente delas. A sessão seguinte aterra o F1.10 antes de qualquer outra coisa. A lista do diretor no ambiente de trabalho ganhou as seis coisas visíveis que ele vai ver quando o bloco aterrar.
 
+### 1.103 As quatro leituras de aparelho saem do cabeçalho de todas as páginas, e a regra 6 do Método diz onde elas passam a viver
+
+**Afecta:** metodo
+
+**Texto:** metodo 1b20443f130b
+
+**A decisão** (lugar de direção, 08.09.2026, pela delegação da §1.98; item 8.11 e §7.3 do brief do F1.10, aplicados pela quarta sessão de construção). As quatro leituras de aparelho da mobília do cabeçalho (o painel europeu com a data da última reconferência, as fontes com o carimbo da última corrida, o contador das séries atrasadas e as duas contagens da agenda) saem do cabeçalho das 7 224 páginas e passam a viver na página da medida e no Método, que é o que o §7.3 manda. A régua do bloco conta as leituras que ficam no `<header>`: 28 892 antes, 0 depois.
+
+**O texto governado da regra 6 muda em duas frases, e nada mais muda nele.** A regra dizia «O painel da primeira página é reconferido contra a fonte todas as semanas, e a página diz quando foi a última vez», e o painel deixou de estar na primeira página com o item 8.16 (passou a «Portugal na União Europeia»): passa a dizer «O painel europeu é reconferido contra a fonte todas as semanas, e a página dele diz quando foi a última vez». O mecanismo dizia «o cabeçalho de todas as páginas mostra-a» e «o cabeçalho di-lo por palavras», e o cabeçalho deixou de a mostrar: passa a dizer «a página do painel mostra-a» e «a página di-lo por palavras». Em inglês, «The panel on the front page is re-checked …» passa a «The European panel is re-checked …, and its page says when the last time was», e «the masthead of every page shows it … the masthead says so» passa a «the panel page shows it … the page says so».
+
+**A razão de a frase mudar com o sítio.** Um mecanismo que descreve um lugar que já não existe é a página a mentir sobre si própria, e o Método é a página onde a casa promete o contrário. As duas frases não ganharam nem perderam informação: dizem o mesmo facto no lugar certo.
+
+
+### 1.104 A legenda da escala sai do mapa do domínio e entra no fecho do Método, e as duas ressalvas de alcance vão para a página da sua linha
+
+**Afecta:** metodo
+
+**Texto:** metodo 854a1c9e5393
+
+**A decisão** (lugar de direção, 08.09.2026, pela delegação da §1.98; §9.2 do brief do F1.10, aplicado pela quinta sessão de construção). O §9.2 nasce da leitura cruzada do inventário das frases que o Codex fez a 08.09: a prosa de diligência da página do domínio «sai do primeiro ecrã e vai para a página da linha ou para o Método». São três frases, e cada uma vai para onde o que ela diz vive.
+
+**A legenda da escala vai para o Método.** «As classes são marcas redondas da escala, e não um limite oficial.» rendia-se por baixo da legenda do mapa por concelho, na paleta que não é limiar, à vista e fora de qualquer dobra. Não é uma coisa daquele mapa: é a regra com que a casa desenha uma escala em qualquer mapa, e por isso entra no fecho do Método, «A forma», como terceira entrada ao pé da cor e da letra, com o id `a-escala`. A cadeia não se duplicou: saiu de `src/i18n/strings.mjs` (`dominios.mapaEscalaNota`, nas duas edições) e passou a viver em `src/data/metodo.mjs`, que é o único sítio onde ela se rende.
+
+**As duas ressalvas de alcance vão para a página da sua linha.** «Este valor é o do território continental. Os Açores e a Madeira fixam o seu por diploma regional próprio, que não foi lido: [a verificar].» e «A meta desta medida é da União Europeia no seu conjunto e não de Portugal; uma meta nacional própria permanece [a verificar].» são de UMA linha cada, e o recibo de uma linha é a página dela: é ali que o perímetro do que o número cobre se lê, ao pé do valor e das datas. A declaração fica onde estava, na medida a que pertence (`ressalva`, em `src/data/dominios.mjs`); o que mudou foi quem a lê (`ressalvaDaLinha()`, e `LinhaView.astro` a rendê-la).
+
+**Nenhuma das três mudou uma palavra.** Duas levam o marcador `[a verificar]`, que é dívida de proveniência e palavra pendente do diretor, e a instrução do lugar de direção é explícita: «não lhes toques além do lugar».
+
+**O que isto faz ao inventário da voz, e a régua que faltava.** As três cadeias rendiam-se na rota `dominio`, que é uma rota inventariada, e passam a render-se em `/metodo` e em `/livro-razao/<id>`, que não são: a Emenda 15 isenta os três, «o Método, o Sobre e o recibo da página de linha». As seis linhas (três frases × duas edições) ficam «viva», que é o que elas são, com a razão do lugar escrita ao lado. O que a mudança destapou foi uma régua incompleta: `ROTAS_QUE_PROVAM_A_RENDICAO`, em `scripts/medir-defeitos.mjs`, nasceu a 01.09 com DUAS das três rotas que a Emenda 15 nomeia, porque nesse dia só o Método e o Sobre precisavam dela; sem a terceira, as quatro linhas das ressalvas eram «vivas que não se rendem» e fechavam a construção. O recibo entra, com o mesmo alcance das outras duas: prova que uma linha viva se rende, e mais nada.
+
+**O texto governado do Método muda numa entrada, e nada mais muda nele.** «A forma» tinha duas entradas, a cor e a letra, e passa a ter três. O carimbo passa de `metodo 1b20443f130b` a `metodo 854a1c9e5393`.
+
+
+### 1.105 A porta do Método para os estudos chama a página pelo nome dela
+
+**Afecta:** metodo
+
+**Texto:** metodo f2e44f1ed56a
+
+**A decisão** (lugar de direção, 09.09.2026, pela delegação da §1.98; §7.4 do brief do F1.10, aplicado pela sétima sessão de construção). O §7.4 fixa «um só nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A palavra «arquivo» vivia em seis cadeias da casa, e uma delas é o texto governado do Método: a porta da secção dos estudos dizia «Ver o arquivo» / «See the archive». Passa a dizer «Ver os estudos» / «See the studies», que é o nome da página que ela abre.
+
+**Nada mais muda no Método**, e a régua mede-o: a L3 de `scripts/check-lugar.mjs` passou a contar «arquivo» como palavra fora do vocabulário fechado, e mede-a a 0 nas páginas do leitor. O carimbo passa de `metodo 854a1c9e5393` a `metodo f2e44f1ed56a`.
+
+
+### 1.106 «Trabalho» sai do Método como nome de um estudo, e «vaga» sai da voz do leitor
+
+**Afecta:** metodo
+
+**Texto:** metodo 92b0fbdbc5fb
+
+**A decisão** (lugar de direção, 09.09.2026, pela delegação da §1.98; Major 5 da leitura a frio do bloco F1.10 e decisão 21 da releitura do leitor de primeira vez, aplicadas pela segunda passagem do bloco). Duas cadeias do texto governado do Método davam um segundo nome à mesma coisa, e a L3 contava-as:
+
+- o rótulo da prova `leituras` dizia «trabalhos com leitura do observatório» / «works with an observatory reading», e passa a dizer «estudos com leitura do observatório» / «studies with an observatory reading». A contagem não muda; muda a palavra que a nomeia;
+- a regra da agenda dizia «A pergunta de um trabalho é fixada e guardada no motor antes da recolha» / «The question of a piece of work is fixed…», e passa a dizer «de um estudo» / «of a study».
+
+**Nada mais muda no Método.** O carimbo passa de `metodo f2e44f1ed56a` a `metodo 92b0fbdbc5fb`.
+
 ## 4. O registo dos defeitos e dos adiamentos
 
 **Defeito registado 2026-08-16 (00:10), encontrado pela direcção no sítio no ar — RESOLVIDO na mesma noite (§1.37, no ar em `4217232`):** os selos acrescentados a 15.08 aos valores do cabeçalho da primeira página (308 · 11 · 15) rendem no cabeçalho com o rótulo inteiro do estudo («O Estado do País — apuramento próprio») e, no caso da contagem CAOP, com o marcador «[a verificar]» ao lado. Certo pela regra (todo o valor tem selo, para a sua linha), errado naquele sítio: no cabeçalho o selo deve ser só o glifo, com o rótulo apenas para leitores de ecrã. **Primeiro item do bloco V**, junto com a saída de «Edição de …», da introdução justificativa da primeira página e de «Estes indicadores não são escolha nossa…» (voz). Sem alteração ao portão: o selo continua ao pé do valor e a apontar para a linha própria.

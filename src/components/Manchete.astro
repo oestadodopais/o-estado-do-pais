@@ -157,15 +157,17 @@ const nomeDoTitulo = pecas
          para que o pai dele seja o título, que é onde os selos estão. */
       if (parte.claim)
         return (
-          <Claim
-            id={parte.claim}
-            lang={lang}
-            plano={true}
-            sufixo={parte.sufixo ?? ''}
-            elemId={ref}
-            sufixoId={refSufixo}
-            porta={routePath('linha', lang, { slug: parte.claim })}
-          />
+          <>
+            <Claim
+              id={parte.claim}
+              lang={lang}
+              plano={true}
+              sufixo={parte.sufixo ?? ''}
+              elemId={ref}
+              sufixoId={refSufixo}
+              porta={routePath('linha', lang, { slug: parte.claim })}
+            />
+          </>
         );
       if (parte.ref) return <span id={ref} data-nonledger="data-de-referencia">{parte.ref}</span>;
       if (parte.forte) return <strong id={ref} set:text={parte.forte} />;
@@ -177,6 +179,29 @@ const nomeDoTitulo = pecas
       );
     })
   }
+  {/* ----------------------------------------------------------------------
+      O SELO AO PÉ DO SEU NÚMERO NÃO ENTRA, E O NÚMERO DIZ PORQUÊ (F1.10, §7.7,
+      item 4, medido a 09.09.2026)
+      ----------------------------------------------------------------------
+      O item pede a POSIÇÃO: «na manchete, cada selo ao pé do seu número (o
+      F1.2b já os tirou de dentro da frase; falta a posição)». Foi construído e
+      medido, e colide com o item 8.15, que é um teto do diretor: com os dois
+      selos em linha, a manchete da primeira página INGLESA passa de **3 para 4
+      linhas** a 390 px (97,5 px para 130 px de altura, medido pela célula A1 de
+      `tests/inicio/porta.mjs`, cujo teto são 3 linhas). A portuguesa continua em
+      3, e a inglesa é a que não cabe.
+
+      A CASA DECIDE PELO TETO, e a razão está na ordem das decisões: o 8.15 é uma
+      medida que o diretor pediu a 07.09 («with all that bold text takes quite a
+      lot of the first page … when we see it on the phone») e que a quinta sessão
+      fechou com o degrau de tipo, sem tocar na frase; o §7.7 item 4 é uma
+      afinação de posição sobre a mesma superfície. Encurtar a frase inglesa para
+      caber os selos seria desfazer a decisão da quinta sessão para pagar esta.
+
+      OS SELOS FICAM ONDE O F1.2b OS PÔS, numa fila no fim do título, e o item
+      fica aberto com o número ao lado, para o lugar de direção. Sai daqui a
+      única coisa que o construtor pode dar-lhe: a medida.
+      ---------------------------------------------------------------------- */}
   {
     citadas.length > 0 && (
       <span class="manchete-selos">

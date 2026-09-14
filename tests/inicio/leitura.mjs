@@ -104,15 +104,19 @@
  * promessa nos 21, e exige também que NENHUM leve para fora. Uma célula que só
  * contasse a leitura aberta passava com duas abertas.
  *
- * J5 · A SECÇÃO DOS DOMÍNIOS, A SEGUIR AO MAPA. Cinco coisas, e as cinco no HTML
- * construído: a secção existe e vem DEPOIS do mapa na ordem do documento; tem um
- * domínio (o que hoje tem página); o nome do domínio é uma porta para a página
- * dele e o `href` responde 200; a faixa tem cartões, cada um com a sua posição
- * «n de N» daquela faixa (que a A17 mede em detalhe), e cada destino aponta para
- * a página do domínio com uma âncora que existe lá dentro; e NENHUM cartão da
- * faixa do domínio cita uma linha que já está selada na faixa da cabeça. A
- * última é a que a planta «um valor selado repetido» derruba, e é a mesma regra
- * que a A3 conta do outro lado.
+ * J5 · O ÍNDICE DOS DOMÍNIOS, A SEGUIR AO MAPA (a célula mudou de objecto a
+ * 14.09.2026, e a razão inteira está escrita no corpo dela). Media «a secção dos
+ * domínios» quando isso era uma secção POR DOMÍNIO com a sua faixa de cartões e
+ * um valor selado em cada um; o item 8.13 fez dela um ÍNDICE, «só navegação: os
+ * nomes, o que está vivo com a contagem das suas medidas e a porta para a
+ * página», e mandou os cartões órfãos embora. A célula mede agora a decisão: a
+ * secção existe e vem DEPOIS do mapa na ordem do documento; lista domínios, cada
+ * um com o seu nome, uma porta que leva a um domínio e um estado declarado; a
+ * página do domínio responde 200; e não há lá dentro cartão nenhum nem valor
+ * selado nenhum, que é a medida escrita no item 8.13. As duas plantas da J5
+ * derrubam-na pelas duas metades: um nome sem porta, e um valor selado lá
+ * dentro. Esta é uma das três células que continuam a medir a PRIMEIRA PÁGINA,
+ * com a J6 e a J7.
  *
  * J6 · A ALTURA DE `/` A 390 MENOR DO QUE A DA ÁRVORE DE PARTIDA. O «hoje» está
  * escrito aqui, medido com `tests/inicio/porta.mjs` (célula A2) sobre a
@@ -359,17 +363,48 @@ const ALTURA_DA_PARTIDA = { pt: 6959, en: 6911 };
  */
 const ABRE_O_ALVO_SEM_GUIAO = { chromium: false, webkit: false };
 
+/**
+ * ---------------------------------------------------------------------------
+ * AS LEITURAS MUDARAM DE PÁGINA, E A RÉGUA VAI COM ELAS (14.09.2026)
+ * ---------------------------------------------------------------------------
+ * O item 8.16 do brief do F1.10 (a recomendação do lugar de direção aceite pelo
+ * diretor a 07.09 à noite) tirou os 21 cartões dos dois quadros da União da
+ * primeira página e deu-lhes página própria: «a faixa passa a levar as medidas
+ * de cabeça dos domínios à medida que ficam vivos, e os dois painéis europeus
+ * passam a uma página própria, "Portugal na União Europeia"». A mudança entrou
+ * no commit `3139099f`, a 08.09.2026, e a §1.102 registou-a.
+ *
+ * ESTA RÉGUA FICOU A MEDIR A PÁGINA ERRADA desde esse dia, e ficou vermelha sem
+ * que ninguém a corresse: a 14.09.2026, sobre a cabeça `42065f0d`, saía a 4 de
+ * 26 células, com as 22 que procuram leituras a dizer «0 leitura(s) de 21». Uma
+ * régua vermelha por medir o passado não mede nada, e a decisão do lugar de
+ * direção é esta: ela passa a medir as leituras ONDE ELAS VIVEM.
+ *
+ * O QUE MUDA E O QUE NÃO MUDA. As perguntas não mudam uma vírgula: os 21 nomes
+ * em exactamente dois lugares, as 21 leituras presentes e fechadas sem guião com
+ * o fragmento a abrir a certa, um toque a abrir uma de cada vez, a forma de cada
+ * leitura, os nomes à vista por baixo da faixa e o que acontece sem guião. O que
+ * muda é a página onde elas se medem. As três células que medem a PRIMEIRA
+ * PÁGINA e não as leituras ficam onde estão: a J5 (a secção dos domínios), a J6
+ * (a altura de `/` a 390) e a J7 (o primeiro ecrã de `/`).
+ *
+ * `rota` é a página de cada edição, e `leituras` é a página onde as 21 vivem.
+ */
 const EDICOES = [
   {
     chave: 'pt',
     rota: '/',
     doc: '/index.html',
+    leituras: '/uniao-europeia',
+    docLeituras: '/uniao-europeia/index.html',
     dominio: '/dominios/economia-e-financas-publicas',
   },
   {
     chave: 'en',
     rota: '/en',
     doc: '/en/index.html',
+    leituras: '/en/european-union',
+    docLeituras: '/en/european-union/index.html',
     dominio: '/en/domains/economia-e-financas-publicas',
   },
 ];
@@ -393,8 +428,13 @@ const AS_VINTE_E_UMA = [...FIGURAS_PDM, ...FIGURAS_SOCIAL].map((f) => f.claim);
    nome declarado, a medida a que ele pertence e a família do lugar onde ele
    está: o cartão de uma faixa, o `<summary>` de uma leitura, ou nem uma coisa
    nem outra. */
-const SONDA_DOS_NOMES = () =>
-  [...document.querySelectorAll('[data-medida-nome]')].map((el) => {
+const SONDA_DOS_NOMES = () => ({
+  /* QUANTAS FAIXAS A PÁGINA TEM. O selector desta régua é `[data-faixa]`, e um
+     selector que apanhasse duas faixas contaria os nomes de uma faixa que não é
+     esta sem o dizer. A célula exige UMA, e assim o selector não pode ficar
+     ambíguo em silêncio. */
+  faixas: document.querySelectorAll('[data-faixa]').length,
+  nomes: [...document.querySelectorAll('[data-medida-nome]')].map((el) => {
     const cartao = el.closest('[data-cartao]');
     const leitura = el.closest('[data-leitura]');
     const noSummary = !!el.closest('summary');
@@ -402,9 +442,17 @@ const SONDA_DOS_NOMES = () =>
       texto: (el.textContent ?? '').replace(/\s+/g, ' ').trim(),
       id: cartao?.getAttribute('data-cartao') ?? leitura?.getAttribute('data-leitura') ?? null,
       onde: cartao ? 'cartao' : leitura && noSummary ? 'summary' : leitura ? 'leitura' : 'nenhum',
-      naCabeca: !!el.closest('[data-grelha]'),
+      /* A FAIXA, E NÃO A GRELHA DA PRIMEIRA PÁGINA (14.09.2026). Era
+         `[data-grelha]`, que é a marca da cabeça de duas colunas de `/`, e
+         existia para distinguir a faixa da cabeça das faixas POR DOMÍNIO que a
+         primeira página tinha. As duas coisas mudaram por decisão: o 8.13 tirou
+         as faixas dos domínios de `/`, e o 8.16 levou estas 21 leituras para
+         «Portugal na União Europeia», onde não há grelha nenhuma. O que conta é
+         estar dentro da faixa, e a célula confere que a página tem UMA. */
+      naFaixa: !!el.closest('[data-faixa]'),
     };
-  });
+  }),
+});
 
 /* J3 · o estado das 21 leituras como elas chegam ao leitor. */
 const SONDA_DAS_LEITURAS = () => {
@@ -450,7 +498,7 @@ const SONDA_DA_FORMA = () => ({
       limiares: d.querySelectorAll('.dobra-limiar').length,
     };
   }),
-  cartoesParaFora: [...document.querySelectorAll('[data-grelha] [data-faixa] [data-cartao]')]
+  cartoesParaFora: [...document.querySelectorAll('[data-faixa] [data-cartao]')]
     .filter((c) => !String(c.querySelector('.cartao-porta')?.getAttribute('href') ?? '').startsWith('#'))
     .map((c) => c.getAttribute('data-cartao')),
 });
@@ -511,8 +559,9 @@ async function corre() {
 
   for (const ed of EDICOES) {
     /* ------------------------------------------------------------------- J1 */
-    const p1 = await pagina(chrome, ed.rota, 390, ALTURA_PEQUENA);
-    const nomes = await p1.evaluate(SONDA_DOS_NOMES);
+    const p1 = await pagina(chrome, ed.leituras, 390, ALTURA_PEQUENA);
+    const sondaNomes = await p1.evaluate(SONDA_DOS_NOMES);
+    const nomes = sondaNomes.nomes;
     await p1.__ctx.close();
 
     /* OS DOIS LUGARES SÃO O CARTÃO DA FAIXA DA CABEÇA E O `<summary>` DA SUA
@@ -535,7 +584,7 @@ async function corre() {
       if (n.id === null || !porMedida.has(n.id)) continue;
       const c = porMedida.get(n.id);
       if (n.onde === 'summary') c.summary += 1;
-      else if (n.naCabeca) c.cartao += 1;
+      else if (n.naFaixa) c.cartao += 1;
       else c.outro += 1;
     }
     const foraDaConta = [...porMedida.entries()]
@@ -548,10 +597,13 @@ async function corre() {
     };
     conta(
       `J1.${ed.chave}`,
-      nomes.length > 0 && foraDaConta.length === 0 && forasteiros.length === 0,
-      `os 21 nomes em ${ed.rota}: ${nomes.length} nome(s) declarado(s) no documento ` +
-        `(21 no cartão da faixa da cabeça, 21 no <summary> da sua leitura, ` +
-        `${nomes.length - 42} na faixa do domínio), ` +
+      nomes.length > 0 &&
+        sondaNomes.faixas === 1 &&
+        foraDaConta.length === 0 &&
+        forasteiros.length === 0,
+      `os 21 nomes em ${ed.leituras}: ${nomes.length} nome(s) declarado(s) no documento ` +
+        `(um no cartão da faixa e um no <summary> da sua leitura, por medida), ` +
+        `${sondaNomes.faixas} faixa(s) na página, ` +
         `${foraDaConta.length} medida(s) fora dos dois lugares` +
         (foraDaConta.length ? ` (${foraDaConta.slice(0, 3).join(' · ')})` : '') +
         `, ${forasteiros.length} nome(s) fora de um cartão ou de um <summary>` +
@@ -559,26 +611,46 @@ async function corre() {
     );
 
     /* ------------------------------------------------------------------- J5 */
-    const doc = await html(ed.doc);
+    /* ---------------------------------------------------------------------
+       A J5 MEDE OUTRA COISA DESDE 14.09.2026, E A RAZÃO FICA AQUI
+       ---------------------------------------------------------------------
+       Ela media «a secção dos domínios, a seguir ao mapa», e o que entendia por
+       secção era uma secção POR DOMÍNIO, com a sua faixa de cartões e um valor
+       selado em cada um. Essa forma deixou de existir por decisão, e não por
+       acidente: o item 8.13 do brief, depois de o diretor ver a 07.09 à noite
+       que em «Economia e finanças públicas» «there's only two indicators there,
+       which I don't know why», decidiu que «a secção dos domínios da primeira
+       página passa a ser o ÍNDICE dos domínios, só navegação: os nomes, o que
+       está vivo com a contagem das suas medidas e a porta para a página, os
+       outros ditos "ainda sem medidas conferidas"», e que «os dois cartões
+       órfãos saem da primeira página». A medida escrita nesse item é «0 valores
+       selados na secção dos domínios de /».
+
+       POR ISSO A CÉLULA PASSA A MEDIR A DECISÃO, e não um sim vazio: a secção
+       existe, vem depois do mapa, lista domínios, cada um com o seu nome e uma
+       porta que responde 200 e nomeia o seu destino, e NÃO TEM cartão nenhum nem
+       valor selado nenhum. A parte que exigia «antes da área de leitura» sai com
+       a razão: a área de leitura saiu desta página com o item 8.16, e uma ordem
+       entre uma coisa que está e outra que não está não se pode medir.
+
+       O `check-lugar.mjs` conta a mesma proibição sobre as 7 240 páginas do
+       `dist/` (célula «8.13 · valores selados na secção dos domínios de /»); o
+       que esta acrescenta é a ESTRUTURA vista no navegador: a ordem no
+       documento, a porta de cada nome e o estado declarado de cada domínio. */
     const paginaDoDominio = await html(`${ed.dominio}/index.html`);
-    const idsDoDominio = new Set([...paginaDoDominio.texto.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]));
 
     const p5 = await pagina(chrome, ed.rota, 390, ALTURA_PEQUENA);
     const seccao = await p5.evaluate(() => {
-      const sec = document.querySelector('[data-dominio-secao]')?.closest('section') ?? null;
+      const sec = document.querySelector('.dominios-secao');
       const mapa = document.querySelector('.mapa-svg');
-      const dominios = [...document.querySelectorAll('[data-dominio-secao]')].map((d) => {
-        const porta = d.querySelector('.dominio-secao-nome a[href]');
-        const cartoes = [...d.querySelectorAll('[data-faixa] [data-cartao]')].map((c) => ({
-          id: c.getAttribute('data-cartao'),
-          destino: c.querySelector('.cartao-porta')?.getAttribute('href') ?? null,
-          valor: c.querySelector('[data-claim]')?.getAttribute('data-claim') ?? null,
-        }));
+      const itens = [...document.querySelectorAll('.dominios-item')].map((d) => {
+        const porta = d.querySelector('a.dominios-porta[href]');
+        const estado = d.querySelector('[data-dominio-estado]');
         return {
-          slug: d.getAttribute('data-dominio-secao'),
+          slug: d.getAttribute('data-dominio'),
           porta: porta ? porta.getAttribute('href') : null,
           portaTexto: porta ? (porta.textContent ?? '').replace(/\s+/g, ' ').trim() : null,
-          cartoes,
+          estado: estado ? estado.getAttribute('data-dominio-estado') : null,
         };
       });
       /* A ORDEM NO DOCUMENTO, e não a posição no ecrã: «a seguir ao mapa» é uma
@@ -588,73 +660,49 @@ async function corre() {
         sec && mapa
           ? Boolean(mapa.compareDocumentPosition(sec) & Node.DOCUMENT_POSITION_FOLLOWING)
           : null;
-      /* E antes da área de leitura, que é a outra metade da ordem que o brief
-         desenha: cabeça, domínios, leituras. */
-      const painel = document.getElementById('painel');
-      const antesDoPainel =
-        sec && painel
-          ? Boolean(sec.compareDocumentPosition(painel) & Node.DOCUMENT_POSITION_FOLLOWING)
-          : null;
-      return { temSeccao: !!sec, depoisDoMapa, antesDoPainel, dominios };
+      return {
+        temSeccao: !!sec,
+        depoisDoMapa,
+        itens,
+        cartoes: sec ? sec.querySelectorAll('[data-cartao]').length : null,
+        selados: sec ? sec.querySelectorAll('[data-claim]').length : null,
+      };
     });
     await p5.__ctx.close();
 
-    /* Os ids das linhas seladas na faixa da CABEÇA: é contra eles que se mede se
-       a faixa do domínio repete um valor. Lê-se do documento e não da lista das
-       21, porque o que a régua tem de recusar é a repetição na página, venha ela
-       de onde vier. */
-    const seladosNaCabeca = new Set(
-      [...doc.texto.matchAll(/data-claim="([^"]+)"/g)].map((m) => m[1]),
-    );
     const queixas5 = [];
     if (!seccao.temSeccao) queixas5.push('não há secção dos domínios');
     if (seccao.depoisDoMapa !== true) queixas5.push('a secção não vem depois do mapa');
-    if (seccao.antesDoPainel !== true) queixas5.push('a secção não vem antes da área de leitura');
-    if (seccao.dominios.length === 0) queixas5.push('a secção não tem nenhum domínio');
-    for (const d of seccao.dominios) {
+    if (seccao.itens.length === 0) queixas5.push('a secção não lista nenhum domínio');
+    for (const d of seccao.itens) {
+      if (!d.slug) queixas5.push('um item da lista não declara o seu domínio');
       if (!d.porta) queixas5.push(`o domínio «${d.slug}» não tem porta`);
-      else if (!d.porta.includes(d.slug)) queixas5.push(`a porta de «${d.slug}» é «${d.porta}»`);
-      else if (!d.portaTexto) queixas5.push(`a porta de «${d.slug}» não tem texto`);
-      if (d.cartoes.length === 0) queixas5.push(`a faixa de «${d.slug}» não tem cartões`);
-      for (const c of d.cartoes) {
-        if (!c.destino || !c.destino.includes('#')) {
-          queixas5.push(`o cartão «${c.id}» de «${d.slug}» não leva à página do domínio`);
-          continue;
-        }
-        const ancora = c.destino.slice(c.destino.indexOf('#') + 1);
-        if (!c.destino.startsWith(ed.dominio)) {
-          queixas5.push(`o cartão «${c.id}» leva a «${c.destino}» e não à página do domínio`);
-        } else if (!idsDoDominio.has(ancora)) {
-          queixas5.push(`a âncora «${ancora}» não existe na página do domínio`);
-        }
+      else if (!d.porta.startsWith(ed.dominio.replace(/\/[^/]+$/, ''))) {
+        queixas5.push(`a porta de «${d.slug}» é «${d.porta}» e não leva a um domínio`);
       }
+      if (d.porta && !d.portaTexto) queixas5.push(`a porta de «${d.slug}» não tem texto`);
+      if (!d.estado) queixas5.push(`o domínio «${d.slug}» não diz o seu estado`);
     }
-    /* NENHUM VALOR SELADO REPETIDO: um cartão da faixa de um domínio não pode
-       citar uma linha que a página já sela. `data-claim` é contado no HTML
-       inteiro, e por isso duas rendições da mesma linha dão duas ocorrências. */
-    const repetidos = [];
-    for (const d of seccao.dominios) {
-      for (const c of d.cartoes) {
-        if (!c.valor) continue;
-        const n = (doc.texto.match(new RegExp(`data-claim="${c.valor}"`, 'g')) ?? []).length;
-        if (n !== 1) repetidos.push(`${c.valor}×${n}`);
-      }
-    }
-    if (repetidos.length) queixas5.push(`valor(es) selado(s) mais do que uma vez: ${repetidos.join(', ')}`);
+    /* O QUE O 8.13 PROIBIU, CONTADO AQUI: nem cartões nem valores selados. */
+    if (seccao.cartoes) queixas5.push(`a secção tem ${seccao.cartoes} cartão(ões)`);
+    if (seccao.selados) queixas5.push(`a secção tem ${seccao.selados} valor(es) selado(s)`);
+    /* A PORTA DO DOMÍNIO VIVO RESPONDE, e é a única que esta régua pode pedir
+       sem inventar uma lista: é a página que a edição declara. */
     if (!paginaDoDominio.ok) queixas5.push(`a página do domínio responde ${paginaDoDominio.estado}`);
 
-    medidas[`J5.${ed.chave}`] = { seccao, repetidos, queixas: queixas5 };
+    medidas[`J5.${ed.chave}`] = { seccao, queixas: queixas5 };
     conta(
       `J5.${ed.chave}`,
-      seccao.temSeccao && queixas5.length === 0 && seladosNaCabeca.size > 0,
-      `a secção dos domínios em ${ed.rota}: ${seccao.dominios.length} domínio(s) ` +
-        `(${seccao.dominios.map((d) => `${d.slug} ${d.cartoes.length} cartão(ões) → ${d.porta}`).join(' · ')})` +
-        ` · depois do mapa: ${seccao.depoisDoMapa} · antes da leitura: ${seccao.antesDoPainel}` +
+      seccao.temSeccao && seccao.itens.length > 0 && queixas5.length === 0,
+      `o índice dos domínios em ${ed.rota}: ${seccao.itens.length} domínio(s) ` +
+        `(${seccao.itens.map((d) => `${d.slug} ${d.estado} → ${d.porta}`).join(' · ')})` +
+        ` · depois do mapa: ${seccao.depoisDoMapa} · ${seccao.cartoes} cartão(ões) e ` +
+        `${seccao.selados} valor(es) selado(s) lá dentro` +
         (queixas5.length ? ` · QUEIXAS: ${queixas5.slice(0, 4).join('; ')}` : ' · nenhuma queixa'),
     );
 
     /* ------------------------------------------------------------------ J12 */
-    const p12 = await pagina(chrome, ed.rota, 390, ALTURA_PEQUENA);
+    const p12 = await pagina(chrome, ed.leituras, 390, ALTURA_PEQUENA);
     const forma = await p12.evaluate(SONDA_DA_FORMA);
     await p12.__ctx.close();
 
@@ -665,9 +713,10 @@ async function corre() {
        medida tem de o levar. Uma delas sozinha deixava passar o componente a
        render `data-ancora` em vez de `id`, que é a planta P1b da leitura a
        frio. */
+    const docDasLeituras = await html(ed.docLeituras);
     const idsNoDocumento = AS_VINTE_E_UMA.map((id) => ({
       id,
-      n: (doc.texto.match(new RegExp(`id="m-${id}"`, 'g')) ?? []).length,
+      n: (docDasLeituras.texto.match(new RegExp(`id="m-${id}"`, 'g')) ?? []).length,
     })).filter((x) => x.n !== 1);
 
     const queixas12 = [];
@@ -728,7 +777,7 @@ async function corre() {
     conta(
       `J12.${ed.chave}`,
       forma.leituras.length > 0 && comPorta.length > 0 && queixas12.length === 0,
-      `a forma das leituras em ${ed.rota}: ${forma.leituras.length} inteira(s) ` +
+      `a forma das leituras em ${ed.leituras}: ${forma.leituras.length} inteira(s) ` +
         `(unidade, três datas e selo em todas; ${limiaresEsperados.size} com limiar e régua; ` +
         `${comFrase} com a definição da medida), e ${comPorta.length} delas acrescentam a porta ` +
         `para o domínio (${comPorta.join(', ') || 'nenhuma'}) · ` +
@@ -790,7 +839,7 @@ async function corre() {
       ['webkit', safari],
     ]) {
       const chave = `J3.${ed.chave}.${motor}`;
-      const p = await pagina(nav, ed.rota, 390, ALTURA_PEQUENA, { comGuiao: false });
+      const p = await pagina(nav, ed.leituras, 390, ALTURA_PEQUENA, { comGuiao: false });
       const r = await p.evaluate(SONDA_DAS_LEITURAS);
       await p.__ctx.close();
 
@@ -804,7 +853,7 @@ async function corre() {
           ).length,
         };
       };
-      const pf = await pagina(nav, `${ed.rota}#m-${alvoDoFragmento}`, 390, ALTURA_PEQUENA, {
+      const pf = await pagina(nav, `${ed.leituras}#m-${alvoDoFragmento}`, 390, ALTURA_PEQUENA, {
         comGuiao: false,
       });
       const semGuiao = await pf.evaluate(SONDA_DO_FRAGMENTO, alvoDoFragmento);
@@ -815,7 +864,7 @@ async function corre() {
          nenhum dos dois motores abre o alvo sozinho, medido a 07.09); com guião,
          `public/js/inicio.js` abre a leitura do fragmento à chegada, e
          `/#m-<id>` é uma citação que abre alguma coisa. */
-      const pg = await pagina(nav, `${ed.rota}#m-${alvoDoFragmento}`, 390, ALTURA_PEQUENA);
+      const pg = await pagina(nav, `${ed.leituras}#m-${alvoDoFragmento}`, 390, ALTURA_PEQUENA);
       const comGuiao = await pg.evaluate(SONDA_DO_FRAGMENTO, alvoDoFragmento);
       await pg.__ctx.close();
 
@@ -838,7 +887,7 @@ async function corre() {
           semGuiao.outrosAbertos === 0 &&
           comGuiao.aberto &&
           comGuiao.outrosAbertos === 0,
-        `sem guião em ${ed.rota} · ${motor}: ${r.total} leitura(s) de ${AS_VINTE_E_UMA.length}, ` +
+        `sem guião em ${ed.leituras} · ${motor}: ${r.total} leitura(s) de ${AS_VINTE_E_UMA.length}, ` +
           `${r.abertos.length} aberta(s), ${r.semId.length} sem id, ${r.idErrado.length} com id errado, ` +
           `${r.comSummary} com <summary> · o fragmento «#m-${alvoDoFragmento}» existe: ${semGuiao.existe}, ` +
           `e o motor abre o <details> alvo de um fragmento sem guião: ` +
@@ -872,9 +921,9 @@ async function corre() {
       ['webkit', safari],
     ]) {
       const chave = `J4.${ed.chave}.${motor}`;
-      const p = await pagina(nav, ed.rota, 390, ALTURA_PEQUENA);
+      const p = await pagina(nav, ed.leituras, 390, ALTURA_PEQUENA);
       const todos = await p.evaluate(() =>
-        [...document.querySelectorAll('[data-grelha] [data-faixa] [data-cartao]')].map((c) => ({
+        [...document.querySelectorAll('[data-faixa] [data-cartao]')].map((c) => ({
           id: c.getAttribute('data-cartao'),
           href: c.querySelector('.cartao-porta')?.getAttribute('href') ?? '',
         })),
@@ -896,9 +945,9 @@ async function corre() {
       const passos = [];
       let anterior = null;
       for (const c of lista) {
-        const naPrimeira = new URL(p.url()).pathname.replace(/\/$/, '') === ed.rota.replace(/\/$/, '');
+        const naPrimeira = new URL(p.url()).pathname.replace(/\/$/, '') === ed.leituras.replace(/\/$/, '');
         if (!naPrimeira) {
-          await p.goto(base + ed.rota, { waitUntil: 'networkidle' });
+          await p.goto(base + ed.leituras, { waitUntil: 'networkidle' });
           anterior = null;
         }
         await p.evaluate((id) => {
@@ -939,7 +988,7 @@ async function corre() {
           queixas4.push(`«${s2.cartao}» leva para fora desta página («${s2.href}»)`);
           continue;
         }
-        if (s2.url.replace(/#.*$/, '').replace(/\/$/, '') !== ed.rota.replace(/\/$/, '')) {
+        if (s2.url.replace(/#.*$/, '').replace(/\/$/, '') !== ed.leituras.replace(/\/$/, '')) {
           queixas4.push(`«${s2.cartao}» mudou de página para «${s2.url}»`);
           continue;
         }
@@ -956,7 +1005,7 @@ async function corre() {
       conta(
         chave,
         passos.length === lista.length && lista.length > 0 && queixas4.length === 0,
-        `com guião em ${ed.rota} · ${motor}: ${passos.length} cartão(ões) tocados, ` +
+        `com guião em ${ed.leituras} · ${motor}: ${passos.length} cartão(ões) tocados, ` +
           `${locais} abriram a sua leitura aqui (uma de cada vez), ${doDominioTocados} ` +
           `de medidas que vivem num domínio, 0 mudaram de página` +
           (queixas4.length ? ` · QUEIXAS: ${queixas4.slice(0, 4).join('; ')}` : ''),
@@ -983,9 +1032,9 @@ async function corre() {
          primeiro de uma medida que viva num domínio com página (que são os que
          mudaram) e com o primeiro de uma que não viva em nenhum. */
       const chave13 = `J13.${ed.chave}.${motor}`;
-      const p13 = await pagina(nav, ed.rota, 390, ALTURA_PEQUENA);
+      const p13 = await pagina(nav, ed.leituras, 390, ALTURA_PEQUENA);
       const daFaixa = await p13.evaluate(() =>
-        [...document.querySelectorAll('[data-grelha] [data-faixa] [data-cartao]')].map((c) =>
+        [...document.querySelectorAll('[data-faixa] [data-cartao]')].map((c) =>
           c.getAttribute('data-cartao'),
         ),
       );
@@ -1025,7 +1074,7 @@ async function corre() {
         const cartao = alvo.id;
         /* A CADA VOLTA A PÁGINA VOLTA AO PRINCÍPIO, para que o segundo cartão
            encontre a área como o primeiro a encontrou. */
-        await p13.goto(base + ed.rota, { waitUntil: 'networkidle' });
+        await p13.goto(base + ed.leituras, { waitUntil: 'networkidle' });
         await p13.evaluate((id) => {
           const c = document.querySelector(`[data-cartao="${id}"]`);
           if (c) c.scrollIntoView({ block: 'center', inline: 'center' });
@@ -1098,7 +1147,7 @@ async function corre() {
       conta(
         chave13,
         alvos13.every((a) => a.id) && porCartao.length === alvos13.length && queixas13.length === 0,
-        `com guião em ${ed.rota} · ${motor}: ${repouso.visiveis.length} nome(s) à vista em repouso ` +
+        `com guião em ${ed.leituras} · ${motor}: ${repouso.visiveis.length} nome(s) à vista em repouso ` +
           `(linha do estado vazio: ${repouso.vazio.existe ? (repouso.vazio.visivel ? 'à vista' : 'escondida') : 'não existe'}) · ` +
           porCartao
             .map(
@@ -1115,7 +1164,7 @@ async function corre() {
 
       /* ---------------------------------------------------------------- J14 */
       const chave14 = `J14.${ed.chave}.${motor}`;
-      const p14 = await pagina(nav, ed.rota, 390, ALTURA_PEQUENA, { comGuiao: false });
+      const p14 = await pagina(nav, ed.leituras, 390, ALTURA_PEQUENA, { comGuiao: false });
       const semGuiao = await p14.evaluate(SONDA_DA_AREA);
       await p14.__ctx.close();
 
@@ -1135,7 +1184,7 @@ async function corre() {
       conta(
         chave14,
         semGuiao.detalhes === AS_VINTE_E_UMA.length && queixas14.length === 0,
-        `sem guião em ${ed.rota} · ${motor}: ${semGuiao.detalhes} leitura(s) no documento, ` +
+        `sem guião em ${ed.leituras} · ${motor}: ${semGuiao.detalhes} leitura(s) no documento, ` +
           `${semGuiao.visiveis.length} nome(s) à vista, ${semGuiao.abertas.length} aberta(s), ` +
           `linha do estado vazio ${semGuiao.vazio.existe ? (semGuiao.vazio.visivel ? 'À VISTA' : 'escondida') : 'não existe'}` +
           (queixas14.length ? ` · QUEIXAS: ${queixas14.slice(0, 3).join('; ')}` : ''),
@@ -1151,6 +1200,10 @@ const PLANTAS = [
   {
     nome: 'um painel de baixo de volta (a peça com o nome da medida)',
     celulas: ['J1.pt'],
+    /* O DOCUMENTO É O DAS LEITURAS desde 14.09.2026: elas mudaram de página com
+       o item 8.16, e uma planta que estragasse a primeira página não mordia
+       célula nenhuma. */
+    rotas: ['/uniao-europeia/index.html', '/en/european-union/index.html'],
     /* Repõe uma peça do painel que saiu, com o nome da medida na forma que ela
        tinha: um `<h3 class="peca-nome" data-medida-nome>` dentro de um
        `<article class="peca">`. O nome da dívida pública passa a estar em três
@@ -1168,6 +1221,7 @@ const PLANTAS = [
   {
     nome: 'um <details> da área de leitura sem id',
     celulas: ['J3.pt.chromium', 'J3.pt.webkit', 'J12.pt'],
+    rotas: ['/uniao-europeia/index.html', '/en/european-union/index.html'],
     /* Tira o `id` da primeira leitura. O `<details>` continua lá, continua
        fechado e continua com o seu `<summary>`: o que se perde é a âncora, e com
        ela a promessa de que `#m-<id>` abre alguma coisa. */
@@ -1177,22 +1231,28 @@ const PLANTAS = [
         : h.replace(/<details class="dobra" id="m-[^"]+"/, '<details class="dobra"'),
   },
   {
-    nome: 'a secção dos domínios sem a porta',
+    nome: 'o índice dos domínios com um nome sem porta',
     celulas: ['J5.pt'],
-    /* Tira a ligação do nome do domínio e deixa o nome. A secção continua lá,
-       com a faixa e os cartões; o que falta é a porta para a página do domínio,
-       que é o que o item 3 do brief manda pôr. */
+    /* Tira a ligação do primeiro nome do índice e deixa o nome. O item continua
+       lá, com o seu estado e a sua contagem; o que falta é a porta para a página
+       do domínio, que é o que o item 8.13 manda pôr ao lado de cada nome.
+
+       O ALVO MUDOU A 14.09.2026 com a célula: a secção era uma secção por
+       domínio com a sua faixa (`dominio-secao-nome`), e o 8.13 fez dela um
+       índice (`dominios-nome dominios-porta`). Uma planta que procurasse a
+       marca antiga não mudava um byte, e o corredor diria «html mudou: NÃO». */
     f: (h, rota) =>
       rota.startsWith('/en')
         ? h
         : h.replace(
-            /<h3 class="dominio-secao-nome"><a class="lig" href="[^"]*">([\s\S]*?)<\/a><\/h3>/,
-            '<h3 class="dominio-secao-nome">$1</h3>',
+            /<a class="dominios-nome dominios-porta" href="[^"]*">([\s\S]*?)<\/a>/,
+            '<span class="dominios-nome">$1</span>',
           ),
   },
   {
     nome: 'a leitura de uma medida do domínio reduzida a uma linha com a porta',
     celulas: ['J12.pt'],
+    rotas: ['/uniao-europeia/index.html', '/en/european-union/index.html'],
     /* O DEFEITO QUE A SEGUNDA PASSAGEM TIROU, REPOSTO (04.09.2026). A primeira
        passagem reduziu a leitura das três medidas de domínio a uma linha com a
        porta, e a leitura a frio mediu o que isso custava (Blocking 3): a
@@ -1226,6 +1286,7 @@ const PLANTAS = [
   {
     nome: 'uma leitura fechada deixada à vista com guião',
     celulas: ['J13.pt.chromium', 'J13.pt.webkit', 'J13.en.chromium', 'J13.en.webkit'],
+    rotas: ['/uniao-europeia/index.html', '/en/european-union/index.html'],
     /* O DEFEITO QUE O F1.1c VEIO TIRAR, REPOSTO NUMA LEITURA SÓ. A folha esconde
        as dobras fechadas quando o guião acende a área; um estilo em linha na
        primeira dobra ganha à folha e deixa aquela leitura à vista, fechada, por
@@ -1239,6 +1300,7 @@ const PLANTAS = [
   {
     nome: 'a área de leitura sem a linha do estado vazio',
     celulas: ['J13.pt.chromium', 'J13.pt.webkit', 'J13.en.chromium', 'J13.en.webkit'],
+    rotas: ['/uniao-europeia/index.html', '/en/european-union/index.html'],
     /* Tira do documento a linha que a área mostra quando não há nenhuma leitura
        aberta. As dobras continuam a esconder-se, o toque continua a abrir a
        certa: o que fica é uma área sem nada dentro e sem uma palavra a dizer o
@@ -1248,6 +1310,7 @@ const PLANTAS = [
   {
     nome: 'a linha do estado vazio à vista com uma leitura aberta',
     celulas: ['J13.pt.chromium', 'J13.pt.webkit', 'J13.en.chromium', 'J13.en.webkit'],
+    rotas: ['/uniao-europeia/index.html', '/en/european-union/index.html'],
     /* O CONHECIDO-POSITIVO DO MAJOR 4 (07.09.2026). A J13 conferia, depois do
        Enter, o nome à vista e o endereço, e não conferia que a linha «Toque num
        cartão para ler a medida.» tinha saído: uma área com uma leitura aberta e
@@ -1266,22 +1329,31 @@ const PLANTAS = [
       ),
   },
   {
-    nome: 'a faixa do domínio com um valor selado repetido',
+    nome: 'um valor selado dentro do índice dos domínios',
     celulas: ['J5.pt'],
-    /* Troca a linha do primeiro cartão da faixa do domínio pela da dívida
-       pública, que já está selada na faixa da cabeça. O cartão continua com
-       valor, com selo e com destino: o que passa a estar errado é que a página
-       sela a mesma linha duas vezes, que é o que a régua A3 conta do outro lado
-       e o que este bloco decidiu não fazer. */
+    /* O DEFEITO QUE O ITEM 8.13 VEIO TIRAR, REPOSTO. A secção dos domínios
+       levava uma faixa de cartões com valores selados, e a decisão tirou-a: «os
+       dois cartões órfãos saem da primeira página», e a medida escrita é «0
+       valores selados na secção dos domínios de /». Esta planta põe um valor
+       selado dentro do índice, sem cartão nenhum e sem mudar mais nada: se a
+       célula só contasse cartões, passava com o valor lá dentro.
+
+       O ALVO MUDOU A 14.09.2026, pela mesma razão da planta de cima: a marca que
+       a planta antiga trocava (`data-dominio-secao`) já não se rende. */
     f: (h, rota) => {
       if (rota.startsWith('/en')) return h;
-      const i = h.indexOf('data-dominio-secao=');
+      const alvo = '<ol class="dominios-lista">';
+      const i = h.indexOf(alvo);
       if (i < 0) return h;
-      const cabeca = h.slice(0, i);
-      const cauda = h
-        .slice(i)
-        .replace('data-claim="saldo-das-administracoes-publicas-2025"', 'data-claim="divida-publica-2025"');
-      return cabeca + cauda;
+      const j = i + alvo.length;
+      return (
+        h.slice(0, j) +
+        '<li class="dominios-item" data-dominio="planta">' +
+        '<a class="dominios-nome dominios-porta" href="/dominios/economia-e-financas-publicas">x</a>' +
+        '<span class="dominios-estado" data-dominio-estado="no-ar">' +
+        '<span data-claim="divida-publica-2025">x</span></span></li>' +
+        h.slice(j)
+      );
     },
   },
 ];

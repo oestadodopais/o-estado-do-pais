@@ -110,7 +110,18 @@ import Frase from '../Frase.astro';
    CONTINUA OPCIONAL, e não é indecisão: uma faixa de um cartão só não tem
    posição para dizer, e o dia em que uma página renda uma faixa dessas o `null`
    é a resposta certa. */
-const { s, lang, rotulo, cartoes, total = null } = Astro.props;
+/* `conjunto` — o nome do conjunto a que estes cartões pertencem (decisão 23 da
+   releitura do leitor de primeira vez, 09.09.2026). Vai no texto oculto do
+   contador de cada cartão: «1 de 5 das medidas de cabeça dos domínios». Ver a
+   razão por extenso ao pé de `inicio.faixa.conjuntoCabeca` em
+   `src/i18n/strings.mjs`. */
+const { s, lang, rotulo, cartoes, total = null, conjunto = null } = Astro.props;
+if (total !== null && !conjunto) {
+  throw new Error(
+    '<Faixa> com total e sem "conjunto": um contador que diz «1 de 5» sem dizer de que ' +
+      'cinco fala é o defeito que a decisão 23 de 09.09.2026 veio fechar.',
+  );
+}
 
 /* O DESTINO DE CADA CARTÃO CHEGA ESCRITO, E A FAIXA NÃO O COMPÕE (F1.2b, item 1,
    03.09.2026).
@@ -145,13 +156,33 @@ for (const c of cartoes) {
   }
 }
 
-/* As três palavras de estado da casa, como na peça. Uma medida sem estado (o
-   valor é uma marca da fonte, «N.d.») não tem palavra nem quadrado: as duas
-   condições são a mesma, e por isso escrevem-se uma vez. */
-const PALAVRA = {
-  fora: s.estado.foraDoLimiar,
-  dentro: s.estado.dentroDoLimiar,
-  sem: s.estado.semLimiar,
+/* ---------------------------------------------------------------------------
+   AS PALAVRAS DE ESTADO, UMA POR FIXADOR DO LIMIAR (F1.10, item 8.5)
+   ---------------------------------------------------------------------------
+   Eram três cadeias para todas as medidas do sítio. Passam a ser escolhidas
+   pelo FIXADOR do limiar daquela medida, porque «dentro do limiar» servia, com
+   a mesma cadeia, os dois quadros da União e o índice de dívida de uma câmara,
+   cujo limiar é o limite que a lei portuguesa fixa. Quem traz o fixador é a
+   vista, na lista dos cartões, lido da declaração da medida por
+   `fixadorDoLimiar()`; a faixa não decide nada e não adivinha nada.
+
+   Uma medida sem estado (o valor é uma marca da fonte, «N.d.») não tem palavra
+   nem quadrado: as duas condições são a mesma, e por isso escrevem-se uma vez.
+   «sem limiar» não tem fixador porque não há limiar nenhum para atribuir. */
+/** @param {string|null|undefined} estado @param {string|null|undefined} fixador @param {string} id */
+const palavraDoEstado = (estado, fixador, id) => {
+  if (estado === 'sem') return s.estado.semLimiar;
+  if (estado !== 'fora' && estado !== 'dentro') return null;
+  const par = fixador ? s.estado[fixador] : null;
+  if (!par) {
+    throw new Error(
+      `<Faixa>: o cartão «${id}» está ${estado} do limiar e não diz de quem o limiar é ` +
+        `(chegou sem \`fixador\`). A vista lê-o da declaração da medida com ` +
+        `\`fixadorDoLimiar()\`, e sem ele o cartão escreveria «${estado} do limiar» sozinho, ` +
+        `que é o que o item 8.5 do F1.10 veio tirar da página.`,
+    );
+  }
+  return par[estado];
 };
 ---
 
@@ -179,7 +210,7 @@ const PALAVRA = {
   <ol class="faixa" data-faixa aria-label={rotulo} tabindex="0">
     {
       cartoes.map((c) => {
-        const palavra = PALAVRA[c.estado] ?? null;
+        const palavra = palavraDoEstado(c.estado, c.fixador, c.id);
         const pintado = c.estado === 'fora' || c.estado === 'dentro';
         return (
           <li
@@ -249,6 +280,14 @@ const PALAVRA = {
                         sobrepostas a 390, e um alvo sobreposto não é um alvo
                         maior: é uma porta que abre a coisa do lado. */}
                     <span data-nonledger="numeracao">{total}</span>
+                    {/* O NOME DO CONJUNTO ENTRA NA RÉGUA DA VOZ (14.09.2026,
+                        achado 3 da leitura cruzada do inventário). É prosa da casa
+                        que se rende em quatro páginas e não estava no inventário,
+                        porque vive dentro de um `<span>` que a peneira dos blocos
+                        não recolhe: `data-voz` é a marca que manda a régua
+                        recolher texto onde quer que ele esteja, e é a mesma que a
+                        definição do marcador já usa. */}
+                    <span class="vh" data-voz> {conjunto}</span>
                   </span>
                 )}
               </div>
@@ -283,6 +322,14 @@ const PALAVRA = {
                         sobrepostas a 390, e um alvo sobreposto não é um alvo
                         maior: é uma porta que abre a coisa do lado. */}
                     <span data-nonledger="numeracao">{total}</span>
+                    {/* O NOME DO CONJUNTO ENTRA NA RÉGUA DA VOZ (14.09.2026,
+                        achado 3 da leitura cruzada do inventário). É prosa da casa
+                        que se rende em quatro páginas e não estava no inventário,
+                        porque vive dentro de um `<span>` que a peneira dos blocos
+                        não recolhe: `data-voz` é a marca que manda a régua
+                        recolher texto onde quer que ele esteja, e é a mesma que a
+                        definição do marcador já usa. */}
+                    <span class="vh" data-voz> {conjunto}</span>
                   </span>
                 )}
               </div>

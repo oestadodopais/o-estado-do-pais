@@ -89,6 +89,7 @@ import { parse } from 'node-html-parser';
 
 import { SITE_HOST_DISPLAY, SITE_NAME } from '../site.config.mjs';
 import { t } from '../src/i18n/strings.mjs';
+import { routePath } from '../src/lib/routes.mjs';
 /* Os números do mapa não se escrevem aqui: leem-se do artefacto que o motor
    atravessou, pela mesma porta que o sítio usa (`src/lib/mapa.mjs`). */
 import { manifestoDoMapa, unidadesDoMapa, distritoDoMapa } from '../src/lib/mapa.mjs';
@@ -628,8 +629,16 @@ function peca(rota, seletor, { indice = 0, filtro = null, raiz = null } = {}) {
    lugar: na página de um concelho, na de uma região e na de uma área. `index.html`
    fica em primeiro lugar em todas as listas porque é a página mais barata de ler
    e porque o dia em que a peça lá voltar a lista não tem de mudar. */
+/* A PÁGINA DE UM CONCELHO DEIXOU DE TER PEÇAS a 08.09.2026 (bloco F1.10, §7.1):
+   a grelha das oito peças grandes saiu, pela mesma razão e com a mesma forma que
+   a da primeira página, e no lugar dela ficou a área de leitura. A peça continua
+   inteira onde ela é a leitura de uma medida naquele lugar: na página de uma
+   REGIÃO, que rende duas sem limiar. A entrada do concelho fica na lista, e não é
+   um resto: uma candidata que não tem a peça não custa nada, e o dia em que a
+   peça lá voltar a lista não tem de mudar. */
 const CANDIDATAS_DA_PECA_SEM_LIMIAR = [
   'index.html',
+  'regioes/alentejo/index.html',
   'municipios/evora/index.html',
   'areas/economia-e-coesao-territorial/index.html',
 ];
@@ -1443,18 +1452,23 @@ ${tabelaTipos}
      era a dobra da peça do painel da primeira página, e é agora a dobra da
      leitura breve, que entrou no lugar dele. É o MESMO componente `Regua.astro`
      com a mesma gramática (Emenda 4) e as mesmas três formas; o que mudou foi a
-     caixa à volta. As três continuam a viver na primeira página, que é a única
-     onde há limiar do quadro publicado. */
-  const casa = arvore('index.html');
+     caixa à volta.
+
+     E MUDOU DE PÁGINA (F1.10, item 8.16, 08.09.2026): as vinte e uma leituras
+     dos dois quadros da União passaram da primeira página para «Portugal na
+     União Europeia», e é ali que vive o único limiar publicado por um quadro.
+     O feixe vai buscá-las onde elas estão, e não onde estavam. */
+  const CASA_DA_REGUA = routePath('uniaoEuropeia', 'pt').replace(/^\//, '') + '/index.html';
+  const casa = arvore(CASA_DA_REGUA);
   const escolhe = (filtro, oQue) => {
     const p = casa.querySelectorAll('.dobra').filter(filtro)[0];
-    if (!p) morre(`não encontrei em \`dist/index.html\` ${oQue}.`);
+    if (!p) morre(`não encontrei em \`dist/${CASA_DA_REGUA}\` ${oQue}.`);
     const nome = p.querySelector('.dobra-nome')?.text?.trim() ?? '';
     const limiar = p.querySelector('.dobra-limiar');
     const regua = p.querySelector('.regua');
-    if (!regua) morre(`a leitura «${nome}» de \`dist/index.html\` deixou de trazer régua.`);
+    if (!regua) morre(`a leitura «${nome}» de \`dist/${CASA_DA_REGUA}\` deixou de trazer régua.`);
     tiraCodigo(regua);
-    absolutizaLigacoes(regua, `dist/index.html → .leitura[${nome}] .regua`);
+    absolutizaLigacoes(regua, `dist/${CASA_DA_REGUA} → .leitura[${nome}] .regua`);
     return { nome, limiar: limiar ? limiar.outerHTML : '', regua: regua.outerHTML, estado: p.getAttribute('data-estado') };
   };
 
@@ -1495,12 +1509,27 @@ ${tabelaTipos}
     );
   }
 
+  /* A DISTÂNCIA DE ÉVORA MUDOU DE CASA (bloco F1.10, §7.1, 08.09.2026), e não de
+     gramática. A grelha das oito peças grandes saiu da página de um concelho, e
+     com ela a `.peca` que levava a régua contra o teto legal; a mesma distância
+     desenha-se hoje DENTRO da leitura da medida que ela mede, com a forma
+     própria daquela página (`.mun-distancia`), que é mais do que a régua
+     genérica: leva os dois valores com os seus selos, as duas pontas nomeadas e
+     a frase do artigo que fixa o limite. É essa que o cartão retrata. */
   const evoraRaiz = arvore('municipios/evora/index.html');
-  const evoraPeca = evoraRaiz.querySelectorAll('.peca').filter((p) => p.querySelector('.regua'))[0];
-  if (!evoraPeca) morre('não encontrei em `dist/municipios/evora/index.html` nenhuma peça com régua.');
-  const evoraNome = evoraPeca.querySelector('.peca-nome')?.text?.trim() ?? '';
+  const evoraPeca = evoraRaiz.querySelector('.dobra-instrumento .mun-distancia');
+  if (!evoraPeca) {
+    morre(
+      'não encontrei em `dist/municipios/evora/index.html` a distância contra o teto legal ' +
+        '(`.dobra-instrumento .mun-distancia`). Ou ela saiu da página, e este cartão tem de ser ' +
+        'revisto, ou mudou-se outra vez de casa.',
+    );
+  }
+  const evoraNome =
+    evoraRaiz.querySelector('.dobra-instrumento')?.closest('.dobra')?.querySelector('.dobra-nome')
+      ?.text?.trim() ?? '';
   tiraCodigo(evoraPeca);
-  absolutizaLigacoes(evoraPeca, 'dist/municipios/evora/index.html → .peca com régua');
+  absolutizaLigacoes(evoraPeca, 'dist/municipios/evora/index.html → .mun-distancia');
 
   const umaRegua = (p, legenda) => `    <div class="ds-mostra">
       <p class="ds-legenda">${escapa(p.nome)} · ${escapa(legenda)}</p>
@@ -1544,7 +1573,7 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   <section class="ds-bloco">
     <h2>O tecto legal, na página do concelho</h2>
     <div class="ds-mostra">${evoraPeca.outerHTML}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/municipios/evora/index.html</code> · a peça «${escapa(evoraNome)}». A referência é um limiar formal (o limite legal do índice de dívida), e por isso esta colore; a base 100 de um índice cuja unidade é uma média não coloriria.</p>
+    <p class="ds-nota"><code class="ds-mono">dist/municipios/evora/index.html</code> · a distância, dentro da leitura de «${escapa(evoraNome)}». A referência é um limiar formal (o limite legal do índice de dívida), e por isso a palavra do estado no cartão colore; a base 100 de um índice cuja unidade é uma média não coloriria.</p>
   </section>`;
 
   regista(
@@ -1664,16 +1693,46 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   }
   const distrito = peca('distritos/evora/index.html', 'figure.distrito-mapa');
 
+  /* O CARTÃO LOCALIZADOR DOS 308 PONTOS SAIU DA PÁGINA DE UM CONCELHO (bloco
+     F1.10, item 8.17, 08.09.2026). O diretor viu-o a 08.09 («the dotted map shows
+     up but with no useful purpose»), e no lugar dele entrou o NÍVEL DA REGIÃO do
+     mapa do F1.1d: a região daquele concelho com os seus concelhos como áreas, o
+     da página com o contorno grosso, e o lugar do nome ao lado.
+
+     O QUE O CARTÃO RETRATA MUDA COM A PÁGINA, e o que ele confere muda com ele:
+     eram os 308 pontos e um anel; são as áreas da região e uma marca de
+     escolhido. A contagem não é escrita: é a do desenho daquela unidade, lida do
+     mesmo ficheiro que a página lê — e a corrida pára se ela for zero ou se a
+     marca não estiver numa área só. Os pontos continuam a existir no componente,
+     na postura do selo, que hoje nenhuma página rende; o dia em que voltarem, o
+     cartão volta com eles. */
   const localizadorRaiz = arvore('municipios/evora/index.html');
   const pontos = localizadorRaiz.querySelectorAll('#mapa circle.mun').length;
-  if (pontos !== CONCELHOS_DA_CARTA) {
+  if (pontos !== 0) {
     morre(
-      `o localizador de \`dist/municipios/evora/index.html\` tem ${pontos} pontos e a Carta tem ` +
-        `${CONCELHOS_DA_CARTA} concelhos. O cartão diz que estão lá todos.`,
+      `o mapa de \`dist/municipios/evora/index.html\` tem ${pontos} pontos do mapa dos 308. O item ` +
+        `8.17 do F1.10 tirou-os da página de um concelho; ou eles saem, ou este cartão volta a ` +
+        `retratá-los.`,
     );
   }
-  const aneis = localizadorRaiz.querySelectorAll('#mapa .mun-escolhido').length;
-  if (aneis !== 1) morre(`o localizador de \`dist/municipios/evora/index.html\` tem ${aneis} anéis, e devia ter um.`);
+  /* A UNIDADE E NÃO A REGIÃO, E O ANEL POR CLASSE (item 8.17b, 08.09.2026). A
+     primeira passagem pôs aqui o nível da REGIÃO, porque era o que o mapa
+     daquele dia tinha; o F1.1e devolveu o desenho às 29 unidades da Carta e
+     reescreveu o componente, e a página do concelho passou a pedir o nível da
+     UNIDADE dele. A conta não muda (uma unidade tem menos concelhos do que os
+     308 e mais do que nenhum); mudam a palavra e a marca do anel, que era
+     `data-escolhido` e é a classe `uni-escolhida` no `<path>`. */
+  const areasDaUnidade = localizadorRaiz.querySelectorAll('#mapa path.uni').length;
+  if (areasDaUnidade === 0 || areasDaUnidade >= CONCELHOS_DA_CARTA) {
+    morre(
+      `o mapa de \`dist/municipios/evora/index.html\` tem ${areasDaUnidade} área(s) (\`path.uni\`), e ` +
+        `uma unidade tem menos concelhos do que os ${CONCELHOS_DA_CARTA} da Carta e mais do que ` +
+        `nenhum. O item 8.17b do F1.10 põe ali o nível da UNIDADE do mapa do F1.1e; um desenho com ` +
+        `todos os concelhos do país seria o mapa do país outra vez.`,
+    );
+  }
+  const aneis = localizadorRaiz.querySelectorAll('#mapa path.uni-escolhida').length;
+  if (aneis !== 1) morre(`o mapa de \`dist/municipios/evora/index.html\` marca ${aneis} concelho(s) escolhido(s), e devia marcar um.`);
 
   /* A LEGENDA DE NEUTRALIDADE JÁ NÃO RENDE, e a corrida confere-o antes de o
      cartão o dizer. A frase é lida da própria Emenda 3, e não escrita aqui. */
@@ -1689,7 +1748,7 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   const corpo = `  <header class="ds-cabeca">
     <span class="eyebrow">Disposições</span>
     <h1>O mapa por unidades</h1>
-    <p class="sec-sub">A primeira página mostra as ${unidades} unidades da Carta, cada uma a porta da sua página. Os pontos não saíram do sítio: são o localizador da página de um concelho, e estão aqui em baixo.</p>
+    <p class="sec-sub">A primeira página mostra as ${unidades} unidades da Carta, cada uma a porta da sua página; uma unidade aberta mostra os seus concelhos; e a página de um concelho mostra a região dele, com o seu concelho marcado.</p>
   </header>
 
   <section class="ds-bloco">
@@ -1721,9 +1780,9 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   </section>
 
   <section class="ds-bloco">
-    <h2>Um lugar escolhido é um anel</h2>
+    <h2>Um lugar escolhido é um contorno, e não um enchimento</h2>
     <div class="ds-mostra ds-mostra-larga">${localizador}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/municipios/evora/index.html</code> · o cartão localizador, que é onde os pontos vivem desde a Emenda 20d: ${pontos} pontos, que são os ${CONCELHOS_DA_CARTA} concelhos da Carta, e ${aneis} anel. Os dois desenhos têm campos diferentes, porque o dos pontos não guarda os polígonos, e por isso são dois e não um. Na primeira página nenhum lugar vem escolhido; aqui o anel é posto na construção, porque a página é de um concelho.</p>
+    <p class="ds-nota"><code class="ds-mono">dist/municipios/evora/index.html</code> · o mapa da unidade daquele concelho (o seu distrito ou a sua ilha), que substituiu o cartão dos 308 pontos a 08.09.2026 (item 8.17 do F1.10, e o nível da unidade com o 8.17b): ${areasDaUnidade} áreas, que são os concelhos que o ficheiro daquela unidade desenha, de entre os ${CONCELHOS_DA_CARTA} da Carta, e ${aneis} marcado. Na primeira página nenhum lugar vem escolhido; aqui a marca é posta na construção, porque a página é de um concelho. O glifo continua a ser o da Emenda 10: o mesmo traço, mais grosso, e nunca um enchimento. Medido nesta corrida: ${pontos} pontos do mapa dos 308 nesta página.</p>
   </section>
 
   <section class="ds-bloco">
@@ -1737,7 +1796,7 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
     'Disposições',
     1240,
     cartao({ grupo: 'Disposições', viewport: 1240, titulo: 'O mapa por unidades', corpo, familias: ['inicio', 'municipio'] }),
-    `${unidades} unidades, ${concelhosDoDistrito} concelhos e ${pontos} pontos, três mapas de dist/`
+    `${unidades} unidades, ${concelhosDoDistrito} concelhos e ${areasDaUnidade} áreas de uma unidade, três mapas de dist/`
   );
 }
 
@@ -1776,8 +1835,12 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
     'uma peça sem limiar',
   );
   const semPeca = peca(ondeSem, '.peca[data-estado="sem"]');
-  const social = peca('index.html', '[data-leituras="social"] .dobra');
-  const socialTitulo = peca('index.html', '.social-titulo');
+  /* O PAINEL SOCIAL MUDOU DE PÁGINA (F1.10, item 8.16, 08.09.2026): as suas oito
+     leituras e o seu nome passaram da primeira página para «Portugal na União
+     Europeia». O cartão do feixe mostra o mesmo, do sítio onde ele está. */
+  const CASA_DO_SOCIAL = routePath('uniaoEuropeia', 'pt').replace(/^\//, '') + '/index.html';
+  const social = peca(CASA_DO_SOCIAL, '[data-leituras="social"] .dobra');
+  const socialTitulo = peca(CASA_DO_SOCIAL, '.social-titulo');
 
   const casa = arvore('index.html');
   const conta = (estado) => casa.querySelectorAll(`.cartao[data-estado="${estado}"]`).length;
@@ -1785,20 +1848,38 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   const dentroN = conta('dentro');
   if (!foraN || !dentroN) morre('a faixa da primeira página deixou de trazer cartões nos dois estados pintados.');
 
+  /* O VOCABULÁRIO DO ESTADO PASSOU A TER UM PAR POR FIXADOR DO LIMIAR (F1.10,
+     item 8.5, 08.09.2026): «dentro do limiar» servia, com a mesma cadeia, os
+     dois quadros da União e o índice de dívida de uma câmara. As chaves são
+     agora caminhos, e o feixe lê-as pelo caminho: uma chave que desapareça
+     continua a matar o gerador, que é o que esta lista existe para fazer. */
+  /** @param {Record<string, unknown>} raiz @param {string} caminho */
+  const porCaminho = (raiz, caminho) =>
+    caminho.split('.').reduce((n, k) => (n && typeof n === 'object' ? n[k] : undefined), raiz);
   const vocabulario = [
-    ['estado', 'foraDoLimiar'],
-    ['estado', 'dentroDoLimiar'],
-    ['estado', 'semLimiar'],
-    ['estado', 'porConfirmar'],
-    ['cobertura', 'temPagina'],
-    ['cobertura', 'semPaginaAinda'],
-    ['cobertura', 'semLinhaAinda'],
+    'estado.comissao.fora',
+    'estado.comissao.dentro',
+    'estado.comissao.rotulo',
+    'estado.lei.fora',
+    'estado.lei.dentro',
+    'estado.lei.rotulo',
+    'estado.pacto.fora',
+    'estado.pacto.dentro',
+    'estado.pacto.rotulo',
+    'estado.conselho.fora',
+    'estado.conselho.dentro',
+    'estado.conselho.rotulo',
+    'estado.semLimiar',
+    'estado.porConfirmar',
+    'cobertura.temPagina',
+    'cobertura.semPaginaAinda',
+    'cobertura.semLinhaAinda',
   ]
-    .map(([grupo, chave]) => {
-      const pt = PT[grupo]?.[chave];
-      const en = EN[grupo]?.[chave];
-      if (!pt || !en) morre(`a chave \`${grupo}.${chave}\` deixou de existir em \`src/i18n/strings.mjs\`; o vocabulário fechado mudou.`);
-      return `        <tr><td class="ds-mono">${escapa(grupo)}.${escapa(chave)}</td><td>${escapa(pt)}</td><td>${escapa(en)}</td></tr>`;
+    .map((caminho) => {
+      const pt = porCaminho(PT, caminho);
+      const en = porCaminho(EN, caminho);
+      if (!pt || !en) morre(`a chave \`${caminho}\` deixou de existir em \`src/i18n/strings.mjs\`; o vocabulário fechado mudou.`);
+      return `        <tr><td class="ds-mono">${escapa(caminho)}</td><td>${escapa(String(pt))}</td><td>${escapa(String(en))}</td></tr>`;
     })
     .join('\n');
 

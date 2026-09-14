@@ -61,8 +61,11 @@ const conta = p.regioes_com_linha.valor === 1 ? s.regioes.contaUma : s.regioes.c
     <span class="eyebrow">{s.regioes.eyebrow}</span>
     <h1>{s.regioes.h1}</h1>
     <p class="lede">{s.regioes.lede}</p>
+    {/* A frase de hierarquia do §2.2 do brief F1.10, uma vez por índice. */}
+    <p class="hierarquia">{s.hierarquia.territorio}</p>
+    {/* SEM PORTA: a porta desta chave é esta página (§7.10, 09.09.2026). */}
     <p class="regiao-conta">
-      <ValorDaProva chave="regioes_com_linha" item={p.regioes_com_linha} lang={lang} />
+      <ValorDaProva chave="regioes_com_linha" item={p.regioes_com_linha} lang={lang} semPorta={true} />
       {conta}
     </p>
   </div>
@@ -70,6 +73,11 @@ const conta = p.regioes_com_linha.valor === 1 ? s.regioes.contaUma : s.regioes.c
   <section class="regiao-instr" id="regua" aria-labelledby="regua-k">
     <h2 class="regiao-instr-k" id="regua-k">{s.home.instr1.h2}</h2>
     <InstrumentoConvergencia lang={lang} />
+    {/* «PROVISÓRIO» DITO UMA VEZ, E AQUI (F1.10, §7.6, 09.09.2026). A palavra
+        aparece ao lado de onze valores do sítio e nunca dizia de quem era. Fica
+        POR BAIXO da régua, e não na cabeça: é a legenda de uma marca que só se vê
+        depois de se ver a marca, e o item 8.11 tira a prosa do primeiro ecrã. */}
+    <p class="regiao-provisorio">{s.regioes.provisorioNota}</p>
   </section>
 
   <p class="rodape-nav regiao-portas">

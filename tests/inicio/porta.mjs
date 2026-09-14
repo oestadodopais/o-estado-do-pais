@@ -49,10 +49,33 @@
  * ocorrências, e não de linhas: o HTML construído é quase todo uma linha só, e
  * `grep -c` contaria 1 onde há dez.
  *
- * A5 · AS 29 UNIDADES COM NOME VISÍVEL E ALVO. Abaixo de 1024, cada uma das 29
- * unidades da Carta tem de ter um nome com caixa (visível, e não apenas
- * presente) e alvo de 44 × 44 px. A lista mede-se COMO ELA CHEGA AO LEITOR:
- * sem abrir gaveta nenhuma, porque o item 4 do brief manda a lista aberta.
+ * A5 · A GAVETA DOS NOMES ABRE COM UM TOQUE, E OS 29 ESTÃO LÁ COM ALVO E PORTA.
+ * Abaixo de 1024, um toque no `<summary>` da gaveta «Os nomes no mapa» abre-a, e
+ * lá dentro as 29 unidades da Carta têm cada uma um nome visível, um alvo de
+ * 44 × 44 px e uma porta para a sua página, que responde.
+ *
+ * A EXPECTATIVA «VISÍVEL EM REPOUSO» RETIROU-SE, e a razão escreve-se
+ * (decisão do lugar de direção, 09.09.2026, sobre o F1.10). A célula nasceu com
+ * o F1.1, que mandava a lista dos nomes ABERTA: «o item 4 do brief manda a lista
+ * aberta», porque abaixo de 1 024 nenhuma das 29 áreas do desenho chegava aos
+ * 44 px pelo quadrado inscrito (I82) e a rede de nomes era o único alvo que
+ * respondia por elas. O F1.1d e o F1.1e mudaram esse facto e a decisão que dele
+ * saía: «A lista aberta dos 29 nomes sai; fica uma lista fechada como
+ * alternativa sem guião» (`BRIEF-F1.1d-os-nomes-do-mapa.md`, §0), e «sem guião
+ * as unidades são ligações para as suas páginas com a lista fechada dos nomes
+ * por baixo» (`BRIEF-F1.1e-os-distritos-voltam-ao-mapa.md`, §0). O nome de uma
+ * unidade aparece agora no lugar fixo ao passar, ao focar ou ao tocar, e a lista
+ * voltou a ser o que o nome dela diz: o índice do desenho.
+ *
+ * Uma célula que continuasse a exigir os 29 nomes VISÍVEIS EM REPOUSO media o
+ * que o bloco anterior queria e não o que os dois blocos seguintes decidiram: é
+ * a régua a contradizer a decisão em vez de a medir. O que fica medido é o que
+ * a decisão promete a quem não tem rato nem guião: que a gaveta se abre com um
+ * toque, que os 29 lá estão com o alvo do toque, e que cada um leva à sua
+ * página. O alvo de 44 px dentro da gaveta é a exigência do lugar de direção de
+ * 09.09.2026: os briefs do F1.1d e do F1.1e fixam os 44 px para as áreas
+ * desenhadas e não escrevem nada sobre os nomes da gaveta, e a decisão fecha o
+ * silêncio pelo lado do leitor.
  *
  * A6 · «Âmbito» E «Densidade» FORA DA PÁGINA. Contagem de ocorrências a 0 nas
  * duas edições, com as palavras de cada edição.
@@ -66,11 +89,17 @@
  * um caminho que existe no `dist/` (pede-se ao servidor e espera-se 200) e com
  * `method="get"`, que é o que a torna uma busca e não uma escrita.
  *
- * A9 · ENCONTRAR O CONCELHO EM ≤ 2 TOQUES E ≤ 1 ECRÃ, a 390 × 664. O percurso
- * corre-se: toque 1 no campo, escreve-se o nome, toque 2 no resultado, e a
- * página que chega é a do concelho. Cada toque é um `click` a sério, e a régua
- * confere que o alvo do toque estava dentro do primeiro ecrã quando o toque
- * aconteceu.
+ * A9 · ENCONTRAR O CONCELHO EM DOIS TOQUES E ≤ 1 ECRÃ, a 390 × 664, E O QUE A
+ * PÁGINA DE CHEGADA FAZ COM O ENDEREÇO. O percurso corre-se: toque 1 no campo,
+ * escreve-se o nome, toque 2 no resultado. Cada toque é um `click` a sério, a
+ * régua confere que o alvo estava dentro do primeiro ecrã quando o toque
+ * aconteceu, e são DOIS e não «até dois»: uma chegada com um toque ou com
+ * nenhum não é o percurso que o brief escreve. A página que chega tem de RENDER
+ * aquele concelho, e não apenas de ter o endereço dele. Sem guião, a submissão
+ * nativa tem de levar ao índice dos 308 com o que foi escrito no endereço, e o
+ * documento que chega tem de trazer os 308 nomes com porta e a frase do
+ * `<noscript>` que diz o que o botão fez. E a porta filtrada dos estudos mede-se
+ * de facto, nos dois leitores. A razão inteira está ao pé da célula.
  *
  * A10 · «sem limiar» FORA DOS CARTÕES. Contagem a 0 dentro dos cartões da faixa
  * e dentro das leituras breves de `/`, nas duas edições, e as duas coleções com
@@ -162,6 +191,13 @@ import http from 'node:http';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium, webkit } from 'playwright';
+import { parse } from 'node-html-parser';
+
+/* A DECLARAÇÃO DAS DEFINIÇÕES DOS DOIS PAINÉIS (F1.10, item 8.4, 08.09.2026). A
+   célula A4 compara o que a página rende com o que a declaração diz, e por isso
+   lê-a: os dois lados da comparação deixam de ser o mesmo texto escrito duas
+   vezes na régua. */
+import { DEFINICAO_DOS_PAINEIS } from '../../src/data/figuras.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = process.env.OEDP_DIST
@@ -236,8 +272,35 @@ const conta = (nome, passa, prova) => celulas.push({ nome, passa: !!passa, prova
 
 const nav = await chromium.launch({ headless: true });
 
-async function pagina(rota, largura, altura = 844) {
-  const ctx = await nav.newContext({ viewport: { width: largura, height: altura } });
+/**
+ * O DEDO É UM APONTADOR GROSSO, E UMA CÉLULA QUE MEDE UM ALVO DE TOQUE TEM DE O
+ * DIZER AO NAVEGADOR (F1.10, 08.09.2026)
+ * ---------------------------------------------------------------------------
+ * A folha desta casa dá os 44 px de alvo dentro de `@media (pointer: coarse)`,
+ * que é a regra certa: num cursor uma ligação de barra não cresce, e crescer ali
+ * empurrava linhas. Um Chromium com `viewport` e mais nada declara um apontador
+ * FINO, e por isso essa regra nunca valia nesta régua: a A15 media o alvo da
+ * porta dos estudos em 30,4 px e falhava por uma altura que o telemóvel dá.
+ * Medido nos dois: 57,9 × 27,2 px com o apontador fino e 57,9 × 44,0 px com o
+ * grosso, na mesma construção e na mesma largura.
+ *
+ * `toque` NÃO É O DEFEITO desta função, e é de propósito: as células da
+ * geometria (A1, A2, A11) medem a COMPOSIÇÃO, e a composição é a mesma nos dois
+ * apontadores menos nas alturas de alvo, que não são o que elas medem. Quem pede
+ * o apontador grosso é a célula que mede um alvo de toque, e é a A15. A mesma
+ * decisão está tomada em `tests/inicio/correcoes-a.mjs`, que corre as suas
+ * células de telemóvel com `devices['iPhone 13']`.
+ *
+ * @param {string} rota
+ * @param {number} largura
+ * @param {number} [altura]
+ * @param {{ toque?: boolean }} [opcoes]
+ */
+async function pagina(rota, largura, altura = 844, opcoes = {}) {
+  const ctx = await nav.newContext({
+    viewport: { width: largura, height: altura },
+    ...(opcoes.toque ? { hasTouch: true, isMobile: true } : {}),
+  });
   const p = await ctx.newPage();
   p.__ctx = ctx;
   await p.goto(base + rota, { waitUntil: 'networkidle' });
@@ -253,12 +316,53 @@ async function html(rota) {
   return await r.text();
 }
 
+/* O DOCUMENTO COMO O NAVEGADOR SEM GUIÃO O TEM (A9, 14.09.2026). Num contexto
+   com `javaScriptEnabled: false` não há `page.evaluate()`: o que se pode ler é
+   o `content()`, e é nele que se conta.
+
+   AS ETIQUETAS DO `<noscript>` CAEM ANTES DE SE LER, e é uma medição e não uma
+   preferência: `node-html-parser` trata o `<noscript>` como bloco de texto cru
+   e nenhuma das suas opções o abre como marcação (`blockTextElements:
+   { noscript: false }` APAGA o conteúdo, e foi o que deu zero na primeira
+   corrida desta célula, com a frase na página). Tirar as duas etiquetas deixa os
+   filhos serem o que já são num navegador sem guião: elementos do documento. */
+const documento = (conteudo) => parse(conteudo.replace(/<\/?noscript>/gi, ''));
+
+/* O texto de um nó que pode não existir, normalizado. Uma frase que não está na
+   página tem zero caracteres, e é assim que a célula a conta. */
+const texto = (no) => (no ? no.textContent.replace(/\s+/g, ' ').trim() : '');
+
 const ocorrencias = (texto, agulha) => texto.split(agulha).length - 1;
 
 const ALTURA_PEQUENA = 664;
 const ALVO_TOQUE = 44;
 const ALVO_PONTEIRO = 32;
-const TETO_DA_MOBILIA = 64;
+/**
+ * ---------------------------------------------------------------------------
+ * A MOBÍLIA TEM DOIS TETOS, UM POR EDIÇÃO (F1.10, item 8.9, decisão do lugar de
+ * direção de 09.09.2026)
+ * ---------------------------------------------------------------------------
+ * O teto do brief é 64 px, e a edição portuguesa cumpre-o numa fila (62 px,
+ * medido na quinta sessão). A inglesa não cabe, e a conta está feita ao píxel: a
+ * barra mede 354 px a 390; o comando de abertura mede 55,7 e a goteira 10, e as
+ * duas goteiras da fila 20, o que deixa **268,3 px** para as três etiquetas; e as
+ * três etiquetas inglesas medem, a 12 px com o entreletra da casa,
+ * **311,3 px** («Municipalities» 105,4 + «Studies» 53,4 + «Numbers and sources»
+ * 152,5). Faltam 43,0 px, e a contração que o brief autoriza («Numbers &
+ * sources») fecha 18,8 dos 43: ficavam 24,2 por fechar.
+ *
+ * A DECISÃO É DO LUGAR DE DIREÇÃO, PELA DELEGAÇÃO DA §1.98: as etiquetas
+ * inglesas ficam fiéis («Municipalities», «Studies», «Numbers and sources») —
+ * não se encurta o nome que o diretor escolheu para a página dos números — e o
+ * corpo não desce abaixo dos 12 px que a regra A9 fixou para o telemóvel. A
+ * edição inglesa aceita DUAS FILAS a 390, e o teto dela é a altura medida dessas
+ * duas filas: **95,2 px**. Uma terceira fila fica vermelha, que é o que este
+ * número existe para impedir.
+ *
+ * O DIRETOR PODE REABRIR ISTO com um nome inglês mais curto para a página dos
+ * números: com ele, a fila inglesa cabe numa linha e o teto volta a ser um só.
+ */
+const TETO_DA_MOBILIA = { pt: 64, en: 95.2 };
 const LIMIAR_DA_COLUNA = 1024;
 
 /* ---------------------------------------------------------------------------
@@ -320,6 +424,10 @@ const EDICOES = [
     concelho: 'Évora',
     destinoDoConcelho: '/municipios/evora',
     indiceDosConcelhos: '/municipios',
+    /* O slug do concelho, que é o que a porta filtrada dos estudos leva no
+       endereço (`?concelho=`) e o que cada entrada do índice declara em
+       `data-concelho`. É o mesmo nas duas edições: um slug é um identificador. */
+    slugDoConcelho: 'evora',
     /* As rotas que as células do F1.2b abrem. Escritas aqui e não compostas:
        esta régua lê o `dist/` e não a tabela de rotas do sítio, que é o que a
        torna capaz de ver um caminho que mudou sem ninguém dar por isso. */
@@ -328,6 +436,13 @@ const EDICOES = [
     estudos: '/estudos',
     regiao: '/regioes/alentejo',
     paginaDoConcelho: '/municipios/evora',
+    /* A PÁGINA DOS DOIS QUADROS DA UNIÃO (F1.10, item 8.16, 08.09.2026). Os 21
+       cartões e as suas leituras saíram da primeira página para aqui, e com eles
+       saíram as células que os medem: a A3 (os 21 valores uma só vez), a A4 (a
+       Comissão em cada frase de contexto), a A10 («sem limiar» fora dos cartões)
+       e a A13 (o destino de cada um dos 21). O que a A1 mede continua a ser a
+       primeira página, que é onde o primeiro ecrã do telemóvel é. */
+    painel: '/uniao-europeia',
   },
   {
     chave: 'en',
@@ -339,11 +454,13 @@ const EDICOES = [
     concelho: 'Évora',
     destinoDoConcelho: '/en/municipalities/evora',
     indiceDosConcelhos: '/en/municipalities',
+    slugDoConcelho: 'evora',
     indiceDosDominios: '/en/domains',
     dominio: '/en/domains/economia-e-financas-publicas',
     estudos: '/en/studies',
     regiao: '/en/regions/alentejo',
     paginaDoConcelho: '/en/municipalities/evora',
+    painel: '/en/european-union',
   },
 ];
 
@@ -354,6 +471,14 @@ const { FIGURAS_PDM, FIGURAS_SOCIAL } = await import(
   path.join(RAIZ, 'src', 'data', 'figuras.mjs')
 );
 const AS_VINTE_E_UMA = [...FIGURAS_PDM, ...FIGURAS_SOCIAL].map((f) => f.claim);
+
+/* OS CARTÕES DA FAIXA DA PRIMEIRA PÁGINA, LIDOS DA DECLARAÇÃO DO DOMÍNIO (F1.10,
+   item 8.16, 08.09.2026). Eram os 21 dos dois quadros da União; passaram a ser
+   as medidas de cabeça dos domínios vivos, e a vista compõe a lista da mesma
+   declaração. Um número escrito aqui («cinco») ficava errado no dia em que um
+   domínio novo ficasse vivo, e é exactamente o que esta célula não pode fazer. */
+const { FAIXA_DO_DOMINIO_1 } = await import(path.join(RAIZ, 'src', 'data', 'dominios.mjs'));
+const CARTOES_DA_CABECA = FAIXA_DO_DOMINIO_1.length;
 
 /* A TABELA DO DESTINO, LIDA DA MESMA FONTE QUE A VISTA USA (A13). Uma segunda
    lista escrita aqui («estas três são de domínio») era a régua a medir o que ela
@@ -394,6 +519,22 @@ async function medeOsNomes(pg, alvo) {
       invisiveis: caixas.filter((c) => !c.vis).length,
     };
   }, alvo);
+}
+
+/**
+ * UM TOQUE NO COMANDO DA GAVETA DOS NOMES, e diz se ela ficou aberta.
+ *
+ * É um toque a sério (`click` sobre o `<summary>`), e não um `open = true`
+ * escrito por fora: o que a célula A5 promete é que quem não tem rato nem guião
+ * chega aos 29 nomes com UM gesto, e um estado forçado não prova gesto nenhum.
+ */
+async function abreAGaveta(pg) {
+  const cmd = pg.locator('[data-gaveta="nomes"] > summary');
+  if ((await cmd.count()) !== 1) return false;
+  await cmd.click();
+  return await pg.evaluate(
+    () => document.querySelector('[data-gaveta="nomes"]')?.hasAttribute('open') ?? false,
+  );
 }
 
 /* ===========================================================================
@@ -471,9 +612,57 @@ const SONDA_A1 = (alturaDoEcra) => {
       altura: +p.getBoundingClientRect().height.toFixed(1),
     };
   };
+  /* ---------------------------------------------------------------------------
+     QUANTAS LINHAS TEM A FRASE DA MANCHETE (item 8.15, 08.09.2026)
+     ---------------------------------------------------------------------------
+     «No telemóvel a manchete do país fica com no máximo dois algarismos selados
+     e cabe em três linhas, medido.» A altura da caixa não diz o número de
+     linhas: diz a altura, e a altura muda com o corpo do tipo. Contam-se as
+     linhas como o motor as desenha, com um `Range` sobre a FRASE — e a frase é o
+     `<h1>` sem os selos, que vivem numa fila própria por baixo dela e não são
+     texto da manchete.
+
+     A CONTAGEM É DE LINHAS, E O TOPO NÃO AS DISTINGUE (corrigido a 08.09.2026,
+     no mesmo item). A primeira redação contava TOPOS DISTINTOS, e isso conta a
+     mais: a frase da manchete corre no tipo de leitura e os dois algarismos
+     correm no tipo de instrumento, que tem outra métrica, e na MESMA linha o
+     rectângulo do algarismo começa 4 px abaixo do rectângulo da prosa. Medido em
+     `/` a 390 px: a manchete tem rectângulos nos topos 189, 193, 225 e 229, que
+     são DUAS linhas (189 com 193, 225 com 229) e não quatro. A célula dizia
+     cinco linhas em `/` e seis em `/en` numa manchete que tinha três e quatro, e
+     um teto medido com uma conta errada é um teto que não se cumpre nunca.
+
+     A CONTA CERTA É PELO CENTRO DE CADA RECTÂNGULO, com a tolerância tirada da
+     própria medição: dois rectângulos estão na mesma linha quando os centros
+     distam menos de metade da menor altura de rectângulo da frase. Na mesma
+     medição, os centros da mesma linha distam 1 px e os de linhas seguidas
+     distam 36; a menor altura é 33, e a tolerância 16,5. Nenhum número está
+     escrito aqui: os dois saem do que o motor desenhou. */
+  const linhasDaFrase = (() => {
+    const h1 = document.querySelector('.cabeca-h1');
+    if (!h1) return 0;
+    const selos = h1.querySelector('.manchete-selos');
+    const r = document.createRange();
+    r.selectNodeContents(h1);
+    if (selos) r.setEndBefore(selos);
+    const caixas = [...r.getClientRects()].filter((x) => x.width > 0 && x.height > 0);
+    if (!caixas.length) return 0;
+    const tolerancia = Math.min(...caixas.map((x) => x.height)) / 2;
+    const centros = caixas.map((x) => x.top + x.height / 2).sort((a, b) => a - b);
+    let linhas = 1;
+    let doDaLinha = centros[0];
+    for (const c of centros.slice(1)) {
+      if (c - doDaLinha > tolerancia) {
+        linhas++;
+        doDaLinha = c;
+      }
+    }
+    return linhas;
+  })();
   return {
     nome: cx(document.querySelector('.wordmark')),
     manchete: cx(document.querySelector('.cabeca-h1')),
+    linhasDaManchete: linhasDaFrase,
     cartao: cx(cartao),
     selo: cx(cartao ? cartao.querySelector('.src-chip') : null),
     porta: cx(document.querySelector('[data-porta-concelho]')),
@@ -515,14 +704,55 @@ async function corre() {
     const falhas = Object.entries(partes)
       .filter(([, c]) => !dentro(c))
       .map(([k, c]) => (c === null ? `${k}: não existe` : `${k}: fundo ${c.fundo}`));
+    /* O TETO DAS LINHAS DA MANCHETE (item 8.15). Três, medidas em Chromium e em
+       WebKit, nas duas edições; o teto está escrito uma vez e não por edição.
+
+       O SEGUNDO MOTOR MEDE-SE AQUI, DESDE 09.09.2026 (Major 16 da leitura a
+       frio). O relatório do bloco afirmava «3 linhas nas duas edições e nos dois
+       motores» e esta célula abria UM navegador, o Chromium: a medida em WebKit
+       era uma afirmação sem régua. O bloco do WebTKit que existia mais abaixo
+       (célula A16) compara o NOME acessível do `<h1>`, e o nome de um `<h1>` não
+       diz quantas linhas ele ocupa.
+
+       A CONTA É A MESMA SONDA, corrida no outro motor sobre a mesma página e o
+       mesmo ecrã. O que os motores podem fazer diferente é a quebra de linha, e
+       é isso que esta segunda medição existe para apanhar: um teto cumprido num
+       motor e rompido no outro é um teto que não se cumpre. */
+    const linhasEmWebkit = await (async () => {
+      const nav2 = await webkit.launch({ headless: true });
+      try {
+        const ctx = await nav2.newContext({ viewport: { width: 390, height: ALTURA_PEQUENA } });
+        const pg = await ctx.newPage();
+        await pg.goto(base + ed.rota, { waitUntil: 'networkidle' });
+        await pg.evaluate(() => document.fonts.ready);
+        const gw = await pg.evaluate(SONDA_A1, ALTURA_PEQUENA);
+        await ctx.close();
+        return gw.linhasDaManchete;
+      } finally {
+        await nav2.close();
+      }
+    })();
+    medidas[`A1.${ed.chave}`].linhasDaMancheteWebkit = linhasEmWebkit;
+
+    const TETO_DAS_LINHAS = 3;
     conta(
       `A1.${ed.chave}`,
-      falhas.length === 0 && g.cartoesDaCabeca === 21 && g.semSelo.length === 0,
+      falhas.length === 0 &&
+        g.cartoesDaCabeca === CARTOES_DA_CABECA &&
+        g.semSelo.length === 0 &&
+        g.linhasDaManchete > 0 &&
+        g.linhasDaManchete <= TETO_DAS_LINHAS &&
+        linhasEmWebkit > 0 &&
+        linhasEmWebkit <= TETO_DAS_LINHAS,
       (falhas.length === 0
         ? `390×${ALTURA_PEQUENA}: nome, manchete, cartão, selo e porta do concelho dentro do ecrã ` +
           `(fundo máximo ${Math.max(...Object.values(partes).map((c) => c.fundo)).toFixed(1)} px)`
         : `fora do primeiro ecrã: ${falhas.join('; ')}`) +
-        ` · ${g.cartoesDaCabeca} cartões na cabeça (${g.cartoes} na página), ${g.semSelo.length} sem selo com caixa` +
+        ` · a manchete em ${g.linhasDaManchete} linha(s) em Chromium e ` +
+        `${linhasEmWebkit} em WebKit (teto ${TETO_DAS_LINHAS}), ` +
+        `${g.manchete ? g.manchete.altura : 0} px de altura` +
+        ` · ${g.cartoesDaCabeca} cartões na cabeça (${g.cartoes} na página, ` +
+        `${CARTOES_DA_CABECA} declarados pelo domínio), ${g.semSelo.length} sem selo com caixa` +
         (g.semSelo.length ? ` (${g.semSelo.map((c) => c.id).slice(0, 3).join(', ')})` : ''),
     );
 
@@ -542,16 +772,32 @@ async function corre() {
         ` (${g.altura <= teto ? `menos ${teto - g.altura}` : `MAIS ${g.altura - teto}`} px)`,
     );
 
+    /* A SEGUNDA METADE DA CÉLULA MUDA DE NÚMERO COM O ITEM 8.11 (F1.10,
+       08.09.2026). Exigia UMA fila de leituras por baixo do nome a 390, que era
+       a folha a mostrar ali uma das quatro. As quatro saíram do cabeçalho de
+       todas as páginas e foram para a página da medida e para o Método: por
+       baixo do nome não fica leitura nenhuma, e a caixa da mobília não se
+       desenha abaixo de 640 (o seu único filho, o controlo do tema, vive dentro
+       do menu). A célula passa a exigir ZERO filas, que é o que o item manda, e
+       continua a imprimir a altura para que uma caixa vazia com fio se veja no
+       número em vez de passar despercebida. */
     medidas[`A11.${ed.chave}`] = { acimaDoNome: g.mobilia, barra: g.barra, leituras: g.leituras };
+    /* AS FILAS DA BARRA SÃO DUAS POR EDIÇÃO, E É A MESMA DECISÃO (item 8.9): uma
+       em português, duas em inglês. O número da barra é o que o teto mede, e
+       por isso a célula pede as duas coisas ao mesmo par. */
+    const tetoDaMobilia = TETO_DA_MOBILIA[ed.chave];
+    const filasDaBarra = ed.chave === 'pt' ? 1 : 2;
     conta(
       `A11.${ed.chave}`,
       g.mobilia !== null &&
-        g.mobilia <= TETO_DA_MOBILIA &&
-        g.barra.filas === 1 &&
-        g.leituras.filas === 1,
-      `mobília acima do nome a 390: ${g.mobilia} px (teto ${TETO_DA_MOBILIA})` +
+        g.mobilia <= tetoDaMobilia &&
+        g.barra.filas === filasDaBarra &&
+        g.leituras.filas === 0 &&
+        g.leituras.altura === 0,
+      `mobília acima do nome a 390: ${g.mobilia} px (teto ${tetoDaMobilia})` +
         ` · a barra em ${g.barra.filas} fila(s) com ${g.barra.itens} item(ns), ${g.barra.altura} px` +
-        ` · as leituras por baixo do nome em ${g.leituras.filas} fila(s) com ${g.leituras.itens} à vista, ${g.leituras.altura} px`,
+        ` (esta edição cabe em ${filasDaBarra})` +
+        ` · as leituras por baixo do nome em ${g.leituras.filas} fila(s) com ${g.leituras.itens} à vista, ${g.leituras.altura} px (o item 8.11 exige 0 e 0)`,
     );
 
     /* ------------------------------------------------------------------- A5 */
@@ -575,22 +821,52 @@ async function corre() {
        dava verde com a lista fechada, que é exactamente o estado que este bloco
        veio abrir. `checkVisibility({ contentVisibilityAuto: true })` responde
        pelo que o leitor vê. */
+    const antes = await medeOsNomes(p, ALVO_TOQUE);
+    const abriu390 = await abreAGaveta(p);
     const nomes = await medeOsNomes(p, ALVO_TOQUE);
-    medidas[`A5.${ed.chave}.390`] = nomes;
+    medidas[`A5.${ed.chave}.390`] = { antes, abriu: abriu390, depois: nomes };
     const p768 = await pagina(ed.rota, 768, 900);
+    const abriu768 = await abreAGaveta(p768);
     const nomes768 = await medeOsNomes(p768, ALVO_TOQUE);
-    medidas[`A5.${ed.chave}.768`] = nomes768;
+    medidas[`A5.${ed.chave}.768`] = { abriu: abriu768, depois: nomes768 };
     await p768.__ctx.close();
+    /* CADA NOME LEVA À SUA PÁGINA, e o destino confere-se contra o que a Carta
+       diz: a porta de uma unidade é `/distritos/<slug>` na edição portuguesa e
+       `/en/districts/<slug>` na inglesa, com o mesmo slug que a marca declara. A
+       página pede-se ao servidor: uma porta que não abre não é uma porta. */
+    const portas = await p.evaluate(() =>
+      [...document.querySelectorAll('[data-lista-porta]')].map((a) => ({
+        slug: a.getAttribute('data-lista-porta'),
+        href: (a.getAttribute('href') ?? '').split('#')[0],
+      })),
+    );
+    const prefixo = ed.chave === 'pt' ? '/distritos/' : '/en/districts/';
+    const forasDoSitio = portas.filter((x) => x.href !== `${prefixo}${x.slug}`);
+    let semResposta = 0;
+    for (const x of portas) {
+      const r = await fetch(base + x.href);
+      if (!r.ok) semResposta++;
+    }
     conta(
       `A5.${ed.chave}`,
-      nomes.total === 29 &&
+      abriu390 &&
+        abriu768 &&
+        antes.total === 29 &&
+        antes.invisiveis === 29 &&
+        nomes.total === 29 &&
         nomes.pequenos.length === 0 &&
         nomes768.total === 29 &&
-        nomes768.pequenos.length === 0,
-      `as 29 unidades com nome visível e alvo ≥ ${ALVO_TOQUE} px, sem gesto, abaixo de ${LIMIAR_DA_COLUNA} ` +
-        `(a partir de ${LIMIAR_DA_COLUNA} a regra é ${ALVO_PONTEIRO} px, Emenda 20c): ` +
-        `a 390 ${nomes.total} nome(s), ${nomes.invisiveis} invisível(eis), ${nomes.pequenos.length} fora do alvo; ` +
-        `a 768 ${nomes768.total} nome(s), ${nomes768.invisiveis} invisível(eis), ${nomes768.pequenos.length} fora do alvo` +
+        nomes768.pequenos.length === 0 &&
+        portas.length === 29 &&
+        forasDoSitio.length === 0 &&
+        semResposta === 0,
+      `a gaveta dos nomes abre com um toque e leva as 29 unidades com alvo ≥ ${ALVO_TOQUE} px, ` +
+        `abaixo de ${LIMIAR_DA_COLUNA} (a partir de ${LIMIAR_DA_COLUNA} a regra é ${ALVO_PONTEIRO} px, ` +
+        `Emenda 20c): em repouso ${antes.total} nome(s), ${antes.invisiveis} invisível(eis) ` +
+        `(a gaveta chega fechada, F1.1d/F1.1e); a 390 abriu ${abriu390}, ${nomes.total} nome(s), ` +
+        `${nomes.pequenos.length} fora do alvo; a 768 abriu ${abriu768}, ${nomes768.total} nome(s), ` +
+        `${nomes768.pequenos.length} fora do alvo; ${portas.length} porta(s), ` +
+        `${forasDoSitio.length} fora de «${prefixo}», ${semResposta} sem resposta` +
         (nomes.pequenos.length || nomes768.pequenos.length
           ? ` (${[...nomes.pequenos, ...nomes768.pequenos]
               .slice(0, 3)
@@ -604,10 +880,16 @@ async function corre() {
 
     /* -------------------------------------------------------- A3, A4, A6, A10 */
     const doc = await html(ed.rota === '/' ? '/index.html' : `${ed.rota}/index.html`);
+    /* AS CÉLULAS DOS 21 LEEM A PÁGINA ONDE OS 21 ESTÃO (F1.10, item 8.16). Os
+       dois quadros da União saíram da primeira página para «Portugal na União
+       Europeia», e uma régua que continuasse a contá-los aqui contava zero numa
+       coleção vazia, que é a regra 14 da casa a ser quebrada dentro da própria
+       régua. O que muda é a pasta que ela lê; o teste é o mesmo. */
+    const docDoPainel = await html(`${ed.painel}/index.html`);
 
     const repetidos = AS_VINTE_E_UMA.map((id) => ({
       id,
-      n: ocorrencias(doc, `data-claim="${id}"`),
+      n: ocorrencias(docDoPainel, `data-claim="${id}"`),
     })).filter((c) => c.n !== 1);
     medidas[`A3.${ed.chave}`] = {
       total: AS_VINTE_E_UMA.length,
@@ -616,45 +898,67 @@ async function corre() {
     conta(
       `A3.${ed.chave}`,
       repetidos.length === 0,
-      `os 21 valores selados uma só vez em ${ed.rota}: ${repetidos.length} fora da conta` +
+      `os 21 valores selados uma só vez em ${ed.painel}: ${repetidos.length} fora da conta` +
         (repetidos.length ? ` (${repetidos.map((c) => `${c.id}×${c.n}`).join(', ')})` : ''),
     );
 
     /* ------------------------------------------------------------------------
-       A COMISSÃO EM CADA UMA DAS DUAS FRASES, E NÃO NO DOCUMENTO (Major 9)
+       A DEFINIÇÃO DE CADA PAINEL, CARÁCTER A CARÁCTER (F1.10, item 8.4)
        ------------------------------------------------------------------------
-       A primeira redação contava a cadeia no documento inteiro. A leitura a frio
-       apanhou o que isso deixava passar: «Commission presence is counted
-       anywhere in the document, not in each context sentence», e a planta P1
-       provou-o — a frase do Procedimento perdeu a Comissão na fonte e a célula
-       continuou verde, porque a frase do Painel Social ainda a tinha.
+       A CÉLULA MUDOU DE MEDIDA A 08.09.2026, E A RAZÃO ESCREVE-SE. Ela exigia
+       «Comissão Europeia» dentro de cada uma das duas frases de contexto, porque
+       essas frases diziam contra que documento da Comissão a casa tinha
+       confirmado os valores. **Essas duas frases saíram** (§9.3 do brief, sobre a
+       leitura cruzada do inventário): a Emenda 15 não deixa a página do leitor
+       falar do trabalho da casa. No lugar delas está a DEFINIÇÃO de cada painel,
+       e as duas definições não têm o mesmo publicador: a do Procedimento sai da
+       página da Comissão sobre o painel e nomeia-a; a do Painel Social sai da
+       página do Eurostat sobre o Pilar. Continuar a exigir a mesma cadeia nas
+       duas era exigir que a segunda dissesse o que a sua origem não diz.
 
-       A medida do brief é por frase: «as duas frases de contexto têm de nomear
-       "Comissão Europeia" / "European Commission"». A célula lê os dois
-       parágrafos pela marca que eles levam, `data-contexto-painel`, e exige a
-       cadeia dentro de CADA um. A contagem no documento fica ao lado, para o
-       relatório, e não decide nada. */
-    const nComissao = ocorrencias(doc, ed.comissao);
-    const p4 = await pagina(ed.rota, 1280, 900);
+       A MESMA COMPARAÇÃO ENTROU NO `verify` A 08.09.2026, e a razão é que esta
+       célula abre um navegador e não corre em portão nenhum: foi escrita num dia
+       e não foi corrida nesse dia. O lugar de direção decidiu que ela entra no
+       `verify` ou que a razão de não entrar fica escrita, e a comparação entrou:
+       `scripts/check-lugar.mjs` faz o mesmo teste sobre o HTML construído
+       (medida «8.4 · definições de painel fora da declaração», com a conferência
+       de que os quatro parágrafos existem, e com duas plantas que a fazem morder).
+       ESTA CÉLULA FICA, e não é uma cópia: mede o mesmo com a página composta e
+       as folhas aplicadas, que é o que um navegador acrescenta a um ficheiro.
+
+       O QUE A CÉLULA MEDE AGORA é mais apertado do que o que media: cada
+       parágrafo `data-contexto-painel` tem de render, CARÁCTER A CARÁCTER, a
+       definição que `DEFINICAO_DOS_PAINEIS` declara para aquele painel naquela
+       edição. Uma frase reescrita à mão na vista cai; uma frase que perca a
+       Comissão cai; uma frase que troque de painel cai. A contagem da Comissão no
+       documento fica ao lado, para o relatório, e não decide nada. */
+    const nComissao = ocorrencias(docDoPainel, ed.comissao);
+    const declaradas = Object.fromEntries(
+      Object.entries(DEFINICAO_DOS_PAINEIS).map(([chave, d]) => [
+        chave,
+        d[ed.chave].join('').replace(/\s+/g, ' ').trim(),
+      ]),
+    );
+    const p4 = await pagina(ed.painel, 1280, 900);
     const frases = await p4.evaluate(
-      ({ palavra }) =>
-        [...document.querySelectorAll('[data-contexto-painel]')].map((el) => ({
-          painel: el.getAttribute('data-contexto-painel'),
-          tem: (el.textContent ?? '').includes(palavra),
-          texto: (el.textContent ?? '').replace(/\s+/g, ' ').trim().slice(0, 60),
-        })),
-      { palavra: ed.comissao },
+      ({ esperado }) =>
+        [...document.querySelectorAll('[data-contexto-painel]')].map((el) => {
+          const painel = el.getAttribute('data-contexto-painel') ?? '';
+          const texto = (el.textContent ?? '').replace(/\s+/g, ' ').trim();
+          return { painel, texto, tem: texto === esperado[painel] };
+        }),
+      { esperado: declaradas },
     );
     await p4.__ctx.close();
-    const semComissao = frases.filter((f) => !f.tem);
-    medidas[`A4.${ed.chave}`] = { noDocumento: nComissao, frases };
+    const fora = frases.filter((f) => !f.tem);
+    medidas[`A4.${ed.chave}`] = { noDocumento: nComissao, frases, declaradas };
     conta(
       `A4.${ed.chave}`,
-      frases.length === 2 && semComissao.length === 0,
-      `«${ed.comissao}» em cada frase de contexto de ${ed.rota}: ${frases.length} frase(s), ` +
-        `${semComissao.length} sem a Comissão` +
-        (semComissao.length ? ` (${semComissao.map((f) => f.painel).join(', ')})` : '') +
-        ` · no documento inteiro: ${nComissao}`,
+      frases.length === 2 && fora.length === 0,
+      `a definição declarada de cada painel em ${ed.painel}: ${frases.length} frase(s), ` +
+        `${fora.length} diferente(s) da declaração` +
+        (fora.length ? ` (${fora.map((f) => `${f.painel}: «${f.texto.slice(0, 50)}»`).join('; ')})` : '') +
+        ` · «${ed.comissao}» no documento inteiro: ${nComissao}`,
     );
 
     const nCasa = ed.casa.map((w) => `${w}=${ocorrencias(doc, w)}`);
@@ -677,7 +981,7 @@ async function corre() {
 
        AS DUAS COLEÇÕES TÊM DE TER ELEMENTOS, e isso é a outra metade da mesma
        regra: uma célula que passe por não encontrar nada é uma célula cega. */
-    const p2 = await pagina(ed.rota, 390, 844);
+    const p2 = await pagina(ed.painel, 390, 844);
     const semLimiar = await p2.evaluate((palavra) => {
       const conta = (sel) =>
         [...document.querySelectorAll(sel)].filter((el) =>
@@ -697,41 +1001,64 @@ async function corre() {
         semLimiar.pecas === 0 &&
         semLimiar.nCartoes > 0 &&
         semLimiar.nLeituras > 0,
-      `«${ed.semLimiar}» nos cartões e nas leituras de ${ed.rota}: ` +
+      `«${ed.semLimiar}» nos cartões e nas leituras de ${ed.painel}: ` +
         `${semLimiar.cartoes} de ${semLimiar.nCartoes} cartão(ões), ` +
         `${semLimiar.pecas} de ${semLimiar.nLeituras} leitura(s)`,
     );
 
-    /* ------------------------------------------------------------------- A7 */
-    /* AS DUAS LAGOAS DIZEM QUAL É QUAL (Major 9). A primeira redação exigia dois
+    await p2.__ctx.close();
+
+    /* ------------------------------------------------------------- A7 e A12 */
+    /* AS DUAS CÉLULAS LEEM A PÁGINA QUE O SEU TEXTO NOMEIA (09.09.2026).
+       ------------------------------------------------------------------------
+       Estavam as duas a ler `p2`, que até ao item 8.16 era a primeira página e
+       passou a ser «Portugal na União Europeia» quando os 21 cartões mudaram de
+       casa. O texto das duas continuou a dizer «em /» e «no menu de /», e a A7
+       ficou a contar fichas de busca numa página que não tem busca nenhuma:
+       vermelha desde então, e não por causa do sítio. A A12 passava, porque o
+       menu é o mesmo em todas as páginas, e por isso o defeito só se via numa
+       delas. As duas passam a abrir a página que dizem, e a A7 exige que a
+       coleção tenha as 308 fichas antes de procurar as duas Lagoas: contar zero
+       Lagoas numa lista vazia é a régua a dormir (regra 14 da casa).
+
+       AS DUAS LAGOAS DIZEM QUAL É QUAL (Major 9). A primeira redação exigia dois
        textos DIFERENTES, e a leitura a frio apanhou-o: «Lagoa passes when the
        two complete texts differ for any reason, without checking Faro and São
        Miguel.» Dois textos diferentes por acaso não distinguem nada. A célula
-       passa a exigir os dois lugares da Carta pelo nome: uma ficha traz «Faro»,
-       a outra «São Miguel», e são fichas diferentes. */
-    const lagoas = await p2.evaluate(() =>
-      [...document.querySelectorAll('.pesquisa-item')]
-        .filter((li) => (li.querySelector('.pesquisa-nome')?.textContent ?? '').trim() === 'Lagoa')
-        .map((li) => (li.textContent ?? '').replace(/\s+/g, ' ').trim()),
-    );
+       exige os dois lugares da Carta pelo nome: uma ficha traz «Faro», a outra
+       «São Miguel», e são fichas diferentes. O distrito nas fichas dos homónimos
+       é o item 7 do `BRIEF-F1.1-porta-da-frente.md`, e continua a valer: o
+       F1.1d e o F1.1e não lhe tocaram («nenhuma mudança à manchete, à faixa, às
+       leituras ou à busca», §2 dos dois briefs). */
+    const pBusca = await pagina(ed.rota, 390, 844);
+    const busca = await pBusca.evaluate(() => {
+      const itens = [...document.querySelectorAll('.pesquisa-item')];
+      return {
+        total: itens.length,
+        lagoas: itens
+          .filter((li) => (li.querySelector('.pesquisa-nome')?.textContent ?? '').trim() === 'Lagoa')
+          .map((li) => (li.textContent ?? '').replace(/\s+/g, ' ').trim()),
+      };
+    });
+    const lagoas = busca.lagoas;
     const distintas = new Set(lagoas);
-    const comFaro = lagoas.filter((t) => t.includes('Faro'));
-    const comMiguel = lagoas.filter((t) => t.includes('São Miguel'));
-    medidas[`A7.${ed.chave}`] = lagoas;
+    const comFaro = lagoas.filter((x) => x.includes('Faro'));
+    const comMiguel = lagoas.filter((x) => x.includes('São Miguel'));
+    medidas[`A7.${ed.chave}`] = busca;
     conta(
       `A7.${ed.chave}`,
-      lagoas.length === 2 &&
+      busca.total > 2 &&
+        lagoas.length === 2 &&
         distintas.size === 2 &&
         comFaro.length === 1 &&
         comMiguel.length === 1 &&
         comFaro[0] !== comMiguel[0],
-      `as duas fichas de «Lagoa» em ${ed.rota}: ${lagoas.length} ficha(s), ` +
-        `${distintas.size} texto(s) distinto(s), ${comFaro.length} com «Faro» e ` +
-        `${comMiguel.length} com «São Miguel» [${lagoas.join(' | ')}]`,
+      `as duas fichas de «Lagoa» na busca de ${ed.rota}: ${busca.total} ficha(s) na lista, ` +
+        `${lagoas.length} com o nome «Lagoa», ${distintas.size} texto(s) distinto(s), ` +
+        `${comFaro.length} com «Faro» e ${comMiguel.length} com «São Miguel» [${lagoas.join(' | ')}]`,
     );
 
-    /* ------------------------------------------------------------------- A12 */
-    const menu = await p2.evaluate(() =>
+    const menu = await pBusca.evaluate(() =>
       [...document.querySelectorAll('.nav-principal a')].map((a) => a.getAttribute('href')),
     );
     const emFalta = ed.menu.filter((h) => !menu.includes(h));
@@ -742,7 +1069,7 @@ async function corre() {
       `regiões, distritos e áreas no menu de ${ed.rota}: ` +
         (emFalta.length ? `faltam ${emFalta.join(', ')}` : 'as três lá estão'),
     );
-    await p2.__ctx.close();
+    await pBusca.__ctx.close();
 
     /* ------------------------------------------------------------------- A8 */
     const forms = [...doc.matchAll(/<form\b[^>]*>/g)].map((m) => m[0]);
@@ -766,10 +1093,52 @@ async function corre() {
     );
 
     /* ------------------------------------------------------------------- A9 */
+    /* A CÉLULA REESCRITA A 14.09.2026 (Major 7 da leitura a frio de 09.09.2026,
+       e a decisão 6 do lugar de direção sobre a segunda passagem do F1.10).
+
+       O QUE ELA MEDIA ATÉ AQUI, e porque é que não chegava. `toques <= 2` dá por
+       boa uma chegada com um toque ou com nenhum, e o percurso sem guião era
+       conferido pelo CAMINHO e pela presença de `concelho=` no endereço, sem
+       nunca perguntar o que a página de chegada faz com o que lá vai escrito. A
+       leitura a frio: «its no-script assertion checks only the destination path
+       and the presence of `concelho=` in the URL, never whether the page uses
+       it. A green A9 therefore does not prove either the requested answer or the
+       filtered door.»
+
+       O QUE ELA MEDE AGORA, em três pernas, cada uma com o seu número impresso:
+
+       1. COM GUIÃO, DOIS TOQUES E NÃO TRÊS. `toques === 2` — o toque no campo e
+          o toque no resultado —, cada um com o alvo dentro do primeiro ecrã no
+          momento em que aconteceu, e A PÁGINA DE CHEGADA A USAR MESMO O
+          ENDEREÇO: não basta que o `location` seja o que se clicou (é sempre),
+          exige-se que a página que chegou RENDA aquele concelho, pela cabeça de
+          lugar (`data-cabeca-lugar="concelho"`) e pelo nome dentro da manchete.
+
+       2. SEM GUIÃO, A SUBMISSÃO NATIVA. O endereço que chega é o índice dos 308
+          com `concelho=<o que foi escrito>`, e o documento que chega tem os 308
+          nomes com porta, a porta daquele concelho entre eles, e a frase do
+          `<noscript>` que diz o que o botão fez. É a promessa da casa medida
+          onde ela é verdade: a decisão de 09.09 mantém «a busca sem guião leva à
+          lista inteira agrupada (uma página estática não filtra)», e por isso o
+          que se exige é a RESPOSTA COMPLETA e a palavra que a explica, e não um
+          filtro que ninguém prometeu. Sem guião não há `evaluate`: lê-se o
+          documento como o navegador o tem, com o `<noscript>` aberto, e conta-se
+          nele.
+
+       3. A PORTA FILTRADA DOS ESTUDOS, O FILTRO DE FACTO. Com guião, o índice
+          dos estudos aberto em `?concelho=<slug>` esconde as entradas que não
+          casam e ACENDE a porta que devolve a lista inteira; sem guião, as
+          entradas estão todas à vista e a frase do `<noscript>` diz porquê. A
+          régua conta as entradas e as que casam, e exige que as escondidas sejam
+          exatamente as que não casam. HOJE SÃO ZERO, e o número fica impresso:
+          os cinco estudos do índice são os cinco do mesmo concelho, e por isso
+          o filtro deste endereço não tem nada para esconder. O que ele faz de
+          observável é acender a porta da volta, e é isso que a célula exige. */
     const p3 = await pagina(ed.rota, 390, ALTURA_PEQUENA);
     let toques = 0;
     let dentroDoEcra = true;
     let chegou = null;
+    let cabecaDaChegada = null;
     try {
       const campo = await p3.$('[data-pesquisa]');
       if (campo) {
@@ -789,6 +1158,14 @@ async function corre() {
           await Promise.all([p3.waitForNavigation({ waitUntil: 'load' }), res.click()]);
           toques += 1;
           chegou = new URL(p3.url()).pathname.replace(/\/$/, '');
+          cabecaDaChegada = await p3.evaluate(() => {
+            const c = document.querySelector('[data-cabeca-lugar]');
+            const h = document.querySelector('h1');
+            return {
+              lugar: c ? c.getAttribute('data-cabeca-lugar') : null,
+              manchete: h ? h.textContent.replace(/\s+/g, ' ').trim() : null,
+            };
+          });
         }
       }
     } catch (e) {
@@ -796,17 +1173,14 @@ async function corre() {
     }
     const alvo = ed.destinoDoConcelho.replace(/\/$/, '');
     await p3.__ctx.close();
+    const rendeOConcelho =
+      !!cabecaDaChegada &&
+      cabecaDaChegada.lugar === 'concelho' &&
+      String(cabecaDaChegada.manchete ?? '').includes(ed.concelho);
 
     /* ------------------------------------------------------------------------
-       O MESMO PERCURSO SEM GUIÃO, PELA SUBMISSÃO NATIVA (Major 9)
-       ------------------------------------------------------------------------
-       A leitura a frio: «A9 exercises the JavaScript autocomplete, not native
-       form submission.» O caminho de cima é o do leitor com guião, e é o que a
-       medida do brief conta em toques; este é o do leitor sem guião, e é o que
-       a promessa do item 12 sustenta. Corre com `javaScriptEnabled: false`,
-       escreve no campo e carrega em Enter, que é a submissão que o navegador
-       faz sozinho: o formulário tem de levar ao índice dos 308, com o que foi
-       escrito no endereço, e a página que chega tem de existir. */
+       O MESMO PERCURSO SEM GUIÃO, PELA SUBMISSÃO NATIVA (Major 9 e Major 7)
+       ------------------------------------------------------------------------ */
     const ctxSemGuiao = await nav.newContext({
       viewport: { width: 390, height: ALTURA_PEQUENA },
       javaScriptEnabled: false,
@@ -821,28 +1195,104 @@ async function corre() {
         pg.press('[data-pesquisa]', 'Enter'),
       ]);
       const u = new URL(pg.url());
+      const doc = documento(await pg.content());
       semGuiao = {
         caminho: u.pathname.replace(/\/$/, ''),
         query: u.search,
         titulo: await pg.title(),
+        nomes: doc.querySelectorAll('.concelhos-lista a[href]').length,
+        portaDoConcelho: doc.querySelectorAll(`a[href="${ed.destinoDoConcelho}"]`).length,
+        frase: texto(doc.querySelector('.busca-sem-guiao')).length,
       };
     } catch (e) {
-      semGuiao = { caminho: `erro: ${e.message.split('\n')[0]}`, query: '', titulo: '' };
+      semGuiao = {
+        caminho: `erro: ${e.message.split('\n')[0]}`,
+        query: '',
+        titulo: '',
+        nomes: 0,
+        portaDoConcelho: 0,
+        frase: 0,
+      };
     }
     await ctxSemGuiao.close();
     const indice = ed.indiceDosConcelhos.replace(/\/$/, '');
 
-    medidas[`A9.${ed.chave}`] = { toques, dentroDoEcra, chegou, semGuiao };
+    /* ------------------------------------------------------------------------
+       A PORTA FILTRADA DOS ESTUDOS, NOS DOIS LEITORES
+       ------------------------------------------------------------------------ */
+    const rotaFiltrada = `${ed.estudos}?concelho=${ed.slugDoConcelho}`;
+    const pDoFiltro = await pagina(rotaFiltrada, 390, ALTURA_PEQUENA);
+    const filtro = await pDoFiltro.evaluate(() => {
+      const itens = [...document.querySelectorAll('[data-concelho]')];
+      const porta = document.querySelector('[data-arquivo-todos]');
+      return {
+        entradas: itens.length,
+        visiveis: itens.filter((i) => !i.hasAttribute('hidden')).length,
+        casam: itens.filter(
+          (i) =>
+            i.getAttribute('data-concelho') ===
+            new URL(window.location.href).searchParams.get('concelho'),
+        ).length,
+        portaDaVolta: !!porta && !porta.hasAttribute('hidden'),
+      };
+    });
+    await pDoFiltro.__ctx.close();
+
+    const ctxDoFiltroSemGuiao = await nav.newContext({
+      viewport: { width: 390, height: ALTURA_PEQUENA },
+      javaScriptEnabled: false,
+    });
+    const pgDoFiltro = await ctxDoFiltroSemGuiao.newPage();
+    await pgDoFiltro.goto(base + rotaFiltrada, { waitUntil: 'load' });
+    const docDoFiltro = documento(await pgDoFiltro.content());
+    const filtroSemGuiao = {
+      entradas: docDoFiltro.querySelectorAll('[data-concelho]').length,
+      escondidas: docDoFiltro
+        .querySelectorAll('[data-concelho]')
+        .filter((i) => i.hasAttribute('hidden')).length,
+      frase: texto(docDoFiltro.querySelector('.arquivo-sem-guiao')).length,
+    };
+    await ctxDoFiltroSemGuiao.close();
+
+    medidas[`A9.${ed.chave}`] = {
+      toques,
+      dentroDoEcra,
+      chegou,
+      rendeOConcelho,
+      cabeca: cabecaDaChegada,
+      semGuiao,
+      filtro,
+      filtroSemGuiao,
+    };
     conta(
       `A9.${ed.chave}`,
-      toques <= 2 &&
+      toques === 2 &&
         chegou === alvo &&
+        rendeOConcelho &&
         dentroDoEcra &&
         semGuiao.caminho === indice &&
-        semGuiao.query.includes('concelho='),
+        semGuiao.query.includes(`concelho=`) &&
+        semGuiao.nomes === 308 &&
+        semGuiao.portaDoConcelho >= 1 &&
+        semGuiao.frase > 0 &&
+        filtro.entradas > 0 &&
+        filtro.visiveis === filtro.casam &&
+        filtro.portaDaVolta === (filtro.casam > 0) &&
+        filtroSemGuiao.entradas === filtro.entradas &&
+        filtroSemGuiao.escondidas === 0 &&
+        filtroSemGuiao.frase > 0,
       `com guião, a partir de ${ed.rota}: ${toques} toque(s), ` +
         `${dentroDoEcra ? 'sem rolar' : 'com rolar'}, chegou a «${chegou ?? 'lado nenhum'}»` +
-        ` · sem guião, pela submissão nativa: «${semGuiao.caminho}${semGuiao.query}»`,
+        ` e a página rende «${cabecaDaChegada?.lugar ?? 'sem cabeça de lugar'} · ` +
+        `${cabecaDaChegada?.manchete ?? 'sem manchete'}»` +
+        ` · sem guião, pela submissão nativa: «${semGuiao.caminho}${semGuiao.query}» ` +
+        `com ${semGuiao.nomes} nomes, ${semGuiao.portaDoConcelho} porta(s) do concelho e ` +
+        `${semGuiao.frase} caracteres de frase do <noscript>` +
+        ` · o filtro dos estudos em «${rotaFiltrada}»: ${filtro.entradas} entradas, ` +
+        `${filtro.casam} casam, ${filtro.visiveis} à vista, porta da volta ` +
+        `${filtro.portaDaVolta ? 'acesa' : 'apagada'}; sem guião ${filtroSemGuiao.entradas} ` +
+        `entradas, ${filtroSemGuiao.escondidas} escondidas e ${filtroSemGuiao.frase} ` +
+        `caracteres de frase`,
     );
 
     /* ------------------------------------------------------------------ A13
@@ -867,10 +1317,13 @@ async function corre() {
        e continua a comparar cartão a cartão. O destino dos cartões da faixa do
        domínio é medido pela célula J5 de `tests/inicio/leitura.mjs`, que é a
        régua do bloco que os pôs lá. */
-    const pCartoes = await pagina(ed.rota, 390, ALTURA_PEQUENA);
+    /* A FAIXA DOS 21 MUDOU DE PÁGINA (F1.10, item 8.16, 08.09.2026), e a célula
+       vai com ela: os 21 vivem em «Portugal na União Europeia», onde a faixa é a
+       única da página e não precisa do recorte da grelha da cabeça. */
+    const pCartoes = await pagina(ed.painel, 390, ALTURA_PEQUENA);
     const cartoes = await pCartoes.evaluate(() => {
       const ancoras = new Set([...document.querySelectorAll('[id]')].map((el) => el.id));
-      return [...document.querySelectorAll('[data-grelha] [data-faixa] [data-cartao]')].map((c) => ({
+      return [...document.querySelectorAll('[data-faixa] [data-cartao]')].map((c) => ({
         id: c.getAttribute('data-cartao'),
         href: c.querySelector('.cartao-porta')?.getAttribute('href') ?? null,
         /* O RÓTULO DO DESTINO NÃO PODE ESTAR EM NENHUM DOS 21 (07.09.2026).
@@ -929,7 +1382,7 @@ async function corre() {
     conta(
       `A13.${ed.chave}`,
       cartoes.length === AS_VINTE_E_UMA.length && comPorta.length > 0 && errados.length === 0,
-      `o destino dos cartões de ${ed.rota}: ${cartoes.length} cartão(ões), ` +
+      `o destino dos cartões de ${ed.painel}: ${cartoes.length} cartão(ões), ` +
         `${cartoes.length - paraFora.length} para a leitura breve desta página, ` +
         `${paraFora.length} para fora · ` +
         `${comPorta.length} leitura(s) acrescentam a porta do domínio ` +
@@ -1013,7 +1466,10 @@ async function corre() {
        e é essa a razão pela qual a porta do menu não passava esta medida. Do que
        fica, mede-se a que está MAIS ACIMA, em píxeis de documento e em ecrãs de
        664 px, e depois toca-se-lhe: a página que chega tem de ser o arquivo. */
-    const pEstudos = await pagina(ed.rota, 390, ALTURA_PEQUENA);
+    /* COM O APONTADOR GROSSO, que é o que a promessa desta célula pede: ela
+       mede um alvo de TOQUE, e a folha só dá os 44 px onde o apontador é grosso.
+       A razão inteira está em `pagina()`, mais acima. */
+    const pEstudos = await pagina(ed.rota, 390, ALTURA_PEQUENA, { toque: true });
     const portasDosEstudos = await pEstudos.evaluate((alvo) => {
       const fechado = (el) => {
         for (let p = el.parentElement; p; p = p.parentElement) {
@@ -1341,6 +1797,31 @@ async function corre() {
       );
       await pg.__ctx.close();
       const queixas = [];
+      /* A CAMADA DA REGIÃO DEIXOU DE TER FAIXA (F1.10, §1 e §7.6, 09.09.2026), e
+         a célula mede o FACTO em vez de pedir de volta o que a casa tirou. A
+         página de uma região tinha os seus dois valores três vezes — na faixa, em
+         «As medidas» e, um deles, dentro da manchete — e o §7.6 manda ficar «o
+         valor uma vez e a porta "Comparar as regiões →"». Das duas apresentações
+         ficou a que leva a unidade e o período ao lado do valor.
+         O que aqui se exige daquela camada é o contrário do que se exige das
+         outras três: zero faixas, e a porta da régua no lugar dela. Uma célula
+         que só contasse «n de N» onde há faixa passaria com a faixa de volta. */
+      const semFaixa = camada === 'regiao';
+      if (semFaixa) {
+        if (r.length !== 0) queixas.push(`a página tem ${r.length} faixa(s), e o §7.6 tirou-lha`);
+        const temPorta = await pagina(rota, 390, ALTURA_PEQUENA).then(async (pg2) => {
+          const v = await pg2.evaluate(() =>
+            [...document.querySelectorAll('main a[href], a[href]')].some((a) =>
+              (a.getAttribute('href') ?? '').includes('#regua'),
+            ),
+          );
+          await pg2.__ctx.close();
+          return v;
+        });
+        if (!temPorta) queixas.push('a página não tem a porta para a régua do índice');
+        faixas.push({ camada, rota, faixas: [], queixas });
+        continue;
+      }
       if (r.length === 0) queixas.push('a página não tem faixa nenhuma');
       for (const f of r) {
         const N = f.cartoes;
@@ -1432,12 +1913,13 @@ const PLANTAS = [
           ),
   },
   {
-    nome: 'a frase do Procedimento sem «Comissão Europeia» (a outra frase fica com ela)',
+    nome: 'a definição do Procedimento sem «Comissão Europeia» (a do Painel Social fica intacta)',
     celulas: ['A4.pt', 'A4.en'],
     /* A PLANTA MUDOU PARA A FORMA QUE A PRIMEIRA CÉLULA DEIXAVA PASSAR (Major 9,
-       e a planta P1 da leitura a frio). Tira a Comissão SÓ da frase do
-       Procedimento, e deixa-a na do Painel Social: a célula que contava a cadeia
-       no documento inteiro continuava verde, e a que a exige em cada frase cai. */
+       e a planta P1 da leitura a frio). Tira a Comissão SÓ da definição do
+       Procedimento, e deixa a do Painel Social como está: a célula que contava a
+       cadeia no documento inteiro continuava verde, e a que compara cada
+       parágrafo com a declaração cai. */
     f: (h, rota) => {
       const palavra = rota.startsWith('/en') ? 'European Commission' : 'Comissão Europeia';
       const troca = rota.startsWith('/en') ? 'European Board' : 'Junta Europeia';
@@ -1462,6 +1944,27 @@ const PLANTAS = [
     celulas: ['A5.pt', 'A5.en'],
     /* Tira a ligação de UMA unidade da lista dos nomes: fica com 28. */
     f: (h) => h.replace(/<li><a href="[^"]*" data-lista-porta="[^"]*">[^<]*<\/a><\/li>/, ''),
+  },
+  {
+    /* A GAVETA SEM COMANDO (09.09.2026, com a A5 reescrita). A célula deixou de
+       exigir os 29 nomes visíveis em repouso e passou a exigir que UM TOQUE os
+       abra: sem esta planta, a promessa nova não tinha positivo conhecido. Tira
+       o `<summary>` da gaveta dos nomes, e o toque deixa de ter onde bater. */
+    nome: 'a gaveta dos nomes sem comando',
+    celulas: ['A5.pt', 'A5.en'],
+    f: (h) =>
+      h.replace(
+        /(<details class="gaveta"[^>]*data-gaveta="nomes"[^>]*>)<summary[\s\S]*?<\/summary>/,
+        '$1',
+      ),
+  },
+  {
+    /* O DISTRITO FORA DAS FICHAS DOS HOMÓNIMOS (09.09.2026, com a A7 posta a ler
+       a página que ela nomeia). Tira os `<span class="pesquisa-distrito">` da
+       busca: as duas Lagoas voltam a dizer «Lagoa» e mais nada. */
+    nome: 'as duas Lagoas sem distrito',
+    celulas: ['A7.pt', 'A7.en'],
+    f: (h) => h.replace(/<span class="pesquisa-distrito"[^>]*>[\s\S]*?<\/span>/g, ''),
   },
   {
     nome: 'a página mais alta do que a árvore de partida',

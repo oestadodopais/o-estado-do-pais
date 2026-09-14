@@ -36,7 +36,9 @@ import { ePaisDoMapa, eDistritoDoMapa, eManifestoDoMapa } from '../src/lib/mapa.
 import { eNomeDeMedida, nomeDaMedida } from '../src/lib/nomes.mjs';
 import { eSerieAtrasada } from '../src/data/frescura.mjs';
 import { serieDaLinha, contagens } from '../src/lib/frescura.mjs';
-import { numeralPorExtenso } from '../src/data/figuras.mjs';
+import { numeralPorExtenso, fixadorDoLimiar, FIXADORES_DO_LIMIAR, FIGURAS_PDM, FIGURAS_SOCIAL } from '../src/data/figuras.mjs';
+import { MEDIDAS_DO_DOMINIO_1 } from '../src/data/dominios.mjs';
+import { MEDIDAS_DO_CONCELHO } from '../src/data/concelhos.mjs';
 import { eDatasDePublicacao, eDataDeEdicao } from '../src/lib/datas-do-repositorio.mjs';
 
 /** @param {string} s */
@@ -652,6 +654,77 @@ atira(
   'não há numeral por extenso',
   'um número fora da lista fecha a construção em vez de render um algarismo dentro de uma frase.',
 );
+
+/* ------------------------------- quem fixou o limiar (F1.10, item 8.5) --- */
+
+/* O GUARDA QUE FAZ «LIMIAR» NUNCA APARECER SOZINHO. A decisão (2) da emenda de
+   07.09 à §1.101: o cartão diz de que lado do limiar o valor está E de quem o
+   limiar é, e a palavra escolhe-se pelo campo `limiarFixadoPor` da declaração
+   da medida. Uma medida com limiar e sem fixador declarado tem de fechar a
+   construção: a alternativa é a palavra a voltar a aparecer sozinha, em
+   silêncio, na primeira medida nova. */
+caso(
+  'fixadorDoLimiar/sem-limiar',
+  true,
+  fixadorDoLimiar({ nome: 'uma medida do Painel Social' }, 'prova') === null,
+  'uma medida sem limiar não tem fixador nenhum, e isso não é um erro: é a ausência ' +
+    'que as oito medidas do Painel Social têm.',
+);
+caso(
+  'fixadorDoLimiar/comissao',
+  true,
+  fixadorDoLimiar({ limiar: { nl: '60' }, limiarFixadoPor: 'comissao' }, 'prova') === 'comissao',
+  'o fixador declarado devolve-se tal e qual, e é o gabarito que escolhe a cadeia da edição.',
+);
+atira(
+  'fixadorDoLimiar/limiar-sem-fixador',
+  () => fixadorDoLimiar({ limiar: { nl: '60', lado: 'superior' } }, 'prova'),
+  'não declara quem o fixou',
+  'é o conhecido-positivo do item 8.5: uma medida com limiar e sem fixador fecha a construção.',
+);
+atira(
+  'fixadorDoLimiar/tecto-sem-fixador',
+  () => fixadorDoLimiar({ tecto: 'indice-de-divida-limite-legal' }, 'prova'),
+  'não declara quem o fixou',
+  'o limiar de uma medida do concelho chama-se `tecto`, e o guarda tem de o ver pelos dois ' +
+    'nomes: sem isto, as 616 páginas de concelho escapavam pelo nome do campo.',
+);
+atira(
+  'fixadorDoLimiar/fora-da-lista',
+  () => fixadorDoLimiar({ limiar: { nl: '60' }, limiarFixadoPor: 'o-inquilino' }, 'prova'),
+  'não é um fixador de limiar declarado',
+  'a lista é fechada: um valor novo entra com a origem escrita ao lado, e não por engano.',
+);
+
+/* AS DECLARAÇÕES REAIS PASSAM PELO GUARDA, e não só os objetos escritos aqui.
+   Um guarda que só se experimenta com casos inventados prova a forma e não os
+   dados: estas três linhas percorrem as listas que o sítio rende e exigem que
+   cada medida com limiar traga um fixador da lista fechada. */
+for (const [onde, lista] of [
+  ['figuras-pdm', FIGURAS_PDM],
+  ['figuras-social', FIGURAS_SOCIAL],
+  ['dominio-1', MEDIDAS_DO_DOMINIO_1],
+  ['concelho', MEDIDAS_DO_CONCELHO],
+]) {
+  for (const m of lista) {
+    /* O GUARDA ATIRA, E AQUI ISSO É UMA FALHA E NÃO UM ACIDENTE: sem o `try`, uma
+       declaração sem fixador rebentava este ficheiro com um rasto de pilha em vez
+       de o pôr vermelho com o nome da medida. */
+    let fixador = null;
+    let atirou = false;
+    try {
+      fixador = fixadorDoLimiar(m, `prova/${onde}`);
+    } catch {
+      atirou = true;
+    }
+    caso(
+      `fixadorDoLimiar/${onde}/${m.claim ?? m.chave}`,
+      true,
+      !atirou && (fixador === null || FIXADORES_DO_LIMIAR.includes(fixador)),
+      'cada medida declarada com limiar diz quem o fixou, e o valor está na lista fechada.',
+    );
+  }
+}
 
 /* ---------------------------------------- as datas de publicação (F1.4b) */
 

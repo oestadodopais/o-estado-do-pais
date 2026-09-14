@@ -437,13 +437,20 @@ const ROTAS_DA_CLASSE = [
        sentinela passa a ser a frase de identidade da Emenda 18a, que é prosa da
        casa, está fixada por decisão do diretor e rende-se na primeira página e
        em mais lado nenhum. */
-    sentinela: 'Um observatório de Portugal.',
+    /* A SENTINELA CRESCEU COM A FRASE (bloco F1.10, 04.09.2026). A frase de
+       identidade passou a ser a frase de DEFINIÇÃO do sítio, por decisão do lugar
+       de direção (`DECISIONS.md` §1.98, segunda emenda, item 3), e a sentinela é
+       a cadeia inteira: uma sentinela que ficasse no prefixo deixava de provar
+       que a frase nova se rende. */
+    sentinela:
+      'Um observatório de Portugal: cada número com a sua fonte, lido por território, por domínio e em estudos.',
   },
   {
     rota: '/en/',
     ficheiro: path.join('dist', 'en', 'index.html'),
     lingua: 'en',
-    sentinela: 'An observatory of Portugal.',
+    sentinela:
+      'An observatory of Portugal: every number with its source, read by territory, by domain and in studies.',
   },
 ];
 
@@ -565,9 +572,15 @@ for (const r of ROTAS_DA_CLASSE) {
 
 console.log('');
 if (erros.length) {
+  /* QUANTOS ERROS SE IMPRIMEM. Quarenta chegam para um bloco pequeno e escondem
+     um bloco grande: uma mudança que toque no cabeçalho de 7 000 páginas enche
+     a lista com a mesma frase repetida e deixa as outras por dizer.
+     `OEDP_VOZ_ERROS` abre a torneira quando é preciso ver a lista inteira, e o
+     defeito continua a ser quarenta. */
+  const LIMITE_DOS_ERROS = Number(process.env.OEDP_VOZ_ERROS ?? 40) || 40;
   console.error(vermelho(`  PORTÃO DA VOZ · ${erros.length} problema(s)\n`));
-  for (const e of erros.slice(0, 40)) console.error(vermelho('    · ') + e);
-  if (erros.length > 40) console.error(cinza(`    … e mais ${erros.length - 40}`));
+  for (const e of erros.slice(0, LIMITE_DOS_ERROS)) console.error(vermelho('    · ') + e);
+  if (erros.length > LIMITE_DOS_ERROS) console.error(cinza(`    … e mais ${erros.length - LIMITE_DOS_ERROS}`));
   console.error('');
   process.exit(1);
 }

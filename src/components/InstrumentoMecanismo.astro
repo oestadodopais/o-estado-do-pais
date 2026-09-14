@@ -257,19 +257,80 @@ for (const no of [...cadeia, ...retornos]) {
         ))
       }
     </svg>
+
+    {/* ============ a legenda: uma porta por chave desenhada ============
+        É A LEGENDA DO DESENHO, E VIVE DENTRO DELE (decisão 21 da releitura do
+        leitor de primeira vez, 09.09.2026). Estava DEPOIS da lista das caixas, e
+        por isso a folha escondia-a com o desenho mas o documento continuava a
+        pô-la por baixo das caixas: quem lia a página em texto encontrava, no fim
+        do mecanismo, uma fila de palavras sem sujeito — «Portas · organismos ·
+        linhas atravessadas · linhas · por confirmar…» —, que é exactamente o que
+        o §7.9 mandou tirar. Passa a ser o que é: a legenda daquele `<svg>`, ao
+        pé dele, e some com ele.
+
+        O PORTÃO CONTINUA A ENCONTRÁ-LA: `gate-html.mjs` exige, para cada número
+        de prova desenhado dentro de um `<svg>`, uma porta num `[data-legenda-prova]`
+        do mesmo instrumento, e a raiz do instrumento é a mesma. */}
+    <p class="mecanismo-legenda" data-legenda-prova>
+      <span class="mecanismo-legenda-k">{m.legendaK}</span>
+      {
+        desenhadas.map((v) => (
+          <a href={p[v.chave].porta} title={p[v.chave].origem}>
+            {v.rotulo}
+          </a>
+        ))
+      }
+    </p>
   </div>
 
-  {/* ============ a legenda: uma porta por chave desenhada ============ */}
-  <p class="mecanismo-legenda" data-legenda-prova>
-    <span class="mecanismo-legenda-k">{m.legendaK}</span>
+  {/* ======================================================================
+      O DIAGRAMA, EM LISTA, PARA O TELEMÓVEL (F1.10, §7.9, 09.09.2026)
+      ======================================================================
+      «O Método no telemóvel: o diagrama cortado passa à lista das suas caixas
+      com a legenda dentro de cada uma; a fila de palavras soltas por baixo sai.»
+      É o que o leitor de 04.09 no navegador mediu: a 390 px o desenho é uma
+      caixa que se arrasta de lado, e o que sobra por baixo dela é uma fila de
+      quatro ou cinco palavras sem sujeito, que eram as portas da legenda.
+
+      AS MESMAS CAIXAS, PELA MESMA ORDEM, E DA MESMA LISTA. `cadeia` e `retornos`
+      são as duas listas que o desenho percorre, e são estas: uma segunda lista
+      escrita à mão divergiria do desenho à primeira alteração. O que muda é a
+      forma — de `<g>` para `<li>` — e o sítio da porta, que passa a estar dentro
+      da caixa a que pertence, ao pé do número que ela abre.
+
+      AS DUAS FORMAS ESTÃO NO DOCUMENTO, e é a folha que escolhe qual se vê, pela
+      largura: é a mesma decisão do mapa por concelho, que rende o desenho e a
+      tabela e mostra os dois a quem os pode ler. Nenhuma das duas é uma
+      alternativa pobre da outra: as duas dizem os mesmos números, com as mesmas
+      marcas de prova, e o portão reconta-os nas duas.
+      ====================================================================== */}
+  <ul class="mecanismo-lista">
     {
-      desenhadas.map((v) => (
-        <a href={p[v.chave].porta} title={p[v.chave].origem}>
-          {v.rotulo}
-        </a>
+      [...cadeia.map((n) => ({ ...n, y: Y })), ...retornos].map((no) => (
+        <li class="mecanismo-item">
+          <p class="mecanismo-item-k">{no.rotulo}</p>
+          {no.valores.map((v) => (
+            <p class="mecanismo-item-v">
+              <a
+                class="mecanismo-item-porta"
+                href={p[v.chave].porta}
+                title={p[v.chave].origem}
+              >
+                <span
+                  class="mecanismo-item-num"
+                  data-prova={p[v.chave].valor === null ? undefined : v.chave}
+                >
+                  {p[v.chave].valor === null ? m.semRegisto : dataDaCasa(p[v.chave].valor)}
+                </span>{' '}
+                <span class="mecanismo-item-cap">{v.rotulo}</span>
+              </a>
+            </p>
+          ))}
+          {no.nota && <p class="mecanismo-item-nota">{no.nota}</p>}
+        </li>
       ))
     }
-  </p>
+  </ul>
 
   {/* ============ leitura breve: uma frase, e mais nada ============ */}
   <p class="brief-text mecanismo-breve">{LEITURA_BREVE[lang]}</p>

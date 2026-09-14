@@ -59,14 +59,15 @@
  *        nas duas edições. O total lê-se do livro-razão e não da própria
  *        varredura: as duas edições podiam faltar a mesma página e continuar a
  *        bater uma com a outra, que é a razão escrita em F7.
- *   F16 · **as duas contagens por extenso da frase do Painel Social, lidas da
- *        página construída.** A frase diz «Oito das dezassete medidas
- *        principais», e a régua dos algarismos não vê palavras. As duas palavras
- *        recompõem-se aqui de duas fontes independentes, `FIGURAS_SOCIAL.length`
- *        e `MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL.numero`, e procuram-se no
- *        `dist/`. Não se lê a declaração da frase: era esse o buraco que a
- *        leitura a frio mediu (Major 10), porque comparar a frase com o campo com
- *        que ela foi construída deixa passar as duas mudadas ao mesmo tempo.
+ *   F16 · **a contagem por extenso da frase do Painel Social, lida da página
+ *        construída.** A frase diz «Oito das medidas principais», e a régua dos
+ *        algarismos não vê palavras. A palavra recompõe-se aqui de
+ *        `FIGURAS_SOCIAL.length` e procura-se no `dist/`. Não se lê a declaração
+ *        da frase: era esse o buraco que a leitura a frio mediu (Major 10),
+ *        porque comparar a frase com o campo com que ela foi construída deixa
+ *        passar as duas mudadas ao mesmo tempo. **Eram duas contagens até
+ *        14.09.2026**, e o denominador saiu da frase com o achado 2 da leitura
+ *        cruzada do inventário.
  *
  * ---------------------------------------------------------------------------
  * TRÊS CONFERÊNCIAS NOVAS (segunda passagem, 03.09.2026, leitura a frio)
@@ -124,7 +125,6 @@ import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { linhasPorConcelho } from '../src/lib/dominios.mjs';
 import {
   FIGURAS_SOCIAL,
-  MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL,
   numeralPorExtenso,
 } from '../src/data/figuras.mjs';
 import { SERIES_ATRASADAS } from '../src/data/frescura.mjs';
@@ -201,6 +201,14 @@ const MOTIVOS_DO_DOMINIO = new Set([
   MOTIVO_DE_AUSENCIA,
   'proveniencia',
   'fonte-da-carta',
+  /* A DATA EM QUE A CASA LEU A DESCRIÇÃO DE ONDE SAIU UMA DEFINIÇÃO (F1.10,
+     segunda passagem, 09.09.2026). A página do domínio passou a render a
+     definição em palavras das medidas cuja linha tem uma declarada, com a
+     origem que a prova: o publicador, o documento como porta, a data de leitura
+     e o excerto (decisão 24 da releitura do leitor de primeira vez). A data é
+     um `data-nonledger` novo, e entra nas duas listas ao mesmo tempo, como o
+     cabeçalho acima manda: aqui e em `ledger/allowlist.yml`. */
+  'data-de-leitura-de-uma-definicao',
 ]);
 
 const claims = loadClaims();
@@ -794,11 +802,18 @@ if (contas.paginas > 0) {
  *
  *   · o NUMERADOR sai de `FIGURAS_SOCIAL.length`, que é a lista das medidas do
  *     painel, passada por `numeralPorExtenso()`;
- *   · o DENOMINADOR sai de `MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL.numero`, que é o
- *     número que a Comissão publica, pela mesma função;
- *   · as duas palavras têm de estar na frase que a PRIMEIRA PÁGINA rende, nas
- *     duas edições, e a frase encontra-se pelo nome do painel e não por uma
- *     classe de CSS, que outro bloco pode mudar sem saber que esta régua a lê.
+ *   · a palavra tem de estar na frase que a página europeia rende, nas duas
+ *     edições, e a frase encontra-se pelo nome do painel e não por uma classe de
+ *     CSS, que outro bloco pode mudar sem saber que esta régua a lê.
+ *
+ * O DENOMINADOR SAIU DA FRASE A 14.09.2026, e saiu daqui com ela (achado 2 da
+ * leitura cruzada do inventário): a casa não tem uma página da Comissão nem do
+ * Eurostat que escreva o número das medidas principais, e a decisão (5) da §1.98
+ * só a deixa dizê-lo quando a tiver. A razão inteira, com as três páginas lidas
+ * e o que cada uma diz, está em `src/data/figuras.mjs`, no lugar onde a
+ * declaração esteve. Fica UMA conta, e continua a ser uma conta contra o texto
+ * rendido: o dia em que uma medida entrar ou sair do painel sem a frase mudar,
+ * esta régua fecha a construção.
  *
  * O QUE ISTO APANHA que a primeira redação não apanhava: uma medida a entrar ou
  * a sair do painel sem a frase mudar; o número da Comissão a mudar sem a frase
@@ -810,19 +825,27 @@ const NOME_DO_PAINEL_SOCIAL = {
   en: 'European Social Scoreboard',
 };
 
+/* A PÁGINA QUE RENDE A FRASE MUDOU (bloco F1.10, item 8.16, 08.09.2026). Era a
+   primeira página; os 21 cartões dos dois quadros da União passaram a «Portugal
+   na União Europeia», e a frase de contexto do Painel Social foi com eles. O
+   que a conferência mede não muda um carácter: muda o ficheiro que ela abre. */
 for (const lang of LANGS) {
-  const rota = routePath('home', lang);
+  const rota = routePath('uniaoEuropeia', lang);
   const ficheiro = path.join(DIST, rota.replace(/^\//, ''), 'index.html');
   if (!fs.existsSync(ficheiro)) {
-    err(`a primeira página da edição "${lang}" não foi construída, e é ela que rende a frase do Painel Social.`);
+    err(
+      `a página «Portugal na União Europeia» da edição "${lang}" não foi construída, e é ela ` +
+        `que rende a frase do Painel Social.`,
+    );
     continue;
   }
   const corpo = texto(parse(fs.readFileSync(ficheiro, 'utf8')).querySelector('body') ?? parse(''));
   const nome = NOME_DO_PAINEL_SOCIAL[lang];
   if (!corpo.includes(nome)) {
     err(
-      `a primeira página da edição "${lang}" não nomeia «${nome}». Sem o nome do painel não há ` +
-        `frase para conferir, e um zero aqui seria a régua a passar por estar cega.`,
+      `a página «Portugal na União Europeia» da edição "${lang}" não nomeia «${nome}». Sem o ` +
+        `nome do painel não há frase para conferir, e um zero aqui seria a régua a passar por ` +
+        `estar cega.`,
     );
     continue;
   }
@@ -832,24 +855,20 @@ for (const lang of LANGS) {
      traga as duas palavras no que vem antes. Ler só a primeira era a régua a
      medir o sítio errado, e foi o que a primeira corrida desta conferência fez.
      A janela de 120 caracteres é a distância do numeral ao nome na frase que a
-     página rende («Oito das dezassete medidas principais do Painel Social
-     Europeu»), com folga. */
+     página rende («Oito das medidas principais do Painel Social Europeu»), com
+     folga. */
   const numerador = numeralPorExtenso(FIGURAS_SOCIAL.length, lang, true);
-  const denominador = numeralPorExtenso(MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL.numero, lang);
   const janelas = [];
   for (let i = corpo.indexOf(nome); i !== -1; i = corpo.indexOf(nome, i + 1)) {
     janelas.push(corpo.slice(Math.max(0, i - 120), i + nome.length));
   }
   const comNumerador = janelas.filter((j) => j.includes(numerador));
-  const boa = comNumerador.find((j) => j.includes(denominador));
-  if (!boa) {
-    const perto = comNumerador[0] ?? janelas[janelas.length - 1] ?? '';
+  if (comNumerador.length === 0) {
+    const perto = janelas[janelas.length - 1] ?? '';
     err(
-      `a frase do Painel Social na edição "${lang}" não traz as duas contagens por extenso.\n` +
+      `a frase do Painel Social na edição "${lang}" não traz a contagem por extenso.\n` +
         `      medidas rendidas: ${FIGURAS_SOCIAL.length}, por extenso «${numerador}» ` +
-        `${comNumerador.length > 0 ? '(está na página)' : '(NÃO está na página)'}\n` +
-        `      medidas principais da Comissão: ${MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL.numero}, ` +
-        `por extenso «${denominador}»\n` +
+        `(NÃO está na página)\n` +
         `      ${janelas.length} ocorrência(s) de «${nome}»; a mais próxima diz «…${perto}»`,
     );
     continue;

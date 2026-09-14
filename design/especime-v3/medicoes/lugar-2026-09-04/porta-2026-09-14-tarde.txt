@@ -1,0 +1,36 @@
+  [32m✓[0m A1.pt  [90m390×664: nome, manchete, cartão, selo e porta do concelho dentro do ecrã (fundo máximo 569.4 px) · a manchete em 3 linha(s) em Chromium e 3 em WebKit (teto 3), 125.5 px de altura · 5 cartões na cabeça (5 na página, 5 declarados pelo domínio), 0 sem selo com caixa[0m
+  [32m✓[0m A2.pt  [90maltura de / a 390: 2695 px · teto 7035 px (6941 da árvore de partida + 94 da fila dos estudos) (menos 4340 px)[0m
+  [32m✓[0m A11.pt  [90mmobília acima do nome a 390: 62 px (teto 64) · a barra em 1 fila(s) com 2 item(ns), 54 px (esta edição cabe em 1) · as leituras por baixo do nome em 0 fila(s) com 0 à vista, 0 px (o item 8.11 exige 0 e 0)[0m
+  [32m✓[0m A5.pt  [90ma gaveta dos nomes abre com um toque e leva as 29 unidades com alvo ≥ 44 px, abaixo de 1024 (a partir de 1024 a regra é 32 px, Emenda 20c): em repouso 29 nome(s), 29 invisível(eis) (a gaveta chega fechada, F1.1d/F1.1e); a 390 abriu true, 29 nome(s), 0 fora do alvo; a 768 abriu true, 29 nome(s), 0 fora do alvo; 29 porta(s), 0 fora de «/distritos/», 0 sem resposta[0m
+  [32m✓[0m A3.pt  [90mos 21 valores selados uma só vez em /uniao-europeia: 0 fora da conta[0m
+  [32m✓[0m A4.pt  [90ma definição declarada de cada painel em /uniao-europeia: 2 frase(s), 0 diferente(s) da declaração · «Comissão Europeia» no documento inteiro: 26[0m
+  [32m✓[0m A6.pt  [90mvocabulário da casa em /: Âmbito=0 · Densidade=0[0m
+  [32m✓[0m A10.pt  [90m«sem limiar» nos cartões e nas leituras de /uniao-europeia: 0 de 21 cartão(ões), 0 de 21 leitura(s)[0m
+  [32m✓[0m A7.pt  [90mas duas fichas de «Lagoa» na busca de /: 308 ficha(s) na lista, 2 com o nome «Lagoa», 2 texto(s) distinto(s), 1 com «Faro» e 1 com «São Miguel» [Lagoadistrito de Faro | LagoaIlha de São Miguel][0m
+  [32m✓[0m A12.pt  [90mregiões, distritos e áreas no menu de /: as três lá estão[0m
+  [32m✓[0m A8.pt  [90m<form> em /: 1; action «/municipios» (200); method «get»[0m
+  [32m✓[0m A9.pt  [90mcom guião, a partir de /: 2 toque(s), sem rolar, chegou a «/municipios/evora» e a página rende «concelho · Évora tem 58 567 pessoas.fonte · INE» · sem guião, pela submissão nativa: «/municipios?concelho=%C3%89vora» com 308 nomes, 1 porta(s) do concelho e 88 caracteres de frase do <noscript> · o filtro dos estudos em «/estudos?concelho=evora»: 5 entradas, 5 casam, 5 à vista, porta da volta acesa; sem guião 5 entradas, 0 escondidas e 43 caracteres de frase[0m
+  [32m✓[0m A13.pt  [90mo destino dos cartões de /uniao-europeia: 21 cartão(ões), 21 para a leitura breve desta página, 0 para fora · 3 leitura(s) acrescentam a porta do domínio (divida-publica-2025, taxa-de-emprego-2025, taxa-de-desemprego-2025) · nenhum errado[0m
+  [32m✓[0m A14.pt  [90m«/dominios» no menu de /: lá está, a página responde 200, e diz «Domínios» (esperado «Domínios»)[0m
+  [32m✓[0m A15.pt  [90m«/estudos» a partir de /, a 390 × 664: 4 porta(s) no documento, 4 tocável(eis) sem abrir gaveta · a mais acima a 10.6 px (0.02 ecrã(s), teto 1.5), alvo 57.9×44 px · um toque chegou a «/estudos»[0m
+  [32m✓[0m A16.pt  [90mo nome acessível do <h1> das quatro camadas em pt, em Chromium e WebKit: pais 2 valor(es)/2 selo(s) · dominio 2 valor(es)/2 selo(s) · regiao 2 valor(es)/2 selo(s) · concelho 1 valor(es)/1 selo(s) · nome igual à frase nos dois motores, cada valor com a sua porta ao pé dele[0m
+  [32m✓[0m A17.pt  [90mo «n de N» das faixas das quatro camadas em pt: pais 1..5 de 5 · dominio 1..10 de 10 · regiao  · concelho 1..8 de 8[0m
+  [32m✓[0m A1.en  [90m390×664: nome, manchete, cartão, selo e porta do concelho dentro do ecrã (fundo máximo 564.7 px) · a manchete em 3 linha(s) em Chromium e 3 em WebKit (teto 3), 125.5 px de altura · 5 cartões na cabeça (5 na página, 5 declarados pelo domínio), 0 sem selo com caixa[0m
+  [32m✓[0m A2.en  [90maltura de /en a 390: 2701 px · teto 6984 px (6890 da árvore de partida + 94 da fila dos estudos) (menos 4283 px)[0m
+  [32m✓[0m A11.en  [90mmobília acima do nome a 390: 95.2 px (teto 95.2) · a barra em 2 fila(s) com 2 item(ns), 87.2 px (esta edição cabe em 2) · as leituras por baixo do nome em 0 fila(s) com 0 à vista, 0 px (o item 8.11 exige 0 e 0)[0m
+  [32m✓[0m A5.en  [90ma gaveta dos nomes abre com um toque e leva as 29 unidades com alvo ≥ 44 px, abaixo de 1024 (a partir de 1024 a regra é 32 px, Emenda 20c): em repouso 29 nome(s), 29 invisível(eis) (a gaveta chega fechada, F1.1d/F1.1e); a 390 abriu true, 29 nome(s), 0 fora do alvo; a 768 abriu true, 29 nome(s), 0 fora do alvo; 29 porta(s), 0 fora de «/en/districts/», 0 sem resposta[0m
+  [32m✓[0m A3.en  [90mos 21 valores selados uma só vez em /en/european-union: 0 fora da conta[0m
+  [32m✓[0m A4.en  [90ma definição declarada de cada painel em /en/european-union: 2 frase(s), 0 diferente(s) da declaração · «European Commission» no documento inteiro: 14[0m
+  [32m✓[0m A6.en  [90mvocabulário da casa em /en: Scope=0 · Density=0[0m
+  [32m✓[0m A10.en  [90m«no threshold» nos cartões e nas leituras de /en/european-union: 0 de 21 cartão(ões), 0 de 21 leitura(s)[0m
+  [32m✓[0m A7.en  [90mas duas fichas de «Lagoa» na busca de /en: 308 ficha(s) na lista, 2 com o nome «Lagoa», 2 texto(s) distinto(s), 1 com «Faro» e 1 com «São Miguel» [Lagoadistrict of Faro | LagoaIlha de São Miguel][0m
+  [32m✓[0m A12.en  [90mregiões, distritos e áreas no menu de /en: as três lá estão[0m
+  [32m✓[0m A8.en  [90m<form> em /en: 1; action «/en/municipalities» (200); method «get»[0m
+  [32m✓[0m A9.en  [90mcom guião, a partir de /en: 2 toque(s), sem rolar, chegou a «/en/municipalities/evora» e a página rende «concelho · Évora has 58 567 people.source · INE» · sem guião, pela submissão nativa: «/en/municipalities?concelho=%C3%89vora» com 308 nomes, 1 porta(s) do concelho e 103 caracteres de frase do <noscript> · o filtro dos estudos em «/en/studies?concelho=evora»: 5 entradas, 5 casam, 5 à vista, porta da volta acesa; sem guião 5 entradas, 0 escondidas e 46 caracteres de frase[0m
+  [32m✓[0m A13.en  [90mo destino dos cartões de /en/european-union: 21 cartão(ões), 21 para a leitura breve desta página, 0 para fora · 3 leitura(s) acrescentam a porta do domínio (divida-publica-2025, taxa-de-emprego-2025, taxa-de-desemprego-2025) · nenhum errado[0m
+  [32m✓[0m A14.en  [90m«/en/domains» no menu de /en: lá está, a página responde 200, e diz «Domains» (esperado «Domains»)[0m
+  [32m✓[0m A15.en  [90m«/en/studies» a partir de /en, a 390 × 664: 4 porta(s) no documento, 4 tocável(eis) sem abrir gaveta · a mais acima a 60 px (0.09 ecrã(s), teto 1.5), alvo 53.4×44 px · um toque chegou a «/en/studies»[0m
+  [32m✓[0m A16.en  [90mo nome acessível do <h1> das quatro camadas em en, em Chromium e WebKit: pais 2 valor(es)/2 selo(s) · dominio 2 valor(es)/2 selo(s) · regiao 2 valor(es)/2 selo(s) · concelho 1 valor(es)/1 selo(s) · nome igual à frase nos dois motores, cada valor com a sua porta ao pé dele[0m
+  [32m✓[0m A17.en  [90mo «n de N» das faixas das quatro camadas em en: pais 1..5 de 5 · dominio 1..10 de 10 · regiao  · concelho 1..8 de 8[0m
+
+  porta [32m✓[0m 34 de 34 célula(s)[90m  /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/lugar-2026-09-04/dist[0m

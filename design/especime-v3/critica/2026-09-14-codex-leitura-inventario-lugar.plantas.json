@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-14T12:53:14+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/pacote-inventario",
+ "plantas": [
+  {
+   "id": "V1a",
+   "ficheiro": "design/especime-v3/INVENTARIO-FRASES.md",
+   "descricao": "a classe da linha «Portugal na União Europeia» (uma porta de navegação) trocada para conteudo",
+   "sha256_antes": "343a41590a781063d6d479a60c2c6e1e4660b92fe080e99239dc05d8567c37b4",
+   "sha256_depois": "d932cdc5e2d60d065e17673886c2c8469ab35599e54502b8a366d8b4d8d7685f",
+   "contexto_antes": " leitura de cada medida»), que são as cadeias que a `DECISIONS.md` §1.98 declarou. O termo continua a existir na decisão e no brief; o que sai é a superfície |\n| navegacao | Portugal na União Europeia | lugar | viva | — |\n| conteudo | O painel dos desequilíbrios da economia | lugar | viva | o item 8.4 do F1.10 (08.09.2026): o cabeçalho de cada painel passa a dizer o que ele é, e",
+   "contexto_depois": " leitura de cada medida»), que são as cadeias que a `DECISIONS.md` §1.98 declarou. O termo continua a existir na decisão e no brief; o que sai é a superfície |\n| conteudo | Portugal na União Europeia | lugar | viva | — |\n| conteudo | O painel dos desequilíbrios da economia | lugar | viva | o item 8.4 do F1.10 (08.09.2026): o cabeçalho de cada painel passa a dizer o que ele é, e"
+  },
+  {
+   "id": "V1b",
+   "ficheiro": "linhas-lugar.md",
+   "descricao": "a mesma troca na extração das linhas do bloco",
+   "sha256_antes": "cb5e72bc6b8474bd4a2430144ba7e914e6cbb58d5ab6b19f0c9b0553206101ce",
+   "sha256_depois": "40e5eea59d308b529c7e5d8c53825f72d1821effdb2aaf37261e63c22909dbcf",
+   "contexto_antes": "m falta |\n| 166 | navegacao | An observatory of Portugal: every number with its source, read by territory, by domain and in studies. | lugar | viva | — |\n| 173 | navegacao | Portugal na União Europeia | lugar | viva | — |\n| 174 | conteudo | O painel dos desequilíbrios da economia | lugar | viva | o item 8.4 do F1.10 (08.09.2026): o cabeçalho de cada painel passa a dizer o que el",
+   "contexto_depois": "m falta |\n| 166 | navegacao | An observatory of Portugal: every number with its source, read by territory, by domain and in studies. | lugar | viva | — |\n| 173 | conteudo | Portugal na União Europeia | lugar | viva | — |\n| 174 | conteudo | O painel dos desequilíbrios da economia | lugar | viva | o item 8.4 do F1.10 (08.09.2026): o cabeçalho de cada painel passa a dizer o que el"
+  },
+  {
+   "id": "V2a",
+   "ficheiro": "design/especime-v3/INVENTARIO-FRASES.md",
+   "descricao": "a gémea inglesa da frase de definição diz «checked by the house against its source»: uma afirmação de conferência que a portuguesa e a página não têm",
+   "sha256_antes": "d932cdc5e2d60d065e17673886c2c8469ab35599e54502b8a366d8b4d8d7685f",
+   "sha256_depois": "f94e8769c76f8fce4d8af56a24ffb3fac3aa224c1cb3f31010a734b20cf717a0",
+   "contexto_antes": "enda, item 3): diz as três maneiras de ler o sítio e a origem de cada número, que é o que a leitura de um leitor de primeira vez mediu em falta |\n| navegacao | An observatory of Portugal: every number with its source, read by territory, by domain and in studies. | lugar | viva | — |\n| conteudo | Alentejo · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regia",
+   "contexto_depois": "enda, item 3): diz as três maneiras de ler o sítio e a origem de cada número, que é o que a leitura de um leitor de primeira vez mediu em falta |\n| navegacao | An observatory of Portugal: every number checked by the house against its source, read by territory, by domain and in studies. | lugar | viva | — |\n| conteudo | Alentejo · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regia"
+  },
+  {
+   "id": "V2b",
+   "ficheiro": "linhas-lugar.md",
+   "descricao": "a mesma troca na extração das linhas do bloco",
+   "sha256_antes": "40e5eea59d308b529c7e5d8c53825f72d1821effdb2aaf37261e63c22909dbcf",
+   "sha256_depois": "ce841b75dcddcf4a9442eb9841799b342d34bd18104f5fdc514e813a586da19a",
+   "contexto_antes": "item 3): diz as três maneiras de ler o sítio e a origem de cada número, que é o que a leitura de um leitor de primeira vez mediu em falta |\n| 166 | navegacao | An observatory of Portugal: every number with its source, read by territory, by domain and in studies. | lugar | viva | — |\n| 173 | conteudo | Portugal na União Europeia | lugar | viva | — |\n| 174 | conteudo | O painel dos desequilíbrios da economia | lugar | vi",
+   "contexto_depois": "item 3): diz as três maneiras de ler o sítio e a origem de cada número, que é o que a leitura de um leitor de primeira vez mediu em falta |\n| 166 | navegacao | An observatory of Portugal: every number checked by the house against its source, read by territory, by domain and in studies. | lugar | viva | — |\n| 173 | conteudo | Portugal na União Europeia | lugar | viva | — |\n| 174 | conteudo | O painel dos desequilíbrios da economia | lugar | vi"
+  },
+  {
+   "id": "V3",
+   "ficheiro": "built/index.html",
+   "descricao": "a primeira página portuguesa construída ganha uma frase da casa sobre a sua própria conferência, que não está no inventário",
+   "sha256_antes": "daa2ff6b62c84bd302b37866c987795b2c3ccddc4aa76d8ebd491d213acfb6f9",
+   "sha256_depois": "ab7932ec1ad0346698ff89bd06556ccb6ef3024f7133136a0e9a11544e3b7127",
+   "contexto_antes": "av></div><div class=\"masthead\"><p class=\"wordmark\">O Estado do País</p><p class=\"masthead-identidade\">Um observatório de Portugal: cada número com a sua fonte, lido por território, por domínio e em estudos.</p><div class=\"masthead-furniture\"><div class=\"tema\" role=\"group\" aria-label=\"Tema\" data-tema-controlo hidden><button type=\"button\" class=\"tema-b\" data-tema=\"light",
+   "contexto_depois": "av></div><div class=\"masthead\"><p class=\"wordmark\">O Estado do País</p><p class=\"masthead-identidade\">Um observatório de Portugal: cada número com a sua fonte, lido por território, por domínio e em estudos. Cada número foi conferido pela casa contra a fonte.</p><div class=\"masthead-furniture\"><div class=\"tema\" role=\"group\" aria-label=\"Tema\" data-tema-controlo hidden><button type=\"button\" class=\"tema-b\" data-tema=\"light"
+  }
+ ]
+}

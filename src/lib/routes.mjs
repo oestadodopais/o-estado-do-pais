@@ -195,6 +195,29 @@ export const ROUTES = {
    * em vez do Método: `portaDaAgenda()` em `src/lib/prova.mjs` procura-a nesta
    * tabela e não precisa de ser tocada. Ver DECISIONS §1.40.
    */
+  /**
+   * PORTUGAL NA UNIÃO EUROPEIA (bloco F1.10, item 8.16, 08.09.2026).
+   *
+   * Os dois quadros da União — as treze medidas do Procedimento por
+   * Desequilíbrios Macroeconómicos e as oito do Painel Social Europeu — viviam
+   * na primeira página desde 12.08.2026, escolhidos pela prova (um só
+   * publicador, o valor, o limiar e a posição de Portugal citáveis linha a
+   * linha) e não pelo que um leitor português vem procurar. O diretor
+   * perguntou-o a 07.09 à noite («why did you choose the indicators we have on
+   * the landing page?»), e a decisão do lugar de direção que ele aceitou é esta:
+   * a faixa da primeira página passa a levar as medidas de cabeça dos domínios
+   * vivos, e os 21 cartões passam a ter página própria, alcançável da faixa e do
+   * menu, onde os limiares mantêm o seu valor.
+   *
+   * A CHAVE NÃO SE TRADUZ, E O CAMINHO SIM. É a regra desta tabela, escrita nas
+   * regiões, nas áreas, nos concelhos e nos domínios: «o que se traduz é o
+   * rótulo e nunca a chave». A chave é portuguesa como todas as outras
+   * (`uniaoEuropeia`), e cada edição tem o seu caminho na sua língua, porque o
+   * caminho é o que o leitor vê e partilha: `/uniao-europeia` e
+   * `/en/european-union`. Não há `:slug`, e por isso não há aqui a questão que
+   * os domínios deixaram nos pendentes.
+   */
+  uniaoEuropeia: { pt: '/uniao-europeia', en: '/en/european-union' },
   agenda: { pt: '/agenda', en: '/en/agenda' },
   livro: { pt: '/livro-razao', en: '/en/ledger' },
   /**

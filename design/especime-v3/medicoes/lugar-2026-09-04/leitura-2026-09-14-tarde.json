@@ -1,0 +1,2074 @@
+{
+  "dist": "/Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/lugar-2026-09-04/dist",
+  "celulas": [
+    {
+      "nome": "J1.pt",
+      "passa": true,
+      "prova": "os 21 nomes em /uniao-europeia: 42 nome(s) declarado(s) no documento (um no cartão da faixa e um no <summary> da sua leitura, por medida), 1 faixa(s) na página, 0 medida(s) fora dos dois lugares, 0 nome(s) fora de um cartão ou de um <summary>"
+    },
+    {
+      "nome": "J5.pt",
+      "passa": true,
+      "prova": "o índice dos domínios em /: 2 domínio(s) (economia-e-financas-publicas no-ar → /dominios/economia-e-financas-publicas · trabalho dentro-de → /dominios/economia-e-financas-publicas#m-t1) · depois do mapa: true · 0 cartão(ões) e 0 valor(es) selado(s) lá dentro · nenhuma queixa"
+    },
+    {
+      "nome": "J12.pt",
+      "passa": true,
+      "prova": "a forma das leituras em /uniao-europeia: 21 inteira(s) (unidade, três datas e selo em todas; 13 com limiar e régua; 0 com a definição da medida), e 3 delas acrescentam a porta para o domínio (divida-publica-2025, taxa-de-desemprego-2025, taxa-de-emprego-2025) · 21 de 21 âncoras no HTML servido"
+    },
+    {
+      "nome": "J6.pt",
+      "passa": true,
+      "prova": "altura de / a 390: 2695 px · árvore de partida 6959 px (-4264)"
+    },
+    {
+      "nome": "J7.pt",
+      "passa": true,
+      "prova": "390×664 em /: nome, manchete, cartão, selo e porta do concelho dentro do ecrã (fundo máximo 569.4 px)"
+    },
+    {
+      "nome": "J1.en",
+      "passa": true,
+      "prova": "os 21 nomes em /en/european-union: 42 nome(s) declarado(s) no documento (um no cartão da faixa e um no <summary> da sua leitura, por medida), 1 faixa(s) na página, 0 medida(s) fora dos dois lugares, 0 nome(s) fora de um cartão ou de um <summary>"
+    },
+    {
+      "nome": "J5.en",
+      "passa": true,
+      "prova": "o índice dos domínios em /en: 2 domínio(s) (economia-e-financas-publicas no-ar → /en/domains/economia-e-financas-publicas · trabalho dentro-de → /en/domains/economia-e-financas-publicas#m-t1) · depois do mapa: true · 0 cartão(ões) e 0 valor(es) selado(s) lá dentro · nenhuma queixa"
+    },
+    {
+      "nome": "J12.en",
+      "passa": true,
+      "prova": "a forma das leituras em /en/european-union: 21 inteira(s) (unidade, três datas e selo em todas; 13 com limiar e régua; 0 com a definição da medida), e 3 delas acrescentam a porta para o domínio (divida-publica-2025, taxa-de-desemprego-2025, taxa-de-emprego-2025) · 21 de 21 âncoras no HTML servido"
+    },
+    {
+      "nome": "J6.en",
+      "passa": true,
+      "prova": "altura de /en a 390: 2701 px · árvore de partida 6911 px (-4210)"
+    },
+    {
+      "nome": "J7.en",
+      "passa": true,
+      "prova": "390×664 em /en: nome, manchete, cartão, selo e porta do concelho dentro do ecrã (fundo máximo 564.7 px)"
+    },
+    {
+      "nome": "J3.pt.chromium",
+      "passa": true,
+      "prova": "sem guião em /uniao-europeia · chromium: 21 leitura(s) de 21, 0 aberta(s), 0 sem id, 0 com id errado, 21 com <summary> · o fragmento «#m-divida-publica-2025» existe: true, e o motor abre o <details> alvo de um fragmento sem guião: não (o <summary> está a um toque) (medido a 07.09: não), e 0 outra(s) aberta(s) · com guião abre: true (e 0 outra(s) aberta(s))"
+    },
+    {
+      "nome": "J3.pt.webkit",
+      "passa": true,
+      "prova": "sem guião em /uniao-europeia · webkit: 21 leitura(s) de 21, 0 aberta(s), 0 sem id, 0 com id errado, 21 com <summary> · o fragmento «#m-divida-publica-2025» existe: true, e o motor abre o <details> alvo de um fragmento sem guião: não (o <summary> está a um toque) (medido a 07.09: não), e 0 outra(s) aberta(s) · com guião abre: true (e 0 outra(s) aberta(s))"
+    },
+    {
+      "nome": "J3.en.chromium",
+      "passa": true,
+      "prova": "sem guião em /en/european-union · chromium: 21 leitura(s) de 21, 0 aberta(s), 0 sem id, 0 com id errado, 21 com <summary> · o fragmento «#m-divida-publica-2025» existe: true, e o motor abre o <details> alvo de um fragmento sem guião: não (o <summary> está a um toque) (medido a 07.09: não), e 0 outra(s) aberta(s) · com guião abre: true (e 0 outra(s) aberta(s))"
+    },
+    {
+      "nome": "J3.en.webkit",
+      "passa": true,
+      "prova": "sem guião em /en/european-union · webkit: 21 leitura(s) de 21, 0 aberta(s), 0 sem id, 0 com id errado, 21 com <summary> · o fragmento «#m-divida-publica-2025» existe: true, e o motor abre o <details> alvo de um fragmento sem guião: não (o <summary> está a um toque) (medido a 07.09: não), e 0 outra(s) aberta(s) · com guião abre: true (e 0 outra(s) aberta(s))"
+    },
+    {
+      "nome": "J4.pt.chromium",
+      "passa": true,
+      "prova": "com guião em /uniao-europeia · chromium: 21 cartão(ões) tocados, 21 abriram a sua leitura aqui (uma de cada vez), 3 de medidas que vivem num domínio, 0 mudaram de página"
+    },
+    {
+      "nome": "J4.pt.webkit",
+      "passa": true,
+      "prova": "com guião em /uniao-europeia · webkit: 21 cartão(ões) tocados, 21 abriram a sua leitura aqui (uma de cada vez), 3 de medidas que vivem num domínio, 0 mudaram de página"
+    },
+    {
+      "nome": "J4.en.chromium",
+      "passa": true,
+      "prova": "com guião em /en/european-union · chromium: 5 cartão(ões) tocados, 5 abriram a sua leitura aqui (uma de cada vez), 2 de medidas que vivem num domínio, 0 mudaram de página"
+    },
+    {
+      "nome": "J4.en.webkit",
+      "passa": true,
+      "prova": "com guião em /en/european-union · webkit: 5 cartão(ões) tocados, 5 abriram a sua leitura aqui (uma de cada vez), 2 de medidas que vivem num domínio, 0 mudaram de página"
+    },
+    {
+      "nome": "J13.pt.chromium",
+      "passa": true,
+      "prova": "com guião em /uniao-europeia · chromium: 0 nome(s) à vista em repouso (linha do estado vazio: à vista) · «divida-publica-2025» (o primeiro da faixa): 1 depois do toque, 0 depois de voltar atrás, 1 depois do Enter (linha do estado vazio fora) · «posicao-de-investimento-internacional-2025» (o primeiro de uma medida sem domínio): 1 depois do toque, 0 depois de voltar atrás, 1 depois do Enter (linha do estado vazio fora) · 21 leitura(s) no documento"
+    },
+    {
+      "nome": "J14.pt.chromium",
+      "passa": true,
+      "prova": "sem guião em /uniao-europeia · chromium: 21 leitura(s) no documento, 21 nome(s) à vista, 0 aberta(s), linha do estado vazio escondida"
+    },
+    {
+      "nome": "J13.pt.webkit",
+      "passa": true,
+      "prova": "com guião em /uniao-europeia · webkit: 0 nome(s) à vista em repouso (linha do estado vazio: à vista) · «divida-publica-2025» (o primeiro da faixa): 1 depois do toque, 0 depois de voltar atrás, 1 depois do Enter (linha do estado vazio fora) · «posicao-de-investimento-internacional-2025» (o primeiro de uma medida sem domínio): 1 depois do toque, 0 depois de voltar atrás, 1 depois do Enter (linha do estado vazio fora) · 21 leitura(s) no documento"
+    },
+    {
+      "nome": "J14.pt.webkit",
+      "passa": true,
+      "prova": "sem guião em /uniao-europeia · webkit: 21 leitura(s) no documento, 21 nome(s) à vista, 0 aberta(s), linha do estado vazio escondida"
+    },
+    {
+      "nome": "J13.en.chromium",
+      "passa": true,
+      "prova": "com guião em /en/european-union · chromium: 0 nome(s) à vista em repouso (linha do estado vazio: à vista) · «divida-publica-2025» (o primeiro da faixa): 1 depois do toque, 0 depois de voltar atrás, 1 depois do Enter (linha do estado vazio fora) · «posicao-de-investimento-internacional-2025» (o primeiro de uma medida sem domínio): 1 depois do toque, 0 depois de voltar atrás, 1 depois do Enter (linha do estado vazio fora) · 21 leitura(s) no documento"
+    },
+    {
+      "nome": "J14.en.chromium",
+      "passa": true,
+      "prova": "sem guião em /en/european-union · chromium: 21 leitura(s) no documento, 21 nome(s) à vista, 0 aberta(s), linha do estado vazio escondida"
+    },
+    {
+      "nome": "J13.en.webkit",
+      "passa": true,
+      "prova": "com guião em /en/european-union · webkit: 0 nome(s) à vista em repouso (linha do estado vazio: à vista) · «divida-publica-2025» (o primeiro da faixa): 1 depois do toque, 0 depois de voltar atrás, 1 depois do Enter (linha do estado vazio fora) · «posicao-de-investimento-internacional-2025» (o primeiro de uma medida sem domínio): 1 depois do toque, 0 depois de voltar atrás, 1 depois do Enter (linha do estado vazio fora) · 21 leitura(s) no documento"
+    },
+    {
+      "nome": "J14.en.webkit",
+      "passa": true,
+      "prova": "sem guião em /en/european-union · webkit: 21 leitura(s) no documento, 21 nome(s) à vista, 0 aberta(s), linha do estado vazio escondida"
+    }
+  ],
+  "medidas": {
+    "J1.pt": {
+      "nomesNoDocumento": 42,
+      "foraDaConta": [],
+      "forasteiros": []
+    },
+    "J5.pt": {
+      "seccao": {
+        "temSeccao": true,
+        "depoisDoMapa": true,
+        "itens": [
+          {
+            "slug": "economia-e-financas-publicas",
+            "porta": "/dominios/economia-e-financas-publicas",
+            "portaTexto": "Economia e finanças públicas",
+            "estado": "no-ar"
+          },
+          {
+            "slug": "trabalho",
+            "porta": "/dominios/economia-e-financas-publicas#m-t1",
+            "portaTexto": "Trabalho",
+            "estado": "dentro-de"
+          }
+        ],
+        "cartoes": 0,
+        "selados": 0
+      },
+      "queixas": []
+    },
+    "J12.pt": {
+      "forma": {
+        "leituras": [
+          {
+            "id": "divida-publica-2025",
+            "porta": "/dominios/economia-e-financas-publicas#m-e3",
+            "portaTexto": "Ver no domínio →",
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 9,
+            "id_html": "m-divida-publica-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "posicao-de-investimento-internacional-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 9,
+            "id_html": "m-posicao-de-investimento-internacional-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "custo-unitario-do-trabalho-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 8,
+            "id_html": "m-custo-unitario-do-trabalho-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "precos-da-habitacao-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 8,
+            "id_html": "m-precos-da-habitacao-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "desempenho-das-exportacoes-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 8,
+            "id_html": "m-desempenho-das-exportacoes-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "divida-das-empresas-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 8,
+            "id_html": "m-divida-das-empresas-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "divida-das-familias-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 9,
+            "id_html": "m-divida-das-familias-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "fluxo-de-credito-as-empresas-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 8,
+            "id_html": "m-fluxo-de-credito-as-empresas-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "fluxo-de-credito-as-familias-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 9,
+            "id_html": "m-fluxo-de-credito-as-familias-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "saldo-da-balanca-corrente-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 8,
+            "id_html": "m-saldo-da-balanca-corrente-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "taxa-de-actividade-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 9,
+            "id_html": "m-taxa-de-actividade-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "taxa-de-cambio-efectiva-real-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 8,
+            "id_html": "m-taxa-de-cambio-efectiva-real-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 8,
+            "id_html": "m-taxa-de-desemprego-mip-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "taxa-de-emprego-2025",
+            "porta": "/dominios/economia-e-financas-publicas#m-t1",
+            "portaTexto": "Ver no domínio →",
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 6,
+            "id_html": "m-taxa-de-emprego-2025",
+            "reguas": 0,
+            "frases": 0,
+            "limiares": 0
+          },
+          {
+            "id": "taxa-de-desemprego-2025",
+            "porta": "/dominios/economia-e-financas-publicas#m-t2",
+            "portaTexto": "Ver no domínio →",
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 6,
+            "id_html": "m-taxa-de-desemprego-2025",
+            "reguas": 0,
+            "frases": 0,
+            "limiares": 0
+          },
+          {
+            "id": "desemprego-de-longa-duracao-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 5,
+            "id_html": "m-desemprego-de-longa-duracao-2025",
+            "reguas": 0,
+            "frases": 0,
+            "limiares": 0
+          },
+          {
+            "id": "jovens-nem-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 5,
+            "id_html": "m-jovens-nem-2025",
+            "reguas": 0,
+            "frases": 0,
+            "limiares": 0
+          },
+          {
+            "id": "abandono-escolar-precoce-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 5,
+            "id_html": "m-abandono-escolar-precoce-2025",
+            "reguas": 0,
+            "frases": 0,
+            "limiares": 0
+          },
+          {
+            "id": "risco-de-pobreza-ou-exclusao-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 5,
+            "id_html": "m-risco-de-pobreza-ou-exclusao-2025",
+            "reguas": 0,
+            "frases": 0,
+            "limiares": 0
+          },
+          {
+            "id": "racio-s80-s20-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 5,
+            "id_html": "m-racio-s80-s20-2025",
+            "reguas": 0,
+            "frases": 0,
+            "limiares": 0
+          },
+          {
+            "id": "sobrecarga-do-custo-da-habitacao-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 5,
+            "id_html": "m-sobrecarga-do-custo-da-habitacao-2025",
+            "reguas": 0,
+            "frases": 0,
+            "limiares": 0
+          }
+        ],
+        "cartoesParaFora": []
+      },
+      "idsNoDocumento": [],
+      "queixas": []
+    },
+    "J6.pt": {
+      "altura": 2695,
+      "partida": 6959
+    },
+    "J7.pt": {
+      "ecra": {
+        "nome": {
+          "topo": 62,
+          "fundo": 97.4
+        },
+        "manchete": {
+          "topo": 155.4,
+          "fundo": 280.9
+        },
+        "cartao": {
+          "topo": 368,
+          "fundo": 569.4
+        },
+        "selo": {
+          "topo": 537.8,
+          "fundo": 557
+        },
+        "porta": {
+          "topo": 288.9,
+          "fundo": 355
+        },
+        "altura": 2695
+      },
+      "foraDoEcra": []
+    },
+    "J1.en": {
+      "nomesNoDocumento": 42,
+      "foraDaConta": [],
+      "forasteiros": []
+    },
+    "J5.en": {
+      "seccao": {
+        "temSeccao": true,
+        "depoisDoMapa": true,
+        "itens": [
+          {
+            "slug": "economia-e-financas-publicas",
+            "porta": "/en/domains/economia-e-financas-publicas",
+            "portaTexto": "Economy and public finances",
+            "estado": "no-ar"
+          },
+          {
+            "slug": "trabalho",
+            "porta": "/en/domains/economia-e-financas-publicas#m-t1",
+            "portaTexto": "Labour",
+            "estado": "dentro-de"
+          }
+        ],
+        "cartoes": 0,
+        "selados": 0
+      },
+      "queixas": []
+    },
+    "J12.en": {
+      "forma": {
+        "leituras": [
+          {
+            "id": "divida-publica-2025",
+            "porta": "/en/domains/economia-e-financas-publicas#m-e3",
+            "portaTexto": "See it in the domain →",
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 9,
+            "id_html": "m-divida-publica-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "posicao-de-investimento-internacional-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 9,
+            "id_html": "m-posicao-de-investimento-internacional-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "custo-unitario-do-trabalho-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 8,
+            "id_html": "m-custo-unitario-do-trabalho-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "precos-da-habitacao-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 8,
+            "id_html": "m-precos-da-habitacao-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "desempenho-das-exportacoes-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 8,
+            "id_html": "m-desempenho-das-exportacoes-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "divida-das-empresas-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 8,
+            "id_html": "m-divida-das-empresas-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "divida-das-familias-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 9,
+            "id_html": "m-divida-das-familias-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "fluxo-de-credito-as-empresas-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 8,
+            "id_html": "m-fluxo-de-credito-as-empresas-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "fluxo-de-credito-as-familias-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 9,
+            "id_html": "m-fluxo-de-credito-as-familias-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "saldo-da-balanca-corrente-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 8,
+            "id_html": "m-saldo-da-balanca-corrente-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "taxa-de-actividade-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 9,
+            "id_html": "m-taxa-de-actividade-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "taxa-de-cambio-efectiva-real-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 8,
+            "id_html": "m-taxa-de-cambio-efectiva-real-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 8,
+            "id_html": "m-taxa-de-desemprego-mip-2025",
+            "reguas": 1,
+            "frases": 0,
+            "limiares": 1
+          },
+          {
+            "id": "taxa-de-emprego-2025",
+            "porta": "/en/domains/economia-e-financas-publicas#m-t1",
+            "portaTexto": "See it in the domain →",
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 6,
+            "id_html": "m-taxa-de-emprego-2025",
+            "reguas": 0,
+            "frases": 0,
+            "limiares": 0
+          },
+          {
+            "id": "taxa-de-desemprego-2025",
+            "porta": "/en/domains/economia-e-financas-publicas#m-t2",
+            "portaTexto": "See it in the domain →",
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 6,
+            "id_html": "m-taxa-de-desemprego-2025",
+            "reguas": 0,
+            "frases": 0,
+            "limiares": 0
+          },
+          {
+            "id": "desemprego-de-longa-duracao-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 5,
+            "id_html": "m-desemprego-de-longa-duracao-2025",
+            "reguas": 0,
+            "frases": 0,
+            "limiares": 0
+          },
+          {
+            "id": "jovens-nem-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 5,
+            "id_html": "m-jovens-nem-2025",
+            "reguas": 0,
+            "frases": 0,
+            "limiares": 0
+          },
+          {
+            "id": "abandono-escolar-precoce-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 5,
+            "id_html": "m-abandono-escolar-precoce-2025",
+            "reguas": 0,
+            "frases": 0,
+            "limiares": 0
+          },
+          {
+            "id": "risco-de-pobreza-ou-exclusao-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 5,
+            "id_html": "m-risco-de-pobreza-ou-exclusao-2025",
+            "reguas": 0,
+            "frases": 0,
+            "limiares": 0
+          },
+          {
+            "id": "racio-s80-s20-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 5,
+            "id_html": "m-racio-s80-s20-2025",
+            "reguas": 0,
+            "frases": 0,
+            "limiares": 0
+          },
+          {
+            "id": "sobrecarga-do-custo-da-habitacao-2025",
+            "porta": null,
+            "portaTexto": null,
+            "datas": 3,
+            "selos": 1,
+            "unidades": 1,
+            "blocos": 5,
+            "id_html": "m-sobrecarga-do-custo-da-habitacao-2025",
+            "reguas": 0,
+            "frases": 0,
+            "limiares": 0
+          }
+        ],
+        "cartoesParaFora": []
+      },
+      "idsNoDocumento": [],
+      "queixas": []
+    },
+    "J6.en": {
+      "altura": 2701,
+      "partida": 6911
+    },
+    "J7.en": {
+      "ecra": {
+        "nome": {
+          "topo": 95.2,
+          "fundo": 130.5
+        },
+        "manchete": {
+          "topo": 188.5,
+          "fundo": 314
+        },
+        "cartao": {
+          "topo": 401.2,
+          "fundo": 564.7
+        },
+        "selo": {
+          "topo": 533.1,
+          "fundo": 552.3
+        },
+        "porta": {
+          "topo": 322,
+          "fundo": 388.2
+        },
+        "altura": 2701
+      },
+      "foraDoEcra": []
+    },
+    "J3.pt.chromium": {
+      "total": 21,
+      "abertos": [],
+      "semId": [],
+      "idErrado": [],
+      "comSummary": 21,
+      "fragmento": {
+        "id": "divida-publica-2025",
+        "semGuiao": {
+          "existe": true,
+          "aberto": false,
+          "outrosAbertos": 0
+        },
+        "comGuiao": {
+          "existe": true,
+          "aberto": true,
+          "outrosAbertos": 0
+        },
+        "esperadoSemGuiao": false
+      }
+    },
+    "J3.pt.webkit": {
+      "total": 21,
+      "abertos": [],
+      "semId": [],
+      "idErrado": [],
+      "comSummary": 21,
+      "fragmento": {
+        "id": "divida-publica-2025",
+        "semGuiao": {
+          "existe": true,
+          "aberto": false,
+          "outrosAbertos": 0
+        },
+        "comGuiao": {
+          "existe": true,
+          "aberto": true,
+          "outrosAbertos": 0
+        },
+        "esperadoSemGuiao": false
+      }
+    },
+    "J3.en.chromium": {
+      "total": 21,
+      "abertos": [],
+      "semId": [],
+      "idErrado": [],
+      "comSummary": 21,
+      "fragmento": {
+        "id": "divida-publica-2025",
+        "semGuiao": {
+          "existe": true,
+          "aberto": false,
+          "outrosAbertos": 0
+        },
+        "comGuiao": {
+          "existe": true,
+          "aberto": true,
+          "outrosAbertos": 0
+        },
+        "esperadoSemGuiao": false
+      }
+    },
+    "J3.en.webkit": {
+      "total": 21,
+      "abertos": [],
+      "semId": [],
+      "idErrado": [],
+      "comSummary": 21,
+      "fragmento": {
+        "id": "divida-publica-2025",
+        "semGuiao": {
+          "existe": true,
+          "aberto": false,
+          "outrosAbertos": 0
+        },
+        "comGuiao": {
+          "existe": true,
+          "aberto": true,
+          "outrosAbertos": 0
+        },
+        "esperadoSemGuiao": false
+      }
+    },
+    "J4.pt.chromium": {
+      "passos": [
+        {
+          "cartao": "divida-publica-2025",
+          "href": "#m-divida-publica-2025",
+          "anterior": null,
+          "url": "/uniao-europeia#m-divida-publica-2025",
+          "hash": "#m-divida-publica-2025",
+          "abertas": [
+            "m-divida-publica-2025"
+          ]
+        },
+        {
+          "cartao": "posicao-de-investimento-internacional-2025",
+          "href": "#m-posicao-de-investimento-internacional-2025",
+          "anterior": "divida-publica-2025",
+          "url": "/uniao-europeia#m-posicao-de-investimento-internacional-2025",
+          "hash": "#m-posicao-de-investimento-internacional-2025",
+          "abertas": [
+            "m-posicao-de-investimento-internacional-2025"
+          ]
+        },
+        {
+          "cartao": "custo-unitario-do-trabalho-2025",
+          "href": "#m-custo-unitario-do-trabalho-2025",
+          "anterior": "posicao-de-investimento-internacional-2025",
+          "url": "/uniao-europeia#m-custo-unitario-do-trabalho-2025",
+          "hash": "#m-custo-unitario-do-trabalho-2025",
+          "abertas": [
+            "m-custo-unitario-do-trabalho-2025"
+          ]
+        },
+        {
+          "cartao": "precos-da-habitacao-2025",
+          "href": "#m-precos-da-habitacao-2025",
+          "anterior": "custo-unitario-do-trabalho-2025",
+          "url": "/uniao-europeia#m-precos-da-habitacao-2025",
+          "hash": "#m-precos-da-habitacao-2025",
+          "abertas": [
+            "m-precos-da-habitacao-2025"
+          ]
+        },
+        {
+          "cartao": "desempenho-das-exportacoes-2025",
+          "href": "#m-desempenho-das-exportacoes-2025",
+          "anterior": "precos-da-habitacao-2025",
+          "url": "/uniao-europeia#m-desempenho-das-exportacoes-2025",
+          "hash": "#m-desempenho-das-exportacoes-2025",
+          "abertas": [
+            "m-desempenho-das-exportacoes-2025"
+          ]
+        },
+        {
+          "cartao": "divida-das-empresas-2025",
+          "href": "#m-divida-das-empresas-2025",
+          "anterior": "desempenho-das-exportacoes-2025",
+          "url": "/uniao-europeia#m-divida-das-empresas-2025",
+          "hash": "#m-divida-das-empresas-2025",
+          "abertas": [
+            "m-divida-das-empresas-2025"
+          ]
+        },
+        {
+          "cartao": "divida-das-familias-2025",
+          "href": "#m-divida-das-familias-2025",
+          "anterior": "divida-das-empresas-2025",
+          "url": "/uniao-europeia#m-divida-das-familias-2025",
+          "hash": "#m-divida-das-familias-2025",
+          "abertas": [
+            "m-divida-das-familias-2025"
+          ]
+        },
+        {
+          "cartao": "fluxo-de-credito-as-empresas-2025",
+          "href": "#m-fluxo-de-credito-as-empresas-2025",
+          "anterior": "divida-das-familias-2025",
+          "url": "/uniao-europeia#m-fluxo-de-credito-as-empresas-2025",
+          "hash": "#m-fluxo-de-credito-as-empresas-2025",
+          "abertas": [
+            "m-fluxo-de-credito-as-empresas-2025"
+          ]
+        },
+        {
+          "cartao": "fluxo-de-credito-as-familias-2025",
+          "href": "#m-fluxo-de-credito-as-familias-2025",
+          "anterior": "fluxo-de-credito-as-empresas-2025",
+          "url": "/uniao-europeia#m-fluxo-de-credito-as-familias-2025",
+          "hash": "#m-fluxo-de-credito-as-familias-2025",
+          "abertas": [
+            "m-fluxo-de-credito-as-familias-2025"
+          ]
+        },
+        {
+          "cartao": "saldo-da-balanca-corrente-2025",
+          "href": "#m-saldo-da-balanca-corrente-2025",
+          "anterior": "fluxo-de-credito-as-familias-2025",
+          "url": "/uniao-europeia#m-saldo-da-balanca-corrente-2025",
+          "hash": "#m-saldo-da-balanca-corrente-2025",
+          "abertas": [
+            "m-saldo-da-balanca-corrente-2025"
+          ]
+        },
+        {
+          "cartao": "taxa-de-actividade-2025",
+          "href": "#m-taxa-de-actividade-2025",
+          "anterior": "saldo-da-balanca-corrente-2025",
+          "url": "/uniao-europeia#m-taxa-de-actividade-2025",
+          "hash": "#m-taxa-de-actividade-2025",
+          "abertas": [
+            "m-taxa-de-actividade-2025"
+          ]
+        },
+        {
+          "cartao": "taxa-de-cambio-efectiva-real-2025",
+          "href": "#m-taxa-de-cambio-efectiva-real-2025",
+          "anterior": "taxa-de-actividade-2025",
+          "url": "/uniao-europeia#m-taxa-de-cambio-efectiva-real-2025",
+          "hash": "#m-taxa-de-cambio-efectiva-real-2025",
+          "abertas": [
+            "m-taxa-de-cambio-efectiva-real-2025"
+          ]
+        },
+        {
+          "cartao": "taxa-de-desemprego-mip-2025",
+          "href": "#m-taxa-de-desemprego-mip-2025",
+          "anterior": "taxa-de-cambio-efectiva-real-2025",
+          "url": "/uniao-europeia#m-taxa-de-desemprego-mip-2025",
+          "hash": "#m-taxa-de-desemprego-mip-2025",
+          "abertas": [
+            "m-taxa-de-desemprego-mip-2025"
+          ]
+        },
+        {
+          "cartao": "taxa-de-emprego-2025",
+          "href": "#m-taxa-de-emprego-2025",
+          "anterior": "taxa-de-desemprego-mip-2025",
+          "url": "/uniao-europeia#m-taxa-de-emprego-2025",
+          "hash": "#m-taxa-de-emprego-2025",
+          "abertas": [
+            "m-taxa-de-emprego-2025"
+          ]
+        },
+        {
+          "cartao": "taxa-de-desemprego-2025",
+          "href": "#m-taxa-de-desemprego-2025",
+          "anterior": "taxa-de-emprego-2025",
+          "url": "/uniao-europeia#m-taxa-de-desemprego-2025",
+          "hash": "#m-taxa-de-desemprego-2025",
+          "abertas": [
+            "m-taxa-de-desemprego-2025"
+          ]
+        },
+        {
+          "cartao": "desemprego-de-longa-duracao-2025",
+          "href": "#m-desemprego-de-longa-duracao-2025",
+          "anterior": "taxa-de-desemprego-2025",
+          "url": "/uniao-europeia#m-desemprego-de-longa-duracao-2025",
+          "hash": "#m-desemprego-de-longa-duracao-2025",
+          "abertas": [
+            "m-desemprego-de-longa-duracao-2025"
+          ]
+        },
+        {
+          "cartao": "jovens-nem-2025",
+          "href": "#m-jovens-nem-2025",
+          "anterior": "desemprego-de-longa-duracao-2025",
+          "url": "/uniao-europeia#m-jovens-nem-2025",
+          "hash": "#m-jovens-nem-2025",
+          "abertas": [
+            "m-jovens-nem-2025"
+          ]
+        },
+        {
+          "cartao": "abandono-escolar-precoce-2025",
+          "href": "#m-abandono-escolar-precoce-2025",
+          "anterior": "jovens-nem-2025",
+          "url": "/uniao-europeia#m-abandono-escolar-precoce-2025",
+          "hash": "#m-abandono-escolar-precoce-2025",
+          "abertas": [
+            "m-abandono-escolar-precoce-2025"
+          ]
+        },
+        {
+          "cartao": "risco-de-pobreza-ou-exclusao-2025",
+          "href": "#m-risco-de-pobreza-ou-exclusao-2025",
+          "anterior": "abandono-escolar-precoce-2025",
+          "url": "/uniao-europeia#m-risco-de-pobreza-ou-exclusao-2025",
+          "hash": "#m-risco-de-pobreza-ou-exclusao-2025",
+          "abertas": [
+            "m-risco-de-pobreza-ou-exclusao-2025"
+          ]
+        },
+        {
+          "cartao": "racio-s80-s20-2025",
+          "href": "#m-racio-s80-s20-2025",
+          "anterior": "risco-de-pobreza-ou-exclusao-2025",
+          "url": "/uniao-europeia#m-racio-s80-s20-2025",
+          "hash": "#m-racio-s80-s20-2025",
+          "abertas": [
+            "m-racio-s80-s20-2025"
+          ]
+        },
+        {
+          "cartao": "sobrecarga-do-custo-da-habitacao-2025",
+          "href": "#m-sobrecarga-do-custo-da-habitacao-2025",
+          "anterior": "racio-s80-s20-2025",
+          "url": "/uniao-europeia#m-sobrecarga-do-custo-da-habitacao-2025",
+          "hash": "#m-sobrecarga-do-custo-da-habitacao-2025",
+          "abertas": [
+            "m-sobrecarga-do-custo-da-habitacao-2025"
+          ]
+        }
+      ],
+      "queixas": []
+    },
+    "J4.pt.webkit": {
+      "passos": [
+        {
+          "cartao": "divida-publica-2025",
+          "href": "#m-divida-publica-2025",
+          "anterior": null,
+          "url": "/uniao-europeia#m-divida-publica-2025",
+          "hash": "#m-divida-publica-2025",
+          "abertas": [
+            "m-divida-publica-2025"
+          ]
+        },
+        {
+          "cartao": "posicao-de-investimento-internacional-2025",
+          "href": "#m-posicao-de-investimento-internacional-2025",
+          "anterior": "divida-publica-2025",
+          "url": "/uniao-europeia#m-posicao-de-investimento-internacional-2025",
+          "hash": "#m-posicao-de-investimento-internacional-2025",
+          "abertas": [
+            "m-posicao-de-investimento-internacional-2025"
+          ]
+        },
+        {
+          "cartao": "custo-unitario-do-trabalho-2025",
+          "href": "#m-custo-unitario-do-trabalho-2025",
+          "anterior": "posicao-de-investimento-internacional-2025",
+          "url": "/uniao-europeia#m-custo-unitario-do-trabalho-2025",
+          "hash": "#m-custo-unitario-do-trabalho-2025",
+          "abertas": [
+            "m-custo-unitario-do-trabalho-2025"
+          ]
+        },
+        {
+          "cartao": "precos-da-habitacao-2025",
+          "href": "#m-precos-da-habitacao-2025",
+          "anterior": "custo-unitario-do-trabalho-2025",
+          "url": "/uniao-europeia#m-precos-da-habitacao-2025",
+          "hash": "#m-precos-da-habitacao-2025",
+          "abertas": [
+            "m-precos-da-habitacao-2025"
+          ]
+        },
+        {
+          "cartao": "desempenho-das-exportacoes-2025",
+          "href": "#m-desempenho-das-exportacoes-2025",
+          "anterior": "precos-da-habitacao-2025",
+          "url": "/uniao-europeia#m-desempenho-das-exportacoes-2025",
+          "hash": "#m-desempenho-das-exportacoes-2025",
+          "abertas": [
+            "m-desempenho-das-exportacoes-2025"
+          ]
+        },
+        {
+          "cartao": "divida-das-empresas-2025",
+          "href": "#m-divida-das-empresas-2025",
+          "anterior": "desempenho-das-exportacoes-2025",
+          "url": "/uniao-europeia#m-divida-das-empresas-2025",
+          "hash": "#m-divida-das-empresas-2025",
+          "abertas": [
+            "m-divida-das-empresas-2025"
+          ]
+        },
+        {
+          "cartao": "divida-das-familias-2025",
+          "href": "#m-divida-das-familias-2025",
+          "anterior": "divida-das-empresas-2025",
+          "url": "/uniao-europeia#m-divida-das-familias-2025",
+          "hash": "#m-divida-das-familias-2025",
+          "abertas": [
+            "m-divida-das-familias-2025"
+          ]
+        },
+        {
+          "cartao": "fluxo-de-credito-as-empresas-2025",
+          "href": "#m-fluxo-de-credito-as-empresas-2025",
+          "anterior": "divida-das-familias-2025",
+          "url": "/uniao-europeia#m-fluxo-de-credito-as-empresas-2025",
+          "hash": "#m-fluxo-de-credito-as-empresas-2025",
+          "abertas": [
+            "m-fluxo-de-credito-as-empresas-2025"
+          ]
+        },
+        {
+          "cartao": "fluxo-de-credito-as-familias-2025",
+          "href": "#m-fluxo-de-credito-as-familias-2025",
+          "anterior": "fluxo-de-credito-as-empresas-2025",
+          "url": "/uniao-europeia#m-fluxo-de-credito-as-familias-2025",
+          "hash": "#m-fluxo-de-credito-as-familias-2025",
+          "abertas": [
+            "m-fluxo-de-credito-as-familias-2025"
+          ]
+        },
+        {
+          "cartao": "saldo-da-balanca-corrente-2025",
+          "href": "#m-saldo-da-balanca-corrente-2025",
+          "anterior": "fluxo-de-credito-as-familias-2025",
+          "url": "/uniao-europeia#m-saldo-da-balanca-corrente-2025",
+          "hash": "#m-saldo-da-balanca-corrente-2025",
+          "abertas": [
+            "m-saldo-da-balanca-corrente-2025"
+          ]
+        },
+        {
+          "cartao": "taxa-de-actividade-2025",
+          "href": "#m-taxa-de-actividade-2025",
+          "anterior": "saldo-da-balanca-corrente-2025",
+          "url": "/uniao-europeia#m-taxa-de-actividade-2025",
+          "hash": "#m-taxa-de-actividade-2025",
+          "abertas": [
+            "m-taxa-de-actividade-2025"
+          ]
+        },
+        {
+          "cartao": "taxa-de-cambio-efectiva-real-2025",
+          "href": "#m-taxa-de-cambio-efectiva-real-2025",
+          "anterior": "taxa-de-actividade-2025",
+          "url": "/uniao-europeia#m-taxa-de-cambio-efectiva-real-2025",
+          "hash": "#m-taxa-de-cambio-efectiva-real-2025",
+          "abertas": [
+            "m-taxa-de-cambio-efectiva-real-2025"
+          ]
+        },
+        {
+          "cartao": "taxa-de-desemprego-mip-2025",
+          "href": "#m-taxa-de-desemprego-mip-2025",
+          "anterior": "taxa-de-cambio-efectiva-real-2025",
+          "url": "/uniao-europeia#m-taxa-de-desemprego-mip-2025",
+          "hash": "#m-taxa-de-desemprego-mip-2025",
+          "abertas": [
+            "m-taxa-de-desemprego-mip-2025"
+          ]
+        },
+        {
+          "cartao": "taxa-de-emprego-2025",
+          "href": "#m-taxa-de-emprego-2025",
+          "anterior": "taxa-de-desemprego-mip-2025",
+          "url": "/uniao-europeia#m-taxa-de-emprego-2025",
+          "hash": "#m-taxa-de-emprego-2025",
+          "abertas": [
+            "m-taxa-de-emprego-2025"
+          ]
+        },
+        {
+          "cartao": "taxa-de-desemprego-2025",
+          "href": "#m-taxa-de-desemprego-2025",
+          "anterior": "taxa-de-emprego-2025",
+          "url": "/uniao-europeia#m-taxa-de-desemprego-2025",
+          "hash": "#m-taxa-de-desemprego-2025",
+          "abertas": [
+            "m-taxa-de-desemprego-2025"
+          ]
+        },
+        {
+          "cartao": "desemprego-de-longa-duracao-2025",
+          "href": "#m-desemprego-de-longa-duracao-2025",
+          "anterior": "taxa-de-desemprego-2025",
+          "url": "/uniao-europeia#m-desemprego-de-longa-duracao-2025",
+          "hash": "#m-desemprego-de-longa-duracao-2025",
+          "abertas": [
+            "m-desemprego-de-longa-duracao-2025"
+          ]
+        },
+        {
+          "cartao": "jovens-nem-2025",
+          "href": "#m-jovens-nem-2025",
+          "anterior": "desemprego-de-longa-duracao-2025",
+          "url": "/uniao-europeia#m-jovens-nem-2025",
+          "hash": "#m-jovens-nem-2025",
+          "abertas": [
+            "m-jovens-nem-2025"
+          ]
+        },
+        {
+          "cartao": "abandono-escolar-precoce-2025",
+          "href": "#m-abandono-escolar-precoce-2025",
+          "anterior": "jovens-nem-2025",
+          "url": "/uniao-europeia#m-abandono-escolar-precoce-2025",
+          "hash": "#m-abandono-escolar-precoce-2025",
+          "abertas": [
+            "m-abandono-escolar-precoce-2025"
+          ]
+        },
+        {
+          "cartao": "risco-de-pobreza-ou-exclusao-2025",
+          "href": "#m-risco-de-pobreza-ou-exclusao-2025",
+          "anterior": "abandono-escolar-precoce-2025",
+          "url": "/uniao-europeia#m-risco-de-pobreza-ou-exclusao-2025",
+          "hash": "#m-risco-de-pobreza-ou-exclusao-2025",
+          "abertas": [
+            "m-risco-de-pobreza-ou-exclusao-2025"
+          ]
+        },
+        {
+          "cartao": "racio-s80-s20-2025",
+          "href": "#m-racio-s80-s20-2025",
+          "anterior": "risco-de-pobreza-ou-exclusao-2025",
+          "url": "/uniao-europeia#m-racio-s80-s20-2025",
+          "hash": "#m-racio-s80-s20-2025",
+          "abertas": [
+            "m-racio-s80-s20-2025"
+          ]
+        },
+        {
+          "cartao": "sobrecarga-do-custo-da-habitacao-2025",
+          "href": "#m-sobrecarga-do-custo-da-habitacao-2025",
+          "anterior": "racio-s80-s20-2025",
+          "url": "/uniao-europeia#m-sobrecarga-do-custo-da-habitacao-2025",
+          "hash": "#m-sobrecarga-do-custo-da-habitacao-2025",
+          "abertas": [
+            "m-sobrecarga-do-custo-da-habitacao-2025"
+          ]
+        }
+      ],
+      "queixas": []
+    },
+    "J4.en.chromium": {
+      "passos": [
+        {
+          "cartao": "divida-publica-2025",
+          "href": "#m-divida-publica-2025",
+          "anterior": null,
+          "url": "/en/european-union#m-divida-publica-2025",
+          "hash": "#m-divida-publica-2025",
+          "abertas": [
+            "m-divida-publica-2025"
+          ]
+        },
+        {
+          "cartao": "taxa-de-emprego-2025",
+          "href": "#m-taxa-de-emprego-2025",
+          "anterior": "divida-publica-2025",
+          "url": "/en/european-union#m-taxa-de-emprego-2025",
+          "hash": "#m-taxa-de-emprego-2025",
+          "abertas": [
+            "m-taxa-de-emprego-2025"
+          ]
+        },
+        {
+          "cartao": "posicao-de-investimento-internacional-2025",
+          "href": "#m-posicao-de-investimento-internacional-2025",
+          "anterior": "taxa-de-emprego-2025",
+          "url": "/en/european-union#m-posicao-de-investimento-internacional-2025",
+          "hash": "#m-posicao-de-investimento-internacional-2025",
+          "abertas": [
+            "m-posicao-de-investimento-internacional-2025"
+          ]
+        },
+        {
+          "cartao": "custo-unitario-do-trabalho-2025",
+          "href": "#m-custo-unitario-do-trabalho-2025",
+          "anterior": "posicao-de-investimento-internacional-2025",
+          "url": "/en/european-union#m-custo-unitario-do-trabalho-2025",
+          "hash": "#m-custo-unitario-do-trabalho-2025",
+          "abertas": [
+            "m-custo-unitario-do-trabalho-2025"
+          ]
+        },
+        {
+          "cartao": "precos-da-habitacao-2025",
+          "href": "#m-precos-da-habitacao-2025",
+          "anterior": "custo-unitario-do-trabalho-2025",
+          "url": "/en/european-union#m-precos-da-habitacao-2025",
+          "hash": "#m-precos-da-habitacao-2025",
+          "abertas": [
+            "m-precos-da-habitacao-2025"
+          ]
+        }
+      ],
+      "queixas": []
+    },
+    "J4.en.webkit": {
+      "passos": [
+        {
+          "cartao": "divida-publica-2025",
+          "href": "#m-divida-publica-2025",
+          "anterior": null,
+          "url": "/en/european-union#m-divida-publica-2025",
+          "hash": "#m-divida-publica-2025",
+          "abertas": [
+            "m-divida-publica-2025"
+          ]
+        },
+        {
+          "cartao": "taxa-de-emprego-2025",
+          "href": "#m-taxa-de-emprego-2025",
+          "anterior": "divida-publica-2025",
+          "url": "/en/european-union#m-taxa-de-emprego-2025",
+          "hash": "#m-taxa-de-emprego-2025",
+          "abertas": [
+            "m-taxa-de-emprego-2025"
+          ]
+        },
+        {
+          "cartao": "posicao-de-investimento-internacional-2025",
+          "href": "#m-posicao-de-investimento-internacional-2025",
+          "anterior": "taxa-de-emprego-2025",
+          "url": "/en/european-union#m-posicao-de-investimento-internacional-2025",
+          "hash": "#m-posicao-de-investimento-internacional-2025",
+          "abertas": [
+            "m-posicao-de-investimento-internacional-2025"
+          ]
+        },
+        {
+          "cartao": "custo-unitario-do-trabalho-2025",
+          "href": "#m-custo-unitario-do-trabalho-2025",
+          "anterior": "posicao-de-investimento-internacional-2025",
+          "url": "/en/european-union#m-custo-unitario-do-trabalho-2025",
+          "hash": "#m-custo-unitario-do-trabalho-2025",
+          "abertas": [
+            "m-custo-unitario-do-trabalho-2025"
+          ]
+        },
+        {
+          "cartao": "precos-da-habitacao-2025",
+          "href": "#m-precos-da-habitacao-2025",
+          "anterior": "custo-unitario-do-trabalho-2025",
+          "url": "/en/european-union#m-precos-da-habitacao-2025",
+          "hash": "#m-precos-da-habitacao-2025",
+          "abertas": [
+            "m-precos-da-habitacao-2025"
+          ]
+        }
+      ],
+      "queixas": []
+    },
+    "J13.pt.chromium": {
+      "alvos": [
+        {
+          "papel": "o primeiro da faixa",
+          "id": "divida-publica-2025"
+        },
+        {
+          "papel": "o primeiro de uma medida sem domínio",
+          "id": "posicao-de-investimento-internacional-2025"
+        }
+      ],
+      "repouso": {
+        "area": true,
+        "detalhes": 21,
+        "nomes": 21,
+        "visiveis": [],
+        "abertas": [],
+        "vazio": {
+          "existe": true,
+          "visivel": true
+        },
+        "hash": ""
+      },
+      "porCartao": [
+        {
+          "papel": "o primeiro da faixa",
+          "id": "divida-publica-2025",
+          "aposToque": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [
+              "divida-publica-2025"
+            ],
+            "abertas": [
+              "m-divida-publica-2025"
+            ],
+            "vazio": {
+              "existe": true,
+              "visivel": false
+            },
+            "hash": "#m-divida-publica-2025"
+          },
+          "aposVoltar": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [],
+            "abertas": [],
+            "vazio": {
+              "existe": true,
+              "visivel": true
+            },
+            "hash": ""
+          },
+          "aposEnter": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [
+              "divida-publica-2025"
+            ],
+            "abertas": [
+              "m-divida-publica-2025"
+            ],
+            "vazio": {
+              "existe": true,
+              "visivel": false
+            },
+            "hash": "#m-divida-publica-2025"
+          }
+        },
+        {
+          "papel": "o primeiro de uma medida sem domínio",
+          "id": "posicao-de-investimento-internacional-2025",
+          "aposToque": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [
+              "posicao-de-investimento-internacional-2025"
+            ],
+            "abertas": [
+              "m-posicao-de-investimento-internacional-2025"
+            ],
+            "vazio": {
+              "existe": true,
+              "visivel": false
+            },
+            "hash": "#m-posicao-de-investimento-internacional-2025"
+          },
+          "aposVoltar": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [],
+            "abertas": [],
+            "vazio": {
+              "existe": true,
+              "visivel": true
+            },
+            "hash": ""
+          },
+          "aposEnter": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [
+              "posicao-de-investimento-internacional-2025"
+            ],
+            "abertas": [
+              "m-posicao-de-investimento-internacional-2025"
+            ],
+            "vazio": {
+              "existe": true,
+              "visivel": false
+            },
+            "hash": "#m-posicao-de-investimento-internacional-2025"
+          }
+        }
+      ],
+      "queixas": []
+    },
+    "J14.pt.chromium": {
+      "area": true,
+      "detalhes": 21,
+      "nomes": 21,
+      "visiveis": [
+        "divida-publica-2025",
+        "posicao-de-investimento-internacional-2025",
+        "custo-unitario-do-trabalho-2025",
+        "precos-da-habitacao-2025",
+        "desempenho-das-exportacoes-2025",
+        "divida-das-empresas-2025",
+        "divida-das-familias-2025",
+        "fluxo-de-credito-as-empresas-2025",
+        "fluxo-de-credito-as-familias-2025",
+        "saldo-da-balanca-corrente-2025",
+        "taxa-de-actividade-2025",
+        "taxa-de-cambio-efectiva-real-2025",
+        "taxa-de-desemprego-mip-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025",
+        "desemprego-de-longa-duracao-2025",
+        "jovens-nem-2025",
+        "abandono-escolar-precoce-2025",
+        "risco-de-pobreza-ou-exclusao-2025",
+        "racio-s80-s20-2025",
+        "sobrecarga-do-custo-da-habitacao-2025"
+      ],
+      "abertas": [],
+      "vazio": {
+        "existe": true,
+        "visivel": false
+      },
+      "hash": "",
+      "queixas": []
+    },
+    "J13.pt.webkit": {
+      "alvos": [
+        {
+          "papel": "o primeiro da faixa",
+          "id": "divida-publica-2025"
+        },
+        {
+          "papel": "o primeiro de uma medida sem domínio",
+          "id": "posicao-de-investimento-internacional-2025"
+        }
+      ],
+      "repouso": {
+        "area": true,
+        "detalhes": 21,
+        "nomes": 21,
+        "visiveis": [],
+        "abertas": [],
+        "vazio": {
+          "existe": true,
+          "visivel": true
+        },
+        "hash": ""
+      },
+      "porCartao": [
+        {
+          "papel": "o primeiro da faixa",
+          "id": "divida-publica-2025",
+          "aposToque": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [
+              "divida-publica-2025"
+            ],
+            "abertas": [
+              "m-divida-publica-2025"
+            ],
+            "vazio": {
+              "existe": true,
+              "visivel": false
+            },
+            "hash": "#m-divida-publica-2025"
+          },
+          "aposVoltar": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [],
+            "abertas": [],
+            "vazio": {
+              "existe": true,
+              "visivel": true
+            },
+            "hash": ""
+          },
+          "aposEnter": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [
+              "divida-publica-2025"
+            ],
+            "abertas": [
+              "m-divida-publica-2025"
+            ],
+            "vazio": {
+              "existe": true,
+              "visivel": false
+            },
+            "hash": "#m-divida-publica-2025"
+          }
+        },
+        {
+          "papel": "o primeiro de uma medida sem domínio",
+          "id": "posicao-de-investimento-internacional-2025",
+          "aposToque": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [
+              "posicao-de-investimento-internacional-2025"
+            ],
+            "abertas": [
+              "m-posicao-de-investimento-internacional-2025"
+            ],
+            "vazio": {
+              "existe": true,
+              "visivel": false
+            },
+            "hash": "#m-posicao-de-investimento-internacional-2025"
+          },
+          "aposVoltar": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [],
+            "abertas": [],
+            "vazio": {
+              "existe": true,
+              "visivel": true
+            },
+            "hash": ""
+          },
+          "aposEnter": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [
+              "posicao-de-investimento-internacional-2025"
+            ],
+            "abertas": [
+              "m-posicao-de-investimento-internacional-2025"
+            ],
+            "vazio": {
+              "existe": true,
+              "visivel": false
+            },
+            "hash": "#m-posicao-de-investimento-internacional-2025"
+          }
+        }
+      ],
+      "queixas": []
+    },
+    "J14.pt.webkit": {
+      "area": true,
+      "detalhes": 21,
+      "nomes": 21,
+      "visiveis": [
+        "divida-publica-2025",
+        "posicao-de-investimento-internacional-2025",
+        "custo-unitario-do-trabalho-2025",
+        "precos-da-habitacao-2025",
+        "desempenho-das-exportacoes-2025",
+        "divida-das-empresas-2025",
+        "divida-das-familias-2025",
+        "fluxo-de-credito-as-empresas-2025",
+        "fluxo-de-credito-as-familias-2025",
+        "saldo-da-balanca-corrente-2025",
+        "taxa-de-actividade-2025",
+        "taxa-de-cambio-efectiva-real-2025",
+        "taxa-de-desemprego-mip-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025",
+        "desemprego-de-longa-duracao-2025",
+        "jovens-nem-2025",
+        "abandono-escolar-precoce-2025",
+        "risco-de-pobreza-ou-exclusao-2025",
+        "racio-s80-s20-2025",
+        "sobrecarga-do-custo-da-habitacao-2025"
+      ],
+      "abertas": [],
+      "vazio": {
+        "existe": true,
+        "visivel": false
+      },
+      "hash": "",
+      "queixas": []
+    },
+    "J13.en.chromium": {
+      "alvos": [
+        {
+          "papel": "o primeiro da faixa",
+          "id": "divida-publica-2025"
+        },
+        {
+          "papel": "o primeiro de uma medida sem domínio",
+          "id": "posicao-de-investimento-internacional-2025"
+        }
+      ],
+      "repouso": {
+        "area": true,
+        "detalhes": 21,
+        "nomes": 21,
+        "visiveis": [],
+        "abertas": [],
+        "vazio": {
+          "existe": true,
+          "visivel": true
+        },
+        "hash": ""
+      },
+      "porCartao": [
+        {
+          "papel": "o primeiro da faixa",
+          "id": "divida-publica-2025",
+          "aposToque": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [
+              "divida-publica-2025"
+            ],
+            "abertas": [
+              "m-divida-publica-2025"
+            ],
+            "vazio": {
+              "existe": true,
+              "visivel": false
+            },
+            "hash": "#m-divida-publica-2025"
+          },
+          "aposVoltar": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [],
+            "abertas": [],
+            "vazio": {
+              "existe": true,
+              "visivel": true
+            },
+            "hash": ""
+          },
+          "aposEnter": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [
+              "divida-publica-2025"
+            ],
+            "abertas": [
+              "m-divida-publica-2025"
+            ],
+            "vazio": {
+              "existe": true,
+              "visivel": false
+            },
+            "hash": "#m-divida-publica-2025"
+          }
+        },
+        {
+          "papel": "o primeiro de uma medida sem domínio",
+          "id": "posicao-de-investimento-internacional-2025",
+          "aposToque": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [
+              "posicao-de-investimento-internacional-2025"
+            ],
+            "abertas": [
+              "m-posicao-de-investimento-internacional-2025"
+            ],
+            "vazio": {
+              "existe": true,
+              "visivel": false
+            },
+            "hash": "#m-posicao-de-investimento-internacional-2025"
+          },
+          "aposVoltar": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [],
+            "abertas": [],
+            "vazio": {
+              "existe": true,
+              "visivel": true
+            },
+            "hash": ""
+          },
+          "aposEnter": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [
+              "posicao-de-investimento-internacional-2025"
+            ],
+            "abertas": [
+              "m-posicao-de-investimento-internacional-2025"
+            ],
+            "vazio": {
+              "existe": true,
+              "visivel": false
+            },
+            "hash": "#m-posicao-de-investimento-internacional-2025"
+          }
+        }
+      ],
+      "queixas": []
+    },
+    "J14.en.chromium": {
+      "area": true,
+      "detalhes": 21,
+      "nomes": 21,
+      "visiveis": [
+        "divida-publica-2025",
+        "posicao-de-investimento-internacional-2025",
+        "custo-unitario-do-trabalho-2025",
+        "precos-da-habitacao-2025",
+        "desempenho-das-exportacoes-2025",
+        "divida-das-empresas-2025",
+        "divida-das-familias-2025",
+        "fluxo-de-credito-as-empresas-2025",
+        "fluxo-de-credito-as-familias-2025",
+        "saldo-da-balanca-corrente-2025",
+        "taxa-de-actividade-2025",
+        "taxa-de-cambio-efectiva-real-2025",
+        "taxa-de-desemprego-mip-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025",
+        "desemprego-de-longa-duracao-2025",
+        "jovens-nem-2025",
+        "abandono-escolar-precoce-2025",
+        "risco-de-pobreza-ou-exclusao-2025",
+        "racio-s80-s20-2025",
+        "sobrecarga-do-custo-da-habitacao-2025"
+      ],
+      "abertas": [],
+      "vazio": {
+        "existe": true,
+        "visivel": false
+      },
+      "hash": "",
+      "queixas": []
+    },
+    "J13.en.webkit": {
+      "alvos": [
+        {
+          "papel": "o primeiro da faixa",
+          "id": "divida-publica-2025"
+        },
+        {
+          "papel": "o primeiro de uma medida sem domínio",
+          "id": "posicao-de-investimento-internacional-2025"
+        }
+      ],
+      "repouso": {
+        "area": true,
+        "detalhes": 21,
+        "nomes": 21,
+        "visiveis": [],
+        "abertas": [],
+        "vazio": {
+          "existe": true,
+          "visivel": true
+        },
+        "hash": ""
+      },
+      "porCartao": [
+        {
+          "papel": "o primeiro da faixa",
+          "id": "divida-publica-2025",
+          "aposToque": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [
+              "divida-publica-2025"
+            ],
+            "abertas": [
+              "m-divida-publica-2025"
+            ],
+            "vazio": {
+              "existe": true,
+              "visivel": false
+            },
+            "hash": "#m-divida-publica-2025"
+          },
+          "aposVoltar": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [],
+            "abertas": [],
+            "vazio": {
+              "existe": true,
+              "visivel": true
+            },
+            "hash": ""
+          },
+          "aposEnter": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [
+              "divida-publica-2025"
+            ],
+            "abertas": [
+              "m-divida-publica-2025"
+            ],
+            "vazio": {
+              "existe": true,
+              "visivel": false
+            },
+            "hash": "#m-divida-publica-2025"
+          }
+        },
+        {
+          "papel": "o primeiro de uma medida sem domínio",
+          "id": "posicao-de-investimento-internacional-2025",
+          "aposToque": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [
+              "posicao-de-investimento-internacional-2025"
+            ],
+            "abertas": [
+              "m-posicao-de-investimento-internacional-2025"
+            ],
+            "vazio": {
+              "existe": true,
+              "visivel": false
+            },
+            "hash": "#m-posicao-de-investimento-internacional-2025"
+          },
+          "aposVoltar": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [],
+            "abertas": [],
+            "vazio": {
+              "existe": true,
+              "visivel": true
+            },
+            "hash": ""
+          },
+          "aposEnter": {
+            "area": true,
+            "detalhes": 21,
+            "nomes": 21,
+            "visiveis": [
+              "posicao-de-investimento-internacional-2025"
+            ],
+            "abertas": [
+              "m-posicao-de-investimento-internacional-2025"
+            ],
+            "vazio": {
+              "existe": true,
+              "visivel": false
+            },
+            "hash": "#m-posicao-de-investimento-internacional-2025"
+          }
+        }
+      ],
+      "queixas": []
+    },
+    "J14.en.webkit": {
+      "area": true,
+      "detalhes": 21,
+      "nomes": 21,
+      "visiveis": [
+        "divida-publica-2025",
+        "posicao-de-investimento-internacional-2025",
+        "custo-unitario-do-trabalho-2025",
+        "precos-da-habitacao-2025",
+        "desempenho-das-exportacoes-2025",
+        "divida-das-empresas-2025",
+        "divida-das-familias-2025",
+        "fluxo-de-credito-as-empresas-2025",
+        "fluxo-de-credito-as-familias-2025",
+        "saldo-da-balanca-corrente-2025",
+        "taxa-de-actividade-2025",
+        "taxa-de-cambio-efectiva-real-2025",
+        "taxa-de-desemprego-mip-2025",
+        "taxa-de-emprego-2025",
+        "taxa-de-desemprego-2025",
+        "desemprego-de-longa-duracao-2025",
+        "jovens-nem-2025",
+        "abandono-escolar-precoce-2025",
+        "risco-de-pobreza-ou-exclusao-2025",
+        "racio-s80-s20-2025",
+        "sobrecarga-do-custo-da-habitacao-2025"
+      ],
+      "abertas": [],
+      "vazio": {
+        "existe": true,
+        "visivel": false
+      },
+      "hash": "",
+      "queixas": []
+    }
+  },
+  "plantasOk": null
+}

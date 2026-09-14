@@ -389,6 +389,11 @@ function desenha(modelo, dim) {
     const entre = 44;
     const corpoPalavra = 24;
     const fichaDaPalavra = { familia: TIPO.versal, corpo: corpoPalavra, peso: 600, espacamento: 1.2 };
+    /* A FILA PODE ESTAR VAZIA (F1.10, 08.09.2026), e uma fila vazia não desenha
+       nem ocupa: com o painel europeu noutra página, o cartão da primeira página
+       deixou de ter quadrados a desenhar, e a manchete sobe para o lugar deles.
+       Sem esta guarda a fila «vazia» valia 26 px de nada e a conta das linhas da
+       manchete perdia uma. */
     const grupos = modelo.fila.map((g) => ({
       ...g,
       minuscula: g.palavra.toLocaleLowerCase(modelo.lang),
@@ -397,7 +402,7 @@ function desenha(modelo, dim) {
       g.quantos * lado + (g.quantos - 1) * folga + antes + largura(g.minuscula, fichaDaPalavra);
     const numaLinha =
       grupos.reduce((a, g) => a + larguraDoGrupo(g), 0) + entre * (grupos.length - 1);
-    const filas = numaLinha <= util ? [grupos] : grupos.map((g) => [g]);
+    const filas = grupos.length === 0 ? [] : numaLinha <= util ? [grupos] : grupos.map((g) => [g]);
     for (const linha of filas) {
       const w = linha.reduce((a, g) => a + larguraDoGrupo(g), 0) + entre * (linha.length - 1);
       if (w > util) {
@@ -408,7 +413,7 @@ function desenha(modelo, dim) {
       }
     }
 
-    const alturaDaFila = filas.length * (lado + 22) - 22;
+    const alturaDaFila = filas.length === 0 ? -46 : filas.length * (lado + 22) - 22;
     let yFila = y - (filas.length - 1) * (lado + 22);
     for (const linha of filas) {
       let x = MARGEM;
