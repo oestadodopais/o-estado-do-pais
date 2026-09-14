@@ -1168,7 +1168,6 @@ for (const ficheiro of paginas) {
         anota('d84_definicoes_fora', `${url} · «${nome}»: a origem «${o.chave}» não se rende na página`);
         continue;
       }
-      const texto = bloco.text.replace(/\s+/g, ' ').trim();
       const porta = bloco
         .querySelectorAll('a[href]')
         .some((a) => (a.getAttribute('href') ?? '') === o.url);
@@ -1176,14 +1175,62 @@ for (const ficheiro of paginas) {
         medidas.d84_definicoes_fora++;
         anota('d84_definicoes_fora', `${url} · «${nome}»: a origem «${o.chave}» não tem porta para «${o.url}»`);
       }
-      for (const [campo, valor] of [
-        ['o publicador', o.publicador],
-        ['o documento', o.documento],
-        ['o excerto', o.excerto],
+      /* ---------------------------------------------------------------------
+         CADA CAMPO POR IGUALDADE, NO ELEMENTO DELE (achado 6 da releitura do
+         Codex de 14.09.2026, sobre a cabeça `7b85bb7f`)
+         ---------------------------------------------------------------------
+         Era `texto.includes(valor)` sobre o bloco inteiro, e a releitura mediu
+         as duas frestas que isso deixava: «a changed field can pass if the
+         expected text appears elsewhere, and additional text is allowed». Um
+         publicador trocado passava se o nome esperado estivesse noutro sítio do
+         bloco (e ele está: o documento de uma origem do Eurostat começa por
+         «Statistics Explained»), e um campo com texto colado ao fim continuava a
+         conter o esperado.
+
+         OS TRÊS CAMPOS TÊM MARCA PRÓPRIA, e é ela que se lê: a vista rende-os
+         com `data-verbatim="origem-<chave>-publicador"`, `-documento` e
+         `-excerto` (ou `-excerto-en`, onde a origem publica o mesmo texto nas
+         duas línguas). A régua procura o elemento de cada campo, exige que
+         exista UM, e compara o que ele diz com o que a declaração diz, carácter
+         a carácter. O prefixo compara-se aqui em JavaScript e não num selector,
+         para não depender do que o motor de selectores desta biblioteca aceita.
+
+         O EXCERTO DA EDIÇÃO É O QUE `origensDaDefinicao()` JÁ RESOLVEU para a
+         língua da página: a comparação é com o texto, e não com a chave, e por
+         isso uma página que rendesse o excerto da outra língua cai aqui mesmo
+         que a chave estivesse certa. */
+      const marcados = new Map();
+      for (const el of bloco.querySelectorAll('[data-verbatim]')) {
+        const k = el.getAttribute('data-verbatim') ?? '';
+        if (!marcados.has(k)) marcados.set(k, []);
+        marcados.get(k).push(el);
+      }
+      for (const [campo, sufixo, valor] of [
+        ['o publicador', 'publicador', o.publicador],
+        ['o documento', 'documento', o.documento],
+        ['o excerto', 'excerto', o.excerto],
       ]) {
-        if (texto.includes(valor.replace(/\s+/g, ' ').trim())) continue;
+        const raiz = `origem-${o.chave}-${sufixo}`;
+        const els = [...marcados.entries()]
+          .filter(([k]) => k === raiz || k.startsWith(`${raiz}-`))
+          .flatMap(([, v]) => v);
+        if (els.length !== 1) {
+          medidas.d84_definicoes_fora++;
+          anota(
+            'd84_definicoes_fora',
+            `${url} · «${nome}»: a origem «${o.chave}» rende ${els.length} elemento(s) para ${campo}`,
+          );
+          continue;
+        }
+        const rendido = els[0].text.replace(/\s+/g, ' ').trim();
+        const declarado = valor.replace(/\s+/g, ' ').trim();
+        if (rendido === declarado) continue;
         medidas.d84_definicoes_fora++;
-        anota('d84_definicoes_fora', `${url} · «${nome}»: a origem «${o.chave}» não rende ${campo}`);
+        anota(
+          'd84_definicoes_fora',
+          `${url} · «${nome}»: a origem «${o.chave}» rende ${campo} «${rendido.slice(0, 60)}…» ` +
+            `e a declaração diz «${declarado.slice(0, 60)}…»`,
+        );
       }
       /* A DATA POR IGUALDADE, NO CAMPO DELA (achado 8, 14.09.2026). Era uma
          subcadeia procurada no bloco inteiro: qualquer data escrita noutro
