@@ -1,0 +1,51 @@
+a medir o estado limpo…
+  {"l1":2170,"l2a":0,"l2b":0,"l3":0,"l6":0,"d84":0,"d86":0}
+
+check:lugar · 1 falha(s):
+  ✗ L2 · segundas listas dos concelhos: 1, acima do teto 0.
+
+check:lugar · 1 falha(s):
+  ✗ L2 · réguas da convergência fora de /regioes: 1, acima do teto 0.
+
+check:lugar · 1 falha(s):
+  ✗ L6 · selos que não dizem o publicador: 1, acima do teto 0.
+
+check:lugar · 1 falha(s):
+  ✗ §7.4 e 8.6 · estudos fora da forma única: 1, acima do teto 0.
+
+check:lugar · 1 falha(s):
+  ✗ 8.4 · definições de painel fora da declaração: 1, acima do teto 0.
+
+check:lugar · 1 falha(s):
+  ✗ 8.4 · definições de painel fora da declaração: 2, acima do teto 0.
+
+check:lugar · 1 falha(s):
+  ✗ 8.4 · definições de painel fora da declaração: 1, acima do teto 0.
+
+check:lugar · 1 falha(s):
+  ✗ 8.4 · definições de painel fora da declaração: 1, acima do teto 0.
+
+check:lugar · 2 falha(s):
+  ✗ 8.4 · definições de painel fora da declaração: 1, acima do teto 0.
+  ✗ §7.10 · «[a verificar]» sem definição ao pé do primeiro: 1, acima do teto 0.
+
+check:lugar · 1 falha(s):
+  ✗ L3 · palavras fora do vocabulário fechado: 1, acima do teto 0.
+
+check:lugar · 1 falha(s):
+  ✗ L1 · páginas com dois destinos iguais fora da mobília: 2171, acima do teto 2170.
+
+  as plantas da L9, por forma:
+    mordeu                     l2a  0 → 1  a lista dos 308 dentro de um <details ABERTO> (a isenção só vale fechada)
+    mordeu                     l2b  0 → 1  a régua da convergência copiada SEM o seu data-instrumento (só a forma)
+    mordeu                     l6   0 → 1  um selo SEM data-selo-etiqueta (a régua percorria só os que a tinham)
+    mordeu                     d86  0 → 1  o título de um estudo a voltar à capa (o gesto natural a parar outra vez)
+    mordeu                     d84  0 → 1  o excerto tirado de uma origem de definição (a citação sem a prova)
+    mordeu                     d84  0 → 2  um bloco de origem tirado da página (a régua contava as declaradas e não as rendidas)
+    mordeu                     d84  0 → 1  um bloco de origem A MAIS na página (a régua ignorava os que sobravam)
+    mordeu                     d84  0 → 1  a data de leitura fora do campo dela, com o texto na mesma (a régua procurava-a no bloco todo)
+    mordeu                     d84  0 → 1  o marcador tirado de dentro de uma definição (o texto declarado di-lo e a página não)
+    mordeu                     l3   0 → 1  a palavra proibida na descrição pública do <head> (a L3 começava no <body>)
+    mordeu                     l1   2170 → 2171  a porta da conferência de volta ao endereço da própria linha (o padrão maior da L1)
+
+  11 de 11 morderam, e todas repuseram byte a byte.

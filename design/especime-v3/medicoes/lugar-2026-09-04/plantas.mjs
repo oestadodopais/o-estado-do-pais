@@ -198,6 +198,77 @@ const PLANTAS = [
       return s.replace(m[0], '');
     },
   },
+  /* ------------------------------------------------------------------------
+     AS QUATRO GUARDAS NOVAS DA CÉLULA 8.4 (14.09.2026)
+     ------------------------------------------------------------------------
+     A leitura do Codex de 14.09.2026, achado 8: a régua contava as origens
+     DECLARADAS e procurava cada uma, e por isso não via as que a página
+     rendesse a mais nem uma declaração sem origem nenhuma; e comparava a data de
+     leitura como uma subcadeia do bloco inteiro, o que a satisfazia com a data
+     escrita em qualquer sítio. E o achado 28: nada media o marcador dentro de
+     uma definição. Cada guarda nova entra aqui com o seu positivo conhecido,
+     plantado na forma e não na marca. */
+  {
+    nome: 'um bloco de origem tirado da página (a régua contava as declaradas e não as rendidas)',
+    medida: 'd84',
+    ficheiro: 'uniao-europeia/index.html',
+    troca: (s) => {
+      /* A PRIMEIRA ORIGEM DE UMA DEFINIÇÃO COM DUAS, e não uma qualquer: tirar
+         a única origem de uma definição faz a régua morder pela guarda velha
+         («a origem não se rende na página»), e isso é a guarda antiga a provar-se
+         outra vez. A da posição de investimento internacional tem duas desde
+         hoje, e tirar uma delas deixa a definição com origem e com a conta
+         errada, que é exactamente o que só a guarda nova apanha. */
+      const i = s.indexOf('<div class="def-origem" data-def-origem="pdm-posicao-de-investimento">');
+      if (i < 0) return null;
+      const j = s.indexOf('</details></div>', i);
+      if (j < 0) return null;
+      return s.slice(0, i) + s.slice(j + '</details></div>'.length);
+    },
+  },
+  {
+    nome: 'um bloco de origem A MAIS na página (a régua ignorava os que sobravam)',
+    medida: 'd84',
+    ficheiro: 'uniao-europeia/index.html',
+    troca: (s) => {
+      const i = s.indexOf('<div class="def-origem" data-def-origem="pdm-divida-publica">');
+      if (i < 0) return null;
+      const j = s.indexOf('</details></div>', i);
+      if (j < 0) return null;
+      const bloco = s.slice(i, j + '</details></div>'.length);
+      /* A cópia leva outra chave, para que a régua a veja como uma origem que a
+         declaração não pediu, e não como a mesma outra vez. */
+      const copia = bloco.replace(
+        'data-def-origem="pdm-divida-publica"',
+        'data-def-origem="uma-origem-que-ninguem-declarou"',
+      );
+      return s.slice(0, j + '</details></div>'.length) + copia + s.slice(j + '</details></div>'.length);
+    },
+  },
+  {
+    nome: 'a data de leitura fora do campo dela, com o texto na mesma (a régua procurava-a no bloco todo)',
+    medida: 'd84',
+    ficheiro: 'uniao-europeia/index.html',
+    troca: (s) => {
+      /* A DATA FICA À VISTA, NO MESMO BLOCO, e é só o campo que desaparece: uma
+         régua que a procure como subcadeia continua a encontrá-la, e uma que a
+         compare no campo dela não a encontra. É a diferença entre as duas que
+         esta planta mede. */
+      const m = s.match(/ data-def-lido="([^"]+)"/);
+      if (!m) return null;
+      return s.replace(m[0], ' data-um-atributo-qualquer="' + m[1] + '"');
+    },
+  },
+  {
+    nome: 'o marcador tirado de dentro de uma definição (o texto declarado di-lo e a página não)',
+    medida: 'd84',
+    ficheiro: 'uniao-europeia/index.html',
+    troca: (s) => {
+      const alvo = '<a class="marcador" href="/a-verificar" lang="pt-PT">[a verificar]</a>';
+      if (!s.includes(alvo)) return null;
+      return s.replace(alvo, '');
+    },
+  },
   {
     nome: 'a palavra proibida na descrição pública do <head> (a L3 começava no <body>)',
     medida: 'l3',
