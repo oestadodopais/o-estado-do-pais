@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-14T12:53:14+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/pacote-uniao",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "src/data/figuras.mjs",
+   "descricao": "excerto de pdm-divida-publica com o limiar trocado (60% para 65%): o excerto deixa de estar na fonte",
+   "sha256_antes": "9eff0e4b43786fc22cc0f536cfdf525c166548a7ce9bc655225a70f928b8c587",
+   "sha256_depois": "6b1e044d17316aad7ec3dced294fd6fa9379c2d03763f5e50b5274485e940e81",
+   "contexto_antes": "e',\n    url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',\n    lido: '2026-09-09',\n    excerto: 'general government sector debt in % of GDP with a threshold of 60%.',\n  },\n  'pdm-custo-do-trabalho': {\n    publicador: 'Comissão Europeia',\n    documento: 'Scoreboard · Macroeconomic Imbalance Procedure',\n    url: 'https://econ",
+   "contexto_depois": "e',\n    url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',\n    lido: '2026-09-09',\n    excerto: 'general government sector debt in % of GDP with a threshold of 65%.',\n  },\n  'pdm-custo-do-trabalho': {\n    publicador: 'Comissão Europeia',\n    documento: 'Scoreboard · Macroeconomic Imbalance Procedure',\n    url: 'https://econ"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "built/uniao-europeia/index.html",
+   "descricao": "a página portuguesa rende «lido na fonte a 18.09.2026» para painel-pdm, e os dados dizem 2026-09-08 (uma data futura, e diferente da declarada)",
+   "sha256_antes": "60f0cca4559a31bf401d661fa6f46dadf1c621dbe6a16e92aa7fd58f9d029b88",
+   "sha256_depois": "460dfdfdf523d8d11d48963a5f70ec844c705cc6188e4c987936ed2e3d980af5",
+   "contexto_antes": "\" href=\"https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en\" rel=\"noopener noreferrer external\" data-verbatim=\"origem-painel-pdm-documento\" lang=\"en\">Scoreboard · Macroeconomic Imbalance Procedure</a> · <span class=\"def-origem-k\">lido na fonte a</span> <span data-nonledger=\"data-de-leitura-de-uma-definicao\">08.09.2026</span></p><details class=\"def-excerto\"><summary class=\"def-excerto-abrir\"><span class=\"dobra-seta\" aria-hidden=\"true\"></span><span class=\"def-excerto-k\">Excerto</span",
+   "contexto_depois": "\" href=\"https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en\" rel=\"noopener noreferrer external\" data-verbatim=\"origem-painel-pdm-documento\" lang=\"en\">Scoreboard · Macroeconomic Imbalance Procedure</a> · <span class=\"def-origem-k\">lido na fonte a</span> <span data-nonledger=\"data-de-leitura-de-uma-definicao\">18.09.2026</span></p><details class=\"def-excerto\"><summary class=\"def-excerto-abrir\"><span class=\"dobra-seta\" aria-hidden=\"true\"></span><span class=\"def-excerto-k\">Excerto</span"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "scripts/check-lugar.mjs",
+   "descricao": "a régua 8.4 compara só os primeiros 40 caracteres do excerto rendido com o declarado",
+   "sha256_antes": "d2f60506b1ed8de09ac7f8325412ffefdae07a5b02238b167acb8b4b16d42563",
+   "sha256_depois": "a08112aa67def8802a0362e3c664729e7b372c7d04b03565c1e1afddb391def9",
+   "contexto_antes": "r (const [campo, valor] of [\n        ['o publicador', o.publicador],\n        ['o documento', o.documento],\n        ['o excerto', o.excerto],\n      ]) {\n        if (texto.includes(valor.replace(/\\s+/g, ' ').trim())) continue;\n        medidas.d84_definicoes_fora++;\n        anota('d84_definicoes_fora', `${url} · «${nome}»: a origem «${o.chave}» não rende ${campo}`);\n      }\n      cons",
+   "contexto_depois": "r (const [campo, valor] of [\n        ['o publicador', o.publicador],\n        ['o documento', o.documento],\n        ['o excerto', o.excerto],\n      ]) {\n        if (texto.includes(valor.replace(/\\s+/g, ' ').trim().slice(0, 40))) continue;\n        medidas.d84_definicoes_fora++;\n        anota('d84_definicoes_fora', `${url} · «${nome}»: a origem «${o.chave}» não rende ${campo}`);\n      }\n      cons"
+  },
+  {
+   "id": "P5a",
+   "ficheiro": "fontes/05.txt",
+   "descricao": "a cópia do texto do glossário da taxa de emprego diz «employed people» onde a página diz «employed persons»: o excerto deixa de estar na cópia",
+   "sha256_antes": "de19f78861f88f5ce13325715632b41303d2fc257e63796c9f1a15f3f31f5746",
+   "sha256_depois": "37fcf83a73e4a8cb2f7607d08e041f91fa096f2a6c7b9c8b744bf84469b6c020",
+   "contexto_antes": "\nMenu\n\nBack\n\nHome\n\nArticles by theme\n\nPublications\n\nStatistics4beginners\n\nGlossary\n\nHelp\n\nMain\n\nEmployment rate\n\nGlossary:Employment rate\n\nPrint this page\npdf\n\nThe employment rate is the percentage of employed persons in relation to the comparable total population. For the overall employment rate, the comparison is made with the population of working-age; but employment rate",
+   "contexto_depois": "\nMenu\n\nBack\n\nHome\n\nArticles by theme\n\nPublications\n\nStatistics4beginners\n\nGlossary\n\nHelp\n\nMain\n\nEmployment rate\n\nGlossary:Employment rate\n\nPrint this page\npdf\n\nThe employment rate is the percentage of employed people in relation to the comparable total population. For the overall employment rate, the comparison is made with the population of working-age; but employment rate"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "src/data/figuras.mjs",
+   "descricao": "a definição portuguesa do custo unitário do trabalho diz «cinco anos» onde o excerto da Comissão diz «3-year percentage change» e a gémea inglesa diz três: a definição contradiz o excerto",
+   "sha256_antes": "6b1e044d17316aad7ec3dced294fd6fa9379c2d03763f5e50b5274485e940e81",
+   "sha256_depois": "a78300117f1b24d526040aa10a5ab215cc2fb2cd9cdeca428a15a753ee07202a",
+   "contexto_antes": "ha da Comissão diz «nominal unit labour cost index,\n       per hour worked». A produção era da casa. */\n    origens: ['pdm-custo-do-trabalho'],\n    pt: [\n      'O índice nominal do custo unitário do trabalho, por hora trabalhada, e quanto ele mudou em três anos.',\n    ],\n    en: [\n      'The nominal unit labour cost index, per hour worked, and how much it changed over three years.',\n    ],\n  },\n  'precos-da-habitacao-20",
+   "contexto_depois": "ha da Comissão diz «nominal unit labour cost index,\n       per hour worked». A produção era da casa. */\n    origens: ['pdm-custo-do-trabalho'],\n    pt: [\n      'O índice nominal do custo unitário do trabalho, por hora trabalhada, e quanto ele mudou em cinco anos.',\n    ],\n    en: [\n      'The nominal unit labour cost index, per hour worked, and how much it changed over three years.',\n    ],\n  },\n  'precos-da-habitacao-20"
+  }
+ ]
+}
