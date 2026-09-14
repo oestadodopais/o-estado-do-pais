@@ -18,6 +18,26 @@ export const STRINGS = {
     outraLinguaCodigo: 'EN',
 
     /* -----------------------------------------------------------------------
+     * A FRASE DE DEFINIÇÃO (bloco F1.10, 04.09.2026)
+     * -----------------------------------------------------------------------
+     * A Emenda 18 fixou «Um observatório de Portugal.», e a leitura de um leitor
+     * de primeira vez (`critica/2026-09-04-codex-leitor-de-primeira-vez.md`)
+     * mediu o que lhe falta: «It does not explain that ledger-backed claims are
+     * reused in territorial views, thematic views and studies.» A frase passa a
+     * dizer as três maneiras de ler o sítio e a origem de cada número, e mais
+     * nada.
+     *
+     * A DECISÃO É DO LUGAR DE DIREÇÃO, pela delegação do diretor de 04.09.2026
+     * (`DECISIONS.md` §1.98, segunda emenda, item 3). A Emenda 18 continua de pé
+     * no que ela decide: uma frase, por baixo da marca, NA PRIMEIRA PÁGINA e em
+     * mais lado nenhum; sem quem a faz, sem como, sem adjetivos, sem porta, sem
+     * algarismo e sem selo. O que cresce é a definição, não a classe: continua a
+     * ser navegação, e a rota `home` continua com autorreferência a zero.
+     *
+     * A SENTINELA DO ARAME DA CLASSE MUDA COM ELA, em `scripts/check-voz.mjs`:
+     * é esta cadeia que prova que a leitura da primeira página não se partiu.
+     */
+    /* -----------------------------------------------------------------------
      * A FRASE DE IDENTIDADE (Emenda 18, 25.08.2026)
      * -----------------------------------------------------------------------
      * «O sítio tem um nome e uma frase de identidade, por baixo da marca na
@@ -30,11 +50,79 @@ export const STRINGS = {
      * verificação nem das intenções da casa (Emenda 15), fala do que a coisa é.
      * Não leva porta, não leva algarismo, não leva selo.
      */
-    identidade: 'Um observatório de Portugal.',
+    identidade:
+      'Um observatório de Portugal: cada número com a sua fonte, lido por território, por domínio e em estudos.',
+
+
+    /* -----------------------------------------------------------------------
+     * AS FRASES DE HIERARQUIA, UMA POR ÍNDICE (bloco F1.10, 04.09.2026)
+     * -----------------------------------------------------------------------
+     * Origem: decisão do lugar de direção, `DECISIONS.md` §1.98, segunda emenda,
+     * item 3, pela delegação do diretor de 04.09.2026. O leitor de primeira vez
+     * mediu a falta: «neither index explains that a domain is a subject and an
+     * area is a ministerial portfolio», e «the site … never states which
+     * classifications contain or overlap which others».
+     *
+     * Cada frase diz o que as coisas SÃO, e mais nada: não fala da casa, não diz
+     * como ela trabalha nem porque se deve confiar nela (Emenda 15 e Emenda 18).
+     * Não leva algarismo nem selo.
+     *
+     * A FRASE DO TERRITÓRIO PÁRA NOS QUATRO NÍVEIS, E A RAZÃO É UMA MEDIÇÃO. O
+     * brief escreve-a com uma segunda oração, «as regiões não contêm distritos
+     * inteiros», e manda conferi-la nos dados do sítio antes de a escrever. Foi
+     * conferida e NÃO SE ESCREVE: o repositório não tem correspondência nenhuma
+     * entre as 29 unidades da Carta e as 9 regiões NUTS II. `regiaoDe()`, em
+     * `src/data/caop-centroids.mjs`, devolve «continente», «acores» ou «madeira»,
+     * que são as três parcelas do mapa e não as regiões da régua; e
+     * `src/data/regioes.mjs` declara as nove regiões sem uma lista de distritos
+     * nem de concelhos. Uma afirmação sobre a sobreposição das duas divisões não
+     * resolve em dado nenhum desta árvore, e a regra da casa é não escrever o que
+     * não se pode conferir aqui.
+     */
+    hierarquia: {
+      territorio: 'O país lê-se em quatro níveis: país, região NUTS II, distrito ou ilha, concelho.',
+      dominio: 'Um domínio é um assunto da carta dos conteúdos; uma área de governo é um ministério.',
+      area: 'Uma área de governo é um ministério; um domínio é um assunto da carta dos conteúdos.',
+    },
+
+    /* -----------------------------------------------------------------------
+     * OS TÍTULOS DAS DUAS SECÇÕES DE MEDIDAS (bloco F1.10, 04.09.2026)
+     * -----------------------------------------------------------------------
+     * «"Relance" e "Leitura breve" ficam só como os nomes das duas densidades de
+     * um cartão, nunca como títulos de secção» (`DECISIONS.md` §1.98, segunda
+     * emenda, item 2). As duas palavras continuam onde são a densidade: no
+     * comando das duas densidades da primeira página e no rótulo de cada camada
+     * de um instrumento. O que sai são os `<h2>`: três, medidos, na página do
+     * concelho (dois) e na do domínio (um).
+     *
+     * O QUE OS SUBSTITUI DIZ O QUE A SECÇÃO É, com duas palavras do vocabulário
+     * fechado («medida», e a leitura de cada uma). Um título por densidade, o
+     * mesmo em todas as camadas: sem isto, cada página voltava a inventar o seu.
+     */
+    secoes: {
+      medidas: 'As medidas',
+      leitura: 'A leitura de cada medida',
+      /* A DOBRA DA PROSA DA CASA (bloco F1.10, item 8.11; decisão do lugar de
+         direção de 09.09.2026). O item 8.11 manda que «a prosa de contexto, as
+         definições e as ressalvas saem do primeiro ecrã das páginas do leitor e
+         ficam a um toque (uma dobra "Como ler" ou a leitura breve)», e nomeia a
+         dobra. A frase da fronteira de um domínio ficava três píxeis dentro do
+         primeiro ecrã inglês, medida a 390 × 664 na sexta sessão do bloco; a
+         saída não é afinar a margem até ao 664, é a estrutural que o item
+         escreve. O rótulo é o nome da dobra e mais nada: não diz o que está lá
+         dentro nem porque é que está. */
+      comoLer: 'Como ler',
+    },
 
     nav: {
       inicio: 'Início',
-      municipios: 'Municípios',
+      /* «Concelhos» E NÃO «MUNICÍPIOS» (bloco F1.10, 04.09.2026; `DECISIONS.md`
+         §1.98, segunda emenda). O vocabulário fechado do sítio dá ao território
+         quatro palavras (país, região, distrito, concelho) e a palavra visível
+         para esta é «concelho». O ENDEREÇO NÃO MUDA (`/municipios`), que é o que
+         a decisão escreve à letra: o que muda é o que se lê, não o que se
+         partilha. */
+      municipios: 'Concelhos',
       /* «Domínios» entra no rodapé no commit em que as páginas dos domínios
          ganham porta comum (bloco F1.2, segunda passagem, 03.09.2026). A mesma
          razão das «Áreas» ao lado: o rodapé é o índice do sítio, e uma família
@@ -45,7 +133,13 @@ export const STRINGS = {
          construídas. O rodapé é o índice do sítio (ver `SiteFooter.astro`), e
          uma família de páginas que existe e não está nele é uma família sem
          porta comum. */
-      areas: 'Áreas',
+      /* «ÁREAS DE GOVERNO», POR EXTENSO (bloco F1.10, §7.5, 08.09.2026). É o
+         que o leitor de 04.09 mediu: «"Áreas" e "Domínios" distinguíveis pelo
+         nome». Com o menu em dois pesos (item 8.9) a fila do país é a mais leve
+         e o nome inteiro cabe lá, que é o «se couber» do brief. A frase de
+         hierarquia dos dois índices diz o resto: uma área de governo é um
+         ministério; um domínio é um assunto da carta dos conteúdos. */
+      areas: 'Áreas de governo',
       /* AS TRÊS FAMÍLIAS QUE EXISTIAM SEM PORTA NO MENU (F1.1, item 11,
          03.09.2026). As páginas das regiões, dos distritos e das áreas estão
          construídas desde 28 e 29.08.2026 e só se alcançavam pelo rodapé ou por
@@ -57,8 +151,27 @@ export const STRINGS = {
          o plural do que a página lista, e mais nada. */
       regioes: 'Regiões',
       distritos: 'Distritos',
+      /* A PÁGINA DOS DOIS QUADROS DA UNIÃO (bloco F1.10, item 8.16, 08.09.2026).
+         O nome do item do menu é O NOME DA PÁGINA, por extenso, e não uma
+         abreviatura: a regra §0 do brief é «um nome por coisa em todo o sítio»,
+         e «União Europeia» ao lado de uma página que se chama «Portugal na União
+         Europeia» seriam dois nomes para a mesma coisa. */
+      uniaoEuropeia: 'Portugal na União Europeia',
       estudos: 'Estudos',
-      livro: 'Livro-razão',
+      /* «NÚMEROS E FONTES» E NÃO «LIVRO-RAZÃO» (bloco F1.10, item 8.8,
+         08.09.2026). É o tropeço R2 da ronda de leitores de 07.09 («the
+         livro-razão doesn't really match what it is; people don't really
+         understand it»), e a decisão que o diretor aceitou nessa noite
+         («Números e fontes sounds quite alright … I'll leave it to you»): o
+         nome VISÍVEL do índice e da entrada do menu passa a dizer o que a
+         página tem. «livro-razão» fica como o termo técnico no Método, no JSON
+         e nos endereços, que não mudam, e «linha do livro-razão» continua a ser
+         o nome de uma linha dentro do Método e das páginas de linha.
+
+         NÃO SE USA «Fontes» SOZINHO, e a razão é a §1.98: «fonte» diz sempre o
+         publicador de uma linha, e uma página chamada «Fontes» prometia a lista
+         dos publicadores. São os números E as fontes deles. */
+      livro: 'Números e fontes',
       agenda: 'Agenda',
       metodo: 'Método',
       correcoes: 'Correções',
@@ -72,6 +185,10 @@ export const STRINGS = {
          ou «English», e um leitor de ecrã que percorra as regiões de uma
          página ouvia o mesmo nome três vezes. */
       rotuloPrincipal: 'Navegação principal',
+      /* O nome da região de navegação do CAMINHO (bloco F1.10, item 5 do brief).
+         Só se ouve: o caminho vê-se, e quem o ouve precisa de saber que aquilo
+         é o caminho da página e não mais uma fila de portas. */
+      rotuloCaminho: 'Onde está',
       rotuloRodape: 'Navegação do rodapé',
       rotuloIdioma: 'Idioma',
       rotuloErro: 'Por onde continuar',
@@ -141,13 +258,36 @@ export const STRINGS = {
          escondida para leitores de ecrã até à v2, e um leitor com vista via só
          um título de estudo em cinzento. */
       selo: 'fonte',
+      /* O SELO DE UMA LINHA QUE A PRÓPRIA CASA PUBLICA (F1.10, §2.4, 09.09.2026).
+         «"fonte" diz sempre o publicador da linha; onde a linha vem de um estudo
+         da casa, o selo diz "linha" e a página da linha diz a proveniência.» São
+         cinco linhas do livro-razão cujo publicador é este sítio (as contagens do
+         arquivo e do registo de correções), e um selo a dizer «fonte · O Estado
+         do País» era a casa a citar-se a si própria como fonte. A porta não muda:
+         continua a abrir a linha, que é onde a proveniência se lê. */
+      seloDaCasa: 'linha',
       /* A ressalva da fonte, dita por palavras ao pé do valor (decisão (d) da
          direção, 20.08.2026). Não é a nota: a nota é o campo `source_flag_note`
          da página da linha, e continua lá inteira. Esta é a palavra que viaja
          com o número para onde quer que ele vá. */
       provisorio: 'provisório',
-      lido: 'Lido a',
-      fonte: 'Fonte',
+      /* AS DATAS DE FRESCURA DIZEM-SE POR PALAVRAS (F1.10, §7.3, 09.09.2026).
+         «"lido", "conferido", "reconferido" passam a rótulos por palavras
+         ("lido na fonte a", "verificado a"), uma vez por lugar.» O leitor de
+         04.09 no navegador leu «lido» e «conferido» como palavras soltas e não
+         soube o que cada uma dizia. As três datas de uma medida mudaram na quarta
+         sessão deste bloco; esta é a mesma frase, no mesmo campo, nos outros
+         lugares onde ele se rende: o índice dos números, o recibo de uma linha, o
+         cartão de partilha e a agenda das fontes. É a mesma cadeia, e por isso
+         uma só: um nome por coisa em todo o sítio (§0 do brief). */
+      lido: 'Lido na fonte a',
+      /* «PUBLICADO POR» E NÃO «FONTE» (F1.10, §7.2, 09.09.2026). O leitor de
+         04.09 contou duas «fonte» em cada bloco de medida e em cada linha: o
+         selo, que é a PORTA para a linha, e o rótulo do campo `source`, que é o
+         nome do ORGANISMO que publicou o número. A palavra fica com o selo, e o
+         campo passa a dizer o que faz: quem publicou. Nenhum campo muda, nenhuma
+         transcrição muda; muda o rótulo que a casa escreve por cima dele. */
+      fonte: 'Publicado por',
       documento: 'Documento',
       edicao: 'Edição',
       localizacao: 'Onde no documento',
@@ -217,7 +357,7 @@ export const STRINGS = {
      * passaram do cabeçalho para a página dos estudos.
      */
     rodape: {
-      estudos: 'trabalhos no arquivo',
+      estudos: 'estudos publicados',
       edicoes: 'edições',
     },
 
@@ -368,8 +508,15 @@ export const STRINGS = {
       janelaEntre: 'entre',
       janelaE: 'e',
       origemDaDataK: 'Onde está escrito',
-      acedidoK: 'Lido a',
-      afectaK: 'Linhas que isto move',
+      /* A MESMA FRASE DA DATA DE ACESSO (F1.10, §7.3): ver `prov.lido`. */
+      acedidoK: 'Lido na fonte a',
+      /* «LINHAS A QUE ISTO DIZ RESPEITO», E NÃO «LINHAS QUE ISTO MOVE» (decisão
+         do lugar de direção de 08.09.2026, da leitura a frio do bloco F2.6b do
+         motor). O motor passou a pôr neste campo as linhas do último período
+         publicado de cada fonte, que um ficheiro novo torna desatualizadas, e
+         não linhas que o acontecimento MUDE. O verbo prometia mais do que o
+         campo entrega, e a etiqueta passa a dizer o que ele é. */
+      afectaK: 'Linhas a que isto diz respeito',
       notaK: 'Nota',
       voltarALista: 'Voltar à agenda',
     },
@@ -381,6 +528,22 @@ export const STRINGS = {
       eyebrow: 'O marcador',
       h1: 'O que quer dizer este marcador',
       lede: 'É o único marcador de incerteza deste sítio. Aparece onde um campo não foi confirmado contra a fonte.',
+      /* A DEFINIÇÃO AO PÉ DA PRIMEIRA OCORRÊNCIA DE CADA PÁGINA (§7.10 do brief
+         F1.10, 14.09.2026). A releitura do leitor de primeira vez mediu que a
+         página do marcador dá uma definição clara e que nenhuma outra página a
+         dá ao lado do sinal. Esta frase é a da página encurtada às duas coisas
+         que ela abre: o que o marcador é (a lede: «aparece onde um campo não foi
+         confirmado contra a fonte») e o que ele não é (o `queEV`: «não é uma
+         dúvida sobre o número publicado»).
+
+         A PALAVRA É «CAMPO» E NÃO «CAMPO DA PROVENIÊNCIA», e é uma medição e não
+         uma preferência: a régua do bloco apanhou o marcador a render-se onze
+         vezes na agenda, onde o que falta é a DATA de um acontecimento e não um
+         campo de uma linha do livro-razão. Uma definição que falasse só de
+         proveniência era falsa ali. «Um campo não confirmado contra a fonte» é a
+         frase da própria página, e é verdadeira nos dois sítios.
+         Rende-se por `<DefinicaoDoMarcador>`, uma vez por página. */
+      definicao: 'um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado',
       queEK: 'O que é',
       queEV:
         'Uma ausência declarada. Não é um valor por defeito, não é uma estimativa, e não é uma dúvida sobre o número publicado: é o sítio a dizer que aquele campo (a fonte, o documento, o endereço, a data de leitura ou o excerto) ainda não foi conferido contra a origem.',
@@ -444,6 +607,16 @@ export const STRINGS = {
          completa da página das regiões. Registada em `CHAVES-EN.md`. */
       pesquisaRotulo: 'Escreva o nome do concelho',
       pesquisaSemResultado: 'Nenhum concelho com esse nome.',
+      /* O QUE A BUSCA FAZ SEM GUIÃO, DITO POR PALAVRAS (Major 7 da leitura a
+         frio, 09.09.2026). O botão submete um `GET` para o índice dos concelhos,
+         e a página estática que chega do outro lado mostra a lista INTEIRA,
+         agrupada: o filtro é do guião. O leitor sem guião via um botão a
+         prometer uma busca e recebia uma lista de 308 nomes, sem uma palavra a
+         dizer porquê. A frase diz o que acontece; é a mesma nas duas páginas que
+         rendem a caixa dos concelhos, e vive dentro de um `<noscript>`, que é o
+         único sítio onde ela é verdade. */
+      pesquisaSemGuiao:
+        'Sem guião, o botão leva à lista inteira dos concelhos, agrupada por distrito e por ilha.',
       /* O COMANDO DA BUSCA, QUE PASSOU A SER UM `<form>` (F1.1, item 12).
          Sem guião a caixa não filtrava nada e a página não tinha maneira de
          levar a lado nenhum: agora a busca é um formulário com destino, e o
@@ -475,10 +648,66 @@ export const STRINGS = {
            a frase parte-se onde elas entram. O singular e o plural do primeiro
            são escolhidos na construção, com a contagem que o portão reconta; o
            segundo não tem substantivo a seguir e serve os dois. */
+        /* AS QUATRO PEÇAS MUDARAM DE PÁGINA, E NÃO DE PALAVRA (F1.10, item
+           8.16, 08.09.2026). Com os 21 cartões dos dois quadros da União em
+           «Portugal na União Europeia», a frase das duas contagens é a manchete
+           DESSA página, e é `UniaoEuropeiaView.astro` que a rende. As chaves
+           ficam onde estão, e o nome delas também: renomeá-las mudava treze
+           sítios para não mudar uma letra do que se lê, e a linha do inventário
+           da voz é a mesma frase. */
         tituloPaisA: 'Portugal ultrapassa ',
         tituloPaisUm: ' limiar do Procedimento dos Desequilíbrios Macroeconómicos e cumpre ',
         tituloPaisMuitos: ' limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre ',
         tituloPaisFim: '.',
+        /* ------------------------------------------------------------------
+           A MANCHETE DO PAÍS (F1.10, decisão do lugar de direção, 08.09.2026)
+           ------------------------------------------------------------------
+           Uma frase, dois algarismos selados, sem adjetivo, com as duas medidas
+           de cabeça do domínio vivo: a dívida pública e a taxa de desemprego. As
+           três peças são o que fica ENTRE os dois valores, e o símbolo da
+           percentagem entra pelo sufixo do valor, como na manchete do domínio.
+
+           AS DUAS ORAÇÕES DIZEM A UNIDADE DA LINHA POR EXTENSO. «do PIB» é a
+           unidade `% do PIB`, transcrita do campo `unit` da linha: uma manchete é
+           uma frase e não uma ficha, e a unidade escrita por extenso é o que faz
+           o algarismo dizer alguma coisa.
+
+           A FRASE ENCURTOU, E A REGRA NÃO (item 8.15, decisão do lugar de
+           direção, 08.09.2026). O diretor, 07.09 à noite, com o sítio no ar: a
+           manchete «with all that bold text takes quite a lot of the first page
+           … when we see it on the phone». A decisão manda que ela caiba em TRÊS
+           linhas a 390 px, nas duas edições e nos dois motores, e dá dois
+           caminhos por esta ordem: descer um degrau da escala de tipos, e, se
+           isso não bastar, encurtar a frase sem mudar a regra (uma frase só,
+           algarismos selados, sem adjetivo, dois algarismos no máximo).
+
+           O PRIMEIRO CAMINHO BASTA, E A FRASE NÃO MUDA. Medido com a régua já
+           corrigida (a A1 contava topos de rectângulo e contava a mais; a razão
+           está em `tests/inicio/porta.mjs`), a 390 px, nos dois motores:
+
+             corpo        `/`   `/en`
+             28 px         3      4
+             26 px         3      3
+             24 px         3      3
+
+           Um degrau da escala de tipos a 390 px, de 28 para 26, põe a manchete
+           inglesa dentro do teto de três linhas, e a portuguesa já lá estava. A
+           frase fica como a direção a escreveu, com a unidade de cada uma das
+           duas medidas por extenso, e o que muda é o corpo por largura, que o
+           próprio item separa da identidade fechada («a identidade fechada é dos
+           tipos e da marca, não dos corpos por largura»). O degrau está em
+           `src/styles/inicio.css`, no `clamp` de `.cabeca-h1`.
+
+           A SEGUNDA SAÍDA FICA MEDIDA E POR USAR. Encurtar a frase («A dívida
+           pública é 89,7 % do PIB e o desemprego é 6 %.») daria duas linhas em
+           português e três em inglês ao corpo de 28 px, e custaria a unidade da
+           segunda medida por extenso e o nome dela no vocabulário fechado. O item
+           manda tentar o tamanho primeiro, e o tamanho chegou. */
+        manchetePais: {
+          abre: 'A dívida pública é ',
+          meio: ' do PIB e a taxa de desemprego é ',
+          fecha: ' da população ativa.',
+        },
         /* AS CADEIAS DOS DOIS BLOCOS DE CONCELHO SAÍRAM (Emenda 19a, 26.08.2026).
            Eram `municipioSufixo`, `municipioPalavra`, `tituloEvora`,
            `tituloVazioA`, `tituloVazioB`, `ledeVazioA` e `ledeVazioB`: o rótulo,
@@ -503,7 +732,11 @@ export const STRINGS = {
          * é o ano, e esse é o `reference_date` das linhas, marcado como em toda
          * a casa. Os nomes vêm de `figuras.mjs` e mais de lado nenhum. */
         ledePais: {
-          abre: 'Fora do limiar: ',
+          /* «DA COMISSÃO» ENTRA NA ABERTURA (F1.10, item 8.5, 08.09.2026): a
+             lede nomeia as medidas do painel do Procedimento que passaram o seu
+             limiar, e o limiar delas é o desse painel. «Fora do limiar:» sozinho
+             era exactamente a palavra sem dono que o item veio tirar. */
+          abre: 'Fora do limiar da Comissão: ',
           separador: ', ',
           ultimo: ' e ',
           ano: ', em ',
@@ -567,6 +800,27 @@ export const STRINGS = {
            numeração de secções e de instrumentos, e o total é a chave da prova
            `faixa_cartoes`, que o portão de HTML reconta das duas listas. */
         de: ' de ',
+        /* O CONTADOR DIZ O CONJUNTO (decisão 23 da releitura do leitor de
+           primeira vez, 09.09.2026). O leitor de primeira vez leu «1 de 5» na
+           primeira página e «3 de 10» na página do domínio para o MESMO cartão
+           da dívida, e escreveu o que lhe faltou: «a reader can see that the
+           contexts differ, but neither count states what was excluded». Cada
+           faixa passa a dizer de que conjunto os seus cartões são, e o contador
+           leva-o consigo.
+
+           O NOME DO CONJUNTO NÃO TRAZ ALGARISMO NENHUM. «das cinco medidas de
+           cabeça» seria um número escrito à mão numa frase, e o número já está
+           ao lado, medido, no próprio contador: o que a frase acrescenta é O QUE
+           são os cinco.
+
+           VAI NO TEXTO OCULTO DO CONTADOR, e não numa linha nova por cima da
+           faixa: o item 8.11 tira a prosa do primeiro ecrã, e o que aqui se
+           acrescenta não custa um píxel. Quem lê a página com um leitor de ecrã
+           ou em texto ouve «1 de 5 das medidas de cabeça dos domínios». */
+        conjuntoCabeca: 'das medidas de cabeça dos domínios',
+        conjuntoDominio: 'das medidas deste domínio',
+        conjuntoConcelho: 'das medidas deste concelho',
+        conjuntoUniao: 'das medidas dos dois quadros da União Europeia',
       },
 
       /* AS TRÊS CADEIAS DO TELEMÓVEL FICAM SEM SUPERFÍCIE (bloco A, itens A2 e
@@ -588,7 +842,7 @@ export const STRINGS = {
         rotulo: 'As páginas',
         abrir: 'a página inteira',
         concelhos: ' concelhos',
-        estudosA: ' trabalhos · ',
+        estudosA: ' estudos · ',
         estudosB: ' edições',
       },
 
@@ -604,9 +858,9 @@ export const STRINGS = {
            nomes por baixo do mapa (I81, 27.08.2026). As outras duas já existiam
            porque têm moldura; esta não tem, e a lista passou a ser por parcela. */
         continente: 'Continente',
-        readoutHint: 'Passe o cursor sobre um ponto para ler o município.',
+        readoutHint: 'Passe o cursor sobre um ponto para ler o concelho.',
         tecladoHint:
-          'Teclado: Tab até ao mapa, setas para percorrer os municípios vizinhos, Home para voltar a Évora.',
+          'Teclado: Tab até ao mapa, setas para percorrer os concelhos vizinhos, Home para voltar a Évora.',
         /* A INSTRUÇÃO DE TECLADO SAIU DO RÓTULO (commit 4-0, 21.08.2026).
            Dizia «Mapa de pontos dos municípios de Portugal. Use as setas para
            percorrer os municípios.» — e as setas só percorrem alguma coisa onde
@@ -616,7 +870,7 @@ export const STRINGS = {
            rótulo passa a nomear o que o desenho é; a instrução continua escrita,
            uma vez só, em `tecladoHint`, que vive dentro de `#mapa-descricao` e
            só se constrói na postura inteira. */
-        svgLabel: 'Mapa de pontos dos municípios de Portugal.',
+        svgLabel: 'Mapa de pontos dos concelhos de Portugal.',
         /* O NOME DO MAPA DA PRIMEIRA PÁGINA, QUE MUDOU DE DESENHO (Emenda 20).
            O mapa de pontos fica onde a Emenda 20d o deixa, no cartão localizador
            da página do concelho, e continua com o `svgLabel` acima. O da
@@ -754,6 +1008,34 @@ export const STRINGS = {
     },
 
     /**
+     * ---------------------------------------------------------------------
+     * PORTUGAL NA UNIÃO EUROPEIA (bloco F1.10, item 8.16, 08.09.2026)
+     * ---------------------------------------------------------------------
+     * A página dos dois quadros da União. Os 21 cartões viviam na primeira
+     * página desde 12.08.2026; a decisão do lugar de direção que o diretor
+     * aceitou a 07.09 à noite («I accept your recommendations») dá-lhes página
+     * própria e devolve a faixa da primeira página às medidas de cabeça dos
+     * domínios vivos.
+     *
+     * O `h1` É O NOME DA PÁGINA E MAIS NADA. Não diz o que a casa faz nem
+     * porque escolheu estes quadros: o que cada quadro é diz-se na definição de
+     * uma linha de cada painel (item 8.4), com a origem citada.
+     */
+    uniaoEuropeia: {
+      metaTitle: 'Portugal na União Europeia · O Estado do País',
+      metaDescription:
+      /* A CAUDA SAIU A 14.09.2026 (achado 6 da leitura cruzada do inventário):
+         «cada uma com a sua linha» é a casa a dizer o que guarda, e não o que a
+         página mostra. O que fica diz o que a página tem. */
+        'Os dois quadros da União Europeia que medem Portugal: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu.',
+      h1: 'Portugal na União Europeia',
+      /* A PORTA DA FAIXA DA PRIMEIRA PÁGINA para esta página. É o nome da página
+         de chegada com a seta, que é a forma da casa para uma porta («O
+         livro-razão →» na lista social, «Estudos» na fila dos estudos). */
+      porta: 'Portugal na União Europeia',
+    },
+
+    /**
      * ------------------------------------------------------------------
      * O VOCABULÁRIO DE ESTADO E O DE COBERTURA (v3, etapa 2a)
      * ------------------------------------------------------------------
@@ -778,8 +1060,81 @@ export const STRINGS = {
      * `medir-defeitos.mjs` conte quantas cadeias distintas existem por estado.
      */
     estado: {
-      foraDoLimiar: 'fora do limiar',
-      dentroDoLimiar: 'dentro do limiar',
+      /* ------------------------------------------------------------------
+         «LIMIAR» NUNCA SOZINHO (F1.10, item 8.5, 08.09.2026)
+         ------------------------------------------------------------------
+         O diretor, 07.09 à noite: a palavra «limiar» «doesn't really reflect
+         exactly what they mean». A decisão (2) da emenda à §1.101: a palavra
+         fica, porque é a que a Comissão e o INE usam, e nunca aparece sozinha.
+
+         AS DUAS PALAVRAS PASSAM A SER TRÊS PARES, um por FIXADOR do limiar, e
+         não um par para tudo. «dentro do limiar» servia, com a mesma cadeia, os
+         dois quadros da União E o índice de dívida de uma câmara, cujo limiar é
+         o limite que a lei portuguesa fixa: escrever «limiar da Comissão» em 616
+         páginas de concelho seria dar à Comissão um número que não é dela. Quem
+         escolhe o par é `fixadorDoLimiar()`, sobre o campo `limiarFixadoPor` da
+         declaração da medida, e uma medida com limiar e sem fixador fecha a
+         construção.
+
+         `porRegistar` SAIU A 08.09.2026, na segunda passagem do item. Era o par
+         das duas medidas do domínio cujo limiar está publicado e cujo autor não
+         estava registado aqui («dentro do limiar publicado»); leram-se os
+         documentos que as duas linhas citam, e os dois dizem quem fixou o
+         limiar. A razão de cada um está na sua entrada em `src/data/dominios.mjs`
+         e no cabeçalho de `FIXADORES_DO_LIMIAR`, em `src/data/figuras.mjs`.
+
+         A FRASE DA LEITURA VIVE DENTRO DO PAR, e não à parte: é a segunda metade
+         do item 8.5 (o cartão diz de que lado do limiar o valor está e de quem
+         ele é; a leitura diz numa frase o que ele é e quem o fixou), e um par sem
+         frase não a rende. O `lei` não tem: a página do concelho já diz a sua,
+         uma vez, com o artigo e a conta que ele manda fazer, e o §0 do brief
+         manda uma coisa num lugar só.
+
+         NENHUMA DAS FRASES LEVA UM ALGARISMO. O número de um diploma, de um
+         limiar ou de uma data seria um algarismo sem marca numa página do
+         leitor, e a régua dos algarismos fechava a construção. */
+      comissao: {
+        fora: 'fora do limiar da Comissão',
+        dentro: 'dentro do limiar da Comissão',
+        /* O rótulo da LINHA do limiar, dentro de uma leitura: era «limiar» e
+           passa a dizer de quem ele é, pela mesma razão e no mesmo gesto. A
+           linha lê-se «limiar da Comissão 60% · acima». */
+        rotulo: 'limiar da Comissão',
+        /* As palavras são as do motivo `limiar-do-quadro` de
+           `ledger/allowlist.yml`, com «revisto» a dizer o que o registo diz, que
+           não é «fixado pela Comissão». */
+        frase:
+          'O limiar é o valor de referência do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, fixado no regulamento que criou o Procedimento e revisto pela Comissão Europeia.',
+      },
+      lei: {
+        fora: 'fora do limite legal',
+        dentro: 'dentro do limite legal',
+        rotulo: 'limite legal',
+      },
+      /* O limite de défice do saldo das administrações públicas. A frase é a da
+         página Statistics Explained do Eurostat que a `note` da linha nomeia:
+         «Under the terms of the EU's Stability and Growth Pact (SGP), Member
+         States pledged to keep their deficits and debt below certain limits: a
+         Member State's government deficit may not exceed 3% of its gross
+         domestic product (GDP)». */
+      pacto: {
+        fora: 'fora do limiar do Pacto de Estabilidade e Crescimento',
+        dentro: 'dentro do limiar do Pacto de Estabilidade e Crescimento',
+        rotulo: 'limiar do Pacto de Estabilidade e Crescimento',
+        frase:
+          'O limiar é o limite de défice que os Estados-Membros se comprometeram a respeitar no Pacto de Estabilidade e Crescimento.',
+      },
+      /* A taxa de crescimento da despesa líquida. A frase é a da p. 6 do parecer
+         do Conselho das Finanças Públicas que a linha cita: «comprometeu-se com
+         uma determinada trajetória de crescimento da despesa líquida, que depois
+         foi aprovada pelo Conselho da UE». */
+      conselho: {
+        fora: 'fora do limiar recomendado pelo Conselho da UE',
+        dentro: 'dentro do limiar recomendado pelo Conselho da UE',
+        rotulo: 'limiar recomendado pelo Conselho da UE',
+        frase:
+          'O limiar é a taxa de crescimento da trajetória da despesa líquida com que Portugal se comprometeu e que o Conselho da União Europeia aprovou.',
+      },
       semLimiar: 'sem limiar',
       porConfirmar: 'por confirmar',
     },
@@ -797,14 +1152,14 @@ export const STRINGS = {
 
     /** O índice dos concelhos. */
     municipios: {
-      metaTitle: 'Municípios · O Estado do País',
+      metaTitle: 'Concelhos · O Estado do País',
       /* A DESCRIÇÃO APARA-SE, e vai assinalada em vez de decidida (Emenda 15).
          Dizia, a seguir: «Os que já têm página do observatório levam a ela; os
          outros dizem que ainda não têm.» — a cobertura do próprio sítio, que é
          uma das cinco classes que a emenda nomeia. Nenhuma palavra mudou: a
          primeira frase é a que já lá estava. */
       metaDescription: 'Todos os concelhos de Portugal, pela Carta Administrativa Oficial.',
-      eyebrow: 'Municípios',
+      eyebrow: 'Concelhos',
       h1: 'Os concelhos de Portugal',
       lede: 'Todos os concelhos, pela Carta Administrativa Oficial de Portugal.',
       /* A CONTAGEM DA COBERTURA, com as duas chaves da prova (IDENTIDADE.md §10).
@@ -934,6 +1289,22 @@ export const STRINGS = {
       /* A unidade da peça da distância. O índice traz a sua de
          `home.instr1.glanceUnidade`, que é a mesma do instrumento. */
       distanciaUnidade: 'pontos do índice',
+      /* A PORTA DA COMPARAÇÃO (bloco F1.10, §1 do brief). A régua inteira das
+         nove regiões vive em `/regioes` e em mais lado nenhum; a página de uma
+         região mostra o valor dela e abre esta porta, em vez de copiar a régua e
+         a lista. É uma porta e não uma frase: o texto dela vive dentro do `<a>`,
+         que a régua da voz deixa cair dos dois lados. */
+      compararPorta: 'Comparar as regiões',
+      /* «PROVISÓRIO» EXPLICADO UMA VEZ (F1.10, §7.6, 09.09.2026). A palavra
+         aparece ao lado de onze valores do livro-razão e em lado nenhum se dizia
+         de quem ela é. É da FONTE: `source_flag` é a bandeira tal como a fonte a
+         escreve, e a nota de cada linha (`source_flag_note`) é o que a fonte
+         escreveu sobre aquele valor, transcrito. A frase diz de quem a marca é, e
+         mais nada: a primeira redação acrescentava onde ler a nota da fonte, e o
+         portão da voz apanhou-a («a página», o marcador da casa a falar de si).
+         Vive no índice das regiões, que é onde a régua vive e onde a palavra se vê
+         mais vezes. */
+      provisorioNota: '«Provisório» é a marca que a própria fonte põe ao valor.',
       voltarIndice: 'As regiões de Portugal',
       voltarPais: 'Portugal',
     },
@@ -964,29 +1335,74 @@ export const STRINGS = {
          superfície pública desde a etapa 3, e o que ela diz é o que a página
          tem, não quem a publica. */
       metaDescription:
-        'As áreas da vida do país com medidas publicadas, e as que ainda não têm medidas conferidas.',
+        /* A SEGUNDA METADE SAIU (bloco F1.10, §7.8 e §9.1, 08.09.2026). A frase
+           dizia que o índice mostra também as áreas que ainda não têm medidas
+           conferidas, e desde que essas dezasseis passaram ao Método isso deixou
+           de ser verdade sobre o que está por baixo dela. Uma frase que descreve
+           a página tem de ser verdadeira sobre a página. */
+        /* E A PRIMEIRA METADE MUDOU A 14.09.2026 (achado 6 da leitura cruzada
+           do inventário): «com medidas publicadas» é a casa a dizer o que
+           publicou, e o §9.1 tira a cobertura da voz do leitor. A descrição diz
+           agora o que a página tem, que é o que uma descrição é. */
+        'Os domínios da carta dos conteúdos, cada um com a contagem das suas medidas e a porta para a sua página.',
       eyebrow: 'Domínios',
       h1: 'Por domínio',
+      /* «no ar» SAI DA VOZ DO LEITOR (bloco F1.10, §9.1 do brief, 08.09.2026,
+         pela leitura cruzada do inventário das frases). É a casa a falar da sua
+         própria cobertura, e a Emenda 15 tira isso das páginas do leitor: o
+         índice diz os nomes, a contagem das medidas de cada domínio vivo e a
+         porta, e quem tem porta está no ar por ter porta. A cadeia fica
+         declarada e passa a `retirada` no inventário. */
+      /* O RÓTULO DA CONTAGEM DAS MEDIDAS de um domínio no índice (§9.1). É a
+         numeração da lista que a página de chegada rende, e não uma medição de
+         Portugal: a marca é `data-nonledger="numeracao"`, a mesma da posição de
+         um cartão na faixa. */
+      medidasRotulo: 'medidas',
       estadoNoAr: 'no ar',
       estadoDentroDe: 'as medidas estão em',
       estadoSem: 'ainda sem medidas conferidas',
-      vagaPrimeira: 'primeira vaga',
-      vagaSegunda: 'segunda vaga',
-      vagaTerceira: 'terceira vaga',
+      /* «VAGA» SAI DA VOZ DO LEITOR (§7.8 do brief, e decisão 21 da releitura
+         do leitor de primeira vez, 09.09.2026). O §7.8 mandou-a sair do índice
+         dos domínios e ela foi para o Método com as dezasseis linhas; sair do
+         índice não é sair da voz. O que estas três palavras dizem é a ORDEM em
+         que os domínios entram, e é isso que elas passam a dizer, sem uma
+         palavra que o leitor tenha de aprender. */
+      vagaPrimeira: 'primeiro',
+      vagaSegunda: 'segundo',
+      vagaTerceira: 'terceiro',
       metaCauda: 'domínio · O Estado do País',
       metaDescricaoA: 'As medidas de ',
-      metaDescricaoB: ', com a fonte, o período e a data de cada uma.',
+      /* «AS DATAS» E NÃO «A DATA» (§9.9 do brief do F1.10, 08.09.2026): a gémea
+         inglesa dizia «the dates of each one» e esta dizia «a data», e a página
+         imprime TRÊS datas por medida (o período, a data de leitura e a da
+         última conferência). As duas passam a dizer o mesmo, e o que elas dizem
+         é o que a página tem. */
+      metaDescricaoB: ', com a fonte, o período e as datas de cada uma.',
       tipo: 'domínio da carta dos conteúdos',
       fronteiraK: 'A fronteira deste domínio',
       ausenciaK: 'Sem número público',
       ausenciaResposta: 'Não há número público para isto.',
       ausenciaProcurado: 'procurado em',
-      /* Os três rótulos das três datas. São nomes de campos do livro-razão, e a
-         página da linha já lhes chama assim: «período», «lido», «conferido». */
-      dataPeriodo: 'período',
-      dataLido: 'lido',
-      dataConferido: 'conferido',
-      fonteK: 'fonte',
+      /* OS TRÊS RÓTULOS DAS TRÊS DATAS, POR PALAVRAS (F1.10, §7.3, 08.09.2026).
+         Eram os nomes dos campos do livro-razão, ditos como o livro-razão lhes
+         chama: «período», «lido», «conferido». O leitor de 04.09 no navegador
+         leu-os como três palavras soltas ao pé de três datas e não soube o que
+         cada uma dizia; o brief manda-os passar a rótulos por palavras, e dá
+         dois deles à letra («lido na fonte a», «verificado a»).
+
+         O TERCEIRO ACOMPANHA-OS, e não é uma invenção: «período de referência» é
+         o nome que o próprio campo tem no livro-razão (`reference_date`), dito
+         por extenso como os outros dois. Os três continuam a ser o nome do
+         campo, e não uma frase sobre o que a casa faz. */
+      dataPeriodo: 'período de referência',
+      dataLido: 'lido na fonte a',
+      dataConferido: 'verificado a',
+      /* RETIRADA A 09.09.2026 (terceira repetição da releitura do leitor de
+         primeira vez): a linha da fonte da página do domínio dizia «fonte
+         Eurostat · <título>», e a palavra «fonte» é do SELO (§7.2). A linha
+         passa a dizer «Publicado por», que é `prov.fonte`, e o título do
+         documento fica na página da linha. A chave sai porque não tinha outro
+         leitor. */
       mapaSemValor: 'sem valor publicado',
       mapaMenosDe: 'menos de ',
       mapaA: ' a ',
@@ -997,8 +1413,12 @@ export const STRINGS = {
          do mapa cuja paleta é `limiar` (o índice de dívida contra o teto
          legal), que fica ao lado dele com a mesma forma visual. Sem a frase, a
          diferença entre as duas paletas só se lê pela cor. */
-      mapaEscalaNota: 'As classes são marcas redondas da escala, e não um limite oficial.',
-      porConcelhoPorta: 'Os valores concelho a concelho →',
+      /* «Os valores concelho a concelho →» SAIU (F1.10, §7.7, 09.09.2026): era a
+         porta ao lado da tabela do mapa, com quase o mesmo nome do comando que a
+         abre, e o §7.7 funde as duas numa só. O que ela dava (as outras linhas de
+         cada concelho) passa a estar onde o leitor já está a olhar: cada nome da
+         tabela é a porta da página do seu concelho. A cadeia sai porque uma
+         declarada que nada rende é uma porta aberta esquecida. */
       /* A ALTERNATIVA EM TEXTO DO MAPA, DENTRO DA PÁGINA (segunda passagem,
          03.09.2026, Major 7): uma tabela com os valores de cada concelho,
          recolhida na própria página e não só uma porta para outro sítio. SEM
@@ -1087,13 +1507,13 @@ export const STRINGS = {
       metaCauda: 'área de governo · O Estado do País',
       /* O tipo da coisa, e não o que fizemos com ela (Emenda 18b). */
       tipo: 'área do XXV Governo Constitucional',
-      trabalhosK: 'Os trabalhos',
+      trabalhosK: 'Os estudos',
       conjuntosK: 'Os estudos de dados',
       medidasK: 'As medidas',
       /* A porta do texto de um trabalho, quando ele existe nesta edição. */
       textoDoTrabalho: 'O texto',
       voltarIndice: 'As áreas de governo',
-      voltarLivro: 'O livro-razão',
+      voltarLivro: 'Números e fontes',
       voltarConcelhos: 'Os concelhos',
     },
 
@@ -1113,10 +1533,19 @@ export const STRINGS = {
          Cada número publicado tem uma linha no livro-razão, com fonte, documento
          e data de acesso.»: a segunda frase é o método do próprio sítio, que é a
          classe de frase que a emenda tira das páginas do leitor, e o `<head>` é
-         superfície pública como o corpo. A nova diz os painéis, os indicadores,
-         os limiares e as fontes, que é o que a página mostra. */
+         superfície pública como o corpo.
+
+         REESCRITA A 09.09.2026 (Major 6 da leitura a frio). A que aqui estava
+         dizia «Portugal nos painéis europeus: os indicadores, os limiares e as
+         fontes», e ficou a descrever uma página que já não existe: o item 8.16
+         levou os 21 cartões dos dois quadros para `/uniao-europeia`, e a
+         primeira página passou a ter as medidas de cabeça dos domínios. Além de
+         estar errada, era o único sítio do sítio onde a palavra «indicadores»
+         sobrevivia à L3, porque a régua começava no `<body>`. A nova diz o que
+         a página mostra hoje, com o vocabulário fechado, e a L3 passa a ler
+         também o `<title>` e as descrições. */
       metaDescription:
-        'Portugal nos painéis europeus: os indicadores, os limiares e as fontes.',
+        'As medidas de cabeça de cada domínio, a busca e o mapa dos concelhos, e as portas para os estudos e para os números com as suas fontes.',
 
       numeros: {
         /* A linha do limiar de um cartão (IDENTIDADE.md §11). A palavra é
@@ -1167,6 +1596,16 @@ export const STRINGS = {
     },
 
     metodo: {
+      /* O QUE SE MEDE A SEGUIR (bloco F1.10, §7.8 e §9.1, 08.09.2026). As
+         dezasseis linhas «ainda sem medidas conferidas · vaga» saem do índice
+         dos domínios, que é uma página do leitor, e vêm para o Método, que é a
+         casa do método e onde a Emenda 15 deixa a casa falar de si. O índice
+         passa a listar os domínios com página; o calendário do que falta é
+         aqui. */
+      proximosK: 'O que se mede a seguir',
+      proximosLede:
+        'Os domínios da carta dos conteúdos que ainda não têm medidas conferidas, pela ordem por que entram.',
+
       metaTitle: 'Método · O Estado do País',
       metaDescription:
         'As dez regras deste observatório, o mecanismo que impõe cada uma e os números que o provam nesta construção.',
@@ -1197,7 +1636,8 @@ export const STRINGS = {
         capNoMapa: 'linhas no mapa do sítio',
         capItens: 'itens',
         capRegistadas: 'registadas',
-        capReconferido: 'reconferido a',
+        /* A MESMA PALAVRA DA TERCEIRA DATA (F1.10, §7.3): ver `livro.linha.reconferidoK`. */
+      capReconferido: 'verificado a',
         capEmAtraso: 'em atraso desde',
         capPublicadas: 'publicadas',
         capSemContagem: 'não é contado',
@@ -1279,14 +1719,14 @@ export const STRINGS = {
      * portas de saída.
      */
     livroConcelhos: {
-      metaTitle: 'Concelhos · Livro-razão · O Estado do País',
+      metaTitle: 'Concelhos · Números e fontes · O Estado do País',
       /* A DESCRIÇÃO NOMEIA A PÁGINA (27.08.2026), como a do índice do
          livro-razão. Dizia «As linhas do livro-razão com as medidas que as
          fontes centrais publicam para cada concelho, uma linha cada.», que
          explica a cobertura da página em vez de a nomear, e o `<head>` é
          superfície pública como o corpo. Sai também no Open Graph, que é a
          mesma cadeia. */
-      metaDescription: 'Livro-razão dos concelhos · O Estado do País',
+      metaDescription: 'Os números e as fontes dos concelhos · O Estado do País',
       /* A LEDE SAIU (decisão do diretor, 27.08.2026). Dizia «Uma linha por
          medida e por concelho, com o valor tal como a fonte o publicou, a
          unidade, quem o produziu e a data em que foi lido.»: é o que uma linha
@@ -1300,12 +1740,12 @@ export const STRINGS = {
       contaLinhas: 'linhas',
       contaConcelhos: 'concelhos',
       naoDeclaradasK: 'Linhas sem concelho declarado',
-      voltarLivro: 'O livro-razão inteiro',
+      voltarLivro: 'Números e fontes, o índice inteiro',
       indiceLink: 'O índice dos concelhos',
       /* A PÁGINA DE UM CONCELHO NO LIVRO-RAZÃO (diretor, 26.08.2026). O título é
          o nome do concelho; estas são as palavras à volta. A cauda do `<head>`
          não pode ter algarismos, e não tem. */
-      metaCaudaDoConcelho: 'as linhas do livro-razão · O Estado do País',
+      metaCaudaDoConcelho: 'os números e as fontes · O Estado do País',
       metaDescricaoDoConcelhoA: 'As linhas do livro-razão com as medidas que as fontes centrais publicam para o concelho de ',
       metaDescricaoDoConcelhoB: '.',
       /* A LEDE DA PÁGINA DE UM CONCELHO SAIU, PELA MESMA DECISÃO. Dizia «Uma
@@ -1322,11 +1762,11 @@ export const STRINGS = {
          calculam: é a referência do estudo, e não a medida de um concelho. */
       referenciaK: 'A referência do estudo',
       paginaDoConcelho: 'A página do concelho',
-      voltarAoIndice: 'Os concelhos no livro-razão',
+      voltarAoIndice: 'Os concelhos em Números e fontes',
     },
 
     livro: {
-      metaTitle: 'Livro-razão · O Estado do País',
+      metaTitle: 'Números e fontes · O Estado do País',
       /* A DESCRIÇÃO DO `<head>` NOMEIA A PÁGINA (decisão do diretor,
          27.08.2026). Dizia «Todas as afirmações publicadas neste sítio, uma
          linha cada: o valor tal como foi publicado, a fonte, o documento, o
@@ -1334,9 +1774,13 @@ export const STRINGS = {
          superfície pública, e o `<head>` é superfície pública como o corpo. O
          gabarito pede uma descrição, e a decisão diz de que feitio ela é: o nome
          da página, e nunca o método. */
-      metaDescription: 'Livro-razão · O Estado do País',
-      eyebrow: 'Livro-razão',
-      h1: 'O livro-razão',
+      metaDescription: 'Números e fontes · O Estado do País',
+      eyebrow: 'Números e fontes',
+      /* O TÍTULO DIZ O QUE A PÁGINA É (item 8.8): todos os números do sítio,
+         cada um com a sua fonte. A lede saiu a 27.08 por decisão do diretor e
+         não volta: o que a página é diz-se no título, e o que uma linha guarda
+         diz-se na linha, à vista de quem a abre. */
+      h1: 'Números e fontes',
       /* A LEDE SAIU, COM A MESMA DECISÃO. Dizia «Uma linha por número publicado.
          Cada linha guarda o valor tal como a fonte o publicou, quem o produziu,
          o documento e a edição, o endereço, a data em que o lemos e um excerto
@@ -1414,13 +1858,19 @@ export const STRINGS = {
       /* O rótulo do ficheiro da régua da convergência, cuja porta desceu da
          primeira página na relocação R13. Nomeia o que a coisa é, e mais nada. */
       convergenciaK: 'A régua da convergência, em ficheiro',
-      conjuntoK: 'O livro-razão como conjunto de dados',
+      /* O NOME VISÍVEL É O DA PÁGINA (decisão 20 da releitura do leitor de
+         primeira vez, 09.09.2026, e item 8.8). O índice chama-se «Números e
+         fontes» desde 08.09, e este cabeçalho da barra lateral era o último
+         sítio da própria página onde ele voltava a chamar-se «livro-razão». O
+         termo técnico fica onde o 8.8 o deixou: no Método, no JSON e nos
+         endereços, e no nome de uma LINHA. */
+      conjuntoK: 'Os números e as fontes como conjunto de dados',
       conjuntoEstado: 'Conjunto de dados preparado; a licença aguarda decisão da direção.',
       /* NOMEIA O QUE SE DESCARREGA, E NÃO O QUE ESTÁ COMPLETO (27.08.2026).
          Dizia «Todas as linhas, com todos os campos publicados.», que é uma
          afirmação de cobertura da casa sobre o seu próprio ficheiro. */
       conjuntoV: 'Todas as linhas.',
-      conjuntoDescarregar: 'Descarregar o livro-razão',
+      conjuntoDescarregar: 'Descarregar tudo',
       conjuntoLicenca: 'Publicado sob',
       conjuntoAtribuicao: 'Atribuição',
       conjuntoAmbito:
@@ -1463,7 +1913,7 @@ export const STRINGS = {
         completaK: 'Estado da proveniência',
         completaV: 'Completa.',
         marcadorLink: 'O que quer dizer este marcador',
-        voltar: 'Voltar ao livro-razão',
+        voltar: 'Voltar a Números e fontes',
         /* A porta para os dados desta linha. Só existe com licença decidida:
            sem ela não há bloco nenhum, porque uma ausência não se desenha
            (IDENTIDADE.md §6). */
@@ -1486,9 +1936,23 @@ export const STRINGS = {
         publicadoPor: 'Publicado por',
         publicadoEm: 'em',
         publicadoPagina: 'p.',
-        publicadoLido: 'lido a',
+        /* ESTAS DUAS FICAM CURTAS, E É A MESMA REGRA DO §7.3 lida com cuidado: o
+         rótulo diz-se por palavras onde ele está SOZINHO antes de uma data. Aqui
+         não está: a frase da atribuição já nomeou o organismo («Publicado por X,
+         <documento>, <edição>, lido a <data>») e a do atraso já disse «publicado
+         pela fonte». Escrever «lido na fonte a» dentro delas era dizer a mesma
+         coisa duas vezes na mesma frase. */
+      /* RETIRADA A 09.09.2026 (decisão 17 da releitura do leitor de primeira
+         vez): a data de leitura era dita três vezes na mesma página, e fica
+         uma, no bloco das verificações («Lido na fonte a»). */
         verificacoesK: 'Verificações',
-        reconferidoK: 'Reconferido a',
+        /* «VERIFICADO A» E NÃO «RECONFERIDO A» (F1.10, §7.3, 09.09.2026). É a
+         data da última entrada de `verifications` desta linha, o mesmo campo que
+         a terceira data de uma medida rende com esta mesma palavra desde a quarta
+         sessão deste bloco. Duas palavras para o mesmo campo eram dois nomes para
+         a mesma coisa, e o prefixo «re-» dizia uma diferença que o campo não tem:
+         a linha guarda todas as verificações, e esta é a última. */
+      reconferidoK: 'Verificado a',
         releituraPorta: 'A regra da releitura',
         /* A TERCEIRA DATA (01.09.2026). O recibo mostrava duas: o período, no
            bloco de cima, e as leituras da casa. Esta é a do publicador. */
@@ -1584,17 +2048,17 @@ export const STRINGS = {
        */
       mancheteA: ' tem ',
       mancheteB: ' pessoas.',
-      eyebrow: 'Município',
+      eyebrow: 'Concelho',
       /* O título e a descrição do <head> não podem ter algarismos: o portão só
          tolera aí as cadeias que calcula do registo. Compõem-se com o nome do
          concelho, que não tem nenhum. */
-      metaCauda: 'o município, medido · O Estado do País',
+      metaCauda: 'o concelho, medido · O Estado do País',
       /* A DESCRIÇÃO DO `<head>` PERDE A SEGUNDA FRASE (commit 4-0). Dizia ainda
          «Cada valor tem linha no livro-razão, com fonte, documento e data de
          acesso.» — o método do sítio escrito na descrição, que é superfície
          pública e é medida pela mesma régua desde o commit 3-0 (decisão 1 do
          diretor). O que fica nomeia o que a página traz. */
-      metaDescricaoA: 'O que as fontes publicam sobre o município de ',
+      metaDescricaoA: 'O que as fontes publicam sobre o concelho de ',
       metaDescricaoB:
         ': população, poder de compra, emprego, empresas, dívida e execução orçamental.',
       /* A ABERTURA E AS CONTAGENS POR EXTENSO SAÍRAM (direção, 21.08.2026,
@@ -1652,9 +2116,14 @@ export const STRINGS = {
 
       fundoK: 'Fundo',
 
-      contasK: 'A última prestação de contas do município',
+      /* A CÂMARA E NÃO O CONCELHO, e é a exceção escrita ao vocabulário fechado
+         (bloco F1.10): «concelho» é o território e não publica nada; quem
+         orçamenta, cobra, paga e presta contas é a câmara, que é a palavra que a
+         página do domínio já usa («Quanto deve a minha câmara?»). Escrever «o
+         concelho publica» seria trocar uma palavra certa por uma falsa. */
+      contasK: 'A última prestação de contas da câmara',
       contasV:
-        'O que o município orçamentou, o que cobrou, o que pagou, e o que dizia dever no fim do ano. São números do próprio município sobre si mesmo: a prestação de contas é dele.',
+        'O que a câmara orçamentou, o que cobrou, o que pagou, e o que dizia dever no fim do ano. São números da própria câmara sobre si mesma: a prestação de contas é dela.',
       contasOrcamento: 'Orçamento corrigido',
       contasReceita: 'Receita cobrada',
       contasDespesa: 'Despesa paga',
@@ -1670,9 +2139,9 @@ export const STRINGS = {
       contasPrazoMedioUnidade: 'dias',
       contasDivergenciaK: 'A diferença entre as duas contas da mesma dívida',
       contasDivergenciaV:
-        'A Direção-Geral das Autarquias Locais e o município publicam a dívida do mesmo ano com uma diferença. A diferença é pequena.',
+        'A Direção-Geral das Autarquias Locais e a câmara publicam a dívida do mesmo ano com uma diferença. A diferença é pequena.',
       contasDivergenciaRegulador: 'A Direção-Geral publica',
-      contasDivergenciaMunicipio: 'O município publica',
+      contasDivergenciaMunicipio: 'A câmara publica',
       contasDivergenciaDiferenca: 'Diferença',
 
       tempoIndice: 'índice',
@@ -1758,18 +2227,79 @@ export const STRINGS = {
          15. */
       tempoAtribuicaoK: 'Quem responde pelo quê',
 
-      provenienciaK: 'Proveniência',
-      estudosK: 'Os trabalhos sobre este concelho',
+      /* RETIRADA A 09.09.2026 (§7.10 e decisão 22): era o título por cima de
+         três portas de navegação na página do concelho, e prometia uma prova
+         onde havia um menu. As portas ficaram; o título saiu. */
+      estudosK: 'Os estudos sobre este concelho',
+      /* A PORTA PARA O ÍNDICE DOS ESTUDOS, FILTRADO POR ESTE CONCELHO (F1.10,
+         §1 e 8.10, 09.09.2026). A página do concelho lista os TÍTULOS; a
+         apresentação inteira de um estudo é `/estudos` e a página dele, e esta é
+         a porta que lá leva com o filtro do concelho no endereço. O texto vive
+         todo dentro de um `<a>`, e por isso não entra no inventário das frases:
+         é um destino, e não uma frase da casa.
+
+         SEM O «n» QUE O BRIEF ESBOÇA, e a razão é a regra da casa: um número que
+         se vê no sítio resolve numa linha do livro-razão ou numa chave da prova
+         que o portão reconta, e a contagem dos estudos de um concelho não é nem
+         uma coisa nem outra. Escrevê-la aqui era um algarismo sem origem; a
+         lista logo acima é a contagem, e conta-se nela.
+
+         E NÃO DIZ «ARQUIVO», que era a palavra da primeira redação desta cadeia,
+         escrita numa sessão anterior deste mesmo bloco e nunca rendida: o §7.4
+         fixa «um só nome para os estudos, "estudo", nunca "trabalho" nem
+         "arquivo" como nome de coisa». As duas cadeias estavam declaradas ao lado
+         uma da outra, com o mesmo nome, e o `typecheck` apanhou-o. */
+      estudosPorta: 'Ver estes estudos no índice',
       estudoLink: 'Abrir a leitura',
 
-      voltarMapa: 'Voltar ao mapa dos municípios',
+      voltarMapa: 'Voltar ao mapa dos concelhos',
+      /* O QUE «N.d.» QUER DIZER, DITO POR PALAVRAS (decisão 18 da releitura do
+         leitor de primeira vez, 09.09.2026).
+
+         O leitor de primeira vez encontrou duas respostas incompatíveis para o
+         prazo médio de pagamento de Évora: o cartão diz «N.d. · dezembro de
+         2025» e a leitura debaixo dele diz «137 dias em 2025». As duas estão
+         certas e são de LINHAS DIFERENTES: o cartão lê a lista da Direção-Geral
+         das Autarquias Locais a 31 de dezembro de 2025, que imprime «N.d.» para
+         este concelho, e a leitura lê a prestação de contas do próprio
+         município no ano de 2025, que publica 137 dias. A página dizia as duas
+         coisas e não dizia que eram duas coisas.
+
+         A DECISÃO É A SEGUNDA DAS DUAS QUE O LUGAR DE DIREÇÃO DEU: o cartão diz
+         por palavras o que «N.d.» significa, e a leitura diz o período que tem
+         (já dizia: «137 dias em 2025», com a sua marca de período). A frase é a
+         razão que `VALORES_NAO_NUMERICOS` declara em `src/lib/ledger.mjs`, dita
+         na voz da página e nas duas edições; não é uma segunda definição da
+         marca, é a mesma escrita onde o leitor a encontra.
+
+         RENDE-SE ONDE A MARCA SE RENDE, e em mais lado nenhum: hoje são as
+         nove páginas de concelho cuja célula a Direção-Geral não determina. */
+      marcaSemFigura:
+        'A Direção-Geral das Autarquias Locais não publicou figura para este concelho nesta edição da lista, e o valor ao lado é a marca que ela imprime.',
     },
 
     estudos: {
       metaTitle: 'Estudos · O Estado do País',
-      metaDescription: 'O arquivo de estudos publicados, com as suas edições em português e em inglês.',
+      /* «PUBLICADOS» SAIU A 14.09.2026 (achado 6 da leitura cruzada do
+         inventário): era a casa a dizer o que publicou. A descrição diz o que a
+         página tem. */
+      metaDescription: 'Os estudos, com as suas edições em português e em inglês.',
       h1: 'Estudos',
       lede: 'Cada estudo publicado, com as suas edições e datas. Os que estão alojados noutro sítio levam a ligação para lá.',
+      /* O ARQUIVO FILTRADO POR CONCELHO (bloco F1.10). `/estudos?concelho=<slug>`
+         é a porta que a página do concelho abre. A frase chega escondida do
+         servidor e é o guião que a acende, que é a regra da casa para o código
+         que corre no leitor: sem guião o leitor cai no arquivo inteiro, que é a
+         resposta completa à mesma pergunta, e nada nesta página precisa de
+         guião para se ler. */
+      filtroConcelhoA: 'Mostram-se só os estudos sobre ',
+      filtroConcelhoB: '.',
+      /* O QUE O FILTRO FAZ SEM GUIÃO (Major 7, 09.09.2026). A porta filtrada da
+         página do concelho traz `?concelho=<slug>`, e é o guião que esconde as
+         linhas que não casam. Sem ele a página mostra todos os estudos, e passa
+         a dizê-lo. */
+      filtroSemGuiao: 'Sem guião, a lista mostra todos os estudos.',
+      filtroTudo: 'Ver todos os estudos',
       /* A CAIXA DAS DATAS POR CONFIRMAR PASSA A CONTAR (bloco F1.4b,
          04.09.2026). Dizia «Datas de publicação por confirmar.» em cima de uma
          página onde TODAS as linhas mostravam uma data, e por isso era uma frase
@@ -1809,7 +2339,21 @@ export const STRINGS = {
          faz ninguém ler melhor um número, e o rótulo é a ausência dita em duas
          palavras, que é o que a Emenda 15 manda. */
       stubEdicoes: 'Edições',
-      stubVoltar: 'Voltar ao arquivo',
+      /* A FRASE QUE DIZ O QUE CADA PORTA ABRE (item 8.6, 09.09.2026). O diretor
+         viu a página de «Onde está a água» e disse que a apresentação dos
+         estudos «is a bit ambiguous»: as mesmas duas portas rendiam-se duas
+         vezes, com duas formas e sem nada que dissesse o que cada uma abre.
+         Passa a haver uma forma só, e esta frase por cima dela. É navegação:
+         nomeia dois destinos e diz o que se encontra em cada um. */
+      /* É UMA LEGENDA E NÃO UMA PROMESSA. A primeira redação dizia «Cada edição
+         leva as suas portas: …», e oito das dezasseis edições não têm texto
+         composto: a frase nomeava, nessas páginas, uma porta que não estava lá.
+         A forma que fica diz o que cada NOME de porta abre, como a legenda de um
+         mapa diz o que cada marca é, e por isso é verdadeira em todas as doze
+         páginas sem mudar de palavras. */
+      edicoesFrase:
+        'O que cada porta abre: «Ler no sítio», o texto composto aqui; «Ler o documento», a edição tal como foi publicada.',
+      stubVoltar: 'Voltar aos estudos',
       stubEstado: 'Rascunho · sem conteúdo',
       stubForaK: 'Publicado fora deste sítio',
       /* A primeira metade saiu: contava a fase do projecto. A segunda FICA, e
@@ -1838,13 +2382,20 @@ export const STRINGS = {
          o gabarito passou a ler esta chave, que já existia e não se rendia. */
       leituraBreveK: 'Leitura breve',
       municipioK: 'O concelho de que trata',
-      municipioLink: 'A página do município',
+      municipioLink: 'A página do concelho',
 
-      documentoK: 'O documento original',
-      /* `documentoV` saiu: dizia com que cuidado o documento foi alojado. A
-         porta («Ler o documento →») é o que o leitor precisa, e a faixa que o
-         documento leva no topo vê-se quando ele abre. */
-      documentoVazio: 'O documento deste estudo ainda não foi alojado aqui.',
+      /* AS DUAS CHAVES DO BLOCO «O documento original» SAÍRAM (bloco F1.10,
+         §7.4 e item 8.6, 09.09.2026). O bloco era a primeira das duas
+         apresentações das mesmas portas na página de um estudo, e o item 8.6
+         manda que as edições se apresentem «de uma só forma em todos os
+         estudos»: a forma que fica é a lista das edições
+         (`EdicoesDoEstudo.astro`), e as portas vivem lá dentro, uma linha por
+         edição. `documentoK` («O documento original») era o título desse bloco
+         e do painel lateral da página de leitura, que passa a levar a mesma
+         lista com o mesmo título dela; `documentoVazio` dizia por palavras uma
+         ausência que a decisão 9 do diretor de 24.08.2026 manda dizer pela
+         porta que falta, e nunca se rendeu (as dezasseis edições têm todas
+         documento alojado). */
       documentoLink: 'Ler o documento',
       /* O RÓTULO DA EDIÇÃO ARQUIVADA SAIU (G6, decisão do diretor de
          26.08.2026). Dizia «A edição de registo, tal como foi publicada.», por
@@ -1919,13 +2470,23 @@ export const STRINGS = {
       textoContaAlgarismos: 'algarismos',
       textoContaComLinha: 'com linha do livro-razão',
 
-      edicaoIrma: 'Ver esta edição',
-      atualizadoLabel: 'Última atualização',
+      /* TRÊS CHAVES SAÍRAM DA FILA DE UMA EDIÇÃO (bloco F1.10, §7.4 e item
+         8.6, 09.09.2026).
+         `edicaoIrma` («Ver esta edição») levava à página do estudo na outra
+         língua, que é o que o comando de língua do cabeçalho faz em todas as
+         páginas: um segundo caminho para o mesmo destino, que é o que a §0
+         deste bloco proíbe.
+         `atualizadoLabel` («Última atualização») rendia-se em todas as linhas e
+         em onze das dezasseis não tinha data nenhuma para mostrar: era um campo
+         com um marcador de ausência ao lado da data que o leitor veio ver.
+         `descarregarK` e `descarregarVazio` são o «Descarregar · Sem ficheiros»
+         que o §7.4 manda não imprimir quando está vazio: não há, neste sítio,
+         nenhuma fonte de ficheiros de um estudo, e por isso o bloco estava
+         vazio nas doze páginas e nas duas edições. Sai o bloco, e não a frase
+         que o enchia. */
       temaK: 'Tema',
       temaNenhum: 'Sem tema atribuído',
       descricoesK: 'Descrições',
-      descarregarK: 'Descarregar',
-      descarregarVazio: 'Sem ficheiros.',
     },
 
     erro404: {
@@ -1951,18 +2512,40 @@ export const STRINGS = {
 
     /* A frase de identidade da Emenda 18, na edição inglesa, nas palavras do
        diretor: «An observatory of Portugal.» */
-    identidade: 'An observatory of Portugal.',
+    identidade:
+      'An observatory of Portugal: every number with its source, read by territory, by domain and in studies.',
+
+
+    /* As frases de hierarquia, na edição inglesa. Ver a razão, e a medição que
+       tirou a segunda oração da frase do território, na edição portuguesa. */
+    hierarquia: {
+      territorio: 'The country is read at four levels: country, NUTS II region, district or island, municipality.',
+      dominio: 'A domain is a subject from the content charter; a government area is a ministry.',
+      area: 'A government area is a ministry; a domain is a subject from the content charter.',
+    },
+
+    /* Os títulos das duas secções de medidas. Ver a razão na edição portuguesa. */
+    secoes: {
+      medidas: 'The measures',
+      leitura: 'The reading of each measure',
+      /* Ver a razão na edição portuguesa (item 8.11). */
+      comoLer: 'How to read',
+    },
 
     nav: {
       inicio: 'Home',
       municipios: 'Municipalities',
       dominios: 'Domains',
-      areas: 'Areas',
+      /* Ver a razão na edição portuguesa. */
+      areas: 'Government areas',
       /* As três famílias no menu. Ver a razão na edição portuguesa. */
       regioes: 'Regions',
       distritos: 'Districts',
+      /* Ver a razão na edição portuguesa. */
+      uniaoEuropeia: 'Portugal in the European Union',
       estudos: 'Studies',
-      livro: 'Ledger',
+      /* Ver a razão na edição portuguesa. */
+      livro: 'Numbers and sources',
       agenda: 'Agenda',
       metodo: 'Method',
       correcoes: 'Corrections',
@@ -1970,6 +2553,8 @@ export const STRINGS = {
       saltar: 'Skip to content',
       menu: 'Menu',
       rotuloPrincipal: 'Main navigation',
+      /* Ver a razão na edição portuguesa. */
+      rotuloCaminho: 'Where you are',
       rotuloRodape: 'Footer navigation',
       rotuloIdioma: 'Language',
       rotuloErro: 'Where to continue',
@@ -1998,9 +2583,10 @@ export const STRINGS = {
     prov: {
       calculado: 'calculated',
       selo: 'source',
+      seloDaCasa: 'row',
       provisorio: 'provisional',
-      lido: 'Read on',
-      fonte: 'Source',
+      lido: 'Read at the source on',
+      fonte: 'Published by',
       documento: 'Document',
       edicao: 'Edition',
       localizacao: 'Where in the document',
@@ -2041,7 +2627,7 @@ export const STRINGS = {
     },
 
     rodape: {
-      estudos: 'works in the archive',
+      estudos: 'published studies',
       edicoes: 'editions',
     },
 
@@ -2121,8 +2707,9 @@ export const STRINGS = {
       janelaEntre: 'between',
       janelaE: 'and',
       origemDaDataK: 'Where it is written',
-      acedidoK: 'Read on',
-      afectaK: 'Rows this moves',
+      acedidoK: 'Read at the source on',
+      /* Ver a razão na edição portuguesa, e o registo em `CHAVES-EN.md`. */
+      afectaK: 'Rows this concerns',
       notaK: 'Note',
       voltarALista: 'Back to the agenda',
     },
@@ -2135,6 +2722,9 @@ export const STRINGS = {
       h1: 'What this marker means',
       lede:
         'It is the only uncertainty marker on this site. It appears where a field has not been confirmed against the source. The marker is kept in Portuguese, as in the original; it reads “to verify”.',
+      /* O par inglês da definição (CHAVES-EN.md). O marcador fica em português
+         nas duas edições, e a frase que o define é da língua da página. */
+      definicao: 'a field not confirmed against the source, not a doubt about what is published',
       queEK: 'What it is',
       queEV:
         'A declared absence. It is not a default, not an estimate, and not a doubt about the published figure: it is the site saying that this field (the source, the document, the address, the read date or the excerpt) has not yet been checked against the origin.',
@@ -2166,6 +2756,9 @@ export const STRINGS = {
       municipio: 'Municipality',
       pesquisaRotulo: 'Type the name of the municipality',
       pesquisaSemResultado: 'No municipality by that name.',
+      /* Ver a razão na edição portuguesa. */
+      pesquisaSemGuiao:
+        'Without scripting, the button leads to the full list of municipalities, grouped by district and island.',
       /* O comando da busca. Ver a razão na edição portuguesa. */
       pesquisaSubmeter: 'Search',
     },
@@ -2185,10 +2778,20 @@ export const STRINGS = {
         tituloPaisUm: ' threshold of the Macroeconomic Imbalance Procedure and meets ',
         tituloPaisMuitos: ' thresholds of the Macroeconomic Imbalance Procedure and meets ',
         tituloPaisFim: '.',
+        /** Ver a razão na edição portuguesa, e o registo em `CHAVES-EN.md`. A
+            frase inglesa é a que fica em quatro linhas a 390 px ao corpo de 28 e
+            em três ao corpo de 26, que é o degrau do item 8.15: é ela que decide
+            o degrau, porque a portuguesa já cabia em três. */
+        manchetePais: {
+          abre: 'Government debt is ',
+          meio: ' of GDP and the unemployment rate is ',
+          fecha: ' of the labour force.',
+        },
         /* As cadeias dos dois blocos de concelho saíram (Emenda 19a). Ver a
            razão na edição portuguesa, e o registo em `CHAVES-EN.md`. */
         ledePais: {
-          abre: 'Outside the threshold: ',
+          /** Ver a razão na edição portuguesa. */
+          abre: 'Outside the Commission threshold: ',
           separador: ', ',
           ultimo: ' and ',
           ano: ', in ',
@@ -2210,6 +2813,11 @@ export const STRINGS = {
         rotulo: 'The measures, one per card',
         /* «1 of 21». Ver a razão na edição portuguesa. */
         de: ' of ',
+        /* Ver a razão na edição portuguesa. */
+        conjuntoCabeca: 'of the head measures of the domains',
+        conjuntoDominio: 'of the measures of this domain',
+        conjuntoConcelho: 'of the measures of this municipality',
+        conjuntoUniao: 'of the measures of the two European Union scoreboards',
       },
 
       movel: {
@@ -2222,7 +2830,7 @@ export const STRINGS = {
         rotulo: 'The pages',
         abrir: 'the whole page',
         concelhos: ' municipalities',
-        estudosA: ' works · ',
+        estudosA: ' studies · ',
         estudosB: ' editions',
       },
 
@@ -2276,9 +2884,44 @@ export const STRINGS = {
       },
     },
 
+    /** Ver a razão na edição portuguesa. */
+    uniaoEuropeia: {
+      metaTitle: 'Portugal in the European Union · O Estado do País',
+      metaDescription:
+        /* Ver a razão na gémea portuguesa (achado 6, 14.09.2026). */
+        'The two European Union frameworks that measure Portugal: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard.',
+      h1: 'Portugal in the European Union',
+      porta: 'Portugal in the European Union',
+    },
+
     estado: {
-      foraDoLimiar: 'outside the threshold',
-      dentroDoLimiar: 'within the threshold',
+      /** Ver a razão na edição portuguesa, e o registo em `CHAVES-EN.md`. */
+      comissao: {
+        fora: 'outside the Commission threshold',
+        dentro: 'within the Commission threshold',
+        rotulo: 'Commission threshold',
+        frase:
+          'The threshold is the reference value of the Macroeconomic Imbalance Procedure scoreboard, set in the regulation that created the Procedure and revised by the European Commission.',
+      },
+      lei: {
+        fora: 'outside the legal limit',
+        dentro: 'within the legal limit',
+        rotulo: 'legal limit',
+      },
+      pacto: {
+        fora: 'outside the Stability and Growth Pact threshold',
+        dentro: 'within the Stability and Growth Pact threshold',
+        rotulo: 'Stability and Growth Pact threshold',
+        frase:
+          'The threshold is the deficit limit that Member States pledged to keep to under the Stability and Growth Pact.',
+      },
+      conselho: {
+        fora: 'outside the threshold recommended by the Council of the EU',
+        dentro: 'within the threshold recommended by the Council of the EU',
+        rotulo: 'threshold recommended by the Council of the EU',
+        frase:
+          'The threshold is the growth rate of the net expenditure path that Portugal committed to and that the Council of the European Union approved.',
+      },
       semLimiar: 'no threshold',
       porConfirmar: 'unconfirmed',
     },
@@ -2349,6 +2992,9 @@ export const STRINGS = {
       indiceK: 'GDP per capita index',
       distanciaK: 'Distance from the EU-27 average',
       distanciaUnidade: 'index points',
+      /* Ver a razão na edição portuguesa. */
+      compararPorta: 'Compare the regions',
+      provisorioNota: '“Provisional” is the flag the source itself puts on the value.',
       voltarIndice: 'The regions of Portugal',
       voltarPais: 'Portugal',
     },
@@ -2356,15 +3002,20 @@ export const STRINGS = {
     dominios: {
       metaTitle: 'Domains · O Estado do País',
       metaDescription:
-        'The areas of the country’s life with published measures, and the ones with no verified measures yet.',
+        /* Ver a razão na edição portuguesa. */
+        /* Ver a razão na gémea portuguesa (achado 6, 14.09.2026). */
+        'The domains of the content charter, each with the count of its measures and the door to its page.',
       eyebrow: 'Domains',
       h1: 'By domain',
+      /* Ver a razão na edição portuguesa. */
+      medidasRotulo: 'measures',
       estadoNoAr: 'live',
       estadoDentroDe: 'the measures are in',
       estadoSem: 'no verified measures yet',
-      vagaPrimeira: 'first wave',
-      vagaSegunda: 'second wave',
-      vagaTerceira: 'third wave',
+      /* Ver a razão na edição portuguesa. */
+      vagaPrimeira: 'first',
+      vagaSegunda: 'second',
+      vagaTerceira: 'third',
       metaCauda: 'domain · O Estado do País',
       metaDescricaoA: 'The measures of ',
       metaDescricaoB: ', with the source, the period and the dates of each one.',
@@ -2373,16 +3024,15 @@ export const STRINGS = {
       ausenciaK: 'No published figure',
       ausenciaResposta: 'There is no published figure for this.',
       ausenciaProcurado: 'looked for in',
-      dataPeriodo: 'period',
-      dataLido: 'read',
-      dataConferido: 'checked',
-      fonteK: 'source',
+      /* Ver a razão na edição portuguesa, e o registo em `CHAVES-EN.md`. */
+      dataPeriodo: 'reference period',
+      dataLido: 'read at the source on',
+      dataConferido: 'verified on',
+      /* Ver a razão na edição portuguesa. */
       mapaSemValor: 'no published value',
       mapaMenosDe: 'less than ',
       mapaA: ' to ',
       mapaOuMais: ' or more',
-      mapaEscalaNota: 'The classes are round scale marks, not an official limit.',
-      porConcelhoPorta: 'The values municipality by municipality →',
       mapaTabelaAbrir: 'The values, municipality by municipality',
       mapaTabelaConcelho: 'Municipality',
       mapaTabelaValor: 'Value',
@@ -2406,14 +3056,14 @@ export const STRINGS = {
       medidasK: 'The measures',
       textoDoTrabalho: 'The text',
       voltarIndice: 'The areas of government',
-      voltarLivro: 'The ledger',
+      voltarLivro: 'Numbers and sources',
       voltarConcelhos: 'The municipalities',
     },
 
     home: {
       metaTitle: 'O Estado do País · Portugal, measured',
       metaDescription:
-        'Portugal on the European scoreboards: the indicators, the thresholds and the sources.',
+        'The head measures of each domain, the search and the map of the municipalities, and the doors to the studies and to the numbers with their sources.',
 
       numeros: {
         limiar: 'threshold',
@@ -2453,6 +3103,11 @@ export const STRINGS = {
     },
 
     metodo: {
+      /* Ver a razão na edição portuguesa. */
+      proximosK: 'What gets measured next',
+      proximosLede:
+        'The domains of the content charter that do not have verified measures yet, in the order they enter.',
+
       metaTitle: 'Method · O Estado do País',
       metaDescription:
         'The ten rules of this observatory, the mechanism that enforces each one and the figures that prove it in this build.',
@@ -2482,7 +3137,7 @@ export const STRINGS = {
         capNoMapa: 'rows in the sitemap',
         capItens: 'items',
         capRegistadas: 'on record',
-        capReconferido: 're-checked on',
+        capReconferido: 'verified on',
         capEmAtraso: 'overdue since',
         capPublicadas: 'published',
         capSemContagem: 'not counted',
@@ -2546,31 +3201,31 @@ export const STRINGS = {
     },
 
     livroConcelhos: {
-      metaTitle: 'Municipalities · Ledger · O Estado do País',
+      metaTitle: 'Municipalities · Numbers and sources · O Estado do País',
       /* A gémea da portuguesa (27.08.2026). */
-      metaDescription: 'Municipalities ledger · O Estado do País',
+      metaDescription: 'The numbers and sources of the municipalities · O Estado do País',
       /* A gémea da lede portuguesa, e sai com ela (27.08.2026). */
       contaLinhas: 'rows',
       contaConcelhos: 'municipalities',
       naoDeclaradasK: 'Rows with no municipality declared',
-      voltarLivro: 'The whole ledger',
+      voltarLivro: 'Numbers and sources, the whole index',
       indiceLink: 'The index of municipalities',
-      metaCaudaDoConcelho: 'the ledger rows · O Estado do País',
+      metaCaudaDoConcelho: 'the numbers and sources · O Estado do País',
       metaDescricaoDoConcelhoA: 'The ledger rows with the measures central sources publish for the municipality of ',
       metaDescricaoDoConcelhoB: '.',
       /* A gémea da lede da página de um concelho, e sai com ela (27.08.2026). */
       vazioDoConcelho: 'No rows yet.',
       referenciaK: 'The study’s reference',
       paginaDoConcelho: 'The municipality page',
-      voltarAoIndice: 'The municipalities in the ledger',
+      voltarAoIndice: 'The municipalities in Numbers and sources',
     },
 
     livro: {
-      metaTitle: 'Ledger · O Estado do País',
+      metaTitle: 'Numbers and sources · O Estado do País',
       /* A descrição nomeia a página, e é a gémea da portuguesa (27.08.2026). */
-      metaDescription: 'Ledger · O Estado do País',
-      eyebrow: 'Ledger',
-      h1: 'The ledger',
+      metaDescription: 'Numbers and sources · O Estado do País',
+      eyebrow: 'Numbers and sources',
+      h1: 'Numbers and sources',
       /* A lede e os dois títulos de grupo saíram com as gémeas portuguesas
          (27.08.2026): `lede1`, `contaDe`, `grupoCompletasFrase` e
          `grupoPorConfirmarFrase`. */
@@ -2594,10 +3249,11 @@ export const STRINGS = {
       metodoLink: 'How this is made',
 
       convergenciaK: 'The convergence rule, as a file',
-      conjuntoK: 'The ledger as a dataset',
+      /* Ver a razão na edição portuguesa. */
+      conjuntoK: 'The numbers and sources as a dataset',
       conjuntoEstado: 'Dataset prepared; the licence awaits the director’s decision.',
       conjuntoV: 'Every row.',
-      conjuntoDescarregar: 'Download the ledger',
+      conjuntoDescarregar: 'Download everything',
       conjuntoLicenca: 'Published under',
       conjuntoAtribuicao: 'Attribution',
       conjuntoAmbito:
@@ -2631,7 +3287,7 @@ export const STRINGS = {
         completaK: 'Provenance',
         completaV: 'Complete.',
         marcadorLink: 'What this marker means',
-        voltar: 'Back to the ledger',
+        voltar: 'Back to Numbers and sources',
         dadosK: 'Access to the data',
         linhaEmJson: 'This row as JSON',
         conjuntoK: 'The whole dataset',
@@ -2641,9 +3297,9 @@ export const STRINGS = {
         publicadoPor: 'Published by',
         publicadoEm: 'in',
         publicadoPagina: 'p.',
-        publicadoLido: 'read on',
+        /* Ver a razão na edição portuguesa. */
         verificacoesK: 'Verifications',
-        reconferidoK: 'Re-checked on',
+        reconferidoK: 'Verified on',
         releituraPorta: 'The re-reading rule',
         publicadoEmK: 'Published by the source on',
         semRespostaK: 'No answer since',
@@ -2753,18 +3409,29 @@ export const STRINGS = {
         'There is no counterfactual for any index, and an executive’s share of them is not separable.',
       tempoAtribuicaoK: 'Who answers for what',
 
-      provenienciaK: 'Provenance',
-      estudosK: 'The works about this municipality',
+      /* Ver a razão na edição portuguesa. */
+      estudosK: 'The studies about this municipality',
+      estudosPorta: 'See these studies in the index',
       estudoLink: 'Open the reading',
 
       voltarMapa: 'Back to the map of municipalities',
+      /* Ver a razão na edição portuguesa. */
+      marcaSemFigura:
+        'The Directorate-General for Local Authorities published no figure for this municipality in this edition of the list, and the value beside it is the mark the list prints.',
     },
 
     estudos: {
       metaTitle: 'Studies · O Estado do País',
-      metaDescription: 'The archive of published studies, with their Portuguese and English editions.',
+      /* Ver a razão na gémea portuguesa (achado 6, 14.09.2026). */
+      metaDescription: 'The studies, with their Portuguese and English editions.',
       h1: 'Studies',
       lede: 'Every published study, with its editions and dates. Those hosted elsewhere carry the link to it.',
+      /* Ver a razão na edição portuguesa. */
+      filtroConcelhoA: 'Showing only the studies about ',
+      filtroConcelhoB: '.',
+      /* Ver a razão na edição portuguesa. */
+      filtroSemGuiao: 'Without scripting, the list shows every study.',
+      filtroTudo: 'See all the studies',
       avisoA: 'Publication dates not yet confirmed for',
       avisoUma: 'edition.',
       avisoVarias: 'editions.',
@@ -2772,7 +3439,10 @@ export const STRINGS = {
       lingua: 'Language',
       verEstudo: 'Study page',
       stubEdicoes: 'Editions',
-      stubVoltar: 'Back to the archive',
+      /* Ver a razão na edição portuguesa (item 8.6). */
+      edicoesFrase:
+        'What each door opens: “Read on the site”, the text composed here; “Read the document”, the edition as it was published.',
+      stubVoltar: 'Back to the studies',
       stubEstado: 'Draft · no content',
       stubForaK: 'Published outside this site',
       stubForaV: 'The link leaves this domain.',
@@ -2785,8 +3455,7 @@ export const STRINGS = {
       municipioK: 'The municipality it is about',
       municipioLink: 'The municipality page',
 
-      documentoK: 'The original document',
-      documentoVazio: 'The document for this study has not been hosted here yet.',
+      /* Ver a razão na edição portuguesa (§7.4 e item 8.6). */
       documentoLink: 'Read the document',
       documentoFaixa: 'Study document · edition of record',
       documentoVoltar: 'Back to the study page',
@@ -2812,13 +3481,10 @@ export const STRINGS = {
       textoContaAlgarismos: 'figures',
       textoContaComLinha: 'with a ledger row',
 
-      edicaoIrma: 'See this edition',
-      atualizadoLabel: 'Last updated',
+      /* Ver a razão na edição portuguesa (§7.4 e item 8.6). */
       temaK: 'Subject',
       temaNenhum: 'No subject assigned',
       descricoesK: 'Descriptions',
-      descarregarK: 'Downloads',
-      descarregarVazio: 'No files.',
     },
 
     erro404: {

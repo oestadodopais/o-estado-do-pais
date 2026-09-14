@@ -27,7 +27,12 @@ import CampoDaLinha from './CampoDaLinha.astro';
 import { nomeDaMedida, eNomeDeMedida } from '../lib/nomes.mjs';
 import { linguaDoRotuloDaFonte, linguaDoTituloDoDocumento } from '../i18n/lingua-dos-titulos.mjs';
 
-const { linha: c, lang = 'pt' } = Astro.props;
+/* A CLASSE É DE QUEM CHAMA, E A MARCA É DESTE COMPONENTE (F1.10, §2.5).
+   O índice do livro-razão e as páginas de área querem `livro-item-nome`, que é a
+   composição de uma linha de lista; o caminho do cabeçalho quer a sua. O que não
+   muda com quem chama é a marca (`data-nome` mais `data-de-linha`, ou a marca de
+   campo do livro-razão), porque é ela que faz do nome uma coisa conferida. */
+const { linha: c, lang = 'pt', class: klass = 'livro-item-nome' } = Astro.props;
 const nome = nomeDaMedida(c, lang);
 if (nome !== null && !eNomeDeMedida(nome)) {
   throw new Error(`nomes: nome mal formado para a linha "${c.id}"`);
@@ -47,7 +52,7 @@ const lingua =
 {
   nome !== null &&
     (nome.campo === null ? (
-      <span class="livro-item-nome" data-nome={nome.fonte} data-de-linha={c.id}>
+      <span class={klass} data-nome={nome.fonte} data-de-linha={c.id}>
         {nome.texto}
       </span>
     ) : (
@@ -56,7 +61,7 @@ const lingua =
         campo={nome.campo}
         valor={nome.texto}
         lang={lang}
-        class="livro-item-nome"
+        class={klass}
         lingua={lingua}
       />
     ))

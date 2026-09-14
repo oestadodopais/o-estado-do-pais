@@ -1,0 +1,92 @@
+---
+/**
+ * ---------------------------------------------------------------------------
+ * O CAMINHO DESTA PÁGINA, NO CABEÇALHO (F1.10, §2.5; medida L5)
+ * ---------------------------------------------------------------------------
+ * «Início › Concelhos › Évora». Texto com ligações, e mais nada: os degraus são
+ * portas, o último é esta página e não se liga a si própria.
+ *
+ * PORQUE É UM `<nav>` COM `<a>` E `<span>`, e não uma lista. Duas razões, e as
+ * duas são medidas:
+ *
+ *   · o inventário das frases mede blocos (`p, li, dd, dt, h1..h4, figcaption,
+ *     summary, blockquote, td, th, caption` e `span.eyebrow`). Um `<li>` por
+ *     degrau punha três blocos por classificar em 7 213 páginas, e o que eles
+ *     diriam era o nome da família e o nome da página, que já estão declarados
+ *     onde se rendem;
+ *   · uma `<ul>` dá à fila um papel de lista que quem ouve a página anuncia
+ *     («lista de três itens») antes de chegar ao que ela diz. É a mesma razão
+ *     por que os grupos do menu são `<span>` e não listas (`site.css`, o menu em
+ *     dois pesos).
+ *
+ * A REGIÃO TEM NOME PRÓPRIO. `nav.rotuloCaminho` («Onde está» / «Where you are»)
+ * só se ouve: quem vê o caminho sabe o que ele é pela forma; quem o ouve tinha,
+ * sem o nome, mais uma fila de portas sem dizer qual.
+ *
+ * O SEPARADOR NÃO SE OUVE. `›` é um sinal de composição e não uma palavra; vai
+ * `aria-hidden`, como qualquer marca de pontuação que um gabarito insere entre
+ * duas coisas.
+ *
+ * A FOLHA VEM COM A SUA MARCA, e a escolha está escrita em `src/lib/caminho.mjs`:
+ * o nome de um lugar leva `data-lugar`, o de uma área ou de um domínio leva
+ * `data-nome` (que a régua confere contra o ficheiro de dados), o título de um
+ * estudo passa por `TituloDeTrabalho` (que é o que lhe põe a língua na edição
+ * inglesa) e o nome de uma linha do livro-razão pela escada de `nomes.mjs`, que
+ * não rende nada onde não tem texto.
+ */
+import TituloDeTrabalho from './TituloDeTrabalho.astro';
+import NomeDaMedida from './NomeDaMedida.astro';
+import { caminhoDaPagina } from '../lib/caminho.mjs';
+import { matchPath, normalizePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+
+const { lang = 'pt', path } = Astro.props;
+const s = t(lang);
+const aqui = normalizePath(path);
+const rota = matchPath(aqui);
+const caminho = rota ? caminhoDaPagina(rota.key, rota.params, lang) : null;
+const folha = caminho?.folha ?? null;
+---
+
+{
+  caminho && (
+    <nav class="caminho" aria-label={s.nav.rotuloCaminho}>
+      {caminho.degraus.map((d) => (
+        <>
+          <a href={d.href}>{d.rotulo}</a>
+          <span class="caminho-sep" aria-hidden="true">
+            ›
+          </span>
+        </>
+      ))}
+      {folha && folha.tipo === 'chave' && (
+        <span class="caminho-aqui" aria-current="page">
+          {folha.texto}
+        </span>
+      )}
+      {folha && folha.tipo === 'lugar' && (
+        <span class="caminho-aqui" aria-current="page" data-lugar>
+          {folha.texto}
+        </span>
+      )}
+      {folha && folha.tipo === 'nome' && (
+        <span class="caminho-aqui" aria-current="page" data-nome={folha.fonte}>
+          {folha.texto}
+        </span>
+      )}
+      {folha && folha.tipo === 'estudo' && (
+        <TituloDeTrabalho
+          class="caminho-aqui"
+          titulo={folha.texto}
+          lang={lang}
+          aria-current="page"
+        />
+      )}
+      {folha && folha.tipo === 'medida' && (
+        <span class="caminho-aqui" aria-current="page">
+          <NomeDaMedida linha={folha.linha} lang={lang} class="caminho-medida" />
+        </span>
+      )}
+    </nav>
+  )
+}

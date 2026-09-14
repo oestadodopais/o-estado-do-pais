@@ -45,7 +45,6 @@
 import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
-import Provenance from '../components/Provenance.astro';
 import Marcador from '../components/Marcador.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import HistoricoDaLinha from '../components/HistoricoDaLinha.astro';
@@ -70,6 +69,8 @@ import { atrasoDaLinha } from '../lib/frescura.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { studyTitle } from '../data/studies.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
+import Frase from '../components/Frase.astro';
+import { ressalvaDaLinha } from '../data/dominios.mjs';
 import {
   linguaDoTituloDoDocumento,
   linguaDoRotuloDaFonte,
@@ -109,6 +110,10 @@ const bandeira = notaDeBandeira(claim, lang);
    «Nenhum rótulo partidário atravessou». A frase falava de uma coisa que não
    estava na página. Volta com o campo, não com uma adivinha. */
 const atribuicao = atribuicaoDaLinha(claim);
+/* A RESSALVA DE ALCANCE DESTA LINHA, se ela tiver uma (F1.10, §9.2,
+   08.09.2026). Declarada na medida do domínio a que a linha pertence, e lida
+   aqui pelo identificador: a razão do lugar está ao pé de onde ela se rende. */
+const ressalvaDeAlcance = ressalvaDaLinha(id);
 
 /* O endereço só é ligação quando é mesmo um endereço. "[a verificar]" não é. */
 const url = typeof claim.source_url === 'string' && /^https?:\/\//.test(claim.source_url)
@@ -491,7 +496,9 @@ const ficha = [
     valor: claim.name_source ?? null,
     lingua: linguaDoTituloDoDocumento(claim.document?.title ?? null, lang),
   },
-  { k: s.prov.lido, campo: 'access_date', valor: claim.access_date },
+  /* A DATA DE LEITURA NÃO ENTRA NA FICHA (09.09.2026, decisão 17): vive uma vez
+     só, no bloco das verificações. O período de referência fica, porque é uma
+     propriedade do número e não uma data da casa. */
   { k: s.prov.referencia, campo: 'reference_date', valor: claim.reference_date },
 ].filter((l) => l.valor !== null && l.valor !== undefined);
 
@@ -568,9 +575,12 @@ const atribuicaoPecas = [
   paginaDoPdf
     ? { k: s.livro.linha.publicadoPagina, campo: 'source_url.page', valor: paginaDoPdf }
     : null,
-  presente(claim.access_date)
-    ? { k: s.livro.linha.publicadoLido, campo: 'access_date', valor: claim.access_date, apos: true }
-    : null,
+  /* A DATA DE LEITURA SAIU DESTA FRASE a 09.09.2026 (releitura do leitor de
+     primeira vez, decisão 17): a página dizia a mesma data três vezes, «lido a»
+     aqui, «Lido na fonte a» no bloco das verificações e outra vez na ficha do
+     aparelho. Fica UMA, e fica onde as datas contam a história: no bloco das
+     verificações, entre o que a fonte publicou e o que a casa releu. A frase de
+     atribuição diz quem publicou, onde e em que edição, que é o que ela é. */
 ].filter(Boolean);
 /* Sem organismo não há atribuição: a frase começaria por «Publicado em», que
    atribui a um documento sem dizer de quem ele é. */
@@ -640,13 +650,27 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
         lingua={unidade.lingua}
       />
     </h1>
-    {/* O selo ao lado do valor de cabeça, na sua própria página. §5.3 não abre
-        exceção de página: a porta é uma âncora para o bloco da prova, aqui
-        mesmo. O quadrado desenha o estado desta linha, como em qualquer outro
-        sítio onde o valor apareça. */}
-    <p class="linha-selo">
-      <Provenance id={id} lang={lang} ancora="#prova" />
-    </p>
+    {/* ------------------------------------------------------------------
+        O SELO DEBAIXO DO NÚMERO SAIU (F1.10, §7.2, 09.09.2026)
+        ------------------------------------------------------------------
+        Viveu aqui desde a v2, com a porta a apontar para `#prova` na própria
+        página: «estar já na página certa não dispensa a porta, dispensa a
+        viagem». O leitor de 04.09 mediu o preço dessa fidelidade: a página de
+        uma linha tinha DUAS coisas chamadas «fonte» — este selo, debaixo do
+        valor, e o campo `source` no recibo — e nenhuma delas dizia a mesma
+        coisa que a outra. O §7.2 decide: «o selo "FONTE" é só a porta para a
+        linha; a linha do publicador chama-se "publicado por"; na página da
+        linha, o selo debaixo do número, que liga a `#prova` na mesma página,
+        sai».
+
+        NADA SE PERDE, e é por isso que o selo podia sair daqui e não de outro
+        sítio qualquer: uma porta para a divisão onde já se está é a única que
+        não leva a lado nenhum. O estado da proveniência desta linha continua a
+        dizer-se, no recibo, com o marcador no campo que falta; o publicador
+        continua a ler-se, com o rótulo novo; e o portão já isentava as páginas
+        do livro-razão da exigência de um selo ao pé de cada valor, pela mesma
+        razão («a página de uma linha É a linha»).
+        ------------------------------------------------------------------ */}
     {/* O ESTADO DA FONTE AO PÉ DO SELO, quando ela não responde (bloco F0.11).
 
         O selo diz de onde veio o número e leva à prova; sozinho, ao lado de um
@@ -757,6 +781,32 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                 {peca.entreParenteses && ')'}
               </>
             ))}
+          </p>
+        )
+      }
+
+      {/* ------------------------------------- ii(b) · o alcance desta linha
+
+          A RESSALVA DE ALCANCE CHEGOU AQUI DA PÁGINA DO DOMÍNIO (bloco F1.10,
+          §9.2, 08.09.2026). O §9.2 manda a prosa de diligência da página do
+          domínio («a ressalva do decreto "não lido"», e a irmã dela, a meta que
+          é da União e não de Portugal) sair de lá e ir «para a página da linha
+          ou para o Método». Estas duas são de UMA LINHA cada, e por isso o
+          destino é esta página: o recibo daquela linha é o sítio onde o alcance
+          dela se lê, ao pé do valor e das datas, e não a página que lista as
+          medidas de um domínio.
+
+          AS PALAVRAS NÃO MUDAM, e é a instrução à letra: as duas levam o
+          marcador `[a verificar]`, que é dívida de proveniência e palavra
+          pendente do diretor. O que muda é o lugar.
+
+          FICA ANTES DA PROVA E DEPOIS DO VALOR, porque é isso que ela é: o
+          perímetro do que o número cobre. Quem chega aqui pelo selo de um cartão
+          lê o valor, o que ele mede e onde ele não chega, por esta ordem. */}
+      {
+        ressalvaDeAlcance && (
+          <p class="linha-nota linha-alcance">
+            <Frase partes={ressalvaDeAlcance[lang] ?? ressalvaDeAlcance.pt} lang={lang} />
           </p>
         )
       }
@@ -1293,9 +1343,31 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                         </span>{' '}
                       </>
                     )}
-                    <a class="ligacao-externa" href={v.path} rel="noopener noreferrer external">
-                      {s.livro.linha.verificacaoPorta} →
-                    </a>
+                    {/* A PORTA DA CONFERÊNCIA, SÓ QUANDO ELA LEVA A OUTRO SÍTIO
+                        (Blocking 3 da leitura a frio, 09.09.2026).
+
+                        Cada conferência trazia a sua porta para `v.path`, e em
+                        3 606 das 3 625 conferências do livro-razão `v.path` É o
+                        `source_url` da linha, que a página já dá como porta no
+                        bloco do endereço, por cima desta lista. Eram duas, três
+                        e quatro portas para o mesmo destino na mesma página, em
+                        5 022 pares, e a L1 do brief («nenhum ecrã com dois
+                        destinos iguais fora da mobília») contava-as todas: é o
+                        padrão maior das 6 580 páginas, e é este.
+
+                        A INFORMAÇÃO NÃO SE PERDE: o que a conferência diz é a
+                        data, quem a fez e o que deu, e isso fica; o endereço
+                        contra o qual ela foi feita é o da linha, e está uma vez
+                        na página, no seu lugar. Quando a conferência foi feita
+                        contra OUTRA coisa — uma cópia arquivada, outro caminho
+                        —, a porta fica, porque aí ela leva a um sítio que a
+                        página não tem em mais lado nenhum; e a linha ao lado já
+                        diz que cópia foi (`contraCopiaArquivadaK`). */}
+                    {v.path !== claim.source_url && (
+                      <a class="ligacao-externa" href={v.path} rel="noopener noreferrer external">
+                        {s.livro.linha.verificacaoPorta} →
+                      </a>
+                    )}
                   </dd>
                 </>
               ))

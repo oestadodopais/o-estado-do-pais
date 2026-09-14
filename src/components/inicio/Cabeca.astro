@@ -68,15 +68,16 @@
  * sítio que o usava, e um componente que ninguém rende é um desenho a dizer que
  * ainda vale.
  */
-import Frase from '../Frase.astro';
-import ValorDaProva from '../ValorDaProva.astro';
+import Manchete from '../Manchete.astro';
 
-const { s, lang, p, blocos, ambito, lede } = Astro.props;
+const { lang, blocos, ambito, manchete } = Astro.props;
 
-/* Uma ou muitas: a frase certa escolhe-se aqui, na construção, com a contagem
-   que o portão vai reconferir. Sem plural inventado no cliente. */
-const fora = p.painel_fora_do_limiar.valor;
-const tituloPais = fora === 1 ? s.inicio.cabeca.tituloPaisUm : s.inicio.cabeca.tituloPaisMuitos;
+if (!manchete) {
+  throw new Error(
+    '<Cabeca>: sem `manchete`. A manchete do país é composta na vista, dos pedaços ' +
+      'que ela declara, e chega aqui pronta: ver `MANCHETE_DO_PAIS` em `HomeView.astro`.',
+  );
+}
 ---
 
 <div class="cabeca-col">
@@ -100,39 +101,40 @@ const tituloPais = fora === 1 ? s.inicio.cabeca.tituloPaisUm : s.inicio.cabeca.t
                 de Évora»), e onde o nome do lugar não está na manchete pela
                 mesma ordem. A cadeia `inicio.cabeca.paisA` passa a `retirada`
                 no inventário da voz, com a razão. */}
-            <h1 class="cabeca-h1">
-              {s.inicio.cabeca.tituloPaisA}
-              <ValorDaProva
-                chave="painel_fora_do_limiar"
-                item={p.painel_fora_do_limiar}
-                lang={lang}
-              />
-              {tituloPais}
-              <ValorDaProva
-                chave="painel_dentro_do_limiar"
-                item={p.painel_dentro_do_limiar}
-                lang={lang}
-              />
-              {s.inicio.cabeca.tituloPaisFim}
-            </h1>
-            {/* A LEDE É CONSTRUÍDA (etapa 2m). Ver `ledeDoPainel()` em
-                `src/lib/inicio.mjs`: os nomes das peças fora do limiar, pela
-                ordem do painel, com as palavras de gramática da edição, e o ano
-                só quando as linhas partilham um.
+            {/* ------------------------------------------------------------
+                A MANCHETE DO PAÍS, DEPOIS DE OS 21 CARTÕES MUDAREM DE PÁGINA
+                (F1.10, decisão do lugar de direção, 08.09.2026)
+                ------------------------------------------------------------
+                Era «Portugal ultrapassa 4 limiares do Procedimento dos
+                Desequilíbrios Macroeconómicos e cumpre 9», com as duas contagens
+                do painel, e a lede que nomeava as medidas fora do limiar. Com o
+                item 8.16 os dois quadros da União passaram a ter página própria,
+                e uma manchete que fala de um quadro que mudou de página é a
+                primeira página a falar de outra.
 
-                O `<p>` VAI NUMA LINHA SÓ, e não é descuido de formatação: entre
-                dois pedaços de um gabarito, uma mudança de linha é um espaço no
-                HTML, e um espaço a mais antes de uma vírgula é uma frase mal
-                escrita. Os itens vêm já com os separadores pelo meio, num
-                arranjo, para que o gabarito não tenha de os intercalar.
+                A DECISÃO: a manchete do país passa a ser uma frase só, com as
+                DUAS MEDIDAS DE CABEÇA do domínio vivo — a dívida pública e a
+                taxa de desemprego, que são as duas primeiras linhas da faixa —,
+                na forma da regra da manchete: uma frase, só algarismos selados,
+                sem adjetivo. As duas contagens e a lede foram com os cartões,
+                para a manchete de «Portugal na União Europeia».
 
-                `data-prova-lista` é a marca que o portão lê: parte o texto
-                pelos separadores que conhece, conta os itens e compara-os com
-                `painel_fora_do_limiar`. A marca fica só à volta da LISTA — o
-                «Fora do limiar: » e o «, em 2025.» não são itens dela. */}
-            {lede && (
-              <p class="cabeca-lede">{s.inicio.cabeca.ledePais.abre}<span data-prova-lista="painel_fora_do_limiar">{lede.itens}</span><Frase partes={lede.cauda} lang={lang} /></p>
-            )}
+                É TAMBÉM O ITEM 8.15 («with all that bold text takes quite a lot
+                of the first page … when we see it on the phone»): a manchete
+                fica com dois algarismos selados e cabe em três linhas a 390, o
+                que a célula A1 de `tests/inicio/porta.mjs` mede.
+
+                O `<h1>` vem de `<Manchete>` e não escrito aqui, pela mesma razão
+                que o da página do domínio: os selos têm de ficar dentro do
+                título (o portão exige-o) e fora do nome acessível dele. */}
+            <Manchete partes={manchete} lang={lang} class="cabeca-h1" id="manchete" />
+            {/* A LEDE SAIU COM AS DUAS CONTAGENS (F1.10, 08.09.2026). Nomeava
+                as medidas fora do limiar do Procedimento, pela ordem do painel,
+                e é a segunda metade da manchete que mudou de página: vive agora
+                em `UniaoEuropeiaView.astro`, com `ledeDoPainel()` a construí-la
+                da mesma lista e o mesmo `data-prova-lista` que o portão reconta.
+                A primeira página fica com a manchete e a porta do concelho, que
+                é o que o item 8.15 pede ao primeiro ecrã do telemóvel. */}
 
             {/* ------------------------------------------------------------
                 A PORTA PARA O CONCELHO, DEBAIXO DA MANCHETE (F1.1, item 3)

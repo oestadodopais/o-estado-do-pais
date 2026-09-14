@@ -38,6 +38,7 @@
  */
 import Claim from './Claim.astro';
 import DataDaLinha from './DataDaLinha.astro';
+import DefinicaoDoMarcador from './DefinicaoDoMarcador.astro';
 import { routePath } from '../lib/routes.mjs';
 import { VERBATIM } from '../data/verbatim.mjs';
 
@@ -97,6 +98,7 @@ const { partes, lang = 'pt', selos = false } = Astro.props;
           {lang !== 'pt' && parte.gloss && (
             <span class="marcador-gloss"> ({parte.gloss})</span>
           )}
+          <DefinicaoDoMarcador lang={lang} />
         </>
       );
     return <span data-nonledger={parte.motivo}>{parte.nl}</span>;

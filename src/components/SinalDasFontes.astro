@@ -9,13 +9,22 @@
  * tira-se e põe-se com uma linha. A ordem do lugar de direção pede-o assim para
  * as partes que tocam a cabeça.
  *
- * ONDE SE LIGA: `src/components/Masthead.astro`, dentro de
- * `<div class="masthead-furniture">`, entre a leitura do painel europeu e a
- * linha da agenda. Usa as classes que já lá estão (`mob-leitura`,
- * `mob-leitura-porta`, `mob-leitura-k`, `mob-leitura-v`), sem folha de estilo
- * própria: é a MESMA leitura de aparelho que as outras duas, e uma terceira
- * gramática visual para a mesma coisa seria uma decisão de identidade que este
- * bloco não tem.
+ * ONDE SE LIGA, DESDE 08.09.2026: `src/views/MetodoView.astro`, na regra 6 («A
+ * releitura»), dentro de `<div class="leituras-de-estado">`. **Ligava-se ao
+ * `Masthead.astro`**, dentro de `<div class="masthead-furniture">`, entre a
+ * leitura do painel europeu e a linha da agenda, e o item 8.11 do F1.10 tirou
+ * as quatro leituras do cabeçalho de todas as páginas: o §7.3 manda-as para a
+ * página da medida e para o Método, e a porta das três chaves desta leitura já
+ * era `/metodo#releitura`. **O parágrafo acima acabou de se provar verdadeiro:**
+ * «uma leitura que vive num ficheiro seu tira-se e põe-se com uma linha», e foi
+ * o que aconteceu, sem uma cadeia nem uma marca mudarem.
+ *
+ * Usa as classes que já lá estavam (`mob-leitura`, `mob-leitura-porta`,
+ * `mob-leitura-k`, `mob-leitura-v`), sem folha de estilo própria: é a MESMA
+ * leitura de aparelho que as outras, e uma segunda gramática visual para a
+ * mesma coisa seria uma decisão de identidade que este bloco não tem. O que
+ * muda com o lugar é a moldura da caixa, e a razão está em `site.css`, ao pé de
+ * `.leituras-de-estado`.
  *
  * O QUE ELA DIZ, E O QUE NÃO DIZ. Diz o nome da coisa e a data: «Fontes ·
  * 01.09.2026 19:22». Não diz nem quantas linhas se conferiram nem quantos

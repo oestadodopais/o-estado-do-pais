@@ -165,7 +165,11 @@ const ilhaJson = JSON.stringify(ilha).replace(/</g, '\\u003c');
   {/* CAMADA 1 — RELANCE. Só na página de uma região: ver a nota da cabeça. */}
   {aDistinguir && (
     <div class="instr-top">
-      <p class="layer-tag">{lang === 'pt' ? 'Relance' : 'At a glance'}</p>
+      {/* O rótulo da camada vem da tabela e diz o que ela mostra (item 8.14):
+          «Relance» é o nome de uma densidade de um cartão, e sai das páginas do
+          leitor. Era, como o da camada de baixo, a cadeia escrita à mão fora de
+          `src/i18n/strings.mjs`. */}
+      <p class="layer-tag">{s.secoes.medidas}</p>
       <div class="glance">
         <Claim id={aDistinguir.valor_claim} lang={lang} class="glance-num" as="div" />
         <span><Provenance id={aDistinguir.valor_claim} lang={lang} /></span>
@@ -305,7 +309,12 @@ const ilhaJson = JSON.stringify(ilha).replace(/</g, '\\u003c');
       desta linha, pela convenção do §1.34. Nenhuma entrada está escondida.
       ---------------------------------------------------------------------- */}
   <div class="conv-lista-caixa">
-    <p class="layer-tag">{lang === 'pt' ? 'Leitura breve' : 'Brief reading'}</p>
+    {/* O RÓTULO VEM DA TABELA, E NÃO DE UM `?:` AQUI (bloco F1.10, achado B.4.1
+        do relatório do bloco, e item 8.14). Era a única cadeia visível deste
+        componente escrita à mão fora de `src/i18n/strings.mjs`, e dizia «Leitura
+        breve», que é o nome de uma densidade de um cartão. Passa a ser o nome do
+        que a camada mostra, pela cadeia que a §1.98 declarou. */}
+    <p class="layer-tag">{s.secoes.leitura}</p>
     {aDistinguir && !leituraNaCabeca && (
       <p class="brief-text">
         <Frase partes={aDistinguir.frase} lang={lang} selos={true} />

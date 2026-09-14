@@ -40,6 +40,7 @@
  */
 import { POR_VERIFICAR } from '../lib/ledger.mjs';
 import { routePath } from '../lib/routes.mjs';
+import DefinicaoDoMarcador from './DefinicaoDoMarcador.astro';
 
 const { lang = 'pt', class: classe = null } = Astro.props;
 
@@ -49,4 +50,4 @@ if (!lang) {
 const porta = routePath('marcador', lang);
 ---
 
-<a class:list={['marcador', classe]} href={porta} lang="pt-PT">{POR_VERIFICAR}</a>
+<a class:list={['marcador', classe]} href={porta} lang="pt-PT">{POR_VERIFICAR}</a><DefinicaoDoMarcador lang={lang} />

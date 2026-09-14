@@ -1,0 +1,16 @@
+os positivos conhecidos das guardas do 8.4
+
+  MORDEU   uma definição com `origens: []`                       · esperado: fecha com «não declara origem nenhuma»
+                                                                   obtido: figuras: a definição "plantada" de a planta não declara origem nenhuma. Uma definição apre
+  MORDEU   uma definição sem o campo `origens`                   · esperado: fecha com «não declara origem nenhuma»
+                                                                   obtido: figuras: a definição "plantada" de a planta não declara origem nenhuma. Uma definição apre
+  MORDEU   uma definição que aponta para uma origem inexistente  · esperado: fecha com «não está em»
+                                                                   obtido: figuras: a definição "plantada" de a planta diz vir de "nao-existe-nenhuma", que não está 
+  MORDEU   uma definição com uma origem declarada e existente    · esperado: não fecha
+                                                                   obtido: (não fechou)
+  MORDEU   o `{ marcador }` resolve-se para o marcador da casa   · esperado: contém «[a verificar]»
+                                                                   obtido: o nome por extenso da sigla permanece [a verificar].
+  MORDEU   uma frase sem marcador não rende o marcador           · esperado: não contém «[a verificar]»
+                                                                   obtido: A dívida do setor das administrações públicas, em percentagem do PIB.
+
+  6 de 6

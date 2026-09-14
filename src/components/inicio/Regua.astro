@@ -94,6 +94,32 @@ const Y = 17;
  * não se escreve e o rótulo ocupa-lhe o lugar.
  */
 const ponta = prRotulo === null ? null : prRotulo >= 82 ? 'dir' : prRotulo <= 18 ? 'esq' : null;
+
+/* ---------------------------------------------------------------------------
+ * E ENTRE AS DUAS PONTAS O RÓTULO PRENDE-SE À CAIXA (ISSUES I20, segunda parte,
+ * F1.10, 08.09.2026)
+ * ---------------------------------------------------------------------------
+ * Os dois limites de cima resolvem as PONTAS, e não resolvem o meio: um rótulo
+ * comprido numa caixa estreita transborda muito antes dos 18%. Medido em
+ * «Portugal na União Europeia» a 320 e a 390 px, na taxa de atividade, cujo
+ * limiar calha aos 20%: o rótulo «limiar da Comissão −0,2 pp» mede 149,9 px numa
+ * caixa de 271 px, e centrado nos 20% ficava 20,8 px fora dela pela esquerda. A
+ * página onde ele vivia era mais larga, e a régua desta matriz só o viu quando o
+ * item 8.16 lhe mudou a página.
+ *
+ * A CONTA NÃO É UM LIMITE NOVO, É A CAIXA. O rótulo continua a querer o centro
+ * do traço; o que se acrescenta é que ele nunca sai da caixa por nenhum dos dois
+ * lados, e quem faz essa conta é a folha, com a largura real do rótulo, que só o
+ * navegador sabe: `cqw` é 1% da largura da própria caixa da escala, e `100%` é a
+ * largura do rótulo. O deslocamento que a folha aplica é
+ * `clamp(−pr·cqw, −50%, 100cqw − pr·cqw − 100%)`, que é, por esta ordem, «não
+ * passes da aresta esquerda», «senta-te no traço» e «não passes da direita». Onde
+ * cabe, nada muda; onde não cabe, encosta.
+ *
+ * O LADO SEGURO DE FALHAR: num motor sem unidades de contentor a declaração do
+ * deslocamento é inválida e o rótulo fica encostado ao traço pela esquerda, que
+ * é a posição sem transbordo. Nenhuma palavra muda, e nenhuma cor. */
+const prCaixa = prRotulo === null || ponta ? null : Math.max(0, Math.min(100, prRotulo));
 ---
 
 {
@@ -149,7 +175,7 @@ const ponta = prRotulo === null ? null : prRotulo >= 82 ? 'dir' : prRotulo <= 18
           <span
             class="regua-ref-rotulo"
             data-ponta={ponta}
-            style={ponta ? undefined : `left:${prRotulo}%`}
+            style={ponta ? undefined : `left:${prRotulo}%;--pr:${prCaixa}`}
           >
             <slot name="referencia" />
           </span>

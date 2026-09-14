@@ -334,9 +334,15 @@
  * que só lá existe deixava este campo sem forma. Os dois alvos têm 44px, que é a
  * regra da casa para o que se toca.
  * ------------------------------------------------------------------------- */
+/* A CAIXA DA BUSCA DESTA PÁGINA SAIU DAQUI (F1.10, §2.6, 09.09.2026): era a
+   terceira marcação da mesma coisa, com a terceira família de classes, e as suas
+   regras eram — valor a valor — as de `.busca*`, que `inicio.css` e `site.css`
+   escrevem. O que fica é a MARGEM que esta página lhe dá, porque essa é da
+   página e não da caixa: o índice põe a busca a 16 px da cabeça.
+
+   `.livro-busca-k` FICA, e não é um resto: é também o rótulo da fila de
+   resultados desta página («n linhas»), que não é um rótulo de campo. */
 .livro-busca {
-  display: grid;
-  gap: 6px;
   margin-top: 16px;
 }
 .livro-busca-k {
@@ -347,45 +353,6 @@
   text-transform: lowercase;
   font-weight: 600;
   color: var(--muted);
-}
-.livro-busca-linha {
-  display: flex;
-  gap: 8px;
-  align-items: stretch;
-}
-.livro-busca-campo {
-  flex: 1 1 auto;
-  min-width: 0;
-  font-family: var(--f-instr);
-  font-variant-numeric: tabular-nums lining-nums;
-  font-size: 15px;
-  padding: 9px 11px;
-  border: 1px solid var(--rule-strong);
-  background: var(--paper);
-  color: var(--ink);
-  max-width: 340px;
-  min-height: 44px;
-}
-.livro-busca-campo:focus {
-  outline: 2px solid var(--focus);
-  outline-offset: 2px;
-}
-.livro-busca-submeter {
-  flex: 0 0 auto;
-  min-height: 44px;
-  padding: 0 16px;
-  border: 1px solid var(--ink);
-  background: var(--ink);
-  color: var(--paper);
-  font-family: var(--f-versal);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  cursor: pointer;
-}
-.livro-busca-submeter:hover {
-  background: var(--paper);
-  color: var(--ink);
 }
 /* O estado vazio da busca: prosa, e não instrumento. */
 .livro-busca-vazio {

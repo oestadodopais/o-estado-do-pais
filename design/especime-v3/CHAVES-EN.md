@@ -1149,3 +1149,144 @@ rótulo e de uma frase para quando não cabem todas.*
 saiu de `ledger/allowlist.yml` porque deixou de se render em página nenhuma, e o
 portão de HTML fecha a construção quando um motivo declarado não se rende: um
 motivo morto é uma dispensa que ninguém pediu.
+
+### Bloco F1.10 · uma coisa, um lugar (04.09.2026)
+
+*As chaves da segunda emenda da `DECISIONS.md` §1.98, pela delegação do diretor
+de 04.09.2026. O bloco parou a meio (o portátil fechou-se): **as nove chaves
+novas estão escritas e ainda não se rendem em página nenhuma**, e por isso
+nenhuma está no `INVENTARIO-FRASES.md` — uma linha `viva` que não se rende fecha
+a construção. Quem as render declara-as no mesmo commit.*
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `hierarquia.territorio` | O país lê-se em quatro níveis: país, região NUTS II, distrito ou ilha, concelho. | The country is read at four levels: country, NUTS II region, district or island, municipality. | a frase de hierarquia de `/municipios`, `/distritos` e `/regioes`. **Pára nos quatro níveis:** o brief escreve uma segunda oração («as regiões não contêm distritos inteiros») e manda conferi-la nos dados do sítio; foi conferida e não se escreve, porque o repositório não tem correspondência nenhuma entre as 29 unidades da Carta e as 9 regiões NUTS II |
+| `hierarquia.dominio` | Um domínio é um assunto da carta dos conteúdos; uma área de governo é um ministério. | A domain is a subject from the content charter; a government area is a ministry. | a frase de hierarquia de `/dominios`. Em inglês «content charter» e não «charter of contents»: é o nome do documento, dito na ordem inglesa |
+| `hierarquia.area` | Uma área de governo é um ministério; um domínio é um assunto da carta dos conteúdos. | A government area is a ministry; a domain is a subject from the content charter. | a mesma, invertida, em `/areas`, que é o que o brief pede |
+| `secoes.medidas` | As medidas | The measures | o título da secção dos cartões, onde hoje se lê «Relance». «Relance» e «Leitura breve» ficam só como os nomes das duas densidades de um cartão (§1.98) |
+| `secoes.leitura` | A leitura de cada medida | The reading of each measure | o título da secção das leituras, onde hoje se lê «Leitura breve». Um título por densidade, o mesmo em todas as camadas: sem isto cada página voltava a inventar o seu |
+| `nav.rotuloCaminho` | Onde está | Where you are | o nome da região de navegação do caminho, que só se ouve. Em inglês «Where you are» e não «Breadcrumb»: o leitor ouve onde está, não o nome do padrão |
+| `regioes.compararPorta` | Comparar as regiões | Compare the regions | a porta da página de uma região para a régua inteira, que passa a viver só em `/regioes` |
+| `municipio.estudosPorta` | Os estudos sobre este concelho, no arquivo | The studies about this municipality, in the archive | a porta para `/estudos?concelho=`. **Sem o «n» que o brief esboça:** um número que se vê no sítio resolve numa linha do livro-razão ou numa chave da prova que o portão reconta, e a contagem dos estudos de um concelho não é nem uma coisa nem outra |
+| `estudos.filtroConcelhoA` · `filtroConcelhoB` · `filtroTudo` | Mostram-se só os estudos sobre  · . · Ver o arquivo inteiro | Showing only the studies about  · . · See the whole archive | o estado do arquivo filtrado por concelho. Chega escondido do servidor e é o guião que o acende; sem guião o leitor cai no arquivo inteiro, que é a resposta completa à mesma pergunta |
+
+*E as que mudaram de texto:*
+
+| chave | pt (antes → depois) | en (antes → depois) | nota |
+|---|---|---|---|
+| `identidade` | Um observatório de Portugal. → Um observatório de Portugal: cada número com a sua fonte, lido por território, por domínio e em estudos. | An observatory of Portugal. → An observatory of Portugal: every number with its source, read by territory, by domain and in studies. | a frase de identidade da Emenda 18 passa a ser a frase de **definição** do sítio (§1.98, segunda emenda, item 3). O que a Emenda 18 decide continua de pé: uma vez, por baixo da marca, na primeira página e em mais lado nenhum, sem quem a faz, sem adjetivos, sem porta, sem algarismo e sem selo |
+| `nav.municipios` | Municípios → Concelhos | Municipalities *(sem mudança)* | o vocabulário fechado dá ao território quatro palavras e a visível é «concelho». O endereço `/municipios` não muda. **O inglês não muda:** «municipality» é a tradução de «concelho», e o defeito que o leitor de primeira vez mediu é do português |
+| `municipios.metaTitle` · `municipios.eyebrow` | Municípios → Concelhos | *(sem mudança)* | a mesma decisão, no índice |
+| `municipio.eyebrow` · `metaCauda` · `metaDescricaoA` · `voltarMapa` · `municipioLink` | Município → Concelho, e as frases com ele | *(sem mudança)* | a mesma decisão, na página de um concelho |
+| `municipio.contasK` · `contasV` · `contasDivergenciaV` · `contasDivergenciaMunicipio` | «do município» → «da câmara» | *(sem mudança)* | **a exceção escrita ao vocabulário fechado:** um concelho não orçamenta, não cobra, não paga e não presta contas; quem o faz é a câmara, que é a palavra que a página do domínio já usava. Trocá-la por «concelho» seria trocar uma palavra certa por uma falsa |
+| `rodape.estudos` | trabalhos no arquivo → estudos no arquivo | works in the archive → studies in the archive | «estudo» é a palavra do vocabulário fechado para o trabalho de autor, nas duas edições |
+| `inicio.portas.estudosA` | ` trabalhos · ` → ` estudos · ` | ` works · ` → ` studies · ` | a mesma |
+| `area.trabalhosK` | Os trabalhos → Os estudos | The studies *(sem mudança)* | o inglês já dizia a palavra certa |
+| `municipio.estudosK` | Os trabalhos sobre este concelho → Os estudos sobre este concelho | The works about this municipality → The studies about this municipality | «estudo» nas duas edições. A secção muda de forma no resto do bloco (os títulos ficam, as sinopses saem, entra a porta do arquivo filtrado); o nome dela muda aqui |
+| `inicio.mapa.svgLabel` · `readoutHint` · `tecladoHint` | «municípios» → «concelhos» | *(sem mudança)* | as três cadeias do mapa. As duas últimas não se rendem hoje (a linha do inventário está `retirada` desde a Emenda 20a) |
+
+### Bloco F1.10 · segunda sessão · «Portugal na União Europeia» (08.09.2026)
+
+*As chaves do item 8.16 do brief, pela decisão do lugar de direção que o diretor
+aceitou a 07.09 à noite. **Estas rendem-se**, e por isso estão no
+`INVENTARIO-FRASES.md` no mesmo commit em que a página nasce.*
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `nav.uniaoEuropeia` | Portugal na União Europeia | Portugal in the European Union | o item do menu e do rodapé. É o NOME DA PÁGINA por extenso, e não uma abreviatura: a regra §0 do brief é «um nome por coisa em todo o sítio», e «União Europeia» ao lado de uma página chamada «Portugal na União Europeia» seriam dois nomes para a mesma coisa |
+| `uniaoEuropeia.h1` · `uniaoEuropeia.porta` | Portugal na União Europeia | Portugal in the European Union | o título da página e a porta da faixa da primeira página. A mesma cadeia nos três sítios, pela mesma regra |
+| `uniaoEuropeia.metaTitle` | Portugal na União Europeia · O Estado do País | Portugal in the European Union · O Estado do País | a forma da casa para um título de página |
+| `uniaoEuropeia.metaDescription` | Os dois quadros da União Europeia que medem Portugal: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu, cada uma com a sua linha. | The two European Union frameworks that measure Portugal: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard, each with its ledger row. | diz o que a página tem, e não o que a casa faz. Os dois nomes de quadro são os oficiais, que o sítio já rende no cabeçalho de cada metade |
+
+**O caminho da rota traduz-se e a chave não** (`src/lib/routes.mjs`): a chave é
+`uniaoEuropeia`, portuguesa como todas as outras, e cada edição tem o seu caminho
+na sua língua, `/uniao-europeia` e `/en/european-union`. É a regra desta tabela,
+escrita nas regiões, nas áreas, nos concelhos e nos domínios: «o que se traduz é
+o rótulo e nunca a chave».
+
+### Bloco F1.10 · terceira sessão · a manchete do país e quem fixou o limiar (08.09.2026)
+
+*As duas decisões do lugar de direção de 08.09.2026, pela delegação da §1.98: a
+manchete de `/` depois de os 21 cartões passarem à página europeia (itens 8.15 e
+8.16), e «limiar» nunca sozinho, com quem o fixou (item 8.5, que executa a
+decisão (2) da emenda de 07.09 à §1.101). **Todas se rendem**, e por isso estão
+no `INVENTARIO-FRASES.md` no mesmo commit.*
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `inicio.cabeca.manchetePais` (`abre` · `meio` · `fecha`) | A dívida pública é  ·  do PIB e a taxa de desemprego é  ·  da população ativa. | Government debt is  ·  of GDP and the unemployment rate is  ·  of the labour force. | as três peças da manchete do país, entre e depois dos dois valores selados. As duas orações dizem a UNIDADE de cada linha por extenso («% do PIB» e «% da população ativa», transcritas do campo `unit`): uma manchete é uma frase e não uma ficha. O símbolo da percentagem entra pelo sufixo do valor, como na manchete do domínio |
+| `estado.comissao` (`fora` · `dentro` · `rotulo`) | fora do limiar da Comissão · dentro do limiar da Comissão · limiar da Comissão | outside the Commission threshold · within the Commission threshold · Commission threshold | o par de palavras do estado e o rótulo da linha do limiar, para as medidas cujo limiar é o do painel do Procedimento. Em inglês «Commission threshold» e não «the Commission's threshold»: é um rótulo de instrumento, e um genitivo com apóstrofo dentro de uma fila de estados lê-se pior do que o composto |
+| `estado.lei` (`fora` · `dentro` · `rotulo`) | fora do limite legal · dentro do limite legal · limite legal | outside the legal limit · within the legal limit · legal limit | o mesmo, para o teto de dívida de uma câmara, que a lei fixa. «limite» e não «limiar», porque é a palavra que a página do concelho já usa na frase do artigo 52.º |
+| `estado.pacto` (`fora` · `dentro` · `rotulo` · `frase`) | fora do limiar do Pacto de Estabilidade e Crescimento · dentro do limiar do Pacto de Estabilidade e Crescimento · limiar do Pacto de Estabilidade e Crescimento · O limiar é o limite de défice que os Estados-Membros se comprometeram a respeitar no Pacto de Estabilidade e Crescimento. | outside the Stability and Growth Pact threshold · within the Stability and Growth Pact threshold · Stability and Growth Pact threshold · The threshold is the deficit limit that Member States pledged to keep to under the Stability and Growth Pact. | o mesmo, para o saldo das administrações públicas. O nome do Pacto não se traduz nem se abrevia em nenhuma das edições: é o nome próprio do quadro, e é por ele que um leitor o encontra. A frase é a da página Statistics Explained do Eurostat que a nota da linha nomeia («Member States pledged to keep their deficits … below certain limits»), sem o algarismo |
+| `estado.conselho` (`fora` · `dentro` · `rotulo` · `frase`) | fora do limiar recomendado pelo Conselho da UE · dentro do limiar recomendado pelo Conselho da UE · limiar recomendado pelo Conselho da UE · O limiar é a taxa de crescimento da trajetória da despesa líquida com que Portugal se comprometeu e que o Conselho da União Europeia aprovou. | outside the threshold recommended by the Council of the EU · within the threshold recommended by the Council of the EU · threshold recommended by the Council of the EU · The threshold is the growth rate of the net expenditure path that Portugal committed to and that the Council of the European Union approved. | o mesmo, para o crescimento da despesa líquida. «Conselho da UE» é a forma abreviada que o próprio parecer do Conselho das Finanças Públicas usa; a frase escreve o nome por extenso, como o parecer também faz. Em inglês «Council of the EU», que é a forma pela qual a instituição se nomeia |
+| `estado.comissao.frase` | O limiar é o valor de referência do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, fixado no regulamento que criou o Procedimento e revisto pela Comissão Europeia. | The threshold is the reference value of the Macroeconomic Imbalance Procedure scoreboard, set in the regulation that created the Procedure and revised by the European Commission. | a frase da leitura, que diz o que o limiar é e quem o fixou. Vive DENTRO do par do fixador desde 08.09.2026, para que cada fixador traga a sua e a vista não escolha; era `estado.fraseDoLimiarDaComissao`, e o texto não mudou. As palavras são as do motivo `limiar-do-quadro` de `ledger/allowlist.yml`, **sem o número do diploma**: escrevê-lo seria um algarismo sem marca numa página do leitor |
+
+*E as que mudaram de texto:*
+
+| chave | pt (antes → depois) | en (antes → depois) | nota |
+|---|---|---|---|
+| `inicio.cabeca.ledePais.abre` | Fora do limiar:  → Fora do limiar da Comissão:  | Outside the threshold:  → Outside the Commission threshold:  | a lede nomeia as medidas do painel do Procedimento que passaram o seu limiar, e o limiar delas é o desse painel. «Fora do limiar:» sozinho era a palavra sem dono que o item 8.5 veio tirar |
+| `dominios.dataPeriodo` · `dataLido` · `dataConferido` | período → período de referência · lido → lido na fonte a · conferido → verificado a | period → reference period · read → read at the source on · checked → verified on | o §7.3 do brief do F1.10 (08.09.2026): as datas de frescura passam a rótulos por palavras, e o brief dá dois deles à letra («lido na fonte a», «verificado a»). O terceiro acompanha-os com o nome que o campo tem no livro-razão (`reference_date`), dito por extenso. A exceção de `VOZ-MARCADORES.md` mudou de raiz com a palavra, de «confer» para «verific», e a razão dela não mudou: continua a ser o nome de um campo da linha, e não a casa a dizer que confere |
+| `agenda.afectaK` | Linhas que isto move → Linhas a que isto diz respeito | Rows this moves → Rows this concerns | decisão do lugar de direção de 08.09.2026, da leitura a frio do bloco F2.6b do motor: o campo `afecta_linhas` de um acontecimento passou a levar as linhas do último período publicado de cada fonte, que um ficheiro novo torna desatualizadas, e não linhas que o acontecimento MUDE. O verbo prometia mais do que o campo entrega. **Não tem linha no inventário da voz**, e não é por esquecimento: a etiqueta rende-se dentro de um `<p class="agenda-nota">` cuja origem já está declarada por `data-agenda`, e o bloco inteiro é que é classificado; o portão da voz não conta a etiqueta como frase própria (medido: a construção fica verde sem linha nova) |
+
+**As quatro peças da manchete antiga não mudaram de palavra, mudaram de página.**
+`inicio.cabeca.tituloPaisA`, `tituloPaisUm`, `tituloPaisMuitos` e `tituloPaisFim`
+compõem «Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios
+Macroeconómicos e cumpre 9», e essa frase é agora a manchete de «Portugal na
+União Europeia», que é onde o que ela conta se vê. As chaves ficam com o nome que
+têm: renomeá-las mudava treze sítios para não mudar uma letra do que se lê.
+
+**Três chaves saíram do uso.** `estado.foraDoLimiar`, `estado.dentroDoLimiar` (as
+duas em cada edição) deixaram de existir: cada uma passou a ser três, uma por
+fixador do limiar. `estado.semLimiar` e `estado.porConfirmar` ficam como estavam,
+porque uma ausência de limiar não tem fixador a nomear.
+
+
+### Bloco F1.10 · uma coisa, um lugar · a sétima sessão (09.09.2026): os estudos
+
+*Três chaves novas e seis que mudam de texto, todas do item 1 do encargo (§7.4 e
+8.6 do brief). O `assertKeyParity()` continua a ver a paridade; o que este
+quadro mostra é se o inglês foi pensado.*
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `estudos.edicoesFrase` | O que cada porta abre: «Ler no sítio», o texto composto aqui; «Ler o documento», a edição tal como foi publicada. | What each door opens: “Read on the site”, the text composed here; “Read the document”, the edition as it was published. | a frase que o item 8.6 manda pôr por cima da lista das edições: «com uma frase que diga o que cada porta abre». **É uma legenda e não uma promessa:** a primeira redação dizia «Cada edição leva as suas portas: …», e oito das dezasseis edições não têm texto composto, ou seja a frase nomeava, nessas páginas, uma porta que não estava lá. A forma que fica diz o que cada NOME de porta abre, como a legenda de um mapa diz o que cada marca é, e é verdadeira nas doze páginas sem mudar de palavras. Cita as duas portas pelas palavras exactas que elas levam (`estudos.textoLink` e `estudos.documentoLink`); as aspas são as de cada edição (angulares em português, curvas em inglês). É `navegacao` no inventário: nomeia dois destinos e diz o que se encontra em cada um, e não fala do método nem da casa |
+| `secoes.comoLer` | Como ler | How to read | o nome da dobra da página do domínio para onde a frase da fronteira passou. É o nome que o item 8.11 do brief escreve à letra («uma dobra "Como ler"»). Em inglês a forma é a do imperativo sem sujeito, como os outros rótulos de secção do sítio; «How to read it» acrescentava um objecto que a dobra não nomeia |
+
+*E as que mudaram de texto:*
+
+| chave | pt (antes → depois) | en (antes → depois) | nota |
+|---|---|---|---|
+| `estudos.metaDescription` | O arquivo de estudos publicados, com as suas edições em português e em inglês. → Os estudos publicados, com as suas edições em português e em inglês. | The archive of published studies, with their Portuguese and English editions. → The published studies, with their Portuguese and English editions. | o §7.4: «um só nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A frase perde a palavra e não perde nada do que dizia |
+| `estudos.filtroTudo` | Ver o arquivo inteiro → Ver todos os estudos | See the whole archive → See all the studies | a mesma razão. A porta que devolve a lista inteira depois de um filtro por concelho |
+| `estudos.stubVoltar` | Voltar ao arquivo → Voltar aos estudos | Back to the archive → Back to the studies | a mesma razão. A porta de volta, no fim da página de um estudo |
+| `rodape.estudos` · `rodape.edicoes` | estudos no arquivo → estudos publicados · edições → edições | studies in the archive → published studies · editions → editions | as glosas das duas contagens do livro-razão, na página dos estudos. As palavras novas são as que as próprias linhas já se chamam (`estudos-publicados`, `edicoes-publicadas`), e por isso a glosa deixou de ser um segundo nome |
+| `prova.FRASES.estudos` · `prova.FRASES.edicoes` (`src/lib/prova.mjs`) | estudos no arquivo → estudos publicados · edições no arquivo → edições publicadas | studies in the archive → published studies · editions in the archive → published editions | as mesmas duas glosas onde elas saem num `title` ao lado do número, na primeira página. Um `title` é texto do leitor como qualquer outro |
+| `metodo` · a porta da secção dos estudos (`src/data/metodo.mjs`) | Ver o arquivo → Ver os estudos | See the archive → See the studies | a mesma razão, no texto governado do Método. A mudança do carimbo está registada na `DECISIONS.md` §1.105 |
+
+**Seis chaves saíram do uso, e nenhuma saiu por esquecimento.**
+`estudos.documentoK` e `estudos.documentoVazio` eram o bloco «O documento
+original», a primeira das DUAS apresentações das mesmas portas na página de um
+estudo, que o item 8.6 funde numa forma só; `estudos.edicaoIrma` levava à página
+do estudo na outra língua, que é o que o comando de língua do cabeçalho já faz
+em todas as páginas; `estudos.atualizadoLabel` rendia-se em todas as filas e em
+onze das dezasseis edições não tinha data nenhuma para mostrar;
+`estudos.descarregarK` e `estudos.descarregarVazio` são o «Descarregar · Sem
+ficheiros» que o §7.4 manda não imprimir quando está vazio, e que estava vazio
+sempre. As dez linhas do inventário da voz que elas rendiam passaram a
+`retirada`, com a razão escrita em cada uma.
+
+### F1.10 · segunda passagem, o fecho de 14.09.2026
+
+**Uma chave nova, e nenhuma mudada.** A sessão fechou os seis itens que faltavam
+à segunda passagem do bloco, e cinco deles são medição, régua ou fotografia: não
+escrevem uma palavra. O que escreve é o último dos cinco pequenos do §7.10.
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `marcador.definicao` | um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado | a field not confirmed against the source, not a doubt about what is published | a definição que se rende ao pé da PRIMEIRA ocorrência de `[a verificar]` em cada página (§7.10 do brief; a releitura do leitor de primeira vez de 09.09.2026: «`[a verificar]` is not defined beside first occurrences»). É a frase da página do marcador encurtada às duas coisas que ela abre, o que ele é e o que ele não é, e o inglês diz as mesmas duas com as palavras da própria página inglesa (`a field has not been confirmed against the source`, da lede; `not a doubt about the published figure`, do `queEV`). **A palavra é «campo» e não «campo da proveniência»:** a régua do bloco apanhou o marcador a render-se onze vezes na agenda, onde o que falta é a data de um acontecimento e não um campo de uma linha, e uma definição que falasse só de proveniência era falsa ali. **Não é** o `marcador-gloss`, que continua a ser a glosa inglesa do próprio marcador («to verify»), nem a palavra de estado `estado.porConfirmar`: o marcador fica em português nas duas edições, e a definição é da língua da página. Rende-se por `<DefinicaoDoMarcador>`, uma vez por página, e a régua do bloco (`check:lugar`, célula §7.10) exige que esteja ao pé do primeiro marcador do documento |
+
+*As duas chaves que o §7.10 poderia ter pedido e não pediu:* os rótulos dos
+gráficos a 390 escrevem-se com os valores que já existem (cada um é um `<Claim>`
+da sua linha do livro-razão) e com o ano que o próprio ponto da série traz, e por
+isso o pequeno dos rótulos entra sem uma palavra nova em nenhuma das edições.

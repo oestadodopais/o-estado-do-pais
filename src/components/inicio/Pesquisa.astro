@@ -61,6 +61,7 @@
  * que aceitasse não a receber voltaria a ter dois feitios, e o segundo não teria
  * quem o rendesse.
  */
+import CampoDeBusca from './CampoDeBusca.astro';
 import { coberturaDistingue, eIlha } from '../../lib/inicio.mjs';
 
 const { s, concelhos, destino, forma = null, resultadosOcultos = false } = Astro.props;
@@ -118,33 +119,21 @@ const distingue = coberturaDistingue(concelhos);
     servidor e é o guião que o acende.
     --------------------------------------------------------------------------- */}
 <div class="pesquisa" id="pesquisa">
-  {forma ? (
-    <form class="pesquisa-forma" action={forma} method="get" role="search" data-porta-concelho>
-      <label class="pesquisa-rotulo" for="pesquisa-concelho">{s.ambito.pesquisaRotulo}</label>
-      <div class="pesquisa-linha">
-        <input
-          class="pesquisa-campo"
-          id="pesquisa-concelho"
-          name="concelho"
-          type="search"
-          autocomplete="off"
-          data-pesquisa
-        />
-        <button class="pesquisa-submeter" type="submit">{s.ambito.pesquisaSubmeter}</button>
-      </div>
-    </form>
-  ) : (
-    <>
-      <label class="pesquisa-rotulo" for="pesquisa-concelho">{s.ambito.pesquisaRotulo}</label>
-      <input
-        class="pesquisa-campo"
-        id="pesquisa-concelho"
-        type="search"
-        autocomplete="off"
-        data-pesquisa
-      />
-    </>
-  )}
+  {/* A CAIXA É O COMPONENTE, E A FILA É DESTA PEÇA (F1.10, §2.6, 09.09.2026).
+      A marcação do rótulo, do campo e do botão vive em `CampoDeBusca.astro`, que
+      é a mesma caixa que o índice dos 308 e o índice dos números rendem. O que
+      fica aqui é o que é desta peça: os 308 resultados já rendidos e a regra de
+      quando cada um se acende. */}
+  <CampoDeBusca
+    rotulo={s.ambito.pesquisaRotulo}
+    submeter={s.ambito.pesquisaSubmeter}
+    id="pesquisa-concelho"
+    name={forma ? 'concelho' : null}
+    accao={forma}
+    forma={forma ? { 'data-porta-concelho': true } : {}}
+    campo={{ 'data-pesquisa': true }}
+    semGuiao={forma ? s.ambito.pesquisaSemGuiao : null}
+  />
 
   <ul class="pesquisa-res" data-resultados hidden={resultadosOcultos || undefined}>
     {

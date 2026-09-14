@@ -121,6 +121,30 @@ export const FECHO = {
       ],
     },
     {
+      /* A ESCALA ENTRA AQUI COM O §9.2 DO F1.10 (08.09.2026).
+         ---------------------------------------------------------------------
+         A frase vivia por baixo da legenda do mapa por concelho da página do
+         domínio, à vista e fora de qualquer dobra. A leitura cruzada do
+         inventário das frases de 08.09 classificou-a como prosa de diligência da
+         página do domínio («a legenda da escala a explicar as classes»), e a
+         decisão do lugar de direção é que ela «sai do primeiro ecrã e vai para a
+         página da linha ou para o Método». Esta não é de UMA linha: é a regra
+         com que a casa desenha uma escala em qualquer mapa, e por isso o destino
+         é o Método, ao pé da cor e da letra, que são as outras duas decisões de
+         forma que a página fecha a dizer.
+
+         AS PALAVRAS NÃO MUDAM, e a cadeia não se duplica: saiu de
+         `src/i18n/strings.mjs` (`dominios.mapaEscalaNota`, nas duas edições) e
+         vive aqui, que é o único sítio onde ela se rende. */
+      id: 'a-escala',
+      titulo: { pt: 'A escala', en: 'The scale' },
+      texto: {
+        pt: ['As classes são marcas redondas da escala, e não um limite oficial.'],
+        en: ['The classes are round scale marks, not an official limit.'],
+      },
+      ligacoes: [],
+    },
+    {
       id: 'a-letra',
       titulo: { pt: 'A letra', en: 'The type' },
       texto: {
@@ -272,12 +296,19 @@ export const REGRAS = [
       {
         chave: 'leituras',
         rotulo: {
-          pt: 'trabalhos com leitura do observatório',
-          en: 'works with an observatory reading',
+          /* «TRABALHOS» SAI COMO NOME DE COISA (F1.10, §2.3 e Major 5 da
+             leitura a frio de 09.09.2026): o trabalho de autor é um «estudo»,
+             e este rótulo era o último sítio do Método onde ele tinha um
+             segundo nome. A contagem não muda; muda a palavra que a nomeia. */
+          pt: 'estudos com leitura do observatório',
+          en: 'studies with an observatory reading',
         },
       },
     ],
-    ligacoes: [{ rota: 'estudos', rotulo: { pt: 'Ver o arquivo', en: 'See the archive' } }],
+    /* «ARQUIVO» SAI COMO NOME DE COISA (bloco F1.10, §7.4, 09.09.2026): «um só
+       nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome
+       de coisa». A porta passa a chamar o que ela abre pelo nome da página. */
+    ligacoes: [{ rota: 'estudos', rotulo: { pt: 'Ver os estudos', en: 'See the studies' } }],
   },
 
   {
@@ -405,18 +436,25 @@ export const REGRAS = [
     titulo: { pt: 'A releitura', en: 'The re-reading' },
     regra: {
       pt: [
-        'Os números publicados são relidos na fonte por um caminho diferente e por quem não os escreveu, linha a linha, e cada linha diz se já o foi, quando e com que resultado. O painel da primeira página é reconferido contra a fonte todas as semanas, e a página diz quando foi a última vez.',
+        'Os números publicados são relidos na fonte por um caminho diferente e por quem não os escreveu, linha a linha, e cada linha diz se já o foi, quando e com que resultado. O painel europeu é reconferido contra a fonte todas as semanas, e a página dele diz quando foi a última vez.',
       ],
       en: [
-        'Published figures are read again at the source by a different route and by someone who did not write them, row by row, and each row says whether it has been yet, when and with what result. The panel on the front page is re-checked against the source every week, and the page says when the last time was.',
+        'Published figures are read again at the source by a different route and by someone who did not write them, row by row, and each row says whether it has been yet, when and with what result. The European panel is re-checked against the source every week, and its page says when the last time was.',
       ],
     },
+    /* AS DUAS FRASES DIZIAM «o cabeçalho de todas as páginas», E DEIXOU DE SER
+       VERDADE (F1.10, item 8.11 e §7.3, 08.09.2026). As quatro leituras de
+       aparelho saíram da mobília e vieram para a página da medida e para aqui;
+       a data do painel vive em «Portugal na União Europeia», dentro da secção
+       que ela cobre, e a leitura das fontes vive nesta regra, ao lado das suas
+       contagens. A frase acompanha o sítio: um mecanismo que descreve um lugar
+       que já não existe é a página a mentir sobre si própria. */
     mecanismo: {
       pt: [
-        'A data da última reconferência é escrita pelo motor a cada verificação, e o cabeçalho de todas as páginas mostra-a. Quando passa do prazo, o cabeçalho di-lo por palavras, em vez de mostrar uma data que parece fresca.',
+        'A data da última reconferência é escrita pelo motor a cada verificação, e a página do painel mostra-a. Quando passa do prazo, a página di-lo por palavras, em vez de mostrar uma data que parece fresca.',
       ],
       en: [
-        'The date of the last re-check is written by the engine at each verification, and the masthead of every page shows it. Once it is overdue, the masthead says so in words, instead of showing a date that looks fresh.',
+        'The date of the last re-check is written by the engine at each verification, and the panel page shows it. Once it is overdue, the page says so in words, instead of showing a date that looks fresh.',
       ],
     },
     limite: {
@@ -512,10 +550,10 @@ export const REGRAS = [
        a esconder, e a frase abaixo diz isso porque é o que lá está. */
     mecanismo: {
       pt: [
-        'A pergunta de um trabalho é fixada e guardada no motor antes da recolha, e a agenda mostra, item a item, o critério que o pôs lá, quem o propôs, quem o decidiu, e cada mudança de estado com a sua data e o seu motivo. Onde não há critério, ou onde não há ainda decisão da direção, a página di-lo.',
+        'A pergunta de um estudo é fixada e guardada no motor antes da recolha, e a agenda mostra, item a item, o critério que o pôs lá, quem o propôs, quem o decidiu, e cada mudança de estado com a sua data e o seu motivo. Onde não há critério, ou onde não há ainda decisão da direção, a página di-lo.',
       ],
       en: [
-        'The question of a piece of work is fixed and stored in the engine before collection begins, and the agenda shows, item by item, the criterion that put it there, who proposed it, who decided it, and every change of state with its date and its reason. Where there is no criterion, or no director decision yet, the page says so.',
+        'The question of a study is fixed and stored in the engine before collection begins, and the agenda shows, item by item, the criterion that put it there, who proposed it, who decided it, and every change of state with its date and its reason. Where there is no criterion, or no director decision yet, the page says so.',
       ],
     },
     /* A prova desta regra são as contagens da agenda, e mais nada. A contagem

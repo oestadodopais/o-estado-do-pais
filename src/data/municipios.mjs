@@ -137,9 +137,28 @@ const EVORA = {
       {},
     ),
 
-    /* ---------------------------------------------- camada 2 — leitura breve */
+    /* ---------------------------------------------- camada 2 — leitura breve
+       ---------------------------------------------------------------------
+       CADA FRASE DIZ QUE MEDIDA LÊ (F1.10, §7.1, 08.09.2026)
+       ---------------------------------------------------------------------
+       O diretor, 08.09, nesta página no telemóvel: «we have the scroll cards on
+       top, and then the same information is repeated just afterwards, and then
+       we have another view of the same thing in running text: three versions of
+       the same thing». As três eram a faixa, a grelha de peças grandes e estas
+       frases corridas. A decisão do lugar de direção, pela delegação da §1.98: a
+       grelha sai, e estas frases passam a ser A LEITURA que abre do cartão da
+       medida que cada uma lê.
+
+       PARA ISSO A LIGAÇÃO TEM DE SER DECLARADA, e não adivinhada do texto: o
+       campo `chave` diz a medida (as oito de `MEDIDAS_DO_CONCELHO`), ou
+       `'contas'` quando a frase lê uma medida da camada das contas do município,
+       que não tem cartão na faixa. Uma chave que não seja nenhuma das duas
+       coisas fecha a construção: uma frase sem lugar não se rende em lado
+       nenhum, e uma frase que se rendesse em silêncio no fim da página era a
+       terceira apresentação a voltar pela porta das traseiras. */
     leitura: [
       {
+        chave: 'populacao',
         pt: [
           'A população residente subiu de ',
           { claim: 'evora-populacao-2021' },
@@ -164,6 +183,7 @@ const EVORA = {
         ],
       },
       {
+        chave: 'poderDeCompra',
         pt: [
           'O poder de compra por habitante está acima da média nacional, que é a base do índice: ',
           { claim: 'evora-poder-de-compra-2023' },
@@ -180,6 +200,7 @@ const EVORA = {
         ],
       },
       {
+        chave: 'desempregoRegistado',
         pt: [
           'O desemprego registado no fim de dezembro caiu de ',
           { claim: 'evora-desemprego-registado-2013' },
@@ -208,10 +229,15 @@ const EVORA = {
            ressalva 3). A frase cita uma linha do SCIE do INE, e o INE não diz
            «sede»: diz «Localização geográfica». O que está provado é que cada
            empresa é imputada a um único concelho. */
+        chave: 'empresas',
         pt: ['O concelho tem ', { claim: 'evora-empresas-2024' }, ' empresas não financeiras.'],
         en: ['The municipality has ', { claim: 'evora-empresas-2024' }, ' non-financial enterprises.'],
       },
       {
+        /* A execução da receita não tem cartão na faixa: desceu das peças para a
+           camada das contas do município a 26.08.2026 (decisão D2 do diretor).
+           A frase que a lê desce com ela. */
+        chave: 'contas',
         pt: [
           'A execução da receita caiu de ',
           { claim: 'evora-execucao-da-receita-2021', sufixo: '%' },
@@ -236,6 +262,7 @@ const EVORA = {
         ],
       },
       {
+        chave: 'pmp',
         pt: [
           'O prazo médio de pagamento a fornecedores passou de ',
           { claim: 'evora-prazo-medio-de-pagamento-2023' },

@@ -27,6 +27,7 @@ import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import { WORKS, POR_VERIFICAR } from '../data/studies.mjs';
 import { leituraDe } from '../data/leituras.mjs';
 import { documentosDoEstudo } from '../lib/documentos.mjs';
+import { temRegisto } from '../lib/registos.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { dataDaEdicaoNoRepositorio } from '../lib/datas-do-repositorio.mjs';
@@ -62,8 +63,65 @@ const trabalhos = WORKS.map((w) => {
      que a casa pode provar é o dia em que o ficheiro da edição entrou neste
      repositório, e é isso que a página diz, com a origem dita. */
   const datas = [...new Set(w.editions.map((e) => dataDaEdicaoNoRepositorio(w.slug, e.lang)))];
-  const migrado = documentosDoEstudo(w.slug).length > 0;
+  const documentos = documentosDoEstudo(w.slug);
+  const migrado = documentos.length > 0;
   const leitura = leituraDe(w.id);
+  /**
+   * A PORTA DA LEITURA, PARA QUE A PÁGINA DE CAPA DEIXE DE SER PARAGEM
+   * OBRIGATÓRIA (bloco F1.10, §7.4, 09.09.2026).
+   *
+   * Até aqui, chegar ao texto de um estudo a partir desta lista custava sempre
+   * dois toques: o título abria a página do estudo, e era lá dentro que estavam
+   * as portas. O §7.4 manda que «o título da lista vai direto ao texto; a página
+   * de capa deixa de existir como paragem obrigatória».
+   *
+   * O TÍTULO ABRE O TEXTO, desde 09.09.2026 (Major 8 da leitura a frio, e a
+   * decisão do lugar de direção que o fecha). Até aqui o título abria a página
+   * do estudo e a leitura tinha uma porta ao lado: o leitor que fizesse o gesto
+   * natural — tocar no título — continuava a parar na capa, que é precisamente
+   * o que o §7.4 mandou acabar. Agora o título é a porta da leitura, e a porta
+   * separada sai: duas portas para o mesmo destino na mesma linha eram o defeito
+   * que a L1 conta.
+   *
+   * A PÁGINA DO ESTUDO NÃO DESAPARECE, e passa a ser o que sempre devia ter
+   * sido: uma página secundária, com a leitura da casa, os seus valores selados
+   * e o concelho de que trata, alcançável a partir do texto (a porta
+   * `s.estudos.documentoVoltar` no fim de `TextoView.astro`).
+   *
+   * ONDE NÃO HÁ TEXTO NO SÍTIO, o título abre a página do estudo, que é a coisa
+   * mais completa que existe: oito dos doze estudos não têm página de leitura, e
+   * mandar o título para um PDF seria trocar uma paragem por uma saída.
+   *
+   * A ESCOLHA DA PORTA É A MESMA REGRA DE `EdicoesDoEstudo.astro`, para que o
+   * leitor aprenda uma ordem e não duas: primeiro a leitura composta neste
+   * sítio, depois o documento tal como foi publicado; e primeiro a edição desta
+   * língua, depois a outra, porque um estudo publicado só em inglês não tem
+   * edição portuguesa nenhuma para abrir.
+   */
+  const ordemDasLinguas = [
+    principal.lang,
+    ...w.editions.map((e) => e.lang).filter((l) => l !== principal.lang),
+  ];
+  let porta = null;
+  for (const l of ordemDasLinguas) {
+    if (temRegisto(w.slug, l)) {
+      porta = {
+        href: routePath('texto', l, { slug: w.slug }),
+        rotulo: s.estudos.textoLink,
+        lang: l,
+        ehTexto: true,
+      };
+      break;
+    }
+  }
+  if (!porta) {
+    porta = {
+      href: routePath('estudo', lang, { slug: w.slug }),
+      rotulo: null,
+      lang,
+      ehTexto: false,
+    };
+  }
   return {
     work: w,
     titulo: principal.title,
@@ -74,6 +132,7 @@ const trabalhos = WORKS.map((w) => {
       date: dataDaEdicaoNoRepositorio(w.slug, e.lang),
       pagina: routePath('estudo', e.lang, { slug: w.slug }),
     })),
+    porta,
     dataUnica: datas.length === 1 ? datas[0] : null,
     umaSoData: datas.length === 1,
     estado: leitura ? null : migrado ? s.estudos.migradoEstado : s.estudos.stubEstado,
@@ -128,13 +187,44 @@ const edicoesSemData = trabalhos.reduce(
       )
     }
 
-    <div class="arquivo">
+    {/* A PORTA QUE DEVOLVE A LISTA INTEIRA (F1.10, §1 e 8.10, 09.09.2026).
+        Chega escondida do servidor e é o guião que a acende, quando o endereço
+        traz `?concelho=` e alguma entrada casa. Sem guião não há filtro e a porta
+        não faz falta; com ele, é a única coisa que diz que a lista está cortada,
+        e di-lo com o nome desta página em vez de uma frase nova. */}
+    <p class="arquivo-todos" data-arquivo-todos hidden>
+      <a href={path}>{s.estudos.h1} →</a>
+    </p>
+
+    {/* O QUE O FILTRO FAZ SEM GUIÃO (Major 7 da leitura a frio, 09.09.2026). A
+        porta filtrada da página do concelho traz `?concelho=<slug>` e é o guião
+        que esconde as linhas que não casam: sem ele a página mostra todos os
+        estudos, e o leitor não tinha como saber que a porta prometia um recorte
+        que não chegou. Uma linha, dentro de um `<noscript>`, que é o único sítio
+        onde ela é verdade. */}
+    <noscript>
+      <p class="arquivo-sem-guiao">{s.estudos.filtroSemGuiao}</p>
+    </noscript>
+
+    {/* O OBJETO DE UM ESTUDO, DECLARADO EM CADA ENTRADA (F1.10, §1): é o
+        `subject` do registo dos trabalhos, que é o slug de um concelho quando o
+        trabalho é sobre um. É por ele que o filtro do endereço escolhe, e não por
+        uma segunda lista escrita à mão. */}
+    <div class="arquivo" data-arquivo>
       {
         trabalhos.map((tr) => (
-          <article class="arquivo-item">
+          <article class="arquivo-item" data-concelho={tr.work.subject ?? undefined}>
             <div>
+              {/* A ÚNICA PORTA DA LINHA (Major 8, 09.09.2026): o título abre o
+                  texto onde ele existe, e a página do estudo onde não existe.
+                  `hreflang` diz em que língua está o que se abre, que nem sempre
+                  é a da edição. */}
               <h2 class="arquivo-titulo">
-                <a href={routePath('estudo', lang, { slug: tr.work.slug })}>
+                <a
+                  class="arquivo-porta"
+                  href={tr.porta.href}
+                  hreflang={tr.porta.lang === 'pt' ? 'pt-PT' : 'en'}
+                >
                   <TituloDeTrabalho titulo={tr.titulo} lang={lang} />
                 </a>
               </h2>
@@ -207,4 +297,6 @@ const edicoesSemData = trabalhos.reduce(
       }
     </div>
   </div>
+
+  <script src="/js/estudos.js" defer is:inline></script>
 </Base>

@@ -46,6 +46,7 @@
  * portas para as linhas próprias.
  */
 import Base from '../layouts/Base.astro';
+import DefinicaoDoMarcador from '../components/DefinicaoDoMarcador.astro';
 import { dataDaCasa } from '../lib/datas.mjs';
 import Claim from '../components/Claim.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
@@ -369,7 +370,16 @@ const rotuloDoCriterio = (tipo) =>
                                     data-agenda={`evento:${evento.id}.marcador`}
                                   >
                                     {evento.marcador}
-                                  </a>{' '}
+                                  </a>
+                                  {/* O MARCADOR DA AGENDA É O MARCADOR DA CASA
+                                      (IDENTIDADE §6: há um só), e por isso leva
+                                      a mesma definição ao pé da primeira
+                                      ocorrência da página (§7.10, 14.09.2026).
+                                      Aqui o que falta é a data do
+                                      acontecimento; a definição diz «um campo
+                                      não confirmado contra a fonte», que é
+                                      verdade nas duas páginas. */}
+                                  <DefinicaoDoMarcador lang={lang} />{' '}
                                   {motivoSemData(evento)}
                                 </span>
                               )}
@@ -915,7 +925,8 @@ const rotuloDoCriterio = (tipo) =>
                     data-agenda={`evento:${evento.id}.marcador`}
                   >
                     {evento.marcador}
-                  </a>{' '}
+                  </a>
+                  <DefinicaoDoMarcador lang={lang} />{' '}
                   {motivoSemData(evento)}
                 </span>
                 <span class="agenda-evento-fonte" data-agenda={`evento:${evento.id}.fonte`}>
