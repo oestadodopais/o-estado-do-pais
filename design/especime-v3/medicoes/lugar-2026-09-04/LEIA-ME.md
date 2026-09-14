@@ -11,7 +11,17 @@ escreve no sítio: só contam e imprimem.*
 | `primeiro-ecra.mjs` | mede o PRIMEIRO ECRÃ a 390 × 664 nas quatro páginas do leitor que o item 8.11 nomeia, nas duas edições: os caracteres de prosa da casa, os blocos, a prosa com os cartões e o texto todo do ecrã. A definição da conta está no cabeçalho do ficheiro, para que o «antes» e o «depois» sejam a mesma conta. Abre navegador, e por isso não está no `verify` nem na CI | `node design/especime-v3/medicoes/lugar-2026-09-04/primeiro-ecra.mjs --json antes.json` |
 | `l1-composicao.mjs` | a COMPOSIÇÃO da L1, por padrão: quantas páginas de cada família têm dois destinos iguais, e que par de portas os repete. Entrou a 09.09.2026 com a emenda ao §5 do brief, que manda medir a composição antes de tocar em qualquer padrão | `node design/especime-v3/medicoes/lugar-2026-09-04/l1-composicao.mjs dist` |
 | `plantas.mjs` | as plantas da L9 **por forma e não por marcador** (Major 12 da leitura a frio de 09.09.2026): sete estragos que põem no `dist/` conteúdo proibido escrito de maneira diferente daquela que a régua conhecia, e conferem que ela morde e que o ficheiro volta byte a byte | `node design/especime-v3/medicoes/lugar-2026-09-04/plantas.mjs` |
+| `rotulos-390.mjs` | os RÓTULOS DOS DESENHOS da página de um concelho, medidos a 390 e a 1 280 nas duas edições: a altura de letra com que cada rótulo desenhado chega ao leitor (o `font-size` vezes a escala do desenho) e quantos rótulos e quantos valores de legenda estão à vista em cada largura. Entrou a 14.09.2026 com o penúltimo dos cinco pequenos do §7.10, e corre-se antes e depois. Abre navegador | `node design/especime-v3/medicoes/lugar-2026-09-04/rotulos-390.mjs` |
+| `capturas-lugar.mjs` | as CAPTURAS do bloco, `<nome>-<edição>-<largura>.png`, a 390 e a 1 280 nas duas edições, com a rota de cada nome escrita no próprio guião. Aceita `--so=<nome>[,<nome>]` para refotografar só o que mudou, e `--para=<dir>` | `node design/especime-v3/medicoes/lugar-2026-09-04/capturas-lugar.mjs --so=concelho` |
 | `inventario.py` | o guião de uma vez que reclassificou as linhas do `INVENTARIO-FRASES.md` deste bloco. Fica como registo do que foi aplicado, e não se torna a correr | *(já correu; não se repete)* |
+
+**As saídas guardadas, com a data no nome.** Desde 14.09.2026 (Major 14 e 15 da
+leitura a frio de 09.09) as saídas de cada corrida ficam nesta pasta, em ficheiros
+com a data: `check-lugar-`, `l1-composicao-`, `porta-` (com o `.json`), `matriz-`
+e `matriz-positivo-`, `recibo-` e `recibo-positivo-`, `correcoes-a-`, `plantas-`,
+`rotulos-390-antes-` e `rotulos-390-depois-`, e `capturas-`. Não substituem a
+régua: dizem o que ela imprimiu naquela cabeça, para que uma leitura a frio saiba
+o que foi medido e com que número.
 
 **Estes guiões não são a régua do bloco.** A régua é o `check:lugar`, que corre
 no `verify` desde 08.09.2026 com as L1 a L6, as medidas do §8 e as plantas da L9;
