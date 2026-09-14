@@ -64,6 +64,7 @@ import {
   DEFINICAO_DOS_PAINEIS,
   DEFINICOES_DAS_MEDIDAS,
   origensDaDefinicao,
+  textoDaDefinicao,
 } from '../src/data/figuras.mjs';
 /* O REGISTO DOS ESTUDOS E O DAS LEITURAS (Major 13, 09.09.2026): a régua conta
    quantas superfícies TEM DE haver e compara-as com as que viu, em vez de se
@@ -1084,12 +1085,38 @@ for (const ficheiro of paginas) {
 
      `conferirDefinicao()` faz as duas metades para as duas famílias: o texto
      contra a declaração, e a origem contra `ORIGENS_DAS_DEFINICOES`. */
+  /* O TEXTO DE UM ELEMENTO SEM AS GLOSAS DO MARCADOR (14.09.2026).
+     `[a verificar]` traz duas coisas coladas a ele que NÃO são da frase em que
+     ele vive: a glosa inglesa (`.marcador-gloss`, «(to verify)») e a definição
+     do marcador, que `uma-vez-por-pagina.mjs` rende ao pé da PRIMEIRA ocorrência
+     de cada página (`.marcador-definicao`). As duas dependem da língua e da
+     ordem do documento, e uma definição que publique o marcador ficaria
+     diferente da sua declaração por causa delas. A comparação lê o texto sem as
+     duas; quem as mede é a célula §7.10, que é delas. */
+  const semGlosasDoMarcador = (no) => {
+    const filhos = no.childNodes ?? [];
+    if (filhos.length === 0) return no.text ?? '';
+    let out = '';
+    for (const f of filhos) {
+      const classe = f.getAttribute?.('class') ?? '';
+      if (/\b(marcador-gloss|marcador-definicao)\b/.test(classe)) continue;
+      out += semGlosasDoMarcador(f);
+    }
+    return out;
+  };
+
   const conferirDefinicao = (el, nome, partes, definicao) => {
     definicoesVistas++;
+    /* A DECLARAÇÃO RESOLVE-SE COM A MESMA FUNÇÃO QUE A VISTA USA (achado 28,
+       14.09.2026). A régua tinha aqui uma segunda cópia da resolução dos
+       pedaços, e essa cópia não conhecia o `{ marcador }`: resolvia-o para uma
+       cadeia vazia, e por isso uma definição que publique `[a verificar]` — ou
+       que o deixe de publicar — passava sem se notar. `textoDaDefinicao()` é a
+       única resolução, em `src/data/figuras.mjs`. */
     const declarada = Array.isArray(partes)
-      ? partes.map((p) => (typeof p === 'string' ? p : (p.nl ?? p.ref ?? ''))).join('').replace(/\s+/g, ' ').trim()
+      ? textoDaDefinicao(partes).replace(/\s+/g, ' ').trim()
       : null;
-    const rendida = el.text.replace(/\s+/g, ' ').trim();
+    const rendida = semGlosasDoMarcador(el).replace(/\s+/g, ' ').trim();
     if (declarada === null) {
       medidas.d84_definicoes_fora++;
       anota('d84_definicoes_fora', `${url} · «${nome}» não é uma definição declarada`);
@@ -1109,6 +1136,29 @@ for (const ficheiro of paginas) {
     const rendidas = new Map();
     for (const o of involucro?.querySelectorAll?.('[data-def-origem]') ?? []) {
       rendidas.set(o.getAttribute('data-def-origem') ?? '', o);
+    }
+    /* NEM A MENOS NEM A MAIS, E A CONTA SAI DA PÁGINA (achado 8, 14.09.2026).
+       A régua contava as origens DECLARADAS e procurava cada uma; as que a
+       página rendesse a mais ficavam invisíveis, e uma definição sem origem
+       nenhuma declarada dava uma volta de zero iterações e passava calada. As
+       duas contagens comparam-se aqui: a das declaradas e a dos blocos
+       `data-def-origem` que o invólucro rende. */
+    const declaradas = definicao?.origens ?? [];
+    if (declaradas.length === 0) {
+      medidas.d84_definicoes_fora++;
+      anota(
+        'd84_definicoes_fora',
+        `${url} · «${nome}»: a definição não declara origem nenhuma. Uma definição ` +
+          `apresentada como citada sem uma origem é uma paráfrase com aspas`,
+      );
+    }
+    if (rendidas.size !== declaradas.length) {
+      medidas.d84_definicoes_fora++;
+      anota(
+        'd84_definicoes_fora',
+        `${url} · «${nome}»: a página rende ${rendidas.size} bloco(s) de origem e a ` +
+          `declaração diz ${declaradas.length}`,
+      );
     }
     for (const o of origensDaDefinicao(definicao, lang)) {
       origensVistas++;
@@ -1135,10 +1185,22 @@ for (const ficheiro of paginas) {
         medidas.d84_definicoes_fora++;
         anota('d84_definicoes_fora', `${url} · «${nome}»: a origem «${o.chave}» não rende ${campo}`);
       }
+      /* A DATA POR IGUALDADE, NO CAMPO DELA (achado 8, 14.09.2026). Era uma
+         subcadeia procurada no bloco inteiro: qualquer data escrita noutro
+         sítio do bloco satisfazia a régua, e uma data trocada por uma que
+         contivesse a esperada passava. Agora o campo tem marca própria
+         (`data-def-lido`, dentro da dobra do excerto desde hoje) e compara-se o
+         que ele diz com o que a declaração diz, carácter a carácter. */
       const data = `${o.lido.slice(8, 10)}.${o.lido.slice(5, 7)}.${o.lido.slice(0, 4)}`;
-      if (!texto.includes(data)) {
+      const campoDaData = bloco.querySelector(`[data-def-lido="${o.chave}"]`);
+      const dataRendida = campoDaData ? campoDaData.text.replace(/\s+/g, ' ').trim() : null;
+      if (dataRendida !== data) {
         medidas.d84_definicoes_fora++;
-        anota('d84_definicoes_fora', `${url} · «${nome}»: a origem «${o.chave}» não rende a data de leitura`);
+        anota(
+          'd84_definicoes_fora',
+          `${url} · «${nome}»: a origem «${o.chave}» rende a data de leitura ` +
+            `«${dataRendida ?? '(nenhuma)'}» e a declaração diz «${data}»`,
+        );
       }
     }
   };

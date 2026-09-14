@@ -1024,7 +1024,10 @@ export const STRINGS = {
     uniaoEuropeia: {
       metaTitle: 'Portugal na União Europeia · O Estado do País',
       metaDescription:
-        'Os dois quadros da União Europeia que medem Portugal: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu, cada uma com a sua linha.',
+      /* A CAUDA SAIU A 14.09.2026 (achado 6 da leitura cruzada do inventário):
+         «cada uma com a sua linha» é a casa a dizer o que guarda, e não o que a
+         página mostra. O que fica diz o que a página tem. */
+        'Os dois quadros da União Europeia que medem Portugal: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu.',
       h1: 'Portugal na União Europeia',
       /* A PORTA DA FAIXA DA PRIMEIRA PÁGINA para esta página. É o nome da página
          de chegada com a seta, que é a forma da casa para uma porta («O
@@ -1337,7 +1340,11 @@ export const STRINGS = {
            conferidas, e desde que essas dezasseis passaram ao Método isso deixou
            de ser verdade sobre o que está por baixo dela. Uma frase que descreve
            a página tem de ser verdadeira sobre a página. */
-        'As áreas da vida do país com medidas publicadas.',
+        /* E A PRIMEIRA METADE MUDOU A 14.09.2026 (achado 6 da leitura cruzada
+           do inventário): «com medidas publicadas» é a casa a dizer o que
+           publicou, e o §9.1 tira a cobertura da voz do leitor. A descrição diz
+           agora o que a página tem, que é o que uma descrição é. */
+        'Os domínios da carta dos conteúdos, cada um com a contagem das suas medidas e a porta para a sua página.',
       eyebrow: 'Domínios',
       h1: 'Por domínio',
       /* «no ar» SAI DA VOZ DO LEITOR (bloco F1.10, §9.1 do brief, 08.09.2026,
@@ -2273,7 +2280,10 @@ export const STRINGS = {
 
     estudos: {
       metaTitle: 'Estudos · O Estado do País',
-      metaDescription: 'Os estudos publicados, com as suas edições em português e em inglês.',
+      /* «PUBLICADOS» SAIU A 14.09.2026 (achado 6 da leitura cruzada do
+         inventário): era a casa a dizer o que publicou. A descrição diz o que a
+         página tem. */
+      metaDescription: 'Os estudos, com as suas edições em português e em inglês.',
       h1: 'Estudos',
       lede: 'Cada estudo publicado, com as suas edições e datas. Os que estão alojados noutro sítio levam a ligação para lá.',
       /* O ARQUIVO FILTRADO POR CONCELHO (bloco F1.10). `/estudos?concelho=<slug>`
@@ -2878,7 +2888,8 @@ export const STRINGS = {
     uniaoEuropeia: {
       metaTitle: 'Portugal in the European Union · O Estado do País',
       metaDescription:
-        'The two European Union frameworks that measure Portugal: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard, each with its ledger row.',
+        /* Ver a razão na gémea portuguesa (achado 6, 14.09.2026). */
+        'The two European Union frameworks that measure Portugal: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard.',
       h1: 'Portugal in the European Union',
       porta: 'Portugal in the European Union',
     },
@@ -2992,7 +3003,8 @@ export const STRINGS = {
       metaTitle: 'Domains · O Estado do País',
       metaDescription:
         /* Ver a razão na edição portuguesa. */
-        'The areas of the country’s life with published measures.',
+        /* Ver a razão na gémea portuguesa (achado 6, 14.09.2026). */
+        'The domains of the content charter, each with the count of its measures and the door to its page.',
       eyebrow: 'Domains',
       h1: 'By domain',
       /* Ver a razão na edição portuguesa. */
@@ -3410,7 +3422,8 @@ export const STRINGS = {
 
     estudos: {
       metaTitle: 'Studies · O Estado do País',
-      metaDescription: 'The published studies, with their Portuguese and English editions.',
+      /* Ver a razão na gémea portuguesa (achado 6, 14.09.2026). */
+      metaDescription: 'The studies, with their Portuguese and English editions.',
       h1: 'Studies',
       lede: 'Every published study, with its editions and dates. Those hosted elsewhere carry the link to it.',
       /* Ver a razão na edição portuguesa. */

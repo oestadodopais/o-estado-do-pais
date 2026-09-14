@@ -3306,6 +3306,20 @@ a.porta:hover .porta-abrir {
   border-left: 2px solid var(--g3);
   max-width: 60em;
 }
+/* A DATA DE LEITURA, DENTRO DA DOBRA (14.09.2026, achado 5 da leitura cruzada do
+   inventário). Fica debaixo do texto citado, alinhada com ele, porque é o
+   «acedido a» daquela citação e não um campo da linha à vista. O tipo é o da
+   instrumentação, como a linha de cima. */
+.def-excerto-lido {
+  font-family: var(--f-instr);
+  font-size: 12px;
+  line-height: 1.45;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  margin: 4px 0 0;
+  padding-left: 14px;
+  max-width: 60ch;
+}
 
 /* A FRASE QUE DIZ O QUE O LIMIAR É E QUEM O FIXOU (F1.10, item 8.5, 08.09.2026).
    Vai no corpo da instrumentação e não no da prosa, e é a mesma decisão que pôs

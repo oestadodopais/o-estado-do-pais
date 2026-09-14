@@ -90,6 +90,9 @@
  */
 
 import { parsePtNumber } from '../lib/ledger.mjs';
+/* O MARCADOR VEM DO MÓDULO QUE O DECLARA, e não de `ledger.mjs`, que o
+   reexporta: `marcador.mjs` não importa nada e não fecha ciclo nenhum. */
+import { POR_VERIFICAR } from './marcador.mjs';
 
 /**
  * AS TREZE LINHAS COM LIMIAR PUBLICADO DO PROCEDIMENTO (Emenda 16).
@@ -519,6 +522,20 @@ export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
     lido: '2026-09-09',
     excerto: 'general government sector debt in % of GDP with a threshold of 60%.',
   },
+  /* A SEGUNDA ORIGEM DA POSIÇÃO DE INVESTIMENTO INTERNACIONAL (achado 3 da
+     leitura do Codex de 14.09.2026). A definição diz «em percentagem do PIB» e
+     o excerto do Banco de Portugal não diz a unidade: diz o que a posição é. A
+     unidade é da linha da Comissão, e é esta, lida no mesmo endereço das outras
+     doze a 14.09.2026 e copiada carácter a carácter. A definição passa a
+     declarar as duas origens, como as outras medidas que juntam o conceito de
+     um glossário ao recorte que o painel usa. */
+  'pdm-posicao-de-investimento': {
+    publicador: 'Comissão Europeia',
+    documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
+    url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',
+    lido: '2026-09-14',
+    excerto: 'net international investment position as percent of GDP, with a threshold of -35%.',
+  },
   'pdm-custo-do-trabalho': {
     publicador: 'Comissão Europeia',
     documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
@@ -588,17 +605,28 @@ export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
     excerto:
       'real effective exchange rates (3-year percentage change) based on HICP/CPI deflators, relative to 41 other industrial countries, with thresholds of -/+3% for euro area countries and -/+10% for non-euro area countries.',
   },
-  /* OS DOIS NOMES POR EXTENSO que a linha da Comissão abrevia. Lidos a
-     09.09.2026 no glossário do Eurostat, e são a segunda origem das duas
-     definições que os escrevem por extenso. */
-  'glossario-nfc': {
-    publicador: 'Eurostat',
-    documento: 'Statistics Explained · Glossary: Non-financial corporations sector',
-    url: 'https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Non-financial_corporations_sector',
-    lido: '2026-09-09',
-    excerto:
-      'The non-financial corporations sector consists of institutional units which are independent legal entities and market producers, and whose principal activity is the production of goods and non-financial services.',
-  },
+  /* UM NOME POR EXTENSO, E NÃO DOIS (achado 6 da leitura do Codex de
+     14.09.2026). Eram dois: «NPISH» e «NFC». O de «NPISH» prova-se, e está
+     abaixo: o glossário do Eurostat escreve «Non-profit institutions serving
+     households, abbreviated as NPISH», que é a sigla e a expansão na mesma
+     frase. O de «NFC» não se provava: o glossário da «Non-financial
+     corporations sector» descreve o setor e NUNCA escreve a sigla, e a página
+     da Comissão escreve a sigla e NUNCA escreve o nome por extenso.
+
+     MEDIDO, E NÃO DEDUZIDO (o construtor, 14.09.2026, com `curl` e o agente da
+     casa): o glossário (`…Glossary:Non-financial_corporations_sector`, HTTP
+     200, 68 554 bytes, revisão 623303) tem 0 ocorrências de «NFC» e 0 de
+     «abbreviat»; a página do painel (HTTP 200, 74 463 bytes, sha256
+     `1d0348211301941469aad7099cd2ce6c41720f233a64dbcf0a9462ecfd85c9db`, a mesma
+     cópia da leitura da manhã) tem 3 ocorrências de «NFC» e 0 de
+     «non-financial». Não há, nas duas fontes que a casa declarou, um texto que
+     ligue a sigla ao nome.
+
+     POR ISSO A ORIGEM SAIU, E A EXPANSÃO FICOU `[a verificar]`. Uma origem que
+     não sustenta nada do que a definição diz é uma citação a fazer de prova: as
+     duas definições que escreviam o nome por extenso passam a publicar a sigla
+     da fonte e, no lugar da expansão, o marcador da casa. O dia em que uma
+     fonte escrever a sigla ao lado do nome, a chave volta com o excerto. */
   'glossario-npish': {
     publicador: 'Eurostat',
     documento:
@@ -670,8 +698,13 @@ export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
     documento: 'Statistics Explained · Glossary: Early leaver from education and training',
     url: 'https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Early_leaver_from_education_and_training',
     lido: '2026-09-08',
+    /* CARÁCTER A CARÁCTER, E ATÉ AO FIM DA FRASE (achado 13 da leitura do Codex
+       de 14.09.2026). O excerto acabava num ponto final onde a fonte tem um
+       ponto e vírgula, e a frase continuava: uma transcrição que muda a
+       pontuação deixa de ser uma transcrição. A frase inteira entra, com os
+       apóstrofos direitos que a fonte usa. */
     excerto:
-      'Early leaver from education and training, previously named early school leaver, refers to a person aged 18 to 24 who has completed at most lower secondary education and is not involved in further education or training.',
+      "Early leaver from education and training, previously named early school leaver, refers to a person aged 18 to 24 who has completed at most lower secondary education and is not involved in further education or training; the indicator 'early leavers from education and training' is expressed as a percentage of the people aged 18 to 24 with such criteria out of the total population aged 18 to 24.",
   },
   'glossario-arope': {
     publicador: 'Eurostat',
@@ -738,11 +771,15 @@ export const DEFINICAO_DOS_PAINEIS = /** @type {const} */ ({
       pt: 'O painel do emprego e das condições sociais',
       en: 'The employment and social conditions scoreboard',
     },
+    /* «PARTICIPANTES» (achado 11 da leitura do Codex de 14.09.2026). O excerto
+       diz «participating EU countries» e as duas definições diziam «os países da
+       União» e «EU countries»: a casa alargava a população que a fonte
+       delimita. */
     pt: [
-      'O painel de medidas que apoia o Pilar Europeu dos Direitos Sociais, e com que se avalia o desempenho de emprego e social dos países da União.',
+      'O painel de medidas que apoia o Pilar Europeu dos Direitos Sociais, e com que se avalia o desempenho de emprego e social dos países da União participantes.',
     ],
     en: [
-      'The scoreboard of key measures that supports the European Pillar of Social Rights, used to assess the employment and social performance of EU countries.',
+      'The scoreboard of key measures that supports the European Pillar of Social Rights, used to assess the employment and social performance of participating EU countries.',
     ],
   },
 });
@@ -774,7 +811,11 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
     en: ['General government sector debt, as a percentage of GDP.'],
   },
   'posicao-de-investimento-internacional-2025': {
-    origens: ['bdp-pii'],
+    /* DUAS ORIGENS DESDE 14.09.2026 (achado 3): o conceito é do Banco de
+       Portugal, que compila a posição de Portugal e a explica nas duas línguas;
+       a unidade («em percentagem do PIB») é da linha da Comissão, e nenhum
+       excerto do Banco de Portugal a diz. A ordem é a da frase. */
+    origens: ['bdp-pii', 'pdm-posicao-de-investimento'],
     pt: [
       'A diferença entre os ativos financeiros e os passivos que os residentes de uma economia têm relativamente ao resto do mundo, em percentagem do PIB.',
     ],
@@ -816,11 +857,24 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
     ],
   },
   'divida-das-empresas-2025': {
-    /* DUAS ORIGENS: a linha da Comissão abrevia «NFC», e o nome por extenso é o
-       do glossário do Eurostat. */
-    origens: ['pdm-divida-das-empresas', 'glossario-nfc'],
-    pt: ['A dívida consolidada das sociedades não financeiras, em percentagem do PIB.'],
-    en: ['Non-financial corporations’ consolidated debt, as a percentage of GDP.'],
+    /* A EXPANSÃO DA SIGLA FICA `[a verificar]` (achado 6, 14.09.2026). A
+       definição escrevia «sociedades não financeiras» onde a linha da Comissão
+       escreve «NFC», e nenhuma das duas fontes declaradas liga a sigla ao nome
+       (a medição está em `ORIGENS_DAS_DEFINICOES`, ao pé de `glossario-npish`).
+       A definição publica agora a sigla da fonte e, no lugar da expansão, o
+       marcador da casa: a falta fica visível em vez de se preencher com uma
+       coisa plausível. A segunda origem saiu com a expansão. */
+    origens: ['pdm-divida-das-empresas'],
+    pt: [
+      'A dívida consolidada das NFC, em percentagem do PIB; o nome por extenso da sigla permanece ',
+      { marcador: 'a verificar', gloss: 'to verify' },
+      '.',
+    ],
+    en: [
+      'NFC consolidated debt, as a percentage of GDP; the full name behind the abbreviation remains ',
+      { marcador: 'a verificar', gloss: 'to verify' },
+      '.',
+    ],
   },
   'divida-das-familias-2025': {
     /* DUAS ORIGENS: a linha da Comissão abrevia «incl. NPISH», e o nome por
@@ -835,29 +889,50 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
   },
   'fluxo-de-credito-as-empresas-2025': {
     /* REESCRITA A 09.09.2026 na primeira oração: dizia «o crédito novo», e a
-       linha da Comissão diz «consolidated credit flow». Novo era da casa. */
-    origens: ['pdm-credito-as-empresas', 'glossario-nfc'],
+       linha da Comissão diz «consolidated credit flow». Novo era da casa.
+
+       E OUTRA VEZ A 14.09.2026, duas vezes: a expansão da sigla passa a
+       `[a verificar]` (achado 6, a razão está na gémea da dívida das empresas),
+       e o tempo passa a ser o do excerto (achado 4, a razão está na gémea das
+       famílias). */
+    origens: ['pdm-credito-as-empresas'],
     pt: [
-      'O fluxo de crédito consolidado às sociedades não financeiras, sem o investimento direto estrangeiro, em percentagem da dívida que elas tinham no fim do ano anterior.',
+      'O fluxo de crédito consolidado às NFC, sem o investimento direto estrangeiro, em percentagem da dívida que elas tinham no período anterior; o nome por extenso da sigla permanece ',
+      { marcador: 'a verificar', gloss: 'to verify' },
+      '.',
     ],
     en: [
-      'The consolidated credit flow to non-financial corporations, excluding foreign direct investment, as a percentage of their debt stock at the end of the previous year.',
+      'The consolidated credit flow to NFC, excluding foreign direct investment, as a percentage of their debt stock in the previous period; the full name behind the abbreviation remains ',
+      { marcador: 'a verificar', gloss: 'to verify' },
+      '.',
     ],
   },
   'fluxo-de-credito-as-familias-2025': {
     /* REESCRITA A 09.09.2026 na primeira oração, pela mesma razão da anterior, e
-       com o «incl. NPISH» que a linha da Comissão traz e a frase omitia. */
+       com o «incl. NPISH» que a linha da Comissão traz e a frase omitia.
+
+       E A 14.09.2026 NO TEMPO (achado 4): dizia «no fim do ano anterior», e o
+       excerto da Comissão diz «household debt stock in t-1». «t-1» é o período
+       antes do de referência, e mais nada: nem «fim», nem «ano», que eram as
+       duas palavras da casa. A definição diz agora o que o excerto diz. */
     origens: ['pdm-credito-as-familias', 'glossario-npish'],
     pt: [
-      'O fluxo de crédito consolidado às famílias, incluindo as instituições sem fim lucrativo ao serviço delas, em percentagem da dívida que elas tinham no fim do ano anterior.',
+      'O fluxo de crédito consolidado às famílias, incluindo as instituições sem fim lucrativo ao serviço delas, em percentagem da dívida que elas tinham no período anterior.',
     ],
     en: [
-      'The consolidated credit flow to households, including non-profit institutions serving households, as a percentage of their debt stock at the end of the previous year.',
+      'The consolidated credit flow to households, including non-profit institutions serving households, as a percentage of their debt stock in the previous period.',
     ],
   },
   'saldo-da-balanca-corrente-2025': {
+    /* A MÉDIA É MÓVEL, E PARA TRÁS (achado 12 de 14.09.2026, que é o achado 7
+       da leitura do inventário). O excerto diz «3-year backward moving
+       average», a gémea inglesa dizia-o e a portuguesa dizia «na média dos três
+       anos anteriores», que é outra coisa: uma média dos três anos que vêm
+       antes, e não uma janela de três anos que acaba na observação. */
     origens: ['pdm-balanca-corrente'],
-    pt: ['O saldo da balança corrente em percentagem do PIB, na média dos três anos anteriores.'],
+    pt: [
+      'O saldo da balança corrente em percentagem do PIB, na média móvel de três anos para trás.',
+    ],
     en: [
       'The current account balance as a percentage of GDP, on a three-year backward moving average.',
     ],
@@ -909,12 +984,15 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
     en: ['People who are out of work and have been actively seeking employment for at least a year.'],
   },
   'jovens-nem-2025': {
+    /* «E SEXO» (achado 7 de 14.09.2026). O excerto diz «the population of a
+       given age group and sex», e as duas definições guardavam a idade e
+       deixavam cair o sexo: a condição que a fonte põe é dupla. */
     origens: ['glossario-nem'],
     pt: [
-      'A percentagem das pessoas de um grupo de idades que não tem emprego e não está em estudos nem em formação.',
+      'A percentagem das pessoas de um grupo de idades e sexo que não tem emprego e não está em estudos nem em formação.',
     ],
     en: [
-      'The percentage of the population of a given age group who is not employed and not involved in further education or training.',
+      'The percentage of the population of a given age group and sex who is not employed and not involved in further education or training.',
     ],
   },
   'abandono-escolar-precoce-2025': {
@@ -953,19 +1031,100 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
     ],
   },
   'sobrecarga-do-custo-da-habitacao-2025': {
+    /* LÍQUIDOS DE SUBSÍDIOS À HABITAÇÃO, DOS DOIS LADOS (achado 5 de
+       14.09.2026). O excerto qualifica as duas parcelas, «total housing costs
+       ('net' of housing allowances)» e «disposable income ('net' of housing
+       allowances)», e a definição guardava o limiar dos 40 % e deixava cair as
+       duas: mudava o que entra no numerador e no denominador. */
     origens: ['glossario-sobrecarga'],
     pt: [
-      'A percentagem da população que vive em agregados onde o custo total da habitação leva mais de ',
+      'A percentagem da população que vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de ',
       { nl: '40', motivo: 'escala-de-instrumento' },
-      '% do rendimento disponível.',
+      '% do rendimento disponível, líquido de subsídios à habitação.',
     ],
     en: [
-      'The percentage of the population living in households where total housing costs take more than ',
+      'The percentage of the population living in households where total housing costs, net of housing allowances, take more than ',
       { nl: '40', motivo: 'escala-de-instrumento' },
-      '% of disposable income.',
+      '% of disposable income, net of housing allowances.',
     ],
   },
 });
+
+/**
+ * ---------------------------------------------------------------------------
+ * UMA DEFINIÇÃO SEM ORIGEM NENHUMA FECHA A CONSTRUÇÃO (achado 8, 14.09.2026)
+ * ---------------------------------------------------------------------------
+ * A leitura do Codex de 14.09.2026 mediu o buraco: «An empty `origens: []`
+ * passes». Passava nos dois sítios. `comDefinicao()` percorria as chaves
+ * declaradas e uma lista vazia não tem chaves nenhumas para percorrer;
+ * `origensDaDefinicao()` devolvia uma lista vazia, a vista não rendia bloco de
+ * origem nenhum, e a célula 8.4 da régua não tinha origem nenhuma para procurar:
+ * a definição saía para o leitor apresentada como citada, sem uma única prova, e
+ * nenhuma das três coisas dizia nada. É exactamente o defeito que a leitura a
+ * frio de 09.09 abriu, com a porta aberta por baixo.
+ *
+ * E FECHA TAMBÉM PARA OS PAINÉIS. `comDefinicao()` só corre nas 21 medidas; as
+ * duas definições dos painéis nunca passaram por guarda nenhuma. Esta corre nas
+ * duas famílias, quando o módulo carrega.
+ *
+ * O POSITIVO CONHECIDO É A PRÓPRIA FUNÇÃO, e por isso ela é exportada: o guião
+ * `design/especime-v3/medicoes/lugar-2026-09-04/positivos-8-4.mjs` planta-lhe
+ * uma definição com `origens: []` e outra com uma chave que não existe, e exige
+ * que ela feche nas duas. Uma guarda que nunca se viu morder é uma guarda por
+ * medir.
+ *
+ * @param {string} familia o nome da coleção, para a mensagem
+ * @param {Record<string, { origens?: readonly string[] }>} coleccao
+ */
+export const conferirOrigensDeclaradas = (familia, coleccao) => {
+  for (const [nome, d] of Object.entries(coleccao)) {
+    if (!Array.isArray(d.origens) || d.origens.length === 0) {
+      throw new Error(
+        `figuras: a definição "${nome}" de ${familia} não declara origem nenhuma. Uma ` +
+          `definição apresentada como citada sem uma origem é uma paráfrase com aspas: ` +
+          `declara a origem com o documento, o endereço, a data de leitura e o excerto ` +
+          `literal em \`ORIGENS_DAS_DEFINICOES\`, ou reescreve a frase para o que a casa ` +
+          `pode provar (achado 8 da leitura do Codex de 14.09.2026).`,
+      );
+    }
+    for (const chave of d.origens) {
+      if (chave in ORIGENS_DAS_DEFINICOES) continue;
+      throw new Error(
+        `figuras: a definição "${nome}" de ${familia} diz vir de "${chave}", que não está ` +
+          `em \`ORIGENS_DAS_DEFINICOES\`.`,
+      );
+    }
+  }
+};
+
+conferirOrigensDeclaradas('DEFINICAO_DOS_PAINEIS', DEFINICAO_DOS_PAINEIS);
+conferirOrigensDeclaradas('DEFINICOES_DAS_MEDIDAS', DEFINICOES_DAS_MEDIDAS);
+
+/**
+ * O TEXTO DE UMA DEFINIÇÃO, COMO ELA SE RENDE (achado 28, 14.09.2026).
+ *
+ * Os pedaços de uma frase da casa não são todos texto: um `{ nl }` é um
+ * algarismo com o seu motivo, e um `{ marcador }` é o marcador da casa, que
+ * `Frase.astro` rende entre parênteses retos. A régua comparava os pedaços com o
+ * que a página rende e resolvia o marcador para uma cadeia vazia: uma definição
+ * que publicasse `[a verificar]` ficava diferente da sua declaração sem que
+ * ninguém tivesse mexido nela, e uma que o deixasse de publicar passava.
+ *
+ * Esta função é o único sítio onde um pedaço se transforma no texto dele, e é a
+ * mesma que a régua lê. O marcador vem de `POR_VERIFICAR`, e não de uma cadeia
+ * escrita à mão (`src/data/marcador.mjs`, decisão de 16.08.2026).
+ *
+ * @param {readonly (string|Record<string, string>)[]} partes
+ * @returns {string}
+ */
+export const textoDaDefinicao = (partes) =>
+  partes
+    .map((p) => {
+      if (typeof p === 'string') return p;
+      if (p.marcador) return POR_VERIFICAR;
+      return p.nl ?? p.ref ?? '';
+    })
+    .join('');
 
 /**
  * O GUARDA: uma medida sem definição não se rende, e uma definição sem origem
@@ -1395,54 +1554,46 @@ export function fixadorDoLimiar(medida, onde) {
  */
 /**
  * ===========================================================================
- * QUANTAS MEDIDAS PRINCIPAIS TEM O PAINEL SOCIAL EUROPEU (bloco F1.6, 04.09.2026)
+ * QUANTAS MEDIDAS PRINCIPAIS TEM O PAINEL SOCIAL EUROPEU: A CASA DEIXA DE O
+ * DIZER (14.09.2026, achado 2 da leitura cruzada do inventário)
  * ===========================================================================
  *
- * Decisão (5) da `DECISIONS.md` §1.98: «a do Painel Social passa a dizer a
- * seleção ("oito das dezassete medidas principais") quando o número das medidas
- * principais estiver conferido na página da Comissão ou do Eurostat, e não
- * antes». Está conferido, e a origem vai aqui e não numa frase do relatório.
+ * Aqui esteve, de 04.09 a 14.09.2026, `MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL`,
+ * com `numero: 17` e a origem do Anexo 2 do Relatório Conjunto sobre o Emprego
+ * de 2026 (COM(2025) 958), descarregado pelo motor a 18.08.2026. O comentário
+ * dizia por extenso o que o número era: «O DOCUMENTO NÃO IMPRIME O NÚMERO,
+ * IMPRIME A LISTA; dezassete é a contagem da lista dele, não uma cadeia copiada
+ * de uma página» (seis medidas em «Equal opportunities», quatro em «Fair working
+ * conditions», sete em «Social protection and inclusion»).
  *
- * A FONTE É O DOCUMENTO OPERATIVO DA COMISSÃO, e não uma página de navegação: o
- * Anexo 2 do Relatório Conjunto sobre o Emprego de 2026, COM(2025) 958, que
- * imprime a lista das medidas principais «endorsed by the Council» por baixo dos
- * três capítulos do Pilar. Contadas na lista: seis em «Equal opportunities»,
- * quatro em «Fair working conditions», sete em «Social protection and
- * inclusion».
+ * A DECISÃO (5) DA §1.98 pede outra coisa: a frase «só diz a seleção quando o
+ * número das medidas principais estiver CONFERIDO NA PÁGINA da Comissão ou do
+ * Eurostat». Uma contagem feita pela casa sobre uma lista de um PDF não é isso,
+ * e a leitura do Codex de 14.09.2026 mediu a consequência: «the denominator
+ * cannot be reproduced from the supplied evidence».
  *
- * O DOCUMENTO NÃO IMPRIME O NÚMERO, IMPRIME A LISTA, e isso diz-se em vez de se
- * esconder: dezassete é a contagem da lista dele, não uma cadeia copiada de uma
- * página. O relatório do bloco traz o excerto e a contagem por capítulo.
+ * AS TRÊS PÁGINAS FORAM LIDAS, E NENHUMA O DIZ (o construtor, 14.09.2026, com
+ * `curl` e o agente da casa):
  *
- * NENHUM PEDIDO SAIU DESTE PORTÁTIL PARA A COMISSÃO. O ficheiro foi descarregado
- * pelo motor a 2026-08-18 e está lá com o seu recibo
- * (`content/10 Housing/Technical Source/raw/MANIFEST.json`): estado 200,
- * 1 702 896 bytes, sha256 `0d49c0bc…e2eaa` (o resumo inteiro está no relatório).
+ *   · a página do Pilar (`pilar-social`, a origem já declarada):
+ *     0 ocorrências de «seventeen» e nenhuma frase com o número das medidas
+ *     principais; as três secções «Headline indicators» listam-nas sem as contar;
+ *   · o painel social do Eurostat que essa página aponta
+ *     (`ec.europa.eu/eurostat/cache/dashboard/social-scoreboard`, HTTP 200,
+ *     20 863 bytes): rende o corpo por guião e tem 117 bytes de texto, com 0
+ *     ocorrências de «headline», «seventeen» e «17»;
+ *   · a página do Painel Social da Comissão
+ *     (`ec.europa.eu/social/main.jsp?catId=1226&langId=en`, HTTP 200,
+ *     151 253 bytes): 2 ocorrências de «headline», as duas sobre as «headline
+ *     targets» de 2030, e 1 de «17», que é o número do princípio 17 do Pilar.
  *
- * O NÚMERO NÃO SE RENDE COMO ALGARISMO, rende-se por extenso, e é a única maneira
- * honesta de ele entrar: não é uma medição de Portugal (não tem linha), não é um
- * número deste sítio sobre si próprio (não há nada que o portão possa recontar
- * aqui), e um `data-nonledger` novo seria uma dispensa que nada reconfere. Por
- * extenso, o que o guarda é o `check:formas` (F16) e a régua da voz: a frase
- * inteira está declarada no inventário, e no dia em que ela mudar, muda a linha.
+ * POR ISSO A FRASE DEIXA DE DIZER O NÚMERO, e não porque ele esteja errado: a
+ * casa não pode publicá-lo com a prova que a sua própria decisão exige. A fração
+ * fica sem denominador («Oito das medidas principais do Painel Social Europeu»),
+ * que continua a dizer ao leitor o que era preciso dizer-lhe: que estas oito não
+ * são o painel todo. O dia em que uma página da Comissão ou do Eurostat escrever
+ * o número, a declaração volta com o excerto e a frase volta a dizê-lo.
  */
-export const MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL = {
-  /* UM CAMPO SÓ, E A PALAVRA COMPÕE-SE DELE (segunda passagem, 04.09.2026,
-     Major 10 da leitura a frio do Codex). A primeira redação tinha `numero: 17` e
-     `palavra: { pt: 'dezassete', … }` lado a lado, e a régua F16 comparava a
-     frase com o campo `palavra`, que era o mesmo campo com que a frase tinha sido
-     construída: mudar os dois para uma palavra errada passava. Agora só existe o
-     número, a palavra sai de `numeralPorExtenso()`, e a régua lê o número, compõe
-     a palavra por conta própria e procura-a na PÁGINA CONSTRUÍDA. Os dois lados
-     da comparação deixaram de ser o mesmo. */
-  numero: 17,
-  origem: {
-    documento: 'Joint Employment Report 2026, COM(2025) 958, Annex 2',
-    publicador: 'Comissão Europeia',
-    url: 'https://employment-social-affairs.ec.europa.eu/document/download/82702c6c-135c-4042-ae74-4afd6432e83f_en?filename=COM_2025_958_1_EN_annexe.pdf',
-    lidoEm: '2026-08-18',
-  },
-};
 
 /**
  * Os numerais por extenso de que as frases dos painéis precisam.
@@ -1499,17 +1650,21 @@ export function numeralPorExtenso(n, lang, maiuscula = false) {
  *
  * **O QUE NÃO PODIA SAIR É A FRAÇÃO**, e a razão é de honestidade e não de
  * forma: o subtítulo do painel diz «Painel Social Europeu · 8 medidas», e um
- * leitor que só leia isso fica a pensar que o painel TEM oito medidas. Tem
- * dezassete principais, e o livro-razão guarda oito. A frase fica, sem a glosa e
- * sem uma palavra sobre a conferência, e é ela que a régua F16 do
- * `check:formas` continua a ler no `dist/` com as duas contagens compostas por
- * conta própria.
+ * leitor que só leia isso fica a pensar que o painel TEM oito medidas. A frase
+ * fica, sem a glosa e sem uma palavra sobre a conferência, e diz o que a casa
+ * pode provar: que estas oito são uma parte das medidas principais, e não o
+ * painel inteiro.
+ *
+ * **O DENOMINADOR SAIU A 14.09.2026** (achado 2 da leitura cruzada do
+ * inventário), e a razão inteira, com as três páginas lidas, está no bloco
+ * acima. A régua F16 do `check:formas` continua a ler a frase no `dist/`, agora
+ * com uma contagem composta por conta própria em vez de duas.
  */
 export const ALCANCE_DO_PAINEL_SOCIAL = {
   pt: [
-    `${numeralPorExtenso(FIGURAS_SOCIAL.length, 'pt', true)} das ${numeralPorExtenso(MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL.numero, 'pt')} medidas principais do Painel Social Europeu.`,
+    `${numeralPorExtenso(FIGURAS_SOCIAL.length, 'pt', true)} das medidas principais do Painel Social Europeu.`,
   ],
   en: [
-    `${numeralPorExtenso(FIGURAS_SOCIAL.length, 'en', true)} of the ${numeralPorExtenso(MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL.numero, 'en')} headline measures of the European Social Scoreboard.`,
+    `${numeralPorExtenso(FIGURAS_SOCIAL.length, 'en', true)} of the headline measures of the European Social Scoreboard.`,
   ],
 };
