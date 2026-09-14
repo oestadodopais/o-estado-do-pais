@@ -8,9 +8,16 @@
  * `quadro-institucional` foram reconferidas contra a fonte. A página
  * publica-a: se a verificação atrasar, o leitor vê o atraso em vez de
  * ver um número que parece fresco.
+ *
+ * `observadoPor` é a máquina que fez os pedidos, e só existe quando
+ * alguém lhe deu um nome (`OEDP_OBSERVADOR`). «A fonte não respondeu»
+ * e «a fonte não respondeu a esta máquina» são duas frases
+ * diferentes, e só a segunda é verdade quando a rede falha deste
+ * lado; o nome da máquina de uma pessoa não entra num repositório
+ * público por omissão.
  */
 export const VERIFICACAO = {
-  verificadoEm: '2026-09-07',
+  verificadoEm: '2026-09-14',
   afirmacoes: 32,
   alarmes: 0,
   validadeDias: 45,
