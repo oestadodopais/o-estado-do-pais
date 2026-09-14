@@ -7,6 +7,125 @@ deste relatório foi escrito à mão: cada um tem ao lado o comando que o mediu.
 
 ---
 
+## Estado · 14.09.2026 · **feito**
+
+**A palavra do cabeçalho é «feito», e cada um dos seis itens que faltavam tem um
+número medido ao lado.** A sessão de 09.09 parou ao meio-dia com dezanove das
+vinte e cinco decisões da segunda passagem feitas e seis por fechar: o teto da
+L1, a célula A9 e as réguas de navegador, as plantas por forma, as saídas
+guardadas, os dois pequenos do §7.10 e as capturas. Fecharam as seis. Duas delas
+mudaram de resultado a meio, e as duas mudanças estão escritas onde aconteceram:
+as plantas por forma davam cinco de sete e o defeito era das plantas e não da
+régua; a definição do marcador nasceu com a palavra «proveniência» e a régua
+apanhou-a a render-se onze vezes na agenda, onde o que falta é uma data.
+
+| | |
+|---|---|
+| cabeça | **`bddbafde`** quando esta secção se escreveu, e a última do ramo depois do commit que a acrescenta (`git -C <worktree> rev-parse --short HEAD`): um commit não contém o seu próprio resumo. O `dist/` que estas medições leem foi construído da fonte que estes commits contêm, e nenhuma fonte do sítio mudou depois dessa construção: o que mudou a seguir foram guiões de medição e este relatório |
+| `build` · `verify` · `typecheck` | **0 · 0 · 0**, lidos de `build.exit`, `verify.exit` e `typecheck.exit` na árvore, e não de memória |
+| a corrida da CI | lê-se com `gh run list --repo oestadodopais/o-estado-do-pais --branch lugar-2026-09-04`. Um commit não pode conter o número da corrida que ele dispara |
+| o que esta sessão fez | os seis itens que faltavam à segunda passagem, na ordem do relatório |
+| o modelo | Claude Opus 5 |
+| os commits | cinco: a célula A9; os dois pequenos do §7.10; as plantas e as duas réguas novas; as saídas e as capturas; este relatório |
+
+### As medidas de aceitação, antes e depois
+
+*«Antes» é o estado ao pausar, a 09.09.2026 ao meio-dia; «depois» é esta cabeça.
+A prova de cada linha é um ficheiro guardado em
+`design/especime-v3/medicoes/lugar-2026-09-04/`, com a data no nome.*
+
+| medida | antes | depois | a prova |
+|---|---|---|---|
+| L1 · páginas com dois destinos iguais fora da mobília | 2 170 (teto 2 170) | **2 170** (teto 2 170, horizonte 0) | `check-lugar-2026-09-14.txt`, `l1-composicao-2026-09-14.txt` |
+| L2a · segundas listas dos concelhos | 0 | **0** | `check-lugar-2026-09-14.txt` |
+| L2b · réguas da convergência fora de `/regioes` | 0 | **0** | o mesmo |
+| L2c · sinopses de estudo fora de `/estudos` | 0 | **0** | o mesmo |
+| L3 · palavras fora do vocabulário fechado | 0 | **0** | o mesmo |
+| L4 · frases de definição e de hierarquia em falta | 0 | **0** | o mesmo |
+| L5 · páginas sem caminho no cabeçalho | 0 | **0** | o mesmo |
+| L6 · selos que não dizem o publicador | 0 | **0** | o mesmo |
+| §7.10 · «[a verificar]» sem definição ao pé do primeiro | *(a célula não existia)* | **0** (teto 0) | o mesmo. 712 páginas rendem o marcador, 710 rendem a definição, nenhuma rende duas |
+| §7.10 · valores desenhados sem o seu texto na legenda | *(a célula não existia)* | **0** (teto 0) | o mesmo |
+| L7 · a releitura do leitor de primeira vez | 2 das 6 repetições, e a segunda decidida pelo 8.16 | **não se voltou a correr**: é leitura, e a leitura é do lugar de direção | `critica/2026-09-09-codex-releitura-l7-f110.md` |
+| L8 · os três portões e as réguas | os portões a 0; as quatro réguas de navegador por correr | **portões 0 · 0 · 0**; `porta` 34 de 34, `recibo` 13 de 13, `correcoes-a` 32 de 32, `matriz` **12 de 89 células falham** | `porta-2026-09-14.txt`, `recibo-2026-09-14.txt`, `correcoes-a-2026-09-14.txt`, `matriz-2026-09-14.txt` |
+| L9 · plantas vermelhas e depois verdes | sete escritas, nenhuma corrida | **7 de 7 morderam, e todas repuseram byte a byte** | `plantas-2026-09-14.txt` |
+
+**A L1 é uma catraca, e nesta passagem ela não desceu: ficou onde estava.** O
+número medido nesta cabeça é 2 170, que é exactamente o teto escrito a
+09.09.2026 com a correção do padrão maior. O horizonte continua a ser zero, e a
+composição de 14.09.2026 (`l1-composicao.mjs`, sobre o `dist/` desta cabeça) diz
+onde está o que falta:
+
+| famílias de página | páginas | o par de portas que repete o destino |
+|---|---:|---|
+| `linha` | 1 422 | o que resta da família depois da correção de 09.09: a ficha do aparelho e a atribuição da linha, 716 pares, e as verificações contra o rodapé do aparelho, 678 |
+| `municipio` | 616 | **o padrão seguinte**, com 2 464 pares: o selo do cartão da faixa e o selo do pé da leitura que aquele cartão abre, os dois para a mesma linha |
+| `distrito` | 58 | a área do mapa e a fila de nomes, as duas para a página do mesmo concelho (616 pares) |
+| as outras | 74 | dispersas por dezassete famílias: `regiao` 18, `documento` 15, `texto` 7, `estudo` 6, `area` 4, e duas páginas em cada uma das outras doze |
+
+### As seis decisões que faltavam, fechadas
+
+*A numeração é a do encargo da segunda passagem. As dezanove que já estavam
+feitas ficam como a secção de 09.09 as escreve, e repetem-se aqui só pelo
+estado; as seis desta sessão trazem o que ficou e onde.*
+
+| # | a decisão | estado | o que ficou, e onde |
+|---|---|---|---|
+| 1 | Blocking 1 · as 23 definições com origem própria | **feita** | 09.09; 52 definições e 62 origens, conferidas outra vez nesta cabeça pela régua |
+| **2** | **Blocking 3 · o teto da L1 ao medido, e a L1 como catraca** | **feita** | a composição correu sobre o `dist/` desta cabeça e deu **2 170**, que é o teto escrito a 09.09 depois da correção do padrão maior: **a catraca não desce porque não há o que descer**, e não porque não se mediu. O horizonte (zero) e o padrão seguinte (as 616 páginas de concelho, 2 464 pares) estão na tabela acima. Saída em `l1-composicao-2026-09-14.txt` |
+| 3 | Blocking 4 · o cabeçalho a dizer o que está feito | **feita** | 09.09 |
+| 4 | Major 5 · «concelho» na voz da casa | **feita** | 09.09; L3 a 0 nesta cabeça |
+| 5 | Major 6 · as descrições públicas do `<head>` | **feita** | 09.09 |
+| **6** | **Major 7 · o `<noscript>` da busca e do filtro; a A9 a medir o filtro de facto** | **feita** | a célula A9 de `tests/inicio/porta.mjs` foi reescrita e corre em três pernas, cada uma com o seu número: **dois toques e não «até dois»** (`toques === 2`), com cada alvo dentro do primeiro ecrã, e **a página de chegada a render mesmo o concelho** (a cabeça de lugar diz «concelho» e a manchete traz o nome: «concelho · Évora tem 58 567 pessoas»), e não apenas a ter o endereço que se clicou; **sem guião**, a submissão nativa leva a `/municipios?concelho=%C3%89vora` com **308 nomes**, **1 porta daquele concelho** e **88 caracteres** de frase do `<noscript>` (103 na edição inglesa); **o filtro dos estudos**, em `/estudos?concelho=evora`, com **5 entradas, 5 que casam, 5 à vista e a porta da volta acesa**, e sem guião **5 entradas, 0 escondidas e 43 caracteres** de frase (46 na inglesa). A régua sai a 0 com 34 de 34 células |
+| 7 | Major 8 · o título do estudo abre o texto | **feita** | 09.09 |
+| **8** | **Major 10 · `matriz.mjs` e `recibo.mjs` saem com 1 quando há células vermelhas** | **feita** | corridas. `recibo` sai a 0 com **13 de 13**, e o positivo conhecido morde (`RECIBO_ROMPE=1` sai a 1). `matriz` sai a **1**, e é a primeira vez que ela o diz: **12 das 89 células falham**, nas duas edições, e nenhuma delas é desta sessão (são o transbordo horizontal de `/` no modo concelho, a régua de uma leitura aberta, o alvo do selo, `/uniao-europeia` sem guião e as três células do mapa da cabeça). O positivo conhecido também morde, e hoje não distingue nada por já haver vermelho: `MATRIZ_ROMPE=1` sai a 1 com a linha impressa. As saídas estão guardadas |
+| 9 | Major 11 · a L5 e a L6 | **feita** | 09.09; as duas a 0 nesta cabeça |
+| **10** | **Major 12 · a L2 pela forma, e as plantas por forma** | **feita** | as sete plantas correram e **7 de 7 morderam**, com o ficheiro a voltar byte a byte em todas. Duas não mordiam à primeira, e **o defeito era das plantas**: a da L2a copiava `<ul class="concelhos-lista">` com um regex não guloso e o índice tem vinte e nove listas com esse nome, uma por unidade da Carta, o que plantava 19 portas contra um teto de 30; a da L1 estragava uma página de linha que **já contava** entre as 1 422, e um segundo destino repetido numa página já contada não move uma contagem de páginas. As duas foram corrigidas no próprio guião, com a razão escrita: a da L2a planta as 308 portas, a da L1 escolhe, por conta própria, a primeira página de linha sem nenhum destino repetido. Saída em `plantas-2026-09-14.txt` |
+| 11 | Major 13 · a guarda dos estudos | **feita** | 09.09; 24 · 8 · 2 · 44 · 24 nesta cabeça |
+| **12** | **Major 14 e 15 · as saídas guardadas e «o que um pacote de leitura não reproduz»** | **feita** | **treze ficheiros** em `design/especime-v3/medicoes/lugar-2026-09-04/`, todos com a data no nome (as saídas das seis réguas, os dois positivos conhecidos, o antes e o depois dos rótulos, a composição da L1, as plantas e a lista das capturas), e a secção abaixo |
+| **13** | **Major 16 · a A1 mede a manchete também em WebKit** | **feita** | corrida nos dois motores: **3 linhas em Chromium e 3 em WebKit** (teto 3), 125,5 px de altura, nas duas edições. Os dois motores estão instalados nesta máquina e nenhuma célula foi saltada |
+| 14 | Major 18 · o próximo pacote leva `src/lib/ledger.mjs` | **do lugar de direção** | não é desta sessão |
+| 15 | Minor 19 e 20 · o relatório corrigido | **feita** | 09.09 |
+| 16 a 21 | os seis primeiros da releitura do leitor | **feitas** | 09.09 |
+| **22** | **os cinco pequenos do §7.10** | **feita** | os três de 09.09 mais os dois que faltavam. **Os rótulos dos gráficos a 390 escrevem-se como texto por baixo:** medido antes e depois com `rotulos-390.mjs`, na página de um concelho e nas duas edições. Antes, a 390, os quatro valores desenhados que estão à vista chegavam ao leitor com **5,2 px** de altura de letra e a legenda não trazia valor nenhum; depois, a 390, **nenhum rótulo desenhado está à vista e os quatro valores estão na legenda a 12 px** («242,6», «182,0», «141,9», «105,5»), e a 1 280 é ao contrário (4 desenhados a **7,97 px**, 0 na legenda). A troca é da folha; o documento manda sempre os dois, e a célula §7.10 da régua conta 0 páginas de concelho com um valor desenhado sem o seu par escrito. **«[a verificar]» com a sua definição ao pé da primeira ocorrência:** `<DefinicaoDoMarcador>` rende-a uma vez por página, e a régua conta **0 páginas fora do sítio**; das **712** páginas que rendem o marcador, **710** rendem a definição e nenhuma rende duas. As duas que não a rendem são as duas páginas de texto transcrito, onde o marcador só aparece dentro de uma unidade do registo: a casa não edita o que transcreve, e o portão de HTML fechou a construção quando ela lá entrou |
+| 23 a 25 | os contadores, as definições das medidas e o que fica como está | **feitas** | 09.09 |
+
+**A palavra da definição mudou depois de medida, e é a única cadeia nova desta
+sessão.** Nasceu «um campo da proveniência por confirmar, e não uma dúvida sobre
+o número», e a régua nova apanhou o que a escrita não tinha visto: `/agenda` e
+`/en/agenda` rendem o marcador onze vezes cada uma, e ali o que falta é a DATA de
+um acontecimento e não um campo de uma linha do livro-razão. A frase passou a «um
+campo não confirmado contra a fonte, e não uma dúvida sobre o que está
+publicado», que são as palavras da própria página do marcador e são verdadeiras
+nos dois sítios. Está em `CHAVES-EN.md` com o par inglês e no
+`INVENTARIO-FRASES.md` com a classe e a razão.
+
+### O que um pacote de leitura não reproduz
+
+*Major 14 e 15 da leitura a frio de 09.09.2026: «The report's full-site counts and
+browser measurements are unshown and cannot be reproduced from this package.»
+Tinha razão, e a resposta não é mandar mais ficheiros: é dizer, medida a medida,
+o que uma leitura a frio só com ficheiros NÃO consegue refazer, e onde está a
+prova de cada uma. As saídas abaixo ficam versionadas no repositório, com a data
+no nome, em `design/especime-v3/medicoes/lugar-2026-09-04/`.*
+
+| o que não se reproduz de um pacote | porquê | onde está a prova |
+|---|---|---|
+| as contagens de sítio inteiro (L1 a L6, as células do §8 e as duas do §7.10) | a régua lê as **7 240 páginas** de um `dist/` construído, e um pacote de leitura leva uma amostra. Sem a árvore inteira, a contagem não é a mesma contagem | `check-lugar-2026-09-14.txt`, a saída inteira da régua, com o teto e o estado de cada célula |
+| a composição da L1 por família e por par de portas | a mesma razão, e ainda a tabela de rotas do sítio para classificar cada página | `l1-composicao-2026-09-14.txt` |
+| as medições de navegador (`porta`, `matriz`, `recibo`, `correcoes-a`, `rotulos-390`) | precisam de Chromium **e** de WebKit, de um servidor local a servir o `dist/` e de gesto real: toques, submissões sem guião, medições de caixa e de altura de letra depois de `document.fonts.ready` | `porta-2026-09-14.txt` e `porta-2026-09-14.json`, `matriz-2026-09-14.txt`, `matriz-positivo-2026-09-14.txt`, `recibo-2026-09-14.txt`, `recibo-positivo-2026-09-14.txt`, `correcoes-a-2026-09-14.txt`, `rotulos-390-antes-2026-09-14.txt` e `rotulos-390-depois-2026-09-14.txt` |
+| as plantas da L9 | mudam ficheiros do `dist/`, correm a régua inteira uma vez por planta e repõem o ficheiro byte a byte. Não se fazem por leitura | `plantas-2026-09-14.txt`, com o antes e o depois de cada uma das sete |
+| as capturas | uma fotografia faz-se com navegador. As **36** desta sessão estão no repositório e vêem-se sem correr nada; o que não se reproduz é **tirá-las outra vez** | `design/especime-v3/capturas/lugar-2026-09-04/`, e a lista de rotas de cada nome em `capturas-lugar.mjs` |
+| os três portões | `build`, `verify` e `typecheck` correm sobre a árvore inteira, com o motor dos dados e a rede das fontes | os códigos lidos de `build.exit`, `verify.exit` e `typecheck.exit`, e a corrida `portão` da CI sobre o mesmo commit |
+| os valores, os publicadores e as datas que as páginas imprimem | saem de `src/lib/ledger.mjs` e das linhas de `ledger/claims/`, que o pacote de 09.09 não levava (Major 18) | a decisão de levar o módulo no próximo pacote é do lugar de direção, e está na linha 14 da tabela acima |
+
+**As saídas guardadas não são a régua.** São o que ela imprimiu nesta cabeça, e
+servem para uma leitura a frio saber o que foi medido e com que número; quem
+quiser voltar a medir corre a régua, que está no repositório e diz, no seu
+cabeçalho, como se corre.
+
+---
+
 ## Estado ao pausar · 09.09.2026, meio-dia · **por fazer**, e a segunda passagem está a meio
 
 **A palavra do cabeçalho volta a «por fazer»**, e é a decisão 3 da segunda
