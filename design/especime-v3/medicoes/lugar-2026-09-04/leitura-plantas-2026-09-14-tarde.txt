@@ -25,4 +25,14 @@
   [32m✓[0m J13.en.webkit  [90mcom guião em /en/european-union · webkit: 0 nome(s) à vista em repouso (linha do estado vazio: à vista) · «divida-publica-2025» (o primeiro da faixa): 1 depois do toque, 0 depois de voltar atrás, 1 depois do Enter (linha do estado vazio fora) · «posicao-de-investimento-internacional-2025» (o primeiro de uma medida sem domínio): 1 depois do toque, 0 depois de voltar atrás, 1 depois do Enter (linha do estado vazio fora) · 21 leitura(s) no documento[0m
   [32m✓[0m J14.en.webkit  [90msem guião em /en/european-union · webkit: 21 leitura(s) no documento, 21 nome(s) à vista, 0 aberta(s), linha do estado vazio escondida[0m
 
-  leitura [32m✓[0m 26 de 26 célula(s)[90m  /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/lugar-2026-09-04/dist[0m
+  estragos plantados:
+  [32m✓[0m um painel de baixo de volta (a peça com o nome da medida)  [90mverde antes: sim · html mudou: sim · vermelho depois: J1.pt=vermelho[0m
+  [32m✓[0m um <details> da área de leitura sem id  [90mverde antes: sim · html mudou: sim · vermelho depois: J3.pt.chromium=vermelho, J3.pt.webkit=vermelho, J12.pt=vermelho[0m
+  [32m✓[0m o índice dos domínios com um nome sem porta  [90mverde antes: sim · html mudou: sim · vermelho depois: J5.pt=vermelho[0m
+  [32m✓[0m a leitura de uma medida do domínio reduzida a uma linha com a porta  [90mverde antes: sim · html mudou: sim · vermelho depois: J12.pt=vermelho[0m
+  [32m✓[0m uma leitura fechada deixada à vista com guião  [90mverde antes: sim · html mudou: sim · vermelho depois: J13.pt.chromium=vermelho, J13.pt.webkit=vermelho, J13.en.chromium=vermelho, J13.en.webkit=vermelho[0m
+  [32m✓[0m a área de leitura sem a linha do estado vazio  [90mverde antes: sim · html mudou: sim · vermelho depois: J13.pt.chromium=vermelho, J13.pt.webkit=vermelho, J13.en.chromium=vermelho, J13.en.webkit=vermelho[0m
+  [32m✓[0m a linha do estado vazio à vista com uma leitura aberta  [90mverde antes: sim · html mudou: sim · vermelho depois: J13.pt.chromium=vermelho, J13.pt.webkit=vermelho, J13.en.chromium=vermelho, J13.en.webkit=vermelho[0m
+  [32m✓[0m um valor selado dentro do índice dos domínios  [90mverde antes: sim · html mudou: sim · vermelho depois: J5.pt=vermelho[0m
+
+  leitura [32m✓[0m 26 de 26 célula(s) · plantas [32m✓[0m[90m  /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/lugar-2026-09-04/dist[0m
