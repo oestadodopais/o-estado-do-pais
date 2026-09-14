@@ -1,0 +1,24 @@
+{
+ "registado_em": "2026-09-14T17:51:45+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/pacote-uniao-3",
+ "plantas": [
+  {
+   "id": "T1",
+   "ficheiro": "src/data/figuras.mjs",
+   "descricao": "o excerto do glossário do FDI com «balance of trade accounts» onde a página diz «balance of payment accounts»: o excerto deixa de estar na fonte",
+   "sha256_antes": "99e7c27d7aac0ac2b5352c1f5cbd93beb0090ee2eb6fb6d4f3f7f26214c2df3d",
+   "sha256_depois": "05f661652a5e85f2ba94c81786bca268b411ee904c531227293ed11861938dc0",
+   "contexto_antes": " url: 'https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Foreign_direct_investment_(FDI)',\n    lido: '2026-09-14',\n    excerto:\n      'Foreign direct investment, abbreviated as FDI, is an international investment within the balance of payment accounts.',\n  },\n  'glossario-npish': {\n    publicador: 'Eurostat',\n    documento:\n      'Statistics Explained · Glossary: Non-profit institutions serving households (NPI",
+   "contexto_depois": " url: 'https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Foreign_direct_investment_(FDI)',\n    lido: '2026-09-14',\n    excerto:\n      'Foreign direct investment, abbreviated as FDI, is an international investment within the balance of trade accounts.',\n  },\n  'glossario-npish': {\n    publicador: 'Eurostat',\n    documento:\n      'Statistics Explained · Glossary: Non-profit institutions serving households (NPI"
+  },
+  {
+   "id": "T2",
+   "ficheiro": "built/en/european-union/index.html",
+   "descricao": "a página inglesa rende «also including foreign direct investment» na definição do fluxo de crédito às empresas onde os dados dizem «also excluding»",
+   "sha256_antes": "fb835f504fcd17491ffd5ab779d450253452907fc85c0c2238e537954e5937c9",
+   "sha256_depois": "f3208bac03564b0296cd6f955be6f1c1bb0760879dc852aeb82bba7bf45e214a",
+   "contexto_antes": "p class=\"dobra-definicao\">The consolidated credit flow to NFC, excluding foreign direct investment, as a percentage of their debt stock in the previous period, also excluding foreign direct investment; the full name behind the abbreviation remains <a class=\"marcador\" href=\"/en/to-verify\" lang=\"pt-PT\">[a verificar]</a><span class=\"marcador-gloss\"> (to verify)",
+   "contexto_depois": "p class=\"dobra-definicao\">The consolidated credit flow to NFC, excluding foreign direct investment, as a percentage of their debt stock in the previous period, also including foreign direct investment; the full name behind the abbreviation remains <a class=\"marcador\" href=\"/en/to-verify\" lang=\"pt-PT\">[a verificar]</a><span class=\"marcador-gloss\"> (to verify)"
+  }
+ ]
+}
