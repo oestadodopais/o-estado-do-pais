@@ -22,10 +22,28 @@
  * O QUE ELE RENDE
  * ---------------------------------------------------------------------------
  * Uma linha por origem (uma definição pode ter duas, quando o nome por extenso
- * vem de um glossário e o recorte vem do painel), com o publicador, o documento
- * como porta para o endereço e a data em que a casa o leu; e, debaixo dela, o
- * excerto atrás de uma dobra fechada, porque o excerto é a prova e não a
- * leitura: quem quer a definição lê a frase, quem quer conferi-la abre a dobra.
+ * vem de um glossário e o recorte vem do painel), com o publicador e o documento
+ * como porta para o endereço; e, debaixo dela, o excerto atrás de uma dobra
+ * fechada, porque o excerto é a prova e não a leitura: quem quer a definição lê
+ * a frase, quem quer conferi-la abre a dobra.
+ *
+ * ---------------------------------------------------------------------------
+ * A DATA DE LEITURA MUDOU DE LUGAR A 14.09.2026 (achado 5 da leitura cruzada do
+ * inventário, Codex)
+ * ---------------------------------------------------------------------------
+ * Estava na linha à vista, ao lado do documento, e a leitura mediu o que isso
+ * era: o item 8.11 tirou das páginas do leitor as datas de diligência da casa, e
+ * a exceção escrita em `VOZ-MARCADORES.md` cobre a TERCEIRA DATA DE UMA MEDIDA
+ * («verificado a»), que é um campo da linha do livro-razão, e não a data em que
+ * a casa leu a página de uma definição.
+ *
+ * A decisão do lugar de direção manda-a para dentro da dobra, e a razão é que
+ * ali ela é outra coisa: é o «acedido a» de uma citação, parte da própria
+ * citação, ao pé do texto citado que data. Quem abre a dobra quer conferir a
+ * transcrição, e é a quem confere que a data serve. A régua 8.4 continua a
+ * exigi-la, agora dentro da dobra e por igualdade: o atributo `data-def-lido`
+ * existe para ela a comparar com a data declarada, e não com uma cadeia
+ * encontrada algures no bloco.
  *
  * ---------------------------------------------------------------------------
  * NENHUMA FRASE NOVA DA CASA
@@ -72,9 +90,6 @@ const chaveDoExcerto = (o) =>
         >
           {o.documento}
         </a>
-        {' · '}
-        <span class="def-origem-k">{s.dominios.dataLido}</span>{' '}
-        <span data-nonledger="data-de-leitura-de-uma-definicao">{dataDaCasa(o.lido)}</span>
       </p>
       <details class="def-excerto">
         <summary class="def-excerto-abrir">
@@ -91,6 +106,12 @@ const chaveDoExcerto = (o) =>
         >
           {o.excerto}
         </blockquote>
+        <p class="def-excerto-lido">
+          <span class="def-origem-k">{s.dominios.dataLido}</span>{' '}
+          <span data-nonledger="data-de-leitura-de-uma-definicao" data-def-lido={o.chave}>
+            {dataDaCasa(o.lido)}
+          </span>
+        </p>
       </details>
     </div>
   ))

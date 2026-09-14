@@ -568,12 +568,22 @@ export const FAIXA_DO_DOMINIO_1 = /** @type {const} */ (['E3', 'E2', 'T1', 'T2',
  * coluna «concelho» da linha E1 diz não existir; e a disparidade salarial por
  * concelho, que o inventário mostrou não ser publicada.
  *
+ * A TERCEIRA EXCLUSÃO MUDOU DE PALAVRAS A 14.09.2026 (achado 10 da leitura
+ * cruzada do inventário). Dizia «que nenhum publicador oficial calcula», e isso
+ * é uma afirmação sobre TODOS os publicadores do país, que a casa não pode
+ * provar: o que ela leu foi um indicador, o `0012661` do INE sobre os Quadros de
+ * Pessoal do MTSSS/GEP, e o que esse indicador dá por concelho é um coeficiente
+ * de variação do ganho. A frase passa a dizer a ausência na forma da casa, que é
+ * a da regra 6 da carta e a mesma palavra do cartão da ausência («Não há número
+ * público para isto»), e quem quiser saber onde a casa procurou tem o cartão
+ * T4a na mesma página, com a fonte e o código do indicador.
+ *
  * NÃO TRAZ ALGARISMOS. Uma contagem das medidas seria um número da casa, e um
  * número da casa entra por `data-prova`, com quem o reconte.
  */
 export const FRONTEIRA_DO_DOMINIO_1 = {
-  pt: 'Este domínio mede as contas do Estado, o que a economia produz por pessoa, a dívida das câmaras e o que se ganha e se trabalha em Portugal; não mede a produtividade, que é pergunta de estudo, nem o produto abaixo das regiões, nem a disparidade salarial entre sexos ao nível do concelho, que nenhum publicador oficial calcula.',
-  en: 'This domain measures the State’s accounts, what the economy produces per person, municipal debt, and what is earned and worked in Portugal; it does not measure productivity, which is a question for a study, nor output below the regions, nor the gender pay gap at municipal level, which no official publisher computes.',
+  pt: 'Este domínio mede as contas do Estado, o que a economia produz por pessoa, a dívida das câmaras e o que se ganha e se trabalha em Portugal; não mede a produtividade, que é pergunta de estudo, nem o produto abaixo das regiões, nem a disparidade salarial entre sexos ao nível do concelho, para a qual não há número público.',
+  en: 'This domain measures the State’s accounts, what the economy produces per person, municipal debt, and what is earned and worked in Portugal; it does not measure productivity, which is a question for a study, nor output below the regions, nor the gender pay gap at municipal level, for which there is no published figure.',
 };
 
 /**
