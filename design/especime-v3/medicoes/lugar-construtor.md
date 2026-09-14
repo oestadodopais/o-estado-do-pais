@@ -7,6 +7,163 @@ deste relatório foi escrito à mão: cada um tem ao lado o comando que o mediu.
 
 ---
 
+## Estado · 14.09.2026, tarde · segunda passagem
+
+**A matriz saiu de 12 células vermelhas para 89 de 89 verdes, e nenhuma delas
+passou por se ter desligado.** Onze das doze eram o mesmo defeito, e o defeito
+era real para quem lê: a primeira página podia ser arrastada de lado 859 px num
+telemóvel a 390. A décima segunda media uma premissa que o próprio bloco mudou a
+09.09, e foi retirada com a razão escrita no lugar dela. Ao lado disso, a
+triagem das duas leituras do Codex de 14.09 foi aplicada achado a achado: sete
+definições passaram a dizer o que o excerto diz, uma expansão que nenhuma fonte
+prova passou a `[a verificar]`, e a célula 8.4 ganhou quatro guardas, cada uma
+com o seu positivo conhecido.
+
+| | |
+|---|---|
+| cabeça | **`77620291`** quando esta secção se escreveu, e a última do ramo depois do commit que a acrescenta (`git -C <worktree> rev-parse --short HEAD`): um commit não contém o seu próprio resumo |
+| `build` · `verify` · `typecheck` | **0 · 0 · 0**, lidos de `build.exit`, `verify.exit` e `typecheck.exit` na árvore |
+| a corrida da CI | lê-se com `gh run list --repo oestadodopais/o-estado-do-pais --branch lugar-2026-09-04`. Um commit não pode conter o número da corrida que ele dispara |
+| o modelo | Claude Opus 5 |
+| os commits | quatro: as duas leituras do Codex no ramo; a triagem aplicada e a régua 8.4 endurecida; os positivos conhecidos; as doze células da matriz |
+
+### As medidas de aceitação, antes e depois
+
+*«Antes» é a cabeça `2da5212d`, o fim da oitava sessão desta manhã; «depois» é
+esta cabeça. A prova de cada linha é um ficheiro em
+`design/especime-v3/medicoes/lugar-2026-09-04/`, com a data e o turno no nome.*
+
+| medida | antes | depois | a prova |
+|---|---|---|---|
+| L1 · páginas com dois destinos iguais fora da mobília | 2 170 (teto 2 170) | **2 170** (teto 2 170, horizonte 0) | `check-lugar-2026-09-14-tarde.txt` |
+| L2a · segundas listas dos concelhos | 0 | **0** | o mesmo |
+| L2b · réguas da convergência fora de `/regioes` | 0 | **0** | o mesmo |
+| L2c · sinopses de estudo fora de `/estudos` | 0 | **0** | o mesmo |
+| L3 · palavras fora do vocabulário fechado | 0 | **0** | o mesmo |
+| L4 · frases de definição e de hierarquia em falta | 0 | **0** | o mesmo |
+| L5 · páginas sem caminho no cabeçalho | 0 | **0** | o mesmo |
+| L6 · selos que não dizem o publicador | 0 | **0** | o mesmo |
+| §7.10 · «[a verificar]» sem definição ao pé do primeiro | 0 (teto 0) | **0** (teto 0) | o mesmo. **714** páginas rendem o marcador e **712** rendem a definição (eram 712 e 710: as duas novas são as da União, onde a expansão de «NFC» passou a `[a verificar]`) |
+| §7.10 · valores desenhados sem o seu texto na legenda | 0 (teto 0) | **0** (teto 0) | o mesmo |
+| L7 · a releitura do leitor de primeira vez | não corrida | **não corrida**: é leitura, e a leitura é do lugar de direção | `critica/2026-09-09-codex-releitura-l7-f110.md` |
+| L8 · os três portões e as réguas | portões 0·0·0; `porta` 34/34, `recibo` 13/13, `correcoes-a` 32/32, **`matriz` 12 de 89 falham** | **portões 0·0·0**; `porta` 34/34, `recibo` 13/13, `correcoes-a` 32/32, **`matriz` 89 de 89 passam** e sai a 0 | `porta-`, `recibo-`, `correcoes-a-` e `matriz-2026-09-14-tarde.txt` |
+| L8 · a régua que faltava à conta | *(não estava na tabela)* | **`leitura` 4 de 26 células**, vermelha desde 08.09 por decisão do item 8.16, e **não é desta sessão**: mede as 21 leituras em `/`, e elas estão em «Portugal na União Europeia» desde `3139099f`. Relatada, não corrigida | `leitura-2026-09-14-tarde.txt` |
+| L9 · plantas vermelhas e depois verdes | 7 de 7 | **11 de 11 morderam, e todas repuseram byte a byte** | `plantas-2026-09-14-tarde.txt`, e `positivos-8-4-2026-09-14.txt` com as seis da declaração |
+
+**A L1 continua a ser uma catraca, e nesta passagem não desceu nem subiu: 2 170,
+que é o teto.** Nada nesta sessão tocou no padrão seguinte (as 616 páginas de
+concelho, 2 464 pares), e a composição de manhã continua a dizer onde o trabalho
+está.
+
+### O §1 do encargo · as doze células vermelhas de `matriz.mjs`
+
+**Onze das doze eram um defeito só, e mediram-se antes de se tocar em nada.** O
+comando `?ambito=` continua a existir (a célula do estado do endereço mede-o e
+passa), mas as células do transbordo não medem esse estado: medem `/` e
+`/uniao-europeia`. A medição:
+
+| a célula | o estado que ela mede | a decisão | a medida |
+|---|---|---|---|
+| `largura 320 · sem transbordo horizontal` | `/` a 320 arrasta-se de lado 840 px | o defeito é real para um leitor: corrige-se e a célula fica a medir | **0** |
+| `largura 390 · sem transbordo horizontal` | o mesmo, 859 px | o mesmo | **0** |
+| `largura 768 · sem transbordo horizontal` | o mesmo, 405 px | o mesmo | **0** |
+| `largura 1024 · sem transbordo horizontal` | o mesmo, 109 px | o mesmo | **0** |
+| `ISSUES I20 · 3 estados × 5 larguras` | 2 de 15 a zero: o mesmo transbordo em `/`, em `/?ambito=municipio` e em `/uniao-europeia` | o mesmo | **15 de 15 a zero** |
+| `largura 768 · a régua de uma leitura aberta tem largura de régua` | transbordo 4 101 em `/uniao-europeia` | o mesmo | **0** |
+| `largura 1280 · a régua de uma leitura aberta tem largura de régua` | transbordo 4 702 | o mesmo | **0** |
+| `sem JavaScript · /uniao-europeia` | a página sem guião com o mesmo transbordo | o mesmo | **passa** |
+| `2l · Emenda 17 · o texto à esquerda e o mapa à direita` | transbordo 109 a 1024 | o mesmo | **0** |
+| `2m · o mapa enche a coluna da cabeça` | transbordo 109 a 1024 | o mesmo | **0** |
+| `2m · a busca está à vista por cima do mapa` | transbordo 109 a 1024 | o mesmo | **0** |
+| `o selo é o maior alvo do corpo da leitura` | selo 2 310 px², maior outro 16 246 px² | mede uma premissa que a decisão de 09.09.2026 mudou: **retirada**, e o lugar dela mede o facto que a retirou | **21 de 21 leituras** com selo e com uma porta por origem |
+
+**A causa das onze, medida e não deduzida.** Os `<span class="vh">` do texto
+oculto de cada cartão da faixa são `position: absolute`. Sem um antepassado
+posicionado, o bloco que os contém é o `<body>`; e um elemento absoluto só é
+cortado por um `overflow` que esteja na cadeia do bloco que o contém. O da fila
+(`ol.faixa`, com `overflow-x: auto`) não estava nessa cadeia, e por isso a página
+inteira ganhava a largura da fila. Mediu-se assim, no `dist/` desta árvore:
+esconder a fila punha `document.documentElement.scrollWidth` de 1 249 em 390;
+pôr-lhe `overflow: hidden` **não** mudava nada; pôr-lhe `position: relative`
+punha-o em 390. A correção é essa linha, com a razão escrita na folha. Depois
+dela, nas quatro rotas (`/`, `/?ambito=municipio`, `/uniao-europeia`,
+`/en/european-union`) e nas cinco larguras (320, 390, 768, 1024, 1280): transbordo
+**0** em todas, e `window.scrollTo(4000, 0)` deixa a página em `scrollX = 0`.
+
+**A décima segunda: o que a retirou, e o que fica no lugar.** O corpo de uma
+leitura deixou de ser o valor e o selo quando a decisão do lugar de direção de
+09.09.2026 mandou render ali a origem de cada definição, «o nome do documento
+como porta para o endereço». Medido nas 21 leituras desta cabeça: o selo mede
+**2 310 px²** em todas, e a porta do documento mede entre **12 481** e
+**20 317 px²**. Para a célula antiga passar, ou o selo crescia até ser maior do
+que o nome de um glossário do Eurostat, ou o nome do documento encolhia até não
+ser o nome dele. A célula é retirada com a razão no lugar dela, como o cabeçalho
+da matriz manda, e o que fica mede o facto que a retirou, **nas 21 e não só na
+última**: cada leitura tem o seu selo, cada bloco de origem tem exactamente uma
+porta, e nenhuma dessas portas está abaixo de 44 px (25 blocos de origem ao
+todo). O que a I13 protegia continua medido pelas duas células vizinhas, que
+estão verdes: «o selo de cada leitura é alvo de 44×44» e «nenhum par de áreas de
+toque sobrepostas na leitura».
+
+**`MATRIZ_ROMPE` volta a distinguir.** Com a régua a 0, `MATRIZ_ROMPE=1` sai a
+**1** com a linha impressa (`matriz-positivo-2026-09-14-tarde.txt`). Na cabeça de
+manhã não distinguia nada, porque já havia vermelho.
+
+**Uma regressão desta sessão, apanhada pela própria matriz.** Com a data de
+leitura fora da linha à vista (achado 5 da leitura do inventário), a linha da
+origem encurtou e o comando da dobra subiu: as áreas de toque de 44 px da porta
+do documento e do comando passaram a sobrepor-se, e a célula «nenhum par de áreas
+de toque sobrepostas» contou **21 pares em 21 leituras**. A geometria estava
+medida: a porta do documento e o comando da dobra tinham os centros a **34 px**
+um do outro, e cada área de toque ocupa 44. A folha ganhou 14 px onde tinha 2 e
+onde tinha 10, e a célula voltou a **0 pares em 21 leituras**.
+
+### O §2 do encargo · a leitura das 23 definições
+
+| achado | o que se fez | como se mediu |
+|---|---|---|
+| 3 · a posição de investimento internacional «em percentagem do PIB» | a definição ganha uma segunda origem, `pdm-posicao-de-investimento`, com a linha da Comissão copiada carácter a carácter: «net international investment position as percent of GDP, with a threshold of -35%.» | a régua 8.4 lê **60 origens (esperadas 60)**; eram 62, e a conta fecha: menos duas de `glossario-nfc`, mais esta |
+| 4 · os dois fluxos de crédito | «no fim do ano anterior» passa a «no período anterior» nas duas edições, porque o excerto diz «debt stock in t-1» e «t-1» não escreve nem «fim» nem «ano» | as quatro linhas do inventário (duas por edição) passam a `retirada` com a razão, e as novas estão vivas; `check:voz` fecha a construção se uma linha viva não se render |
+| 5 · a sobrecarga do custo da habitação | «líquido de subsídios à habitação» entra nos dois lados, nas duas edições, como o excerto | o mesmo |
+| 6 · «NFC» | **nenhuma das duas fontes declaradas liga a sigla ao nome**, e mediu-se: o glossário do Eurostat (HTTP 200, 68 554 bytes, revisão 623303) tem **0** ocorrências de «NFC» e **0** de «abbreviat»; a página do painel da Comissão (HTTP 200, 74 463 bytes, sha256 `1d034821…c9db`, a mesma cópia da leitura da manhã) tem **3** de «NFC» e **0** de «non-financial». As duas definições publicam a sigla da fonte e a expansão fica `[a verificar]`; a origem que não sustentava nada saiu com ela | `curl -sSL` com o agente da casa, e uma contagem das ocorrências sobre as respostas |
+| 7 · os jovens NEM | «e sexo» entra nas duas edições | inventário, como acima |
+| 8 · a régua 8.4 | quatro guardas novas: uma definição sem origem nenhuma fecha a construção nas duas famílias (painéis e medidas); os blocos de origem rendidos contam-se e comparam-se com os declarados, nem a menos nem a mais; a data de leitura compara-se **por igualdade** no campo dela (`data-def-lido`), e não como subcadeia do bloco; e o texto declarado resolve-se pela mesma função que a vista usa | os positivos conhecidos: **6 de 6** na declaração (`positivos-8-4-2026-09-14.txt`) e **4 de 4** no `dist/`, dentro das **11 de 11** plantas |
+| 11 · o Painel Social | «países da União participantes» / «participating EU countries» | inventário |
+| 12 · a balança corrente em português | «na média móvel de três anos para trás», como a inglesa e a Comissão | inventário |
+| 13 · o excerto de `glossario-abandono` | entra carácter a carácter, com o ponto e vírgula da fonte e a frase até ao fim, com os apóstrofos direitos que ela usa | lido do HTML em bruto da cópia de 14.09 (`fontes/04.html`), e não do texto rendido |
+| 28 · um positivo conhecido para «[a verificar]» | `textoDaDefinicao()` é agora a única resolução dos pedaços de uma frase, e sabe o marcador; o positivo conhecido planta uma definição com `{ marcador }` e exige que ela renda `[a verificar]`, e uma sem ele que não o renda; e no `dist/` uma planta tira o marcador de dentro de uma definição e a régua morde | 6 de 6 e 11 de 11, como acima |
+
+### O §2 do encargo · a leitura cruzada do inventário
+
+| achado | o que se fez | como se mediu |
+|---|---|---|
+| 2 · «oito das dezassete medidas principais» | **as três páginas foram lidas e nenhuma diz o número**: a do Pilar (0 ocorrências de «seventeen» e nenhuma frase com a conta), o painel social do Eurostat (HTTP 200, 20 863 bytes; rende o corpo por guião e tem 117 bytes de texto, com 0 de «headline», «seventeen» e «17») e a página do Painel Social da Comissão (HTTP 200, 151 253 bytes; 2 de «headline», as duas sobre as metas de 2030, e 1 de «17», que é o número de um princípio do Pilar). A frase passa a «Oito das medidas principais do Painel Social Europeu», a declaração das dezassete sai com a razão inteira escrita no lugar dela, e a régua F16 do `check:formas` passa de duas contagens a uma | `curl` com o agente da casa; `check:formas` diz **«2 frase(s) com contagem por extenso conferida(s)»** |
+| 3 · as quatro descrições ocultas dos contadores | ganharam `data-voz` e entram no inventário como `navegacao`, com a razão: dizem de que conjunto é o cartão que se está a contar, a quem ouve a página | as oito linhas (quatro e as gémeas) estão vivas, e `check:voz` exige que uma linha viva se renda |
+| 4 · a definição de «[a verificar]» | as quatro linhas passam de `conteudo` a `navegacao`, com a razão: `VOZ-MARCADORES.md` não dá classe a legendas de marcas, e a classe desta lista para «a descrição acessível de um instrumento» é navegação | `check:voz` conta **autorreferência 0** e **nada por classificar** |
+| 5 · a data de leitura das origens | sai da linha à vista e entra na dobra do excerto, onde é o «acedido a» daquela citação; o rótulo continua vivo, sozinho, dentro da dobra, com a classe que a linha da origem já tinha; a régua 8.4 continua a exigi-la, agora por igualdade | a célula 8.4 a **0** com 52 definições e 60 origens |
+| 6 · as oito linhas de cobertura e de estrutura | seis são cobertura e saem da voz do leitor (`retirada`, com a descrição pública reescrita para dizer o que a página tem); duas são a estrutura da página e ficam, reclassificadas para `navegacao` com a razão | inventário e `check:voz` |
+| 7 | é o 12 da leitura das definições | ver a linha do achado 12, acima |
+| 8 · as dez linhas vivas que o leitor não achou | **as dez rendem-se**, e o que faltava era o pacote: `check:voz` confere cada linha viva contra o `dist/` inteiro e não contra uma amostra de 31 páginas, e a construção fecha quando uma não se rende. Nesta cabeça: **999 linhas com bloco, 782 vivas, todas rendidas** | a saída do `check:voz` |
+| 9 · a conta do registo das revisões | reconciliada por commit, e a secção nova do registo escreve-a: **179** linhas com `bloco` = `lugar` na cabeça `2da5212d` (o mesmo número que a leitura contou), das quais 158 de texto novo e 21 reclassificadas de outro bloco; as quatro entradas que diziam 39, 10, 4 e 26 cobriam quatro dos dezassete commits deste ramo que mexeram no inventário. Depois desta sessão são **213** | `git show -U0 <sha> -- INVENTARIO-FRASES.md` por commit, e o conjunto dos textos da cabeça menos o dos acrescentados é **vazio** |
+| 10 · «nenhum publicador oficial calcula» | a frase da fronteira do domínio passa a dizer a ausência na forma da casa («para a qual não há número público»), pela regra 6 da carta; onde a casa procurou continua no cartão T4a da mesma página | o cartão rende-se **1 vez em cada edição**, com «procurado em» e o código do indicador |
+| 11 · a frase dos quatro níveis | fica `navegacao`, com a razão escrita na linha | inventário |
+| 12 · fora da planta V1 | os dois títulos da página dos números e as duas cadeias de «as medidas estão em» passam a `navegacao`, com a razão | inventário |
+
+### O que ficou fora, e porquê
+
+- **A régua `tests/inicio/leitura.mjs` sai a 1, com 4 de 26 células.** Mede as 21
+  leituras em `/`, e elas mudaram-se para «Portugal na União Europeia» com o item
+  8.16, no commit `3139099f` de 08.09. Não é desta sessão (o `HomeView.astro` não
+  está no `diff` de `2da5212d..HEAD`) e não está neste encargo: é a mesma espécie
+  de decisão que o §1 reservou para a matriz, e é do lugar de direção.
+- **A expansão de «FDI» na definição do fluxo de crédito às empresas.** É o mesmo
+  defeito do achado 6: a linha da Comissão escreve «(excl. FDI)» e a casa escreve
+  «sem o investimento direto estrangeiro», e nenhum excerto declarado liga a sigla
+  ao nome. A triagem abriu o «NFC» e não abriu este, e a decisão é do lugar de
+  direção.
+
+---
+
 ## Estado · 14.09.2026 · **feito**
 
 **A palavra do cabeçalho é «feito», e cada um dos seis itens que faltavam tem um
