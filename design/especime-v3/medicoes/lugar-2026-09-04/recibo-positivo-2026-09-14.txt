@@ -1,0 +1,33 @@
+
+[90m  a régua do recibo · a página de linha, medida no motor[0m
+
+  [32mpassa[0m  3a · a ordem do recibo é a da §11
+[90m         valor → id → atribuicao → serie → prova → pedido → verificacoes → historico[0m
+  [32mpassa[0m  3a · a letra: versaletes nos rótulos, Bitter no transcrito, Spectral na prosa
+[90m         rótulos Spectral SC/Spectral SC/Spectral SC/Spectral SC · transcrito Bitter/Bitter/Bitter/Bitter · prosa Spectral/Spectral · Bitter em caixa alta fora de instrumento: 0[0m
+  [32mpassa[0m  3a · a marca de água em avisos-pt2030-abertos
+[90m         3 marca(s) · texto ["[a verificar]"] · aria-hidden true · traço rgb(127, 134, 129) · preenchimento rgba(0, 0, 0, 0) · rodada true · caixa a cortar true · marcadores em texto: 7[0m
+  [32mpassa[0m  3a · a marca de água em divida-publica-2025
+[90m         0 marca(s) · texto [] · aria-hidden true · traço null · preenchimento null · rodada null · caixa a cortar true · marcadores em texto: 0[0m
+  [32mpassa[0m  3a · o aparelho leva o JSON da linha, o conjunto e esta linha na outra edição; a porta das correções vive no rodapé
+[90m         aparelho: https://ec.europa.eu/eurostat/databrowser/view/tipsgo10/default/table?lang=en · /livro-razao/divida-publica-2025.json · /livro-razao.csv · /livro-razao.json · /en/ledger/divida-publica-2025 · /livro-razao · /metodo#livro-razao · correções no aparelho: 0 · no rodapé: mailto:correcoes@oestadodopais.pt · /correcoes · /correcoes[0m
+  [32mpassa[0m  3a · o selo saiu da página da linha (§7.2), e a âncora da prova ficou
+[90m         0 selo(s) na página, 0 na cabeça · âncora #prova true[0m
+  [32mpassa[0m  3a · 390: o valor e o id num só grupo visível
+[90m         grupo de 63px · id por baixo do valor true · dentro da janela true · cabeça 354px[0m
+  [32mpassa[0m  3a · 390: o recorte cabe na sua caixa e não empurra a página
+[90m         caixa 354px · imagem 354px · transbordo 0px[0m
+  [32mpassa[0m  3a · transbordo 0 em 3 linhas × 2 edições × 5 larguras
+[90m         30 de 30 combinações a zero[0m
+  [32mpassa[0m  3b · a linha-espécime: os mesmos campos pela mesma ordem, um selo por linha
+[90m         149 linhas · 149 com o selo da própria linha · 149 com data-estado · 123 com a data na forma da casa · ordens: «document.title,id,unit,source» | «id,unit» | «id,unit,source» | «id,unit,source,access_date» | «name,id,unit,source»[0m
+  [32mpassa[0m  3b · sem cor: o livro-razão não tem limiares
+[90m         fichas proibidas rgb(224, 162, 26) · rgb(122, 83, 0) · rgb(31, 78, 140) · ocorrências 0[0m
+  [32mpassa[0m  3b · os dois estados do selo lado a lado, o conjunto com a sua licença, e as contagens com porta
+[90m         amostras cheio 1 · tracejado 1 · CSV true · JSON true · licença true · 5 marcas de 3 chaves · contagens afirmacoes=2916 · derivadas=330 · afirmacoes=2916 · concelhos_linhas=2767 · afirmacoes=2916[0m
+  [32mpassa[0m  3b · transbordo 0 no índice, 2 edições × 5 larguras
+[90m         10 de 10 combinações a zero[0m
+
+  [32m13 de 13 células passam.[0m
+
+[31m  positivo conhecido: uma célula a menos a passar (RECIBO_ROMPE).[0m

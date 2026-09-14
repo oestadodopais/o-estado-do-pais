@@ -1,0 +1,70 @@
+
+[90m  correções de UX · bloco A · 32 réguas[0m
+
+  [32mpassa[0m  A2 · as quatro camadas do território no menu, um só caminho, e nenhum destino de telemóvel à parte · 390 pt
+[90m         menu com 13 porta(s) · as quatro lá estão · 0 linha(s) de comando na página (o F1.1 tirou-a) · 0 destino(s) do telemóvel[0m
+  [32mpassa[0m  A4 · REVOGADA em parte (Emenda 20c) · o mapa rende-se a 390 e a pesquisa fica à vista · 390 pt
+[90m         svg 390px (a Emenda 20c manda rendê-lo; a 18 mandava-o fora) · 0 ponto(s) com caixa, que é o que saiu com a Emenda 20a · pesquisa à vista true · depois da manchete true · antes do mapa true · rótulo «Escreva o nome do concelho» · linha dos 308 à vista true, a 939.6px da pesquisa[0m
+  [32mpassa[0m  A1 · a busca do concelho inteira no primeiro ecrã, sem gesto, e o campo recebe o foco · 390 pt
+[90m         topo 291.2, fundo 357.4 de 664 (dentro: true) · foco «pesquisa-concelho» · 1 formulário(s) com destino · endereço «»[0m
+  [32mpassa[0m  A9 · nenhum texto abaixo de 12px na rota home · 390 pt
+[90m         zero elementos com font-size < 12px[0m
+  [32mpassa[0m  A10 · a área efetiva do selo já é 44px, e não se mexeu · 390 pt
+[90m         6 selos · mínimo 52.5×44.0 de área efetiva (a caixa do elemento mede 52×14) · os que ficam abaixo de 44: nenhum[0m
+  [32mpassa[0m  A10 · zero alvos efetivos abaixo de 44px fora da mobília e do mapa, e zero áreas sobrepostas · 390 pt
+[90m         82 alvos · 0 abaixo de 44 fora da mobília e do mapa · 0 pares sobrepostos · medidos ao lado, na manchete, que é prosa: 4 de 4 (a.claim-value.claim-porta «89,7» 54.3×32.5, a.claim-value.claim-porta «6» 44×32.5, a.src-chip «fonte · Eurostat» 52.5×18, a.src-chip «fonte · Eurostat» 52.5×18) · exceção medida na mobília: nenhuma · medidas ao lado, no mapa: 14 de 29 áreas abaixo de 44 pela caixa, que é a medida errada para uma forma côncava (I82; os alvos das 29 são mapa-distritos.mjs M1 e M2)[0m
+  [32mpassa[0m  A7 · a cabeça e a manchete começam antes de 40% do ecrã · 390 pt
+[90m         cabeça 145.8px · manchete a 155.8px · 40% = 265.6px · marca em 1 linha(s) · 0 leitura(s) de aparelho no cabeçalho (o item 8.11 exige 0) · tema dentro do menu true, fora da mobília true[0m
+  [32mpassa[0m  A11 · a frase de definição, uma vez, na letra da prosa e sem porta · 390 pt
+[90m         «Um observatório de Portugal: cada número com a sua fonte, lido por território, por domínio e em estudos.» · 1 ocorrência(s) · Spectral 12px · 2 linha · 0 ligações · algarismos false[0m
+  [32mpassa[0m  A8 · nenhuma banda de cor uniforme acima de 48px dentro do <main>, fora do desenho do mapa · 390 pt
+[90m         maior banda no main: 45px em y=1500 (era 97px em y=824) · 37 bandas julgadas · dentro da caixa do mapa, medida e não julgada (o mar dentro do viewBox): 69px@1231, 58px@655 · fora do main, na composição da mobília e do pé: 56px@2151 · página 2809px[0m
+  [32mpassa[0m  A2 · as quatro camadas do território no menu, um só caminho, e nenhum destino de telemóvel à parte · 390 en
+[90m         menu com 13 porta(s) · as quatro lá estão · 0 linha(s) de comando na página (o F1.1 tirou-a) · 0 destino(s) do telemóvel[0m
+  [32mpassa[0m  A4 · REVOGADA em parte (Emenda 20c) · o mapa rende-se a 390 e a pesquisa fica à vista · 390 en
+[90m         svg 390px (a Emenda 20c manda rendê-lo; a 18 mandava-o fora) · 0 ponto(s) com caixa, que é o que saiu com a Emenda 20a · pesquisa à vista true · depois da manchete true · antes do mapa true · rótulo «Type the name of the municipality» · linha dos 308 à vista true, a 901.7px da pesquisa[0m
+  [32mpassa[0m  A1 · a busca do concelho inteira no primeiro ecrã, sem gesto, e o campo recebe o foco · 390 en
+[90m         topo 340.8, fundo 407 de 664 (dentro: true) · foco «pesquisa-concelho» · 1 formulário(s) com destino · endereço «»[0m
+  [32mpassa[0m  A9 · nenhum texto abaixo de 12px na rota home · 390 en
+[90m         zero elementos com font-size < 12px[0m
+  [32mpassa[0m  A10 · a área efetiva do selo já é 44px, e não se mexeu · 390 en
+[90m         6 selos · mínimo 61.0×44.0 de área efetiva (a caixa do elemento mede 52×14) · os que ficam abaixo de 44: nenhum[0m
+  [32mpassa[0m  A10 · zero alvos efetivos abaixo de 44px fora da mobília e do mapa, e zero áreas sobrepostas · 390 en
+[90m         82 alvos · 0 abaixo de 44 fora da mobília e do mapa · 0 pares sobrepostos · medidos ao lado, na manchete, que é prosa: 4 de 4 (a.claim-value.claim-porta «89,7» 54.3×32.5, a.claim-value.claim-porta «6» 44×32.5, a.src-chip «source · Eurostat» 61×18, a.src-chip «source · Eurostat» 61×18) · exceção medida na mobília: nenhuma · medidas ao lado, no mapa: 14 de 29 áreas abaixo de 44 pela caixa, que é a medida errada para uma forma côncava (I82; os alvos das 29 são mapa-distritos.mjs M1 e M2)[0m
+  [32mpassa[0m  A7 · a cabeça e a manchete começam antes de 40% do ecrã · 390 en
+[90m         cabeça 195.4px · manchete a 205.4px · 40% = 265.6px · marca em 1 linha(s) · 0 leitura(s) de aparelho no cabeçalho (o item 8.11 exige 0) · tema dentro do menu true, fora da mobília true[0m
+  [32mpassa[0m  A11 · a frase de definição, uma vez, na letra da prosa e sem porta · 390 en
+[90m         «An observatory of Portugal: every number with its source, read by territory, by domain and in studies.» · 1 ocorrência(s) · Spectral 12px · 2 linha · 0 ligações · algarismos false[0m
+  [32mpassa[0m  A8 · nenhuma banda de cor uniforme acima de 48px dentro do <main>, fora do desenho do mapa · 390 en
+[90m         maior banda no main: 45px em y=1512 (era 97px em y=824) · 34 bandas julgadas · dentro da caixa do mapa, medida e não julgada (o mar dentro do viewBox): 69px@1243, 58px@666 · fora do main, na composição da mobília e do pé: 56px@2162, 50px@2335 · página 2854px[0m
+  [32mpassa[0m  A5 · uma unidade com página é uma porta com nome, e nenhuma área fica fora de uma porta · 1280 pt
+[90m         29 áreas · 29 portas, 0 área(s) fora de uma porta · 0 sem nome acessível · 0 destino(s) fora de «/distritos/» · a primeira: «Aveiro» → /distritos/aveiro · cursor pointer[0m
+  [32mpassa[0m  A5 · o leitor de teclado chega à porta do mapa · 1280 pt
+[90m         posição 39 de 126 alvos focáveis · foco em «uni-porta» → /distritos/aveiro[0m
+  [32mpassa[0m  A6 · RETIRADA (Emenda 20a) · o nome de uma área é uma cadeia da Carta, sem composição · 1280 pt
+[90m         0 leituras e 0 pontos na primeira página · 29 nomes de área, 0 vazios, 0 compostos · o primeiro: «Aveiro»[0m
+  [32mpassa[0m  C1 · o mapa nunca desaparece ao mudar de estado · 1280 pt
+[90m         ?ambito=municipio: grid, hidden=false · (defeito): grid, hidden=false[0m
+  [32mpassa[0m  A3 · a régua da convergência não se rende em / e as chaves da prova ficam · 1280 pt
+[90m         #convergencia false · banda false · porta do telemóvel false · 87 chaves da prova reconferidas pelo portão[0m
+  [32mpassa[0m  A8 · nenhuma banda de cor uniforme acima de 48px dentro do <main>, fora do desenho do mapa · 1280 pt
+[90m         maior banda no main: 39px em y=1318 (era 125px em y=1043) · fora do main: 90px@1543, 85px@342, 79px@111 · página 1921px[0m
+  [32mpassa[0m  A8 · o mesmo no concelho, fora do desenho do cartão localizador, e os quatro valores dentro do primeiro ecrã · 1280 pt
+[90m         maior banda no main: 46px em y=1007 (era 86px, o ar da secção) · 4 de 4 valores do relance (na faixa) dentro dos 800px, o primeiro a 500px (era 582 nas peças) · cartão 471..660px (era 545..908)[0m
+  [32mpassa[0m  A5 · uma unidade com página é uma porta com nome, e nenhuma área fica fora de uma porta · 1280 en
+[90m         29 áreas · 29 portas, 0 área(s) fora de uma porta · 0 sem nome acessível · 0 destino(s) fora de «/en/districts/» · a primeira: «Aveiro» → /en/districts/aveiro · cursor pointer[0m
+  [32mpassa[0m  A5 · o leitor de teclado chega à porta do mapa · 1280 en
+[90m         posição 39 de 126 alvos focáveis · foco em «uni-porta» → /en/districts/aveiro[0m
+  [32mpassa[0m  A6 · RETIRADA (Emenda 20a) · o nome de uma área é uma cadeia da Carta, sem composição · 1280 en
+[90m         0 leituras e 0 pontos na primeira página · 29 nomes de área, 0 vazios, 0 compostos · o primeiro: «Aveiro»[0m
+  [32mpassa[0m  C1 · o mapa nunca desaparece ao mudar de estado · 1280 en
+[90m         ?ambito=municipio: grid, hidden=false · (defeito): grid, hidden=false[0m
+  [32mpassa[0m  A3 · a régua da convergência não se rende em / e as chaves da prova ficam · 1280 en
+[90m         #convergencia false · banda false · porta do telemóvel false · 87 chaves da prova reconferidas pelo portão[0m
+  [32mpassa[0m  A8 · nenhuma banda de cor uniforme acima de 48px dentro do <main>, fora do desenho do mapa · 1280 en
+[90m         maior banda no main: 39px em y=1318 (era 125px em y=1043) · fora do main: 90px@1543, 85px@342, 79px@111 · página 1921px[0m
+  [32mpassa[0m  A8 · o mesmo no concelho, fora do desenho do cartão localizador, e os quatro valores dentro do primeiro ecrã · 1280 en
+[90m         maior banda no main: 46px em y=1007 (era 86px, o ar da secção) · 4 de 4 valores do relance (na faixa) dentro dos 800px, o primeiro a 500px (era 582 nas peças) · cartão 471..660px (era 545..908)[0m
+
+[32m  32 de 32 réguas passam.[0m
+
