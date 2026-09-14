@@ -794,11 +794,30 @@ const metodoPath = routePath('metodo', lang);
               é o que o instrumento n.º 1 já faz com os valores que põe dentro
               do SVG (`.brief` de InstrumentoConvergencia.astro). Um <a> dentro
               de um SVG não se vê como porta. */}
+          {/* OS RÓTULOS DO DESENHO ESCREVEM-SE COMO TEXTO POR BAIXO A 390
+              (§7.10 do brief F1.10, 14.09.2026). O desenho tem 720 unidades de
+              largura e a folha dá-lhe 100 % da coluna: o que o SVG escreve a
+              10 px chega ao leitor muito mais pequeno do que isso, e a medição
+              dos rótulos desta página a 390 (`rotulos-390.mjs`, 14.09.2026) deu
+              5,2 px de altura de letra nos que estão à vista.
+              O leitor de 04.09 leu-os como «valores ilegíveis» e o §7.10 decidiu
+              o que fazer: a 390 os rótulos desenhados saem e os valores
+              escrevem-se aqui, em texto, ao pé do selo de cada um, que é a forma
+              que o instrumento n.º 1 e a banda das regiões já usam. Acima de 640
+              os valores desta linha saem e ficam os do desenho: o mesmo número
+              duas vezes na mesma largura seria a bifurcação que a L1 conta.
+              A folha faz a troca; o servidor manda os dois. */}
           <p class="mun-distancia-selos" data-legenda-selos>
-            <span class="mun-selo-rot">{s.municipio.distanciaDivida}</span>
-            <Provenance id={D.valor} lang={lang} />
-            <span class="mun-selo-rot">{s.municipio.distanciaTecto}</span>
-            <Provenance id={D.limite} lang={lang} />
+            <span class="mun-legenda-e">
+              <span class="mun-selo-rot">{s.municipio.distanciaDivida}</span>
+              <Claim id={D.valor} lang={lang} as="span" class="mun-legenda-val" />
+              <Provenance id={D.valor} lang={lang} />
+            </span>
+            <span class="mun-legenda-e">
+              <span class="mun-selo-rot">{s.municipio.distanciaTecto}</span>
+              <Claim id={D.limite} lang={lang} as="span" class="mun-legenda-val" />
+              <Provenance id={D.limite} lang={lang} />
+            </span>
           </p>
           <p class="mun-distancia-legenda">{s.municipio.distanciaLegenda}</p>
           {/* A frase do índice precisa da linha do índice e da do teto legal:
@@ -1038,8 +1057,20 @@ const metodoPath = routePath('metodo', lang);
               <line class="mun-serie-ref" x1={SERIE.L} y1={SERIE.yTecto} x2={SERIE.R} y2={SERIE.yTecto} />
               <text class="tk" x={SERIE.R} y={SERIE.yTecto - 6} text-anchor="end">{s.municipio.distanciaTecto}</text>
             </svg>
+            {/* A MESMA TROCA DA BARRA DA DISTÂNCIA (§7.10, 14.09.2026): os
+                quatro valores desta série são os que a medição de 14.09 apanhou
+                à vista, e chegam ao leitor com 5,2 px de altura de letra a 390 e
+                com 7,97 px a 1 280. A legenda passa a trazê-los em texto, cada
+                um com o seu ano e o seu selo. O ano vem do mesmo ponto da série
+                que o desenho usa, e não de uma segunda lista. */}
             <p class="mun-distancia-selos" style="margin-bottom:12px" data-legenda-selos>
-              {pontosDaSerie.map((pt) => <Provenance id={pt.indice} lang={lang} />)}
+              {pontosDaSerie.map((pt) => (
+                <span class="mun-legenda-e">
+                  <span class="mun-legenda-k" data-nonledger="escala-de-instrumento">{pt.ref}</span>
+                  <Claim id={pt.indice} lang={lang} as="span" class="mun-legenda-val" />
+                  <Provenance id={pt.indice} lang={lang} />
+                </span>
+              ))}
             </p>
 
             {/* --------------------------------------------------- a banda */}

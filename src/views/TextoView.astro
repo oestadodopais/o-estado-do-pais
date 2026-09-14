@@ -300,10 +300,14 @@ const conta = (nome) => `${chave}=${nome}`;
           componente `<Provenance>` e nunca uma cópia do seu markup, e entra
           colado à figura, sem um nó de texto de nenhum dos lados. */}
       <article id="documento" class="texto-artigo" data-registo-edicao={chave}>
+      {/* O SELO ENTRA AQUI SEM A DEFINIÇÃO DO MARCADOR (§7.10, 14.09.2026):
+          dentro de uma unidade de texto transcrito só entra o texto do registo e
+          o selo, e a definição de `[a verificar]` é prosa da casa. A casa não
+          edita o que transcreve, e o portão fecha a construção se ela o fizer. */}
         {
           pecas.map((peca) =>
             peca.selo !== undefined ? (
-              <Provenance id={peca.selo} lang={lang} />
+              <Provenance id={peca.selo} lang={lang} definicao={false} />
             ) : (
               <Fragment set:html={peca.html} />
             ),

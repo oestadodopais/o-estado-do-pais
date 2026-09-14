@@ -1,0 +1,52 @@
+---
+/**
+ * ---------------------------------------------------------------------------
+ * A DEFINIÇÃO DO MARCADOR, AO PÉ DA PRIMEIRA OCORRÊNCIA DA PÁGINA
+ * ---------------------------------------------------------------------------
+ * F1.10, §7.10, 14.09.2026, e o último dos cinco pequenos: «"[a verificar]" com
+ * a sua definição ao pé da primeira ocorrência em cada página». A releitura do
+ * leitor de primeira vez (Codex, 09.09.2026) mediu as duas metades do problema:
+ * «The dedicated uncertainty page gives `[a verificar]` one clear meaning and
+ * says what happens to affected lines», e «`[a verificar]` is not defined beside
+ * first occurrences». A página existe e o marcador leva-lhe a porta desde o
+ * bloco B; o que faltava era o leitor não ter de a atravessar para saber que
+ * aquilo não é uma dúvida sobre o número.
+ *
+ * UMA VEZ, E À PRIMEIRA. Uma página de linha traz dezenas de marcadores e a
+ * definição em cada um deles seria ruído; a definição ao pé do último não
+ * chegava a tempo. `primeiraVezNaPagina()` é a marca por página, e a razão
+ * inteira está em `src/lib/uma-vez-por-pagina.mjs`, com a régua que a mede.
+ *
+ * NÃO É UMA SEGUNDA PORTA. O marcador já é a porta de `/a-verificar`; um
+ * segundo `<a>` para o mesmo sítio na mesma linha era mais uma bifurcação, que
+ * é o que a L1 deste bloco conta. Aqui é prosa, e mais nada.
+ *
+ * O PONTO MÉDIO SEPARA, E NÃO UM PARÊNTESE. A glosa inglesa do próprio marcador
+ * («to verify») já se rende entre parênteses onde o marcador vai dentro de uma
+ * frase, e um segundo parêntese logo a seguir eram duas aberturas seguidas na
+ * mesma linha. O ponto médio é o separador desta casa em toda a parte («fonte ·
+ * INE», «Concelho · Évora»), e lê-se como o que é: o que vem a seguir é uma
+ * glosa do que está antes.
+ *
+ * A CADEIA É A DA PÁGINA DO MARCADOR, encurtada: diz o que ele é (uma ausência
+ * declarada num campo da proveniência) e o que ele não é (uma dúvida sobre o
+ * número publicado), que são as duas frases que a página abre.
+ */
+import { t } from '../i18n/strings.mjs';
+import { primeiraVezNaPagina } from '../lib/uma-vez-por-pagina.mjs';
+
+const { lang } = Astro.props;
+
+if (!lang) {
+  throw new Error('<DefinicaoDoMarcador> sem "lang": a definição rende-se na língua da edição.');
+}
+const s = t(lang);
+const primeira = primeiraVezNaPagina('marcador', Astro.url.pathname);
+---
+
+{primeira && (
+  <span class="marcador-definicao" data-voz>
+    {' · '}
+    {s.marcador.definicao}
+  </span>
+)}

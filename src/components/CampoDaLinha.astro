@@ -28,6 +28,7 @@ import { t } from '../i18n/strings.mjs';
 import { routePath } from '../lib/routes.mjs';
 import ProsaComLeis from './ProsaComLeis.astro';
 import DataDaLinha from './DataDaLinha.astro';
+import DefinicaoDoMarcador from './DefinicaoDoMarcador.astro';
 import { eCampoDeData } from '../lib/datas.mjs';
 
 const {
@@ -137,6 +138,7 @@ const marcaLeis = leis === true && lang === 'en' && !porVerificar;
         {valor}
       </a>
       {gloss && <span class="marcador-gloss"> ({gloss})</span>}
+      <DefinicaoDoMarcador lang={lang} />
     </span>
   ) : (
     <span

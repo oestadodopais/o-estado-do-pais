@@ -67,8 +67,16 @@ import { caminhoDaLinha } from '../lib/livro.mjs';
 import { linguaDaFonte } from '../i18n/lingua-dos-titulos.mjs';
 import { SITE_NAME } from '../../site.config.mjs';
 import { t } from '../i18n/strings.mjs';
+import DefinicaoDoMarcador from './DefinicaoDoMarcador.astro';
 
-const { id, lang, ancora = null } = Astro.props;
+/* `definicao` diz se este selo pode levar ao lado a definição do marcador
+   (§7.10, 14.09.2026). DENTRO DE UMA UNIDADE DE TEXTO TRANSCRITO NÃO PODE: o
+   portão compara o texto rendido com o do registo carácter a carácter, e uma
+   palavra da casa a mais fecha a construção — e fecha-a com razão, porque o que
+   está ali é da fonte e a casa não edita o que transcreve. `TextoView.astro`
+   passa `definicao={false}`, e a marca da página não se gasta ali: quem leva a
+   definição é o primeiro marcador FORA da transcrição. */
+const { id, lang, ancora = null, definicao: comDefinicao = true } = Astro.props;
 
 /**
  * A LÍNGUA É OBRIGATÓRIA, E A CONSTRUÇÃO PÁRA QUANDO FALTA (ISSUES I27).
@@ -216,3 +224,11 @@ const linguaDoPublicador = conhecido ? linguaDaFonte(publicador, lang) : null;
   )}
   {incompleta && <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>}
 </a>
+{/* A DEFINIÇÃO FICA FORA DO SELO, E É A CONSTITUIÇÃO QUE O MANDA (§5.4 e a
+    Emenda 2): a unidade inteira é a porta, um só `<a>` com o quadrado, a palavra
+    e o marcador, e nada se aninha dentro dele. `seloDaLinha()`, no portão,
+    compara o texto deste `<a>` carácter a carácter com o que o registo permite:
+    uma palavra a mais lá dentro fechava a construção, e fechá-la-ia com razão.
+    Aqui é um irmão do selo, e rende-se só quando este é o primeiro marcador da
+    página — que em doze das 712 páginas com marcador é o caso. */}
+{incompleta && comDefinicao && <DefinicaoDoMarcador lang={lang} />}

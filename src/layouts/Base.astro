@@ -15,6 +15,7 @@ import {
   canonicalUrl,
 } from '../../site.config.mjs';
 import { alternatesFor, normalizePath } from '../lib/routes.mjs';
+import { abrePagina } from '../lib/uma-vez-por-pagina.mjs';
 import { DIMENSOES, cartaoDaPagina, urlDoCartao } from '../lib/cartoes.mjs';
 import { t } from '../i18n/strings.mjs';
 import Masthead from '../components/Masthead.astro';
@@ -64,6 +65,13 @@ const {
 
 const s = t(lang);
 const path = normalizePath(pathProp ?? Astro.url.pathname);
+
+/* A PÁGINA ABRE (F1.10, §7.10, 14.09.2026). O que se rende UMA VEZ por página
+   precisa de saber quando uma página começa, e o invólucro é a primeira coisa
+   que se rende em todas. Apaga o que ficou da rendição anterior desta mesma
+   página, para que `astro dev`, que rende a mesma página a cada pedido, veja o
+   mesmo que a construção. A razão inteira está em `src/lib/uma-vez-por-pagina.mjs`. */
+abrePagina(Astro.url.pathname);
 const canonical = canonicalUrl(path);
 const alternates = alternativas ?? alternatesFor(path);
 

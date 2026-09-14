@@ -268,6 +268,25 @@ const TETOS = {
      escrito ao pé da medida, no corpo da régua; os cinco defeitos que ela
      apanha são os cinco que a sétima sessão do bloco corrigiu, e a planta da L9
      põe cada um de volta. */
+  /* §7.10 · páginas onde `[a verificar]` aparece e a sua definição não está ao
+     pé da PRIMEIRA ocorrência do documento: sem definição nenhuma, com mais do
+     que uma, ou a seguir a um marcador que não é o primeiro. Entrou a
+     14.09.2026 com o último dos cinco pequenos, e o teto é ZERO desde o primeiro
+     dia: a promessa é «em cada página», e uma promessa dessas não tem folga.
+
+     O QUE ESTA CÉLULA GUARDA DE FACTO. `<DefinicaoDoMarcador>` decide pela ordem
+     por que o Astro rende a árvore, e nada no código do sítio garante que essa
+     ordem seja a do documento. É esta régua que o garante: lê o documento
+     construído, e não a intenção. */
+  d710_definicao_do_marcador: 0,
+  /* §7.10 · páginas de concelho onde um valor está desenhado dentro de um SVG e
+     não está escrito na legenda por baixo. Entrou a 14.09.2026 com o penúltimo
+     dos cinco pequenos («os rótulos dos gráficos a 390 escrevem-se como texto
+     por baixo»), e o teto é zero: a folha troca os dois pela largura, e por isso
+     o documento tem de trazer sempre os dois. A altura de letra com que cada um
+     chega ao leitor mede-se no navegador, com
+     `design/especime-v3/medicoes/lugar-2026-09-04/rotulos-390.mjs`. */
+  d710_rotulos_por_baixo: 0,
   d86_estudos_forma: 0,
 };
 
@@ -658,6 +677,8 @@ const medidas = {
   d817_concelhos_sem_mapa: 0,
   d811_leituras_na_cabeca: 0,
   d84_definicoes_fora: 0,
+  d710_definicao_do_marcador: 0,
+  d710_rotulos_por_baixo: 0,
   d86_estudos_forma: 0,
 };
 /** Quantas superfícies de estudo a régua viu (regra 14: zero defeitos sobre
@@ -751,6 +772,62 @@ for (const ficheiro of paginas) {
   if (repetidos.length) {
     medidas.l1_paginas++;
     anota('l1_paginas', `${url} · ${repetidos.length} destinos repetidos (ex.: ${repetidos[0][0]} ×${repetidos[0][1]})`);
+  }
+
+  /* ------------------------------------------------------------------ §7.10 */
+  /* «[a verificar]» COM A SUA DEFINIÇÃO AO PÉ DA PRIMEIRA OCORRÊNCIA (o último
+     dos cinco pequenos, 14.09.2026). A régua lê a ORDEM DO DOCUMENTO: percorre o
+     corpo uma vez, anota por que ordem aparecem os marcadores e as definições, e
+     exige que a página com marcador tenha uma definição só e que ela venha LOGO
+     A SEGUIR ao primeiro. É esta célula que sustenta a promessa que
+     `src/lib/uma-vez-por-pagina.mjs` faz: a ordem por que o Astro rende a árvore
+     não é um contrato, e o que se mede é o documento construído. */
+  /* AS DUAS FAMÍLIAS DE TRANSCRIÇÃO FICAM DE FORA, pelo §3 do brief e pela mesma
+     razão que tira a definição de lá: numa página de texto transcrito o marcador
+     aparece dentro de uma unidade do registo, e a casa não edita o que
+     transcreve. Quem leva a definição é o primeiro marcador FORA da
+     transcrição, e uma página que só tenha marcadores dentro dela não leva
+     nenhuma. */
+  const ordemDoMarcador = [];
+  const percorreOMarcador = (no) => {
+    for (const filho of no.childNodes ?? []) {
+      if (!filho.tagName) continue;
+      const classes = (filho.getAttribute('class') ?? '').split(/\s+/);
+      if (classes.includes('marcador')) ordemDoMarcador.push('m');
+      else if (classes.includes('marcador-definicao')) ordemDoMarcador.push('d');
+      percorreOMarcador(filho);
+    }
+  };
+  if (!transcricao) percorreOMarcador(corpo);
+  const quantasDefinicoes = ordemDoMarcador.filter((x) => x === 'd').length;
+  const temMarcador = ordemDoMarcador.includes('m');
+  const aoPeDoPrimeiro =
+    ordemDoMarcador[0] === 'm' && ordemDoMarcador[1] === 'd' && quantasDefinicoes === 1;
+  if ((temMarcador && !aoPeDoPrimeiro) || (!temMarcador && quantasDefinicoes > 0)) {
+    medidas.d710_definicao_do_marcador++;
+    anota(
+      'd710_definicao_do_marcador',
+      `${url} · ${ordemDoMarcador.filter((x) => x === 'm').length} marcador(es), ` +
+        `${quantasDefinicoes} definição(ões), ordem «${ordemDoMarcador.slice(0, 4).join('')}»`,
+    );
+  }
+
+  /* OS RÓTULOS DOS DESENHOS, TAMBÉM COMO TEXTO POR BAIXO (o penúltimo dos cinco
+     pequenos). O que se conta é o desacordo: um valor desenhado dentro de um
+     `<svg>` desta página sem o seu par escrito na legenda. */
+  if (chaveDaRota === 'municipio') {
+    const desenhados =
+      corpo.querySelectorAll('.mun-barra-rot').length +
+      corpo.querySelectorAll('.mun-tecto-rot').length +
+      corpo.querySelectorAll('.mun-serie-val').length;
+    const naLegenda = corpo.querySelectorAll('.mun-legenda-val').length;
+    if (desenhados !== naLegenda) {
+      medidas.d710_rotulos_por_baixo++;
+      anota(
+        'd710_rotulos_por_baixo',
+        `${url} · ${desenhados} valor(es) desenhado(s) e ${naLegenda} na legenda`,
+      );
+    }
   }
 
   /* -------------------------------------------------------------------- L2 */
@@ -1542,6 +1619,8 @@ const NOMES = {
   d814_densidades: '8.14 · «Relance» e «Leitura breve» nas páginas do leitor',
   d811_leituras_na_cabeca: '8.11 · leituras de aparelho no cabeçalho',
   d84_definicoes_fora: '8.4 · definições de painel fora da declaração',
+  d710_definicao_do_marcador: '§7.10 · «[a verificar]» sem definição ao pé do primeiro',
+  d710_rotulos_por_baixo: '§7.10 · valores desenhados sem o seu texto na legenda',
   d86_estudos_forma: '§7.4 e 8.6 · estudos fora da forma única',
 };
 

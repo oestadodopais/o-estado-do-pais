@@ -528,6 +528,22 @@ export const STRINGS = {
       eyebrow: 'O marcador',
       h1: 'O que quer dizer este marcador',
       lede: 'É o único marcador de incerteza deste sítio. Aparece onde um campo não foi confirmado contra a fonte.',
+      /* A DEFINIÇÃO AO PÉ DA PRIMEIRA OCORRÊNCIA DE CADA PÁGINA (§7.10 do brief
+         F1.10, 14.09.2026). A releitura do leitor de primeira vez mediu que a
+         página do marcador dá uma definição clara e que nenhuma outra página a
+         dá ao lado do sinal. Esta frase é a da página encurtada às duas coisas
+         que ela abre: o que o marcador é (a lede: «aparece onde um campo não foi
+         confirmado contra a fonte») e o que ele não é (o `queEV`: «não é uma
+         dúvida sobre o número publicado»).
+
+         A PALAVRA É «CAMPO» E NÃO «CAMPO DA PROVENIÊNCIA», e é uma medição e não
+         uma preferência: a régua do bloco apanhou o marcador a render-se onze
+         vezes na agenda, onde o que falta é a DATA de um acontecimento e não um
+         campo de uma linha do livro-razão. Uma definição que falasse só de
+         proveniência era falsa ali. «Um campo não confirmado contra a fonte» é a
+         frase da própria página, e é verdadeira nos dois sítios.
+         Rende-se por `<DefinicaoDoMarcador>`, uma vez por página. */
+      definicao: 'um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado',
       queEK: 'O que é',
       queEV:
         'Uma ausência declarada. Não é um valor por defeito, não é uma estimativa, e não é uma dúvida sobre o número publicado: é o sítio a dizer que aquele campo (a fonte, o documento, o endereço, a data de leitura ou o excerto) ainda não foi conferido contra a origem.',
@@ -2696,6 +2712,9 @@ export const STRINGS = {
       h1: 'What this marker means',
       lede:
         'It is the only uncertainty marker on this site. It appears where a field has not been confirmed against the source. The marker is kept in Portuguese, as in the original; it reads “to verify”.',
+      /* O par inglês da definição (CHAVES-EN.md). O marcador fica em português
+         nas duas edições, e a frase que o define é da língua da página. */
+      definicao: 'a field not confirmed against the source, not a doubt about what is published',
       queEK: 'What it is',
       queEV:
         'A declared absence. It is not a default, not an estimate, and not a doubt about the published figure: it is the site saying that this field (the source, the document, the address, the read date or the excerpt) has not yet been checked against the origin.',
