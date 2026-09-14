@@ -857,49 +857,84 @@ const estadoDaPagina = (p) =>
     `${sobrepostos} pares em ${cartoes.length} leitura(s) abertas uma a uma`,
   );
 
-  const maiorDaFila = await p.evaluate(() => {
-    /* A LEITURA COM SELO QUE ESTÁ ABERTA, e não a primeira de todas: a página tem
-       uma leitura aberta de cada vez, e o corpo de uma dobra fechada não tem
-       caixa nenhuma. É a última que o ciclo dos cartões abriu. */
-    const peca = [...document.querySelectorAll('.dobra')].find(
-      (e) => e.open && e.querySelector('a.src-chip'),
-    );
-    if (!peca) return null;
-    const selo = peca.querySelector('a.src-chip');
-    /* OS OUTROS ALVOS DO CORPO DA LEITURA, E NÃO O `<summary>` (F1.1b,
-       04.09.2026). A peça era um cartão com o selo no pé e a dobra a abrir-se
-       dentro dele; a leitura É a dobra, e o seu `<summary>` é a linha inteira do
-       nome da medida, que é o alvo primário e mede a largura da coluna. Exigir
-       que o selo fosse maior do que ele era exigir que o comando que abre a
-       leitura fosse mais pequeno do que o recibo lá dentro, que é o contrário do
-       que a casa desenha. O que a regra protege continua protegido: dentro do
-       corpo da leitura, o selo é o maior alvo, e é o que a I13 pede.
+  /* ---------------------------------------------------------------------------
+     «O SELO É O MAIOR ALVO DO CORPO DA LEITURA» FOI RETIRADA (14.09.2026), E O
+     QUE FICA NO LUGAR DELA MEDE O FACTO QUE A RETIROU
+     ---------------------------------------------------------------------------
+     A célula vinha da I13 e media o corpo de uma leitura que era o valor e o
+     selo: ali o selo tinha de ser o maior alvo, porque era a porta da prova e
+     nada mais lá estava para a esconder. Esse corpo deixou de existir por
+     DECISÃO, e não por acidente: a decisão do lugar de direção de 09.09.2026,
+     que responde ao Blocking 1 da leitura a frio, manda que «a página renda a
+     ORIGEM ao pé de cada definição, nas duas edições: o nome do documento como
+     PORTA para o endereço, a data de leitura por palavras, e o excerto na dobra
+     da leitura».
 
-       A PORTA PARA O DOMÍNIO TAMBÉM SAI (segunda passagem, 04.09.2026), e por
-       outra razão: é uma porta que a casa decidiu pôr ali, no fim e sozinha na
-       sua linha, e não aparelho da leitura. Mede 105,8 × 32 px e o selo 52,5 ×
-       19,2, e nenhum dos dois esconde o outro: a célula acima mede que as duas
-       áreas efectivas não se tocam. Uma leitura com porta tem exactamente dois
-       alvos no corpo, e os dois são destinos declarados. */
-    const outros = [...peca.querySelectorAll('.dobra-corpo a, .dobra-corpo button')].filter(
-      (e) => e !== selo && !e.closest('.dobra-porta'),
-    );
-    /* A área de um alvo, e para o selo é a do `::after` que a folha lhe dá: é
-       ele que apanha o toque, e não a caixa da unidade em linha. */
-    const area = (e) => {
-      const r = e.getBoundingClientRect();
-      const depois = e.matches('a.src-chip') ? getComputedStyle(e, '::after') : null;
-      const w = Math.max(r.width, depois ? parseFloat(depois.minWidth) || 0 : 0, 44);
-      const h = Math.max(r.height, depois ? parseFloat(depois.height) || 0 : 0, 44);
-      return w * h;
-    };
-    const aSelo = selo ? area(selo) : 0;
-    return { selo: Math.round(aSelo), maiorOutro: Math.round(Math.max(0, ...outros.map(area))) };
-  });
+     UMA PORTA CUJO TEXTO É O NOME DE UM DOCUMENTO TEM A LARGURA DESSE NOME. Foi
+     medido nas 21 leituras desta cabeça: o selo mede 2 310 px² em todas, e a
+     porta do documento mede entre 12 481 e 20 317. Para a célula antiga passar,
+     ou o selo crescia até ser maior do que o nome de um glossário do Eurostat, ou
+     o nome do documento encolhia até não ser o nome dele. As duas coisas são
+     mentiras de desenho, e a regra da casa para este caso está escrita no
+     cabeçalho deste ficheiro: «uma célula cujo objecto deixou de existir é
+     retirada com a razão escrita no lugar dela, e o que ela passa a medir é o
+     FACTO QUE A RETIROU, nunca um sim vazio».
+
+     O QUE A I13 PROTEGIA CONTINUA MEDIDO, e por duas células que já cá estão e
+     estão verdes: «o selo de cada leitura é alvo de 44×44», que é o tamanho do
+     alvo, e «nenhum par de áreas de toque sobrepostas na leitura», que é a
+     bifurcação que a I13 abriu. O que a nova célula acrescenta é a decisão de
+     09.09: em cada uma das 21 leituras, o selo está lá e cada origem declarada
+     tem UMA porta, que é um alvo a sério.
+
+     E MEDE AS 21, E NÃO A ÚLTIMA. A célula antiga lia a leitura que o ciclo
+     tinha deixado aberta, que era uma de vinte e uma: um defeito em qualquer das
+     outras vinte não se via. */
+  const origensDasLeituras = [];
+  for (const id of cartoes) {
+    await p.click(`[data-cartao="${id}"] .cartao-porta`);
+    await p.waitForTimeout(40);
+    const m = await p.evaluate((alvo) => {
+      const peca = document.getElementById(`m-${alvo}`);
+      if (!peca || !peca.open) return null;
+      const corpo = peca.querySelector('.dobra-corpo');
+      if (!corpo) return null;
+      const alturaDeAlvo = (e) => {
+        const r = e.getBoundingClientRect();
+        return Math.max(r.height, 44);
+      };
+      const selo = peca.querySelector('a.src-chip');
+      const blocos = [...corpo.querySelectorAll('[data-def-origem]')];
+      const portas = blocos.map((b) => b.querySelectorAll('a[href]').length);
+      const alturas = blocos
+        .flatMap((b) => [...b.querySelectorAll('a[href]')])
+        .map(alturaDeAlvo);
+      return {
+        id: alvo,
+        selo: !!selo,
+        blocos: blocos.length,
+        portasPorBloco: portas,
+        minAltura: alturas.length ? Math.min(...alturas) : 0,
+      };
+    }, id);
+    if (m) origensDasLeituras.push(m);
+  }
+  const semSelo = origensDasLeituras.filter((l) => !l.selo).length;
+  const semOrigem = origensDasLeituras.filter((l) => l.blocos === 0).length;
+  const portaErrada = origensDasLeituras.filter((l) => l.portasPorBloco.some((n) => n !== 1)).length;
+  const alvoPequeno = origensDasLeituras.filter((l) => l.minAltura < 44).length;
+  const blocosTotais = origensDasLeituras.reduce((n, l) => n + l.blocos, 0);
   conta(
-    'o selo é o maior alvo do corpo da leitura',
-    maiorDaFila && maiorDaFila.selo >= maiorDaFila.maiorOutro,
-    `selo ${maiorDaFila?.selo}px² · maior outro ${maiorDaFila?.maiorOutro}px²`,
+    'cada leitura tem o seu selo e uma porta por origem declarada (09.09.2026, no lugar do «selo maior»)',
+    origensDasLeituras.length === cartoes.length &&
+      origensDasLeituras.length > 0 &&
+      semSelo === 0 &&
+      semOrigem === 0 &&
+      portaErrada === 0 &&
+      alvoPequeno === 0,
+    `${origensDasLeituras.length} de ${cartoes.length} leitura(s) abertas · ${blocosTotais} bloco(s) de origem · ` +
+      `${semSelo} sem selo · ${semOrigem} sem origem · ${portaErrada} com um bloco de origem que não tem uma porta · ` +
+      `${alvoPequeno} com uma porta abaixo de 44px`,
   );
   await p.__contexto.close();
 }
