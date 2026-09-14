@@ -269,6 +269,48 @@ const PLANTAS = [
       return s.replace(alvo, '');
     },
   },
+  /* ------------------------------------------------------------------------
+     OS TRÊS CAMPOS DE UMA ORIGEM, POR IGUALDADE (14.09.2026, achado 6 da
+     releitura do Codex sobre a cabeça `7b85bb7f`)
+     ------------------------------------------------------------------------
+     A régua comparava o publicador, o documento e o excerto por CONTENÇÃO no
+     texto do bloco inteiro, e a releitura mediu as duas frestas: um campo
+     trocado passava se o texto esperado aparecesse noutro sítio do bloco, e
+     texto a mais era sempre permitido. Estas três plantas escolhem a segunda
+     fresta de propósito, porque é a que distingue as duas comparações: cada uma
+     COLA texto ao fim do campo, e o esperado continua lá inteiro. Uma régua que
+     procure contenção não vê nenhuma delas; uma que compare por igualdade vê as
+     três. */
+  {
+    nome: 'texto colado ao publicador de uma origem (a contenção não via, a igualdade vê)',
+    medida: 'd84',
+    ficheiro: 'uniao-europeia/index.html',
+    troca: (s) => {
+      const m = s.match(/(<span data-verbatim="origem-[a-z0-9-]+-publicador">)([^<]+)(<\/span>)/);
+      if (!m) return null;
+      return s.replace(m[0], `${m[1]}${m[2]} e mais alguma coisa${m[3]}`);
+    },
+  },
+  {
+    nome: 'texto colado ao documento de uma origem (a contenção não via, a igualdade vê)',
+    medida: 'd84',
+    ficheiro: 'uniao-europeia/index.html',
+    troca: (s) => {
+      const m = s.match(/(data-verbatim="origem-[a-z0-9-]+-documento"[^>]*>)([^<]+)(<\/a>)/);
+      if (!m) return null;
+      return s.replace(m[0], `${m[1]}${m[2]} e mais alguma coisa${m[3]}`);
+    },
+  },
+  {
+    nome: 'texto colado ao excerto de uma origem (a contenção não via, a igualdade vê)',
+    medida: 'd84',
+    ficheiro: 'uniao-europeia/index.html',
+    troca: (s) => {
+      const m = s.match(/(data-verbatim="origem-[a-z0-9-]+-excerto[a-z-]*">)([^<]+)(<\/blockquote>)/);
+      if (!m) return null;
+      return s.replace(m[0], `${m[1]}${m[2]} e mais alguma coisa${m[3]}`);
+    },
+  },
   {
     nome: 'a palavra proibida na descrição pública do <head> (a L3 começava no <body>)',
     medida: 'l3',
