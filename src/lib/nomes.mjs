@@ -60,6 +60,13 @@
 import { FIGURAS } from '../data/figuras.mjs';
 import { MEDIDAS_DO_DOMINIO_1 } from '../data/dominios.mjs';
 import { POR_VERIFICAR, documentoDaLinha } from './ledger.mjs';
+/* A TABELA DAS LÍNGUAS NÃO IMPORTA NADA e não fecha ciclo nenhum: é uma lista
+   de cadeias com a língua de cada uma, e `check:lingua` fecha a construção
+   quando o livro-razão traz uma que ela não nomeia. */
+import {
+  linguaDoRotuloDaFonte,
+  linguaDoTituloDoDocumento,
+} from '../i18n/lingua-dos-titulos.mjs';
 
 /**
  * O nome de uma medida, com a origem dele.
@@ -143,6 +150,57 @@ export function eNomeDeMedida(x) {
   if (!fonteOk || !campoOk) return false;
   /* Um e só um dos dois: a marca do markup sai daqui. */
   return (o.fonte === null) !== (o.campo === null);
+}
+
+/**
+ * ===========================================================================
+ * O NOME NO CARTÃO É O NOME NA LÍNGUA DA PÁGINA (bloco P2, item 4, 15.09.2026)
+ * ===========================================================================
+ * O diretor, a 15.09.2026, na página da área da habitação: «Residential
+ * building permits - annual data» entre linhas em português, «we should have it
+ * all in Portuguese, unless it's something that has a name in English». O nome
+ * visível daquela medida era o TÍTULO DO DOCUMENTO de onde a linha foi lida, na
+ * língua da fonte, porque a escada acima chega ao quarto degrau quando os três
+ * primeiros não dão nada.
+ *
+ * A REGRA DA CASA NÃO MUDA: o que se transcreve não se edita, e o título fica
+ * intacto onde a proveniência vive, que é o recibo. O que muda é o CARTÃO: um
+ * cartão de uma página portuguesa não escreve o nome de uma coisa em inglês.
+ *
+ * ESTA FUNÇÃO NÃO TRADUZ NADA. Percorre a mesma escada e recusa o degrau cujo
+ * texto está declarado noutra língua que não a da página (a tabela é
+ * `src/i18n/lingua-dos-titulos.mjs`, e `check:lingua` fecha a construção quando
+ * um texto novo chega sem língua declarada). Onde nenhum degrau passa, devolve
+ * `null`, e o cartão fica sem nome — que é o que ele tem, e não um nome
+ * inventado nem o identificador promovido outra vez.
+ *
+ * O QUE ISTO NÃO RESOLVE, e fica dito para não parecer resolvido: as linhas
+ * cujo único nome é um título de documento PORTUGUÊS continuam a chamar-se pelo
+ * título do documento na edição portuguesa. Quem lhes dá nome próprio é o motor
+ * (`nomes.json`, o item 1 do F1.15), e até ele chegar a escada é a que há. A
+ * régua do bloco conta-as e escreve o número no relatório.
+ *
+ * @param {Linha} claim
+ * @param {Lingua} lang
+ * @returns {NomeDaMedida|null}
+ */
+export function nomeDoCartao(claim, lang) {
+  const cartao = CARTOES.get(claim.id);
+  if (cartao) {
+    /* O NOME DO PROJETO ESTÁ SEMPRE NA LÍNGUA DA PÁGINA, porque é a casa que o
+       escreve nas duas edições. Não passa pela peneira da língua: não há nada
+       para peneirar. */
+    const texto = cartao.nome[lang] ?? cartao.nome.pt;
+    if (eTextoUtil(texto)) return { texto, fonte: cartao.fonte, campo: null };
+  }
+  if (eTextoUtil(claim.name) && linguaDoRotuloDaFonte(claim.name, lang) === null) {
+    return { texto: claim.name, fonte: null, campo: 'name' };
+  }
+  const titulo = documentoDaLinha(claim)?.title;
+  if (eTextoUtil(titulo) && linguaDoTituloDoDocumento(titulo, lang) === null) {
+    return { texto: titulo, fonte: null, campo: 'document.title' };
+  }
+  return null;
 }
 
 /**

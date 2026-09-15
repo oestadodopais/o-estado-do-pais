@@ -24,7 +24,7 @@
  * o identificador no metadado, que é o que ela tem.
  */
 import CampoDaLinha from './CampoDaLinha.astro';
-import { nomeDaMedida, eNomeDeMedida } from '../lib/nomes.mjs';
+import { nomeDaMedida, nomeDoCartao, eNomeDeMedida } from '../lib/nomes.mjs';
 import { linguaDoRotuloDaFonte, linguaDoTituloDoDocumento } from '../i18n/lingua-dos-titulos.mjs';
 
 /* A CLASSE É DE QUEM CHAMA, E A MARCA É DESTE COMPONENTE (F1.10, §2.5).
@@ -32,8 +32,18 @@ import { linguaDoRotuloDaFonte, linguaDoTituloDoDocumento } from '../i18n/lingua
    composição de uma linha de lista; o caminho do cabeçalho quer a sua. O que não
    muda com quem chama é a marca (`data-nome` mais `data-de-linha`, ou a marca de
    campo do livro-razão), porque é ela que faz do nome uma coisa conferida. */
-const { linha: c, lang = 'pt', class: klass = 'livro-item-nome' } = Astro.props;
-const nome = nomeDaMedida(c, lang);
+/* `escada` É QUAL DAS DUAS (bloco P2, item 4, 15.09.2026). A escada do índice do
+   livro-razão desce até ao título do documento na língua da fonte, porque ali o
+   título É a proveniência e é isso que a página mostra; a escada do CARTÃO recusa
+   o degrau cujo texto está noutra língua que não a da página, porque um cartão de
+   uma página portuguesa não escreve o nome de uma coisa em inglês. A escolha é de
+   quem chama, porque é quem chama que sabe em que superfície está; a MARCA, que é
+   o que faz do nome uma coisa conferida, continua a ser deste componente. */
+const { linha: c, lang = 'pt', class: klass = 'livro-item-nome', escada = 'livro' } = Astro.props;
+if (escada !== 'livro' && escada !== 'cartao') {
+  throw new Error(`<NomeDaMedida>: escada desconhecida «${escada}» (é «livro» ou «cartao»).`);
+}
+const nome = escada === 'cartao' ? nomeDoCartao(c, lang) : nomeDaMedida(c, lang);
 if (nome !== null && !eNomeDeMedida(nome)) {
   throw new Error(`nomes: nome mal formado para a linha "${c.id}"`);
 }
