@@ -1,11 +1,15 @@
 # O relatório do bloco P1 · «O rodapé e a primeira página»
 
-*15.09.2026, ramo `porta-2026-09-15`, sobre a cabeça `2ab86986`. A fonte deste
-bloco fecha em `feba0d69`; os commits depois dela acrescentam os documentos, as
-60 capturas e o registo dos portões, e a cabeça final é a última do ramo.
+*15.09.2026, ramo `porta-2026-09-15`, sobre a cabeça `2ab86986`. A cabeça final é
+a última do ramo.
 Construtor: Claude Opus 5. Na forma do §3 do brief: a tabela do §1 com a medida
 de cada item preenchida, a tabela das cadeias, o mapeamento dos domínios, os
 commits, os portões, e o que fica para o lugar de direção. Sem travessões.*
+
+**Este relatório tem duas datas.** A primeira redação fechou o bloco na cabeça
+`feba0d69`; o lugar de direção leu as capturas e pediu **seis acertos de forma**,
+que estão no §7 com o que cada um mediu. As palavras não mudaram com eles: a
+tabela das cadeias é a mesma.
 
 **O brief mudou a meio, às 16:35 UTC, por emenda do diretor**, e três coisas com
 ele: o rótulo passa a dizer «segundo o Método» e não «segundo as regras da
@@ -23,7 +27,7 @@ cadeias escritas antes da emenda foram corrigidas antes do primeiro commit.
 | 3 | a frase a 1 em `/sobre` e `/en/about`; «Nuno dos Santos» a 0 em todo o `dist/`; nenhum rótulo «Diretor», «responsável editorial», «Director», «editorial responsibility» no `dist/` | a frase **0 → 1** em `/sobre` e **0 → 1** em `/en/about`. «responsável editorial» **3 629 → 0**; «editorial responsibility» **3 620 → 0**. O nome: ver o item 1 | `contagens-*.txt`; o portão de HTML compara a frase com o oráculo, carácter a carácter, em todas as páginas |
 | 4 | nenhuma frase à vista acima ou abaixo do campo, medida a 390 e a 1 280; o axe a 0; o campo com nome acessível | **0 superfícies com uma frase à vista**, nas três superfícies × duas edições × duas larguras (12 medições): à volta do campo não há nada com mais de 1 px². O texto-fantasma é «Concelho» / «Municipality» e o nome acessível é o mesmo, num `<label>` de 1 px² (o que a classe `.vh` da casa dá). O **axe a 0** em todas as rotas e graus | `busca.txt` (saída 0); `alvos.txt`, célula H1; `porta.txt`, célula A21 |
 | 5 | as quatro cadeias a 0 no `dist/`; o lugar do nome nunca vazio, medido nos três estados do mapa | as quatro a **0** («Toque num distrito ou numa ilha», «Passe o rato…», e as duas do concelho; as três ocorrências de «Passe o rato» que ficam são de um documento de estudo, que o §2 do brief não toca). O lugar diz **«Portugal · 308 concelhos»** nos três estados (com guião e mapa, com guião e sem mapa, e sem guião), e o 308 é a chave da prova `municipios_total`, com a sua porta | `porta.txt`, célula A22; `mapa-unidades.txt`, células U4 e U8a |
-| 6 | dezoito linhas nas duas edições; cada contagem igual ao número de `hasClaim` verdadeiros das medidas mapeadas; «incluído em» e «e mais» a 0 | **18 linhas** em `/`, `/en`, `/dominios` e `/en/domains`; **0 em desacordo** com a declaração, nas duas edições, com a soma da declaração a **36**. «incluído em» **→ 0**, «included in» **→ 0**, «e mais» e «more» **0** no índice | `porta.txt`, células A23, A26 e A20; `leitura.txt`, célula J5 (ver o §5) |
+| 6 | dezoito linhas nas duas edições; cada contagem igual ao número de `hasClaim` verdadeiros das medidas mapeadas; «incluído em» e «e mais» a 0 | **18 linhas** em `/`, `/en`, `/dominios` e `/en/domains`; **0 em desacordo** com a declaração, nas duas edições, com a soma da declaração a **36**. «incluído em» **→ 0**, «included in» **→ 0**, «e mais» e «more» **0** no índice | `porta.txt`, células A23, A26 e A20; `leitura.txt`, célula J5 |
 | 7 | três `<a>` que envolvem o cartão inteiro; «Todos os», «Toda a», «em curso», «edições» a 0 nesta secção; alvos a 44 px | **3 cartões, os três `<a>`, com 0 ligações lá dentro**, a 161, 161 e 111 px de altura a 390 (o teto é 44). As quatro palavras a **0** dentro de `<nav class="portas">`, nas duas edições | `porta.txt`, células A24 e A19; `alvos.txt` |
 | 8 | «limiar» a 0 no texto visível do `dist/`; a régua `leitura.mjs` e as células do estado verdes | **0** nas seis rotas onde a palavra vivia (a primeira página, os dois quadros, o domínio, um concelho, uma área e uma linha), com uma exceção declarada: **1** em `/uniao-europeia` e **1** em `/en/european-union`, que é a definição do painel escrita pela própria Comissão («cada uma com o seu limiar indicativo»), citada com o documento e o excerto. No `dist/` inteiro ficam **18 ocorrências em 7 páginas** (pt) e **15 em 7** (en), todas em quatro famílias declaradas: o Método, as notas da agenda, os documentos de estudo e a definição do painel. «valor de referência» rende-se **2 240 vezes em 320 páginas** | `porta.txt`, célula A25; `contagens-depois.txt`; `leitura.txt` |
 | 9 | as plantas a morder, com a saída no relatório | a régua da primeira página passa de **40 para 52 células**, todas verdes, com **25 estragos plantados**: **22 mordem**, e os 3 que não são os três que o F1.13 já registou como dívida da fatia `css-alcance-2026-09-16` (A15, A17 e A11). As cinco plantas novas mordem as suas células: A21, A22, A26, A19+A24 e A25 | `porta.txt`, a lista dos estragos no fim |
@@ -56,10 +60,14 @@ página cresceu 810 px a 390 por causa delas, e isso mede-se em
 `src/data/dominios.mjs` (`DOMINIO_DAS_MEDIDAS`), com a citação da carta ao lado
 de cada grupo; aqui fica a soma e a porta de cada domínio.
 
+**As contagens da Economia e do Trabalho mudaram com o acerto 6** (a decisão do
+lugar de direção sobre as duas contradições da carta): o custo unitário do
+trabalho passou de um para o outro, e a soma continua 36.
+
 | # | domínio | medidas | a porta |
 |---|---|---|---|
-| 1 | Economia e finanças públicas | 14 | `/dominios/economia-e-financas-publicas` |
-| 2 | Trabalho | 10 | `/dominios/economia-e-financas-publicas#m-t1` |
+| 1 | Economia e finanças públicas | 13 | `/dominios/economia-e-financas-publicas` |
+| 2 | Trabalho | 11 | `/dominios/economia-e-financas-publicas#m-t1` |
 | 3 | População | 0 | (sem porta) |
 | 4 | Migração | 0 | (sem porta) |
 | 5 | Segurança social e pensões | 2 | `/uniao-europeia` |
@@ -79,8 +87,9 @@ de cada grupo; aqui fica a soma e a porta de cada domínio.
 
 ## 4 · Os commits e os portões
 
-Onze commits sobre `2ab86986`. A fonte fecha em `feba0d69`; os dois últimos
-acrescentam os documentos e as capturas (`1e8058c0`) e o registo dos portões.
+Vinte commits sobre `2ab86986`: doze da primeira redação (a fonte fechava em
+`feba0d69`, e os últimos três traziam os documentos, as capturas e o registo dos
+portões) e oito dos seis acertos e das três réguas que foram atrás deles.
 
 Os três portões, cada comando no seu, com o código de saída escrito num ficheiro
 por `echo $? > …` e lido de lá, e nunca de memória:
@@ -91,18 +100,13 @@ por `echo $? > …` e lido de lá, e nunca de memória:
 | `npm run verify` | **0** |
 | `npm run typecheck` | **0** |
 
-Corridos duas vezes: sobre `feba0d69`, que é a cabeça com toda a fonte, e outra
-vez sobre `1e8058c0`, que acrescenta os documentos e as capturas. Os dois lados
-deram os mesmos três zeros. O `portoes.txt` traz o caminho de cada ficheiro de
-código e as últimas linhas de cada corrida; o commit que o traz acrescenta só
-esse ficheiro, e nenhum dos três portões o lê.
-
-E depois do último commit correu-se `npm run build` outra vez, para o carimbo
-do `dist/` levar a cabeça final.
+O `portoes.txt` traz a cabeça de cada corrida, o caminho de cada ficheiro de
+código e as últimas linhas de cada uma. E depois do último commit correu-se
+`npm run build` outra vez, para o carimbo do `dist/` levar a cabeça final.
 
 ## 5 · O que fica vermelho, e porquê
 
-Três coisas, e nenhuma é um portão.
+Uma coisa, e não é um portão.
 
 1. **«Nuno dos Santos» fica em duas páginas** (`/metodo` e `/en/method`), na
    regra 9 do Método. O `src/data/metodo.mjs` é um dos dois textos governados
@@ -113,51 +117,80 @@ Três coisas, e nenhuma é um portão.
    (`metodo 92b0fbdbc5fb`, como na cabeça de partida). **A medida do item 1 e a
    do item 3 não se cumprem inteiras por isto**, e é a primeira coisa para o
    lugar de direção decidir.
-2. **A U5 de `tests/inicio/mapa-unidades.mjs`**: «a altura de `/` a 390 é igual
-   ou menor do que a de partida». A página passou de 2 787 para 3 597 px, e a
-   causa está medida bloco a bloco: a secção dos domínios passou de 335,6 para
-   1 274,8 px porque passou de duas linhas para dezoito, que é o item 6; a busca
-   encolheu 40,4 px. O tecto daquela célula é a promessa do F1.1d, e mover um
-   tecto para uma célula ficar verde sobre uma decisão que o brief tomou é do
-   lugar de direção.
-3. **A J5 de `tests/inicio/leitura.mjs`**: a célula exige que cada domínio do
-   índice tenha porta e diga o seu estado, e dos dezoito há dois (População e
-   Migração) que não dizem nem uma coisa nem outra, porque não têm medidas. É a
-   mesma emenda que a A20 e a U4 levaram neste bloco (a célula media o que o
-   bloco anterior queria), e não se fez porque `leitura.mjs` mede a leitura
-   breve e não o índice: a decisão de a emendar aqui ou de a deixar para o bloco
-   que a tocar a seguir é do lugar de direção.
+**A U5 e a J5 estavam vermelhas na primeira redação e ficaram verdes com os
+acertos**, e nenhuma das duas por lhe terem mexido no tecto:
+
+* a **U5** («a altura de `/` a 390 é igual ou menor do que a de partida»)
+  passou porque o acerto 2 encolheu a página: 3 597 → **3 006 px**, abaixo dos
+  3 263 px da árvore de partida. **O tecto não subiu.** A instrução do lugar de
+  direção previa levantá-lo se as dezoito linhas não coubessem; couberam;
+* a **J5** passou com o acerto 5, que é a própria emenda da célula.
 
 **E ficam três estragos plantados que não mordem**, os mesmos que o F1.13
 registou na I118 como dívida das réguas para a fatia `css-alcance-2026-09-16`:
-a A15, a A17 e a A11.
+a A15, a A17 e a A11. E duas células vermelhas em `tests/inicio/lista.mjs`, as
+duas L8, que medem os dois painéis na primeira página, de onde eles saíram com
+o item 8.16 do F1.10: também são dessa dívida, e são as mesmas duas que já
+estavam vermelhas antes deste bloco.
 
 ## 6 · O que fica para o lugar de direção
 
-1. **O nome na regra 9 do Método** (o ponto 1 do §5): o item 1 e o item 3 pedem
-   o nome a 0 em todo o `dist/`, e ele fica em duas páginas.
-2. **Duas contradições da carta dos conteúdos**, ditas onde a tabela as
-   encontrou (`src/data/dominios.mjs`): o custo unitário do trabalho está no
-   domínio 1 no §2 e no domínio 2 no §3; as competências digitais estão no 7 e no
-   11. A tabela seguiu o §2 na primeira e o §3 na segunda, e a carta fica por
-   emendar de um dos lados.
-3. **Duas linhas do `quadro-institucional` que não são declaradas como medida em
+1. **O nome na regra 9 do Método** (o §5): o item 1 e o item 3 pedem o nome a 0
+   em todo o `dist/`, e ele fica em duas páginas. O lugar de direção disse que
+   trata dela a seguir, com a entrada em `DECISIONS.md`.
+2. **A menção da licença da Carta não saiu da superfície**, e é o único ponto do
+   pedido dos seis acertos que não se fez. O acerto 4 mandava tirar as duas
+   linhas de baixo do mapa; a primeira saiu, a segunda («Direção-Geral do
+   Território · Carta Administrativa Oficial de Portugal (CAOP) 2025 · CC BY
+   4.0») fica. É a única obrigação da licença CC BY 4.0 da Carta, a Emenda 20e
+   decidiu-a com estas palavras («uma obrigação de licença não se cumpre por
+   hiperligação») e `scripts/check-mapa.mjs`, regra r6(b), fecha a construção sem
+   ela em todas as páginas que desenham um mapa. Tirá-la é uma decisão do
+   diretor com o advogado.
+3. **As duas contradições da carta foram decididas** pelo lugar de direção a
+   15.09, e estão escritas em `src/data/dominios.mjs` com o critério (a
+   atribuição mais específica ganha): o custo unitário do trabalho fica no
+   Trabalho e as competências digitais na Educação. **A carta fica por emendar
+   do lado que sobra.**
+4. **Duas linhas do `quadro-institucional` que não são declaradas como medida em
    lado nenhum** (`credito-malparado-2025` e `indice-de-percepcao-da-corrupcao-2025`):
    existem no livro-razão, não estão nos dois quadros, não estão em
    `MEDIDAS_DO_DOMINIO_1` e nenhuma matéria de área as cobre. Não entram na
    contagem porque a porta do domínio não teria para onde abrir. A carta espera
    as duas (o §2 do domínio 17 nomeia o índice de perceção da corrupção).
-4. **A altura da primeira página** (o ponto 2 do §5): dezoito linhas de domínio
-   custam 939 px a 390, e o diretor vê-o nas capturas.
-5. **A frase de abertura dos domínios diz «este projeto»** e não «a casa», pela
+5. **A altura da primeira página**: dezoito linhas de domínio custam 644 px a
+   390 depois do acerto 2 (eram 939 antes dele), e a página fica 219 px acima da
+   cabeça de partida. O diretor vê-o nas capturas.
+6. **A frase de abertura dos domínios diz «este projeto»** e não «a casa», pela
    emenda das 16:35 UTC; o item 6 do brief escrevia «que a casa já publica». A
    regra 1 do brief é mais recente do que a linha do item, e foi ela que valeu.
-6. **A palavra «casa» continua no Método e na secção da política** («A casa não
+7. **A palavra «casa» continua no Método e na secção da política** («A casa não
    aceita dinheiro de nenhuma entidade que mede», e mais quatro recusas): são
    cadeias que este bloco não escreveu, e a varredura delas é do P3.
-7. **A leitura a frio e a leitura de língua** ainda não foram feitas: a entrada
+8. **A leitura a frio e a leitura de língua** ainda não foram feitas: a entrada
    do `REVISOES-DO-INVENTARIO.md` nomeia o relatório e diz que elas se fazem
    antes da fusão.
+
+## 7 · Os seis acertos da leitura das capturas
+
+*Pedidos pelo lugar de direção depois de ler as capturas da cabeça `9a363dbb`.
+Um commit cada. Nenhum mudou uma cadeia.*
+
+| # | o que era | o que é, medido |
+|---|---|---|
+| 1 | a frase do projeto entrava por baixo do parágrafo do diretor e em cinzento, porque herdou a forma da frase da política que substituiu | é o **primeiro parágrafo** da página, com a classe `.lede` que o parágrafo seguinte já tem. O parágrafo do diretor não muda uma palavra nem muda de forma |
+| 2 | a contagem encostada à direita (`flex: 1 1 18ch` no nome), a fila com 12 px de `padding` sobre um `min-height` de 44, e uma coluna em todas as larguras | o vão nome→contagem é de **10 px nas cinco larguras**; a fila tem a altura das listas da casa; a secção passou de **1 274,8 para 979,4 px** a 390 e a página de **3 597 para 3 006**; a partir de **768 px são duas colunas**, nove e nove, pela ordem da carta. Das dezoito linhas há **uma** que não cabe numa só a 390 e a 768, «Ciência, tecnologia e inteligência artificial», que tem 44 caracteres; a 1 024, 1 280 e 1 600 cabem as dezoito |
+| 3 | a porta era uma grelha de três colunas que abaixo de 900 px virava uma coluna só, e o cartão media 161 px no telemóvel | os três cartões numa **fila só nas cinco larguras**, a **53 px** de altura (o alvo é 44) |
+| 4 | duas linhas por baixo do mapa: a contagem dos concelhos e a menção da licença | a contagem passou para o lugar do nome («**Portugal · 308 concelhos ■ fonte**»), com a linha do livro-razão e a marca da fonte; a linha de baixo saiu. **A menção da licença fica**, e a razão está no §6 |
+| 5 | a J5 exigia porta e estado a todos os dezoito domínios, e dois não têm medidas | exige-os a quem tem contagem, e exige o contrário a quem não tem; as portas são pedidas ao servidor. **26 de 26 células**, com uma planta nova para a metade nova |
+| 6 | duas contradições da carta ditas e não decididas | decididas pelo critério da atribuição mais específica: o custo unitário do trabalho no **Trabalho**, as competências digitais na **Educação**. Economia 14 → **13**, Trabalho 10 → **11**, soma **36** |
+
+**E três réguas foram atrás do que mudou**, porque mediam coisas que deixaram de
+existir: a sonda da L12 de `lista.mjs` procurava a linha que saiu de baixo do
+mapa e devolvia `null` (seis células caíam por não encontrar nada); a peneira da
+I11 de `indice.mjs` só via `data-prova` e `data-nonledger`, e a contagem dos
+concelhos passou a ser uma linha do livro-razão; e a planta do valor selado da
+J5 procurava `<ol class="dominios-lista">` à letra, que ganhou um `style`.
 
 ---
 
