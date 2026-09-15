@@ -31,12 +31,24 @@
  * fonte é O toque, no singular.
  *
  * A PORTA NÃO DESAPARECE: MUDA DE SÍTIO. Cada item da régua declara
- * `data-selo-em="<a linha do cartão>"`, o portão de HTML aceita a dispensa SÓ
- * quando o cartão tem a marca dessa linha, e o recibo dessa linha lista as linhas
- * da régua no bloco «O enquadramento», cada uma com a sua porta. O leitor toca uma
- * vez e chega à proveniência das três. A régua do bloco (célula K10) confere a
- * outra metade, que o portão não vê de uma página só: que o recibo lista mesmo as
- * linhas da régua daquela medida.
+ * `data-selo-em="<a linha do cartão>"`, e o recibo dessa linha lista as linhas da
+ * régua no bloco «O enquadramento», cada uma com a sua porta. O leitor toca uma
+ * vez e chega à proveniência das três.
+ *
+ * QUEM CONFERE ISTO É A RÉGUA DO BLOCO, E NÃO O PORTÃO DE HTML, e a razão
+ * mediu-se: o `auditaSelo()` do portão **já não corre nas páginas de área**, e não
+ * por causa deste bloco. A guarda `paginaDoLivro` inclui a rota `area` desde
+ * 28.08.2026, quando a página de área passou a render campos do livro-razão com a
+ * marca deles; nessas páginas o portão confere cada CAMPO contra a linha, que é
+ * mais conferência e não menos, e a conferência do selo é a que não corre. A
+ * primeira redação deste acerto escreveu uma dispensa no portão e mediu-a: **zero
+ * vezes exercida**. Uma dispensa que não dispensa nada é uma porta aberta que
+ * ninguém decidiu abrir, e por isso saiu.
+ *
+ * A célula K10 de `tests/cartao/cartao.mjs` é quem promete as duas metades: que
+ * nenhum cartão tem mais do que uma marca, e que o recibo da medida lista mesmo
+ * cada linha que a régua dela cita. Sem ela, um valor de régua podia ficar sem
+ * porta nenhuma e nada o dizia.
  *
  * ---------------------------------------------------------------------------
  * NENHUM VALOR À MÃO, E A AUSÊNCIA NÃO SE ESCREVE
