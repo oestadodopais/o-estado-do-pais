@@ -1,27 +1,35 @@
-OS TRÊS PORTÕES NA CABEÇA feba0d69, 2026-09-15 19:38 UTC
+OS TRÊS PORTÕES DO BLOCO P1
 
-cada comando no seu, e o código de saída lido do ficheiro em que ele o escreveu:
+Corridos sobre a cabeça 1e8058c0, que é a cabeça do ramo com tudo o que este
+bloco construiu. O commit que traz ESTE ficheiro é o seguinte, e o que ele
+acrescenta é só este ficheiro: nenhum dos três portões o lê.
 
-  npm run build  ->  0   (/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/p1/g-build.exit, escrito por 'echo $? > ...')
-  npm run verify  ->  0   (/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/p1/g-verify.exit, escrito por 'echo $? > ...')
-  npm run typecheck  ->  0   (/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/p1/g-typecheck.exit, escrito por 'echo $? > ...')
+Cada comando no seu, e o código de saída lido do ficheiro em que ele o
+escreveu (`npm run <portao> > log 2>&1 ; echo $? > exit`), e nunca de memória:
 
-as últimas linhas de cada um:
+  npm run build  ->  0
+      o ficheiro: /private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/p1/f-build.exit
+  npm run verify  ->  0
+      o ficheiro: /private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/p1/f-verify.exit
+  npm run typecheck  ->  0
+      o ficheiro: /private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/p1/f-typecheck.exit
+
+A primeira corrida, sobre a cabeça feba0d69 (a mesma fonte, sem os documentos
+e as capturas), deu os mesmos três zeros.
+
+As últimas linhas de cada um:
 
   === npm run build ===
-    língua ✓ 37 unidade(s) do livro-razão: 35 traduzida(s), 2 em português com razão escrita · 2527 localizador(es), todos dentro de documento português · 72 título(s) de documento com língua declarada (36 pt, 36 en) · 19 rótulo(s) da fonte com língua declarada (15 pt, 4 en) · 18 organismo(s) com língua declarada (17 pt, 1 en) · 67 edição(ões) com língua declarada (19 pt, 0 en, 48 sem língua)
           7224 página(s) lidas · unidades em «en»: 5974 (5965 traduzidas, 9 em português, todas com marca) · títulos com marca de língua: 6657 de 13314 rendidos · rótulos da fonte com marca de língua: 5607 de 11214 rendidos · organismos rendidos: 15740 (7870 de língua contrária: 7687 em «en» e 183 em «pt», 7870 com a marca certa) · edições rendidas: 10332 (3770 de língua contrária: 3770 em «en» e 0 em «pt», 3770 com a marca certa, 2792 sem língua nenhuma e sem marca) · localizadores em «en»: 2527 com marca · leis em «en»: 1246 com marca, 3 dentro de transcrição do motor · títulos de estudo portugueses em «en»: 115 à vista e 0 no oculto, todos com marca · rótulo de IA: 0 nome(s) de quem responde (o nome saiu do rótulo a 15.09.2026) e 7232 linha(s) na língua da página · atributos repetidos: nenhum
           3 nome(s) de lei dentro de texto transcrito (uma «derivation_en» do livro-razão, uma nota do registo da agenda): a casa não edita o que transcreve, e um campo transcrito só se marca inteiro, na língua do campo.
   
 
   === npm run verify ===
-  
     7240 página(s) de `dist/` varridas à procura das duas ausências que os cartões afirmam (`.movel-selo`, `.banda`): nenhuma das duas rende.
     ✓ 20 cartões, 11 ficheiros de letra e um README em design-system/.
   
 
   === npm run typecheck ===
-  
   > o-estado-do-pais@0.1.0 typecheck
   > tsc -p tsconfig.check.json
   
