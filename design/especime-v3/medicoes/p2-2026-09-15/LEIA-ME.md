@@ -7,34 +7,53 @@
 
 ---
 
-## 0 · O que o diretor tem de olhar primeiro nas capturas
+## 0 · Os três acertos de 15.09 à noite, e o que eles mudaram
 
-**Duas coisas, e as duas se veem nas capturas antes de se lerem aqui.**
+O lugar de direção leu as capturas da cabeça `2dceb7b9` e mandou três acertos.
+Estão feitos, cada um no seu commit, e o que eles mudaram está medido:
 
-**(1) Quarenta e quatro cartões portugueses e noventa ingleses ficaram sem nome.**
-É a consequência medida do item 4: um cartão cujo único nome era o título do
-documento da fonte, na língua da fonte, passa a não ter nome nenhum. Em português
-perdem-se vinte nomes (quinze títulos de documento e cinco rótulos da fonte, todos
-em inglês); **em inglês perdem-se sessenta e seis** (cinquenta e seis títulos e dez
-rótulos, todos em português). A regra do item 4 é simétrica, e é a do brief F1.15
-§1.3 («nas páginas portuguesas, 0 títulos de documento à vista; nas inglesas, o
-mesmo com os títulos portugueses»), mas o custo dela na edição inglesa é três
-vezes o da portuguesa, e isso não estava escrito em lado nenhum antes de ser
-medido. **O `nomes.json` que chegou às 19:43 não fecha este buraco**: ele traz o
-nome oficial do INE e da PORDATA para o RECIBO (a norma §1.5), e para trinta e
-duas medidas, não para as cento e trinta e uma. **É decisão do diretor**, nas
-capturas: ou fica assim até o motor exportar um nome de cartão por linha, ou o
-cartão volta a mostrar o nome na língua da fonte com a marca `lang` enquanto
-espera.
+| o acerto | antes | depois |
+| --- | --- | --- |
+| **(1) nenhum cartão fica sem nome** | 87 cartões com nome em português, 41 em inglês | **107 em cada edição**: 21 com o nome do projeto, 5 com o nome oficial confirmado do INE ou da PORDATA, e **81 com o nome que a fonte dá à medida** (15 deles com a marca `lang` em português, 71 em inglês, porque é nessa edição que os títulos portugueses são os estrangeiros) |
+| **(2) uma marca da fonte por cartão** | 199 marcas por edição, em 131 cartões | **131 por edição, uma por cartão**; os 68 valores de régua ficam sem marca própria e a porta deles é a do cartão, que abre o recibo, onde o bloco «O enquadramento» os lista |
 
-**(2) O cartão da habitação acabou com mais texto do que começou: 13 nós para
-19.** A régua é a resposta à pergunta dele («17,6 % de quê, e é muito ou pouco»),
-e custa treze nós de texto e duas marcas da fonte a mais por cartão: «2024: 9,1 ·
-União Europeia: 5,5 · acima do valor de referência, 9 %». O recibo que saiu valia
-sete. O §5.1 da norma manda justificar linha a linha um bloco de palavras que
-acabe com mais texto do que começou, e o §4 da tabela das cadeias fá-lo. Onde não
-há régua nem frase, que é a maior parte dos 131 cartões, a contagem desceu de 9,9
-para 6,6. **Se a régua for a mais, é ali que se corta**, e é decisão dele.
+**Um achado do acerto 2, e fica escrito porque não se vê a ler o código.** Escrevi
+uma dispensa no portão de HTML para o valor de régua sem marca própria, e medi-a a
+seguir: **zero vezes exercida em 7 358 páginas**. A razão é de 28.08.2026 e não
+deste bloco: a guarda `paginaDoLivro` do portão inclui a rota `area` desde o dia
+em que a página de área passou a render campos do livro-razão com a marca deles, e
+nessas páginas o portão confere cada CAMPO contra a linha (mais conferência, e não
+menos) e a conferência do SELO é a que não corre. Nunca houve nada para dispensar,
+e a dispensa saiu. **Quem promete a porta é a célula K10 da régua do bloco**:
+nenhum cartão com mais do que uma marca, e o recibo da medida a listar cada linha
+que a régua dela cita. Um leitor do cartão procuraria essa conferência no portão, e
+ela não está lá: está escrito nos dois ficheiros.
+| **(3) o valor de referência entre parênteses** | «acima do valor de referência, 9%» | **«acima do valor de referência (9%)»** |
+
+**O que continua sem nome, e não há nome para lhe dar: 24 cartões por edição.**
+São as linhas DERIVADAS, que não têm fonte nem documento porque a proveniência
+delas é a das origens, e as quatro cujo único título de documento é o próprio
+marcador. A lista está no §8, para o bloco P3 lhes dar o nome do projeto.
+
+**O acerto (3) fica a «(9%)» e não a «(9 %)»**, e é uma escolha e não um
+esquecimento: a mesma linha escreve-se «limiar 60% · acima» no cartão da faixa e
+na peça do painel, e duas formas para o mesmo número na mesma casa é o que este
+bloco existe para não ter. O símbolo é um campo declarado por medida em
+`src/data/figuras.mjs` (doze escrevem «%» e a taxa de atividade escreve « pp»): se
+a direção quiser o espaço fino, põe-se ali, uma vez, e chega a todos os sítios ao
+mesmo tempo.
+
+---
+
+## 0b · O que o diretor tem de olhar nas capturas
+
+**O cartão da habitação tem mais texto do que tinha: 13 nós para 17.** A régua é a
+resposta à pergunta dele («17,6 % de quê, e é muito ou pouco»), e custa onze nós
+de texto: «2024: 9,1 · União Europeia: 5,5 · acima do valor de referência (9%)».
+O recibo que saiu valia sete. O §5.1 da norma manda justificar linha a linha um
+bloco de palavras que acabe com mais texto do que começou, e o §4 da tabela das
+cadeias fá-lo. Onde não há régua nem frase, que é a maior parte dos 131 cartões, a
+contagem desceu de 9,9 para 6,5. **Se a régua for a mais, é ali que se corta.**
 
 ---
 
@@ -45,9 +64,9 @@ para 6,6. **Se a régua for a mais, é ali que se corta**, e é decisão dele.
 | 1 | o cartão com cinco coisas e nada mais | as cinco coisas e só elas em 100 % dos cartões das duas edições; «Publicado por», «Documento», «Lido na fonte a», «Dados de» a 0; a chave a 0 no texto visível | **cumprido.** 262 cartões (131 pt, 131 en), 0 blocos a mais, 0 rótulos de recibo, 0 chaves. Medido pela régua nova (`tests/cartao/cartao.mjs`, células K1, K2, K3), no `verify` |
 | 2 | o recibo ganha as duas datas da norma §2.5 e o nome oficial com a sua origem | a linha da próxima conferência em 100 % dos recibos com entrada no calendário | **cumprido, as duas metades.** As cinco linhas do livro-razão com acontecimento datado no calendário (`divida-publica-2025`, `evora-concentracao-vab4-2024`, `evora-empresas-2024`, `evora-vab-empresarial-2024`, `portugal-concentracao-vab4-2024`) rendem «Próxima conferência» nas duas edições, com a porta para o acontecimento na agenda: 5 de 5. E com o `nomes.json` que chegou às 19:43, o recibo ganhou o nome oficial: **17 recibos por edição com «Nome na PORDATA» e 9 com «Nome no INE»**, cada um com a porta para o endereço e a data a que o motor o leu. São os que o motor marca como a MESMA medida; os oito marcados «medida vizinha» e os sete por confirmar não chegam ao leitor |
 | 3 | a linha do tipo sai; o índice di-lo uma vez; a legenda da marca sai das páginas do leitor | «Governo Constitucional» a 1 no `dist/` de cada edição; a legenda a 0 fora do Método | **cumprido o primeiro, não cumprido à letra o segundo.** «Governo Constitucional» **1** em português e «Constitutional Government» **1** em inglês, os dois no índice das áreas (eram 9 e 9). A legenda da marca passa de **319 rotas por edição para 1** (o índice do livro-razão) e não para 0: as duas razões estão no §3 da tabela das cadeias, e as duas são mecânicas (o Método é texto governado e a decisão 1 da emenda de 15.09 à §1.108 diz quando ele se toca; `design:feixe` compõe o cartão do sistema de desenho lendo `p.marca-legenda` daquela rota, e sem ela o `verify` fecha) |
-| 4 | nenhum título de documento da fonte à vista na edição portuguesa | zero cadeias em inglês nos cartões da edição portuguesa, medido por uma régua nova sobre o `dist/` | **cumprido, com o custo medido no §0.** 0 elementos com `lang` declarado diferente do da página, nos 262 cartões, fora de duas exceções escritas na régua (a unidade que fica em português numa página inglesa, 3 ocorrências, pela I92; o marcador da casa, 8, pela `IDENTIDADE.md` §6). Célula K4 |
+| 4 | nenhum título de documento da fonte à vista na edição portuguesa | zero cadeias em inglês nos cartões da edição portuguesa | **a regra mudou a 15.09 à noite, e a medida com ela.** Cumpri-la à letra deixava 44 cartões portugueses e 90 ingleses sem nome nenhum, e o lugar de direção decidiu o contrário sobre as capturas: nenhum cartão fica sem nome, e o que está na língua da fonte di-lo com a marca `lang`. A célula K4 passa a medir o que a I91 sempre mandou: **o nome de um cartão carrega a língua que as tabelas declaram para ele, nem a mais nem a menos**. 86 cartões por edição com o nome na língua da fonte, todos com a marca certa; 0 sem ela |
 | 5 | «acima / abaixo / dentro do valor de referência», «sem valor de referência» | «limiar» a 0 no texto visível do `dist/` fora do Método | **cumprido nos cartões deste bloco; não cumprido no `dist/` inteiro, e a razão é a divisão do trabalho.** Nos 262 cartões a palavra está a 0 (célula K7), e as três cadeias novas usam **as mesmas chaves que o bloco P1 escreve** (`estado.acima`, `.abaixo`, `.entre`). As restantes cadeias com «limiar» (o cartão da faixa, a peça, a leitura breve, os títulos dos painéis) são a metade da troca que o P1 faz no ramo `porta-2026-09-15`, e duplicá-las aqui era garantir um conflito de fusão entre dois lados com o mesmo texto. A medida cumpre-se na fusão dos dois ramos |
-| 1d | a régua: o período anterior, a União e a palavra contra o valor de referência, tudo lido de linhas | a régua só onde a linha existe; nenhum valor à mão | **cumprido, com as 59 linhas que o motor selou às 19:43.** Por edição: **45 cartões com régua**, dos quais 45 com o período anterior, 23 com o agregado da União e 7 com a palavra contra o valor de referência. Nenhum valor é escrito pela casa: cada um é um `<Claim>` com a marca da fonte da sua linha. As cinco medidas sem agregado europeu desenham-se sem ele e não escrevem a ausência por palavras (§0.2 do brief). A célula K9 compara o valor de referência nas suas duas testemunhas, a declaração de `figuras.mjs` e a leitura da página da Comissão: **13 de 13 batem certo** |
+| 1d | a régua: o período anterior, a União e a palavra contra o valor de referência, tudo lido de linhas | a régua só onde a linha existe; nenhum valor à mão | **cumprido, com as 59 linhas que o motor selou às 19:43.** Por edição: **45 cartões com régua**, dos quais 45 com o período anterior, 23 com o agregado da União e 7 com a palavra contra o valor de referência. Nenhum valor é escrito pela casa: cada um é um `<Claim>`, e a porta dele é a marca única do cartão, que abre o recibo onde o bloco «O enquadramento» os lista (a decisão de 15.09 à noite). As cinco medidas sem agregado europeu desenham-se sem ele e não escrevem a ausência por palavras (§0.2 do brief). A célula K9 compara o valor de referência nas suas duas testemunhas, a declaração de `figuras.mjs` e a leitura da página da Comissão: **13 de 13 batem certo** |
 | 6 | um só gabarito; a faixa deixa de deslizar acima de 768; o mapa preenche a coluna a partir de 1024 | as capturas nas cinco larguras sem saltos, medidas por uma régua que compara as posições dos números e dos títulos entre cartões | **cumprido o gabarito e a faixa; não feito o mapa.** A régua é `gabarito-do-cartao.mjs`, 30 medições (3 rotas × 2 edições × 5 larguras). O espalhamento das posições do valor e do título dentro de cada cartão: **0 px em 14 das 30** (eram 2 das 30) e **máximo 17,6 px** (era 38,4). A faixa deixa de deslizar a partir de 768 px em todas as rotas medidas (deslizava em todas as larguras). Transbordo horizontal 0 nas cinco larguras, antes e depois. **O mapa não foi tocado**: é do bloco P1, que corre em paralelo e tem `MapaRespira.astro` e `mapa.css` abertos |
 | 7 | uma régua nova para o cartão, com cinco plantas a morder | as plantas a morder, com a saída no relatório | **cumprido, com oito e não cinco.** `tests/cartao/cartao.mjs --prova` monta um `dist/` de mentira com oito estragos plantados, um por célula, e exige que os oito mordam e que o cartão são não dê nenhum vermelho. Corre no `verify` (`npm run check:cartao`). A saída está no §5 |
 | 8 | as capturas e a tabela das cadeias | completas | **cumprido.** 80 capturas (4 rotas × 2 edições × 5 larguras × antes/depois) em `design/especime-v3/capturas/p2-2026-09-15/`; a tabela em `cadeias-antes-depois.md`, ao lado deste ficheiro |
@@ -60,17 +79,22 @@ A contagem é de **nós de texto à vista**, por cartão, depois de tirar o que 
 leitor de ecrã ouve (`.vh` e `aria-hidden`). Medida sobre o `dist/` de `2ab86986`
 e sobre o da cabeça final, com o mesmo guião.
 
-| família de página | edição | cartões | antes | depois, sem a régua | depois, com a régua |
-| --- | --- | --- | --- | --- | --- |
-| área da habitação | pt | 3 | 12,3 (13, 13, 11) | 8,3 (11, 9, 5) | **16,3** (19, 17, 13) |
-| área da habitação | en | 3 | 12,3 (13, 13, 11) | 8,7 (11, 9, 6) | **16,7** (19, 17, 14) |
-| área da economia | pt | 88 | 9,9 | 5,6 | **6,6** |
-| área da economia | en | 88 | 10,0 | 5,1 | **6,2** |
+| família de página | edição | cartões | antes | sem a régua | com a régua | depois dos acertos |
+| --- | --- | --- | --- | --- | --- | --- |
+| área da habitação | pt | 3 | 12,3 (13, 13, 11) | 8,3 | 16,3 | **14,7** (17, 15, 12) |
+| área da habitação | en | 3 | 12,3 (13, 13, 11) | 8,7 | 16,7 | **14,7** (17, 15, 12) |
+| área da economia | pt | 88 | 9,9 | 5,6 | 6,6 | **6,5** |
+| área da economia | en | 88 | 10,0 | 5,1 | 6,2 | **6,5** |
 
-A coluna do meio é a construção das 19:30 UTC, antes de as linhas do motor
-chegarem; a da direita é a cabeça final. A justificação linha a linha, que o §5.1
-da norma manda escrever para um bloco que acabe com mais texto do que começou,
-está no §4 da tabela das cadeias.
+As colunas do meio são as três construções do dia: às 19:30 UTC o cartão tinha
+perdido o recibo e ainda não tinha a régua; às 20:30 tinha a régua com três marcas;
+a última é a dos três acertos, com uma marca só (as duas palavras «fonte» que
+saíram são os dois nós a menos) e com o nome de volta em 20 cartões portugueses e
+66 ingleses. **As duas edições passam a ler o mesmo número de pedaços**, que é o
+que se espera de duas edições da mesma página.
+
+A justificação linha a linha, que o §5.1 da norma manda escrever para um bloco que
+acabe com mais texto do que começou, está no §4 da tabela das cadeias.
 
 **As cinco coisas não são cinco nós de texto**, e a diferença está dita para não
 parecer uma conta que não fecha: o cartão tem no máximo quatro BLOCOS (o nome, a
@@ -88,7 +112,14 @@ O cartão que o diretor leu, pedaço a pedaço, está no §4 da tabela das cadei
 | | pt | en |
 | --- | --- | --- |
 | cartões | 131 | 131 |
-| com nome | 87 (eram 107) | 41 (eram 107) |
+| com nome | 107 | 107 |
+| com o nome do projeto (`figuras.mjs`, `dominios.mjs`) | 21 | 21 |
+| com o nome oficial confirmado (INE ou PORDATA) | 5 | 5 |
+| com o nome que a fonte dá à medida | 81 | 81 |
+| desses, com a marca `lang` porque estão na outra língua | 15 | 71 |
+| sem nome, e sem nome nenhum para dar | 24 | 24 |
+| marcas da fonte | 131 (eram 199) | 131 (eram 199) |
+| valores de régua sem marca própria | 68 | 68 |
 | com a frase do que medem | 15 | 15 |
 | com régua | 45 | 45 |
 | com o período anterior | 45 | 45 |
@@ -154,7 +185,7 @@ estarem juntos**, porque antes disso a medição é sobre o texto que vai mudar.
 ### A régua nova do bloco (`npm run check:cartao`, dentro do `verify`)
 
 ```
-  prova: 8 estragos plantados, 8 vistos; o cartão são a 0; a régua com as duas
+  prova: 9 estragos plantados, 9 vistos; o cartão são a 0; a régua com as duas
   comparações de uma medida, a série bienal, a ausência da linha da União e uma
   chave que não se inventa; as duas testemunhas do valor de referência com um par
   bom e dois maus
@@ -163,14 +194,16 @@ estarem juntos**, porque antes disso a medição é sobre o texto que vai mudar.
 
     páginas lidas                    7358
     cartões                          262 (131 pt, 131 en)
-    com nome                         128
-    sem nome (à espera do motor)     134
+    com nome                         214
+    sem nome (à espera do motor)     48
     com a frase do que medem         30
     com régua                        90
     «Governo Constitucional»         1 pt · 1 en
     legenda da marca                 2 página(s)
+    nome na língua da fonte          86 (com a marca «lang»)
     unidade na outra língua          3 (a exceção da I92)
     o marcador em português          8 (a exceção da IDENTIDADE §6)
+    valores de régua sem marca própria                    136 (a porta é a do cartão)
     valores de referência, as duas testemunhas comparadas  13
     medidas com nome oficial no recibo                    11
     ficheiros do motor               referencias.json sim · nomes.json sim
@@ -178,11 +211,12 @@ estarem juntos**, porque antes disso a medição é sobre o texto que vai mudar.
   ✓ as cinco coisas e só elas, em todos os cartões das duas edições
 ```
 
-**As oito plantas, e o que cada uma prova:** um bloco a mais no cartão (K1); um
-rótulo de recibo dentro dele (K2); a chave no texto visível (K3); um título de
-documento em inglês numa página portuguesa (K4); um algarismo na régua sem linha
-e sem motivo declarado (K5); a frase mudada (K6); a palavra «limiar» (K7); a
-legenda da marca numa página de área (K8). O cartão são, no mesmo `dist/` de
+**As nove plantas, e o que cada uma prova:** um bloco a mais no cartão (K1); um
+rótulo de recibo dentro dele (K2); a chave no texto visível (K3); um nome
+estrangeiro SEM a marca da língua (K4, que é a pergunta nova depois do acerto 1);
+um algarismo na régua sem linha e sem motivo declarado (K5); a frase mudada (K6);
+a palavra «limiar» (K7); a legenda da marca numa página de área (K8); e um cartão
+com duas marcas da fonte, com um valor de régua cujo recibo não o lista (K10). O cartão são, no mesmo `dist/` de
 mentira, dá 0 vermelhos, que é a outra metade da prova: uma régua que grita por
 tudo também diz sempre alguma coisa.
 
@@ -240,12 +274,19 @@ cartão novo continua a levar: as duas continuam verdes sem uma linha mudada.
 | `aa84b85e` | O inventário com as linhas do motor, e a contagem do livro-razão datada |
 | `45b2b561` | A catraca da L1 sobe 118, que são as 59 linhas novas vezes duas edições |
 | `4eb57d98` | O tecto do cartão do sistema de desenho sobe, porque o livro-razão cresceu |
-| (o último) | O relatório, a tabela das cadeias, as medições e as quarenta capturas de depois |
+| `2dceb7b9` | O relatório, a tabela das cadeias, as medições e as quarenta capturas de depois |
+| `355d8ed2` | Nenhum cartão fica sem nome: a escada ganha um degrau e deixa de ter fundo |
+| `b2b9a827` | Uma marca da fonte por cartão, e o recibo passa a listar o enquadramento |
+| `8cbca79c` | O valor de referência entre parênteses, e sem a vírgula solta |
+| `d42d1a53` | As duas tabelas das línguas saem de `nomes.mjs`, que já não as usa |
+| `d8bbb6de` | A dispensa que eu tinha escrito no portão nunca dispensou nada, e sai |
+| (o último) | O relatório e a tabela refeitos com os acertos, e as quarenta capturas de depois outra vez |
 
 **A cabeça final está no §7**, com os códigos dos portões.
 
 **As nove primeiras são de antes de as linhas do motor chegarem**, às 19:43 UTC; as
-sete seguintes são o que elas obrigaram a mudar. Ficam separadas porque foram
+sete seguintes são o que elas obrigaram a mudar; as três últimas são os acertos que
+o lugar de direção mandou depois de ler as capturas. Ficam separadas porque foram
 assim: o que a chegada das linhas partiu, e o que ela destravou, lê-se melhor em
 commits do que numa reescrita.
 
@@ -307,16 +348,17 @@ Quem os quiser fechar tem a lista no ficheiro, com a nota de cada um.
 
 ### As quatro decisões que o construtor não tomou
 
-1. **Os nomes de cartão que se perderam** (o §0). 44 cartões portugueses e 90
-   ingleses sem nome. O `nomes.json` não resolve isto: ele traz o nome oficial
-   para o RECIBO, e só para 32 medidas. Ou fica assim até o motor exportar um nome
-   de cartão por linha (o item 1 do F1.15), ou o cartão volta a mostrar o nome na
-   língua da fonte com a marca `lang` enquanto espera. É a decisão com mais efeito
-   nas capturas.
-2. **A régua custa duas marcas da fonte a mais por cartão** (o §0, ponto 2). Cada
-   valor dela é uma linha e leva a porta para ela; não há forma de a tirar sem
-   tirar a proveniência. Se a régua for a mais, corta-se o que o diretor decidir:
-   o período anterior, o agregado, ou os dois.
+1. ~~**Os nomes de cartão que se perderam**~~ **Decidido a 15.09 à noite:** nenhum
+   cartão fica sem nome, e o que não tem nome do projeto nem nome oficial mostra o
+   nome da fonte com a marca `lang`. **Fica o que sobra:** 81 cartões por edição
+   com o nome da fonte, que o bloco P3 tem de nomear (a lista está no §7 da tabela
+   das cadeias), e **24 por edição sem nome nenhum**, para os quais não há nome da
+   fonte para mostrar (a lista está no §8 da mesma tabela).
+2. ~~**A régua custa duas marcas da fonte a mais por cartão**~~ **Decidido a 15.09
+   à noite:** uma marca por cartão, e o recibo lista as linhas do enquadramento. A
+   dispensa é declarada, o portão de HTML só a aceita quando o cartão tem a marca
+   da linha que o item declara, e a régua do bloco confere que o recibo lista
+   mesmo aquelas linhas.
 3. **A fila do estado do cartão da faixa** (o §4). Reservar três linhas, tirar o
    contador da posição da fila, ou alargar o cartão: decide-se depois de os dois
    ramos estarem juntos, porque antes disso a medição é sobre o texto que muda.
