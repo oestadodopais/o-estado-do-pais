@@ -60,13 +60,6 @@
 import { FIGURAS } from '../data/figuras.mjs';
 import { MEDIDAS_DO_DOMINIO_1 } from '../data/dominios.mjs';
 import { POR_VERIFICAR, documentoDaLinha } from './ledger.mjs';
-/* A TABELA DAS LÍNGUAS NÃO IMPORTA NADA e não fecha ciclo nenhum: é uma lista
-   de cadeias com a língua de cada uma, e `check:lingua` fecha a construção
-   quando o livro-razão traz uma que ela não nomeia. */
-import {
-  linguaDoRotuloDaFonte,
-  linguaDoTituloDoDocumento,
-} from '../i18n/lingua-dos-titulos.mjs';
 /* O NOME OFICIAL VEM DE ONDE ELE É LIDO, que é o ficheiro do motor. Não fecha
    ciclo: `enquadramento.mjs` importa o livro-razão e o marcador, e não os nomes. */
 import { nomeOficial } from './enquadramento.mjs';
