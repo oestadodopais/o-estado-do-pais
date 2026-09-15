@@ -150,8 +150,12 @@ const temAlgumaCoisa = temRegua(regua) || Boolean(palavra);
               recolhe é o que o inventário declara. Com os dois pontos lá dentro,
               a linha do inventário tinha de ser «União Europeia:», que não é o
               nome de nada: é o nome mais a pontuação da linha em que ele está. */}
+          {/* E SEM O ESPAÇO SOLTO DEPOIS DOS DOIS PONTOS, pela mesma razão
+              medida: o vão entre o rótulo e o valor é o `gap` de 4 px da folha,
+              e um espaço escrito aqui somava-se-lhe. O item do período anterior
+              nunca o teve, e os dois passam a separar-se da mesma maneira. */}
           <span class="cartao-medida-regua-k">
-            <span data-voz>{s.cartao.uniaoEuropeia}</span>:{' '}
+            <span data-voz>{s.cartao.uniaoEuropeia}</span>:
           </span>
           <Claim id={regua.ue.id} lang={lang} as="span" />
         </span>
@@ -162,23 +166,38 @@ const temAlgumaCoisa = temRegua(regua) || Boolean(palavra);
       {palavra && (
         <span class="cartao-medida-regua-item" data-regua="referencia">
           <span data-voz>{palavra}</span>
-          {' ('}
-          {banda ? (
-            <>
-              {limiar.inferior.sinal ?? ''}
-              <span data-nonledger="limiar-do-quadro">{limiar.inferior.nl}</span>/
-              {limiar.superior.sinal ?? ''}
-              <span data-nonledger="limiar-do-quadro">{limiar.superior.nl}</span>
-              {simbolo}
-            </>
-          ) : (
-            <>
-              {limiar.sinal ?? ''}
-              <span data-nonledger="limiar-do-quadro">{limiar.nl}</span>
-              {simbolo}
-            </>
-          )}
-          {')'}
+          {/* O VALOR ENTRE PARÊNTESES É UM SÓ FILHO, E ISSO É UMA CORREÇÃO
+              MEDIDA (achado do lugar de direção às capturas, 15.09.2026). O
+              leitor lia «acima do valor de referência ( 9 %)», com dois espaços
+              que ninguém escreveu: `.cartao-medida-regua-item` é um
+              `inline-flex` com `gap: 0 4px`, e num contentor de flexão cada
+              corrida de texto vira um filho seu. Os parênteses, o algarismo e o
+              símbolo eram três filhos, e a folha punha 4 px entre cada dois.
+              Fechados num `<span>` inline, voltam a ser texto corrido: o
+              contentor passa a ter dois filhos, a palavra e o valor, e o único
+              espaço que se vê é o de 4 px entre eles, que é o que a folha quer.
+
+              O SÍMBOLO ESCREVE-SE COMO A MEDIDA O DECLARA, e a página não lhe
+              acrescenta um espaço: `simbolo` é o campo de `src/data/figuras.mjs`
+              (doze medidas escrevem «%» e a taxa de atividade escreve « pp»,
+              com o espaço dentro da declaração). É a mesma forma que o cartão da
+              faixa, a peça e a leitura breve já escrevem («limiar 60% · acima»),
+              e por isso há uma forma só em todo o sítio: «(9%)» e «(2 pp)». */}
+          <span class="cartao-medida-regua-v">{'('}{banda ? (
+              <>
+                {limiar.inferior.sinal ?? ''}
+                <span data-nonledger="limiar-do-quadro">{limiar.inferior.nl}</span>/
+                {limiar.superior.sinal ?? ''}
+                <span data-nonledger="limiar-do-quadro">{limiar.superior.nl}</span>
+                {simbolo}
+              </>
+            ) : (
+              <>
+                {limiar.sinal ?? ''}
+                <span data-nonledger="limiar-do-quadro">{limiar.nl}</span>
+                {simbolo}
+              </>
+            )}{')'}</span>
         </span>
       )}
     </p>

@@ -1654,7 +1654,11 @@ export const STRINGS = {
          índice, com o diploma ao lado como porta, a dizer de onde as áreas vêm.
          O ordinal é o mesmo que a linha do tipo escrevia, e o diploma é o que a
          porta legal de cada página de área já cita (`LEI_ORGANICA`). */
-      organica: 'As áreas seguem a orgânica do Governo em funções, o XXV Governo Constitucional.',
+      /* A FRASE REESCRITA EM PORTUGUÊS DE JORNAL (achado 17 da leitura a frio
+         de 15.09.2026). «Seguem a orgânica» com a aposição a seguir era a
+         sintaxe inglesa vestida de português, e «orgânica» é a palavra do
+         diploma e não a do leitor. O que a frase diz é de quem são as áreas. */
+      organica: 'As áreas são as do Governo em funções (o XXV Governo Constitucional).',
       trabalhosK: 'Os estudos',
       conjuntosK: 'Os estudos de dados',
       medidasK: 'As medidas',
@@ -2148,7 +2152,13 @@ export const STRINGS = {
 
            É «conferência» e não «atualização» porque é o que a casa vai fazer:
            a fonte publica, e a casa relê a linha contra o que ela publicou. */
-        proximaConferenciaK: 'Próxima conferência',
+        /* «VERIFICAÇÃO», E NÃO «CONFERÊNCIA» (achado 17 da leitura a frio de
+           15.09.2026). Em português corrente, uma conferência é um encontro
+           com oradores: o rótulo dizia ao leitor que a casa marcou um
+           colóquio para aquela data. O que ela vai fazer é reler a linha
+           contra o que a fonte publicar, e a palavra disso é verificação. O
+           inglês «Next check» já era a palavra certa e fica. */
+        proximaConferenciaK: 'Próxima verificação',
         /* ----------------------------------------------------------------
            O NOME OFICIAL DA MEDIDA, NO RECIBO (bloco P2, item 2, 15.09.2026)
            ----------------------------------------------------------------
@@ -3311,7 +3321,7 @@ export const STRINGS = {
       tipo: 'area of the XXV Constitutional Government',
       /** Ver a razão na edição portuguesa (bloco P2, item 3, 15.09.2026). */
       organica:
-        'The areas follow the structure of the Government in office, the XXV Constitutional Government.',
+        'The areas are those of the Government in office (the XXV Constitutional Government).',
       trabalhosK: 'The studies',
       conjuntosK: 'The data studies',
       medidasK: 'The measures',
