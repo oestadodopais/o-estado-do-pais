@@ -646,8 +646,13 @@ async function corre() {
       const itens = [...document.querySelectorAll('.dominios-item')].map((d) => {
         const porta = d.querySelector('a.dominios-porta[href]');
         const estado = d.querySelector('[data-dominio-estado]');
+        /* A CONTAGEM DAQUELE DOMÍNIO, lida da própria linha: é ela que diz se
+           este domínio TEM alguma coisa do outro lado. Zero não rende contagem
+           nenhuma, e por isso a ausência do elemento é a resposta. */
+        const conta = d.querySelector('[data-nonledger="numeracao"]');
         return {
           slug: d.getAttribute('data-dominio'),
+          n: conta ? Number((conta.textContent ?? '').replace(/\s+/g, '')) : 0,
           porta: porta ? porta.getAttribute('href') : null,
           portaTexto: porta ? (porta.textContent ?? '').replace(/\s+/g, ' ').trim() : null,
           estado: estado ? estado.getAttribute('data-dominio-estado') : null,
@@ -674,14 +679,46 @@ async function corre() {
     if (!seccao.temSeccao) queixas5.push('não há secção dos domínios');
     if (seccao.depoisDoMapa !== true) queixas5.push('a secção não vem depois do mapa');
     if (seccao.itens.length === 0) queixas5.push('a secção não lista nenhum domínio');
+    /* ---------------------------------------------------------------------
+       A PORTA E O ESTADO SÃO DE QUEM TEM NÚMEROS (acerto 5 do P1, 15.09.2026)
+       ---------------------------------------------------------------------
+       A célula exigia porta e estado a TODOS os domínios da lista, e isso era
+       verdade enquanto a lista era a dos domínios com página. Com o item 6 a
+       lista passou a ser a dos dezoito da carta, e dois deles (a População e a
+       Migração) não têm medida nenhuma: por desenho não têm porta, porque não há
+       página para onde abrir, nem estado, porque a linha é só o nome. Exigir-lhes
+       as duas coisas era a régua a medir o que o bloco anterior queria.
+
+       O QUE A CÉLULA MEDE PASSA A SER A REGRA INTEIRA, e nos dois sentidos: quem
+       TEM contagem tem porta que leva a um domínio, com texto, e estado
+       declarado; quem NÃO tem contagem não tem porta nenhuma. A segunda metade é
+       a que impede o contrário do defeito: uma porta para uma página vazia.
+
+       A PORTA DE UM DOMÍNIO PODE NÃO SER A DE UM DOMÍNIO. Desde o item 6, a
+       porta de quem não tem página própria abre a página onde os seus números
+       estão, que é «Portugal na União Europeia» ou uma área; a célula passa a
+       exigir que ela exista e responda, e não que comece pelo caminho dos
+       domínios. */
     for (const d of seccao.itens) {
       if (!d.slug) queixas5.push('um item da lista não declara o seu domínio');
-      if (!d.porta) queixas5.push(`o domínio «${d.slug}» não tem porta`);
-      else if (!d.porta.startsWith(ed.dominio.replace(/\/[^/]+$/, ''))) {
-        queixas5.push(`a porta de «${d.slug}» é «${d.porta}» e não leva a um domínio`);
+      if (d.n > 0) {
+        if (!d.porta) queixas5.push(`o domínio «${d.slug}» tem ${d.n} medida(s) e não tem porta`);
+        else if (!d.porta.startsWith('/')) {
+          queixas5.push(`a porta de «${d.slug}» é «${d.porta}» e não é um caminho do sítio`);
+        }
+        if (d.porta && !d.portaTexto) queixas5.push(`a porta de «${d.slug}» não tem texto`);
+        if (!d.estado) queixas5.push(`o domínio «${d.slug}» tem contagem e não diz o seu estado`);
+      } else if (d.porta) {
+        queixas5.push(`o domínio «${d.slug}» não tem medidas e tem porta «${d.porta}»`);
       }
-      if (d.porta && !d.portaTexto) queixas5.push(`a porta de «${d.slug}» não tem texto`);
-      if (!d.estado) queixas5.push(`o domínio «${d.slug}» não diz o seu estado`);
+    }
+    /* AS PORTAS RESPONDEM, TODAS. É o que a célula ganha em troca de deixar de
+       exigir que elas comecem pelo caminho dos domínios: pede-se cada uma ao
+       servidor, e uma que dê 404 fecha a célula. */
+    for (const d of seccao.itens) {
+      if (!d.porta) continue;
+      const r = await fetch(base + d.porta.split('#')[0]);
+      if (r.status !== 200) queixas5.push(`a porta de «${d.slug}» responde ${r.status}`);
     }
     /* O QUE O 8.13 PROIBIU, CONTADO AQUI: nem cartões nem valores selados. */
     if (seccao.cartoes) queixas5.push(`a secção tem ${seccao.cartoes} cartão(ões)`);
@@ -695,7 +732,7 @@ async function corre() {
       `J5.${ed.chave}`,
       seccao.temSeccao && seccao.itens.length > 0 && queixas5.length === 0,
       `o índice dos domínios em ${ed.rota}: ${seccao.itens.length} domínio(s) ` +
-        `(${seccao.itens.map((d) => `${d.slug} ${d.estado} → ${d.porta}`).join(' · ')})` +
+        `(${seccao.itens.map((d) => `${d.slug} ${d.n} ${d.estado} → ${d.porta}`).join(' · ')})` +
         ` · depois do mapa: ${seccao.depoisDoMapa} · ${seccao.cartoes} cartão(ões) e ` +
         `${seccao.selados} valor(es) selado(s) lá dentro` +
         (queixas5.length ? ` · QUEIXAS: ${queixas5.slice(0, 4).join('; ')}` : ' · nenhuma queixa'),
@@ -1231,16 +1268,22 @@ const PLANTAS = [
         : h.replace(/<details class="dobra" id="m-[^"]+"/, '<details class="dobra"'),
   },
   {
-    nome: 'o índice dos domínios com um nome sem porta',
+    nome: 'o índice dos domínios com um nome COM contagem e sem porta',
     celulas: ['J5.pt'],
     /* Tira a ligação do primeiro nome do índice e deixa o nome. O item continua
        lá, com o seu estado e a sua contagem; o que falta é a porta para a página
-       do domínio, que é o que o item 8.13 manda pôr ao lado de cada nome.
+       onde os números dele estão.
 
        O ALVO MUDOU A 14.09.2026 com a célula: a secção era uma secção por
        domínio com a sua faixa (`dominio-secao-nome`), e o 8.13 fez dela um
        índice (`dominios-nome dominios-porta`). Uma planta que procurasse a
-       marca antiga não mudava um byte, e o corredor diria «html mudou: NÃO». */
+       marca antiga não mudava um byte, e o corredor diria «html mudou: NÃO».
+
+       E O PRIMEIRO NOME É O QUE TEM CONTAGEM (acerto 5 do P1, 15.09.2026): a
+       regra passou a ser «quem tem números tem porta», e por isso a planta tem
+       de atacar uma linha com números. A primeira da carta é «Economia e
+       finanças públicas», que é a que tem mais. A metade nova da regra (quem NÃO
+       tem números não tem porta) tem a sua planta própria, a seguir. */
     f: (h, rota) =>
       rota.startsWith('/en')
         ? h
@@ -1329,6 +1372,23 @@ const PLANTAS = [
       ),
   },
   {
+    /* A METADE NOVA DA REGRA DA J5 (acerto 5 do P1, 15.09.2026): quem não tem
+       medidas não tem porta, porque não há página para onde abrir. Sem esta
+       planta, essa metade nunca tinha sido vista a morder. Dá uma porta ao
+       primeiro domínio sem contagem, que é a População. */
+    nome: 'uma porta num domínio sem medidas',
+    celulas: ['J5.pt'],
+    f: (h, rota) =>
+      rota.startsWith('/en')
+        ? h
+        : h.replace(
+            /<li class="dominios-item" data-dominio="populacao">\s*<span class="dominios-nome" data-nome="dominios">([\s\S]*?)<\/span>/,
+            '<li class="dominios-item" data-dominio="populacao">' +
+              '<a class="dominios-nome dominios-porta" href="/dominios/economia-e-financas-publicas">' +
+              '<span data-nome="dominios">$1</span></a>',
+          ),
+  },
+  {
     nome: 'um valor selado dentro do índice dos domínios',
     celulas: ['J5.pt'],
     /* O DEFEITO QUE O ITEM 8.13 VEIO TIRAR, REPOSTO. A secção dos domínios
@@ -1342,10 +1402,14 @@ const PLANTAS = [
        a planta antiga trocava (`data-dominio-secao`) já não se rende. */
     f: (h, rota) => {
       if (rota.startsWith('/en')) return h;
-      const alvo = '<ol class="dominios-lista">';
-      const i = h.indexOf(alvo);
-      if (i < 0) return h;
-      const j = i + alvo.length;
+      /* O ALVO É A ABERTURA DA LISTA, e lê-se por expressão e não por cadeia
+         (acerto 2 do P1, 15.09.2026): a lista ganhou um `style` com o número de
+         filas da grelha de duas colunas, e `<ol class="dominios-lista">` deixou
+         de existir à letra. Um `indexOf` de uma cadeia que já não está é um
+         estrago que não estraga nada. */
+      const m = h.match(/<ol class="dominios-lista"[^>]*>/);
+      if (!m || m.index === undefined) return h;
+      const j = m.index + m[0].length;
       return (
         h.slice(0, j) +
         '<li class="dominios-item" data-dominio="planta">' +
