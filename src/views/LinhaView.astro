@@ -56,6 +56,7 @@ import {
   eDaCasa,
   eDerivada,
   derivacaoDaLinha,
+  excertoComposto,
   notaDeBandeira,
   atribuicaoDaLinha,
   verificacoesDaLinha,
@@ -1136,7 +1137,17 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
               <blockquote class="linha-excerto">
                 <CampoDaLinha id={id} campo="excerpt" valor={claim.excerpt} lang={lang} />
               </blockquote>
-              <p class="linha-nota">{s.livro.linha.excertoNota}</p>
+              {/* O RECIBO DIZ O QUE O EXCERTO É (achado 5 da leitura a frio de
+                  15.09.2026). Noventa e uma linhas declaram na nota que o excerto
+                  foi composto a partir das etiquetas da resposta da fonte, e não
+                  transcrito de um documento: para essas o recibo diz «Excerto
+                  composto a partir da resposta da fonte», e não promete uma
+                  transcrição que ninguém pode conferir contra uma página. A
+                  escolha sai da própria linha, por `excertoComposto()`; a nota
+                  continua a não se publicar. */}
+              <p class="linha-nota">
+                {excertoComposto(claim) ? s.livro.linha.excertoNotaComposto : s.livro.linha.excertoNota}
+              </p>
             </>
           )
         }
