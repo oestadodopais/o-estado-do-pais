@@ -1588,8 +1588,8 @@ um CAMPO de uma linha, e não uma afirmação sobre o que este sítio cobre.*
 | conteudo | The studies and measures whose subject is a matter of Labour, Solidarity and Social Security, an area of government. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
 | conteudo | Os trabalhos e as medidas cujo assunto é matéria de Ambiente e Energia, área de governo. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
 | conteudo | The studies and measures whose subject is a matter of Environment and Energy, an area of government. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
-| conteudo | área do XXV Governo Constitucional | areas | viva | — |
-| conteudo | area of the XXV Constitutional Government | areas | viva | — |
+| conteudo | área do XXV Governo Constitucional | cartao | retirada | a linha do tipo saiu das nove páginas de área com o item 3 do bloco P2 (15.09.2026), pela leitura do diretor de 15.09 de manhã: estava debaixo do título de cada área, nas duas edições, e é uma explicação da estrutura do sítio e não conteúdo daquela página. A regra 5 do plano das palavras manda dizê-la uma vez, na página que explica a estrutura, e o índice das áreas passou a dizê-la com o diploma ao lado |
+| conteudo | area of the XXV Constitutional Government | cartao | retirada | ver a razão na gémea portuguesa (item 3 do P2, 15.09.2026) |
 | conteudo | Os trabalhos | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
 | conteudo | Os estudos | lugar | viva | — |
 | conteudo | The studies | areas | viva | — |
@@ -2843,3 +2843,42 @@ marcações diferentes com as mesmas três cadeias; passa a ser um componente
 | navegacao | The whole agenda → | palavras-da-porta | viva | ver a razão na gémea portuguesa (item 2 do F1.13, 15.09.2026) |
 | navegacao | a página inteira → | palavras-da-porta | retirada | a etiqueta única das três portas dizia o mecanismo e não o destino, e saiu com o item 2 do brief do F1.13 (15.09.2026): cada porta passa a dizer o nome do que está do outro lado. A linha entra aqui `retirada` e não estava aqui `viva`, e a razão é o achado 7 da leitura a frio do mesmo dia: as etiquetas das portas só passaram a ser vistas pela régua quando ganharam `data-voz`, e o que se declara agora é o estado delas, incluindo o da que saiu |
 | navegacao | the whole page → | palavras-da-porta | retirada | ver a razão na gémea portuguesa (item 2 do F1.13, 15.09.2026) |
+
+
+## As frases do cartão de uma medida (bloco P2, 15.09.2026)
+
+**O que sai antes do que entra.** O cartão de uma medida tinha dez pedaços de
+texto à vista, e passa a ter cinco. O que entra de novo são **quatro cadeias**,
+nas duas edições: a preposição que liga o valor ao período, e as três palavras da
+régua. O que sai são as duas linhas do tipo de uma área (acima, `retirada`), a
+legenda da marca da fonte em 319 rotas por edição (que continua `viva`, porque
+continua a render-se no índice do livro-razão), e os quatro rótulos de recibo que
+o cartão escrevia ao pé de cada número, que continuam `vivos` porque continuam a
+render-se no recibo, que é a página da linha.
+
+**«União Europeia» ainda não entra**, e a ausência é a regra desta lista e não um
+esquecimento: a cadeia existe em `strings.mjs` (`cartao.uniaoEuropeia`) e não se
+rende em rota nenhuma, porque nenhuma linha `<slug>-<período>-ue` está selada. Uma
+linha declarada `viva` que não se rende fecha a construção, e `retirada` diria que
+a casa a tirou de propósito. Entra no commit em que a primeira linha da União
+chegar do motor, que é a regra escrita na cabeça deste ficheiro: «uma rota entra
+no commit em que a sua página é reconstruída e as suas frases são
+classificadas».
+
+**As três palavras da régua são as MESMAS CHAVES que o bloco P1 escreve** para as
+cadeias da primeira página, pela decisão do diretor de 15.09.2026 de manhã
+(«limiar» sai do texto que o leitor vê). As duas metades da troca correm em ramos
+separados; o texto é um só.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | em | cartao | viva | a preposição que liga o valor ao período na primeira linha do cartão de uma medida («17,6 variação anual média, % em 2025»), no lugar do rótulo «Dados de» (item 1b do brief do P2, 15.09.2026). É `conteudo` porque é a gramática da legenda de um número, como a unidade e o período que ela liga: sem ela, o cartão escrevia três campos em fila e o rótulo do recibo a dizer qual era qual. O valor, a unidade e o período não estão no texto acima porque são origem declarada (`data-claim` e `data-linha-campo`), e é essa a forma que a régua recolhe. Rende-se nas nove páginas de área |
+| conteudo | in | cartao | viva | ver a razão na gémea portuguesa (item 1b do P2, 15.09.2026) |
+| conteudo | acima do valor de referência | cartao | viva | a palavra da régua de um cartão, a dizer de que lado do valor de referência o número está (item 1d do brief do P2, 15.09.2026, e a decisão do diretor de 15.09 de manhã que tira «limiar» do texto do leitor). É `conteudo` pela mesma leitura das outras palavras de estado da casa: é vocabulário fechado, declarado uma vez em `strings.mjs`, e diz o que o número quer dizer. O algarismo do valor de referência não está no texto acima porque é origem declarada (`data-nonledger="limiar-do-quadro"`). **É a mesma chave que o bloco P1 escreve** (`s.estado.acima`) |
+| conteudo | abaixo do valor de referência | cartao | viva | ver a razão na gémea acima (item 1d do P2, 15.09.2026). É a outra direção, e rende-se nas medidas cujo valor está do lado de baixo do valor de referência que o quadro publica |
+| conteudo | entre os valores de referência | cartao | viva | a terceira palavra da régua, para as duas medidas do Procedimento que publicam uma BANDA («-4/+6 %»): um valor lá dentro não está acima nem abaixo de nada, e escolher uma das pontas para o comparar seria a casa a decidir qual das metades conta. Ver a razão por extenso em `comparacaoComOLimiar()`, em `src/data/figuras.mjs` |
+| conteudo | above the reference value | cartao | viva | ver a razão na gémea portuguesa (item 1d do P2, 15.09.2026) |
+| conteudo | below the reference value | cartao | viva | ver a razão na gémea portuguesa (item 1d do P2, 15.09.2026) |
+| conteudo | between the reference values | cartao | viva | ver a razão na gémea portuguesa (item 1d do P2, 15.09.2026) |
+| conteudo | As áreas seguem a orgânica do Governo em funções, o XXV Governo Constitucional. | cartao | viva | a frase que substitui a linha do tipo nas nove páginas de área, dita uma vez no índice das áreas, com o diploma ao lado como porta (item 3 do brief do P2, 15.09.2026). É `conteudo` porque diz o que esta família de páginas é, que é a mesma leitura da linha da hierarquia que está por cima dela. O nome do diploma não está no texto acima porque é origem declarada (`data-nonledger="referencia-legal"`). Rende-se em `/areas` e em mais lado nenhum |
+| conteudo | The areas follow the structure of the Government in office, the XXV Constitutional Government. | cartao | viva | ver a razão na gémea portuguesa (item 3 do P2, 15.09.2026) |
