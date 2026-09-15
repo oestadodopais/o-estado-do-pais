@@ -1,21 +1,21 @@
 OS TRÊS PORTÕES DO BLOCO P1
 
-Corridos sobre a cabeça 1e8058c0, que é a cabeça do ramo com tudo o que este
-bloco construiu. O commit que traz ESTE ficheiro é o seguinte, e o que ele
-acrescenta é só este ficheiro: nenhum dos três portões o lê.
+Corridos sobre a cabeça c97ae565, que é a cabeça do ramo com tudo o que este
+bloco construiu, incluindo os seis acertos da leitura das capturas. O commit
+que traz ESTE ficheiro é o seguinte, e o que ele acrescenta é só este
+ficheiro e a linha do relatório que o cita: nenhum dos três portões os lê.
 
 Cada comando no seu, e o código de saída lido do ficheiro em que ele o
 escreveu (`npm run <portao> > log 2>&1 ; echo $? > exit`), e nunca de memória:
 
   npm run build  ->  0
-      o ficheiro: /private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/p1/f-build.exit
+      o ficheiro: /private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/p1/k-build.exit
   npm run verify  ->  0
-      o ficheiro: /private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/p1/f-verify.exit
+      o ficheiro: /private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/p1/k-verify.exit
   npm run typecheck  ->  0
-      o ficheiro: /private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/p1/f-typecheck.exit
+      o ficheiro: /private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/p1/k-typecheck.exit
 
-A primeira corrida, sobre a cabeça feba0d69 (a mesma fonte, sem os documentos
-e as capturas), deu os mesmos três zeros.
+A primeira redação do bloco, sobre a cabeça 1e8058c0, deu os mesmos três zeros.
 
 As últimas linhas de cada um:
 
