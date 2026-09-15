@@ -691,7 +691,14 @@ export const STRINGS = {
            ficam onde estão, e o nome delas também: renomeá-las mudava treze
            sítios para não mudar uma letra do que se lê, e a linha do inventário
            da voz é a mesma frase. */
-        tituloPaisA: 'Portugal ultrapassa ',
+        /* «FALHA», E NÃO «ULTRAPASSA» (achado 7 da leitura a frio de
+           15.09.2026). Das quatro medidas fora do valor de referência, uma
+           está ABAIXO do seu (a posição de investimento internacional, a -50,2
+           contra -35), e o cartão dela diz-o. A manchete contava as quatro
+           como excessos para cima, e uma delas não é. «Falha» diz o que as
+           quatro têm em comum sem dizer o lado, que é o que a inglesa já
+           fazia com «breaches». A inglesa fica como está. */
+        tituloPaisA: 'Portugal falha ',
         tituloPaisUm: ' valor de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre ',
         tituloPaisMuitos: ' valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre ',
         tituloPaisFim: '.',
