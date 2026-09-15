@@ -497,14 +497,16 @@ export const CHAVE_DOS_CONCELHOS_DA_UNIDADE = (slug) => `mapa_concelhos_${slug}`
  * A legenda de repouso do nível do país.
  *
  * @param {any} s
- * @param {Record<string, { valor: unknown, origem?: string }> | null | undefined} p
  */
-export function repousoDoPais(s, p) {
+export function repousoDoPais(s) {
   return {
     nome: s.inicio.mapa.portugal,
     palavra: palavraDosConcelhos(s),
-    chave: 'municipios_total',
-    item: p?.municipios_total ?? null,
+    /* A LINHA DO LIVRO-RAZÃO, e não a chave da prova (acerto 4, 15.09.2026):
+       «308 concelhos» é a contagem que a Carta Administrativa publica, não o
+       sítio a contar-se a si próprio, e a norma §2.1 quer ao lado do número o
+       valor, a unidade, o período e a fonte. O resto fica atrás da marca. */
+    linha: 'municipios-portugal-caop-2025',
   };
 }
 
@@ -529,8 +531,7 @@ export function repousoDaUnidade(s, unidade) {
        a unidade aberta é uma de vinte e nove, e dizer quantos concelhos ela tem
        é dizer onde o leitor está. */
     palavra: null,
-    chave: null,
-    item: null,
+    linha: null,
   };
 }
 
