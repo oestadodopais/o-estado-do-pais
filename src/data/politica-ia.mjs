@@ -79,8 +79,11 @@
  * lugar de direção, e não com um commit de construtor.
  *
  * Esta constante fica por uma razão só, e é a comparação: o portão de HTML
- * confere que o nome deste ficheiro, o do oráculo e o que a regra 9 imprime
- * são a mesma cadeia.
+ * confere que o nome deste ficheiro e o do oráculo são a mesma cadeia, e que
+ * o Método a imprime se o rótulo a imprimir, e não a imprime se o rótulo não a
+ * imprimir. Desde 15.09.2026 (§1.108, as emendas da tarde, e §1.109) nem o
+ * rótulo nem a regra 9 a imprimem: o sítio não diz nome nenhum, e quem
+ * responde fica aqui e no registo, por decisão do diretor.
  *
  * É um NOME, e um nome não se traduz.
  */
