@@ -589,10 +589,14 @@ const estadoDaPagina = (p) =>
      Um estado que a casa decidiu tirar não se mede como se ele devesse voltar.
 
      O QUE FICA MEDIDO É O REPOUSO, que é a promessa nova: chegada à página sem
-     fragmento, nenhuma das 21 está aberta, a linha do repouso está à vista e os
-     dois cabeçalhos dos painéis estão escondidos (item 8.12). É a mesma coisa que
-     `tests/inicio/leitura.mjs` mede sobre o `dist/`, medida aqui com guião e num
-     navegador, que é onde a marca `data-toque` existe. */
+     fragmento, nenhuma das 21 está aberta e os dois cabeçalhos dos painéis estão
+     escondidos (item 8.12). É a mesma coisa que `tests/inicio/leitura.mjs` mede
+     sobre o `dist/`, medida aqui com guião e num navegador, que é onde a marca
+     `data-toque` existe.
+
+     A LINHA DO REPOUSO SAIU DA PÁGINA A 15.09.2026 (achado 4 da leitura a frio):
+     era uma frase de instrução numa página de conteúdo, e a norma §1.4 não as
+     admite. A célula deixa de a exigir e passa a exigir que ela não volte. */
   await p.goto(`${base}/uniao-europeia`, { waitUntil: 'networkidle' });
   const repouso = await p.evaluate(() => {
     const area = document.querySelector('[data-area-leitura]');
@@ -602,7 +606,7 @@ const estadoDaPagina = (p) =>
       pecas: document.querySelectorAll('[data-leitura]').length,
       abertas: [...document.querySelectorAll('[data-leitura]')].filter((d) => d.open).length,
       toque: area ? area.getAttribute('data-toque') : null,
-      linhaDoRepouso: !!vazio && !vazio.hidden && vazio.getClientRects().length > 0,
+      linhaDeInstrucao: !!vazio,
       contextos: contextos.length,
       contextosAVista: contextos.filter((c) => !c.hidden && c.getClientRects().length > 0).length,
     };
@@ -612,11 +616,11 @@ const estadoDaPagina = (p) =>
     repouso.pecas === 21 &&
       repouso.abertas === 0 &&
       repouso.toque === 'sim' &&
-      repouso.linhaDoRepouso &&
+      !repouso.linhaDeInstrucao &&
       repouso.contextos === 2 &&
       repouso.contextosAVista === 0,
     `${repouso.abertas} de ${repouso.pecas} abertas · marca da área «${repouso.toque}» · ` +
-      `linha do repouso à vista: ${repouso.linhaDoRepouso} · ` +
+      `linha de instrução: ${repouso.linhaDeInstrucao ? 'DE VOLTA' : 'fora da página'} · ` +
       `${repouso.contextosAVista} de ${repouso.contextos} cabeçalhos de painel à vista`,
   );
 

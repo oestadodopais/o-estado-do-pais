@@ -3579,17 +3579,10 @@ a.porta:hover .porta-seta {
 [data-area-leitura][data-toque='sim'] .dobras:not(:has(.dobra[open])) {
   border-top: 0;
 }
-/* A LINHA DO ESTADO VAZIO. Uma linha, no cabeçalho da área, com o ar que a
-   frase de contexto tem por baixo: diz o gesto que enche a área, e sai de cena
-   assim que uma leitura abre. Sem guião chega `hidden` do servidor e não se vê. */
-.dobras-nada {
-  margin: 0 0 16px;
-  font-family: var(--f-instr);
-  font-size: 12px;
-  line-height: 1.4;
-  letter-spacing: 0.03em;
-  color: var(--muted);
-}
+/* A LINHA DO ESTADO VAZIO SAIU DA PÁGINA A 15.09.2026 (achado 4 da leitura a
+   frio): era uma frase de instrução numa página de conteúdo, e a norma §1.4 não
+   as admite. A folha vai atrás dela: uma regra sem nó é regra morta, e o
+   `check:mortos` conta-a. */
 
 /* ------------------------------------------------------ a fila dos domínios
    A seguir ao mapa: o nome do domínio como porta, e por baixo a faixa das suas

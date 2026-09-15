@@ -2384,8 +2384,8 @@ apanha.
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| navegacao | Toque num cartão para ler a medida. | toque | viva | — |
-| navegacao | Tap a card to read the measure. | toque | viva | — |
+| navegacao | Toque num cartão para ler a medida. | correcao-p1p2 | retirada | a frase de instrução sai da página de conteúdo (achado 4 da leitura a frio de 15.09.2026, e a norma §1.4: «Nenhuma frase de instrução: a busca, o mapa e as portas explicam-se ao funcionar»). Era a linha que ficava à vista na área de leitura em repouso, com guião, em «Portugal na União Europeia» e nas 308 páginas de concelho; sem guião nunca se rendeu. O nó saiu com ela das duas vistas, e a J13 de `tests/inicio/leitura.mjs` passa a morder se a linha voltar |
+| navegacao | Tap a card to read the measure. | correcao-p1p2 | retirada | ver a razão na gémea portuguesa (achado 4, 15.09.2026) |
 
 ## O lugar do nome do mapa, e o rótulo das nove regiões na lista (F1.1d, 07.09.2026)
 
