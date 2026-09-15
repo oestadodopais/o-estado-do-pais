@@ -49,10 +49,20 @@
  * ocorrências, e não de linhas: o HTML construído é quase todo uma linha só, e
  * `grep -c` contaria 1 onde há dez.
  *
- * A5 · A GAVETA DOS NOMES ABRE COM UM TOQUE, E OS 29 ESTÃO LÁ COM ALVO E PORTA.
- * Abaixo de 1024, um toque no `<summary>` da gaveta «Os nomes no mapa» abre-a, e
- * lá dentro as 29 unidades da Carta têm cada uma um nome visível, um alvo de
- * 44 × 44 px e uma porta para a sua página, que responde.
+ * A5 · A GAVETA DOS NOMES ESTÁ NA PÁGINA E NÃO OCUPA PÍXEL NENHUM À VISTA.
+ * A célula mudou de objecto a 15.09.2026, com o item 3 do F1.13, e a decisão
+ * está citada no corpo dela. Mede quatro coisas com guião, a 390 e a 1 280: a
+ * gaveta existe no documento; nem ela nem nenhum dos 29 nomes ocupa um píxel à
+ * vista: a caixa sai da composição (`position: absolute`, e por isso não
+ * desloca nada) e o recorte põe a zero o que dela se pinta, e o conteúdo fica na
+ * árvore de acessibilidade; os 29 nomes estão lá, cada um com a porta da sua
+ * página, que responde; e um foco no `<summary>` devolve a gaveta à composição,
+ * com os 29 nomes à vista e com o alvo de 44 px que a Emenda 20c lhes dá abaixo
+ * de 1 024.
+ *
+ * O ESTADO SEM GUIÃO É DA U4 de `tests/inicio/mapa-unidades.mjs`, que já corre
+ * num contexto com `javaScriptEnabled: false` e conta ali as 29 da lista. Uma
+ * segunda medição do mesmo facto noutra régua divergiria da primeira.
  *
  * A EXPECTATIVA «VISÍVEL EM REPOUSO» RETIROU-SE, e a razão escreve-se
  * (decisão do lugar de direção, 09.09.2026, sobre o F1.10). A célula nasceu com
@@ -443,6 +453,27 @@ const EDICOES = [
        e a A13 (o destino de cada um dos 21). O que a A1 mede continua a ser a
        primeira página, que é onde o primeiro ecrã do telemóvel é. */
     painel: '/uniao-europeia',
+    /* ------------------------------------------------------------------------
+       AS CADEIAS DO F1.13 (15.09.2026), ESCRITAS AQUI E NÃO LIDAS DE `strings.mjs`
+       ------------------------------------------------------------------------
+       É a mesma razão que esta régua já escreve sobre as rotas: ela lê o `dist/`
+       e não a fonte do sítio, e é isso que a torna capaz de ver uma cadeia que
+       mudou sem ninguém dar por isso. Uma régua que lesse o gabarito ficaria
+       verde com o gabarito e a página a dizerem a mesma coisa errada.
+
+       AS ANTIGAS FICAM AO LADO DAS NOVAS, e não saem: a medida P1 pede a nova a
+       UMA e a antiga a ZERO, e uma régua que só contasse a nova ficava verde com
+       as duas na página. */
+    definicaoNova: 'Os números oficiais de Portugal, do país ao seu concelho, cada um com a fonte.',
+    definicaoAntiga:
+      'Um observatório de Portugal: cada número com a sua fonte, lido por território, por domínio e em estudos.',
+    portasNovas: ['Todos os concelhos →', 'Todos os estudos →', 'Toda a agenda →'],
+    portaAntiga: 'a página inteira',
+    /* Os nomes das cinco medidas de cabeça do domínio vivo, na ordem da faixa,
+       e a cauda do «e mais N». A A20 compara-os com o que a FAIXA rende, e não
+       só com esta lista: a lista diz o que se espera, a faixa diz o que o sítio
+       mostra, e a célula exige que as duas digam o mesmo. */
+    eMais: ', e mais cinco',
   },
   {
     chave: 'en',
@@ -460,6 +491,13 @@ const EDICOES = [
     estudos: '/en/studies',
     regiao: '/en/regions/alentejo',
     paginaDoConcelho: '/en/municipalities/evora',
+    definicaoNova:
+      'Portugal\u2019s official numbers, from the country to your municipality, each with its source.',
+    definicaoAntiga:
+      'An observatory of Portugal: every number with its source, read by territory, by domain and in studies.',
+    portasNovas: ['All municipalities →', 'All studies →', 'The whole agenda →'],
+    portaAntiga: 'the whole page',
+    eMais: ', and five more',
     painel: '/en/european-union',
   },
 ];
@@ -528,13 +566,64 @@ async function medeOsNomes(pg, alvo) {
  * escrito por fora: o que a célula A5 promete é que quem não tem rato nem guião
  * chega aos 29 nomes com UM gesto, e um estado forçado não prova gesto nenhum.
  */
-async function abreAGaveta(pg) {
+/* A CAIXA DA GAVETA, MEDIDA COMO O LEITOR A VÊ (A5, 15.09.2026).
+   `abreAGaveta()` saiu com a decisão que a A5 media: o item 3 do F1.13 tira a
+   gaveta da vista com guião, e um toque no `<summary>` deixou de ser o que a
+   célula promete. O que se mede agora é a CAIXA da coluna que a embrulha: a
+   folha tira-a da composição com `position: absolute` e um rectângulo de 1 px
+   recortado (a mesma forma da classe `.vh` da casa), e a área do rectângulo é o
+   número que diz se ela ocupa algum píxel à vista.
+
+   A ÁREA É O PRODUTO ARREDONDADO, e não «a largura é 1»: uma folha que a
+   escondesse por outro caminho (altura zero, `clip-path`, `transform`) dava
+   outra largura e a mesma promessa. O que a célula quer saber é se sobra
+   superfície, e a superfície é a área. */
+async function medeAGaveta(pg) {
+  return await pg.evaluate(() => {
+    const el = document.querySelector('[data-cabeca-nomes]');
+    if (!el) return { existe: false, largura: null, altura: null, caixa: null, area: null, forma: null, recorte: null };
+    const r = el.getBoundingClientRect();
+    const cs = getComputedStyle(el);
+    /* «NÃO OCUPA PÍXEL NENHUM À VISTA» SÃO DUAS COISAS, E A CAIXA É SÓ UMA.
+       A forma da casa para esconder à vista sem esconder de quem ouve é a
+       classe `.vh` de `site.css`: a caixa sai da composição (`position:
+       absolute`, e por isso não desloca nada) e encolhe para 1 × 1 px, e o
+       RECORTE (`clip: rect(0 0 0 0)`) põe a zero o que dela se pinta. Uma
+       célula que só medisse a caixa dizia «1 px» e chamava-lhe ocupação; uma
+       que só medisse o recorte dava por boa uma caixa de 300 px recortada por
+       engano. Medem-se as duas, e a área à vista é a que conta: com o recorte
+       vazio, é zero. */
+    const recorte = (cs.clip ?? '').replace(/\s+/g, '');
+    const recorteVazio = recorte === 'rect(0px,0px,0px,0px)';
+    return {
+      existe: true,
+      largura: +r.width.toFixed(1),
+      altura: +r.height.toFixed(1),
+      caixa: Math.round(r.width * r.height),
+      area: recorteVazio ? 0 : Math.round(r.width * r.height),
+      forma: cs.position,
+      recorte,
+    };
+  });
+}
+
+/* A GAVETA VOLTA À COMPOSIÇÃO AO FOCO, e é a outra metade da promessa do item 3
+   («fica na página para a tecnologia de apoio»). Um alvo alcançável pelo teclado
+   e invisível quando recebe o foco é uma armadilha para quem navega sem rato: a
+   folha devolve a caixa com `:focus-within`, como a ligação de salto da casa
+   (`.skip`) já faz. Foca-se o `<summary>` a sério (`focus()` e não uma classe
+   escrita à mão) e abre-se a gaveta, que é o que um leitor de teclado faria a
+   seguir. */
+async function focaAGaveta(pg, alvo) {
   const cmd = pg.locator('[data-gaveta="nomes"] > summary');
-  if ((await cmd.count()) !== 1) return false;
+  if ((await cmd.count()) !== 1) {
+    return { largura: null, altura: null, area: null, nomes: { total: 0, pequenos: [], invisiveis: 0 } };
+  }
+  await cmd.focus();
   await cmd.click();
-  return await pg.evaluate(
-    () => document.querySelector('[data-gaveta="nomes"]')?.hasAttribute('open') ?? false,
-  );
+  const caixa = await medeAGaveta(pg);
+  const nomes = await medeOsNomes(pg, alvo);
+  return { ...caixa, nomes };
 }
 
 /* ===========================================================================
@@ -801,35 +890,59 @@ async function corre() {
     );
 
     /* ------------------------------------------------------------------- A5 */
-    /* A5 CORRE A 390 E A 768, E DIZ A REGRA DOS 32 PX (Major 8).
-       A primeira redação media só a 390. A leitura a frio apanhou-o: «A5 samples
-       only 390 px. The CSS gives map-name links 44 px below 1,024 but
-       deliberately reduces them to 32 px at larger widths.» A redução é a regra
-       da casa e não um descuido — a **Emenda 20c**, emendada pela decisão do
-       diretor de 29.08.2026 (`DECISIONS.md` §1.84 e a I101): abaixo de 1024 a
-       rede de nomes é o único alvo tocável das 29 unidades, e vale a regra do
-       toque, 44 px; a partir de 1024 a lista é o índice do desenho para quem tem
-       rato, e vale a regra do ponteiro, 32 px. A célula mede as duas larguras
-       abaixo do limiar (390, o telemóvel, e 768, a tabuleta) com 44 px, e diz
-       aqui porque é que 1024 e acima não entram nesta medida.
+    /* ------------------------------------------------------------------------
+       A CÉLULA MUDOU DE OBJECTO A 15.09.2026, E A DECISÃO ESTÁ CITADA
        ------------------------------------------------------------------------
-       A VISIBILIDADE PERGUNTA-SE AO NAVEGADOR, E NÃO À CAIXA. Medido na árvore
-       de partida: num Chromium 148 o conteúdo de um `<details>` FECHADO continua
-       a ter caixa — `getBoundingClientRect()` devolve 54,1 × 44 nos 29 nomes de
-       uma gaveta fechada —, porque a implementação nova esconde-o por
-       `content-visibility` e não por `display`. Uma célula que contasse caixas
-       dava verde com a lista fechada, que é exactamente o estado que este bloco
-       veio abrir. `checkVisibility({ contentVisibilityAuto: true })` responde
-       pelo que o leitor vê. */
-    const antes = await medeOsNomes(p, ALVO_TOQUE);
-    const abriu390 = await abreAGaveta(p);
-    const nomes = await medeOsNomes(p, ALVO_TOQUE);
-    medidas[`A5.${ed.chave}.390`] = { antes, abriu: abriu390, depois: nomes };
-    const p768 = await pagina(ed.rota, 768, 900);
-    const abriu768 = await abreAGaveta(p768);
-    const nomes768 = await medeOsNomes(p768, ALVO_TOQUE);
-    medidas[`A5.${ed.chave}.768`] = { abriu: abriu768, depois: nomes768 };
-    await p768.__ctx.close();
+       Media «a gaveta dos nomes abre com um toque e leva as 29 unidades com
+       alvo ≥ 44 px», que era o que o F1.1 (item 4) e depois o F1.1d e o F1.1e
+       decidiram para ela: abaixo de 1 024 nenhuma das 29 áreas do desenho chega
+       aos 44 px pelo quadrado inscrito (I82), e a rede de nomes era o alvo que
+       respondia por elas.
+
+       O ITEM 3 DO F1.13 (15.09.2026) muda o facto e a decisão que dele saía. O
+       diretor leu a primeira página no ar e contou três caminhos para o mesmo
+       lugar no primeiro ecrã, e a decisão é esta, à letra: **«a gaveta "Os nomes
+       no mapa" deixa de estar à vista quando o mapa funciona: fica na página
+       para a tecnologia de apoio e para quem não tem guião (visualmente
+       escondida com guião; sem guião, aberta como hoje)»**, e a medida P3 diz
+       como se mede: **«com guião, "Os nomes no mapa" não ocupa píxel nenhum à
+       vista a 390 e a 1 280 (medido no navegador); sem guião, a lista com os 29
+       nomes e as portas certas»**.
+
+       Uma célula que continuasse a exigir a gaveta ABERTA com 44 px media o que
+       o bloco anterior queria e não o que este decidiu: é a régua a contradizer
+       a decisão em vez de a medir. É a mesma emenda que a A5 já sofreu a
+       09.09.2026, quando deixou de exigir os 29 nomes «visíveis em repouso».
+
+       O QUE FICA MEDIDO É A PROMESSA INTEIRA, e não só a metade que dá jeito: a
+       gaveta some-se da vista, e continua a existir para quem ouve e para quem
+       navega pelo teclado. Por isso a célula pergunta as duas coisas (zero
+       píxeis em repouso, e a gaveta de volta à composição ao FOCO), e conta os
+       29 nomes e as 29 portas no documento nos dois estados. Um alvo alcançável
+       pelo teclado e invisível quando recebe o foco é uma armadilha, e essa é a
+       metade que uma régua distraída deixaria passar.
+
+       A VISIBILIDADE PERGUNTA-SE AO NAVEGADOR, E NÃO À CAIXA (a razão de sempre,
+       medida na árvore de partida): num Chromium 148 o conteúdo de um
+       `<details>` FECHADO continua a ter caixa, porque a implementação nova o
+       esconde por `content-visibility` e não por `display`.
+       `checkVisibility({ contentVisibilityAuto: true })` responde pelo que o
+       leitor vê. E a caixa da própria gaveta mede-se com
+       `getBoundingClientRect()` DEPOIS de a página estar no cimo: a folha
+       tira-a da composição com `position: absolute` e um rectângulo de 1 px
+       recortado, que é o que a classe `.vh` da casa faz em todo o sítio.
+       ------------------------------------------------------------------------ */
+    const emRepouso390 = await medeAGaveta(p);
+    const nomes390 = await medeOsNomes(p, ALVO_TOQUE);
+    const aoFoco390 = await focaAGaveta(p, ALVO_TOQUE);
+    medidas[`A5.${ed.chave}.390`] = { repouso: emRepouso390, nomes: nomes390, foco: aoFoco390 };
+
+    const p1280 = await pagina(ed.rota, 1280, 900);
+    const emRepouso1280 = await medeAGaveta(p1280);
+    const nomes1280 = await medeOsNomes(p1280, ALVO_TOQUE);
+    medidas[`A5.${ed.chave}.1280`] = { repouso: emRepouso1280, nomes: nomes1280 };
+    await p1280.__ctx.close();
+
     /* CADA NOME LEVA À SUA PÁGINA, e o destino confere-se contra o que a Carta
        diz: a porta de uma unidade é `/distritos/<slug>` na edição portuguesa e
        `/en/districts/<slug>` na inglesa, com o mesmo slug que a marca declara. A
@@ -849,29 +962,34 @@ async function corre() {
     }
     conta(
       `A5.${ed.chave}`,
-      abriu390 &&
-        abriu768 &&
-        antes.total === 29 &&
-        antes.invisiveis === 29 &&
-        nomes.total === 29 &&
-        nomes.pequenos.length === 0 &&
-        nomes768.total === 29 &&
-        nomes768.pequenos.length === 0 &&
+      emRepouso390.existe &&
+        emRepouso390.area === 0 &&
+        emRepouso390.forma === 'absolute' &&
+        nomes390.total === 29 &&
+        nomes390.invisiveis === 29 &&
+        emRepouso1280.existe &&
+        emRepouso1280.area === 0 &&
+        emRepouso1280.forma === 'absolute' &&
+        nomes1280.total === 29 &&
+        nomes1280.invisiveis === 29 &&
+        aoFoco390.area > 0 &&
+        aoFoco390.nomes.total === 29 &&
+        aoFoco390.nomes.pequenos.length === 0 &&
         portas.length === 29 &&
         forasDoSitio.length === 0 &&
         semResposta === 0,
-      `a gaveta dos nomes abre com um toque e leva as 29 unidades com alvo ≥ ${ALVO_TOQUE} px, ` +
-        `abaixo de ${LIMIAR_DA_COLUNA} (a partir de ${LIMIAR_DA_COLUNA} a regra é ${ALVO_PONTEIRO} px, ` +
-        `Emenda 20c): em repouso ${antes.total} nome(s), ${antes.invisiveis} invisível(eis) ` +
-        `(a gaveta chega fechada, F1.1d/F1.1e); a 390 abriu ${abriu390}, ${nomes.total} nome(s), ` +
-        `${nomes.pequenos.length} fora do alvo; a 768 abriu ${abriu768}, ${nomes768.total} nome(s), ` +
-        `${nomes768.pequenos.length} fora do alvo; ${portas.length} porta(s), ` +
-        `${forasDoSitio.length} fora de «${prefixo}», ${semResposta} sem resposta` +
-        (nomes.pequenos.length || nomes768.pequenos.length
-          ? ` (${[...nomes.pequenos, ...nomes768.pequenos]
-              .slice(0, 3)
-              .map((c) => `${c.slug} ${c.w}×${c.h}`)
-              .join(', ')}…)`
+      `a gaveta dos nomes está na página e não ocupa píxel nenhum à vista com guião ` +
+        `(item 3 do F1.13, 15.09.2026): a 390 a caixa dela mede ${emRepouso390.largura}×${emRepouso390.altura} px ` +
+        `em «${emRepouso390.forma}», recortada por «${emRepouso390.recorte}» (área à vista ${emRepouso390.area}), ` +
+        `com ${nomes390.total} nome(s), ${nomes390.invisiveis} invisível(eis); ` +
+        `a 1280 mede ${emRepouso1280.largura}×${emRepouso1280.altura} px em «${emRepouso1280.forma}», ` +
+        `recortada por «${emRepouso1280.recorte}» (área à vista ${emRepouso1280.area}), ` +
+        `com ${nomes1280.total} nome(s), ${nomes1280.invisiveis} invisível(eis) · ao foco do «summary» a 390 ` +
+        `a caixa volta a ${aoFoco390.largura}×${aoFoco390.altura} px em «${aoFoco390.forma}» (área à vista ${aoFoco390.area}) com ` +
+        `${aoFoco390.nomes.total} nome(s) e ${aoFoco390.nomes.pequenos.length} fora do alvo de ${ALVO_TOQUE} px · ` +
+        `${portas.length} porta(s), ${forasDoSitio.length} fora de «${prefixo}», ${semResposta} sem resposta` +
+        (aoFoco390.nomes.pequenos.length
+          ? ` (${aoFoco390.nomes.pequenos.slice(0, 3).map((c) => `${c.slug} ${c.w}×${c.h}`).join(', ')}…)`
           : ''),
     );
     await p.__ctx.close();
@@ -965,6 +1083,41 @@ async function corre() {
     const somaCasa = ed.casa.reduce((a, w) => a + ocorrencias(doc, w), 0);
     medidas[`A6.${ed.chave}`] = somaCasa;
     conta(`A6.${ed.chave}`, somaCasa === 0, `vocabulário da casa em ${ed.rota}: ${nCasa.join(' · ')}`);
+
+    /* ------------------------------------------------------------- A18, A19 */
+    /* AS PALAVRAS DA PRIMEIRA PÁGINA (F1.13, itens 1 e 2, 15.09.2026).
+       Duas células sobre o documento servido, e não sobre o navegador: o que
+       elas medem são CADEIAS, e uma cadeia está no documento ou não está.
+
+       A18 · A FRASE DE DEFINIÇÃO. A medida P1 pede a nova a UMA e a antiga a
+       ZERO em `/` e em `/en/`. As duas contagens são precisas: uma célula que só
+       contasse a nova ficava verde com as duas na página, que é exactamente a
+       planta «a frase antiga de volta» da medida P8.
+
+       A19 · AS TRÊS PORTAS. Cada etiqueta nova UMA vez, e a antiga a zero. A
+       seta entra na cadeia porque ela é parte do que o leitor lê, e porque é o
+       que distingue a etiqueta da porta de um nome de página que apareça noutro
+       sítio do documento. */
+    const nDefinicao = ocorrencias(doc, ed.definicaoNova);
+    const nDefinicaoAntiga = ocorrencias(doc, ed.definicaoAntiga);
+    medidas[`A18.${ed.chave}`] = { nova: nDefinicao, antiga: nDefinicaoAntiga };
+    conta(
+      `A18.${ed.chave}`,
+      nDefinicao === 1 && nDefinicaoAntiga === 0,
+      `a frase de definição em ${ed.rota}: a nova ${nDefinicao} vez(es) (esperada 1), ` +
+        `a antiga ${nDefinicaoAntiga} (esperada 0) · «${ed.definicaoNova}»`,
+    );
+
+    const nPortas = ed.portasNovas.map((t) => ocorrencias(doc, t));
+    const nPortaAntiga = ocorrencias(doc, ed.portaAntiga);
+    medidas[`A19.${ed.chave}`] = { novas: nPortas, antiga: nPortaAntiga };
+    conta(
+      `A19.${ed.chave}`,
+      nPortas.every((n) => n === 1) && nPortaAntiga === 0,
+      `as três portas em ${ed.rota}: ` +
+        ed.portasNovas.map((t, i) => `«${t}» ${nPortas[i]}`).join(' · ') +
+        ` (cada uma esperada 1) · «${ed.portaAntiga}» ${nPortaAntiga} (esperada 0)`,
+    );
 
     /* A10 mede DENTRO dos cartões e das peças, e não na página inteira: a
        palavra é legítima onde ela é a leitura de uma ausência escrita por
@@ -1457,6 +1610,61 @@ async function corre() {
           : `NÃO está (o menu tem ${menuDominios.length} portas)`),
     );
 
+    /* ------------------------------------------------------------------ A20
+       O ÍNDICE DOS DOMÍNIOS DIZ O QUE SÃO AS MEDIDAS (F1.13, item 4, 15.09.2026)
+       ------------------------------------------------------------------------
+       O diretor leu «10 medidas» na primeira página a 15.09 de manhã e escreveu
+       o que lhe faltava: não sabe o que são, e por isso não sabe se vale a pena
+       entrar. Cada linha de um domínio vivo passa a levar, a seguir à contagem,
+       os nomes das suas medidas de CABEÇA, e a medida P4 do brief diz o que se
+       exige delas: **«cada domínio vivo com os nomes das medidas de cabeça na sua
+       linha, IGUAIS AOS DA FAIXA, e "e mais N" com N igual à contagem menos os
+       nomes; 0 valores selados na secção»**.
+
+       «IGUAIS AOS DA FAIXA» É UMA COMPARAÇÃO E NÃO UMA LISTA ESCRITA AQUI, e é
+       essa a metade que importa: a célula lê os nomes dos cartões da faixa desta
+       mesma página (`[data-cartao] [data-medida-nome]`) e os nomes da linha do
+       domínio (`.dominios-estado [data-nome="medidas"]`), e exige que as duas
+       listas sejam a mesma, na mesma ordem. Uma régua que comparasse a linha com
+       uma lista escrita nesta régua media o que ela própria disse; esta compara
+       as duas superfícies do sítio uma com a outra, e é por isso que um nome
+       trocado numa delas a derruba.
+
+       OS ZERO VALORES SELADOS SÃO A OUTRA METADE, e são a regra A3 e o item
+       8.13: um `data-claim` dentro da secção dos domínios é um valor do
+       livro-razão a render-se numa secção que é navegação e mais nada. É a
+       planta «um valor selado na linha de um domínio» da medida P8.
+       ------------------------------------------------------------------------ */
+    const pDom = await pagina(ed.rota, 1280);
+    const dominios = await pDom.evaluate(() => {
+      const seccao = document.querySelector('.dominios-secao');
+      if (!seccao) return null;
+      const texto = (el) => (el.textContent ?? '').replace(/\s+/g, ' ').trim();
+      return {
+        naFaixa: [...document.querySelectorAll('[data-cartao] [data-medida-nome]')].map(texto),
+        naLinha: [...seccao.querySelectorAll('.dominios-estado [data-nome="medidas"]')].map(texto),
+        selados: seccao.querySelectorAll('[data-claim]').length,
+        linhaViva: texto(seccao.querySelector('.dominios-item .dominios-estado')),
+      };
+    });
+    await pDom.__ctx.close();
+    const nomesIguais =
+      !!dominios &&
+      dominios.naFaixa.length > 0 &&
+      dominios.naFaixa.length === dominios.naLinha.length &&
+      dominios.naFaixa.every((n, i) => n === dominios.naLinha[i]);
+    const temACauda = !!dominios && dominios.linhaViva.includes(ed.eMais);
+    medidas[`A20.${ed.chave}`] = dominios;
+    conta(
+      `A20.${ed.chave}`,
+      nomesIguais && temACauda && dominios.selados === 0,
+      `o índice dos domínios de ${ed.rota}: ${dominios ? dominios.naLinha.length : 0} nome(s) na linha do ` +
+        `domínio vivo contra ${dominios ? dominios.naFaixa.length : 0} na faixa, ` +
+        `${nomesIguais ? 'iguais e pela mesma ordem' : 'DIFERENTES'} · a cauda «${ed.eMais}» ` +
+        `${temACauda ? 'lá está' : 'NÃO está'} · ${dominios ? dominios.selados : '?'} valor(es) selado(s) na secção ` +
+        `(esperados 0) · «${dominios ? dominios.linhaViva : ''}»`,
+    );
+
     /* ------------------------------------------------------------------ A15
        OS ESTUDOS A ≤ 1 TOQUE E ≤ 1,5 ECRÃS (F1.2b, item 4)
        ------------------------------------------------------------------------
@@ -1892,6 +2100,18 @@ const PLANTAS = [
   {
     nome: 'um segundo cartão com o mesmo valor (a cópia)',
     celulas: ['A3.pt'],
+    /* AS ROTAS ESTAVAM POR DECLARAR, E A CONTA «html mudou» DIZIA NÃO (achado
+       desta sessão, 15.09.2026, fora do F1.13 e anterior a ele: já era assim em
+       `bb0b4c39`). A A3 mudou-se para «Portugal na União Europeia» com o item
+       8.16 do F1.10 a 08.09.2026, e a planta ficou com as rotas por omissão, que
+       são as duas primeiras páginas: `<div class="dobras"` não existe em
+       `dist/index.html` e existe uma vez em `dist/uniao-europeia/index.html`
+       (conferido nos dois ficheiros). O ESTRAGO FUNCIONAVA (o servidor da régua
+       aplica-o a tudo o que serve, e por isso a célula ficava vermelha), e o que
+       estava partido era a CONFERÊNCIA de que ele funcionava, que é o guarda
+       contra um `replace` que falha em silêncio. Declaram-se as rotas que a
+       planta toca. */
+    rotas: ['/uniao-europeia/index.html', '/en/european-union/index.html'],
     /* Repõe uma segunda rendição do valor da dívida pública dentro da área de
        leitura, que é exactamente a cópia que o F1.1 veio tirar do painel.
 
@@ -1915,6 +2135,9 @@ const PLANTAS = [
   {
     nome: 'a definição do Procedimento sem «Comissão Europeia» (a do Painel Social fica intacta)',
     celulas: ['A4.pt', 'A4.en'],
+    /* As rotas, pela mesma razão da planta de cima: `data-contexto-painel` não
+       existe em `dist/index.html` e existe em `dist/uniao-europeia/index.html`. */
+    rotas: ['/uniao-europeia/index.html', '/en/european-union/index.html'],
     /* A PLANTA MUDOU PARA A FORMA QUE A PRIMEIRA CÉLULA DEIXAVA PASSAR (Major 9,
        e a planta P1 da leitura a frio). Tira a Comissão SÓ da definição do
        Procedimento, e deixa a do Painel Social como está: a célula que contava a
@@ -1966,6 +2189,63 @@ const PLANTAS = [
     celulas: ['A7.pt', 'A7.en'],
     f: (h) => h.replace(/<span class="pesquisa-distrito"[^>]*>[\s\S]*?<\/span>/g, ''),
   },
+  /* =========================================================================
+     AS QUATRO PLANTAS DO F1.13 (medida P8 do brief, 15.09.2026)
+     =========================================================================
+     O §4 do brief escreve-as à letra: «a frase antiga de volta; uma etiqueta
+     "a página inteira →" de volta; a gaveta visível com guião; um valor selado
+     na linha de um domínio». Cada uma existe para derrubar a célula que a
+     decisão daquele item trouxe: sem elas, quatro células novas contariam o que
+     contam sem nunca terem visto um vermelho, que é a regra 14 da casa. */
+  {
+    nome: 'a frase de definição antiga de volta, ao lado da nova',
+    celulas: ['A18.pt', 'A18.en'],
+    /* AO LADO DA NOVA E NÃO NO LUGAR DELA, de propósito: a substituição derrubava
+       a célula pela metade fácil (a nova a zero). Esta planta é a difícil, as
+       duas na página, e é ela que prova que a contagem da antiga serve para
+       alguma coisa. */
+    f: (h, rota) => {
+      const nova = rota.startsWith('/en')
+        ? 'Portugal\u2019s official numbers, from the country to your municipality, each with its source.'
+        : 'Os números oficiais de Portugal, do país ao seu concelho, cada um com a fonte.';
+      const antiga = rota.startsWith('/en')
+        ? 'An observatory of Portugal: every number with its source, read by territory, by domain and in studies.'
+        : 'Um observatório de Portugal: cada número com a sua fonte, lido por território, por domínio e em estudos.';
+      return h.replace(nova, `${nova} ${antiga}`);
+    },
+  },
+  {
+    nome: 'uma etiqueta «a página inteira →» de volta, na porta dos estudos',
+    celulas: ['A19.pt', 'A19.en'],
+    f: (h, rota) =>
+      rota.startsWith('/en')
+        ? h.replace('All studies →', 'the whole page →')
+        : h.replace('Todos os estudos →', 'a página inteira →'),
+  },
+  {
+    nome: 'a gaveta dos nomes visível com guião',
+    celulas: ['A5.pt', 'A5.en'],
+    /* DESFAZ A FOLHA, E NÃO O HTML. O que o item 3 decide é uma regra de folha
+       (`.cabeca-nomes` sai da composição), e por isso o estrago que a põe em
+       causa é uma regra de folha que a desfaz. `:root:root` (0-3-0) ganha à
+       regra do sítio e à do `:focus-within` sem depender da ordem por que o
+       empacotador põe as folhas. */
+    f: (h) =>
+      h.replace(
+        '</head>',
+        '<style>:root:root .cabeca-nomes{position:static;width:auto;height:auto;' +
+          'margin:0;overflow:visible;clip:auto;white-space:normal}</style></head>',
+      ),
+  },
+  {
+    nome: 'um valor selado na linha de um domínio',
+    celulas: ['A20.pt', 'A20.en'],
+    /* A REGRA A3 E O ITEM 8.13: a secção dos domínios é navegação e mais nada, e
+       um `data-claim` lá dentro é um valor do livro-razão a render-se onde ele
+       não vive. Enxerta-se dentro do estado do primeiro domínio, que é onde os
+       nomes das medidas de cabeça agora estão. */
+    f: (h) => h.replace('<span class="dominios-estado"', '<span class="dominios-estado" data-claim="divida-publica-2025"'),
+  },
   {
     nome: 'a página mais alta do que a árvore de partida',
     celulas: ['A2.pt', 'A2.en'],
@@ -1998,6 +2278,11 @@ const PLANTAS = [
   {
     nome: 'um cartão a levar à página do domínio em vez de abrir a sua leitura',
     celulas: ['A13.pt', 'A13.en'],
+    /* As rotas, pela mesma razão das duas plantas da A3 e da A4: a A13 mudou-se
+       para «Portugal na União Europeia» com o item 8.16 do F1.10, e a âncora
+       `href="#m-divida-publica-2025"` não existe em `dist/index.html` e existe
+       uma vez em `dist/uniao-europeia/index.html` (conferido nos dois). */
+    rotas: ['/uniao-europeia/index.html', '/en/european-union/index.html'],
     /* O DEFEITO QUE A SEGUNDA PASSAGEM DO F1.1c TIROU, REPOSTO (07.09.2026).
        Até 07.09 o cartão da dívida pública mudava de página, e a planta anterior
        plantava o contrário: repunha nele a âncora desta página. Com a decisão
