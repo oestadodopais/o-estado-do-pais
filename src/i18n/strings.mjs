@@ -50,8 +50,28 @@ export const STRINGS = {
      * verificação nem das intenções da casa (Emenda 15), fala do que a coisa é.
      * Não leva porta, não leva algarismo, não leva selo.
      */
+    /* -----------------------------------------------------------------------
+     * A FRASE DIZ O QUE O SÍTIO É, E NÃO COMO SE LÊ (bloco F1.13, 15.09.2026)
+     * -----------------------------------------------------------------------
+     * O diretor leu a primeira página no ar a 15.09.2026 de manhã e mediu o que
+     * a frase fazia: «cada número com a sua fonte, lido por território, por
+     * domínio e em estudos» descreve o MÉTODO e as três maneiras de percorrer o
+     * sítio, e não diz o que a coisa é a quem chega. A frase nova diz o que está
+     * lá dentro (os números oficiais), até onde desce (do país ao concelho de
+     * quem lê) e o que cada um traz (a fonte), e mais nada.
+     *
+     * A REGRA DA EMENDA 18 NÃO MUDA: uma frase, por baixo da marca, na primeira
+     * página e em mais lado nenhum; sem quem a faz, sem como, sem adjetivos, sem
+     * porta, sem algarismo e sem marca da fonte. Continua a ser NAVEGAÇÃO no
+     * inventário, pela mesma razão de sempre: é o nome da publicação dito por
+     * extenso, e não o método.
+     *
+     * A SENTINELA DO ARAME DA CLASSE MUDA COM ELA, em `scripts/check-voz.mjs`, e
+     * a L4 de `scripts/check-lugar.mjs` continua a exigi-la uma vez em `/` e em
+     * `/en/` sem uma linha mudada: ela lê a cadeia daqui.
+     */
     identidade:
-      'Um observatório de Portugal: cada número com a sua fonte, lido por território, por domínio e em estudos.',
+      'Os números oficiais de Portugal, do país ao seu concelho, cada um com a fonte.',
 
 
     /* -----------------------------------------------------------------------
@@ -552,14 +572,18 @@ export const STRINGS = {
         'Porque a alternativa é preencher o campo com uma coisa plausível. Um campo plausível parece proveniência e não é, e quem o lesse ficava sem maneira de saber a diferença. O marcador torna a falta visível, contável e datável, e é por isso que aparece em vez de desaparecer.',
       linhaK: 'O que acontece a uma linha que o traz',
       linhaItens: [
-        'o selo dessa linha desenha-se a tracejado, e não cheio;',
+        /* «A MARCA DA FONTE» E NÃO «O SELO» (F1.13, item 5, 15.09.2026): a marca
+           passa a chamar-se assim em toda a prosa que o leitor vê, e a página do
+           marcador é prosa que o leitor vê. As duas linhas antigas estão
+           `retirada` no inventário, com a razão. */
+        'a marca da fonte dessa linha desenha-se a tracejado, e não cheia;',
         'a página da linha diz, por palavras, que campos lhe faltam;',
         'a linha fica fora do índice dos motores de busca e fora do mapa do sítio, enquanto faltar;',
         'o valor publicado não muda por causa disto: o que falta é a prova documental, não o número.',
       ],
       voltaK: 'Como sai',
       voltaV:
-        'Sozinho. No dia em que o campo for preenchido e conferido, o selo passa a cheio e a linha volta ao índice, sem mais ninguém decidir nada.',
+        'Sozinho. No dia em que o campo for preenchido e conferido, a marca passa a cheia e a linha volta ao índice, sem mais ninguém decidir nada.',
       soUmK: 'Só há um',
       soUmV:
         'Não há um segundo marcador para dizer a mesma coisa por outras palavras. Um sítio com duas linguagens de incerteza tem, na prática, nenhuma.',
@@ -606,6 +630,18 @@ export const STRINGS = {
          volta, e esta não volta: a fila das regiões foi substituída pela régua
          completa da página das regiões. Registada em `CHAVES-EN.md`. */
       pesquisaRotulo: 'Escreva o nome do concelho',
+      /* O RÓTULO DA BUSCA ONDE HÁ MAPA (bloco F1.13, item 3, 15.09.2026).
+         O primeiro ecrã tinha três caminhos para o mesmo lugar (a busca, a
+         gaveta «Os nomes no mapa» e o mapa), e o diretor leu-o a 15.09 de
+         manhã. A gaveta deixa de estar à vista com guião e o rótulo da busca
+         passa a nomear os DOIS caminhos que ficam, que é o que o item manda.
+
+         É UMA CADEIA À PARTE E NÃO A MESMA, e a razão é que a frase tem de ser
+         verdadeira onde se rende: `/municipios` e `/livro-razao/concelhos`
+         rendem a mesma caixa de busca e não têm mapa nenhum, e «ou toque no
+         mapa» seria, nessas duas páginas, o sítio a prometer uma coisa que não
+         está lá. `pesquisaRotulo` fica para elas, sem uma palavra mudada. */
+      pesquisaRotuloMapa: 'Escreva o nome do concelho, ou toque no mapa.',
       pesquisaSemResultado: 'Nenhum concelho com esse nome.',
       /* O QUE A BUSCA FAZ SEM GUIÃO, DITO POR PALAVRAS (Major 7 da leitura a
          frio, 09.09.2026). O botão submete um `GET` para o índice dos concelhos,
@@ -840,7 +876,25 @@ export const STRINGS = {
            páginas · o resto vive a uma porta») saiu com a Emenda 15: três portas
            de uma linha cada não precisam de uma frase a dizer que são portas. */
         rotulo: 'As páginas',
-        abrir: 'a página inteira',
+        /* CADA PORTA DIZ O SEU DESTINO (bloco F1.13, item 2, 15.09.2026).
+           `abrir` era uma cadeia só, «a página inteira», nas três portas: diz o
+           MECANISMO (que se abre uma página inteira) e não o destino, e por isso
+           as três linhas acabavam com as mesmas quatro palavras. O diretor leu-o
+           na primeira página no ar a 15.09 de manhã. Cada porta passa a dizer o
+           nome do que está do outro lado, que é a forma da casa para uma porta e
+           a regra «um nome por coisa em todo o sítio»: os concelhos, os estudos
+           e a agenda. A contagem por baixo do nome fica onde estava.
+
+           SÃO TRÊS CADEIAS E NÃO UMA COM UM BURACO: o nome de cada página entra
+           com a preposição e o género que a sua língua lhe dá («Todos os
+           concelhos», «Toda a agenda»), e um gabarito com um buraco escreveria
+           «Todos os agenda». A cadeia antiga fica registada em `CHAVES-EN.md`.
+
+           A SETA COMPÕE-SE AO LADO, no gabarito, como em todas as portas da
+           casa. */
+        abrirConcelhos: 'Todos os concelhos',
+        abrirEstudos: 'Todos os estudos',
+        abrirAgenda: 'Toda a agenda',
         concelhos: ' concelhos',
         estudosA: ' estudos · ',
         estudosB: ' edições',
@@ -1358,6 +1412,35 @@ export const STRINGS = {
          Portugal: a marca é `data-nonledger="numeracao"`, a mesma da posição de
          um cartão na faixa. */
       medidasRotulo: 'medidas',
+      /* ------------------------------------------------------------------
+         OS NOMES DAS MEDIDAS DE CABEÇA, NA LINHA DO DOMÍNIO (F1.13, item 4)
+         ------------------------------------------------------------------
+         O índice dizia «10 medidas» e o leitor não sabia o que são: o diretor
+         leu-o a 15.09.2026 de manhã e perguntou se vale a pena entrar. Cada
+         linha de um domínio vivo passa a levar, a seguir à contagem, os nomes
+         das suas medidas de CABEÇA, as mesmas que a faixa da primeira página
+         mostra, sem valores.
+
+         AS DUAS CADEIAS SÃO PONTUAÇÃO E MAIS NADA. Os nomes vêm da declaração
+         do domínio (`FAIXA_DO_DOMINIO_1`, em `src/data/dominios.mjs`), com a
+         marca `data-nome="medidas"` que o portão da voz confere carácter a
+         carácter contra esse ficheiro: não se escrevem aqui, nem se editam,
+         nem se põem em minúsculas. `medidasDoisPontos` abre a lista e
+         `eMais` fecha-a com o que sobra.
+
+         «e mais N» LEVA O NÚMERO POR EXTENSO, e o número é contado na
+         construção (a contagem das medidas do domínio menos os nomes
+         mostrados), com `numeralPorExtenso()` de `src/data/figuras.mjs`. Um
+         algarismo numa frase da casa precisava de uma linha do livro-razão que
+         o provasse, e isto é a numeração de uma lista rendida. */
+      medidasDoisPontos: ': ',
+      medidasSeparador: ', ',
+      /* `eMaisA` E `eMaisB` À VOLTA DO NUMERAL, e o B está vazio em português de
+         propósito: «, e mais cinco» põe o numeral no fim e «, and five more»
+         põe-o no meio. Um gabarito com um buraco só de um lado escrevia «and
+         five» na edição inglesa. */
+      eMaisA: ', e mais ',
+      eMaisB: '',
       estadoNoAr: 'no ar',
       estadoDentroDe: 'incluído em',
       estadoSem: 'ainda sem medidas conferidas',
@@ -1839,15 +1922,34 @@ export const STRINGS = {
          palavras e não por um número: uma contagem de resultados é um número que
          a casa escreveria sem linha. */
       buscaMais: 'Há mais linhas do que as que cabem aqui. Escreva mais para estreitar.',
-      /* A LEGENDA DO SELO PASSA A NOMEAR OS ESTADOS (direção, 21.08.2026).
-         Dizia «Quadrado cheio: a proveniência está completa.» e «Quadrado a
-         tracejado: falta pelo menos um campo, e a linha di-lo.» — duas frases a
-         descrever o glifo que está desenhado ao lado. Uma legenda nomeia o que a
-         coisa é (Emenda 15): o quadrado desenha-se, e o que fica escrito é o
-         nome do estado. */
-      seloK: 'Os dois estados do selo',
-      seloCheio: 'proveniência completa',
-      seloTracejado: 'um campo por confirmar',
+      /* -------------------------------------------------------------------
+         A LEGENDA PASSA A SER UMA LINHA EM PALAVRAS (F1.13, item 5, 15.09.2026)
+         -------------------------------------------------------------------
+         A legenda era um aparelho: um título («Os dois estados do selo») e uma
+         lista de dois itens, cada um com o seu quadrado e o nome do seu estado.
+         O diretor leu-a na página de uma área a 15.09.2026 de manhã e mediu as
+         duas coisas que ela fazia mal: «estados» chama o nome do sítio para
+         dentro de uma legenda, e «selo» é, para quem lê, um selo de correio.
+
+         A MARCA PASSA A CHAMAR-SE «A MARCA DA FONTE» em toda a prosa que o
+         leitor vê, e a legenda passa a uma linha que diz onde a marca está, o
+         que cada uma das duas formas quer dizer, e mais nada. As duas amostras
+         da marca desenham-se no lugar dos quadrados da frase, que é o que a
+         legenda de um mapa faz: a marca ao lado do que ela significa.
+
+         SÃO TRÊS CADEIAS PORQUE A FRASE TEM DUAS AMOSTRAS LÁ DENTRO. `marcaAbre`
+         é o que vem antes da primeira marca, `marcaCheia` o que vem depois dela,
+         e `marcaPorConfirmar` o que fecha a frase depois da segunda. O que a
+         régua da voz recolhe é o bloco RENDIDO, que é a frase inteira: as duas
+         amostras são `aria-hidden` e não levam texto nenhum.
+
+         `seloK`, `seloCheio` E `seloTracejado` SAEM. As três linhas do
+         inventário da voz passam a `retirada` com a razão escrita, e a régua L3
+         de `check:lugar` passa a contar «selo» a zero nas páginas do leitor fora
+         do Método. */
+      marcaAbre: 'Ao pé de cada número, a marca da fonte:',
+      marcaCheia: 'fonte, excerto e data conferidos',
+      marcaPorConfirmar: 'um campo por confirmar.',
       marcadorK: 'O marcador',
       marcadorGloss: '',
       metodoLink: 'Como isto é feito',
@@ -2510,10 +2612,12 @@ export const STRINGS = {
     outraLingua: 'Português',
     outraLinguaCodigo: 'PT',
 
-    /* A frase de identidade da Emenda 18, na edição inglesa, nas palavras do
-       diretor: «An observatory of Portugal.» */
+    /* A frase de definição do sítio, na edição inglesa. Ver a razão da mudança
+       de 15.09.2026 na edição portuguesa: a frase diz o que o sítio é, e não as
+       maneiras de o percorrer. A plica é a curva, que é a da edição inglesa em
+       todo o ficheiro. */
     identidade:
-      'An observatory of Portugal: every number with its source, read by territory, by domain and in studies.',
+      'Portugal’s official numbers, from the country to your municipality, each with its source.',
 
 
     /* As frases de hierarquia, na edição inglesa. Ver a razão, e a medição que
@@ -2733,14 +2837,15 @@ export const STRINGS = {
         'Because the alternative is to fill the field with something plausible. A plausible field looks like provenance and is not, and a reader would have no way of telling the difference. The marker makes the gap visible, countable and datable, which is why it appears instead of disappearing.',
       linhaK: 'What happens to a row that carries it',
       linhaItens: [
-        'the seal for that row is drawn dashed, not filled;',
+        /* Ver a razão na edição portuguesa (item 5 do F1.13, 15.09.2026). */
+        'the source mark for that row is drawn dashed, not filled;',
         'the row’s page says, in words, which fields are missing;',
         'the row stays out of search engine indexes and out of the sitemap while the gap lasts;',
         'the published value does not change because of it: what is missing is the documentary proof, not the figure.',
       ],
       voltaK: 'How it goes away',
       voltaV:
-        'On its own. The day the field is filled in and checked, the seal turns solid and the row returns to the index, with nobody else deciding anything.',
+        'On its own. The day the field is filled in and checked, the mark turns solid and the row returns to the index, with nobody else deciding anything.',
       soUmK: 'There is only one',
       soUmV:
         'There is no second marker saying the same thing in other words. A site with two languages of uncertainty has, in practice, none.',
@@ -2755,6 +2860,8 @@ export const STRINGS = {
       area: 'Areas',
       municipio: 'Municipality',
       pesquisaRotulo: 'Type the name of the municipality',
+      /* Ver a razão na edição portuguesa (item 3 do F1.13, 15.09.2026). */
+      pesquisaRotuloMapa: 'Type the name of a municipality, or tap the map.',
       pesquisaSemResultado: 'No municipality by that name.',
       /* Ver a razão na edição portuguesa. */
       pesquisaSemGuiao:
@@ -2828,7 +2935,10 @@ export const STRINGS = {
 
       portas: {
         rotulo: 'The pages',
-        abrir: 'the whole page',
+        /* Ver a razão na edição portuguesa (item 2 do F1.13, 15.09.2026). */
+        abrirConcelhos: 'All municipalities',
+        abrirEstudos: 'All studies',
+        abrirAgenda: 'The whole agenda',
         concelhos: ' municipalities',
         estudosA: ' studies · ',
         estudosB: ' editions',
@@ -3009,6 +3119,11 @@ export const STRINGS = {
       h1: 'By domain',
       /* Ver a razão na edição portuguesa. */
       medidasRotulo: 'measures',
+      /* Ver a razão na edição portuguesa (item 4 do F1.13, 15.09.2026). */
+      medidasDoisPontos: ': ',
+      medidasSeparador: ', ',
+      eMaisA: ', and ',
+      eMaisB: ' more',
       estadoNoAr: 'live',
       estadoDentroDe: 'included in',
       estadoSem: 'no verified measures yet',
@@ -3241,9 +3356,10 @@ export const STRINGS = {
       buscaSemResultado: 'No row in the ledger matches those words.',
       buscaResultadosK: 'Rows that match',
       buscaMais: 'There are more rows than fit here. Type more to narrow it down.',
-      seloK: 'The two states of the seal',
-      seloCheio: 'provenance complete',
-      seloTracejado: 'one field unconfirmed',
+      /* Ver a razão na edição portuguesa (item 5 do F1.13, 15.09.2026). */
+      marcaAbre: 'Beside every number, the source mark:',
+      marcaCheia: 'source, excerpt and date checked',
+      marcaPorConfirmar: 'one field still to confirm.',
       marcadorK: 'The marker',
       marcadorGloss: 'to verify',
       metodoLink: 'How this is made',
