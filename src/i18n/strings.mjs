@@ -1463,23 +1463,12 @@ export const STRINGS = {
          índice diz os nomes, a contagem das medidas de cada domínio vivo e a
          porta, e quem tem porta está no ar por ter porta. A cadeia fica
          declarada e passa a `retirada` no inventário. */
-      /* ------------------------------------------------------------------
-         A LINHA DE ABERTURA DA SECÇÃO, UMA VEZ (P1, item 6, 15.09.2026)
-         ------------------------------------------------------------------
-         A secção passou a ser o índice dos DEZOITO domínios da carta, e não a
-         lista dos que têm página: uma linha por domínio, com o número de
-         medidas que já se publicam dentro dele. A abertura diz o que a lista é,
-         e diz-se uma vez, que é a regra 5 do plano das palavras.
-
-         «DEZOITO» É CONTADO E NÃO ESCRITO: é `numeralPorExtenso(DOMINIOS.length)`,
-         com a marca `data-nonledger="numeracao"`, e por isso a frase não
-         envelhece no dia em que a carta ganhar um domínio.
-
-         «ESTE PROJETO» E NÃO «A CASA» (emenda do diretor das 16:35 UTC de
-         15.09): em português, casa é a habitação, que este sítio também mede.
-         Onde ele fala de si, diz «este projeto» ou o seu nome. */
-      aberturaA: 'Os ',
-      aberturaB: ' domínios do país, e os números que este projeto já publica em cada um.',
+      /* A ABERTURA DA SECÇÃO DOS DOMÍNIOS, RETIRADA A 15.09.2026 (achados 9 e
+         10 da leitura a frio). Era «Os dezoito domínios do país, e os números
+         que este projeto já publica em cada um.»: fala do projeto numa página de
+         conteúdo (norma §1.4) e promete todos os números publicados onde a
+         contagem é a das medidas que se leem nas páginas. A lista fica sem ela,
+         e as contagens ficam como estão. */
       /* O RÓTULO DA CONTAGEM DAS MEDIDAS de um domínio no índice (§9.1). É a
          numeração da lista que a página de chegada rende, e não uma medição de
          Portugal: a marca é `data-nonledger="numeracao"`, a mesma da posição de
@@ -3272,8 +3261,7 @@ export const STRINGS = {
       eyebrow: 'Domains',
       h1: 'By domain',
       /* Ver a razão na edição portuguesa (item 6 do P1, 15.09.2026). */
-      aberturaA: 'The country’s ',
-      aberturaB: ' domains, and the numbers this project already publishes in each.',
+      /** Retirada a 15.09.2026 com a portuguesa: ver a razão na edição dela. */
       /* Ver a razão na edição portuguesa. */
       medidaRotuloUm: 'measure',
       medidasRotulo: 'measures',

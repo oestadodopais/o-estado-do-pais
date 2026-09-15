@@ -55,7 +55,6 @@
  * uma medição de Portugal.
  */
 import { DOMINIOS } from '../data/dominios.mjs';
-import { numeralPorExtenso } from '../data/figuras.mjs';
 import { indiceDosDominios } from '../lib/dominios.mjs';
 import { t } from '../i18n/strings.mjs';
 import '../styles/dominios-lista.css';
@@ -65,13 +64,14 @@ const s = t(lang);
 const linhas = indiceDosDominios(lang);
 ---
 
-{/* A ABERTURA DIZ O QUE A LISTA É, UMA VEZ. O numeral é contado, não escrito. */}
-<p class="dominios-abertura">
-  <Fragment set:text={s.dominios.aberturaA} /><span data-nonledger="numeracao"
-    >{numeralPorExtenso(DOMINIOS.length, lang)}</span
-  ><Fragment set:text={s.dominios.aberturaB} />
-</p>
-
+{/* A LINHA DE ABERTURA SAIU A 15.09.2026 (achados 9 e 10 da leitura a frio).
+    Dizia «os números que este projeto já publica em cada um», e duas coisas
+    estavam erradas ao mesmo tempo: era prosa sobre o projeto numa página de
+    conteúdo, que a norma §1.4 manda para o Sobre e para o Método, e prometia
+    TODOS os números publicados quando a contagem é a das medidas que se leem
+    nas páginas (duas linhas do livro-razão não têm página de conteúdo e não
+    entram). A lista diz o que é sem uma frase por cima: dezoito nomes e, ao
+    lado de cada um, quantas medidas se leem nele. */}
 {/* AS FILAS DA GRELHA DE DUAS COLUNAS VÊM DA DECLARAÇÃO, e não da folha: a
     partir de 768 px a lista é duas colunas, nove e nove, e o nove é
     `DOMINIOS.length / 2` arredondado para cima. Escrito na folha, envelhecia no
