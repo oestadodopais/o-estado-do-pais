@@ -1,0 +1,18 @@
+
+  A BUSCA A 390 E A 1 280 · dist
+
+  ✓ /                             390  texto-fantasma «Concelho» · nome acessível «Concelho» (1px², e 1 é o que a classe .vh da casa dá) · botão «Procurar» · à vista à volta do campo: nada
+  ✓ /                            1280  texto-fantasma «Concelho» · nome acessível «Concelho» (1px², e 1 é o que a classe .vh da casa dá) · botão «Procurar» · à vista à volta do campo: nada
+  ✓ /municipios                   390  texto-fantasma «Concelho» · nome acessível «Concelho» (1px², e 1 é o que a classe .vh da casa dá) · botão «Procurar» · à vista à volta do campo: nada
+  ✓ /municipios                  1280  texto-fantasma «Concelho» · nome acessível «Concelho» (1px², e 1 é o que a classe .vh da casa dá) · botão «Procurar» · à vista à volta do campo: nada
+  ✓ /livro-razao/concelhos        390  texto-fantasma «Concelho» · nome acessível «Concelho» (1px², e 1 é o que a classe .vh da casa dá) · botão «nenhum» · à vista à volta do campo: nada
+  ✓ /livro-razao/concelhos       1280  texto-fantasma «Concelho» · nome acessível «Concelho» (1px², e 1 é o que a classe .vh da casa dá) · botão «nenhum» · à vista à volta do campo: nada
+  ✓ /en                           390  texto-fantasma «Municipality» · nome acessível «Municipality» (1px², e 1 é o que a classe .vh da casa dá) · botão «Search» · à vista à volta do campo: nada
+  ✓ /en                          1280  texto-fantasma «Municipality» · nome acessível «Municipality» (1px², e 1 é o que a classe .vh da casa dá) · botão «Search» · à vista à volta do campo: nada
+  ✓ /en/municipalities            390  texto-fantasma «Municipality» · nome acessível «Municipality» (1px², e 1 é o que a classe .vh da casa dá) · botão «Search» · à vista à volta do campo: nada
+  ✓ /en/municipalities           1280  texto-fantasma «Municipality» · nome acessível «Municipality» (1px², e 1 é o que a classe .vh da casa dá) · botão «Search» · à vista à volta do campo: nada
+  ✓ /en/ledger/municipalities     390  texto-fantasma «Municipality» · nome acessível «Municipality» (1px², e 1 é o que a classe .vh da casa dá) · botão «nenhum» · à vista à volta do campo: nada
+  ✓ /en/ledger/municipalities    1280  texto-fantasma «Municipality» · nome acessível «Municipality» (1px², e 1 é o que a classe .vh da casa dá) · botão «nenhum» · à vista à volta do campo: nada
+
+  0 superfície(s) com uma frase à vista ou sem nome acessível.
+

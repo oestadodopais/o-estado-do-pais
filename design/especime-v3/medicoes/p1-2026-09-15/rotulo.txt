@@ -1,0 +1,18 @@
+
+  ✓ M1 · o rótulo tem área e o texto aprovado nas oito páginas medidas
+    8 página(s) medidas · 0 má(s)
+  ✓ M2 · o contraste do rótulo e da sua porta passa 4,5:1 nos dois temas
+    claro/pt texto 6.24:1 · porta 16.39:1 · claro/en texto 6.24:1 · porta 16.39:1 · escuro/pt texto 9.52:1 · porta 15.38:1 · escuro/en texto 9.52:1 · porta 15.38:1
+  ✓ M3 · a porta do rótulo abre a secção da política, nas duas edições
+    pt → /metodo#politica-de-ia · en → /en/method#politica-de-ia
+  ✓ M4 · a 390, a porta da política tem 44px de alvo e a linha não transborda
+    pt 44.0px de alvo, acaba em 372.0 de 390 · en 44.0px de alvo, acaba em 372.0 de 390
+  ✓ M5 · a ficha do artigo 15.º está nas duas primeiras páginas, e em mais lado nenhum
+    2 ficha(s) em 8 páginas
+  ✓ M6 · nas páginas de leitura o rótulo do topo vem inteiro antes do documento
+    2 página(s) de leitura em 2 edição(ões) (en, pt)
+  ✓ M7 · o rótulo está completo no HTML servido, sem uma linha de JavaScript
+    as duas edições rendem a linha inteira sem script
+
+  7 de 7 célula(s)
+

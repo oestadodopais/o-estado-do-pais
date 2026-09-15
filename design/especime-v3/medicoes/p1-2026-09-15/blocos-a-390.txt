@@ -1,0 +1,14 @@
+
+=== / a 390 px ===
+página      2787 → 3597 (+810)
+gaveta      1 px (absolute, ocupa 0) → 1 px (absolute, ocupa 0) (ocupa +0.0)
+busca       84.4 px (static, ocupa 84.4) → 44 px (static, ocupa 44) (ocupa -40.4)
+dominios    335.6 px (static, ocupa 335.6) → 1274.8 px (static, ocupa 1274.8) (ocupa +939.2)
+rótulo      36.4 px, «Escreva o nome do concelho, ou toque no mapa.» → 1 px, «Concelho»
+
+=== /en a 390 px ===
+página      2793 → 3622 (+829)
+gaveta      1 px (absolute, ocupa 0) → 1 px (absolute, ocupa 0) (ocupa +0.0)
+busca       84.4 px (static, ocupa 84.4) → 44 px (static, ocupa 44) (ocupa -40.4)
+dominios    335.6 px (static, ocupa 335.6) → 1274.8 px (static, ocupa 1274.8) (ocupa +939.2)
+rótulo      36.4 px, «Type the name of a municipality, or tap the map.» → 1 px, «Municipality»
