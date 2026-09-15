@@ -12,11 +12,14 @@
  *     cada um com a sua porta e, quando existe nesta edição, a porta do seu
  *     texto;
  *   · os estudos de dados, que entram como uma peça e não como novecentas;
- *   · as medidas, agrupadas pela MATÉRIA que as pôs aqui, e cada uma na
- *     linha-espécime do livro-razão: o valor, o selo que abre a sua linha, o
- *     identificador, a unidade, a data de referência, a fonte, o documento e a
- *     data de leitura. É `ItemDoLivro`, a mesma peça que o índice dos 308 e a
- *     página de livro-razão de um concelho usam, e não uma segunda forma;
+ *   · as medidas, agrupadas pela MATÉRIA que as pôs aqui, e cada uma no CARTÃO
+ *     DE UMA MEDIDA (`CartaoDaMedida`, bloco P2, 15.09.2026): o nome em
+ *     português corrente, o valor com a unidade e o período numa linha, a frase
+ *     do que a medida mede, a régua quando as linhas existem, e a marca da fonte
+ *     que abre o recibo. Cinco coisas, e nada mais. Até 15.09.2026 era
+ *     `ItemDoLivro`, a linha-espécime do livro-razão, com dez pedaços de texto à
+ *     vista: o recibo inteiro ao lado de cada número. O recibo continua inteiro
+ *     onde ele vive, que é a página da linha, e a marca é a porta para lá;
  *   · o selo da porta legal, uma vez por página;
  *   · as portas.
  *
@@ -67,8 +70,7 @@
  * outra coisa, e a lista da página do conjunto é quem as conta.
  */
 import Base from '../layouts/Base.astro';
-import ItemDoLivro from '../components/ItemDoLivro.astro';
-import LegendaDaMarca from '../components/LegendaDaMarca.astro';
+import CartaoDaMedida from '../components/CartaoDaMedida.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import { areaDoSlug, nomeDoEstudo, temTexto } from '../lib/areas.mjs';
 import { LEI_ORGANICA } from '../data/areas.mjs';
@@ -77,6 +79,11 @@ import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import '../styles/linha.css';
 import '../styles/area.css';
+/* A FOLHA DO CARTÃO CHEGA COM A PÁGINA QUE O RENDE (a lição da C1 de
+   `check:css`, 15.09.2026): uma classe cuja regra vive numa folha que a página
+   não carrega rende sem regras, e foi assim que a lista dos domínios saiu da
+   primeira página sem `gap` nem marcador. */
+import '../styles/cartao-medida.css';
 
 const { lang = 'pt', slug } = Astro.props;
 const s = t(lang);
@@ -122,8 +129,12 @@ const portaLegal = [LEI_ORGANICA.diplomaCurto, ...area.pecas.artigos].join(' · 
       governo não é um lugar. */}
   <div class="linha-cabeca area-cabeca">
     <p class="eyebrow">{s.areas.eyebrow}</p>
+    {/* A LINHA DO TIPO SAIU (bloco P2, item 3, 15.09.2026). Dizia «área do XXV
+        Governo Constitucional» debaixo do título de cada uma das nove áreas, nas
+        duas edições, e o diretor leu-a a 15.09 como uma explicação que não é
+        conteúdo. O que a estrutura do sítio explica diz-se UMA VEZ, e passou a
+        dizer-se no índice das áreas, com o diploma ao lado. */}
     <h1 data-nome="areas">{nome}</h1>
-    <p class="area-tipo">{s.areas.tipo}</p>
   </div>
 
   <div class="linha">
@@ -184,11 +195,9 @@ const portaLegal = [LEI_ORGANICA.diplomaCurto, ...area.pecas.artigos].join(' · 
                 </h3>
                 <div class="livro-lista" data-area-grupo={area.slug}>
                   {g.medidas.map((m) => (
-                    <ItemDoLivro
+                    <CartaoDaMedida
                       linha={getClaim(m.id)}
                       lang={lang}
-                      referencia={true}
-                      documento={true}
                       data-area-peca="medida"
                     />
                   ))}
@@ -237,9 +246,14 @@ const portaLegal = [LEI_ORGANICA.diplomaCurto, ...area.pecas.artigos].join(' · 
         `aria-labelledby` sem alvo não nomeia nada. A coluna fica um marco
         complementar sem nome, que é o que ela é: a página tem um só, e por isso
         quem percorre os marcos não tem dois iguais para desfazer. */}
+    {/* A LEGENDA DA MARCA SAIU DESTA COLUNA (bloco P2, item 3, 15.09.2026).
+        «Ao pé de cada número, a marca da fonte: fonte, excerto e data conferidos
+        · um campo por confirmar.» estava em cada página de área, e a regra 5 do
+        plano das palavras manda o que explica a estrutura dizer-se uma vez, na
+        página que a explica. O Método explica a marca, na secção que lhe é
+        própria; a legenda em palavras fica no índice do livro-razão, que é a
+        página da proveniência e a única onde ela agora se rende. */}
     <aside class="aparelho">
-      <LegendaDaMarca s={s} />
-
       <p class="rodape-nav aparelho-saidas">
         <a href={routePath('areas', lang)}>{s.areas.voltarIndice}</a>
         <a href={routePath('livro', lang)}>{s.areas.voltarLivro}</a>

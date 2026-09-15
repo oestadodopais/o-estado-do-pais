@@ -1221,6 +1221,26 @@ export const STRINGS = {
          código e os identificadores não mudam de nome. */
       semLimiar: 'sem valor de referência',
       porConfirmar: 'por confirmar',
+      /* ------------------------------------------------------------------
+         AS PALAVRAS DA RÉGUA DE UM CARTÃO (bloco P2, item 1d, 15.09.2026)
+         ------------------------------------------------------------------
+         Decisão do diretor de 15.09.2026 de manhã (`DECISIONS.md` §1.108): a
+         palavra «limiar» sai do texto que o leitor vê, e o que fica é «valor de
+         referência». Estas três são a régua de um cartão: de que lado do valor
+         de referência o número está, e a terceira para uma banda, onde um valor
+         lá dentro não está acima nem abaixo de nada.
+
+         SÃO AS MESMAS CHAVES QUE O BLOCO P1 ESCREVE no mesmo dia, para as
+         cadeias da primeira página. As duas metades da troca correm em ramos
+         separados por decisão do lugar de direção, e escrever chaves diferentes
+         para a mesma palavra era garantir duas palavras para a mesma coisa no
+         dia da fusão. O que muda de lado para lado é ONDE elas se rendem; o
+         texto é um só.
+
+         QUEM ESCOLHE NÃO É `estadoDaMedida()`: é `comparacaoComOLimiar()`, que
+         lê o sinal do valor de referência que a linha já declara. «fora» e
+         «dentro» são a relação com a REGRA e continuam a colorir o cartão;
+         «acima» e «abaixo» são a relação com o NÚMERO, e é essa que o leitor lê. */
     },
 
     cobertura: {
@@ -1625,8 +1645,21 @@ export const STRINGS = {
          é o nome da área, e mais nada. As duas cadeias que a compunham saíram a
          28.08.2026, porque diziam o método do sítio na superfície pública. */
       metaCauda: 'área de governo · O Estado do País',
-      /* O tipo da coisa, e não o que fizemos com ela (Emenda 18b). */
+      /* O tipo da coisa, e não o que fizemos com ela (Emenda 18b).
+         **RETIRADO DA PÁGINA DE UMA ÁREA A 15.09.2026** (bloco P2, item 3): a
+         linha estava debaixo do título de cada uma das nove áreas, nas duas
+         edições, e o diretor leu-a como uma explicação que não é conteúdo. O que
+         a estrutura do sítio explica diz-se uma vez, na página que a explica, e
+         não em cada página que a usa (regra 5 do plano das palavras). A chave
+         fica declarada porque a cadeia continua a ser o nome do tipo e o
+         inventário das frases guarda o estado dela; o que saiu foi a rendição. */
       tipo: 'área do XXV Governo Constitucional',
+      /* A ORGÂNICA, DITA UMA VEZ, NO ÍNDICE DAS ÁREAS (bloco P2, item 3,
+         15.09.2026). No lugar da linha do tipo em nove páginas: uma frase no
+         índice, com o diploma ao lado como porta, a dizer de onde as áreas vêm.
+         O ordinal é o mesmo que a linha do tipo escrevia, e o diploma é o que a
+         porta legal de cada página de área já cita (`LEI_ORGANICA`). */
+      organica: 'As áreas seguem a orgânica do Governo em funções, o XXV Governo Constitucional.',
       trabalhosK: 'Os estudos',
       conjuntosK: 'Os estudos de dados',
       medidasK: 'As medidas',
@@ -2098,6 +2131,58 @@ export const STRINGS = {
         /* A TERCEIRA DATA (01.09.2026). O recibo mostrava duas: o período, no
            bloco de cima, e as leituras da casa. Esta é a do publicador. */
         publicadoEmK: 'Publicado pela fonte a',
+        /* ----------------------------------------------------------------
+           A SEGUNDA DATA (bloco P2, item 2, 15.09.2026)
+           ----------------------------------------------------------------
+           A norma, §2.5: «Duas datas, não uma. Quando os dados foram lidos e
+           quando a página vai ser vista de novo.» O Eurostat escreve «Data
+           extracted» e «Planned article update»; o ONS escreve «Release date» e
+           «Next release»; o INE tem o «Calendário» como uma das seis entradas do
+           menu. Este projeto tinha o calendário das fontes numa página própria e
+           a data de leitura no recibo, e nunca as pôs uma ao lado da outra.
+
+           A DATA É A DO CALENDÁRIO DA CASA (`src/data/calendario.json`), e só
+           quando a fonte a ANUNCIOU: uma janela não é uma data, e o marcador diz
+           que o campo falta. Onde não há, não se escreve a ausência.
+
+           É «conferência» e não «atualização» porque é o que a casa vai fazer:
+           a fonte publica, e a casa relê a linha contra o que ela publicou. */
+        proximaConferenciaK: 'Próxima conferência',
+        /* ----------------------------------------------------------------
+           O NOME OFICIAL DA MEDIDA, NO RECIBO (bloco P2, item 2, 15.09.2026)
+           ----------------------------------------------------------------
+           A norma, §1.5: «Três nomes por medida, cada um no seu lugar: o nome
+           oficial em português (o do INE primeiro, com a versão da série quando o
+           INE a carrega, "Taxa de desemprego (Série 2021)"; o da PORDATA a
+           seguir), o nome corrente do projeto no título do cartão, e o nome que a
+           fonte usa, na língua dela, no recibo.» O cartão passou a mostrar o nome
+           do projeto com o bloco P2; estes dois são os oficiais, e o lugar deles é
+           o recibo.
+
+           OS DOIS RÓTULOS NOMEIAM QUEM PUBLICA O NOME, e não «o nome oficial»:
+           dois organismos portugueses publicam nomes diferentes para a mesma
+           medida, e dizer «o nome oficial» sobre um deles era a casa a escolher
+           qual é o oficial. A PORDATA mostra o custo de não os distinguir (o mesmo
+           indicador chama-se «Taxa de abandono escolar» no título e «Taxa de
+           abandono precoce de educação e formação» no endereço). */
+        nomeNoIneK: 'Nome no INE',
+        nomeNaPordataK: 'Nome na PORDATA',
+        /* ----------------------------------------------------------------
+           O ENQUADRAMENTO, NO RECIBO (bloco P2, 15.09.2026, a decisão sobre as
+           capturas)
+           ----------------------------------------------------------------
+           O cartão de uma medida passa a ter UMA marca da fonte e não três: os
+           valores da régua (o período anterior, o agregado da União) deixam de
+           levar marca própria, e a marca do cartão abre este recibo. É aqui que
+           as linhas da régua ficam, cada uma com o valor, o período e a porta
+           para o recibo dela: a proveniência continua a um toque, e o toque é
+           um só (a norma §2.1).
+
+           O TÍTULO DIZ O QUE A SECÇÃO É, e não o que a casa fez: são as linhas
+           com que esta medida se compara. */
+        enquadramentoK: 'O enquadramento',
+        enquadramentoAnterior: 'Período anterior',
+        enquadramentoUe: 'União Europeia',
         /* O ESTADO DE UMA FONTE SÃO DOIS ESTADOS, e não um (03.09.2026,
            segunda passagem do F0.11, Major 4 da leitura a frio). É uma data e
            não um adjectivo: o que a casa sabe é desde quando. E é uma de duas
@@ -2643,6 +2728,30 @@ export const STRINGS = {
       estudos: 'Ver os estudos',
       metodo: 'Ler o método',
     },
+    /**
+     * ------------------------------------------------------------------
+     * O CARTÃO DE UMA MEDIDA (bloco P2, 15.09.2026)
+     * ------------------------------------------------------------------
+     * As duas únicas cadeias que o cartão acrescenta ao sítio, e as duas são
+     * gramática: a preposição que liga o valor ao período, e o nome do agregado
+     * com que a régua o compara. Tudo o resto que o cartão diz já existia
+     * noutro ficheiro (o nome da medida, a unidade, a definição, as palavras do
+     * estado), e a regra do bloco é essa: o que sai antes do que entra.
+     *
+     * «em» NO LUGAR DE «Dados de». O rótulo do campo `reference_date` é do
+     * recibo e continua lá; num cartão, uma preposição faz o mesmo trabalho com
+     * menos duas palavras, e lê-se como português falado («17,6 % em 2025»), que
+     * é o teste do §1.1 da norma.
+     *
+     * O BLOCO FICA NO FIM DE PROPÓSITO. O bloco P1 corre em paralelo noutro ramo
+     * e toca este mesmo ficheiro; uma chave nova acrescentada no fim é uma fusão
+     * limpa, e uma chave nova enfiada a meio de uma secção que o outro ramo
+     * também mexeu é um conflito por arrumação.
+     */
+    cartao: {
+      em: 'em',
+      uniaoEuropeia: 'União Europeia',
+    },
   },
 
   en: {
@@ -3066,6 +3175,7 @@ export const STRINGS = {
       },
       semLimiar: 'no reference value',
       porConfirmar: 'unconfirmed',
+      /** Ver a razão na edição portuguesa (bloco P2, item 1d, 15.09.2026). */
     },
 
     cobertura: {
@@ -3199,6 +3309,9 @@ export const STRINGS = {
       contaMuitas: ' studies and measures',
       metaCauda: 'government area · O Estado do País',
       tipo: 'area of the XXV Constitutional Government',
+      /** Ver a razão na edição portuguesa (bloco P2, item 3, 15.09.2026). */
+      organica:
+        'The areas follow the structure of the Government in office, the XXV Constitutional Government.',
       trabalhosK: 'The studies',
       conjuntosK: 'The data studies',
       medidasK: 'The measures',
@@ -3452,6 +3565,15 @@ export const STRINGS = {
         reconferidoK: 'Verified on',
         releituraPorta: 'The re-reading rule',
         publicadoEmK: 'Published by the source on',
+        /** Ver a razão na edição portuguesa (bloco P2, item 2, 15.09.2026). */
+        proximaConferenciaK: 'Next check',
+        /** Ver a razão na edição portuguesa (bloco P2, item 2, 15.09.2026). */
+        nomeNoIneK: 'Name at Statistics Portugal',
+        nomeNaPordataK: 'Name at PORDATA',
+        /** Ver a razão na edição portuguesa (bloco P2, 15.09.2026). */
+        enquadramentoK: 'The comparisons',
+        enquadramentoAnterior: 'Previous period',
+        enquadramentoUe: 'European Union',
         semRespostaK: 'No answer since',
         respondeuComErroK: 'Answering with an error since',
         aEstaMaquinaK: 'to this machine',
@@ -3645,6 +3767,11 @@ export const STRINGS = {
       inicio: 'Go to the home page',
       estudos: 'See the studies',
       metodo: 'Read the method',
+    },
+    /** Ver a razão na edição portuguesa (bloco P2, 15.09.2026). */
+    cartao: {
+      em: 'in',
+      uniaoEuropeia: 'European Union',
     },
   },
 };

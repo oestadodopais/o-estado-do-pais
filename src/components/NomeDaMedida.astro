@@ -19,12 +19,20 @@
  *     com a linha carácter a carácter. Não se toca no texto: um campo transcrito
  *     rende-se como a fonte o escreveu.
  *
+ * O NOME OFICIAL LEVA AS DUAS MARCAS, e cada uma responde a uma pergunta
+ * diferente: `data-nome="oficial"` diz de que ficheiro o texto vem, e a régua da
+ * voz confere-o carácter a carácter contra `nomes.json`; `data-nonledger` diz
+ * porque é que os algarismos que ele traz não são medições do país. «Taxa de
+ * desemprego (Série 2021 - %)», «dos 15 aos 74 anos» e «NUTS - 2024» são partes
+ * do nome com que o INE publica a medida, e o motivo está declarado em
+ * `ledger/allowlist.yml` com a razão por extenso.
+ *
  * NADA SE RENDE onde a escada não dá texto. Não há aqui um traço, um «sem nome»
  * nem o identificador promovido outra vez: a linha fica com o valor, a unidade e
  * o identificador no metadado, que é o que ela tem.
  */
 import CampoDaLinha from './CampoDaLinha.astro';
-import { nomeDaMedida, eNomeDeMedida } from '../lib/nomes.mjs';
+import { nomeDaMedida, nomeDoCartao, eNomeDeMedida } from '../lib/nomes.mjs';
 import { linguaDoRotuloDaFonte, linguaDoTituloDoDocumento } from '../i18n/lingua-dos-titulos.mjs';
 
 /* A CLASSE É DE QUEM CHAMA, E A MARCA É DESTE COMPONENTE (F1.10, §2.5).
@@ -32,8 +40,17 @@ import { linguaDoRotuloDaFonte, linguaDoTituloDoDocumento } from '../i18n/lingua
    composição de uma linha de lista; o caminho do cabeçalho quer a sua. O que não
    muda com quem chama é a marca (`data-nome` mais `data-de-linha`, ou a marca de
    campo do livro-razão), porque é ela que faz do nome uma coisa conferida. */
-const { linha: c, lang = 'pt', class: klass = 'livro-item-nome' } = Astro.props;
-const nome = nomeDaMedida(c, lang);
+/* `escada` É QUAL DAS DUAS (bloco P2, 15.09.2026). A escada do índice do
+   livro-razão tem três degraus (o nome do projeto, o rótulo da fonte, o título do
+   documento); a escada do CARTÃO tem quatro, com o nome oficial confirmado do INE
+   ou da PORDATA entre o primeiro e o segundo. A escolha é de quem chama, porque é
+   quem chama que sabe em que superfície está; a MARCA, que é o que faz do nome uma
+   coisa conferida, continua a ser deste componente. */
+const { linha: c, lang = 'pt', class: klass = 'livro-item-nome', escada = 'livro' } = Astro.props;
+if (escada !== 'livro' && escada !== 'cartao') {
+  throw new Error(`<NomeDaMedida>: escada desconhecida «${escada}» (é «livro» ou «cartao»).`);
+}
+const nome = escada === 'cartao' ? nomeDoCartao(c, lang) : nomeDaMedida(c, lang);
 if (nome !== null && !eNomeDeMedida(nome)) {
   throw new Error(`nomes: nome mal formado para a linha "${c.id}"`);
 }
@@ -41,18 +58,36 @@ if (nome !== null && !eNomeDeMedida(nome)) {
    rótulo da fonte e um título de documento estão em listas próprias
    (`src/i18n/lingua-dos-titulos.mjs`), e `check:lingua` fecha a construção
    quando um texto novo chega sem língua declarada. */
+/* O NOME OFICIAL É PORTUGUÊS NAS DUAS EDIÇÕES, e di-lo (bloco P2, 15.09.2026).
+   É o nome com que o INE ou a PORDATA publicam a medida, e não se traduz: numa
+   página inglesa leva `lang="pt-PT"`, pela mesma regra da I91 que já vale para o
+   título de um documento e para o rótulo de uma fonte. Numa página portuguesa
+   não leva marca nenhuma, porque uma marca que repete a língua da página é
+   ruído para quem ouve. */
 const lingua =
-  nome === null || nome.campo === null
+  nome === null
     ? null
-    : nome.campo === 'name'
-      ? linguaDoRotuloDaFonte(nome.texto, lang)
-      : linguaDoTituloDoDocumento(nome.texto, lang);
+    : nome.fonte === 'oficial'
+      ? lang === 'en'
+        ? 'pt-PT'
+        : null
+      : nome.campo === null
+        ? null
+        : nome.campo === 'name'
+          ? linguaDoRotuloDaFonte(nome.texto, lang)
+          : linguaDoTituloDoDocumento(nome.texto, lang);
 ---
 
 {
   nome !== null &&
     (nome.campo === null ? (
-      <span class={klass} data-nome={nome.fonte} data-de-linha={c.id}>
+      <span
+        class={klass}
+        data-nome={nome.fonte}
+        data-de-linha={c.id}
+        lang={lingua ?? undefined}
+        data-nonledger={nome.fonte === 'oficial' ? 'nome-oficial-da-medida' : undefined}
+      >
         {nome.texto}
       </span>
     ) : (

@@ -1,0 +1,167 @@
+---
+/**
+ * ---------------------------------------------------------------------------
+ * O CARTÃO DE UMA MEDIDA · cinco coisas, e nada mais (bloco P2, 15.09.2026)
+ * ---------------------------------------------------------------------------
+ *
+ * O diretor leu uma página de área a 15.09.2026 e leu isto, por esta ordem, ao
+ * pé de um número: «17,6 · fonte · Eurostat · Preços da habitação ·
+ * precos-da-habitacao-2025 · variação anual média, % · Dados de 2025 ·
+ * Publicado por Eurostat · Documento House price index, nominal - annual data ·
+ * Lido na fonte a 12.08.2026». E perguntou: 17,6 % de quê, e é muito ou pouco.
+ *
+ * As duas perguntas dizem a mesma coisa: o que estava à vista era o RECIBO, e o
+ * que faltava era o NÚMERO E O SEU SENTIDO. A norma escreve a regra no §2.1:
+ * «Ao lado do número ficam quatro coisas, e não mais: o valor, a unidade, o
+ * período, a fonte. Tudo o resto fica atrás de um toque.»
+ *
+ * ---------------------------------------------------------------------------
+ * AS CINCO COISAS, E PORQUE SÃO ESTAS
+ * ---------------------------------------------------------------------------
+ *   (a) **o nome**, em português corrente, pela escada do cartão
+ *       (`nomeDoCartao()`): o nome do projeto quando existe, o rótulo da fonte
+ *       quando está na língua da página, e nada quando nem um nem outro. Um
+ *       cartão de uma página portuguesa não escreve o nome de uma coisa em
+ *       inglês (item 4 do brief);
+ *   (b) **o valor com a unidade e o período, numa linha**. O valor é a linha do
+ *       livro-razão, por `<Claim/>`, com a marca da fonte ao lado; a unidade e o
+ *       período são campos da mesma linha, conferidos carácter a carácter pelo
+ *       portão. «Dados de» saiu: a preposição faz o trabalho do rótulo, e o
+ *       rótulo era um campo de recibo posto à vista;
+ *   (c) **uma frase do que a medida mede**, que já existe em
+ *       `src/data/figuras.mjs` e em mais lado nenhum, com as origens seladas no
+ *       F1.10. Só as vinte e uma medidas dos dois painéis europeus a têm hoje;
+ *       as outras não levam frase, e não se lhes escreve uma;
+ *   (d) **a régua**, quando as linhas existem (ver `src/lib/enquadramento.mjs`);
+ *   (e) **a marca da fonte**, que abre o recibo. É o `<a class="src-chip">` que
+ *       o `<Claim chip>` põe ao lado do valor, e é a única porta da proveniência
+ *       que o cartão mostra.
+ *
+ * ---------------------------------------------------------------------------
+ * O QUE SAIU, E PARA ONDE
+ * ---------------------------------------------------------------------------
+ * A chave (`precos-da-habitacao-2025`), «Publicado por», «Documento» e «Lido na
+ * fonte a» saíram do cartão e ficam no recibo, que é a página da linha
+ * (`/livro-razao/<id>`), onde estavam e continuam a estar inteiros. Nada se
+ * perdeu: mudou de lugar, e o lugar é o que a marca abre.
+ *
+ * A CHAVE NUNCA É TEXTO DE LEITOR. Continua a ser o que se copia para procurar
+ * a linha, e continua a estar no índice do livro-razão, que é o sítio onde se
+ * procura uma linha.
+ *
+ * ---------------------------------------------------------------------------
+ * PORQUE É UM COMPONENTE NOVO E NÃO UM MODO DO `ItemDoLivro`
+ * ---------------------------------------------------------------------------
+ * `ItemDoLivro.astro` é uma LINHA DO LIVRO-RAZÃO numa lista, e o que ela mostra
+ * é a proveniência: o índice dos 308 e a lista das linhas de um concelho existem
+ * para isso. Este é o CARTÃO de uma medida, e o que ele mostra é o sentido. São
+ * duas coisas com dois conteúdos e duas regras, e uma propriedade booleana a
+ * escolher entre elas seria a mesma peça a ser duas: a primeira alteração que
+ * servisse uma partia a outra.
+ *
+ * O que NÃO se duplicou foi a máquina: o valor é o mesmo `<Claim/>`, o nome é o
+ * mesmo `<NomeDaMedida/>` com a sua marca, os campos são os mesmos
+ * `<CampoDaLinha/>` com a conferência do portão, e a marca da fonte é o mesmo
+ * `<Provenance/>`. O que é novo é a escolha do que se mostra.
+ *
+ * ---------------------------------------------------------------------------
+ * A FRASE E A SUA ORIGEM
+ * ---------------------------------------------------------------------------
+ * A origem de cada definição (o publicador, o documento, o endereço, a data e o
+ * excerto) rende-se na página do domínio e na página europeia, onde a definição
+ * é apresentada como citada (decisão do lugar de direção de 09.09.2026). No
+ * cartão não se rende, e é o §2.1 da norma que o manda: o excerto e o documento
+ * ficam atrás do toque. A frase do cartão é conferida carácter a carácter
+ * contra a declaração pela régua do bloco (`tests/cartao/cartao.mjs`, célula K6),
+ * pela marca `data-cartao-definicao`.
+ */
+import Claim from './Claim.astro';
+import CampoDaLinha from './CampoDaLinha.astro';
+import NomeDaMedida from './NomeDaMedida.astro';
+import Frase from './Frase.astro';
+import ReguaDoCartao from './ReguaDoCartao.astro';
+import { t } from '../i18n/strings.mjs';
+import { unidadeDaLinha } from '../i18n/unidades.mjs';
+import { provenienciaIncompleta } from '../lib/ledger.mjs';
+import { DEFINICOES_DAS_MEDIDAS } from '../data/figuras.mjs';
+
+/* `...resto` deixa quem chama pendurar as suas marcas no cartão sem que este
+   componente saiba o que elas são: é assim que a página de uma área lhe põe
+   `data-area-peca="medida"`, que é a marca que o portão de HTML e o
+   `check:areas` contam. */
+const { linha: c, lang = 'pt', ...resto } = Astro.props;
+const s = t(lang);
+
+const unidade = unidadeDaLinha(c.unit, lang);
+/* O PERÍODO É O CAMPO DA LINHA, e não um ano composto aqui. Vinte e uma das 131
+   medidas das páginas de área não têm `reference_date`: nessas a linha do valor
+   acaba na unidade, e não se lhes escreve um período. */
+const periodo =
+  c.reference_date !== null && c.reference_date !== undefined && c.reference_date !== ''
+    ? c.reference_date
+    : null;
+
+/* A FRASE DO QUE A MEDIDA MEDE. Vem de `figuras.mjs` e de mais lado nenhum: onde
+   não houver declaração, o cartão não tem frase, e escrever uma aqui seria a casa
+   a definir uma medida que ninguém definiu. */
+const definicao = /** @type {Record<string, { pt: readonly unknown[], en: readonly unknown[] }>} */ (
+  DEFINICOES_DAS_MEDIDAS
+)[c.id];
+const frase = definicao ? definicao[lang] ?? definicao.pt : null;
+---
+
+<article
+  class="cartao-medida"
+  data-cartao-medida={c.id}
+  data-estado={provenienciaIncompleta(c) ? 'por-confirmar' : 'completa'}
+  {...resto}
+>
+  {/* (a) O NOME. `escada="cartao"` é a escada que recusa um nome noutra língua
+      que não a da página; a marca (`data-nome` com o identificador da linha, ou
+      `data-linha-campo`) é a mesma que o índice já leva, e é ela que faz do nome
+      uma coisa conferida e não uma dispensa. */}
+  <NomeDaMedida linha={c} lang={lang} escada="cartao" class="cartao-medida-nome" />
+
+  {/* (b) O VALOR, A UNIDADE E O PERÍODO, NUMA LINHA. A marca da fonte, que é a
+      coisa (e) das cinco, vive dentro do `<Claim chip>`: `auditaSelo()` procura
+      o selo dentro do PAI do elemento do valor, e é essa vizinhança que o portão
+      confere. Um invólucro entre os dois partia-a. */}
+  <p class="cartao-medida-valor">
+    <Claim id={c.id} lang={lang} as="span" class="cartao-medida-num" chip={true} />
+    <CampoDaLinha
+      id={c.id}
+      campo="unit"
+      valor={unidade.texto}
+      lang={lang}
+      class="cartao-medida-unidade"
+      lingua={unidade.lingua}
+    />
+    {
+      periodo && (
+        <span class="cartao-medida-periodo">
+          {/* «em», e não «Dados de». A preposição é a gramática da frase, e o
+              rótulo do campo é do recibo. É prosa da casa, declarada uma vez em
+              `strings.mjs` e no inventário das frases. */}
+          <span class="cartao-medida-em" data-voz>
+            {s.cartao.em}{' '}
+          </span>
+          <CampoDaLinha id={c.id} campo="reference_date" valor={periodo} lang={lang} />
+        </span>
+      )
+    }
+  </p>
+
+  {/* (c) A FRASE DO QUE A MEDIDA MEDE. */}
+  {
+    frase && (
+      <p class="cartao-medida-frase" data-cartao-definicao={c.id}>
+        <Frase partes={frase} lang={lang} selos={true} />
+      </p>
+    )
+  }
+
+  {/* (d) A RÉGUA. Rende-se só onde houver linha selada ou valor de referência
+      declarado; onde não houver, não se desenha e não se escreve a ausência por
+      palavras. */}
+  <ReguaDoCartao id={c.id} lang={lang} s={s} />
+</article>

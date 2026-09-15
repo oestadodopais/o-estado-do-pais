@@ -140,3 +140,54 @@ export function eventosOrdenados(calendario = calendarioCruzado()) {
 export function ancoraDoEvento(id) {
   return `ev-${id}`;
 }
+
+/**
+ * ===========================================================================
+ * A PRÓXIMA CONFERÊNCIA DE UMA LINHA (bloco P2, item 2, 15.09.2026)
+ * ===========================================================================
+ * A norma, §2.5: «Duas datas, não uma. Quando os dados foram lidos e quando a
+ * página vai ser vista de novo ("Data extracted: November 2025" e "Planned
+ * article update: December 2026", Eurostat; "Release date" e "Next release",
+ * ONS). Este projeto já tem o calendário e a reconferência; a segunda data
+ * mostra-se na página da medida, não no cartão.»
+ *
+ * O calendário das fontes já existe (`src/data/calendario.json`, exportado pelo
+ * motor) e já diz, por acontecimento, que linhas ele afeta. O que faltava era a
+ * pergunta ao contrário: dada uma linha, quando é a próxima vez que a sua fonte
+ * publica.
+ *
+ * ---------------------------------------------------------------------------
+ * SÓ UMA DATA ANUNCIADA, E NUNCA UMA JANELA NEM UM MARCADOR
+ * ---------------------------------------------------------------------------
+ * Dos dezasseis acontecimentos do calendário, seis trazem uma data anunciada
+ * pela fonte, dois trazem uma JANELA («entre 1 e 31 de dezembro de 2026») e oito
+ * não trazem nada, porque a fonte não publica calendário. Uma janela não é uma
+ * data: escrever «Próxima conferência: 01.12.2026» por cima de uma janela seria
+ * a casa a escolher uma ponta e a apresentá-la como o que a fonte anunciou. E o
+ * marcador `[a verificar]` diz que o campo falta, não que a conferência é nesse
+ * dia.
+ *
+ * Por isso esta função devolve `null` em tudo o que não seja uma data anunciada,
+ * e a página não escreve a ausência: a linha simplesmente não tem a segunda
+ * data, como não tem `published_at` quando o publicador não carimba nada.
+ *
+ * A MAIS PRÓXIMA, quando houver mais do que uma: duas fontes podem publicar a
+ * mesma linha, e «a próxima» é a primeira que chega.
+ *
+ * @param {string} id  o identificador da linha
+ * @param {RegistoDoCalendario | null} [calendario]
+ * @returns {{ data: string, evento: string, fonte: string|null } | null}
+ */
+export function proximaConferenciaDaLinha(id, calendario = calendarioCruzado()) {
+  /** @type {{ data: string, evento: string, fonte: string|null } | null} */
+  let melhor = null;
+  for (const e of calendario?.eventos ?? []) {
+    if (typeof e?.data !== 'string' || e.data === '') continue;
+    const linhas = Array.isArray(e.afecta_linhas) ? e.afecta_linhas : [];
+    if (!linhas.includes(id)) continue;
+    if (melhor === null || e.data < melhor.data) {
+      melhor = { data: e.data, evento: String(e.id), fonte: typeof e.fonte === 'string' ? e.fonte : null };
+    }
+  }
+  return melhor;
+}

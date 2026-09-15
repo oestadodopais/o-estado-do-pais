@@ -37,6 +37,19 @@
 /* A mesma fila de nomes do índice das 29 unidades, com a altura de alvo da casa
    em cada linha. Uma coluna a mais do que ali porque cada linha leva também a
    contagem das peças, e dois nomes longos lado a lado apertavam-na. */
+/* A FRASE DA ORGÂNICA, no índice das áreas (bloco P2, item 3, 15.09.2026).
+   Compõe-se como a linha da hierarquia que está por cima dela, porque é a mesma
+   espécie de coisa: uma frase que diz o que esta família de páginas é, dita uma
+   vez. O diploma ao lado é uma porta e herda a forma das ligações externas. */
+.areas-organica {
+  margin: 4px 0 0;
+  max-width: 62ch;
+  font-family: var(--f-prosa);
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
 .areas-lista {
   list-style: none;
   margin: clamp(22px, 3vw, 30px) 0 0;

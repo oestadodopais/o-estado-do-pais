@@ -120,14 +120,63 @@ function pastasDe(rotaDoIndice) {
     .sort();
 }
 
+/**
+ * AS LINHAS QUE SÃO A RÉGUA DE OUTRA, LIDAS POR ESTA RÉGUA E PELA SUA CONTA
+ * (bloco P2, 15.09.2026).
+ *
+ * O período anterior de uma medida é a MESMA MEDIDA um período antes, e rende-se
+ * dentro do cartão dela. Sem esta exclusão, a página da habitação passava de três
+ * cartões a seis e o mesmo valor ficava selado duas vezes na mesma página.
+ *
+ * ESTA RÉGUA NÃO CHAMA `src/lib/enquadramento.mjs`, e é a razão de ela existir: a
+ * A6 reconta de três pontos de observação, e um deles que fosse buscar a conta à
+ * mesma função que constrói a página confirmava a função e não o sítio. O que as
+ * duas partilham é a DECLARAÇÃO, que é `src/data/enquadramento/referencias.json`,
+ * exportada pelo motor; o código que a lê é outro.
+ *
+ * O AGREGADO DA UNIÃO não passa por aqui: está declarado em `SEM_AREA`, e é a
+ * A7 que o confere.
+ *
+ * @param {Map<string, any>} claims
+ * @returns {Set<string>}
+ */
+function periodosAnterioresDoEnquadramento(claims) {
+  const f = path.join(RAIZ, 'src', 'data', 'enquadramento', 'referencias.json');
+  if (!fs.existsSync(f)) return new Set();
+  const j = JSON.parse(fs.readFileSync(f, 'utf8'));
+  const fora = new Set();
+  for (const i of j.indicadores ?? []) {
+    const id = i?.id_da_linha;
+    if (typeof id !== 'string') continue;
+    const m = /^(.*)-(\d{4})$/.exec(id);
+    if (!m) continue;
+    const raiz = m[1];
+    const ano = Number(m[2]);
+    let melhor = null;
+    let melhorAno = -Infinity;
+    for (const outro of claims.keys()) {
+      const o = /^(.*)-(\d{4})$/.exec(outro);
+      if (!o || o[1] !== raiz) continue;
+      const n = Number(o[2]);
+      if (n >= ano || n <= melhorAno) continue;
+      melhor = outro;
+      melhorAno = n;
+    }
+    if (melhor) fora.add(melhor);
+  }
+  return fora;
+}
+
 /** As peças de uma área, pela regra desta régua. */
 function pecasDaArea(area, claims) {
   const trabalhos = new Map();
   const conjuntos = new Map();
   const medidas = [];
+  const deEnquadramento = periodosAnterioresDoEnquadramento(claims);
   for (const [id, c] of claims) {
     const m = materiaDaLinha(area, id, c);
     if (!m) continue;
+    if (deEnquadramento.has(id)) continue;
     if (ESTUDOS_DE_DADOS.has(c.study)) {
       const p = conjuntos.get(c.study) ?? { id: c.study, materias: new Set(), linhas: [] };
       p.materias.add(m.materia);

@@ -60,6 +60,9 @@
 import { FIGURAS } from '../data/figuras.mjs';
 import { MEDIDAS_DO_DOMINIO_1 } from '../data/dominios.mjs';
 import { POR_VERIFICAR, documentoDaLinha } from './ledger.mjs';
+/* O NOME OFICIAL VEM DE ONDE ELE É LIDO, que é o ficheiro do motor. Não fecha
+   ciclo: `enquadramento.mjs` importa o livro-razão e o marcador, e não os nomes. */
+import { nomeOficial } from './enquadramento.mjs';
 
 /**
  * O nome de uma medida, com a origem dele.
@@ -68,7 +71,7 @@ import { POR_VERIFICAR, documentoDaLinha } from './ledger.mjs';
  * do livro-razão que sustenta um `data-linha-campo`. Exactamente um dos dois é
  * não nulo: um nome ou é prosa declarada da casa, ou é a transcrição de um campo.
  *
- * @typedef {{ texto: string, fonte: 'figuras'|'medidas'|null, campo: 'name'|'document.title'|null }} NomeDaMedida
+ * @typedef {{ texto: string, fonte: 'figuras'|'medidas'|'oficial'|null, campo: 'name'|'document.title'|null }} NomeDaMedida
  */
 
 /**
@@ -138,11 +141,82 @@ export function eNomeDeMedida(x) {
   if (typeof x !== 'object' || x === null || Array.isArray(x)) return false;
   const o = /** @type {Record<string, unknown>} */ (x);
   if (typeof o.texto !== 'string' || o.texto === '') return false;
-  const fonteOk = o.fonte === null || o.fonte === 'figuras' || o.fonte === 'medidas';
+  const fonteOk =
+    o.fonte === null || o.fonte === 'figuras' || o.fonte === 'medidas' || o.fonte === 'oficial';
   const campoOk = o.campo === null || o.campo === 'name' || o.campo === 'document.title';
   if (!fonteOk || !campoOk) return false;
   /* Um e só um dos dois: a marca do markup sai daqui. */
   return (o.fonte === null) !== (o.campo === null);
+}
+
+/**
+ * ===========================================================================
+ * O NOME NO CARTÃO: A ESCADA COM QUATRO DEGRAUS E SEM FUNDO (bloco P2, item 4)
+ * ===========================================================================
+ * O diretor, a 15.09.2026, na página da área da habitação: «Residential building
+ * permits - annual data» entre linhas em português, «we should have it all in
+ * Portuguese, unless it's something that has a name in English». A primeira
+ * redação deste bloco leu isso como «o cartão não escreve um nome noutra língua»,
+ * e recusou o degrau cujo texto estivesse declarado noutra língua que não a da
+ * página. O resultado mediu-se e foi pior do que o defeito: **44 cartões
+ * portugueses e 90 ingleses ficaram sem nome nenhum**, com o leitor a ver um
+ * número e uma unidade e mais nada.
+ *
+ * **A decisão do lugar de direção, de 15.09.2026 à noite, sobre as capturas:**
+ * nenhum cartão fica sem nome. É a norma §1.5 lida inteira, e não em metade: os
+ * três nomes de uma medida são o oficial, o do projeto e o da fonte, e **o da
+ * fonte existe sempre**. Enquanto a medida não tiver um nome melhor, é o da fonte
+ * que a nomeia, na língua dela e com a marca `lang`, que é exactamente o que a
+ * I91 manda fazer com um nome estrangeiro dentro de uma página portuguesa.
+ *
+ * ---------------------------------------------------------------------------
+ * OS QUATRO DEGRAUS, POR ORDEM
+ * ---------------------------------------------------------------------------
+ *   1 · **o nome do projeto** (`figuras.mjs`, `dominios.mjs`), que a casa escreve
+ *       nas duas edições. É o degrau que a norma §1.5 põe no cartão;
+ *   2 · **o nome oficial confirmado** (`src/data/enquadramento/nomes.json`, e só
+ *       o que o motor marca `exata`), o do INE primeiro e o da PORDATA a seguir,
+ *       que é a ordem da norma. Está em português e leva `lang="pt-PT"` numa
+ *       página inglesa. **Só morde onde não há nome do projeto**: são cinco
+ *       medidas na edição portuguesa, e nenhuma delas tinha nome nenhum antes;
+ *   3 · **o rótulo da fonte** (`name`), na língua dela;
+ *   4 · **o título do documento** (`document.title`), na língua dela.
+ *
+ * NÃO SE TRADUZ NADA, em degrau nenhum: o que muda é qual dos textos que já
+ * existem encabeça o cartão, e cada um leva a marca da língua em que está.
+ *
+ * O QUE ESTA ESCADA CONTINUA A NÃO FAZER: inventar. Vinte e quatro medidas por
+ * edição não têm nome em degrau nenhum, e continuam sem: são as linhas DERIVADAS,
+ * que não têm fonte nem documento porque a proveniência delas é a das origens, e
+ * as quatro cujo único título de documento é o próprio marcador. Para essas não
+ * há nome da fonte para mostrar, e o bloco P3 tem de lhes dar um nome do projeto
+ * ou deixá-las sem ele: a lista está no relatório do bloco.
+ *
+ * @param {Linha} claim
+ * @param {Lingua} lang
+ * @returns {NomeDaMedida|null}
+ */
+export function nomeDoCartao(claim, lang) {
+  const cartao = CARTOES.get(claim.id);
+  if (cartao) {
+    /* O NOME DO PROJETO ESTÁ SEMPRE NA LÍNGUA DA PÁGINA, porque é a casa que o
+       escreve nas duas edições. */
+    const texto = cartao.nome[lang] ?? cartao.nome.pt;
+    if (eTextoUtil(texto)) return { texto, fonte: cartao.fonte, campo: null };
+  }
+  /* O NOME OFICIAL CONFIRMADO, se o motor o exportou para esta linha. O do INE
+     primeiro, que é a ordem da norma §1.5. É prosa de fora e não um campo do
+     livro-razão, e por isso leva a marca do ficheiro que o publica, como um nome
+     de cartão leva a do ficheiro da casa. */
+  const oficial = nomeOficial(claim.id);
+  const doOficial = oficial?.ine ?? oficial?.pordata ?? null;
+  if (doOficial && eTextoUtil(doOficial.nome)) {
+    return { texto: doOficial.nome, fonte: 'oficial', campo: null };
+  }
+  if (eTextoUtil(claim.name)) return { texto: claim.name, fonte: null, campo: 'name' };
+  const titulo = documentoDaLinha(claim)?.title;
+  if (eTextoUtil(titulo)) return { texto: titulo, fonte: null, campo: 'document.title' };
+  return null;
 }
 
 /**

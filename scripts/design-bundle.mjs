@@ -111,8 +111,30 @@ const TIPOS_ORIGEM = path.join(RAIZ, 'public', 'tipos');
  * 22.08.2026) com 111 KiB de folga. A corrida imprime o tamanho de cada cartão,
  * que é o número que interessa. Os ficheiros de letra não contam para aqui:
  * ficam ao lado dos cartões, escritos uma vez.
+ *
+ * ---------------------------------------------------------------------------
+ * SOBE DE 512 PARA 768 KiB A 15.09.2026, E A RAZÃO É O LIVRO-RAZÃO A CRESCER
+ * ---------------------------------------------------------------------------
+ * O cartão do índice do livro-razão é um retrato de `livro-razao/index.html`, e
+ * essa página tem **uma fila por linha do livro-razão**. O bloco P2 trouxe 59
+ * linhas novas (o período anterior e o agregado da União de 32 medidas), o índice
+ * passou de 2 916 filas para 2 975, e o cartão passou de debaixo do tecto para
+ * 542,1 KiB.
+ *
+ * **Não é o sítio a engordar: é o livro-razão a crescer**, que é o que ele existe
+ * para fazer, e o tecto media uma coisa que cresce com ele. Medido nesta corrida:
+ * o maior cartão é o do índice, com 542,1 KiB; os dois seguintes são a primeira
+ * página, com 483,0 e 482,9. O tecto novo, 768 KiB, dá ao maior 226 KiB de folga,
+ * que são mais de dois mil e quinhentas filas de índice ao ritmo a que ele
+ * cresceu hoje. **O que ele continua a proibir é um cartão que ninguém abre**, que
+ * é a razão pela qual o tecto existe.
+ *
+ * O dia em que este número voltar a bater é o dia de decidir outra coisa: um
+ * retrato do índice inteiro deixa de ser um espécime de desenho quando a página
+ * que ele retrata tem dez mil filas, e o cartão passa a ser um recorte dela. Fica
+ * escrito para que essa decisão não seja uma surpresa.
  */
-const LIMITE_BYTES = 512 * 1024;
+const LIMITE_BYTES = 768 * 1024;
 
 /**
  * O domínio na forma legível, não em punycode.

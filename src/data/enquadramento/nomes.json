@@ -1,0 +1,664 @@
+{
+ "escrito_em": "2026-09-15T18:28:24+00:00",
+ "como_se_leu": {
+  "regra": "O nome é o que a página disse hoje. Nenhum nome foi escrito de cabeça; onde a página não abriu ou não trouxe a marca, fica [verify].",
+  "mapa_da_pordata": {
+   "endereco": "https://www.pordata.pt/PordataSitemap.aspx",
+   "lido_em": "2026-09-15T18:23:03+00:00",
+   "http": "200",
+   "enderecos": 6012,
+   "termo_de_controlo": {
+    "taxa de desemprego": 9
+   }
+  },
+  "busca_do_ine": {
+   "endereco": "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_pesquisa&frm_accao=PESQUISAR&frm_show_page_num=1&frm_modo_pesquisa=PESQUISA_SIMPLES&frm_modo_texto=MODO_TEXTO_ALL&frm_texto=taxa+de+emprego&xlang=pt",
+   "quando": "2026-09-15T18:23:05+00:00",
+   "http": "200",
+   "problema": null
+  }
+ },
+ "com_nome_do_ine": 11,
+ "exatos": 17,
+ "proximos": 8,
+ "confirmados": 25,
+ "a_verificar": 7,
+ "indicadores": [
+  {
+   "codigo": "tipsbp10",
+   "id_da_linha": "saldo-da-balanca-corrente-2025",
+   "nome_fonte": "Current account balance - 3 year average",
+   "nome_ine": "[verify]",
+   "nome_pordata": {
+    "nome": "Balança corrente: saldos em % do PIB",
+    "endereco": "https://www.pordata.pt/europa/balanca+corrente+saldos+em+percentagem+do+pib-2665",
+    "lido_em": "2026-09-15T18:23:10+00:00",
+    "fontes_entidades": "Fontes/Entidades: PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-01-05"
+   },
+   "correspondencia": "proxima",
+   "nota": "INE: a busca por «balanca corrente» devolveu 0 indicador(es) e nenhum traz «balanca corrente» · A PORDATA publica o saldo da balança corrente em percentagem do PIB; a medida do painel é a média móvel de três anos."
+  },
+  {
+   "codigo": "tipsii10",
+   "id_da_linha": "posicao-de-investimento-internacional-2025",
+   "nome_fonte": "Net international investment position - annual data",
+   "nome_ine": "[verify]",
+   "nome_pordata": {
+    "nome": "Posição de investimento internacional em % do PIB",
+    "endereco": "https://www.pordata.pt/europa/posicao+de+investimento+internacional+em+percentagem+do+pib-2674",
+    "lido_em": "2026-09-15T18:23:13+00:00",
+    "fontes_entidades": "Fontes/Entidades: Eurostat | BCE | Entidades Nacionais, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-04-14"
+   },
+   "correspondencia": "exata",
+   "nota": "INE: a busca por «posicao de investimento internacional» devolveu 0 indicador(es) e nenhum traz «investimento internacional»"
+  },
+  {
+   "codigo": "tipser10",
+   "id_da_linha": "taxa-de-cambio-efectiva-real-2025",
+   "nome_fonte": "Real effective exchange rate - percentage changes, 42 trading partners",
+   "nome_ine": "[verify]",
+   "nome_pordata": "[verify]",
+   "correspondencia": null,
+   "nota": "INE: a busca por «taxa de cambio efetiva real» devolveu 0 indicador(es) e nenhum traz «taxa de cambio» · PORDATA: nenhuma página do mapa do sítio nomeia esta medida («cambio»: 0)",
+   "procura_no_mapa": {
+    "endereco": "https://www.pordata.pt/PordataSitemap.aspx",
+    "lido_em": "2026-09-15T18:23:03+00:00",
+    "enderecos_no_mapa": 6012,
+    "termos": {
+     "cambio": 0
+    },
+    "termo_de_controlo": {
+     "taxa de desemprego": 9
+    }
+   }
+  },
+  {
+   "codigo": "tipsbp60",
+   "id_da_linha": "desempenho-das-exportacoes-2025",
+   "nome_fonte": "Share of exports of advanced economies",
+   "nome_ine": "[verify]",
+   "nome_pordata": "[verify]",
+   "correspondencia": null,
+   "nota": "INE: a busca por «desempenho das exportacoes» não respondeu em 20 s · PORDATA: nenhuma página do mapa do sítio nomeia esta medida («desempenho das exportacoes»: 0)",
+   "procura_no_mapa": {
+    "endereco": "https://www.pordata.pt/PordataSitemap.aspx",
+    "lido_em": "2026-09-15T18:23:03+00:00",
+    "enderecos_no_mapa": 6012,
+    "termos": {
+     "desempenho das exportacoes": 0
+    },
+    "termo_de_controlo": {
+     "taxa de desemprego": 9
+    }
+   }
+  },
+  {
+   "codigo": "tipslm10",
+   "id_da_linha": "custo-unitario-do-trabalho-2025",
+   "nome_fonte": "Nominal unit labour cost per hour worked",
+   "nome_ine": {
+    "nome": "Índice de custo do trabalho (Taxa de variação homóloga - ajustado de dias úteis - Base 2020 - %) por Atividade económica (CAE Rev. 3) e Componentes do índice; Trimestral",
+    "endereco": "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_indicadores&contecto=pi&indOcorrCod=0011799&selTab=tab0&xlang=pt",
+    "lido_em": "2026-09-15T18:23:38+00:00",
+    "lido_onde": "lista de resultados da busca do portal",
+    "busca": {
+     "termo": "indice de custo do trabalho",
+     "marca": "custo do trabalho",
+     "resultados": 20
+    },
+    "aviso": "Nome lido hoje na lista de resultados da busca do portal, pelo primeiro resultado que traz a marca. A marca prova o tema, não prova que seja a mesma medida do painel europeu: isso é uma conferência que fica por fazer."
+   },
+   "nome_pordata": "[verify]",
+   "correspondencia": null,
+   "nota": "PORDATA: nenhuma página do mapa do sítio nomeia esta medida («custo unitario»: 0, «custo do trabalho»: 0, «custos do trabalho»: 0)",
+   "procura_no_mapa": {
+    "endereco": "https://www.pordata.pt/PordataSitemap.aspx",
+    "lido_em": "2026-09-15T18:23:03+00:00",
+    "enderecos_no_mapa": 6012,
+    "termos": {
+     "custo unitario": 0,
+     "custo do trabalho": 0,
+     "custos do trabalho": 0
+    },
+    "termo_de_controlo": {
+     "taxa de desemprego": 9
+    }
+   }
+  },
+  {
+   "codigo": "tipsgo10",
+   "id_da_linha": "divida-publica-2025",
+   "nome_fonte": "General government gross debt (EDP concept), consolidated - annual data",
+   "nome_ine": "[verify]",
+   "nome_pordata": {
+    "nome": "Administrações Públicas: dívida bruta em % do PIB",
+    "endereco": "https://www.pordata.pt/europa/administracoes+publicas+divida+bruta+em+percentagem+do+pib-1763",
+    "lido_em": "2026-09-15T18:24:04+00:00",
+    "fontes_entidades": "Fontes/Entidades: Eurostat | Entidades Nacionais, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-04-23"
+   },
+   "correspondencia": "exata",
+   "nota": "INE: a busca por «divida das administracoes publicas» não respondeu em 20 s"
+  },
+  {
+   "codigo": "tipspd22",
+   "id_da_linha": "divida-das-familias-2025",
+   "nome_fonte": "Household debt including non-profit institutions serving households, consolidated",
+   "nome_ine": "[verify]",
+   "nome_pordata": "[verify]",
+   "correspondencia": null,
+   "nota": "INE: a busca por «divida das familias» não respondeu em 20 s · PORDATA: nenhuma página do mapa do sítio nomeia esta medida («divida das familias»: 0, «endividamento das familias»: 0, «divida dos particulares»: 0)",
+   "procura_no_mapa": {
+    "endereco": "https://www.pordata.pt/PordataSitemap.aspx",
+    "lido_em": "2026-09-15T18:23:03+00:00",
+    "enderecos_no_mapa": 6012,
+    "termos": {
+     "divida das familias": 0,
+     "endividamento das familias": 0,
+     "divida dos particulares": 0
+    },
+    "termo_de_controlo": {
+     "taxa de desemprego": 9
+    }
+   }
+  },
+  {
+   "codigo": "tipspd30",
+   "id_da_linha": "divida-das-empresas-2025",
+   "nome_fonte": "Non-financial corporations debt, consolidated - % of GDP",
+   "nome_ine": "[verify]",
+   "nome_pordata": {
+    "nome": "Endividamento das sociedades não financeiras privadas: total e por dimensão",
+    "endereco": "https://www.pordata.pt/portugal/endividamento+das+sociedades+nao+financeiras+privadas+total+e+por+dimensao-2924",
+    "lido_em": "2026-09-15T18:24:27+00:00",
+    "fontes_entidades": "Fontes/Entidades: BdP, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-02-23"
+   },
+   "correspondencia": "proxima",
+   "nota": "INE: a busca por «divida das sociedades nao financeiras» devolveu 0 indicador(es) e nenhum traz «sociedades nao financeiras» · A página é do endividamento das sociedades não financeiras PRIVADAS por dimensão; a medida do painel é a dívida consolidada de todas as sociedades não financeiras."
+  },
+  {
+   "codigo": "tipspc40",
+   "id_da_linha": "fluxo-de-credito-as-familias-2025",
+   "nome_fonte": "Household including non-profit institutions serving households (NPISH) credit flow, consolidated",
+   "nome_ine": "[verify]",
+   "nome_pordata": {
+    "nome": "Montantes de empréstimos concedidos no ano a particulares: total e por tipo de finalidade",
+    "endereco": "https://www.pordata.pt/portugal/montantes+de+emprestimos+concedidos+no+ano+a+particulares+total+e+por+tipo+de+finalidade-2844",
+    "lido_em": "2026-09-15T18:24:48+00:00",
+    "fontes_entidades": "Fontes/Entidades: BdP, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-02-16"
+   },
+   "correspondencia": "proxima",
+   "nota": "INE: a busca por «emprestimos a particulares» não respondeu em 20 s · A página é dos montantes de empréstimos concedidos, em euros; a medida do painel é o fluxo de crédito em percentagem do stock de dívida do período anterior."
+  },
+  {
+   "codigo": "tipspc30",
+   "id_da_linha": "fluxo-de-credito-as-empresas-2025",
+   "nome_fonte": "Non-financial corporations excluding foreign direct investments credit flow, consolidated",
+   "nome_ine": "[verify]",
+   "nome_pordata": {
+    "nome": "Montantes de empréstimos concedidos no ano a empresas: total e por escalão de crédito",
+    "endereco": "https://www.pordata.pt/portugal/montantes+de+emprestimos+concedidos+no+ano+a+empresas+total+e+por+escalao+de+credito-2846",
+    "lido_em": "2026-09-15T18:25:09+00:00",
+    "fontes_entidades": "Fontes/Entidades: BdP, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-02-16"
+   },
+   "correspondencia": "proxima",
+   "nota": "INE: a busca por «emprestimos a sociedades nao financeiras» não respondeu em 20 s · A página é dos montantes de empréstimos concedidos, em euros; a medida do painel é o fluxo de crédito em percentagem do stock de dívida do período anterior."
+  },
+  {
+   "codigo": "tipsho20",
+   "id_da_linha": "precos-da-habitacao-2025",
+   "nome_fonte": "House price index, nominal - annual data",
+   "nome_ine": "[verify]",
+   "nome_pordata": "[verify]",
+   "correspondencia": null,
+   "nota": "INE: a busca por «indice de precos da habitacao» não respondeu em 20 s · PORDATA: nenhuma página do mapa do sítio nomeia esta medida («indice de precos da habitacao»: 0, «precos da habitacao»: 0, «preco das casas»: 0)",
+   "procura_no_mapa": {
+    "endereco": "https://www.pordata.pt/PordataSitemap.aspx",
+    "lido_em": "2026-09-15T18:23:03+00:00",
+    "enderecos_no_mapa": 6012,
+    "termos": {
+     "indice de precos da habitacao": 0,
+     "precos da habitacao": 0,
+     "preco das casas": 0
+    },
+    "termo_de_controlo": {
+     "taxa de desemprego": 9
+    }
+   }
+  },
+  {
+   "codigo": "tipsun20",
+   "id_da_linha": "taxa-de-desemprego-mip-2025",
+   "nome_fonte": "Unemployment rate - annual data",
+   "nome_ine": {
+    "nome": "Taxa de desemprego (Série 2021 - %) por Local de residência (NUTS - 2024) e Sexo; Trimestral - INE, Inquérito ao emprego (Série - 2021)",
+    "endereco": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0012136&lang=PT",
+    "lido_em": "2026-09-15T18:25:32+00:00",
+    "unidade": "Percentagem (%)",
+    "ultimo_periodo": "2.º Trimestre de 2026"
+   },
+   "nome_pordata": {
+    "nome": "Taxa de desemprego, dos 15 aos 74 anos: total e por sexo",
+    "endereco": "https://www.pordata.pt/europa/taxa+de+desemprego++dos+15+aos+74+anos+total+e+por+sexo-1775",
+    "lido_em": "2026-09-15T18:25:33+00:00",
+    "fontes_entidades": "Fontes/Entidades: Eurostat | Institutos Nacionais de Estatística, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-04-17"
+   },
+   "correspondencia": "exata",
+   "nota": null
+  },
+  {
+   "codigo": "tipslm60",
+   "id_da_linha": "taxa-de-actividade-2025",
+   "nome_fonte": "Labour force participation rate",
+   "nome_ine": "[verify]",
+   "nome_pordata": {
+    "nome": "Taxa de atividade: total e por sexo",
+    "endereco": "https://www.pordata.pt/europa/taxa+de+atividade+total+e+por+sexo-1754",
+    "lido_em": "2026-09-15T18:25:37+00:00",
+    "fontes_entidades": "Fontes/Entidades: Eurostat | Institutos Nacionais de Estatística, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-04-17"
+   },
+   "correspondencia": "proxima",
+   "nota": "INE: a busca por «taxa de atividade» devolveu 20 indicador(es) e nenhum traz «taxa de atividade» · A página é da taxa de atividade em nível; a medida do painel é a variação dela em três anos, em pontos percentuais."
+  },
+  {
+   "codigo": "tipsst10",
+   "id_da_linha": "despesa-em-id-2024",
+   "nome_fonte": "Gross domestic expenditure on research and development (R&D)",
+   "nome_ine": {
+    "nome": "Proporção da despesa em investigação e desenvolvimento (I&D) no PIB (Base 2021 - %) por Localização geográfica (NUTS - 2024) e Setor de execução; Anual",
+    "endereco": "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_indicadores&contecto=pi&indOcorrCod=0014403&selTab=tab0&xlang=pt",
+    "lido_em": "2026-09-15T18:25:38+00:00",
+    "lido_onde": "lista de resultados da busca do portal",
+    "busca": {
+     "termo": "despesa em investigacao e desenvolvimento",
+     "marca": "investigacao e desenvolvimento",
+     "resultados": 20
+    },
+    "aviso": "Nome lido hoje na lista de resultados da busca do portal, pelo primeiro resultado que traz a marca. A marca prova o tema, não prova que seja a mesma medida do painel europeu: isso é uma conferência que fica por fazer."
+   },
+   "nome_pordata": {
+    "nome": "Despesas em atividades de investigação e desenvolvimento (I&D) em % do PIB",
+    "endereco": "https://www.pordata.pt/portugal/despesas+em+atividades+de+investigacao+e+desenvolvimento+(i+d)+em+percentagem+do+pib-779",
+    "lido_em": "2026-09-15T18:25:43+00:00",
+    "fontes_entidades": "Fontes/Entidades: INE, DGEEC/MECI, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-09-02"
+   },
+   "correspondencia": "exata",
+   "nota": null
+  },
+  {
+   "codigo": "tipslc10",
+   "id_da_linha": "risco-de-pobreza-ou-exclusao-2025",
+   "nome_fonte": "People at risk of poverty or social exclusion",
+   "nome_ine": {
+    "nome": "Proporção da população residente em risco de pobreza ou exclusão social (Europa 2020) (%) por Local de residência (NUTS - 2013); Anual",
+    "endereco": "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_indicadores&contecto=pi&indOcorrCod=0009823&selTab=tab0&xlang=pt",
+    "lido_em": "2026-09-15T18:25:44+00:00",
+    "lido_onde": "lista de resultados da busca do portal",
+    "busca": {
+     "termo": "taxa de risco de pobreza ou exclusao social",
+     "marca": "risco de pobreza ou exclusao social",
+     "resultados": 2
+    },
+    "aviso": "Nome lido hoje na lista de resultados da busca do portal, pelo primeiro resultado que traz a marca. A marca prova o tema, não prova que seja a mesma medida do painel europeu: isso é uma conferência que fica por fazer."
+   },
+   "nome_pordata": {
+    "nome": "População em risco de pobreza ou exclusão social: total e por sexo (%)",
+    "endereco": "https://www.pordata.pt/europa/populacao+em+risco+de+pobreza+ou+exclusao+social+total+e+por+sexo+(percentagem)-2330",
+    "lido_em": "2026-09-15T18:25:45+00:00",
+    "fontes_entidades": "Fontes/Entidades: Eurostat | Entidades Nacionais, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-03-26"
+   },
+   "correspondencia": "exata",
+   "nota": null
+  },
+  {
+   "codigo": "tipslm90",
+   "id_da_linha": "jovens-nem-2025",
+   "nome_fonte": "Young persons (aged 15-24) neither in employment nor in education and training - % of total population in private households in the same age group",
+   "nome_ine": "[verify]",
+   "nome_pordata": {
+    "nome": "Taxa de jovens não empregados que não estão em educação ou formação: total e por sexo",
+    "endereco": "https://www.pordata.pt/europa/taxa+de+jovens+nao+empregados+que+nao+estao+em+educacao+ou+formacao+total+e+por+sexo-3569",
+    "lido_em": "2026-09-15T18:26:06+00:00",
+    "fontes_entidades": "Fontes/Entidades: Eurostat | Institutos Nacionais de Estatística, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-03-13"
+   },
+   "correspondencia": "exata",
+   "nota": "INE: a busca por «jovens nao empregados que nao estao em educacao ou formacao» não respondeu em 20 s"
+  },
+  {
+   "codigo": "tipsna20",
+   "id_da_linha": "formacao-bruta-de-capital-fixo-2025",
+   "nome_fonte": "Gross fixed capital formation at current prices",
+   "nome_ine": {
+    "nome": "Indicador de formação bruta de capital fixo em construção - ajustado de efeitos de calendário e de sazonalidade (Taxa de variação homóloga - Base 2021 - %); Mensal",
+    "endereco": "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_indicadores&contecto=pi&indOcorrCod=0014323&selTab=tab0&xlang=pt",
+    "lido_em": "2026-09-15T18:26:08+00:00",
+    "lido_onde": "lista de resultados da busca do portal",
+    "busca": {
+     "termo": "formacao bruta de capital fixo",
+     "marca": "formacao bruta de capital fixo",
+     "resultados": 20
+    },
+    "aviso": "Nome lido hoje na lista de resultados da busca do portal, pelo primeiro resultado que traz a marca. A marca prova o tema, não prova que seja a mesma medida do painel europeu: isso é uma conferência que fica por fazer."
+   },
+   "nome_pordata": {
+    "nome": "Investimento: Formação bruta de capital fixo em % do PIB",
+    "endereco": "https://www.pordata.pt/europa/investimento+formacao+bruta+de+capital+fixo+em+percentagem+do+pib-3568",
+    "lido_em": "2026-09-15T18:26:10+00:00",
+    "fontes_entidades": "Fontes/Entidades: Eurostat | Institutos Nacionais de Estatística, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-01-14"
+   },
+   "correspondencia": "exata",
+   "nota": null
+  },
+  {
+   "codigo": "tipsna40",
+   "id_da_linha": "pib-real-per-capita-2025",
+   "nome_fonte": "Real GDP per capita",
+   "nome_ine": "[verify]",
+   "nome_pordata": {
+    "nome": "PIB per capita",
+    "endereco": "https://www.pordata.pt/portugal/pib+per+capita-2297",
+    "lido_em": "2026-09-15T18:26:13+00:00",
+    "fontes_entidades": "Fontes/Entidades: INE, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-03-26"
+   },
+   "correspondencia": "proxima",
+   "nota": "INE: a busca por «pib per capita» devolveu 0 indicador(es) e nenhum traz «per capita» · A medida do painel é o PIB real per capita em volumes encadeados de 2015, euros por habitante."
+  },
+  {
+   "codigo": "tipsbd10",
+   "id_da_linha": "credito-malparado-2025",
+   "nome_fonte": "Gross non-performing loans, domestic and foreign entities - % of gross loans",
+   "nome_ine": "[verify]",
+   "nome_pordata": {
+    "nome": "Crédito malparado: empresas devedoras e montantes (%)",
+    "endereco": "https://www.pordata.pt/portugal/credito+malparado+empresas+devedoras+e+montantes+(percentagem)-2954",
+    "lido_em": "2026-09-15T18:26:15+00:00",
+    "fontes_entidades": "Fontes/Entidades: BdP, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-02-03"
+   },
+   "correspondencia": "proxima",
+   "nota": "INE: a busca por «credito malparado» devolveu 0 indicador(es) e nenhum traz «malparado» · A página conta devedores e montantes das empresas; a medida do painel é o crédito malparado bruto em percentagem do crédito bruto. O que se confirma aqui é o termo que a PORDATA usa, «crédito malparado», e não a medida."
+  },
+  {
+   "codigo": "tipsho50",
+   "id_da_linha": "licencas-de-construcao-2025",
+   "nome_fonte": "Residential building permits - annual data",
+   "nome_ine": {
+    "nome": "Edifícios licenciados (N.º) por Localização geográfica (NUTS - 2024), Tipo de obra e Destino da obra; Mensal",
+    "endereco": "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_indicadores&contecto=pi&indOcorrCod=0012096&selTab=tab0&xlang=pt",
+    "lido_em": "2026-09-15T18:26:16+00:00",
+    "lido_onde": "lista de resultados da busca do portal",
+    "busca": {
+     "termo": "edificios licenciados",
+     "marca": "licenciados",
+     "resultados": 19
+    },
+    "aviso": "Nome lido hoje na lista de resultados da busca do portal, pelo primeiro resultado que traz a marca. A marca prova o tema, não prova que seja a mesma medida do painel europeu: isso é uma conferência que fica por fazer."
+   },
+   "nome_pordata": {
+    "nome": "Edifícios licenciados para habitação familiar: total e por tipo de obra",
+    "endereco": "https://www.pordata.pt/municipios/edificios+licenciados+para+habitacao+familiar+total+e+por+tipo+de+obra-107",
+    "lido_em": "2026-09-15T18:26:18+00:00",
+    "fontes_entidades": "Fontes/Entidades: INE, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-07-17"
+   },
+   "correspondencia": "proxima",
+   "nota": "A página conta edifícios licenciados; a medida do painel é a área de construção licenciada, em m² por 1000 habitantes."
+  },
+  {
+   "codigo": "edat_lfse_14",
+   "id_da_linha": "abandono-escolar-precoce-2025",
+   "nome_fonte": "Early leavers from education and training by labour status",
+   "nome_ine": {
+    "nome": "Taxa de abandono precoce de educação e formação (Série 2021 - %) por Local de residência (NUTS - 2024) e Sexo; Anual",
+    "endereco": "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_indicadores&contecto=pi&indOcorrCod=0012182&selTab=tab0&xlang=pt",
+    "lido_em": "2026-09-15T18:26:19+00:00",
+    "lido_onde": "lista de resultados da busca do portal",
+    "busca": {
+     "termo": "taxa de abandono precoce de educacao e formacao",
+     "marca": "abandono",
+     "resultados": 7
+    },
+    "aviso": "Nome lido hoje na lista de resultados da busca do portal, pelo primeiro resultado que traz a marca. A marca prova o tema, não prova que seja a mesma medida do painel europeu: isso é uma conferência que fica por fazer."
+   },
+   "nome_pordata": {
+    "nome": "Taxa de abandono escolar: total e por sexo",
+    "endereco": "https://www.pordata.pt/europa/taxa+de+abandono+escolar+total+e+por+sexo-1350",
+    "lido_em": "2026-09-15T18:26:21+00:00",
+    "fontes_entidades": "Fontes/Entidades: Eurostat | Institutos Nacionais de Estatística, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-04-19"
+   },
+   "correspondencia": "exata",
+   "nota": "A PORDATA dá dois nomes à mesma página: o título diz «abandono escolar» e o endereço diz «abandono precoce de educação e formação»."
+  },
+  {
+   "codigo": "lfsi_emp_a",
+   "id_da_linha": "taxa-de-emprego-2025",
+   "nome_fonte": "Employment and labour force by sex and age - annual data",
+   "nome_ine": {
+    "nome": "Taxa de emprego (Ajustada de sazonalidade - %) da população residente com idade entre 16 e 74 anos por Grupo etário; Mensal",
+    "endereco": "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_indicadores&contecto=pi&indOcorrCod=0007980&selTab=tab0&xlang=pt",
+    "lido_em": "2026-09-15T18:26:23+00:00",
+    "lido_onde": "lista de resultados da busca do portal",
+    "busca": {
+     "termo": "taxa de emprego",
+     "marca": "taxa de emprego",
+     "resultados": 19
+    },
+    "aviso": "Nome lido hoje na lista de resultados da busca do portal, pelo primeiro resultado que traz a marca. A marca prova o tema, não prova que seja a mesma medida do painel europeu: isso é uma conferência que fica por fazer."
+   },
+   "nome_pordata": {
+    "nome": "Taxa de emprego: total e por sexo",
+    "endereco": "https://www.pordata.pt/europa/taxa+de+emprego+total+e+por+sexo-1758",
+    "lido_em": "2026-09-15T18:26:25+00:00",
+    "fontes_entidades": "Fontes/Entidades: Eurostat | Institutos Nacionais de Estatística, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-04-17"
+   },
+   "correspondencia": "exata",
+   "nota": null
+  },
+  {
+   "codigo": "une_rt_a",
+   "id_da_linha": "taxa-de-desemprego-2025",
+   "nome_fonte": "Unemployment by sex and age - annual data",
+   "nome_ine": {
+    "nome": "Taxa de desemprego (Série 2021 - %) por Local de residência (NUTS - 2024) e Sexo; Trimestral - INE, Inquérito ao emprego (Série - 2021)",
+    "endereco": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0012136&lang=PT",
+    "lido_em": "2026-09-15T18:25:32+00:00",
+    "unidade": "Percentagem (%)",
+    "ultimo_periodo": "2.º Trimestre de 2026"
+   },
+   "nome_pordata": {
+    "nome": "Taxa de desemprego, dos 15 aos 74 anos: total e por sexo",
+    "endereco": "https://www.pordata.pt/europa/taxa+de+desemprego++dos+15+aos+74+anos+total+e+por+sexo-1775",
+    "lido_em": "2026-09-15T18:26:27+00:00",
+    "fontes_entidades": "Fontes/Entidades: Eurostat | Institutos Nacionais de Estatística, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-04-17"
+   },
+   "correspondencia": "exata",
+   "nota": null
+  },
+  {
+   "codigo": "tesem130",
+   "id_da_linha": "desemprego-de-longa-duracao-2025",
+   "nome_fonte": "Long-term unemployment rate by sex",
+   "nome_ine": "[verify]",
+   "nome_pordata": {
+    "nome": "Taxa de desemprego de longa duração: total e por sexo",
+    "endereco": "https://www.pordata.pt/europa/taxa+de+desemprego+de+longa+duracao+total+e+por+sexo-2264",
+    "lido_em": "2026-09-15T18:26:49+00:00",
+    "fontes_entidades": "Fontes/Entidades: Eurostat | Institutos Nacionais de Estatística, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-03-13"
+   },
+   "correspondencia": "exata",
+   "nota": "INE: a busca por «taxa de desemprego de longa duracao» não respondeu em 20 s"
+  },
+  {
+   "codigo": "tesem060",
+   "id_da_linha": "disparidade-de-emprego-entre-sexos-2025",
+   "nome_fonte": "Gender employment gap",
+   "nome_ine": "[verify]",
+   "nome_pordata": "[verify]",
+   "correspondencia": null,
+   "nota": "INE: a busca por «disparidade entre sexos no emprego» não respondeu em 20 s · PORDATA: nenhuma página do mapa do sítio nomeia esta medida («disparidade de emprego»: 0, «disparidade entre sexos no emprego»: 0, «diferenca entre sexos no emprego»: 0)",
+   "procura_no_mapa": {
+    "endereco": "https://www.pordata.pt/PordataSitemap.aspx",
+    "lido_em": "2026-09-15T18:23:03+00:00",
+    "enderecos_no_mapa": 6012,
+    "termos": {
+     "disparidade de emprego": 0,
+     "disparidade entre sexos no emprego": 0,
+     "diferenca entre sexos no emprego": 0
+    },
+    "termo_de_controlo": {
+     "taxa de desemprego": 9
+    }
+   }
+  },
+  {
+   "codigo": "tessi180",
+   "id_da_linha": "racio-s80-s20-2025",
+   "nome_fonte": "Income quintile share ratio (S80/S20) by sex",
+   "nome_ine": "[verify]",
+   "nome_pordata": {
+    "nome": "Desigualdade na distribuição do rendimento (S80/S20)",
+    "endereco": "https://www.pordata.pt/europa/desigualdade+na+distribuicao+do+rendimento+(s80+s20)-1540",
+    "lido_em": "2026-09-15T18:27:31+00:00",
+    "fontes_entidades": "Fontes/Entidades: Eurostat | Entidades Nacionais, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-03-26"
+   },
+   "correspondencia": "exata",
+   "nota": "INE: a busca por «coeficiente s80 s20» não respondeu em 20 s"
+  },
+  {
+   "codigo": "tespm140",
+   "id_da_linha": "sobrecarga-do-custo-da-habitacao-2025",
+   "nome_fonte": "Housing cost overburden rate",
+   "nome_ine": {
+    "nome": "Taxa de sobrecarga das despesas em habitação (%) por Local de residência (NUTS - 2024) e Tipologia de áreas urbanas; Anual",
+    "endereco": "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_indicadores&contecto=pi&indOcorrCod=0014472&selTab=tab0&xlang=pt",
+    "lido_em": "2026-09-15T18:27:32+00:00",
+    "lido_onde": "lista de resultados da busca do portal",
+    "busca": {
+     "termo": "taxa de sobrecarga das despesas em habitacao",
+     "marca": "sobrecarga",
+     "resultados": 3
+    },
+    "aviso": "Nome lido hoje na lista de resultados da busca do portal, pelo primeiro resultado que traz a marca. A marca prova o tema, não prova que seja a mesma medida do painel europeu: isso é uma conferência que fica por fazer."
+   },
+   "nome_pordata": {
+    "nome": "Taxa de sobrecarga das despesas em habitação: total e por tipo de ocupação do alojamento",
+    "endereco": "https://www.pordata.pt/europa/taxa+de+sobrecarga+das+despesas+em+habitacao+total+e+por+tipo+de+ocupacao+do+alojamento-3406",
+    "lido_em": "2026-09-15T18:27:34+00:00",
+    "fontes_entidades": "Fontes/Entidades: Eurostat | Entidades Nacionais, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-03-26"
+   },
+   "correspondencia": "exata",
+   "nota": null
+  },
+  {
+   "codigo": "tepsr_sp210",
+   "id_da_linha": "criancas-em-creche-2025",
+   "nome_fonte": "Children aged less than 3 years in formal childcare",
+   "nome_ine": "[verify]",
+   "nome_pordata": "[verify]",
+   "correspondencia": null,
+   "nota": "INE: a busca por «criancas em creche» devolveu 8 indicador(es) e nenhum traz «creche» · PORDATA: nenhuma página do mapa do sítio nomeia esta medida («creche»: 0, «acolhimento de criancas»: 0, «cuidados a criancas»: 0)",
+   "procura_no_mapa": {
+    "endereco": "https://www.pordata.pt/PordataSitemap.aspx",
+    "lido_em": "2026-09-15T18:23:03+00:00",
+    "enderecos_no_mapa": 6012,
+    "termos": {
+     "creche": 0,
+     "acolhimento de criancas": 0,
+     "cuidados a criancas": 0
+    },
+    "termo_de_controlo": {
+     "taxa de desemprego": 9
+    }
+   }
+  },
+  {
+   "codigo": "tepsr_sp410",
+   "id_da_linha": "competencias-digitais-2025",
+   "nome_fonte": "Individuals who have basic or above basic overall digital skills by sex",
+   "nome_ine": {
+    "nome": "Proporção de indivíduos com idade entre 16 e 74 anos com competências digitais (Série 2021 - %) por Local de residência (NUTS - 2024) e Tipo de competências digitais; Anual",
+    "endereco": "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_indicadores&contecto=pi&indOcorrCod=0014598&selTab=tab0&xlang=pt",
+    "lido_em": "2026-09-15T18:27:38+00:00",
+    "lido_onde": "lista de resultados da busca do portal",
+    "busca": {
+     "termo": "competencias digitais",
+     "marca": "competencias digitais",
+     "resultados": 20
+    },
+    "aviso": "Nome lido hoje na lista de resultados da busca do portal, pelo primeiro resultado que traz a marca. A marca prova o tema, não prova que seja a mesma medida do painel europeu: isso é uma conferência que fica por fazer."
+   },
+   "nome_pordata": {
+    "nome": "População com pelo menos competências digitais básicas: total e por sexo (%)",
+    "endereco": "https://www.pordata.pt/europa/populacao+com+pelo+menos+competencias+digitais+basicas+total+e+por+sexo+(percentagem)-3655",
+    "lido_em": "2026-09-15T18:27:39+00:00",
+    "fontes_entidades": "Fontes/Entidades: Eurostat | Entidades Nacionais, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-01-09"
+   },
+   "correspondencia": "exata",
+   "nota": null
+  },
+  {
+   "codigo": "tespm110",
+   "id_da_linha": "necessidades-medicas-nao-satisfeitas-2025",
+   "nome_fonte": "Self-reported unmet need for medical care by sex",
+   "nome_ine": "[verify]",
+   "nome_pordata": {
+    "nome": "População com necessidades insatisfeitas de cuidados médicos: total e por sexo (%)",
+    "endereco": "https://www.pordata.pt/europa/populacao+com+necessidades+insatisfeitas+de+cuidados+medicos+total+e+por+sexo+(percentagem)-3548",
+    "lido_em": "2026-09-15T18:28:00+00:00",
+    "fontes_entidades": "Fontes/Entidades: Eurostat | Entidades Nacionais, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-03-27"
+   },
+   "correspondencia": "exata",
+   "nota": "INE: a busca por «necessidades de cuidados de saude nao satisfeitas» não respondeu em 20 s"
+  },
+  {
+   "codigo": "sdg_16_40",
+   "id_da_linha": "independencia-da-justica-2025",
+   "nome_fonte": "Perceived independence of the justice system",
+   "nome_ine": "[verify]",
+   "nome_pordata": {
+    "nome": "Perceção de independência do sistema judicial",
+    "endereco": "https://www.pordata.pt/europa/percecao+de+independencia+do+sistema+judicial-3593",
+    "lido_em": "2026-09-15T18:28:02+00:00",
+    "fontes_entidades": "Fontes/Entidades: Direção-Geral da Justiça e dos Consumidores da Comissão Europeia, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-01-09"
+   },
+   "correspondencia": "exata",
+   "nota": "INE: a busca por «independencia do sistema de justica» devolveu 0 indicador(es) e nenhum traz «justica»"
+  },
+  {
+   "codigo": "sdg_16_50",
+   "id_da_linha": "indice-de-percepcao-da-corrupcao-2025",
+   "nome_fonte": "Corruption Perceptions Index",
+   "nome_ine": "[verify]",
+   "nome_pordata": {
+    "nome": "Índice de perceção de corrupção",
+    "endereco": "https://www.pordata.pt/europa/indice+de+percecao+de+corrupcao-3595",
+    "lido_em": "2026-09-15T18:28:24+00:00",
+    "fontes_entidades": "Fontes/Entidades: Transparência Internacional, PORDATA",
+    "ultima_atualizacao": "Última actualização: 2026-03-05"
+   },
+   "correspondencia": "exata",
+   "nota": "INE: a busca por «indice de percecao da corrupcao» não respondeu em 20 s"
+  }
+ ]
+}

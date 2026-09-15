@@ -84,6 +84,30 @@ function texto(no) {
 
 const norm = (s) => String(s).replace(/\s+/g, ' ').trim();
 
+/**
+ * O TEXTO DE UM ELEMENTO, COM AS ENTIDADES DESFEITAS (bloco P2, 15.09.2026).
+ *
+ * `texto()` junta `rawText`, que é o markup: um nome com «&» chega aqui como
+ * «&amp;» e nunca casa com a cadeia do ficheiro de dados, por muito certa que
+ * ela esteja. Foi o que aconteceu com o nome que o INE dá à despesa em I&D:
+ * «Proporção da despesa em investigação e desenvolvimento (I&D) no PIB».
+ *
+ * **Não é uma folga**: é a comparação a olhar para o texto que a página escreve,
+ * em vez de olhar para a forma como ele está codificado. As cinco entidades são
+ * as cinco que o Astro escapa, e mais nenhuma: uma entidade numérica num nome de
+ * um ficheiro de dados continua a não casar, e deve não casar, porque nenhum
+ * destes ficheiros as escreve.
+ *
+ * @param {string} s
+ */
+const semEntidades = (s) =>
+  String(s)
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&amp;/g, '&');
+
 const SECCIONADORES = new Set(['section', 'article', 'aside', 'details', 'main', 'header', 'footer', 'body', 'html']);
 
 /**
@@ -571,6 +595,31 @@ const NOME_DECLARADO = '[data-nome]';
  * nenhuma, porque não afirma nada sobre o texto: aponta para ele.
  */
 const VOZ_DECLARADA = '[data-voz]';
+/**
+ * OS NOMES OFICIAIS, LIDOS DO FICHEIRO DO MOTOR POR CONTA DESTA RÉGUA.
+ *
+ * Não chama `src/lib/enquadramento.mjs`: uma régua que fosse buscar a lista à
+ * mesma função que compõe a página confirmava a função e não o ficheiro de
+ * dados, que é a regra escrita no fim de `src/lib/nomes.mjs`. Lê o JSON, fica
+ * com os que o motor marca `exata`, e prefere o do INE ao da PORDATA, que é a
+ * ordem da norma §1.5.
+ *
+ * @type {Map<string, Record<string, string>>}
+ */
+const NOMES_OFICIAIS = new Map();
+{
+  const f = path.join(RAIZ, 'src', 'data', 'enquadramento', 'nomes.json');
+  if (fs.existsSync(f)) {
+    const j = JSON.parse(fs.readFileSync(f, 'utf8'));
+    for (const i of j.indicadores ?? []) {
+      if (i?.correspondencia !== 'exata') continue;
+      const nome = i?.nome_ine?.nome ?? i?.nome_pordata?.nome ?? null;
+      if (typeof nome !== 'string' || nome.trim() === '' || nome === '[verify]') continue;
+      NOMES_OFICIAIS.set(i.id_da_linha, { pt: nome, en: nome });
+    }
+  }
+}
+
 /** As fontes que podem sustentar um `data-nome`, e os nomes que cada uma publica. */
 const NOMES_POR_FONTE = {
   areas: new Set(AREAS.flatMap((a) => Object.values(a.nome ?? {}))),
@@ -593,6 +642,16 @@ const NOMES_POR_FONTE = {
      frases, que é a lista das medidas escrita outra vez. */
   figuras: new Set(FIGURAS.flatMap((f) => Object.values(f.nome ?? {}))),
   medidas: new Set(MEDIDAS_DO_DOMINIO_1.flatMap((m) => Object.values(m.nome ?? {}))),
+  /* O NOME OFICIAL DE UMA MEDIDA (bloco P2, 15.09.2026, a decisão sobre as
+     capturas). É o nome com que o INE ou a PORDATA publicam a mesma medida, lido
+     pelo motor com o endereço e a hora e exportado em
+     `src/data/enquadramento/nomes.json`. Entra no cartão como segundo degrau da
+     escada dos nomes, onde não há nome do projeto, e SÓ o que o motor marca como
+     a mesma medida: a medida vizinha e o campo por confirmar não chegam ao
+     leitor. É uma fonte como as outras cinco, e não uma dispensa: a régua lê o
+     ficheiro por conta própria e confere, carácter a carácter, que o texto
+     rendido é o nome DAQUELA linha. */
+  oficial: new Set([...NOMES_OFICIAIS.values()].map((n) => n.pt)),
 };
 
 /**
@@ -616,6 +675,10 @@ const NOMES_POR_FONTE = {
 const NOMES_POR_LINHA = {
   figuras: new Map(FIGURAS.filter((f) => f.claim).map((f) => [f.claim, f.nome])),
   medidas: new Map(MEDIDAS_DO_DOMINIO_1.filter((m) => m.claim).map((m) => [m.claim, m.nome])),
+  /* O nome oficial é o mesmo nas duas edições, porque é português e não se
+     traduz: o par tem as duas chaves com o mesmo texto, para que a conferência
+     por edição seja a mesma pergunta que faz às outras fontes. */
+  oficial: NOMES_OFICIAIS,
 };
 /* A CONFERÊNCIA DE `data-nome`, e é o que distingue esta marca da dos lugares.
    Cada elemento marcado diz de que ficheiro vem o nome, e a régua confere que o
@@ -1022,7 +1085,7 @@ for (const file of ficheiros) {
      não só onde a contagem do inventário passa. */
   for (const el of root.querySelectorAll(NOME_DECLARADO)) {
     const fonte = el.getAttribute('data-nome') ?? '';
-    const t = norm(texto(el));
+    const t = semEntidades(norm(texto(el)));
     if (!Object.prototype.hasOwnProperty.call(NOMES_POR_FONTE, fonte)) {
       nomesForaDaFonte.push({
         caminho: caminho || '/',
