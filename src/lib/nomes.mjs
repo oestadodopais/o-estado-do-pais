@@ -171,7 +171,7 @@ export function eNomeDeMedida(x) {
  * texto está declarado noutra língua que não a da página (a tabela é
  * `src/i18n/lingua-dos-titulos.mjs`, e `check:lingua` fecha a construção quando
  * um texto novo chega sem língua declarada). Onde nenhum degrau passa, devolve
- * `null`, e o cartão fica sem nome — que é o que ele tem, e não um nome
+ * `null`, e o cartão fica sem nome, que é o que ele tem, e não um nome
  * inventado nem o identificador promovido outra vez.
  *
  * O QUE ISTO NÃO RESOLVE, e fica dito para não parecer resolvido: as linhas
