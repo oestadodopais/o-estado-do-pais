@@ -128,6 +128,7 @@ import { ENDERECO_CORRECOES, REGRAS as REGRAS_DO_METODO } from '../src/data/meto
 import { SOBRE } from '../src/data/sobre.mjs';
 import {
   ANCORA_DA_POLITICA,
+  O_PROJETO,
   FICHA_DA_PRIMEIRA_PAGINA,
   FRASE as FRASE_DA_POLITICA,
   LINGUA_DO_RESPONSAVEL,
@@ -461,7 +462,7 @@ const linhasConstruidas = new Set();
 let ficheiros = 0;
 let documentos = 0;
 /** O rótulo de IA, contado pelo lado da página: rodapé, topo, ficha e frase. */
-const ROTULO_DE_IA = { rodape: 0, topo: 0, ficha: 0, frase: 0 };
+const ROTULO_DE_IA = { rodape: 0, topo: 0, ficha: 0, frase: 0, projeto: 0 };
 let paginasDoLivro = 0;
 /** Valores auditados pela regra do selo, e quantos ficaram sem ele (sempre 0: falha). */
 let valoresAuditados = 0;
@@ -1464,30 +1465,15 @@ function verificaDocumento({ rota, rel, caminho, html, root, err }) {
        mesma regra da §1.82 que `check-lingua.mjs` aplica ao rodapé das outras
        páginas. Aqui é este portão que a aplica, porque um documento sai do
        varrimento geral antes de lá chegar. */
+    /* O NOME SAIU DA FAIXA COM O RESTO DO RÓTULO (P1, item 1, 15.09.2026), e a
+       conferência inverte-se em vez de sair: uma marca que volte a aparecer é o
+       nome a voltar a um documento alojado sem que ninguém o decida. */
     const nomes = rotuloIA.querySelectorAll('[data-oedp-rotulo-nome]');
-    if (nomes.length !== 1) {
+    if (nomes.length !== 0) {
       err(
-        `o rótulo de IA da faixa tem ${nomes.length} nome(s) de quem responde; tem de ter um.`,
+        `o rótulo de IA da faixa tem ${nomes.length} nome(s) de quem responde e tem de ter zero: ` +
+          `o nome saiu do rótulo a 15.09.2026, por decisão do diretor.`,
       );
-    } else {
-      const nome = nomes[0];
-      const dizNome = textoDe(nome, { semEstilo: true, separador: '' });
-      if (dizNome !== TEXTOS_APROVADOS.responsavel) {
-        err(
-          `o nome de quem responde diz ${JSON.stringify(dizNome)} e tem de dizer ` +
-            `${JSON.stringify(TEXTOS_APROVADOS.responsavel)}.`,
-        );
-      }
-      const marcaDoNome = nome.getAttribute('lang') ?? '';
-      const esperadaNoNome = lang === 'pt' ? '' : TEXTOS_APROVADOS.lingua_do_responsavel;
-      if (marcaDoNome !== esperadaNoNome) {
-        err(
-          `o nome de quem responde tem \`lang="${marcaDoNome}"\` e devia ter ` +
-            `${esperadaNoNome ? `\`lang="${esperadaNoNome}"\`` : 'a língua da página, sem marca'}.\n` +
-            `      Numa página inglesa um nome português sem marca é lido com fonética inglesa; ` +
-            `numa portuguesa a marca a mais é o mesmo defeito ao contrário.`,
-        );
-      }
     }
   }
 
@@ -4027,8 +4013,17 @@ const cartoesUsados = new Set();
           `      escrito:  ${JSON.stringify(FRASE_DA_POLITICA[l].slice(0, 120))}`,
       });
     }
+    if (O_PROJETO[l] !== TEXTOS_APROVADOS.o_projeto[l]) {
+      erros.push({
+        rel: 'src/data/politica-ia.mjs',
+        msg:
+          `a frase do Sobre, da edição "${l}", não é a cadeia decidida.\n` +
+          `      decidida: ${JSON.stringify(TEXTOS_APROVADOS.o_projeto[l].slice(0, 120))}\n` +
+          `      escrita:  ${JSON.stringify(O_PROJETO[l].slice(0, 120))}`,
+      });
+    }
     const ficha = FICHA_DA_PRIMEIRA_PAGINA[l];
-    const composta = `${ficha.diretorK} ${RESPONSAVEL_EDITORIAL} · ${ficha.gratuito}`;
+    const composta = ficha.gratuito;
     if (composta !== TEXTOS_APROVADOS.ficha[l]) {
       erros.push({
         rel: 'src/data/politica-ia.mjs',
@@ -4939,60 +4934,20 @@ for (const file of ficheirosHtml(DIST)) {
           }
         }
 
-        /* 3 · o nome de quem responde: uma vez, com o texto certo, e com a
-           marca de língua própria numa página inglesa. */
+        /* 3 · O NOME NÃO SE DIZ AQUI (P1, itens 1 e 2, 15.09.2026).
+           A regra era «uma vez na linha, uma vez na ficha, e nunca solto»; o
+           nome saiu das duas por decisão do diretor, e a regra passa a ser
+           zero. Não se apaga a conferência: inverte-se. Uma marca que volte a
+           aparecer dentro do rótulo é o nome a voltar ao rodapé de seis mil
+           páginas sem que ninguém o decida, que é exactamente o que esta
+           conferência existe para impedir. */
         const nomes = rotulo.querySelectorAll('[data-rotulo-nome]');
-        /* UM POR CADA SÍTIO ONDE O NOME SE DIZ, e não «pelo menos um»: a linha
-           tem exactamente um, a ficha da primeira página tem exactamente um, e
-           não há nenhum solto no bloco. Dois nomes na mesma linha são duas
-           pessoas para quem ouve a página. */
-        const naLinha = linha.querySelectorAll('[data-rotulo-nome]').length;
-        const fichaDoBloco = rotulo.querySelector('[data-ficha-primeira-pagina]');
-        const naFicha = fichaDoBloco
-          ? fichaDoBloco.querySelectorAll('[data-rotulo-nome]').length
-          : 0;
-        if (naLinha !== 1) {
+        if (nomes.length !== 0) {
           err(
-            `a linha do rótulo de IA (${onde}) tem ${naLinha} «data-rotulo-nome» e tem de ter ` +
-              `exactamente um.`,
+            `o rótulo de IA (${onde}) tem ${nomes.length} «data-rotulo-nome» e tem de ter zero.\n` +
+              `      O nome de quem responde saiu do rótulo e da ficha a 15.09.2026, por decisão ` +
+              `do diretor. Diz-se no Sobre e na regra 9 do Método, e em mais lado nenhum.`,
           );
-        }
-        if (fichaDoBloco && naFicha !== 1) {
-          err(
-            `a ficha da primeira página tem ${naFicha} «data-rotulo-nome» e tem de ter ` +
-              `exactamente um.`,
-          );
-        }
-        if (nomes.length !== naLinha + naFicha) {
-          err(
-            `o rótulo de IA (${onde}) tem ${nomes.length - naLinha - naFicha} «data-rotulo-nome» ` +
-              `fora da linha e da ficha. O nome diz-se onde está escrito que se diz, e em mais ` +
-              `lado nenhum.`,
-          );
-        }
-        for (const nome of nomes) {
-          const t = decodeEntities(textoDe(nome, { semEstilo: true, separador: '' }));
-          if (t !== TEXTOS_APROVADOS.responsavel) {
-            err(
-              `um «data-rotulo-nome» diz ${JSON.stringify(t.slice(0, 80))} e o responsável ` +
-                `editorial é ${JSON.stringify(TEXTOS_APROVADOS.responsavel)}. A marca é do nome, ` +
-                `e de mais nada.`,
-            );
-          }
-          const propria = nome.getAttribute('lang') ?? null;
-          if (linguaPagina === 'en' && propria !== TEXTOS_APROVADOS.lingua_do_responsavel) {
-            err(
-              `numa página inglesa o nome de quem responde tem de levar ` +
-                `lang="${TEXTOS_APROVADOS.lingua_do_responsavel}" e leva "${propria ?? '(nenhum)'}". ` +
-                `É um nome português, e sem a marca um leitor de ecrã lê-o com fonética inglesa.`,
-            );
-          }
-          if (linguaPagina === 'pt' && propria !== null) {
-            err(
-              `numa página portuguesa o nome de quem responde não leva marca de língua nenhuma ` +
-                `e leva lang="${propria}". A marca a mais é o mesmo defeito da marca em falta.`,
-            );
-          }
         }
 
         /* 4 · vê-se. */
@@ -5082,12 +5037,17 @@ for (const file of ficheirosHtml(DIST)) {
      */
     const frases = root.querySelectorAll('[data-frase-da-politica]');
     ROTULO_DE_IA.frase += frases.length;
-    const esperadasFrases = rota?.key === 'sobre' || rota?.key === 'metodo' ? 1 : 0;
+    /* A FRASE DA POLÍTICA FICOU SÓ NO MÉTODO (P1, item 3, 15.09.2026). Era do
+       Sobre e do Método; no Sobre está agora a frase que diz o que o projeto é,
+       que é conferida logo a seguir com a mesma disciplina. Duas frases sobre o
+       mesmo assunto na mesma página eram texto a mais, e o §0.2 do brief manda
+       contar o que sai antes do que entra. */
+    const esperadasFrases = rota?.key === 'metodo' ? 1 : 0;
     if (frases.length !== esperadasFrases) {
       err(
         `esta página rende ${frases.length} frase(s) da política e devia render ` +
-          `${esperadasFrases}. A frase vive no Sobre e no Método; as páginas do leitor levam o ` +
-          `rótulo e a porta.`,
+          `${esperadasFrases}. A frase vive no Método; o Sobre leva a frase do projeto, e as ` +
+          `páginas do leitor levam o rótulo e a porta.`,
       );
     } else if (frases.length === 1 && linguaPagina) {
       const declarada = frases[0].getAttribute('data-frase-da-politica');
@@ -5104,6 +5064,42 @@ for (const file of ficheirosHtml(DIST)) {
           `a frase da política não é o texto aprovado.\n` +
             `      aprovado:    ${JSON.stringify(esperada.slice(0, 160))}\n` +
             `      renderizado: ${JSON.stringify(t.slice(0, 160))}`,
+        );
+      }
+    }
+
+    /**
+     * A FRASE DO SOBRE · o que este projeto é (P1, item 3, 15.09.2026).
+     *
+     * A mesma disciplina do rótulo e da frase da política: a marca não é uma
+     * dispensa, é uma comparação, e o oráculo é `scripts/textos-aprovados.json`
+     * e não o ficheiro que a rende. Vive no Sobre e em mais lado nenhum: é a
+     * página onde o sítio diz o que é, e repeti-la seria a casa a explicar-se
+     * duas vezes.
+     */
+    const projeto = root.querySelectorAll('[data-o-projeto]');
+    ROTULO_DE_IA.projeto += projeto.length;
+    const esperadoProjeto = rota?.key === 'sobre' ? 1 : 0;
+    if (projeto.length !== esperadoProjeto) {
+      err(
+        `esta página rende ${projeto.length} frase(s) do projeto e devia render ` +
+          `${esperadoProjeto}. A frase que diz o que este projeto é vive no Sobre, e ali só.`,
+      );
+    } else if (projeto.length === 1 && linguaPagina) {
+      const declarada = projeto[0].getAttribute('data-o-projeto');
+      if (declarada !== linguaPagina) {
+        err(
+          `«data-o-projeto="${declarada}"» e a página é da edição "${linguaPagina}". ` +
+            `A marca diz de que edição é a frase, e tem de ser a da rota.`,
+        );
+      }
+      const t = decodeEntities(textoDe(projeto[0], { semEstilo: true, separador: '' }));
+      const esperada = TEXTOS_APROVADOS.o_projeto[linguaPagina];
+      if (t !== esperada) {
+        err(
+          `a frase do Sobre não é a cadeia decidida.\n` +
+            `      decidida:    ${JSON.stringify(esperada.slice(0, 160))}\n` +
+            `      renderizada: ${JSON.stringify(t.slice(0, 160))}`,
         );
       }
     }
@@ -7575,7 +7571,7 @@ console.log(
     `  rótulo de IA · ${ROTULO_DE_IA.rodape} no rodapé (de ${ficheiros - documentos} páginas fora ` +
       `dos documentos alojados) · ${ROTULO_DE_IA.topo} no topo das páginas de leitura · ` +
       `${ROTULO_DE_IA.ficha} ficha(s) da primeira página · ${ROTULO_DE_IA.frase} frase(s) da ` +
-      `política, comparadas com o texto aprovado`,
+      `política e ${ROTULO_DE_IA.projeto} do projeto, comparadas com o texto decidido`,
   ),
 );
 console.log(
