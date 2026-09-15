@@ -44,6 +44,14 @@
  *   K8 · **a legenda da marca e a linha do tipo** · «Governo Constitucional» uma
  *        vez por edição (o índice das áreas), e a legenda da marca fora das
  *        páginas de área.
+ *   K9 · **o valor de referência tem duas testemunhas, e elas batem certo** · o
+ *        algarismo que o cartão desenha vem da declaração de `figuras.mjs`, com o
+ *        motivo do registo; o motor lê o mesmo valor na página do painel da
+ *        Comissão e escreve-o em `referencias.json`, com a frase verbatim de onde
+ *        o leu. São dois registos independentes do mesmo facto, e esta célula
+ *        compara-os: os números e o sentido. Um facto com duas origens que não
+ *        batem certo é um facto por confirmar, e o cartão não o desenha sem
+ *        alguém olhar.
  *
  * ---------------------------------------------------------------------------
  * O POSITIVO CONHECIDO, E PORQUE ELE É METADE DA RÉGUA
@@ -71,7 +79,14 @@ import { parse } from 'node-html-parser';
 
 import { t } from '../../src/i18n/strings.mjs';
 import { DEFINICOES_DAS_MEDIDAS, textoDaDefinicao } from '../../src/data/figuras.mjs';
-import { chavesDoEnquadramento, reguaDaMedida, ficheirosDoMotor } from '../../src/lib/enquadramento.mjs';
+import {
+  chavesDoEnquadramento,
+  reguaDaMedida,
+  ficheirosDoMotor,
+  valorDeReferenciaDoMotor,
+  nomeOficial,
+} from '../../src/lib/enquadramento.mjs';
+import { FIGURAS, ladosDoLimiar } from '../../src/data/figuras.mjs';
 import { hasClaim } from '../../src/lib/ledger.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -136,6 +151,80 @@ function soOQueSeVe(el) {
 /** @param {import('node-html-parser').HTMLElement} el */
 function textoVisivel(el) {
   return soOQueSeVe(el).text.replace(/\s+/g, ' ').trim();
+}
+
+/**
+ * Os números de um valor de referência, com sinal, e o sentido dele.
+ *
+ * Lê as duas formas: a cadeia que o motor copia da página da Comissão («60%»,
+ * «-35%», «-4/+6%», «+/-3% (EA)», «-0.2pp») e a declaração estruturada de
+ * `figuras.mjs`. Devolve os números por ordem crescente, para que a comparação
+ * não dependa de qual das duas escreveu primeiro o lado de baixo.
+ *
+ * `+/-n` E `-/+n` SÃO DUAS PONTAS E NÃO UMA, e é o caso do câmbio efetivo real:
+ * uma expressão regular de números lê «+/-3» como um número só, e a comparação
+ * dizia que a declaração tem dois lados e o motor um. Expandem-se antes de ler.
+ *
+ * @param {string} cru
+ * @returns {number[]}
+ */
+function numerosDoValorDeReferencia(cru) {
+  const normal = String(cru)
+    .replace(/−/g, '-')
+    .replace(/([+]\/[-]|[-]\/[+])\s*(\d+(?:[.,]\d+)?)/g, '-$2/+$2');
+  const achados = normal.match(/[+-]?\d+(?:[.,]\d+)?/g) ?? [];
+  return achados
+    .map((s) => Number(s.replace(/,/g, '.')))
+    .filter((n) => Number.isFinite(n))
+    .sort((a, b) => a - b);
+}
+
+/**
+ * Os números da declaração de `figuras.mjs`, pela mesma forma.
+ *
+ * @param {ReturnType<typeof ladosDoLimiar>} lados
+ * @returns {number[]}
+ */
+function numerosDaDeclaracao(lados) {
+  if (!lados) return [];
+  return [lados.inferior, lados.superior]
+    .filter((x) => typeof x === 'string' && x !== '')
+    .map((x) => Number(String(x).replace(/−/g, '-').replace(/,/g, '.')))
+    .filter((n) => Number.isFinite(n))
+    .sort((a, b) => a - b);
+}
+
+/**
+ * A célula K9, escrita à parte para o `--prova` a poder exercer com um par que
+ * NÃO bate certo. Não se planta um estrago num ficheiro de dados do motor: o que
+ * se prova é a comparação, com dois valores escritos aqui.
+ *
+ * @param {string} id
+ * @param {{ limiar: string, sentido: string }|null} doMotor
+ * @param {ReturnType<typeof ladosDoLimiar>} lados
+ * @param {boolean} banda
+ * @returns {string|null}  a queixa, ou `null` quando batem certo
+ */
+export function compararAsDuasTestemunhas(id, doMotor, lados, banda) {
+  if (!doMotor) return null;
+  const a = numerosDoValorDeReferencia(doMotor.limiar);
+  const b = numerosDaDeclaracao(lados);
+  if (a.length !== b.length || a.some((n, i) => n !== b[i])) {
+    return (
+      `K9 · ${id}: o valor de referência tem duas testemunhas e elas não batem certo. ` +
+      `A declaração de figuras.mjs diz [${b.join(', ')}] e o motor leu «${doMotor.limiar}» ` +
+      `na página do painel, que dá [${a.join(', ')}]`
+    );
+  }
+  const sentidoDeclarado = banda ? 'intervalo' : lados?.inferior ? 'inferior' : 'superior';
+  if (doMotor.sentido && doMotor.sentido !== sentidoDeclarado) {
+    return (
+      `K9 · ${id}: o sentido do valor de referência tem duas testemunhas e elas não batem ` +
+      `certo. A declaração de figuras.mjs diz «${sentidoDeclarado}» e o motor diz ` +
+      `«${doMotor.sentido}»`
+    );
+  }
+  return null;
 }
 
 /**
@@ -430,16 +519,75 @@ if (PROVA) {
   if (!hasClaim('precos-da-habitacao-2025')) {
     falhas.push('hasClaim() não encontra uma linha que existe: a régua está cega');
   }
-  /* O NEGATIVO: a linha do período anterior não existe, e a régua não a rende. */
-  if (hasClaim('precos-da-habitacao-2024')) {
+  /* O NEGATIVO: uma medida cujo período não é um ano não tem chave nenhuma, e a
+     régua não lhe inventa uma. Descer um mês é conhecimento da série, e a série é
+     do motor. */
+  const semChave = chavesDoEnquadramento('evora-desemprego-registado-2025-12');
+  if (semChave.anterior !== null || semChave.ue !== null) {
     falhas.push(
-      'a linha do período anterior passou a existir: a prova do negativo tem de mudar de alvo ' +
-        '(escolhe outra medida cuja linha anterior ainda falte, e escreve qual)',
+      `a régua inventou uma chave para um período que não é um ano: ${JSON.stringify(semChave)}`,
     );
   }
+  /* O POSITIVO E O NEGATIVO DA RÉGUA, com as linhas que o motor selou a 15.09.
+     `precos-da-habitacao-2025` tem as duas comparações; uma medida cujo período
+     não é um ano não tem chave nenhuma, e é esse o negativo. */
   const regua = reguaDaMedida('precos-da-habitacao-2025');
-  if (regua.anterior !== null || regua.ue !== null) {
-    falhas.push(`a régua rendeu uma comparação sem linha: ${JSON.stringify(regua)}`);
+  if (!regua.anterior || regua.anterior.id !== 'precos-da-habitacao-2024') {
+    falhas.push(`a régua não achou a linha do período anterior: ${JSON.stringify(regua)}`);
+  }
+  if (!regua.ue || regua.ue.id !== 'precos-da-habitacao-2025-ue') {
+    falhas.push(`a régua não achou a linha da União: ${JSON.stringify(regua)}`);
+  }
+  /* A SÉRIE BIENAL: o período anterior não é o ano anterior, e a régua
+     procura-o no livro-razão em vez de o calcular. */
+  const bienal = reguaDaMedida('competencias-digitais-2025');
+  if (!bienal.anterior || bienal.anterior.id !== 'competencias-digitais-2023') {
+    falhas.push(
+      `a régua calculou o período anterior em vez de o procurar: ` +
+        `«competencias-digitais-2025» deu ${JSON.stringify(bienal.anterior)} e a linha selada é ` +
+        `«competencias-digitais-2023» (série bienal)`,
+    );
+  }
+  /* A AUSÊNCIA: cinco medidas não têm linha da União, porque o conjunto do
+     Eurostat não traz valor no agregado naquele período. O cartão desenha-as sem
+     a comparação europeia e não escreve a ausência por palavras. */
+  const semUe = reguaDaMedida('saldo-da-balanca-corrente-2025');
+  if (semUe.ue !== null) {
+    falhas.push(
+      'a prova da ausência tem de mudar de alvo: «saldo-da-balanca-corrente-2025» passou a ter ' +
+        'linha da União, e a régua tem de continuar a ser provada contra uma medida que não a tenha',
+    );
+  }
+
+  /* A K9 PROVA-SE COM UM PAR QUE NÃO BATE CERTO, e não com um estrago num
+     ficheiro do motor: o que se prova é a comparação. Dois pares, um em cada
+     sentido: os números diferentes e o sentido diferente. */
+  const parMau = compararAsDuasTestemunhas(
+    'a-prova',
+    { limiar: '61%', sentido: 'superior' },
+    { inferior: null, superior: '60' },
+    false,
+  );
+  if (!parMau || !parMau.includes('não batem certo')) {
+    falhas.push('a K9 não vê dois números diferentes');
+  }
+  const sentidoMau = compararAsDuasTestemunhas(
+    'a-prova',
+    { limiar: '60%', sentido: 'inferior' },
+    { inferior: null, superior: '60' },
+    false,
+  );
+  if (!sentidoMau || !sentidoMau.includes('sentido')) {
+    falhas.push('a K9 não vê dois sentidos diferentes');
+  }
+  const parBom = compararAsDuasTestemunhas(
+    'a-prova',
+    { limiar: '+/-3% (EA)', sentido: 'intervalo' },
+    { inferior: '−3', superior: '3' },
+    true,
+  );
+  if (parBom !== null) {
+    falhas.push(`a K9 grita por um par que bate certo: ${parBom}`);
   }
 
   if (falhas.length > 0) {
@@ -448,7 +596,14 @@ if (PROVA) {
     console.error('');
     process.exit(1);
   }
-  console.log(cinza(`  prova: ${esperado.length} estragos plantados, ${esperado.length} vistos; o cartão são a 0; o enquadramento com um positivo e um negativo de linhas verdadeiras`));
+  console.log(
+    cinza(
+      `  prova: ${esperado.length} estragos plantados, ${esperado.length} vistos; o cartão são a 0; ` +
+        `a régua com as duas comparações de uma medida, a série bienal, a ausência da linha da ` +
+        `União e uma chave que não se inventa; as duas testemunhas do valor de referência com um ` +
+        `par bom e dois maus`,
+    ),
+  );
 }
 
 /* ------------------------------------------------------------- a corrida */
@@ -463,6 +618,30 @@ if (!fs.existsSync(DIST)) {
 
 const r = corre(DIST);
 const motor = ficheirosDoMotor();
+
+/* --------------------------------------------------------------------- K9 */
+/* As duas testemunhas do valor de referência, comparadas medida a medida. Não
+   lê o `dist/`: lê os dois registos, que é onde o facto está. */
+let k9Comparadas = 0;
+for (const f of FIGURAS) {
+  const doMotor = valorDeReferenciaDoMotor(f.claim);
+  if (!doMotor) continue;
+  k9Comparadas++;
+  const queixa = compararAsDuasTestemunhas(
+    f.claim,
+    doMotor,
+    ladosDoLimiar(f.limiar),
+    Boolean(f.limiar && (f.limiar.inferior || f.limiar.superior)),
+  );
+  if (queixa) r.erros.push(queixa);
+}
+r.contas.valores_de_referencia_comparados = k9Comparadas;
+
+/* Os nomes oficiais que o recibo mostra: só os que o motor marca como a mesma
+   medida. A conta escreve-se para o relatório do bloco. */
+let comNomeOficial = 0;
+for (const f of FIGURAS) if (nomeOficial(f.claim)) comNomeOficial++;
+r.contas.medidas_com_nome_oficial = comNomeOficial;
 
 /* K8 · «Governo Constitucional» uma vez por edição. */
 if (r.contas.governo_constitucional_pt !== 1) {
@@ -496,6 +675,8 @@ console.log(cinza(`    «Governo Constitucional»         ${r.contas.governo_con
 console.log(cinza(`    legenda da marca                 ${r.contas.legenda_da_marca} página(s)`));
 console.log(cinza(`    unidade na outra língua          ${r.contas.unidade_noutra_lingua} (a exceção da I92)`));
 console.log(cinza(`    o marcador em português          ${r.contas.marcador_em_portugues} (a exceção da IDENTIDADE §6)`));
+console.log(cinza(`    valores de referência, as duas testemunhas comparadas  ${r.contas.valores_de_referencia_comparados}`));
+console.log(cinza(`    medidas com nome oficial no recibo                    ${r.contas.medidas_com_nome_oficial}`));
 console.log(
   cinza(
     `    ficheiros do motor               referencias.json ${motor.referencias ? 'sim' : 'ainda não'} · ` +
