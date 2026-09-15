@@ -3940,6 +3940,15 @@ const cartoesUsados = new Set();
  * `politica-ia.mjs` tem de ser o do oráculo, e a frase da política também. A
  * comparação da página apanha o mesmo defeito, e esta apanha-o com o nome do
  * ficheiro em vez de com o nome de seis mil páginas.
+ *
+ * DESDE 15.09.2026 O SÍTIO NÃO DIZ NOME NENHUM (§1.108, as emendas de 15.09 à
+ * tarde, e §1.109): o rótulo deixou de nomear quem responde, e a regra 9 do
+ * Método deixou de o nomear também, por decisão do diretor. A invariante passa
+ * a ter dois estados e não um: ou o rótulo do oráculo contém o nome e então a
+ * regra 9 tem de o imprimir (o estado de 01.09), ou o rótulo não o contém e
+ * então nenhuma regra do Método o pode imprimir (o estado de hoje). O oráculo
+ * continua a guardar quem responde, porque a `politica-ia.mjs` o declara e os
+ * dois têm de dizer o mesmo; só não se imprime.
  */
 {
   const fortes = [];
@@ -3952,7 +3961,10 @@ const cartoesUsados = new Set();
   };
   anda(REGRAS_DO_METODO);
   const nome = TEXTOS_APROVADOS.responsavel;
-  if (!fortes.includes(nome)) {
+  const rotuloNomeia = Object.values(TEXTOS_APROVADOS.rotulo ?? {}).some(
+    (r) => typeof r === 'string' && r.includes(nome),
+  );
+  if (rotuloNomeia && !fortes.includes(nome)) {
     erros.push({
       rel: 'scripts/textos-aprovados.json',
       msg:
@@ -3960,6 +3972,14 @@ const cartoesUsados = new Set();
         `imprime esse nome (imprime ${fortes.length ? fortes.map((f) => JSON.stringify(f)).join(', ') : 'nenhum'}).\n` +
         `      O rótulo de todas as páginas e a regra 9 nomeiam a mesma pessoa: ou é a mesma ` +
         `cadeia nos dois ficheiros, ou o sítio diz dois nomes.`,
+    });
+  }
+  if (!rotuloNomeia && fortes.includes(nome)) {
+    erros.push({
+      rel: 'src/data/metodo.mjs',
+      msg:
+        `o rótulo já não nomeia ninguém (§1.108 e §1.109, 15.09.2026) e uma regra do Método ` +
+        `ainda imprime ${JSON.stringify(nome)}: o sítio não diz nome nenhum, ou diz o mesmo nos dois lugares.`,
     });
   }
   if (RESPONSAVEL_EDITORIAL !== nome) {
