@@ -340,7 +340,58 @@ export function reguaDaMedida(id) {
         }
       : null;
   const ue = chaves.ue && hasClaim(chaves.ue) ? { id: chaves.ue } : null;
-  return { anterior, ue };
+  return { anterior: anterior && mesmaSerie(id, anterior.id) ? anterior : null, ue };
+}
+
+/**
+ * ===========================================================================
+ * A PROVA DE QUE AS DUAS LINHAS SÃO A MESMA SÉRIE (achado 11, 15.09.2026)
+ * ===========================================================================
+ * A leitura a frio: «Nothing verifies that a selected "previous period" row is
+ * the previous observation of the same series and unit. The selector takes the
+ * greatest earlier year whose identifier has the same textual root; it never
+ * compares dataset, source URL dimensions, unit or series identity.»
+ *
+ * Tinha razão, e o custo estava à vista quando se foi ver: `evora-camara-
+ * mandatos-ps-2025` levava como período anterior `evora-camara-mandatos-ps-2009`,
+ * dezasseis anos antes, porque nenhuma linha com aquela raiz existe entre as
+ * duas. Um cartão que escreve «2009: 5» ao lado do valor de 2025 não está a dar
+ * uma régua: está a saltar quatro eleições sem o dizer.
+ *
+ * A REGRA, TAL COMO O LUGAR DE DIREÇÃO A ESCREVEU: a linha do período anterior
+ * só se rende quando declara o MESMO `document.edition` e a MESMA `unit` da
+ * linha principal. As duas são campos que a linha já traz e que o portão já
+ * confere carácter a carácter; não se inventa um campo novo nem se pede nada ao
+ * motor.
+ *
+ * E AS DUAS TÊM DE EXISTIR. Uma edição a `null` dos dois lados não prova que as
+ * duas linhas são a mesma série: prova que nenhuma das duas diz de que documento
+ * é. O lado seguro de falhar é não desenhar a régua, porque uma régua errada é
+ * pior do que régua nenhuma, e a ausência não se escreve por palavras (§0.2 do
+ * brief do P2).
+ *
+ * O QUE ISTO CUSTA, MEDIDO E NÃO ESTIMADO: das 45 réguas com período anterior de
+ * cada edição, 30 ficam e 15 deixam de render. Onze delas são séries verdadeiras
+ * cujo `document.edition` é o rótulo do ano ou do mês da publicação («2024» e
+ * «2021», «dezembro 2024» e «dezembro 2013»), e por construção nunca baterão: o
+ * que lhes falta é um identificador de SÉRIE, que é campo do motor e não do
+ * sítio. Três são linhas derivadas, sem documento nenhum. E uma é o defeito que
+ * a leitura apanhou. A lista inteira está no relatório do bloco P2.
+ *
+ * @param {string} id o identificador da linha principal
+ * @param {string} anterior o identificador da linha do período anterior
+ * @returns {boolean}
+ */
+export function mesmaSerie(id, anterior) {
+  const a = getClaim(id);
+  const b = getClaim(anterior);
+  if (!a || !b) return false;
+  const ea = typeof a.document?.edition === 'string' ? a.document.edition : null;
+  const eb = typeof b.document?.edition === 'string' ? b.document.edition : null;
+  if (ea === null || eb === null || ea !== eb) return false;
+  const ua = typeof a.unit === 'string' ? a.unit : null;
+  const ub = typeof b.unit === 'string' ? b.unit : null;
+  return ua !== null && ub !== null && ua === ub;
 }
 
 /**
