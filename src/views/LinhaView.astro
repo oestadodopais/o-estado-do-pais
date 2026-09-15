@@ -68,6 +68,7 @@ import { ANFITRIOES_SEM_RESPOSTA } from '../data/fontes.mjs';
 import { atrasoDaLinha } from '../lib/frescura.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { proximaConferenciaDaLinha, ancoraDoEvento } from '../lib/agenda.mjs';
+import { nomeOficial } from '../lib/enquadramento.mjs';
 import { studyTitle } from '../data/studies.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import Frase from '../components/Frase.astro';
@@ -104,6 +105,11 @@ const bandeira = notaDeBandeira(claim, lang);
    publicar esta linha. Sai do calendário das fontes e é `null` onde a fonte não
    anunciou dia nenhum, que é o caso da maior parte. */
 const proximaConferencia = proximaConferenciaDaLinha(id);
+/* OS NOMES OFICIAIS DA MEDIDA (a norma §1.5, bloco P2 item 2): o do INE e o da
+   PORDATA, lidos pelo motor com o endereço e a hora, e SÓ onde ele marca que é a
+   mesma medida. `null` em tudo o resto, que hoje são 115 das 132 linhas com
+   entrada no ficheiro e todas as outras. */
+const nomes = nomeOficial(id);
 /* A quem o valor é creditado, escrito numa linha só. Fica no aparelho, ao pé
    da proveniência, porque é isso que é: parte do registo do facto, não um
    juízo. A nota ao lado di-lo por palavras.
@@ -1451,6 +1457,69 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
               </dd>
             </>
           ))
+        }
+
+        {/* ------------------------------------- os nomes oficiais (P2, item 2)
+
+            A norma, §1.5: o nome de uma medida é um campo com dono, e três nomes
+            por medida, cada um no seu lugar. O do projeto está no cartão; o da
+            fonte está acima nesta mesma ficha («Nome na fonte»); estes dois são
+            os dos compiladores nacionais, e o lugar deles é o recibo.
+
+            O ROTULO NOMEIA QUEM PUBLICA O NOME, e a porta é o endereço onde ele
+            foi lido, com a data ao lado. A marca `data-nonledger` é a do motivo
+            `nome-oficial-da-medida` do registo: os nomes trazem algarismos que
+            são parte do nome («Série 2021», «dos 15 aos 74 anos», «NUTS - 2024»)
+            e não medições do país.
+
+            SÓ O QUE O MOTOR MARCA COMO A MESMA MEDIDA. Onde ele marca a medida
+            vizinha, ou onde o campo ficou por confirmar, não se rende nada: um
+            nome quase certo, posto onde o leitor espera o nome da coisa, é pior
+            do que nenhum. A razão por extenso está em `src/lib/enquadramento.mjs`.
+            ---------------------------------------------------------------- */}
+        {
+          nomes?.ine && (
+            <>
+              <dt>{s.livro.linha.nomeNoIneK}</dt>
+              <dd>
+                <span data-nonledger="nome-oficial-da-medida">
+                  <a
+                    class="ligacao-externa"
+                    href={nomes.ine.endereco}
+                    rel="noopener noreferrer external"
+                    lang="pt-PT"
+                  >
+                    {nomes.ine.nome}
+                  </a>
+                  {' · '}
+                  {s.prov.lido}{' '}
+                  {dataDaCasa(nomes.ine.lido)}
+                </span>
+              </dd>
+            </>
+          )
+        }
+        {
+          nomes?.pordata && (
+            <>
+              <dt>{s.livro.linha.nomeNaPordataK}</dt>
+              <dd>
+                <span data-nonledger="nome-oficial-da-medida">
+                  <a
+                    class="ligacao-externa"
+                    href={nomes.pordata.endereco}
+                    rel="noopener noreferrer external"
+                    lang="pt-PT"
+                  >
+                    {nomes.pordata.nome}
+                  </a>
+                  {' · '}
+                  {s.prov.lido}{' '}
+                  {dataDaCasa(nomes.pordata.lido)}
+                </span>
+              </dd>
+            </>
+          )
         }
 
         <dt>{s.prov.estudo}</dt>
