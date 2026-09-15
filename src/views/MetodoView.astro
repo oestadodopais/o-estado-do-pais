@@ -360,11 +360,22 @@ const destino = (l) => (l.prova ? CAMINHO_DA_PROVA : routePath(l.rota, lang));
       </div>
       <div class="metodo-corpo">
         <p class="metodo-p">{s.metodo.proximosLede}</p>
+        {/* O ESPAÇO ENTRE O NOME E A VAGA É UM NÓ DE TEXTO, pela mesma razão
+            que o pôs no índice dos domínios a 15.09.2026: sem ele o HTML diz
+            «Populaçãoprimeiro», e nesta lista não há `gap` de flex nenhum a
+            separá-los, porque `.metodo-proximos` não tem regra em folha nenhuma.
+
+            QUEM APANHOU ISTO FOI A CÉLULA C1 e não a C2, e fica escrito porque é
+            uma limitação medida e não um acaso: C1 viu que `.dominios-vaga`
+            tinha regra numa folha que esta página não liga (a regra mudou-se
+            para `leitura.css`, que é a desta página). C2 não viu a colagem,
+            porque sobe à procura de um `gap` até à raiz e `.metodo-secao`, lá
+            acima, é uma grelha com goma. Está no relatório da fatia. */}
         <ul class="metodo-proximos">
           {
             porVir.map((d) => (
               <li>
-                <span data-nome="dominios">{d.nome[lang] ?? d.nome.pt}</span>
+                <span data-nome="dominios">{d.nome[lang] ?? d.nome.pt}</span>{' '}
                 <span class="dominios-vaga" data-dominio-vaga-rot>
                   {d.vaga === 'primeira' && s.dominios.vagaPrimeira}
                   {d.vaga === 'segunda' && s.dominios.vagaSegunda}

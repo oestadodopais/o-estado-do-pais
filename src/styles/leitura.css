@@ -247,6 +247,23 @@
   margin-top: 0;
 }
 
+/* --------------------------------------------------------------------------
+   O QUE SE MEDE A SEGUIR · o rótulo da vaga
+   --------------------------------------------------------------------------
+   `.dominios-vaga` veio de `dominio.css` a 15.09.2026, e a razão é a mesma que
+   tirou a lista dos domínios de lá: a regra vivia numa folha que a sua única
+   página não importa. Desde o §9.1 (08.09.2026) as vagas saíram do índice dos
+   domínios e vieram para esta secção do Método, e `MetodoView.astro` importa
+   `leitura.css` e mais nada. O rótulo rendia-se no serif do corpo em vez do tipo
+   de instrumento, e sem a coluna da direita. A regra segue o seu único uso. */
+.dominios-vaga {
+  font-family: var(--f-instr);
+  font-size: 14px;
+  color: var(--muted);
+  min-width: 11ch;
+  text-align: right;
+}
+
 /* ==========================================================================
    SUBETAPA 4c · A AGENDA: O SUMÁRIO, E O ITEM COMO CARTÃO QUE ABRE
    ========================================================================== */
