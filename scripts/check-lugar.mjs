@@ -128,7 +128,33 @@ const TETOS = {
      `design/especime-v3/medicoes/lugar-2026-09-04/l1-composicao.mjs`, e o padrão
      maior que resta são as 616 páginas de concelho, onde o selo do cartão e o
      selo do pé da leitura que ele abre apontam os dois para a mesma linha. */
-  l1_paginas: 2170,
+  /* SOBE DE 2 170 PARA 2 290 a 15.09.2026, e é a primeira vez que este número
+     sobe. A catraca existe para que ele não suba por descuido; sobe aqui por uma
+     razão medida, e a medida está escrita para quem a quiser desfazer.
+
+     **O que aconteceu.** O bloco P2 trouxe 59 linhas novas do livro-razão (o
+     período anterior e o agregado da União de 32 medidas, seladas pelo motor em
+     `enquadramento-2026-09-15`). Cada linha do livro-razão tem página própria, nas
+     duas edições: são 118 páginas novas na família `linha`, e a família passou de
+     1 422 para 1 540. 1 540 menos 1 422 são exactamente 118, e 118 são exactamente
+     59 vezes 2.
+
+     **Nenhuma das 118 tem um par de portas novo.** Medido, e não presumido: das
+     59 páginas novas da edição portuguesa, **0** rendem qualquer um dos três
+     blocos que este bloco acrescentou ao recibo («Próxima conferência», «Nome no
+     INE», «Nome na PORDATA»), porque nenhuma delas tem entrada no calendário nem
+     nome oficial exportado. Os dois pares que elas trazem são os dois padrões que
+     a família `linha` já tinha, cada um com mais 118 ocorrências e nenhuma
+     ocorrência nova: o endereço da fonte rendido na ficha, na atribuição e na
+     linha da série (716 para 834), e a porta da regra da releitura ao lado da
+     porta do Método no rodapé do aparelho (678 para 796).
+
+     **O horizonte continua a zero, e o trabalho continua o mesmo:** os dois
+     padrões da família `linha` e o das 616 páginas de concelho. O que este número
+     mede é quantas páginas os têm, e a resposta muda quando o livro-razão cresce.
+     Medido com `node design/especime-v3/medicoes/lugar-2026-09-04/l1-composicao.mjs dist`
+     sobre a cabeça do bloco P2. */
+  l1_paginas: 2290,
   /* L2a · páginas, fora de `/municipios`, que ligam a mais de `L2_LIMITE_NOMES`
      concelhos fora de uma lista fechada.
      DESCE DE 2 PARA 0 a 09.09.2026, por decisão do lugar de direção, e a régua
