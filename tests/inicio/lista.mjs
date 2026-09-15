@@ -357,8 +357,14 @@ const LEITURA = () => {
     tela: cx(document.querySelector('.mapa-tela')),
     svg: cx(document.querySelector('.cabeca-inst .mapa-svg')),
     legenda: cx(document.querySelector('.mapa-legenda')),
+    /* O ALINHAMENTO LÊ-SE NA LINHA QUE A LEGENDA TEM (acerto 4 do P1,
+       15.09.2026). Era `.mapa-linha-fonte`, a linha «308 concelhos · CAOP 2025 ·
+       selo», que saiu: a contagem passou para o lugar do nome do mapa, com a sua
+       marca da fonte, e o que fica na legenda é a menção da licença. Uma sonda
+       que continuasse a procurar a linha antiga devolvia `null`, e a L12 caía
+       por não encontrar nada em vez de por um desalinhamento. */
     legendaAlinhamento: (() => {
-      const e = document.querySelector('.mapa-legenda .mapa-linha-fonte');
+      const e = document.querySelector('.mapa-legenda .mapa-fonte');
       return e ? getComputedStyle(e).textAlign : null;
     })(),
     lista: cx(lista),
