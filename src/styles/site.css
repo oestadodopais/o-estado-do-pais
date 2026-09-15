@@ -5385,12 +5385,15 @@ a.marcador::after {
 
    Nenhuma peça nova: os casos e as recusas usam as listas e as linhas rotuladas
    que o Método já tem. O que estas regras fazem é a goma entre elas. */
-.sobre-politica {
-  margin-top: clamp(18px, 2.4vw, 26px);
+/* `.sobre-politica` PASSOU A `.sobre-projeto`, E DEIXOU DE SER CINZENTA
+   (leitura do lugar de direção às capturas do P1, 15.09.2026). A classe vestia
+   a frase da política, que era uma nota por baixo do texto do diretor; o que
+   está no lugar dela é a frase que diz o que este projeto é, e essa abre a
+   página. O corpo e a cor vêm de `.lede`, que é a classe do parágrafo seguinte:
+   dois parágrafos que se leem seguidos leem-se no mesmo tipo. O que esta regra
+   guarda é só a largura da coluna. */
+.sobre-projeto {
   max-width: 62ch;
-  font-size: var(--t-leitura);
-  line-height: var(--lh-leitura);
-  color: var(--muted);
 }
 .politica-caso + .politica-caso {
   margin-top: 10px;

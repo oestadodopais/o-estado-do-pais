@@ -42,6 +42,14 @@
  * e mexer-lhe é do lugar de direção. Vive em `src/data/politica-ia.mjs`, com a
  * mesma disciplina de comparação: `data-o-projeto` é a marca que o portão
  * compara com a cadeia decidida, carácter a carácter.
+ *
+ * ---------------------------------------------------------------------------
+ * A ORDEM DOS DOIS PARÁGRAFOS (leitura do lugar de direção, 15.09.2026)
+ * ---------------------------------------------------------------------------
+ * A frase do projeto é a PRIMEIRA da página, e no corpo de texto: diz o que
+ * isto é, e é isso que quem chega ao Sobre vem saber. O parágrafo do diretor
+ * vem a seguir, sem uma palavra mudada e sem mudar de forma, porque é um dos
+ * dois textos governados pela amarra das decisões.
  */
 import Base from '../layouts/Base.astro';
 import { SOBRE } from '../data/sobre.mjs';
@@ -62,9 +70,22 @@ const politica = `${routePath('metodo', lang)}#${ANCORA_DA_POLITICA}`;
       <h1>{s.sobre.h1}</h1>
     </div>
     <div class="metodo-corpo">
-      <p class="lede sobre-texto" data-sobre={lang}>{SOBRE[lang].texto}</p>
+      {/* ------------------------------------------------------------------
+          A FRASE DO PROJETO É A PRIMEIRA, E É CORPO DE TEXTO (leitura do lugar
+          de direção às capturas do P1, 15.09.2026)
+          ------------------------------------------------------------------
+          Entrou por baixo do parágrafo do diretor e em cinzento, que é a forma
+          da frase da política que ela substituiu. Era o lugar errado para as
+          duas coisas: quem chega ao Sobre quer saber PRIMEIRO o que isto é, e
+          uma frase em `--muted` lê-se como uma nota de rodapé do que está por
+          cima. Passa a abrir a página, no mesmo corpo do parágrafo seguinte.
 
-      <p class="sobre-politica" data-o-projeto={lang}>{O_PROJETO[lang]}</p>
+          O PARÁGRAFO DO DIRETOR NÃO MUDA UMA PALAVRA nem muda de forma: é o
+          texto governado pela amarra das decisões (`src/data/sobre.mjs`), e o
+          que mudou foi o que está ANTES dele. */}
+      <p class="lede sobre-projeto" data-o-projeto={lang}>{O_PROJETO[lang]}</p>
+
+      <p class="lede sobre-texto" data-sobre={lang}>{SOBRE[lang].texto}</p>
 
       <p class="sobre-porta">
         <a href={politica}>→ {POLITICA.titulo[lang]}</a>
