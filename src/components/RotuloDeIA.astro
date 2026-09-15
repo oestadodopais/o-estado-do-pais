@@ -34,16 +34,19 @@
  * secção do Método.
  *
  * ---------------------------------------------------------------------------
- * AS TRÊS MARCAS, E O QUE CADA UMA SUSTENTA
+ * AS DUAS MARCAS, E O QUE CADA UMA SUSTENTA
  * ---------------------------------------------------------------------------
  *   · `data-rotulo-ia="rodape|topo"` · o bloco. O portão conta exactamente um
  *     `rodape` por página construída, e exige o `topo` nas páginas de leitura;
- *   · `data-rotulo-nome` · o nome de quem responde. `check-lingua.mjs` confere
- *     que ele diz em que língua está, nas duas edições: é um nome português, e
- *     numa página inglesa sem marca um leitor de ecrã lê-o com fonética
- *     inglesa (a regra da §1.82, aplicada a um nome de pessoa);
- *   · `data-ficha-primeira-pagina` · as duas cadeias do artigo 15.º, n.º 1 da
- *     Lei de Imprensa, e só na primeira página de cada edição.
+ *   · `data-ficha-primeira-pagina` · a menção de gratuitidade do artigo 15.º,
+ *     n.º 1 da Lei de Imprensa, e só na primeira página de cada edição.
+ *
+ * `data-rotulo-nome` ERA A TERCEIRA E SAIU (P1, itens 1 e 2, 15.09.2026). O
+ * nome de quem responde saiu do rótulo e da ficha por decisão do diretor, e
+ * com ele saiu a marca que o dizia e a marca de língua que ela levava: uma
+ * marca sem elemento é uma conferência a correr sobre coisa nenhuma. Onde o
+ * nome se diz é no Sobre e na regra 9 do Método, e lá diz-se dentro de uma
+ * frase.
  *
  * ---------------------------------------------------------------------------
  * A PRIMEIRA PÁGINA DE CADA EDIÇÃO
@@ -53,13 +56,7 @@
  * identidade (`Masthead.astro`, `naHome`). Uma segunda maneira de perguntar a
  * mesma coisa divergiria da primeira.
  */
-import {
-  ANCORA_DA_POLITICA,
-  FICHA_DA_PRIMEIRA_PAGINA,
-  LINGUA_DO_RESPONSAVEL,
-  RESPONSAVEL_EDITORIAL,
-  ROTULO,
-} from '../data/politica-ia.mjs';
+import { ANCORA_DA_POLITICA, FICHA_DA_PRIMEIRA_PAGINA, ROTULO } from '../data/politica-ia.mjs';
 import { routePath, normalizePath } from '../lib/routes.mjs';
 
 const { lang = 'pt', path, onde = 'rodape' } = Astro.props;
@@ -69,31 +66,22 @@ const naPrimeiraPagina = normalizePath(routePath('home', lang)) === aqui;
 const r = ROTULO[lang];
 const ficha = FICHA_DA_PRIMEIRA_PAGINA[lang];
 const politica = `${routePath('metodo', lang)}#${ANCORA_DA_POLITICA}`;
-
-/* O nome é português. Numa página portuguesa está na língua da página e não
-   leva marca; numa página inglesa leva a sua. É a regra dos dois sentidos que
-   `check-lingua.mjs` já aplica aos títulos e aos organismos: a marca a mais é o
-   mesmo defeito da marca em falta. */
-const linguaDoNome = lang === 'pt' ? undefined : LINGUA_DO_RESPONSAVEL;
 ---
 
 <div class:list={['rotulo-ia', `rotulo-ia-${onde}`]} data-rotulo-ia={onde}>
   <p class="rotulo-ia-linha">
-    <Fragment set:text={r.antes} /><a href={politica}>{r.porta}</a><Fragment
-      set:text={r.depois}
-    /><span data-rotulo-nome lang={linguaDoNome}>{RESPONSAVEL_EDITORIAL}</span>
+    <Fragment set:text={r.antes} /><a href={politica}>{r.porta}</a><Fragment set:text={r.depois} />
   </p>
 
   {
-    /* A ficha da primeira página: o nome de quem dirige e a menção de
-       gratuitidade, numa linha só. Não se repete em mais nenhuma página, porque
-       a lei a pede na primeira e uma frase repetida em seis mil páginas é
-       mobília. */
+    /* A ficha da primeira página: a menção de gratuitidade, sozinha. Não se
+       repete em mais nenhuma página, porque a lei a pede na primeira e uma
+       frase repetida em seis mil páginas é mobília. O nome de quem dirige saiu
+       desta linha a 15.09.2026, por decisão do diretor: a razão e a leitura do
+       artigo 15.º ficam escritas em `src/data/politica-ia.mjs`. */
     naPrimeiraPagina && onde === 'rodape' && (
       <p class="rotulo-ia-ficha" data-ficha-primeira-pagina>
-        <Fragment set:text={`${ficha.diretorK} `} />
-        <span data-rotulo-nome lang={linguaDoNome}>{RESPONSAVEL_EDITORIAL}</span>
-        <Fragment set:text={` · ${ficha.gratuito}`} />
+        <Fragment set:text={ficha.gratuito} />
       </p>
     )
   }

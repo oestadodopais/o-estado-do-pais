@@ -20,20 +20,39 @@
  * ---------------------------------------------------------------------------
  * O QUE AQUI NÃO SE MEXE
  * ---------------------------------------------------------------------------
- * As duas primeiras cadeias de `ROTULO` e a `FRASE` inteira são texto aprovado
- * pelo diretor, carácter a carácter, na ordem de construção de 01.09.2026 §3.
- * Não se apertam, não se traduzem outra vez e não se acrescenta nada:
+ * As cadeias de `ROTULO`, a `FRASE` e a `O_PROJETO` são texto decidido, e só
+ * mudam por decisão escrita, aqui e no oráculo do portão ao mesmo tempo. A
+ * redação de 01.09.2026 era:
  *
  *   pt · «Texto gerado por IA sob a política da casa · responsável editorial:
  *         Nuno dos Santos»
  *   en · «AI-generated text under the house policy · editorial responsibility:
  *         Nuno dos Santos»
  *
- * O rótulo está partido em três pedaços porque «a política da casa» / «the
- * house policy» é a porta para a secção da política, e uma ligação é um
- * elemento e não um pedaço de cadeia. Juntar os três pela ordem em que estão dá
- * o texto aprovado, e `scripts/gate-html.mjs` compara-o com o que a página
- * rende, carácter a carácter, em todas as páginas construídas.
+ * **E MUDOU A 15.09.2026, PELO BLOCO P1** (`BRIEF-P1-o-rodape-e-a-primeira-
+ * pagina.md`, itens 1, 2 e 3), depois de o diretor ler o rodapé no ar. Três
+ * coisas, e cada uma tem a sua razão:
+ *
+ *   · «política da casa» é decalque de *house policy*: uma *policy* é um
+ *     conjunto de regras, e «política» em português é a dos partidos. **E «a
+ *     casa» também não serve** (emenda do diretor das 16:35 UTC de 15.09): em
+ *     português, casa é a habitação, que este projeto também mede. A porta
+ *     passa a ser «Método» / «Method», que é o nome da página onde a política
+ *     da IA já vive, e a secção dela muda de título com o rótulo;
+ *   · «IA» passa a «inteligência artificial» por extenso, que é a palavra da
+ *     lei (o artigo 50.º fala de «sistema de IA» e o título do Regulamento
+ *     escreve-o por extenso) e a que um leitor de jornal lê sem sigla;
+ *   · **o nome sai do rótulo.** «responsável editorial» é decalque de
+ *     *editorial responsibility*, e o rótulo não precisa de nomear ninguém: o
+ *     que a divulgação obriga a dizer é o que o texto é e onde estão as regras.
+ *     Quem escreve e sob que regras diz-se aqui e no Método; o que este
+ *     projeto é diz-se no Sobre, numa frase de prosa.
+ *
+ * O rótulo está partido em três pedaços porque «Método» / «Method» é a porta
+ * para a secção da política dentro dele, e uma ligação é um elemento e não um
+ * pedaço de cadeia. Juntar os três pela ordem em que estão dá o texto
+ * decidido, e `scripts/gate-html.mjs` compara-o com o que a página rende,
+ * carácter a carácter, em todas as páginas construídas.
  *
  * NENHUM ALGARISMO NESTE FICHEIRO SEM ORIGEM DECLARADA. As três cadeias que
  * trazem algarismos são nomes de modelos, e vão à página dentro de
@@ -42,7 +61,7 @@
  */
 
 /**
- * O NOME DE QUEM DETÉM A RESPONSABILIDADE EDITORIAL.
+ * O NOME DE QUEM RESPONDE PELO SÍTIO.
  *
  * A forma exacta foi lida em `src/data/metodo.mjs`, regra 9 («A direção é de
  * **Nuno dos Santos**, que escolhe o que se publica e responde por ele»), que é
@@ -50,13 +69,29 @@
  * confere que as duas formas continuam a ser a mesma cadeia: uma segunda grafia
  * do nome da pessoa que responde seria duas pessoas para um leitor.
  *
- * É um NOME, e um nome não se traduz: numa página inglesa leva `lang="pt-PT"`,
- * pela mesma regra dos títulos de documento (§1.82). `scripts/check-lingua.mjs`
- * confere-o nas duas edições.
+ * **JÁ NÃO SE RENDE EM PÁGINA NENHUMA DESTE FICHEIRO** (P1, itens 1, 2 e 3,
+ * 15.09.2026, com a emenda do diretor das 16:35 UTC): o rótulo de todas as
+ * páginas e a ficha da primeira página deixaram de o dizer, e o Sobre passou a
+ * dizer o que o projeto é em vez de dizer de quem ele é. O único sítio do
+ * sítio onde o nome continua a render-se é a regra 9 do Método, que é um dos
+ * dois textos governados pela amarra das decisões e uma das dez regras da
+ * lista fechada do diretor: muda com uma entrada em `DECISIONS.md` escrita do
+ * lugar de direção, e não com um commit de construtor.
+ *
+ * Esta constante fica por uma razão só, e é a comparação: o portão de HTML
+ * confere que o nome deste ficheiro, o do oráculo e o que a regra 9 imprime
+ * são a mesma cadeia.
+ *
+ * É um NOME, e um nome não se traduz.
  */
 export const RESPONSAVEL_EDITORIAL = 'Nuno dos Santos';
 
-/** A língua em que o nome está escrito, na forma que o `lang` do HTML usa. */
+/**
+ * A língua em que o nome está escrito, na forma que o `lang` do HTML usa.
+ *
+ * Fica declarada porque continua a ser verdade e porque o oráculo a confere;
+ * nenhuma página a escreve num atributo desde que o nome saiu do rótulo.
+ */
 export const LINGUA_DO_RESPONSAVEL = 'pt-PT';
 
 /** A âncora da secção da política, dentro do Método. */
@@ -100,26 +135,30 @@ export const FONTE_DIGITAL_GERADA_POR_IA = {
  */
 export const ROTULO = {
   pt: {
-    antes: 'Texto gerado por IA sob ',
-    porta: 'a política da casa',
-    depois: ' · responsável editorial: ',
+    antes: 'Texto gerado por inteligência artificial, segundo o ',
+    porta: 'Método',
+    depois: '.',
   },
   en: {
-    antes: 'AI-generated text under ',
-    porta: 'the house policy',
-    depois: ' · editorial responsibility: ',
+    antes: 'Text generated by artificial intelligence, according to the ',
+    porta: 'Method',
+    depois: '.',
   },
 };
 
 /**
- * O texto aprovado, inteiro, na língua de uma edição. É o que o portão compara.
+ * O texto decidido, inteiro, na língua de uma edição. É o que o portão compara.
+ *
+ * O NOME SAIU DAQUI A 15.09.2026 (P1, item 1): a linha acaba no ponto final, e
+ * o que ela diz é o que o artigo 50.º pede, que o texto foi gerado por um
+ * sistema de inteligência artificial e onde estão as regras sob as quais o foi.
  *
  * @param {string} lang
  */
 export function textoDoRotulo(lang) {
   const r = /** @type {Record<string, { antes: string, porta: string, depois: string }>} */ (ROTULO)[lang];
   if (!r) return null;
-  return `${r.antes}${r.porta}${r.depois}${RESPONSAVEL_EDITORIAL}`;
+  return `${r.antes}${r.porta}${r.depois}`;
 }
 
 /**
@@ -145,10 +184,28 @@ export function textoDoRotulo(lang) {
  *
  * A menção de gratuitidade diz o que a coisa é e não tem adjetivo nenhum: não
  * diz que é livre, aberta ou de acesso universal, diz que não se paga.
+ *
+ * ---------------------------------------------------------------------------
+ * O NOME SAIU DESTA LINHA A 15.09.2026, E A LEITURA FICA ESCRITA
+ * ---------------------------------------------------------------------------
+ * **A decisão é do diretor**, na tarde de 15.09.2026, depois de ler a primeira
+ * página no ar: «posing as a director with my name is just not right». O que
+ * sai é a palavra «Diretor:» e o nome a seguir a ela; o que fica é a menção de
+ * gratuitidade, sozinha, na primeira página de cada edição.
+ *
+ * **A LEITURA DO ARTIGO 15.º NÃO SE APAGA, E É POR ISSO QUE ESTE PARÁGRAFO
+ * CONTINUA AQUI.** O que o artigo pede continua a ser o que está escrito acima,
+ * e a casa deixa de o cumprir numa das suas partes com uma decisão escrita e
+ * datada, em vez de o cumprir por hábito: se o advogado responder que o sítio é
+ * uma publicação periódica no sentido do artigo 9.º, a palavra e o nome voltam
+ * a uma linha só, neste ficheiro, e a condição de onde a linha se rende já está
+ * escrita num sítio só (`RotuloDeIA.astro`). A pergunta de fundo é a primeira
+ * das perguntas para o advogado (§3 da diligência), e a posição do diretor
+ * entra ali pela mão do lugar de direção.
  */
 export const FICHA_DA_PRIMEIRA_PAGINA = {
-  pt: { diretorK: 'Diretor:', gratuito: 'Publicação gratuita' },
-  en: { diretorK: 'Director:', gratuito: 'Free of charge' },
+  pt: { gratuito: 'Publicação gratuita' },
+  en: { gratuito: 'Free of charge' },
 };
 
 /**
@@ -158,13 +215,47 @@ export const FICHA_DA_PRIMEIRA_PAGINA = {
  */
 export const FRASE = {
   pt:
-    'Escrito, conferido e atualizado por sistemas de IA sob uma política publicada; ' +
-    'nenhum humano revê cada peça antes de sair; uma pessoa com nome detém a ' +
-    'responsabilidade editorial, define as regras e as recusas, e responde.',
+    'Escrito, conferido e atualizado por sistemas de inteligência artificial, segundo ' +
+    'regras publicadas; nenhum humano revê cada peça antes de sair; uma pessoa com ' +
+    'nome define as regras e as recusas, e responde.',
   en:
-    'Written, checked and updated by AI systems under a published policy; no human ' +
-    'reviews each piece before it goes out; a named person holds editorial ' +
-    'responsibility, sets the rules and the refusals, and answers for it.',
+    'Written, checked and updated by artificial intelligence systems, under published ' +
+    'rules; no human reviews each piece before it goes out; a named person sets the ' +
+    'rules and the refusals, and answers for it.',
+};
+
+/**
+ * ---------------------------------------------------------------------------
+ * O QUE ESTE PROJETO É · a frase do Sobre (P1, item 3, 15.09.2026)
+ * ---------------------------------------------------------------------------
+ * Uma frase em prosa, sem título nenhum por cima e sem rótulo nenhum pelo
+ * meio: o que isto é e o que anda a experimentar. Está no lugar da ficha com o
+ * nome («Diretor: <nome>») e do rótulo que dizia «responsável editorial:
+ * <nome>», e não os substitui palavra por palavra: **diz outra coisa, por
+ * decisão do diretor das 16:35 UTC de 15.09.2026** («I don't see the need for
+ * saying that it is mine»). O nome de quem responde sai de todas as páginas
+ * construídas.
+ *
+ * **VIVE AQUI E NÃO EM `src/data/sobre.mjs`**, e a razão é a mesma que este
+ * ficheiro já escreve sobre a frase da política: aquele é um dos dois textos
+ * governados pela amarra das decisões, com o resumo carimbado numa entrada do
+ * `DECISIONS.md`, e mexer num byte dele obriga a uma entrada nova, que é
+ * escrita do lugar de direção e não do construtor. As duas frases do diretor
+ * que lá vivem não mudam com este bloco, e o `sha256` delas continua o mesmo.
+ *
+ * «PESSOAL E INDEPENDENTE» É O QUE ELE ESCREVEU, e não uma escolha de palavras
+ * do construtor: «pessoal» diz que não é de uma empresa nem de uma redação, e
+ * «independente» diz que não responde a ninguém. Nenhuma das duas é um
+ * adjetivo de mérito, que a Emenda 18 recusa: não dizem que o projeto é bom,
+ * dizem de que espécie é.
+ */
+export const O_PROJETO = {
+  pt:
+    'O Estado do País é um projeto pessoal e independente: explora a possibilidade ' +
+    'de um observatório sobre o país feito com inteligência artificial.',
+  en:
+    'O Estado do País is a personal, independent project: it explores the possibility ' +
+    'of an observatory of the country made with artificial intelligence.',
 };
 
 /**
@@ -185,7 +276,15 @@ export const FRASE = {
  * Sobre. É lida pelo lugar de direção antes da fusão.
  */
 export const POLITICA = {
-  titulo: { pt: 'A política da casa', en: 'The house policy' },
+  /* O TÍTULO MUDOU A 15.09.2026 (P1, item 1, com a emenda do diretor das 16:35
+     UTC): «A política da casa» era o decalque de *house policy*, e «regras da
+     casa» trocava um decalque por outro problema, porque casa em português é a
+     habitação. O título passa a dizer o que a secção faz, em palavras
+     correntes, e a porta do rótulo abre-a pelo nome da página. */
+  titulo: {
+    pt: 'Como a inteligência artificial escreve este sítio',
+    en: 'How artificial intelligence writes this site',
+  },
 
   /** A via escolhida, e o que ela obriga. */
   via: {

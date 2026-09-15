@@ -21,25 +21,32 @@
  * descreve.
  *
  * ---------------------------------------------------------------------------
- * E DESDE 01.09.2026 A FRASE DA POLÍTICA (via B)
+ * E DESDE 01.09.2026 UMA TERCEIRA FRASE DECIDIDA, QUE MUDOU A 15.09.2026
  * ---------------------------------------------------------------------------
- * «Duas frases e uma porta» passa a ser duas frases decididas, a frase da
- * política e duas portas. A frase é do diretor, aprovada carácter a carácter, e
- * diz o que as duas primeiras não dizem: que nenhum humano revê cada peça antes
- * de sair, e que quem responde é uma pessoa com nome. É a metade da divulgação
- * que o rótulo de todas as páginas não cabe a dizer; o rótulo diz o que o texto
- * é e leva à política, e é aqui e no Método que a política se lê.
+ * «Duas frases e uma porta» passa a ser três frases decididas e duas portas.
+ *
+ * A terceira era a frase da política («Escrito, conferido e atualizado por
+ * sistemas de IA sob uma política publicada…»), e desde 15.09.2026 é a frase
+ * que diz o que este projeto é (`O_PROJETO`, do item 3 do brief P1, com a
+ * emenda do diretor das 16:35 UTC). O que ela substitui não é só uma cadeia: é
+ * a ficha com o nome. O rótulo de todas as páginas dizia «responsável
+ * editorial: <nome>» e a primeira página dizia «Diretor: <nome>»; o diretor
+ * leu as duas no ar e tirou-as, e o Sobre deixou de dizer de quem o sítio é
+ * para dizer o que ele é.
+ *
+ * A frase da política continua a existir, no Método, que é a página onde a
+ * política se lê por extenso; a porta para lá é a segunda linha desta página.
  *
  * Não entra em `src/data/sobre.mjs`: aquele ficheiro é um dos dois textos
  * governados pela amarra das decisões, com o resumo carimbado no `DECISIONS.md`,
  * e mexer-lhe é do lugar de direção. Vive em `src/data/politica-ia.mjs`, com a
- * mesma disciplina de comparação: `data-frase-da-politica` é a marca que o
- * portão compara com o texto aprovado, carácter a carácter, aqui e no Método.
+ * mesma disciplina de comparação: `data-o-projeto` é a marca que o portão
+ * compara com a cadeia decidida, carácter a carácter.
  */
 import Base from '../layouts/Base.astro';
 import { SOBRE } from '../data/sobre.mjs';
 import { ABERTURA } from '../data/metodo.mjs';
-import { ANCORA_DA_POLITICA, FRASE, POLITICA } from '../data/politica-ia.mjs';
+import { ANCORA_DA_POLITICA, O_PROJETO, POLITICA } from '../data/politica-ia.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 
@@ -57,7 +64,7 @@ const politica = `${routePath('metodo', lang)}#${ANCORA_DA_POLITICA}`;
     <div class="metodo-corpo">
       <p class="lede sobre-texto" data-sobre={lang}>{SOBRE[lang].texto}</p>
 
-      <p class="sobre-politica" data-frase-da-politica={lang}>{FRASE[lang]}</p>
+      <p class="sobre-politica" data-o-projeto={lang}>{O_PROJETO[lang]}</p>
 
       <p class="sobre-porta">
         <a href={politica}>→ {POLITICA.titulo[lang]}</a>

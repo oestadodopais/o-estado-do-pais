@@ -439,8 +439,15 @@ async function mediuAFicha() {
       maus.push(`${pag.caminho}: ${s.temFicha ? 'tem' : 'não tem'} ficha e ${devia ? 'devia ter' : 'não devia'}`);
       continue;
     }
-    if (devia && !String(s.textoDaFicha).includes('Nuno dos Santos')) {
-      maus.push(`${pag.caminho}: a ficha não nomeia quem dirige («${s.textoDaFicha}»)`);
+    /* A FICHA DEIXOU DE NOMEAR QUEM DIRIGE (P1, item 2, 15.09.2026): a célula
+       media que o nome lá estava, e passa a medir que ele NÃO está e que a
+       menção de gratuitidade está. O nome saiu por decisão do diretor, e uma
+       célula que continuasse a exigi-lo media o que o bloco anterior queria. */
+    if (devia && String(s.textoDaFicha).includes('Nuno dos Santos')) {
+      maus.push(`${pag.caminho}: a ficha ainda nomeia quem dirige («${s.textoDaFicha}»)`);
+    }
+    if (devia && !String(s.textoDaFicha).trim()) {
+      maus.push(`${pag.caminho}: a ficha está vazia`);
     }
   }
   medidas.M5 = vistos;

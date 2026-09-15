@@ -85,12 +85,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { WORKS, workById } from '../data/studies.mjs';
-import {
-  ANCORA_DA_POLITICA,
-  LINGUA_DO_RESPONSAVEL,
-  RESPONSAVEL_EDITORIAL,
-  ROTULO,
-} from '../data/politica-ia.mjs';
+import { ANCORA_DA_POLITICA, ROTULO } from '../data/politica-ia.mjs';
 import { routePath, LANGS } from './routes.mjs';
 import { temRegisto } from './registos.mjs';
 import { SITE_NAME } from '../../site.config.mjs';
@@ -650,8 +645,11 @@ export function faixa(slug, lang) {
    * É a MESMA cadeia que `RotuloDeIA.astro` rende no rodapé de todas as outras
    * páginas, lida do mesmo ficheiro e não retipada aqui: `textoDoRotulo()`
    * compõe-na dos três pedaços, e o portão compara-a carácter a carácter dos
-   * dois lados. O nome de quem responde é português e leva a sua marca de
-   * língua nas edições inglesas, pela regra da §1.82.
+   * dois lados.
+   *
+   * O NOME DE QUEM RESPONDE SAIU DAQUI A 15.09.2026 (P1, item 1), com a marca
+   * `data-oedp-rotulo-nome` e a marca de língua que ela levava: o rótulo acaba
+   * no ponto final, aqui como no rodapé.
    *
    * NÃO TRAZ UM ÚNICO ALGARISMO, e é por isso que cabe aqui: a regra da faixa
    * («nenhum algarismo no seu texto») é o que permite dispensar o corpo do
@@ -659,7 +657,6 @@ export function faixa(slug, lang) {
    */
   const r = ROTULO[lang];
   const politica = `${routePath('metodo', lang)}#${ANCORA_DA_POLITICA}`;
-  const linguaDoNome = lang === 'pt' ? '' : ` lang="${atributo(LINGUA_DO_RESPONSAVEL)}"`;
 
   return [
     `<div data-oedp-faixa lang="${atributo(s.lang)}" aria-label="${atributo(rotulo)}">`,
@@ -667,8 +664,7 @@ export function faixa(slug, lang) {
     `<a data-oedp-marca href="${atributo(destino)}">${texto(SITE_NAME)}</a>`,
     `<span data-oedp-rotulo>${texto(rotulo)}</span>`,
     `<span data-oedp-rotulo-ia>${texto(r.antes)}` +
-      `<a href="${atributo(politica)}">${texto(r.porta)}</a>${texto(r.depois)}` +
-      `<span data-oedp-rotulo-nome${linguaDoNome}>${texto(RESPONSAVEL_EDITORIAL)}</span></span>`,
+      `<a href="${atributo(politica)}">${texto(r.porta)}</a>${texto(r.depois)}</span>`,
     ...(rotaDoTexto
       ? [`<a data-oedp-texto href="${atributo(rotaDoTexto)}">${texto(s.estudos.textoLink)} →</a>`]
       : []),

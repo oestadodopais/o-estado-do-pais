@@ -1063,12 +1063,18 @@ for (const pos of positivos) {
 for (const [chave, x] of achados.rotulo) {
   erros.push(`o rótulo de IA: ${chave}\n      primeira ocorrência em ${x.onde} (${x.n} no total).`);
 }
-if (contas.nomes_do_rotulo_em_pt === 0 || contas.nomes_do_rotulo_em_en === 0) {
+/* O NOME SAIU DO RÓTULO A 15.09.2026 (P1, itens 1 e 2), e com ele saiu o
+   mínimo positivo que esta régua exigia dele. O que ficou é a metade que
+   continua a ter matéria: um `data-rotulo-nome` que VOLTE a aparecer tem de ter
+   o nome certo e a marca certa (o laço acima continua a medi-lo), e a linha do
+   rótulo continua a ter de estar na língua da página. O positivo conhecido
+   desta régua passa a ser a linha, que se rende em todas as páginas, e é a
+   conferência de baixo. */
+if (contas.nomes_do_rotulo !== 0) {
   erros.push(
-    `a varredura viu ${contas.nomes_do_rotulo_em_pt} nome(s) do rótulo em «pt» e ` +
-      `${contas.nomes_do_rotulo_em_en} em «en». O rótulo é de todas as páginas construídas das ` +
-      `duas edições: um zero de qualquer dos lados quer dizer que L9 não olhou para nada, e o ` +
-      `verde dela não prova coisa nenhuma.`,
+    `a varredura viu ${contas.nomes_do_rotulo} «data-rotulo-nome» e devia ver zero: o nome de ` +
+      `quem responde saiu do rótulo e da ficha da primeira página a 15.09.2026, por decisão do ` +
+      `diretor. Se voltou, voltou sem decisão.`,
   );
 }
 if (contas.linhas_do_rotulo === 0) {
@@ -1137,9 +1143,8 @@ console.log(
       `${contas.leis_en_em_transcricao} dentro de transcrição do motor · ` +
       `títulos de estudo portugueses em «en»: ${contas.estudos_pt_en} à vista e ` +
       `${contas.estudos_pt_ocultos} no oculto, todos com marca · ` +
-      `rótulo de IA: ${contas.nomes_do_rotulo} nome(s) de quem responde ` +
-      `(${contas.nomes_do_rotulo_em_pt} em «pt», ${contas.nomes_do_rotulo_em_en} em «en»), ` +
-      `todos com a marca certa, e ${contas.linhas_do_rotulo} linha(s) na língua da página · ` +
+      `rótulo de IA: ${contas.nomes_do_rotulo} nome(s) de quem responde (o nome saiu do ` +
+      `rótulo a 15.09.2026) e ${contas.linhas_do_rotulo} linha(s) na língua da página · ` +
       `atributos repetidos: nenhum`,
   ),
 );
