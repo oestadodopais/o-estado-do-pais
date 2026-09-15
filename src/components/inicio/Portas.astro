@@ -48,6 +48,28 @@ const temAgenda = agenda.every((a) => p[a.chave].valor !== null);
       O nome da região de navegação fica, porque um leitor de ecrã que percorra
       as regiões precisa de saber qual é esta. */}
 
+  {/* ----------------------------------------------------------------------
+      AS TRÊS ETIQUETAS LEVAM `data-voz` (F1.13, item 2, emendado a 15.09.2026
+      pela leitura a frio do Codex, achado 7)
+      ----------------------------------------------------------------------
+      O brief manda inventariá-las, e a primeira construção deste bloco não o
+      fez, com a razão de sempre: o texto de uma etiqueta de porta vive todo
+      dentro de um `<a>`, e um bloco assim é um destino e não uma frase
+      (`textoForaDeComandos`, em `scripts/medir-defeitos.mjs`). A leitura a frio
+      mostrou o que isso custa, e mostrou-o com uma planta que passou: uma cadeia
+      trocada no ficheiro das cadeias («All the studies» por «All studies») não
+      cai em régua nenhuma, porque o inventário não tem a linha que a apanharia.
+
+      `data-voz` é a marca que já resolve isto em toda a casa desde 04.09.2026: diz
+      «este texto é prosa da casa, recolhe-o onde quer que ele esteja». Não
+      dispensa nada e não esconde nada; só alarga a peneira. É a mesma marca que
+      o rótulo e o botão da busca levam desde o §9.7 do F1.10, e pela mesma
+      razão. As seis linhas entram no inventário como `navegacao`, que é o que
+      elas são: o nome da página de chegada.
+
+      A MARCA VAI NO ELEMENTO INTEIRO, com a seta: é isso que o leitor lê, e é
+      assim que a linha do inventário morde a etiqueta e não metade dela. */}
+
   {/* A CONTAGEM DE COBERTURA SAIU DESTA PORTA (Emenda 15). Dizia «1 de 308
       concelhos · tem página», que é uma frase sobre a cobertura do próprio
       sítio — a classe que a emenda nomeia. Fica o TAMANHO do que está do outro
@@ -76,7 +98,7 @@ const temAgenda = agenda.every((a) => p[a.chave].valor !== null);
         {s.inicio.portas.concelhos}
       </span>
     </span>
-    <span class="lig porta-abrir">{s.inicio.portas.abrirConcelhos} →</span>
+    <span class="lig porta-abrir" data-voz>{s.inicio.portas.abrirConcelhos} →</span>
   </a>
 
   <a class="porta" href={rotas.estudos}>
@@ -89,7 +111,7 @@ const temAgenda = agenda.every((a) => p[a.chave].valor !== null);
         {s.inicio.portas.estudosB}
       </span>
     </span>
-    <span class="lig porta-abrir">{s.inicio.portas.abrirEstudos} →</span>
+    <span class="lig porta-abrir" data-voz>{s.inicio.portas.abrirEstudos} →</span>
   </a>
 
   {
@@ -112,7 +134,7 @@ const temAgenda = agenda.every((a) => p[a.chave].valor !== null);
             </>
           ))}
         </span>
-        <a class="lig porta-abrir" href={rotas.agenda}>{s.inicio.portas.abrirAgenda} →</a>
+        <a class="lig porta-abrir" href={rotas.agenda} data-voz>{s.inicio.portas.abrirAgenda} →</a>
       </div>
     )
   }

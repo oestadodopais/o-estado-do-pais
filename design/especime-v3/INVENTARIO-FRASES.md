@@ -2782,12 +2782,21 @@ mecanismo e não o destino; o primeiro ecrã tinha três caminhos para o mesmo
 lugar; o índice dos domínios dizia «10 medidas» e não dizia quais; e a legenda da
 marca chamava-lhe «selo», que para quem lê é um selo de correio.
 
-**Nenhuma das três etiquetas novas das portas está aqui, e não é esquecimento.**
-«Todos os concelhos →», «Todos os estudos →» e «Toda a agenda →» vivem dentro de
-um `<a>`, e um bloco cujo texto é todo ele uma ligação não é uma frase da casa
-(`textoForaDeComandos`, em `scripts/medir-defeitos.mjs`): é a mesma razão por que
-«a página inteira» nunca esteve nesta tabela. A troca das três está registada em
-`design/especime-v3/CHAVES-EN.md`, que é onde as cadeias mudam de palavras.
+**As seis etiquetas das portas ESTÃO aqui, e a primeira construção deste bloco
+não as pôs.** O brief mandava inventariá-las e o construtor deixou-as de fora com
+a razão de sempre: o texto de uma etiqueta de porta vive todo dentro de um `<a>`,
+e um bloco assim é um destino e não uma frase (`textoForaDeComandos`, em
+`scripts/medir-defeitos.mjs`); foi por isso que «a página inteira» nunca esteve
+nesta tabela. **A leitura a frio do Codex de 15.09.2026 mostrou o que isso custa,
+e mostrou-o com uma planta que passou** (o achado 7, e a planta W1): uma cadeia
+trocada no ficheiro das cadeias, «All the studies» por «All studies», não cai em
+régua nenhuma quando o inventário não tem a linha que a apanharia.
+
+A marca que resolve isto já existe na casa desde 04.09.2026 e é `data-voz`: diz
+«este texto é prosa da casa, recolhe-o onde quer que ele esteja», não dispensa
+nada e só alarga a peneira. É a mesma marca que o rótulo e o botão da busca levam
+desde o §9.7 do F1.10. As seis entram como `navegacao`, com a seta, que é o que o
+leitor lê; as duas antigas entram `retirada`.
 
 **A linha do domínio entra com os buracos que a régua deixa**, e isso é o que ela
 é: os cinco nomes das medidas de cabeça vivem cada um dentro de um
@@ -2826,3 +2835,11 @@ marcações diferentes com as mesmas três cadeias; passa a ser um componente
 | navegacao | measures: , , , , , and more | palavras-da-porta | viva | ver a razão na gémea portuguesa (item 4 do F1.13, 15.09.2026) |
 | conteudo | Ao pé de cada número, a marca da fonte: fonte, excerto e data conferidos · um campo por confirmar. | palavras-da-porta | viva | a legenda da marca da fonte, numa linha em palavras, no lugar do aparelho «Os dois estados do selo» e da sua lista de dois itens (item 5 do brief do F1.13, 15.09.2026). É `conteudo` como as três cadeias que substitui: diz o que a marca ao lado de cada número quer dizer, e sem ela um leitor lê mal um estado de proveniência, que é o teste da regra desta lista. As duas amostras da marca desenham-se dentro da frase e não levam texto (`aria-hidden`) |
 | conteudo | Beside every number, the source mark: source, excerpt and date checked · one field still to confirm. | palavras-da-porta | viva | ver a razão na gémea portuguesa (item 5 do F1.13, 15.09.2026) |
+| navegacao | Todos os concelhos → | palavras-da-porta | viva | cada porta passa a dizer o NOME do que está do outro lado, e não o mecanismo (item 2 do brief do F1.13, 15.09.2026): «a página inteira →» era a mesma etiqueta nas três portas, e o diretor leu-o na primeira página no ar. A linha entra com `data-voz`, pela mesma razão das cadeias da busca (§9.7 do F1.10): o texto de uma etiqueta de porta vive todo dentro de um `<a>`, e sem a marca a régua não a vê. É `navegacao` porque é o que ela é, o nome da página de chegada |
+| navegacao | Todos os estudos → | palavras-da-porta | viva | cada porta passa a dizer o NOME do que está do outro lado, e não o mecanismo (item 2 do brief do F1.13, 15.09.2026): «a página inteira →» era a mesma etiqueta nas três portas, e o diretor leu-o na primeira página no ar. A linha entra com `data-voz`, pela mesma razão das cadeias da busca (§9.7 do F1.10): o texto de uma etiqueta de porta vive todo dentro de um `<a>`, e sem a marca a régua não a vê. É `navegacao` porque é o que ela é, o nome da página de chegada |
+| navegacao | Toda a agenda → | palavras-da-porta | viva | cada porta passa a dizer o NOME do que está do outro lado, e não o mecanismo (item 2 do brief do F1.13, 15.09.2026): «a página inteira →» era a mesma etiqueta nas três portas, e o diretor leu-o na primeira página no ar. A linha entra com `data-voz`, pela mesma razão das cadeias da busca (§9.7 do F1.10): o texto de uma etiqueta de porta vive todo dentro de um `<a>`, e sem a marca a régua não a vê. É `navegacao` porque é o que ela é, o nome da página de chegada |
+| navegacao | All municipalities → | palavras-da-porta | viva | ver a razão na gémea portuguesa (item 2 do F1.13, 15.09.2026) |
+| navegacao | All studies → | palavras-da-porta | viva | ver a razão na gémea portuguesa (item 2 do F1.13, 15.09.2026) |
+| navegacao | The whole agenda → | palavras-da-porta | viva | ver a razão na gémea portuguesa (item 2 do F1.13, 15.09.2026) |
+| navegacao | a página inteira → | palavras-da-porta | retirada | a etiqueta única das três portas dizia o mecanismo e não o destino, e saiu com o item 2 do brief do F1.13 (15.09.2026): cada porta passa a dizer o nome do que está do outro lado. A linha entra aqui `retirada` e não estava aqui `viva`, e a razão é o achado 7 da leitura a frio do mesmo dia: as etiquetas das portas só passaram a ser vistas pela régua quando ganharam `data-voz`, e o que se declara agora é o estado delas, incluindo o da que saiu |
+| navegacao | the whole page → | palavras-da-porta | retirada | ver a razão na gémea portuguesa (item 2 do F1.13, 15.09.2026) |
