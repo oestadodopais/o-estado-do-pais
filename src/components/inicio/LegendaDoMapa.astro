@@ -2,11 +2,23 @@
 /**
  * A LEGENDA DO MAPA, IRMÃ DA CABEÇA, DOS NOMES E DO INSTRUMENTO (29.08.2026)
  *
- * Duas linhas que viviam dentro do `<figure>` do mapa: a linha da Emenda 17
- * («308 concelhos · CAOP 2025 ■ fonte», com o selo no fim e o ano lido do
- * `reference_date` da própria linha do livro-razão) e a menção da fonte da
- * Emenda 20e (a atribuição da Carta, que é a única obrigação da licença e não
- * se cumpre por hiperligação). Saem do mapa por uma decisão do diretor sobre o
+ * ---------------------------------------------------------------------------
+ * ERAM DUAS LINHAS E PASSA A SER UMA (acerto 4 do P1, 15.09.2026)
+ * ---------------------------------------------------------------------------
+ * A linha da Emenda 17 («308 concelhos · CAOP 2025 ■ fonte») SAIU. Dizia a
+ * contagem dos concelhos uma segunda vez, e a norma §2.1 do plano das palavras
+ * diz onde ela se diz: ao lado do número, o valor, a unidade, o período e a
+ * fonte, e o resto atrás da marca. O número passou para o lugar do nome do
+ * mapa, que é onde o leitor está a olhar («Portugal · 308 concelhos ■ fonte»),
+ * com a mesma linha do livro-razão e o mesmo selo; o ano da edição da Carta
+ * está no recibo, que é o que a marca abre.
+ *
+ * A MENÇÃO DA FONTE FICA, e não é uma escolha de forma: é a única obrigação da
+ * licença CC BY 4.0 da Carta, e a Emenda 20e decidiu que ela se escreve onde o
+ * mapa está e não à distância de um clique («uma obrigação de licença não se
+ * cumpre por hiperligação»). `scripts/check-mapa.mjs`, regra r6(b), fecha a
+ * construção sem ela em todas as páginas que desenham um mapa. Tirá-la é uma
+ * decisão do diretor com o advogado, e não um acerto de forma. Saem do mapa por uma decisão do diretor sobre o
  * alinhamento da cabeça (a emenda de 29.08 à §1.84): a partir de 1280 px o mapa
  * ocupa a coluna direita do topo da manchete ao fundo da legenda, e a legenda
  * fica na coluna esquerda, por baixo dos nomes, alinhada à esquerda com eles e
@@ -21,22 +33,10 @@
  * `aria-describedby` para que a ligação entre o mapa e a sua legenda continue
  * dita a quem lê com um leitor de ecrã (leitura cruzada de 29.08).
  */
-import Claim from '../Claim.astro';
-import Provenance from '../Provenance.astro';
 import FonteDaCarta from '../FonteDaCarta.astro';
-import { getClaim } from '../../lib/ledger.mjs';
-
-const { s, lang } = Astro.props;
-const caop = getClaim('municipios-portugal-caop-2025');
 ---
 
 <div class="mapa-legenda mapa-linha" id="mapa-legenda" data-mapa-ficha data-mapa-legenda>
-  <p class="mapa-linha-fonte">
-    <Claim id="municipios-portugal-caop-2025" lang={lang} />
-    {s.inicio.mapa.linha}
-    <span data-nonledger="data-de-referencia">{caop.reference_date}</span>{' '}
-    <Provenance id="municipios-portugal-caop-2025" lang={lang} />
-  </p>
   <p class="mapa-fonte">
     <FonteDaCarta />
   </p>

@@ -88,7 +88,6 @@ import {
   arrumacaoDasMolduras,
 } from '../../lib/mapa.mjs';
 import { repousoDoPais, repousoDaUnidade, textoDoRepousoDaUnidade } from '../../lib/inicio.mjs';
-import { prova } from '../../lib/prova.mjs';
 import LugarDoNome from './LugarDoNome.astro';
 
 /* AS DUAS PROPRIEDADES QUE A PÁGINA DE CONCELHO PEDIU (ISSUES I45, etapa 2m).
@@ -252,11 +251,6 @@ const rotaDoConcelho = routePath('municipio', lang, { slug: ':slug' });
  * composição vive em `src/lib/inicio.mjs`, numa declaração só, porque três
  * superfícies a rendem; o que se faz aqui é chamá-la com o que esta página tem.
  */
-/* A PROVA DESTA EDIÇÃO. A primeira página passa-a (é ela que a lê para a
-   faixa e para as portas); a página de um concelho rende este mapa sem ela, e
-   a legenda do lugar precisa da entrada da chave para render o número com a
-   sua porta. Lê-se aqui quando não chega, e é a mesma tabela dos dois lados. */
-const prov = p ?? prova(lang);
 const manifesto = manifestoDoMapa();
 const nDaUnidade = (slug) => manifesto.unidades.find((x) => x.slug === slug)?.concelhos ?? 0;
 
@@ -776,9 +770,10 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
   {nivel === 'pais' && (
     <LugarDoNome
       s={s}
+      lang={lang}
       niveis={['pais', 'unidade']}
       voltar={routePath('home', lang)}
-      pais={repousoDoPais(s, prov)}
+      pais={repousoDoPais(s)}
     />
   )}
   {/* NO NÍVEL DA UNIDADE HÁ UM NÍVEL SÓ, e por isso não há porta de voltar: o
@@ -792,6 +787,7 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
     nivel === 'unidade' && (
       <LugarDoNome
         s={s}
+        lang={lang}
         niveis={['unidade']}
         unidade={
           daUnidade

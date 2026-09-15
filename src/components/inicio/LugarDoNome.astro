@@ -70,29 +70,38 @@
  * nome que diz outra coisa é um nome a mentir sobre o que a folha e o guião
  * fazem com ele.
  */
-/* `lang` NÃO ENTRA AQUI, e é de propósito: nada neste bloco se traduz por si.
-   As frases vêm de `s`, que já é a edição, e o destino da porta de voltar chega
-   feito em `voltar`, porque quem sabe a rota é quem rende o mapa. */
+/* `lang` ENTRA DESDE O ACERTO 4 (15.09.2026), e só por uma razão: `<Claim>` e
+   `<Provenance>` exigem-no, porque um valor e o seu selo dizem-se na língua da
+   página. Nada neste bloco se traduz por si: as frases vêm de `s`, que já é a
+   edição, e o destino da porta de voltar chega feito em `voltar`. */
 
 /**
  * `pais` e `unidade` SÃO A LEGENDA DE REPOUSO DE CADA NÍVEL, e chegam feitas de
  * quem tem a prova na mão. A forma é a mesma nas duas:
  *
- *   { nome, palavra, chave, item }
+ *   { nome, palavra, linha }
  *
- * `nome` é o nome do território (da Carta), `palavra` o substantivo da contagem,
- * `chave` a chave da prova e `item` a entrada dela, que `<ValorDaProva>` rende
- * com a porta e com a marca que o portão reconta. `unidade` vem a `null` na
- * primeira página, onde só o guião sabe qual é a unidade aberta: ali o
+ * `nome` é o nome do território (da Carta), `palavra` o substantivo da contagem
+ * e `linha` o identificador da linha do livro-razão que a conta. `unidade` vem a
+ * `null` na primeira página, onde só o guião sabe qual é a unidade aberta: ali o
  * parágrafo rende-se vazio e é o guião que o enche, do que o servidor escreveu
  * na própria área.
  *
- * O NÚMERO LEVA A SUA PORTA, e não é uma escolha desta peça: é a regra da §10 da
- * identidade, «onde aparece um valor aparece a porta», e é ela que o portão de
- * HTML confere linha a linha.
+ * ---------------------------------------------------------------------------
+ * O NÚMERO É UMA LINHA DO LIVRO-RAZÃO, COM O SEU SELO (acerto 4, 15.09.2026)
+ * ---------------------------------------------------------------------------
+ * Era a chave da prova `municipios_total`, que é o sítio a contar-se a si
+ * próprio; passa a ser `municipios-portugal-caop-2025`, que é a contagem dos
+ * concelhos na Carta Administrativa, com a marca da fonte ao lado. É a norma
+ * §2.1 do plano das palavras: **ao lado do número, o valor, a unidade, o
+ * período e a fonte, e o resto atrás da marca**. A linha «308 concelhos · CAOP
+ * 2025 · selo» que vivia por baixo do mapa saiu com isto: dizia a mesma
+ * contagem uma segunda vez, e o que ela tinha a mais (o ano da edição) está no
+ * recibo, que é o que a marca abre.
  */
-import ValorDaProva from '../ValorDaProva.astro';
-const { s, niveis = ['pais', 'unidade'], voltar = null, pais = null, unidade = null } = Astro.props;
+import Claim from '../Claim.astro';
+import Provenance from '../Provenance.astro';
+const { s, lang = 'pt', niveis = ['pais', 'unidade'], voltar = null, pais = null, unidade = null } = Astro.props;
 
 /** A legenda de repouso de um nível, ou `null` quando ela não vem feita. */
 const REPOUSO = { pais, unidade };
@@ -106,11 +115,12 @@ const REPOUSO = { pais, unidade };
           {REPOUSO[nivel] && (
             <>
               <span data-lugar>{REPOUSO[nivel].nome}</span>
-              {REPOUSO[nivel].item && (
+              {REPOUSO[nivel].linha && (
                 <>
                   <Fragment set:text=" · " />
-                  <ValorDaProva chave={REPOUSO[nivel].chave} item={REPOUSO[nivel].item} />
-                  <Fragment set:text={` ${REPOUSO[nivel].palavra}`} />
+                  <Claim id={REPOUSO[nivel].linha} lang={lang} />
+                  <Fragment set:text={` ${REPOUSO[nivel].palavra} `} />
+                  <Provenance id={REPOUSO[nivel].linha} lang={lang} />
                 </>
               )}
             </>

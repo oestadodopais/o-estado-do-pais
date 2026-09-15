@@ -603,12 +603,15 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
             `inicio.mapa.buscaGaveta` fica sem superfície e passa a `retirada` no
             inventário da voz, com a razão escrita. */}
 
-        {/* A legenda do mapa (a linha dos 308 e a menção da Carta) fica no fim
-            desta coluna, alinhada ao fundo do mapa a partir de 1280, como a
-            emenda das 19:50 de 29.08 à §1.84 decidiu; entre 1024 e 1279 fica
-            por baixo do mapa, na coluna dele, e abaixo de 1024 entre o mapa e
-            as gavetas. */}
-        <LegendaDoMapa s={s} lang={lang} />
+        {/* A legenda do mapa fica no fim desta coluna, alinhada ao fundo do
+            mapa a partir de 1280, como a emenda das 19:50 de 29.08 à §1.84
+            decidiu; entre 1024 e 1279 fica por baixo do mapa, na coluna dele, e
+            abaixo de 1024 entre o mapa e as gavetas. **Deixou de levar a linha
+            dos 308** com o acerto 4 do P1 (15.09.2026): essa contagem passou
+            para o lugar do nome do mapa, com a sua marca da fonte. O que ela
+            rende é a menção da licença da Carta, que não tem cadeia nenhuma
+            desta vista e por isso já não recebe `s` nem `lang`. */}
+        <LegendaDoMapa />
       </div>
 
       <MapaRespira slot="instrumento" s={s} lang={lang} p={p} concelhos={cs} />
