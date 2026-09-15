@@ -216,3 +216,86 @@ export function posicaoNaRegua(n, escala) {
   const p = ((n - escala.min) / (escala.max - escala.min)) * 100;
   return Math.max(0, Math.min(100, p));
 }
+
+/**
+ * ===========================================================================
+ * A PALAVRA DO ESTADO, NUMA DECLARAÇÃO SÓ (P1, item 8, 15.09.2026)
+ * ===========================================================================
+ * **Decisão do diretor de 15.09.2026 de manhã** (`DECISIONS.md` §1.108): a
+ * palavra «limiar» sai do texto que o leitor vê, e o estado passa a dizer-se
+ * «acima do valor de referência», «abaixo do valor de referência» e «sem valor
+ * de referência».
+ *
+ * O QUE ISSO MUDA NÃO É SÓ A CADEIA: muda quem escolhe. «fora» e «dentro» são a
+ * relação com a REGRA, e saíam de `estadoDaMedida()`; «acima» e «abaixo» são a
+ * relação com o NÚMERO, e saem de `comparacaoComOLimiar()`, que lê o sinal do
+ * limiar que a linha já declara. As duas continuam a existir e a dizer coisas
+ * diferentes: o estado é o que colore o cartão (a Emenda 1 fecha a cor no
+ * limiar publicado), e a palavra é o que o leitor lê.
+ *
+ * QUATRO PALAVRAS E NÃO TRÊS. A quarta é a banda: duas das treze medidas do
+ * Procedimento publicam dois lados, e um valor lá dentro não está acima nem
+ * abaixo de nada. `comparacaoComOLimiar()` devolve `null` nesse caso, e a
+ * palavra é «entre os valores de referência».
+ *
+ * O ÍNDICE DE DÍVIDA DE UMA CÂMARA FICA COMO ESTAVA, e é a exceção declarada:
+ * o seu limiar é o limite que a lei portuguesa fixa, e as palavras dele («fora
+ * do limite legal», «dentro do limite legal») nunca tiveram a palavra «limiar»
+ * dentro. Trocá-las era mudar uma coisa que o item não pede, em 616 páginas de
+ * concelho.
+ *
+ * O GUARDA FICA: uma medida com estado e sem fixador fecha a construção, pela
+ * mesma razão de 08.09.2026 (a linha do valor de referência diz de quem ele é),
+ * e agora também porque é o fixador que decide entre a família da lei e a das
+ * outras três.
+ *
+ * @param {any} s  as cadeias da edição
+ * @param {{
+ *   estado: 'fora'|'dentro'|'sem'|null|undefined,
+ *   comparacao?: 'acima'|'abaixo'|'noLimiar'|null,
+ *   fixador?: 'comissao'|'lei'|'pacto'|'conselho'|null,
+ *   onde?: string,
+ * }} medida
+ * @returns {string|null}
+ */
+export function palavraDoEstado(s, { estado, comparacao = null, fixador = null, onde = '' }) {
+  if (estado === 'sem') return s.estado.semLimiar;
+  if (estado !== 'fora' && estado !== 'dentro') return null;
+  if (!fixador) {
+    throw new Error(
+      `palavraDoEstado: ${onde || 'uma medida'} está ${estado} do valor de referência e não diz ` +
+        `de quem ele é (chegou sem "fixador"). A vista lê-o da declaração da medida com ` +
+        `fixadorDoLimiar().`,
+    );
+  }
+  if (fixador === 'lei') return estado === 'fora' ? s.estado.lei.fora : s.estado.lei.dentro;
+  if (comparacao === 'acima') return s.estado.acima;
+  if (comparacao === 'abaixo') return s.estado.abaixo;
+  if (comparacao === 'noLimiar') return s.home.numeros.noLimiar;
+  /* Sem lado: é a banda, e o valor está entre os dois. */
+  return s.estado.entre;
+}
+
+/**
+ * O rótulo da linha do valor de referência, dentro de uma leitura.
+ *
+ * Diz de quem ele é («valor de referência da Comissão»), e é a segunda metade
+ * do item 8.5 do F1.10 que este bloco não desfaz: o que saiu foi a palavra
+ * «limiar», não a atribuição.
+ *
+ * @param {any} s
+ * @param {'comissao'|'lei'|'pacto'|'conselho'|null|undefined} fixador
+ */
+export function rotuloDoValorDeReferencia(s, fixador) {
+  const par =
+    fixador === 'comissao'
+      ? s.estado.comissao
+      : fixador === 'lei'
+        ? s.estado.lei
+        : fixador === 'pacto'
+          ? s.estado.pacto
+          : fixador === 'conselho'
+            ? s.estado.conselho
+            : null;
+  return par?.rotulo ?? s.home.numeros.limiar;
+}

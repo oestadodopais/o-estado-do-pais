@@ -75,6 +75,7 @@ import {
 } from '../data/dominios.mjs';
 import {
   fixadorDoLimiar,
+  comparacaoComOLimiar,
   DEFINICOES_DAS_MEDIDAS,
   origensDaDefinicao,
 } from '../data/figuras.mjs';
@@ -86,7 +87,7 @@ import {
   linhasPorConcelho,
   ancoraDaMedida,
 } from '../lib/dominios.mjs';
-import { estadoDaMedida } from '../lib/estado.mjs';
+import { estadoDaMedida, palavraDoEstado, rotuloDoValorDeReferencia } from '../lib/estado.mjs';
 import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { linguaDaFonte } from '../i18n/lingua-dos-titulos.mjs';
@@ -145,30 +146,40 @@ if (!cabeca?.claim || !cabeca.limiar || !segunda?.claim || !segunda.limiar) {
    Procedimento, e a palavra tem de dizer de quem o limiar é. Ver a razão no
    cabeçalho de `FIXADORES_DO_LIMIAR`, em `src/data/figuras.mjs`. */
 /** @param {{ chave?: string, limiar?: unknown, limiarFixadoPor?: unknown }} m */
-const parDoEstado = (m) => {
-  const fixador = fixadorDoLimiar(m, `dominios: a medida "${m.chave ?? '?'}"`);
-  return fixador ? s.estado[fixador] : null;
+const fixadorDaMedida = (m) => fixadorDoLimiar(m, `dominios: a medida "${m.chave ?? '?'}"`);
+/* A frase que diz o que o valor de referência é e quem o fixou, dentro da
+   leitura. O `lei` não tem: a página do concelho já diz a sua. */
+/** @param {{ chave?: string, limiar?: unknown, limiarFixadoPor?: unknown }} m */
+const fraseDaMedida = (m) => {
+  const f = fixadorDaMedida(m);
+  return f === 'comissao'
+    ? s.estado.comissao.frase
+    : f === 'pacto'
+      ? s.estado.pacto.frase
+      : f === 'conselho'
+        ? s.estado.conselho.frase
+        : null;
 };
 /** @param {{ chave?: string, claim: string, limiar: Limiar, limiarFixadoPor?: unknown }} m */
-const palavraDoEstado = (m) => {
-  const estado = estadoDaMedida(getClaim(m.claim), m.limiar) ?? 'sem';
-  if (estado === 'sem') return s.estado.semLimiar;
-  const par = parDoEstado(m);
-  if (!par) throw new Error(`dominios: a medida "${m.chave ?? m.claim}" está ${estado} do limiar e não diz de quem.`);
-  return par[estado];
-};
+const palavraDaMedida = (m) =>
+  palavraDoEstado(s, {
+    estado: estadoDaMedida(getClaim(m.claim), m.limiar) ?? 'sem',
+    comparacao: comparacaoComOLimiar(getClaim(m.claim), m.limiar),
+    fixador: fixadorDaMedida(m),
+    onde: `dominios: a medida "${m.chave ?? m.claim}"`,
+  });
 const manchete = {
   pt: [
     'A dívida pública é ',
     { claim: cabeca.claim, sufixo: '%' },
     ' do PIB, ',
-    palavraDoEstado(cabeca),
+    palavraDaMedida(cabeca),
     ' de ',
     { nl: String(cabeca.limiar.nl), motivo: 'limiar-do-quadro' },
     '%; o saldo das administrações públicas é ',
     { claim: segunda.claim, sufixo: '%' },
     ' do PIB, ',
-    palavraDoEstado(segunda),
+    palavraDaMedida(segunda),
     ' de ',
     `${segunda.limiar.sinal ?? ''}`,
     { nl: String(segunda.limiar.nl), motivo: 'limiar-do-quadro' },
@@ -178,13 +189,13 @@ const manchete = {
     'Government debt is ',
     { claim: cabeca.claim, sufixo: '%' },
     ' of GDP, ',
-    palavraDoEstado(cabeca),
+    palavraDaMedida(cabeca),
     ' of ',
     { nl: String(cabeca.limiar.nl), motivo: 'limiar-do-quadro' },
     '%; the general government balance is ',
     { claim: segunda.claim, sufixo: '%' },
     ' of GDP, ',
-    palavraDoEstado(segunda),
+    palavraDaMedida(segunda),
     ' of ',
     `${segunda.limiar.sinal ?? ''}`,
     { nl: String(segunda.limiar.nl), motivo: 'limiar-do-quadro' },
@@ -232,6 +243,8 @@ const cartoes = leituras
     nome: m.nome[lang] ?? m.nome.pt,
     medida: [`${m.unidade[lang] ?? m.unidade.pt} · `, { ref: linha.reference_date }],
     estado: m.limiar ? estadoDaMedida(linha, m.limiar) : 'sem',
+    /* DE QUE LADO DO VALOR DE REFERÊNCIA (P1, item 8, 15.09.2026). */
+    comparacao: m.limiar ? comparacaoComOLimiar(linha, m.limiar) : null,
     /* QUEM FIXOU O LIMIAR (F1.10, item 8.5): lido da declaração da medida, com o
        guarda que fecha a construção se ela tiver limiar e não o disser. */
     fixador: fixadorDoLimiar(m, `dominios: a medida "${chave}"`),
@@ -512,14 +525,14 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
 
           {medida.limiar && (
             <p class="dominio-limiar">
-              <span class="dominio-limiar-k">{parDoEstado(medida)?.rotulo ?? s.home.numeros.limiar}</span>{' '}
+              <span class="dominio-limiar-k">{rotuloDoValorDeReferencia(s, fixadorDaMedida(medida))}</span>{' '}
               <span class="dominio-limiar-v">
                 {medida.limiar.sinal ?? ''}
                 <span data-nonledger="limiar-do-quadro">{String(medida.limiar.nl)}</span>
                 {medida.limiar.simbolo ?? ''}
               </span>
               {' · '}
-              <span class="dominio-estado">{palavraDoEstado(medida)}</span>
+              <span class="dominio-estado">{palavraDaMedida(medida)}</span>
             </p>
           )}
 
@@ -532,8 +545,8 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
               não escolhe: um par com frase rende-a, um par sem frase não a
               rende. Só o `lei` não tem, porque a página do concelho já diz a
               sua, uma vez, e o §0 do brief manda uma coisa num lugar só. */}
-          {medida.limiar && parDoEstado(medida)?.frase && (
-            <p class="dominio-limiar-frase">{parDoEstado(medida)?.frase}</p>
+          {medida.limiar && fraseDaMedida(medida) && (
+            <p class="dominio-limiar-frase">{fraseDaMedida(medida)}</p>
           )}
 
           {outras.map((o) => (

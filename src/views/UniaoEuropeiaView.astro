@@ -131,6 +131,8 @@ const sociais = FIGURAS_SOCIAL.map((f) => ({
 const cartaoDaMedida = (f, estado) => {
   const linha = getClaim(f.claim);
   return {
+    /* DE QUE LADO DO VALOR DE REFERÊNCIA (P1, item 8, 15.09.2026). */
+    comparacao: f.limiar ? comparacaoComOLimiar(linha, f.limiar) : null,
     id: f.claim,
     destino: `#m-${f.claim}`,
     destinoRotulo: null,
