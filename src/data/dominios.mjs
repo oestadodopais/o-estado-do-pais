@@ -760,18 +760,21 @@ export function ressalvaDaLinha(id) {
  *
  * **DUAS CONTRADIÇÕES DA CARTA, DITAS E NÃO ESCONDIDAS:**
  *
- *   1. o CUSTO UNITÁRIO DO TRABALHO está na coluna do domínio 1 no §2 («a taxa
- *      de câmbio efetiva real, o custo unitário do trabalho, o desempenho das
- *      exportações … (o Procedimento dos Desequilíbrios)») e na nota de fecho do
- *      domínio 2 no §3 («Já publicadas e que ficam neste domínio: … o custo
- *      unitário do trabalho»). O brief manda ler o §2, e é o §2 que vale: fica
- *      no domínio 1. Fica para o lugar de direção emendar a carta de um dos dois
- *      lados;
- *   2. as COMPETÊNCIAS DIGITAIS estão no §2 do domínio 7 e no §3 do domínio 11
- *      («que competências digitais tem a população (já no sítio)»). Aqui o §3 do
- *      domínio 7 desempata, e desempata com a fórmula que a carta usa para isso:
- *      «Já publicadas e que ficam neste domínio: as competências digitais e as
- *      crianças em creche». Ficam na Educação.
+ * **AS DUAS FORAM DECIDIDAS PELO LUGAR DE DIREÇÃO a 15.09.2026**, e pelo mesmo
+ * critério: **a atribuição mais específica ganha**. O §2 é uma lista do que a
+ * casa publica por vaga; o §3 é a carta a dizer, domínio a domínio, onde cada
+ * medida fica, e é ele que usa a fórmula «Já publicadas e que ficam neste
+ * domínio».
+ *
+ *   1. o CUSTO UNITÁRIO DO TRABALHO está na coluna do domínio 1 no §2 e na nota
+ *      de fecho do domínio 2 no §3. **Fica no Trabalho.** A primeira redação
+ *      desta tabela pô-lo na Economia, pelo §2, e deixou a contradição dita;
+ *   2. as COMPETÊNCIAS DIGITAIS estão no §2 e no §3 do domínio 7 e entre as
+ *      perguntas do domínio 11 no §3. **Ficam na Educação**, que é onde o §3 diz
+ *      «ficam neste domínio».
+ *
+ * A carta emenda-se do lado que sobra quando o lugar de direção lhe tocar; o que
+ * esta tabela guarda é a decisão e a razão dela.
  *
  * **DUAS LINHAS DO `quadro-institucional` NÃO ESTÃO AQUI**, e a razão é a regra
  * e não um esquecimento: `credito-malparado-2025` e
@@ -800,7 +803,6 @@ export const DOMINIO_DAS_MEDIDAS = /** @type {const} */ ({
   'saldo-da-balanca-corrente-2025': 'economia-e-financas-publicas',
   'posicao-de-investimento-internacional-2025': 'economia-e-financas-publicas',
   'taxa-de-cambio-efectiva-real-2025': 'economia-e-financas-publicas',
-  'custo-unitario-do-trabalho-2025': 'economia-e-financas-publicas',
   'desempenho-das-exportacoes-2025': 'economia-e-financas-publicas',
   /* «o crédito e a dívida privados (o Procedimento dos Desequilíbrios)». */
   'divida-das-empresas-2025': 'economia-e-financas-publicas',
@@ -819,6 +821,14 @@ export const DOMINIO_DAS_MEDIDAS = /** @type {const} */ ({
   'jovens-nem-2025': 'trabalho',
   'disparidade-de-emprego-entre-sexos-2025': 'trabalho',
   'taxa-de-actividade-2025': 'trabalho',
+  /* DECIDIDO PELO LUGAR DE DIREÇÃO a 15.09.2026, sobre a contradição que a
+     primeira redação desta tabela deixou dita: o §2 da carta põe o custo
+     unitário do trabalho na coluna do domínio 1 e a nota de fecho do §3 do
+     domínio 2 diz «Já publicadas e que ficam neste domínio: … o custo unitário
+     do trabalho». Vale a segunda, porque é a atribuição MAIS ESPECÍFICA: o §2 é
+     uma lista do que a casa publica por vaga, e o §3 é a carta a dizer, domínio
+     a domínio, onde cada medida fica. */
+  'custo-unitario-do-trabalho-2025': 'trabalho',
 
   /* 5 · Segurança social e pensões (carta §2 e a nota de fecho do §3). */
   'risco-de-pobreza-ou-exclusao-2025': 'seguranca-social-e-pensoes',
@@ -826,6 +836,12 @@ export const DOMINIO_DAS_MEDIDAS = /** @type {const} */ ({
 
   /* 7 · Educação (carta §2 e a nota de fecho do §3). */
   'abandono-escolar-precoce-2025': 'educacao',
+  /* DECIDIDO PELO LUGAR DE DIREÇÃO a 15.09.2026, pelo mesmo critério do custo
+     unitário do trabalho: o §3 do domínio 11 nomeia as competências digitais
+     entre as suas perguntas («que competências digitais tem a população (já no
+     sítio)»), e o §3 do domínio 7 diz «Já publicadas e que ficam neste domínio:
+     as competências digitais e as crianças em creche». A atribuição mais
+     específica é a que diz «ficam neste domínio». */
   'competencias-digitais-2025': 'educacao',
   'criancas-em-creche-2025': 'educacao',
 
