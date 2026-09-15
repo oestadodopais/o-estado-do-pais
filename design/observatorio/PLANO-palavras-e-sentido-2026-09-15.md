@@ -41,10 +41,10 @@ Cinco regras, para entrar na política da autonomia e nos briefs de todos os blo
 
 | hoje | proposta | porquê |
 |---|---|---|
-| «Texto gerado por IA sob a política da casa · responsável editorial: Nuno dos Santos» | «Texto gerado por inteligência artificial, segundo as regras da casa.» (a porta é «as regras da casa» e abre a página que hoje se chama «A política da casa», que passa a chamar-se «As regras da casa») | o rótulo é a escolha da casa (a via B: rotular tudo) e a palavra da lei é «gerado»; «regras da casa» é a expressão portuguesa; o nome de uma pessoa não é exigido pelo rótulo |
+| «Texto gerado por IA sob a política da casa · responsável editorial: Nuno dos Santos» | «Texto gerado por inteligência artificial, segundo o Método.» (a porta é «Método» e abre a secção do Método onde a política da IA vive; emendado às 16:35 UTC de 15.09: «regras da casa» também não serve, porque «casa» é a habitação) | o rótulo é a escolha do projeto (a via B: rotular tudo) e a palavra da lei é «gerado»; o nome de uma pessoa não é exigido pelo rótulo |
 | «Diretor: Nuno dos Santos · Publicação gratuita» (só na primeira página) | fica como está até à hora do advogado, e só na primeira página | é a linha do artigo 15.º da Lei de Imprensa («o nome do director e … a menção da sua gratuitidade»), não uma descrição do diretor: é a palavra que todos os jornais usam na ficha técnica. Se o advogado disser que o sítio não é uma publicação periódica, a linha sai; se disser que é, a palavra é esta |
 | «responsável editorial» | sai | dizia o mesmo que a linha do diretor, com uma palavra que não é a dele |
-| o nome dele nas páginas todas | só na primeira página (a linha legal) e no «Sobre», na ficha técnica | a decisão de não ter o nome em lado nenhum é dele e do advogado; até lá, uma linha numa página |
+| o nome dele nas páginas todas | em página nenhuma (decisão dele, 16:05 e 16:35 UTC de 15.09); o «Sobre» descreve o projeto em vez de o nomear: «O Estado do País é um projeto pessoal e independente: explora a possibilidade de um observatório sobre o país feito com inteligência artificial.» | «it's not about my name»; se um dia a lei exigir um nome, isso é um facto a estabelecer com o advogado, não uma descrição dele |
 
 ### 2.2 · A primeira página
 
@@ -93,7 +93,8 @@ Cada bloco tem o brief, o construtor (Opus), a leitura de língua (§5), a leitu
 
 | não se escreve | escreve-se | nota |
 |---|---|---|
-| política da casa | as regras da casa | *policy* não é «política» |
+| política da casa | (o Método, pelo nome) | *policy* não é «política»; e «casa» é a habitação, não o sítio (emenda do diretor às 16:35 UTC de 15.09) |
+| a casa, as regras da casa (o sítio a falar de si) | este projeto, O Estado do País | *the house* |
 | página inteira | (nada: a porta é o nome da página) | *full page* |
 | passe o rato | (nada; ou «aponte») | *mouse over* |
 | toque em | (nada; ou «escolha») | *tap* |
