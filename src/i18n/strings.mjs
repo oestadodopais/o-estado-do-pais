@@ -1359,7 +1359,7 @@ export const STRINGS = {
          um cartão na faixa. */
       medidasRotulo: 'medidas',
       estadoNoAr: 'no ar',
-      estadoDentroDe: 'as medidas estão em',
+      estadoDentroDe: 'incluído em',
       estadoSem: 'ainda sem medidas conferidas',
       /* «VAGA» SAI DA VOZ DO LEITOR (§7.8 do brief, e decisão 21 da releitura
          do leitor de primeira vez, 09.09.2026). O §7.8 mandou-a sair do índice
@@ -3010,7 +3010,7 @@ export const STRINGS = {
       /* Ver a razão na edição portuguesa. */
       medidasRotulo: 'measures',
       estadoNoAr: 'live',
-      estadoDentroDe: 'the measures are in',
+      estadoDentroDe: 'included in',
       estadoSem: 'no verified measures yet',
       /* Ver a razão na edição portuguesa. */
       vagaPrimeira: 'first',
