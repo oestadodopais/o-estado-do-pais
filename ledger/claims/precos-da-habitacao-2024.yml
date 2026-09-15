@@ -1,0 +1,38 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# Gerado por ResearchHub/indicators/enquadramento.py a partir da verificação
+# de disponibilidade. Escolha do indicador: indicators/convergence.md.
+
+id: "precos-da-habitacao-2024"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "9,1"
+unit: "variação anual média, %"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Eurostat"
+document:
+  title: "House price index, nominal - annual data"
+  edition: "tipsho20"
+  kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/tipsho20/default/table?lang=en"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho20?format=JSON&lang=EN&geo=PT&unit=RCH_A_AVG"
+access_date: "2026-09-15"
+reference_date: "2024"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "House price index, nominal - annual data — Annual average rate of change — Portugal — 2024: 9.1"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "quadro-institucional"
+note: "Período anterior da medida «precos-da-habitacao-2025»: o mesmo pedido ao Eurostat devolve a série inteira, e esta linha é o período 2024. Limiar do Procedimento relativo aos Desequilíbrios Macroeconómicos: +9%. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []
+
+# Reconferências. Escritas por indicators/refresh.py, nunca à mão.

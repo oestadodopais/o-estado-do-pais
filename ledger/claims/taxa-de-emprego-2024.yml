@@ -1,0 +1,38 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# Gerado por ResearchHub/indicators/enquadramento.py a partir da verificação
+# de disponibilidade. Escolha do indicador: indicators/convergence.md.
+
+id: "taxa-de-emprego-2024"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "78,5"
+unit: "% da população"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Eurostat"
+document:
+  title: "Employment and labour force by sex and age - annual data"
+  edition: "lfsi_emp_a"
+  kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_a/default/table?lang=en"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfsi_emp_a?format=JSON&lang=EN&geo=PT&indic_em=EMP_LFS&sex=T&age=Y20-64&unit=PC_POP"
+access_date: "2026-09-15"
+reference_date: "2024"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Employment and labour force by sex and age - annual data — Percentage of total population — Portugal — 2024: 78.5"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "quadro-institucional"
+note: "Período anterior da medida «taxa-de-emprego-2025»: o mesmo pedido ao Eurostat devolve a série inteira, e esta linha é o período 2024. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []
+
+# Reconferências. Escritas por indicators/refresh.py, nunca à mão.
