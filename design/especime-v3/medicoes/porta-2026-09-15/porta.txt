@@ -1,0 +1,66 @@
+  ✓ A1.pt  390×664: nome, manchete, cartão, selo e porta do concelho dentro do ecrã (fundo máximo 587.6 px) · a manchete em 3 linha(s) em Chromium e 3 em WebKit (teto 3), 125.5 px de altura · 5 cartões na cabeça (5 na página, 5 declarados pelo domínio), 0 sem selo com caixa
+  ✓ A2.pt  altura de / a 390: 2787 px · teto 7035 px (6941 da árvore de partida + 94 da fila dos estudos) (menos 4248 px)
+  ✓ A11.pt  mobília acima do nome a 390: 62 px (teto 64) · a barra em 1 fila(s) com 2 item(ns), 54 px (esta edição cabe em 1) · as leituras por baixo do nome em 0 fila(s) com 0 à vista, 0 px (o item 8.11 exige 0 e 0)
+  ✓ A5.pt  os três estados da gaveta dos nomes (item 3 do F1.13, e o achado 5 da leitura a frio de 15.09.2026) · A5a COM GUIÃO E COM MAPA (marca «data-mapa-vivo» na raiz): a 390 a caixa mede 1×1 px em «absolute», recortada por «rect(0px,0px,0px,0px)» (área à vista 0), com 29 nome(s), 29 invisível(eis); a 1280 mede 1×1 px (área à vista 0), com 29 nome(s), 29 invisível(eis); ao foco do «summary» a 390 volta a 354×575.4 px (área 203688) com 29 nome(s) e 0 fora do alvo de 44 px · A5b COM GUIÃO E SEM MAPA (pedido de «/js/mapa-unidades.js» recusado; marca ausente): a caixa mede 354×45 px em «static» (área 15930), o «summary» à vista, a gaveta fechada, 29 nome(s) no documento · A5c SEM GUIÃO (marca ausente): a caixa mede 354×45 px em «static» (área 15930), o «summary» à vista, a gaveta fechada, 29 nome(s) · 29 porta(s), 0 fora de «/distritos/», 0 sem resposta
+  ✓ A3.pt  os 21 valores selados uma só vez em /uniao-europeia: 0 fora da conta
+  ✓ A4.pt  a definição declarada de cada painel em /uniao-europeia: 2 frase(s), 0 diferente(s) da declaração · «Comissão Europeia» no documento inteiro: 26
+  ✓ A6.pt  vocabulário da casa em /: Âmbito=0 · Densidade=0
+  ✓ A18.pt  a frase de definição em /: a nova 1 vez(es) (esperada 1), a antiga 0 (esperada 0) · «Os números oficiais de Portugal, do país ao seu concelho, cada um com a fonte.»
+  ✓ A19.pt  as três portas em /: «Todos os concelhos →» 1 · «Todos os estudos →» 1 · «Toda a agenda →» 1 (cada uma esperada 1) · «a página inteira» 0 (esperada 0)
+  ✓ A10.pt  «sem limiar» nos cartões e nas leituras de /uniao-europeia: 0 de 21 cartão(ões), 0 de 21 leitura(s)
+  ✓ A7.pt  as duas fichas de «Lagoa» na busca de /: 308 ficha(s) na lista, 2 com o nome «Lagoa», 2 texto(s) distinto(s), 1 com «Faro» e 1 com «São Miguel» [Lagoadistrito de Faro | LagoaIlha de São Miguel]
+  ✓ A12.pt  regiões, distritos e áreas no menu de /: as três lá estão
+  ✓ A8.pt  <form> em /: 1; action «/municipios» (200); method «get»
+  ✓ A9.pt  com guião, a partir de /: 2 toque(s), sem rolar, chegou a «/municipios/evora» e a página rende «concelho · Évora tem 58 567 pessoas.fonte · INE» · sem guião, pela submissão nativa: «/municipios?concelho=%C3%89vora» com 308 nomes, 1 porta(s) do concelho e 88 caracteres de frase do <noscript> · o filtro dos estudos em «/estudos?concelho=evora»: 5 entradas, 5 casam, 5 à vista, porta da volta acesa; sem guião 5 entradas, 0 escondidas e 43 caracteres de frase
+  ✓ A13.pt  o destino dos cartões de /uniao-europeia: 21 cartão(ões), 21 para a leitura breve desta página, 0 para fora · 3 leitura(s) acrescentam a porta do domínio (divida-publica-2025, taxa-de-emprego-2025, taxa-de-desemprego-2025) · nenhum errado
+  ✓ A14.pt  «/dominios» no menu de /: lá está, a página responde 200, e diz «Domínios» (esperado «Domínios»)
+  ✓ A20.pt  o índice dos domínios, nas duas rotas que o rendem: /: 2 linha(s), 1 com nomes (economia-e-financas-publicas 5/10 +cinco), 0 selado(s) · /dominios: 2 linha(s), 1 com nomes (economia-e-financas-publicas 5/10 +cinco), 0 selado(s) · a faixa de / tem 5 nome(s) [Dívida pública | Saldo das administrações públicas | Taxa de emprego | Taxa de desemprego | Ganho médio mensal]
+  ✓ A15.pt  «/estudos» a partir de /, a 390 × 664: 4 porta(s) no documento, 4 tocável(eis) sem abrir gaveta · a mais acima a 10.6 px (0.02 ecrã(s), teto 1.5), alvo 57.9×44 px · um toque chegou a «/estudos»
+  ✓ A16.pt  o nome acessível do <h1> das quatro camadas em pt, em Chromium e WebKit: pais 2 valor(es)/2 selo(s) · dominio 2 valor(es)/2 selo(s) · regiao 2 valor(es)/2 selo(s) · concelho 1 valor(es)/1 selo(s) · nome igual à frase nos dois motores, cada valor com a sua porta ao pé dele
+  ✓ A17.pt  o «n de N» das faixas das quatro camadas em pt: pais 1..5 de 5 · dominio 1..10 de 10 · regiao  · concelho 1..8 de 8
+  ✓ A1.en  390×664: nome, manchete, cartão, selo e porta do concelho dentro do ecrã (fundo máximo 582.8 px) · a manchete em 3 linha(s) em Chromium e 3 em WebKit (teto 3), 125.5 px de altura · 5 cartões na cabeça (5 na página, 5 declarados pelo domínio), 0 sem selo com caixa
+  ✓ A2.en  altura de /en a 390: 2793 px · teto 6984 px (6890 da árvore de partida + 94 da fila dos estudos) (menos 4191 px)
+  ✓ A11.en  mobília acima do nome a 390: 95.2 px (teto 95.2) · a barra em 2 fila(s) com 2 item(ns), 87.2 px (esta edição cabe em 2) · as leituras por baixo do nome em 0 fila(s) com 0 à vista, 0 px (o item 8.11 exige 0 e 0)
+  ✓ A5.en  os três estados da gaveta dos nomes (item 3 do F1.13, e o achado 5 da leitura a frio de 15.09.2026) · A5a COM GUIÃO E COM MAPA (marca «data-mapa-vivo» na raiz): a 390 a caixa mede 1×1 px em «absolute», recortada por «rect(0px,0px,0px,0px)» (área à vista 0), com 29 nome(s), 29 invisível(eis); a 1280 mede 1×1 px (área à vista 0), com 29 nome(s), 29 invisível(eis); ao foco do «summary» a 390 volta a 354×575.4 px (área 203688) com 29 nome(s) e 0 fora do alvo de 44 px · A5b COM GUIÃO E SEM MAPA (pedido de «/js/mapa-unidades.js» recusado; marca ausente): a caixa mede 354×45 px em «static» (área 15930), o «summary» à vista, a gaveta fechada, 29 nome(s) no documento · A5c SEM GUIÃO (marca ausente): a caixa mede 354×45 px em «static» (área 15930), o «summary» à vista, a gaveta fechada, 29 nome(s) · 29 porta(s), 0 fora de «/en/districts/», 0 sem resposta
+  ✓ A3.en  os 21 valores selados uma só vez em /en/european-union: 0 fora da conta
+  ✓ A4.en  a definição declarada de cada painel em /en/european-union: 2 frase(s), 0 diferente(s) da declaração · «European Commission» no documento inteiro: 14
+  ✓ A6.en  vocabulário da casa em /en: Scope=0 · Density=0
+  ✓ A18.en  a frase de definição em /en: a nova 1 vez(es) (esperada 1), a antiga 0 (esperada 0) · «Portugal’s official numbers, from the country to your municipality, each with its source.»
+  ✓ A19.en  as três portas em /en: «All municipalities →» 1 · «All studies →» 1 · «The whole agenda →» 1 (cada uma esperada 1) · «the whole page» 0 (esperada 0)
+  ✓ A10.en  «no threshold» nos cartões e nas leituras de /en/european-union: 0 de 21 cartão(ões), 0 de 21 leitura(s)
+  ✓ A7.en  as duas fichas de «Lagoa» na busca de /en: 308 ficha(s) na lista, 2 com o nome «Lagoa», 2 texto(s) distinto(s), 1 com «Faro» e 1 com «São Miguel» [Lagoadistrict of Faro | LagoaIlha de São Miguel]
+  ✓ A12.en  regiões, distritos e áreas no menu de /en: as três lá estão
+  ✓ A8.en  <form> em /en: 1; action «/en/municipalities» (200); method «get»
+  ✓ A9.en  com guião, a partir de /en: 2 toque(s), sem rolar, chegou a «/en/municipalities/evora» e a página rende «concelho · Évora has 58 567 people.source · INE» · sem guião, pela submissão nativa: «/en/municipalities?concelho=%C3%89vora» com 308 nomes, 1 porta(s) do concelho e 103 caracteres de frase do <noscript> · o filtro dos estudos em «/en/studies?concelho=evora»: 5 entradas, 5 casam, 5 à vista, porta da volta acesa; sem guião 5 entradas, 0 escondidas e 46 caracteres de frase
+  ✓ A13.en  o destino dos cartões de /en/european-union: 21 cartão(ões), 21 para a leitura breve desta página, 0 para fora · 3 leitura(s) acrescentam a porta do domínio (divida-publica-2025, taxa-de-emprego-2025, taxa-de-desemprego-2025) · nenhum errado
+  ✓ A14.en  «/en/domains» no menu de /en: lá está, a página responde 200, e diz «Domains» (esperado «Domains»)
+  ✓ A20.en  o índice dos domínios, nas duas rotas que o rendem: /en: 2 linha(s), 1 com nomes (economia-e-financas-publicas 5/10 +five), 0 selado(s) · /en/domains: 2 linha(s), 1 com nomes (economia-e-financas-publicas 5/10 +five), 0 selado(s) · a faixa de /en tem 5 nome(s) [Government debt | General government balance | Employment rate | Unemployment rate | Average monthly earnings]
+  ✓ A15.en  «/en/studies» a partir de /en, a 390 × 664: 4 porta(s) no documento, 4 tocável(eis) sem abrir gaveta · a mais acima a 60 px (0.09 ecrã(s), teto 1.5), alvo 53.4×44 px · um toque chegou a «/en/studies»
+  ✓ A16.en  o nome acessível do <h1> das quatro camadas em en, em Chromium e WebKit: pais 2 valor(es)/2 selo(s) · dominio 2 valor(es)/2 selo(s) · regiao 2 valor(es)/2 selo(s) · concelho 1 valor(es)/1 selo(s) · nome igual à frase nos dois motores, cada valor com a sua porta ao pé dele
+  ✓ A17.en  o «n de N» das faixas das quatro camadas em en: pais 1..5 de 5 · dominio 1..10 de 10 · regiao  · concelho 1..8 de 8
+
+  estragos plantados:
+  ✓ um cartão sem selo (o último, e não o primeiro)  verde antes: sim · html mudou: sim · vermelho depois: A1.pt=vermelho
+  ✓ um segundo cartão com o mesmo valor (a cópia)  verde antes: sim · html mudou: sim · vermelho depois: A3.pt=vermelho
+  ✓ a definição do Procedimento sem «Comissão Europeia» (a do Painel Social fica intacta)  verde antes: sim · html mudou: sim · vermelho depois: A4.pt=vermelho, A4.en=vermelho
+  ✓ a busca sem `action`  verde antes: sim · html mudou: sim · vermelho depois: A8.pt=vermelho, A8.en=vermelho, A9.pt=vermelho, A9.en=vermelho
+  ✓ uma unidade do mapa sem nome  verde antes: sim · html mudou: sim · vermelho depois: A5.pt=vermelho, A5.en=vermelho
+  ✓ a gaveta dos nomes sem comando  verde antes: sim · html mudou: sim · vermelho depois: A5.pt=vermelho, A5.en=vermelho
+  ✓ as duas Lagoas sem distrito  verde antes: sim · html mudou: sim · vermelho depois: A7.pt=vermelho, A7.en=vermelho
+  ✓ a frase de definição antiga de volta, ao lado da nova  verde antes: sim · html mudou: sim · vermelho depois: A18.pt=vermelho, A18.en=vermelho
+  ✓ uma etiqueta «a página inteira →» de volta, na porta dos estudos  verde antes: sim · html mudou: sim · vermelho depois: A19.pt=vermelho, A19.en=vermelho
+  ✓ a marca do mapa vivo escrita pelo servidor (a gaveta escondida sem mapa)  verde antes: sim · html mudou: sim · vermelho depois: A5.pt=vermelho, A5.en=vermelho
+  ✓ a gaveta dos nomes visível com guião  verde antes: sim · html mudou: sim · vermelho depois: A5.pt=vermelho, A5.en=vermelho
+  ✓ a cauda «e mais N» com o numeral trocado  verde antes: sim · html mudou: sim · vermelho depois: A20.pt=vermelho, A20.en=vermelho
+  ✓ um valor selado na linha de um domínio  verde antes: sim · html mudou: sim · vermelho depois: A20.pt=vermelho, A20.en=vermelho
+  ✓ a página mais alta do que a árvore de partida  verde antes: sim · html mudou: sim · vermelho depois: A2.pt=vermelho, A2.en=vermelho
+  ✓ um cartão a levar à página do domínio em vez de abrir a sua leitura  verde antes: sim · html mudou: sim · vermelho depois: A13.pt=vermelho, A13.en=vermelho
+  ✓ o menu sem «Domínios»  verde antes: sim · html mudou: sim · vermelho depois: A14.pt=vermelho, A14.en=vermelho
+  ✗ os estudos a mais de 1,5 ecrãs (a fila depois da faixa escondida)  verde antes: sim · html mudou: sim · vermelho depois: A15.pt=verde, A15.en=verde
+  ✓ a manchete do domínio com dois valores e um selo só  verde antes: sim · html mudou: sim · vermelho depois: A16.pt=vermelho, A16.en=vermelho
+  ✓ um selo da manchete a abrir a linha do outro valor  verde antes: sim · html mudou: sim · vermelho depois: A16.pt=vermelho, A16.en=vermelho
+  ✗ a faixa de uma região a dizer «de 21»  verde antes: sim · html mudou: NÃO · vermelho depois: A17.pt=verde, A17.en=verde
+  ✓ o selo de volta dentro da manchete do domínio  verde antes: sim · html mudou: sim · vermelho depois: A16.pt=vermelho, A16.en=vermelho
+  ✗ a mobília do menu em duas filas  verde antes: sim · html mudou: sim · vermelho depois: A11.pt=verde, A11.en=verde
+
+  porta ✓ 40 de 40 célula(s) · plantas ✗  /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/porta-2026-09-15/dist
