@@ -68,7 +68,7 @@ import { ANFITRIOES_SEM_RESPOSTA } from '../data/fontes.mjs';
 import { atrasoDaLinha } from '../lib/frescura.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { proximaConferenciaDaLinha, ancoraDoEvento } from '../lib/agenda.mjs';
-import { nomeOficial } from '../lib/enquadramento.mjs';
+import { nomeOficial, reguaDaMedida, temRegua } from '../lib/enquadramento.mjs';
 import { studyTitle } from '../data/studies.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import Frase from '../components/Frase.astro';
@@ -110,6 +110,13 @@ const proximaConferencia = proximaConferenciaDaLinha(id);
    mesma medida. `null` em tudo o resto, que hoje são 115 das 132 linhas com
    entrada no ficheiro e todas as outras. */
 const nomes = nomeOficial(id);
+/* AS LINHAS COM QUE ESTA MEDIDA SE COMPARA (bloco P2, 15.09.2026, a decisão do
+   lugar de direção sobre as capturas). O cartão passou a ter UMA marca da fonte
+   e não três: os valores da régua deixaram de levar marca própria, e a marca do
+   cartão abre este recibo. É aqui que as linhas da régua ficam, cada uma com a
+   sua porta, para que a proveniência continue a um toque. */
+const enquadramento = reguaDaMedida(id);
+const temEnquadramento = temRegua(enquadramento);
 /* A quem o valor é creditado, escrito numa linha só. Fica no aparelho, ao pé
    da proveniência, porque é isso que é: parte do registo do facto, não um
    juízo. A nota ao lado di-lo por palavras.
@@ -1211,6 +1218,57 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                 />
               )}
             </p>
+          </section>
+        )
+      }
+
+      {/* --------------------------------------------- o enquadramento (P2)
+
+          As linhas com que esta medida se compara, cada uma com o valor, o
+          período e a porta para o recibo dela. A marca da fonte do cartão abre
+          esta página, e é esta secção que a paga: sem ela, os valores da régua
+          ficavam sem porta nenhuma, e um número sem porta para a sua linha é o
+          que este sítio existe para não ter.
+
+          O VALOR VAI POR `<Claim>` COM A SUA MARCA, e não por texto: é uma linha
+          do livro-razão como qualquer outra, e a página que a cita cita-a como
+          cita as outras. O período é o campo `reference_date` da própria linha.
+          ------------------------------------------------------------------- */}
+      {
+        temEnquadramento && (
+          <section class="linha-bloco" id="enquadramento" aria-labelledby="enquadramento-k">
+            <h2 class="linha-bloco-titulo" id="enquadramento-k">
+              {s.livro.linha.enquadramentoK}
+            </h2>
+            <dl class="linha-verificacoes">
+              {enquadramento.anterior && (
+                <>
+                  <dt>{s.livro.linha.enquadramentoAnterior}</dt>
+                  <dd>
+                    <Claim id={enquadramento.anterior.id} lang={lang} as="span" chip={true} />
+                    {enquadramento.anterior.periodo && (
+                      <>
+                        {' · '}
+                        <CampoDaLinha
+                          id={enquadramento.anterior.id}
+                          campo="reference_date"
+                          valor={enquadramento.anterior.periodo}
+                          lang={lang}
+                        />
+                      </>
+                    )}
+                  </dd>
+                </>
+              )}
+              {enquadramento.ue && (
+                <>
+                  <dt>{s.livro.linha.enquadramentoUe}</dt>
+                  <dd>
+                    <Claim id={enquadramento.ue.id} lang={lang} as="span" chip={true} />
+                  </dd>
+                </>
+              )}
+            </dl>
           </section>
         )
       }
