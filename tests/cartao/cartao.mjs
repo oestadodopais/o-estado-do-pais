@@ -59,8 +59,14 @@
  *        o cartão tem UMA marca, e os valores da régua não levam marca própria.
  *        Esta célula confere as duas metades: que nenhum cartão tem mais do que
  *        uma marca, e que o recibo da medida lista mesmo, no bloco «O
- *        enquadramento», cada linha que a régua do cartão cita. É a metade que o
- *        portão de HTML não pode ver, porque ele lê uma página de cada vez.
+ *        enquadramento», cada linha que a régua do cartão cita.
+ *
+ *        **É esta célula que promete a porta, e não o portão de HTML**, e a razão
+ *        mediu-se: o `auditaSelo()` do portão já não corre nas páginas de área,
+ *        porque a guarda `paginaDoLivro` inclui a rota `area` desde 28.08.2026.
+ *        Lá o portão confere cada CAMPO contra a linha, que é mais conferência e
+ *        não menos, e a do selo é a que não corre. Sem esta célula, um valor de
+ *        régua podia ficar sem porta nenhuma e nada o dizia.
  *   K9 · **o valor de referência tem duas testemunhas, e elas batem certo** · o
  *        algarismo que o cartão desenha vem da declaração de `figuras.mjs`, com o
  *        motivo do registo; o motor lê o mesmo valor na página do painel da
