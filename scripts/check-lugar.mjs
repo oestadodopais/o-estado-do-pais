@@ -484,6 +484,88 @@ const ORIGEM_DECLARADA = [
   '[data-medida-unidade]',
 ].join(',');
 
+/**
+ * ---------------------------------------------------------------------------
+ * O RÓTULO VISÍVEL DE UMA MARCA DE ORIGEM É TEXTO DA CASA (15.09.2026, achado 9
+ * da leitura a frio do Codex ao F1.13)
+ * ---------------------------------------------------------------------------
+ * `ORIGEM_DECLARADA` deita fora a sub-árvore inteira de tudo o que leve uma
+ * marca de origem, e isso está certo para o que a marca cobre: um valor do
+ * livro-razão, um excerto transcrito, uma data da fonte. Mas a marca da fonte
+ * (`<a class="src-chip" data-nonledger="proveniencia">`) leva lá dentro uma
+ * PALAVRA DA CASA, que é a que o leitor vê ao lado de cada número. A leitura a
+ * frio escreveu o buraco: «changing their visible label back to "selo" or "seal"
+ * would be skipped», e a régua diria zero com a palavra na página.
+ *
+ * O CORTE PASSA A SER PELA VISTA E NÃO PELA MARCA: dentro de um `data-nonledger`,
+ * o que o leitor vê conta, e o que ele não vê não conta. O que não se vê é o que
+ * a casa já marca como tal: a classe `.vh` (o texto que só um leitor de ecrã
+ * ouve), o atributo `hidden` e `aria-hidden="true"`.
+ *
+ * SÓ `data-nonledger`, E NÃO AS OUTRAS MARCAS. Um `data-claim` cobre um valor
+ * medido; um `data-verbatim` cobre palavras de outra pessoa; um `data-lugar` e um
+ * `data-nome` cobrem nomes de ficheiros de dados, com a sua própria conferência.
+ * Nenhuma dessas leva prosa da casa lá dentro.
+ *
+ * E DENTRO DO `data-nonledger`, SÓ OS MOTIVOS QUE LEVAM UMA PALAVRA DA CASA. O
+ * motivo diz o que a marca cobre, e a construção tem dezoito: `data-da-linha`,
+ * `data-de-referencia`, `numeracao`, `periodo-da-fonte` e as outras datas cobrem
+ * ALGARISMOS; `identificador-tecnico` cobre um código; `titulo-de-estudo` cobre o
+ * título de um trabalho tal como ele foi publicado; `referencia-legal` cobre o
+ * nome de um diploma. Nenhum desses é uma palavra que a casa escolheu, e abrir
+ * todos punha a L3 a contar «indicadores» dentro de «Quadro institucional de
+ * indicadores», que é o título de um estudo do Eurostat e não prosa desta casa
+ * (medido: 32 ocorrências em 32 páginas de linha, na primeira corrida desta
+ * mudança).
+ *
+ * O QUE SE ABRE É `proveniencia`, e é a marca da fonte: o quadrado que abre a
+ * linha, com o rótulo que o leitor lê ao lado de cada número. Essa palavra é
+ * escolhida por decisão da casa («fonte», e «linha» nas cinco linhas cuja origem
+ * é a própria casa), e é ela que o item 5 do F1.13 renomeia. É por isso que a
+ * lista abaixo tem um motivo só: não é uma exceção, é o alcance da medida. Um
+ * motivo novo que passe a levar uma palavra da casa entra aqui, com a razão ao
+ * lado, e é uma linha de código e não um silêncio.
+ *
+ * CADA UM É UM BLOCO SEU, e não um pedaço colado ao texto da página: é assim que
+ * uma exceção do vocabulário pode dispensar o bloco dela, como dispensa os
+ * outros.
+ *
+ * @param {import('node-html-parser').HTMLElement} raiz
+ * @returns {string[]}
+ */
+const MARCAS_COM_PALAVRA_DA_CASA = ['proveniencia'];
+const SELETOR_DAS_MARCAS = MARCAS_COM_PALAVRA_DA_CASA.map((m) => `[data-nonledger="${m}"]`).join(',');
+
+function rotulosVisiveisDasMarcas(raiz) {
+  const corpo = raiz.querySelector('body');
+  if (!corpo) return [];
+  /** @type {string[]} */
+  const out = [];
+  for (const el of corpo.querySelectorAll(SELETOR_DAS_MARCAS)) {
+    /* Uma marca dentro de outra conta uma vez, na de fora. */
+    if (el.closest(SELETOR_DAS_MARCAS) !== el) continue;
+    const escondido = new Set();
+    for (const h of el.querySelectorAll('.vh, [hidden], [aria-hidden="true"]')) {
+      escondido.add(h);
+      for (const d of h.querySelectorAll('*')) escondido.add(d);
+    }
+    /** @type {string[]} */
+    const partes = [];
+    const anda = (n) => {
+      if (!n) return;
+      if (n.nodeType === NodeType.TEXT_NODE) return void partes.push(n.rawText);
+      const tag = String(n.rawTagName ?? '').toLowerCase();
+      if (tag === 'script' || tag === 'style') return;
+      if (escondido.has(n)) return;
+      for (const f of n.childNodes ?? []) anda(f);
+    };
+    for (const f of el.childNodes ?? []) anda(f);
+    const txt = partes.join(' ').replace(/\s+/g, ' ').trim();
+    if (txt) out.push(txt);
+  }
+  return out;
+}
+
 /** @param {import('node-html-parser').HTMLElement} raiz */
 function textoDaCasa(raiz) {
   const corpo = raiz.querySelector('body');
@@ -750,10 +832,12 @@ const vistas = { estudo: 0, texto: 0, indice: 0, edicoes: 0, linhas: 0 };
 let definicoesVistas = 0;
 /** Quantas origens de definição a régua viu (a mesma regra 14). */
 let origensVistas = 0;
-/** Quantas vezes o Método diz a ponte «o selo no vocabulário da casa» (F1.13,
-    item 5): o positivo conhecido da palavra que a L3 conta a zero em todas as
-    outras rotas. Uma por edição, e a régua exige-o. */
-let ponteDoMetodo = 0;
+/** Quantas vezes o Método diz a palavra da marca, POR EDIÇÃO (F1.13, item 5; o
+    chão por edição entra a 15.09.2026 com o achado 9 da leitura a frio). É o
+    positivo conhecido da palavra que a L3 conta a zero em todas as outras rotas.
+    Somar as duas edições deixava uma delas ficar a zero com a outra a pagar o
+    chão das duas, e uma régua cega numa edição é uma régua cega. */
+const ponteDoMetodo = { pt: 0, en: 0 };
 /** As amostras de cada medida, para que um número tenha sempre um sítio. */
 const amostras = Object.fromEntries(Object.keys(medidas).map((k) => [k, []]));
 /** Quantas vezes cada exceção foi usada: uma exceção a zero é uma porta esquecida. */
@@ -1029,15 +1113,24 @@ for (const ficheiro of paginas) {
     /* O `<head>` entra na L3 como um bloco a mais: é texto da casa, é público,
        e a régua não o via (Major 6, 09.09.2026). */
     const cabeca = textoDaCabeca(raiz, rota);
-    const blocos = cabeca ? [cabeca, ...blocosDaCasa(raiz)] : blocosDaCasa(raiz);
-    const texto = `${cabeca} ${textoDaCasa(raiz)}`;
+    /* OS RÓTULOS VISÍVEIS DAS MARCAS DE ORIGEM ENTRAM COMO BLOCOS (15.09.2026,
+       achado 9 da leitura a frio). A razão inteira está ao pé de
+       `rotulosVisiveisDasMarcas()`: a palavra que o leitor vê ao lado de cada
+       número é prosa da casa, e a régua não a via. */
+    const rotulosDasMarcas = rotulosVisiveisDasMarcas(raiz);
+    const blocos = [
+      ...(cabeca ? [cabeca] : []),
+      ...blocosDaCasa(raiz),
+      ...rotulosDasMarcas,
+    ];
+    const texto = `${cabeca} ${textoDaCasa(raiz)} ${rotulosDasMarcas.join(' ')}`;
     /* A PALAVRA DA MARCA NO MÉTODO, CONTADA ONDE ELA VIVE (F1.13, item 5,
        15.09.2026). É a rota que o item 5 põe fora da conta, e é a única do sítio
        onde a palavra fica: contá-la aqui é o que prova que a régua ainda sabe
        vê-la. A asserção do fim do ficheiro exige o chão, e a razão de ser um
        chão e não um número exacto está escrita ao pé da constante. */
     if (chaveDaRota === 'metodo') {
-      ponteDoMetodo += contaPalavra(texto, PALAVRA_DA_MARCA_NO_METODO[lang]);
+      ponteDoMetodo[lang] += contaPalavra(texto, PALAVRA_DA_MARCA_NO_METODO[lang]);
     }
     for (const { palavra } of VOCABULARIO) {
       if (!texto.includes(palavra)) continue;
@@ -1711,20 +1804,73 @@ if (definicoesVistas !== DEFINICOES_ESPERADAS) {
       `comparação sobre uma coleção vazia não prova nada.`,
   );
 }
-/* O POSITIVO CONHECIDO DAS PALAVRAS DA MARCA (F1.13, item 5, 15.09.2026). */
-const MARCA_NO_METODO_MINIMO = LANGS.length;
+/* O POSITIVO CONHECIDO DAS PALAVRAS DA MARCA, POR EDIÇÃO (F1.13, item 5; o chão
+   passou a ser por edição a 15.09.2026, com o achado 9 da leitura a frio). */
+const MARCA_NO_METODO_MINIMO = 1;
 console.log(
-  `  item 5, o que a régua leu: ${ponteDoMetodo} ocorrência(s) de «${PALAVRA_DA_MARCA_NO_METODO.pt}»/` +
-    `«${PALAVRA_DA_MARCA_NO_METODO.en}» no Método (chão ${MARCA_NO_METODO_MINIMO}, uma por edição; ` +
-    `a rota do Método está fora da conta da L3, pela medida P9 do brief)`,
+  `  item 5, o que a régua leu no Método: ` +
+    LANGS.map((l) => `${l} «${PALAVRA_DA_MARCA_NO_METODO[l]}» ×${ponteDoMetodo[l]}`).join(' · ') +
+    ` (chão ${MARCA_NO_METODO_MINIMO} por edição; a rota do Método está fora da conta da L3, pela ` +
+    `medida P9 do brief)`,
 );
-if (ponteDoMetodo < MARCA_NO_METODO_MINIMO) {
+for (const l of LANGS) {
+  if (ponteDoMetodo[l] >= MARCA_NO_METODO_MINIMO) continue;
   falhas.push(
-    `item 5 · a régua viu ${ponteDoMetodo} ocorrência(s) de «${PALAVRA_DA_MARCA_NO_METODO.pt}»/` +
-      `«${PALAVRA_DA_MARCA_NO_METODO.en}» no Método, e o chão é ${MARCA_NO_METODO_MINIMO}, uma por ` +
-      `edição. É o positivo conhecido da medida: sem ele, o zero das outras rotas não prova que a ` +
-      `palavra saiu do sítio, só que esta régua deixou de a saber ver.`,
+    `item 5 · a régua viu ${ponteDoMetodo[l]} ocorrência(s) de «${PALAVRA_DA_MARCA_NO_METODO[l]}» no ` +
+      `Método da edição «${l}», e o chão é ${MARCA_NO_METODO_MINIMO} por edição. É o positivo conhecido ` +
+      `da medida NAQUELA EDIÇÃO: sem ele, o zero das outras rotas dessa edição não prova que a palavra ` +
+      `saiu do sítio, só que esta régua deixou de a saber ver ali.`,
   );
+}
+
+/* ---------------------------------------------------------------------------
+ * O AUTOTESTE DA L3 SOBRE OS RÓTULOS DAS MARCAS (15.09.2026, achado 9)
+ * ---------------------------------------------------------------------------
+ * O chão do Método prova que a régua vê a palavra em PROSA. Não prova que ela a
+ * vê onde o achado 9 dizia que ela não a via: dentro de uma marca de origem, no
+ * rótulo que o leitor lê ao lado de cada número. E não prova o outro lado, que é
+ * igualmente parte da decisão: o que está lá dentro e NÃO se vê não conta.
+ *
+ * Dois documentos de rascunho, construídos aqui e não lidos de lado nenhum, com
+ * a forma exacta da marca da fonte do sítio:
+ *   · À VISTA · «selo» no `.src-chip-texto` de um `data-nonledger`. Espera-se
+ *     que a régua conte UMA. Se contar zero, o achado 9 voltou.
+ *   · ESCONDIDO · «selo» só dentro do `.vh` da mesma marca, que é o texto que só
+ *     um leitor de ecrã ouve. Espera-se ZERO: o que não se vê não é a prosa que
+ *     esta medida governa.
+ *
+ * Falha em qualquer dos dois sentidos fecha a construção, porque uma medida de
+ * zero feita por uma régua que não sabe ver é indistinguível de uma casa limpa.
+ */
+{
+  const molde = (dentro) =>
+    parse(
+      `<!doctype html><html lang="pt"><head><title>x</title></head><body><p>` +
+        `<a class="src-chip" data-nonledger="proveniencia">${dentro}</a></p></body></html>`,
+    );
+  const aVista = rotulosVisiveisDasMarcas(molde('<span class="src-chip-texto">selo</span>'));
+  const escondido = rotulosVisiveisDasMarcas(
+    molde('<span class="src-chip-texto">fonte</span><span class="vh"> · selo</span>'),
+  );
+  const conta1 = aVista.reduce((n, b) => n + contaPalavra(b, 'selo'), 0);
+  const conta0 = escondido.reduce((n, b) => n + contaPalavra(b, 'selo'), 0);
+  console.log(
+    `  item 5, o autoteste da L3 nos rótulos das marcas: à vista ${conta1} (esperada 1) · ` +
+      `escondido no «.vh» ${conta0} (esperado 0)`,
+  );
+  if (conta1 !== 1) {
+    falhas.push(
+      `item 5 · o autoteste da L3 falhou: «selo» à vista dentro de uma marca «data-nonledger» foi ` +
+        `contado ${conta1} vez(es) e devia ser 1. É o achado 9 da leitura a frio de 15.09.2026 a ` +
+        `voltar: a régua deita fora a sub-árvore da marca e não vê o rótulo que o leitor lê.`,
+    );
+  }
+  if (conta0 !== 0) {
+    falhas.push(
+      `item 5 · o autoteste da L3 falhou do outro lado: «selo» escondido num «.vh» foi contado ` +
+        `${conta0} vez(es) e devia ser 0. O que o leitor não vê não é a prosa que esta medida governa.`,
+    );
+  }
 }
 
 if (origensVistas !== ORIGENS_ESPERADAS) {
