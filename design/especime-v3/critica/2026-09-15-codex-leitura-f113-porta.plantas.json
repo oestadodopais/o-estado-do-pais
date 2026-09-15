@@ -1,0 +1,33 @@
+{
+ "registado_em": "2026-09-15T12:31:21+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/pacote-porta",
+ "plantas": [
+  {
+   "id": "W1",
+   "ficheiro": "src/i18n/strings.mjs",
+   "descricao": "a etiqueta inglesa da porta dos estudos diz «All the studies» no ficheiro das cadeias, contra a página construída («All studies») e o inventário",
+   "sha256_antes": "584db8b2e3505e0d7e8fceba858daec9453b1594883f73c92f10df60de0917b4",
+   "sha256_depois": "746485c3d269308bc752a16ee3b64f95e0cb714ee5e639b4b69255f97dbf53d9",
+   "contexto_antes": "       rotulo: 'The pages',\n        /* Ver a razão na edição portuguesa (item 2 do F1.13, 15.09.2026). */\n        abrirConcelhos: 'All municipalities',\n        abrirEstudos: 'All studies',\n        abrirAgenda: 'The whole agenda',\n        concelhos: ' municipalities',\n        estudosA: ' studies · ',\n        estudosB: ' editions',\n      },\n\n      ",
+   "contexto_depois": "       rotulo: 'The pages',\n        /* Ver a razão na edição portuguesa (item 2 do F1.13, 15.09.2026). */\n        abrirConcelhos: 'All municipalities',\n        abrirEstudos: 'All the studies',\n        abrirAgenda: 'The whole agenda',\n        concelhos: ' municipalities',\n        estudosA: ' studies · ',\n        estudosB: ' editions',\n      },\n\n      "
+  },
+  {
+   "id": "W2",
+   "ficheiro": "built/index.html",
+   "descricao": "a página portuguesa construída rende a frase de definição com «a sua fonte» onde as cadeias e o inventário dizem «a fonte»",
+   "sha256_antes": "0c676c032577f6ef0669ff6ebaed744e7923d881c5341560a10b391e747fbba9",
+   "sha256_depois": "e20c3d76a4564b8133c24154f1410b84d27feed08f36755428a8c5b315c499af",
+   "contexto_antes": "s=\"lang\" href=\"/en\" hreflang=\"en\" lang=\"en\">English</a></nav></div><div class=\"masthead\"><p class=\"wordmark\">O Estado do País</p><p class=\"masthead-identidade\">Os números oficiais de Portugal, do país ao seu concelho, cada um com a fonte.</p><div class=\"masthead-furniture\"><div class=\"tema\" role=\"group\" aria-label=\"Tema\" data-tema-controlo hidden><button type=\"button\" class=\"tema-b\" data-tema=\"l",
+   "contexto_depois": "s=\"lang\" href=\"/en\" hreflang=\"en\" lang=\"en\">English</a></nav></div><div class=\"masthead\"><p class=\"wordmark\">O Estado do País</p><p class=\"masthead-identidade\">Os números oficiais de Portugal, do país ao seu concelho, cada um com a sua fonte.</p><div class=\"masthead-furniture\"><div class=\"tema\" role=\"group\" aria-label=\"Tema\" data-tema-controlo hidden><button type=\"button\" class=\"tema-b\" data-tema=\"l"
+  },
+  {
+   "id": "W3",
+   "ficheiro": "tests/inicio/porta.mjs",
+   "descricao": "a célula A18 deixa de exigir a frase antiga a zero e aceita a nova mais do que uma vez",
+   "sha256_antes": "f9da39d9def723f29a39736a0b1493c65d6eeb1873157ac1db3180c75f338ac2",
+   "sha256_depois": "01233b31525d023e4b6ae7df8efb0f64d5f6368b56eef12a72739553f7c5aabc",
+   "contexto_antes": "correncias(doc, ed.definicaoAntiga);\n    medidas[`A18.${ed.chave}`] = { nova: nDefinicao, antiga: nDefinicaoAntiga };\n    conta(\n      `A18.${ed.chave}`,\n      nDefinicao === 1 && nDefinicaoAntiga === 0,\n      `a frase de definição em ${ed.rota}: a nova ${nDefinicao} vez(es) (esperada 1), ` +\n        `a antiga ${nDefinicaoAntiga} (esperada 0) · «${ed.definicaoN",
+   "contexto_depois": "correncias(doc, ed.definicaoAntiga);\n    medidas[`A18.${ed.chave}`] = { nova: nDefinicao, antiga: nDefinicaoAntiga };\n    conta(\n      `A18.${ed.chave}`,\n      nDefinicao >= 1,\n      `a frase de definição em ${ed.rota}: a nova ${nDefinicao} vez(es) (esperada 1), ` +\n        `a antiga ${nDefinicaoAntiga} (esperada 0) · «${ed.definicaoN"
+  }
+ ]
+}
