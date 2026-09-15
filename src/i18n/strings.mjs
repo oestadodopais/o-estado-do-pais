@@ -471,7 +471,7 @@ export const STRINGS = {
       porqueK: 'Porquê',
       criteriosK: 'Critérios',
       quadroK: 'Quadro institucional',
-      limiarK: 'Limiar publicado pela Comissão:',
+      limiarK: 'Valor de referência publicado pela Comissão:',
       eventoK: 'Calendário das fontes',
       leitorK: 'Pedido de leitor',
       correcaoK: 'Correção',
@@ -692,8 +692,8 @@ export const STRINGS = {
            sítios para não mudar uma letra do que se lê, e a linha do inventário
            da voz é a mesma frase. */
         tituloPaisA: 'Portugal ultrapassa ',
-        tituloPaisUm: ' limiar do Procedimento dos Desequilíbrios Macroeconómicos e cumpre ',
-        tituloPaisMuitos: ' limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre ',
+        tituloPaisUm: ' valor de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre ',
+        tituloPaisMuitos: ' valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre ',
         tituloPaisFim: '.',
         /* ------------------------------------------------------------------
            A MANCHETE DO PAÍS (F1.10, decisão do lugar de direção, 08.09.2026)
@@ -772,7 +772,7 @@ export const STRINGS = {
              lede nomeia as medidas do painel do Procedimento que passaram o seu
              limiar, e o limiar delas é o desse painel. «Fora do limiar:» sozinho
              era exactamente a palavra sem dono que o item veio tirar. */
-          abre: 'Fora do limiar da Comissão: ',
+          abre: 'Fora do valor de referência da Comissão: ',
           separador: ', ',
           ultimo: ' e ',
           ano: ', em ',
@@ -876,28 +876,27 @@ export const STRINGS = {
            páginas · o resto vive a uma porta») saiu com a Emenda 15: três portas
            de uma linha cada não precisam de uma frase a dizer que são portas. */
         rotulo: 'As páginas',
-        /* CADA PORTA DIZ O SEU DESTINO (bloco F1.13, item 2, 15.09.2026).
-           `abrir` era uma cadeia só, «a página inteira», nas três portas: diz o
-           MECANISMO (que se abre uma página inteira) e não o destino, e por isso
-           as três linhas acabavam com as mesmas quatro palavras. O diretor leu-o
-           na primeira página no ar a 15.09 de manhã. Cada porta passa a dizer o
-           nome do que está do outro lado, que é a forma da casa para uma porta e
-           a regra «um nome por coisa em todo o sítio»: os concelhos, os estudos
-           e a agenda. A contagem por baixo do nome fica onde estava.
+        /* ------------------------------------------------------------------
+           A PORTA É A COISA (P1, item 7, 15.09.2026)
+           ------------------------------------------------------------------
+           Seis cadeias saíram daqui de uma vez, e não é uma limpeza: é a regra
+           3 do plano das palavras, «um cartão ou um título que leva a uma
+           página é a ligação inteira; não há "Todos os X →", nem
+           contagem-legenda, nem frase a dizer o que a porta faz».
 
-           SÃO TRÊS CADEIAS E NÃO UMA COM UM BURACO: o nome de cada página entra
-           com a preposição e o género que a sua língua lhe dá («Todos os
-           concelhos», «Toda a agenda»), e um gabarito com um buraco escreveria
-           «Todos os agenda». A cadeia antiga fica registada em `CHAVES-EN.md`.
+           O que o diretor leu no ar a 15.09 foi «Concelhos · 308 concelhos ·
+           Todos os concelhos →»: o nome da página três vezes na mesma linha. As
+           três etiquetas (`abrirConcelhos`, `abrirEstudos`, `abrirAgenda`),
+           que o F1.13 tinha acabado de escrever para dizerem o destino em vez
+           do mecanismo, dizem o destino que o NOME do cartão já diz; e os três
+           substantivos das contagens (`concelhos`, `estudosA`, `estudosB`)
+           repetem o nome do cartão ao lado do número.
 
-           A SETA COMPÕE-SE AO LADO, no gabarito, como em todas as portas da
-           casa. */
-        abrirConcelhos: 'Todos os concelhos',
-        abrirEstudos: 'Todos os estudos',
-        abrirAgenda: 'Toda a agenda',
-        concelhos: ' concelhos',
-        estudosA: ' estudos · ',
-        estudosB: ' edições',
+           O QUE FICA É O NÚMERO NU, e fica porque é informação: 308 diz que o
+           sítio cobre o país inteiro, e 12 diz o tamanho do arquivo. O que a
+           agenda contava por estados vive na agenda.
+
+           As seis ficam registadas no inventário das frases como `retirada`. */
       },
 
       mapa: {
@@ -961,19 +960,26 @@ export const STRINGS = {
            um distrito e uma ilha são áreas que se reconhecem pelo nome. As três
            cadeias que diziam «região» estão `retirada` no inventário.
 
-           SÃO DUAS FRASES VAZIAS POR NÍVEL, E NÃO UMA, porque o gesto não é o
-           mesmo: quem tem rato passa por cima, e quem tem dedo toca. As duas
-           rendem-se, e é a folha que mostra a que serve (`@media (hover: hover)
-           and (pointer: fine)`), sem uma linha de guião: um `display: none` é
-           lido pelo leitor de ecrã, e por isso quem ouve ouve uma só.
+           AS QUATRO FRASES VAZIAS SAÍRAM (P1, item 5, 15.09.2026). Eram
+           «Toque num distrito ou numa ilha», «Passe o rato por um distrito ou
+           por uma ilha» e os dois irmãos do nível do concelho: quatro frases de
+           instrução, que a regra 4 do plano das palavras não deixa entrar sem
+           uma falha medida, e duas delas com o decalque «passe o rato» que o
+           diretor apanhou a 15.09. O lugar passa a dizer, em repouso, onde o
+           leitor está e quantos concelhos esse território tem, e essa legenda
+           compõe-se em `src/lib/inicio.mjs` dos nomes da Carta e das chaves da
+           prova. As quatro ficam `retirada` no inventário das frases.
+
+           «Portugal» É UM NOME DE LUGAR e não prosa da casa: vai dentro de um
+           `data-lugar`, como o nome de um concelho ou de um distrito, e por
+           isso não entra no inventário das frases. Está aqui porque a legenda
+           precisa de o escrever e o sítio não tinha o nome do país sozinho em
+           cadeia nenhuma.
 
            «Abrir» É A PORTA E NÃO O GESTO. A seta compõe-se ao lado, como em
            todas as portas da casa; o que a cadeia diz é o que está do outro
            lado, que é a página da área apontada. */
-        nomeVazioToque: 'Toque num distrito ou numa ilha',
-        nomeVazioRato: 'Passe o rato por um distrito ou por uma ilha',
-        nomeVazioToqueConcelho: 'Toque num concelho',
-        nomeVazioRatoConcelho: 'Passe o rato por um concelho',
+        portugal: 'Portugal',
         abrir: 'Abrir',
         voltarAoPais: 'Voltar ao país',
         /* O QUE O LUGAR DIZ QUANDO O DESENHO DA UNIDADE NÃO CHEGA. O guião pede
@@ -1036,7 +1042,7 @@ export const STRINGS = {
        */
       painel: {
         nomeA: 'Procedimento dos Desequilíbrios Macroeconómicos · ',
-        nomeFim: ' medidas com limiar',
+        nomeFim: ' medidas com valor de referência',
         /**
          * A LINHA DA ÁREA DE LEITURA EM REPOUSO (F1.1c, 04.09.2026)
          * ------------------------------------------------------------------
@@ -1147,18 +1153,44 @@ export const STRINGS = {
          NENHUMA DAS FRASES LEVA UM ALGARISMO. O número de um diploma, de um
          limiar ou de uma data seria um algarismo sem marca numa página do
          leitor, e a régua dos algarismos fechava a construção. */
+      /* ------------------------------------------------------------------
+         AS TRÊS PALAVRAS DO ESTADO (P1, item 8, 15.09.2026)
+         ------------------------------------------------------------------
+         **Decisão do diretor de 15.09.2026 de manhã** (`DECISIONS.md` §1.108):
+         «limiar» sai do texto que o leitor vê, e o que fica é «valor de
+         referência». Era a palavra da Comissão e do INE, e a decisão de 07.09
+         tinha-a mantido com o dono ao lado («fora do limiar da Comissão»); a
+         leitura de 15.09 no ar mostrou que o problema não era o dono, era a
+         palavra.
+
+         E A PALAVRA PASSA A DIZER O LADO. «Fora» e «dentro» diziam a relação com
+         a regra; «acima» e «abaixo» dizem a relação com o número, que é o que o
+         leitor quer saber e o que o cartão já desenha na sua régua. O lado não
+         se escolhe: sai de `comparacaoComOLimiar()`, sobre o sinal do limiar que
+         a linha já declara.
+
+         SÃO QUATRO E NÃO TRÊS, e a quarta é a banda: duas das treze medidas do
+         Procedimento publicam dois lados (o saldo da balança corrente, «-4/+6%»,
+         e a taxa de câmbio efetiva real, «+/-3%»), e um valor lá dentro não está
+         acima nem abaixo de coisa nenhuma. «entre os valores de referência» é o
+         que ele está, e é a mesma palavra da família.
+
+         O DONO DO VALOR DE REFERÊNCIA CONTINUA DITO, na linha da leitura
+         (`rotulo`) e na frase que diz o que ele é (`frase`): o que saiu foi a
+         palavra «limiar», não a atribuição. */
+      acima: 'acima do valor de referência',
+      abaixo: 'abaixo do valor de referência',
+      entre: 'entre os valores de referência',
       comissao: {
-        fora: 'fora do limiar da Comissão',
-        dentro: 'dentro do limiar da Comissão',
-        /* O rótulo da LINHA do limiar, dentro de uma leitura: era «limiar» e
-           passa a dizer de quem ele é, pela mesma razão e no mesmo gesto. A
-           linha lê-se «limiar da Comissão 60% · acima». */
-        rotulo: 'limiar da Comissão',
+        /* O rótulo da LINHA do valor de referência, dentro de uma leitura: diz
+           de quem ele é. A linha lê-se «valor de referência da Comissão 60% ·
+           acima». */
+        rotulo: 'valor de referência da Comissão',
         /* As palavras são as do motivo `limiar-do-quadro` de
            `ledger/allowlist.yml`, com «revisto» a dizer o que o registo diz, que
            não é «fixado pela Comissão». */
         frase:
-          'O limiar é o valor de referência do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, fixado no regulamento que criou o Procedimento e revisto pela Comissão Europeia.',
+          'O valor de referência é o do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, fixado no regulamento que criou o Procedimento e revisto pela Comissão Europeia.',
       },
       lei: {
         fora: 'fora do limite legal',
@@ -1172,24 +1204,22 @@ export const STRINGS = {
          Member State's government deficit may not exceed 3% of its gross
          domestic product (GDP)». */
       pacto: {
-        fora: 'fora do limiar do Pacto de Estabilidade e Crescimento',
-        dentro: 'dentro do limiar do Pacto de Estabilidade e Crescimento',
-        rotulo: 'limiar do Pacto de Estabilidade e Crescimento',
+        rotulo: 'valor de referência do Pacto de Estabilidade e Crescimento',
         frase:
-          'O limiar é o limite de défice que os Estados-Membros se comprometeram a respeitar no Pacto de Estabilidade e Crescimento.',
+          'O valor de referência é o limite de défice que os Estados-Membros se comprometeram a respeitar no Pacto de Estabilidade e Crescimento.',
       },
       /* A taxa de crescimento da despesa líquida. A frase é a da p. 6 do parecer
          do Conselho das Finanças Públicas que a linha cita: «comprometeu-se com
          uma determinada trajetória de crescimento da despesa líquida, que depois
          foi aprovada pelo Conselho da UE». */
       conselho: {
-        fora: 'fora do limiar recomendado pelo Conselho da UE',
-        dentro: 'dentro do limiar recomendado pelo Conselho da UE',
-        rotulo: 'limiar recomendado pelo Conselho da UE',
+        rotulo: 'valor de referência recomendado pelo Conselho da UE',
         frase:
-          'O limiar é a taxa de crescimento da trajetória da despesa líquida com que Portugal se comprometeu e que o Conselho da União Europeia aprovou.',
+          'O valor de referência é a taxa de crescimento da trajetória da despesa líquida com que Portugal se comprometeu e que o Conselho da União Europeia aprovou.',
       },
-      semLimiar: 'sem limiar',
+      /* A CHAVE CONTINUA `semLimiar` e a palavra mudou: o brief do P1 diz que o
+         código e os identificadores não mudam de nome. */
+      semLimiar: 'sem valor de referência',
       porConfirmar: 'por confirmar',
     },
 
@@ -1407,42 +1437,49 @@ export const STRINGS = {
          índice diz os nomes, a contagem das medidas de cada domínio vivo e a
          porta, e quem tem porta está no ar por ter porta. A cadeia fica
          declarada e passa a `retirada` no inventário. */
+      /* ------------------------------------------------------------------
+         A LINHA DE ABERTURA DA SECÇÃO, UMA VEZ (P1, item 6, 15.09.2026)
+         ------------------------------------------------------------------
+         A secção passou a ser o índice dos DEZOITO domínios da carta, e não a
+         lista dos que têm página: uma linha por domínio, com o número de
+         medidas que já se publicam dentro dele. A abertura diz o que a lista é,
+         e diz-se uma vez, que é a regra 5 do plano das palavras.
+
+         «DEZOITO» É CONTADO E NÃO ESCRITO: é `numeralPorExtenso(DOMINIOS.length)`,
+         com a marca `data-nonledger="numeracao"`, e por isso a frase não
+         envelhece no dia em que a carta ganhar um domínio.
+
+         «ESTE PROJETO» E NÃO «A CASA» (emenda do diretor das 16:35 UTC de
+         15.09): em português, casa é a habitação, que este sítio também mede.
+         Onde ele fala de si, diz «este projeto» ou o seu nome. */
+      aberturaA: 'Os ',
+      aberturaB: ' domínios do país, e os números que este projeto já publica em cada um.',
       /* O RÓTULO DA CONTAGEM DAS MEDIDAS de um domínio no índice (§9.1). É a
          numeração da lista que a página de chegada rende, e não uma medição de
          Portugal: a marca é `data-nonledger="numeracao"`, a mesma da posição de
-         um cartão na faixa. */
+         um cartão na faixa.
+
+         O SINGULAR ENTRA COM OS DEZOITO (P1, item 6): a lista passou a ter
+         domínios de uma medida só (a Saúde, o Investimento, a Ciência, a
+         Justiça), e «1 medidas» é português a mais numa linha de quatro
+         palavras. */
+      medidaRotuloUm: 'medida',
       medidasRotulo: 'medidas',
-      /* ------------------------------------------------------------------
-         OS NOMES DAS MEDIDAS DE CABEÇA, NA LINHA DO DOMÍNIO (F1.13, item 4)
-         ------------------------------------------------------------------
-         O índice dizia «10 medidas» e o leitor não sabia o que são: o diretor
-         leu-o a 15.09.2026 de manhã e perguntou se vale a pena entrar. Cada
-         linha de um domínio vivo passa a levar, a seguir à contagem, os nomes
-         das suas medidas de CABEÇA, as mesmas que a faixa da primeira página
-         mostra, sem valores.
-
-         AS DUAS CADEIAS SÃO PONTUAÇÃO E MAIS NADA. Os nomes vêm da declaração
-         do domínio (`FAIXA_DO_DOMINIO_1`, em `src/data/dominios.mjs`), com a
-         marca `data-nome="medidas"` que o portão da voz confere carácter a
-         carácter contra esse ficheiro: não se escrevem aqui, nem se editam,
-         nem se põem em minúsculas. `medidasDoisPontos` abre a lista e
-         `eMais` fecha-a com o que sobra.
-
-         «e mais N» LEVA O NÚMERO POR EXTENSO, e o número é contado na
-         construção (a contagem das medidas do domínio menos os nomes
-         mostrados), com `numeralPorExtenso()` de `src/data/figuras.mjs`. Um
-         algarismo numa frase da casa precisava de uma linha do livro-razão que
-         o provasse, e isto é a numeração de uma lista rendida. */
-      medidasDoisPontos: ': ',
-      medidasSeparador: ', ',
-      /* `eMaisA` E `eMaisB` À VOLTA DO NUMERAL, e o B está vazio em português de
-         propósito: «, e mais cinco» põe o numeral no fim e «, and five more»
-         põe-o no meio. Um gabarito com um buraco só de um lado escrevia «and
-         five» na edição inglesa. */
-      eMaisA: ', e mais ',
-      eMaisB: '',
+      /* AS CINCO CADEIAS DOS NOMES DAS MEDIDAS DE CABEÇA SAÍRAM (P1, item 6,
+         15.09.2026). Eram `medidasDoisPontos`, `medidasSeparador`, `eMaisA` e
+         `eMaisB`, escritas no F1.13 para a linha de um domínio poder dizer
+         «10 medidas: Dívida pública, …, e mais cinco». O diretor leu-a no ar e
+         disse duas coisas: «e mais cinco» não é frase de jornal, e os nomes das
+         medidas são o jargão da fonte. A linha passa a dizer o nome do domínio
+         e a contagem, e os nomes das medidas ficam na página que as tem. As
+         quatro ficam `retirada` no inventário das frases. */
       estadoNoAr: 'no ar',
-      estadoDentroDe: 'incluído em',
+      /* `estadoDentroDe` SAIU DA SUPERFÍCIE (P1, item 6, 15.09.2026): «Trabalho ·
+         incluído em Economia e finanças públicas» é uma frase sobre a arrumação
+         do sítio e não sobre o país, e o diretor leu-a no ar («I don't even know
+         what that means»). O `dentroDe` fica no código, e é ele que decide para
+         onde a porta do Trabalho abre; o que sai é a frase. Fica `retirada` no
+         inventário. */
       estadoSem: 'ainda sem medidas conferidas',
       /* «VAGA» SAI DA VOZ DO LEITOR (§7.8 do brief, e decisão 21 da releitura
          do leitor de primeira vez, 09.09.2026). O §7.8 mandou-a sair do índice
@@ -1631,12 +1668,14 @@ export const STRINGS = {
         'As medidas de cabeça de cada domínio, a busca e o mapa dos concelhos, e as portas para os estudos e para os números com as suas fontes.',
 
       numeros: {
-        /* A linha do limiar de um cartão (IDENTIDADE.md §11). A palavra é
-           derivada de dois números que já existem, e não é um número. */
-        limiar: 'limiar',
+        /* A linha do valor de referência de um cartão (IDENTIDADE.md §11). A
+           palavra é derivada de dois números que já existem, e não é um número.
+           «limiar» saiu com o item 8 do P1 (15.09.2026), aqui como em todo o
+           texto que o leitor vê. */
+        limiar: 'valor de referência',
         acima: 'acima',
         abaixo: 'abaixo',
-        noLimiar: 'no limiar',
+        noLimiar: 'no valor de referência',
       },
 
       instr1: {
@@ -2770,7 +2809,7 @@ export const STRINGS = {
       porqueK: 'Why',
       criteriosK: 'Criteria',
       quadroK: 'Institutional framework',
-      limiarK: 'Threshold published by the Commission:',
+      limiarK: 'Reference value published by the Commission:',
       eventoK: 'Source calendar',
       leitorK: 'Reader request',
       correcaoK: 'Correction',
@@ -2882,8 +2921,8 @@ export const STRINGS = {
       cabeca: {
         paisA: 'Portugal · country',
         tituloPaisA: 'Portugal breaches ',
-        tituloPaisUm: ' threshold of the Macroeconomic Imbalance Procedure and meets ',
-        tituloPaisMuitos: ' thresholds of the Macroeconomic Imbalance Procedure and meets ',
+        tituloPaisUm: ' reference value of the Macroeconomic Imbalance Procedure and meets ',
+        tituloPaisMuitos: ' reference values of the Macroeconomic Imbalance Procedure and meets ',
         tituloPaisFim: '.',
         /** Ver a razão na edição portuguesa, e o registo em `CHAVES-EN.md`. A
             frase inglesa é a que fica em quatro linhas a 390 px ao corpo de 28 e
@@ -2898,7 +2937,7 @@ export const STRINGS = {
            razão na edição portuguesa, e o registo em `CHAVES-EN.md`. */
         ledePais: {
           /** Ver a razão na edição portuguesa. */
-          abre: 'Outside the Commission threshold: ',
+          abre: 'Outside the Commission reference value: ',
           separador: ', ',
           ultimo: ' and ',
           ano: ', in ',
@@ -2935,13 +2974,9 @@ export const STRINGS = {
 
       portas: {
         rotulo: 'The pages',
-        /* Ver a razão na edição portuguesa (item 2 do F1.13, 15.09.2026). */
-        abrirConcelhos: 'All municipalities',
-        abrirEstudos: 'All studies',
-        abrirAgenda: 'The whole agenda',
-        concelhos: ' municipalities',
-        estudosA: ' studies · ',
-        estudosB: ' editions',
+        /* Ver a razão na edição portuguesa (item 7 do P1, 15.09.2026): as seis
+           cadeias das etiquetas e das contagens saíram, e o cartão inteiro é a
+           ligação. */
       },
 
       mapa: {
@@ -2960,10 +2995,9 @@ export const STRINGS = {
         trocar: 'change municipality',
         /* O lugar do nome e os dois níveis. Ver a razão na edição portuguesa, e
            o registo das escolhas em `CHAVES-EN.md`. */
-        nomeVazioToque: 'Tap a district or island',
-        nomeVazioRato: 'Hover over a district or island',
-        nomeVazioToqueConcelho: 'Tap a municipality',
-        nomeVazioRatoConcelho: 'Hover over a municipality',
+        /* Ver a razão na edição portuguesa (item 5 do P1, 15.09.2026): as
+           quatro frases vazias saíram, e «Portugal» é um nome de lugar. */
+        portugal: 'Portugal',
         abrir: 'Open',
         voltarAoPais: 'Back to the country',
         semODesenhoDaUnidade: 'This map did not open. The door goes to its own page.',
@@ -2982,7 +3016,7 @@ export const STRINGS = {
 
       painel: {
         nomeA: 'Macroeconomic Imbalance Procedure · ',
-        nomeFim: ' measures with a threshold',
+        nomeFim: ' measures with a reference value',
         /* A linha da área de leitura em repouso. Ver a razão na edição
            portuguesa, e o registo em `CHAVES-EN.md`. */
         semLeituraAberta: 'Tap a card to read the measure.',
@@ -3006,12 +3040,14 @@ export const STRINGS = {
 
     estado: {
       /** Ver a razão na edição portuguesa, e o registo em `CHAVES-EN.md`. */
+      /* Ver a razão na edição portuguesa (item 8 do P1, 15.09.2026). */
+      acima: 'above the reference value',
+      abaixo: 'below the reference value',
+      entre: 'between the reference values',
       comissao: {
-        fora: 'outside the Commission threshold',
-        dentro: 'within the Commission threshold',
-        rotulo: 'Commission threshold',
+        rotulo: 'Commission reference value',
         frase:
-          'The threshold is the reference value of the Macroeconomic Imbalance Procedure scoreboard, set in the regulation that created the Procedure and revised by the European Commission.',
+          'The reference value is the one of the Macroeconomic Imbalance Procedure scoreboard, set in the regulation that created the Procedure and revised by the European Commission.',
       },
       lei: {
         fora: 'outside the legal limit',
@@ -3019,20 +3055,16 @@ export const STRINGS = {
         rotulo: 'legal limit',
       },
       pacto: {
-        fora: 'outside the Stability and Growth Pact threshold',
-        dentro: 'within the Stability and Growth Pact threshold',
-        rotulo: 'Stability and Growth Pact threshold',
+        rotulo: 'Stability and Growth Pact reference value',
         frase:
-          'The threshold is the deficit limit that Member States pledged to keep to under the Stability and Growth Pact.',
+          'The reference value is the deficit limit that Member States pledged to keep to under the Stability and Growth Pact.',
       },
       conselho: {
-        fora: 'outside the threshold recommended by the Council of the EU',
-        dentro: 'within the threshold recommended by the Council of the EU',
-        rotulo: 'threshold recommended by the Council of the EU',
+        rotulo: 'reference value recommended by the Council of the EU',
         frase:
-          'The threshold is the growth rate of the net expenditure path that Portugal committed to and that the Council of the European Union approved.',
+          'The reference value is the growth rate of the net expenditure path that Portugal committed to and that the Council of the European Union approved.',
       },
-      semLimiar: 'no threshold',
+      semLimiar: 'no reference value',
       porConfirmar: 'unconfirmed',
     },
 
@@ -3117,15 +3149,16 @@ export const STRINGS = {
         'The domains of the content charter, each with the count of its measures and the door to its page.',
       eyebrow: 'Domains',
       h1: 'By domain',
+      /* Ver a razão na edição portuguesa (item 6 do P1, 15.09.2026). */
+      aberturaA: 'The country’s ',
+      aberturaB: ' domains, and the numbers this project already publishes in each.',
       /* Ver a razão na edição portuguesa. */
+      medidaRotuloUm: 'measure',
       medidasRotulo: 'measures',
-      /* Ver a razão na edição portuguesa (item 4 do F1.13, 15.09.2026). */
-      medidasDoisPontos: ': ',
-      medidasSeparador: ', ',
-      eMaisA: ', and ',
-      eMaisB: ' more',
+      /* As quatro cadeias dos nomes das medidas de cabeça saíram com o item 6 do
+         P1; ver a razão na edição portuguesa. */
       estadoNoAr: 'live',
-      estadoDentroDe: 'included in',
+      /* `estadoDentroDe` saiu da superfície; ver a razão na edição portuguesa. */
       estadoSem: 'no verified measures yet',
       /* Ver a razão na edição portuguesa. */
       vagaPrimeira: 'first',
@@ -3181,10 +3214,11 @@ export const STRINGS = {
         'The head measures of each domain, the search and the map of the municipalities, and the doors to the studies and to the numbers with their sources.',
 
       numeros: {
-        limiar: 'threshold',
+        /* Ver a razão na edição portuguesa (item 8 do P1, 15.09.2026). */
+        limiar: 'reference value',
         acima: 'above',
         abaixo: 'below',
-        noLimiar: 'at threshold',
+        noLimiar: 'at the reference value',
       },
 
       instr1: {

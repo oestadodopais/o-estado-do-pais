@@ -1522,7 +1522,7 @@ h1.cabeca-h1[data-citadas]:not([data-citadas='1']) {
  */
 @media (min-width: 1024px) {
   .lig,
-  .porta-abrir {
+  .porta-seta {
     display: inline-flex;
     align-items: center;
     min-height: 32px;
@@ -2114,11 +2114,15 @@ svg [hidden] {
   font-size: 13px;
   color: var(--muted);
 }
-.porta-abrir {
+/* A SETA É O SINAL DE PORTA (P1, item 7, 15.09.2026), e ocupa o lugar que a
+   etiqueta «Todos os concelhos →» ocupava: a terceira coluna da grelha. Não
+   leva texto e não muda de tamanho com o cartão. */
+.porta-seta {
   white-space: nowrap;
+  color: var(--muted);
 }
-a.porta:hover .porta-abrir {
-  text-decoration-thickness: 2px;
+a.porta:hover .porta-seta {
+  color: var(--ink);
 }
 
 @media (max-width: 900px) {
@@ -2835,7 +2839,7 @@ a.porta:hover .porta-abrir {
 @media (max-width: 1023px) {
   .porta-nome,
   .porta-conta,
-  .porta-abrir,
+  .porta-seta,
   .social-porta .lig {
     display: flex;
     align-items: center;
