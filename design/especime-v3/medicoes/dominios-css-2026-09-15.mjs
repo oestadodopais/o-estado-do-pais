@@ -14,9 +14,15 @@
  *     estado, e a FOLGA entre a caixa do nome e a caixa do estado, que é o
  *     número que diz se as duas palavras se tocam. Mais a altura da página e o
  *     topo da secção, para provar que o primeiro ecrã a 390 não muda.
- *   · A LINHA DA BUSCA, em `/` e em `/municipios`: a largura do campo, a da
+ *   · A LINHA DA BUSCA, nas seis rotas que a rendem: a largura do campo, a da
  *     linha e a do botão, e o `scrollWidth` do documento contra a largura da
  *     janela, que é o transbordo horizontal.
+ *
+ * AS DUAS EDIÇÕES, E NÃO SÓ A PORTUGUESA (achado 5 da leitura a frio do Codex à
+ * fatia, 15.09.2026). A primeira redação desta régua listava só rotas
+ * portuguesas para a busca, e o brief pedia o resultado nas duas: uma medição
+ * que não corre na edição inglesa não prova nada sobre a edição inglesa, e o
+ * rótulo do botão e o do campo não medem o mesmo nas duas línguas.
  *
  * As larguras da busca são 320, 390, 768, 1 280 e 1 600: 320 porque é onde o
  * campo empurrava a página em 09.09 e é a razão de o `size` ter descido a 4, e
@@ -26,13 +32,30 @@
  * 36rem não seja um número dito.
  *
  * ---------------------------------------------------------------------------
+ * O QUE ESTA RÉGUA RECUSA MEDIR (achado 8 da mesma leitura)
+ * ---------------------------------------------------------------------------
+ * A primeira redação pedia a página e media o que encontrasse. Um `dist/` sem
+ * uma das rotas devolvia 404, cada selector devolvia `null`, e a régua imprimia
+ * os `null` ao lado dos números: «linha=null campo=null». Um `null` impresso
+ * numa coluna de medidas lê-se como um resultado, e não é um; é a régua a não
+ * ter medido nada e a não o dizer.
+ *
+ * Passam a existir duas paragens, e as duas matam a corrida com o que falta
+ * dito por extenso. `abre()` exige que a resposta da rota seja 200. `exige()`
+ * exige que cada coisa que a régua diz que mediu exista. O que é legitimamente
+ * ausente numa rota declara-se ao lado dela (`temLinha: false` para a variante
+ * sem formulário, que não tem linha nem botão), e é a declaração que o diz, não
+ * o silêncio.
+ *
+ * ---------------------------------------------------------------------------
  * COMO SE CORRE
  * ---------------------------------------------------------------------------
  *     OEDP_DIST=/caminho/dist node design/especime-v3/medicoes/dominios-css-2026-09-15.mjs \
  *       --json saida.json --capturas <directório> --momento antes|depois
  *
  * Abre um navegador, e por isso NÃO está no `verify` nem na CI: corre-se à mão,
- * como as outras medições de 390 px destes blocos.
+ * como as outras medições de 390 px destes blocos. Sai com 1 se alguma paragem
+ * morder.
  */
 import fs from 'node:fs';
 import http from 'node:http';
@@ -80,18 +103,45 @@ const servidor = http.createServer((req, res) => {
 await new Promise((r) => servidor.listen(0, '127.0.0.1', r));
 const base = `http://127.0.0.1:${servidor.address().port}`;
 
+/** O que faltou. Uma linha aqui e a corrida sai com 1. */
+const mortes = [];
+
+/** Pede a rota e exige 200. Devolve `false` quando não há nada para medir. */
+async function abre(pagina, rota) {
+  const r = await pagina.goto(`${base}${rota}`, { waitUntil: 'networkidle' });
+  const estado = r === null ? 'sem resposta' : r.status();
+  if (estado !== 200) {
+    mortes.push(`${rota} respondeu ${estado} e não 200: não há nada para medir nesta rota.`);
+    return false;
+  }
+  return true;
+}
+
+/** Exige que cada coisa medida exista. Um `null` é uma falha dita. */
+function exige(valores, onde) {
+  for (const [nome, v] of Object.entries(valores)) {
+    if (v === null || v === undefined || (typeof v === 'number' && Number.isNaN(v))) {
+      mortes.push(`${onde}: «${nome}» não existe na página, e a régua diz que o mede.`);
+    }
+  }
+}
+
 const navegador = await chromium.launch({ headless: true });
 const saida = { dominios: {}, busca: {} };
 
 /* ===================================================== o índice dos domínios */
 
 const ROTAS_DOM = ['/', '/en/', '/dominios/', '/en/domains/'];
+const LARGURAS_DOM = [390, 1280];
 for (const rota of ROTAS_DOM) {
   saida.dominios[rota] = {};
-  for (const largura of [390, 1280]) {
+  for (const largura of LARGURAS_DOM) {
     const p = await navegador.newPage({ viewport: { width: largura, height: 664 } });
-    await p.goto(`${base}${rota}`, { waitUntil: 'networkidle' });
-    saida.dominios[rota][largura] = await p.evaluate(() => {
+    if (!(await abre(p, rota))) {
+      await p.close();
+      continue;
+    }
+    const m = await p.evaluate(() => {
       const css = (el, ...props) => {
         if (!el) return null;
         const c = getComputedStyle(el);
@@ -115,6 +165,8 @@ for (const rota of ROTAS_DOM) {
           l.getAttribute('href'),
         ),
         altura_pagina: document.documentElement.scrollHeight,
+        /* A secção só existe na primeira página: em `/dominios` a lista é a
+           página. Declarado abaixo, e não deixado a `null` em silêncio. */
         seccao_topo: seccao
           ? Math.round((seccao.getBoundingClientRect().top + window.scrollY) * 10) / 10
           : null,
@@ -133,6 +185,27 @@ for (const rota of ROTAS_DOM) {
         folga_nome_estado: folga,
       };
     });
+    const onde = `${rota} @${largura}`;
+    exige(
+      {
+        lista: m.lista,
+        item: m.item,
+        nome: m.nome,
+        estado: m.estado,
+        folga_nome_estado: m.folga_nome_estado,
+        item_texto: m.item_texto,
+        ultimo_item_texto: m.ultimo_item_texto,
+      },
+      onde,
+    );
+    if (m.n_itens === 0) mortes.push(`${onde}: a lista dos domínios não tem uma linha sequer.`);
+    /* A secção `.dominios-secao` existe na primeira página e em mais lado
+       nenhum: é lá que ela embrulha a lista, e é lá que o primeiro ecrã se
+       mede. Exigida onde tem de existir, e não exigida onde não existe. */
+    if ((rota === '/' || rota === '/en/') && m.seccao_topo === null) {
+      mortes.push(`${onde}: a secção dos domínios não existe na primeira página.`);
+    }
+    saida.dominios[rota][largura] = m;
     if (CAPTURAS && rota === '/') {
       fs.mkdirSync(CAPTURAS, { recursive: true });
       const el = await p.$('.dominios-secao');
@@ -144,16 +217,28 @@ for (const rota of ROTAS_DOM) {
 
 /* ============================================================= a busca */
 
-/* AS QUATRO ROTAS QUE RENDEM A CAIXA, e não só as duas que o diretor leu: a
-   caixa é uma só (F1.10, §2.6), e uma correção na folha dela chega às quatro.
-   `/livro-razao/concelhos` é a que rende a variante sem formulário. */
-const ROTAS_BUSCA = ['/', '/municipios/', '/livro-razao/', '/livro-razao/concelhos/'];
-for (const rota of ROTAS_BUSCA) {
+/* AS ROTAS QUE RENDEM A CAIXA, nas duas edições. A caixa é uma só (F1.10,
+   §2.6), e uma correção na folha dela chega a todas. `temLinha: false` é a
+   variante sem formulário, que é um rótulo e um campo e mais nada: não tem
+   `.busca-linha` nem `.busca-submeter`, e por isso não leva teto. */
+const ROTAS_BUSCA = [
+  { rota: '/', temLinha: true },
+  { rota: '/en/', temLinha: true },
+  { rota: '/municipios/', temLinha: true },
+  { rota: '/en/municipalities/', temLinha: true },
+  { rota: '/livro-razao/', temLinha: true },
+  { rota: '/livro-razao/concelhos/', temLinha: false },
+];
+const LARGURAS_BUSCA = [320, 390, 768, 1280, 1600];
+for (const { rota, temLinha } of ROTAS_BUSCA) {
   saida.busca[rota] = {};
-  for (const largura of [320, 390, 768, 1280, 1600]) {
+  for (const largura of LARGURAS_BUSCA) {
     const p = await navegador.newPage({ viewport: { width: largura, height: 664 } });
-    await p.goto(`${base}${rota}`, { waitUntil: 'networkidle' });
-    saida.busca[rota][largura] = await p.evaluate(() => {
+    if (!(await abre(p, rota))) {
+      await p.close();
+      continue;
+    }
+    const m = await p.evaluate(() => {
       const larg = (el) => (el ? Math.round(el.getBoundingClientRect().width * 10) / 10 : null);
       const linha = document.querySelector('.busca-linha');
       const campo = document.querySelector('.busca-campo');
@@ -171,6 +256,11 @@ for (const rota of ROTAS_BUSCA) {
         transbordo: document.documentElement.scrollWidth - document.documentElement.clientWidth,
       };
     });
+    const onde = `${rota} @${largura}`;
+    exige({ campo: m.campo, campo_size: m.campo_size, rem_px: m.rem_px }, onde);
+    if (temLinha) exige({ linha: m.linha, botao: m.botao, teto: m.linha_max_width }, onde);
+    else if (m.linha !== null) mortes.push(`${onde}: declarada sem linha e tem uma.`);
+    saida.busca[rota][largura] = m;
     if (CAPTURAS && [390, 1280].includes(largura)) {
       fs.mkdirSync(CAPTURAS, { recursive: true });
       const el = await p.$('.busca');
@@ -190,30 +280,38 @@ if (saidaJson) {
   console.log(`escrito: ${saidaJson}`);
 }
 
+if (mortes.length) {
+  console.error(`\n  A RÉGUA NÃO MEDIU · ${mortes.length} coisa(s) em falta\n`);
+  for (const m of mortes) console.error(`    · ${m}`);
+  console.error('');
+  process.exit(1);
+}
+
 console.log('\n== o índice dos domínios ==');
 for (const rota of ROTAS_DOM) {
-  for (const largura of [390, 1280]) {
+  for (const largura of LARGURAS_DOM) {
     const m = saida.dominios[rota][largura];
     console.log(
       `${rota} @${largura}  itens=${m.n_itens}  altura=${m.altura_pagina}  ` +
-        `topo=${m.seccao_topo}  gap=${m.item?.columnGap}/${m.item?.rowGap}  ` +
-        `display=${m.item?.display}  marcador=${m.lista?.listStyleType}  ` +
-        `estado=${m.estado?.fontSize} ${String(m.estado?.fontFamily).split(',')[0]}  ` +
+        `topo=${m.seccao_topo ?? 'não tem secção'}  gap=${m.item.columnGap}/${m.item.rowGap}  ` +
+        `display=${m.item.display}  marcador=${m.lista.listStyleType}  ` +
+        `estado=${m.estado.fontSize} ${m.estado.fontFamily.split(',')[0]}  ` +
         `folga=${m.folga_nome_estado}`,
     );
     if (largura === 390) {
-      console.log(`         1.ª: «${String(m.item_texto).slice(0, 64)}»`);
-      console.log(`         2.ª: «${String(m.ultimo_item_texto).slice(0, 64)}»`);
+      console.log(`         1.ª: «${m.item_texto.slice(0, 64)}»`);
+      console.log(`         2.ª: «${m.ultimo_item_texto.slice(0, 64)}»`);
     }
   }
 }
 console.log('\n== a linha da busca ==');
-for (const rota of ROTAS_BUSCA) {
-  for (const largura of [320, 390, 768, 1280, 1600]) {
+for (const { rota, temLinha } of ROTAS_BUSCA) {
+  for (const largura of LARGURAS_BUSCA) {
     const m = saida.busca[rota][largura];
     console.log(
-      `${rota} @${largura}  linha=${m.linha}  campo=${m.campo}  botao=${m.botao}  ` +
-        `size=${m.campo_size}  teto=${m.linha_max_width}  rem=${m.rem_px}px  ` +
+      `${rota} @${largura}  linha=${temLinha ? m.linha : 'não tem'}  campo=${m.campo}  ` +
+        `botao=${temLinha ? m.botao : 'não tem'}  size=${m.campo_size}  ` +
+        `teto=${temLinha ? m.linha_max_width : 'não leva'}  rem=${m.rem_px}px  ` +
         `transbordo=${m.transbordo}`,
     );
   }

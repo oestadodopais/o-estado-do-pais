@@ -1,0 +1,33 @@
+{
+ "registado_em": "2026-09-15T08:55:52+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/pacote-fatia",
+ "plantas": [
+  {
+   "id": "F1",
+   "ficheiro": "scripts/check-css.mjs",
+   "descricao": "a quarentena da C1 passa a isentar por prefixo qualquer classe «dominios-*», e a célula deixaria de apanhar a volta do próprio defeito desta fatia",
+   "sha256_antes": "c424b2de734b87772b2e129edf9fb80ad6ca32d7201f0854d49c1140426d3c98",
+   "sha256_depois": "56a226869f58a14bc2fa495987d757e65224438331ee0807bc09f39cbda5478a",
+   "contexto_antes": "rendidas.add(c);\n        if (comRegra.has(c) && !chega.has(c)) semRegraNaPagina.add(c);\n      }\n    }\n    for (const c of [...semRegraNaPagina].sort()) {\n      if (rota && C1_EM_QUARENTENA.get(rota.key)?.has(c)) {\n        contas.c1_em_quarentena++;\n        continue;\n      }\n      contas.c1_vermelhos++;\n      cru.push({ celula: 'C1', caminho, rota: rota?.key ?? null, clas",
+   "contexto_depois": "rendidas.add(c);\n        if (comRegra.has(c) && !chega.has(c)) semRegraNaPagina.add(c);\n      }\n    }\n    for (const c of [...semRegraNaPagina].sort()) {\n      if (rota && (C1_EM_QUARENTENA.get(rota.key)?.has(c) || c.startsWith('dominios-'))) {\n        contas.c1_em_quarentena++;\n        continue;\n      }\n      contas.c1_vermelhos++;\n      cru.push({ celula: 'C1', caminho, rota: rota?.key ?? null, clas"
+  },
+  {
+   "id": "F2",
+   "ficheiro": "built/index.html",
+   "descricao": "a página portuguesa construída volta a não ter espaço entre o nome «Trabalho» e o estado, contra o relatório que diz 0 coladas",
+   "sha256_antes": "6a807c3387680ac43a1511350dfb5cb7c3b78e965fb96927dd7e84f7a8106d64",
+   "sha256_depois": "1a3ef68b49f9a45268acffdd7a584062b5a827cdecaab17cf53ffdcf0d50646a",
+   "contexto_antes": "s=\"dominios-item\" data-dominio=\"trabalho\"><a class=\"dominios-nome dominios-porta\" href=\"/dominios/economia-e-financas-publicas#m-t1\"><span data-nome=\"dominios\">Trabalho</span></a> <span class=\"dominios-estado\" data-dominio-estado=\"dentro-de\">incluído em <span data-nome=\"dominios\">Economia e finanças públicas</span></span></li></ol></section><nav class=\"portas\" aria-l",
+   "contexto_depois": "s=\"dominios-item\" data-dominio=\"trabalho\"><a class=\"dominios-nome dominios-porta\" href=\"/dominios/economia-e-financas-publicas#m-t1\"><span data-nome=\"dominios\">Trabalho</span></a><span class=\"dominios-estado\" data-dominio-estado=\"dentro-de\">incluído em <span data-nome=\"dominios\">Economia e finanças públicas</span></span></li></ol></section><nav class=\"portas\" aria-l"
+  },
+  {
+   "id": "F3",
+   "ficheiro": "src/i18n/strings.mjs",
+   "descricao": "a cadeia «incluído em» sem acento no ficheiro das cadeias, contra a página construída e o inventário",
+   "sha256_antes": "274195c850f046347aa52201558c6bf7cbf48bc3f2b71fa686fc610d33a1adce",
+   "sha256_depois": "5366e9d3cd2baa1d59a58ebe478f0cef04e400b271bf7aa336b3e40bcf8b1544",
+   "contexto_antes": " a marca é `data-nonledger=\"numeracao\"`, a mesma da posição de\n         um cartão na faixa. */\n      medidasRotulo: 'medidas',\n      estadoNoAr: 'no ar',\n      estadoDentroDe: 'incluído em',\n      estadoSem: 'ainda sem medidas conferidas',\n      /* «VAGA» SAI DA VOZ DO LEITOR (§7.8 do brief, e decisão 21 da releitura\n         do leitor de primeira ",
+   "contexto_depois": " a marca é `data-nonledger=\"numeracao\"`, a mesma da posição de\n         um cartão na faixa. */\n      medidasRotulo: 'medidas',\n      estadoNoAr: 'no ar',\n      estadoDentroDe: 'incluido em',\n      estadoSem: 'ainda sem medidas conferidas',\n      /* «VAGA» SAI DA VOZ DO LEITOR (§7.8 do brief, e decisão 21 da releitura\n         do leitor de primeira "
+  }
+ ]
+}

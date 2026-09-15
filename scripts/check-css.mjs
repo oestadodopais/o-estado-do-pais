@@ -271,11 +271,45 @@ const EM_LINHA = new Set([
  * que o diretor leu. As outras 31 403 fronteiras entre peças de texto são
  * separadas pela folha da própria página.
  *
- * O QUE ELA NÃO VÊ, MEDIDO E ESCRITO. Lê as declarações por CLASSE e não resolve
- * a cascata, e sobe até à raiz à procura de um `gap`. É conservadora de
- * propósito, e o preço é este: o «Populaçãoprimeiro» de `/metodo`, que é uma
- * colagem verdadeira, não a acorda, porque `.metodo-secao`, lá acima, é uma
- * grelha com goma. Quem apanhou essa foi a C1.
+ * ---------------------------------------------------------------------------
+ * O QUE ESTA PERGUNTA NÃO SABE RESPONDER, ESCRITO ANTES DE ALGUÉM PERGUNTAR
+ * ---------------------------------------------------------------------------
+ * (Achado 6 da leitura a frio do Codex à fatia, 15.09.2026, aceite como
+ * limitação verdadeira desta redação.)
+ *
+ * «A folha desta página põe espaço aqui?» é respondida por leitura de TEXTO DE
+ * FOLHA, e não por composição. Em concreto, a régua:
+ *
+ *   · **aceita a declaração de um antepassado qualquer, até à raiz.** Um `gap`
+ *     separa os filhos DIRECTOS de uma caixa flexível ou de uma grelha, e mais
+ *     ninguém: um `gap` declarado cinco níveis acima não diz nada sobre a
+ *     fronteira que está a ser medida. A régua aceita-o à mesma;
+ *   · **não resolve o selector.** Atribui as declarações de `.a .b { … }` tanto
+ *     a `.a` como a `.b`, e não confere qual dos dois elementos casa de facto;
+ *   · **não resolve a cascata nem a condição.** Uma declaração dentro de um
+ *     `@media` que nunca se aplica àquela largura conta como declaração, e uma
+ *     regra que outra sobrepõe conta na mesma;
+ *   · **não mede um píxel.** Não sabe se o espaço que a folha declara tem
+ *     largura, nem se os dois elementos chegam a ficar na mesma linha.
+ *
+ * O ERRO QUE ISTO PRODUZ É SEMPRE PARA O MESMO LADO, e é a escolha: deixa passar
+ * colagens verdadeiras, e não inventa nenhuma. Entre uma régua que cala um
+ * defeito e uma que acusa uma página que está bem, esta casa escolhe a primeira,
+ * porque a segunda ensina toda a gente a escrever exceções.
+ *
+ * O PREÇO MEDIDO, com nome: o «Populaçãoprimeiro» de `/metodo` é uma colagem
+ * verdadeira e a C2 não a acorda, porque `.metodo-secao`, lá acima, é uma grelha
+ * com goma. Quem a apanhou foi a C1, por outra via, e está corrigida nesta
+ * fatia. E o «Trabalhoincluído» da primeira página só ficou vermelho porque a
+ * folha não chegava àquela página: em `/dominios`, onde chegava, o `gap` de
+ * `.dominios-item` teria calado a mesma fronteira.
+ *
+ * A FORMA HONESTA DE FECHAR ISTO NÃO É UMA HEURÍSTICA MELHOR: é uma célula
+ * RENDIDA, que abra as páginas num navegador e meça a distância entre as caixas
+ * de duas peças de texto vizinhas na mesma linha. Zero píxeis é uma colagem, e
+ * não há folha nem cascata para interpretar. Fica para a fatia
+ * `css-alcance-2026-09-16`, com a conta do custo ao lado: a régua de hoje lê
+ * 7 224 páginas em segundos, e uma rendida tem de escolher quantas abre.
  */
 const zero = (v) => /^0(?:[a-z%]*)?$/.test(v.trim());
 
@@ -335,13 +369,17 @@ const COLAGENS_ACEITES = [
       'partia a palavra em vez de a compor.',
     par: (a, b) => ['sup', 'sub'].includes(a.rawTagName) || ['sup', 'sub'].includes(b.rawTagName),
   },
-  {
-    porque:
-      'Uma abreviatura com a sua marca de expansão é uma palavra só: «INE» dentro ' +
-      'de um `<abbr>` encostado ao que o segue não é duas palavras coladas.',
-    par: (a, b) => a.rawTagName === 'abbr' || b.rawTagName === 'abbr',
-  },
 ];
+
+/* A ISENÇÃO DE `<abbr>` SAIU (achado 7 da leitura a frio do Codex, 15.09.2026).
+   Estava escrita como «uma abreviatura com a sua marca de expansão é uma palavra
+   só», e o que ela fazia era outra coisa: isentava QUALQUER fronteira que
+   tocasse num `<abbr>`, dos dois lados. `<abbr>INE</abbr><span>publicou</span>`
+   lê-se «INEpublicou» e passava. Uma isenção que apaga o defeito que devia
+   apanhar não se estreita: tira-se. Um `<abbr>` dentro de uma palavra continua
+   fora da conta pela regra geral, que é a do nó de texto: a célula só olha para
+   a fronteira entre DOIS elementos, e `km<abbr>²</abbr>` tem texto antes. O
+   `--prova` planta os dois casos e exige as duas respostas. */
 
 /* ========================================================================== */
 /* C1 · o que já estava vermelho quando a régua nasceu                        */
@@ -644,16 +682,30 @@ function montaAProva() {
       /* C2: dois elementos vizinhos sem espaço entre eles. */
       '<a href="/x">Trabalho</a><span>as medidas estão noutro</span>' +
       '</li></ol>' +
+      /* C2, segundo vermelho: UMA ABREVIATURA COLADA AO QUE SE LHE SEGUE.
+         «INEpublicou» é o mesmo defeito que «Trabalhoas», e até 15.09.2026
+         passava, porque a isenção antiga isentava qualquer fronteira que
+         tocasse num `<abbr>`. Plantado para que o dia em que alguém a reescrever
+         tenha de explicar este vermelho. */
+      '<p><abbr title="Instituto Nacional de Estatística">INE</abbr><span>publicou</span></p>' +
       /* O que NÃO pode ficar vermelho, e prova que a régua não grita por tudo:
          uma classe com regra na folha ligada, uma classe com regra embutida,
          uma classe dentro de um `@media` da folha ligada, uma classe sem regra
-         em folha nenhuma, um par com espaço, uma marca dentro de uma palavra,
-         e um expoente colado. */
+         em folha nenhuma, e um par com espaço. */
       '<p class="tem-regra-aqui embutida dentro-de-media sem-regra-em-lado-nenhum">' +
       '<a href="/y">Um</a> <span>dois</span>' +
       '</p>' +
-      '<p>texto<strong>colado a uma marca</strong></p>' +
-      '<p><span>m</span><sup>2</sup></p>' +
+      /* UMA MARCA DENTRO DE UMA PALAVRA, e o par que a célula VÊ.
+         A primeira redação plantava `texto<strong>…</strong>`, que nunca chegava
+         a ser candidato porque começa num nó de texto, e mesmo assim a mensagem
+         de sucesso dizia que a régua o tinha deixado passar: um positivo
+         conhecido que não prova o que diz é pior do que nenhum (achado 7 da
+         leitura a frio do Codex, 15.09.2026). O que fica são os dois casos, e a
+         diferença entre eles é a regra: o primeiro tem texto antes da marca e a
+         célula não o vê; o segundo é `</abbr><sup>`, duas peças encostadas que
+         a célula VÊ e deixa passar pela isenção do expoente, escrita. */
+      '<p>km<abbr title="quadrado">²</abbr> e texto<strong>com marca</strong></p>' +
+      '<p><abbr title="metro">m</abbr><sup>2</sup></p>' +
       /* O IDIOMA DA CASA: encostadas no HTML, separadas pela folha que a página
          liga. Uma pelo `gap` do pai, a outra pela margem de uma das peças. */
       '<p class="com-gap"><span>valor</span><a href="/z">fonte</a></p>' +
@@ -675,13 +727,31 @@ if (PROVA) {
   const c2 = r.erros.filter((e) => e.startsWith('C2 ·'));
   const falhas = [];
   if (c1.length !== 1) falhas.push(`C1 devia ver 1 defeito plantado e viu ${c1.length}`);
-  if (c2.length !== 1) falhas.push(`C2 devia ver 1 defeito plantado e viu ${c2.length}`);
   if (c1[0] && !c1[0].includes('regra-que-nao-chega')) {
     falhas.push(`C1 viu outra coisa: ${c1[0]}`);
   }
-  if (c2[0] && !c2[0].includes('Trabalho')) falhas.push(`C2 viu outra coisa: ${c2[0]}`);
+  if (c2.length !== 2) falhas.push(`C2 devia ver 2 defeitos plantados e viu ${c2.length}`);
+  if (!c2.some((e) => e.includes('Trabalho'))) {
+    falhas.push('C2 não viu o nome colado ao estado, que é o defeito de 15.09');
+  }
+  if (!c2.some((e) => e.includes('INE'))) {
+    falhas.push('C2 não viu a abreviatura colada ao que se lhe segue');
+  }
+  /* A isenção do expoente morde uma vez, no `</abbr><sup>`, e não no
+     `km<abbr>²</abbr>`, que nem candidato é. Se contar dois, a régua passou a
+     ver nós de texto e a mensagem deixa de ser verdade. */
   if (r.contas.c2_aceites !== 1) {
     falhas.push(`o expoente plantado devia contar 1 colagem aceite e contou ${r.contas.c2_aceites}`);
+  }
+  /* Cinco candidatos entre peças de texto: os dois vermelhos, o expoente
+     isento, e os dois que a folha ligada separa. O `texto<strong>` e o
+     `km<abbr>` não entram, porque têm um nó de texto antes. */
+  if (r.contas.c2_entre_texto !== 5) {
+    falhas.push(
+      `a prova planta 5 fronteiras entre peças de texto (2 vermelhas, 1 isenta, 2 separadas ` +
+        `pela folha) e a régua contou ${r.contas.c2_entre_texto}: ou passou a ver nós de texto, ` +
+        `ou deixou de ver um par de elementos`,
+    );
   }
   if (r.contas.c2_separados_pela_folha !== 2) {
     falhas.push(
@@ -700,10 +770,13 @@ if (PROVA) {
   }
   console.log(
     cinza(
-      '  folhas · positivo conhecido: C1 e C2 viram cada uma o seu defeito plantado, ' +
-        'e nenhuma viu a classe com regra na folha ligada, a regra embutida, a regra ' +
-        'dentro de um `@media`, a classe sem regra, o par com espaço nem a marca dentro ' +
-        'de uma palavra. O expoente contou como colagem aceite.',
+      '  folhas · positivo conhecido: C1 viu a classe cuja regra não chega à página; C2 viu ' +
+        'os dois defeitos plantados (o nome colado ao estado e a abreviatura colada ao que se ' +
+        'lhe segue). Nenhuma acusou a classe com regra na folha ligada, a regra embutida, a ' +
+        'regra dentro de um `@media`, a classe sem regra, nem o par com espaço. Das cinco ' +
+        'fronteiras entre peças de texto, duas ficaram vermelhas, uma foi isenta pelo expoente ' +
+        'e duas foram separadas pela folha que a página liga; as duas marcas dentro de uma ' +
+        'palavra não chegam a ser candidatas, porque têm um nó de texto antes.',
     ),
   );
 }
