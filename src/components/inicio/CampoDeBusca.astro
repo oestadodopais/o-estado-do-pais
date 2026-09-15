@@ -34,9 +34,26 @@
  * contribui com a sua largura mínima para o mínimo do pai mesmo com
  * `min-width: 0`. A 320 px o formulário do índice dos números media 315,5 px de
  * mínimo e empurrava a página inteira 14 px para fora (medido em Chromium, com
- * `document.documentElement.scrollWidth` a 334 numa janela de 320). O `size` do
- * campo desce a 4, que é o que tira a largura intrínseca da conta sem tocar na
- * largura que a folha lhe dá.
+ * `document.documentElement.scrollWidth` a 334 numa janela de 320).
+ *
+ * O `SIZE` DESCEU A 4 NESSE DIA, E ERA O NÚMERO ERRADO A FAZER O TRABALHO CERTO
+ * (15.09.2026). O diretor leu o campo na primeira página: uma caixa de quatro
+ * caracteres ao lado de um botão grande. Medido na cabeça 44f0d838, nas quatro
+ * larguras e nas duas rotas, o campo media 100,6 px e a linha inteira 220,1 px
+ * — a 320 como a 1 280, porque não era o `size` que fixava a largura: era o
+ * `align-items: flex-start` de `.pesquisa` a encolher o formulário ao seu
+ * conteúdo, e um formulário encolhido não tem espaço nenhum para o campo
+ * crescer. As regras de `.busca-linha` já diziam o que devia acontecer (o campo
+ * com `flex: 1 1 auto; min-width: 0`, o botão com `flex: 0 0 auto`) e não tinham
+ * onde acontecer.
+ *
+ * A CORREÇÃO É DA FOLHA, e está em `site.css`: `.busca` leva `align-self:
+ * stretch`, que é a linha a ocupar a largura que tem. O `size` passa a 24 e fica
+ * a ser só o que sempre devia ter sido: o recurso de quem lê a página sem folha
+ * nenhuma, onde 4 caracteres eram uma caixa inutilizável. Com folha, quem fixa a
+ * largura é o `flex`, e a largura mínima continua tirada da conta pelo
+ * `min-width: 0`. O transbordo a 320 mede-se outra vez, nas quatro rotas que
+ * rendem esta caixa, e está no relatório da fatia.
  */
 const {
   rotulo,
@@ -82,7 +99,7 @@ if (accao && !submeter) {
           id={id}
           name={name ?? undefined}
           type="search"
-          size="4"
+          size="24"
           autocomplete="off"
           {...campo}
         />
@@ -106,7 +123,7 @@ if (accao && !submeter) {
         id={id}
         name={name ?? undefined}
         type="search"
-        size="4"
+        size="24"
         autocomplete="off"
         {...campo}
       />

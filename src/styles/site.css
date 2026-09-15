@@ -5130,6 +5130,18 @@ a.marcador::after {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  /* A CAIXA OCUPA A LARGURA QUE TEM (15.09.2026, medido pelo lugar de direção
+     na primeira página: «o campo da busca é minúsculo»). As regras da linha já
+     mandavam o campo crescer e o botão não encolher, e não tinham onde: o pai
+     desta caixa na primeira página é `.pesquisa`, que é uma coluna flexível com
+     `align-items: flex-start`, e um item assim mede o seu conteúdo. Media 220,1
+     px de linha e 100,6 px de campo a 320, a 390, a 768 e a 1 280, nas duas
+     rotas, sempre o mesmo número, porque a largura vinha do `size="4"` do
+     `<input>` e não da folha. `align-self: stretch` devolve à linha a largura da
+     coluna, e é aí que o `flex: 1 1 auto` do campo passa a ter efeito. Onde o
+     pai não é uma caixa flexível a declaração é inerte, e um formulário já
+     ocupa a linha. */
+  align-self: stretch;
 }
 .busca-linha {
   display: flex;
