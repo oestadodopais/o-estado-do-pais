@@ -49,20 +49,32 @@
  * ocorrências, e não de linhas: o HTML construído é quase todo uma linha só, e
  * `grep -c` contaria 1 onde há dez.
  *
- * A5 · A GAVETA DOS NOMES ESTÁ NA PÁGINA E NÃO OCUPA PÍXEL NENHUM À VISTA.
- * A célula mudou de objecto a 15.09.2026, com o item 3 do F1.13, e a decisão
- * está citada no corpo dela. Mede quatro coisas com guião, a 390 e a 1 280: a
- * gaveta existe no documento; nem ela nem nenhum dos 29 nomes ocupa um píxel à
- * vista: a caixa sai da composição (`position: absolute`, e por isso não
- * desloca nada) e o recorte põe a zero o que dela se pinta, e o conteúdo fica na
- * árvore de acessibilidade; os 29 nomes estão lá, cada um com a porta da sua
- * página, que responde; e um foco no `<summary>` devolve a gaveta à composição,
- * com os 29 nomes à vista e com o alvo de 44 px que a Emenda 20c lhes dá abaixo
- * de 1 024.
+ * A5 · OS TRÊS ESTADOS DA GAVETA DOS NOMES.
+ * A célula mudou de objecto a 15.09.2026, com o item 3 do F1.13, e outra vez no
+ * mesmo dia com o achado 5 da leitura a frio do Codex. A decisão está citada no
+ * corpo dela. A decisão diz «escondida QUANDO O MAPA FUNCIONA», e por isso são
+ * TRÊS estados e não dois:
  *
- * O ESTADO SEM GUIÃO É DA U4 de `tests/inicio/mapa-unidades.mjs`, que já corre
- * num contexto com `javaScriptEnabled: false` e conta ali as 29 da lista. Uma
- * segunda medição do mesmo facto noutra régua divergiria da primeira.
+ *   A5a  com guião e com o mapa vivo, a 390 e a 1 280: a gaveta existe no
+ *        documento e não ocupa um píxel à vista (a caixa sai da composição, o
+ *        recorte põe a zero o que dela se pinta, e o conteúdo fica na árvore de
+ *        acessibilidade); os 29 nomes estão lá, cada um com a porta da sua
+ *        página, que responde; e um foco no `<summary>` devolve a gaveta à
+ *        composição, com os 29 nomes à vista e com o alvo de 44 px que a Emenda
+ *        20c lhes dá abaixo de 1 024;
+ *   A5b  com guião e com o mapa FALHADO (o pedido de `/js/mapa-unidades.js`
+ *        recusado no navegador): a marca `data-mapa-vivo` não chega à raiz, e a
+ *        gaveta fica À VISTA, fechada, com os 29 nomes lá dentro. É o estado que
+ *        a primeira construção deste bloco não dava, e a leitura a frio
+ *        escreveu-o: «a reader with JavaScript enabled but a missing or failed
+ *        map script loses the visible names fallback»;
+ *   A5c  sem guião: o mesmo que a A5b, pela mesma razão, e por um caminho
+ *        diferente. Mede-se aqui em vez de se assumir que é igual.
+ *
+ * O ESTADO SEM GUIÃO TAMBÉM É DA U4 de `tests/inicio/mapa-unidades.mjs`, que
+ * conta ali as 29 da lista e as 29 ligações que respondem 200. O que a A5c
+ * acrescenta é a GEOMETRIA (a caixa tem área, o `<summary>` vê-se), que é a
+ * pergunta desta régua; a U4 responde pela navegação, que é a daquela.
  *
  * A EXPECTATIVA «VISÍVEL EM REPOUSO» RETIROU-SE, e a razão escreve-se
  * (decisão do lugar de direção, 09.09.2026, sobre o F1.10). A célula nasceu com
@@ -207,7 +219,12 @@ import { parse } from 'node-html-parser';
    célula A4 compara o que a página rende com o que a declaração diz, e por isso
    lê-a: os dois lados da comparação deixam de ser o mesmo texto escrito duas
    vezes na régua. */
-import { DEFINICAO_DOS_PAINEIS } from '../../src/data/figuras.mjs';
+import { DEFINICAO_DOS_PAINEIS, numeralPorExtenso } from '../../src/data/figuras.mjs';
+/* `numeralPorExtenso` É A MESMA FUNÇÃO QUE A PÁGINA USA (A20, 15.09.2026,
+   achado 8 da leitura a frio). A célula recompõe o N do «e mais N» a partir
+   da contagem que a linha rende, e uma segunda maneira de escrever um numeral
+   por extenso divergiria da primeira. O que a régua NÃO lê da fonte são os
+   NOMES das medidas: esses compara-os entre duas superfícies do sítio. */
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = process.env.OEDP_DIST
@@ -313,6 +330,15 @@ async function pagina(rota, largura, altura = 844, opcoes = {}) {
   });
   const p = await ctx.newPage();
   p.__ctx = ctx;
+  /* `bloqueia` RECUSA UM PEDIDO NO NAVEGADOR (A5, 15.09.2026, achado 5 da leitura
+     a frio). Existe para medir o terceiro estado da gaveta dos nomes: um leitor
+     COM guião e SEM mapa. Não se finge o estado com uma classe escrita à mão nem
+     se apaga uma etiqueta do HTML: recusa-se o pedido do ficheiro, que é o que
+     acontece a quem tem a rede a cair ou um bloqueador pelo meio, e mede-se o que
+     a página faz. */
+  if (opcoes.bloqueia) {
+    await p.route(opcoes.bloqueia, (rota) => rota.abort());
+  }
   await p.goto(base + rota, { waitUntil: 'networkidle' });
   await p.evaluate(() => document.fonts.ready);
   return p;
@@ -469,11 +495,6 @@ const EDICOES = [
       'Um observatório de Portugal: cada número com a sua fonte, lido por território, por domínio e em estudos.',
     portasNovas: ['Todos os concelhos →', 'Todos os estudos →', 'Toda a agenda →'],
     portaAntiga: 'a página inteira',
-    /* Os nomes das cinco medidas de cabeça do domínio vivo, na ordem da faixa,
-       e a cauda do «e mais N». A A20 compara-os com o que a FAIXA rende, e não
-       só com esta lista: a lista diz o que se espera, a faixa diz o que o sítio
-       mostra, e a célula exige que as duas digam o mesmo. */
-    eMais: ', e mais cinco',
   },
   {
     chave: 'en',
@@ -497,7 +518,6 @@ const EDICOES = [
       'An observatory of Portugal: every number with its source, read by territory, by domain and in studies.',
     portasNovas: ['All municipalities →', 'All studies →', 'The whole agenda →'],
     portaAntiga: 'the whole page',
-    eMais: ', and five more',
     painel: '/en/european-union',
   },
 ];
@@ -935,13 +955,78 @@ async function corre() {
     const emRepouso390 = await medeAGaveta(p);
     const nomes390 = await medeOsNomes(p, ALVO_TOQUE);
     const aoFoco390 = await focaAGaveta(p, ALVO_TOQUE);
-    medidas[`A5.${ed.chave}.390`] = { repouso: emRepouso390, nomes: nomes390, foco: aoFoco390 };
+    const marca390 = await p.evaluate(() => document.documentElement.hasAttribute('data-mapa-vivo'));
+    medidas[`A5.${ed.chave}.390`] = { repouso: emRepouso390, nomes: nomes390, foco: aoFoco390, marca: marca390 };
 
     const p1280 = await pagina(ed.rota, 1280, 900);
     const emRepouso1280 = await medeAGaveta(p1280);
     const nomes1280 = await medeOsNomes(p1280, ALVO_TOQUE);
-    medidas[`A5.${ed.chave}.1280`] = { repouso: emRepouso1280, nomes: nomes1280 };
+    const marca1280 = await p1280.evaluate(() => document.documentElement.hasAttribute('data-mapa-vivo'));
+    medidas[`A5.${ed.chave}.1280`] = { repouso: emRepouso1280, nomes: nomes1280, marca: marca1280 };
     await p1280.__ctx.close();
+
+    /* ------------------------------------------------------------------ A5b
+       COM GUIÃO E SEM MAPA, a 390: recusa-se o pedido de `/js/mapa-unidades.js`
+       no navegador e mede-se o que a página faz. É o estado que o achado 5 da
+       leitura a frio nomeia, e a decisão do lugar de direção sobre ele: «com
+       guião mas com o mapa falhado, a gaveta fica visível e fechada como sem
+       guião».
+
+       RECUSA-SE O GUIÃO DO MAPA E NÃO O FICHEIRO DA GEOMETRIA, e a razão está
+       medida: `/dados/mapa/unidade-<slug>.json` só se pede quando o leitor toca
+       numa unidade para ela crescer; à chegada, as 29 áreas vêm do servidor.
+       Recusar a geometria não muda nada no estado de chegada (o mapa continua a
+       ser 29 ligações com o lugar do nome vivo), e a gaveta continua, e deve
+       continuar, escondida. O pedido que decide é o do guião. */
+    const pSemMapa = await pagina(ed.rota, 390, ALTURA_PEQUENA, { bloqueia: '**/js/mapa-unidades.js' });
+    const semMapa = await medeAGaveta(pSemMapa);
+    const nomesSemMapa = await medeOsNomes(pSemMapa, ALVO_TOQUE);
+    const semMapaEstado = await pSemMapa.evaluate(() => ({
+      marca: document.documentElement.hasAttribute('data-mapa-vivo'),
+      gaveta: document.querySelector('[data-gaveta="nomes"]')?.hasAttribute('open') ?? null,
+      sumario:
+        document.querySelector('[data-gaveta="nomes"] > summary')?.checkVisibility({
+          contentVisibilityAuto: true,
+          opacityProperty: true,
+          visibilityProperty: true,
+        }) ?? null,
+    }));
+    medidas[`A5.${ed.chave}.semMapa`] = { caixa: semMapa, nomes: nomesSemMapa, ...semMapaEstado };
+    await pSemMapa.__ctx.close();
+
+    /* ------------------------------------------------------------------ A5c
+       SEM GUIÃO, a 390. A U4 de `tests/inicio/mapa-unidades.mjs` conta ali as 29
+       e as 29 portas que respondem; o que se mede aqui é a GEOMETRIA, que é a
+       pergunta desta régua, e mede-se em vez de se assumir que é igual à A5b. */
+    const ctxSemGuiaoA5 = await nav.newContext({
+      viewport: { width: 390, height: ALTURA_PEQUENA },
+      javaScriptEnabled: false,
+    });
+    const pSemGuiaoA5 = await ctxSemGuiaoA5.newPage();
+    await pSemGuiaoA5.goto(base + ed.rota, { waitUntil: 'load' });
+    const semGuiaoA5 = await pSemGuiaoA5.evaluate(() => {
+      const el = document.querySelector('[data-cabeca-nomes]');
+      const r = el ? el.getBoundingClientRect() : null;
+      const cs = el ? getComputedStyle(el) : null;
+      return {
+        existe: !!el,
+        largura: r ? +r.width.toFixed(1) : null,
+        altura: r ? +r.height.toFixed(1) : null,
+        area: r ? Math.round(r.width * r.height) : null,
+        forma: cs ? cs.position : null,
+        marca: document.documentElement.hasAttribute('data-mapa-vivo'),
+        gaveta: document.querySelector('[data-gaveta="nomes"]')?.hasAttribute('open') ?? null,
+        nomes: document.querySelectorAll('[data-lista-porta]').length,
+        sumario:
+          document.querySelector('[data-gaveta="nomes"] > summary')?.checkVisibility({
+            contentVisibilityAuto: true,
+            opacityProperty: true,
+            visibilityProperty: true,
+          }) ?? null,
+      };
+    });
+    medidas[`A5.${ed.chave}.semGuiao`] = semGuiaoA5;
+    await ctxSemGuiaoA5.close();
 
     /* CADA NOME LEVA À SUA PÁGINA, e o destino confere-se contra o que a Carta
        diz: a porta de uma unidade é `/distritos/<slug>` na edição portuguesa e
@@ -962,7 +1047,10 @@ async function corre() {
     }
     conta(
       `A5.${ed.chave}`,
-      emRepouso390.existe &&
+      /* A5a · com guião e com o mapa vivo */
+      marca390 === true &&
+        marca1280 === true &&
+        emRepouso390.existe &&
         emRepouso390.area === 0 &&
         emRepouso390.forma === 'absolute' &&
         nomes390.total === 29 &&
@@ -975,18 +1063,40 @@ async function corre() {
         aoFoco390.area > 0 &&
         aoFoco390.nomes.total === 29 &&
         aoFoco390.nomes.pequenos.length === 0 &&
+        /* A5b · com guião e sem mapa */
+        semMapaEstado.marca === false &&
+        semMapa.area > 0 &&
+        semMapa.forma === 'static' &&
+        semMapaEstado.sumario === true &&
+        semMapaEstado.gaveta === false &&
+        nomesSemMapa.total === 29 &&
+        /* A5c · sem guião */
+        semGuiaoA5.marca === false &&
+        semGuiaoA5.area > 0 &&
+        semGuiaoA5.forma === 'static' &&
+        semGuiaoA5.sumario === true &&
+        semGuiaoA5.gaveta === false &&
+        semGuiaoA5.nomes === 29 &&
+        /* as portas, nos três estados a mesma lista */
         portas.length === 29 &&
         forasDoSitio.length === 0 &&
         semResposta === 0,
-      `a gaveta dos nomes está na página e não ocupa píxel nenhum à vista com guião ` +
-        `(item 3 do F1.13, 15.09.2026): a 390 a caixa dela mede ${emRepouso390.largura}×${emRepouso390.altura} px ` +
-        `em «${emRepouso390.forma}», recortada por «${emRepouso390.recorte}» (área à vista ${emRepouso390.area}), ` +
-        `com ${nomes390.total} nome(s), ${nomes390.invisiveis} invisível(eis); ` +
-        `a 1280 mede ${emRepouso1280.largura}×${emRepouso1280.altura} px em «${emRepouso1280.forma}», ` +
-        `recortada por «${emRepouso1280.recorte}» (área à vista ${emRepouso1280.area}), ` +
-        `com ${nomes1280.total} nome(s), ${nomes1280.invisiveis} invisível(eis) · ao foco do «summary» a 390 ` +
-        `a caixa volta a ${aoFoco390.largura}×${aoFoco390.altura} px em «${aoFoco390.forma}» (área à vista ${aoFoco390.area}) com ` +
-        `${aoFoco390.nomes.total} nome(s) e ${aoFoco390.nomes.pequenos.length} fora do alvo de ${ALVO_TOQUE} px · ` +
+      `os três estados da gaveta dos nomes (item 3 do F1.13, e o achado 5 da leitura a frio de 15.09.2026) · ` +
+        `A5a COM GUIÃO E COM MAPA (marca «data-mapa-vivo» ${marca390 && marca1280 ? 'na raiz' : 'EM FALTA'}): ` +
+        `a 390 a caixa mede ${emRepouso390.largura}×${emRepouso390.altura} px em «${emRepouso390.forma}», ` +
+        `recortada por «${emRepouso390.recorte}» (área à vista ${emRepouso390.area}), com ${nomes390.total} nome(s), ` +
+        `${nomes390.invisiveis} invisível(eis); a 1280 mede ${emRepouso1280.largura}×${emRepouso1280.altura} px ` +
+        `(área à vista ${emRepouso1280.area}), com ${nomes1280.total} nome(s), ${nomes1280.invisiveis} invisível(eis); ` +
+        `ao foco do «summary» a 390 volta a ${aoFoco390.largura}×${aoFoco390.altura} px (área ${aoFoco390.area}) ` +
+        `com ${aoFoco390.nomes.total} nome(s) e ${aoFoco390.nomes.pequenos.length} fora do alvo de ${ALVO_TOQUE} px · ` +
+        `A5b COM GUIÃO E SEM MAPA (pedido de «/js/mapa-unidades.js» recusado; marca ` +
+        `${semMapaEstado.marca ? 'NA RAIZ' : 'ausente'}): a caixa mede ${semMapa.largura}×${semMapa.altura} px ` +
+        `em «${semMapa.forma}» (área ${semMapa.area}), o «summary» ${semMapaEstado.sumario ? 'à vista' : 'FORA DA VISTA'}, ` +
+        `a gaveta ${semMapaEstado.gaveta ? 'ABERTA' : 'fechada'}, ${nomesSemMapa.total} nome(s) no documento · ` +
+        `A5c SEM GUIÃO (marca ${semGuiaoA5.marca ? 'NA RAIZ' : 'ausente'}): a caixa mede ` +
+        `${semGuiaoA5.largura}×${semGuiaoA5.altura} px em «${semGuiaoA5.forma}» (área ${semGuiaoA5.area}), ` +
+        `o «summary» ${semGuiaoA5.sumario ? 'à vista' : 'FORA DA VISTA'}, a gaveta ` +
+        `${semGuiaoA5.gaveta ? 'ABERTA' : 'fechada'}, ${semGuiaoA5.nomes} nome(s) · ` +
         `${portas.length} porta(s), ${forasDoSitio.length} fora de «${prefixo}», ${semResposta} sem resposta` +
         (aoFoco390.nomes.pequenos.length
           ? ` (${aoFoco390.nomes.pequenos.slice(0, 3).map((c) => `${c.slug} ${c.w}×${c.h}`).join(', ')}…)`
@@ -1621,49 +1731,122 @@ async function corre() {
        linha, IGUAIS AOS DA FAIXA, e "e mais N" com N igual à contagem menos os
        nomes; 0 valores selados na secção»**.
 
-       «IGUAIS AOS DA FAIXA» É UMA COMPARAÇÃO E NÃO UMA LISTA ESCRITA AQUI, e é
-       essa a metade que importa: a célula lê os nomes dos cartões da faixa desta
-       mesma página (`[data-cartao] [data-medida-nome]`) e os nomes da linha do
-       domínio (`.dominios-estado [data-nome="medidas"]`), e exige que as duas
-       listas sejam a mesma, na mesma ordem. Uma régua que comparasse a linha com
-       uma lista escrita nesta régua media o que ela própria disse; esta compara
-       as duas superfícies do sítio uma com a outra, e é por isso que um nome
-       trocado numa delas a derruba.
+       ------------------------------------------------------------------------
+       A CÉLULA FOI REESCRITA A 15.09.2026, PELO ACHADO 8 DA LEITURA A FRIO
+       ------------------------------------------------------------------------
+       A primeira redação fazia três coisas erradas, e as três estão consertadas:
+
+         · **abria `/` e `/en` e dizia que protegia `/dominios`.** A secção da
+           primeira página e a página do índice rendem o MESMO componente, e a
+           célula só via uma delas. Passa a abrir as DUAS rotas, e a exigir a
+           mesma promessa em cada uma;
+         · **achatava os nomes em listas globais.** Com um domínio vivo o
+           resultado era o mesmo; com dois, cinco nomes de um e três do outro
+           davam uma lista de oito que casava com uma faixa de oito na ordem
+           errada. Mede-se agora POR DOMÍNIO, pelo `data-dominio` de cada linha;
+         · **procurava «cinco» à letra.** O N do «e mais N» é a contagem do
+           domínio menos os nomes que ele rende, e é isso que a célula recompõe
+           agora, com `numeralPorExtenso()` na língua da edição, para cada
+           domínio. Uma régua que procura uma palavra escrita nela mede o que ela
+           própria disse.
+
+       «IGUAIS AOS DA FAIXA» CONTINUA A SER UMA COMPARAÇÃO ENTRE DUAS SUPERFÍCIES
+       DO SÍTIO, e não com uma lista escrita aqui: os nomes dos cartões da faixa
+       da primeira página contra os nomes da linha daquele domínio. A faixa lê-se
+       de `/` e de `/en`, que é onde ela está; a linha lê-se das duas rotas.
 
        OS ZERO VALORES SELADOS SÃO A OUTRA METADE, e são a regra A3 e o item
        8.13: um `data-claim` dentro da secção dos domínios é um valor do
        livro-razão a render-se numa secção que é navegação e mais nada. É a
        planta «um valor selado na linha de um domínio» da medida P8.
        ------------------------------------------------------------------------ */
-    const pDom = await pagina(ed.rota, 1280);
-    const dominios = await pDom.evaluate(() => {
-      const seccao = document.querySelector('.dominios-secao');
-      if (!seccao) return null;
-      const texto = (el) => (el.textContent ?? '').replace(/\s+/g, ' ').trim();
-      return {
-        naFaixa: [...document.querySelectorAll('[data-cartao] [data-medida-nome]')].map(texto),
-        naLinha: [...seccao.querySelectorAll('.dominios-estado [data-nome="medidas"]')].map(texto),
-        selados: seccao.querySelectorAll('[data-claim]').length,
-        linhaViva: texto(seccao.querySelector('.dominios-item .dominios-estado')),
-      };
-    });
-    await pDom.__ctx.close();
-    const nomesIguais =
-      !!dominios &&
-      dominios.naFaixa.length > 0 &&
-      dominios.naFaixa.length === dominios.naLinha.length &&
-      dominios.naFaixa.every((n, i) => n === dominios.naLinha[i]);
-    const temACauda = !!dominios && dominios.linhaViva.includes(ed.eMais);
-    medidas[`A20.${ed.chave}`] = dominios;
-    conta(
-      `A20.${ed.chave}`,
-      nomesIguais && temACauda && dominios.selados === 0,
-      `o índice dos domínios de ${ed.rota}: ${dominios ? dominios.naLinha.length : 0} nome(s) na linha do ` +
-        `domínio vivo contra ${dominios ? dominios.naFaixa.length : 0} na faixa, ` +
-        `${nomesIguais ? 'iguais e pela mesma ordem' : 'DIFERENTES'} · a cauda «${ed.eMais}» ` +
-        `${temACauda ? 'lá está' : 'NÃO está'} · ${dominios ? dominios.selados : '?'} valor(es) selado(s) na secção ` +
-        `(esperados 0) · «${dominios ? dominios.linhaViva : ''}»`,
-    );
+    {
+      /* A FAIXA LÊ-SE UMA VEZ, DA PRIMEIRA PÁGINA, e serve de referência às duas
+         rotas: é a mesma declaração que as três superfícies leem. */
+      const pFaixa = await pagina(ed.rota, 1280);
+      const naFaixa = await pFaixa.evaluate(() =>
+        [...document.querySelectorAll('[data-cartao] [data-medida-nome]')].map((el) =>
+          (el.textContent ?? '').replace(/\s+/g, ' ').trim(),
+        ),
+      );
+      await pFaixa.__ctx.close();
+
+      const porRota = {};
+      const queixas = [];
+      for (const rota of [ed.rota, ed.indiceDosDominios]) {
+        const pg = await pagina(rota, 1280);
+        const lido = await pg.evaluate(() => {
+          const seccao = document.querySelector('.dominios-secao') ?? document.querySelector('.dominios-lista')?.parentElement;
+          if (!seccao) return null;
+          const texto = (el) => (el ? (el.textContent ?? '').replace(/\s+/g, ' ').trim() : '');
+          return {
+            selados: seccao.querySelectorAll('[data-claim]').length,
+            linhas: [...seccao.querySelectorAll('.dominios-item')].map((li) => {
+              const estado = li.querySelector('.dominios-estado');
+              const contagem = estado?.querySelector('[data-nonledger="numeracao"]');
+              const numerais = [...(estado?.querySelectorAll('[data-nonledger="numeracao"]') ?? [])].map(texto);
+              return {
+                slug: li.getAttribute('data-dominio'),
+                estado: texto(estado),
+                total: contagem ? Number(texto(contagem)) : null,
+                /* O segundo `numeracao` da linha, quando existe, é o N do «e mais
+                   N» escrito por extenso. O primeiro é a contagem. */
+                numeralDaCauda: numerais.length > 1 ? numerais[1] : null,
+                nomes: [...(estado?.querySelectorAll('[data-nome="medidas"]') ?? [])].map(texto),
+              };
+            }),
+          };
+        });
+        await pg.__ctx.close();
+        porRota[rota] = lido;
+        if (!lido) {
+          queixas.push(`${rota}: não tem secção de domínios`);
+          continue;
+        }
+        if (lido.selados !== 0) queixas.push(`${rota}: ${lido.selados} valor(es) selado(s)`);
+        const vivas = lido.linhas.filter((l) => l.nomes.length > 0);
+        if (vivas.length === 0) queixas.push(`${rota}: nenhum domínio com nomes de medidas de cabeça`);
+        for (const l of vivas) {
+          /* OS NOMES SÃO OS DA FAIXA, NA MESMA ORDEM, POR DOMÍNIO. */
+          if (l.nomes.length !== naFaixa.length || l.nomes.some((n, k) => n !== naFaixa[k])) {
+            queixas.push(
+              `${rota} · ${l.slug}: [${l.nomes.join(' | ')}] contra a faixa [${naFaixa.join(' | ')}]`,
+            );
+          }
+          /* «E MAIS N» RECOMPOSTO, E NÃO PROCURADO À LETRA. */
+          const sobram = (l.total ?? 0) - l.nomes.length;
+          const esperado = sobram > 0 ? numeralPorExtenso(sobram, ed.chave) : null;
+          if (esperado === null) {
+            if (l.numeralDaCauda !== null) {
+              queixas.push(`${rota} · ${l.slug}: tem cauda «${l.numeralDaCauda}» e não sobra medida nenhuma`);
+            }
+          } else if (l.numeralDaCauda !== esperado) {
+            queixas.push(
+              `${rota} · ${l.slug}: a cauda diz «${l.numeralDaCauda}» e ${l.total} menos ${l.nomes.length} é «${esperado}»`,
+            );
+          }
+        }
+      }
+      medidas[`A20.${ed.chave}`] = { naFaixa, porRota, queixas };
+      const resumo = Object.entries(porRota)
+        .map(([rota, l]) => {
+          if (!l) return `${rota}: sem secção`;
+          const vivas = l.linhas.filter((x) => x.nomes.length > 0);
+          return (
+            `${rota}: ${l.linhas.length} linha(s), ${vivas.length} com nomes ` +
+            `(${vivas.map((x) => `${x.slug} ${x.nomes.length}/${x.total} +${x.numeralDaCauda ?? 'nada'}`).join('; ')}), ` +
+            `${l.selados} selado(s)`
+          );
+        })
+        .join(' · ');
+      conta(
+        `A20.${ed.chave}`,
+        queixas.length === 0 && naFaixa.length > 0,
+        `o índice dos domínios, nas duas rotas que o rendem: ${resumo} · a faixa de ${ed.rota} tem ` +
+          `${naFaixa.length} nome(s) [${naFaixa.join(' | ')}]` +
+          (queixas.length ? ` · QUEIXAS: ${queixas.join(' | ')}` : ''),
+      );
+    }
 
     /* ------------------------------------------------------------------ A15
        OS ESTUDOS A ≤ 1 TOQUE E ≤ 1,5 ECRÃS (F1.2b, item 4)
@@ -2223,6 +2406,19 @@ const PLANTAS = [
         : h.replace('Todos os estudos →', 'a página inteira →'),
   },
   {
+    /* O DEFEITO QUE A LEITURA A FRIO APANHOU, PLANTADO (achado 5, 15.09.2026).
+       A primeira construção deste bloco escondia a gaveta sempre que a folha
+       carregava, e não só quando o mapa funciona: um leitor com guião e sem mapa
+       ficava sem as duas coisas. A planta repõe exactamente essa forma, e pelo
+       caminho mais curto: escreve a marca `data-mapa-vivo` na raiz do documento
+       SERVIDO, de onde o guião do mapa a devia escrever no fim. Com ela lá, a
+       folha esconde a gaveta mesmo quando o pedido do guião é recusado, e a A5b
+       cai. Sem esta planta, o estado novo não tinha positivo conhecido. */
+    nome: 'a marca do mapa vivo escrita pelo servidor (a gaveta escondida sem mapa)',
+    celulas: ['A5.pt', 'A5.en'],
+    f: (h) => h.replace(/<html /, '<html data-mapa-vivo '),
+  },
+  {
     nome: 'a gaveta dos nomes visível com guião',
     celulas: ['A5.pt', 'A5.en'],
     /* DESFAZ A FOLHA, E NÃO O HTML. O que o item 3 decide é uma regra de folha
@@ -2238,8 +2434,33 @@ const PLANTAS = [
       ),
   },
   {
+    /* O «E MAIS N» COM O N ERRADO (A20 reescrita, 15.09.2026, achado 8). A célula
+       deixou de procurar «cinco» à letra e passou a recompor o N a partir da
+       contagem que a própria linha rende; sem esta planta, a recomposição nunca
+       tinha sido vista a morder. Troca o numeral por extenso na página servida, e
+       a conta «dez menos cinco» deixa de bater com o que está escrito. */
+    nome: 'a cauda «e mais N» com o numeral trocado',
+    celulas: ['A20.pt', 'A20.en'],
+    rotas: [
+      '/index.html',
+      '/en/index.html',
+      '/dominios/index.html',
+      '/en/domains/index.html',
+    ],
+    f: (h, rota) =>
+      rota.startsWith('/en')
+        ? h.replace(/(<span data-nonledger="numeracao">)five(<\/span>)/g, '$1six$2')
+        : h.replace(/(<span data-nonledger="numeracao">)cinco(<\/span>)/g, '$1seis$2'),
+  },
+  {
     nome: 'um valor selado na linha de um domínio',
     celulas: ['A20.pt', 'A20.en'],
+    rotas: [
+      '/index.html',
+      '/en/index.html',
+      '/dominios/index.html',
+      '/en/domains/index.html',
+    ],
     /* A REGRA A3 E O ITEM 8.13: a secção dos domínios é navegação e mais nada, e
        um `data-claim` lá dentro é um valor do livro-razão a render-se onde ele
        não vive. Enxerta-se dentro do estado do primeiro domínio, que é onde os
