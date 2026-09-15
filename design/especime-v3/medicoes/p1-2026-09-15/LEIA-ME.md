@@ -1,6 +1,8 @@
 # O relatório do bloco P1 · «O rodapé e a primeira página»
 
-*15.09.2026, ramo `porta-2026-09-15`, cabeça final `04e4f7a3` sobre `2ab86986`.
+*15.09.2026, ramo `porta-2026-09-15`, sobre a cabeça `2ab86986`. A fonte deste
+bloco fecha em `feba0d69`; os commits depois dela acrescentam os documentos, as
+60 capturas e o registo dos portões, e a cabeça final é a última do ramo.
 Construtor: Claude Opus 5. Na forma do §3 do brief: a tabela do §1 com a medida
 de cada item preenchida, a tabela das cadeias, o mapeamento dos domínios, os
 commits, os portões, e o que fica para o lugar de direção. Sem travessões.*
@@ -77,7 +79,8 @@ de cada grupo; aqui fica a soma e a porta de cada domínio.
 
 ## 4 · Os commits e os portões
 
-Nove commits sobre `2ab86986`, a cabeça final `feba0d69`.
+Onze commits sobre `2ab86986`. A fonte fecha em `feba0d69`; os dois últimos
+acrescentam os documentos e as capturas (`1e8058c0`) e o registo dos portões.
 
 Os três portões, cada comando no seu, com o código de saída escrito num ficheiro
 por `echo $? > …` e lido de lá, e nunca de memória:
