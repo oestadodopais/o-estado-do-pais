@@ -6,7 +6,7 @@
 id: "divida-das-empresas-2025-ue"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "70"
+value: "70,0"
 unit: "% do PIB"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
