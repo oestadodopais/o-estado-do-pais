@@ -64,7 +64,20 @@
 import CampoDeBusca from './CampoDeBusca.astro';
 import { coberturaDistingue, eIlha } from '../../lib/inicio.mjs';
 
-const { s, concelhos, destino, forma = null, resultadosOcultos = false } = Astro.props;
+/* `rotulo` É UMA PROPRIEDADE DESDE O F1.13 (item 3, 15.09.2026), e o valor por
+   omissão é o que as três superfícies já tinham. A primeira página passa o
+   rótulo que nomeia os DOIS caminhos que lá ficam («Escreva o nome do concelho,
+   ou toque no mapa.»), porque é a única das três que tem mapa; `/municipios` e
+   `/livro-razao/concelhos` não têm, e uma frase que lá prometesse um mapa era a
+   casa a nomear uma coisa que não está na página. */
+const {
+  s,
+  concelhos,
+  destino,
+  forma = null,
+  resultadosOcultos = false,
+  rotulo = null,
+} = Astro.props;
 
 /* ---------------------------------------------------------------------------
  * O DISTRITO NA FICHA DE UM NOME QUE SE REPETE (F1.1, item 7, 03.09.2026)
@@ -125,7 +138,7 @@ const distingue = coberturaDistingue(concelhos);
       fica aqui é o que é desta peça: os 308 resultados já rendidos e a regra de
       quando cada um se acende. */}
   <CampoDeBusca
-    rotulo={s.ambito.pesquisaRotulo}
+    rotulo={rotulo ?? s.ambito.pesquisaRotulo}
     submeter={s.ambito.pesquisaSubmeter}
     id="pesquisa-concelho"
     name={forma ? 'concelho' : null}
