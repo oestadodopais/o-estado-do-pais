@@ -653,12 +653,34 @@ h1.cabeca-h1[data-citadas]:not([data-citadas='1']) {
   white-space: nowrap;
 }
 
+/* ---------------------------------------------------------------------------
+   A FILA DO ESTADO RESERVA DUAS LINHAS (bloco P2, item 6, 15.09.2026)
+   ---------------------------------------------------------------------------
+   O diretor, a 15.09 de manhã (§1.108): os números e os títulos saltam de cartão
+   para cartão. A causa está medida no §0 do brief F1.12: a fila do estado é a
+   variável — uma palavra de estado ocupa uma linha num cartão, duas noutro e
+   três no do Pacto de Estabilidade e Crescimento, e as medidas sem valor de
+   referência não a têm de todo. Com a primeira fila a mudar de altura, o número
+   da fila 2 começa a alturas diferentes em cada cartão, e o olho vê uma serra.
+
+   A RESERVA É EM LINHAS E NÃO EM PÍXEIS, e é de propósito: as cadeias do estado
+   mudam de texto no mesmo dia (o bloco P1 troca «limiar» por «valor de
+   referência»), e uma altura medida em píxeis contra o texto de hoje ficava
+   errada amanhã. `calc(2 * 1.35em)` reserva DUAS LINHAS do tipo desta fila, seja
+   qual for a palavra: é a mesma regra que o §1 do F1.12 escreve para o título
+   («numa área reservada para duas linhas»).
+
+   `align-items: start` no lugar de `center`: com duas linhas reservadas e uma só
+   ocupada, centrar empurrava a palavra para o meio da área e o quadrado com ela.
+   O que alinha é o cimo, que é onde a leitura começa. */
 .cartao-topo {
   grid-row: 1;
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 6px;
-  min-height: 16px;
+  font-size: 11.5px;
+  line-height: 1.35;
+  min-height: calc(2 * 1.35em);
   margin: 0;
 }
 .cartao-topo .sq {
@@ -668,6 +690,7 @@ h1.cabeca-h1[data-citadas]:not([data-citadas='1']) {
 .cartao-palavra {
   font-family: var(--f-instr);
   font-size: 11.5px;
+  line-height: 1.35;
   letter-spacing: 0.03em;
   color: var(--muted);
 }
@@ -704,12 +727,19 @@ h1.cabeca-h1[data-citadas]:not([data-citadas='1']) {
   min-height: 44px;
 }
 
+/* O TÍTULO TAMBÉM RESERVA DUAS LINHAS (bloco P2, item 6; F1.12 §1, decisão 1).
+   «Saldo das administrações públicas» dobra e «Dívida pública» não, e por isso a
+   fila da unidade e o pé começavam a alturas diferentes em cartões vizinhos. A
+   reserva é a mesma, em linhas do próprio tipo, e a fila 3 é `1fr` na grelha do
+   cartão: quem tem três linhas cresce e quem tem uma ocupa o mínimo reservado,
+   e os dois casos deixam o pé no mesmo sítio. */
 .cartao-nome {
   grid-row: 3;
   align-self: start;
   margin: 0;
   font-size: 15px;
   line-height: 1.25;
+  min-height: calc(2 * 1.25em);
   /* O sublinhado declara-se em píxeis pela mesma razão da lista dos nomes: a
      marca do par vai de 1 para 3 px, e `auto` é uma cadeia e não uma grandeza. */
   text-decoration: underline;
@@ -797,6 +827,51 @@ h1.cabeca-h1[data-citadas]:not([data-citadas='1']) {
   .cartao {
     flex-basis: clamp(220px, 28%, 280px);
     --cartao-pad-y: 6px;
+  }
+}
+
+/* =============================================================================
+ * A FAIXA DEIXA DE DESLIZAR ACIMA DE 768 px (bloco P2, item 6, 15.09.2026)
+ * =============================================================================
+ * O conceito do diretor (31.08, `VISAO.md` §5) é o telemóvel: manchete, faixa de
+ * cartões de lado, mapa como navegação. O telemóvel funciona e não muda. O que
+ * nunca foi desenhado é a forma acima dele, e a 15.09 de manhã o diretor viu-a:
+ * «a faixa rola na horizontal como no telemóvel; o mapa fica por baixo, com um
+ * tamanho fixo, pequeno à esquerda, e o resto da largura vazio»; e na largura
+ * grande «a coluna do mapa corta-a a meio de um cartão».
+ *
+ * Um gesto de arrastar é a resposta certa num ecrã onde não cabe mais do que um
+ * cartão e meio, e a resposta errada num ecrã onde cabem cinco: num ecrã largo,
+ * uma faixa que rola esconde metade do painel atrás de um gesto que ninguém
+ * anuncia, e foi isso que o diretor leu como «uma corrida sem fim».
+ *
+ * A PARTIR DE 768 px A FILA É UMA GRELHA QUE DOBRA. Os cartões passam a ocupar a
+ * largura toda, em colunas de pelo menos 200 px, e a fila cresce para baixo em
+ * vez de crescer para o lado: todos os cartões ficam à vista sem um gesto, e a
+ * faixa continua a crescer com os domínios (a grelha dobra; o telemóvel rola).
+ *
+ * O ENCAIXE E O CORTE SAEM COM O ROLAMENTO, e não por arrumação: `scroll-snap`
+ * numa caixa que não rola é uma promessa que nada cumpre, e `overflow-x: auto`
+ * numa grelha que dobra nunca tem nada para cortar. O `position: relative` FICA,
+ * porque a razão dele é outra e continua de pé: é ele que faz da fila o bloco
+ * que contém os `<span class="vh">` absolutos de cada cartão (14.09.2026), e sem
+ * ele a página inteira voltava a ganhar a largura deles.
+ *
+ * O FIO ENTRE CARTÕES continua a ser o intervalo sobre o fundo, que é a mesma
+ * técnica: numa grelha o intervalo desenha as duas direções, e por isso os
+ * cartões de uma segunda fila ficam separados da primeira pelo mesmo fio.
+ * ========================================================================== */
+@media (min-width: 768px) {
+  .faixa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+  .cartao {
+    flex: none;
+    scroll-snap-align: none;
   }
 }
 
