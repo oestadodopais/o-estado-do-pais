@@ -43,30 +43,44 @@ A primeira página cresce 58 px a 390 e 81 px a 1 280, e são duas coisas somada
 
 ### A linha da busca
 
-Largura da caixa, do campo e do botão, e o transbordo horizontal (`scrollWidth − clientWidth`) em cada largura. O botão mede 111,5 px em todas as células, antes e depois.
+Duas passagens no mesmo dia. A primeira pôs o campo a encher a coluna; o lugar de direção leu a medição («972,5 px em `/municipios` a 1 280 é uma caixa de busca do tamanho de uma página») e decidiu o teto. A tabela dá as três colunas: o que estava na cabeça `44f0d838`, o que a primeira passagem deu, e o que fica.
 
-| rota | largura | linha antes | linha depois | campo antes | campo depois | transbordo antes / depois |
-| --- | --- | --- | --- | --- | --- | --- |
-| `/` | 320 | 220,1 | 284,0 | 100,6 | 164,5 | 0 / 0 |
-| `/` | 390 | 220,1 | 354,0 | 100,6 | 234,5 | 0 / 0 |
-| `/` | 768 | 220,1 | 706,6 | 100,6 | 587,1 | 0 / 0 |
-| `/` | 1 280 | 220,1 | 550,0 | 100,6 | 430,5 | 0 / 0 |
-| `/municipios` | 320 | 220,1 | 284,0 | 100,6 | 164,5 | 0 / 0 |
-| `/municipios` | 390 | 220,1 | 354,0 | 100,6 | 234,5 | 0 / 0 |
-| `/municipios` | 768 | 220,1 | 706,6 | 100,6 | 587,1 | 0 / 0 |
-| `/municipios` | 1 280 | 220,1 | 1 092,0 | 100,6 | 972,5 | 0 / 0 |
-| `/livro-razao` | 320 | 284,0 | 284,0 | 164,5 | 164,5 | 0 / 0 |
-| `/livro-razao` | 390 | 354,0 | 354,0 | 234,5 | 234,5 | 0 / 0 |
-| `/livro-razao` | 768 | 544,0 | 544,0 | 424,5 | 424,5 | 0 / 0 |
-| `/livro-razao` | 1 280 | 544,0 | 544,0 | 424,5 | 424,5 | 0 / 0 |
-| `/livro-razao/concelhos` (sem botão) | 320 | — | — | 220,1 | 284,0 | 0 / 0 |
-| `/livro-razao/concelhos` | 390 | — | — | 220,1 | 340,0 | 0 / 0 |
-| `/livro-razao/concelhos` | 768 | — | — | 220,1 | 340,0 | 0 / 0 |
-| `/livro-razao/concelhos` | 1 280 | — | — | 220,1 | 340,0 | 0 / 0 |
+O teto é `max-width: 36rem` na `.busca-linha`, e **36rem medem 576 px**: o `rem` desta casa é o do navegador, 16 px, medido em `getComputedStyle(document.documentElement).fontSize` em todas as células. O botão mede 111,5 px em todas elas, do princípio ao fim. O transbordo horizontal (`scrollWidth − clientWidth`) é 0 em todas as células das três passagens.
 
-`/livro-razao` não muda em largura nenhuma, e as duas capturas dessa rota são o mesmo ficheiro byte a byte: lá a caixa já ocupava a linha, porque o pai dela não é `.pesquisa`.
+| rota | largura | campo em `44f0d838` | campo sem teto | **campo com teto** | linha com teto |
+| --- | --- | --- | --- | --- | --- |
+| `/` | 320 | 100,6 | 164,5 | **164,5** | 284,0 |
+| `/` | 390 | 100,6 | 234,5 | **234,5** | 354,0 |
+| `/` | 768 | 100,6 | 587,1 | **456,5** | 576,0 |
+| `/` | 1 280 | 100,6 | 430,5 | **430,5** | 550,0 |
+| `/` | 1 600 | — | — | **430,5** | 550,0 |
+| `/municipios` | 320 | 100,6 | 164,5 | **164,5** | 284,0 |
+| `/municipios` | 390 | 100,6 | 234,5 | **234,5** | 354,0 |
+| `/municipios` | 768 | 100,6 | 587,1 | **456,5** | 576,0 |
+| `/municipios` | 1 280 | 100,6 | 972,5 | **456,5** | 576,0 |
+| `/municipios` | 1 600 | — | — | **456,5** | 576,0 |
+| `/livro-razao` | 320 | 164,5 | 164,5 | **164,5** | 284,0 |
+| `/livro-razao` | 390 | 234,5 | 234,5 | **234,5** | 354,0 |
+| `/livro-razao` | 768 | 424,5 | 424,5 | **424,5** | 544,0 |
+| `/livro-razao` | 1 280 | 424,5 | 424,5 | **424,5** | 544,0 |
+| `/livro-razao` | 1 600 | — | — | **424,5** | 544,0 |
+| `/livro-razao/concelhos` | 320 | 220,1 | 284,0 | **284,0** | não tem linha |
+| `/livro-razao/concelhos` | 390 | 220,1 | 340,0 | **340,0** | não tem linha |
+| `/livro-razao/concelhos` | 768 | 220,1 | 340,0 | **340,0** | não tem linha |
+| `/livro-razao/concelhos` | 1 280 | 220,1 | 340,0 | **340,0** | não tem linha |
+| `/livro-razao/concelhos` | 1 600 | — | — | **340,0** | não tem linha |
 
-**O número que o lugar de direção tem de olhar: `/municipios` a 1 280 dá um campo de 972,5 px.** É o que a decisão pede à letra («o campo ocupa a linha inteira menos o botão») e é a coluna daquela página que é larga; se um campo de quase um metro não for o que se quer, o que falta é um tecto (`max-width`) e isso é decisão do lugar de direção, não desta fatia.
+O que a tabela diz, lido:
+
+* **a 320 e a 390 o teto não muda nada**, nas quatro rotas: a linha mede 284 e 354 px, muito abaixo das 576, e quem manda ali é a coluna;
+* **o teto prende onde a coluna é larga**: em `/municipios` a 1 280 e a 1 600 a linha para nas 576 e o campo nas 456,5, onde sem teto media 972,5;
+* em `/` a 1 280 e a 1 600 o teto não chega a morder, porque a coluna daquela página mede 550 px, menos que as 576;
+* `/livro-razao` não muda em largura nenhuma em nenhuma das três passagens: lá o pai da caixa não é `.pesquisa`, e a coluna é mais estreita que o teto;
+* `/livro-razao/concelhos` é a variante sem formulário e não tem `.busca-linha`: não leva teto, e quem a prende é o `width: min(340px, 100%)` que o campo já tinha.
+
+A matriz de aceitação da primeira página passa nas cinco larguras (320, 390, 768, 1 024, 1 280), zero falhas, nas duas passagens.
+
+O índice dos domínios foi medido outra vez depois do teto, célula a célula: os dezasseis valores (altura, topo da secção, `display`, `gap`, marcador, tipo e corpo do estado, folga, texto) são iguais aos da tabela de cima nas quatro rotas e nas duas larguras.
 
 ### As duas células novas
 
@@ -116,7 +130,7 @@ O positivo conhecido (`--prova`, que o `verify` corre sempre) monta um `dist/` d
 | `src/i18n/strings.mjs` | `estadoDentroDe`: «as medidas estão em» → «incluído em»; «the measures are in» → «included in». |
 | `design/especime-v3/INVENTARIO-FRASES.md` | as duas linhas antigas passam a `retirada` com a razão; as duas novas entram como `navegacao`, vivas. |
 | `src/components/inicio/CampoDeBusca.astro` | `size="4"` → `size="24"`, e a razão reescrita com a medição. |
-| `src/styles/site.css` | `.busca` leva `align-self: stretch`. |
+| `src/styles/site.css` | `.busca` leva `align-self: stretch`; `.busca-linha` leva `max-width: 36rem`. |
 | `scripts/check-css.mjs` | **novo.** As duas células, com o positivo conhecido. |
 | `package.json` | `check:css` na cadeia do `verify`, a seguir ao `gate:html`. |
 
@@ -144,6 +158,6 @@ Escrever sessenta exceções para pôr a célula a verde seria a régua a servir
 
 **O que esta célula não vê, e fica escrito.** Ela lê as declarações por classe e não resolve a cascata, e sobe até à raiz à procura de um `gap`. É conservadora de propósito — entre deixar passar uma colagem e inventar uma que não existe, deixa passar —, e o preço mediu-se: o «Populaçãoprimeiro» de `/metodo`, que é uma colagem verdadeira, fica invisível a C2 porque `.metodo-secao`, lá acima, é uma grelha com `gap`. Foi C1 que o apanhou (`dominios-vaga`), e está corrigido nesta fatia; mas uma colagem dentro de um antepassado com goma continua a passar.
 
-### Fora das células, lido de passagem
+### A regra morta, achada e apagada
 
-`.dominios-item[data-dominio-estado='sem'] .dominios-nome` não casa com nada no sítio construído, por duas razões ao mesmo tempo: `data-dominio-estado` é atributo do `<span>` do estado e não do `<li>`, e desde o §9.1 a lista só tem domínios com página, que nunca estão em «sem». A regra veio para `dominios-lista.css` como estava, com o aviso escrito ao lado, para que a mudança de 15.09 seja uma mudança de sítio e não de regras. Apagá-la é do lugar de direção.
+`.dominios-item[data-dominio-estado='sem'] .dominios-nome` não casava com nada no sítio construído, por duas razões ao mesmo tempo: `data-dominio-estado` é atributo do `<span>` do estado e não do `<li>`, e desde o §9.1 a lista só tem domínios com página, que nunca estão em «sem». Veio para `dominios-lista.css` como estava, com o aviso ao lado, e o lugar de direção mandou-a sair no mesmo dia: uma regra que nunca morde diz a quem a lê que há um terceiro aspeto nesta lista, e não há. Saiu, e o que fica no lugar dela é a razão escrita.

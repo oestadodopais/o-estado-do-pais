@@ -18,8 +18,12 @@
  *     linha e a do botão, e o `scrollWidth` do documento contra a largura da
  *     janela, que é o transbordo horizontal.
  *
- * As larguras da busca são 320, 390, 768 e 1 280: 320 porque é onde o campo
- * empurrava a página em 09.09 e é a razão de o `size` ter descido a 4.
+ * As larguras da busca são 320, 390, 768, 1 280 e 1 600: 320 porque é onde o
+ * campo empurrava a página em 09.09 e é a razão de o `size` ter descido a 4, e
+ * 1 600 porque é onde se vê se o teto da linha (`max-width: 36rem`, decidido
+ * pelo lugar de direção a 15.09 depois da primeira medição) prende. A régua
+ * guarda o `rem` da casa medido em píxeis e o `max-width` calculado, para que
+ * 36rem não seja um número dito.
  *
  * ---------------------------------------------------------------------------
  * COMO SE CORRE
@@ -146,7 +150,7 @@ for (const rota of ROTAS_DOM) {
 const ROTAS_BUSCA = ['/', '/municipios/', '/livro-razao/', '/livro-razao/concelhos/'];
 for (const rota of ROTAS_BUSCA) {
   saida.busca[rota] = {};
-  for (const largura of [320, 390, 768, 1280]) {
+  for (const largura of [320, 390, 768, 1280, 1600]) {
     const p = await navegador.newPage({ viewport: { width: largura, height: 664 } });
     await p.goto(`${base}${rota}`, { waitUntil: 'networkidle' });
     saida.busca[rota][largura] = await p.evaluate(() => {
@@ -155,6 +159,8 @@ for (const rota of ROTAS_BUSCA) {
       const campo = document.querySelector('.busca-campo');
       const botao = document.querySelector('.busca-submeter');
       return {
+        rem_px: parseFloat(getComputedStyle(document.documentElement).fontSize),
+        linha_max_width: linha ? getComputedStyle(linha).maxWidth : null,
         linha: larg(linha),
         campo: larg(campo),
         botao: larg(botao),
@@ -203,11 +209,12 @@ for (const rota of ROTAS_DOM) {
 }
 console.log('\n== a linha da busca ==');
 for (const rota of ROTAS_BUSCA) {
-  for (const largura of [320, 390, 768, 1280]) {
+  for (const largura of [320, 390, 768, 1280, 1600]) {
     const m = saida.busca[rota][largura];
     console.log(
       `${rota} @${largura}  linha=${m.linha}  campo=${m.campo}  botao=${m.botao}  ` +
-        `size=${m.campo_size}  width(css)=${m.campo_width_css}  transbordo=${m.transbordo}`,
+        `size=${m.campo_size}  teto=${m.linha_max_width}  rem=${m.rem_px}px  ` +
+        `transbordo=${m.transbordo}`,
     );
   }
 }
