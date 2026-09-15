@@ -109,24 +109,17 @@
   font-family: var(--f-instr);
   font-size: 14px;
 }
-/* AS DUAS FRASES VAZIAS DE CADA NÍVEL, E A FOLHA MOSTRA UMA. O dedo é o caso por
-   omissão, porque é o do telemóvel e o do portátil com ecrã táctil; o rato só se
-   declara onde o navegador diz que há um apontador fino que pode pairar.
+/* A LEGENDA DE REPOUSO DE CADA NÍVEL (P1, item 5, 15.09.2026), no lugar das
+   quatro frases vazias e das duas regras que escolhiam entre o dedo e o rato: o
+   que ela diz não depende do apontador, porque não é um gesto, é onde o leitor
+   está. Uma por nível, e o `hidden` que o guião põe e tira diz qual é a da vez.
 
-   `:not([hidden])` EM TODAS AS REGRAS, e é o que as faz conviver com o nível: o
-   `hidden` que o guião põe e tira diz de que nível é a frase, e uma regra de
-   classe que declarasse `display: block` ganharia ao `[hidden]` por vir depois na
-   folha. Assim a folha do meio não toca no que está escondido. */
-.mapa-so-rato:not([hidden]) {
-  display: none;
-}
-@media (hover: hover) and (pointer: fine) {
-  .mapa-so-toque:not([hidden]) {
-    display: none;
-  }
-  .mapa-so-rato:not([hidden]) {
-    display: block;
-  }
+   O CORPO É O DO LUGAR, e não o do nome: a legenda é a moldura do nome, e o
+   nome é o que muda quando o leitor aponta. */
+.mapa-nome-repouso {
+  font-family: var(--f-instr);
+  font-size: 14px;
+  color: var(--muted);
 }
 .mapa-nome-frase p {
   margin: 0;

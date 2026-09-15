@@ -23,26 +23,47 @@
  * de cada nível e o nome. As portas ficam de fora da região viva, para que mudar
  * de área não releia «Abrir» de cada vez.
  *
- * CHEGA `hidden` DO SERVIDOR, e é a mesma disciplina da linha da área de leitura
- * (F1.1c): sem guião não há nome a preencher, e um lugar que promete um gesto
- * que a página não faz é pior do que nenhum. As frases ficam declaradas no
- * inventário da voz na mesma, porque a régua lê o documento entregue e não o
- * ecrã.
- *
  * CADA FRASE É UM PARÁGRAFO SEU, e isso não é arrumação: a régua da voz lê um
  * bloco como o elemento de bloco mais fundo, e as frases dentro do mesmo `<p>`
  * entravam no inventário como uma linha só, com todas coladas.
  *
- * AS DUAS FRASES VAZIAS DE CADA NÍVEL SÃO AS DUAS, E A FOLHA MOSTRA UMA. Quem
- * tem rato passa por cima e quem tem dedo toca: são gestos diferentes e a página
- * não sabe qual é o do leitor senão pelo `@media (hover: hover) and (pointer:
- * fine)`. Um `display: none` é lido pelo leitor de ecrã, e por isso quem ouve
- * ouve uma só.
+ * ---------------------------------------------------------------------------
+ * AS QUATRO FRASES VAZIAS SAÍRAM, E O LUGAR PASSOU A DIZER ONDE SE ESTÁ
+ * ---------------------------------------------------------------------------
+ * *P1, item 5, 15.09.2026.* Em repouso este lugar dizia «Toque num distrito ou
+ * numa ilha» / «Passe o rato por um distrito ou por uma ilha», e os dois irmãos
+ * do nível do concelho. São quatro frases de instrução, e a regra 4 do plano
+ * das palavras tira-as: «uma interface que precisa de uma frase para se
+ * explicar tem um problema de desenho»; e «passe o rato» é, além disso, o
+ * decalque de *mouse over* que o diretor apanhou.
  *
- * `niveis` DIZ QUE FRASES VAZIAS ESTE LUGAR TEM: `['pais', 'unidade']` na
- * primeira página, `['unidade']` numa página de distrito ou de concelho, onde o
- * único nível é o dos concelhos. `voltar` é a porta de subir um nível, e só
- * existe onde há dois.
+ * No lugar delas fica o que o leitor precisa de saber para ler o desenho: **em
+ * que território está e quantos concelhos ele tem**. No nível do país,
+ * «Portugal · 308 concelhos»; dentro de uma unidade, o nome dela e a sua
+ * contagem («distrito de Évora · 14 concelhos»). Não é uma instrução: é a
+ * legenda do que está ao lado, e responde à mesma pergunta que o nome responde
+ * quando o leitor aponta uma área.
+ *
+ * NENHUM DOS DOIS NÚMEROS SE ESCREVE AQUI. O do país é a chave da prova
+ * `municipios_total`, que o portão reconta; o de cada unidade é a chave
+ * `mapa_concelhos_<slug>`, que o portão reconta uma a uma contra o artefacto do
+ * mapa. Quem os compõe é quem rende este componente e tem a prova na mão.
+ *
+ * O NOME DO TERRITÓRIO VAI `data-lugar`, como o nome do concelho escolhido e o
+ * distrito das fichas da busca: é o nome da coisa, transcrito da Carta, e não
+ * prosa da casa. A forma «distrito de <nome>» é a que `Pesquisa.astro` já usa,
+ * e não há aqui uma segunda maneira de escrever a mesma etiqueta.
+ *
+ * E O BLOCO DEIXOU DE CHEGAR `hidden`. Chegava escondido porque sem guião não
+ * havia nome nenhum para pôr nele, e um lugar vazio é pior do que nenhum; agora
+ * há sempre o que dizer, e por isso o lugar existe nos três estados do mapa: com
+ * guião e com mapa, com guião e sem mapa, e sem guião. As portas é que
+ * continuam escondidas até o guião ter um destino para lhes dar.
+ *
+ * `niveis` DIZ QUE NÍVEIS ESTE LUGAR TEM: `['pais', 'unidade']` na primeira
+ * página, `['unidade']` numa página de distrito ou de concelho, onde o único
+ * nível é o dos concelhos. `voltar` é a porta de subir um nível, e só existe
+ * onde há dois.
  *
  * O SEGUNDO NÍVEL CHAMA-SE `unidade` E NÃO `regiao` (F1.1e, 08.09.2026): o que
  * cresce no mapa da primeira página passou a ser um distrito ou uma ilha, e um
@@ -52,30 +73,49 @@
 /* `lang` NÃO ENTRA AQUI, e é de propósito: nada neste bloco se traduz por si.
    As frases vêm de `s`, que já é a edição, e o destino da porta de voltar chega
    feito em `voltar`, porque quem sabe a rota é quem rende o mapa. */
-const { s, niveis = ['pais', 'unidade'], voltar = null } = Astro.props;
 
-/** A frase vazia de cada nível, para o dedo e para o rato. */
-const VAZIAS = {
-  pais: { toque: s.inicio.mapa.nomeVazioToque, rato: s.inicio.mapa.nomeVazioRato },
-  unidade: {
-    toque: s.inicio.mapa.nomeVazioToqueConcelho,
-    rato: s.inicio.mapa.nomeVazioRatoConcelho,
-  },
-};
+/**
+ * `pais` e `unidade` SÃO A LEGENDA DE REPOUSO DE CADA NÍVEL, e chegam feitas de
+ * quem tem a prova na mão. A forma é a mesma nas duas:
+ *
+ *   { nome, palavra, chave, item }
+ *
+ * `nome` é o nome do território (da Carta), `palavra` o substantivo da contagem,
+ * `chave` a chave da prova e `item` a entrada dela, que `<ValorDaProva>` rende
+ * com a porta e com a marca que o portão reconta. `unidade` vem a `null` na
+ * primeira página, onde só o guião sabe qual é a unidade aberta: ali o
+ * parágrafo rende-se vazio e é o guião que o enche, do que o servidor escreveu
+ * na própria área.
+ *
+ * O NÚMERO LEVA A SUA PORTA, e não é uma escolha desta peça: é a regra da §10 da
+ * identidade, «onde aparece um valor aparece a porta», e é ela que o portão de
+ * HTML confere linha a linha.
+ */
+import ValorDaProva from '../ValorDaProva.astro';
+const { s, niveis = ['pais', 'unidade'], voltar = null, pais = null, unidade = null } = Astro.props;
+
+/** A legenda de repouso de um nível, ou `null` quando ela não vem feita. */
+const REPOUSO = { pais, unidade };
 ---
 
-<div class="mapa-nome" role="group" aria-label={s.inicio.mapa.lugarLabel} data-mapa-nome hidden>
+<div class="mapa-nome" role="group" aria-label={s.inicio.mapa.lugarLabel} data-mapa-nome>
   <div class="mapa-nome-frase" aria-live="polite" data-mapa-frase>
     {
       niveis.map((nivel, i) => (
-        <>
-          <p class="mapa-nome-vazio mapa-so-toque" data-mapa-vazio={`${nivel}-toque`} hidden={i > 0}>
-            {VAZIAS[nivel].toque}
-          </p>
-          <p class="mapa-nome-vazio mapa-so-rato" data-mapa-vazio={`${nivel}-rato`} hidden={i > 0}>
-            {VAZIAS[nivel].rato}
-          </p>
-        </>
+        <p class="mapa-nome-repouso" data-mapa-repouso={nivel} hidden={i > 0}>
+          {REPOUSO[nivel] && (
+            <>
+              <span data-lugar>{REPOUSO[nivel].nome}</span>
+              {REPOUSO[nivel].item && (
+                <>
+                  <Fragment set:text=" · " />
+                  <ValorDaProva chave={REPOUSO[nivel].chave} item={REPOUSO[nivel].item} />
+                  <Fragment set:text={` ${REPOUSO[nivel].palavra}`} />
+                </>
+              )}
+            </>
+          )}
+        </p>
       ))
     }
     {/* O nome vai declarado como lugar, pela mesma razão do nome do cartão
