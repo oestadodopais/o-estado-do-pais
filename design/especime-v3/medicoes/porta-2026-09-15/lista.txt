@@ -1,0 +1,192 @@
+
+  ✓ L1·pt · uma lista só, com as mesmas 29 unidades do desenho, depois do mapa no documento
+      29 ligações, 29 slugs na lista e 29 no mapa, 29 destinos distintos · a lista e o desenho são as mesmas unidades · ordem do documento: mapa antes dos nomes
+  ✓ L1·en · uma lista só, com as mesmas 29 unidades do desenho, depois do mapa no documento
+      29 ligações, 29 slugs na lista e 29 no mapa, 29 destinos distintos · a lista e o desenho são as mesmas unidades · ordem do documento: mapa antes dos nomes
+  ✓ L2·pt·1024 · a legenda do mapa na banda da cabeça, por baixo da manchete
+      legenda x 41 w 582 (cabeça x 41 w 582) · topo 1022.6 contra o fim da manchete 683.9 e o fim do mapa 897.3
+  ✓ L2·pt·1280 · a legenda do mapa na banda da cabeça, por baixo da manchete e ao lado do mapa
+      legenda x 94 w 550 (cabeça x 94 w 550) · topo 1027.3 contra o fim da manchete 688.5 e o fim do mapa 1107.3
+  ✓ L2·en·1024 · a legenda do mapa na banda da cabeça, por baixo da manchete
+      legenda x 41 w 582 (cabeça x 41 w 582) · topo 985.5 contra o fim da manchete 683.9 e o fim do mapa 897.3
+  ✓ L2·en·1280 · a legenda do mapa na banda da cabeça, por baixo da manchete e ao lado do mapa
+      legenda x 94 w 550 (cabeça x 94 w 550) · topo 990.1 contra o fim da manchete 688.5 e o fim do mapa 1107.3
+  ✓ L3·pt·1280 · a página deixa de crescer: a grelha não passa muito da coluna do mapa (gaveta fechada)
+      grelha 689 px · coluna do instrumento 689.0 px · folga 0.0 px (limite 60) · página 1965 px
+  ✓ L3·en·1280 · a página deixa de crescer: a grelha não passa muito da coluna do mapa (gaveta fechada)
+      grelha 689 px · coluna do instrumento 689.0 px · folga 0.0 px (limite 60) · página 1960 px
+  ✓ L4·pt·320 · nenhuma área sem alvo tocável: os 3 grupos e os 29 nomes à vista
+      3 grupo(s), 3 parcela(s) da Carta, 0 escondido(s) · 29 nome(s), 0 escondido(s)
+  ✓ L4·pt·360 · nenhuma área sem alvo tocável: os 3 grupos e os 29 nomes à vista
+      3 grupo(s), 3 parcela(s) da Carta, 0 escondido(s) · 29 nome(s), 0 escondido(s)
+  ✓ L4·pt·390 · nenhuma área sem alvo tocável: os 3 grupos e os 29 nomes à vista
+      3 grupo(s), 3 parcela(s) da Carta, 0 escondido(s) · 29 nome(s), 0 escondido(s)
+  ✓ L4·pt·430 · nenhuma área sem alvo tocável: os 3 grupos e os 29 nomes à vista
+      3 grupo(s), 3 parcela(s) da Carta, 0 escondido(s) · 29 nome(s), 0 escondido(s)
+  ✓ L4·pt·768 · nenhuma área sem alvo tocável: os 3 grupos e os 29 nomes à vista
+      3 grupo(s), 3 parcela(s) da Carta, 0 escondido(s) · 29 nome(s), 0 escondido(s)
+  ✓ L4·pt·1024 · nenhuma área sem alvo tocável: os 3 grupos e os 29 nomes à vista
+      3 grupo(s), 3 parcela(s) da Carta, 0 escondido(s) · 29 nome(s), 0 escondido(s)
+  ✓ L4·pt·1280 · nenhuma área sem alvo tocável: os 3 grupos e os 29 nomes à vista
+      3 grupo(s), 3 parcela(s) da Carta, 0 escondido(s) · 29 nome(s), 0 escondido(s)
+  ✓ L4·pt·1440 · nenhuma área sem alvo tocável: os 3 grupos e os 29 nomes à vista
+      3 grupo(s), 3 parcela(s) da Carta, 0 escondido(s) · 29 nome(s), 0 escondido(s)
+  ✓ L4·en·320 · nenhuma área sem alvo tocável: os 3 grupos e os 29 nomes à vista
+      3 grupo(s), 3 parcela(s) da Carta, 0 escondido(s) · 29 nome(s), 0 escondido(s)
+  ✓ L4·en·360 · nenhuma área sem alvo tocável: os 3 grupos e os 29 nomes à vista
+      3 grupo(s), 3 parcela(s) da Carta, 0 escondido(s) · 29 nome(s), 0 escondido(s)
+  ✓ L4·en·390 · nenhuma área sem alvo tocável: os 3 grupos e os 29 nomes à vista
+      3 grupo(s), 3 parcela(s) da Carta, 0 escondido(s) · 29 nome(s), 0 escondido(s)
+  ✓ L4·en·430 · nenhuma área sem alvo tocável: os 3 grupos e os 29 nomes à vista
+      3 grupo(s), 3 parcela(s) da Carta, 0 escondido(s) · 29 nome(s), 0 escondido(s)
+  ✓ L4·en·768 · nenhuma área sem alvo tocável: os 3 grupos e os 29 nomes à vista
+      3 grupo(s), 3 parcela(s) da Carta, 0 escondido(s) · 29 nome(s), 0 escondido(s)
+  ✓ L4·en·1024 · nenhuma área sem alvo tocável: os 3 grupos e os 29 nomes à vista
+      3 grupo(s), 3 parcela(s) da Carta, 0 escondido(s) · 29 nome(s), 0 escondido(s)
+  ✓ L4·en·1280 · nenhuma área sem alvo tocável: os 3 grupos e os 29 nomes à vista
+      3 grupo(s), 3 parcela(s) da Carta, 0 escondido(s) · 29 nome(s), 0 escondido(s)
+  ✓ L4·en·1440 · nenhuma área sem alvo tocável: os 3 grupos e os 29 nomes à vista
+      3 grupo(s), 3 parcela(s) da Carta, 0 escondido(s) · 29 nome(s), 0 escondido(s)
+  ✓ L5·pt·320 · cada nome é um alvo de 44 × 44 px, e nenhum se interseta
+      29/29 à vista · o mais baixo 44.0 px, o mais estreito 44.0 px · 0 sob 44 de altura, 0 acima de 46, 0 sob 44 de largura, 0 interseção(ões)
+  ✓ L5·pt·360 · cada nome é um alvo de 44 × 44 px, e nenhum se interseta
+      29/29 à vista · o mais baixo 44.0 px, o mais estreito 44.0 px · 0 sob 44 de altura, 0 acima de 46, 0 sob 44 de largura, 0 interseção(ões)
+  ✓ L5·pt·390 · cada nome é um alvo de 44 × 44 px, e nenhum se interseta
+      29/29 à vista · o mais baixo 44.0 px, o mais estreito 44.0 px · 0 sob 44 de altura, 0 acima de 46, 0 sob 44 de largura, 0 interseção(ões)
+  ✓ L5·pt·430 · cada nome é um alvo de 44 × 44 px, e nenhum se interseta
+      29/29 à vista · o mais baixo 44.0 px, o mais estreito 44.0 px · 0 sob 44 de altura, 0 acima de 46, 0 sob 44 de largura, 0 interseção(ões)
+  ✓ L5·pt·768 · cada nome é um alvo de 44 × 44 px, e nenhum se interseta
+      29/29 à vista · o mais baixo 44.0 px, o mais estreito 44.0 px · 0 sob 44 de altura, 0 acima de 46, 0 sob 44 de largura, 0 interseção(ões)
+  ✓ L5·pt·1024 · cada nome é um alvo de 32 × 32 px, e nenhum se interseta
+      29/29 à vista · o mais baixo 32.0 px, o mais estreito 44.0 px · 0 sob 32 de altura, 0 acima de 34, 0 sob 32 de largura, 0 interseção(ões)
+  ✓ L5·pt·1280 · cada nome é um alvo de 32 × 32 px, e nenhum se interseta
+      29/29 à vista · o mais baixo 32.0 px, o mais estreito 44.0 px · 0 sob 32 de altura, 0 acima de 34, 0 sob 32 de largura, 0 interseção(ões)
+  ✓ L5·pt·1440 · cada nome é um alvo de 32 × 32 px, e nenhum se interseta
+      29/29 à vista · o mais baixo 32.0 px, o mais estreito 44.0 px · 0 sob 32 de altura, 0 acima de 34, 0 sob 32 de largura, 0 interseção(ões)
+  ✓ L5·en·320 · cada nome é um alvo de 44 × 44 px, e nenhum se interseta
+      29/29 à vista · o mais baixo 44.0 px, o mais estreito 44.0 px · 0 sob 44 de altura, 0 acima de 46, 0 sob 44 de largura, 0 interseção(ões)
+  ✓ L5·en·360 · cada nome é um alvo de 44 × 44 px, e nenhum se interseta
+      29/29 à vista · o mais baixo 44.0 px, o mais estreito 44.0 px · 0 sob 44 de altura, 0 acima de 46, 0 sob 44 de largura, 0 interseção(ões)
+  ✓ L5·en·390 · cada nome é um alvo de 44 × 44 px, e nenhum se interseta
+      29/29 à vista · o mais baixo 44.0 px, o mais estreito 44.0 px · 0 sob 44 de altura, 0 acima de 46, 0 sob 44 de largura, 0 interseção(ões)
+  ✓ L5·en·430 · cada nome é um alvo de 44 × 44 px, e nenhum se interseta
+      29/29 à vista · o mais baixo 44.0 px, o mais estreito 44.0 px · 0 sob 44 de altura, 0 acima de 46, 0 sob 44 de largura, 0 interseção(ões)
+  ✓ L5·en·768 · cada nome é um alvo de 44 × 44 px, e nenhum se interseta
+      29/29 à vista · o mais baixo 44.0 px, o mais estreito 44.0 px · 0 sob 44 de altura, 0 acima de 46, 0 sob 44 de largura, 0 interseção(ões)
+  ✓ L5·en·1024 · cada nome é um alvo de 32 × 32 px, e nenhum se interseta
+      29/29 à vista · o mais baixo 32.0 px, o mais estreito 44.0 px · 0 sob 32 de altura, 0 acima de 34, 0 sob 32 de largura, 0 interseção(ões)
+  ✓ L5·en·1280 · cada nome é um alvo de 32 × 32 px, e nenhum se interseta
+      29/29 à vista · o mais baixo 32.0 px, o mais estreito 44.0 px · 0 sob 32 de altura, 0 acima de 34, 0 sob 32 de largura, 0 interseção(ões)
+  ✓ L5·en·1440 · cada nome é um alvo de 32 × 32 px, e nenhum se interseta
+      29/29 à vista · o mais baixo 32.0 px, o mais estreito 44.0 px · 0 sob 32 de altura, 0 acima de 34, 0 sob 32 de largura, 0 interseção(ões)
+  ✓ L12·pt·1024 · a legenda no fim da coluna da cabeça, por cima da banda dos nomes e alinhada com ela
+      legenda x 41 y 1022.6 · lista x 41 fundo 1390.3 · text-align start
+  ✓ L11·pt·1280 · o mapa começa no topo da manchete e acaba no fundo da legenda
+      mapa de 424.3 a 1107.3 · manchete desde 424.3 · legenda até 1107.3
+  ✓ L12·pt·1280 · a legenda por cima dos nomes, alinhada à esquerda com eles
+      legenda x 94 y 1051.5 · lista x 94 fundo 1392.3 · text-align left
+  ✓ L13·pt·1280 · o mapa cabe na coluna, enche-a em altura e o desenho enche a caixa
+      mapa 518 × 683 px em x 668 · coluna x 668 w 518 · grelha h 689 · ar vertical 0.0 px
+  ✓ L11·pt·1440 · o mapa começa no topo da manchete e acaba no fundo da legenda
+      mapa de 424.3 a 1107.3 · manchete desde 424.3 · legenda até 1107.3
+  ✓ L12·pt·1440 · a legenda por cima dos nomes, alinhada à esquerda com eles
+      legenda x 174 y 1051.5 · lista x 174 fundo 1392.7 · text-align left
+  ✓ L13·pt·1440 · o mapa cabe na coluna, enche-a em altura e o desenho enche a caixa
+      mapa 518 × 683 px em x 748 · coluna x 748 w 518 · grelha h 689 · ar vertical 0.0 px
+  ✓ L12·en·1024 · a legenda no fim da coluna da cabeça, por cima da banda dos nomes e alinhada com ela
+      legenda x 41 y 985.5 · lista x 41 fundo 1353.2 · text-align start
+  ✓ L11·en·1280 · o mapa começa no topo da manchete e acaba no fundo da legenda
+      mapa de 424.3 a 1107.3 · manchete desde 424.3 · legenda até 1107.3
+  ✓ L12·en·1280 · a legenda por cima dos nomes, alinhada à esquerda com eles
+      legenda x 94 y 1051.5 · lista x 94 fundo 1392.3 · text-align left
+  ✓ L13·en·1280 · o mapa cabe na coluna, enche-a em altura e o desenho enche a caixa
+      mapa 518 × 683 px em x 668 · coluna x 668 w 518 · grelha h 689 · ar vertical 0.0 px
+  ✓ L11·en·1440 · o mapa começa no topo da manchete e acaba no fundo da legenda
+      mapa de 424.3 a 1107.3 · manchete desde 424.3 · legenda até 1107.3
+  ✓ L12·en·1440 · a legenda por cima dos nomes, alinhada à esquerda com eles
+      legenda x 174 y 1051.5 · lista x 174 fundo 1392.7 · text-align left
+  ✓ L13·en·1440 · o mapa cabe na coluna, enche-a em altura e o desenho enche a caixa
+      mapa 518 × 683 px em x 748 · coluna x 748 w 518 · grelha h 689 · ar vertical 0.0 px
+  ✓ L9·pt·320 · uma forma de cada vez: a rede em linha
+      fila em «flex» (1 forma no bloco) · os 18 do continente em 6 linha(s) · 29/29 à vista
+  ✓ L9·pt·360 · uma forma de cada vez: a rede em linha
+      fila em «flex» (1 forma no bloco) · os 18 do continente em 5 linha(s) · 29/29 à vista
+  ✓ L9·pt·390 · uma forma de cada vez: a rede em linha
+      fila em «flex» (1 forma no bloco) · os 18 do continente em 5 linha(s) · 29/29 à vista
+  ✓ L9·pt·430 · uma forma de cada vez: a rede em linha
+      fila em «flex» (1 forma no bloco) · os 18 do continente em 4 linha(s) · 29/29 à vista
+  ✓ L9·pt·768 · uma forma de cada vez: a rede em linha
+      fila em «flex» (1 forma no bloco) · os 18 do continente em 2 linha(s) · 29/29 à vista
+  ✓ L9·pt·1024 · uma forma de cada vez: a rede em linha
+      fila em «flex» (1 forma no bloco) · os 18 do continente em 2 linha(s) · 29/29 à vista
+  ✓ L9·pt·1280 · uma forma de cada vez: a rede em linha
+      fila em «flex» (1 forma no bloco) · os 18 do continente em 2 linha(s) · 29/29 à vista
+  ✓ L9·pt·1440 · uma forma de cada vez: a rede em linha
+      fila em «flex» (1 forma no bloco) · os 18 do continente em 2 linha(s) · 29/29 à vista
+  ✓ L9·en·320 · uma forma de cada vez: a rede em linha
+      fila em «flex» (1 forma no bloco) · os 18 do continente em 6 linha(s) · 29/29 à vista
+  ✓ L9·en·360 · uma forma de cada vez: a rede em linha
+      fila em «flex» (1 forma no bloco) · os 18 do continente em 5 linha(s) · 29/29 à vista
+  ✓ L9·en·390 · uma forma de cada vez: a rede em linha
+      fila em «flex» (1 forma no bloco) · os 18 do continente em 5 linha(s) · 29/29 à vista
+  ✓ L9·en·430 · uma forma de cada vez: a rede em linha
+      fila em «flex» (1 forma no bloco) · os 18 do continente em 4 linha(s) · 29/29 à vista
+  ✓ L9·en·768 · uma forma de cada vez: a rede em linha
+      fila em «flex» (1 forma no bloco) · os 18 do continente em 2 linha(s) · 29/29 à vista
+  ✓ L9·en·1024 · uma forma de cada vez: a rede em linha
+      fila em «flex» (1 forma no bloco) · os 18 do continente em 2 linha(s) · 29/29 à vista
+  ✓ L9·en·1280 · uma forma de cada vez: a rede em linha
+      fila em «flex» (1 forma no bloco) · os 18 do continente em 2 linha(s) · 29/29 à vista
+  ✓ L9·en·1440 · uma forma de cada vez: a rede em linha
+      fila em «flex» (1 forma no bloco) · os 18 do continente em 2 linha(s) · 29/29 à vista
+  ✓ L10·pt·320 · sem pontuação entre os nomes: nenhum «::before» nem «::after» com conteúdo
+      0 pseudo-elementos com conteúdo em 29 ligações e 29 itens
+  ✓ L10·pt·360 · sem pontuação entre os nomes: nenhum «::before» nem «::after» com conteúdo
+      0 pseudo-elementos com conteúdo em 29 ligações e 29 itens
+  ✓ L10·pt·390 · sem pontuação entre os nomes: nenhum «::before» nem «::after» com conteúdo
+      0 pseudo-elementos com conteúdo em 29 ligações e 29 itens
+  ✓ L10·pt·430 · sem pontuação entre os nomes: nenhum «::before» nem «::after» com conteúdo
+      0 pseudo-elementos com conteúdo em 29 ligações e 29 itens
+  ✓ L10·pt·768 · sem pontuação entre os nomes: nenhum «::before» nem «::after» com conteúdo
+      0 pseudo-elementos com conteúdo em 29 ligações e 29 itens
+  ✓ L10·pt·1024 · sem pontuação entre os nomes: nenhum «::before» nem «::after» com conteúdo
+      0 pseudo-elementos com conteúdo em 29 ligações e 29 itens
+  ✓ L10·pt·1280 · sem pontuação entre os nomes: nenhum «::before» nem «::after» com conteúdo
+      0 pseudo-elementos com conteúdo em 29 ligações e 29 itens
+  ✓ L10·pt·1440 · sem pontuação entre os nomes: nenhum «::before» nem «::after» com conteúdo
+      0 pseudo-elementos com conteúdo em 29 ligações e 29 itens
+  ✓ L10·en·320 · sem pontuação entre os nomes: nenhum «::before» nem «::after» com conteúdo
+      0 pseudo-elementos com conteúdo em 29 ligações e 29 itens
+  ✓ L10·en·360 · sem pontuação entre os nomes: nenhum «::before» nem «::after» com conteúdo
+      0 pseudo-elementos com conteúdo em 29 ligações e 29 itens
+  ✓ L10·en·390 · sem pontuação entre os nomes: nenhum «::before» nem «::after» com conteúdo
+      0 pseudo-elementos com conteúdo em 29 ligações e 29 itens
+  ✓ L10·en·430 · sem pontuação entre os nomes: nenhum «::before» nem «::after» com conteúdo
+      0 pseudo-elementos com conteúdo em 29 ligações e 29 itens
+  ✓ L10·en·768 · sem pontuação entre os nomes: nenhum «::before» nem «::after» com conteúdo
+      0 pseudo-elementos com conteúdo em 29 ligações e 29 itens
+  ✓ L10·en·1024 · sem pontuação entre os nomes: nenhum «::before» nem «::after» com conteúdo
+      0 pseudo-elementos com conteúdo em 29 ligações e 29 itens
+  ✓ L10·en·1280 · sem pontuação entre os nomes: nenhum «::before» nem «::after» com conteúdo
+      0 pseudo-elementos com conteúdo em 29 ligações e 29 itens
+  ✓ L10·en·1440 · sem pontuação entre os nomes: nenhum «::before» nem «::after» com conteúdo
+      0 pseudo-elementos com conteúdo em 29 ligações e 29 itens
+  ✗ L8·pt · o nome de cada painel conta o que está na página, e o algarismo vem da prova
+      «(sem linha)» diz undefined e o painel tem 0 peça(s) · «(sem linha)» diz undefined e a lista tem 0 linha(s)
+  ✗ L8·en · o nome de cada painel conta o que está na página, e o algarismo vem da prova
+      «(sem linha)» diz undefined e o painel tem 0 peça(s) · «(sem linha)» diz undefined e a lista tem 0 linha(s)
+  ✓ L6b · o rato em cada uma das 29 áreas marca o nome daquela unidade, e só dele
+      29/29 · sublinhado 1 px → 3 px no nome apontado, 1 px nos outros
+  ✓ L6d · o foco do teclado em cada uma das 29 áreas marca o nome daquela unidade
+      29/29 pelo Tab
+  ✓ L6a · o rato em cada um dos 29 nomes contorna a área daquela unidade, e só dela
+      29/29 · contorno 1 px → 3 px na área apontada, 1 px nas outras
+  ✓ L6c · o foco do teclado em cada um dos 29 nomes contorna a área daquela unidade
+      29/29 pelo Tab
+  ✓ L7·pt · a marca não é só cor: os dois lados mudam uma grandeza que não é cor
+      contorno 1 → 3 px · sublinhado 1 → 3 px · tinta do traço rgb(23, 25, 27) nos dois estados
+  ✓ L7·en · a marca não é só cor: os dois lados mudam uma grandeza que não é cor
+      contorno 1 → 3 px · sublinhado 1 → 3 px · tinta do traço rgb(23, 25, 27) nos dois estados
+
+  2 de 94 células vermelhas.
+

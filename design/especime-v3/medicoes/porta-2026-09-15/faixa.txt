@@ -1,0 +1,164 @@
+
+  ✗ F1·pt · a faixa é uma lista, e os seus cartões são as medidas da página
+      <ol> com 5 cartões na cabeça (5 ids distintos) · 0 medidas na página · só na faixa: divida-publica-2025, saldo-das-administracoes-publicas-2025, taxa-de-emprego-2025, taxa-de-desemprego-2025, ganho-medio-mensal-2024 · só na página: nenhuma · nome da lista: «As medidas, uma por cartão»
+  ✗ F1·en · a faixa é uma lista, e os seus cartões são as medidas da página
+      <ol> com 5 cartões na cabeça (5 ids distintos) · 0 medidas na página · só na faixa: divida-publica-2025, saldo-das-administracoes-publicas-2025, taxa-de-emprego-2025, taxa-de-desemprego-2025, ganho-medio-mensal-2024 · só na página: nenhuma · nome da lista: «The measures, one per card»
+  ✓ F2·pt · cada cartão tem valor com linha, selo para essa linha, e nenhum algarismo solto
+      5 cartões · sem selo: 0 · valor que não é o do cartão: 0 · selo a apontar para outra linha: 0 · com algarismo fora de linha ou motivo: 0
+  ✓ F2·en · cada cartão tem valor com linha, selo para essa linha, e nenhum algarismo solto
+      5 cartões · sem selo: 0 · valor que não é o do cartão: 0 · selo a apontar para outra linha: 0 · com algarismo fora de linha ou motivo: 0
+  ✓ F3·pt·320 · o cartão inteiro é alvo (mín 44 px), e o selo ganha o toque
+      5 cartões · porta mais pequena 201.4 px · abaixo do mínimo: 0 · portas que não cobrem o cartão inteiro: 0 · portas sobrepostas: 0 · 5 selos, 0 com o toque roubado pela porta · corpos que não abrem a porta: 0
+  ✓ F3·pt·360 · o cartão inteiro é alvo (mín 44 px), e o selo ganha o toque
+      5 cartões · porta mais pequena 201.4 px · abaixo do mínimo: 0 · portas que não cobrem o cartão inteiro: 0 · portas sobrepostas: 0 · 5 selos, 0 com o toque roubado pela porta · corpos que não abrem a porta: 0
+  ✓ F3·pt·390 · o cartão inteiro é alvo (mín 44 px), e o selo ganha o toque
+      5 cartões · porta mais pequena 201.4 px · abaixo do mínimo: 0 · portas que não cobrem o cartão inteiro: 0 · portas sobrepostas: 0 · 5 selos, 0 com o toque roubado pela porta · corpos que não abrem a porta: 0
+  ✓ F3·pt·430 · o cartão inteiro é alvo (mín 44 px), e o selo ganha o toque
+      5 cartões · porta mais pequena 163.4 px · abaixo do mínimo: 0 · portas que não cobrem o cartão inteiro: 0 · portas sobrepostas: 0 · 5 selos, 0 com o toque roubado pela porta · corpos que não abrem a porta: 0
+  ✓ F3·pt·768 · o cartão inteiro é alvo (mín 44 px), e o selo ganha o toque
+      5 cartões · porta mais pequena 212.3 px · abaixo do mínimo: 0 · portas que não cobrem o cartão inteiro: 0 · portas sobrepostas: 0 · 5 selos, 0 com o toque roubado pela porta · corpos que não abrem a porta: 0
+  ✓ F3·pt·1024 · o cartão inteiro é alvo (mín 32 px), e o selo ganha o toque
+      5 cartões · porta mais pequena 216.8 px · abaixo do mínimo: 0 · portas que não cobrem o cartão inteiro: 0 · portas sobrepostas: 0 · 5 selos, 0 com o toque roubado pela porta · corpos que não abrem a porta: 0
+  ✓ F3·pt·1280 · o cartão inteiro é alvo (mín 32 px), e o selo ganha o toque
+      5 cartões · porta mais pequena 216.8 px · abaixo do mínimo: 0 · portas que não cobrem o cartão inteiro: 0 · portas sobrepostas: 0 · 5 selos, 0 com o toque roubado pela porta · corpos que não abrem a porta: 0
+  ✓ F3·en·320 · o cartão inteiro é alvo (mín 44 px), e o selo ganha o toque
+      5 cartões · porta mais pequena 163.4 px · abaixo do mínimo: 0 · portas que não cobrem o cartão inteiro: 0 · portas sobrepostas: 0 · 5 selos, 0 com o toque roubado pela porta · corpos que não abrem a porta: 0
+  ✓ F3·en·360 · o cartão inteiro é alvo (mín 44 px), e o selo ganha o toque
+      5 cartões · porta mais pequena 163.4 px · abaixo do mínimo: 0 · portas que não cobrem o cartão inteiro: 0 · portas sobrepostas: 0 · 5 selos, 0 com o toque roubado pela porta · corpos que não abrem a porta: 0
+  ✓ F3·en·390 · o cartão inteiro é alvo (mín 44 px), e o selo ganha o toque
+      5 cartões · porta mais pequena 163.4 px · abaixo do mínimo: 0 · portas que não cobrem o cartão inteiro: 0 · portas sobrepostas: 0 · 5 selos, 0 com o toque roubado pela porta · corpos que não abrem a porta: 0
+  ✓ F3·en·430 · o cartão inteiro é alvo (mín 44 px), e o selo ganha o toque
+      5 cartões · porta mais pequena 163.4 px · abaixo do mínimo: 0 · portas que não cobrem o cartão inteiro: 0 · portas sobrepostas: 0 · 5 selos, 0 com o toque roubado pela porta · corpos que não abrem a porta: 0
+  ✓ F3·en·768 · o cartão inteiro é alvo (mín 44 px), e o selo ganha o toque
+      5 cartões · porta mais pequena 175.1 px · abaixo do mínimo: 0 · portas que não cobrem o cartão inteiro: 0 · portas sobrepostas: 0 · 5 selos, 0 com o toque roubado pela porta · corpos que não abrem a porta: 0
+  ✓ F3·en·1024 · o cartão inteiro é alvo (mín 32 px), e o selo ganha o toque
+      5 cartões · porta mais pequena 179.6 px · abaixo do mínimo: 0 · portas que não cobrem o cartão inteiro: 0 · portas sobrepostas: 0 · 5 selos, 0 com o toque roubado pela porta · corpos que não abrem a porta: 0
+  ✓ F3·en·1280 · o cartão inteiro é alvo (mín 32 px), e o selo ganha o toque
+      5 cartões · porta mais pequena 179.6 px · abaixo do mínimo: 0 · portas que não cobrem o cartão inteiro: 0 · portas sobrepostas: 0 · 5 selos, 0 com o toque roubado pela porta · corpos que não abrem a porta: 0
+  ✓ F4·pt · a faixa funciona com o guião desligado, e nenhum guião a nomeia
+      sem guião: 5 cartões com caixa de 5 no documento (com guião: 5) · overflow-x «auto» · algum <script> nomeia a faixa: false
+  ✓ F4·en · a faixa funciona com o guião desligado, e nenhum guião a nomeia
+      sem guião: 5 cartões com caixa de 5 no documento (com guião: 5) · overflow-x «auto» · algum <script> nomeia a faixa: false
+  ✓ F5·pt · o encaixe é de CSS: eixo x na lista, alinhamento em cada cartão
+      scroll-snap-type «x mandatory» · cartões sem scroll-snap-align: 0 de 5
+  ✓ F5·en · o encaixe é de CSS: eixo x na lista, alinhamento em cada cartão
+      scroll-snap-type «x mandatory» · cartões sem scroll-snap-align: 0 de 5
+  ✓ F6·pt·320 · o primeiro cartão inteiro sem gesto, e a faixa corre
+      faixa 284 px · primeiro cartão 230 px em x 18 · scrollLeft 0 · corre 1154 de 284 px
+  ✓ F6·pt·360 · o primeiro cartão inteiro sem gesto, e a faixa corre
+      faixa 324 px · primeiro cartão 230 px em x 18 · scrollLeft 0 · corre 1154 de 324 px
+  ✓ F6·pt·390 · o primeiro cartão inteiro sem gesto, e a faixa corre
+      faixa 354 px · primeiro cartão 247.8 px em x 18 · scrollLeft 0 · corre 1243 de 354 px
+  ✓ F6·pt·430 · o primeiro cartão inteiro sem gesto, e a faixa corre
+      faixa 394 px · primeiro cartão 275.8 px em x 18 · scrollLeft 0 · corre 1383 de 394 px
+  ✓ F6·pt·768 · o primeiro cartão inteiro sem gesto, e a faixa corre
+      faixa 706.6 px · primeiro cartão 230 px em x 30.7 · scrollLeft 0 · corre 1154 de 707 px
+  ✓ F6·pt·1024 · o primeiro cartão inteiro sem gesto, e a faixa corre
+      faixa 582 px · primeiro cartão 220 px em x 41 · scrollLeft 0 · corre 1104 de 582 px
+  ✓ F6·pt·1280 · o primeiro cartão inteiro sem gesto, e a faixa corre
+      faixa 550 px · primeiro cartão 220 px em x 94 · scrollLeft 0 · corre 1104 de 550 px
+  ✓ F6·en·320 · o primeiro cartão inteiro sem gesto, e a faixa corre
+      faixa 284 px · primeiro cartão 230 px em x 18 · scrollLeft 0 · corre 1154 de 284 px
+  ✓ F6·en·360 · o primeiro cartão inteiro sem gesto, e a faixa corre
+      faixa 324 px · primeiro cartão 230 px em x 18 · scrollLeft 0 · corre 1154 de 324 px
+  ✓ F6·en·390 · o primeiro cartão inteiro sem gesto, e a faixa corre
+      faixa 354 px · primeiro cartão 247.8 px em x 18 · scrollLeft 0 · corre 1243 de 354 px
+  ✓ F6·en·430 · o primeiro cartão inteiro sem gesto, e a faixa corre
+      faixa 394 px · primeiro cartão 275.8 px em x 18 · scrollLeft 0 · corre 1383 de 394 px
+  ✓ F6·en·768 · o primeiro cartão inteiro sem gesto, e a faixa corre
+      faixa 706.6 px · primeiro cartão 230 px em x 30.7 · scrollLeft 0 · corre 1154 de 707 px
+  ✓ F6·en·1024 · o primeiro cartão inteiro sem gesto, e a faixa corre
+      faixa 582 px · primeiro cartão 220 px em x 41 · scrollLeft 0 · corre 1104 de 582 px
+  ✓ F6·en·1280 · o primeiro cartão inteiro sem gesto, e a faixa corre
+      faixa 550 px · primeiro cartão 220 px em x 94 · scrollLeft 0 · corre 1104 de 550 px
+  ✓ F7·pt · o teclado chega a cada cartão, pela ordem, e cada porta abre um destino que existe
+      5 cartões · sem porta: 0 · com destino que não existe: 0 · sem nome acessível: 0 · a ordem do Tab é a do documento: true
+  ✓ F7·en · o teclado chega a cada cartão, pela ordem, e cada porta abre um destino que existe
+      5 cartões · sem porta: 0 · com destino que não existe: 0 · sem nome acessível: 0 · a ordem do Tab é a do documento: true
+  ✓ F8·pt · dois corpos: o número da faixa é mais pequeno no telemóvel do que no ecrã largo
+      390: 30 px · 1280: 40 px · chão da casa para um número com selo: 19 px · corpos distintos a 390: 1
+  ✓ F8·en · dois corpos: o número da faixa é mais pequeno no telemóvel do que no ecrã largo
+      390: 30 px · 1280: 40 px · chão da casa para um número com selo: 19 px · corpos distintos a 390: 1
+  ✓ F9·pt·320 · manchete, faixa, mapa, por esta ordem no documento e no ecrã
+      documento: manchete→faixa true · faixa→mapa true · uma coluna · manchete y 188.5 · faixa y 450.9 · mapa y 762.3
+  ✓ F9·pt·360 · manchete, faixa, mapa, por esta ordem no documento e no ecrã
+      documento: manchete→faixa true · faixa→mapa true · uma coluna · manchete y 188.5 · faixa y 450.9 · mapa y 762.3
+  ✓ F9·pt·390 · manchete, faixa, mapa, por esta ordem no documento e no ecrã
+      documento: manchete→faixa true · faixa→mapa true · uma coluna · manchete y 155.4 · faixa y 385.2 · mapa y 696.6
+  ✓ F9·pt·430 · manchete, faixa, mapa, por esta ordem no documento e no ecrã
+      documento: manchete→faixa true · faixa→mapa true · uma coluna · manchete y 155.4 · faixa y 367 · mapa y 640.5
+  ✓ F9·pt·768 · manchete, faixa, mapa, por esta ordem no documento e no ecrã
+      documento: manchete→faixa true · faixa→mapa true · uma coluna · manchete y 407.8 · faixa y 637.5 · mapa y 971.7
+  ✓ F9·pt·1024 · manchete, faixa, mapa, por esta ordem no documento e no ecrã
+      documento: manchete→faixa true · faixa→mapa true · duas colunas · manchete y 448.8 antes da faixa y 695.9: true · faixa antes das gavetas (y 1022.6): true · faixa na banda da coluna esquerda (x 41 contra 41): true · mapa x 643 à direita do fim da coluna esquerda 623.0: true · topo do mapa 448.8 acima do topo da faixa 695.9: true
+  ✓ F9·pt·1280 · manchete, faixa, mapa, por esta ordem no documento e no ecrã
+      documento: manchete→faixa true · faixa→mapa true · duas colunas · manchete y 424.3 antes da faixa y 700.5: true · faixa antes das gavetas (y 1027.3): true · faixa na banda da coluna esquerda (x 94 contra 94): true · mapa x 668 à direita do fim da coluna esquerda 644.0: true · topo do mapa 424.3 acima do topo da faixa 700.5: true
+  ✓ F9·en·320 · manchete, faixa, mapa, por esta ordem no documento e no ecrã
+      documento: manchete→faixa true · faixa→mapa true · uma coluna · manchete y 219.7 · faixa y 482.1 · mapa y 755.5
+  ✓ F9·en·360 · manchete, faixa, mapa, por esta ordem no documento e no ecrã
+      documento: manchete→faixa true · faixa→mapa true · uma coluna · manchete y 219.7 · faixa y 482.1 · mapa y 755.5
+  ✓ F9·en·390 · manchete, faixa, mapa, por esta ordem no documento e no ecrã
+      documento: manchete→faixa true · faixa→mapa true · uma coluna · manchete y 188.5 · faixa y 418.4 · mapa y 691.8
+  ✓ F9·en·430 · manchete, faixa, mapa, por esta ordem no documento e no ecrã
+      documento: manchete→faixa true · faixa→mapa true · uma coluna · manchete y 188.5 · faixa y 400.2 · mapa y 673.7
+  ✓ F9·en·768 · manchete, faixa, mapa, por esta ordem no documento e no ecrã
+      documento: manchete→faixa true · faixa→mapa true · uma coluna · manchete y 407.8 · faixa y 637.5 · mapa y 934.6
+  ✓ F9·en·1024 · manchete, faixa, mapa, por esta ordem no documento e no ecrã
+      documento: manchete→faixa true · faixa→mapa true · duas colunas · manchete y 448.8 antes da faixa y 695.9: true · faixa antes das gavetas (y 985.5): true · faixa na banda da coluna esquerda (x 41 contra 41): true · mapa x 643 à direita do fim da coluna esquerda 623.0: true · topo do mapa 448.8 acima do topo da faixa 695.9: true
+  ✓ F9·en·1280 · manchete, faixa, mapa, por esta ordem no documento e no ecrã
+      documento: manchete→faixa true · faixa→mapa true · duas colunas · manchete y 424.3 antes da faixa y 700.5: true · faixa antes das gavetas (y 990.1): true · faixa na banda da coluna esquerda (x 94 contra 94): true · mapa x 668 à direita do fim da coluna esquerda 644.0: true · topo do mapa 424.3 acima do topo da faixa 700.5: true
+  ✗ F10a·pt·320 · a gaveta dos nomes, aberta, com alvo de 44 px, e a busca fora dela
+      1 gavetas (nomes) · abertas: 0 · alvo mais pequeno 1.0 px · nomes no documento: 29
+  ✗ F10a·pt·360 · a gaveta dos nomes, aberta, com alvo de 44 px, e a busca fora dela
+      1 gavetas (nomes) · abertas: 0 · alvo mais pequeno 1.0 px · nomes no documento: 29
+  ✗ F10a·pt·390 · a gaveta dos nomes, aberta, com alvo de 44 px, e a busca fora dela
+      1 gavetas (nomes) · abertas: 0 · alvo mais pequeno 1.0 px · nomes no documento: 29
+  ✗ F10a·pt·430 · a gaveta dos nomes, aberta, com alvo de 44 px, e a busca fora dela
+      1 gavetas (nomes) · abertas: 0 · alvo mais pequeno 1.0 px · nomes no documento: 29
+  ✗ F10a·pt·768 · a gaveta dos nomes, aberta, com alvo de 44 px, e a busca fora dela
+      1 gavetas (nomes) · abertas: 0 · alvo mais pequeno 1.0 px · nomes no documento: 29
+  ✗ F10a·pt·1024 · a gaveta dos nomes, aberta, com alvo de 32 px, e a busca fora dela
+      1 gavetas (nomes) · abertas: 0 · alvo mais pequeno 1.0 px · nomes no documento: 29
+  ✗ F10a·pt·1280 · a gaveta dos nomes, aberta, com alvo de 32 px, e a busca fora dela
+      1 gavetas (nomes) · abertas: 0 · alvo mais pequeno 1.0 px · nomes no documento: 29
+  ✗ F10b·pt · a gaveta dos nomes chega aberta e fecha e abre sem guião, com os 29 à vista
+      o toque chegou ao <summary>: true · a gaveta é um <details> · à chegada: aberta false, 0 à vista · depois de um toque: aberta true, 29 à vista · depois do segundo: aberta false, 0 de 29 à vista
+  ✗ F10a·en·320 · a gaveta dos nomes, aberta, com alvo de 44 px, e a busca fora dela
+      1 gavetas (nomes) · abertas: 0 · alvo mais pequeno 1.0 px · nomes no documento: 29
+  ✗ F10a·en·360 · a gaveta dos nomes, aberta, com alvo de 44 px, e a busca fora dela
+      1 gavetas (nomes) · abertas: 0 · alvo mais pequeno 1.0 px · nomes no documento: 29
+  ✗ F10a·en·390 · a gaveta dos nomes, aberta, com alvo de 44 px, e a busca fora dela
+      1 gavetas (nomes) · abertas: 0 · alvo mais pequeno 1.0 px · nomes no documento: 29
+  ✗ F10a·en·430 · a gaveta dos nomes, aberta, com alvo de 44 px, e a busca fora dela
+      1 gavetas (nomes) · abertas: 0 · alvo mais pequeno 1.0 px · nomes no documento: 29
+  ✗ F10a·en·768 · a gaveta dos nomes, aberta, com alvo de 44 px, e a busca fora dela
+      1 gavetas (nomes) · abertas: 0 · alvo mais pequeno 1.0 px · nomes no documento: 29
+  ✗ F10a·en·1024 · a gaveta dos nomes, aberta, com alvo de 32 px, e a busca fora dela
+      1 gavetas (nomes) · abertas: 0 · alvo mais pequeno 1.0 px · nomes no documento: 29
+  ✗ F10a·en·1280 · a gaveta dos nomes, aberta, com alvo de 32 px, e a busca fora dela
+      1 gavetas (nomes) · abertas: 0 · alvo mais pequeno 1.0 px · nomes no documento: 29
+  ✗ F10b·en · a gaveta dos nomes chega aberta e fecha e abre sem guião, com os 29 à vista
+      o toque chegou ao <summary>: true · a gaveta é um <details> · à chegada: aberta false, 0 à vista · depois de um toque: aberta true, 29 à vista · depois do segundo: aberta false, 0 de 29 à vista
+  ✓ F11·pt·390 · o primeiro número selado de uma medida a menos de um ecrã da manchete
+      132.5 px · 0.16 ecrãs de 844 px · divida-publica-2025
+  ✓ F11·en·390 · o primeiro número selado de uma medida a menos de um ecrã da manchete
+      151.8 px · 0.18 ecrãs de 844 px · divida-publica-2025
+  ✗ F12·pais·pt · a camada herda a cabeça inteira: manchete com número selado, faixa e instrumento
+      forma «pais» · rótulo «(sem)» (não é preciso: o F1.1 tirou-o da cabeça do país), nome declarado false (não é preciso: é cadeia da casa) · manchete «A dívida pública é 89,7% do PIB e a taxa de desemprego é 6% da população ativa.f» com número true, selado true · instrumento com 1 desenho(s), 354 px de largura · ordem coluna→faixa true, faixa→instrumento true · 5 cartões, 5 sem correspondência, 0 sem selo · selos sobrepostos 0, toques roubados 0
+  ✗ F12·regiao·pt · a camada herda a cabeça inteira: rótulo declarado, manchete com número selado, faixa e instrumento
+      forma «lugar» · rótulo «Regiões · Alentejo», nome declarado true · manchete «O Alentejo está 23 pontos abaixo da média da UE-27. Em 2000 estava a 22: a distâ» com número true, selado true · instrumento com 0 desenho(s), 0 px de largura · ordem coluna→faixa null, faixa→instrumento null · 0 cartões, 0 sem correspondência, 0 sem selo · selos sobrepostos 0, toques roubados 0
+  ✓ F12·concelho·pt · a camada herda a cabeça inteira: rótulo declarado, manchete com número selado, faixa e instrumento
+      forma «lugar» · rótulo «Concelho · Évora · distrito de Évora · Alentejo Central», nome declarado true · manchete «Évora tem 58 567 pessoas.fonte · INE» com número true, selado true · instrumento com 1 desenho(s), 354 px de largura · ordem coluna→faixa true, faixa→instrumento true · 8 cartões, 0 sem correspondência, 0 sem selo · selos sobrepostos 0, toques roubados 0
+  ✗ F12·pais·en · a camada herda a cabeça inteira: manchete com número selado, faixa e instrumento
+      forma «pais» · rótulo «(sem)» (não é preciso: o F1.1 tirou-o da cabeça do país), nome declarado false (não é preciso: é cadeia da casa) · manchete «Government debt is 89,7% of GDP and the unemployment rate is 6% of the labour fo» com número true, selado true · instrumento com 1 desenho(s), 354 px de largura · ordem coluna→faixa true, faixa→instrumento true · 5 cartões, 5 sem correspondência, 0 sem selo · selos sobrepostos 0, toques roubados 0
+  ✗ F12·regiao·en · a camada herda a cabeça inteira: rótulo declarado, manchete com número selado, faixa e instrumento
+      forma «lugar» · rótulo «Regions · Alentejo», nome declarado true · manchete «The Alentejo is 23 points below the EU-27 average. In 2000 it was 22 points away» com número true, selado true · instrumento com 0 desenho(s), 0 px de largura · ordem coluna→faixa null, faixa→instrumento null · 0 cartões, 0 sem correspondência, 0 sem selo · selos sobrepostos 0, toques roubados 0
+  ✓ F12·concelho·en · a camada herda a cabeça inteira: rótulo declarado, manchete com número selado, faixa e instrumento
+      forma «lugar» · rótulo «Municipality · Évora · district of Évora · Alentejo Central», nome declarado true · manchete «Évora has 58 567 people.source · INE» com número true, selado true · instrumento com 1 desenho(s), 354 px de largura · ordem coluna→faixa true, faixa→instrumento true · 8 cartões, 0 sem correspondência, 0 sem selo · selos sobrepostos 0, toques roubados 0
+  ✓ F13·pt · nenhum transbordo horizontal, às sete larguras
+      transbordo por largura · 320: 0 · 360: 0 · 390: 0 · 430: 0 · 768: 0 · 1024: 0 · 1280: 0
+  ✓ F13·en · nenhum transbordo horizontal, às sete larguras
+      transbordo por largura · 320: 0 · 360: 0 · 390: 0 · 430: 0 · 768: 0 · 1024: 0 · 1280: 0
+
+  22 de 80 células vermelhas.
+

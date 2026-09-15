@@ -7,6 +7,13 @@ copiado para este repositório no primeiro commit do ramo, sem uma letra mudada
 (sha256 `9ff8225f9571c74e1c7cc9a8fd704526689f45104efaede2bda5e68d184477d2`). Sem
 travessões na prosa.*
 
+**HÁ UMA SEGUNDA PASSAGEM, DO MESMO DIA, E ESTÁ NA §9.** A leitura a frio do
+Codex à cabeça `d913b528` (`design/especime-v3/critica/2026-09-15-codex-leitura-f113-porta.md`,
+com o registo das plantas ao lado: três plantas de três classes, 3 de 3 vistas)
+deixou sete achados reais, e os sete fecharam-se nesta mesma worktree antes de
+aterrar. **Os números das §1 a §6 são os da primeira passagem; onde a segunda os
+mudou, a §9 di-lo e escreve os novos.**
+
 **ESTE FICHEIRO TEM DOIS RELATÓRIOS, e o de baixo não se apaga.** O F1.1 «a porta
 da frente», de 03.09.2026, escreveu o seu relatório neste mesmo caminho, e a
 `DECISIONS.md` e o `critica/REVISOES-DO-INVENTARIO.md` nomeiam-no. O brief deste
@@ -20,10 +27,10 @@ inteiro abaixo dele, e a fronteira entre os dois está escrita.
 |---|---|---|---|
 | **P1** | a frase nova a 1 em `/` e `/en/`, a antiga a 0 | `/` nova **1**, antiga **0**; `/en/` nova **1**, antiga **0**; a antiga em **0** ficheiros de `dist/` | `A18.pt` e `A18.en` (célula nova); `check:lugar` L4 **0** (teto 0); `check:voz` com a sentinela nova |
 | **P2** | as três etiquetas novas nas portas, as antigas a 0, nas duas edições | «Todos os concelhos →» **1**, «Todos os estudos →» **1**, «Toda a agenda →» **1**; «a página inteira» **0**; as inglesas idem; «a página inteira»/«the whole page» em **0** ficheiros de `dist/` | `A19.pt` e `A19.en` (célula nova); `grep -rl … dist --include="*.html" \| wc -l` |
-| **P3** | com guião, a gaveta não ocupa píxel nenhum à vista a 390 e a 1 280; sem guião, a lista com os 29 nomes e as portas certas | com guião, a 390 e a 1 280: caixa **1 × 1 px** em `absolute`, recortada por `rect(0px,0px,0px,0px)`, **área à vista 0**, **29** nomes, **29** invisíveis, **29** portas, **0** fora de `/distritos/`, **0** sem resposta; ao foco do `<summary>` a 390 a caixa volta a **354 × 575,4 px** com **29** nomes e **0** fora do alvo de 44 px. Sem guião: caixa **354 × 45 px** (área **15 930**), `<summary>` à vista, **29** unidades na lista, **29** ligações que respondem 200 | `A5.pt` e `A5.en` reescritas com a decisão citada; `U4 · pt` e `U4 · en` e `U1c` de `mapa-unidades.mjs`; o axe **0 nós em violação** (`check:alvos`, célula H1, 46 rotas × 2 larguras) |
+| **P3** | com guião, a gaveta não ocupa píxel nenhum à vista a 390 e a 1 280; sem guião, a lista com os 29 nomes e as portas certas (e, desde o achado 5 da leitura a frio, o terceiro estado: com guião e sem mapa) | com guião, a 390 e a 1 280: caixa **1 × 1 px** em `absolute`, recortada por `rect(0px,0px,0px,0px)`, **área à vista 0**, **29** nomes, **29** invisíveis, **29** portas, **0** fora de `/distritos/`, **0** sem resposta; ao foco do `<summary>` a 390 a caixa volta a **354 × 575,4 px** com **29** nomes e **0** fora do alvo de 44 px. Sem guião: caixa **354 × 45 px** (área **15 930**), `<summary>` à vista, **29** unidades na lista, **29** ligações que respondem 200 | `A5.pt` e `A5.en` reescritas com a decisão citada; `U4 · pt` e `U4 · en` e `U1c` de `mapa-unidades.mjs`; o axe **0 nós em violação** (`check:alvos`, célula H1, 46 rotas × 2 larguras) |
 | **P9** | «selo» e «estados do selo» a 0 nas páginas do leitor fora do Método, nas duas edições; a linha da legenda a 1 em cada página que rende a marca | L3 «selo» **640 → 0** (320 pt + 320 en → 0 + 0); o Método **12** ocorrências (chão 2, uma por edição), fora da conta pela medida P9; a linha da legenda **1 vez** em cada uma das **319** páginas por edição | `check:lugar`, medida L3 (teto 0) e a asserção nova do positivo conhecido; `grep -o … \| wc -l` em quatro páginas de cada edição |
 | **P4** | cada domínio vivo com os nomes das medidas de cabeça na sua linha, iguais aos da faixa, e «e mais N» contado; 0 valores selados | **5** nomes na linha contra **5** na faixa, iguais e pela mesma ordem, nas duas edições; a cauda «, e mais cinco» / «, and five more»; **0** valores selados na secção | `A20.pt` e `A20.en` (célula nova, que compara as duas superfícies do sítio uma com a outra); `check:lugar` 8.13 **0** (teto 0) |
-| **P5** | o primeiro ecrã a 390 × 664 não muda (a altura da cabeça e a manchete medidas antes e depois) | a cabeça e a manchete **não mudaram um píxel**: nome `62 → 97,4` px nas duas construções (pt) e `95,2 → 130,5` (en), manchete **125,5 px** em **3 linhas** em Chromium e em WebKit nas duas. A mobília acima do nome **62 px → 62 px** (pt, teto 64) e **95,2 px → 95,2 px** (en, teto 95,2). O que desceu **18,2 px** foi a pilha abaixo da manchete, e a causa está medida: o rótulo da busca passou de **18,2 px** (uma linha) a **36,4 px** (duas) a 390. O fundo da coisa mais funda do primeiro ecrã: **569,4 → 587,6 px** (pt) e **564,7 → 582,8 px** (en), dentro dos 664 nas duas | `A1.pt`, `A1.en`, `A11.pt`, `A11.en`, antes sobre o `dist/` de `bb0b4c39` e depois sobre o desta cabeça |
+| **P5** | o primeiro ecrã a 390 × 664 não muda (a altura da cabeça e a manchete medidas antes e depois) | **a cabeça e a manchete não mudaram; a pilha abaixo delas desceu 18,2 px, e o primeiro ecrã continua a levar as cinco coisas.** Ao pormenor: a cabeça e a manchete **não mudaram um píxel**: nome `62 → 97,4` px nas duas construções (pt) e `95,2 → 130,5` (en), manchete **125,5 px** em **3 linhas** em Chromium e em WebKit nas duas. A mobília acima do nome **62 px → 62 px** (pt, teto 64) e **95,2 px → 95,2 px** (en, teto 95,2). O que desceu **18,2 px** foi a pilha abaixo da manchete, e a causa está medida: o rótulo da busca passou de **18,2 px** (uma linha) a **36,4 px** (duas) a 390. O fundo da coisa mais funda do primeiro ecrã: **569,4 → 587,6 px** (pt) e **564,7 → 582,8 px** (en), dentro dos 664 nas duas | `A1.pt`, `A1.en`, `A11.pt`, `A11.en`, antes sobre o `dist/` de `bb0b4c39` e depois sobre o desta cabeça |
 | **P6** | as capturas de `/`, `/en/` e da página de uma área, a 390, 768, 1 024, 1 280 e 1 600, antes e depois | **40 capturas** (20 antes, 20 depois) em `design/especime-v3/capturas/porta-2026-09-15/` | `design/especime-v3/medicoes/porta-2026-09-15/capturas-porta.mjs --momento=antes\|depois`, com a rota de cada nome declarada no guião |
 | **P7** | `build`, `verify` e `typecheck` a 0, com os códigos lidos dos ficheiros | ver §7 | `npm run build > build.log 2>&1; echo $? > build.exit`, e o mesmo para `verify` e `typecheck` |
 | **P8** | plantas: a frase antiga de volta; uma etiqueta «a página inteira →» de volta; a gaveta visível com guião; um valor selado na linha de um domínio | as **quatro** plantas novas vermelhas, cada uma na sua célula, com o «html mudou» conferido | `node tests/inicio/porta.mjs --vermelhos`; ver §6 |
@@ -490,6 +497,217 @@ domínios e o zero de valores selados lá dentro).
 | `src/styles/site.css` | as regras da legenda antiga saem com ela |
 | `scripts/design-bundle.mjs` | o cartão «Selo e marcador» do feixe lia `ul.aparelho-selos` de `dist/livro-razao/index.html`, e o `verify` fechou com «não encontrei». Passa a ler a forma nova, do mesmo sítio |
 | `design/especime-v3/VOZ-MARCADORES.md` | a dispensa do marcador da voz muda de raiz com as palavras da legenda |
+
+## 9 · A segunda passagem: os sete achados da leitura a frio, fechados
+
+*A leitura correu de 12:31:21 a 12:45:13 UTC de 15.09.2026, sobre um pacote da
+cabeça `d913b528`, com 259 976 símbolos. As três plantas do lugar de direção
+foram todas vistas (W1, a cadeia trocada no ficheiro das cadeias; W2, a frase de
+definição mudada na página; W3, a célula A18 enfraquecida). O achado 6 não é
+defeito: o brief escrevia «aberta como hoje» onde «hoje» era a lista FECHADA com
+o `<summary>` à vista, e o lugar de direção emendou o brief. O achado 4 é do
+pacote, e fecha-se com o item 7 desta secção.*
+
+### 9.1 · Achado 5 · a gaveta escondia-se sempre que a folha carregava
+
+A decisão diz «escondida QUANDO O MAPA FUNCIONA», e a primeira construção
+escondia-a sempre: um leitor com guião e sem mapa ficava sem as duas coisas.
+
+**Quem sabe se o mapa funciona é o guião do mapa, e é ele que passa a dizê-lo.**
+`public/js/mapa-unidades.js` põe `data-mapa-vivo` na raiz do documento **na sua
+última linha**, depois de ter encontrado tudo o que precisa e de o lugar do nome
+já se render. A folha da primeira página passou a `:root[data-mapa-vivo]
+.cabeca-nomes`. Com isso o estado por omissão é já o certo para as duas maneiras
+de ficar sem mapa, e **o `<noscript>` do `<head>` saiu**, com a ranhura `cabeca`
+de `Base.astro` que o servia.
+
+**A A5 passou a medir os três estados**, a 390 (e a 1 280 no primeiro):
+
+| estado | a caixa da gaveta | `data-mapa-vivo` | o `<summary>` | os 29 nomes |
+|---|---|---|---|---|
+| **A5a** com guião e com mapa | **1 × 1 px** em `absolute`, recorte `rect(0px,0px,0px,0px)`, **área à vista 0** (a 390 e a 1 280) | na raiz | fora da vista | 29 no documento, 29 invisíveis; ao foco a caixa volta a **354 × 575,4 px** e nenhum fica abaixo dos 44 px |
+| **A5b** com guião e **sem mapa** | **354 × 45 px** em `static`, área **15 930** | ausente | à vista | 29, a gaveta fechada |
+| **A5c** sem guião | **354 × 45 px** em `static`, área **15 930** | ausente | à vista | 29, a gaveta fechada |
+
+O estado A5b mede-se **recusando o pedido de `/js/mapa-unidades.js` no
+navegador**, e não fingindo o estado com uma classe escrita à mão. Recusa-se o
+guião e não `/dados/mapa/unidade-<slug>.json`: o ficheiro da geometria só se pede
+quando o leitor toca numa unidade para ela crescer, e à chegada as 29 áreas vêm
+do servidor, pelo que recusá-lo não muda o estado de chegada. O pedido que decide
+é o do guião.
+
+**E o defeito foi plantado**, porque sem planta o estado novo não tinha positivo
+conhecido: a planta escreve `data-mapa-vivo` no `<html>` SERVIDO, de onde o guião
+a devia escrever no fim, e a A5b cai.
+
+**O que isto custa, e está dito:** o guião é `defer`, e por isso a gaveta está à
+vista desde a primeira pintura até essa última linha correr. A troca é
+deliberada, e a alternativa era esconder antes de saber, que é o defeito que a
+leitura apanhou.
+
+### 9.2 · Achado 7 · as seis etiquetas das portas entram no inventário
+
+A primeira construção deixou-as de fora com a razão de sempre (o texto de uma
+etiqueta vive todo dentro de um `<a>`), e a leitura mostrou o custo com uma
+planta que passou: «All the studies» no ficheiro das cadeias contra «All studies»
+na página não cai em régua nenhuma quando o inventário não tem a linha.
+
+As três etiquetas levam agora `data-voz`, que é a marca que a casa usa desde
+04.09.2026 para a prosa que vive onde a régua não olha. **Oito linhas novas no
+inventário**: as seis novas `viva` («Todos os concelhos →», «Todos os estudos →»,
+«Toda a agenda →» e as inglesas) e as duas antigas `retirada` («a página inteira
+→», «the whole page →»). O bloco `palavras-da-porta` passa de 18 para **26**
+linhas: 14 novas, 9 a `retirada`, 3 saídas do ficheiro.
+
+### 9.3 · Achado 8 · a A20 abria as rotas erradas
+
+Fazia três coisas mal, e as três estão consertadas: abria `/` e `/en` e dizia que
+protegia o índice dos domínios; achatava os nomes em listas globais; e procurava
+«cinco» à letra. **Passa a abrir as duas rotas que rendem o componente**, a medir
+**por domínio** (pelo `data-dominio` de cada linha) e a **recompor** o N do «e
+mais N» com `numeralPorExtenso(total − nomes)` na língua da edição. O que se
+mediu:
+
+```
+/           2 linha(s), 1 com nomes (economia-e-financas-publicas 5/10 +cinco), 0 selado(s)
+/dominios   2 linha(s), 1 com nomes (economia-e-financas-publicas 5/10 +cinco), 0 selado(s)
+/en         2 linha(s), 1 com nomes (economia-e-financas-publicas 5/10 +five),  0 selado(s)
+/en/domains 2 linha(s), 1 com nomes (economia-e-financas-publicas 5/10 +five),  0 selado(s)
+```
+
+E uma planta nova troca o numeral da cauda na página servida («cinco» por
+«seis», «five» por «six»), para que a recomposição tenha positivo conhecido.
+
+### 9.4 · Achado 9 · a L3 não via o rótulo das marcas, e o chão somava as edições
+
+`textoDaCasa()` deitava fora a sub-árvore inteira de tudo o que leva uma marca de
+origem, e a marca da fonte (`<a class="src-chip" data-nonledger="proveniencia">`)
+leva lá dentro **uma palavra da casa**, que é a que o leitor vê ao lado de cada
+número. Pôr «selo» de volta nesse rótulo não caía em régua nenhuma.
+
+**O corte passa a ser pela vista e não pela marca:** dentro da marca da fonte, o
+que o leitor vê conta, e o que ele não vê (a classe `.vh`, o atributo `hidden`,
+`aria-hidden="true"`) não conta.
+
+**E só a marca da fonte se abre**, com a razão medida: abrir todos os motivos de
+`data-nonledger` punha a L3 a contar **32 ocorrências de «indicadores»** em 32
+páginas de linha, dentro de «Quadro institucional de indicadores», que é o título
+de um estudo do Eurostat e não prosa desta casa. Os dezoito motivos da construção
+cobrem algarismos, datas, identificadores, títulos publicados e nomes de
+diplomas; o único que cobre uma palavra que a casa escolheu é `proveniencia`. A
+lista está declarada numa constante, e um motivo novo que passe a levar uma
+palavra da casa entra lá com a sua razão.
+
+**O chão do Método passou a ser por edição** (1 em cada, contra 2 somados), e o
+que a régua lê hoje é `pt «selo» ×6 · en «seal» ×6`. Somar as duas deixava uma
+delas ficar a zero com a outra a pagar o chão das duas.
+
+**E a medida ganhou o seu autoteste**, corrido em cada construção, com os dois
+sentidos: «selo» à vista dentro de uma marca conta **1**; «selo» escondido no
+`.vh` da mesma marca conta **0**. A L3 fecha em **0** com os dois provados.
+
+### 9.5 · Achado 10 · a ordem das folhas decidia a geometria
+
+A decisão do lugar de direção é manter o estado novo e escrevê-lo **uma vez**. A
+regra de `.livro-item` estava nas duas folhas com a mesma especificidade
+(`minmax(0, 9ch)` em `site.css`, `minmax(0, 22ch)` em `linha.css`), e quem
+decidia era a ordem, que não está escrita em lado nenhum.
+
+**Medido antes de mover:** das **638** páginas que rendem um `.livro-item`, **638
+carregam `linha.css`** e nenhuma o dispensa. A regra inteira vive agora lá, com as
+propriedades que só estavam em `site.css`, e a de `site.css` saiu. **Nas folhas
+construídas há hoje uma só declaração de `.livro-item`**, e `minmax(0, 9ch)` não
+existe em nenhuma.
+
+A coluna do valor, a 1 280, antes e depois, nas nove áreas e no índice dos
+números, nas duas edições:
+
+| páginas | antes | depois |
+|---|---|---|
+| as nove áreas × duas edições (18 páginas) | **72 px** (`72px 454px`) | **176 px** (`176px 350px`) |
+| `/livro-razao` e `/en/ledger` | **176 px** (`176px 350px`) | **176 px**, sem mudança |
+
+As vinte páginas compõem-se agora da mesma maneira, e a ordem das folhas deixou
+de decidir.
+
+### 9.6 · Achados 11 e 12 · o que o relatório dizia
+
+A linha da **P5** dizia «o primeiro ecrã não muda» e media 18,2 px de descida:
+passa a dizer as duas coisas por esta ordem, a que não mudou e a que mudou. E a
+contagem das capturas é **40 (20 antes, 20 depois)** nos três sítios que a
+contam. **Um fica por corrigir e diz-se:** o assunto do commit `3eccb39e` diz «as
+vinte capturas», e não se reescreve, porque a leitura a frio e a §7 deste
+relatório fixam os SHA deste ramo e reescrevê-los deixaria os dois a apontar para
+commits que já não existem. O número certo é 40.
+
+### 9.7 · As réguas, depois da segunda passagem
+
+| régua | células | o que sobra vermelho |
+|---|---|---|
+| `tests/inicio/porta.mjs` | **40 de 40** | nenhuma |
+| `tests/inicio/mapa-unidades.mjs` | **34 de 34** | nenhuma |
+| `tests/inicio/leitura.mjs` | **26 de 26** | nenhuma |
+| `tests/inicio/lista.mjs` | 92 de 94 | L8·pt e L8·en, que medem painéis que mudaram de página com o item 8.16 do F1.10 |
+| `tests/inicio/faixa.mjs` | 58 de 80 | F1 (2) e F12 (4), da mesma causa; F10a (14) e F10b (2), que exigem a gaveta aberta desde antes do F1.1d |
+| `npm run check:lugar` | verde | L3 a 0, L4 a 0, e o autoteste novo dos rótulos das marcas |
+
+**Os estragos plantados são agora 22, e 19 ficam vermelhos.** Seis são deste
+bloco, e as seis mordem:
+
+| planta | célula | verde antes | html mudou | vermelho depois |
+|---|---|---|---|---|
+| a frase de definição antiga de volta, ao lado da nova | `A18` | sim | sim | sim |
+| uma etiqueta «a página inteira →» de volta, na porta dos estudos | `A19` | sim | sim | sim |
+| **a marca do mapa vivo escrita pelo servidor (a gaveta escondida sem mapa)** | `A5` | sim | sim | sim |
+| a gaveta dos nomes visível com guião | `A5` | sim | sim | sim |
+| **a cauda «e mais N» com o numeral trocado** | `A20` | sim | sim | sim |
+| um valor selado na linha de um domínio | `A20` | sim | sim | sim |
+
+**As três que não mordem são anteriores ao ramo**, e continuam a ser as mesmas
+três: «os estudos a mais de 1,5 ecrãs» (A15) e «a mobília do menu em duas filas»
+(A11) mudam o html e a célula fica verde; «a faixa de uma região a dizer "de 21"»
+(A17) não muda o html. **As três de rotas por declarar que a primeira passagem
+corrigiu mordem agora todas**, com o «html mudou» a dizer sim.
+
+### 9.8 · Achado 4 e item 7 · as saídas das réguas entram no ramo
+
+O pacote da leitura levava o guião das capturas e não levava as capturas, nem as
+saídas das réguas, nem os códigos dos portões. **As medições passam a viver no
+ramo**, em `design/especime-v3/medicoes/porta-2026-09-15/`, ao lado do guião que
+as tirou, para que o pacote da leitura seguinte as leve.
+
+### 9.9 · Os três portões, os commits e a corrida da segunda passagem
+
+Os três comandos correram outra vez, **cada um no seu**, separados por `;`, com o
+código de saída escrito num ficheiro e lido de lá:
+
+```
+npm run build     > f-build.log 2>&1;     echo $? > f-build.exit      → 0
+npm run verify    > f-verify.log 2>&1;    echo $? > f-verify.exit     → 0
+npm run typecheck > f-typecheck.log 2>&1; echo $? > f-typecheck.exit  → 0
+```
+
+A saída está em `medicoes/porta-2026-09-15/portoes.txt`, e o `check:lugar` desta
+mesma corrida do `verify`, com a L3 a 0 e o autoteste novo, em `check-lugar.txt`
+ao lado. Correram sobre a árvore de trabalho desta passagem, com a cabeça ainda
+em `d913b528`: os sete commits que se seguem fixam essa árvore sem lhe mudar um
+byte, e depois do último o `npm run build` corre mais uma vez para o carimbo do
+`dist/` levar a cabeça final.
+
+### Os commits da segunda passagem
+
+* `b34624cb` · A leitura a frio do bloco entra no repositório, com o registo das plantas
+* `072f4567` · A gaveta dos nomes esconde-se quando o mapa funciona, e não quando a folha carrega
+* `36c7df6e` · As seis etiquetas das portas entram no inventário das frases
+* `a68dc6e5` · A L3 conta o rótulo visível da marca da fonte, e o chão do Método é por edição
+* `937378db` · A regra de uma entrada do índice fica numa declaração só
+* `e80d467f` · As réguas medem os três estados da gaveta, o índice por domínio, e três plantas novas
+* o commit deste relatório, das chaves e das medições, que é a cabeça final do ramo
+
+**A corrida `portão` do GitHub sobre essa cabeça** corre os três outra vez, num
+anfitrião limpo, sem o `node_modules` nem o `dist/` de ninguém, e é ela que
+responde pelo que se empurra. O número dela vai na resposta ao lugar de direção.
+**Não se funde em `main`**: a fusão é do lugar de direção.
 
 ---
 

@@ -1,0 +1,22 @@
+os três portões da segunda passagem do F1.13, cada comando no seu, separados por «;»,
+com o código de saída escrito num ficheiro e lido de lá, e não da memória de quem construiu
+
+  ramo porta-2026-09-15 · base do ramo bb0b4c39
+  correram sobre a árvore de trabalho da segunda passagem, com a cabeça do git ainda
+  em d913b528 (o commit do relatório da primeira passagem): os sete commits desta
+  passagem fixam essa árvore sem lhe mudar um byte. Depois do último commit o
+  `npm run build` corre outra vez, para o carimbo do `dist/` levar a cabeça final,
+  e é a corrida `portão` do GitHub, num anfitrião limpo, que responde por ela.
+
+  corrida de 15.09.2026, na worktree, com o node v22.23.1
+
+  npm run build     > f-build.log 2>&1;     echo $? > f-build.exit      → 0
+  npm run verify    > f-verify.log 2>&1;    echo $? > f-verify.exit     → 0
+  npm run typecheck > f-typecheck.log 2>&1; echo $? > f-typecheck.exit  → 0
+
+  as linhas dos registos, tal como cada portão as fechou:
+  build     10511 linha(s) · última:         3 nome(s) de lei dentro de texto transcrito (uma «derivation_en» do livro-razão, uma nota do registo da agenda):
+  verify    537 linha(s) · última:   ✓ 20 cartões, 11 ficheiros de letra e um README em design-system/.
+  typecheck 4 linha(s) · última: > tsc -p tsconfig.check.json
+
+  o «check:lugar» desta mesma corrida do verify está ao lado, em check-lugar.txt
