@@ -1,6 +1,6 @@
 # A lista dos domínios, a linha da busca, e as duas células novas · 15.09.2026
 
-*Ramo `dominios-css-2026-09-15`, de `main` em `44f0d838`. Construtor: Claude Opus 5. Tudo o que está aqui foi medido em Chromium sem cabeça sobre o `dist/` de cada uma das duas cabeças, com `design/especime-v3/medicoes/dominios-css-2026-09-15.mjs`, que é o ficheiro ao lado deste. As capturas estão em `design/especime-v3/capturas/dominios-css-2026-09-15/`.*
+*Ramo `dominios-css-2026-09-15`, de `main` em `44f0d838`. Construtor: Claude Opus 5. Lido a frio pelo Codex (`gpt-5.6-sol`, xhigh) na cabeça `f6d87f28`, com três plantas de três classes, 3 de 3 vistas: `design/especime-v3/critica/2026-09-15-codex-leitura-fatia-dominios-css.md` e o `.plantas.json` ao lado. Os cinco achados reais (5, 7, 8, 9 e 10) fecharam-se antes de a fatia aterrar, e estão ditos onde cada um mordeu; o achado 6 é uma limitação verdadeira da célula C2, está escrita aqui e na própria célula, e passa à fatia `css-alcance-2026-09-16`. Tudo o que está aqui foi medido em Chromium sem cabeça sobre o `dist/` de cada uma das duas cabeças, com `design/especime-v3/medicoes/dominios-css-2026-09-15.mjs`, que é o ficheiro ao lado deste. A régua recusa medir o que não existe: exige 200 em cada rota e exige cada elemento que diz que mede, e morre com o que faltar em vez de imprimir `null` numa coluna de números (achado 8). As capturas estão em `design/especime-v3/capturas/dominios-css-2026-09-15/`.*
 
 ## As medidas
 
@@ -39,7 +39,7 @@ A segunda linha de `/` é, carácter a carácter, o que o diretor leu no telemó
 
 `/dominios` e `/en/domains` não mudam um píxel, nas duas larguras: é a prova de que a folha saiu de sítio e não de forma.
 
-A primeira página cresce 58 px a 390 e 81 px a 1 280, e são duas coisas somadas: a lista passou a ter as suas linhas de fio e a sua goma, e a linha da busca passou a ser tão alta quanto era mas com o campo a ocupar a linha (o que a faz quebrar noutro sítio a 1 280). O primeiro ecrã não mexe: o topo da secção dos domínios a 390 mede **1 436,8 px em `/` e 1 432,1 px em `/en/`, antes e depois, o mesmo número**, e o primeiro ecrã acaba aos 664.
+A primeira página cresce **58 px a 390 na edição portuguesa e 57 na inglesa** (2 695→2 753 e 2 701→2 758), e 81 px a 1 280 nas duas (1 921→2 002). A diferença de um píxel entre as edições é real e fica dita, e não arredondada para o número da edição portuguesa. São duas coisas somadas: a lista passou a ter as suas linhas de fio e a sua goma, e a linha da busca passou a ser tão alta quanto era mas com o campo a ocupar a linha (o que a faz quebrar noutro sítio a 1 280). O primeiro ecrã não mexe: o topo da secção dos domínios a 390 mede **1 436,8 px em `/` e 1 432,1 px em `/en/`, antes e depois, o mesmo número**, e o primeiro ecrã acaba aos 664.
 
 ### A linha da busca
 
@@ -47,35 +47,46 @@ Duas passagens no mesmo dia. A primeira pôs o campo a encher a coluna; o lugar 
 
 O teto é `max-width: 36rem` na `.busca-linha`, e **36rem medem 576 px**: o `rem` desta casa é o do navegador, 16 px, medido em `getComputedStyle(document.documentElement).fontSize` em todas as células. O botão mede 111,5 px em todas elas, do princípio ao fim. O transbordo horizontal (`scrollWidth − clientWidth`) é 0 em todas as células das três passagens.
 
-| rota | largura | campo em `44f0d838` | campo sem teto | **campo com teto** | linha com teto |
+| rota | 320 | 390 | 768 | 1 280 | 1 600 |
 | --- | --- | --- | --- | --- | --- |
-| `/` | 320 | 100,6 | 164,5 | **164,5** | 284,0 |
-| `/` | 390 | 100,6 | 234,5 | **234,5** | 354,0 |
-| `/` | 768 | 100,6 | 587,1 | **456,5** | 576,0 |
-| `/` | 1 280 | 100,6 | 430,5 | **430,5** | 550,0 |
-| `/` | 1 600 | — | — | **430,5** | 550,0 |
-| `/municipios` | 320 | 100,6 | 164,5 | **164,5** | 284,0 |
-| `/municipios` | 390 | 100,6 | 234,5 | **234,5** | 354,0 |
-| `/municipios` | 768 | 100,6 | 587,1 | **456,5** | 576,0 |
-| `/municipios` | 1 280 | 100,6 | 972,5 | **456,5** | 576,0 |
-| `/municipios` | 1 600 | — | — | **456,5** | 576,0 |
-| `/livro-razao` | 320 | 164,5 | 164,5 | **164,5** | 284,0 |
-| `/livro-razao` | 390 | 234,5 | 234,5 | **234,5** | 354,0 |
-| `/livro-razao` | 768 | 424,5 | 424,5 | **424,5** | 544,0 |
-| `/livro-razao` | 1 280 | 424,5 | 424,5 | **424,5** | 544,0 |
-| `/livro-razao` | 1 600 | — | — | **424,5** | 544,0 |
-| `/livro-razao/concelhos` | 320 | 220,1 | 284,0 | **284,0** | não tem linha |
-| `/livro-razao/concelhos` | 390 | 220,1 | 340,0 | **340,0** | não tem linha |
-| `/livro-razao/concelhos` | 768 | 220,1 | 340,0 | **340,0** | não tem linha |
-| `/livro-razao/concelhos` | 1 280 | 220,1 | 340,0 | **340,0** | não tem linha |
-| `/livro-razao/concelhos` | 1 600 | — | — | **340,0** | não tem linha |
+| `/` | 164,5 | 234,5 | 456,5 | 430,5 | 430,5 |
+| `/en/` | 185,8 | 255,8 | 477,8 | 451,8 | 451,8 |
+| `/municipios` | 164,5 | 234,5 | 456,5 | 456,5 | 456,5 |
+| `/en/municipalities` | 185,8 | 255,8 | 477,8 | 477,8 | 477,8 |
+| `/livro-razao` | 164,5 | 234,5 | 424,5 | 424,5 | 424,5 |
+| `/livro-razao/concelhos` (sem linha) | 284,0 | 340,0 | 340,0 | 340,0 | 340,0 |
+
+E a largura da linha, que é o campo mais o botão mais os 8 px de goma:
+
+| rota | 320 | 390 | 768 | 1 280 | 1 600 |
+| --- | --- | --- | --- | --- | --- |
+| `/` e `/en/` | 284,0 | 354,0 | **576,0** | 550,0 | 550,0 |
+| `/municipios` e `/en/municipalities` | 284,0 | 354,0 | **576,0** | **576,0** | **576,0** |
+| `/livro-razao` | 284,0 | 354,0 | 544,0 | 544,0 | 544,0 |
+
+E o que estava antes, para a comparação (só as rotas portuguesas foram medidas nas duas primeiras passagens, que é o achado 5):
+
+| rota | largura | campo em `44f0d838` | campo sem teto | campo com teto |
+| --- | --- | --- | --- | --- |
+| `/` | 320 | 100,6 | 164,5 | 164,5 |
+| `/` | 390 | 100,6 | 234,5 | 234,5 |
+| `/` | 768 | 100,6 | 587,1 | 456,5 |
+| `/` | 1 280 | 100,6 | 430,5 | 430,5 |
+| `/municipios` | 320 | 100,6 | 164,5 | 164,5 |
+| `/municipios` | 390 | 100,6 | 234,5 | 234,5 |
+| `/municipios` | 768 | 100,6 | 587,1 | 456,5 |
+| `/municipios` | 1 280 | 100,6 | 972,5 | 456,5 |
+| `/livro-razao` | 768 e 1 280 | 424,5 | 424,5 | 424,5 |
+| `/livro-razao/concelhos` | 390 e acima | 220,1 | 340,0 | 340,0 |
 
 O que a tabela diz, lido:
 
-* **a 320 e a 390 o teto não muda nada**, nas quatro rotas: a linha mede 284 e 354 px, muito abaixo das 576, e quem manda ali é a coluna;
+* **a 320 e a 390 o teto não muda nada**, nas seis rotas: a linha mede 284 e 354 px, muito abaixo das 576, e quem manda ali é a coluna;
+* **a edição inglesa dá um campo 21,3 px mais largo em todas as células**, e não porque a folha mude: o botão mede 90,3 px em inglês («Search») contra 111,5 em português («Procurar»), e o que o botão não ocupa fica para o campo. A linha mede exactamente o mesmo nas duas edições, e o transbordo é 0 nas trinta células. Esta linha da tabela existe porque a leitura a frio do Codex viu que a régua só corria nas rotas portuguesas (achado 5): a régua passou a correr nas seis rotas e nas duas edições;
 * **o teto prende onde a coluna é larga**: em `/municipios` a 1 280 e a 1 600 a linha para nas 576 e o campo nas 456,5, onde sem teto media 972,5;
 * em `/` a 1 280 e a 1 600 o teto não chega a morder, porque a coluna daquela página mede 550 px, menos que as 576;
 * `/livro-razao` não muda em largura nenhuma em nenhuma das três passagens: lá o pai da caixa não é `.pesquisa`, e a coluna é mais estreita que o teto;
+* em `/en/municipalities` o teto prende a 768, a 1 280 e a 1 600, como na gémea portuguesa;
 * `/livro-razao/concelhos` é a variante sem formulário e não tem `.busca-linha`: não leva teto, e quem a prende é o `width: min(340px, 100%)` que o campo já tinha.
 
 A matriz de aceitação da primeira página passa nas cinco larguras (320, 390, 768, 1 024, 1 280), zero falhas, nas duas passagens.
@@ -156,7 +167,20 @@ A célula escrita à letra do brief («dois elementos vizinhos sem espaço entre
 
 Escrever sessenta exceções para pôr a célula a verde seria a régua a servir o portão. O que separa o defeito do idioma é uma coisa só, e é a que o diretor leu: em `/dominios` a folha chegava e o `gap` estava lá; em `/` a folha não chegava e não estava nada. A pergunta passou a ser essa, medida com as folhas que chegam **àquela** página e com mais nenhumas, e os mesmos 60 526 dão 4 vermelhos, que são a linha do domínio nas duas edições.
 
-**O que esta célula não vê, e fica escrito.** Ela lê as declarações por classe e não resolve a cascata, e sobe até à raiz à procura de um `gap`. É conservadora de propósito — entre deixar passar uma colagem e inventar uma que não existe, deixa passar —, e o preço mediu-se: o «Populaçãoprimeiro» de `/metodo`, que é uma colagem verdadeira, fica invisível a C2 porque `.metodo-secao`, lá acima, é uma grelha com `gap`. Foi C1 que o apanhou (`dominios-vaga`), e está corrigido nesta fatia; mas uma colagem dentro de um antepassado com goma continua a passar.
+**O que esta célula não vê, escrito antes de alguém perguntar.** É o achado 6 da leitura a frio do Codex, aceite como limitação verdadeira desta redação. «A folha desta página põe espaço aqui?» é respondida por leitura de texto de folha, e não por composição. Em concreto a régua:
+
+* **aceita a declaração de um antepassado qualquer, até à raiz.** Um `gap` separa os filhos directos de uma caixa flexível ou de uma grelha, e mais ninguém: um `gap` declarado cinco níveis acima não diz nada sobre a fronteira medida, e a régua aceita-o à mesma;
+* **não resolve o selector.** Atribui as declarações de `.a .b { … }` tanto a `.a` como a `.b`, sem conferir qual dos dois casa;
+* **não resolve a cascata nem a condição.** Uma declaração dentro de um `@media` que nunca se aplica àquela largura conta como declaração, e uma regra sobreposta conta na mesma;
+* **não mede um píxel.** Não sabe se o espaço declarado tem largura, nem se as duas peças chegam a ficar na mesma linha.
+
+O erro que isto produz é sempre para o mesmo lado, e é a escolha: deixa passar colagens verdadeiras e não inventa nenhuma. Entre uma régua que cala um defeito e uma que acusa uma página que está bem, a segunda é pior, porque ensina toda a gente a escrever exceções.
+
+O preço medido, com nome: o «Populaçãoprimeiro» de `/metodo` é uma colagem verdadeira e a C2 não a acorda, porque `.metodo-secao`, lá acima, é uma grelha com goma; quem a apanhou foi a C1, por outra via, e está corrigida nesta fatia. E o «Trabalhoincluído» da primeira página só ficou vermelho porque a folha não chegava àquela página: em `/dominios`, onde chegava, o `gap` de `.dominios-item` teria calado a mesma fronteira.
+
+**A forma honesta de fechar isto não é uma heurística melhor: é uma célula rendida**, que abra as páginas num navegador e meça a distância entre as caixas de duas peças de texto vizinhas na mesma linha. Zero píxeis é uma colagem, e não há folha nem cascata para interpretar. Fica para a fatia `css-alcance-2026-09-16`, com a conta do custo ao lado: a régua de hoje lê 7 224 páginas em segundos, e uma rendida tem de escolher quantas abre.
+
+**O positivo conhecido da C2 foi reescrito no mesmo dia** (achado 7). A primeira redação plantava `texto<strong>…</strong>` para provar que uma marca dentro de uma palavra não é acusada, e esse caso nunca chegava a ser candidato, porque começa num nó de texto: a mensagem de sucesso afirmava uma coisa que a corrida não tinha provado, que é pior do que não a provar. E a isenção de `<abbr>` isentava qualquer fronteira que tocasse numa abreviatura, dos dois lados, o que deixava passar `<abbr>INE</abbr><span>publicou</span>`, que é o mesmo defeito de «Trabalhoas». A isenção saiu (não se estreitou: uma isenção que apaga o defeito que devia apanhar tira-se), e a prova passou a plantar cinco fronteiras entre peças de texto com cinco respostas exigidas: duas vermelhas (o nome colado ao estado e a abreviatura colada ao que se lhe segue), uma isenta pelo expoente (`</abbr><sup>`), e duas separadas pela folha que a página liga (uma por `gap` do pai, outra por margem da peça). Os dois casos de marca dentro de uma palavra continuam lá e a régua não os vê, e agora é isso que a mensagem diz. Tirar a isenção de `<abbr>` não mudou uma linha do sítio: `c2_aceites` fecha a zero nas duas cabeças.
 
 ### A regra morta, achada e apagada
 

@@ -3,13 +3,25 @@
  * O ÍNDICE DOS DOMÍNIOS: `/dominios` e `/en/domains`.
  *
  * ---------------------------------------------------------------------------
- * O QUE ESTA PÁGINA É, E PORQUE LISTA OS DEZOITO
+ * O QUE ESTA PÁGINA É, E O QUE A SUA LISTA LISTA HOJE
  * ---------------------------------------------------------------------------
- * «Um domínio que ainda não entrou não tem página: o índice dos domínios
- * lista-o com "ainda sem medidas conferidas" e sem ligação, para o leitor saber
- * que a casa sabe» (`BRIEF-forma-dos-dominios.md` §2). É a regra dos vazios
- * aplicada à estrutura inteira: a lista mostra o mapa do que a casa se propõe
- * cobrir e o estado de cada parte dele, e não só o que já está feito.
+ * A lista é `src/components/DominiosLista.astro`, a mesma que a primeira página
+ * rende desde 15.09.2026, e lista OS DOMÍNIOS COM PÁGINA: o nome de cada um, a
+ * CONTAGEM DAS SUAS MEDIDAS e a porta; e o domínio cujas medidas vivem dentro de
+ * outro, com a porta para a secção onde elas estão.
+ *
+ * NÃO LISTA OS DEZOITO, e deixou de o fazer no §9.1 (08.09.2026). Listava-os,
+ * com «ainda sem medidas conferidas» nos que ainda não tinham entrado, pela
+ * regra dos vazios do `BRIEF-forma-dos-dominios.md` §2; a leitura cruzada do
+ * inventário das frases mediu o que isso era numa página do leitor: a casa a
+ * falar da sua própria cobertura, que é o que a Emenda 15 proíbe. As dezasseis
+ * linhas passaram ao Método, à secção «O que se mede a seguir».
+ *
+ * ESTE COMENTÁRIO DESCREVIA A LISTA ANTIGA até 15.09.2026, e foi a leitura a
+ * frio do Codex que o viu (achado 10): dizia que a página lista os dezoito e que
+ * não tem contagem nenhuma, e a lista que ela rende filtra e conta. Um
+ * comentário que descreve o que a página já não faz é pior do que nenhum,
+ * porque quem o lê acredita nele.
  *
  * ---------------------------------------------------------------------------
  * O NOME DE UM DOMÍNIO NÃO É PROSA DA CASA
@@ -21,24 +33,31 @@
  * carácter a carácter, um nome de `src/data/dominios.mjs`.
  *
  * ---------------------------------------------------------------------------
- * O ESTADO É VOCABULÁRIO FECHADO, E SÃO TRÊS PALAVRAS
+ * O ESTADO É VOCABULÁRIO FECHADO
  * ---------------------------------------------------------------------------
- * Como as duas de cobertura de um concelho: declaradas uma vez em
+ * Como as duas palavras de cobertura de um concelho: declaradas uma vez em
  * `strings.mjs`, marcadas com `data-dominio-estado`, e contadas pela régua em
  * vez de lidas como prosa. Sem a marca, o índice punha dezoito frases iguais no
  * inventário.
  *
- * O TERCEIRO ESTADO É O QUE IMPEDE UMA FALSIDADE, e a razão está escrita em
- * `src/data/dominios.mjs`: «Trabalho» tem as suas cinco medidas conferidas e à
- * vista na página do primeiro domínio, e escrever-lhe «ainda sem medidas
- * conferidas» era a casa a desmentir a sua própria página.
+ * DAS TRÊS PALAVRAS DECLARADAS, ESTA LISTA RENDE UMA: «incluído em», a do
+ * domínio cujas medidas vivem dentro de outro. «no ar» e «ainda sem medidas
+ * conferidas» saíram da voz do leitor com o §9.1, e o estado «sem» nunca chega a
+ * esta lista, porque ela só tem domínios com página.
  *
  * ---------------------------------------------------------------------------
- * NENHUMA CONTAGEM
+ * NENHUMA CONTAGEM DA CASA SOBRE A CASA
  * ---------------------------------------------------------------------------
- * Nem «1 de 18», nem «oito na primeira vaga». Uma contagem é um número da casa,
- * e um número da casa entra por `data-prova`, com quem o reconte de outro ponto
- * de observação. A lista diz os nomes e os estados; quem quiser contar, conta.
+ * Nem «1 de 18», nem «oito na primeira vaga». Uma contagem dessas é um número da
+ * casa, e um número da casa entra por `data-prova`, com quem o reconte de outro
+ * ponto de observação.
+ *
+ * A CONTAGEM QUE A LISTA TEM É OUTRA COISA, e a distinção é o §9.1: «10 medidas»
+ * é quantas linhas a página de chegada lista, contadas da mesma lista que ela
+ * rende (`medidasDoDominio()`). É a numeração de uma lista rendida, leva a marca
+ * que a casa usa para isso (`data-nonledger="numeracao"`, a mesma da posição de
+ * um cartão na faixa), e não é uma medição de Portugal nem uma afirmação sobre a
+ * cobertura da casa.
  */
 import Base from '../layouts/Base.astro';
 import DominiosLista from '../components/DominiosLista.astro';
