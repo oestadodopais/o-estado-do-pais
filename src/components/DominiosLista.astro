@@ -1,0 +1,123 @@
+---
+/**
+ * O ÍNDICE DOS DOMÍNIOS, UMA VEZ SÓ.
+ *
+ * ---------------------------------------------------------------------------
+ * PORQUE EXISTE (correcção de 15.09.2026, medida pelo lugar de direção)
+ * ---------------------------------------------------------------------------
+ * O diretor leu no telemóvel, na primeira página, «2. Trabalhoas medidas estão
+ * em Economia e finanças públicas». A lista era a mesma em dois sítios, escrita
+ * duas vezes: uma em `HomeView.astro` e outra em `DominiosView.astro`. As regras
+ * dela viviam em `src/styles/dominio.css`, que só a segunda importava, e por
+ * isso na primeira página a lista rendia sem regras nenhumas: a numeração do
+ * `<ol>` aparecia, o estado saía no serif do corpo a 16 px em vez do tipo de
+ * instrumento a 14, e sem o `gap` do flex o nome e o estado colavam-se, porque
+ * não havia espaço nenhum entre eles no HTML.
+ *
+ * Medido a 390 px, na cabeça 44f0d838, antes da correcção:
+ *
+ *                              `/`                 `/dominios`
+ *   display do item            list-item           flex
+ *   gap                        normal              14px / 6px
+ *   marcador do `<ol>`         decimal             none
+ *   corpo do estado            16px Spectral       14px Bitter
+ *   folga nome↔estado          0 px                14 px
+ *
+ * A causa não era a folha: era haver DUAS listas. Uma lista escrita uma vez, com
+ * a sua folha importada por ela própria, chega a toda a página que a renda, e é
+ * o que este componente é. Quem a quiser numa página nova não tem de se lembrar
+ * de importar coisa nenhuma.
+ *
+ * ---------------------------------------------------------------------------
+ * A CONTA DAS LINHAS TAMBÉM VEM PARA CÁ, E PELA MESMA RAZÃO
+ * ---------------------------------------------------------------------------
+ * As duas vistas filtravam `DOMINIOS` e decidiam a porta de cada domínio com o
+ * mesmo código, copiado. «Uma segunda maneira de decidir a porta divergiria da
+ * primeira ao primeiro domínio novo» estava escrito em `HomeView.astro` sobre
+ * esta mesma lista, e era verdade a respeito dela própria.
+ *
+ * ---------------------------------------------------------------------------
+ * O ESPAÇO ENTRE O NOME E O ESTADO É UM NÓ DE TEXTO, E É DE PROPÓSITO
+ * ---------------------------------------------------------------------------
+ * `{' '}` entre o nome e o estado. Numa página sem as regras a linha lê-se na
+ * mesma («Trabalho as medidas estão em…» e não «Trabalhoas medidas…»), e numa
+ * página com elas não muda nada: um nó de texto só de espaço entre dois itens de
+ * um contentor flex não se rende (CSS Flexbox §4: «if the entire sequence of
+ * child text runs contains only white space it is not rendered»). Medido nas
+ * duas páginas depois da correcção, e está no relatório desta fatia.
+ *
+ * Não é uma cadeia nova: é um espaço. O inventário das frases não o vê, e o
+ * portão da voz continua a zero.
+ *
+ * ---------------------------------------------------------------------------
+ * O QUE A LISTA DIZ, E O QUE NÃO DIZ
+ * ---------------------------------------------------------------------------
+ * Lista os domínios COM PÁGINA (§9.1, 08.09.2026): o nome, a contagem das
+ * medidas da página de chegada e a porta; e o domínio cujas medidas vivem dentro
+ * de outro, com a porta para a secção onde elas estão. As dezasseis linhas
+ * «ainda sem medidas conferidas» e as vagas são do Método, e não daqui.
+ *
+ * O NOME VEM DA DECLARAÇÃO, com `data-nome="dominios"`, que o portão da voz
+ * confere contra `src/data/dominios.mjs`. O estado é vocabulário fechado,
+ * marcado com `data-dominio-estado`. A contagem leva `data-nonledger="numeracao"`
+ * porque é a numeração de uma lista rendida, e não uma medição de Portugal.
+ */
+import { DOMINIOS, dominioDeclarado, dominiosComPagina, medidasDoDominio } from '../data/dominios.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+import '../styles/dominios-lista.css';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+
+const comPagina = new Set(dominiosComPagina().map((d) => d.slug));
+
+const linhas = DOMINIOS.filter(
+  (d) => comPagina.has(d.slug) || (d.estado === 'dentro-de' && d.dentroDe && comPagina.has(d.dentroDe)),
+).map((d) => {
+  const dentro = d.estado === 'dentro-de' && d.dentroDe ? dominioDeclarado(d.dentroDe) : null;
+  /* A PORTA DE UM DOMÍNIO «DENTRO DE» OUTRO VAI À SUA SECÇÃO, e não só ao topo
+     da página onde as suas medidas vivem (segunda passagem, 03.09.2026,
+     Major 11): `ancoraDentro` é a âncora dessa secção, declarada ao lado do
+     domínio em `src/data/dominios.mjs`. Sem âncora declarada, a porta ainda
+     assim abre a página, no seu início. */
+  const porta =
+    d.estado === 'no-ar' && comPagina.has(d.slug)
+      ? routePath('dominio', lang, { slug: d.slug })
+      : dentro !== null && comPagina.has(dentro.slug)
+        ? `${routePath('dominio', lang, { slug: dentro.slug })}${d.ancoraDentro ? `#${d.ancoraDentro}` : ''}`
+        : null;
+  return { dominio: d, dentro, porta, medidas: medidasDoDominio(d.slug).length };
+});
+---
+
+<ol class="dominios-lista">
+  {
+    linhas.map(({ dominio, dentro, porta, medidas }) => (
+      <li class="dominios-item" data-dominio={dominio.slug}>
+        {porta === null ? (
+          <span class="dominios-nome" data-nome="dominios">
+            {dominio.nome[lang] ?? dominio.nome.pt}
+          </span>
+        ) : (
+          <a class="dominios-nome dominios-porta" href={porta}>
+            <span data-nome="dominios">{dominio.nome[lang] ?? dominio.nome.pt}</span>
+          </a>
+        )}{' '}
+        <span class="dominios-estado" data-dominio-estado={dominio.estado}>
+          {medidas > 0 && (
+            <>
+              <span data-nonledger="numeracao">{medidas}</span> {s.dominios.medidasRotulo}
+            </>
+          )}
+          {dominio.estado === 'dentro-de' && dentro !== null && (
+            <>
+              {s.dominios.estadoDentroDe}{' '}
+              <span data-nome="dominios">{dentro.nome[lang] ?? dentro.nome.pt}</span>
+            </>
+          )}
+        </span>
+      </li>
+    ))
+  }
+</ol>

@@ -24,45 +24,13 @@
   margin: 8px 0 0;
   font-size: clamp(26px, 3.4vw, 38px);
 }
-.dominios-lista {
-  list-style: none;
-  margin: clamp(20px, 3vw, 30px) 0 0;
-  padding: 0;
-  border-top: 1px solid var(--rule);
-}
-.dominios-item {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 6px 14px;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--rule);
-  /* O alvo de 44 px vem da altura da linha e não de um `::after` esticado: uma
-     linha desta lista é texto e a sua porta é o nome, que a folha faz alto o
-     bastante para se tocar. */
-  min-height: 44px;
-}
-.dominios-nome {
-  font-family: var(--f-prosa);
-  font-size: clamp(18px, 2vw, 21px);
-  flex: 1 1 18ch;
-}
-.dominios-porta {
-  color: var(--ink);
-}
-.dominios-estado,
-.dominios-vaga {
-  font-family: var(--f-instr);
-  font-size: 14px;
-  color: var(--muted);
-}
-.dominios-vaga {
-  min-width: 11ch;
-  text-align: right;
-}
-.dominios-item[data-dominio-estado='sem'] .dominios-nome {
-  color: var(--muted);
-}
+/* A LISTA SAIU DAQUI a 15.09.2026, para `dominios-lista.css`, ao lado do
+   componente que a rende (`src/components/DominiosLista.astro`). Esta folha é
+   importada por `DominiosView` e por `DominioView`, e a primeira página rende a
+   mesma lista sem a importar: as regras não lhe chegavam, e a lista saía
+   numerada, no serif do corpo e com o nome colado ao estado. `.dominios-vaga`
+   foi para `leitura.css`, que é a folha do Método, a única página que a rende.
+   O que fica aqui é a cabeça e o rodapé de `/dominios`, que são daquela página. */
 .dominios-portas {
   margin-top: clamp(22px, 3vw, 32px);
 }
