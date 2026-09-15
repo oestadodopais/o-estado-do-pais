@@ -150,7 +150,7 @@ const temAlgumaCoisa = temRegua(regua) || Boolean(palavra);
       {palavra && (
         <span class="cartao-medida-regua-item" data-regua="referencia">
           <span data-voz>{palavra}</span>
-          {', '}
+          {' ('}
           {banda ? (
             <>
               {limiar.inferior.sinal ?? ''}
@@ -166,6 +166,7 @@ const temAlgumaCoisa = temRegua(regua) || Boolean(palavra);
               {simbolo}
             </>
           )}
+          {')'}
         </span>
       )}
     </p>
