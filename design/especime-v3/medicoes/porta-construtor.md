@@ -1,3 +1,507 @@
+# F1.13 · as palavras da porta e o índice dos domínios · relatório do construtor
+
+*Ramo `porta-2026-09-15`, tirado de `main` em `bb0b4c39` (a fatia
+`dominios-css-2026-09-15` já fundida). Construtor Claude Opus 5, 15.09.2026, uma
+passagem. O brief é `design/observatorio/BRIEF-F1.13-as-palavras-da-porta.md`,
+copiado para este repositório no primeiro commit do ramo, sem uma letra mudada
+(sha256 `9ff8225f9571c74e1c7cc9a8fd704526689f45104efaede2bda5e68d184477d2`). Sem
+travessões na prosa.*
+
+**ESTE FICHEIRO TEM DOIS RELATÓRIOS, e o de baixo não se apaga.** O F1.1 «a porta
+da frente», de 03.09.2026, escreveu o seu relatório neste mesmo caminho, e a
+`DECISIONS.md` e o `critica/REVISOES-DO-INVENTARIO.md` nomeiam-no. O brief deste
+bloco manda escrever aqui, e escrever aqui por cima era destruir um registo que
+dois documentos citam: o relatório do F1.13 entra por cima, o do F1.1 continua
+inteiro abaixo dele, e a fronteira entre os dois está escrita.
+
+## 1 · A tabela das medidas
+
+| # | a medida do brief | o que se mediu | como |
+|---|---|---|---|
+| **P1** | a frase nova a 1 em `/` e `/en/`, a antiga a 0 | `/` nova **1**, antiga **0**; `/en/` nova **1**, antiga **0**; a antiga em **0** ficheiros de `dist/` | `A18.pt` e `A18.en` (célula nova); `check:lugar` L4 **0** (teto 0); `check:voz` com a sentinela nova |
+| **P2** | as três etiquetas novas nas portas, as antigas a 0, nas duas edições | «Todos os concelhos →» **1**, «Todos os estudos →» **1**, «Toda a agenda →» **1**; «a página inteira» **0**; as inglesas idem; «a página inteira»/«the whole page» em **0** ficheiros de `dist/` | `A19.pt` e `A19.en` (célula nova); `grep -rl … dist --include="*.html" \| wc -l` |
+| **P3** | com guião, a gaveta não ocupa píxel nenhum à vista a 390 e a 1 280; sem guião, a lista com os 29 nomes e as portas certas | com guião, a 390 e a 1 280: caixa **1 × 1 px** em `absolute`, recortada por `rect(0px,0px,0px,0px)`, **área à vista 0**, **29** nomes, **29** invisíveis, **29** portas, **0** fora de `/distritos/`, **0** sem resposta; ao foco do `<summary>` a 390 a caixa volta a **354 × 575,4 px** com **29** nomes e **0** fora do alvo de 44 px. Sem guião: caixa **354 × 45 px** (área **15 930**), `<summary>` à vista, **29** unidades na lista, **29** ligações que respondem 200 | `A5.pt` e `A5.en` reescritas com a decisão citada; `U4 · pt` e `U4 · en` e `U1c` de `mapa-unidades.mjs`; o axe **0 nós em violação** (`check:alvos`, célula H1, 46 rotas × 2 larguras) |
+| **P9** | «selo» e «estados do selo» a 0 nas páginas do leitor fora do Método, nas duas edições; a linha da legenda a 1 em cada página que rende a marca | L3 «selo» **640 → 0** (320 pt + 320 en → 0 + 0); o Método **12** ocorrências (chão 2, uma por edição), fora da conta pela medida P9; a linha da legenda **1 vez** em cada uma das **319** páginas por edição | `check:lugar`, medida L3 (teto 0) e a asserção nova do positivo conhecido; `grep -o … \| wc -l` em quatro páginas de cada edição |
+| **P4** | cada domínio vivo com os nomes das medidas de cabeça na sua linha, iguais aos da faixa, e «e mais N» contado; 0 valores selados | **5** nomes na linha contra **5** na faixa, iguais e pela mesma ordem, nas duas edições; a cauda «, e mais cinco» / «, and five more»; **0** valores selados na secção | `A20.pt` e `A20.en` (célula nova, que compara as duas superfícies do sítio uma com a outra); `check:lugar` 8.13 **0** (teto 0) |
+| **P5** | o primeiro ecrã a 390 × 664 não muda (a altura da cabeça e a manchete medidas antes e depois) | a cabeça e a manchete **não mudaram um píxel**: nome `62 → 97,4` px nas duas construções (pt) e `95,2 → 130,5` (en), manchete **125,5 px** em **3 linhas** em Chromium e em WebKit nas duas. A mobília acima do nome **62 px → 62 px** (pt, teto 64) e **95,2 px → 95,2 px** (en, teto 95,2). O que desceu **18,2 px** foi a pilha abaixo da manchete, e a causa está medida: o rótulo da busca passou de **18,2 px** (uma linha) a **36,4 px** (duas) a 390. O fundo da coisa mais funda do primeiro ecrã: **569,4 → 587,6 px** (pt) e **564,7 → 582,8 px** (en), dentro dos 664 nas duas | `A1.pt`, `A1.en`, `A11.pt`, `A11.en`, antes sobre o `dist/` de `bb0b4c39` e depois sobre o desta cabeça |
+| **P6** | as capturas de `/`, `/en/` e da página de uma área, a 390, 768, 1 024, 1 280 e 1 600, antes e depois | **40 capturas** (20 antes, 20 depois) em `design/especime-v3/capturas/porta-2026-09-15/` | `design/especime-v3/medicoes/porta-2026-09-15/capturas-porta.mjs --momento=antes\|depois`, com a rota de cada nome declarada no guião |
+| **P7** | `build`, `verify` e `typecheck` a 0, com os códigos lidos dos ficheiros | ver §7 | `npm run build > build.log 2>&1; echo $? > build.exit`, e o mesmo para `verify` e `typecheck` |
+| **P8** | plantas: a frase antiga de volta; uma etiqueta «a página inteira →» de volta; a gaveta visível com guião; um valor selado na linha de um domínio | as **quatro** plantas novas vermelhas, cada uma na sua célula, com o «html mudou» conferido | `node tests/inicio/porta.mjs --vermelhos`; ver §6 |
+
+**A régua da primeira página fecha em `40 de 40 células`** (eram 34 antes deste
+bloco: entram a A18, a A19 e a A20, nas duas edições, e a A5 muda de objecto).
+
+## 2 · Os cinco itens, o que ficou e onde
+
+### Item 1 · a frase de definição
+
+`identidade`, em `src/i18n/strings.mjs`, passa a **«Os números oficiais de
+Portugal, do país ao seu concelho, cada um com a fonte.»** e a **«Portugal’s
+official numbers, from the country to your municipality, each with its
+source.»** A plica inglesa é a curva (U+2019), que é a da edição inglesa em todo
+o ficheiro; o brief escreve-a direita porque é markdown.
+
+A regra da Emenda 18 não mudou: uma frase, por baixo da marca, na primeira página
+e em mais lado nenhum. A classe continua `navegacao` no inventário, e a razão é a
+de sempre: é o nome da publicação dito por extenso, e não o método.
+
+**Duas réguas seguem a cadeia e não a copiam:** a L4 de `scripts/check-lugar.mjs`
+lê `S[lang].identidade` do próprio ficheiro de cadeias, e por isso não precisou de
+uma linha; a sentinela do arame da classe por provar, em `scripts/check-voz.mjs`,
+é escrita à mão de propósito (é ela que prova que a leitura do corpo não se
+partiu) e muda com a frase, inteira.
+
+### Item 2 · as três portas
+
+`inicio.portas.abrir` («a página inteira» / «the whole page») sai, e entram
+`abrirConcelhos`, `abrirEstudos` e `abrirAgenda`. **São três cadeias e não uma com
+um buraco:** o nome de cada página entra com a preposição e o género que a sua
+língua lhe dá («Todos os concelhos», «Toda a agenda»), e um gabarito com um
+buraco escreveria «Todos os agenda».
+
+**Nenhuma das três entra no inventário das frases**, e não é esquecimento: o texto
+de cada uma vive todo dentro de um `<a>`, e um bloco assim não é uma frase da casa
+(`textoForaDeComandos`, em `scripts/medir-defeitos.mjs`). É a mesma razão pela qual
+«a página inteira» nunca lá esteve. A troca está registada em `CHAVES-EN.md`.
+
+### Item 3 · a gaveta dos nomes, e a etiqueta da busca
+
+**A gaveta sai da vista e não sai do documento.** `src/styles/inicio.css` tira a
+`.cabeca-nomes` da composição com a forma que a classe `.vh` da casa já usa em
+todo o sítio (`position: absolute`, 1 × 1 px, `clip: rect(0 0 0 0)`): a caixa não
+desloca nada e o recorte põe a zero o que dela se pinta, e o conteúdo continua na
+árvore de acessibilidade, com teclado e com nome.
+
+**E volta ao foco**, que é a outra metade da honestidade: `:focus-within` devolve
+a gaveta à composição assim que o `<summary>` ou um dos 29 nomes é focado, pela
+mesma razão que a ligação de salto da casa aparece ao ser focada. Um alvo
+alcançável pelo teclado e invisível quando recebe o foco é uma armadilha para quem
+navega sem rato. Medido: ao foco, a 390, a caixa volta a 354 × 575,4 px com os 29
+nomes e nenhum abaixo dos 44 px.
+
+**Sem guião não há nada disto.** `src/views/HomeView.astro` serve, dentro de um
+`<noscript>` do `<head>`, a regra que devolve a gaveta à composição. Três razões,
+todas escritas no código:
+
+* **é no `<head>`** porque um `<style>` é conteúdo de metadados e o único sítio
+  onde a norma o deixa viver dentro de um `<noscript>` é o `<head>`; no corpo os
+  navegadores aplicam-no na mesma, e isso seria a casa a servir um documento que
+  não é o que diz ser;
+* **é `<noscript>` e não um guião** porque um atributo escrito por um guião
+  bloqueante é mais uma linha em 7 000 páginas para uma decisão de uma só, e um
+  guião adiado chegava depois da primeira pintura, com a gaveta a aparecer e a
+  desaparecer à frente de quem lê;
+* **ganha por especificidade e não pela ordem** (`:root .cabeca-nomes`, 0-2-0,
+  contra 0-1-0): a ranhura nova do `<head>` fica ANTES do `<link>` da folha do
+  sítio no documento construído (conferido em `dist/index.html`), e uma regra que
+  dependesse da ordem perdia.
+
+A ranhura `cabeca` é nova em `src/layouts/Base.astro`, e existe para isto.
+
+**A etiqueta da busca** passa a «Escreva o nome do concelho, ou toque no mapa.» /
+«Type the name of a municipality, or tap the map.» **numa cadeia à parte**
+(`ambito.pesquisaRotuloMapa`), e a razão é que a frase tem de ser verdadeira onde
+se rende: `/municipios` e `/livro-razao/concelhos` rendem a mesma caixa de busca
+e não têm mapa nenhum. Essas duas ficam com `pesquisaRotulo`, sem uma palavra
+mudada.
+
+**As células que mediam a lista fechada passam a medir isto, com a decisão
+citada.** A `A5` de `tests/inicio/porta.mjs` media «a gaveta abre com um toque e
+leva as 29 com alvo de 44 px» e passa a medir os quatro factos da decisão nova; a
+`U1c` e a `U4` de `tests/inicio/mapa-unidades.mjs` mudam de nome e de exigência
+pela mesma decisão, e a U4 é o contexto sem guião, que é onde a outra metade da
+promessa se mede.
+
+### Item 4 · os nomes das medidas de cabeça
+
+Cada linha de um domínio vivo passa a levar, a seguir à contagem, os nomes das
+medidas de cabeça daquele domínio, sem valores. O rendido, nas duas edições:
+
+> 10 medidas: Dívida pública, Saldo das administrações públicas, Taxa de emprego,
+> Taxa de desemprego, Ganho médio mensal, e mais cinco
+
+> 10 measures: Government debt, General government balance, Employment rate,
+> Unemployment rate, Average monthly earnings, and five more
+
+**A LETRA INICIAL É A DA DECLARAÇÃO, E O BRIEF ESCREVE-A EM MINÚSCULA.** O
+exemplo do item 4 diz «10 medidas: dívida pública, saldo das administrações
+públicas, …», e o que se rende é «Dívida pública, Saldo das administrações
+públicas, …». A razão é a medida P4 do mesmo item: ela pede os nomes **iguais aos
+da faixa**, e a faixa rende `m.nome[lang]` tal como o ficheiro de dados o declara,
+com maiúscula. Pôr a primeira letra em minúscula seria editar o nome, e a marca
+`data-nome="medidas"` deixaria de bater: o portão da voz confere o texto marcado,
+carácter a carácter, contra `src/data/dominios.mjs`. **Fica como a declaração o
+escreve, e a decisão de o mudar é do lugar de direção.**
+
+**Os nomes vêm da declaração por uma porta só.** `faixaDoDominio()` nasce em
+`src/data/dominios.mjs` porque a mesma decisão estava escrita em dois sítios: um
+`faixaDeclaradaDo()` local em `HomeView.astro`, e o índice dos domínios precisava
+da mesma lista. Duas maneiras de decidir quais são as medidas de cabeça
+divergiriam ao primeiro domínio novo, que é a razão que o próprio
+`DominiosLista.astro` já escreve sobre a lista das linhas.
+
+**Cada nome diz de que linha é** (`data-de-linha`), que é a pergunta mais apertada
+das duas: «está neste ficheiro?» deixava passar cinco nomes certos pela ordem
+errada.
+
+**O brief nomeia `src/data/figuras.mjs` como a fonte dos nomes, e não pode ser.**
+Das cinco medidas de cabeça do domínio vivo, `figuras.mjs` só declara três
+(«Dívida pública», «Taxa de emprego», «Taxa de desemprego»); «Saldo das
+administrações públicas» e «Ganho médio mensal» são de `src/data/dominios.mjs`,
+que é o ficheiro onde as medidas de um domínio se declaram e onde a faixa as lê.
+Lê-se de `dominios.mjs`, que é o que a P4 exige. De `figuras.mjs` vem outra coisa,
+e essa vem: `numeralPorExtenso()`, que escreve o N do «e mais N».
+
+**«e mais N» é contado na construção** (as medidas do domínio menos os nomes
+mostrados) e escrito por extenso. Zero não rende «e mais» nenhum.
+
+### Item 5 · a marca da fonte
+
+A legenda era um aparelho com um título («Os dois estados do selo») e uma lista de
+dois itens. Passa a **uma linha em palavras**, com as duas amostras desenhadas no
+meio da frase, no lugar dos quadrados que a frase nomeia:
+
+> Ao pé de cada número, a marca da fonte: ■ fonte, excerto e data conferidos · ▢
+> um campo por confirmar.
+
+> Beside every number, the source mark: ■ source, excerpt and date checked · ▢ one
+> field still to confirm.
+
+**É um componente e não quatro cópias.** `src/components/LegendaDaMarca.astro`
+nasce porque a forma antiga estava escrita quatro vezes (nas páginas de área, no
+índice dos números e fontes, no índice das linhas de um concelho e na lista dos
+concelhos do livro-razão), e as quatro tinham de mudar juntas. É a mesma razão que
+`Gaveta.astro` escreve para si própria.
+
+**O título de aparelho saiu, e com ele o `aria-labelledby` que apontava para
+ele**: um `aria-labelledby` sem alvo não nomeia nada. Cada uma das três colunas
+fica um marco complementar sem nome, e a página tem um só (conferido nos três
+ficheiros construídos), pelo que quem percorre os marcos não tem dois iguais para
+desfazer. O axe fica a **0 nós em violação**.
+
+**A L3 conta «selo» a zero fora do Método**, e a contagem desceu de **640 para 0**
+(320 por edição). As oito formas («selo», «Selo», «selos», «Selos», «seal»,
+«Seal», «seals», «Seals») entram no vocabulário fechado de
+`scripts/check-lugar.mjs`. «estados do selo» não entra como entrada própria: contém
+«selo», `contaPalavra()` conta palavras inteiras, e declarar as duas faria a régua
+contar duas vezes a mesma ocorrência.
+
+**O Método fica fora da conta, e não em silêncio.** A medida P9 di-lo à letra («a
+zero nas páginas do leitor FORA do Método»), e a régua conta ali a palavra à
+parte, com um **chão** exigido de uma ocorrência por edição: é o positivo
+conhecido da medida, sem o qual o zero das outras rotas tem duas explicações (a
+palavra saiu, ou a leitura do texto da casa partiu-se), e só uma é boa. Hoje o
+Método diz **12** (seis por edição).
+
+**As duas frases da página do marcador mudaram de palavras**, porque o item 5 diz
+«em toda a prosa que o leitor vê»: «o selo dessa linha desenha-se a tracejado»
+passa a «a marca da fonte dessa linha desenha-se a tracejado», e «o selo passa a
+cheio» a «a marca passa a cheia». `/a-verificar` não é rota do inventário das
+frases (`ROTAS_DO_INVENTARIO`), e por isso as duas não têm linha lá; a L3 mede-as
+na mesma, porque essa régua lê todas as páginas de `dist/`.
+
+**A dispensa do marcador da voz muda de raiz com as palavras.** A antiga
+(«complet», sobre «proveniência completa») sai, e entra uma («confer», sobre
+«excerto e data conferidos») com a mesma razão e nas mesmas quatro rotas: é o nome
+de um estado de três campos de uma linha, e não a casa a falar da sua diligência.
+Uma exceção que já não é precisa é uma porta aberta esquecida. **A edição inglesa
+não precisa de dispensa**: «source, excerpt and date checked» não leva nenhuma das
+raízes da lista.
+
+## 3 · O que o bloco NÃO fez, e é do lugar de direção
+
+**A regra 5 do Método continua a chamar-lhe «O selo», e a constituição também.**
+O item 5 escreve que a marca passa a chamar-se «a marca da fonte» em toda a prosa
+que o leitor vê, e dá ao Método o direito de dizer uma vez «a marca da fonte, o
+selo no vocabulário da casa». O construtor escreveu essa passagem e **desfê-la**,
+porque o portão a recusou com duas razões que são de quem dirige e não de quem
+constrói:
+
+```
+✗ "metodo": o texto mudou depois da última decisão que o governa.
+    §1.106 carimba 92b0fbdbc5fb
+    src/data/metodo.mjs está hoje em 9188ecfef683
+✗ IDENTIDADE.md cita, como sendo do "metodo":
+    «Ao lado de cada medição há um selo que abre a sua linha: cheio quando a
+     origem está completa, a tracejado quando falta um campo.»
+    e essa frase não existe em src/data/metodo.mjs.
+```
+
+A passagem pede uma entrada nova na `DECISIONS.md` e uma emenda à `IDENTIDADE.md`
+§5, que se chama «O selo de proveniência». Nenhuma das duas é deste bloco: o
+construtor não toca na `DECISIONS.md`. Enquanto ela não se fizer, o sítio tem dois
+nomes para a mesma coisa em dois lugares diferentes, «a marca da fonte» nas
+páginas do leitor e «o selo» no Método, e a régua mede-o (o chão do positivo
+conhecido é 1 por edição e o valor é 6).
+
+## 4 · As cadeias, e o que elas custaram ao inventário
+
+**Chaves novas** (as razões por extenso estão em `design/especime-v3/CHAVES-EN.md`,
+com o inglês ao lado do português):
+
+| chave | pt | en |
+|---|---|---|
+| `inicio.portas.abrirConcelhos` · `abrirEstudos` · `abrirAgenda` | Todos os concelhos · Todos os estudos · Toda a agenda | All municipalities · All studies · The whole agenda |
+| `ambito.pesquisaRotuloMapa` | Escreva o nome do concelho, ou toque no mapa. | Type the name of a municipality, or tap the map. |
+| `dominios.medidasDoisPontos` · `medidasSeparador` · `eMaisA` · `eMaisB` | `: ` · `, ` · `, e mais ` · *(vazio)* | `: ` · `, ` · `, and ` · ` more` |
+| `livro.marcaAbre` · `marcaCheia` · `marcaPorConfirmar` | Ao pé de cada número, a marca da fonte: · fonte, excerto e data conferidos · um campo por confirmar. | Beside every number, the source mark: · source, excerpt and date checked · one field still to confirm. |
+
+**Chaves mudadas de texto:** `identidade`, `marcador.linhaItens[0]` e
+`marcador.voltaV`, nas duas edições.
+
+**Chaves que saíram do uso, quatro:** `inicio.portas.abrir`, `livro.seloK`,
+`livro.seloCheio` e `livro.seloTracejado`.
+
+**O inventário das frases: dezoito linhas, no bloco `palavras-da-porta`.**
+
+* **Oito novas**, todas `viva`: a frase de definição nas duas edições, o rótulo da
+  busca da primeira página nas duas, a linha do domínio nas duas e a linha da
+  legenda da marca nas duas.
+* **Sete passadas a `retirada`**, com a razão escrita em cada: a frase de
+  definição antiga (duas), «Os dois estados do selo» e «The two states of the
+  seal», «proveniência completa» e «provenance complete», e «one field
+  unconfirmed».
+* **Três saíram do ficheiro**, o que neste registo é raro: «medidas», «measures» e
+  «um campo por confirmar». Os blocos que elas nomeavam deixaram de existir, e as
+  três ficavam num estado impossível: a régua casa uma linha `retirada` por
+  CONTENÇÃO («medidas» está dentro de «As medidas», o título de secção; «um campo
+  por confirmar» é a cauda da linha nova da legenda) e uma linha `viva` por
+  IGUALDADE. O portão da voz diz o que se faz nesse caso, e é a primeira das duas
+  coisas que ele nomeia: «a linha sai do ficheiro, ou passa a "retirada" com a
+  razão escrita.»
+
+O portão da voz fecha em **1 008 linhas com bloco (780 vivas, todas rendidas; 228
+retiradas, nenhuma rendida)**, contra 1 003 (782 vivas, 221 retiradas) na árvore
+de partida. A linha da legenda rende-se em **319 rotas por edição**: as nove
+páginas de área, o índice dos números e fontes, a lista dos concelhos do
+livro-razão e as 308 páginas de linhas de um concelho.
+
+O bloco tem entrada em `design/especime-v3/critica/REVISOES-DO-INVENTARIO.md`,
+como a regra exige, e a coluna da leitura diz **«por ler»**: a leitura cruzada do
+diff é de outra família e faz-se antes da fusão.
+
+## 5 · O que a página ganhou e perdeu em altura, medido
+
+A 390 px, `/` passou de **2 753** para **2 787 px** e `/en` de **2 758** para
+**2 793 px**. A decomposição, medida bloco a bloco nas duas construções:
+
+| bloco | antes | depois | o que ocupa na coluna |
+|---|---|---|---|
+| a gaveta dos nomes | 45 px, `static` | 1 px, `absolute` | **−45 px** (e mais os 12 px de `gap` que a coluna `.inicio` lhe dava, medidos em `getComputedStyle`) |
+| o bloco da busca | 66,2 px | 84,4 px | **+18,2 px**, porque o rótulo passou de 18,2 px (uma linha) a 36,4 px (duas) |
+| o índice dos domínios | 262,4 px | 335,6 px | **+73,2 px**, que são os nomes das medidas de cabeça |
+
+−45 −12 +18,2 +73,2 = **+34,4 px**, e a página mediu **+34**. As mesmas três
+caixas dão os mesmos números nas duas edições.
+
+**O primeiro ecrã continua a ter tudo.** A cabeça e a manchete não mudaram um
+píxel; o que desceu 18,2 px foi a pilha abaixo delas, e o fundo da coisa mais
+funda ficou a 587,6 px (pt) e a 582,8 px (en) dos 664 disponíveis.
+
+## 6 · Os estragos plantados
+
+`node tests/inicio/porta.mjs --vermelhos` corre **20 plantas** (16 do ramo
+anterior, quatro novas). **As quatro novas são as que a medida P8 escreve, e as
+quatro ficaram vermelhas:**
+
+| planta | célula que derruba | verde antes | html mudou | vermelho depois |
+|---|---|---|---|---|
+| a frase de definição antiga de volta, ao lado da nova | `A18.pt`, `A18.en` | sim | sim | sim |
+| uma etiqueta «a página inteira →» de volta, na porta dos estudos | `A19.pt`, `A19.en` | sim | sim | sim |
+| a gaveta dos nomes visível com guião | `A5.pt`, `A5.en` | sim | sim | sim |
+| um valor selado na linha de um domínio | `A20.pt`, `A20.en` | sim | sim | sim |
+
+A primeira repõe a frase antiga **ao lado da nova** e não no lugar dela, de
+propósito: a substituição derrubava a célula pela metade fácil (a nova a zero), e
+esta é a difícil, a que prova que a contagem da antiga serve para alguma coisa. A
+terceira desfaz a **folha** e não o HTML, porque o que o item 3 decide é uma regra
+de folha.
+
+**Seis plantas anteriores a este ramo falham a sua própria conferência, e nenhuma
+é deste bloco.** Estão em §8.
+
+## 7 · Os três portões, os commits e a corrida
+
+Os três comandos correram **cada um no seu**, separados por `;`, com o código de
+saída escrito num ficheiro e lido de lá, e não da memória de quem construiu:
+
+```
+npm run build     > build.log 2>&1;     echo $? > build.exit      → 0
+npm run verify    > verify.log 2>&1;    echo $? > verify.exit     → 0
+npm run typecheck > typecheck.log 2>&1; echo $? > typecheck.exit  → 0
+```
+
+Correram sobre a árvore de `3eccb39e`, que é a cabeça do ramo antes do commit
+deste relatório; entre a corrida e o commit não se tocou num ficheiro do
+repositório. O `dist/` que ficou
+na worktree é o desta construção. **A corrida `portão` do GitHub corre os três
+outra vez, num anfitrião limpo e sem o `node_modules` nem o `dist/` de ninguém,
+sobre a cabeça final do ramo**, e é ela que responde pelo que se empurra.
+
+### Os commits
+
+* `3fbbd510` · O brief do bloco entra no repositório
+* `c802e194` · A frase diz o que o sítio é, as portas dizem o destino, a busca nomeia os dois caminhos
+* `8d927906` · A gaveta dos nomes sai da vista onde o mapa responde, e volta sem guião
+* `b680e5f2` · O índice dos domínios diz o que são as dez medidas
+* `f2e644e2` · A legenda dos dois estados do selo passa a uma linha, e a marca chama-se a marca da fonte
+* `688422ce` · As réguas medem o que a decisão nova promete, e quatro estragos novos derrubam-nas
+* `a884f4aa` · O inventário das frases e o registo das revisões
+* `3eccb39e` · O relatório, as vinte capturas e o guião que as tirou
+* o commit deste relatório, que é a cabeça final do ramo e acrescenta só este
+  ficheiro de markdown.
+
+### A corrida
+
+A corrida `portão` do GitHub sobre a cabeça deste ramo, verde, corre os três
+comandos num anfitrião limpo. O número dela vai na resposta que o construtor
+entrega ao lugar de direção, com a cabeça final: o ramo empurra-se uma vez, com
+este relatório dentro, e a corrida que responde por ele é a dessa cabeça. **Não
+se funde em `main`**: a fusão é do lugar de direção, depois das capturas irem ao
+diretor, que é o que a regra nova do §0 do brief manda.
+
+## 8 · O que se achou fora do bloco
+
+**Tudo o que se segue é anterior a este ramo**, e foi achado a correr as réguas
+sobre o `dist/` desta cabeça. Três correcções entraram, com a medição ao lado;
+as outras são decisões, e por isso ficam aqui escritas em vez de emendadas.
+
+### 8.1 · O nome da marca no Método, e na constituição
+
+Está em §3, e repete-se aqui porque é a única coisa deste bloco que fica a meio:
+o item 5 manda a marca chamar-se «a marca da fonte» em toda a prosa que o leitor
+vê, e a regra 5 do Método continua a chamar-lhe «O selo». O texto é governado
+(`DECISIONS.md` §1.106 carimba o sha256 de `src/data/metodo.mjs`) e a
+`IDENTIDADE.md` §5, que se chama «O selo de proveniência», cita-o palavra por
+palavra. **O que falta é uma entrada na `DECISIONS.md` e uma emenda à
+constituição**, e as duas são do diretor e do lugar de direção.
+
+### 8.2 · Seis das vinte plantas de `tests/inicio/porta.mjs` falham a sua própria conferência
+
+Nenhuma é deste bloco. Três são a mesma coisa, e **entraram corrigidas neste
+ramo**: as plantas da A3, da A4 e da A13 tinham as rotas por declarar, e por isso
+a conferência do «html mudou» lia `dist/index.html` e `dist/en/index.html`. Os
+alvos das três mudaram-se para «Portugal na União Europeia» com o item 8.16 do
+F1.10 (08.09.2026): `<div class="dobras"`, `data-contexto-painel` e
+`href="#m-divida-publica-2025"` existem **0 vezes** em `dist/index.html` e **1
+vez** em `dist/uniao-europeia/index.html` (conferido nos dois ficheiros). O
+estrago funcionava (o servidor da régua aplica-o a tudo o que serve, e as células
+ficavam vermelhas), e o que estava partido era o guarda contra um `replace` que
+falha em silêncio. Com as rotas declaradas, a mesma função muda o html **1 de 2** e
+**2 de 2** rotas (a primeira só toca na edição portuguesa, de propósito).
+
+As outras três ficam, e são decisões:
+
+* **«a mobília do menu em duas filas» (A11)** · o html muda e a célula fica
+  **verde**. É a mais séria das três, porque a A11 é uma das duas células que a
+  medida P5 deste brief nomeia: o verde dela vale menos do que parece. O que este
+  relatório escreve sobre a P5 não depende da planta: são as leituras da A11
+  antes e depois, 62 px e 62 px em português, 95,2 px e 95,2 px em inglês, e uma
+  comparação direta entre duas construções.
+* **«os estudos a mais de 1,5 ecrãs» (A15)** · o html muda e a célula fica verde.
+* **«a faixa de uma região a dizer "de 21"» (A17)** · o html não muda.
+
+### 8.3 · `tests/inicio/lista.mjs` · 92 de 94, e as duas vermelhas são de outro bloco
+
+`L8·pt` e `L8·en` medem `#painel [data-leituras="pdm"]` e `#painel-social` na
+primeira página, e os dois painéis mudaram-se para «Portugal na União Europeia»
+com o item 8.16 do F1.10. A régua conta **0 peças** e imprime **`undefined`**, que
+é uma régua a apontar para onde já não há nada.
+
+**As outras 92 estão verdes**, e três delas só o estão porque a régua mudou com a
+decisão: a `pagina(…, abrir)` desta régua devolve agora a gaveta à composição com
+a MESMA regra que o sítio serve dentro do `<noscript>` do `<head>`, antes de a
+abrir. A primeira redação deste bloco usava o foco, e a leitura mostrou porque não
+serve: as células L6 e L7 chamam `repousa()` entre cada par, `repousa()` faz
+`blur()`, e o `blur` fechava a gaveta outra vez, e as 29 medições do rato davam
+«rato false». Uma régua que dependesse do foco media o foco e não a rede.
+
+### 8.4 · `tests/inicio/faixa.mjs` · 58 de 80, e as 22 vermelhas são de dois blocos anteriores
+
+* **F1 (2) e F12 (4)** · comparam os cartões da faixa com as leituras da página,
+  e as leituras mudaram-se para «Portugal na União Europeia» com o item 8.16.
+* **F10a (14) e F10b (2)** · exigem a gaveta dos nomes **aberta** à chegada, e ela
+  chega **fechada** desde o F1.1d e o F1.1e (07 e 08.09.2026), que desfizeram o
+  item 4 do F1.1 com a razão escrita nos seus briefs.
+
+**A F10a ficou com um número enganador por causa deste bloco**, e leva agora a
+nota a dizê-lo no próprio ficheiro: o «alvo mais pequeno» que ela imprime é o do
+`<summary>` dentro da caixa de 1 px recortada, e por isso diz 1,0 px. O que a
+decisão de hoje promete está medido por inteiro na `A5` (com guião) e na `U4` (sem
+guião), e reescrever a F10a seria uma terceira definição da mesma coisa. **O que
+ela precisa é de uma decisão sobre o que lhe fica a pertencer.**
+
+### 8.5 · A ORDEM DAS FOLHAS MUDOU EM 18 PÁGINAS, e o bloco não a mandou mudar
+
+**É a única coisa que este bloco mexeu sem a decidir, e está medida ao píxel.**
+Nas nove páginas de área, nas duas edições, a ordem das duas folhas ligadas
+trocou:
+
+```
+antes:  linha.css → Base.css        depois:  Base.css → linha.css
+```
+
+A conta é exacta: **18 de 7 240 páginas** mudaram de ordem, e todas são as
+páginas de área; nenhuma outra família mudou.
+
+**O que isso muda na página.** `.livro-item` tem `grid-template-columns` nas duas
+folhas, com a mesma especificidade: `minmax(0, 9ch)` em `site.css` e
+`minmax(0, 22ch)` em `linha.css`. Com a mesma especificidade ganha a última
+folha, e por isso a coluna do valor de uma medida passou de **72 px** para
+**176 px** a 1 280, o selo deixou de cair por baixo do valor e passa a ficar ao
+lado dele, e a linha encolheu de 127,5 px para 124,6 px. Vê-se nas capturas
+`area-*-antes.png` e `area-*-depois.png`.
+
+**A causa é o empacotador e não uma regra escrita.** O componente novo da legenda
+é importado por quatro vistas, e um módulo partilhado muda a ordem dos pedaços de
+CSS que a Astro emite. Não há uma linha de folha a dizer quem ganha.
+
+**O estado ANTERIOR já era inconsistente, e é esse o achado.** Na árvore de
+partida a mesma lista compunha-se de duas maneiras conforme a página: `linha.css`
+ganhava em `/livro-razao` e em `/livro-razao/concelhos` (Base → linha) e PERDIA
+nas páginas de área (linha → Base). Depois deste bloco, as páginas de área passam
+a compor-se como o índice dos números e fontes, que é a ordem que a regra de
+`linha.css` claramente espera (ela existe para emendar a de `site.css`). A
+página `/livro-razao/concelhos/<slug>` continua na ordem contrária, e é a que
+sobra.
+
+**Não se desfez, e a razão escreve-se:** a ordem não é escrita em lado nenhum,
+é emergente do grafo de módulos, e lutar com ela seria pôr uma dependência
+invisível a decidir a composição de 18 páginas. **A decisão é do lugar de
+direção**, e as duas saídas honestas são a mesma: ou as duas regras deixam de
+competir (uma delas ganha uma especificidade que diga porquê), ou uma célula nova
+mede a ordem das folhas em cada página, como a C1 do `check:css` mede se a regra
+chega à página. Hoje nenhuma das duas existe, e por isso a composição de uma
+página depende de uma coisa que ninguém declarou.
+
+### 8.6 · As duas réguas que fecham verdes
+
+`tests/inicio/mapa-unidades.mjs` · **34 de 34**.
+`tests/inicio/leitura.mjs` · **26 de 26** (inclui a J5, que mede o índice dos
+domínios e o zero de valores selados lá dentro).
+
+### 8.7 · Ficheiros tocados fora da lista do §3 do brief, cada um com a razão
+
+| ficheiro | porquê |
+|---|---|
+| `src/data/dominios.mjs` | `faixaDoDominio()`, a porta única da lista das medidas de cabeça. O brief nomeia `figuras.mjs` como a fonte dos nomes, e ela não os tem todos (ver §2, item 4) |
+| `src/layouts/Base.astro` | a ranhura `cabeca` do `<head>`, que é o único sítio onde a norma deixa um `<style>` viver dentro de um `<noscript>` |
+| `src/components/LegendaDaMarca.astro` (novo) e as quatro vistas que o rendem | o item 5 mexe numa legenda que estava escrita quatro vezes |
+| `src/styles/site.css` | as regras da legenda antiga saem com ela |
+| `scripts/design-bundle.mjs` | o cartão «Selo e marcador» do feixe lia `ul.aparelho-selos` de `dist/livro-razao/index.html`, e o `verify` fechou com «não encontrei». Passa a ler a forma nova, do mesmo sítio |
+| `design/especime-v3/VOZ-MARCADORES.md` | a dispensa do marcador da voz muda de raiz com as palavras da legenda |
+
+---
+
+# ↓ O relatório do bloco anterior que escreveu neste caminho (F1.1, 03.09.2026)
+
+*O ramo do F1.1 também se chamava `porta-*`, e o brief dele mandou escrever o
+relatório neste ficheiro. A `DECISIONS.md` (a entrada do F1.1) e o
+`critica/REVISOES-DO-INVENTARIO.md` (a linha do bloco `porta`) nomeiam este
+caminho, e por isso o relatório do F1.1 fica onde está, inteiro, por baixo do
+que o F1.13 escreveu. Tudo o que vem a seguir é de 03.09.2026 e fala da porta
+da frente, não das palavras dela.*
+
 # F1.1 · a porta da frente · relatório do construtor
 
 *Ramo `porta-2026-09-03`, tirado de `origin/main` em `d8b14a88`. Construtor Claude
