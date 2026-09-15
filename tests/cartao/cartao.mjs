@@ -134,7 +134,7 @@ const PALAVRA_RETIRADA = { pt: 'limiar', en: 'threshold' };
  *
  * O que só um leitor de ecrã ouve não é texto à vista, e esta régua mede o que
  * se vê: a classe `vh` é a da casa para isso e `aria-hidden` é o contrário. A
- * distinção não é decorativa aqui — a marca da fonte leva o nome do publicador
+ * distinção não é decorativa aqui: a marca da fonte leva o nome do publicador
  * num `.vh` (`<span class="vh"> · <span lang="en">Eurostat</span></span>`), e
  * sem esta poda a K4 acusava «Eurostat» como inglês à vista em cada cartão
  * português. O nome de um organismo estrangeiro dito a um leitor de ecrã, com a

@@ -161,7 +161,13 @@ let _referencias;
 /** @type {Map<string, any>|null|undefined} */
 let _nomes;
 
-/** @param {string} nome @param {Map<string, any>|null|undefined} cache */
+/**
+ * Os indicadores de um ficheiro do motor, por identificador de linha, ou `null`
+ * quando o ficheiro ainda não chegou.
+ *
+ * @param {string} nome
+ * @returns {Map<string, any>|null}
+ */
 function porLinha(nome) {
   const j = ficheiroDoMotor(nome);
   if (j === null) return null;
