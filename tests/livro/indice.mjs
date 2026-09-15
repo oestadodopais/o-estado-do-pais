@@ -1323,11 +1323,15 @@ async function comNavegador() {
      */
     const medeOsVaos = () => {
       const ALVO = '.dominios-estado, .mapa-nome-repouso';
-      /* As contagens são os números que a página rende nestas caixas, com marca
-         de prova ou com o motivo declarado da numeração de uma lista rendida: as
-         duas famílias são números do sítio sobre si próprio, e as duas são
-         seguidas de uma palavra. */
-      const MARCA = '[data-prova], [data-nonledger="numeracao"]';
+      /* As contagens são os números que a página rende nestas caixas, sejam eles
+         do livro-razão (`data-claim`), uma chave da prova (`data-prova`) ou a
+         numeração de uma lista rendida (`data-nonledger`). As três famílias são
+         números seguidos de uma palavra, e o defeito que esta célula mede é da
+         RENDIÇÃO e não da origem do número: com o acerto 4 do P1 a contagem dos
+         concelhos passou de uma chave da prova para uma linha do livro-razão, e
+         uma peneira que só visse as outras duas deixava de medir «308
+         concelhos» sem dizer nada. */
+      const MARCA = '[data-claim], [data-prova], [data-nonledger="numeracao"]';
       const contagens = [...document.querySelectorAll(ALVO)].reduce(
         (n, c) => n + c.querySelectorAll(MARCA).length,
         0,
