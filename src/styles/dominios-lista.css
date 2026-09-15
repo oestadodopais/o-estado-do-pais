@@ -53,12 +53,10 @@
   font-size: 14px;
   color: var(--muted);
 }
-/* O ESTADO «SEM» NÃO CHEGA A ESTA LISTA, e a regra fica com o aviso escrito:
+/* A REGRA DO ESTADO «SEM» SAIU AQUI (decisão do lugar de direção, 15.09.2026).
+   Era `.dominios-item[data-dominio-estado='sem'] .dominios-nome`, e não casava
+   com nada no sítio construído por duas razões ao mesmo tempo:
    `data-dominio-estado` é atributo do `<span>` do estado e não do `<li>`, e
-   desde o §9.1 (08.09.2026) a lista só tem domínios com página, que nunca estão
-   em «sem». O seletor não casa com nada no sítio construído. Fica como estava
-   para que a mudança de 15.09 seja uma mudança de sítio e não de regras; quem
-   decidir apagá-lo é o lugar de direção. */
-.dominios-item[data-dominio-estado='sem'] .dominios-nome {
-  color: var(--muted);
-}
+   desde o §9.1 (08.09.2026) esta lista só tem domínios com página, que nunca
+   estão em «sem». Uma regra que nunca morde diz a quem a lê que há um terceiro
+   aspeto nesta lista, e não há. */

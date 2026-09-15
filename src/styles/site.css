@@ -5147,6 +5147,15 @@ a.marcador::after {
   display: flex;
   gap: 8px;
   align-items: stretch;
+  /* O TETO DA LINHA (decisão do lugar de direção, 15.09.2026, sobre a medição
+     da manhã). Com a caixa a ocupar a largura da coluna, `/municipios` a 1 280
+     dava um campo de 972,5 px: o campo a encher a linha é a decisão, uma caixa
+     de busca do tamanho de uma página não é. A linha para nas 36rem e o campo
+     continua a encher o que ela tem, e a encolher com ela abaixo do teto.
+     Fica alinhada à esquerda sem uma declaração para isso: um item de coluna
+     flexível que o `max-width` trava encosta ao princípio do eixo, que é onde
+     começa o resto da coluna. */
+  max-width: 36rem;
 }
 .busca-linha .busca-campo {
   flex: 1 1 auto;
