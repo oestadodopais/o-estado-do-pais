@@ -1,0 +1,56 @@
+---
+/**
+ * A LEGENDA DA MARCA DA FONTE, UMA VEZ SÓ.
+ *
+ * ---------------------------------------------------------------------------
+ * PORQUE EXISTE (bloco F1.13, item 5, 15.09.2026)
+ * ---------------------------------------------------------------------------
+ * O diretor leu a página de uma área a 15.09.2026 de manhã e mediu a legenda que
+ * lá estava: um título de aparelho, «Os dois estados do selo», e por baixo uma
+ * lista de dois itens com o quadrado de cada estado e o nome dele. Duas coisas
+ * erradas ao mesmo tempo: «estados» chama o nome do sítio para dentro de uma
+ * legenda, e «selo», para quem lê e não trabalha aqui, é um selo de correio.
+ *
+ * A marca passa a chamar-se «a marca da fonte», e a legenda passa a UMA LINHA
+ * que diz onde ela está e o que cada uma das duas formas quer dizer, com as duas
+ * amostras desenhadas no meio da frase, no lugar dos quadrados que a frase
+ * nomeia. É o que a legenda de um mapa faz: a marca ao lado do que significa.
+ *
+ * ---------------------------------------------------------------------------
+ * E É UM COMPONENTE, E NÃO QUATRO CÓPIAS
+ * ---------------------------------------------------------------------------
+ * A forma antiga estava escrita quatro vezes (nas páginas de área, no índice
+ * dos números e fontes, no índice das linhas de um concelho e na lista dos
+ * concelhos do livro-razão), e as quatro tinham de mudar juntas. É a mesma
+ * razão que `Gaveta.astro` escreve para si própria: «uma forma escrita duas
+ * vezes divergiria à segunda mudança, e por isso é um componente.» Quem a quiser
+ * numa página nova não tem de se lembrar de copiar marcação nenhuma.
+ *
+ * ---------------------------------------------------------------------------
+ * AS DUAS AMOSTRAS NÃO LEVAM TEXTO, E É DE PROPÓSITO
+ * ---------------------------------------------------------------------------
+ * `aria-hidden`, e o quadrado vem do `::before` da folha. Quem ouve a página
+ * ouve a frase inteira sem dois «imagem» pelo meio, e a frase continua a ser
+ * verdadeira: ela diz o que cada forma quer dizer, e quem não vê a forma lê a
+ * ordem das duas («conferidos», depois «por confirmar»), que é a mesma ordem em
+ * que a página do marcador as explica.
+ *
+ * OS ESPAÇOS SÃO NÓS DE TEXTO E NÃO `gap` DA FOLHA (a C2 de `check:css`, e a
+ * lição da fatia dos domínios de 15.09.2026): um espaço que só o desenho dá é um
+ * espaço que um leitor de ecrã, um motor de busca e uma citação copiada nunca
+ * tiveram.
+ */
+const { s } = Astro.props;
+if (!s?.livro?.marcaAbre) {
+  throw new Error('<LegendaDaMarca> precisa das cadeias de `livro.marca*`: uma legenda sem palavras não é uma legenda.');
+}
+---
+
+<p class="marca-legenda">
+  {s.livro.marcaAbre}{' '}
+  <span class="src-chip src-chip-amostra" aria-hidden="true"></span>{' '}
+  {s.livro.marcaCheia}
+  {' · '}
+  <span class="src-chip src-chip-amostra is-unverified" aria-hidden="true"></span>{' '}
+  {s.livro.marcaPorConfirmar}
+</p>
