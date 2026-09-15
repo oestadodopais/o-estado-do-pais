@@ -717,3 +717,132 @@ export function ressalvaDaLinha(id) {
   const m = MEDIDAS_DO_DOMINIO_1.find((x) => x.claim === id && x.ressalva);
   return m && m.ressalva ? m.ressalva : null;
 }
+
+/**
+ * ===========================================================================
+ * A QUE DOMÍNIO PERTENCE CADA MEDIDA QUE O SÍTIO JÁ PUBLICA (P1, item 6)
+ * ===========================================================================
+ * *15.09.2026, brief P1, item 6.* A secção dos domínios da primeira página
+ * passa a ser o índice dos DEZOITO domínios da carta, e cada linha diz quantas
+ * medidas o sítio já publica dentro do seu. Para haver essa contagem é preciso
+ * dizer, medida a medida, a que domínio ela pertence: é isto.
+ *
+ * ---------------------------------------------------------------------------
+ * NADA NOVO EM LARGURA
+ * ---------------------------------------------------------------------------
+ * Esta tabela **não declara uma medida nem uma linha do livro-razão**: é um
+ * índice sobre o que já existe. As medidas que o código declara são, hoje, de
+ * três origens, e a lista abaixo cobre-as todas:
+ *
+ *   · as dez de `MEDIDAS_DO_DOMINIO_1` (E1 a E5 e T1 a T5), que a página do
+ *     domínio 1 rende;
+ *   · as vinte e uma dos dois quadros da União (`FIGURAS_PDM` e
+ *     `FIGURAS_SOCIAL`), que «Portugal na União Europeia» rende;
+ *   · as que as páginas de área rendem como medida e que pertencem aos dois
+ *     estudos da casa, `quadro-institucional` e `dominios-2026`.
+ *
+ * As três listas cruzam-se (a dívida pública é E3, é do painel do Procedimento e
+ * é da área das Finanças), e por isso a chave desta tabela é o **identificador
+ * da linha**: uma medida é uma linha, e a mesma linha conta uma vez.
+ *
+ * O SEGUNDO IDENTIFICADOR DE UMA MEDIDA NÃO ENTRA. T5 publica dois números para
+ * a mesma pergunta (o diploma do continente e a série do Eurostat em doze
+ * meses), declarados em `claims`: são dois números da mesma medida, e contá-los
+ * duas vezes dizia que o sítio publica duas medidas de salário mínimo.
+ *
+ * ---------------------------------------------------------------------------
+ * DE ONDE VEM CADA ATRIBUIÇÃO, E ONDE ELA SE CONFERE
+ * ---------------------------------------------------------------------------
+ * **Da carta dos conteúdos**, §2 (a coluna «o que a casa já publica dentro
+ * dele») e §3 (as tabelas de cada domínio e as notas «Já publicadas e que ficam
+ * neste domínio»). Não há aqui uma leitura nova: há a carta transcrita para uma
+ * tabela que o código consegue contar.
+ *
+ * **DUAS CONTRADIÇÕES DA CARTA, DITAS E NÃO ESCONDIDAS:**
+ *
+ *   1. o CUSTO UNITÁRIO DO TRABALHO está na coluna do domínio 1 no §2 («a taxa
+ *      de câmbio efetiva real, o custo unitário do trabalho, o desempenho das
+ *      exportações … (o Procedimento dos Desequilíbrios)») e na nota de fecho do
+ *      domínio 2 no §3 («Já publicadas e que ficam neste domínio: … o custo
+ *      unitário do trabalho»). O brief manda ler o §2, e é o §2 que vale: fica
+ *      no domínio 1. Fica para o lugar de direção emendar a carta de um dos dois
+ *      lados;
+ *   2. as COMPETÊNCIAS DIGITAIS estão no §2 do domínio 7 e no §3 do domínio 11
+ *      («que competências digitais tem a população (já no sítio)»). Aqui o §3 do
+ *      domínio 7 desempata, e desempata com a fórmula que a carta usa para isso:
+ *      «Já publicadas e que ficam neste domínio: as competências digitais e as
+ *      crianças em creche». Ficam na Educação.
+ *
+ * **DUAS LINHAS DO `quadro-institucional` NÃO ESTÃO AQUI**, e a razão é a regra
+ * e não um esquecimento: `credito-malparado-2025` e
+ * `indice-de-percepcao-da-corrupcao-2025` existem no livro-razão e **não são
+ * declaradas como medida em lado nenhum** — não estão nos dois quadros da União,
+ * não estão em `MEDIDAS_DO_DOMINIO_1`, e nenhuma matéria de área as cobre (as
+ * duas estão em `SEM_AREA`, com o motivo escrito). A única página do leitor que
+ * as rende é a da própria linha. Contá-las era contar uma medida que o sítio não
+ * publica em página nenhuma, e a porta do domínio não teria para onde abrir. A
+ * carta espera as duas (o §2 do domínio 17 nomeia o índice de perceção da
+ * corrupção), e fica para o lugar de direção decidir se as declara.
+ *
+ * O GUARDA ESTÁ EM `src/lib/dominios.mjs`: uma medida declarada que não esteja
+ * nesta tabela fecha a construção. Uma tabela que ficasse para trás de uma
+ * medida nova contaria menos e não diria nada.
+ *
+ * @type {Readonly<Record<string, string>>}
+ */
+export const DOMINIO_DAS_MEDIDAS = /** @type {const} */ ({
+  /* 1 · Economia e finanças públicas (carta §2 e §3, domínio 1). */
+  'pib-real-per-capita-2025': 'economia-e-financas-publicas',
+  'saldo-das-administracoes-publicas-2025': 'economia-e-financas-publicas',
+  'divida-publica-2025': 'economia-e-financas-publicas',
+  'crescimento-da-despesa-liquida-2025': 'economia-e-financas-publicas',
+  'indice-de-divida-limite-legal': 'economia-e-financas-publicas',
+  'saldo-da-balanca-corrente-2025': 'economia-e-financas-publicas',
+  'posicao-de-investimento-internacional-2025': 'economia-e-financas-publicas',
+  'taxa-de-cambio-efectiva-real-2025': 'economia-e-financas-publicas',
+  'custo-unitario-do-trabalho-2025': 'economia-e-financas-publicas',
+  'desempenho-das-exportacoes-2025': 'economia-e-financas-publicas',
+  /* «o crédito e a dívida privados (o Procedimento dos Desequilíbrios)». */
+  'divida-das-empresas-2025': 'economia-e-financas-publicas',
+  'divida-das-familias-2025': 'economia-e-financas-publicas',
+  'fluxo-de-credito-as-empresas-2025': 'economia-e-financas-publicas',
+  'fluxo-de-credito-as-familias-2025': 'economia-e-financas-publicas',
+
+  /* 2 · Trabalho (carta §2 e §3, domínio 2). */
+  'taxa-de-emprego-2025': 'trabalho',
+  'taxa-de-desemprego-2025': 'trabalho',
+  'taxa-de-desemprego-mip-2025': 'trabalho',
+  'ganho-medio-mensal-2024': 'trabalho',
+  'disparidade-salarial-entre-sexos-2024': 'trabalho',
+  'retribuicao-minima-mensal-garantida-continente-2026': 'trabalho',
+  'desemprego-de-longa-duracao-2025': 'trabalho',
+  'jovens-nem-2025': 'trabalho',
+  'disparidade-de-emprego-entre-sexos-2025': 'trabalho',
+  'taxa-de-actividade-2025': 'trabalho',
+
+  /* 5 · Segurança social e pensões (carta §2 e a nota de fecho do §3). */
+  'risco-de-pobreza-ou-exclusao-2025': 'seguranca-social-e-pensoes',
+  'racio-s80-s20-2025': 'seguranca-social-e-pensoes',
+
+  /* 7 · Educação (carta §2 e a nota de fecho do §3). */
+  'abandono-escolar-precoce-2025': 'educacao',
+  'competencias-digitais-2025': 'educacao',
+  'criancas-em-creche-2025': 'educacao',
+
+  /* 8 · Saúde (carta §2). */
+  'necessidades-medicas-nao-satisfeitas-2025': 'saude',
+
+  /* 9 · Habitação (carta §2 e §3). */
+  'precos-da-habitacao-2025': 'habitacao',
+  'sobrecarga-do-custo-da-habitacao-2025': 'habitacao',
+  'licencas-de-construcao-2025': 'habitacao',
+
+  /* 10 · Investimento (carta §2 e §3). */
+  'formacao-bruta-de-capital-fixo-2025': 'investimento',
+
+  /* 11 · Ciência, tecnologia e inteligência artificial (carta §2 e §3). */
+  'despesa-em-id-2024': 'ciencia-tecnologia-e-inteligencia-artificial',
+
+  /* 17 · Justiça (carta §2 e §3). */
+  'independencia-da-justica-2025': 'justica',
+});

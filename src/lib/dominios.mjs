@@ -446,3 +446,144 @@ export function dominioDaLinha(id) {
   }
   return null;
 }
+
+/* ===========================================================================
+ * O ÍNDICE DOS DEZOITO DOMÍNIOS (P1, item 6, 15.09.2026)
+ * ===========================================================================
+ * A secção dos domínios da primeira página era a lista dos domínios COM PÁGINA,
+ * com a contagem das medidas da página de chegada e os nomes das cinco medidas
+ * de cabeça. O diretor leu-a no ar a 15.09 («Trabalho · incluído em Economia e
+ * finanças públicas», «e mais cinco») e o que o brief manda é outra coisa: os
+ * DEZOITO domínios da carta, pela ordem dela, cada um com o número de medidas
+ * que o sítio já publica dentro dele, e nada quando é zero.
+ *
+ * ---------------------------------------------------------------------------
+ * A CONTAGEM É `hasClaim` SOBRE UMA TABELA DECLARADA, E MAIS NADA
+ * ---------------------------------------------------------------------------
+ * `DOMINIO_DAS_MEDIDAS`, em `src/data/dominios.mjs`, diz a que domínio pertence
+ * cada medida que o código declara; esta função conta as que têm linha no
+ * livro-razão. Nenhum número se escreve: `hasClaim` responde por cada um, e uma
+ * linha que saia do livro-razão faz a contagem descer sozinha.
+ *
+ * O UNIVERSO DAS MEDIDAS É LIDO E NÃO ESCRITO. As três origens que o brief
+ * nomeia leem-se onde elas vivem: `MEDIDAS_DO_DOMINIO_1`, os dois quadros da
+ * União, e as medidas que as páginas de área rendem e que pertencem aos dois
+ * estudos da casa. **Uma medida declarada que a tabela não conheça fecha a
+ * construção**: é o guarda que impede a contagem de envelhecer em silêncio.
+ *
+ * ---------------------------------------------------------------------------
+ * A PORTA DE UM DOMÍNIO ABRE ONDE OS NÚMEROS DELE ESTÃO
+ * ---------------------------------------------------------------------------
+ * Por esta ordem, e a ordem é a do brief:
+ *
+ *   1. a página do próprio domínio, quando ele a tem;
+ *   2. a página do domínio que o contém, na âncora da sua primeira medida,
+ *      quando ele está `dentro-de` outro (é o Trabalho, e o `dentroDe` fica no
+ *      código exactamente para isto);
+ *   3. a página que rende MAIS medidas daquele domínio, quando não há nem uma
+ *      nem outra: «Portugal na União Europeia» ou a página de uma área. O
+ *      desempate é declarado e não emergente: primeiro os dois quadros da
+ *      União, depois as áreas pela ordem em que `AREAS` as declara.
+ *
+ * Um domínio sem medidas não tem porta nenhuma, e a sua linha é só o nome.
+ */
+
+import { DOMINIO_DAS_MEDIDAS, MEDIDAS_DO_DOMINIO_1, DOMINIOS } from '../data/dominios.mjs';
+import { FIGURAS_PDM, FIGURAS_SOCIAL } from '../data/figuras.mjs';
+import { areasComPagina } from './areas.mjs';
+import { AREAS } from '../data/areas.mjs';
+import { routePath } from './routes.mjs';
+
+/** Os dois estudos em que vivem as medidas da casa (e não as linhas de um estudo). */
+const ESTUDOS_DAS_MEDIDAS = new Set(['quadro-institucional', 'dominios-2026']);
+
+/**
+ * Onde cada medida declarada se rende, por id de linha.
+ *
+ * @returns {Map<string, string[]>} id da linha → páginas que a rendem
+ */
+function ondeCadaMedidaSeRende() {
+  /** @type {Map<string, string[]>} */
+  const onde = new Map();
+  /** @param {string|null|undefined} id @param {string} pagina */
+  const junta = (id, pagina) => {
+    if (!id) return;
+    const lista = onde.get(id) ?? [];
+    if (!lista.includes(pagina)) lista.push(pagina);
+    onde.set(id, lista);
+  };
+  /* Os segundos identificadores de uma medida não entram: são outro número da
+     mesma medida, e contá-los dava duas medidas onde há uma. */
+  const secundarios = new Set(
+    MEDIDAS_DO_DOMINIO_1.flatMap((m) => (m.claims ?? []).map((c) => c.id)),
+  );
+  for (const d of dominiosComPagina()) {
+    for (const m of medidasDoDominio(d.slug)) junta(m.claim, `dominio:${d.slug}`);
+  }
+  for (const f of [...FIGURAS_PDM, ...FIGURAS_SOCIAL]) junta(f.claim, 'uniao');
+  for (const a of areasComPagina()) {
+    for (const med of a.pecas.medidas) {
+      if (!ESTUDOS_DAS_MEDIDAS.has(String(med.estudo))) continue;
+      if (secundarios.has(med.id)) continue;
+      junta(med.id, `area:${a.slug}`);
+    }
+  }
+  for (const id of secundarios) onde.delete(id);
+  return onde;
+}
+
+/**
+ * O índice dos dezoito domínios, com a contagem e a porta de cada um.
+ *
+ * @param {'pt'|'en'} lang
+ */
+export function indiceDosDominios(lang) {
+  const onde = ondeCadaMedidaSeRende();
+  const semDominio = [...onde.keys()].filter((id) => !DOMINIO_DAS_MEDIDAS[id]);
+  if (semDominio.length > 0) {
+    throw new Error(
+      `dominios: ${semDominio.length} medida(s) declarada(s) sem domínio em ` +
+        `DOMINIO_DAS_MEDIDAS: ${semDominio.join(', ')}. ` +
+        `A contagem da primeira página é um índice do que já existe, e uma medida sem ` +
+        `domínio é uma medida que ela não conta.`,
+    );
+  }
+  const comPagina = new Set(dominiosComPagina().map((d) => d.slug));
+  /* A ordem do desempate, declarada: os dois quadros da União primeiro, depois
+     as áreas pela ordem em que a lei orgânica as dá. */
+  const ORDEM_DAS_PAGINAS = ['uniao', ...AREAS.map((a) => `area:${a.slug}`)];
+
+  return DOMINIOS.map((d) => {
+    const medidas = [...onde.entries()]
+      .filter(([id]) => DOMINIO_DAS_MEDIDAS[id] === d.slug)
+      .filter(([id]) => hasClaim(id))
+      .map(([id, paginas]) => ({ id, paginas }))
+      .sort((a, b) => a.id.localeCompare(b.id));
+
+    /** @type {string|null} */
+    let porta = null;
+    if (medidas.length > 0) {
+      if (d.estado === 'no-ar' && comPagina.has(d.slug)) {
+        porta = routePath('dominio', lang, { slug: d.slug });
+      } else if (d.estado === 'dentro-de' && d.dentroDe && comPagina.has(d.dentroDe)) {
+        porta = `${routePath('dominio', lang, { slug: d.dentroDe })}${d.ancoraDentro ? `#${d.ancoraDentro}` : ''}`;
+      } else {
+        /** @type {Map<string, number>} */
+        const conta = new Map();
+        for (const m of medidas) for (const p of m.paginas) conta.set(p, (conta.get(p) ?? 0) + 1);
+        let melhor = null;
+        for (const p of ORDEM_DAS_PAGINAS) {
+          const n = conta.get(p) ?? 0;
+          if (n > (melhor?.n ?? 0)) melhor = { p, n };
+        }
+        if (melhor) {
+          porta =
+            melhor.p === 'uniao'
+              ? routePath('uniaoEuropeia', lang)
+              : routePath('area', lang, { slug: melhor.p.slice('area:'.length) });
+        }
+      }
+    }
+    return { dominio: d, n: medidas.length, medidas, porta };
+  });
+}

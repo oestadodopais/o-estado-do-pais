@@ -9,19 +9,7 @@
  * em Economia e finanças públicas». A lista era a mesma em dois sítios, escrita
  * duas vezes: uma em `HomeView.astro` e outra em `DominiosView.astro`. As regras
  * dela viviam em `src/styles/dominio.css`, que só a segunda importava, e por
- * isso na primeira página a lista rendia sem regras nenhumas: a numeração do
- * `<ol>` aparecia, o estado saía no serif do corpo a 16 px em vez do tipo de
- * instrumento a 14, e sem o `gap` do flex o nome e o estado colavam-se, porque
- * não havia espaço nenhum entre eles no HTML.
- *
- * Medido a 390 px, na cabeça 44f0d838, antes da correcção:
- *
- *                              `/`                 `/dominios`
- *   display do item            list-item           flex
- *   gap                        normal              14px / 6px
- *   marcador do `<ol>`         decimal             none
- *   corpo do estado            16px Spectral       14px Bitter
- *   folga nome↔estado          0 px                14 px
+ * isso na primeira página a lista rendia sem regras nenhumas.
  *
  * A causa não era a folha: era haver DUAS listas. Uma lista escrita uma vez, com
  * a sua folha importada por ela própria, chega a toda a página que a renda, e é
@@ -29,116 +17,64 @@
  * de importar coisa nenhuma.
  *
  * ---------------------------------------------------------------------------
- * A CONTA DAS LINHAS TAMBÉM VEM PARA CÁ, E PELA MESMA RAZÃO
+ * O QUE A LISTA DIZ HOJE (P1, item 6, 15.09.2026)
  * ---------------------------------------------------------------------------
- * As duas vistas filtravam `DOMINIOS` e decidiam a porta de cada domínio com o
- * mesmo código, copiado. «Uma segunda maneira de decidir a porta divergiria da
- * primeira ao primeiro domínio novo» estava escrito em `HomeView.astro` sobre
- * esta mesma lista, e era verdade a respeito dela própria.
+ * **Os dezoito domínios da carta**, pela ordem dela, e nada mais: o nome, e o
+ * número de medidas que o sítio já publica dentro daquele domínio quando ele
+ * não é zero. Um domínio com números é a porta para a página onde eles estão.
+ *
+ * O que saiu, e a razão de cada coisa, está escrita no brief e na leitura do
+ * diretor de 15.09:
+ *
+ *   · **a lista dos domínios COM PÁGINA** passou a ser a dos dezoito. O leitor
+ *     que chega quer ver o quadro do país, e não a lista do que já foi feito:
+ *     um domínio vazio é conteúdo de observatório («a ausência diz-se»), e um
+ *     índice de dois nomes não diz o que o sítio vai ser;
+ *   · **«incluído em»**. «Trabalho · incluído em Economia e finanças públicas»
+ *     é uma frase sobre a arrumação do sítio, e o diretor leu-a assim: «I don't
+ *     even know what that means». O `dentroDe` fica no código, e é ele que
+ *     decide para onde a porta do Trabalho abre;
+ *   · **os nomes das medidas de cabeça e o «e mais N»**. Eram do F1.13, do
+ *     mesmo dia de manhã, e duraram uma tarde: «e mais cinco» não é frase de
+ *     jornal, e os nomes das medidas são o jargão da fonte. O que eles
+ *     respondiam («o que são estas dez medidas?») responde-se na página do
+ *     domínio, que é onde elas estão.
  *
  * ---------------------------------------------------------------------------
- * O ESPAÇO ENTRE O NOME E O ESTADO É UM NÓ DE TEXTO, E É DE PROPÓSITO
+ * A CONTAGEM NÃO SE ESCREVE, E A PORTA NÃO SE ESCOLHE AQUI
  * ---------------------------------------------------------------------------
- * `{' '}` entre o nome e o estado. Numa página sem as regras a linha lê-se na
- * mesma («Trabalho as medidas estão em…» e não «Trabalhoas medidas…»), e numa
- * página com elas não muda nada: um nó de texto só de espaço entre dois itens de
- * um contentor flex não se rende (CSS Flexbox §4: «if the entire sequence of
- * child text runs contains only white space it is not rendered»). Medido nas
- * duas páginas depois da correcção, e está no relatório desta fatia.
- *
- * Não é uma cadeia nova: é um espaço. O inventário das frases não o vê, e o
- * portão da voz continua a zero.
- *
- * ---------------------------------------------------------------------------
- * O QUE A LISTA DIZ, E O QUE NÃO DIZ
- * ---------------------------------------------------------------------------
- * Lista os domínios COM PÁGINA (§9.1, 08.09.2026): o nome, a contagem das
- * medidas da página de chegada e a porta; e o domínio cujas medidas vivem dentro
- * de outro, com a porta para a secção onde elas estão. As dezasseis linhas
- * «ainda sem medidas conferidas» e as vagas são do Método, e não daqui.
+ * `indiceDosDominios()`, em `src/lib/dominios.mjs`, conta por `hasClaim` sobre
+ * a tabela declarada em `src/data/dominios.mjs` (`DOMINIO_DAS_MEDIDAS`) e
+ * resolve a porta de cada domínio. Este ficheiro rende o que ela devolve: uma
+ * segunda maneira de contar divergiria da primeira à primeira medida nova, que
+ * é a lição que esta mesma lista já pagou uma vez.
  *
  * O NOME VEM DA DECLARAÇÃO, com `data-nome="dominios"`, que o portão da voz
- * confere contra `src/data/dominios.mjs`. O estado é vocabulário fechado,
- * marcado com `data-dominio-estado`. A contagem leva `data-nonledger="numeracao"`
- * porque é a numeração de uma lista rendida, e não uma medição de Portugal.
+ * confere contra `src/data/dominios.mjs`. A contagem leva
+ * `data-nonledger="numeracao"` porque é a numeração de uma lista rendida, e não
+ * uma medição de Portugal.
  */
-import {
-  DOMINIOS,
-  dominioDeclarado,
-  dominiosComPagina,
-  faixaDoDominio,
-  medidaPelaChave,
-  medidasDoDominio,
-} from '../data/dominios.mjs';
+import { DOMINIOS } from '../data/dominios.mjs';
 import { numeralPorExtenso } from '../data/figuras.mjs';
-import { routePath } from '../lib/routes.mjs';
+import { indiceDosDominios } from '../lib/dominios.mjs';
 import { t } from '../i18n/strings.mjs';
 import '../styles/dominios-lista.css';
 
 const { lang = 'pt' } = Astro.props;
 const s = t(lang);
-
-const comPagina = new Set(dominiosComPagina().map((d) => d.slug));
-
-const linhas = DOMINIOS.filter(
-  (d) => comPagina.has(d.slug) || (d.estado === 'dentro-de' && d.dentroDe && comPagina.has(d.dentroDe)),
-).map((d) => {
-  const dentro = d.estado === 'dentro-de' && d.dentroDe ? dominioDeclarado(d.dentroDe) : null;
-  /* A PORTA DE UM DOMÍNIO «DENTRO DE» OUTRO VAI À SUA SECÇÃO, e não só ao topo
-     da página onde as suas medidas vivem (segunda passagem, 03.09.2026,
-     Major 11): `ancoraDentro` é a âncora dessa secção, declarada ao lado do
-     domínio em `src/data/dominios.mjs`. Sem âncora declarada, a porta ainda
-     assim abre a página, no seu início. */
-  const porta =
-    d.estado === 'no-ar' && comPagina.has(d.slug)
-      ? routePath('dominio', lang, { slug: d.slug })
-      : dentro !== null && comPagina.has(dentro.slug)
-        ? `${routePath('dominio', lang, { slug: dentro.slug })}${d.ancoraDentro ? `#${d.ancoraDentro}` : ''}`
-        : null;
-  /* ------------------------------------------------------------------------
-     OS NOMES DAS MEDIDAS DE CABEÇA (F1.13, item 4, 15.09.2026)
-     ------------------------------------------------------------------------
-     A linha dizia «10 medidas» e mais nada: o diretor leu-a a 15.09.2026 de
-     manhã e o que lhe faltava é o que são, para saber se vale a pena entrar.
-     Passa a levar, a seguir à contagem, os nomes das MEDIDAS DE CABEÇA daquele
-     domínio, que são as mesmas que a faixa da primeira página mostra.
-
-     OS NOMES NÃO SE ESCREVEM AQUI NEM SE EDITAM. Vêm de `faixaDoDominio()` e de
-     `medidaPelaChave()`, que são as duas portas da declaração em
-     `src/data/dominios.mjs`, e saem com a marca `data-nome="medidas"`, que o
-     portão da voz confere carácter a carácter contra esse ficheiro. É por isso
-     que a letra inicial é a da declaração e não a de uma frase: um nome posto
-     em minúsculas já não é o nome que o ficheiro declara, e a medida P4 do
-     brief pede-os IGUAIS aos da faixa, que é onde eles também saem assim.
-
-     E CADA UM DIZ DE QUE LINHA É (`data-de-linha`), que é a pergunta mais
-     apertada das duas: «está neste ficheiro?» deixava passar cinco nomes certos
-     pela ordem errada, e esta pergunta é «é o nome DESTA linha, nesta edição?».
-     É a mesma marca que o índice do livro-razão usa desde o Blocking 4 do F1.4.
-
-     UMA CHAVE DA FAIXA SEM MEDIDA FECHA A CONSTRUÇÃO, e não se salta em
-     silêncio: uma faixa que nomeie uma chave que já não existe é uma lista a
-     mentir, e é o mesmo guarda que `HomeView.astro` já tem sobre a mesma lista.
-
-     `sobram` É CONTADO E NÃO ESCRITO: a contagem das medidas do domínio menos os
-     nomes mostrados. Zero não rende «e mais» nenhum. */
-  const cabecas = faixaDoDominio(d.slug).map((chave) => {
-    const m = medidaPelaChave(chave);
-    if (!m) {
-      throw new Error(
-        `dominios: a faixa do domínio "${d.slug}" nomeia "${chave}", que não é uma medida declarada.`,
-      );
-    }
-    return { nome: m.nome[lang] ?? m.nome.pt, linha: m.claim };
-  });
-  const medidas = medidasDoDominio(d.slug).length;
-  return { dominio: d, dentro, porta, medidas, cabecas, sobram: Math.max(0, medidas - cabecas.length) };
-});
+const linhas = indiceDosDominios(lang);
 ---
+
+{/* A ABERTURA DIZ O QUE A LISTA É, UMA VEZ. O numeral é contado, não escrito. */}
+<p class="dominios-abertura">
+  <Fragment set:text={s.dominios.aberturaA} /><span data-nonledger="numeracao"
+    >{numeralPorExtenso(DOMINIOS.length, lang)}</span
+  ><Fragment set:text={s.dominios.aberturaB} />
+</p>
 
 <ol class="dominios-lista">
   {
-    linhas.map(({ dominio, dentro, porta, medidas, cabecas, sobram }) => (
+    linhas.map(({ dominio, n, porta }) => (
       <li class="dominios-item" data-dominio={dominio.slug}>
         {porta === null ? (
           <span class="dominios-nome" data-nome="dominios">
@@ -149,39 +85,12 @@ const linhas = DOMINIOS.filter(
             <span data-nome="dominios">{dominio.nome[lang] ?? dominio.nome.pt}</span>
           </a>
         )}{' '}
-        <span class="dominios-estado" data-dominio-estado={dominio.estado}>
-          {medidas > 0 && (
-            <>
-              <span data-nonledger="numeracao">{medidas}</span> {s.dominios.medidasRotulo}
-              {cabecas.length > 0 && (
-                <>
-                  {s.dominios.medidasDoisPontos}
-                  {cabecas.map((c, i) => (
-                    <>
-                      {i > 0 && s.dominios.medidasSeparador}
-                      <span data-nome="medidas" data-de-linha={c.linha ?? undefined}>
-                        {c.nome}
-                      </span>
-                    </>
-                  ))}
-                  {sobram > 0 && (
-                    <>
-                      {s.dominios.eMaisA}
-                      <span data-nonledger="numeracao">{numeralPorExtenso(sobram, lang)}</span>
-                      {s.dominios.eMaisB}
-                    </>
-                  )}
-                </>
-              )}
-            </>
-          )}
-          {dominio.estado === 'dentro-de' && dentro !== null && (
-            <>
-              {s.dominios.estadoDentroDe}{' '}
-              <span data-nome="dominios">{dentro.nome[lang] ?? dentro.nome.pt}</span>
-            </>
-          )}
-        </span>
+        {n > 0 && (
+          <span class="dominios-estado" data-dominio-estado={dominio.estado}>
+            <span data-nonledger="numeracao">{n}</span>{' '}
+            {n === 1 ? s.dominios.medidaRotuloUm : s.dominios.medidasRotulo}
+          </span>
+        )}
       </li>
     ))
   }
