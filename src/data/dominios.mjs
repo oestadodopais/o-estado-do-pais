@@ -600,6 +600,28 @@ export function medidasDoDominio(slug) {
 }
 
 /**
+ * AS MEDIDAS DE CABEÇA DE UM DOMÍNIO, OU LISTA VAZIA (F1.13, item 4, 15.09.2026)
+ * ---------------------------------------------------------------------------
+ * São as chaves da faixa daquele domínio: as que a faixa da primeira página
+ * mostra como cartões e as que a linha do índice dos domínios nomeia. A função
+ * nasce porque a mesma decisão estava escrita em dois sítios: `HomeView.astro`
+ * tinha um `faixaDeclaradaDo()` local para montar os cartões, e o índice dos
+ * domínios precisava da mesma lista para escrever os nomes. Uma segunda maneira
+ * de decidir quais são as medidas de cabeça divergiria da primeira ao primeiro
+ * domínio novo, que é a razão que o próprio `DominiosLista.astro` já escreve
+ * sobre a lista das linhas.
+ *
+ * A DECLARAÇÃO É `FAIXA_DO_DOMINIO_1`, e a porta é esta. Hoje só o domínio 1 tem
+ * faixa; um domínio novo traz a sua, e esta função continua a ser a única porta.
+ *
+ * @param {string} slug
+ * @returns {readonly string[]}
+ */
+export function faixaDoDominio(slug) {
+  return slug === 'economia-e-financas-publicas' ? FAIXA_DO_DOMINIO_1 : [];
+}
+
+/**
  * As ausências declaradas de um domínio.
  *
  * @param {string} slug
