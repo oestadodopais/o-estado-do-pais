@@ -22,15 +22,9 @@
  * rende.
  */
 
-/* A ABERTURA DA SECÇÃO (P1, item 6, 15.09.2026): uma linha em prosa por cima da
-   lista, no corpo do texto da casa, que diz o que a lista é. */
-.dominios-abertura {
-  margin: 0;
-  font-family: var(--f-prosa);
-  font-size: clamp(15px, 1.6vw, 17px);
-  color: var(--muted);
-  max-width: 62ch;
-}
+/* A ABERTURA DA SECÇÃO SAIU A 15.09.2026 (achados 9 e 10 da leitura a frio), e
+   a regra saiu com ela: uma regra sem nó é regra morta, e o `check:mortos`
+   conta-a. */
 
 /* ---------------------------------------------------------------------------
  * A FORMA DA LISTA (leitura do lugar de direção às capturas do P1, 15.09.2026)
