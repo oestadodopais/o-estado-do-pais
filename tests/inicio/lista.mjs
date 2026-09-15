@@ -204,7 +204,39 @@ async function pagina(rota, largura, abrir = false) {
   await p.goto(base + rota, { waitUntil: 'networkidle' });
   await p.evaluate(() => document.fonts.ready);
   if (abrir) {
+    /* ----------------------------------------------------------------------
+       ABRIR É AGORA DUAS COISAS, E A PRIMEIRA É DEVOLVER A GAVETA À COMPOSIÇÃO
+       (F1.13, item 3, 15.09.2026)
+       ----------------------------------------------------------------------
+       A folha da primeira página passou a tirar a gaveta dos nomes da composição
+       quando há guião («visualmente escondida com guião; sem guião, aberta como
+       hoje»). Pôr só o `open` deixava a rede DENTRO de uma caixa de 1 px
+       recortada, e esta régua mediria caixas que ninguém vê. O que ela sempre
+       mediu é «o que a rede é quando o leitor chega a ela».
+
+       A REGRA QUE SE SERVE AQUI É A DO PRÓPRIO SÍTIO, palavra por palavra: é a
+       que `HomeView.astro` põe dentro do `<noscript>` do `<head>` para quem não
+       tem guião. Não é uma folha inventada pela régua para se pôr verde: é o
+       estado em que o leitor sem guião encontra a lista, reposto numa página com
+       guião porque as células L6 e L7 precisam do mapa vivo para medir o par
+       entre um nome e a sua área. A régua diz, assim, o que a lista é quando ela
+       está à vista, que é a única altura em que a pergunta dela faz sentido.
+
+       E É UMA FOLHA E NÃO O FOCO, por uma razão medida: as células L6 e L7
+       chamam `repousa()` entre cada par, e `repousa()` faz `blur()`. Com a
+       gaveta devolvida por `:focus-within`, o `blur` fechava-a outra vez e as 29
+       medições do rato davam «rato false». Uma régua que dependesse do foco
+       media o foco e não a rede.
+
+       O ESTADO COM GUIÃO E EM REPOUSO, a gaveta a não ocupar píxel nenhum e a
+       voltar ao foco, é a A5 de `tests/inicio/porta.mjs`; o estado SEM GUIÃO é
+       a U4 de `tests/inicio/mapa-unidades.mjs`. Uma coisa por régua. */
     await p.evaluate(() => {
+      const folha = document.createElement('style');
+      folha.textContent =
+        ':root:root .cabeca-nomes{position:static;width:auto;height:auto;margin:0;' +
+        'overflow:visible;clip:auto;white-space:normal}';
+      document.head.append(folha);
       for (const g of document.querySelectorAll('[data-gaveta]')) g.setAttribute('open', '');
     });
   }
