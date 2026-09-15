@@ -928,8 +928,8 @@ exclusão que a subetapa 3c escreveu para a lista por distritos.
 | conteudo | No rows yet. | grelha-2 | retirada | a ausência passou a dizer-se em três palavras, «Sem linha ainda.», e a forma longa saiu (item E4 do bloco dos 308, `8b2a260`) |
 | conteudo | A referência do estudo | até 2026-08-26 | viva | — |
 | conteudo | The study’s reference | até 2026-08-26 | viva | — |
-| conteudo | 2916 afirmações · 330 de 2916 calculadas · 2767 de 2916 linhas de concelhos | nomes | viva | — |
-| conteudo | 2916 claims · 330 of 2916 calculated · 2767 of 2916 municipality rows | nomes | viva | — |
+| conteudo | 2975 afirmações · 330 de 2975 calculadas · 2767 de 2975 linhas de concelhos | cartao | viva | o texto desta linha traz as contagens do livro-razão, e elas subiram de 2916 para 2975 a 15.09.2026, quando o bloco P2 trouxe as 59 linhas do enquadramento que o motor selou (32 do período anterior e 27 do agregado da União). A linha não mudou de sentido nem de classe: mudou o número que ela conta, e o número é `data-prova` que o portão reconta a cada construção. A entrada antiga dizia «2916 afirmações · 330 de 2916 calculadas · 2767 de 2916 linhas de concelhos» |
+| conteudo | 2975 claims · 330 of 2975 calculated · 2767 of 2975 municipality rows | cartao | viva | ver a razão na gémea portuguesa (bloco P2, 15.09.2026) |
 | navegacao | Nenhuma linha do livro-razão tem essas palavras. | nomes | viva | — |
 | navegacao | No row in the ledger matches those words. | nomes | viva | — |
 | navegacao | Procurar por nome, identificador ou fonte | nomes | viva | — |
@@ -2856,14 +2856,13 @@ continua a render-se no índice do livro-razão), e os quatro rótulos de recibo
 o cartão escrevia ao pé de cada número, que continuam `vivos` porque continuam a
 render-se no recibo, que é a página da linha.
 
-**«União Europeia» ainda não entra**, e a ausência é a regra desta lista e não um
-esquecimento: a cadeia existe em `strings.mjs` (`cartao.uniaoEuropeia`) e não se
-rende em rota nenhuma, porque nenhuma linha `<slug>-<período>-ue` está selada. Uma
-linha declarada `viva` que não se rende fecha a construção, e `retirada` diria que
-a casa a tirou de propósito. Entra no commit em que a primeira linha da União
-chegar do motor, que é a regra escrita na cabeça deste ficheiro: «uma rota entra
-no commit em que a sua página é reconstruída e as suas frases são
-classificadas».
+**«União Europeia» entrou no mesmo dia**, e a história dela é a regra desta lista
+a funcionar: foi escrita em `strings.mjs` de manhã e não entrou aqui, porque não
+se rendia em rota nenhuma e uma linha `viva` que não se rende fecha a construção;
+às 19:43 UTC o lugar de direção copiou para esta worktree as 27 linhas do agregado
+da União que o motor selou, a cadeia passou a render-se, e a linha entra no commit
+que a rende. É a regra escrita na cabeça deste ficheiro: «uma rota entra no commit
+em que a sua página é reconstruída e as suas frases são classificadas».
 
 **As três palavras da régua são as MESMAS CHAVES que o bloco P1 escreve** para as
 cadeias da primeira página, pela decisão do diretor de 15.09.2026 de manhã
@@ -2882,3 +2881,5 @@ separados; o texto é um só.
 | conteudo | between the reference values | cartao | viva | ver a razão na gémea portuguesa (item 1d do P2, 15.09.2026) |
 | conteudo | As áreas seguem a orgânica do Governo em funções, o XXV Governo Constitucional. | cartao | viva | a frase que substitui a linha do tipo nas nove páginas de área, dita uma vez no índice das áreas, com o diploma ao lado como porta (item 3 do brief do P2, 15.09.2026). É `conteudo` porque diz o que esta família de páginas é, que é a mesma leitura da linha da hierarquia que está por cima dela. O nome do diploma não está no texto acima porque é origem declarada (`data-nonledger="referencia-legal"`). Rende-se em `/areas` e em mais lado nenhum |
 | conteudo | The areas follow the structure of the Government in office, the XXV Constitutional Government. | cartao | viva | ver a razão na gémea portuguesa (item 3 do P2, 15.09.2026) |
+| conteudo | União Europeia | cartao | viva | o nome do agregado com que a régua de um cartão compara o número (item 1d do brief do P2, 15.09.2026). É `conteudo` porque diz com o quê o número se compara, que é metade da informação da régua; o valor ao lado é uma linha do livro-razão, com a marca da fonte dela, e por isso não está no texto acima. Rende-se onde a linha `<slug>-<período>-ue` existe, que são vinte e sete das trinta e duas medidas: as outras cinco não a têm porque o conjunto do Eurostat não traz valor no agregado naquele período, e o cartão desenha-se sem a comparação europeia sem o dizer por palavras |
+| conteudo | European Union | cartao | viva | ver a razão na gémea portuguesa (item 1d do P2, 15.09.2026) |
