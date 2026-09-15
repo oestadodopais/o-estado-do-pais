@@ -6,7 +6,7 @@
 id: "taxa-de-desemprego-mip-2025-ue"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "6"
+value: "6,0"
 unit: "% da população ativa"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

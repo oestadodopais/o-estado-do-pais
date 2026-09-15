@@ -6,7 +6,7 @@
 id: "jovens-nem-2025-ue"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "11"
+value: "11,0"
 unit: "% da população"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
