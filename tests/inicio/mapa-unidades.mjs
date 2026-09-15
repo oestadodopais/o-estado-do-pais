@@ -1203,7 +1203,15 @@ async function u4() {
         r.sumarioAVista === true &&
         r.naLista === 29 &&
         r.regioesDesenhadas === 0 &&
-        r.lugar === true &&
+        /* O LUGAR DO NOME PASSOU A RENDER-SE SEM GUIÃO (P1, item 5, 15.09.2026).
+           A célula exigia `hidden`, porque o lugar chegava escondido do servidor:
+           sem guião não havia nome nenhum para pôr nele, e um lugar vazio é pior
+           do que nenhum. O item 5 muda o facto: em repouso o lugar diz o
+           território e o seu tamanho («Portugal · 308 concelhos»), que é verdade
+           com guião e sem ele, e a medida de aceitação é «o lugar do nome nunca
+           vazio, medido nos três estados do mapa». Uma célula que continuasse a
+           exigir o `hidden` media o que o bloco anterior queria. */
+        r.lugar === false &&
         r.segundoNivel === 0,
       `${r.areas} áreas, ${r.comDestino} com destino em «${prefixo}», ${codigos.filter((c) => c === 200).length} de ${codigos.length} respondem 200 · ` +
         `a gaveta ${r.gaveta ? 'aberta' : 'fechada'} com ${r.naLista} unidades, a caixa dela a ` +
@@ -1479,7 +1487,12 @@ const CONTRASTE = () => {
   };
   const fora = {};
   for (const [chave, sel] of [
-    ['vazio', '[data-mapa-vazio="pais-toque"]'],
+    /* A FRASE VAZIA PASSOU A SER A LEGENDA DE REPOUSO (P1, item 5, 15.09.2026):
+       `[data-mapa-vazio="pais-toque"]` era uma das quatro frases de instrução
+       que saíram, e o que está no lugar dela é o parágrafo que diz o território
+       e o seu tamanho. A célula continua a exigir QUATRO medições, que é o que
+       a impede de ficar verde por não encontrar nada. */
+    ['repouso', '[data-mapa-repouso="pais"]'],
     ['nome', '[data-mapa-nome-texto]'],
     ['porta', '[data-mapa-porta]'],
     ['aviso', '[data-mapa-aviso]'],
