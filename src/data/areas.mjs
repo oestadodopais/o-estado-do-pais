@@ -680,6 +680,28 @@ export const AREAS = [
  */
 export const SEM_AREA = [
   {
+    /* ------------------------------------------------------------------
+       O AGREGADO DA UNIÃO EUROPEIA DE UMA MEDIDA (bloco P2, 15.09.2026)
+       ------------------------------------------------------------------
+       As vinte e sete linhas `<slug>-<período>-ue` que o motor selou a 15.09 não
+       são medidas de Portugal: são a MESMA MEDIDA, no mesmo período, com a
+       geografia `EU27_2020`. Existem para uma coisa, que é serem a régua ao lado
+       do número português, e é dentro do cartão dessa medida que elas se rendem.
+
+       Uma área de governo é um ministério português, e um agregado europeu não é
+       matéria de ministério nenhum: a lei orgânica reparte o que o Governo faz em
+       Portugal. O assunto de uma destas linhas é o mesmo da linha portuguesa que
+       ela enquadra, e é lá que ele está declarado. */
+    assunto: 'O agregado da União Europeia de uma medida, que é a régua dela',
+    id: /-ue$/,
+    motivo:
+      'Uma linha do agregado da União Europeia é a mesma medida noutra geografia, e existe ' +
+      'para ser a régua do número português ao lado dele. Não é uma medida de Portugal e não ' +
+      'é matéria de ministério nenhum: a lei orgânica reparte o que o Governo faz em Portugal. ' +
+      'O assunto dela é o da linha portuguesa que ela enquadra, declarado na matéria dessa ' +
+      'linha; rende-se dentro do cartão dessa medida, e não como um cartão próprio.',
+  },
+  {
     assunto: 'A população residente de um concelho',
     estudos: ['concelhos-2026', 'evora-economia-investidores-portas-abertas-2026'],
     id: /-populacao-\d{4}$/,

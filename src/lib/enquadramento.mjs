@@ -25,40 +25,51 @@
  * vir a publicar.
  *
  * ---------------------------------------------------------------------------
- * DE ONDE SAEM OS IDENTIFICADORES
+ * DE ONDE SAI O IDENTIFICADOR DE CADA COMPARAÇÃO
  * ---------------------------------------------------------------------------
- * Por duas vias, e a primeira ganha:
+ * As duas comparações têm nomes de linha diferentes e vêm por vias diferentes, e
+ * as duas vias são leituras do livro-razão e não palpites:
  *
- *   1. **`src/data/enquadramento/referencias.json`**, que o motor exporta e o
- *      lugar de direção copia para esta árvore. É a via a sério: o motor sabe
- *      qual é o período anterior de cada série (um trimestre, um ano, um mês) e
- *      qual é o agregado da União daquele quadro, e escreve-o linha a linha.
- *   2. **a convenção do brief**, enquanto esse ficheiro não existir: os ids
- *      `<slug>-<período anterior>` e `<slug>-<período>-ue`, com o período a ser
- *      o sufixo do próprio identificador. É uma REGRA DE NOME, não um palpite
- *      sobre dados: ou a linha com aquele nome está no livro-razão, e então é a
- *      linha do período anterior daquela série por construção do motor, ou não
- *      está, e não há régua.
+ *   · **o agregado da União** é `<slug>-<período>-ue`, que é o nome que o motor
+ *     dá à linha que sela (`enquadramento-2026-09-15`). É uma REGRA DE NOME: ou a
+ *     linha com aquele nome está no livro-razão, e então é o agregado daquela
+ *     medida naquele período por construção do motor, ou não está, e não há
+ *     comparação. Cinco medidas não a têm, e a razão é da fonte e não da casa: o
+ *     conjunto do Eurostat não traz valor no agregado naquele período;
+ *   · **o período anterior** PROCURA-SE NO LIVRO-RAZÃO, e não se calcula. A
+ *     primeira redação deste ficheiro escrevia `<slug>-<ano - 1>`, e estava
+ *     errada: `competencias-digitais-2025` é uma série BIENAL e o período
+ *     anterior dela é `competencias-digitais-2023`. O que esta função faz é
+ *     olhar para as linhas cujo id é `<slug>-<n>` com n MENOR do que o período
+ *     da medida, e ficar com a maior. O motor sela uma só por medida, e por isso
+ *     a maior é a do período anterior; e o rótulo que o cartão escreve não é esse
+ *     n, é o `reference_date` que a PRÓPRIA LINHA publica. A régua diz o período
+ *     da linha, nunca «o ano passado».
  *
- * A SEGUNDA VIA NÃO ADIVINHA UM PERÍODO. Só sabe descer um ano quando o
- * identificador acaba em quatro algarismos; um identificador que acabe em
- * `-2026-08` ou `-2025-12` (um mês) ou que não acabe em algarismos não tem
- * período anterior por esta via, e fica à espera do ficheiro do motor. Descer um
- * mês, um trimestre ou um semestre é conhecimento da série, e a série é do
- * motor.
+ * NENHUMA DAS DUAS ADIVINHA UM PERÍODO. Um identificador que não acabe em quatro
+ * algarismos (`-2026-08`, `-2025-12`) não tem período para comparar por esta via,
+ * e fica sem régua.
  *
  * ---------------------------------------------------------------------------
- * O NOME OFICIAL AINDA NÃO SE LÊ DAQUI, E ISSO ESTÁ ESCRITO DE PROPÓSITO
+ * O QUE OS DOIS FICHEIROS DO MOTOR TRAZEM
  * ---------------------------------------------------------------------------
- * `src/data/enquadramento/nomes.json` é o outro ficheiro que o motor exporta
- * (o F1.15, item 1): por linha, o nome oficial em português e em inglês, com a
- * origem, para o RECIBO (a norma §1.5: o nome oficial no recibo, o nome do
- * projeto no cartão). Este módulo diz se ele já chegou (`ficheirosDoMotor()`), e
- * mais nada: a função que o lesse não é chamada por vista nenhuma enquanto o
- * ficheiro não existir, e código que nunca correu é pior do que código que não
- * existe. Escreve-se no commit em que a primeira linha chegar, com a régua a
- * medi-la. Não se inventa um nome: o nome de uma medida é um campo com dono, e o
- * dono é o motor.
+ * **`referencias.json`**: por indicador, o valor de referência que a página do
+ * painel da Comissão publica, com o sentido, a frase verbatim de onde ele foi
+ * lido e o endereço. Treze indicadores têm-no e dezanove não. Este ficheiro NÃO
+ * é a origem do algarismo que o cartão desenha: esse continua a ser a declaração
+ * de `src/data/figuras.mjs`, que tem o motivo `limiar-do-quadro` do registo e a
+ * forma estruturada que `comparacaoComOLimiar()` lê. O que ele dá é a SEGUNDA
+ * TESTEMUNHA: dois registos independentes do mesmo facto, comparados por máquina
+ * na célula K9 da régua do bloco. Um facto com duas origens que não batem certo é
+ * um facto por confirmar, e é isso que a célula diz.
+ *
+ * **`nomes.json`**: por indicador, o nome na PORDATA e no INE, com o endereço e a
+ * hora de leitura, e a marca de correspondência. **Só o que está marcado `exata`
+ * entra no recibo**: `proxima` é a medida VIZINHA (a PORDATA publica o saldo da
+ * balança corrente e a medida do painel é a média móvel de três anos, que não é a
+ * mesma coisa) e `[verify]` é um campo por confirmar. Nem um nem outro chegam ao
+ * leitor, porque um nome quase certo posto onde o leitor espera o nome da coisa
+ * é pior do que nenhum.
  *
  * NENHUM ALGARISMO NOVO NESTE FICHEIRO. Ele devolve identificadores de linhas e
  * texto de outro ficheiro; quem desenha é o cartão, e quem imprime um valor é o
@@ -69,10 +80,55 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { hasClaim, getClaim } from './ledger.mjs';
+import { hasClaim, getClaim, loadClaims } from './ledger.mjs';
+/* O marcador da casa, do módulo que o declara e não de `ledger.mjs`, que o
+   reexporta: um campo que o traga é um campo por confirmar, e não um nome. */
+import { POR_VERIFICAR as MARCADOR } from '../data/marcador.mjs';
 
-const AQUI = path.dirname(fileURLToPath(import.meta.url));
-const PASTA = path.resolve(AQUI, '..', 'data', 'enquadramento');
+/**
+ * A PASTA DOS FICHEIROS DO MOTOR, PROCURADA E NÃO COMPOSTA.
+ *
+ * `path.resolve(import.meta.url, '..', 'data', 'enquadramento')` funciona quando
+ * este módulo corre de `src/lib/` e falha em silêncio quando ele corre
+ * empacotado, porque o `import.meta.url` de um módulo empacotado não é o do
+ * ficheiro. **Falhou assim**: a construção de 15.09 deu o recibo sem nome oficial
+ * nenhum, e quem o apanhou foi o portão de HTML, com a queixa certa («o motivo
+ * "nome-oficial-da-medida" está declarado e não dispensa nada»). É a mesma
+ * armadilha que `encontraLivroRazao()` resolve em `ledger.mjs`, e a saída é a
+ * mesma: subir, a partir do diretório de trabalho e a partir do ficheiro, até
+ * encontrar a pasta.
+ *
+ * DEVOLVE A PASTA OU `null`, e a diferença importa: o livro-razão fecha a
+ * construção quando não se encontra, porque sem ele não há página nenhuma; estes
+ * dois ficheiros podem não existir ainda, e a ausência deles é uma resposta
+ * legítima. O que NÃO é legítimo é não os encontrar por causa do caminho, e é por
+ * isso que a procura é a mesma.
+ */
+function encontraAPasta() {
+  /** @type {string[]} */
+  const candidatos = [];
+  /** @param {string} inicio */
+  const subir = (inicio) => {
+    let dir = inicio;
+    for (let i = 0; i < 8; i++) {
+      candidatos.push(path.join(dir, 'src', 'data', 'enquadramento'));
+      const acima = path.dirname(dir);
+      if (acima === dir) break;
+      dir = acima;
+    }
+  };
+  subir(process.cwd());
+  subir(path.dirname(fileURLToPath(import.meta.url)));
+  for (const c of candidatos) {
+    try {
+      if (fs.statSync(c).isDirectory()) return c;
+    } catch {
+      /* segue */
+    }
+  }
+  return null;
+}
+const PASTA = encontraAPasta();
 
 /**
  * Lê um ficheiro do motor, ou devolve `null` quando ele ainda não chegou.
@@ -85,6 +141,7 @@ const PASTA = path.resolve(AQUI, '..', 'data', 'enquadramento');
  * @returns {Record<string, unknown>|null}
  */
 function ficheiroDoMotor(nome) {
+  if (PASTA === null) return null;
   const f = path.join(PASTA, nome);
   if (!fs.existsSync(f)) return null;
   const cru = fs.readFileSync(f, 'utf8');
@@ -99,26 +156,38 @@ function ficheiroDoMotor(nome) {
   }
 }
 
-/** @type {Record<string, { anterior?: string, ue?: string }>|null} */
+/** @type {Map<string, any>|null|undefined} */
 let _referencias;
-/** @type {Record<string, { pt?: string, en?: string, origem?: string }>|null} */
+/** @type {Map<string, any>|null|undefined} */
 let _nomes;
+
+/** @param {string} nome @param {Map<string, any>|null|undefined} cache */
+function porLinha(nome) {
+  const j = ficheiroDoMotor(nome);
+  if (j === null) return null;
+  const lista = /** @type {any[]} */ (j.indicadores);
+  if (!Array.isArray(lista)) {
+    throw new Error(
+      `enquadramento: «${nome}» existe e não tem a lista «indicadores». Um ficheiro do ` +
+        `motor com outra forma fecha a construção, em vez de se render pela metade.`,
+    );
+  }
+  const m = new Map();
+  for (const i of lista) {
+    if (typeof i?.id_da_linha === 'string') m.set(i.id_da_linha, i);
+  }
+  return m;
+}
 
 /** As referências exportadas pelo motor, lidas uma vez. */
 function referencias() {
-  if (_referencias === undefined) {
-    const j = ficheiroDoMotor('referencias.json');
-    _referencias = /** @type {any} */ (j?.linhas ?? j ?? null);
-  }
+  if (_referencias === undefined) _referencias = porLinha('referencias.json');
   return _referencias;
 }
 
 /** Os nomes oficiais exportados pelo motor, lidos uma vez. */
 function nomes() {
-  if (_nomes === undefined) {
-    const j = ficheiroDoMotor('nomes.json');
-    _nomes = /** @type {any} */ (j?.linhas ?? j ?? null);
-  }
+  if (_nomes === undefined) _nomes = porLinha('nomes.json');
   return _nomes;
 }
 
@@ -154,13 +223,94 @@ export function anoDoIdentificador(id) {
  * @returns {{ anterior: string|null, ue: string|null }}
  */
 export function chavesDoEnquadramento(id) {
-  const doMotor = referencias()?.[id];
-  if (doMotor) {
-    return { anterior: doMotor.anterior ?? null, ue: doMotor.ue ?? null };
-  }
   const p = anoDoIdentificador(id);
   if (!p) return { anterior: null, ue: null };
-  return { anterior: `${p.raiz}-${p.ano - 1}`, ue: `${id}-ue` };
+  return { anterior: periodoAnteriorNoLivro(p.raiz, p.ano), ue: `${id}-ue` };
+}
+
+/**
+ * A linha do período anterior da mesma série, procurada no livro-razão.
+ *
+ * Não se calcula: procura-se. Entre as linhas cujo id é `<raiz>-<n>` com n menor
+ * do que o período desta, fica a MAIOR. Uma série anual dá o ano anterior; uma
+ * série bienal dá o período de há dois anos (`competencias-digitais-2025` dá
+ * `competencias-digitais-2023`), e nenhuma das duas precisa de a casa saber a
+ * periodicidade da série.
+ *
+ * O CASAMENTO É EXATO E NÃO POR PREFIXO: `^<raiz>-(\d{4})$`. Sem isso, a raiz
+ * `taxa-de-desemprego` apanhava `taxa-de-desemprego-mip-2024`, que é outra
+ * medida.
+ *
+ * @param {string} raiz
+ * @param {number} ano
+ * @returns {string|null}
+ */
+function periodoAnteriorNoLivro(raiz, ano) {
+  let melhor = null;
+  let melhorAno = -Infinity;
+  for (const outro of loadClaims().keys()) {
+    if (!outro.startsWith(`${raiz}-`)) continue;
+    const p = anoDoIdentificador(outro);
+    if (!p || p.raiz !== raiz) continue;
+    if (p.ano >= ano || p.ano <= melhorAno) continue;
+    melhor = outro;
+    melhorAno = p.ano;
+  }
+  return melhor;
+}
+
+/**
+ * O valor de referência que a página do painel da Comissão publica, como o motor
+ * o leu, ou `null`.
+ *
+ * NÃO É O QUE O CARTÃO DESENHA: o algarismo do cartão continua a sair da
+ * declaração de `src/data/figuras.mjs`, com o motivo do registo. Isto é a segunda
+ * testemunha, e existe para ser comparada com ela (a célula K9 da régua do
+ * bloco).
+ *
+ * @param {string} id
+ * @returns {{ limiar: string, sentido: string, frase: string, endereco: string }|null}
+ */
+export function valorDeReferenciaDoMotor(id) {
+  const r = referencias()?.get(id);
+  if (!r || typeof r.limiar !== 'string' || r.limiar === '') return null;
+  return {
+    limiar: r.limiar,
+    sentido: typeof r.sentido === 'string' ? r.sentido : '',
+    frase: typeof r.frase_da_fonte === 'string' ? r.frase_da_fonte : '',
+    endereco: typeof r.endereco_do_limiar === 'string' ? r.endereco_do_limiar : '',
+  };
+}
+
+/**
+ * O nome oficial de uma medida, para o recibo, ou `null`.
+ *
+ * **Só o que o motor marca `exata`**, e a razão está no cabeçalho: `proxima` é a
+ * medida vizinha e `[verify]` é um campo por confirmar, e nem um nem outro chegam
+ * ao leitor. A ordem é a da norma §1.5: o do INE primeiro, quando ele o carrega,
+ * e o da PORDATA a seguir. Cada um leva a origem dele, que é o endereço e a hora
+ * a que o motor o leu.
+ *
+ * @param {string} id
+ * @returns {{ ine: { nome: string, endereco: string, lido: string }|null, pordata: { nome: string, endereco: string, lido: string }|null }|null}
+ */
+export function nomeOficial(id) {
+  const n = nomes()?.get(id);
+  if (!n || n.correspondencia !== 'exata') return null;
+  /** @param {any} o */
+  const util = (o) => {
+    if (!o || typeof o !== 'object') return null;
+    const nome = o.nome;
+    if (typeof nome !== 'string' || nome.trim() === '' || nome === MARCADOR) return null;
+    const endereco = typeof o.endereco === 'string' ? o.endereco : '';
+    const lido = typeof o.lido_em === 'string' ? o.lido_em.slice(0, 10) : '';
+    if (endereco === '' || lido === '') return null;
+    return { nome, endereco, lido };
+  };
+  const ine = util(n.nome_ine);
+  const pordata = util(n.nome_pordata);
+  if (!ine && !pordata) return null;
+  return { ine, pordata };
 }
 
 /**
@@ -216,4 +366,63 @@ export function temRegua(regua) {
  */
 export function ficheirosDoMotor() {
   return { referencias: referencias() !== null, nomes: nomes() !== null };
+}
+
+/**
+ * ===========================================================================
+ * AS LINHAS QUE SÃO A RÉGUA DE OUTRA, E NÃO UMA MEDIDA (bloco P2, 15.09.2026)
+ * ===========================================================================
+ * As cinquenta e nove linhas que o motor selou a 15.09 existem para uma coisa:
+ * serem a régua de uma medida. `precos-da-habitacao-2024` é a MESMA MEDIDA que
+ * `precos-da-habitacao-2025`, um período antes; `precos-da-habitacao-2025-ue` é a
+ * mesma medida, noutra geografia. Nenhuma das duas é uma medida a mais da área da
+ * habitação.
+ *
+ * SEM ISTO, A PÁGINA DE UMA ÁREA LISTAVA-AS COMO CARTÕES PRÓPRIOS, e foi o que
+ * aconteceu na primeira construção com elas: a página da habitação passou de três
+ * cartões para seis, e o valor de `precos-da-habitacao-2024` ficou duas vezes na
+ * mesma página, uma no cartão dele e outra dentro da régua do cartão de 2025. É
+ * exactamente o que a régua A3 proíbe, e o que o F1.14 §1.2 já tinha escrito: «o
+ * enquadramento do cartão é uma leitura da mesma linha e não uma segunda cópia».
+ *
+ * A LISTA NÃO É ESCRITA À MÃO: sai de `referencias.json`, que é quem sabe que
+ * indicadores o motor enquadrou, e das mesmas duas regras de nome que a régua usa.
+ * Uma linha que o motor deixe de enquadrar sai desta lista sozinha, e volta a ser
+ * uma medida como as outras.
+ *
+ * E NÃO APANHA AS LINHAS ANTIGAS. `evora-divida-total-2024` é o período anterior
+ * de `evora-divida-total-2025` e continua a ser uma medida da sua área, porque a
+ * medida dela não está em `referencias.json`: o que esta lista tira é o que o
+ * motor pôs lá para ser régua, e mais nada.
+ *
+ * @returns {Set<string>}
+ */
+export function linhasDeEnquadramento() {
+  if (_deEnquadramento === undefined) {
+    const r = referencias();
+    if (r === null) {
+      _deEnquadramento = new Set();
+    } else {
+      const s = new Set();
+      for (const id of r.keys()) {
+        const c = chavesDoEnquadramento(id);
+        if (c.anterior) s.add(c.anterior);
+        if (c.ue) s.add(c.ue);
+      }
+      _deEnquadramento = s;
+    }
+  }
+  return _deEnquadramento;
+}
+
+/** @type {Set<string>|undefined} */
+let _deEnquadramento;
+
+/**
+ * Verdadeiro quando esta linha existe para ser a régua de outra.
+ *
+ * @param {string} id
+ */
+export function eLinhaDeEnquadramento(id) {
+  return linhasDeEnquadramento().has(id);
 }

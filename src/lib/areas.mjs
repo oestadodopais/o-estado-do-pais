@@ -57,6 +57,7 @@
  */
 
 import { AREAS } from '../data/areas.mjs';
+import { eLinhaDeEnquadramento } from './enquadramento.mjs';
 import { loadClaims } from './ledger.mjs';
 import { WORKS, ESTUDOS_DE_DADOS, INTERNAL_SOURCES, studyTitle } from '../data/studies.mjs';
 import { temRegisto } from './registos.mjs';
@@ -113,6 +114,17 @@ function pecasDaArea(area, claims) {
   for (const [id, c] of claims) {
     const m = materiaDaLinha(area, id, c);
     if (!m) continue;
+
+    /* UMA LINHA QUE É A RÉGUA DE OUTRA NÃO É UMA PEÇA DESTA ÁREA (bloco P2,
+       15.09.2026). `precos-da-habitacao-2024` é a MESMA MEDIDA que
+       `precos-da-habitacao-2025`, um período antes, e
+       `precos-da-habitacao-2025-ue` é a mesma medida noutra geografia: as duas
+       rendem-se dentro do cartão da medida que enquadram, e listá-las como
+       cartões próprios punha a página da habitação com seis cartões em vez de
+       três e o mesmo valor selado duas vezes na mesma página, que é o que a régua
+       A3 proíbe. A lista sai de `referencias.json` e não de uma lista escrita à
+       mão; a razão por extenso está em `src/lib/enquadramento.mjs`. */
+    if (eLinhaDeEnquadramento(id)) continue;
 
     const estudo = typeof c.study === 'string' ? c.study : null;
     if (estudo !== null && ESTUDOS_DE_DADOS.has(estudo)) {

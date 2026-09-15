@@ -117,8 +117,13 @@ const temAlgumaCoisa = temRegua(regua) || Boolean(palavra);
           `strings.mjs`; o valor é a linha. */}
       {regua.ue && (
         <span class="cartao-medida-regua-item" data-regua="ue">
-          <span class="cartao-medida-regua-k" data-voz>
-            {s.cartao.uniaoEuropeia}:{' '}
+          {/* OS DOIS PONTOS FICAM FORA DA MARCA, e não é arrumação: `data-voz`
+              manda a régua da voz recolher o texto que ele envolve, e o que ela
+              recolhe é o que o inventário declara. Com os dois pontos lá dentro,
+              a linha do inventário tinha de ser «União Europeia:», que não é o
+              nome de nada: é o nome mais a pontuação da linha em que ele está. */}
+          <span class="cartao-medida-regua-k">
+            <span data-voz>{s.cartao.uniaoEuropeia}</span>:{' '}
           </span>
           <Claim id={regua.ue.id} lang={lang} as="span" chip={true} />
         </span>
