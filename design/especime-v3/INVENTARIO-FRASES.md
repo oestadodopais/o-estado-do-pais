@@ -163,7 +163,7 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | --- | --- | --- | --- | --- |
 | conteudo | A régua da convergência | regioes | viva | — |
 | navegacao | An observatory of Portugal. | lugar | retirada | a frase de identidade passou a ser a frase de DEFINIÇÃO do sítio (`DECISIONS.md` §1.98, segunda emenda, item 3): diz as três maneiras de ler o sítio e a origem de cada número, que é o que a leitura de um leitor de primeira vez mediu em falta |
-| navegacao | An observatory of Portugal: every number with its source, read by territory, by domain and in studies. | lugar | viva | — |
+| navegacao | An observatory of Portugal: every number with its source, read by territory, by domain and in studies. | lugar | retirada | ver a razão na gémea portuguesa (item 1 do F1.13, 15.09.2026) |
 | conteudo | Alentejo · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | conteudo | Alentejo · região | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | conteudo | Algarve · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
@@ -222,10 +222,8 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | conteudo | A percentagem da população que vive em agregados onde o custo total da habitação leva mais de % do rendimento disponível. | lugar | retirada | achado 5 da leitura do Codex de 14.09.2026: o excerto qualifica as duas parcelas, «total housing costs ('net' of housing allowances)» e «disposable income ('net' of housing allowances)», e a frase deixava cair as duas, o que muda o que entra no numerador e no denominador. A frase nova está viva neste ficheiro |
 | conteudo | The percentage of the population living in households where total housing costs take more than % of disposable income. | lugar | retirada | ver a razão na gémea portuguesa (achado 5, 14.09.2026) |
 | navegacao | Números e fontes | lugar | viva | — |
-| navegacao | medidas | lugar | viva | — |
 | conteudo | As áreas da vida do país com medidas publicadas. | lugar | retirada | achado 6 da leitura cruzada do inventário (Codex, 14.09.2026), pelo §9.1 do brief: «com medidas publicadas» é a casa a dizer o que publicou, e a cobertura sai da voz do leitor. A descrição nova diz o que a página tem, e está viva neste ficheiro |
 | conteudo | The areas of the country’s life with published measures. | lugar | retirada | ver a razão na gémea portuguesa (achado 6, 14.09.2026) |
-| navegacao | measures | lugar | viva | — |
 | navegacao | Numbers and sources | lugar | viva | — |
 | navegacao | Números e fontes · O Estado do País | lugar | viva | achado 12 da leitura cruzada do inventário (Codex, 14.09.2026): é o NOME da página com o nome da publicação, e o nome de uma publicação é navegação por esta lista («o nome da publicação, os comandos»). Não diz nada sobre o país |
 | navegacao | Numbers and sources · O Estado do País | lugar | viva | ver a razão na gémea portuguesa (achado 12, 14.09.2026) |
@@ -321,16 +319,15 @@ língua em que é rendida.*
 | navegacao | Descarregar o livro-razão: CSV · JSON | até 2026-08-26 | retirada | «livro-razão» sai do nome visível da página do índice (item 8.8 e decisão 20 da releitura do leitor de primeira vez, 09.09.2026): o índice chama-se «Números e fontes» desde 08.09, e a porta passa a dizer «Descarregar tudo». O termo técnico fica no Método, no JSON e nos endereços |
 | navegacao | Download the ledger: CSV · JSON | até 2026-08-26 | retirada | ver a razão na gémea portuguesa (decisão 20, 09.09.2026) |
 | conteudo | O livro-razão | até 2026-08-26 | viva | — |
-| conteudo | one field unconfirmed | até 2026-08-26 | viva | — |
-| conteudo | provenance complete | até 2026-08-26 | viva | — |
-| conteudo | proveniência completa | até 2026-08-26 | viva | — |
-| conteudo | um campo por confirmar | até 2026-08-26 | viva | — |
-| conteudo | Os dois estados do selo | até 2026-08-26 | viva | — |
+| conteudo | one field unconfirmed | até 2026-08-26 | retirada | ver a razão na gémea portuguesa (item 5 do F1.13, 15.09.2026) |
+| conteudo | provenance complete | até 2026-08-26 | retirada | ver a razão na gémea portuguesa (item 5 do F1.13, 15.09.2026) |
+| conteudo | proveniência completa | até 2026-08-26 | retirada | a legenda dos dois estados passa a uma linha em palavras e a marca passa a chamar-se «a marca da fonte» (item 5 do brief do F1.13, 15.09.2026): o diretor leu a legenda na página de uma área e disse o que ela é para quem não trabalha aqui, «estados» a chamar o nome do sítio para dentro de uma legenda e «selo» a ser um selo de correio. A linha nova está viva neste ficheiro, e a L3 de `check:lugar` passa a contar «selo» a zero nas páginas do leitor fora do Método |
+| conteudo | Os dois estados do selo | até 2026-08-26 | retirada | a legenda dos dois estados passa a uma linha em palavras e a marca passa a chamar-se «a marca da fonte» (item 5 do brief do F1.13, 15.09.2026): o diretor leu a legenda na página de uma área e disse o que ela é para quem não trabalha aqui, «estados» a chamar o nome do sítio para dentro de uma legenda e «selo» a ser um selo de correio. A linha nova está viva neste ficheiro, e a L3 de `check:lugar` passa a contar «selo» a zero nas páginas do leitor fora do Método |
 | conteudo | The ledger | até 2026-08-26 | viva | — |
 | conteudo | The licence covers the dataset: its structure, the house values, the derivations and the descriptions. Excerpts transcribed from sources remain under their publishers’ terms. | até 2026-08-26 | viva | — |
-| conteudo | The two states of the seal | até 2026-08-26 | viva | — |
+| conteudo | The two states of the seal | até 2026-08-26 | retirada | ver a razão na gémea portuguesa (item 5 do F1.13, 15.09.2026) |
 | navegacao | Um observatório de Portugal. | lugar | retirada | a frase de identidade passou a ser a frase de DEFINIÇÃO do sítio (`DECISIONS.md` §1.98, segunda emenda, item 3): diz as três maneiras de ler o sítio e a origem de cada número, que é o que a leitura de um leitor de primeira vez mediu em falta |
-| navegacao | Um observatório de Portugal: cada número com a sua fonte, lido por território, por domínio e em estudos. | lugar | viva | — |
+| navegacao | Um observatório de Portugal: cada número com a sua fonte, lido por território, por domínio e em estudos. | lugar | retirada | o diretor leu a primeira página no ar a 15.09.2026 de manhã e mediu o que a frase fazia: descreve o MÉTODO e as três maneiras de percorrer o sítio, e não diz o que a coisa é a quem chega (item 1 do brief do F1.13). A frase nova, que diz o que o sítio tem, até onde desce e o que cada número traz, está viva neste ficheiro |
 | conteudo | With fields to confirm | grelha-2 | retirada | a legenda dos dois estados do selo de proveniência saiu das páginas do leitor (`46608f4`, 25.08, e a decisão do diretor de 27.08 que tirou as contagens de proveniência dos índices, `ef8a78e`) |
 | conteudo | [a verificar] | até 2026-08-26 | viva | — |
 | conteudo | [a verificar] (to verify) | até 2026-08-26 | viva | — |
@@ -2773,3 +2770,59 @@ dizia mais do que a fonte, ou entra porque se rendia sem estar declarada.*
 | navegacao | of the measures of the two European Union scoreboards | lugar | viva | ver a razão na gémea portuguesa (achado 3, 14.09.2026) |
 | conteudo | O fluxo de crédito consolidado às NFC, sem o investimento direto estrangeiro, em percentagem da dívida que elas tinham no período anterior, também sem o investimento direto estrangeiro; o nome por extenso da sigla permanece [a verificar] . | lugar | viva | achado 3 da releitura do Codex de 14.09.2026: a exclusão do investimento direto estrangeiro vale para os dois lados da fração, como a linha da Comissão a repete depois do «t-1». A palavra «também» é o que a repetição do parêntese faz na fonte, e não uma afirmação nova |
 | conteudo | The consolidated credit flow to NFC, excluding foreign direct investment, as a percentage of their debt stock in the previous period, also excluding foreign direct investment; the full name behind the abbreviation remains [a verificar] (to verify) . | lugar | viva | ver a razão na gémea portuguesa (achado 3 da releitura, 14.09.2026) |
+
+
+## As frases do F1.13 · «As palavras da porta e o índice dos domínios» (15.09.2026)
+
+**O bloco é `palavras-da-porta`, e as suas dezoito linhas saem todas de uma
+leitura do diretor** (oito novas, sete passadas a `retirada` e três saídas do ficheiro). A 15.09.2026 de manhã ele leu a primeira página no ar e a página de
+uma área, e escreveu o que viu: a frase de definição descrevia o método e não
+dizia o que o sítio é; as três portas diziam «a página inteira →», que é o
+mecanismo e não o destino; o primeiro ecrã tinha três caminhos para o mesmo
+lugar; o índice dos domínios dizia «10 medidas» e não dizia quais; e a legenda da
+marca chamava-lhe «selo», que para quem lê é um selo de correio.
+
+**Nenhuma das três etiquetas novas das portas está aqui, e não é esquecimento.**
+«Todos os concelhos →», «Todos os estudos →» e «Toda a agenda →» vivem dentro de
+um `<a>`, e um bloco cujo texto é todo ele uma ligação não é uma frase da casa
+(`textoForaDeComandos`, em `scripts/medir-defeitos.mjs`): é a mesma razão por que
+«a página inteira» nunca esteve nesta tabela. A troca das três está registada em
+`design/especime-v3/CHAVES-EN.md`, que é onde as cadeias mudam de palavras.
+
+**A linha do domínio entra com os buracos que a régua deixa**, e isso é o que ela
+é: os cinco nomes das medidas de cabeça vivem cada um dentro de um
+`data-nome="medidas"`, que a régua exclui porque é origem declarada, e a contagem
+e o numeral do «e mais» vivem dentro de um `data-nonledger="numeracao"`. O que
+sobra do bloco é a pontuação e as duas palavras da casa, e é isso que a sentinela
+tem de morder. É a mesma forma das linhas da manchete do país, que estão nesta
+tabela desde 08.09.2026.
+
+**Três linhas SAÍRAM do ficheiro, e é a primeira vez que isso acontece neste
+bloco.** «medidas», «measures» e «um campo por confirmar» eram blocos que se
+rendiam sozinhos (os dois primeiros na linha de um domínio do índice, o terceiro
+no segundo item da lista do aparelho), e os três blocos deixaram de existir. Não
+podiam passar a `retirada`, e a razão é a definição da régua: a medida 8 casa uma
+linha `retirada` por CONTENÇÃO («medidas» está dentro de «As medidas», o título
+da secção; «um campo por confirmar» é a cauda da linha nova da legenda) e uma
+linha `viva` por IGUALDADE. As três ficavam num estado impossível, e o portão da
+voz diz o que se faz: «a linha sai do ficheiro, ou passa a "retirada" com a razão
+escrita.» A primeira das duas é a única verdadeira aqui. As gémeas inglesas das
+duas primeiras saem com elas; a da terceira («one field unconfirmed») mudou
+mesmo de palavras e está `retirada`, com a razão na sua linha.
+
+**A linha da legenda da marca é uma só, e rende-se em 319 rotas por edição**: as
+nove páginas de área, o índice dos números e fontes, a lista dos concelhos do
+livro-razão e as 308 páginas de linhas de um concelho. Era, até 15.09, quatro
+marcações diferentes com as mesmas três cadeias; passa a ser um componente
+(`src/components/LegendaDaMarca.astro`).
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | Os números oficiais de Portugal, do país ao seu concelho, cada um com a fonte. | palavras-da-porta | viva | a frase de DEFINIÇÃO do sítio, no lugar da que descrevia o método (item 1 do brief do F1.13, 15.09.2026, pela leitura do diretor). Continua `navegacao` pela mesma razão de sempre: é o nome da publicação dito por extenso, e não fala do método, da verificação nem das intenções da casa (Emenda 15 e Emenda 18). Rende-se em `/` e em mais lado nenhum, e a L4 de `check:lugar` exige-a lá uma vez |
+| navegacao | Portugal’s official numbers, from the country to your municipality, each with its source. | palavras-da-porta | viva | ver a razão na gémea portuguesa (item 1 do F1.13, 15.09.2026) |
+| navegacao | Escreva o nome do concelho, ou toque no mapa. | palavras-da-porta | viva | o rótulo da busca na PRIMEIRA PÁGINA, que nomeia os dois caminhos para um concelho que o primeiro ecrã passa a ter (item 3 do brief do F1.13, 15.09.2026): a gaveta «Os nomes no mapa» deixou de estar à vista com guião, e ficam a busca e o mapa. É `navegacao` pela mesma leitura das outras quatro cadeias da busca (§9.7 do F1.10): é o rótulo de um comando que leva a uma página. **É uma cadeia à parte e não a das outras duas buscas:** `/municipios` e `/livro-razao/concelhos` rendem a mesma caixa e não têm mapa nenhum, e lá a frase seria falsa; elas ficam com «Escreva o nome do concelho», que continua viva neste ficheiro |
+| navegacao | Type the name of a municipality, or tap the map. | palavras-da-porta | viva | ver a razão na gémea portuguesa (item 3 do F1.13, 15.09.2026) |
+| navegacao | medidas: , , , , , e mais | palavras-da-porta | viva | a linha de um domínio vivo no índice dos domínios, com os nomes das suas medidas de cabeça a seguir à contagem (item 4 do brief do F1.13, 15.09.2026): o diretor leu «10 medidas» e o que lhe faltava é o que são, para saber se vale a pena entrar. Os cinco nomes e os dois números não estão no texto acima porque são origem declarada (`data-nome="medidas"` e `data-nonledger="numeracao"`), e é essa a forma que a régua recolhe. É `navegacao`: é a linha de uma porta a dizer o que está do outro lado. Rende-se em `/` e em `/dominios` |
+| navegacao | measures: , , , , , and more | palavras-da-porta | viva | ver a razão na gémea portuguesa (item 4 do F1.13, 15.09.2026) |
+| conteudo | Ao pé de cada número, a marca da fonte: fonte, excerto e data conferidos · um campo por confirmar. | palavras-da-porta | viva | a legenda da marca da fonte, numa linha em palavras, no lugar do aparelho «Os dois estados do selo» e da sua lista de dois itens (item 5 do brief do F1.13, 15.09.2026). É `conteudo` como as três cadeias que substitui: diz o que a marca ao lado de cada número quer dizer, e sem ela um leitor lê mal um estado de proveniência, que é o teste da regra desta lista. As duas amostras da marca desenham-se dentro da frase e não levam texto (`aria-hidden`) |
+| conteudo | Beside every number, the source mark: source, excerpt and date checked · one field still to confirm. | palavras-da-porta | viva | ver a razão na gémea portuguesa (item 5 do F1.13, 15.09.2026) |
