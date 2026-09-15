@@ -37,7 +37,6 @@
  */
 import Base from '../layouts/Base.astro';
 import ItemDoLivro from '../components/ItemDoLivro.astro';
-import LegendaDaMarca from '../components/LegendaDaMarca.astro';
 import { linhasDeUmConcelho, ESTUDO_DOS_CONCELHOS } from '../lib/livro-concelhos.mjs';
 import { municipioPorSlug } from '../data/municipios.mjs';
 import { studyLabel } from '../data/studies.mjs';
@@ -95,7 +94,10 @@ const path = routePath('livroConcelho', lang, { slug });
         complementar sem nome, que é o que ela é: a página tem um só, e por isso
         quem percorre os marcos não tem dois iguais para desfazer. */}
     <aside class="aparelho">
-      <LegendaDaMarca s={s} />
+      {/* A LEGENDA DA MARCA SAIU DESTA PÁGINA (bloco P2, item 3, 15.09.2026): o que
+          explica a estrutura do sítio diz-se uma vez, e não em cada página que a usa
+          (regra 5 do plano das palavras). Fica no índice do livro-razão, que é a
+          página da proveniência; o Método explica a marca em prosa. */}
 
       <p class="rodape-nav aparelho-saidas">
         <a href={routePath('municipio', lang, { slug: m.slug })}>{s.livroConcelhos.paginaDoConcelho}</a>

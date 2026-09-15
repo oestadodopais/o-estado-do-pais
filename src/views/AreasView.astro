@@ -79,6 +79,7 @@
  */
 import Base from '../layouts/Base.astro';
 import { areasComPagina } from '../lib/areas.mjs';
+import { LEI_ORGANICA } from '../data/areas.mjs';
 import { prova, CHAVE_DAS_PECAS } from '../lib/prova.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -98,6 +99,39 @@ const areas = areasComPagina();
     {/* A frase de hierarquia do §2.2 do brief F1.10, invertida em relação à
         de `/dominios`: nesta página o assunto é a área de governo. */}
     <p class="hierarquia">{s.hierarquia.area}</p>
+    {/* ------------------------------------------------------------------------
+        A ORGÂNICA, DITA UMA VEZ (bloco P2, item 3, 15.09.2026)
+        ------------------------------------------------------------------------
+        Até 15.09.2026 cada uma das nove páginas de área dizia, debaixo do
+        título, «área do XXV Governo Constitucional»: dezoito rendições da mesma
+        explicação, nas duas edições. O diretor leu-a e chamou-lhe o que ela é,
+        uma explicação que não é conteúdo. A regra 5 do plano das palavras manda
+        dizê-la uma vez, na página que explica a estrutura, e esta é essa página.
+
+        O DIPLOMA VAI AO LADO, e é o mesmo que a porta legal de cada página de
+        área já cita (`LEI_ORGANICA`), com a mesma marca de língua: um número de
+        diploma português dentro de uma página inglesa lê-se em português, ou o
+        «n.º» e o «º» saem trocados (I91).
+        ---------------------------------------------------------------------- */}
+    <p class="areas-organica">
+      {/* `data-voz` PORQUE O DIPLOMA ESTÁ DENTRO DO MESMO BLOCO (a lição do
+          achado 7 da leitura a frio de 15.09.2026). A peneira da régua da voz
+          salta um bloco inteiro quando ele contém uma marca de origem declarada,
+          e o nome do diploma leva `data-nonledger="referencia-legal"`: sem esta
+          marca, a frase da orgânica era prosa da casa numa página do leitor que
+          nenhum inventário podia declarar, porque a régua não a via. `data-voz`
+          só alarga a peneira ao texto que ele envolve. */}
+      <span data-voz>{s.areas.organica}</span>{' '}
+      <a
+        class="ligacao-externa"
+        href={LEI_ORGANICA.url}
+        rel="noopener noreferrer external"
+        data-nonledger="referencia-legal"
+        lang="pt-PT"
+      >
+        {LEI_ORGANICA.diplomaCurto}
+      </a>
+    </p>
     {/* ------------------------------------------------------------------------
         A PALAVRA CONTADA SAIU, E NÃO GANHOU DEFINIÇÃO (bloco F1.4, item 5, com
         a decisão do diretor de 04.09.2026)

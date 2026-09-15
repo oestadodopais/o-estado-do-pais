@@ -36,7 +36,6 @@ import Base from '../layouts/Base.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
 import Pesquisa from '../components/inicio/Pesquisa.astro';
 import ItemDoLivro from '../components/ItemDoLivro.astro';
-import LegendaDaMarca from '../components/LegendaDaMarca.astro';
 import { linhasDosConcelhos, ESTUDO_DOS_CONCELHOS } from '../lib/livro-concelhos.mjs';
 import { concelhos as concelhosDaCarta, coberturaDistingue } from '../lib/inicio.mjs';
 import { MUNICIPIOS, DISTRITOS } from '../data/caop-centroids.mjs';
@@ -195,7 +194,10 @@ const distingue = coberturaDistingue(resultados);
       mesmo componente que eles rendem, e a folha da ficha deixa de ter aqui uma
       quarta variante para divergir. */}
   <div class="marca-legenda-solta">
-    <LegendaDaMarca s={s} />
+    {/* A LEGENDA DA MARCA SAIU DESTA PÁGINA (bloco P2, item 3, 15.09.2026): o que
+        explica a estrutura do sítio diz-se uma vez, e não em cada página que a usa
+        (regra 5 do plano das palavras). Fica no índice do livro-razão, que é a
+        página da proveniência; o Método explica a marca em prosa. */}
   </div>
 
   <p class="rodape-nav" style="margin-top:14px">
