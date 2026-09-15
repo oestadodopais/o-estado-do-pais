@@ -80,11 +80,11 @@ import { ESTUDOS_DE_DADOS, studyLabel } from '../data/studies.mjs';
 import { getClaim, loadClaims } from './ledger.mjs';
 import { valorComUnidade } from './livro.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
-import { estadoDaMedida } from './estado.mjs';
+import { estadoDaMedida, palavraDoEstado } from './estado.mjs';
 import { prova } from './prova.mjs';
 import { matchPath, routePath, LANGS } from './routes.mjs';
 import { t } from '../i18n/strings.mjs';
-import { FIGURAS_PDM, fixadorDoLimiar } from '../data/figuras.mjs';
+import { FIGURAS_PDM, fixadorDoLimiar, comparacaoComOLimiar } from '../data/figuras.mjs';
 import { MANCHETE_DO_PAIS } from './inicio.mjs';
 
 /**
@@ -409,23 +409,16 @@ function modeloDaLinha(id, lang) {
      dela traz (F1.10, item 8.5). Uma linha fora do painel não tem limiar
      publicado e fica em «sem limiar», que não tem fixador. */
   const fixador = figura ? fixadorDoLimiar(figura, `cartoes: a linha "${id}"`) : null;
-  /* A ESCOLHA ESCREVE-SE, e não se indexa: `s.estado[fixador]` seria um índice de
-     cadeia sobre um objeto de chaves fixas, e o `typecheck` estrito recusa-o com
-     razão — a lista dos fixadores é fechada, e escrevê-la aqui faz o compilador
-     conferir que ela continua a ser a mesma dos dois lados. */
-  const par =
-    fixador === 'comissao'
-      ? s.estado.comissao
-      : fixador === 'lei'
-        ? s.estado.lei
-        : fixador === 'pacto'
-          ? s.estado.pacto
-          : fixador === 'conselho'
-            ? s.estado.conselho
-            : null;
+  /* A PALAVRA SAI DE `palavraDoEstado()` (P1, item 8, 15.09.2026), que é a
+     declaração única da decisão de 15.09: o estado diz a relação com a regra e a
+     palavra diz o lado, e o lado sai do sinal do limiar que a linha declara. */
+  const comparacao = figura?.limiar ? comparacaoComOLimiar(claim, figura.limiar) : null;
+  /* A PALAVRA CALCULA-SE PARA O ESTADO QUE ESTA LINHA TEM, e não para os três:
+     uma linha sem limiar publicado não tem fixador, e pedir a palavra de «fora»
+     a uma linha dessas fechava a construção com o guarda de quem o não declara.
+     Era o que a primeira redação deste bloco fazia, e o build apanhou-a. */
   const PALAVRA = {
-    fora: par?.fora ?? s.estado.semLimiar,
-    dentro: par?.dentro ?? s.estado.semLimiar,
+    [estado]: palavraDoEstado(s, { estado, comparacao, fixador, onde: `a linha "${id}"` }),
     sem: s.estado.semLimiar,
   };
 
@@ -522,7 +515,7 @@ export function modeloDoCartao({ tipo, id, lang }) {
 export function copiaVisivel(modelo, hospedeiro) {
   const partes = [modelo.marca, modelo.sobrancelha, modelo.manchete];
   if (modelo.fila) for (const g of modelo.fila) partes.push(g.palavra);
-  if (modelo.estado) partes.push(modelo.estado.palavra);
+  if (modelo.estado?.palavra) partes.push(modelo.estado.palavra);
   if (modelo.aparelho) partes.push(modelo.aparelho);
   partes.push([hospedeiro, ...modelo.meta].join(' · '));
   return partes.filter((x) => x !== null && x !== undefined && x !== '');

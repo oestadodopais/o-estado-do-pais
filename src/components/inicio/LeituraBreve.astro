@@ -65,6 +65,7 @@ import DataDaLinha from '../DataDaLinha.astro';
 import Regua from './Regua.astro';
 import { tresDatasDaLinha } from '../../lib/dominios.mjs';
 import { origensDaDefinicao } from '../../data/figuras.mjs';
+import { rotuloDoValorDeReferencia } from '../../lib/estado.mjs';
 
 /* `quadro` é a marca do quadro a que estas leituras pertencem («pdm» ou
    «social»), e serve a régua: é por ela que se conta se cada frase de contexto
@@ -89,6 +90,10 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
 /* O par de palavras do fixador, e o rótulo da linha do limiar com ele. Onde não
    há limiar não há fixador, e a linha não se rende. */
 /** @param {string|null} fixador */
+/* O PAR DO FIXADOR, para a linha do valor de referência e para a frase que diz
+   o que ele é. O rótulo lê-se por `rotuloDoValorDeReferencia()`, que é a
+   declaração única desde o item 8 do P1 (15.09.2026); o que fica aqui é a
+   frase, que só três dos quatro fixadores têm. */
 const parDo = (fixador) => (fixador ? s.estado[fixador] ?? null : null);
 
 const leituras = medidas.map((m) => ({
@@ -269,7 +274,7 @@ for (let i = 0; i < RANHURAS.length; i++) {
               dentro dos cartões e das leituras para que não volte. */}
           {l.limiar && (
             <p class="dobra-limiar">
-              <span class="dobra-limiar-k">{parDo(l.fixador)?.rotulo ?? s.home.numeros.limiar}</span>{' '}
+              <span class="dobra-limiar-k">{rotuloDoValorDeReferencia(s, l.fixador)}</span>{' '}
               <span class="dobra-limiar-v">
                 {l.banda ? (
                   <>
@@ -348,7 +353,7 @@ for (let i = 0; i < RANHURAS.length; i++) {
               colore={l.estado === 'fora' || l.estado === 'dentro'}
             >
               <Fragment slot="referencia">
-                {parDo(l.fixador)?.rotulo ?? s.home.numeros.limiar}{' '}
+                {rotuloDoValorDeReferencia(s, l.fixador)}{' '}
                 {l.banda ? (
                   <>
                     {l.limiar.inferior.sinal ?? ''}

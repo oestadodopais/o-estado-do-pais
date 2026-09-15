@@ -47,6 +47,7 @@ import { getClaim } from '../../lib/ledger.mjs';
 import Frase from '../Frase.astro';
 import Provenance from '../Provenance.astro';
 import Regua from './Regua.astro';
+import { palavraDoEstado, rotuloDoValorDeReferencia } from '../../lib/estado.mjs';
 
 const {
   s,
@@ -117,22 +118,21 @@ const {
   valor = true,
 } = Astro.props;
 
-/* A PALAVRA DO ESTADO, ESCOLHIDA PELO FIXADOR (F1.10, item 8.5). Ver a razão em
-   `src/data/figuras.mjs`, no cabeçalho de `FIXADORES_DO_LIMIAR`. «sem limiar»
-   não tem fixador porque não há limiar nenhum para atribuir. */
-const parDoEstado = fixador ? s.estado[fixador] : null;
-if ((estado === 'fora' || estado === 'dentro') && !parDoEstado) {
-  throw new Error(
-    `<Peca>: a medida «${id}» está ${estado} do limiar e não diz de quem o limiar é ` +
-      `(chegou sem \`fixador\`). A vista lê-o da declaração da medida com ` +
-      `\`fixadorDoLimiar()\`; sem ele a peça escreveria «${estado} do limiar» sozinho.`,
-  );
-}
-const palavra =
-  estado === 'sem' ? s.estado.semLimiar : parDoEstado ? parDoEstado[estado] ?? null : null;
-/* O RÓTULO DA LINHA DO LIMIAR diz de quem ele é, pela mesma razão: «limiar da
-   Comissão 60% · acima» em vez de «limiar 60% · acima». */
-const rotuloDoLimiar = parDoEstado?.rotulo ?? s.home.numeros.limiar;
+/* A PALAVRA DO ESTADO, NUMA DECLARAÇÃO SÓ (P1, item 8, 15.09.2026). Era
+   escolhida aqui, com o par do fixador; passa a sair de `palavraDoEstado()`, em
+   `src/lib/estado.mjs`, que é o sítio onde a decisão de 15.09 vive: a palavra
+   diz o LADO («acima do valor de referência») e não a relação com a regra, e o
+   lado sai do sinal do limiar que a linha já declara. O guarda do fixador
+   mudou-se para lá com ela. */
+const palavra = palavraDoEstado(s, {
+  estado,
+  comparacao,
+  fixador,
+  onde: `<Peca>: a medida «${id}»`,
+});
+/* O RÓTULO DA LINHA DO VALOR DE REFERÊNCIA diz de quem ele é: «valor de
+   referência da Comissão 60% · acima». */
+const rotuloDoLimiar = rotuloDoValorDeReferencia(s, fixador);
 
 const glifos = vazio ? 0 : [...String(getClaim(id).value)].length;
 /* O CORPO DO VALOR, COM TECTO EM 56px E ESCALA FLUIDA (direção, 21.08.2026).

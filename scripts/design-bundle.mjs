@@ -1856,22 +1856,28 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
      item 8.5, 08.09.2026): «dentro do limiar» servia, com a mesma cadeia, os
      dois quadros da União e o índice de dívida de uma câmara. As chaves são
      agora caminhos, e o feixe lê-as pelo caminho: uma chave que desapareça
-     continua a matar o gerador, que é o que esta lista existe para fazer. */
+     continua a matar o gerador, que é o que esta lista existe para fazer.
+
+     E VOLTOU A SER UM PAR SÓ PARA TRÊS DOS QUATRO FIXADORES (P1, item 8,
+     15.09.2026, pela decisão do diretor da manhã de 15.09): a palavra deixou de
+     dizer a relação com a regra e passa a dizer o LADO («acima do valor de
+     referência»), e o lado é o mesmo em qualquer quadro. O que continua a ser
+     de cada fixador é o RÓTULO da linha, que diz de quem o valor é. O índice de
+     dívida de uma câmara é a exceção declarada e fica com o seu par, porque o
+     limite dele é o da lei portuguesa e as palavras dele nunca tiveram a
+     palavra «limiar» dentro. */
   /** @param {Record<string, unknown>} raiz @param {string} caminho */
   const porCaminho = (raiz, caminho) =>
     caminho.split('.').reduce((n, k) => (n && typeof n === 'object' ? n[k] : undefined), raiz);
   const vocabulario = [
-    'estado.comissao.fora',
-    'estado.comissao.dentro',
+    'estado.acima',
+    'estado.abaixo',
+    'estado.entre',
     'estado.comissao.rotulo',
     'estado.lei.fora',
     'estado.lei.dentro',
     'estado.lei.rotulo',
-    'estado.pacto.fora',
-    'estado.pacto.dentro',
     'estado.pacto.rotulo',
-    'estado.conselho.fora',
-    'estado.conselho.dentro',
     'estado.conselho.rotulo',
     'estado.semLimiar',
     'estado.porConfirmar',

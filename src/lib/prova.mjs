@@ -502,16 +502,16 @@ const FRASES = {
     en: 'measures on the European panel of the front page',
   },
   painel_com_limiar: {
-    pt: 'medidas do painel cujo quadro publica um limiar',
-    en: 'panel measures whose scoreboard publishes a threshold',
+    pt: 'medidas do painel cujo quadro publica um valor de referência',
+    en: 'panel measures whose scoreboard publishes a reference value',
   },
   painel_fora_do_limiar: {
-    pt: 'medidas do painel cujo valor está fora do limiar publicado',
-    en: 'panel measures whose value is outside the published threshold',
+    pt: 'medidas do painel cujo valor está fora do valor de referência publicado',
+    en: 'panel measures whose value is outside the published reference value',
   },
   painel_dentro_do_limiar: {
-    pt: 'medidas do painel cujo valor está dentro do limiar publicado',
-    en: 'panel measures whose value is inside the published threshold',
+    pt: 'medidas do painel cujo valor está dentro do valor de referência publicado',
+    en: 'panel measures whose value is inside the published reference value',
   },
   painel_social_total: {
     pt: 'medidas do Painel Social Europeu que o livro-razão guarda',

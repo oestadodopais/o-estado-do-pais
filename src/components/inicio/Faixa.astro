@@ -97,6 +97,7 @@
  */
 import Claim from '../Claim.astro';
 import Frase from '../Frase.astro';
+import { palavraDoEstado } from '../../lib/estado.mjs';
 
 /* `total` É OPCIONAL, E É O QUE ACENDE A POSIÇÃO (F1.1, item 5, 03.09.2026;
    F1.2b, item 3, 03.09.2026).
@@ -169,21 +170,18 @@ for (const c of cartoes) {
    Uma medida sem estado (o valor é uma marca da fonte, «N.d.») não tem palavra
    nem quadrado: as duas condições são a mesma, e por isso escrevem-se uma vez.
    «sem limiar» não tem fixador porque não há limiar nenhum para atribuir. */
-/** @param {string|null|undefined} estado @param {string|null|undefined} fixador @param {string} id */
-const palavraDoEstado = (estado, fixador, id) => {
-  if (estado === 'sem') return s.estado.semLimiar;
-  if (estado !== 'fora' && estado !== 'dentro') return null;
-  const par = fixador ? s.estado[fixador] : null;
-  if (!par) {
-    throw new Error(
-      `<Faixa>: o cartão «${id}» está ${estado} do limiar e não diz de quem o limiar é ` +
-        `(chegou sem \`fixador\`). A vista lê-o da declaração da medida com ` +
-        `\`fixadorDoLimiar()\`, e sem ele o cartão escreveria «${estado} do limiar» sozinho, ` +
-        `que é o que o item 8.5 do F1.10 veio tirar da página.`,
-    );
-  }
-  return par[estado];
-};
+/* A DECISÃO MUDOU-SE PARA `src/lib/estado.mjs` (P1, item 8, 15.09.2026): a
+   palavra passa a dizer o lado («acima do valor de referência»), e o lado sai do
+   sinal do limiar que a linha já declara. A faixa continua a não decidir nada:
+   o que ela recebe da vista é o estado, o lado e o fixador. */
+/** @param {{ estado?: unknown, comparacao?: unknown, fixador?: unknown, id?: string }} c */
+const palavraDoCartao = (c) =>
+  palavraDoEstado(s, {
+    estado: /** @type {any} */ (c.estado),
+    comparacao: /** @type {any} */ (c.comparacao ?? null),
+    fixador: /** @type {any} */ (c.fixador ?? null),
+    onde: `<Faixa>: o cartão «${c.id ?? '?'}»`,
+  });
 ---
 
 <div class="faixa-bloco" data-faixa-bloco>
@@ -210,7 +208,7 @@ const palavraDoEstado = (estado, fixador, id) => {
   <ol class="faixa" data-faixa aria-label={rotulo} tabindex="0">
     {
       cartoes.map((c) => {
-        const palavra = palavraDoEstado(c.estado, c.fixador, c.id);
+        const palavra = palavraDoCartao(c);
         const pintado = c.estado === 'fora' || c.estado === 'dentro';
         return (
           <li
