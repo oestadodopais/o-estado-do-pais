@@ -1269,13 +1269,42 @@ async function comNavegador() {
      * espaço aparado vale zero.
      *
      * E TEM O SEU POSITIVO CONHECIDO, plantado na própria página: com
-     * `.porta-conta-item { display: contents }` as caixas que este bloco
-     * acrescentou desaparecem e o texto volta a ser um item anónimo, que é
-     * exactamente o defeito que esteve no ar. A célula tem de o ver em TODOS os
-     * pares, e não num. Uma régua que nunca ficou vermelha não prova nada
-     * (regra 14 da casa), e uma que fica vermelha por um sétimo da página prova
-     * um sétimo.
+     * `display: contents` as caixas que envolvem cada par desaparecem e o texto
+     * volta a ser um item anónimo, que é exactamente o defeito que esteve no ar.
+     * A célula tem de o ver em TODOS os pares, e não num. Uma régua que nunca
+     * ficou vermelha não prova nada (regra 14 da casa), e uma que fica vermelha
+     * por um sétimo da página prova um sétimo.
+     *
+     * ---------------------------------------------------------------------
+     * O ALVO MUDOU COM A PÁGINA (P1, itens 6 e 7, 15.09.2026)
+     * ---------------------------------------------------------------------
+     * Media as contagens das três portas (`.porta-conta`), e as portas deixaram
+     * de ter uma palavra a seguir ao número: «Concelhos · 308 concelhos» passou
+     * a «Concelhos · 308», porque o substantivo repetia o nome do cartão. Um
+     * par número-palavra sem palavra não se mede, e a célula ficava a medir zero
+     * pares sobre uma página com números: verde por não encontrar nada, que é o
+     * modo mais silencioso de uma régua morrer.
+     *
+     * O DEFEITO NÃO SAIU DA PÁGINA COM ELA. A primeira página continua a ter
+     * números seguidos de palavra, e são mais do que eram: a linha de cada
+     * domínio com medidas («14 medidas») e a legenda do lugar do nome do mapa
+     * («Portugal · 308 concelhos»). O alvo passa a ser esse, declarado numa
+     * lista.
+     *
+     * E A PLANTA MUDOU COM O ALVO, porque a antiga deixou de reproduzir o
+     * defeito. `display: contents` nas caixas antigas devolvia o texto a item
+     * anónimo de um contentor que já era flexível; aqui os pares vivem em
+     * caixas que NÃO são flexíveis, e desfazê-las punha-os num pai com `gap`, o
+     * que AFASTA em vez de colar. A planta passa a ser a causa original, escrita
+     * à letra: `display: flex` na caixa do par, com `gap: 0`. É o que
+     * `.porta-conta` tinha abaixo dos 1 024 quando um leitor viu
+     * «308concelhos», e é o que faz cada corrida de texto solto virar um item
+     * anónimo com o espaço aparado nas duas pontas.
      */
+    /** Onde um número é seguido de uma palavra, na primeira página. */
+    const CAIXAS_DO_PAR = '.dominios-estado, .mapa-nome-repouso';
+    /** A planta: a caixa do par vira um contentor flexível sem folga. */
+    const PLANTA_DO_PAR = '.dominios-estado,.mapa-nome-repouso{display:flex;gap:0}';
     /** @type {string[]} */
     const falhas = [];
     const notas = [];
@@ -1293,21 +1322,30 @@ async function comNavegador() {
      * contagem, a régua passa a exigir oito.
      */
     const medeOsVaos = () => {
-      const contagens = document.querySelectorAll('.porta-conta [data-prova]').length;
+      const ALVO = '.dominios-estado, .mapa-nome-repouso';
+      /* As contagens são os números que a página rende nestas caixas, com marca
+         de prova ou com o motivo declarado da numeração de uma lista rendida: as
+         duas famílias são números do sítio sobre si próprio, e as duas são
+         seguidas de uma palavra. */
+      const MARCA = '[data-prova], [data-nonledger="numeracao"]';
+      const contagens = [...document.querySelectorAll(ALVO)].reduce(
+        (n, c) => n + c.querySelectorAll(MARCA).length,
+        0,
+      );
       /** @type {{onde: string, numero: string, palavra: string, vao: number}[]} */
       const pares = [];
-      for (const conta of document.querySelectorAll('.porta-conta')) {
+      for (const conta of document.querySelectorAll(ALVO)) {
         const nos = [];
         const andarilho = document.createTreeWalker(conta, NodeFilter.SHOW_ALL);
         while (andarilho.nextNode()) nos.push(andarilho.currentNode);
         for (let i = 0; i < nos.length; i++) {
           const el = nos[i];
-          if (el.nodeType !== 1 || !(/** @type {Element} */ (el)).hasAttribute('data-prova')) continue;
+          if (el.nodeType !== 1 || !(/** @type {Element} */ (el)).matches(MARCA)) continue;
           const caixa = (/** @type {Element} */ (el)).getBoundingClientRect();
           /* A primeira letra depois deste número, saltando o que for espaço. */
           for (let j = i + 1; j < nos.length; j++) {
             const n = nos[j];
-            if (n.nodeType === 1 && (/** @type {Element} */ (n)).hasAttribute('data-prova')) break;
+            if (n.nodeType === 1 && (/** @type {Element} */ (n)).matches(MARCA)) break;
             if (n.nodeType !== 3) continue;
             /* O texto do PRÓPRIO número vem depois dele na ordem do documento
                (o «308» é filho do `<span data-prova>`): salta-se, senão a régua
@@ -1322,7 +1360,10 @@ async function comNavegador() {
             r.setEnd(n, k + 1);
             const letra = r.getBoundingClientRect();
             pares.push({
-              onde: (/** @type {Element} */ (el)).getAttribute('data-prova') ?? '?',
+              onde:
+                (/** @type {Element} */ (el)).getAttribute('data-prova') ??
+                (/** @type {Element} */ (el)).getAttribute('data-nonledger') ??
+                '?',
               numero: (el.textContent ?? '').trim(),
               palavra: s.slice(k, k + 12).trim(),
               vao: Math.round((letra.left - caixa.right) * 100) / 100,
@@ -1344,14 +1385,14 @@ async function comNavegador() {
       const { contagens, pares } = await pag.evaluate(medeOsVaos);
       if (contagens === 0) {
         falhas.push(
-          `${rota}: a página não tem uma única contagem dentro de \`.porta-conta\`. Sem um ` +
+          `${rota}: a página não tem uma única contagem dentro de \`${CAIXAS_DO_PAR}\`. Sem um ` +
             `positivo conhecido esta célula não mede nada (regra 14 da casa).`,
         );
       }
       /* OS PARES SÃO TODOS OS DA PÁGINA, e não «pelo menos um». */
       if (pares.length !== contagens) {
         falhas.push(
-          `${rota}: a página tem ${contagens} contagem(ns) em \`.porta-conta\` e a régua mediu ` +
+          `${rota}: a página tem ${contagens} contagem(ns) em \`${CAIXAS_DO_PAR}\` e a régua mediu ` +
             `${pares.length} par(es) número-palavra. Uma contagem que fica sem par não é medida, ` +
             `e uma régua que se dá por satisfeita com um par não cobre a página.`,
         );
@@ -1368,7 +1409,7 @@ async function comNavegador() {
       /* O POSITIVO CONHECIDO, plantado. TEM DE APANHAR TODOS OS PARES: com as
          caixas desfeitas, cada par número-palavra volta a ser texto solto num
          contentor flexível, e o defeito que esteve no ar não era num par só. */
-      await pag.addStyleTag({ content: '.porta-conta-item{display:contents}' });
+      await pag.addStyleTag({ content: PLANTA_DO_PAR });
       const comDefeito = await pag.evaluate(medeOsVaos);
       const apanhados = comDefeito.pares.filter((x) => x.vao < VAO_MINIMO).length;
       if (comDefeito.pares.length !== contagens) {
@@ -1380,7 +1421,7 @@ async function comNavegador() {
       }
       if (apanhados !== comDefeito.pares.length || apanhados === 0) {
         falhas.push(
-          `${rota}: com o defeito plantado (\`.porta-conta-item{display:contents}\`, que devolve ` +
+          `${rota}: com o defeito plantado (\`${PLANTA_DO_PAR}\`, que devolve ` +
             `o texto a item anónimo) a régua apanhou ${apanhados} de ${comDefeito.pares.length} ` +
             `par(es). Tinha de apanhar todos: um par apanhado em sete deixava-a verde sobre uma ` +
             `página inteira por medir, e uma régua assim não prova nada.`,

@@ -220,6 +220,14 @@ import { parse } from 'node-html-parser';
    lê-a: os dois lados da comparação deixam de ser o mesmo texto escrito duas
    vezes na régua. */
 import { DEFINICAO_DOS_PAINEIS, numeralPorExtenso } from '../../src/data/figuras.mjs';
+/* A DECLARAÇÃO DO DOMÍNIO DE CADA MEDIDA, e a única coisa que esta régua importa
+   da fonte do sítio além das duas de cima (P1, item 6, 15.09.2026). A razão
+   está ao pé da célula A26: a medida de aceitação do item é, à letra, «cada
+   contagem igual ao número de `hasClaim` verdadeiros das medidas mapeadas», e o
+   oráculo É a declaração. Uma segunda cópia dela aqui era uma segunda tabela a
+   divergir da primeira. */
+import { DOMINIO_DAS_MEDIDAS } from '../../src/data/dominios.mjs';
+import { hasClaim } from '../../src/lib/ledger.mjs';
 /* `numeralPorExtenso` É A MESMA FUNÇÃO QUE A PÁGINA USA (A20, 15.09.2026,
    achado 8 da leitura a frio). A célula recompõe o N do «e mais N» a partir
    da contagem que a linha rende, e uma segunda maneira de escrever um numeral
@@ -370,6 +378,43 @@ const texto = (no) => (no ? no.textContent.replace(/\s+/g, ' ').trim() : '');
 
 const ocorrencias = (texto, agulha) => texto.split(agulha).length - 1;
 
+/** Todos os `.html` de `dist/`, a fundo. @param {string} dir */
+function* ficheirosHtml(dir) {
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const f = path.join(dir, e.name);
+    if (e.isDirectory()) yield* ficheirosHtml(f);
+    else if (e.name.endsWith('.html')) yield f;
+  }
+}
+
+/**
+ * O TEXTO QUE O LEITOR VÊ, de um documento construído (P1, item 8, 15.09.2026).
+ *
+ * «À vista» é uma definição e não uma intuição, e esta é a que o bloco usa em
+ * toda a parte: o corpo, sem `<script>`, `<style>` e `<template>`, e sem o que
+ * está `hidden`, `aria-hidden="true"` ou em `.vh`. O que fica é o que se lê no
+ * ecrã e o que uma captura mostra.
+ *
+ * NÃO LÊ ATRIBUTOS, e é de propósito: a medida do item 8 diz que a palavra
+ * «limiar» «pode ficar em atributos, classes e comentários». O que ela proíbe é
+ * o leitor vê-la.
+ *
+ * @param {string} html
+ */
+const visivel = (html) => {
+  const raiz = parse(html, { comment: false, blockTextElements: { script: true, style: true, noscript: false } });
+  const corpo = raiz.querySelector('body');
+  if (!corpo) return '';
+  for (const el of corpo.querySelectorAll('script, style, template')) el.remove();
+  for (const el of corpo.querySelectorAll('[hidden], [aria-hidden="true"], .vh')) el.remove();
+  /* O QUE SE COPIA DE UMA FONTE FICA COMO A FONTE O ESCREVEU, e não é texto da
+     casa: os excertos das linhas do livro-razão e das definições vêm marcados
+     `data-verbatim`, e a régua tira-os antes de contar uma palavra da casa. Um
+     excerto do Eurostat que diga «with a threshold of 60%» é a fonte a falar. */
+  for (const el of corpo.querySelectorAll('[data-verbatim]')) el.remove();
+  return (corpo.textContent ?? '').replace(/\s+/g, ' ');
+};
+
 const ALTURA_PEQUENA = 664;
 const ALVO_TOQUE = 44;
 const ALVO_PONTEIRO = 32;
@@ -493,8 +538,44 @@ const EDICOES = [
     definicaoNova: 'Os números oficiais de Portugal, do país ao seu concelho, cada um com a fonte.',
     definicaoAntiga:
       'Um observatório de Portugal: cada número com a sua fonte, lido por território, por domínio e em estudos.',
+    /* AS ETIQUETAS DAS PORTAS PASSARAM A SER O QUE NÃO PODE ESTAR LÁ (P1, item
+       7, 15.09.2026): o F1.13 escreveu-as de manhã e o diretor leu-as à tarde.
+       Ficam aqui, com as contagens-legenda que saíram com elas. */
     portasNovas: ['Todos os concelhos →', 'Todos os estudos →', 'Toda a agenda →'],
     portaAntiga: 'a página inteira',
+    legendasDaPorta: [' concelhos · CAOP', ' estudos · ', ' edições', ' em curso'],
+    /* AS CADEIAS DO P1 (15.09.2026), escritas aqui e não lidas de `strings.mjs`,
+       pela mesma razão das do F1.13: uma régua que lesse o gabarito ficava verde
+       com o gabarito e a página a dizerem a mesma coisa errada. */
+    buscaFrases: [
+      'Escreva o nome do concelho, ou toque no mapa.',
+      'Escreva o nome do concelho',
+    ],
+    buscaSemGuiao: 'Sem guião, o botão leva à lista inteira dos concelhos',
+    buscaCampo: 'Concelho',
+    dominioDentroDe: 'incluído em',
+    dominioEMais: 'e mais',
+    dominioAbertura: 'domínios do país, e os números que este projeto já publica em cada um.',
+    limiar: ['limiar'],
+    valorDeReferencia: 'valor de referência',
+    /* AS ROTAS ONDE A PALAVRA VIVIA: as palavras de estado (a primeira página,
+       os dois quadros, o domínio, um concelho), a legenda da marca (uma área) e
+       o título da régua visível (a leitura de uma medida, que é do domínio). */
+    rotasDoLimiar: [
+      { rota: '/index.html', n: 0 },
+      /* A ÚNICA ROTA COM UMA CONTAGEM QUE NÃO É ZERO, e a razão é declarada: a
+         definição do painel do Procedimento é a que a própria Comissão publica
+         («um conjunto limitado de medidas … cada uma com o seu limiar
+         indicativo»), citada com o documento, o endereço e o excerto. É a fonte
+         a falar, e o que se copia de uma fonte fica como a fonte o escreveu.
+         Uma SEGUNDA ocorrência nesta página fecha a célula. */
+      { rota: '/uniao-europeia/index.html', n: 1 },
+      { rota: '/dominios/economia-e-financas-publicas/index.html', n: 0 },
+      { rota: '/municipios/evora/index.html', n: 0 },
+      { rota: '/areas/infraestruturas-e-habitacao/index.html', n: 0 },
+      { rota: '/livro-razao/divida-publica-2025/index.html', n: 0 },
+    ],
+    mapaRepouso: 'Portugal',
   },
   {
     chave: 'en',
@@ -518,6 +599,28 @@ const EDICOES = [
       'An observatory of Portugal: every number with its source, read by territory, by domain and in studies.',
     portasNovas: ['All municipalities →', 'All studies →', 'The whole agenda →'],
     portaAntiga: 'the whole page',
+    legendasDaPorta: [' municipalities · CAOP', ' studies · ', ' editions', ' in progress'],
+    buscaFrases: [
+      'Type the name of a municipality, or tap the map.',
+      'Type the name of the municipality',
+    ],
+    buscaSemGuiao: 'Without scripting, the button leads to the full list of municipalities',
+    buscaCampo: 'Municipality',
+    dominioDentroDe: 'included in',
+    dominioEMais: 'and more',
+    dominioAbertura: 'domains, and the numbers this project already publishes in each.',
+    limiar: ['threshold'],
+    valorDeReferencia: 'reference value',
+    rotasDoLimiar: [
+      { rota: '/en/index.html', n: 0 },
+      /* Ver a razão na edição portuguesa: a definição do painel é a da Comissão. */
+      { rota: '/en/european-union/index.html', n: 1 },
+      { rota: '/en/domains/economia-e-financas-publicas/index.html', n: 0 },
+      { rota: '/en/municipalities/evora/index.html', n: 0 },
+      { rota: '/en/areas/infraestruturas-e-habitacao/index.html', n: 0 },
+      { rota: '/en/ledger/divida-publica-2025/index.html', n: 0 },
+    ],
+    mapaRepouso: 'Portugal',
     painel: '/en/european-union',
   },
 ];
@@ -1028,6 +1131,118 @@ async function corre() {
     medidas[`A5.${ed.chave}.semGuiao`] = semGuiaoA5;
     await ctxSemGuiaoA5.close();
 
+    /* ------------------------------------------------------------ A22, A24 */
+    /* ------------------------------------------------------------------------
+       O LUGAR DO NOME NUNCA VAZIO, NOS TRÊS ESTADOS DO MAPA (P1, item 5)
+       ------------------------------------------------------------------------
+       As quatro frases de instrução saíram («Toque num distrito ou numa ilha»,
+       «Passe o rato…», e as duas do nível do concelho), e o que ficou em repouso
+       é onde o leitor está e quantos concelhos esse território tem. A medida de
+       aceitação do item diz as duas coisas: **as quatro cadeias a zero, e o
+       lugar do nome nunca vazio, medido nos três estados do mapa**.
+
+       OS TRÊS ESTADOS SÃO OS DA A5, e pela mesma razão: com guião e com mapa,
+       com guião e com o mapa falhado, e sem guião. Um lugar que só dissesse
+       alguma coisa quando o guião corre era um lugar vazio para quem não tem
+       guião, e é exactamente o defeito que este bloco veio tirar do lado da
+       gaveta.
+
+       «NUNCA VAZIO» MEDE-SE COMO TEXTO À VISTA e não como presença de nó: o
+       parágrafo do repouso existia antes e vinha `hidden` do servidor. A célula
+       pergunta ao navegador se ele se vê, e lê o texto dele.
+
+       ------------------------------------------------------------------------
+       AS TRÊS PORTAS SÃO A LIGAÇÃO INTEIRA (P1, item 7) · A24
+       ------------------------------------------------------------------------
+       «Três `<a>` que envolvem o cartão inteiro; alvos a 44 px.» A A19 mede as
+       cadeias que saíram; esta mede a FORMA, que é o que só um navegador
+       responde: cada cartão é um `<a>` e não um `<div>` com uma ligação lá
+       dentro, e a caixa dele tem 44 px de altura no telemóvel.
+
+       O ALVO MEDE-SE COM O APONTADOR GROSSO, pela razão que esta régua já
+       escreve na A15: a rede dos 44 px vive dentro de `@media (pointer:
+       coarse)`, e um Chromium com `viewport` e mais nada declara um apontador
+       fino. */
+    const lugarDoNome = async (pag) =>
+      pag.evaluate(() => {
+        const visivelNoEcra = (el) =>
+          !!el &&
+          el.checkVisibility({
+            contentVisibilityAuto: true,
+            opacityProperty: true,
+            visibilityProperty: true,
+          });
+        const lugar = document.querySelector('[data-mapa-nome]');
+        const repousos = [...document.querySelectorAll('[data-mapa-repouso]')];
+        const aVista = repousos.filter(visivelNoEcra);
+        return {
+          existe: !!lugar,
+          lugarAVista: visivelNoEcra(lugar),
+          repousos: repousos.length,
+          aVista: aVista.length,
+          texto: aVista.map((el) => (el.textContent ?? '').replace(/\s+/g, ' ').trim()),
+        };
+      });
+
+    const comMapa = await lugarDoNome(p);
+    const pLugarSemMapa = await pagina(ed.rota, 390, ALTURA_PEQUENA, {
+      bloqueia: '**/js/mapa-unidades.js',
+    });
+    const semMapaNoLugar = await lugarDoNome(pLugarSemMapa);
+    await pLugarSemMapa.__ctx.close();
+
+    const ctxLugarSemGuiao = await nav.newContext({
+      viewport: { width: 390, height: ALTURA_PEQUENA },
+      javaScriptEnabled: false,
+    });
+    const pLugarSemGuiao = await ctxLugarSemGuiao.newPage();
+    await pLugarSemGuiao.goto(base + ed.rota, { waitUntil: 'load' });
+    const semGuiaoNoLugar = await lugarDoNome(pLugarSemGuiao);
+    await ctxLugarSemGuiao.close();
+
+    const tresEstados = { comMapa, semMapa: semMapaNoLugar, semGuiao: semGuiaoNoLugar };
+    const vaziosNoLugar = Object.entries(tresEstados).filter(
+      ([, x]) => !x.lugarAVista || x.aVista !== 1 || !x.texto[0] || !x.texto[0].includes(ed.mapaRepouso),
+    );
+    medidas[`A22.${ed.chave}`] = tresEstados;
+    conta(
+      `A22.${ed.chave}`,
+      vaziosNoLugar.length === 0,
+      `o lugar do nome nos três estados do mapa em ${ed.rota}: ` +
+        Object.entries(tresEstados)
+          .map(([k, x]) => `${k} «${x.texto[0] ?? '(vazio)'}» (${x.aVista} de ${x.repousos} à vista)`)
+          .join(' · ') +
+        (vaziosNoLugar.length ? ` · VAZIO EM: ${vaziosNoLugar.map(([k]) => k).join(', ')}` : ''),
+    );
+
+    const pPortas = await pagina(ed.rota, 390, ALTURA_PEQUENA, { toque: true });
+    const cartoesDasPortas = await pPortas.evaluate(() =>
+      [...document.querySelectorAll('.portas > *')].map((el) => {
+        const r = el.getBoundingClientRect();
+        return {
+          etiqueta: el.tagName.toLowerCase(),
+          href: el.getAttribute('href'),
+          altura: +r.height.toFixed(1),
+          ligacoesDentro: el.querySelectorAll('a').length,
+          texto: (el.textContent ?? '').replace(/\s+/g, ' ').trim(),
+        };
+      }),
+    );
+    await pPortas.__ctx.close();
+    const masPortas = cartoesDasPortas.filter(
+      (x) => x.etiqueta !== 'a' || !x.href || x.ligacoesDentro !== 0 || x.altura < 44,
+    );
+    medidas[`A24.${ed.chave}`] = { portas: cartoesDasPortas, maus: masPortas };
+    conta(
+      `A24.${ed.chave}`,
+      cartoesDasPortas.length === 3 && masPortas.length === 0,
+      `as três portas de ${ed.rota} a 390: ${cartoesDasPortas.length} cartão(ões) · ` +
+        cartoesDasPortas.map((x) => `<${x.etiqueta}> «${x.texto}» ${x.altura}px`).join(' · ') +
+        (masPortas.length
+          ? ` · MAUS: ${masPortas.map((x) => `<${x.etiqueta}> ${x.ligacoesDentro} ligação(ões) dentro, ${x.altura}px`).join('; ')}`
+          : ''),
+    );
+
     /* CADA NOME LEVA À SUA PÁGINA, e o destino confere-se contra o que a Carta
        diz: a porta de uma unidade é `/distritos/<slug>` na edição portuguesa e
        `/en/districts/<slug>` na inglesa, com o mesmo slug que a marca declara. A
@@ -1114,6 +1329,10 @@ async function corre() {
        coleção vazia, que é a regra 14 da casa a ser quebrada dentro da própria
        régua. O que muda é a pasta que ela lê; o teste é o mesmo. */
     const docDoPainel = await html(`${ed.painel}/index.html`);
+    /* O documento do domínio e as três leituras «à vista», que as células do P1
+       comparam. Lêem-se uma vez por edição, e não uma vez por célula. */
+    const docDoDominio = await html(`${ed.dominio}/index.html`);
+    const docVisivel = visivel(doc);
 
     const repetidos = AS_VINTE_E_UMA.map((id) => ({
       id,
@@ -1204,10 +1423,14 @@ async function corre() {
        contasse a nova ficava verde com as duas na página, que é exactamente a
        planta «a frase antiga de volta» da medida P8.
 
-       A19 · AS TRÊS PORTAS. Cada etiqueta nova UMA vez, e a antiga a zero. A
-       seta entra na cadeia porque ela é parte do que o leitor lê, e porque é o
-       que distingue a etiqueta da porta de um nome de página que apareça noutro
-       sítio do documento. */
+       A19 · AS TRÊS PORTAS. **A célula mudou de objeto a 15.09.2026 ao fim da
+       tarde, com o item 7 do P1**, e a mudança é o que o bloco decidiu: as três
+       etiquetas que o F1.13 escreveu de manhã («Todos os concelhos →») saíram,
+       porque diziam o nome da página que o cartão já diz. O que se mede agora é
+       o que a regra 3 do plano das palavras promete: **as etiquetas a zero, e as
+       palavras das contagens-legenda a zero**. A forma dos cartões mede-se na
+       A24, com o navegador, que é onde uma ligação que envolve um cartão se
+       distingue de uma ligação dentro dele. */
     const nDefinicao = ocorrencias(doc, ed.definicaoNova);
     const nDefinicaoAntiga = ocorrencias(doc, ed.definicaoAntiga);
     medidas[`A18.${ed.chave}`] = { nova: nDefinicao, antiga: nDefinicaoAntiga };
@@ -1218,15 +1441,161 @@ async function corre() {
         `a antiga ${nDefinicaoAntiga} (esperada 0) · «${ed.definicaoNova}»`,
     );
 
-    const nPortas = ed.portasNovas.map((t) => ocorrencias(doc, t));
+    const nEtiquetas = ed.portasNovas.map((t) => ocorrencias(doc, t));
     const nPortaAntiga = ocorrencias(doc, ed.portaAntiga);
-    medidas[`A19.${ed.chave}`] = { novas: nPortas, antiga: nPortaAntiga };
+    /* AS LEGENDAS CONTAM-SE DENTRO DA SECÇÃO DAS PORTAS, e não na página
+       inteira: « concelhos» é legítimo na legenda do mapa («308 concelhos ·
+       CAOP 2025») e no lugar do nome, e o que o item 7 tira é a contagem-legenda
+       do cartão. Uma célula que contasse a página inteira media outra coisa. */
+    const seccaoDasPortas = (doc.match(/<nav class="portas"[\s\S]*?<\/nav>/) ?? [''])[0];
+    const nLegendas = ed.legendasDaPorta.map((t) => ocorrencias(seccaoDasPortas, t));
+    medidas[`A19.${ed.chave}`] = { etiquetas: nEtiquetas, antiga: nPortaAntiga, legendas: nLegendas };
     conta(
       `A19.${ed.chave}`,
-      nPortas.every((n) => n === 1) && nPortaAntiga === 0,
-      `as três portas em ${ed.rota}: ` +
-        ed.portasNovas.map((t, i) => `«${t}» ${nPortas[i]}`).join(' · ') +
-        ` (cada uma esperada 1) · «${ed.portaAntiga}» ${nPortaAntiga} (esperada 0)`,
+      seccaoDasPortas.length > 0 &&
+        nEtiquetas.every((n) => n === 0) &&
+        nPortaAntiga === 0 &&
+        nLegendas.every((n) => n === 0),
+      `as três portas em ${ed.rota}: as etiquetas ` +
+        ed.portasNovas.map((t, i) => `«${t}» ${nEtiquetas[i]}`).join(' · ') +
+        ` e as legendas ` +
+        ed.legendasDaPorta.map((t, i) => `«${t}» ${nLegendas[i]}`).join(' · ') +
+        ` (todas esperadas 0) · «${ed.portaAntiga}» ${nPortaAntiga} (esperada 0)`,
+    );
+
+    /* -------------------------------------------------- A21, A23, A25, A26 */
+    /* AS PALAVRAS DO P1 NO DOCUMENTO SERVIDO (15.09.2026, itens 4, 6 e 8).
+       Quatro células sobre cadeias, pela mesma razão das duas de cima: uma
+       cadeia está no documento ou não está, e um navegador não acrescenta nada
+       à pergunta.
+
+       A21 · A BUSCA SEM FRASE DE INSTRUÇÃO. As três cadeias que a busca tinha
+       («Escreva o nome do concelho», a variante com o mapa, e a do sem-guião)
+       a ZERO à vista, e o nome do campo a render-se: o rótulo continua a
+       existir, em `.vh`, e o campo leva o mesmo nome como texto-fantasma. As
+       duas metades são precisas: um campo sem frase e sem nome não é um campo
+       melhor, é um campo sem nome.
+
+       A23 · OS DEZOITO DOMÍNIOS. Dezoito linhas no índice, «incluído em» e
+       «e mais» a zero, e a linha de abertura uma vez. A CONTAGEM DE CADA UM
+       mede-se na A26, contra a declaração.
+
+       A25 · «limiar» NO TEXTO VISÍVEL. A palavra pode ficar em atributos, em
+       classes e em comentários; o que o item pede é que o leitor não a veja.
+       Mede-se o texto do corpo com o que está `hidden`, `aria-hidden` e `.vh`
+       retirado, que é a definição de «à vista» que este bloco usa em toda a
+       parte.
+
+       A26 · A CONTAGEM DE CADA DOMÍNIO É A DA DECLARAÇÃO. A régua lê o índice
+       da página construída e compara-o, domínio a domínio, com o que
+       `DOMINIO_DAS_MEDIDAS` e `hasClaim` dizem. **É a única célula deste bloco
+       que importa a declaração do sítio**, e a razão está escrita ao pé dela. */
+    const semGuiaoNoDocumento = ocorrencias(doc, ed.buscaSemGuiao);
+    const frasesDaBusca = ed.buscaFrases.map((t) => ocorrencias(docVisivel, t));
+    const nomeDoCampo = ocorrencias(doc, `placeholder="${ed.buscaCampo}"`);
+    medidas[`A21.${ed.chave}`] = {
+      frases: frasesDaBusca,
+      semGuiaoNoDocumento,
+      semGuiaoVisivel: ocorrencias(docVisivel, ed.buscaSemGuiao),
+      nomeDoCampo,
+    };
+    conta(
+      `A21.${ed.chave}`,
+      frasesDaBusca.every((n) => n === 0) &&
+        ocorrencias(docVisivel, ed.buscaSemGuiao) === 0 &&
+        semGuiaoNoDocumento === 1 &&
+        nomeDoCampo === 1,
+      `a busca em ${ed.rota}: ` +
+        ed.buscaFrases.map((t, i) => `«${t}» ${frasesDaBusca[i]}`).join(' · ') +
+        ` (esperadas 0 à vista) · a frase do sem-guião ${semGuiaoNoDocumento} vez(es) no ` +
+        `documento (esperada 1) e ${ocorrencias(docVisivel, ed.buscaSemGuiao)} à vista ` +
+        `(esperada 0) · o texto-fantasma «${ed.buscaCampo}» ${nomeDoCampo} (esperado 1)`,
+    );
+
+    const nLinhasDoIndice = (doc.match(/<li class="dominios-item"/g) ?? []).length;
+    const nDentroDe = ocorrencias(docVisivel, ed.dominioDentroDe);
+    const nEMais = ocorrencias(docVisivel, ed.dominioEMais);
+    const nAbertura = ocorrencias(docVisivel, ed.dominioAbertura);
+    medidas[`A23.${ed.chave}`] = {
+      linhas: nLinhasDoIndice,
+      dentroDe: nDentroDe,
+      eMais: nEMais,
+      abertura: nAbertura,
+    };
+    conta(
+      `A23.${ed.chave}`,
+      nLinhasDoIndice === 18 && nDentroDe === 0 && nEMais === 0 && nAbertura === 1,
+      `o índice dos domínios em ${ed.rota}: ${nLinhasDoIndice} linha(s) (esperadas 18) · ` +
+        `«${ed.dominioDentroDe}» ${nDentroDe} e «${ed.dominioEMais}» ${nEMais} (esperadas 0) · ` +
+        `a linha de abertura ${nAbertura} (esperada 1)`,
+    );
+
+    /* A25 CORRE SOBRE AS PÁGINAS ONDE A PALAVRA VIVIA, E LÊ-AS PELO SERVIDOR.
+       ---------------------------------------------------------------------
+       Duas decisões, e as duas têm razão escrita.
+
+       **PELO SERVIDOR E NÃO PELO DISCO.** O estrago plantado desta régua é uma
+       transformação do HTML no caminho entre o ficheiro e o navegador: uma
+       célula que lesse `dist/` directamente nunca via planta nenhuma, e a
+       planta do item 8 ficava a provar coisa nenhuma. Foi o que a primeira
+       redação desta célula fazia, e o que a corrida com `--vermelhos` mostrou.
+
+       **UMA LISTA DE ROTAS E NÃO AS 7 240.** A palavra vivia nas palavras de
+       estado, na legenda da marca e nos títulos das réguas visíveis, que é o que
+       o item nomeia: a primeira página, os dois quadros da União, a página do
+       domínio, a de um concelho e a de uma área. A contagem sobre o `dist/`
+       INTEIRO está no relatório do bloco, medida por
+       `medicoes/p1-2026-09-15/limiar-no-dist.mjs`, que lê o disco e diz as
+       páginas onde a palavra fica e porquê. As duas coisas são precisas: esta
+       morde, aquela cobre. */
+    const nLimiarPorRota = [];
+    for (const { rota, n: esperado } of ed.rotasDoLimiar) {
+      const texto = visivel(await html(rota)).toLowerCase();
+      const n = ed.limiar.reduce((a, w) => a + ocorrencias(texto, w.toLowerCase()), 0);
+      nLimiarPorRota.push({ rota, n, esperado });
+    }
+    const comLimiar = nLimiarPorRota.filter((x) => x.n !== x.esperado);
+    const nReferencia = ocorrencias(visivel(docDoDominio), ed.valorDeReferencia);
+    medidas[`A25.${ed.chave}`] = { porRota: nLimiarPorRota, referencia: nReferencia };
+    conta(
+      `A25.${ed.chave}`,
+      comLimiar.length === 0 && nReferencia > 0,
+      `«${ed.limiar.join('»/«')}» no texto visível de ${nLimiarPorRota.length} rota(s): ` +
+        nLimiarPorRota.map((x) => `${x.rota} ${x.n} (esperada ${x.esperado})`).join(' · ') +
+        ` · «${ed.valorDeReferencia}» em ${ed.dominio}: ${nReferencia} ` +
+        `(esperado > 0)`,
+    );
+
+    /* A26 · A CONTAGEM DE CADA DOMÍNIO CONTRA A DECLARAÇÃO.
+       Esta célula IMPORTA `DOMINIO_DAS_MEDIDAS` e `hasClaim`, e é a exceção à
+       regra desta régua («ela lê o `dist/` e não a fonte do sítio»). A razão é
+       que a medida de aceitação do item 6 é, à letra, «cada contagem igual ao
+       número de `hasClaim` verdadeiros das medidas mapeadas»: o oráculo É a
+       declaração, e uma segunda cópia dela aqui seria uma segunda tabela a
+       divergir. O que a célula impede é o outro erro, que é o índice render um
+       número que a declaração não dá. */
+    const contadasNaPagina = [...doc.matchAll(/<li class="dominios-item" data-dominio="([^"]+)"[\s\S]*?<\/li>/g)].map(
+      (m) => {
+        const n = m[0].match(/<span data-nonledger="numeracao">(\d+)<\/span>/);
+        return { slug: m[1], n: n ? Number(n[1]) : 0 };
+      },
+    );
+    const esperadas = Object.create(null);
+    for (const [id, slug] of Object.entries(DOMINIO_DAS_MEDIDAS)) {
+      if (!hasClaim(id)) continue;
+      esperadas[slug] = (esperadas[slug] ?? 0) + 1;
+    }
+    const desacordos = contadasNaPagina.filter((x) => x.n !== (esperadas[x.slug] ?? 0));
+    medidas[`A26.${ed.chave}`] = { naPagina: contadasNaPagina, esperadas, desacordos };
+    conta(
+      `A26.${ed.chave}`,
+      contadasNaPagina.length === 18 && desacordos.length === 0,
+      `as contagens dos domínios em ${ed.rota}: ${contadasNaPagina.length} linha(s), ` +
+        `${desacordos.length} em desacordo com a declaração` +
+        (desacordos.length
+          ? ` (${desacordos.map((d) => `${d.slug}: a página ${d.n}, a declaração ${esperadas[d.slug] ?? 0}`).join('; ')})`
+          : '') +
+        ` · a soma da declaração: ${Object.values(esperadas).reduce((a, b) => a + b, 0)}`,
     );
 
     /* A10 mede DENTRO dos cartões e das peças, e não na página inteira: a
@@ -1804,27 +2173,38 @@ async function corre() {
           continue;
         }
         if (lido.selados !== 0) queixas.push(`${rota}: ${lido.selados} valor(es) selado(s)`);
-        const vivas = lido.linhas.filter((l) => l.nomes.length > 0);
-        if (vivas.length === 0) queixas.push(`${rota}: nenhum domínio com nomes de medidas de cabeça`);
-        for (const l of vivas) {
-          /* OS NOMES SÃO OS DA FAIXA, NA MESMA ORDEM, POR DOMÍNIO. */
-          if (l.nomes.length !== naFaixa.length || l.nomes.some((n, k) => n !== naFaixa[k])) {
-            queixas.push(
-              `${rota} · ${l.slug}: [${l.nomes.join(' | ')}] contra a faixa [${naFaixa.join(' | ')}]`,
-            );
-          }
-          /* «E MAIS N» RECOMPOSTO, E NÃO PROCURADO À LETRA. */
-          const sobram = (l.total ?? 0) - l.nomes.length;
-          const esperado = sobram > 0 ? numeralPorExtenso(sobram, ed.chave) : null;
-          if (esperado === null) {
-            if (l.numeralDaCauda !== null) {
-              queixas.push(`${rota} · ${l.slug}: tem cauda «${l.numeralDaCauda}» e não sobra medida nenhuma`);
-            }
-          } else if (l.numeralDaCauda !== esperado) {
-            queixas.push(
-              `${rota} · ${l.slug}: a cauda diz «${l.numeralDaCauda}» e ${l.total} menos ${l.nomes.length} é «${esperado}»`,
-            );
-          }
+        /* ------------------------------------------------------------------
+           A CÉLULA VIROU-SE DO AVESSO (P1, item 6, 15.09.2026 ao fim da tarde)
+           ------------------------------------------------------------------
+           De manhã ela exigia que cada domínio vivo trouxesse os nomes das suas
+           medidas de cabeça e o «e mais N»; à tarde o diretor leu-os na página e
+           tirou-os («e mais cinco» não é frase de jornal, e os nomes das medidas
+           são o jargão da fonte). A célula passa a exigir o contrário: **zero
+           nomes de medida e zero numerais de cauda** na linha de um domínio.
+
+           NÃO SE APAGA, INVERTE-SE, e a razão é a mesma de sempre: os nomes
+           podem voltar num commit que ninguém leia, e o que os trouxe de manhã
+           foi um brief. A comparação com a faixa fica escrita na prova, para se
+           ver o que a linha deixou de dizer.
+
+           A CONTAGEM DE CADA DOMÍNIO É DA A26, que a compara com a declaração;
+           aqui mede-se a FORMA da linha. */
+        const comNomes = lido.linhas.filter((l) => l.nomes.length > 0);
+        if (comNomes.length > 0) {
+          queixas.push(
+            `${rota}: ${comNomes.length} domínio(s) ainda com nomes de medidas de cabeça ` +
+              `(${comNomes.map((l) => `${l.slug}: ${l.nomes.join(' | ')}`).slice(0, 3).join('; ')})`,
+          );
+        }
+        const comCauda = lido.linhas.filter((l) => l.numeralDaCauda !== null);
+        if (comCauda.length > 0) {
+          queixas.push(
+            `${rota}: ${comCauda.length} domínio(s) ainda com a cauda «e mais N» ` +
+              `(${comCauda.map((l) => `${l.slug}: ${l.numeralDaCauda}`).join('; ')})`,
+          );
+        }
+        if (lido.linhas.length !== 18) {
+          queixas.push(`${rota}: ${lido.linhas.length} linha(s) e a carta tem dezoito`);
         }
       }
       medidas[`A20.${ed.chave}`] = { naFaixa, porRota, queixas };
@@ -2397,14 +2777,14 @@ const PLANTAS = [
       return h.replace(nova, `${nova} ${antiga}`);
     },
   },
-  {
-    nome: 'uma etiqueta «a página inteira →» de volta, na porta dos estudos',
-    celulas: ['A19.pt', 'A19.en'],
-    f: (h, rota) =>
-      rota.startsWith('/en')
-        ? h.replace('All studies →', 'the whole page →')
-        : h.replace('Todos os estudos →', 'a página inteira →'),
-  },
+  /* A PLANTA «uma etiqueta "a página inteira →" de volta» SAIU (P1, item 7,
+     15.09.2026 ao fim da tarde), e a razão é a mesma que faz esta lista valer
+     alguma coisa: ela repunha a etiqueta antiga NO LUGAR da nova, e o item 7
+     tirou a nova. Sem alvo, o `replace` falhava em silêncio, que é o modo mais
+     comum de um estrago não ser estrago nenhum, e a conferência de «o html
+     mudou» apanhou-o na primeira corrida. A célula A19 não fica sem positivo
+     conhecido: a planta do item 7, aqui em baixo, repõe a etiqueta E desfaz o
+     cartão-ligação, que é a decisão inteira. */
   {
     /* O DEFEITO QUE A LEITURA A FRIO APANHOU, PLANTADO (achado 5, 15.09.2026).
        A primeira construção deste bloco escondia a gaveta sempre que a folha
@@ -2433,25 +2813,13 @@ const PLANTAS = [
           'margin:0;overflow:visible;clip:auto;white-space:normal}</style></head>',
       ),
   },
-  {
-    /* O «E MAIS N» COM O N ERRADO (A20 reescrita, 15.09.2026, achado 8). A célula
-       deixou de procurar «cinco» à letra e passou a recompor o N a partir da
-       contagem que a própria linha rende; sem esta planta, a recomposição nunca
-       tinha sido vista a morder. Troca o numeral por extenso na página servida, e
-       a conta «dez menos cinco» deixa de bater com o que está escrito. */
-    nome: 'a cauda «e mais N» com o numeral trocado',
-    celulas: ['A20.pt', 'A20.en'],
-    rotas: [
-      '/index.html',
-      '/en/index.html',
-      '/dominios/index.html',
-      '/en/domains/index.html',
-    ],
-    f: (h, rota) =>
-      rota.startsWith('/en')
-        ? h.replace(/(<span data-nonledger="numeracao">)five(<\/span>)/g, '$1six$2')
-        : h.replace(/(<span data-nonledger="numeracao">)cinco(<\/span>)/g, '$1seis$2'),
-  },
+  /* A PLANTA «a cauda "e mais N" com o numeral trocado» SAIU pela mesma razão
+     (P1, item 6, 15.09.2026 ao fim da tarde): trocava o numeral por extenso da
+     cauda, e a cauda saiu da linha de um domínio com o item 6. O `replace`
+     deixou de encontrar alvo e a conferência de «o html mudou» disse NÃO. A A20
+     virou-se do avesso no mesmo dia (mede que a cauda e os nomes NÃO estão), e o
+     positivo conhecido dela é a planta do valor selado, aqui em baixo, que
+     continua a morder. */
   {
     nome: 'um valor selado na linha de um domínio',
     celulas: ['A20.pt', 'A20.en'],
@@ -2482,6 +2850,87 @@ const PLANTAS = [
        ela; cem mil píxeis são maiores do que qualquer teto que a casa venha a
        escrever, e a planta volta a provar o que promete. */
     f: (h) => h.replace(/<\/body>/, '<div style="height:100000px"></div></body>'),
+  },
+  /* =========================================================================
+     AS CINCO PLANTAS DO P1 (item 9 do brief, 15.09.2026 ao fim da tarde)
+     =========================================================================
+     Uma por item de 4 a 8, e cada uma repõe no HTML servido exactamente o que o
+     seu item veio tirar da página. Sem elas, cinco células novas contariam o que
+     contam sem nunca terem visto um vermelho, que é a regra 14 da casa.
+     ========================================================================= */
+  {
+    /* ITEM 4 · A FRASE DE INSTRUÇÃO DE VOLTA, por cima do campo. É a cadeia que
+       o F1.13 tinha escrito de manhã, reposta onde ela estava: a A21 conta-a no
+       texto À VISTA, e por isso a planta tem de a pôr à vista e não em `.vh`. */
+    nome: 'a frase de instrução de volta por cima do campo da busca',
+    celulas: ['A21.pt', 'A21.en'],
+    f: (h, rota) => {
+      const frase = rota.startsWith('/en')
+        ? 'Type the name of a municipality, or tap the map.'
+        : 'Escreva o nome do concelho, ou toque no mapa.';
+      return h.replace(
+        '<span class="busca-linha">',
+        `<p class="busca-k">${frase}</p><span class="busca-linha">`,
+      );
+    },
+  },
+  {
+    /* ITEM 5 · O LUGAR DO NOME OUTRA VEZ VAZIO. Esvazia-se a legenda de repouso
+       do nível do país, que é o que o item pôs lá: o parágrafo continua no
+       documento e deixa de dizer alguma coisa, que é exactamente o estado que a
+       célula proíbe. */
+    nome: 'o lugar do nome vazio em repouso',
+    celulas: ['A22.pt', 'A22.en'],
+    f: (h) =>
+      h.replace(
+        /(<p class="mapa-nome-repouso"[^>]*data-mapa-repouso="pais"[^>]*>)[\s\S]*?(<\/p>)/,
+        '$1$2',
+      ),
+  },
+  {
+    /* ITEM 6 · A CONTAGEM DE UM DOMÍNIO TROCADA. A A26 compara linha a linha com
+       a declaração; uma contagem escrita à mão numa linha derruba-a, e é o
+       defeito que a célula existe para impedir (o índice a dizer um número que
+       a declaração não dá). */
+    nome: 'a contagem de um domínio trocada no índice',
+    celulas: ['A26.pt', 'A26.en'],
+    rotas: ['/index.html', '/en/index.html', '/dominios/index.html', '/en/domains/index.html'],
+    f: (h) =>
+      h.replace(
+        /(<span class="dominios-estado"[^>]*><span data-nonledger="numeracao">)\d+(<\/span>)/,
+        '$199$2',
+      ),
+  },
+  {
+    /* ITEM 7 · A ETIQUETA DE VOLTA, E O CARTÃO A DEIXAR DE SER A LIGAÇÃO. A
+       planta desfaz as duas metades do item ao mesmo tempo, porque elas são a
+       mesma decisão: o cartão volta a ser um `<div>` com uma ligação lá dentro,
+       e a ligação volta a dizer o nome da página que o cartão já diz. */
+    nome: 'a etiqueta «Todos os concelhos →» de volta, dentro de um cartão que deixa de ser a ligação',
+    celulas: ['A19.pt', 'A19.en', 'A24.pt', 'A24.en'],
+    f: (h, rota) => {
+      const etiqueta = rota.startsWith('/en') ? 'All municipalities →' : 'Todos os concelhos →';
+      return h.replace(
+        /<a class="porta" href="([^"]*)">([\s\S]*?)<\/a>/,
+        (_, href, dentro) =>
+          `<div class="porta">${dentro}<a class="lig porta-abrir" href="${href}">${etiqueta}</a></div>`,
+      );
+    },
+  },
+  {
+    /* ITEM 8 · «limiar» DE VOLTA NO TEXTO VISÍVEL. Desfaz a troca do item nas
+       páginas onde a palavra de estado se rende: a A25 conta a palavra em todo o
+       `dist/` fora da lista declarada, e uma página de domínio com ela cai. */
+    nome: 'a palavra «limiar» de volta no texto visível',
+    celulas: ['A25.pt', 'A25.en'],
+    rotas: [
+      '/dominios/economia-e-financas-publicas/index.html',
+      '/en/domains/economia-e-financas-publicas/index.html',
+    ],
+    f: (h, rota) =>
+      rota.startsWith('/en')
+        ? h.split('reference value').join('threshold')
+        : h.split('valor de referência').join('limiar'),
   },
   /* -------------------------------------------------------------------------
      AS QUATRO PLANTAS DO F1.2b (E6 do brief, 03.09.2026)
