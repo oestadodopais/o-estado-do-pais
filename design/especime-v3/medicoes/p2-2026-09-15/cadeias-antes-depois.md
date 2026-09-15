@@ -130,3 +130,126 @@ O cartão que o diretor leu a 15.09 («Preços da habitação»), pedaço a peda
   construção, que é o trabalho dele. A afirmação passa a estar datada, na forma da
   casa: **o valor não se reescreve em silêncio**, e por isso continua a dizer
   2 916, agora com «a 02.09.2026» ao lado.
+
+---
+
+## 6 · Os acertos de 15.09 à noite, e as cadeias que eles mexeram
+
+O lugar de direção leu as capturas da cabeça `2dceb7b9` e mandou três acertos.
+
+| chave | antes | depois (pt) | depois (en) | razão |
+| --- | --- | --- | --- | --- |
+| `livro.linha.enquadramentoK` | (não existia) | O enquadramento | The comparisons | acerto 2. O título da secção do recibo que lista as linhas da régua, cada uma com a sua porta. É o que paga a marca única do cartão: sem ela, os valores da régua ficavam sem porta nenhuma |
+| `livro.linha.enquadramentoAnterior` | (não existia) | Período anterior | Previous period | acerto 2. O rótulo da linha do período anterior, nessa secção |
+| `livro.linha.enquadramentoUe` | (não existia) | União Europeia | European Union | acerto 2. O rótulo da linha do agregado, nessa secção |
+| a linha do estado do cartão | acima do valor de referência, 9% | acima do valor de referência (9%) | above the reference value (9%) | acerto 3. A vírgula punha uma pausa onde não há oração a seguir, e o que vem depois dela não é uma segunda coisa: é o valor de que a primeira fala. **Não é uma cadeia nova**: as três palavras não mudaram uma letra, mudou a pontuação que as liga ao algarismo, e por isso nenhuma linha do inventário muda |
+
+As três chaves do recibo não pedem linha de inventário: a rota `linha` não está em
+`ROTAS_DO_INVENTARIO`, pela mesma razão escrita no registo do bloco `corredor`.
+
+**O acerto 1 não mexeu em cadeia nenhuma**: nenhum texto novo foi escrito, e o que
+mudou foi qual dos textos que já existem encabeça o cartão. Os nomes que entraram
+são campos do livro-razão (`name`, `document.title`) e nomes do ficheiro do motor,
+todos conferidos carácter a carácter contra a sua origem, e nenhum deles é prosa
+da casa.
+
+## 7 · Os 81 cartões que ficaram com o nome que a fonte dá à medida
+
+O acerto 1 diz que nenhum cartão fica sem nome, e diz também de onde vem o nome
+enquanto não houver melhor: o da fonte, na língua dela e com a marca `lang`. Estes
+são os 81, por edição, para o **bloco P3 lhes dar o nome do projeto**. A coluna do
+degrau diz se o nome é o rótulo com que a fonte imprime a figura (`name`) ou o
+título do documento de onde a linha foi lida (`document.title`).
+
+| linha | degrau | o nome que o cartão mostra hoje |
+| --- | --- | --- |
+| `agua-nao-faturada-portugal-2024` | document.title | RASARP — Relatório Anual dos Serviços de Águas e Resíduos em |
+| `alentejo-central-poder-de-compra-2023` | name | Poder de compra per capita por Localização geográfica (NUTS  |
+| `criancas-em-creche-2025` | document.title | Children aged less than 3 years in formal childcare |
+| `disparidade-de-emprego-entre-sexos-2025` | document.title | Gender employment gap |
+| `evora-camara-lugares` | document.title | Autárquicas 2025 — resultados oficiais por território |
+| `evora-camara-mandatos-cdu-2013` | document.title | Autárquicas 2013 — resultados oficiais por território |
+| `evora-camara-mandatos-cdu-2017` | document.title | Autárquicas 2017 — resultados oficiais por território |
+| `evora-camara-mandatos-cdu-2021` | document.title | Autárquicas 2021 — resultados oficiais por território |
+| `evora-camara-mandatos-ps-2009` | document.title | Autárquicas 2009 — resultados oficiais por território |
+| `evora-camara-mandatos-ps-2025` | document.title | Autárquicas 2025 — resultados oficiais por território |
+| `evora-concentracao-vab4-2024` | name | Indicador de concentração do valor acrescentado bruto das qu |
+| `evora-contas-2024-votos-contra` | document.title | Certificação Legal das Contas |
+| `evora-contas-2024-votos-favor` | document.title | Certificação Legal das Contas |
+| `evora-desemprego-registado-2013` | document.title | SIE - Desemprego registado por concelhos |
+| `evora-desemprego-registado-2024` | document.title | SIE - Desemprego registado por concelhos |
+| `evora-despesa-paga-2025` | document.title | Prestação de Contas 2025 |
+| `evora-divida-31-10-2013` | document.title | Relatório de Gestão 2015 |
+| `evora-divida-dgal-2014` | document.title | Evolução endividamento total |
+| `evora-divida-dgal-2017` | document.title | Evolução endividamento total |
+| `evora-divida-dgal-2021` | document.title | Evolução endividamento total |
+| `evora-divida-dgal-2024` | document.title | Evolução endividamento total |
+| `evora-divida-inicio-mandato-reexpressa` | name | Dívida Total no Início do Mandato |
+| `evora-divida-total-2017` | name | DÍVIDA TOTAL DE OPERAÇÕES ORÇAMENTAIS = (1) + (2) |
+| `evora-divida-total-2021` | name | DÍVIDA TOTAL DE OPERAÇÕES ORÇAMENTAIS = (1) + (2) |
+| `evora-divida-total-2024` | document.title | Prestação de Contas 2025 |
+| `evora-divida-total-2025` | name | DÍVIDA TOTAL DE OPERAÇÕES ORÇAMENTAIS = (1) + (2) |
+| `evora-excesso-endividamento-2014` | document.title | Relatório de Gestão 2021 |
+| `evora-excesso-endividamento-2019` | document.title | Relatório de Gestão 2021 |
+| `evora-execucao-da-receita-2021` | document.title | Prestação de Contas 2025 |
+| `evora-execucao-da-receita-2025` | document.title | Prestação de Contas 2025 |
+| `evora-executivo-2025-ad` | document.title | Autárquicas 2025 — resultados oficiais por território |
+| `evora-executivo-2025-cdu` | document.title | Autárquicas 2025 — resultados oficiais por território |
+| `evora-executivo-2025-chega` | document.title | Autárquicas 2025 — resultados oficiais por território |
+| `evora-executivo-2025-ps` | document.title | Autárquicas 2025 — resultados oficiais por território |
+| `evora-limite-divida-2025` | name | LIMITE = Média dos Últimos 3 Exercícios * 1,5 |
+| `evora-limite-divida-dgal-2014` | document.title | Evolução endividamento total |
+| `evora-limite-divida-dgal-2017` | document.title | Evolução endividamento total |
+| `evora-limite-divida-dgal-2021` | document.title | Evolução endividamento total |
+| `evora-limite-divida-dgal-2024` | document.title | Evolução endividamento total |
+| `evora-margem-endividamento-2025` | document.title | Prestação de Contas 2025 |
+| `evora-orcamento-2025` | document.title | Prestação de Contas 2025 |
+| `evora-pael-emprestimo` | document.title | Relatório de Gestão 2016 |
+| `evora-pagamentos-em-atraso-2025` | document.title | Prestação de Contas 2025 |
+| `evora-pelouros-2021-presidente` | document.title | Executivo — Câmara Municipal de Évora |
+| `evora-pelouros-2021-vice-presidente` | document.title | Executivo — Câmara Municipal de Évora |
+| `evora-pelouros-2025-presidente` | document.title | Executivo — Câmara Municipal de Évora |
+| `evora-pelouros-2025-vereadora` | document.title | Executivo — Câmara Municipal de Évora |
+| `evora-pelouros-2025-vice-presidente` | document.title | Executivo — Câmara Municipal de Évora |
+| `evora-poder-de-compra-2023` | name | Poder de compra per capita por Localização geográfica (NUTS  |
+| `evora-prazo-medio-de-pagamento-2023` | document.title | Prestação de Contas 2025 |
+| `evora-prazo-medio-de-pagamento-2025` | document.title | Prestação de Contas 2025 |
+| `evora-prr-aprovado-2026` | document.title | Listagem de entidades PRR |
+| `evora-prr-municipio-contratado` | document.title | Listagem de entidades PRR |
+| `evora-prr-pago-2026` | document.title | Listagem de entidades PRR |
+| `evora-prr-universidade-contratado` | document.title | Listagem de entidades PRR |
+| `evora-prr-vencido-aprovado-2026` | document.title | Listagem de entidades PRR |
+| `evora-receita-cobrada-2025` | document.title | Prestação de Contas 2025 |
+| `evora-saneamento-financeiro-2016` | document.title | Relatório de Gestão 2016 |
+| `evora-vab-empresarial-2024` | name | Valor acrescentado bruto (€) das Empresas por Localização ge |
+| `factor-sustentabilidade-2026` | document.title | Reformar as Pensões em Portugal: Por um Sistema Sustentável, |
+| `licencas-de-construcao-2025` | document.title | Residential building permits - annual data |
+| `municipios-acores-caop-2025` | document.title | Carta Administrativa Oficial de Portugal (CAOP) |
+| `municipios-continente-caop-2025` | document.title | Carta Administrativa Oficial de Portugal (CAOP) |
+| `municipios-madeira-caop-2025` | document.title | Carta Administrativa Oficial de Portugal (CAOP) |
+| `municipios-portugal-caop-2025` | document.title | Carta Administrativa Oficial de Portugal (CAOP) |
+| `penalizacao-antecipacao-um-ano-com-factor-2026` | document.title | Reformar as Pensões em Portugal: Por um Sistema Sustentável, |
+| `penalizacao-antecipacao-um-ano-neutra` | document.title | Reformar as Pensões em Portugal: Por um Sistema Sustentável, |
+| `penalizacao-antecipacao-um-ano-sem-factor-2026` | document.title | Reformar as Pensões em Portugal: Por um Sistema Sustentável, |
+| `pib-pc-acores-2024` | name | Gross domestic product (GDP) at current market prices by NUT |
+| `pib-pc-alentejo-2000` | document.title | Gross domestic product (GDP) at current market prices by NUT |
+| `pib-pc-alentejo-2024` | document.title | Gross domestic product (GDP) at current market prices by NUT |
+| `pib-pc-algarve-2024` | document.title | Gross domestic product (GDP) at current market prices by NUT |
+| `pib-pc-centro-2024` | name | Gross domestic product (GDP) at current market prices by NUT |
+| `pib-pc-grande-lisboa-2024` | document.title | Gross domestic product (GDP) at current market prices by NUT |
+| `pib-pc-madeira-2024` | document.title | Gross domestic product (GDP) at current market prices by NUT |
+| `pib-pc-norte-2024` | name | Gross domestic product (GDP) at current market prices by NUT |
+| `pib-pc-oeste-e-vale-do-tejo-2024` | name | Gross domestic product (GDP) at current market prices by NUT |
+| `pib-pc-peninsula-de-setubal-2024` | document.title | Gross domestic product (GDP) at current market prices by NUT |
+| `pib-pc-portugal-2024` | document.title | Gross domestic product (GDP) at current market prices by NUT |
+| `portugal-concentracao-vab4-2024` | name | Indicador de concentração do valor acrescentado bruto das qu |
+| `retribuicao-minima-mensal-doze-meses-2026` | name | Monthly minimum wages - bi-annual data |
+
+## 8 · Os 24 que continuam sem nome, e porquê
+
+Não há nome nenhum para lhes dar: são as linhas DERIVADAS, que não têm fonte nem
+documento porque a proveniência delas é a das origens, e as quatro cujo único
+título de documento é o próprio marcador. O bloco P3 tem de lhes dar um nome do
+projeto, ou deixá-las sem ele com a razão escrita.
+
+`avisos-pt2030-abertos`, `avisos-pt2030-pessoas-singulares`, `ciclo-substituicao-condutas`, `distancia-acores-ue27-2024`, `distancia-alentejo-ue27-2000`, `distancia-alentejo-ue27-2024`, `distancia-algarve-ue27-2024`, `distancia-centro-ue27-2024`, `distancia-grande-lisboa-ue27-2024`, `distancia-madeira-ue27-2024`, `distancia-norte-ue27-2024`, `distancia-oeste-e-vale-do-tejo-ue27-2024`, `distancia-peninsula-de-setubal-ue27-2024`, `distancia-portugal-ue27-2024`, `distancia-setubal-grande-lisboa-2024`, `evora-divergencia-municipio-dgal-2024`, `evora-indice-de-divida-2014`, `evora-indice-de-divida-2017`, `evora-indice-de-divida-2021`, `evora-indice-de-divida-2024`, `evora-pelouros-2021-total`, `evora-pelouros-2025-total`, `evora-prr-execucao-2026`, `evora-prr-vencido-quota-2026`
