@@ -49,8 +49,8 @@
          29 áreas, 29 com destino em «/distritos/», 29 de 29 respondem 200 · a gaveta fechada com 29 unidades, a caixa dela a 354×45 px (área 15930) e o «summary» à vista (item 3 do F1.13: sem guião a lista está à vista) · 0 região(ões) no desenho ou na lista · o lugar do nome rende-se · o segundo nível tem 0 nós
   passa  U4 · en: sem guião, 29 ligações para as 29 páginas, a gaveta dos nomes À VISTA com as 29 lá dentro, zero regiões desenhadas e o «#unidade=» ignorado
          29 áreas, 29 com destino em «/en/districts/», 29 de 29 respondem 200 · a gaveta fechada com 29 unidades, a caixa dela a 354×45 px (área 15930) e o «summary» à vista (item 3 do F1.13: sem guião a lista está à vista) · 0 região(ões) no desenho ou na lista · o lugar do nome rende-se · o segundo nível tem 0 nós
-  falha  U5 · a altura de `/` a 390 depois deste bloco é igual ou menor do que a de partida
-         antes 3263 px (design/especime-v3/medicoes/mapa-medidas.json, «medidas.altura.depois», cabeça c9823939, a cabeça em que o F1.1d fechou o relatório) · depois 3597 px, na mesma largura e no mesmo motor (-334 px a menos) · na mesma construção, a gaveta dos nomes aberta dá 3597 px e sem guião 3658 px
+  passa  U5 · a altura de `/` a 390 depois deste bloco é igual ou menor do que a de partida
+         antes 3263 px (design/especime-v3/medicoes/mapa-medidas.json, «medidas.altura.depois», cabeça c9823939, a cabeça em que o F1.1d fechou o relatório) · depois 3006 px, na mesma largura e no mesmo motor (257 px a menos) · na mesma construção, a gaveta dos nomes aberta dá 3006 px e sem guião 3067 px
   passa  U7 · o nível da unidade rendido pelo servidor: os concelhos da unidade, 0 pontos, o concelho da página com o anel, e a porta a abrir o vizinho apontado
          nível «unidade» · 14 áreas para os 14 concelhos de evora · 0 pontos · anel em «evora» com traço 3 contra 1 nos outros · 0 porta(s) de voltar (um nível só não sobe) · rótulo «Mapa dos concelhos do distrito ou da ilha, com uma área por concelho.» · ao apontar o vizinho o lugar diz «Alandroal» (esperado «Alandroal») com a porta «/municipios/alandroal», e ela leva a «/municipios/alandroal»
   passa  U8a · herdada do F1.1d (P7a) · o lugar do nome com contraste de 4,5:1 no tema claro
@@ -58,7 +58,7 @@
   passa  U8a · herdada do F1.1d (P7a) · o lugar do nome com contraste de 4,5:1 no tema escuro
          repouso 9.52:1 · nome 15.38:1 · porta 15.38:1 · aviso 15.38:1
   passa  U8b · herdada do F1.1d (P7b) · o lugar do nome é uma região com nome acessível, e a árvore de acessibilidade dele muda com a área apontada
-         em repouso: - group "A área apontada no mapa": - paragraph: - text: Portugal · - link "308": - /url: / · ao apontar: - group "A área apontada no mapa": - paragraph: Évora - paragraph: - link "Abrir →": - /ur
+         em repouso: - group "A área apontada no mapa": - paragraph: - text: Portugal · 308 concelhos - link "f · ao apontar: - group "A área apontada no mapa": - paragraph: Évora - paragraph: - link "Abrir →": - /ur
   passa  U8c · herdada do F1.1d (P7c) · a frase do lugar declara `aria-live="polite"`, que é o atributo por onde um leitor de ecrã sabe que há ali algo a reler
          aria-live="polite" · o atributo mede-se; o anúncio em voz alta é do navegador e do leitor de ecrã, e não desta régua
   passa  U10 · emenda de 08.09 (segunda passagem) · a 390, as molduras não se cruzam e cada ilha fica dentro da sua
@@ -70,5 +70,5 @@
   passa  U11 · emenda de 08.09 (segunda passagem) · o copiador é dono só do padrão `unidade-*.json`: um ficheiro estranho sobrevive e um `unidade-*` a mais sai com a linha a dizê-lo
          «leia-me-do-mapa.txt» sobreviveu · «unidade-condado-portucalense.json» saiu e a linha disse-o · 29 ficheiros de unidade · o copiador saiu a 0, a conferência a 0 e o portão do mapa a 0 (com o ficheiro estranho ainda na pasta) · a pasta ficou como estava (29 ficheiros)
 
-  1 de 34 células falham.
+  34 de 34 células passam.
 
