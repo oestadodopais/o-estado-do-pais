@@ -24,6 +24,7 @@ import CampoDaLinha from '../components/CampoDaLinha.astro';
 import NomeDaMedida from '../components/NomeDaMedida.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
 import Marcador from '../components/Marcador.astro';
+import LegendaDaMarca from '../components/LegendaDaMarca.astro';
 import CampoDeBusca from '../components/inicio/CampoDeBusca.astro';
 import { allClaims, provenienciaIncompleta } from '../lib/ledger.mjs';
 import { ESTUDO_DOS_CONCELHOS } from '../lib/livro-concelhos.mjs';
@@ -361,18 +362,13 @@ const p = prova(lang);
     </div>
 
     <!-- ========================================== aparelho: como se lê -->
-    <aside class="aparelho" aria-labelledby="aparelho">
-      <h2 class="aparelho-titulo" id="aparelho">{s.livro.seloK}</h2>
-      <ul class="aparelho-selos">
-        <li>
-          <span class="src-chip src-chip-amostra" aria-hidden="true"></span>
-          <span>{s.livro.seloCheio}</span>
-        </li>
-        <li>
-          <span class="src-chip src-chip-amostra is-unverified" aria-hidden="true"></span>
-          <span>{s.livro.seloTracejado}</span>
-        </li>
-      </ul>
+    {/* O TÍTULO DE APARELHO SAIU COM A LISTA DOS DOIS ESTADOS (F1.13, item 5,
+        15.09.2026), e com ele o `aria-labelledby` que apontava para ele: um
+        `aria-labelledby` sem alvo não nomeia nada. A coluna fica um marco
+        complementar sem nome, que é o que ela é: a página tem um só, e por isso
+        quem percorre os marcos não tem dois iguais para desfazer. */}
+    <aside class="aparelho">
+      <LegendaDaMarca s={s} />
 
       {/* O MARCADOR: a marca, e a porta da sua página. A frase que a explicava
           saiu (Emenda 15): dizia «É o único marcador de incerteza deste sítio…»,
