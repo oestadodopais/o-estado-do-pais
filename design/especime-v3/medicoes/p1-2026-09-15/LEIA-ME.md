@@ -100,8 +100,10 @@ por `echo $? > …` e lido de lá, e nunca de memória:
 | `npm run verify` | **0** |
 | `npm run typecheck` | **0** |
 
-O `portoes.txt` traz a cabeça de cada corrida, o caminho de cada ficheiro de
-código e as últimas linhas de cada uma. E depois do último commit correu-se
+Corridos sobre `c97ae565`, que é a cabeça com tudo o que este bloco construiu;
+o commit seguinte acrescenta só o registo dos portões, que nenhum deles lê. O
+`portoes.txt` traz a cabeça da corrida, o caminho de cada ficheiro de código e
+as últimas linhas de cada uma. E depois do último commit correu-se
 `npm run build` outra vez, para o carimbo do `dist/` levar a cabeça final.
 
 ## 5 · O que fica vermelho, e porquê
