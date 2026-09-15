@@ -787,10 +787,15 @@ function medeNaPagina(cfg) {
    * a classe que a régua reconhece: uma régua que procurasse as quatro cadeias
    * deixava de as achar no dia em que uma delas mudasse de palavra, e é a
    * medida que interessa, não a palavra.
+   *
+   * `.porta-abrir` PASSOU A `a.porta` (P1, item 7, 15.09.2026): a etiqueta que
+   * levava aquela classe saiu, e o alvo passou a ser o cartão inteiro, que é o
+   * que o item promete. Uma régua que continuasse a procurar a classe antiga
+   * ficava verde por não encontrar nada.
    */
   const eI105 = (el) =>
     el.matches(
-      '.porta-correccoes-linha .ligacao-email,.porta-correccoes-linha > a,.porta-abrir,a.lig',
+      '.porta-correccoes-linha .ligacao-email,.porta-correccoes-linha > a,a.porta,a.lig',
     );
 
   const eTexto = (el) => {

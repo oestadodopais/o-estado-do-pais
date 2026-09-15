@@ -47,7 +47,7 @@ import MapaRespira from '../components/inicio/MapaRespira.astro';
 import ListaDosNomes from '../components/inicio/ListaDosNomes.astro';
 import LegendaDoMapa from '../components/inicio/LegendaDoMapa.astro';
 import DominiosLista from '../components/DominiosLista.astro';
-import { fixadorDoLimiar } from '../data/figuras.mjs';
+import { fixadorDoLimiar, comparacaoComOLimiar } from '../data/figuras.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import { estadoDaMedida } from '../lib/estado.mjs';
 import { concelhos, MANCHETE_DO_PAIS, partesDaManchetePais } from '../lib/inicio.mjs';
@@ -267,6 +267,10 @@ const cartoes = dominiosComPagina()
            «sem limiar» num cartão é dizer que a casa procurou um limiar e não o
            encontrou, quando o quadro nunca publicou nenhum. */
         estado: m.limiar ? estadoDaMedida(linha, m.limiar) : null,
+        /* DE QUE LADO DO VALOR DE REFERÊNCIA (P1, item 8, 15.09.2026): é o lado
+           que a palavra do cartão passa a dizer, e sai do sinal do limiar que a
+           linha já declara. */
+        comparacao: m.limiar ? comparacaoComOLimiar(linha, m.limiar) : null,
         /* QUEM FIXOU O LIMIAR (F1.10, item 8.5): lido da declaração da medida,
            com o guarda que fecha a construção se ela tiver limiar e não o disser.
            É ele que escolhe entre «dentro do limiar da Comissão» e «dentro do
@@ -473,12 +477,14 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
             já conheciam quando a busca vivia na gaveta.
             ---------------------------------------------------------------- */}
         <div class="pesquisa-bloco" slot="porta" data-pesquisa-bloco>
-          {/* O RÓTULO NOMEIA OS DOIS CAMINHOS (F1.13, item 3, 15.09.2026).
-              A gaveta dos nomes saiu da vista com guião, e ficam dois caminhos
-              para um concelho no primeiro ecrã: escrever o nome, ou tocar no
-              mapa. O rótulo diz os dois. A cadeia é própria desta superfície e
-              não a das outras duas buscas, e a razão está em `strings.mjs`:
-              `/municipios` e `/livro-razao/concelhos` não têm mapa nenhum. */}
+          {/* O RÓTULO DEIXA DE SER UMA FRASE (P1, item 4, 15.09.2026). O
+              F1.13 pôs aqui «Escreva o nome do concelho, ou toque no mapa.»,
+              que nomeava os dois caminhos do primeiro ecrã; o diretor leu-a no
+              ar e a regra 4 do plano das palavras tira-a: uma caixa de texto ao
+              lado de um botão «Procurar» não precisa de uma frase a dizer que
+              se escreve nela, e o mapa está ao lado a ver-se. O campo passa a
+              levar o seu NOME, «Concelho», dentro dele e num `<label>` em
+              `.vh`, e é a peça que o decide para as três superfícies. */}
           <Pesquisa
             s={s}
             lang={lang}
@@ -487,7 +493,6 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
             destino={destinoDoConcelho}
             forma={indiceDosConcelhos}
             resultadosOcultos={true}
-            rotulo={s.ambito.pesquisaRotuloMapa}
           />
         </div>
       </Cabeca>
@@ -725,7 +730,6 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
   {/* Sem `data-so-pais`, e pela razão da lista social: não há outro âmbito. */}
   <Portas
     s={s}
-    lang={lang}
     p={p}
     rotas={{
       municipios: routePath('municipios', lang),

@@ -54,6 +54,34 @@
  * largura é o `flex`, e a largura mínima continua tirada da conta pelo
  * `min-width: 0`. O transbordo a 320 mede-se outra vez, nas quatro rotas que
  * rendem esta caixa, e está no relatório da fatia.
+ *
+ * ---------------------------------------------------------------------------
+ * O RÓTULO SAIU DA VISTA E O NOME DO CAMPO ENTROU NO CAMPO (P1, item 4,
+ * 15.09.2026)
+ * ---------------------------------------------------------------------------
+ * «Escreva o nome do concelho, ou toque no mapa.» era uma FRASE DE INSTRUÇÃO, e
+ * a regra 4 do plano das palavras diz o que fazer com uma: «uma interface que
+ * precisa de uma frase para se explicar tem um problema de desenho». Uma caixa
+ * de texto ao lado de um botão «Procurar» não precisa de ninguém a dizer que se
+ * escreve nela.
+ *
+ * O que fica é o NOME DO CAMPO, nas duas superfícies onde ele precisa de estar:
+ * dentro da caixa, como texto-fantasma, para quem a vê; e num `<label>` em
+ * `.vh`, para quem a ouve. **Não é uma cadeia nova**: é `s.ambito.municipio`,
+ * «Concelho» / «Municipality», a mesma palavra que o resto da primeira página
+ * já usa para a mesma coisa, e por isso não entra uma linha no inventário das
+ * frases.
+ *
+ * O `<label>` FICA, E NÃO SE TROCA POR UM `aria-label`. Um `<label for>` é a
+ * ligação que o navegador também usa para o clique e que o leitor de ecrã
+ * anuncia sem depender de ARIA; o texto-fantasma NÃO é um nome acessível, e um
+ * campo que só tivesse `placeholder` ficava sem nome nenhum quando o leitor
+ * escreve. As duas coisas não são alternativas: são camadas.
+ *
+ * E A FRASE DO `<noscript>` PASSA A `.vh` PELA MESMA REGRA. Quem lê sem guião
+ * não precisa de a VER para saber o que aconteceu: precisa de a OUVIR se
+ * navegar com tecnologia de apoio. Fica dentro do `<noscript>`, que é o único
+ * sítio onde ela é verdade, e fica escondida à vista.
  */
 const {
   rotulo,
@@ -90,7 +118,7 @@ if (accao && !submeter) {
           são da busca, e o §9.7 manda-os entrar com a marca que a régua lê onde
           quer que a frase esteja. Alargar `BLOCOS_DA_VOZ` continua a ser a
           correção certa para os outros oito, e continua a ser da direção. */}
-      <label class="busca-k" for={id}>
+      <label class="busca-k vh" for={id}>
         <span data-voz>{rotulo}</span>
       </label>
       <span class="busca-linha">
@@ -101,6 +129,7 @@ if (accao && !submeter) {
           type="search"
           size="24"
           autocomplete="off"
+          placeholder={rotulo}
           {...campo}
         />
         <button class="busca-submeter" type="submit">
@@ -109,13 +138,13 @@ if (accao && !submeter) {
       </span>
       {semGuiao && (
         <noscript>
-          <p class="busca-sem-guiao">{semGuiao}</p>
+          <p class="busca-sem-guiao vh">{semGuiao}</p>
         </noscript>
       )}
     </form>
   ) : (
     <div class="busca" {...forma}>
-      <label class="busca-k" for={id}>
+      <label class="busca-k vh" for={id}>
         <span data-voz>{rotulo}</span>
       </label>
       <input
@@ -125,6 +154,7 @@ if (accao && !submeter) {
         type="search"
         size="24"
         autocomplete="off"
+        placeholder={rotulo}
         {...campo}
       />
     </div>

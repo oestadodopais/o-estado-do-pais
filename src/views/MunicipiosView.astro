@@ -242,7 +242,9 @@ const distingue = coberturaDistingue(resultados);
             a CAIXA saiu para `CampoDeBusca.astro`, a fila ficou na peça, e as
             duas páginas rendem a mesma caixa. */}
         <CampoDeBusca
-          rotulo={s.ambito.pesquisaRotulo}
+          {/* O NOME DO CAMPO, E NÃO UMA INSTRUÇÃO (P1, item 4, 15.09.2026): é a
+              mesma palavra que a primeira página usa, e a caixa é a mesma. */}
+          rotulo={s.ambito.municipio}
           submeter={s.ambito.pesquisaSubmeter}
           id="pesquisa-concelho"
           name="concelho"

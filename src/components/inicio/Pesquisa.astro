@@ -64,12 +64,14 @@
 import CampoDeBusca from './CampoDeBusca.astro';
 import { coberturaDistingue, eIlha } from '../../lib/inicio.mjs';
 
-/* `rotulo` É UMA PROPRIEDADE DESDE O F1.13 (item 3, 15.09.2026), e o valor por
-   omissão é o que as três superfícies já tinham. A primeira página passa o
-   rótulo que nomeia os DOIS caminhos que lá ficam («Escreva o nome do concelho,
-   ou toque no mapa.»), porque é a única das três que tem mapa; `/municipios` e
-   `/livro-razao/concelhos` não têm, e uma frase que lá prometesse um mapa era a
-   casa a nomear uma coisa que não está na página. */
+/* `rotulo` DEIXOU DE SER UMA PROPRIEDADE QUE CADA SUPERFÍCIE ESCOLHE (P1, item
+   4, 15.09.2026). O F1.13 tinha-a posto aqui para a primeira página poder dizer
+   «Escreva o nome do concelho, ou toque no mapa.» e as outras duas «Escreva o
+   nome do concelho»: duas frases de instrução, e a regra 4 do plano das
+   palavras tira-as as duas. As três superfícies passam a render o mesmo, que é
+   o NOME do campo, e o nome é o mesmo em toda a página: `s.ambito.municipio`.
+   A propriedade fica, sem quem a passe, para a superfície que um dia precise de
+   outro nome de campo (uma busca de linhas, por exemplo). */
 const {
   s,
   concelhos,
@@ -138,7 +140,7 @@ const distingue = coberturaDistingue(concelhos);
       fica aqui é o que é desta peça: os 308 resultados já rendidos e a regra de
       quando cada um se acende. */}
   <CampoDeBusca
-    rotulo={rotulo ?? s.ambito.pesquisaRotulo}
+    rotulo={rotulo ?? s.ambito.municipio}
     submeter={s.ambito.pesquisaSubmeter}
     id="pesquisa-concelho"
     name={forma ? 'concelho' : null}

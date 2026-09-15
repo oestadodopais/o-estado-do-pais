@@ -1,93 +1,57 @@
 ---
 /**
- * AS PORTAS — três linhas, e o resto do sítio vive atrás delas.
- *
- * Relocação R5: os textos das secções Municípios, Estudos e Agenda da primeira
- * página v2 são CORTADOS. As portas levam só contagens, e cada contagem é um
- * número do próprio sítio, com `data-prova` e com a sua porta; os textos vivem
- * nas páginas que eles contam, que é onde o leitor os vai ler.
+ * AS PORTAS — três cartões, e cada cartão é a ligação inteira.
  *
  * ---------------------------------------------------------------------------
- * DUAS FORMAS DE LINHA, E A RAZÃO NÃO É DE GOSTO
+ * O QUE ESTE FICHEIRO ERA, E O QUE O DIRETOR LEU NELE (P1, item 7, 15.09.2026)
  * ---------------------------------------------------------------------------
- * Municípios e Estudos: a LINHA INTEIRA é a ligação. As duas contagens de cada
- * uma abrem a mesma página, e por isso a porta de cada número é o próprio
- * elemento que o embrulha — o portão sobe a partir do número até encontrar uma
- * âncora e compara o destino resolvido (`temPortaPara`, e a regra §10 v2 de que
- * a porta pode ser uma âncora na própria página).
+ * Cada porta tinha três andares: o nome da página, uma contagem com o
+ * substantivo da página ao lado, e uma etiqueta a dizer outra vez o nome da
+ * página com uma seta. A primeira linha lia-se «Concelhos · 308 concelhos ·
+ * Todos os concelhos →», e o diretor leu-a assim, no ar: o mesmo nome três
+ * vezes. A regra 3 do plano das palavras e do sentido diz o que fazer com isso:
+ * «um cartão ou um título que leva a uma página é a ligação inteira; não há
+ * "Todos os X →", nem contagem-legenda, nem frase a dizer o que a porta faz. Um
+ * número dentro de uma porta só fica se for ele próprio informação».
  *
- * Agenda: as quatro contagens abrem QUATRO secções diferentes da página da
- * agenda (`/agenda#estado-em_curso`, e as outras três). Uma ligação dentro de
- * outra ligação não é HTML, e uma porta que aponta para a página inteira quando
- * a chave promete a secção seria uma porta que abre o sítio errado. Por isso
- * nesta linha cada contagem é a sua própria porta, e o nome tem a sua.
+ * Fica: **«Concelhos · 308», «Estudos · 12», «Agenda»**, e a seta como sinal de
+ * porta. Os dois números ficam porque são informação e não legenda (308 diz que
+ * o sítio cobre o país inteiro; 12 diz o tamanho do arquivo), e continuam a
+ * sair da prova, com `data-prova` e o título da origem, como saíam.
  *
- * `ValorDaProva` não serve nas duas primeiras: esse componente rende SEMPRE a
- * sua própria âncora, e aqui a âncora é a linha. O que se marca é o `span`.
+ * ---------------------------------------------------------------------------
+ * AS QUATRO CONTAGENS DA AGENDA SAÍRAM, E A RAZÃO NÃO É DE ESPAÇO
+ * ---------------------------------------------------------------------------
+ * «4 em curso · 0 a seguir · 1 concluído · 0 retirado» é o estado do trabalho da
+ * casa, dito à porta da página que o explica. A regra 5 do plano («uma vez por
+ * sítio, não uma vez por página») manda-o para a agenda, que é onde os estados
+ * têm as palavras que os definem ao lado. E com as quatro contagens sai o
+ * defeito que elas obrigavam a ter: cada uma abria uma secção diferente da
+ * página da agenda, e por isso a linha da agenda NÃO podia ser uma ligação só,
+ * porque uma ligação dentro de outra não é HTML. Sem elas, as três portas têm a
+ * mesma forma, que é o que o item pede.
+ *
+ * ---------------------------------------------------------------------------
+ * AS TRÊS SÃO `<a>` E O ALVO É O CARTÃO
+ * ---------------------------------------------------------------------------
+ * O portão sobe do número até encontrar uma âncora e compara o destino
+ * resolvido (`temPortaPara`): com o cartão inteiro a ser a âncora, essa
+ * conferência continua a valer, e o alvo de toque passa a ser o cartão e não a
+ * etiqueta de uma linha.
+ *
+ * A SETA NÃO LEVA TEXTO, e é o que a distingue das etiquetas que saíram: é um
+ * sinal de que aquilo abre, e quem ouve a página já ouviu o nome do destino na
+ * primeira palavra da ligação. Vai `aria-hidden`, pela mesma razão que as duas
+ * amostras da marca da fonte na legenda vão: um glifo repetido três vezes numa
+ * região de navegação é ruído para quem ouve.
  *
  * NÃO HÁ AQUI PORTA PARA O CATÁLOGO NEM PARA O DOSSIÊ (plano §4, desvio 1): são
  * fase 2, e uma porta para um endereço que não existe é pior do que a ausência.
  */
-import ValorDaProva from '../ValorDaProva.astro';
-
-const { s, lang, p, rotas } = Astro.props;
-
-const agenda = [
-  { chave: 'agenda_em_curso', palavra: s.sinal.agendaEmCurso },
-  { chave: 'agenda_a_seguir', palavra: s.sinal.agendaASeguir },
-  { chave: 'agenda_concluido', palavra: s.sinal.agendaConcluido },
-  { chave: 'agenda_retirado', palavra: s.sinal.agendaRetirado },
-];
-const temAgenda = agenda.every((a) => p[a.chave].valor !== null);
+const { s, p, rotas } = Astro.props;
 ---
 
 <nav class="portas" aria-label={s.inicio.portas.rotulo}>
-  {/* A LEGENDA DAS PORTAS SAIU (Emenda 15). «As páginas · o resto vive a uma
-      porta» era a casa a explicar o desenho: três linhas, cada uma com o nome de
-      uma página e um destino, não precisam de uma frase a dizer que são portas.
-      O nome da região de navegação fica, porque um leitor de ecrã que percorra
-      as regiões precisa de saber qual é esta. */}
-
-  {/* ----------------------------------------------------------------------
-      AS TRÊS ETIQUETAS LEVAM `data-voz` (F1.13, item 2, emendado a 15.09.2026
-      pela leitura a frio do Codex, achado 7)
-      ----------------------------------------------------------------------
-      O brief manda inventariá-las, e a primeira construção deste bloco não o
-      fez, com a razão de sempre: o texto de uma etiqueta de porta vive todo
-      dentro de um `<a>`, e um bloco assim é um destino e não uma frase
-      (`textoForaDeComandos`, em `scripts/medir-defeitos.mjs`). A leitura a frio
-      mostrou o que isso custa, e mostrou-o com uma planta que passou: uma cadeia
-      trocada no ficheiro das cadeias («All the studies» por «All studies») não
-      cai em régua nenhuma, porque o inventário não tem a linha que a apanharia.
-
-      `data-voz` é a marca que já resolve isto em toda a casa desde 04.09.2026: diz
-      «este texto é prosa da casa, recolhe-o onde quer que ele esteja». Não
-      dispensa nada e não esconde nada; só alarga a peneira. É a mesma marca que
-      o rótulo e o botão da busca levam desde o §9.7 do F1.10, e pela mesma
-      razão. As seis linhas entram no inventário como `navegacao`, que é o que
-      elas são: o nome da página de chegada.
-
-      A MARCA VAI NO ELEMENTO INTEIRO, com a seta: é isso que o leitor lê, e é
-      assim que a linha do inventário morde a etiqueta e não metade dela. */}
-
-  {/* A CONTAGEM DE COBERTURA SAIU DESTA PORTA (Emenda 15). Dizia «1 de 308
-      concelhos · tem página», que é uma frase sobre a cobertura do próprio
-      sítio — a classe que a emenda nomeia. Fica o TAMANHO do que está do outro
-      lado, que é o que uma porta diz: 308 concelhos. As duas contagens de
-      cobertura continuam em `/municipios`, que é a página que elas contam. */}
-  {/* O ESPAÇO ENTRE O NÚMERO E O SUBSTANTIVO VIVE DENTRO DE UM ITEM (bloco
-      F1.4b, 04.09.2026; um leitor viu «308concelhos» e «12trabalhos ·16edições»
-      no telemóvel). A folha põe `.porta-conta { display: flex }` abaixo dos
-      1024px (a rede dos 44px do F1.7): num contentor flexível cada corrida de
-      texto solto vira um item anónimo, e o CSS APARA o espaço no princípio e no
-      fim de cada item. O espaço estava lá — vem nas próprias cadeias
-      (`' concelhos'`, `' trabalhos · '`, `' edições'`) e o `textContent` mostra-o
-      —, mas a rendição perdia-o: a 1280 a caixa é `block` e o espaço aparecia, a
-      390 desaparecia. A linha da agenda nunca teve o defeito porque cada conta
-      dela já vivia dentro de um `.porta-conta-item`; é a mesma caixa que estas
-      duas passam a ter, e agora o par número + palavra é UM item, com o espaço
-      no meio dele. A célula I11 de `tests/livro/indice.mjs` lê o texto RENDIDO a
-      390 e exige o espaço. */}
   <a class="porta" href={rotas.municipios}>
     <span class="porta-nome">{s.nav.municipios}</span>
     <span class="porta-conta">
@@ -95,10 +59,9 @@ const temAgenda = agenda.every((a) => p[a.chave].valor !== null);
         <span data-prova="municipios_total" title={p.municipios_total.origem}>
           {p.municipios_total.valor}
         </span>
-        {s.inicio.portas.concelhos}
       </span>
     </span>
-    <span class="lig porta-abrir" data-voz>{s.inicio.portas.abrirConcelhos} →</span>
+    <span class="porta-seta" aria-hidden="true">→</span>
   </a>
 
   <a class="porta" href={rotas.estudos}>
@@ -106,36 +69,17 @@ const temAgenda = agenda.every((a) => p[a.chave].valor !== null);
     <span class="porta-conta">
       <span class="porta-conta-item">
         <span data-prova="estudos" title={p.estudos.origem}>{p.estudos.valor}</span>
-        {s.inicio.portas.estudosA}
-        <span data-prova="edicoes" title={p.edicoes.origem}>{p.edicoes.valor}</span>
-        {s.inicio.portas.estudosB}
       </span>
     </span>
-    <span class="lig porta-abrir" data-voz>{s.inicio.portas.abrirEstudos} →</span>
+    <span class="porta-seta" aria-hidden="true">→</span>
   </a>
 
-  {
-    temAgenda && (
-      <div class="porta porta-agenda">
-        <a class="porta-nome" href={rotas.agenda}>{s.nav.agenda}</a>
-        <span class="porta-conta">
-          {/* Cada contagem é um ALVO, e por isso cada entrada é um grupo com
-              folga própria (bloco A, item A10): a 390, na edição inglesa, duas
-              contagens ficavam a 40px de distância e as suas áreas de 44px
-              cruzavam-se por 3,8px. Uma área sobreposta não é um alvo maior — é
-              uma porta que abre a linha do vizinho. O `<span>` não muda o texto
-              nem a ordem: só dá à entrada uma caixa onde a folga cabe. */}
-          {agenda.map((a, i) => (
-            <>
-              {i > 0 && ' · '}
-              <span class="porta-conta-item">
-                <ValorDaProva chave={a.chave} item={p[a.chave]} lang={lang} /> {a.palavra}
-              </span>
-            </>
-          ))}
-        </span>
-        <a class="lig porta-abrir" href={rotas.agenda} data-voz>{s.inicio.portas.abrirAgenda} →</a>
-      </div>
-    )
-  }
+  {/* A AGENDA NÃO LEVA NÚMERO, e é a única das três que não leva: o que ela
+      tinha eram quatro contagens de estado, que são o estado do trabalho e não
+      o tamanho do que está do outro lado. Um cartão com o nome e a seta é uma
+      porta inteira. */}
+  <a class="porta" href={rotas.agenda}>
+    <span class="porta-nome">{s.nav.agenda}</span>
+    <span class="porta-seta" aria-hidden="true">→</span>
+  </a>
 </nav>
