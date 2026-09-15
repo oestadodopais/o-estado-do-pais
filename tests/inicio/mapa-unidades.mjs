@@ -96,6 +96,17 @@
  * unidade, a lista fica fechada com as 29, nenhuma região é desenhada nem
  * listada, e um `#unidade=` no endereço não parte nada.
  *
+ * E A GAVETA DOS NOMES TEM DE ESTAR À VISTA AQUI (item 3 do F1.13, 15.09.2026).
+ * A decisão, à letra: «a gaveta "Os nomes no mapa" deixa de estar à vista quando
+ * o mapa funciona: fica na página para a tecnologia de apoio e para quem não tem
+ * guião (visualmente escondida com guião; sem guião, aberta como hoje)». Este
+ * contexto é exactamente o leitor a quem ela faz falta, e por isso é aqui que a
+ * outra metade da promessa se mede: a caixa da gaveta tem área maior do que zero
+ * e o `<summary>` vê-se. «Fechada» continua a ser o estado do `<details>`, que é
+ * o que «como hoje» quer dizer: ela vê-se, e abre-se com um toque, sem guião
+ * nenhum. Com guião a mesma caixa mede zero, e é a A5 de `tests/inicio/porta.mjs`
+ * que o mede.
+ *
  * U5 · a altura da primeira página a 390, contra a de partida. O «antes» lê-se do
  * artefacto que a régua do F1.1d gravou (`mapa-medidas.json`, cabeça `c9823939`,
  * 390 × 664 em Chromium), que é a mesma largura e o mesmo motor desta célula. O
@@ -518,9 +529,19 @@ async function u1() {
      08.09.2026, achado 16). O que a rede promete é que CADA uma das áreas que
      não chega ao dedo tem um nome alcançável, e isso é uma igualdade de
      conjuntos e não uma desigualdade de contagens: os 308 slugs do índice são os
-     308 slugs da Carta, UMA LIGAÇÃO CADA, e as 29 da lista fechada são as 29 do
+     308 slugs da Carta, UMA LIGAÇÃO CADA, e as 29 da lista são as 29 do
      artefacto. Os slugs esperados leem-se dos 29 ficheiros do motor, que é a
-     Carta, e não de uma lista escrita aqui. */
+     Carta, e não de uma lista escrita aqui.
+
+     A CÉLULA DIZIA «A LISTA FECHADA» E PASSA A DIZER «A LISTA» (15.09.2026, item
+     3 do F1.13). A decisão, à letra: «a gaveta "Os nomes no mapa" deixa de estar
+     à vista quando o mapa funciona: fica na página para a tecnologia de apoio e
+     para quem não tem guião (visualmente escondida com guião; sem guião, aberta
+     como hoje).» O que esta célula mede não muda uma linha (ela já lê a página
+     SEM GUIÃO, que é o estado em que a lista está à vista), e o que muda é o
+     nome: «fechada» era o estado com guião, e com guião a lista já não se vê.
+     Que ela não ocupa píxel nenhum com guião é a A5 de `tests/inicio/porta.mjs`;
+     que ela está à vista sem guião é a U4, aqui ao lado. */
   const semGuiao = await pagina('/', 390, { guiao: false });
   const rede = await semGuiao.evaluate(() => ({
     unidades: [...document.querySelectorAll('[data-mapa-ilhas] [data-lista-porta]')].map((a) => a.getAttribute('data-lista-porta')),
@@ -541,7 +562,7 @@ async function u1() {
   const emFalta = UNIDADES.map((u) => u.slug).filter((s) => !rede.unidades.includes(s));
   const naListaAMais = rede.unidades.filter((s) => !UNIDADES.some((u) => u.slug === s));
   conta(
-    'U1c · a rede de nomes responde pelas áreas abaixo de 44 px: as 29 na lista fechada e os 308 no índice, uma ligação cada',
+    'U1c · a rede de nomes responde pelas áreas abaixo de 44 px: as 29 na lista (lida sem guião, que é onde ela está à vista) e os 308 no índice, uma ligação cada',
     emFalta.length === 0 &&
       naListaAMais.length === 0 &&
       rede.unidades.length === 29 &&
@@ -1125,6 +1146,26 @@ async function u4() {
         comDestino: areas.filter((a) => (a.getAttribute('href') || '').startsWith(pre)).length,
         destinos: areas.map((a) => a.getAttribute('href')),
         gaveta: document.querySelector('[data-cabeca-nomes] details')?.hasAttribute('open') ?? null,
+        /* A GAVETA ESTÁ À VISTA SEM GUIÃO (item 3 do F1.13, 15.09.2026). A folha
+           da primeira página tira-a da composição, e `HomeView.astro` serve,
+           dentro de um `<noscript>` do `<head>`, a regra que a devolve. Este
+           contexto corre com `javaScriptEnabled: false`, que é exactamente o
+           leitor a quem a lista faz falta: o que se mede é a ÁREA da caixa dela,
+           que tem de ser maior do que zero, e a visibilidade do `<summary>` que
+           a abre. Com guião a mesma caixa mede zero, e é a A5 de
+           `tests/inicio/porta.mjs` que o mede. */
+        caixaDaGaveta: (() => {
+          const el = document.querySelector('[data-cabeca-nomes]');
+          if (!el) return null;
+          const r = el.getBoundingClientRect();
+          return { largura: +r.width.toFixed(1), altura: +r.height.toFixed(1), area: Math.round(r.width * r.height) };
+        })(),
+        sumarioAVista:
+          document.querySelector('[data-gaveta="nomes"] > summary')?.checkVisibility({
+            contentVisibilityAuto: true,
+            opacityProperty: true,
+            visibilityProperty: true,
+          }) ?? null,
         naLista: document.querySelectorAll('[data-mapa-ilhas] [data-lista-porta]').length,
         /* NENHUMA REGIÃO NO DESENHO NEM NA LISTA (U4 do F1.1e): uma ligação para
            `/regioes/` dentro do mapa ou da lista dos nomes é uma região a voltar
@@ -1151,18 +1192,24 @@ async function u4() {
       codigos.push(resposta.status);
     }
     conta(
-      `U4 · ${lang}: sem guião, 29 ligações para as 29 páginas, a lista fechada com as 29, zero regiões desenhadas e o «#unidade=» ignorado`,
+      `U4 · ${lang}: sem guião, 29 ligações para as 29 páginas, a gaveta dos nomes À VISTA com as 29 lá dentro, zero regiões desenhadas e o «#unidade=» ignorado`,
       r.areas === 29 &&
         r.comDestino === 29 &&
         codigos.length === 29 &&
         codigos.every((c) => c === 200) &&
         r.gaveta === false &&
+        r.caixaDaGaveta !== null &&
+        r.caixaDaGaveta.area > 0 &&
+        r.sumarioAVista === true &&
         r.naLista === 29 &&
         r.regioesDesenhadas === 0 &&
         r.lugar === true &&
         r.segundoNivel === 0,
       `${r.areas} áreas, ${r.comDestino} com destino em «${prefixo}», ${codigos.filter((c) => c === 200).length} de ${codigos.length} respondem 200 · ` +
-        `gaveta ${r.gaveta ? 'aberta' : 'fechada'} com ${r.naLista} unidades · ${r.regioesDesenhadas} região(ões) no desenho ou na lista · ` +
+        `a gaveta ${r.gaveta ? 'aberta' : 'fechada'} com ${r.naLista} unidades, a caixa dela a ` +
+        `${r.caixaDaGaveta ? `${r.caixaDaGaveta.largura}×${r.caixaDaGaveta.altura} px (área ${r.caixaDaGaveta.area})` : 'não existe'}` +
+        ` e o «summary» ${r.sumarioAVista ? 'à vista' : 'fora da vista'} (item 3 do F1.13: sem guião a lista está à vista) · ` +
+        `${r.regioesDesenhadas} região(ões) no desenho ou na lista · ` +
         `o lugar do nome ${r.lugar ? 'não se rende' : 'rende-se'} · o segundo nível tem ${r.segundoNivel} nós`,
     );
     /* OS CÓDIGOS ENTRAM NO ARTEFACTO, e não só na prova impressa. A célula

@@ -956,7 +956,31 @@ async function correTudo(soEstas) {
            O QUE A CÉLULA CONTINUA A PROTEGER é o que ela sempre protegeu: que a
            rede de nomes existe, que tem os 29, e que o comando que a fecha é um
            alvo da medida da casa. O que muda é o estado esperado — uma gaveta,
-           aberta — e a busca, que passa a medir-se onde ela agora está. */
+           aberta, e a busca, que passa a medir-se onde ela agora está.
+
+           ---------------------------------------------------------------------
+           ESTA CÉLULA ESTÁ DUAS DECISÕES ATRASADA, E DIZ-SE (nota do construtor
+           do F1.13, 15.09.2026; a correcção é do lugar de direção e não deste
+           bloco)
+           ---------------------------------------------------------------------
+           Ela exige a gaveta ABERTA à chegada, e a gaveta chega FECHADA desde o
+           F1.1d e o F1.1e (07 e 08.09.2026), que desfizeram o item 4 do F1.1 com
+           a razão escrita nos seus briefs. A célula já estava vermelha por isso
+           antes deste ramo.
+
+           E o F1.13 (item 3, 15.09.2026) mudou outra vez o facto: com guião a
+           gaveta sai da composição, e por isso o «alvo mais pequeno» que esta
+           célula imprime passou a ser o do `<summary>` dentro de uma caixa de
+           1 px recortada. O número não diz o que parece dizer.
+
+           O QUE MEDE A DECISÃO DE HOJE, e mede-a por inteiro: a `A5` de
+           `tests/inicio/porta.mjs` (com guião, a 390 e a 1 280: a gaveta não
+           ocupa píxel nenhum à vista, os 29 lá estão com porta, e o foco
+           devolve-a à composição com o alvo de 44 px) e a `U4` de
+           `tests/inicio/mapa-unidades.mjs` (sem guião: a caixa tem área e o
+           `<summary>` vê-se). Reescrever esta célula seria uma terceira
+           definição da mesma coisa, e é isso que a casa não quer; o que ela
+           precisa é de uma decisão sobre o que lhe fica a pertencer. */
         conta(
           `F10a·${e.chave}·${w} · a gaveta dos nomes, aberta, com alvo de ${min} px, e a busca fora dela`,
           r.gavetas.length === 1 &&
