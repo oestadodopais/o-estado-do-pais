@@ -1,6 +1,6 @@
 # O relatório do bloco P1 · «O rodapé e a primeira página»
 
-*15.09.2026, ramo `porta-2026-09-15`, cabeça final `feba0d69` sobre `2ab86986`.
+*15.09.2026, ramo `porta-2026-09-15`, cabeça final `04e4f7a3` sobre `2ab86986`.
 Construtor: Claude Opus 5. Na forma do §3 do brief: a tabela do §1 com a medida
 de cada item preenchida, a tabela das cadeias, o mapeamento dos domínios, os
 commits, os portões, e o que fica para o lugar de direção. Sem travessões.*
@@ -80,7 +80,7 @@ de cada grupo; aqui fica a soma e a porta de cada domínio.
 Nove commits sobre `2ab86986`, a cabeça final `feba0d69`.
 
 Os três portões, cada comando no seu, com o código de saída escrito num ficheiro
-por `echo $? > …` e lido de lá:
+por `echo $? > …` e lido de lá, e nunca de memória:
 
 | portão | código |
 |---|---|
@@ -88,7 +88,14 @@ por `echo $? > …` e lido de lá:
 | `npm run verify` | **0** |
 | `npm run typecheck` | **0** |
 
-As linhas estão em `portoes.txt`, com o caminho de cada ficheiro de código.
+Corridos duas vezes: sobre `feba0d69`, que é a cabeça com toda a fonte, e outra
+vez sobre `1e8058c0`, que acrescenta os documentos e as capturas. Os dois lados
+deram os mesmos três zeros. O `portoes.txt` traz o caminho de cada ficheiro de
+código e as últimas linhas de cada corrida; o commit que o traz acrescenta só
+esse ficheiro, e nenhum dos três portões o lê.
+
+E depois do último commit correu-se `npm run build` outra vez, para o carimbo
+do `dist/` levar a cabeça final.
 
 ## 5 · O que fica vermelho, e porquê
 
