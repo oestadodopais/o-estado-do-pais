@@ -1294,7 +1294,7 @@ isso o pequeno dos rótulos entra sem uma palavra nova em nenhuma das edições.
 
 ### F1.13 · As palavras da porta e o índice dos domínios (15.09.2026)
 
-*O bloco sai inteiro de uma leitura do diretor: a 15.09.2026 de manhã ele leu a primeira página no ar e a página de uma área, e escreveu o que viu. As chaves abaixo são o que essa leitura mudou nas palavras. A regra nova do §0 do brief vale para todas: «uma mudança de forma decide-se em capturas nas larguras reais, enviadas ao diretor antes de aterrar», e as vinte capturas estão em `design/especime-v3/capturas/porta-2026-09-15/`.*
+*O bloco sai inteiro de uma leitura do diretor: a 15.09.2026 de manhã ele leu a primeira página no ar e a página de uma área, e escreveu o que viu. As chaves abaixo são o que essa leitura mudou nas palavras. A regra nova do §0 do brief vale para todas: «uma mudança de forma decide-se em capturas nas larguras reais, enviadas ao diretor antes de aterrar», e as 40 capturas (20 antes e 20 depois: duas famílias de página, duas edições, cinco larguras, dois momentos) estão em `design/especime-v3/capturas/porta-2026-09-15/`.*
 
 **As chaves novas:**
 

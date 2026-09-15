@@ -1,0 +1,24 @@
+a coluna do valor de uma medida, a 1 280 px · antes → depois
+  antes:  /tmp/dist-antes-porta
+  depois: /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/porta-2026-09-15/dist
+
+pt /areas/administracao-interna                      72 px [72px 454px] linha→Base → 176 px [176px 350px] Base→linha
+en /en/areas/administracao-interna                   72 px [72px 454px] linha→Base → 176 px [176px 350px] Base→linha
+pt /areas/ambiente-e-energia                         72 px [72px 454px] linha→Base → 176 px [176px 350px] Base→linha
+en /en/areas/ambiente-e-energia                      72 px [72px 454px] linha→Base → 176 px [176px 350px] Base→linha
+pt /areas/economia-e-coesao-territorial              72 px [72px 454px] linha→Base → 176 px [176px 350px] Base→linha
+en /en/areas/economia-e-coesao-territorial           72 px [72px 454px] linha→Base → 176 px [176px 350px] Base→linha
+pt /areas/educacao-ciencia-e-inovacao                72 px [72px 454px] linha→Base → 176 px [176px 350px] Base→linha
+en /en/areas/educacao-ciencia-e-inovacao             72 px [72px 454px] linha→Base → 176 px [176px 350px] Base→linha
+pt /areas/financas                                   72 px [72px 454px] linha→Base → 176 px [176px 350px] Base→linha
+en /en/areas/financas                                72 px [72px 454px] linha→Base → 176 px [176px 350px] Base→linha
+pt /areas/infraestruturas-e-habitacao                72 px [72px 454px] linha→Base → 176 px [176px 350px] Base→linha
+en /en/areas/infraestruturas-e-habitacao             72 px [72px 454px] linha→Base → 176 px [176px 350px] Base→linha
+pt /areas/justica                                    72 px [72px 454px] linha→Base → 176 px [176px 350px] Base→linha
+en /en/areas/justica                                 72 px [72px 454px] linha→Base → 176 px [176px 350px] Base→linha
+pt /areas/saude                                      72 px [72px 454px] linha→Base → 176 px [176px 350px] Base→linha
+en /en/areas/saude                                   72 px [72px 454px] linha→Base → 176 px [176px 350px] Base→linha
+pt /areas/trabalho-solidariedade-e-seguranca-social  72 px [72px 454px] linha→Base → 176 px [176px 350px] Base→linha
+en /en/areas/trabalho-solidariedade-e-seguranca-social 72 px [72px 454px] linha→Base → 176 px [176px 350px] Base→linha
+pt /livro-razao                                      176 px [176px 350px] Base→linha → 176 px [176px 350px] Base→linha
+en /en/ledger                                        176 px [176px 350px] Base→linha → 176 px [176px 350px] Base→linha
