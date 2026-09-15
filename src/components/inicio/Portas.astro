@@ -76,7 +76,7 @@ const temAgenda = agenda.every((a) => p[a.chave].valor !== null);
         {s.inicio.portas.concelhos}
       </span>
     </span>
-    <span class="lig porta-abrir">{s.inicio.portas.abrir} →</span>
+    <span class="lig porta-abrir">{s.inicio.portas.abrirConcelhos} →</span>
   </a>
 
   <a class="porta" href={rotas.estudos}>
@@ -89,7 +89,7 @@ const temAgenda = agenda.every((a) => p[a.chave].valor !== null);
         {s.inicio.portas.estudosB}
       </span>
     </span>
-    <span class="lig porta-abrir">{s.inicio.portas.abrir} →</span>
+    <span class="lig porta-abrir">{s.inicio.portas.abrirEstudos} →</span>
   </a>
 
   {
@@ -112,7 +112,7 @@ const temAgenda = agenda.every((a) => p[a.chave].valor !== null);
             </>
           ))}
         </span>
-        <a class="lig porta-abrir" href={rotas.agenda}>{s.inicio.portas.abrir} →</a>
+        <a class="lig porta-abrir" href={rotas.agenda}>{s.inicio.portas.abrirAgenda} →</a>
       </div>
     )
   }

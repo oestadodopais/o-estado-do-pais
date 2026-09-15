@@ -442,15 +442,19 @@ const ROTAS_DA_CLASSE = [
        de direção (`DECISIONS.md` §1.98, segunda emenda, item 3), e a sentinela é
        a cadeia inteira: uma sentinela que ficasse no prefixo deixava de provar
        que a frase nova se rende. */
+    /* E MUDOU COM ELA A 15.09.2026 (bloco F1.13, item 1), pela leitura que o
+       diretor fez da primeira página no ar: a frase passou a dizer o que o sítio
+       é, e não as três maneiras de o percorrer. A sentinela continua a ser a
+       cadeia INTEIRA, pela mesma razão. */
     sentinela:
-      'Um observatório de Portugal: cada número com a sua fonte, lido por território, por domínio e em estudos.',
+      'Os números oficiais de Portugal, do país ao seu concelho, cada um com a fonte.',
   },
   {
     rota: '/en/',
     ficheiro: path.join('dist', 'en', 'index.html'),
     lingua: 'en',
     sentinela:
-      'An observatory of Portugal: every number with its source, read by territory, by domain and in studies.',
+      'Portugal\u2019s official numbers, from the country to your municipality, each with its source.',
   },
 ];
 
