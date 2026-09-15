@@ -3024,12 +3024,23 @@ a.porta:hover .porta-abrir {
  * um dos 29 nomes é focado, pela mesma razão que a ligação de salto (`.skip`)
  * aparece ao ser focada e não antes.
  *
- * SEM GUIÃO NÃO HÁ NADA DISTO: `HomeView.astro` serve, dentro de um `<noscript>`
- * do `<head>`, a regra que devolve a gaveta à composição, e ela ganha por
- * especificidade (`:root .cabeca-nomes`, 0-2-0, contra 0-1-0 desta) sem depender
- * da ordem por que o empacotador põe as folhas na página.
+ * E SÓ SE ESCONDE QUANDO O MAPA FUNCIONA, que é o que a decisão diz e o que a
+ * primeira construção deste bloco não fazia (leitura a frio do Codex ao F1.13,
+ * 15.09.2026, achado 5: «the names drawer is hidden whenever CSS loads, not only
+ * when the map works»). A folha não sabe se o mapa funciona; quem sabe é o guião
+ * dele, e é ele que o diz: `public/js/mapa-unidades.js` põe `data-mapa-vivo` na
+ * raiz do documento na sua ÚLTIMA linha, depois de ter encontrado tudo o que
+ * precisa e de o lugar do nome já se render. Sem essa marca, a gaveta fica à
+ * vista, fechada, como sem guião: é o mesmo estado para quem não tem guião
+ * nenhum e para quem tem guião e ficou sem mapa.
+ *
+ * POR ISSO NÃO HÁ AQUI `<noscript>` NENHUM. A primeira construção devolvia a
+ * gaveta com uma regra servida dentro de um `<noscript>` do `<head>`, e isso
+ * respondia a UMA das duas maneiras de ficar sem mapa. Com a marca a vir do
+ * guião, o estado por omissão é já o certo para as duas, e a regra do
+ * `<noscript>` saiu com a ranhura que a servia.
  * ------------------------------------------------------------------------- */
-.cabeca-nomes {
+:root[data-mapa-vivo] .cabeca-nomes {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -3040,7 +3051,7 @@ a.porta:hover .porta-abrir {
   white-space: nowrap;
   border: 0;
 }
-.cabeca-nomes:focus-within {
+:root[data-mapa-vivo] .cabeca-nomes:focus-within {
   position: static;
   width: auto;
   height: auto;

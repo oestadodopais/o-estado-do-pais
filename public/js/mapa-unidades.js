@@ -489,4 +489,32 @@
   lugar.hidden = false;
   mostraVazio();
   if (DOIS_NIVEIS) aplicaFragmento();
+
+  /* ------------------------------------------------------------------------
+     A MARCA DE QUE O MAPA FUNCIONA (F1.13, item 3, emendado a 15.09.2026 pela
+     leitura a frio do Codex, achado 5)
+     ------------------------------------------------------------------------
+     A decisão do item 3 é que a gaveta «Os nomes no mapa» sai da vista QUANDO O
+     MAPA FUNCIONA. A primeira construção escondeu-a sempre que a folha carrega,
+     e a leitura a frio mostrou o que isso custa: um leitor com guião mas com
+     este ficheiro em falta, ou com ele a rebentar antes do fim, ficava sem o
+     mapa E sem a lista dos nomes.
+
+     ESTA LINHA É A ÚLTIMA DO FICHEIRO DE PROPÓSITO. Tudo o que o guião precisa
+     já foi encontrado (as guardas de cima devolvem cedo quando não está), o
+     lugar do nome já se rende e o desenho já responde ao rato, ao foco e ao
+     dedo. Marcar antes disto seria marcar uma promessa em vez de um facto.
+
+     A MARCA É NA RAIZ DO DOCUMENTO e não no invólucro do mapa, e a razão é o
+     alcance: a gaveta é irmã do mapa e não filha dele, e uma folha que a
+     escondesse a partir da marca do mapa precisava de `:has()` para subir e
+     descer outra vez. `:root[data-mapa-vivo] .cabeca-nomes` é a mesma coisa dita
+     sem rodeios, e a raiz é a página, que é o que a decisão nomeia.
+
+     O QUE ISTO CUSTA, E ESTÁ MEDIDO: este ficheiro é `defer`, e por isso a
+     gaveta está à vista desde a primeira pintura até esta linha correr. A troca
+     é deliberada: a alternativa é esconder antes de saber, que é o defeito que a
+     leitura a frio apanhou. O relatório do bloco escreve onde a gaveta fica em
+     relação ao primeiro ecrã. */
+  document.documentElement.setAttribute('data-mapa-vivo', '');
 })();

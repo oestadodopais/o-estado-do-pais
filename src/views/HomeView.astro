@@ -398,33 +398,21 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
   description={s.home.metaDescription}
 >
   {/* ----------------------------------------------------------------------
-      A GAVETA DOS NOMES VOLTA À VISTA SEM GUIÃO (F1.13, item 3, 15.09.2026)
+      A GAVETA DOS NOMES: A DECISÃO É DO GUIÃO DO MAPA, E NÃO DESTA VISTA
       ----------------------------------------------------------------------
-      A folha da primeira página tira a gaveta «Os nomes no mapa» da composição
-      (`src/styles/inicio.css`, com a razão escrita lá): com guião o mapa diz o
-      nome da área apontada e a gaveta era o terceiro caminho para o mesmo lugar
-      no primeiro ecrã. Sem guião o mapa continua a ser 29 ligações e mais nada,
-      e a lista dos nomes é a única coisa que diz ao leitor quais são as 29 e o
-      que cada uma abre: é ela que tem de estar à vista.
+      O item 3 do F1.13 tira a gaveta «Os nomes no mapa» da vista QUANDO O MAPA
+      FUNCIONA. A primeira construção deste bloco servia aqui, dentro de um
+      `<noscript>` do `<head>`, a regra que a devolvia a quem não tem guião; a
+      leitura a frio do Codex (15.09.2026, achado 5) mostrou que isso responde a
+      uma das duas maneiras de ficar sem mapa e não à outra, que é ter guião e o
+      mapa falhar.
 
-      O `<noscript>` É A ÚNICA MANEIRA DE SABER SEM GUIÃO SE HÁ GUIÃO, e serve-se
-      no `<head>` pela ranhura `cabeca` de `Base.astro`, que é onde a norma deixa
-      um `<style>` viver dentro de um `<noscript>`. Chega antes da primeira
-      pintura, e por isso não há gaveta a aparecer e a desaparecer.
-
-      `:root .cabeca-nomes` GANHA POR ESPECIFICIDADE (0-2-0 contra 0-1-0) e não
-      pela ordem: onde o empacotador ponha a folha da página não muda nada.
-
-      `is:inline` PORQUE É CSS SERVIDO EM LINHA E NÃO UMA FOLHA DO COMPONENTE: o
-      empacotador da Astro recolhe e reescreve um `<style>` que não o leve, e
-      esta regra tem de sair no documento, dentro deste `<noscript>`.
+      A regra passou para onde o facto se sabe: `public/js/mapa-unidades.js` põe
+      `data-mapa-vivo` na raiz do documento na sua última linha, e a folha da
+      primeira página esconde a gaveta só com essa marca (`src/styles/inicio.css`,
+      com a razão escrita lá). Esta vista deixou de ter de dizer alguma coisa
+      sobre isso, e o `<noscript>` saiu com a ranhura do `<head>` que o servia.
       ---------------------------------------------------------------------- */}
-  <noscript slot="cabeca">
-    <style
-      is:inline
-      set:html={':root .cabeca-nomes{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto;white-space:normal}'}
-    />
-  </noscript>
 
   <Masthead slot="masthead" lang={lang} path={path} compact={false} furniture={true} />
 
