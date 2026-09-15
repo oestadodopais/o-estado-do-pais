@@ -267,6 +267,32 @@ const cartaoTwitter = urlDoCartao({ ...cartao, ...DIM_TWITTER });
 
     <script type="application/ld+json" set:html={jsonLd(organizationJsonLd)} />
     {jsonld && <script type="application/ld+json" set:html={jsonLd(jsonld)} />}
+
+    {
+      /* ------------------------------------------------------------------
+         A RANHURA DO `<head>` (bloco F1.13, item 3, 15.09.2026)
+         ------------------------------------------------------------------
+         Existe para UMA coisa e está escrita: uma vista que precise de dizer
+         alguma coisa ao navegador ANTES da primeira pintura põe-na aqui. Hoje
+         quem a usa é a primeira página, com um `<noscript><style>` que devolve
+         à vista a gaveta dos nomes do mapa quando não há guião.
+
+         PORQUE É NO `<head>` E NÃO NO CORPO. Um `<style>` é conteúdo de
+         metadados: o único sítio onde a norma o deixa viver dentro de um
+         `<noscript>` é o `<head>` («in a head element, if the scripting flag is
+         disabled: zero or more link, style, and meta elements»). No corpo os
+         navegadores aplicam-no na mesma, e é por isso que era tentador: seria a
+         casa a servir um documento que não é o que diz ser, que é o contrário
+         da promessa deste sítio.
+
+         E É `<noscript>` E NÃO UM GUIÃO QUE MARCA A RAIZ. Um atributo escrito
+         por um guião no `<head>` seria mais uma linha bloqueante em 7 000
+         páginas para uma decisão de uma só; e um atributo escrito por um guião
+         adiado chegava depois da primeira pintura, com a gaveta a aparecer e a
+         desaparecer à frente de quem lê.
+         ------------------------------------------------------------------ */
+    }
+    <slot name="cabeca" />
   </head>
 
   <body>

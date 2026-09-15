@@ -3002,6 +3002,54 @@ a.porta:hover .porta-abrir {
 .cabeca-nomes {
   min-width: 0;
 }
+
+/* ---------------------------------------------------------------------------
+ * A GAVETA DOS NOMES SAI DA VISTA ONDE O MAPA RESPONDE (F1.13, item 3)
+ * ---------------------------------------------------------------------------
+ * O diretor leu a primeira página no ar a 15.09.2026 de manhã e contou três
+ * caminhos para o mesmo lugar no primeiro ecrã: a busca, a gaveta «Os nomes no
+ * mapa» e o mapa. A decisão do item 3 é que a gaveta deixa de estar à vista
+ * QUANDO O MAPA FUNCIONA, e fica na página para a tecnologia de apoio e para
+ * quem não tem guião.
+ *
+ * ELA NÃO SAI DO DOCUMENTO, e a diferença é toda: um `display: none` tira-a
+ * também de quem ouve, e a Emenda 20c tem a rede de nomes como a resposta pelas
+ * áreas do desenho que não chegam aos 44 px. O que estas regras fazem é o que a
+ * classe `.vh` de `site.css` já faz em todo o sítio: a caixa sai da composição e
+ * o conteúdo continua na árvore de acessibilidade, com teclado e com nome.
+ *
+ * E VOLTA AO FOCO, que é a outra metade da honestidade. Um alvo alcançável pelo
+ * teclado e invisível quando recebe o foco é uma armadilha para quem navega sem
+ * rato: `:focus-within` devolve a gaveta à composição assim que o `<summary>` ou
+ * um dos 29 nomes é focado, pela mesma razão que a ligação de salto (`.skip`)
+ * aparece ao ser focada e não antes.
+ *
+ * SEM GUIÃO NÃO HÁ NADA DISTO: `HomeView.astro` serve, dentro de um `<noscript>`
+ * do `<head>`, a regra que devolve a gaveta à composição, e ela ganha por
+ * especificidade (`:root .cabeca-nomes`, 0-2-0, contra 0-1-0 desta) sem depender
+ * da ordem por que o empacotador põe as folhas na página.
+ * ------------------------------------------------------------------------- */
+.cabeca-nomes {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+.cabeca-nomes:focus-within {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
 @media (min-width: 1024px) {
   .cabeca-nomes .mapa-ilhas {
     gap: 4px clamp(18px, 3vw, 34px);

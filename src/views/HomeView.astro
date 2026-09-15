@@ -57,6 +57,7 @@ import {
   dominiosComPagina,
   medidasDoDominio,
   medidaPelaChave,
+  faixaDoDominio,
   FAIXA_DO_DOMINIO_1,
 } from '../data/dominios.mjs';
 import { prova } from '../lib/prova.mjs';
@@ -240,13 +241,17 @@ const manchete = partesDaManchetePais(s.inicio.cabeca.manchetePais);
  * chegada, que é a cadeia que os cartões do domínio já levavam desde o F1.1b:
  * não é uma palavra nova.
  */
-const faixaDeclaradaDo = (slug) =>
-  slug === 'economia-e-financas-publicas' ? FAIXA_DO_DOMINIO_1 : [];
-
+/* A LISTA DA FAIXA VEM DA DECLARAÇÃO, POR UMA PORTA SÓ (F1.13, item 4,
+   15.09.2026). Era um `faixaDeclaradaDo()` escrito aqui, e o índice dos domínios
+   passou a precisar da mesma lista para escrever os nomes das medidas de cabeça:
+   duas maneiras de decidir quais são as medidas de cabeça divergiriam ao
+   primeiro domínio novo. A decisão vive onde as medidas se declaram
+   (`faixaDoDominio()`, em `src/data/dominios.mjs`), e as duas superfícies leem-na
+   de lá. */
 const cartoes = dominiosComPagina()
   .flatMap((d) => {
     const porta = routePath('dominio', lang, { slug: d.slug });
-    return faixaDeclaradaDo(d.slug).map((chave) => {
+    return faixaDoDominio(d.slug).map((chave) => {
       const m = medidaPelaChave(chave);
       if (!m?.claim) {
         throw new Error(`inicio: a faixa do domínio "${d.slug}" nomeia "${chave}", que não tem linha.`);
@@ -392,6 +397,35 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
   title={s.home.metaTitle}
   description={s.home.metaDescription}
 >
+  {/* ----------------------------------------------------------------------
+      A GAVETA DOS NOMES VOLTA À VISTA SEM GUIÃO (F1.13, item 3, 15.09.2026)
+      ----------------------------------------------------------------------
+      A folha da primeira página tira a gaveta «Os nomes no mapa» da composição
+      (`src/styles/inicio.css`, com a razão escrita lá): com guião o mapa diz o
+      nome da área apontada e a gaveta era o terceiro caminho para o mesmo lugar
+      no primeiro ecrã. Sem guião o mapa continua a ser 29 ligações e mais nada,
+      e a lista dos nomes é a única coisa que diz ao leitor quais são as 29 e o
+      que cada uma abre: é ela que tem de estar à vista.
+
+      O `<noscript>` É A ÚNICA MANEIRA DE SABER SEM GUIÃO SE HÁ GUIÃO, e serve-se
+      no `<head>` pela ranhura `cabeca` de `Base.astro`, que é onde a norma deixa
+      um `<style>` viver dentro de um `<noscript>`. Chega antes da primeira
+      pintura, e por isso não há gaveta a aparecer e a desaparecer.
+
+      `:root .cabeca-nomes` GANHA POR ESPECIFICIDADE (0-2-0 contra 0-1-0) e não
+      pela ordem: onde o empacotador ponha a folha da página não muda nada.
+
+      `is:inline` PORQUE É CSS SERVIDO EM LINHA E NÃO UMA FOLHA DO COMPONENTE: o
+      empacotador da Astro recolhe e reescreve um `<style>` que não o leve, e
+      esta regra tem de sair no documento, dentro deste `<noscript>`.
+      ---------------------------------------------------------------------- */}
+  <noscript slot="cabeca">
+    <style
+      is:inline
+      set:html={':root .cabeca-nomes{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto;white-space:normal}'}
+    />
+  </noscript>
+
   <Masthead slot="masthead" lang={lang} path={path} compact={false} furniture={true} />
 
   <div
@@ -451,6 +485,12 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
             já conheciam quando a busca vivia na gaveta.
             ---------------------------------------------------------------- */}
         <div class="pesquisa-bloco" slot="porta" data-pesquisa-bloco>
+          {/* O RÓTULO NOMEIA OS DOIS CAMINHOS (F1.13, item 3, 15.09.2026).
+              A gaveta dos nomes saiu da vista com guião, e ficam dois caminhos
+              para um concelho no primeiro ecrã: escrever o nome, ou tocar no
+              mapa. O rótulo diz os dois. A cadeia é própria desta superfície e
+              não a das outras duas buscas, e a razão está em `strings.mjs`:
+              `/municipios` e `/livro-razao/concelhos` não têm mapa nenhum. */}
           <Pesquisa
             s={s}
             lang={lang}
@@ -459,6 +499,7 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
             destino={destinoDoConcelho}
             forma={indiceDosConcelhos}
             resultadosOcultos={true}
+            rotulo={s.ambito.pesquisaRotuloMapa}
           />
         </div>
       </Cabeca>
