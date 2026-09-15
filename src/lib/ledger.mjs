@@ -755,6 +755,43 @@ export function provenienciaIncompleta(claim) {
 }
 
 /**
+ * ---------------------------------------------------------------------------
+ * A MARCA DE UM EXCERTO COMPOSTO, E PORQUE ELA É UMA CADEIA E NÃO UM CAMPO
+ * ---------------------------------------------------------------------------
+ * A leitura a frio de 15.09.2026 (achado 5) leu o recibo de uma linha do
+ * enquadramento e viu-o prometer «Transcrito da fonte, palavra por palavra» por
+ * cima de um excerto que a própria linha declara, na nota, como composto: o
+ * Eurostat responde em JSON, com as etiquetas da dimensão separadas do valor, e
+ * quem lê a resposta junta-as numa frase. A frase é fiel, e não é transcrição:
+ * nenhuma página da fonte a escreve assim, e o recibo estava a prometer uma
+ * coisa que ninguém pode conferir carácter a carácter contra um documento.
+ *
+ * O QUE A LINHA JÁ DIZ É O QUE MANDA. As 91 linhas nessa condição (as 32 do
+ * quadro institucional e as 59 do enquadramento) trazem esta frase na `note`, e
+ * é dela que sai o rótulo do recibo. A `note` continua a **não se publicar**
+ * (`CAMPOS_NAO_PUBLICADOS`): o que vai à página é a frase da casa que ela
+ * escolhe, e não o texto da nota.
+ *
+ * É UMA CADEIA PORQUE O CAMPO AINDA NÃO EXISTE. O motor ganha um campo próprio
+ * num bloco seguinte (a triagem de 15.09 escreve-o); enquanto não ganha, uma
+ * marca declarada aqui, uma vez, é conferível e é honesta. No dia em que o campo
+ * chegar, esta função lê-o e a cadeia sai.
+ */
+export const MARCA_DO_EXCERTO_COMPOSTO = 'Excerto composto a partir';
+
+/**
+ * Verdadeiro quando a própria linha declara, na nota, que o excerto foi
+ * composto a partir da resposta da fonte e não transcrito de um documento.
+ *
+ * @param {Linha | null | undefined} claim
+ * @returns {boolean}
+ */
+export function excertoComposto(claim) {
+  const nota = textoOuNulo(claim?.note);
+  return nota !== null && nota.includes(MARCA_DO_EXCERTO_COMPOSTO);
+}
+
+/**
  * A aritmética de uma linha derivada, na língua de uma edição.
  *
  * Mesma regra do motivo de uma correção (§1.17): a explicação da conta é prosa
