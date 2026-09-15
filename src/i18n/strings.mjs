@@ -2131,6 +2131,22 @@ export const STRINGS = {
            abandono precoce de educação e formação» no endereço). */
         nomeNoIneK: 'Nome no INE',
         nomeNaPordataK: 'Nome na PORDATA',
+        /* ----------------------------------------------------------------
+           O ENQUADRAMENTO, NO RECIBO (bloco P2, 15.09.2026, a decisão sobre as
+           capturas)
+           ----------------------------------------------------------------
+           O cartão de uma medida passa a ter UMA marca da fonte e não três: os
+           valores da régua (o período anterior, o agregado da União) deixam de
+           levar marca própria, e a marca do cartão abre este recibo. É aqui que
+           as linhas da régua ficam, cada uma com o valor, o período e a porta
+           para o recibo dela: a proveniência continua a um toque, e o toque é
+           um só (a norma §2.1).
+
+           O TÍTULO DIZ O QUE A SECÇÃO É, e não o que a casa fez: são as linhas
+           com que esta medida se compara. */
+        enquadramentoK: 'O enquadramento',
+        enquadramentoAnterior: 'Período anterior',
+        enquadramentoUe: 'União Europeia',
         /* O ESTADO DE UMA FONTE SÃO DOIS ESTADOS, e não um (03.09.2026,
            segunda passagem do F0.11, Major 4 da leitura a frio). É uma data e
            não um adjectivo: o que a casa sabe é desde quando. E é uma de duas
@@ -3526,6 +3542,10 @@ export const STRINGS = {
         /** Ver a razão na edição portuguesa (bloco P2, item 2, 15.09.2026). */
         nomeNoIneK: 'Name at Statistics Portugal',
         nomeNaPordataK: 'Name at PORDATA',
+        /** Ver a razão na edição portuguesa (bloco P2, 15.09.2026). */
+        enquadramentoK: 'The comparisons',
+        enquadramentoAnterior: 'Previous period',
+        enquadramentoUe: 'European Union',
         semRespostaK: 'No answer since',
         respondeuComErroK: 'Answering with an error since',
         aEstaMaquinaK: 'to this machine',

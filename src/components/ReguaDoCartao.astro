@@ -11,16 +11,32 @@
  * diz-se por palavras e por número, nunca por cor sozinha.»
  *
  * ---------------------------------------------------------------------------
- * TRÊS COISAS, CADA UMA COM A SUA PORTA
+ * TRÊS COISAS, E UMA PORTA SÓ
  * ---------------------------------------------------------------------------
  *   · **o período anterior** e **a União Europeia**: duas LINHAS do livro-razão,
- *     rendidas por `<Claim/>` com a marca da fonte de cada uma, e só quando a
- *     linha existe. Quem diz qual é a linha é `src/lib/enquadramento.mjs`;
+ *     rendidas por `<Claim/>` **sem marca própria**, e só quando a linha existe.
+ *     Quem diz qual é a linha é `src/lib/enquadramento.mjs`;
  *   · **o valor de referência**, com a palavra que diz de que lado dele o valor
  *     está. O algarismo é o que a nota da linha escreve, declarado em
  *     `src/data/figuras.mjs` com o motivo `limiar-do-quadro` do registo, e a
  *     palavra é derivada de dois números que já existem
  *     (`comparacaoComOLimiar()`): não acrescenta um dígito à página.
+ *
+ * ---------------------------------------------------------------------------
+ * UMA MARCA DA FONTE POR CARTÃO, E NÃO TRÊS
+ * ---------------------------------------------------------------------------
+ * **Decisão do lugar de direção de 15.09.2026, sobre as capturas:** o cartão com
+ * régua trazia três marcas, uma por linha citada, e três portas a dois
+ * centímetros uma da outra não são três portas. A norma §2.1 diz que a marca da
+ * fonte é O toque, no singular.
+ *
+ * A PORTA NÃO DESAPARECE: MUDA DE SÍTIO. Cada item da régua declara
+ * `data-selo-em="<a linha do cartão>"`, o portão de HTML aceita a dispensa SÓ
+ * quando o cartão tem a marca dessa linha, e o recibo dessa linha lista as linhas
+ * da régua no bloco «O enquadramento», cada uma com a sua porta. O leitor toca uma
+ * vez e chega à proveniência das três. A régua do bloco (célula K10) confere a
+ * outra metade, que o portão não vê de uma página só: que o recibo lista mesmo as
+ * linhas da régua daquela medida.
  *
  * ---------------------------------------------------------------------------
  * NENHUM VALOR À MÃO, E A AUSÊNCIA NÃO SE ESCREVE
@@ -92,7 +108,7 @@ const temAlgumaCoisa = temRegua(regua) || Boolean(palavra);
           e não um ano composto aqui: sem `reference_date` fica só o valor, e a
           marca da fonte ao lado diz de que linha ele é. */}
       {regua.anterior && (
-        <span class="cartao-medida-regua-item" data-regua="anterior">
+        <span class="cartao-medida-regua-item" data-regua="anterior" data-selo-em={id}>
           {regua.anterior.periodo && (
             <span class="cartao-medida-regua-k">
               {/* O PERÍODO É O CAMPO DA LINHA DO PERÍODO ANTERIOR, e vai pela
@@ -110,13 +126,13 @@ const temAlgumaCoisa = temRegua(regua) || Boolean(palavra);
               {':'}
             </span>
           )}
-          <Claim id={regua.anterior.id} lang={lang} as="span" chip={true} />
+          <Claim id={regua.anterior.id} lang={lang} as="span" />
         </span>
       )}
       {/* A UNIÃO EUROPEIA. O nome é prosa da casa, declarada uma vez em
           `strings.mjs`; o valor é a linha. */}
       {regua.ue && (
-        <span class="cartao-medida-regua-item" data-regua="ue">
+        <span class="cartao-medida-regua-item" data-regua="ue" data-selo-em={id}>
           {/* OS DOIS PONTOS FICAM FORA DA MARCA, e não é arrumação: `data-voz`
               manda a régua da voz recolher o texto que ele envolve, e o que ela
               recolhe é o que o inventário declara. Com os dois pontos lá dentro,
@@ -125,7 +141,7 @@ const temAlgumaCoisa = temRegua(regua) || Boolean(palavra);
           <span class="cartao-medida-regua-k">
             <span data-voz>{s.cartao.uniaoEuropeia}</span>:{' '}
           </span>
-          <Claim id={regua.ue.id} lang={lang} as="span" chip={true} />
+          <Claim id={regua.ue.id} lang={lang} as="span" />
         </span>
       )}
       {/* O VALOR DE REFERÊNCIA, COM A DIRECÇÃO. O algarismo leva o motivo

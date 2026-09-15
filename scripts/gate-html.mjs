@@ -3195,6 +3195,11 @@ function raizDoInstrumento(el) {
   return seccao;
 }
 
+/* Quantas vezes a dispensa do bloco P2 foi precisa. Uma dispensa que nunca
+   dispensa nada é uma porta aberta que ninguém decidiu abrir, e por isso a
+   contagem sai na linha do portão, como a dos motivos do registo. */
+let selosEmquadrados = 0;
+
 function temChipPara(no, alvos) {
   for (const a of no?.querySelectorAll?.('.src-chip') ?? []) {
     if (String(a.rawTagName ?? '').toLowerCase() !== 'a') continue;
@@ -3239,6 +3244,50 @@ function auditaSelo(el, id, lang, err) {
      mais acima deixava passar um selo na secção seguinte. */
   const pai = el.parentNode;
   if (pai && temChipPara(pai, alvos)) return;
+
+  /* ------------------------------------------------------------------------
+     O VALOR QUE É A RÉGUA DE OUTRO VALOR (bloco P2, 15.09.2026)
+     ------------------------------------------------------------------------
+     **Decisão do lugar de direção de 15.09.2026, sobre as capturas do P2:** «uma
+     marca da fonte por cartão, e não três». Um cartão de medida com régua trazia
+     três marcas, uma por cada linha que ele cita (a medida, o período anterior, o
+     agregado da União), e três portas a dois centímetros uma da outra não são três
+     portas: são ruído em cima da que interessa. A norma §2.1 diz que a marca da
+     fonte é O toque, no singular.
+
+     A DISPENSA NÃO TIRA A PORTA: MUDA-A DE SÍTIO, E EXIGE QUE ELA EXISTA. Um
+     valor pode ir sem a sua própria marca quando um antepassado dele declara
+     `data-selo-em="<id>"`, e quando o cartão que os contém tem a marca DAQUELE
+     id. O leitor toca uma vez, chega ao recibo da medida, e é lá que o bloco «O
+     enquadramento» lista as linhas da régua, cada uma com a sua porta. A
+     proveniência continua a um toque; o que muda é qual.
+
+     O QUE ELA CONTINUA A RECUSAR: um valor sem porta nenhuma. Se o antepassado
+     não declarar nada, ou se o cartão não tiver a marca do id declarado, isto
+     falha como falhava. E `tests/cartao/cartao.mjs` (célula K10) confere a outra
+     metade, que este portão não pode ver de uma página só: que o recibo daquela
+     medida lista mesmo as linhas da régua dela.
+     --------------------------------------------------------------------- */
+  for (let n = pai; n; n = n.parentNode) {
+    const enquadra = n.getAttribute?.('data-selo-em');
+    if (!enquadra) continue;
+    const doCartao = [routePath('linha', lang, { slug: enquadra })];
+    for (let c = n; c; c = c.parentNode) {
+      if (!c.getAttribute?.('data-cartao-medida')) continue;
+      if (temChipPara(c, doCartao)) {
+        selosEmquadrados++;
+        return;
+      }
+      break;
+    }
+    err(
+      `o valor da afirmação "${id}" diz ser a régua de "${enquadra}" (data-selo-em) e o cartão ` +
+        `que o leva não tem a marca dessa linha.\n` +
+        `      esperava-se <a class="src-chip" href="${doCartao[0]}"> dentro do ` +
+        `[data-cartao-medida] que embrulha os dois.`,
+    );
+    return;
+  }
 
   err(
     `o valor da afirmação "${id}" aparece sem selo para a sua própria linha.\n` +
@@ -7564,6 +7613,9 @@ console.log(
       (documentos ? ` · ${documentos} documento(s) de estudo, conferidos contra a origem` : '') +
       (paginasDeTexto
         ? ` · ${paginasDeTexto} página(s) de leitura, conferidas contra o seu registo de conteúdo`
+        : '') +
+      (selosEmquadrados
+        ? ` · ${selosEmquadrados} valor(es) de régua com a marca do cartão que os enquadra`
         : ''),
   ),
 );

@@ -26,11 +26,21 @@
  *   K3 · **a chave a 0** · nenhum cartão escreve o identificador da linha no
  *        texto visível. Procura-se o id de CADA cartão dentro do próprio cartão,
  *        e não uma expressão que se pareça com um id.
- *   K4 · **nenhuma cadeia noutra língua** · nenhum descendente de um cartão
- *        declara um `lang` diferente do da página. É a medida do item 4 («zero
- *        cadeias em inglês nos cartões da edição portuguesa»), medida pela marca
- *        que a casa já põe em tudo o que está noutra língua, e não por um
- *        detetor de inglês, que acertaria em «House price» e falharia em «Score».
+ *   K4 · **cada nome noutra língua diz em que língua está** · o item 4 do brief
+ *        pedia «zero cadeias em inglês nos cartões da edição portuguesa», e esta
+ *        célula mediu-o assim até 15.09.2026 à noite. **A decisão do lugar de
+ *        direção sobre as capturas mudou a regra**: nenhum cartão fica sem nome,
+ *        e onde não há nome do projeto nem nome oficial confirmado o cartão mostra
+ *        o título que a fonte dá à medida, na língua da fonte e com a marca
+ *        `lang`. A célula passa a medir o que a I91 sempre mandou e o que a regra
+ *        nova precisa: **o nome de um cartão carrega a língua que as tabelas
+ *        declaram para ele**, nem a mais nem a menos. Um nome estrangeiro sem
+ *        marca lê-se com a fonética errada; um nome português com marca de
+ *        português dentro de uma página portuguesa é ruído para quem ouve.
+ *
+ *        A pergunta responde-se do TEXTO RENDIDO e das tabelas
+ *        (`src/i18n/lingua-dos-titulos.mjs`), e não da função que compõe o nome:
+ *        a régua não confirma a função, confere o ficheiro.
  *   K5 · **a régua só com linhas** · cada valor da régua é um `data-claim`, e
  *        cada algarismo que não seja uma linha traz o seu motivo declarado
  *        (`data-nonledger`). Um número escrito à mão na régua não passa.
@@ -44,6 +54,13 @@
  *   K8 · **a legenda da marca e a linha do tipo** · «Governo Constitucional» uma
  *        vez por edição (o índice das áreas), e a legenda da marca fora das
  *        páginas de área.
+ *   K10 · **uma marca da fonte por cartão, e a porta que ela abre paga as
+ *        outras** · decisão do lugar de direção de 15.09.2026 sobre as capturas:
+ *        o cartão tem UMA marca, e os valores da régua não levam marca própria.
+ *        Esta célula confere as duas metades: que nenhum cartão tem mais do que
+ *        uma marca, e que o recibo da medida lista mesmo, no bloco «O
+ *        enquadramento», cada linha que a régua do cartão cita. É a metade que o
+ *        portão de HTML não pode ver, porque ele lê uma página de cada vez.
  *   K9 · **o valor de referência tem duas testemunhas, e elas batem certo** · o
  *        algarismo que o cartão desenha vem da declaração de `figuras.mjs`, com o
  *        motivo do registo; o motor lê o mesmo valor na página do painel da
@@ -87,6 +104,13 @@ import {
   nomeOficial,
 } from '../../src/lib/enquadramento.mjs';
 import { FIGURAS, ladosDoLimiar } from '../../src/data/figuras.mjs';
+/* AS TABELAS DAS LÍNGUAS, e não a função que compõe o nome: a pergunta desta
+   régua é «o texto que a página escreveu diz a língua em que está?», e quem sabe
+   a língua de uma cadeia é a tabela onde ela está declarada. */
+import {
+  linguaDoRotuloDaFonte,
+  linguaDoTituloDoDocumento,
+} from '../../src/i18n/lingua-dos-titulos.mjs';
 import { hasClaim } from '../../src/lib/ledger.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -235,6 +259,13 @@ export function compararAsDuasTestemunhas(id, doMotor, lados, banda) {
 function corre(dist) {
   /** @type {string[]} */
   const erros = [];
+  /* Os pares «este cartão cita esta linha na régua», recolhidos enquanto se
+     percorrem os cartões e conferidos no fim contra os recibos: é a metade que o
+     portão de HTML não pode ver, porque ele lê uma página de cada vez. */
+  /** @type {{ rota: string, cartao: string, linha: string, lang: string }[]} */
+  const enquadradas = [];
+  /** @type {Map<string, Set<string>>} */
+  const recibos = new Map();
   const contas = {
     paginas: 0,
     cartoes: 0,
@@ -249,6 +280,8 @@ function corre(dist) {
     legenda_da_marca: 0,
     unidade_noutra_lingua: 0,
     marcador_em_portugues: 0,
+    nome_noutra_lingua: 0,
+    valores_de_regua_sem_marca: 0,
   };
   const rotulos = rotulosDoRecibo();
 
@@ -279,6 +312,18 @@ function corre(dist) {
         if (rota.includes('/areas/') || rota.includes('/en/areas/')) {
           erros.push(`K8 · ${rota}: a legenda da marca da fonte continua numa página de área`);
         }
+      }
+
+      /* O RECIBO DE UMA LINHA, e o que o bloco «O enquadramento» dele lista.
+         A chave é a rota, que é única por linha e por edição. */
+      const bloco = root.querySelector('#enquadramento');
+      if (bloco) {
+        const citadas = new Set();
+        for (const v of bloco.querySelectorAll('[data-claim]')) {
+          const x = v.getAttribute('data-claim');
+          if (x) citadas.add(x);
+        }
+        recibos.set(rota.replace(/\/$/, ''), citadas);
       }
 
       for (const cartao of root.querySelectorAll('[data-cartao-medida]')) {
@@ -330,35 +375,43 @@ function corre(dist) {
         }
 
         /* ------------------------------------------------------------ K4 */
+        const nomeEl = vista.querySelector('.cartao-medida-nome');
+        if (nomeEl) {
+          const texto = nomeEl.text.replace(/\s+/g, ' ').trim();
+          const marcada = nomeEl.getAttribute('lang') ?? null;
+          /* O NOME OFICIAL É PORTUGUÊS NAS DUAS EDIÇÕES, e as tabelas dos títulos
+             não o conhecem porque ele não é um título nem um rótulo: vem do
+             ficheiro do motor. A marca esperada sai da mesma regra de sempre, a
+             língua do texto contra a língua da página. */
+          const esperada =
+            nomeEl.getAttribute('data-nome') === 'oficial'
+              ? langPagina === 'en'
+                ? 'pt-PT'
+                : null
+              : linguaDoRotuloDaFonte(texto, langPagina) ??
+                linguaDoTituloDoDocumento(texto, langPagina);
+          if ((esperada ?? null) !== (marcada ?? null)) {
+            erros.push(
+              `K4 · ${rota} · ${id}: o nome do cartão rende-se com lang=«${marcada ?? '(nenhum)'}» ` +
+                `e as tabelas dizem «${esperada ?? '(nenhum)'}»: «${texto.slice(0, 60)}»`,
+            );
+          }
+          if (esperada) contas.nome_noutra_lingua++;
+        }
+        /* A unidade e o marcador ficam contados, porque as duas são exceções
+           declaradas que o relatório do bloco nomeia: a unidade pela I92 («uma
+           unidade em português numa página inglesa é honesta») e o marcador pela
+           `IDENTIDADE.md` §6 («[a verificar]» fica em português nas duas
+           edições). Nenhuma das duas é um defeito, e por isso nenhuma delas dá
+           vermelho: o que elas dão é um número no relatório. */
         for (const comLingua of vista.querySelectorAll('[lang]')) {
-          const declarada = (comLingua.getAttribute('lang') ?? '').toLowerCase();
-          const curta = declarada.split('-')[0];
+          const curta = (comLingua.getAttribute('lang') ?? '').toLowerCase().split('-')[0];
           if (!curta || curta === langPagina) continue;
-          /* A UNIDADE É A EXCEÇÃO DECLARADA, e a razão é a I92 (29.08.2026): o
-             dicionário das unidades só traduz o que é facto de dicionário ou o
-             inglês que a própria casa já escreve, e o que não tem entrada
-             rende-se em português com `lang="pt-PT"`. «Uma unidade em português
-             numa página inglesa é honesta; uma unidade traduzida à sorte não é.»
-             `check:lingua` conta-as e imprime a lista, e é lá que essa dívida
-             vive. Vale nos dois sentidos, e por isso não se escreve «só na
-             edição inglesa». */
           const classes2 = (comLingua.getAttribute('class') ?? '').split(/\s+/);
-          if (classes2.includes('cartao-medida-unidade')) {
-            contas.unidade_noutra_lingua++;
-            continue;
-          }
-          /* O MARCADOR É A SEGUNDA EXCEÇÃO DECLARADA, e a razão é a `IDENTIDADE.md`
-             §6: «[a verificar]» fica em português nas duas edições, porque é o
-             nome de uma coisa da casa e tem página própria; a edição inglesa
-             dá-lhe a glosa ao lado. Traduzi-lo seria ter dois marcadores. */
-          if (classes2.includes('marcador') || classes2.includes('marcador-gloss')) {
+          if (classes2.includes('cartao-medida-unidade')) contas.unidade_noutra_lingua++;
+          else if (classes2.includes('marcador') || classes2.includes('marcador-gloss')) {
             contas.marcador_em_portugues++;
-            continue;
           }
-          erros.push(
-            `K4 · ${rota} · ${id}: o cartão rende texto declarado em «${declarada}» numa ` +
-              `página em «${langPagina}»: «${comLingua.text.trim().slice(0, 60)}»`,
-          );
         }
 
         /* ------------------------------------------------------------ K5 */
@@ -397,6 +450,29 @@ function corre(dist) {
           }
         }
 
+        /* ----------------------------------------------------------- K10 */
+        const marcas = vista.querySelectorAll('.src-chip').length;
+        if (marcas !== 1) {
+          erros.push(
+            `K10 · ${rota} · ${id}: o cartão tem ${marcas} marca(s) da fonte, e a decisão de ` +
+              `15.09.2026 diz uma`,
+          );
+        }
+        for (const item of cartao.querySelectorAll('[data-selo-em]')) {
+          const doCartao = item.getAttribute('data-selo-em');
+          if (doCartao !== id) {
+            erros.push(
+              `K10 · ${rota} · ${id}: um item da régua diz enquadrar «${doCartao}» e está no ` +
+                `cartão de «${id}»`,
+            );
+            continue;
+          }
+          for (const v of item.querySelectorAll('[data-claim]')) {
+            const daRegua = v.getAttribute('data-claim');
+            if (daRegua) enquadradas.push({ rota, cartao: id, linha: daRegua, lang: langPagina });
+          }
+        }
+
         /* ------------------------------------------------------------ K7 */
         const palavra = PALAVRA_RETIRADA[langPagina];
         if (visivel.toLowerCase().includes(palavra)) {
@@ -406,6 +482,30 @@ function corre(dist) {
     }
   };
   anda(dist);
+
+  /* ------------------------------------------------------------------- K10 */
+  /* Cada linha que a régua de um cartão cita tem de estar no bloco «O
+     enquadramento» do recibo da medida daquele cartão. É a porta que a marca
+     única do cartão paga. */
+  for (const e of enquadradas) {
+    const recibo = e.lang === 'en' ? `/en/ledger/${e.cartao}` : `/livro-razao/${e.cartao}`;
+    const citadas = recibos.get(recibo);
+    if (!citadas) {
+      erros.push(
+        `K10 · ${e.rota} · ${e.cartao}: a régua cita «${e.linha}» sem marca própria, e o recibo ` +
+          `«${recibo}» não tem bloco «O enquadramento» nenhum`,
+      );
+      continue;
+    }
+    if (!citadas.has(e.linha)) {
+      erros.push(
+        `K10 · ${e.rota} · ${e.cartao}: a régua cita «${e.linha}» sem marca própria, e o recibo ` +
+          `«${recibo}» não a lista: o valor fica sem porta para a sua linha`,
+      );
+    }
+  }
+  contas.valores_de_regua_sem_marca = enquadradas.length;
+
   return { erros, contas };
 }
 
@@ -415,6 +515,9 @@ function corre(dist) {
 
 function montaAProva() {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'oedp-cartao-'));
+  /** A marca da fonte, na forma em que o sítio a rende. @param {string} id */
+  const chip = (id) =>
+    `<a class="src-chip" href="/livro-razao/${id}"><span class="src-chip-texto">fonte</span></a>`;
   fs.mkdirSync(path.join(dir, 'areas', 'x'), { recursive: true });
   const s = t('pt');
   /* A frase declarada de uma medida real, para que o positivo da K6 seja a
@@ -428,6 +531,7 @@ function montaAProva() {
       '<article data-cartao-medida="precos-da-habitacao-2025">' +
       '<span class="cartao-medida-nome">Preços da habitação</span>' +
       '<p class="cartao-medida-valor"><span class="cartao-medida-num" data-claim="precos-da-habitacao-2025">17,6</span>' +
+      chip('precos-da-habitacao-2025') +
       '<span class="cartao-medida-unidade">variação anual média, %</span></p>' +
       `<p class="cartao-medida-frase" data-cartao-definicao="precos-da-habitacao-2025">${boa}</p>` +
       '<p class="cartao-medida-regua"><span data-nonledger="limiar-do-quadro">9</span>%</p>' +
@@ -435,31 +539,46 @@ function montaAProva() {
       /* PLANTA 1 (K1 e K2): um bloco a mais, com um rótulo de recibo dentro. */
       '<article data-cartao-medida="divida-publica-2025">' +
       '<span class="cartao-medida-nome">Dívida pública</span>' +
-      '<p class="cartao-medida-valor"><span data-claim="divida-publica-2025">117,5</span></p>' +
+      '<p class="cartao-medida-valor"><span data-claim="divida-publica-2025">117,5</span>' + chip('divida-publica-2025') + '</p>' +
       `<p class="livro-item-campo"><span>${s.prov.lido}</span> 12.08.2026</p>` +
       '</article>' +
       /* PLANTA 2 (K3): a chave no texto visível. */
       '<article data-cartao-medida="taxa-de-desemprego-2025">' +
       '<span class="cartao-medida-nome">Taxa de desemprego</span>' +
       '<p class="cartao-medida-valor"><span data-claim="taxa-de-desemprego-2025">6,4</span>' +
+      chip('taxa-de-desemprego-2025') +
       '<code>taxa-de-desemprego-2025</code></p>' +
       '</article>' +
-      /* PLANTA 3 (K4): um título de documento em inglês numa página portuguesa. */
+      /* PLANTA 3 (K4): um título de documento em inglês numa página portuguesa,
+         SEM a marca da língua. O nome pode ser estrangeiro (é a decisão de 15.09
+         à noite); o que ele não pode é não dizer em que língua está. */
       '<article data-cartao-medida="licencas-de-construcao-2025">' +
-      '<span class="cartao-medida-nome" lang="en">Residential building permits - annual data</span>' +
-      '<p class="cartao-medida-valor"><span data-claim="licencas-de-construcao-2025">749,7</span></p>' +
+      '<span class="cartao-medida-nome">Residential building permits - annual data</span>' +
+      '<p class="cartao-medida-valor"><span data-claim="licencas-de-construcao-2025">749,7</span>' + chip('licencas-de-construcao-2025') + '</p>' +
       '</article>' +
       /* PLANTA 4 (K5): um algarismo na régua sem linha e sem motivo. */
       '<article data-cartao-medida="custo-unitario-do-trabalho-2025">' +
       '<span class="cartao-medida-nome">Custo unitário do trabalho</span>' +
-      '<p class="cartao-medida-valor"><span data-claim="custo-unitario-do-trabalho-2025">14,4</span></p>' +
+      '<p class="cartao-medida-valor"><span data-claim="custo-unitario-do-trabalho-2025">14,4</span>' + chip('custo-unitario-do-trabalho-2025') + '</p>' +
       '<p class="cartao-medida-regua"><span>2024: 8,7</span></p>' +
       '</article>' +
       /* PLANTA 5 (K6 e K7): a frase mudada, e a palavra que saiu. */
       '<article data-cartao-medida="taxa-de-emprego-2025">' +
       '<span class="cartao-medida-nome">Taxa de emprego</span>' +
-      '<p class="cartao-medida-valor"><span data-claim="taxa-de-emprego-2025">78,2</span></p>' +
+      '<p class="cartao-medida-valor"><span data-claim="taxa-de-emprego-2025">78,2</span>' + chip('taxa-de-emprego-2025') + '</p>' +
       '<p class="cartao-medida-frase" data-cartao-definicao="taxa-de-emprego-2025">Uma frase que ninguém declarou, dentro do limiar.</p>' +
+      '</article>' +
+      /* PLANTA 7 (K10): duas marcas da fonte num cartão, e um valor de régua sem
+         marca própria cujo recibo não lista a linha (aqui não há recibo nenhum,
+         que é o caso extremo do mesmo defeito). */
+      '<article data-cartao-medida="saldo-da-balanca-corrente-2025">' +
+      '<span class="cartao-medida-nome">Saldo da balança corrente</span>' +
+      '<p class="cartao-medida-valor"><span data-claim="saldo-da-balanca-corrente-2025">2,2</span>' +
+      chip('saldo-da-balanca-corrente-2025') +
+      chip('saldo-da-balanca-corrente-2024') +
+      '</p>' +
+      '<p class="cartao-medida-regua"><span data-regua="anterior" data-selo-em="saldo-da-balanca-corrente-2025">' +
+      '<span data-claim="saldo-da-balanca-corrente-2024">1,3</span></span></p>' +
       '</article>' +
       /* PLANTA 6 (K8): a legenda da marca numa página de área. */
       '<p class="marca-legenda">Ao pé de cada número, a marca da fonte.</p>' +
@@ -489,6 +608,7 @@ if (PROVA) {
     ['K6', 'taxa-de-emprego-2025'],
     ['K7', 'limiar'],
     ['K8', 'legenda da marca'],
+    ['K10', 'marca(s) da fonte'],
   ];
   for (const [celula, pedaco] of esperado) {
     const vistos = dessaCelula(celula);
@@ -673,8 +793,10 @@ console.log(cinza(`    com a frase do que medem         ${r.contas.com_frase}`))
 console.log(cinza(`    com régua                        ${r.contas.com_regua}`));
 console.log(cinza(`    «Governo Constitucional»         ${r.contas.governo_constitucional_pt} pt · ${r.contas.governo_constitucional_en} en`));
 console.log(cinza(`    legenda da marca                 ${r.contas.legenda_da_marca} página(s)`));
+console.log(cinza(`    nome na língua da fonte          ${r.contas.nome_noutra_lingua} (com a marca «lang»)`));
 console.log(cinza(`    unidade na outra língua          ${r.contas.unidade_noutra_lingua} (a exceção da I92)`));
 console.log(cinza(`    o marcador em português          ${r.contas.marcador_em_portugues} (a exceção da IDENTIDADE §6)`));
+console.log(cinza(`    valores de régua sem marca própria                    ${r.contas.valores_de_regua_sem_marca} (a porta é a do cartão)`));
 console.log(cinza(`    valores de referência, as duas testemunhas comparadas  ${r.contas.valores_de_referencia_comparados}`));
 console.log(cinza(`    medidas com nome oficial no recibo                    ${r.contas.medidas_com_nome_oficial}`));
 console.log(
