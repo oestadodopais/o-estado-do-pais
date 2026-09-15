@@ -62,7 +62,15 @@
  * marcado com `data-dominio-estado`. A contagem leva `data-nonledger="numeracao"`
  * porque é a numeração de uma lista rendida, e não uma medição de Portugal.
  */
-import { DOMINIOS, dominioDeclarado, dominiosComPagina, medidasDoDominio } from '../data/dominios.mjs';
+import {
+  DOMINIOS,
+  dominioDeclarado,
+  dominiosComPagina,
+  faixaDoDominio,
+  medidaPelaChave,
+  medidasDoDominio,
+} from '../data/dominios.mjs';
+import { numeralPorExtenso } from '../data/figuras.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import '../styles/dominios-lista.css';
@@ -87,13 +95,50 @@ const linhas = DOMINIOS.filter(
       : dentro !== null && comPagina.has(dentro.slug)
         ? `${routePath('dominio', lang, { slug: dentro.slug })}${d.ancoraDentro ? `#${d.ancoraDentro}` : ''}`
         : null;
-  return { dominio: d, dentro, porta, medidas: medidasDoDominio(d.slug).length };
+  /* ------------------------------------------------------------------------
+     OS NOMES DAS MEDIDAS DE CABEÇA (F1.13, item 4, 15.09.2026)
+     ------------------------------------------------------------------------
+     A linha dizia «10 medidas» e mais nada: o diretor leu-a a 15.09.2026 de
+     manhã e o que lhe faltava é o que são, para saber se vale a pena entrar.
+     Passa a levar, a seguir à contagem, os nomes das MEDIDAS DE CABEÇA daquele
+     domínio, que são as mesmas que a faixa da primeira página mostra.
+
+     OS NOMES NÃO SE ESCREVEM AQUI NEM SE EDITAM. Vêm de `faixaDoDominio()` e de
+     `medidaPelaChave()`, que são as duas portas da declaração em
+     `src/data/dominios.mjs`, e saem com a marca `data-nome="medidas"`, que o
+     portão da voz confere carácter a carácter contra esse ficheiro. É por isso
+     que a letra inicial é a da declaração e não a de uma frase: um nome posto
+     em minúsculas já não é o nome que o ficheiro declara, e a medida P4 do
+     brief pede-os IGUAIS aos da faixa, que é onde eles também saem assim.
+
+     E CADA UM DIZ DE QUE LINHA É (`data-de-linha`), que é a pergunta mais
+     apertada das duas: «está neste ficheiro?» deixava passar cinco nomes certos
+     pela ordem errada, e esta pergunta é «é o nome DESTA linha, nesta edição?».
+     É a mesma marca que o índice do livro-razão usa desde o Blocking 4 do F1.4.
+
+     UMA CHAVE DA FAIXA SEM MEDIDA FECHA A CONSTRUÇÃO, e não se salta em
+     silêncio: uma faixa que nomeie uma chave que já não existe é uma lista a
+     mentir, e é o mesmo guarda que `HomeView.astro` já tem sobre a mesma lista.
+
+     `sobram` É CONTADO E NÃO ESCRITO: a contagem das medidas do domínio menos os
+     nomes mostrados. Zero não rende «e mais» nenhum. */
+  const cabecas = faixaDoDominio(d.slug).map((chave) => {
+    const m = medidaPelaChave(chave);
+    if (!m) {
+      throw new Error(
+        `dominios: a faixa do domínio "${d.slug}" nomeia "${chave}", que não é uma medida declarada.`,
+      );
+    }
+    return { nome: m.nome[lang] ?? m.nome.pt, linha: m.claim };
+  });
+  const medidas = medidasDoDominio(d.slug).length;
+  return { dominio: d, dentro, porta, medidas, cabecas, sobram: Math.max(0, medidas - cabecas.length) };
 });
 ---
 
 <ol class="dominios-lista">
   {
-    linhas.map(({ dominio, dentro, porta, medidas }) => (
+    linhas.map(({ dominio, dentro, porta, medidas, cabecas, sobram }) => (
       <li class="dominios-item" data-dominio={dominio.slug}>
         {porta === null ? (
           <span class="dominios-nome" data-nome="dominios">
@@ -108,6 +153,26 @@ const linhas = DOMINIOS.filter(
           {medidas > 0 && (
             <>
               <span data-nonledger="numeracao">{medidas}</span> {s.dominios.medidasRotulo}
+              {cabecas.length > 0 && (
+                <>
+                  {s.dominios.medidasDoisPontos}
+                  {cabecas.map((c, i) => (
+                    <>
+                      {i > 0 && s.dominios.medidasSeparador}
+                      <span data-nome="medidas" data-de-linha={c.linha ?? undefined}>
+                        {c.nome}
+                      </span>
+                    </>
+                  ))}
+                  {sobram > 0 && (
+                    <>
+                      {s.dominios.eMaisA}
+                      <span data-nonledger="numeracao">{numeralPorExtenso(sobram, lang)}</span>
+                      {s.dominios.eMaisB}
+                    </>
+                  )}
+                </>
+              )}
             </>
           )}
           {dominio.estado === 'dentro-de' && dentro !== null && (
