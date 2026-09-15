@@ -67,6 +67,7 @@ import { estadoDaFonte } from '../lib/prova.mjs';
 import { ANFITRIOES_SEM_RESPOSTA } from '../data/fontes.mjs';
 import { atrasoDaLinha } from '../lib/frescura.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
+import { proximaConferenciaDaLinha, ancoraDoEvento } from '../lib/agenda.mjs';
 import { studyTitle } from '../data/studies.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import Frase from '../components/Frase.astro';
@@ -99,6 +100,10 @@ const derivacao = derivacaoDaLinha(claim, lang);
    (IDENTIDADE.md §4), ao pé da proveniência, e não junto ao número: o selo já é
    a porta para aqui (§5.1). Sem cor nova (§2), sem segundo marcador (§6). */
 const bandeira = notaDeBandeira(claim, lang);
+/* A SEGUNDA DATA DA NORMA (§2.5, bloco P2 item 2): quando a fonte volta a
+   publicar esta linha. Sai do calendário das fontes e é `null` onde a fonte não
+   anunciou dia nenhum, que é o caso da maior parte. */
+const proximaConferencia = proximaConferenciaDaLinha(id);
 /* A quem o valor é creditado, escrito numa linha só. Fica no aparelho, ao pé
    da proveniência, porque é isso que é: parte do registo do facto, não um
    juízo. A nota ao lado di-lo por palavras.
@@ -1255,6 +1260,33 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
               <dt>{s.prov.lido}</dt>
               <dd>
                 <CampoDaLinha id={id} campo="access_date" valor={claim.access_date} lang={lang} />
+              </dd>
+            </>
+          )}
+          {/* ------------------------------------------- a segunda data (P2, item 2)
+
+              «Duas datas, não uma» (a norma, §2.5): quando a casa leu, e quando
+              a fonte volta a publicar. A segunda sai do calendário das fontes,
+              que já diz que linhas cada acontecimento afeta, e rende-se SÓ
+              quando a fonte anunciou um dia: uma janela não é uma data e o
+              marcador não é um dia. Cinco linhas do livro-razão a têm hoje.
+
+              A DATA LEVA O MOTIVO `data-da-agenda`, que é o mesmo com que ela se
+              rende na página da agenda, porque é o mesmo campo do mesmo
+              ficheiro: não é uma medição do país, é o que a fonte anunciou.
+
+              A PORTA É O ACONTECIMENTO na agenda, onde ele traz o título, a
+              fonte e a evidência de onde a data veio. Sem porta, a data era um
+              dia escrito sem dizer quem o anunciou. */}
+          {proximaConferencia && (
+            <>
+              <dt>{s.livro.linha.proximaConferenciaK}</dt>
+              <dd>
+                <a href={`${routePath('agenda', lang)}#${ancoraDoEvento(proximaConferencia.evento)}`}>
+                  <span data-nonledger="data-da-agenda">
+                    {dataDaCasa(proximaConferencia.data)}
+                  </span>
+                </a>
               </dd>
             </>
           )}
