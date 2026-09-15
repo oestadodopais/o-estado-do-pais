@@ -2112,6 +2112,25 @@ export const STRINGS = {
            É «conferência» e não «atualização» porque é o que a casa vai fazer:
            a fonte publica, e a casa relê a linha contra o que ela publicou. */
         proximaConferenciaK: 'Próxima conferência',
+        /* ----------------------------------------------------------------
+           O NOME OFICIAL DA MEDIDA, NO RECIBO (bloco P2, item 2, 15.09.2026)
+           ----------------------------------------------------------------
+           A norma, §1.5: «Três nomes por medida, cada um no seu lugar: o nome
+           oficial em português (o do INE primeiro, com a versão da série quando o
+           INE a carrega, "Taxa de desemprego (Série 2021)"; o da PORDATA a
+           seguir), o nome corrente do projeto no título do cartão, e o nome que a
+           fonte usa, na língua dela, no recibo.» O cartão passou a mostrar o nome
+           do projeto com o bloco P2; estes dois são os oficiais, e o lugar deles é
+           o recibo.
+
+           OS DOIS RÓTULOS NOMEIAM QUEM PUBLICA O NOME, e não «o nome oficial»:
+           dois organismos portugueses publicam nomes diferentes para a mesma
+           medida, e dizer «o nome oficial» sobre um deles era a casa a escolher
+           qual é o oficial. A PORDATA mostra o custo de não os distinguir (o mesmo
+           indicador chama-se «Taxa de abandono escolar» no título e «Taxa de
+           abandono precoce de educação e formação» no endereço). */
+        nomeNoIneK: 'Nome no INE',
+        nomeNaPordataK: 'Nome na PORDATA',
         /* O ESTADO DE UMA FONTE SÃO DOIS ESTADOS, e não um (03.09.2026,
            segunda passagem do F0.11, Major 4 da leitura a frio). É uma data e
            não um adjectivo: o que a casa sabe é desde quando. E é uma de duas
@@ -3504,6 +3523,9 @@ export const STRINGS = {
         publicadoEmK: 'Published by the source on',
         /** Ver a razão na edição portuguesa (bloco P2, item 2, 15.09.2026). */
         proximaConferenciaK: 'Next check',
+        /** Ver a razão na edição portuguesa (bloco P2, item 2, 15.09.2026). */
+        nomeNoIneK: 'Name at Statistics Portugal',
+        nomeNaPordataK: 'Name at PORDATA',
         semRespostaK: 'No answer since',
         respondeuComErroK: 'Answering with an error since',
         aEstaMaquinaK: 'to this machine',
