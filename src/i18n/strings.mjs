@@ -1044,21 +1044,20 @@ export const STRINGS = {
         nomeA: 'Procedimento dos Desequilíbrios Macroeconómicos · ',
         nomeFim: ' medidas com valor de referência',
         /**
-         * A LINHA DA ÁREA DE LEITURA EM REPOUSO (F1.1c, 04.09.2026)
+         * A LINHA DA ÁREA DE LEITURA EM REPOUSO, RETIRADA A 15.09.2026
          * ------------------------------------------------------------------
-         * Com guião, a área de leitura mostra UMA leitura de cada vez, e
-         * nenhuma antes de o leitor tocar num cartão: as vinte e uma linhas
-         * fechadas eram a mesma lista de nomes dos cartões, uma segunda vez, e
-         * foi o que o diretor viu no ar a 04.09. Quando não há nenhuma aberta,
-         * o que fica no lugar delas é esta linha, e ela diz o que fazer para
-         * ler uma. Sem guião não se rende: ali as vinte e uma continuam à vista,
-         * fechadas, e a linha estaria a mandar tocar no que já está ao alcance.
+         * Foi «Toque num cartão para ler a medida.» de 04.09.2026 até ao achado
+         * 4 da leitura a frio de 15.09: é uma frase de instrução numa página de
+         * conteúdo, e a norma §1.4 não as admite («a busca, o mapa e as portas
+         * explicam-se ao funcionar»). Com o guião, em repouso, era o que restava
+         * à vista na área de leitura; sem guião nunca se rendeu.
          *
-         * NÃO FALA DA CASA (Emenda 15 e Emenda 18): não diz o que o sítio faz,
-         * nem porque se deve confiar nele. Diz o gesto e o que ele abre, com o
-         * vocabulário que a página já usa: um cartão, uma medida.
+         * O NÓ SAIU COM ELA, das duas vistas que o rendiam: o guião das leituras
+         * já o procurava com um guarda («uma marca que falta não pode partir o
+         * resto do bloco»), e em repouso a área fica vazia, que é o que ela é.
+         * As duas linhas do inventário passam a `retirada`, e a J13 de
+         * `tests/inicio/leitura.mjs` passa a morder se a linha voltar.
          */
-        semLeituraAberta: 'Toque num cartão para ler a medida.',
       },
       social: {
         titulo: 'Painel Social Europeu · ',
@@ -3134,7 +3133,7 @@ export const STRINGS = {
         nomeFim: ' measures with a reference value',
         /* A linha da área de leitura em repouso. Ver a razão na edição
            portuguesa, e o registo em `CHAVES-EN.md`. */
-        semLeituraAberta: 'Tap a card to read the measure.',
+        /** Retirada a 15.09.2026 com a portuguesa: ver a razão na edição dela. */
       },
       social: {
         titulo: 'European Social Scoreboard · ',

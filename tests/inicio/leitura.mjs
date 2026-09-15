@@ -1099,8 +1099,15 @@ async function corre() {
           `em repouso há ${repouso.visiveis.length} nome(s) à vista (${repouso.visiveis.slice(0, 3).join(', ')})`,
         );
       }
-      if (!repouso.vazio.existe) queixas13.push('não há linha do estado vazio');
-      else if (!repouso.vazio.visivel) queixas13.push('a linha do estado vazio não se vê em repouso');
+      /* A LINHA DE INSTRUÇÃO SAIU, E A CÉLULA VIROU-SE AO CONTRÁRIO (achado 4
+         da leitura a frio de 15.09.2026). Era «não há linha do estado vazio» e
+         «a linha do estado vazio não se vê em repouso»: a célula exigia que ela
+         estivesse lá. A norma §1.4 não admite uma frase de instrução numa página
+         de conteúdo, e o que a célula passa a exigir é que ela não volte, em
+         repouso e em todos os outros estados. */
+      if (repouso.vazio.existe) {
+        queixas13.push('a linha de instrução voltou à área de leitura');
+      }
 
       const porCartao = [];
       for (const alvo of alvos13) {
@@ -1144,8 +1151,8 @@ async function corre() {
               `(${aposToque.visiveis.slice(0, 3).join(', ') || 'nenhum'})`,
           );
         }
-        if (aposToque.vazio.visivel) {
-          queixas13.push(`a linha do estado vazio ficou à vista com «${cartao}» aberta`);
+        if (aposToque.vazio.existe) {
+          queixas13.push(`a linha de instrução voltou com «${cartao}» aberta`);
         }
         if (aposToque.hash !== `#m-${cartao}`) {
           queixas13.push(`o toque em «${cartao}» deu «${aposToque.hash}»`);
@@ -1155,8 +1162,8 @@ async function corre() {
             `depois de voltar de «${cartao}» há ${aposVoltar.visiveis.length} nome(s) à vista`,
           );
         }
-        if (aposVoltar.vazio.existe && !aposVoltar.vazio.visivel) {
-          queixas13.push(`depois de voltar de «${cartao}» a linha do estado vazio não voltou`);
+        if (aposVoltar.vazio.existe) {
+          queixas13.push(`depois de voltar de «${cartao}» a linha de instrução voltou`);
         }
         if (aposEnter.visiveis.length !== 1 || aposEnter.visiveis[0] !== cartao) {
           queixas13.push(
@@ -1164,14 +1171,12 @@ async function corre() {
               `(${aposEnter.visiveis.slice(0, 3).join(', ') || 'nenhum'})`,
           );
         }
-        /* E A LINHA DO ESTADO VAZIO DEPOIS DO ENTER (segunda passagem,
-           07.09.2026, Major 4). A célula conferia o nome e o endereço depois do
-           Enter e não conferia a linha, que é a terceira metade da mesma
-           promessa: o teclado tem de deixar a área exactamente como o dedo a
-           deixa, e uma área com uma leitura aberta E a linha «Toque num cartão
-           para ler a medida.» por cima é a página a dizer o que não é. */
-        if (aposEnter.vazio.visivel) {
-          queixas13.push(`a linha do estado vazio ficou à vista depois do Enter em «${cartao}»`);
+        /* E DEPOIS DO ENTER, pela mesma razão: o teclado tem de deixar a área
+           exactamente como o dedo a deixa. O que se confere mudou de sinal com o
+           achado 4 (a linha de instrução saiu da página) e não mudou de lugar:
+           os três estados continuam a ser medidos, um a um. */
+        if (aposEnter.vazio.existe) {
+          queixas13.push(`a linha de instrução voltou depois do Enter em «${cartao}»`);
         }
         if (aposEnter.hash !== `#m-${cartao}`) {
           queixas13.push(`o Enter em «${cartao}» deu «${aposEnter.hash}»`);
@@ -1185,14 +1190,14 @@ async function corre() {
         chave13,
         alvos13.every((a) => a.id) && porCartao.length === alvos13.length && queixas13.length === 0,
         `com guião em ${ed.leituras} · ${motor}: ${repouso.visiveis.length} nome(s) à vista em repouso ` +
-          `(linha do estado vazio: ${repouso.vazio.existe ? (repouso.vazio.visivel ? 'à vista' : 'escondida') : 'não existe'}) · ` +
+          `(linha de instrução: ${repouso.vazio.existe ? 'VOLTOU' : 'fora da página'}) · ` +
           porCartao
             .map(
               (x) =>
                 `«${x.id}» (${x.papel}): ${x.aposToque.visiveis.length} depois do toque, ` +
                 `${x.aposVoltar.visiveis.length} depois de voltar atrás, ` +
                 `${x.aposEnter.visiveis.length} depois do Enter ` +
-                `(linha do estado vazio ${x.aposEnter.vazio.visivel ? 'À VISTA' : 'fora'})`,
+                `(linha de instrução ${x.aposEnter.vazio.existe ? 'DE VOLTA' : 'fora da página'})`,
             )
             .join(' · ') +
           ` · ${repouso.detalhes} leitura(s) no documento` +
@@ -1354,21 +1359,23 @@ const PLANTAS = [
     nome: 'a linha do estado vazio à vista com uma leitura aberta',
     celulas: ['J13.pt.chromium', 'J13.pt.webkit', 'J13.en.chromium', 'J13.en.webkit'],
     rotas: ['/uniao-europeia/index.html', '/en/european-union/index.html'],
-    /* O CONHECIDO-POSITIVO DO MAJOR 4 (07.09.2026). A J13 conferia, depois do
-       Enter, o nome à vista e o endereço, e não conferia que a linha «Toque num
-       cartão para ler a medida.» tinha saído: uma área com uma leitura aberta e
-       a instrução por cima é a página a dizer o que não é.
+    /* O CONHECIDO-POSITIVO, VIRADO COM A CÉLULA (achado 4 da leitura a frio de
+       15.09.2026). Era um `display: block !important` sobre a linha do repouso,
+       para a apanhar à vista com uma leitura aberta; a linha saiu da página, e o
+       que a célula promete agora é que ela não volta.
 
-       O ESTRAGO É UM `display: block !important` EM LINHA, que ganha ao `hidden`
-       que o guião põe e tira: a linha fica à vista em todos os estados, e não só
-       naquele em que deve estar. Em repouso a célula continua a encontrá-la à
-       vista, como quer; o que cai é o estado com a leitura aberta, pelo toque e
-       pelo Enter, e é a queixa do Enter que este item acrescenta. Nas duas
+       O ESTRAGO É A LINHA DE VOLTA, com a frase que o inventário declarou
+       `retirada`, posta no princípio da área de leitura, que é onde ela vivia.
+       Se a célula não a vir, a promessa não vale em estado nenhum. Nas duas
        edições, que é a regra que o Major 5 escreveu. */
-    f: (h) =>
+    f: (h, rota) =>
       h.replace(
-        '<p class="dobras-nada" data-leituras-vazio hidden>',
-        '<p class="dobras-nada" style="display:block!important" data-leituras-vazio hidden>',
+        /(<section id="painel" data-area-leitura>)/,
+        '$1<p class="dobras-nada" data-leituras-vazio>' +
+          (rota.startsWith('/en')
+            ? 'Tap a card to read the measure.'
+            : 'Toque num cartão para ler a medida.') +
+          '</p>',
       ),
   },
   {

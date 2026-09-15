@@ -125,8 +125,11 @@ async function pagina(nav, rota, comGuiao) {
   return p;
 }
 
-/* Os nomes de medida VISÍVEIS na área de leitura, a linha do estado vazio, a
-   altura da página e o que os cartões da faixa da cabeça prometem. */
+/* Os nomes de medida VISÍVEIS na área de leitura, a altura da página e o que os
+   cartões da faixa da cabeça prometem. A linha do estado vazio saiu da página a
+   15.09.2026 (achado 4 da leitura a frio: era uma frase de instrução numa página
+   de conteúdo), e a sonda continua a procurá-la para que uma medição diga se ela
+   voltou. */
 const SONDA = () => {
   const visivel = (el) => {
     if (!el) return false;

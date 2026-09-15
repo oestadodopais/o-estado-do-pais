@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-15T21:57:42+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/pacote-p1p2",
+ "plantas": [
+  {
+   "id": "W1",
+   "ficheiro": "ledger/claims/precos-da-habitacao-2024.yml",
+   "descricao": "a linha do período anterior dos preços da habitação diz 9,7 em vez de 9,1 (a fonte e o cartão dizem 9,1)",
+   "sha256_antes": "f1235fb56b255d9bbd7381e95c8537ecc554bdf45a276df762b79f2cc08446e8",
+   "sha256_depois": "ddcdcf2bc7e6b8164514f5e277109ef605e52bc1a949f4bf8dd205deff09214a",
+   "contexto_antes": "olha do indicador: indicators/convergence.md.\n\nid: \"precos-da-habitacao-2024\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"9,1\"\nunit: \"variação anual média, %\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"Eurostat\"\ndocument:\n  title: \"House ",
+   "contexto_depois": "olha do indicador: indicators/convergence.md.\n\nid: \"precos-da-habitacao-2024\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"9,7\"\nunit: \"variação anual média, %\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"Eurostat\"\ndocument:\n  title: \"House "
+  },
+  {
+   "id": "W2",
+   "ficheiro": "src/i18n/strings.mjs",
+   "descricao": "a palavra do estado perde o acento na fonte (referencia) e a página construída tem-no",
+   "sha256_antes": "8c6aeec70f3aed424bb605bd7fc7290b33e18b0fe4a522a952cfa91fc1bc3e49",
+   "sha256_depois": "603e9bc355de87632fc371b222a1d8114fc158931973af2ac77f1e4da177259a",
+   "contexto_antes": " DITO, na linha da leitura\n         (`rotulo`) e na frase que diz o que ele é (`frase`): o que saiu foi a\n         palavra «limiar», não a atribuição. */\n      acima: 'acima do valor de referência',\n      abaixo: 'abaixo do valor de referência',\n      entre: 'entre os valores de referência',\n      comissao: {\n        /* O rótulo da LINHA do valor de referê",
+   "contexto_depois": " DITO, na linha da leitura\n         (`rotulo`) e na frase que diz o que ele é (`frase`): o que saiu foi a\n         palavra «limiar», não a atribuição. */\n      acima: 'acima do valor de referencia',\n      abaixo: 'abaixo do valor de referência',\n      entre: 'entre os valores de referência',\n      comissao: {\n        /* O rótulo da LINHA do valor de referê"
+  },
+  {
+   "id": "W3",
+   "ficheiro": "reguas/p1-2026-09-15/porta.txt",
+   "descricao": "a régua da porta diz 51 de 52 e o relatório diz 52 de 52",
+   "sha256_antes": "b0f79decdde7dcf9732e8a2d1b63ccb898cfb39df3ebf39f4c25ca64d5dd2009",
+   "sha256_depois": "3ed452d02c2e11ed5022d0f4d8c7a9e61bbcbebc20de9811df3fd753481627b3",
+   "contexto_antes": "[0m\n  \u001b[31m✗\u001b[0m a mobília do menu em duas filas  \u001b[90mverde antes: sim · html mudou: sim · vermelho depois: A11.pt=verde, A11.en=verde\u001b[0m\n\n  porta \u001b[32m✓\u001b[0m 52 de 52 célula(s) · plantas \u001b[31m✗\u001b[0m\u001b[90m  /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/porta-2026-09-15/dist\u001b[0m\n",
+   "contexto_depois": "[0m\n  \u001b[31m✗\u001b[0m a mobília do menu em duas filas  \u001b[90mverde antes: sim · html mudou: sim · vermelho depois: A11.pt=verde, A11.en=verde\u001b[0m\n\n  porta \u001b[32m✓\u001b[0m 51 de 52 célula(s) · plantas \u001b[31m✗\u001b[0m\u001b[90m  /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/porta-2026-09-15/dist\u001b[0m\n"
+  },
+  {
+   "id": "W4",
+   "ficheiro": "relatorio-p1.md",
+   "descricao": "o relatório diz que a primeira página ficou em 2 906 px a 390; as réguas e as capturas dizem 3 006",
+   "sha256_antes": "e3586ccb1fba37bdbcd4a29e4ec1ae42ae2aac89575e751a59619675f70625db",
+   "sha256_depois": "20d653d7c02e97081e09b74453c73917abb11389cd546a728b3d1b6c6e223989",
+   "contexto_antes": "as duas por lhe terem mexido no tecto:\n\n* a **U5** («a altura de `/` a 390 é igual ou menor do que a de partida»)\n  passou porque o acerto 2 encolheu a página: 3 597 → **3 006 px**, abaixo dos\n  3 263 px da árvore de partida. **O tecto não subiu.** A instrução do lugar de\n  direção previa levantá-lo se as dezoito linhas não coubessem; cou",
+   "contexto_depois": "as duas por lhe terem mexido no tecto:\n\n* a **U5** («a altura de `/` a 390 é igual ou menor do que a de partida»)\n  passou porque o acerto 2 encolheu a página: 3 597 → **2 906 px**, abaixo dos\n  3 263 px da árvore de partida. **O tecto não subiu.** A instrução do lugar de\n  direção previa levantá-lo se as dezoito linhas não coubessem; cou"
+  },
+  {
+   "id": "W5",
+   "ficheiro": "built/areas/infraestruturas-e-habitacao/index.html",
+   "descricao": "a página construída da habitação diz que a União está em 5,7 nos preços; a linha diz 5,5",
+   "sha256_antes": "d6b6a5e3ac181dcd9a054e6896beac50e6cde1393934e5bc6d459d23490de82c",
+   "sha256_depois": "302f00a2f58166bc07c03c7c5284479244155f51068cb56eb204a5339a492833",
+   "contexto_antes": "itacao-2025\"><span class=\"cartao-medida-regua-k\"><span data-voz>União Europeia</span>: </span><span data-claim=\"precos-da-habitacao-2025-ue\" class=\"claim-value\">5,5</span></span><span class=\"cartao-medida-regua-item\" data-regua=\"referencia\"><span data-voz>acima do valor de referência</span> (<span data-nonledger=\"limiar-do-",
+   "contexto_depois": "itacao-2025\"><span class=\"cartao-medida-regua-k\"><span data-voz>União Europeia</span>: </span><span data-claim=\"precos-da-habitacao-2025-ue\" class=\"claim-value\">5,7</span></span><span class=\"cartao-medida-regua-item\" data-regua=\"referencia\"><span data-voz>acima do valor de referência</span> (<span data-nonledger=\"limiar-do-"
+  }
+ ]
+}
