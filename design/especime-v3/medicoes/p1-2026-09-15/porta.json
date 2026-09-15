@@ -1,0 +1,3442 @@
+{
+  "dist": "/Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/porta-2026-09-15/dist",
+  "celulas": [
+    {
+      "nome": "A1.pt",
+      "passa": true,
+      "prova": "390×664: nome, manchete, cartão, selo e porta do concelho dentro do ecrã (fundo máximo 528.0 px) · a manchete em 3 linha(s) em Chromium e 3 em WebKit (teto 3), 125.5 px de altura · 5 cartões na cabeça (5 na página, 5 declarados pelo domínio), 0 sem selo com caixa"
+    },
+    {
+      "nome": "A2.pt",
+      "passa": true,
+      "prova": "altura de / a 390: 3597 px · teto 7035 px (6941 da árvore de partida + 94 da fila dos estudos) (menos 3438 px)"
+    },
+    {
+      "nome": "A11.pt",
+      "passa": true,
+      "prova": "mobília acima do nome a 390: 62 px (teto 64) · a barra em 1 fila(s) com 2 item(ns), 54 px (esta edição cabe em 1) · as leituras por baixo do nome em 0 fila(s) com 0 à vista, 0 px (o item 8.11 exige 0 e 0)"
+    },
+    {
+      "nome": "A22.pt",
+      "passa": true,
+      "prova": "o lugar do nome nos três estados do mapa em /: comMapa «Portugal · 308 concelhos» (1 de 2 à vista) · semMapa «Portugal · 308 concelhos» (1 de 2 à vista) · semGuiao «Portugal · 308 concelhos» (1 de 2 à vista)"
+    },
+    {
+      "nome": "A24.pt",
+      "passa": true,
+      "prova": "as três portas de / a 390: 3 cartão(ões) · <a> «Concelhos308→» 161px · <a> «Estudos12→» 161px · <a> «Agenda→» 111px"
+    },
+    {
+      "nome": "A5.pt",
+      "passa": true,
+      "prova": "os três estados da gaveta dos nomes (item 3 do F1.13, e o achado 5 da leitura a frio de 15.09.2026) · A5a COM GUIÃO E COM MAPA (marca «data-mapa-vivo» na raiz): a 390 a caixa mede 1×1 px em «absolute», recortada por «rect(0px,0px,0px,0px)» (área à vista 0), com 29 nome(s), 29 invisível(eis); a 1280 mede 1×1 px (área à vista 0), com 29 nome(s), 29 invisível(eis); ao foco do «summary» a 390 volta a 354×575.4 px (área 203688) com 29 nome(s) e 0 fora do alvo de 44 px · A5b COM GUIÃO E SEM MAPA (pedido de «/js/mapa-unidades.js» recusado; marca ausente): a caixa mede 354×45 px em «static» (área 15930), o «summary» à vista, a gaveta fechada, 29 nome(s) no documento · A5c SEM GUIÃO (marca ausente): a caixa mede 354×45 px em «static» (área 15930), o «summary» à vista, a gaveta fechada, 29 nome(s) · 29 porta(s), 0 fora de «/distritos/», 0 sem resposta"
+    },
+    {
+      "nome": "A3.pt",
+      "passa": true,
+      "prova": "os 21 valores selados uma só vez em /uniao-europeia: 0 fora da conta"
+    },
+    {
+      "nome": "A4.pt",
+      "passa": true,
+      "prova": "a definição declarada de cada painel em /uniao-europeia: 2 frase(s), 0 diferente(s) da declaração · «Comissão Europeia» no documento inteiro: 26"
+    },
+    {
+      "nome": "A6.pt",
+      "passa": true,
+      "prova": "vocabulário da casa em /: Âmbito=0 · Densidade=0"
+    },
+    {
+      "nome": "A18.pt",
+      "passa": true,
+      "prova": "a frase de definição em /: a nova 1 vez(es) (esperada 1), a antiga 0 (esperada 0) · «Os números oficiais de Portugal, do país ao seu concelho, cada um com a fonte.»"
+    },
+    {
+      "nome": "A19.pt",
+      "passa": true,
+      "prova": "as três portas em /: as etiquetas «Todos os concelhos →» 0 · «Todos os estudos →» 0 · «Toda a agenda →» 0 e as legendas « concelhos · CAOP» 0 · « estudos · » 0 · « edições» 0 · « em curso» 0 (todas esperadas 0) · «a página inteira» 0 (esperada 0)"
+    },
+    {
+      "nome": "A21.pt",
+      "passa": true,
+      "prova": "a busca em /: «Escreva o nome do concelho, ou toque no mapa.» 0 · «Escreva o nome do concelho» 0 (esperadas 0 à vista) · a frase do sem-guião 1 vez(es) no documento (esperada 1) e 0 à vista (esperada 0) · o texto-fantasma «Concelho» 1 (esperado 1)"
+    },
+    {
+      "nome": "A23.pt",
+      "passa": true,
+      "prova": "o índice dos domínios em /: 18 linha(s) (esperadas 18) · «incluído em» 0 e «e mais» 0 (esperadas 0) · a linha de abertura 1 (esperada 1)"
+    },
+    {
+      "nome": "A25.pt",
+      "passa": true,
+      "prova": "«limiar» no texto visível de 6 rota(s): /index.html 0 (esperada 0) · /uniao-europeia/index.html 1 (esperada 1) · /dominios/economia-e-financas-publicas/index.html 0 (esperada 0) · /municipios/evora/index.html 0 (esperada 0) · /areas/infraestruturas-e-habitacao/index.html 0 (esperada 0) · /livro-razao/divida-publica-2025/index.html 0 (esperada 0) · «valor de referência» em /dominios/economia-e-financas-publicas: 21 (esperado > 0)"
+    },
+    {
+      "nome": "A26.pt",
+      "passa": true,
+      "prova": "as contagens dos domínios em /: 18 linha(s), 0 em desacordo com a declaração · a soma da declaração: 36"
+    },
+    {
+      "nome": "A10.pt",
+      "passa": true,
+      "prova": "«sem limiar» nos cartões e nas leituras de /uniao-europeia: 0 de 21 cartão(ões), 0 de 21 leitura(s)"
+    },
+    {
+      "nome": "A7.pt",
+      "passa": true,
+      "prova": "as duas fichas de «Lagoa» na busca de /: 308 ficha(s) na lista, 2 com o nome «Lagoa», 2 texto(s) distinto(s), 1 com «Faro» e 1 com «São Miguel» [Lagoadistrito de Faro | LagoaIlha de São Miguel]"
+    },
+    {
+      "nome": "A12.pt",
+      "passa": true,
+      "prova": "regiões, distritos e áreas no menu de /: as três lá estão"
+    },
+    {
+      "nome": "A8.pt",
+      "passa": true,
+      "prova": "<form> em /: 1; action «/municipios» (200); method «get»"
+    },
+    {
+      "nome": "A9.pt",
+      "passa": true,
+      "prova": "com guião, a partir de /: 2 toque(s), sem rolar, chegou a «/municipios/evora» e a página rende «concelho · Évora tem 58 567 pessoas.fonte · INE» · sem guião, pela submissão nativa: «/municipios?concelho=%C3%89vora» com 308 nomes, 1 porta(s) do concelho e 88 caracteres de frase do <noscript> · o filtro dos estudos em «/estudos?concelho=evora»: 5 entradas, 5 casam, 5 à vista, porta da volta acesa; sem guião 5 entradas, 0 escondidas e 43 caracteres de frase"
+    },
+    {
+      "nome": "A13.pt",
+      "passa": true,
+      "prova": "o destino dos cartões de /uniao-europeia: 21 cartão(ões), 21 para a leitura breve desta página, 0 para fora · 3 leitura(s) acrescentam a porta do domínio (divida-publica-2025, taxa-de-emprego-2025, taxa-de-desemprego-2025) · nenhum errado"
+    },
+    {
+      "nome": "A14.pt",
+      "passa": true,
+      "prova": "«/dominios» no menu de /: lá está, a página responde 200, e diz «Domínios» (esperado «Domínios»)"
+    },
+    {
+      "nome": "A20.pt",
+      "passa": true,
+      "prova": "o índice dos domínios, nas duas rotas que o rendem: /: 18 linha(s), 0 com nomes (), 0 selado(s) · /dominios: 18 linha(s), 0 com nomes (), 0 selado(s) · a faixa de / tem 5 nome(s) [Dívida pública | Saldo das administrações públicas | Taxa de emprego | Taxa de desemprego | Ganho médio mensal]"
+    },
+    {
+      "nome": "A15.pt",
+      "passa": true,
+      "prova": "«/estudos» a partir de /, a 390 × 664: 4 porta(s) no documento, 4 tocável(eis) sem abrir gaveta · a mais acima a 10.6 px (0.02 ecrã(s), teto 1.5), alvo 57.9×44 px · um toque chegou a «/estudos»"
+    },
+    {
+      "nome": "A16.pt",
+      "passa": true,
+      "prova": "o nome acessível do <h1> das quatro camadas em pt, em Chromium e WebKit: pais 2 valor(es)/2 selo(s) · dominio 2 valor(es)/2 selo(s) · regiao 2 valor(es)/2 selo(s) · concelho 1 valor(es)/1 selo(s) · nome igual à frase nos dois motores, cada valor com a sua porta ao pé dele"
+    },
+    {
+      "nome": "A17.pt",
+      "passa": true,
+      "prova": "o «n de N» das faixas das quatro camadas em pt: pais 1..5 de 5 · dominio 1..10 de 10 · regiao  · concelho 1..8 de 8"
+    },
+    {
+      "nome": "A1.en",
+      "passa": true,
+      "prova": "390×664: nome, manchete, cartão, selo e porta do concelho dentro do ecrã (fundo máximo 523.3 px) · a manchete em 3 linha(s) em Chromium e 3 em WebKit (teto 3), 125.5 px de altura · 5 cartões na cabeça (5 na página, 5 declarados pelo domínio), 0 sem selo com caixa"
+    },
+    {
+      "nome": "A2.en",
+      "passa": true,
+      "prova": "altura de /en a 390: 3622 px · teto 6984 px (6890 da árvore de partida + 94 da fila dos estudos) (menos 3362 px)"
+    },
+    {
+      "nome": "A11.en",
+      "passa": true,
+      "prova": "mobília acima do nome a 390: 95.2 px (teto 95.2) · a barra em 2 fila(s) com 2 item(ns), 87.2 px (esta edição cabe em 2) · as leituras por baixo do nome em 0 fila(s) com 0 à vista, 0 px (o item 8.11 exige 0 e 0)"
+    },
+    {
+      "nome": "A22.en",
+      "passa": true,
+      "prova": "o lugar do nome nos três estados do mapa em /en: comMapa «Portugal · 308 municipalities» (1 de 2 à vista) · semMapa «Portugal · 308 municipalities» (1 de 2 à vista) · semGuiao «Portugal · 308 municipalities» (1 de 2 à vista)"
+    },
+    {
+      "nome": "A24.en",
+      "passa": true,
+      "prova": "as três portas de /en a 390: 3 cartão(ões) · <a> «Municipalities308→» 161px · <a> «Studies12→» 161px · <a> «Agenda→» 111px"
+    },
+    {
+      "nome": "A5.en",
+      "passa": true,
+      "prova": "os três estados da gaveta dos nomes (item 3 do F1.13, e o achado 5 da leitura a frio de 15.09.2026) · A5a COM GUIÃO E COM MAPA (marca «data-mapa-vivo» na raiz): a 390 a caixa mede 1×1 px em «absolute», recortada por «rect(0px,0px,0px,0px)» (área à vista 0), com 29 nome(s), 29 invisível(eis); a 1280 mede 1×1 px (área à vista 0), com 29 nome(s), 29 invisível(eis); ao foco do «summary» a 390 volta a 354×575.4 px (área 203688) com 29 nome(s) e 0 fora do alvo de 44 px · A5b COM GUIÃO E SEM MAPA (pedido de «/js/mapa-unidades.js» recusado; marca ausente): a caixa mede 354×45 px em «static» (área 15930), o «summary» à vista, a gaveta fechada, 29 nome(s) no documento · A5c SEM GUIÃO (marca ausente): a caixa mede 354×45 px em «static» (área 15930), o «summary» à vista, a gaveta fechada, 29 nome(s) · 29 porta(s), 0 fora de «/en/districts/», 0 sem resposta"
+    },
+    {
+      "nome": "A3.en",
+      "passa": true,
+      "prova": "os 21 valores selados uma só vez em /en/european-union: 0 fora da conta"
+    },
+    {
+      "nome": "A4.en",
+      "passa": true,
+      "prova": "a definição declarada de cada painel em /en/european-union: 2 frase(s), 0 diferente(s) da declaração · «European Commission» no documento inteiro: 14"
+    },
+    {
+      "nome": "A6.en",
+      "passa": true,
+      "prova": "vocabulário da casa em /en: Scope=0 · Density=0"
+    },
+    {
+      "nome": "A18.en",
+      "passa": true,
+      "prova": "a frase de definição em /en: a nova 1 vez(es) (esperada 1), a antiga 0 (esperada 0) · «Portugal’s official numbers, from the country to your municipality, each with its source.»"
+    },
+    {
+      "nome": "A19.en",
+      "passa": true,
+      "prova": "as três portas em /en: as etiquetas «All municipalities →» 0 · «All studies →» 0 · «The whole agenda →» 0 e as legendas « municipalities · CAOP» 0 · « studies · » 0 · « editions» 0 · « in progress» 0 (todas esperadas 0) · «the whole page» 0 (esperada 0)"
+    },
+    {
+      "nome": "A21.en",
+      "passa": true,
+      "prova": "a busca em /en: «Type the name of a municipality, or tap the map.» 0 · «Type the name of the municipality» 0 (esperadas 0 à vista) · a frase do sem-guião 1 vez(es) no documento (esperada 1) e 0 à vista (esperada 0) · o texto-fantasma «Municipality» 1 (esperado 1)"
+    },
+    {
+      "nome": "A23.en",
+      "passa": true,
+      "prova": "o índice dos domínios em /en: 18 linha(s) (esperadas 18) · «included in» 0 e «and more» 0 (esperadas 0) · a linha de abertura 1 (esperada 1)"
+    },
+    {
+      "nome": "A25.en",
+      "passa": true,
+      "prova": "«threshold» no texto visível de 6 rota(s): /en/index.html 0 (esperada 0) · /en/european-union/index.html 1 (esperada 1) · /en/domains/economia-e-financas-publicas/index.html 0 (esperada 0) · /en/municipalities/evora/index.html 0 (esperada 0) · /en/areas/infraestruturas-e-habitacao/index.html 0 (esperada 0) · /en/ledger/divida-publica-2025/index.html 0 (esperada 0) · «reference value» em /en/domains/economia-e-financas-publicas: 21 (esperado > 0)"
+    },
+    {
+      "nome": "A26.en",
+      "passa": true,
+      "prova": "as contagens dos domínios em /en: 18 linha(s), 0 em desacordo com a declaração · a soma da declaração: 36"
+    },
+    {
+      "nome": "A10.en",
+      "passa": true,
+      "prova": "«no threshold» nos cartões e nas leituras de /en/european-union: 0 de 21 cartão(ões), 0 de 21 leitura(s)"
+    },
+    {
+      "nome": "A7.en",
+      "passa": true,
+      "prova": "as duas fichas de «Lagoa» na busca de /en: 308 ficha(s) na lista, 2 com o nome «Lagoa», 2 texto(s) distinto(s), 1 com «Faro» e 1 com «São Miguel» [Lagoadistrict of Faro | LagoaIlha de São Miguel]"
+    },
+    {
+      "nome": "A12.en",
+      "passa": true,
+      "prova": "regiões, distritos e áreas no menu de /en: as três lá estão"
+    },
+    {
+      "nome": "A8.en",
+      "passa": true,
+      "prova": "<form> em /en: 1; action «/en/municipalities» (200); method «get»"
+    },
+    {
+      "nome": "A9.en",
+      "passa": true,
+      "prova": "com guião, a partir de /en: 2 toque(s), sem rolar, chegou a «/en/municipalities/evora» e a página rende «concelho · Évora has 58 567 people.source · INE» · sem guião, pela submissão nativa: «/en/municipalities?concelho=%C3%89vora» com 308 nomes, 1 porta(s) do concelho e 103 caracteres de frase do <noscript> · o filtro dos estudos em «/en/studies?concelho=evora»: 5 entradas, 5 casam, 5 à vista, porta da volta acesa; sem guião 5 entradas, 0 escondidas e 46 caracteres de frase"
+    },
+    {
+      "nome": "A13.en",
+      "passa": true,
+      "prova": "o destino dos cartões de /en/european-union: 21 cartão(ões), 21 para a leitura breve desta página, 0 para fora · 3 leitura(s) acrescentam a porta do domínio (divida-publica-2025, taxa-de-emprego-2025, taxa-de-desemprego-2025) · nenhum errado"
+    },
+    {
+      "nome": "A14.en",
+      "passa": true,
+      "prova": "«/en/domains» no menu de /en: lá está, a página responde 200, e diz «Domains» (esperado «Domains»)"
+    },
+    {
+      "nome": "A20.en",
+      "passa": true,
+      "prova": "o índice dos domínios, nas duas rotas que o rendem: /en: 18 linha(s), 0 com nomes (), 0 selado(s) · /en/domains: 18 linha(s), 0 com nomes (), 0 selado(s) · a faixa de /en tem 5 nome(s) [Government debt | General government balance | Employment rate | Unemployment rate | Average monthly earnings]"
+    },
+    {
+      "nome": "A15.en",
+      "passa": true,
+      "prova": "«/en/studies» a partir de /en, a 390 × 664: 4 porta(s) no documento, 4 tocável(eis) sem abrir gaveta · a mais acima a 60 px (0.09 ecrã(s), teto 1.5), alvo 53.4×44 px · um toque chegou a «/en/studies»"
+    },
+    {
+      "nome": "A16.en",
+      "passa": true,
+      "prova": "o nome acessível do <h1> das quatro camadas em en, em Chromium e WebKit: pais 2 valor(es)/2 selo(s) · dominio 2 valor(es)/2 selo(s) · regiao 2 valor(es)/2 selo(s) · concelho 1 valor(es)/1 selo(s) · nome igual à frase nos dois motores, cada valor com a sua porta ao pé dele"
+    },
+    {
+      "nome": "A17.en",
+      "passa": true,
+      "prova": "o «n de N» das faixas das quatro camadas em en: pais 1..5 de 5 · dominio 1..10 de 10 · regiao  · concelho 1..8 de 8"
+    }
+  ],
+  "medidas": {
+    "A1.pt": {
+      "nome": {
+        "topo": 62,
+        "fundo": 97.4,
+        "largura": 354,
+        "altura": 35.4
+      },
+      "manchete": {
+        "topo": 155.4,
+        "fundo": 280.9,
+        "largura": 354,
+        "altura": 125.5
+      },
+      "linhasDaManchete": 3,
+      "cartao": {
+        "topo": 345.9,
+        "fundo": 528,
+        "largura": 247.8,
+        "altura": 182.2
+      },
+      "selo": {
+        "topo": 496.4,
+        "fundo": 515.6,
+        "largura": 52.5,
+        "altura": 19.2
+      },
+      "porta": {
+        "topo": 288.9,
+        "fundo": 332.9,
+        "largura": 354,
+        "altura": 44
+      },
+      "cartoes": 5,
+      "cartoesDaCabeca": 5,
+      "semSelo": [],
+      "ecra": 664,
+      "altura": 3597,
+      "filaDosEstudos": 94,
+      "mobilia": 62,
+      "barra": {
+        "filas": 1,
+        "itens": 2,
+        "altura": 54
+      },
+      "leituras": {
+        "filas": 0,
+        "itens": 0,
+        "altura": 0
+      },
+      "linhasDaMancheteWebkit": 3
+    },
+    "A2.pt": {
+      "altura": 3597,
+      "teto": 7035,
+      "tetoDaPartida": 6941,
+      "filaDosEstudos": 94
+    },
+    "A11.pt": {
+      "acimaDoNome": 62,
+      "barra": {
+        "filas": 1,
+        "itens": 2,
+        "altura": 54
+      },
+      "leituras": {
+        "filas": 0,
+        "itens": 0,
+        "altura": 0
+      }
+    },
+    "A5.pt.390": {
+      "repouso": {
+        "existe": true,
+        "largura": 1,
+        "altura": 1,
+        "caixa": 1,
+        "area": 0,
+        "forma": "absolute",
+        "recorte": "rect(0px,0px,0px,0px)"
+      },
+      "nomes": {
+        "total": 29,
+        "pequenos": [
+          {
+            "slug": "aveiro",
+            "w": 54.1,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "beja",
+            "w": 44,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "braga",
+            "w": 49.5,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "braganca",
+            "w": 72.9,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "castelo-branco",
+            "w": 108.5,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "coimbra",
+            "w": 67.7,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "evora",
+            "w": 48.8,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "faro",
+            "w": 44,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "guarda",
+            "w": 60.1,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "leiria",
+            "w": 49,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "lisboa",
+            "w": 54.2,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "portalegre",
+            "w": 79.8,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "porto",
+            "w": 47.3,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "santarem",
+            "w": 76.1,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "setubal",
+            "w": 61.4,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "viana-do-castelo",
+            "w": 118.9,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "vila-real",
+            "w": 67.8,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "viseu",
+            "w": 48.3,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-da-madeira",
+            "w": 112.1,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-porto-santo",
+            "w": 134.5,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-da-graciosa",
+            "w": 116,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-das-flores",
+            "w": 105.4,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-santa-maria",
+            "w": 136.4,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-sao-jorge",
+            "w": 119.2,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-sao-miguel",
+            "w": 130.3,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-do-corvo",
+            "w": 97.4,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-do-faial",
+            "w": 90.1,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-do-pico",
+            "w": 86.6,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-terceira",
+            "w": 93.3,
+            "h": 44,
+            "vis": false
+          }
+        ],
+        "invisiveis": 29
+      },
+      "foco": {
+        "existe": true,
+        "largura": 354,
+        "altura": 575.4,
+        "caixa": 203688,
+        "area": 203688,
+        "forma": "static",
+        "recorte": "auto",
+        "nomes": {
+          "total": 29,
+          "pequenos": [],
+          "invisiveis": 0
+        }
+      },
+      "marca": true
+    },
+    "A5.pt.1280": {
+      "repouso": {
+        "existe": true,
+        "largura": 1,
+        "altura": 1,
+        "caixa": 1,
+        "area": 0,
+        "forma": "absolute",
+        "recorte": "rect(0px,0px,0px,0px)"
+      },
+      "nomes": {
+        "total": 29,
+        "pequenos": [
+          {
+            "slug": "aveiro",
+            "w": 51.1,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "beja",
+            "w": 44,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "braga",
+            "w": 46.8,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "braganca",
+            "w": 68.6,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "castelo-branco",
+            "w": 101.6,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "coimbra",
+            "w": 63.8,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "evora",
+            "w": 46.2,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "faro",
+            "w": 44,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "guarda",
+            "w": 56.7,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "leiria",
+            "w": 46.4,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "lisboa",
+            "w": 51.2,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "portalegre",
+            "w": 74.9,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "porto",
+            "w": 44.8,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "santarem",
+            "w": 71.5,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "setubal",
+            "w": 57.9,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "viana-do-castelo",
+            "w": 111.3,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "vila-real",
+            "w": 63.8,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "viseu",
+            "w": 45.7,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "ilha-da-madeira",
+            "w": 105,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-porto-santo",
+            "w": 125.7,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "ilha-da-graciosa",
+            "w": 108.6,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "ilha-das-flores",
+            "w": 98.7,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-santa-maria",
+            "w": 127.5,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-sao-jorge",
+            "w": 111.5,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-sao-miguel",
+            "w": 121.9,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "ilha-do-corvo",
+            "w": 91.3,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "ilha-do-faial",
+            "w": 84.5,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "ilha-do-pico",
+            "w": 81.3,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "ilha-terceira",
+            "w": 87.5,
+            "h": 32,
+            "vis": false
+          }
+        ],
+        "invisiveis": 29
+      },
+      "marca": true
+    },
+    "A5.pt.semMapa": {
+      "caixa": {
+        "existe": true,
+        "largura": 354,
+        "altura": 45,
+        "caixa": 15930,
+        "area": 15930,
+        "forma": "static",
+        "recorte": "auto"
+      },
+      "nomes": {
+        "total": 29,
+        "pequenos": [
+          {
+            "slug": "aveiro",
+            "w": 54.1,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "beja",
+            "w": 44,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "braga",
+            "w": 49.5,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "braganca",
+            "w": 72.9,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "castelo-branco",
+            "w": 108.5,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "coimbra",
+            "w": 67.7,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "evora",
+            "w": 48.8,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "faro",
+            "w": 44,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "guarda",
+            "w": 60.1,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "leiria",
+            "w": 49,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "lisboa",
+            "w": 54.2,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "portalegre",
+            "w": 79.8,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "porto",
+            "w": 47.3,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "santarem",
+            "w": 76.1,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "setubal",
+            "w": 61.4,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "viana-do-castelo",
+            "w": 118.9,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "vila-real",
+            "w": 67.8,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "viseu",
+            "w": 48.3,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-da-madeira",
+            "w": 112.1,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-porto-santo",
+            "w": 134.5,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-da-graciosa",
+            "w": 116,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-das-flores",
+            "w": 105.4,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-santa-maria",
+            "w": 136.4,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-sao-jorge",
+            "w": 119.2,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-sao-miguel",
+            "w": 130.3,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-do-corvo",
+            "w": 97.4,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-do-faial",
+            "w": 90.1,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-do-pico",
+            "w": 86.6,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-terceira",
+            "w": 93.3,
+            "h": 44,
+            "vis": false
+          }
+        ],
+        "invisiveis": 29
+      },
+      "marca": false,
+      "gaveta": false,
+      "sumario": true
+    },
+    "A5.pt.semGuiao": {
+      "existe": true,
+      "largura": 354,
+      "altura": 45,
+      "area": 15930,
+      "forma": "static",
+      "marca": false,
+      "gaveta": false,
+      "nomes": 29,
+      "sumario": true
+    },
+    "A22.pt": {
+      "comMapa": {
+        "existe": true,
+        "lugarAVista": true,
+        "repousos": 2,
+        "aVista": 1,
+        "texto": [
+          "Portugal · 308 concelhos"
+        ]
+      },
+      "semMapa": {
+        "existe": true,
+        "lugarAVista": true,
+        "repousos": 2,
+        "aVista": 1,
+        "texto": [
+          "Portugal · 308 concelhos"
+        ]
+      },
+      "semGuiao": {
+        "existe": true,
+        "lugarAVista": true,
+        "repousos": 2,
+        "aVista": 1,
+        "texto": [
+          "Portugal · 308 concelhos"
+        ]
+      }
+    },
+    "A24.pt": {
+      "portas": [
+        {
+          "etiqueta": "a",
+          "href": "/municipios",
+          "altura": 161,
+          "ligacoesDentro": 0,
+          "texto": "Concelhos308→"
+        },
+        {
+          "etiqueta": "a",
+          "href": "/estudos",
+          "altura": 161,
+          "ligacoesDentro": 0,
+          "texto": "Estudos12→"
+        },
+        {
+          "etiqueta": "a",
+          "href": "/agenda",
+          "altura": 111,
+          "ligacoesDentro": 0,
+          "texto": "Agenda→"
+        }
+      ],
+      "maus": []
+    },
+    "A3.pt": {
+      "total": 21,
+      "repetidos": []
+    },
+    "A4.pt": {
+      "noDocumento": 26,
+      "frases": [
+        {
+          "painel": "pdm",
+          "texto": "Um conjunto limitado de medidas com que a Comissão Europeia apanha os aspetos internos e externos mais relevantes dos desequilíbrios macroeconómicos, cada uma com o seu limiar indicativo.",
+          "tem": true
+        },
+        {
+          "painel": "social",
+          "texto": "O painel de medidas que apoia o Pilar Europeu dos Direitos Sociais, e com que se avalia o desempenho de emprego e social dos países da União participantes.",
+          "tem": true
+        }
+      ],
+      "declaradas": {
+        "pdm": "Um conjunto limitado de medidas com que a Comissão Europeia apanha os aspetos internos e externos mais relevantes dos desequilíbrios macroeconómicos, cada uma com o seu limiar indicativo.",
+        "social": "O painel de medidas que apoia o Pilar Europeu dos Direitos Sociais, e com que se avalia o desempenho de emprego e social dos países da União participantes."
+      }
+    },
+    "A6.pt": 0,
+    "A18.pt": {
+      "nova": 1,
+      "antiga": 0
+    },
+    "A19.pt": {
+      "etiquetas": [
+        0,
+        0,
+        0
+      ],
+      "antiga": 0,
+      "legendas": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "A21.pt": {
+      "frases": [
+        0,
+        0
+      ],
+      "semGuiaoNoDocumento": 1,
+      "semGuiaoVisivel": 0,
+      "nomeDoCampo": 1
+    },
+    "A23.pt": {
+      "linhas": 18,
+      "dentroDe": 0,
+      "eMais": 0,
+      "abertura": 1
+    },
+    "A25.pt": {
+      "porRota": [
+        {
+          "rota": "/index.html",
+          "n": 0,
+          "esperado": 0
+        },
+        {
+          "rota": "/uniao-europeia/index.html",
+          "n": 1,
+          "esperado": 1
+        },
+        {
+          "rota": "/dominios/economia-e-financas-publicas/index.html",
+          "n": 0,
+          "esperado": 0
+        },
+        {
+          "rota": "/municipios/evora/index.html",
+          "n": 0,
+          "esperado": 0
+        },
+        {
+          "rota": "/areas/infraestruturas-e-habitacao/index.html",
+          "n": 0,
+          "esperado": 0
+        },
+        {
+          "rota": "/livro-razao/divida-publica-2025/index.html",
+          "n": 0,
+          "esperado": 0
+        }
+      ],
+      "referencia": 21
+    },
+    "A26.pt": {
+      "naPagina": [
+        {
+          "slug": "economia-e-financas-publicas",
+          "n": 14
+        },
+        {
+          "slug": "trabalho",
+          "n": 10
+        },
+        {
+          "slug": "populacao",
+          "n": 0
+        },
+        {
+          "slug": "migracao",
+          "n": 0
+        },
+        {
+          "slug": "seguranca-social-e-pensoes",
+          "n": 2
+        },
+        {
+          "slug": "agua",
+          "n": 0
+        },
+        {
+          "slug": "educacao",
+          "n": 3
+        },
+        {
+          "slug": "saude",
+          "n": 1
+        },
+        {
+          "slug": "habitacao",
+          "n": 3
+        },
+        {
+          "slug": "investimento",
+          "n": 1
+        },
+        {
+          "slug": "ciencia-tecnologia-e-inteligencia-artificial",
+          "n": 1
+        },
+        {
+          "slug": "espaco",
+          "n": 0
+        },
+        {
+          "slug": "infraestruturas-e-ferrovia",
+          "n": 0
+        },
+        {
+          "slug": "ambiente-e-sustentabilidade",
+          "n": 0
+        },
+        {
+          "slug": "cultura",
+          "n": 0
+        },
+        {
+          "slug": "seguranca",
+          "n": 0
+        },
+        {
+          "slug": "justica",
+          "n": 1
+        },
+        {
+          "slug": "governo-e-democracia",
+          "n": 0
+        }
+      ],
+      "esperadas": {
+        "economia-e-financas-publicas": 14,
+        "trabalho": 10,
+        "seguranca-social-e-pensoes": 2,
+        "educacao": 3,
+        "saude": 1,
+        "habitacao": 3,
+        "investimento": 1,
+        "ciencia-tecnologia-e-inteligencia-artificial": 1,
+        "justica": 1
+      },
+      "desacordos": []
+    },
+    "A10.pt": {
+      "cartoes": 0,
+      "pecas": 0,
+      "nCartoes": 21,
+      "nLeituras": 21
+    },
+    "A7.pt": {
+      "total": 308,
+      "lagoas": [
+        "Lagoadistrito de Faro",
+        "LagoaIlha de São Miguel"
+      ]
+    },
+    "A12.pt": {
+      "menu": [
+        "/",
+        "/municipios",
+        "/estudos",
+        "/livro-razao",
+        "/regioes",
+        "/distritos",
+        "/dominios",
+        "/areas",
+        "/uniao-europeia",
+        "/sobre",
+        "/metodo",
+        "/correcoes",
+        "/agenda"
+      ],
+      "emFalta": []
+    },
+    "A8.pt": {
+      "formularios": 1,
+      "action": "/municipios",
+      "metodo": "get",
+      "destinoVivo": true
+    },
+    "A9.pt": {
+      "toques": 2,
+      "dentroDoEcra": true,
+      "chegou": "/municipios/evora",
+      "rendeOConcelho": true,
+      "cabeca": {
+        "lugar": "concelho",
+        "manchete": "Évora tem 58 567 pessoas.fonte · INE"
+      },
+      "semGuiao": {
+        "caminho": "/municipios",
+        "query": "?concelho=%C3%89vora",
+        "titulo": "Concelhos · O Estado do País",
+        "nomes": 308,
+        "portaDoConcelho": 1,
+        "frase": 88
+      },
+      "filtro": {
+        "entradas": 5,
+        "visiveis": 5,
+        "casam": 5,
+        "portaDaVolta": true
+      },
+      "filtroSemGuiao": {
+        "entradas": 5,
+        "escondidas": 0,
+        "frase": 43
+      }
+    },
+    "A13.pt": {
+      "cartoes": [
+        {
+          "id": "divida-publica-2025",
+          "href": "#m-divida-publica-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "posicao-de-investimento-internacional-2025",
+          "href": "#m-posicao-de-investimento-internacional-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "custo-unitario-do-trabalho-2025",
+          "href": "#m-custo-unitario-do-trabalho-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "precos-da-habitacao-2025",
+          "href": "#m-precos-da-habitacao-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "desempenho-das-exportacoes-2025",
+          "href": "#m-desempenho-das-exportacoes-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "divida-das-empresas-2025",
+          "href": "#m-divida-das-empresas-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "divida-das-familias-2025",
+          "href": "#m-divida-das-familias-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "fluxo-de-credito-as-empresas-2025",
+          "href": "#m-fluxo-de-credito-as-empresas-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "fluxo-de-credito-as-familias-2025",
+          "href": "#m-fluxo-de-credito-as-familias-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "saldo-da-balanca-corrente-2025",
+          "href": "#m-saldo-da-balanca-corrente-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "taxa-de-actividade-2025",
+          "href": "#m-taxa-de-actividade-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "taxa-de-cambio-efectiva-real-2025",
+          "href": "#m-taxa-de-cambio-efectiva-real-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "taxa-de-desemprego-mip-2025",
+          "href": "#m-taxa-de-desemprego-mip-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "taxa-de-emprego-2025",
+          "href": "#m-taxa-de-emprego-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "taxa-de-desemprego-2025",
+          "href": "#m-taxa-de-desemprego-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "desemprego-de-longa-duracao-2025",
+          "href": "#m-desemprego-de-longa-duracao-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "jovens-nem-2025",
+          "href": "#m-jovens-nem-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "abandono-escolar-precoce-2025",
+          "href": "#m-abandono-escolar-precoce-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "risco-de-pobreza-ou-exclusao-2025",
+          "href": "#m-risco-de-pobreza-ou-exclusao-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "racio-s80-s20-2025",
+          "href": "#m-racio-s80-s20-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "sobrecarga-do-custo-da-habitacao-2025",
+          "href": "#m-sobrecarga-do-custo-da-habitacao-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        }
+      ],
+      "portasDasLeituras": {
+        "divida-publica-2025": "/dominios/economia-e-financas-publicas#m-e3",
+        "posicao-de-investimento-internacional-2025": null,
+        "custo-unitario-do-trabalho-2025": null,
+        "precos-da-habitacao-2025": null,
+        "desempenho-das-exportacoes-2025": null,
+        "divida-das-empresas-2025": null,
+        "divida-das-familias-2025": null,
+        "fluxo-de-credito-as-empresas-2025": null,
+        "fluxo-de-credito-as-familias-2025": null,
+        "saldo-da-balanca-corrente-2025": null,
+        "taxa-de-actividade-2025": null,
+        "taxa-de-cambio-efectiva-real-2025": null,
+        "taxa-de-desemprego-mip-2025": null,
+        "taxa-de-emprego-2025": "/dominios/economia-e-financas-publicas#m-t1",
+        "taxa-de-desemprego-2025": "/dominios/economia-e-financas-publicas#m-t2",
+        "desemprego-de-longa-duracao-2025": null,
+        "jovens-nem-2025": null,
+        "abandono-escolar-precoce-2025": null,
+        "risco-de-pobreza-ou-exclusao-2025": null,
+        "racio-s80-s20-2025": null,
+        "sobrecarga-do-custo-da-habitacao-2025": null
+      },
+      "errados": [],
+      "comPorta": 3
+    },
+    "A14.pt": {
+      "menu": [
+        {
+          "href": "/",
+          "texto": "Início",
+          "visivel": true
+        },
+        {
+          "href": "/municipios",
+          "texto": "Concelhos",
+          "visivel": true
+        },
+        {
+          "href": "/estudos",
+          "texto": "Estudos",
+          "visivel": true
+        },
+        {
+          "href": "/livro-razao",
+          "texto": "Números e fontes",
+          "visivel": true
+        },
+        {
+          "href": "/regioes",
+          "texto": "Regiões",
+          "visivel": true
+        },
+        {
+          "href": "/distritos",
+          "texto": "Distritos",
+          "visivel": true
+        },
+        {
+          "href": "/dominios",
+          "texto": "Domínios",
+          "visivel": true
+        },
+        {
+          "href": "/areas",
+          "texto": "Áreas de governo",
+          "visivel": true
+        },
+        {
+          "href": "/uniao-europeia",
+          "texto": "Portugal na União Europeia",
+          "visivel": true
+        },
+        {
+          "href": "/sobre",
+          "texto": "Sobre",
+          "visivel": true
+        },
+        {
+          "href": "/metodo",
+          "texto": "Método",
+          "visivel": true
+        },
+        {
+          "href": "/correcoes",
+          "texto": "Correções",
+          "visivel": true
+        },
+        {
+          "href": "/agenda",
+          "texto": "Agenda",
+          "visivel": true
+        }
+      ],
+      "temDominios": true,
+      "respostaDoIndice": 200,
+      "palavraEsperada": "Domínios",
+      "palavra": "Domínios",
+      "palavraAVista": true
+    },
+    "A20.pt": {
+      "naFaixa": [
+        "Dívida pública",
+        "Saldo das administrações públicas",
+        "Taxa de emprego",
+        "Taxa de desemprego",
+        "Ganho médio mensal"
+      ],
+      "porRota": {
+        "/": {
+          "selados": 0,
+          "linhas": [
+            {
+              "slug": "economia-e-financas-publicas",
+              "estado": "14 medidas",
+              "total": 14,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "trabalho",
+              "estado": "10 medidas",
+              "total": 10,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "populacao",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "migracao",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "seguranca-social-e-pensoes",
+              "estado": "2 medidas",
+              "total": 2,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "agua",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "educacao",
+              "estado": "3 medidas",
+              "total": 3,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "saude",
+              "estado": "1 medida",
+              "total": 1,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "habitacao",
+              "estado": "3 medidas",
+              "total": 3,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "investimento",
+              "estado": "1 medida",
+              "total": 1,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "ciencia-tecnologia-e-inteligencia-artificial",
+              "estado": "1 medida",
+              "total": 1,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "espaco",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "infraestruturas-e-ferrovia",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "ambiente-e-sustentabilidade",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "cultura",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "seguranca",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "justica",
+              "estado": "1 medida",
+              "total": 1,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "governo-e-democracia",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            }
+          ]
+        },
+        "/dominios": {
+          "selados": 0,
+          "linhas": [
+            {
+              "slug": "economia-e-financas-publicas",
+              "estado": "14 medidas",
+              "total": 14,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "trabalho",
+              "estado": "10 medidas",
+              "total": 10,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "populacao",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "migracao",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "seguranca-social-e-pensoes",
+              "estado": "2 medidas",
+              "total": 2,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "agua",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "educacao",
+              "estado": "3 medidas",
+              "total": 3,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "saude",
+              "estado": "1 medida",
+              "total": 1,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "habitacao",
+              "estado": "3 medidas",
+              "total": 3,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "investimento",
+              "estado": "1 medida",
+              "total": 1,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "ciencia-tecnologia-e-inteligencia-artificial",
+              "estado": "1 medida",
+              "total": 1,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "espaco",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "infraestruturas-e-ferrovia",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "ambiente-e-sustentabilidade",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "cultura",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "seguranca",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "justica",
+              "estado": "1 medida",
+              "total": 1,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "governo-e-democracia",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            }
+          ]
+        }
+      },
+      "queixas": []
+    },
+    "A15.pt": {
+      "portas": [
+        {
+          "dentroDeGavetaFechada": false,
+          "topo": 10.6,
+          "altura": 44,
+          "largura": 57.9
+        },
+        {
+          "dentroDeGavetaFechada": false,
+          "topo": 537.6,
+          "altura": 44,
+          "largura": 354
+        },
+        {
+          "dentroDeGavetaFechada": false,
+          "topo": 2798.8,
+          "altura": 161,
+          "largura": 354
+        },
+        {
+          "dentroDeGavetaFechada": false,
+          "topo": 3275,
+          "altura": 44,
+          "largura": 64.3
+        }
+      ],
+      "alcancaveis": 4,
+      "topo": 10.6,
+      "ecras": 0.02,
+      "chegouAoArquivo": "/estudos"
+    },
+    "A16.pt": {
+      "manchetes": [
+        {
+          "camada": "pais",
+          "rota": "/",
+          "nomeChromium": "A dívida pública é 89,7 % do PIB e a taxa de desemprego é 6 % da população ativa.",
+          "frase": "A dívida pública é 89,7% do PIB e a taxa de desemprego é 6% da população ativa.",
+          "valores": 2,
+          "selos": 2,
+          "queixas": [],
+          "nomeWebkit": "A dívida pública é 89,7 % do PIB e a taxa de desemprego é 6 % da população ativa."
+        },
+        {
+          "camada": "dominio",
+          "rota": "/dominios/economia-e-financas-publicas",
+          "nomeChromium": "A dívida pública é 89,7 % do PIB, acima do valor de referência de 60 %; o saldo das administrações públicas é 0,7 % do PIB, acima do valor de referência de − 3 %.",
+          "frase": "A dívida pública é 89,7% do PIB, acima do valor de referência de 60%; o saldo das administrações públicas é 0,7% do PIB, acima do valor de referência de −3%.",
+          "valores": 2,
+          "selos": 2,
+          "queixas": [],
+          "nomeWebkit": "A dívida pública é 89,7 % do PIB, acima do valor de referência de 60 %; o saldo das administrações públicas é 0,7 % do PIB, acima do valor de referência de − 3 %."
+        },
+        {
+          "camada": "regiao",
+          "rota": "/regioes/alentejo",
+          "nomeChromium": "O Alentejo está 23 pontos abaixo da média da UE-27. Em 2000 estava a 22 : a distância aumentou.",
+          "frase": "O Alentejo está 23 pontos abaixo da média da UE-27. Em 2000 estava a 22: a distância aumentou.",
+          "valores": 2,
+          "selos": 2,
+          "queixas": [],
+          "nomeWebkit": "O Alentejo está 23 pontos abaixo da média da UE-27. Em 2000 estava a 22 : a distância aumentou."
+        },
+        {
+          "camada": "concelho",
+          "rota": "/municipios/evora",
+          "nomeChromium": "Évora tem 58 567 pessoas.",
+          "frase": "Évora tem 58 567 pessoas.",
+          "valores": 1,
+          "selos": 1,
+          "queixas": [],
+          "nomeWebkit": "Évora tem 58 567 pessoas."
+        }
+      ]
+    },
+    "A17.pt": {
+      "faixas": [
+        {
+          "camada": "pais",
+          "rota": "/",
+          "faixas": [
+            5
+          ],
+          "queixas": []
+        },
+        {
+          "camada": "dominio",
+          "rota": "/dominios/economia-e-financas-publicas",
+          "faixas": [
+            10
+          ],
+          "queixas": []
+        },
+        {
+          "camada": "regiao",
+          "rota": "/regioes/alentejo",
+          "faixas": [],
+          "queixas": []
+        },
+        {
+          "camada": "concelho",
+          "rota": "/municipios/evora",
+          "faixas": [
+            8
+          ],
+          "queixas": []
+        }
+      ]
+    },
+    "A1.en": {
+      "nome": {
+        "topo": 95.2,
+        "fundo": 130.5,
+        "largura": 354,
+        "altura": 35.4
+      },
+      "manchete": {
+        "topo": 188.5,
+        "fundo": 314,
+        "largura": 354,
+        "altura": 125.5
+      },
+      "linhasDaManchete": 3,
+      "cartao": {
+        "topo": 379,
+        "fundo": 523.3,
+        "largura": 247.8,
+        "altura": 144.2
+      },
+      "selo": {
+        "topo": 491.7,
+        "fundo": 510.9,
+        "largura": 61,
+        "altura": 19.2
+      },
+      "porta": {
+        "topo": 322,
+        "fundo": 366,
+        "largura": 354,
+        "altura": 44
+      },
+      "cartoes": 5,
+      "cartoesDaCabeca": 5,
+      "semSelo": [],
+      "ecra": 664,
+      "altura": 3622,
+      "filaDosEstudos": 94,
+      "mobilia": 95.2,
+      "barra": {
+        "filas": 2,
+        "itens": 2,
+        "altura": 87.2
+      },
+      "leituras": {
+        "filas": 0,
+        "itens": 0,
+        "altura": 0
+      },
+      "linhasDaMancheteWebkit": 3
+    },
+    "A2.en": {
+      "altura": 3622,
+      "teto": 6984,
+      "tetoDaPartida": 6890,
+      "filaDosEstudos": 94
+    },
+    "A11.en": {
+      "acimaDoNome": 95.2,
+      "barra": {
+        "filas": 2,
+        "itens": 2,
+        "altura": 87.2
+      },
+      "leituras": {
+        "filas": 0,
+        "itens": 0,
+        "altura": 0
+      }
+    },
+    "A5.en.390": {
+      "repouso": {
+        "existe": true,
+        "largura": 1,
+        "altura": 1,
+        "caixa": 1,
+        "area": 0,
+        "forma": "absolute",
+        "recorte": "rect(0px,0px,0px,0px)"
+      },
+      "nomes": {
+        "total": 29,
+        "pequenos": [
+          {
+            "slug": "aveiro",
+            "w": 54.1,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "beja",
+            "w": 44,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "braga",
+            "w": 49.5,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "braganca",
+            "w": 72.9,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "castelo-branco",
+            "w": 108.5,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "coimbra",
+            "w": 67.7,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "evora",
+            "w": 48.8,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "faro",
+            "w": 44,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "guarda",
+            "w": 60.1,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "leiria",
+            "w": 49,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "lisboa",
+            "w": 54.2,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "portalegre",
+            "w": 79.8,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "porto",
+            "w": 47.3,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "santarem",
+            "w": 76.1,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "setubal",
+            "w": 61.4,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "viana-do-castelo",
+            "w": 118.9,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "vila-real",
+            "w": 67.8,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "viseu",
+            "w": 48.3,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-da-madeira",
+            "w": 112.1,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-porto-santo",
+            "w": 134.5,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-da-graciosa",
+            "w": 116,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-das-flores",
+            "w": 105.4,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-santa-maria",
+            "w": 136.4,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-sao-jorge",
+            "w": 119.2,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-sao-miguel",
+            "w": 130.3,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-do-corvo",
+            "w": 97.4,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-do-faial",
+            "w": 90.1,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-do-pico",
+            "w": 86.6,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-terceira",
+            "w": 93.3,
+            "h": 44,
+            "vis": false
+          }
+        ],
+        "invisiveis": 29
+      },
+      "foco": {
+        "existe": true,
+        "largura": 354,
+        "altura": 575.4,
+        "caixa": 203688,
+        "area": 203688,
+        "forma": "static",
+        "recorte": "auto",
+        "nomes": {
+          "total": 29,
+          "pequenos": [],
+          "invisiveis": 0
+        }
+      },
+      "marca": true
+    },
+    "A5.en.1280": {
+      "repouso": {
+        "existe": true,
+        "largura": 1,
+        "altura": 1,
+        "caixa": 1,
+        "area": 0,
+        "forma": "absolute",
+        "recorte": "rect(0px,0px,0px,0px)"
+      },
+      "nomes": {
+        "total": 29,
+        "pequenos": [
+          {
+            "slug": "aveiro",
+            "w": 51.1,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "beja",
+            "w": 44,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "braga",
+            "w": 46.8,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "braganca",
+            "w": 68.6,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "castelo-branco",
+            "w": 101.6,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "coimbra",
+            "w": 63.8,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "evora",
+            "w": 46.2,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "faro",
+            "w": 44,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "guarda",
+            "w": 56.7,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "leiria",
+            "w": 46.4,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "lisboa",
+            "w": 51.2,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "portalegre",
+            "w": 74.9,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "porto",
+            "w": 44.8,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "santarem",
+            "w": 71.5,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "setubal",
+            "w": 57.9,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "viana-do-castelo",
+            "w": 111.3,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "vila-real",
+            "w": 63.8,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "viseu",
+            "w": 45.7,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "ilha-da-madeira",
+            "w": 105,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-porto-santo",
+            "w": 125.7,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "ilha-da-graciosa",
+            "w": 108.6,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "ilha-das-flores",
+            "w": 98.7,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-santa-maria",
+            "w": 127.5,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-sao-jorge",
+            "w": 111.5,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-sao-miguel",
+            "w": 121.9,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "ilha-do-corvo",
+            "w": 91.3,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "ilha-do-faial",
+            "w": 84.5,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "ilha-do-pico",
+            "w": 81.3,
+            "h": 32,
+            "vis": false
+          },
+          {
+            "slug": "ilha-terceira",
+            "w": 87.5,
+            "h": 32,
+            "vis": false
+          }
+        ],
+        "invisiveis": 29
+      },
+      "marca": true
+    },
+    "A5.en.semMapa": {
+      "caixa": {
+        "existe": true,
+        "largura": 354,
+        "altura": 45,
+        "caixa": 15930,
+        "area": 15930,
+        "forma": "static",
+        "recorte": "auto"
+      },
+      "nomes": {
+        "total": 29,
+        "pequenos": [
+          {
+            "slug": "aveiro",
+            "w": 54.1,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "beja",
+            "w": 44,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "braga",
+            "w": 49.5,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "braganca",
+            "w": 72.9,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "castelo-branco",
+            "w": 108.5,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "coimbra",
+            "w": 67.7,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "evora",
+            "w": 48.8,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "faro",
+            "w": 44,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "guarda",
+            "w": 60.1,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "leiria",
+            "w": 49,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "lisboa",
+            "w": 54.2,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "portalegre",
+            "w": 79.8,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "porto",
+            "w": 47.3,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "santarem",
+            "w": 76.1,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "setubal",
+            "w": 61.4,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "viana-do-castelo",
+            "w": 118.9,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "vila-real",
+            "w": 67.8,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "viseu",
+            "w": 48.3,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-da-madeira",
+            "w": 112.1,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-porto-santo",
+            "w": 134.5,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-da-graciosa",
+            "w": 116,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-das-flores",
+            "w": 105.4,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-santa-maria",
+            "w": 136.4,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-sao-jorge",
+            "w": 119.2,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-de-sao-miguel",
+            "w": 130.3,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-do-corvo",
+            "w": 97.4,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-do-faial",
+            "w": 90.1,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-do-pico",
+            "w": 86.6,
+            "h": 44,
+            "vis": false
+          },
+          {
+            "slug": "ilha-terceira",
+            "w": 93.3,
+            "h": 44,
+            "vis": false
+          }
+        ],
+        "invisiveis": 29
+      },
+      "marca": false,
+      "gaveta": false,
+      "sumario": true
+    },
+    "A5.en.semGuiao": {
+      "existe": true,
+      "largura": 354,
+      "altura": 45,
+      "area": 15930,
+      "forma": "static",
+      "marca": false,
+      "gaveta": false,
+      "nomes": 29,
+      "sumario": true
+    },
+    "A22.en": {
+      "comMapa": {
+        "existe": true,
+        "lugarAVista": true,
+        "repousos": 2,
+        "aVista": 1,
+        "texto": [
+          "Portugal · 308 municipalities"
+        ]
+      },
+      "semMapa": {
+        "existe": true,
+        "lugarAVista": true,
+        "repousos": 2,
+        "aVista": 1,
+        "texto": [
+          "Portugal · 308 municipalities"
+        ]
+      },
+      "semGuiao": {
+        "existe": true,
+        "lugarAVista": true,
+        "repousos": 2,
+        "aVista": 1,
+        "texto": [
+          "Portugal · 308 municipalities"
+        ]
+      }
+    },
+    "A24.en": {
+      "portas": [
+        {
+          "etiqueta": "a",
+          "href": "/en/municipalities",
+          "altura": 161,
+          "ligacoesDentro": 0,
+          "texto": "Municipalities308→"
+        },
+        {
+          "etiqueta": "a",
+          "href": "/en/studies",
+          "altura": 161,
+          "ligacoesDentro": 0,
+          "texto": "Studies12→"
+        },
+        {
+          "etiqueta": "a",
+          "href": "/en/agenda",
+          "altura": 111,
+          "ligacoesDentro": 0,
+          "texto": "Agenda→"
+        }
+      ],
+      "maus": []
+    },
+    "A3.en": {
+      "total": 21,
+      "repetidos": []
+    },
+    "A4.en": {
+      "noDocumento": 14,
+      "frases": [
+        {
+          "painel": "pdm",
+          "texto": "A limited set of measures with which the European Commission captures the most relevant internal and external aspects of macroeconomic imbalances, each with its indicative threshold.",
+          "tem": true
+        },
+        {
+          "painel": "social",
+          "texto": "The scoreboard of key measures that supports the European Pillar of Social Rights, used to assess the employment and social performance of participating EU countries.",
+          "tem": true
+        }
+      ],
+      "declaradas": {
+        "pdm": "A limited set of measures with which the European Commission captures the most relevant internal and external aspects of macroeconomic imbalances, each with its indicative threshold.",
+        "social": "The scoreboard of key measures that supports the European Pillar of Social Rights, used to assess the employment and social performance of participating EU countries."
+      }
+    },
+    "A6.en": 0,
+    "A18.en": {
+      "nova": 1,
+      "antiga": 0
+    },
+    "A19.en": {
+      "etiquetas": [
+        0,
+        0,
+        0
+      ],
+      "antiga": 0,
+      "legendas": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "A21.en": {
+      "frases": [
+        0,
+        0
+      ],
+      "semGuiaoNoDocumento": 1,
+      "semGuiaoVisivel": 0,
+      "nomeDoCampo": 1
+    },
+    "A23.en": {
+      "linhas": 18,
+      "dentroDe": 0,
+      "eMais": 0,
+      "abertura": 1
+    },
+    "A25.en": {
+      "porRota": [
+        {
+          "rota": "/en/index.html",
+          "n": 0,
+          "esperado": 0
+        },
+        {
+          "rota": "/en/european-union/index.html",
+          "n": 1,
+          "esperado": 1
+        },
+        {
+          "rota": "/en/domains/economia-e-financas-publicas/index.html",
+          "n": 0,
+          "esperado": 0
+        },
+        {
+          "rota": "/en/municipalities/evora/index.html",
+          "n": 0,
+          "esperado": 0
+        },
+        {
+          "rota": "/en/areas/infraestruturas-e-habitacao/index.html",
+          "n": 0,
+          "esperado": 0
+        },
+        {
+          "rota": "/en/ledger/divida-publica-2025/index.html",
+          "n": 0,
+          "esperado": 0
+        }
+      ],
+      "referencia": 21
+    },
+    "A26.en": {
+      "naPagina": [
+        {
+          "slug": "economia-e-financas-publicas",
+          "n": 14
+        },
+        {
+          "slug": "trabalho",
+          "n": 10
+        },
+        {
+          "slug": "populacao",
+          "n": 0
+        },
+        {
+          "slug": "migracao",
+          "n": 0
+        },
+        {
+          "slug": "seguranca-social-e-pensoes",
+          "n": 2
+        },
+        {
+          "slug": "agua",
+          "n": 0
+        },
+        {
+          "slug": "educacao",
+          "n": 3
+        },
+        {
+          "slug": "saude",
+          "n": 1
+        },
+        {
+          "slug": "habitacao",
+          "n": 3
+        },
+        {
+          "slug": "investimento",
+          "n": 1
+        },
+        {
+          "slug": "ciencia-tecnologia-e-inteligencia-artificial",
+          "n": 1
+        },
+        {
+          "slug": "espaco",
+          "n": 0
+        },
+        {
+          "slug": "infraestruturas-e-ferrovia",
+          "n": 0
+        },
+        {
+          "slug": "ambiente-e-sustentabilidade",
+          "n": 0
+        },
+        {
+          "slug": "cultura",
+          "n": 0
+        },
+        {
+          "slug": "seguranca",
+          "n": 0
+        },
+        {
+          "slug": "justica",
+          "n": 1
+        },
+        {
+          "slug": "governo-e-democracia",
+          "n": 0
+        }
+      ],
+      "esperadas": {
+        "economia-e-financas-publicas": 14,
+        "trabalho": 10,
+        "seguranca-social-e-pensoes": 2,
+        "educacao": 3,
+        "saude": 1,
+        "habitacao": 3,
+        "investimento": 1,
+        "ciencia-tecnologia-e-inteligencia-artificial": 1,
+        "justica": 1
+      },
+      "desacordos": []
+    },
+    "A10.en": {
+      "cartoes": 0,
+      "pecas": 0,
+      "nCartoes": 21,
+      "nLeituras": 21
+    },
+    "A7.en": {
+      "total": 308,
+      "lagoas": [
+        "Lagoadistrict of Faro",
+        "LagoaIlha de São Miguel"
+      ]
+    },
+    "A12.en": {
+      "menu": [
+        "/en",
+        "/en/municipalities",
+        "/en/studies",
+        "/en/ledger",
+        "/en/regions",
+        "/en/districts",
+        "/en/domains",
+        "/en/areas",
+        "/en/european-union",
+        "/en/about",
+        "/en/method",
+        "/en/corrections",
+        "/en/agenda"
+      ],
+      "emFalta": []
+    },
+    "A8.en": {
+      "formularios": 1,
+      "action": "/en/municipalities",
+      "metodo": "get",
+      "destinoVivo": true
+    },
+    "A9.en": {
+      "toques": 2,
+      "dentroDoEcra": true,
+      "chegou": "/en/municipalities/evora",
+      "rendeOConcelho": true,
+      "cabeca": {
+        "lugar": "concelho",
+        "manchete": "Évora has 58 567 people.source · INE"
+      },
+      "semGuiao": {
+        "caminho": "/en/municipalities",
+        "query": "?concelho=%C3%89vora",
+        "titulo": "Municipalities · O Estado do País",
+        "nomes": 308,
+        "portaDoConcelho": 1,
+        "frase": 103
+      },
+      "filtro": {
+        "entradas": 5,
+        "visiveis": 5,
+        "casam": 5,
+        "portaDaVolta": true
+      },
+      "filtroSemGuiao": {
+        "entradas": 5,
+        "escondidas": 0,
+        "frase": 46
+      }
+    },
+    "A13.en": {
+      "cartoes": [
+        {
+          "id": "divida-publica-2025",
+          "href": "#m-divida-publica-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "posicao-de-investimento-internacional-2025",
+          "href": "#m-posicao-de-investimento-internacional-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "custo-unitario-do-trabalho-2025",
+          "href": "#m-custo-unitario-do-trabalho-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "precos-da-habitacao-2025",
+          "href": "#m-precos-da-habitacao-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "desempenho-das-exportacoes-2025",
+          "href": "#m-desempenho-das-exportacoes-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "divida-das-empresas-2025",
+          "href": "#m-divida-das-empresas-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "divida-das-familias-2025",
+          "href": "#m-divida-das-familias-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "fluxo-de-credito-as-empresas-2025",
+          "href": "#m-fluxo-de-credito-as-empresas-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "fluxo-de-credito-as-familias-2025",
+          "href": "#m-fluxo-de-credito-as-familias-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "saldo-da-balanca-corrente-2025",
+          "href": "#m-saldo-da-balanca-corrente-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "taxa-de-actividade-2025",
+          "href": "#m-taxa-de-actividade-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "taxa-de-cambio-efectiva-real-2025",
+          "href": "#m-taxa-de-cambio-efectiva-real-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "taxa-de-desemprego-mip-2025",
+          "href": "#m-taxa-de-desemprego-mip-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "taxa-de-emprego-2025",
+          "href": "#m-taxa-de-emprego-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "taxa-de-desemprego-2025",
+          "href": "#m-taxa-de-desemprego-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "desemprego-de-longa-duracao-2025",
+          "href": "#m-desemprego-de-longa-duracao-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "jovens-nem-2025",
+          "href": "#m-jovens-nem-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "abandono-escolar-precoce-2025",
+          "href": "#m-abandono-escolar-precoce-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "risco-de-pobreza-ou-exclusao-2025",
+          "href": "#m-risco-de-pobreza-ou-exclusao-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "racio-s80-s20-2025",
+          "href": "#m-racio-s80-s20-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        },
+        {
+          "id": "sobrecarga-do-custo-da-habitacao-2025",
+          "href": "#m-sobrecarga-do-custo-da-habitacao-2025",
+          "rotulo": null,
+          "ancoraLocal": true
+        }
+      ],
+      "portasDasLeituras": {
+        "divida-publica-2025": "/en/domains/economia-e-financas-publicas#m-e3",
+        "posicao-de-investimento-internacional-2025": null,
+        "custo-unitario-do-trabalho-2025": null,
+        "precos-da-habitacao-2025": null,
+        "desempenho-das-exportacoes-2025": null,
+        "divida-das-empresas-2025": null,
+        "divida-das-familias-2025": null,
+        "fluxo-de-credito-as-empresas-2025": null,
+        "fluxo-de-credito-as-familias-2025": null,
+        "saldo-da-balanca-corrente-2025": null,
+        "taxa-de-actividade-2025": null,
+        "taxa-de-cambio-efectiva-real-2025": null,
+        "taxa-de-desemprego-mip-2025": null,
+        "taxa-de-emprego-2025": "/en/domains/economia-e-financas-publicas#m-t1",
+        "taxa-de-desemprego-2025": "/en/domains/economia-e-financas-publicas#m-t2",
+        "desemprego-de-longa-duracao-2025": null,
+        "jovens-nem-2025": null,
+        "abandono-escolar-precoce-2025": null,
+        "risco-de-pobreza-ou-exclusao-2025": null,
+        "racio-s80-s20-2025": null,
+        "sobrecarga-do-custo-da-habitacao-2025": null
+      },
+      "errados": [],
+      "comPorta": 3
+    },
+    "A14.en": {
+      "menu": [
+        {
+          "href": "/en",
+          "texto": "Home",
+          "visivel": true
+        },
+        {
+          "href": "/en/municipalities",
+          "texto": "Municipalities",
+          "visivel": true
+        },
+        {
+          "href": "/en/studies",
+          "texto": "Studies",
+          "visivel": true
+        },
+        {
+          "href": "/en/ledger",
+          "texto": "Numbers and sources",
+          "visivel": true
+        },
+        {
+          "href": "/en/regions",
+          "texto": "Regions",
+          "visivel": true
+        },
+        {
+          "href": "/en/districts",
+          "texto": "Districts",
+          "visivel": true
+        },
+        {
+          "href": "/en/domains",
+          "texto": "Domains",
+          "visivel": true
+        },
+        {
+          "href": "/en/areas",
+          "texto": "Government areas",
+          "visivel": true
+        },
+        {
+          "href": "/en/european-union",
+          "texto": "Portugal in the European Union",
+          "visivel": true
+        },
+        {
+          "href": "/en/about",
+          "texto": "About",
+          "visivel": true
+        },
+        {
+          "href": "/en/method",
+          "texto": "Method",
+          "visivel": true
+        },
+        {
+          "href": "/en/corrections",
+          "texto": "Corrections",
+          "visivel": true
+        },
+        {
+          "href": "/en/agenda",
+          "texto": "Agenda",
+          "visivel": true
+        }
+      ],
+      "temDominios": true,
+      "respostaDoIndice": 200,
+      "palavraEsperada": "Domains",
+      "palavra": "Domains",
+      "palavraAVista": true
+    },
+    "A20.en": {
+      "naFaixa": [
+        "Government debt",
+        "General government balance",
+        "Employment rate",
+        "Unemployment rate",
+        "Average monthly earnings"
+      ],
+      "porRota": {
+        "/en": {
+          "selados": 0,
+          "linhas": [
+            {
+              "slug": "economia-e-financas-publicas",
+              "estado": "14 measures",
+              "total": 14,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "trabalho",
+              "estado": "10 measures",
+              "total": 10,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "populacao",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "migracao",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "seguranca-social-e-pensoes",
+              "estado": "2 measures",
+              "total": 2,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "agua",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "educacao",
+              "estado": "3 measures",
+              "total": 3,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "saude",
+              "estado": "1 measure",
+              "total": 1,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "habitacao",
+              "estado": "3 measures",
+              "total": 3,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "investimento",
+              "estado": "1 measure",
+              "total": 1,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "ciencia-tecnologia-e-inteligencia-artificial",
+              "estado": "1 measure",
+              "total": 1,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "espaco",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "infraestruturas-e-ferrovia",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "ambiente-e-sustentabilidade",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "cultura",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "seguranca",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "justica",
+              "estado": "1 measure",
+              "total": 1,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "governo-e-democracia",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            }
+          ]
+        },
+        "/en/domains": {
+          "selados": 0,
+          "linhas": [
+            {
+              "slug": "economia-e-financas-publicas",
+              "estado": "14 measures",
+              "total": 14,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "trabalho",
+              "estado": "10 measures",
+              "total": 10,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "populacao",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "migracao",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "seguranca-social-e-pensoes",
+              "estado": "2 measures",
+              "total": 2,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "agua",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "educacao",
+              "estado": "3 measures",
+              "total": 3,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "saude",
+              "estado": "1 measure",
+              "total": 1,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "habitacao",
+              "estado": "3 measures",
+              "total": 3,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "investimento",
+              "estado": "1 measure",
+              "total": 1,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "ciencia-tecnologia-e-inteligencia-artificial",
+              "estado": "1 measure",
+              "total": 1,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "espaco",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "infraestruturas-e-ferrovia",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "ambiente-e-sustentabilidade",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "cultura",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "seguranca",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "justica",
+              "estado": "1 measure",
+              "total": 1,
+              "numeralDaCauda": null,
+              "nomes": []
+            },
+            {
+              "slug": "governo-e-democracia",
+              "estado": "",
+              "total": null,
+              "numeralDaCauda": null,
+              "nomes": []
+            }
+          ]
+        }
+      },
+      "queixas": []
+    },
+    "A15.en": {
+      "portas": [
+        {
+          "dentroDeGavetaFechada": false,
+          "topo": 60,
+          "altura": 44,
+          "largura": 53.4
+        },
+        {
+          "dentroDeGavetaFechada": false,
+          "topo": 549.1,
+          "altura": 44,
+          "largura": 354
+        },
+        {
+          "dentroDeGavetaFechada": false,
+          "topo": 2810.3,
+          "altura": 161,
+          "largura": 354
+        },
+        {
+          "dentroDeGavetaFechada": false,
+          "topo": 3286.5,
+          "altura": 44,
+          "largura": 59.3
+        }
+      ],
+      "alcancaveis": 4,
+      "topo": 60,
+      "ecras": 0.09,
+      "chegouAoArquivo": "/en/studies"
+    },
+    "A16.en": {
+      "manchetes": [
+        {
+          "camada": "pais",
+          "rota": "/en",
+          "nomeChromium": "Government debt is 89,7 % of GDP and the unemployment rate is 6 % of the labour force.",
+          "frase": "Government debt is 89,7% of GDP and the unemployment rate is 6% of the labour force.",
+          "valores": 2,
+          "selos": 2,
+          "queixas": [],
+          "nomeWebkit": "Government debt is 89,7 % of GDP and the unemployment rate is 6 % of the labour force."
+        },
+        {
+          "camada": "dominio",
+          "rota": "/en/domains/economia-e-financas-publicas",
+          "nomeChromium": "Government debt is 89,7 % of GDP, above the reference value of 60 %; the general government balance is 0,7 % of GDP, above the reference value of − 3 %.",
+          "frase": "Government debt is 89,7% of GDP, above the reference value of 60%; the general government balance is 0,7% of GDP, above the reference value of −3%.",
+          "valores": 2,
+          "selos": 2,
+          "queixas": [],
+          "nomeWebkit": "Government debt is 89,7 % of GDP, above the reference value of 60 %; the general government balance is 0,7 % of GDP, above the reference value of − 3 %."
+        },
+        {
+          "camada": "regiao",
+          "rota": "/en/regions/alentejo",
+          "nomeChromium": "The Alentejo is 23 points below the EU-27 average. In 2000 it was 22 points away: the gap has widened.",
+          "frase": "The Alentejo is 23 points below the EU-27 average. In 2000 it was 22 points away: the gap has widened.",
+          "valores": 2,
+          "selos": 2,
+          "queixas": [],
+          "nomeWebkit": "The Alentejo is 23 points below the EU-27 average. In 2000 it was 22 points away: the gap has widened."
+        },
+        {
+          "camada": "concelho",
+          "rota": "/en/municipalities/evora",
+          "nomeChromium": "Évora has 58 567 people.",
+          "frase": "Évora has 58 567 people.",
+          "valores": 1,
+          "selos": 1,
+          "queixas": [],
+          "nomeWebkit": "Évora has 58 567 people."
+        }
+      ]
+    },
+    "A17.en": {
+      "faixas": [
+        {
+          "camada": "pais",
+          "rota": "/en",
+          "faixas": [
+            5
+          ],
+          "queixas": []
+        },
+        {
+          "camada": "dominio",
+          "rota": "/en/domains/economia-e-financas-publicas",
+          "faixas": [
+            10
+          ],
+          "queixas": []
+        },
+        {
+          "camada": "regiao",
+          "rota": "/en/regions/alentejo",
+          "faixas": [],
+          "queixas": []
+        },
+        {
+          "camada": "concelho",
+          "rota": "/en/municipalities/evora",
+          "faixas": [
+            8
+          ],
+          "queixas": []
+        }
+      ]
+    }
+  },
+  "plantasOk": null
+}

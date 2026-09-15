@@ -1,0 +1,46 @@
+
+  AS CONTAGENS DO P1 · ../../../../../../../private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/p1/dist-antes
+  7240 página(s) construída(s) · 7240 com um rótulo de IA
+
+  item 1 · rótulo novo · pt                         0 ocorrência(s) em     0 página(s)
+  item 1 · rótulo novo · en                         0 ocorrência(s) em     0 página(s)
+  item 1 · rótulo antigo · pt                    3630 ocorrência(s) em  3624 página(s)  [/404.html×1, /a-verificar×1, /agenda×1, /areas/administracao-interna×1, …]
+  item 1 · rótulo antigo · en                    3618 ocorrência(s) em  3616 página(s)  [/en/404×1, /en/about×1, /en/agenda×1, /en/areas/administracao-interna×1, …]
+  item 1 · «política da casa»                    3632 ocorrência(s) em  3623 página(s)  [/404.html×1, /a-verificar×1, /agenda×1, /areas/administracao-interna×1, …]
+  item 1 · «the house policy»                    3618 ocorrência(s) em  3616 página(s)  [/en/404×1, /en/about×1, /en/agenda×1, /en/areas/administracao-interna×1, …]
+  item 1 · «regras da casa»                         1 ocorrência(s) em     1 página(s)  [/metodo×1]
+  item 1 · «the house rules»                        0 ocorrência(s) em     0 página(s)
+  item 1 · «Nuno dos Santos»                     7251 ocorrência(s) em  7239 página(s)  [/404.html×1, /a-verificar×1, /agenda×1, /areas/administracao-interna×1, …]
+  item 2 · «Diretor:»                               1 ocorrência(s) em     1 página(s)  [/×1]
+  item 2 · «Director:»                              1 ocorrência(s) em     1 página(s)  [/en×1]
+  item 2 · «Publicação gratuita»                    1 ocorrência(s) em     1 página(s)  [/×1]
+  item 2 · «Free of charge»                         1 ocorrência(s) em     1 página(s)  [/en×1]
+  item 3 · a frase do Sobre · pt                    0 ocorrência(s) em     0 página(s)
+  item 3 · a frase do Sobre · en                    0 ocorrência(s) em     0 página(s)
+  item 3 · «responsável editorial»               3629 ocorrência(s) em  3623 página(s)  [/404.html×1, /a-verificar×1, /agenda×1, /areas/administracao-interna×1, …]
+  item 3 · «editorial responsibility»            3620 ocorrência(s) em  3616 página(s)  [/en/404×1, /en/about×2, /en/agenda×1, /en/areas/administracao-interna×1, …]
+  item 4 · «Escreva o nome do concelho»             2 ocorrência(s) em     2 página(s)  [/×1, /municipios×1]
+  item 4 · «Type the name of»                       2 ocorrência(s) em     2 página(s)  [/en×1, /en/municipalities×1]
+  item 4 · «Sem guião, o botão»                     0 ocorrência(s) em     0 página(s)
+  item 4 · «Without scripting, the button»          0 ocorrência(s) em     0 página(s)
+  item 5 · «Toque num distrito ou numa ilha»        0 ocorrência(s) em     0 página(s)
+  item 5 · «Passe o rato»                           3 ocorrência(s) em     1 página(s)  [/estudos/onde-esta-a-agua/documento×3]
+  item 5 · «Tap a district or island»               0 ocorrência(s) em     0 página(s)
+  item 5 · «Hover over»                             0 ocorrência(s) em     0 página(s)
+  item 6 · «incluído em»                            2 ocorrência(s) em     2 página(s)  [/dominios×1, /×1]
+  item 6 · «included in»                            2 ocorrência(s) em     2 página(s)  [/en/domains×1, /en×1]
+  item 6 · «e mais» (índice)                        2 ocorrência(s) em     2 página(s)  [/dominios×1, /×1]
+  item 6 · «more» (índice)                          2 ocorrência(s) em     2 página(s)  [/en/domains×1, /en×1]
+  item 7 · «Todos os» (portas)                      2 ocorrência(s) em     1 página(s)  [/×2]
+  item 7 · «Toda a» (portas)                        1 ocorrência(s) em     1 página(s)  [/×1]
+  item 7 · «em curso» (portas)                      1 ocorrência(s) em     1 página(s)  [/×1]
+  item 7 · «edições» (portas)                       1 ocorrência(s) em     1 página(s)  [/×1]
+  item 7 · «All» (portas)                           2 ocorrência(s) em     1 página(s)  [/en×2]
+  item 7 · «The whole» (portas)                     1 ocorrência(s) em     1 página(s)  [/en×1]
+  item 7 · «in progress» (portas)                   0 ocorrência(s) em     0 página(s)
+  item 7 · «editions» (portas)                      1 ocorrência(s) em     1 página(s)  [/en×1]
+  item 8 · «limiar»                              2261 ocorrência(s) em   326 página(s)  [/agenda×6, /dominios/economia-e-financas-publicas×21, /estudos/agua-nao-faturada/documento×4, /estudos/evora-quinze-anos-cinco-mandatos/documento×1, …]
+  item 8 · «threshold»                           2258 ocorrência(s) em   326 página(s)  [/agenda×1, /en/agenda×6, /en/domains/economia-e-financas-publicas×21, /en/european-union×56, …]
+  item 8 · «valor de referência»                   14 ocorrência(s) em     2 página(s)  [/dominios/economia-e-financas-publicas×1, /uniao-europeia×13]
+  item 8 · «reference value»                       14 ocorrência(s) em     2 página(s)  [/en/domains/economia-e-financas-publicas×1, /en/european-union×13]
+
