@@ -3036,23 +3036,24 @@ a.badge-porta:hover {
   display: grid;
   border-top: 1px solid var(--rule);
 }
-/* Uma entrada: o valor à esquerda, e à direita o id com a sua mobília — a
-   unidade e o selo na mesma linha. A unidade não fica debaixo do valor porque
-   há unidades de cinco palavras («% do stock no final do período anterior») e
-   uma coluna estreita transformava-as em cinco linhas de altura. */
-.livro-item {
-  display: grid;
-  grid-template-columns: minmax(0, 9ch) minmax(0, 1fr);
-  gap: 4px 18px;
-  align-items: baseline;
-  padding: 11px 0;
-  border-bottom: 1px solid var(--rule);
-}
-@media (max-width: 620px) {
-  .livro-item {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
+/* ---------------------------------------------------------------------------
+ * `.livro-item` SAIU DAQUI, E FOI PARA `linha.css` (15.09.2026, achado 10 da
+ * leitura a frio do Codex ao F1.13)
+ * ---------------------------------------------------------------------------
+ * A regra estava escrita nas DUAS folhas, com a mesma especificidade e com
+ * `grid-template-columns` diferente (9ch aqui, 22ch em `linha.css`), e por isso
+ * quem decidia a composição era a ORDEM por que o empacotador punha as duas
+ * folhas na página. Essa ordem não está escrita em lado nenhum: era emergente do
+ * grafo de módulos, e mudava com um componente novo partilhado. O F1.13 mudou-a
+ * sem querer em 18 páginas, e a leitura a frio apanhou-o.
+ *
+ * A DECISÃO DO LUGAR DE DIREÇÃO é manter o estado novo, que é o que o índice dos
+ * números e fontes já tinha, e escrevê-lo UMA VEZ, de propósito, no sítio que
+ * serve a família que tem o elemento. Medido antes de mover: das 638 páginas que
+ * rendem um `.livro-item`, 638 carregam `linha.css` e nenhuma o dispensa. A
+ * regra inteira vive agora lá, com as propriedades que só aqui estavam, e a
+ * ordem das folhas deixou de decidir coisa nenhuma sobre ela.
+ * ------------------------------------------------------------------------- */
 .livro-item-num {
   font-size: 17px;
 }
