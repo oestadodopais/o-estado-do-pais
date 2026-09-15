@@ -68,6 +68,7 @@
  */
 import Base from '../layouts/Base.astro';
 import ItemDoLivro from '../components/ItemDoLivro.astro';
+import LegendaDaMarca from '../components/LegendaDaMarca.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import { areaDoSlug, nomeDoEstudo, temTexto } from '../lib/areas.mjs';
 import { LEI_ORGANICA } from '../data/areas.mjs';
@@ -231,18 +232,13 @@ const portaLegal = [LEI_ORGANICA.diplomaCurto, ...area.pecas.artigos].join(' · 
       </div>
     </div>
 
-    <aside class="aparelho" aria-labelledby="aparelho">
-      <h2 class="aparelho-titulo" id="aparelho">{s.livro.seloK}</h2>
-      <ul class="aparelho-selos">
-        <li>
-          <span class="src-chip src-chip-amostra" aria-hidden="true"></span>
-          <span>{s.livro.seloCheio}</span>
-        </li>
-        <li>
-          <span class="src-chip src-chip-amostra is-unverified" aria-hidden="true"></span>
-          <span>{s.livro.seloTracejado}</span>
-        </li>
-      </ul>
+    {/* O TÍTULO DE APARELHO SAIU COM A LISTA DOS DOIS ESTADOS (F1.13, item 5,
+        15.09.2026), e com ele o `aria-labelledby` que apontava para ele: um
+        `aria-labelledby` sem alvo não nomeia nada. A coluna fica um marco
+        complementar sem nome, que é o que ela é: a página tem um só, e por isso
+        quem percorre os marcos não tem dois iguais para desfazer. */}
+    <aside class="aparelho">
+      <LegendaDaMarca s={s} />
 
       <p class="rodape-nav aparelho-saidas">
         <a href={routePath('areas', lang)}>{s.areas.voltarIndice}</a>

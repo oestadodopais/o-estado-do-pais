@@ -2982,24 +2982,32 @@ a.badge-porta:hover {
   padding: 1px 5px;
   border: 1px solid var(--rule);
 }
-.aparelho-selos {
-  list-style: none;
+/* ---------------------------------------------------------------------------
+ * A LEGENDA DA MARCA DA FONTE (F1.13, item 5, 15.09.2026)
+ * ---------------------------------------------------------------------------
+ * `.aparelho-selos` era a lista de dois itens da legenda antiga, cada um com o
+ * seu quadrado numa coluna de 14 px e o nome do estado na outra. A legenda passou
+ * a ser uma linha em palavras com as duas amostras DENTRO da frase, e por isso a
+ * grelha saiu: o que fica é um parágrafo de aparelho, no corpo e na cor da
+ * mobília, com as amostras a correr no meio do texto.
+ *
+ * `vertical-align` E NÃO `padding-top`: o quadrado da amostra vem do `::before`
+ * do selo, e dentro de uma linha de texto ele assenta na linha de base. Meio
+ * ponto acima é onde ele fica à altura do olho das minúsculas que o rodeiam.
+ * ------------------------------------------------------------------------- */
+.marca-legenda {
   margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 10px;
-}
-.aparelho-selos li {
-  display: grid;
-  grid-template-columns: 14px 1fr;
-  gap: 10px;
-  align-items: start;
   font-size: 13px;
-  line-height: 1.5;
+  line-height: 1.6;
   color: var(--muted);
 }
-.aparelho-selos .src-chip-amostra {
-  padding-top: 4px;
+.marca-legenda .src-chip-amostra {
+  vertical-align: -0.5px;
+}
+/* A legenda fora da coluna do aparelho (a lista dos concelhos do livro-razão):
+   é a mesma linha, com o ar que a separa do que vem antes dela. */
+.marca-legenda-solta {
+  margin-top: clamp(30px, 4vw, 44px);
 }
 .aparelho-saidas {
   display: grid;

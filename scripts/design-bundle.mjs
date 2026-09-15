@@ -1321,7 +1321,11 @@ ${tabelaTipos}
 
 /* ------------------------------------------------- 03. Selo e marcador */
 {
-  const legenda = peca('livro-razao/index.html', 'ul.aparelho-selos');
+  /* A LEGENDA MUDOU DE FORMA A 15.09.2026 (F1.13, item 5): era `ul.aparelho-selos`,
+     um título de aparelho com dois itens, e passou a `p.marca-legenda`, uma linha
+     em palavras com as duas amostras desenhadas dentro da frase. O cartão lê a
+     forma nova, do mesmo sítio. */
+  const legenda = peca('livro-razao/index.html', 'p.marca-legenda');
   /* O selo a tracejado lê-se da primeira página onde ele existir, e a nota do
      cartão diz de onde veio. A ordem é a das páginas mais prováveis. */
   const candidatas = ['index.html', 'livro-razao/index.html', 'correcoes/index.html', 'municipios/evora/index.html'];
@@ -1391,9 +1395,9 @@ ${tabelaTipos}
   </section>
 
   <section class="ds-bloco">
-    <h2>O selo, e os seus dois estados</h2>
+    <h2>A marca da fonte, e os seus dois estados</h2>
     <div class="ds-mostra">${legenda}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/livro-razao/index.html</code> · a amostra dos dois estados, na coluna do aparelho do índice. Ali o selo é só o quadrado, e as palavras são as da casa: «${escapa(PT.livro.seloCheio)}» e «${escapa(PT.livro.seloTracejado)}» (EN: «${escapa(EN.livro.seloCheio)}», «${escapa(EN.livro.seloTracejado)}»).</p>
+    <p class="ds-nota"><code class="ds-mono">dist/livro-razao/index.html</code> · a legenda da marca, na coluna do aparelho do índice. Desde 15.09.2026 (F1.13, item 5) é uma linha em palavras com as duas amostras desenhadas dentro da frase, e a marca chama-se «a marca da fonte» em toda a prosa que o leitor vê: «${escapa(PT.livro.marcaAbre)} ▣ ${escapa(PT.livro.marcaCheia)} · ▢ ${escapa(PT.livro.marcaPorConfirmar)}» (EN: «${escapa(EN.livro.marcaAbre)} ▣ ${escapa(EN.livro.marcaCheia)} · ▢ ${escapa(EN.livro.marcaPorConfirmar)}»).</p>
     <div class="ds-mostra">${seloIncompleto}</div>
     <p class="ds-nota"><code class="ds-mono">dist/${ondeIncompleto}</code> · o estado a tracejado em uso, com o marcador dentro do selo a dizer o que falta.</p>
     ${citar(REGRA('**O selo é sempre uma ligação**'))}

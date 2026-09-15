@@ -331,7 +331,67 @@ const VOCABULARIO = [
   { palavra: 'Arquivo', porque: 'os estudos chamam-se «estudos» (§7.4 do F1.10)' },
   { palavra: 'arquivos', porque: 'os estudos chamam-se «estudos» (§7.4 do F1.10)' },
   { palavra: 'Arquivos', porque: 'os estudos chamam-se «estudos» (§7.4 do F1.10)' },
+  /* «SELO» ENTRA A 15.09.2026, com o item 5 do F1.13. O diretor leu a legenda na
+     página de uma área («Os dois estados do selo») e disse o que ela é para quem
+     não trabalha aqui: um selo de correio. A marca passa a chamar-se «a marca da
+     fonte» em toda a prosa que o leitor vê, e a régua passa a contar a palavra
+     antiga a zero.
+
+     AS QUATRO FORMAS, E NÃO A FRASE INTEIRA. O item nomeia «selo» e «estados do
+     selo»; a segunda contém a primeira, e `contaPalavra()` conta palavras
+     inteiras, por isso «selo» a zero põe «estados do selo» a zero por
+     construção. Declarar as duas faria a régua contar duas vezes a mesma
+     ocorrência, e um número que conta duas vezes o mesmo já não é uma medição.
+
+     AS FORMAS INGLESAS ENTRAM, ao contrário de «município» (ver a nota do
+     cabeçalho desta lista): a decisão do item 5 fecha a palavra NAS DUAS
+     EDIÇÕES, e «the source mark» é a cadeia que o brief escreve para a inglesa.
+
+     O MÉTODO FICA DE FORA DA CONTA, e não em silêncio: é ele que carrega a única
+     ocorrência que resta em todo o sítio, a ponte «a marca da fonte, o selo no
+     vocabulário da casa», e essa ocorrência é o POSITIVO CONHECIDO desta medida.
+     A régua conta-a à parte e exige-a. */
+  { palavra: 'selo', porque: 'a marca de proveniência chama-se «a marca da fonte» (F1.13, item 5)' },
+  { palavra: 'Selo', porque: 'a marca de proveniência chama-se «a marca da fonte» (F1.13, item 5)' },
+  { palavra: 'selos', porque: 'a marca de proveniência chama-se «a marca da fonte» (F1.13, item 5)' },
+  { palavra: 'Selos', porque: 'a marca de proveniência chama-se «a marca da fonte» (F1.13, item 5)' },
+  { palavra: 'seal', porque: 'a marca de proveniência chama-se «the source mark» (F1.13, item 5)' },
+  { palavra: 'Seal', porque: 'a marca de proveniência chama-se «the source mark» (F1.13, item 5)' },
+  { palavra: 'seals', porque: 'a marca de proveniência chama-se «the source mark» (F1.13, item 5)' },
+  { palavra: 'Seals', porque: 'a marca de proveniência chama-se «the source mark» (F1.13, item 5)' },
 ];
+
+/**
+ * A PALAVRA DA MARCA NO MÉTODO, QUE É O POSITIVO CONHECIDO (F1.13, item 5)
+ * ---------------------------------------------------------------------------
+ * O item 5 escreve que «o Método pode dizer uma vez "a marca da fonte, o selo no
+ * vocabulário da casa"», e a medida P9 conta a palavra a zero nas páginas do
+ * leitor FORA do Método. A régua faz as duas coisas: tira a rota do Método da
+ * conta da L3 e conta ali a palavra à parte.
+ *
+ * E O NÚMERO DO MÉTODO É UM CHÃO E NÃO UM NÚMERO EXACTO, com a razão escrita: a
+ * regra 5 do Método é TEXTO GOVERNADO (`DECISIONS.md` §1.106 carimba o sha de
+ * `src/data/metodo.mjs`, e a `IDENTIDADE.md` §5 cita-a palavra por palavra). A
+ * passagem que lhe troca o nome da marca precisa de uma entrada nova na
+ * `DECISIONS.md` e de uma emenda à constituição, e nenhuma das duas é deste
+ * bloco: o construtor do F1.13 não toca na `DECISIONS.md`. Enquanto essa
+ * passagem não se fizer, o Método diz «selo» seis vezes por edição; o que esta
+ * régua exige é que diga PELO MENOS uma, porque é essa ocorrência que prova que
+ * ela ainda sabe ver a palavra.
+ *
+ * SEM ESTE CHÃO, O ZERO DAS OUTRAS ROTAS TEM DUAS EXPLICAÇÕES (a palavra saiu,
+ * ou a leitura do texto da casa partiu-se), e só uma delas é boa. É a regra 14
+ * da casa: um detetor que nunca viu um positivo é uma contagem de zero sem
+ * valor.
+ */
+const PALAVRA_DA_MARCA_NO_METODO = { pt: 'selo', en: 'seal' };
+/** A razão que marca as palavras da marca na lista de cima, para que a dispensa
+    da rota do Método saia DELA e não de uma segunda lista escrita à mão: uma
+    forma nova ali entra aqui sozinha. */
+const RAZAO_DA_MARCA = /a marca de proveniência chama-se/;
+const PALAVRAS_DA_MARCA = new Set(
+  VOCABULARIO.filter((v) => RAZAO_DA_MARCA.test(v.porque)).map((v) => v.palavra),
+);
 
 /* ---------------------------------------------------------------------------
  * OS RÓTULOS QUE SAÍRAM DAS PÁGINAS DE ESTUDO (§7.4 e item 8.6, 09.09.2026)
@@ -690,6 +750,10 @@ const vistas = { estudo: 0, texto: 0, indice: 0, edicoes: 0, linhas: 0 };
 let definicoesVistas = 0;
 /** Quantas origens de definição a régua viu (a mesma regra 14). */
 let origensVistas = 0;
+/** Quantas vezes o Método diz a ponte «o selo no vocabulário da casa» (F1.13,
+    item 5): o positivo conhecido da palavra que a L3 conta a zero em todas as
+    outras rotas. Uma por edição, e a régua exige-o. */
+let ponteDoMetodo = 0;
 /** As amostras de cada medida, para que um número tenha sempre um sítio. */
 const amostras = Object.fromEntries(Object.keys(medidas).map((k) => [k, []]));
 /** Quantas vezes cada exceção foi usada: uma exceção a zero é uma porta esquecida. */
@@ -967,8 +1031,20 @@ for (const ficheiro of paginas) {
     const cabeca = textoDaCabeca(raiz, rota);
     const blocos = cabeca ? [cabeca, ...blocosDaCasa(raiz)] : blocosDaCasa(raiz);
     const texto = `${cabeca} ${textoDaCasa(raiz)}`;
+    /* A PALAVRA DA MARCA NO MÉTODO, CONTADA ONDE ELA VIVE (F1.13, item 5,
+       15.09.2026). É a rota que o item 5 põe fora da conta, e é a única do sítio
+       onde a palavra fica: contá-la aqui é o que prova que a régua ainda sabe
+       vê-la. A asserção do fim do ficheiro exige o chão, e a razão de ser um
+       chão e não um número exacto está escrita ao pé da constante. */
+    if (chaveDaRota === 'metodo') {
+      ponteDoMetodo += contaPalavra(texto, PALAVRA_DA_MARCA_NO_METODO[lang]);
+    }
     for (const { palavra } of VOCABULARIO) {
       if (!texto.includes(palavra)) continue;
+      /* O MÉTODO SAI DA CONTA DAS PALAVRAS DA MARCA, e só dessas: é a rota que o
+         item 5 nomeia («a zero nas páginas do leitor FORA do Método»). Continua
+         inteiro na conta de «município», de «indicador» e das outras. */
+      if (chaveDaRota === 'metodo' && PALAVRAS_DA_MARCA.has(palavra)) continue;
       /* Conta por bloco, para que uma exceção possa dispensar o bloco dela. */
       let n = 0;
       for (const b of blocos) {
@@ -1635,6 +1711,22 @@ if (definicoesVistas !== DEFINICOES_ESPERADAS) {
       `comparação sobre uma coleção vazia não prova nada.`,
   );
 }
+/* O POSITIVO CONHECIDO DAS PALAVRAS DA MARCA (F1.13, item 5, 15.09.2026). */
+const MARCA_NO_METODO_MINIMO = LANGS.length;
+console.log(
+  `  item 5, o que a régua leu: ${ponteDoMetodo} ocorrência(s) de «${PALAVRA_DA_MARCA_NO_METODO.pt}»/` +
+    `«${PALAVRA_DA_MARCA_NO_METODO.en}» no Método (chão ${MARCA_NO_METODO_MINIMO}, uma por edição; ` +
+    `a rota do Método está fora da conta da L3, pela medida P9 do brief)`,
+);
+if (ponteDoMetodo < MARCA_NO_METODO_MINIMO) {
+  falhas.push(
+    `item 5 · a régua viu ${ponteDoMetodo} ocorrência(s) de «${PALAVRA_DA_MARCA_NO_METODO.pt}»/` +
+      `«${PALAVRA_DA_MARCA_NO_METODO.en}» no Método, e o chão é ${MARCA_NO_METODO_MINIMO}, uma por ` +
+      `edição. É o positivo conhecido da medida: sem ele, o zero das outras rotas não prova que a ` +
+      `palavra saiu do sítio, só que esta régua deixou de a saber ver.`,
+  );
+}
+
 if (origensVistas !== ORIGENS_ESPERADAS) {
   falhas.push(
     `8.4 · a régua viu ${origensVistas} origem(ns) de definição em dist/, e esperava ` +

@@ -36,6 +36,7 @@ import Base from '../layouts/Base.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
 import Pesquisa from '../components/inicio/Pesquisa.astro';
 import ItemDoLivro from '../components/ItemDoLivro.astro';
+import LegendaDaMarca from '../components/LegendaDaMarca.astro';
 import { linhasDosConcelhos, ESTUDO_DOS_CONCELHOS } from '../lib/livro-concelhos.mjs';
 import { concelhos as concelhosDaCarta, coberturaDistingue } from '../lib/inicio.mjs';
 import { MUNICIPIOS, DISTRITOS } from '../data/caop-centroids.mjs';
@@ -188,17 +189,13 @@ const distingue = coberturaDistingue(resultados);
     </div>
   )}
 
-  <div class="prov" style="margin-top:clamp(30px,4vw,44px)">
-    <div class="prov-row">
-      <span class="prov-study">{s.livro.seloK}</span>
-      <span class="prov-vals">
-        <span class="src-chip src-chip-amostra" aria-hidden="true"></span>
-        {s.livro.seloCheio}
-        {' · '}
-        <span class="src-chip src-chip-amostra is-unverified" aria-hidden="true"></span>
-        {s.livro.seloTracejado}
-      </span>
-    </div>
+  {/* A LEGENDA PASSA A SER A LINHA DA CASA (F1.13, item 5, 15.09.2026). Era a
+      mesma legenda dos outros três sítios, escrita aqui numa forma de ficha
+      («o nome do estado à esquerda, as duas amostras à direita»); passa a ser o
+      mesmo componente que eles rendem, e a folha da ficha deixa de ter aqui uma
+      quarta variante para divergir. */}
+  <div class="marca-legenda-solta">
+    <LegendaDaMarca s={s} />
   </div>
 
   <p class="rodape-nav" style="margin-top:14px">
