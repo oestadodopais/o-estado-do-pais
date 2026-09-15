@@ -88,9 +88,12 @@
   var texto = lugar.querySelector('[data-mapa-nome-texto]');
   var porta = lugar.querySelector('[data-mapa-porta]');
   var voltar = lugar.querySelector('[data-mapa-voltar]');
-  var vazias = lugar.querySelectorAll('[data-mapa-vazio]');
+  /* AS QUATRO FRASES VAZIAS PASSARAM A SER UMA LEGENDA POR NÍVEL (P1, item 5,
+     15.09.2026): eram duas por nível, uma para o dedo e outra para o rato, e
+     eram instruções. Agora é uma só por nível, e diz onde o leitor está. */
+  var repousos = lugar.querySelectorAll('[data-mapa-repouso]');
   var aviso = lugar.querySelector('[data-mapa-aviso]');
-  if (!texto || !porta || vazias.length !== (DOIS_NIVEIS ? 4 : 2)) return;
+  if (!texto || !porta || repousos.length !== (DOIS_NIVEIS ? 2 : 1)) return;
   if (DOIS_NIVEIS && !voltar) return;
 
   var SVGNS = 'http://www.w3.org/2000/svg';
@@ -174,19 +177,27 @@
 
   /* ---------------------------------------------------------------- o nome */
 
-  /* AS QUATRO FRASES VAZIAS: duas por nível, uma para o dedo e outra para o
-     rato. O `hidden` diz de que nível é cada uma, e a folha escolhe entre o dedo
-     e o rato pelo apontador do leitor. */
+  /* A LEGENDA DE REPOUSO DO NÍVEL EM QUE SE ESTÁ. Uma por nível, e o `hidden`
+     diz qual é a da vez. Nenhuma se compõe aqui: a do país vem do servidor
+     escrita, e a da unidade é copiada do `data-repouso` que o servidor escreveu
+     na própria área, como o nome vem do `<title>`. */
   function mostraVazio() {
     if (aviso) aviso.hidden = true;
     texto.hidden = true;
     texto.textContent = '';
     porta.hidden = true;
     var nivel = figura.getAttribute('data-nivel') || 'pais';
-    for (var i = 0; i < vazias.length; i++) {
-      var qual = vazias[i].getAttribute('data-mapa-vazio') || '';
-      vazias[i].hidden = qual.indexOf(nivel) !== 0;
+    for (var i = 0; i < repousos.length; i++) {
+      repousos[i].hidden = repousos[i].getAttribute('data-mapa-repouso') !== nivel;
     }
+  }
+
+  /** A legenda de repouso de um nível, ou `null`. */
+  function repousoDe(nivel) {
+    for (var i = 0; i < repousos.length; i++) {
+      if (repousos[i].getAttribute('data-mapa-repouso') === nivel) return repousos[i];
+    }
+    return null;
   }
 
   /**
@@ -208,7 +219,7 @@
     texto.hidden = false;
     porta.setAttribute('href', destino);
     porta.hidden = false;
-    for (var i = 0; i < vazias.length; i++) vazias[i].hidden = true;
+    for (var i = 0; i < repousos.length; i++) repousos[i].hidden = true;
   }
 
   /* ------------------------------------------------------------- os níveis */
@@ -269,6 +280,15 @@
     /* O nome da unidade fica no lugar, com a porta da página dela: quem acabou
        de a abrir vê onde está e tem a porta à mão. */
     var area = grupoDoPais.querySelector('[data-uni-porta="' + slug + '"]');
+    /* A LEGENDA DE REPOUSO DESTE NÍVEL É A DA UNIDADE ABERTA (P1, item 5). Não
+       se compõe aqui: copia-se do `data-repouso` que o servidor escreveu na
+       própria área, como o nome se copia do `<title>`. É o que faz o lugar
+       nunca ficar vazio quando o leitor deixa de apontar. */
+    var caixaDoRepouso = repousoDe('unidade');
+    if (caixaDoRepouso && area) {
+      var dito = area.getAttribute('data-repouso');
+      if (dito) caixaDoRepouso.textContent = dito;
+    }
     if (area) mostra(area);
     else mostraVazio();
     /* O FOCO ACOMPANHA O NÍVEL, E SÓ QUANDO VEIO DO TECLADO. Quem cresceu a

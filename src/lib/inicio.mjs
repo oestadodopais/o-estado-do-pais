@@ -460,3 +460,91 @@ export function partesDaManchetePais(palavras) {
     palavras.fecha,
   ];
 }
+
+/* ===========================================================================
+ * A LEGENDA DE REPOUSO DO LUGAR DO NOME (P1, item 5, 15.09.2026)
+ * ===========================================================================
+ * As quatro frases de instrução do lugar do nome saíram («Toque num distrito ou
+ * numa ilha», «Passe o rato por…», e as duas do nível do concelho), e o que
+ * ficou em repouso é **onde o leitor está e quantos concelhos esse território
+ * tem**. Três superfícies rendem esse lugar (a primeira página, a página de um
+ * distrito e a de um concelho) e todas precisam da mesma legenda: escrever a
+ * composição em três sítios era a segunda cópia a divergir da primeira, que é a
+ * lição que a §1.108 já escreveu sobre a lista dos domínios.
+ *
+ * NENHUMA DAS DUAS ESCREVE UM ALGARISMO: cada uma devolve a CHAVE da prova, e o
+ * valor vem da prova, que o portão reconta.
+ *
+ * A PALAVRA DA CONTAGEM é a que o índice dos concelhos já usa («… concelhos · »,
+ * sem o separador), e o nome de uma unidade leva o seu tipo pela forma que a
+ * busca já usa: prefixo «distrito de» num distrito, nome de ilha nu numa ilha.
+ */
+
+/** A palavra que se diz ao pé da contagem, na edição de `s`. @param {any} s */
+export function palavraDosConcelhos(s) {
+  return s.municipios.coberturaB.replace(/\s*·\s*$/, '').trim();
+}
+
+/** O nome de uma unidade da Carta com o seu tipo. @param {any} s @param {string} nome */
+export function nomeDaUnidade(s, nome) {
+  return eIlha(nome) ? nome : `${s.inicio.cabeca.distritoDe}${nome}`;
+}
+
+/** A chave da prova da contagem de concelhos de uma unidade. @param {string} slug */
+export const CHAVE_DOS_CONCELHOS_DA_UNIDADE = (slug) => `mapa_concelhos_${slug}`;
+
+/**
+ * A legenda de repouso do nível do país.
+ *
+ * @param {any} s
+ * @param {Record<string, { valor: unknown, origem?: string }> | null | undefined} p
+ */
+export function repousoDoPais(s, p) {
+  return {
+    nome: s.inicio.mapa.portugal,
+    palavra: palavraDosConcelhos(s),
+    chave: 'municipios_total',
+    item: p?.municipios_total ?? null,
+  };
+}
+
+/**
+ * A legenda de repouso do nível de uma unidade.
+ *
+ * @param {any} s
+ * @param {{ slug: string, nome: string }} unidade
+ */
+export function repousoDaUnidade(s, unidade) {
+  return {
+    nome: nomeDaUnidade(s, unidade.nome),
+    /* SEM CONTAGEM, E A DECISÃO É DE 27.08.2026: a página de uma unidade não
+       rende a contagem dos seus concelhos, porque por baixo de um mapa com
+       aqueles concelhos ela lê-se como a contagem do que está desenhado
+       (`DistritoView.astro`, e a razão escrita ao lado da chave da prova). O
+       que esta legenda dá ali é o NOME, que é o que o lugar precisa de dizer
+       quando o leitor deixa de apontar.
+
+       NA PRIMEIRA PÁGINA A CONTAGEM ENTRA, e entra pelo guião, do
+       `data-repouso` que o servidor escreveu na área: ali o mapa é o do país e
+       a unidade aberta é uma de vinte e nove, e dizer quantos concelhos ela tem
+       é dizer onde o leitor está. */
+    palavra: null,
+    chave: null,
+    item: null,
+  };
+}
+
+/**
+ * A mesma legenda numa cadeia só, para o atributo que o guião copia.
+ *
+ * O guião do mapa não compõe texto: copia o que o servidor escreveu na própria
+ * área, como já faz com o `<title>`. É por isso que esta função existe ao lado
+ * da de cima, e não dentro do guião.
+ *
+ * @param {any} s
+ * @param {{ slug: string, nome: string }} unidade
+ * @param {number} nConcelhos
+ */
+export function textoDoRepousoDaUnidade(s, unidade, nConcelhos) {
+  return `${nomeDaUnidade(s, unidade.nome)} · ${nConcelhos} ${palavraDosConcelhos(s)}`;
+}

@@ -84,8 +84,11 @@ import {
   distritoDoMapa,
   unidadeDoConcelho,
   ficheiroDaUnidade,
+  manifestoDoMapa,
   arrumacaoDasMolduras,
 } from '../../lib/mapa.mjs';
+import { repousoDoPais, repousoDaUnidade, textoDoRepousoDaUnidade } from '../../lib/inicio.mjs';
+import { prova } from '../../lib/prova.mjs';
 import LugarDoNome from './LugarDoNome.astro';
 
 /* AS DUAS PROPRIEDADES QUE A PÁGINA DE CONCELHO PEDIU (ISSUES I45, etapa 2m).
@@ -240,6 +243,23 @@ const daUnidade = slugDaUnidade ? distritoDoMapa(slugDaUnidade) : null;
    aqui: o do país no nível do país, o da grelha local da unidade no nível dela. */
 const campoDoDesenho = doPais?.campo ?? daUnidade?.campo ?? null;
 const rotaDoConcelho = routePath('municipio', lang, { slug: ':slug' });
+
+/* ---------------------------------------------------------------------------
+ * A LEGENDA DE REPOUSO DO LUGAR DO NOME (P1, item 5, 15.09.2026)
+ * ---------------------------------------------------------------------------
+ * As quatro frases de instrução saíram do lugar do nome, e o que ficou em
+ * repouso é onde o leitor está e quantos concelhos esse território tem. A
+ * composição vive em `src/lib/inicio.mjs`, numa declaração só, porque três
+ * superfícies a rendem; o que se faz aqui é chamá-la com o que esta página tem.
+ */
+/* A PROVA DESTA EDIÇÃO. A primeira página passa-a (é ela que a lê para a
+   faixa e para as portas); a página de um concelho rende este mapa sem ela, e
+   a legenda do lugar precisa da entrada da chave para render o número com a
+   sua porta. Lê-se aqui quando não chega, e é a mesma tabela dos dois lados. */
+const prov = p ?? prova(lang);
+const manifesto = manifestoDoMapa();
+const nDaUnidade = (slug) => manifesto.unidades.find((x) => x.slug === slug)?.concelhos ?? 0;
+
 
 /* A ESCALA ENTRE OS DOIS CAMPOS, para que o rótulo de uma moldura se leia do
    mesmo tamanho nos dois desenhos à mesma largura. O rótulo do mapa de pontos
@@ -459,6 +479,11 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
             href={routePath('distrito', lang, { slug: u.slug })}
             data-uni-porta={u.slug}
             data-ficheiro={`/${ficheiroDaUnidade(u.slug)}`}
+            {/* A LEGENDA DE REPOUSO DESTA UNIDADE, escrita pelo servidor para o
+                guião a copiar quando ela se abre (P1, item 5). É a mesma regra
+                do `<title>`: o guião não compõe texto, copia o que o servidor
+                já escreveu na própria área. */}
+            data-repouso={textoDoRepousoDaUnidade(s, u, nDaUnidade(u.slug))}
           >
             <title>{u.nome}</title>
             {/* A TRANSLAÇÃO VAI NO CAMINHO, E NÃO NUM GRUPO POR PARCELA: um
@@ -749,12 +774,33 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
       quem ouve ouve uma só.
       ---------------------------------------------------------------------- */}
   {nivel === 'pais' && (
-    <LugarDoNome s={s} niveis={['pais', 'unidade']} voltar={routePath('home', lang)} />
+    <LugarDoNome
+      s={s}
+      niveis={['pais', 'unidade']}
+      voltar={routePath('home', lang)}
+      pais={repousoDoPais(s, prov)}
+    />
   )}
   {/* NO NÍVEL DA UNIDADE HÁ UM NÍVEL SÓ, e por isso não há porta de voltar: o
       desenho não cresceu de lado nenhum. É a mesma forma que a página de um
       distrito já rende desde o F1.1d. */}
-  {nivel === 'unidade' && <LugarDoNome s={s} niveis={['unidade']} />}
+  {
+    /* NO NÍVEL DA UNIDADE A LEGENDA VEM FEITA DO SERVIDOR, com a chave da prova
+       daquela unidade: é a página de um distrito ou de um concelho, e ali
+       sabe-se qual é. Na primeira página não se sabe, e quem a enche é o guião,
+       do `data-repouso` que cada área traz. */
+    nivel === 'unidade' && (
+      <LugarDoNome
+        s={s}
+        niveis={['unidade']}
+        unidade={
+          daUnidade
+            ? repousoDaUnidade(s, daUnidade.unidade)
+            : null
+        }
+      />
+    )
+  }
 
   {/* ------------------------------------------------------------------------
       O MAPA TRAZ O SEU GUIÃO (F1.1e, 08.09.2026)

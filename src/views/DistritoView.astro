@@ -47,6 +47,7 @@ import Provenance from '../components/Provenance.astro';
 import FonteDaCarta from '../components/FonteDaCarta.astro';
 import LugarDoNome from '../components/inicio/LugarDoNome.astro';
 import { distritoDoMapa, unidadeDoMapa } from '../lib/mapa.mjs';
+import { repousoDaUnidade } from '../lib/inicio.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -180,7 +181,11 @@ const tipo = unidade.tipo === 'ilha' ? s.distritos.tipoIlha : s.distritos.tipoDi
         mapa de pontos nem de áreas; tem a régua», e um lugar para o nome da área
         apontada num sítio onde não há áreas seria mobília a dizer que há.
         ------------------------------------------------------------------ */}
-    <LugarDoNome s={s} niveis={['unidade']} />
+    {/* A LEGENDA DE REPOUSO VEM FEITA (P1, item 5, 15.09.2026): o nome desta
+        unidade, que é o que o lugar diz quando o leitor não está a apontar
+        nada. SEM A CONTAGEM, pela decisão de 27.08 que está escrita acima: por
+        baixo de um mapa com estes concelhos, contá-los é contar o desenho. */}
+    <LugarDoNome s={s} niveis={['unidade']} unidade={repousoDaUnidade(s, unidade)} />
     {/* A legenda: o nome da Carta, o ano da edição e o selo que abre a linha.
         SEM A CONTAGEM DOS 308, e a razão está na chave: a legenda da primeira
         página é «308 concelhos · CAOP 2025 ■ fonte», que a Emenda 17 fixa para um
