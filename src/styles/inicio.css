@@ -2093,12 +2093,20 @@ svg [hidden] {
   border-top: 2px solid var(--g2);
   margin-top: clamp(22px, 3vw, 34px);
 }
+/* A PORTA É UMA FILA, E NÃO UMA GRELHA DE TRÊS COLUNAS (leitura do lugar de
+   direção às capturas do P1, 15.09.2026). Era `grid-template-columns: 200px
+   minmax(0,1fr) auto`, que abaixo de 900 px virava uma coluna só: o nome, o
+   número e a seta empilhavam-se em três filas de 44 px cada, e o cartão media
+   161 px de altura no telemóvel. Passa a ser uma fila em todas as larguras,
+   com o número colado ao nome e a seta no fim, que é onde um sinal de porta se
+   lê. A coluna de 200 px também ia: alinhava os três nomes mas punha o número a
+   meia fila de distância do nome que ele conta. */
 .porta {
-  display: grid;
-  grid-template-columns: 200px minmax(0, 1fr) auto;
-  gap: 24px;
-  align-items: baseline;
-  padding: 13px 0;
+  display: flex;
+  align-items: center;
+  gap: 0 12px;
+  padding: 10px 0;
+  min-height: 44px;
   border-bottom: 1px solid var(--g3);
   text-decoration: none;
   color: var(--ink);
@@ -2120,18 +2128,20 @@ svg [hidden] {
 .porta-seta {
   white-space: nowrap;
   color: var(--muted);
+  /* A seta fecha a fila, e é o único elemento da porta que se encosta à ponta:
+     é o sinal de que aquilo abre, e não uma contagem. */
+  margin-left: auto;
 }
 a.porta:hover .porta-seta {
   color: var(--ink);
 }
 
+/* A PORTA NÃO MUDA DE FORMA COM A LARGURA (P1, acerto 3, 15.09.2026): era nesta
+   regra que ela passava a uma coluna só e as três partes se empilhavam em três
+   filas de 44 px. */
 @media (max-width: 900px) {
   .painel {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .porta {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 6px;
   }
 }
 
@@ -2619,9 +2629,6 @@ a.porta:hover .porta-seta {
     gap: 12px;
     align-items: center;
   }
-  .porta {
-    padding: 16px 0;
-  }
 }
 
 /* ============================================================================
@@ -2831,34 +2838,22 @@ a.porta:hover .porta-seta {
  * `.lig` da lista social («O livro-razão →») está sozinho na sua fila e por isso
  * chega-lhe a altura.
  * ------------------------------------------------------------------------- */
-/* A REDE DOS 44 px VAI ATÉ 1023 (I104, bloco F1.7, 04.09.2026). Estas quatro
-   regras viviam numa `@media (max-width: 640px)` e a I104 mediu o que isso
-   deixava de fora: a 641, a 768 e a 1023 as portas voltavam a 14, 19,2 e 24 px
-   de toque, que são três dos quatro alvos que a I105 nomeia. A Emenda 20c
-   escreve a rede abaixo de 1024. */
+/* A REDE DOS 44 px VAI ATÉ 1023 (I104, bloco F1.7, 04.09.2026). Estas regras
+   viviam numa `@media (max-width: 640px)` e a I104 mediu o que isso deixava de
+   fora: a 641, a 768 e a 1023 as portas voltavam a 14, 19,2 e 24 px de toque,
+   que são três dos quatro alvos que a I105 nomeia. A Emenda 20c escreve a rede
+   abaixo de 1024. As três portas saíram desta rede com o acerto 3 do P1, e não
+   perderam o alvo: ganharam-no no cartão inteiro, que é a ligação. */
 @media (max-width: 1023px) {
-  .porta-nome,
-  .porta-conta,
-  .porta-seta,
+  /* O ALVO DA PORTA É O CARTÃO, e o cartão é a ligação desde o item 7: a
+     altura de 44 px vem do `min-height` dele e não de três filas de dentro, que
+     era o que estas regras davam quando a porta tinha três partes empilháveis e
+     quatro contagens de agenda. O que fica é a fila social, que continua a ter
+     as suas ligações. */
   .social-porta .lig {
     display: flex;
     align-items: center;
     min-height: 44px;
-  }
-  /* A folga entre duas contagens da agenda, medida: sem ela, «0 next» e «1
-     completed» ficavam a 40px e as áreas de 44 cruzavam-se por 3,8px. */
-  .porta-conta {
-    flex-wrap: wrap;
-  }
-  .porta-conta-item {
-    display: inline-block;
-    padding-right: 6px;
-  }
-  /* A porta inteira é uma ligação nos dois primeiros casos, e a fila do nome já
-     lhe dá a altura; o que estas três regras fazem é dar altura às filas de
-     DENTRO, que é onde as portas pequenas da agenda vivem. */
-  .porta {
-    padding: 8px 0;
   }
 }
 
