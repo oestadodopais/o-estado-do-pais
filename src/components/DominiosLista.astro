@@ -72,7 +72,11 @@ const linhas = indiceDosDominios(lang);
   ><Fragment set:text={s.dominios.aberturaB} />
 </p>
 
-<ol class="dominios-lista">
+{/* AS FILAS DA GRELHA DE DUAS COLUNAS VÊM DA DECLARAÇÃO, e não da folha: a
+    partir de 768 px a lista é duas colunas, nove e nove, e o nove é
+    `DOMINIOS.length / 2` arredondado para cima. Escrito na folha, envelhecia no
+    dia em que a carta ganhasse um domínio. */}
+<ol class="dominios-lista" style={`--dominios-filas:${Math.ceil(DOMINIOS.length / 2)}`}>
   {
     linhas.map(({ dominio, n, porta }) => (
       <li class="dominios-item" data-dominio={dominio.slug}>

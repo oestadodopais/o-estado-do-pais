@@ -32,6 +32,31 @@
   max-width: 62ch;
 }
 
+/* ---------------------------------------------------------------------------
+ * A FORMA DA LISTA (leitura do lugar de direção às capturas do P1, 15.09.2026)
+ * ---------------------------------------------------------------------------
+ * A lista passou de duas linhas para dezoito com o item 6, e a forma que servia
+ * duas não serve dezoito. O que a leitura apanhou, e o que muda:
+ *
+ *   · **a contagem estava encostada à direita**, a meia página do nome, porque
+ *     `.dominios-nome` levava `flex: 1 1 18ch` e empurrava tudo o resto para a
+ *     ponta. Um número que se lê a meio metro do nome que ele conta não é uma
+ *     contagem, é uma coluna. Passa a `flex: 0 1 auto`: a contagem vem a seguir
+ *     ao nome, colada, em todas as larguras;
+ *   · **a fila era alta**. Eram 12 px de `padding` de cada lado SOBRE um
+ *     `min-height` de 44, o que dá quase 70 px por linha e 1 274 px de secção a
+ *     390. A altura passa a ser a das listas da casa (`.concelho`, em
+ *     `site.css`): o `min-height` de 44 px dá o alvo, e o `padding` sai, porque
+ *     somar os dois dá uma fila sem alvo nenhum a mais;
+ *   · **a partir de 768 px são duas colunas**, nove e nove, pela ordem da carta
+ *     e a ler de cima para baixo em cada uma. É uma grelha com as filas
+ *     declaradas e `grid-auto-flow: column`, e não `column-count`: aquele
+ *     equilibra por ALTURA, e um nome que quebre em duas linhas punha oito de
+ *     um lado e dez do outro. O número de filas vem da declaração, num
+ *     `--dominios-filas` que o componente escreve de `DOMINIOS.length`: a folha
+ *     não sabe contar, e dezoito escrito aqui envelhecia no dia em que a carta
+ *     ganhasse um domínio.
+ */
 .dominios-lista {
   list-style: none;
   margin: clamp(20px, 3vw, 30px) 0 0;
@@ -41,19 +66,30 @@
 .dominios-item {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
-  gap: 6px 14px;
-  padding: 12px 0;
+  align-items: center;
+  gap: 0 10px;
   border-bottom: 1px solid var(--rule);
   /* O alvo de 44 px vem da altura da linha e não de um `::after` esticado: uma
      linha desta lista é texto e a sua porta é o nome, que a folha faz alto o
-     bastante para se tocar. */
+     bastante para se tocar. É a mesma altura da ficha de um concelho. */
   min-height: 44px;
 }
 .dominios-nome {
   font-family: var(--f-prosa);
   font-size: clamp(18px, 2vw, 21px);
-  flex: 1 1 18ch;
+  /* A CONTAGEM COLA-SE AO NOME. Era `1 1 18ch`, e o `1` de crescimento é que a
+     mandava para a ponta oposta da fila. */
+  flex: 0 1 auto;
+}
+
+@media (min-width: 768px) {
+  .dominios-lista {
+    display: grid;
+    grid-template-rows: repeat(var(--dominios-filas, 9), minmax(44px, auto));
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    column-gap: clamp(20px, 3vw, 44px);
+  }
 }
 .dominios-porta {
   color: var(--ink);
