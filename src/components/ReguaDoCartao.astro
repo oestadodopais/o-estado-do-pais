@@ -1,0 +1,152 @@
+---
+/**
+ * ---------------------------------------------------------------------------
+ * A RÉGUA DE UM CARTÃO · com o que comparar o número (bloco P2, item 1d)
+ * ---------------------------------------------------------------------------
+ *
+ * O diretor, a 15.09.2026: «17,6 % de quê, e é muito ou pouco». A norma, §2.4:
+ * «O número traz sempre a régua. O valor nacional ao lado do local, o período
+ * anterior, a posição, a média da União quando é o quadro da fonte. Um número
+ * sem régua não é informação; 17,6 % sozinho não diz nada a ninguém. A régua
+ * diz-se por palavras e por número, nunca por cor sozinha.»
+ *
+ * ---------------------------------------------------------------------------
+ * TRÊS COISAS, CADA UMA COM A SUA PORTA
+ * ---------------------------------------------------------------------------
+ *   · **o período anterior** e **a União Europeia**: duas LINHAS do livro-razão,
+ *     rendidas por `<Claim/>` com a marca da fonte de cada uma, e só quando a
+ *     linha existe. Quem diz qual é a linha é `src/lib/enquadramento.mjs`;
+ *   · **o valor de referência**, com a palavra que diz de que lado dele o valor
+ *     está. O algarismo é o que a nota da linha escreve, declarado em
+ *     `src/data/figuras.mjs` com o motivo `limiar-do-quadro` do registo, e a
+ *     palavra é derivada de dois números que já existem
+ *     (`comparacaoComOLimiar()`): não acrescenta um dígito à página.
+ *
+ * ---------------------------------------------------------------------------
+ * NENHUM VALOR À MÃO, E A AUSÊNCIA NÃO SE ESCREVE
+ * ---------------------------------------------------------------------------
+ * O §0.2 do brief: «o cartão rende a régua só onde `hasClaim` for verdadeiro, e
+ * a ausência de régua não se escreve por palavras no cartão». Uma régua sem
+ * nada para dizer não se desenha: não há aqui um «a fonte não publica a média da
+ * União para esta medida», que seria a casa a explicar-se ao lado de cada número
+ * (regra 5 do plano das palavras).
+ *
+ * A PALAVRA DO ESTADO, HOJE E DEPOIS. As três cadeias («acima do valor de
+ * referência», «abaixo do valor de referência», «entre os valores de
+ * referência») são as chaves que o bloco P1 escreve em `s.estado` no mesmo dia,
+ * pela decisão do diretor de 15.09.2026 de manhã: «limiar» sai do texto que o
+ * leitor vê. Estão aqui pelas MESMAS chaves de propósito, para que os dois ramos
+ * digam a mesma coisa e a fusão seja uma escolha e não uma reescrita.
+ *
+ * NENHUMA MEDIDA ESTÁ EXACTAMENTE NO SEU VALOR DE REFERÊNCIA hoje (medido: das
+ * 21 figuras, 5 estão acima, 6 abaixo, 2 dentro de uma banda e 8 não têm valor
+ * de referência; nenhuma dá `noLimiar`). Por isso não há aqui uma quarta cadeia:
+ * escrevê-la era escrever uma frase que nenhuma página rende, e o inventário
+ * fecha a construção quando uma linha declarada não se rende.
+ */
+import Claim from './Claim.astro';
+import CampoDaLinha from './CampoDaLinha.astro';
+import { reguaDaMedida, temRegua } from '../lib/enquadramento.mjs';
+import { FIGURAS, comparacaoComOLimiar, ladosDoLimiar } from '../data/figuras.mjs';
+import { getClaim } from '../lib/ledger.mjs';
+
+const { id, lang = 'pt', s } = Astro.props;
+
+/**
+ * O VALOR DE REFERÊNCIA DE UMA MEDIDA, pela declaração que já existe.
+ *
+ * A lista é a de `figuras.mjs`, que é onde os valores de referência dos dois
+ * quadros europeus estão declarados, cada um com a nota da sua linha ao lado.
+ * Uma medida que não esteja lá não tem valor de referência para esta régua, e
+ * não se lhe inventa um.
+ */
+const DECLARACAO = new Map();
+for (const f of FIGURAS) {
+  if (typeof f.claim === 'string' && !DECLARACAO.has(f.claim)) DECLARACAO.set(f.claim, f);
+}
+
+const regua = reguaDaMedida(id);
+const figura = DECLARACAO.get(id) ?? null;
+const limiar = figura?.limiar ?? null;
+const comparacao = limiar ? comparacaoComOLimiar(getClaim(id), limiar) : null;
+const lados = ladosDoLimiar(limiar);
+const banda = Boolean(limiar && (limiar.inferior || limiar.superior));
+const simbolo = limiar?.simbolo ?? '%';
+/* A palavra: as duas direcções, e a banda quando o valor está lá dentro. */
+const palavra =
+  comparacao === 'acima'
+    ? s.estado.acima
+    : comparacao === 'abaixo'
+      ? s.estado.abaixo
+      : comparacao === null && banda && lados
+        ? s.estado.entre
+        : null;
+
+const temAlgumaCoisa = temRegua(regua) || Boolean(palavra);
+---
+
+{
+  temAlgumaCoisa && (
+    <p class="cartao-medida-regua">
+      {/* O PERÍODO ANTERIOR. O rótulo é o período que a PRÓPRIA LINHA publica,
+          e não um ano composto aqui: sem `reference_date` fica só o valor, e a
+          marca da fonte ao lado diz de que linha ele é. */}
+      {regua.anterior && (
+        <span class="cartao-medida-regua-item" data-regua="anterior">
+          {regua.anterior.periodo && (
+            <span class="cartao-medida-regua-k">
+              {/* O PERÍODO É O CAMPO DA LINHA DO PERÍODO ANTERIOR, e vai pela
+                  mesma porta que todos os campos de data do sítio: `CampoDaLinha`
+                  manda-o a `DataDaLinha`, que diz de que linha e de que campo ele
+                  saiu, e `check:formas` recompõe-no por conta própria e compara-o
+                  carácter a carácter. Um rótulo escrito aqui seria um ano que a
+                  casa datou. */}
+              <CampoDaLinha
+                id={regua.anterior.id}
+                campo="reference_date"
+                valor={regua.anterior.periodo}
+                lang={lang}
+              />
+              {':'}
+            </span>
+          )}
+          <Claim id={regua.anterior.id} lang={lang} as="span" chip={true} />
+        </span>
+      )}
+      {/* A UNIÃO EUROPEIA. O nome é prosa da casa, declarada uma vez em
+          `strings.mjs`; o valor é a linha. */}
+      {regua.ue && (
+        <span class="cartao-medida-regua-item" data-regua="ue">
+          <span class="cartao-medida-regua-k" data-voz>
+            {s.cartao.uniaoEuropeia}:{' '}
+          </span>
+          <Claim id={regua.ue.id} lang={lang} as="span" chip={true} />
+        </span>
+      )}
+      {/* O VALOR DE REFERÊNCIA, COM A DIRECÇÃO. O algarismo leva o motivo
+          `limiar-do-quadro` do registo, que é a dispensa com que ele entra na
+          página, e é o mesmo que a peça e o cartão da faixa já usam. */}
+      {palavra && (
+        <span class="cartao-medida-regua-item" data-regua="referencia">
+          <span data-voz>{palavra}</span>
+          {', '}
+          {banda ? (
+            <>
+              {limiar.inferior.sinal ?? ''}
+              <span data-nonledger="limiar-do-quadro">{limiar.inferior.nl}</span>/
+              {limiar.superior.sinal ?? ''}
+              <span data-nonledger="limiar-do-quadro">{limiar.superior.nl}</span>
+              {simbolo}
+            </>
+          ) : (
+            <>
+              {limiar.sinal ?? ''}
+              <span data-nonledger="limiar-do-quadro">{limiar.nl}</span>
+              {simbolo}
+            </>
+          )}
+        </span>
+      )}
+    </p>
+  )
+}
