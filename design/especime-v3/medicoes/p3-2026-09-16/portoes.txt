@@ -1,9 +1,14 @@
-sobre 37912148 (a cabeça do código)
+sobre 37912148 (a cabeça do código, lote da manhã, antes do rebase)
 build 0
 verify 0
 typecheck 0
 
-sobre 0a0da466 (a cabeça com as capturas e as tabelas)
+sobre 0a0da466 (a cabeça com as capturas e as tabelas, lote da manhã, antes do rebase)
+build 0
+verify 0
+typecheck 0
+
+sobre f9f49406 (a cabeça da passagem de correção do fim do dia, depois do rebase)
 build 0
 verify 0
 typecheck 0
