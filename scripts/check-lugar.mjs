@@ -74,7 +74,6 @@ import { WORKS } from '../src/data/studies.mjs';
    descrição pública com a frase de abertura do documento, que é transcrição
    registada. Ver `textoDaCabeca()`. */
 import { VERBATIM } from '../src/data/verbatim.mjs';
-import { dominiosComPagina, medidasDoDominio } from '../src/data/dominios.mjs';
 import { temRegisto } from '../src/lib/registos.mjs';
 import { documentosDoEstudo } from '../src/lib/documentos.mjs';
 
@@ -1793,31 +1792,34 @@ for (const alvo of INDICES_DA_HIERARQUIA) {
    europeia, e duas edições: quatro. Zero diferenças sobre zero parágrafos é
    uma régua cega, e a regra 14 da casa fecha a construção em vez de a deixar
    passar por não ter encontrado nada. */
-/* AS DEFINIÇÕES QUE AS PÁGINAS DO DOMÍNIO RENDEM (decisão 24, 09.09.2026): as
-   medidas de um domínio COM PÁGINA cuja linha tem definição declarada. Sai da
-   mesma declaração que a vista lê, e não de um número escrito à mão: hoje são
-   três das dez do primeiro domínio, e o dia em que um domínio novo trouxer uma
-   medida com definição a conta muda sozinha dos dois lados. */
-const DEFINICOES_NOS_DOMINIOS = dominiosComPagina().reduce(
-  (n, d) =>
-    n +
-    medidasDoDominio(d.slug ?? d).filter((m) => m.claim in DEFINICOES_DAS_MEDIDAS).length,
-  0,
-);
-const MEDIDAS_DOS_DOMINIOS = dominiosComPagina().flatMap((d) =>
-  medidasDoDominio(d.slug ?? d).filter((m) => m.claim in DEFINICOES_DAS_MEDIDAS),
-);
+/* A PÁGINA DO DOMÍNIO SAI DESTA CONTA A 15.09.2026, E A CONFERÊNCIA NÃO SE
+   PERDE: MUDA DE RÉGUA (achado 2 da leitura a frio).
+   ---------------------------------------------------------------------------
+   A decisão 24 de 09.09.2026 pôs a definição de uma medida na página do
+   domínio, num bloco próprio ao pé do nome, com a origem ao lado. O cartão de
+   uma medida passou a render-se nessa página e trouxe a definição consigo,
+   sem a origem: é o §2.1 da norma («tudo o resto fica atrás de um toque»), e o
+   toque é a marca da fonte, que abre o recibo.
+
+   O QUE ESTA CÉLULA CONTA VOLTA A SER O QUE A SUA PRÓPRIA MENSAGEM SEMPRE DISSE:
+   «os painéis mais as medidas × as edições». As definições da página do domínio
+   deixam de entrar porque já não se rendem na forma que esta célula confere (a
+   definição com a sua origem ao lado).
+
+   **E NÃO FICAM SEM RÉGUA**, que é o que faria disto um enfraquecimento: a
+   célula K6 de `tests/cartao/cartao.mjs` compara a frase de CADA cartão,
+   carácter a carácter, com a declaração de `figuras.mjs`, sobre o `dist/`
+   inteiro e nas duas edições. São 262 cartões conferidos onde aqui eram seis
+   rendições, e a origem de cada definição continua conferida aqui, nos sítios
+   onde ela se rende com a origem. */
 const DEFINICOES_ESPERADAS =
-  (Object.keys(DEFINICAO_DOS_PAINEIS).length +
-    Object.keys(DEFINICOES_DAS_MEDIDAS).length +
-    DEFINICOES_NOS_DOMINIOS) *
+  (Object.keys(DEFINICAO_DOS_PAINEIS).length + Object.keys(DEFINICOES_DAS_MEDIDAS).length) *
   LANGS.length;
 const ORIGENS_ESPERADAS =
-  ([
-    ...Object.values(DEFINICAO_DOS_PAINEIS),
-    ...Object.values(DEFINICOES_DAS_MEDIDAS),
-    ...MEDIDAS_DOS_DOMINIOS.map((m) => DEFINICOES_DAS_MEDIDAS[m.claim]),
-  ].reduce((n, d) => n + d.origens.length, 0)) * LANGS.length;
+  [...Object.values(DEFINICAO_DOS_PAINEIS), ...Object.values(DEFINICOES_DAS_MEDIDAS)].reduce(
+    (n, d) => n + d.origens.length,
+    0,
+  ) * LANGS.length;
 console.log(
   `  8.4, o que a régua leu: ${definicoesVistas} definições (esperadas ${DEFINICOES_ESPERADAS}) · ` +
     `${origensVistas} origens (esperadas ${ORIGENS_ESPERADAS})`,
