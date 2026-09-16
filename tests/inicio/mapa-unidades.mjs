@@ -153,6 +153,16 @@
  * 11, e é a única célula desta régua que escreve em disco: planta um ficheiro
  * estranho e um `unidade-*` a mais, corre o copiador e o portão de verdade, e
  * mede o que sobrou. É por isso a sua própria planta.
+ *
+ * ---------------------------------------------------------------------------
+ * A CÉLULA DE 16.09.2026, QUE TAMBÉM NÃO ESTÁ NO BRIEF
+ * ---------------------------------------------------------------------------
+ * U12 · a margem das molduras. O diretor viu na primeira página as Ilhas
+ * Selvagens, no fundo da moldura da Madeira, a tocar a linha e a parecer
+ * cortadas, e a moldura era a caixa exacta dos polígonos da parcela. A célula
+ * mede, nas cinco larguras do bloco P1, a distância entre a TINTA de cada
+ * polígono e a TINTA da sua moldura, e exige que ela seja maior do que zero em
+ * todas. A sua planta põe a margem a zero.
  */
 import fs from 'node:fs';
 import http from 'node:http';
@@ -160,6 +170,10 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { chromium, webkit } from 'playwright';
+/* A MARGEM DECLARADA, LIDA DE ONDE ELA VIVE. Serve A PLANTA da U12 e mais nada:
+   a célula mede o que o navegador desenha e não sabe deste número. Uma planta
+   que diz «põe a margem a zero» tem de ler a margem que o sítio declara. */
+import { MARGEM_DA_MOLDURA } from '../../src/lib/mapa.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -808,6 +822,41 @@ async function u3() {
    municipalities»). O número de concelhos lê-se do artefacto. */
 const A_QUE_CRESCE = 'evora';
 
+/**
+ * ---------------------------------------------------------------------------
+ * UMA LEITURA QUE SOBREVIVE À NAVEGAÇÃO QUE A PLANTA PROVOCA (16.09.2026)
+ * ---------------------------------------------------------------------------
+ * A U3a diz de si própria, desde 08.09, que «as leituras são defensivas de
+ * propósito» e que «a célula tem de ficar VERMELHA, e não rebentar». Não eram:
+ * um `page.evaluate` com uma navegação a meio morre com «Execution context was
+ * destroyed», e a exceção matava a corrida inteira das plantas antes de chegar
+ * às que vêm a seguir. MEDIDO a 16.09.2026, nesta árvore e na geometria de
+ * antes dela: `--vermelhos` rebentava sempre na terceira planta, a do primeiro
+ * toque num concelho a navegar, que é precisamente a que existe para fazer a
+ * página navegar. O defeito é da régua e não do sítio, e não veio deste bloco:
+ * reproduz-se com o desenho de antes da margem, byte a byte.
+ *
+ * O QUE SE LÊ QUANDO O CONTEXTO MORRE É O ENDEREÇO ONDE A PÁGINA FOI PARAR, que
+ * é o que a célula precisa de afirmar: ela exige que o primeiro toque deixe o
+ * leitor em `/`, e um caminho que não é `/` põe-na vermelha, que é o que a
+ * planta quer. O lugar do nome fica a `null`, porque na página de destino ele
+ * não existe. Nada disto muda a corrida limpa: sem planta não há navegação
+ * nenhuma a meio, e o `try` devolve a leitura de sempre.
+ *
+ * @template T
+ * @param {import('playwright').Page} p
+ * @param {() => T} fn
+ * @param {(caminho: string) => T} semPagina
+ * @returns {Promise<T>}
+ */
+async function leituraQueSobrevive(p, fn, semPagina) {
+  try {
+    return await p.evaluate(fn);
+  } catch {
+    return semPagina(new URL(p.url()).pathname);
+  }
+}
+
 /** U3a · com o dedo, num motor. */
 async function u3aNum(motor, browser) {
   const p = await pagina('/', 390, { toque: true, motor: browser });
@@ -824,14 +873,18 @@ async function u3aNum(motor, browser) {
   /* AS LEITURAS SÃO DEFENSIVAS DE PROPÓSITO: com a planta que tira o
      `preventDefault` ao guião, o toque navega, e na página de destino não há
      lugar do nome nenhum. A célula tem de ficar VERMELHA, e não rebentar. */
-  const depoisDaUnidade = await p.evaluate(() => ({
-    nivel: document.querySelector('[data-mapa-raiz]')?.getAttribute('data-nivel') ?? null,
-    nome: document.querySelector('[data-mapa-nome-texto]')?.textContent.trim() ?? null,
-    porta: document.querySelector('[data-mapa-porta]')?.getAttribute('href') ?? null,
-    hash: location.hash,
-    caminho: location.pathname,
-    concelhos: document.querySelectorAll('[data-areas-concelhos] [data-concelho-porta]').length,
-  }));
+  const depoisDaUnidade = await leituraQueSobrevive(
+    p,
+    () => ({
+      nivel: document.querySelector('[data-mapa-raiz]')?.getAttribute('data-nivel') ?? null,
+      nome: document.querySelector('[data-mapa-nome-texto]')?.textContent.trim() ?? null,
+      porta: document.querySelector('[data-mapa-porta]')?.getAttribute('href') ?? null,
+      hash: location.hash,
+      caminho: location.pathname,
+      concelhos: document.querySelectorAll('[data-areas-concelhos] [data-concelho-porta]').length,
+    }),
+    (caminho) => ({ nivel: null, nome: null, porta: null, hash: '', caminho, concelhos: 0 }),
+  );
   const doNorte = JSON.parse(fs.readFileSync(path.join(DIST, ficheiroDaUnidade(norte.slug)), 'utf8'));
   /* O concelho do toque é o de maior alvo desta unidade, porque o que se mede
      aqui é a regra dos dois toques e não a pontaria: um concelho de 2 px seria a
@@ -843,14 +896,22 @@ async function u3aNum(motor, browser) {
   const ondeConcelho = depoisDaUnidade.concelhos > 0 ? await noEcraDoConcelho(p, maior) : { x: 1, y: 1 };
   await p.touchscreen.tap(ondeConcelho.x, ondeConcelho.y);
   await p.waitForTimeout(300);
-  const depoisDoPrimeiro = await p.evaluate(() => ({
-    caminho: location.pathname,
-    nome: document.querySelector('[data-mapa-nome-texto]')?.textContent.trim() ?? null,
-  }));
+  const depoisDoPrimeiro = await leituraQueSobrevive(
+    p,
+    () => ({
+      caminho: location.pathname,
+      nome: document.querySelector('[data-mapa-nome-texto]')?.textContent.trim() ?? null,
+    }),
+    (caminho) => ({ caminho, nome: null }),
+  );
   const viagem = p.waitForURL(`**/municipios/${primeiro}`, { timeout: 5000 }).catch(() => null);
   await p.touchscreen.tap(ondeConcelho.x, ondeConcelho.y);
   await viagem;
-  const depoisDoSegundo = await p.evaluate(() => location.pathname);
+  const depoisDoSegundo = await leituraQueSobrevive(
+    p,
+    () => location.pathname,
+    (caminho) => caminho,
+  );
   conta(
     `U3a · ${motor}, com o dedo: a unidade cresce sem navegar, o primeiro toque num concelho diz o nome, o segundo abre`,
     depoisDaUnidade.nivel === 'unidade' &&
@@ -960,14 +1021,22 @@ async function u3resto() {
   }, sintra.ponto);
   await d.touchscreen.tap(ondeSintra.x, ondeSintra.y);
   await d.waitForTimeout(300);
-  const primeiroToque = await d.evaluate(() => ({
-    caminho: location.pathname,
-    nome: document.querySelector('[data-mapa-nome-texto]')?.textContent.trim() ?? null,
-  }));
+  const primeiroToque = await leituraQueSobrevive(
+    d,
+    () => ({
+      caminho: location.pathname,
+      nome: document.querySelector('[data-mapa-nome-texto]')?.textContent.trim() ?? null,
+    }),
+    (caminho) => ({ caminho, nome: null }),
+  );
   const viagem3 = d.waitForURL('**/municipios/sintra', { timeout: 5000 }).catch(() => null);
   await d.touchscreen.tap(ondeSintra.x, ondeSintra.y);
   await viagem3;
-  const segundoToque = await d.evaluate(() => location.pathname);
+  const segundoToque = await leituraQueSobrevive(
+    d,
+    () => location.pathname,
+    (caminho) => caminho,
+  );
   conta(
     'U3d · numa página de distrito, o primeiro toque num concelho diz o nome e o segundo abre',
     primeiroToque.caminho === '/distritos/lisboa' &&
@@ -1000,19 +1069,27 @@ async function u3eFalha() {
   const onde = await noEcraDaUnidade(p, algarve);
   await p.touchscreen.tap(onde.x, onde.y);
   await p.waitForTimeout(500);
-  const depoisDoPrimeiro = await p.evaluate(() => ({
-    nivel: document.querySelector('[data-mapa-raiz]')?.getAttribute('data-nivel') ?? null,
-    caminho: location.pathname,
-    aviso: document.querySelector('[data-mapa-aviso]')
-      ? !document.querySelector('[data-mapa-aviso]').hidden
-      : null,
-    nome: document.querySelector('[data-mapa-nome-texto]')?.textContent.trim() ?? null,
-    porta: document.querySelector('[data-mapa-porta]')?.getAttribute('href') ?? null,
-  }));
+  const depoisDoPrimeiro = await leituraQueSobrevive(
+    p,
+    () => ({
+      nivel: document.querySelector('[data-mapa-raiz]')?.getAttribute('data-nivel') ?? null,
+      caminho: location.pathname,
+      aviso: document.querySelector('[data-mapa-aviso]')
+        ? !document.querySelector('[data-mapa-aviso]').hidden
+        : null,
+      nome: document.querySelector('[data-mapa-nome-texto]')?.textContent.trim() ?? null,
+      porta: document.querySelector('[data-mapa-porta]')?.getAttribute('href') ?? null,
+    }),
+    (caminho) => ({ nivel: null, caminho, aviso: null, nome: null, porta: null }),
+  );
   const viagem = p.waitForURL('**/distritos/faro', { timeout: 5000 }).catch(() => null);
   await p.touchscreen.tap(onde.x, onde.y);
   await viagem;
-  const depoisDoSegundo = await p.evaluate(() => location.pathname);
+  const depoisDoSegundo = await leituraQueSobrevive(
+    p,
+    () => location.pathname,
+    (caminho) => caminho,
+  );
   conta(
     'U3e · com o ficheiro de uma unidade a responder 404, o mapa não cresce, o lugar do nome di-lo e o toque seguinte abre a página dela',
     depoisDoPrimeiro.nivel === 'pais' &&
@@ -1749,6 +1826,111 @@ async function u11() {
   );
 }
 
+/* ====================================================================== U12 */
+/**
+ * ---------------------------------------------------------------------------
+ * A MARGEM DA MOLDURA: NENHUM POLÍGONO TOCA A LINHA, EM NENHUMA DAS CINCO
+ * LARGURAS
+ * ---------------------------------------------------------------------------
+ * O que o diretor viu na primeira página a 16.09.2026: as Ilhas Selvagens, no
+ * fundo da moldura da Madeira, a tocar a linha e a parecer cortadas. A causa
+ * estava escrita no código: a moldura de uma parcela é a caixa EXACTA dos
+ * polígonos dela, e uma caixa exacta encosta ao desenho por definição.
+ * `MARGEM_DA_MOLDURA` afastou a linha; esta célula mede o afastamento onde ele
+ * conta, que é na página e não no ficheiro.
+ *
+ * O QUE SE MEDE É TINTA CONTRA TINTA, e não caixa contra caixa. As duas caixas
+ * de ecrã (`getBoundingClientRect`) trazem o traço: a de um polígono vai até ao
+ * bordo de FORA do traço dele, e a de uma moldura também, de maneira que o bordo
+ * de DENTRO da linha da moldura está um traço para cá do que a caixa dela diz.
+ * A distância de um polígono à sua moldura é, de cada lado, a que vai do bordo
+ * de fora do polígono ao bordo de dentro da linha, e a distância da célula é a
+ * menor das quatro. Com as caixas coincidentes, como estavam até 16.09, ela dá
+ * exactamente −1 px, que são os dois meios traços sobrepostos.
+ *
+ * O TRAÇO LÊ-SE DA PÁGINA e não é escrito aqui: `getComputedStyle(el).strokeWidth`
+ * dá o valor que a folha declara, e `vector-effect: non-scaling-stroke` faz dele
+ * píxeis do ecrã. Uma régua que escrevesse «1» ficava a medir a folha de ontem.
+ *
+ * AS CINCO LARGURAS SÃO AS DO BLOCO P1 (390, 768, 1 024, 1 280 e 1 600), e são
+ * cinco por uma razão de medição: a folha dá ao mapa larguras diferentes em cada
+ * uma, e a margem vive em unidades do campo, que valem menos píxeis quanto mais
+ * estreito for o mapa. A que manda é a do mapa mais estreito.
+ *
+ * É UMA CÉLULA SÓ, com as cinco leituras na sua prova: o que ela afirma é uma
+ * coisa só, e é assim que a planta a derruba inteira.
+ */
+async function u12() {
+  const leituras = [];
+  medidas.margemDaMoldura = {};
+  for (const largura of [390, 768, 1024, 1280, 1600]) {
+    const p = await pagina('/', largura);
+    const r = await p.evaluate(() => {
+      const svg = document.querySelector('[data-mapa-areas]');
+      const caixa = (el) => {
+        const b = el.getBoundingClientRect();
+        return { x: b.x, y: b.y, w: b.width, h: b.height };
+      };
+      const traco = (el) => parseFloat(getComputedStyle(el).strokeWidth);
+      const molduras = [...svg.querySelectorAll('[data-moldura]')].map((el) => ({
+        nome: el.getAttribute('data-moldura'),
+        parcela: el.getAttribute('data-parcela'),
+        traco: traco(el),
+        caixa: caixa(el),
+      }));
+      const areas = [...svg.querySelectorAll('[data-areas] .uni')].map((el) => ({
+        slug: el.getAttribute('data-unidade'),
+        parcela: el.getAttribute('data-parcela'),
+        traco: traco(el),
+        caixa: caixa(el),
+      }));
+      return { molduras, areas, mapa: svg.getBoundingClientRect().width };
+    });
+    await p.__ctx.close();
+
+    const porParcela = r.molduras.map((m) => {
+      const seus = r.areas.filter((a) => a.parcela === m.parcela);
+      let menor = Number.POSITIVE_INFINITY;
+      let quem = null;
+      for (const a of seus) {
+        const d = Math.min(
+          a.caixa.x - (m.caixa.x + m.traco),
+          m.caixa.x + m.caixa.w - m.traco - (a.caixa.x + a.caixa.w),
+          a.caixa.y - (m.caixa.y + m.traco),
+          m.caixa.y + m.caixa.h - m.traco - (a.caixa.y + a.caixa.h),
+        );
+        if (d < menor) {
+          menor = d;
+          quem = a.slug;
+        }
+      }
+      return { nome: m.nome, traco: m.traco, poligonos: seus.length, menor, quem };
+    });
+    leituras.push({ largura, mapa: r.mapa, molduras: r.molduras.length, porParcela });
+    medidas.margemDaMoldura[largura] = { mapa: r.mapa, porParcela };
+  }
+
+  const semParcela = leituras.filter((l) => l.molduras !== 2 || l.porParcela.some((x) => x.poligonos === 0));
+  const tocam = leituras.flatMap((l) =>
+    l.porParcela.filter((x) => !(x.menor > 0)).map((x) => `${x.nome} a ${l.largura} (${x.quem}, ${x.menor.toFixed(2)} px)`),
+  );
+  conta(
+    'U12 · 16.09.2026 · a margem da moldura: nenhum polígono toca a linha da sua moldura em nenhuma das cinco larguras',
+    semParcela.length === 0 && tocam.length === 0,
+    leituras
+      .map(
+        (l) =>
+          `${l.largura}: mapa ${l.mapa.toFixed(0)} px, ` +
+          l.porParcela
+            .map((x) => `${x.nome} ${x.menor.toFixed(2)} px (${x.poligonos} polígonos, o mais perto ${x.quem})`)
+            .join(', '),
+      )
+      .join(' · ') +
+      (tocam.length ? ` · TOCAM: ${tocam.join(', ')}` : '') +
+      (semParcela.length ? ` · leituras sem as duas molduras: ${semParcela.map((l) => l.largura).join(', ')}` : ''),
+  );
+}
+
 /* --------------------------------------------------------------- a corrida */
 async function corre(quais) {
   celulas = [];
@@ -1761,7 +1943,10 @@ async function corre(quais) {
      A U10 E A U11 SÃO DA SEGUNDA PASSAGEM (08.09.2026) e não estão no brief: a
      U10 mede a arrumação das duas molduras (achado 9 da leitura a frio) e a U11
      mede de quem é a pasta do segundo nível servido (achado 11). As duas entram
-     com a razão escrita na sua secção, e a emenda do brief nomeia-as. */
+     com a razão escrita na sua secção, e a emenda do brief nomeia-as.
+
+     A U12 É DE 16.09.2026, do que o diretor viu na primeira página: a margem da
+     moldura, medida em tinta contra tinta nas cinco larguras do bloco P1. */
   const todas = {
     U1: u1,
     U2: u2,
@@ -1772,6 +1957,7 @@ async function corre(quais) {
     U8: u8,
     U10: u10,
     U11: u11,
+    U12: u12,
     U3fg: u3ordem,
   };
   for (const nome of quais) await todas[nome]();
@@ -1978,6 +2164,31 @@ const PLANTAS = [
       });
     },
   },
+  {
+    /* A MARGEM A ZERO: o rectângulo de cada moldura encolhe `MARGEM_DA_MOLDURA`
+       unidades nos quatro lados e volta a ser a caixa exacta dos polígonos da
+       parcela, que é o desenho que o diretor viu a 16.09.2026, com as Selvagens
+       em cima da linha. Os polígonos não se tocam: o que a planta desfaz é a
+       margem, e mais nada.
+
+       A MARGEM VEM DO CÓDIGO e não de um número escrito aqui: uma planta que
+       diz «põe a margem a zero» tem de ler a margem que o sítio declara, senão
+       passa a dizer «põe a margem em 44 unidades a menos», que não é a mesma
+       coisa no dia em que o número mudar. */
+    nome: 'a margem das molduras a zero (o rectângulo de volta à caixa exacta dos polígonos)',
+    celulas: ['U12'],
+    quais: ['U12'],
+    estrago: (texto, rota, ext) =>
+      ext === '.html'
+        ? texto.replace(/<rect\b[^>]*data-moldura="[^"]+"[^>]*>/g, (todo) =>
+            todo
+              .replace(/\bx="(-?\d+)"/, (_, v) => `x="${Number(v) + MARGEM_DA_MOLDURA}"`)
+              .replace(/\by="(-?\d+)"/, (_, v) => `y="${Number(v) + MARGEM_DA_MOLDURA}"`)
+              .replace(/\bwidth="(\d+)"/, (_, v) => `width="${Number(v) - 2 * MARGEM_DA_MOLDURA}"`)
+              .replace(/\bheight="(\d+)"/, (_, v) => `height="${Number(v) - 2 * MARGEM_DA_MOLDURA}"`),
+          )
+        : texto,
+  },
 ];
 
 if (VERMELHOS) {
@@ -2010,7 +2221,7 @@ if (VERMELHOS) {
   process.exit(falhou ? 1 : 0);
 }
 
-await corre(['U1', 'U2', 'U3', 'U4', 'U5', 'U7', 'U8', 'U10', 'U11']);
+await corre(['U1', 'U2', 'U3', 'U4', 'U5', 'U7', 'U8', 'U10', 'U11', 'U12']);
 limpaAProva();
 await nav.close();
 await navWebkit.close();
