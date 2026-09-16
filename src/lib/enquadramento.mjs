@@ -80,7 +80,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { hasClaim, getClaim, loadClaims } from './ledger.mjs';
+import { hasClaim, getClaim, loadClaims, documentoDaLinha, textoOuNulo } from './ledger.mjs';
 /* O marcador da casa, do módulo que o declara e não de `ledger.mjs`, que o
    reexporta: um campo que o traga é um campo por confirmar, e não um nome. */
 import { POR_VERIFICAR as MARCADOR } from '../data/marcador.mjs';
@@ -386,11 +386,14 @@ export function mesmaSerie(id, anterior) {
   const a = getClaim(id);
   const b = getClaim(anterior);
   if (!a || !b) return false;
-  const ea = typeof a.document?.edition === 'string' ? a.document.edition : null;
-  const eb = typeof b.document?.edition === 'string' ? b.document.edition : null;
+  /* `documentoDaLinha()` é o estreitamento conferido do bloco `document`: os
+     valores dele continuam `unknown` até quem os lê os conferir, que é o que as
+     duas linhas a seguir fazem. */
+  const ea = textoOuNulo(documentoDaLinha(a)?.edition);
+  const eb = textoOuNulo(documentoDaLinha(b)?.edition);
   if (ea === null || eb === null || ea !== eb) return false;
-  const ua = typeof a.unit === 'string' ? a.unit : null;
-  const ub = typeof b.unit === 'string' ? b.unit : null;
+  const ua = textoOuNulo(a.unit);
+  const ub = textoOuNulo(b.unit);
   return ua !== null && ub !== null && ua === ub;
 }
 
