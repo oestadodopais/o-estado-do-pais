@@ -293,8 +293,8 @@ for (const chave of Object.keys(manifesto.registos)) {
 }
 
 conferencias++;
-/* O ÂMBITO SOBE DE 5 PARA 7 a 16.09.2026, com as duas edições de «Évora 2027 —
-   O Prometido, o Painel, o Dinheiro» (bloco E1). O número está escrito para que
+/* O ÂMBITO SOBE DE 5 PARA 7 a 16.09.2026, com as duas edições de «Évora 2027: o
+   prometido, o que o painel escreveu, e o dinheiro em linhas» (bloco E1). O número está escrito para que
    uma mudança de âmbito não passe em silêncio, e não passou: a prova foi relida
    sobre as duas edições novas e as duas dão 119 blocos lidos contra 119 no
    registo, 880 unidades iguais carácter a carácter, 0 isentas e 0 apagadas. */
