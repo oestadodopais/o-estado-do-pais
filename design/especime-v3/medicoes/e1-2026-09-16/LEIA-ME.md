@@ -4,17 +4,17 @@
 
 **O bloco fecha, e fecha com os três portões a 0.** Os seis itens do mandato estão feitos e medidos.
 
-**Houve uma passagem em duas partes, e a segunda está no §8.** A primeira aterrou com o `verify` a 1 numa célula: os dois documentos que o motor tinha escrito não declaravam papel nem tinta, e por isso a moldura deste projeto e a tela do navegador diziam coisas diferentes ao mesmo leitor. Não se contornou nem se enfraqueceu portão nenhum: disse-se ao lugar de direção, o motor corrigiu a folha em `b99e2254052c773d526281704ab7405ad2becfe6`, e aqui refixaram-se os bytes e voltou a correr-se a travessia. A `check:moldura` passou de 3 167 nós graves a **0**, e o pior contraste de texto de célula de 1,17:1 a **7,57:1**. O antes e o depois estão fotografados.
+**Houve três passagens: a segunda está no §8 e a terceira no §11.** A primeira aterrou com o `verify` a 1 numa célula: os dois documentos que o motor tinha escrito não declaravam papel nem tinta, e por isso a moldura deste projeto e a tela do navegador diziam coisas diferentes ao mesmo leitor. Não se contornou nem se enfraqueceu portão nenhum: disse-se ao lugar de direção, o motor corrigiu a folha em `b99e2254052c773d526281704ab7405ad2becfe6`, e aqui refixaram-se os bytes e voltou a correr-se a travessia. A `check:moldura` passou de 3 167 nós graves a **0**, e o pior contraste de texto de célula de 1,17:1 a **7,57:1**. O antes e o depois estão fotografados.
 
 ## 1 · O mandato, item a item
 
 | # | o que | a medida | medido |
 | --- | --- | --- | --- |
-| 1 | **A declaração do estudo** em `src/data/studies.mjs` | a entrada; `STUDY_IDS`, `EDITIONS` e o resto a seguir por si | **feito.** A entrada com `id` e `slug` `evora-2027-prometido-painel-dinheiro`, `subject: 'evora'`, as duas edições com o título do motor («Évora 2027 — O Prometido, o Painel, o Dinheiro» e «Évora 2027 — Promised, Panel, Money»), `date: '2026-09-16'`, `updated: null` e `artifactUrl: null`, com a razão da data no comentário: o commit `c0b19d4bbc1b05819b6e0ea5b9e8e83f60ae40f4` do motor, de 2026-09-16, que escreveu esses bytes pela última vez. A descrição é uma frase por edição a dizer o que o estudo põe lado a lado, sem se explicar (norma §1.4), e não é transcrição: por isso não leva `verbatimDaAbertura`. **O resto seguiu por si, e três contagens da casa subiram com o arquivo:** `estudos_no_arquivo` 12 → 13, `edicoes_no_arquivo` 16 → 18, `estudos_evora_no_arquivo` 5 → 6, as três recalculadas pelo `ledger:check` a cada construção e nenhuma escrita à mão sem prova |
+| 1 | **A declaração do estudo** em `src/data/studies.mjs` | a entrada; `STUDY_IDS`, `EDITIONS` e o resto a seguir por si | **feito.** A entrada com `id` e `slug` `evora-2027-prometido-painel-dinheiro`, `subject: 'evora'`, as duas edições com o título que o documento imprime, lido do `<h1>` de cada uma («Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas» e «Évora 2027: what was promised, what the panel wrote, and the money line by line»; estiveram aqui os nomes dos ficheiros do motor até à terceira passagem, §11), `date: '2026-09-16'`, `updated: null` e `artifactUrl: null`, com a razão da data no comentário: o commit `c0b19d4bbc1b05819b6e0ea5b9e8e83f60ae40f4` do motor, de 2026-09-16, que escreveu esses bytes pela última vez. A descrição é uma frase por edição a dizer o que o estudo põe lado a lado, sem se explicar (norma §1.4), e não é transcrição: por isso não leva `verbatimDaAbertura`. **O resto seguiu por si, e três contagens da casa subiram com o arquivo:** `estudos_no_arquivo` 12 → 13, `edicoes_no_arquivo` 16 → 18, `estudos_evora_no_arquivo` 5 → 6, as três recalculadas pelo `ledger:check` a cada construção e nenhuma escrita à mão sem prova |
 | 2 | **Os bytes fixados** e o `studies-src/manifest.yml` | D5 verde | **feito, e refixado uma vez.** `pt.html` 61 558 bytes e `en.html` 59 780, copiados byte a byte de `content/14 Évora 2027/` com as cópias brutas em `_raw/`, e as duas linhas do manifesto com `origin: researchhub` e o `origin_ref` ao commit `b99e2254…becfe6`. Os dois resumos de cada linha são iguais porque não houve invólucro para tirar, e cada `sha256_normalized` é o `edicao_html_sha256` que o motor prova: `bdb34624…2e70f6` (pt) e `c34d7eaa…57180c` (en). **O D5 corre e bate nas duas.** Os primeiros bytes fixados (61 064 e 59 286, de `c0b19d4b…`) eram os da folha sem papel nem tinta, e saíram com a correção do §8 |
 | 3 | **A travessia dos registos** | D1 a D4 e D6 verdes; o `git status` do motor limpo depois | **feito, e corrido duas vezes** (a segunda com os bytes refixados; as duas estão citadas no §2). `registos/evora-2027-prometido-painel-dinheiro/{pt,en}.{record,cortes}.json` e as duas entradas novas no `registos/manifest.json`; as oito que já lá estavam não mudaram (a corrida diz «2 nova(s) · 0 alterada(s) · 8 inalterada(s)»). **O `git status` do motor ficou como estava antes da corrida**, com os mesmos quatro caminhos por confirmar de outras corridas e nada deste estudo. O portão dos documentos diz «10 atravessado(s) · D5 correu em 9 e não corre em 1», e as duas linhas novas dizem «119 bloco(s) · 182 referência(s) · o D5 correu e bate» |
 | 4 | **A página de texto** | capturas nas cinco larguras, duas edições | **feito, e sem CSS novo.** A `TextoView` compõe o registo inteiro: 119 blocos, 28 tabelas, 8 títulos de nível 2 e 18 de nível 3, nas duas edições, sem uma linha de guião (o `<article>` tem 157 227 bytes de HTML estático, que são 155 507 caracteres). As citações ficam na língua da fonte nas duas edições. **A régua das tabelas largas está no §3**, e diz zero tabelas fora do seu contentor e zero páginas a deslocar de lado, nas cinco larguras e nas duas edições. O gabarito já tinha o que o item 4 permitia acrescentar, e por isso não se acrescentou nada |
-| 5 | **A lista dos estudos** e a primeira página | a captura de `/estudos` a 390 e 1 280 | **feito.** `/estudos` mostra «Évora 2027 — O Prometido, o Painel, o Dinheiro» no seu lugar, a seguir ao «Prometido, Pago, Auditado», com o estado «documento alojado» (que é o que ele é: a leitura da casa sobre o trabalho não está escrita) e a data 16.09.2026 em cada edição. **As contagens subiram por si**, e as capturas mostram-nas: 13 estudos publicados e 18 edições no cabeçalho de `/estudos`, as duas com a porta da prova, e a linha «Estudos» da primeira página a dizer 13, com o `data-prova="estudos"` que o portão reconta. Nenhum dos três foi escrito à mão |
+| 5 | **A lista dos estudos** e a primeira página | a captura de `/estudos` a 390 e 1 280 | **feito.** `/estudos` mostra «Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas» no seu lugar, a seguir ao «Prometido, Pago, Auditado», com o estado «documento alojado» (que é o que ele é: a leitura da casa sobre o trabalho não está escrita) e a data 16.09.2026 em cada edição. **As contagens subiram por si**, e as capturas mostram-nas: 13 estudos publicados e 18 edições no cabeçalho de `/estudos`, as duas com a porta da prova, e a linha «Estudos» da primeira página a dizer 13, com o `data-prova="estudos"` que o portão reconta. Nenhum dos três foi escrito à mão |
 | 6 | **O relatório** | completo | este ficheiro |
 
 ## 2 · As corridas do exportador, com as linhas citadas
@@ -100,7 +100,7 @@ Mesma forma, mesma variável, mesmo destino conferido no ensaio antes da escrita
 
 ## 4 · Os commits e a cabeça
 
-Onze commits sobre `c032cbfe`, todos com os dois trailers exactos e todos por caminhos explícitos (nunca `git add -A`). Os sete primeiros são a primeira passagem; os três últimos e este são a segunda, a que fecha a `check:moldura`.
+Dezasseis commits sobre `c032cbfe`, todos com os dois trailers exactos e todos por caminhos explícitos (nunca `git add -A`), em três passagens: **sete** na primeira, **quatro** na segunda (a que fecha a `check:moldura`) e **cinco** na terceira (a da leitura a frio do Codex).
 
 | cabeça | o que |
 | --- | --- |
@@ -114,7 +114,12 @@ Onze commits sobre `c032cbfe`, todos com os dois trailers exactos e todos por ca
 | `a5d66b8a` | O relatório do bloco, com a cabeça, os portões, o custo e o que falta (a primeira passagem, com o `verify` a 1) |
 | `81c6915a` | Os bytes refixados: a folha das duas edições passa a ter papel e tinta |
 | `445b4d69` | A combinação que partia, fotografada antes e depois |
-| (o commit deste ficheiro) | O relatório refeito com a segunda passagem. **É a cabeça final**, e não traz os seus próprios portões porque um commit não se pode nomear a si próprio: os códigos do §5 são os da corrida sobre `445b4d69`, que é a cabeça com todo o código, os bytes, os registos e as capturas. Este commit acrescenta um ficheiro de relatório, que nenhuma das três cadeias lê |
+| `01ebdf27` | O relatório refeito: a segunda passagem, e os três portões a 0 |
+| `11266be7` | O título de cada edição é o que o documento imprime |
+| `d7fa77d8` | A proveniência da data diz o commit que escreveu os bytes que estão alojados |
+| `741fdac9` | As três contagens erradas do relatório |
+| `5743ede7` | As prosas que nomeavam o estudo pelo título antigo |
+| (o commit deste ficheiro) | O relatório com a terceira passagem. **É a cabeça final**, e não traz os seus próprios portões porque um commit não se pode nomear a si próprio: os códigos do §5 são os da corrida sobre `5743ede7`, que é a cabeça com todo o código, os bytes, os registos e as capturas. Este commit acrescenta um ficheiro de relatório, e nenhuma das três cadeias o lê: a lista de documentos que o `check:registo` mede tem cinco nomes e não tem este, e o `check:voz` lê o `dist/` |
 
 **Um par que não se pode juntar, e fica dito.** `7a12f9fe` pousa os bytes e `fc102b08` mede a data deles, e os dois têm de ser commits diferentes: a data de uma edição é a do commit que a acrescenta, e um ficheiro não pode trazer dentro de si o resumo do commit que o cria. Entre os dois, a conta 3 do `check:datas` fica vermelha, e é a única coisa que fica.
 
@@ -127,7 +132,7 @@ Onze commits sobre `c032cbfe`, todos com os dois trailers exactos e todos por ca
 
 ## 5 · Os três portões
 
-Cada comando no seu, com o código lido de um ficheiro, sobre `445b4d69`.
+Cada comando no seu, com o código lido de um ficheiro, sobre `5743ede7`.
 
 ```
 npm run build     → 0
@@ -135,7 +140,7 @@ npm run verify    → 0
 npm run typecheck → 0
 ```
 
-Os códigos ficaram em `g-build.code`, `g-verify.code` e `g-typecheck.code`, com as saídas ao lado, no directório de trabalho da sessão.
+Os códigos ficaram em `i-build.code`, `i-verify.code` e `i-typecheck.code`, com as saídas ao lado, no directório de trabalho da sessão. A segunda passagem tinha saído a 0, 0 e 0 sobre `445b4d69`, com os códigos em `g-*.code`.
 
 **A célula que estava vermelha, agora:**
 
@@ -177,11 +182,11 @@ A tinta é a mesma nas duas: o que faltava era a tela. O «antes» foi tirado do
 
 ## 7 · O custo
 
-**Tempo de parede:** das 17:36 às 19:30 UTC de 16.09.2026, **1 h 54 m**, em duas passagens: a primeira até às 18:45 (1 h 9 m) e a segunda, depois de o motor corrigir a folha, das 18:52 às 19:30 (38 m).
+**Tempo de parede:** das 17:36 às 20:10 UTC de 16.09.2026, **2 h 34 m**, em três passagens: a primeira até às 18:45 (1 h 9 m), a segunda, depois de o motor corrigir a folha, das 18:52 às 19:30 (38 m), e a terceira, sobre a leitura a frio do Codex, das 19:40 às 20:10 (30 m).
 
-Perto de hora e meia disso foi em construções e portões: seis `npm run build` (cada um cerca de seis minutos), três `npm run verify` (cerca de nove cada, e o primeiro parou a meio na célula vermelha), os dezanove passos do resto da cadeia corridos um a um, e cinco passagens da régua da moldura com navegador, entre as do portão e as três sondas que atribuíram os 3 167 nós documento a documento.
+Perto de duas horas disso foi em construções e portões: oito `npm run build` (cada um cerca de seis minutos), cinco `npm run verify` (cerca de nove cada; um parou na célula vermelha da moldura e outro numa corrida suja, ver o §11), os dezanove passos do resto da cadeia corridos um a um, e cinco passagens da régua da moldura com navegador, entre as do portão e as três sondas que atribuíram os 3 167 nós documento a documento.
 
-**Símbolos:** cerca de **475 mil**, contados pelo orçamento da sessão da ferramenta (de 15 000 000 no início a cerca de 14 525 000 no fim). Não é a mesma conta que o contador do modelo faz, e por isso diz-se de onde vem.
+**Símbolos:** cerca de **525 mil**, contados pelo orçamento da sessão da ferramenta (de 15 000 000 no início a cerca de 14 475 000 no fim). Não é a mesma conta que o contador do modelo faz, e por isso diz-se de onde vem.
 
 ## 8 · O achado da primeira passagem, e como fechou
 
@@ -228,3 +233,19 @@ Daí saíam duas coisas, e as duas eram reais: o `axe` não tinha tela para comp
 
 1. **O documento tem oito secções de nível 2, e não sete.** O §0 do brief do sítio diz «as sete secções». As oito, nas duas edições, são: «Os limites deste documento», «A linha do tempo», «O que a candidatura prometeu, e o que o painel escreveu», «O dinheiro em linhas», «O que não se encontrou», «O que mudou», «Quem dirige a associação» e «As fontes». A sétima é a que o §1.6 do brief do motor manda escrever (os órgãos sociais da associação, pelo cargo e pelo nome, com a falta das remunerações dita). Não é um desvio: é a contagem do brief do sítio que está uma curta.
 2. **Nenhuma das 182 referências de cada edição tem linha no livro-razão deste sítio**, e é o esperado: as linhas deste estudo vivem no livro-razão do motor e não atravessaram. A página de texto dá a cada figura a porta da sua entrada em «As linhas deste documento», que é a saída que a `IDENTIDADE.md` §10 prescreve quando não há linha para prometer, e nenhum selo promete uma linha que não existe.
+
+## 11 · A terceira passagem: a leitura a frio do Codex
+
+**A leitura a frio sobre `01ebdf27` apanhou as cinco plantas e trouxe três pontos reais.** Cada um levou o seu commit.
+
+1. **Os títulos declarados não eram os do documento** (`11266be7`). `studies.mjs` e o `studies-src/manifest.yml` diziam o nome do ficheiro do motor, que é como ele arruma as suas edições em disco. O título passa a ser o que o documento imprime, lido do `<h1>` de cada edição, e as quatro fontes do mesmo facto dizem agora a mesma cadeia, conferida carácter a carácter: o `<h1>`, a etiqueta `<title>`, o campo `title` do registo e o bloco 0 desse registo. **Nenhum portão compara o título com o nome do ficheiro do motor**, e foi conferido antes de mexer.
+2. **A proveniência da data nomeava o commit errado** (`d7fa77d8`). O comentário dizia `c0b19d4` e que os bytes «não voltaram a mudar»; voltaram, com `b99e225`, que é o que o manifesto já dizia. Os dois lugares diziam coisas diferentes sobre o mesmo facto.
+3. **Três contagens deste relatório estavam erradas** (`741fdac9`): vinte e quatro capturas onde são vinte e oito; «155 507 bytes» que eram caracteres (são 157 227 bytes); e «dois novos» entre os vinte ficheiros da travessia, que são quatro, porque cada edição traz um registo e um ficheiro de operações.
+
+**E uma quarta coisa, que é consequência da primeira e não estava na lista** (`5743ede7`): trocado o título, três prosas ficaram a nomear um título que já não existe. A que importa é a do livro-razão, porque a `derivation` de `estudos-evora-publicados` é impressa na página da linha: um número deste sítio resolve numa linha, e a linha não pode nomear uma coisa que o arquivo não tem. Com ela foram duas gralhas de pontuação da mesma frase, escritas na primeira passagem.
+
+**O que fica da leitura e não é deste bloco**, por decisão do lugar de direção: os guiões do tema nas páginas, o `origin_ref` das oito entradas antigas do registo de travessia, e a catraca L1. São do brief ou do desenho.
+
+**UMA NOTA DE MÉTODO, porque custou uma corrida.** A primeira corrida dos portões desta passagem saiu a 1 no `build` e no `verify`, e não era um defeito: o `astro build` rendeu as páginas, eu editei o livro-razão enquanto ele corria, e o `gate:html` comparou o `dist/` velho com o ficheiro novo. O portão apanhou uma diferença real entre o que estava construído e o que estava declarado, que é exactamente o que ele existe para apanhar. A corrida que vale é a de uma árvore limpa em que nada se toca do princípio ao fim.
+
+**A ENTRADA DE «ORÇAMENTADO, PAGO, DEVIDO» DIZ A REGRA DO TÍTULO AO CONTRÁRIO**, com a data de 15.08.2026: «o título é o nome do documento, e não a sua etiqueta `<title>`». As duas regras não podem valer as duas, e qual delas fica é decisão da direção. Este bloco aplicou a que a leitura a frio mandou aplicar e não mexeu nas outras entradas; fica dito aqui e no comentário da entrada.
