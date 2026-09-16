@@ -199,6 +199,22 @@ export const WORKS = [
     slug: 'evora-2027-prometido-painel-dinheiro',
     subject: 'evora',
     /**
+     * O TÍTULO É O QUE O DOCUMENTO IMPRIME, palavra por palavra (16.09.2026,
+     * leitura a frio do Codex, achado 1). Está lido do `<h1>` de cada edição, e
+     * as quatro fontes do mesmo facto dizem a mesma cadeia: o `<h1>`, a
+     * etiqueta `<title>`, o campo `title` do registo de conteúdo e o bloco 0
+     * desse registo. Estava aqui o NOME DO FICHEIRO do motor («Évora 2027 — O
+     * Prometido, o Painel, o Dinheiro»), que é como o motor arruma as suas
+     * edições em disco e não é o que o leitor lê na página.
+     *
+     * A ENTRADA DE «Orçamentado, Pago, Devido» AQUI AO LADO DIZ A REGRA AO
+     * CONTRÁRIO, e fica dito em vez de ser resolvido à socapa: ela declara, com
+     * a data de 15.08.2026, que «o título é o nome do documento, e não a sua
+     * etiqueta `<title>`», e mantém o nome do ficheiro do motor. As duas regras
+     * não podem valer as duas, e qual delas fica é decisão da direção: esta
+     * entrada segue a que a leitura a frio deste bloco mandou aplicar, e não
+     * mexe nas outras.
+     *
      * A DATA, E COMO FOI ENCONTRADA. Como o «Prometido, Pago, Auditado», este
      * trabalho nunca passou por um anfitrião de artefactos: foi produzido no
      * motor de investigação (ResearchHub) e atravessou de lá como ficheiro. A
@@ -212,11 +228,16 @@ export const WORKS = [
     editions: [
       {
         lang: 'pt',
-        title: 'Évora 2027 — O Prometido, o Painel, o Dinheiro',
+        title: 'Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas',
         date: '2026-09-16',
         updated: null,
       },
-      { lang: 'en', title: 'Évora 2027 — Promised, Panel, Money', date: '2026-09-16', updated: null },
+      {
+        lang: 'en',
+        title: 'Évora 2027: what was promised, what the panel wrote, and the money line by line',
+        date: '2026-09-16',
+        updated: null,
+      },
     ],
     // Nunca foi publicado fora deste sítio: não há endereço externo para dar.
     artifactUrl: null,
