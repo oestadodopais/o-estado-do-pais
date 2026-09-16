@@ -110,10 +110,10 @@ export const FECHO = {
       titulo: { pt: 'A cor', en: 'Colour' },
       texto: {
         pt: [
-          'A cor aparece só onde a fonte publica um limiar: âmbar quando o valor está fora dele, cobalto quando está dentro. Tudo o resto é tinta e cinzento, e uma correção diz-se pela forma, com o valor antigo riscado e o novo ao lado, nunca por uma cor.',
+          'A cor aparece só onde a fonte publica um valor de referência: âmbar quando o valor está fora dele, cobalto quando está dentro. Tudo o resto é tinta e cinzento, e uma correção diz-se pela forma, com o valor antigo riscado e o novo ao lado, nunca por uma cor.',
         ],
         en: [
-          'Colour appears only where the source publishes a threshold: amber when the value is outside it, cobalt when it is within. Everything else is ink and grey, and a correction is said by form, with the old value struck through and the new one beside it, never by a colour.',
+          'Colour appears only where the source publishes a reference value: amber when the value is outside it, cobalt when it is within. Everything else is ink and grey, and a correction is said by form, with the old value struck through and the new one beside it, never by a colour.',
         ],
       },
       ligacoes: [
@@ -199,11 +199,11 @@ export const REGRAS = [
     limite: {
       pt: [
         'Nem todas as linhas têm já a proveniência completa: a que não tem leva o marcador no campo que falta, e a conta ao lado diz quantas são.',
-        ' Uma fonte, o Portal BASE, recusa os pedidos que se identificam com o nome da casa: é lida com a identidade de um navegador, e nenhuma outra o é.',
+        ' Uma fonte, o Portal BASE, recusa os pedidos que se identificam com o nome deste projeto: é lida com a identidade de um navegador, e nenhuma outra o é.',
       ],
       en: [
         'Not every row has its provenance complete yet: one that does not carries the marker in the missing field, and the count beside says how many there are.',
-        ' One source, Portal BASE, refuses requests that identify themselves with the house’s name: it is read with the identity of a browser, and no other source is.',
+        ' One source, Portal BASE, refuses requests that identify themselves with this project’s name: it is read with the identity of a browser, and no other source is.',
       ],
     },
     prova: [
@@ -630,10 +630,10 @@ export const REGRAS = [
     },
     mecanismo: {
       pt: [
-        'Não há neste sítio nenhuma ordenação por partido. O crédito de um valor é um campo da sua linha, conferido carácter a carácter na página dessa linha, como qualquer outro campo. As frases sobre o financiamento e sobre a publicidade não têm máquina nenhuma por trás: são regras da casa, como a primeira, e valem por estarem escritas e por quem responde por elas.',
+        'Não há neste sítio nenhuma ordenação por partido. O crédito de um valor é um campo da sua linha, conferido carácter a carácter na página dessa linha, como qualquer outro campo. As frases sobre o financiamento e sobre a publicidade não têm máquina nenhuma por trás: são regras deste projeto, como a primeira, e valem por estarem escritas e por quem responde por elas.',
       ],
       en: [
-        'There is no ranking by party anywhere on this site. The credit for a value is a field of its row, checked character for character on that row page, like any other field. The sentences about funding and about advertising have no machine behind them: they are house rules, like the first one, and they hold by being written down and by whoever answers for them.',
+        'There is no ranking by party anywhere on this site. The credit for a value is a field of its row, checked character for character on that row page, like any other field. The sentences about funding and about advertising have no machine behind them: they are rules of this project, like the first one, and they hold by being written down and by whoever answers for them.',
       ],
     },
     prova: [

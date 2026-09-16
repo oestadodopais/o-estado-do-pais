@@ -292,13 +292,13 @@ export const POLITICA = {
   /** A via escolhida, e o que ela obriga. */
   via: {
     pt: [
-      'Tudo o que a casa publica leva o rótulo de gerado por IA, em cada página, ' +
-        'no momento em que a página é vista. A revisão faz-se por portões e por ' +
+      'Tudo o que este projeto publica leva o rótulo de texto gerado por inteligência ' +
+        'artificial, em cada página, no momento em que a página é vista. A revisão faz-se por portões e por ' +
         'amostra, e não peça a peça.',
     ],
     en: [
-      'Everything the house publishes carries the AI-generated label, on every page, ' +
-        'at the moment the page is seen. Review is done by gates and by sample, not ' +
+      'Everything this project publishes carries the label saying the text was generated ' +
+        'by artificial intelligence, on every page, at the moment the page is seen. Review is done by gates and by sample, not ' +
         'piece by piece.',
     ],
   },
@@ -350,10 +350,10 @@ export const POLITICA = {
         rotulo: { pt: 'Nunca sem o diretor', en: 'Never without the director' },
         texto: {
           pt:
-            'Qualquer peça que nomeie uma pessoa; correio a terceiros em nome da casa; ' +
+            'Qualquer peça que nomeie uma pessoa; correio a terceiros em nome deste projeto; ' +
             'uma mudança de identidade; dinheiro, contratos, contas.',
           en:
-            'Any piece that names a person; mail to third parties in the name of the house; ' +
+            'Any piece that names a person; mail to third parties in the name of this project; ' +
             'a change of identity; money, contracts, accounts.',
         },
       },
@@ -435,28 +435,28 @@ export const POLITICA = {
     titulo: { pt: 'As recusas', en: 'The refusals' },
     itens: [
       {
-        pt: 'A casa não aceita dinheiro de nenhuma entidade que mede.',
-        en: 'The house takes no money from any entity it measures.',
+        pt: 'Este projeto não aceita dinheiro de nenhuma entidade que mede.',
+        en: 'This project takes no money from any entity it measures.',
       },
       {
-        pt: 'A casa não escreve para o alcance: mede-se por citações, não por visitas.',
-        en: 'The house does not write for reach: it is measured by citations, not by visits.',
+        pt: 'Este projeto não escreve para o alcance: mede-se por citações, não por visitas.',
+        en: 'This project does not write for reach: it is measured by citations, not by visits.',
       },
       {
         pt:
-          'A casa não publica um número que não tenha lido na fonte, não aproxima o ' +
+          'Este projeto não publica um número que não tenha lido na fonte, não aproxima o ' +
           'que não existe, e diz as ausências.',
         en:
-          'The house publishes no figure it has not read at the source, does not ' +
+          'This project publishes no figure it has not read at the source, does not ' +
           'approximate what does not exist, and says what is missing.',
       },
       {
-        pt: 'A casa não chama jornalista à IA e não se diz jornalística.',
-        en: 'The house does not call the AI a journalist and does not call itself journalism.',
+        pt: 'Este projeto não chama jornalista à inteligência artificial e não se diz jornalístico.',
+        en: 'This project does not call artificial intelligence a journalist and does not call itself journalism.',
       },
       {
-        pt: 'A casa não guarda dados pessoais dos leitores nem os põe no repositório.',
-        en: 'The house keeps no personal data of its readers and puts none in the repository.',
+        pt: 'Este projeto não guarda dados pessoais dos leitores nem os põe no repositório.',
+        en: 'This project keeps no personal data of its readers and puts none in the repository.',
       },
     ],
   },
