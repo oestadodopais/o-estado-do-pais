@@ -32,7 +32,7 @@
  *
  * O QUE ELA DECLARA, e não é mais do que isto: quem exerce um cargo público é
  * nomeado nos seus atos públicos, a partir dos documentos oficiais, no bem e no
- * mal; ninguém é nomeado por rumor. A segunda proteção, o direito de resposta,
+ * mal; ninguém é nomeado com base em rumores. A segunda proteção, o direito de resposta,
  * vive na página das correções, que é onde a resposta se pede. A terceira é o
  * canal das correções, que já existia.
  *
@@ -47,13 +47,13 @@ export const SOBRE = {
     texto:
       'O Estado do País mede a sociedade portuguesa, no seu contexto interno e na sua posição em relação ao exterior, e mantém dessa medição um registo contínuo, claro e permanente. É produzido maioritariamente por inteligência artificial, com o mínimo de intervenção humana, numa tentativa de explorar as possibilidades tecnológicas do presente e de levar ao limite a independência e o rigor.',
     nomes:
-      'Quem exerce um cargo público é nomeado nos seus atos públicos, a partir dos documentos oficiais, no que fez bem e no que fez mal; ninguém é nomeado por rumor.',
+      'Quem exerce um cargo público é nomeado nos seus atos públicos, a partir dos documentos oficiais, no que fez bem e no que fez mal; ninguém é nomeado com base em rumores.',
   },
   en: {
     texto:
       'O Estado do País measures Portuguese society, in its internal context and in its position in relation to the outside, and keeps of that measurement a continuous, clear and permanent record. It is produced mostly by artificial intelligence, with the minimum of human intervention, in an attempt to explore the technological possibilities of the present and to push independence and rigour to their limit.',
     nomes:
-      'Public office holders are named in their public acts, from the official documents, for what they did well and what they did badly; nobody is named on hearsay.',
+      'Anyone who holds public office is named in connection with their public acts, from the official documents, for what they did well and what they did badly; nobody is named on the basis of rumour.',
   },
 };
 
