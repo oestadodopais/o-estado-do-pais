@@ -84,7 +84,7 @@ import { nomeOficial } from './enquadramento.mjs';
  * coincidem em quatro linhas (a dívida pública, a taxa de emprego, a taxa de
  * desemprego e o saldo), e nessas o nome é o mesmo texto nas duas.
  *
- * @type {Map<string, { nome: ParDeLinguas, fonte: 'figuras'|'medidas' }>}
+ * @type {Map<string, { nome: ParDeLinguas, fonte: 'figuras'|'medidas'|'projeto' }>}
  */
 const CARTOES = new Map();
 for (const f of FIGURAS) {

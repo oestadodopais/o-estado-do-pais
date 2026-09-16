@@ -473,10 +473,18 @@ const EXCECOES_DO_VOCABULARIO = [
     /* A política de IA copia a `POLITICA-DA-AUTONOMIA.md`, que é o documento
        aprovado pelo diretor, e a regra da casa é que o que se copia de uma fonte
        fica como a fonte o escreveu. As três frases estão em
-       `src/data/politica-ia.mjs`. */
+       `src/data/politica-ia.mjs`.
+
+       CRESCE A 16.09.2026, com a QUARTA: o direito de resposta, na página das
+       correções. É a segunda das três proteções da emenda de 15.09.2026 daquele
+       mesmo documento, e o diretor ditou-a palavra por palavra a 16.09.2026 às
+       08:25 UTC: «Quem for nomeado pode responder: a resposta publica-se ao lado
+       da peça, sem edição, pelo mesmo endereço das correções.» A palavra «peça»
+       aqui é a mesma da política («qualquer peça que nomeie uma pessoa»), e é a
+       peça que nomeia alguém, não o nome de um estudo, que é o que a L3 mede. */
     conta: 'peça',
     porque: 'a política de IA copia a POLITICA-DA-AUTONOMIA.md e fica como a fonte a escreveu',
-    padrao: /peça a peça|revê cada peça antes de sair|Qualquer peça que nomeie uma pessoa/,
+    padrao: /peça a peça|revê cada peça antes de sair|Qualquer peça que nomeie uma pessoa|resposta publica-se ao lado da peça/,
   },
   {
     /* «trabalho» no sentido de EMPREGO não é o nome de um estudo, e a L3 mede
