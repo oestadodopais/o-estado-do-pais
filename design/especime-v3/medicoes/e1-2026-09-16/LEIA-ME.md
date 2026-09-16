@@ -2,20 +2,22 @@
 
 *16.09.2026, ramo `e1-2026-09-16`, sobre `c032cbfe`. Construtor: **Claude Opus 5**. É a cópia do relatório do bloco, no formato do §1 item 6 do brief (`BRIEF-E1-evora-2027-sitio.md`). As capturas estão em `design/especime-v3/capturas/e1-2026-09-16/`; a régua das tabelas e a das portas repetidas estão nesta pasta, ao lado deste ficheiro.*
 
-**O bloco não pode aterrar como está, e a razão é uma só.** Cinco dos seis itens do mandato estão feitos e medidos; o `npm run verify` sai a 1 numa célula, e a causa não é do sítio: os dois documentos que o motor escreveu não declaram o seu próprio papel nem a sua própria tinta, e por isso a moldura deste projeto e a tela do navegador deixam de dizer a mesma coisa ao mesmo leitor. Está medido no §8, com o endereço da correção. Nada aqui foi contornado, e nenhum portão foi enfraquecido.
+**O bloco fecha, e fecha com os três portões a 0.** Os seis itens do mandato estão feitos e medidos.
+
+**Houve uma passagem em duas partes, e a segunda está no §8.** A primeira aterrou com o `verify` a 1 numa célula: os dois documentos que o motor tinha escrito não declaravam papel nem tinta, e por isso a moldura deste projeto e a tela do navegador diziam coisas diferentes ao mesmo leitor. Não se contornou nem se enfraqueceu portão nenhum: disse-se ao lugar de direção, o motor corrigiu a folha em `b99e2254052c773d526281704ab7405ad2becfe6`, e aqui refixaram-se os bytes e voltou a correr-se a travessia. A `check:moldura` passou de 3 167 nós graves a **0**, e o pior contraste de texto de célula de 1,17:1 a **7,57:1**. O antes e o depois estão fotografados.
 
 ## 1 · O mandato, item a item
 
 | # | o que | a medida | medido |
 | --- | --- | --- | --- |
 | 1 | **A declaração do estudo** em `src/data/studies.mjs` | a entrada; `STUDY_IDS`, `EDITIONS` e o resto a seguir por si | **feito.** A entrada com `id` e `slug` `evora-2027-prometido-painel-dinheiro`, `subject: 'evora'`, as duas edições com o título do motor («Évora 2027 — O Prometido, o Painel, o Dinheiro» e «Évora 2027 — Promised, Panel, Money»), `date: '2026-09-16'`, `updated: null` e `artifactUrl: null`, com a razão da data no comentário: o commit `c0b19d4bbc1b05819b6e0ea5b9e8e83f60ae40f4` do motor, de 2026-09-16, que escreveu esses bytes pela última vez. A descrição é uma frase por edição a dizer o que o estudo põe lado a lado, sem se explicar (norma §1.4), e não é transcrição: por isso não leva `verbatimDaAbertura`. **O resto seguiu por si, e três contagens da casa subiram com o arquivo:** `estudos_no_arquivo` 12 → 13, `edicoes_no_arquivo` 16 → 18, `estudos_evora_no_arquivo` 5 → 6, as três recalculadas pelo `ledger:check` a cada construção e nenhuma escrita à mão sem prova |
-| 2 | **Os bytes fixados** e o `studies-src/manifest.yml` | D5 verde | **feito.** `pt.html` 61 064 bytes e `en.html` 59 286 bytes, copiados byte a byte de `content/14 Évora 2027/` com as cópias brutas em `_raw/`, e as duas linhas do manifesto com `origin: researchhub` e o `origin_ref` ao commit. Os dois resumos de cada linha são iguais porque não houve invólucro para tirar, e cada `sha256_normalized` é o `edicao_html_sha256` que o motor prova: `1ed80a93…f382f9` (pt) e `f29fbbdb…5e6cff` (en). **O D5 corre e bate nas duas** |
-| 3 | **A travessia dos registos** | D1 a D4 e D6 verdes; o `git status` do motor limpo depois | **feito.** O ensaio passou e o `--write` escreveu; as linhas estão citadas no §2. `registos/evora-2027-prometido-painel-dinheiro/{pt,en}.{record,cortes}.json` e as duas entradas novas no `registos/manifest.json`; as oito que já lá estavam não mudaram (a corrida diz «2 nova(s) · 0 alterada(s) · 8 inalterada(s)»). **O `git status` do motor ficou como estava antes da corrida**, com os mesmos quatro caminhos por confirmar de outras corridas e nada deste estudo. O portão dos documentos diz «10 atravessado(s) · D5 correu em 9 e não corre em 1», e as duas linhas novas dizem «119 bloco(s) · 182 referência(s) · o D5 correu e bate» |
+| 2 | **Os bytes fixados** e o `studies-src/manifest.yml` | D5 verde | **feito, e refixado uma vez.** `pt.html` 61 558 bytes e `en.html` 59 780, copiados byte a byte de `content/14 Évora 2027/` com as cópias brutas em `_raw/`, e as duas linhas do manifesto com `origin: researchhub` e o `origin_ref` ao commit `b99e2254…becfe6`. Os dois resumos de cada linha são iguais porque não houve invólucro para tirar, e cada `sha256_normalized` é o `edicao_html_sha256` que o motor prova: `bdb34624…2e70f6` (pt) e `c34d7eaa…57180c` (en). **O D5 corre e bate nas duas.** Os primeiros bytes fixados (61 064 e 59 286, de `c0b19d4b…`) eram os da folha sem papel nem tinta, e saíram com a correção do §8 |
+| 3 | **A travessia dos registos** | D1 a D4 e D6 verdes; o `git status` do motor limpo depois | **feito, e corrido duas vezes** (a segunda com os bytes refixados; as duas estão citadas no §2). `registos/evora-2027-prometido-painel-dinheiro/{pt,en}.{record,cortes}.json` e as duas entradas novas no `registos/manifest.json`; as oito que já lá estavam não mudaram (a corrida diz «2 nova(s) · 0 alterada(s) · 8 inalterada(s)»). **O `git status` do motor ficou como estava antes da corrida**, com os mesmos quatro caminhos por confirmar de outras corridas e nada deste estudo. O portão dos documentos diz «10 atravessado(s) · D5 correu em 9 e não corre em 1», e as duas linhas novas dizem «119 bloco(s) · 182 referência(s) · o D5 correu e bate» |
 | 4 | **A página de texto** | capturas nas cinco larguras, duas edições | **feito, e sem CSS novo.** A `TextoView` compõe o registo inteiro: 119 blocos, 28 tabelas, 8 títulos de nível 2 e 18 de nível 3, nas duas edições, sem uma linha de guião (o `<article>` tem 155 507 bytes de HTML estático). As citações ficam na língua da fonte nas duas edições. **A régua das tabelas largas está no §3**, e diz zero tabelas fora do seu contentor e zero páginas a deslocar de lado, nas cinco larguras e nas duas edições. O gabarito já tinha o que o item 4 permitia acrescentar, e por isso não se acrescentou nada |
 | 5 | **A lista dos estudos** e a primeira página | a captura de `/estudos` a 390 e 1 280 | **feito.** `/estudos` mostra «Évora 2027 — O Prometido, o Painel, o Dinheiro» no seu lugar, a seguir ao «Prometido, Pago, Auditado», com o estado «documento alojado» (que é o que ele é: a leitura da casa sobre o trabalho não está escrita) e a data 16.09.2026 em cada edição. **As contagens subiram por si**, e as capturas mostram-nas: 13 estudos publicados e 18 edições no cabeçalho de `/estudos`, as duas com a porta da prova, e a linha «Estudos» da primeira página a dizer 13, com o `data-prova="estudos"` que o portão reconta. Nenhum dos três foi escrito à mão |
 | 6 | **O relatório** | completo | este ficheiro |
 
-## 2 · As duas corridas do exportador, com as linhas citadas
+## 2 · As corridas do exportador, com as linhas citadas
 
 Correram da árvore principal do motor (`~/Instruments/ResearchHub`, em `master`, cabeça `7b64e8eaeade`), com `OEDP_SITE` apontado a esta worktree. O caminho impresso foi conferido no ensaio ANTES de correr com `--write`, e é o da worktree e não o da árvore principal do sítio.
 
@@ -57,9 +59,28 @@ Os vinte ficheiros são as dez edições × dois (o registo e as operações da 
 
 **A recusa do ensaio de antes de o sítio declarar o estudo** não se repetiu aqui, e não podia: este bloco começa por declarar o trabalho, que é o item 1 do mandato. A recusa está citada no relatório da metade do motor.
 
+### A segunda travessia, depois de o motor corrigir a folha
+
+Mesma forma, mesma variável, mesmo destino conferido no ensaio antes da escrita. **O ensaio** (código 0) e o **`--write`** (código 0) imprimiram:
+
+```
+  travessia dos registos de conteúdo · motor b99e2254052c · destino /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/e1-2026-09-16/registos
+
+  14 en  → evora-2027-prometido-painel-dinheiro/en             blocos 119 · refs 182 · edicao-html            · o D5 corre e bate
+  14 pt  → evora-2027-prometido-painel-dinheiro/pt             blocos 119 · refs 182 · edicao-html            · o D5 corre e bate
+
+  D5 corre em 9 edição(ões) e não corre em 1: avaliacao-economica-regional-de-portugal-2026/pt
+  0 nova(s) · 2 alterada(s) · 8 inalterada(s)
+
+  Escritos 20 ficheiro(s) em …/e1-2026-09-16/registos
+  Registo de travessia em …/e1-2026-09-16/registos/manifest.json
+```
+
+**«0 nova(s) · 2 alterada(s)» é a frase que prova que o texto não mudou.** Nenhum dos quatro ficheiros de `registos/` mudou um byte: os dois `.record.json` do motor têm o resumo que já tinham (`1037c50a…` e `333ca97d…`). O que mudou no registo de travessia foi a proveniência, e só ela: o `origin_ref` das dez edições passa ao commit novo do motor, e as duas do 14 levam o `edicao_html_sha256` e o `rh_manifest_sha256` novos. **O `git status` do motor ficou outra vez como estava.**
+
 ## 3 · A régua das tabelas largas (item 4)
 
-`node design/especime-v3/medicoes/e1-2026-09-16/medir-tabelas.mjs`, código 0. Mede em píxeis do motor, e não em caixas do código: a pergunta é o que o leitor vê.
+`node design/especime-v3/medicoes/e1-2026-09-16/medir-tabelas.mjs`, código 0. Mede em píxeis do motor, e não em caixas do código: a pergunta é o que o leitor vê. Corrida nas duas cabeças, antes e depois da refixação dos bytes, com o mesmo resultado: a página de texto compõe-se do registo e não do HTML da edição, e o registo não mudou.
 
 ```
   edição  largura  tabelas  fora do contentor  com deslocação  a página desloca
@@ -79,7 +100,7 @@ Os vinte ficheiros são as dez edições × dois (o registo e as operações da 
 
 ## 4 · Os commits e a cabeça
 
-Sete commits sobre `c032cbfe`, todos com os dois trailers exactos e todos por caminhos explícitos (nunca `git add -A`).
+Onze commits sobre `c032cbfe`, todos com os dois trailers exactos e todos por caminhos explícitos (nunca `git add -A`). Os sete primeiros são a primeira passagem; os três últimos e este são a segunda, a que fecha a `check:moldura`.
 
 | cabeça | o que |
 | --- | --- |
@@ -90,7 +111,10 @@ Sete commits sobre `c032cbfe`, todos com os dois trailers exactos e todos por ca
 | `ad1915fb` | A edição das três contagens muda de data, e a tabela das línguas com ela |
 | `3c330473` | As vinte e quatro capturas e a régua das tabelas largas |
 | `38ad3ec3` | Os dois números que medem o tamanho do arquivo andam com ele |
-| (o commit deste ficheiro) | O relatório do bloco. **É a cabeça final**, e não traz os seus próprios portões porque um commit não se pode nomear a si próprio: os códigos do §5 são os da corrida sobre `38ad3ec3`, que é a cabeça com todo o código, os registos e as capturas. Este commit acrescenta um ficheiro de relatório, que nenhuma das três cadeias lê |
+| `a5d66b8a` | O relatório do bloco, com a cabeça, os portões, o custo e o que falta (a primeira passagem, com o `verify` a 1) |
+| `81c6915a` | Os bytes refixados: a folha das duas edições passa a ter papel e tinta |
+| `445b4d69` | A combinação que partia, fotografada antes e depois |
+| (o commit deste ficheiro) | O relatório refeito com a segunda passagem. **É a cabeça final**, e não traz os seus próprios portões porque um commit não se pode nomear a si próprio: os códigos do §5 são os da corrida sobre `445b4d69`, que é a cabeça com todo o código, os bytes, os registos e as capturas. Este commit acrescenta um ficheiro de relatório, que nenhuma das três cadeias lê |
 
 **Um par que não se pode juntar, e fica dito.** `7a12f9fe` pousa os bytes e `fc102b08` mede a data deles, e os dois têm de ser commits diferentes: a data de uma edição é a do commit que a acrescenta, e um ficheiro não pode trazer dentro de si o resumo do commit que o cria. Entre os dois, a conta 3 do `check:datas` fica vermelha, e é a única coisa que fica.
 
@@ -103,24 +127,31 @@ Sete commits sobre `c032cbfe`, todos com os dois trailers exactos e todos por ca
 
 ## 5 · Os três portões
 
-Cada comando no seu, com o código lido de um ficheiro, sobre `38ad3ec3`.
+Cada comando no seu, com o código lido de um ficheiro, sobre `445b4d69`.
 
 ```
 npm run build     → 0
-npm run verify    → 1
+npm run verify    → 0
 npm run typecheck → 0
 ```
 
-**O `verify` sai a 1 numa célula, e só numa.** A célula é a `check:moldura` (`tests/documentos/moldura.mjs`), C1 e C2, e a causa está inteira no §8. Porque a cadeia do `verify` pára no primeiro vermelho, os dezanove passos que vêm depois dela correram um a um para que o estado do ramo não ficasse por saber, e **saíram todos a 0**:
+Os códigos ficaram em `g-build.code`, `g-verify.code` e `g-typecheck.code`, com as saídas ao lado, no directório de trabalho da sessão.
+
+**A célula que estava vermelha, agora:**
 
 ```
-check:alvos=0   check:fontes=0   check:cadeia=0   check:dados=0    check:mapa=0
-check:regioes=0 check:areas=0    check:formas=0   check:alcance=0  check:voz=0
-check:lingua=0  check:lugar=0    provar:eyetext=0 provar:guardas=0 check:mortos=0
-check:indice=0  check:cartao=0   check:palavras=0 design:feixe=0
+  ✓ C1  0 nó(s) graves em 72 passagens · nenhuma
+  ✓ C2  filetes: 44896 medidos, 0 abaixo de 3:1 (o pior 3.23:1) · texto próprio das células: 39964 medidos, 0 abaixo de 4,5:1 (o pior 7.57:1)
+  ✓ C3  326 caixa(s) que se deslocam · 0 sem teclado · 0 sem nome · 0 sem marco · 0 nome(s) repetido(s)
+  ✓ C4  72 passagens · 0 sem <main> a um · 0 sem <h1> visível a um · 0 com a moldura errada ou a faixa lá dentro
+  ✓ C5  4 cor(es) distintas nos filetes da moldura · 0 fora da paleta da casa
+  ✓ C6  18 de 18 verdes · 18 de 18 plantas apanhadas
+  todas as células verdes.
 ```
 
-Os códigos ficaram em `f-build.code`, `f-verify.code` e `f-typecheck.code`, com as saídas ao lado, no directório de trabalho da sessão.
+E o que a moldura não corrige, que era o resto do achado: **0 nós**, onde eram 212 a 1,17:1.
+
+**Na primeira passagem o `verify` saiu a 1**, na `check:moldura`, e como a cadeia pára no primeiro vermelho os dezanove passos seguintes correram um a um para que o estado do ramo não ficasse por saber. Saíram todos a 0 nessa altura, e voltaram a sair a 0 dentro da cadeia inteira agora.
 
 ## 6 · As capturas
 
@@ -131,25 +162,37 @@ Vinte e quatro, em `design/especime-v3/capturas/e1-2026-09-16/`, tiradas por `ca
 | `estudo` | `/estudos/evora-2027-prometido-painel-dinheiro` e `/en/studies/…` | 390, 768, 1 024, 1 280, 1 600 | 10 |
 | `texto` | `/estudos/evora-2027-prometido-painel-dinheiro/texto` e `/en/studies/…/text` | as mesmas cinco | 10 |
 | `estudos` | `/estudos` e `/en/studies` | 390 e 1 280 | 4 |
+| `documento-tema-cruzado` | `/estudos/…/documento` e `/en/studies/…/document`, com o sistema em escuro e o leitor a escolher «claro» | 1 280, antes e depois | 4 |
+
+**As dez capturas da página de texto não mudaram um byte com a segunda passagem**, e a razão foi medida e não presumida: refizeram-se as quatro que o brief nomeia (390 e 1 280, duas edições) e saíram idênticas às que já estavam. O que mudou na página foi a linha do `origin_ref` no aparelho técnico, que está **dentro do `<details class="texto-dobra">`**, uma dobra fechada por omissão que uma captura de página inteira não mostra. As dez continuam exactas para esta cabeça, incluindo as seis que não se refizeram.
+
+**As quatro da combinação cruzada são a prova do §8.** Levam ao lado, impressos pelo guião, a tinta calculada da primeira célula e a tela composta por baixo dela:
+
+| | tinta | tela |
+| --- | --- | --- |
+| antes | `rgb(23, 25, 27)` | transparente até à raiz |
+| depois | `rgb(23, 25, 27)` | `BODY rgb(250, 251, 249)` |
+
+A tinta é a mesma nas duas: o que faltava era a tela. O «antes» foi tirado do `dist/` dos bytes antigos, antes de os substituir, e não reconstituído depois.
 
 ## 7 · O custo
 
-**Tempo de parede:** das 17:36 às 18:45 UTC de 16.09.2026, **1 h 9 m**, dos quais perto de cinquenta minutos em construções e portões: houve quatro `npm run build` (cada um cerca de seis minutos), dois `npm run verify` (cerca de nove cada, e o primeiro parou a meio na célula vermelha), os dezanove passos do resto da cadeia corridos um a um, e três passagens da régua da moldura com navegador.
+**Tempo de parede:** das 17:36 às 19:30 UTC de 16.09.2026, **1 h 54 m**, em duas passagens: a primeira até às 18:45 (1 h 9 m) e a segunda, depois de o motor corrigir a folha, das 18:52 às 19:30 (38 m).
 
-**Símbolos:** cerca de **420 mil**, contados pelo orçamento da sessão da ferramenta (de 15 000 000 no início a cerca de 14 580 000 no fim). Não é a mesma conta que o contador do modelo faz, e por isso diz-se de onde vem.
+Perto de hora e meia disso foi em construções e portões: seis `npm run build` (cada um cerca de seis minutos), três `npm run verify` (cerca de nove cada, e o primeiro parou a meio na célula vermelha), os dezanove passos do resto da cadeia corridos um a um, e cinco passagens da régua da moldura com navegador, entre as do portão e as três sondas que atribuíram os 3 167 nós documento a documento.
 
-## 8 · O que ficou por fazer, e porquê
+**Símbolos:** cerca de **475 mil**, contados pelo orçamento da sessão da ferramenta (de 15 000 000 no início a cerca de 14 525 000 no fim). Não é a mesma conta que o contador do modelo faz, e por isso diz-se de onde vem.
 
-**UMA COISA, E É UM PORTÃO VERMELHO QUE NÃO SE FECHA DESTE LADO.**
+## 8 · O achado da primeira passagem, e como fechou
 
-`npm run verify` pára na `check:moldura`, com duas células vermelhas:
+**A primeira passagem aterrou com o `npm run verify` a 1**, na `check:moldura`, com duas células vermelhas:
 
 ```
   ✗ C1  3167 nó(s) graves em 72 passagens · color-contrast [serious]=3167
   ✗ C2  filetes: 44896 medidos, 0 abaixo de 3:1 (o pior 3.10:1) · texto próprio das células: 39964 medidos, 2968 abaixo de 4,5:1 (o pior 1.17:1)
 ```
 
-**A atribuição é exacta, e foi medida documento a documento**, nos dezoito documentos alojados, nos dois temas e nas duas larguras:
+**A atribuição foi medida documento a documento**, nos dezoito documentos alojados, nos dois temas e nas duas larguras, e não deduzida de um total:
 
 ```
 evora-2027-prometido-painel-dinheiro/en dark  390: 789
@@ -159,29 +202,29 @@ evora-2027-prometido-painel-dinheiro/pt dark 1280: 794
 TOTAL graves 3167 · dos dois documentos novos 3167 · dos outros dezasseis 0
 ```
 
-Os dezasseis documentos anteriores dão zero. Os dois novos dão tudo, e só no tema escuro.
+**A causa.** A moldura deste projeto escreve `color: var(--oedp-ink)!important` no `th` e no `td` de qualquer documento alojado, porque não pode confiar nas cores das células de uma obra citada; e escolhe a tinta clara ou escura por `@media (prefers-color-scheme:dark)` com a guarda `:root:not([data-theme="light"])`, que é a guarda que os documentos usam. O comentário de `src/lib/documentos.mjs` di-lo por extenso: «a guarda é a mesma que os documentos usam, para que as duas folhas nunca digam coisas diferentes ao mesmo leitor». A primeira folha do 14 declarava `:root { color-scheme: light dark; }` e mais nada: sem papel, sem tinta, com a tela entregue ao navegador. O `color-scheme` resolve-se pelo sistema operativo e não vê o `data-theme` que o botão deste sítio escreve.
 
-**A CAUSA, medida e não deduzida.** A moldura deste projeto escreve `color: var(--oedp-ink)!important` no `th` e no `td` de qualquer documento alojado, porque não pode confiar nas cores das células de uma obra citada; e escolhe a tinta clara ou escura por `@media (prefers-color-scheme:dark)` com a guarda `:root:not([data-theme="light"])`, que é a mesma guarda que os documentos usam. O comentário de `src/lib/documentos.mjs` di-lo por extenso: «a guarda é a mesma que os documentos usam, para que as duas folhas nunca digam coisas diferentes ao mesmo leitor», e regista que os dezasseis documentos medidos escurecem por essa consulta.
+Daí saíam duas coisas, e as duas eram reais: o `axe` não tinha tela para compor e resolvia contra branco (1,17:1, 3 167 nós); e, com o sistema em escuro e o leitor a escolher «claro», as tabelas ficavam quase ilegíveis. A segunda está fotografada, e não era uma hipótese.
 
-**O documento novo não escurece por essa consulta.** A folha que o `make_html.py` do 14 escreve declara `:root { color-scheme: light dark; }` e mais nada: não declara papel, não declara tinta, e deixa a tela ao navegador. Medido nas duas, com o `td` da primeira tabela:
+**O QUE NÃO SE FEZ, e fica escrito para não ser redescoberto:** não se pintou um fundo por cima da obra citada na moldura. Seria este projeto a reescrever o que serve byte a byte, contra a regra que a própria moldura escreve («as cores INTERIORES da obra citada ficam das obras»), e mudava como os dezoito documentos se rendem. Não era uma correção: era outra decisão, e de outro bloco.
 
-```
-14 pt escuro   cor rgb(236,238,234) · fundos: TD, TR, TBODY, TABLE, MAIN, BODY, HTML todos transparentes
-04 pt escuro   cor rgb(236,238,234) · fundos: TD, TR, TBODY, TABLE, DIV, MAIN transparentes, BODY e HTML rgb(18,24,27)
-```
+**O QUE SE FEZ.** Disse-se ao lugar de direção, e o motor corrigiu a folha das duas edições em `b99e2254052c773d526281704ab7405ad2becfe6`: as fichas `--paper` e `--ink` nas três guardas (`@media (prefers-color-scheme: dark) :root:where(:not([data-theme="light"]))`, `:root[data-theme="dark"]` e `:root[data-theme="light"]`), com o `html` e o `body` pintados com elas, que é o que as dezasseis irmãs já faziam. Aqui refixaram-se os bytes e as duas linhas do manifesto, e correu-se a travessia outra vez.
 
-Daí saem duas coisas, e as duas são reais:
+**O resultado, medido na mesma régua:** C1 de 3 167 para **0**; C2 de 2 968 textos de célula abaixo de 4,5:1 para **0**, com o pior a subir de 1,17:1 para **7,57:1**; e o que a moldura não corrige de 212 nós para **0**. A combinação que partia lê-se agora com tinta `rgb(23, 25, 27)` sobre tela `rgb(250, 251, 249)`.
 
-1. **O que o `axe` mede.** Sem fundo declarado em lado nenhum até à raiz, a régua não tem tela para compor e resolve contra branco: tinta clara contra branco dá 1,17:1, e são 3 167 nós.
-2. **O que um leitor apanha, e é pior.** O `color-scheme` resolve-se pelo sistema operativo e ignora o `data-theme` que o botão deste sítio escreve. Com o sistema em escuro e o leitor a escolher «claro», a moldura passa à tinta escura e a tela do navegador fica escura: as tabelas do documento ficam quase ilegíveis. Está fotografado, e não é uma hipótese.
+**O texto do documento não mudou**, e é a parte que importa dizer: os dois `.record.json` do motor têm o resumo que já tinham, e nenhum ficheiro de `registos/` mudou um byte. Mudou a folha de estilos da edição, e mais nada.
 
-**ONDE SE CORRIGE, E PORQUE NÃO É AQUI.** No documento, que é o que os seus dezasseis irmãos fazem: o do 04 declara `--paper` e `--ink` nas três guardas (`@media (prefers-color-scheme: dark) :root:where(:not([data-theme="light"]))`, `:root[data-theme="dark"]` e `:root[data-theme="light"]`) e pinta o corpo com elas, e por isso a tela e a moldura dizem sempre a mesma coisa. O do 14 não. A correção é uma linha de política na folha do `make_html.py` do `content/14 Évora 2027/Technical Source/`, no motor, e o brief §2 é explícito: **o documento não se muda deste lado**; corrige-se no motor e refixam-se os bytes.
+## 9 · O que fica por fazer
 
-**O que isso obriga, pela ordem:** o motor corrige o `make_html.py` e volta a emitir as duas edições; `export_records.py --write` refaz os dois registos, porque o `edicao_html_sha256` muda com os bytes; aqui refixam-se os dois ficheiros e as duas linhas do `studies-src/manifest.yml`, e volta a correr-se o `export_records_site.py --write`. São dois commits neste ramo, e o `verify` fecha com eles.
+**Do mandato, nada.** Os seis itens estão feitos e os três portões estão a 0.
 
-**A alternativa que NÃO se recomenda, e fica dita para não ser descoberta depois:** a moldura deste projeto podia pintar um fundo por cima de qualquer documento sem tela declarada. Isso seria este projeto a pintar por cima de uma obra que serve byte a byte, contra a regra que a própria moldura escreve («as cores INTERIORES da obra citada ficam das obras»), e mudava como os dezoito documentos se rendem. Não é deste bloco, e não é uma correção: é outra decisão.
+**Fora do mandato, três coisas que são de quem funde, e ficam ditas:**
 
-## 9 · Duas notas de facto, para o registo
+1. **A leitura a frio deste bloco**, que a regra da casa manda fazer antes da fusão e que não é de quem constrói. A entrada do bloco no registo das revisões do inventário está escrita com `por ler`, que é o estado legítimo enquanto o bloco está em construção, e o portão da voz nomeia-a em voz alta a cada construção.
+2. **A leitura do estudo pelo diretor.** As duas páginas de leitura novas entram com `noindex`, como as outras oito, e a linha dos pendentes continua a pedir a leitura das oito da parte 3: estas duas não foram acrescentadas a essa linha, porque acrescentar trabalho à lista do diretor não é de quem constrói.
+3. **A dívida da faixa**, medida de passagem e dita ao pé do número que a mede: a marca deste projeto e a porta de voltar apontam as duas para a página do estudo, em cada documento alojado, e são 17 das 2 286 páginas da catraca L1. Fechá-la leva a catraca a 2 269.
+
+## 10 · Duas notas de facto, para o registo
 
 1. **O documento tem oito secções de nível 2, e não sete.** O §0 do brief do sítio diz «as sete secções». As oito, nas duas edições, são: «Os limites deste documento», «A linha do tempo», «O que a candidatura prometeu, e o que o painel escreveu», «O dinheiro em linhas», «O que não se encontrou», «O que mudou», «Quem dirige a associação» e «As fontes». A sétima é a que o §1.6 do brief do motor manda escrever (os órgãos sociais da associação, pelo cargo e pelo nome, com a falta das remunerações dita). Não é um desvio: é a contagem do brief do sítio que está uma curta.
 2. **Nenhuma das 182 referências de cada edição tem linha no livro-razão deste sítio**, e é o esperado: as linhas deste estudo vivem no livro-razão do motor e não atravessaram. A página de texto dá a cada figura a porta da sua entrada em «As linhas deste documento», que é a saída que a `IDENTIDADE.md` §10 prescreve quando não há linha para prometer, e nenhum selo promete uma linha que não existe.
