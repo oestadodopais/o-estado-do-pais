@@ -94,7 +94,7 @@ export const PALAVRAS_PROIBIDAS = [
   },
   {
     chave: 'toque em',
-    marca: /\btoque n[ouas]\b|\btoque em\b|\btap (?:a|an|the)\b/i,
+    marca: /\btoque n(?:o|a|os|as|um|uma)\b|\btoque em\b|\btap (?:a|an|the)\b/i,
     em_vez: 'nada, ou «escolha»',
     porque: 'decalque de «tap», e é uma frase de instrução numa página de conteúdo',
   },
