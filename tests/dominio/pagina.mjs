@@ -24,7 +24,7 @@
  * AS NOVE PLANTAS, E A CÉLULA QUE CADA UMA TEM DE FAZER CAIR
  * ---------------------------------------------------------------------------
  *   P1 · um número escrito à mão dentro do `<svg>` de uma forma        → F2
- *   P2 · uma leitura breve sem as três datas                           → F5
+ *   P2 · o recibo de uma linha com leitura breve sem uma das três datas → F5
  *   P3 · a frase da fronteira impressa duas vezes                      → F4
  *   P4 · uma linha dos 308 fora do alcance (a medida sai de um concelho) → F7
  *   P5 · o cartão de ausência com um valor do livro-razão              → F8
@@ -64,6 +64,13 @@ if (!fs.existsSync(DIST)) {
 const PAGINA_DO_DOMINIO = 'dominios/economia-e-financas-publicas/index.html';
 /** Uma página de concelho qualquer, para a planta dos 308. */
 const PAGINA_DE_CONCELHO = 'municipios/evora/index.html';
+/* O RECIBO DE UMA LINHA QUE A LEITURA BREVE DO DOMÍNIO CITA (bloco P3,
+   16.09.2026). A F5 mudou de lugar com a regra 3 da carta dos conteúdos: eram
+   três datas na dobra da leitura breve, são três datas no recibo da linha. A
+   planta muda com ela, e passa a ser aqui: `pib-real-per-capita-2025` é a
+   primeira medida do domínio da economia (`E1`, em `src/data/dominios.mjs`), e a
+   leitura breve dessa página cita-a. */
+const RECIBO_COM_LEITURA_BREVE = 'livro-razao/pib-real-per-capita-2025/index.html';
 
 /* --------------------------------------------------------------------------
  * A CÓPIA, E A REPOSIÇÃO
@@ -141,14 +148,17 @@ const PLANTAS = [
   {
     nome: 'P2',
     celula: 'F5',
-    o_que: 'uma leitura breve sem as três datas',
-    marca: 'e a carta pede três',
-    /* UMA SÓ DAS TRÊS, E DA PRIMEIRA MEDIDA: assim a leitura breve fica com duas
-       datas e não com nenhuma, que é o estrago mais difícil de ver. `replace`
-       sem a bandeira global toca a primeira ocorrência e mais nenhuma. */
+    o_que: 'o recibo de uma linha com leitura breve sem uma das três datas',
+    marca: 'das três datas e falta(m)',
+    /* UMA SÓ DAS TRÊS, E NUM RECIBO: assim o recibo fica com duas datas e não
+       com nenhuma, que é o estrago mais difícil de ver. Tira-se a data da última
+       verificação, que é a terceira e a que uma leitura distraída não procura.
+       TIRAM-SE TODAS AS QUE HÁ, e não a primeira: o recibo mostra as DUAS
+       verificações mais recentes, e apagar uma deixava a outra a responder pela
+       célula. Medido: com `replace` a planta ficou verde. */
     plantar: () =>
-      planta(PAGINA_DO_DOMINIO, (cru) =>
-        cru.replace(/<span class="data-da-linha"[^>]*>[^<]*<\/span>/, ''),
+      planta(RECIBO_COM_LEITURA_BREVE, (cru) =>
+        cru.replaceAll(/<span[^>]*data-de-campo="verifications\.\d+\.date"[^>]*>[^<]*<\/span>/g, ''),
       ),
   },
   {
@@ -190,7 +200,11 @@ const PLANTAS = [
     plantar: () =>
       planta(PAGINA_DO_DOMINIO, (cru) =>
         cru.replace(
-          /(<span class="data-da-linha" data-nonledger="data-da-linha"[^>]*>)([^<]*)(<\/span>)/,
+          /* A CLASSE DEIXOU DE VIR SOZINHA (bloco P3, 16.09.2026): a data que
+             sobrou nesta página é a do CARTÃO, e o cartão compõe-a com
+             `class="data-da-linha campo-valor"`. As três datas da dobra, que
+             tinham a classe sozinha, saíram para o recibo com o item 2 do P3. */
+          /(<span class="data-da-linha[^"]*" data-nonledger="data-da-linha"[^>]*>)([^<]*)(<\/span>)/,
           '$101.01.2000$3',
         ),
       ),

@@ -3360,8 +3360,7 @@ a.porta:hover .porta-seta {
   display: none;
 }
 .dobra-unidade,
-.dobra-limiar,
-.dobra-datas {
+.dobra-limiar {
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;
   font-size: 12px;
@@ -3370,8 +3369,7 @@ a.porta:hover .porta-seta {
   color: var(--muted);
   margin: 0;
 }
-.dobra-limiar-k,
-.dobra-data-k {
+.dobra-limiar-k {
   color: var(--muted);
 }
 .dobra-frase {

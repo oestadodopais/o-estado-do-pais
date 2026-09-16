@@ -362,12 +362,9 @@ const jsonld = {
   publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
 };
 
-const ROTULO_DA_DATA = {
-  reference_date: s.dominios.dataPeriodo,
-  published_at: s.dominios.dataLido,
-  access_date: s.dominios.dataLido,
-};
-const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferido;
+/* AS TRÊS DATAS SAÍRAM DA LEITURA BREVE (bloco P3, 16.09.2026, item 2; decisão
+   do diretor de 16.09): vivem no recibo da linha, que é onde a norma §2.1 as
+   põe, e o `check:formas` (F5) mede-as lá. */
 ---
 
 <Base
@@ -459,7 +456,7 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
     </div>
 
     {
-      leituras.map(({ medida, linha, datas, outras, desenho }) => (
+      leituras.map(({ medida, linha, outras, desenho }) => (
         <article class="dominio-medida" id={ancoraDa(medida.chave)} data-medida={medida.chave}>
           {/* A PERGUNTA DA CARTA É QUEM NOMEIA AS FORMAS DESTA MEDIDA (achado 2,
               15.09.2026). O `id` estava na linha do nome, que saiu com o cartão, e
@@ -531,29 +528,15 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
           {/* A RESSALVA DE ALCANCE SAIU DESTA PÁGINA (bloco F1.10, §9.2,
               08.09.2026) e vive na página da linha, que é o recibo daquela linha.
 
-              AS DUAS DATAS QUE O CARTÃO NÃO ESCREVE (achado 2, 15.09.2026). A
-              carta dos conteúdos, §1, regra 3: «Três datas por medida, sempre: o
-              período de referência, a data em que a fonte o publicou, e a data em
-              que a casa conferiu a fonte», e o `check:formas` (F5) fecha a
-              construção com menos de três dentro de uma leitura breve. A
-              primeira das três é agora a do CARTÃO, escrita na linha do valor
-              («em 2025») e marcada como a mesma `data-da-linha` de sempre: o que
-              esta linha perde é a repetição dela e o rótulo «período de
-              referência», que é rótulo de recibo. As outras duas ficam, porque
-              a carta as manda e porque nenhuma delas está no cartão. */}
-          {datas.length > 0 && (
-            <p class="dominio-datas">
-              {datas
-                .filter((d) => d.campo !== 'reference_date' || linha === null)
-                .map((d, i) => (
-                  <>
-                    {i > 0 && <span class="dominio-sep"> · </span>}
-                    <span class="dominio-data-k">{rotuloDaData(d.campo)}</span>{' '}
-                    <DataDaLinha id={medida.claim} campo={d.campo} valor={d.valor} />
-                  </>
-                ))}
-            </p>
-          )}
+              E AS TRÊS DATAS SAÍRAM COM ELA (bloco P3, 16.09.2026, item 2). O
+              diretor decidiu a 16.09 que as três datas de uma medida vivem no
+              recibo: a carta dos conteúdos, §1, regra 3, passa a dizer «Três
+              datas por medida, sempre, no recibo da linha», e o `check:formas`
+              (F5) mede-as lá, na página de cada linha com leitura breve. A
+              exigência muda de lugar, não de força. O que o leitor perde aqui são
+              dois rótulos de recibo por cima de duas datas; o que ele ganha é uma
+              leitura que diz o que mudou e pára. O período de referência já
+              estava na linha do valor do cartão, e continua lá. */}
 
           {/* A COMPARAÇÃO QUE A FONTE PERMITE, numa das quatro formas. */}
           {medida.chave === 'T3' && barraT3 !== null && (
