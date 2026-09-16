@@ -599,7 +599,7 @@ for (const r of ROTAS_DA_CLASSE) {
  * era má (regra 14 da casa).
  */
 {
-  const { achados, paginas: lidas, excecoes: rotasIsentas } = palavrasProibidasEm(DIST);
+  const { achados, paginas: lidas, excecoes: rotasEstreitadas } = palavrasProibidasEm(DIST);
   if (lidas === 0) {
     erros.push(
       `a lista das palavras proibidas leu zero páginas de dist/, e o sítio tem milhares. ` +
@@ -622,7 +622,7 @@ for (const r of ROTAS_DA_CLASSE) {
     );
   }
   palavrasLidas = lidas;
-  palavrasIsentas = rotasIsentas;
+  palavrasIsentas = rotasEstreitadas;
 }
 
 console.log('');
@@ -656,7 +656,8 @@ console.log(
       .map(([f, n]) => `${f} ${n}`)
       .join(', ')} · ` +
     `palavras proibidas: 0 em ${palavrasLidas} página(s) da superfície ` +
-    `(${PALAVRAS_PROIBIDAS.length} palavras da norma §1.3; ${palavrasIsentas} página(s) de documento de estudo isentas)`,
+    `(${PALAVRAS_PROIBIDAS.length} palavras da norma §1.3; ${palavrasIsentas} página(s) de estudo com a `
+    + `superfície estreitada ao que é prosa deste projeto, e nenhuma página saltada)`,
 );
 if (blocosPorLer.length) {
   console.log(cinza(`        ${blocosPorLer.length} bloco(s) do inventário por ler, e o registo di-lo:`));
