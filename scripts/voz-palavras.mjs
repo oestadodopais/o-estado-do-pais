@@ -41,11 +41,24 @@
  *     (o valor antigo e o novo, como a fonte os escreveu; o nome do campo do
  *     livro-razão; o identificador da linha) e entram na superfície os três que
  *     este projeto escreve: a razão, o rótulo do tipo e a data;
- *   · sai o que está DENTRO DE UMA DOBRA e não no seu rótulo: o corpo de um
- *     `<details>`, que é exactamente o «atrás de um toque» da norma §2.1. O
- *     `<summary>` fica, porque é o que se lê com a dobra fechada.
+ *   · sai o que está DENTRO DE UMA DOBRA FECHADA e não no seu rótulo: o corpo
+ *     de um `<details>` sem `open`, que é exactamente o «atrás de um toque» da
+ *     norma §2.1. O `<summary>` fica, porque é o que se lê com a dobra fechada,
+ *     e o corpo de um `<details open>` fica também, porque uma dobra aberta é o
+ *     que o leitor lê sem tocar em nada (leitura a frio do Codex de 16.09.2026,
+ *     achado 10: o portão tirava o corpo de TODAS as dobras, abertas incluídas);
+ *   · ENTRA o texto que vive num ATRIBUTO à vista: `title`, `aria-label`, `alt`
+ *     e `placeholder`. Até 16.09.2026 o portão devolvia só `body.textContent`, e
+ *     uma palavra da lista num rótulo de leitor de ecrã, na alternativa de uma
+ *     imagem ou na dica de um campo era invisível para ele. Um rótulo que a
+ *     tecnologia de apoio lê em voz alta é texto do leitor como qualquer outro.
  *
- * E há duas exceções por ROTA, cada uma com a sua razão escrita, em `EXCECOES`.
+ * E há exceções por ROTA, cada uma com a sua razão escrita, em `EXCECOES`. NENHUMA
+ * delas salta uma página inteira: uma exceção ou isenta DUAS PALAVRAS numa rota
+ * (`so`), ou retira da superfície a REGIÃO que não é prosa deste projeto
+ * (`retira`, `mantemSo`). Era a terceira metade do achado 10: quatro rotas de
+ * estudo saltavam o documento todo, e com ele o cabeçalho e a mobília que este
+ * projeto escreve por cima do documento de outrem.
  *
  * NÃO SE ENFRAQUECE: uma exceção nova entra nesta lista, com o motivo por
  * extenso e a data, e não por um `continue` escondido num laço.
@@ -158,46 +171,58 @@ export const PALAVRAS_PROIBIDAS = [
 ];
 
 /**
- * As rotas que a lista não mede, cada uma com a sua razão.
+ * O que a lista não mede em certas rotas, e nunca uma página inteira.
  *
- * SÃO DUAS, E SÃO A MESMA COISA: o documento de um estudo é o estudo original,
- * alojado tal como foi publicado, com uma faixa deste projeto no topo e mais
- * nada (`src/lib/routes.mjs`, a rota `documento`). Não é uma página deste sítio
- * e não é prosa que este bloco possa reescrever: é um documento fixado, e
- * reescrevê-lo depois de publicado era o contrário da regra da casa sobre o que
- * se transcreve. Medido a 16.09.2026: as palavras da lista que lá estão são
- * «limiar» (a convenção da Agência Europeia do Ambiente, citada pelo estudo da
- * água) e «passe o rato» (as legendas dos desenhos interativos do estudo «Onde
- * está a água»).
+ * Cada entrada diz uma de três coisas, e a razão por extenso:
  *
- * @type {{ marca: RegExp, porque: string }[]}
+ *   · `so` · duas palavras da lista não se medem NESTA rota, e a lista toda mede-se
+ *     na mesma (é o caso do livro-razão, onde «conferido a» e «lido na fonte a»
+ *     são o nome de um campo do recibo);
+ *   · `mantemSo` · a superfície desta rota é SÓ o que este projeto lá pôs, porque o
+ *     resto do ficheiro é de outrem (é o caso do documento de um estudo, que é o
+ *     ficheiro original servido byte a byte com uma faixa deste projeto por cima);
+ *   · `retira` · sai da superfície a REGIÃO transcrita, e a mobília em volta mede-se
+ *     (é o caso da página `texto` de um estudo, onde o `<article>` é a transcrição
+ *     e tudo o que a rodeia é gabarito deste projeto).
+ *
+ * ATÉ 16.09.2026 AS QUATRO ROTAS DE ESTUDO SALTAVAM O FICHEIRO INTEIRO, e com ele
+ * o cabeçalho, o índice, o aparelho e a faixa, que são prosa deste projeto e não
+ * do estudo (achado 10 da leitura a frio do Codex). O documento fixado e a
+ * transcrição continuam fora, que é o que a razão sempre disse: um documento
+ * publicado não se reescreve depois de publicado, e as palavras da lista que lá
+ * estão são «limiar» (a convenção da Agência Europeia do Ambiente, citada pelo
+ * estudo da água), «passe o rato» (as legendas dos desenhos interativos de «Onde
+ * está a água») e «o limiar em que todo este período assenta» (a transcrição de
+ * «Évora — Quinze Anos, Cinco Mandatos»).
+ *
+ * @type {{ marca: RegExp, so?: string[]|null, retira?: string|null, mantemSo?: string|null, porque: string }[]}
  */
 export const EXCECOES = [
   {
     marca: /(^|\/)estudos\/[^/]+\/documento\//,
-    so: null,
+    mantemSo: '[data-oedp-faixa]',
     porque:
-      'o documento de um estudo é o estudo original, alojado como foi publicado; ' +
-      'não é prosa de interface e não se reescreve depois de publicado',
+      'o documento de um estudo é o estudo original, alojado como foi publicado, e o único ' +
+      'markup deste projeto no ficheiro é a faixa do topo (`src/lib/documentos.mjs`): é ela ' +
+      'a superfície, e o documento por baixo não se reescreve depois de publicado',
   },
   {
     marca: /(^|\/)en\/studies\/[^/]+\/document\//,
-    so: null,
+    mantemSo: '[data-oedp-faixa]',
     porque: 'a gémea inglesa da rota acima',
   },
   {
     marca: /(^|\/)estudos\/[^/]+\/texto\//,
-    so: null,
+    retira: '[data-registo-edicao]',
     porque:
       'a página `texto` de um estudo é a transcrição de um documento fixado, composta no ' +
-      'gabarito deste projeto a partir do registo que o motor escreve (`src/lib/routes.mjs`): ' +
-      'a prosa é do estudo e não da interface, e as figuras dela entram por `data-registo`. ' +
-      'Medido a 16.09.2026: uma ocorrência, «o limiar em que todo este período assenta», na ' +
-      'transcrição de «Évora — Quinze Anos, Cinco Mandatos»',
+      'gabarito deste projeto a partir do registo que o motor escreve (`src/lib/routes.mjs`). ' +
+      'O que sai é o `<article data-registo-edicao>`, que é a transcrição; o cabeçalho, o ' +
+      'índice, as linhas do documento e o aparelho são prosa deste projeto e medem-se',
   },
   {
     marca: /(^|\/)en\/studies\/[^/]+\/text\//,
-    so: null,
+    retira: '[data-registo-edicao]',
     porque: 'a gémea inglesa da rota acima',
   },
   {
@@ -230,12 +255,24 @@ export const EXCECOES = [
 export const CAMPOS_DE_CORRECAO_TRANSCRITOS = ['old_value', 'new_value', 'field', 'id'];
 
 /**
+ * Os atributos que o leitor lê, com os olhos ou com o leitor de ecrã.
+ *
+ * `title` sai numa dica do navegador; `aria-label` e `alt` saem em voz alta;
+ * `placeholder` está impresso dentro do campo. Os quatro são texto deste projeto
+ * na superfície de uma página, e nenhum deles vive no `textContent`.
+ *
+ * @type {string[]}
+ */
+export const ATRIBUTOS_A_VISTA = ['title', 'aria-label', 'alt', 'placeholder'];
+
+/**
  * O texto do leitor de uma página, tal como ele o vê sem abrir nada.
  *
  * @param {string} html
+ * @param {{ retira?: string|null, mantemSo?: string|null }} [opcoes]
  * @returns {string}
  */
-export function superficieDe(html) {
+export function superficieDe(html, opcoes = {}) {
   const root = parse(html);
   for (const fora of root.querySelectorAll('script, style')) fora.remove();
   for (const campo of root.querySelectorAll(
@@ -245,13 +282,29 @@ export function superficieDe(html) {
   )) {
     campo.remove();
   }
-  /* A DOBRA FECHADA NÃO É SUPERFÍCIE, e o rótulo dela é. */
+  /* A REGIÃO TRANSCRITA DESTA ROTA, se a rota declarar uma. */
+  if (opcoes.retira) for (const fora of root.querySelectorAll(opcoes.retira)) fora.remove();
+  /* A DOBRA FECHADA NÃO É SUPERFÍCIE, e o rótulo dela é; a dobra ABERTA é. */
   for (const dobra of root.querySelectorAll('details')) {
+    if (dobra.hasAttribute('open')) continue;
     for (const filho of dobra.childNodes.slice()) {
       if (filho.rawTagName?.toLowerCase?.() !== 'summary') filho.remove();
     }
   }
-  return (root.querySelector('body')?.textContent ?? '').replace(/\s+/g, ' ');
+  const raizes = opcoes.mantemSo
+    ? root.querySelectorAll(opcoes.mantemSo)
+    : [root.querySelector('body')].filter(Boolean);
+  const pedacos = [];
+  for (const raiz of raizes) {
+    pedacos.push(raiz.textContent ?? '');
+    for (const el of [raiz, ...raiz.querySelectorAll('*')]) {
+      for (const nome of ATRIBUTOS_A_VISTA) {
+        const v = el.getAttribute(nome);
+        if (v) pedacos.push(v);
+      }
+    }
+  }
+  return pedacos.join(' ').replace(/\s+/g, ' ');
 }
 
 /**
@@ -276,18 +329,27 @@ export function palavrasProibidasEm(dist) {
   const le = (ficheiro) => {
     const rel = path.relative(dist, ficheiro).split(path.sep).join('/');
     const isentas = new Set();
-    let inteira = false;
+    const retira = [];
+    let mantemSo = null;
+    let estreitada = false;
     for (const x of EXCECOES) {
       if (!x.marca.test(rel)) continue;
-      if (x.so === null || x.so === undefined) inteira = true;
-      else for (const chave of x.so) isentas.add(chave);
+      if (x.so) for (const chave of x.so) isentas.add(chave);
+      if (x.retira) {
+        retira.push(x.retira);
+        estreitada = true;
+      }
+      if (x.mantemSo) {
+        mantemSo = x.mantemSo;
+        estreitada = true;
+      }
     }
-    if (inteira) {
-      excecoes++;
-      return;
-    }
+    if (estreitada) excecoes++;
     paginas++;
-    const texto = superficieDe(fs.readFileSync(ficheiro, 'utf8'));
+    const texto = superficieDe(fs.readFileSync(ficheiro, 'utf8'), {
+      retira: retira.length ? retira.join(', ') : null,
+      mantemSo,
+    });
     for (const p of PALAVRAS_PROIBIDAS) {
       if (isentas.has(p.chave)) continue;
       const m = p.marca.exec(texto);

@@ -22,6 +22,30 @@
  * portão tem de apanhar é a palavra escrita por este projeto numa frase sua, no
  * meio de tudo o resto, e não uma cadeia solta num ficheiro vazio.
  *
+ * ---------------------------------------------------------------------------
+ * A SEGUNDA METADE: UMA PLANTA POR BURACO DA SUPERFÍCIE (16.09.2026)
+ * ---------------------------------------------------------------------------
+ * As catorze plantas de cima entram sempre no mesmo sítio, um parágrafo logo a
+ * seguir ao `<body>`, e por isso provam uma coisa só: que a LISTA morde. O
+ * achado 10 da leitura a frio do Codex mostrou o resto: a superfície tinha
+ * quatro buracos, e catorze plantas no mesmo sítio não distinguem nenhum deles.
+ *
+ * Estas quatro plantam cada uma no SEU buraco, e cada uma tem de ser vista:
+ *
+ *   1. um atributo à vista (`title`), que o portão não lia por devolver só
+ *      `body.textContent`;
+ *   2. o corpo de uma dobra ABERTA (`<details open>`), que o portão tirava com
+ *      o de todas as outras;
+ *   3. a faixa deste projeto por cima do documento fixado de um estudo, numa
+ *      rota que o portão saltava inteira;
+ *   4. a prosa deste projeto à volta da transcrição de um estudo, na outra rota
+ *      que o portão saltava inteira.
+ *
+ * AS DUAS ÚLTIMAS PLANTAM TAMBÉM DO OUTRO LADO DA FRONTEIRA, dentro do documento
+ * fixado e dentro da transcrição, e exigem que o portão **não** as veja. Uma
+ * exceção que deixasse de isentar o que diz isentar era tão má como a que
+ * isentava a página inteira, e só as duas plantas juntas dizem onde é a linha.
+ *
  * Uso:  node tests/voz/palavras-proibidas.mjs
  *       node tests/voz/palavras-proibidas.mjs --prova
  *       node tests/voz/palavras-proibidas.mjs --json <ficheiro>
@@ -92,6 +116,82 @@ function repoe() {
   fs.writeFileSync(alvo, original, 'utf8');
 }
 
+/* OS QUATRO BURACOS DA SUPERFÍCIE, um por planta. O alvo de cada um procura-se
+   em `dist/` e não se escreve à mão: um estudo que saia do arquivo faz a régua
+   falhar com a razão à vista, que é o que tem de acontecer. */
+/** @param {string} html @param {string} pedaco */
+function depoisDoCorpo(html, pedaco) {
+  const i = html.indexOf('<body');
+  const j = html.indexOf('>', i);
+  return `${html.slice(0, j + 1)}${pedaco}${html.slice(j + 1)}`;
+}
+
+/** @param {string} html @param {string} atributo @param {string} pedaco */
+function dentroDaMarca(html, atributo, pedaco) {
+  const i = html.indexOf(atributo);
+  if (i < 0) return null;
+  const j = html.indexOf('>', i);
+  if (j < 0) return null;
+  return `${html.slice(0, j + 1)}${pedaco}${html.slice(j + 1)}`;
+}
+
+/** @param {RegExp} marca @returns {string|null} */
+function primeiraPagina(marca) {
+  /** @param {string} dir @returns {string|null} */
+  const anda = (dir) => {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) {
+        const achado = anda(p);
+        if (achado) return achado;
+      } else if (e.name.endsWith('.html')) {
+        const rel = path.relative(DIST, p).split(path.sep).join('/');
+        if (marca.test(rel)) return rel;
+      }
+    }
+    return null;
+  };
+  return anda(DIST);
+}
+
+const BURACOS = [
+  {
+    nome: 'um atributo à vista (`title`)',
+    chave: 'limiar',
+    pagina: () => PAGINA,
+    morde: (html) =>
+      depoisDoCorpo(html, '<span class="planta" title="O valor está acima do limiar publicado."></span>'),
+    naoMorde: null,
+  },
+  {
+    nome: 'o corpo de uma dobra aberta (`<details open>`)',
+    chave: 'passe o rato',
+    pagina: () => PAGINA,
+    morde: (html) =>
+      depoisDoCorpo(
+        html,
+        '<details class="planta" open><summary>A planta</summary><p>Passe o rato por um distrito.</p></details>',
+      ),
+    naoMorde: null,
+  },
+  {
+    nome: 'a faixa deste projeto por cima do documento fixado de um estudo',
+    chave: 'a casa',
+    pagina: () => primeiraPagina(/^estudos\/[^/]+\/documento\/index\.html$/),
+    morde: (html) => dentroDaMarca(html, 'data-oedp-faixa', '<p class="planta">As regras da casa estão no Método.</p>'),
+    naoMorde: (html) => depoisDoCorpo(html, '<p class="planta">As regras da casa estão no Método.</p>'),
+  },
+  {
+    nome: 'a prosa deste projeto à volta da transcrição de um estudo',
+    chave: 'responsável editorial',
+    pagina: () => primeiraPagina(/^estudos\/[^/]+\/texto\/index\.html$/),
+    morde: (html) =>
+      depoisDoCorpo(html, '<p class="planta">O responsável editorial responde pelo que se publica.</p>'),
+    naoMorde: (html) =>
+      dentroDaMarca(html, 'data-registo-edicao', '<p class="planta">O responsável editorial responde pelo que se publica.</p>'),
+  },
+];
+
 const linhas = [];
 let vistas = 0;
 
@@ -134,6 +234,59 @@ for (const p of PALAVRAS_PROIBIDAS) {
   linhas.push({ chave: p.chave, estado: visto ? 'vista' : 'PASSOU DESPERCEBIDA', visto });
 }
 
+/* ------------------------------------------------- os quatro buracos */
+for (const b of BURACOS) {
+  const rel = b.pagina();
+  if (!rel) {
+    linhas.push({ chave: `buraco · ${b.nome}`, estado: 'não há página em dist/ para plantar', visto: false });
+    continue;
+  }
+  const ficheiro = path.join(raizDaCopia, rel);
+  const antes = fs.readFileSync(ficheiro, 'utf8');
+  /** @param {string} novo */
+  const escreve = (novo) => {
+    fs.rmSync(ficheiro);
+    fs.writeFileSync(ficheiro, novo, 'utf8');
+  };
+  const comPlanta = b.morde(antes);
+  if (!comPlanta) {
+    linhas.push({ chave: `buraco · ${b.nome}`, estado: `não achou onde plantar em ${rel}`, visto: false });
+    continue;
+  }
+  escreve(comPlanta);
+  const vista = palavrasProibidasEm(raizDaCopia).achados.some((a) => a.chave === b.chave && a.caminho === rel);
+  escreve(antes);
+  /* E do outro lado da fronteira, onde a exceção diz que não se mede. */
+  let fronteira = true;
+  let porqueFronteira = '';
+  if (b.naoMorde) {
+    const doOutroLado = b.naoMorde(antes);
+    if (!doOutroLado) {
+      fronteira = false;
+      porqueFronteira = 'não achou onde plantar do outro lado da fronteira';
+    } else {
+      escreve(doOutroLado);
+      const viu = palavrasProibidasEm(raizDaCopia).achados.some((a) => a.chave === b.chave && a.caminho === rel);
+      escreve(antes);
+      if (viu) {
+        fronteira = false;
+        porqueFronteira = 'o portão viu a planta DENTRO do que a exceção isenta: a exceção deixou de isentar';
+      }
+    }
+  }
+  const visto = vista && fronteira;
+  if (visto) vistas++;
+  linhas.push({
+    chave: `buraco · ${b.nome}`,
+    estado: visto
+      ? `vista em ${rel}`
+      : vista
+        ? porqueFronteira
+        : `PASSOU DESPERCEBIDA em ${rel}`,
+    visto,
+  });
+}
+
 fs.rmSync(copia, { recursive: true, force: true });
 
 const falhas = linhas.filter((l) => !l.visto);
@@ -152,7 +305,8 @@ if (falhas.length > 0) {
 console.log(
   verde('  palavras ✓ ') +
     cinza(
-      `${vistas} de ${linhas.length} plantas vistas · ${repouso.paginas} página(s) da superfície em repouso, ` +
-        `0 achados · ${repouso.excecoes} página(s) isentas por rota declarada`,
+      `${vistas} de ${linhas.length} plantas vistas (${PALAVRAS_PROIBIDAS.length} palavras, ` +
+        `${BURACOS.length} buracos da superfície) · ${repouso.paginas} página(s) medidas em repouso, ` +
+        `0 achados · ${repouso.excecoes} página(s) com a superfície estreitada por rota declarada`,
     ),
 );
