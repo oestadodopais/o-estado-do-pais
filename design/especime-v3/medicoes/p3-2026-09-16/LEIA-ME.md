@@ -61,6 +61,8 @@ Os códigos ficaram em `n-build.code`, `n-verify.code` e `n-typecheck.code` (a c
 
 `design/especime-v3/medicoes/p3-2026-09-16/medir-p3.mjs` conta sobre o `dist/` e não decide nada; os portões que fecham a construção são o `check:voz` (as palavras e os nomes declarados), o `check:formas` (as três datas) e o `gate:html`. A contagem das palavras proibidas do relatório **é a do portão**, e não uma segunda cópia da lista: a régua importa `scripts/voz-palavras.mjs`.
 
+**E uma segunda régua entrou com a passagem de correção** (§7, achado 5): `nomes-oficiais.mjs` conta os nomes oficiais sobre o `dist/` e sobre o `src/data/enquadramento/nomes.json`, e confere que cada um vem de uma linha marcada `exata` e é, carácter a carácter, um dos nomes que ela declara. Também não decide nada e também não fecha nenhuma construção: existe para que a conta do relatório deixe de ser uma frase escrita à mão.
+
 ## 5 · O que não se fez, e porquê
 
 **As definições das medidas não passaram à forma da pergunta do leitor** (item 4, segunda metade: «quando a origem selada o permitir sem mudar o sentido»). O brief admite-o («onde não permitir ficam como estão e o relatório diz quais»), e a resposta é **nenhuma passou**, por uma razão que vale para todas: cada definição de `DEFINICOES_DAS_MEDIDAS` e de `DEFINICAO_DOS_PAINEIS` declara a origem de que é paráfrase, com o documento, o endereço, a data de leitura e o excerto literal (`ORIGENS_DAS_DEFINICOES`), e `conferirOrigensDeclaradas()` fecha a construção à primeira que não a declare. Reescrever uma delas em forma de pergunta é reescrever a paráfrase de um documento fixado, e a única maneira honesta de o fazer é reler o excerto ao lado da frase nova, medida a medida, e dizer se o sentido mudou. Isso é uma passagem com a origem na mão, e não uma passagem de língua: entra no bloco que voltar às origens seladas. **As 21 definições ficam como estavam**, e nenhuma delas mudou uma letra neste bloco (a única exceção é a do painel do Procedimento, onde só a palavra «limiar» mudou, pela decisão do diretor de 15.09, e a frase é a mesma).
@@ -97,6 +99,8 @@ Os códigos ficaram em `n-build.code`, `n-verify.code` e `n-typecheck.code` (a c
 | 14 | as capturas e os registos completos não estavam no pacote | do pacote; o pacote seguinte leva-os |
 | 15 | três contradições de contagem | a conta dos commits refez-se do `git log` (§2), e o comentário das linhas derivadas passou de «as quatro cujo único título de documento é o marcador» a «as três», que é o que a tabela já dizia |
 | 16 | os custos não têm registo no pacote | aceite: a conta vem da ferramenta |
+
+**A leitura a frio aterrou no repositório** com esta passagem, em `design/especime-v3/critica/2026-09-16-codex-leitura-p3.md` (e o registo das cinco plantas ao lado, em `.plantas.json`), porque é a ela que a §1.110 do `DECISIONS.md` e a entrada `p3` do `REVISOES-DO-INVENTARIO.md` se referem: uma referência a um ficheiro que não está no repositório é uma referência que ninguém pode seguir. A entrada `p3` das revisões passa de «por ler» ao nome do ficheiro, e de 36 linhas para 39 (13 novas, 29 reclassificadas para `retirada`).
 
 ### 7.1 · Os 46 nomes que mudaram nesta passagem
 
