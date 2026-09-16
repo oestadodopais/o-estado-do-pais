@@ -59,6 +59,11 @@
 
 import { FIGURAS } from '../data/figuras.mjs';
 import { MEDIDAS_DO_DOMINIO_1 } from '../data/dominios.mjs';
+/* A TERCEIRA LISTA DE NOMES DO PROJETO (bloco P3, 16.09.2026, item 1). As duas
+   primeiras nomeiam as medidas que a primeira página e a página do domínio
+   declaram; esta nomeia as 81 que só tinham o título do documento ou o rótulo
+   que a fonte imprime. A razão por extenso está no ficheiro. */
+import { NOMES_DO_PROJETO, NOMES_DAS_LINHAS_DERIVADAS } from '../data/nomes-das-medidas.mjs';
 import { POR_VERIFICAR, documentoDaLinha } from './ledger.mjs';
 /* O NOME OFICIAL VEM DE ONDE ELE É LIDO, que é o ficheiro do motor. Não fecha
    ciclo: `enquadramento.mjs` importa o livro-razão e o marcador, e não os nomes. */
@@ -71,7 +76,7 @@ import { nomeOficial } from './enquadramento.mjs';
  * do livro-razão que sustenta um `data-linha-campo`. Exactamente um dos dois é
  * não nulo: um nome ou é prosa declarada da casa, ou é a transcrição de um campo.
  *
- * @typedef {{ texto: string, fonte: 'figuras'|'medidas'|'oficial'|null, campo: 'name'|'document.title'|null }} NomeDaMedida
+ * @typedef {{ texto: string, fonte: 'figuras'|'medidas'|'projeto'|'oficial'|null, campo: 'name'|'document.title'|null }} NomeDaMedida
  */
 
 /**
@@ -91,6 +96,13 @@ for (const m of MEDIDAS_DO_DOMINIO_1) {
   if (typeof m.claim === 'string' && !CARTOES.has(m.claim)) {
     CARTOES.set(m.claim, { nome: m.nome, fonte: 'medidas' });
   }
+}
+/* E OS 81 NOMES DO BLOCO P3, por último, porque é o que a ordem quer dizer: um
+   nome escrito na declaração da medida (a primeira página, o domínio) ganha ao
+   nome escrito na lista das medidas que não têm declaração. As listas não se
+   cruzam hoje, e se vierem a cruzar-se é a declaração que manda. */
+for (const [id, nome] of Object.entries(NOMES_DO_PROJETO)) {
+  if (!CARTOES.has(id)) CARTOES.set(id, { nome, fonte: 'projeto' });
 }
 
 /**
@@ -142,7 +154,11 @@ export function eNomeDeMedida(x) {
   const o = /** @type {Record<string, unknown>} */ (x);
   if (typeof o.texto !== 'string' || o.texto === '') return false;
   const fonteOk =
-    o.fonte === null || o.fonte === 'figuras' || o.fonte === 'medidas' || o.fonte === 'oficial';
+    o.fonte === null ||
+    o.fonte === 'figuras' ||
+    o.fonte === 'medidas' ||
+    o.fonte === 'projeto' ||
+    o.fonte === 'oficial';
   const campoOk = o.campo === null || o.campo === 'name' || o.campo === 'document.title';
   if (!fonteOk || !campoOk) return false;
   /* Um e só um dos dois: a marca do markup sai daqui. */
@@ -226,3 +242,30 @@ export function nomeDoCartao(claim, lang) {
  * buscar a lista à mesma função que a escreve confirmava a função e não o
  * ficheiro de dados.
  */
+
+/**
+ * ===========================================================================
+ * O NOME DE UMA LINHA QUE NÃO SE RENDE COMO CARTÃO (bloco P3, item 1)
+ * ===========================================================================
+ * Vinte e quatro linhas por edição rendem-se, desde o bloco P2, como linha do
+ * livro-razão com a sua aritmética, e não como cartão: não têm nome em degrau
+ * nenhum da escada do cartão porque são DERIVADAS (a proveniência delas é a das
+ * origens) ou porque o único título de documento que trazem é o marcador da
+ * casa. Essa decisão não se desfaz: o que esta função dá é o NOME por cima da
+ * conta, escrito pelo projeto e conferido contra o ficheiro que o publica.
+ *
+ * DEVOLVE `null` PARA TUDO O RESTO, e é de propósito: uma linha que tem nome de
+ * cartão rende-se como cartão, e chamar esta função sobre ela seria perguntar
+ * pelo nome na superfície errada.
+ *
+ * @param {Linha} claim
+ * @param {Lingua} lang
+ * @returns {NomeDaMedida|null}
+ */
+export function nomeDaLinhaDerivada(claim, lang) {
+  const par = NOMES_DAS_LINHAS_DERIVADAS[claim.id];
+  if (!par) return null;
+  const texto = par[lang] ?? par.pt;
+  if (!eTextoUtil(texto)) return null;
+  return { texto, fonte: 'projeto', campo: null };
+}
