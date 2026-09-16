@@ -195,6 +195,40 @@ export const WORKS = [
     },
   },
   {
+    id: 'evora-2027-prometido-painel-dinheiro',
+    slug: 'evora-2027-prometido-painel-dinheiro',
+    subject: 'evora',
+    /**
+     * A DATA, E COMO FOI ENCONTRADA. Como o «Prometido, Pago, Auditado», este
+     * trabalho nunca passou por um anfitrião de artefactos: foi produzido no
+     * motor de investigação (ResearchHub) e atravessou de lá como ficheiro. A
+     * data de publicação de cada edição é a data do commit que escreveu esses
+     * bytes pela última vez, `c0b19d4bbc1b05819b6e0ea5b9e8e83f60ae40f4`, de
+     * 2026-09-16, o commit em que a frase da direção deixou de explicar o
+     * documento a si próprio. Os dois ficheiros HTML mudaram nesse commit e não
+     * voltaram a mudar, por isso `updated` fica a null: não há revisão
+     * posterior a registar.
+     */
+    editions: [
+      {
+        lang: 'pt',
+        title: 'Évora 2027 — O Prometido, o Painel, o Dinheiro',
+        date: '2026-09-16',
+        updated: null,
+      },
+      { lang: 'en', title: 'Évora 2027 — Promised, Panel, Money', date: '2026-09-16', updated: null },
+    ],
+    // Nunca foi publicado fora deste sítio: não há endereço externo para dar.
+    artifactUrl: null,
+    /* A descrição diz o que o estudo põe lado a lado, e mais nada: não é
+       transcrição, e por isso não leva `verbatimDaAbertura`. Sem algarismos,
+       como todas as outras: um número numa descrição precisa de linha. */
+    description: {
+      pt: 'O que a candidatura de Évora a Capital Europeia da Cultura prometeu, o que o painel de peritos da Comissão Europeia escreveu sobre isso, e o dinheiro escrito em atos públicos.',
+      en: 'What Évora’s bid for European Capital of Culture promised, what the European Commission’s expert panel wrote about it, and the money written into public acts.',
+    },
+  },
+  {
     id: 'onde-esta-a-agua',
     slug: 'onde-esta-a-agua',
     // subject por preencher: o título não diz de que território trata. Se vier

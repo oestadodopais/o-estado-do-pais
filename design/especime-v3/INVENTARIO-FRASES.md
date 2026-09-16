@@ -2994,3 +2994,26 @@ fica ao pé do verbo a que pertence. As duas gémeas de cima ficam `retirada`.
 | --- | --- | --- | --- | --- |
 | conteudo | Quem for nomeado pode responder para o mesmo endereço das correções: a resposta publica-se ao lado da peça, sem edição. | p3 | viva | o direito de resposta, que é a segunda das três proteções da emenda de 15.09.2026 da `design/observatorio/POLITICA-DA-AUTONOMIA.md` e que o diretor mandou escrever a 16.09.2026 às 08:25 UTC (bloco P3, item 8). Vive na página das correções porque é aí que a resposta se pede, e não se repete em página nenhuma (norma §1.4). A ordem é a da segunda passagem de correção do fim do dia: o endereço ao pé de «responder», que é a quem pertence |
 | conteudo | Anyone named may reply to the same address as the corrections: the reply is published beside the piece, unedited. | p3 | viva | ver a razão na gémea portuguesa |
+
+## As frases do E1 · «Évora 2027: o prometido, o painel, o dinheiro» (16.09.2026)
+
+**Quatro cadeias novas, e são uma frase por edição.** O bloco E1 põe no arquivo um trabalho novo, e a única
+prosa deste projeto que ele acrescenta à superfície é a descrição do estudo nas duas edições. Não é
+transcrição: o documento tem a sua frase de abertura e ela fica no documento, e a descrição diz, numa frase, o
+que o estudo põe lado a lado. Por não ser transcrição não leva `data-verbatim`, e por isso entra aqui, ao
+contrário das descrições do «Prometido, Pago, Auditado» e dos «Pelouros», que são a frase de abertura
+transcrita e saem do inventário pela marca.
+
+**Duas das quatro são a mesma frase com o prefixo da língua**: a página de um estudo rende as descrições das
+duas edições numa fila, cada uma com o seu selo de língua, e a régua lê o bloco inteiro, prefixo incluído. É a
+mesma forma que as linhas «PT …» e «EN …» dos outros estudos já têm neste ficheiro.
+
+**Nenhuma linha saiu, e nenhuma mudou de estado.** O corpo do documento não passa por aqui: a página de texto
+compõe-o do registo do motor, e a régua tira da superfície a região `data-registo`.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | O que a candidatura de Évora a Capital Europeia da Cultura prometeu, o que o painel de peritos da Comissão Europeia escreveu sobre isso, e o dinheiro escrito em atos públicos. | e1-evora-2027 | viva | — |
+| conteudo | PT O que a candidatura de Évora a Capital Europeia da Cultura prometeu, o que o painel de peritos da Comissão Europeia escreveu sobre isso, e o dinheiro escrito em atos públicos. | e1-evora-2027 | viva | a mesma descrição, na fila das descrições da página do estudo |
+| conteudo | What Évora’s bid for European Capital of Culture promised, what the European Commission’s expert panel wrote about it, and the money written into public acts. | e1-evora-2027 | viva | — |
+| conteudo | EN What Évora’s bid for European Capital of Culture promised, what the European Commission’s expert panel wrote about it, and the money written into public acts. | e1-evora-2027 | viva | a mesma descrição, na fila das descrições da página do estudo |
