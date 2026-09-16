@@ -12,3 +12,8 @@ sobre f9f49406 (a cabeça da passagem de correção do fim do dia, depois do reb
 build 0
 verify 0
 typecheck 0
+
+sobre a cabeça da frase reordenada do direito de resposta (a cabeça final)
+build 0
+verify 0
+typecheck 0

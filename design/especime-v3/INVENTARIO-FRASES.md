@@ -2979,6 +2979,18 @@ inteligência artificial, que a Emenda 15 isenta da contagem, e ficam escritas n
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | Quem for nomeado pode responder: a resposta publica-se ao lado da peça, sem edição, para o mesmo endereço das correções. | p3 | viva | o direito de resposta, que é a segunda das três proteções da emenda de 15.09.2026 da `design/observatorio/POLITICA-DA-AUTONOMIA.md` e que o diretor mandou escrever a 16.09.2026 às 08:25 UTC (bloco P3, item 8). Vive na página das correções porque é aí que a resposta se pede, e não se repete em página nenhuma (norma §1.4). A preposição é a da passagem de correção do fim do dia: «para o mesmo endereço», como a página já escreve na linha de cima |
-| conteudo | Anyone named may reply: the reply is published beside the piece, unedited, to the same address as the corrections. | p3 | viva | ver a razão na gémea portuguesa |
+| conteudo | Quem for nomeado pode responder: a resposta publica-se ao lado da peça, sem edição, para o mesmo endereço das correções. | p3 | retirada | a segunda passagem de correção de 16.09.2026, por decisão do lugar de direção: a preposição «para» prendia-se ao verbo errado («a resposta publica-se … para o mesmo endereço»), e a frase reordena-se para que ela fique ao pé de «responder», que é a quem pertence. A gémea nova está `viva` no fim deste ficheiro. A razão de origem: o direito de resposta, que é a segunda das três proteções da emenda de 15.09.2026 da `design/observatorio/POLITICA-DA-AUTONOMIA.md` e que o diretor mandou escrever a 16.09.2026 às 08:25 UTC (bloco P3, item 8). Vive na página das correções porque é aí que a resposta se pede, e não se repete em página nenhuma (norma §1.4). A preposição é a da passagem de correção do fim do dia: «para o mesmo endereço», como a página já escreve na linha de cima |
+| conteudo | Anyone named may reply: the reply is published beside the piece, unedited, to the same address as the corrections. | p3 | retirada | ver a razão na gémea portuguesa |
 | conteudo | Um conjunto limitado de medidas com que a Comissão Europeia abrange os aspetos internos e externos mais relevantes dos desequilíbrios macroeconómicos, cada uma com o seu valor de referência indicativo. | p3 | viva | a definição do painel do Procedimento, com «abrange» no lugar de «apanha» (achado 9 da leitura a frio de 16.09.2026) e «valor de referência indicativo» no lugar de «limiar indicativo» (decisão do diretor de 15.09.2026 de manhã). O excerto selado da Comissão não muda, e a gémea inglesa continua a dizer «captures», que é o verbo dele |
+
+## A frase reordenada do direito de resposta (16.09.2026, segunda passagem de correção)
+
+**Uma cadeia muda de ordem nas duas edições, e não muda de sentido.** O lugar de direção leu a frase do direito
+de resposta depois da primeira passagem e apanhou o que a troca de preposição tinha deixado por resolver: com
+«para» no fim, o complemento prende-se a «publica-se» e não a «responder». A frase reordena-se, e o endereço
+fica ao pé do verbo a que pertence. As duas gémeas de cima ficam `retirada`.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Quem for nomeado pode responder para o mesmo endereço das correções: a resposta publica-se ao lado da peça, sem edição. | p3 | viva | o direito de resposta, que é a segunda das três proteções da emenda de 15.09.2026 da `design/observatorio/POLITICA-DA-AUTONOMIA.md` e que o diretor mandou escrever a 16.09.2026 às 08:25 UTC (bloco P3, item 8). Vive na página das correções porque é aí que a resposta se pede, e não se repete em página nenhuma (norma §1.4). A ordem é a da segunda passagem de correção do fim do dia: o endereço ao pé de «responder», que é a quem pertence |
+| conteudo | Anyone named may reply to the same address as the corrections: the reply is published beside the piece, unedited. | p3 | viva | ver a razão na gémea portuguesa |
