@@ -395,13 +395,20 @@ for (const largura of [1280, 390]) {
         anuncio: (document.querySelector('[data-anuncio]')?.textContent ?? '').trim(),
         url: location.pathname + location.search,
         cabeca: document.querySelector('[data-cabeca]:not([hidden])')?.getAttribute('data-cabeca'),
-        /* A ÁREA DE LEITURA ENTROU NO LUGAR DO PAINEL (F1.1b, 04.09.2026): a
-           grelha das treze peças saiu da primeira página e o que está por baixo
-           da cabeça são dois blocos `[data-leituras]`, um por quadro. O que esta
-           célula lê é «o corpo da página está lá», e lê-o na coisa que agora lá
-           está; o seletor antigo devolvia `undefined` e a célula caía por uma
-           razão que não é a dela. O primeiro bloco é o do Procedimento. */
-        painel: document.querySelector('[data-leituras]')?.getAttribute('data-leituras'),
+        /* O QUE ESTA CÉLULA LÊ É «O CORPO DA PÁGINA ESTÁ LÁ», e o corpo mudou
+           duas vezes. Era a grelha das treze peças; com o F1.1b (04.09.2026)
+           passou a ser a área de leitura, dois blocos `[data-leituras]`; e com o
+           bloco P1 (15.09.2026) as leituras dos dois quadros da União saíram da
+           primeira página para «Portugal na União Europeia», e o seletor voltou a
+           devolver `undefined` (I119, 16.09.2026: a célula saía a vermelho por
+           uma razão que não é a dela).
+
+           O QUE ESTÁ LÁ HOJE É O ÍNDICE DOS DOMÍNIOS, e é o que se lê: cada
+           domínio da carta dos conteúdos leva `data-dominio` com o seu nome curto.
+           Conta-se, e não se lê um só: um índice com um domínio e um índice com
+           dezoito são o mesmo para um seletor que devolve o primeiro, e o que
+           esta célula quer saber é se a página tem corpo. */
+        corpo: document.querySelectorAll('[data-dominio]').length,
       };
     });
     const fechou = await p.evaluate(() => {
@@ -434,12 +441,12 @@ for (const largura of [1280, 390]) {
       abriu.foco === 'pesquisa-concelho' &&
       abriu.url === rota &&
       abriu.cabeca === 'pais' &&
-      abriu.painel === 'pdm' &&
+      abriu.corpo > 0 &&
       fechou.gaveta === null &&
       fechou.forma === 1;
     if (!ok) bem = false;
     linhas.push(
-      `${edicao}: «${abriu.url}» · pesquisa à vista ${abriu.visivel}, dentro do ecrã ${abriu.dentro} · foco «${abriu.foco}» · cabeça ${abriu.cabeca}, painel ${abriu.painel} · gaveta da busca ${fechou.gaveta === null ? 'não existe' : fechou.gaveta} · ${fechou.forma} formulário(s) com destino`,
+      `${edicao}: «${abriu.url}» · pesquisa à vista ${abriu.visivel}, dentro do ecrã ${abriu.dentro} · foco «${abriu.foco}» · cabeça ${abriu.cabeca}, corpo ${abriu.corpo} domínio(s) · gaveta da busca ${fechou.gaveta === null ? 'não existe' : fechou.gaveta} · ${fechou.forma} formulário(s) com destino`,
     );
     if (edicao === 'pt') medidas[`n3_${largura}`] = { abriu, fechou };
     await p.__ctx.close();
