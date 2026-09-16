@@ -27,6 +27,16 @@
 
 Não se muda a estrutura (rotas, menu, a página do concelho: é o P5). Não se mexe no cartão além dos nomes e das datas. A faixa da primeira página e a da União ficam como estão (o diretor decide-as em capturas). Não se escreve nenhuma frase de instrução. Não se traduz um nome de medida que tenha nome oficial confirmado: usa-se o oficial no recibo e o do projeto no cartão.
 
+## 2b · A emenda da regra dos nomes (16.09.2026, ao fim do dia)
+
+*Escrita no brief pelo construtor, por mandato da triagem do lugar de direção sobre a leitura a frio do Codex (achado 7). A regra 2 do §0 dizia «duas a cinco palavras, sem sigla, sem jargão da fonte», e a leitura mostrou que a primeira metade estava apertada de mais: 72 dos 105 nomes caíam fora da janela, e não porque estivessem mal escritos, mas porque uma medida de um concelho precisa de dizer o concelho, e uma medida de uma região precisa de dizer a região. Uma regra que 72 de 105 nomes quebram não é uma regra: é uma contagem. A regra passa a ser esta, e é ela que vale a partir daqui.*
+
+1. **Um nome tem as palavras que a medida pede, o menos possível.** Não há janela de contagem. O teste é o de sempre, o da norma §5.2: lido em voz alta, isto é o nome que um jornal daria a esta medida? Um nome que precise do território, da grandeza ou do período para não ser outro nome leva-os; um nome que os leve sem precisar corta-os.
+2. **O nome diz o que a medida mede.** Se o nome não distingue a medida de outra do mesmo cartão, ou não diz a grandeza, faltam-lhe palavras: «Peso das quatro maiores empresas» não diz peso em quê, e «Distância à média europeia» não diz distância de quê.
+3. **Os partidos escrevem-se como a imprensa os escreve**: PS, CDU, AD, Chega. Uma sigla que o leitor de jornal lê todos os dias é o nome da coisa, e escrevê-la por extenso num título de cartão é escrever pior. O mesmo vale para as siglas que a imprensa portuguesa usa como palavras correntes, como PIB e PRR.
+4. **O jargão da fonte não entra.** «Atuarialmente neutro» é a expressão de um relatório técnico e não diz nada a quem lê: o que ela quer dizer é «sem custo para o sistema», e é isso que o nome escreve. A regra não muda por causa da emenda 3: uma sigla de partido ou de programa que a imprensa usa não é jargão da fonte, e o nome de um ficheiro ou o cabeçalho de uma coluna continuam a não ser um nome.
+5. **Nenhum algarismo**, como no §0: onde a medida fala de idades, de anos ou de quantidades, quem as diz é a unidade da linha e o período dela.
+
 ## 3 · O relatório
 
 Começa pela tabela do §1 com a medida de cada item; depois a tabela dos 81 nomes; depois a tabela das cadeias mudadas; a §1.110 tal como a escreveste, com os dois carimbos; os commits e a cabeça; os códigos dos três portões e onde ficaram; o custo em símbolos e em tempo de parede; e o que fica para o lugar de direção. Prosa em português, curta, sem travessões.
