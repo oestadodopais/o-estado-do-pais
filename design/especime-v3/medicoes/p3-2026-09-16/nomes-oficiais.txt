@@ -1,0 +1,11 @@
+
+  OS NOMES OFICIAIS, CONTADOS SOBRE O dist/ E O nomes.json
+
+  no nomes.json · 32 indicador(es), 17 marcados «exata»
+  no recibo     · 26 por edição (52 nas duas), de 17 linha(s): 9 com os dois nomes e 8 com um só
+                  por fonte: INE 9 · PORDATA 17
+  no cartão     · 5 por edição (10 nas duas): os cartões sem nome do projeto encabeçam-se com o nome oficial
+  o total       · 31 por edição, 62 nas duas
+
+  ✓ cada nome oficial rendido vem de uma linha «exata» e é, carácter a carácter, um dos nomes dela.
+
