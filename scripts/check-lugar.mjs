@@ -153,7 +153,32 @@ const TETOS = {
      mede é quantas páginas os têm, e a resposta muda quando o livro-razão cresce.
      Medido com `node design/especime-v3/medicoes/lugar-2026-09-04/l1-composicao.mjs dist`
      sobre a cabeça do bloco P2. */
-  l1_paginas: 2290,
+  /* DESCE DE 2 290 PARA 2 284 a 16.09.2026, e a catraca volta a fazer o que diz
+     que faz (achado 12 da leitura a frio de 15.09.2026: «The L1 "ratchet",
+     documented as only descending, rose from 2,170 to 2,290; the new rows
+     explain 118 new pages, not the full increase of 120»).
+
+     **AS DUAS PÁGINAS QUE FALTAVAM ERAM DA FAMÍLIA `area`, E ESTÃO MEDIDAS NOS
+     DOIS FICHEIROS.** A composição que o bloco P2 guardou
+     (`design/especime-v3/medicoes/p2-2026-09-15/l1-composicao-2026-09-15.txt`)
+     conta 1 540 páginas da família `linha` (as 118 novas) e **6 da família
+     `area`**, com um par só: a marca da fonte do cartão contra a marca da fonte
+     de um item da régua, que apontam as duas para a mesma linha (42 ocorrências).
+     Não era o livro-razão a crescer: era a régua do cartão a pôr uma segunda
+     porta para a mesma linha dentro do mesmo cartão.
+
+     **A CORREÇÃO DO ACHADO 11 LEVOU O PAR CONSIGO**, e não foi para isso que ela
+     se fez: a régua passou a exigir a mesma edição do documento e a mesma unidade
+     entre a linha do período anterior e a principal, e os itens que traziam a
+     segunda porta eram os das linhas de Évora e das distâncias à UE-27, que não
+     batem. A composição desta cabeça já não tem família `area` nenhuma, e a
+     contagem desce para 2 284.
+
+     Medido com `node design/especime-v3/medicoes/lugar-2026-09-04/l1-composicao.mjs dist`
+     sobre a cabeça desta passagem, e não escrito à mão. O horizonte continua a
+     zero, e o trabalho continua o mesmo: os dois padrões da família `linha` e o
+     das 616 páginas de concelho. */
+  l1_paginas: 2284,
   /* L2a · páginas, fora de `/municipios`, que ligam a mais de `L2_LIMITE_NOMES`
      concelhos fora de uma lista fechada.
      DESCE DE 2 PARA 0 a 09.09.2026, por decisão do lugar de direção, e a régua

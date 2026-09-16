@@ -113,28 +113,39 @@ const TIPOS_ORIGEM = path.join(RAIZ, 'public', 'tipos');
  * ficam ao lado dos cartões, escritos uma vez.
  *
  * ---------------------------------------------------------------------------
- * SOBE DE 512 PARA 768 KiB A 15.09.2026, E A RAZÃO É O LIVRO-RAZÃO A CRESCER
+ * SOBE DE 512 KiB A 15.09.2026, E PASSA A SER O MEDIDO MAIS UMA MARGEM ESCRITA
  * ---------------------------------------------------------------------------
  * O cartão do índice do livro-razão é um retrato de `livro-razao/index.html`, e
  * essa página tem **uma fila por linha do livro-razão**. O bloco P2 trouxe 59
  * linhas novas (o período anterior e o agregado da União de 32 medidas), o índice
- * passou de 2 916 filas para 2 975, e o cartão passou de debaixo do tecto para
- * 542,1 KiB.
+ * passou de 2 916 filas para 2 975, e o cartão passou de debaixo do tecto de 512
+ * para 542,5 KiB. **Não é o sítio a engordar: é o livro-razão a crescer**, que é
+ * o que ele existe para fazer, e o tecto media uma coisa que cresce com ele.
  *
- * **Não é o sítio a engordar: é o livro-razão a crescer**, que é o que ele existe
- * para fazer, e o tecto media uma coisa que cresce com ele. Medido nesta corrida:
- * o maior cartão é o do índice, com 542,1 KiB; os dois seguintes são a primeira
- * página, com 483,0 e 482,9. O tecto novo, 768 KiB, dá ao maior 226 KiB de folga,
- * que são mais de dois mil e quinhentas filas de índice ao ritmo a que ele
- * cresceu hoje. **O que ele continua a proibir é um cartão que ninguém abre**, que
- * é a razão pela qual o tecto existe.
+ * **O PRIMEIRO NÚMERO ESCOLHIDO FOI 768 KiB, E A LEITURA A FRIO DE 15.09.2026
+ * TINHA RAZÃO SOBRE ELE** (achado 12): «The design-card ceiling rose from 512 to
+ * 768 KiB merely to admit a measured 542.1 KiB card, leaving 226 KiB of new
+ * unchecked growth.» Um tecto redondo escolhido por caber é um tecto que deixa
+ * entrar tudo o que couber por baixo dele sem ninguém decidir nada: 226 KiB de
+ * crescimento que nenhuma régua olha.
+ *
+ * O TECTO PASSA A SER O MEDIDO MAIS 10 %, E OS DOIS NÚMEROS ESTÃO ESCRITOS: o
+ * maior cartão desta corrida, medido e não estimado, e a margem. Um cartão que
+ * cresça mais do que um décimo acima do maior que já existiu bate no tecto e
+ * obriga a olhar, que é o que um tecto faz. Subir o tecto é mudar o número
+ * medido, com a data e a corrida que o mediu ao lado, como se faz com a catraca
+ * da L1.
  *
  * O dia em que este número voltar a bater é o dia de decidir outra coisa: um
  * retrato do índice inteiro deixa de ser um espécime de desenho quando a página
  * que ele retrata tem dez mil filas, e o cartão passa a ser um recorte dela. Fica
  * escrito para que essa decisão não seja uma surpresa.
  */
-const LIMITE_BYTES = 768 * 1024;
+/** O maior cartão medido, em KiB, e a corrida que o mediu. */
+const MAIOR_CARTAO_MEDIDO_KIB = 542.5; // o índice do livro-razão, 16.09.2026, ramo `porta-2026-09-15`
+/** A margem escrita por cima do medido. */
+const MARGEM_DO_TECTO = 0.1;
+const LIMITE_BYTES = Math.round(MAIOR_CARTAO_MEDIDO_KIB * (1 + MARGEM_DO_TECTO) * 1024);
 
 /**
  * O domínio na forma legível, não em punycode.
