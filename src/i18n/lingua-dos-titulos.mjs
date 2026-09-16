@@ -394,9 +394,13 @@ export const LINGUA_DAS_EDICOES = {
   '2025': null,
 
   /* --- as datas ---------------------------------------------------------- */
+  /* A edição das três contagens do próprio arquivo é a data em que o arquivo
+     mudou, e por isso esta chave anda com ele: as de 15.08 e de 24.08 saíram
+     quando «Évora 2027 — O Prometido, o Painel, o Dinheiro» entrou e as três
+     linhas passaram a 16.09.2026 (bloco E1). A tabela declara o que existe, e
+     uma chave que nenhuma linha traz fecha a construção. */
   '12.08.2026': null,
-  '15.08.2026': null,
-  '24.08.2026': null,
+  '16.09.2026': null,
 
   /* --- os nomes de ficheiro do publicador -------------------------------- */
   'TERRITORY-RESULTS-LOCAL-070500-CM.json': null,
