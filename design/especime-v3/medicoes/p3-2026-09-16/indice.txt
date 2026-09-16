@@ -1,0 +1,30 @@
+
+  A RÉGUA DOS NOMES, DAS DATAS E DO ÍNDICE · 7358 página(s) de /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/p3-2026-09-16/dist
+
+  [32m✓[0m I1 · o nome de uma medida não é o identificador
+[90m        20 página(s) · 416 entrada(s) · 364 com nome · 52 sem nome (as derivadas, que não têm fonte nem documento, e as que só têm o marcador por título de documento) · 416 identificador(es) em metadado
+        a escada no índice do livro-razão, por edição (208 linhas): 108 pelo nome do cartão · 3 pelo rótulo da fonte · 71 pelo TÍTULO DO DOCUMENTO, que é o nome do papel e não o da medida · 26 sem nome
+        1866 rótulo(s) do livro-razão inteiro com um localizador de uma das 4 formas conhecidas[0m
+  [32m✓[0m I2 · as datas ISO à vista
+[90m        0 data(s) ISO como valor · 0 em prosa por marcar · 918 dentro de texto transcrito (a casa não edita o que transcreve) · 193 em documentos alojados e páginas de leitura (fora do âmbito do brief §2)[0m
+  [32m✓[0m I3 · a busca do índice é um formulário, e cobre o livro-razão inteiro
+[90m        2 índice(s) com um campo de busca dentro de um <form method="get"> · 5950 entrada(s) nos dois ficheiros do índice da busca, contra 2975 linhas do livro-razão em cada[0m
+  [32m✓[0m I4 · a palavra retirada não está no rótulo da contagem
+[90m        0 ocorrência(s) no rótulo da contagem das áreas · 15 noutras páginas (o Método, o Sobre e os documentos alojados, que são do bloco F1.10)[0m
+  [32m✓[0m I5 · as contagens do índice com denominador
+[90m        as duas parcelas dizem de que total saem, nas duas edições[0m
+  [32m✓[0m I6 · o marcador com um destino só
+[90m        458 ligação(ões) em «pt» e 458 em «en», uma página cada · 62 marcador(es) dentro de um selo (excepção da Emenda 2)[0m
+  [32m✓[0m I8 · a página de uma unidade da Carta
+[90m        58 página(s), cada uma com a frase do índice, sem uma linha que não seja a da Carta e sem um algarismo fora de origem declarada[0m
+  [32m✓[0m I9 · as datas dos trabalhos, e o marcador que resta
+[90m        24 linha(s) de trabalho · 2 marcador(es) ao todo, 2 linha(s) com um e nenhuma com dois · 16 edição(ões) com a data do repositório conferida contra o git, 0 sem história · 16 de 16 linha(s) de src/data/datas-de-publicacao.json refeitas do git[0m
+  [32m✓[0m I10 · nenhum número novo
+[90m        2975 linha(s) citada(s) em 27634 ocorrência(s) · 19 motivo(s) declarado(s)[0m
+  [32m✓[0m I3b · a busca filtra o livro-razão inteiro, no navegador
+[90m        /livro-razao: 208 entradas no documento · por nome 3 · por concelho 9 · por fonte 50 · sem resultado 0[0m
+  [32m✓[0m I7 · sem transbordo a 390 nas páginas de linha
+[90m        1 página(s) medida (a do endereço mais longo; a amostra de 60 corre com --amostra-larga)[0m
+  [32m✓[0m I11 · o espaço entre o número e a palavra, a 390
+[90m        /: 10 par(es) medido(s) para 10 contagem(ns), vão mínimo 2.8px · com o defeito plantado, 10 de 10 apanhada(s) · /en/: 10 par(es) medido(s) para 10 contagem(ns), vão mínimo 2.8px · com o defeito plantado, 10 de 10 apanhada(s)[0m
+

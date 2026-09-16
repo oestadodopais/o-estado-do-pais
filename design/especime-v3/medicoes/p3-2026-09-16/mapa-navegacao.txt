@@ -1,0 +1,24 @@
+
+[90m  Emenda 19 · o mapa é navegação · 9 réguas[0m
+
+  [32mpassa[0m  N1 · um endereço antigo abre a página do concelho, ou o índice dos 308 · pt
+[90m         municipio:evora → «/municipios/evora» · sem concelho sem página construído: os 308 têm-na · um slug que não existe → «/» · o prefixo nu → «/»[0m
+  [32mpassa[0m  N1 · um endereço antigo abre a página do concelho, ou o índice dos 308 · en
+[90m         municipio:evora → «/en/municipalities/evora» · sem concelho sem página construído: os 308 têm-na · um slug que não existe → «/en» · o prefixo nu → «/en»[0m
+  [32mpassa[0m  N1 · a primeira página construída não tem uma marca da vista de escolha
+[90m         nenhuma das 12 marcas em nenhuma das duas edições: data-cabeca="vazio", data-painel="vazio", data-slot, data-escolher, data-trocar, data-fechar-mapa, mapa-fechar, data-alvos, mun-alvo, data-campo, data-hint-escolher, data-so-evora[0m
+  [32mpassa[0m  N2 · o mapa mede o mesmo no país e com a pesquisa aberta, em três larguras
+[90m         1280 pt: país 518×683 · pesquisa aberta 518×683 (municipio) · 11 translação(ões) do servidor, as mesmas nos dois estados: true · sem lente: true (translate(0 -3183), translate(0 -36)) · 1280 en: país 518×683 · pesquisa aberta 518×683 (municipio) · 11 translação(ões) do servidor, as mesmas nos dois estados: true · sem lente: true (translate(0 -3183), translate(0 -36)) · 1512 pt: país 518×683 · pesquisa aberta 518×683 (municipio) · 11 translação(ões) do servidor, as mesmas nos dois estados: true · sem lente: true (translate(0 -3183), translate(0 -36)) · 1512 en: país 518×683 · pesquisa aberta 518×683 (municipio) · 11 translação(ões) do servidor, as mesmas nos dois estados: true · sem lente: true (translate(0 -3183), translate(0 -36)) · 2000 pt: país 518×683 · pesquisa aberta 518×683 (municipio) · 11 translação(ões) do servidor, as mesmas nos dois estados: true · sem lente: true (translate(0 -3183), translate(0 -36)) · 2000 en: país 518×683 · pesquisa aberta 518×683 (municipio) · 11 translação(ões) do servidor, as mesmas nos dois estados: true · sem lente: true (translate(0 -3183), translate(0 -36))[0m
+  [32mpassa[0m  N2 · a roda do rato sobre o mapa rola a página, nos dois estados
+[90m         «/»: o cursor no meio do mapa, cinco entalhes para baixo, scrollY 366 → 866, 11 translação(ões), as mesmas de antes da roda: true · sem lente: true · «/?ambito=municipio»: o cursor no meio do mapa, cinco entalhes para baixo, scrollY 366 → 866, 11 translação(ões), as mesmas de antes da roda: true · sem lente: true[0m
+  [32mpassa[0m  N3 · a busca do concelho à vista sem gesto, com o campo alcançável e o formulário com destino · 1280
+[90m         pt: «/» · pesquisa à vista true, dentro do ecrã true · foco «pesquisa-concelho» · cabeça pais, corpo 18 domínio(s) · gaveta da busca não existe · 1 formulário(s) com destino · en: «/en» · pesquisa à vista true, dentro do ecrã true · foco «pesquisa-concelho» · cabeça pais, corpo 18 domínio(s) · gaveta da busca não existe · 1 formulário(s) com destino[0m
+  [32mpassa[0m  N3 · a busca do concelho à vista sem gesto, com o campo alcançável e o formulário com destino · 390
+[90m         pt: «/» · pesquisa à vista true, dentro do ecrã true · foco «pesquisa-concelho» · cabeça pais, corpo 18 domínio(s) · gaveta da busca não existe · 1 formulário(s) com destino · en: «/en» · pesquisa à vista true, dentro do ecrã true · foco «pesquisa-concelho» · cabeça pais, corpo 18 domínio(s) · gaveta da busca não existe · 1 formulário(s) com destino[0m
+  [32mpassa[0m  N3 · sem script a busca é um formulário com destino, e o destino existe
+[90m         pt: <form> action «/municipios» method «get» (200) · campo true · o índice também está no menu: true · en: <form> action «/en/municipalities» method «get» (200) · campo true · o índice também está no menu: true[0m
+  [32mpassa[0m  N4 · retirada pela Emenda 20: a primeira página deixou de ter os 308 pontos
+[90m         o mapa da primeira página são as 29 unidades da Carta como áreas, cada uma a crescer para os seus concelhos (Emenda 20; F1.1d, 07.09.2026; F1.1e, 08.09.2026, que trouxe as 29 de volta ao nível de cima); o que esta secção media passou a ser medido em tests/inicio/mapa-unidades.mjs, células U1, U2 e U3[0m
+
+[32m  9 de 9 réguas passam.[0m
+
