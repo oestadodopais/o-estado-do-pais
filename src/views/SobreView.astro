@@ -87,6 +87,16 @@ const politica = `${routePath('metodo', lang)}#${ANCORA_DA_POLITICA}`;
 
       <p class="lede sobre-texto" data-sobre={lang}>{SOBRE[lang].texto}</p>
 
+      {/* A REGRA DOS NOMES (diretor, 15.09.2026; a emenda da política da
+          autonomia, item 8 do bloco P3). Diz-se aqui e em mais lado nenhum: a
+          norma §1.4 manda o sítio explicar-se uma vez, e este é o lugar onde ele
+          diz o que é. O direito de resposta, que é a segunda das três proteções,
+          vive na página das correções, que é onde a resposta se pede.
+
+          LEVA A MARCA DO TEXTO GOVERNADO, como o parágrafo de cima: o `gate:html`
+          compara-a carácter a carácter com `src/data/sobre.mjs`. */}
+      <p class="sobre-nomes" data-sobre-nomes={lang}>{SOBRE[lang].nomes}</p>
+
       <p class="sobre-porta">
         <a href={politica}>→ {POLITICA.titulo[lang]}</a>
       </p>
