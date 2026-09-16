@@ -97,6 +97,7 @@ import { parse } from 'node-html-parser';
 import { loadClaims } from '../../src/lib/ledger.mjs';
 import { FIGURAS } from '../../src/data/figuras.mjs';
 import { MEDIDAS_DO_DOMINIO_1 } from '../../src/data/dominios.mjs';
+import { NOMES_DO_PROJETO } from '../../src/data/nomes-das-medidas.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = process.env.OEDP_DIST ?? path.join(RAIZ, 'dist');
@@ -168,6 +169,16 @@ const PALAVRA_RETIRADA = { pt: /\bpeças?\b/i, en: /\bpieces?\b/i };
 const CARTOES_DA_REGUA = new Map();
 for (const f of FIGURAS) if (typeof f.claim === 'string' && !CARTOES_DA_REGUA.has(f.claim)) CARTOES_DA_REGUA.set(f.claim, f.nome);
 for (const m of MEDIDAS_DO_DOMINIO_1) if (typeof m.claim === 'string' && !CARTOES_DA_REGUA.has(m.claim)) CARTOES_DA_REGUA.set(m.claim, m.nome);
+/* E A TERCEIRA LISTA (bloco P3, 16.09.2026, item 1): os 81 nomes do projeto para
+   as medidas que só tinham o rótulo da fonte ou o título do documento. Entra por
+   último, como em `src/lib/nomes.mjs`: um nome escrito na declaração da medida
+   ganha ao nome escrito na lista das medidas sem declaração. As 24 linhas que se
+   rendem como linha derivada NÃO entram: o índice do livro-razão lê a escada de
+   três degraus, e uma linha sem nome em degrau nenhum continua a não ter nome
+   aqui, que é o que a contagem «sem nome» desta célula mede. */
+for (const [id, nome] of Object.entries(NOMES_DO_PROJETO)) {
+  if (!CARTOES_DA_REGUA.has(id)) CARTOES_DA_REGUA.set(id, nome);
+}
 
 const LINHAS_DA_REGUA = loadClaims();
 
