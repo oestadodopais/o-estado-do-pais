@@ -522,18 +522,24 @@ async function correTudo(soEstas) {
      dela: ela ROLA a faixa para trazer cada cartão ao centro, e uma leitura de
      caixas feita a seguir a isso mediria outra posição. */
   const toques = {};
-  if (daPagina.length || precisa('F10')) {
+  if (daPagina.length) {
     const larguras = new Set();
     for (const c of daPagina) {
       if (['F3', 'F6', 'F9'].includes(c)) for (const w of LARGURAS) larguras.add(w);
-      if (['F1', 'F2', 'F5'].includes(c)) larguras.add(1280);
+      if (['F1', 'F2'].includes(c)) larguras.add(1280);
+      /* A F5 MEDE-SE A 390 desde 16.09.2026, e não a 1280: a partir de 768 px a
+         faixa é uma grelha que dobra e o encaixe sai com o rolamento, por
+         decisão escrita em `src/styles/inicio.css`. Medir o encaixe onde ele não
+         existe é medir uma promessa que a folha não faz. */
+      if (c === 'F5') larguras.add(390);
       if (c === 'F8') {
         larguras.add(390);
         larguras.add(1280);
       }
       if (c === 'F11') larguras.add(390);
     }
-    if (precisa('F10')) for (const w of LARGURAS) larguras.add(w);
+    /* A F10 deixou de precisar da leitura partilhada a 16.09.2026: a F10a saiu
+       e a F10b abre a sua própria página, a 390 e sem guião. */
     for (const e of EDICOES) {
       for (const w of [...larguras].sort((a, b) => a - b)) {
         const p = await pagina(e.rota, w, { altura: ALTURA_DO_ECRA });
@@ -558,17 +564,36 @@ async function correTudo(soEstas) {
       const daPagina = new Set(r.medidasDaPagina);
       const soNaFaixa = [...daFaixa].filter((i) => !daPagina.has(i));
       const soNaPagina = [...daPagina].filter((i) => !daFaixa.has(i));
+      /* -------------------------------------------------------------------
+         A CORRESPONDÊNCIA SÓ VALE ONDE A PÁGINA RENDE LEITURAS (16.09.2026,
+         achado 13 da leitura a frio do Codex). A célula exigia, nos dois
+         sentidos, que os cartões da faixa da cabeça fossem as medidas que a
+         página rende por baixo. A primeira página deixou de render leituras com
+         o F1.1b (04.09.2026): os cartões dela são medidas de CABEÇA de um
+         domínio, cuja leitura vive na página do domínio, e é para lá que a porta
+         de cada cartão leva. A própria sonda desta régua já o dizia por escrito,
+         ao pé de `idsDaCabeca`, e a célula contradizia o seu próprio comentário:
+         media 5 cartões contra 0 medidas na página e ficava vermelha por uma
+         decisão de desenho tomada doze dias antes.
+
+         O QUE FICA: a faixa é uma lista com nome, com cartões de id distinto, e
+         NENHUMA medida rendida na página fica de fora da faixa (`soNaPagina`),
+         que é o sentido que continua a valer em toda a parte. O outro sentido
+         (`soNaFaixa`) exige-se onde a página rende leituras: na página de
+         concelho, que é onde a F12 o volta a medir com 8 cartões e 8 leituras. */
+      const rendeLeituras = daPagina.size > 0;
       conta(
-        `F1·${e.chave} · a faixa é uma lista, e os seus cartões são as medidas da página`,
+        `F1·${e.chave} · a faixa é uma lista com nome, e nenhuma medida da página fica de fora`,
         r.temFaixa &&
           (r.etiqueta === 'ol' || r.etiqueta === 'ul') &&
           ids.length > 0 &&
           daFaixa.size === ids.length &&
-          soNaFaixa.length === 0 &&
+          (!rendeLeituras || soNaFaixa.length === 0) &&
           soNaPagina.length === 0 &&
           Boolean(r.rotulo),
         `<${r.etiqueta}> com ${ids.length} cartões na cabeça (${daFaixa.size} ids distintos) · ${daPagina.size} medidas na página` +
-          ` · só na faixa: ${soNaFaixa.join(', ') || 'nenhuma'} · só na página: ${soNaPagina.join(', ') || 'nenhuma'}` +
+          ` · só na faixa: ${soNaFaixa.join(', ') || 'nenhuma'}${rendeLeituras ? '' : ' (a página não rende leituras: os cartões levam à página do domínio)'}` +
+          ` · só na página: ${soNaPagina.join(', ') || 'nenhuma'}` +
           ` · nome da lista: «${r.rotulo ?? 'nenhum'}»`,
       );
     }
@@ -705,10 +730,11 @@ async function correTudo(soEstas) {
   /* --------------------------------------------------------------------- F5 */
   if (precisa('F5')) {
     for (const e of EDICOES) {
-      const r = lido[`${e.chave}_1280`];
+      /* A 390 E NÃO A 1280: ver a razão na escolha das larguras, mais acima. */
+      const r = lido[`${e.chave}_390`];
       const semAlign = r.cartoes.filter((c) => !c.snapAlign || c.snapAlign === 'none');
       conta(
-        `F5·${e.chave} · o encaixe é de CSS: eixo x na lista, alinhamento em cada cartão`,
+        `F5·${e.chave}·390 · o encaixe é de CSS: eixo x na lista, alinhamento em cada cartão`,
         Boolean(r.scroll) &&
           /x/.test(r.scroll.snap) &&
           r.scroll.snap !== 'none' &&
@@ -729,12 +755,39 @@ async function correTudo(soEstas) {
           r.faixaCaixa &&
           primeiro.caixa.x >= r.faixaCaixa.x - 0.5 &&
           primeiro.caixa.x + primeiro.caixa.w <= r.faixaCaixa.x + r.faixaCaixa.w + 0.5;
+        /* -------------------------------------------------------------------
+           «A FAIXA CORRE» É DA FILA QUE ROLA, E NÃO DA GRELHA QUE DOBRA
+           (16.09.2026, achado 13 da leitura a frio do Codex). A partir de 768 px
+           a faixa deixa de ser uma fila que rola e passa a ser uma grelha que
+           dobra, por decisão escrita em `src/styles/inicio.css`: «o encaixe e o
+           corte saem com o rolamento, e não por arrumação». Exigir «corre» a
+           1280 era exigir que uma grelha tivesse conteúdo escondido para o lado,
+           e a célula ficava vermelha a 768, 1024 e 1280 por causa disso.
+
+           O QUE A CÉLULA PROVA CONTINUA A SER O MESMO em todas as larguras:
+           nenhum cartão fica cortado à chegada, sem um gesto. Onde a faixa rola,
+           isso quer dizer «o primeiro cartão inteiro, com `scrollLeft` a zero, e
+           há mais para correr»; onde ela dobra, quer dizer «TODOS os cartões
+           inteiros dentro da caixa», que é uma exigência mais forte e não mais
+           fraca. */
+        const rola = Boolean(r.scroll) && r.scroll.overflow !== 'visible';
         const corre = r.scroll && r.scroll.largura > r.scroll.visivel + 1;
+        const cabemTodos =
+          r.faixaCaixa &&
+          r.cartoes.every(
+            (c) =>
+              c.caixa.x >= r.faixaCaixa.x - 0.5 &&
+              c.caixa.x + c.caixa.w <= r.faixaCaixa.x + r.faixaCaixa.w + 0.5,
+          );
         conta(
-          `F6·${e.chave}·${w} · o primeiro cartão inteiro sem gesto, e a faixa corre`,
-          Boolean(dentro) && r.scroll.left === 0 && Boolean(corre),
+          `F6·${e.chave}·${w} · nenhum cartão cortado à chegada${rola ? ', e a faixa corre' : ' (a grelha dobra)'}`,
+          rola
+            ? Boolean(dentro) && r.scroll.left === 0 && Boolean(corre)
+            : Boolean(cabemTodos),
           `faixa ${r.faixaCaixa?.w ?? '(sem)'} px · primeiro cartão ${primeiro?.caixa.w ?? '(sem)'} px em x ${primeiro?.caixa.x ?? '(sem)'}` +
-            ` · scrollLeft ${r.scroll?.left ?? '(sem)'} · corre ${r.scroll?.largura ?? '(sem)'} de ${r.scroll?.visivel ?? '(sem)'} px`,
+            ` · overflow-x «${r.scroll?.overflow ?? '(sem)'}» · scrollLeft ${r.scroll?.left ?? '(sem)'}` +
+            ` · corre ${r.scroll?.largura ?? '(sem)'} de ${r.scroll?.visivel ?? '(sem)'} px` +
+            ` · cartões inteiros dentro da caixa: ${cabemTodos ? r.cartoes.length : 'não'} de ${r.cartoes.length}`,
         );
       }
     }
@@ -929,72 +982,34 @@ async function correTudo(soEstas) {
   }
 
   /* -------------------------------------------------------------------- F10 */
+  /* ---------------------------------------------------------------------------
+   * A F10a SAIU a 16.09.2026, na passagem de correção do P3 (achado 13 da
+   * leitura a frio do Codex; a decisão é da triagem do lugar de direção).
+   *
+   * O construtor do F1.13 já tinha escrito, a 15.09.2026, o que faltava decidir:
+   * «esta célula está duas decisões atrasada, e diz-se». Exigia a gaveta dos
+   * nomes ABERTA à chegada, e a gaveta chega FECHADA desde o F1.1d e o F1.1e (07
+   * e 08.09.2026), que desfizeram o item 4 do F1.1 com a razão escrita nos seus
+   * briefs. Depois o F1.13 mudou outra vez o facto: com guião a gaveta sai da
+   * composição, e o «alvo mais pequeno» que a célula imprimia passou a ser o do
+   * `<summary>` dentro de uma caixa de 1 px recortada, que é o número que a
+   * leitura a frio leu como 1,0 px. O número não dizia o que parecia dizer, e a
+   * célula estava vermelha nas duas edições e nas sete larguras havia oito dias.
+   *
+   * O QUE MEDE A DECISÃO DE HOJE, e mede-a por inteiro, que é a razão para esta
+   * sair em vez de ser reescrita: a `A5` de `tests/inicio/porta.mjs` (com guião,
+   * a 390 e a 1280: a gaveta não ocupa píxel nenhum à vista, os 29 lá estão com
+   * porta, e o foco devolve-a à composição com o alvo de 44 px) e a `U4` de
+   * `tests/inicio/mapa-unidades.mjs` (sem guião: a caixa tem área e o `<summary>`
+   * vê-se). Uma terceira definição da mesma coisa era o que o construtor do F1.13
+   * disse que a casa não quer.
+   *
+   * A F10b FICA, e acerta-se: o que ela prova é que o mecanismo da gaveta é do
+   * NAVEGADOR e não de um guião, e isso nenhuma das outras duas prova. O que
+   * muda é o estado de chegada, que passa a ser o de hoje.
+   * ------------------------------------------------------------------------ */
   if (precisa('F10')) {
     for (const e of EDICOES) {
-      for (const w of LARGURAS) {
-        const r = lido[`${e.chave}_${w}`];
-        const min = alvoEm(w);
-        const abertas = r.gavetas.filter((g) => g.aberta);
-        const pequenas = r.gavetas.filter(
-          (g) => !g.alvo || g.alvo.w + 0.5 < min || g.alvo.h + 0.5 < min,
-        );
-        /* ---------------------------------------------------------------------
-           A CÉLULA MUDOU DE EXIGÊNCIA COM O BLOCO F1.1 (03.09.2026), e não foi
-           desligada. Media «as duas gavetas do mapa, FECHADAS»: era a afinação 1
-           do brief da forma dos domínios, de 01.09, que recolheu a busca e a
-           lista dos nomes em dois `<details>` fechados ao lado do mapa.
-
-           O F1.1 mediu o que isso custava e desfez as duas metades por razões
-           diferentes, escritas no brief da porta da frente. A LISTA DOS NOMES
-           passa a chegar ABERTA (item 4): abaixo de 1024 nenhuma das 29 unidades
-           do desenho chega aos 44 px pelo quadrado inscrito (I82), a rede de
-           nomes é o único alvo que responde por elas, e fechada ela existia para
-           o teclado e para quem ouve e não existia para quem vê. A BUSCA sai da
-           gaveta e sobe para debaixo da manchete (itens 3 e 12), como `<form>`
-           com destino, porque é a porta para o concelho no primeiro ecrã.
-
-           O QUE A CÉLULA CONTINUA A PROTEGER é o que ela sempre protegeu: que a
-           rede de nomes existe, que tem os 29, e que o comando que a fecha é um
-           alvo da medida da casa. O que muda é o estado esperado — uma gaveta,
-           aberta, e a busca, que passa a medir-se onde ela agora está.
-
-           ---------------------------------------------------------------------
-           ESTA CÉLULA ESTÁ DUAS DECISÕES ATRASADA, E DIZ-SE (nota do construtor
-           do F1.13, 15.09.2026; a correcção é do lugar de direção e não deste
-           bloco)
-           ---------------------------------------------------------------------
-           Ela exige a gaveta ABERTA à chegada, e a gaveta chega FECHADA desde o
-           F1.1d e o F1.1e (07 e 08.09.2026), que desfizeram o item 4 do F1.1 com
-           a razão escrita nos seus briefs. A célula já estava vermelha por isso
-           antes deste ramo.
-
-           E o F1.13 (item 3, 15.09.2026) mudou outra vez o facto: com guião a
-           gaveta sai da composição, e por isso o «alvo mais pequeno» que esta
-           célula imprime passou a ser o do `<summary>` dentro de uma caixa de
-           1 px recortada. O número não diz o que parece dizer.
-
-           O QUE MEDE A DECISÃO DE HOJE, e mede-a por inteiro: a `A5` de
-           `tests/inicio/porta.mjs` (com guião, a 390 e a 1 280: a gaveta não
-           ocupa píxel nenhum à vista, os 29 lá estão com porta, e o foco
-           devolve-a à composição com o alvo de 44 px) e a `U4` de
-           `tests/inicio/mapa-unidades.mjs` (sem guião: a caixa tem área e o
-           `<summary>` vê-se). Reescrever esta célula seria uma terceira
-           definição da mesma coisa, e é isso que a casa não quer; o que ela
-           precisa é de uma decisão sobre o que lhe fica a pertencer. */
-        conta(
-          `F10a·${e.chave}·${w} · a gaveta dos nomes, aberta, com alvo de ${min} px, e a busca fora dela`,
-          r.gavetas.length === 1 &&
-            abertas.length === 1 &&
-            pequenas.length === 0 &&
-            r.nomes === 29,
-          `${r.gavetas.length} gavetas (${r.gavetas.map((g) => g.chave).join(', ')}) · abertas: ${abertas.length}` +
-            ` · alvo mais pequeno ${
-              r.gavetas.length
-                ? Math.min(...r.gavetas.filter((g) => g.alvo).map((g) => Math.min(g.alvo.w, g.alvo.h))).toFixed(1)
-                : '(sem)'
-            } px · nomes no documento: ${r.nomes}`,
-        );
-      }
       /* Abre sem guião: um toque real no `<summary>`, com o guião desligado. O
          `<details>` é do navegador, e é isso que esta célula prova. */
       const p = await pagina(e.rota, 390, { altura: ALTURA_DO_ECRA, js: false });
@@ -1003,11 +1018,18 @@ async function correTudo(soEstas) {
          é exactamente o que a planta «a lista dos nomes a abrir só com guião»
          faz, a célula fica vermelha com a razão escrita, e não rebenta a
          corrida: uma régua que atira em vez de contar não prova nada. */
-      /* DUAS VOLTAS, E NÃO UMA (F1.1, 03.09.2026). A gaveta chega ABERTA, e por
-         isso o primeiro toque fecha-a e o segundo abre-a: é a ida e a volta que
-         provam que o mecanismo é do navegador, e é a mesma prova que a célula
-         sempre quis. Uma célula que só medisse o estado inicial provaria o
-         atributo `open` que o servidor escreve, e não o `<details>`.
+      /* DUAS VOLTAS, E NÃO UMA (F1.1, 03.09.2026). É a ida e a volta que provam
+         que o mecanismo é do navegador, e é a mesma prova que a célula sempre
+         quis. Uma célula que só medisse o estado inicial provaria o atributo
+         `open` que o servidor escreve, e não o `<details>`.
+
+         A GAVETA CHEGA FECHADA desde o F1.1d e o F1.1e (07 e 08.09.2026), que
+         desfizeram o item 4 do F1.1 com a razão escrita nos seus briefs, e a
+         célula segue-a a 16.09.2026 (achado 13 da leitura a frio do Codex): o
+         primeiro toque ABRE e o segundo FECHA, e é com a gaveta aberta que os 29
+         nomes têm de estar à vista. O que a célula prova não mudou uma vírgula;
+         mudou o estado com que a página chega, e a célula estava vermelha por
+         exigir o estado de antes havia oito dias.
 
          AS CAIXAS MEDEM-SE COM `checkVisibility` e não com a altura, e isso
          mediu-se antes de se escrever: num Chromium 148 o conteúdo de um
@@ -1044,15 +1066,15 @@ async function correTudo(soEstas) {
       const depois = await olha();
       await p.__ctx.close();
       conta(
-        `F10b·${e.chave} · a gaveta dos nomes chega aberta e fecha e abre sem guião, com os 29 à vista`,
+        `F10b·${e.chave} · a gaveta dos nomes chega fechada e abre e fecha sem guião, com os 29 à vista quando abre`,
         tocou &&
           depois.etiqueta === 'details' &&
-          entrada.aberta &&
-          entrada.visiveis === 29 &&
-          !fechada.aberta &&
-          fechada.visiveis === 0 &&
-          depois.aberta &&
-          depois.visiveis === 29 &&
+          !entrada.aberta &&
+          entrada.visiveis === 0 &&
+          fechada.aberta &&
+          fechada.visiveis === 29 &&
+          !depois.aberta &&
+          depois.visiveis === 0 &&
           depois.total === 29,
         `o toque chegou ao <summary>: ${tocou} · a gaveta é um <${depois.etiqueta ?? 'nada'}>` +
           ` · à chegada: aberta ${entrada.aberta}, ${entrada.visiveis} à vista` +
@@ -1118,7 +1140,13 @@ async function correTudo(soEstas) {
            só. */
         const ids = r.idsDaCabeca;
         const daPagina = new Set(r.medidasDaPagina);
-        const soltos = ids.filter((i) => !daPagina.has(i));
+        /* A CORRESPONDÊNCIA SÓ ONDE A CAMADA RENDE LEITURAS, como na F1 e pela
+           mesma razão (16.09.2026, achado 13): a primeira página deixou de as
+           render com o F1.1b e os cartões dela levam à página do domínio. Na
+           camada do concelho os dois lados batem, e é lá que este sentido
+           continua a medir-se (8 cartões contra 8 leituras). */
+        const rendeLeituras = daPagina.size > 0;
+        const soltos = rendeLeituras ? ids.filter((i) => !daPagina.has(i)) : [];
         const semSelo = r.cartoes.filter((c) => !c.selo);
         const c = r.cabeca;
         const sobrepostas = [];
@@ -1153,6 +1181,24 @@ async function correTudo(soEstas) {
            («região NUTS II», «concelho · distrito de Évora»), que não está na
            manchete e que é o que distingue as três camadas uma da outra. */
         const precisaDeRotulo = qual !== 'pais';
+        /* ---------------------------------------------------------------------
+           A CAMADA DA REGIÃO NÃO TEM FAIXA NEM INSTRUMENTO, E DIZ-SE
+           (16.09.2026, achado 13 da leitura a frio do Codex).
+           Medido sobre o `dist/` de hoje: `/regioes/alentejo` rende zero
+           `[data-faixa]`, zero `[data-cartao]` e zero `.cabeca-inst`, e a célula
+           imprimia «instrumento com 0 desenho(s), 0 px de largura · 0 cartões».
+           A régua da região saiu da primeira página no bloco A, e a página de
+           região nunca ganhou faixa própria: a célula estava a exigir uma cabeça
+           que nenhum bloco lhe deu, e estava vermelha por isso.
+
+           O QUE A CÉLULA EXIGE À REGIÃO, a partir de hoje: o rótulo declarado
+           com a marca de lugar e a manchete com um número selado, que é o que a
+           camada da região tem e prova. A faixa e o instrumento continuam a
+           exigir-se ao país e ao concelho, onde existem. **A decisão sobre se a
+           região deve herdar a cabeça inteira é do diretor**, e está escrita na
+           I118 de `design/especime-v3/ISSUES.md`: esta célula não a antecipa nem
+           a esconde. */
+        const herdaAFaixa = qual !== 'regiao';
         const temCabeca =
           !!c &&
           (!precisaDeLugar || c.rotuloDeclarado) &&
@@ -1160,15 +1206,15 @@ async function correTudo(soEstas) {
           !!c.manchete &&
           c.manchete.comNumero &&
           c.manchete.selado &&
-          !!c.instrumento &&
-          c.instrumento.desenho > 0 &&
-          c.ordemDaCabeca.colAntesDaFaixa === true &&
-          c.ordemDaCabeca.faixaAntesDoInstrumento === true;
+          (!herdaAFaixa ||
+            (!!c.instrumento &&
+              c.instrumento.desenho > 0 &&
+              c.ordemDaCabeca.colAntesDaFaixa === true &&
+              c.ordemDaCabeca.faixaAntesDoInstrumento === true));
         conta(
-          `F12·${qual}·${e.chave} · a camada herda a cabeça inteira: ${precisaDeRotulo ? 'rótulo declarado, ' : ''}manchete com número selado, faixa e instrumento`,
+          `F12·${qual}·${e.chave} · a camada herda ${herdaAFaixa ? 'a cabeça inteira' : 'o rótulo e a manchete'}: ${precisaDeRotulo ? 'rótulo declarado, ' : ''}manchete com número selado${herdaAFaixa ? ', faixa e instrumento' : ' (sem faixa nem instrumento: ver a I118)'}`,
           temCabeca &&
-            r.temFaixa &&
-            ids.length > 0 &&
+            (!herdaAFaixa || (r.temFaixa && ids.length > 0)) &&
             soltos.length === 0 &&
             semSelo.length === 0 &&
             sobrepostas.length === 0 &&
@@ -1271,8 +1317,11 @@ const PLANTAS = [
     },
   },
   {
+    /* A F10a saiu a 16.09.2026 e a planta fica com a F10b, que continua a
+       morder: sem `<details>` e sem `<summary>` o toque não chega e a gaveta não
+       abre, que é exactamente o que a célula prova. */
     nome: 'a lista dos nomes a abrir só com guião (o <details> trocado por uma caixa escondida)',
-    celulas: ['F10a', 'F10b'],
+    celulas: ['F10b'],
     estrago: (html, rota) => {
       if (!soNaPrimeira(rota)) return html;
       return html

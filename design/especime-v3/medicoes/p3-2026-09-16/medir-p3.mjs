@@ -114,11 +114,19 @@ if (JSON_SO) {
     console.log(`  cartões ${ed}: ${total} · ${Object.entries(c).map(([k, v]) => `${k}=${v}`).join(' · ')} · blocos sem nome: ${contas.blocos_sem_nome[ed]}`);
   }
   console.log(`  rótulos das três datas nas dobras: pt=${contas.rotulos_das_datas_nas_dobras.pt} en=${contas.rotulos_das_datas_nas_dobras.en}`);
-  console.log(`  nome oficial no recibo: ${contas.nome_oficial_no_recibo} vez(es)`);
+  /* O RÓTULO DIZIA «no recibo» E A CONTA ERA DE TODO O `dist/` (achado 5 da
+     leitura a frio do Codex, 16.09.2026): as 62 ocorrências são 52 nos recibos e
+     10 nos cartões sem nome do projeto. A repartição por lugar, e a conferência
+     de que cada uma vem de uma linha «exata», estão em `nomes-oficiais.mjs`. */
+  console.log(
+    `  nome oficial rendido: ${contas.nome_oficial_no_recibo} vez(es) nas duas edições ` +
+      `(a repartição por lugar está em nomes-oficiais.mjs)`,
+  );
   const pp = contas.palavras_proibidas;
   console.log(
     `  palavras proibidas: ${pp.achados} achado(s) em ${pp.paginas} página(s) da superfície ` +
-      `(${PALAVRAS_PROIBIDAS.length} palavras da norma §1.3; ${pp.excecoes} página(s) isentas por rota declarada)`,
+      `(${PALAVRAS_PROIBIDAS.length} palavras da norma §1.3; ${pp.excecoes} página(s) de estudo com a superfície ` +
+        `estreitada por rota declarada, e nenhuma página saltada)`,
   );
   for (const [p, n] of Object.entries(pp.por_palavra)) if (n) console.log(`    «${p}»: ${n}`);
 }
