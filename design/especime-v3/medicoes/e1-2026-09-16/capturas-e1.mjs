@@ -17,10 +17,19 @@
  * sabe qual é.
  *
  *   node design/especime-v3/medicoes/e1-2026-09-16/capturas-e1.mjs
+ *   node ...../capturas-e1.mjs --so=texto --larguras=390,1280
  *
  * Não mede: fotografa. Chromium sem cabeça, tema claro, depois de
  * `document.fonts.ready`, a página inteira. Este estudo entra pela primeira vez
  * e por isso não há «antes»: as capturas não levam momento no nome.
+ *
+ * `--so` e `--larguras` existem para uma coisa só, e entraram a 16.09.2026 com
+ * a refixação dos bytes: **refotografar o que não mudou é pôr no repositório
+ * megabytes iguais aos que já lá estão**. Quando o motor reemitiu as duas
+ * edições, o que mudou na página de texto foi uma linha, a do `origin_ref` no
+ * aparelho técnico, e o brief mandou refazer a página de texto a 390 e a 1 280.
+ * Uma captura que não se refaz continua a ser a de uma cabeça anterior, e o
+ * relatório do bloco diz quais são e em que diferem.
  */
 import fs from 'node:fs';
 import http from 'node:http';
@@ -29,6 +38,15 @@ import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..', '..');
+const argv = process.argv.slice(2);
+/** Os conjuntos a fotografar, por nome; vazio quer dizer todos. */
+const SO = (argv.find((a) => a.startsWith('--so=')) ?? '').slice(5).split(',').filter(Boolean);
+/** As larguras a fotografar; vazio quer dizer as que cada conjunto declara. */
+const SO_LARGURAS = (argv.find((a) => a.startsWith('--larguras=')) ?? '')
+  .slice(11)
+  .split(',')
+  .filter(Boolean)
+  .map(Number);
 const DIST = process.env.OEDP_DIST
   ? path.resolve(RAIZ, process.env.OEDP_DIST)
   : path.join(RAIZ, 'dist');
@@ -89,8 +107,12 @@ const base = `http://127.0.0.1:${servidor.address().port}`;
 const nav = await chromium.launch({ headless: true });
 let feitas = 0;
 for (const rota of ROTAS) {
+  if (SO.length && !SO.includes(rota.nome)) continue;
+  const larguras = SO_LARGURAS.length
+    ? rota.larguras.filter((l) => SO_LARGURAS.includes(l))
+    : rota.larguras;
   for (const edicao of ['pt', 'en']) {
-    for (const largura of rota.larguras) {
+    for (const largura of larguras) {
       const ctx = await nav.newContext({ viewport: { width: largura, height: ALTURA } });
       const p = await ctx.newPage();
       const resposta = await p.goto(base + rota[edicao], { waitUntil: 'networkidle' });
