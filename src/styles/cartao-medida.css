@@ -59,8 +59,14 @@
 /* O NOME ENCABEÇA, e é a primeira coisa que se lê. Compõe-se como o nome de uma
    entrada do índice do livro-razão (o mesmo tipo de prosa, o mesmo corpo mais
    dois pontos), porque é a mesma coisa noutra superfície, e um nome que mudasse
-   de forma ao mudar de página era o leitor a aprender duas vezes. */
-.cartao-medida-nome {
+   de forma ao mudar de página era o leitor a aprender duas vezes.
+
+   A LINHA DERIVADA LEVA O MESMO NOME E A MESMA COMPOSIÇÃO (bloco P3,
+   16.09.2026): é a mesma coisa na mesma altura da caixa, e dar-lhe outra forma
+   era dizer ao leitor que o nome de uma linha derivada é outra espécie de nome.
+   Não acrescenta largura nenhuma: é o mesmo bloco da mesma grelha. */
+.cartao-medida-nome,
+.linha-sem-nome-nome {
   display: block;
   font-family: var(--f-prosa);
   font-size: 16px;

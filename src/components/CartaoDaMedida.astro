@@ -83,7 +83,7 @@ import ReguaDoCartao from './ReguaDoCartao.astro';
 import { t } from '../i18n/strings.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { provenienciaIncompleta, derivacaoDaLinha } from '../lib/ledger.mjs';
-import { nomeDoCartao } from '../lib/nomes.mjs';
+import { nomeDoCartao, nomeDaLinhaDerivada, eNomeDeMedida } from '../lib/nomes.mjs';
 import { DEFINICOES_DAS_MEDIDAS } from '../data/figuras.mjs';
 
 /* `...resto` deixa quem chama pendurar as suas marcas no cartão sem que este
@@ -142,6 +142,16 @@ const frase = definicao ? definicao[lang] ?? definicao.pt : null;
  */
 const nome = nomeDoCartao(c, lang);
 const aritmetica = nome === null ? derivacaoDaLinha(c, lang) : null;
+/* O NOME DE UMA LINHA QUE NÃO SE RENDE COMO CARTÃO (bloco P3, 16.09.2026,
+   item 1). A decisão do P2 fica: uma linha sem nome em degrau nenhum da escada
+   do cartão rende-se como linha do livro-razão, com a sua aritmética. O que
+   muda é que ela deixa de abrir com o valor e passa a abrir com o NOME que este
+   projeto lhe dá, escrito em `src/data/nomes-das-medidas.mjs` e conferido
+   carácter a carácter contra esse ficheiro pela régua da voz. */
+const nomeDerivado = nome === null ? nomeDaLinhaDerivada(c, lang) : null;
+if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
+  throw new Error(`nomes: nome mal formado para a linha derivada "${c.id}"`);
+}
 ---
 
 {/* A LINHA DO VALOR É A MESMA NAS DUAS FORMAS, e por isso escreve-se uma vez. */}
@@ -156,6 +166,11 @@ const aritmetica = nome === null ? derivacaoDaLinha(c, lang) : null;
       data-estado={provenienciaIncompleta(c) ? 'por-confirmar' : 'completa'}
       {...resto}
     >
+      {nomeDerivado !== null && (
+        <span class="linha-sem-nome-nome" data-nome="projeto" data-de-linha={c.id}>
+          {nomeDerivado.texto}
+        </span>
+      )}
       <p class="cartao-medida-valor">
         <Claim id={c.id} lang={lang} as="span" class="cartao-medida-num" chip={true} />
         <CampoDaLinha

@@ -50,6 +50,7 @@ import { REGIOES } from '../src/data/regioes.mjs';
 import { DOMINIOS } from '../src/data/dominios.mjs';
 import { FIGURAS } from '../src/data/figuras.mjs';
 import { MEDIDAS_DO_DOMINIO_1 } from '../src/data/dominios.mjs';
+import { NOMES_DO_PROJETO, NOMES_DAS_LINHAS_DERIVADAS } from '../src/data/nomes-das-medidas.mjs';
 import { leMarcadores, analisa, leInventario, FICHEIRO_DOS_MARCADORES } from './voz.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -642,6 +643,15 @@ const NOMES_POR_FONTE = {
      frases, que é a lista das medidas escrita outra vez. */
   figuras: new Set(FIGURAS.flatMap((f) => Object.values(f.nome ?? {}))),
   medidas: new Set(MEDIDAS_DO_DOMINIO_1.flatMap((m) => Object.values(m.nome ?? {}))),
+  /* OS NOMES DO PROJETO PARA AS MEDIDAS SEM DECLARAÇÃO (bloco P3, 16.09.2026).
+     São 81 no cartão e 24 na linha derivada, e vivem num ficheiro só
+     (`src/data/nomes-das-medidas.mjs`) porque respondem à mesma pergunta. A
+     régua lê o ficheiro por conta própria, como lê os outros cinco. */
+  projeto: new Set(
+    [...Object.values(NOMES_DO_PROJETO), ...Object.values(NOMES_DAS_LINHAS_DERIVADAS)].flatMap(
+      (n) => Object.values(n ?? {}),
+    ),
+  ),
   /* O NOME OFICIAL DE UMA MEDIDA (bloco P2, 15.09.2026, a decisão sobre as
      capturas). É o nome com que o INE ou a PORDATA publicam a mesma medida, lido
      pelo motor com o endereço e a hora e exportado em
@@ -675,6 +685,10 @@ const NOMES_POR_FONTE = {
 const NOMES_POR_LINHA = {
   figuras: new Map(FIGURAS.filter((f) => f.claim).map((f) => [f.claim, f.nome])),
   medidas: new Map(MEDIDAS_DO_DOMINIO_1.filter((m) => m.claim).map((m) => [m.claim, m.nome])),
+  projeto: new Map([
+    ...Object.entries(NOMES_DO_PROJETO),
+    ...Object.entries(NOMES_DAS_LINHAS_DERIVADAS),
+  ]),
   /* O nome oficial é o mesmo nas duas edições, porque é português e não se
      traduz: o par tem as duas chaves com o mesmo texto, para que a conferência
      por edição seja a mesma pergunta que faz às outras fontes. */
