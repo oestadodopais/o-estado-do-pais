@@ -69,3 +69,14 @@
 | 8 | `inicio.cabeca.tituloPaisUm` |  limiar do Procedimento dos Desequilíbrios Macroeconómicos e cumpre  |  valor de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre  |  threshold of the Macroeconomic Imbalance Procedure and meets  |  reference value of the Macroeconomic Imbalance Procedure and meets  | a mesma troca na manchete dos dois quadros da União |
 | 8 | `inicio.painel.nomeFim` |  medidas com limiar |  medidas com valor de referência |  measures with a threshold |  measures with a reference value | a mesma troca no subtítulo do painel do Procedimento |
 
+
+---
+
+## 4 · A passagem de correção dos achados P1 e P2 (16.09.2026)
+
+*As cadeias que a leitura a frio do Codex (`gpt-5.6-sol`, xhigh) e a leitura do lugar de direção às capturas obrigaram a mudar, na família de palavras deste bloco. As da família do cartão estão na tabela do P2.*
+
+| achado | chave | antes (pt) | depois (pt) | antes (en) | depois (en) | razão |
+| --- | --- | --- | --- | --- | --- | --- |
+| 7 | `inicio.cabeca.tituloPaisA` | Portugal ultrapassa | Portugal falha | Portugal breaches | (não muda) | das quatro medidas fora do valor de referência, uma está ABAIXO do seu (a posição de investimento internacional, a −50,2 contra −35), e o cartão dela diz-o. «Ultrapassa» contava as quatro como excessos para cima. «Falha» diz o que as quatro têm em comum sem dizer o lado, que é o que «breaches» já fazia |
+| 9 e 10 | `dominios.aberturaA` + `dominios.aberturaB` | Os dezoito domínios do país, e os números que este projeto já publica em cada um. | **(retirada)** | The country's eighteen domains, and the numbers this project already publishes in each. | **(retirada)** | duas coisas erradas ao mesmo tempo: é prosa sobre o projeto numa página de conteúdo (norma §1.4), e promete todos os números publicados quando a contagem é a das medidas que se leem nas páginas. As contagens ficam como estão, pela triagem do lugar de direção |

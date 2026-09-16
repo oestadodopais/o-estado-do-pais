@@ -64,7 +64,7 @@ contagem desceu de 9,9 para 6,5. **Se a régua for a mais, é ali que se corta.*
 | 1 | o cartão com cinco coisas e nada mais | as cinco coisas e só elas em 100 % dos cartões das duas edições; «Publicado por», «Documento», «Lido na fonte a», «Dados de» a 0; a chave a 0 no texto visível | **cumprido.** 262 cartões (131 pt, 131 en), 0 blocos a mais, 0 rótulos de recibo, 0 chaves. Medido pela régua nova (`tests/cartao/cartao.mjs`, células K1, K2, K3), no `verify` |
 | 2 | o recibo ganha as duas datas da norma §2.5 e o nome oficial com a sua origem | a linha da próxima conferência em 100 % dos recibos com entrada no calendário | **cumprido, as duas metades.** As cinco linhas do livro-razão com acontecimento datado no calendário (`divida-publica-2025`, `evora-concentracao-vab4-2024`, `evora-empresas-2024`, `evora-vab-empresarial-2024`, `portugal-concentracao-vab4-2024`) rendem «Próxima conferência» nas duas edições, com a porta para o acontecimento na agenda: 5 de 5. E com o `nomes.json` que chegou às 19:43, o recibo ganhou o nome oficial: **17 recibos por edição com «Nome na PORDATA» e 9 com «Nome no INE»**, cada um com a porta para o endereço e a data a que o motor o leu. São os que o motor marca como a MESMA medida; os oito marcados «medida vizinha» e os sete por confirmar não chegam ao leitor |
 | 3 | a linha do tipo sai; o índice di-lo uma vez; a legenda da marca sai das páginas do leitor | «Governo Constitucional» a 1 no `dist/` de cada edição; a legenda a 0 fora do Método | **cumprido o primeiro, não cumprido à letra o segundo.** «Governo Constitucional» **1** em português e «Constitutional Government» **1** em inglês, os dois no índice das áreas (eram 9 e 9). A legenda da marca passa de **319 rotas por edição para 1** (o índice do livro-razão) e não para 0: as duas razões estão no §3 da tabela das cadeias, e as duas são mecânicas (o Método é texto governado e a decisão 1 da emenda de 15.09 à §1.108 diz quando ele se toca; `design:feixe` compõe o cartão do sistema de desenho lendo `p.marca-legenda` daquela rota, e sem ela o `verify` fecha) |
-| 4 | nenhum título de documento da fonte à vista na edição portuguesa | zero cadeias em inglês nos cartões da edição portuguesa | **a regra mudou a 15.09 à noite, e a medida com ela.** Cumpri-la à letra deixava 44 cartões portugueses e 90 ingleses sem nome nenhum, e o lugar de direção decidiu o contrário sobre as capturas: nenhum cartão fica sem nome, e o que está na língua da fonte di-lo com a marca `lang`. A célula K4 passa a medir o que a I91 sempre mandou: **o nome de um cartão carrega a língua que as tabelas declaram para ele, nem a mais nem a menos**. 86 cartões por edição com o nome na língua da fonte, todos com a marca certa; 0 sem ela |
+| 4 | nenhum título de documento da fonte à vista na edição portuguesa | zero cadeias em inglês nos cartões da edição portuguesa | **a regra mudou a 15.09 à noite, e a medida com ela.** Cumpri-la à letra deixava 44 cartões portugueses e 90 ingleses sem nome nenhum, e o lugar de direção decidiu o contrário sobre as capturas: nenhum cartão fica sem nome, e o que está na língua da fonte di-lo com a marca `lang`. A célula K4 passa a medir o que a I91 sempre mandou: **o nome de um cartão carrega a língua que as tabelas declaram para ele, nem a mais nem a menos**. **86 no total das duas edições** com o nome na língua da fonte e a marca `lang`, todos com a marca certa e 0 sem ela. **O relatório dizia «86 cartões por edição», e estava errado** (achado 16 da leitura a frio de 15.09.2026): 86 é o total que a régua imprime, e reparte-se em **15 na edição portuguesa e 71 na inglesa**, que são os dois números da tabela do §2. Os cartões com o nome que a fonte dá à medida são **81 por edição**; a marca `lang` só vai nos que estão na outra língua, e é por isso que os dois números não são o mesmo |
 | 5 | «acima / abaixo / dentro do valor de referência», «sem valor de referência» | «limiar» a 0 no texto visível do `dist/` fora do Método | **cumprido nos cartões deste bloco; não cumprido no `dist/` inteiro, e a razão é a divisão do trabalho.** Nos 262 cartões a palavra está a 0 (célula K7), e as três cadeias novas usam **as mesmas chaves que o bloco P1 escreve** (`estado.acima`, `.abaixo`, `.entre`). As restantes cadeias com «limiar» (o cartão da faixa, a peça, a leitura breve, os títulos dos painéis) são a metade da troca que o P1 faz no ramo `porta-2026-09-15`, e duplicá-las aqui era garantir um conflito de fusão entre dois lados com o mesmo texto. A medida cumpre-se na fusão dos dois ramos |
 | 1d | a régua: o período anterior, a União e a palavra contra o valor de referência, tudo lido de linhas | a régua só onde a linha existe; nenhum valor à mão | **cumprido, com as 59 linhas que o motor selou às 19:43.** Por edição: **45 cartões com régua**, dos quais 45 com o período anterior, 23 com o agregado da União e 7 com a palavra contra o valor de referência. Nenhum valor é escrito pela casa: cada um é um `<Claim>`, e a porta dele é a marca única do cartão, que abre o recibo onde o bloco «O enquadramento» os lista (a decisão de 15.09 à noite). As cinco medidas sem agregado europeu desenham-se sem ele e não escrevem a ausência por palavras (§0.2 do brief). A célula K9 compara o valor de referência nas suas duas testemunhas, a declaração de `figuras.mjs` e a leitura da página da Comissão: **13 de 13 batem certo** |
 | 6 | um só gabarito; a faixa deixa de deslizar acima de 768; o mapa preenche a coluna a partir de 1024 | as capturas nas cinco larguras sem saltos, medidas por uma régua que compara as posições dos números e dos títulos entre cartões | **cumprido o gabarito e a faixa; não feito o mapa.** A régua é `gabarito-do-cartao.mjs`, 30 medições (3 rotas × 2 edições × 5 larguras). O espalhamento das posições do valor e do título dentro de cada cartão: **0 px em 14 das 30** (eram 2 das 30) e **máximo 17,6 px** (era 38,4). A faixa deixa de deslizar a partir de 768 px em todas as rotas medidas (deslizava em todas as larguras). Transbordo horizontal 0 nas cinco larguras, antes e depois. **O mapa não foi tocado**: é do bloco P1, que corre em paralelo e tem `MapaRespira.astro` e `mapa.css` abertos |
@@ -200,7 +200,7 @@ estarem juntos**, porque antes disso a medição é sobre o texto que vai mudar.
     com régua                        90
     «Governo Constitucional»         1 pt · 1 en
     legenda da marca                 2 página(s)
-    nome na língua da fonte          86 (com a marca «lang»)
+    nome na língua da fonte          86 (com a marca «lang»; é o total das duas edições: 15 pt e 71 en)
     unidade na outra língua          3 (a exceção da I92)
     o marcador em português          8 (a exceção da IDENTIDADE §6)
     valores de régua sem marca própria                    136 (a porta é a do cartão)
@@ -458,3 +458,185 @@ para o dia em que o motor exportar a série inteira de uma medida.
 A leitura de língua (§5.2 da norma), a medição às cegas do Sonnet e a leitura a
 frio do Codex fazem-se a seguir, e nenhuma delas é do construtor: a família que
 construiu nunca verifica o que construiu.
+
+---
+
+# 10 · A passagem de correção da leitura a frio (16.09.2026)
+
+*Construtor: Claude Opus 5. A leitura a frio do Codex (`gpt-5.6-sol`, xhigh) aos
+blocos P1 e P2 fundidos está em
+`design/especime-v3/critica/2026-09-15-codex-leitura-p1-p2.md`, com o registo das
+plantas ao lado e a triagem do lugar de direção na cabeça do ficheiro. Esta
+secção diz o que a passagem mudou na família do cartão e do recibo; a das
+palavras da primeira página está no relatório do P1. Sem travessões.*
+
+## 10.1 · Os achados corrigidos, com a medida de cada um
+
+| achado | o que era | o que é, medido |
+| --- | --- | --- |
+| 2 | o cartão só nas páginas de área; a página do domínio ficou com a família antiga, com «Publicado por» e «período de referência» à vista | **o cartão rende-se na página do domínio**, com o nome, o valor com a unidade e o período, a frase, a régua e a marca da fonte; os valores irmãos são cartões pela mesma regra. **«Publicado por», «Published by», «período de referência» e «reference period» a 0 nas duas páginas de domínio das duas edições.** O que fica à volta do cartão é o âmbito de uma medida, o rótulo de um valor e a frase de quem fixou o valor de referência: é conteúdo desta página e o cartão não tem campo para eles |
+| 2 | o rótulo da origem de uma definição era «Publicado por» | **«Definição de» e «Definition by».** «Publicado por» é o rótulo do publicador de uma LINHA, e ao pé de uma frase citada da Comissão lia-se como se aquele fosse o publicador do número |
+| 3 | a régua do cartão só falhava sem a linha do valor, e o relatório dizia «as cinco coisas em todos» com 48 cartões sem nome | **a régua falha num cartão sem nome** (célula K11), e **as 24 linhas sem nome por edição deixam de se render como cartão**. A régua escreve os números como eles são: **36 de 236 com frase** e **68 de 236 com régua**, e a linha verde do fim diz o que foi conferido |
+| 11 | nada conferia que a linha do período anterior era a observação anterior da mesma série | **a régua exige o mesmo `document.edition` e a mesma `unit`**, e a célula K12 mede-o sobre o `dist/`. **Das 45 réguas com período anterior de cada edição, 30 ficam e 15 deixam de render** |
+| 12 | o tecto do cartão do sistema de desenho subiu para 768 KiB para admitir um cartão de 542,1 KiB | **passa a ser o medido mais 10 %**: 542,5 KiB mais um décimo, que dá **596,75 KiB**. Os dois números estão no código, e subir o tecto é mudar o número medido, com a data e a corrida ao lado |
+| 16 | o relatório dizia «86 cartões por edição com o nome na língua da fonte» e a tabela dizia 81 | **os dois números são de coisas diferentes, e agora está escrito**: 86 é o total das duas edições dos nomes com a marca `lang` (15 na portuguesa e 71 na inglesa); os cartões com o nome que a fonte dá à medida são 81 por edição. A marca `lang` só vai nos que estão na outra língua |
+| 17 | «Próxima conferência»; «As áreas seguem a orgânica…»; o espaço a mais em «( 9 %)» | «**Próxima verificação**» (o inglês «Next check» fica); «**As áreas são as do Governo em funções (o XXV Governo Constitucional).**»; e o espaço, que não estava escrito em lado nenhum: ver o §10.3 |
+
+## 10.2 · O que se fez com os 24 cartões sem nome, e a lista
+
+**A decisão, que o lugar de direção delegou nesta passagem:** uma linha que não
+tem nome em degrau nenhum da escada **não se rende como cartão**. O nome é a
+primeira das cinco coisas; um cartão sem ele é o defeito que a leitura a frio
+apanhou, e escrever um nome à mão era a casa a baptizar uma medida do Estado.
+
+**O que elas rendem é o que elas são: a linha do livro-razão com a sua
+aritmética.** O valor, a unidade e o período ficam, com a marca da fonte ao lado
+(que é a porta do recibo); no lugar do nome fica a **conta por palavras**, que é
+o campo `derivation` que a linha já declara nas duas edições e que diz o que
+aquele número é. Nenhuma cadeia nova: o texto é o da linha, marcado
+`data-linha-campo="derivation"` e conferido pelo portão carácter a carácter. A
+chave e os rótulos de recibo continuam proibidos ali dentro, e a régua do bloco
+confere-o.
+
+**A página onde elas vivem não lhes dá nome nenhum**: a página de área agrupa as
+medidas por matéria, e a matéria é um cabeçalho de grupo, não o nome de uma
+medida. Era o primeiro caminho que a instrução do lugar de direção mandava tentar,
+e não existe.
+
+**Medido na cabeça desta passagem:** 24 linhas por edição, 48 no total; **21 por
+edição com a conta escrita** e **3 sem conta nenhuma**. A lista, com o que cada
+uma tem:
+
+*As vinte e uma derivadas, que não têm fonte nem documento porque a proveniência
+delas é a das origens, e todas com `derivation` nas duas edições:*
+
+| # | linha | onde vive |
+| --- | --- | --- |
+| 1 | `distancia-acores-ue27-2024` | `/areas/economia-e-coesao-territorial` |
+| 2 | `distancia-alentejo-ue27-2000` | idem |
+| 3 | `distancia-alentejo-ue27-2024` | idem |
+| 4 | `distancia-algarve-ue27-2024` | idem |
+| 5 | `distancia-centro-ue27-2024` | idem |
+| 6 | `distancia-grande-lisboa-ue27-2024` | idem |
+| 7 | `distancia-madeira-ue27-2024` | idem |
+| 8 | `distancia-norte-ue27-2024` | idem |
+| 9 | `distancia-oeste-e-vale-do-tejo-ue27-2024` | idem |
+| 10 | `distancia-peninsula-de-setubal-ue27-2024` | idem |
+| 11 | `distancia-portugal-ue27-2024` | idem |
+| 12 | `distancia-setubal-grande-lisboa-2024` | idem |
+| 13 | `evora-divergencia-municipio-dgal-2024` | idem |
+| 14 | `evora-indice-de-divida-2014` | idem |
+| 15 | `evora-indice-de-divida-2017` | idem |
+| 16 | `evora-indice-de-divida-2021` | idem |
+| 17 | `evora-indice-de-divida-2024` | idem |
+| 18 | `evora-pelouros-2021-total` | idem |
+| 19 | `evora-pelouros-2025-total` | idem |
+| 20 | `evora-prr-execucao-2026` | idem |
+| 21 | `evora-prr-vencido-quota-2026` | idem |
+
+*As três cujo único título de documento é o próprio marcador («[a verificar]»), e
+que não têm conta nenhuma para escrever:*
+
+| # | linha | onde vive | o que ela tem |
+| --- | --- | --- | --- |
+| 22 | `avisos-pt2030-abertos` | `/areas/economia-e-coesao-territorial` | `source` e `document.title` são o marcador; `derivation` é `null` |
+| 23 | `avisos-pt2030-pessoas-singulares` | idem | idem |
+| 24 | `ciclo-substituicao-condutas` | `/areas/ambiente-e-energia` | idem |
+
+**As três rendem o valor, a unidade e o período, com o estado «por-confirmar» que
+já levavam, e mais nada.** Não há nome nem conta para escrever, e a casa não
+inventa nem um nem outra. O nome delas é trabalho do motor
+(`BRIEF-M1-o-nome-das-entradas-sem-nome.md`), e as três já estão na dívida de
+proveniência que o `ledger:check` imprime a cada construção.
+
+**E o relatório diz o que o P2 dizia mal:** a nota do §0 falava de «as quatro
+cujo único título de documento é o próprio marcador». São **três**, contadas na
+cabeça desta passagem.
+
+## 10.3 · O espaço que ninguém escreveu, e a forma que fica
+
+O diretor leu «acima do valor de referência ( 9 %)» nas capturas. **O HTML
+construído não tinha espaço nenhum ali**: quem os punha era a folha.
+`.cartao-medida-regua-item` é um `inline-flex` com `gap: 0 4px`, e num contentor
+de flexão **cada corrida de texto vira um filho seu**, com o vão entre ela e a
+seguinte. Os parênteses, o algarismo e o símbolo eram três filhos, e o olho lia
+três vãos onde a casa tinha escrito zero.
+
+Fechado o valor entre parênteses num `<span>` inline, o item volta a ter dois
+filhos (o rótulo e o valor) e o único vão que se vê é o de 4 px entre eles. O
+mesmo espaço solto saiu de depois dos dois pontos de «União Europeia:», que o
+somava ao `gap`.
+
+**A forma que fica, e é uma só em todo o sítio:** o símbolo escreve-se **como a
+medida o declara** em `src/data/figuras.mjs` (doze escrevem «%» e a taxa de
+atividade escreve « pp», com o espaço dentro da declaração) e a página não lhe
+acrescenta nada. Dá **«(9%)» e «(2 pp)»**, que é o que o cartão da faixa, a peça
+e a leitura breve já escreviam («limiar 60% · acima»). A medição está em
+`vao-da-regua.txt`, com a régua ao lado: 32 itens da régua medidos no navegador,
+**0 com mais de dois filhos de flexão**.
+
+## 10.4 · O que a passagem NÃO fez do achado 2, e porquê
+
+**O cartão não substituiu a faixa na primeira página nem em «Portugal na União
+Europeia».** Fica escrito com a razão, porque é a parte maior do achado 2 e não
+aterrou.
+
+1. **O que a faixa é hoje não é um cartão:** é uma grelha de cinco filas (o
+   estado, o valor, o nome, a unidade e o selo) com uma âncora VAZIA por cima das
+   três primeiras, que é a forma que cumpre as duas metades da regra da casa («os
+   cartões da faixa são alvos inteiros» e «o selo nunca fica aninhado dentro de
+   outro alvo», Emenda 2). O cartão de uma medida tem a marca da fonte **dentro**
+   da linha do valor, porque é lá que `auditaSelo()` a confere. Pôr o cartão
+   dentro da faixa obriga a mudar a porta de sítio (o nome passa a ser a
+   ligação), e isso é uma decisão de desenho sobre alvos, não uma correção.
+2. **Resolveria por decreto a decisão 3 do §8 deste relatório**, que ficou aberta
+   para o diretor: a fila do estado do cartão da faixa tem três desenhos
+   possíveis (reservar três linhas, tirar o contador da posição, ou alargar o
+   cartão) e o §4 diz que se decide «em capturas com o diretor, depois de os dois
+   ramos estarem juntos». O cartão na faixa apaga a fila do estado, porque a
+   régua do cartão já diz a palavra: é um dos três desenhos, escolhido sem ele.
+3. **O custo medido, para quem o fizer:** 25 regras de `src/styles/inicio.css`
+   (`.cartao`, `.cartao-porta`, `.cartao-valor`, `.cartao-nome`,
+   `.cartao-unidade`, `.cartao-topo`, `.cartao-palavra`, `.cartao-posicao`,
+   `.cartao-destino` e os seus `@media`), e as réguas que medem a faixa por
+   dentro: `tests/inicio/porta.mjs`, `tests/inicio/faixa.mjs`,
+   `tests/inicio/matriz.mjs`, `tests/inicio/correcoes-a.mjs`,
+   `tests/inicio/leitura.mjs`, mais `scripts/design-bundle.mjs` e
+   `scripts/capturas-toque.mjs`. É um bloco, não um acerto.
+
+**E há uma parte do achado 2 que uma passagem de correção não pode fechar
+sozinha, e é do diretor.** A medida diz «os rótulos de recibo a 0 em todas as
+páginas do leitor». Na página do domínio isso fez-se. **Nas 308 páginas de
+concelho e em «Portugal na União Europeia» fica «período de referência»**, dentro
+da dobra da leitura breve de cada medida, e a razão é a **carta dos conteúdos,
+§1, regra 3**: «Três datas por medida, sempre: o período de referência, a data em
+que a fonte o publicou, e a data em que a casa conferiu a fonte.» O
+`check:formas` (F5) fecha a construção com menos de três dentro de uma leitura
+breve, e um portão não se enfraquece. Na página do domínio a conta fecha porque o
+CARTÃO passou a escrever a primeira das três («em 2025», com a mesma marca
+`data-da-linha`); nas dobras não há cartão, e tirar a data seria descer de três
+para duas. **Ou a carta se emenda, ou as dobras ganham o cartão: as duas são
+decisão do diretor.** Medido na cabeça desta passagem: «Publicado por» e
+«Published by» a **0** fora do livro-razão; «período de referência» e «reference
+period» em **309 páginas por edição** (as 308 de concelho e a europeia), e a **0**
+nas de domínio.
+
+## 10.5 · As capturas e as saídas
+
+**As capturas «depois» foram refeitas** com
+`node design/especime-v3/medicoes/p2-2026-09-15/capturas-cartao.mjs --momento=depois`
+sobre a cabeça desta passagem: 40 imagens (quatro rotas × duas edições × cinco
+larguras) em `design/especime-v3/capturas/p2-2026-09-15/`. As de «antes»
+continuam a ser as da cabeça `2ab86986`.
+
+**As saídas das réguas desta passagem**, ao lado deste ficheiro:
+
+| ficheiro | o que é |
+| --- | --- |
+| `cartao-depois.txt` | a régua do cartão na cabeça final, com as onze plantas e os números como eles são |
+| `vao-da-regua.txt` | os vãos da régua de um cartão, medidos no navegador |
+| `l1-composicao-2026-09-16.txt` | a composição da L1 na cabeça final, para a comparar com a de 15.09 |
+| `../p1-2026-09-15/check-lugar-depois.txt` | a corrida do `check:lugar` com a catraca a 2 284 |
+
+**E a tabela das cadeias ganhou o §9**, com as cinco cadeias que esta passagem
+mudou nesta família e as três mudanças que não mexeram numa cadeia.

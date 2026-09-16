@@ -22,7 +22,7 @@ cadeias escritas antes da emenda foram corrigidas antes do primeiro commit.
 
 | # | a medida de aceitação | medido | onde está a saída |
 |---|---|---|---|
-| 1 | o rótulo novo em 100 % das páginas construídas das duas edições e o antigo em 0; «política da casa» e «regras da casa» a 0 em todo o `dist/`; «Nuno dos Santos» a 0 em todo o `dist/` | **7 240 de 7 240 páginas com o rótulo novo** (3 624 pt, 3 616 en; o antigo a 0 dos dois lados, contra 7 240 páginas com o antigo antes). «política da casa» **3 632 → 0**; «the house policy» **3 618 → 0**. «Nuno dos Santos» **7 251 → 2**, e as duas são a regra 9 do Método (`/metodo` e `/en/method`), que é texto governado: **a medida não se cumpre inteira, e a razão está no §5**. «regras da casa» **1 → 1**, e a que fica é do Método e não deste bloco («são regras da casa, como a primeira», na regra 5) | `contagens-antes.txt`, `contagens-depois.txt`; `rotulo.txt` (7 de 7 células) |
+| 1 | o rótulo novo em 100 % das páginas construídas das duas edições e o antigo em 0; «política da casa» e «regras da casa» a 0 em todo o `dist/`; «Nuno dos Santos» a 0 em todo o `dist/` | **7 240 de 7 240 páginas com o rótulo novo** (3 624 pt, 3 616 en; o antigo a 0 dos dois lados, contra 7 240 páginas com o antigo antes). «política da casa» **3 632 → 0**; «the house policy» **3 618 → 0**. «Nuno dos Santos» **7 251 → 2** no fim deste bloco, e as duas eram a regra 9 do Método (`/metodo` e `/en/method`), que é texto governado. **A §1.109 tirou-o a 15.09 à noite**, e na cabeça de 16.09 o nome está a **0 em todo o `dist/`** (medido com `grep -rl "Nuno dos Santos" dist --include='*.html' | wc -l` sobre 7 358 páginas): a regra 9 diz «uma pessoa» e «one person», e a medida cumpre-se inteira. A correção desta frase é o achado 16 da leitura a frio. «regras da casa» **1 → 1**, e a que fica é do Método e não deste bloco («são regras da casa, como a primeira», na regra 5) | `contagens-antes.txt`, `contagens-depois.txt`; `rotulo.txt` (7 de 7 células) |
 | 2 | «Diretor:» a 0 no `dist/`; «Publicação gratuita» a 1 na primeira página de cada edição | «Diretor:» **1 → 0**, «Director:» **1 → 0**; «Publicação gratuita» **1 em `/`** e «Free of charge» **1 em `/en`**, e em mais lado nenhum | `contagens-*.txt`; `rotulo.txt`, célula M5 |
 | 3 | a frase a 1 em `/sobre` e `/en/about`; «Nuno dos Santos» a 0 em todo o `dist/`; nenhum rótulo «Diretor», «responsável editorial», «Director», «editorial responsibility» no `dist/` | a frase **0 → 1** em `/sobre` e **0 → 1** em `/en/about`. «responsável editorial» **3 629 → 0**; «editorial responsibility» **3 620 → 0**. O nome: ver o item 1 | `contagens-*.txt`; o portão de HTML compara a frase com o oráculo, carácter a carácter, em todas as páginas |
 | 4 | nenhuma frase à vista acima ou abaixo do campo, medida a 390 e a 1 280; o axe a 0; o campo com nome acessível | **0 superfícies com uma frase à vista**, nas três superfícies × duas edições × duas larguras (12 medições): à volta do campo não há nada com mais de 1 px². O texto-fantasma é «Concelho» / «Municipality» e o nome acessível é o mesmo, num `<label>` de 1 px² (o que a classe `.vh` da casa dá). O **axe a 0** em todas as rotas e graus | `busca.txt` (saída 0); `alvos.txt`, célula H1; `porta.txt`, célula A21 |
@@ -110,15 +110,15 @@ as últimas linhas de cada uma. E depois do último commit correu-se
 
 Uma coisa, e não é um portão.
 
-1. **«Nuno dos Santos» fica em duas páginas** (`/metodo` e `/en/method`), na
-   regra 9 do Método. O `src/data/metodo.mjs` é um dos dois textos governados
-   pela amarra das decisões, com o resumo carimbado numa entrada do
-   `DECISIONS.md`, e as dez regras são a lista fechada do diretor: mudá-las é uma
-   entrada nova em `DECISIONS.md` e uma emenda à constituição, que se escrevem do
-   lugar de direção. O construtor não lhe tocou, e o `sha256` dele não mudou
-   (`metodo 92b0fbdbc5fb`, como na cabeça de partida). **A medida do item 1 e a
-   do item 3 não se cumprem inteiras por isto**, e é a primeira coisa para o
-   lugar de direção decidir.
+1. ~~**«Nuno dos Santos» fica em duas páginas**~~ **Fechado a 15.09 à noite pelo
+   lugar de direção, e o relatório corrige-se a 16.09 (achado 16 da leitura a
+   frio).** O nome ficava na regra 9 do Método, que é texto governado: mudá-la
+   pedia uma entrada nova em `DECISIONS.md`, e foi o que a **§1.109** fez («o
+   portão de uma pessoa, um nome, um oráculo passa a ter dois estados: se o
+   rótulo não nomeia ninguém, nenhuma regra do Método pode nomear»). A regra 9
+   diz hoje «uma pessoa» e «one person», e **o nome está a 0 em todo o `dist/`**,
+   medido sobre 7 358 páginas. **A medida do item 1 e a do item 3 cumprem-se
+   inteiras.**
 **A U5 e a J5 estavam vermelhas na primeira redação e ficaram verdes com os
 acertos**, e nenhuma das duas por lhe terem mexido no tecto:
 
@@ -137,9 +137,8 @@ estavam vermelhas antes deste bloco.
 
 ## 6 · O que fica para o lugar de direção
 
-1. **O nome na regra 9 do Método** (o §5): o item 1 e o item 3 pedem o nome a 0
-   em todo o `dist/`, e ele fica em duas páginas. O lugar de direção disse que
-   trata dela a seguir, com a entrada em `DECISIONS.md`.
+1. ~~**O nome na regra 9 do Método**~~ **Feito.** A §1.109 tirou-o a 15.09 à
+   noite, e a 16.09 o nome está a 0 em todo o `dist/`. Ver o §5.
 2. **A menção da licença da Carta não saiu da superfície**, e é o único ponto do
    pedido dos seis acertos que não se fez. O acerto 4 mandava tirar as duas
    linhas de baixo do mapa; a primeira saiu, a segunda («Direção-Geral do
@@ -233,3 +232,30 @@ linha do ficheiro.
 **As células vermelhas que ficam, e a razão de cada uma**, estão no §5 do
 relatório. Nenhuma delas é um portão: os três portões estão a 0 na cabeça final,
 com os códigos de saída lidos de ficheiros em `portoes.txt`.
+
+---
+
+# 8 · A passagem de correção da leitura a frio (16.09.2026)
+
+*Construtor: Claude Opus 5. A leitura a frio do Codex (`gpt-5.6-sol`, xhigh) aos
+blocos P1 e P2 fundidos está em
+`design/especime-v3/critica/2026-09-15-codex-leitura-p1-p2.md`, com o registo das
+plantas ao lado (cinco plantas de três classes, 5 de 5 apanhadas) e a triagem do
+lugar de direção na cabeça do ficheiro. Esta secção diz o que a passagem mudou na
+família de palavras deste bloco; a do cartão está no relatório do P2. Sem
+travessões.*
+
+| achado | o que era | o que é, medido |
+| --- | --- | --- |
+| 7 | a manchete portuguesa de «Portugal na União Europeia» dizia «Portugal ultrapassa 4 valores de referência», e uma das quatro está por baixo do seu (a posição de investimento internacional, a −50,2 contra −35) | «Portugal **falha** 4 valores de referência». A inglesa não muda: «breaches» já era neutro. Os dois algarismos continuam selados e o portão reconta-os |
+| 9 e 10 | a secção dos domínios abria com «Os dezoito domínios do país, e os números que este projeto já publica em cada um.» | a linha **saiu**, nas duas edições, e as contagens ficam como estão. Eram dois defeitos na mesma frase: prosa sobre o projeto numa página de conteúdo (norma §1.4), e uma promessa maior do que a conta (duas linhas do livro-razão sem página de conteúdo não entram, e a porta de um domínio não teria para onde abrir). As duas linhas ficam no livro-razão até terem página |
+| 12 | a catraca da L1 subiu de 2 170 para 2 290, e as linhas novas explicavam 118 das 120 | **desce para 2 284**, e as duas páginas que faltavam estão explicadas: eram da família `area`, com um par só (a marca da fonte do cartão contra a marca da fonte de um item da régua), 42 ocorrências em 6 páginas, registadas na composição que o P2 guardou. A correção do achado 11 levou o par consigo. A composição desta cabeça está em `../p2-2026-09-15/l1-composicao-2026-09-16.txt` e a corrida em `check-lugar-depois.txt` |
+| 16 | o §5 e o §6 diziam que «Nuno dos Santos» ficava em duas páginas do Método | **o nome está a 0 em todo o `dist/`**, em 7 358 páginas. A §1.109, de 15.09 à noite, deu ao portão dois estados e a regra 9 do Método passou a dizer «uma pessoa» e «one person». O §5 e o §6 estão corrigidos |
+
+**As capturas «depois» foram refeitas** com `node design/especime-v3/medicoes/p1-2026-09-15/capturas-p1.mjs --momento=depois`
+sobre a cabeça desta passagem: 30 imagens (três páginas × duas edições × cinco
+larguras) em `design/especime-v3/capturas/p1-2026-09-15/`. As de «antes»
+continuam a ser as da cabeça `2ab86986` e não foram tocadas.
+
+**E a tabela das cadeias ganhou o §4**, com as duas cadeias que esta passagem
+mudou nesta família.
