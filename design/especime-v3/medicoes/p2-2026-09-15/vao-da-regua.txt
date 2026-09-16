@@ -1,0 +1,21 @@
+
+  OS VÃOS DA RÉGUA DE UM CARTÃO · medidos no navegador, a 1280
+
+    itens da régua medidos                       32
+    itens com mais de dois filhos de flexão      0
+
+    area (habitação) · pt · anterior   2 filho(s) · «2024:9,1»
+    area (habitação) · pt · ue         2 filho(s) · «União Europeia:5,5»
+    area (habitação) · pt · referencia 2 filho(s) · «acima do valor de referência(9%)»
+    area (habitação) · en · anterior   2 filho(s) · «2024:9,1»
+    area (habitação) · en · ue         2 filho(s) · «European Union:5,5»
+    area (habitação) · en · referencia 2 filho(s) · «above the reference value(9%)»
+    dominio · pt · anterior            2 filho(s) · «2024:20 430»
+    dominio · pt · ue                  2 filho(s) · «União Europeia:31 890»
+    dominio · pt · referencia          2 filho(s) · «acima do valor de referência(60%)»
+    dominio · en · anterior            2 filho(s) · «2024:20 430»
+    dominio · en · ue                  2 filho(s) · «European Union:31 890»
+    dominio · en · referencia          2 filho(s) · «above the reference value(60%)»
+
+  ✓ dois filhos por item (o rótulo e o valor), e o único vão é o de 4 px entre eles.
+

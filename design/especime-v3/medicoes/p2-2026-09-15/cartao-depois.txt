@@ -1,0 +1,27 @@
+
+> o-estado-do-pais@0.1.0 check:cartao
+> node tests/cartao/cartao.mjs --prova
+
+  prova: 11 estragos plantados, 11 vistos; o cartão são a 0; a régua com as duas comparações de uma medida, a série bienal, a ausência da linha da União e uma chave que não se inventa; as duas testemunhas do valor de referência com um par bom e dois maus; a mesma série com um par que bate e um que não bate
+
+  A RÉGUA DO CARTÃO DE UMA MEDIDA · bloco P2
+
+    páginas lidas                    7358
+    cartões                          236 (118 pt, 118 en)
+    com nome                         236 de 236
+    com a frase do que medem         36 de 236 com frase
+    com régua                        68 de 236 com régua
+    linhas sem nome, como linha do livro-razão             48 (42 com a aritmética escrita)
+    itens «período anterior», pares conferidos             68
+    «Governo Constitucional»         1 pt · 1 en
+    legenda da marca                 2 página(s)
+    nome na língua da fonte          87 (com a marca «lang»)
+    unidade na outra língua          1 (a exceção da I92)
+    o marcador em português          4 (a exceção da IDENTIDADE §6)
+    valores de régua sem marca própria                    122 (a porta é a do cartão)
+    valores de referência, as duas testemunhas comparadas  13
+    medidas com nome oficial no recibo                    11
+    ficheiros do motor               referencias.json sim · nomes.json sim
+
+  ✓ 236 cartões, todos com nome; nenhum com um bloco a mais, um rótulo de recibo ou a chave à vista; 36 de 236 com frase e 68 de 236 com régua, e os 68 períodos anteriores da mesma série e da mesma unidade
+

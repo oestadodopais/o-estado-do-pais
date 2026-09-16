@@ -253,3 +253,25 @@ título de documento é o próprio marcador. O bloco P3 tem de lhes dar um nome 
 projeto, ou deixá-las sem ele com a razão escrita.
 
 `avisos-pt2030-abertos`, `avisos-pt2030-pessoas-singulares`, `ciclo-substituicao-condutas`, `distancia-acores-ue27-2024`, `distancia-alentejo-ue27-2000`, `distancia-alentejo-ue27-2024`, `distancia-algarve-ue27-2024`, `distancia-centro-ue27-2024`, `distancia-grande-lisboa-ue27-2024`, `distancia-madeira-ue27-2024`, `distancia-norte-ue27-2024`, `distancia-oeste-e-vale-do-tejo-ue27-2024`, `distancia-peninsula-de-setubal-ue27-2024`, `distancia-portugal-ue27-2024`, `distancia-setubal-grande-lisboa-2024`, `evora-divergencia-municipio-dgal-2024`, `evora-indice-de-divida-2014`, `evora-indice-de-divida-2017`, `evora-indice-de-divida-2021`, `evora-indice-de-divida-2024`, `evora-pelouros-2021-total`, `evora-pelouros-2025-total`, `evora-prr-execucao-2026`, `evora-prr-vencido-quota-2026`
+
+---
+
+## 9 · A passagem de correção dos achados P1 e P2 (16.09.2026)
+
+*As cadeias que a leitura a frio do Codex (`gpt-5.6-sol`, xhigh) e a leitura do lugar de direção às capturas obrigaram a mudar, na família do cartão e do recibo. As da família das palavras da primeira página estão na tabela do P1.*
+
+| achado | chave | antes (pt) | depois (pt) | antes (en) | depois (en) | razão |
+| --- | --- | --- | --- | --- | --- | --- |
+| 4 | `inicio.painel.semLeituraAberta` | Toque num cartão para ler a medida. | **(retirada)** | Tap a card to read the measure. | **(retirada)** | é uma frase de instrução numa página de conteúdo, e a norma §1.4 não as admite. Com guião, em repouso, era o que restava à vista na área de leitura de «Portugal na União Europeia» e das 308 páginas de concelho; sem guião nunca se rendeu. O nó saiu com ela das duas vistas |
+| 5 | `livro.linha.excertoNotaComposto` | (o recibo dizia «Transcrito da fonte, palavra por palavra.») | Excerto composto a partir da resposta da fonte. | (the receipt said «Transcribed from the source, word for word.») | Excerpt composed from the source's response. | 91 linhas declaram na nota que o excerto foi composto a partir das etiquetas da resposta do Eurostat (as 32 do quadro institucional e as 59 do enquadramento). A frase é fiel e não é transcrição, e o recibo prometia uma conferência que ninguém pode fazer contra um documento. Quem escolhe é a linha, por `excertoComposto()` |
+| 17 | `livro.linha.proximaConferenciaK` | Próxima conferência | Próxima verificação | Next check | (não muda) | em português corrente uma conferência é um encontro com oradores; o que a casa vai fazer é reler a linha contra o que a fonte publicar. O inglês já era a palavra certa |
+| 17 | `areas.organica` | As áreas seguem a orgânica do Governo em funções, o XXV Governo Constitucional. | As áreas são as do Governo em funções (o XXV Governo Constitucional). | The areas follow the structure of the Government in office, the XXV Constitutional Government. | The areas are those of the Government in office (the XXV Constitutional Government). | a sintaxe inglesa vestida de português, com a aposição atrás e a palavra do diploma («orgânica») no lugar da do leitor. O que a frase diz é de quem são as áreas |
+| 2 | `prov.definicaoDe` | (a origem de uma definição rendia-se com «Publicado por») | Definição de | (rendered with «Published by») | Definition by | «Publicado por» é o rótulo do publicador de uma LINHA do livro-razão: ao pé de uma frase citada da Comissão lia-se como se aquele fosse o publicador do número. São duas coisas diferentes e passam a ter dois rótulos diferentes |
+
+### O que mudou sem uma cadeia mudar
+
+| achado | o que | a razão |
+| --- | --- | --- |
+| 17 | o espaço a mais em «( 9 %)» | não estava escrito em lado nenhum: `.cartao-medida-regua-item` é um `inline-flex` com `gap: 0 4px`, e num contentor de flexão cada corrida de texto vira um filho seu. Os parênteses, o algarismo e o símbolo eram três filhos, com 4 px entre cada dois. Fechados num `<span>` inline, voltam a ser texto corrido. O mesmo espaço solto saiu de depois dos dois pontos de «União Europeia:». **A forma que fica, uma só em todo o sítio:** o símbolo escreve-se como a medida o declara em `src/data/figuras.mjs` e a página não lhe acrescenta nada, o que dá «(9%)» e «(2 pp)», tal como o cartão da faixa e a peça já escreviam |
+| 2 | o cartão de uma medida na página do domínio | as cadeias são as mesmas do cartão da página de área; o que mudou foi a página que as rende. Saíram da página do domínio o `dominio-nome`, o `dominio-valor`, o `dominio-limiar`, a `dominio-definicao` com a origem e o `dominio-fonte` inteiro |
+| 3 | as 24 linhas sem nome | deixam de se render como cartão e rendem-se como linha do livro-razão, com o campo `derivation` que a linha já declara. Nenhuma cadeia nova: o texto é o da linha |
