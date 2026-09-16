@@ -178,7 +178,26 @@ const TETOS = {
      sobre a cabeça desta passagem, e não escrito à mão. O horizonte continua a
      zero, e o trabalho continua o mesmo: os dois padrões da família `linha` e o
      das 616 páginas de concelho. */
-  l1_paginas: 2284,
+  /* SOBE DE 2 284 PARA 2 286 a 16.09.2026, e a razão é medida e inteira: o
+     arquivo ganhou um trabalho com duas edições, e os dois documentos alojados
+     novos trazem o par que a FAIXA DESTE PROJETO já punha em quinze dos
+     dezasseis anteriores. A família `documento` passa de 15 para 17 páginas, e
+     nenhuma outra família mexe: 2 286 menos 2 284 são exactamente 2, e 2 são
+     exactamente as duas edições que entraram.
+
+     **O par não é novo, e não é do documento:** é
+     `a[data-oedp-marca]` contra `a[data-oedp-voltar]`, a marca deste projeto e
+     a porta de voltar, as duas dentro de `div[data-oedp-faixa]` e as duas a
+     abrir a página do estudo (`src/lib/documentos.mjs`). É prosa e mobília
+     deste projeto, não da obra citada, e por isso é dívida que se pode fechar:
+     fechá-la tira as dezassete de uma vez e leva a catraca a 2 269. Fica dito
+     para quem a quiser fechar, que é o que esta tabela existe para permitir.
+
+     Medido com `node design/especime-v3/medicoes/lugar-2026-09-04/l1-composicao.mjs dist`
+     sobre a cabeça deste bloco, e guardado em
+     `design/especime-v3/medicoes/e1-2026-09-16/l1-composicao-2026-09-16.txt`.
+     Não foi escrito à mão. O horizonte continua a zero. */
+  l1_paginas: 2286,
   /* L2a · páginas, fora de `/municipios`, que ligam a mais de `L2_LIMITE_NOMES`
      concelhos fora de uma lista fechada.
      DESCE DE 2 PARA 0 a 09.09.2026, por decisão do lugar de direção, e a régua

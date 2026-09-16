@@ -1,0 +1,54 @@
+páginas com dois destinos iguais: 2286
+
+por família de página:
+    1540  linha
+     616  municipio
+      58  distrito
+      18  regiao
+      17  documento
+       7  texto
+       6  estudo
+       2  agenda
+       2  correcoes
+       2  dominio
+       2  dominios
+       2  sobre
+       2  uniaoEuropeia
+       2  home
+       2  livro
+       2  livroConcelhos
+       2  metodo
+       2  municipios
+       2  estudos
+
+por par de portas (top 30, contando pares repetidos):
+    2464  municipio :: a.src-chip[data-nonledger]<p.dobra-pe<div.dobra-corpo  ||  a.src-chip[data-nonledger]<span.claim<li.cartao[data-cartao]
+     834  linha :: a.ligacao-externa<dd<dl.aparelho-ficha  ||  a.ligacao-externa<p.linha-atribuicao<div.linha-corpo  ||  a.ligacao-externa<p.linha-pagina-serie<section.linha-bloco
+     796  linha :: a<dd<dl.linha-verificacoes  ||  a<p.rodape-nav<aside.aparelho
+     616  distrito :: a.uni-porta[data-concelho-porta]<g.mapa-areas[data-areas]<svg.mapa-svg[data-mapa-concelhos]  ||  a<li.concelho<ul.concelhos-lista
+     616  dominio :: a[data-lugar]<th<tr
+     616  livroConcelhos :: a.chipb<li.pesquisa-item[data-normal]<ul.pesquisa-res[data-resultados]  ||  a<li.concelho<ul.concelhos-lista
+     616  municipio :: a.src-chip[data-nonledger]<p.dobra-pe<div.dobra-corpo  ||  a.src-chip[data-nonledger]<span.claim<li.cartao[data-cartao]  ||  a.src-chip[data-nonledger]<span.claim<p.forma-frase[data-legenda-selos]
+     616  municipio :: a.lig[data-trocar]<p.mapa-cartao-portas<div.mapa-cartao-texto  ||  a<p.rodape-nav<div.municipio
+     614  municipio :: a.claim-value[data-claim]<h1.cabeca-h1[data-citadas]<div.cabeca-bloco  ||  a.src-chip[data-nonledger]<p.dobra-pe<div.dobra-corpo  ||  a.src-chip[data-nonledger]<span.claim<li.cartao[data-cartao]  ||  a.src-chip[data-nonledger]<span.manchete-selos<h1.cabeca-h1[data-citadas]
+     614  municipio :: a.src-chip[data-nonledger]<span.claim<p.cartao-unidade[data-medida-unidade]  ||  a.src-chip[data-nonledger]<span.claim<p.dobra-unidade[data-medida-unidade]  ||  a.src-chip[data-nonledger]<span.claim<p.mun-distancia-legenda
+     612  municipio :: a.src-chip[data-nonledger]<p.dobra-pe<div.dobra-corpo  ||  a.src-chip[data-nonledger]<span.claim<li.cartao[data-cartao]  ||  a.src-chip[data-nonledger]<span.mun-legenda-e<p.mun-distancia-selos[data-legenda-selos]
+     612  municipio :: a.src-chip[data-nonledger]<p.dobra-pe<div.dobra-corpo  ||  a.src-chip[data-nonledger]<span.claim<li.cartao[data-cartao]  ||  a.src-chip[data-nonledger]<span.claim<p.mun-distancia-legenda
+      58  home :: a.uni-porta[data-uni-porta]<g.mapa-areas[data-areas]<svg.mapa-svg[data-mapa]  ||  a[data-lista-porta]<li<ul.mapa-ilhas-lista
+      42  uniaoEuropeia :: a.src-chip[data-nonledger]<p.dobra-pe<div.dobra-corpo  ||  a.src-chip[data-nonledger]<span.claim<li.cartao[data-cartao]
+      29  distrito :: a.lig[data-mapa-porta]<p.mapa-nome-portas<div.mapa-nome[data-mapa-nome]  ||  a<p.rodape-nav<main
+      29  texto :: a.src-chip[data-nonledger]<td[data-registo-unidade]<tr  ||  a<p.texto-linha-porta<li.texto-linha
+      24  texto :: a.src-chip[data-nonledger]<p[data-registo-bloco]<article.texto-artigo[data-registo-edicao]  ||  a<p.texto-linha-porta<li.texto-linha
+      22  regiao :: a.claim-value[data-claim]<h1.cabeca-h1[data-citadas]<div.cabeca-bloco  ||  a.src-chip[data-nonledger]<span.manchete-selos<h1.cabeca-h1[data-citadas]
+      21  texto :: a.src-chip[data-nonledger]<p[data-registo-bloco]<article.texto-artigo[data-registo-edicao]  ||  a.src-chip[data-nonledger]<td[data-registo-unidade]<tr  ||  a<p.texto-linha-porta<li.texto-linha
+      18  regiao :: a<p.regiao-comparar<main  ||  a<p.rodape-nav<main
+      17  documento :: a[data-oedp-marca]<div[data-oedp-faixa]<body  ||  a[data-oedp-voltar]<div[data-oedp-faixa]<body
+      14  dominio :: a.src-chip[data-nonledger]<span.claim<li.cartao[data-cartao]  ||  a.src-chip[data-nonledger]<span.claim<p.cartao-medida-valor
+      14  municipio :: a.src-chip[data-nonledger]<span.claim<dd
+      12  linha :: a.ligacao-externa<dd.linha-verificacao[data-linha-verificacao]<dl.linha-verificacoes  ||  a.ligacao-externa<figcaption.linha-recorte-legenda<figure.linha-recorte
+      12  linha :: a.ligacao-externa<dd.linha-verificacao[data-linha-verificacao]<dl.linha-verificacoes  ||  a<li<ul.linha-calculado-lista
+       8  linha :: a.marcador<dd<dl.linha-verificacoes  ||  a.marcador[data-linha-claim]<span.campo-por-verificar<dd  ||  a.marcador[data-linha-claim]<span.campo-por-verificar<p.linha-nota  ||  a.marcador[data-linha-claim]<span.campo-por-verificar<p.linha-pedido  ||  a<p<div.aparelho-estado
+       8  estudos :: a.arquivo-porta<h2.arquivo-titulo<div  ||  a.badge<span.arquivo-edicoes<div.arquivo-meta
+       6  correcoes :: a.src-chip[data-nonledger]<li[data-correcao-entrada]<ul.registo-proveniencia-linhas  ||  a.src-chip[data-nonledger]<span.registo-salto<li.registo-linha[data-correcao-entrada]
+       6  uniaoEuropeia :: a.lig[data-verbatim]<p.def-origem-linha<div.def-origem[data-def-origem]
+       6  linha :: a.marcador[data-linha-claim]<span.campo-por-verificar<p.linha-nota  ||  a<p<div.aparelho-estado

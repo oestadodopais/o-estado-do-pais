@@ -293,10 +293,17 @@ for (const chave of Object.keys(manifesto.registos)) {
 }
 
 conferencias++;
-if (edicoesProvadas !== 5) {
+/* O ÂMBITO SOBE DE 5 PARA 7 a 16.09.2026, com as duas edições de «Évora 2027 —
+   O Prometido, o Painel, o Dinheiro» (bloco E1). O número está escrito para que
+   uma mudança de âmbito não passe em silêncio, e não passou: a prova foi relida
+   sobre as duas edições novas e as duas dão 119 blocos lidos contra 119 no
+   registo, 880 unidades iguais carácter a carácter, 0 isentas e 0 apagadas. */
+const EDICOES_DA_PROVA = 7;
+if (edicoesProvadas !== EDICOES_DA_PROVA) {
   falhas.push(
-    `esta prova corre sobre 5 edições (as que têm prova "edicao-html" e bytes alojados do motor) ` +
-      `e correu sobre ${edicoesProvadas}. Se o âmbito mudou, a prova tem de ser relida.`,
+    `esta prova corre sobre ${EDICOES_DA_PROVA} edições (as que têm prova "edicao-html" e bytes ` +
+      `alojados do motor) e correu sobre ${edicoesProvadas}. Se o âmbito mudou, a prova tem de ` +
+      `ser relida.`,
   );
 }
 
