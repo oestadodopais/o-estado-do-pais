@@ -1,0 +1,40 @@
+OS TRÊS PORTÕES DA PASSAGEM DE CORREÇÃO DOS ACHADOS P1 E P2
+
+Corridos sobre a cabeça 26e7873124d0bbf5fa7050b89dbc91b740822ab1, que é a cabeça do ramo com tudo o que esta
+passagem construiu. O commit que traz ESTE ficheiro é o seguinte, e o que ele
+acrescenta é só o registo dos portões: nenhum dos três o lê.
+
+Cada comando no seu, separados por «;», e o código de saída lido do ficheiro em
+que ele o escreveu (npm run <portao> > log 2>&1 ; echo $? > exit), e nunca de
+memória:
+
+  npm run build      ->  0
+  npm run verify     ->  0
+  npm run typecheck  ->  0
+
+Os três códigos estão ao lado, em portoes/build.code, portoes/verify.code e
+portoes/typecheck.code, escritos pela corrida e copiados de lá.
+
+As últimas linhas de cada um:
+
+--- build ---
+
+
+  língua ✓ 37 unidade(s) do livro-razão: 35 traduzida(s), 2 em português com razão escrita · 2527 localizador(es), todos dentro de documento português · 72 título(s) de documento com língua declarada (36 pt, 36 en) · 19 rótulo(s) da fonte com língua declarada (15 pt, 4 en) · 18 organismo(s) com língua declarada (17 pt, 1 en) · 67 edição(ões) com língua declarada (19 pt, 0 en, 48 sem língua)
+        7342 página(s) lidas · unidades em «en»: 6092 (6083 traduzidas, 9 em português, todas com marca) · títulos com marca de língua: 6852 de 13704 rendidos · rótulos da fonte com marca de língua: 5608 de 11216 rendidos · organismos rendidos: 15858 (7929 de língua contrária: 7614 em «en» e 315 em «pt», 7929 com a marca certa) · edições rendidas: 10568 (3770 de língua contrária: 3770 em «en» e 0 em «pt», 3770 com a marca certa, 3028 sem língua nenhuma e sem marca) · localizadores em «en»: 2527 com marca · leis em «en»: 1250 com marca, 3 dentro de transcrição do motor · títulos de estudo portugueses em «en»: 115 à vista e 0 no oculto, todos com marca · rótulo de IA: 0 nome(s) de quem responde (o nome saiu do rótulo a 15.09.2026) e 7350 linha(s) na língua da página · atributos repetidos: nenhum
+        3 nome(s) de lei dentro de texto transcrito (uma «derivation_en» do livro-razão, uma nota do registo da agenda): a casa não edita o que transcreve, e um campo transcrito só se marca inteiro, na língua do campo.
+
+
+--- verify ---
+  ligações internas absolutas em https://oestadodopaís.pt · 16 ligações para fontes, intactas · 13 endereços escritos no texto das páginas (transcrições, não pedidos)
+  nenhum <script>, nenhum <link>, nenhuma imagem que não seja data:, nenhum endereço fora de um href · 160 pedidos de tipo, todos resolvidos em ficheiros desta corrida
+
+  7358 página(s) de `dist/` varridas à procura das duas ausências que os cartões afirmam (`.movel-selo`, `.banda`): nenhuma das duas rende.
+  ✓ 20 cartões, 11 ficheiros de letra e um README em design-system/.
+
+
+--- typecheck ---
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
