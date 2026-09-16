@@ -5,17 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas</title>
 <style>
-:root { color-scheme: light dark; }
+:root {
+  --paper: #FAFBF9; --ink: #1B2126; --muted: #5A6B72; --rule: #D8DFDC;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    --paper: #12181B; --ink: #E6ECEA; --muted: #8FA1A8; --rule: #243036;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #12181B; --ink: #E6ECEA; --muted: #8FA1A8; --rule: #243036;
+}
+:root[data-theme="light"] {
+  --paper: #FAFBF9; --ink: #1B2126; --muted: #5A6B72; --rule: #D8DFDC;
+}
+html { background: var(--paper); color-scheme: light dark; }
 body { margin: 0 auto; max-width: 54rem; padding: 2.5rem 1.25rem 6rem;
+       background: var(--paper); color: var(--ink);
        font: 16px/1.62 Georgia, 'Times New Roman', serif; }
 h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 1.4rem; }
 h2 { font-size: 1.35rem; margin: 2.8rem 0 0.9rem; }
 h3 { font-size: 1.08rem; margin: 2rem 0 0.6rem; }
 p { margin: 0 0 1.05rem; }
-hr { border: 0; border-top: 1px solid currentColor; opacity: 0.25; margin: 2.6rem 0; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.6rem 0; }
 table { border-collapse: collapse; width: 100%; margin: 0 0 1.4rem;
         font: 14px/1.5 system-ui, -apple-system, 'Segoe UI', sans-serif; }
-th, td { border-top: 1px solid rgba(128,128,128,0.4); padding: 0.45rem 0.6rem;
+th, td { border-top: 1px solid var(--rule); padding: 0.45rem 0.6rem;
          text-align: left; vertical-align: top; }
 th { font-weight: 600; }
 code { font: 13px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; }
