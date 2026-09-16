@@ -460,16 +460,23 @@ const jsonld = {
           class="dominio-medida"
           id={ancoraDa(medida.chave)}
           data-medida={medida.chave}
-          data-leitura={medida.claim}
+          data-leitura-linha={medida.claim}
         >
-          {/* `data-leitura` É A LINHA DESTA LEITURA, E É POR ELA QUE O F5 A ENCONTRA
-              (achado 11 da leitura a frio do Codex, 16.09.2026). O `data-medida`
-              traz a CHAVE da medida («E1», «T3»), que não é um identificador do
-              livro-razão: com ela sozinha, o `check:formas` tinha de ir buscar o
-              conjunto dos alvos à declaração em `dominios.mjs`, e era a
-              declaração a medir-se a ela própria. A marca é a mesma que a dobra
-              da leitura breve já usa (`LeituraBreve.astro`), e por isso o portão
-              lê as duas famílias com uma pergunta só, feita ao `dist/`. */}
+          {/* `data-leitura-linha` É A LINHA DESTA LEITURA, E É POR ELA QUE O F5 A
+              ENCONTRA (achado 11 da leitura a frio do Codex, 16.09.2026). O
+              `data-medida` traz a CHAVE da medida («E1», «T3»), que não é um
+              identificador do livro-razão: com ela sozinha, o `check:formas`
+              tinha de ir buscar o conjunto dos alvos à declaração em
+              `dominios.mjs`, e era a declaração a medir-se a ela própria.
+
+              O NOME NÃO É `data-leitura`, E A RAZÃO FOI MEDIDA: essa marca já
+              quer dizer outra coisa, «este `<details>` É a dobra da leitura
+              desta linha», e o item 8.4 do `check:lugar` conta com essa forma
+              para exigir uma `.dobra-definicao` lá dentro. Pô-la aqui fez o
+              `verify` fechar com seis definições de painel «fora da
+              declaração», porque três medidas da página do domínio rendem a
+              definição noutro bloco. Uma marca nova diz o que esta página é,
+              sem prometer a forma da outra. */}
           {/* A PERGUNTA DA CARTA É QUEM NOMEIA AS FORMAS DESTA MEDIDA (achado 2,
               15.09.2026). O `id` estava na linha do nome, que saiu com o cartão, e
               a barra e o mapa desta medida apontam-lhe por `aria-labelledby`: sem

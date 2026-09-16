@@ -457,9 +457,15 @@ for (const ficheiro of paginasDe(DIST)) {
       );
     }
   }
-  /* F5, a recolha dos ALVOS: as linhas que uma leitura breve RENDIDA declara. */
-  for (const el of root.querySelectorAll('[data-leitura]')) {
-    const id = el.getAttribute('data-leitura');
+  /* F5, a recolha dos ALVOS: as linhas que uma leitura breve RENDIDA declara.
+     SÃO DUAS MARCAS, e cada uma diz a forma da sua página: `data-leitura` é o
+     `<details>` que É a dobra da leitura de uma linha (o quadro europeu, a
+     página de concelho), e `data-leitura-linha` é o artigo da página do domínio,
+     que rende a leitura noutra forma. A segunda nasceu porque a primeira já
+     prometia uma `.dobra-definicao` lá dentro ao item 8.4 do `check:lugar`, e
+     usá-la aqui fechava o `verify` com seis falsas. */
+  for (const el of root.querySelectorAll('[data-leitura], [data-leitura-linha]')) {
+    const id = el.getAttribute('data-leitura') ?? el.getAttribute('data-leitura-linha');
     if (id) linhasComLeituraBreve.add(id);
   }
 
@@ -1013,7 +1019,7 @@ if (contas.paginas > 0) {
     if (!linhasComLeituraBreve.has(id)) {
       err(
         `a medida da linha "${id}" está declarada com leitura breve e nenhuma página construída a ` +
-          `rende com «data-leitura». Ou a leitura saiu do sítio sem a declaração o dizer, ou a marca ` +
+          `rende com «data-leitura» nem com «data-leitura-linha». Ou a leitura saiu do sítio sem a declaração o dizer, ou a marca ` +
           `mudou de nome e o conjunto dos alvos ficou mais pequeno em silêncio.`,
       );
     }
