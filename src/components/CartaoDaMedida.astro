@@ -82,7 +82,8 @@ import Frase from './Frase.astro';
 import ReguaDoCartao from './ReguaDoCartao.astro';
 import { t } from '../i18n/strings.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
-import { provenienciaIncompleta } from '../lib/ledger.mjs';
+import { provenienciaIncompleta, derivacaoDaLinha } from '../lib/ledger.mjs';
+import { nomeDoCartao } from '../lib/nomes.mjs';
 import { DEFINICOES_DAS_MEDIDAS } from '../data/figuras.mjs';
 
 /* `...resto` deixa quem chama pendurar as suas marcas no cartão sem que este
@@ -108,60 +109,138 @@ const definicao = /** @type {Record<string, { pt: readonly unknown[], en: readon
   DEFINICOES_DAS_MEDIDAS
 )[c.id];
 const frase = definicao ? definicao[lang] ?? definicao.pt : null;
+
+/* ---------------------------------------------------------------------------
+ * UM CARTÃO SEM NOME NÃO É UM CARTÃO (achado 3 da leitura a frio de 15.09.2026)
+ * ---------------------------------------------------------------------------
+ * A leitura a frio: «The card gate can pass cards missing mandatory content,
+ * and it did. … Its own reported run contains 48 nameless cards … yet prints
+ * "the five things and only them, in all cards".» Tinha razão nas duas metades:
+ * a régua só gritava pela linha do valor, e o cartão rendia-se sem a primeira
+ * das cinco coisas.
+ *
+ * A ESCADA DO NOME NÃO TEM FUNDO PARA VINTE E QUATRO LINHAS, e não é por
+ * descuido: vinte e uma são DERIVADAS, que não têm fonte nem documento porque a
+ * proveniência delas é a das origens, e três têm o marcador «[a verificar]» por
+ * único título de documento. Nenhuma delas tem nome em degrau nenhum, e escrever
+ * um à mão era a casa a baptizar uma medida do Estado.
+ *
+ * O QUE ESTAS RENDEM, PELA DECISÃO DO LUGAR DE DIREÇÃO DE 15.09.2026: não um
+ * cartão, mas a LINHA DO LIVRO-RAZÃO com a sua aritmética. O valor, a unidade e
+ * o período ficam, com a marca da fonte ao lado; no lugar do nome fica a conta,
+ * que é o campo `derivation` que a linha declara nas duas edições e que diz o
+ * que aquele número é («100 − 77 = 23. Distância abaixo da média da UE-27, em
+ * pontos de índice.»). É a mesma peça que o recibo mostra no bloco da
+ * aritmética, e é a única frase sobre aquele número que alguém escreveu.
+ *
+ * AS TRÊS QUE NÃO TÊM CONTA NENHUMA (`avisos-pt2030-abertos`,
+ * `avisos-pt2030-pessoas-singulares`, `ciclo-substituicao-condutas`) rendem o
+ * valor e mais nada, com o estado «por-confirmar» que já levavam: não há nome
+ * nem conta para escrever, e a casa não inventa nem um nem outra. O nome delas é
+ * trabalho do motor (`BRIEF-M1-o-nome-das-entradas-sem-nome.md`), e a lista está
+ * no relatório do bloco.
+ */
+const nome = nomeDoCartao(c, lang);
+const aritmetica = nome === null ? derivacaoDaLinha(c, lang) : null;
 ---
 
-<article
-  class="cartao-medida"
-  data-cartao-medida={c.id}
-  data-estado={provenienciaIncompleta(c) ? 'por-confirmar' : 'completa'}
-  {...resto}
->
-  {/* (a) O NOME. `escada="cartao"` é a escada que recusa um nome noutra língua
-      que não a da página; a marca (`data-nome` com o identificador da linha, ou
-      `data-linha-campo`) é a mesma que o índice já leva, e é ela que faz do nome
-      uma coisa conferida e não uma dispensa. */}
-  <NomeDaMedida linha={c} lang={lang} escada="cartao" class="cartao-medida-nome" />
-
-  {/* (b) O VALOR, A UNIDADE E O PERÍODO, NUMA LINHA. A marca da fonte, que é a
-      coisa (e) das cinco, vive dentro do `<Claim chip>`: `auditaSelo()` procura
-      o selo dentro do PAI do elemento do valor, e é essa vizinhança que o portão
-      confere. Um invólucro entre os dois partia-a. */}
-  <p class="cartao-medida-valor">
-    <Claim id={c.id} lang={lang} as="span" class="cartao-medida-num" chip={true} />
-    <CampoDaLinha
-      id={c.id}
-      campo="unit"
-      valor={unidade.texto}
-      lang={lang}
-      class="cartao-medida-unidade"
-      lingua={unidade.lingua}
-    />
-    {
-      periodo && (
-        <span class="cartao-medida-periodo">
-          {/* «em», e não «Dados de». A preposição é a gramática da frase, e o
-              rótulo do campo é do recibo. É prosa da casa, declarada uma vez em
-              `strings.mjs` e no inventário das frases. */}
-          <span class="cartao-medida-em" data-voz>
-            {s.cartao.em}{' '}
+{/* A LINHA DO VALOR É A MESMA NAS DUAS FORMAS, e por isso escreve-se uma vez. */}
+{
+  nome === null ? (
+    /* A LINHA DO LIVRO-RAZÃO COM A SUA ARITMÉTICA. Ver a razão por extenso na
+       nota acima: uma linha sem nome em degrau nenhum não se rende como cartão,
+       porque a primeira das cinco coisas de um cartão é o nome. */
+    <div
+      class="linha-sem-nome"
+      data-linha-sem-nome={c.id}
+      data-estado={provenienciaIncompleta(c) ? 'por-confirmar' : 'completa'}
+      {...resto}
+    >
+      <p class="cartao-medida-valor">
+        <Claim id={c.id} lang={lang} as="span" class="cartao-medida-num" chip={true} />
+        <CampoDaLinha
+          id={c.id}
+          campo="unit"
+          valor={unidade.texto}
+          lang={lang}
+          class="cartao-medida-unidade"
+          lingua={unidade.lingua}
+        />
+        {periodo && (
+          <span class="cartao-medida-periodo">
+            <span class="cartao-medida-em" data-voz>
+              {s.cartao.em}{' '}
+            </span>
+            <CampoDaLinha id={c.id} campo="reference_date" valor={periodo} lang={lang} />
           </span>
-          <CampoDaLinha id={c.id} campo="reference_date" valor={periodo} lang={lang} />
-        </span>
-      )
-    }
-  </p>
-
-  {/* (c) A FRASE DO QUE A MEDIDA MEDE. */}
-  {
-    frase && (
-      <p class="cartao-medida-frase" data-cartao-definicao={c.id}>
-        <Frase partes={frase} lang={lang} selos={true} />
+        )}
       </p>
-    )
-  }
+      {/* A CONTA, POR PALAVRAS. É o campo `derivation` da linha, declarado nas
+          duas edições e conferido pelo portão carácter a carácter: a casa não
+          escreve aqui uma palavra que a linha não traga. */}
+      {aritmetica && (
+        <p class="linha-sem-nome-conta">
+          {/* O CAMPO É `derivation` NAS DUAS EDIÇÕES, e o valor é o da língua da
+              página: é o que o recibo já faz («a aritmética é prosa da casa, e na
+              edição inglesa cita diplomas pelo nome português»), e é a única
+              forma que o portão de HTML aceita, porque `derivation_en` não é um
+              campo que se marque. `leis` é o que põe a marca da língua nos nomes
+              de diploma que a conta cite. */}
+          <CampoDaLinha id={c.id} campo="derivation" valor={aritmetica} lang={lang} leis />
+        </p>
+      )}
+    </div>
+  ) : (
+    <article
+      class="cartao-medida"
+      data-cartao-medida={c.id}
+      data-estado={provenienciaIncompleta(c) ? 'por-confirmar' : 'completa'}
+      {...resto}
+    >
+      {/* (a) O NOME. `escada="cartao"` é a escada que recusa um nome noutra língua
+          que não a da página; a marca (`data-nome` com o identificador da linha, ou
+          `data-linha-campo`) é a mesma que o índice já leva, e é ela que faz do nome
+          uma coisa conferida e não uma dispensa. */}
+      <NomeDaMedida linha={c} lang={lang} escada="cartao" class="cartao-medida-nome" />
 
-  {/* (d) A RÉGUA. Rende-se só onde houver linha selada ou valor de referência
-      declarado; onde não houver, não se desenha e não se escreve a ausência por
-      palavras. */}
-  <ReguaDoCartao id={c.id} lang={lang} s={s} />
-</article>
+      {/* (b) O VALOR, A UNIDADE E O PERÍODO, NUMA LINHA. A marca da fonte, que é a
+          coisa (e) das cinco, vive dentro do `<Claim chip>`: `auditaSelo()` procura
+          o selo dentro do PAI do elemento do valor, e é essa vizinhança que o portão
+          confere. Um invólucro entre os dois partia-a. */}
+      <p class="cartao-medida-valor">
+        <Claim id={c.id} lang={lang} as="span" class="cartao-medida-num" chip={true} />
+        <CampoDaLinha
+          id={c.id}
+          campo="unit"
+          valor={unidade.texto}
+          lang={lang}
+          class="cartao-medida-unidade"
+          lingua={unidade.lingua}
+        />
+        {periodo && (
+          <span class="cartao-medida-periodo">
+            {/* «em», e não «Dados de». A preposição é a gramática da frase, e o
+                rótulo do campo é do recibo. É prosa da casa, declarada uma vez em
+                `strings.mjs` e no inventário das frases. */}
+            <span class="cartao-medida-em" data-voz>
+              {s.cartao.em}{' '}
+            </span>
+            <CampoDaLinha id={c.id} campo="reference_date" valor={periodo} lang={lang} />
+          </span>
+        )}
+      </p>
+
+      {/* (c) A FRASE DO QUE A MEDIDA MEDE. */}
+      {frase && (
+        <p class="cartao-medida-frase" data-cartao-definicao={c.id}>
+          <Frase partes={frase} lang={lang} selos={true} />
+        </p>
+      )}
+
+      {/* (d) A RÉGUA. Rende-se só onde houver linha selada ou valor de referência
+          declarado; onde não houver, não se desenha e não se escreve a ausência por
+          palavras. */}
+      <ReguaDoCartao id={c.id} lang={lang} s={s} />
+    </article>
+  )
+}

@@ -105,6 +105,7 @@ import { DEFINICOES_DAS_MEDIDAS, textoDaDefinicao } from '../../src/data/figuras
 import {
   chavesDoEnquadramento,
   reguaDaMedida,
+  mesmaSerie,
   ficheirosDoMotor,
   valorDeReferenciaDoMotor,
   nomeOficial,
@@ -281,6 +282,14 @@ function corre(dist) {
     com_frase: 0,
     com_regua: 0,
     sem_nome: 0,
+    /* AS LINHAS QUE NÃO SE RENDEM COMO CARTÃO (achado 3, 15.09.2026): as que não
+       têm nome em degrau nenhum rendem-se como linha do livro-razão, com a sua
+       aritmética. Contam-se para que o número esteja no relatório e não numa
+       memória. */
+    linhas_sem_nome: 0,
+    linhas_sem_nome_com_conta: 0,
+    /* A RÉGUA DO PERÍODO ANTERIOR, CONFERIDA PAR A PAR (achado 11). */
+    regua_periodo_anterior: 0,
     governo_constitucional_pt: 0,
     governo_constitucional_en: 0,
     legenda_da_marca: 0,
@@ -332,6 +341,27 @@ function corre(dist) {
         recibos.set(rota.replace(/\/$/, ''), citadas);
       }
 
+      /* AS LINHAS QUE NÃO SE RENDEM COMO CARTÃO (achado 3, 15.09.2026). Contam-se
+         e conferem-se: nenhuma delas pode escrever um rótulo de recibo nem a
+         chave da linha, que são as mesmas duas proibições do cartão. */
+      for (const linha of root.querySelectorAll('[data-linha-sem-nome]')) {
+        const id = linha.getAttribute('data-linha-sem-nome') ?? '';
+        contas.linhas_sem_nome++;
+        if (linha.querySelector('.linha-sem-nome-conta')) contas.linhas_sem_nome_com_conta++;
+        const vista = soOQueSeVe(linha);
+        const visivel = vista.text.replace(/\s+/g, ' ').trim();
+        for (const r of rotulos) {
+          if (visivel.includes(r.texto)) {
+            erros.push(
+              `K11 · ${rota} · ${id}: a linha sem nome escreve o rótulo de recibo «${r.texto}»`,
+            );
+          }
+        }
+        if (id && visivel.includes(id)) {
+          erros.push(`K11 · ${rota} · ${id}: a chave da linha está no texto visível`);
+        }
+      }
+
       for (const cartao of root.querySelectorAll('[data-cartao-medida]')) {
         const id = cartao.getAttribute('data-cartao-medida') ?? '';
         contas.cartoes++;
@@ -360,6 +390,23 @@ function corre(dist) {
         if (classes.includes('cartao-medida-regua')) contas.com_regua++;
         if (!classes.includes('cartao-medida-valor')) {
           erros.push(`K1 · ${rota} · ${id}: o cartão não tem a linha do valor`);
+        }
+        /* ----------------------------------------------------------- K11 */
+        /* UM CARTÃO SEM NOME FECHA A CONSTRUÇÃO (achado 3 da leitura a frio de
+           15.09.2026: «The card gate can pass cards missing mandatory content,
+           and it did … only raises an error when the value line is absent»). O
+           nome é a primeira das cinco coisas, e uma régua que o conta e não o
+           exige está a contar o defeito em vez de o fechar.
+
+           O QUE UMA LINHA SEM NOME FAZ, em vez disto, é não se render como
+           cartão: rende-se como linha do livro-razão, com a sua aritmética
+           (`data-linha-sem-nome`), e essas contam-se noutro sítio. */
+        if (!classes.includes('cartao-medida-nome')) {
+          erros.push(
+            `K11 · ${rota} · ${id}: o cartão rende-se sem nome. O nome é a primeira das cinco ` +
+              `coisas; uma linha sem nome em degrau nenhum rende-se como linha do livro-razão, ` +
+              `com a sua aritmética, e não como cartão`,
+          );
         }
 
         const vista = soOQueSeVe(cartao);
@@ -479,6 +526,30 @@ function corre(dist) {
           }
         }
 
+        /* ----------------------------------------------------------- K12 */
+        /* O PERÍODO ANTERIOR É A OBSERVAÇÃO ANTERIOR DA MESMA SÉRIE (achado 11
+           da leitura a frio de 15.09.2026: «Nothing verifies that a selected
+           "previous period" row is the previous observation of the same series
+           and unit»). A escolha faz-se em `src/lib/enquadramento.mjs`, por
+           `mesmaSerie()`; o que esta célula confere é que o que está NA PÁGINA
+           obedece à regra, que é a única maneira de a promessa valer sobre o
+           `dist/` e não sobre a intenção do código. */
+        for (const item of cartao.querySelectorAll('[data-regua="anterior"]')) {
+          contas.regua_periodo_anterior++;
+          const v = item.querySelector('[data-claim]');
+          const anterior = v?.getAttribute('data-claim') ?? null;
+          if (!anterior) {
+            erros.push(`K12 · ${rota} · ${id}: o item do período anterior não cita linha nenhuma`);
+            continue;
+          }
+          if (!mesmaSerie(id, anterior)) {
+            erros.push(
+              `K12 · ${rota} · ${id}: a régua rende «${anterior}» como período anterior, e as duas ` +
+                `linhas não declaram a mesma edição do documento e a mesma unidade`,
+            );
+          }
+        }
+
         /* ------------------------------------------------------------ K7 */
         const palavra = PALAVRA_RETIRADA[langPagina];
         if (visivel.toLowerCase().includes(palavra)) {
@@ -586,6 +657,26 @@ function montaAProva() {
       '<p class="cartao-medida-regua"><span data-regua="anterior" data-selo-em="saldo-da-balanca-corrente-2025">' +
       '<span data-claim="saldo-da-balanca-corrente-2024">1,3</span></span></p>' +
       '</article>' +
+      /* PLANTA 8 (K11): um cartão sem nome. É o defeito que a leitura a frio de
+         15.09.2026 apanhou na régua («48 nameless cards … yet prints "the five
+         things and only them"»), e a célula que ele derruba é a que essa leitura
+         obrigou a escrever. */
+      '<article data-cartao-medida="jovens-nem-2025">' +
+      '<p class="cartao-medida-valor"><span data-claim="jovens-nem-2025">10,5</span>' +
+      chip('jovens-nem-2025') + '</p>' +
+      '</article>' +
+      /* PLANTA 9 (K12): um período anterior que não é da mesma série. O par é
+         VERDADEIRO e as duas linhas existem: `evora-divida-dgal-2017` e
+         `evora-divida-dgal-2014` declaram edições diferentes do documento («2017»
+         e «2014»), e é por isso que a régua deixou de as emparelhar. Nenhuma
+         linha falsa se escreve para esta prova. */
+      '<article data-cartao-medida="evora-divida-dgal-2017">' +
+      '<span class="cartao-medida-nome">Dívida da câmara</span>' +
+      '<p class="cartao-medida-valor"><span data-claim="evora-divida-dgal-2017">54 681 562</span>' +
+      chip('evora-divida-dgal-2017') + '</p>' +
+      '<p class="cartao-medida-regua"><span data-regua="anterior" data-selo-em="evora-divida-dgal-2017">' +
+      '<span data-claim="evora-divida-dgal-2014">40 000 000</span></span></p>' +
+      '</article>' +
       /* PLANTA 6 (K8): a legenda da marca numa página de área. */
       '<p class="marca-legenda">Ao pé de cada número, a marca da fonte.</p>' +
       '</body></html>',
@@ -615,6 +706,8 @@ if (PROVA) {
     ['K7', 'limiar'],
     ['K8', 'legenda da marca'],
     ['K10', 'marca(s) da fonte'],
+    ['K11', 'rende-se sem nome'],
+    ['K12', 'não declaram a mesma edição'],
   ];
   for (const [celula, pedaco] of esperado) {
     const vistos = dessaCelula(celula);
@@ -716,6 +809,31 @@ if (PROVA) {
     falhas.push(`a K9 grita por um par que bate certo: ${parBom}`);
   }
 
+  /* -------------------------------------------------------------------------
+     A PROVA DA MESMA SÉRIE (achado 11, 15.09.2026), com dois pares verdadeiros:
+     um que bate (a mesma edição do documento e a mesma unidade) e um que não
+     bate (duas edições diferentes do mesmo publicador). Nenhuma linha falsa.
+     ------------------------------------------------------------------------- */
+  if (!mesmaSerie('precos-da-habitacao-2025', 'precos-da-habitacao-2024')) {
+    falhas.push(
+      'mesmaSerie() recusa um par que bate certo: «precos-da-habitacao-2025» e ' +
+        '«precos-da-habitacao-2024» declaram a mesma edição do documento e a mesma unidade',
+    );
+  }
+  if (mesmaSerie('evora-divida-dgal-2017', 'evora-divida-dgal-2014')) {
+    falhas.push(
+      'mesmaSerie() aceita um par que não bate: «evora-divida-dgal-2017» declara a edição «2017» ' +
+        'e «evora-divida-dgal-2014» declara «2014»',
+    );
+  }
+  /* E A RÉGUA DE UMA MEDIDA CUJO PERÍODO ANTERIOR NÃO BATE NÃO RENDE O ITEM. */
+  if (reguaDaMedida('evora-divida-dgal-2017').anterior !== null) {
+    falhas.push(
+      'a régua rende o período anterior de «evora-divida-dgal-2017», cuja linha declara outra ' +
+        'edição do documento',
+    );
+  }
+
   if (falhas.length > 0) {
     console.error(vermelho('\n  A PROVA DA RÉGUA DO CARTÃO FALHOU\n'));
     for (const f of falhas) console.error(`    ${f}`);
@@ -727,7 +845,7 @@ if (PROVA) {
       `  prova: ${esperado.length} estragos plantados, ${esperado.length} vistos; o cartão são a 0; ` +
         `a régua com as duas comparações de uma medida, a série bienal, a ausência da linha da ` +
         `União e uma chave que não se inventa; as duas testemunhas do valor de referência com um ` +
-        `par bom e dois maus`,
+        `par bom e dois maus; a mesma série com um par que bate e um que não bate`,
     ),
   );
 }
@@ -793,10 +911,26 @@ console.log('  A RÉGUA DO CARTÃO DE UMA MEDIDA · bloco P2');
 console.log('');
 console.log(cinza(`    páginas lidas                    ${r.contas.paginas}`));
 console.log(cinza(`    cartões                          ${r.contas.cartoes} (${r.contas.cartoes_pt} pt, ${r.contas.cartoes_en} en)`));
-console.log(cinza(`    com nome                         ${r.contas.com_nome}`));
-console.log(cinza(`    sem nome (à espera do motor)     ${r.contas.sem_nome}`));
-console.log(cinza(`    com a frase do que medem         ${r.contas.com_frase}`));
-console.log(cinza(`    com régua                        ${r.contas.com_regua}`));
+/* OS NÚMEROS COMO ELES SÃO (achado 3 da leitura a frio de 15.09.2026). A régua
+   imprimia «com a frase do que medem 30» e acabava com «as cinco coisas e só
+   elas, em todos os cartões», e as duas coisas não podem ser verdade ao mesmo
+   tempo: 30 de 262 não é «em todos». Cada linha passa a dizer a fração, e a
+   linha final diz o que a régua conferiu e não o que seria bom que ela tivesse
+   conferido. */
+console.log(cinza(`    com nome                         ${r.contas.com_nome} de ${r.contas.cartoes}`));
+console.log(
+  cinza(`    com a frase do que medem         ${r.contas.com_frase} de ${r.contas.cartoes} com frase`),
+);
+console.log(cinza(`    com régua                        ${r.contas.com_regua} de ${r.contas.cartoes} com régua`));
+console.log(
+  cinza(
+    `    linhas sem nome, como linha do livro-razão             ${r.contas.linhas_sem_nome} ` +
+      `(${r.contas.linhas_sem_nome_com_conta} com a aritmética escrita)`,
+  ),
+);
+console.log(
+  cinza(`    itens «período anterior», pares conferidos             ${r.contas.regua_periodo_anterior}`),
+);
 console.log(cinza(`    «Governo Constitucional»         ${r.contas.governo_constitucional_pt} pt · ${r.contas.governo_constitucional_en} en`));
 console.log(cinza(`    legenda da marca                 ${r.contas.legenda_da_marca} página(s)`));
 console.log(cinza(`    nome na língua da fonte          ${r.contas.nome_noutra_lingua} (com a marca «lang»)`));
@@ -819,5 +953,12 @@ if (r.erros.length > 0) {
   console.error('');
   process.exit(1);
 }
-console.log(verde('  ✓ as cinco coisas e só elas, em todos os cartões das duas edições'));
+console.log(
+  verde(
+    `  ✓ ${r.contas.cartoes} cartões, todos com nome; nenhum com um bloco a mais, um rótulo de ` +
+      `recibo ou a chave à vista; ${r.contas.com_frase} de ${r.contas.cartoes} com frase e ` +
+      `${r.contas.com_regua} de ${r.contas.cartoes} com régua, e os ` +
+      `${r.contas.regua_periodo_anterior} períodos anteriores da mesma série e da mesma unidade`,
+  ),
+);
 console.log('');
