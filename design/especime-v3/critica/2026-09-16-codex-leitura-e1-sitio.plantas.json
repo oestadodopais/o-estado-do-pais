@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-16T19:28:36+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/pacote-e1-sitio",
+ "plantas": [
+  {
+   "id": "Y1",
+   "ficheiro": "studies-src/manifest.yml",
+   "descricao": "o resumo normalizado da edição portuguesa com o último algarismo trocado (6 passa a 7)",
+   "sha256_antes": "29af5e998cc34a13e01ff48daee90229e1d0e8cebbc4555c72c45e8d304fb1e2",
+   "sha256_depois": "02f8dea3f52ab3dcb6f7c3e92b6b77a7bb3bd3495e4761a14666770e17a03457",
+   "contexto_antes": "utc: 2026-09-16T18:59:22Z\n    bytes_raw: 61558\n    bytes_normalized: 61558\n    sha256_raw: bdb3462474cc0e12c8d35f4d650d831a1d6b0646f91acf27e4dc17adda2e70f6\n    sha256_normalized: bdb3462474cc0e12c8d35f4d650d831a1d6b0646f91acf27e4dc17adda2e70f6\n  - slug: evora-2027-prometido-painel-dinheiro\n    lang: en\n    title: \"Évora 2027 — Promised, Panel, Money\"\n    origin: researchhub\n    origin_ref: \"content/1",
+   "contexto_depois": "utc: 2026-09-16T18:59:22Z\n    bytes_raw: 61558\n    bytes_normalized: 61558\n    sha256_raw: bdb3462474cc0e12c8d35f4d650d831a1d6b0646f91acf27e4dc17adda2e70f6\n    sha256_normalized: bdb3462474cc0e12c8d35f4d650d831a1d6b0646f91acf27e4dc17adda2e70f7\n  - slug: evora-2027-prometido-painel-dinheiro\n    lang: en\n    title: \"Évora 2027 — Promised, Panel, Money\"\n    origin: researchhub\n    origin_ref: \"content/1"
+  },
+  {
+   "id": "Y2",
+   "ficheiro": "src/data/studies.mjs",
+   "descricao": "a data da edição inglesa trocada (16 passa a 15)",
+   "sha256_antes": "204cba270fedb5cf60a49e8e178d503cb0defdb2e2ec84cacea940510662596d",
+   "sha256_depois": "a3eab32dcf80ae016c96c622630b61ab151df38ee8c7d1eee7ce7748c4bb336c",
+   "contexto_antes": "\n      {\n        lang: 'pt',\n        title: 'Évora 2027 — O Prometido, o Painel, o Dinheiro',\n        date: '2026-09-16',\n        updated: null,\n      },\n      { lang: 'en', title: 'Évora 2027 — Promised, Panel, Money', date: '2026-09-16', updated: null },\n    ],\n    // Nunca foi publicado fora deste sítio: não há endereço externo para dar.\n    artifactUrl: null,\n    /* A descrição diz o que o estudo põe lado a ",
+   "contexto_depois": "\n      {\n        lang: 'pt',\n        title: 'Évora 2027 — O Prometido, o Painel, o Dinheiro',\n        date: '2026-09-16',\n        updated: null,\n      },\n      { lang: 'en', title: 'Évora 2027 — Promised, Panel, Money', date: '2026-09-15', updated: null },\n    ],\n    // Nunca foi publicado fora deste sítio: não há endereço externo para dar.\n    artifactUrl: null,\n    /* A descrição diz o que o estudo põe lado a "
+  },
+  {
+   "id": "Y4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "uma contagem do relatório trocada (119 blocos lidos passa a 118)",
+   "sha256_antes": "6418fafa166bb6abc3caa60b87a909294f7fe6984e090d364f9675a2f1ea514d",
+   "sha256_depois": "8e6a860cf90efc65457c5002f13220097911f9ed959fcf6fc9c41c9769f99c8c",
+   "contexto_antes": "entidos.\n4. **Dois números que declaram o tamanho do que uma régua mede**: o âmbito do `provar:eyetext` (5 → 7 edições, com a prova relida sobre as duas novas: 119 blocos lidos contra 119 no registo, 880 unidades iguais carácter a carácter, 0 isentas) e a catraca L1 do `check:lugar` (2 284 → 2 286). A subida da catraca está medida e é inteira: a família `d",
+   "contexto_depois": "entidos.\n4. **Dois números que declaram o tamanho do que uma régua mede**: o âmbito do `provar:eyetext` (5 → 7 edições, com a prova relida sobre as duas novas: 118 blocos lidos contra 119 no registo, 880 unidades iguais carácter a carácter, 0 isentas) e a catraca L1 do `check:lugar` (2 284 → 2 286). A subida da catraca está medida e é inteira: a família `d"
+  },
+  {
+   "id": "Y5",
+   "ficheiro": "registos/manifest.json",
+   "descricao": "a contagem de blocos da segunda entrada do estudo no manifesto dos registos trocada (119 passa a 120; a segunda ocorrência, plantada por guião próprio)",
+   "sha256_antes": "98fb82124615496c7925338c082793e1b317c1caacafa0e14b2345b34bafd4e0",
+   "sha256_depois": "7de0b49f6e1593641050bce45f8efbc68baea71fda87908f89e0e4a8efe7b515",
+   "contexto_antes": "256\": \"c10aa922c7c4aa4cb5b5153d218861dc623e340c6c11318f29f25acdb23235a1\",\n   \"rh_study\": \"14 Évora 2027\"\n  },\n  \"evora-2027-prometido-painel-dinheiro/pt\": {\n   \"blocos\": 119,\n   \"edicao_html\": \"Évora 2027 — O Prometido, o Painel, o Dinheiro (pt-PT).html\",\n   \"edicao_html_sha256\": \"bdb3462474cc0e12c8d35f4d650d831a1d6b0646f91acf27e4d",
+   "contexto_depois": "256\": \"c10aa922c7c4aa4cb5b5153d218861dc623e340c6c11318f29f25acdb23235a1\",\n   \"rh_study\": \"14 Évora 2027\"\n  },\n  \"evora-2027-prometido-painel-dinheiro/pt\": {\n   \"blocos\": 120,\n   \"edicao_html\": \"Évora 2027 — O Prometido, o Painel, o Dinheiro (pt-PT).html\",\n   \"edicao_html_sha256\": \"bdb3462474cc0e12c8d35f4d650d831a1d6b0646f91acf27e4d"
+  },
+  {
+   "id": "Y3",
+   "ficheiro": "built/estudos/evora-2027-prometido-painel-dinheiro/texto/index.html",
+   "descricao": "um valor da tabela da página construída trocado (o saldo a transitar na célula, 826 passa a 862; as duas cópias do valor na dobra da linha ficam certas)",
+   "sha256_antes": "55520a20e5acbafe7d35231328eb544c915200cad4208fa2a48d03d367af18f4",
+   "sha256_depois": "56d153f644c9a0f6cc2fd9f6203c1293e83f3fe004f513e10054075456972263",
+   "contexto_antes": "tido-painel-dinheiro/pt#81.10.1\"><a class=\"texto-figura texto-figura-porta\" href=\"#linha-plano-saldo-2027\" data-registo=\"evora-2027-prometido-painel-dinheiro/pt#81.10.1.0\">748 826,62</a> €</td><td data-registo-unidade=\"evora-2027-prometido-painel-dinheiro/pt#81.10.2\">p. 52</td></tr></table></div><p data-registo-bloco=\"82\" data-registo-unidade=\"evora-2",
+   "contexto_depois": "tido-painel-dinheiro/pt#81.10.1\"><a class=\"texto-figura texto-figura-porta\" href=\"#linha-plano-saldo-2027\" data-registo=\"evora-2027-prometido-painel-dinheiro/pt#81.10.1.0\">748 862,62</a> €</td><td data-registo-unidade=\"evora-2027-prometido-painel-dinheiro/pt#81.10.2\">p. 52</td></tr></table></div><p data-registo-bloco=\"82\" data-registo-unidade=\"evora-2"
+  }
+ ]
+}
