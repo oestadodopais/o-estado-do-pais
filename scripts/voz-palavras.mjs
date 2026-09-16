@@ -32,6 +32,15 @@
  *     (`data-nonledger="nome-oficial-da-medida"`). O que se copia de uma fonte
  *     fica como a fonte o escreveu, e uma palavra da lista lá dentro não é este
  *     projeto a escrevê-la;
+ *   · do registo das correções sai só o que é transcrito, e não a entrada
+ *     inteira (leitura a frio do Codex de 16.09.2026, achado 4). Até essa
+ *     leitura o portão tirava todo o elemento marcado com `data-correcao-campo`,
+ *     e com ele a RAZÃO da correção, que é prosa escrita por este projeto: era
+ *     por aí que «no motor de investigação desta casa» vivia na página das
+ *     correções com o portão verde. Ficam de fora os quatro campos de terceiros
+ *     (o valor antigo e o novo, como a fonte os escreveu; o nome do campo do
+ *     livro-razão; o identificador da linha) e entram na superfície os três que
+ *     este projeto escreve: a razão, o rótulo do tipo e a data;
  *   · sai o que está DENTRO DE UMA DOBRA e não no seu rótulo: o corpo de um
  *     `<details>`, que é exactamente o «atrás de um toque» da norma §2.1. O
  *     `<summary>` fica, porque é o que se lê com a dobra fechada.
@@ -208,6 +217,19 @@ export const EXCECOES = [
 ];
 
 /**
+ * Os campos do registo das correções que são de terceiros, e por isso não são
+ * superfície deste projeto.
+ *
+ * O valor antigo e o novo são o número como a fonte o escreveu; `field` é o nome
+ * de um campo do livro-razão; `id` é o identificador da linha. Os outros três
+ * campos que o registo marca (`reason`, `kind`, `date`) são escritos por este
+ * projeto, e por isso medem-se como qualquer outra frase sua.
+ *
+ * @type {string[]}
+ */
+export const CAMPOS_DE_CORRECAO_TRANSCRITOS = ['old_value', 'new_value', 'field', 'id'];
+
+/**
  * O texto do leitor de uma página, tal como ele o vê sem abrir nada.
  *
  * @param {string} html
@@ -217,7 +239,9 @@ export function superficieDe(html) {
   const root = parse(html);
   for (const fora of root.querySelectorAll('script, style')) fora.remove();
   for (const campo of root.querySelectorAll(
-    '[data-linha-campo], [data-correcao-campo], [data-verbatim], [data-registo], [data-agenda], [data-nonledger="nome-oficial-da-medida"]',
+    `[data-linha-campo], [data-verbatim], [data-registo], [data-agenda], [data-nonledger="nome-oficial-da-medida"], ${CAMPOS_DE_CORRECAO_TRANSCRITOS.map(
+      (c) => `[data-correcao-campo="${c}"]`,
+    ).join(', ')}`,
   )) {
     campo.remove();
   }
