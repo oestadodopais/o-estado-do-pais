@@ -1,3 +1,9 @@
+sobre 37912148 (a cabeça do código)
+build 0
+verify 0
+typecheck 0
+
+sobre 0a0da466 (a cabeça com as capturas e as tabelas)
 build 0
 verify 0
 typecheck 0
