@@ -537,7 +537,12 @@ export const STRINGS = {
       janelaE: 'e',
       origemDaDataK: 'Onde está escrito',
       /* A MESMA FRASE DA DATA DE ACESSO (F1.10, §7.3): ver `prov.lido`. */
-      acedidoK: 'Lido na fonte a',
+      /* «lido a», e não «Lido na fonte a» (bloco P3, 16.09.2026, item 5): o
+         segundo está na lista das palavras que o sítio não usa à vista (norma
+         §1.3), porque é o nome de um campo do recibo. Aqui a linha diz onde a
+         data está escrita e quando foi lida, e «lido a» é o que a página da
+         linha já escreve no mesmo sítio. */
+      acedidoK: 'lido a',
       /* «LINHAS A QUE ISTO DIZ RESPEITO», E NÃO «LINHAS QUE ISTO MOVE» (decisão
          do lugar de direção de 08.09.2026, da leitura a frio do bloco F2.6b do
          motor). O motor passou a pôr neste campo as linhas do último período
@@ -660,7 +665,7 @@ export const STRINGS = {
          rendem a caixa dos concelhos, e vive dentro de um `<noscript>`, que é o
          único sítio onde ela é verdade. */
       pesquisaSemGuiao:
-        'Sem guião, o botão leva à lista inteira dos concelhos, agrupada por distrito e por ilha.',
+        'Sem JavaScript, o botão leva à lista inteira dos concelhos, agrupada por distrito e por ilha.',
       /* O COMANDO DA BUSCA, QUE PASSOU A SER UM `<form>` (F1.1, item 12).
          Sem guião a caixa não filtrava nada e a página não tinha maneira de
          levar a lado nenhum: agora a busca é um formulário com destino, e o
@@ -1537,9 +1542,13 @@ export const STRINGS = {
          o nome que o próprio campo tem no livro-razão (`reference_date`), dito
          por extenso como os outros dois. Os três continuam a ser o nome do
          campo, e não uma frase sobre o que a casa faz. */
-      dataPeriodo: 'período de referência',
+      /* «período de referência» e «verificado a» SAÍRAM A 16.09.2026 (bloco P3,
+         item 2; decisão do diretor de 16.09): as três datas de uma medida vivem
+         no recibo da linha, e não na dobra da leitura breve. `dataLido` fica,
+         porque a dobra do excerto de uma DEFINIÇÃO continua a dizer quando essa
+         definição foi lida na fonte, e essa dobra é o lugar atrás da marca que a
+         norma §2.1 lhe dá. */
       dataLido: 'lido na fonte a',
-      dataConferido: 'verificado a',
       /* RETIRADA A 09.09.2026 (terceira repetição da releitura do leitor de
          primeira vez): a linha da fonte da página do domínio dizia «fonte
          Eurostat · <título>», e a palavra «fonte» é do SELO (§7.2). A linha
@@ -1827,6 +1836,13 @@ export const STRINGS = {
       enderecoA: 'Quem encontrar um erro escreve para ',
       enderecoB:
         '. Um erro confirmado entra no registo com crédito a quem o encontrou, se o desejar.',
+      /* O DIREITO DE RESPOSTA (diretor, 15.09.2026; a emenda da política da
+         autonomia, item 8 do bloco P3). É a segunda das três proteções que
+         substituíram a revisão caso a caso de qualquer peça que nomeie uma
+         pessoa, e vive aqui porque é aqui que a resposta se pede: a norma diz-se
+         no Sobre, uma vez, e o endereço é o mesmo desta página. */
+      direitoDeResposta:
+        'Quem for nomeado pode responder: a resposta publica-se ao lado da peça, sem edição, pelo mesmo endereço das correções.',
       metodoLink: 'A regra, no Método',
       registoK: 'O registo',
       caixaTitulo: 'Escrever uma correção',
@@ -2055,7 +2071,7 @@ export const STRINGS = {
       conjuntoLicenca: 'Publicado sob',
       conjuntoAtribuicao: 'Atribuição',
       conjuntoAmbito:
-        'A licença cobre o conjunto: a estrutura, os valores da casa, as derivações e as descrições. Os excertos transcritos das fontes continuam sob os termos de quem os publicou.',
+        'A licença cobre o conjunto: a estrutura, os valores deste projeto, as derivações e as descrições. Os excertos transcritos das fontes continuam sob os termos de quem os publicou.',
 
       linha: {
         eyebrow: 'Linha do livro-razão',
@@ -2075,7 +2091,7 @@ export const STRINGS = {
         excertoDerivada:
           'Esta linha não cita nenhuma frase: o valor é calculado a partir de outras linhas, e a prova documental é a delas.',
         excertoDaCasa:
-          'Esta linha não cita nenhuma frase porque não há nenhuma para citar: o valor é uma contagem do próprio registo desta casa, e é reavaliado a cada construção do sítio. Nenhum documento externo o publica.',
+          'Esta linha não cita nenhuma frase porque não há nenhuma para citar: o valor é uma contagem do próprio registo deste projeto, e é reavaliado a cada construção do sítio. Nenhum documento externo o publica.',
         excertoAlojado:
           'Esta linha não cita nenhuma frase porque a fonte não publica nenhuma: o valor é a contagem das linhas do ficheiro que este sítio aloja, acima, e é recontado a cada construção.',
         derivacaoNota: 'A conta, por palavras.',
@@ -2543,7 +2559,7 @@ export const STRINGS = {
          página do concelho traz `?concelho=<slug>`, e é o guião que esconde as
          linhas que não casam. Sem ele a página mostra todos os estudos, e passa
          a dizê-lo. */
-      filtroSemGuiao: 'Sem guião, a lista mostra todos os estudos.',
+      filtroSemGuiao: 'Sem JavaScript, a lista mostra todos os estudos.',
       filtroTudo: 'Ver todos os estudos',
       /* A CAIXA DAS DATAS POR CONFIRMAR PASSA A CONTAR (bloco F1.4b,
          04.09.2026). Dizia «Datas de publicação por confirmar.» em cima de uma
@@ -2980,7 +2996,7 @@ export const STRINGS = {
       janelaEntre: 'between',
       janelaE: 'and',
       origemDaDataK: 'Where it is written',
-      acedidoK: 'Read at the source on',
+      acedidoK: 'read on',
       /* Ver a razão na edição portuguesa, e o registo em `CHAVES-EN.md`. */
       afectaK: 'Rows this concerns',
       notaK: 'Note',
@@ -3034,7 +3050,7 @@ export const STRINGS = {
       pesquisaSemResultado: 'No municipality by that name.',
       /* Ver a razão na edição portuguesa. */
       pesquisaSemGuiao:
-        'Without scripting, the button leads to the full list of municipalities, grouped by district and island.',
+        'Without JavaScript, the button leads to the full list of municipalities, grouped by district and island.',
       /* O comando da busca. Ver a razão na edição portuguesa. */
       pesquisaSubmeter: 'Search',
     },
@@ -3303,9 +3319,7 @@ export const STRINGS = {
       ausenciaResposta: 'There is no published figure for this.',
       ausenciaProcurado: 'looked for in',
       /* Ver a razão na edição portuguesa, e o registo em `CHAVES-EN.md`. */
-      dataPeriodo: 'reference period',
       dataLido: 'read at the source on',
-      dataConferido: 'verified on',
       /* Ver a razão na edição portuguesa. */
       mapaSemValor: 'no published value',
       mapaMenosDe: 'less than ',
@@ -3445,6 +3459,9 @@ export const STRINGS = {
       ],
       enderecoA: 'Anyone who finds an error writes to ',
       enderecoB: '. A confirmed error enters the register with credit to whoever found it, if they wish.',
+      /* Ver a razão na edição portuguesa. */
+      direitoDeResposta:
+        'Anyone named may reply: the reply is published beside the piece, unedited, through the same address as the corrections.',
       metodoLink: 'The rule, in the Method',
       registoK: 'The register',
       caixaTitulo: 'Write a correction',
@@ -3540,7 +3557,7 @@ export const STRINGS = {
       conjuntoLicenca: 'Published under',
       conjuntoAtribuicao: 'Attribution',
       conjuntoAmbito:
-        'The licence covers the dataset: its structure, the house values, the derivations and the descriptions. Excerpts transcribed from sources remain under their publishers’ terms.',
+        'The licence covers the dataset: its structure, this project’s values, the derivations and the descriptions. Excerpts transcribed from sources remain under their publishers’ terms.',
 
       linha: {
         eyebrow: 'Ledger row',
@@ -3723,7 +3740,7 @@ export const STRINGS = {
       filtroConcelhoA: 'Showing only the studies about ',
       filtroConcelhoB: '.',
       /* Ver a razão na edição portuguesa. */
-      filtroSemGuiao: 'Without scripting, the list shows every study.',
+      filtroSemGuiao: 'Without JavaScript, the list shows every study.',
       filtroTudo: 'See all the studies',
       avisoA: 'Publication dates not yet confirmed for',
       avisoUma: 'edition.',
