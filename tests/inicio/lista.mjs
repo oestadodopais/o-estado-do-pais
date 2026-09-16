@@ -29,11 +29,11 @@
  * Desde 01.09.2026 mede-se a GAVETA e não a lista, e a razão está na célula: com
  * a lista recolhida, os 29 nomes só têm caixa quando ela abre.
  *
- * L3 · A PÁGINA DEIXA DE CRESCER, nas duas edições. A altura da grelha da cabeça
- * contra a da sua coluna mais alta: antes deste bloco a lista estava dentro da
- * coluna do instrumento e a grelha media 1 552 px a 1280, com 1 260 px de papel
- * vazio à esquerda. A célula não guarda o número de antes (ele envelheceria):
- * guarda a relação que o torna impossível.
+ * L3 · RETIRADA a 16.09.2026. Media «a grelha não passa muito da coluna do
+ * mapa», que é a relação que a cabeça de hoje não tem: a coluna esquerda leva a
+ * busca, a porta do concelho e a legenda, e é 292 px mais alta do que a do mapa.
+ * A razão inteira está no corpo da régua, no bloco «a relação que três células
+ * mediam».
  *
  * L4 · NENHUMA UNIDADE SEM ALVO TOCÁVEL, que é o que a Emenda 20c protege. Em
  * cada largura, cada nome VISÍVEL, e não apenas presente no documento: a régua do
@@ -59,7 +59,10 @@
  * L7 · A MARCA NÃO É SÓ COR, nas duas edições. Dos dois lados, o que muda entre o
  * repouso e a marca tem de incluir uma grandeza que não é cor.
  *
- * L8 · O NOME DE CADA PAINEL CONTA O QUE ESTÁ NA PÁGINA. O algarismo tem de estar
+ * L8 · RETIRADA a 16.09.2026: os dois painéis saíram da primeira página com o
+ * F1.10 e vivem em `/uniao-europeia`. A razão inteira está no corpo da régua.
+ * O que ela media, enquanto os painéis estavam aqui: o nome de cada painel conta
+ * o que está na página, e o algarismo tem de estar
  * dentro de um `data-prova` com a chave certa, e o número que ele mostra tem de
  * ser o número de leituras breves de cada uma das duas metades da área de
  * leitura, contadas no documento (`#painel [data-leituras="pdm"]` e
@@ -425,7 +428,8 @@ const intersecta = (a, b) =>
 
 async function correTudo(soEstas) {
   const precisa = (c) => !soEstas || soEstas.includes(c);
-  const daPagina = ['L1', 'L2', 'L3', 'L4', 'L5', 'L8', 'L9', 'L10', 'L11', 'L12', 'L13'].filter(precisa);
+  /* A L3 e a L8 saíram a 16.09.2026, com a razão escrita em cada uma. */
+  const daPagina = ['L1', 'L2', 'L4', 'L5', 'L9', 'L10', 'L11', 'L12', 'L13'].filter(precisa);
   const daMao = ['L6', 'L7'].filter(precisa);
 
   const lido = {};
@@ -436,7 +440,7 @@ async function correTudo(soEstas) {
       if (['L4', 'L5', 'L9', 'L10'].includes(c)) for (const w of LARGURAS) larguras.add(w);
       if (c === 'L2') larguras.add(1024);
       if (['L11', 'L12', 'L13'].includes(c)) for (const w of [1024, 1280, 1440]) larguras.add(w);
-      if (['L1', 'L2', 'L3', 'L8'].includes(c)) larguras.add(1280);
+      if (['L1', 'L2'].includes(c)) larguras.add(1280);
     }
     for (const e of EDICOES) {
       for (const w of [...larguras].sort((a, b) => a - b)) {
@@ -543,33 +547,68 @@ async function correTudo(soEstas) {
            fim do desenho, e a promessa de que o fundo dos dois é o mesmo é a L11,
            que corre a 1280 e a 1440, onde ela vale. A célula continua a exigir a
            banda e a ordem, que são o que ela sempre protegeu. */
+        /* E A 1280 A TERCEIRA EXIGÊNCIA CAI TAMBÉM (16.09.2026, achado 13 da
+           leitura a frio do Codex). «Começar antes do fim da coluna do mapa» era
+           o que punha a legenda AO LADO do desenho, e valia quando a coluna
+           esquerda era a manchete e a legenda. Hoje a coluna esquerda leva a
+           busca, a porta do concelho e a legenda, e é 292 px mais alta do que a
+           do mapa: a legenda é a última coisa dela e fica por baixo do fim do
+           desenho, a 1024 como a 1280. O sítio onde ela está hoje mede-se por
+           inteiro na L12, nas três larguras («a legenda por cima dos nomes,
+           alinhada à esquerda com eles»), e não se perde nada. A célula fica com
+           a banda e com a ordem, que são o que ela sempre protegeu. */
         const naBanda = Math.abs(r.lado.x - r.cabeca.x) < 1 && Math.abs(r.lado.w - r.cabeca.w) < 1;
         const porBaixoDaManchete = r.lado.y >= r.cabeca.fundo;
-        const aoLadoDoMapa = w >= 1280 ? r.lado.y < r.instrumento.fundo : true;
         conta(
-          `L2·${e.chave}·${w} · a legenda do mapa na banda da cabeça, por baixo da manchete${w >= 1280 ? ' e ao lado do mapa' : ''}`,
-          naBanda && porBaixoDaManchete && aoLadoDoMapa,
+          `L2·${e.chave}·${w} · a legenda do mapa na banda da cabeça, por baixo da manchete`,
+          naBanda && porBaixoDaManchete,
           `legenda x ${r.lado.x} w ${r.lado.w} (cabeça x ${r.cabeca.x} w ${r.cabeca.w}) · topo ${r.lado.y} contra o fim da manchete ${r.cabeca.fundo} e o fim do mapa ${r.instrumento.fundo}`,
         );
       }
     }
   }
 
+  /* ---------------------------------------------------------------------------
+   * A RELAÇÃO QUE TRÊS CÉLULAS MEDIAM, E QUE A CABEÇA DE HOJE NÃO TEM
+   * ---------------------------------------------------------------------------
+   * 16.09.2026, passagem de correção do P3, achado 13 da leitura a frio do
+   * Codex, por decisão da triagem do lugar de direção («cada célula que mede
+   * mobília que saiu retira-se com a razão escrita, e as outras acertam-se»).
+   *
+   * A L3, a segunda metade da L11 e a terceira condição da L13 mediam TODAS A
+   * MESMA COISA, dita de três maneiras: que a coluna do mapa e a coluna da
+   * esquerda acabam juntas. Era verdade a 29.08.2026, quando a coluna esquerda
+   * era a manchete e a legenda e mais nada. Deixou de ser verdade quando o F1.1
+   * tirou a lista dos nomes da grelha para uma banda de largura inteira, o F1.1d
+   * e o F1.1e mudaram o estado de chegada da gaveta, o F1.10 pôs a busca e a
+   * porta do concelho debaixo da manchete, e o F1.13 refez a porta da frente. A
+   * coluna esquerda passou a levar mais coisas do que o mapa, e mede hoje, a
+   * 1280, 981,5 px contra 689,0 px da coluna do mapa.
+   *
+   * O QUE FICA DE CADA UMA, e porquê:
+   *
+   *   · L3 SAI INTEIRA. O sujeito dela era essa relação e mais nada («a grelha
+   *     não passa muito da coluna do mapa»), e sem ela a célula não tem o que
+   *     medir. A página continua a não crescer sem razão, e quem o diz é a F13
+   *     da régua da faixa (nenhum transbordo horizontal às sete larguras) e as
+   *     capturas nas cinco larguras, que é onde uma decisão de altura se lê.
+   *   · L11 FICA COM O TOPO. «O mapa começa no topo da manchete» é uma promessa
+   *     da cabeça alinhada que continua de pé e continua a medir-se; «e acaba no
+   *     fundo da legenda» sai com a razão de cima.
+   *   · L13 FICA COM A COLUNA E COM O DESENHO. «Cabe na coluna» e «o desenho
+   *     enche a caixa» (a razão do `viewBox`) são do mapa e não da grelha;
+   *     «enche-a em altura» sai com a razão de cima.
+   *
+   * NADA DISTO ENFRAQUECE A RÉGUA POR GOSTO: o que sai é uma promessa que a
+   * cabeça de hoje não faz, e o que fica continua a ter planta que o derruba.
+   * Uma célula vermelha há doze dias por medir uma cabeça que já não existe não
+   * protege nada: só ensina a ler o vermelho como ruído.
+   * ------------------------------------------------------------------------ */
+
   /* --------------------------------------------------------------------- L3 */
-  /* COM A GAVETA FECHADA, que é o estado de chegada: o que esta célula mede é a
-     página que o leitor recebe, e não a que ele constrói ao abrir a rede. */
-  if (precisa('L3')) {
-    for (const e of EDICOES) {
-      const r = fechado[`${e.chave}_1280`];
-      const colunaDoInstrumento = r.instrumento.fundo - r.grelha.y;
-      const folga = r.grelha.h - colunaDoInstrumento;
-      conta(
-        `L3·${e.chave}·1280 · a página deixa de crescer: a grelha não passa muito da coluna do mapa (gaveta fechada)`,
-        folga <= 60,
-        `grelha ${r.grelha.h} px · coluna do instrumento ${colunaDoInstrumento.toFixed(1)} px · folga ${folga.toFixed(1)} px (limite 60) · página ${r.pagina} px`,
-      );
-    }
-  }
+  /* RETIRADA a 16.09.2026, com a razão no bloco acima. A célula media «a grelha
+     não passa muito da coluna do mapa», que é a relação que a cabeça de hoje não
+     tem, e mais nada. */
 
   /* --------------------------------------------------------------------- L4 */
   if (precisa('L4')) {
@@ -648,9 +687,12 @@ async function correTudo(soEstas) {
         }
         if (w >= 1280) {
           if (precisa('L11')) {
+            /* SÓ O TOPO desde 16.09.2026: ver a razão no bloco «a relação que
+               três células mediam». O fundo do mapa contra o fundo da legenda
+               era a mesma promessa da L3 e da terceira condição da L13. */
             conta(
-              `L11·${e.chave}·${w} · o mapa começa no topo da manchete e acaba no fundo da legenda`,
-              Math.abs(r.svg.y - r.cabeca.y) <= 2 && Math.abs(r.svg.fundo - r.legenda.fundo) <= 4,
+              `L11·${e.chave}·${w} · o mapa começa no topo da manchete`,
+              Math.abs(r.svg.y - r.cabeca.y) <= 2,
               `mapa de ${r.svg.y} a ${r.svg.fundo} · manchete desde ${r.cabeca.y} · legenda até ${r.legenda.fundo}`,
             );
           }
@@ -678,13 +720,15 @@ async function correTudo(soEstas) {
                o do mapa (leitura cruzada de 29.08). E a caixa não sai da coluna
                por nenhum dos lados, fica a menos de 8 px da largura dela, e não
                passa a altura da grelha. */
+            /* SEM A ALTURA DA GRELHA desde 16.09.2026: ver a razão no bloco «a
+               relação que três células mediam». O que fica é do mapa e não da
+               grelha, e é o que a célula sempre quis dizer sobre o desenho. */
             const arVertical = Math.abs(r.svg.h - r.svg.w * (8030 / 6090));
             conta(
-              `L13·${e.chave}·${w} · o mapa cabe na coluna, enche-a em altura e o desenho enche a caixa`,
+              `L13·${e.chave}·${w} · o mapa cabe na coluna e o desenho enche a caixa`,
               r.svg.x >= r.instrumento.x - 1 &&
                 r.svg.x + r.svg.w <= r.instrumento.x + r.instrumento.w + 1 &&
                 r.instrumento.w - r.svg.w <= 8 &&
-                r.svg.h >= r.grelha.h - 12 &&
                 r.svg.h <= r.grelha.h + 1 &&
                 arVertical <= 1.5,
               `mapa ${r.svg.w} × ${r.svg.h} px em x ${r.svg.x} · coluna x ${r.instrumento.x} w ${r.instrumento.w} · grelha h ${r.grelha.h} · ar vertical ${arVertical.toFixed(1)} px`,
@@ -767,31 +811,30 @@ async function correTudo(soEstas) {
   }
 
   /* --------------------------------------------------------------------- L8 */
-  if (precisa('L8')) {
-    for (const e of EDICOES) {
-      const r = lido[`${e.chave}_1280`];
-      medidas[`painel_${e.chave}`] = r.painel;
-      const porChave = Object.fromEntries(r.painel.map((h) => [h.chave, h]));
-      const pdm = porChave.painel_com_limiar ?? null;
-      const social = porChave.painel_social_total ?? null;
-      const semMarca = r.painel.filter((h) => !h.chave);
-      const comNumeroSolto = r.painel.filter((h) => h.soltos && h.soltos.length);
-      conta(
-        `L8·${e.chave} · o nome de cada painel conta o que está na página, e o algarismo vem da prova`,
-        r.painel.length === 2 &&
-          pdm &&
-          social &&
-          semMarca.length === 0 &&
-          comNumeroSolto.length === 0 &&
-          pdm.algarismo === r.pecasDoPainel &&
-          social.algarismo === r.linhasDoSocial,
-        `«${pdm?.texto ?? '(sem linha)'}» diz ${pdm?.algarismo} e o painel tem ${r.pecasDoPainel} peça(s) · ` +
-          `«${social?.texto ?? '(sem linha)'}» diz ${social?.algarismo} e a lista tem ${r.linhasDoSocial} linha(s)` +
-          `${semMarca.length ? ` · ${semMarca.length} linha(s) SEM data-prova` : ''}` +
-          `${comNumeroSolto.length ? ` · algarismo à mão: ${comNumeroSolto.map((h) => h.soltos.join(',')).join(' ')}` : ''}`,
-      );
-    }
-  }
+  /* ---------------------------------------------------------------------------
+   * RETIRADA a 16.09.2026, na passagem de correção do P3 (achado 13 da leitura a
+   * frio do Codex; a decisão é da triagem do lugar de direção).
+   *
+   * A célula media o nome dos DOIS PAINÉIS da primeira página («o painel dos
+   * desequilíbrios da economia», «o painel do emprego e das condições sociais»),
+   * e exigia que o algarismo de cada nome fosse a contagem das peças e das linhas
+   * que a página rende por baixo dele. Os dois painéis saíram da primeira página
+   * com o F1.10 (08.09.2026, «Números e fontes» e o menu em dois pesos) e vivem
+   * hoje em `/uniao-europeia` e `/en/european-union`. Medido a 16.09.2026 sobre o
+   * `dist/`: a primeira página não tem nenhuma peça de painel (`data-painel` a
+   * zero) e a célula imprimia «(sem linha) diz undefined e o painel tem 0
+   * peça(s)», que é uma régua a medir o vazio.
+   *
+   * O QUE MEDE A CONTAGEM DE HOJE, e mede-a onde ela está: o `gate:html` recusa
+   * qualquer algarismo de uma página construída que não resolva numa linha do
+   * livro-razão ou numa marca de prova declarada, e é ele que passou a responder
+   * pelos dois nomes desde que eles mudaram de página. A régua da página europeia
+   * é do bloco que a fizer: fica dito aqui, e está na I118.
+   *
+   * AS DUAS PLANTAS DELA SAEM COM ELA, mais abaixo, e pela mesma razão: uma
+   * planta que estraga um nome de painel numa página que não tem painéis não
+   * estraga coisa nenhuma.
+   * ------------------------------------------------------------------------ */
 
   /* ----------------------------------------------------------------- L6 e L7 */
   /* COM A GAVETA ABERTA, pela razão de `pagina()`: o par de estado é entre um
@@ -1074,8 +1117,11 @@ const PLANTAS = [
         : html,
   },
   {
+    /* A L3 saiu a 16.09.2026 e a planta fica com a L2, que continua a morder:
+       o estrago põe a coluna da legenda na coluna do mapa e ela deixa de estar
+       na banda da cabeça, que é a primeira exigência da célula. */
     nome: 'a coluna das gavetas de volta para a coluna do mapa, a 1280',
-    celulas: ['L2', 'L3'],
+    celulas: ['L2'],
     estrago: comFolha(
       '@media (min-width:1024px){.cabeca-lado{grid-column:2 !important;grid-row:3 !important}.cabeca-inst{grid-row:1 !important}}',
     ),
@@ -1098,8 +1144,12 @@ const PLANTAS = [
     estrago: comFolha('.mapa-ilhas-lista a{min-width:0 !important;padding-inline:0 !important}'),
   },
   {
+    /* A L11 FICOU SÓ COM O TOPO a 16.09.2026, e este estrago prende o mapa ao
+       topo da coluna (`align-self:start`): a L11 não o vê, e é a L13 que o
+       apanha, pela largura (a tela a 70 % da coluna). O topo tem planta própria,
+       a seguir a esta. */
     nome: 'o mapa solto do fundo da legenda, a 1280 (o item deixa de esticar e a tela volta a ser dimensionada pela largura)',
-    celulas: ['L11', 'L13'],
+    celulas: ['L13'],
     /* A tela a 70 % da coluna, e não a 100 %: com as margens da segunda
        construção, um mapa dimensionado pela largura inteira da coluna acaba a
        4 px do fundo da legenda, que é a tolerância da L11, e o estrago passava
@@ -1126,6 +1176,15 @@ const PLANTAS = [
       soNaPrimeira(rota)
         ? moveBloco(html, '<div class="mapa-legenda', '<div class="cabeca-nomes"', 'depois')
         : html,
+  },
+  {
+    /* A PLANTA DO TOPO DA L11 (16.09.2026). Com a segunda metade da célula
+       retirada, o que fica é «o mapa começa no topo da manchete», e sem planta
+       era uma célula que ninguém provou saber falhar. O estrago empurra a coluna
+       do mapa 60 px para baixo, que é muito mais do que os 2 px de tolerância. */
+    nome: 'o mapa a começar abaixo do topo da manchete, a 1280',
+    celulas: ['L11'],
+    estrago: comFolha('@media (min-width:1280px){.cabeca-inst{margin-block-start:60px !important}}'),
   },
   {
     nome: 'o mapa mais largo do que a coluna, a 1280',
@@ -1160,25 +1219,10 @@ const PLANTAS = [
       );
     },
   },
-  {
-    nome: 'o nome de um painel com uma contagem escrita à mão',
-    celulas: ['L8'],
-    estrago: (html, rota) =>
-      soNaPrimeira(rota)
-        ? html.replace(
-            /<a class="prova-valor" href="[^"]*" data-prova="painel_com_limiar"[^>]*>\d+<\/a>/,
-            '14',
-          )
-        : html,
-  },
-  {
-    nome: 'o nome de um painel com a contagem certa e a marca certa a contar outra coisa',
-    celulas: ['L8'],
-    estrago: (html, rota) =>
-      soNaPrimeira(rota)
-        ? html.replace(/(data-prova="painel_social_total"[^>]*>)\d+(<\/a>)/, '$17$2')
-        : html,
-  },
+  /* AS DUAS PLANTAS DA L8 SAÍRAM a 16.09.2026, com a célula: estragavam o
+     algarismo de um nome de painel numa página que já não tem painéis (o F1.10
+     levou-os para `/uniao-europeia`), e por isso não estragavam coisa nenhuma.
+     A razão está na célula. */
   {
     /* AS DUAS FORMAS NA MESMA LARGURA.
        ----------------------------------------------------------------------
