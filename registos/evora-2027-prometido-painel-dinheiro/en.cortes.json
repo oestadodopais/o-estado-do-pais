@@ -1,0 +1,7 @@
+{
+ "edicao": "14 en",
+ "espaco_de_coordenadas": "nenhum: não há operações. Quando houver, as coordenadas são as das outras edições, reancoradas no record.json por correspondência verbatim do texto sem marcas.",
+ "esquema": "oedp/passagem-de-voz/operacoes/1",
+ "estado": "SEM OPERAÇÕES, e é uma decisão escrita. A passagem de voz de 24 e de 27 de agosto de 2026 cortou de doze edições as frases em que um documento descrevia o seu próprio procedimento. Este estudo nasceu depois dessa palavra e com ela já aplicada à sua escrita: a prosa foi escrita com a fonte por sujeito desde a primeira linha, e não há aqui uma frase em que o documento fale de si a ler, a conferir ou a comparar. Não há por isso nada para cortar, e um ficheiro de operações vazio diz exatamente isso, que é mais do que a ausência do ficheiro diria. Uma operação que este estudo venha a precisar entra por proposta, como as outras, e com a palavra do diretor.",
+ "operacoes": []
+}

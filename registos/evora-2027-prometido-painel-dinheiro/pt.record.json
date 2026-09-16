@@ -1,0 +1,6960 @@
+{
+ "blocks": [
+  {
+   "figures": [],
+   "i": 0,
+   "kind": "heading",
+   "level": 1,
+   "text": "Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas"
+  },
+  {
+   "figures": [],
+   "i": 1,
+   "kind": "heading",
+   "level": 2,
+   "text": "Os limites deste documento"
+  },
+  {
+   "figures": [],
+   "i": 2,
+   "kind": "paragraph",
+   "text": "Este documento põe lado a lado três coisas: o que a candidatura de Évora a Capital Europeia da Cultura escreveu que ia fazer, o que o painel de peritos da Comissão Europeia escreveu sobre isso e em que data, e que dinheiro está escrito em atos públicos, por quem e para quê."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 40,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [],
+   "i": 3,
+   "kind": "paragraph",
+   "text": "Quem julga é o painel, não este projeto. O painel de peritos tem mandato publicado e escreve relatórios datados; O Estado do País cita-os. Não há aqui um estado de cumprimento, não há cores, não há contagem de promessas cumpridas contra promessas por cumprir. Cada célula diz o documento, a página e a data."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 49,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [],
+   "i": 4,
+   "kind": "paragraph",
+   "text": "Só entra como promessa o que tem número ou prazo. Um compromisso sem valor e sem data não é verificável, e este documento di-lo em vez de o converter num juízo."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 81,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [],
+   "i": 5,
+   "kind": "paragraph",
+   "text": "Os três agregados do custo não fecham, e nenhum documento faz a ponte entre eles. O painel escreve um orçamento global; o dossiê de candidatura escreve outro; o protocolo de cooperação de junho de 2023, tal como o plano de atividades da associação o reparte, escreve um terceiro. Cada um entra neste documento com a construção que o seu próprio documento declara, e nunca somados. Somar parcelas de documentos diferentes fabricaria um número: as fontes sobrepõem-se, têm anos de referência diferentes, e misturam o previsto com o pago."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 59,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [],
+   "i": 6,
+   "kind": "paragraph",
+   "text": "Cada algarismo está escrito como o seu documento o escreve. É por isso que aparecem duas formas de separar os milhares e duas formas de escrever o mesmo valor: o dossiê de candidatura escreve o espaço, o plano de atividades da associação escreve o ponto, e este documento não uniformiza nenhum dos dois. Onde um documento oficial se contradiz a si próprio, as duas formas ficam, lado a lado, sem escolha."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 36,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [],
+   "i": 7,
+   "kind": "paragraph",
+   "text": "Taxas de cofinanciamento não entram. A ficha de uma das operações europeias escreve uma percentagem e a lista da autoridade de gestão escreve outra para a mesma operação, e nenhum dos dois documentos diz sobre que base a calcula. O que entra é o montante em euros."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 23,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 397,
+     "kind": "strong",
+     "start": 308
+    }
+   ],
+   "figures": [],
+   "i": 8,
+   "kind": "paragraph",
+   "text": "As fontes são fechadas. Tudo o que está aqui vem das 53 leituras registadas a 2026-09-15, listadas uma a uma no fim; 43 responderam e 10 não. Não se leu nem se cita mais nada: nem imprensa, nem enciclopédias, nem qualquer sítio fora dessa lista. O que falta está dito na secção sobre o que não se encontrou. As citações ficam na língua em que a fonte as escreveu, nas duas edições deste documento: o painel europeu escreve em inglês e os atos do Estado escrevem em português, e traduzir qualquer um deles seria reescrevê-lo."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 34,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [],
+   "i": 9,
+   "kind": "paragraph",
+   "text": "O que este documento não responde. Quanto custou, ao todo, Évora 2027. Que contratos a associação celebrou e com quem. Quanto o município transferiu de facto. Qual é o programa de 2027. Se o prémio Melina Mercouri vai ser pago. Nenhuma destas perguntas tem resposta nos documentos lidos, e cada uma delas tem a sua razão escrita adiante."
+  },
+  {
+   "i": 10,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 11,
+   "kind": "heading",
+   "level": 2,
+   "text": "A linha do tempo"
+  },
+  {
+   "i": 12,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "data"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "o que aconteceu"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "documento"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "página"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2021-11-23"
+     },
+     {
+      "figures": [],
+      "text": "Prazo de entrega das candidaturas nacionais. Doze cidades concorreram"
+     },
+     {
+      "figures": [],
+      "text": "Notícia da Comissão Europeia"
+     },
+     {
+      "figures": [],
+      "text": "página lida a 2026-09-15"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2022-03-08 a 2022-03-11"
+     },
+     {
+      "figures": [],
+      "text": "Reunião de pré-seleção do painel. Quatro cidades ficaram na lista curta"
+     },
+     {
+      "figures": [],
+      "text": "Notícia da Comissão Europeia"
+     },
+     {
+      "figures": [],
+      "text": "página lida a 2026-09-15"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "abril de 2022"
+     },
+     {
+      "figures": [],
+      "text": "Relatório do painel sobre a pré-seleção"
+     },
+     {
+      "figures": [],
+      "text": "Relatório do painel, fase de pré-seleção"
+     },
+     {
+      "figures": [],
+      "text": "folha 1 do PDF"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2022-10-21"
+     },
+     {
+      "figures": [],
+      "text": "Prazo para completar as candidaturas"
+     },
+     {
+      "figures": [],
+      "text": "Notícia da Comissão Europeia"
+     },
+     {
+      "figures": [],
+      "text": "página lida a 2026-09-15"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2022-12-05 a 2022-12-07"
+     },
+     {
+      "figures": [],
+      "text": "Reunião final de seleção do painel"
+     },
+     {
+      "figures": [],
+      "text": "Notícia da Comissão Europeia"
+     },
+     {
+      "figures": [],
+      "text": "página lida a 2026-09-15"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2022-12-07"
+     },
+     {
+      "figures": [],
+      "text": "A Comissão publica a recomendação do painel"
+     },
+     {
+      "figures": [],
+      "text": "Notícia da Comissão Europeia"
+     },
+     {
+      "figures": [],
+      "text": "página lida a 2026-09-15"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "janeiro de 2023"
+     },
+     {
+      "figures": [],
+      "text": "Relatório do painel sobre a seleção, com a decisão e as condições do prémio"
+     },
+     {
+      "figures": [],
+      "text": "Relatório do painel, fase de seleção"
+     },
+     {
+      "figures": [],
+      "text": "folha 1 do PDF"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "março de 2023"
+     },
+     {
+      "figures": [],
+      "text": "O Ministério da Cultura designa Évora. O ato não se encontrou publicado"
+     },
+     {
+      "figures": [],
+      "text": "Primeiro relatório de monitorização"
+     },
+     {
+      "figures": [],
+      "text": "p. 4"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2023-06-21"
+     },
+     {
+      "figures": [],
+      "text": "Assinatura do protocolo de cooperação entre quatro áreas governativas e o município. O texto não está publicado"
+     },
+     {
+      "figures": [],
+      "text": "Resolução n.º 203/2023, preâmbulo"
+     },
+     {
+      "figures": [],
+      "text": "p. 86"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2023-09-12"
+     },
+     {
+      "figures": [],
+      "text": "Primeira reunião de monitorização, por meios virtuais"
+     },
+     {
+      "figures": [],
+      "text": "Primeiro relatório de monitorização"
+     },
+     {
+      "figures": [],
+      "text": "p. 4"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2023-12-14"
+     },
+     {
+      "figures": [],
+      "text": "O Governo autoriza a despesa do Estado"
+     },
+     {
+      "figures": [],
+      "text": "Resolução n.º 203/2023"
+     },
+     {
+      "figures": [],
+      "text": "p. 86"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2023-12-26"
+     },
+     {
+      "figures": [],
+      "text": "Publicação do decreto-lei que cria a Associação Évora 2027"
+     },
+     {
+      "figures": [],
+      "text": "Decreto-Lei n.º 124/2023"
+     },
+     {
+      "figures": [],
+      "text": "p. 70"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2023-12-28"
+     },
+     {
+      "figures": [],
+      "text": "Publicação da resolução que autoriza a despesa"
+     },
+     {
+      "figures": [],
+      "text": "Resolução n.º 203/2023"
+     },
+     {
+      "figures": [],
+      "text": "p. 86"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "outubro de 2024"
+     },
+     {
+      "figures": [],
+      "text": "A associação fica plenamente operacional"
+     },
+     {
+      "figures": [],
+      "text": "Segundo relatório de monitorização"
+     },
+     {
+      "figures": [],
+      "text": "p. 6"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2025-03-27"
+     },
+     {
+      "figures": [],
+      "text": "Primeira alteração ao decreto-lei, com o estatuto de utilidade pública"
+     },
+     {
+      "figures": [],
+      "text": "Decreto-Lei n.º 47/2025"
+     },
+     {
+      "figures": [],
+      "text": "p. 1"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2025-06-18"
+     },
+     {
+      "figures": [],
+      "text": "Segunda reunião de monitorização, por meios virtuais"
+     },
+     {
+      "figures": [],
+      "text": "Segundo relatório de monitorização"
+     },
+     {
+      "figures": [],
+      "text": "p. 4"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2026-03-31"
+     },
+     {
+      "figures": [],
+      "text": "Data do documento de programação de 2026"
+     },
+     {
+      "figures": [],
+      "text": "Apresentação da programação de 2026"
+     },
+     {
+      "figures": [],
+      "text": "o endereço publicado escreve «31MAR26»"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "outono de 2026"
+     },
+     {
+      "figures": [],
+      "text": "Terceiro ponto de monitorização, previsto pelo painel. A página do relatório responde que não existe"
+     },
+     {
+      "figures": [],
+      "text": "Relatório do painel, fase de seleção"
+     },
+     {
+      "figures": [],
+      "text": "p. 35"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "fim de 2026"
+     },
+     {
+      "figures": [],
+      "text": "Recomendação do painel sobre o prémio Melina Mercouri"
+     },
+     {
+      "figures": [],
+      "text": "Relatório do painel, fase de seleção"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "34",
+        "row": "painel-transferido",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 3,
+        "value": "34"
+       }
+      ],
+      "text": "p. 34"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 13,
+   "kind": "paragraph",
+   "text": "A designação, tal como o painel a escreve no primeiro relatório de monitorização: «Évora was designated as European Capital of Culture in March 2023 by the Ministry of Culture of Portugal based on the recommendation in the panel’s selection report»"
+  },
+  {
+   "figures": [],
+   "i": 14,
+   "kind": "paragraph",
+   "text": "A decisão, tal como o relatório de seleção a escreve: «As consensus was not reached during the discussion, a secret ballot was put in place, as proposed by the Rules of procedure. In the first voting round, and confirming the probing rounds organised to back up the panel's deliberations, one city received the votes of a strong majority of the members of the Panel, and the panel could therefore reach a clear and final decision to recommend to the Ministry of Culture of Portugal to designate the City of ÉVORA as European Capital of Culture in Portugal in 2027.»"
+  },
+  {
+   "figures": [],
+   "i": 15,
+   "kind": "paragraph",
+   "text": "O calendário da monitorização, no relatório de seleção, p. 35: «There are three formal monitoring checkpoints (autumn 2023, mid 2025 and autumn 2026)»"
+  },
+  {
+   "i": 16,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 17,
+   "kind": "heading",
+   "level": 2,
+   "text": "O que a candidatura prometeu, e o que o painel escreveu"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 102,
+     "kind": "strong",
+     "start": 60
+    }
+   ],
+   "figures": [],
+   "i": 18,
+   "kind": "paragraph",
+   "text": "A correspondência entre uma promessa e um juízo faz-se aqui só pelo objeto nomeado nos dois documentos: um equipamento, uma rubrica do orçamento, a equipa, a contratação, o orçamento global, o prémio. Não há inferência. Onde o painel não escreveu sobre um objeto, a célula di-lo; onde o juízo do painel não tem promessa correspondente, a célula da candidatura diz em que páginas se procurou."
+  },
+  {
+   "figures": [],
+   "i": 19,
+   "kind": "heading",
+   "level": 3,
+   "text": "O orçamento operacional global"
+  },
+  {
+   "i": 20,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "o que a candidatura escreveu"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "o que o painel escreveu"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 69,
+        "others": [
+         "bbs-op-total"
+        ],
+        "printed": "45 784 603,10",
+        "row": "bbs-desp-total",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 56,
+        "value": "45 784 603,10"
+       }
+      ],
+      "text": "Receita para cobertura de despesas operacionais, total: 45 784 603,10 €"
+     },
+     {
+      "figures": [],
+      "text": "Dossiê de seleção, folha 43 do PDF"
+     },
+     {
+      "figures": [
+       {
+        "end": 65,
+        "printed": "49.5",
+        "row": "painel-orcamento-global",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 61,
+        "value": "49.5"
+       }
+      ],
+      "text": "«Financially, the project is backed by an overall budget of €49.5 million.»"
+     },
+     {
+      "figures": [
+       {
+        "end": 40,
+        "printed": "8",
+        "row": "painel-interno",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 39,
+        "value": "8"
+       }
+      ],
+      "text": "Segundo relatório de monitorização, p. 8"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 31,
+        "printed": "44 587 603,10",
+        "row": "bbs-op-publico",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 18,
+        "value": "44 587 603,10"
+       },
+       {
+        "end": 65,
+        "printed": "1 197 000,00",
+        "row": "bbs-op-privado",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 53,
+        "value": "1 197 000,00"
+       }
+      ],
+      "text": "Do setor público: 44 587 603,10 €. Do setor privado: 1 197 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "Dossiê de seleção, folha 43 do PDF"
+     },
+     {
+      "figures": [
+       {
+        "end": 36,
+        "printed": "49",
+        "row": "painel-orcamento-49",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 34,
+        "value": "49"
+       },
+       {
+        "end": 69,
+        "printed": "9",
+        "row": "painel-buraco",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 68,
+        "value": "9"
+       },
+       {
+        "end": 118,
+        "others": [
+         "painel-municipio-por-transferir"
+        ],
+        "printed": "10.5",
+        "row": "painel-protocolo-municipio",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 114,
+        "value": "10.5"
+       }
+      ],
+      "text": "«The panel sought clarity on the €49 million budget, including the €9 million gap. The team cited a protocol for €10.5 million signed with the government and municipal support, with further contributions to be finalised by year-end.»"
+     },
+     {
+      "figures": [],
+      "text": "Segundo relatório de monitorização, p. 10"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [
+    {
+     "end": 144,
+     "others": [
+      "bbs-op-total"
+     ],
+     "printed": "45 784 603,10",
+     "row": "bbs-desp-total",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 131,
+     "value": "45 784 603,10"
+    },
+    {
+     "end": 215,
+     "printed": "49.5",
+     "row": "painel-orcamento-global",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 211,
+     "value": "49.5"
+    },
+    {
+     "end": 278,
+     "printed": "49",
+     "row": "painel-orcamento-49",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 276,
+     "value": "49"
+    },
+    {
+     "end": 327,
+     "printed": "9",
+     "row": "painel-buraco",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 326,
+     "value": "9"
+    }
+   ],
+   "i": 21,
+   "kind": "paragraph",
+   "text": "Os dois documentos escrevem números diferentes para a mesma coisa, e nenhum deles explica o outro. O dossiê de candidatura escreve 45 784 603,10 € de receita operacional; o painel escreve um orçamento global de 49.5 milhões de euros na mesma página em que escreve a equipa, e 49 milhões duas páginas adiante, com um buraco de 9 milhões."
+  },
+  {
+   "figures": [],
+   "i": 22,
+   "kind": "heading",
+   "level": 3,
+   "text": "A parte do Estado"
+  },
+  {
+   "i": 23,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "o que a candidatura escreveu"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "o que o painel escreveu"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 31,
+        "printed": "19 000 000,00",
+        "row": "bbs-op-governo",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 18,
+        "value": "19 000 000,00"
+       }
+      ],
+      "text": "Governo nacional: 19 000 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "Dossiê de seleção, folha 43 do PDF"
+     },
+     {
+      "figures": [
+       {
+        "end": 84,
+        "printed": "39",
+        "row": "painel-estado-garantido",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 82,
+        "value": "39"
+       },
+       {
+        "end": 123,
+        "printed": "5",
+        "row": "painel-cimac",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 122,
+        "value": "5"
+       },
+       {
+        "end": 195,
+        "printed": "34",
+        "row": "painel-transferido",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 193,
+        "value": "34"
+       },
+       {
+        "end": 265,
+        "printed": "5",
+        "row": "painel-cimac",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 264,
+        "value": "5"
+       }
+      ],
+      "text": "«Protocols signed between the Municipality and the national government guarantee €39 million in state funding, including €5 million from the Comunidade Intermunicipal do Alentejo Central.» e «€34 million has been transferred to the Association already, while the €5 million remaining are currently under negotiation and should be released soon.»"
+     },
+     {
+      "figures": [
+       {
+        "end": 40,
+        "printed": "8",
+        "row": "painel-interno",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 39,
+        "value": "8"
+       }
+      ],
+      "text": "Segundo relatório de monitorização, p. 8"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [
+    {
+     "end": 47,
+     "printed": "19 000 000,00",
+     "row": "bbs-op-governo",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 34,
+     "value": "19 000 000,00"
+    }
+   ],
+   "i": 24,
+   "kind": "paragraph",
+   "text": "O dossiê de seleção reparte esses 19 000 000,00 € por duas origens, e escreve-as por extenso, na folha 43 do PDF: «As receitas do sector público passam, assim, a incluir os seguintes montantes: 19 milhões de euros atribuídos pelo Governo Português, dos quais 15 milhões virão diretamente do Estado Português e quatro milhões através do Turismo de Portugal, para apoio ao Plano de Comunicação»."
+  },
+  {
+   "figures": [
+    {
+     "end": 180,
+     "others": [
+      "rcm-teto-global",
+      "plano-protocolo-coesao"
+     ],
+     "printed": "15 000 000",
+     "row": "plano-protocolo-cultura",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 170,
+     "value": "15.000.000,00"
+    }
+   ],
+   "i": 25,
+   "kind": "paragraph",
+   "text": "O ato que fixa a parte da cultura veio depois, e fixa um valor diferente do que o dossiê escreveu: o teto da despesa autorizada ao gabinete do Ministério da Cultura é de 15 000 000 EUR, repartido por quatro anos, e está na secção do dinheiro."
+  },
+  {
+   "figures": [],
+   "i": 26,
+   "kind": "heading",
+   "level": 3,
+   "text": "A parte do município"
+  },
+  {
+   "i": 27,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "o que a candidatura escreveu"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "o que o painel escreveu"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 30,
+        "others": [
+         "plano-protocolo-municipio"
+        ],
+        "printed": "10 519 953,10",
+        "row": "bbs-op-municipio",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 17,
+        "value": "10 519 953,10"
+       }
+      ],
+      "text": "Cidade de Évora: 10 519 953,10 €"
+     },
+     {
+      "figures": [],
+      "text": "Dossiê de seleção, folha 43 do PDF"
+     },
+     {
+      "figures": [
+       {
+        "end": 20,
+        "others": [
+         "painel-protocolo-municipio"
+        ],
+        "printed": "10,5",
+        "row": "painel-municipio-por-transferir",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 16,
+        "value": "10,5"
+       }
+      ],
+      "text": "«The remaining €10,5 million guaranteed by the Municipality have not yet been transferred to the Association and are still under discussion between the two entities.»"
+     },
+     {
+      "figures": [
+       {
+        "end": 40,
+        "printed": "8",
+        "row": "painel-interno",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 39,
+        "value": "8"
+       }
+      ],
+      "text": "Segundo relatório de monitorização, p. 8"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [
+    {
+     "end": 128,
+     "others": [
+      "bbs-op-municipio"
+     ],
+     "printed": "10.519.953,10",
+     "row": "plano-protocolo-municipio",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 115,
+     "value": "10.519.953,10"
+    }
+   ],
+   "i": 28,
+   "kind": "paragraph",
+   "text": "O plano de atividades da associação para 2026 escreve a mesma parcela e o mesmo silêncio: «d) Município de Évora - 10.519.953,10€ (dez milhões, quinhentos e dezanove mil, novecentos e cinquenta e três euros e dez cêntimos), como apoio financeiro à iniciativa Évora 2027.» e, a seguir, «Execução estimada em 2026 (Sem valores confirmados)». Na tabela da receita prevista para 2026, a linha do município tem «-€» onde as outras têm um valor."
+  },
+  {
+   "figures": [],
+   "i": 29,
+   "kind": "heading",
+   "level": 3,
+   "text": "A parte da região"
+  },
+  {
+   "i": 30,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "o que a candidatura escreveu"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "o que o painel escreveu"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 27,
+        "printed": "5 067 650,00",
+        "row": "bbs-op-cimac",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 15,
+        "value": "5 067 650,00"
+       }
+      ],
+      "text": "Região, CIMAC: 5 067 650,00 €"
+     },
+     {
+      "figures": [],
+      "text": "Dossiê de seleção, folha 43 do PDF"
+     },
+     {
+      "figures": [
+       {
+        "end": 84,
+        "printed": "39",
+        "row": "painel-estado-garantido",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 82,
+        "value": "39"
+       },
+       {
+        "end": 123,
+        "printed": "5",
+        "row": "painel-cimac",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 122,
+        "value": "5"
+       }
+      ],
+      "text": "«Protocols signed between the Municipality and the national government guarantee €39 million in state funding, including €5 million from the Comunidade Intermunicipal do Alentejo Central.»"
+     },
+     {
+      "figures": [
+       {
+        "end": 40,
+        "printed": "8",
+        "row": "painel-interno",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 39,
+        "value": "8"
+       }
+      ],
+      "text": "Segundo relatório de monitorização, p. 8"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [
+    {
+     "end": 212,
+     "printed": "5.000.000",
+     "row": "plano-cimac-acordo",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 203,
+     "value": "5.000.000"
+    }
+   ],
+   "i": 31,
+   "kind": "paragraph",
+   "text": "O plano de 2026 da associação escreve o acordo por escrito: «Existe um acordo com a Comunidade Intermunicipal do Alentejo Central (CIMAC) para o financiamento da Capital Europeia da Cultura Évora_27 com 5.000.000€ (cinco milhões de euros).»"
+  },
+  {
+   "figures": [],
+   "i": 32,
+   "kind": "heading",
+   "level": 3,
+   "text": "A parte da União"
+  },
+  {
+   "i": 33,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "o que a candidatura escreveu"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "o que o painel escreveu"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 68,
+        "others": [
+         "plano-coesao-comprometido"
+        ],
+        "printed": "10 000 000,00",
+        "row": "bbs-op-uniao",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 55,
+        "value": "10 000 000,00"
+       }
+      ],
+      "text": "União Europeia, com exceção do prémio Melina Mercouri: 10 000 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "Dossiê de seleção, folha 43 do PDF"
+     },
+     {
+      "figures": [],
+      "text": "O painel não escreveu sobre a parte europeia do orçamento operacional nos relatórios lidos"
+     },
+     {
+      "figures": [],
+      "text": "Relatórios de monitorização, lidos por inteiro"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 34,
+   "kind": "paragraph",
+   "text": "O que existe do lado europeu são duas operações aprovadas com nome, código e montante, e estão adiante, na secção do dinheiro."
+  },
+  {
+   "figures": [],
+   "i": 35,
+   "kind": "heading",
+   "level": 3,
+   "text": "As obras"
+  },
+  {
+   "i": 36,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "a obra, como a candidatura a nomeia"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "o que a candidatura escreveu"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "o que o painel escreveu"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Centro Cultural de Utilizações Múltiplas"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "printed": "12 000 000,00",
+        "row": "bbs-obra-centro-cultural",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "12 000 000,00"
+       }
+      ],
+      "text": "12 000 000,00 €, construção, estado «Projeto»"
+     },
+     {
+      "figures": [],
+      "text": "Dossiê de seleção, p. 108"
+     },
+     {
+      "figures": [],
+      "text": "«Some venues originally foreseen in the bidbook remain unfunded or delayed – notably the Cultural Centre and the National Centre for Contemporary Dance.»"
+     },
+     {
+      "figures": [
+       {
+        "end": 40,
+        "printed": "8",
+        "row": "painel-interno",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 39,
+        "value": "8"
+       }
+      ],
+      "text": "Segundo relatório de monitorização, p. 8"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Centro Nacional para a Dança Contemporânea"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "others": [
+         "bbs-obra-castris"
+        ],
+        "printed": "3 000 000,00",
+        "row": "bbs-obra-danca",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3 000 000,00"
+       }
+      ],
+      "text": "3 000 000,00 €, reabilitação, estado «Plano»"
+     },
+     {
+      "figures": [],
+      "text": "Dossiê de seleção, p. 108"
+     },
+     {
+      "figures": [],
+      "text": "«Some venues originally foreseen in the bidbook remain unfunded or delayed – notably the Cultural Centre and the National Centre for Contemporary Dance.»"
+     },
+     {
+      "figures": [
+       {
+        "end": 40,
+        "printed": "8",
+        "row": "painel-interno",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 39,
+        "value": "8"
+       }
+      ],
+      "text": "Segundo relatório de monitorização, p. 8"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Mosteiro de São Bento de Cástris"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "others": [
+         "bbs-obra-danca"
+        ],
+        "printed": "3 000 000,00",
+        "row": "bbs-obra-castris",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3 000 000,00"
+       }
+      ],
+      "text": "3 000 000,00 €, reabilitação, estado «Em curso»"
+     },
+     {
+      "figures": [],
+      "text": "Dossiê de seleção, p. 108"
+     },
+     {
+      "figures": [],
+      "text": "O painel não nomeia esta obra nos relatórios lidos"
+     },
+     {
+      "figures": [],
+      "text": "Relatórios de monitorização, lidos por inteiro"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Antigos Celeiros da EPAC"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "printed": "1 200 000,00",
+        "row": "bbs-obra-epac",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1 200 000,00"
+       }
+      ],
+      "text": "1 200 000,00 €, reabilitação, estado «Projeto»"
+     },
+     {
+      "figures": [],
+      "text": "Dossiê de seleção, p. 108"
+     },
+     {
+      "figures": [],
+      "text": "«Other venues, including the EPAC building and Convento dos Remédios, are being funded through the national PRR»"
+     },
+     {
+      "figures": [
+       {
+        "end": 40,
+        "printed": "8",
+        "row": "painel-interno",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 39,
+        "value": "8"
+       }
+      ],
+      "text": "Segundo relatório de monitorização, p. 8"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Convento dos Remédios"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "others": [
+         "bbs-obra-arquivo",
+         "prr-arquivo",
+         "prr-arena"
+        ],
+        "printed": "500 000,00",
+        "row": "bbs-obra-remedios",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "500 000,00"
+       }
+      ],
+      "text": "500 000,00 €, reabilitação, estado «Projeto»"
+     },
+     {
+      "figures": [],
+      "text": "Dossiê de seleção, p. 108"
+     },
+     {
+      "figures": [],
+      "text": "«Other venues, including the EPAC building and Convento dos Remédios, are being funded through the national PRR»"
+     },
+     {
+      "figures": [
+       {
+        "end": 40,
+        "printed": "8",
+        "row": "painel-interno",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 39,
+        "value": "8"
+       }
+      ],
+      "text": "Segundo relatório de monitorização, p. 8"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Arena de Évora"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "others": [
+         "opo24-associacao"
+        ],
+        "printed": "250 000,00",
+        "row": "bbs-obra-arena",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "250 000,00"
+       }
+      ],
+      "text": "250 000,00 €, qualificação do espaço, estado «Plano»"
+     },
+     {
+      "figures": [],
+      "text": "Dossiê de seleção, p. 108"
+     },
+     {
+      "figures": [],
+      "text": "O painel não nomeia esta obra nos relatórios lidos"
+     },
+     {
+      "figures": [],
+      "text": "Relatórios de monitorização, lidos por inteiro"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Salão Central Eborense"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "printed": "2 558 223,21",
+        "row": "bbs-obra-salao",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2 558 223,21"
+       }
+      ],
+      "text": "2 558 223,21 €, reabilitação, estado «Por inaugurar»"
+     },
+     {
+      "figures": [],
+      "text": "Dossiê de seleção, p. 108"
+     },
+     {
+      "figures": [],
+      "text": "O painel escreve que está entre os investimentos concluídos"
+     },
+     {
+      "figures": [
+       {
+        "end": 40,
+        "printed": "8",
+        "row": "painel-interno",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 39,
+        "value": "8"
+       }
+      ],
+      "text": "Segundo relatório de monitorização, p. 8"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 37,
+   "kind": "paragraph",
+   "text": "As obras são de outros. Quem gere o programa da capital europeia da cultura não as executa, não tem competência legal para as executar, e não tem verba inscrita no seu orçamento para esse fim. O plano de atividades de 2026 escreve-o por palavras suas: «a Associação Évora 2027 não tem competências e atribuições legais para assegurar a execução de obras nas infraestruturas e equipamentos incluídos no livro de candidatura, não dispõe de verbas inscritas em orçamento para essa finalidade.»"
+  },
+  {
+   "figures": [],
+   "i": 38,
+   "kind": "heading",
+   "level": 3,
+   "text": "A equipa"
+  },
+  {
+   "i": 39,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "o que a candidatura escreveu"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "o que o painel escreveu"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Não encontrado nas páginas da candidatura lidas"
+     },
+     {
+      "figures": [
+       {
+        "end": 73,
+        "printed": "85",
+        "row": "painel-precontratacao",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 71,
+        "value": "85"
+       }
+      ],
+      "text": "Dossiê de seleção, folhas 43 a 45 e 55 do PDF, que imprimem as páginas 85 a 89 e 108 a 109"
+     },
+     {
+      "figures": [
+       {
+        "end": 112,
+        "printed": "29",
+        "row": "painel-equipa",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 110,
+        "value": "29"
+       }
+      ],
+      "text": "«The Executive Director and Artistic Director are now in place, supported by a growing team expected to reach 29 staff members by September 2025.»"
+     },
+     {
+      "figures": [
+       {
+        "end": 40,
+        "printed": "8",
+        "row": "painel-interno",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 39,
+        "value": "8"
+       }
+      ],
+      "text": "Segundo relatório de monitorização, p. 8"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [
+    {
+     "end": 42,
+     "printed": "54",
+     "row": "plano-postos",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 40,
+     "value": "54"
+    },
+    {
+     "end": 79,
+     "printed": "2 227 710,81",
+     "row": "plano-despesa-pessoal",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 67,
+     "value": "2 227 710,81"
+    }
+   ],
+   "i": 40,
+   "kind": "paragraph",
+   "text": "O plano de atividades de 2026 orçamenta 54 postos de trabalho, com 2 227 710,81 € de despesas com o pessoal."
+  },
+  {
+   "figures": [],
+   "i": 41,
+   "kind": "paragraph",
+   "text": "O município escreveu, no seu documento previsional de 2025, o que perdeu quando a associação assumiu o projeto: «A perda da Equipa de Missão coloca preocupações e questões que exigem um acompanhamento permanente da Câmara Municipal.»"
+  },
+  {
+   "figures": [],
+   "i": 42,
+   "kind": "heading",
+   "level": 3,
+   "text": "A contratação e o programa"
+  },
+  {
+   "i": 43,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "o que a candidatura escreveu"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "o que o painel escreveu"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 35,
+        "printed": "31 851 800,00",
+        "row": "bbs-desp-programa",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 22,
+        "value": "31 851 800,00"
+       }
+      ],
+      "text": "Despesas do programa: 31 851 800,00 €"
+     },
+     {
+      "figures": [],
+      "text": "Dossiê de seleção, p. 87"
+     },
+     {
+      "figures": [],
+      "text": "O painel não escreveu sobre esta rubrica nos relatórios lidos"
+     },
+     {
+      "figures": [],
+      "text": "Relatórios de monitorização, lidos por inteiro"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Não encontrado nas páginas da candidatura lidas"
+     },
+     {
+      "figures": [
+       {
+        "end": 73,
+        "printed": "85",
+        "row": "painel-precontratacao",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 71,
+        "value": "85"
+       }
+      ],
+      "text": "Dossiê de seleção, folhas 43 a 45 e 55 do PDF, que imprimem as páginas 85 a 89 e 108 a 109"
+     },
+     {
+      "figures": [
+       {
+        "end": 67,
+        "printed": "85",
+        "row": "painel-precontratacao",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 65,
+        "value": "85"
+       }
+      ],
+      "text": "«The panel asked about the timeline for contracting, noting that 85% of projects remain in pre-contracting. The team replied that all contracts will be signed by September 2025 and the full programme will be announced in September 2026.»"
+     },
+     {
+      "figures": [],
+      "text": "Segundo relatório de monitorização, p. 10"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Não encontrado nas páginas da candidatura lidas"
+     },
+     {
+      "figures": [
+       {
+        "end": 73,
+        "printed": "85",
+        "row": "painel-precontratacao",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 71,
+        "value": "85"
+       }
+      ],
+      "text": "Dossiê de seleção, folhas 43 a 45 e 55 do PDF, que imprimem as páginas 85 a 89 e 108 a 109"
+     },
+     {
+      "figures": [
+       {
+        "end": 97,
+        "printed": "92",
+        "row": "painel-externalizado",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 95,
+        "value": "92"
+       },
+       {
+        "end": 119,
+        "printed": "8",
+        "row": "painel-interno",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 118,
+        "value": "8"
+       }
+      ],
+      "text": "«The panel asked for a breakdown of in-house versus outsourced productions. The team confirmed 92% are outsourced and 8% internally produced.»"
+     },
+     {
+      "figures": [],
+      "text": "Segundo relatório de monitorização, p. 10"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 44,
+   "kind": "paragraph",
+   "text": "O endereço do documento de programação que a associação publica escreve «31MAR26», e o documento cobre o ano de 2026, não o de 2027. À data desta leitura, a última notícia publicada pela associação é de agosto de 2026 e não anuncia o programa de 2027."
+  },
+  {
+   "figures": [],
+   "i": 45,
+   "kind": "heading",
+   "level": 3,
+   "text": "O prémio Melina Mercouri"
+  },
+  {
+   "i": 46,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "o que a candidatura escreveu"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "o que o painel escreveu"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Não encontrado nas páginas da candidatura lidas"
+     },
+     {
+      "figures": [
+       {
+        "end": 73,
+        "printed": "85",
+        "row": "painel-precontratacao",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 71,
+        "value": "85"
+       }
+      ],
+      "text": "Dossiê de seleção, folhas 43 a 45 e 55 do PDF, que imprimem as páginas 85 a 89 e 108 a 109"
+     },
+     {
+      "figures": [
+       {
+        "end": 23,
+        "others": [
+         "plano-linha-do-vagar"
+        ],
+        "printed": "1,5",
+        "row": "painel-premio",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 20,
+        "value": "1,5"
+       }
+      ],
+      "text": "«The payment of the 1,5 million Euro Prize is however deferred until 2027, in line with Article 14 of the Decision. It is conditional.» e «The ECoC Expert panel will make a further recommendation to the European Commission in late 2026 at the end of the monitoring process on whether to make the payment.»"
+     },
+     {
+      "figures": [
+       {
+        "end": 43,
+        "printed": "34",
+        "row": "painel-transferido",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 41,
+        "value": "34"
+       }
+      ],
+      "text": "Relatório do painel, fase de seleção, p. 34"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [
+    {
+     "end": 302,
+     "others": [
+      "plano-saldo-vagar"
+     ],
+     "printed": "1.500.000",
+     "row": "plano-premio-melina",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 293,
+     "value": "1.500.000"
+    }
+   ],
+   "i": 47,
+   "kind": "paragraph",
+   "text": "A associação escreve no plano de 2026: «no último trimestre de 2026, em data a definir, será elaborado um último relatório de monitorização e progresso, a entregar ao painel de peritos, fundamental, e requisito, para a decisão de atribuição a Évora_2027 do prémio Melina Mercouri, no valor de 1.500.000€.» Nenhuma linha das tabelas de receita de 2026 o inscreve, o que é coerente com o pagamento estar diferido, e o relatório e contas de 2025 não o menciona."
+  },
+  {
+   "i": 48,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 49,
+   "kind": "heading",
+   "level": 2,
+   "text": "O dinheiro em linhas"
+  },
+  {
+   "figures": [],
+   "i": 50,
+   "kind": "paragraph",
+   "text": "Uma tabela por documento, e nunca uma tabela que junte documentos. Cada linha é um valor tal como o seu documento o escreve, com a página onde foi lido."
+  },
+  {
+   "figures": [],
+   "i": 51,
+   "kind": "heading",
+   "level": 3,
+   "text": "O dossiê de candidatura, fase de seleção"
+  },
+  {
+   "figures": [],
+   "i": 52,
+   "kind": "paragraph",
+   "text": "O dossiê compõe-se em páginas duplas: cada folha do PDF imprime duas páginas, com o número de cada uma por baixo dela. A página citada em cada linha é a metade da folha em que o valor está escrito. Nas folhas em que a página par abre uma secção, o dossiê não lhe imprime número, e a linha cita a folha do PDF, que é o que se leu."
+  },
+  {
+   "figures": [],
+   "i": 53,
+   "kind": "paragraph",
+   "text": "Receita para cobrir as despesas operacionais:"
+  },
+  {
+   "i": 54,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "linha"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "valor escrito"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Total"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "others": [
+         "bbs-op-total"
+        ],
+        "printed": "45 784 603,10",
+        "row": "bbs-desp-total",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "45 784 603,10"
+       }
+      ],
+      "text": "45 784 603,10 €"
+     },
+     {
+      "figures": [],
+      "text": "folha 43 do PDF"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Do setor público"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "printed": "44 587 603,10",
+        "row": "bbs-op-publico",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "44 587 603,10"
+       }
+      ],
+      "text": "44 587 603,10 €"
+     },
+     {
+      "figures": [],
+      "text": "folha 43 do PDF"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Do setor privado"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "printed": "1 197 000,00",
+        "row": "bbs-op-privado",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1 197 000,00"
+       }
+      ],
+      "text": "1 197 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "folha 43 do PDF"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Governo nacional"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "printed": "19 000 000,00",
+        "row": "bbs-op-governo",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "19 000 000,00"
+       }
+      ],
+      "text": "19 000 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "folha 43 do PDF"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Cidade de Évora"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "others": [
+         "plano-protocolo-municipio"
+        ],
+        "printed": "10 519 953,10",
+        "row": "bbs-op-municipio",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "10 519 953,10"
+       }
+      ],
+      "text": "10 519 953,10 €"
+     },
+     {
+      "figures": [],
+      "text": "folha 43 do PDF"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Região, CIMAC"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "printed": "5 067 650,00",
+        "row": "bbs-op-cimac",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "5 067 650,00"
+       }
+      ],
+      "text": "5 067 650,00 €"
+     },
+     {
+      "figures": [],
+      "text": "folha 43 do PDF"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "União Europeia, sem o prémio"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "others": [
+         "plano-coesao-comprometido"
+        ],
+        "printed": "10 000 000,00",
+        "row": "bbs-op-uniao",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "10 000 000,00"
+       }
+      ],
+      "text": "10 000 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "folha 43 do PDF"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 55,
+   "kind": "paragraph",
+   "text": "Despesa operacional:"
+  },
+  {
+   "i": 56,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "linha"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "valor escrito"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Programa"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "printed": "31 851 800,00",
+        "row": "bbs-desp-programa",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "31 851 800,00"
+       }
+      ],
+      "text": "31 851 800,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 87"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Comunicação e marketing"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "printed": "6 885 410,28",
+        "row": "bbs-desp-comunicacao",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6 885 410,28"
+       }
+      ],
+      "text": "6 885 410,28 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 87"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Salários, despesas gerais e administração"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "printed": "6 447 392,82",
+        "row": "bbs-desp-salarios",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6 447 392,82"
+       }
+      ],
+      "text": "6 447 392,82 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 87"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Monitorização e avaliação"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "600 000,00",
+        "row": "bbs-desp-monitorizacao",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "600 000,00"
+       }
+      ],
+      "text": "600 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 87"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Total das despesas operacionais"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "others": [
+         "bbs-op-total"
+        ],
+        "printed": "45 784 603,10",
+        "row": "bbs-desp-total",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "45 784 603,10"
+       }
+      ],
+      "text": "45 784 603,10 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 87"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 57,
+   "kind": "paragraph",
+   "text": "Receita do setor público para despesas de capital:"
+  },
+  {
+   "i": 58,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "linha"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "valor escrito"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Governo nacional"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "printed": "3 450 000,00",
+        "row": "bbs-cap-governo",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3 450 000,00"
+       }
+      ],
+      "text": "3 450 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 88"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Cidade de Évora"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "printed": "4 369 233,48",
+        "row": "bbs-cap-municipio",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "4 369 233,48"
+       }
+      ],
+      "text": "4 369 233,48 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 88"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Região, CIMAC"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "printed": "2 978 722,47",
+        "row": "bbs-cap-cimac",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2 978 722,47"
+       }
+      ],
+      "text": "2 978 722,47 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 88"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "União Europeia, sem o prémio"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "printed": "22 038 045,47",
+        "row": "bbs-cap-uniao",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "22 038 045,47"
+       }
+      ],
+      "text": "22 038 045,47 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 88"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Outras"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "others": [
+         "plano-alentejo-execucao-2026"
+        ],
+        "printed": "6 500 000,00",
+        "row": "bbs-cap-outras",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6 500 000,00"
+       }
+      ],
+      "text": "6 500 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 88"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Total"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "printed": "39 336 001,42",
+        "row": "bbs-cap-total",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "39 336 001,42"
+       }
+      ],
+      "text": "39 336 001,42 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 88"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 59,
+   "kind": "paragraph",
+   "text": "As obras da tabela de infraestrutura cultural, com o custo estimado que o dossiê lhes dá:"
+  },
+  {
+   "i": 60,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "obra"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "custo escrito"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Centro Cultural de Utilizações Múltiplas"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "printed": "12 000 000,00",
+        "row": "bbs-obra-centro-cultural",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "12 000 000,00"
+       }
+      ],
+      "text": "12 000 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 108"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Centro Nacional para a Dança Contemporânea"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "others": [
+         "bbs-obra-castris"
+        ],
+        "printed": "3 000 000,00",
+        "row": "bbs-obra-danca",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3 000 000,00"
+       }
+      ],
+      "text": "3 000 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 108"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Mosteiro de São Bento de Cástris"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "others": [
+         "bbs-obra-danca"
+        ],
+        "printed": "3 000 000,00",
+        "row": "bbs-obra-castris",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3 000 000,00"
+       }
+      ],
+      "text": "3 000 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 108"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Salão Central Eborense"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "printed": "2 558 223,21",
+        "row": "bbs-obra-salao",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2 558 223,21"
+       }
+      ],
+      "text": "2 558 223,21 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 108"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Antigos Celeiros da EPAC"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "printed": "1 200 000,00",
+        "row": "bbs-obra-epac",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1 200 000,00"
+       }
+      ],
+      "text": "1 200 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 108"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Convento dos Remédios"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "others": [
+         "bbs-obra-arquivo",
+         "prr-arquivo",
+         "prr-arena"
+        ],
+        "printed": "500 000,00",
+        "row": "bbs-obra-remedios",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "500 000,00"
+       }
+      ],
+      "text": "500 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 108"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Arquivo Fotográfico de Évora"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "others": [
+         "bbs-obra-remedios",
+         "prr-arquivo",
+         "prr-arena"
+        ],
+        "printed": "500 000,00",
+        "row": "bbs-obra-arquivo",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "500 000,00"
+       }
+      ],
+      "text": "500 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 108"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Arena de Évora"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "others": [
+         "opo24-associacao"
+        ],
+        "printed": "250 000,00",
+        "row": "bbs-obra-arena",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "250 000,00"
+       }
+      ],
+      "text": "250 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 108"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Total da tabela"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "printed": "39 336 001,42",
+        "row": "bbs-cap-total",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "39 336 001,42"
+       }
+      ],
+      "text": "39 336 001,42 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 88"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 61,
+   "kind": "heading",
+   "level": 3,
+   "text": "O dossiê de candidatura, fase de pré-seleção"
+  },
+  {
+   "i": 62,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "linha"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "valor escrito"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Receita para cobrir despesas operacionais, total"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "printed": "44 290 000,00",
+        "row": "bbp-op-total",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "44 290 000,00"
+       }
+      ],
+      "text": "44 290 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 42"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Do setor público"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "printed": "43 000 000,00",
+        "row": "bbp-op-publico",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "43 000 000,00"
+       }
+      ],
+      "text": "43 000 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 42"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Do setor privado"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "printed": "1 290 000,00",
+        "row": "bbp-op-privado",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1 290 000,00"
+       }
+      ],
+      "text": "1 290 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 42"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [
+    {
+     "end": 203,
+     "printed": "1 587 603,10",
+     "row": "bbs-op-acrescimo",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 191,
+     "value": "1 587 603,10"
+    }
+   ],
+   "i": 63,
+   "kind": "paragraph",
+   "text": "O dossiê de seleção diz o que mudou entre os dois: «Relativamente às receitas totais para cobertura de despesas operacionais propostas no bid book de pré-seleção, verifica-se um acréscimo de 1 587 603,10€, que se deve a:» A diferença entre os dois totais escritos acima não é a diferença que essa frase declara, e nenhum dos dois documentos explica a distância. Fica registada como está."
+  },
+  {
+   "figures": [],
+   "i": 64,
+   "kind": "heading",
+   "level": 3,
+   "text": "A resolução do Conselho de Ministros n.º 203/2023"
+  },
+  {
+   "figures": [
+    {
+     "end": 393,
+     "others": [
+      "plano-protocolo-cultura",
+      "plano-protocolo-coesao"
+     ],
+     "printed": "15 000 000",
+     "row": "rcm-teto-global",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 383,
+     "value": "15 000 000"
+    }
+   ],
+   "i": 65,
+   "kind": "paragraph",
+   "text": "O que ela autoriza, e os cinco tetos que fixa, estão todos na mesma página, a p. 86: «1 — Autorizar o Gabinete de Estratégia, Planeamento e Avaliação Culturais (GEPAC) a realizar a despesa relativa à contribuição financeira do Estado para o desenvolvimento e execução da iniciativa Évora Capital Europeia da Cultura 2027, no âmbito da programação cultural, até ao montante global de 15 000 000 EUR.»"
+  },
+  {
+   "i": 66,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "ano económico"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "teto escrito"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Teto global"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "others": [
+         "plano-protocolo-cultura",
+         "plano-protocolo-coesao"
+        ],
+        "printed": "15 000 000",
+        "row": "rcm-teto-global",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "15 000 000"
+       }
+      ],
+      "text": "15 000 000 EUR"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2024"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "others": [
+         "dl124-contribuicao-inicial",
+         "plano-internacionalizacao-dotacao"
+        ],
+        "printed": "2 000 000",
+        "row": "rcm-2024",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2 000 000"
+       }
+      ],
+      "text": "2 000 000 EUR"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2025"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "others": [
+         "rcm-2026",
+         "plano-gepac"
+        ],
+        "printed": "3 750 000",
+        "row": "rcm-2025",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3 750 000"
+       }
+      ],
+      "text": "3 750 000 EUR"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2026"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "others": [
+         "rcm-2025",
+         "plano-gepac"
+        ],
+        "printed": "3 750 000",
+        "row": "rcm-2026",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3 750 000"
+       }
+      ],
+      "text": "3 750 000 EUR"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2027"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "5 500 000",
+        "row": "rcm-2027",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "5 500 000"
+       }
+      ],
+      "text": "5 500 000 EUR"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 67,
+   "kind": "paragraph",
+   "text": "O preâmbulo da mesma resolução é onde o protocolo de cooperação aparece datado: «foi assinado, em 21 de junho de 2023, um protocolo de cooperação entre as áreas governativas das finanças, da economia e do mar, da cultura e da coesão territorial e o Município de Évora,»"
+  },
+  {
+   "figures": [],
+   "i": 68,
+   "kind": "heading",
+   "level": 3,
+   "text": "O decreto-lei n.º 124/2023"
+  },
+  {
+   "figures": [],
+   "i": 69,
+   "kind": "paragraph",
+   "text": "Os fins da associação, na p. 69 do Decreto-Lei n.º 124/2023: «A Associação tem como fins o planeamento, promoção, desenvolvimento e execução da iniciativa Évora Capital Europeia da Cultura 2027.»"
+  },
+  {
+   "figures": [
+    {
+     "end": 269,
+     "others": [
+      "rcm-2024",
+      "plano-internacionalizacao-dotacao"
+     ],
+     "printed": "2 000 000",
+     "row": "dl124-contribuicao-inicial",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 260,
+     "value": "2 000 000"
+    },
+    {
+     "end": 306,
+     "others": [
+      "rcm-2024",
+      "plano-internacionalizacao-dotacao"
+     ],
+     "printed": "2 000 000",
+     "row": "dl124-contribuicao-inicial",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 297,
+     "value": "2 000 000"
+    }
+   ],
+   "i": 70,
+   "kind": "paragraph",
+   "text": "A única verba que o Decreto-Lei n.º 124/2023 fixa, na p. 70: «concorre para a constituição do património social da Associação uma contribuição inicial por parte do Estado, a prestar pelo Gabinete de Estratégia, Planeamento e Avaliação Culturais, no valor de € 2 000 000 a pagar em 2024.», ou seja 2 000 000 €. Todo o resto do financiamento do Estado remete para o protocolo, na mesma página: «protocolo de cooperação celebrado entre as áreas governativas das finanças, da economia e mar, da cultura, da coesão territorial e o Município de Évora.»"
+  },
+  {
+   "figures": [],
+   "i": 71,
+   "kind": "paragraph",
+   "text": "O mesmo decreto-lei obriga a associação a divulgar «A identidade e os elementos curriculares de todos os membros dos seus órgãos sociais, designadamente do órgão de administração, bem como as respetivas remunerações e outros benefícios.». Nenhum documento lido as traz."
+  },
+  {
+   "figures": [],
+   "i": 72,
+   "kind": "paragraph",
+   "text": "O decreto-lei n.º 47/2025 acrescentou-lhe o estatuto de utilidade pública, com prazo: «é atribuído o estatuto de utilidade pública à Associação até dia 31 de dezembro de 2028.»"
+  },
+  {
+   "figures": [],
+   "i": 73,
+   "kind": "heading",
+   "level": 3,
+   "text": "O plano de atividades e orçamento de 2026 da associação"
+  },
+  {
+   "figures": [],
+   "i": 74,
+   "kind": "paragraph",
+   "text": "A receita prevista, por origem:"
+  },
+  {
+   "i": 75,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "origem"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "valor escrito"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Total da receita"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "printed": "20 440 589,09",
+        "row": "plano-receita-total",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "20 440 589,09"
+       }
+      ],
+      "text": "20 440 589,09 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 44"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Subsídios à exploração"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "printed": "20 008 589,09",
+        "row": "plano-subsidios",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "20 008 589,09"
+       }
+      ],
+      "text": "20 008 589,09 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 45"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Gabinete do Ministério da Cultura"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "others": [
+         "rcm-2025",
+         "rcm-2026"
+        ],
+        "printed": "3 750 000,00",
+        "row": "plano-gepac",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3 750 000,00"
+       }
+      ],
+      "text": "3 750 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 45"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Turismo de Portugal"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "80 000,00",
+        "row": "plano-turismo",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "80 000,00"
+       }
+      ],
+      "text": "80 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 45"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Alentejo 2030, concurso das redes urbanas"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "240 000,00",
+        "row": "plano-iti",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "240 000,00"
+       }
+      ],
+      "text": "240 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 45"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "INTERREG Europe"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "52 500,00",
+        "row": "plano-interreg",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "52 500,00"
+       }
+      ],
+      "text": "52 500,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 45"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Alentejo 2030, candidaturas ao programa regional"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "others": [
+         "plano-protocolo-economia"
+        ],
+        "printed": "4 000 000,00",
+        "row": "plano-alentejo-a",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "4 000 000,00"
+       }
+      ],
+      "text": "4 000 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 45"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Alentejo 2030, candidaturas ao programa regional"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "printed": "2 500 000,00",
+        "row": "plano-alentejo-b",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2 500 000,00"
+       }
+      ],
+      "text": "2 500 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 45"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Apoio à contratação do IEFP"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "60 000,00",
+        "row": "plano-iefp",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "60 000,00"
+       }
+      ],
+      "text": "60 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 45"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Município de Évora"
+     },
+     {
+      "figures": [],
+      "text": "-€"
+     },
+     {
+      "figures": [],
+      "text": "p. 45"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Transferência de saldos"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "printed": "9 326 089,09",
+        "row": "plano-saldos",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "9 326 089,09"
+       }
+      ],
+      "text": "9 326 089,09 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 45"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Receitas financeiras"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "90 000",
+        "row": "plano-financeiras",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "90 000"
+       }
+      ],
+      "text": "90 000 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 45"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Quotizações"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "42 000",
+        "row": "plano-quotizacoes",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "42 000"
+       }
+      ],
+      "text": "42 000 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 45"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Mecenato"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "others": [
+         "plano-patrocinadores"
+        ],
+        "printed": "300 000,00",
+        "row": "plano-mecenato",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "300 000,00"
+       }
+      ],
+      "text": "300 000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 45"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 76,
+   "kind": "paragraph",
+   "text": "A repartição do protocolo de junho de 2023, tal como este plano a escreve:"
+  },
+  {
+   "i": 77,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "área governativa ou parte"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "valor escrito"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Ministério da Economia e da Transição Digital"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "others": [
+         "plano-alentejo-a"
+        ],
+        "printed": "4.000.000,00",
+        "row": "plano-protocolo-economia",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "4.000.000,00"
+       }
+      ],
+      "text": "4.000.000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 46"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Pago no fim de 2025 pelo Turismo de Portugal"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "others": [
+         "plano-saldo-turismo"
+        ],
+        "printed": "3.920.000",
+        "row": "plano-turismo-pago-2025",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3.920.000"
+       }
+      ],
+      "text": "3.920.000 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 46"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Ministério da Cultura"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "others": [
+         "rcm-teto-global",
+         "plano-protocolo-coesao"
+        ],
+        "printed": "15.000.000,00",
+        "row": "plano-protocolo-cultura",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "15.000.000,00"
+       }
+      ],
+      "text": "15.000.000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 46"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Ministério da Coesão Territorial"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "others": [
+         "rcm-teto-global",
+         "plano-protocolo-cultura"
+        ],
+        "printed": "15.000.000,00",
+        "row": "plano-protocolo-coesao",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "15.000.000,00"
+       }
+      ],
+      "text": "15.000.000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 46"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Do qual comprometido para o programa geral"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "others": [
+         "bbs-op-uniao"
+        ],
+        "printed": "10.000.000,00",
+        "row": "plano-coesao-comprometido",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "10.000.000,00"
+       }
+      ],
+      "text": "10.000.000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 46"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Município de Évora"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "others": [
+         "bbs-op-municipio"
+        ],
+        "printed": "10.519.953,10",
+        "row": "plano-protocolo-municipio",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "10.519.953,10"
+       }
+      ],
+      "text": "10.519.953,10 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 46"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Acordo com a CIMAC"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "5.000.000",
+        "row": "plano-cimac-acordo",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "5.000.000"
+       }
+      ],
+      "text": "5.000.000 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 46"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [
+    {
+     "end": 115,
+     "others": [
+      "bbs-cap-outras"
+     ],
+     "printed": "6.500.000",
+     "row": "plano-alentejo-execucao-2026",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 106,
+     "value": "6.500.000"
+    },
+    {
+     "end": 145,
+     "others": [
+      "plano-mecenato"
+     ],
+     "printed": "300.000",
+     "row": "plano-patrocinadores",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 138,
+     "value": "300.000"
+    },
+    {
+     "end": 238,
+     "others": [
+      "painel-premio"
+     ],
+     "printed": "1,5",
+     "row": "plano-linha-do-vagar",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 235,
+     "value": "1,5"
+    }
+   ],
+   "i": 78,
+   "kind": "paragraph",
+   "text": "O mesmo plano escreve a execução que estima para 2026 em cada uma destas origens. Do Alentejo 2030 espera 6.500.000 €; de patrocinadores, 300.000 €. E escreve um reforço de financiamento assegurado junto do Governo, no valor global de 1,5 milhões de euros, a que chama Linha do Vagar."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 65,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [
+    {
+     "end": 258,
+     "printed": "11.764.710,00",
+     "row": "plano-alentejo-aprovado",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 245,
+     "value": "11.764.710,00"
+    },
+    {
+     "end": 446,
+     "others": [
+      "dl124-contribuicao-inicial",
+      "rcm-2024"
+     ],
+     "printed": "2.000.000,00",
+     "row": "plano-internacionalizacao-dotacao",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 434,
+     "value": "2.000.000,00"
+    }
+   ],
+   "i": 79,
+   "kind": "paragraph",
+   "text": "Um desencontro dentro do mesmo parágrafo, registado sem correção. O plano escreve: «A candidatura para o programa geral de Évora_27 foi aprovada pelo Programa Regional do Alentejo 2030 (ALENTEJO 2030), com um montante global de financiamento de 11.764.710,00€ (quinze milhões de euros)» O algarismo e o extenso não dizem a mesma coisa. Duas linhas abaixo, o mesmo parágrafo escreve «Ações Coletivas – Internacionalização – dotação de 2.000.000,00€ (dois milhões e quinhentos mil euros).», com a mesma espécie de desencontro."
+  },
+  {
+   "figures": [],
+   "i": 80,
+   "kind": "paragraph",
+   "text": "Os saldos transitados de 2025, e a despesa prevista para 2026:"
+  },
+  {
+   "i": 81,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "linha"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "valor escrito"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Saldo da Linha do Vagar"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "others": [
+         "plano-premio-melina"
+        ],
+        "printed": "1.500.000,00",
+        "row": "plano-saldo-vagar",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1.500.000,00"
+       }
+      ],
+      "text": "1.500.000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 47"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Saldo do Turismo de Portugal"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "others": [
+         "plano-turismo-pago-2025"
+        ],
+        "printed": "3.920.000,00",
+        "row": "plano-saldo-turismo",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3.920.000,00"
+       }
+      ],
+      "text": "3.920.000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 47"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Saldo do gabinete do Ministério da Cultura"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "printed": "3.906.089,09",
+        "row": "plano-saldo-gepac",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3.906.089,09"
+       }
+      ],
+      "text": "3.906.089,09 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 47"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Fornecimentos e serviços externos"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "printed": "17 442 076,66",
+        "row": "plano-despesa-fse",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "17 442 076,66"
+       }
+      ],
+      "text": "17 442 076,66 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 48"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Aquisição de bens e serviços correntes"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "664 251,25",
+        "row": "plano-despesa-correntes",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "664 251,25"
+       }
+      ],
+      "text": "664 251,25 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 48"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Aquisição de bens e serviços, execução de projetos"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "printed": "16 777 825,41",
+        "row": "plano-despesa-projetos",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "16 777 825,41"
+       }
+      ],
+      "text": "16 777 825,41 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 48"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Despesas com o pessoal"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "printed": "2 227 710,81",
+        "row": "plano-despesa-pessoal",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2 227 710,81"
+       }
+      ],
+      "text": "2 227 710,81 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 48"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Amortizações"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "21 975,00",
+        "row": "plano-despesa-amortizacoes",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "21 975,00"
+       }
+      ],
+      "text": "21 975,00 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 48"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Total da despesa"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "printed": "19 691 762,47",
+        "row": "plano-despesa-total",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "19 691 762,47"
+       }
+      ],
+      "text": "19 691 762,47 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 48"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Saldo a transitar para 2027"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "748 826,62",
+        "row": "plano-saldo-2027",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "748 826,62"
+       }
+      ],
+      "text": "748 826,62 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 52"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 82,
+   "kind": "paragraph",
+   "text": "As sete intervenções do Plano de Recuperação e Resiliência que o mesmo plano lista, com o promotor que ele lhes dá:"
+  },
+  {
+   "i": 83,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "intervenção"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "promotor"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "valor escrito"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Convento de São Bento de Cástris"
+     },
+     {
+      "figures": [],
+      "text": "Património Cultural"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "6 750 000",
+        "row": "prr-castris",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6 750 000"
+       }
+      ],
+      "text": "6 750 000 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 6"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Museu do Artesanato e do Design, centro de acolhimento"
+     },
+     {
+      "figures": [],
+      "text": "Entidade Regional de Turismo do Alentejo e Ribatejo"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "1 650 000",
+        "row": "prr-made",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1 650 000"
+       }
+      ],
+      "text": "1 650 000 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 6"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Arquivo Fotográfico de Évora"
+     },
+     {
+      "figures": [],
+      "text": "Município de Évora"
+     },
+     {
+      "figures": [
+       {
+        "end": 7,
+        "others": [
+         "bbs-obra-remedios",
+         "bbs-obra-arquivo",
+         "prr-arena"
+        ],
+        "printed": "500 000",
+        "row": "prr-arquivo",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "500 000"
+       }
+      ],
+      "text": "500 000 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 7"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Convento dos Remédios"
+     },
+     {
+      "figures": [],
+      "text": "Município de Évora"
+     },
+     {
+      "figures": [
+       {
+        "end": 7,
+        "printed": "470 000",
+        "row": "prr-remedios",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "470 000"
+       }
+      ],
+      "text": "470 000 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 7"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Antigos Celeiros da EPAC"
+     },
+     {
+      "figures": [],
+      "text": "Município de Évora"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "2 350 000",
+        "row": "prr-epac",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2 350 000"
+       }
+      ],
+      "text": "2 350 000 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 7"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Arena de Évora"
+     },
+     {
+      "figures": [],
+      "text": "Município de Évora"
+     },
+     {
+      "figures": [
+       {
+        "end": 7,
+        "others": [
+         "bbs-obra-remedios",
+         "bbs-obra-arquivo",
+         "prr-arquivo"
+        ],
+        "printed": "500 000",
+        "row": "prr-arena",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "500 000"
+       }
+      ],
+      "text": "500 000 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 7"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Rossio de São Brás"
+     },
+     {
+      "figures": [],
+      "text": "Município de Évora"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "4 100 000",
+        "row": "prr-rossio",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "4 100 000"
+       }
+      ],
+      "text": "4 100 000 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 7"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Total que o plano escreve"
+     },
+     {
+      "figures": [],
+      "text": ""
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "16.320.000",
+        "row": "prr-total",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "16.320.000"
+       }
+      ],
+      "text": "16.320.000 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 7"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 84,
+   "kind": "heading",
+   "level": 3,
+   "text": "O relatório de atividades e contas de 2025 da associação"
+  },
+  {
+   "i": 85,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "linha"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "valor escrito"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Total da origem das receitas"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "printed": "1 873 516,13",
+        "row": "rc-receita-total",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1 873 516,13"
+       }
+      ],
+      "text": "1 873 516,13 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 66"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Subsídios à exploração"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "printed": "1 873 516,12",
+        "row": "rc-subsidios",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1 873 516,12"
+       }
+      ],
+      "text": "1 873 516,12 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 67"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Gabinete do Ministério da Cultura"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "printed": "1 841 566,89",
+        "row": "rc-gepac",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1 841 566,89"
+       }
+      ],
+      "text": "1 841 566,89 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 67"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Apoio à contratação do IEFP"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "31 949,23",
+        "row": "rc-iefp",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "31 949,23"
+       }
+      ],
+      "text": "31 949,23 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 67"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Fornecimentos e serviços externos"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "853 104,51",
+        "row": "rc-fse",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "853 104,51"
+       }
+      ],
+      "text": "853 104,51 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 66"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Despesas com o pessoal"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "926 015,21",
+        "row": "rc-pessoal",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "926 015,21"
+       }
+      ],
+      "text": "926 015,21 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 66"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Total de custos"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "printed": "1 791 424,36",
+        "row": "rc-custos-total",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1 791 424,36"
+       }
+      ],
+      "text": "1 791 424,36 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 66"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Resultado líquido"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "82 091,77",
+        "row": "rc-resultado",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "82 091,77"
+       }
+      ],
+      "text": "82 091,77 €"
+     },
+     {
+      "figures": [],
+      "text": "p. 66"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [
+    {
+     "end": 515,
+     "printed": "1 841 566,89",
+     "row": "rc-gepac",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 503,
+     "value": "1 841 566,89"
+    },
+    {
+     "end": 565,
+     "printed": "31 949,23",
+     "row": "rc-iefp",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 556,
+     "value": "31 949,23"
+    },
+    {
+     "end": 605,
+     "printed": "0,01",
+     "row": "rc-outras-receitas",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 601,
+     "value": "0,01"
+    }
+   ],
+   "i": 86,
+   "kind": "paragraph",
+   "text": "A associação escreve de onde veio o dinheiro: «As Receitas foram provenientes de uma única origem: tendo como base o Protocolo celebrado com o GEPAC - Gabinete de Estratégia, Planeamento e Avaliação Culturais, refletindo a contribuição financeira relativa à área governativa da Cultura, para o desenvolvimento e execução da iniciativa Évora Capital Europeia da Cultura, assim como os apoios referentes à contratação de pessoas através do IEFP.» A tabela da origem das receitas, na mesma página, escreve 1 841 566,89 € do gabinete do Ministério da Cultura, 31 949,23 € do apoio à contratação do IEFP e 0,01 € na linha «Outras Receitas». As restantes origens, entre elas o município, a CIMAC, o Turismo de Portugal e o Alentejo 2030, trazem «- €», que não é zero: é uma linha sem valor."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 40,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [
+    {
+     "end": 196,
+     "printed": "449 609,80",
+     "row": "rc-subcontratos-prosa",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 186,
+     "value": "449 609,80"
+    },
+    {
+     "end": 211,
+     "printed": "277 220,46",
+     "row": "rc-trabalhos-especializados",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 201,
+     "value": "277 220,46"
+    },
+    {
+     "end": 361,
+     "printed": "449 608,80",
+     "row": "rc-subcontratos-tabela",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 351,
+     "value": "449 608,80"
+    }
+   ],
+   "i": 87,
+   "kind": "paragraph",
+   "text": "Um segundo desencontro, na mesma página. A prosa escreve «As principais rúbricas de Fornecimentos e Serviços Externos foram os Subcontratos e Trabalhos especializados, com o montante de 449 609,80 € e 277 220,46 € respetivamente, referente á contratação de projetos inscritos no Bidbook, livro de candidatura Évora_27.» e a tabela logo abaixo escreve 449 608,80 € na linha dos subcontratos. Os dois valores não são o mesmo. Ficam os dois."
+  },
+  {
+   "figures": [],
+   "i": 88,
+   "kind": "heading",
+   "level": 3,
+   "text": "Os documentos previsionais do município"
+  },
+  {
+   "i": 89,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "linha"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "valor escrito"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Projeto «EVORA CAPITAL EUROPEIA DA CULTURA», dotação de 2024"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "540.000,00",
+        "row": "opo24-projeto-cec",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "540.000,00"
+       }
+      ],
+      "text": "540.000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "Opções do Plano e Orçamento de 2024, folha 156 do PDF"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "O mesmo projeto, total previsto"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "printed": "9.619.226,72",
+        "row": "opo24-projeto-cec-total",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "9.619.226,72"
+       }
+      ],
+      "text": "9.619.226,72 €"
+     },
+     {
+      "figures": [],
+      "text": "Opções do Plano e Orçamento de 2024, folha 156 do PDF"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Dotação de 2024 para a entidade gestora"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "others": [
+         "bbs-obra-arena"
+        ],
+        "printed": "250.000,00",
+        "row": "opo24-associacao",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "250.000,00"
+       }
+      ],
+      "text": "250.000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "Opções do Plano e Orçamento de 2024, folha 156 do PDF"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Projeto «EVORA CAPITAL EUROPEIA DA CULTURA», dotação de 2025"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "521.000,00",
+        "row": "opo25-projeto-cec",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "521.000,00"
+       }
+      ],
+      "text": "521.000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "Opções do Plano e Orçamento de 2025, folha 145 do PDF"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "O mesmo projeto, total previsto"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "printed": "8.980.117,51",
+        "row": "opo25-projeto-cec-total",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "8.980.117,51"
+       }
+      ],
+      "text": "8.980.117,51 €"
+     },
+     {
+      "figures": [],
+      "text": "Opções do Plano e Orçamento de 2025, folha 145 do PDF"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Orçamento global do município para 2026"
+     },
+     {
+      "figures": [
+       {
+        "end": 14,
+        "printed": "110.840.577,00",
+        "row": "gop26-orcamento-total",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "110.840.577,00"
+       }
+      ],
+      "text": "110.840.577,00 euros"
+     },
+     {
+      "figures": [],
+      "text": "Grandes Opções do Plano e Orçamento de 2026, p. 18"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Despesa prevista para a cultura e património em 2026"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "printed": "3.962.770,00",
+        "row": "gop26-cultura-patrimonio",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3.962.770,00"
+       }
+      ],
+      "text": "3.962.770,00 euros"
+     },
+     {
+      "figures": [],
+      "text": "Grandes Opções do Plano e Orçamento de 2026, p. 42"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 90,
+   "kind": "paragraph",
+   "text": "Os mapas do orçamento de 2026 do município têm linhas para o projeto da capital da cultura e para as obras do Plano de Recuperação e Resiliência, mas o ficheiro publicado é uma digitalização e os seus mapas não têm camada de texto de que se possa transcrever um valor. A mesma rubrica sai da leitura por máquina escrita de duas maneiras diferentes em duas folhas do mesmo ficheiro, e nenhuma delas é o nome que a câmara imprimiu. Os valores dessas linhas ficam por transcrever, e isso está dito na secção seguinte."
+  },
+  {
+   "figures": [],
+   "i": 91,
+   "kind": "heading",
+   "level": 3,
+   "text": "As duas operações europeias aprovadas"
+  },
+  {
+   "i": 92,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "operação"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "linha"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "valor escrito"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "VAGAR, Capital Europeia da Cultura Évora 27"
+     },
+     {
+      "figures": [],
+      "text": "Investimento total"
+     },
+     {
+      "figures": [
+       {
+        "end": 13,
+        "others": [
+         "alt-vagar-custo"
+        ],
+        "printed": "11.764.778,00",
+        "row": "vagar-investimento",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "11.764.778,00"
+       }
+      ],
+      "text": "11.764.778,00 €"
+     },
+     {
+      "figures": [],
+      "text": "Ficha da operação"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "VAGAR, Capital Europeia da Cultura Évora 27"
+     },
+     {
+      "figures": [],
+      "text": "Apoio financeiro da União Europeia"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "others": [
+         "alt-vagar-fundo"
+        ],
+        "printed": "1.750.000,00",
+        "row": "vagar-apoio-uniao",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1.750.000,00"
+       }
+      ],
+      "text": "1.750.000,00 €"
+     },
+     {
+      "figures": [],
+      "text": "Ficha da operação"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Internacionalização Évora_27"
+     },
+     {
+      "figures": [],
+      "text": "Investimento total"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "others": [
+         "alt-intern-custo"
+        ],
+        "printed": "2.941.599,16",
+        "row": "intern-investimento",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2.941.599,16"
+       }
+      ],
+      "text": "2.941.599,16 €"
+     },
+     {
+      "figures": [],
+      "text": "Ficha da operação"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Internacionalização Évora_27"
+     },
+     {
+      "figures": [],
+      "text": "Apoio financeiro da União Europeia"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "others": [
+         "alt-intern-fundo"
+        ],
+        "printed": "2.500.359,28",
+        "row": "intern-apoio-uniao",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2.500.359,28"
+       }
+      ],
+      "text": "2.500.359,28 €"
+     },
+     {
+      "figures": [],
+      "text": "Ficha da operação"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [
+    {
+     "end": 206,
+     "others": [
+      "vagar-investimento"
+     ],
+     "printed": "11764778",
+     "row": "alt-vagar-custo",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 198,
+     "value": "11764778"
+    },
+    {
+     "end": 219,
+     "others": [
+      "intern-investimento"
+     ],
+     "printed": "2941599.16",
+     "row": "alt-intern-custo",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 209,
+     "value": "2941599.16"
+    },
+    {
+     "end": 249,
+     "printed": "3755424",
+     "row": "alt-vagar-elegivel",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 242,
+     "value": "3755424"
+    },
+    {
+     "end": 297,
+     "others": [
+      "vagar-apoio-uniao"
+     ],
+     "printed": "1750000",
+     "row": "alt-vagar-fundo",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 290,
+     "value": "1750000"
+    },
+    {
+     "end": 310,
+     "others": [
+      "intern-apoio-uniao"
+     ],
+     "printed": "2500359.28",
+     "row": "alt-intern-fundo",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 300,
+     "value": "2500359.28"
+    }
+   ],
+   "i": 93,
+   "kind": "paragraph",
+   "text": "A lista da autoridade de gestão, reportada a junho de 2026, escreve para as mesmas duas operações, sem separador de milhares e com o ponto como separador decimal onde há cêntimos, um custo total de 11764778 e 2941599.16, um custo elegível de 3755424 para a primeira, e um fundo aprovado de 1750000 e 2500359.28. Os montantes da lista e os das fichas dizem o mesmo."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 42,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [
+    {
+     "end": 120,
+     "printed": "11.764.710,00",
+     "row": "plano-alentejo-aprovado",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 107,
+     "value": "11.764.710,00"
+    },
+    {
+     "end": 204,
+     "others": [
+      "vagar-investimento"
+     ],
+     "printed": "11.764.778,00",
+     "row": "alt-vagar-custo",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 191,
+     "value": "11764778"
+    }
+   ],
+   "i": 94,
+   "kind": "paragraph",
+   "text": "Um terceiro desencontro, entre documentos. Para a mesma candidatura, o plano de atividades de 2026 escreve 11.764.710,00 € onde a ficha da operação e a lista da autoridade de gestão escrevem 11.764.778,00 €. Os dois algarismos não são o mesmo, e nenhum dos documentos explica a diferença. Ficam os dois."
+  },
+  {
+   "figures": [],
+   "i": 95,
+   "kind": "paragraph",
+   "text": "As percentagens não entram. A ficha da operação VAGAR escreve uma taxa de cofinanciamento e a lista da autoridade de gestão escreve outra para a mesma operação, e nenhum dos dois documentos diz sobre que base a calcula."
+  },
+  {
+   "figures": [],
+   "i": 96,
+   "kind": "heading",
+   "level": 3,
+   "text": "Os três agregados, lado a lado"
+  },
+  {
+   "i": 97,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "agregado"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "o que o seu documento declara"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "onde"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "O do painel europeu"
+     },
+     {
+      "figures": [
+       {
+        "end": 27,
+        "printed": "49.5",
+        "row": "painel-orcamento-global",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 23,
+        "value": "49.5"
+       },
+       {
+        "end": 52,
+        "printed": "39",
+        "row": "painel-estado-garantido",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 50,
+        "value": "39"
+       },
+       {
+        "end": 87,
+        "printed": "34",
+        "row": "painel-transferido",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 85,
+        "value": "34"
+       },
+       {
+        "end": 118,
+        "others": [
+         "painel-protocolo-municipio"
+        ],
+        "printed": "10,5",
+        "row": "painel-municipio-por-transferir",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 114,
+        "value": "10,5"
+       }
+      ],
+      "text": "Um orçamento global de 49.5 milhões de euros, com 39 milhões garantidos pelo Estado, 34 milhões já transferidos e 10,5 milhões do município por transferir"
+     },
+     {
+      "figures": [
+       {
+        "end": 40,
+        "printed": "8",
+        "row": "painel-interno",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 39,
+        "value": "8"
+       }
+      ],
+      "text": "Segundo relatório de monitorização, p. 8"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "O do dossiê de candidatura"
+     },
+     {
+      "figures": [
+       {
+        "end": 40,
+        "others": [
+         "bbs-desp-total"
+        ],
+        "printed": "45 784 603,10",
+        "row": "bbs-op-total",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 27,
+        "value": "45 784 603,10"
+       }
+      ],
+      "text": "Uma receita operacional de 45 784 603,10 €, repartida por quatro origens públicas e pelo setor privado"
+     },
+     {
+      "figures": [],
+      "text": "Dossiê de seleção, folha 43 do PDF"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "O do protocolo, como o plano de 2026 o reparte"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "others": [
+         "plano-alentejo-a"
+        ],
+        "printed": "4.000.000,00",
+        "row": "plano-protocolo-economia",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "4.000.000,00"
+       },
+       {
+        "end": 41,
+        "others": [
+         "rcm-teto-global",
+         "plano-protocolo-cultura"
+        ],
+        "printed": "15.000.000,00",
+        "row": "plano-protocolo-coesao",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 28,
+        "value": "15.000.000,00"
+       },
+       {
+        "end": 69,
+        "others": [
+         "rcm-teto-global",
+         "plano-protocolo-cultura"
+        ],
+        "printed": "15.000.000,00",
+        "row": "plano-protocolo-coesao",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 56,
+        "value": "15.000.000,00"
+       },
+       {
+        "end": 109,
+        "others": [
+         "bbs-op-municipio"
+        ],
+        "printed": "10.519.953,10",
+        "row": "plano-protocolo-municipio",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 96,
+        "value": "10.519.953,10"
+       }
+      ],
+      "text": "4.000.000,00 € da economia, 15.000.000,00 € da cultura, 15.000.000,00 € da coesão territorial e 10.519.953,10 € do município"
+     },
+     {
+      "figures": [],
+      "text": "Plano de atividades e orçamento de 2026, p. 46"
+     }
+    ]
+   ]
+  },
+  {
+   "emphasis": [
+    {
+     "end": 61,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [],
+   "i": 98,
+   "kind": "paragraph",
+   "text": "Nenhum documento lido faz a ponte entre estes três agregados. Foram construídos de maneiras diferentes, têm anos de referência diferentes, e o documento que os poderia ligar, o protocolo de cooperação de junho de 2023, não está publicado. Este projeto não os soma e não escolhe entre eles."
+  },
+  {
+   "i": 99,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 100,
+   "kind": "heading",
+   "level": 2,
+   "text": "O que não se encontrou"
+  },
+  {
+   "figures": [],
+   "i": 101,
+   "kind": "paragraph",
+   "text": "A ausência é conteúdo. Cada linha diz o que se procurou, onde, e o que se obteve."
+  },
+  {
+   "i": 102,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "a pergunta"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "porque não tem resposta aqui"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Que contratos a associação celebrou, com quem e por quanto?"
+     },
+     {
+      "figures": [],
+      "text": "O Portal BASE recusou os três pedidos que se lhe fizeram, sempre com a mesma página de um dispositivo de segurança. Nenhum documento lido lista contratos, adjudicatários ou valores"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Qual é o texto do protocolo de cooperação de junho de 2023?"
+     },
+     {
+      "figures": [],
+      "text": "Não está publicado em nenhum dos sítios oficiais lidos. Três documentos oficiais remetem para ele e nenhum o reproduz. É o documento que falta para fechar a cadeia do dinheiro"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Qual é o ato formal que designou Évora?"
+     },
+     {
+      "figures": [],
+      "text": "Procurou-se no Diário da República, no sítio do gabinete do Ministério da Cultura e nos relatórios do painel. Os relatórios dizem que a designação foi feita pelo Ministério da Cultura em março de 2023; não se encontrou nenhum ato publicado"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Quanto é que o município transferiu efetivamente para a associação, ano a ano?"
+     },
+     {
+      "figures": [],
+      "text": "O relatório e contas de 2025 escreve «- €» na linha do município, que é uma linha sem valor, e o plano de 2026 escreve que não há valores confirmados. Os documentos do município que se leram são previsionais; os de execução não entraram nesta leitura"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "A execução real de 2024 e de 2025 do lado do município bateu com o orçamentado?"
+     },
+     {
+      "figures": [],
+      "text": "Pela mesma razão: só se leram documentos previsionais"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Quais são os valores das linhas do orçamento de 2026 do município para a capital da cultura?"
+     },
+     {
+      "figures": [],
+      "text": "O ficheiro publicado é uma digitalização e os mapas não têm camada de texto fiável. As linhas veem-se, os valores não se transcrevem"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Qual é o programa de 2027, com que eventos e que datas?"
+     },
+     {
+      "figures": [],
+      "text": "Não está publicado à data desta leitura. O documento de programação disponível é o de 2026"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "O prémio Melina Mercouri vai ser pago?"
+     },
+     {
+      "figures": [],
+      "text": "Depende de uma recomendação do painel no fim de 2026, que ainda não existe. A página do terceiro relatório de monitorização responde que não existe"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Quanto custou até hoje, ao todo, Évora 2027?"
+     },
+     {
+      "figures": [],
+      "text": "Não existe nenhum documento que some as parcelas. Somar as que aqui estão seria fabricar um número: as fontes sobrepõem-se, o mesmo euro aparece como compromisso do protocolo, como teto da resolução, como saldo transitado e como receita do ano, e misturam-se anos de referência e o previsto com o pago"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Os três agregados batem uns com os outros?"
+     },
+     {
+      "figures": [],
+      "text": "São construídos de maneira diferente e nenhum documento explica a ponte. Responder exige o texto do protocolo, que não está publicado"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Quantos visitantes Évora terá em 2027?"
+     },
+     {
+      "figures": [],
+      "text": "A única referência lida é uma afirmação em reunião de câmara de que alguns estudos apontam para uma possível duplicação. Nenhum estudo foi identificado e nenhum número foi publicado. É uma referência a um número, não um número"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Como votou cada partido nas deliberações sobre Évora 2027?"
+     },
+     {
+      "figures": [],
+      "text": "Possível em princípio, porque os editais dizem o sentido do voto, mas exige ler as atas e os editais das reuniões de câmara, o que esta leitura não fez"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Que remunerações têm os membros dos órgãos sociais da associação?"
+     },
+     {
+      "figures": [],
+      "text": "O decreto-lei que a cria obriga a divulgá-las. Nenhum documento lido as traz"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 103,
+   "kind": "paragraph",
+   "text": "Duas leituras ficaram por fazer, e ficam ditas: a decisão da União que rege as capitais europeias da cultura devolveu um corpo vazio nos três caminhos tentados, e a avaliação intercalar da ação das capitais europeias da cultura não foi aberta na fonte. O que se sabe do conteúdo da decisão vem de como o relatório do painel e as regras do concurso a citam, que são documentos oficiais, mas o texto legal em si fica por confirmar."
+  },
+  {
+   "i": 104,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 105,
+   "kind": "heading",
+   "level": 2,
+   "text": "O que mudou"
+  },
+  {
+   "figures": [],
+   "i": 106,
+   "kind": "paragraph",
+   "text": "Uma entrada por documento oficial novo, com a data dele e a data da leitura."
+  },
+  {
+   "i": 107,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "quando"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "o que mudou"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "documento"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2026-09-16"
+     },
+     {
+      "figures": [],
+      "text": "Primeira versão deste documento, com as leituras de 2026-09-15"
+     },
+     {
+      "figures": [],
+      "text": "as fontes listadas abaixo"
+     }
+    ]
+   ]
+  },
+  {
+   "emphasis": [
+    {
+     "end": 96,
+     "kind": "strong",
+     "start": 49
+    },
+    {
+     "end": 249,
+     "kind": "strong",
+     "start": 204
+    }
+   ],
+   "figures": [],
+   "i": 108,
+   "kind": "paragraph",
+   "text": "O primeiro acontecimento esperado, e a sua data: o terceiro relatório de monitorização do painel, previsto pelo próprio painel para o outono de 2026, cuja página responde hoje que não existe; e, com ele, a recomendação sobre o prémio Melina Mercouri, que o relatório de seleção marca para o fim de 2026."
+  },
+  {
+   "i": 109,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 110,
+   "kind": "heading",
+   "level": 2,
+   "text": "Quem dirige a associação"
+  },
+  {
+   "figures": [],
+   "i": 111,
+   "kind": "paragraph",
+   "text": "O decreto-lei que cria a associação é que fixa estes cargos, no seu artigo 10.º (p. 70): «São órgãos sociais da Associação a assembleia geral, a direção e o fiscal único.» A direção é composta por «Um presidente, nomeado por acordo entre o Estado e o Município de Évora, ouvida a assembleia geral;» e por «Uma comissão executiva, composta por quatro membros nomeados nos termos a definir nos Estatutos.»"
+  },
+  {
+   "figures": [],
+   "i": 112,
+   "kind": "paragraph",
+   "text": "Os cargos e os nomes, tal como a página «Quem Somos» da associação os escreve:"
+  },
+  {
+   "i": 113,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "cargo"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "nome"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Presidente"
+     },
+     {
+      "figures": [],
+      "text": "Maria do Céu Ramos"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Diretor-Executivo"
+     },
+     {
+      "figures": [],
+      "text": "Manuel Veiga"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Diretor Artístico"
+     },
+     {
+      "figures": [],
+      "text": "John Romão"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Diretor Financeiro"
+     },
+     {
+      "figures": [],
+      "text": "António Costa da Silva"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Diretor de Comunicação e Alcance"
+     },
+     {
+      "figures": [],
+      "text": "Bruno Fraga Braz"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 114,
+   "kind": "paragraph",
+   "text": "O decreto-lei que cria a associação obriga a divulgar a identidade dos membros dos órgãos sociais, e esta página é essa divulgação. As remunerações, que a mesma norma obriga a divulgar, não estão em nenhum documento lido."
+  },
+  {
+   "i": 115,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 116,
+   "kind": "heading",
+   "level": 2,
+   "text": "As fontes"
+  },
+  {
+   "figures": [],
+   "i": 117,
+   "kind": "paragraph",
+   "text": "A lista fechada das leituras de 2026-09-15. O resumo sha256, os bytes e o tipo de conteúdo de cada resposta estão no manifesto das cópias, que acompanha este estudo. As cópias estão arquivadas fora de qualquer repositório público."
+  },
+  {
+   "i": 118,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "documento"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "resposta"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "endereço"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "lido em (UTC)"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Dossiê de candidatura, fase de seleção (PT)"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 97,
+        "href": "https://www.evora2027.com/fileadmin/Evora_2027_v.3.0/bidbook/E27_Bidbook_2022_AF5-2_PT_04_12_.pdf",
+        "start": 0
+       }
+      ],
+      "text": "https://www.evora2027.com/fileadmin/Evora_2027_v.3.0/bidbook/E27_Bidbook_2022_AF5-2_PT_04_12_.pdf"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:38:48Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Dossiê de candidatura, fase de pré-seleção (PT)"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 82,
+        "href": "https://www.evora2027.com/fileadmin/Evora_2027_v.3.0/bidbook/E27_Bidbook_PT_AF.pdf",
+        "start": 0
+       }
+      ],
+      "text": "https://www.evora2027.com/fileadmin/Evora_2027_v.3.0/bidbook/E27_Bidbook_PT_AF.pdf"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:38:52Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Notícia da Comissão Europeia sobre a recomendação do painel"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 38,
+        "href": "https://culture.ec.europa.eu/node/2896",
+        "start": 0
+       }
+      ],
+      "text": "https://culture.ec.europa.eu/node/2896"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:40:52Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Sítio do Ministério da Cultura para a capital de 2027"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 31,
+        "href": "https://www.ecoc2027.mc.gov.pt/",
+        "start": 0
+       }
+      ],
+      "text": "https://www.ecoc2027.mc.gov.pt/"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:41:28Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Página de detalhe do Diário da República do decreto-lei que cria a associação"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 70,
+        "href": "https://diariodarepublica.pt/dr/detalhe/decreto-lei/124-2023-835674289",
+        "start": 0
+       }
+      ],
+      "text": "https://diariodarepublica.pt/dr/detalhe/decreto-lei/124-2023-835674289"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:41:29Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Endereço ELI do mesmo decreto-lei"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 60,
+        "href": "https://data.dre.pt/eli/dec-lei/124/2023/12/26/p/dre/pt/html",
+        "start": 0
+       }
+      ],
+      "text": "https://data.dre.pt/eli/dec-lei/124/2023/12/26/p/dre/pt/html"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:41:55Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Decreto-Lei n.º 124/2023, que cria a Associação Évora 2027"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 59,
+        "href": "https://data.dre.pt/eli/dec-lei/124/2023/12/26/p/dre/pt/pdf",
+        "start": 0
+       }
+      ],
+      "text": "https://data.dre.pt/eli/dec-lei/124/2023/12/26/p/dre/pt/pdf"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:42:19Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Diário da República, 1.ª série, n.º 247, número completo"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 65,
+        "href": "https://files.diariodarepublica.pt/gratuitos/1s/2023/12/24700.pdf",
+        "start": 0
+       }
+      ],
+      "text": "https://files.diariodarepublica.pt/gratuitos/1s/2023/12/24700.pdf"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:42:21Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Decreto-Lei n.º 47/2025, primeira alteração ao anterior"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 58,
+        "href": "https://data.dre.pt/eli/dec-lei/47/2025/03/27/p/dre/pt/pdf",
+        "start": 0
+       }
+      ],
+      "text": "https://data.dre.pt/eli/dec-lei/47/2025/03/27/p/dre/pt/pdf"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:43:29Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Resolução do Conselho de Ministros n.º 203/2023"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 64,
+        "href": "https://data.dre.pt/eli/resolconsmin/203/2023/12/28/p/dre/pt/pdf",
+        "start": 0
+       }
+      ],
+      "text": "https://data.dre.pt/eli/resolconsmin/203/2023/12/28/p/dre/pt/pdf"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:57:21Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Regras do concurso nacional, publicadas pelo GEPAC"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 115,
+        "href": "https://www.ecoc2027.mc.gov.pt/upload/ficheiros/02_Rules%20of%20procedure%20for%20ECOC%202027%20competition_ENG.pdf",
+        "start": 0
+       }
+      ],
+      "text": "https://www.ecoc2027.mc.gov.pt/upload/ficheiros/02_Rules%20of%20procedure%20for%20ECOC%202027%20competition_ENG.pdf"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:57:58Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Decisão da União que rege as capitais europeias da cultura (PDF)"
+     },
+     {
+      "figures": [],
+      "text": "corpo vazio"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 72,
+        "href": "https://eur-lex.europa.eu/legal-content/PT/TXT/PDF/?uri=CELEX:32014D0445",
+        "start": 0
+       }
+      ],
+      "text": "https://eur-lex.europa.eu/legal-content/PT/TXT/PDF/?uri=CELEX:32014D0445"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:58:10Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "A mesma decisão, em HTML"
+     },
+     {
+      "figures": [],
+      "text": "corpo vazio"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 73,
+        "href": "https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32014D0445",
+        "start": 0
+       }
+      ],
+      "text": "https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32014D0445"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:58:20Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "A mesma decisão, pelo endereço ELI"
+     },
+     {
+      "figures": [],
+      "text": "corpo vazio"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 53,
+        "href": "https://eur-lex.europa.eu/eli/dec/2014/445/oj/por/pdf",
+        "start": 0
+       }
+      ],
+      "text": "https://eur-lex.europa.eu/eli/dec/2014/445/oj/por/pdf"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:58:31Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Relatório do painel europeu, fase de pré-seleção"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 103,
+        "href": "https://culture.ec.europa.eu/sites/default/files/2022-04/ecoc-2027-portugual-preselection-report_v1.pdf",
+        "start": 0
+       }
+      ],
+      "text": "https://culture.ec.europa.eu/sites/default/files/2022-04/ecoc-2027-portugual-preselection-report_v1.pdf"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:42:49Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Relatório do painel europeu, fase de seleção"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 97,
+        "href": "https://culture.ec.europa.eu/sites/default/files/2023-02/ecoc-2027-portugual-selection-report.pdf",
+        "start": 0
+       }
+      ],
+      "text": "https://culture.ec.europa.eu/sites/default/files/2023-02/ecoc-2027-portugual-selection-report.pdf"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:42:51Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Primeiro relatório de monitorização do painel europeu"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 113,
+        "href": "https://culture.ec.europa.eu/sites/default/files/2023-10/%C3%89vora-first-monitoring-report-September-2023_en.pdf",
+        "start": 0
+       }
+      ],
+      "text": "https://culture.ec.europa.eu/sites/default/files/2023-10/%C3%89vora-first-monitoring-report-September-2023_en.pdf"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:42:53Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Página das capitais europeias da cultura, na Comissão"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 38,
+        "href": "https://culture.ec.europa.eu/node/1223",
+        "start": 0
+       }
+      ],
+      "text": "https://culture.ec.europa.eu/node/1223"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:46:59Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Página da política das capitais europeias da cultura"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 96,
+        "href": "https://culture.ec.europa.eu/policies/culture-in-cities-and-regions/european-capitals-of-culture",
+        "start": 0
+       }
+      ],
+      "text": "https://culture.ec.europa.eu/policies/culture-in-cities-and-regions/european-capitals-of-culture"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:47:14Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Página das capitais de 2027, Liepāja e Évora"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 116,
+        "href": "https://culture.ec.europa.eu/policies/culture-in-cities-and-regions/designated-capitals-of-culture/liepaja-and-evora",
+        "start": 0
+       }
+      ],
+      "text": "https://culture.ec.europa.eu/policies/culture-in-cities-and-regions/designated-capitals-of-culture/liepaja-and-evora"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:47:45Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Página do primeiro relatório de monitorização"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 103,
+        "href": "https://culture.ec.europa.eu/document/first-monitoring-report-european-capital-of-culture-2027-portugal",
+        "start": 0
+       }
+      ],
+      "text": "https://culture.ec.europa.eu/document/first-monitoring-report-european-capital-of-culture-2027-portugal"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:48:05Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Página do segundo relatório de monitorização"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 104,
+        "href": "https://culture.ec.europa.eu/document/second-monitoring-report-european-capital-of-culture-2027-portugal",
+        "start": 0
+       }
+      ],
+      "text": "https://culture.ec.europa.eu/document/second-monitoring-report-european-capital-of-culture-2027-portugal"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:48:02Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Segundo relatório de monitorização do painel europeu"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 112,
+        "href": "https://culture.ec.europa.eu/sites/default/files/2025-07/ecoc-2027-portugual-second-monitoring-report-280725.pdf",
+        "start": 0
+       }
+      ],
+      "text": "https://culture.ec.europa.eu/sites/default/files/2025-07/ecoc-2027-portugual-second-monitoring-report-280725.pdf"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:48:28Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Página do terceiro relatório de monitorização"
+     },
+     {
+      "figures": [],
+      "text": "não existe"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 103,
+        "href": "https://culture.ec.europa.eu/document/third-monitoring-report-european-capital-of-culture-2027-portugal",
+        "start": 0
+       }
+      ],
+      "text": "https://culture.ec.europa.eu/document/third-monitoring-report-european-capital-of-culture-2027-portugal"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:48:29Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Página Sobre da associação"
+     },
+     {
+      "figures": [],
+      "text": "não existe"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 31,
+        "href": "https://www.evora2027.com/sobre",
+        "start": 0
+       }
+      ],
+      "text": "https://www.evora2027.com/sobre"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:43:50Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Página inicial da associação"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 26,
+        "href": "https://www.evora2027.com/",
+        "start": 0
+       }
+      ],
+      "text": "https://www.evora2027.com/"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:43:58Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Página Bid Book da associação"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 34,
+        "href": "https://www.evora2027.com/bid-book",
+        "start": 0
+       }
+      ],
+      "text": "https://www.evora2027.com/bid-book"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:44:11Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Página Programação da associação"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 37,
+        "href": "https://www.evora2027.com/programacao",
+        "start": 0
+       }
+      ],
+      "text": "https://www.evora2027.com/programacao"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:44:17Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Página Quem Somos da associação"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 36,
+        "href": "https://www.evora2027.com/quem-somos",
+        "start": 0
+       }
+      ],
+      "text": "https://www.evora2027.com/quem-somos"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:44:14Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Página Notícias da associação"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 34,
+        "href": "https://www.evora2027.com/noticias",
+        "start": 0
+       }
+      ],
+      "text": "https://www.evora2027.com/noticias"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:55:47Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Estatutos da Associação Évora 2027"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 78,
+        "href": "https://www.evora2027.com/fileadmin/Estatutos__Associac__a__o_E__vora_2027.pdf",
+        "start": 0
+       }
+      ],
+      "text": "https://www.evora2027.com/fileadmin/Estatutos__Associac__a__o_E__vora_2027.pdf"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:44:36Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Plano de Atividades e Orçamento de 2026 da associação"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 99,
+        "href": "https://www.evora2027.com/fileadmin/user_upload/E_27_Plano.de.Atividades.e.Orcamento.2026_Final.pdf",
+        "start": 0
+       }
+      ],
+      "text": "https://www.evora2027.com/fileadmin/user_upload/E_27_Plano.de.Atividades.e.Orcamento.2026_Final.pdf"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:44:38Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Relatório de Atividades e Contas de 2025 da associação"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 105,
+        "href": "https://www.evora2027.com/fileadmin/user_upload/Relatorio.de.Atividades.e.Contas_2025_Final_com_Anexo.pdf",
+        "start": 0
+       }
+      ],
+      "text": "https://www.evora2027.com/fileadmin/user_upload/Relatorio.de.Atividades.e.Contas_2025_Final_com_Anexo.pdf"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:44:40Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Apresentação da programação de 2026"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 93,
+        "href": "https://www.evora2027.com/fileadmin/Apresentacao__Programacao_2026_E27_31MAR26_compressed.pdf",
+        "start": 0
+       }
+      ],
+      "text": "https://www.evora2027.com/fileadmin/Apresentacao__Programacao_2026_E27_31MAR26_compressed.pdf"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:44:42Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Ficha da operação VAGAR"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 63,
+        "href": "https://www.evora2027.com/fileadmin/ficha_de_operacao_VAGAR.pdf",
+        "start": 0
+       }
+      ],
+      "text": "https://www.evora2027.com/fileadmin/ficha_de_operacao_VAGAR.pdf"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:44:47Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Ficha da operação Internacionalização Évora_27"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 77,
+        "href": "https://www.evora2027.com/fileadmin/ficha_de_operacao_INTERNACIONALIZACAO.pdf",
+        "start": 0
+       }
+      ],
+      "text": "https://www.evora2027.com/fileadmin/ficha_de_operacao_INTERNACIONALIZACAO.pdf"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:44:48Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Grandes Opções do Plano e Orçamento de 2026 do município"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 96,
+        "href": "https://www.cm-evora.pt/wp-content/uploads/2026/01/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf",
+        "start": 0
+       }
+      ],
+      "text": "https://www.cm-evora.pt/wp-content/uploads/2026/01/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:48:33Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Página do plano e orçamento do município"
+     },
+     {
+      "figures": [],
+      "text": "não existe"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 104,
+        "href": "https://www.cm-evora.pt/pt/municipe/camara-municipal/plano-e-orcamento/opcoes-do-plano-e-orcamento-2025/",
+        "start": 0
+       }
+      ],
+      "text": "https://www.cm-evora.pt/pt/municipe/camara-municipal/plano-e-orcamento/opcoes-do-plano-e-orcamento-2025/"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:49:58Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Índice dos planos e orçamentos de anos anteriores"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 102,
+        "href": "https://www.cm-evora.pt/municipe/camara-municipal/plano-e-orcamento/plano-e-orcamento-anos-anteriores/",
+        "start": 0
+       }
+      ],
+      "text": "https://www.cm-evora.pt/municipe/camara-municipal/plano-e-orcamento/plano-e-orcamento-anos-anteriores/"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:50:00Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Opções do Plano e Orçamento de 2025 do município"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 87,
+        "href": "https://www.cm-evora.pt/wp-content/uploads/2025/01/Opcoes-do-Plano-e-Orcamento-2025.pdf",
+        "start": 0
+       }
+      ],
+      "text": "https://www.cm-evora.pt/wp-content/uploads/2025/01/Opcoes-do-Plano-e-Orcamento-2025.pdf"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:50:15Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Opções do Plano e Orçamento de 2024 do município"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 93,
+        "href": "https://www.cm-evora.pt/wp-content/uploads/2024/01/OPs_ORCAMENTO2024_DocCompleto_Assinado.pdf",
+        "start": 0
+       }
+      ],
+      "text": "https://www.cm-evora.pt/wp-content/uploads/2024/01/OPs_ORCAMENTO2024_DocCompleto_Assinado.pdf"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:50:19Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Notícia do município sobre o protocolo de cooperação"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 195,
+        "href": "https://www.cm-evora.pt/investimento-superior-a-44-milhoes-de-euros-camara-de-evora-e-estado-portugues-assinaram-protocolo-de-cooperacao-para-implementacao-da-capital-europeia-da-cultura-em-2027/",
+        "start": 0
+       }
+      ],
+      "text": "https://www.cm-evora.pt/investimento-superior-a-44-milhoes-de-euros-camara-de-evora-e-estado-portugues-assinaram-protocolo-de-cooperacao-para-implementacao-da-capital-europeia-da-cultura-em-2027/"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:56:28Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Página das atas do município"
+     },
+     {
+      "figures": [],
+      "text": "não existe"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 66,
+        "href": "https://www.cm-evora.pt/municipe/camara-municipal/atas-de-reuniao/",
+        "start": 0
+       }
+      ],
+      "text": "https://www.cm-evora.pt/municipe/camara-municipal/atas-de-reuniao/"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:52:03Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Índice das reuniões de câmara"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 69,
+        "href": "https://www.cm-evora.pt/municipe/camara-municipal/reunioes-de-camara/",
+        "start": 0
+       }
+      ],
+      "text": "https://www.cm-evora.pt/municipe/camara-municipal/reunioes-de-camara/"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:52:20Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Página da assembleia municipal"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 54,
+        "href": "https://www.cm-evora.pt/municipe/assembleia-municipal/",
+        "start": 0
+       }
+      ],
+      "text": "https://www.cm-evora.pt/municipe/assembleia-municipal/"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:52:22Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Ata da reunião pública de câmara de maio de 2026"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 93,
+        "href": "https://www.cm-evora.pt/wp-content/uploads/2026/09/Ata-no-10-da-RPC-de-14-de-maio-de-2026.pdf",
+        "start": 0
+       }
+      ],
+      "text": "https://www.cm-evora.pt/wp-content/uploads/2026/09/Ata-no-10-da-RPC-de-14-de-maio-de-2026.pdf"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:53:02Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Edital das deliberações da reunião de setembro de 2026"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 96,
+        "href": "https://www.cm-evora.pt/wp-content/uploads/2026/09/Edital-da-RPC-de-03-de-setembro-de-2026-1.pdf",
+        "start": 0
+       }
+      ],
+      "text": "https://www.cm-evora.pt/wp-content/uploads/2026/09/Edital-da-RPC-de-03-de-setembro-de-2026-1.pdf"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:53:07Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Portal BASE, pesquisa por Évora 2027"
+     },
+     {
+      "figures": [],
+      "text": "recusado"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 83,
+        "href": "https://www.base.gov.pt/Base4/pt/resultados/?type=contratos&texto=%C3%89vora%202027",
+        "start": 0
+       }
+      ],
+      "text": "https://www.base.gov.pt/Base4/pt/resultados/?type=contratos&texto=%C3%89vora%202027"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:53:31Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Portal BASE, formulário de pesquisa de contratos"
+     },
+     {
+      "figures": [],
+      "text": "recusado"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 57,
+        "href": "https://www.base.gov.pt/Base4/pt/pesquisa/?type=contratos",
+        "start": 0
+       }
+      ],
+      "text": "https://www.base.gov.pt/Base4/pt/pesquisa/?type=contratos"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:53:47Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Portal BASE, página inicial"
+     },
+     {
+      "figures": [],
+      "text": "recusado"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 24,
+        "href": "https://www.base.gov.pt/",
+        "start": 0
+       }
+      ],
+      "text": "https://www.base.gov.pt/"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:53:56Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Página inicial do programa Alentejo 2030"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 33,
+        "href": "https://alentejo.portugal2030.pt/",
+        "start": 0
+       }
+      ],
+      "text": "https://alentejo.portugal2030.pt/"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:58:46Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Página da lista de operações aprovadas"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 62,
+        "href": "https://alentejo.portugal2030.pt/lista-de-operacoes-aprovadas/",
+        "start": 0
+       }
+      ],
+      "text": "https://alentejo.portugal2030.pt/lista-de-operacoes-aprovadas/"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:58:54Z"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Lista de operações aprovadas pelo Alentejo 2030, reportada a junho de 2026"
+     },
+     {
+      "figures": [],
+      "text": "leu-se"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 103,
+        "href": "https://alentejo.portugal2030.pt/wp-content/uploads/sites/13/2026/07/lista_operacoes_30_junho_2026.xlsx",
+        "start": 0
+       }
+      ],
+      "text": "https://alentejo.portugal2030.pt/wp-content/uploads/sites/13/2026/07/lista_operacoes_30_junho_2026.xlsx"
+     },
+     {
+      "figures": [],
+      "text": "2026-09-15T11:59:03Z"
+     }
+    ]
+   ]
+  }
+ ],
+ "edition": "Évora 2027 — O Prometido, o Painel, o Dinheiro (pt-PT)",
+ "lang": "pt-PT",
+ "ledger": "ledger.json",
+ "prova": "edicao-html",
+ "schema": "oedp/registo-de-conteudo/1",
+ "source": "Évora 2027 — O Prometido, o Painel, o Dinheiro (pt-PT).html",
+ "title": "Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas"
+}
