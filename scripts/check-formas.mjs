@@ -30,7 +30,15 @@
  *        não é dos quatro fecha a construção. E dentro de uma forma não há
  *        `<script>`, `<animate>`, `<animateTransform>`, `<set>` nem `<foreignObject>`.
  *   F4 · **a frase da fronteira, uma vez por página, com id.**
- *   F5 · **as três datas em cada leitura breve** de uma medida com linha.
+ *   F5 · **as três datas no RECIBO de cada linha com leitura breve** (bloco P3,
+ *        16.09.2026; decisão do diretor de 16.09). Eram medidas na dobra da
+ *        leitura breve, onde a carta as mandava escrever; a carta passou a
+ *        dizer «Três datas por medida, sempre, no recibo da linha» e a
+ *        exigência mudou de lugar com ela. O conjunto das linhas medidas é o
+ *        mesmo de sempre, lido do `dist/` e não de uma lista escrita aqui: toda
+ *        a linha que uma leitura breve cita. A força não muda: eram três datas
+ *        por leitura breve, são três datas por recibo de linha com leitura
+ *        breve, e o recibo é onde a norma §2.1 as põe.
  *   F6 · **as linhas alcançáveis.** Todas as linhas que a página do domínio cita
  *        existem; e as 308 de cada medida de concelho são alcançáveis pela porta
  *        que o mapa leva.
@@ -120,6 +128,7 @@ import { loadClaims, getClaim, eValorTextual, parsePtNumber } from '../src/lib/l
 import { dataDaCasa } from '../src/lib/datas.mjs';
 import { matchPath, routePath, LANGS } from '../src/lib/routes.mjs';
 import { slugsDosDominios, medidasDoDominio } from '../src/data/dominios.mjs';
+import { FIGURAS } from '../src/data/figuras.mjs';
 import { MEDIDAS_DO_CONCELHO } from '../src/data/concelhos.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { linhasPorConcelho } from '../src/lib/dominios.mjs';
@@ -279,6 +288,43 @@ const temAlgarismo = (s) => /\d/.test(s);
 /* A varredura                                                                */
 /* ========================================================================== */
 
+/* ---------------------------------------------------------------------------
+ * F5 · O CONJUNTO DAS LINHAS COM LEITURA BREVE, E AS DATAS DE CADA RECIBO
+ * ---------------------------------------------------------------------------
+ * A conferência é em duas metades porque atravessa páginas: a leitura breve
+ * vive na página do domínio e na primeira página, e as três datas vivem no
+ * recibo, que é outra página. A varredura recolhe as duas coisas; a conferência
+ * faz-se no fim, quando já não falta nenhum ficheiro por ler.
+ *
+ * AS TRÊS DATAS DO RECIBO SÃO TRÊS CAMPOS DA LINHA, e são os mesmos três que a
+ * dobra escrevia (`tresDatasDaLinha()`, em `src/lib/dominios.mjs`): o período de
+ * referência, a data em que a fonte publicou ou em que foi lida, e a data da
+ * última verificação. No recibo rendem-se como campos do livro-razão, com
+ * `data-linha-campo`, e é por essa marca que se contam.
+ */
+const linhasComLeituraBreve = new Set();
+/* O CONJUNTO LÊ-SE DAS DECLARAÇÕES QUE AS PÁGINAS RENDEM, e não de uma lista
+   escrita aqui nem de uma varredura do HTML. As duas coisas foram tentadas e a
+   segunda está errada: uma leitura breve de uma medida de concelho tem, dentro
+   do seu bloco, os 308 valores do mapa, e contá-los como «linhas com leitura
+   breve» pedia um recibo com três datas a 1 270 linhas que não têm leitura
+   nenhuma (medido a 16.09.2026: a primeira redação desta célula fechou a
+   construção com esses 1 270). O que uma leitura breve é ABOUT está declarado:
+   é a medida de um domínio (`MEDIDAS_DO_DOMINIO_1`, com os seus valores irmãos)
+   e é a figura de um quadro da primeira página (`FIGURAS`). São 29 linhas hoje,
+   11 delas do domínio, e todas têm as três datas. */
+for (const slug of slugsDosDominios()) {
+  for (const m of medidasDoDominio(slug)) {
+    if (m.claim) linhasComLeituraBreve.add(m.claim);
+    for (const o of m.claims ?? []) if (o.id) linhasComLeituraBreve.add(o.id);
+  }
+}
+for (const f of FIGURAS) {
+  if (typeof f.claim === 'string') linhasComLeituraBreve.add(f.claim);
+}
+/** @type {Map<string, Record<string, Set<string>>>} */
+const datasDoRecibo = new Map();
+
 const contas = {
   paginas: 0,
   paginas_de_dominio: 0,
@@ -286,6 +332,7 @@ const contas = {
   formas: 0,
   formas_por_nome: /** @type {Record<string, number>} */ ({}),
   medidas_com_leitura: 0,
+  recibos_com_tres_datas: 0,
   ausencias: 0,
   concelhos_com_ganho: /** @type {Record<string, number>} */ ({ pt: 0, en: 0 }),
   concelhos_com_populacao: /** @type {Record<string, number>} */ ({ pt: 0, en: 0 }),
@@ -386,6 +433,26 @@ for (const ficheiro of paginasDe(DIST)) {
       );
     }
   }
+  /* F5, a recolha: que datas é que o recibo de cada linha rende, por edição. */
+  if (rota?.key === 'linha') {
+    const id = rota.params.slug ?? '';
+    if (!datasDoRecibo.has(id)) datasDoRecibo.set(id, {});
+    const porEdicao = datasDoRecibo.get(id);
+    const campos = (porEdicao[rota.lang] ??= new Set());
+    /* A MARCA DE UMA DATA NÃO É `data-linha-campo`, e é bem que não seja: uma
+       data do livro-razão está em ISO no ficheiro e escreve-se `dd.mm.aaaa` na
+       página, e uma comparação literal nunca passaria. `CampoDaLinha` delega-a a
+       `DataDaLinha`, que diz de que linha e de que campo ela é
+       (`data-de-campo`), e a F1 deste mesmo portão já recompõe cada uma e
+       compara-a com o livro-razão. É essa marca que se conta. */
+    for (const el of root.querySelectorAll('[data-nonledger="data-da-linha"]')) {
+      const campo = el.getAttribute('data-de-campo') ?? '';
+      if (campo === 'reference_date') campos.add('periodo');
+      else if (campo === 'published_at' || campo === 'access_date') campos.add('leitura');
+      else if (/^verifications\.\d+\.date$/.test(campo)) campos.add('verificacao');
+    }
+  }
+
   if (rota?.key === 'linha' && idsAtrasados.has(rota.params.slug ?? '')) {
     const marcas = root.querySelectorAll('[data-nonledger="periodo-da-fonte"]').length;
     if (marcas === 0) {
@@ -469,20 +536,12 @@ for (const ficheiro of paginasDe(DIST)) {
       }
     }
 
-    /* --------------------------------------------------------------- F5 --- */
-    for (const medida of root.querySelectorAll('[data-medida]')) {
-      contas.medidas_com_leitura++;
-      const chave = medida.getAttribute('data-medida') ?? '';
-      const temValor = medida.querySelectorAll('[data-claim]').length > 0;
-      if (!temValor) continue;
-      const datas = medida.querySelectorAll('[data-nonledger="data-da-linha"]');
-      if (datas.length < 3) {
-        err(
-          `${rel}: a leitura breve de "${chave}" tem ${datas.length} data(s) e a carta pede três ` +
-            `(o período de referência, a data de leitura, a data da última conferência).`,
-        );
-      }
-    }
+    /* --------------------------------------------------------------- F5 ---
+       A CONTAGEM DAS LEITURAS BREVES DESTA PÁGINA. A conferência das três datas
+       está depois da varredura, onde os recibos já foram todos lidos; aqui só se
+       conta, para que a saída do portão diga quantas leituras breves existiam
+       quando ele mediu. */
+    contas.medidas_com_leitura += root.querySelectorAll('[data-medida]').length;
 
     /* --------------------------------------------------------------- F8 --- */
     for (const ausencia of root.querySelectorAll('[data-ausencia]')) {
@@ -876,6 +935,67 @@ for (const lang of LANGS) {
   contas.contagens_por_extenso++;
 }
 
+/* ---------------------------------------------------------------------------
+ * F5 · a segunda metade: as três datas no recibo de cada linha com leitura breve
+ * ---------------------------------------------------------------------------
+ * A carta dos conteúdos, §1, regra 3, desde 16.09.2026: «Três datas por medida,
+ * sempre, no recibo da linha». O que aqui se exige é isso e nada menos: para
+ * cada linha que uma leitura breve cita, o recibo dela tem de render as três
+ * datas, nas DUAS edições. Uma edição sozinha não chega, pela mesma razão de
+ * F7 e F15: as duas podiam faltar à mesma linha e continuar a bater uma com a
+ * outra.
+ *
+ * O CONTROLO POSITIVO ESTÁ NO CONJUNTO, e é o que impede esta conferência de
+ * passar por estar cega: se a varredura não achar leitura breve nenhuma, a
+ * régua fecha a construção. Um zero aqui só tem duas explicações e uma é má.
+ */
+if (contas.paginas > 0) {
+  if (linhasComLeituraBreve.size === 0) {
+    err(
+      `o conjunto das linhas com leitura breve está vazio, e as medidas declaradas existem ` +
+        `(a primeira página e a página do domínio rendem-nas). Sem conjunto, a F5 media zero ` +
+        `recibos e passava por estar cega.`,
+    );
+  }
+  /* E O CONJUNTO TEM DE SE VER NA PÁGINA: se nenhuma leitura breve for rendida,
+     a declaração diz uma coisa e o sítio faz outra, e a conferência mede a
+     declaração contra ela própria. */
+  if (contas.medidas_com_leitura === 0) {
+    err(
+      `nenhuma página construída rende uma leitura breve («[data-medida]»), e a declaração tem ` +
+        `${linhasComLeituraBreve.size} linha(s) com leitura. Ou as leituras saíram do sítio, ou a ` +
+        `varredura deixou de as ver.`,
+    );
+  }
+  for (const id of [...linhasComLeituraBreve].sort()) {
+    const porEdicao = datasDoRecibo.get(id);
+    if (!porEdicao) {
+      err(
+        `a linha "${id}" é citada por uma leitura breve e não tem página de recibo construída. ` +
+          `As três datas de uma medida vivem no recibo, e sem recibo não vivem em lado nenhum.`,
+      );
+      continue;
+    }
+    for (const lang of LANGS) {
+      const campos = porEdicao[lang];
+      if (!campos) {
+        err(`o recibo da linha "${id}" não foi construído na edição "${lang}".`);
+        continue;
+      }
+      const faltam = ['periodo', 'leitura', 'verificacao'].filter((c) => !campos.has(c));
+      if (faltam.length > 0) {
+        err(
+          `o recibo da linha "${id}", na edição "${lang}", tem ${campos.size} das três datas e ` +
+            `falta(m) ${faltam.join(' · ')} (a carta dos conteúdos, §1, regra 3: o período de ` +
+            `referência, a data de leitura ou de publicação, e a data da última verificação).`,
+        );
+      } else {
+        contas.recibos_com_tres_datas++;
+      }
+    }
+  }
+}
+
 /* F6 · as linhas de cada medida de concelho são alcançáveis pela porta do mapa. */
 if (dominios.length > 0 && contas.formas > 0) {
   const porta = routePath('livroConcelhos', 'pt');
@@ -905,6 +1025,7 @@ console.log(
     cinza(
       ` ${contas.paginas_de_dominio} páginas de domínio · ${contas.formas} desenhos (${porNome || 'nenhum'})` +
         ` · ${contas.datas_de_linha} datas de linha conferidas · ${contas.medidas_com_leitura} leituras breves` +
+        ` · ${contas.recibos_com_tres_datas} recibo(s) com as três datas` +
         ` · ${contas.ausencias} ausências · ganho médio em ${contas.concelhos_com_ganho.pt}/${contas.concelhos.pt} concelhos` +
         ` (controlo: população em ${contas.concelhos_com_populacao.pt})` +
         ` · atraso: ${SERIES_ATRASADAS.length} série(s), ${idsAtrasados.size} linha(s),` +

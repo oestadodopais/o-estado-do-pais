@@ -388,11 +388,13 @@ export function medidasComLeitura(slug) {
   return medidasDoDominio(slug).map((medida) => ({
     medida,
     linha: medida.claim === null ? null : getClaim(medida.claim),
-    datas: medida.claim === null ? [] : tresDatasDaLinha(medida.claim),
+    /* SEM `datas` (bloco P3, 16.09.2026, item 2): a leitura breve deixou de as
+       render, e o campo seguiu-as. `tresDatasDaLinha()` fica, e é o
+       `check:formas` que a chama agora, para exigir as três no RECIBO de cada
+       linha com leitura breve. */
     outras: (medida.claims ?? []).map((o) => ({
       ...o,
       linha: getClaim(o.id),
-      datas: tresDatasDaLinha(o.id),
     })),
     desenho: formaDaMedida(medida),
   }));

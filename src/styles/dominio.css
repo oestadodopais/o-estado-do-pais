@@ -112,7 +112,6 @@
   color: var(--muted);
 }
 .dominio-limiar,
-.dominio-datas,
 .dominio-fonte,
 .dominio-razao {
   margin: 8px 0 0;
@@ -143,9 +142,6 @@
 .dominio-limiar-v,
 .dominio-estado {
   color: var(--ink);
-}
-.dominio-sep {
-  color: var(--g2);
 }
 .dominio-razao {
   max-width: var(--measure);

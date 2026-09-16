@@ -72,16 +72,13 @@ import { rotuloDoValorDeReferencia } from '../../lib/estado.mjs';
    está antes das leituras do SEU quadro, e não antes de outras. */
 const { s, lang, quadro, medidas, formas = null } = Astro.props;
 
-/* Os três rótulos das três datas, os mesmos da página do domínio: são nomes de
-   campos do livro-razão, e a página da linha já lhes chama assim. Escrevem-se
-   uma vez, aqui, e não dentro do laço. */
-const ROTULO_DA_DATA = {
-  reference_date: s.dominios.dataPeriodo,
-  published_at: s.dominios.dataLido,
-  access_date: s.dominios.dataLido,
-};
-/** @param {string} campo */
-const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferido;
+/* AS TRÊS DATAS SAÍRAM DAQUI (bloco P3, 16.09.2026, item 2; decisão do diretor
+   de 16.09). Viviam nesta dobra com três rótulos de recibo por cima («período
+   de referência», «lido na fonte a», «verificado a»), e a norma §2.1 diz onde
+   elas vivem: ao lado do número ficam quatro coisas, o valor, a unidade, o
+   período e a fonte, e tudo o resto fica atrás da marca da fonte, que é o recibo
+   da linha. O recibo mostra as três, e o `check:formas` (F5) passa a medi-las
+   lá: a exigência muda de lugar, não de força. */
 
 /* A leitura de cada medida, montada uma vez: o que muda entre uma medida do
    Procedimento e uma do Painel Social é ter ou não ter limiar publicado, e isso
@@ -135,7 +132,6 @@ const leituras = medidas.map((m) => ({
      limiar e sem fixador não chega aqui: `fixadorDoLimiar()` fecha a construção
      antes, na vista. */
   fixador: m.limiarFixadoPor ?? null,
-  datas: tresDatasDaLinha(m.claim),
   estado: m.estado ?? null,
   /* A RÉGUA CONTRA O LIMIAR, quando o quadro publica um: a barra que a peça
      desenhava, com a mesma gramática (Emenda 4). Chega calculada da vista, que é
@@ -322,23 +318,6 @@ for (let i = 0; i < RANHURAS.length; i++) {
               <Frase partes={frase} lang={lang} selos={true} />
             </p>
           ))}
-
-          {/* AS TRÊS DATAS, na forma da casa, cada uma com a linha e o campo de
-              onde saiu (carta §1, regra 3). As 21 medidas têm as três: o período
-              de referência, a data em que a fonte foi lida e a data da última
-              conferência — medido antes de se escrever esta linha, e não
-              suposto. */}
-          {l.datas.length > 0 && (
-            <p class="dobra-datas">
-              {l.datas.map((d, i) => (
-                <>
-                  {i > 0 && <span class="dobra-sep"> · </span>}
-                  <span class="dobra-data-k">{rotuloDaData(d.campo)}</span>{' '}
-                  <DataDaLinha id={l.id} campo={d.campo} valor={d.valor} />
-                </>
-              ))}
-            </p>
-          )}
 
           {/* A RÉGUA CONTRA O LIMIAR (Emenda 4), onde o quadro publica um. É a
               única forma gráfica que o sítio tem para «de que lado do limiar
