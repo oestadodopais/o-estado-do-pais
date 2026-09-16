@@ -8,36 +8,48 @@
 
 | # | o que | a medida de aceitação | medido |
 | --- | --- | --- | --- |
-| 1 | Os nomes das medidas | 0 cartões com o título da fonte nas duas edições; a tabela completa | **feito.** 0 e 0. Antes: 82 cartões por edição (81 linhas distintas) encabeçavam-se com o `name` da fonte (16) ou com o `document.title` (66). Depois: 82 por edição com `data-nome="projeto"`, e o degrau do campo da fonte a zero. As 24 linhas que não se rendem como cartão ganham o nome por cima da sua aritmética, 24 por edição. A tabela dos 81 e a dos 24 estão em `cadeias-antes-depois.md`, §2 e §3 |
-| 2 | As três datas saem das leituras breves e entram no recibo | as três cadeias a 0 nas dobras; F5 verde no recibo; a carta emendada | **feito.** «período de referência», «lido na fonte a» e «verificado a» nas dobras: 6 858 por edição antes, **0 e 0** depois. F5 mudou de lugar e mede **58 recibos** (as 29 linhas com leitura breve, nas duas edições) com as três datas cada; a planta P2 de `tests/dominio/pagina.mjs` mudou com ela e morde (9 de 9). `CARTA-DOS-CONTEUDOS.md` §1, regra 3, emendada com a data e a razão |
-| 3 | «A casa» sai do texto do leitor | «a casa» a 0 nas páginas construídas fora de citações de fontes; a §1.110; a amarra verde | **feito.** 0 na superfície de 7 334 páginas, pela definição do portão novo. A §1.110 está escrita, com o carimbo do Método e o do Sobre, e o `ledger:check` é o primeiro passo do `build`, que saiu a 0 |
-| 4 | A revisão de língua de todas as cadeias do leitor | a tabela completa das cadeias mudadas; nenhum decalque da lista à vista | **feito em parte, e a parte que falta está dita.** 39 cadeias de prosa mudadas, todas na tabela, com a razão de cada uma; nenhum decalque da lista à vista (o portão do item 5 prova-o). **O que não se fez:** as definições das medidas não passaram à forma da pergunta do leitor. A razão está no §5 |
-| 5 | O portão das palavras proibidas | a célula verde na cabeça final e vermelha com a planta | **feito.** `check:voz` ganha a célula 11 com as 14 palavras da norma §1.3; a lista, a definição de «à vista» e as exceções por rota vivem numa cópia só (`scripts/voz-palavras.mjs`); a planta (`tests/voz/palavras-proibidas.mjs`, `npm run check:palavras`, dentro do `verify`) planta cada uma das 14 numa cópia de `dist/` e exige que o portão a veja |
+| 1 | Os nomes das medidas | 0 cartões com o título da fonte nas duas edições; a tabela completa | **feito, com a regra emendada na passagem de correção** (§7, achados 6, 7 e 8: 46 dos 105 nomes mudaram ao fim do dia). 0 e 0. Antes: 82 cartões por edição (81 linhas distintas) encabeçavam-se com o `name` da fonte (16) ou com o `document.title` (66). Depois: 82 por edição com `data-nome="projeto"`, e o degrau do campo da fonte a zero. As 24 linhas que não se rendem como cartão ganham o nome por cima da sua aritmética, 24 por edição. A tabela dos 81 e a dos 24 estão em `cadeias-antes-depois.md`, §2 e §3 |
+| 2 | As três datas saem das leituras breves e entram no recibo | as três cadeias a 0 nas dobras; F5 verde no recibo; a carta emendada | **feito.** «período de referência», «lido na fonte a» e «verificado a» nas dobras: 6 858 por edição antes, **0 e 0** depois. F5 mudou de lugar e, depois da passagem de correção do fim do dia (§7, achado 11), lê os alvos do `dist/` e mede **4 370 recibos** (as 2 493 linhas com leitura breve rendida, menos as 308 derivadas, nas duas edições) com as três datas cada **e a última verificação à vista**; eram 58 de manhã. A planta P2 de `tests/dominio/pagina.mjs` passou a tirar só a verificação mais recente e morde (9 de 9). `CARTA-DOS-CONTEUDOS.md` §1, regra 3, emendada com a data e a razão |
+| 3 | «A casa» sai do texto do leitor | «a casa» a 0 nas páginas construídas fora de citações de fontes; a §1.110; a amarra verde | **feito.** 0 na superfície de **7 358** páginas, pela definição do portão novo (eram 7 334 de manhã: as 24 páginas de estudo que o portão saltava passaram a medir-se, §7, achado 10). A razão de uma correção dizia «no motor de investigação desta casa» e o portão não a via: está corrigida, e o portão passou a ver a prosa das correções (§7, achado 4). A §1.110 está escrita, com o carimbo do Método e o do Sobre, e o `ledger:check` é o primeiro passo do `build`, que saiu a 0 |
+| 4 | A revisão de língua de todas as cadeias do leitor | a tabela completa das cadeias mudadas; nenhum decalque da lista à vista | **feito em parte, e a parte que falta está dita.** 39 cadeias de prosa mudadas, todas na tabela, com a razão de cada uma, **e treze delas refeitas na passagem de correção do fim do dia** (§7, achado 9). **O âmbito da tabela cresceu com ela** (§7, achado 12): os literais das vistas e dos componentes `.astro` entram no pacote, são 31, e nenhum mudou neste bloco; nenhum decalque da lista à vista (o portão do item 5 prova-o). **O que não se fez:** as definições das medidas não passaram à forma da pergunta do leitor. A razão está no §5 |
+| 5 | O portão das palavras proibidas | a célula verde na cabeça final e vermelha com a planta | **feito.** `check:voz` ganha a célula 11 com as 14 palavras da norma §1.3; a lista, a definição de «à vista» e as exceções por rota vivem numa cópia só (`scripts/voz-palavras.mjs`); a planta (`tests/voz/palavras-proibidas.mjs`, `npm run check:palavras`, dentro do `verify`) planta cada uma das 14 numa cópia de `dist/` e exige que o portão a veja. **A passagem de correção do fim do dia alargou a superfície e acrescentou quatro plantas** (§7, achado 10): 18 de 18 vistas, e nenhuma rota saltada |
 | 6 | A dívida das réguas (I118, segunda parte, e I119) | todas as réguas do sítio verdes, com as plantas a morder; o que sair, dito | **feito, com a passagem de correção do fim do dia** (§7, achado 13). `tests/inicio/porta.mjs`: 52 de 52 células e **as três plantas que não mordiam passam a morder** (A15, A17, A11). `tests/inicio/mapa-navegacao.mjs`: 9 de 9 (a I119 fechada). `tests/inicio/lista.mjs`: **90 de 90** (eram 80 de 94; a L3 e a L8 saíram com a razão escrita). `tests/inicio/faixa.mjs`: **66 de 66** (eram 50 de 80; a F10a saiu com a razão escrita). O que saiu e o que se acertou, célula a célula, está no §7 e na I118 |
 | 7 | As capturas e a tabela | completas | **feito.** 100 capturas (5 páginas × 2 edições × 5 larguras × antes e depois) e as três tabelas. As 50 capturas «depois» foram refeitas ao fim do dia, com o mesmo guião, sobre a cabeça da passagem de correção |
 | 8 | As duas frases da regra dos nomes | as duas frases a 1 nas suas páginas, nas duas edições, e a 0 no resto do `dist/` | **feito.** A norma no Sobre entra como campo governado (`SOBRE[lang].nomes`, marca `data-sobre-nomes`) e o `gate:html` compara-a carácter a carácter; o direito de resposta entra na página das correções. As duas no inventário das frases, com a razão |
 
 ## 2 · Os commits, a cabeça e os três portões
 
-Onze commits sobre `796c9032`, todos com os dois trailers, todos por caminhos explícitos:
+São **vinte e cinco commits** sobre `54170951` (a base depois do rebase; o ramo foi escrito sobre `796c9032` e rebaseado pelo lugar de direção), todos com os dois trailers, todos por caminhos explícitos: **treze do lote da manhã** e **doze da passagem de correção do fim do dia** (§7). A primeira redação deste parágrafo dizia «onze» e a tabela listava doze linhas mais a do próprio relatório, que é a contradição que a leitura a frio apanhou (achado 15); a conta refaz-se agora do `git log` e não de cabeça, e as cabeças são as de depois do rebase.
 
 | cabeça | o que |
 | --- | --- |
-| `e9247b45` | Os oitenta e um nomes das medidas, e os vinte e quatro das linhas derivadas |
-| `6b40122f` | As três datas saem da dobra da leitura breve e vivem no recibo da linha |
-| `2c047f3c` | «A casa» sai do Método e da política, e «limiar» com ela na entrada de fecho |
-| `5cf47b31` | A revisão de língua das cadeias do leitor, e o inventário atrás dela |
-| `f1e65f8a` | O portão das palavras proibidas, com a planta que o derruba |
-| `f107b77f` | As duas frases da regra dos nomes, e a §1.110 com os dois carimbos |
-| `93315923` | A dívida das réguas: as três plantas que não mordiam, e a N3 da busca |
-| `223957dd` | A quarta «peça» declarada na L3, e o tipo da fonte do nome com o degrau novo |
-| `77526b22` | As três importações que ficaram sem uso quando as datas saíram das dobras |
-| `71a7f5b8` | A régua do índice lê a terceira lista dos nomes do projeto |
-| `37912148` | «Toque num» volta a morder: a fronteira da palavra estava no sítio errado |
-| `0a0da466` | As cem capturas, as três tabelas e o relatório do bloco |
+| `6f1a5787` | Os oitenta e um nomes das medidas, e os vinte e quatro das linhas derivadas |
+| `78ffca88` | As três datas saem da dobra da leitura breve e vivem no recibo da linha |
+| `97cdc287` | «A casa» sai do Método e da política, e «limiar» com ela na entrada de fecho |
+| `5dca6892` | A revisão de língua das cadeias do leitor, e o inventário atrás dela |
+| `ffe5880a` | O portão das palavras proibidas, com a planta que o derruba |
+| `d1517559` | As duas frases da regra dos nomes, e a §1.110 com os dois carimbos |
+| `cd79298e` | A dívida das réguas: as três plantas que não mordiam, e a N3 da busca |
+| `dd017ecd` | A quarta «peça» declarada na L3, e o tipo da fonte do nome com o degrau novo |
+| `1a662820` | As três importações que ficaram sem uso quando as datas saíram das dobras |
+| `b70c9f93` | A régua do índice lê a terceira lista dos nomes do projeto |
+| `5e244891` | «Toque num» volta a morder: a fronteira da palavra estava no sítio errado |
+| `8d0c6e61` | As cem capturas, as três tabelas e o relatório do bloco |
+| `d8f86bb2` | O relatório com a cabeça final, os códigos dos portões e o custo |
+| `b0912a48` | A razão da correção diz «deste projeto», e o portão deixa de tapar a prosa das correções |
+| `544d3a2d` | As sete frases que um jornal não imprimiria, e os dois carimbos novos |
+| `d8396ed3` | A regra dos nomes emenda-se, e quarenta e seis nomes mudam com ela |
+| `61bd9f98` | O portão das palavras lê os atributos, as dobras abertas e o que é deste projeto nos estudos |
+| `b961c05d` | A reconta dos nomes oficiais, por código, e a aritmética do relatório corrigida |
+| `a664988a` | O F5 lê os alvos do dist/ e exige a última verificação, e a planta tira só essa |
+| `18982a07` | Os literais das vistas e dos componentes entram no pacote das cadeias |
+| `17c0ae46` | As 44 células vermelhas: o que mede mobília que saiu sai, e o resto acerta-se |
+| `19a6ebf5` | A leitura a frio do P3 aterra no repositório, e a entrada do inventário aponta para ela |
+| `db9611df` | A marca do F5 muda de nome: `data-leitura` já era um contrato de outra régua |
+| `f9f49406` | As capturas «depois» refeitas e as medições da cabeça da correção |
 | (o commit deste ficheiro) | O relatório com a cabeça final, os códigos dos portões e o custo. **É a cabeça final**, e não traz o seu próprio resumo porque um commit não se pode nomear a si próprio: o resumo dele está na mensagem que o lugar de direção recebe e no `git log` do ramo |
 
-**Os três portões, cada comando no seu, com o código lido de um ficheiro. Corridos duas vezes: sobre `37912148`, que é a cabeça do código, e sobre `0a0da466`, que é a cabeça com as capturas e as tabelas. As duas vezes:**
+**Os três portões, cada comando no seu, com o código lido de um ficheiro. A corrida que vale é a da passagem de correção, sobre `f9f49406`, que é a cabeça com o código, as capturas e as tabelas:**
 
 ```
 npm run build     → 0   (o carimbo do dist/ é deste)
@@ -45,15 +57,19 @@ npm run verify    → 0
 npm run typecheck → 0
 ```
 
-Os códigos ficaram em `n-build.code`, `n-verify.code` e `n-typecheck.code` (a corrida sobre `37912148`) e em `f-build.code`, `f-verify.code` e `f-typecheck.code` (a corrida sobre `0a0da466`), com as saídas ao lado, no directório de trabalho da sessão; a cópia dos três códigos está em `portoes.txt`. **O `dist/` carimbado é o do `npm run build` da segunda corrida.**
+Os códigos ficaram em `c-build.code`, `c-verify.code` e `c-typecheck.code`, com as saídas ao lado, no directório de trabalho da sessão; a cópia dos três está em `portoes.txt`, com a das duas corridas do lote da manhã. **O `dist/` carimbado é o do `npm run build` desta corrida.** O commit deste relatório entra depois dela, e não leva portões próprios pela razão que a última linha da tabela acima diz.
 
-**E as réguas que não são portões, sobre a mesma árvore:** `tests/inicio/porta.mjs --vermelhos` a 0 (52 de 52 células e as 20 plantas a morder, `porta-plantas.txt`); `tests/inicio/mapa-navegacao.mjs` a 0 (9 de 9, `mapa-navegacao.txt`); `tests/livro/indice.mjs --navegador` a 0 (`indice.txt`); `tests/dominio/pagina.mjs` a 0 (9 de 9 plantas); `tests/voz/palavras-proibidas.mjs` a 0 (14 de 14 plantas). `tests/inicio/lista.mjs` e `tests/inicio/faixa.mjs` ficam a 1, com os números e a razão no §5.
+**E as réguas que não são portões, sobre a mesma árvore:** `tests/inicio/porta.mjs --vermelhos` a 0 (52 de 52 células e as 25 plantas a morder, `porta-plantas.txt`); `tests/inicio/mapa-navegacao.mjs` a 0 (9 de 9, `mapa-navegacao.txt`); `tests/inicio/lista.mjs` a 0 (**90 de 90**, `lista.txt`, e as 14 plantas a morder); `tests/inicio/faixa.mjs` a 0 (**66 de 66**, `faixa.txt`, e as 7 plantas a morder); `tests/livro/indice.mjs --navegador` a 0 (`indice.txt`); `tests/dominio/pagina.mjs` a 0 (9 de 9 plantas); `tests/voz/palavras-proibidas.mjs` a 0 (**18 de 18 plantas**: 14 palavras e 4 buracos da superfície). **Nenhuma régua do sítio fica vermelha**, que é o que o item 6 do mandato pedia.
 
 ## 3 · O custo
 
 **Tempo de parede:** das 08:29 às 12:20 UTC de 16.09.2026, cerca de **3 h 50 m**, dos quais perto de duas horas em construções e portões (cada `npm run build` leva cerca de seis minutos, cada `npm run verify` cerca de sete, e as réguas com navegador entre dez e treze cada).
 
 **Símbolos:** cerca de **610 mil**, contados pelo orçamento da sessão da ferramenta (de 15 000 000 no início a cerca de 14 390 000 no fim). Não é a mesma conta que os relatórios anteriores fazem com o contador do modelo, e por isso diz-se de onde vem.
+
+**A passagem de correção do fim do dia** (§7) custou, em tempo de parede, das 12:04 às 13:45 UTC de 16.09.2026, cerca de **1 h 41 m**, quase todas com uma máquina a correr ao lado do trabalho: **quatro construções** (a segunda fechou numa marca do Astro mal posta e a quarta é a que carimba o `dist/`), **duas corridas inteiras** das réguas `lista.mjs` e `faixa.mjs` mais uma terceira com as plantas, a corrida das 25 plantas de `porta.mjs` (perto de quarenta minutos por si só), e **duas corridas do `verify`**, a primeira das quais fechou e apanhou a marca do F5 com o nome errado. Em símbolos, cerca de **675 mil**, pelo orçamento da sessão da ferramenta (de 15 000 000 no início a cerca de 14 325 000 no fim), que é a mesma conta que o parágrafo de cima faz e pela mesma razão.
+
+**E uma coisa que os portões apanharam na passagem de correção, e que vale por si:** a marca nova que o achado 11 pôs na página do domínio para o F5 encontrar a linha de cada leitura chamava-se `data-leitura`, que é a marca que um `<details>` de leitura breve já usa, e o item 8.4 do `check:lugar` conta com essa forma para exigir uma `.dobra-definicao` lá dentro. O `npm run verify` fechou com seis «definições de painel fora da declaração» em três medidas do domínio nas duas edições. A marca passou a chamar-se `data-leitura-linha`, que diz o que aquela página é sem prometer a forma da outra, e o `verify` voltou a 0. **É o mesmo defeito que o achado 11 apanhou no F5, do outro lado:** um nome de marca é um contrato, e reaproveitá-lo é prometer o que não se cumpre.
 
 **Três coisas que os portões apanharam neste bloco, e que valem por si:** o `gate:html` recusou «Portugal 2030» como nome de uma medida, porque traz um algarismo que não resolve em linha nenhuma; a amarra das decisões apanhou a citação da `IDENTIDADE.md` a envelhecer no mesmo instante em que o Método mudou; e a planta das palavras apanhou uma fronteira de palavra mal posta na expressão de «toque em», que deixava passar «Toque num cartão».
 
