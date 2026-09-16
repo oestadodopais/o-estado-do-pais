@@ -17,6 +17,39 @@
  * (`nomes-das-medidas.mjs`). Não entra o livro-razão: os campos de uma linha são
  * transcrições da fonte, e este bloco não lhes toca.
  *
+ * ---------------------------------------------------------------------------
+ * E OS LITERAIS DAS VISTAS E DOS COMPONENTES (achado 12, 16.09.2026)
+ * ---------------------------------------------------------------------------
+ * A primeira redação deste guião lia só os módulos `.mjs` da lista acima, e o
+ * brief punha os literais dos componentes e das vistas no âmbito do bloco. A
+ * leitura a frio do Codex apanhou-o com um exemplo que existe: a manchete da
+ * página do domínio é escrita em `src/views/DominioView.astro`, pedaço a pedaço
+ * («A dívida pública é », « do PIB, »), e não em `strings.mjs`. Um pedaço desses
+ * mudado não entrava no pacote nem na tabela, e a palavra «completa por
+ * construção» era falsa dentro daquele grafo mais estreito.
+ *
+ * O ÂMBITO, DITO POR EXTENSO, porque é ele que a tabela declara:
+ *
+ *   · TODOS os ficheiros `.astro` debaixo de `src/`, andados por ordem de
+ *     caminho, sem lista escrita à mão (hoje são 127);
+ *   · de cada um: as cadeias literais da FRENTE (o bloco entre `---`), sem os
+ *     comentários, com pelo menos um espaço e pelo menos uma letra; o TEXTO do
+ *     gabarito que não está dentro de uma expressão `{…}`; e os quatro
+ *     ATRIBUTOS à vista com valor literal (`title`, `aria-label`, `alt`,
+ *     `placeholder`).
+ *
+ * O QUE O FILTRO DEIXA ENTRAR A MAIS, e é de propósito: as mensagens das
+ * guardas («<Manchete> sem "lang"») têm espaço e letras e entram. Não são texto
+ * do leitor, e ficam no pacote na mesma: um pacote que decidisse o que é prosa
+ * do leitor por adivinhação deixava de fora o que não reconhecesse, e é
+ * exactamente esse o defeito que isto veio fechar. Quem lê a tabela vê a chave,
+ * que diz o ficheiro e a origem, e sabe o que está a ler.
+ *
+ * O QUE NÃO ENTRA, e fica dito: um literal do leitor que viva num módulo de
+ * `src/lib/` (a manchete do país, em `src/lib/inicio.mjs`) continua fora, porque
+ * a lista dos módulos é declarada e este bloco não a alargou. É dívida escrita,
+ * e não uma omissão calada.
+ *
  * Uso:
  *   node design/especime-v3/medicoes/p3-2026-09-16/pacote-de-cadeias.mjs <raiz> > pacote.json
  *   node .../pacote-de-cadeias.mjs --compara antes.json depois.json
@@ -42,6 +75,97 @@ const FICHEIROS = [
   'src/data/nomes-das-medidas.mjs',
 ];
 
+/** Os quatro atributos à vista com valor literal. */
+const ATRIBUTOS_A_VISTA = ['title', 'aria-label', 'alt', 'placeholder'];
+
+/** A marca que separa dois pedaços de texto onde estava uma etiqueta ou uma expressão. */
+const SEPARADOR = '\u0000';
+
+/** Todos os `.astro` debaixo de `src/`, por ordem de caminho. */
+function ficheirosAstro(raiz) {
+  const out = [];
+  const base = path.join(raiz, 'src');
+  if (!fs.existsSync(base)) return out;
+  /** @param {string} d */
+  const anda = (d) => {
+    for (const e of fs.readdirSync(d, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
+      const p = path.join(d, e.name);
+      if (e.isDirectory()) anda(p);
+      else if (e.name.endsWith('.astro')) out.push(path.relative(raiz, p).split(path.sep).join('/'));
+    }
+  };
+  anda(base);
+  return out;
+}
+
+/** Os comentários de um bloco de código, fora. */
+function semComentarios(t) {
+  return t.replace(/\/\*[\s\S]*?\*\//g, ' ').replace(/(^|[^:])\/\/[^\n]*/g, '$1 ');
+}
+
+/**
+ * Os literais de um ficheiro `.astro`, pelo âmbito declarado no cabeçalho.
+ *
+ * @param {string} cru
+ * @returns {[string, string][]}
+ */
+function literaisDoAstro(cru) {
+  /** @type {[string, string][]} */
+  const saida = [];
+  let frente = '';
+  let gabarito = cru;
+  if (cru.startsWith('---')) {
+    const fim = cru.indexOf('\n---', 3);
+    if (fim >= 0) {
+      frente = cru.slice(3, fim);
+      gabarito = cru.slice(fim + 4);
+    }
+  }
+  /* A FRENTE: as cadeias literais, sem os comentários. */
+  const limpo = semComentarios(frente);
+  let i = 0;
+  for (const m of limpo.matchAll(/'((?:[^'\\\n]|\\.)*)'|"((?:[^"\\\n]|\\.)*)"/g)) {
+    const t = (m[1] ?? m[2] ?? '').trim();
+    if (!t.includes(' ') || !/[\p{L}]/u.test(t)) continue;
+    saida.push([`frente[${i++}]`, t]);
+  }
+  /* O GABARITO: sem estilo, sem guião e sem comentários. */
+  let g = gabarito
+    .replace(/<style[\s\S]*?<\/style>/g, '')
+    .replace(/<script[\s\S]*?<\/script>/g, '')
+    .replace(/<!--[\s\S]*?-->/g, '');
+  for (const a of ATRIBUTOS_A_VISTA) {
+    let j = 0;
+    for (const m of g.matchAll(new RegExp(`\\s${a}="([^"{}]+)"`, 'g'))) {
+      const t = m[1].trim();
+      if (t) saida.push([`${a}[${j++}]`, t]);
+    }
+  }
+  /* O texto que não está dentro de uma expressão. */
+  let fora = '';
+  let nivel = 0;
+  for (const c of g) {
+    if (c === '{') {
+      nivel++;
+      fora += SEPARADOR;
+      continue;
+    }
+    if (c === '}') {
+      if (nivel > 0) nivel--;
+      fora += SEPARADOR;
+      continue;
+    }
+    if (nivel === 0) fora += c;
+  }
+  let k = 0;
+  for (const pedaco of fora.replace(/<[^>]*>/g, SEPARADOR).split(SEPARADOR)) {
+    const t = pedaco.replace(/\s+/g, ' ').trim();
+    if (!t || !/[\p{L}]/u.test(t)) continue;
+    saida.push([`texto[${k++}]`, t]);
+  }
+  return saida;
+}
+
 /** Percorre um objeto e devolve [caminho, texto] para cada cadeia. */
 function achata(o, prefixo, visto, saida) {
   if (typeof o === 'string') {
@@ -65,6 +189,11 @@ async function pacote(raiz) {
     if (!fs.existsSync(caminho)) continue;
     const mod = await import(`file://${caminho}`);
     achata(mod, path.basename(f, '.mjs'), new Set(), saida);
+  }
+  for (const f of ficheirosAstro(raiz)) {
+    for (const [origem, texto] of literaisDoAstro(fs.readFileSync(path.resolve(raiz, f), 'utf8'))) {
+      saida.push([`astro.${f}#${origem}`, texto]);
+    }
   }
   /* A ORDEM É A DA CHAVE, para que dois pacotes se comparem sem depender da
      ordem por que os ficheiros os declararam. */
