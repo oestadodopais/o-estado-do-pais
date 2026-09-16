@@ -616,7 +616,7 @@ const CAMPOS_COM_MARCADOR = /** @type {const} */ ([
  * @param {unknown} v
  * @returns {string | null}
  */
-function textoOuNulo(v) {
+export function textoOuNulo(v) {
   return typeof v === 'string' ? v : null;
 }
 
