@@ -29,6 +29,33 @@
   min-width: 0;
 }
 
+/* ---------------------------------------------------------------------------
+ * A LINHA DO LIVRO-RAZÃO COM A SUA ARITMÉTICA (achado 3, 15.09.2026)
+ * ---------------------------------------------------------------------------
+ * Uma linha sem nome em degrau nenhum não se rende como cartão: rende-se como
+ * o que ela é, uma linha do livro-razão, com o valor e a conta que a explica.
+ * A caixa é a mesma do cartão, para que uma lista não salte de altura entre
+ * uma coisa e a outra; o que muda é o que está lá dentro. */
+.linha-sem-nome {
+  display: grid;
+  gap: 6px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
+  min-width: 0;
+}
+
+/* A CONTA, POR PALAVRAS. Tem a forma da frase do cartão e o cinzento da prosa
+   de aparelho, porque é o que ela é: a aritmética que a linha declara, e não
+   uma frase que a casa escreveu sobre a medida. */
+.linha-sem-nome-conta {
+  margin: 0;
+  font-family: var(--f-prosa);
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
 /* O NOME ENCABEÇA, e é a primeira coisa que se lê. Compõe-se como o nome de uma
    entrada do índice do livro-razão (o mesmo tipo de prosa, o mesmo corpo mais
    dois pontos), porque é a mesma coisa noutra superfície, e um nome que mudasse
