@@ -507,6 +507,56 @@ export function unidadesDaMoldura(moldura, unidades) {
 
 /**
  * ---------------------------------------------------------------------------
+ * A MARGEM DAS MOLDURAS: A LINHA NÃO ENCOSTA AO DESENHO (16.09.2026)
+ * ---------------------------------------------------------------------------
+ * O QUE O DIRETOR VIU na primeira página a 16.09.2026, às 06:18 UTC: as Ilhas
+ * Selvagens, no fundo da moldura da Madeira, a tocar a linha e a parecer
+ * cortadas. A causa está escrita duas dúzias de linhas abaixo: a moldura de uma
+ * parcela é, por construção do motor (MAPA.md §2), A CAIXA EXACTA dos polígonos
+ * dela, e uma caixa exacta encosta ao desenho por definição. Não é um erro do
+ * artefacto nem uma coordenada errada: é o rectângulo do sítio a ser desenhado
+ * sem margem nenhuma.
+ *
+ * O DIRETOR DECIDIU que as Selvagens ficam no mapa tal como a Carta as põe, e
+ * pediu que não pareçam cortadas. O que muda é o rectângulo que o sítio desenha,
+ * e nunca um polígono.
+ *
+ * ---------------------------------------------------------------------------
+ * O NÚMERO SAI DA MEDIÇÃO E NÃO DO GOSTO (Chromium sem cabeça, sobre `dist/`,
+ * 16.09.2026)
+ * ---------------------------------------------------------------------------
+ * Três coisas medidas na página, nas cinco larguras de janela do bloco P1 (390,
+ * 768, 1 024, 1 280 e 1 600):
+ *
+ *   1. A LINHA DA MOLDURA MEDE 1 px em todas elas, e a dos polígonos também:
+ *      `.mapa-moldura` e `.uni` declaram `stroke-width: 1` com
+ *      `vector-effect: non-scaling-stroke`, e a declaração dá o traço em píxeis
+ *      do ecrã e não em unidades do campo. Um traço centrado na linha põe meio
+ *      píxel de tinta para cada lado dela: entre a tinta de um polígono e a
+ *      tinta da sua moldura há 1 px de tinta partilhada quando as duas caixas
+ *      coincidem.
+ *   2. A DISTÂNCIA MÍNIMA ENTRE A TINTA DE UM POLÍGONO E A TINTA DA SUA MOLDURA
+ *      ERA DE −1,000 px NAS CINCO LARGURAS E NAS DUAS PARCELAS, que é esse
+ *      mesmo píxel: a Madeira (com as Selvagens) encosta em baixo, à esquerda e
+ *      à direita, e nos Açores encostam as Flores (esquerda) e Santa Maria
+ *      (direita e fundo). Tocar a linha não era uma impressão: era a medida.
+ *   3. O MAPA MAIS ESTREITO QUE A FOLHA DÁ TEM 281 px, entre 640 e 1 024
+ *      (`.mapa-tela { width: 281px }`), e é ele que manda: a 390 o mapa tem
+ *      390 px, a 1 024 tem 340,09 e a 1 280 e a 1 600 tem 518. Num campo de
+ *      6 090 unidades de largura, 281 px dão 0,046141 px por unidade, que é o
+ *      valor mais pequeno das cinco.
+ *
+ * A MARGEM É O QUE FAZ CABER UM PÍXEL DE PAPEL ONDE O PÍXEL DE PAPEL É MAIS
+ * CARO: 1 px para cobrir os dois meios traços que hoje se sobrepõem, mais 1 px
+ * de papel limpo entre eles, dão 2 px no mapa de 281, e 2 ÷ 0,046141 = 43,35
+ * unidades do campo. Arredonda para cima, para um número inteiro de unidades:
+ * 44. Nas outras larguras sobra mais (2,74 px de papel no mapa de 518), porque
+ * a mais estreita é a que decide.
+ */
+export const MARGEM_DA_MOLDURA = 44;
+
+/**
+ * ---------------------------------------------------------------------------
  * AS DUAS MOLDURAS ARRUMAM-SE, PORQUE NO ARTEFACTO ELAS CRUZAM-SE (F1.1e, 2ª
  * passagem, 08.09.2026)
  * ---------------------------------------------------------------------------
@@ -533,37 +583,62 @@ export function unidadesDaMoldura(moldura, unidades) {
  *
  * A REGRA É UMA SÓ, e a arrumação que ela dá é forçada pelo desenho: as
  * molduras encostam-se ao fundo do campo pela ordem em que o artefacto as traz,
- * a primeira fica onde está e as seguintes sobem para cima dela, com a folga de
- * uma linha de nome entre o fundo de uma e o topo da outra. A primeira não tem
- * para onde ir (a caixa da Madeira acaba a 8 unidades do fundo do campo) e a
- * segunda não cabe ao lado (os Açores medem 2 271 de largura e a Madeira começa
- * em x 1 527), de maneira que a única arrumação possível é a que sai daqui: os
- * Açores por cima da Madeira, os dois à esquerda do continente, que é também a
- * disposição geográfica.
+ * e cada uma sobe só o que for preciso para o seu RECTÂNGULO DESENHADO acabar
+ * acima do tecto livre, com a folga de uma linha de nome entre o fundo de uma e
+ * o topo da outra. Os Açores não cabem ao lado da Madeira (medem 2 271 de
+ * largura e a Madeira começa em x 1 527), de maneira que a única arrumação
+ * possível é a que sai daqui: os Açores por cima da Madeira, os dois à esquerda
+ * do continente, que é também a disposição geográfica.
+ *
+ * O TECTO DA PRIMEIRA É O FUNDO DO CAMPO, E DEIXOU DE SER O INFINITO
+ * (16.09.2026). Enquanto a moldura era a caixa exacta dos polígonos, a de baixo
+ * ficava onde estava (`dy` de 0) e cabia: a caixa da Madeira acaba a 8 unidades
+ * do fundo do campo. Com a margem de `MARGEM_DA_MOLDURA` unidades, o rectângulo
+ * desenhado passa a precisar de 44 dessas 8, e sem tecto ele saía 36 unidades
+ * por baixo do campo, onde o `overflow: visible` da folha o desenharia por cima
+ * do que vem a seguir. O fundo do campo é um tecto como o topo da moldura de
+ * baixo, e escrevê-lo assim apaga o caso particular da primeira: a regra passa a
+ * ser uma só para todas.
+ *
+ * A MARGEM CONTA-SE NOS DOIS LADOS DA CONTA: o rectângulo desenhado tem de caber
+ * abaixo do tecto (por isso `+ MARGEM_DA_MOLDURA` na altura que se compara), e o
+ * tecto que ele deixa para a moldura seguinte mede-se do TOPO DESENHADO e não do
+ * topo da caixa (por isso `- MARGEM_DA_MOLDURA` no tecto novo). É assim que as
+ * duas caixas continuam a não se cruzar e que a linha do nome de um arquipélago
+ * continua a caber inteira por cima da sua moldura.
  *
  * @param {PaisDoMapa} pais
  * @param {number} folga a distância entre o fundo de uma moldura e o topo da
  *   seguinte, em unidades do campo; é a linha do nome do arquipélago.
- * @returns {{ nome: string, parcela: string, caixa: CaixaDoMapa, dy: number }[]}
+ * @returns {{ nome: string, parcela: string, caixa: CaixaDoMapa, desenho: CaixaDoMapa, dy: number }[]}
+ *   `caixa` é a do artefacto arrumada, que é a dos polígonos da parcela;
+ *   `desenho` é o rectângulo que o sítio desenha, que é a mesma caixa com a
+ *   margem nos quatro lados.
  */
 export function arrumacaoDasMolduras(pais, folga) {
-  /** @type {{ nome: string, parcela: string, caixa: CaixaDoMapa, dy: number }[]} */
+  /** @type {{ nome: string, parcela: string, caixa: CaixaDoMapa, desenho: CaixaDoMapa, dy: number }[]} */
   const saida = [];
-  /** O topo da moldura já colocada mais em baixo, ou o fundo do campo. */
-  let tectoLivre = Number.POSITIVE_INFINITY;
+  /** O topo desenhado da moldura já colocada mais em baixo, ou o fundo do campo. */
+  let tectoLivre = pais.campo.altura;
   for (const m of pais.molduras) {
     const [x, y, w, h] = m.caixa;
-    /* A PRIMEIRA FICA ONDE ESTÁ (`dy` de 0) e as seguintes sobem só o que for
-       preciso: uma moldura que já esteja acima do tecto livre não se mexe, e a
-       arrumação é a identidade quando o artefacto já não se cruza. */
-    const dy = tectoLivre === Number.POSITIVE_INFINITY ? 0 : Math.min(0, tectoLivre - (y + h));
+    /* CADA UMA SOBE SÓ O QUE FOR PRECISO: uma moldura cujo rectângulo desenhado
+       já acabe acima do tecto livre não se mexe, e a arrumação é a identidade
+       quando o desenho já não precisa dela. */
+    const dy = Math.min(0, tectoLivre - (y + h + MARGEM_DA_MOLDURA));
     saida.push({
       nome: m.nome,
       parcela: parcelaDaMoldura(m, pais.unidades),
       caixa: [x, y + dy, w, h],
+      desenho: [
+        x - MARGEM_DA_MOLDURA,
+        y + dy - MARGEM_DA_MOLDURA,
+        w + 2 * MARGEM_DA_MOLDURA,
+        h + 2 * MARGEM_DA_MOLDURA,
+      ],
       dy,
     });
-    tectoLivre = y + dy - folga;
+    tectoLivre = y + dy - MARGEM_DA_MOLDURA - folga;
   }
   return saida;
 }

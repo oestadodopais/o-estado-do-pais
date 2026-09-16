@@ -403,10 +403,18 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
           quebra de escala é para declarar e não para esconder (MAPA.md §7): a
           moldura desenha-se, e o nome do arquipélago fica por cima dela.
 
-          A CAIXA É A DO ARTEFACTO ARRUMADA, e não outra caixa: a altura, a
-          largura e a abcissa são as que o motor escreveu, e o que a arrumação
-          muda é a ordenada, para que as duas deixem de se cruzar. A razão está
-          em `arrumacaoDasMolduras()`.
+          O RECTÂNGULO É A CAIXA DO ARTEFACTO ARRUMADA MAIS A MARGEM, e é o
+          `desenho` que a arrumação devolve: a caixa (`m.caixa`) é a dos
+          polígonos da parcela, e desenhá-la tal e qual punha a linha por cima da
+          costa, que foi o que o diretor viu a 16.09.2026 nas Selvagens. A
+          margem, o seu tamanho e a medição que o escolheu estão em
+          `MARGEM_DA_MOLDURA`; o que a arrumação muda é a ordenada, para que as
+          duas molduras deixem de se cruzar.
+
+          O NOME FICA POR CIMA DO RECTÂNGULO DESENHADO e não da caixa, que é onde
+          a folga entre duas molduras o vai buscar: a conta de `tectoLivre` em
+          `arrumacaoDasMolduras()` mede-se do topo desenhado, e as duas leituras
+          têm de ser a mesma para a linha do nome caber inteira.
 
           SÓ NO NÍVEL DO PAÍS: uma moldura declara que aquele arquipélago está
           desenhado a outra escala do que o resto do campo, e dentro da grelha de
@@ -416,10 +424,10 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
         {molduras.map((m) => (
           <rect
             class="mapa-moldura"
-            x={m.caixa[0]}
-            y={m.caixa[1]}
-            width={m.caixa[2]}
-            height={m.caixa[3]}
+            x={m.desenho[0]}
+            y={m.desenho[1]}
+            width={m.desenho[2]}
+            height={m.desenho[3]}
             data-moldura={m.nome}
             data-parcela={m.parcela}
           />
@@ -427,8 +435,8 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
         {molduras.map((m) => (
           <text
             class="mapa-arq"
-            x={m.caixa[0] + Math.round(2 * uDoCampo)}
-            y={m.caixa[1] - ACIMA_DO_ARQ}
+            x={m.desenho[0] + Math.round(2 * uDoCampo)}
+            y={m.desenho[1] - ACIMA_DO_ARQ}
             {/* O CORPO VAI EM ESTILO E NÃO EM ATRIBUTO, porque `.mapa-arq` já
                 declara um `font-size` na folha e uma regra de classe ganha
                 sempre a um atributo de apresentação. O que este estilo diz não é
