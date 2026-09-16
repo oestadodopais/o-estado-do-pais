@@ -1842,7 +1842,7 @@ export const STRINGS = {
          pessoa, e vive aqui porque é aqui que a resposta se pede: a norma diz-se
          no Sobre, uma vez, e o endereço é o mesmo desta página. */
       direitoDeResposta:
-        'Quem for nomeado pode responder: a resposta publica-se ao lado da peça, sem edição, pelo mesmo endereço das correções.',
+        'Quem for nomeado pode responder: a resposta publica-se ao lado da peça, sem edição, para o mesmo endereço das correções.',
       metodoLink: 'A regra, no Método',
       registoK: 'O registo',
       caixaTitulo: 'Escrever uma correção',
@@ -3461,7 +3461,7 @@ export const STRINGS = {
       enderecoB: '. A confirmed error enters the register with credit to whoever found it, if they wish.',
       /* Ver a razão na edição portuguesa. */
       direitoDeResposta:
-        'Anyone named may reply: the reply is published beside the piece, unedited, through the same address as the corrections.',
+        'Anyone named may reply: the reply is published beside the piece, unedited, to the same address as the corrections.',
       metodoLink: 'The rule, in the Method',
       registoK: 'The register',
       caixaTitulo: 'Write a correction',

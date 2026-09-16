@@ -293,12 +293,12 @@ export const POLITICA = {
   via: {
     pt: [
       'Tudo o que este projeto publica leva o rótulo de texto gerado por inteligência ' +
-        'artificial, em cada página, no momento em que a página é vista. A revisão faz-se por portões e por ' +
+        'artificial, em cada página, no momento em que a página é vista. A revisão é feita por verificações automáticas e por ' +
         'amostra, e não peça a peça.',
     ],
     en: [
       'Everything this project publishes carries the label saying the text was generated ' +
-        'by artificial intelligence, on every page, at the moment the page is seen. Review is done by gates and by sample, not ' +
+        'by artificial intelligence, on every page, at the moment the page is seen. Review is done by automated checks and by sample, not ' +
         'piece by piece.',
     ],
   },
@@ -439,16 +439,16 @@ export const POLITICA = {
         en: 'This project takes no money from any entity it measures.',
       },
       {
-        pt: 'Este projeto não escreve para o alcance: mede-se por citações, não por visitas.',
-        en: 'This project does not write for reach: it is measured by citations, not by visits.',
+        pt: 'Este projeto não escreve para ter leitores a mais: mede-se por citações, não por visitas.',
+        en: 'This project does not write to gain more readers: it is measured by citations, not by visits.',
       },
       {
         pt:
-          'Este projeto não publica um número que não tenha lido na fonte, não aproxima o ' +
-          'que não existe, e diz as ausências.',
+          'Este projeto não publica um número que não tenha lido na fonte, não estima o que ' +
+          'não existe e diz o que falta.',
         en:
           'This project publishes no figure it has not read at the source, does not ' +
-          'approximate what does not exist, and says what is missing.',
+          'estimate what does not exist, and says what is missing.',
       },
       {
         pt: 'Este projeto não chama jornalista à inteligência artificial e não se diz jornalístico.',

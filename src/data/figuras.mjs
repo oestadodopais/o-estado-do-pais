@@ -782,7 +782,7 @@ export const DEFINICAO_DOS_PAINEIS = /** @type {const} */ ({
       en: 'The scoreboard of macroeconomic imbalances',
     },
     pt: [
-      'Um conjunto limitado de medidas com que a Comissão Europeia apanha os aspetos internos e externos mais relevantes dos desequilíbrios macroeconómicos, cada uma com o seu valor de referência indicativo.',
+      'Um conjunto limitado de medidas com que a Comissão Europeia abrange os aspetos internos e externos mais relevantes dos desequilíbrios macroeconómicos, cada uma com o seu valor de referência indicativo.',
     ],
     en: [
       'A limited set of measures with which the European Commission captures the most relevant internal and external aspects of macroeconomic imbalances, each with its indicative reference value.',
