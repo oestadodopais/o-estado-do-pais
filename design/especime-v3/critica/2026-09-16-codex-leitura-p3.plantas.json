@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-16T11:33:58+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/pacote-p3",
+ "plantas": [
+  {
+   "id": "W1",
+   "ficheiro": "src/data/nomes-das-medidas.mjs",
+   "descricao": "o nome do projeto da área licenciada perde o acento na fonte; a página construída tem-no",
+   "sha256_antes": "f80a628e39bcba074a77741700ddacad88829a26ea8d5a8a2347602074759097",
+   "sha256_depois": "6b9d44734620a8294cc19378ad4fb55dfa4605e384f2251e4060b8042122cb44",
+   "contexto_antes": "cut with the sustainability factor',\n  },\n\n  /* ----------------------------------------------------------- habitação */\n  'licencas-de-construcao-2025': {\n    pt: 'Área licenciada para habitação',\n    en: 'Floor area licensed for housing',\n  },\n\n  /* --------------------------------------------- o país e as suas regiões */\n  'pib-pc-portugal-2024': {\n   ",
+   "contexto_depois": "cut with the sustainability factor',\n  },\n\n  /* ----------------------------------------------------------- habitação */\n  'licencas-de-construcao-2025': {\n    pt: 'Área licenciada para habitacao',\n    en: 'Floor area licensed for housing',\n  },\n\n  /* --------------------------------------------- o país e as suas regiões */\n  'pib-pc-portugal-2024': {\n   "
+  },
+  {
+   "id": "W2",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 80 cartões por edição com o nome da fonte antes do bloco; a tabela e a régua dizem 82",
+   "sha256_antes": "1402c6ea84ac46bdf23a6d3c3df6ca0d8524907b2eec737f4f9a49471730ec24",
+   "sha256_depois": "88694ca653275c8015cd41d4eb79a7eb4836650ad8bf1f4ad95a176a46f3c5df",
+   "contexto_antes": "tação | medido |\n| --- | --- | --- | --- |\n| 1 | Os nomes das medidas | 0 cartões com o título da fonte nas duas edições; a tabela completa | **feito.** 0 e 0. Antes: 82 cartões por edição (81 linhas distintas) encabeçavam-se com o `name` da fonte (16) ou com o `document.title` (66). Depois: 82 por edição com `data-nome=\"projeto\"`, e o degrau do ",
+   "contexto_depois": "tação | medido |\n| --- | --- | --- | --- |\n| 1 | Os nomes das medidas | 0 cartões com o título da fonte nas duas edições; a tabela completa | **feito.** 0 e 0. Antes: 80 cartões por edição (81 linhas distintas) encabeçavam-se com o `name` da fonte (16) ou com o `document.title` (66). Depois: 82 por edição com `data-nome=\"projeto\"`, e o degrau do "
+  },
+  {
+   "id": "W3",
+   "ficheiro": "reguas/lista.txt",
+   "descricao": "a régua da lista diz 12 de 94 vermelhas; o relatório diz 14 (80 de 94 verdes)",
+   "sha256_antes": "ade43c0171ba5c57744ee8e571862062a5607dff1ab17f881d43160188274c3c",
+   "sha256_depois": "50a70925f40c9ca8a96fb5be465892e2fcd0633c21ad5e3f967afb2f3c728185",
+   "contexto_antes": "os dois lados mudam uma grandeza que não é cor\n\u001b[90m      contorno 1 → 3 px · sublinhado 1 → 3 px · tinta do traço rgb(23, 25, 27) nos dois estados\u001b[0m\n\n\u001b[31m  14 de 94 células vermelhas.\n\u001b[0m\n",
+   "contexto_depois": "os dois lados mudam uma grandeza que não é cor\n\u001b[90m      contorno 1 → 3 px · sublinhado 1 → 3 px · tinta do traço rgb(23, 25, 27) nos dois estados\u001b[0m\n\n\u001b[31m  12 de 94 células vermelhas.\n\u001b[0m\n"
+  },
+  {
+   "id": "W4",
+   "ficheiro": "built/sobre/index.html",
+   "descricao": "a página construída do Sobre diz «por boato»; a fonte e o inventário dizem «por rumor»",
+   "sha256_antes": "ecdda195e57908b293f074095a9cfeb3cbe18f65d39003c0f44c14947e7c283d",
+   "sha256_depois": "8ca84c847d12c746afc8a3748c603e3288e334ef1741e28490f203325bc0d343",
+   "contexto_antes": "-nomes\" data-sobre-nomes=\"pt\">Quem exerce um cargo público é nomeado nos seus atos públicos, a partir dos documentos oficiais, no que fez bem e no que fez mal; ninguém é nomeado por rumor.</p><p class=\"sobre-porta\"><a href=\"/metodo#politica-de-ia\">→ Como a inteligência artificial escreve este sítio</a></p><p class=\"sobre-porta\"><a href=\"/metodo\"",
+   "contexto_depois": "-nomes\" data-sobre-nomes=\"pt\">Quem exerce um cargo público é nomeado nos seus atos públicos, a partir dos documentos oficiais, no que fez bem e no que fez mal; ninguém é nomeado por boato.</p><p class=\"sobre-porta\"><a href=\"/metodo#politica-de-ia\">→ Como a inteligência artificial escreve este sítio</a></p><p class=\"sobre-porta\"><a href=\"/metodo\""
+  },
+  {
+   "id": "W5",
+   "ficheiro": "DECISIONS.md",
+   "descricao": "o carimbo do Sobre na §1.110 difere num algarismo do sha do ficheiro copiado",
+   "sha256_antes": "bd6987b06ceca61ea701bfd0ad02638fe4f4015d1f8301d9b0aad22a46b31188",
+   "sha256_depois": "d5b24e0a7c6c81659f850eae8ee683b0814c36be0a44696ebf24e5d697400929",
+   "contexto_antes": "is muda no Método.** O carimbo passa de `metodo 92b0fbdbc5fb` a `metodo ba341d831790`.\n\n### 1.110 «A casa» sai do Método e do Sobre\n\n**Afecta:** sobre · metodo\n**Texto:** sobre 6382f64d5183 · metodo 102afd5db461\n\n**No Sobre não havia «casa» para tirar, e o que ele ganhou foi outra coisa.** O texto do Sobre é o do diretor, palavra por palavra, e o bloco P1 reescreveu-o ",
+   "contexto_depois": "is muda no Método.** O carimbo passa de `metodo 92b0fbdbc5fb` a `metodo ba341d831790`.\n\n### 1.110 «A casa» sai do Método e do Sobre\n\n**Afecta:** sobre · metodo\n**Texto:** sobre 6382f64d5184 · metodo 102afd5db461\n\n**No Sobre não havia «casa» para tirar, e o que ele ganhou foi outra coisa.** O texto do Sobre é o do diretor, palavra por palavra, e o bloco P1 reescreveu-o "
+  }
+ ]
+}
