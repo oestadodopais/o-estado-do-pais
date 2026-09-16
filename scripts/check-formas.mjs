@@ -131,7 +131,7 @@ import { slugsDosDominios, medidasDoDominio } from '../src/data/dominios.mjs';
 import { FIGURAS } from '../src/data/figuras.mjs';
 import { MEDIDAS_DO_CONCELHO } from '../src/data/concelhos.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
-import { linhasPorConcelho } from '../src/lib/dominios.mjs';
+import { linhasPorConcelho, ultimaConferencia } from '../src/lib/dominios.mjs';
 import {
   FIGURAS_SOCIAL,
   numeralPorExtenso,
@@ -302,27 +302,50 @@ const temAlgarismo = (s) => /\d/.test(s);
  * última verificação. No recibo rendem-se como campos do livro-razão, com
  * `data-linha-campo`, e é por essa marca que se contam.
  */
+/* O CONJUNTO DOS ALVOS LÊ-SE DO `dist/`, e não de uma declaração (achado 11 da
+   leitura a frio do Codex, 16.09.2026). A primeira redação desta célula tirava
+   os alvos de `MEDIDAS_DO_DOMINIO_1` e de `FIGURAS`, que é a declaração a
+   medir-se a ela própria: uma leitura breve rendida a partir de outro sítio
+   nunca entrava, e o HTML só dava uma contagem global de leituras. Agora cada
+   leitura breve declara a SUA linha na página, com `data-leitura`, que é a marca
+   que a dobra (`LeituraBreve.astro`) já usava e que a página do domínio passou a
+   levar também; a varredura recolhe-a e a conferência corre sobre o que se
+   rendeu.
+
+   O QUE ISTO ALARGOU, medido a 16.09.2026: de 29 linhas e 58 recibos para 2 177
+   linhas e 4 354 recibos, porque as leituras breves das 308 páginas de concelho
+   e as do quadro europeu passaram a contar. Todas passam.
+
+   AS DERIVADAS FICAM DE FORA, e a razão é da linha e não da régua: uma linha
+   derivada não tem fonte nem documento, porque a proveniência dela é a das
+   origens, e por isso não tem data de leitura nem verificação próprias para
+   mostrar. Exigir-lhe três datas era exigir-lhe uma proveniência que o
+   livro-razão não lhe dá (medido: são 308, todas do índice de dívida de um
+   concelho, e todas rendem só o período de referência).
+
+   A DECLARAÇÃO CONTINUA A SER LIDA, mas do outro lado: o que ela serve agora é
+   o CONTROLO, mais abaixo, de que nenhuma medida declarada com leitura deixou
+   de se render. As duas perguntas são diferentes e cada uma tem a sua fonte. */
 const linhasComLeituraBreve = new Set();
-/* O CONJUNTO LÊ-SE DAS DECLARAÇÕES QUE AS PÁGINAS RENDEM, e não de uma lista
-   escrita aqui nem de uma varredura do HTML. As duas coisas foram tentadas e a
-   segunda está errada: uma leitura breve de uma medida de concelho tem, dentro
-   do seu bloco, os 308 valores do mapa, e contá-los como «linhas com leitura
-   breve» pedia um recibo com três datas a 1 270 linhas que não têm leitura
-   nenhuma (medido a 16.09.2026: a primeira redação desta célula fechou a
-   construção com esses 1 270). O que uma leitura breve é ABOUT está declarado:
-   é a medida de um domínio (`MEDIDAS_DO_DOMINIO_1`, com os seus valores irmãos)
-   e é a figura de um quadro da primeira página (`FIGURAS`). São 29 linhas hoje,
-   11 delas do domínio, e todas têm as três datas. */
+const linhasDeclaradasComLeitura = new Set();
+/* AS IRMÃS DE UMA MEDIDA NÃO SÃO LEITURAS: são valores que a leitura de outra
+   medida mostra ao lado do seu (hoje uma só, o salário mínimo a doze meses, ao
+   lado do de catorze). Não se rendem com `data-leitura` porque não são a linha
+   DE uma leitura, e por isso não entram no controlo de «declarada e não
+   rendida»; entram nos ALVOS na mesma, porque o recibo delas é um recibo que a
+   página do domínio faz o leitor querer abrir, e era isso que a primeira
+   redação desta célula já exigia. */
+const linhasIrmasDeclaradas = new Set();
 for (const slug of slugsDosDominios()) {
   for (const m of medidasDoDominio(slug)) {
-    if (m.claim) linhasComLeituraBreve.add(m.claim);
-    for (const o of m.claims ?? []) if (o.id) linhasComLeituraBreve.add(o.id);
+    if (m.claim) linhasDeclaradasComLeitura.add(m.claim);
+    for (const o of m.claims ?? []) if (o.id) linhasIrmasDeclaradas.add(o.id);
   }
 }
 for (const f of FIGURAS) {
-  if (typeof f.claim === 'string') linhasComLeituraBreve.add(f.claim);
+  if (typeof f.claim === 'string') linhasDeclaradasComLeitura.add(f.claim);
 }
-/** @type {Map<string, Record<string, Set<string>>>} */
+/** @type {Map<string, Record<string, { campos: Set<string>, verificacoes: Set<string> }>>} */
 const datasDoRecibo = new Map();
 
 const contas = {
@@ -333,6 +356,7 @@ const contas = {
   formas_por_nome: /** @type {Record<string, number>} */ ({}),
   medidas_com_leitura: 0,
   recibos_com_tres_datas: 0,
+  recibos_derivados: 0,
   ausencias: 0,
   concelhos_com_ganho: /** @type {Record<string, number>} */ ({ pt: 0, en: 0 }),
   concelhos_com_populacao: /** @type {Record<string, number>} */ ({ pt: 0, en: 0 }),
@@ -433,12 +457,19 @@ for (const ficheiro of paginasDe(DIST)) {
       );
     }
   }
+  /* F5, a recolha dos ALVOS: as linhas que uma leitura breve RENDIDA declara. */
+  for (const el of root.querySelectorAll('[data-leitura]')) {
+    const id = el.getAttribute('data-leitura');
+    if (id) linhasComLeituraBreve.add(id);
+  }
+
   /* F5, a recolha: que datas é que o recibo de cada linha rende, por edição. */
   if (rota?.key === 'linha') {
     const id = rota.params.slug ?? '';
     if (!datasDoRecibo.has(id)) datasDoRecibo.set(id, {});
     const porEdicao = datasDoRecibo.get(id);
-    const campos = (porEdicao[rota.lang] ??= new Set());
+    const registo = (porEdicao[rota.lang] ??= { campos: new Set(), verificacoes: new Set() });
+    const campos = registo.campos;
     /* A MARCA DE UMA DATA NÃO É `data-linha-campo`, e é bem que não seja: uma
        data do livro-razão está em ISO no ficheiro e escreve-se `dd.mm.aaaa` na
        página, e uma comparação literal nunca passaria. `CampoDaLinha` delega-a a
@@ -449,7 +480,13 @@ for (const ficheiro of paginasDe(DIST)) {
       const campo = el.getAttribute('data-de-campo') ?? '';
       if (campo === 'reference_date') campos.add('periodo');
       else if (campo === 'published_at' || campo === 'access_date') campos.add('leitura');
-      else if (/^verifications\.\d+\.date$/.test(campo)) campos.add('verificacao');
+      else if (/^verifications\.\d+\.date$/.test(campo)) {
+        campos.add('verificacao');
+        /* O NOME DO CAMPO E NÃO SÓ A CLASSE: qualquer `verifications.N.date`
+           satisfazia «a última verificação», e um recibo que guardasse só uma
+           verificação antiga passava por mostrar a mais recente (achado 11). */
+        registo.verificacoes.add(campo);
+      }
     }
   }
 
@@ -963,11 +1000,32 @@ if (contas.paginas > 0) {
   if (contas.medidas_com_leitura === 0) {
     err(
       `nenhuma página construída rende uma leitura breve («[data-medida]»), e a declaração tem ` +
-        `${linhasComLeituraBreve.size} linha(s) com leitura. Ou as leituras saíram do sítio, ou a ` +
+        `${linhasDeclaradasComLeitura.size} linha(s) com leitura. Ou as leituras saíram do sítio, ou a ` +
         `varredura deixou de as ver.`,
     );
   }
+  /* O CONTROLO NO OUTRO SENTIDO: uma medida DECLARADA com leitura que não se
+     renda em página nenhuma. Os alvos vêm do `dist/`, e por isso uma leitura que
+     desaparecesse levava o seu recibo com ela e a célula ficava verde a medir
+     menos. Esta é a rede que o impede, e a única coisa para que a declaração
+     serve aqui. */
+  for (const id of [...linhasDeclaradasComLeitura].sort()) {
+    if (!linhasComLeituraBreve.has(id)) {
+      err(
+        `a medida da linha "${id}" está declarada com leitura breve e nenhuma página construída a ` +
+          `rende com «data-leitura». Ou a leitura saiu do sítio sem a declaração o dizer, ou a marca ` +
+          `mudou de nome e o conjunto dos alvos ficou mais pequeno em silêncio.`,
+      );
+    }
+  }
+  for (const id of linhasIrmasDeclaradas) linhasComLeituraBreve.add(id);
   for (const id of [...linhasComLeituraBreve].sort()) {
+    /* AS DERIVADAS NÃO TÊM DATAS PRÓPRIAS, e a razão está na recolha acima. */
+    const linha = getClaim(id);
+    if (linha && Array.isArray(linha.derived_from) && linha.derived_from.length > 0) {
+      contas.recibos_derivados++;
+      continue;
+    }
     const porEdicao = datasDoRecibo.get(id);
     if (!porEdicao) {
       err(
@@ -982,16 +1040,31 @@ if (contas.paginas > 0) {
         err(`o recibo da linha "${id}" não foi construído na edição "${lang}".`);
         continue;
       }
-      const faltam = ['periodo', 'leitura', 'verificacao'].filter((c) => !campos.has(c));
+      const faltam = ['periodo', 'leitura', 'verificacao'].filter((c) => !campos.campos.has(c));
       if (faltam.length > 0) {
         err(
-          `o recibo da linha "${id}", na edição "${lang}", tem ${campos.size} das três datas e ` +
+          `o recibo da linha "${id}", na edição "${lang}", tem ${campos.campos.size} das três datas e ` +
             `falta(m) ${faltam.join(' · ')} (a carta dos conteúdos, §1, regra 3: o período de ` +
             `referência, a data de leitura ou de publicação, e a data da última verificação).`,
         );
-      } else {
-        contas.recibos_com_tres_datas++;
+        continue;
       }
+      /* E A TERCEIRA DATA TEM DE SER A ÚLTIMA. `ultimaConferencia()` é quem
+         escolhe qual é, pela DATA e não pela ordem do ficheiro, e é a mesma
+         função que a dobra usava: uma segunda cópia da escolha aqui divergiria
+         na primeira correção. */
+      const ultima = linha ? ultimaConferencia(linha) : null;
+      if (ultima && !campos.verificacoes.has(ultima.campo)) {
+        err(
+          `o recibo da linha "${id}", na edição "${lang}", mostra ` +
+            `${[...campos.verificacoes].sort().join(' · ') || 'nenhuma verificação'} e a mais recente ` +
+            `é ${ultima.campo} (${ultima.valor}). «A data da última verificação» é a da entrada mais ` +
+            `recente de \`verifications\`, e um recibo que guarde só uma antiga promete uma frescura ` +
+            `que a linha não tem.`,
+        );
+        continue;
+      }
+      contas.recibos_com_tres_datas++;
     }
   }
 }
@@ -1025,7 +1098,8 @@ console.log(
     cinza(
       ` ${contas.paginas_de_dominio} páginas de domínio · ${contas.formas} desenhos (${porNome || 'nenhum'})` +
         ` · ${contas.datas_de_linha} datas de linha conferidas · ${contas.medidas_com_leitura} leituras breves` +
-        ` · ${contas.recibos_com_tres_datas} recibo(s) com as três datas` +
+        ` · ${contas.recibos_com_tres_datas} recibo(s) com as três datas e a última verificação à vista` +
+        ` (de ${linhasComLeituraBreve.size} linha(s) com leitura breve rendida, ${contas.recibos_derivados} derivada(s) sem datas próprias)` +
         ` · ${contas.ausencias} ausências · ganho médio em ${contas.concelhos_com_ganho.pt}/${contas.concelhos.pt} concelhos` +
         ` (controlo: população em ${contas.concelhos_com_populacao.pt})` +
         ` · atraso: ${SERIES_ATRASADAS.length} série(s), ${idsAtrasados.size} linha(s),` +
