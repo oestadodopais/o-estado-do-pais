@@ -551,7 +551,10 @@ const EDICOES = [
       'Escreva o nome do concelho, ou toque no mapa.',
       'Escreva o nome do concelho',
     ],
-    buscaSemGuiao: 'Sem guião, o botão leva à lista inteira dos concelhos',
+    /* «SEM GUIÃO» PASSOU A «SEM JAVASCRIPT» (bloco P3, 16.09.2026, item 5): a
+       palavra está na lista do §1.3 da norma, e o plano das palavras (§4) escreve
+       o que fica no lugar, que é o nome da tecnologia que falta. */
+    buscaSemGuiao: 'Sem JavaScript, o botão leva à lista inteira dos concelhos',
     buscaCampo: 'Concelho',
     dominioDentroDe: 'incluído em',
     dominioEMais: 'e mais',
@@ -569,7 +572,14 @@ const EDICOES = [
          indicativo»), citada com o documento, o endereço e o excerto. É a fonte
          a falar, e o que se copia de uma fonte fica como a fonte o escreveu.
          Uma SEGUNDA ocorrência nesta página fecha a célula. */
-      { rota: '/uniao-europeia/index.html', n: 1 },
+      /* PASSOU A ZERO A 16.09.2026 (bloco P3, item 5). A definição do painel é
+         prosa deste projeto com a origem declarada, e não uma transcrição: o
+         excerto da Comissão está em inglês, ao lado dela, e o que a página
+         escrevia era a nossa frase portuguesa. A decisão do diretor de 15.09 de
+         manhã tira «limiar» do texto do leitor, e esta era a última página fora
+         do Método a escrevê-lo. A frase é a mesma, com «valor de referência
+         indicativo» no lugar de «limiar indicativo». */
+      { rota: '/uniao-europeia/index.html', n: 0 },
       { rota: '/dominios/economia-e-financas-publicas/index.html', n: 0 },
       { rota: '/municipios/evora/index.html', n: 0 },
       { rota: '/areas/infraestruturas-e-habitacao/index.html', n: 0 },
@@ -604,7 +614,7 @@ const EDICOES = [
       'Type the name of a municipality, or tap the map.',
       'Type the name of the municipality',
     ],
-    buscaSemGuiao: 'Without scripting, the button leads to the full list of municipalities',
+    buscaSemGuiao: 'Without JavaScript, the button leads to the full list of municipalities',
     buscaCampo: 'Municipality',
     dominioDentroDe: 'included in',
     dominioEMais: 'and more',
@@ -614,7 +624,7 @@ const EDICOES = [
     rotasDoLimiar: [
       { rota: '/en/index.html', n: 0 },
       /* Ver a razão na edição portuguesa: a definição do painel é a da Comissão. */
-      { rota: '/en/european-union/index.html', n: 1 },
+      { rota: '/en/european-union/index.html', n: 0 },
       { rota: '/en/domains/economia-e-financas-publicas/index.html', n: 0 },
       { rota: '/en/municipalities/evora/index.html', n: 0 },
       { rota: '/en/areas/infraestruturas-e-habitacao/index.html', n: 0 },
@@ -1522,12 +1532,18 @@ async function corre() {
       eMais: nEMais,
       abertura: nAbertura,
     };
+    /* A LINHA DE ABERTURA DA SECÇÃO SAIU (16.09.2026, a passagem de correção dos
+       blocos P1 e P2; §1.108). Era prosa sobre o projeto numa página de conteúdo
+       e prometia «os números que este projeto já publica», quando a contagem é a
+       das medidas que se leem nas páginas. A célula continua a contá-la, e o que
+       ela exige mudou de uma para zero: uma linha de abertura de volta fecha a
+       régua. */
     conta(
       `A23.${ed.chave}`,
-      nLinhasDoIndice === 18 && nDentroDe === 0 && nEMais === 0 && nAbertura === 1,
+      nLinhasDoIndice === 18 && nDentroDe === 0 && nEMais === 0 && nAbertura === 0,
       `o índice dos domínios em ${ed.rota}: ${nLinhasDoIndice} linha(s) (esperadas 18) · ` +
         `«${ed.dominioDentroDe}» ${nDentroDe} e «${ed.dominioEMais}» ${nEMais} (esperadas 0) · ` +
-        `a linha de abertura ${nAbertura} (esperada 1)`,
+        `a linha de abertura ${nAbertura} (esperada 0)`,
     );
 
     /* A25 CORRE SOBRE AS PÁGINAS ONDE A PALAVRA VIVIA, E LÊ-AS PELO SERVIDOR.
@@ -2982,13 +2998,31 @@ const PLANTAS = [
     f: (h) => h.replace(/<a href="(\/dominios|\/en\/domains)"[^>]*>[^<]*<\/a>/, ''),
   },
   {
-    nome: 'os estudos a mais de 1,5 ecrãs (a fila depois da faixa escondida)',
+    nome: 'a porta do arquivo com o alvo abaixo dos 44 px',
     celulas: ['A15.pt', 'A15.en'],
-    /* Esconde a fila dos estudos. O arquivo continua a ter porta na página (o
-       menu e o rodapé), e é isso que a planta prova: com a fila fora, a porta
-       mais acima que se toca sem abrir uma gaveta é a do rodapé, a sete mil
-       píxeis, e a medida do brief («≤ 1,5 ecrãs») cai. */
-    f: (h) => h.replace(/<p class="inicio-estudos"/, '<p class="inicio-estudos" style="display:none"'),
+    /* A PLANTA MUDOU DE METADE A 16.09.2026 (bloco P3, item 6), e a razão está
+       medida. A A15 tem duas metades, «≤ 1,5 ecrãs» e «alvo de 44 px», e a
+       planta plantava a primeira: escondia a fila dos estudos para que a porta
+       mais acima passasse a ser a do rodapé. **Essa metade já não se pode plantar
+       nesta página**, e não por defeito nenhum: depois do F1.12 e do F1.13 o
+       arquivo tem quatro portas na primeira página e a mais acima é a do menu, a
+       10,6 px do topo. Esconder uma delas deixa as outras três, todas acima de
+       1,5 ecrãs, e a célula fica verde com o html mudado (medido duas vezes a
+       16.09.2026: «A15.pt=verde, A15.en=verde»).
+
+       O QUE ESTA PLANTA PLANTA É A OUTRA METADE, que é da mesma célula e do
+       mesmo item: encolhe o alvo de toque de todas as portas do arquivo abaixo
+       dos 44 px que a folha promete com o apontador grosso. A porta continua no
+       sítio, continua a levar ao arquivo, e deixa de se poder tocar como a
+       medida do brief exige. */
+    f: (h, rota) => {
+      const alvo = rota.startsWith('/en') ? '/en/studies' : '/estudos';
+      return h.replace(
+        /<\/head>/,
+        `<style>a[href="${alvo}"]{display:inline-block;height:12px;min-height:0;` +
+          `line-height:12px;padding:0;font-size:10px}</style></head>`,
+      );
+    },
   },
   {
     nome: 'a manchete do domínio com dois valores e um selo só',
@@ -3037,22 +3071,33 @@ const PLANTAS = [
     },
   },
   {
-    nome: 'a faixa de uma região a dizer «de 21»',
+    nome: 'a faixa de um concelho a dizer «de 21»',
     celulas: ['A17.pt', 'A17.en'],
-    rotas: ['/regioes/alentejo/index.html', '/en/regions/alentejo/index.html'],
-    /* O TOTAL DA PRIMEIRA PÁGINA NUMA FAIXA QUE TEM DOIS CARTÕES. É o caso que
+    /* A PLANTA MUDOU DE PÁGINA A 16.09.2026 (bloco P3, item 6). Estava na página
+       de uma região, e a camada da região DEIXOU DE TER FAIXA com o F1.10 (§1 e
+       §7.6, 09.09.2026): a régua imprimia «regiao » sem número nenhum e a planta
+       não mudava um carácter do html (medido: «html mudou: NÃO»). Uma planta que
+       não planta nada é uma célula que ninguém viu vermelha, e a I118 registou-a.
+       Passa para a página de um concelho, que é a camada que hoje tem faixa com
+       oito cartões, e volta a ser o caso que o Major 7 nomeia. */
+    rotas: ['/municipios/evora/index.html', '/en/municipalities/evora/index.html'],
+    /* O TOTAL DA PRIMEIRA PÁGINA NUMA FAIXA QUE TEM OITO CARTÕES. É o caso que
        o Major 7 nomeia: o algarismo continua declarado como `numeracao`, a
        posição continua lá, e o que está errado é que ele não é o N daquela
        página. Uma célula que só contasse posições passava. */
     f: (h, rota) => {
-      if (!rota.includes('regio') && !rota.includes('region')) return h;
+      if (!rota.includes('municipio') && !rota.includes('municipalit')) return h;
       /* O TOTAL é o SEGUNDO algarismo declarado de cada posição, e é só ele que
          a planta troca: o ordinal fica certo, a marca fica declarada, e o que
          passa a estar errado é o N. Medido no HTML construído, a posição rende
          `<span class="cartao-posicao"><span data-nonledger="numeracao">1</span>
-         de <span data-nonledger="numeracao">2</span></span>`. */
+         de <span data-nonledger="numeracao">8</span><span class="vh" data-voz> das
+         medidas deste concelho</span></span>`: o total é o SEGUNDO `numeracao` da
+         posição, e a frase para quem ouve vem depois dele. A redação anterior
+         exigia `</span></span>` logo a seguir ao total, e por isso não plantava
+         nada nesta página (medido a 16.09.2026: «html mudou: NÃO»). */
       return h.replace(
-        /(<span class="cartao-posicao">(?:(?!<\/span><\/span>)[\s\S])*<span data-nonledger="numeracao">)\d+(<\/span><\/span>)/g,
+        /(<span class="cartao-posicao">[\s\S]*?<span data-nonledger="numeracao">\d+<\/span>[\s\S]*?<span data-nonledger="numeracao">)\d+(<\/span>)/g,
         '$121$2',
       );
     },
@@ -3085,15 +3130,24 @@ const PLANTAS = [
     },
   },
   {
-    nome: 'a mobília do menu em duas filas',
+    nome: 'a mobília a empurrar o nome para baixo do teto',
     celulas: ['A11.pt', 'A11.en'],
-    /* A11 MEDIA A ABCISSA DO NOME (Major 8), e não se a barra é uma linha. Esta
-       planta parte a barra em duas filas sem lhe mudar a altura total acima do
-       nome, que é exactamente o caso que a primeira redação deixava passar. */
+    /* O QUE A A11 MEDE é a distância do topo do documento ao topo do nome da
+       página a 390, e o que ela recusa é essa distância acima do teto. A planta
+       tem de a empurrar, e é isso que esta faz: acrescenta 240 px de mobília
+       entre o topo do documento e a marca do sítio, que é o elemento cuja
+       ordenada a célula lê (`.wordmark`), sem lhe tocar de mais nenhuma maneira.
+
+       A PLANTA MUDOU A 16.09.2026 (bloco P3, item 6). A redação anterior partia
+       a barra em duas filas (`flex-wrap`) para que a célula caísse pela contagem
+       das filas; medido, a célula ficava VERDE com o html mudado, porque a
+       segunda fila cabia sem empurrar o nome e a contagem de filas da barra é
+       lida da geometria dos itens e não do `flex-wrap`. Uma planta que não morde
+       é uma célula que ninguém viu vermelha, e a I118 registou-a. */
     f: (h) =>
       h.replace(
         /<\/head>/,
-        '<style>.topbar{flex-wrap:wrap}.topbar>.nav-idioma{flex-basis:100%}</style></head>',
+        '<style>.wordmark{display:block;margin-top:240px}</style></head>',
       ),
   },
 ];
