@@ -1,0 +1,31 @@
+# A medição do dist/ de 796c9032, antes do bloco (16.09.2026)
+#
+# AVISO, e é preciso: as duas últimas famílias de linhas («a casa» e as palavras
+# proibidas) foram contadas AQUI por subcadeia sobre o texto do corpo, sem tirar
+# o que está dentro de uma dobra fechada e sem as rotas isentas. A régua que o
+# relatório usa no «depois» é a do PORTÃO (`scripts/voz-palavras.mjs`), que tira
+# as dobras, os campos transcritos e as cinco rotas declaradas. **Os dois números
+# não se comparam**: o que se compara são os cartões, os rótulos das datas nas
+# dobras e o nome oficial no recibo, que são contados da mesma maneira nos dois.
+#
+# O «antes» de «a casa», contado do lado da FONTE, que é onde ele é exato: duas
+# cadeias do leitor em `src/data/metodo.mjs`, sete em `src/data/politica-ia.mjs`,
+# duas em `src/i18n/strings.mjs` e nenhuma em `src/data/sobre.mjs`. As contagens
+# do brief (5, 13 e 64) eram de `grep` sobre os ficheiros inteiros, comentários
+# incluídos, e o brief dizia «a conferir».
+
+páginas lidas: 7358
+  cartões pt: 118 · document.title=66 · name=16 · medidas=13 · figuras=18 · oficial=5 · blocos sem nome: 24
+  cartões en: 118 · document.title=66 · name=16 · medidas=13 · figuras=18 · oficial=5 · blocos sem nome: 24
+  rótulos das três datas nas dobras: pt=6858 en=6858
+  nome oficial no recibo: 62 vez(es)
+  páginas com «a casa» no texto do leitor: 9
+  «a casa»: 26
+  «da casa»: 5
+  «desta casa»: 8
+  «passe o rato»: 3
+  «limiar»: 19
+  «e mais »: 25
+  «sem guião»: 3
+  «conferido a»: 1
+  «lido na fonte a»: 7516
