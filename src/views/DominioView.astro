@@ -58,11 +58,10 @@ import Base from '../layouts/Base.astro';
 import CabecaDoLugar from '../components/inicio/CabecaDoLugar.astro';
 import Faixa from '../components/inicio/Faixa.astro';
 import Gaveta from '../components/inicio/Gaveta.astro';
-import Claim from '../components/Claim.astro';
 import Frase from '../components/Frase.astro';
 import Manchete from '../components/Manchete.astro';
-import CampoDaLinha from '../components/CampoDaLinha.astro';
 import DataDaLinha from '../components/DataDaLinha.astro';
+import CartaoDaMedida from '../components/CartaoDaMedida.astro';
 import BarraConcelhoPais from '../components/formas/BarraConcelhoPais.astro';
 import MapaPorConcelho from '../components/formas/MapaPorConcelho.astro';
 import GeometriaDosConcelhos from '../components/formas/GeometriaDosConcelhos.astro';
@@ -76,10 +75,7 @@ import {
 import {
   fixadorDoLimiar,
   comparacaoComOLimiar,
-  DEFINICOES_DAS_MEDIDAS,
-  origensDaDefinicao,
 } from '../data/figuras.mjs';
-import OrigemDaDefinicao from '../components/OrigemDaDefinicao.astro';
 import {
   medidasComLeitura,
   mapaPorConcelho,
@@ -87,10 +83,8 @@ import {
   linhasPorConcelho,
   ancoraDaMedida,
 } from '../lib/dominios.mjs';
-import { estadoDaMedida, palavraDoEstado, rotuloDoValorDeReferencia } from '../lib/estado.mjs';
+import { estadoDaMedida, palavraDoEstado } from '../lib/estado.mjs';
 import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
-import { unidadeDaLinha } from '../i18n/unidades.mjs';
-import { linguaDaFonte } from '../i18n/lingua-dos-titulos.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { canonicalUrl, SITE_NAME, SITE_URL } from '../../site.config.mjs';
 import { FONTE_DIGITAL_GERADA_POR_IA } from '../data/politica-ia.mjs';
@@ -100,16 +94,20 @@ import { t } from '../i18n/strings.mjs';
    escreveu quando a faixa chegou às três camadas. */
 import '../styles/inicio.css';
 import '../styles/dominio.css';
+/* A FOLHA DO CARTÃO VIAJA COM O CARTÃO (achado 2, 15.09.2026). O `check:css`
+   (C2) mediu-o de imediato: os vãos entre o rótulo e o valor da régua e entre
+   a unidade e o período são `gap` da folha do cartão, e sem ela ligada nesta
+   rota o leitor lia «% do PIBem 2025». É a mesma razão que a folha da primeira
+   página já tinha escrito duas linhas acima. */
+import '../styles/cartao-medida.css';
 
 const { lang = 'pt', slug } = Astro.props;
 
-/* A DEFINIÇÃO DECLARADA DE UMA LINHA, OU `null` (decisão 24, 09.09.2026). Não
-   há definição escrita nesta página: o que há é a leitura da declaração única
-   que a página europeia já cita, com a origem que a prova. Uma linha sem
-   definição declarada não recebe uma inventada aqui. */
-const definicaoDaMedida = (claim) =>
-  /** @type {Record<string, { origens: readonly string[] }>} */ (DEFINICOES_DAS_MEDIDAS)[claim] ??
-  null;
+/* A DEFINIÇÃO DE UMA MEDIDA SAIU DAQUI COM O CARTÃO (achado 2, 15.09.2026). A
+   decisão 24 de 09.09.2026 trouxe-a a esta página com a origem que a prova, e o
+   cartão trá-la agora com o resto: a frase vem da mesma declaração única
+   (`DEFINICOES_DAS_MEDIDAS`), e a origem dela fica atrás do toque da marca da
+   fonte, que é o §2.1 da norma. Nada se perdeu de sítio: mudou de peça. */
 const s = t(lang);
 
 const dominio = dominioDoSlug(slug);
@@ -463,197 +461,97 @@ const rotuloDaData = (campo) => ROTULO_DA_DATA[campo] ?? s.dominios.dataConferid
     {
       leituras.map(({ medida, linha, datas, outras, desenho }) => (
         <article class="dominio-medida" id={ancoraDa(medida.chave)} data-medida={medida.chave}>
-          <h3 class="dominio-pergunta">{medida.pergunta[lang] ?? medida.pergunta.pt}</h3>
-          <p class="dominio-nome" id={`k-${medida.chave.toLowerCase()}`} data-medida-nome>
-            {medida.nome[lang] ?? medida.nome.pt}
-            {medida.ambito && (
-              <>
-                {' · '}
-                <span data-nonledger="ambito-da-medida">{medida.ambito[lang] ?? medida.ambito.pt}</span>
-              </>
-            )}
-          </p>
+          {/* A PERGUNTA DA CARTA É QUEM NOMEIA AS FORMAS DESTA MEDIDA (achado 2,
+              15.09.2026). O `id` estava na linha do nome, que saiu com o cartão, e
+              a barra e o mapa desta medida apontam-lhe por `aria-labelledby`: sem
+              alvo, os doze desenhos ficaram sem nome acessível e o axe contou-os
+              (`svg-img-alt`, 12 nós graves). Passa para o cabeçalho, que é a
+              pergunta a que o desenho responde e o melhor nome que ele pode ter. */}
+          <h3 class="dominio-pergunta" id={`k-${medida.chave.toLowerCase()}`}>
+            {medida.pergunta[lang] ?? medida.pergunta.pt}
+          </h3>
 
           {/* ------------------------------------------------------------------
-              A DEFINIÇÃO DA MEDIDA, EM PALAVRAS (decisão 24 da releitura do
-              leitor de primeira vez, 09.09.2026)
+              O CARTÃO DE UMA MEDIDA, TAMBÉM AQUI (achado 2 da leitura a frio de
+              15.09.2026)
               ------------------------------------------------------------------
-              O leitor de primeira vez perguntou-o na página deste domínio: «The
-              domain asks "Quanto deve o Estado?" but supplies no Portuguese
-              definition beyond an English dataset title.» O título inglês saiu
-              hoje da linha da fonte (decisão 16), e o que ele mal fazia não pode
-              ficar por fazer: onde a casa TEM uma definição declarada para
-              aquela linha, ela rende-se aqui, uma vez, ao pé do nome, com a
-              origem que a prova.
+              A leitura a frio: «P2's card replacement was applied only to area
+              pages, not "all pages that render a measure card". … The supplied
+              domain pages consequently still expose receipt labels such as
+              "Publicado por", "período de referência", "Published by" and
+              "reference period".» Tinha razão: esta página rendia o nome, o
+              valor, a definição com a origem, o limiar, as três datas e o
+              publicador, todos à vista e cada um com o seu rótulo de recibo.
 
-              ONDE NÃO TEM, NÃO SE INVENTA. As definições declaradas são as das
-              21 medidas dos dois quadros da União
-              (`DEFINICOES_DAS_MEDIDAS`, em `src/data/figuras.mjs`), cada uma
-              tirada da descrição da Comissão ou do Eurostat e citada com o
-              documento, o endereço, a data de leitura e o excerto. Três das dez
-              medidas deste domínio são as mesmas linhas e trazem-na; as outras
-              sete não têm definição declarada em lado nenhum, e o relatório do
-              bloco lista-as pelo nome. Escrever-lhes uma frase de cabeça seria
-              inventar a definição de uma medida do Estado.
+              O QUE O CARTÃO TRAZ, E O QUE ELE LEVA CONSIGO: o nome pela escada
+              do cartão, o valor com a unidade e o período numa linha, a frase do
+              que a medida mede, a régua (o período anterior, a União, o valor de
+              referência com a palavra do lado) e a marca da fonte, que é a porta
+              do recibo. Sai daqui o `dominio-nome`, o `dominio-valor`, o
+              `dominio-limiar`, a `dominio-definicao` com a sua origem e o
+              `dominio-fonte` inteiro, que é onde vivia o «Publicado por».
+
+              O QUE FICA À VOLTA DO CARTÃO, E PORQUÊ: o âmbito de uma medida, o
+              rótulo de um valor e a frase de quem fixou o valor de referência
+              são conteúdo desta página e o cartão não tem campo para eles.
+              Tirá-los era perder o que dizem; pô-los no cartão era fazer-lhe uma
+              sexta coisa, e as cinco são uma decisão do diretor (§1.108). Ficam
+              onde estão, em linhas próprias, e o relatório diz que ficaram.
               ------------------------------------------------------------------ */}
-          {definicaoDaMedida(medida.claim) && (
-            <div class="dominio-definicao" data-definicao={medida.claim}>
-              <p class="dobra-definicao">
-                <Frase partes={definicaoDaMedida(medida.claim)[lang]} lang={lang} selos={true} />
-              </p>
-              <OrigemDaDefinicao
-                origens={origensDaDefinicao(definicaoDaMedida(medida.claim), lang)}
-                s={s}
-                lang={lang}
-              />
-            </div>
-          )}
+          {linha !== null && <CartaoDaMedida linha={linha} lang={lang} data-dominio-cartao={medida.chave} />}
 
-          {linha !== null && (
-            <p class="dominio-valor">
-              <Claim id={medida.claim} lang={lang} chip={true} class="dominio-num" />
-              <span class="dominio-unidade" data-medida-unidade>
-                {medida.unidade[lang] ?? medida.unidade.pt}
-              </span>
-              {medida.rotuloDoValor && (
-                <span class="dominio-rotulo-valor">
-                  {medida.rotuloDoValor[lang] ?? medida.rotuloDoValor.pt}
-                </span>
-              )}
+          {medida.ambito && (
+            <p class="dominio-ambito">
+              <span data-nonledger="ambito-da-medida">{medida.ambito[lang] ?? medida.ambito.pt}</span>
             </p>
           )}
 
-          {medida.limiar && (
-            <p class="dominio-limiar">
-              <span class="dominio-limiar-k">{rotuloDoValorDeReferencia(s, fixadorDaMedida(medida))}</span>{' '}
-              <span class="dominio-limiar-v">
-                {medida.limiar.sinal ?? ''}
-                <span data-nonledger="limiar-do-quadro">{String(medida.limiar.nl)}</span>
-                {medida.limiar.simbolo ?? ''}
-              </span>
-              {' · '}
-              <span class="dominio-estado">{palavraDaMedida(medida)}</span>
-            </p>
+          {medida.rotuloDoValor && (
+            <p class="dominio-rotulo-valor">{medida.rotuloDoValor[lang] ?? medida.rotuloDoValor.pt}</p>
           )}
 
-          {/* A FRASE QUE DIZ O QUE O LIMIAR É E QUEM O FIXOU (F1.10, item 8.5,
-              segunda passagem de 08.09.2026). A primeira passagem pô-la na
-              leitura da primeira página, da página europeia e da página do
-              concelho, e esta página ficou de fora: as três medidas com limiar
-              que ela mostra têm três fixadores diferentes, e é aqui que o saldo
-              e a despesa líquida vivem. A frase vem do par do fixador e a vista
-              não escolhe: um par com frase rende-a, um par sem frase não a
-              rende. Só o `lei` não tem, porque a página do concelho já diz a
-              sua, uma vez, e o §0 do brief manda uma coisa num lugar só. */}
+          {/* A FRASE QUE DIZ O QUE O VALOR DE REFERÊNCIA É E QUEM O FIXOU (F1.10,
+              item 8.5). O cartão diz de que LADO dele o número está; esta frase
+              diz o que ele é e de quem é, e as duas não são a mesma coisa. */}
           {medida.limiar && fraseDaMedida(medida) && (
             <p class="dominio-limiar-frase">{fraseDaMedida(medida)}</p>
           )}
 
+          {/* OS VALORES IRMÃOS, cada um no seu cartão. Eram três blocos (o valor
+              com o seu rótulo, as três datas e a linha do publicador); passam a
+              ser o mesmo cartão das outras medidas, com o rótulo por cima, que é
+              o que o irmão tem e a medida principal não. */}
           {outras.map((o) => (
             <>
-              <p class="dominio-valor dominio-valor-irmao">
-                <Claim id={o.id} lang={lang} chip={true} class="dominio-num-irmao" />
-                <span class="dominio-rotulo-valor">{o.rotulo[lang] ?? o.rotulo.pt}</span>
-              </p>
-              {/* O VALOR IRMÃO TEM AS SUAS PRÓPRIAS DATAS E A SUA PRÓPRIA FONTE
-                  (segunda passagem, 03.09.2026, Major 13). Sem isto, as duas
-                  linhas do Eurostat e do Diário da República partilhavam as
-                  três datas e a fonte da primeira, e as duas não concordam: a
-                  vista já as calcula em `medidasComLeitura()` (`o.datas`), só
-                  não as rendia. */}
-              {o.datas.length > 0 && (
-                <p class="dominio-datas dominio-datas-irmao">
-                  {o.datas.map((d, i) => (
-                    <>
-                      {i > 0 && <span class="dominio-sep"> · </span>}
-                      <span class="dominio-data-k">{rotuloDaData(d.campo)}</span>{' '}
-                      <DataDaLinha id={o.id} campo={d.campo} valor={d.valor} />
-                    </>
-                  ))}
-                </p>
-              )}
-              {/* «PUBLICADO POR», E SEM O TÍTULO DO DOCUMENTO (terceira
-                  repetição da releitura do leitor de primeira vez, 09.09.2026).
-                  A linha dizia «fonte Eurostat · General government gross debt…»
-                  e tinha os dois defeitos de uma vez: a palavra «fonte», que o
-                  §7.2 reserva para o SELO, e o título do documento, que o §1
-                  reserva para a página da linha. O que fica é o publicador, com
-                  o nome que o §7.2 lhe dá, e a unidade. O título do documento
-                  lê-se onde ele vive: a um toque, na página da linha. */}
-              <p class="dominio-fonte dominio-fonte-irmao">
-                <span class="dominio-data-k">{s.prov.fonte}</span>{' '}
-                <CampoDaLinha
-                  id={o.id}
-                  campo="source"
-                  valor={o.linha.source}
-                  lang={lang}
-                  lingua={linguaDaFonte(o.linha.source, lang)}
-                />
-                <span class="dominio-sep"> · </span>
-                <CampoDaLinha
-                  id={o.id}
-                  campo="unit"
-                  valor={unidadeDaLinha(o.linha.unit, lang).texto}
-                  lang={lang}
-                  lingua={unidadeDaLinha(o.linha.unit, lang).lingua}
-                />
-              </p>
+              <p class="dominio-rotulo-valor">{o.rotulo[lang] ?? o.rotulo.pt}</p>
+              <CartaoDaMedida linha={getClaim(o.id)} lang={lang} data-dominio-cartao={o.id} />
             </>
           ))}
 
           {/* A RESSALVA DE ALCANCE SAIU DESTA PÁGINA (bloco F1.10, §9.2,
-              08.09.2026).
+              08.09.2026) e vive na página da linha, que é o recibo daquela linha.
 
-              Era a meta que a União tem e Portugal ainda não tem (T1) e o
-              território que o diploma de T5 não cobre, as duas rendidas aqui
-              desde a segunda passagem de 03.09.2026 (Blocking 4), à vista e fora
-              de qualquer dobra. A leitura cruzada do inventário das frases de
-              08.09 classificou-as como prosa de diligência da página do domínio,
-              e a decisão do lugar de direção é que ela «sai do primeiro ecrã e
-              vai para a página da linha ou para o Método».
-
-              CADA UMA É DE UMA LINHA, e por isso o destino é a página da linha:
-              `LinhaView.astro` rende-a pelo identificador, com as MESMAS
-              palavras e o mesmo marcador. A declaração continua onde estava, na
-              medida a que pertence (`ressalva`, em `src/data/dominios.mjs`); o
-              que mudou foi quem a lê. */}
-
-          {/* AS TRÊS DATAS, na forma da casa, cada uma com a linha e o campo de
-              onde saiu. Ver `DataDaLinha.astro`. */}
+              AS DUAS DATAS QUE O CARTÃO NÃO ESCREVE (achado 2, 15.09.2026). A
+              carta dos conteúdos, §1, regra 3: «Três datas por medida, sempre: o
+              período de referência, a data em que a fonte o publicou, e a data em
+              que a casa conferiu a fonte», e o `check:formas` (F5) fecha a
+              construção com menos de três dentro de uma leitura breve. A
+              primeira das três é agora a do CARTÃO, escrita na linha do valor
+              («em 2025») e marcada como a mesma `data-da-linha` de sempre: o que
+              esta linha perde é a repetição dela e o rótulo «período de
+              referência», que é rótulo de recibo. As outras duas ficam, porque
+              a carta as manda e porque nenhuma delas está no cartão. */}
           {datas.length > 0 && (
             <p class="dominio-datas">
-              {datas.map((d, i) => (
-                <>
-                  {i > 0 && <span class="dominio-sep"> · </span>}
-                  <span class="dominio-data-k">{rotuloDaData(d.campo)}</span>{' '}
-                  <DataDaLinha id={medida.claim} campo={d.campo} valor={d.valor} />
-                </>
-              ))}
-            </p>
-          )}
-
-          {/* A FONTE, COM O NOME DO PUBLICADOR COMO A LINHA O DIZ, pela marca
-              forte que o portão compara carácter a carácter. */}
-          {/* «PUBLICADO POR», E SEM O TÍTULO DO DOCUMENTO (09.09.2026): ver
-              a razão por extenso no bloco gémeo das medidas partilhadas. */}
-          {linha !== null && (
-            <p class="dominio-fonte">
-              <span class="dominio-data-k">{s.prov.fonte}</span>{' '}
-              <CampoDaLinha
-                id={medida.claim}
-                campo="source"
-                valor={linha.source}
-                lang={lang}
-                lingua={linguaDaFonte(linha.source, lang)}
-              />
-              <span class="dominio-sep"> · </span>
-              <CampoDaLinha
-                id={medida.claim}
-                campo="unit"
-                valor={unidadeDaLinha(linha.unit, lang).texto}
-                lang={lang}
-                lingua={unidadeDaLinha(linha.unit, lang).lingua}
-              />
+              {datas
+                .filter((d) => d.campo !== 'reference_date' || linha === null)
+                .map((d, i) => (
+                  <>
+                    {i > 0 && <span class="dominio-sep"> · </span>}
+                    <span class="dominio-data-k">{rotuloDaData(d.campo)}</span>{' '}
+                    <DataDaLinha id={medida.claim} campo={d.campo} valor={d.valor} />
+                  </>
+                ))}
             </p>
           )}
 

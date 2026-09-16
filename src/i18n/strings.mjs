@@ -274,6 +274,14 @@ export const STRINGS = {
 
     prov: {
       calculado: 'calculado',
+      /* QUEM ESCREVEU A DEFINIÇÃO, E NÃO QUEM PUBLICOU O NÚMERO (achado 2 da
+         leitura a frio de 15.09.2026, pelo caminho do rótulo). A origem de uma
+         definição rendia-se com «Publicado por», que é o rótulo do publicador
+         de uma LINHA do livro-razão: ao pé de uma frase citada da Comissão,
+         lia-se como se aquele fosse o publicador do número. São duas coisas
+         diferentes e passam a ter dois rótulos diferentes; o de recibo fica no
+         recibo, que é onde ele diz o que diz. */
+      definicaoDe: 'Definição de',
       /* A palavra que o selo escreve, à vista (IDENTIDADE.md §5.4). Esteve
          escondida para leitores de ecrã até à v2, e um leitor com vista via só
          um título de estudo em cinzento. */
@@ -2845,6 +2853,8 @@ export const STRINGS = {
 
     prov: {
       calculado: 'calculated',
+      /** Ver a razão na edição portuguesa (achado 2, 15.09.2026). */
+      definicaoDe: 'Definition by',
       selo: 'source',
       seloDaCasa: 'row',
       provisorio: 'provisional',
