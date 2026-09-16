@@ -45,6 +45,13 @@
  *      A marca tira do inventário o nome de uma coisa que vem de um ficheiro de
  *      dados, e uma marca que dispensa um texto da declaração tem de trazer a sua
  *      própria verificação;
+ *  11. **as palavras que o sítio nunca usa para si** (bloco P3, 16.09.2026) · a
+ *      lista do §1.3 da norma, medida sobre a SUPERFÍCIE de cada página
+ *      construída das duas edições: o que o leitor lê sem abrir uma dobra, sem
+ *      os campos transcritos das fontes e sem as duas rotas declaradas em
+ *      `scripts/voz-palavras.mjs`. É o portão que a norma §5.4 pede, e a razão
+ *      dele é dela: «é o que impede a mesma palavra de voltar num bloco
+ *      distraído». A planta que o derruba é `tests/voz/palavras-proibidas.mjs`;
  *  10. **o arame da classe por provar, na primeira página** (F0.9, 03.09.2026) ·
  *      uma palavra de tendência, de comparação contra um valor que a página não
  *      tem, de valor de outro período ou de atribuição sem excerto, rendida em
@@ -67,6 +74,9 @@ import { fileURLToPath } from 'node:url';
 import { parse, NodeType } from 'node-html-parser';
 
 import { leInventario, FICHEIRO_DO_INVENTARIO } from './voz.mjs';
+/* A LISTA DAS PALAVRAS PROIBIDAS VIVE NUM FICHEIRO SÓ (bloco P3, 16.09.2026,
+   item 5), e é o mesmo que a planta chama. Ver `scripts/voz-palavras.mjs`. */
+import { palavrasProibidasEm, PALAVRAS_PROIBIDAS } from './voz-palavras.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -79,6 +89,9 @@ if (!fs.existsSync(DIST)) {
   console.error(vermelho('\n  PORTÃO DA VOZ · não existe dist/. Corra o build primeiro.\n'));
   process.exit(1);
 }
+
+let palavrasLidas = 0;
+let palavrasIsentas = 0;
 
 const saida = execFileSync(process.execPath, [path.join(RAIZ, 'scripts', 'medir-defeitos.mjs'), '--json'], {
   encoding: 'utf8',
@@ -574,6 +587,44 @@ for (const r of ROTAS_DA_CLASSE) {
   }
 }
 
+/* ---------------------------------------------------------------------------
+ * 11 · AS PALAVRAS QUE O SÍTIO NUNCA USA PARA SI (norma §1.3 e §5.4)
+ * ---------------------------------------------------------------------------
+ * A definição está em `scripts/voz-palavras.mjs`, com a razão de cada palavra e
+ * o que se escreve em vez dela. Aqui só se chama e se fecha a construção.
+ *
+ * O CONTROLO POSITIVO É A PLANTA, e não um zero: `tests/voz/palavras-proibidas.mjs`
+ * planta uma palavra da lista numa cópia de `dist/` e exige que esta mesma
+ * função a veja. Um zero aqui sem a planta ao lado tinha duas explicações e uma
+ * era má (regra 14 da casa).
+ */
+{
+  const { achados, paginas: lidas, excecoes: rotasIsentas } = palavrasProibidasEm(DIST);
+  if (lidas === 0) {
+    erros.push(
+      `a lista das palavras proibidas leu zero páginas de dist/, e o sítio tem milhares. ` +
+        `Um portão que não abre nenhum ficheiro diz sempre que está tudo bem.`,
+    );
+  }
+  /* UMA LINHA POR PALAVRA E POR PÁGINA seria a mesma frase repetida em milhares
+     de páginas: agrupa-se por palavra, com a contagem e o primeiro sítio. */
+  const porPalavra = new Map();
+  for (const a of achados) {
+    if (!porPalavra.has(a.chave)) porPalavra.set(a.chave, { n: 0, primeiro: a });
+    porPalavra.get(a.chave).n++;
+  }
+  for (const [chave, { n, primeiro }] of porPalavra) {
+    erros.push(
+      `PALAVRA PROIBIDA «${chave}» em ${n} página(s) da superfície.\n` +
+        `      primeiro: ${primeiro.caminho}\n` +
+        `      «…${primeiro.trecho}…»\n` +
+        `      escreve-se ${primeiro.em_vez} · ${primeiro.porque}`,
+    );
+  }
+  palavrasLidas = lidas;
+  palavrasIsentas = rotasIsentas;
+}
+
 console.log('');
 if (erros.length) {
   /* QUANTOS ERROS SE IMPRIMEM. Quarenta chegam para um bloco pequeno e escondem
@@ -603,7 +654,9 @@ console.log(
       .join(', ')} · ` +
     `nomes declarados: ${Object.entries(voz.nomes_declarados?.por_fonte ?? {})
       .map(([f, n]) => `${f} ${n}`)
-      .join(', ')}`,
+      .join(', ')} · ` +
+    `palavras proibidas: 0 em ${palavrasLidas} página(s) da superfície ` +
+    `(${PALAVRAS_PROIBIDAS.length} palavras da norma §1.3; ${palavrasIsentas} página(s) de documento de estudo isentas)`,
 );
 if (blocosPorLer.length) {
   console.log(cinza(`        ${blocosPorLer.length} bloco(s) do inventário por ler, e o registo di-lo:`));
