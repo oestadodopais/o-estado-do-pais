@@ -47,6 +47,9 @@ import path from 'node:path';
 import { execFileSync, spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
+import { loadClaims, getClaim } from '../../src/lib/ledger.mjs';
+import { ultimaConferencia } from '../../src/lib/dominios.mjs';
+
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = path.join(RAIZ, 'dist');
 const PORTAO = path.join(RAIZ, 'scripts', 'check-formas.mjs');
@@ -148,18 +151,33 @@ const PLANTAS = [
   {
     nome: 'P2',
     celula: 'F5',
-    o_que: 'o recibo de uma linha com leitura breve sem uma das três datas',
-    marca: 'das três datas e falta(m)',
-    /* UMA SÓ DAS TRÊS, E NUM RECIBO: assim o recibo fica com duas datas e não
-       com nenhuma, que é o estrago mais difícil de ver. Tira-se a data da última
-       verificação, que é a terceira e a que uma leitura distraída não procura.
-       TIRAM-SE TODAS AS QUE HÁ, e não a primeira: o recibo mostra as DUAS
-       verificações mais recentes, e apagar uma deixava a outra a responder pela
-       célula. Medido: com `replace` a planta ficou verde. */
-    plantar: () =>
-      planta(RECIBO_COM_LEITURA_BREVE, (cru) =>
-        cru.replaceAll(/<span[^>]*data-de-campo="verifications\.\d+\.date"[^>]*>[^<]*<\/span>/g, ''),
-      ),
+    o_que: 'o recibo de uma linha com leitura breve sem a data da ÚLTIMA verificação',
+    marca: 'e a mais recente é',
+    /* SÓ A MAIS RECENTE, E NÃO TODAS (achado 11 da leitura a frio do Codex,
+       16.09.2026). A primeira redação desta planta apagava TODAS as datas de
+       verificação do recibo, porque com `replace` numa só a célula ficava verde:
+       qualquer `verifications.N.date` satisfazia «a última verificação», e o
+       recibo continuava a mostrar a outra. Apagar todas escondia o buraco em vez
+       de o medir, e o estrago que interessa é exactamente este: um recibo que
+       guarda uma verificação ANTIGA e promete uma frescura que a linha não tem.
+       A célula passou a exigir a mais recente pelo nome do campo, e a planta
+       tira só essa, escolhida pela mesma função que o portão usa. */
+    plantar: () => {
+      loadClaims();
+      const id = RECIBO_COM_LEITURA_BREVE.split('/')[1];
+      const ultima = ultimaConferencia(getClaim(id));
+      if (!ultima) throw new Error(`a planta P2 precisa de uma linha com verificações, e "${id}" não tem.`);
+      const marca = new RegExp(
+        `<span[^>]*data-de-campo="${ultima.campo.replace(/\./g, '\\.')}"[^>]*>[^<]*</span>`,
+        'g',
+      );
+      return planta(RECIBO_COM_LEITURA_BREVE, (cru) => {
+        if (!marca.test(cru)) {
+          throw new Error(`a planta P2 não achou "${ultima.campo}" em ${RECIBO_COM_LEITURA_BREVE}.`);
+        }
+        return cru.replace(marca, '');
+      });
+    },
   },
   {
     nome: 'P3',

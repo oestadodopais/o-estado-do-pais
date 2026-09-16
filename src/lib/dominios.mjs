@@ -122,10 +122,16 @@ export function tresDatasDaLinha(id) {
  * sabe conferir. A escolha é pela DATA e não pela ordem do ficheiro, porque a
  * ordem de um ficheiro não é uma promessa.
  *
+ * EXPORTADA DESDE 16.09.2026 (achado 11 da leitura a frio do Codex): o
+ * `check:formas` passa a exigir que a data de verificação MOSTRADA num recibo
+ * seja a mais recente das `verifications` daquela linha, e a única maneira
+ * honesta de o fazer é perguntá-lo a esta função, que é quem sabe qual é. Uma
+ * segunda cópia da escolha noutro ficheiro divergiria na primeira correção.
+ *
  * @param {Linha} linha
  * @returns {{ campo: string, valor: string }|null}
  */
-function ultimaConferencia(linha) {
+export function ultimaConferencia(linha) {
   const lista = Array.isArray(linha.verifications) ? linha.verifications : [];
   let melhor = null;
   let n = -1;

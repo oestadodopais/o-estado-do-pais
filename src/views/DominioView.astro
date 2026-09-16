@@ -456,7 +456,20 @@ const jsonld = {
 
     {
       leituras.map(({ medida, linha, outras, desenho }) => (
-        <article class="dominio-medida" id={ancoraDa(medida.chave)} data-medida={medida.chave}>
+        <article
+          class="dominio-medida"
+          id={ancoraDa(medida.chave)}
+          data-medida={medida.chave}
+          data-leitura={medida.claim}
+        >
+          {/* `data-leitura` É A LINHA DESTA LEITURA, E É POR ELA QUE O F5 A ENCONTRA
+              (achado 11 da leitura a frio do Codex, 16.09.2026). O `data-medida`
+              traz a CHAVE da medida («E1», «T3»), que não é um identificador do
+              livro-razão: com ela sozinha, o `check:formas` tinha de ir buscar o
+              conjunto dos alvos à declaração em `dominios.mjs`, e era a
+              declaração a medir-se a ela própria. A marca é a mesma que a dobra
+              da leitura breve já usa (`LeituraBreve.astro`), e por isso o portão
+              lê as duas famílias com uma pergunta só, feita ao `dist/`. */}
           {/* A PERGUNTA DA CARTA É QUEM NOMEIA AS FORMAS DESTA MEDIDA (achado 2,
               15.09.2026). O `id` estava na linha do nome, que saiu com o cartão, e
               a barra e o mapa desta medida apontam-lhe por `aria-labelledby`: sem
