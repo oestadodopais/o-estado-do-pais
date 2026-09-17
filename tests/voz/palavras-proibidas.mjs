@@ -136,7 +136,7 @@ function dentroDaMarca(html, atributo, pedaco) {
 }
 
 /** @param {RegExp} marca @returns {string|null} */
-function primeiraPagina(marca) {
+function primeiraPagina(marca, contem = null) {
   /** @param {string} dir @returns {string|null} */
   const anda = (dir) => {
     for (const e of fs.readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
@@ -146,7 +146,7 @@ function primeiraPagina(marca) {
         if (achado) return achado;
       } else if (e.name.endsWith('.html')) {
         const rel = path.relative(DIST, p).split(path.sep).join('/');
-        if (marca.test(rel)) return rel;
+        if (marca.test(rel) && (!contem || fs.readFileSync(p, 'utf8').includes(contem))) return rel;
       }
     }
     return null;
@@ -184,11 +184,11 @@ const BURACOS = [
   {
     nome: 'a prosa deste projeto à volta da transcrição de um estudo',
     chave: 'responsável editorial',
-    pagina: () => primeiraPagina(/^estudos\/[^/]+\/texto\/index\.html$/),
+    pagina: () => primeiraPagina(/^estudos\/[^/]+\/index\.html$/, 'data-registo-edicao'),
     morde: (html) =>
       depoisDoCorpo(html, '<p class="planta">O responsável editorial responde pelo que se publica.</p>'),
     naoMorde: (html) =>
-      dentroDaMarca(html, 'data-registo-edicao', '<p class="planta">O responsável editorial responde pelo que se publica.</p>'),
+      dentroDaMarca(html, 'data-registo-unidade', '<p class="planta">O responsável editorial responde pelo que se publica.</p>'),
   },
 ];
 
