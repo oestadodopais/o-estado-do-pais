@@ -647,7 +647,14 @@ const EVORA = {
 
 
     /* ------------------------------------------ os trabalhos sobre o concelho */
+    /* A LISTA É ESCRITA À MÃO, E POR ISSO FICOU VELHA (17.09.2026): o estudo de
+       Évora 2027 aterrou a 16.09 e a página do concelho não o mostrava, porque
+       esta lista não se compõe de `WORKS` por assunto. O diretor viu-o a 17.09
+       de manhã e o estudo entra aqui, à cabeça, por ser o mais recente. Passar a
+       lista a compor-se por si (os trabalhos com `subject` deste concelho, do
+       mais recente ao mais antigo) é do bloco da estrutura. */
     estudos: [
+      'evora-2027-prometido-painel-dinheiro',
       'evora-prometido-pago-auditado-2026',
       'evora-economia-investidores-portas-abertas-2026',
       'evora-orcamentado-pago-devido-2025',
