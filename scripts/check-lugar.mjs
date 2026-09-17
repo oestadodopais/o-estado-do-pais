@@ -105,6 +105,10 @@ const FICHEIROS_SEM_ROTA = new Set(['404.html', 'en/404/index.html']);
  * número é sempre o que a própria régua imprime, e nunca um palpite.
  */
 const TETO_FROUXO = 8;
+const TETO_B1 = JSON.parse(fs.readFileSync(path.join(RAIZ, 'scripts/lugar-tetos-b1.json'), 'utf8'));
+const MEDICAO_B1 = JSON.parse(fs.readFileSync(path.join(RAIZ, TETO_B1.medicao), 'utf8'));
+if (!Number.isInteger(TETO_B1.l1_paginas) || TETO_B1.l1_paginas < 0 || MEDICAO_B1.contagens.estudos !== TETO_B1.l1_paginas)
+  throw new Error('B1 L1: o teto tem de ser o número inteiro medido no registo.');
 const TETOS = {
   /* L1 · páginas com dois destinos iguais fora do cabeçalho e do rodapé.
      TODOS os tetos desta tabela foram medidos a 08.09.2026 sobre o `dist/` da
@@ -197,7 +201,7 @@ const TETOS = {
      sobre a cabeça deste bloco, e guardado em
      `design/especime-v3/medicoes/e1-2026-09-16/l1-composicao-2026-09-16.txt`.
      Não foi escrito à mão. O horizonte continua a zero. */
-  l1_paginas: 2271, // B1, 17.09.2026: medido após a fusão das páginas do estudo.
+  l1_paginas: TETO_B1.l1_paginas, // B1: o teto medido está escrito uma só vez no registo.
   /* L2a · páginas, fora de `/municipios`, que ligam a mais de `L2_LIMITE_NOMES`
      concelhos fora de uma lista fechada.
      DESCE DE 2 PARA 0 a 09.09.2026, por decisão do lugar de direção, e a régua
@@ -973,7 +977,7 @@ for (const ficheiro of paginas) {
      `/x#a` e `/x#b` são duas portas para dois sítios da mesma página. */
   const destinos = new Map();
   for (const a of corpo.querySelectorAll('a[href]')) {
-    if (daMobilia.has(a) || a.closest('[data-registo-unidade]')) continue;
+    if (daMobilia.has(a) || (chaveDaRota === 'estudo' && a.closest('[data-registo-unidade]'))) continue;
     const href = a.getAttribute('href') ?? '';
     if (!href || href.startsWith('#') || href.startsWith('mailto:')) continue;
     const chave = href.split('#')[0];
