@@ -22,12 +22,13 @@
  *     resumo de origem → linha do motor → linha do sítio → posição no registo
  *       → a marca `data-registo` na página → o selo, que abre a página da linha
  *
- *   CADEIA DO MOTOR (2 405 figuras, medido)
+ *   CADEIA DO MOTOR (a medição inicial abaixo é histórica)
  *     resumo de origem → linha do motor → posição no registo
- *       → a marca `data-registo` na página → a porta, que abre a entrada em
- *         «As linhas deste documento» (a própria figura é a âncora; dentro de
- *         uma ligação do documento, onde uma âncora não aninha noutra, a porta
- *         vai imediatamente depois da ligação, como o selo)
+ *       → a marca data-registo e data-registo-row na transcrição
+ *
+ * Desde a correção B1, uma figura sem linha do sítio não abre uma entrada
+ * técnica apresentada como fonte. A edição publicada permanece acessível no
+ * fim, e a cadeia continua a conferir valor, posição e linha do motor.
  *
  * **2 405 e não 2 396**, e a diferença diz-se: o plano §4.1 escreve 2 396, que
  * são estas menos as 9 figuras cujas linhas do motor o manifesto de travessia do
@@ -39,7 +40,7 @@
  *
  * Um algarismo **sem nenhuma das duas** é erro, e é para não deixar passar isso
  * que este guião existe. Um algarismo com os seis passos até ao selo é cadeia
- * completa; até à entrada é cadeia do motor.
+ * completa; até à transcrição conferida é cadeia do motor.
  *
  * ---------------------------------------------------------------------------
  * O LEITOR É PRÓPRIO, E É POR ISSO QUE A CONFERÊNCIA VALE
@@ -375,11 +376,6 @@ for (const chave of chaves) {
     }
     marcasDaPagina.set(marca, el);
   }
-  const seccao = pagina.querySelector('#linhas-do-documento');
-  const entradasDasLinhas = new Set(
-    (seccao?.querySelectorAll('[id^="linha-"]') ?? []).map((e) => atributo(e, 'id')),
-  );
-
   const conta = {
     etiqueta: etiquetas.get(chave),
     blocos: registo?.blocks?.length ?? 0,
@@ -532,6 +528,8 @@ for (const chave of chaves) {
           );
           continue;
         }
+        if (atributo(el, 'data-registo-row') !== figura.row)
+          err(`C5 ${marca}: linha marcada difere do registo.`);
         const impresso = textoImpresso(el);
         if (impresso !== figura.printed) {
           err(
@@ -559,7 +557,7 @@ for (const chave of chaves) {
         const dentroDeLigacao = ligacaoDoDocumento(el, artigo);
         let irmao;
         if (dentroDeLigacao) {
-          const naLigacao = dentroDeLigacao.querySelectorAll('[data-registo]');
+          const naLigacao = dentroDeLigacao.querySelectorAll('[data-registo]').filter(f => DO_MOTOR.has(`${entrada.rh_study} ${atributo(f, 'data-registo-row')}`));
           const k = naLigacao.indexOf(el);
           irmao = irmaosColados(dentroDeLigacao)[k] ?? null;
         } else {
@@ -585,39 +583,9 @@ for (const chave of chaves) {
                 `lado, que promete uma linha que não existe.`,
             );
           }
-          const destino = `#linha-${figura.row}`;
-          if (dentroDeLigacao) {
-            if (!ePortaAposALigacao(irmao)) {
-              err(
-                `C6 ${marca}: a figura está dentro de uma ligação do documento e não tem a porta ` +
-                  `a seguir à ligação, que é a saída da cadeia do motor onde uma âncora não pode ` +
-                  `aninhar noutra.`,
-              );
-            } else {
-              const href = atributo(irmao, 'href');
-              if (href !== destino) {
-                err(
-                  `C6 ${marca}: a porta que vai a seguir à ligação abre "${href}" e a entrada ` +
-                    `desta figura é "${destino}".`,
-                );
-              }
-            }
-          } else {
-            const eAncora = String(el.rawTagName ?? '').toLowerCase() === 'a';
-            const href = atributo(el, 'href');
-            if (!eAncora || href !== destino) {
-              err(
-                `C6 ${marca}: a figura não tem linha no livro-razão e a sua porta abre ` +
-                  `${eAncora ? `"${href}"` : 'nada'} em vez de "${destino}".`,
-              );
-            }
-          }
-          if (!entradasDasLinhas.has(`linha-${figura.row}`)) {
-            err(
-              `C6 ${marca}: a linha do motor "${figura.row}" não tem entrada em «As linhas deste ` +
-                `documento» (id="linha-${figura.row}"), que é onde esta cadeia acaba.`,
-            );
-          }
+          if (el.rawTagName !== 'span' || el.hasAttribute('href'))
+            err(`C6 ${marca}: figura sem recibo não pode abrir uma entrada técnica.`);
+
         }
       }
     }
@@ -697,6 +665,6 @@ console.log(
     verde('✓') +
     ' cada algarismo das páginas de leitura chega ao fim da sua cadeia: ' +
     `${totais.registos_com_linha_do_sitio} até ao selo, ` +
-    `${totais.registos_algarismos - totais.registos_com_linha_do_sitio} até à entrada do motor.`,
+    `${totais.registos_algarismos - totais.registos_com_linha_do_sitio} conferidos na transcrição, sem recibo do sítio.`,
 );
 console.log('');
