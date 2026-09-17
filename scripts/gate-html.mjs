@@ -1238,7 +1238,7 @@ function verificaDocumento({ rota, rel, caminho, html, root, err }) {
    * onde há registo de conteúdo há página de leitura e a porta rende-se; onde
    * não há, não há porta nenhuma, e uma porta a mais seria uma que dá 404.
    */
-  const portaDoTexto = temRegistoNoPortao(slug, lang) ? routePath('texto', lang, { slug }) : null;
+  const portaDoTexto = temRegistoNoPortao(slug, lang) ? routePath('estudo', lang, { slug }) : null;
   const aDoTexto = faixa.querySelector('[data-oedp-texto]');
   if (portaDoTexto && !aDoTexto) {
     err(
