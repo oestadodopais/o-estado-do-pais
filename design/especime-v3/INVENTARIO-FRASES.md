@@ -329,7 +329,6 @@ língua em que é rendida.*
 | navegacao | Um observatório de Portugal. | lugar | retirada | a frase de identidade passou a ser a frase de DEFINIÇÃO do sítio (`DECISIONS.md` §1.98, segunda emenda, item 3): diz as três maneiras de ler o sítio e a origem de cada número, que é o que a leitura de um leitor de primeira vez mediu em falta |
 | navegacao | Um observatório de Portugal: cada número com a sua fonte, lido por território, por domínio e em estudos. | lugar | retirada | o diretor leu a primeira página no ar a 15.09.2026 de manhã e mediu o que a frase fazia: descreve o MÉTODO e as três maneiras de percorrer o sítio, e não diz o que a coisa é a quem chega (item 1 do brief do F1.13). A frase nova, que diz o que o sítio tem, até onde desce e o que cada número traz, está viva neste ficheiro |
 | conteudo | With fields to confirm | grelha-2 | retirada | a legenda dos dois estados do selo de proveniência saiu das páginas do leitor (`46608f4`, 25.08, e a decisão do diretor de 27.08 que tirou as contagens de proveniência dos índices, `ef8a78e`) |
-| conteudo | [a verificar] | até 2026-08-26 | viva | — |
 | conteudo | [a verificar] (to verify) | até 2026-08-26 | viva | — |
 
 ### As quatro que ficam em autorreferência, e porquê
@@ -651,16 +650,16 @@ e por isso conteúdo.*
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | % desse valor está nas quatro maiores empresas | até 2026-08-26 | viva | — |
-| conteudo | % dez anos depois | até 2026-08-26 | viva | — |
-| conteudo | % do orçamento foi de facto cobrado no último ano de contas | até 2026-08-26 | viva | — |
-| conteudo | % four years earlier | até 2026-08-26 | viva | — |
-| conteudo | % of that value sits with the four largest enterprises | até 2026-08-26 | viva | — |
-| conteudo | % of the budget was actually collected in the latest year of accounts | até 2026-08-26 | viva | — |
-| conteudo | % quatro anos antes | até 2026-08-26 | viva | — |
-| conteudo | % ten years later | até 2026-08-26 | viva | — |
+| conteudo | % desse valor está nas quatro maiores empresas | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | % dez anos depois | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | % do orçamento foi de facto cobrado no último ano de contas | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | % four years earlier | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | % of that value sits with the four largest enterprises | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | % of the budget was actually collected in the latest year of accounts | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | % quatro anos antes | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | % ten years later | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | conteudo | A cross-cutting reading of the municipality of Évora: the recovery-plan project register, the public-contracts register and the state auditor's catalogue. | voz-dos-documentos | viva | — |
-| navegacao | A ligação sai deste domínio. | até 2026-08-26 | viva | — |
+| navegacao | A ligação sai deste domínio. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | conteudo | As contas do penúltimo ano foram rejeitadas em votação e nunca foram certificadas. | até 2026-08-26 | viva | — |
 | conteudo | Avaliação económica das regiões de Portugal. | até 2026-08-26 | viva | — |
 | conteudo | Datas de publicação por confirmar. | até 2026-08-26 | retirada | retirada: a caixa passou a render-se só quando alguma edição não tem data, e a contá-las («Datas de publicação por confirmar em N edições»); com as dezasseis edições datadas pelo `src/data/datas-de-publicacao.json` do bloco F1.4b (04.09.2026) a caixa não se rende. A frase contada entra aqui no dia em que voltar a render-se |
@@ -670,55 +669,55 @@ e por isso conteúdo.*
 | conteudo | Descrição: frase de abertura do documento | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
 | conteudo | Descrição: reformulação do título | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
 | conteudo | Descrição: tradução da casa da frase de abertura do documento | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
-| conteudo | designations, over three people, in the next executive | até 2026-08-26 | viva | — |
-| conteudo | designações, por três pessoas, no executivo seguinte | até 2026-08-26 | viva | — |
+| conteudo | designations, over three people, in the next executive | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | designações, por três pessoas, no executivo seguinte | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | conteudo | Economia, sociedade e estratégia no Alentejo e no Algarve. | até 2026-08-26 | viva | — |
 | conteudo | Economic assessment of Portugal’s regions. | até 2026-08-26 | viva | — |
 | conteudo | Economy, society and strategy in the Alentejo and the Algarve. | até 2026-08-26 | viva | — |
-| conteudo | EN [a verificar] | até 2026-08-26 | viva | — |
-| conteudo | EN Economic assessment of Portugal’s regions. | até 2026-08-26 | viva | — |
-| conteudo | EN Economy, investors and open doors in the municipality of Évora. | até 2026-08-26 | viva | — |
-| conteudo | EN Economy, society and strategy in the Alentejo and the Algarve. | até 2026-08-26 | viva | — |
-| conteudo | EN Fifteen years of municipal government in Évora, across five terms. | até 2026-08-26 | viva | — |
-| conteudo | EN Long series on the country’s evolution. | até 2026-08-26 | viva | — |
-| conteudo | EN Non-revenue water in Portugal’s public supply systems. | até 2026-08-26 | viva | — |
-| conteudo | EN Public funding in Portugal. | até 2026-08-26 | viva | — |
-| conteudo | EN What was budgeted, what was paid and what was left owing in the municipality of Évora. | até 2026-08-26 | viva | — |
-| conteudo | EN Who held each portfolio of the Câmara Municipal de Évora across five terms, how much the municipality’s own accounts spent in the areas those portfolios cover, and what the reports say those areas did. | até 2026-08-26 | viva | — |
+| conteudo | EN [a verificar] | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | EN Economic assessment of Portugal’s regions. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | EN Economy, investors and open doors in the municipality of Évora. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | EN Economy, society and strategy in the Alentejo and the Algarve. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | EN Fifteen years of municipal government in Évora, across five terms. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | EN Long series on the country’s evolution. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | EN Non-revenue water in Portugal’s public supply systems. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | EN Public funding in Portugal. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | EN What was budgeted, what was paid and what was left owing in the municipality of Évora. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | EN Who held each portfolio of the Câmara Municipal de Évora across five terms, how much the municipality’s own accounts spent in the areas those portfolios cover, and what the reports say those areas did. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | conteudo | Estudos | até 2026-08-26 | viva | — |
 | conteudo | Financiamento público em Portugal. | até 2026-08-26 | viva | — |
 | conteudo | Long series on the country’s evolution. | até 2026-08-26 | viva | — |
-| conteudo | No subject assigned | até 2026-08-26 | viva | — |
+| conteudo | No subject assigned | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | conteudo | Non-revenue water in Portugal’s public supply systems. | até 2026-08-26 | viva | — |
 | conteudo | Os estudos publicados, com as suas edições em português e em inglês. | lugar | retirada | achado 6 da leitura cruzada do inventário (Codex, 14.09.2026), pelo §9.1 do brief: «publicados» é a casa a dizer o que publicou. A descrição nova está viva neste ficheiro |
 | conteudo | O arquivo de estudos publicados, com as suas edições em português e em inglês. | até 2026-08-26 | retirada | o §7.4 do F1.10 (09.09.2026): «um só nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A frase mudou de palavras e não de sentido, e a linha nova está no bloco `lugar` |
-| conteudo | PT [a verificar] | até 2026-08-26 | viva | — |
-| conteudo | PT Avaliação económica das regiões de Portugal. | até 2026-08-26 | viva | — |
+| conteudo | PT [a verificar] | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | PT Avaliação económica das regiões de Portugal. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | conteudo | PT Economia, investidores e portas abertas no município de Évora. | até 2026-08-26 | retirada | a mesma descrição, na fila das descrições da página do estudo na edição inglesa (Major 5, 09.09.2026) |
-| conteudo | PT Economia, sociedade e estratégia no Alentejo e no Algarve. | até 2026-08-26 | viva | — |
-| conteudo | PT Financiamento público em Portugal. | até 2026-08-26 | viva | — |
+| conteudo | PT Economia, sociedade e estratégia no Alentejo e no Algarve. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | PT Financiamento público em Portugal. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | conteudo | PT O que foi orçamentado, o que foi pago e o que ficou em dívida no município de Évora. | até 2026-08-26 | retirada | a mesma descrição, na fila das descrições da página do estudo na edição inglesa (Major 5, 09.09.2026) |
-| conteudo | PT Quinze anos de governo municipal em Évora, ao longo de cinco mandatos. | até 2026-08-26 | viva | — |
-| conteudo | PT Séries longas sobre a evolução do país. | até 2026-08-26 | viva | — |
-| conteudo | PT Água não faturada nos sistemas de abastecimento em Portugal. | até 2026-08-26 | viva | — |
+| conteudo | PT Quinze anos de governo municipal em Évora, ao longo de cinco mandatos. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | PT Séries longas sobre a evolução do país. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | PT Água não faturada nos sistemas de abastecimento em Portugal. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | conteudo | Public funding in Portugal. | até 2026-08-26 | viva | — |
 | conteudo | Publication dates not yet confirmed. | até 2026-08-26 | retirada | retirada: a caixa passou a render-se só quando alguma edição não tem data, e a contá-las («Datas de publicação por confirmar em N edições»); com as dezasseis edições datadas pelo `src/data/datas-de-publicacao.json` do bloco F1.4b (04.09.2026) a caixa não se rende. A frase contada entra aqui no dia em que voltar a render-se |
 | conteudo | Quem teve cada pelouro da Câmara Municipal de Évora ao longo de cinco mandatos, quanto gastaram as contas do próprio município nas áreas que esses pelouros cobrem, e o que os relatórios dizem que essas áreas fizeram. | até 2026-08-26 | viva | — |
-| conteudo | Sem tema atribuído | até 2026-08-26 | viva | — |
+| conteudo | Sem tema atribuído | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | conteudo | Studies | até 2026-08-26 | viva | — |
 | conteudo | Séries longas sobre a evolução do país. | até 2026-08-26 | viva | — |
 | conteudo | The accounts of the second-to-last year were rejected in a vote and were never certified. | até 2026-08-26 | viva | — |
 | conteudo | The published studies, with their Portuguese and English editions. | lugar | retirada | ver a razão na gémea portuguesa (achado 6, 14.09.2026) |
 | conteudo | The archive of published studies, with their Portuguese and English editions. | até 2026-08-26 | retirada | o §7.4 do F1.10 (09.09.2026): «um só nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A frase mudou de palavras e não de sentido, e a linha nova está no bloco `lugar` |
-| navegacao | The link leaves this domain. | até 2026-08-26 | viva | — |
+| navegacao | The link leaves this domain. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | conteudo | Uma leitura transversal do município de Évora: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado. | voz-dos-documentos | viva | — |
 | conteudo | Água não faturada nos sistemas de abastecimento em Portugal. | até 2026-08-26 | viva | — |
 | conteudo | Young people who left school without completing secondary education and are not in training. | frases | retirada | o item 8.4 do F1.10 (08.09.2026): a definição de cada uma das 21 medidas dos dois painéis passou a sair da descrição da própria Comissão ou do Eurostat, citada com o documento, o endereço, a data de leitura e o excerto literal (`DEFINICOES_DAS_MEDIDAS` e `ORIGENS_DAS_DEFINICOES`, em `src/data/figuras.mjs`). Esta redação era da casa e não tinha origem declarada nenhuma; a que ficou no lugar dela diz o que a fonte diz |
-| conteudo | € actually paid | até 2026-08-26 | viva | — |
+| conteudo | € actually paid | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | conteudo | € approved and attributed to the concelho by the recovery-plan register | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
-| conteudo | € aprovados e atribuídos ao concelho pelo registo do plano de recuperação | até 2026-08-26 | viva | — |
-| conteudo | € de valor acrescentado bruto das empresas do concelho | voz-dos-documentos | viva | — |
-| conteudo | € efetivamente pagos | até 2026-08-26 | viva | — |
+| conteudo | € aprovados e atribuídos ao concelho pelo registo do plano de recuperação | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | € de valor acrescentado bruto das empresas do concelho | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | € efetivamente pagos | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 
 ## `/estudos/<slug>/texto` · `/en/studies/<slug>/text` (parte 3, P2)
 
@@ -745,16 +744,16 @@ portão reconta do registo em disco.*
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | As linhas deste documento | até 2026-08-26 | viva | — |
-| navegacao | O que cada porta abre: «Ler no sítio», o texto composto aqui; «Ler o documento», a edição tal como foi publicada. | lugar | viva | — |
+| conteudo | As linhas deste documento | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| navegacao | O que cada porta abre: «Ler no sítio», o texto composto aqui; «Ler o documento», a edição tal como foi publicada. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | navegacao | Como ler | lugar | viva | — |
-| navegacao | What each door opens: “Read on the site”, the text composed here; “Read the document”, the edition as it was published. | lugar | viva | — |
+| navegacao | What each door opens: “Read on the site”, the text composed here; “Read the document”, the edition as it was published. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | navegacao | How to read | lugar | viva | — |
 | conteudo | O documento original | até 2026-08-26 | retirada | o item 8.6 do F1.10 (09.09.2026): as edições de um estudo passam a apresentar-se «de uma só forma em todos os estudos», e o bloco «O documento original» era a primeira das duas apresentações das mesmas portas. A forma que fica é a lista das edições (`EdicoesDoEstudo.astro`), e as portas vivem lá dentro |
 | conteudo | O registo de conteúdo | até 2026-08-26 | viva | — |
 | conteudo | The content record | até 2026-08-26 | viva | — |
 | conteudo | The original document | até 2026-08-26 | retirada | o item 8.6 do F1.10 (09.09.2026): as edições de um estudo passam a apresentar-se «de uma só forma em todos os estudos», e o bloco «O documento original» era a primeira das duas apresentações das mesmas portas. A forma que fica é a lista das edições (`EdicoesDoEstudo.astro`), e as portas vivem lá dentro |
-| conteudo | The rows of this document | até 2026-08-26 | viva | — |
+| conteudo | The rows of this document | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | conteudo | as this document prints it | até 2026-08-26 | viva | — |
 | conteudo | como este documento o imprime | até 2026-08-26 | viva | — |
 | conteudo | engine row | até 2026-08-26 | viva | — |
@@ -823,22 +822,22 @@ trabalho das penalizações. Entram aqui, que é o bloco a que pertencem.
 | --- | --- | --- | --- | --- |
 | conteudo | O que a lei cobra por antecipar a reforma, e o que seria atuarialmente neutro. | até 2026-08-26 | viva | — |
 | conteudo | What the law charges for retiring early, and what would be actuarially neutral. | até 2026-08-26 | viva | — |
-| conteudo | PT O que a lei cobra por antecipar a reforma, e o que seria atuarialmente neutro. | até 2026-08-26 | viva | — |
-| conteudo | EN What the law charges for retiring early, and what would be actuarially neutral. | até 2026-08-26 | viva | — |
-| conteudo | A quem cabe numa das exceções que afastam o fator de sustentabilidade, a lei corta menos do que o valor neutro. As duas medidas acima são os dois extremos da mesma decisão. | até 2026-08-26 | viva | — |
-| conteudo | For those who fall within one of the exceptions that set the sustainability factor aside, the law cuts less than the neutral figure. The two measures above are the two ends of the same decision. | até 2026-08-26 | viva | — |
-| conteudo | é o que a lei corta a quem não cabe numa das exceções | até 2026-08-26 | viva | — |
-| conteudo | is what the law cuts from those who fall outside the exceptions | até 2026-08-26 | viva | — |
-| conteudo | de redução da pensão seria atuarialmente neutro, por um ano de antecipação | até 2026-08-26 | viva | — |
-| conteudo | pension reduction would be actuarially neutral, for one year of anticipation | até 2026-08-26 | viva | — |
+| conteudo | PT O que a lei cobra por antecipar a reforma, e o que seria atuarialmente neutro. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | EN What the law charges for retiring early, and what would be actuarially neutral. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | A quem cabe numa das exceções que afastam o fator de sustentabilidade, a lei corta menos do que o valor neutro. As duas medidas acima são os dois extremos da mesma decisão. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | For those who fall within one of the exceptions that set the sustainability factor aside, the law cuts less than the neutral figure. The two measures above are the two ends of the same decision. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | é o que a lei corta a quem não cabe numa das exceções | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | is what the law cuts from those who fall outside the exceptions | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | de redução da pensão seria atuarialmente neutro, por um ano de antecipação | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | pension reduction would be actuarially neutral, for one year of anticipation | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 
 **As frases inglesas da página de um concelho e das leituras que o item B6
 mudou**, e que a régua lê como blocos novos porque o texto mudou:
 
 | classe | frase | bloco |
 | --- | --- | --- | --- | --- |
-| conteudo | € approved and attributed to the municipality by the recovery-plan register | até 2026-08-26 | viva | — |
-| conteudo | € of gross value added by enterprises in the municipality | voz-dos-documentos | viva | — |
+| conteudo | € approved and attributed to the municipality by the recovery-plan register | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | € of gross value added by enterprises in the municipality | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | conteudo | The works about this municipality | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
 | conteudo | The studies about this municipality | lugar | viva | — |
 | conteudo | The thin line is the total debt the regulator publishes for the municipality; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. | grelha-2 | retirada | a Direção-Geral das Autarquias Locais deixou de ser chamada «o regulador» e passou a ter o seu nome (item E11 do bloco dos 308, `8b55bd3`; as cadeias que ele não alcançou saíram no G5 da grelha da voz, `e470212`) |
@@ -1006,8 +1005,8 @@ rótulo passa a nomear de que série são os dois números.*
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | % de índice de dívida no primeiro ano da série da Direção-Geral das Autarquias Locais | grelha-da-voz | viva | — |
-| conteudo | % debt index in the first year of the local-government directorate’s series | grelha-da-voz | viva | — |
+| conteudo | % de índice de dívida no primeiro ano da série da Direção-Geral das Autarquias Locais | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | % debt index in the first year of the local-government directorate’s series | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | conteudo | Antes do primeiro ano da série da Direção-Geral das Autarquias Locais. | grelha-da-voz | viva | — |
 | conteudo | Before the first year of the local-government directorate’s series. | grelha-da-voz | viva | — |
 
@@ -1029,14 +1028,14 @@ parênteses nunca estiveram aqui, porque um `{ref}` rende um
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | As contas das empresas do concelho creditam toda a atividade de uma empresa a um único concelho, e não são um produto interno bruto municipal. A média nacional é a base do índice de poder de compra. | grelha-da-voz | viva | — |
-| conteudo | The accounts of the municipality’s enterprises credit a firm’s whole activity to a single municipality, and are not a municipal gross domestic product. The national average is the base of the purchasing-power index. | grelha-da-voz | viva | — |
-| conteudo | Cada contagem é a lista de pelouros que a página da câmara atribui a essa pessoa. | grelha-da-voz | viva | — |
-| conteudo | Each count is the list of portfolios the council’s page attributes to that person. | grelha-da-voz | viva | — |
-| conteudo | Estes dois valores são somas sobre o registo público inteiro do plano de recuperação, e não uma linha de um documento. Vencido é o valor aprovado em localizações cuja data prevista de conclusão já passou sem conclusão registada. | grelha-da-voz | viva | — |
-| conteudo | These two values are sums over the whole public register of the recovery plan, and not a line in a document. Overdue is the value approved at locations whose planned completion date has passed with no completion recorded. | grelha-da-voz | viva | — |
-| conteudo | O sistema contabilístico mudou por baixo da série, um ano de contas foi publicado em digitalizações e outro não foi publicado de todo. | grelha-da-voz | viva | — |
-| conteudo | The accounting system changed underneath the series, one year of accounts was published as scans and another was not published at all. | grelha-da-voz | viva | — |
+| conteudo | As contas das empresas do concelho creditam toda a atividade de uma empresa a um único concelho, e não são um produto interno bruto municipal. A média nacional é a base do índice de poder de compra. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | The accounts of the municipality’s enterprises credit a firm’s whole activity to a single municipality, and are not a municipal gross domestic product. The national average is the base of the purchasing-power index. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | Cada contagem é a lista de pelouros que a página da câmara atribui a essa pessoa. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | Each count is the list of portfolios the council’s page attributes to that person. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | Estes dois valores são somas sobre o registo público inteiro do plano de recuperação, e não uma linha de um documento. Vencido é o valor aprovado em localizações cuja data prevista de conclusão já passou sem conclusão registada. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | These two values are sums over the whole public register of the recovery plan, and not a line in a document. Overdue is the value approved at locations whose planned completion date has passed with no completion recorded. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | O sistema contabilístico mudou por baixo da série, um ano de contas foi publicado em digitalizações e outro não foi publicado de todo. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | The accounting system changed underneath the series, one year of accounts was published as scans and another was not published at all. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 
 ### E o método sai também da página do concelho
 
@@ -1106,10 +1105,10 @@ os dois estados vazios encolhem para a ausência em duas palavras.
 | conteudo | What is being measured, what comes next, and the criterion that put each thing there. With the calendar of what the sources publish next. | grelha-da-voz | viva | — |
 | conteudo | O que as fontes citadas publicam a seguir. | grelha-da-voz | viva | — |
 | conteudo | What the cited sources publish next. | grelha-da-voz | viva | — |
-| conteudo | Cada estudo publicado, com as suas edições e datas. Os que estão alojados noutro sítio levam a ligação para lá. | grelha-da-voz | viva | — |
-| conteudo | Every published study, with its editions and dates. Those hosted elsewhere carry the link to it. | grelha-da-voz | viva | — |
-| conteudo | Documento alojado | grelha-da-voz | viva | — |
-| conteudo | Document hosted | grelha-da-voz | viva | — |
+| conteudo | Cada estudo publicado, com as suas edições e datas. Os que estão alojados noutro sítio levam a ligação para lá. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | Every published study, with its editions and dates. Those hosted elsewhere carry the link to it. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | Documento alojado | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | Document hosted | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | conteudo | Sem ficheiros. | grelha-da-voz | retirada | o §7.4 do F1.10 (09.09.2026): «"Descarregar · Sem ficheiros" não se imprime quando está vazio». Não estava vazio às vezes: estava vazio sempre, nas doze páginas e nas duas edições, porque não há neste sítio nenhuma fonte de ficheiros de um estudo. Saiu o bloco, e não só a frase |
 | conteudo | No files. | grelha-da-voz | retirada | o §7.4 do F1.10 (09.09.2026): «"Descarregar · Sem ficheiros" não se imprime quando está vazio». Não estava vazio às vezes: estava vazio sempre, nas doze páginas e nas duas edições, porque não há neste sítio nenhuma fonte de ficheiros de um estudo. Saiu o bloco, e não só a frase |
 
@@ -1678,8 +1677,8 @@ grelha da voz).*
 | navegacao | Regiões | pequenas-4 | viva | — |
 | navegacao | Regions | pequenas-4 | viva | — |
 | navegacao | Agenda | pequenas-4 | viva | — |
-| navegacao | Documento do estudo · texto | pequenas-4 | viva | — |
-| navegacao | Study document · text | pequenas-4 | viva | — |
+| navegacao | Documento do estudo · texto | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| navegacao | Study document · text | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 
 ## Bloco «Correções pequenas, quarta passagem» · a marca `data-nome` · 29.08.2026
 
@@ -1938,8 +1937,8 @@ Navegação principal» e «Áreas de governo» estão classificadas assim desde
 | navegacao | Um concelho pelo nome | cabeca | retirada | o F1.1 tirou a gaveta da busca a 03.09.2026: a busca dos 308 saiu de ao lado do mapa e subiu para debaixo da manchete como `<form>` com destino, sem gaveta nenhuma, porque é a porta para o concelho no primeiro ecrã (itens 3 e 12 do brief). O nome da gaveta ficou sem superfície |
 | navegacao | abrir fechar | cabeca | retirada | a dobra de uma peça só se rende quando tem alguma coisa dentro (decisão 19 da releitura do leitor de primeira vez, 09.09.2026): na página de uma região o comando «abrir/fechar» abria um corpo vazio, e um controlo que promete e não entrega é pior do que não haver controlo nenhum |
 | navegacao | open close | cabeca | retirada | ver a razão na gémea portuguesa (decisão 19, 09.09.2026) |
-| navegacao | As linhas deste documento → | cabeca | viva | — |
-| navegacao | The rows of this document → | cabeca | viva | — |
+| navegacao | As linhas deste documento → | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| navegacao | The rows of this document → | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 
 ## As frases da página do primeiro domínio (bloco F1.2, 03.09.2026)
 
@@ -2701,8 +2700,8 @@ diz qual delas a pôs aqui.*
 | conteudo | O fluxo de crédito consolidado às sociedades não financeiras, sem o investimento direto estrangeiro, em percentagem da dívida que elas tinham no fim do ano anterior. | lugar | retirada | achados 4 e 6 da leitura do Codex de 14.09.2026: o tempo passa a ser o do excerto («in t-1») e a expansão de «NFC» passa a `[a verificar]`. As razões inteiras estão nas gémeas destas duas mudanças. A frase nova está viva neste ficheiro |
 | conteudo | O índice nominal do custo unitário do trabalho, por hora trabalhada, e quanto ele mudou em três anos. | lugar | viva | a definição de uma medida do Procedimento, reescrita a 09.09.2026 (Blocking 1): o excerto é «nominal unit labour cost index, per hour worked (3-year percentage change)…», da mesma página da Comissão, lida a 2026-09-09 |
 | conteudo | O que foi orçamentado, o que foi pago e o que ficou em dívida no concelho de Évora. | lugar | viva | «concelho» é a palavra visível do território (§1.98 e Major 5, 09.09.2026). Ver a razão na gémea |
-| conteudo | PT Economia, investidores e portas abertas no concelho de Évora. | lugar | viva | a mesma descrição, na fila das descrições da página do estudo na edição inglesa (Major 5, 09.09.2026) |
-| conteudo | PT O que foi orçamentado, o que foi pago e o que ficou em dívida no concelho de Évora. | lugar | viva | a mesma descrição, na fila das descrições da página do estudo na edição inglesa (Major 5, 09.09.2026) |
+| conteudo | PT Economia, investidores e portas abertas no concelho de Évora. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | PT O que foi orçamentado, o que foi pago e o que ficou em dívida no concelho de Évora. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | navegacao | Publicado por · | correcao-p1p2 | retirada | o rótulo da origem de uma definição deixa de ser o do recibo (achado 2, 15.09.2026): «Publicado por» é o rótulo do publicador de uma LINHA, e ao pé de uma frase citada da Comissão lia-se como se aquele fosse o publicador do número. A gémea nova, com «Definição de», está `viva` neste ficheiro |
 | navegacao | Publicado por · · lido na fonte a | lugar | retirada | achado 5 da leitura cruzada do inventário (Codex, 14.09.2026): a data de leitura de uma origem saiu da linha à vista e entrou na dobra do excerto, onde é o «acedido a» daquela citação. O rótulo continua vivo, sozinho, dentro da dobra |
 | navegacao | Published by · | correcao-p1p2 | retirada | ver a razão na gémea portuguesa (achado 2, 15.09.2026) |
@@ -2720,8 +2719,7 @@ diz qual delas a pôs aqui.*
 | navegacao | Without scripting, the list shows every study. | p3 | retirada | ver a razão na gémea portuguesa |
 | navegacao | · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado | lugar | viva | achado 4 da leitura cruzada do inventário (Codex, 14.09.2026): é a LEGENDA de uma marca, e `VOZ-MARCADORES.md` não dá classe a legendas: dá ao próprio marcador a razão por que a raiz «verific» não morde nele («é o marcador de incerteza do sítio, com página própria em `/a-verificar`: diz que falta um campo de proveniência»). Sem classe escrita para a legenda, fica `navegacao`, que é a classe desta lista para «a descrição acessível de um instrumento»: a frase não diz nada sobre o país, diz o que a marca ao lado quer dizer a quem a encontra |
 | navegacao | · a field not confirmed against the source, not a doubt about what is published | lugar | viva | ver a razão na gémea portuguesa (achado 4, 14.09.2026) |
-| navegacao | [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado | lugar | viva | ver a razão na linha da gémea sem o marcador (achado 4, 14.09.2026) |
-| navegacao | [a verificar] · a field not confirmed against the source, not a doubt about what is published | lugar | viva | ver a razão na gémea portuguesa (achado 4, 14.09.2026) |
+| navegacao | [a verificar] · a field not confirmed against the source, not a doubt about what is published | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 
 ## Bloco F1.10 · segunda passagem · as duas leituras do Codex de 14.09.2026
 
@@ -2756,8 +2754,8 @@ dizia mais do que a fonte, ou entra porque se rendia sem estar declarada.*
 | navegacao | The domains of the content charter, each with the count of its measures and the door to its page. | lugar | viva | ver a razão na gémea portuguesa (achado 6, 14.09.2026) |
 | navegacao | Os dois quadros da União Europeia que medem Portugal: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu. | lugar | viva | achado 6 da leitura cruzada do inventário (Codex, 14.09.2026): a descrição pública da página europeia perde a cauda («cada uma com a sua linha»), que era a casa a dizer o que guarda, e fica a dizer o que a página mostra |
 | navegacao | The two European Union frameworks that measure Portugal: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard. | lugar | viva | ver a razão na gémea portuguesa (achado 6, 14.09.2026) |
-| navegacao | Os estudos, com as suas edições em português e em inglês. | lugar | viva | achado 6 da leitura cruzada do inventário (Codex, 14.09.2026): «publicados» era a casa a dizer o que publicou, e a descrição diz agora o que a página tem |
-| navegacao | The studies, with their Portuguese and English editions. | lugar | viva | ver a razão na gémea portuguesa (achado 6, 14.09.2026) |
+| navegacao | Os estudos, com as suas edições em português e em inglês. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| navegacao | The studies, with their Portuguese and English editions. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | conteudo | Este domínio mede as contas do Estado, o que a economia produz por pessoa, a dívida das câmaras e o que se ganha e se trabalha em Portugal; não mede a produtividade, que é pergunta de estudo, nem o produto abaixo das regiões, nem a disparidade salarial entre sexos ao nível do concelho, para a qual não há número público. | lugar | viva | achado 10 da leitura cruzada do inventário (Codex, 14.09.2026): a frase da fronteira deixa de afirmar o que TODOS os publicadores fazem e passa a dizer a ausência na forma da casa, que é a da regra 6 da carta e a mesma palavra do cartão da ausência. Onde a casa procurou diz-se no cartão T4a, na mesma página, com a fonte e o código do indicador |
 | conteudo | This domain measures the State’s accounts, what the economy produces per person, municipal debt, and what is earned and worked in Portugal; it does not measure productivity, which is a question for a study, nor output below the regions, nor the gender pay gap at municipal level, for which there is no published figure. | lugar | viva | ver a razão na gémea portuguesa (achado 10, 14.09.2026) |
 | navegacao | das medidas de cabeça dos domínios | lugar | viva | achado 3 da leitura cruzada do inventário (Codex, 14.09.2026): as quatro descrições ocultas dos contadores rendiam-se em quatro páginas sem linha nenhuma nesta lista, porque vivem dentro de um `<span>` que a peneira dos blocos não recolhe. Ganharam a marca `data-voz` e entram. Dizem de que conjunto é o cartão que se está a contar, a quem ouve a página: é o que esta lista chama navegação |
@@ -2963,12 +2961,12 @@ separados; o texto é um só.
 | navegacao | Definição de · | correcao-p1p2 | viva | os dois rótulos da linha da origem de uma definição, com os nomes da fonte tirados. Era «Publicado por ·», que é o rótulo do publicador de uma linha do livro-razão: ao pé de uma frase citada da Comissão lia-se como se aquele fosse o publicador do número (achado 2, 15.09.2026). A gémea antiga está `retirada` neste ficheiro |
 | navegacao | Definition by · | correcao-p1p2 | viva | ver a razão na gémea portuguesa (achado 2, 15.09.2026) |
 | conteudo | Quem for nomeado pode responder: a resposta publica-se ao lado da peça, sem edição, pelo mesmo endereço das correções. | p3 | retirada | a passagem de correção de 16.09.2026 ao fim do dia (achado 9 da leitura a frio do Codex): a preposição passa de «pelo» a «para», que é a que a página já usa para o mesmo endereço («escreve para correcoes@oestadodopais.pt»). A gémea nova está `viva` no fim deste ficheiro. A razão de origem: o direito de resposta, que é a segunda das três proteções da emenda de 15.09.2026 da `design/observatorio/POLITICA-DA-AUTONOMIA.md` e que o diretor mandou escrever a 16.09.2026 às 08:25 UTC (bloco P3, item 8). Vive na página das correções porque é aí que a resposta se pede, e não se repete em página nenhuma: a norma dos nomes diz-se no Sobre, uma vez (norma §1.4) |
-| navegacao | Sem JavaScript, a lista mostra todos os estudos. | p3 | viva | idem, no filtro dos estudos |
+| navegacao | Sem JavaScript, a lista mostra todos os estudos. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | navegacao | Sem JavaScript, o botão leva à lista inteira dos concelhos, agrupada por distrito e por ilha. | p3 | viva | o que a busca faz sem JavaScript, dito por palavras dentro de um `<noscript>` (Major 7 da leitura a frio, 09.09.2026). A frase é a mesma; a palavra é que passou a ser o nome da tecnologia, porque «sem guião» está na lista do §1.3 da norma (bloco P3, item 5) |
 | conteudo | The licence covers the dataset: its structure, this project’s values, the derivations and the descriptions. Excerpts transcribed from sources remain under their publishers’ terms. | p3 | viva | ver a razão na gémea portuguesa |
 | conteudo | Um conjunto limitado de medidas com que a Comissão Europeia apanha os aspetos internos e externos mais relevantes dos desequilíbrios macroeconómicos, cada uma com o seu valor de referência indicativo. | p3 | retirada | a passagem de correção de 16.09.2026 ao fim do dia (achado 9 da leitura a frio do Codex): «apanha os aspetos» não é português de jornal, e a frase passa a dizer «abrange os aspetos». A gémea inglesa não muda, porque o verbo dela é o do excerto selado da Comissão («designed to capture the most relevant internal and external aspects»). A razão de origem: a definição do painel do Procedimento, com «valor de referência indicativo» no lugar de «limiar indicativo» (decisão do diretor de 15.09.2026 de manhã; bloco P3, item 5) |
 | navegacao | Without JavaScript, the button leads to the full list of municipalities, grouped by district and island. | p3 | viva | ver a razão na gémea portuguesa |
-| navegacao | Without JavaScript, the list shows every study. | p3 | viva | ver a razão na gémea portuguesa |
+| navegacao | Without JavaScript, the list shows every study. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 
 ## As frases da passagem de correção do P3 (16.09.2026, depois da leitura a frio)
 
@@ -3014,6 +3012,22 @@ compõe-o do registo do motor, e a régua tira da superfície a região `data-re
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
 | conteudo | O que a candidatura de Évora a Capital Europeia da Cultura prometeu, o que o painel de peritos da Comissão Europeia escreveu sobre isso, e o dinheiro escrito em atos públicos. | e1-evora-2027 | viva | — |
-| conteudo | PT O que a candidatura de Évora a Capital Europeia da Cultura prometeu, o que o painel de peritos da Comissão Europeia escreveu sobre isso, e o dinheiro escrito em atos públicos. | e1-evora-2027 | viva | a mesma descrição, na fila das descrições da página do estudo |
+| conteudo | PT O que a candidatura de Évora a Capital Europeia da Cultura prometeu, o que o painel de peritos da Comissão Europeia escreveu sobre isso, e o dinheiro escrito em atos públicos. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | conteudo | What Évora’s bid for European Capital of Culture promised, what the European Commission’s expert panel wrote about it, and the money written into public acts. | e1-evora-2027 | viva | — |
-| conteudo | EN What Évora’s bid for European Capital of Culture promised, what the European Commission’s expert panel wrote about it, and the money written into public acts. | e1-evora-2027 | viva | a mesma descrição, na fila das descrições da página do estudo |
+| conteudo | EN What Évora’s bid for European Capital of Culture promised, what the European Commission’s expert panel wrote about it, and the money written into public acts. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+
+<!-- B1: rótulos fechados e abertura transcrita, 17.09.2026. -->
+| conteudo | A água de Portugal: onde está, de onde vem e o que a autonomia exigiria de facto. | B1-peca1 | viva | |
+| navegacao | By place | B1-peca1 | viva | |
+| navegacao | Fontes e verificação | B1-peca1 | viva | |
+| navegacao | Fontes e verificação → | B1-peca1 | viva | |
+| navegacao | Por lugar | B1-peca1 | viva | |
+| conteudo | Portugal's water, where it is, where it comes from, and what autonomy would actually take. | B1-peca1 | viva | |
+| navegacao | Sources and verification | B1-peca1 | viva | |
+| navegacao | Sources and verification → | B1-peca1 | viva | |
+| navegacao | Edições | B1-peca1 | retirada | segunda porta; B1, 17.09.2026 |
+| navegacao | Editions | B1-peca1 | retirada | segunda porta; B1, 17.09.2026 |
+| navegacao | Ler no sítio | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026 |
+| navegacao | Read on the site | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026 |
+| navegacao | Ler o documento | B1-peca1 | retirada | segunda porta; B1, 17.09.2026 |
+| navegacao | Read the document | B1-peca1 | retirada | segunda porta; B1, 17.09.2026 |

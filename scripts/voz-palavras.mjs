@@ -212,17 +212,17 @@ export const EXCECOES = [
     porque: 'a gémea inglesa da rota acima',
   },
   {
-    marca: /(^|\/)estudos\/[^/]+\/texto\//,
-    retira: '[data-registo-edicao]',
+    marca: /(^|\/)estudos\/[^/]+\/(?:index\.html)?$/,
+    retira: '[data-registo-unidade], .texto-artigo',
     porque:
-      'a página `texto` de um estudo é a transcrição de um documento fixado, composta no ' +
+      'B1: o corpo na página do estudo é a transcrição de um documento fixado, composta no ' +
       'gabarito deste projeto a partir do registo que o motor escreve (`src/lib/routes.mjs`). ' +
-      'O que sai é o `<article data-registo-edicao>`, que é a transcrição; o cabeçalho, o ' +
-      'índice, as linhas do documento e o aparelho são prosa deste projeto e medem-se',
+      'Saem só as unidades e os artigos transcritos, que o L1 a L4 conferem; o cabeçalho, o ' +
+      'índice e os rótulos das fontes continuam a medir-se',
   },
   {
-    marca: /(^|\/)en\/studies\/[^/]+\/text\//,
-    retira: '[data-registo-edicao]',
+    marca: /(^|\/)en\/studies\/[^/]+\/(?:index\.html)?$/,
+    retira: '[data-registo-unidade], .texto-artigo',
     porque: 'a gémea inglesa da rota acima',
   },
   {

@@ -197,7 +197,7 @@ const TETOS = {
      sobre a cabeça deste bloco, e guardado em
      `design/especime-v3/medicoes/e1-2026-09-16/l1-composicao-2026-09-16.txt`.
      Não foi escrito à mão. O horizonte continua a zero. */
-  l1_paginas: 2286,
+  l1_paginas: 2271, // B1, 17.09.2026: medido após a fusão das páginas do estudo.
   /* L2a · páginas, fora de `/municipios`, que ligam a mais de `L2_LIMITE_NOMES`
      concelhos fora de uma lista fechada.
      DESCE DE 2 PARA 0 a 09.09.2026, por decisão do lugar de direção, e a régua
@@ -462,21 +462,6 @@ const PALAVRAS_DA_MARCA = new Set(
   VOCABULARIO.filter((v) => RAZAO_DA_MARCA.test(v.porque)).map((v) => v.palavra),
 );
 
-/* ---------------------------------------------------------------------------
- * OS RÓTULOS QUE SAÍRAM DAS PÁGINAS DE ESTUDO (§7.4 e item 8.6, 09.09.2026)
- * ---------------------------------------------------------------------------
- * «Descarregar · Sem ficheiros» não se imprime quando está vazio, e estava vazio
- * sempre; «O documento original» era o título da primeira das duas apresentações
- * das mesmas portas, e a que fica é a lista das edições. As quatro cadeias
- * saíram de `src/i18n/strings.mjs` no mesmo commit em que esta lista entrou.
- */
-const ROTULOS_QUE_SAIRAM = new Set([
-  'Descarregar',
-  'Downloads',
-  'O documento original',
-  'The original document',
-]);
-
 /* As duas palavras das densidades, que o item 8.14 tira das páginas do leitor. */
 const DENSIDADES = ['Relance', 'Leitura breve', 'At a glance', 'Brief reading'];
 
@@ -553,6 +538,7 @@ const ORIGEM_DECLARADA = [
   '[data-agenda]',
   '[data-registo]',
   '[data-registo-unidade]',
+  '[data-registo-indice]', // B1: títulos do índice conferidos por L8 na rota do estudo.
   '[data-registo-linha]',
   '[data-registo-conta]',
   '[data-lugar]',
@@ -963,6 +949,7 @@ for (const ficheiro of paginas) {
   const { rel, url, rota } = rotaDe(ficheiro);
   if (FICHEIROS_SEM_ROTA.has(rel)) continue;
   const chaveDaRota = rota?.key ?? null;
+  if (chaveDaRota === 'texto') continue; // B1: redirecionamento conferido em gate:html.
   const lang = rota?.lang ?? (rel.startsWith('en/') ? 'en' : 'pt');
   /* As duas famílias de transcrição saem por nome, com a razão no cabeçalho. */
   const transcricao = chaveDaRota !== null && ROTAS_DE_TRANSCRICAO.has(chaveDaRota);
@@ -987,7 +974,7 @@ for (const ficheiro of paginas) {
      `/x#a` e `/x#b` são duas portas para dois sítios da mesma página. */
   const destinos = new Map();
   for (const a of corpo.querySelectorAll('a[href]')) {
-    if (daMobilia.has(a)) continue;
+    if (daMobilia.has(a) || a.closest('[data-registo-unidade]')) continue;
     const href = a.getAttribute('href') ?? '';
     if (!href || href.startsWith('#') || href.startsWith('mailto:')) continue;
     const chave = href.split('#')[0];
@@ -1017,7 +1004,7 @@ for (const ficheiro of paginas) {
   const ordemDoMarcador = [];
   const percorreOMarcador = (no) => {
     for (const filho of no.childNodes ?? []) {
-      if (!filho.tagName) continue;
+      if (!filho.tagName || filho.hasAttribute('data-registo-unidade')) continue;
       const classes = (filho.getAttribute('class') ?? '').split(/\s+/);
       if (classes.includes('marcador')) ordemDoMarcador.push('m');
       else if (classes.includes('marcador-definicao')) ordemDoMarcador.push('d');
@@ -1535,66 +1522,27 @@ for (const ficheiro of paginas) {
   }
 
   /* ------------------------------------------------------- §7.4 e 8.6 · os estudos */
-  /* A FORMA ÚNICA DAS EDIÇÕES, E A PORTA DA LEITURA NO ÍNDICE.
-     ---------------------------------------------------------------------------
-     O diretor viu a 07.09.2026 à noite que a apresentação dos estudos «is a bit
-     ambiguous», e o item 8.6 decide a forma: «na página de cada estudo, as
-     edições (as línguas, os documentos, a página de leitura) apresentam-se de
-     uma só forma em todos os estudos, com uma frase que diga o que cada porta
-     abre». O §7.4 acrescenta duas coisas: «o título da lista vai direto ao
-     texto; a página de capa deixa de existir como paragem obrigatória» e
-     «"Descarregar · Sem ficheiros" não se imprime quando está vazio».
-
-     A MEDIDA CONTA DEFEITOS, e são cinco espécies:
-       1. uma página de estudo ou de leitura sem exatamente uma frase das portas;
-       2. uma fila de edição com as portas fora da ordem única (a leitura no
-          sítio primeiro, o documento a seguir) ou com uma porta que não é
-          nenhuma das duas;
-       3. um dos rótulos que saíram de volta à página (o bloco «Descarregar» e o
-          bloco «O documento original», que era a segunda apresentação das
-          mesmas portas);
-       4. uma linha do índice dos estudos sem a porta da leitura, ou com mais do
-          que uma;
-       5. uma porta da leitura que aponta para uma página que não existe.
-
-     OS RÓTULOS QUE SAÍRAM ESTÃO ESCRITOS AQUI À MÃO, e é de propósito: as
-     cadeias saíram de `src/i18n/strings.mjs` no mesmo commit, e uma régua que
-     lesse a chave que já não existe não media nada. São quatro cadeias fixas, e
-     o que elas guardam é o regresso do defeito. */
-  if (chaveDaRota === 'estudo' || chaveDaRota === 'texto') {
-    vistas[chaveDaRota]++;
-    const frases = corpo.querySelectorAll('.edicoes-frase').length;
-    if (frases !== 1) {
+  /* B1, decisão de 17.09: sai a frase das portas e a caixa das edições.
+     Ficam o corpo na página do estudo e a porta para a edição fixada correta.
+     A lista cobre o país; a secção do lugar cobre os restantes estudos. */
+  if (chaveDaRota === 'estudo') {
+    vistas.estudo++;
+    const slug = matchPath(url)?.params?.slug;
+    const work = WORKS.find(w => w.slug === slug);
+    const edicao = work?.editions.find(e => e.lang === lang) ?? work?.editions[0];
+    const documento = documentosDoEstudo(slug).find(d => d.lang === edicao?.lang);
+    const portas = corpo.querySelectorAll('.estudo-publicado a[href]');
+    vistas.edicoes += portas.length;
+    if (portas.length !== 1 || portas[0]?.getAttribute('href') !== documento?.rota) {
       medidas.d86_estudos_forma++;
-      anota('d86_estudos_forma', `${url} · ${frases} frase(s) das portas (esperada 1)`);
+      anota('d86_estudos_forma', `${url} · falta a porta da edição fixada correspondente`);
     }
-    const s = S[lang];
-    const ORDEM = [s.estudos.textoLink, s.estudos.documentoLink];
-    for (const fila of corpo.querySelectorAll('.edicao-meta')) {
-      vistas.edicoes++;
-      const portas = fila
-        .querySelectorAll('a')
-        .map((a) => (a.text ?? '').replace(/\s+/g, ' ').replace(/\s*→\s*$/, '').trim());
-      let i = 0;
-      let boa = true;
-      for (const porta of portas) {
-        const j = ORDEM.indexOf(porta, i);
-        if (j < 0) {
-          boa = false;
-          break;
-        }
-        i = j + 1;
-      }
-      if (!boa) {
+    if (temRegisto(slug, lang)) {
+      vistas.texto++;
+      if (corpo.querySelector('[data-registo-edicao]')?.getAttribute('data-registo-edicao') !== `${slug}/${lang}`) {
         medidas.d86_estudos_forma++;
-        anota('d86_estudos_forma', `${url} · portas fora da forma única: ${portas.join(' | ')}`);
+        anota('d86_estudos_forma', `${url} · falta o corpo do registo nesta página`);
       }
-    }
-    for (const k of corpo.querySelectorAll('.log-vazio-k')) {
-      const texto = (k.text ?? '').trim();
-      if (!ROTULOS_QUE_SAIRAM.has(texto)) continue;
-      medidas.d86_estudos_forma++;
-      anota('d86_estudos_forma', `${url} · o rótulo «${texto}» voltou à página`);
     }
   }
   if (chaveDaRota === 'estudos') {
@@ -1632,7 +1580,7 @@ for (const ficheiro of paginas) {
       const m = matchPath(href);
       const slug = m?.params?.slug ?? null;
       const temTexto = slug ? LANGS.some((l) => temRegisto(slug, l)) : false;
-      if (temTexto && m?.key !== 'texto') {
+      if (temTexto && m?.key !== 'estudo') {
         medidas.d86_estudos_forma++;
         anota(
           'd86_estudos_forma',
@@ -1962,54 +1910,31 @@ if (origensVistas !== ORIGENS_ESPERADAS) {
 }
 
 /* --------------------------------------------------------------- §7.4 e 8.6 */
-/**
- * A COLEÇÃO TEM DE TER O TAMANHO QUE OS DADOS DIZEM (Major 13, 09.09.2026).
- *
- * A régua exigia «pelo menos um» de cada coisa, e o relatório afirmava 24
- * páginas de estudo, 8 de leitura, 2 índices, 44 filas de edição e 24 linhas do
- * índice. Perder 23 páginas de estudo ou 43 filas de edição passava verde: a
- * guarda não guardava nenhuma das contagens que o relatório dava por medidas.
- *
- * AS CONTAGENS SAEM DO REGISTO, E NÃO DE UM NÚMERO ESCRITO À MÃO. `WORKS` diz
- * quantos estudos há e que edições cada um tem; `temRegisto()` diz quais têm
- * página de leitura; `documentosDoEstudo()` diz quais têm documento alojado. O
- * dia em que um estudo entrar, a conta muda sozinha nos dois lados, e o que ela
- * continua a proibir é a página que desaparece em silêncio.
- *
- * O QUE CADA COLEÇÃO É:
- *   · `estudo`  · uma página por estudo e por edição do sítio: 12 × 2;
- *   · `texto`   · uma por PAR (estudo, língua) com registo: a página de leitura
- *                 existe na edição do sítio cuja língua tem registo, e só nessa;
- *   · `indice`  · o índice dos estudos, nas duas edições;
- *   · `edicoes` · uma fila por edição de documento, em cada superfície que a
- *                 rende (a página do estudo e a de leitura), nas duas edições;
- *   · `linhas`  · uma linha por estudo em cada índice: 12 × 2.
+/** B1: cobertura de cada estudo nas duas línguas e dos dez corpos com registo.
+ * Uma edição fixada por página; o país na lista e cada lugar na sua secção.
  */
-const COLECOES_DOS_ESTUDOS = (() => {
-  const langs = LANGS.length;
-  /* Os pares (estudo, língua) que têm página de leitura: são eles as rotas
-     `texto` que a construção rende, e não «o estudo nas duas edições». */
-  const paresComTexto = WORKS.flatMap((w) => LANGS.filter((l) => temRegisto(w.slug, l)).map((l) => w));
-  /* AS FILAS DE EDIÇÃO: `EdicoesDoEstudo.astro` rende uma fila por edição do
-     estudo, e rende-se na página do estudo e na de leitura. O número de edições
-     de um estudo é o das suas edições declaradas mais os documentos alojados que
-     não tenham edição declarada; a régua conta o que a vista conta, lendo a
-     mesma fonte. */
-  const filasDe = (w) => {
-    const linguas = new Set(w.editions.map((e) => e.lang));
-    for (const d of documentosDoEstudo(w.slug)) linguas.add(d.lang);
-    return linguas.size;
-  };
-  const filasNaPaginaDoEstudo = WORKS.reduce((n, w) => n + filasDe(w), 0) * langs;
-  const filasNaPaginaDeLeitura = paresComTexto.reduce((n, w) => n + filasDe(w), 0);
-  return {
-    estudo: WORKS.length * langs,
-    texto: paresComTexto.length,
-    indice: langs,
-    edicoes: filasNaPaginaDoEstudo + filasNaPaginaDeLeitura,
-    linhas: WORKS.length * langs,
-  };
-})();
+const COLECOES_DOS_ESTUDOS = {
+  estudo: WORKS.length * LANGS.length,
+  texto: WORKS.reduce((n, w) => n + LANGS.filter(l => temRegisto(w.slug, l)).length, 0),
+  indice: LANGS.length,
+  edicoes: WORKS.length * LANGS.length,
+  linhas: WORKS.filter(w => !w.subject).length * LANGS.length,
+};
+// B1: toda a coleção existe e cada estudo sai da lista do país ou do seu lugar.
+for (const lang of LANGS) {
+  for (const w of WORKS) {
+    const rota = w.subject
+      ? routePath(w.subject === 'evora' ? 'municipio' : 'regiao', lang, { slug: w.subject })
+      : routePath('estudos', lang);
+    const f = path.join(DIST, rota.slice(1), 'index.html');
+    const doc = fs.existsSync(f) ? parse(fs.readFileSync(f, 'utf8')) : null;
+    const destino = routePath('estudo', lang, { slug: w.slug });
+    if (!doc?.querySelectorAll('main a[href]').some(a => a.getAttribute('href') === destino)) {
+      falhas.push(`B1 cobertura: ${w.slug} não é alcançável de ${rota}.`);
+    }
+  }
+}
+
 console.log(
   '  §7.4 e 8.6, o que os dados dizem: ' +
     Object.entries(COLECOES_DOS_ESTUDOS)

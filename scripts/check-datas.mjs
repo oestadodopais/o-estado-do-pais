@@ -131,22 +131,11 @@ const rotaDe = (f) =>
 /* --- as rotas que imprimem datas de edição -------------------------------- */
 
 const INDICES = new Set(['/estudos', '/en/studies']);
-/**
- * AS ROTAS QUE IMPRIMEM UM BLOCO POR EDIÇÃO.
- *
- * Eram duas, a página do trabalho nas duas edições; passam a quatro com o §7.4
- * do bloco F1.10 (09.09.2026), que manda «o que ela tem, as edições, as
- * descrições, "ler o documento", vai para o painel lateral da página do texto».
- * A página de leitura passou a render o MESMO componente
- * (`src/components/EdicoesDoEstudo.astro`) no seu painel lateral, e com ele as
- * mesmas datas de repositório: sem esta rota aqui, oito páginas imprimiam uma
- * data que este passo não sabia prender, e a conta fecha a construção quando isso
- * acontece, que é exactamente o que ela fez.
- *
- * A MARCAÇÃO É A MESMA E POR ISSO A CONTA É A MESMA: um `.edicao` por edição do
- * trabalho, com o `.badge` a dizer a língua; a rota diz o slug nos quatro casos.
+/** B1: as datas vivem na linha da lista ou na linha final do estudo.
+ * data-estudo-edicao declara slug/língua e a porta confirma essa identidade.
+ * Os endereços /texto e /text são redirecionamentos conferidos por gate:html.
  */
-const ROTA_DA_EDICAO = /^\/(?:estudos|en\/studies)\/([^/]+)(?:\/(?:texto|text))?$/;
+const ROTA_DA_EDICAO = /^\/(?:estudos|en\/studies)\/([^/]+)$/;
 
 /* --- 1a. nenhuma data impressa fora do que o ficheiro declara ------------- */
 
@@ -300,113 +289,36 @@ function orfas(rota, doc, presasAqui) {
   }
 }
 
-/**
- * UM ÍNDICE: uma linha por trabalho, uma porta por edição.
- *
- * @param {string} rota
- * @param {any} doc
- */
+/** B1: prender a data à edição escolhida e à porta correspondente. */
 function prendeNoIndice(rota, doc) {
-  const artigos = doc.querySelectorAll('article.arquivo-item');
-  if (artigos.length === 0) {
-    falhas.push(
-      `${rota}: traz a marca das datas e não tem uma única linha \`article.arquivo-item\`. ` +
-        `Sem as linhas não há a que prender as datas.`,
-    );
-    return;
-  }
-  /** @type {Set<unknown>} */
-  const presasAqui = new Set();
-  for (const artigo of artigos) {
-    /* A DATA ÚNICA DA LINHA: quando as edições do trabalho têm todas a mesma
-       data, a vista imprime-a uma vez em `.arquivo-data` e cada edição da linha
-       responde por ela. */
-    const caixaUnica = artigo.querySelector('.arquivo-data');
-    const unicas = caixaUnica ? marcasDeData(caixaUnica) : [];
-    if (unicas.length > 1) {
-      falhas.push(`${rota}: uma linha do índice imprime ${unicas.length} datas em \`.arquivo-data\`.`);
-    }
-    const marcaUnica = unicas[0] ?? null;
-
-    const portas = artigo.querySelectorAll('a.badge-porta');
-    if (portas.length === 0) {
-      falhas.push(
-        `${rota}: uma linha do índice não tem porta de edição nenhuma (\`a.badge-porta\`), e por ` +
-          `isso a data dela não se prende a edição nenhuma.`,
-      );
-      continue;
-    }
-    for (const porta of portas) {
-      const href = porta.getAttribute('href') ?? '';
-      const m = ROTA_DA_EDICAO.exec(href);
-      if (!m) {
-        falhas.push(`${rota}: a porta de uma edição aponta «${href}», que não é a rota de uma edição.`);
-        continue;
-      }
-      const slug = m[1];
-      const lang = href.startsWith('/en/') ? 'en' : 'pt';
-      /* A data da PRÓPRIA porta, quando as edições do trabalho têm datas
-         diferentes; senão, a data única da linha. */
-      const proprias = marcasDeData(porta);
-      if (proprias.length > 1) {
-        falhas.push(`${rota}: a porta de ${slug} (${lang}) imprime ${proprias.length} datas.`);
-      }
-      const marca = proprias[0] ?? marcaUnica;
-      if (marca) presasAqui.add(marca);
-      prende(
-        rota,
-        slug,
-        lang,
-        marca ? marca.textContent.trim() : null,
-        `a linha de ${slug}, na porta ${lang.toUpperCase()}`,
-      );
-    }
-  }
-  orfas(rota, doc, presasAqui);
+  prendeEdicoesB1(rota, doc);
 }
-
-/**
- * UMA PÁGINA DE EDIÇÃO: um bloco `.edicao` por edição do trabalho, nas duas
- * línguas, e a rota diz o slug.
- *
- * @param {string} rota
- * @param {string} slug
- * @param {any} doc
- */
 function prendeNaPaginaDoTrabalho(rota, slug, doc) {
-  const blocos = doc.querySelectorAll('.edicao');
-  if (blocos.length === 0) {
-    falhas.push(
-      `${rota}: traz a marca das datas e não tem um único bloco \`.edicao\`. Sem os blocos não ` +
-        `há a que prender as datas.`,
-    );
-    return;
-  }
-  /** @type {Set<unknown>} */
+  prendeEdicoesB1(rota, doc, slug);
+}
+function prendeEdicoesB1(rota, doc, slugDaPagina = null) {
   const presasAqui = new Set();
+  const blocos = doc.querySelectorAll('[data-estudo-edicao]');
+  if (!blocos.length) falhas.push(`${rota}: nenhuma edição declarada para prender a data.`);
   for (const bloco of blocos) {
-    const badge = bloco.querySelector('.edicao-cabeca .badge');
-    const lang = badge ? badge.textContent.trim().toLowerCase() : '';
-    if (lang !== 'pt' && lang !== 'en') {
-      falhas.push(
-        `${rota}: um bloco \`.edicao\` sem língua legível (` +
-          `«${badge ? badge.textContent.trim() : 'sem badge'}»).`,
-      );
+    const [slug, lang] = (bloco.getAttribute('data-estudo-edicao') ?? '').split('/');
+    const work = WORKS.find(w => w.slug === slug);
+    const linguaDaPagina = rota.startsWith('/en/') ? 'en' : 'pt';
+    const principal = work?.editions.find(e => e.lang === linguaDaPagina) ?? work?.editions[0];
+    if (!work || principal?.lang !== lang || (slugDaPagina && slug !== slugDaPagina)) {
+      falhas.push(`${rota}: a data declara uma edição que não é a desta página ou linha: ${slug}/${lang}.`);
       continue;
     }
+    const porta = bloco.querySelector('a[href]')?.getAttribute('href') ?? '';
+    const esperada = slugDaPagina
+      ? (lang === 'pt' ? `/estudos/${slug}/documento` : `/en/studies/${slug}/document`)
+      : (linguaDaPagina === 'pt' ? `/estudos/${slug}` : `/en/studies/${slug}`);
+    if (porta.replace(/\/$/, '') !== esperada) falhas.push(`${rota}: a data de ${slug}/${lang} está junto da porta errada: ${porta}.`);
     const marcas = marcasDeData(bloco);
-    if (marcas.length > 1) {
-      falhas.push(`${rota}: o bloco da edição ${lang.toUpperCase()} imprime ${marcas.length} datas.`);
-    }
-    const marca = marcas[0] ?? null;
+    if (marcas.length !== 1) falhas.push(`${rota}: ${slug}/${lang} tem ${marcas.length} datas, esperada uma.`);
+    const marca = marcas[0];
     if (marca) presasAqui.add(marca);
-    prende(
-      rota,
-      slug,
-      lang,
-      marca ? marca.textContent.trim() : null,
-      `o bloco da edição ${lang.toUpperCase()}`,
-    );
+    prende(rota, slug, lang, marca?.textContent.trim() ?? null, `a edição ${slug}/${lang}`);
   }
   orfas(rota, doc, presasAqui);
 }

@@ -347,7 +347,7 @@ for (const chave of chaves) {
     `${path.relative(RAIZ, REGISTOS)}/${slug}/${lang}.record.json`,
   );
 
-  const rota = routePath('texto', lang, { slug });
+  const rota = routePath('estudo', lang, { slug });
   const ficheiro = path.join(DIST, rota.replace(/^\//, ''), 'index.html');
   if (!fs.existsSync(ficheiro)) {
     err(

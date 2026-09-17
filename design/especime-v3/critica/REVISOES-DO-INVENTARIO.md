@@ -196,3 +196,98 @@ inventário inteiro contra a regra nova, e isso é trabalho de outra família: a
 entrada dessa releitura escreve-se na tabela acima, com o ficheiro do registo, e
 só então o número muda. Foi a falta deste gatilho que deixou a Emenda 18, de
 25.08.2026, apertar a regra da voz sem que o inventário fosse relido contra ela.
+
+| B1-peca1 | 17.09.2026 | por ler pelo lugar de direção antes de aterrar | Página e lista de estudos: lista fechada, abertura transcrita e retiradas em `design/especime-v3/medicoes/b1-2026-09-17/cadeias-retiradas-peca1.json`. |
+
+### B1, primeira peça, 17.09.2026
+
+As cadeias que saíram da superfície estão enumeradas abaixo. A retirada da segunda apresentação conserva o corpo transcrito e a edição fixada. As frases explicativas saem da página. Os rótulos das fontes mudam para o nome decidido.
+
+| Família | Cadeia retirada | Razão |
+|---|---|---|
+| estudo | [a verificar] | palavra fora do lugar |
+| estudo | % desse valor está nas quatro maiores empresas | segunda porta |
+| estudo | % dez anos depois | segunda porta |
+| estudo | % do orçamento foi de facto cobrado no último ano de contas | segunda porta |
+| estudo | % four years earlier | segunda porta |
+| estudo | % of that value sits with the four largest enterprises | segunda porta |
+| estudo | % of the budget was actually collected in the latest year of accounts | segunda porta |
+| estudo | % quatro anos antes | segunda porta |
+| estudo | % ten years later | segunda porta |
+| estudo | A ligação sai deste domínio. | segunda porta |
+| estudo | designations, over three people, in the next executive | segunda porta |
+| estudo | designações, por três pessoas, no executivo seguinte | segunda porta |
+| estudo | EN [a verificar] | segunda porta |
+| estudo | EN Economic assessment of Portugal’s regions. | segunda porta |
+| estudo | EN Economy, investors and open doors in the municipality of Évora. | segunda porta |
+| estudo | EN Economy, society and strategy in the Alentejo and the Algarve. | segunda porta |
+| estudo | EN Fifteen years of municipal government in Évora, across five terms. | segunda porta |
+| estudo | EN Long series on the country’s evolution. | segunda porta |
+| estudo | EN Non-revenue water in Portugal’s public supply systems. | segunda porta |
+| estudo | EN Public funding in Portugal. | segunda porta |
+| estudo | EN What was budgeted, what was paid and what was left owing in the municipality of Évora. | segunda porta |
+| estudo | EN Who held each portfolio of the Câmara Municipal de Évora across five terms, how much the municipality’s own accounts spent in the areas those portfolios cover, and what the reports say those areas did. | segunda porta |
+| estudo | No subject assigned | palavra fora do lugar |
+| estudo | PT [a verificar] | segunda porta |
+| estudo | PT Avaliação económica das regiões de Portugal. | segunda porta |
+| estudo | PT Economia, sociedade e estratégia no Alentejo e no Algarve. | segunda porta |
+| estudo | PT Financiamento público em Portugal. | segunda porta |
+| estudo | PT Quinze anos de governo municipal em Évora, ao longo de cinco mandatos. | segunda porta |
+| estudo | PT Séries longas sobre a evolução do país. | segunda porta |
+| estudo | PT Água não faturada nos sistemas de abastecimento em Portugal. | segunda porta |
+| estudo | Sem tema atribuído | palavra fora do lugar |
+| estudo | The link leaves this domain. | segunda porta |
+| estudo | € actually paid | segunda porta |
+| estudo | € aprovados e atribuídos ao concelho pelo registo do plano de recuperação | segunda porta |
+| estudo | € de valor acrescentado bruto das empresas do concelho | segunda porta |
+| estudo | € efetivamente pagos | segunda porta |
+| estudo | As linhas deste documento | palavra fora do lugar |
+| estudo | O que cada porta abre: «Ler no sítio», o texto composto aqui; «Ler o documento», a edição tal como foi publicada. | explica a página |
+| estudo | What each door opens: “Read on the site”, the text composed here; “Read the document”, the edition as it was published. | explica a página |
+| estudo | The rows of this document | palavra fora do lugar |
+| estudo | PT O que a lei cobra por antecipar a reforma, e o que seria atuarialmente neutro. | segunda porta |
+| estudo | EN What the law charges for retiring early, and what would be actuarially neutral. | segunda porta |
+| estudo | A quem cabe numa das exceções que afastam o fator de sustentabilidade, a lei corta menos do que o valor neutro. As duas medidas acima são os dois extremos da mesma decisão. | explica a página |
+| estudo | For those who fall within one of the exceptions that set the sustainability factor aside, the law cuts less than the neutral figure. The two measures above are the two ends of the same decision. | explica a página |
+| estudo | é o que a lei corta a quem não cabe numa das exceções | segunda porta |
+| estudo | is what the law cuts from those who fall outside the exceptions | segunda porta |
+| estudo | de redução da pensão seria atuarialmente neutro, por um ano de antecipação | segunda porta |
+| estudo | pension reduction would be actuarially neutral, for one year of anticipation | segunda porta |
+| estudo | € approved and attributed to the municipality by the recovery-plan register | segunda porta |
+| estudo | € of gross value added by enterprises in the municipality | segunda porta |
+| estudo | % de índice de dívida no primeiro ano da série da Direção-Geral das Autarquias Locais | segunda porta |
+| estudo | % debt index in the first year of the local-government directorate’s series | segunda porta |
+| estudo | As contas das empresas do concelho creditam toda a atividade de uma empresa a um único concelho, e não são um produto interno bruto municipal. A média nacional é a base do índice de poder de compra. | segunda porta |
+| estudo | The accounts of the municipality’s enterprises credit a firm’s whole activity to a single municipality, and are not a municipal gross domestic product. The national average is the base of the purchasing-power index. | segunda porta |
+| estudo | Cada contagem é a lista de pelouros que a página da câmara atribui a essa pessoa. | explica a página |
+| estudo | Each count is the list of portfolios the council’s page attributes to that person. | explica a página |
+| estudo | Estes dois valores são somas sobre o registo público inteiro do plano de recuperação, e não uma linha de um documento. Vencido é o valor aprovado em localizações cuja data prevista de conclusão já passou sem conclusão registada. | explica a página |
+| estudo | These two values are sums over the whole public register of the recovery plan, and not a line in a document. Overdue is the value approved at locations whose planned completion date has passed with no completion recorded. | explica a página |
+| estudo | O sistema contabilístico mudou por baixo da série, um ano de contas foi publicado em digitalizações e outro não foi publicado de todo. | segunda porta |
+| estudo | The accounting system changed underneath the series, one year of accounts was published as scans and another was not published at all. | segunda porta |
+| lista | Cada estudo publicado, com as suas edições e datas. Os que estão alojados noutro sítio levam a ligação para lá. | explica a página |
+| lista | Every published study, with its editions and dates. Those hosted elsewhere carry the link to it. | explica a página |
+| estudo | Documento alojado | palavra fora do lugar |
+| estudo | Document hosted | palavra fora do lugar |
+| estudo | Documento do estudo · texto | palavra fora do lugar |
+| estudo | Study document · text | palavra fora do lugar |
+| estudo | As linhas deste documento → | palavra fora do lugar |
+| estudo | The rows of this document → | palavra fora do lugar |
+| estudo | PT Economia, investidores e portas abertas no concelho de Évora. | segunda porta |
+| estudo | PT O que foi orçamentado, o que foi pago e o que ficou em dívida no concelho de Évora. | segunda porta |
+| estudo | [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado | segunda porta |
+| estudo | [a verificar] · a field not confirmed against the source, not a doubt about what is published | segunda porta |
+| lista | Os estudos, com as suas edições em português e em inglês. | explica a página |
+| lista | The studies, with their Portuguese and English editions. | explica a página |
+| lista | Sem JavaScript, a lista mostra todos os estudos. | explica a página |
+| lista | Without JavaScript, the list shows every study. | explica a página |
+| estudo | PT O que a candidatura de Évora a Capital Europeia da Cultura prometeu, o que o painel de peritos da Comissão Europeia escreveu sobre isso, e o dinheiro escrito em atos públicos. | segunda porta |
+| estudo | EN What Évora’s bid for European Capital of Culture promised, what the European Commission’s expert panel wrote about it, and the money written into public acts. | segunda porta |
+| estudo | Edições | segunda porta |
+| estudo | Editions | segunda porta |
+| estudo | Ler no sítio | palavra fora do lugar |
+| estudo | Read on the site | palavra fora do lugar |
+| estudo | Ler o documento | segunda porta |
+| estudo | Read the document | segunda porta |
+
+As duas declarações isoladas «[a verificar]» e a sua definição portuguesa saem do inventário, em vez de serem proibidas globalmente: as mesmas cadeias ainda pertencem a formulações maiores legítimas. Saem as ocorrências das capas; o marcador continua nos dados incompletos. A lista fechada B1 impede que a descrição por preencher volte. Nenhuma célula foi relaxada para este caso.
