@@ -2546,7 +2546,6 @@ export const STRINGS = {
          página tem. */
       metaDescription: 'Os estudos, com as suas edições em português e em inglês.',
       h1: 'Estudos',
-      lede: 'Cada estudo publicado, com as suas edições e datas. Os que estão alojados noutro sítio levam a ligação para lá.',
       /* O ARQUIVO FILTRADO POR CONCELHO (bloco F1.10). `/estudos?concelho=<slug>`
          é a porta que a página do concelho abre. A frase chega escondida do
          servidor e é o guião que a acende, que é a regra da casa para o código
@@ -2599,7 +2598,6 @@ export const STRINGS = {
          («Fingir conteúdo seria pior do que não ter nenhum»). Nenhuma das duas
          faz ninguém ler melhor um número, e o rótulo é a ausência dita em duas
          palavras, que é o que a Emenda 15 manda. */
-      stubEdicoes: 'Edições',
       /* A FRASE QUE DIZ O QUE CADA PORTA ABRE (item 8.6, 09.09.2026). O diretor
          viu a página de «Onde está a água» e disse que a apresentação dos
          estudos «is a bit ambiguous»: as mesmas duas portas rendiam-se duas
@@ -2612,8 +2610,6 @@ export const STRINGS = {
          A forma que fica diz o que cada NOME de porta abre, como a legenda de um
          mapa diz o que cada marca é, e por isso é verdadeira em todas as doze
          páginas sem mudar de palavras. */
-      edicoesFrase:
-        'O que cada porta abre: «Ler no sítio», o texto composto aqui; «Ler o documento», a edição tal como foi publicada.',
       stubVoltar: 'Voltar aos estudos',
       stubEstado: 'Rascunho · sem conteúdo',
       stubForaK: 'Publicado fora deste sítio',
@@ -2686,9 +2682,7 @@ export const STRINGS = {
          mesmo documento, uma composta aqui e a outra byte a byte.
          Os rótulos de «As linhas deste documento» nomeiam campos, e nenhum
          deles fala do método, da verificação ou da casa (Emenda 15). */
-      textoEyebrow: 'Documento do estudo · texto',
-      textoLink: 'Ler no sítio',
-      textoLinhasK: 'As linhas deste documento',
+      textoLink: 'Ler',
       textoLinhaK: 'linha do motor',
       textoValorK: 'o valor como a linha o guarda',
       textoImpressoK: 'como este documento o imprime',
@@ -2727,9 +2721,6 @@ export const STRINGS = {
          dois já verificados pelo L8 do portão contra o registo; a vista faz a
          substituição, porque este ficheiro não sabe línguas. */
       textoPosicaoSeccaoModelo: 'Secção {n} de {total}',
-      textoContaBlocos: 'blocos',
-      textoContaAlgarismos: 'algarismos',
-      textoContaComLinha: 'com linha do livro-razão',
 
       /* TRÊS CHAVES SAÍRAM DA FILA DE UMA EDIÇÃO (bloco F1.10, §7.4 e item
          8.6, 09.09.2026).
@@ -3735,7 +3726,6 @@ export const STRINGS = {
       /* Ver a razão na gémea portuguesa (achado 6, 14.09.2026). */
       metaDescription: 'The studies, with their Portuguese and English editions.',
       h1: 'Studies',
-      lede: 'Every published study, with its editions and dates. Those hosted elsewhere carry the link to it.',
       /* Ver a razão na edição portuguesa. */
       filtroConcelhoA: 'Showing only the studies about ',
       filtroConcelhoB: '.',
@@ -3748,10 +3738,7 @@ export const STRINGS = {
       dataLabel: 'published on',
       lingua: 'Language',
       verEstudo: 'Study page',
-      stubEdicoes: 'Editions',
       /* Ver a razão na edição portuguesa (item 8.6). */
-      edicoesFrase:
-        'What each door opens: “Read on the site”, the text composed here; “Read the document”, the edition as it was published.',
       stubVoltar: 'Back to the studies',
       stubEstado: 'Draft · no content',
       stubForaK: 'Published outside this site',
@@ -3771,9 +3758,7 @@ export const STRINGS = {
       documentoVoltar: 'Back to the study page',
       documentoDeslocamento: 'Box that scrolls',
 
-      textoEyebrow: 'Study document · text',
-      textoLink: 'Read on the site',
-      textoLinhasK: 'The rows of this document',
+      textoLink: 'Read',
       textoLinhaK: 'engine row',
       textoValorK: 'the value as the row keeps it',
       textoImpressoK: 'as this document prints it',
@@ -3787,9 +3772,6 @@ export const STRINGS = {
       /* See the Portuguese key for why this lives outside the `<h1>`..`<h6>`
          it labels, and never inside it. */
       textoPosicaoSeccaoModelo: 'Section {n} of {total}',
-      textoContaBlocos: 'blocks',
-      textoContaAlgarismos: 'figures',
-      textoContaComLinha: 'with a ledger row',
 
       /* Ver a razão na edição portuguesa (§7.4 e item 8.6). */
       temaK: 'Subject',

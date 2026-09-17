@@ -638,7 +638,7 @@ export function faixa(slug, lang) {
    * rende, pela mesma regra da página do estudo («a ausência diz-se por
    * ausência, não por uma frase»).
    */
-  const rotaDoTexto = temRegisto(slug, lang) ? routePath('texto', lang, { slug }) : null;
+  const rotaDoTexto = temRegisto(slug, lang) ? routePath('estudo', lang, { slug }) : null;
   /**
    * O RÓTULO DE IA, com o texto aprovado e a porta para a política.
    *
