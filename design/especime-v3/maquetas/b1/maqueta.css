@@ -1,0 +1,229 @@
+/* O que a estrutura nova acrescenta, e mais nada: o menu de cinco, a linha do
+   lugar, a leitura, a grelha dos cartões sem célula vazia, a lista dos estudos
+   com a primeira frase, e o rodapé numa linha. O resto é a folha construída. */
+
+body { background: var(--paper); color: var(--ink); margin: 0; }
+
+/* ------------------------------------------------------- o menu de cinco */
+.maq-menu {
+  border-bottom: 1px solid var(--rule);
+  display: flex; flex-wrap: wrap;
+  gap: 0 clamp(16px, 2.8vw, 34px);
+  padding: 0;
+}
+.maq-menu a {
+  font-family: var(--f-versal);
+  letter-spacing: .05em; text-transform: lowercase;
+  font-size: 15px; font-weight: 600;
+  color: var(--muted); text-decoration: none;
+  min-height: 44px; display: inline-flex; align-items: center;
+}
+.maq-menu a[aria-current="page"] { color: var(--ink); }
+
+/* D7 · a 390 o menu de cinco cabe numa linha: aperta-se o corpo, o espacejamento
+   das letras e o intervalo entre palavras até as cinco caberem sem quebrar. */
+@media (width <= 430px) {
+  .maq-menu { gap: 0 12px; flex-wrap: nowrap; }
+  .maq-menu a { font-size: 13.5px; letter-spacing: .03em; white-space: nowrap; }
+}
+
+/* ------------------------------------ a cabeça: o nome, sem linha por baixo */
+.maq-masthead { padding: clamp(24px, 4.4vw, 50px) 0 clamp(14px, 2.2vw, 22px); }
+.maq-masthead .wordmark a { color: inherit; text-decoration: none; }
+
+/* -------------------------------------------------------- a linha do lugar */
+.maq-cabeca-do-lugar { padding-top: clamp(4px, 1vw, 10px); }
+.maq-linha-do-lugar {
+  font-family: var(--f-versal);
+  letter-spacing: .04em;
+  color: var(--muted);
+  font-size: 13.5px;
+  margin: 0 0 6px;
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  gap: 0 8px;
+}
+.maq-linha-do-lugar a { color: var(--muted); text-decoration: none; }
+.maq-linha-do-lugar a:hover { color: var(--ink); text-decoration: underline; }
+.maq-linha-do-lugar a[aria-current="page"] { color: var(--ink); }
+.maq-linha-do-lugar span { color: var(--rule-strong); }
+.maq-nome-do-lugar {
+  font-family: var(--f-prosa);
+  letter-spacing: -.014em;
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: 400; line-height: 1.06;
+  margin: 0;
+}
+
+/* ------------------------------------------------------------- a leitura */
+.maq-bloco-leitura { margin: clamp(18px, 2.6vw, 30px) 0 0; }
+.maq-leitura { max-width: 22em; font-weight: 500; }
+.maq-leitura-lugar {
+  font-size: clamp(20px, 2.3vw, 27px);
+  line-height: 1.3;
+  max-width: 36em;
+}
+
+/* -------------------------------------------------------------- o mapa */
+.maq-porta-dos-lugares { color: var(--ink); text-decoration: none; }
+.maq-porta-dos-lugares:hover { text-decoration: underline; text-underline-offset: 3px; }
+.maq-mapa { margin: clamp(6px, 1.4vw, 14px) 0 0; }
+.maq-mapa .mapa-tela { width: 100%; max-width: 360px; }
+@media (width >= 900px) { .maq-mapa .mapa-tela { max-width: 430px; } }
+
+/* --------------------------------------------------------- uma secção */
+.maq-sec { margin-top: clamp(34px, 4.6vw, 58px); }
+.maq-sec .sec-head { margin-bottom: clamp(18px, 2.4vw, 26px); }
+
+/* ------------------------------------------- os números por tema, em cartões
+   A grelha não tem fundo e a régua é de cada cartão: a última fila fica tão
+   larga quanto os seus cartões, e não há célula cinzenta. */
+.maq-tema + .maq-tema { margin-top: clamp(24px, 3.2vw, 38px); }
+.maq-tema-k {
+  font-family: var(--f-versal);
+  letter-spacing: .04em;
+  color: var(--muted);
+  margin: 0 0 6px;
+  font-size: 14px; font-weight: 600;
+}
+.maq-cartoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(248px, 1fr));
+  column-gap: clamp(18px, 2.6vw, 34px);
+  border-top: 1px solid var(--rule);
+  background: none;
+}
+.maq-cartoes .cartao-medida { align-content: start; }
+.maq-porta-do-tema {
+  font-family: var(--f-instr);
+  font-size: 13px;
+  margin: 12px 0 0;
+}
+.maq-porta-do-tema a { color: var(--ink); text-underline-offset: 3px; }
+
+/* ------------------------------ os estudos, com a primeira frase da leitura */
+.maq-lista-dos-estudos { border-top: 1px solid var(--rule); }
+.maq-estudo {
+  border-bottom: 1px solid var(--rule);
+  padding: clamp(16px, 2.2vw, 22px) 0;
+}
+.maq-sec .maq-estudo:first-child { border-top: 1px solid var(--rule); }
+.maq-estudo-k {
+  font-family: var(--f-prosa);
+  letter-spacing: -.014em;
+  font-size: 19px; font-weight: 600; line-height: 1.25;
+  margin: 0; max-width: 46ch;
+}
+.maq-estudo-k a { color: var(--ink); text-decoration: none; }
+.maq-estudo-k a:hover { text-decoration: underline; }
+.maq-estudo-meta {
+  font-family: var(--f-instr);
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted);
+  font-size: 12px;
+  margin: 7px 0 0;
+  display: flex; flex-wrap: wrap; gap: 2px 12px;
+}
+.maq-estudo-meta span:not(:first-child)::before {
+  content: "· "; color: var(--rule-strong); margin-right: 4px;
+}
+.maq-em-ingles {
+  font-family: var(--f-instr);
+  letter-spacing: .02em;
+  color: var(--muted);
+  font-size: 13px; font-weight: 400;
+}
+.maq-estudo-leitura {
+  font-family: var(--f-prosa);
+  color: var(--ink);
+  max-width: 64ch;
+  margin: 9px 0 0;
+  font-size: 15px; line-height: 1.55;
+}
+.maq-titulo-da-lista {
+  font-family: var(--f-prosa);
+  letter-spacing: -.014em;
+  font-size: clamp(28px, 4.4vw, 42px);
+  font-weight: 400; line-height: 1.08;
+  margin: clamp(4px, 1vw, 10px) 0 clamp(18px, 2.6vw, 28px);
+}
+
+/* ----------------------------------------------------------- o que mudou */
+.maq-mudou {
+  border-top: 1px solid var(--rule);
+  margin: 0; padding: 0; list-style: none;
+}
+.maq-mudou li {
+  border-bottom: 1px solid var(--rule);
+  padding: 13px 0;
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: 4px clamp(14px, 2.2vw, 26px);
+  align-items: baseline;
+}
+.maq-mudou-data {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  color: var(--muted);
+  font-size: 13px;
+}
+.maq-mudou-o-que {
+  font-family: var(--f-prosa);
+  color: var(--ink);
+  max-width: 64ch;
+  margin: 0;
+  font-size: 15.5px; line-height: 1.5;
+}
+@media (width <= 560px) {
+  .maq-mudou li { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ------------------------------------------------------------- o estudo */
+.maq-estudo-titulo {
+  font-family: var(--f-prosa);
+  letter-spacing: -.014em;
+  font-size: clamp(27px, 4vw, 40px);
+  font-weight: 500; line-height: 1.12;
+  max-width: 24ch;
+  margin: clamp(4px, 1vw, 10px) 0 clamp(20px, 3vw, 32px);
+}
+.maq-leitura-do-estudo {
+  border-block: 1.5px solid var(--ink);
+  padding: clamp(16px, 2.4vw, 26px) 0;
+  margin: 0;
+}
+.maq-leitura-do-estudo > h2:first-of-type { margin-top: 0; }
+.maq-texto-do-estudo { margin-top: clamp(22px, 3vw, 34px); }
+.maq-resto {
+  font-family: var(--f-instr);
+  color: var(--muted);
+  font-size: 13px;
+  margin: clamp(18px, 2.6vw, 28px) 0 0;
+}
+.maq-documento-original {
+  border-top: 1px solid var(--rule);
+  font-family: var(--f-instr);
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-top: clamp(26px, 3.6vw, 42px);
+  padding-top: 14px;
+}
+.maq-documento-original a { color: var(--ink); }
+
+/* -------------------------------------------------- o rodapé, numa linha */
+.maq-rodape {
+  border-top: 1.5px solid var(--ink);
+  margin-top: clamp(46px, 6vw, 84px);
+  padding: 16px 0 40px;
+}
+.maq-rodape-linha {
+  font-family: var(--f-versal);
+  letter-spacing: .04em;
+  color: var(--muted);
+  font-size: 13px; line-height: 1.8;
+  margin: 0;
+}
+.maq-rodape-linha a { color: var(--muted); text-decoration: none; }
+.maq-rodape-linha a:hover { color: var(--ink); text-decoration: underline; }
+
+/* ------ nada desloca de lado a 390: as tabelas largas rolam dentro de si */
+.texto-tabela { overflow-x: auto; max-width: 100%; }
