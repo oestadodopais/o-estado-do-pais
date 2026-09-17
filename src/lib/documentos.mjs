@@ -665,11 +665,9 @@ export function faixa(slug, lang) {
     `<span data-oedp-rotulo>${texto(rotulo)}</span>`,
     `<span data-oedp-rotulo-ia>${texto(r.antes)}` +
       `<a href="${atributo(politica)}">${texto(r.porta)}</a>${texto(r.depois)}</span>`,
-    ...(rotaDoTexto
-      ? [`<a data-oedp-texto href="${atributo(rotaDoTexto)}">${texto(s.estudos.textoLink)} →</a>`]
-      : []),
     `<a data-oedp-sobre href="${atributo(routePath('sobre', lang))}">${texto(s.nav.sobre)}</a>`,
-    `<a data-oedp-voltar href="${atributo(destino)}">${texto(s.estudos.documentoVoltar)} ↑</a>`,
+    // B1: a leitura e a página do estudo são o mesmo destino.
+    `<a data-oedp-voltar${rotaDoTexto ? ' data-oedp-texto' : ''} href="${atributo(destino)}">${texto(rotaDoTexto ? s.estudos.textoLink : s.estudos.documentoVoltar)} ↑</a>`,
     '</div>',
   ].join('');
 }

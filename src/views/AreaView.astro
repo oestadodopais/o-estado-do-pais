@@ -152,7 +152,7 @@ const portaLegal = [LEI_ORGANICA.diplomaCurto, ...area.pecas.artigos].join(' · 
                     <TituloDeTrabalho titulo={nomeDoEstudo(p.id, lang)} lang={lang} />
                   </a>
                   {temTexto(p.slug, lang) && (
-                    <a class="areas-peca-porta" href={routePath('estudo', lang, { slug: p.slug })}>
+                    <a class="areas-peca-porta" href={routePath('texto', lang, { slug: p.slug })}>
                       {s.areas.textoDoTrabalho}
                     </a>
                   )}
