@@ -219,14 +219,16 @@ export const WORKS = [
      * trabalho nunca passou por um anfitrião de artefactos: foi produzido no
      * motor de investigação (ResearchHub) e atravessou de lá como ficheiro. A
      * data de publicação de cada edição é a data do commit que escreveu esses
-     * bytes pela última vez, `b99e2254052c773d526281704ab7405ad2becfe6`, de
-     * 2026-09-16, o commit em que a folha das duas edições passou a declarar o
-     * seu papel e a sua tinta nas três guardas. Os bytes tinham sido escritos
-     * nessa manhã por `c0b19d4bbc1b05819b6e0ea5b9e8e83f60ae40f4` e mudaram
-     * outra vez com aquele, no MESMO dia: por isso a data não mexe e `updated`
+     * bytes pela última vez, `d768bdea4c99e06c39eaf276af7ae0f3b4901a9b`, de
+     * 2026-09-16 à noite, o commit em que o estudo ganhou a leitura de abertura
+     * do lugar de direção e a correção da linha dos contratos. Os bytes tinham
+     * sido escritos nessa manhã por `c0b19d4bbc1b05819b6e0ea5b9e8e83f60ae40f4`,
+     * e mudaram mais duas vezes no MESMO dia: com
+     * `b99e2254052c773d526281704ab7405ad2becfe6`, que pôs o papel e a tinta da
+     * folha nas três guardas, e com este. Por isso a data não mexe e `updated`
      * fica a null, que é o que ele diz («não há revisão posterior a registar»)
      * e não uma revisão por registar. O `studies-src/manifest.yml` guarda o
-     * commit dos bytes alojados, e os dois lugares dizem agora o mesmo.
+     * commit dos bytes alojados, e os dois lugares dizem o mesmo.
      */
     editions: [
       {

@@ -12,11 +12,209 @@
    "i": 1,
    "kind": "heading",
    "level": 2,
+   "text": "In brief"
+  },
+  {
+   "figures": [
+    {
+     "end": 93,
+     "others": [
+      "bbs-desp-total"
+     ],
+     "printed": "45 784 603,10",
+     "row": "bbs-op-total",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 80,
+     "value": "45 784 603,10"
+    },
+    {
+     "end": 482,
+     "others": [
+      "plano-protocolo-cultura",
+      "plano-protocolo-coesao"
+     ],
+     "printed": "15 000 000",
+     "row": "rcm-teto-global",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 472,
+     "value": "15 000 000"
+    }
+   ],
+   "i": 2,
+   "kind": "paragraph",
+   "text": "Évora bid in 2022 to be European Capital of Culture with an operating budget of 45 784 603,10 € for 2022 to 2028, to be paid by the State, the municipality, the region and the European Union, and with a list of works on the city's cultural venues. The European panel recommended Évora in December 2022 and has followed what the city promised ever since, in three dated reports. The State created the association that runs the event in December 2023 and fixed its share at 15 000 000 € up to 2027. The association only became fully operational in October 2024, almost two years after the choice, and in 2025 it received money from one source only, the culture ministry's office. A year and a half before 2027, the documents show three different totals for the cost of the event and no document that reconciles them, because the June 2023 protocol that divides the money between the parties is not published."
+  },
+  {
+   "figures": [],
+   "i": 3,
+   "kind": "heading",
+   "level": 2,
+   "text": "What this project concludes"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 73,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [
+    {
+     "end": 200,
+     "others": [
+      "painel-protocolo-municipio"
+     ],
+     "printed": "10,5",
+     "row": "painel-municipio-por-transferir",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 196,
+     "value": "10,5"
+    }
+   ],
+   "i": 4,
+   "kind": "paragraph",
+   "text": "The State's money is what arrived; the municipality's is what is missing. In June 2025 the panel wrote that the State had transferred most of what it guaranteed and that the municipality's share, 10,5 million, had not yet been transferred and was still under discussion. The association's plan for 2026 writes \"no confirmed values\" on the municipality's line, and the 2025 accounts record not one euro from that source. The municipality entered in its 2024 and 2025 budgets yearly amounts for the project far below its share in the bid, and its 2026 budget is a scan whose figures cannot be read. It is the bid's promise that the documents show unkept."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 72,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [
+    {
+     "end": 124,
+     "printed": "12 000 000,00",
+     "row": "bbs-obra-centro-cultural",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 111,
+     "value": "12 000 000,00"
+    },
+    {
+     "end": 191,
+     "others": [
+      "bbs-obra-castris"
+     ],
+     "printed": "3 000 000,00",
+     "row": "bbs-obra-danca",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 179,
+     "value": "3 000 000,00"
+    }
+   ],
+   "i": 5,
+   "kind": "paragraph",
+   "text": "The bid's works do not belong to the event, and the largest fell behind. The Multi-Purpose Cultural Centre, at 12 000 000,00 €, and the National Centre for Contemporary Dance, at 3 000 000,00 €, are \"unfunded or delayed\" in the panel's 2025 report. What moves forward are smaller works paid by the Recovery and Resilience Plan and carried out by the municipality or other bodies; the association writes that it has neither the powers nor the funds to build."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 53,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [
+    {
+     "end": 85,
+     "printed": "85",
+     "row": "painel-precontratacao",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 83,
+     "value": "85"
+    }
+   ],
+   "i": 6,
+   "kind": "paragraph",
+   "text": "The programme is behind what the team told the panel. In mid 2025 there were still 85% of the projects to be contracted, and the team promised every contract by September 2025 and the full programme announced in September 2026. At the date of this reading, the published programme document covers 2026, not 2027, and the association's last news item is from August 2026."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 30,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [
+    {
+     "end": 188,
+     "printed": "82 091,77",
+     "row": "rc-resultado",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 179,
+     "value": "82 091,77"
+    }
+   ],
+   "i": 7,
+   "kind": "paragraph",
+   "text": "What went well is in the acts. The decree-law and the Government's resolution exist and fix yearly ceilings; the association published its 2025 accounts with a positive result of 82 091,77 €; the Union approved two operations for the event; the Salão Central Eborense is among the works completed; and the panel does its job on the calendar it announced."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 40,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [
+    {
+     "end": 175,
+     "others": [
+      "plano-linha-do-vagar"
+     ],
+     "printed": "1,5",
+     "row": "painel-premio",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 172,
+     "value": "1,5"
+    }
+   ],
+   "i": 8,
+   "kind": "paragraph",
+   "text": "What nobody can know from the documents. What Évora 2027 costs in total, how much the municipality has paid, who receives what in the association's bodies, and whether the 1,5 million prize will be paid. The decree-law obliges the association to publish the pay of its bodies and the plans and accounts of every year; the pay is not published and neither are the plans before 2025."
+  },
+  {
+   "figures": [],
+   "i": 9,
+   "kind": "heading",
+   "level": 2,
+   "text": "What could work better"
+  },
+  {
+   "figures": [],
+   "i": 10,
+   "kind": "paragraph",
+   "text": "Publish the protocol of 21 June 2023, the only document that ties the three totals together. Publish one table of the funding by source and by year, planned and received, and keep it up to date. The municipality to say what it has transferred and when it transfers the rest. The association to meet what the decree-law asks of it: the pay of its bodies and the plans of every year. The municipality to publish its budget tables as text rather than as images. And the 2027 programme with dates, which is what a resident of Évora looks for first."
+  },
+  {
+   "figures": [],
+   "i": 11,
+   "kind": "paragraph",
+   "text": "*This part is O Estado do País's reading from the documents of this study, and from them alone; every sentence points to a section of the document. The quoted facts are in the sections that follow, with the document and the page.*"
+  },
+  {
+   "figures": [],
+   "i": 12,
+   "kind": "heading",
+   "level": 2,
    "text": "The limits of this document"
   },
   {
    "figures": [],
-   "i": 2,
+   "i": 13,
    "kind": "paragraph",
    "text": "This document puts three things side by side: what Évora's bid for European Capital of Culture said it would do, what the European Commission's expert panel wrote about it and on what date, and what money is written into public acts, by whom and for what."
   },
@@ -29,7 +227,7 @@
     }
    ],
    "figures": [],
-   "i": 3,
+   "i": 14,
    "kind": "paragraph",
    "text": "The panel judges, this project does not. The expert panel has a published mandate and writes dated reports; O Estado do País quotes them. There is no delivery status here, no colours, no tally of promises kept against promises broken. Every cell names the document, the page and the date."
   },
@@ -42,7 +240,7 @@
     }
    ],
    "figures": [],
-   "i": 4,
+   "i": 15,
    "kind": "paragraph",
    "text": "Only a commitment carrying a figure or a deadline enters as a promise. A commitment with no value and no date cannot be checked, and this document says so rather than turning it into a judgement."
   },
@@ -55,7 +253,7 @@
     }
    ],
    "figures": [],
-   "i": 5,
+   "i": 16,
    "kind": "paragraph",
    "text": "The three cost aggregates do not agree, and no document bridges them. The panel writes one overall budget; the bid book writes another; the cooperation protocol of June 2023, as the association's activity plan splits it, writes a third. Each enters this document with the construction its own source declares, and never added together. Adding items from different documents would manufacture a figure: the sources overlap, they use different reference years, and they mix what is planned with what is paid."
   },
@@ -68,7 +266,7 @@
     }
    ],
    "figures": [],
-   "i": 6,
+   "i": 17,
    "kind": "paragraph",
    "text": "Every figure is written the way its own document writes it. That is why two thousands separators and two spellings of the same value appear: the bid book writes a space, the association's activity plan writes a dot, and this document standardises neither. Where an official document contradicts itself, both readings stay, side by side, with no choice made between them."
   },
@@ -81,7 +279,7 @@
     }
    ],
    "figures": [],
-   "i": 7,
+   "i": 18,
    "kind": "paragraph",
    "text": "Co-financing rates do not enter. The published sheet for one of the European operations writes one percentage and the managing authority's list writes another for the same operation, and neither document says on what base it is computed. What enters is the amount in euros."
   },
@@ -99,7 +297,7 @@
     }
    ],
    "figures": [],
-   "i": 8,
+   "i": 19,
    "kind": "paragraph",
    "text": "The sources are closed. Everything here comes from the 53 reads registered on 2026-09-15 and listed one by one at the end; 43 answered and 10 did not. Nothing else was read and nothing else is quoted: no press, no encyclopaedias, no site outside that list. What is missing is stated in the section on what was not found. Quotations stay in the language the source wrote them in, in both editions of this document: the European panel writes in English and the acts of the Portuguese State write in Portuguese, and translating either would be rewriting it."
   },
@@ -112,23 +310,23 @@
     }
    ],
    "figures": [],
-   "i": 9,
+   "i": 20,
    "kind": "paragraph",
    "text": "What this document does not answer. What Évora 2027 has cost in total. What contracts the association signed and with whom. How much the municipality actually transferred. What the 2027 programme is. Whether the Melina Mercouri Prize will be paid. None of these has an answer in the documents read, and each one carries its reason further down."
   },
   {
-   "i": 10,
+   "i": 21,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 11,
+   "i": 22,
    "kind": "heading",
    "level": 2,
    "text": "The timeline"
   },
   {
-   "i": 12,
+   "i": 23,
    "kind": "table",
    "rows": [
     [
@@ -509,29 +707,29 @@
   },
   {
    "figures": [],
-   "i": 13,
+   "i": 24,
    "kind": "paragraph",
    "text": "The designation, as the panel writes it in the first monitoring report: «Évora was designated as European Capital of Culture in March 2023 by the Ministry of Culture of Portugal based on the recommendation in the panel’s selection report»"
   },
   {
    "figures": [],
-   "i": 14,
+   "i": 25,
    "kind": "paragraph",
    "text": "The decision, as the selection report writes it: «As consensus was not reached during the discussion, a secret ballot was put in place, as proposed by the Rules of procedure. In the first voting round, and confirming the probing rounds organised to back up the panel's deliberations, one city received the votes of a strong majority of the members of the Panel, and the panel could therefore reach a clear and final decision to recommend to the Ministry of Culture of Portugal to designate the City of ÉVORA as European Capital of Culture in Portugal in 2027.»"
   },
   {
    "figures": [],
-   "i": 15,
+   "i": 26,
    "kind": "paragraph",
    "text": "The monitoring calendar, in the selection report, p. 35: «There are three formal monitoring checkpoints (autumn 2023, mid 2025 and autumn 2026)»"
   },
   {
-   "i": 16,
+   "i": 27,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 17,
+   "i": 28,
    "kind": "heading",
    "level": 2,
    "text": "What the bid promised, and what the panel wrote"
@@ -545,19 +743,19 @@
     }
    ],
    "figures": [],
-   "i": 18,
+   "i": 29,
    "kind": "paragraph",
    "text": "A promise is matched to a judgement here only by the object both documents name: a venue, a budget line, the team, contracting, the overall budget, the prize. Nothing is inferred. Where the panel wrote nothing about an object, the cell says so; where the panel's judgement has no matching promise, the bid cell says which pages were searched."
   },
   {
    "figures": [],
-   "i": 19,
+   "i": 30,
    "kind": "heading",
    "level": 3,
    "text": "The overall operating budget"
   },
   {
-   "i": 20,
+   "i": 31,
    "kind": "table",
    "rows": [
     [
@@ -745,19 +943,19 @@
      "value": "9"
     }
    ],
-   "i": 21,
+   "i": 32,
    "kind": "paragraph",
    "text": "The two documents write different figures for the same thing, and neither explains the other. The bid book writes 45 784 603,10 € of operating revenue; the panel writes an overall budget of 49.5 million euros on the page that also carries the team, and 49 million two pages later, with a gap of 9 million."
   },
   {
    "figures": [],
-   "i": 22,
+   "i": 33,
    "kind": "heading",
    "level": 3,
    "text": "The State's share"
   },
   {
-   "i": 23,
+   "i": 34,
    "kind": "table",
    "rows": [
     [
@@ -871,7 +1069,7 @@
      "value": "19 000 000,00"
     }
    ],
-   "i": 24,
+   "i": 35,
    "kind": "paragraph",
    "text": "The selection bid book splits that 19 000 000,00 € between two sources, and writes them out in words, on sheet 43 of the PDF: «As receitas do sector público passam, assim, a incluir os seguintes montantes: 19 milhões de euros atribuídos pelo Governo Português, dos quais 15 milhões virão diretamente do Estado Português e quatro milhões através do Turismo de Portugal, para apoio ao Plano de Comunicação»."
   },
@@ -891,19 +1089,19 @@
      "value": "15 000 000"
     }
    ],
-   "i": 25,
+   "i": 36,
    "kind": "paragraph",
    "text": "The act that fixes the culture share came later, and fixes a different value from the one the bid book wrote: the spending ceiling authorised to the Ministry of Culture's office is 15 000 000 EUR, spread over four years, and it is in the money section."
   },
   {
    "figures": [],
-   "i": 26,
+   "i": 37,
    "kind": "heading",
    "level": 3,
    "text": "The municipality's share"
   },
   {
-   "i": 27,
+   "i": 38,
    "kind": "table",
    "rows": [
     [
@@ -999,19 +1197,19 @@
      "value": "10.519.953,10"
     }
    ],
-   "i": 28,
+   "i": 39,
    "kind": "paragraph",
    "text": "The association's 2026 activity plan writes the same item and the same silence: «d) Município de Évora - 10.519.953,10€ (dez milhões, quinhentos e dezanove mil, novecentos e cinquenta e três euros e dez cêntimos), como apoio financeiro à iniciativa Évora 2027.» and, next, «Execução estimada em 2026 (Sem valores confirmados)». In the 2026 forecast revenue table, the municipality's line carries «-€» where the others carry a value."
   },
   {
    "figures": [],
-   "i": 29,
+   "i": 40,
    "kind": "heading",
    "level": 3,
    "text": "The region's share"
   },
   {
-   "i": 30,
+   "i": 41,
    "kind": "table",
    "rows": [
     [
@@ -1107,19 +1305,19 @@
      "value": "5.000.000"
     }
    ],
-   "i": 31,
+   "i": 42,
    "kind": "paragraph",
    "text": "The association's 2026 plan puts the agreement in writing: «Existe um acordo com a Comunidade Intermunicipal do Alentejo Central (CIMAC) para o financiamento da Capital Europeia da Cultura Évora_27 com 5.000.000€ (cinco milhões de euros).»"
   },
   {
    "figures": [],
-   "i": 32,
+   "i": 43,
    "kind": "heading",
    "level": 3,
    "text": "The European Union's share"
   },
   {
-   "i": 33,
+   "i": 44,
    "kind": "table",
    "rows": [
     [
@@ -1179,19 +1377,19 @@
   },
   {
    "figures": [],
-   "i": 34,
+   "i": 45,
    "kind": "paragraph",
    "text": "What exists on the European side is two approved operations with a name, a code and an amount, and they are further down, in the money section."
   },
   {
    "figures": [],
-   "i": 35,
+   "i": 46,
    "kind": "heading",
    "level": 3,
    "text": "The capital works"
   },
   {
-   "i": 36,
+   "i": 47,
    "kind": "table",
    "rows": [
     [
@@ -1513,19 +1711,19 @@
   },
   {
    "figures": [],
-   "i": 37,
+   "i": 48,
    "kind": "paragraph",
    "text": "The capital works belong to others. Whoever runs the capital of culture programme does not carry them out, has no legal power to carry them out, and has no budget line for that purpose. The 2026 activity plan puts it in its own words: «a Associação Évora 2027 não tem competências e atribuições legais para assegurar a execução de obras nas infraestruturas e equipamentos incluídos no livro de candidatura, não dispõe de verbas inscritas em orçamento para essa finalidade.»"
   },
   {
    "figures": [],
-   "i": 38,
+   "i": 49,
    "kind": "heading",
    "level": 3,
    "text": "The team"
   },
   {
-   "i": 39,
+   "i": 50,
    "kind": "table",
    "rows": [
     [
@@ -1621,25 +1819,25 @@
      "value": "2 227 710,81"
     }
    ],
-   "i": 40,
+   "i": 51,
    "kind": "paragraph",
    "text": "The 2026 activity plan budgets 54 posts, with 2 227 710,81 € of staff costs."
   },
   {
    "figures": [],
-   "i": 41,
+   "i": 52,
    "kind": "paragraph",
    "text": "The municipality wrote, in its 2025 budget document, what it lost when the association took the project over: «A perda da Equipa de Missão coloca preocupações e questões que exigem um acompanhamento permanente da Câmara Municipal.»"
   },
   {
    "figures": [],
-   "i": 42,
+   "i": 53,
    "kind": "heading",
    "level": 3,
    "text": "Contracting and the programme"
   },
   {
-   "i": 43,
+   "i": 54,
    "kind": "table",
    "rows": [
     [
@@ -1781,19 +1979,19 @@
   },
   {
    "figures": [],
-   "i": 44,
+   "i": 55,
    "kind": "paragraph",
    "text": "The address of the programming document the association publishes writes «31MAR26», and the document covers the year 2026, not 2027. At the date of this reading, the association's most recent published news item is from August 2026 and does not announce the 2027 programme."
   },
   {
    "figures": [],
-   "i": 45,
+   "i": 56,
    "kind": "heading",
    "level": 3,
    "text": "The Melina Mercouri Prize"
   },
   {
-   "i": 46,
+   "i": 57,
    "kind": "table",
    "rows": [
     [
@@ -1886,48 +2084,48 @@
      "value": "1.500.000"
     }
    ],
-   "i": 47,
+   "i": 58,
    "kind": "paragraph",
    "text": "The association writes in its 2026 plan: «no último trimestre de 2026, em data a definir, será elaborado um último relatório de monitorização e progresso, a entregar ao painel de peritos, fundamental, e requisito, para a decisão de atribuição a Évora_2027 do prémio Melina Mercouri, no valor de 1.500.000€.» No line of the 2026 revenue tables carries it, which is consistent with the payment being deferred, and the 2025 report and accounts does not mention it."
   },
   {
-   "i": 48,
+   "i": 59,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 49,
+   "i": 60,
    "kind": "heading",
    "level": 2,
    "text": "The money, line by line"
   },
   {
    "figures": [],
-   "i": 50,
+   "i": 61,
    "kind": "paragraph",
    "text": "One table per document, and never a table that merges documents. Each line is a value exactly as its own document writes it, with the page where it was read."
   },
   {
    "figures": [],
-   "i": 51,
+   "i": 62,
    "kind": "heading",
    "level": 3,
    "text": "The bid book, selection stage"
   },
   {
    "figures": [],
-   "i": 52,
+   "i": 63,
    "kind": "paragraph",
    "text": "The bid book is laid out as double-page spreads: every PDF sheet prints two pages, each with its own number beneath it. The page cited on each line is the half of the sheet where the value is written. On the sheets whose even page opens a section, the bid book prints it no number, and the line cites the PDF sheet, which is what was read."
   },
   {
    "figures": [],
-   "i": 53,
+   "i": 64,
    "kind": "paragraph",
    "text": "Revenue to cover operating expenditure:"
   },
   {
-   "i": 54,
+   "i": 65,
    "kind": "table",
    "rows": [
     [
@@ -2128,12 +2326,12 @@
   },
   {
    "figures": [],
-   "i": 55,
+   "i": 66,
    "kind": "paragraph",
    "text": "Operating expenditure:"
   },
   {
-   "i": 56,
+   "i": 67,
    "kind": "table",
    "rows": [
     [
@@ -2280,12 +2478,12 @@
   },
   {
    "figures": [],
-   "i": 57,
+   "i": 68,
    "kind": "paragraph",
    "text": "Public-sector revenue for capital expenditure:"
   },
   {
-   "i": 58,
+   "i": 69,
    "kind": "table",
    "rows": [
     [
@@ -2456,12 +2654,12 @@
   },
   {
    "figures": [],
-   "i": 59,
+   "i": 70,
    "kind": "paragraph",
    "text": "The works in the cultural infrastructure table, with the estimated cost the bid book gives them:"
   },
   {
-   "i": 60,
+   "i": 71,
    "kind": "table",
    "rows": [
     [
@@ -2720,13 +2918,13 @@
   },
   {
    "figures": [],
-   "i": 61,
+   "i": 72,
    "kind": "heading",
    "level": 3,
    "text": "The bid book, pre-selection stage"
   },
   {
-   "i": 62,
+   "i": 73,
    "kind": "table",
    "rows": [
     [
@@ -2832,13 +3030,13 @@
      "value": "1 587 603,10"
     }
    ],
-   "i": 63,
+   "i": 74,
    "kind": "paragraph",
    "text": "The selection bid book says what changed between the two: «Relativamente às receitas totais para cobertura de despesas operacionais propostas no bid book de pré-seleção, verifica-se um acréscimo de 1 587 603,10€, que se deve a:» The difference between the two totals written above is not the difference that sentence declares, and neither document explains the distance. It is recorded as it stands."
   },
   {
    "figures": [],
-   "i": 64,
+   "i": 75,
    "kind": "heading",
    "level": 3,
    "text": "Council of Ministers resolution 203/2023"
@@ -2859,12 +3057,12 @@
      "value": "15 000 000"
     }
    ],
-   "i": 65,
+   "i": 76,
    "kind": "paragraph",
    "text": "What it authorises, and the five ceilings it fixes, are all on the same page, p. 86: «1 — Autorizar o Gabinete de Estratégia, Planeamento e Avaliação Culturais (GEPAC) a realizar a despesa relativa à contribuição financeira do Estado para o desenvolvimento e execução da iniciativa Évora Capital Europeia da Cultura 2027, no âmbito da programação cultural, até ao montante global de 15 000 000 EUR.»"
   },
   {
-   "i": 66,
+   "i": 77,
    "kind": "table",
    "rows": [
     [
@@ -2999,20 +3197,20 @@
   },
   {
    "figures": [],
-   "i": 67,
+   "i": 78,
    "kind": "paragraph",
    "text": "The preamble of the same resolution is where the cooperation protocol appears with its date: «foi assinado, em 21 de junho de 2023, um protocolo de cooperação entre as áreas governativas das finanças, da economia e do mar, da cultura e da coesão territorial e o Município de Évora,»"
   },
   {
    "figures": [],
-   "i": 68,
+   "i": 79,
    "kind": "heading",
    "level": 3,
    "text": "Decree-law 124/2023"
   },
   {
    "figures": [],
-   "i": 69,
+   "i": 80,
    "kind": "paragraph",
    "text": "The association's purposes, on p. 69 of Decree-law 124/2023: «A Associação tem como fins o planeamento, promoção, desenvolvimento e execução da iniciativa Évora Capital Europeia da Cultura 2027.»"
   },
@@ -3045,37 +3243,37 @@
      "value": "2 000 000"
     }
    ],
-   "i": 70,
+   "i": 81,
    "kind": "paragraph",
    "text": "The only sum Decree-law 124/2023 fixes, on p. 70: «concorre para a constituição do património social da Associação uma contribuição inicial por parte do Estado, a prestar pelo Gabinete de Estratégia, Planeamento e Avaliação Culturais, no valor de € 2 000 000 a pagar em 2024.», that is, 2 000 000 €. All the rest of the State funding points to the protocol, on the same page: «protocolo de cooperação celebrado entre as áreas governativas das finanças, da economia e mar, da cultura, da coesão territorial e o Município de Évora.»"
   },
   {
    "figures": [],
-   "i": 71,
+   "i": 82,
    "kind": "paragraph",
    "text": "The same decree-law obliges the association to publish «A identidade e os elementos curriculares de todos os membros dos seus órgãos sociais, designadamente do órgão de administração, bem como as respetivas remunerações e outros benefícios.». No document read carries them."
   },
   {
    "figures": [],
-   "i": 72,
+   "i": 83,
    "kind": "paragraph",
    "text": "Decree-law 47/2025 added public-interest status to it, with an end date: «é atribuído o estatuto de utilidade pública à Associação até dia 31 de dezembro de 2028.»"
   },
   {
    "figures": [],
-   "i": 73,
+   "i": 84,
    "kind": "heading",
    "level": 3,
    "text": "The association's 2026 activity plan and budget"
   },
   {
    "figures": [],
-   "i": 74,
+   "i": 85,
    "kind": "paragraph",
    "text": "Forecast revenue, by source:"
   },
   {
-   "i": 75,
+   "i": 86,
    "kind": "table",
    "rows": [
     [
@@ -3435,12 +3633,12 @@
   },
   {
    "figures": [],
-   "i": 76,
+   "i": 87,
    "kind": "paragraph",
    "text": "The split of the June 2023 protocol, as this plan writes it:"
   },
   {
-   "i": 77,
+   "i": 88,
    "kind": "table",
    "rows": [
     [
@@ -3689,7 +3887,7 @@
      "value": "1,5"
     }
    ],
-   "i": 78,
+   "i": 89,
    "kind": "paragraph",
    "text": "The same plan writes the execution it expects in 2026 from each of these sources. From Alentejo 2030 it expects 6.500.000 €; from sponsors, 300.000 €. And it writes an additional funding commitment secured from the Government, of 1,5 million euros in total, which it calls Linha do Vagar."
   },
@@ -3725,18 +3923,18 @@
      "value": "2.000.000,00"
     }
    ],
-   "i": 79,
+   "i": 90,
    "kind": "paragraph",
    "text": "A mismatch inside a single paragraph, recorded without correction. The plan writes: «A candidatura para o programa geral de Évora_27 foi aprovada pelo Programa Regional do Alentejo 2030 (ALENTEJO 2030), com um montante global de financiamento de 11.764.710,00€ (quinze milhões de euros)» The figure and the words do not say the same thing. Two lines below, the same paragraph writes «Ações Coletivas – Internacionalização – dotação de 2.000.000,00€ (dois milhões e quinhentos mil euros).», with the same kind of mismatch."
   },
   {
    "figures": [],
-   "i": 80,
+   "i": 91,
    "kind": "paragraph",
    "text": "The balances carried over from 2025, and the expenditure forecast for 2026:"
   },
   {
-   "i": 81,
+   "i": 92,
    "kind": "table",
    "rows": [
     [
@@ -4006,12 +4204,12 @@
   },
   {
    "figures": [],
-   "i": 82,
+   "i": 93,
    "kind": "paragraph",
    "text": "The seven Recovery and Resilience Plan works the same plan lists, with the promoter it gives each of them:"
   },
   {
-   "i": 83,
+   "i": 94,
    "kind": "table",
    "rows": [
     [
@@ -4274,13 +4472,13 @@
   },
   {
    "figures": [],
-   "i": 84,
+   "i": 95,
    "kind": "heading",
    "level": 3,
    "text": "The association's 2025 activity report and accounts"
   },
   {
-   "i": 85,
+   "i": 96,
    "kind": "table",
    "rows": [
     [
@@ -4524,7 +4722,7 @@
      "value": "0,01"
     }
    ],
-   "i": 86,
+   "i": 97,
    "kind": "paragraph",
    "text": "The association writes where the money came from: «As Receitas foram provenientes de uma única origem: tendo como base o Protocolo celebrado com o GEPAC - Gabinete de Estratégia, Planeamento e Avaliação Culturais, refletindo a contribuição financeira relativa à área governativa da Cultura, para o desenvolvimento e execução da iniciativa Évora Capital Europeia da Cultura, assim como os apoios referentes à contratação de pessoas através do IEFP.» The revenue-source table, on the same page, writes 1 841 566,89 € from the Ministry of Culture's office, 31 949,23 € from IEFP hiring support and 0,01 € on the line «Outras Receitas». The remaining sources, among them the municipality, CIMAC, Turismo de Portugal and Alentejo 2030, carry «- €», which is not zero: it is a line with no value."
   },
@@ -4565,19 +4763,19 @@
      "value": "449 608,80"
     }
    ],
-   "i": 87,
+   "i": 98,
    "kind": "paragraph",
    "text": "A second mismatch, on the same page. The prose writes «As principais rúbricas de Fornecimentos e Serviços Externos foram os Subcontratos e Trabalhos especializados, com o montante de 449 609,80 € e 277 220,46 € respetivamente, referente á contratação de projetos inscritos no Bidbook, livro de candidatura Évora_27.» and the table just below writes 449 608,80 € on the subcontracts line. The two values are not the same. Both stay."
   },
   {
    "figures": [],
-   "i": 88,
+   "i": 99,
    "kind": "heading",
    "level": 3,
    "text": "The municipality's budget documents"
   },
   {
-   "i": 89,
+   "i": 100,
    "kind": "table",
    "rows": [
     [
@@ -4772,19 +4970,19 @@
   },
   {
    "figures": [],
-   "i": 90,
+   "i": 101,
    "kind": "paragraph",
    "text": "The municipality's 2026 budget tables carry lines for the capital of culture project and for the Recovery and Resilience Plan works, but the published file is a scan and its tables have no text layer a value can be transcribed from. The same heading comes out of machine reading spelled two different ways on two sheets of the same file, and neither is the name the council printed. The values on those lines remain untranscribed, and the next section says so."
   },
   {
    "figures": [],
-   "i": 91,
+   "i": 102,
    "kind": "heading",
    "level": 3,
    "text": "The two approved European operations"
   },
   {
-   "i": 92,
+   "i": 103,
    "kind": "table",
    "rows": [
     [
@@ -4995,7 +5193,7 @@
      "value": "2500359.28"
     }
    ],
-   "i": 93,
+   "i": 104,
    "kind": "paragraph",
    "text": "The managing authority's list, reported to June 2026, writes for the same two operations, with no thousands separator and a dot as the decimal separator where there are cents, a total cost of 11764778 and 2941599.16, an eligible cost of 3755424 for the first, and an approved fund of 1750000 and 2500359.28. The list's amounts and the published sheets' amounts say the same thing."
   },
@@ -5030,25 +5228,25 @@
      "value": "11.764.778,00"
     }
    ],
-   "i": 94,
+   "i": 105,
    "kind": "paragraph",
    "text": "A third mismatch, between documents. For the same application, the 2026 activity plan writes 11.764.710,00 € where the operation sheet and the managing authority's list write 11.764.778,00 €. The two figures are not the same, and no document explains the difference. Both stay."
   },
   {
    "figures": [],
-   "i": 95,
+   "i": 106,
    "kind": "paragraph",
    "text": "Percentages do not enter. The VAGAR operation sheet writes one co-financing rate and the managing authority's list writes another for the same operation, and neither document says on what base it is computed."
   },
   {
    "figures": [],
-   "i": 96,
+   "i": 107,
    "kind": "heading",
    "level": 3,
    "text": "The three aggregates, side by side"
   },
   {
-   "i": 97,
+   "i": 108,
    "kind": "table",
    "rows": [
     [
@@ -5235,29 +5433,29 @@
     }
    ],
    "figures": [],
-   "i": 98,
+   "i": 109,
    "kind": "paragraph",
    "text": "No document read bridges these three aggregates. They are built in different ways, they use different reference years, and the document that could link them, the cooperation protocol of June 2023, is not published. This project neither adds them nor chooses between them."
   },
   {
-   "i": 99,
+   "i": 110,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 100,
+   "i": 111,
    "kind": "heading",
    "level": 2,
    "text": "What was not found"
   },
   {
    "figures": [],
-   "i": 101,
+   "i": 112,
    "kind": "paragraph",
    "text": "An absence is content. Each line says what was looked for, where, and what came back."
   },
   {
-   "i": 102,
+   "i": 113,
    "kind": "table",
    "rows": [
     [
@@ -5279,7 +5477,7 @@
      },
      {
       "figures": [],
-      "text": "Portal BASE refused all three requests made to it, each time with the same firewall page. No document read lists contracts, contractors or values"
+      "text": "Portal BASE refused all three requests of this reading, each time with the same firewall page, and no document read here lists contracts, contractors or values. An earlier reading of this project, in the study «Évora — Prometido, Pago, Auditado 2026», managed to read the portal and counts the association's contracts in its window; the crossing of the two readings is left to the contracts block"
      }
     ],
     [
@@ -5406,29 +5604,29 @@
   },
   {
    "figures": [],
-   "i": 103,
+   "i": 114,
    "kind": "paragraph",
    "text": "Two readings were not made, and are stated here: the Union decision governing the European Capitals of Culture returned an empty body on all three paths attempted, and the mid-term evaluation of the European Capitals of Culture action was not opened at source. What is known of the decision's content comes from how the panel's report and the competition rules quote it, both official documents, but the legal text itself remains unconfirmed."
   },
   {
-   "i": 104,
+   "i": 115,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 105,
+   "i": 116,
    "kind": "heading",
    "level": 2,
    "text": "What changed"
   },
   {
    "figures": [],
-   "i": 106,
+   "i": 117,
    "kind": "paragraph",
    "text": "One entry per new official document, with the document's date and the date it was read."
   },
   {
-   "i": 107,
+   "i": 118,
    "kind": "table",
    "rows": [
     [
@@ -5478,35 +5676,35 @@
     }
    ],
    "figures": [],
-   "i": 108,
+   "i": 119,
    "kind": "paragraph",
    "text": "The first expected event, and its date: the panel's third monitoring report, set by the panel itself for the autumn of 2026, whose page today answers that it does not exist; and with it, the recommendation on the Melina Mercouri Prize, which the selection report sets for the end of 2026."
   },
   {
-   "i": 109,
+   "i": 120,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 110,
+   "i": 121,
    "kind": "heading",
    "level": 2,
    "text": "Who runs the association"
   },
   {
    "figures": [],
-   "i": 111,
+   "i": 122,
    "kind": "paragraph",
    "text": "It is the decree-law creating the association that fixes these offices, in its article 10 (p. 70): «São órgãos sociais da Associação a assembleia geral, a direção e o fiscal único.» The board is made up of «Um presidente, nomeado por acordo entre o Estado e o Município de Évora, ouvida a assembleia geral;» and of «Uma comissão executiva, composta por quatro membros nomeados nos termos a definir nos Estatutos.»"
   },
   {
    "figures": [],
-   "i": 112,
+   "i": 123,
    "kind": "paragraph",
    "text": "The offices and the names, as the association's «Quem Somos» page writes them, the offices in Portuguese as on the page:"
   },
   {
-   "i": 113,
+   "i": 124,
    "kind": "table",
    "rows": [
     [
@@ -5575,29 +5773,29 @@
   },
   {
    "figures": [],
-   "i": 114,
+   "i": 125,
    "kind": "paragraph",
    "text": "The decree-law that creates the association obliges it to publish the identity of the members of its governing bodies, and this page is that publication. The remuneration, which the same rule obliges it to publish, is in no document read."
   },
   {
-   "i": 115,
+   "i": 126,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 116,
+   "i": 127,
    "kind": "heading",
    "level": 2,
    "text": "The sources"
   },
   {
    "figures": [],
-   "i": 117,
+   "i": 128,
    "kind": "paragraph",
    "text": "The closed list of the reads of 2026-09-15. The sha256 digest, the byte count and the content type of every response are in the manifest of the copies, which travels with this study. The copies are archived outside any public repository."
   },
   {
-   "i": 118,
+   "i": 129,
    "kind": "table",
    "rows": [
     [
