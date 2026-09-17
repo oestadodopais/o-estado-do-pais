@@ -1022,7 +1022,7 @@ for (const file of ficheiros) {
   const rel = path.relative(DIST, file);
   const caminho = '/' + rel.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
   const rota = matchPath(caminho);
-  if (rota?.key === 'documento' || rota?.key === 'texto') continue; // Obra citada ou redirecionamento B1 conferido por gate:html.
+  if (rota?.key === 'documento') continue; // Obra citada; redirecionamentos B1 não produzem HTML.
   paginas++;
 
   const html = fs.readFileSync(file, 'utf8');

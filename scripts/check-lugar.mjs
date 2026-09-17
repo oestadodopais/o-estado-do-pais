@@ -949,7 +949,6 @@ for (const ficheiro of paginas) {
   const { rel, url, rota } = rotaDe(ficheiro);
   if (FICHEIROS_SEM_ROTA.has(rel)) continue;
   const chaveDaRota = rota?.key ?? null;
-  if (chaveDaRota === 'texto') continue; // B1: redirecionamento conferido em gate:html.
   const lang = rota?.lang ?? (rel.startsWith('en/') ? 'en' : 'pt');
   /* As duas famílias de transcrição saem por nome, com a razão no cabeçalho. */
   const transcricao = chaveDaRota !== null && ROTAS_DE_TRANSCRICAO.has(chaveDaRota);
