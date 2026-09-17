@@ -51,11 +51,12 @@ Isto é a visão em duas frases (`VISAO.md` §1: as camadas do número, da leitu
 
 ---
 
-## 4 · Como se fala da realidade (três regras)
+## 4 · Como se fala da realidade (quatro regras)
 
 1. **As camadas, por ordem, e a página lê-se de cima para baixo.** O número com a fonte; a leitura (o que mudou, numa frase com número, período e sentido: «Estimates for payrolled employees in the UK fell by 101,000 (0.3%) between July 2025 and July 2026», ONS); o estudo com método fixado antes dos dados, que chega a um ponto de vista; o cruzamento entre assuntos, que produz perguntas; e a ideia para o futuro, só quando o estudo a aguenta. O sentido à frente, o recibo atrás.
 2. **Exato onde um partido é persuasivo.** Em sete sítios de partidos lidos, uma só afirmação com número e nenhuma com fonte. Cada afirmação com número deste projeto resolve numa linha; e a afirmação de um partido pode ser lida ao lado do número oficial, que é o lugar que nenhum observatório ocupa.
 3. **O projeto diz o que não sabe e o que a inteligência artificial fez, cada coisa no seu lugar.** As ausências são conteúdo («não há número público para isto»). A inteligência artificial diz-se numa linha de rodapé («Texto gerado por inteligência artificial, segundo o Método») e numa política no Método com a forma que o Institute for Government usa: a regra, a responsabilidade, a exceção, a promessa de divulgar a exceção, e a data («This policy was last updated in March 2026»). Não há em Portugal precedente a copiar (o único rótulo de IA encontrado é o da FFMS, sobre uma imagem): o vazio preenche-se com esta forma.
+4. **Um estudo abre com a leitura do projeto, antes do documento.** Três partes curtas, escritas pelo lugar de direção e aprovadas pelo diretor: «Em resumo» (o que o estudo pergunta e o que os documentos mostram, em palavras simples), «O que este projeto conclui» (o que se conclui dos documentos, incluindo como cada parte envolvida está a cumprir o que se comprometeu, o que correu bem e o que correu mal, e o que ninguém pode saber pelos documentos) e «O que podia funcionar melhor» (as sugestões, quando as houver). Lê-se em vez do documento por quem não o vai abrir. As regras que a tornam fiável: cada frase remete para uma secção do documento e só para os documentos do estudo; cada algarismo é uma linha do livro-razão do estudo; as conclusões dizem-se como leitura do projeto, à parte dos factos citados, e não adivinham motivos nem julgam valores; uma citação na abertura existe, palavra por palavra, no corpo, onde leva o documento e a página. A mesma abertura entra em tudo o que o projeto publica com a forma de estudo; os doze estudos anteriores recebem-na por lotes (decisão do diretor de 16.09.2026, à noite; §1.111).
 
 ---
 
