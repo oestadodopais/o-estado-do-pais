@@ -259,7 +259,17 @@ edicoes:
   # são os mesmos, e cada um é o `edicao_html_sha256` que o motor prova no
   # `records.manifest.json` do estudo, que é o que faz o D5 poder correr.
   #
-  # REFIXADO A 16.09.2026, e a razão é SUBSTANTIVA e não de ponteiro: a folha
+  # REFIXADO OUTRA VEZ A 16.09.2026, à noite, e a razão é SUBSTANTIVA: o estudo
+  # ganhou no motor a LEITURA DE ABERTURA do lugar de direção, três secções a
+  # seguir ao título («Em resumo», «O que este projeto conclui», «O que podia
+  # funcionar melhor»), por decisão do diretor da mesma noite (`DECISIONS.md`
+  # §1.111, norma §4.4), e com ela uma correção na linha das ausências dos
+  # contratos da associação. O texto mudou: os registos de conteúdo passam de
+  # 119 para 130 blocos e de 182 para 190 referências por edição, e os dois
+  # `.record.json` do motor têm resumos novos. O motor escreveu estes bytes em
+  # `d768bdea4c99e06c39eaf276af7ae0f3b4901a9b`.
+  #
+  # E REFIXADO ANTES NO MESMO DIA, e a razão foi outra: a folha
   # das duas edições não declarava papel nem tinta, e deixava a tela ao
   # navegador com `color-scheme: light dark`. A moldura deste projeto escolhe a
   # sua tinta pelo `data-theme` que o botão do sítio escreve, e o `color-scheme`
@@ -273,21 +283,21 @@ edicoes:
     lang: pt
     title: "Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas"
     origin: researchhub
-    origin_ref: "content/14 Évora 2027/Évora 2027 — O Prometido, o Painel, o Dinheiro (pt-PT).html @ b99e2254052c773d526281704ab7405ad2becfe6"
+    origin_ref: "content/14 Évora 2027/Évora 2027 — O Prometido, o Painel, o Dinheiro (pt-PT).html @ d768bdea4c99e06c39eaf276af7ae0f3b4901a9b"
     raw_file: _raw/evora-2027-prometido-painel-dinheiro.pt.html
-    fetched_utc: 2026-09-16T18:59:22Z
-    bytes_raw: 61558
-    bytes_normalized: 61558
-    sha256_raw: bdb3462474cc0e12c8d35f4d650d831a1d6b0646f91acf27e4dc17adda2e70f6
-    sha256_normalized: bdb3462474cc0e12c8d35f4d650d831a1d6b0646f91acf27e4dc17adda2e70f6
+    fetched_utc: 2026-09-17T08:32:46Z
+    bytes_raw: 66084
+    bytes_normalized: 66084
+    sha256_raw: 5e2f9a1cdd9bdddc49b1230aad858d0a00bb4df218cc1bb2d0cbba11d89f563d
+    sha256_normalized: 5e2f9a1cdd9bdddc49b1230aad858d0a00bb4df218cc1bb2d0cbba11d89f563d
   - slug: evora-2027-prometido-painel-dinheiro
     lang: en
     title: "Évora 2027: what was promised, what the panel wrote, and the money line by line"
     origin: researchhub
-    origin_ref: "content/14 Évora 2027/Évora 2027 — Promised, Panel, Money.html @ b99e2254052c773d526281704ab7405ad2becfe6"
+    origin_ref: "content/14 Évora 2027/Évora 2027 — Promised, Panel, Money.html @ d768bdea4c99e06c39eaf276af7ae0f3b4901a9b"
     raw_file: _raw/evora-2027-prometido-painel-dinheiro.en.html
-    fetched_utc: 2026-09-16T18:59:22Z
-    bytes_raw: 59780
-    bytes_normalized: 59780
-    sha256_raw: c34d7eaa1c23c873cabed432aab9abfcd80ed4feb57f1dfbcfd000dbf657180c
-    sha256_normalized: c34d7eaa1c23c873cabed432aab9abfcd80ed4feb57f1dfbcfd000dbf657180c
+    fetched_utc: 2026-09-17T08:32:46Z
+    bytes_raw: 64182
+    bytes_normalized: 64182
+    sha256_raw: 1381600d684f7133f70ad35586af53892d6b62760a106aea81e49619cce1ff27
+    sha256_normalized: 1381600d684f7133f70ad35586af53892d6b62760a106aea81e49619cce1ff27
