@@ -58,6 +58,14 @@ const ORIGENS_TRANSCRITAS = Object.fromEntries(
 );
 
 export const VERBATIM = {
+  'estudo-agua-abertura-pt': {
+    lang: 'pt', origem: 'studies-src/onde-esta-a-agua/pt.html:215, primeira frase de p.standfirst.',
+    text: 'A água de Portugal: onde está, de onde vem e o que a autonomia exigiria de facto.',
+  },
+  'estudo-agua-abertura-en': {
+    lang: 'en', origem: 'studies-src/onde-esta-a-agua/en.html:209, primeira frase de p.standfirst.',
+    text: "Portugal's water, where it is, where it comes from, and what autonomy would actually take.",
+  },
   /**
    * O IDENTIFICADOR DO DOCUMENTO DA COMISSÃO, TRANSCRITO (F1.1, 03.09.2026).
    *
