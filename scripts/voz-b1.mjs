@@ -61,7 +61,7 @@ export function verificaB1(raiz) {
         `· ${S[lang].marcador.definicao}`,
       ].map(normal));
       const tecnicos = new Set(['textoLinhaK', 'textoValorK', 'textoImpressoK', 'textoOrigemK', 'textoLinhaDoLivro', 'textoRegistoK'].map(k => S[lang].estudos[k]));
-      const verificados = '[data-registo-unidade], [data-registo-indice], [data-registo-posicao], [data-registo-linha], [data-claim], .src-chip, [data-prova], [data-verbatim]';
+      const verificados = '[data-rotulo-ia="topo"], [data-registo-unidade], [data-registo-indice], [data-registo-posicao], [data-registo-linha], [data-claim], .src-chip, [data-prova], [data-verbatim]';
       const dispensados = new Set(main.querySelectorAll(verificados));
       for (const el of main.querySelectorAll('[data-nonledger]')) {
         const motivo = el.getAttribute('data-nonledger');

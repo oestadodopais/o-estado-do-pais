@@ -4,6 +4,7 @@ import Base from '../layouts/Base.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import PecasDoEstudo from '../components/PecasDoEstudo.astro';
 import EdicaoPublicada from '../components/EdicaoPublicada.astro';
+import RotuloDeIA from '../components/RotuloDeIA.astro';
 import { workById } from '../data/studies.mjs';
 import { registoDaEdicao, manifestoDosRegistos } from '../lib/registos.mjs';
 import { pecasDoCorpo, linhasDoDocumento, titulosDoDocumento } from '../lib/registo-html.mjs';
@@ -88,6 +89,7 @@ const jsonld = {
 ---
 <Base lang={lang} path={path} title={`${jsonld.headline} · ${SITE_NAME}`}
   description={work.description[lang]} jsonld={jsonld} noindex={!leituraDe(work.id)}>
+  <RotuloDeIA lang={lang} path={path} onde="topo" />
   {registo ? (
     <div class="estudo-b1 texto-corpo" style={`--seccoes: ${seccoes}`} data-seccoes={seccoes}>
       <div id="documento" data-registo-edicao={chave}>

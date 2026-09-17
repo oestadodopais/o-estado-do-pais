@@ -5332,9 +5332,8 @@ a.marcador::after {
   border-top: 1px solid var(--rule);
   padding-top: 14px;
 }
-/* No topo de uma página de leitura o rótulo vem debaixo do antetítulo e antes
-   do título do documento: sem fio por cima, porque não separa nada, e com uma
-   goma que o descole do antetítulo. */
+/* No topo de cada página de estudo o rótulo vem antes do título, sem fio
+   por cima, com uma margem curta em relação ao cabeçalho. */
 .rotulo-ia-topo {
   margin-top: 10px;
 }
@@ -5390,6 +5389,36 @@ a.marcador::after {
     align-items: center;
     min-height: 44px;
   }
+}
+
+/* B1, achado 10: a divulgação no topo ocupa uma linha às larguras medidas.
+   O alvo de 44 px cresce sem separar a frase em caixas; o texto é o do rodapé.
+   Abaixo de 390 px conserva-se a quebra natural, sem reduzir o corpo de 12 px. */
+.rotulo-ia-topo .rotulo-ia-linha {
+  display: block;
+  min-height: 44px;
+  line-height: 44px;
+}
+.rotulo-ia-topo .rotulo-ia-linha a {
+  display: inline;
+  min-height: 0;
+  position: relative;
+}
+.rotulo-ia-topo .rotulo-ia-linha a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  min-width: 44px;
+  height: 44px;
+}
+@media (min-width: 390px) {
+  .rotulo-ia-topo .rotulo-ia-linha { white-space: nowrap; }
+}
+@media (max-width: 640px) {
+  .rotulo-ia-topo .rotulo-ia-linha { font-size: 12px; letter-spacing: 0; }
 }
 
 /* ------------------------------------------------------- a política, no Método
