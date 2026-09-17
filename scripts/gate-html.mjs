@@ -68,6 +68,7 @@ import { t } from '../src/i18n/strings.mjs';
 import { unidadeDaLinha } from '../src/i18n/unidades.mjs';
 import {
   loadClaims,
+  verificacoesDaLinha,
   digitsOf,
   parsePtNumber,
   motivoDaEntrada,
@@ -78,9 +79,11 @@ import {
   POR_VERIFICAR,
 } from '../src/lib/ledger.mjs';
 import { VERBATIM, normalizeWhitespace } from '../src/data/verbatim.mjs';
-import { FIGURAS_PDM, FIGURAS_SOCIAL } from '../src/data/figuras.mjs';
+import { FIGURAS, FIGURAS_PDM, FIGURAS_SOCIAL } from '../src/data/figuras.mjs';
 import { EDITIONS, workById, studyLabel } from '../src/data/studies.mjs';
 import { LEITURAS } from '../src/data/leituras.mjs';
+import { MEDIDAS_DO_DOMINIO_1 } from '../src/data/dominios.mjs';
+import { NOMES_DO_PROJETO } from '../src/data/nomes-das-medidas.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 /* A LISTA DA CARTA, PARA RECONTAR AS 29 UNIDADES E OS SEUS CONCELHOS (Emenda 20).
    O ponto de observação do portão não é o artefacto do mapa: é a lista de 308
@@ -300,9 +303,6 @@ const TOKENS_SEM_ALGARISMOS = TOKENS.filter((t) => !/\d/.test(t.token)).map(chav
  * atravessou, que é a coisa que a P1 fechou por resumo.
  */
 const DIR_DOS_REGISTOS = process.env.OEDP_REGISTOS_DIR ?? path.join(ROOT, 'registos');
-
-/** O separador de uma lista numa cadeia só. O portão tem a sua própria cópia. */
-const SEPARADOR_DO_REGISTO = ' · ';
 
 /** Os cinco motivos da lista fechada do motor (publisher/REGISTOS.md). */
 const MOTIVOS_DO_REGISTO = new Set([
@@ -590,29 +590,11 @@ let ocorrenciasRestantes = 0;
 let paginasDeTexto = 0;
 
 /**
- * ---------------------------------------------------------------------------
- * AS MARCAS DAS PÁGINAS DE LEITURA, CONTADAS NO `dist/` E MAIS NADA
- * ---------------------------------------------------------------------------
- *
- * SEIS das oito chaves `registos_*` contam-se aqui, sobre o que foi construído:
- * as páginas de leitura que existem, as marcas `data-registo-bloco`, as marcas
- * `data-registo`, os selos colados às figuras, e as saídas que nomeiam a linha
- * do motor de cada figura.
- *
- * **`registos_resolvidos` e `registos_por_resolver` passaram para aqui a
- * 24.08.2026** (ronda de correções 1), e a razão é uma coisa que mudou na
- * página: até então, as 42 figuras que estão dentro de uma ligação do documento
- * não tinham saída nenhuma (a porta estava só na entrada da linha), e o
- * `dist/` não sabia nomear a linha do motor que as resolve. Com a porta a ir
- * imediatamente depois da ligação, cada figura tem no `dist/` uma saída que
- * nomeia a sua linha, e as duas chaves deixaram a vista `registos` (uma segunda
- * leitura dos mesmos ficheiros) pela vista `dist` (o que foi construído).
- *
- * **Não é o passeio do `verificaTexto()`, e é de propósito.** Aquele percorre o
- * registo e vai buscar à página o que o registo diz que lá deve estar; este
- * conta o que a página TEM, sem perguntar ao registo. Se fossem o mesmo
- * passeio, um erro nele contava-se a si próprio, e a comparação com
- * `src/lib/prova.mjs` deixava de ser entre dois pontos de observação.
+ * As contagens independentes das páginas de estudo, lidas no HTML construído.
+ * Blocos, figuras e selos contam-se aqui; a linha do motor de cada figura vem
+ * de data-registo-row, que L4 e C5 comparam com o registo. A marca não dispensa
+ * o corpo nem promete um recibo. As duas contagens de resumos de origem
+ * continuam na vista registos, porque esses resumos não são texto do leitor.
  */
 const MARCAS_DO_TEXTO = { paginas: 0, blocos: 0, figuras: 0, selos: 0, portas: 0, portasSemLinha: 0 };
 
@@ -626,14 +608,10 @@ function contaAsMarcasDoTexto(root) {
      sempre ao lado de uma figura com linha do sítio (o L6 confere-o um a um);
      contá-los é contar essas figuras, sem lhes perguntar a linha. */
   MARCAS_DO_TEXTO.selos += artigo.querySelectorAll('a.src-chip').length;
-  /* As portas do corpo transcrito, as duas formas: a figura que é ela própria a
-     âncora, e a que vai a seguir a uma ligação do documento. Uma porta que abre
-     `#linha-` e mais nada é uma figura cuja linha do motor está vazia, e é o que
-     o `check:cadeia` nomeia no passo 2, contado aqui pelo lado da página. */
-  for (const porta of artigo.querySelectorAll('a[href^="#linha-"]')) {
-    const href = decodeEntities(porta.getAttribute('href') ?? '');
-    if (href === '#linha-') MARCAS_DO_TEXTO.portasSemLinha++;
-    else MARCAS_DO_TEXTO.portas++;
+  // B1: a linha é metadado conferido em L4; as portas sem recibo saíram.
+  for (const figura of artigo.querySelectorAll('[data-registo]')) {
+    if (figura.getAttribute('data-registo-row')) MARCAS_DO_TEXTO.portas++;
+    else MARCAS_DO_TEXTO.portasSemLinha++;
   }
 }
 
@@ -1664,6 +1642,19 @@ function irmaosColados(el) {
   return { irmaos, texto: null };
 }
 
+/** L6: o nome que o livro apresenta, refeito das declarações de origem.
+ * O título de um documento não substitui o nome de uma medida nesta secção.
+ */
+function nomeDoReciboB1(recibo, lang) {
+  if (!recibo) return null;
+  const declaracao = FIGURAS.find(f => f.claim === recibo.id)?.nome
+    ?? MEDIDAS_DO_DOMINIO_1.find(m => m.claim === recibo.id)?.nome
+    ?? NOMES_DO_PROJETO[recibo.id];
+  const nome = declaracao?.[lang] ?? declaracao?.pt;
+  const util = t => typeof t === 'string' && t.trim() !== '' && t !== POR_VERIFICAR;
+  return util(nome) ? nome : util(recibo.name) ? recibo.name : null;
+}
+
 function verificaTexto({ rota, root, err }) {
   const { slug } = rota.params;
   const lang = rota.lang;
@@ -2012,8 +2003,10 @@ function verificaTexto({ rota, root, err }) {
 
         /* --------------------------------------------------------- L6 ---
            O selo é do livro-razão e de mais nada. Uma figura com linha do
-           sítio leva o selo colado; uma sem linha leva a porta e nunca o selo.
+           sítio leva o selo colado; uma sem linha conserva a transcrição sem selo.
         */
+        if (rendida.el.getAttribute('data-registo-row') !== figura.row)
+          err(`L4 ${rendida.marca}: a linha marcada não é a linha da figura no registo.`);
         const siteId = linhaDoSitio(figura.row);
         if (!figurasPorLinha.has(figura.row)) {
           figurasPorLinha.set(figura.row, {
@@ -2032,13 +2025,12 @@ function verificaTexto({ rota, root, err }) {
         /* A SAÍDA DESTA FIGURA, E ONDE ELA TEM DE ESTAR.
            Fora de uma ligação do documento, colada à própria figura. Dentro de
            uma ligação, a seguir à ligação e na ordem das figuras: a k-ésima
-           saída colada à ligação é a da k-ésima figura que ela contém, selos e
-           portas intercalados. */
+           saída colada à ligação é a da k-ésima figura com linha do sítio. */
         const dentroDeLigacao = rendida.ligacao;
         let irmao = null;
         let textoColado = null;
         if (dentroDeLigacao) {
-          const k = (figurasDaLigacao.get(dentroDeLigacao) ?? []).indexOf(rendida);
+          const k = (figurasDaLigacao.get(dentroDeLigacao) ?? []).filter(r => linhaDoSitio(figurasDoRegisto[Number(r.marca.split('.').at(-1))]?.row)).indexOf(rendida);
           const { irmaos, texto } = irmaosColados(dentroDeLigacao);
           irmao = irmaos[k] ?? null;
           textoColado = irmao === null ? texto : null;
@@ -2073,44 +2065,9 @@ function verificaTexto({ rota, root, err }) {
                 `existe (IDENTIDADE.md §10).`,
             );
           }
-          const eAncora = String(rendida.el.rawTagName ?? '').toLowerCase() === 'a';
-          const destino = `#linha-${figura.row}`;
-          if (dentroDeLigacao) {
-            /* A PORTA VAI IMEDIATAMENTE DEPOIS DA LIGAÇÃO, e é a gémea da regra
-               do selo: uma âncora não aninha noutra, a ligação do documento
-               manda sobre o seu texto, e a IDENTIDADE.md §5.3 e §10 não abrem
-               exceção: onde aparece um valor, aparece a porta. */
-            if (!ePortaAposALigacao(irmao)) {
-              err(
-                `L6 ${rendida.marca}: a figura está dentro de uma ligação do documento e não tem ` +
-                  `a porta a seguir à ligação` +
-                  (textoColado !== null
-                    ? `: depois da ligação vem o nó de texto ${JSON.stringify(textoColado)}.`
-                    : '.') +
-                  ` Uma âncora não aninha noutra, e por isso a porta desta figura vai imediatamente ` +
-                  `depois da ligação, como o selo (IDENTIDADE.md §5.3 e §10).`,
-              );
-            } else {
-              portasCasadas.add(irmao);
-              const href = decodeEntities(irmao.getAttribute('href') ?? '');
-              if (href !== destino) {
-                err(
-                  `L6 ${rendida.marca}: a porta que vai a seguir à ligação abre "${href}" e a ` +
-                    `linha desta figura é "${figura.row}", cuja entrada é "${destino}".`,
-                );
-              }
-            }
-          } else if (eAncora) {
-            const href = decodeEntities(rendida.el.getAttribute('href') ?? '');
-            if (href !== destino) {
-              err(`L6 ${rendida.marca}: a porta da figura abre "${href}" e devia abrir "${destino}".`);
-            }
-          } else {
-            err(
-              `L6 ${rendida.marca}: a figura não tem linha no livro-razão e não tem porta nenhuma. ` +
-                `Sem selo e sem porta, o algarismo não tem para onde levar o leitor.`,
-            );
-          }
+          if (rendida.el.rawTagName !== 'span' || rendida.el.hasAttribute('href'))
+            err(`L6 ${rendida.marca}: figura sem recibo não pode prometer uma entrada nas fontes.`);
+
         }
       }
 
@@ -2127,82 +2084,51 @@ function verificaTexto({ rota, root, err }) {
     }
   }
 
-  /* ------------------------------------------------------------------ L6 ---
-     «Fontes e verificação»: uma entrada por linha citada, na ordem da
-     primeira citação, e cada campo igual ao que as figuras dessa linha dizem. */
+  /* L6: só recibos com os quatro campos que «Fontes e verificação» promete.
+     O livro é lido pelo portão; nenhum campo é tomado da vista Astro. */
   const seccao = root.querySelector('#linhas-do-documento');
-  if (!seccao) {
-    err(`L6 ${chave}: a página não tem a secção "Fontes e verificação" (id="linhas-do-documento").`);
+  if (root.querySelector('.texto-dobra [data-nonledger="identificador-tecnico"], .texto-dobra .texto-registo'))
+    err(`L6 ${chave}: identificadores técnicos não são recibos.`);
+  const esperadas = [...figurasPorLinha.values()].filter(linha => {
+    const recibo = claims.get(linha.siteId);
+    return nomeDoReciboB1(recibo, lang) && recibo.source && verificacoesDaLinha(recibo).length;
+  });
+  if (!esperadas.length) {
+    if (seccao || root.querySelector('#linhas-do-documento-dobra'))
+      err(`L6 ${chave}: sem recibos completos não pode haver secção de fontes.`);
+  } else if (!seccao) {
+    err(`L6 ${chave}: faltam os recibos em Fontes e verificação.`);
   } else {
     const rotulo = lang === 'pt' ? 'Fontes e verificação' : 'Sources and verification';
-    if (textoTranscrito(seccao.querySelector('h2')) !== rotulo) {
+    if (textoTranscrito(seccao.querySelector('h2')) !== rotulo)
       err(`L6 ${chave}: a secção de fontes não tem o rótulo ${rotulo}.`);
-    }
-    const entradas = seccao.querySelectorAll('[id^="linha-"]');
-    const esperadas = [...figurasPorLinha.values()];
-    if (entradas.length !== esperadas.length) {
-      err(
-        `L6 ${chave}: "Fontes e verificação" tem ${entradas.length} entradas e o documento ` +
-          `cita ${esperadas.length} linhas do motor.`,
-      );
-    }
-    const porId = new Map();
-    for (const e of entradas) porId.set(decodeEntities(e.getAttribute('id') ?? ''), e);
+    const entradas = seccao.querySelectorAll('li.texto-linha');
+    if (entradas.length !== esperadas.length)
+      err(`L6 ${chave}: fontes com ${entradas.length} entradas, esperadas ${esperadas.length} com recibo.`);
     esperadas.forEach((linha, i) => {
-      const entradaNaPagina = porId.get(`linha-${linha.row}`);
-      if (!entradaNaPagina) {
-        err(`L6 ${chave}: a linha do motor "${linha.row}" é citada e não tem entrada em "Fontes e verificação".`);
+      const entrada = entradas[i];
+      if (!entrada || entrada.getAttribute('id') !== `linha-${linha.row}`) {
+        err(`L6 ${chave}: falta o recibo na ordem da primeira citação de ${linha.row}.`);
         return;
       }
-      if (entradas[i] !== entradaNaPagina) {
-        err(
-          `L6 ${chave}: a entrada da linha "${linha.row}" está na posição ${entradas.indexOf(entradaNaPagina)} ` +
-            `e a primeira citação desta linha é a ${i}. A ordem é a da primeira citação.`,
-        );
-      }
-      const campos = {
-        valor: linha.valor,
-        impresso: linha.impressos.join(SEPARADOR_DO_REGISTO),
-        origem: linha.origem,
-      };
+      const recibo = claims.get(linha.siteId);
+      const data = verificacoesDaLinha(recibo)[0].date;
+      const campos = { impresso: recibo.value, medida: nomeDoReciboB1(recibo, lang), fonte: recibo.source, verificacao: dataDaCasaGate(data) };
+      if (entrada.querySelectorAll('[data-registo-linha]').length !== Object.keys(campos).length || entrada.querySelector('code') || entrada.querySelectorAll('dd').length !== 4 || entrada.querySelectorAll('dt').length !== 4)
+        err(`L6 ${chave}: o recibo deve mostrar só os quatro campos, sem identificadores nem valores repetidos.`);
       for (const [campo, esperado] of Object.entries(campos)) {
-        const marca = `${chave}@${linha.row}.${campo}`;
-        const el = entradaNaPagina.querySelector(`[data-registo-linha="${marca}"]`);
-        if (!el) {
-          err(`L6 ${chave}: a entrada da linha "${linha.row}" não tem o campo data-registo-linha="${marca}".`);
-          continue;
-        }
-        const rendido = textoTranscrito(el);
-        if (rendido !== String(esperado)) {
-          err(
-            `L6 ${marca}: o campo rendido não é o do registo.\n` +
-              `      no registo:  ${JSON.stringify(esperado).slice(0, 150)}\n` +
-              `      renderizado: ${JSON.stringify(rendido).slice(0, 150)}`,
-          );
-        }
-        if (campo === 'origem') {
-          const eResumo = /^[0-9a-f]{64}$/.test(String(esperado));
-          if (!eResumo && !MOTIVOS_DO_REGISTO.has(String(esperado))) {
-            err(
-              `L6 ${marca}: o resumo de origem não é 64 hexadecimais nem um dos cinco motivos da ` +
-                `lista fechada do motor: "${esperado}".`,
-            );
-          }
-        }
+        const el = entrada.querySelector(`[data-registo-linha="${chave}@${linha.row}.${campo}"]`);
+        if (!el || textoTranscrito(el) !== String(esperado).replace(/\s+/g, ' ').trim())
+          err(`L6 ${chave}@${linha.row}.${campo}: campo rendido difere do livro-razão.`);
+        if (campo === 'verificacao' && el?.getAttribute('datetime') !== data)
+          err(`L6 ${chave}: data de verificação difere do recibo.`);
       }
-      if (linha.siteId) {
-        const portas = LANGS.map((l) => routePath('linha', l, { slug: linha.siteId }));
-        const abre = (entradaNaPagina.querySelectorAll('a[href]') ?? []).some((a) =>
-          portas.includes(decodeEntities(a.getAttribute('href') ?? '')),
-        );
-        if (!abre) {
-          err(
-            `L6 ${chave}: a linha "${linha.row}" também tem linha no livro-razão ("${linha.siteId}") ` +
-              `e a sua entrada não abre essa porta.`,
-          );
-        }
-      }
+      const selos = entrada.querySelectorAll('a.src-chip');
+      if (selos.length !== 1 || selos[0].getAttribute('href') !== routePath('linha', lang, { slug: linha.siteId }))
+        err(`L6 ${chave}: o recibo não abre a sua linha do livro-razão.`);
     });
+    if (/pdf-sem-resumo|raw-sem-manifesto/.test(textoTranscrito(seccao)))
+      err(`L6 ${chave}: marcador técnico não é fonte nem verificação.`);
   }
 
   /* ------------------------------------------------------------------ L8 ---
@@ -3715,11 +3641,9 @@ function contasDoPortao(claims) {
     conta('registos_edicoes', MARCAS_DO_TEXTO.paginas, 'dist'),
     conta('registos_blocos', MARCAS_DO_TEXTO.blocos, 'dist'),
     conta('registos_algarismos', MARCAS_DO_TEXTO.figuras, 'dist'),
-    /* Uma figura resolvida é uma figura com uma saída que nomeia a sua linha do
-       motor: o selo, que só existe onde há linha do sítio e, com ela, linha do
-       motor; ou a porta, que abre a entrada dessa linha. Uma porta que abre
-       `#linha-` e mais nada é a figura cuja linha do motor está vazia. */
-    conta('registos_resolvidos', MARCAS_DO_TEXTO.selos + MARCAS_DO_TEXTO.portas, 'dist'),
+    /* A linha do motor marcada no HTML é conferida contra a figura em L4.
+       O nome portas neste acumulador é histórico; conta agora estas marcas. */
+    conta('registos_resolvidos', MARCAS_DO_TEXTO.portas, 'dist'),
     conta('registos_por_resolver', MARCAS_DO_TEXTO.portasSemLinha, 'dist'),
     conta('registos_com_linha_do_sitio', MARCAS_DO_TEXTO.selos, 'dist'),
     conta('registos_com_resumo_de_origem', dosRegistos.com_resumo, 'registos'),

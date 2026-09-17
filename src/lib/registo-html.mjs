@@ -326,40 +326,6 @@ function acumulador() {
 }
 
 /**
- * A PORTA DE UMA FIGURA QUE ESTÁ DENTRO DE UMA LIGAÇÃO DO DOCUMENTO.
- *
- * Vai imediatamente depois da ligação, uma por figura sem linha do sítio, na
- * ordem das figuras. É a gémea da regra do selo, e existe pela mesma razão: uma
- * âncora não aninha noutra, a ligação do documento manda sobre o seu texto, e a
- * `IDENTIDADE.md` §5.3 e §10 não abrem exceção: onde aparece um valor, aparece
- * a porta. A forma direta (a própria figura ser a âncora) continua a valer fora
- * de ligações, que é onde ela é possível.
- *
- * **SEM NÓ DE TEXTO LÁ DENTRO**, e é o que a torna invisível à comparação da
- * unidade: a leitura do olho não junta nada de um elemento de linha vazio (o
- * intervalo só se grava quando `pedacos.length` cresce), e por isso o texto da
- * unidade continua a ser, carácter a carácter, o do registo. O glifo é da folha
- * (`::after`), o nome acessível é o `aria-label`, e nenhum dos dois é texto do
- * documento.
- *
- * **O NOME ACESSÍVEL NÃO LEVA A CHAVE DA LINHA** (I83, 28.08.2026). Levou-a até
- * hoje, a seguir ao rótulo: `aria-label="linha do motor: tc-year-1-2008"`. Quem
- * ouve a página ouvia o identificador de um artefacto do motor, e um rótulo de
- * acessibilidade existe para dizer o que a porta abre. A chave continua no
- * `href`, que é onde ela é um endereço; o rótulo diz de que figura é a linha, e
- * é isso que separa duas portas seguidas dentro da mesma ligação.
- *
- * @param {string} row
- * @param {ContextoDoRegisto} ctx
- */
-function portaAposALigacao(row, ctx) {
-  return (
-    `<a class="texto-figura-porta-apos" href="#linha-${escapaAtributo(row)}" ` +
-    `aria-label="${escapaAtributo(ctx.rotuloDaPorta)}"></a>`
-  );
-}
-
-/**
  * A ligação aberta, quando `dentroDeLigacao` diz que há uma.
  *
  * Os dois campos movem-se sempre juntos em `escreveNo` (`dentroDeLigacao++` e
@@ -389,24 +355,8 @@ function abreIntervalo(no, saida, ctx) {
     saida.html(`<${tag}>`);
     return;
   }
-  /* Uma figura. */
-  const siteId = ctx.linhaDoSitio(no.figura.row);
-  const marca = ` data-registo="${escapaAtributo(no.marca)}"`;
-  if (siteId) {
-    saida.html(`<span class="texto-figura"${marca}>`);
-    return;
-  }
-  /* Sem linha do sítio: a porta para a sua entrada em «As linhas deste
-     documento». Dentro de uma ligação do documento não pode haver uma segunda
-     âncora aninhada, e por isso a porta vai IMEDIATAMENTE DEPOIS da ligação,
-     que é a mesma saída que o selo já usa (`fechaIntervalo`). */
-  if (ctx.dentroDeLigacao > 0) {
-    saida.html(`<span class="texto-figura"${marca}>`);
-    return;
-  }
-  saida.html(
-    `<a class="texto-figura texto-figura-porta" href="#linha-${escapaAtributo(no.figura.row)}"${marca}>`,
-  );
+  // A marca conserva a linha do motor sem prometer um recibo que não existe.
+  saida.html(`<span class="texto-figura" data-registo="${escapaAtributo(no.marca)}" data-registo-row="${escapaAtributo(no.figura.row)}">`);
 }
 
 /**
@@ -417,17 +367,9 @@ function abreIntervalo(no, saida, ctx) {
 function fechaIntervalo(no, saida, ctx) {
   if (no.tipo === 'ligacao') {
     saida.html('</a>');
-    /* AS SAÍDAS DAS FIGURAS QUE ESTA LIGAÇÃO CONTÉM, NA ORDEM DAS FIGURAS.
-       Uma por figura, selos e portas intercalados, sem um nó de texto pelo
-       meio: é o que as conferências L6 e C6 percorrem para saber qual saída é
-       de qual figura. */
+    // Só as figuras com linha do sítio deixam um selo depois da ligação.
     for (const saidaPendente of no.saidasPendentes ?? []) {
-      /* `'selo' in x` e não `x.selo !== undefined`: o tipo diz que uma saída é
-         um selo OU uma porta, e a pergunta é a que separa os dois (leitura a
-         frio, Major 15). Para os objetos que este módulo constrói, com uma
-         chave só, as duas perguntas dão sempre a mesma resposta. */
       if ('selo' in saidaPendente) saida.selo(saidaPendente.selo);
-      else saida.html(portaAposALigacao(saidaPendente.porta, ctx));
     }
     return;
   }
@@ -446,14 +388,7 @@ function fechaIntervalo(no, saida, ctx) {
     else saida.selo(siteId);
     return;
   }
-  if (ctx.dentroDeLigacao > 0) {
-    saida.html('</span>');
-    /* A porta, pela mesma regra do selo: uma âncora não aninha noutra, e a
-       saída vai imediatamente depois da ligação. */
-    (aberta(ctx).saidasPendentes ??= []).push({ porta: no.figura.row });
-    return;
-  }
-  saida.html('</a>');
+  saida.html('</span>');
 }
 
 /**

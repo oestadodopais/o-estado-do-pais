@@ -750,18 +750,18 @@ portão reconta do registo em disco.*
 | navegacao | What each door opens: “Read on the site”, the text composed here; “Read the document”, the edition as it was published. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | navegacao | How to read | lugar | viva | — |
 | conteudo | O documento original | até 2026-08-26 | retirada | o item 8.6 do F1.10 (09.09.2026): as edições de um estudo passam a apresentar-se «de uma só forma em todos os estudos», e o bloco «O documento original» era a primeira das duas apresentações das mesmas portas. A forma que fica é a lista das edições (`EdicoesDoEstudo.astro`), e as portas vivem lá dentro |
-| conteudo | O registo de conteúdo | até 2026-08-26 | viva | — |
-| conteudo | The content record | até 2026-08-26 | viva | — |
+| conteudo | O registo de conteúdo | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
+| conteudo | The content record | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
 | conteudo | The original document | até 2026-08-26 | retirada | o item 8.6 do F1.10 (09.09.2026): as edições de um estudo passam a apresentar-se «de uma só forma em todos os estudos», e o bloco «O documento original» era a primeira das duas apresentações das mesmas portas. A forma que fica é a lista das edições (`EdicoesDoEstudo.astro`), e as portas vivem lá dentro |
 | conteudo | The rows of this document | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
-| conteudo | as this document prints it | até 2026-08-26 | viva | — |
-| conteudo | como este documento o imprime | até 2026-08-26 | viva | — |
-| conteudo | engine row | até 2026-08-26 | viva | — |
-| conteudo | linha do motor | até 2026-08-26 | viva | — |
-| conteudo | o valor como a linha o guarda | até 2026-08-26 | viva | — |
-| conteudo | resumo de origem | até 2026-08-26 | viva | — |
-| conteudo | source digest | até 2026-08-26 | viva | — |
-| conteudo | the value as the row keeps it | até 2026-08-26 | viva | — |
+| conteudo | as this document prints it | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
+| conteudo | como este documento o imprime | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
+| conteudo | engine row | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
+| conteudo | linha do motor | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
+| conteudo | o valor como a linha o guarda | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
+| conteudo | resumo de origem | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
+| conteudo | source digest | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
+| conteudo | the value as the row keeps it | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
 
 ## A reclassificação de 21.08.2026 (direção): **limite dos dados**
 
@@ -1404,8 +1404,8 @@ origem declarada. Nenhuma cadeia do inventário muda com ela.*
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| navegacao | a linha desta figura | pequenas-3 | viva | — |
-| navegacao | this figure’s row | pequenas-3 | viva | — |
+| navegacao | a linha desta figura | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
+| navegacao | this figure’s row | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
 
 ## Bloco «app» · o sítio no ecrã principal · 28.08.2026
 
@@ -3031,3 +3031,9 @@ compõe-o do registo do motor, e a régua tira da superfície a região `data-re
 | navegacao | Read on the site | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026 |
 | navegacao | Ler o documento | B1-peca1 | retirada | segunda porta; B1, 17.09.2026 |
 | navegacao | Read the document | B1-peca1 | retirada | segunda porta; B1, 17.09.2026 |
+| conteudo | Medida | B1-peca1 | viva | correção do achado 7: campo do recibo publicado, conferido por L6 no livro-razão |
+| conteudo | Fonte | B1-peca1 | viva | correção do achado 7: campo do recibo publicado, conferido por L6 no livro-razão |
+| conteudo | Verificado a | B1-peca1 | viva | correção do achado 7: campo do recibo publicado, conferido por L6 no livro-razão |
+| conteudo | Measure | B1-peca1 | viva | correção do achado 7: campo do recibo publicado, conferido por L6 no livro-razão |
+| conteudo | Source | B1-peca1 | viva | correção do achado 7: campo do recibo publicado, conferido por L6 no livro-razão |
+| conteudo | Verified on | B1-peca1 | viva | correção do achado 7: campo do recibo publicado, conferido por L6 no livro-razão |

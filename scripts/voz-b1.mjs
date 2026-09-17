@@ -58,6 +58,7 @@ export function verificaB1(raiz) {
         ...dados.flatMap(w => [w.description[lang], ...w.editions.map(e => e.title),
           ...primeirasFrases(leituraDe(w.id)?.frase[lang] ?? []).filter(p => typeof p === 'string')]),
         S[lang].estudos.textoSubir, `${S[lang].estudos.textoSubir} ↑`, `${ROTULOS_B1[lang].fontes} →`, '→', '↑', '·',
+        `· ${S[lang].marcador.definicao}`,
       ].map(normal));
       const tecnicos = new Set(['textoLinhaK', 'textoValorK', 'textoImpressoK', 'textoOrigemK', 'textoLinhaDoLivro', 'textoRegistoK'].map(k => S[lang].estudos[k]));
       const verificados = '[data-registo-unidade], [data-registo-indice], [data-registo-posicao], [data-registo-linha], [data-claim], .src-chip, [data-prova], [data-verbatim]';

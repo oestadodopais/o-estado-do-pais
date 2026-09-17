@@ -291,3 +291,7 @@ As cadeias que saíram da superfície estão enumeradas abaixo. A retirada da se
 | estudo | Read the document | segunda porta |
 
 As duas declarações isoladas «[a verificar]» e a sua definição portuguesa saem do inventário, em vez de serem proibidas globalmente: as mesmas cadeias ainda pertencem a formulações maiores legítimas. Saem as ocorrências das capas; o marcador continua nos dados incompletos. A lista fechada B1 impede que a descrição por preencher volte. Nenhuma célula foi relaxada para este caso.
+
+Na passagem de correção B1, achado 7, entram os nomes dos campos «Medida», «Fonte» e «Verificado a» e os ingleses. Saem as doze cadeias do aparato técnico e das portas sem recibo, identificadas no inventário. A secção passa a depender de um recibo com valor, nome da medida, fonte e data da verificação, conferidos por L6 contra o livro-razão. A revisão pelo lugar de direção continua pendente.
+
+Os nomes dos recibos seguem os nomes que o livro-razão já apresenta: figuras, medidas do domínio e nomes aprovados do projeto, antes do rótulo da fonte. A L6 refaz essa escolha a partir das declarações de origem. O campo `name` não é a única origem de um nome existente; nenhum nome foi criado nesta correção.
