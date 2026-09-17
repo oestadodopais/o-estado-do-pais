@@ -1,0 +1,7 @@
+---
+import Provenance from './Provenance.astro';
+const { pecas, lang } = Astro.props;
+---
+{pecas.map(p => p.selo !== undefined
+  ? <Provenance id={p.selo} lang={lang} definicao={false} />
+  : <Fragment set:html={p.html} />)}

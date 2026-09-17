@@ -1,302 +1,41 @@
 ---
-/**
- * O arquivo. UMA LINHA POR TRABALHO, com as suas edições como portas dentro da
- * linha (correções de UX, bloco B, item B1; achado C9 da auditoria de 25.08).
- *
- * ATÉ 25.08.2026 ERA UMA LINHA POR EDIÇÃO, e o leitor de outra família contou o
- * que isso lhe fazia: a página dizia «12 trabalhos · 16 edições» e mostrava 16
- * linhas, quatro delas pares PT/EN com o mesmo destino e a mesma descrição, sem
- * nada que dissesse que eram o mesmo trabalho. Passa a haver uma linha por
- * trabalho: o título, a descrição, o estado, a data, e as edições como badges
- * que são portas para a página do trabalho na sua língua.
- *
- * O RÓTULO DA DESCRIÇÃO SAIU. «Descrição: reformulação do título» e os dois
- * irmãos («frase de abertura do documento», «tradução da casa …») eram o sítio a
- * descrever a sua própria descrição, que é o que a Emenda 18(e) tira da página
- * do leitor. A `data-verbatim` não precisa dele para nada: o que ela exige é
- * igualdade carácter a carácter com o registo das citações, e essa amarra
- * continua inteira.
- *
- * Títulos: literais. Datas: as do arquivo, e nenhuma está confirmada. O aviso
- * no topo di-lo por palavras.
- */
 import Base from '../layouts/Base.astro';
-import Claim from '../components/Claim.astro';
-import Marcador from '../components/Marcador.astro';
+import Frase from '../components/Frase.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
-import { WORKS, POR_VERIFICAR } from '../data/studies.mjs';
-import { leituraDe } from '../data/leituras.mjs';
-import { documentosDoEstudo } from '../lib/documentos.mjs';
-import { temRegisto } from '../lib/registos.mjs';
-import { routePath } from '../lib/routes.mjs';
+import { WORKS, SUBJECTS } from '../data/studies.mjs';
+import { estudosDoPais, portaDoLugar } from '../lib/estudos-b1.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
-import { dataDaEdicaoNoRepositorio } from '../lib/datas-do-repositorio.mjs';
-import { t } from '../i18n/strings.mjs';
-
+import { routePath } from '../lib/routes.mjs';
+import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
+import '../styles/estudos-b1.css';
 const { lang = 'pt' } = Astro.props;
-const s = t(lang);
+const r = ROTULOS_B1[lang];
 const path = routePath('estudos', lang);
-
-/**
- * UM TRABALHO, COMO A LINHA O MOSTRA.
- *
- * O título é o da edição desta língua quando ela existe, e o da primeira edição
- * quando não existe: um título literal não se traduz, e a página não inventa
- * um para uma língua em que o trabalho não foi publicado.
- *
- * A DATA DIZ-SE UMA VEZ QUANDO É UMA SÓ. Se as edições de um trabalho declaram
- * a mesma data (e «nenhuma» é uma data igual às outras), a linha di-la uma vez;
- * se declaram datas diferentes, cada edição leva a sua ao lado do seu badge,
- * porque juntar duas datas numa era escrever uma que o arquivo não guarda.
- *
- * O ESTADO É O MESMO QUE A PÁGINA DO TRABALHO DIZ, lido da mesma maneira: sem
- * leitura escrita e sem documento alojado é rascunho; com documento e sem
- * leitura é «documento alojado, página por escrever»; com leitura não há estado
- * nenhum, porque o trabalho está à vista.
- */
-const trabalhos = WORKS.map((w) => {
-  const principal = w.editions.find((e) => e.lang === lang) ?? w.editions[0];
-  /* A DATA DE UMA EDIÇÃO É A DO REPOSITÓRIO (decisão de 04.09.2026). O campo
-     `date` de `src/data/studies.mjs` fica onde está e deixa de chegar à
-     superfície: o arquivo escreve, no seu cabeçalho, que nenhuma data de
-     publicação está confirmada, e treze das dezasseis edições levam `null`. O
-     que a casa pode provar é o dia em que o ficheiro da edição entrou neste
-     repositório, e é isso que a página diz, com a origem dita. */
-  const datas = [...new Set(w.editions.map((e) => dataDaEdicaoNoRepositorio(w.slug, e.lang)))];
-  const documentos = documentosDoEstudo(w.slug);
-  const migrado = documentos.length > 0;
-  const leitura = leituraDe(w.id);
-  /**
-   * A PORTA DA LEITURA, PARA QUE A PÁGINA DE CAPA DEIXE DE SER PARAGEM
-   * OBRIGATÓRIA (bloco F1.10, §7.4, 09.09.2026).
-   *
-   * Até aqui, chegar ao texto de um estudo a partir desta lista custava sempre
-   * dois toques: o título abria a página do estudo, e era lá dentro que estavam
-   * as portas. O §7.4 manda que «o título da lista vai direto ao texto; a página
-   * de capa deixa de existir como paragem obrigatória».
-   *
-   * O TÍTULO ABRE O TEXTO, desde 09.09.2026 (Major 8 da leitura a frio, e a
-   * decisão do lugar de direção que o fecha). Até aqui o título abria a página
-   * do estudo e a leitura tinha uma porta ao lado: o leitor que fizesse o gesto
-   * natural — tocar no título — continuava a parar na capa, que é precisamente
-   * o que o §7.4 mandou acabar. Agora o título é a porta da leitura, e a porta
-   * separada sai: duas portas para o mesmo destino na mesma linha eram o defeito
-   * que a L1 conta.
-   *
-   * A PÁGINA DO ESTUDO NÃO DESAPARECE, e passa a ser o que sempre devia ter
-   * sido: uma página secundária, com a leitura da casa, os seus valores selados
-   * e o concelho de que trata, alcançável a partir do texto (a porta
-   * `s.estudos.documentoVoltar` no fim de `TextoView.astro`).
-   *
-   * ONDE NÃO HÁ TEXTO NO SÍTIO, o título abre a página do estudo, que é a coisa
-   * mais completa que existe: oito dos doze estudos não têm página de leitura, e
-   * mandar o título para um PDF seria trocar uma paragem por uma saída.
-   *
-   * A ESCOLHA DA PORTA É A MESMA REGRA DE `EdicoesDoEstudo.astro`, para que o
-   * leitor aprenda uma ordem e não duas: primeiro a leitura composta neste
-   * sítio, depois o documento tal como foi publicado; e primeiro a edição desta
-   * língua, depois a outra, porque um estudo publicado só em inglês não tem
-   * edição portuguesa nenhuma para abrir.
-   */
-  const ordemDasLinguas = [
-    principal.lang,
-    ...w.editions.map((e) => e.lang).filter((l) => l !== principal.lang),
-  ];
-  let porta = null;
-  for (const l of ordemDasLinguas) {
-    if (temRegisto(w.slug, l)) {
-      porta = {
-        href: routePath('texto', l, { slug: w.slug }),
-        rotulo: s.estudos.textoLink,
-        lang: l,
-        ehTexto: true,
-      };
-      break;
-    }
-  }
-  if (!porta) {
-    porta = {
-      href: routePath('estudo', lang, { slug: w.slug }),
-      rotulo: null,
-      lang,
-      ehTexto: false,
-    };
-  }
-  return {
-    work: w,
-    titulo: principal.title,
-    descricao: w.description[lang],
-    verbatim: w.verbatimDaAbertura?.[lang] ?? null,
-    edicoes: w.editions.map((e) => ({
-      lang: e.lang,
-      date: dataDaEdicaoNoRepositorio(w.slug, e.lang),
-      pagina: routePath('estudo', e.lang, { slug: w.slug }),
-    })),
-    porta,
-    dataUnica: datas.length === 1 ? datas[0] : null,
-    umaSoData: datas.length === 1,
-    estado: leitura ? null : migrado ? s.estudos.migradoEstado : s.estudos.stubEstado,
-  };
-});
-
-/**
- * A CAIXA DAS DATAS POR CONFIRMAR CONTA (bloco F1.4b, 04.09.2026).
- *
- * Estava sempre lá, e a 04.09 esteve por cima de doze linhas que mostravam
- * todas uma data: uma ressalva que não é verdade sobre nada do que está por
- * baixo dela é ruído, e neste caso era ruído a tapar um defeito. Passa a
- * render-se SÓ quando alguma edição não tem data, e a dizer quantas são. A
- * contagem sai do mesmo ficheiro que as datas, e é conferida contra ele por
- * `scripts/check-datas.mjs`.
- */
-const edicoesSemData = trabalhos.reduce(
-  (n, tr) => n + tr.edicoes.filter((e) => e.date === null).length,
-  0,
-);
+const trabalhos = estudosDoPais(lang);
+const lugares = Object.keys(SUBJECTS).filter(lugar => WORKS.some(w => w.subject === lugar));
 ---
-
-<Base lang={lang} path={path} title={s.estudos.metaTitle} description={s.estudos.metaDescription}>
-  <div style="padding-top:clamp(20px,3vw,34px)">
-    <h1>{s.estudos.h1}</h1>
-    <p class="lede" style="margin-top:16px">{s.estudos.lede}</p>
-
-    {/* As contagens do arquivo. Estavam na mobília do cabeçalho de todas as
-        páginas, onde se liam como cobertura do país; passaram para aqui, que é
-        a página que elas contam (DECISIONS §1.39). Cada uma continua a ser um
-        valor do livro-razão, com o selo que abre a sua linha. */}
-    <p class="estudos-contagens">
-      <span>
-        <Claim id="estudos-publicados" lang={lang} chip={true} /> {s.rodape.estudos}
-      </span>
-      <span>
-        <Claim id="edicoes-publicadas" lang={lang} chip={true} /> {s.rodape.edicoes}
-      </span>
-    </p>
-  </div>
-
-  <div style="margin-top:clamp(30px,4vw,44px)">
-    {
-      edicoesSemData > 0 && (
-        <p class="aviso-editorial">
-          <span data-voz>{s.estudos.avisoA}</span>{' '}
-          <span data-nonledger="data-do-repositorio">{edicoesSemData}</span>{' '}
-          <span data-voz>
-            {edicoesSemData === 1 ? s.estudos.avisoUma : s.estudos.avisoVarias}
-          </span>
+<Base lang={lang} path={path} title={r.estudos} description={r.estudos}>
+  <h1 class="estudos-titulo">{r.estudos}</h1>
+  <div class="estudos-lista">
+    {trabalhos.map(e => (
+      <article class="arquivo-item estudo-item" data-estudo={e.work.slug} data-estudo-edicao={`${e.work.slug}/${e.edicao.lang}`}>
+        <h2 class="arquivo-titulo estudo-item-titulo">
+          <a class="arquivo-porta" href={e.rota}><TituloDeTrabalho titulo={e.edicao.title} lang={lang} /></a>
+          {lang === 'pt' && e.edicao.lang === 'en' && <span class="estudo-em-ingles"> {r.emIngles}</span>}
+        </h2>
+        <p class="estudo-meta"><span>{e.lugar}</span><span>{e.tema}</span>
+          <time datetime={e.data} data-nonledger="data-do-repositorio">{dataDaCasa(e.data)}</time>
         </p>
-      )
-    }
-
-    {/* A PORTA QUE DEVOLVE A LISTA INTEIRA (F1.10, §1 e 8.10, 09.09.2026).
-        Chega escondida do servidor e é o guião que a acende, quando o endereço
-        traz `?concelho=` e alguma entrada casa. Sem guião não há filtro e a porta
-        não faz falta; com ele, é a única coisa que diz que a lista está cortada,
-        e di-lo com o nome desta página em vez de uma frase nova. */}
-    <p class="arquivo-todos" data-arquivo-todos hidden>
-      <a href={path}>{s.estudos.h1} →</a>
-    </p>
-
-    {/* O QUE O FILTRO FAZ SEM GUIÃO (Major 7 da leitura a frio, 09.09.2026). A
-        porta filtrada da página do concelho traz `?concelho=<slug>` e é o guião
-        que esconde as linhas que não casam: sem ele a página mostra todos os
-        estudos, e o leitor não tinha como saber que a porta prometia um recorte
-        que não chegou. Uma linha, dentro de um `<noscript>`, que é o único sítio
-        onde ela é verdade. */}
-    <noscript>
-      <p class="arquivo-sem-guiao">{s.estudos.filtroSemGuiao}</p>
-    </noscript>
-
-    {/* O OBJETO DE UM ESTUDO, DECLARADO EM CADA ENTRADA (F1.10, §1): é o
-        `subject` do registo dos trabalhos, que é o slug de um concelho quando o
-        trabalho é sobre um. É por ele que o filtro do endereço escolhe, e não por
-        uma segunda lista escrita à mão. */}
-    <div class="arquivo" data-arquivo>
-      {
-        trabalhos.map((tr) => (
-          <article class="arquivo-item" data-concelho={tr.work.subject ?? undefined}>
-            <div>
-              {/* A ÚNICA PORTA DA LINHA (Major 8, 09.09.2026): o título abre o
-                  texto onde ele existe, e a página do estudo onde não existe.
-                  `hreflang` diz em que língua está o que se abre, que nem sempre
-                  é a da edição. */}
-              <h2 class="arquivo-titulo">
-                <a
-                  class="arquivo-porta"
-                  href={tr.porta.href}
-                  hreflang={tr.porta.lang === 'pt' ? 'pt-PT' : 'en'}
-                >
-                  <TituloDeTrabalho titulo={tr.titulo} lang={lang} />
-                </a>
-              </h2>
-              <p class="arquivo-desc">
-                {tr.descricao === POR_VERIFICAR ? (
-                  <Marcador lang={lang} />
-                ) : tr.verbatim ? (
-                  <span data-verbatim={tr.verbatim}>{tr.descricao}</span>
-                ) : (
-                  tr.descricao
-                )}
-              </p>
-              {tr.estado && <p class="arquivo-estado">{tr.estado}</p>}
-            </div>
-            <div class="arquivo-meta">
-              {/* AS EDIÇÕES SÃO PORTAS, e não linhas repetidas: cada badge abre
-                  a página do trabalho na sua língua, que é a superfície que
-                  essa edição tem. */}
-              <span class="arquivo-edicoes">
-                {tr.edicoes.map((e) => (
-                  <a
-                    class="badge badge-porta"
-                    href={e.pagina}
-                    hreflang={e.lang === 'pt' ? 'pt-PT' : 'en'}
-                  >
-                    {e.lang.toUpperCase()}
-                    {/* O MARCADOR NÃO SE ESCREVE À MÃO (bloco F1.4, item 6).
-                        Escrevia-se aqui a cadeia `POR_VERIFICAR` sozinha: o
-                        mesmo texto do único marcador do sítio, sem a classe e
-                        sem a porta da página que o explica. Um marcador com dois
-                        aspetos é o leitor a aprender a marca duas vezes. Dentro
-                        do badge, que já é uma âncora, uma segunda âncora não é
-                        HTML (Emenda 2), e por isso este ramo mostra a data
-                        quando ela existe e não se desenha quando não existe: a
-                        linha do trabalho leva o seu marcador UMA VEZ, na fila da
-                        data, e é lá que ele tem a porta.
-                        Hoje este ramo não se rende nunca: os doze trabalhos ou
-                        têm uma data só ou não têm nenhuma, e `umaSoData` é
-                        verdade nos doze. Fica para o dia em que duas edições do
-                        mesmo trabalho tiverem datas diferentes.
-                        A DATA VAI NA FORMA DA CASA (dd.mm.aaaa, §1.91). */}
-                    {!tr.umaSoData && e.date && (
-                      <span class="arquivo-edicao-data" data-nonledger="data-do-repositorio">
-                        {dataDaCasa(e.date)}
-                      </span>
-                    )}
-                  </a>
-                ))}
-              </span>
-              {tr.umaSoData && (
-                <span class="arquivo-data">
-                  {/* A PREPOSIÇÃO É PROSA DA CASA E FICA FORA DA MARCA DA DATA
-                      (segunda passagem, 04.09.2026): assim o inventário da voz
-                      pode declará-la (`data-voz`) e a data pode levar a sua
-                      origem. «publicado a 12.08.2026», e o 12.08.2026 é o dia em
-                      que o ficheiro desta edição entrou no repositório. */}
-                  <span data-voz>{s.estudos.dataLabel}</span>{' '}
-                  {tr.dataUnica ? (
-                    <span data-nonledger="data-do-repositorio">{dataDaCasa(tr.dataUnica)}</span>
-                  ) : (
-                    /* Sem história no repositório não há data, e o marcador fica:
-                       é o modo certo de falhar de `src/lib/datas-do-repositorio.mjs`. */
-                    <Marcador lang={lang} />
-                  )}
-                </span>
-              )}
-            </div>
-          </article>
-        ))
-      }
-    </div>
+        <p class="arquivo-desc estudo-resumo" data-verbatim={e.work.verbatimDaAbertura?.[lang]}>
+          <Frase partes={e.resumo} lang={lang} selos={true} />
+        </p>
+      </article>
+    ))}
   </div>
-
-  <script src="/js/estudos.js" defer is:inline></script>
+  <section class="estudos-lugares" aria-labelledby="por-lugar">
+    <h2 id="por-lugar">{r.porLugar}</h2>
+    <ul>{lugares.map(lugar => <li><a href={portaDoLugar(lugar, lang)}>
+      {SUBJECTS[lugar][lang]} <span data-prova={`estudos_lugar_${lugar}`}>{WORKS.filter(w => w.subject === lugar).length}</span>
+    </a></li>)}</ul>
+  </section>
 </Base>

@@ -56,7 +56,8 @@ import { estadoDaMedida } from './estado.mjs';
 import { todosOsRegistos, registoDaEdicao } from './registos.mjs';
 import { unidadesDoBloco, MOTIVOS_SEM_RESUMO } from './registo-html.mjs';
 import { FIGURAS_PDM, FIGURAS_SOCIAL } from '../data/figuras.mjs';
-import { WORKS, EDITIONS } from '../data/studies.mjs';
+import { WORKS, EDITIONS, SUBJECTS } from '../data/studies.mjs';
+import { portaDoLugar } from './estudos-b1.mjs';
 import { temLeitura } from '../data/leituras.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
 import { contagensDosConcelhos } from './livro-concelhos.mjs';
@@ -761,6 +762,12 @@ export function prova(lang = 'pt') {
     ),
 
     /* ---- o arquivo ---- */
+    // B1: cada contagem abre a secção que contém os estudos desse lugar.
+    ...Object.fromEntries(Object.keys(SUBJECTS).map(lugar => [`estudos_lugar_${lugar}`, {
+      valor: WORKS.filter(w => w.subject === lugar).length,
+      origem: lang === 'pt' ? 'estudos sobre este lugar' : 'studies about this place',
+      porta: portaDoLugar(lugar, lang),
+    }])),
     estudos: k('estudos', WORKS.length, routePath('estudos', lang)),
     edicoes: k('edicoes', EDITIONS.length, routePath('estudos', lang)),
     leituras: k('leituras', WORKS.filter((w) => temLeitura(w.id)).length, routePath('estudos', lang)),
