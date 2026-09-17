@@ -88,5 +88,5 @@ export function verificaB1(raiz) {
       anda(main);
     }
   }
-  return { erros, paginas, temas: WORKS.length };
+  return { erros, paginas, temas: new Set(WORKS.filter(w => temas.has(w.tema)).map(w => w.tema)).size };
 }
