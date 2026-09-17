@@ -68,6 +68,7 @@
  */
 
 import fs from 'node:fs';
+import { verificaB1 } from './voz-b1.mjs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -102,7 +103,9 @@ const voz = medicao.voz;
 const casa = medicao.frases_da_casa;
 const rotas = Object.entries(casa.por_rota);
 
-const erros = [];
+const b1 = verificaB1(RAIZ);
+const erros = [...b1.erros];
+console.log(`  B1: ${b1.paginas} páginas pela lista fechada; ${b1.temas} temas conferidos.`);
 
 /* 4 · o ficheiro dos marcadores */
 for (const e of voz.erros) erros.push(`${voz.ficheiro}: ${e}`);

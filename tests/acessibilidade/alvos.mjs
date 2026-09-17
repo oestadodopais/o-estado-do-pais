@@ -80,6 +80,7 @@
  * três faz a corrida sair a 1.
  */
 import fs from 'node:fs';
+import { cabecaValida } from './cabeca-b1.mjs';
 import http from 'node:http';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -1020,7 +1021,7 @@ function varreDist() {
     const s = leFicheiro(f);
     const rel = path.relative(DIST, f);
     const nH1 = (s.match(/<h1[\s>]/g) ?? []).length;
-    if (nH1 !== 1) {
+    if (!cabecaValida(s, rel)) {
       h1Errado++;
       if (exemplos.h1.length < 5) exemplos.h1.push(`${rel} (${nH1})`);
     }

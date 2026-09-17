@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { SUBJECTS } from '../src/data/studies.mjs';
 /**
  * Portão (a) e (c): varrimento do HTML construído.
  *
@@ -2127,17 +2128,21 @@ function verificaTexto({ rota, root, err }) {
   }
 
   /* ------------------------------------------------------------------ L6 ---
-     «As linhas deste documento»: uma entrada por linha citada, na ordem da
+     «Fontes e verificação»: uma entrada por linha citada, na ordem da
      primeira citação, e cada campo igual ao que as figuras dessa linha dizem. */
   const seccao = root.querySelector('#linhas-do-documento');
   if (!seccao) {
-    err(`L6 ${chave}: a página não tem a secção "As linhas deste documento" (id="linhas-do-documento").`);
+    err(`L6 ${chave}: a página não tem a secção "Fontes e verificação" (id="linhas-do-documento").`);
   } else {
+    const rotulo = lang === 'pt' ? 'Fontes e verificação' : 'Sources and verification';
+    if (textoTranscrito(seccao.querySelector('h2')) !== rotulo) {
+      err(`L6 ${chave}: a secção de fontes não tem o rótulo ${rotulo}.`);
+    }
     const entradas = seccao.querySelectorAll('[id^="linha-"]');
     const esperadas = [...figurasPorLinha.values()];
     if (entradas.length !== esperadas.length) {
       err(
-        `L6 ${chave}: "As linhas deste documento" tem ${entradas.length} entradas e o documento ` +
+        `L6 ${chave}: "Fontes e verificação" tem ${entradas.length} entradas e o documento ` +
           `cita ${esperadas.length} linhas do motor.`,
       );
     }
@@ -2146,7 +2151,7 @@ function verificaTexto({ rota, root, err }) {
     esperadas.forEach((linha, i) => {
       const entradaNaPagina = porId.get(`linha-${linha.row}`);
       if (!entradaNaPagina) {
-        err(`L6 ${chave}: a linha do motor "${linha.row}" é citada e não tem entrada em "As linhas deste documento".`);
+        err(`L6 ${chave}: a linha do motor "${linha.row}" é citada e não tem entrada em "Fontes e verificação".`);
         return;
       }
       if (entradas[i] !== entradaNaPagina) {
@@ -2369,80 +2374,12 @@ function verificaTexto({ rota, root, err }) {
         `${entrada.blocos}.`,
     );
   }
-  /* A recontagem do portão, do registo em disco e do registo de travessia das
-     linhas. `com_linha_do_sitio` conta FIGURAS e não linhas do motor: é o que a
-     faixa diz e é o que o leitor conta ao ver os selos na página. */
-  const contasDoTexto = { blocos: registo.blocks.length, algarismos: 0, com_linha_do_sitio: 0 };
-  for (const bloco of registo.blocks) {
-    for (const { unidade } of unidadesDoRegisto(bloco)) {
-      for (const figura of unidade.figures ?? []) {
-        contasDoTexto.algarismos++;
-        if (linhaDoSitio(figura.row)) contasDoTexto.com_linha_do_sitio++;
-      }
-    }
+  if (root.querySelector('[data-registo-conta]')) {
+    err(`B1 faixa: ${chave} voltou a render uma contagem retirada. Não há dispensa sem conferência.`);
   }
-  const naFaixa = root.querySelectorAll('[data-registo-conta]');
-  if (naFaixa.length !== 3) {
-    err(
-      `L5 ${chave}: a página tem ${naFaixa.length} marcas data-registo-conta e a faixa tem três ` +
-        `contagens: blocos, algarismos e com linha do livro-razão.`,
-    );
-  }
-  /* A porta das três contagens é a mesma e é o corpo: `#documento`, o
-     `<article>` desta página, onde cada bloco, cada figura marcada e cada selo
-     estão à vista, uma marca por ocorrência. Conferida aqui na própria página,
-     porque uma porta que não resolve não é porta nenhuma. */
-  const portaDoCorpo = '#documento';
-  if (!root.querySelector(portaDoCorpo)) {
-    err(
-      `L5 ${chave}: a página não tem o corpo com id="documento", que é a porta das três contagens ` +
-        `da faixa.`,
-    );
-  }
-  const vistas = new Set();
-  for (const el of naFaixa) {
-    const declaradaConta = decodeEntities(el.getAttribute('data-registo-conta') ?? '');
-    const igual = declaradaConta.indexOf('=');
-    const daEdicao = igual > 0 ? declaradaConta.slice(0, igual) : '';
-    const nome = igual > 0 ? declaradaConta.slice(igual + 1) : '';
-    if (daEdicao !== chave) {
-      err(`L5: data-registo-conta="${declaradaConta}" não é desta edição, que é "${chave}".`);
-      continue;
-    }
-    if (!(nome in contasDoTexto)) {
-      err(
-        `L5 ${chave}: data-registo-conta="${declaradaConta}" não é uma das três contagens ` +
-          `(${Object.keys(contasDoTexto).join(', ')}).`,
-      );
-      continue;
-    }
-    vistas.add(nome);
-    const rendido = textoTranscrito(el);
-    if (rendido !== String(contasDoTexto[nome])) {
-      err(
-        `L5 ${declaradaConta}: a faixa diz "${rendido}" e o portão reconta ${contasDoTexto[nome]} ` +
-          `do registo em disco. Uma contagem escrita à mão fica errada na construção seguinte.`,
-      );
-    }
-    const porta = decodeEntities(el.getAttribute('href') ?? '');
-    if (String(el.rawTagName ?? '').toLowerCase() !== 'a' || porta === '') {
-      err(
-        `L5 ${declaradaConta}: a contagem não tem porta. Um número do próprio sítio leva sempre a ` +
-          `porta para onde se vê o que ele conta (IDENTIDADE.md §10).`,
-      );
-    } else if (porta !== portaDoCorpo) {
-      err(
-        `L5 ${declaradaConta}: a porta da contagem abre "${porta}" e tem de abrir ` +
-          `"${portaDoCorpo}". As três contam OCORRÊNCIAS no corpo (blocos, figuras marcadas e ` +
-          `selos), e é no corpo que elas se veem, uma marca por cada; "#linhas-do-documento" ` +
-          `agrega numa entrada por linha do motor DISTINTA e por isso não mostra o que o número ` +
-          `conta (IDENTIDADE.md §10).`,
-      );
-    }
-  }
-  for (const nome of Object.keys(contasDoTexto)) {
-    if (!vistas.has(nome)) err(`L5 ${chave}: a faixa não rende a contagem "${nome}".`);
-  }
+  // B1, decisão de 17.09: a faixa sai. L1 a L4 e L6 continuam a conferir
+  // cada bloco, carácter, figura e destino; L5 conserva as contas do manifesto.
+
 }
 
 /**
@@ -3445,6 +3382,14 @@ function conta(chave, valor, vista) {
  */
 function contasDoPortao(claims) {
   const linhas = [...claims.values()];
+  const contagensDeLugares = Object.keys(SUBJECTS).map(lugar => {
+    const rota = routePath(lugar === 'evora' ? 'municipio' : 'regiao', 'pt', { slug: lugar });
+    const ficheiro = path.join(DIST, rota.slice(1), 'index.html');
+    const doc = fs.existsSync(ficheiro) ? parse(fs.readFileSync(ficheiro, 'utf8')) : null;
+    const tit = doc?.querySelector('#trabalhos');
+    const n = tit?.parentNode?.querySelectorAll('a[href]').filter(a => matchPath(a.getAttribute('href'))?.key === 'estudo').length ?? 0;
+    return conta(`estudos_lugar_${lugar}`, n, 'dist');
+  });
   const paginasDeLinhaPt = [...linhasConstruidas].filter((k) => k.startsWith('pt:')).length;
   const indexaveisPt = [...linhasIndexaveis].filter((k) => k.startsWith('pt:')).length;
 
@@ -3628,6 +3573,7 @@ function contasDoPortao(claims) {
   };
 
   return Object.fromEntries([
+    ...contagensDeLugares,
     conta('painel_total', FIGURAS_PDM.length, 'ledger'),
     conta('painel_com_limiar', FIGURAS_PDM.filter((f) => Boolean(f.limiar)).length, 'ledger'),
     conta('painel_fora_do_limiar', FIGURAS_PDM.filter((f) => estadoDaFigura(f) === 'fora').length, 'ledger'),
@@ -4092,10 +4038,26 @@ for (const file of ficheirosHtml(DIST)) {
     continue;
   }
 
+  // B1: a rota antiga é uma mudança de endereço, conferida antes de sair.
+  if (rota?.key === 'texto') {
+    const destino = routePath('estudo', rota.lang, rota.params) + '/';
+    const refresh = root.querySelectorAll('meta[http-equiv="refresh"]');
+    const canonica = root.querySelector('link[rel="canonical"]')?.getAttribute('href');
+    const portas = root.querySelectorAll('body a[href]');
+    if (!TRAVESSIA_DOS_REGISTOS?.[`${rota.params.slug}/${rota.lang}`] ||
+        refresh.length !== 1 || refresh[0].getAttribute('content') !== `0;url=${destino}` ||
+        canonica?.replace(/\/$/, '') !== canonicalUrl(destino) || portas.length !== 1 || portas[0].getAttribute('href') !== destino ||
+        !fs.existsSync(path.join(DIST, destino.slice(1), 'index.html'))) {
+      err(`B1 redirecionamento: ${caminho} não leva à sua página de estudo ${destino}.`);
+    }
+    ficheiros--; // não é uma página com mobília; a rota foi conferida acima.
+    continue;
+  }
+
   /* --- 0b. a página de leitura: as sete conferências, ANTES do resto ------
      e sem dispensar nada. Ao contrário do documento alojado, esta página é
      nossa: continua a ser varrida por inteiro a seguir. */
-  if (rota?.key === 'texto') {
+  if (rota?.key === 'estudo' && TRAVESSIA_DOS_REGISTOS?.[`${rota.params.slug}/${rota.lang}`]) {
     paginasDeTexto++;
     contaAsMarcasDoTexto(root);
     verificaTexto({ rota, root, err });
@@ -4919,7 +4881,7 @@ for (const file of ficheirosHtml(DIST)) {
     }
 
     /* O topo das páginas de leitura: lá tem de estar, e em mais lado nenhum. */
-    const esperadoNoTopo = rota?.key === 'texto' ? 1 : 0;
+    const esperadoNoTopo = 0; // B1: a divulgação única permanece no rodapé.
     if (noTopo.length !== esperadoNoTopo) {
       err(
         `esta página tem ${noTopo.length} rótulo(s) de IA no topo e devia ter ${esperadoNoTopo}.\n` +
@@ -6078,7 +6040,7 @@ for (const file of ficheirosHtml(DIST)) {
       '[data-registo-linha], [data-registo-conta], [data-registo-indice], [data-registo-posicao]',
   )) {
     aRemover.push(el);
-    if (rota?.key !== 'texto') {
+    if (rota?.key !== 'estudo' || !TRAVESSIA_DOS_REGISTOS?.[`${rota.params.slug}/${rota.lang}`]) {
       const qual = ['data-registo-edicao', 'data-registo-bloco', 'data-registo-unidade',
         'data-registo', 'data-registo-linha', 'data-registo-conta', 'data-registo-indice',
         'data-registo-posicao']
@@ -7045,6 +7007,16 @@ for (const { caminho, px } of [{ caminho: '/apple-touch-icon.png', px: 180 }]) {
       msg: `a cabeça do PNG diz ${medidas ? `${medidas.largura}×${medidas.altura}` : 'ilegível'} e o iOS quer ${px}×${px}.`,
     });
   } else manifestosConferidos.icones++;
+}
+
+// B1: nenhum endereço antigo desaparece em silêncio.
+for (const chave of Object.keys(TRAVESSIA_DOS_REGISTOS ?? {})) {
+  const corte = chave.lastIndexOf('/');
+  const slug = chave.slice(0, corte), lang = chave.slice(corte + 1);
+  const antiga = routePath('texto', lang, { slug });
+  if (!idsPorPagina.has(normalizaCaminho(antiga))) {
+    erros.push({ rel: antiga, msg: `B1 redirecionamento em falta: ${chave}.` });
+  }
 }
 
 /**
