@@ -1,0 +1,30 @@
+npm run gate:html
+Código: 1
+
+> o-estado-do-pais@0.1.0 gate:html
+> node scripts/gate-html.mjs
+
+  B1 leitura evora-orcamentado-pago-devido-2025/en: sem leitura, o registo não começa por In brief.
+  B1 leitura evora-prometido-pago-auditado-2026/en: sem leitura, o registo não começa por In brief.
+  B1 leitura avaliacao-economica-regional-de-portugal-2026/pt: sem leitura, o registo não começa por Em resumo.
+  B1 leitura evora-economia-investidores-portas-abertas-2026/pt: sem leitura, o registo não começa por Em resumo.
+  B1 leitura evora-orcamentado-pago-devido-2025/pt: sem leitura, o registo não começa por Em resumo.
+  B1 leitura evora-os-pelouros-quem-os-teve-o-que-fizeram/pt: sem leitura, o registo não começa por Em resumo.
+  B1 leitura evora-prometido-pago-auditado-2026/pt: sem leitura, o registo não começa por Em resumo.
+  B1 leitura evora-quinze-anos-cinco-mandatos/pt: sem leitura, o registo não começa por Em resumo.
+file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b1-2026-09-17/scripts/gate-html.mjs:3349
+    if (!tit) throw new Error(`B1 contagem do lugar: ${rota} não tem a secção #trabalhos.`);
+                    ^
+
+Error: B1 contagem do lugar: /en/municipalities/evora não tem a secção #trabalhos.
+    at file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b1-2026-09-17/scripts/gate-html.mjs:3349:21
+    at Array.map (<anonymous>)
+    at file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b1-2026-09-17/scripts/gate-html.mjs:3342:75
+    at Array.flatMap (<anonymous>)
+    at contasDoPortao (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b1-2026-09-17/scripts/gate-html.mjs:3342:52)
+    at file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b1-2026-09-17/scripts/gate-html.mjs:7145:16
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.1

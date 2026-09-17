@@ -1,0 +1,15 @@
+npm run check:voz
+Código: 1
+
+> o-estado-do-pais@0.1.0 check:voz
+> node scripts/check-voz.mjs
+
+  B1: 28 páginas pela lista fechada; 7 temas conferidos.
+
+  PORTÃO DA VOZ · 1 problema(s)
+
+    · PALAVRA PROIBIDA «a casa» em 1 página(s) da superfície.
+      primeiro: estudos/evora-2027-prometido-painel-dinheiro/index.html
+      «…ligência artificial, segundo o Método.Nesta páginaAs regras da casa.Subir ↑Secção 2 de 11Subir ↑Secção 3 de 11Subir ↑Secção 4 d…»
+      escreve-se «este projeto» ou «O Estado do País» · em português «casa» é a habitação, que é uma das coisas que este projeto mede (decisão do diretor de 15.09.2026 às 16:35 UTC; norma §1.3)
+

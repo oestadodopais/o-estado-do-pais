@@ -1,0 +1,13 @@
+npm run check:voz
+Código: 1
+
+> o-estado-do-pais@0.1.0 check:voz
+> node scripts/check-voz.mjs
+
+  B1: 28 páginas pela lista fechada; 7 temas conferidos.
+
+  PORTÃO DA VOZ · 2 problema(s)
+
+    · B1 língua: estudos: which-door-is-yours/en deve ter 1 marca(s) da língua da edição.
+    · B1 lista fechada: estudos: «(in Portuguese)».
+

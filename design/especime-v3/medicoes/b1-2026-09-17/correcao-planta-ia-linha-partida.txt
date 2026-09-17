@@ -1,0 +1,24 @@
+npm run check:alvos
+Código: 1
+
+> o-estado-do-pais@0.1.0 check:alvos
+> node tests/acessibilidade/alvos.mjs
+
+
+  a régua dos alvos · 46 rotas × 5 larguras · dist: dist
+
+  ✓ H1  0 nó(s) em violação (0 graves) em 46 rotas × 2 larguras · nenhuma violação
+  ✓ H2  fichas de concelho: 6300 medidas, 0 sem o alvo (nenhum) · a folha: 51 bloco(s) @media com tecto, 0 com uma regra de 44 px que acaba antes de 1024 · faixa 641 a 1023: 15982 alvos medidos, 7204 deles com 44 px a 390, 12 sem eles na faixa · destes, 0 são caixas e falham (nenhum) e 6 são áreas de desenho, cujo alvo é a rede de nomes por baixo do mapa (6× a.uni-porta «Beja» · 54.7×45.2 de toque (caixa 83.6×56.7)), 3 estão numa página de leitura, que o brief põe fora deste bloco (1× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×18.4 de toque (caixa 248.4×36.6); 1× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×17.9 de toque (caixa 248.4×36.6); 1× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×18.2 de toque (caixa 248.4×36.6)) e 3 quebram de linha dentro de uma frase, que é a dispensa que a WCAG 2.5.5 escreve para um alvo em linha (1× a «Alert Mechanism Report and Macroec» · 88×23.5 de toque (caixa 528.8×45.5); 1× a «Alert Mechanism Report and Macroec» · 88×23.4 de toque (caixa 528.8×45.5); 1× a «Alert Mechanism Report and Macroec» · 88×23.7 de toque (caixa 528.8×45.5)) · 3651 não medido(s)
+  ✓ H3  7353 página(s) do dist/: 0 sem título único · nas rotas medidas: 0 de 230 passagens
+  ✗ H14  20 passagens de estudo com IA no topo: 5 sem linha única, corpo de 12 px ou posição antes do título
+  ✓ H4  7353 página(s) do dist/: 7335 com a porta dentro do <footer>, 0 fora dele (0 dentro de um <main>, que não conta), 18 sem porta (os documentos alojados) · nas rotas medidas: 0 fora do <footer> ou de um <nav> com nome, 0 dentro de um <main>
+  ✓ H5  28 caixa(s) com deslocamento horizontal medidas, 0 sem teclado, nome ou papel
+  ✓ H6  primeira página, a 1280: 12 alvo(s) da I105 medidos, 0 abaixo de 32 px (nenhum)
+  ✓ H7  70 algarismo(s) de manchete medidos · 10 em manchetes de uma linha citada, 0 sem os 44 px (nenhum) · 60 em manchetes de várias, 0 sem a largura ou sem a caixa de linha (nenhum) · 0 com uma porta de OUTRA linha dentro da sua área (nenhum)
+  ✓ H8  cartões: 840 registo(s), 420 da edição inglesa, 416 com unidade · 0 desenharam uma cadeia diferente da que a tabela manda · 6 ficam em português por decisão da tabela («avisos» em 4: sem inglês do organismo: as duas linhas têm fonte e documento «[a verificar]»; «factor» em 2: é o nome que o relatório citado dá ao número, e não uma unidade de contagem) · páginas inglesas: 1170 unidade(s) rendida(s), 0 diferentes do que a tabela manda
+  ✓ H9  3675 página(s) inglesas lidas: 1247 com um nome de diploma, 2428 sem nenhum, 1 documento(s) alojado(s) fora da conta · 1253 nome(s): 1250 com lang="pt-PT", 3 dentro de uma transcrição da fonte (marca-se inteira, na língua da fonte: não é deste bloco), 0 sem marca
+  ✓ H13  /municipios nas duas edições e nas 5 larguras: 10 passagem(ns) · portas de concelho por página: 308 (esperado 308) · dentro da lista agrupada: 308
+  ✓ H10  aria-expanded no dist/: 7335 ocorrência(s), 0 fora do feitio que o guião acompanha (details > summary[aria-controls]) · o guião /js/tema.js está em dist/, e 0 página(s) com o atributo não o pedem · abrir e fechar o <details>: 46 prova(s) no navegador, 0 em que o atributo não seguiu o estado · Método: 10 passagem(ns), 0 com <title> ou <h1> vazio · <title> = «Método · O Estado do País»
+
+  1 célula(s) vermelhas: H14
+

@@ -1,0 +1,32 @@
+{
+  "base_correcao": "3e80034a",
+  "cabeca": "8de4e841f5623f6a198bf7b1da2de32c205580f8",
+  "caminhos_sem_alteracao": [
+    "registos",
+    "studies-src",
+    "ledger",
+    "src/data/studies.mjs",
+    "design/especime-v3/maquetas/b1",
+    "src/views/HomeView.astro",
+    "src/views/MunicipioView.astro",
+    "src/views/AreaView.astro"
+  ],
+  "construidos": [
+    {
+      "ficheiro": "dist/estudos/index.html",
+      "sha256": "ce1347e2279136648f3310e2afb8cb00ee78a544c4d9c8fa8777bd5539d107ba"
+    },
+    {
+      "ficheiro": "dist/en/studies/index.html",
+      "sha256": "8ceb4a93150937d56e6c6b5ff4888233c473a3c5edad6d6d180dc90fe7aa7a13"
+    },
+    {
+      "ficheiro": "dist/estudos/evora-2027-prometido-painel-dinheiro/index.html",
+      "sha256": "1fdeb8f802648c3d1106409cd7f62d074429a4536f036d9ce6f488cdd32b47a6"
+    },
+    {
+      "ficheiro": "dist/en/studies/evora-2027-prometido-painel-dinheiro/index.html",
+      "sha256": "8ba686bbf88a45af4e6c86cc67f89c8e6f68bba2d0c88ebf13753e72dd52c299"
+    }
+  ]
+}

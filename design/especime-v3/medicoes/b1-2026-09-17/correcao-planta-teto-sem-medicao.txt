@@ -1,0 +1,17 @@
+npm run check:lugar
+Código: 1
+
+> o-estado-do-pais@0.1.0 check:lugar
+> node scripts/check-lugar.mjs
+
+file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b1-2026-09-17/scripts/check-lugar.mjs:111
+  throw new Error('B1 L1: o teto tem de ser o número inteiro medido no registo.');
+        ^
+
+Error: B1 L1: o teto tem de ser o número inteiro medido no registo.
+    at file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b1-2026-09-17/scripts/check-lugar.mjs:111:9
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.1

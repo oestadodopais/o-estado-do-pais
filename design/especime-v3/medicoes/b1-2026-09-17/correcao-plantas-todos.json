@@ -1,0 +1,247 @@
+{
+  "cabeca": "8de4e841f5623f6a198bf7b1da2de32c205580f8",
+  "resultados": [
+    {
+      "grupo": "6",
+      "nome": "lingua-en",
+      "ficheiro": "dist/en/studies/index.html",
+      "comando": "check:voz",
+      "codigo": 1,
+      "mordida": "/B1 língua/",
+      "passou": true,
+      "antes": "8ceb4a93150937d56e6c6b5ff4888233c473a3c5edad6d6d180dc90fe7aa7a13",
+      "reposto": "8ceb4a93150937d56e6c6b5ff4888233c473a3c5edad6d6d180dc90fe7aa7a13"
+    },
+    {
+      "grupo": "6",
+      "nome": "lingua-pt",
+      "ficheiro": "dist/estudos/index.html",
+      "comando": "check:voz",
+      "codigo": 1,
+      "mordida": "/B1 língua/",
+      "passou": true,
+      "antes": "ce1347e2279136648f3310e2afb8cb00ee78a544c4d9c8fa8777bd5539d107ba",
+      "reposto": "ce1347e2279136648f3310e2afb8cb00ee78a544c4d9c8fa8777bd5539d107ba"
+    },
+    {
+      "grupo": "7",
+      "nome": "recibo-valor",
+      "ficheiro": "dist/estudos/evora-economia-investidores-portas-abertas-2026/index.html",
+      "comando": "gate:html",
+      "codigo": 1,
+      "mordida": "/L6 .*campo rendido difere do livro/",
+      "passou": true,
+      "antes": "e41a5566462389eaeb5feefb3355a5b65eb83a67d1442f9aac7cb9b6b5fc188e",
+      "reposto": "e41a5566462389eaeb5feefb3355a5b65eb83a67d1442f9aac7cb9b6b5fc188e"
+    },
+    {
+      "grupo": "7",
+      "nome": "recibo-medida",
+      "ficheiro": "dist/estudos/evora-orcamentado-pago-devido-2025/index.html",
+      "comando": "gate:html",
+      "codigo": 1,
+      "mordida": "/L6 .*campo rendido difere do livro/",
+      "passou": true,
+      "antes": "8808aac62ed7c443f49ed4ef7f99162eca62fc3b6218d4b60bfa56277b4426fc",
+      "reposto": "8808aac62ed7c443f49ed4ef7f99162eca62fc3b6218d4b60bfa56277b4426fc"
+    },
+    {
+      "grupo": "7",
+      "nome": "recibo-fonte",
+      "ficheiro": "dist/estudos/evora-economia-investidores-portas-abertas-2026/index.html",
+      "comando": "gate:html",
+      "codigo": 1,
+      "mordida": "/L6 .*campo rendido difere do livro/",
+      "passou": true,
+      "antes": "e41a5566462389eaeb5feefb3355a5b65eb83a67d1442f9aac7cb9b6b5fc188e",
+      "reposto": "e41a5566462389eaeb5feefb3355a5b65eb83a67d1442f9aac7cb9b6b5fc188e"
+    },
+    {
+      "grupo": "7",
+      "nome": "recibo-data",
+      "ficheiro": "dist/estudos/evora-economia-investidores-portas-abertas-2026/index.html",
+      "comando": "gate:html",
+      "codigo": 1,
+      "mordida": "/L6 .*data de verificação/",
+      "passou": true,
+      "antes": "e41a5566462389eaeb5feefb3355a5b65eb83a67d1442f9aac7cb9b6b5fc188e",
+      "reposto": "e41a5566462389eaeb5feefb3355a5b65eb83a67d1442f9aac7cb9b6b5fc188e"
+    },
+    {
+      "grupo": "7",
+      "nome": "fontes-sem-recibo",
+      "ficheiro": "dist/estudos/evora-2027-prometido-painel-dinheiro/index.html",
+      "comando": "gate:html",
+      "codigo": 1,
+      "mordida": "/L6 .*sem recibos completos/",
+      "passou": true,
+      "antes": "1fdeb8f802648c3d1106409cd7f62d074429a4536f036d9ce6f488cdd32b47a6",
+      "reposto": "1fdeb8f802648c3d1106409cd7f62d074429a4536f036d9ce6f488cdd32b47a6"
+    },
+    {
+      "grupo": "7",
+      "nome": "algarismo-transcrito",
+      "ficheiro": "dist/estudos/evora-2027-prometido-painel-dinheiro/index.html",
+      "comando": "check:cadeia",
+      "codigo": 1,
+      "mordida": "/C[45]/",
+      "passou": true,
+      "antes": "1fdeb8f802648c3d1106409cd7f62d074429a4536f036d9ce6f488cdd32b47a6",
+      "reposto": "1fdeb8f802648c3d1106409cd7f62d074429a4536f036d9ce6f488cdd32b47a6"
+    },
+    {
+      "grupo": "10",
+      "nome": "ia-topo",
+      "ficheiro": "dist/estudos/evora-2027-prometido-painel-dinheiro/index.html",
+      "comando": "gate:html",
+      "codigo": 1,
+      "mordida": "/0 rótulo\\(s\\) de IA no topo e devia ter 1/",
+      "passou": true,
+      "antes": "1fdeb8f802648c3d1106409cd7f62d074429a4536f036d9ce6f488cdd32b47a6",
+      "reposto": "1fdeb8f802648c3d1106409cd7f62d074429a4536f036d9ce6f488cdd32b47a6"
+    },
+    {
+      "grupo": "11",
+      "nome": "destino-servidor",
+      "ficheiro": "vercel.json",
+      "comando": "gate:html",
+      "codigo": 1,
+      "mordida": "/B1 redirecionamento/",
+      "passou": true,
+      "antes": "33f2a825c8828de3c273fe9f3c32b1eae6ae722acff1c1f2e16d74515c12529b",
+      "reposto": "33f2a825c8828de3c273fe9f3c32b1eae6ae722acff1c1f2e16d74515c12529b"
+    },
+    {
+      "grupo": "12",
+      "nome": "lugar-en",
+      "ficheiro": "dist/en/municipalities/evora/index.html",
+      "comando": "gate:html",
+      "codigo": 1,
+      "mordida": "/B1 contagem do lugar|estudos_lugar_evora/",
+      "passou": true,
+      "antes": "b9b24be16e656fffb3fca3d39f2c36e8ed60f978cd237824a50f858df99de268",
+      "reposto": "b9b24be16e656fffb3fca3d39f2c36e8ed60f978cd237824a50f858df99de268"
+    },
+    {
+      "grupo": "12",
+      "nome": "lugar-inexistente",
+      "ficheiro": "dist/en/municipalities/evora/index.html",
+      "comando": "gate:html",
+      "codigo": 1,
+      "mordida": "/B1 contagem do lugar: não foi possível ler/",
+      "passou": true,
+      "antes": "b9b24be16e656fffb3fca3d39f2c36e8ed60f978cd237824a50f858df99de268",
+      "reposto": "b9b24be16e656fffb3fca3d39f2c36e8ed60f978cd237824a50f858df99de268"
+    },
+    {
+      "grupo": "12",
+      "nome": "lugar-sem-seccao",
+      "ficheiro": "dist/en/municipalities/evora/index.html",
+      "comando": "gate:html",
+      "codigo": 1,
+      "mordida": "/B1 contagem do lugar: .*não tem a secção/",
+      "passou": true,
+      "antes": "b9b24be16e656fffb3fca3d39f2c36e8ed60f978cd237824a50f858df99de268",
+      "reposto": "b9b24be16e656fffb3fca3d39f2c36e8ed60f978cd237824a50f858df99de268"
+    },
+    {
+      "grupo": "14",
+      "nome": "leitura-titulo",
+      "ficheiro": "dist/estudos/evora-2027-prometido-painel-dinheiro/index.html",
+      "comando": "gate:html",
+      "codigo": 1,
+      "mordida": "/B1 leitura/",
+      "passou": true,
+      "antes": "1fdeb8f802648c3d1106409cd7f62d074429a4536f036d9ce6f488cdd32b47a6",
+      "reposto": "1fdeb8f802648c3d1106409cd7f62d074429a4536f036d9ce6f488cdd32b47a6"
+    },
+    {
+      "grupo": "14",
+      "nome": "leitura-fronteira",
+      "ficheiro": "dist/estudos/evora-2027-prometido-painel-dinheiro/index.html",
+      "comando": "gate:html",
+      "codigo": 1,
+      "mordida": "/B1 leitura/",
+      "passou": true,
+      "antes": "1fdeb8f802648c3d1106409cd7f62d074429a4536f036d9ce6f488cdd32b47a6",
+      "reposto": "1fdeb8f802648c3d1106409cd7f62d074429a4536f036d9ce6f488cdd32b47a6"
+    },
+    {
+      "grupo": "17",
+      "nome": "subir-palavra",
+      "ficheiro": "dist/estudos/evora-2027-prometido-painel-dinheiro/index.html",
+      "comando": "check:voz",
+      "codigo": 1,
+      "mordida": "/a casa/i",
+      "passou": true,
+      "antes": "1fdeb8f802648c3d1106409cd7f62d074429a4536f036d9ce6f488cdd32b47a6",
+      "reposto": "1fdeb8f802648c3d1106409cd7f62d074429a4536f036d9ce6f488cdd32b47a6"
+    },
+    {
+      "grupo": "17",
+      "nome": "posicao-palavra",
+      "ficheiro": "dist/estudos/evora-2027-prometido-painel-dinheiro/index.html",
+      "comando": "check:voz",
+      "codigo": 1,
+      "mordida": "/a casa/i",
+      "passou": true,
+      "antes": "1fdeb8f802648c3d1106409cd7f62d074429a4536f036d9ce6f488cdd32b47a6",
+      "reposto": "1fdeb8f802648c3d1106409cd7f62d074429a4536f036d9ce6f488cdd32b47a6"
+    },
+    {
+      "grupo": "9",
+      "nome": "porta-fora-transcrito",
+      "ficheiro": "dist/estudos/evora-2027-prometido-painel-dinheiro/index.html",
+      "comando": "check:lugar",
+      "codigo": 1,
+      "mordida": "/L1 .*acima do teto/s",
+      "passou": true,
+      "antes": "1fdeb8f802648c3d1106409cd7f62d074429a4536f036d9ce6f488cdd32b47a6",
+      "reposto": "1fdeb8f802648c3d1106409cd7f62d074429a4536f036d9ce6f488cdd32b47a6"
+    },
+    {
+      "grupo": "9",
+      "nome": "transcricao-fora-estudo",
+      "ficheiro": "dist/a-verificar/index.html",
+      "comando": "check:lugar",
+      "codigo": 1,
+      "mordida": "/L1 .*acima do teto/s",
+      "passou": true,
+      "antes": "ca70545fbbbeffa1c2da5a7512c945c2a1d15142f1032ed0533e81896c98cb9a",
+      "reposto": "ca70545fbbbeffa1c2da5a7512c945c2a1d15142f1032ed0533e81896c98cb9a"
+    },
+    {
+      "grupo": "9",
+      "nome": "teto-sem-medicao",
+      "ficheiro": "scripts/lugar-tetos-b1.json",
+      "comando": "check:lugar",
+      "codigo": 1,
+      "mordida": "/B1 L1: o teto tem de ser o número inteiro medido/",
+      "passou": true,
+      "antes": "b674369c77b17227aecfac89f8be7b606150d2855eb52999db3b873d558436f1",
+      "reposto": "b674369c77b17227aecfac89f8be7b606150d2855eb52999db3b873d558436f1"
+    },
+    {
+      "grupo": "19",
+      "nome": "separador-quebravel",
+      "ficheiro": "dist/estudos/evora-2027-prometido-painel-dinheiro/index.html",
+      "comando": "check:cadeia",
+      "codigo": 1,
+      "mordida": "/C5/",
+      "passou": true,
+      "antes": "1fdeb8f802648c3d1106409cd7f62d074429a4536f036d9ce6f488cdd32b47a6",
+      "reposto": "1fdeb8f802648c3d1106409cd7f62d074429a4536f036d9ce6f488cdd32b47a6"
+    },
+    {
+      "grupo": "10",
+      "nome": "ia-linha-partida",
+      "ficheiro": "dist/estudos/evora-prometido-pago-auditado-2026/index.html",
+      "comando": "check:alvos",
+      "codigo": 1,
+      "mordida": "/✗\\s+H14/",
+      "passou": true,
+      "antes": "02862cf152d4a0404dadab17e8b75f0c88820bc67ff28c7596db6c753c82c7c9",
+      "reposto": "02862cf152d4a0404dadab17e8b75f0c88820bc67ff28c7596db6c753c82c7c9"
+    }
+  ]
+}

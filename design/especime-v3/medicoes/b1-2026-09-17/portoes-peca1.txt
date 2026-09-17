@@ -1,14 +1,20 @@
-Cabeça: dd33e1eff6bb09ded152ab4b6bdf636f52c292f6
+Cabeça: 8de4e841f5623f6a198bf7b1da2de32c205580f8
 Ramo: b1-2026-09-17
 
 npm run build
 Código: 0
 Registo: build-peca1.log
+Início: 2026-09-17T20:00:04.066482+00:00
+Fim: 2026-09-17T20:05:01.038864+00:00
 
 npm run verify
 Código: 0
 Registo: verify-peca1.log
+Início: 2026-09-17T20:05:01.044593+00:00
+Fim: 2026-09-17T20:13:17.516857+00:00
 
 npm run typecheck
 Código: 0
 Registo: typecheck-peca1.log
+Início: 2026-09-17T20:13:17.523198+00:00
+Fim: 2026-09-17T20:13:17.750797+00:00
