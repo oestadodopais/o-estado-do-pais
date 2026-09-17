@@ -277,11 +277,10 @@ Daí saíam duas coisas, e as duas eram reais: o `axe` não tinha tela para comp
 
 **A norma ganhou a regra 4 da §4**, palavra por palavra como o lugar de direção a escreveu, e o título da secção passou a «(quatro regras)». **A leitura cruzada dos seis estudos** entrou em `design/observatorio/evora/MAPA-dos-seis-estudos-2026-09-16.md`, em inglês como veio, com o parágrafo em itálico que diz quem a pediu, com que palavras, quanto custou e o que o lugar de direção recomendou.
 
-**O QUE FICOU POR PÔR, E PORQUÊ: a entrada §1.111 do `DECISIONS.md`.** O campo `**Afecta:**` de uma entrada a partir da §1.38 é vocabulário fechado de quatro palavras (`sobre`, `metodo`, `agenda`, `nenhum`), sozinho na sua linha, e o `ledger:check` recusa qualquer outra coisa: é ele que garante que uma mudança de rumo diz que texto governa. O texto que recebi põe prosa nesse campo («os estudos (a forma do documento no motor; a norma §4.4; a carta dos conteúdos, por remissão)») e junta na mesma linha o `**Decidido por:**` e o `**Aplicado por:**`, que as outras entradas escrevem em linhas próprias. O portão dá três erros.
+**A §1.111 DO `DECISIONS.md` ENTROU À SEGUNDA, e a primeira tentativa ficou por pôr de propósito.** O campo `**Afecta:**` de uma entrada a partir da §1.38 é vocabulário fechado de quatro palavras (`sobre`, `metodo`, `agenda`, `nenhum`), sozinho na sua linha, e o `ledger:check` recusa qualquer outra coisa: é ele que garante que uma mudança de rumo diz que texto governa. O texto que chegou primeiro punha prosa nesse campo e juntava na mesma linha o `**Decidido por:**` e o `**Aplicado por:**`, e o portão deu três erros. A instrução era não mudar uma palavra: entre mudar o texto e enfraquecer o portão não escolhi nenhuma das duas, disse qual era a linha e o que lhe faltava, e o ramo ficou verde sem a entrada.
 
-Esta decisão não governa nenhum dos dois textos governados nem a agenda, e por isso o valor certo do campo é `nenhum`, com a prosa a passar para o corpo da entrada. **É uma linha, e não é minha para escrever:** a instrução era não mudar uma palavra, e não mudei. A entrada fica por pôr, e o ramo fica verde; quem escreveu a entrada corrige a linha e ela entra sozinha, sem tocar em mais nada.
-
-**Os três portões desta passagem**, cada comando no seu, com o código lido de um ficheiro, sobre `f7c2759b`:
+O lugar de direção reescreveu-a com `**Afecta:** nenhum` sozinho na sua linha e a prosa da decisão no corpo, como a §1.107 faz, e ela entrou tal como veio, num commit só seu. **É o que esta casa quer que aconteça quando um texto e um portão discordam:** não se calça o portão nem se reescreve o texto de outrem; diz-se onde está a discordância e espera-se.
+**Os três portões desta passagem**, cada comando no seu, com o código lido de um ficheiro, sobre `a53046c9`:
 
 ```
 npm run build     → 0
@@ -289,7 +288,7 @@ npm run verify    → 0
 npm run typecheck → 0
 ```
 
-Os códigos ficaram em `j-build.code`, `j-verify.code` e `j-typecheck.code`, com as saídas ao lado, no directório de trabalho da sessão.
+Os códigos ficaram em `k-build.code`, `k-verify.code` e `k-typecheck.code`, com as saídas ao lado, no directório de trabalho da sessão. A corrida anterior, sobre `f7c2759b` e ainda sem a §1.111, saiu também a 0, 0 e 0, com os códigos em `j-*.code`.
 
 **Os commits desta passagem**, sobre `3bdf0b36`:
 
@@ -299,4 +298,6 @@ Os códigos ficaram em `j-build.code`, `j-verify.code` e `j-typecheck.code`, com
 | `8133c8a6` | A norma ganha a regra da leitura de abertura |
 | `44d68028` | A leitura cruzada dos seis estudos de Évora entra no repositório |
 | `f7c2759b` | As duas capturas do primeiro ecrã, com a leitura de abertura |
-| (o commit deste ficheiro) | Esta secção. **É a cabeça final**, e acrescenta um ficheiro de relatório que nenhuma das três cadeias lê |
+| `b41a3d1b` | O relatório ganha a passagem da leitura de abertura |
+| `a53046c9` | A §1.111: todo o estudo abre com a leitura do projeto |
+| (o commit deste ficheiro) | A emenda desta secção, depois de a §1.111 entrar. **É a cabeça final**, e acrescenta um ficheiro de relatório que nenhuma das três cadeias lê |
