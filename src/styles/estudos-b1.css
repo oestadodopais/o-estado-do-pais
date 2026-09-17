@@ -26,7 +26,7 @@
 .estudo-meta { font-family: var(--f-instr); letter-spacing: .1em; text-transform: uppercase;
   color: var(--muted); font-size: 12px; margin: 7px 0 0; display: flex; flex-wrap: wrap; gap: 2px 12px; }
 .estudo-meta > :not(:first-child)::before { content: '· '; color: var(--rule-strong); margin-right: 4px; }
-.estudo-em-ingles { font-family: var(--f-instr); letter-spacing: .02em; color: var(--muted); font-size: 13px; font-weight: 400; }
+.estudo-lingua { font-family: var(--f-instr); letter-spacing: .02em; color: var(--muted); font-size: 13px; font-weight: 400; }
 .estudos-lista .estudo-resumo { font-family: var(--f-prosa); color: var(--ink); max-width: 64ch; margin: 9px 0 0; font-size: 15px; line-height: 1.55; }
 .estudos-lugares { margin-top: 34px; }
 .estudos-lugares ul { list-style: none; padding: 0; }

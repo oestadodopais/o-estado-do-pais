@@ -42,6 +42,13 @@ export function verificaB1(raiz) {
       paginas++;
       const main = parse(fs.readFileSync(ficheiro, 'utf8')).querySelector('main');
       if (!main) { erros.push(`B1 superfície: ${rota} sem main.`); continue; }
+      for (const item of main.querySelectorAll('.estudo-item[data-estudo-edicao]')) {
+        const edicao = item.getAttribute('data-estudo-edicao').split('/').at(-1);
+        const marcas = item.querySelectorAll('.estudo-lingua');
+        const esperadas = edicao !== lang ? 1 : 0;
+        if (marcas.length !== esperadas || (esperadas && normal(marcas[0]?.textContent ?? '') !== ROTULOS_B1[lang].outraLingua))
+          erros.push(`B1 língua: ${rota}: ${item.getAttribute('data-estudo-edicao')} deve ter ${esperadas} marca(s) da língua da edição.`);
+      }
       const w = WORKS.find(w => rota === `${base}/${w.slug}`);
       const dados = w ? [w] : WORKS.filter(w => !w.subject);
       const permitidos = new Set([
