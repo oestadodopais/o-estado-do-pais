@@ -162,10 +162,10 @@ const FAMILIAS = [
   ['linha', { slug: 'evora-populacao-2025' }],
   ['estudos', null],
   ['estudo', { slug: 'agua-nao-faturada' }],
-  /* A página de leitura só existe nas duas edições para dois trabalhos (seis em
-     português, dois em inglês): a régua escolhe um dos dois, para que a família
-     seja medida nas duas edições como todas as outras. */
-  ['texto', { slug: 'evora-prometido-pago-auditado-2026' }],
+  /* B1: a amostra de texto longo abre o corpo na rota do estudo. O nome
+     «texto» identifica esta medição e conserva as conferências da leitura;
+     a terceira coluna diz a rota real, sem pedir um HTML de redirecionamento. */
+  ['texto', { slug: 'evora-prometido-pago-auditado-2026' }, 'estudo'],
   ['agenda', null],
   ['metodo', null],
   ['sobre', null],
@@ -207,9 +207,9 @@ const CLAIMS = loadClaims();
 const claimOuNulo = (id) => CLAIMS.get(id) ?? null;
 
 const ROTAS = [];
-for (const [chave, params] of FAMILIAS) {
+for (const [chave, params, rotaDaFamilia = chave] of FAMILIAS) {
   for (const lang of LANGS) {
-    const p = routePath(chave, lang, params ?? undefined);
+    const p = routePath(rotaDaFamilia, lang, params ?? undefined);
     const rota = p.endsWith('/') ? p : `${p}/`;
     const ficheiro = path.join(DIST, rota.replace(/^\//, ''), 'index.html');
     if (!fs.existsSync(ficheiro)) {
@@ -1582,7 +1582,7 @@ function avalia(p, dist, cartoes, leis, folhas) {
   conta(
     'H3',
     dist.h1Errado === 0 && h1Maus.length === 0,
-    `${dist.n} página(s) do dist/: ${dist.h1Errado} sem título único nem redirecionamento B1 válido` +
+    `${dist.n} página(s) do dist/: ${dist.h1Errado} sem título único` +
       (dist.exemplos.h1.length ? ` (${dist.exemplos.h1.join('; ')})` : '') +
       ` · nas rotas medidas: ${h1Maus.length} de ${p.paginas.length} passagens`,
   );

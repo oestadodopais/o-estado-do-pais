@@ -1,6 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "git": { "deploymentEnabled": { "main": true, "*": false } },
+  "git": {
+    "deploymentEnabled": {
+      "main": true,
+      "*": false
+    }
+  },
   "routes": [
     {
       "src": "/(.*)",
@@ -15,29 +20,133 @@
     },
     {
       "src": "/(.*)",
-      "has": [{ "type": "host", "value": "o-estado-do-pais.vercel.app" }],
-      "headers": { "X-Robots-Tag": "noindex" },
+      "has": [
+        {
+          "type": "host",
+          "value": "o-estado-do-pais.vercel.app"
+        }
+      ],
+      "headers": {
+        "X-Robots-Tag": "noindex"
+      },
       "continue": true
     },
     {
       "src": "/(.*)",
-      "has": [{ "type": "host", "value": "www.xn--oestadodopas-2fb.pt" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.xn--oestadodopas-2fb.pt"
+        }
+      ],
       "status": 308,
-      "headers": { "Location": "https://xn--oestadodopas-2fb.pt/$1" }
+      "headers": {
+        "Location": "https://xn--oestadodopas-2fb.pt/$1"
+      }
     },
     {
       "src": "/(.*)",
-      "has": [{ "type": "host", "value": "oestadodopais.pt" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "oestadodopais.pt"
+        }
+      ],
       "status": 308,
-      "headers": { "Location": "https://xn--oestadodopas-2fb.pt/$1" }
+      "headers": {
+        "Location": "https://xn--oestadodopas-2fb.pt/$1"
+      }
     },
     {
       "src": "/(.*)",
-      "has": [{ "type": "host", "value": "www.oestadodopais.pt" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.oestadodopais.pt"
+        }
+      ],
       "status": 308,
-      "headers": { "Location": "https://xn--oestadodopas-2fb.pt/$1" }
+      "headers": {
+        "Location": "https://xn--oestadodopas-2fb.pt/$1"
+      }
     },
-    { "handle": "filesystem" },
-    { "src": "/en/(.*)", "status": 404, "dest": "/en/404/index.html" }
+    {
+      "src": "/estudos/avaliacao-economica-regional-de-portugal-2026/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/avaliacao-economica-regional-de-portugal-2026/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-2027-prometido-painel-dinheiro/text/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-2027-prometido-painel-dinheiro/"
+      }
+    },
+    {
+      "src": "/estudos/evora-2027-prometido-painel-dinheiro/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-2027-prometido-painel-dinheiro/"
+      }
+    },
+    {
+      "src": "/estudos/evora-economia-investidores-portas-abertas-2026/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-economia-investidores-portas-abertas-2026/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-orcamentado-pago-devido-2025/text/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-orcamentado-pago-devido-2025/"
+      }
+    },
+    {
+      "src": "/estudos/evora-orcamentado-pago-devido-2025/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-orcamentado-pago-devido-2025/"
+      }
+    },
+    {
+      "src": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-prometido-pago-auditado-2026/text/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-prometido-pago-auditado-2026/"
+      }
+    },
+    {
+      "src": "/estudos/evora-prometido-pago-auditado-2026/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-prometido-pago-auditado-2026/"
+      }
+    },
+    {
+      "src": "/estudos/evora-quinze-anos-cinco-mandatos/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-quinze-anos-cinco-mandatos/"
+      }
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/en/(.*)",
+      "status": 404,
+      "dest": "/en/404/index.html"
+    }
   ]
 }

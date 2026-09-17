@@ -1,8 +1,0 @@
----
-import { todosOsRegistos } from '../../../../lib/registos.mjs';
-import { routePath } from '../../../../lib/routes.mjs';
-export function getStaticPaths() {
-  return todosOsRegistos().filter(r => r.lang === 'en').map(r => ({ params: { slug: r.slug } }));
-}
-return Astro.redirect(routePath('estudo', 'en', { slug: Astro.params.slug }) + '/', 301);
----

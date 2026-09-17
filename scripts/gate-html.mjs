@@ -3962,20 +3962,10 @@ for (const file of ficheirosHtml(DIST)) {
     continue;
   }
 
-  // B1: a rota antiga é uma mudança de endereço, conferida antes de sair.
-  if (rota?.key === 'texto') {
-    const destino = routePath('estudo', rota.lang, rota.params) + '/';
-    const refresh = root.querySelectorAll('meta[http-equiv="refresh"]');
-    const canonica = root.querySelector('link[rel="canonical"]')?.getAttribute('href');
-    const portas = root.querySelectorAll('body a[href]');
-    if (!TRAVESSIA_DOS_REGISTOS?.[`${rota.params.slug}/${rota.lang}`] ||
-        refresh.length !== 1 || refresh[0].getAttribute('content') !== `0;url=${destino}` ||
-        canonica?.replace(/\/$/, '') !== canonicalUrl(destino) || portas.length !== 1 || portas[0].getAttribute('href') !== destino ||
-        !fs.existsSync(path.join(DIST, destino.slice(1), 'index.html'))) {
-      err(`B1 redirecionamento: ${caminho} não leva à sua página de estudo ${destino}.`);
-    }
-    ficheiros--; // não é uma página com mobília; a rota foi conferida acima.
-    continue;
+  if (rota?.key === 'estudo') {
+    const canonicas = root.querySelectorAll('link[rel="canonical"]');
+    if (canonicas.length !== 1 || canonicas[0].getAttribute('href') !== canonicalUrl(caminho))
+      err(`B1 canónica: ${caminho} tem de declarar uma só canónica, na convenção do sítio.`);
   }
 
   /* --- 0b. a página de leitura: as sete conferências, ANTES do resto ------
@@ -6725,6 +6715,7 @@ function existeConstruido(caminho) {
     (limpo === '' && CONSTRUIDOS.has('/index.html'))
   );
 }
+const TABELA_VERCEL_B1 = JSON.parse(fs.readFileSync(path.join(ROOT, 'vercel.json'), 'utf8')).routes;
 for (const { rel, base, href } of ligacoesInternas) {
   const resolvido = resolveLigacao(base, href);
   if (!resolvido) {
@@ -6733,6 +6724,19 @@ for (const { rel, base, href } of ligacoesInternas) {
   }
   ligacoesConferidas++;
   if (!href.startsWith('/') && !href.startsWith('#')) ligacoesRelativas++;
+
+  // As portas antigas continuam válidas pelo servidor. Conferir o destino
+  // construído e conservar a âncora, sem dispensar a ligação do varrimento.
+  const rotaAntiga = matchPath(resolvido.caminho);
+  if (rotaAntiga?.key === 'texto') {
+    const origem = routePath('texto', rotaAntiga.lang, rotaAntiga.params);
+    const destino = routePath('estudo', rotaAntiga.lang, rotaAntiga.params) + '/';
+    const entradas = TABELA_VERCEL_B1.filter(r => r.src === origem + '/?');
+    const r = entradas[0];
+    if (entradas.length === 1 && r.status === 301 && r.headers?.Location === destino &&
+        !r.continue && !r.has && !r.missing && !r.dest)
+      resolvido.caminho = destino;
+  }
 
   if (!existeConstruido(resolvido.caminho)) {
     erros.push({
@@ -6933,13 +6937,32 @@ for (const { caminho, px } of [{ caminho: '/apple-touch-icon.png', px: 180 }]) {
   } else manifestosConferidos.icones++;
 }
 
-// B1: nenhum endereço antigo desaparece em silêncio.
-for (const chave of Object.keys(TRAVESSIA_DOS_REGISTOS ?? {})) {
-  const corte = chave.lastIndexOf('/');
-  const slug = chave.slice(0, corte), lang = chave.slice(corte + 1);
-  const antiga = routePath('texto', lang, { slug });
-  if (!idsPorPagina.has(normalizaCaminho(antiga))) {
-    erros.push({ rel: antiga, msg: `B1 redirecionamento em falta: ${chave}.` });
+// B1: as dez mudanças de endereço pertencem ao servidor, nunca ao HTML.
+{
+  const tabela = TABELA_VERCEL_B1;
+  const entradas = tabela.filter(r => /\/(?:texto|text)\/\?$/.test(r.src ?? ''));
+  const chaves = Object.keys(TRAVESSIA_DOS_REGISTOS ?? {});
+  const falha = msg => erros.push({ rel: 'vercel.json', msg: `B1 redirecionamento: ${msg}` });
+  if (entradas.length !== 10 || chaves.length !== 10)
+    falha(`esperadas dez entradas, tabela ${entradas.length}, registos ${chaves.length}.`);
+  for (const chave of chaves) {
+    const corte = chave.lastIndexOf('/');
+    const slug = chave.slice(0, corte), lang = chave.slice(corte + 1);
+    const antiga = routePath('texto', lang, { slug });
+    const destino = routePath('estudo', lang, { slug }) + '/';
+    const candidatas = entradas.filter(r => r.src === antiga + '/?');
+    const r = candidatas[0];
+    if (candidatas.length !== 1 || r?.status !== 301 || r?.headers?.Location !== destino ||
+        r?.continue || r?.has || r?.missing || r?.dest || tabela.findIndex(r => r.handle === 'filesystem') < 0 || tabela.indexOf(r) > tabela.findIndex(r => r.handle === 'filesystem'))
+      falha(`${antiga}: tem de ter uma entrada 301 incondicional para ${destino}, antes do filesystem.`);
+    if (fs.existsSync(path.join(DIST, antiga.slice(1))) || fs.existsSync(path.join(DIST, antiga.slice(1) + '.html')))
+      falha(`${antiga}: a rota antiga ainda existe em dist/.`);
+    const ficheiro = path.join(DIST, destino.slice(1), 'index.html');
+    if (!fs.existsSync(ficheiro)) { falha(`${destino}: destino inexistente.`); continue; }
+    const pagina = parse(fs.readFileSync(ficheiro, 'utf8'));
+    const canonicas = pagina.querySelectorAll('link[rel="canonical"]');
+    if (canonicas.length !== 1 || canonicas[0].getAttribute('href') !== canonicalUrl(destino))
+      falha(`${destino}: canónica única e exata em falta.`);
   }
 }
 
