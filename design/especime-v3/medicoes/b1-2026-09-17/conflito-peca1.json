@@ -1,0 +1,12 @@
+{
+  "alvo": "dist/estudos/evora-2027-prometido-painel-dinheiro/index.html",
+  "portao": "scripts/check-lugar.mjs",
+  "frase": "O que cada porta abre: «Ler no sítio», o texto composto aqui; «Ler o documento», a edição tal como foi publicada.",
+  "sha256Antes": "99dc64198886786e47abd1654dd07afd426040eb9b250a2e2d2c8419037f38fd",
+  "portaoSha256Antes": "cad08e8bd5ec0ed2ec639243a3c3f8f384e027fd9066d00631d7be5ae253d3fc",
+  "limpa": 0,
+  "sha256Planta": "e44692dd9d146c3413a1f6e558da98ccfd6acc37661de2c1bce6b470457871d6",
+  "planta": 1,
+  "sha256Reposto": "99dc64198886786e47abd1654dd07afd426040eb9b250a2e2d2c8419037f38fd",
+  "portaoSha256Depois": "cad08e8bd5ec0ed2ec639243a3c3f8f384e027fd9066d00631d7be5ae253d3fc"
+}

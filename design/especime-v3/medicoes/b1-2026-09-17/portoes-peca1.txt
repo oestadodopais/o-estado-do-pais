@@ -1,0 +1,14 @@
+Cabeça: dd33e1eff6bb09ded152ab4b6bdf636f52c292f6
+Ramo: b1-2026-09-17
+
+npm run build
+Código: 0
+Registo: build-peca1.log
+
+npm run verify
+Código: 0
+Registo: verify-peca1.log
+
+npm run typecheck
+Código: 0
+Registo: typecheck-peca1.log

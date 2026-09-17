@@ -1,0 +1,16 @@
+{
+  "base": "2bf8b238b912fcb89da74096281305c75f0a3b3c",
+  "cabeca": "dd33e1eff6bb09ded152ab4b6bdf636f52c292f6",
+  "caminhos_sem_alteracao": [
+    "studies-src",
+    "registos",
+    "ledger",
+    "design/especime-v3/maquetas/b1",
+    "src/views/HomeView.astro",
+    "src/views/MunicipioView.astro",
+    "src/views/AreaView.astro"
+  ],
+  "alteracoes": [],
+  "l8_igual": true,
+  "l8_sha256": "b7fff901eefd3e3d8493b91bacc8ddd47e8206684cae8125b901ab60e094ec1e"
+}

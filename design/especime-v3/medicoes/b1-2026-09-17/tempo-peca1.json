@@ -1,0 +1,25 @@
+{
+  "corridas": [
+    {
+      "inicioUTC": "2026-09-17T13:24:46Z",
+      "fimUTC": "2026-09-17T13:41:21.336Z",
+      "segundos": 995,
+      "duracao": "16 min 35 s"
+    },
+    {
+      "inicioUTC": "2026-09-17T13:50:17Z",
+      "fimUTC": "2026-09-17T13:59:40.122Z",
+      "segundos": 563,
+      "duracao": "9 min 23 s"
+    },
+    {
+      "inicioUTC": "2026-09-17T14:03:31Z",
+      "fimUTC": "2026-09-17T15:13:40Z",
+      "segundos": 4209,
+      "duracao": "70 min 9 s"
+    }
+  ],
+  "segundos": 5767,
+  "duracao": "96 min 7 s",
+  "criterio": "Soma dos tempos medidos nas três corridas, sem os intervalos entre elas."
+}

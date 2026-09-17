@@ -1,0 +1,8 @@
+$ npm run check:datas
+Código: 0
+
+> o-estado-do-pais@0.1.0 check:datas
+> node scripts/check-datas.mjs
+
+[90mcheck-datas: história completa · 18 edição(ões) do ficheiro refeitas do `git`.[0m
+[32mcheck-datas[0m · 18 edição(ões) datadas, 38 data(s) impressa(s) em 28 página(s), 38 laço(s) data-edição em 28 página(s) conferida(s), 0 edição(ões) sem data e nenhuma caixa de aviso.

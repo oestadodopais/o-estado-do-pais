@@ -1,0 +1,116 @@
+{
+  "estudos": 13,
+  "dominios": 18,
+  "edicoes": 18,
+  "pdf": 0,
+  "tabela": [
+    {
+      "slug": "evora-quinze-anos-cinco-mandatos",
+      "tema": "governo-e-democracia",
+      "valido": true,
+      "declarado": null,
+      "registos": [
+        "pt"
+      ]
+    },
+    {
+      "slug": "evora-economia-investidores-portas-abertas-2026",
+      "tema": "economia-e-financas-publicas",
+      "valido": true,
+      "declarado": null,
+      "registos": [
+        "pt"
+      ]
+    },
+    {
+      "slug": "evora-orcamentado-pago-devido-2025",
+      "tema": "economia-e-financas-publicas",
+      "valido": true,
+      "declarado": null,
+      "registos": [
+        "pt",
+        "en"
+      ]
+    },
+    {
+      "slug": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
+      "tema": "governo-e-democracia",
+      "valido": true,
+      "declarado": null,
+      "registos": [
+        "pt"
+      ]
+    },
+    {
+      "slug": "evora-prometido-pago-auditado-2026",
+      "tema": "economia-e-financas-publicas",
+      "valido": true,
+      "declarado": null,
+      "registos": [
+        "pt",
+        "en"
+      ]
+    },
+    {
+      "slug": "evora-2027-prometido-painel-dinheiro",
+      "tema": "cultura",
+      "valido": true,
+      "declarado": null,
+      "registos": [
+        "pt",
+        "en"
+      ]
+    },
+    {
+      "slug": "onde-esta-a-agua",
+      "tema": "agua",
+      "valido": true,
+      "declarado": null,
+      "registos": []
+    },
+    {
+      "slug": "agua-nao-faturada",
+      "tema": "agua",
+      "valido": true,
+      "declarado": null,
+      "registos": []
+    },
+    {
+      "slug": "avaliacao-economica-regional-de-portugal-2026",
+      "tema": "economia-e-financas-publicas",
+      "valido": true,
+      "declarado": null,
+      "registos": [
+        "pt"
+      ]
+    },
+    {
+      "slug": "which-door-is-yours",
+      "tema": "investimento",
+      "valido": true,
+      "declarado": null,
+      "registos": []
+    },
+    {
+      "slug": "alentejo-algarve",
+      "tema": "economia-e-financas-publicas",
+      "valido": true,
+      "declarado": null,
+      "registos": []
+    },
+    {
+      "slug": "evolucao-de-portugal-desde-1981",
+      "tema": "populacao",
+      "valido": true,
+      "declarado": null,
+      "registos": []
+    },
+    {
+      "slug": "penalizacoes-por-reforma-antecipada-2026",
+      "tema": "seguranca-social-e-pensoes",
+      "valido": true,
+      "declarado": null,
+      "registos": []
+    }
+  ]
+}
