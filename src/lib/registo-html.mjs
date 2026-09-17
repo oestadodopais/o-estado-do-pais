@@ -407,7 +407,12 @@ function escreveNo(no, texto, saida, ctx) {
       ctx.ligacaoAberta = filho;
     }
     abreIntervalo(filho, saida, ctx);
-    escreveNo(filho, texto, saida, ctx);
+    // Só os espaços entre algarismos da figura mudam de ponto de código.
+    // A leitura do olho normaliza os dois, e L2/L4 conservam texto e posições.
+    const textoDaFigura = filho.tipo === 'figura'
+      ? texto.slice(0, filho.inicio) + texto.slice(filho.inicio, filho.fim).replace(/(?<=\d)[ \u2009\u202F](?=\d)/g, '\u00A0') + texto.slice(filho.fim)
+      : texto;
+    escreveNo(filho, textoDaFigura, saida, ctx);
     if (filho.tipo === 'ligacao') {
       ctx.dentroDeLigacao--;
       ctx.ligacaoAberta = ligacaoAnterior;

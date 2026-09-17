@@ -186,9 +186,10 @@ const TagDoValor = porta && plano && !chip ? 'a' : Tag;
  * nada: não arredonda, não agrupa, não acrescenta um símbolo. Se a normalização
  * mudasse, esta linha cairia com ela, e é assim que se quer.
  */
-/* Os dois pontos de código vão escritos, e não como caracteres invisíveis: um
-   separador que se lê no ficheiro é um separador que se pode conferir. */
-const valor = String(claim.value).replace(/\u202F/g, '\u00A0');
+/* B1, achado 19: entre algarismos, também o espaço comum e o espaço fino
+   passam a U+00A0. O valor mantém os mesmos algarismos e posições; apenas o
+   separador dos milhares deixa de admitir uma quebra. */
+const valor = String(claim.value).replace(/(?<=\d)[ \u2009\u202F](?=\d)/g, '\u00A0');
 
 /** As etiquetas de texto de SVG, onde um `<span>` não pode entrar. */
 const TAGS_DE_SVG = new Set(['text', 'tspan', 'textPath']);

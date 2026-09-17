@@ -33,3 +33,6 @@
 .estudos-lugares a { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: var(--ink); }
 
 .estudos-lista .arquivo-porta { border-bottom: 0; }
+
+/* O número e o selo preservam cada valor numa linha, também nos resumos. */
+.estudos-lista .claim-com-chip { flex-wrap: nowrap; white-space: nowrap; }

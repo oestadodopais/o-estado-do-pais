@@ -1042,7 +1042,7 @@ h1[data-citadas='1'] a.claim-value::after {
      estiver. O HTML já escrevia «fonte»: o que mudou foi só o desenho. */
   text-transform: none;
   color: var(--muted);
-  white-space: normal;
+  white-space: nowrap;
   text-decoration: none;
 }
 /* O quadrado é a distinção de estado que o leitor TEM de ver: cheio quando a
@@ -1182,6 +1182,7 @@ a.src-chip.is-unverified:hover::before {
    composição de nenhum. */
 /* O marcador dentro do selo: mais pequeno, porque ali é etiqueta e não campo. */
 .src-chip .marcador {
+  white-space: nowrap;
   font-size: 9.5px;
   padding: 0 4px;
   letter-spacing: 0.01em;

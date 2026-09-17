@@ -531,7 +531,10 @@ for (const chave of chaves) {
         if (atributo(el, 'data-registo-row') !== figura.row)
           err(`C5 ${marca}: linha marcada difere do registo.`);
         const impresso = textoImpresso(el);
-        if (impresso !== figura.printed) {
+        // B1, achado 19: só o separador entre algarismos muda na composição.
+        // C4 continua literal no registo; C5 exige U+00A0 na página construída.
+        const esperadoNaPagina = figura.printed.replace(/(?<=\d)[ \u2009\u202F](?=\d)/g, '\u00A0');
+        if (impresso !== esperadoNaPagina) {
           err(
             `C5 ${marca}: a marca da página imprime ${JSON.stringify(impresso)} e o registo diz ` +
               `que este documento imprime ${JSON.stringify(figura.printed)}.`,
