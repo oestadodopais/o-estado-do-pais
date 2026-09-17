@@ -1571,7 +1571,7 @@ function avalia(p, dist, cartoes, leis, folhas) {
   conta(
     'H3',
     dist.h1Errado === 0 && h1Maus.length === 0,
-    `${dist.n} página(s) do dist/: ${dist.h1Errado} com um número de <h1> diferente de 1` +
+    `${dist.n} página(s) do dist/: ${dist.h1Errado} sem título único nem redirecionamento B1 válido` +
       (dist.exemplos.h1.length ? ` (${dist.exemplos.h1.join('; ')})` : '') +
       ` · nas rotas medidas: ${h1Maus.length} de ${p.paginas.length} passagens`,
   );
