@@ -28,20 +28,20 @@
  * e outra vez em `src/lib/ledger.mjs`.
  */
 export { POR_VERIFICAR } from './marcador.mjs';
-import { POR_VERIFICAR } from './marcador.mjs';
+// B1, item 7c: os temas seguem TEMA_DO_ESTUDO da maqueta; o lugar é outro eixo.
 
 /**
- * Os temas dos trabalhos. O tema é o objecto do estudo, não uma etiqueta de
- * arrumação: é ele que reconcilia a contagem `estudos_evora_no_arquivo` com o
+ * Os lugares dos estudos. SUBJECTS declara só o lugar: é ele que reconcilia a contagem `estudos_evora_no_arquivo` com o
  * arquivo. Um trabalho sem tema atribuído fica com `subject: null`, e a página
  * di-lo por palavras em vez de inventar um.
  */
 /** @type {Record<string, ParDeLinguas>} */
 export const SUBJECTS = {
   evora: { pt: 'Évora', en: 'Évora' },
+  alentejo: { pt: 'Alentejo', en: 'Alentejo' },
 };
 
-/** O nome legível de um tema, ou null quando não há tema atribuído. */
+/** O nome legível do lugar, ou null para um estudo sobre o país. */
 /**
  * @param {string | null | undefined} subject
  * @param {string} [lang]
@@ -49,7 +49,7 @@ export const SUBJECTS = {
 export function subjectLabel(subject, lang = 'pt') {
   if (!subject) return null;
   const s = SUBJECTS[subject];
-  if (!s) throw new Error(`studies: tema desconhecido "${subject}". Acrescente-o a SUBJECTS.`);
+  if (!s) throw new Error(`studies: lugar desconhecido "${subject}". Acrescente-o a SUBJECTS.`);
   return /** @type {Record<string, string>} */ (/** @type {unknown} */ (s))[lang] ?? s.pt;
 }
 
@@ -57,6 +57,7 @@ export const WORKS = [
   {
     id: 'evora-quinze-anos-cinco-mandatos',
     slug: 'evora-quinze-anos-cinco-mandatos',
+    tema: 'governo-e-democracia',
     subject: 'evora',
     /* Republicado a 2026-08-20 do motor: os excertos da ilha de recibos ganharam
        a janela que o extractor corrigido produz, e nenhum valor mexeu. A razão é
@@ -72,6 +73,7 @@ export const WORKS = [
   {
     id: 'evora-economia-investidores-portas-abertas-2026',
     slug: 'evora-economia-investidores-portas-abertas-2026',
+    tema: 'economia-e-financas-publicas',
     subject: 'evora',
     editions: [
       { lang: 'pt', title: 'Évora — Economia, Investidores, Portas Abertas 2026', date: null, updated: null },
@@ -84,6 +86,7 @@ export const WORKS = [
   {
     id: 'evora-orcamentado-pago-devido-2025',
     slug: 'evora-orcamentado-pago-devido-2025',
+    tema: 'economia-e-financas-publicas',
     subject: 'evora',
     /* Republicado a 2026-08-20 do motor, como o do 08 e pela mesma razão de
        ponteiro. DECISIONS §1.49. */
@@ -109,6 +112,7 @@ export const WORKS = [
   {
     id: 'evora-os-pelouros-quem-os-teve-o-que-fizeram',
     slug: 'evora-os-pelouros-quem-os-teve-o-que-fizeram',
+    tema: 'governo-e-democracia',
     subject: 'evora',
     editions: [
       {
@@ -152,6 +156,7 @@ export const WORKS = [
   {
     id: 'evora-prometido-pago-auditado-2026',
     slug: 'evora-prometido-pago-auditado-2026',
+    tema: 'economia-e-financas-publicas',
     subject: 'evora',
     /**
      * A DATA, e como foi encontrada. Este trabalho nunca passou por um
@@ -197,6 +202,7 @@ export const WORKS = [
   {
     id: 'evora-2027-prometido-painel-dinheiro',
     slug: 'evora-2027-prometido-painel-dinheiro',
+    tema: 'cultura',
     subject: 'evora',
     /**
      * O TÍTULO É O QUE O DOCUMENTO IMPRIME, palavra por palavra (16.09.2026,
@@ -257,6 +263,7 @@ export const WORKS = [
   {
     id: 'onde-esta-a-agua',
     slug: 'onde-esta-a-agua',
+    tema: 'agua',
     // subject por preencher: o título não diz de que território trata. Se vier
     // a ser sobre Évora, a contagem estudos_evora_no_arquivo muda — e o build
     // avisa, porque a afirmação estudos-evora-publicados é verificada contra ela.
@@ -271,11 +278,17 @@ export const WORKS = [
        pending]`: um segundo marcador, que IDENTIDADE §6 tinha retirado e que
        continuava a aparecer sete vezes em três páginas. Um sítio com duas
        linguagens de incerteza tem, na prática, nenhuma. */
-    description: { pt: POR_VERIFICAR, en: POR_VERIFICAR },
+    descricaoDoDocumento: { pt: 'verbatim', en: 'verbatim' },
+    verbatimDaAbertura: { pt: 'estudo-agua-abertura-pt', en: 'estudo-agua-abertura-en' },
+    description: {
+      pt: 'A água de Portugal: onde está, de onde vem e o que a autonomia exigiria de facto.',
+      en: "Portugal's water, where it is, where it comes from, and what autonomy would actually take.",
+    },
   },
   {
     id: 'agua-nao-faturada',
     slug: 'agua-nao-faturada',
+    tema: 'agua',
     editions: [
       { lang: 'pt', title: 'Água Não Faturada', date: null, updated: null },
       { lang: 'en', title: 'Água Não Faturada', date: null, updated: null, titleUnverified: true },
@@ -288,6 +301,7 @@ export const WORKS = [
   {
     id: 'avaliacao-economica-regional-de-portugal-2026',
     slug: 'avaliacao-economica-regional-de-portugal-2026',
+    tema: 'economia-e-financas-publicas',
     editions: [
       { lang: 'pt', title: 'Avaliação Económica Regional de Portugal 2026', date: null, updated: null },
     ],
@@ -299,6 +313,7 @@ export const WORKS = [
   {
     id: 'which-door-is-yours',
     slug: 'which-door-is-yours',
+    tema: 'investimento',
     editions: [
       {
         lang: 'en',
@@ -315,6 +330,8 @@ export const WORKS = [
   {
     id: 'alentejo-algarve',
     slug: 'alentejo-algarve',
+    subject: 'alentejo',
+    tema: 'economia-e-financas-publicas',
     editions: [
       { lang: 'en', title: 'Alentejo & Algarve — Economy, Society, Strategy', date: null, updated: null },
     ],
@@ -326,6 +343,7 @@ export const WORKS = [
   {
     id: 'evolucao-de-portugal-desde-1981',
     slug: 'evolucao-de-portugal-desde-1981',
+    tema: 'populacao',
     editions: [{ lang: 'pt', title: 'Evolução de Portugal desde 1981', date: null, updated: null }],
     description: {
       pt: 'Séries longas sobre a evolução do país.',
@@ -338,6 +356,7 @@ export const WORKS = [
        não se escreve nele a data em que o ficheiro entrou no repositório. */
     id: 'penalizacoes-por-reforma-antecipada-2026',
     slug: 'penalizacoes-por-reforma-antecipada-2026',
+    tema: 'seguranca-social-e-pensoes',
     editions: [
       {
         lang: 'pt',
