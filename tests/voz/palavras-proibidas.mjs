@@ -190,6 +190,20 @@ const BURACOS = [
     naoMorde: (html) =>
       dentroDaMarca(html, 'data-registo-unidade', '<p class="planta">O responsável editorial responde pelo que se publica.</p>'),
   },
+  {
+    nome: 'a posição da secção é prosa do sítio dentro do artigo',
+    chave: 'a casa',
+    pagina: () => primeiraPagina(/^estudos\/[^/]+\/index\.html$/, 'data-registo-edicao'),
+    morde: html => dentroDaMarca(html, 'data-registo-posicao', '<span>As regras da casa.</span>'),
+    naoMorde: html => dentroDaMarca(html, 'data-registo-unidade', '<span>As regras da casa.</span>'),
+  },
+  {
+    nome: 'a porta Subir é prosa do sítio dentro do artigo',
+    chave: 'a casa',
+    pagina: () => primeiraPagina(/^estudos\/[^/]+\/index\.html$/, 'data-registo-edicao'),
+    morde: html => html.replace(/(<a class="texto-secao-topo"[^>]*>)/, '$1As regras da casa. '),
+    naoMorde: html => dentroDaMarca(html, 'data-registo-unidade', '<span>As regras da casa.</span>'),
+  },
 ];
 
 const linhas = [];
