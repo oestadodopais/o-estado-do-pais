@@ -1,0 +1,20 @@
+{
+  "maqueta": "design/especime-v3/maquetas/b1/fazer.py",
+  "coincide": true,
+  "temas": {
+    "evora-quinze-anos-cinco-mandatos": "governo-e-democracia",
+    "evora-economia-investidores-portas-abertas-2026": "economia-e-financas-publicas",
+    "evora-orcamentado-pago-devido-2025": "economia-e-financas-publicas",
+    "evora-os-pelouros-quem-os-teve-o-que-fizeram": "governo-e-democracia",
+    "evora-prometido-pago-auditado-2026": "economia-e-financas-publicas",
+    "evora-2027-prometido-painel-dinheiro": "cultura",
+    "onde-esta-a-agua": "agua",
+    "agua-nao-faturada": "agua",
+    "avaliacao-economica-regional-de-portugal-2026": "economia-e-financas-publicas",
+    "which-door-is-yours": "investimento",
+    "alentejo-algarve": "economia-e-financas-publicas",
+    "evolucao-de-portugal-desde-1981": "populacao",
+    "penalizacoes-por-reforma-antecipada-2026": "seguranca-social-e-pensoes"
+  },
+  "estudos": 13
+}

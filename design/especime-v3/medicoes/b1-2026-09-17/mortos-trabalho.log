@@ -1,0 +1,11 @@
+[90m  prova ✓ 10 forma(s) mortas vistas e 2 viva(s) deixadas em paz, num directório temporário.[0m
+
+[31m  IDENTIFICADORES MORTOS · 2 em 226 ficheiros[0m
+
+    [31m✗[0m src/views/EstudoView.astro:4 · importação "Provenance" declarada e nunca usada no código.
+    [31m✗[0m scripts/check-lugar.mjs:473 · const "ROTULOS_QUE_SAIRAM" declarada e nunca usada no código.
+
+[90m    Uma declaração que ninguém usa diz a quem lê que o ficheiro faz uma coisa que ele
+    já não faz. Tire-a, ou volte a usá-la. Um nome citado só num comentário ou dentro
+    de uma cadeia não conta como uso: o que conta é o código.[0m
+

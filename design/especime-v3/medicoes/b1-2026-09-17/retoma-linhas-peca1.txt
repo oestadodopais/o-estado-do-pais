@@ -1,0 +1,477 @@
+
+[90m  portão de HTML · 7364 páginas · 2893/2975 afirmações citadas fora do livro-razão · 5950 páginas de linha · 18 documento(s) de estudo, conferidos contra a origem · 10 página(s) de leitura, conferidas contra o seu registo de conteúdo[0m
+[90m  allowlist · 19 motivo(s) e 5 token(s), com os usos que os provam vivos: data-de-atualizacao 2 · data-da-conferencia 30 · nome-oficial-da-medida 58 · referencia-legal 20 · titulo-de-estudo 228 · escala-de-instrumento 152 · limiar-do-quadro 84 · data-da-linha 26200 · data-do-repositorio 78 · ambito-da-medida 4 · periodo-da-fonte 1112 · data-de-referencia 10744 · numeracao 10076 · proveniencia 24348 · data-da-agenda 156 · data-de-leitura-de-uma-definicao 56 · identificador-tecnico 1469 · fonte-da-carta 64 · licenca-do-conjunto 2 · UE-27 (scope: any) 21 · EU-27 (scope: any) 21 · 73/2013 (scope: body) 614 · sha256 (scope: body) 24 · 52.º (scope: body) 614
+  rótulo de IA · 7346 no rodapé (de 7346 páginas fora dos documentos alojados) · 10 no topo das páginas de leitura · 2 ficha(s) da primeira página · 2 frase(s) da política e 2 do projeto, comparadas com o texto decidido[0m
+[90m  ortografia · Acordo de 1990 como se aplica em Portugal · 254 pares, 50 iguais · restante: 0 ocorrência(s) em 0 rota(s), todas de linhas cruzadas · 8 dispensada(s) por estarem entre «…»[0m
+[90m  factos por verificar · 2 campo(s) declarados, com o marcador na página e a porta da edição certa[0m
+[90m  as duas edições · 24 peça(s) de página de leitura com os mesmos ids pela mesma ordem[0m
+
+[33m  82 aviso(s):[0m
+[90m    · a afirmação "abandono-escolar-precoce-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "abandono-escolar-precoce-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "agua-nao-faturada-portugal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "avisos-pt2030-abertos" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "avisos-pt2030-pessoas-singulares" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "ciclo-substituicao-condutas" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "competencias-digitais-2023" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "competencias-digitais-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "competencias-digitais-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "credito-malparado-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "credito-malparado-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "crescimento-da-despesa-liquida-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "criancas-em-creche-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "criancas-em-creche-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "criancas-em-creche-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "custo-unitario-do-trabalho-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "custo-unitario-do-trabalho-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "desempenho-das-exportacoes-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "desemprego-de-longa-duracao-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "desemprego-de-longa-duracao-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "despesa-em-id-2023" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "despesa-em-id-2024-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "despesa-em-id-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "disparidade-de-emprego-entre-sexos-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "disparidade-de-emprego-entre-sexos-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "disparidade-de-emprego-entre-sexos-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "disparidade-salarial-entre-sexos-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "distancia-portugal-ue27-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "divida-das-empresas-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "divida-das-empresas-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "divida-das-familias-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "divida-das-familias-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "divida-publica-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "divida-publica-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "fluxo-de-credito-as-empresas-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "fluxo-de-credito-as-familias-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "fluxo-de-credito-as-familias-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "formacao-bruta-de-capital-fixo-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "formacao-bruta-de-capital-fixo-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "formacao-bruta-de-capital-fixo-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "independencia-da-justica-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "independencia-da-justica-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "independencia-da-justica-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "indice-de-percepcao-da-corrupcao-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "indice-de-percepcao-da-corrupcao-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "indice-de-percepcao-da-corrupcao-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "jovens-nem-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "jovens-nem-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "licencas-de-construcao-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "licencas-de-construcao-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "municipios-com-estudo-aprofundado" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "municipios-sem-estudo-aprofundado" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "necessidades-medicas-nao-satisfeitas-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "necessidades-medicas-nao-satisfeitas-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "necessidades-medicas-nao-satisfeitas-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "penedono-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "pib-real-per-capita-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "pib-real-per-capita-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "pib-real-per-capita-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "posicao-de-investimento-internacional-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "precos-da-habitacao-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "precos-da-habitacao-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "racio-s80-s20-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "racio-s80-s20-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "retribuicao-minima-mensal-doze-meses-2026" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "retribuicao-minima-mensal-garantida-continente-2026" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "risco-de-pobreza-ou-exclusao-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "risco-de-pobreza-ou-exclusao-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "saldo-da-balanca-corrente-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "saldo-natural-portugal-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "sobrecarga-do-custo-da-habitacao-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "sobrecarga-do-custo-da-habitacao-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "taxa-de-actividade-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "taxa-de-actividade-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "taxa-de-cambio-efectiva-real-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "taxa-de-cambio-efectiva-real-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "taxa-de-desemprego-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "taxa-de-desemprego-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "taxa-de-desemprego-mip-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "taxa-de-desemprego-mip-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "taxa-de-emprego-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "taxa-de-emprego-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+
+[31m  O PORTÃO DE HTML FECHOU — 191 erro(s):[0m
+
+  [31mestudos/evora-2027-prometido-painel-dinheiro/texto/index.html[0m
+    [31m✗[0m L6 evora-2027-prometido-painel-dinheiro/pt: a página não tem a secção "As linhas deste documento" (id="linhas-do-documento").
+    [31m✗[0m a ligação interna "#linha-bbs-op-total" aponta para a âncora "#linha-bbs-op-total", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-protocolo-cultura" aponta para a âncora "#linha-plano-protocolo-cultura", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-municipio-por-transferir" aponta para a âncora "#linha-painel-municipio-por-transferir", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-obra-centro-cultural" aponta para a âncora "#linha-bbs-obra-centro-cultural", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-obra-danca" aponta para a âncora "#linha-bbs-obra-danca", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-precontratacao" aponta para a âncora "#linha-painel-precontratacao", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-rc-resultado" aponta para a âncora "#linha-rc-resultado", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-premio" aponta para a âncora "#linha-painel-premio", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-transferido" aponta para a âncora "#linha-painel-transferido", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-desp-total" aponta para a âncora "#linha-bbs-desp-total", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-orcamento-global" aponta para a âncora "#linha-painel-orcamento-global", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-interno" aponta para a âncora "#linha-painel-interno", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-op-publico" aponta para a âncora "#linha-bbs-op-publico", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-op-privado" aponta para a âncora "#linha-bbs-op-privado", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-orcamento-49" aponta para a âncora "#linha-painel-orcamento-49", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-buraco" aponta para a âncora "#linha-painel-buraco", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-protocolo-municipio" aponta para a âncora "#linha-painel-protocolo-municipio", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-desp-total" aponta para a âncora "#linha-bbs-desp-total", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-orcamento-global" aponta para a âncora "#linha-painel-orcamento-global", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-orcamento-49" aponta para a âncora "#linha-painel-orcamento-49", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-buraco" aponta para a âncora "#linha-painel-buraco", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-op-governo" aponta para a âncora "#linha-bbs-op-governo", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-estado-garantido" aponta para a âncora "#linha-painel-estado-garantido", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-cimac" aponta para a âncora "#linha-painel-cimac", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-transferido" aponta para a âncora "#linha-painel-transferido", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-cimac" aponta para a âncora "#linha-painel-cimac", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-interno" aponta para a âncora "#linha-painel-interno", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-op-governo" aponta para a âncora "#linha-bbs-op-governo", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-protocolo-cultura" aponta para a âncora "#linha-plano-protocolo-cultura", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-op-municipio" aponta para a âncora "#linha-bbs-op-municipio", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-municipio-por-transferir" aponta para a âncora "#linha-painel-municipio-por-transferir", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-interno" aponta para a âncora "#linha-painel-interno", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-protocolo-municipio" aponta para a âncora "#linha-plano-protocolo-municipio", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-op-cimac" aponta para a âncora "#linha-bbs-op-cimac", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-estado-garantido" aponta para a âncora "#linha-painel-estado-garantido", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-cimac" aponta para a âncora "#linha-painel-cimac", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-interno" aponta para a âncora "#linha-painel-interno", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-cimac-acordo" aponta para a âncora "#linha-plano-cimac-acordo", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-op-uniao" aponta para a âncora "#linha-bbs-op-uniao", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-obra-centro-cultural" aponta para a âncora "#linha-bbs-obra-centro-cultural", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-interno" aponta para a âncora "#linha-painel-interno", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-obra-danca" aponta para a âncora "#linha-bbs-obra-danca", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-interno" aponta para a âncora "#linha-painel-interno", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-obra-castris" aponta para a âncora "#linha-bbs-obra-castris", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-obra-epac" aponta para a âncora "#linha-bbs-obra-epac", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-interno" aponta para a âncora "#linha-painel-interno", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-obra-remedios" aponta para a âncora "#linha-bbs-obra-remedios", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-interno" aponta para a âncora "#linha-painel-interno", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-obra-arena" aponta para a âncora "#linha-bbs-obra-arena", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-obra-salao" aponta para a âncora "#linha-bbs-obra-salao", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-interno" aponta para a âncora "#linha-painel-interno", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-precontratacao" aponta para a âncora "#linha-painel-precontratacao", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-equipa" aponta para a âncora "#linha-painel-equipa", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-interno" aponta para a âncora "#linha-painel-interno", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-postos" aponta para a âncora "#linha-plano-postos", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-despesa-pessoal" aponta para a âncora "#linha-plano-despesa-pessoal", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-desp-programa" aponta para a âncora "#linha-bbs-desp-programa", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-precontratacao" aponta para a âncora "#linha-painel-precontratacao", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-precontratacao" aponta para a âncora "#linha-painel-precontratacao", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-precontratacao" aponta para a âncora "#linha-painel-precontratacao", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-externalizado" aponta para a âncora "#linha-painel-externalizado", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-interno" aponta para a âncora "#linha-painel-interno", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-precontratacao" aponta para a âncora "#linha-painel-precontratacao", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-premio" aponta para a âncora "#linha-painel-premio", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-transferido" aponta para a âncora "#linha-painel-transferido", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-premio-melina" aponta para a âncora "#linha-plano-premio-melina", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-desp-total" aponta para a âncora "#linha-bbs-desp-total", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-op-publico" aponta para a âncora "#linha-bbs-op-publico", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-op-privado" aponta para a âncora "#linha-bbs-op-privado", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-op-governo" aponta para a âncora "#linha-bbs-op-governo", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-op-municipio" aponta para a âncora "#linha-bbs-op-municipio", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-op-cimac" aponta para a âncora "#linha-bbs-op-cimac", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-op-uniao" aponta para a âncora "#linha-bbs-op-uniao", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-desp-programa" aponta para a âncora "#linha-bbs-desp-programa", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-desp-comunicacao" aponta para a âncora "#linha-bbs-desp-comunicacao", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-desp-salarios" aponta para a âncora "#linha-bbs-desp-salarios", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-desp-monitorizacao" aponta para a âncora "#linha-bbs-desp-monitorizacao", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-desp-total" aponta para a âncora "#linha-bbs-desp-total", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-cap-governo" aponta para a âncora "#linha-bbs-cap-governo", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-cap-municipio" aponta para a âncora "#linha-bbs-cap-municipio", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-cap-cimac" aponta para a âncora "#linha-bbs-cap-cimac", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-cap-uniao" aponta para a âncora "#linha-bbs-cap-uniao", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-cap-outras" aponta para a âncora "#linha-bbs-cap-outras", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-cap-total" aponta para a âncora "#linha-bbs-cap-total", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-obra-centro-cultural" aponta para a âncora "#linha-bbs-obra-centro-cultural", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-obra-danca" aponta para a âncora "#linha-bbs-obra-danca", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-obra-castris" aponta para a âncora "#linha-bbs-obra-castris", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-obra-salao" aponta para a âncora "#linha-bbs-obra-salao", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-obra-epac" aponta para a âncora "#linha-bbs-obra-epac", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-obra-remedios" aponta para a âncora "#linha-bbs-obra-remedios", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-obra-arquivo" aponta para a âncora "#linha-bbs-obra-arquivo", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-obra-arena" aponta para a âncora "#linha-bbs-obra-arena", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-cap-total" aponta para a âncora "#linha-bbs-cap-total", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbp-op-total" aponta para a âncora "#linha-bbp-op-total", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbp-op-publico" aponta para a âncora "#linha-bbp-op-publico", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbp-op-privado" aponta para a âncora "#linha-bbp-op-privado", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-op-acrescimo" aponta para a âncora "#linha-bbs-op-acrescimo", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-rcm-teto-global" aponta para a âncora "#linha-rcm-teto-global", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-rcm-teto-global" aponta para a âncora "#linha-rcm-teto-global", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-rcm-2024" aponta para a âncora "#linha-rcm-2024", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-rcm-2025" aponta para a âncora "#linha-rcm-2025", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-rcm-2026" aponta para a âncora "#linha-rcm-2026", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-rcm-2027" aponta para a âncora "#linha-rcm-2027", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-dl124-contribuicao-inicial" aponta para a âncora "#linha-dl124-contribuicao-inicial", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-dl124-contribuicao-inicial" aponta para a âncora "#linha-dl124-contribuicao-inicial", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-receita-total" aponta para a âncora "#linha-plano-receita-total", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-subsidios" aponta para a âncora "#linha-plano-subsidios", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-gepac" aponta para a âncora "#linha-plano-gepac", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-turismo" aponta para a âncora "#linha-plano-turismo", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-iti" aponta para a âncora "#linha-plano-iti", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-interreg" aponta para a âncora "#linha-plano-interreg", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-alentejo-a" aponta para a âncora "#linha-plano-alentejo-a", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-alentejo-b" aponta para a âncora "#linha-plano-alentejo-b", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-iefp" aponta para a âncora "#linha-plano-iefp", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-saldos" aponta para a âncora "#linha-plano-saldos", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-financeiras" aponta para a âncora "#linha-plano-financeiras", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-quotizacoes" aponta para a âncora "#linha-plano-quotizacoes", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-mecenato" aponta para a âncora "#linha-plano-mecenato", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-protocolo-economia" aponta para a âncora "#linha-plano-protocolo-economia", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-turismo-pago-2025" aponta para a âncora "#linha-plano-turismo-pago-2025", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-protocolo-cultura" aponta para a âncora "#linha-plano-protocolo-cultura", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-protocolo-coesao" aponta para a âncora "#linha-plano-protocolo-coesao", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-coesao-comprometido" aponta para a âncora "#linha-plano-coesao-comprometido", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-protocolo-municipio" aponta para a âncora "#linha-plano-protocolo-municipio", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-cimac-acordo" aponta para a âncora "#linha-plano-cimac-acordo", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-alentejo-execucao-2026" aponta para a âncora "#linha-plano-alentejo-execucao-2026", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-patrocinadores" aponta para a âncora "#linha-plano-patrocinadores", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-linha-do-vagar" aponta para a âncora "#linha-plano-linha-do-vagar", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-alentejo-aprovado" aponta para a âncora "#linha-plano-alentejo-aprovado", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-internacionalizacao-dotacao" aponta para a âncora "#linha-plano-internacionalizacao-dotacao", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-saldo-vagar" aponta para a âncora "#linha-plano-saldo-vagar", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-saldo-turismo" aponta para a âncora "#linha-plano-saldo-turismo", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-saldo-gepac" aponta para a âncora "#linha-plano-saldo-gepac", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-despesa-fse" aponta para a âncora "#linha-plano-despesa-fse", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-despesa-correntes" aponta para a âncora "#linha-plano-despesa-correntes", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-despesa-projetos" aponta para a âncora "#linha-plano-despesa-projetos", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-despesa-pessoal" aponta para a âncora "#linha-plano-despesa-pessoal", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-despesa-amortizacoes" aponta para a âncora "#linha-plano-despesa-amortizacoes", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-despesa-total" aponta para a âncora "#linha-plano-despesa-total", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-saldo-2027" aponta para a âncora "#linha-plano-saldo-2027", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-prr-castris" aponta para a âncora "#linha-prr-castris", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-prr-made" aponta para a âncora "#linha-prr-made", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-prr-arquivo" aponta para a âncora "#linha-prr-arquivo", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-prr-remedios" aponta para a âncora "#linha-prr-remedios", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-prr-epac" aponta para a âncora "#linha-prr-epac", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-prr-arena" aponta para a âncora "#linha-prr-arena", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-prr-rossio" aponta para a âncora "#linha-prr-rossio", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-prr-total" aponta para a âncora "#linha-prr-total", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-rc-receita-total" aponta para a âncora "#linha-rc-receita-total", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-rc-subsidios" aponta para a âncora "#linha-rc-subsidios", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-rc-gepac" aponta para a âncora "#linha-rc-gepac", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-rc-iefp" aponta para a âncora "#linha-rc-iefp", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-rc-fse" aponta para a âncora "#linha-rc-fse", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-rc-pessoal" aponta para a âncora "#linha-rc-pessoal", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-rc-custos-total" aponta para a âncora "#linha-rc-custos-total", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-rc-resultado" aponta para a âncora "#linha-rc-resultado", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-rc-gepac" aponta para a âncora "#linha-rc-gepac", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-rc-iefp" aponta para a âncora "#linha-rc-iefp", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-rc-outras-receitas" aponta para a âncora "#linha-rc-outras-receitas", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-rc-subcontratos-prosa" aponta para a âncora "#linha-rc-subcontratos-prosa", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-rc-trabalhos-especializados" aponta para a âncora "#linha-rc-trabalhos-especializados", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-rc-subcontratos-tabela" aponta para a âncora "#linha-rc-subcontratos-tabela", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-opo24-projeto-cec" aponta para a âncora "#linha-opo24-projeto-cec", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-opo24-projeto-cec-total" aponta para a âncora "#linha-opo24-projeto-cec-total", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-opo24-associacao" aponta para a âncora "#linha-opo24-associacao", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-opo25-projeto-cec" aponta para a âncora "#linha-opo25-projeto-cec", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-opo25-projeto-cec-total" aponta para a âncora "#linha-opo25-projeto-cec-total", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-gop26-orcamento-total" aponta para a âncora "#linha-gop26-orcamento-total", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-gop26-cultura-patrimonio" aponta para a âncora "#linha-gop26-cultura-patrimonio", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-vagar-investimento" aponta para a âncora "#linha-vagar-investimento", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-vagar-apoio-uniao" aponta para a âncora "#linha-vagar-apoio-uniao", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-intern-investimento" aponta para a âncora "#linha-intern-investimento", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-intern-apoio-uniao" aponta para a âncora "#linha-intern-apoio-uniao", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-alt-vagar-custo" aponta para a âncora "#linha-alt-vagar-custo", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-alt-intern-custo" aponta para a âncora "#linha-alt-intern-custo", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-alt-vagar-elegivel" aponta para a âncora "#linha-alt-vagar-elegivel", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-alt-vagar-fundo" aponta para a âncora "#linha-alt-vagar-fundo", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-alt-intern-fundo" aponta para a âncora "#linha-alt-intern-fundo", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-alentejo-aprovado" aponta para a âncora "#linha-plano-alentejo-aprovado", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-alt-vagar-custo" aponta para a âncora "#linha-alt-vagar-custo", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-orcamento-global" aponta para a âncora "#linha-painel-orcamento-global", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-estado-garantido" aponta para a âncora "#linha-painel-estado-garantido", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-transferido" aponta para a âncora "#linha-painel-transferido", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-municipio-por-transferir" aponta para a âncora "#linha-painel-municipio-por-transferir", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-painel-interno" aponta para a âncora "#linha-painel-interno", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-bbs-op-total" aponta para a âncora "#linha-bbs-op-total", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-protocolo-economia" aponta para a âncora "#linha-plano-protocolo-economia", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-protocolo-coesao" aponta para a âncora "#linha-plano-protocolo-coesao", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-protocolo-coesao" aponta para a âncora "#linha-plano-protocolo-coesao", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+    [31m✗[0m a ligação interna "#linha-plano-protocolo-municipio" aponta para a âncora "#linha-plano-protocolo-municipio", que não existe em "/estudos/evora-2027-prometido-painel-dinheiro/texto".
+      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.
+

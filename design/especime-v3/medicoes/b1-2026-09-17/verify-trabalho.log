@@ -1,0 +1,320 @@
+
+> o-estado-do-pais@0.1.0 verify
+> npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && npm run gate:html && npm run check:css && npm run check:datas && npm run check:moldura && npm run check:alvos && npm run check:fontes && npm run check:cadeia && npm run check:dados && npm run mapa:unidades -- --verifica && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:alcance && npm run check:voz && npm run check:lingua && npm run check:lugar && npm run provar:eyetext && npm run provar:guardas && npm run check:mortos && npm run check:indice && npm run check:cartao && npm run check:palavras && npm run design:feixe
+
+
+> o-estado-do-pais@0.1.0 ledger:check
+> node scripts/check-ledger.mjs
+
+
+[90m  aritmética · 77 conferência(s): a especificação partilhada com o motor e os estragos plantados num livro-razão de mentira[0m
+  [32m✓[0m os quatro empates a meio, a divisão exata e as duas derivações que o float64 aceitava.
+
+[90m  livro-razão · 2975 afirmações[0m
+
+  [32m✓[0m 2975 afirmações válidas · 330 derivadas · 334 com aritmética reavaliada no build · 1866 com o rótulo da fonte
+[33m  3 marcador(es) por resolver em notas não publicadas: disparidade-salarial-entre-sexos-2024, retribuicao-minima-mensal-garantida-continente-2026 (2)[0m
+[90m    O campo "note" não vai à página, e por isso estes 3 não mudam o estado de nenhum selo nem fecham a construção. Ficam aqui para não se perderem.[0m
+
+[33m  Dívida de proveniência: 8 afirmação(ões) com campos "[a verificar]"[0m
+[90m    agua-nao-faturada-portugal-2024 → source_url, excerpt[0m
+[90m    avisos-pt2030-abertos → source, source_url, access_date, excerpt, document.title, document.edition[0m
+[90m    avisos-pt2030-pessoas-singulares → source, source_url, access_date, excerpt, document.title, document.edition[0m
+[90m    ciclo-substituicao-condutas → source, source_url, access_date, reference_date, excerpt, document.title, document.edition[0m
+[90m    evora-prr-aprovado-2026 → excerpt[0m
+[90m    evora-prr-pago-2026 → excerpt[0m
+[90m    evora-prr-vencido-aprovado-2026 → excerpt[0m
+[90m    saldo-natural-portugal-2025 → source_url, access_date, excerpt, document.title, document.edition[0m
+[90m    Isto não impede o build. Impede que se diga que o livro-razão está fechado.[0m
+
+
+[90m  amarra das decisões · 75 entrada(s) a partir da §1.38 · 2 texto(s) governado(s) · 2 citação(ões) da constituição conferida(s), de 43 entre «…»[0m
+  [32m✓[0m cada texto no ar tem uma decisão registada que o governa, e cada frase que a constituição lhe cita está lá.
+
+[90m  bytes de controlo · 3 de 3 ficheiro(s) sem nenhum · 3 planta(s) vista(s)[0m
+  [32m✓[0m os ficheiros desta régua leem-se como texto, do primeiro byte ao último.
+
+
+> o-estado-do-pais@0.1.0 check:registo
+> node scripts/check-registo.mjs
+
+
+[90m  registo · os números dos documentos que governam, contra a fonte[0m
+
+[90m  os factos, medidos:[0m
+[90m     2975  linhas do livro-razão                                ledger/claims/*.yml[0m
+[90m           2.ª medição: loadClaims().size · subconjunto: as que o painel semanal reconfere = 32[0m
+[90m      308  concelhos com página                                 src/data/municipios.mjs · MUNICIPIOS_COM_PAGINA[0m
+[90m           2.ª medição: src/data/concelhos.gerado.json · linha `municipios-portugal-caop-2025`[0m
+[90m       13  estudos (trabalhos) no arquivo                       src/data/studies.mjs · WORKS[0m
+[90m           uma só fonte · linha `estudos-publicados`[0m
+[90m       18  edições do arquivo                                   src/data/studies.mjs · EDITIONS[0m
+[90m           uma só fonte · linha `edicoes-publicadas`[0m
+[90m       18  documentos alojados                                  studies-src/<slug>/<lingua>.html, declarados em studies-src/manifest.yml[0m
+[90m           2.ª medição: studies-src/manifest.yml · edicoes[0m
+[90m        3  correções publicadas                                 ledger/claims/*.yml · corrections[].kind == 'correcao'[0m
+[90m           uma só fonte · linha `correcoes-publicadas`[0m
+[90m       18  passos da construção                                 package.json · scripts.build[0m
+[90m           uma só fonte[0m
+[90m       10  páginas de leitura (edições com registo de conteúdo) registos/manifest.json[0m
+[90m           uma só fonte[0m
+
+[90m  hoje é 17.09.2026; uma afirmação datada de hoje confere-se como corrente.[0m
+
+  [32m✓[0m VISAO.md                                          0 corrente(s) ·  5 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 5 avaliada(s), chão 4
+[90m      VISAO.md:23 «2 916 linhas» saltada pela forma (i) · 02.09.2026[0m
+[90m      VISAO.md:23 «2 602 linhas» saltada pela forma (iii-a)[0m
+[90m      VISAO.md:35 «2 916 linhas» saltada pela forma (i) · 02.09.2026[0m
+[90m      VISAO.md:38 «treze estudos» saltada pela forma (i) · 16.09.2026[0m
+[90m      VISAO.md:38 «doze estudos» saltada pela forma (iii-a)[0m
+[90m      VISAO.md:23 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+  [32m✓[0m README.md                                         5 corrente(s) · 10 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 15 avaliada(s), chão 15
+[90m      README.md:30 «quinze passos encadeados» saltada pela forma (i) · 02.09.2026[0m
+[90m      README.md:42 «2 916 linhas» saltada pela forma (i) · 02.09.2026[0m
+[90m      README.md:42 «132 linhas» saltada pela forma (iii-a)[0m
+[90m      README.md:246 «oito edições com registo» saltada pela forma (i) · 02.09.2026[0m
+[90m      README.md:263 «dezoito documentos» saltada pela forma (i) · 16.09.2026[0m
+[90m      README.md:265 «dezasseis documentos» saltada pela forma (iii-a)[0m
+[90m      README.md:265 «dezasseis edições do arquivo» saltada pela forma (iii-a)[0m
+[90m      README.md:266 «doze trabalhos» saltada pela forma (iii-a)[0m
+[90m      README.md:342 «2 916 linhas» saltada pela forma (i) · 02.09.2026[0m
+[90m      README.md:342 «132 linhas» saltada pela forma (iii-a)[0m
+[90m      README.md:195 «…ebe `lang` e mais nada; as rotas PT e EN são duas linhas cada. Os dados são partilhados; só as palavr…» distributiva (é por unidade, não é um total): não conferida[0m
+[90m      README.md:61 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+[90m      README.md:89 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+[90m      README.md:93 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+[90m      README.md:97 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+[90m      README.md:157 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+[90m      README.md:162 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+[90m      README.md:194 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+[90m      README.md:248 «oito edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+[90m      README.md:325 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+[90m      README.md:350 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+  [32m✓[0m design/especime-v3/PENDENTES-DO-DIRETOR.md        1 corrente(s) ·  1 datada(s) ·  0 subconjunto(s) ·  1 valor(es) do sítio · 3 avaliada(s), chão 3
+[90m      design/especime-v3/PENDENTES-DO-DIRETOR.md:9 «oito páginas de leitura» saltada pela forma (i) · 24.08.2026[0m
+[90m      design/especime-v3/PENDENTES-DO-DIRETOR.md:21 «uma edição» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+[90m      design/especime-v3/PENDENTES-DO-DIRETOR.md:26 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+  [32m✓[0m CLAUDE.md                                         0 corrente(s) ·  0 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 0 avaliada(s), chão 0
+  [32m✓[0m design/observatorio/PLANO-fiabilidade-2026-09-02.md  0 corrente(s) ·  1 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 1 avaliada(s), chão 1
+[90m      design/observatorio/PLANO-fiabilidade-2026-09-02.md:11 «32 linhas» saltada pela forma (ii) · 02.09.2026[0m
+
+  [32m✓[0m 8 facto(s) medidos na fonte (3 com segunda medição, 4 reconciliados com a linha que os publica) · 6 afirmação(ões) corrente(s) conferida(s) · 17 datada(s) saltada(s) · 0 subconjunto(s) · 1 valor(es) do sítio com o id ao lado
+[90m        5 documento(s) lidos · 34 unidade(s) no vocabulário do livro-razão · chão total 23 · prosa não se lê: «hoje só `evora`» e «o arquivo vazio» são do check:prosa (F3.1).[0m
+
+
+> o-estado-do-pais@0.1.0 check:cruzamento
+> node scripts/check-cruzamento.mjs
+
+
+[90m  cruzamentos · 2850 linha(s) de origem externa em 4 registo(s) · 2469 com reconferência de programa acrescentada (3391 entrada(s)) · 5 planta(s) vista(s)[0m
+[90m  rótulos da fonte · 1866 de 2975 linha(s) com "name", todas vindas do motor · 3 planta(s) vista(s)[0m
+[90m  cruzamentos · 3 ficheiro(s) inteiro(s) em 2 registo(s) · 5 item(ns) da agenda reconferidos[0m
+[90m    avaliacao-economica-regional-de-portugal-2026: 8[0m
+[90m    concelhos-2026: 2767[0m
+[90m    dominios-2026: 6[0m
+[90m    evora-economia-investidores-portas-abertas-2026: 8[0m
+[90m    evora-orcamentado-pago-devido-2025: 27[0m
+[90m    evora-os-pelouros-quem-os-teve-o-que-fizeram: 7[0m
+[90m    evora-prometido-pago-auditado-2026: 7[0m
+[90m    evora-quinze-anos-cinco-mandatos: 20[0m
+
+  [32m✓[0m cada linha e cada ficheiro vindos do motor são, byte a byte, o que atravessou.
+
+
+> o-estado-do-pais@0.1.0 check:documentos
+> node scripts/check-documentos.mjs
+
+
+[90m  portão dos documentos · 18 edição(ões) no manifesto · 18 em disco[0m
+[90m    · "evora-quinze-anos-cinco-mandatos/pt" não é artefacto: veio de «researchhub» — content/08 Évora Mandates/Évora — Quinze Anos, Cinco Mandatos (pt-PT).html @ afb8bfbcdb200c6547d3f614c3a3c84d35736019[0m
+[90m    · "evora-economia-investidores-portas-abertas-2026/pt" não é artefacto: veio de «researchhub» — content/06 Évora Economy/Évora — Economia, Investidores, Portas Abertas 2026 (pt-PT).html @ 5faeb63f2c581178ff12d4a042df6d9cf09c96b5[0m
+[90m    · "evora-orcamentado-pago-devido-2025/pt" não é artefacto: veio de «researchhub» — content/07 Évora Municipal Accounts/Évora — Orçamentado, Pago, Devido 2025 (pt-PT).html @ addeb8483e97a126f37be2f21ec29b1a0ac21303[0m
+[90m    · "evora-orcamentado-pago-devido-2025/en" não é artefacto: veio de «researchhub» — content/07 Évora Municipal Accounts/Évora — Budgeted, Paid, Owed 2025.html @ addeb8483e97a126f37be2f21ec29b1a0ac21303[0m
+[90m    · "evora-os-pelouros-quem-os-teve-o-que-fizeram/pt" não é artefacto: veio de «researchhub» — content/09 Évora Pelouros/Évora — Os Pelouros, Quem Os Teve, O Que Fizeram (pt-PT).html @ 42578647d01979df0b15af1b4de64f31ffe81022[0m
+[90m    · "evora-prometido-pago-auditado-2026/pt" não é artefacto: veio de «researchhub» — content/04 Évora Public Money/Évora — Prometido, Pago, Auditado 2026 (pt-PT).html @ 530e380f8db07eda5b611cee0dc573b0ed908d84[0m
+[90m    · "evora-prometido-pago-auditado-2026/en" não é artefacto: veio de «researchhub» — content/04 Évora Public Money/Évora — Promised, Paid, Audited 2026.html @ 530e380f8db07eda5b611cee0dc573b0ed908d84[0m
+[90m    · "penalizacoes-por-reforma-antecipada-2026/pt" não é artefacto: veio de «researchhub» — content/11 Seguranca Social/Penalizações por Reforma Antecipada em Portugal (pt-PT).html @ 7c0b24700d76cb3a67442f2495178212169c7586[0m
+[90m    · "evora-2027-prometido-painel-dinheiro/pt" não é artefacto: veio de «researchhub» — content/14 Évora 2027/Évora 2027 — O Prometido, o Painel, o Dinheiro (pt-PT).html @ d768bdea4c99e06c39eaf276af7ae0f3b4901a9b[0m
+[90m    · "evora-2027-prometido-painel-dinheiro/en" não é artefacto: veio de «researchhub» — content/14 Évora 2027/Évora 2027 — Promised, Panel, Money.html @ d768bdea4c99e06c39eaf276af7ae0f3b4901a9b[0m
+[90m  registos de conteúdo · 10 atravessado(s) · D5 correu em 9 e não corre em 1[0m
+[90m    · "avaliacao-economica-regional-de-portugal-2026/pt" · 53 bloco(s) · 411 referência(s) · o D5 não corre: os bytes alojados são um artefacto do claude.ai e a edição que o motor prova é «Technical Source/artifact_pt.html», que o sítio não aloja (DECISIONS §1.64)[0m
+[90m    · "evora-2027-prometido-painel-dinheiro/en" · 130 bloco(s) · 190 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-2027-prometido-painel-dinheiro/pt" · 130 bloco(s) · 190 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-economia-investidores-portas-abertas-2026/pt" · 49 bloco(s) · 171 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-orcamentado-pago-devido-2025/en" · 87 bloco(s) · 194 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-orcamentado-pago-devido-2025/pt" · 88 bloco(s) · 194 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-os-pelouros-quem-os-teve-o-que-fizeram/pt" · 138 bloco(s) · 296 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-prometido-pago-auditado-2026/en" · 95 bloco(s) · 324 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-prometido-pago-auditado-2026/pt" · 95 bloco(s) · 324 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-quinze-anos-cinco-mandatos/pt" · 173 bloco(s) · 682 referência(s) · o D5 correu e bate[0m
+
+  [32m✓[0m cada documento alojado e cada registo de conteúdo são, byte a byte, o que o seu manifesto declara.
+
+
+> o-estado-do-pais@0.1.0 gate:html
+> node scripts/gate-html.mjs
+
+
+[90m  portão de HTML · 7354 páginas · 2887/2975 afirmações citadas fora do livro-razão · 5950 páginas de linha · 18 documento(s) de estudo, conferidos contra a origem · 10 página(s) de leitura, conferidas contra o seu registo de conteúdo[0m
+[90m  allowlist · 19 motivo(s) e 5 token(s), com os usos que os provam vivos: data-de-atualizacao 2 · data-da-conferencia 30 · nome-oficial-da-medida 58 · referencia-legal 20 · titulo-de-estudo 178 · escala-de-instrumento 152 · limiar-do-quadro 84 · data-da-linha 26200 · data-do-repositorio 38 · ambito-da-medida 4 · periodo-da-fonte 1112 · data-de-referencia 10738 · numeracao 10076 · proveniencia 24284 · data-da-agenda 156 · data-de-leitura-de-uma-definicao 56 · identificador-tecnico 1487 · fonte-da-carta 64 · licenca-do-conjunto 2 · UE-27 (scope: any) 21 · EU-27 (scope: any) 21 · 73/2013 (scope: body) 614 · sha256 (scope: body) 24 · 52.º (scope: body) 614
+  rótulo de IA · 7336 no rodapé (de 7336 páginas fora dos documentos alojados) · 0 no topo das páginas de leitura · 2 ficha(s) da primeira página · 2 frase(s) da política e 2 do projeto, comparadas com o texto decidido[0m
+[90m  ortografia · Acordo de 1990 como se aplica em Portugal · 254 pares, 50 iguais · restante: 0 ocorrência(s) em 0 rota(s), todas de linhas cruzadas · 8 dispensada(s) por estarem entre «…»[0m
+[90m  factos por verificar · 2 campo(s) declarados, com o marcador na página e a porta da edição certa[0m
+[90m  as duas edições · 24 peça(s) de página de leitura com os mesmos ids pela mesma ordem[0m
+
+[33m  88 aviso(s):[0m
+[90m    · a afirmação "abandono-escolar-precoce-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "abandono-escolar-precoce-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "agua-nao-faturada-portugal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "avisos-pt2030-abertos" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "avisos-pt2030-pessoas-singulares" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "ciclo-substituicao-condutas" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "competencias-digitais-2023" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "competencias-digitais-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "competencias-digitais-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "credito-malparado-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "credito-malparado-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "crescimento-da-despesa-liquida-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "criancas-em-creche-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "criancas-em-creche-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "criancas-em-creche-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "custo-unitario-do-trabalho-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "custo-unitario-do-trabalho-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "desempenho-das-exportacoes-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "desemprego-de-longa-duracao-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "desemprego-de-longa-duracao-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "despesa-em-id-2023" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "despesa-em-id-2024-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "despesa-em-id-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "disparidade-de-emprego-entre-sexos-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "disparidade-de-emprego-entre-sexos-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "disparidade-de-emprego-entre-sexos-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "disparidade-salarial-entre-sexos-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "distancia-portugal-ue27-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "divida-das-empresas-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "divida-das-empresas-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "divida-das-familias-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "divida-das-familias-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "divida-publica-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "divida-publica-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "edicoes-publicadas" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "estudos-publicados" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "evora-concentracao-vab4-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "evora-vab-empresarial-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "factor-sustentabilidade-2026" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "fluxo-de-credito-as-empresas-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "fluxo-de-credito-as-familias-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "fluxo-de-credito-as-familias-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "formacao-bruta-de-capital-fixo-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "formacao-bruta-de-capital-fixo-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "formacao-bruta-de-capital-fixo-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "independencia-da-justica-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "independencia-da-justica-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "independencia-da-justica-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "indice-de-percepcao-da-corrupcao-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "indice-de-percepcao-da-corrupcao-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "indice-de-percepcao-da-corrupcao-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "jovens-nem-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "jovens-nem-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "licencas-de-construcao-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "licencas-de-construcao-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "municipios-com-estudo-aprofundado" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "municipios-sem-estudo-aprofundado" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "necessidades-medicas-nao-satisfeitas-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "necessidades-medicas-nao-satisfeitas-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "necessidades-medicas-nao-satisfeitas-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "penedono-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "pib-real-per-capita-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "pib-real-per-capita-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "pib-real-per-capita-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "portugal-concentracao-vab4-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "posicao-de-investimento-internacional-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "precos-da-habitacao-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "precos-da-habitacao-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "racio-s80-s20-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "racio-s80-s20-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "retribuicao-minima-mensal-doze-meses-2026" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "retribuicao-minima-mensal-garantida-continente-2026" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "risco-de-pobreza-ou-exclusao-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "risco-de-pobreza-ou-exclusao-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "saldo-da-balanca-corrente-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "saldo-natural-portugal-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "sobrecarga-do-custo-da-habitacao-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "sobrecarga-do-custo-da-habitacao-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "taxa-de-actividade-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "taxa-de-actividade-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "taxa-de-cambio-efectiva-real-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "taxa-de-cambio-efectiva-real-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "taxa-de-desemprego-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "taxa-de-desemprego-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "taxa-de-desemprego-mip-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "taxa-de-desemprego-mip-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "taxa-de-emprego-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "taxa-de-emprego-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+
+  [32m✓[0m nenhum algarismo sem proveniência nas páginas construídas.
+[90m    prova · 89 chaves reconferidas pelo portão · 162 números marcados nas páginas · 2 lista(s) de nomes recontada(s) · 378140 ligações internas (0 relativas, 30357 âncoras) · 44 recortes · 6 ficheiros alojados · 10 contas sobre ficheiros não alojados (12 com cópia arquivada) · 834 páginas de série · 840 cartões de partilha (4740 valores recalculados, 840 nomeados por páginas) · 2 manifestos (7 ícones medidos na cabeça do PNG) · escrito em /prova.json[0m
+
+
+> o-estado-do-pais@0.1.0 check:css
+> node scripts/check-css.mjs --prova
+
+[90m  folhas · positivo conhecido: C1 viu a classe cuja regra não chega à página; C2 viu os dois defeitos plantados (o nome colado ao estado e a abreviatura colada ao que se lhe segue). Nenhuma acusou a classe com regra na folha ligada, a regra embutida, a regra dentro de um `@media`, a classe sem regra, nem o par com espaço. Das cinco fronteiras entre peças de texto, duas ficaram vermelhas, uma foi isenta pelo expoente e duas foram separadas pela folha que a página liga; as duas marcas dentro de uma palavra não chegam a ser candidatas, porque têm um nó de texto antes.[0m
+
+[32m  folhas ✓ [0m7346 página(s) · 5 folha(s) construída(s) com 725 classe(s) estilizada(s) · 679 classe(s) rendidas no HTML · C1: 0 regras que não chegam · C2: 63131 fronteira(s) sem espaço no HTML, 0 coladas
+[90m        C2, das 63131 fronteiras: 30835 entre duas caixas (duas caixas não fazem uma palavra) · 32296 entre duas peças de texto, das quais 32296 a folha desta página separa com um «gap», uma margem ou um «display»[0m
+[90m        C1 · 5104 regra(s) que não chegam, em quarentena escrita em C1_EM_QUARENTENA: o MESMO defeito noutras rotas (as formas do concelho, o mapa do distrito, o distrito na busca do índice dos números), à espera da decisão do lugar de direção sobre que folha passa a chegar a que página. Não é uma exceção: é dívida contada.[0m
+[90m        18 documento(s) de estudo alojado(s) tal como estão, fora das duas células: nenhuma linha deles é da casa.[0m
+
+
+> o-estado-do-pais@0.1.0 check:datas
+> node scripts/check-datas.mjs
+
+[90mcheck-datas: história completa · 18 edição(ões) do ficheiro refeitas do `git`.[0m
+[32mcheck-datas[0m · 18 edição(ões) datadas, 38 data(s) impressa(s) em 28 página(s), 38 laço(s) data-edição em 28 página(s) conferida(s), 0 edição(ões) sem data e nenhuma caixa de aviso.
+
+> o-estado-do-pais@0.1.0 check:moldura
+> node tests/documentos/moldura.mjs
+
+
+[90m  a régua da moldura · 18 documentos × 2 temas × 2 larguras (390, 1280 px)[0m
+
+  [32m✓[0m C1  0 nó(s) graves em 72 passagens · nenhuma
+  [32m✓[0m C2  filetes: 44896 medidos, 0 abaixo de 3:1 (o pior 3.23:1) · texto próprio das células: 39964 medidos, 0 abaixo de 4,5:1 (o pior 7.57:1)
+  [32m✓[0m C3  326 caixa(s) que se deslocam · 0 sem teclado · 0 sem nome · 0 sem marco · 0 nome(s) repetido(s)
+  [32m✓[0m C4  72 passagens · 0 sem <main> a um · 0 sem <h1> visível a um · 0 com a moldura errada ou a faixa lá dentro
+  [32m✓[0m C5  4 cor(es) distintas nos filetes da moldura · 0 fora da paleta da casa
+  [32m✓[0m C6  18 de 18 verdes · 18 de 18 plantas apanhadas
+
+[90m  o axe, regra a regra (as dezasseis páginas nos dois temas):[0m
+[90m        72  region [moderate][0m
+[90m         8  heading-order [moderate][0m
+[90m         0  region [moderate] · em tabela[0m
+[90m         0  heading-order [moderate] · em tabela[0m
+
+[90m  o que a moldura NÃO corrige, contado:[0m
+[90m    · texto dentro de tabela que não é da célula e mede abaixo de 4,5:1: 0 nó(s)[0m
+
+[32m  todas as células verdes.[0m
+
+
+> o-estado-do-pais@0.1.0 check:alvos
+> node tests/acessibilidade/alvos.mjs
+
+
+[90m  a régua dos alvos · 46 rotas × 5 larguras · dist: dist[0m
+
+  [32m✓[0m H1  [90m0 nó(s) em violação (0 graves) em 46 rotas × 2 larguras · nenhuma violação[0m
+  [32m✓[0m H2  [90mfichas de concelho: 6300 medidas, 0 sem o alvo (nenhum) · a folha: 50 bloco(s) @media com tecto, 0 com uma regra de 44 px que acaba antes de 1024 · faixa 641 a 1023: 17827 alvos medidos, 7162 deles com 44 px a 390, 15 sem eles na faixa · destes, 0 são caixas e falham (nenhum) e 6 são áreas de desenho, cujo alvo é a rede de nomes por baixo do mapa (6× a.uni-porta «Beja» · 54.7×45.2 de toque (caixa 83.6×56.7)), 6 estão numa página de leitura, que o brief põe fora deste bloco (2× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×18 de toque (caixa 248.4×36.6); 1× a.src-chip «source · Estrutura de Missão Recup» · 49.2×15.1 de toque (caixa 525.8×44.4); 1× a.src-chip «source · Estrutura de Missão Recup» · 49.2×15 de toque (caixa 525.8×44.4); 1× a.src-chip «source · Estrutura de Missão Recup» · 49×15.1 de toque (caixa 525.8×44.4)) e 3 quebram de linha dentro de uma frase, que é a dispensa que a WCAG 2.5.5 escreve para um alvo em linha (1× a «Alert Mechanism Report and Macroec» · 88×23.5 de toque (caixa 528.8×45.5); 1× a «Alert Mechanism Report and Macroec» · 88×23.4 de toque (caixa 528.8×45.5); 1× a «Alert Mechanism Report and Macroec» · 88×23.7 de toque (caixa 528.8×45.5)) · 3651 não medido(s)[0m
+  [31m✗[0m H3  [90m7363 página(s) do dist/: 10 com um número de <h1> diferente de 1 (en/studies/evora-2027-prometido-painel-dinheiro/text/index.html (0); en/studies/evora-orcamentado-pago-devido-2025/text/index.html (0); en/studies/evora-prometido-pago-auditado-2026/text/index.html (0); estudos/avaliacao-economica-regional-de-portugal-2026/texto/index.html (0); estudos/evora-2027-prometido-painel-dinheiro/texto/index.html (0)) · nas rotas medidas: 0 de 230 passagens[0m
+  [32m✓[0m H4  [90m7363 página(s) do dist/: 7335 com a porta dentro do <footer>, 0 fora dele (0 dentro de um <main>, que não conta), 28 sem porta (os documentos alojados) · nas rotas medidas: 0 fora do <footer> ou de um <nav> com nome, 0 dentro de um <main>[0m
+  [32m✓[0m H5  [90m26 caixa(s) com deslocamento horizontal medidas, 0 sem teclado, nome ou papel[0m
+  [32m✓[0m H6  [90mprimeira página, a 1280: 12 alvo(s) da I105 medidos, 0 abaixo de 32 px (nenhum)[0m
+  [32m✓[0m H7  [90m70 algarismo(s) de manchete medidos · 10 em manchetes de uma linha citada, 0 sem os 44 px (nenhum) · 60 em manchetes de várias, 0 sem a largura ou sem a caixa de linha (nenhum) · 0 com uma porta de OUTRA linha dentro da sua área (nenhum)[0m
+  [32m✓[0m H8  [90mcartões: 840 registo(s), 420 da edição inglesa, 416 com unidade · 0 desenharam uma cadeia diferente da que a tabela manda · 6 ficam em português por decisão da tabela («avisos» em 4: sem inglês do organismo: as duas linhas têm fonte e documento «[a verificar]»; «factor» em 2: é o nome que o relatório citado dá ao número, e não uma unidade de contagem) · páginas inglesas: 1170 unidade(s) rendida(s), 0 diferentes do que a tabela manda[0m
+  [32m✓[0m H9  [90m3675 página(s) inglesas lidas: 1247 com um nome de diploma, 2428 sem nenhum, 1 documento(s) alojado(s) fora da conta · 1253 nome(s): 1250 com lang="pt-PT", 3 dentro de uma transcrição da fonte (marca-se inteira, na língua da fonte: não é deste bloco), 0 sem marca[0m
+  [32m✓[0m H13  [90m/municipios nas duas edições e nas 5 larguras: 10 passagem(ns) · portas de concelho por página: 308 (esperado 308) · dentro da lista agrupada: 308[0m
+  [32m✓[0m H10  [90maria-expanded no dist/: 7335 ocorrência(s), 0 fora do feitio que o guião acompanha (details > summary[aria-controls]) · o guião /js/tema.js está em dist/, e 0 página(s) com o atributo não o pedem · abrir e fechar o <details>: 46 prova(s) no navegador, 0 em que o atributo não seguiu o estado · Método: 10 passagem(ns), 0 com <title> ou <h1> vazio · <title> = «Método · O Estado do País»[0m
+
+[31m  1 célula(s) vermelhas: H3[0m
+

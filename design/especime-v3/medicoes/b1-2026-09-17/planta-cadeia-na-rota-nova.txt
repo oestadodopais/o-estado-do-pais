@@ -1,0 +1,34 @@
+$ npm run check:cadeia
+Código: 1
+
+> o-estado-do-pais@0.1.0 check:cadeia
+> node scripts/check-cadeia.mjs
+
+
+[90m  03 pt · 53 blocos · 411 algarismos · 0 completas · 411 do motor · 0 por resolver · 0 com resumo de origem · 411 com motivo[0m
+[90m  14 en · 130 blocos · 190 algarismos · 0 completas · 190 do motor · 0 por resolver · 0 com resumo de origem · 190 com motivo[0m
+[90m  14 pt · 130 blocos · 190 algarismos · 0 completas · 190 do motor · 0 por resolver · 0 com resumo de origem · 190 com motivo[0m
+[90m  06 pt · 49 blocos · 171 algarismos · 10 completas · 161 do motor · 0 por resolver · 0 com resumo de origem · 171 com motivo[0m
+[90m  07 en · 87 blocos · 194 algarismos · 52 completas · 142 do motor · 0 por resolver · 12 com resumo de origem · 182 com motivo[0m
+[90m  07 pt · 88 blocos · 194 algarismos · 52 completas · 142 do motor · 0 por resolver · 12 com resumo de origem · 182 com motivo[0m
+[90m  09 pt · 138 blocos · 296 algarismos · 10 completas · 286 do motor · 0 por resolver · 208 com resumo de origem · 88 com motivo[0m
+[90m  04 en · 95 blocos · 324 algarismos · 11 completas · 313 do motor · 0 por resolver · 0 com resumo de origem · 324 com motivo[0m
+[90m  04 pt · 95 blocos · 324 algarismos · 12 completas · 312 do motor · 0 por resolver · 0 com resumo de origem · 324 com motivo[0m
+[90m  08 pt · 173 blocos · 682 algarismos · 49 completas · 633 do motor · 0 por resolver · 278 com resumo de origem · 404 com motivo[0m
+
+[90m  as oito chaves da prova, contadas aqui:[0m
+[90m    registos_edicoes                   10[0m
+[90m    registos_blocos                  1038[0m
+[90m    registos_algarismos              2976[0m
+[90m    registos_resolvidos              2976[0m
+[90m    registos_por_resolver               0[0m
+[90m    registos_com_linha_do_sitio       196[0m
+[90m    registos_com_resumo_de_origem     510[0m
+[90m    registos_sem_resumo_de_origem    2466[0m
+
+[90m  das 196 figuras com linha do sítio, 77 imprimem o valor que a linha guarda e 119 imprimem outra cadeia. Não é erro: é a medição que decidiu esta página (plano §0.3).[0m
+
+[31m  A CADEIA PARTE-SE — 1 erro(s):[0m
+
+    [31m✗[0m C5 evora-2027-prometido-painel-dinheiro/pt#2.0: a marca da página imprime "55 784 603,10" e o registo diz que este documento imprime "45 784 603,10".
+

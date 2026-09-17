@@ -1,0 +1,12 @@
+$ npm run check:voz
+Código: 1
+
+> o-estado-do-pais@0.1.0 check:voz
+> node scripts/check-voz.mjs
+
+  B1: 28 páginas pela lista fechada; 13 temas conferidos.
+
+[31m  PORTÃO DA VOZ · 1 problema(s)
+[0m
+[31m    · [0mB1 tema: evora-2027-prometido-painel-dinheiro sem tema válido (undefined).
+

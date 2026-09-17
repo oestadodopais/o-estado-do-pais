@@ -1,0 +1,221 @@
+{
+  "navegador": "148.0.7778.96",
+  "resultados": [
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro",
+      "lang": "pt",
+      "largura": 390,
+      "ordem": [
+        162.953125,
+        273.65625,
+        373.65625,
+        3666.984375,
+        47844.546875,
+        47923.546875
+      ],
+      "ordemDom": true,
+      "indiceFechado": true,
+      "fontesFechadas": true,
+      "indice": 29,
+      "destinos": true,
+      "faixa": 0,
+      "edicoes": 0,
+      "janela": 390,
+      "fontesAbrem": true
+    },
+    {
+      "rota": "/estudos",
+      "lang": "pt",
+      "largura": 390,
+      "artigos": 6,
+      "lugares": [
+        "/municipios/evora#trabalhos",
+        "/regioes/alentejo#trabalhos"
+      ],
+      "ordem": true,
+      "percentagens": [
+        "%",
+        "%",
+        "%"
+      ],
+      "janela": 390
+    },
+    {
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro",
+      "lang": "pt",
+      "largura": 1280,
+      "ordem": [
+        317.9375,
+        484.328125,
+        596.328125,
+        3196.296875,
+        31988.015625,
+        32083.015625
+      ],
+      "ordemDom": true,
+      "indiceFechado": true,
+      "fontesFechadas": true,
+      "indice": 29,
+      "destinos": true,
+      "faixa": 0,
+      "edicoes": 0,
+      "janela": 1280,
+      "fontesAbrem": true
+    },
+    {
+      "rota": "/estudos",
+      "lang": "pt",
+      "largura": 1280,
+      "artigos": 6,
+      "lugares": [
+        "/municipios/evora#trabalhos",
+        "/regioes/alentejo#trabalhos"
+      ],
+      "ordem": true,
+      "percentagens": [
+        "%",
+        "%",
+        "%"
+      ],
+      "janela": 1280
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro",
+      "lang": "en",
+      "largura": 390,
+      "ordem": [
+        196.140625,
+        337.078125,
+        437.078125,
+        3646.40625,
+        49272.078125,
+        49351.078125
+      ],
+      "ordemDom": true,
+      "indiceFechado": true,
+      "fontesFechadas": true,
+      "indice": 29,
+      "destinos": true,
+      "faixa": 0,
+      "edicoes": 0,
+      "janela": 390,
+      "fontesAbrem": true
+    },
+    {
+      "rota": "/en/studies",
+      "lang": "en",
+      "largura": 390,
+      "artigos": 6,
+      "lugares": [
+        "/en/municipalities/evora#trabalhos",
+        "/en/regions/alentejo#trabalhos"
+      ],
+      "ordem": true,
+      "percentagens": [
+        "%",
+        "%",
+        "%"
+      ],
+      "janela": 390
+    },
+    {
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro",
+      "lang": "en",
+      "largura": 1280,
+      "ordem": [
+        317.9375,
+        529.125,
+        641.125,
+        3151.921875,
+        31541.5,
+        31636.5
+      ],
+      "ordemDom": true,
+      "indiceFechado": true,
+      "fontesFechadas": true,
+      "indice": 29,
+      "destinos": true,
+      "faixa": 0,
+      "edicoes": 0,
+      "janela": 1280,
+      "fontesAbrem": true
+    },
+    {
+      "rota": "/en/studies",
+      "lang": "en",
+      "largura": 1280,
+      "artigos": 6,
+      "lugares": [
+        "/en/municipalities/evora#trabalhos",
+        "/en/regions/alentejo#trabalhos"
+      ],
+      "ordem": true,
+      "percentagens": [
+        "%",
+        "%",
+        "%"
+      ],
+      "janela": 1280
+    },
+    {
+      "antiga": "/estudos/avaliacao-economica-regional-de-portugal-2026/texto",
+      "nova": "/estudos/avaliacao-economica-regional-de-portugal-2026",
+      "destino": "/estudos/avaliacao-economica-regional-de-portugal-2026/",
+      "corpo": true
+    },
+    {
+      "antiga": "/en/studies/evora-2027-prometido-painel-dinheiro/text",
+      "nova": "/en/studies/evora-2027-prometido-painel-dinheiro",
+      "destino": "/en/studies/evora-2027-prometido-painel-dinheiro/",
+      "corpo": true
+    },
+    {
+      "antiga": "/estudos/evora-2027-prometido-painel-dinheiro/texto",
+      "nova": "/estudos/evora-2027-prometido-painel-dinheiro",
+      "destino": "/estudos/evora-2027-prometido-painel-dinheiro/",
+      "corpo": true
+    },
+    {
+      "antiga": "/estudos/evora-economia-investidores-portas-abertas-2026/texto",
+      "nova": "/estudos/evora-economia-investidores-portas-abertas-2026",
+      "destino": "/estudos/evora-economia-investidores-portas-abertas-2026/",
+      "corpo": true
+    },
+    {
+      "antiga": "/en/studies/evora-orcamentado-pago-devido-2025/text",
+      "nova": "/en/studies/evora-orcamentado-pago-devido-2025",
+      "destino": "/en/studies/evora-orcamentado-pago-devido-2025/",
+      "corpo": true
+    },
+    {
+      "antiga": "/estudos/evora-orcamentado-pago-devido-2025/texto",
+      "nova": "/estudos/evora-orcamentado-pago-devido-2025",
+      "destino": "/estudos/evora-orcamentado-pago-devido-2025/",
+      "corpo": true
+    },
+    {
+      "antiga": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/texto",
+      "nova": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram",
+      "destino": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/",
+      "corpo": true
+    },
+    {
+      "antiga": "/en/studies/evora-prometido-pago-auditado-2026/text",
+      "nova": "/en/studies/evora-prometido-pago-auditado-2026",
+      "destino": "/en/studies/evora-prometido-pago-auditado-2026/",
+      "corpo": true
+    },
+    {
+      "antiga": "/estudos/evora-prometido-pago-auditado-2026/texto",
+      "nova": "/estudos/evora-prometido-pago-auditado-2026",
+      "destino": "/estudos/evora-prometido-pago-auditado-2026/",
+      "corpo": true
+    },
+    {
+      "antiga": "/estudos/evora-quinze-anos-cinco-mandatos/texto",
+      "nova": "/estudos/evora-quinze-anos-cinco-mandatos",
+      "destino": "/estudos/evora-quinze-anos-cinco-mandatos/",
+      "corpo": true
+    }
+  ]
+}

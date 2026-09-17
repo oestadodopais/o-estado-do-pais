@@ -1,0 +1,9 @@
+$ npm run check:datas
+Código: 1
+
+> o-estado-do-pais@0.1.0 check:datas
+> node scripts/check-datas.mjs
+
+[90mcheck-datas: história completa · 18 edição(ões) do ficheiro refeitas do `git`.[0m
+[31mcheck-datas: 1 falha(s).[0m
+  [31m·[0m /estudos/evora-2027-prometido-painel-dinheiro: a edição evora-2027-prometido-painel-dinheiro/pt imprime «12.08.2026» e src/data/datas-de-publicacao.json diz que evora-2027-prometido-painel-dinheiro (pt) entrou a 16.09.2026 (commit 7a12f9fe). Uma data que pertence ao conjunto das declaradas mas NÃO a esta edição é o que a conta 1a sozinha deixava passar.

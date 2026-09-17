@@ -1,0 +1,18 @@
+$ npm run check:voz
+Código: 1
+
+> o-estado-do-pais@0.1.0 check:voz
+> node scripts/check-voz.mjs
+
+  B1: 28 páginas pela lista fechada; 13 temas conferidos.
+
+[31m  PORTÃO DA VOZ · 3 problema(s)
+[0m
+[31m    · [0mB1 lista fechada: estudos: «Esta página explica como funciona o projeto.».
+[31m    · [0mfrase com marcador da voz e sem declaração de autorreferência
+      marcador(es): sta página
+      rota: /estudos
+      classe declarada: (por classificar)
+      «Esta página explica como funciona o projeto.»
+[31m    · [0mbloco por classificar em /estudos: «Esta página explica como funciona o projeto.»
+

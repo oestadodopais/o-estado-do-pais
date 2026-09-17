@@ -1,0 +1,62 @@
+{
+  "inicioUTC": "2026-09-17T13:54:08.574Z",
+  "alvo": "dist/estudos/evora-2027-prometido-painel-dinheiro/texto/index.html",
+  "portao": "scripts/gate-html.mjs",
+  "sha256Antes": "dcbc8c9ffd1ab38d0af957463b9b38e768d7127d85a1cd4ec495570ec5f2fdd5",
+  "corpoSha256": "843210d455464c97a2e418389131c7c7e421b4bc44841c2f5806acb941a5ec80",
+  "portaoSha256Antes": "30998fb9c1cabe6fbd8fe2a2ffa9da1a4da5aa8b7cf67cad26852960ac966679",
+  "limpa": 0,
+  "casos": [
+    {
+      "nome": "faixa",
+      "celula": "L5",
+      "seletor": ".texto-faixa",
+      "esperado": "a página tem 0 marcas data-registo-conta",
+      "protege": "As contagens de blocos, figuras e selos são recontadas contra o registo; cada contagem impressa abre o corpo que conta.",
+      "antes": 0,
+      "depois": 1,
+      "sha256Planta": "94498a9abd17a4b66927335438cb88d6d8c9c8e8e6461c21b722a219a8a85c45",
+      "corpoSha256Depois": "843210d455464c97a2e418389131c7c7e421b4bc44841c2f5806acb941a5ec80",
+      "alvoRetirado": "<p class=\"texto-faixa\"><a class=\"texto-conta\" href=\"#documento\" data-registo-conta=\"evora-2027-prometido-painel-dinheiro/pt=blocos\">130</a> blocos · <a class=\"texto-conta\" href=\"#documento\" data-registo-conta=\"evora-2027-prometido-painel-dinheiro/pt=algarismos\">190</a> algarismos · <a class=\"texto-conta\" href=\"#documento\" data-registo-conta=\"evora-2027-prometido-painel-dinheiro/pt=com_linha_do_sitio\">0</a> com linha do livro-razão</p>",
+      "diagnosticos": [
+        "    \u001b[31m✗\u001b[0m L5 evora-2027-prometido-painel-dinheiro/pt: a página tem 0 marcas data-registo-conta e a faixa tem três contagens: blocos, algarismos e com linha do livro-razão."
+      ],
+      "sha256Reposto": "dcbc8c9ffd1ab38d0af957463b9b38e768d7127d85a1cd4ec495570ec5f2fdd5"
+    },
+    {
+      "nome": "indice",
+      "celula": "L8",
+      "seletor": "nav.texto-indice",
+      "esperado": "o índice «Nesta página» tem 0 entradas",
+      "protege": "Os títulos do índice, a ordem e os destinos correspondem aos blocos do registo; a posição de cada secção é conferida.",
+      "antes": 0,
+      "depois": 1,
+      "sha256Planta": "4dfecf4d0a31f45da082bba0e3b75f0bfde11e074ad08deb16766f76f42fbb8a",
+      "corpoSha256Depois": "843210d455464c97a2e418389131c7c7e421b4bc44841c2f5806acb941a5ec80",
+      "alvoRetirado": "<nav class=\"texto-indice\" id=\"texto-indice\" aria-labelledby=\"texto-indice-k\"><details class=\"texto-indice-dobra\"><summary class=\"texto-indice-porta\"><h2 class=\"texto-indice-k\" id=\"texto-indice-k\">Nesta página</h2></summary><ul class=\"texto-indice-lista\"><li><a href=\"#bloco-1\" data-registo-indice=\"evora-2027-prometido-painel-dinheiro/pt#1\">Em resumo</a></li><li><a href=\"#bloco-3\" data-registo-indice=\"evora-2027-prometido-painel-dinheiro/pt#3\">O que este projeto conclui</a></li><li><a href=\"#bloco-9\" data-registo-indice=\"evora-2027-prometido-painel-dinheiro/pt#9\">O que podia funcionar melhor</a></li><li><a href=\"#bloco-12\" data-registo-indice=\"evora-2027-prometido-painel-dinheiro/pt#12\">Os lim",
+      "diagnosticos": [
+        "    \u001b[31m✗\u001b[0m L8 evora-2027-prometido-painel-dinheiro/pt: o índice «Nesta página» tem 0 entradas e o registo tem 29 títulos de nível 2 e 3."
+      ],
+      "sha256Reposto": "dcbc8c9ffd1ab38d0af957463b9b38e768d7127d85a1cd4ec495570ec5f2fdd5"
+    },
+    {
+      "nome": "linhas",
+      "celula": "L6",
+      "seletor": "#linhas-do-documento-dobra",
+      "esperado": "a página não tem a secção \"As linhas deste documento\"",
+      "protege": "Cada figura sem linha no livro do projeto abre a linha do motor, com valor, impresso e origem conferidos contra o registo.",
+      "antes": 0,
+      "depois": 1,
+      "sha256Planta": "5e767b61f5b4808eb6a5d5919bbbeee0ad797668bc54fe5696a30d0969bbeacc",
+      "corpoSha256Depois": "843210d455464c97a2e418389131c7c7e421b4bc44841c2f5806acb941a5ec80",
+      "alvoRetirado": "<details class=\"texto-dobra\" id=\"linhas-do-documento-dobra\"><summary class=\"texto-dobra-porta\"><span class=\"texto-dobra-seta\" aria-hidden=\"true\"></span><span>As linhas deste documento →</span></summary><section id=\"linhas-do-documento\" class=\"texto-linhas\" aria-labelledby=\"linhas-do-documento-k\"><h2 id=\"linhas-do-documento-k\" class=\"texto-linhas-titulo\">As linhas deste documento</h2><ul class=\"texto-linhas-lista\"><li class=\"texto-linha\" id=\"linha-bbs-op-total\"><dl class=\"texto-linha-campos\"><dt>linha do motor</dt><dd><code data-nonledger=\"identificador-tecnico\">bbs-op-total</code></dd><dt>o valor como a linha o guarda</dt><dd data-registo-linha=\"evora-2027-prometido-painel-dinheiro/pt@bbs-op",
+      "diagnosticos": [
+        "    \u001b[31m✗\u001b[0m L6 evora-2027-prometido-painel-dinheiro/pt: a página não tem a secção \"As linhas deste documento\" (id=\"linhas-do-documento\")."
+      ],
+      "sha256Reposto": "dcbc8c9ffd1ab38d0af957463b9b38e768d7127d85a1cd4ec495570ec5f2fdd5"
+    }
+  ],
+  "sha256Reposto": "dcbc8c9ffd1ab38d0af957463b9b38e768d7127d85a1cd4ec495570ec5f2fdd5",
+  "portaoSha256Depois": "30998fb9c1cabe6fbd8fe2a2ffa9da1a4da5aa8b7cf67cad26852960ac966679",
+  "fimUTC": "2026-09-17T13:57:01.343Z"
+}

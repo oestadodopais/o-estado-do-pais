@@ -1,0 +1,162 @@
+[
+  {
+    "nome": "pagina-em-falta",
+    "ficheiro": "dist/estudos/evora-2027-prometido-painel-dinheiro/index.html",
+    "portao": "check:lugar",
+    "codigo": 1,
+    "mordida": "/régua viu 25 «estudo»/",
+    "bateu": true,
+    "antes": "661f29b89757cc13c922a5227dc1aea3f61bb859a3f2f0e9b842b326a8dfb6c8",
+    "reposto": "661f29b89757cc13c922a5227dc1aea3f61bb859a3f2f0e9b842b326a8dfb6c8"
+  },
+  {
+    "nome": "algarismo-na-rota-nova",
+    "ficheiro": "dist/estudos/evora-2027-prometido-painel-dinheiro/index.html",
+    "portao": "gate:html",
+    "codigo": 1,
+    "mordida": "/L[234].*(?:texto rendido|impresso|figura)/",
+    "bateu": true,
+    "antes": "661f29b89757cc13c922a5227dc1aea3f61bb859a3f2f0e9b842b326a8dfb6c8",
+    "reposto": "661f29b89757cc13c922a5227dc1aea3f61bb859a3f2f0e9b842b326a8dfb6c8"
+  },
+  {
+    "nome": "cadeia-na-rota-nova",
+    "ficheiro": "dist/estudos/evora-2027-prometido-painel-dinheiro/index.html",
+    "portao": "check:cadeia",
+    "codigo": 1,
+    "mordida": "/C[45]/",
+    "bateu": true,
+    "antes": "661f29b89757cc13c922a5227dc1aea3f61bb859a3f2f0e9b842b326a8dfb6c8",
+    "reposto": "661f29b89757cc13c922a5227dc1aea3f61bb859a3f2f0e9b842b326a8dfb6c8"
+  },
+  {
+    "nome": "data-da-edicao",
+    "ficheiro": "dist/estudos/evora-2027-prometido-painel-dinheiro/index.html",
+    "portao": "check:datas",
+    "codigo": 1,
+    "mordida": "/16\\.09\\.2026/",
+    "bateu": true,
+    "antes": "661f29b89757cc13c922a5227dc1aea3f61bb859a3f2f0e9b842b326a8dfb6c8",
+    "reposto": "661f29b89757cc13c922a5227dc1aea3f61bb859a3f2f0e9b842b326a8dfb6c8"
+  },
+  {
+    "nome": "data-da-lista",
+    "ficheiro": "dist/estudos/index.html",
+    "portao": "check:datas",
+    "codigo": 1,
+    "mordida": "/24\\.08\\.2026/",
+    "bateu": true,
+    "antes": "559852b965791b29c6baaeb5c47fcdb90cb67d79f32fdaef306928403f360619",
+    "reposto": "559852b965791b29c6baaeb5c47fcdb90cb67d79f32fdaef306928403f360619"
+  },
+  {
+    "nome": "tema-em-falta",
+    "ficheiro": "src/data/studies.mjs",
+    "portao": "check:voz",
+    "codigo": 1,
+    "mordida": "/B1 tema.*evora-2027/",
+    "bateu": true,
+    "antes": "18d39370ea8b6a2e016d7f66c763dea71f4533b82020be681d7b854935469950",
+    "reposto": "18d39370ea8b6a2e016d7f66c763dea71f4533b82020be681d7b854935469950"
+  },
+  {
+    "nome": "frase-fora-da-lista",
+    "ficheiro": "dist/estudos/index.html",
+    "portao": "check:voz",
+    "codigo": 1,
+    "mordida": "/B1 lista fechada/",
+    "bateu": true,
+    "antes": "559852b965791b29c6baaeb5c47fcdb90cb67d79f32fdaef306928403f360619",
+    "reposto": "559852b965791b29c6baaeb5c47fcdb90cb67d79f32fdaef306928403f360619"
+  },
+  {
+    "nome": "l6-origem-trocada",
+    "ficheiro": "dist/estudos/evora-2027-prometido-painel-dinheiro/index.html",
+    "portao": "gate:html",
+    "codigo": 1,
+    "mordida": "/L6 .*campo rendido/",
+    "bateu": true,
+    "antes": "661f29b89757cc13c922a5227dc1aea3f61bb859a3f2f0e9b842b326a8dfb6c8",
+    "reposto": "661f29b89757cc13c922a5227dc1aea3f61bb859a3f2f0e9b842b326a8dfb6c8"
+  },
+  {
+    "nome": "l8-indice-trocado",
+    "ficheiro": "dist/estudos/evora-2027-prometido-painel-dinheiro/index.html",
+    "portao": "gate:html",
+    "codigo": 1,
+    "mordida": "/L8/",
+    "bateu": true,
+    "antes": "661f29b89757cc13c922a5227dc1aea3f61bb859a3f2f0e9b842b326a8dfb6c8",
+    "reposto": "661f29b89757cc13c922a5227dc1aea3f61bb859a3f2f0e9b842b326a8dfb6c8"
+  },
+  {
+    "nome": "rotulo-ia-retirado",
+    "ficheiro": "dist/estudos/evora-2027-prometido-painel-dinheiro/index.html",
+    "portao": "gate:html",
+    "codigo": 1,
+    "mordida": "/0 rótulo\\(s\\) de IA no rodapé/",
+    "bateu": true,
+    "antes": "661f29b89757cc13c922a5227dc1aea3f61bb859a3f2f0e9b842b326a8dfb6c8",
+    "reposto": "661f29b89757cc13c922a5227dc1aea3f61bb859a3f2f0e9b842b326a8dfb6c8"
+  },
+  {
+    "nome": "redirecionamento-trocado",
+    "ficheiro": "dist/estudos/evora-2027-prometido-painel-dinheiro/texto/index.html",
+    "portao": "gate:html",
+    "codigo": 1,
+    "mordida": "/B1 redirecionamento/",
+    "bateu": true,
+    "antes": "0964e55990c71fcfef724836ed6b2b31ea272f15dccd15c05a8e97e99bb69341",
+    "reposto": "0964e55990c71fcfef724836ed6b2b31ea272f15dccd15c05a8e97e99bb69341"
+  },
+  {
+    "nome": "estudo-sem-acesso",
+    "ficheiro": "dist/regioes/alentejo/index.html",
+    "portao": "check:lugar",
+    "codigo": 1,
+    "mordida": "/B1 cobertura: alentejo-algarve/",
+    "bateu": true,
+    "antes": "e914a94268ebc231f0ca0e27f2ae3e1e29a4fe3f4b55657a9b957df9b732f399",
+    "reposto": "e914a94268ebc231f0ca0e27f2ae3e1e29a4fe3f4b55657a9b957df9b732f399"
+  },
+  {
+    "nome": "contagem-do-lugar",
+    "ficheiro": "dist/estudos/index.html",
+    "portao": "gate:html",
+    "codigo": 1,
+    "mordida": "/estudos_lugar_evora/",
+    "bateu": true,
+    "antes": "559852b965791b29c6baaeb5c47fcdb90cb67d79f32fdaef306928403f360619",
+    "reposto": "559852b965791b29c6baaeb5c47fcdb90cb67d79f32fdaef306928403f360619"
+  },
+  {
+    "nome": "documento-porta-trocada",
+    "ficheiro": "dist/estudos/evora-2027-prometido-painel-dinheiro/documento/index.html",
+    "portao": "gate:html",
+    "codigo": 1,
+    "mordida": "/a porta da leitura no sítio abre/",
+    "bateu": true,
+    "antes": "982d4601deea406ffe0031488888cc62ff974ec1b6d21bd17e2960ef0e6b5b73",
+    "reposto": "982d4601deea406ffe0031488888cc62ff974ec1b6d21bd17e2960ef0e6b5b73"
+  },
+  {
+    "nome": "segunda-porta",
+    "ficheiro": "dist/estudos/onde-esta-a-agua/index.html",
+    "portao": "check:lugar",
+    "codigo": 1,
+    "mordida": "/L1 .*acima do teto/s",
+    "bateu": true,
+    "antes": "8b473beee3bdc9538d333ad32bfc51104e528a19179d59ead26daed7cbe34505",
+    "reposto": "8b473beee3bdc9538d333ad32bfc51104e528a19179d59ead26daed7cbe34505"
+  },
+  {
+    "nome": "faixa-regressa",
+    "ficheiro": "dist/estudos/evora-2027-prometido-painel-dinheiro/index.html",
+    "portao": "gate:html",
+    "codigo": 1,
+    "mordida": "/B1 faixa/",
+    "bateu": true,
+    "antes": "661f29b89757cc13c922a5227dc1aea3f61bb859a3f2f0e9b842b326a8dfb6c8",
+    "reposto": "661f29b89757cc13c922a5227dc1aea3f61bb859a3f2f0e9b842b326a8dfb6c8"
+  }
+]
