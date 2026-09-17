@@ -45,7 +45,16 @@ try {
       const resposta = await pagina.goto(origem + rota, { waitUntil: 'networkidle' });
       if (resposta.status() !== 200) throw new Error(`${rota}: HTTP ${resposta.status()}`);
       await pagina.evaluate(() => document.fonts.ready);
-      const medida = await pagina.evaluate(() => ({ janela: innerWidth, documento: document.documentElement.scrollWidth, corpo: document.body.scrollWidth, titulo: document.querySelector('h1')?.textContent.trim() }));
+      const medida = await pagina.evaluate(() => {
+        const valores = [...document.querySelectorAll('.texto-figura, .claim-value, [data-registo-linha$=".impresso"]')];
+        const selos = [...document.querySelectorAll('.src-chip')];
+        const partidos = nos => nos.filter(n => new Set([...n.getClientRects()].filter(r => r.width && r.height).map(r => Math.round(r.top))).size > 1).length;
+        return { janela: innerWidth, documento: document.documentElement.scrollWidth, corpo: document.body.scrollWidth,
+          titulo: document.querySelector('h1')?.textContent.trim(), valores: valores.length, selos: selos.length,
+          valoresPartidos: partidos(valores), selosPartidos: partidos(selos),
+          separadoresQuebraveis: valores.filter(n => /\d[ \u2009]\d/.test(n.textContent)).length,
+          selosSemNowrap: selos.filter(n => getComputedStyle(n).whiteSpace !== 'nowrap').length };
+      });
       const ficheiro = `${fase}-${familia}-${lingua}-${largura}.png`;
       if (fase === 'depois' && [390, 1280].includes(largura)) await pagina.screenshot({ path: path.join(pasta, `janela-${familia}-${lingua}-${largura}.png`), animations: 'disabled' });
       const bytes = await pagina.screenshot({ path: path.join(pasta, ficheiro), fullPage: true, animations: 'disabled' });
@@ -54,7 +63,8 @@ try {
     }
   }
   await fs.writeFile(path.join(medicoes, `capturas-${fase}-peca1.json`), JSON.stringify({ cabeca: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(), navegador: navegador.version(), resultados }, null, 2) + '\n');
-  if (fase === 'depois' && resultados.some(r => r.deslocamento > 0)) throw new Error('Há deslocamento lateral nas capturas depois.');
+  if (fase === 'depois' && resultados.some(r => r.deslocamento > 0 || !r.valores || r.valoresPartidos || r.selosPartidos || r.separadoresQuebraveis || r.selosSemNowrap))
+    throw new Error('Há deslocamento lateral, valor partido ou selo sem nowrap nas capturas depois.');
   console.log(`${resultados.length} capturas ${fase}; ${resultados.filter(r => r.deslocamento > 0).length} com deslocamento lateral.`);
 } finally {
   await navegador?.close();

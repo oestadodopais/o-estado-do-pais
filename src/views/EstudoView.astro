@@ -149,7 +149,7 @@ const jsonld = {
               <li class="texto-linha" id={`linha-${row}`}>
                 <dl class="texto-linha-campos">
                   <dt>{rotulos.valor}</dt>
-                  <dd><span class="claim"><span data-registo-linha={`${chave}@${row}.impresso`}>{recibo.value}</span><Provenance id={recibo.id} lang={lang} definicao={false} /></span>{provenienciaIncompleta(recibo) && <DefinicaoDoMarcador lang={lang} />}</dd>
+                  <dd><span class="claim"><span data-registo-linha={`${chave}@${row}.impresso`}>{String(recibo.value).replace(/(?<=\d)[ \u2009\u202F](?=\d)/g, '\u00A0')}</span><Provenance id={recibo.id} lang={lang} definicao={false} /></span>{provenienciaIncompleta(recibo) && <DefinicaoDoMarcador lang={lang} />}</dd>
                   <dt>{rotulos.medida}</dt>
                   <dd lang={nome.campo === 'name' ? linguaDoRotuloDaFonte(nome.texto, lang) : undefined} data-registo-linha={`${chave}@${row}.medida`}>{nome.texto}</dd>
                   <dt>{rotulos.fonte}</dt>

@@ -203,6 +203,7 @@
  * célula de tabela, e a página lia-se como um painel de caixas. O nome não é o
  * conteúdo: uma classe nova nasce com o prefixo da sua folha. */
 .texto-figura {
+  white-space: nowrap;
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;
 }
