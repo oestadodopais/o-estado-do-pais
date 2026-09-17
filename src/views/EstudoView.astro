@@ -20,7 +20,7 @@ import { canonicalUrl, SITE_NAME, SITE_URL } from '../../site.config.mjs';
 import { FONTE_DIGITAL_GERADA_POR_IA } from '../data/politica-ia.mjs';
 import { leituraDe } from '../data/leituras.mjs';
 import { t } from '../i18n/strings.mjs';
-import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
+import { ROTULOS_B1, TITULOS_DA_LEITURA } from '../data/rotulos-b1.mjs';
 import '../styles/texto.css';
 import '../styles/estudos-b1.css';
 const { lang = 'pt', slug } = Astro.props;
@@ -66,8 +66,17 @@ function separar(partes, marca, depois = false) {
   return [antes, resto];
 }
 const [titulo, conteudo] = separar(pecas, '</h1>', true);
-const temAbertura = ['Em resumo', 'In brief'].includes(titulos[0]?.texto);
-const depoisDaLeitura = temAbertura ? titulos.filter(t => t.nivel === 2)[3] : null;
+const titulosDaLeitura = TITULOS_DA_LEITURA[lang];
+const principais = titulos.filter(t => t.nivel === 2);
+const primeiroConteudo = registo?.blocks.find(b => b.i > 0);
+const temAbertura = primeiroConteudo?.kind === 'heading' && Number(primeiroConteudo.level) === 2 && primeiroConteudo.text === titulosDaLeitura[0];
+const naLeitura = temAbertura ? principais.filter(t => titulosDaLeitura.includes(t.texto)) : [];
+if (temAbertura && (naLeitura.length !== titulosDaLeitura.length ||
+    titulosDaLeitura.some((texto, i) => principais[i]?.texto !== texto)))
+  throw new Error(`B1 leitura ${chave}: faltam os três títulos na ordem aprovada.`);
+const depoisDaLeitura = temAbertura ? principais.find(t => !titulosDaLeitura.includes(t.texto)) : null;
+if (temAbertura && !depoisDaLeitura)
+  throw new Error(`B1 leitura ${chave}: falta o texto depois da leitura.`);
 const [leitura, texto] = depoisDaLeitura
   ? separar(conteudo, `<span id="posicao-bloco-${depoisDaLeitura.i}"`)
   : [[], conteudo];

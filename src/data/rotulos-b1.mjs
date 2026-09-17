@@ -9,3 +9,9 @@ export const ROTULOS_B1 = {
     edicao: 'Edition as published', publicado: 'published on',
     pais: 'Portugal', outraLingua: '(in Portuguese)', indice: 'On this page' },
 };
+
+/** Os títulos que delimitam a leitura já aprovada, nas duas edições. */
+export const TITULOS_DA_LEITURA = {
+  pt: ['Em resumo', 'O que este projeto conclui', 'O que podia funcionar melhor'],
+  en: ['In brief', 'What this project concludes', 'What could work better'],
+};
