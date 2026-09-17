@@ -4804,12 +4804,12 @@ for (const file of ficheirosHtml(DIST)) {
       );
     }
 
-    /* O topo das páginas de leitura: lá tem de estar, e em mais lado nenhum. */
-    const esperadoNoTopo = 0; // B1: a divulgação única permanece no rodapé.
+    /* O topo de cada página de estudo protege a primeira exposição. */
+    const esperadoNoTopo = rota?.key === 'estudo' ? 1 : 0;
     if (noTopo.length !== esperadoNoTopo) {
       err(
         `esta página tem ${noTopo.length} rótulo(s) de IA no topo e devia ter ${esperadoNoTopo}.\n` +
-          `      O topo é das páginas de leitura, que são texto longo e onde o rodapé chega ` +
+          `      O topo é de cada página de estudo, onde o rodapé pode chegar ` +
           `tarde para o «momento da primeira exposição» do n.º 5 do artigo 50.º.`,
       );
     }
@@ -7518,7 +7518,7 @@ console.log(
       `que os provam vivos: ${[...USOS.contextos].map(([k, n]) => `${k} ${n}`).join(' · ')} · ` +
       `${[...USOS.tokens].map(([k, n]) => `${k} ${n}`).join(' · ')}\n` +
     `  rótulo de IA · ${ROTULO_DE_IA.rodape} no rodapé (de ${ficheiros - documentos} páginas fora ` +
-      `dos documentos alojados) · ${ROTULO_DE_IA.topo} no topo das páginas de leitura · ` +
+      `dos documentos alojados) · ${ROTULO_DE_IA.topo} no topo das páginas de estudo · ` +
       `${ROTULO_DE_IA.ficha} ficha(s) da primeira página · ${ROTULO_DE_IA.frase} frase(s) da ` +
       `política e ${ROTULO_DE_IA.projeto} do projeto, comparadas com o texto decidido`,
   ),

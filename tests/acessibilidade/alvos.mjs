@@ -954,6 +954,16 @@ function medeNaPagina(cfg) {
   const naListaAgrupada = portasDeConcelho.filter((el) => !!el.closest('[data-lista-agrupada]'));
 
   const h1 = [...document.querySelectorAll('h1')];
+  const rotulosTopoIA = [...document.querySelectorAll('[data-rotulo-ia="topo"] .rotulo-ia-linha')].map(linha => {
+    const intervalo = document.createRange();
+    intervalo.selectNodeContents(linha);
+    const rects = [...intervalo.getClientRects()].filter(r => r.width > 0 && r.height > 0);
+    return {
+      linhas: new Set(rects.map(r => Math.round(r.top))).size,
+      corpo: parseFloat(getComputedStyle(linha).fontSize),
+      antesDoTitulo: h1.length === 1 && linha.getBoundingClientRect().bottom <= h1[0].getBoundingClientRect().top,
+    };
+  });
   /* O MARCO DA PORTA: `<footer>` ou `<nav>` com nome, e mais nada. Um `<main>`
      não conta (segunda passagem, achado Blocking 4): saltar para o `main` leva
      ao corpo inteiro da página, e não à porta. */
@@ -977,6 +987,7 @@ function medeNaPagina(cfg) {
     portasDeConcelho: portasDeConcelho.length,
     naListaAgrupada: naListaAgrupada.length,
     h1: h1.length,
+    rotulosTopoIA,
     tituloDaPagina: (document.title ?? '').trim(),
     h1Texto: h1.map((e) => (e.textContent ?? '').replace(/\s+/g, ' ').trim()),
     portaExiste: !!porta,
@@ -1575,6 +1586,12 @@ function avalia(p, dist, cartoes, leis, folhas) {
       (dist.exemplos.h1.length ? ` (${dist.exemplos.h1.join('; ')})` : '') +
       ` · nas rotas medidas: ${h1Maus.length} de ${p.paginas.length} passagens`,
   );
+
+  // B1: a contagem estática não vê uma divulgação partida em várias linhas.
+  const estudosIA = p.paginas.filter(pg => ['estudo', 'texto'].includes(pg.familia));
+  const iaPartida = estudosIA.filter(pg => pg.rotulosTopoIA.length !== 1 || pg.rotulosTopoIA.some(r => r.linhas !== 1 || r.corpo < 12 || !r.antesDoTitulo));
+  conta('H14', estudosIA.length > 0 && iaPartida.length === 0,
+    `${estudosIA.length} passagens de estudo com IA no topo: ${iaPartida.length} sem linha única, corpo de 12 px ou posição antes do título`);
 
   /* --- H4 · a porta de correções dentro de um marco ----------------------- */
   const portasMas = p.paginas.filter((pg) => pg.portaExiste && !pg.marcoDaPorta);
