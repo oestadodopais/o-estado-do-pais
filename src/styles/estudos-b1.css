@@ -1,0 +1,35 @@
+/* B1, primeira peça: medidas da maqueta, papel e tipos da folha existente. */
+.estudo-b1 { max-width: 68ch; display: block; }
+.estudo-b1-titulo h1, .estudo-titulo {
+  font-family: var(--f-prosa); letter-spacing: -.014em;
+  font-size: clamp(27px, 4vw, 40px); font-weight: 500; line-height: 1.12;
+  max-width: 24ch; margin: clamp(4px, 1vw, 10px) 0 clamp(20px, 3vw, 32px);
+}
+.estudo-b1 .texto-indice { margin: 0 0 26px; }
+.estudo-b1 .estudo-leitura { border-block: 1.5px solid var(--ink); padding: clamp(16px, 2.4vw, 26px) 0; }
+.estudo-leitura > h2:first-of-type { margin-top: 0; }
+.estudo-texto { margin-top: clamp(22px, 3vw, 34px); }
+.estudo-b1 .texto-dobra { margin-top: 32px; }
+.estudo-publicado {
+  border-top: 1px solid var(--rule); font-family: var(--f-instr); font-size: 13.5px;
+  color: var(--muted); margin-top: clamp(26px, 3.6vw, 42px); padding-top: 14px;
+}
+.estudo-publicado a { color: var(--ink); }
+.estudos-titulo { font-family: var(--f-prosa); letter-spacing: -.014em; font-size: clamp(28px, 4.4vw, 42px);
+  font-weight: 400; line-height: 1.08; margin: clamp(4px, 1vw, 10px) 0 clamp(18px, 2.6vw, 28px); }
+.estudos-lista { border-top: 1px solid var(--rule); }
+.estudos-lista .estudo-item { display: block; border-bottom: 1px solid var(--rule); padding: clamp(16px, 2.2vw, 22px) 0; }
+.estudo-item-titulo { font-family: var(--f-prosa); letter-spacing: -.014em; font-size: 19px;
+  font-weight: 600; line-height: 1.25; margin: 0; max-width: 46ch; }
+.estudo-item-titulo a { color: var(--ink); text-decoration: none; }
+.estudo-item-titulo a:hover { text-decoration: underline; }
+.estudo-meta { font-family: var(--f-instr); letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); font-size: 12px; margin: 7px 0 0; display: flex; flex-wrap: wrap; gap: 2px 12px; }
+.estudo-meta > :not(:first-child)::before { content: '· '; color: var(--rule-strong); margin-right: 4px; }
+.estudo-em-ingles { font-family: var(--f-instr); letter-spacing: .02em; color: var(--muted); font-size: 13px; font-weight: 400; }
+.estudos-lista .estudo-resumo { font-family: var(--f-prosa); color: var(--ink); max-width: 64ch; margin: 9px 0 0; font-size: 15px; line-height: 1.55; }
+.estudos-lugares { margin-top: 34px; }
+.estudos-lugares ul { list-style: none; padding: 0; }
+.estudos-lugares a { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: var(--ink); }
+
+.estudos-lista .arquivo-porta { border-bottom: 0; }

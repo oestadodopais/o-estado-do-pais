@@ -37,6 +37,8 @@
  * conta registada e selo, como qualquer outro valor do livro-razão.
  */
 import Base from '../layouts/Base.astro';
+import { WORKS } from '../data/studies.mjs';
+import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import CabecaDoLugar from '../components/inicio/CabecaDoLugar.astro';
 import Manchete from '../components/Manchete.astro';
 import Peca from '../components/inicio/Peca.astro';
@@ -226,4 +228,14 @@ const medidaDeUmaLinha = (unidade, linha) =>
     <a href={routePath('regioes', lang)}>{s.regioes.voltarIndice}</a>
     <a href={routePath('home', lang)}>{s.regioes.voltarPais}</a>
   </p>
+  {WORKS.some(w => w.subject === slug) && (
+    <section aria-labelledby="trabalhos" class="linha-bloco">
+      <h2 id="trabalhos">{lang === 'pt' ? 'Estudos' : 'Studies'}</h2>
+      <ul class="mun-estudos">{WORKS.filter(w => w.subject === slug).map(w => (
+        <li><a href={routePath('estudo', lang, { slug: w.slug })}>
+          <TituloDeTrabalho titulo={(w.editions.find(e => e.lang === lang) ?? w.editions[0]).title} lang={lang} />
+        </a></li>
+      ))}</ul>
+    </section>
+  )}
 </Base>

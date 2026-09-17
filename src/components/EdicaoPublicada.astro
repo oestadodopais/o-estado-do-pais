@@ -1,0 +1,17 @@
+---
+import { documentosDoEstudo } from '../lib/documentos.mjs';
+import { dataDaEdicaoNoRepositorio } from '../lib/datas-do-repositorio.mjs';
+import { dataDaCasa } from '../lib/datas.mjs';
+import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
+const { work, lang } = Astro.props;
+const principal = work.editions.find(e => e.lang === lang) ?? work.editions[0];
+const documento = documentosDoEstudo(work.slug).find(d => d.lang === principal.lang);
+const data = dataDaEdicaoNoRepositorio(work.slug, principal.lang);
+const rotulos = ROTULOS_B1[lang];
+if (!documento || !data) throw new Error(`Edição sem documento ou data: ${work.slug}/${principal.lang}`);
+---
+<p class="estudo-publicado" data-estudo-edicao={`${work.slug}/${principal.lang}`}>
+  <a href={documento.rota} hreflang={principal.lang === 'pt' ? 'pt-PT' : 'en'}>{rotulos.edicao}</a>
+  <span aria-hidden="true"> · </span><span data-voz>{rotulos.publicado}</span>{' '}
+  <time datetime={data} data-nonledger="data-do-repositorio">{dataDaCasa(data)}</time>
+</p>
