@@ -3308,14 +3308,20 @@ function conta(chave, valor, vista) {
  */
 function contasDoPortao(claims) {
   const linhas = [...claims.values()];
-  const contagensDeLugares = Object.keys(SUBJECTS).map(lugar => {
-    const rota = routePath(lugar === 'evora' ? 'municipio' : 'regiao', 'pt', { slug: lugar });
+  const contagensDeLugares = Object.keys(SUBJECTS).flatMap(lugar => LANGS.map(lang => {
+    const rota = routePath(lugar === 'evora' ? 'municipio' : 'regiao', lang, { slug: lugar });
     const ficheiro = path.join(DIST, rota.slice(1), 'index.html');
-    const doc = fs.existsSync(ficheiro) ? parse(fs.readFileSync(ficheiro, 'utf8')) : null;
-    const tit = doc?.querySelector('#trabalhos');
-    const n = tit?.parentNode?.querySelectorAll('a[href]').filter(a => matchPath(a.getAttribute('href'))?.key === 'estudo').length ?? 0;
-    return conta(`estudos_lugar_${lugar}`, n, 'dist');
-  });
+    let doc;
+    try { doc = parse(fs.readFileSync(ficheiro, 'utf8')); }
+    catch (erro) { throw new Error(`B1 contagem do lugar: não foi possível ler ${ficheiro}: ${erro instanceof Error ? erro.message : String(erro)}`); }
+    const tit = doc.querySelector('#trabalhos');
+    if (!tit) throw new Error(`B1 contagem do lugar: ${rota} não tem a secção #trabalhos.`);
+    const portas = tit.parentNode.querySelectorAll('a[href]').filter(a => matchPath(a.getAttribute('href'))?.key === 'estudo');
+    if (portas.some(a => matchPath(a.getAttribute('href')).lang !== lang))
+      throw new Error(`B1 contagem do lugar: ${rota} contém uma porta de estudo noutra língua.`);
+    return conta(`estudos_lugar_${lugar}_${lang}`, new Set(portas.map(a => a.getAttribute('href'))).size, 'dist');
+  }));
+  for (const lugar of Object.keys(SUBJECTS)) PROVA_VISTA[`estudos_lugar_${lugar}`] = 'dist';
   const paginasDeLinhaPt = [...linhasConstruidas].filter((k) => k.startsWith('pt:')).length;
   const indexaveisPt = [...linhasIndexaveis].filter((k) => k.startsWith('pt:')).length;
 
@@ -6396,7 +6402,7 @@ for (const file of ficheirosHtml(DIST)) {
       }
     }
 
-    ocorrenciasDaProva.push({ rel, chave, texto: renderizado });
+    ocorrenciasDaProva.push({ rel, chave, lingua: linguaPagina ?? 'pt', texto: renderizado });
   }
 
   /* A lista por extenso da mesma contagem. Não é uma origem nova: é a MESMA
@@ -7109,7 +7115,9 @@ const CONTAS = contasDoPortao(claims);
 const provaFinal = {};
 
 for (const [chave, item] of Object.entries(PROVA)) {
-  const meu = CONTAS[chave];
+  const meu = CONTAS[chave.startsWith('estudos_lugar_') ? `${chave}_pt` : chave];
+  if (chave.startsWith('estudos_lugar_') && CONTAS[`${chave}_en`] !== item.valor)
+    erros.push({ rel: 'dist/en/studies', msg: `B1 contagem do lugar: ${chave} em inglês mede ${CONTAS[`${chave}_en`]} e declara ${item.valor}.` });
   const dela = item.valor;
   provaFinal[chave] = { valor: dela, vista: PROVA_VISTA[chave] ?? 'modulo' };
   if (meu === undefined) {
@@ -7144,7 +7152,7 @@ for (const [chave, item] of Object.entries(PROVA)) {
  * cadeia, uma data é ISO, um endereço é ele próprio.
  */
 for (const o of ocorrenciasDaProva) {
-  const esperado = CONTAS[o.chave];
+  const esperado = CONTAS[o.chave.startsWith('estudos_lugar_') ? `${o.chave}_${o.lingua}` : o.chave];
   if (esperado === undefined || esperado === null) continue; // já dito acima
   /**
    * UMA CHAVE DA PROVA QUE É UMA DATA ESCREVE-SE NA FORMA DA CASA (bloco F1.4,
