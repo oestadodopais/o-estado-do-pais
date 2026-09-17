@@ -249,3 +249,54 @@ Daí saíam duas coisas, e as duas eram reais: o `axe` não tinha tela para comp
 **UMA NOTA DE MÉTODO, porque custou uma corrida.** A primeira corrida dos portões desta passagem saiu a 1 no `build` e no `verify`, e não era um defeito: o `astro build` rendeu as páginas, eu editei o livro-razão enquanto ele corria, e o `gate:html` comparou o `dist/` velho com o ficheiro novo. O portão apanhou uma diferença real entre o que estava construído e o que estava declarado, que é exactamente o que ele existe para apanhar. A corrida que vale é a de uma árvore limpa em que nada se toca do princípio ao fim.
 
 **A ENTRADA DE «ORÇAMENTADO, PAGO, DEVIDO» DIZ A REGRA DO TÍTULO AO CONTRÁRIO**, com a data de 15.08.2026: «o título é o nome do documento, e não a sua etiqueta `<title>`». As duas regras não podem valer as duas, e qual delas fica é decisão da direção. Este bloco aplicou a que a leitura a frio mandou aplicar e não mexeu nas outras entradas; fica dito aqui e no comentário da entrada.
+
+## 12 · A quarta passagem: a leitura de abertura (ramo `e1-abertura-2026-09-16`)
+
+*Sobre `main` `3bdf0b36`, que já tem tudo o que aterrou a 16.09. É um ramo à parte, e não a continuação do `e1-2026-09-16`.*
+
+**O diretor decidiu, a 16.09.2026 à noite e depois de ver o estudo no ar, que um estudo abre com a leitura do projeto.** O motor pôs as três secções a seguir ao título («Em resumo», «O que este projeto conclui», «O que podia funcionar melhor») e corrigiu com elas a linha das ausências dos contratos da associação. Deste lado refixaram-se os bytes e refez-se a travessia.
+
+**O que mudou, medido:** os bytes passam de 61 558 para 66 084 (pt) e de 59 780 para 64 182 (en); os registos de 119 para 130 blocos e de 182 para 190 referências, por edição. **Desta vez o texto mudou**, e por isso os dois `.record.json` mudaram com ele; os dois `.cortes.json` não mudaram um byte, que é a resposta certa: são as operações da passagem de voz, e neste estudo são zero. O título não mudou, porque a abertura entra depois dele.
+
+**O ensaio do exportador, com o destino conferido antes da escrita:**
+
+```
+  travessia dos registos de conteúdo · motor d768bdea4c99 · destino …/e1-abertura-2026-09-16/registos
+  14 en  → evora-2027-prometido-painel-dinheiro/en   blocos 130 · refs 190 · edicao-html · o D5 corre e bate
+  14 pt  → evora-2027-prometido-painel-dinheiro/pt   blocos 130 · refs 190 · edicao-html · o D5 corre e bate
+  0 nova(s) · 2 alterada(s) · 8 inalterada(s)
+  Escritos 20 ficheiro(s) em …/e1-abertura-2026-09-16/registos
+```
+
+**As duas capturas do primeiro ecrã** (`texto-abertura-pt-390.png` e `texto-abertura-pt-1280.png`) respondem à pergunta que a decisão faz: o que é que se lê sem tocar em nada. Não são de página inteira, de propósito. Nas duas larguras couberam os mesmos dois títulos, e mais nenhum:
+
+```
+  H1 Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas
+  H2 Em resumo
+```
+
+**A norma ganhou a regra 4 da §4**, palavra por palavra como o lugar de direção a escreveu, e o título da secção passou a «(quatro regras)». **A leitura cruzada dos seis estudos** entrou em `design/observatorio/evora/MAPA-dos-seis-estudos-2026-09-16.md`, em inglês como veio, com o parágrafo em itálico que diz quem a pediu, com que palavras, quanto custou e o que o lugar de direção recomendou.
+
+**O QUE FICOU POR PÔR, E PORQUÊ: a entrada §1.111 do `DECISIONS.md`.** O campo `**Afecta:**` de uma entrada a partir da §1.38 é vocabulário fechado de quatro palavras (`sobre`, `metodo`, `agenda`, `nenhum`), sozinho na sua linha, e o `ledger:check` recusa qualquer outra coisa: é ele que garante que uma mudança de rumo diz que texto governa. O texto que recebi põe prosa nesse campo («os estudos (a forma do documento no motor; a norma §4.4; a carta dos conteúdos, por remissão)») e junta na mesma linha o `**Decidido por:**` e o `**Aplicado por:**`, que as outras entradas escrevem em linhas próprias. O portão dá três erros.
+
+Esta decisão não governa nenhum dos dois textos governados nem a agenda, e por isso o valor certo do campo é `nenhum`, com a prosa a passar para o corpo da entrada. **É uma linha, e não é minha para escrever:** a instrução era não mudar uma palavra, e não mudei. A entrada fica por pôr, e o ramo fica verde; quem escreveu a entrada corrige a linha e ela entra sozinha, sem tocar em mais nada.
+
+**Os três portões desta passagem**, cada comando no seu, com o código lido de um ficheiro, sobre `f7c2759b`:
+
+```
+npm run build     → 0
+npm run verify    → 0
+npm run typecheck → 0
+```
+
+Os códigos ficaram em `j-build.code`, `j-verify.code` e `j-typecheck.code`, com as saídas ao lado, no directório de trabalho da sessão.
+
+**Os commits desta passagem**, sobre `3bdf0b36`:
+
+| cabeça | o que |
+| --- | --- |
+| `35601830` | O estudo ganha a leitura de abertura, e os bytes refixam-se com ela |
+| `8133c8a6` | A norma ganha a regra da leitura de abertura |
+| `44d68028` | A leitura cruzada dos seis estudos de Évora entra no repositório |
+| `f7c2759b` | As duas capturas do primeiro ecrã, com a leitura de abertura |
+| (o commit deste ficheiro) | Esta secção. **É a cabeça final**, e acrescenta um ficheiro de relatório que nenhuma das três cadeias lê |
