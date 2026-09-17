@@ -1,0 +1,12 @@
+npm run check:voz
+Código: 1
+
+> o-estado-do-pais@0.1.0 check:voz
+> node scripts/check-voz.mjs
+
+  B1: 28 páginas pela lista fechada; 7 temas conferidos.
+
+  PORTÃO DA VOZ · 1 problema(s)
+
+    · B1 língua: en/studies: penalizacoes-por-reforma-antecipada-2026/pt deve ter 1 marca(s) da língua da edição.
+

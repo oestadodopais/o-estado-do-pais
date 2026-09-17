@@ -1,0 +1,248 @@
+npm run gate:html
+Código: 1
+
+> o-estado-do-pais@0.1.0 gate:html
+> node scripts/gate-html.mjs
+
+  B1 leitura evora-orcamentado-pago-devido-2025/en: sem leitura, o registo não começa por In brief.
+  B1 leitura evora-prometido-pago-auditado-2026/en: sem leitura, o registo não começa por In brief.
+  B1 leitura avaliacao-economica-regional-de-portugal-2026/pt: sem leitura, o registo não começa por Em resumo.
+  B1 leitura evora-economia-investidores-portas-abertas-2026/pt: sem leitura, o registo não começa por Em resumo.
+  B1 leitura evora-orcamentado-pago-devido-2025/pt: sem leitura, o registo não começa por Em resumo.
+  B1 leitura evora-os-pelouros-quem-os-teve-o-que-fizeram/pt: sem leitura, o registo não começa por Em resumo.
+  B1 leitura evora-prometido-pago-auditado-2026/pt: sem leitura, o registo não começa por Em resumo.
+  B1 leitura evora-quinze-anos-cinco-mandatos/pt: sem leitura, o registo não começa por Em resumo.
+
+  portão de HTML · 7354 páginas · 2887/2975 afirmações citadas fora do livro-razão · 5950 páginas de linha · 18 documento(s) de estudo, conferidos contra a origem · 10 página(s) de leitura, conferidas contra o seu registo de conteúdo
+  allowlist · 19 motivo(s) e 5 token(s), com os usos que os provam vivos: data-de-atualizacao 2 · data-da-conferencia 30 · nome-oficial-da-medida 58 · referencia-legal 20 · titulo-de-estudo 178 · escala-de-instrumento 152 · limiar-do-quadro 84 · data-da-linha 26200 · data-do-repositorio 38 · ambito-da-medida 4 · periodo-da-fonte 1112 · data-de-referencia 10738 · numeracao 10076 · proveniencia 24363 · data-da-agenda 156 · data-de-leitura-de-uma-definicao 56 · identificador-tecnico 4 · fonte-da-carta 64 · licenca-do-conjunto 2 · UE-27 (scope: any) 21 · EU-27 (scope: any) 21 · 73/2013 (scope: body) 614 · sha256 (scope: body) 24 · 52.º (scope: body) 614
+  rótulo de IA · 7336 no rodapé (de 7336 páginas fora dos documentos alojados) · 26 no topo das páginas de estudo · 2 ficha(s) da primeira página · 2 frase(s) da política e 2 do projeto, comparadas com o texto decidido
+  ortografia · Acordo de 1990 como se aplica em Portugal · 254 pares, 50 iguais · restante: 0 ocorrência(s) em 0 rota(s), todas de linhas cruzadas · 8 dispensada(s) por estarem entre «…»
+  factos por verificar · 2 campo(s) declarados, com o marcador na página e a porta da edição certa
+  as duas edições · 24 peça(s) de página de leitura com os mesmos ids pela mesma ordem
+
+  88 aviso(s):
+    · a afirmação "abandono-escolar-precoce-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "abandono-escolar-precoce-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "agua-nao-faturada-portugal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "avisos-pt2030-abertos" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "avisos-pt2030-pessoas-singulares" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "ciclo-substituicao-condutas" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "competencias-digitais-2023" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "competencias-digitais-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "competencias-digitais-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "credito-malparado-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "credito-malparado-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "crescimento-da-despesa-liquida-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "criancas-em-creche-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "criancas-em-creche-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "criancas-em-creche-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "custo-unitario-do-trabalho-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "custo-unitario-do-trabalho-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "desempenho-das-exportacoes-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "desemprego-de-longa-duracao-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "desemprego-de-longa-duracao-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-em-id-2023" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-em-id-2024-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-em-id-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "disparidade-de-emprego-entre-sexos-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "disparidade-de-emprego-entre-sexos-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "disparidade-de-emprego-entre-sexos-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "disparidade-salarial-entre-sexos-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "distancia-portugal-ue27-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "divida-das-empresas-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "divida-das-empresas-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "divida-das-familias-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "divida-das-familias-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "divida-publica-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "divida-publica-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "edicoes-publicadas" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "estudos-publicados" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "evora-concentracao-vab4-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "evora-vab-empresarial-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "factor-sustentabilidade-2026" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "fluxo-de-credito-as-empresas-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "fluxo-de-credito-as-familias-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "fluxo-de-credito-as-familias-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "formacao-bruta-de-capital-fixo-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "formacao-bruta-de-capital-fixo-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "formacao-bruta-de-capital-fixo-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "independencia-da-justica-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "independencia-da-justica-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "independencia-da-justica-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "indice-de-percepcao-da-corrupcao-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "indice-de-percepcao-da-corrupcao-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "indice-de-percepcao-da-corrupcao-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "jovens-nem-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "jovens-nem-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "licencas-de-construcao-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "licencas-de-construcao-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "municipios-com-estudo-aprofundado" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "municipios-sem-estudo-aprofundado" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "necessidades-medicas-nao-satisfeitas-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "necessidades-medicas-nao-satisfeitas-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "necessidades-medicas-nao-satisfeitas-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "penedono-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "pib-real-per-capita-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "pib-real-per-capita-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "pib-real-per-capita-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "portugal-concentracao-vab4-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "posicao-de-investimento-internacional-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "precos-da-habitacao-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "precos-da-habitacao-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "racio-s80-s20-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "racio-s80-s20-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "retribuicao-minima-mensal-doze-meses-2026" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "retribuicao-minima-mensal-garantida-continente-2026" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "risco-de-pobreza-ou-exclusao-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "risco-de-pobreza-ou-exclusao-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "saldo-da-balanca-corrente-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "saldo-natural-portugal-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "sobrecarga-do-custo-da-habitacao-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "sobrecarga-do-custo-da-habitacao-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "taxa-de-actividade-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "taxa-de-actividade-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "taxa-de-cambio-efectiva-real-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "taxa-de-cambio-efectiva-real-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "taxa-de-desemprego-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "taxa-de-desemprego-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "taxa-de-desemprego-mip-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "taxa-de-desemprego-mip-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "taxa-de-emprego-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "taxa-de-emprego-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+
+  O PORTÃO DE HTML FECHOU — 132 erro(s):
+
+  estudos/evora-2027-prometido-painel-dinheiro/index.html
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: deve existir um corpo de texto.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: a leitura rendida não contém exatamente as três secções.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: o texto não começa a seguir à terceira secção da leitura.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 1 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 2 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 3 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 4 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 5 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 6 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 7 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 8 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 9 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 10 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 11 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 12 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 13 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 14 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 15 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 16 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 17 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 18 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 19 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 20 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 21 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 22 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 23 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 24 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 25 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 26 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 27 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 28 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 29 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 30 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 31 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 32 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 33 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 34 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 35 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 36 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 37 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 38 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 39 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 40 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 41 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 42 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 43 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 44 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 45 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 46 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 47 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 48 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 49 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 50 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 51 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 52 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 53 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 54 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 55 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 56 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 57 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 58 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 59 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 60 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 61 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 62 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 63 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 64 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 65 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 66 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 67 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 68 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 69 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 70 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 71 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 72 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 73 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 74 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 75 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 76 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 77 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 78 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 79 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 80 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 81 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 82 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 83 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 84 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 85 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 86 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 87 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 88 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 89 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 90 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 91 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 92 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 93 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 94 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 95 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 96 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 97 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 98 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 99 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 100 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 101 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 102 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 103 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 104 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 105 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 106 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 107 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 108 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 109 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 110 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 111 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 112 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 113 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 114 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 115 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 116 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 117 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 118 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 119 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 120 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 121 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 122 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 123 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 124 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 125 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 126 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 127 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 128 no lado errado da fronteira.
+    ✗ B1 leitura evora-2027-prometido-painel-dinheiro/pt: bloco 129 no lado errado da fronteira.
+
