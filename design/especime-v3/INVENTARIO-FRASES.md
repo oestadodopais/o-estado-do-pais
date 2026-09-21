@@ -3061,3 +3061,12 @@ compõe-o do registo do motor, e a régua tira da superfície a região `data-re
 | conteudo | published on · | b1-peca3 | viva | Leitura aprovada ou texto composto dos estudos e das datas existentes, conferido pela lista fechada do país. |
 | conteudo | Évora Culture published on | b1-peca3 | viva | Leitura aprovada ou texto composto dos estudos e das datas existentes, conferido pela lista fechada do país. |
 | conteudo | Évora Economy and public finances published on | b1-peca3 | viva | Leitura aprovada ou texto composto dos estudos e das datas existentes, conferido pela lista fechada do país. |
+| conteudo | → % do valor aprovado | b1-peca3 | viva | Unidade e marca de incerteza das correções já declaradas no livro-razão. |
+| conteudo | → estudos | b1-peca3 | viva | Unidade e marca de incerteza das correções já declaradas no livro-razão. |
+| conteudo | → euros | b1-peca3 | viva | Unidade e marca de incerteza das correções já declaradas no livro-razão. |
+| conteudo | → euros · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado | b1-peca3 | viva | Unidade e marca de incerteza das correções já declaradas no livro-razão. |
+| conteudo | → índice (UE-27 = 100) | b1-peca3 | viva | Unidade e marca de incerteza das correções já declaradas no livro-razão. |
+| conteudo | → % of the approved amount | b1-peca3 | viva | Unidade e marca de incerteza das correções já declaradas no livro-razão. |
+| conteudo | → euros · a field not confirmed against the source, not a doubt about what is published | b1-peca3 | viva | Unidade e marca de incerteza das correções já declaradas no livro-razão. |
+| conteudo | → index (EU-27 = 100) | b1-peca3 | viva | Unidade e marca de incerteza das correções já declaradas no livro-razão. |
+| conteudo | → studies | b1-peca3 | viva | Unidade e marca de incerteza das correções já declaradas no livro-razão. |
