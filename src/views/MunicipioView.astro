@@ -157,7 +157,12 @@ const jsonld = {
     {
       temas.map((tema) => (
         <div class="lugar-tema" data-lugar-tema={tema.slug}>
-          <h3 class="lugar-tema-k">{tema.nome}</h3>
+          {/* O NOME DO TEMA É O NOME DE UMA ENTRADA DA CARTA DOS CONTEÚDOS,
+              e não prosa da casa: vai com a marca que o diz, e a régua da voz
+              confere, carácter a carácter, que o texto é um nome daquele
+              ficheiro. Sem a marca, os dezoito nomes custavam ao inventário
+              uma linha por nome e por edição. */}
+          <h3 class="lugar-tema-k" data-nome="dominios">{tema.nome}</h3>
           <div class="lugar-cartoes">
             {tema.medidas.map((tile) => (
               <CartaoDoLugar tile={tile} lang={lang} s={s} />

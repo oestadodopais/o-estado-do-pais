@@ -162,7 +162,10 @@ function paginasEsperadas(pais) {
   };
   for (const lang of LANGS) {
     junta('inicio', lang, routePath('home', lang));
-    junta('municipios', lang, routePath('municipios', lang));
+    /* B1, peça 2: a página que o mapa promete como índice dos lugares é a
+       nova, e não o índice dos concelhos, que passou a redirecionamento. A
+       promessa é a mesma: a porta que o desenho abre tem de estar construída. */
+    junta('lugares', lang, routePath('lugares', lang));
     junta('linha', lang, routePath('linha', lang, { slug: LINHA_DA_CARTA }));
     for (const u of pais.unidades) junta('distrito', lang, routePath('distrito', lang, { slug: u.slug }));
     for (const slug of slugsDaCarta()) junta('municipio', lang, routePath('municipio', lang, { slug }));
@@ -196,8 +199,8 @@ function leMundo() {
     /* O ÍNDICE DOS CONCELHOS ENTRA COM A R7 (28.08.2026). É a página onde os 29
        nomes das unidades e os 308 dos concelhos aparecem todos seguidos, e por
        isso é onde uma ordem errada se lê de uma vez. */
-    const indice = lePagina(routePath('municipios', lang));
-    if (indice) paginas.push({ ...indice, lang, tipo: 'municipios' });
+    const indice = lePagina(routePath('lugares', lang));
+    if (indice) paginas.push({ ...indice, lang, tipo: 'lugares' });
   }
 
   /* O SEGUNDO NÍVEL SERVIDO (R8). Os bytes de cada `unidade-<slug>.json` dos
@@ -519,12 +522,16 @@ function r7(m) {
   }
   confere('mapa/manifest.json, as unidades', m.manifesto.unidades.map((u) => u.nome));
 
-  for (const pg of m.paginas.filter((p) => p.tipo === 'municipios')) {
-    const grupos = pg.root.querySelectorAll('section.concelhos-grupo');
-    confere(`${pg.rota}, os cabeçalhos dos grupos`, grupos.map(nomeDoGrupo));
-    for (const g of grupos) {
-      confere(`${pg.rota}, os concelhos de «${nomeDoGrupo(g)}»`, nomesDaLista(g, 'ul.concelhos-lista li'));
-    }
+  /* B1, peça 2: o índice dos concelhos, que era onde os 29 nomes das unidades e
+     os 308 dos concelhos apareciam todos seguidos, passou a redirecionamento. A
+     lista seguida dos 29 nomes é agora a da página dos lugares, e a dos
+     concelhos de cada unidade continua na página dela, que é a linha a seguir:
+     a regra não afrouxa, mede o mesmo em duas páginas em vez de três. */
+  for (const pg of m.paginas.filter((p) => p.tipo === 'lugares')) {
+    confere(
+      `${pg.rota}, a lista dos distritos e ilhas`,
+      nomesDaLista(pg.root, 'ul[data-lista-lugares="distritos"] li'),
+    );
   }
   for (const pg of m.paginas.filter((p) => p.tipo === 'distrito')) {
     confere(`${pg.rota}, a lista dos concelhos`, nomesDaLista(pg.root, '#concelhos li'));
@@ -822,20 +829,13 @@ const ESTRAGOS = {
      apanhava: duas linhas iguais estão em ordem, porque a colação as compara a
      zero. Um estrago que a regra não apanha é uma régua que se declara verde
      sem ter olhado, e por isso ele foi corrido antes de ser dado como bom. */
-  'R7 (os cabeçalhos do índice)': (m) => {
-    const pg = m.paginas.find((p) => p.tipo === 'municipios');
-    const g = pg.root.querySelectorAll('section.concelhos-grupo');
-    const [a, b] = [nomeDoGrupo(g[0]), nomeDoGrupo(g[1])];
-    trocaIrmaos(g[0].parentNode, g[0], g[1]);
-    return `os grupos «${a}» e «${b}» trocados em ${pg.rota}`;
-  },
-  'R7 (os concelhos de um grupo)': (m) => {
-    const pg = m.paginas.find((p) => p.tipo === 'municipios');
-    const lista = pg.root.querySelector('section.concelhos-grupo ul.concelhos-lista');
+  'R7 (a lista dos distritos e ilhas)': (m) => {
+    const pg = m.paginas.find((p) => p.tipo === 'lugares');
+    const lista = pg.root.querySelector('ul[data-lista-lugares="distritos"]');
     const itens = lista.querySelectorAll('li');
     const [a, b] = [semSeta(itens[0].text), semSeta(itens[1].text)];
     trocaIrmaos(lista, itens[0], itens[1]);
-    return `«${a}» e «${b}» trocados no primeiro grupo de ${pg.rota}`;
+    return `«${a}» e «${b}» trocados na lista dos distritos de ${pg.rota}`;
   },
   'R7 (a lista de um distrito)': (m) => {
     const pg = m.paginas.find((p) => p.tipo === 'distrito');
