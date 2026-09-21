@@ -27,13 +27,25 @@
  * referência»: não se diz o que não há.
  */
 import Claim from '../Claim.astro';
+import CampoDaLinha from '../CampoDaLinha.astro';
 import Provenance from '../Provenance.astro';
 import Frase from '../Frase.astro';
+import { unidadeDaLinha } from '../../i18n/unidades.mjs';
 import { marcaDoValor, provenienciaIncompleta } from '../../lib/ledger.mjs';
 
 const { tile, lang = 'pt', s } = Astro.props;
 
 const marca = marcaDoValor(tile.linha?.value);
+/* A UNIDADE É A DA LINHA, TAL COMO A LINHA A ESCREVE (achado D2 da leitura do
+   lugar de direção, 21.09.2026). O cartão do índice de dívida dizia
+   «Percentagem», e a linha escreve «% (limite legal = 150)»: sem a escala,
+   «105,5 · Percentagem · dentro do limite legal» lê-se como uma contradição a
+   quem espera o limite nos 100, e «419,5 · fora do limite legal» não diz fora de
+   quê. O texto vem de `unidadeDaLinha()`, que é o dicionário das unidades que o
+   `check:lingua` confere, e entra por `CampoDaLinha`, que o compara carácter a
+   carácter com o campo `unit` daquela linha. Não é uma segunda marca da fonte: é
+   o mesmo número da mesma linha, dito na unidade dela. */
+const unidade = unidadeDaLinha(tile.linha?.unit ?? '', lang);
 
 /** A primeira frase de uma nota declarada. Uma nota é uma lista de pedaços. */
 function primeiraFrase(partes) {
@@ -85,8 +97,17 @@ const palavra =
         <Claim id={tile.claim} lang={lang} as="span" class="cartao-medida-num" chip={true} />
       )
     }
-    <span class="campo-valor cartao-medida-unidade">
-      <Frase partes={tile.medidaSimples[lang]} lang={lang} />
+    <CampoDaLinha
+      id={tile.claim}
+      campo="unit"
+      valor={unidade.texto}
+      lang={lang}
+      class="cartao-medida-unidade"
+      lingua={unidade.lingua}
+    />
+    <span class="cartao-medida-periodo">
+      {' · '}
+      <Frase partes={tile.periodo[lang]} lang={lang} />
     </span>
   </p>
 
