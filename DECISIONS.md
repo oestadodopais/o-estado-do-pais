@@ -12465,8 +12465,11 @@ portuguesa. A republicação de 20.08 re-fixou as três edições que o arquivo
 publica, e não acrescentou a quarta: publicar uma edição nova é decisão de
 publicação, não uma re-fixação de bytes, e não estava no pedido.
 
-**Um byte NUL no `src/lib/ledger.mjs` faz o `grep` mentir por omissão**
-(20.08.2026, §1.49). O separador com que a conferência das reconferências junta
+~~**Um byte NUL no `src/lib/ledger.mjs` faz o `grep` mentir por omissão**~~
+(20.08.2026, §1.49). **Fechado, e esta entrada ficou por riscar até 21.09.2026:** o byte saiu
+no bloco `pequenas-6-2026-08-29` (I37), e o `ledger:check` passou a recusar bytes de
+controlo nesse ficheiro; medido a 21.09.2026, zero bytes de controlo nos 118 697 do
+ficheiro, e o `grep -n` devolve linhas normalmente. O texto original: O separador com que a conferência das reconferências junta
 os quatro campos de uma entrada está escrito como byte e não como sequência de
 escape. O ficheiro passa a ser tratado como binário, e uma busca nele devolve
 zero linhas **sem dizer porquê**, que é a forma mais limpa de uma ausência
