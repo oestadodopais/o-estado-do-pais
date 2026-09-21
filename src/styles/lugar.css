@@ -100,6 +100,12 @@
   max-width: 46ch;
 }
 .lugar-estudo-k a { color: var(--ink); text-decoration: none; }
+/* O ALVO DO TÍTULO DE UM ESTUDO, abaixo de 1024 px: é a mesma regra e a mesma
+   medida que o índice dos estudos dá ao seu (`.arquivo-titulo a` em
+   `site.css`), porque é a mesma coisa — o título é a porta. */
+@media (max-width: 1023px) {
+  .lugar-estudo-k a { display: inline-flex; align-items: center; min-height: 44px; }
+}
 .lugar-estudo-k a:hover { text-decoration: underline; }
 
 .lugar-estudo-meta {
@@ -127,6 +133,13 @@
   font-size: 15px;
   line-height: 1.55;
 }
+/* O AR QUE DOIS SELOS PRECISAM NUMA FRASE CORRIDA. A área de toque de um selo
+   tem 44 px de altura, e numa entrelinha de 23 px duas áreas de linhas seguidas
+   cruzam-se: quem toca por baixo de um número abre a linha do outro (é a mesma
+   medição que deu o `row-gap` das contagens dos estudos). Onde a leitura de um
+   estudo cita uma linha, a entrelinha passa a ser a da área, e as duas deixam de
+   se tocar. Onde não cita, o parágrafo fica como está. */
+.lugar-estudo-leitura:has(a.src-chip) { line-height: 44px; }
 
 /* ------------------------------------------------------------ o que mudou */
 .lugar-mudou {

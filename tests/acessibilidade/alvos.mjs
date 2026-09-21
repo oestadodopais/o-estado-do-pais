@@ -148,7 +148,9 @@ const FAMILIAS = [
   ['home', null],
   ['lugares', null],
   ['municipio', { slug: 'evora' }],
-  ['distritos', null],
+  /* O ÍNDICE DOS DISTRITOS SAIU DA LISTA COM A PÁGINA (B1, peça 2, 21.09.2026):
+     passou a redirecionamento para a página dos lugares, que já está aqui em
+     cima. A página de uma unidade fica, e é a linha a seguir. */
   ['distrito', { slug: 'evora' }],
   ['regioes', null],
   ['regiao', { slug: 'alentejo' }],
@@ -1698,9 +1700,16 @@ function avalia(p, dist, cartoes, leis, folhas) {
       (a.toque === null || a.toque.w < a.reclamaW - 1 || a.toque.h < a.reclamaH - 1),
   );
   conta(
+    /* O DEGRAU SIMPLES DEIXOU DE TER INSTÂNCIAS (B1, peça 2, 21.09.2026). Era o
+       das 308 páginas de concelho, cuja manchete citava a população; a peça 2
+       tira a manchete da página de um lugar e põe no lugar dela o nome e a
+       leitura, e a leitura não é um `<h1>`. A célula continua a exigir os dois
+       degraus onde eles existem e, sobretudo, o que interessa ao leitor nos
+       dois: nenhum algarismo partilha a sua área com uma porta que abra outra
+       linha. O que sai é a exigência de que o primeiro degrau tenha instâncias,
+       porque exigir uma página que não existe é medir uma ausência. */
     'H7',
     manchetes.length > 0 &&
-      manchetesSimples.length > 0 &&
       simplesMas.length === 0 &&
       pluraisMas.length === 0 &&
       comPortaAlheia.length === 0,
