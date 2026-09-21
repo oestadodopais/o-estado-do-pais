@@ -25,6 +25,15 @@
  *   **T1** · toda a chave de medida que o ficheiro do motor traz, e toda a que
  *        `MEDIDAS_DO_CONCELHO` declara, tem tema; todo o tema declarado é um dos
  *        dezoito da carta dos conteúdos.
+ *   **P1** · **as palavras da leitura e da régua contra as linhas, recalculadas**.
+ *        Para cada uma das 616 páginas, este passo lê do livro-razão se o índice
+ *        de dívida está dentro ou fora do limite legal (contra a linha
+ *        `indice-de-divida-limite-legal`, e não contra o limite em euros da
+ *        câmara) e se o poder de compra está acima ou abaixo da base do índice, e
+ *        compara com as palavras rendidas NA LEITURA e NA RÉGUA do cartão.
+ *        Confere também que um lugar cujo índice a fonte não publica não tem essa
+ *        metade da leitura. **É P**: uma palavra trocada aqui é uma afirmação
+ *        falsa sobre uma câmara, e a leitura a frio de 21.09 leu uma.
  *   **T2** · toda a medida rendida numa página de concelho de `dist/` diz a sua
  *        chave, e o tema debaixo do qual ela se rende é o que a tabela dá àquela
  *        chave. É a célula que o mandato pede à letra: «o portão falha se uma
@@ -51,7 +60,8 @@ import {
 } from '../src/data/carta-dos-lugares.mjs';
 import { DOMINIOS } from '../src/data/dominios.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
-import { getClaim } from '../src/lib/ledger.mjs';
+import { getClaim, parsePtNumber, eValorTextual } from '../src/lib/ledger.mjs';
+import { t as cadeias } from '../src/i18n/strings.mjs';
 import { routePath, LANGS } from '../src/lib/routes.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -202,6 +212,85 @@ if (!fs.existsSync(DIST)) {
       if (todos !== dentro) {
         falhas.push(`T2 · ${rota}: ${todos - dentro} medida(s) rendidas fora de um tema.`);
       }
+
+      /* ---------------------------------------------------------------- P1 */
+      /* AS PALAVRAS CONTRA AS LINHAS, RECALCULADAS AQUI. Este passo não importa
+         `src/lib/lugar.mjs`: uma conferência que usasse a função da página
+         confirmava-se a si própria. Lê as linhas, faz as duas comparações por
+         conta própria, e compara o resultado com o que a página escreveu. */
+      const s = cadeias(lang);
+      const peca = (chave) => (m.relance ?? []).find((x) => x.chave === chave && x.claim);
+      const leitura = raiz.querySelector('.lugar-leitura');
+      /* A LEITURA DE UM LUGAR TEM DUAS FORMAS, e a célula mede o que pode medir.
+         A COMPOSTA é feita das duas comparações, e as suas palavras recalculam-se
+         daqui: é ela que esta célula confere palavra a palavra. A ESCRITA é a do
+         lugar de direção, com as palavras dele (hoje só Évora a tem), e o que se
+         lhe confere é o que se confere a qualquer prosa da casa: os valores pelo
+         portão de HTML, as cadeias pelo inventário. A RÉGUA DO CARTÃO confere-se
+         nas duas, porque é composta nas 616. */
+      const composta = leitura?.getAttribute('data-leitura-do-lugar') === 'composta';
+      const textoDaLeitura = leitura && composta ? leitura.text.replace(/\s+/g, ' ') : '';
+
+      const pIndice = peca('indice');
+      const linhaDoIndice = pIndice ? getClaim(pIndice.claim) : null;
+      const tecto = m.distancia?.tecto ? getClaim(m.distancia.tecto) : null;
+      const vIndice = linhaDoIndice ? parsePtNumber(linhaDoIndice.value) : null;
+      const vTecto = tecto ? parsePtNumber(tecto.value) : null;
+      const comparavel =
+        linhaDoIndice !== null && !eValorTextual(linhaDoIndice.value) && vIndice !== null && vTecto !== null;
+      const esperada = comparavel ? (vIndice <= vTecto ? s.estado.lei.dentro : s.estado.lei.fora) : null;
+      const contraria = comparavel ? (vIndice <= vTecto ? s.estado.lei.fora : s.estado.lei.dentro) : null;
+
+      if (comparavel) {
+        if (composta && !textoDaLeitura.includes(esperada)) {
+          falhas.push(
+            `P1 · ${rota}: o índice de dívida é ${linhaDoIndice.value} contra o limite ` +
+              `${tecto.value}, e a leitura não diz «${esperada}».`,
+          );
+        }
+        if (textoDaLeitura.includes(contraria)) {
+          falhas.push(
+            `P1 · ${rota}: o índice de dívida é ${linhaDoIndice.value} contra o limite ` +
+              `${tecto.value}, e a leitura diz «${contraria}».`,
+          );
+        }
+        const cartao = raiz.querySelector(`[data-cartao-medida="${pIndice.claim}"] .cartao-medida-regua`);
+        const naRegua = cartao ? cartao.text.replace(/\s+/g, ' ') : '';
+        if (!naRegua.includes(esperada) || naRegua.includes(contraria)) {
+          falhas.push(
+            `P1 · ${rota}: a régua do cartão do índice de dívida diz «${naRegua.trim()}» e ` +
+              `devia dizer «${esperada}».`,
+          );
+        }
+      } else if (linhaDoIndice) {
+        /* SEM VALOR PUBLICADO NÃO HÁ COMPARAÇÃO: a metade da frase que a citava
+           não se escreve, e nenhuma das duas palavras pode aparecer. */
+        for (const palavra of [s.estado.lei.dentro, s.estado.lei.fora]) {
+          if (textoDaLeitura.includes(palavra)) {
+            falhas.push(
+              `P1 · ${rota}: o índice de dívida é «${linhaDoIndice.value}», que não é um número, ` +
+                `e a leitura diz «${palavra}».`,
+            );
+          }
+        }
+      }
+
+      const pPoder = peca('poderDeCompra');
+      const linhaDoPoder = pPoder ? getClaim(pPoder.claim) : null;
+      const base = linhaDoPoder ? baseDoIndice(linhaDoPoder) : null;
+      const vPoder = linhaDoPoder ? parsePtNumber(linhaDoPoder.value) : null;
+      const vBase = base ? parsePtNumber(base) : null;
+      if (composta && vPoder !== null && vBase !== null && vPoder !== vBase) {
+        const L = s.municipio.leituraDoLugar;
+        const certa = vPoder > vBase ? L.acima : L.abaixo;
+        const errada = vPoder > vBase ? L.abaixo : L.acima;
+        if (!textoDaLeitura.includes(certa) || textoDaLeitura.includes(errada)) {
+          falhas.push(
+            `P1 · ${rota}: o poder de compra é ${linhaDoPoder.value} contra a base ${base}, e a ` +
+              `leitura não diz «${certa}».`,
+          );
+        }
+      }
     }
   }
   if (cartoes === 0) {
@@ -228,6 +317,7 @@ console.log(
     `regiões lidos dos três extratos da Carta · 0 sem região, 0 sem distrito · ` +
     `${medidas.sem_base === 0 ? 'as 308 linhas do poder de compra declaram a base do índice' : ''} · ` +
     `${medidas.chaves_com_tema} chaves com tema · ${medidas.cartoes} medida(s) rendidas em ` +
-    `${medidas.paginas} página(s), todas debaixo do tema que a tabela lhes dá`,
+    `${medidas.paginas} página(s), todas debaixo do tema que a tabela lhes dá · as palavras da ` +
+    `leitura e da régua recalculadas do livro-razão em todas elas`,
 );
 console.log('');
