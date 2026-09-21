@@ -328,3 +328,41 @@ no inventário: são nomes de entradas de ficheiros de dados declarados
 (`src/data/dominios.mjs` e `src/data/concelhos.mjs`), e vão com a marca
 `data-nome` que a régua confere carácter a carácter contra o ficheiro de onde
 dizem vir. Sem essa marca seriam 52 linhas a repetir duas listas.
+
+### B1, terceira peça, 22.09.2026: o país
+
+| bloco | data | leitura cruzada | âmbito |
+| --- | --- | --- | --- |
+| b1-peca3 | 22.09.2026 | por ler pelo lugar de direção antes de aterrar | País, temas e menu; `design/especime-v3/medicoes/b1-2026-09-22/cadeias-peca3.json`. |
+
+Saem 25 cadeias e entram 15. As novas são a leitura aprovada, as sinopses dos estudos e os rótulos de publicação compostos dos dados. Nenhuma explica a página. A mudança de 21.09.2026 vem da declaração própria e é comparada com ela antes de sair do inventário.
+
+| Família | Cadeia retirada | Razão |
+| --- | --- | --- |
+| menu e rodapé | Encontrou um erro? correcoes@oestadodopais.pt · O registo de correções → | segunda porta |
+| país | A dívida pública é % do PIB e a taxa de desemprego é % da população ativa. | leitura substituída pelo texto da direção |
+| país | Government debt is % of GDP and the unemployment rate is % of the labour force. | leitura substituída pelo texto da direção |
+| menu e rodapé | Found an error? correcoes@oestadodopais.pt · The corrections log → | segunda porta |
+| menu e rodapé | As páginas | segunda porta |
+| menu e rodapé | Idioma | segunda porta |
+| menu e rodapé | Language | segunda porta |
+| menu e rodapé | Menu · Main navigation | segunda porta |
+| menu e rodapé | Menu · Navegação principal | segunda porta |
+| menu e rodapé | Tema | segunda porta |
+| menu e rodapé | The pages | segunda porta |
+| menu e rodapé | Theme | segunda porta |
+| país | concelhos in the coordinates file of the official administrative map | palavra fora do lugar |
+| país | concelhos no ficheiro de coordenadas da Carta Administrativa | palavra fora do lugar |
+| país | estudos publicados | palavra fora do lugar |
+| país | published studies | palavra fora do lugar |
+| menu e rodapé | Menu | segunda porta |
+| país | Os nomes no mapa | palavra fora do lugar |
+| país | The names on the map | palavra fora do lugar |
+| país | das medidas de cabeça dos domínios | palavra fora do lugar |
+| país | of the head measures of the domains | palavra fora do lugar |
+| país | Os números oficiais de Portugal, do país ao seu concelho, cada um com a fonte. | explica a página |
+| país | Portugal’s official numbers, from the country to your municipality, each with its source. | explica a página |
+| país | · concelhos | palavra fora do lugar |
+| país | · municipalities | palavra fora do lugar |
+
+Duas das 25 cadeias, «· concelhos» e «· municipalities», saem do inventário em vez de ficarem proibidas: são fragmentos que continuam dentro de outras frases legítimas. Ficam 23 entradas retiradas.

@@ -683,6 +683,7 @@ const CANDIDATAS_DA_PECA_SEM_LIMIAR = [
    estado nenhuma (Emenda 1). */
 const CANDIDATAS_DO_ESTADO_PINTADO = [
   'index.html',
+  routePath('uniaoEuropeia', 'pt').replace(/^\//, '') + '/index.html',
   'dominios/economia-e-financas-publicas/index.html',
   'municipios/evora/index.html',
 ];
@@ -1249,7 +1250,7 @@ ${amostras}
   const valorComSelo = peca(ondeValor, '.claim-com-chip');
   const ondeAntetitulo = ondeHa('span.eyebrow', CANDIDATAS_DO_ANTETITULO, 'um antetítulo em `span`');
   const antetitulo = peca(ondeAntetitulo, 'span.eyebrow');
-  const navegacao = peca('index.html', 'nav.nav-principal');
+  const navegacao = peca('index.html', '#nav-principal');
   const aLetra = peca('metodo/index.html', '#a-letra');
 
   const fontFaces = (() => {
@@ -1725,7 +1726,9 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   }
   /* E OS NOMES ESTÃO POR BAIXO, um por unidade: é a rede da Emenda 20c, e a
      decisão de 29.08 sobre a I101 diz que ela não se esconde. */
-  const nomes = casaMapa.querySelectorAll('.mapa-ilhas-lista li').length;
+  /* B1: a lista está nos Lugares, a um toque da contagem do país. */
+  const nomes = arvore('lugares/index.html').querySelectorAll('[data-lista-lugares="distritos"] li').length;
+  if (!casaMapa.querySelector('a.pais-porta-lugares[href="/lugares/"]')) morre('o mapa do país perdeu a porta dos lugares');
   if (nomes !== NOMES_DA_LISTA) {
     morre(`a lista de nomes por baixo do mapa de \`dist/index.html\` tem ${nomes} nomes para as ${UNIDADES_DA_CARTA} unidades da Carta.`);
   }
@@ -1815,7 +1818,7 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   <section class="ds-bloco">
     <h2>O mapa inteiro, na primeira página</h2>
     <div class="ds-mostra ds-mostra-larga">${mapa}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/index.html</code> · ${unidades} áreas, que são as ${UNIDADES_DA_CARTA} unidades da Carta lidas do artefacto do motor, todas com a mesma classe e o mesmo desenho de traço e enchimento, nenhuma destacada. Cada uma está dentro da SUA ligação, e isso é contado por âncora e não pelo total: ${portas} portas, cada uma com um caminho só lá dentro. Por baixo do mapa estão os ${nomes} nomes, que são as mesmas ${UNIDADES_DA_CARTA} unidades. Não há preenchimento de cobertura e não há capital: nem a do país, nem as de distrito.</p>
+    <p class="ds-nota"><code class="ds-mono">dist/index.html</code> · ${unidades} áreas, que são as ${UNIDADES_DA_CARTA} unidades da Carta lidas do artefacto do motor, todas com a mesma classe e o mesmo desenho de traço e enchimento, nenhuma destacada. Cada uma está dentro da SUA ligação, e isso é contado por âncora e não pelo total: ${portas} portas, cada uma com um caminho só lá dentro. A porta da contagem leva a Lugares, onde estão os ${nomes} nomes das mesmas ${UNIDADES_DA_CARTA} unidades. Não há preenchimento de cobertura e não há capital: nem a do país, nem as de distrito.</p>
     <div class="ds-mostra">${linha}</div>
     <p class="ds-nota">A única linha por baixo do mapa, e é a da Emenda 17.</p>
   </section>
@@ -1855,7 +1858,9 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
 
 /* --------------------------------------------------- 06. O par de estados */
 {
-  const cabeca = peca('index.html', '.cabeca-bloco[data-cabeca="pais"]');
+  /* B1: a faixa saiu do país. Os dois estados continuam na página europeia. */
+  const CASA_DO_SOCIAL = routePath('uniaoEuropeia', 'pt').replace(/^\//, '') + '/index.html';
+  const cabeca = peca(CASA_DO_SOCIAL, 'header.sec-head');
   /* ------------------------------------------------------------------------
      O QUE ESTE CARTÃO RETRATA MUDOU DE COMPONENTE, E NÃO DE COISA (F1.1b,
      04.09.2026)
@@ -1891,15 +1896,14 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   /* O PAINEL SOCIAL MUDOU DE PÁGINA (F1.10, item 8.16, 08.09.2026): as suas oito
      leituras e o seu nome passaram da primeira página para «Portugal na União
      Europeia». O cartão do feixe mostra o mesmo, do sítio onde ele está. */
-  const CASA_DO_SOCIAL = routePath('uniaoEuropeia', 'pt').replace(/^\//, '') + '/index.html';
   const social = peca(CASA_DO_SOCIAL, '[data-leituras="social"] .dobra');
   const socialTitulo = peca(CASA_DO_SOCIAL, '.social-titulo');
 
-  const casa = arvore('index.html');
+  const casa = arvore(CASA_DO_SOCIAL);
   const conta = (estado) => casa.querySelectorAll(`.cartao[data-estado="${estado}"]`).length;
   const foraN = conta('fora');
   const dentroN = conta('dentro');
-  if (!foraN || !dentroN) morre('a faixa da primeira página deixou de trazer cartões nos dois estados pintados.');
+  if (!foraN || !dentroN) morre('a página europeia deixou de trazer cartões nos dois estados pintados.');
 
   /* O VOCABULÁRIO DO ESTADO PASSOU A TER UM PAR POR FIXADOR DO LIMIAR (F1.10,
      item 8.5, 08.09.2026): «dentro do limiar» servia, com a mesma cadeia, os
@@ -1949,11 +1953,9 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   </header>
 
   <section class="ds-bloco">
-    <h2>A manchete e a lede</h2>
+    <h2>A manchete e a lede da página europeia</h2>
     <div class="ds-mostra">${cabeca}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/index.html</code>, o bloco do âmbito País. As duas contagens são chaves da prova (<code class="ds-mono">painel_fora_do_limiar</code> e <code class="ds-mono">painel_dentro_do_limiar</code>), calculadas na construção e reconferidas pelo portão; a lede nomeia as medidas que estão fora. Hoje a faixa rende ${foraN} cartões fora e ${dentroN} dentro, contados nesta corrida sobre a página construída.</p>
-    <p class="ds-nota">Emenda 16, de 21.08.2026: «${emLinha(EMENDA('**O painel da primeira página é o painel inteiro'))}»</p>
-    <p class="ds-nota">E a sua correção, de 22.08.2026: «${emLinha(EMENDA('**Correção à Emenda 16'))}»</p>
+    <p class="ds-nota"><code class="ds-mono">dist/${CASA_DO_SOCIAL}</code>. Os dois estados continuam nesta página: ${foraN} cartões acima ou abaixo do valor de referência, ${dentroN} dentro. A primeira página tem a leitura do país e cartões por tema, por mandato do B1. O feixe exige os dois estados onde eles se rendem.</p>
   </section>
 
   <section class="ds-bloco">
@@ -1970,7 +1972,7 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   <section class="ds-bloco">
     <h2>O Painel Social Europeu, que não tem limiares</h2>
     <div class="ds-mostra">${socialTitulo}${social}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/index.html</code> · a segunda metade da área de leitura, que entrou a 04.09.2026 no lugar da lista compacta da Emenda 16: o nome do painel com a sua contagem, e uma leitura por medida. <strong>Sem quadrado de estado e sem cor</strong>, porque não há limiar publicado contra o qual dizer um estado. É o mesmo silêncio que o quadrado «sem limiar» diz com palavras na peça acima.</p>
+    <p class="ds-nota"><code class="ds-mono">dist/${CASA_DO_SOCIAL}</code> · a leitura, que entrou a 04.09.2026 no lugar da lista compacta da Emenda 16: o nome do painel com a sua contagem, e uma leitura por medida. <strong>Sem quadrado de estado e sem cor</strong>, porque não há limiar publicado contra o qual dizer um estado. É o mesmo silêncio que o quadrado «sem limiar» diz com palavras na peça acima.</p>
   </section>
 
   <section class="ds-bloco">

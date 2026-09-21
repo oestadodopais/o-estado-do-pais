@@ -68,6 +68,7 @@
  */
 
 import fs from 'node:fs';
+import { verificaVozPais } from './voz-pais.mjs';
 import { verificaB1 } from './voz-b1.mjs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -104,7 +105,7 @@ const casa = medicao.frases_da_casa;
 const rotas = Object.entries(casa.por_rota);
 
 const b1 = verificaB1(RAIZ);
-const erros = [...b1.erros];
+const erros = [...b1.erros, ...verificaVozPais(RAIZ)];
 console.log(`  B1: ${b1.paginas} páginas pela lista fechada; ${b1.temas} temas conferidos.`);
 
 /* 4 · o ficheiro dos marcadores */
@@ -440,6 +441,8 @@ const ARAME_DA_CLASSE = [
 /* A sentinela de cada edição: o nome de uma medida do painel, que a primeira
    página tem de render enquanto tiver painel. Se um dia deixar de o render, o
    que se muda é esta linha, com a razão ao lado, e não o silêncio. */
+/* B1, peça 3: a definição saiu. O início da leitura aprovada prova a
+   leitura do corpo; voz-pais compara ainda a frase inteira com as linhas. */
 const ROTAS_DA_CLASSE = [
   {
     rota: '/',
@@ -463,14 +466,14 @@ const ROTAS_DA_CLASSE = [
        é, e não as três maneiras de o percorrer. A sentinela continua a ser a
        cadeia INTEIRA, pela mesma razão. */
     sentinela:
-      'Os números oficiais de Portugal, do país ao seu concelho, cada um com a fonte.',
+      'A dívida pública desceu de',
   },
   {
     rota: '/en/',
     ficheiro: path.join('dist', 'en', 'index.html'),
     lingua: 'en',
     sentinela:
-      'Portugal\u2019s official numbers, from the country to your municipality, each with its source.',
+      'Public debt fell from',
   },
 ];
 
@@ -579,7 +582,13 @@ for (const r of ROTAS_DA_CLASSE) {
     );
     continue;
   }
-  for (const p of mordidas(texto, r.lingua)) {
+  /* B1: a leitura aprovada deixou de ser uma frase sem prova. voz-pais
+     compara cada palavra, check:pais exige as sete portas e gate:html confere
+     os valores. Só este parágrafo sai do arame genérico, depois da sentinela.
+     Prosa solta, mesmo com as mesmas palavras, continua a ser medida. */
+  const foraDaLeitura = parse(cru);
+  foraDaLeitura.querySelector('main p[data-leitura-pais]')?.remove();
+  for (const p of mordidas(textoSemOrigens(foraDaLeitura.toString()), r.lingua)) {
     const cadeia = r.lingua === 'pt' ? p.pt : p.en;
     erros.push(
       `FRASE DA CLASSE POR PROVAR EM ${r.rota} · «${cadeia}» (${p.porque}).\n` +

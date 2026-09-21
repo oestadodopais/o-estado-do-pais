@@ -537,6 +537,7 @@ const ORIGEM_DECLARADA = [
   '[data-claim]',
   '[data-linha-claim]',
   '[data-correcao-claim]',
+  '[data-mudanca-campo]', // B1: texto aprovado, conferido por check:pais e gate:html.
   '[data-verbatim]',
   '[data-nonledger]',
   '[data-agenda]',
@@ -932,7 +933,8 @@ for (const lang of LANGS) {
     { url: routePath('areas', lang), frase: s.hierarquia?.area, nome: 'areas' },
   );
 }
-/** A frase de definição, na primeira página e em mais lado nenhum (§2.1). */
+/** B1, peça 3: a definição sai da primeira página por mandato. A célula
+ * passa a exigir a ausência dela; a leitura é conferida por voz-pais. */
 const DEFINICAO = LANGS.map((lang) => ({ url: routePath('home', lang), frase: S[lang].identidade }));
 
 const conta = (texto, agulha) => {
@@ -984,6 +986,11 @@ for (const ficheiro of paginas) {
     if (daMobilia.has(a) || (chaveDaRota === 'estudo' && a.closest('[data-registo-unidade]'))) continue;
     const href = a.getAttribute('href') ?? '';
     if (!href || href.startsWith('#') || href.startsWith('mailto:')) continue;
+    /* O marcador de um campo não confirmado é obrigatório em cada cartão.
+       Não é uma segunda porta de navegação. Só se dispensa o destino exato
+       declarado para o marcador, dentro da definição conferida do cartão. */
+    if (a.matches('a.marcador') && a.closest('[data-cartao-definicao]') &&
+        href === routePath('marcador', lang)) continue;
     const chave = href.split('#')[0];
     if (!chave) continue;
     destinos.set(chave, (destinos.get(chave) ?? 0) + 1);
@@ -1817,9 +1824,9 @@ function contaPalavra(texto, palavra) {
 /* -------------------------------------------------------------------- L4 */
 for (const { url, frase } of DEFINICAO) {
   const visto = vistoNoIndice.get(`definicao:${normalizePath(url)}`) ?? 0;
-  if (visto !== 1) {
+  if (visto !== 0) {
     medidas.l4_falhas++;
-    anota('l4_falhas', `a frase de definição em ${url}: ${visto} (esperado 1)`);
+    anota('l4_falhas', `a frase de definição em ${url}: ${visto} (esperado 0, B1)`);
   }
 }
 for (const alvo of INDICES_DA_HIERARQUIA) {
