@@ -6753,6 +6753,11 @@ function existeConstruido(caminho) {
   );
 }
 const TABELA_VERCEL_B1 = JSON.parse(fs.readFileSync(path.join(ROOT, 'vercel.json'), 'utf8')).routes;
+/* Os três índices do território que a peça 2 do B1 reuniu numa página só. As
+   chaves ficam na tabela de rotas de propósito: é por elas que a célula dos
+   redirecionamentos compõe as origens e confere que nenhuma das três continua
+   construída. */
+const INDICES_DO_TERRITORIO = ['municipios', 'regioes', 'distritos'];
 for (const { rel, base, href } of ligacoesInternas) {
   const resolvido = resolveLigacao(base, href);
   if (!resolvido) {
@@ -6768,6 +6773,19 @@ for (const { rel, base, href } of ligacoesInternas) {
   if (rotaAntiga?.key === 'texto') {
     const origem = routePath('texto', rotaAntiga.lang, rotaAntiga.params);
     const destino = routePath('estudo', rotaAntiga.lang, rotaAntiga.params) + '/';
+    const entradas = TABELA_VERCEL_B1.filter(r => r.src === origem + '/?');
+    const r = entradas[0];
+    if (entradas.length === 1 && r.status === 301 && r.headers?.Location === destino &&
+        !r.continue && !r.has && !r.missing && !r.dest)
+      resolvido.caminho = destino;
+  }
+  /* B1, peça 2: os três índices do território passaram a uma página só, e as
+     portas antigas continuam a abrir pelo servidor, pela MESMA regra da peça 1:
+     a ligação não é dispensada do varrimento, e só se resolve para o destino
+     quando a tabela tem a entrada 301 exata e incondicional. */
+  if (INDICES_DO_TERRITORIO.includes(rotaAntiga?.key)) {
+    const origem = routePath(rotaAntiga.key, rotaAntiga.lang);
+    const destino = routePath('lugares', rotaAntiga.lang) + '/';
     const entradas = TABELA_VERCEL_B1.filter(r => r.src === origem + '/?');
     const r = entradas[0];
     if (entradas.length === 1 && r.status === 301 && r.headers?.Location === destino &&
@@ -7001,6 +7019,42 @@ for (const { caminho, px } of [{ caminho: '/apple-touch-icon.png', px: 180 }]) {
     if (canonicas.length !== 1 || canonicas[0].getAttribute('href') !== canonicalUrl(destino))
       falha(`${destino}: canónica única e exata em falta.`);
   }
+}
+
+/* B1, peça 2: os três índices do território, e as suas inglesas, são seis
+   mudanças de endereço, e pertencem ao servidor pela mesma forma que as dez da
+   peça 1: origem exata, destino existente e construído com canónica única, a
+   entrada antes do `filesystem`, e nenhuma das rotas antigas em `dist/`. */
+{
+  const tabela = TABELA_VERCEL_B1;
+  const falha = msg => erros.push({ rel: 'vercel.json', msg: `B1 lugares: ${msg}` });
+  const oFilesystem = tabela.findIndex(r => r.handle === 'filesystem');
+  let contadas = 0;
+  for (const chave of INDICES_DO_TERRITORIO) {
+    for (const lang of ['pt', 'en']) {
+      const antiga = routePath(chave, lang);
+      const destino = routePath('lugares', lang) + '/';
+      const candidatas = tabela.filter(r => r.src === antiga + '/?');
+      const r = candidatas[0];
+      if (candidatas.length !== 1 || r?.status !== 301 || r?.headers?.Location !== destino ||
+          r?.continue || r?.has || r?.missing || r?.dest ||
+          oFilesystem < 0 || tabela.indexOf(r) > oFilesystem) {
+        falha(`${antiga}: tem de ter uma entrada 301 incondicional para ${destino}, antes do filesystem.`);
+        continue;
+      }
+      contadas++;
+      if (fs.existsSync(path.join(DIST, antiga.slice(1), 'index.html')) ||
+          fs.existsSync(path.join(DIST, antiga.slice(1) + '.html')))
+        falha(`${antiga}: a rota antiga ainda existe em dist/.`);
+      const ficheiro = path.join(DIST, destino.slice(1), 'index.html');
+      if (!fs.existsSync(ficheiro)) { falha(`${destino}: destino inexistente.`); continue; }
+      const pagina = parse(fs.readFileSync(ficheiro, 'utf8'));
+      const canonicas = pagina.querySelectorAll('link[rel="canonical"]');
+      if (canonicas.length !== 1 || canonicas[0].getAttribute('href') !== canonicalUrl(destino))
+        falha(`${destino}: canónica única e exata em falta.`);
+    }
+  }
+  if (contadas !== 6) falha(`esperadas seis entradas conferidas, e foram ${contadas}.`);
 }
 
 /**

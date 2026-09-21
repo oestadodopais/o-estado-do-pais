@@ -141,6 +141,48 @@
       }
     },
     {
+      "src": "/municipios/?",
+      "status": 301,
+      "headers": {
+        "Location": "/lugares/"
+      }
+    },
+    {
+      "src": "/regioes/?",
+      "status": 301,
+      "headers": {
+        "Location": "/lugares/"
+      }
+    },
+    {
+      "src": "/distritos/?",
+      "status": 301,
+      "headers": {
+        "Location": "/lugares/"
+      }
+    },
+    {
+      "src": "/en/municipalities/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/places/"
+      }
+    },
+    {
+      "src": "/en/regions/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/places/"
+      }
+    },
+    {
+      "src": "/en/districts/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/places/"
+      }
+    },
+    {
       "handle": "filesystem"
     },
     {
