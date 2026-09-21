@@ -3,16 +3,17 @@
  * O NOME OFICIAL QUE UMA PÁGINA MOSTRA É UM NOME CONFIRMADO DAQUELA LINHA
  * ---------------------------------------------------------------------------
  * O QUE ISTO FECHA, MEDIDO E NÃO SUPOSTO. A 21.09.2026 o lugar de direção
- * encontrou três nomes do INE no ar que eram de OUTROS indicadores: a formação
- * bruta de capital fixo em percentagem do PIB com o nome de um indicador mensal
- * da construção (no recibo e como título de um cartão de área), a taxa de
- * emprego com o de uma série mensal de outro grupo etário, e o risco de pobreza
- * ou exclusão com o da definição antiga. O motor (`indicators/enquadramento.py`)
+ * encontrou no ar nomes do INE que eram de OUTROS indicadores: a formação bruta
+ * de capital fixo em percentagem do PIB com o nome de um indicador mensal da
+ * construção (no recibo e como título de um cartão de área), a taxa de emprego
+ * com o de uma série mensal de outro grupo etário, e o risco de pobreza ou
+ * exclusão com o da definição antiga. O motor (`indicators/enquadramento.py`)
  * tinha lido esses nomes na lista de resultados da busca do portal do INE e
  * escrito em cada um o campo `aviso`: a marca da busca prova o tema, não prova
  * que seja a mesma medida, e essa conferência ficou por fazer. A marca
  * `correspondencia: "exata"` do ficheiro foi julgada para o nome da PORDATA. O
- * sítio lia `exata` para os dois e punha o do INE primeiro.
+ * sítio lia `exata` para os dois e punha o do INE primeiro. Sete nomes com aviso
+ * estiveram rendidos em 14 recibos e em 6 títulos de cartão.
  *
  * PORQUE É QUE NENHUM PORTÃO O VIU. O motivo `nome-oficial-da-medida` de
  * `ledger/allowlist.yml` era uma DISPENSA: o portão do HTML conferia que o
@@ -22,29 +23,38 @@
  * confirmado, e o estado de verificação vivia em prosa, num campo que nenhum
  * código lia.
  *
+ * A REGRA, DEPOIS DA LEITURA A FRIO (Codex, 21.09.2026, 5 plantas em 5). A
+ * primeira forma desta régua recusava só os nomes com `aviso`. A leitura mostrou
+ * que não chegava: os dois nomes do INE sem aviso (a taxa de desemprego) dizem
+ * «Trimestral» e as linhas são anuais, e os nomes da PORDATA foram julgados por
+ * quem os escolheu e por mais ninguém. **Um nome confirmado é o de um objeto que
+ * o motor marca `mesma_medida: true`** (conferido no conceito, na unidade, na
+ * população e na periodicidade por quem não escolheu o nome), numa medida com
+ * `correspondencia: "exata"`, com nome, endereço e hora de leitura, e sem campo
+ * `aviso`. Tudo o resto é um nome RECUSADO. A 21.09.2026 nenhum nome do ficheiro
+ * traz a marca, e a régua di-lo em voz alta em cada corrida.
+ *
  * O QUE ESTA RÉGUA CONFERE, com leitor próprio (não chama
  * `src/lib/enquadramento.mjs`, pela regra de que uma conferência que usasse o
  * código das páginas confirmava-se a si própria):
  *
  *   N1 · cada `[data-nonledger="nome-oficial-da-medida"]` de um RECIBO
  *        (`/livro-razao/<id>`, `/en/ledger/<id>`) rende, carácter a carácter, o
- *        nome e o endereço de um nome CONFIRMADO daquela linha;
+ *        nome e o endereço de um nome confirmado daquela linha. Numa página de
+ *        linha a forma é sempre a do recibo, traga o elemento a marca que trouxer;
  *   N2 · cada título de cartão com `data-nome="oficial"` rende um nome confirmado
  *        da linha que o `data-de-linha` diz;
- *   N3 · o conhecido-positivo: a régua encontrou pelo menos um recibo e um cartão
- *        com nome oficial (um seletor que deixasse de ver as páginas daria verde
- *        por não ver nada);
- *   N4 · as plantas (`--prova`, que é como o `build` e o `verify` a chamam): um
- *        nome com aviso num recibo, o mesmo num cartão, um nome confirmado de
- *        OUTRA linha, e um objeto com `mesma_medida: false` têm de ser recusados,
- *        e a página certa tem de passar.
- *
- * UM NOME CONFIRMADO é o de um indicador com `correspondencia: "exata"`, num
- * objeto (`nome_ine` ou `nome_pordata`) com nome, endereço e hora de leitura, sem
- * campo `aviso` e sem `mesma_medida: false`. O que falta para um nome do INE
- * voltar a entrar é o motor confirmá-lo como a mesma medida (conceito, unidade,
- * população e periodicidade, lidos nos metadados do INE por quem não escolheu o
- * nome) e exportá-lo sem aviso.
+ *   N3 · o conhecido-positivo: se o ficheiro tem nomes confirmados, pelo menos um
+ *        tem de ser visto numa página (um seletor que deixasse de ver as páginas
+ *        daria verde por não ver nada); se não tem nenhum, nenhuma página pode
+ *        render um nome oficial, e são as plantas que provam que o seletor vê;
+ *   N5 · nenhuma ligação de página nenhuma aponta para o endereço de um nome
+ *        recusado, COM OU SEM MARCA (a leitura a frio: tirar a marca a um elemento
+ *        tornava-o invisível a esta régua);
+ *   N6 · nenhum elemento de página nenhuma tem por texto inteiro um nome recusado,
+ *        com ou sem marca;
+ *   N4 · as plantas (`--prova`, que é como o `build` e o `verify` a chamam), sobre
+ *        um ficheiro de nomes escrito aqui para isso e páginas com a forma real.
  *
  * Uso:  node scripts/check-nomes-oficiais.mjs [--prova]
  *       OEDP_DIST=<dir> mede outra construção.
@@ -67,7 +77,11 @@ const FONTES = [
 
 const verde = (s) => `\x1b[32m${s}\x1b[0m`;
 const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
+const amarelo = (s) => `\x1b[33m${s}\x1b[0m`;
 const cinza = (s) => `\x1b[90m${s}\x1b[0m`;
+
+/** O texto tal como o Astro o escreve no HTML, para a procura barata antes de analisar a página. */
+const comoNoHtml = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 /**
  * Lê o ficheiro do motor e separa os nomes confirmados dos recusados, com a
@@ -79,7 +93,7 @@ const cinza = (s) => `\x1b[90m${s}\x1b[0m`;
 function lerNomes(j) {
   /** @type {Map<string, { nome: string, endereco: string, fonte: string }[]>} */
   const confirmados = new Map();
-  /** @type {{ id: string, fonte: string, nome: string, porque: string }[]} */
+  /** @type {{ id: string, fonte: string, nome: string, endereco: string, porque: string }[]} */
   const recusados = [];
   for (const i of j?.indicadores ?? []) {
     const id = i?.id_da_linha;
@@ -89,21 +103,32 @@ function lerNomes(j) {
       if (!o || typeof o !== 'object') continue;
       const nome = o.nome;
       if (typeof nome !== 'string' || nome.trim() === '' || nome === '[verify]') continue;
+      const endereco = typeof o.endereco === 'string' ? o.endereco : '';
       let porque = null;
-      if (i.correspondencia !== 'exata') porque = `a correspondência da medida é «${i.correspondencia ?? 'sem marca'}» e não «exata»`;
-      else if (typeof o.aviso === 'string' && o.aviso.trim() !== '')
+      if (typeof o.aviso === 'string' && o.aviso.trim() !== '')
         porque = 'o motor escreveu um aviso: a conferência de ser a mesma medida ficou por fazer';
       else if (o.mesma_medida === false) porque = 'o motor marcou «mesma_medida: false»';
-      else if (typeof o.endereco !== 'string' || o.endereco === '' || typeof o.lido_em !== 'string' || o.lido_em === '')
-        porque = 'falta o endereço ou a hora de leitura';
-      if (porque) recusados.push({ id, fonte, nome, porque });
+      else if (o.mesma_medida !== true) porque = 'o motor não o marcou «mesma_medida: true», e um nome sem estado não é um nome confirmado';
+      else if (i.correspondencia !== 'exata') porque = `a correspondência da medida é «${i.correspondencia ?? 'sem marca'}» e não «exata»`;
+      else if (endereco === '' || typeof o.lido_em !== 'string' || o.lido_em === '') porque = 'falta o endereço ou a hora de leitura';
+      if (porque) recusados.push({ id, fonte, nome, endereco, porque });
       else {
         if (!confirmados.has(id)) confirmados.set(id, []);
-        confirmados.get(id).push({ nome, endereco: o.endereco, fonte });
+        confirmados.get(id).push({ nome, endereco, fonte });
       }
     }
   }
-  return { confirmados, recusados };
+  /* Um nome ou um endereço que também seja de um nome confirmado não é recusado
+     em absoluto: fica de fora das duas procuras sem marca (N5 e N6). */
+  const nomesBons = new Set([...confirmados.values()].flat().map((x) => x.nome));
+  const enderecosBons = new Set([...confirmados.values()].flat().map((x) => x.endereco));
+  const nomesRecusados = new Map();
+  const enderecosRecusados = new Map();
+  for (const r of recusados) {
+    if (!nomesBons.has(r.nome) && !nomesRecusados.has(r.nome)) nomesRecusados.set(r.nome, r);
+    if (r.endereco !== '' && !enderecosBons.has(r.endereco) && !enderecosRecusados.has(r.endereco)) enderecosRecusados.set(r.endereco, r);
+  }
+  return { confirmados, recusados, nomesRecusados, enderecosRecusados };
 }
 
 /** O identificador da linha de um recibo, pelo caminho da página, ou `null`. */
@@ -111,6 +136,14 @@ function linhaDoCaminho(relativo) {
   const m = /^(?:livro-razao|en\/ledger)\/([^/]+)\/index\.html$/.exec(relativo.split(path.sep).join('/'));
   if (!m || m[1] === 'concelhos' || m[1] === 'municipalities') return null;
   return m[1];
+}
+
+/** A página merece ser analisada? Procura barata, sobre o texto cru. */
+function mereceAnalise(html, nomes) {
+  if (html.includes(MOTIVO) || html.includes('data-nome="oficial"')) return true;
+  for (const e of nomes.enderecosRecusados.keys()) if (html.includes(comoNoHtml(e))) return true;
+  for (const n of nomes.nomesRecusados.keys()) if (html.includes(comoNoHtml(n))) return true;
+  return false;
 }
 
 /**
@@ -125,40 +158,59 @@ function conferirPagina(html, relativo, nomes) {
   let recibos = 0;
   let cartoes = 0;
   const root = parse(html);
+  const idDaPagina = linhaDoCaminho(relativo);
   const porque = (texto) => {
     const r = nomes.recusados.find((x) => x.nome === texto);
     return r ? `é o nome do ${r.fonte} para «${r.id}», recusado porque ${r.porque}` : 'não é um nome do ficheiro do motor';
   };
-  for (const el of root.querySelectorAll(`[data-nonledger="${MOTIVO}"]`)) {
-    if (el.getAttribute('data-nome') === 'oficial') {
+  const marcados = new Set(root.querySelectorAll(`[data-nonledger="${MOTIVO}"], [data-nome="oficial"]`));
+  for (const el of marcados) {
+    /* NUMA PÁGINA DE LINHA A FORMA É A DO RECIBO, traga o elemento a marca que
+       trouxer: um recibo com `data-nome="oficial"` não passa a cartão. */
+    if (idDaPagina === null && el.getAttribute('data-nome') === 'oficial') {
       cartoes += 1;
       const id = el.getAttribute('data-de-linha') ?? '';
       const texto = el.text.trim();
       const lista = nomes.confirmados.get(id) ?? [];
       if (!lista.some((x) => x.nome === texto))
-        erros.push(`N2 ${relativo}: o cartão de «${id}» encabeça-se com «${texto.slice(0, 90)}», que ${
-          lista.length ? 'não é um nome confirmado daquela linha: ' : 'não tem nome confirmado nenhum para aquela linha: '
-        }${porque(texto)}`);
+        erros.push(`N2 ${relativo}: o cartão de «${id}» encabeça-se com «${texto.slice(0, 90)}», que ${porque(texto)}`);
+      continue;
+    }
+    recibos += 1;
+    if (idDaPagina === null) {
+      erros.push(`N1 ${relativo}: um nome oficial em forma de recibo fora de uma página de linha; a régua não sabe de que linha é`);
       continue;
     }
     const a = el.querySelector('a');
-    const id = linhaDoCaminho(relativo);
-    recibos += 1;
     if (!a) {
       erros.push(`N1 ${relativo}: um nome oficial sem ligação para a página onde foi lido`);
       continue;
     }
-    if (id === null) {
-      erros.push(`N1 ${relativo}: um nome oficial em forma de recibo fora de uma página de linha; a régua não sabe de que linha é`);
-      continue;
-    }
     const texto = a.text.trim();
     const href = a.getAttribute('href') ?? '';
-    const lista = nomes.confirmados.get(id) ?? [];
+    const lista = nomes.confirmados.get(idDaPagina) ?? [];
     if (!lista.some((x) => x.nome === texto && x.endereco === href))
-      erros.push(`N1 ${relativo}: o recibo de «${id}» mostra «${texto.slice(0, 90)}» (${href.slice(0, 70)}), que ${
+      erros.push(`N1 ${relativo}: o recibo de «${idDaPagina}» mostra «${texto.slice(0, 90)}» (${href.slice(0, 70)}), que ${
         lista.some((x) => x.nome === texto) ? 'tem o endereço trocado' : porque(texto)
       }`);
+  }
+  /* COM OU SEM MARCA. Um elemento a que tirassem a marca deixava de ser visto
+     pelas duas células de cima; estas duas procuram o que não pode estar em
+     página nenhuma, pelo endereço e pelo texto inteiro. */
+  if (nomes.enderecosRecusados.size) {
+    for (const a of root.querySelectorAll('a[href]')) {
+      const r = nomes.enderecosRecusados.get(a.getAttribute('href') ?? '');
+      if (r) erros.push(`N5 ${relativo}: uma ligação aponta para o endereço do nome do ${r.fonte} para «${r.id}» («${r.nome.slice(0, 70)}»), recusado porque ${r.porque}`);
+    }
+  }
+  if (nomes.nomesRecusados.size) {
+    for (const el of root.querySelectorAll('a, span, p, dd, dt, li, td, th, h1, h2, h3, h4, h5, strong, em, figcaption, caption, summary, label, div')) {
+      if (marcados.has(el)) continue;
+      const pai = el.parentNode;
+      if (pai && marcados.has(pai)) continue;
+      const r = nomes.nomesRecusados.get(el.text.trim());
+      if (r && !el.querySelector('a, span, p, div')) erros.push(`N6 ${relativo}: um <${el.rawTagName}> tem por texto inteiro o nome do ${r.fonte} para «${r.id}» («${r.nome.slice(0, 70)}»), recusado porque ${r.porque}`);
+    }
   }
   return { erros, recibos, cartoes };
 }
@@ -184,70 +236,94 @@ if (!fs.existsSync(DIST)) {
 }
 
 const NOMES = lerNomes(JSON.parse(fs.readFileSync(FICHEIRO, 'utf8')));
+const nConfirmados = [...NOMES.confirmados.values()].flat().length;
 const falhas = [];
 let lidas = 0;
-let comNome = 0;
+let analisadas = 0;
 let recibos = 0;
 let cartoes = 0;
 for (const rel of paginas(DIST)) {
   lidas += 1;
   const html = fs.readFileSync(path.join(DIST, rel), 'utf8');
-  if (!html.includes(MOTIVO)) continue;
-  comNome += 1;
+  if (!mereceAnalise(html, NOMES)) continue;
+  analisadas += 1;
   const r = conferirPagina(html, rel, NOMES);
   recibos += r.recibos;
   cartoes += r.cartoes;
   falhas.push(...r.erros);
 }
-if (recibos === 0) falhas.push('N3: nenhum nome oficial encontrado em recibo nenhum; o seletor deixou de ver as páginas, e um verde assim não prova nada');
-if (cartoes === 0) falhas.push('N3: nenhum título de cartão com `data-nome="oficial"` encontrado; o seletor deixou de ver as páginas, e um verde assim não prova nada');
+if (nConfirmados > 0 && recibos + cartoes === 0)
+  falhas.push(`N3: o ficheiro do motor tem ${nConfirmados} nome(s) confirmado(s) e nenhuma página rende nenhum; o seletor deixou de ver as páginas, e um verde assim não prova nada`);
+if (nConfirmados === 0 && recibos + cartoes > 0)
+  falhas.push(`N3: o ficheiro do motor não tem nome confirmado nenhum e ${recibos + cartoes} elemento(s) rendem um nome oficial`);
 
 /* ------------------------------------------------------------------ plantas */
 
+let plantas = 0;
 if (process.argv.includes('--prova')) {
-  const comAviso = NOMES.recusados.find((x) => x.porque.includes('aviso'));
-  const [idCerto, listaCerta] = [...NOMES.confirmados.entries()][0] ?? [null, []];
-  const [idOutro, listaOutra] = [...NOMES.confirmados.entries()].find(([id]) => id !== idCerto) ?? [null, []];
-  if (!comAviso || !idCerto || !idOutro) {
-    falhas.push('N4: as plantas precisam de um nome com aviso e de dois nomes confirmados de linhas diferentes no ficheiro do motor, e não os encontraram');
-  } else {
-    const recibo = (nome, href) =>
-      `<html><body><dl><dt>Nome</dt><dd><span data-nonledger="${MOTIVO}"><a class="ligacao-externa" href="${href}" lang="pt-PT">${nome}</a> · Lido na fonte a 15.09.2026</span></dd></dl></body></html>`;
-    const cartao = (id, nome) =>
-      `<html><body><article class="cartao-medida"><span class="cartao-medida-nome" data-nome="oficial" data-de-linha="${id}" data-nonledger="${MOTIVO}">${nome}</span></article></body></html>`;
-    const espera = (rotulo, r, deveFalhar, padrao) => {
-      const falhou = r.erros.length > 0;
-      if (falhou !== deveFalhar || (deveFalhar && !r.erros.some((e) => padrao.test(e))))
-        falhas.push(`N4 planta «${rotulo}»: ${deveFalhar ? 'devia ser recusada com a razão esperada e não foi' : 'devia passar e foi recusada'} (${r.erros[0] ?? 'sem erro'})`);
-    };
-    const certo = listaCerta[0];
-    espera('um nome com aviso num recibo', conferirPagina(recibo(comAviso.nome, 'https://www.ine.pt/x'), `livro-razao/${comAviso.id}/index.html`, NOMES), true, /N1 .*aviso/);
-    espera('um nome com aviso num cartão', conferirPagina(cartao(comAviso.id, comAviso.nome), 'areas/planta/index.html', NOMES), true, /N2 .*aviso/);
-    espera('um nome confirmado de outra linha', conferirPagina(recibo(listaOutra[0].nome, listaOutra[0].endereco), `livro-razao/${idCerto}/index.html`, NOMES), true, /N1 /);
-    espera('o endereço trocado', conferirPagina(recibo(certo.nome, 'https://exemplo.invalido/'), `livro-razao/${idCerto}/index.html`, NOMES), true, /endereço trocado/);
-    espera('a página certa', conferirPagina(recibo(certo.nome, certo.endereco), `livro-razao/${idCerto}/index.html`, NOMES), false, /./);
-    espera('o cartão certo', conferirPagina(cartao(idCerto, certo.nome), 'areas/planta/index.html', NOMES), false, /./);
-    const falso = lerNomes({ indicadores: [{ id_da_linha: 'planta', correspondencia: 'exata', nome_ine: { nome: 'Planta', endereco: 'https://x', lido_em: '2026-09-21', mesma_medida: false } }] });
-    if (falso.confirmados.size !== 0 || falso.recusados.length !== 1)
-      falhas.push('N4 planta «mesma_medida: false»: o objeto devia ser recusado e não foi');
+  /* UM FICHEIRO DE NOMES ESCRITO PARA AS PLANTAS, e não o do motor: a 21.09.2026
+     o do motor não tem nome confirmado nenhum, e uma planta que dependesse dele
+     ficava sem a página certa para provar que a régua também deixa passar. */
+  const P = lerNomes({
+    indicadores: [
+      { id_da_linha: 'planta-a', correspondencia: 'exata', nome_ine: { nome: 'Nome confirmado A & B', endereco: 'https://exemplo.invalido/a?x=1&y=2', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: true } },
+      { id_da_linha: 'planta-b', correspondencia: 'exata', nome_pordata: { nome: 'Nome confirmado de outra linha', endereco: 'https://exemplo.invalido/b', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: true } },
+      { id_da_linha: 'planta-c', correspondencia: 'exata', nome_ine: { nome: 'Nome com aviso', endereco: 'https://exemplo.invalido/c', lido_em: '2026-09-21T00:00:00+00:00', aviso: 'a conferência fica por fazer' } },
+      { id_da_linha: 'planta-d', correspondencia: 'exata', nome_ine: { nome: 'Nome de outra medida', endereco: 'https://exemplo.invalido/d', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: false } },
+      { id_da_linha: 'planta-e', correspondencia: 'exata', nome_pordata: { nome: 'Nome sem estado', endereco: 'https://exemplo.invalido/e', lido_em: '2026-09-21T00:00:00+00:00' } },
+      { id_da_linha: 'planta-f', correspondencia: 'proxima', nome_pordata: { nome: 'Nome de medida vizinha', endereco: 'https://exemplo.invalido/f', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: true } },
+    ],
+  });
+  const recibo = (nome, href, extra = '') =>
+    `<html><body><dl><dt>Nome</dt><dd><span data-nonledger="${MOTIVO}"${extra}><a class="ligacao-externa" href="${comoNoHtml(href)}" lang="pt-PT">${comoNoHtml(nome)}</a> · Lido na fonte a 21.09.2026</span></dd></dl></body></html>`;
+  const cartao = (id, nome) =>
+    `<html><body><article class="cartao-medida"><span class="cartao-medida-nome" data-nome="oficial" data-de-linha="${id}" data-nonledger="${MOTIVO}">${comoNoHtml(nome)}</span></article></body></html>`;
+  const semMarca = (dentro) => `<html><body><main><p>Texto da página.</p>${dentro}</main></body></html>`;
+  const A = P.confirmados.get('planta-a')[0];
+  const B = P.confirmados.get('planta-b')[0];
+  const casos = [
+    ['um nome com aviso num recibo', recibo('Nome com aviso', 'https://exemplo.invalido/c'), 'livro-razao/planta-c/index.html', /N1 .*aviso/],
+    ['um nome com aviso num cartão', cartao('planta-c', 'Nome com aviso'), 'areas/planta/index.html', /N2 .*aviso/],
+    ['um nome que o motor marcou como outra medida', recibo('Nome de outra medida', 'https://exemplo.invalido/d'), 'livro-razao/planta-d/index.html', /N1 .*mesma_medida: false/],
+    ['um nome sem estado', recibo('Nome sem estado', 'https://exemplo.invalido/e'), 'livro-razao/planta-e/index.html', /N1 .*sem estado/],
+    ['um nome de uma medida vizinha', recibo('Nome de medida vizinha', 'https://exemplo.invalido/f'), 'livro-razao/planta-f/index.html', /N1 .*proxima/],
+    ['um nome confirmado de outra linha', recibo(B.nome, B.endereco), 'livro-razao/planta-a/index.html', /N1 /],
+    ['o endereço trocado', recibo(A.nome, 'https://exemplo.invalido/outro'), 'livro-razao/planta-a/index.html', /endereço trocado/],
+    ['um recibo com a marca de cartão numa página de linha', recibo('Nome com aviso', 'https://exemplo.invalido/c', ' data-nome="oficial" data-de-linha="planta-a"'), 'livro-razao/planta-c/index.html', /N1 .*aviso/],
+    ['uma ligação sem marca para o endereço de um nome recusado', semMarca('<p><a href="https://exemplo.invalido/c">ver no INE</a></p>'), 'areas/planta/index.html', /N5 /],
+    ['um título sem marca com o nome recusado por texto inteiro', semMarca('<span class="cartao-medida-nome">Nome com aviso</span>'), 'areas/planta/index.html', /N6 /],
+    ['a página certa, com «&» no nome e no endereço', recibo(A.nome, A.endereco), 'livro-razao/planta-a/index.html', null],
+    ['o cartão certo', cartao('planta-a', A.nome), 'areas/planta/index.html', null],
+    ['um nome recusado dentro de uma frase, que não é um nome oficial rendido', semMarca('<p>O INE chama-lhe Nome com aviso, e a página di-lo numa frase.</p>'), 'estudos/planta/index.html', null],
+  ];
+  for (const [rotulo, html, caminho, padrao] of casos) {
+    plantas += 1;
+    const visto = mereceAnalise(html, P);
+    const r = visto ? conferirPagina(html, caminho, P) : { erros: [] };
+    const falhou = r.erros.length > 0;
+    if (padrao === null ? falhou : !falhou || !r.erros.some((e) => padrao.test(e)))
+      falhas.push(`N4 planta «${rotulo}»: ${padrao === null ? 'devia passar e foi recusada' : 'devia ser recusada com a razão esperada e não foi'} (${r.erros[0] ?? (visto ? 'sem erro' : 'a procura barata nem a viu')})`);
   }
 }
 
 /* ---------------------------------------------------------------- relatório */
 
 const porFonte = (f) => [...NOMES.confirmados.values()].flat().filter((x) => x.fonte === f).length;
+const razoes = new Map();
+for (const r of NOMES.recusados) razoes.set(r.porque.split(':')[0].split(',')[0], (razoes.get(r.porque.split(':')[0].split(',')[0]) ?? 0) + 1);
 console.log(
   cinza(
-    `\n  nomes oficiais · ${lidas} página(s) lidas, ${comNome} com nome oficial · ${recibos} em recibo, ${cartoes} em título de cartão · ` +
-      `confirmados no ficheiro do motor: ${porFonte('INE')} do INE, ${porFonte('PORDATA')} da PORDATA · ` +
-      `recusados: ${NOMES.recusados.length} (${NOMES.recusados.filter((x) => x.porque.includes('aviso')).length} com aviso de conferência por fazer)`,
+    `\n  nomes oficiais · ${lidas} página(s) lidas, ${analisadas} analisadas · ${recibos} nome(s) em recibo, ${cartoes} em título de cartão · ` +
+      `confirmados no ficheiro do motor: ${porFonte('INE')} do INE, ${porFonte('PORDATA')} da PORDATA · recusados: ${NOMES.recusados.length}`,
   ),
 );
+if (nConfirmados === 0)
+  console.log(amarelo('  nenhum nome do ficheiro do motor está marcado «mesma_medida: true»: nenhum nome oficial se rende, e voltam um a um quando o motor os confirmar.'));
 if (falhas.length) {
   console.error(vermelho(`\n  NOMES OFICIAIS — ${falhas.length} falha(s):\n`));
   for (const f of falhas.slice(0, 40)) console.error(`    ${f}`);
   process.exit(1);
 }
 console.log(
-  `  ${verde('✓')} cada nome oficial rendido é um nome confirmado da sua linha${process.argv.includes('--prova') ? ', e as sete plantas foram recusadas ou aceites como deviam' : ''}.`,
+  `  ${verde('✓')} nenhuma página rende um nome oficial que o motor não confirme como a mesma medida${plantas ? `, e as ${plantas} plantas foram recusadas ou aceites como deviam` : ''}.`,
 );

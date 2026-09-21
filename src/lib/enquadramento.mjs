@@ -64,12 +64,14 @@
  * um facto por confirmar, e é isso que a célula diz.
  *
  * **`nomes.json`**: por indicador, o nome na PORDATA e no INE, com o endereço e a
- * hora de leitura, e a marca de correspondência. **Só o que está marcado `exata`
- * entra no recibo**: `proxima` é a medida VIZINHA (a PORDATA publica o saldo da
- * balança corrente e a medida do painel é a média móvel de três anos, que não é a
- * mesma coisa) e `[verify]` é um campo por confirmar. Nem um nem outro chegam ao
- * leitor, porque um nome quase certo posto onde o leitor espera o nome da coisa
- * é pior do que nenhum.
+ * hora de leitura, e a marca de correspondência. **Só entra no recibo um nome que
+ * o motor marque `mesma_medida: true`, numa medida marcada `exata`** (a regra de
+ * 21.09.2026, em `nomeOficial()` mais abaixo): `proxima` é a medida VIZINHA (a
+ * PORDATA publica o saldo da balança corrente e a medida do painel é a média
+ * móvel de três anos, que não é a mesma coisa), `[verify]` é um campo por
+ * confirmar, e um nome sem a marca é um nome que ninguém conferiu. Nenhum deles
+ * chega ao leitor, porque um nome quase certo posto onde o leitor espera o nome
+ * da coisa é pior do que nenhum.
  *
  * NENHUM ALGARISMO NOVO NESTE FICHEIRO. Ele devolve identificadores de linhas e
  * texto de outro ficheiro; quem desenha é o cartão, e quem imprime um valor é o
@@ -307,11 +309,18 @@ export function valorDeReferenciaDoMotor(id) {
  * fixo em percentagem do PIB com o nome de um indicador mensal da construção
  * (também como título de um cartão), a taxa de emprego com o de uma série mensal
  * de outro grupo etário, e o risco de pobreza ou exclusão com o da definição
- * antiga. Um estado de verificação escrito em prosa não é lido por ninguém: passa
- * a ser lido aqui. Um nome cujo objeto traga `aviso`, ou que o motor marque
- * `mesma_medida: false`, não existe para o leitor, e a régua
- * `scripts/check-nomes-oficiais.mjs` confere-o nas páginas construídas por conta
- * própria, com uma planta.
+ * antiga. Um estado de verificação escrito em prosa não é lido por ninguém, e por
+ * isso a regra passou a ser estrutural: **só chega ao leitor um nome que o motor
+ * marque `mesma_medida: true`**, que quer dizer conferido no conceito, na unidade,
+ * na população e na periodicidade por quem não escolheu o nome. A leitura a frio
+ * do Codex desta correção (21.09.2026, 5 plantas em 5) mostrou porque é que o
+ * aviso sozinho não chegava: os dois nomes do INE sem aviso, os da taxa de
+ * desemprego, dizem «Trimestral» e as linhas são anuais, e os 17 nomes da PORDATA
+ * foram julgados por quem os escolheu e por mais ninguém. A 21.09.2026 nenhum
+ * nome do ficheiro traz a marca, e nenhum se rende; voltam um a um quando o motor
+ * os confirmar (`design/observatorio/BRIEF-M3-os-nomes-oficiais-conferidos-no-motor.md`).
+ * A régua `scripts/check-nomes-oficiais.mjs` confere-o nas páginas construídas
+ * por conta própria, com plantas.
  *
  * @param {string} id
  * @returns {{ ine: { nome: string, endereco: string, lido: string }|null, pordata: { nome: string, endereco: string, lido: string }|null }|null}
@@ -322,7 +331,8 @@ export function nomeOficial(id) {
   /** @param {any} o */
   const util = (o) => {
     if (!o || typeof o !== 'object') return null;
-    if ((typeof o.aviso === 'string' && o.aviso.trim() !== '') || o.mesma_medida === false) return null;
+    if (o.mesma_medida !== true) return null;
+    if (typeof o.aviso === 'string' && o.aviso.trim() !== '') return null;
     const nome = o.nome;
     if (typeof nome !== 'string' || nome.trim() === '' || nome === MARCADOR) return null;
     const endereco = typeof o.endereco === 'string' ? o.endereco : '';

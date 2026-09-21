@@ -35,23 +35,6 @@ contexts:
       (ResearchHub/indicators/corredor.py, para src/data/fontes.mjs) e nunca à
       mão. A data que o PUBLICADOR carimba é outra coisa e não passa por aqui: é
       o campo published_at do livro-razão, e vai com a marca data-linha-campo.
-  - id: nome-oficial-da-medida
-    why: >-
-      O nome com que o INE ou a PORDATA publicam a mesma medida, no recibo de uma
-      linha, com o endereço e a data a que foram lidos. Os nomes trazem algarismos
-      que são parte do nome e não medições do país ("Taxa de desemprego (Série
-      2021 - %)", "dos 15 aos 74 anos", "NUTS - 2024"), e a data é a da leitura da
-      casa. Vêm de src/data/enquadramento/nomes.json, que o motor exporta
-      (ResearchHub/indicators/enquadramento.py) e nunca se escreve à mão, e só
-      entram os que o motor marca como a MESMA medida: a medida vizinha e o campo
-      por confirmar não chegam ao leitor. A norma §1.5 manda que o nome de uma
-      medida seja um campo com dono, e o dono é o motor. Desde 21.09.2026 este
-      motivo deixou de ser uma dispensa: scripts/check-nomes-oficiais.mjs confere
-      nas páginas construídas que cada nome rendido é, carácter a carácter, um
-      nome confirmado daquela linha, e um nome que o motor exporte com o campo
-      aviso (a conferência de ser a mesma medida por fazer) não entra. Sete nomes
-      do INE com aviso estiveram no ar de 16.09 a 21.09.2026, três deles de
-      outros indicadores (DECISIONS §1.115).
   - id: referencia-legal
     why: >-
       A citação de um diploma e dos seus artigos: o número do decreto-lei, o ano

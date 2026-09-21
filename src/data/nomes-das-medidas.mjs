@@ -109,6 +109,36 @@ export const NOMES_DO_PROJETO = {
     en: 'Pension cut for one year of early retirement, with the sustainability factor',
   },
 
+  /* ------------------------ as cinco que só tinham o nome oficial (21.09.2026) */
+  /* Até 21.09.2026 estas cinco medidas encabeçavam-se com o nome oficial do INE
+     ou da PORDATA, que era o segundo degrau da escada dos nomes. Nesse dia o
+     lugar de direção encontrou no ar nomes do INE de outros indicadores
+     (`DECISIONS.md` §1.115), e um nome oficial passou a render-se só quando o
+     motor o confirma como a mesma medida; nenhum está confirmado, e por isso
+     estas cinco ganham o nome que a norma §1.5 lhes pede desde o princípio: o
+     do projeto. Cada nome diz o que a linha mede, pelas palavras do rótulo da
+     fonte que a linha guarda. */
+  'formacao-bruta-de-capital-fixo-2025': {
+    pt: 'Investimento (formação bruta de capital fixo)',
+    en: 'Investment (gross fixed capital formation)',
+  },
+  'despesa-em-id-2024': {
+    pt: 'Despesa em investigação e desenvolvimento',
+    en: 'Spending on research and development',
+  },
+  'competencias-digitais-2025': {
+    pt: 'Pessoas com competências digitais básicas ou superiores',
+    en: 'People with basic or above basic digital skills',
+  },
+  'independencia-da-justica-2025': {
+    pt: 'Perceção de independência da justiça',
+    en: 'Perceived independence of the justice system',
+  },
+  'necessidades-medicas-nao-satisfeitas-2025': {
+    pt: 'Necessidades de cuidados médicos por satisfazer',
+    en: 'Unmet need for medical care',
+  },
+
   /* ----------------------------------------------------------- habitação */
   'licencas-de-construcao-2025': {
     pt: 'Área licenciada para habitação',
