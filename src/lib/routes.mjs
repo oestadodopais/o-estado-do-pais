@@ -87,6 +87,28 @@ export const ROUTES = {
   municipios: { pt: '/municipios', en: '/en/municipalities' },
   municipio: { pt: '/municipios/:slug', en: '/en/municipalities/:slug' },
   /**
+   * A PÁGINA DOS LUGARES (B1, peça 2, 21.09.2026; o §4 da estrutura de
+   * 17.09.2026).
+   *
+   * Abre a linha do território numa porta só: o mapa, a busca de concelho, as
+   * nove regiões e os 29 distritos e ilhas. `/municipios`, `/regioes` e
+   * `/distritos` (e as inglesas) deixam de ser construídas e passam a
+   * redirecionamentos 301 do servidor, em `vercel.json`: as três continuam a
+   * responder, e respondem aqui.
+   *
+   * AS TRÊS CHAVES FICAM NA TABELA, e não é descuido. Uma chave de rota é o que
+   * `matchPath()` usa para saber a que família pertence um caminho, e a célula
+   * dos redirecionamentos do portão de HTML compõe as origens a partir delas:
+   * apagá-las tirava ao portão a maneira de nomear o que redireciona. O que
+   * desapareceu foram as PÁGINAS, e o portão confere que nenhuma das três está
+   * em `dist/`.
+   *
+   * O caminho é a mesma palavra nas duas edições? Não: «lugares» não é palavra
+   * inglesa, e a edição inglesa chama-lhes «places», como chama «domains» aos
+   * domínios. O que nunca se traduz é a chave.
+   */
+  lugares: { pt: '/lugares', en: '/en/places' },
+  /**
    * AS 29 UNIDADES DA CARTA, E A PÁGINA DE CADA UMA (Emenda 20, 27.08.2026).
    *
    * O mapa da primeira página deixou de ser 308 pontos e passou a ser as 29

@@ -1,0 +1,103 @@
+---
+/**
+ * ===========================================================================
+ * A PÁGINA DOS LUGARES · `/lugares` · `/en/places` (B1, peça 2, 21.09.2026)
+ * ===========================================================================
+ *
+ * Abre a linha do território, e é uma porta e não um índice de três: o mapa, a
+ * busca de concelho, as nove regiões e os 29 distritos e ilhas. Substitui
+ * `/municipios`, `/regioes` e `/distritos`, que passam a redirecionamentos do
+ * servidor (`vercel.json`): três índices do mesmo país eram três portas para a
+ * mesma coisa, e o §4 da estrutura de 17.09.2026 dá-lhes uma palavra.
+ *
+ * DUAS LISTAS SIMPLES, E NÃO UMA ÁRVORE. Os distritos não se aninham dentro das
+ * regiões, e a razão é medida: seis distritos têm concelhos em duas regiões
+ * (Aveiro, Guarda, Leiria, Lisboa, Setúbal e Viseu, 102 dos 308 concelhos), e
+ * aninhá-los punha seis nomes duas vezes na mesma página. Cada nome aparece uma
+ * vez e é uma porta.
+ *
+ * SEM FRASE DE ABERTURA E SEM OS NÍVEIS EXPLICADOS. O que a página é lê-se do
+ * que ela tem: um mapa, uma caixa de busca e duas listas de nomes.
+ *
+ * O QUE `/municipios` TINHA E ESTA PÁGINA NÃO TEM está escrito no relatório do
+ * bloco, com o que ficou sem porta. Não se inventa aqui um lugar para isso.
+ */
+import Base from '../layouts/Base.astro';
+import Pesquisa from '../components/inicio/Pesquisa.astro';
+import MapaRespira from '../components/inicio/MapaRespira.astro';
+import { concelhos as concelhosDaCarta } from '../lib/inicio.mjs';
+import { regioesDaCarta, distritosDaCarta } from '../data/carta-dos-lugares.mjs';
+import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+import '../styles/lugar.css';
+import '../styles/municipio.css';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+const r = ROTULOS_B1[lang];
+const path = routePath('lugares', lang);
+
+const cs = concelhosDaCarta();
+/* O destino de um resultado da busca é a página daquele concelho; um concelho
+   sem página não é porta nenhuma, e a peça sabe o que fazer com o nulo. */
+const destinoDoConcelho = (c) =>
+  c.pagina ? routePath('municipio', lang, { slug: c.pagina.slug }) : null;
+
+const regioes = regioesDaCarta();
+const distritos = distritosDaCarta();
+---
+
+<Base lang={lang} path={path} title={`${r.lugares} · ${s.municipio.metaCauda}`} description={s.municipios.metaDescription}>
+  <h1 class="lugares-nome">{r.lugares}</h1>
+
+  {/* A BUSCA É A DA PRIMEIRA PÁGINA, e é a mesma peça: um `<form>` com destino,
+      que funciona sem guião. Os resultados estão no documento e são acesos por
+      `public/js/municipios.js`, que troca `hidden` e mais nada. */}
+  <div class="pesquisa-bloco" data-pesquisa-bloco>
+    <Pesquisa s={s} concelhos={cs} destino={destinoDoConcelho} forma={path} />
+  </div>
+
+  {/* O MAPA É O DA PRIMEIRA PÁGINA, na postura inteira: as 29 unidades da Carta
+      como áreas, cada uma porta da sua página. */}
+  <div class="lugares-mapa">
+    <MapaRespira s={s} lang={lang} concelhos={cs} />
+  </div>
+
+  <section class="lugar-sec" aria-labelledby="regioes-k">
+    <div class="sec-head">
+      <h2 class="eyebrow" id="regioes-k">{r.regioes}</h2>
+    </div>
+    <ul class="lugares-lista">
+      {
+        regioes.map((x) => (
+          <li>
+            <a href={routePath('regiao', lang, { slug: x.slug })} data-lugar>
+              {x.nome[lang] ?? x.nome.pt}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="lugar-sec" aria-labelledby="distritos-k">
+    <div class="sec-head">
+      <h2 class="eyebrow" id="distritos-k">{r.distritos}</h2>
+    </div>
+    <ul class="lugares-lista">
+      {
+        distritos.map((x) => (
+          <li>
+            <a href={routePath('distrito', lang, { slug: x.slug })} data-lugar>
+              {x.nome}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <script src="/js/municipios.js" defer is:inline></script>
+  <script src="/js/mapa-unidades.js" defer is:inline></script>
+</Base>

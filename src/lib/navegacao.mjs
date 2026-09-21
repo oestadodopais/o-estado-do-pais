@@ -38,12 +38,26 @@ export const GRUPOS_NAV = [
      a marca do cabeçalho já leva ao princípio em todas as páginas menos naquela
      em que se está. */
   { chave: 'inicio', rotas: ['home'] },
-  { chave: 'leitor', rotas: ['municipios', 'estudos', 'livro'] },
-  { chave: 'pais', rotas: ['regioes', 'distritos', 'dominios', 'areas', 'uniaoEuropeia'] },
+  /* ---------------------------------------------------------------------
+     TRÊS ENTRADAS PASSAM A UMA (B1, peça 2, 21.09.2026)
+     ---------------------------------------------------------------------
+     «Concelhos», «Regiões» e «Distritos» eram três entradas para três índices
+     do mesmo território, e o leitor que procura o seu concelho lia três nomes
+     antes de saber qual deles o levava lá. O §4 da estrutura de 17.09.2026
+     dá-lhe uma palavra: «Lugares» abre a linha inteira — o mapa, a busca de
+     concelho, as nove regiões e os 29 distritos e ilhas.
+
+     O MENU DE CINCO NÃO É DESTA PEÇA (a emenda de 21.09 ao brief B1, §6.3): o
+     que muda aqui são as três entradas do território, e o resto da fila fica
+     como está até à peça 3.
+     --------------------------------------------------------------------- */
+  { chave: 'leitor', rotas: ['lugares', 'estudos', 'livro'] },
+  { chave: 'pais', rotas: ['dominios', 'areas', 'uniaoEuropeia'] },
   { chave: 'casa', rotas: ['sobre', 'metodo', ...(OITAVO_ITEM ? [OITAVO_ITEM] : []), 'agenda'] },
 ];
 export const ETIQUETA_NAV = {
   home: 'inicio',
+  lugares: 'lugares',
   municipios: 'municipios',
   regioes: 'regioes',
   distritos: 'distritos',
