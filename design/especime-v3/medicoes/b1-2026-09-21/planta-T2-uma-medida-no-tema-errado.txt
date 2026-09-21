@@ -1,0 +1,9 @@
+comando: node scripts/check-lugares.mjs
+codigo: 1
+mordida: /T2 · \/municipios\/evora: a medida "populacao" rende-se debaixo de "trabalho"/
+
+
+  PORTÃO DOS LUGARES · 1 problema(s)
+
+    · T2 · /municipios/evora: a medida "populacao" rende-se debaixo de "trabalho" e a tabela dá-lhe "populacao".
+

@@ -1,0 +1,49 @@
+comando: node scripts/check-lugares.mjs
+codigo: 1
+mordida: /T1 · a medida "pmp" não tem tema/
+
+
+  PORTÃO DOS LUGARES · 618 problema(s)
+
+    · T1 · a medida "pmp" não tem tema em src/data/temas-das-medidas.mjs. Cada número de um lugar vive debaixo de um dos dezoito temas da carta dos conteúdos.
+    · T1 · a medida "pmp" não tem tema em src/data/temas-das-medidas.mjs. Cada número de um lugar vive debaixo de um dos dezoito temas da carta dos conteúdos.
+    · T2 · /municipios/evora: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/agueda: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/albergaria-a-velha: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/anadia: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/arouca: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/aveiro: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/castelo-de-paiva: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/espinho: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/estarreja: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/santa-maria-da-feira: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/ilhavo: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/mealhada: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/murtosa: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/oliveira-de-azemeis: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/oliveira-do-bairro: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/ovar: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/sao-joao-da-madeira: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/sever-do-vouga: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/vagos: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/vale-de-cambra: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/aljustrel: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/almodovar: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/alvito: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/barrancos: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/beja: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/castro-verde: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/cuba: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/ferreira-do-alentejo: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/mertola: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/moura: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/odemira: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/ourique: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/serpa: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/vidigueira: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/amares: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/barcelos: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/braga: a medida "pmp" rende-se e não tem tema declarado.
+    · T2 · /municipios/cabeceiras-de-basto: a medida "pmp" rende-se e não tem tema declarado.
+    … e mais 578
+

@@ -1,0 +1,9 @@
+comando: node scripts/check-lugares.mjs
+codigo: 1
+mordida: /C3 · o concelho "Águeda" está na região "Centreo" da Carta/
+
+
+  PORTÃO DOS LUGARES · 1 problema(s)
+
+    · C3 · o concelho "Águeda" está na região "Centreo" da Carta, e essa região não tem entrada em src/data/regioes.mjs nem correspondência de nome declarada.
+
