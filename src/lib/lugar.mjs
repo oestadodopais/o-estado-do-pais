@@ -20,8 +20,8 @@ import {
   parsePtNumber,
   eValorTextual,
   entradasDoRegisto,
-  motivoDaEntrada,
 } from './ledger.mjs';
+import { nomeDoCartao, nomeDaLinhaDerivada } from './nomes.mjs';
 import { routePath } from './routes.mjs';
 
 /**
@@ -162,7 +162,7 @@ export function leituraDoLugar(m, pecas, lang, s) {
     partes.push({ voz: acima ? L.acima : L.abaixo }, L.poderC, { claim: poder.claim }, L.poderD);
   }
   partes.push(L.fim);
-  return { partes, citadas };
+  return { partes, citadas, forma: 'composta' };
 }
 
 /**
@@ -273,8 +273,38 @@ export function mudancasDoLugar(slug, pecas, lang) {
   for (const kind of ['correcao', 'atualizacao']) {
     for (const e of entradasDoRegisto(kind)) {
       if (!daqui(e.claimId)) continue;
-      entradas.push({ data: e.date, n: e.n, motivo: motivoDaEntrada(e, lang), claim: e.claimId });
+      const linha = getClaim(e.claimId);
+      entradas.push({
+        data: e.date,
+        n: e.n,
+        claim: e.claimId,
+        /* O NOME DA MEDIDA, pela escada do cartão: o nome do projeto quando
+           existe, o rótulo da fonte quando está na língua da página, e nada
+           quando nem um nem outro. Sem nome, a linha diz os dois valores, e o
+           selo ao lado abre a linha onde o nome está. */
+        nome: nomeDoCartao(linha, lang) ?? nomeDaLinhaDerivada(linha, lang),
+        antes: e.old_value,
+        depois: e.new_value,
+        unidade: typeof linha.unit === 'string' ? linha.unit : null,
+      });
     }
   }
-  return entradas.sort((a, b) => b.data.localeCompare(a.data));
+  /* ENTRADAS DA MESMA LINHA NO MESMO DIA JUNTAM-SE (achado D4, 21.09.2026): o
+     publicador refez a mesma soma duas vezes no mesmo dia, e o leitor lia a
+     mesma linha duas vezes. Fica uma: o valor antigo é o da primeira do dia, e o
+     novo é o da última, que é o que o dia mudou. */
+  const porDia = new Map();
+  for (const e of entradas.sort((a, b) => a.n - b.n)) {
+    const chave = `${e.claim}|${e.data}`;
+    const ja = porDia.get(chave);
+    if (ja) {
+      ja.depois = e.depois;
+      ja.nDoNovo = e.n;
+      continue;
+    }
+    porDia.set(chave, { ...e, nDoAntigo: e.n, nDoNovo: e.n });
+  }
+  return [...porDia.values()].sort(
+    (a, b) => b.data.localeCompare(a.data) || a.claim.localeCompare(b.claim),
+  );
 }
