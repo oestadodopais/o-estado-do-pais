@@ -18,13 +18,13 @@ escrito à mão.
 | 4 | O corte das duas frases nas páginas de região e de distrito | a frase de abertura do distrito e o parágrafo dos níveis das duas, a 0 nas 18 + 58 páginas |
 | 5 | O inventário das frases destas famílias | 65 linhas retiradas com a razão, 14 apagadas por não se renderem em lado nenhum, 10 novas; `check:voz` a 0 com a lista fechada |
 
-**O que não foi feito, e porquê:** as capturas «antes», que o mandato pede de
-`main` a 390 e a 1 280. Tirá-las obriga a construir a árvore de `0cfd9832` nesta
-worktree, e a única maneira de o fazer sem tocar noutra árvore era um `checkout`
-de outra cabeça, que o mandato proíbe. O guião das capturas aceita o argumento
-`antes` e está pronto: quem tiver a árvore antiga construída corre
-`node design/especime-v3/medicoes/b1-2026-09-21/captar-peca2.mjs antes` e os
-ficheiros entram na mesma pasta, com o mesmo JSON de medidas.
+**As capturas «antes»** foram tiradas pelo lugar de direção, de `main`
+(`97d2cbc`), e estão na mesma pasta com o seu guião e as suas medidas
+(`captar-antes-peca2.mjs`, `capturas-antes-peca2.json`): Évora, `/municipios`, a
+região do Alentejo e o distrito de Évora, a 390 e a 1 280, em português.
+
+**A passagem de correção de 21.09.2026 está no fim deste ficheiro**, e o que ela
+mudou nas secções acima fica dito lá: esta parte descreve a construção.
 
 ## As duas tabelas declaradas, os portões e as plantas
 
@@ -301,3 +301,104 @@ uma média de 4 m 50 s, mais quatro corridas do `verify`).
 6. **O §5 do mapa diz que o tempo de parede de cada portão sozinho não está
    medido em lado nenhum.** Continua sem estar; o que esta passagem mede está na
    secção dos portões acima, e é o dos três comandos inteiros.
+
+
+---
+
+# A passagem de correção · 21.09.2026
+
+*Depois da leitura a frio do Codex (`gpt-5.6-sol`) e da leitura de editor do
+lugar de direção sobre as capturas, triadas pelo lugar de direção. Ramo e
+worktree os mesmos; os commits desta passagem levam o endereço da sessão nos
+trailers.*
+
+## O rebase sobre `main`
+
+`main` avançou para `97d2cbc6` (a correção dos nomes oficiais, `DECISIONS.md`
+§1.115) enquanto a peça se construía. `git rebase main` aplicou onze dos doze
+commits sem conflito; o décimo primeiro parou num só ficheiro.
+
+| ficheiro | conflito | como se resolveu |
+|---|---|---|
+| `package.json` | as duas cadeias e a lista dos guiões, cada lado com um portão novo | ficam os dois: o `check:nomes` de `main` e o `check:lugares` deste ramo, cada um no seu sítio das duas cadeias |
+| `scripts/medir-defeitos.mjs` | nenhum | as duas mudanças aplicaram-se em bloco: o leitor dos nomes oficiais de `main` (que passou a exigir `mesma_medida === true`) e a fonte `concelho` do `data-nome` deste ramo |
+| `ledger/allowlist.yml` | nenhum | as duas retiradas ficaram: o motivo `nome-oficial-da-medida` de `main` e os dois tokens da lei do limite de dívida deste ramo |
+
+Nenhuma decisão do rebase foi outra coisa que mecânica.
+
+## O que se corrigiu, célula a célula
+
+| # | o que ficou feito | a célula | a planta |
+|---|---|---|---|
+| C1 | um portão confere as palavras da leitura e da régua contra as linhas | `check:lugares` **P1**, com leitor próprio: recalcula do livro-razão se o índice está dentro ou fora do limite legal e se o poder de compra está acima ou abaixo da base, nas 616 páginas, e compara com a leitura composta e com a régua do cartão; um lugar sem valor publicado não pode ter essa metade da leitura | `P1-a-leitura-ao-contrario` · a leitura de Vila Real de Santo António a dizer «dentro do limite legal» com o índice a 419,5 |
+| C2 | o caminho do cabeçalho não se rende numa página de lugar | a rota perde o pai na tabela de `src/lib/caminho.mjs`, que é o mesmo mecanismo da primeira página; a **L5** do `check:lugar` muda de forma e o que ela exigia passa a ser exigido pela **8.17** na linha do lugar | `D1-a-linha-do-lugar-em-falta` · a linha a declarar outro concelho |
+| C3 | o cartão rende a unidade tal como a linha a escreve | a unidade vem do campo `unit` por `CampoDaLinha`, e o portão de HTML ganha uma porta **estreita**: só o campo `unit`, só na rota de um concelho, e só dentro do cartão daquela linha | a célula fecha com a unidade mudada; a guarda larga não se usou porque desligava o `auditaSelo()` em 616 páginas |
+| C4 | a entrelinha normal e o euro dentro do valor selado | o euro é sufixo em dez leituras de `src/data/leituras.mjs`; a **H2** do `check:alvos` conta à parte, com a razão medida, o selo dentro de uma sinopse | a H2 continua a fechar com um alvo encolhido |
+| C5 | «O que mudou» é uma linha por mudança | a data, o nome da medida, os dois valores com a unidade e o selo, pelos atributos `data-correcao-*` que o `gate:html` compara com o campo `corrections` da linha; entradas da mesma linha no mesmo dia juntam-se | a célula do registo fecha com um valor antigo mudado |
+| C6 | a porta «Todas as medidas de <lugar>» | no fim dos números por tema, para `/livro-razao/concelhos/<slug>`, nas 616 páginas; o rótulo entra na lista fechada | o `check:voz` fecha com o rótulo fora da lista |
+| C7 | as duas frases de definição do diretor | declaradas em `src/data/concelhos.mjs` nas duas edições; duas linhas retiradas e quatro novas no inventário | o `check:voz` fecha com uma cadeia por classificar |
+| C8 | a página dos lugares em duas colunas a partir de 1 024 px | a busca e as duas listas à esquerda, o mapa à direita; a 390 e a 768 a ordem vertical mantém-se | as capturas de janela a 1 280 × 800 |
+| C9 | as oito fichas por omissão saem, e a frase do sem-guião com elas | a fila chega fechada do servidor e só se acende com texto escrito; a **H13** continua a exigir as 308 portas dentro de uma lista declarada | a planta `lista-a-dobrar` da H13 |
+| C10 | nenhuma página liga à origem de um 301 | a célula dos redirecionamentos do `gate:html` recusa qualquer `href` de `dist/` cujo caminho seja uma origem; as duas portas que a região e o distrito tinham para os dois índices passam a uma | `B1-lugares-uma-ligacao-a-origem` · uma ligação de volta a `/distritos` |
+| C11 | os dois anos da leitura de Évora leem-se das linhas | `anoDoIndice()` lê a `reference_date` das operandas deste lugar de cada índice derivado, e fecha a construção se elas não disserem um ano só | a função atira com o nome da linha |
+| C12 | as contas do inventário batem | o registo das revisões diz 71 retiradas, 14 apagadas e 20 novas, que é o que o inventário tem | o `check:voz` conta as linhas por bloco |
+
+`/regioes` continua sem redirecionamento, a porta do ficheiro dos 308 continua
+onde está, e o instrumento dos mandatos continua no fim da página de Évora: são
+as três decisões do lugar de direção, e as razões estão nas secções acima.
+
+## Onde dois achados puxaram em sentidos contrários, e o que se mediu
+
+**A entrelinha da sinopse e o alvo de 44 px do selo não cabem os dois.** O
+quadrado de 44 px de um selo em prosa corrida cruza a linha de cima e a de baixo
+do mesmo parágrafo, e o `elementFromPoint` de um canto devolve o vizinho. As duas
+saídas foram medidas nesta passagem:
+
+* pôr a entrelinha do parágrafo nos 44 px dá o quadrado inteiro, e é exatamente o
+  que o diretor leu nas capturas (45 px entre linhas numa sinopse de duas
+  frases);
+* dar ao selo a área da sua própria caixa, que é a regra que `site.css` já aplica
+  onde os selos se empilham, deixa-o com 18,6 px de altura e a régua conta-o na
+  mesma.
+
+Fica a entrelinha normal, e a classe passa a ser contada à parte na H2, com a
+razão escrita na própria célula, como já eram as áreas do mapa e as páginas de
+leitura: são a mesma classe de caso, uma área de 44 px que abriria a porta do
+vizinho. Medido nesta passagem: **24 alvos sem os 44 px na faixa de 641 a 1 023,
+dos quais 0 são caixas, 6 são áreas de desenho, 3 são de uma página de leitura, 3
+quebram de linha dentro de uma frase e 12 são selos dentro de uma sinopse.** A
+porta não se perde: o selo tem a sua área a 390 px, e o mesmo número tem o seu
+recibo na página do estudo, a um toque do título por cima.
+
+## Os portões na cabeça final do código
+
+```text
+Cabeça do código: 31fe90c421f9e1e0a47590b709b8ebd677ac56b0
+Ramo: b1-peca2-2026-09-21, sobre main 97d2cbc6
+
+npm run build       Código: 0   16:22:28Z → 16:27:21Z   (4 m 53 s)
+npm run verify      Código: 0   16:37:40Z → 16:45:39Z   (7 m 59 s)
+npm run typecheck   Código: 0   16:45:39Z → 16:45:39Z   (menos de 1 s)
+```
+
+## As capturas e as plantas
+
+As oito «antes», de `main` (`97d2cbc`), com o guião e as medidas do lugar de
+direção. As 56 «depois» refeitas nesta cabeça, mais as 32 de janela: **0 com
+deslocamento lateral, 0 valores partidos, 0 selos partidos, 0 separadores
+quebráveis, 0 selos sem `nowrap`**, 49 com valores selados.
+
+As **nove plantas** (eram seis) deram todas código diferente de zero com a falha
+esperada e repuseram os bytes: as seis da construção, mais a leitura ao
+contrário, a linha do lugar de outro concelho e a ligação de volta à origem de um
+301.
+
+## O que ficou por fazer nesta passagem, e porquê
+
+1. **Os doze selos da sinopse sem os 44 px na faixa de 641 a 1 023**, contados e
+   nomeados acima. Fechá-los a sério é dar ar ao parágrafo sem esticar a
+   entrelinha, e isso é uma decisão de composição que o B3 pode tomar com a
+   sinopse inteira à frente.
+2. **As três decisões do lugar de direção** que ficam como estão, e que já
+   estavam no relatório da construção.
+3. **A leitura a frio desta passagem**, que é de outra família.

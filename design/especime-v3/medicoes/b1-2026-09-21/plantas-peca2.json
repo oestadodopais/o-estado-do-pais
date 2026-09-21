@@ -1,5 +1,5 @@
 {
-  "cabeca": "992fcd1de7348dc7b987e06c8182272158bdac87",
+  "cabeca": "31fe90c421f9e1e0a47590b709b8ebd677ac56b0",
   "plantas": [
     {
       "grupo": "carta",
@@ -42,8 +42,8 @@
       "codigo": 1,
       "mordida": "/T2 · \\/municipios\\/evora: a medida \"populacao\" rende-se debaixo de \"trabalho\"/",
       "passou": true,
-      "antes": "0126ae28fe5fdbe42a370f2485fc91a015a5e9f9e1189df57ce04b1536924546",
-      "reposto": "0126ae28fe5fdbe42a370f2485fc91a015a5e9f9e1189df57ce04b1536924546"
+      "antes": "4d087fc2dd1e867068c9bf9261bf2ca7f44d7f5c4e9566a4fe9d536d781c383e",
+      "reposto": "4d087fc2dd1e867068c9bf9261bf2ca7f44d7f5c4e9566a4fe9d536d781c383e"
     },
     {
       "grupo": "lugar",
@@ -53,8 +53,41 @@
       "codigo": 1,
       "mordida": "/8\\.17 · páginas de concelho sem o mapa da sua unidade: 1/",
       "passou": true,
-      "antes": "7639c10fd62bdd34a2a9e3e9536e6fe5b500c9663972eddf722176cb425eb66d",
-      "reposto": "7639c10fd62bdd34a2a9e3e9536e6fe5b500c9663972eddf722176cb425eb66d"
+      "antes": "76ed98a01466eef3582b36daf7f1d2627af7bfb8a2adde6f02915e906f8759fe",
+      "reposto": "76ed98a01466eef3582b36daf7f1d2627af7bfb8a2adde6f02915e906f8759fe"
+    },
+    {
+      "grupo": "palavras",
+      "nome": "P1-a-leitura-ao-contrario",
+      "ficheiro": "dist/municipios/vila-real-de-santo-antonio/index.html",
+      "comando": "node scripts/check-lugares.mjs",
+      "codigo": 1,
+      "mordida": "/P1 · \\/municipios\\/vila-real-de-santo-antonio: o índice de dívida é 419,5 contra o limite 150, e a leitura diz «dentro do limite legal»/",
+      "passou": true,
+      "antes": "b3779cfe8555d2f68d08d1dcc2a538dab3b4612eef8eab06044525c64d91e5de",
+      "reposto": "b3779cfe8555d2f68d08d1dcc2a538dab3b4612eef8eab06044525c64d91e5de"
+    },
+    {
+      "grupo": "caminho",
+      "nome": "D1-a-linha-do-lugar-em-falta",
+      "ficheiro": "dist/municipios/agueda/index.html",
+      "comando": "node scripts/check-lugar.mjs",
+      "codigo": 1,
+      "mordida": "/8\\.17 · páginas de concelho sem o mapa da sua unidade: 1/",
+      "passou": true,
+      "antes": "76ed98a01466eef3582b36daf7f1d2627af7bfb8a2adde6f02915e906f8759fe",
+      "reposto": "76ed98a01466eef3582b36daf7f1d2627af7bfb8a2adde6f02915e906f8759fe"
+    },
+    {
+      "grupo": "redirecionamentos",
+      "nome": "B1-lugares-uma-ligacao-a-origem",
+      "ficheiro": "dist/distritos/evora/index.html",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/B1 lugares: a ligação \"[^\"]*\" aponta para \"\\/(?:municipios|distritos)\", que é a origem de um redirecionamento 301/",
+      "passou": true,
+      "antes": "1bd69a95600dc7367768d59511eed2b84bc5ccf1c9d8cd1b0e0c84071b049bbf",
+      "reposto": "1bd69a95600dc7367768d59511eed2b84bc5ccf1c9d8cd1b0e0c84071b049bbf"
     },
     {
       "grupo": "redirecionamentos",

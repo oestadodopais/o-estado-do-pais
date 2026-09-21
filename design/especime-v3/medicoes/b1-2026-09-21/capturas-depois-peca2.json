@@ -1,5 +1,5 @@
 {
-  "cabeca": "992fcd1de7348dc7b987e06c8182272158bdac87",
+  "cabeca": "31fe90c421f9e1e0a47590b709b8ebd677ac56b0",
   "navegador": "148.0.7778.96",
   "resultados": [
     {
@@ -19,7 +19,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "8633400e38ff064e0f6bf44290035f3e57bd996ceb8244901385226d1e5f5c89"
+      "sha256": "53ae39db1b6678b00de59f59d0de770d5bbca7adf7057e46c52f3470207cfac2"
     },
     {
       "ficheiro": "depois-evora-pt-768.png",
@@ -38,7 +38,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "21ccf7047909e0bada6560b16d69c1d7bc33bd50ff3c86cff45c0efb03c415ad"
+      "sha256": "aa631dd9b70db70e2f4fa66c4b2202600a5f0ccda62dbe3dcdd9aa46cc713ed6"
     },
     {
       "ficheiro": "depois-evora-pt-1024.png",
@@ -57,7 +57,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "f5d940904d925404e8b1a87ff79ce64ca3de9c67a3fa8ab4877fb7478e22d4c3"
+      "sha256": "4c733bb2f288b2aaa08b748dc85cd1a0b2256ce636a706ae0cf32ed3f862db0b"
     },
     {
       "ficheiro": "depois-evora-pt-1280.png",
@@ -76,7 +76,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "890017827a1759035b6b6ba8dd1d887759a47e7e62614bbc5aceab2992106883"
+      "sha256": "49374dd566943425f3e6906b816e7806c75e3900460c87ecbeda8bfd9c90cb50"
     },
     {
       "ficheiro": "depois-evora-pt-1600.png",
@@ -95,7 +95,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "d30a84ffd531903d05aa57bfbabece20bf85b4731ba9354bedf9f9d8855ec518"
+      "sha256": "30bc215f1e2269b6e4385c53bcbd1886c080e99633071bf1ab974be49a30e464"
     },
     {
       "ficheiro": "depois-vila-real-de-santo-antonio-pt-390.png",
@@ -114,7 +114,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "fe1be85b6254241df743d18809982af6c7156599f8cdede9d4ceaddd47cab959"
+      "sha256": "a99663b71a5291a653ef0557f41d30aadab395feb9739f129711224cc13e3de8"
     },
     {
       "ficheiro": "depois-vila-real-de-santo-antonio-pt-768.png",
@@ -133,7 +133,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "2f252d2c7a79537c1f6774e17013d3387fc19d8be07016be97d83a39eecb19d0"
+      "sha256": "09c03fac4bd9c07d792814dd190fccc69554409eeeaeb409adf10009fc0abb63"
     },
     {
       "ficheiro": "depois-vila-real-de-santo-antonio-pt-1024.png",
@@ -152,7 +152,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "1f1e43224a87ca5a21f71cd12e63075b9ee60eb557eaea4ab676096994f52edb"
+      "sha256": "9bd68969645ce5329bda1ccb2fc7619a310a846c6c697d086d1604b22db7f91c"
     },
     {
       "ficheiro": "depois-vila-real-de-santo-antonio-pt-1280.png",
@@ -171,7 +171,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "d57782f4fec93d32d0844615131bc11b6ddb9aa590020c4ab6487f1edc21dc16"
+      "sha256": "ef406b6e8e868e432a9c1f9550fc644bc71748ddf189d5684be85816f8808fc0"
     },
     {
       "ficheiro": "depois-vila-real-de-santo-antonio-pt-1600.png",
@@ -190,7 +190,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "683a790c61f40da5628ee4bbd1ba2db6064b8f8dff7b1776dd874146fd841cf4"
+      "sha256": "2bd6a73a07549dd5d8b51c9e56c3bd781209dfe53414e5c577cbe50dccb35e14"
     },
     {
       "ficheiro": "depois-penedono-pt-390.png",
@@ -209,7 +209,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "3cb8f0a16f6a7d285c65d2f44cd1bcc1d33fdb460dda9cceb20afff39d4e2f08"
+      "sha256": "1ff5192ea1e6050bf8006a5efe0cbaa06c8f7f52737064c7738d7d87e11a0b18"
     },
     {
       "ficheiro": "depois-penedono-pt-768.png",
@@ -228,7 +228,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "1cd36a30b81ce7329ce399a9e3ce33ef69328fb32cd7cfda41e7517609d5a790"
+      "sha256": "620c241dafb91254c394cde834f179376d336868d368f58e08fafcd7c93d5acb"
     },
     {
       "ficheiro": "depois-penedono-pt-1024.png",
@@ -247,7 +247,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "3e4ba9851b50a9a42f2b8fcb987cd082d5b5407df8d99e1cbcc01f393f9dd7b0"
+      "sha256": "064776d71e01c2b3dfdb8aebeb24cc23254d43e2a61ac150c8d2b75fa4eafa47"
     },
     {
       "ficheiro": "depois-penedono-pt-1280.png",
@@ -266,7 +266,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "a3ec65da88ebd1f59e46f7b69f757570d735a07578a243143e202bf2c153341a"
+      "sha256": "f82d4f36c47545e60d3e1458878b5a9a214683c1d4910dc1329f881c3f77cdb9"
     },
     {
       "ficheiro": "depois-penedono-pt-1600.png",
@@ -285,7 +285,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "6ab3f2988049bfa4522c72c1a7fee131714d7c631833b3f00423b997736274d0"
+      "sha256": "69af44ea735b9e2fd207c42aaa4d463accbdf9d44db3a0e5a527b5486157e7a9"
     },
     {
       "ficheiro": "depois-espinho-pt-390.png",
@@ -304,7 +304,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "b1c4a4fd24f74042919ab67b4dd92c06c43d90d880d52ab3c1541ba9e30ac396"
+      "sha256": "e4444a62ba19d1130c5b2c5e75e199d11aedc0594e25fad91d60b0f70e72727c"
     },
     {
       "ficheiro": "depois-espinho-pt-768.png",
@@ -323,7 +323,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "a275813bc3ed31a8e8b9e652b0ce82e0c090a026b67b2d68d9fcf856d0e9148e"
+      "sha256": "b94eb757c99a75dd6ce763e17ce2580bad1bf93e2e688e21a991cb960532a4d4"
     },
     {
       "ficheiro": "depois-espinho-pt-1024.png",
@@ -342,7 +342,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "4fbd0b98082e21936e092f6a558b5cbfa948c70392be55785cf78e5dc4f4cc56"
+      "sha256": "8eccd2aef1811d9c4470ce807541adf99ff87895c9d76eafffd42aa734e22312"
     },
     {
       "ficheiro": "depois-espinho-pt-1280.png",
@@ -361,7 +361,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "ceecab4d21bb7ec29843ef5eabdca39e7bb68199fcafd4c39f01e6fa5f212cfc"
+      "sha256": "356e8b7d1f2548386c4bc63df426fe25eb453a78800e27167100d2ec2e266237"
     },
     {
       "ficheiro": "depois-espinho-pt-1600.png",
@@ -380,7 +380,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "7fb6b147caded2824c5dcc06cdd6b7f3870590c1912ede4c282209e0a7fd7068"
+      "sha256": "7c3ae9b34af4409b455c0a8ddc6d7487c035434dd6d3d5f745fd998d9d6d4acd"
     },
     {
       "ficheiro": "depois-corvo-pt-390.png",
@@ -399,7 +399,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "8aed23fbb8fb1b16210c2d86e5e8acac20bb54bdb24cc96cafead9271a2566c8"
+      "sha256": "38d6cb310c7b0076b3b72f332cb25e790a47a010de9b181c373eb9559853346a"
     },
     {
       "ficheiro": "depois-corvo-pt-768.png",
@@ -418,7 +418,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "576cb250437ce6c62cc80c244d1e37bbec3ffa2edbcea7fdc9c64644132dcc93"
+      "sha256": "97132698715ece09ef37d1b11a1f3955a2a8f8558c4dc4211c177d970b152299"
     },
     {
       "ficheiro": "depois-corvo-pt-1024.png",
@@ -437,7 +437,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "0ac7003205ba7b5d230f01b7452afa8928adab086574e91c0fb3450712b4d054"
+      "sha256": "cf8add0f7099bc1bc96c857f2cdaa40df3c3626bbbfab1c6aa7daaa92ab8757e"
     },
     {
       "ficheiro": "depois-corvo-pt-1280.png",
@@ -456,7 +456,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "2bf2cec2b9e0c88c21519907372b1d5cffe0a298d7278438cfe9008b2ba29102"
+      "sha256": "b79504d9ee16f7d2f4b1eb91348c8c7bd61c93f6c3abdfe15e3c0ee34f7ee251"
     },
     {
       "ficheiro": "depois-corvo-pt-1600.png",
@@ -475,7 +475,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "7eb6d2dcf1d3f9df8bb3cdece271e492dcfb654507aecd4e4e038606e7620d49"
+      "sha256": "2304c4559381dec7f0db15cc575baa0b237d1dc19e278c997b43c953fbf26f9d"
     },
     {
       "ficheiro": "depois-lugares-pt-390.png",
@@ -494,7 +494,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "dc841a1293dff41b6d1c5f52fc7129fdae2bbdcc65ab093a49a5b4159d4fe7c6"
+      "sha256": "4653c5a2feba374ecc75e5f5fa1acc84c593c1ed391bbf53d00002b711aa630c"
     },
     {
       "ficheiro": "depois-lugares-pt-768.png",
@@ -513,7 +513,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "29ff6e187a4d26d8bf77afcb187f64cddd48dc72d3ad86b9ad1a6e8cdc277289"
+      "sha256": "70e360c1c5ceb3ba2c39f27f4a5028366bb119675297f4e1e10aa49e6fdf4be7"
     },
     {
       "ficheiro": "depois-lugares-pt-1024.png",
@@ -532,7 +532,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "b07bade607c28c5b8afd18902b5b965139c024f2fc9ea4a50bc27f476004132b"
+      "sha256": "152e2f00a1633fa7082c41a7bc4d7a436046518de9449567a2b9330c4187b685"
     },
     {
       "ficheiro": "depois-lugares-pt-1280.png",
@@ -551,7 +551,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "587e28a8b2cc9f38924ab29c4ba1f682eb4ef689f9ab4ad81c0116338b836a81"
+      "sha256": "5510ee6322f16da4b1fcbeeeb20cba3ff95e5451dfab13ea0ce6e2a26f64b9e7"
     },
     {
       "ficheiro": "depois-lugares-pt-1600.png",
@@ -570,7 +570,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "7c18c18d70f1fcba4840e98b46f0e93e4045b90d2aa28796678fe12657bbd4c2"
+      "sha256": "604c109ca97ea28d52d149ac7bbfd23c12357dd99e4cf68a41db935075d7d5ad"
     },
     {
       "ficheiro": "depois-regiao-pt-390.png",
@@ -684,7 +684,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "347c447a2129371b7766820274e31179c320621a439694f49908111831ba1cb8"
+      "sha256": "4a3248586e77abc2947f48e4080d73af62c1123b690c8a10c563f406d8317077"
     },
     {
       "ficheiro": "depois-distrito-pt-768.png",
@@ -703,7 +703,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "87ab85d2413c7d33985b54455b361b2aae665693285d6046d19f9e4e79b2f243"
+      "sha256": "0055f7cf8a792812595218de8f6e2e2df00cbe9a2a76914438ea05b43c5944a0"
     },
     {
       "ficheiro": "depois-distrito-pt-1024.png",
@@ -722,7 +722,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "30945da89f333ade495a55304547944c29605fc59a6881806332908d13f1d170"
+      "sha256": "bd5d4d391df46163da94646aec78e900d9af91d393583e2d2e3cb6dc7a5b05a1"
     },
     {
       "ficheiro": "depois-distrito-pt-1280.png",
@@ -741,7 +741,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "0f23ca55dcd44834f5c182d93635ffb0e004258d6d49355aa668f7c292bb238b"
+      "sha256": "87b9f4e9e8a75e4a12d208a56ec6652a27b497df78e07e471edf65faf4c9225e"
     },
     {
       "ficheiro": "depois-distrito-pt-1600.png",
@@ -760,7 +760,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "a4f9e185bd98f442d5638563b004048fa2e8c39b6d81a064a067a2af5bd9087f"
+      "sha256": "a2adfd3a9f3c312c1626bf14888ace6e0e64935a1d10a777e3fa5927eba02393"
     },
     {
       "ficheiro": "depois-evora-en-390.png",
@@ -779,7 +779,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "eecaedd5517b8f63c93535d348ea9bb1b99c86ff2b27ffd5188e0185338caa81"
+      "sha256": "47a940da7463b0d374cc8e876ae44b0efd0f2ca2571371e29431541226c042e0"
     },
     {
       "ficheiro": "depois-evora-en-1280.png",
@@ -798,7 +798,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "354d8e941bbc42a26de47530e2365b9962051f338ac8890dfafd630d60885d01"
+      "sha256": "a7a113c0736a1eaf025851265dd102ab1a37740319b847105dbc7913217deb0a"
     },
     {
       "ficheiro": "depois-vila-real-de-santo-antonio-en-390.png",
@@ -817,7 +817,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "a56db5e6b86cbee9f79d09739a1e309f3ed21d583e10e67b98f73ca910141d4e"
+      "sha256": "f8ef0ed07a4b0862696422dd669a5e401dbcad7fadaaa65cf59e3ddb2e962fca"
     },
     {
       "ficheiro": "depois-vila-real-de-santo-antonio-en-1280.png",
@@ -836,7 +836,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "af0157379816f2c123d9575ad2d36c2122bd879b249abf4905fb7c960592ae60"
+      "sha256": "ef5ec9c5493cda39ca23ca37f07ed557e0c9452fa3731fbcb8aa09f8afcbc62a"
     },
     {
       "ficheiro": "depois-penedono-en-390.png",
@@ -855,7 +855,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "518ffef48c4a4e8064abc5f415cdafeb132136a7570f112014a98ba2662df32b"
+      "sha256": "9fcb05444d3219994a3a95f8d0f6421cbeeb3fc8b6d65a08f5f8077bba55837e"
     },
     {
       "ficheiro": "depois-penedono-en-1280.png",
@@ -874,7 +874,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "276640ba37a6385feea442ff9cbc43bbd89202ccafd68eb470870bff27ffcf25"
+      "sha256": "36cf864b3f425bcc5388303dc25cbf9768434e1431d9ff45a7e9eaa057bc526d"
     },
     {
       "ficheiro": "depois-espinho-en-390.png",
@@ -893,7 +893,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "4d23db69f4bed041d9cb22d935874c5d1223c243631a321cf53825d56a0d7684"
+      "sha256": "25cdfbda3cf2c7ac3c6847059e6e2ac6df5ebb5d2dc6ef62ce8b8138b2624848"
     },
     {
       "ficheiro": "depois-espinho-en-1280.png",
@@ -912,7 +912,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "aca054716e347a3b8c10e51bfaa86a9af36be9017a13b0d7ecd2055f334803cb"
+      "sha256": "b0e89d1fd3dab58a6a3fdaef3f4a722ccb97717bce5f047a2d182c452865a803"
     },
     {
       "ficheiro": "depois-corvo-en-390.png",
@@ -931,7 +931,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "c8b5e727ef7b83c8b943416d74e2d1a38c9f9b3d0397695c3f508410329e5969"
+      "sha256": "7b7fae717abbf0ce4ad36b7a7d9a2434fe3f3b311687e4afd6484a71962457e7"
     },
     {
       "ficheiro": "depois-corvo-en-1280.png",
@@ -950,7 +950,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "1972e7cd4e2da0b77514204042a6caa2ebbc0d371c08b3a0e214ee993277e238"
+      "sha256": "9b74df83315667d6dc52c82bff15eae85a25c172829ece3f94486251e7be9dc0"
     },
     {
       "ficheiro": "depois-lugares-en-390.png",
@@ -969,7 +969,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "f6367bd6e82461910843111f85259b8eb0a178c345315e2dda60ec628cf2b7c5"
+      "sha256": "a12c439df4fa7a74b92036a3284509d1393e4434730cdf26eebbd8fa7fd23a32"
     },
     {
       "ficheiro": "depois-lugares-en-1280.png",
@@ -988,7 +988,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "bdfd2c347890e419404a63c66fbc5d1a1489d0584a0c3d819b6182195181befc"
+      "sha256": "aeda318fd18032d49e475c0819c96db24cf934aa8337f9b8d96133e8188e405c"
     },
     {
       "ficheiro": "depois-regiao-en-390.png",
@@ -1045,7 +1045,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "122361af93208d664aa3c029683a655835690b998c6c0666229d02153140d3ad"
+      "sha256": "e45ec07d9dc2bde7900ce00b4f6b45eeaa80884215683ae38e12560428cdbfea"
     },
     {
       "ficheiro": "depois-distrito-en-1280.png",
@@ -1064,7 +1064,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "11dc254da9dde595a1ed240db2456ae0ef2b460e726d534db45b08ceddfe13ca"
+      "sha256": "e67493f2fea01168050967e1c233473f00fd4b14f017e87ef009e00f0443be89"
     }
   ]
 }
