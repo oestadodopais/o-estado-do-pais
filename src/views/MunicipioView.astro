@@ -198,6 +198,12 @@ const jsonld = {
                 </time>
               </span>
             </p>
+            {/* AS DUAS PRIMEIRAS FRASES DA LEITURA, COM OS SEUS SELOS. A maqueta
+                desenha-as sem selo, e não pode ser: um valor que se rende sem a
+                porta da sua linha fecha a construção, e é o portão de HTML que o
+                diz («o valor da afirmação aparece sem selo para a sua própria
+                linha»). O que a maqueta desenhou não passou por um portão; este
+                passou. O ar que os dois selos precisam está na folha. */}
             <p class="lugar-estudo-leitura" data-verbatim={e.temLeitura ? undefined : e.work.verbatimDaAbertura?.[lang]}>
               <Frase partes={e.resumo} lang={lang} selos={true} />
             </p>
