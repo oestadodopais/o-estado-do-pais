@@ -323,6 +323,15 @@ export function relanceDoConcelho(linhas = {}, refs = {}) {
       nome: medida.nome,
       unidade: medida.unidade,
       medida: linhaDaMedida(medida, ref),
+      /* A LINHA «UNIDADE · PERÍODO» SEM O TETO (B1, peça 2, 21.09.2026).
+         O cartão de uma medida leva UMA marca da fonte, e é a do seu valor
+         (`tests/cartao/cartao.mjs`, célula K10): o teto legal metido na unidade
+         do índice de dívida era um segundo número com um segundo selo dentro do
+         mesmo cartão. O teto continua dito, e pela palavra que o diz melhor a um
+         leitor («dentro do limite legal»), que é a régua deste cartão. A linha
+         com o teto fica declarada porque a leitura breve e a página de área a
+         leem; a página de um lugar lê esta. */
+      medidaSimples: linhaDaMedida({ ...medida, tecto: undefined }, ref),
       nota: medida.nota,
       /* O FIXADOR ATRAVESSA COM A MEDIDA (F1.10, item 8.5). É declarado uma vez,
          na medida, e chega às 308 páginas e à de Évora pela mesma lista: uma
