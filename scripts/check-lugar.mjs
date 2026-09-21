@@ -1114,7 +1114,11 @@ for (const ficheiro of paginas) {
       .find(
         (f) =>
           (f.getAttribute('method') ?? '').toLowerCase() === 'get' &&
-          normalizePath(f.getAttribute('action') ?? '') === normalizePath(routePath('municipios', lang)),
+          /* O DESTINO DA BUSCA É A PÁGINA DOS LUGARES (B1, peça 2, correção de
+             21.09.2026): `/municipios` passou a redirecionamento 301, e a
+             página onde os 308 se procuram é `/lugares`. A condição é a mesma,
+             e o que mudou foi o nome da página. */
+          normalizePath(f.getAttribute('action') ?? '') === normalizePath(routePath('lugares', lang)),
       );
     if (formaDaBusca) {
       for (const fila of corpo.querySelectorAll('[data-resultados]')) {
@@ -1632,7 +1636,15 @@ for (const ficheiro of paginas) {
      a exigir as três: DENTRO do `<header>`, com pelo menos UMA migalha com
      ligação, e cada ligação a existir em `dist/`, absoluta ou relativa. */
   const primeira = chaveDaRota === 'home';
-  if (!primeira && !transcricao) {
+  /* NUMA PÁGINA DE LUGAR O CAMINHO É A LINHA DO LUGAR (achado D1, 21.09.2026).
+     As duas diziam a mesma coisa uma por baixo da outra, e a linha diz mais: a
+     região e o distrito DESTE concelho, cada um com a sua página. A célula não
+     afrouxa, muda de sítio: o que a 8.17 exige na linha é o que a L5 exigia no
+     caminho, e mais — as quatro partes, a última marcada como esta página, o
+     slug declarado igual ao da rota, e cada destino construído. Uma página de
+     lugar sem linha conta na 8.17, e não aqui. */
+  const oCaminhoEALinha = chaveDaRota === 'municipio';
+  if (!primeira && !transcricao && !oCaminhoEALinha) {
     const rotulo = S[lang].nav?.rotuloCaminho;
     const caminho = rotulo
       ? corpo
