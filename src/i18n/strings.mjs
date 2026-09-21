@@ -136,6 +136,7 @@ export const STRINGS = {
 
     nav: {
       inicio: 'Início',
+    temas: 'Temas',
       /* «Concelhos» E NÃO «MUNICÍPIOS» (bloco F1.10, 04.09.2026; `DECISIONS.md`
          §1.98, segunda emenda). O vocabulário fechado do sítio dá ao território
          quatro palavras (país, região, distrito, concelho) e a palavra visível
@@ -2869,6 +2870,7 @@ export const STRINGS = {
 
     nav: {
       inicio: 'Home',
+    temas: 'Themes',
       municipios: 'Municipalities',
       /* Ver a razão na edição portuguesa (B1, peça 2, 21.09.2026). */
       lugares: 'Places',

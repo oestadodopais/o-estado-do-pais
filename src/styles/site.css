@@ -5606,3 +5606,23 @@ a.marcador::after {
   width: 100%;
   height: 100%;
 }
+
+/* B1, peça 3: a barra de leitura tem cinco entradas em todas as larguras. */
+.menu-cinco { display: flex; flex-wrap: nowrap; align-items: center; gap: 0 clamp(16px, 2.8vw, 34px); border-bottom: 1px solid var(--rule); }
+.menu-cinco a { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--f-versal); font-size: 15px; font-weight: 600; letter-spacing: .05em; text-transform: lowercase; color: var(--muted); text-decoration: none; white-space: nowrap; }
+.menu-cinco a[aria-current='page'], .menu-cinco a:hover { color: var(--ink); }
+.masthead-pais { border-bottom: 0; padding: clamp(24px, 4.4vw, 50px) 0 clamp(14px, 2.2vw, 22px); }
+.rotulo-ia-final { white-space: nowrap; }
+.rodape-b1 { border-top: 1.5px solid var(--ink); padding: 16px 0 40px; font-family: var(--f-versal); font-size: 13px; line-height: 1.8; letter-spacing: .04em; color: var(--muted); }
+.rodape-b1 .rodape-nav, .rodape-b1 .rotulo-ia-rodape, .rodape-b1 .rotulo-ia-linha, .rodape-b1 .rotulo-ia-ficha { display: inline; margin: 0; padding: 0; border: 0; font: inherit; letter-spacing: inherit; }
+.rodape-b1 .rodape-nav { text-transform: none; }
+.rodape-b1 a { color: inherit; text-decoration: none; display: inline-flex; align-items: center; min-height: 32px; }
+@media (max-width: 1023px) { .rodape-b1 a { min-height: 44px; } }
+.rodape-b1 .rotulo-ia-ficha::before { content: ' · '; }
+.rodape-b1 a:hover { text-decoration: underline; }
+.sobre-portas { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.sobre-portas a { min-height: 44px; display: inline-flex; align-items: center; }
+@media (width <= 430px) {
+  .menu-cinco { gap: 0 12px; }
+  .menu-cinco a { font-size: 13.5px; letter-spacing: .03em; }
+}
