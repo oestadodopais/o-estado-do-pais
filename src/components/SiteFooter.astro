@@ -1,134 +1,19 @@
 ---
-/**
- * Rodapé: navegação, e mais nada.
- *
- * ---------------------------------------------------------------------------
- * O QUE SAIU DAQUI, E PORQUÊ (16.08.2026, DECISIONS §1.39)
- * ---------------------------------------------------------------------------
- * · A LINHA DE AUTORIA. «Escrito por IA, dirigido por uma pessoa» estava em
- *   todas as páginas e era uma declaração dita de passagem, no sítio onde
- *   ninguém lê. A autoria passou a ter casa: está no Sobre, nas palavras da
- *   própria direção, e o que todas as páginas levam é a PORTA para lá. O
- *   portão deixou de contar a linha e passou a contar a porta.
- *
- * · A LINHA DO DOMÍNIO. Era meta: o leitor está no domínio, e o canónico já
- *   está no <head> para quem o precisa.
- *
- * · A DATA DE EDIÇÃO. Escrita à mão em site.config.mjs, dizia quando alguém
- *   decidiu chamar-lhe uma edição. O sinal de tempo é agora o do cabeçalho, e
- *   é gerado.
- *
- * A PÁGINA DO MARCADOR não entra nesta navegação, e é decisão: `/a-verificar`
- * é a definição de um sinal, e alcança-se de onde o sinal aparece (a linha
- * incompleta, o índice do livro-razão, a regra do selo no Método). Uma lista de
- * secções não é um glossário.
- *
- * V3 (etapa 1d): conferido que este componente não rende mais nada além da
- * navegação e da ligação de idioma, e passa a versaletes editoriais de Spectral
- * SC, como a navegação do cabeçalho. As oito secções ficam como estavam: o
- * rodapé já leva «Correções», e é o CABEÇALHO que espera a decisão (a) para o
- * oitavo item. Uma navegação de rodapé mais completa do que a do cabeçalho não é
- * uma incoerência: o rodapé é o índice do sítio, o cabeçalho é a barra de
- * leitura.
- *
- * ---------------------------------------------------------------------------
- * UMA COISA VOLTOU, E NÃO É A QUE SAIU (01.09.2026)
- * ---------------------------------------------------------------------------
- * A §1.39 tirou daqui a linha de autoria, «Escrito por IA, dirigido por uma
- * pessoa», porque era «uma declaração dita de passagem, no sítio onde ninguém
- * lê». Essa continua fora, e não volta.
- *
- * O que entra é outra coisa, e a diferença é a razão de existir: o rótulo de IA
- * é uma DIVULGAÇÃO OBRIGATÓRIA, e a obrigação diz onde tem de estar. O artigo
- * 50.º, n.º 4, segundo parágrafo, do Regulamento (UE) 2024/1689 manda divulgar
- * que o texto foi gerado por IA, e o n.º 5 manda dá-lo «o mais tardar no
- * momento da primeira interação ou exposição». A primeira exposição de um
- * leitor a este sítio é a página onde ele aterra, e não o Sobre: por isso a
- * linha é de todas as páginas, e por isso não pode ser uma preferência
- * editorial a decidir onde ela vive. A casa escolheu a via B (rotular tudo) a
- * 30.08.2026, e a mudança no sítio é a ordem de construção de 01.09.2026.
- *
- * VIVE DENTRO DO `<footer>`, e não antes dele como a porta das correções. Um
- * `<footer>` é o `contentinfo` da página: a autoria e quem responde por ela são
- * exactamente o que um leitor de ecrã espera encontrar ao saltar para esse
- * marco, e pô-la fora escondia-a de quem a procura pelo caminho normal. A
- * navegação continua a ser navegação e mais nada: o rótulo é irmão dela dentro
- * do rodapé, e não um item da lista.
- *
- * ---------------------------------------------------------------------------
- * A PORTA DAS CORREÇÕES ENTRA AQUI, PELA MESMA RAZÃO (bloco F1.7, 04.09.2026)
- * ---------------------------------------------------------------------------
- * O parágrafo acima descreve a porta como estando FORA do rodapé, e era: o
- * invólucro rendia-a entre o `</main>` e o `<footer>`, isto é, dentro de marco
- * nenhum. Medido a 04.09.2026 sobre `dist/`: 739 das 7 237 páginas construídas
- * tinham a porta fora de qualquer marco, e a auditoria de 02.09 contou 19 nas
- * suas 30. Quem navega por marcos — que é como se lê uma página desconhecida com
- * um leitor de ecrã — passava por cima dela sem nunca a encontrar: o `<main>`
- * acabava antes e o `contentinfo` começava depois.
- *
- * Entra no `<footer>` e não num `<nav>` próprio: a porta não é navegação, é a
- * maneira de responder a quem publica, que é exactamente o que um `contentinfo`
- * é. Vem PRIMEIRO, antes da navegação e do rótulo, porque é essa a ordem em que
- * ela já se via na página, e a ordem do documento é a ordem em que se ouve.
- *
- * ---------------------------------------------------------------------------
- * E AS 6 482 QUE A TINHAM DENTRO DO `<main>` TAMBÉM VÊM PARA CÁ
- * ---------------------------------------------------------------------------
- * *Segunda passagem, 04.09.2026, achado Blocking 4 da leitura a frio.* A
- * primeira redação desta nota dizia que essas não mudavam nada, «dentro de um
- * marco desde sempre». O brief não diz «dentro de um marco»: diz «`<footer>` ou
- * `<nav aria-label>`», e um `<main>` não é nem uma coisa nem outra. Nas páginas
- * de linha do livro-razão a porta estava dentro de um `<main><aside>`, que é a
- * coluna do aparelho: quem salta de marco em marco chega ao `main` inteiro, e
- * uma porta metida num canto dele encontra-se lendo a página, que é o que a
- * navegação por marcos existe para poupar.
- *
- * As cinco vistas que a rendiam (`LinhaView`, `MunicipioView`, `EstudoView`,
- * `TextoView`, `CorrecoesView`) deixam de a render, e a propriedade que lhes
- * permitia fazê-lo saiu do invólucro. Uma por página, aqui, e o portão conta-a.
- */
 import { routePath, otherLanguagePath, normalizePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
-import { ROTAS_NAV, ETIQUETA_NAV } from '../lib/navegacao.mjs';
+import { ROTAS_RODAPE, ETIQUETA_NAV } from '../lib/navegacao.mjs';
+import { ENDERECO_CORRECOES } from '../data/metodo.mjs';
 import RotuloDeIA from './RotuloDeIA.astro';
-import PortaDeCorreccoes from './PortaDeCorreccoes.astro';
-
 const { lang = 'pt', path, outraLingua = null } = Astro.props;
 const s = t(lang);
 const aqui = normalizePath(path ?? Astro.url.pathname);
-/* Escrito, quando a rota não existe nas duas edições (a página de leitura).
-   Sem ele, o caminho sai da tabela de rotas, como sempre. */
 const outra = outraLingua ?? otherLanguagePath(aqui, lang);
-
-/* O RODAPÉ LEVA A MESMA LISTA PELA MESMA ORDEM (bloco F1.10, §7.5, 08.09.2026).
-   Era uma segunda lista escrita aqui, e as duas divergiram: «Distritos» estava
-   no menu e não estava aqui, e a página dos dois quadros da União tinha de
-   entrar nos dois sítios à mão. A lista passa a ser uma só, em
-   `src/lib/navegacao.mjs`, e o rodapé rende-a pela ordem dos grupos.
-
-   O RODAPÉ NÃO DESENHA OS GRUPOS, e é uma decisão e não um esquecimento: o
-   cabeçalho é a barra de leitura, onde o peso serve para escolher depressa; o
-   rodapé é o índice do sítio, onde a lista inteira é o ponto. A ordem é a
-   mesma, e é isso que o §7.5 pede. */
-const secoes = ROTAS_NAV.map((rota) => [rota, s.nav[ETIQUETA_NAV[rota]]]);
-
 ---
-
-<footer class="rodape">
-  <PortaDeCorreccoes lang={lang} class="porta-correccoes-rodape" />
-
+<footer class="rodape rodape-b1">
   <nav class="rodape-nav" aria-label={s.nav.rotuloRodape}>
-    {secoes.map(([rota, rotulo]) => <a href={routePath(rota, lang)}>{rotulo}</a>)}
-    {/* O NOME DA OUTRA EDIÇÃO ESTÁ NA OUTRA LÍNGUA, e o atributo di-lo
-        (27.08.2026). «English» dentro de uma página portuguesa lia-se com a
-        fonética do português para quem ouve; o comando do cabeçalho já levava a
-        marca, e este não. */}
-    <a
-      href={outra}
-      hreflang={lang === 'pt' ? 'en' : 'pt-PT'}
-      lang={lang === 'pt' ? 'en' : 'pt-PT'}
-    >{s.outraLingua}</a>
-  </nav>
-
+    {ROTAS_RODAPE.map(rota => <><a href={routePath(rota, lang)}>{s.nav[ETIQUETA_NAV[rota]]}</a>{' · '}</>)}
+    <a href={outra} hreflang={lang === 'pt' ? 'en' : 'pt-PT'} lang={lang === 'pt' ? 'en' : 'pt-PT'}>{s.outraLingua}</a>
+  </nav>{' · '}
+  <span data-porta-correccoes><a class="ligacao-email" href={`mailto:${ENDERECO_CORRECOES}`}>{ENDERECO_CORRECOES}</a></span>{' · '}
   <RotuloDeIA lang={lang} path={aqui} onde="rodape" />
 </footer>

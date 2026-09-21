@@ -43,6 +43,7 @@ export const PRIMARY_LANG = 'pt';
  */
 export const ROUTES = {
   home: { pt: '/', en: '/en' },
+  temas: { pt: '/temas', en: '/en/themes' },
   /**
    * A página que diz a ideia e pára. O texto é da direção, está em
    * `src/data/sobre.mjs` e o portão compara-o com o que a página rende.

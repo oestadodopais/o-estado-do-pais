@@ -111,6 +111,7 @@ export const PAI_DA_ROTA = {
   areas: 'home',
   area: 'areas',
   dominios: 'home',
+  temas: 'home',
   dominio: 'dominios',
   livro: 'home',
   /* O ÍNDICE DOS 308 DO LIVRO-RAZÃO É FILHO DO ÍNDICE, e a página de um concelho
@@ -149,6 +150,7 @@ function etiquetaDaRota(chave, lang) {
     regioes: s.nav.regioes,
     areas: s.nav.areas,
     dominios: s.nav.dominios,
+    temas: s.nav.temas,
     uniaoEuropeia: s.nav.uniaoEuropeia,
     estudos: s.nav.estudos,
     livro: s.nav.livro,

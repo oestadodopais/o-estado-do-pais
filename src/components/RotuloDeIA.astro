@@ -70,7 +70,7 @@ const politica = `${routePath('metodo', lang)}#${ANCORA_DA_POLITICA}`;
 
 <div class:list={['rotulo-ia', `rotulo-ia-${onde}`]} data-rotulo-ia={onde}>
   <p class="rotulo-ia-linha">
-    <Fragment set:text={r.antes} /><a href={politica}>{r.porta}</a><Fragment set:text={r.depois} />
+    <Fragment set:text={r.antes} /><span class="rotulo-ia-final"><a href={politica}>{r.porta}</a><Fragment set:text={r.depois} /></span>
   </p>
 
   {
