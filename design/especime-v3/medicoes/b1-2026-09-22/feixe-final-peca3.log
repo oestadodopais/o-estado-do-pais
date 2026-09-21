@@ -1,0 +1,38 @@
+
+> o-estado-do-pais@0.1.0 design:feixe
+> node scripts/design-bundle.mjs
+
+
+[1m  O feixe de cartões do sistema de desenho[0m
+[90m  design-system/ · de dist/ no commit 45f056f · 20 cartões, 11 ficheiros de letra e um README[0m
+
+[90m  ficheiro                          grupo          bytes  ok[0m
+  01-cor.html                       Fundamentos   378983  [32m✓[0m
+  02-tipo.html                      Fundamentos   375631  [32m✓[0m
+  03-selo-e-marcador.html           Componentes   410211  [32m✓[0m
+  04-regua.html                     Disposições   377550  [32m✓[0m
+  05-mapa.html                      Disposições   444050  [32m✓[0m
+  06-estados.html                   Componentes   374652  [32m✓[0m
+  07-cartoes.html                   Componentes   286961  [32m✓[0m
+  10-pagina-primeira.html           Páginas       471104  [32m✓[0m
+  11-pagina-primeira-escuro.html    Páginas       471398  [32m✓[0m
+  12-pagina-linha-livro-razao.html  Páginas       225700  [32m✓[0m
+  13-pagina-livro-razao.html        Páginas       551404  [32m✓[0m
+  14-pagina-municipio.html          Páginas       277321  [32m✓[0m
+  15-pagina-lugares.html            Páginas       485913  [32m✓[0m
+  16-pagina-metodo.html             Páginas       253438  [32m✓[0m
+  17-pagina-agenda.html             Páginas       285885  [32m✓[0m
+  18-pagina-estudos.html            Páginas       203604  [32m✓[0m
+  19-pagina-sobre.html              Páginas       198787  [32m✓[0m
+  20-pagina-correcoes.html          Páginas       251835  [32m✓[0m
+  21-pagina-404.html                Páginas       197522  [32m✓[0m
+  30-regras.html                    Fundamentos   240174  [32m✓[0m
+
+[90m  6603.6 KiB de cartões · maior cartão 538.5 KiB · tecto 596.75 KiB[0m
+[90m  11 ficheiros de letra ao lado, 421.0 KiB, resumos conferidos contra TIPOS.md · fora do tecto[0m
+[90m  ligações internas absolutas em https://oestadodopaís.pt · 15 ligações para fontes, intactas · 11 endereços escritos no texto das páginas (transcrições, não pedidos)[0m
+[90m  nenhum <script>, nenhum <link>, nenhuma imagem que não seja data:, nenhum endereço fora de um href · 160 pedidos de tipo, todos resolvidos em ficheiros desta corrida[0m
+
+[90m  7354 página(s) de `dist/` varridas à procura das duas ausências que os cartões afirmam (`.movel-selo`, `.banda`): nenhuma das duas rende.[0m
+  [32m✓[0m 20 cartões, 11 ficheiros de letra e um README em design-system/.
+

@@ -1,0 +1,330 @@
+{
+  "cabeca": "977a1c13607709ab70d5f346055898e822cf7687",
+  "navegador": "148.0.7778.96",
+  "resultados": [
+    {
+      "ficheiro": "antes-pais-pt-390.png",
+      "rota": "/",
+      "familia": "pais",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "titulo": "A dívida pública é 89,7% do PIB e a taxa de desemprego é 6% da população ativa.fonte · Eurostatfonte · Eurostat",
+      "menu": [
+        {
+          "texto": "Início",
+          "y": 0,
+          "largura": 0
+        },
+        {
+          "texto": "Lugares",
+          "y": 19,
+          "largura": 57.125
+        },
+        {
+          "texto": "Estudos",
+          "y": 19,
+          "largura": 57.875
+        },
+        {
+          "texto": "Números e fontes",
+          "y": 19,
+          "largura": 126.421875
+        },
+        {
+          "texto": "Domínios",
+          "y": 0,
+          "largura": 0
+        },
+        {
+          "texto": "Áreas de governo",
+          "y": 0,
+          "largura": 0
+        },
+        {
+          "texto": "Portugal na União Europeia",
+          "y": 0,
+          "largura": 0
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 0
+        },
+        {
+          "texto": "Método",
+          "y": 0,
+          "largura": 0
+        },
+        {
+          "texto": "Correções",
+          "y": 0,
+          "largura": 0
+        },
+        {
+          "texto": "Agenda",
+          "y": 0,
+          "largura": 0
+        }
+      ],
+      "mapa": {
+        "x": 0,
+        "y": 631.03125,
+        "width": 390,
+        "height": 514.234375,
+        "top": 631.03125,
+        "right": 390,
+        "bottom": 1145.265625,
+        "left": 0
+      },
+      "valores": 8,
+      "selos": 8,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "5f7b66ff67ad51b19e311b55edf72593bce1479e19b7472b0064670159af02b8"
+    },
+    {
+      "ficheiro": "antes-pais-pt-1280.png",
+      "rota": "/",
+      "familia": "pais",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "titulo": "A dívida pública é 89,7% do PIB e a taxa de desemprego é 6% da população ativa.fonte · Eurostatfonte · Eurostat",
+      "menu": [
+        {
+          "texto": "Início",
+          "y": 19,
+          "largura": 45.640625
+        },
+        {
+          "texto": "Lugares",
+          "y": 18,
+          "largura": 65.828125
+        },
+        {
+          "texto": "Estudos",
+          "y": 18,
+          "largura": 66.703125
+        },
+        {
+          "texto": "Números e fontes",
+          "y": 18,
+          "largura": 145.625
+        },
+        {
+          "texto": "Domínios",
+          "y": 19,
+          "largura": 70.515625
+        },
+        {
+          "texto": "Áreas de governo",
+          "y": 19,
+          "largura": 135.3125
+        },
+        {
+          "texto": "Portugal na União Europeia",
+          "y": 19,
+          "largura": 218.234375
+        },
+        {
+          "texto": "Sobre",
+          "y": 52.390625,
+          "largura": 43.09375
+        },
+        {
+          "texto": "Método",
+          "y": 52.390625,
+          "largura": 59.328125
+        },
+        {
+          "texto": "Correções",
+          "y": 52.390625,
+          "largura": 79.8125
+        },
+        {
+          "texto": "Agenda",
+          "y": 52.390625,
+          "largura": 56.046875
+        }
+      ],
+      "mapa": {
+        "x": 668,
+        "y": 424.296875,
+        "width": 518,
+        "height": 683,
+        "top": 424.296875,
+        "right": 1186,
+        "bottom": 1107.296875,
+        "left": 668
+      },
+      "valores": 8,
+      "selos": 8,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "25f3197d98b0059c7ff4fb404807770ff89c8ac68a91714e1afc09367ed5896f"
+    },
+    {
+      "ficheiro": "antes-sobre-pt-390.png",
+      "rota": "/sobre/",
+      "familia": "sobre",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "titulo": "Sobre",
+      "menu": [
+        {
+          "texto": "Início",
+          "y": 0,
+          "largura": 0
+        },
+        {
+          "texto": "Lugares",
+          "y": 19,
+          "largura": 57.125
+        },
+        {
+          "texto": "Estudos",
+          "y": 19,
+          "largura": 57.875
+        },
+        {
+          "texto": "Números e fontes",
+          "y": 19,
+          "largura": 126.421875
+        },
+        {
+          "texto": "Domínios",
+          "y": 0,
+          "largura": 0
+        },
+        {
+          "texto": "Áreas de governo",
+          "y": 0,
+          "largura": 0
+        },
+        {
+          "texto": "Portugal na União Europeia",
+          "y": 0,
+          "largura": 0
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 0
+        },
+        {
+          "texto": "Método",
+          "y": 0,
+          "largura": 0
+        },
+        {
+          "texto": "Correções",
+          "y": 0,
+          "largura": 0
+        },
+        {
+          "texto": "Agenda",
+          "y": 0,
+          "largura": 0
+        }
+      ],
+      "valores": 0,
+      "selos": 0,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "975112d308ef4e7f8bf9a04d5ff953ed5ff885eca11d120db8c14ec8a17b10fd"
+    },
+    {
+      "ficheiro": "antes-sobre-pt-1280.png",
+      "rota": "/sobre/",
+      "familia": "sobre",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "titulo": "Sobre",
+      "menu": [
+        {
+          "texto": "Início",
+          "y": 19,
+          "largura": 45.640625
+        },
+        {
+          "texto": "Lugares",
+          "y": 18,
+          "largura": 65.828125
+        },
+        {
+          "texto": "Estudos",
+          "y": 18,
+          "largura": 66.703125
+        },
+        {
+          "texto": "Números e fontes",
+          "y": 18,
+          "largura": 145.625
+        },
+        {
+          "texto": "Domínios",
+          "y": 19,
+          "largura": 70.515625
+        },
+        {
+          "texto": "Áreas de governo",
+          "y": 19,
+          "largura": 135.3125
+        },
+        {
+          "texto": "Portugal na União Europeia",
+          "y": 19,
+          "largura": 218.234375
+        },
+        {
+          "texto": "Sobre",
+          "y": 52.390625,
+          "largura": 43.09375
+        },
+        {
+          "texto": "Método",
+          "y": 52.390625,
+          "largura": 59.328125
+        },
+        {
+          "texto": "Correções",
+          "y": 52.390625,
+          "largura": 79.8125
+        },
+        {
+          "texto": "Agenda",
+          "y": 52.390625,
+          "largura": 56.046875
+        }
+      ],
+      "valores": 0,
+      "selos": 0,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "a120c3290a8fa1215d2465cbcc64444912106011102b1b05f705c4db0c84e5b1"
+    }
+  ]
+}

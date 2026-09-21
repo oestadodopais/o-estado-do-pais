@@ -1,0 +1,154 @@
+# B1, peça 3: o país
+
+A peça ainda não cumpre integralmente a aceitação. Há duas partes paradas pela regra dos portões P: a atribuição da Carta continua por baixo do mapa e os valores da leitura inglesa conservam a vírgula do livro-razão. O único `verify` completo ficou a 1 na planta I11. A I11 foi corrigida e conferida à parte; a continuação encontrou a K6, também corrigida e provada. Os cinco comandos de continuação terminaram a 0, sem repetir a cadeia completa. Não há, portanto, três códigos finais a 0.
+
+## As cinco partes
+
+| Parte | Resultado | Medida |
+| --- | --- | --- |
+| Menu | Cinco entradas nas duas edições, sem gaveta. Método, Correções, Agenda, Números e fontes e língua no rodapé e no Sobre. | `check:pais` percorre todas as páginas próprias; capturas das cinco famílias; régua da porta. |
+| País | Nome, leitura aprovada, mapa, números por tema, três estudos recentes, mudanças e rodapé. | Sete linhas conferidas, seis valores rendidos e sete recibos na leitura. Dezanove cartões em nove temas, sem os três valores principais da leitura. |
+| Temas | `/temas/` e `/en/themes/`, com âncoras e todos os cartões únicos da tabela. | Trinta e cinco cartões em nove temas. A tabela contém 36 entradas, duas para a mesma taxa de desemprego. A do procedimento reúne o cartão, o ano anterior e a União Europeia na régua. |
+| O que mudou | Publicações, correções e atualizações do livro inteiro, reunidas por linha e dia, e a nova declaração de mudanças do projeto. | Quinze linhas de correção, treze publicações e uma mudança do projeto. A primeira entrada copia o texto ditado de 21.09.2026 e remete para §1.115. Nenhuma data ou alteração foi inventada. |
+| Rodapé | Uma sequência contínua de ligações e texto, com quebra natural. O ponto final de IA fica no mesmo elemento inseparável que a ligação. | Texto aprovado intacto, conferido por `gate:html`; geometria medida nas capturas. |
+
+A contagem dos temas segue exclusivamente `DOMINIO_DAS_MEDIDAS`, em `src/data/dominios.mjs`. Economia e finanças públicas tem 13 cartões; Trabalho, 10; Segurança social e pensões, 2; Educação, 3; Saúde, 1; Habitação, 3; Investimento, 1; Ciência, tecnologia e inteligência artificial, 1; Justiça, 1. Os outros nove temas não se rendem.
+
+Os três estudos recentes são o de Évora 2027 (16.09.2026), o das penalizações por reforma antecipada (24.08.2026) e o de Évora prometido, pago e auditado (15.08.2026). A edição inglesa identifica a edição portuguesa do estudo das reformas. A seleção sai de `WORKS` e das datas de publicação, nunca de uma lista de títulos escrita na vista.
+
+## As duas paragens P
+
+1. **Atribuição da Carta.** A R6 de `check:mapa`, marcada P no mapa do repositório, exige a atribuição da DGT onde o mapa se rende. A planta tira a menção da primeira página e a R6 falha. O mandato pede que a atribuição passe ao Método; a regra de paragem impede alterar essa proteção nesta peça. Conservou-se `LegendaDoMapa` e não se duplicou a menção no Método. A transferência fica por fazer.
+2. **Separador decimal inglês.** `Claim` rende o valor canónico e `gate:html` compara-o com o livro. A planta troca apenas `93,5` por `93.5` no valor inglês e o portão rejeita-o. Não se alterou o livro, `Claim` ou a comparação protegida. As cinco vírgulas decimais da leitura inglesa ficam por converter; o resto da frase é o texto ditado.
+
+Nenhuma das sete linhas citadas mudou: dívida de 2024, `93,5`; dívida de 2025, `89,7`; dívida da União, `81,7`; desemprego, `6`; desemprego da União, `6,0`; preços das casas, `17,6`; preços na União, `5,5`. A construção para se algum destes valores deixar de coincidir com a leitura aprovada.
+
+O arame da classe por provar do `check:voz` foi inicialmente classificado por engano como P na comunicação da sessão. O mapa classifica a célula 10 como M. Foi corrigido: só o parágrafo aprovado sai desse arame, depois de a lista fechada conferir a frase inteira, `check:pais` exigir as sete portas e `gate:html` conferir os valores. A planta de prosa solta continua a falhar.
+
+## As células que mudaram de forma
+
+| Célula | Antes | Agora | Planta |
+| --- | --- | --- | --- |
+| `tests/inicio/porta.mjs` | Faixa, gaveta e menus antigos. | Menu em linha, largura da página e primeira fila dentro dos 800 px. | Menu em coluna e cartões empurrados para baixo. |
+| `check:datas` 1b | Índices de estudos e de lugares. | Inclui as três edições datadas da primeira página. | Data de publicação trocada. |
+| `gate:html`, unidade e régua do cartão | A forma já usada nas páginas antigas não era admitida nas duas rotas novas. | Só a unidade da própria linha; só as referências do recibo do mesmo cartão; a auditoria dos selos continua ativa. | Unidade trocada e referência atribuída ao selo de outra linha. |
+| `gate:html`, unidade das correções | A unidade entrava como texto, e a base do índice ficava sem marca. | `CampoDaLinha` confere a unidade da linha da própria entrada, com o recibo obrigatório. | Unidade de correção trocada. |
+| `gate:html`, mudanças | Não conhecia as duas marcas novas. | Compara cada campo com a declaração ou com a data da edição. | Data de publicação inventada. |
+| `check:voz` | Inventário e sentinela da frase de identidade antiga. | Lista fechada do país e dos temas; leitura e sinopses comparadas; sentinela da leitura. | Frase explicativa, leitura trocada e comparação europeia sem recibo. |
+| `check:lugar` L1 | Contava cada marcador obrigatório `[a verificar]` como segunda porta. | Só desconta o marcador da definição conferida do cartão, para o destino exato do marcador. O teto fica em 2 271. | Duas ligações comuns iguais numa página de temas. |
+| `check:lugar` L4 | Exigia uma frase de definição na primeira página. | Exige zero, por mandato do B1. | Reposição da frase de definição. |
+| `check:alvos` H2 | Sinopses em prosa corrida contadas à parte. | A mesma regra I127 inclui a leitura do país; os restantes alvos continuam sujeitos ao teste de toque. | Porta de tema pequena entre 641 e 1 023 px. |
+| `check:alvos` H6 | Quatro portas antigas. | Contagem do mapa, portas dos temas e endereço de correções. | Porta de tema abaixo de 32 px. |
+| `check:alvos` H10 | Exigia instâncias da gaveta. | Exige o comportamento quando existe `aria-expanded`; aceita a ausência do comando retirado. | `aria-expanded` num elemento sem comando. |
+| `check:indice` I11 | A planta retirava o espaço no parágrafo que deixou de conter diretamente o par número e palavra. | A mesma medida, com mínimo de 1,5 px; a planta retira também o `gap` da ligação dos Lugares. | Nas duas edições, 4,19 px antes e 0 px depois; um de um par apanhado. |
+| `check:cartao` K6 | Comparava a frase inteira com a definição sem as glosas que `Frase` já acrescenta. | Compara a glosa com a declaração e a definição do marcador com `strings.mjs`, antes de comparar a frase da medida. | Frase com glosas a 0; troca da glosa inglesa e da definição do marcador recusadas. |
+| `design:feixe` | Extraía o menu e os estados da primeira página; procurava a lista de nomes debaixo do mapa. | Extrai o menu de cinco, os estados da página europeia e os nomes dos Lugares; exige a porta do mapa. | Porta dos Lugares retirada; estado pintado retirado. |
+
+`check:pais` entra nas cadeias de `build` e `verify`. Lê a tabela independentemente da função que compõe os cartões. Fecha para medida sem tema, medida no tema errado, repetição, medida publicada em falta, tema vazio, âncora ou porta em falta, estudo fora da ordem, mudança sem secção existente, correção omitida e menu fora da lista. As plantas e os resumos dos ficheiros antes e depois da reposição ficam nos JSON desta pasta.
+
+## Cadeias e portas
+
+O inventário perde 25 cadeias: 23 ficam retiradas com a razão e duas cadeias curtas saem do inventário porque ainda pertencem a frases maiores. Entram 18 cadeias distintas da leitura, das sinopses, dos rótulos de publicação e das marcas das correções. As unidades são campos conferidos, não prosa do inventário. O pormenor está em `cadeias-peca3.json` e em `design/especime-v3/critica/REVISOES-DO-INVENTARIO.md`.
+
+| Família | Razão | Cadeias retiradas |
+| --- | --- | ---: |
+| menu e rodapé | segunda porta | 11 |
+| país | leitura substituída pelo texto da direção | 2 |
+| país | palavra fora do lugar | 10 |
+| país | explica a página | 2 |
+
+Saem a frase de identidade, a manchete anterior, a faixa cinzenta, a secção europeia, a lista de domínios com contagens e as portas com contadores. Os destinos sobrevivem no menu, nos temas, nos Lugares ou no rodapé. A busca de concelho fica nos Lugares. O comando manual de tema claro ou escuro sai com a mobília antiga. As páginas de domínio, de área de governo e da União não foram editadas nem redirecionadas. A anatomia do cartão e dos recibos, o livro e a geometria dos mapas não mudaram. O contador de estudos de Évora ganhou o nome declarado «Estudos publicados sobre Évora», também em inglês, a partir da sua derivação. Esse nome identifica as três linhas de mudança que antes ficavam sem título.
+
+## Capturas e plantas
+
+As capturas de página inteira estão em [capturas/b1-2026-09-22](../../capturas/b1-2026-09-22/). O guião e os JSON desta pasta registam a largura, o deslocamento lateral, os valores e selos partidos e os resumos SHA-256.
+
+| Família depois | Português | Inglês |
+| --- | --- | --- |
+| País | 390, 768, 1 024, 1 280, 1 600 | 390, 1 280 |
+| Temas | 390, 768, 1 024, 1 280, 1 600 | 390, 1 280 |
+| Concelho de Évora | 390, 768, 1 024, 1 280, 1 600 | 390, 1 280 |
+| Estudo de Évora 2027 | 390, 768, 1 024, 1 280, 1 600 | 390, 1 280 |
+| Sobre | 390, 768, 1 024, 1 280, 1 600 | 390, 1 280 |
+
+Antes: país e Sobre, em português, a 390 e a 1 280. A cabeça inicial só acrescentava o prompt a `main`; não havia diferença em `src/`. Há ainda vinte capturas do primeiro ecrã, nas duas edições e nas duas larguras de comparação.
+
+As provas estão em [plantas-pais.json](plantas-pais.json), [plantas-portoes.json](plantas-portoes.json), [plantas-portoes-html.json](plantas-portoes-html.json), [porta-peca3.json](porta-peca3.json) e [alvos-peca3.json](alvos-peca3.json). A última planta de HTML acrescenta a unidade das correções à primeira passagem. A planta dos alvos exige as três células H2, H6 e H10 verdes antes e vermelhas depois. A certificação do conjunto completo de cartões fica no `verify` final.
+
+Nas 35 capturas depois: deslocamento lateral máximo de 0 px, nenhum valor ou selo partido, cinco entradas do menu numa linha e ponto final de IA inseparável da ligação. Os 35 resumos SHA-256 foram reconferidos contra os PNG. São 59 imagens ao todo: quatro antes, 35 depois e vinte do primeiro ecrã.
+
+
+| Primeira página, 1 280 × 800 | Fundo da leitura | Fundo da primeira fila | Largura do mapa |
+| --- | ---: | ---: | ---: |
+| pt | 418,3 px | 744,6 px | 360 px |
+| en | 380,2 px | 685,3 px | 360 px |
+
+## Commits
+
+Saída de `git log --format='%h %s%n%(trailers)' main..HEAD`, recolhida na cabeça final das réguas, `8ad55589`. A construção e as capturas são de `45f056f8`; os dois commits seguintes só acertam as réguas I11 e K6. O commit seguinte acrescenta apenas este relatório, capturas e medições. Os corpos dos dois primeiros commits estão também em [autoria-peca3.log](autoria-peca3.log).
+
+```text
+8ad55589 B1: conferir as glosas declaradas nas definições dos cartões
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_016dojDrtR3Thizhpckp9ENd
+
+c52483d7 B1: acertar a planta do espaço da porta dos lugares
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_016dojDrtR3Thizhpckp9ENd
+
+45f056f8 B1: conferir a unidade de cada correção contra a sua linha
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_016dojDrtR3Thizhpckp9ENd
+
+d5086779 B1: classificar as unidades do registo de correções
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_016dojDrtR3Thizhpckp9ENd
+
+6fc06cb4 B1: conferir os temas, as mudanças e as cinco portas
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_016dojDrtR3Thizhpckp9ENd
+
+913caee6 B1: reunir as correções e separar os alvos do rodapé
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_016dojDrtR3Thizhpckp9ENd
+
+1b44de26 B1: leitura do país e medidas reunidas por tema
+Claude-Session: https://claude.ai/code/session_016dojDrtR3Thizhpckp9ENd
+
+ad6c0d8f B1: cinco portas no menu e rodapé corrido
+Claude-Session: https://claude.ai/code/session_016dojDrtR3Thizhpckp9ENd
+
+977a1c13 O guião do construtor da peça 3 do B1 (o país e o menu de cinco), fechado com o que a peça 2 deixou
+Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_016dojDrtR3Thizhpckp9ENd
+```
+
+## Conferência final
+
+A construção, as 35 capturas depois e os três comandos completos pertencem a `45f056f86daf6512d1651befce6e0f8e8bd31700`. Cada comando completo correu uma vez, no seu comando, com o código e as horas guardados. Horas em UTC.
+
+| Comando completo | Código | Início | Fim |
+| --- | ---: | --- | --- |
+| `npm run build` | 0 | 2026-09-21T20:50:21Z | 2026-09-21T20:55:03Z |
+| `npm run verify` | 1 | 2026-09-21T20:55:45Z | 2026-09-21T21:02:09Z |
+| `npm run typecheck` | 0 | 2026-09-21T20:50:09Z | 2026-09-21T20:50:10Z |
+
+O `verify` parou em `check:indice`, na planta I11 da mobília antiga. A página tinha espaço; a planta já não o retirava. A correção ficou em `c52483d7`. A continuação isolada encontrou três diferenças K6 nas definições dos cartões dos temas: eram as glosas já declaradas, que a régua não comparava. A correção e as duas plantas ficaram em `8ad55589`. Só estes dois ficheiros de teste mudaram depois da construção. O cartão e o HTML das páginas não mudaram.
+
+| Continuação isolada | Código | Cabeça |
+| --- | ---: | --- |
+| `node tests/livro/indice.mjs --navegador` | 0 | `c52483d7` |
+| `npm run check:cartao` | 0 | `8ad55589` |
+| `npm run check:nomes` | 0 | `c52483d7` |
+| `npm run check:palavras` | 0 | `c52483d7` |
+| `npm run design:feixe` | 0 | `c52483d7` |
+
+Não se reescreveu `verify-peca3.codigo` e não se voltou a correr a cadeia completa. O resultado literal registado continua a ser **0, 1, 0**. A conferência final de tipos das duas réguas também passou. O `verify` mediu os 840 cartões de partilha; a continuação de `check:cartao` conferiu 5 272 cartões de medida, 152 períodos anteriores e as plantas. Os registos de cada continuação têm `.inicio`, `.fim`, `.cabeca` e `.codigo`.
+
+Tempo de parede observável: **pelo menos 1 h 30 min**, desde a criação de `node_modules` pelo `npm ci`, às 2026-09-21T19:39:35.558700+00:00, até ao fecho das medições, às 2026-09-21T21:10:04.784910+00:00. A leitura anterior ao `npm ci` não foi cronometrada. O registo está em `tempo-peca3.json`.
+
+A worktree começou limpa em `977a1c13607709ab70d5f346055898e822cf7687`, um commit de prompt sobre `a5c44893`. `npm ci` correu uma vez. Não houve checkout noutra árvore nem push. Os commits usam caminhos explícitos e contêm os dois textos de autoria pedidos. Nos dois primeiros, uma linha vazia separa os trailers, pelo que `git log --format='%(trailers)'` só reconhece o último. A guarda local bloqueou a tentativa de corrigir as mensagens por rebase interativo. Os commits seguintes usam o bloco contíguo correto; não se contornou a guarda.
+
+O mapa do repositório identificou corretamente as duas proteções P. As cadeias de comandos que transcreve antecedem a entrada de `check:lugares`; a cadeia real do `package.json` foi preservada e ganhou `check:pais`. A necessidade de atualizar a sentinela da célula 10 e as extrações do feixe confirmou os avisos dos relatórios anteriores.
+
+O mapa já classificava I11 e K6 como M. Ficou por antecipar, nesta construção, que a planta I11 dependia do pai do par e que K6 não tratava estas glosas declaradas. Foram falhas da preparação das conferências isoladas, não erros do mapa nesses dois casos. A próxima passagem por uma primeira página deve incluir ambas antes da corrida completa.

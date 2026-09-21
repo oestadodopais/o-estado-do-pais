@@ -1,0 +1,1931 @@
+{
+  "cabeca": "45f056f86daf6512d1651befce6e0f8e8bd31700",
+  "navegador": "148.0.7778.96",
+  "resultados": [
+    {
+      "ficheiro": "depois-pais-pt-390.png",
+      "rota": "/",
+      "familia": "pais",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "finalDaIAInteiro": true,
+      "titulo": "O Estado do País",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 73.34375
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 61.578125
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 46.265625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 62.4375
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 43.140625
+        }
+      ],
+      "leitura": {
+        "x": 18,
+        "y": 132.359375,
+        "width": 354,
+        "height": 240,
+        "top": 132.359375,
+        "right": 372,
+        "bottom": 372.359375,
+        "left": 18
+      },
+      "mapa": {
+        "x": 18,
+        "y": 394.359375,
+        "width": 354,
+        "height": 466.765625,
+        "top": 394.359375,
+        "right": 372,
+        "bottom": 861.125,
+        "left": 18
+      },
+      "primeiroCartao": {
+        "x": 18,
+        "y": 1167.5,
+        "width": 354,
+        "height": 135.359375,
+        "top": 1167.5,
+        "right": 372,
+        "bottom": 1302.859375,
+        "left": 18
+      },
+      "valores": 58,
+      "selos": 49,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "0996570c1cf679a67064b472a485c95b62b2d168d420b21a8bee4a1acdc2ded1"
+    },
+    {
+      "ficheiro": "depois-pais-pt-768.png",
+      "rota": "/",
+      "familia": "pais",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "finalDaIAInteiro": true,
+      "titulo": "O Estado do País",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 70.515625
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 52.890625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 71.46875
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 49.4375
+        }
+      ],
+      "leitura": {
+        "x": 30.71875,
+        "y": 168.765625,
+        "width": 706.5625,
+        "height": 108,
+        "top": 168.765625,
+        "right": 737.28125,
+        "bottom": 276.765625,
+        "left": 30.71875
+      },
+      "mapa": {
+        "x": 30.71875,
+        "y": 298.765625,
+        "width": 360,
+        "height": 474.671875,
+        "top": 298.765625,
+        "right": 390.71875,
+        "bottom": 773.4375,
+        "left": 30.71875
+      },
+      "primeiroCartao": {
+        "x": 30.71875,
+        "y": 1055.953125,
+        "width": 343.296875,
+        "height": 160.15625,
+        "top": 1055.953125,
+        "right": 374.015625,
+        "bottom": 1216.109375,
+        "left": 30.71875
+      },
+      "valores": 58,
+      "selos": 49,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "6f1700aeed0df90eb9c083b56e691660ad08b9b69a85dfbf4f82121cb9341f1c"
+    },
+    {
+      "ficheiro": "depois-pais-pt-1024.png",
+      "rota": "/",
+      "familia": "pais",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "finalDaIAInteiro": true,
+      "titulo": "O Estado do País",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 70.515625
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 52.890625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 71.46875
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 49.4375
+        }
+      ],
+      "leitura": {
+        "x": 40.953125,
+        "y": 196.765625,
+        "width": 551.375,
+        "height": 188.65625,
+        "top": 196.765625,
+        "right": 592.328125,
+        "bottom": 385.421875,
+        "left": 40.953125
+      },
+      "mapa": {
+        "x": 623.046875,
+        "y": 196.765625,
+        "width": 360,
+        "height": 474.671875,
+        "top": 196.765625,
+        "right": 983.046875,
+        "bottom": 671.4375,
+        "left": 623.046875
+      },
+      "primeiroCartao": {
+        "x": 40.953125,
+        "y": 541.9375,
+        "width": 262.375,
+        "height": 179.34375,
+        "top": 541.9375,
+        "right": 303.328125,
+        "bottom": 721.28125,
+        "left": 40.953125
+      },
+      "valores": 58,
+      "selos": 49,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "5aeca9a6e8ec6189e5bf15863fab510fdb8cb652607231a7348efbea60ed3c43"
+    },
+    {
+      "ficheiro": "depois-pais-pt-1280.png",
+      "rota": "/",
+      "familia": "pais",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "finalDaIAInteiro": true,
+      "titulo": "O Estado do País",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 70.515625
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 52.890625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 71.46875
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 49.4375
+        }
+      ],
+      "leitura": {
+        "x": 94,
+        "y": 201.71875,
+        "width": 693.609375,
+        "height": 216.5625,
+        "top": 201.71875,
+        "right": 787.609375,
+        "bottom": 418.28125,
+        "left": 94
+      },
+      "mapa": {
+        "x": 826,
+        "y": 201.71875,
+        "width": 360,
+        "height": 474.671875,
+        "top": 201.71875,
+        "right": 1186,
+        "bottom": 676.390625,
+        "left": 826
+      },
+      "primeiroCartao": {
+        "x": 94,
+        "y": 584.421875,
+        "width": 330.171875,
+        "height": 160.15625,
+        "top": 584.421875,
+        "right": 424.171875,
+        "bottom": 744.578125,
+        "left": 94
+      },
+      "valores": 58,
+      "selos": 49,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "7f313b653b0b88f0d88bc8539af21cb9c6ca7d0d215aa3db3ada3b22d68f573f"
+    },
+    {
+      "ficheiro": "depois-pais-pt-1600.png",
+      "rota": "/",
+      "familia": "pais",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "finalDaIAInteiro": true,
+      "titulo": "O Estado do País",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 70.515625
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 52.890625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 71.46875
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 49.4375
+        }
+      ],
+      "leitura": {
+        "x": 254,
+        "y": 201.71875,
+        "width": 684,
+        "height": 216.5625,
+        "top": 201.71875,
+        "right": 938,
+        "bottom": 418.28125,
+        "left": 254
+      },
+      "mapa": {
+        "x": 986,
+        "y": 201.71875,
+        "width": 360,
+        "height": 474.671875,
+        "top": 201.71875,
+        "right": 1346,
+        "bottom": 676.390625,
+        "left": 986
+      },
+      "primeiroCartao": {
+        "x": 254,
+        "y": 587.46875,
+        "width": 325,
+        "height": 160.15625,
+        "top": 587.46875,
+        "right": 579,
+        "bottom": 747.625,
+        "left": 254
+      },
+      "valores": 58,
+      "selos": 49,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "25c4eaa4cd1a3ea81db51c24a18d04cb6247321294e63d2cb718cb79accf5a26"
+    },
+    {
+      "ficheiro": "depois-pais-en-390.png",
+      "rota": "/en/",
+      "familia": "pais",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "finalDaIAInteiro": true,
+      "titulo": "O Estado do País",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 73.34375
+        },
+        {
+          "texto": "Places",
+          "y": 0,
+          "largura": 50.296875
+        },
+        {
+          "texto": "Themes",
+          "y": 0,
+          "largura": 55.734375
+        },
+        {
+          "texto": "Studies",
+          "y": 0,
+          "largura": 57.40625
+        },
+        {
+          "texto": "About",
+          "y": 0,
+          "largura": 47.4375
+        }
+      ],
+      "leitura": {
+        "x": 18,
+        "y": 132.359375,
+        "width": 354,
+        "height": 240,
+        "top": 132.359375,
+        "right": 372,
+        "bottom": 372.359375,
+        "left": 18
+      },
+      "mapa": {
+        "x": 18,
+        "y": 394.359375,
+        "width": 354,
+        "height": 466.765625,
+        "top": 394.359375,
+        "right": 372,
+        "bottom": 861.125,
+        "left": 18
+      },
+      "primeiroCartao": {
+        "x": 18,
+        "y": 1167.5,
+        "width": 354,
+        "height": 135.359375,
+        "top": 1167.5,
+        "right": 372,
+        "bottom": 1302.859375,
+        "left": 18
+      },
+      "valores": 58,
+      "selos": 49,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "3fca9bdfacbc1162b04ad3b69fd33297340d0956a8bef75dc5cc08b0ad5fbaab"
+    },
+    {
+      "ficheiro": "depois-pais-en-1280.png",
+      "rota": "/en/",
+      "familia": "pais",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "finalDaIAInteiro": true,
+      "titulo": "O Estado do País",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Places",
+          "y": 0,
+          "largura": 57.6875
+        },
+        {
+          "texto": "Themes",
+          "y": 0,
+          "largura": 63.734375
+        },
+        {
+          "texto": "Studies",
+          "y": 0,
+          "largura": 65.890625
+        },
+        {
+          "texto": "About",
+          "y": 0,
+          "largura": 54.203125
+        }
+      ],
+      "leitura": {
+        "x": 94,
+        "y": 201.71875,
+        "width": 693.609375,
+        "height": 178.46875,
+        "top": 201.71875,
+        "right": 787.609375,
+        "bottom": 380.1875,
+        "left": 94
+      },
+      "mapa": {
+        "x": 826,
+        "y": 201.71875,
+        "width": 360,
+        "height": 474.671875,
+        "top": 201.71875,
+        "right": 1186,
+        "bottom": 676.390625,
+        "left": 826
+      },
+      "primeiroCartao": {
+        "x": 94,
+        "y": 546.328125,
+        "width": 330.171875,
+        "height": 138.96875,
+        "top": 546.328125,
+        "right": 424.171875,
+        "bottom": 685.296875,
+        "left": 94
+      },
+      "valores": 58,
+      "selos": 49,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "cda19ac256eabc62787a4a00f087115e5d21e447b8c439e1d937af1321393144"
+    },
+    {
+      "ficheiro": "depois-temas-pt-390.png",
+      "rota": "/temas/",
+      "familia": "temas",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "finalDaIAInteiro": true,
+      "titulo": "Temas",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 73.34375
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 61.578125
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 46.265625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 62.4375
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 43.140625
+        }
+      ],
+      "primeiroCartao": {
+        "x": 18,
+        "y": 199.84375,
+        "width": 354,
+        "height": 135.359375,
+        "top": 199.84375,
+        "right": 372,
+        "bottom": 335.203125,
+        "left": 18
+      },
+      "valores": 89,
+      "selos": 35,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "193653b939079d2cea0a9291e134e6f723ea399c3ba4762339c599ad1f0126b2"
+    },
+    {
+      "ficheiro": "depois-temas-pt-768.png",
+      "rota": "/temas/",
+      "familia": "temas",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "finalDaIAInteiro": true,
+      "titulo": "Temas",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 70.515625
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 52.890625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 71.46875
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 49.4375
+        }
+      ],
+      "primeiroCartao": {
+        "x": 30.71875,
+        "y": 236.46875,
+        "width": 343.296875,
+        "height": 160.15625,
+        "top": 236.46875,
+        "right": 374.015625,
+        "bottom": 396.625,
+        "left": 30.71875
+      },
+      "valores": 89,
+      "selos": 35,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "a0b8d77f7067d829f7c7794abd2025be47e6144529b55d2460ee46e66175951f"
+    },
+    {
+      "ficheiro": "depois-temas-pt-1024.png",
+      "rota": "/temas/",
+      "familia": "temas",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "finalDaIAInteiro": true,
+      "titulo": "Temas",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 70.515625
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 52.890625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 71.46875
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 49.4375
+        }
+      ],
+      "primeiroCartao": {
+        "x": 40.953125,
+        "y": 267.234375,
+        "width": 296.28125,
+        "height": 187.5625,
+        "top": 267.234375,
+        "right": 337.234375,
+        "bottom": 454.796875,
+        "left": 40.953125
+      },
+      "valores": 89,
+      "selos": 35,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "1dd76248aa3971bb462442288e801697f011517a84bb68534e28787d9467ed02"
+    },
+    {
+      "ficheiro": "depois-temas-pt-1280.png",
+      "rota": "/temas/",
+      "familia": "temas",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "finalDaIAInteiro": true,
+      "titulo": "Temas",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 70.515625
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 52.890625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 71.46875
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 49.4375
+        }
+      ],
+      "primeiroCartao": {
+        "x": 94,
+        "y": 267.640625,
+        "width": 248.046875,
+        "height": 187.5625,
+        "top": 267.640625,
+        "right": 342.046875,
+        "bottom": 455.203125,
+        "left": 94
+      },
+      "valores": 89,
+      "selos": 35,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "5db0aae191e91dff5516aae2a045ac671a363d11ad23f26de934a0029edbb49e"
+    },
+    {
+      "ficheiro": "depois-temas-pt-1600.png",
+      "rota": "/temas/",
+      "familia": "temas",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "finalDaIAInteiro": true,
+      "titulo": "Temas",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 70.515625
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 52.890625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 71.46875
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 49.4375
+        }
+      ],
+      "primeiroCartao": {
+        "x": 254,
+        "y": 267.640625,
+        "width": 341.328125,
+        "height": 187.5625,
+        "top": 267.640625,
+        "right": 595.328125,
+        "bottom": 455.203125,
+        "left": 254
+      },
+      "valores": 89,
+      "selos": 35,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "0859989b9f4128f3577c45b5e968c4a243758fdc292b93298fb4d2ccce8cc818"
+    },
+    {
+      "ficheiro": "depois-temas-en-390.png",
+      "rota": "/en/themes/",
+      "familia": "temas",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "finalDaIAInteiro": true,
+      "titulo": "Themes",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 73.34375
+        },
+        {
+          "texto": "Places",
+          "y": 0,
+          "largura": 50.296875
+        },
+        {
+          "texto": "Themes",
+          "y": 0,
+          "largura": 55.734375
+        },
+        {
+          "texto": "Studies",
+          "y": 0,
+          "largura": 57.40625
+        },
+        {
+          "texto": "About",
+          "y": 0,
+          "largura": 47.4375
+        }
+      ],
+      "primeiroCartao": {
+        "x": 18,
+        "y": 199.84375,
+        "width": 354,
+        "height": 135.359375,
+        "top": 199.84375,
+        "right": 372,
+        "bottom": 335.203125,
+        "left": 18
+      },
+      "valores": 89,
+      "selos": 35,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "49978b3b7e9eb49583b48dce78e47884c2bde9bb04c0fbe52bb1c014b0b7f9ce"
+    },
+    {
+      "ficheiro": "depois-temas-en-1280.png",
+      "rota": "/en/themes/",
+      "familia": "temas",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "finalDaIAInteiro": true,
+      "titulo": "Themes",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Places",
+          "y": 0,
+          "largura": 57.6875
+        },
+        {
+          "texto": "Themes",
+          "y": 0,
+          "largura": 63.734375
+        },
+        {
+          "texto": "Studies",
+          "y": 0,
+          "largura": 65.890625
+        },
+        {
+          "texto": "About",
+          "y": 0,
+          "largura": 54.203125
+        }
+      ],
+      "primeiroCartao": {
+        "x": 94,
+        "y": 267.640625,
+        "width": 248.046875,
+        "height": 208.75,
+        "top": 267.640625,
+        "right": 342.046875,
+        "bottom": 476.390625,
+        "left": 94
+      },
+      "valores": 89,
+      "selos": 35,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "2f317bd29f59c8fcb0278139b4c0da461584b5bb2e625db077f92ae3386f2073"
+    },
+    {
+      "ficheiro": "depois-concelho-pt-390.png",
+      "rota": "/municipios/evora/",
+      "familia": "concelho",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "finalDaIAInteiro": true,
+      "titulo": "Évora",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 73.34375
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 61.578125
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 46.265625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 62.4375
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 43.140625
+        }
+      ],
+      "valores": 87,
+      "selos": 94,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "e6c55e60ab198e34172599e7a000af9214e9421c4eeebbe60a5ddae44d9a78ba"
+    },
+    {
+      "ficheiro": "depois-concelho-pt-768.png",
+      "rota": "/municipios/evora/",
+      "familia": "concelho",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "finalDaIAInteiro": true,
+      "titulo": "Évora",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 70.515625
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 52.890625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 71.46875
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 49.4375
+        }
+      ],
+      "valores": 87,
+      "selos": 94,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "23eb4da8a1059dc554f60d90d44d7bc97c50b874cc38e87ec75f36f5f4556b1f"
+    },
+    {
+      "ficheiro": "depois-concelho-pt-1024.png",
+      "rota": "/municipios/evora/",
+      "familia": "concelho",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "finalDaIAInteiro": true,
+      "titulo": "Évora",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 70.515625
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 52.890625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 71.46875
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 49.4375
+        }
+      ],
+      "valores": 87,
+      "selos": 94,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "ae073e2fad41be8f6ecb34cb5060cb776cecc8c672c2938fc50611769c103816"
+    },
+    {
+      "ficheiro": "depois-concelho-pt-1280.png",
+      "rota": "/municipios/evora/",
+      "familia": "concelho",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "finalDaIAInteiro": true,
+      "titulo": "Évora",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 70.515625
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 52.890625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 71.46875
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 49.4375
+        }
+      ],
+      "valores": 87,
+      "selos": 94,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "9e87ef9b863e6cf564a64776820ba008cef435302c09140500b85ad9ca4457f5"
+    },
+    {
+      "ficheiro": "depois-concelho-pt-1600.png",
+      "rota": "/municipios/evora/",
+      "familia": "concelho",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "finalDaIAInteiro": true,
+      "titulo": "Évora",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 70.515625
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 52.890625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 71.46875
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 49.4375
+        }
+      ],
+      "valores": 87,
+      "selos": 94,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "6d25c265d465914d02a6b7ea0aa9ac3915f226a4e3e5b388e1a8ca25c8fa1265"
+    },
+    {
+      "ficheiro": "depois-concelho-en-390.png",
+      "rota": "/en/municipalities/evora/",
+      "familia": "concelho",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "finalDaIAInteiro": true,
+      "titulo": "Évora",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 73.34375
+        },
+        {
+          "texto": "Places",
+          "y": 0,
+          "largura": 50.296875
+        },
+        {
+          "texto": "Themes",
+          "y": 0,
+          "largura": 55.734375
+        },
+        {
+          "texto": "Studies",
+          "y": 0,
+          "largura": 57.40625
+        },
+        {
+          "texto": "About",
+          "y": 0,
+          "largura": 47.4375
+        }
+      ],
+      "valores": 87,
+      "selos": 94,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "2106dc226891fde9ef26347b85fcfc1fef95771ac1008ac44bb4d26615b4763c"
+    },
+    {
+      "ficheiro": "depois-concelho-en-1280.png",
+      "rota": "/en/municipalities/evora/",
+      "familia": "concelho",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "finalDaIAInteiro": true,
+      "titulo": "Évora",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Places",
+          "y": 0,
+          "largura": 57.6875
+        },
+        {
+          "texto": "Themes",
+          "y": 0,
+          "largura": 63.734375
+        },
+        {
+          "texto": "Studies",
+          "y": 0,
+          "largura": 65.890625
+        },
+        {
+          "texto": "About",
+          "y": 0,
+          "largura": 54.203125
+        }
+      ],
+      "valores": 87,
+      "selos": 94,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "930366f89cb8d4e57463173e179e3e3e86e9c8ed90861960824f11abc0cec74d"
+    },
+    {
+      "ficheiro": "depois-estudo-pt-390.png",
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/",
+      "familia": "estudo",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "finalDaIAInteiro": true,
+      "titulo": "Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 73.34375
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 61.578125
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 46.265625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 62.4375
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 43.140625
+        }
+      ],
+      "valores": 190,
+      "selos": 0,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "287e9fc64ff5a9b2a430c1bc1a181912b7eea719878b0f6211436fd8af89f6b6"
+    },
+    {
+      "ficheiro": "depois-estudo-pt-768.png",
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/",
+      "familia": "estudo",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "finalDaIAInteiro": true,
+      "titulo": "Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 70.515625
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 52.890625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 71.46875
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 49.4375
+        }
+      ],
+      "valores": 190,
+      "selos": 0,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "6af1af3cf070c5d3a7c07a4e071457dd54c3c9ad24e39a11cb2630b1d2cc05e5"
+    },
+    {
+      "ficheiro": "depois-estudo-pt-1024.png",
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/",
+      "familia": "estudo",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "finalDaIAInteiro": true,
+      "titulo": "Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 70.515625
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 52.890625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 71.46875
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 49.4375
+        }
+      ],
+      "valores": 190,
+      "selos": 0,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "fbf77519beeff8153e3b63f493d0c5f332bcdd2bdf15e8de3886e1a404d8f08d"
+    },
+    {
+      "ficheiro": "depois-estudo-pt-1280.png",
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/",
+      "familia": "estudo",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "finalDaIAInteiro": true,
+      "titulo": "Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 70.515625
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 52.890625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 71.46875
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 49.4375
+        }
+      ],
+      "valores": 190,
+      "selos": 0,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "cfaccf3abd622d7f51537dca622e49f2ea5ac0dac90c4c82507138af95bb4f94"
+    },
+    {
+      "ficheiro": "depois-estudo-pt-1600.png",
+      "rota": "/estudos/evora-2027-prometido-painel-dinheiro/",
+      "familia": "estudo",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "finalDaIAInteiro": true,
+      "titulo": "Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 70.515625
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 52.890625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 71.46875
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 49.4375
+        }
+      ],
+      "valores": 190,
+      "selos": 0,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "5a2de01d3bcaae612fa282ca4b92e13d3e2dd8ab35aaa0b1dd4742b8aca6ad82"
+    },
+    {
+      "ficheiro": "depois-estudo-en-390.png",
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/",
+      "familia": "estudo",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "finalDaIAInteiro": true,
+      "titulo": "Évora 2027: what was promised, what the panel wrote, and the money line by line",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 73.34375
+        },
+        {
+          "texto": "Places",
+          "y": 0,
+          "largura": 50.296875
+        },
+        {
+          "texto": "Themes",
+          "y": 0,
+          "largura": 55.734375
+        },
+        {
+          "texto": "Studies",
+          "y": 0,
+          "largura": 57.40625
+        },
+        {
+          "texto": "About",
+          "y": 0,
+          "largura": 47.4375
+        }
+      ],
+      "valores": 190,
+      "selos": 0,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "0379591fb1173c85ab158b46c56734e695ef9bb925fe3882de53bdcd1d887fad"
+    },
+    {
+      "ficheiro": "depois-estudo-en-1280.png",
+      "rota": "/en/studies/evora-2027-prometido-painel-dinheiro/",
+      "familia": "estudo",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "finalDaIAInteiro": true,
+      "titulo": "Évora 2027: what was promised, what the panel wrote, and the money line by line",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Places",
+          "y": 0,
+          "largura": 57.6875
+        },
+        {
+          "texto": "Themes",
+          "y": 0,
+          "largura": 63.734375
+        },
+        {
+          "texto": "Studies",
+          "y": 0,
+          "largura": 65.890625
+        },
+        {
+          "texto": "About",
+          "y": 0,
+          "largura": 54.203125
+        }
+      ],
+      "valores": 190,
+      "selos": 0,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "a4134d01ae50c1f6b17886954c8b25bde0e6502c6ec37ae4c4a0889708880eb7"
+    },
+    {
+      "ficheiro": "depois-sobre-pt-390.png",
+      "rota": "/sobre/",
+      "familia": "sobre",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "finalDaIAInteiro": true,
+      "titulo": "Sobre",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 73.34375
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 61.578125
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 46.265625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 62.4375
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 43.140625
+        }
+      ],
+      "valores": 0,
+      "selos": 0,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "dd3ab2065da6de4b9edd24a902891c80f3bf601f1ae6059f992a347ed5e01fcc"
+    },
+    {
+      "ficheiro": "depois-sobre-pt-768.png",
+      "rota": "/sobre/",
+      "familia": "sobre",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "finalDaIAInteiro": true,
+      "titulo": "Sobre",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 70.515625
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 52.890625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 71.46875
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 49.4375
+        }
+      ],
+      "valores": 0,
+      "selos": 0,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "b9b823ad6565742f19e305deee5bc843e8eac4cf07325cd7810c87384daa1814"
+    },
+    {
+      "ficheiro": "depois-sobre-pt-1024.png",
+      "rota": "/sobre/",
+      "familia": "sobre",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "finalDaIAInteiro": true,
+      "titulo": "Sobre",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 70.515625
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 52.890625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 71.46875
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 49.4375
+        }
+      ],
+      "valores": 0,
+      "selos": 0,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "864edde5ec11c4c092f5a1742948003c065a09cc595c2480613d3d25aee6ed3b"
+    },
+    {
+      "ficheiro": "depois-sobre-pt-1280.png",
+      "rota": "/sobre/",
+      "familia": "sobre",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "finalDaIAInteiro": true,
+      "titulo": "Sobre",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 70.515625
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 52.890625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 71.46875
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 49.4375
+        }
+      ],
+      "valores": 0,
+      "selos": 0,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "8f449b62fe009c093175a851706ca3f88922072cb2b08c7004cd46456312dc82"
+    },
+    {
+      "ficheiro": "depois-sobre-pt-1600.png",
+      "rota": "/sobre/",
+      "familia": "sobre",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "finalDaIAInteiro": true,
+      "titulo": "Sobre",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Lugares",
+          "y": 0,
+          "largura": 70.515625
+        },
+        {
+          "texto": "Temas",
+          "y": 0,
+          "largura": 52.890625
+        },
+        {
+          "texto": "Estudos",
+          "y": 0,
+          "largura": 71.46875
+        },
+        {
+          "texto": "Sobre",
+          "y": 0,
+          "largura": 49.4375
+        }
+      ],
+      "valores": 0,
+      "selos": 0,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "266ac4f774da57863fde723513c87ec3aa85c590eb77a5b568195042c57f88d6"
+    },
+    {
+      "ficheiro": "depois-sobre-en-390.png",
+      "rota": "/en/about/",
+      "familia": "sobre",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "finalDaIAInteiro": true,
+      "titulo": "About",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 73.34375
+        },
+        {
+          "texto": "Places",
+          "y": 0,
+          "largura": 50.296875
+        },
+        {
+          "texto": "Themes",
+          "y": 0,
+          "largura": 55.734375
+        },
+        {
+          "texto": "Studies",
+          "y": 0,
+          "largura": 57.40625
+        },
+        {
+          "texto": "About",
+          "y": 0,
+          "largura": 47.4375
+        }
+      ],
+      "valores": 0,
+      "selos": 0,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "91f9042c5920c77a64af51401ab5deb8ed4aa43190b25d04b201754d64647c6a"
+    },
+    {
+      "ficheiro": "depois-sobre-en-1280.png",
+      "rota": "/en/about/",
+      "familia": "sobre",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "finalDaIAInteiro": true,
+      "titulo": "About",
+      "menu": [
+        {
+          "texto": "Portugal",
+          "y": 0,
+          "largura": 83.890625
+        },
+        {
+          "texto": "Places",
+          "y": 0,
+          "largura": 57.6875
+        },
+        {
+          "texto": "Themes",
+          "y": 0,
+          "largura": 63.734375
+        },
+        {
+          "texto": "Studies",
+          "y": 0,
+          "largura": 65.890625
+        },
+        {
+          "texto": "About",
+          "y": 0,
+          "largura": 54.203125
+        }
+      ],
+      "valores": 0,
+      "selos": 0,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "separadoresQuebraveis": 0,
+      "selosSemNowrap": 0,
+      "deslocamento": 0,
+      "sha256": "3ad8fca810a6af77c65a9273ba251311c6c4e5c4ae39db0257172a1b594d02cb"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+
+> o-estado-do-pais@0.1.0 check:cartao
+> node tests/cartao/cartao.mjs --prova
+
+[90m  prova: 11 estragos plantados, 11 vistos; o cartão são a 0; a régua com as duas comparações de uma medida, a série bienal, a ausência da linha da União e uma chave que não se inventa; as duas testemunhas do valor de referência com um par bom e dois maus; a mesma série com um par que bate e um que não bate[0m
+
+  A RÉGUA DO CARTÃO DE UMA MEDIDA · bloco P2
+
+[90m    páginas lidas                    7354[0m
+[90m    cartões                          5272 (2636 pt, 2636 en)[0m
+[90m    com nome                         5272 de 5272[0m
+[90m    com a frase do que medem         4398 de 5272 com frase[0m
+[90m    com régua                        766 de 5272 com régua[0m
+[90m    linhas sem nome, como linha do livro-razão             48 (42 com a aritmética escrita)[0m
+[90m    itens «período anterior», pares conferidos             152[0m
+[90m    «Governo Constitucional»         1 pt · 1 en[0m
+[90m    legenda da marca                 2 página(s)[0m
+[90m    nome na língua da fonte          0 (com a marca «lang»)[0m
+[90m    unidade na outra língua          1 (a exceção da I92)[0m
+[90m    o marcador em português          6 (a exceção da IDENTIDADE §6)[0m
+[90m    valores de régua sem marca própria                    282 (a porta é a do cartão)[0m
+[90m    valores de referência, as duas testemunhas comparadas  13[0m
+[90m    medidas com nome oficial no recibo                    0[0m
+[90m    ficheiros do motor               referencias.json sim · nomes.json sim[0m
+
+[31m  3 defeito(s):[0m
+    K6 · /en/themes/ · divida-das-empresas-2025: a frase do cartão diz «NFC consolidated debt, as a percentage of GDP; the…» e a declaração diz «NFC consolidated debt, as a percentage of GDP; the…»
+    K6 · /en/themes/ · fluxo-de-credito-as-empresas-2025: a frase do cartão diz «The consolidated credit flow to NFC, excluding for…» e a declaração diz «The consolidated credit flow to NFC, excluding for…»
+    K6 · /temas/ · divida-das-empresas-2025: a frase do cartão diz «A dívida consolidada das NFC, em percentagem do PI…» e a declaração diz «A dívida consolidada das NFC, em percentagem do PI…»
+

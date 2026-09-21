@@ -1,0 +1,8 @@
+
+> o-estado-do-pais@0.1.0 check:nomes
+> node scripts/check-nomes-oficiais.mjs --prova
+
+[90m
+  nomes oficiais · 7354 página(s) lidas, 13 analisadas · 0 nome(s) em recibo, 0 em título de cartão · confirmados no ficheiro do motor: 0 do INE, 0 da PORDATA · recusados: 36[0m
+[33m  nenhum nome do ficheiro do motor está marcado «mesma_medida: true»: nenhum nome oficial se rende, e voltam um a um quando o motor os confirmar.[0m
+  [32m✓[0m nenhuma página rende um nome oficial que o motor não confirme como a mesma medida, e as 21 plantas foram recusadas ou aceites como deviam.

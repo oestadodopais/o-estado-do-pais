@@ -1,0 +1,107 @@
+[
+  {
+    "nome": "páginas sem estrago",
+    "codigo": 0,
+    "celula": "todas",
+    "passou": true,
+    "saida": "B1 país: 35 medidas, 9 temas, 4 menus, 1 mudanças declaradas.\nB1 país: todas as conferências a 0."
+  },
+  {
+    "nome": "medida rendida sem tema declarado",
+    "codigo": 1,
+    "celula": "T2",
+    "passou": true,
+    "saida": "B1 país: 34 medidas, 9 temas, 4 menus, 1 mudanças declaradas.\nT2 pt país: pib-real-per-capita-2025 sem tema na tabela.\nT2 pt temas: pib-real-per-capita-2025 sem tema na tabela.\nT2 en país: pib-real-per-capita-2025 sem tema na tabela.\nT2 en temas: pib-real-per-capita-2025 sem tema na tabela."
+  },
+  {
+    "nome": "medida do país no tema errado",
+    "codigo": 1,
+    "celula": "T3",
+    "passou": true,
+    "saida": "B1 país: 35 medidas, 9 temas, 4 menus, 1 mudanças declaradas.\nT3 pt país: pib-real-per-capita-2025 no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT3 pt país: saldo-das-administracoes-publicas-2025 no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT3 pt país: crescimento-da-despesa-liquida-2025 no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT3 pt país: indice-de-divida-limite-legal no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT6 pt país: conjunto de temas diferente da tabela.\nT8 pt: porta do tema em falta."
+  },
+  {
+    "nome": "medida repetida",
+    "codigo": 1,
+    "celula": "T4",
+    "passou": true,
+    "saida": "B1 país: 35 medidas, 9 temas, 4 menus, 1 mudanças declaradas.\nT4 pt temas: medida repetida pib-real-per-capita-2025."
+  },
+  {
+    "nome": "medida publicada ausente",
+    "codigo": 1,
+    "celula": "T5",
+    "passou": true,
+    "saida": "B1 país: 35 medidas, 9 temas, 4 menus, 1 mudanças declaradas.\nT5 pt: faltam medidas publicadas na página dos temas."
+  },
+  {
+    "nome": "mudança sem secção",
+    "codigo": 1,
+    "celula": "M1",
+    "passou": true,
+    "saida": "B1 país: 35 medidas, 9 temas, 4 menus, 1 mudanças declaradas.\nM1: nomes-ine-2026-09-21 sem secção existente de DECISIONS.md."
+  },
+  {
+    "nome": "mudança com secção inexistente",
+    "codigo": 1,
+    "celula": "M1",
+    "passou": true,
+    "saida": "B1 país: 35 medidas, 9 temas, 4 menus, 1 mudanças declaradas.\nM1: nomes-ine-2026-09-21 sem secção existente de DECISIONS.md."
+  },
+  {
+    "nome": "correção de linha ausente",
+    "codigo": 1,
+    "celula": "C1",
+    "passou": true,
+    "saida": "B1 país: 35 medidas, 9 temas, 4 menus, 1 mudanças declaradas.\nC1 pt: falta uma correção por linha e dia, ou está repetida."
+  },
+  {
+    "nome": "texto da mudança alterado",
+    "codigo": 1,
+    "celula": "M2",
+    "passou": true,
+    "saida": "B1 país: 35 medidas, 9 temas, 4 menus, 1 mudanças declaradas.\nM2 pt: a mudança nomes-ine-2026-09-21 não coincide com a declaração."
+  },
+  {
+    "nome": "ordem dos estudos trocada",
+    "codigo": 1,
+    "celula": "E1",
+    "passou": true,
+    "saida": "B1 país: 35 medidas, 9 temas, 4 menus, 1 mudanças declaradas.\nE1 pt: os três estudos não são os mais recentes."
+  },
+  {
+    "nome": "comparação europeia sem recibo",
+    "codigo": 1,
+    "celula": "L3",
+    "passou": true,
+    "saida": "B1 país: 35 medidas, 9 temas, 4 menus, 1 mudanças declaradas.\nL3 pt: a leitura perdeu o recibo taxa-de-desemprego-2025-ue."
+  },
+  {
+    "nome": "sexta entrada no menu",
+    "codigo": 1,
+    "celula": "N1",
+    "passou": true,
+    "saida": "B1 país: 35 medidas, 9 temas, 4 menus, 1 mudanças declaradas.\nN1: menu de cinco errado em index.html."
+  },
+  {
+    "nome": "ponto final sem ligação inseparável",
+    "codigo": 1,
+    "celula": "N2",
+    "passou": true,
+    "saida": "B1 país: 35 medidas, 9 temas, 4 menus, 1 mudanças declaradas.\nN2: ponto final sem ligação inseparável em index.html."
+  },
+  {
+    "nome": "frase explicativa fora da lista fechada",
+    "codigo": 1,
+    "celula": "B1 voz",
+    "passou": true,
+    "saida": "B1 lista fechada país: /: «Esta página explica como se deve ler o projeto.»."
+  },
+  {
+    "nome": "leitura aprovada alterada",
+    "codigo": 1,
+    "celula": "B1 leitura",
+    "passou": true,
+    "saida": "B1 leitura aprovada: / difere do texto da direção."
+  }
+]

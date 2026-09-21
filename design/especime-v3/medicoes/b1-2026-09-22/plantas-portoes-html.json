@@ -1,0 +1,32 @@
+[
+  {
+    "nome": "html",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "B1 mudança: campo rendido difere",
+      "93\\.5",
+      "unidade plantada",
+      "unidade de correção plantada",
+      "sem selo para a sua própria linha"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "1e32f5d8a2664780b520f751f4503222780fbfff0e7c4396a9e9b77c0ee5b190",
+        "reposto": "1e32f5d8a2664780b520f751f4503222780fbfff0e7c4396a9e9b77c0ee5b190"
+      },
+      {
+        "ficheiro": "dist/en/index.html",
+        "antes": "9cf22b408f49f7c2326c9dec91468f74d410af9582bb7fdef2656814479b5fbb",
+        "reposto": "9cf22b408f49f7c2326c9dec91468f74d410af9582bb7fdef2656814479b5fbb"
+      },
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "8d15fce13fde342c8191b0d99e084ce3b398d90b08426b5f488db5ac94623942",
+        "reposto": "8d15fce13fde342c8191b0d99e084ce3b398d90b08426b5f488db5ac94623942"
+      }
+    ]
+  }
+]

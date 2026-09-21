@@ -1,0 +1,174 @@
+{
+  "capturas_conferidas": [
+    {
+      "ficheiro": "antes-pais-pt-390.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "antes-pais-pt-1280.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "antes-sobre-pt-390.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "antes-sobre-pt-1280.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-pais-pt-390.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-pais-pt-768.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-pais-pt-1024.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-pais-pt-1280.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-pais-pt-1600.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-pais-en-390.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-pais-en-1280.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-temas-pt-390.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-temas-pt-768.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-temas-pt-1024.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-temas-pt-1280.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-temas-pt-1600.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-temas-en-390.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-temas-en-1280.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-concelho-pt-390.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-concelho-pt-768.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-concelho-pt-1024.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-concelho-pt-1280.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-concelho-pt-1600.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-concelho-en-390.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-concelho-en-1280.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-estudo-pt-390.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-estudo-pt-768.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-estudo-pt-1024.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-estudo-pt-1280.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-estudo-pt-1600.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-estudo-en-390.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-estudo-en-1280.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-sobre-pt-390.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-sobre-pt-768.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-sobre-pt-1024.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-sobre-pt-1280.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-sobre-pt-1600.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-sobre-en-390.png",
+      "sha256_certo": true
+    },
+    {
+      "ficheiro": "depois-sobre-en-1280.png",
+      "sha256_certo": true
+    }
+  ],
+  "plantas_do_pais": 15,
+  "codigos_completos": {
+    "build": 0,
+    "verify": 1,
+    "typecheck": 0
+  },
+  "continuacao": {
+    "indice": 0,
+    "cartao": 0,
+    "nomes": 0,
+    "palavras": 0,
+    "feixe": 0
+  },
+  "cabeca_das_reguas": "8ad55589b494bed6238b2a3eb3d0512f0bf69546"
+}
