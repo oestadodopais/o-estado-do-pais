@@ -332,7 +332,9 @@ export function nomeOficial(id) {
   const util = (o) => {
     if (!o || typeof o !== 'object') return null;
     if (o.mesma_medida !== true) return null;
-    if (typeof o.aviso === 'string' && o.aviso.trim() !== '') return null;
+    /* A PRESENÇA do campo chega: um aviso vazio, ou de outro tipo, continua a ser o
+       motor a dizer que há um aviso (releitura a frio de 21.09.2026, achado 8). */
+    if (Object.prototype.hasOwnProperty.call(o, 'aviso')) return null;
     const nome = o.nome;
     if (typeof nome !== 'string' || nome.trim() === '' || nome === MARCADOR) return null;
     const endereco = typeof o.endereco === 'string' ? o.endereco : '';

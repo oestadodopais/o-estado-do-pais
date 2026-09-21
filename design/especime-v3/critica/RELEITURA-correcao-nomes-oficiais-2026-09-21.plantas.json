@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-21T13:51:32+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/e52c0f39-ab9c-4e0f-b9db-11d420f316ed/scratchpad/releitura-nomes/pacote",
+ "plantas": [
+  {
+   "id": "Q1",
+   "ficheiro": "src/lib/enquadramento.mjs",
+   "descricao": "a função do sítio volta à regra fraca: aceita um nome sem estado (classe: a fonte e o diff)",
+   "sha256_antes": "83a0d5ddc646cd8927e323fbf3ce7063759c6c4329d2e068240e12172f97d5bd",
+   "sha256_depois": "8ce6ffbe4a146046d72b04e01f1513fe0829d980c71d87bfa5611f173e01ec5f",
+   "contexto_antes": "(id);\n  if (!n || n.correspondencia !== 'exata') return null;\n  /** @param {any} o */\n  const util = (o) => {\n    if (!o || typeof o !== 'object') return null;\n    if (o.mesma_medida !== true) return null;\n    if (typeof o.aviso === 'string' && o.aviso.trim() !== '') return null;\n    const nome = o.nome;\n    if (typeof nome !== 'string' || nome.trim() === '' || nome === MARCADOR) retur",
+   "contexto_depois": "(id);\n  if (!n || n.correspondencia !== 'exata') return null;\n  /** @param {any} o */\n  const util = (o) => {\n    if (!o || typeof o !== 'object') return null;\n    if (o.mesma_medida === false) return null;\n    if (typeof o.aviso === 'string' && o.aviso.trim() !== '') return null;\n    const nome = o.nome;\n    if (typeof nome !== 'string' || nome.trim() === '' || nome === MARCADOR) retur"
+  },
+  {
+   "id": "Q2",
+   "ficheiro": "scripts/check-nomes-oficiais.mjs",
+   "descricao": "a N5 deixa de olhar para as ligações sem marca (classe: a régua)",
+   "sha256_antes": "4d440ab83dd950b7debabc0fed378c7c38d151aba27a8eb338ca0ba7c99fabea",
+   "sha256_depois": "8e50af729c5a7c62c907fc0c28be28f6c3ca8378c9fa214baaacb01bbeb84742",
+   "contexto_antes": "células de cima; estas duas procuram o que não pode estar em\n     página nenhuma, pelo endereço e pelo texto inteiro. */\n  if (nomes.enderecosRecusados.size) {\n    for (const a of root.querySelectorAll('a[href]')) {\n      const r = nomes.enderecosRecusados.get(a.getAttribute('href') ?? '');\n      if (r) erros.push(`N5 ${relativo}: uma ligação aponta para o endereço do nome",
+   "contexto_depois": "células de cima; estas duas procuram o que não pode estar em\n     página nenhuma, pelo endereço e pelo texto inteiro. */\n  if (nomes.enderecosRecusados.size) {\n    for (const a of root.querySelectorAll('[data-nonledger] a[href]')) {\n      const r = nomes.enderecosRecusados.get(a.getAttribute('href') ?? '');\n      if (r) erros.push(`N5 ${relativo}: uma ligação aponta para o endereço do nome"
+  },
+  {
+   "id": "Q3",
+   "ficheiro": "src/data/nomes-das-medidas.mjs",
+   "descricao": "um nome inglês do projeto que diz outra coisa (classe: os dados e a prosa)",
+   "sha256_antes": "da6e5f33a73b7ea8e3e728778caa2bd02fd8f25681f4a1abc771bd13e3c35171",
+   "sha256_depois": "5f35882ef31d20bec774f83011fde0d7a07fafa178bfa2db9d93712c3c1a6042",
+   "contexto_antes": "ta de capital fixo)',\n    en: 'Investment (gross fixed capital formation)',\n  },\n  'despesa-em-id-2024': {\n    pt: 'Despesa em investigação e desenvolvimento',\n    en: 'Spending on research and development',\n  },\n  'competencias-digitais-2025': {\n    pt: 'Pessoas com competências digitais básicas ou superiores',\n    en: 'People with basic or above basic digital ski",
+   "contexto_depois": "ta de capital fixo)',\n    en: 'Investment (gross fixed capital formation)',\n  },\n  'despesa-em-id-2024': {\n    pt: 'Despesa em investigação e desenvolvimento',\n    en: 'Spending on research and education',\n  },\n  'competencias-digitais-2025': {\n    pt: 'Pessoas com competências digitais básicas ou superiores',\n    en: 'People with basic or above basic digital ski"
+  },
+  {
+   "id": "Q4",
+   "ficheiro": "built/areas/economia-e-coesao-territorial/index.html",
+   "descricao": "o título do cartão na página construída diverge do ficheiro de nomes (classe: a página construída)",
+   "sha256_antes": "119cfdc25445b60f9708b29a9980d267fbb893b6d84ace87af6fee6963e00b5e",
+   "sha256_depois": "2b35a781ac1ed86229a3ec97125f2ccc1a12abded9646b1831832b7a20aee4f4",
+   "contexto_antes": "xo-2025\" data-estado=\"completa\" data-area-peca=\"medida\"><span class=\"cartao-medida-nome\" data-nome=\"projeto\" data-de-linha=\"formacao-bruta-de-capital-fixo-2025\">Investimento (formação bruta de capital fixo)</span><p class=\"cartao-medida-valor\"><span class=\"claim claim-com-chip\"><span data-claim=\"formacao-bruta-de-capital-fixo-2025\" class=\"claim-value cartao-medida-num\">2",
+   "contexto_depois": "xo-2025\" data-estado=\"completa\" data-area-peca=\"medida\"><span class=\"cartao-medida-nome\" data-nome=\"projeto\" data-de-linha=\"formacao-bruta-de-capital-fixo-2025\">Investimento público (formação bruta de capital fixo)</span><p class=\"cartao-medida-valor\"><span class=\"claim claim-com-chip\"><span data-claim=\"formacao-bruta-de-capital-fixo-2025\" class=\"claim-value cartao-medida-num\">2"
+  },
+  {
+   "id": "Q5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a contagem das plantas trocada no relatório (classe: o relatório)",
+   "sha256_antes": "ef006444fd8ec32c847babace3527734b7cf9973684254cae45e4c535715aa12",
+   "sha256_depois": "07da89456253f1574272a0d29f28b55ebcb498941d888b06c84a70af1d569d04",
+   "contexto_antes": "stá em `check-nomes-na-cabeca.log`): 7 354 páginas lidas, 13 analisadas, 0 nomes oficiais em recibo, 0 em título de cartão, 0 confirmados no ficheiro do motor, 36 recusados, as 13 plantas recusadas ou aceites como deviam. Contra a construção anterior (`check-nomes-contra-a-anterior.log`) a régua sai a 1. Os cinco cartões rendem o nome do projeto com `data-nome=\"projeto\"` nas du",
+   "contexto_depois": "stá em `check-nomes-na-cabeca.log`): 7 354 páginas lidas, 13 analisadas, 0 nomes oficiais em recibo, 0 em título de cartão, 0 confirmados no ficheiro do motor, 36 recusados, as 15 plantas recusadas ou aceites como deviam. Contra a construção anterior (`check-nomes-contra-a-anterior.log`) a régua sai a 1. Os cinco cartões rendem o nome do projeto com `data-nome=\"projeto\"` nas du"
+  }
+ ]
+}
