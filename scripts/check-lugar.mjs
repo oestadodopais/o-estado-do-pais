@@ -921,9 +921,13 @@ const INDICES_DA_HIERARQUIA = [];
 for (const lang of LANGS) {
   const s = S[lang];
   INDICES_DA_HIERARQUIA.push(
-    { url: routePath('municipios', lang), frase: s.hierarquia?.territorio, nome: 'municipios' },
-    { url: routePath('distritos', lang), frase: s.hierarquia?.territorio, nome: 'distritos' },
-    { url: routePath('regioes', lang), frase: s.hierarquia?.territorio, nome: 'regioes' },
+    /* A FRASE DE HIERARQUIA DO TERRITÓRIO SAIU COM OS SEUS ÍNDICES (B1, peça 2,
+       21.09.2026). Dizia «O país lê-se em quatro níveis…», e vivia nos três
+       índices do território; dois passaram a redirecionamentos e a página dos
+       lugares não explica os níveis: mostra-os, em duas listas. A célula
+       continua a exigir a frase onde ela é matéria — o índice dos domínios e o
+       das áreas de governo, onde duas famílias com nomes parecidos precisam de
+       uma linha que as distinga. */
     { url: routePath('dominios', lang), frase: s.hierarquia?.dominio, nome: 'dominios' },
     { url: routePath('areas', lang), frase: s.hierarquia?.area, nome: 'areas' },
   );
@@ -1047,8 +1051,11 @@ for (const ficheiro of paginas) {
   }
 
   /* -------------------------------------------------------------------- L2 */
-  if (chaveDaRota !== 'municipios') {
-    /* Os 308 nomes ligados fora de `/municipios`, e fora de uma lista fechada:
+  /* B1, peça 2: a página que lista os 308 passou a ser `/lugares`, e é ela que
+     fica isenta. A régua não afrouxa: continua a contar uma segunda lista dos
+     308 em qualquer outra rota, e o que mudou foi o nome da primeira. */
+  if (chaveDaRota !== 'lugares') {
+    /* Os 308 nomes ligados fora da página dos lugares, e fora de uma lista fechada:
        um `<details>` fechado é a alternativa em texto de um mapa, e o §1 do
        brief deixa-a lá de propósito. */
     /* SÓ UM `<details>` FECHADO É UMA ALTERNATIVA EM TEXTO (Major 12 da leitura
@@ -1269,21 +1276,42 @@ for (const ficheiro of paginas) {
       medidas.d817_pontos_no_concelho += pontos;
       anota('d817_pontos_no_concelho', `${url} · ${pontos} ponto(s) do mapa dos 308`);
     }
-    const areas = corpo.querySelectorAll('[data-mapa-concelhos] [data-areas] a.uni-porta');
-    const mapas = corpo.querySelectorAll('[data-mapa-concelhos]').length;
+    /* ----------------------------------------------------------------------
+       ONDE O CONCELHO FICA, DITO PELA LINHA DO LUGAR (B1, peça 2, 21.09.2026)
+       ----------------------------------------------------------------------
+       O item 8.17b pedia, na página de um concelho, o mapa da unidade dele com o
+       anel no próprio concelho: era o que respondia à pergunta «onde fica». A
+       peça 2 tira o mapa desta página e põe no lugar dele a LINHA DO LUGAR —
+       «Portugal › região › distrito › concelho» —, que responde à mesma pergunta
+       por palavras e com quatro portas em vez de uma.
+
+       A CÉLULA NÃO AFROUXA: passa a exigir a linha, com as quatro partes, a
+       última a ser esta página, e cada destino construído. Um concelho sem linha
+       conta como um concelho que não diz onde fica, que é o que ela protege. O
+       mapa inteiro passou para a página dos lugares. */
+    const linha = corpo.querySelector('[data-lugar-linha]');
+    const partes = linha ? linha.querySelectorAll('a[href]') : [];
+    const aqui = partes.filter((a) => a.getAttribute('aria-current') === 'page');
+    /* A ÚLTIMA PARTE É ESTE CONCELHO, e não outro: a linha declara o slug da
+       página, e a régua compara-o com o da rota. */
     const meu = rota?.params?.slug ?? '';
-    const escolhidos = areas.filter((a) =>
-      (a.querySelector('path')?.getAttribute('class') ?? '').split(/\s+/).includes('uni-escolhida'),
-    );
-    const meuEstaLa = escolhidos.some((a) => a.getAttribute('data-concelho-porta') === meu);
-    if (mapas !== 1 || areas.length === 0 || escolhidos.length !== 1 || !meuEstaLa) {
+    const oDaLinha = linha?.getAttribute('data-lugar-linha') ?? null;
+    const destinosOk = partes.every((a) => {
+      const href = (a.getAttribute('href') ?? '').split('#')[0];
+      if (!href.startsWith('/')) return false;
+      const alvo = normalizePath(href);
+      return alvo === '/' || fs.existsSync(path.join(DIST, alvo.slice(1), 'index.html'));
+    });
+    if (!linha || partes.length !== 4 || aqui.length !== 1 || !destinosOk || oDaLinha !== meu ||
+        normalizePath(aqui[0]?.getAttribute('href') ?? '') !== normalizePath(url)) {
       medidas.d817_concelhos_sem_mapa++;
       anota(
         'd817_concelhos_sem_mapa',
-        `${url} · ${mapas} mapa(s) de área, ${areas.length} área(s), ` +
-          `${escolhidos.length} com anel${meuEstaLa ? '' : ', e nenhum é este concelho'}`,
+        `${url} · ${linha ? partes.length : 0} parte(s) na linha do lugar, ` +
+          `${aqui.length} marcada(s) como esta página${destinosOk ? '' : ', e um destino não está construído'}`,
       );
     }
+    const areas = corpo.querySelectorAll('[data-mapa-concelhos] [data-areas] a.uni-porta');
     for (const a of areas) {
       const href = (a.getAttribute('href') ?? '').split('#')[0];
       if (!href.startsWith('/')) continue;

@@ -484,7 +484,10 @@ const COLACAO = new Intl.Collator('pt');
  * dentro dela, que não é nome nenhum. A seta sai, e o resto lê-se como está.
  */
 const semSeta = (t) => t.replace(/\s+/g, ' ').replace(/\s*→\s*$/, '').trim();
-const nomeDoGrupo = (sec) => semSeta(sec.querySelector('.concelhos-grupo-k a')?.text ?? '');
+/* `nomeDoGrupo` SAIU COM O ÍNDICE DOS CONCELHOS (B1, peça 2, 21.09.2026): lia o
+   cabeçalho de um grupo de `/municipios`, e essa página passou a
+   redirecionamento. A colação dos 29 nomes mede-se agora na lista da página dos
+   lugares, que é uma lista simples e não tem cabeçalhos de grupo. */
 const nomesDaLista = (raiz, seletor) =>
   raiz.querySelectorAll(seletor).map((li) => {
     const alvo = li.querySelector('a') ?? li.querySelector('.concelho-nome') ?? li;

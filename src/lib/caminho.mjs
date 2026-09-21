@@ -90,10 +90,14 @@ export const PAI_DA_ROTA = {
   uniaoEuropeia: 'home',
   estudos: 'home',
   estudo: 'estudos',
+  /* B1, peça 2: a escada do território passa pela página dos lugares, que é a
+     que ficou no lugar dos dois índices antigos. As chaves antigas ficam na
+     tabela porque a rota continua a existir como redirecionamento. */
+  lugares: 'home',
   municipios: 'home',
-  municipio: 'municipios',
+  municipio: 'lugares',
   distritos: 'home',
-  distrito: 'distritos',
+  distrito: 'lugares',
   regioes: 'home',
   regiao: 'regioes',
   areas: 'home',
@@ -131,6 +135,7 @@ function etiquetaDaRota(chave, lang) {
   /** @type {Record<string, string>} */
   const porChave = {
     home: s.nav.inicio,
+    lugares: s.nav.lugares,
     municipios: s.nav.municipios,
     distritos: s.nav.distritos,
     regioes: s.nav.regioes,
