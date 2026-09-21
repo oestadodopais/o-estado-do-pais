@@ -30,7 +30,7 @@ Não mudas o cartão, os recibos, o livro-razão, o mapa e as suas molduras, nem
 - **Os portões uma vez, no fim.** Entre commits corres só as conferências que a mudança toca (o mapa diz como se corre cada uma sozinha). Na cabeça final, e só aí, os três portões inteiros, cada um no seu comando, nunca atrás de um `|`, com o código de saída escrito num ficheiro: `npm run build > …/build-peca2.log 2>&1; echo $? > …/build-peca2.codigo`, e o mesmo para `verify` e `typecheck`, em `design/especime-v3/medicoes/b1-2026-09-21/`. Os três a 0, ou o relatório diz qual não está e porquê.
 - **Commits pequenos**, por caminhos explícitos, com os dois trailers: `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>` e `Claude-Session: e52c0f39-ab9c-4e0f-b9db-11d420f316ed`.
 - **Prosa nova em português** (Acordo Ortográfico de 1990), sem travessões, com o vocabulário do §6 da estrutura: «lugar», «tema», «página», «medida», «valor de referência», «Fonte e verificação»; o projeto nunca é «a casa» nem «o sítio». A edição inglesa refaz-se do português.
-- **O nome não é o conteúdo:** antes de afirmares o que um ficheiro, uma célula ou um campo faz, abre-o. Uma busca vazia não prova ausência: confirma que o comando correu (`src/lib/ledger.mjs` tem um byte NUL; usa `grep -a`).
+- **O nome não é o conteúdo:** antes de afirmares o que um ficheiro, uma célula ou um campo faz, abre-o. Uma busca vazia não prova ausência: confirma que o comando correu (o código de saída, o caminho certo) antes de concluíres.
 
 ## As capturas e o relatório
 
