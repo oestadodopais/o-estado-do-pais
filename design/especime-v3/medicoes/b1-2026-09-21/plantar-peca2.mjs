@@ -68,6 +68,36 @@ const PLANTAS = [
     faz: (t) => t.replace(/<span aria-hidden="true">›<\/span><a href="\/regioes\/centro"[^<]*<\/a>/, ''),
   },
   {
+    grupo: 'palavras',
+    nome: 'P1-a-leitura-ao-contrario',
+    ficheiro: 'dist/municipios/vila-real-de-santo-antonio/index.html',
+    comando: ['node', ['scripts/check-lugares.mjs']],
+    mordida: /P1 · \/municipios\/vila-real-de-santo-antonio: o índice de dívida é 419,5 contra o limite 150, e a leitura diz «dentro do limite legal»/,
+    faz: (t) => {
+      const i = t.indexOf('class="lugar-leitura"');
+      if (i < 0) return t;
+      const fim = t.indexOf('</p>', i);
+      if (fim < 0) return t;
+      return t.slice(0, i) + t.slice(i, fim).replace('fora do limite legal', 'dentro do limite legal') + t.slice(fim);
+    },
+  },
+  {
+    grupo: 'caminho',
+    nome: 'D1-a-linha-do-lugar-em-falta',
+    ficheiro: 'dist/municipios/agueda/index.html',
+    comando: ['node', ['scripts/check-lugar.mjs']],
+    mordida: /8\.17 · páginas de concelho sem o mapa da sua unidade: 1/,
+    faz: (t) => t.replace(' data-lugar-linha="agueda"', ' data-lugar-linha="outro"'),
+  },
+  {
+    grupo: 'redirecionamentos',
+    nome: 'B1-lugares-uma-ligacao-a-origem',
+    ficheiro: 'dist/distritos/evora/index.html',
+    comando: ['node', ['scripts/gate-html.mjs']],
+    mordida: /B1 lugares: a ligação "[^"]*" aponta para "\/(?:municipios|distritos)", que é a origem de um redirecionamento 301/,
+    faz: (t) => t.replace('href="/lugares"', 'href="/distritos"'),
+  },
+  {
     grupo: 'redirecionamentos',
     nome: 'B1-lugares-um-destino-trocado',
     ficheiro: 'vercel.json',

@@ -198,7 +198,7 @@ só então o número muda. Foi a falta deste gatilho que deixou a Emenda 18, de
 25.08.2026, apertar a regra da voz sem que o inventário fosse relido contra ela.
 
 | B1-peca1 | 17.09.2026 | por ler pelo lugar de direção antes de aterrar | Página e lista de estudos: lista fechada, abertura transcrita e retiradas em `design/especime-v3/medicoes/b1-2026-09-17/cadeias-retiradas-peca1.json`. |
-| b1-peca2 | 21.09.2026 | por ler antes de aterrar, por outra família que não a que construiu | Página do lugar e página dos lugares: 79 linhas retiradas e 8 novas, com a razão de cada classe em `design/especime-v3/medicoes/b1-2026-09-21/LEIA-ME-peca2.md`. |
+| b1-peca2 | 21.09.2026 | por ler antes de aterrar, por outra família que não a que construiu | Página do lugar e página dos lugares, com a passagem de correção do mesmo dia: 71 linhas retiradas com a razão, 14 apagadas por não se renderem em lado nenhum, e 20 novas, com a razão de cada classe em `design/especime-v3/medicoes/b1-2026-09-21/LEIA-ME-peca2.md`. |
 
 ### B1, primeira peça, 17.09.2026
 
@@ -308,11 +308,20 @@ a superfície que as rendia deixou de existir.
 | segunda porta | 30 | os rótulos do índice dos concelhos e do índice dos distritos, que passaram a redirecionamentos para a página dos lugares, e as duas entradas de menu que eles tinham |
 | palavra fora do lugar | 18 | «região NUTS II», «distrito», «ilha da Região Autónoma» e as frases de abertura das duas páginas: o nome da gaveta da classificação não é o que a página tem |
 
-As 8 cadeias novas são os dois rótulos de secção da lista fechada («Temas» e o
-inglês), a primeira frase da nota da dívida total nas duas edições (o cartão leva
-uma frase de definição só, e a segunda era ressalva de recibo), e as quatro
-palavras da comparação do poder de compra com a média do país, que são a leitura
-de um lugar e entram marcadas.
+As 20 cadeias novas são, na construção: os quatro rótulos de secção da lista
+fechada («Temas» e «Estudos sobre este lugar», e os ingleses), a primeira frase da
+nota da dívida total nas duas edições, e as quatro palavras da comparação do
+poder de compra com a média do país, que são a leitura de um lugar e entram
+marcadas. Na passagem de correção do mesmo dia entram mais dez: as duas frases de
+definição do diretor (o prazo médio de pagamento e a dívida total) nas duas
+edições, o rótulo da porta para as linhas de um lugar nas duas edições, e as
+quatro descrições de `<head>` dos concelhos cujo nome a régua dos nomes só
+reconhece em parte («Ferreira do …», «Viana do …»).
+
+A passagem de correção retirou seis linhas: as duas frases que descreviam a fonte
+em vez da medida, as duas que anunciavam o que a busca faz sem guião (deixaram de
+ser verdade quando o índice dos concelhos passou a redirecionamento), e a frase
+da dívida total nas duas edições.
 
 Os nomes dos dezoito temas e os nomes das oito medidas de um concelho NÃO entram
 no inventário: são nomes de entradas de ficheiros de dados declarados
