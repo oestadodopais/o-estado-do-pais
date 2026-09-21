@@ -60,17 +60,17 @@ const distritos = distritosDaCarta();
 <Base lang={lang} path={path} title={`${r.lugares} · ${s.municipio.metaCauda}`} description={s.municipios.metaDescription}>
   <h1 class="lugares-nome">{r.lugares}</h1>
 
-  {/* A BUSCA É A DA PRIMEIRA PÁGINA, e é a mesma peça: um `<form>` com destino,
-      que funciona sem guião. Os resultados estão no documento e são acesos por
+  {/* DUAS COLUNAS A PARTIR DE 1 024 px (achado D7, 21.09.2026). A uma coluna, o
+      primeiro ecrã de um portátil era a busca e o topo de um mapa com meio ecrã
+      vazio ao lado, e as duas listas ficavam 1 300 px abaixo. À esquerda a busca
+      e as listas, à direita o mapa; a 390 e a 768 a ordem vertical mantém-se. */}
+  <div class="lugares-grelha">
+  <div class="lugares-coluna">
+  {/* A BUSCA É A DA PRIMEIRA PÁGINA, e é a mesma peça: um `<form>` com destino.
+      Os resultados estão no documento, fechados, e são acesos por
       `public/js/municipios.js`, que troca `hidden` e mais nada. */}
   <div class="pesquisa-bloco" data-pesquisa-bloco>
-    <Pesquisa s={s} concelhos={cs} destino={destinoDoConcelho} forma={path} />
-  </div>
-
-  {/* O MAPA É O DA PRIMEIRA PÁGINA, na postura inteira: as 29 unidades da Carta
-      como áreas, cada uma porta da sua página. */}
-  <div class="lugares-mapa">
-    <MapaRespira s={s} lang={lang} concelhos={cs} />
+    <Pesquisa s={s} concelhos={cs} destino={destinoDoConcelho} forma={path} resultadosOcultos={true} />
   </div>
 
   <section class="lugar-sec" aria-labelledby="regioes-k">
@@ -106,6 +106,14 @@ const distritos = distritosDaCarta();
       }
     </ul>
   </section>
+  </div>
+
+  {/* O MAPA É O DA PRIMEIRA PÁGINA, na postura inteira: as 29 unidades da Carta
+      como áreas, cada uma porta da sua página. */}
+  <div class="lugares-mapa">
+    <MapaRespira s={s} lang={lang} concelhos={cs} />
+  </div>
+  </div>
 
   {/* A PORTA DO FICHEIRO DOS 308 (B1, peça 2). Segue a lista que o ficheiro
       publica, e a lista mudou de página: é aqui que os 308 se procuram. A
