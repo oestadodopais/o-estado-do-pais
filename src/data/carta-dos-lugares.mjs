@@ -74,6 +74,7 @@ const COLUNAS = ['dtmn', 'municipio', 'distrito_ilha', 'nuts2'];
  * O nome de uma região na Carta quando ele não é o nome dela em `regioes.mjs`.
  * Duas entradas, as duas regiões autónomas, com o nome oficial à esquerda.
  */
+/** @type {Record<string, string>} */
 const NOME_DA_REGIAO_NA_CARTA = {
   'Região Autónoma dos Açores': 'Açores',
   'Região Autónoma da Madeira': 'Madeira',
