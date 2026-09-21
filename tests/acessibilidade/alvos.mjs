@@ -146,7 +146,7 @@ const LARGURAS = [390, 641, 768, 1023, 1280];
  */
 const FAMILIAS = [
   ['home', null],
-  ['municipios', null],
+  ['lugares', null],
   ['municipio', { slug: 'evora' }],
   ['distritos', null],
   ['distrito', { slug: 'evora' }],
@@ -289,9 +289,9 @@ const ESTRAGOS = [
     nome: 'lista-a-dobrar · a segunda lista dos 308 concelhos de volta',
     celulas: ['H13'],
     faz: (html) => {
-      const i = html.indexOf('<div class="concelhos" data-lista-agrupada>');
+      const i = html.indexOf('<ul class="pesquisa-res" data-pesquisa-lista');
       if (i < 0) return html;
-      const fim = html.indexOf('<div class="prov"', i);
+      const fim = html.indexOf('</ul>', i);
       if (fim < 0) return html;
       const lista = html.slice(i, fim);
       return html.slice(0, fim) + lista.replace(' data-lista-agrupada', '') + html.slice(fim);
@@ -951,7 +951,14 @@ function medeNaPagina(cfg) {
        segmento só, e sem query nem âncora. */
     return resto.length > 0 && !/[/#?]/.test(resto);
   });
-  const naListaAgrupada = portasDeConcelho.filter((el) => !!el.closest('[data-lista-agrupada]'));
+  /* B1, peça 2: a lista única dos 308 mudou de forma com a página. Era a lista
+     agrupada pelas 29 unidades em `/municipios`; é agora a fila de resultados da
+     busca em `/lugares`. A célula continua a perguntar a mesma coisa — todas as
+     portas de concelho da página estão dentro de UMA lista declarada —, e a
+     marca de cada uma das duas formas está aqui. */
+  const naListaAgrupada = portasDeConcelho.filter(
+    (el) => !!el.closest('[data-lista-agrupada], [data-pesquisa-lista]'),
+  );
 
   const h1 = [...document.querySelectorAll('h1')];
   const rotulosTopoIA = [...document.querySelectorAll('[data-rotulo-ia="topo"] .rotulo-ia-linha')].map(linha => {
@@ -1778,14 +1785,14 @@ function avalia(p, dist, cartoes, leis, folhas) {
    * O NÚMERO NÃO É ESCRITO À MÃO: é o das 308 entradas da Carta, e a régua
    * pergunta-o à mesma lista de onde a página o tira.
    */
-  const doIndice = p.paginas.filter((pg) => pg.familia === 'municipios');
+  const doIndice = p.paginas.filter((pg) => pg.familia === 'lugares');
   const indiceMau = doIndice.filter(
     (pg) => pg.portasDeConcelho !== CONCELHOS_DA_CARTA || pg.naListaAgrupada !== CONCELHOS_DA_CARTA,
   );
   conta(
     'H13',
     doIndice.length > 0 && indiceMau.length === 0,
-    `/municipios nas duas edições e nas ${LARGURAS.length} larguras: ${doIndice.length} ` +
+    `/lugares nas duas edições e nas ${LARGURAS.length} larguras: ${doIndice.length} ` +
       `passagem(ns) · portas de concelho por página: ` +
       `${[...new Set(doIndice.map((pg) => pg.portasDeConcelho))].sort((a, b) => a - b).join(', ')} ` +
       `(esperado ${CONCELHOS_DA_CARTA}) · dentro da lista agrupada: ` +
@@ -1872,7 +1879,7 @@ let plantaMa = false;
 if (VERMELHOS) {
   console.log('');
   console.log(cinza('  as plantas:'));
-  const amostra = fs.readFileSync(path.join(DIST, 'municipios', 'index.html'), 'utf8');
+  const amostra = fs.readFileSync(path.join(DIST, 'lugares', 'index.html'), 'utf8');
   const amostraEn = fs.readFileSync(path.join(DIST, 'en', 'ledger', 'evora-populacao-2025', 'index.html'), 'utf8');
   for (const estrago of ESTRAGOS) {
     const amostraDeCartao = (() => {
@@ -1881,7 +1888,7 @@ if (VERMELHOS) {
       return f ? { caminho: path.join(dir, f), texto: fs.readFileSync(path.join(dir, f), 'utf8') } : null;
     })();
     const mudou =
-      estrago.faz(amostra, '/municipios/') !== amostra ||
+      estrago.faz(amostra, '/lugares/') !== amostra ||
       estrago.faz(amostraEn, '/en/ledger/evora-populacao-2025/') !== amostraEn ||
       !!(
         estrago.noDisco &&

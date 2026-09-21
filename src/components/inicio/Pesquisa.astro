@@ -150,7 +150,11 @@ const distingue = coberturaDistingue(concelhos);
     semGuiao={forma ? s.ambito.pesquisaSemGuiao : null}
   />
 
-  <ul class="pesquisa-res" data-resultados hidden={resultadosOcultos || undefined}>
+  {/* `data-pesquisa-lista` É A MARCA DA LISTA ÚNICA (B1, peça 2, 21.09.2026):
+      a célula H13 conta as portas de concelho de uma página e exige que
+      estejam todas dentro de UMA lista declarada. Em `/municipios` essa lista
+      era a agrupada; na página dos lugares é esta. */}
+  <ul class="pesquisa-res" data-pesquisa-lista data-resultados hidden={resultadosOcultos || undefined}>
     {
       concelhos.map((c) => (
         <li

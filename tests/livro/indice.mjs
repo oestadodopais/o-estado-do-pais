@@ -804,8 +804,16 @@ celula('I8', 'a página de uma unidade da Carta', (falhas) => {
   const linhasCitadas = new Set();
   for (const pag of alvo) {
     const raiz = dom(pag);
-    if (!raiz.querySelector('.distrito-lede')) {
-      falhas.push(`${pag.rota}: não diz o que a página tem.`);
+    /* O QUE A PÁGINA TEM, MOSTRADO E NÃO DITO (B1, peça 2, 21.09.2026). A célula
+       exigia a frase de abertura («Os concelhos de X, pela Carta Administrativa
+       Oficial de Portugal.»), e a peça 2 corta-a: era a página a dizer o que é
+       antes de o mostrar. O que ela protege — que esta página não é uma casca —
+       fica, e passa a medir-se no que a página tem: a lista dos concelhos da
+       unidade, com pelo menos uma porta. A frase continua a ser a descrição do
+       `<head>`, que é onde ela serve. */
+    const lista = raiz.querySelectorAll('#concelhos li a[href]');
+    if (lista.length === 0) {
+      falhas.push(`${pag.rota}: não mostra a lista dos concelhos da unidade.`);
     }
     for (const el of raiz.querySelectorAll('[data-claim]')) {
       linhasCitadas.add(el.getAttribute('data-claim'));
