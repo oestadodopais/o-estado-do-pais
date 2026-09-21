@@ -36,3 +36,11 @@ note: "Agregado da União Europeia (EU27_2020) da medida «formacao-bruta-de-cap
 corrections: []
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-21"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna20?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP"
+    result: "igual"
+    by: "painel-semanal"

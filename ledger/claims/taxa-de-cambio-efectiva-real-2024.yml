@@ -36,3 +36,11 @@ note: "Período anterior da medida «taxa-de-cambio-efectiva-real-2025»: o mesm
 corrections: []
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
+
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
+verifications:
+  - date: "2026-09-21"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipser10?format=JSON&lang=EN&geo=PT&unit=PCH_3Y"
+    result: "igual"
+    by: "painel-semanal"
