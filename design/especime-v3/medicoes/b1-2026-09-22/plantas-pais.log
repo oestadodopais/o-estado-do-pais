@@ -1,0 +1,15 @@
+OK páginas sem estrago: todas, código 0
+OK medida rendida sem tema declarado: T2, código 1
+OK medida do país no tema errado: T3, código 1
+OK medida repetida: T4, código 1
+OK medida publicada ausente: T5, código 1
+OK mudança sem secção: M1, código 1
+OK mudança com secção inexistente: M1, código 1
+OK correção de linha ausente: C1, código 1
+OK texto da mudança alterado: M2, código 1
+OK ordem dos estudos trocada: E1, código 1
+OK comparação europeia sem recibo: L3, código 1
+OK sexta entrada no menu: N1, código 1
+OK ponto final sem ligação inseparável: N2, código 1
+OK frase explicativa fora da lista fechada: B1 voz, código 1
+OK leitura aprovada alterada: B1 leitura, código 1

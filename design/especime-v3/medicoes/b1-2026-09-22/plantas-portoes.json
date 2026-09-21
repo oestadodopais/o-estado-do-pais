@@ -1,0 +1,134 @@
+[
+  {
+    "nome": "mapa-atribuicao",
+    "comando": "node scripts/check-mapa.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "R6"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "f3b4bb05bd30d477f2b463abc1a5cc943ca0c96e0c704f7ace7aa365369e86c0",
+        "reposto": "f3b4bb05bd30d477f2b463abc1a5cc943ca0c96e0c704f7ace7aa365369e86c0"
+      }
+    ]
+  },
+  {
+    "nome": "html",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "B1 mudança: campo rendido difere",
+      "93\\.5",
+      "unidade plantada",
+      "sem selo para a sua própria linha"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "f3b4bb05bd30d477f2b463abc1a5cc943ca0c96e0c704f7ace7aa365369e86c0",
+        "reposto": "f3b4bb05bd30d477f2b463abc1a5cc943ca0c96e0c704f7ace7aa365369e86c0"
+      },
+      {
+        "ficheiro": "dist/en/index.html",
+        "antes": "2ba9111625f4cb58e9f41c2e184ca7ba63847bd6f6ec29a9b5077aa9038cd936",
+        "reposto": "2ba9111625f4cb58e9f41c2e184ca7ba63847bd6f6ec29a9b5077aa9038cd936"
+      },
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "8d15fce13fde342c8191b0d99e084ce3b398d90b08426b5f488db5ac94623942",
+        "reposto": "8d15fce13fde342c8191b0d99e084ce3b398d90b08426b5f488db5ac94623942"
+      }
+    ]
+  },
+  {
+    "nome": "datas",
+    "comando": "node scripts/check-datas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "data|1b"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "f3b4bb05bd30d477f2b463abc1a5cc943ca0c96e0c704f7ace7aa365369e86c0",
+        "reposto": "f3b4bb05bd30d477f2b463abc1a5cc943ca0c96e0c704f7ace7aa365369e86c0"
+      }
+    ]
+  },
+  {
+    "nome": "lugar",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "L1 .*ACIMA DO TETO",
+      "L4 .*ACIMA DO TETO"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "f3b4bb05bd30d477f2b463abc1a5cc943ca0c96e0c704f7ace7aa365369e86c0",
+        "reposto": "f3b4bb05bd30d477f2b463abc1a5cc943ca0c96e0c704f7ace7aa365369e86c0"
+      },
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "8d15fce13fde342c8191b0d99e084ce3b398d90b08426b5f488db5ac94623942",
+        "reposto": "8d15fce13fde342c8191b0d99e084ce3b398d90b08426b5f488db5ac94623942"
+      }
+    ]
+  },
+  {
+    "nome": "voz",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "B1 lista fechada país",
+      "FRASE DA CLASSE POR PROVAR"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "f3b4bb05bd30d477f2b463abc1a5cc943ca0c96e0c704f7ace7aa365369e86c0",
+        "reposto": "f3b4bb05bd30d477f2b463abc1a5cc943ca0c96e0c704f7ace7aa365369e86c0"
+      }
+    ]
+  },
+  {
+    "nome": "feixe-porta",
+    "comando": "node scripts/design-bundle.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "perdeu a porta dos lugares"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "f3b4bb05bd30d477f2b463abc1a5cc943ca0c96e0c704f7ace7aa365369e86c0",
+        "reposto": "f3b4bb05bd30d477f2b463abc1a5cc943ca0c96e0c704f7ace7aa365369e86c0"
+      }
+    ]
+  },
+  {
+    "nome": "feixe-estados",
+    "comando": "node scripts/design-bundle.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "dois estados pintados|não encontrei um cartão fora"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/uniao-europeia/index.html",
+        "antes": "5a18a815cccd2a47e83cf6025b4cfd5655c2a151db4b04a9d2ac5fdceead9229",
+        "reposto": "5a18a815cccd2a47e83cf6025b4cfd5655c2a151db4b04a9d2ac5fdceead9229"
+      }
+    ]
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "inicio_observavel": "2026-09-21T19:39:35.558700+00:00",
+  "origem": "criação de node_modules pelo npm ci",
+  "fim_das_medicoes": "2026-09-21T21:10:04.784910+00:00",
+  "segundos_observados": 5429,
+  "nota": "A leitura anterior ao npm ci não foi cronometrada."
+}

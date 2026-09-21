@@ -1,0 +1,227 @@
+{
+  "retiradas": [
+    {
+      "familia": "menu e rodapé",
+      "texto": "Encontrou um erro? correcoes@oestadodopais.pt · O registo de correções →",
+      "razao": "segunda porta"
+    },
+    {
+      "familia": "país",
+      "texto": "A dívida pública é % do PIB e a taxa de desemprego é % da população ativa.",
+      "razao": "leitura substituída pelo texto da direção"
+    },
+    {
+      "familia": "país",
+      "texto": "Government debt is % of GDP and the unemployment rate is % of the labour force.",
+      "razao": "leitura substituída pelo texto da direção"
+    },
+    {
+      "familia": "menu e rodapé",
+      "texto": "Found an error? correcoes@oestadodopais.pt · The corrections log →",
+      "razao": "segunda porta"
+    },
+    {
+      "familia": "menu e rodapé",
+      "texto": "As páginas",
+      "razao": "segunda porta"
+    },
+    {
+      "familia": "menu e rodapé",
+      "texto": "Idioma",
+      "razao": "segunda porta"
+    },
+    {
+      "familia": "menu e rodapé",
+      "texto": "Language",
+      "razao": "segunda porta"
+    },
+    {
+      "familia": "menu e rodapé",
+      "texto": "Menu · Main navigation",
+      "razao": "segunda porta"
+    },
+    {
+      "familia": "menu e rodapé",
+      "texto": "Menu · Navegação principal",
+      "razao": "segunda porta"
+    },
+    {
+      "familia": "menu e rodapé",
+      "texto": "Tema",
+      "razao": "segunda porta"
+    },
+    {
+      "familia": "menu e rodapé",
+      "texto": "The pages",
+      "razao": "segunda porta"
+    },
+    {
+      "familia": "menu e rodapé",
+      "texto": "Theme",
+      "razao": "segunda porta"
+    },
+    {
+      "familia": "país",
+      "texto": "concelhos in the coordinates file of the official administrative map",
+      "razao": "palavra fora do lugar"
+    },
+    {
+      "familia": "país",
+      "texto": "concelhos no ficheiro de coordenadas da Carta Administrativa",
+      "razao": "palavra fora do lugar"
+    },
+    {
+      "familia": "país",
+      "texto": "estudos publicados",
+      "razao": "palavra fora do lugar"
+    },
+    {
+      "familia": "país",
+      "texto": "published studies",
+      "razao": "palavra fora do lugar"
+    },
+    {
+      "familia": "menu e rodapé",
+      "texto": "Menu",
+      "razao": "segunda porta"
+    },
+    {
+      "familia": "país",
+      "texto": "Os nomes no mapa",
+      "razao": "palavra fora do lugar"
+    },
+    {
+      "familia": "país",
+      "texto": "The names on the map",
+      "razao": "palavra fora do lugar"
+    },
+    {
+      "familia": "país",
+      "texto": "das medidas de cabeça dos domínios",
+      "razao": "palavra fora do lugar"
+    },
+    {
+      "familia": "país",
+      "texto": "of the head measures of the domains",
+      "razao": "palavra fora do lugar"
+    },
+    {
+      "familia": "país",
+      "texto": "Os números oficiais de Portugal, do país ao seu concelho, cada um com a fonte.",
+      "razao": "explica a página"
+    },
+    {
+      "familia": "país",
+      "texto": "Portugal’s official numbers, from the country to your municipality, each with its source.",
+      "razao": "explica a página"
+    },
+    {
+      "familia": "país",
+      "texto": "· concelhos",
+      "razao": "palavra fora do lugar"
+    },
+    {
+      "familia": "país",
+      "texto": "· municipalities",
+      "razao": "palavra fora do lugar"
+    }
+  ],
+  "novas": [
+    {
+      "rota": "/",
+      "texto": "A dívida pública desceu de % para % do PIB num ano e continua acima da média da União Europeia, que é de % . O desemprego está nos % , a par da média europeia , e os preços das casas subiram % num ano, contra % na União.",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/",
+      "texto": "A penalização por antecipar a reforma um ano é de % ou de % , consoante a porta por onde o trabalhador entra, quando o valor atuarialmente neutro calculado pelo próprio relatório é de % : a lei falha nos dois sentidos, e é mais dura com quem se desvia menos.",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/",
+      "texto": "Do dinheiro do plano de recuperação contratado no concelho, a universidade tem mais do que a câmara: € contra € . Da soma aprovada para o concelho, % está vencida contra % paga.",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/",
+      "texto": "Portugal Segurança social e pensões publicado a",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/",
+      "texto": "publicado a ·",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/",
+      "texto": "Évora Cultura publicado a",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/",
+      "texto": "Évora Economia e finanças públicas publicado a",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/en",
+      "texto": "(in Portuguese)",
+      "classe": "navegacao"
+    },
+    {
+      "rota": "/en",
+      "texto": "Of the recovery-plan money contracted in the municipality, the university holds more than the council: € against € . Of the sum approved for the municipality, % is overdue against % paid.",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/en",
+      "texto": "Portugal Social security and pensions published on",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/en",
+      "texto": "Public debt fell from % to % of GDP in a year and remains above the European Union average of % . Unemployment stands at % , level with the European average , and house prices rose % in a year, against % in the Union.",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/en",
+      "texto": "The penalty for retiring one year early is % or % , depending on which door the worker comes through, when the actuarially neutral figure calculated by the report itself is % : the law misses in both directions, and is harshest on those who deviate least.",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/en",
+      "texto": "published on ·",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/en",
+      "texto": "Évora Culture published on",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/en",
+      "texto": "Évora Economy and public finances published on",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/",
+      "texto": "→",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/",
+      "texto": "→ · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/en",
+      "texto": "→",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/en",
+      "texto": "→ · a field not confirmed against the source, not a doubt about what is published",
+      "classe": "conteudo"
+    }
+  ],
+  "novas_distintas": 18
+}

@@ -1,0 +1,268 @@
+[
+  {
+    "id": "N1.pt./",
+    "passou": true,
+    "medida": {
+      "menuUmaLinha": true,
+      "largura": 390,
+      "documento": 390,
+      "leitura": {
+        "x": 18,
+        "y": 132.359375,
+        "width": 354,
+        "height": 240,
+        "top": 132.359375,
+        "right": 372,
+        "bottom": 372.359375,
+        "left": 18
+      },
+      "mapa": {
+        "x": 18,
+        "y": 394.359375,
+        "width": 354,
+        "height": 466.765625,
+        "top": 394.359375,
+        "right": 372,
+        "bottom": 861.125,
+        "left": 18
+      },
+      "fila": [
+        {
+          "x": 18,
+          "y": 1167.5,
+          "width": 354,
+          "height": 135.359375,
+          "top": 1167.5,
+          "right": 372,
+          "bottom": 1302.859375,
+          "left": 18
+        }
+      ]
+    }
+  },
+  {
+    "id": "N2.pt./",
+    "passou": true,
+    "medida": 390
+  },
+  {
+    "id": "N1.pt./temas/",
+    "passou": true,
+    "medida": {
+      "menuUmaLinha": true,
+      "largura": 390,
+      "documento": 390,
+      "fila": [
+        {
+          "x": 18,
+          "y": 199.84375,
+          "width": 354,
+          "height": 135.359375,
+          "top": 199.84375,
+          "right": 372,
+          "bottom": 335.203125,
+          "left": 18
+        }
+      ]
+    }
+  },
+  {
+    "id": "N2.pt./temas/",
+    "passou": true,
+    "medida": 390
+  },
+  {
+    "id": "P1.pt",
+    "passou": true,
+    "medida": {
+      "menuUmaLinha": true,
+      "largura": 1280,
+      "documento": 1280,
+      "leitura": {
+        "x": 94,
+        "y": 201.71875,
+        "width": 693.609375,
+        "height": 216.5625,
+        "top": 201.71875,
+        "right": 787.609375,
+        "bottom": 418.28125,
+        "left": 94
+      },
+      "mapa": {
+        "x": 826,
+        "y": 201.71875,
+        "width": 360,
+        "height": 474.671875,
+        "top": 201.71875,
+        "right": 1186,
+        "bottom": 676.390625,
+        "left": 826
+      },
+      "fila": [
+        {
+          "x": 94,
+          "y": 584.421875,
+          "width": 330.171875,
+          "height": 160.15625,
+          "top": 584.421875,
+          "right": 424.171875,
+          "bottom": 744.578125,
+          "left": 94
+        },
+        {
+          "x": 457.4375,
+          "y": 584.421875,
+          "width": 330.171875,
+          "height": 160.15625,
+          "top": 584.421875,
+          "right": 787.609375,
+          "bottom": 744.578125,
+          "left": 457.4375
+        }
+      ]
+    }
+  },
+  {
+    "id": "planta-menu.pt",
+    "passou": true,
+    "medida": "cinco entradas em coluna recusadas"
+  },
+  {
+    "id": "planta-dobra.pt",
+    "passou": true,
+    "medida": "fila fora do primeiro ecrã recusada"
+  },
+  {
+    "id": "N1.en./en/",
+    "passou": true,
+    "medida": {
+      "menuUmaLinha": true,
+      "largura": 390,
+      "documento": 390,
+      "leitura": {
+        "x": 18,
+        "y": 132.359375,
+        "width": 354,
+        "height": 240,
+        "top": 132.359375,
+        "right": 372,
+        "bottom": 372.359375,
+        "left": 18
+      },
+      "mapa": {
+        "x": 18,
+        "y": 394.359375,
+        "width": 354,
+        "height": 466.765625,
+        "top": 394.359375,
+        "right": 372,
+        "bottom": 861.125,
+        "left": 18
+      },
+      "fila": [
+        {
+          "x": 18,
+          "y": 1167.5,
+          "width": 354,
+          "height": 135.359375,
+          "top": 1167.5,
+          "right": 372,
+          "bottom": 1302.859375,
+          "left": 18
+        }
+      ]
+    }
+  },
+  {
+    "id": "N2.en./en/",
+    "passou": true,
+    "medida": 390
+  },
+  {
+    "id": "N1.en./en/themes/",
+    "passou": true,
+    "medida": {
+      "menuUmaLinha": true,
+      "largura": 390,
+      "documento": 390,
+      "fila": [
+        {
+          "x": 18,
+          "y": 199.84375,
+          "width": 354,
+          "height": 135.359375,
+          "top": 199.84375,
+          "right": 372,
+          "bottom": 335.203125,
+          "left": 18
+        }
+      ]
+    }
+  },
+  {
+    "id": "N2.en./en/themes/",
+    "passou": true,
+    "medida": 390
+  },
+  {
+    "id": "P1.en",
+    "passou": true,
+    "medida": {
+      "menuUmaLinha": true,
+      "largura": 1280,
+      "documento": 1280,
+      "leitura": {
+        "x": 94,
+        "y": 201.71875,
+        "width": 693.609375,
+        "height": 178.46875,
+        "top": 201.71875,
+        "right": 787.609375,
+        "bottom": 380.1875,
+        "left": 94
+      },
+      "mapa": {
+        "x": 826,
+        "y": 201.71875,
+        "width": 360,
+        "height": 474.671875,
+        "top": 201.71875,
+        "right": 1186,
+        "bottom": 676.390625,
+        "left": 826
+      },
+      "fila": [
+        {
+          "x": 94,
+          "y": 546.328125,
+          "width": 330.171875,
+          "height": 138.96875,
+          "top": 546.328125,
+          "right": 424.171875,
+          "bottom": 685.296875,
+          "left": 94
+        },
+        {
+          "x": 457.4375,
+          "y": 546.328125,
+          "width": 330.171875,
+          "height": 138.96875,
+          "top": 546.328125,
+          "right": 787.609375,
+          "bottom": 685.296875,
+          "left": 457.4375
+        }
+      ]
+    }
+  },
+  {
+    "id": "planta-menu.en",
+    "passou": true,
+    "medida": "cinco entradas em coluna recusadas"
+  },
+  {
+    "id": "planta-dobra.en",
+    "passou": true,
+    "medida": "fila fora do primeiro ecrã recusada"
+  }
+]
