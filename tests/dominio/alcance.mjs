@@ -75,7 +75,15 @@ for (const [id, linha] of claims) {
 function ficheiroDe(caminho) {
   const limpo = caminho.split('#')[0].split('?')[0];
   const f = path.join(DIST, limpo.replace(/^\//, ''));
-  if (fs.existsSync(f) && fs.statSync(f).isDirectory()) return path.join(f, 'index.html');
+  /* UMA PASTA SEM `index.html` NÃO É UMA PÁGINA (B1, peça 2, 21.09.2026).
+     `dist/municipios/` existe porque guarda as 308 páginas de concelho, e desde
+     que o índice passou a redirecionamento não tem `index.html`: a primeira
+     redação devolvia o caminho sem confirmar que o ficheiro estava lá, e a
+     régua rebentava com ENOENT em vez de saltar a porta. */
+  if (fs.existsSync(f) && fs.statSync(f).isDirectory()) {
+    const dentro = path.join(f, 'index.html');
+    return fs.existsSync(dentro) ? dentro : null;
+  }
   if (fs.existsSync(f) && f.endsWith('.html')) return f;
   const comIndex = path.join(f, 'index.html');
   if (fs.existsSync(comIndex)) return comIndex;
