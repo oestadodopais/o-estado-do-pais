@@ -209,7 +209,10 @@ const BLOCOS_DA_VOZ = `${BLOCOS},${ROTULOS_EM_SPAN}`;
  */
 const ORIGEM_DECLARADA =
   '[data-claim],[data-linha-claim],[data-correcao-claim],[data-verbatim],[data-nonledger],' +
-  '[data-agenda],[data-registo],[data-registo-unidade],[data-registo-linha],[data-registo-conta]';
+  '[data-agenda],[data-registo],[data-registo-unidade],[data-registo-linha],[data-registo-conta],' +
+  /* B1: texto e data das mudanças, comparados com a declaração por check:pais
+     e gate:html. Uma marca que não corresponda à entrada não passa. */
+  '[data-mudanca-campo],[data-publicacao-estudo]';
 
 function blocosDe(root) {
   const out = [];
@@ -416,7 +419,7 @@ const ROTAS_COM_ORIGEM_LIDA = new Set([
 ]);
 const MEDIDA_DECLARADA = '[data-medida-nome],[data-medida-unidade]';
 const ROTAS_DO_INVENTARIO = new Set([
-  'home',
+  'home', 'temas',
   /* «Portugal na União Europeia» entra no commit em que a sua página nasce, que
      é a regra desta lista (bloco F1.10, item 8.16, 08.09.2026). É uma página do
      leitor como as outras: a Emenda 15 governa-a e a sua autorreferência vai a

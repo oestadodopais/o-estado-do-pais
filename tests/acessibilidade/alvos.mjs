@@ -107,7 +107,8 @@ const opcao = (nome) => {
   return i >= 0 ? (argv[i + 1] ?? true) : null;
 };
 const FICHEIRO_JSON = opcao('--json');
-const VERMELHOS = argv.includes('--vermelhos');
+const PLANTA_B1 = argv.includes('--planta-b1');
+const VERMELHOS = argv.includes('--vermelhos') || PLANTA_B1;
 
 if (!fs.existsSync(DIST)) {
   console.error('não existe dist/. Corra o build primeiro.');
@@ -146,6 +147,7 @@ const LARGURAS = [390, 641, 768, 1023, 1280];
  */
 const FAMILIAS = [
   ['home', null],
+  ['temas', null],
   ['lugares', null],
   ['municipio', { slug: 'evora' }],
   /* O ÍNDICE DOS DISTRITOS SAIU DA LISTA COM A PÁGINA (B1, peça 2, 21.09.2026):
@@ -229,7 +231,9 @@ for (const [chave, params, rotaDaFamilia = chave] of FAMILIAS) {
  * São os quatro que o brief F1.7 nomeia na medida H12.
  * @type {{ nome: string, celulas: string[], faz: (html: string, rota: string) => string }[]}
  */
+const estragoB1 = html => html.replace('id="nav-principal"', 'id="nav-principal" aria-expanded="true"').replace('</head>', '<style>@media (min-width:641px){.pais-porta-tema a{min-height:20px!important;height:20px!important;line-height:20px!important;font-size:10px!important;padding:0!important}.pais-porta-tema a::after{content:none!important}}</style></head>');
 const ESTRAGOS = [
+  { nome: 'b1 · portas pequenas e aria-expanded sem comando', celulas: ['H2','H6','H10'], faz: estragoB1, noDisco: (s, f) => f.endsWith('.html') ? estragoB1(s) : s },
   {
     nome: 'h1-a-dobrar · um segundo <h1> na página',
     celulas: ['H3'],
@@ -261,7 +265,7 @@ const ESTRAGOS = [
     celulas: ['H4'],
     faz: (html) => {
       const bloco = html.match(
-        /<div class="porta-correccoes[^"]*"[^>]*data-porta-correccoes>[\s\S]*?<\/p><\/div>/,
+        /<span data-porta-correccoes(?:="")?[^>]*>[\s\S]*?<\/span>/,
       );
       if (!bloco) return html;
       return html.replace(bloco[0], '').replace('</main>', `${bloco[0]}</main>`);
@@ -798,7 +802,7 @@ function medeNaPagina(cfg) {
    */
   const eI105 = (el) =>
     el.matches(
-      '.porta-correccoes-linha .ligacao-email,.porta-correccoes-linha > a,a.porta,a.lig',
+      '.rodape-b1 .ligacao-email,.pais-porta-lugares,.pais-porta-tema a,.porta-correccoes-linha .ligacao-email,.porta-correccoes-linha > a,a.porta,a.lig',
     );
 
   const eTexto = (el) => {
@@ -858,7 +862,7 @@ function medeNaPagina(cfg) {
         /* O selo está dentro da sinopse de um estudo de uma página de lugar? É a
            única informação que esta medida precisa de trazer para a célula H2
            poder contar à parte a classe que a nota dela descreve. */
-        naSinopseDoLugar: !!el.closest?.('.lugar-estudo-leitura'),
+        naProsaCorrida: !!el.closest?.('.lugar-estudo-leitura, .pais-leitura'),
         ok: ok44,
         ok32,
         ok44,
@@ -1586,11 +1590,14 @@ function avalia(p, dist, cartoes, leis, folhas) {
      área a 390 px (é o que `doBuraco` mede antes de entrar na faixa), e o mesmo
      número tem o seu recibo na página do estudo, a um toque do título por cima.
      Medido nesta passagem, e escrito no relatório do bloco. */
+  /* B1, peça 3: a leitura do país é também prosa corrida. Pela I127,
+     a entrelinha não se estica para 44 px; os selos destas frases juntam-se
+     às sinopses na conta separada, conservando a porta para cada recibo. */
   const buracoDeSinopse = buracoMau.filter(
-    (a) => !a.noDesenho && a.familia !== 'texto' && !a.emVariasLinhas && a.naSinopseDoLugar,
+    (a) => !a.noDesenho && a.familia !== 'texto' && !a.emVariasLinhas && a.naProsaCorrida,
   );
   const buracoDeCaixa = buracoMau.filter(
-    (a) => !a.noDesenho && a.familia !== 'texto' && !a.emVariasLinhas && !a.naSinopseDoLugar,
+    (a) => !a.noDesenho && a.familia !== 'texto' && !a.emVariasLinhas && !a.naProsaCorrida,
   );
   const naoMedidos = todosOsAlvos.filter((a) => a.ok === null);
   conta(
@@ -1608,7 +1615,7 @@ function avalia(p, dist, cartoes, leis, folhas) {
       ` · faixa 641 a 1023: ${noBuraco.length} alvos medidos, ${doBuraco.length} deles com ` +
       `${ALVO} px a 390, ${buracoMau.length} sem eles na faixa · destes, ` +
       `${buracoDeCaixa.length} são caixas e falham (${resumo(buracoDeCaixa)}), ` +
-      `${buracoDeSinopse.length} são selos dentro da sinopse de um estudo numa página de lugar, ` +
+      `${buracoDeSinopse.length} são selos dentro de leitura ou sinopse em prosa corrida, ` +
       `cuja área de 44 px cruzaria a linha vizinha do mesmo parágrafo ` +
       `(${resumo(buracoDeSinopse)}) e ` +
       `${buracoDeDesenho.length} são áreas de desenho, cujo alvo é a rede de nomes por baixo do ` +
@@ -1861,7 +1868,8 @@ function avalia(p, dist, cartoes, leis, folhas) {
     dist.expandedForaDoGuiao === 0 &&
       dist.guiaoNoDist &&
       dist.paginasComExpandedSemGuiao === 0 &&
-      provasDoGuiao.length > 0 &&
+      /* B1: a gaveta saiu. Havendo aria-expanded, a prova dinâmica continua obrigatória. */
+      (dist.expanded === 0 || provasDoGuiao.length > 0) &&
       guiaoQueNaoMudou.length === 0 &&
       metodo.length > 0 &&
       metodoSemTitulo.length === 0,
@@ -1923,7 +1931,7 @@ if (VERMELHOS) {
   console.log(cinza('  as plantas:'));
   const amostra = fs.readFileSync(path.join(DIST, 'lugares', 'index.html'), 'utf8');
   const amostraEn = fs.readFileSync(path.join(DIST, 'en', 'ledger', 'evora-populacao-2025', 'index.html'), 'utf8');
-  for (const estrago of ESTRAGOS) {
+  for (const estrago of ESTRAGOS.filter(e => !PLANTA_B1 || e.nome.startsWith('b1 '))) {
     const amostraDeCartao = (() => {
       const dir = path.join(DIST, 'cartoes');
       const f = fs.readdirSync(dir).find((x) => x.startsWith('en-') && x.endsWith('.json'));
@@ -1952,7 +1960,7 @@ if (VERMELHOS) {
     const caiu = celulas.filter((c) => !c.passa).map((c) => c.nome);
     const nomeadas = estrago.celulas.filter((n) => caiu.includes(n));
     const verdesAntes = estrago.celulas.filter((n) => limpas.find((c) => c.nome === n)?.passa);
-    const bom = mudou && nomeadas.length > 0 && verdesAntes.length > 0;
+    const bom = mudou && (estrago.nome.startsWith('b1 ') ? nomeadas.length === estrago.celulas.length && verdesAntes.length === estrago.celulas.length : nomeadas.length > 0 && verdesAntes.length > 0);
     if (!bom) plantaMa = true;
     plantas.push({ nome: estrago.nome, celulas: estrago.celulas, mudou, caiu, nomeadas, verdesAntes, bom });
     console.log(

@@ -166,7 +166,7 @@ const paraPrender = [];
 for (const f of paginas) {
   const cru = fs.readFileSync(f, 'utf8');
   const rota = rotaDe(f);
-  const eIndice = INDICES.has(rota) || ROTA_DO_LUGAR.test(rota);
+  const eIndice = INDICES.has(rota) || ROTA_DO_LUGAR.test(rota) || ['/', '/en'].includes(rota);
   const daEdicao = ROTA_DA_EDICAO.exec(rota);
   /* A prova barata primeiro: a marca é uma cadeia, e a esmagadora maioria das
      páginas do sítio não a tem nem é uma das rotas que imprimem datas. */
@@ -328,7 +328,7 @@ function prendeEdicoesB1(rota, doc, slugDaPagina = null, esperadas = null) {
   for (const bloco of blocos) {
     const [slug, lang] = (bloco.getAttribute('data-estudo-edicao') ?? '').split('/');
     const work = WORKS.find(w => w.slug === slug);
-    const linguaDaPagina = rota.startsWith('/en/') ? 'en' : 'pt';
+    const linguaDaPagina = (rota === '/en' || rota.startsWith('/en/')) ? 'en' : 'pt';
     const principal = work?.editions.find(e => e.lang === linguaDaPagina) ?? work?.editions[0];
     if (!work || principal?.lang !== lang || (slugDaPagina && slug !== slugDaPagina)) {
       falhas.push(`${rota}: a data declara uma edição que não é a desta página ou linha: ${slug}/${lang}.`);
@@ -349,6 +349,11 @@ function prendeEdicoesB1(rota, doc, slugDaPagina = null, esperadas = null) {
 }
 
 for (const { rota, doc, slug } of paraPrender) {
+  if (['/', '/en'].includes(rota)) {
+    paginasPrendidas++;
+    prendeEdicoesB1(rota, doc, null, Math.min(3, WORKS.length));
+    continue;
+  }
   if (ROTA_DO_LUGAR.test(rota)) {
     paginasPrendidas++;
     prendeNaPaginaDoLugar(rota, doc);

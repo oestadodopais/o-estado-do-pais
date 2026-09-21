@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
 import { SUBJECTS } from '../src/data/studies.mjs';
 /**
  * Portão (a) e (c): varrimento do HTML construído.
@@ -3119,6 +3120,26 @@ function auditaSelo(el, id, lang, err) {
      mais acima deixava passar um selo na secção seguinte. */
   const pai = el.parentNode;
   if (pai && temChipPara(pai, alvos)) return;
+  /* B1, peça 3: o cartão existente tem uma fonte e uma régua. A régua só
+     pode usar o selo do seu próprio cartão, e só para as linhas que o recibo
+     publica como enquadramento. O valor principal continua na regra acima. */
+  const item = el.closest('[data-regua][data-selo-em]');
+  const cartao = item?.closest('[data-cartao-medida]');
+  const principal = cartao?.getAttribute('data-cartao-medida');
+  if (principal && item.getAttribute('data-selo-em') === principal) {
+    const atual = claims.get(principal);
+    const outro = claims.get(id);
+    const serie = /^(.*)-(\d{4})$/.exec(principal);
+    const anterior = serie ? [...claims.keys()].filter(k => {
+      const m = /^(.*)-(\d{4})$/.exec(k);
+      return m && m[1] === serie[1] && Number(m[2]) < Number(serie[2]);
+    }).sort().at(-1) : null;
+    const permitido = item.getAttribute('data-regua') === 'ue' ? id === `${principal}-ue` :
+      item.getAttribute('data-regua') === 'anterior' && id === anterior &&
+      atual?.document?.edition === outro?.document?.edition && atual?.unit === outro?.unit;
+    if (permitido && temChipPara(cartao, [routePath('linha', lang, { slug: principal })])) return;
+  }
+
 
   err(
     `o valor da afirmação "${id}" aparece sem selo para a sua própria linha.\n` +
@@ -5124,6 +5145,26 @@ for (const file of ficheirosHtml(DIST)) {
   }
 
   const aRemover = [];
+  /* B1, peça 3: datas de mudanças e de publicação, comparadas com os seus
+     registos. Nenhuma marca dispensa o parágrafo ou o contentor inteiro. */
+  for (const el of body.querySelectorAll('[data-mudanca-campo], [data-publicacao-estudo]')) {
+    if (rota?.key !== 'home') { err('B1 mudança: campo fora da página do país.'); continue; }
+    let esperado;
+    if (el.hasAttribute('data-publicacao-estudo')) {
+      const chave = el.getAttribute('data-publicacao-estudo');
+      const registo = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/datas-de-publicacao.json'), 'utf8'));
+      const edicao = registo.edicoes.find(e => `${e.slug}/${e.lang}` === chave);
+      esperado = edicao && dataDaCasaGate(edicao.data);
+    } else {
+      const pai = el.closest('[data-mudanca-id]');
+      const entrada = MUDANCAS_DO_PROJETO.find(e => e.id === pai?.getAttribute('data-mudanca-id'));
+      const campo = el.getAttribute('data-mudanca-campo');
+      esperado = campo === 'data' ? entrada && dataDaCasaGate(entrada.data) : campo === 'texto' ? entrada?.texto[rota.lang] : null;
+    }
+    if (!esperado || textoTranscrito(el).trim() !== esperado) err('B1 mudança: campo rendido difere do registo declarado.');
+    aRemover.push(el);
+  }
+
 
   for (const el of body.querySelectorAll('[data-claim]')) {
     const id = el.getAttribute('data-claim');
@@ -5465,7 +5506,11 @@ for (const file of ficheirosHtml(DIST)) {
       campo === 'unit' &&
       el.closest?.('[data-cartao-medida][data-medida-chave]') !== null &&
       el.closest?.('[data-cartao-medida][data-medida-chave]')?.getAttribute('data-cartao-medida') === id;
-    if (!paginaDoLivro && !unidadeDeCartaoDoLugar) {
+    // Mesma guarda estreita da peça 2: só o campo de unidade do próprio
+    // cartão, nas duas páginas novas. auditaSelo continua ativo.
+    const unidadeDeCartaoDoPais = ['home', 'temas'].includes(rota?.key) && campo === 'unit' &&
+      el.closest('[data-cartao-medida]')?.getAttribute('data-cartao-medida') === id;
+    if (!paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais) {
       err(
         `data-linha-claim="${id}" numa página que não é do livro-razão. ` +
           `Esta marca é dos campos de uma linha, na página dessa linha ou no índice.\n` +
