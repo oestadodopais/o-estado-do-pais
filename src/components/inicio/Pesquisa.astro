@@ -147,7 +147,14 @@ const distingue = coberturaDistingue(concelhos);
     accao={forma}
     forma={forma ? { 'data-porta-concelho': true } : {}}
     campo={{ 'data-pesquisa': true }}
-    semGuiao={forma ? s.ambito.pesquisaSemGuiao : null}
+    {/* A FRASE DO SEM-GUIÃO SAIU (achado D8 e o Codex 9, 21.09.2026). Dizia
+        «Sem JavaScript, o botão leva à lista inteira dos concelhos, agrupada por
+        distrito e por ilha.», e desde que o índice dos 308 passou a
+        redirecionamento deixou de ser verdade: o que o leitor recebia era uma
+        fila de 308 nomes sem cabeçalhos. Além de falsa, era a página a explicar
+        o que ela faz. Sem guião, o caminho são as duas listas, que estão na
+        página. */}
+    semGuiao={null}
   />
 
   {/* `data-pesquisa-lista` É A MARCA DA LISTA ÚNICA (B1, peça 2, 21.09.2026):

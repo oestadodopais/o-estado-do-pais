@@ -122,10 +122,13 @@
     var q = pedido();
     var vistos = 0;
     for (var i = 0; i < itens.length; i++) {
-      var casa =
-        q.length > 0
-          ? itens[i].getAttribute('data-normal').indexOf(q) >= 0
-          : itens[i].hasAttribute('data-tem-pagina');
+      /* SEM TEXTO ESCRITO NÃO HÁ SUGESTÕES (achado D8 do lugar de direção,
+         21.09.2026). Com a caixa vazia a fila acendia os oito primeiros
+         concelhos da Carta, e um leitor perguntava-se porquê aqueles: hoje os
+         308 têm página, e os oito primeiros não são especiais em nada. Com a
+         caixa vazia a fila fica fechada, e o caminho sem escrever nada são as
+         duas listas da página. */
+      var casa = q.length > 0 && itens[i].getAttribute('data-normal').indexOf(q) >= 0;
       var mostrar = casa && vistos < MAX;
       itens[i].hidden = !mostrar;
       if (mostrar) vistos++;
