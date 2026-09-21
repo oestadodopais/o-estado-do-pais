@@ -5,10 +5,15 @@
  * ===========================================================================
  *
  * Abre a linha do território, e é uma porta e não um índice de três: o mapa, a
- * busca de concelho, as nove regiões e os 29 distritos e ilhas. Substitui
- * `/municipios`, `/regioes` e `/distritos`, que passam a redirecionamentos do
- * servidor (`vercel.json`): três índices do mesmo país eram três portas para a
- * mesma coisa, e o §4 da estrutura de 17.09.2026 dá-lhes uma palavra.
+ * busca de concelho, as nove regiões e os 29 distritos e ilhas. `/municipios` e
+ * `/distritos`, e as inglesas, passam a redirecionamentos do servidor
+ * (`vercel.json`): índices do mesmo país eram portas para a mesma coisa, e o §4
+ * da estrutura de 17.09.2026 dá-lhes uma palavra.
+ *
+ * `/regioes` FICOU, E NÃO DEVIA. É a casa da régua da convergência, e a célula
+ * R3 do `check:regioes` — que protege os valores e as fontes dessa régua — exige
+ * que cada página de região tenha a porta para ela. A regra de paragem da casa
+ * manda parar nessa parte e escrever o caso, e o relatório do bloco escreve-o.
  *
  * DUAS LISTAS SIMPLES, E NÃO UMA ÁRVORE. Os distritos não se aninham dentro das
  * regiões, e a razão é medida: seis distritos têm concelhos em duas regiões
@@ -28,6 +33,7 @@ import MapaRespira from '../components/inicio/MapaRespira.astro';
 import { concelhos as concelhosDaCarta } from '../lib/inicio.mjs';
 import { regioesDaCarta, distritosDaCarta } from '../data/carta-dos-lugares.mjs';
 import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
+import { DADOS } from '../lib/dados.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import '../styles/lugar.css';
@@ -68,7 +74,7 @@ const distritos = distritosDaCarta();
     <div class="sec-head">
       <h2 class="eyebrow" id="regioes-k">{r.regioes}</h2>
     </div>
-    <ul class="lugares-lista">
+    <ul class="lugares-lista" data-lista-lugares="regioes">
       {
         regioes.map((x) => (
           <li>
@@ -85,7 +91,7 @@ const distritos = distritosDaCarta();
     <div class="sec-head">
       <h2 class="eyebrow" id="distritos-k">{r.distritos}</h2>
     </div>
-    <ul class="lugares-lista">
+    <ul class="lugares-lista" data-lista-lugares="distritos">
       {
         distritos.map((x) => (
           <li>
@@ -97,6 +103,15 @@ const distritos = distritosDaCarta();
       }
     </ul>
   </section>
+
+  {/* A PORTA DO FICHEIRO DOS 308 (B1, peça 2). Segue a lista que o ficheiro
+      publica, e a lista mudou de página: é aqui que os 308 se procuram. A
+      célula do `check:dados` que a declara protege a promessa do Método de que
+      os dados são descarregáveis, e por isso a porta não desapareceu com o
+      índice antigo. */}
+  <p class="rodape-nav lugares-dados">
+    <a class="ligacao-dados" href={DADOS.municipios} download>{s.municipios.dadosLink} ↓</a>
+  </p>
 
   <script src="/js/municipios.js" defer is:inline></script>
   <script src="/js/mapa-unidades.js" defer is:inline></script>

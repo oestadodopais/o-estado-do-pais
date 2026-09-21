@@ -331,9 +331,19 @@ for (const [rota, onde] of ligacoes) {
  * commit que a porta: é isso que faz a conferência seguir o desenho em vez de o
  * travar.
  */
+/* **21.09.2026, B1 peça 2:** a porta do CSV dos 308 segue a lista que o ficheiro
+ * publica, e essa lista mudou de nome: `/municipios` passou a redirecionamento e
+ * a página onde os 308 se procuram é `/lugares`. A declaração desce no mesmo
+ * commit que a porta, como a de 21.08 desceu.
+ *
+ * A EMENDA DO BRIEF DIZIA QUE A PORTA DESAPARECIA, e não desaparece: esta
+ * célula protege uma FONTE — o Método promete que os dados são descarregáveis, e
+ * um ficheiro sem porta declarada fecha a construção em vez de deixar de ser
+ * conferido. A regra de paragem manda parar nessa parte, e o caso está no
+ * relatório do bloco. */
 const PORTA_DOS_DADOS = {
   convergencia: 'livro',
-  municipios: 'municipios',
+  municipios: 'lugares',
 };
 
 /** O ficheiro construído de uma rota. `/` é `index.html`; o resto é `<rota>/index.html`. */

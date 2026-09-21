@@ -51,6 +51,7 @@ import { DOMINIOS } from '../src/data/dominios.mjs';
 import { FIGURAS } from '../src/data/figuras.mjs';
 import { MEDIDAS_DO_DOMINIO_1 } from '../src/data/dominios.mjs';
 import { NOMES_DO_PROJETO, NOMES_DAS_LINHAS_DERIVADAS } from '../src/data/nomes-das-medidas.mjs';
+import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { leMarcadores, analisa, leInventario, FICHEIRO_DOS_MARCADORES } from './voz.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -686,6 +687,17 @@ const NOMES_POR_FONTE = {
      ficheiro por conta própria e confere, carácter a carácter, que o texto
      rendido é o nome DAQUELA linha. */
   oficial: new Set([...NOMES_OFICIAIS.values()].map((n) => n.pt)),
+  /* AS OITO MEDIDAS DE UM CONCELHO (B1, peça 2, 21.09.2026). O nome de cada uma
+     é declarado uma vez em `src/data/concelhos.mjs`, para os 308 e para as duas
+     edições, e é esse nome que o cartão de uma página de lugar escreve. Sem esta
+     fonte, os dezasseis nomes custavam ao inventário das frases uma linha por
+     nome e por edição, que é a lista das medidas escrita outra vez. A régua lê
+     as entradas dos concelhos por conta própria, como lê as outras seis. */
+  concelho: new Set(
+    MUNICIPIOS_COM_PAGINA.flatMap((m) =>
+      (m.relance ?? []).flatMap((x) => Object.values(x.nome ?? {})),
+    ),
+  ),
 };
 
 /**
@@ -717,6 +729,13 @@ const NOMES_POR_LINHA = {
      traduz: o par tem as duas chaves com o mesmo texto, para que a conferência
      por edição seja a mesma pergunta que faz às outras fontes. */
   oficial: NOMES_OFICIAIS,
+  /* O nome DAQUELA linha, para as 308 × 8: o par sai da mesma lista de que a
+     página o tira, mas lido aqui, do lado da régua. */
+  concelho: new Map(
+    MUNICIPIOS_COM_PAGINA.flatMap((m) =>
+      (m.relance ?? []).filter((x) => x.claim).map((x) => [x.claim, x.nome]),
+    ),
+  ),
 };
 /* A CONFERÊNCIA DE `data-nome`, e é o que distingue esta marca da dos lugares.
    Cada elemento marcado diz de que ficheiro vem o nome, e a régua confere que o

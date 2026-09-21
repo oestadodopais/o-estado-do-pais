@@ -198,6 +198,7 @@ só então o número muda. Foi a falta deste gatilho que deixou a Emenda 18, de
 25.08.2026, apertar a regra da voz sem que o inventário fosse relido contra ela.
 
 | B1-peca1 | 17.09.2026 | por ler pelo lugar de direção antes de aterrar | Página e lista de estudos: lista fechada, abertura transcrita e retiradas em `design/especime-v3/medicoes/b1-2026-09-17/cadeias-retiradas-peca1.json`. |
+| b1-peca2 | 21.09.2026 | por ler antes de aterrar, por outra família que não a que construiu | Página do lugar e página dos lugares: 79 linhas retiradas e 8 novas, com a razão de cada classe em `design/especime-v3/medicoes/b1-2026-09-21/LEIA-ME-peca2.md`. |
 
 ### B1, primeira peça, 17.09.2026
 
@@ -295,3 +296,26 @@ As duas declarações isoladas «[a verificar]» e a sua definição portuguesa 
 Na passagem de correção B1, achado 7, entram os nomes dos campos «Medida», «Fonte» e «Verificado a» e os ingleses. Saem as doze cadeias do aparato técnico e das portas sem recibo, identificadas no inventário. A secção passa a depender de um recibo com valor, nome da medida, fonte e data da verificação, conferidos por L6 contra o livro-razão. A revisão pelo lugar de direção continua pendente.
 
 Os nomes dos recibos seguem os nomes que o livro-razão já apresenta: figuras, medidas do domínio e nomes aprovados do projeto, antes do rótulo da fonte. A L6 refaz essa escolha a partir das declarações de origem. O campo `name` não é a única origem de um nome existente; nenhum nome foi criado nesta correção.
+
+### B1, segunda peça, 21.09.2026 · os lugares
+
+As 79 cadeias que saíram são de três famílias, e a razão é a mesma para todas:
+a superfície que as rendia deixou de existir.
+
+| razão | quantas | o que era |
+|---|---|---|
+| explica a página | 31 | as contas do município e as suas ressalvas, a legenda da distância desenhada, a nota da lei do limite de dívida, a frase da divergência entre as duas contas da mesma dívida, e a nota do mapa localizador. Cada uma dizia como um número foi feito, e isso vive no recibo da linha |
+| segunda porta | 30 | os rótulos do índice dos concelhos e do índice dos distritos, que passaram a redirecionamentos para a página dos lugares, e as duas entradas de menu que eles tinham |
+| palavra fora do lugar | 18 | «região NUTS II», «distrito», «ilha da Região Autónoma» e as frases de abertura das duas páginas: o nome da gaveta da classificação não é o que a página tem |
+
+As 8 cadeias novas são os dois rótulos de secção da lista fechada («Temas» e o
+inglês), a primeira frase da nota da dívida total nas duas edições (o cartão leva
+uma frase de definição só, e a segunda era ressalva de recibo), e as quatro
+palavras da comparação do poder de compra com a média do país, que são a leitura
+de um lugar e entram marcadas.
+
+Os nomes dos dezoito temas e os nomes das oito medidas de um concelho NÃO entram
+no inventário: são nomes de entradas de ficheiros de dados declarados
+(`src/data/dominios.mjs` e `src/data/concelhos.mjs`), e vão com a marca
+`data-nome` que a régua confere carácter a carácter contra o ficheiro de onde
+dizem vir. Sem essa marca seriam 52 linhas a repetir duas listas.

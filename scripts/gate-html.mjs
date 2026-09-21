@@ -6753,11 +6753,17 @@ function existeConstruido(caminho) {
   );
 }
 const TABELA_VERCEL_B1 = JSON.parse(fs.readFileSync(path.join(ROOT, 'vercel.json'), 'utf8')).routes;
-/* Os três índices do território que a peça 2 do B1 reuniu numa página só. As
+/* Os índices do território que a peça 2 do B1 reuniu na página dos lugares. As
    chaves ficam na tabela de rotas de propósito: é por elas que a célula dos
-   redirecionamentos compõe as origens e confere que nenhuma das três continua
-   construída. */
-const INDICES_DO_TERRITORIO = ['municipios', 'regioes', 'distritos'];
+   redirecionamentos compõe as origens e confere que nenhuma delas continua
+   construída.
+
+   `regioes` NÃO ESTÁ AQUI, e a razão é a regra de paragem: o índice das regiões
+   é a casa da régua da convergência, com dez valores selados e duas contagens
+   recontadas, e a célula R3 do `check:regioes` — que protege números e fontes —
+   exige que cada página de região tenha a porta para essa régua. Tirar o índice
+   tirava a régua do sítio. O caso está no relatório do bloco. */
+const INDICES_DO_TERRITORIO = ['municipios', 'distritos'];
 for (const { rel, base, href } of ligacoesInternas) {
   const resolvido = resolveLigacao(base, href);
   if (!resolvido) {
@@ -7021,9 +7027,9 @@ for (const { caminho, px } of [{ caminho: '/apple-touch-icon.png', px: 180 }]) {
   }
 }
 
-/* B1, peça 2: os três índices do território, e as suas inglesas, são seis
-   mudanças de endereço, e pertencem ao servidor pela mesma forma que as dez da
-   peça 1: origem exata, destino existente e construído com canónica única, a
+/* B1, peça 2: os dois índices do território que se reuniram, e as suas
+   inglesas, são quatro mudanças de endereço, e pertencem ao servidor pela mesma
+   forma que as dez da peça 1: origem exata, destino existente e construído com canónica única, a
    entrada antes do `filesystem`, e nenhuma das rotas antigas em `dist/`. */
 {
   const tabela = TABELA_VERCEL_B1;
@@ -7054,7 +7060,7 @@ for (const { caminho, px } of [{ caminho: '/apple-touch-icon.png', px: 180 }]) {
         falha(`${destino}: canónica única e exata em falta.`);
     }
   }
-  if (contadas !== 6) falha(`esperadas seis entradas conferidas, e foram ${contadas}.`);
+  if (contadas !== 4) falha(`esperadas quatro entradas conferidas, e foram ${contadas}.`);
 }
 
 /**

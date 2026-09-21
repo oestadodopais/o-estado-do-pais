@@ -225,12 +225,14 @@ const medidaDeUmaLinha = (unidade, linha) =>
       índice, que é onde ela vive, e leva a seta que a casa usa para uma porta
       que muda de página. A cadeia já estava declarada e não se rendia em lado
       nenhum. */}
+  {/* A PORTA PARA A RÉGUA FICA (B1, peça 2, 21.09.2026). O índice das regiões
+      devia ter passado a redirecionamento com os outros dois; a célula R3 do
+      `check:regioes`, que protege os valores e as fontes da régua da
+      convergência, exige esta porta em cada página de região, e a régua não tem
+      outra casa. A regra de paragem manda parar nessa parte: o índice das
+      regiões continua construído, e o caso está no relatório. */}
   <p class="regiao-comparar">
-    {/* A PORTA PARA A RÉGUA SAIU (B1, peça 2, 21.09.2026). Abria `#regua` no
-        índice das regiões, e esse índice passou a ser um redirecionamento para a
-        página dos lugares: a âncora deixou de existir, e uma porta que abre o topo
-        de outra página não é uma porta. A régua da convergência fica sem página
-        até o B3 lhe dar uma, e o relatório do bloco di-lo. */}
+    <a href={`${routePath('regioes', lang)}#regua`}>{s.regioes.compararPorta} →</a>
   </p>
 
   <p class="rodape-nav regiao-portas">

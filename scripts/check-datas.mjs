@@ -131,6 +131,14 @@ const rotaDe = (f) =>
 /* --- as rotas que imprimem datas de edição -------------------------------- */
 
 const INDICES = new Set(['/estudos', '/en/studies']);
+/* B1, peça 2: a página de um lugar passou a listar os estudos sobre ele, cada um
+   com a data em que a sua edição entrou neste repositório. São mais 616 páginas
+   que imprimem datas, e prendem-nas pela MESMA regra do índice dos estudos: o
+   bloco `[data-estudo-edicao]` diz o trabalho e a língua, e a porta ao lado diz
+   o destino. Sem esta linha, o passo via a marca numa rota que não conhecia e
+   fechava a construção, que é o comportamento certo de quem não sabe prender:
+   o que faltava era ensinar-lhe a rota nova, e não deixá-la passar. */
+const ROTA_DO_LUGAR = /^\/(?:en\/municipalities|municipios)\/[^/]+$/;
 /** B1: as datas vivem na linha da lista ou na linha final do estudo.
  * data-estudo-edicao declara slug/língua e a porta confirma essa identidade.
  * Os endereços /texto e /text são redirecionamentos conferidos por gate:html.
@@ -158,7 +166,7 @@ const paraPrender = [];
 for (const f of paginas) {
   const cru = fs.readFileSync(f, 'utf8');
   const rota = rotaDe(f);
-  const eIndice = INDICES.has(rota);
+  const eIndice = INDICES.has(rota) || ROTA_DO_LUGAR.test(rota);
   const daEdicao = ROTA_DA_EDICAO.exec(rota);
   /* A prova barata primeiro: a marca é uma cadeia, e a esmagadora maioria das
      páginas do sítio não a tem nem é uma das rotas que imprimem datas. */
@@ -293,13 +301,30 @@ function orfas(rota, doc, presasAqui) {
 function prendeNoIndice(rota, doc) {
   prendeEdicoesB1(rota, doc);
 }
+/** B1, peça 2: a página de um lugar, com os estudos sobre ele. */
+function prendeNaPaginaDoLugar(rota, doc) {
+  const slug = rota.split('/').pop();
+  prendeEdicoesB1(rota, doc, null, WORKS.filter((w) => w.subject === slug).length);
+}
 function prendeNaPaginaDoTrabalho(rota, slug, doc) {
   prendeEdicoesB1(rota, doc, slug);
 }
-function prendeEdicoesB1(rota, doc, slugDaPagina = null) {
+function prendeEdicoesB1(rota, doc, slugDaPagina = null, esperadas = null) {
   const presasAqui = new Set();
   const blocos = doc.querySelectorAll('[data-estudo-edicao]');
-  if (!blocos.length) falhas.push(`${rota}: nenhuma edição declarada para prender a data.`);
+  /* NUMA PÁGINA DE LUGAR, QUANTAS EDIÇÕES SE ESPERAM SAI DOS DADOS (B1, peça 2):
+     é o número de estudos que declaram aquele lugar, e não «pelo menos uma». Uma
+     página que perdesse um estudo da lista deixava de imprimir a data dele, e a
+     conta calava-se; com os dois pontos de observação, fecha a construção. */
+  if (esperadas !== null) {
+    if (blocos.length !== esperadas) {
+      falhas.push(
+        `${rota}: declara ${blocos.length} edição(ões) de estudo e os dados dizem ${esperadas}.`,
+      );
+    }
+  } else if (!blocos.length) {
+    falhas.push(`${rota}: nenhuma edição declarada para prender a data.`);
+  }
   for (const bloco of blocos) {
     const [slug, lang] = (bloco.getAttribute('data-estudo-edicao') ?? '').split('/');
     const work = WORKS.find(w => w.slug === slug);
@@ -324,6 +349,11 @@ function prendeEdicoesB1(rota, doc, slugDaPagina = null) {
 }
 
 for (const { rota, doc, slug } of paraPrender) {
+  if (ROTA_DO_LUGAR.test(rota)) {
+    paginasPrendidas++;
+    prendeNaPaginaDoLugar(rota, doc);
+    continue;
+  }
   if (INDICES.has(rota)) {
     paginasPrendidas++;
     prendeNoIndice(rota, doc);
