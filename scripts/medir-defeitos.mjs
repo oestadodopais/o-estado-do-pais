@@ -605,17 +605,37 @@ const VOZ_DECLARADA = '[data-voz]';
  * com os que o motor marca `exata`, e prefere o do INE ao da PORDATA, que é a
  * ordem da norma §1.5.
  *
+ * UM NOME COM AVISO NÃO CONTA (correção de 21.09.2026). Um nome cujo objeto traga
+ * o campo `aviso` (o motor a dizer que a conferência de ser a mesma medida ficou
+ * por fazer) ou `mesma_medida: false` não é um nome oficial confirmado, e esta
+ * régua deixa de o aceitar como nome de cartão: se uma página o render com
+ * `data-nome="oficial"`, o texto já não é um nome deste ficheiro e a célula 9 do
+ * `check:voz` fecha a construção. A regra está escrita aqui outra vez, e não
+ * importada de `src/lib/enquadramento.mjs`, pela razão do parágrafo acima. Antes
+ * desta correção a linha dizia `nome_ine?.nome ?? nome_pordata?.nome`, que punha
+ * o nome do INE primeiro sem olhar para o aviso, e que ficava sem nome nenhum
+ * quando o do INE era o marcador `[verify]` e o da PORDATA existia.
+ *
  * @type {Map<string, Record<string, string>>}
  */
 const NOMES_OFICIAIS = new Map();
 {
   const f = path.join(RAIZ, 'src', 'data', 'enquadramento', 'nomes.json');
+  /** @param {any} o */
+  const nomeConfirmado = (o) => {
+    if (!o || typeof o !== 'object') return null;
+    if ((typeof o.aviso === 'string' && o.aviso.trim() !== '') || o.mesma_medida === false) return null;
+    if (typeof o.nome !== 'string' || o.nome.trim() === '' || o.nome === '[verify]') return null;
+    if (typeof o.endereco !== 'string' || o.endereco === '') return null;
+    if (typeof o.lido_em !== 'string' || o.lido_em === '') return null;
+    return o.nome;
+  };
   if (fs.existsSync(f)) {
     const j = JSON.parse(fs.readFileSync(f, 'utf8'));
     for (const i of j.indicadores ?? []) {
       if (i?.correspondencia !== 'exata') continue;
-      const nome = i?.nome_ine?.nome ?? i?.nome_pordata?.nome ?? null;
-      if (typeof nome !== 'string' || nome.trim() === '' || nome === '[verify]') continue;
+      const nome = nomeConfirmado(i?.nome_ine) ?? nomeConfirmado(i?.nome_pordata);
+      if (nome === null) continue;
       NOMES_OFICIAIS.set(i.id_da_linha, { pt: nome, en: nome });
     }
   }
