@@ -492,8 +492,24 @@ function corre(dist) {
           if (!d) {
             erros.push(`K6 · ${rota} · ${id}: a frase diz ser de «${daLinha}», que não tem definição declarada`);
           } else {
-            const declarada = textoDaDefinicao(d[langPagina] ?? d.pt).replace(/\s+/g, ' ').trim();
-            const rendida = textoVisivel(frase);
+            const partes = d[langPagina] ?? d.pt;
+            const declarada = textoDaDefinicao(partes).replace(/\s+/g, ' ').trim();
+            /* B1, peça 3: os temas passam a render as definições com marcador.
+               A glosa inglesa e a definição da primeira ocorrência já são
+               parte de Frase. Conferem-se antes de separar a frase da medida;
+               uma classe sozinha nunca dispensa texto desta comparação. */
+            const copia = soOQueSeVe(frase);
+            const glosas = copia.querySelectorAll('.marcador-gloss');
+            const previstas = langPagina === 'pt' ? [] : partes
+              .filter((p) => typeof p !== 'string' && p.marcador && p.gloss)
+              .map((p) => `(${p.gloss})`);
+            if (JSON.stringify(glosas.map(textoVisivel)) !== JSON.stringify(previstas))
+              erros.push(`K6 · ${rota} · ${id}: a glosa do marcador difere da declaração`);
+            const avisos = copia.querySelectorAll('.marcador-definicao');
+            if (avisos.length > 1 || avisos.some((n) => textoVisivel(n) !== `· ${t(langPagina).marcador.definicao}`))
+              erros.push(`K6 · ${rota} · ${id}: a definição do marcador difere da declaração`);
+            [...glosas, ...avisos].forEach((n) => n.remove());
+            const rendida = copia.text.replace(/\s+/g, ' ').trim();
             if (rendida !== declarada) {
               erros.push(
                 `K6 · ${rota} · ${id}: a frase do cartão diz «${rendida.slice(0, 50)}…» e a ` +
@@ -726,6 +742,27 @@ if (PROVA) {
     falhas.push(`o cartão são deu ${noSao.length} vermelho(s): ${noSao[0]}`);
   }
 
+  /* A mesma K6, com a frase real e as duas glosas: verde antes, vermelha
+     quando se troca cada glosa. Nenhum valor de medida entra nesta planta. */
+  const glosasDir = fs.mkdtempSync(path.join(os.tmpdir(), 'oedp-cartao-glosas-'));
+  try {
+    fs.mkdirSync(path.join(glosasDir, 'en'));
+    const id = 'divida-das-empresas-2025';
+    const frase = DEFINICOES_DAS_MEDIDAS[id].en.map((p) => typeof p === 'string' ? p :
+      `<a class="marcador">[${p.marcador}]</a><span class="marcador-gloss"> (${p.gloss})</span>` +
+      `<span class="marcador-definicao"> · ${t('en').marcador.definicao}</span>`).join('');
+    const boa = `<html lang="en"><body><article data-cartao-medida="${id}"><p data-cartao-definicao="${id}">${frase}</p></article></body></html>`;
+    const ficheiro = path.join(glosasDir, 'en', 'index.html');
+    fs.writeFileSync(ficheiro, boa);
+    if (corre(glosasDir).erros.some((e) => e.startsWith('K6 ·'))) falhas.push('K6 recusa a frase com as glosas declaradas');
+    for (const seletor of ['.marcador-gloss', '.marcador-definicao']) {
+      const pagina = parse(boa);
+      pagina.querySelector(seletor).set_content('Texto plantado.');
+      fs.writeFileSync(ficheiro, pagina.toString());
+      if (!corre(glosasDir).erros.some((e) => e.startsWith('K6 ·'))) falhas.push(`K6 não vê a glosa trocada em ${seletor}`);
+    }
+  } finally { fs.rmSync(glosasDir, { recursive: true, force: true }); }
+
   /* -------------------------------------------------------------------------
      A PROVA DAS LINHAS DO ENQUADRAMENTO: um positivo e um negativo, os dois com
      linhas verdadeiras. Nenhuma linha falsa é escrita para esta prova.
@@ -845,7 +882,8 @@ if (PROVA) {
       `  prova: ${esperado.length} estragos plantados, ${esperado.length} vistos; o cartão são a 0; ` +
         `a régua com as duas comparações de uma medida, a série bienal, a ausência da linha da ` +
         `União e uma chave que não se inventa; as duas testemunhas do valor de referência com um ` +
-        `par bom e dois maus; a mesma série com um par que bate e um que não bate`,
+        `par bom e dois maus; a mesma série com um par que bate e um que não bate; ` +
+        `K6 com as glosas declaradas e com cada uma das duas trocada`,
     ),
   );
 }
