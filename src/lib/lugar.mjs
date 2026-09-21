@@ -111,6 +111,7 @@ export function leituraDoLugar(m, pecas, lang, s) {
   }
 
   const L = s.municipio.leituraDoLugar;
+  /** @param {string} chave */
   const peca = (chave) => pecas.find((p) => p.chave === chave && !p.vazia) ?? null;
 
   /* (a) a dívida da câmara contra o limite legal. */
@@ -122,9 +123,10 @@ export function leituraDoLugar(m, pecas, lang, s) {
     !eValorTextual(indice.linha.value) &&
     parsePtNumber(indice.linha.value) !== null &&
     parsePtNumber(tecto.value) !== null;
-  const dentro = temIndice
-    ? parsePtNumber(indice.linha.value) <= parsePtNumber(tecto.value)
-    : null;
+  const dentro =
+    temIndice && indice && tecto
+      ? Number(parsePtNumber(indice.linha.value)) <= Number(parsePtNumber(tecto.value))
+      : null;
 
   /* (b) o poder de compra por pessoa contra a média do país, que é a base do
      índice e está escrita na unidade da própria linha. */
@@ -153,7 +155,7 @@ export function leituraDoLugar(m, pecas, lang, s) {
       L.dividaD,
     );
   }
-  if (temPoder) {
+  if (temPoder && poder) {
     citadas.push(poder.claim);
     if (temIndice) partes.push(L.juncao);
     else partes.push(L.poderSoA, { lugar: nome }, L.poderSoB);
@@ -194,8 +196,9 @@ export function temasDoLugar(pecas, citadas, lang) {
           `src/data/temas-das-medidas.mjs. Cada número de um lugar vive debaixo de um dos dezoito temas.`,
       );
     }
-    if (!porTema.has(tema)) porTema.set(tema, []);
-    porTema.get(tema).push(p);
+    const doTema = porTema.get(tema) ?? [];
+    doTema.push(p);
+    porTema.set(tema, doTema);
   }
   const saida = [];
   for (const d of DOMINIOS) {
@@ -260,6 +263,7 @@ export function estudosDoLugar(slug, lang) {
 export function mudancasDoLugar(slug, pecas, lang) {
   const daPagina = new Set(pecas.filter((p) => !p.vazia).map((p) => p.claim));
   const estudos = new Set(WORKS.filter((w) => w.subject === slug).map((w) => w.id));
+  /** @param {string} id */
   const daqui = (id) => {
     if (daPagina.has(id)) return true;
     const linha = getClaim(id);
