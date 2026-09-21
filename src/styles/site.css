@@ -5616,7 +5616,8 @@ a.marcador::after {
 .rodape-b1 { border-top: 1.5px solid var(--ink); padding: 16px 0 40px; font-family: var(--f-versal); font-size: 13px; line-height: 1.8; letter-spacing: .04em; color: var(--muted); }
 .rodape-b1 .rodape-nav, .rodape-b1 .rotulo-ia-rodape, .rodape-b1 .rotulo-ia-linha, .rodape-b1 .rotulo-ia-ficha { display: inline; margin: 0; padding: 0; border: 0; font: inherit; letter-spacing: inherit; }
 .rodape-b1 .rodape-nav { text-transform: none; }
-.rodape-b1 a { color: inherit; text-decoration: none; display: inline-flex; align-items: center; min-height: 32px; }
+.rodape-b1 a { color: inherit; text-decoration: none; display: inline-flex; align-items: center; min-height: 32px;  min-width: 44px; position: relative; z-index: 1; margin-block: 2px; }
+.rodape-b1 a::after { content: none; }
 @media (max-width: 1023px) { .rodape-b1 a { min-height: 44px; } }
 .rodape-b1 .rotulo-ia-ficha::before { content: ' · '; }
 .rodape-b1 a:hover { text-decoration: underline; }

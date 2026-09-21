@@ -473,6 +473,11 @@ export const NOMES_DO_PROJETO = {
  * @type {Record<string, ParDeLinguas>}
  */
 export const NOMES_DAS_LINHAS_DERIVADAS = {
+  // A contagem e o lugar estão declarados na derivação desta linha.
+  'estudos-evora-publicados': {
+    pt: 'Estudos publicados sobre Évora',
+    en: 'Published studies about Évora',
+  },
   'distancia-portugal-ue27-2024': {
     pt: 'Distância do PIB por habitante à média europeia, em Portugal',
     en: 'Gap between GDP per inhabitant and the European average, in Portugal',
