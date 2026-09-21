@@ -137,6 +137,7 @@ const {
   p,
   concelhos,
   postura = 'inteiro',
+  portaLugares = false,
   escolhido = null,
   nivel = postura === 'inteiro' ? 'pais' : 'pontos',
   unidade = null,
@@ -311,7 +312,7 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
       folha lê-o para esconder as molduras, para trocar as duas frases vazias e
       para acender a porta de voltar. */}
   data-nivel={nivel === 'pontos' ? undefined : nivel}
-  aria-describedby={postura === 'inteiro' ? 'mapa-legenda' : undefined}
+  aria-describedby={postura === 'inteiro' && !portaLugares ? 'mapa-legenda' : undefined}
 >
   {/* «FECHAR» SAIU COM A VISTA DE ESCOLHA (Emenda 19b, 26.08.2026).
       Era o comando que devolvia o mapa à coluna, no canto superior direito do
@@ -782,6 +783,7 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
       niveis={['pais', 'unidade']}
       voltar={routePath('home', lang)}
       pais={repousoDoPais(s)}
+      portaLugares={portaLugares ? routePath('lugares', lang) + '/' : null}
     />
   )}
   {/* NO NÍVEL DA UNIDADE HÁ UM NÍVEL SÓ, e por isso não há porta de voltar: o
