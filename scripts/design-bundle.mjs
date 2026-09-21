@@ -1546,27 +1546,29 @@ ${tabelaTipos}
     );
   }
 
-  /* A DISTÂNCIA DE ÉVORA MUDOU DE CASA (bloco F1.10, §7.1, 08.09.2026), e não de
-     gramática. A grelha das oito peças grandes saiu da página de um concelho, e
-     com ela a `.peca` que levava a régua contra o teto legal; a mesma distância
-     desenha-se hoje DENTRO da leitura da medida que ela mede, com a forma
-     própria daquela página (`.mun-distancia`), que é mais do que a régua
-     genérica: leva os dois valores com os seus selos, as duas pontas nomeadas e
-     a frase do artigo que fixa o limite. É essa que o cartão retrata. */
+  /* O TETO LEGAL DEIXOU DE SE DESENHAR NA PÁGINA DE UM CONCELHO (B1, peça 2,
+     21.09.2026), e a comparação não se perdeu: mudou de língua. A distância
+     desenhada (`.mun-distancia`) saiu com a leitura breve, e a mesma referência
+     diz-se hoje por palavras, na régua do cartão do índice de dívida («dentro do
+     limite legal», «fora do limite legal») e na leitura do lugar. O cartão passa
+     a retratar essa régua, que é a forma que a página tem: a §2.4 da norma manda
+     que a régua se diga «por palavras e por número, nunca por cor sozinha», e é
+     o que este cartão mostra.
+
+     A CORRIDA PÁRA SE A FORMA NÃO ESTIVER LÁ, como parava com o desenho: um
+     cartão que retrata uma régua tem de a ler da página, e não de a descrever. */
   const evoraRaiz = arvore('municipios/evora/index.html');
-  const evoraPeca = evoraRaiz.querySelector('.dobra-instrumento .mun-distancia');
-  if (!evoraPeca) {
+  const evoraPeca = evoraRaiz.querySelector('[data-medida-chave="indice"]');
+  if (!evoraPeca || !evoraPeca.querySelector('.cartao-medida-regua')) {
     morre(
-      'não encontrei em `dist/municipios/evora/index.html` a distância contra o teto legal ' +
-        '(`.dobra-instrumento .mun-distancia`). Ou ela saiu da página, e este cartão tem de ser ' +
-        'revisto, ou mudou-se outra vez de casa.',
+      'não encontrei em `dist/municipios/evora/index.html` o cartão do índice de dívida com a ' +
+        'sua régua (`[data-medida-chave="indice"] .cartao-medida-regua`). Ou a comparação com o ' +
+        'limite legal saiu da página, e este cartão tem de ser revisto, ou mudou outra vez de forma.',
     );
   }
-  const evoraNome =
-    evoraRaiz.querySelector('.dobra-instrumento')?.closest('.dobra')?.querySelector('.dobra-nome')
-      ?.text?.trim() ?? '';
+  const evoraNome = evoraPeca.querySelector('.cartao-medida-nome')?.text?.trim() ?? '';
   tiraCodigo(evoraPeca);
-  absolutizaLigacoes(evoraPeca, 'dist/municipios/evora/index.html → .mun-distancia');
+  absolutizaLigacoes(evoraPeca, 'dist/municipios/evora/index.html → o cartão do índice de dívida');
 
   const umaRegua = (p, legenda) => `    <div class="ds-mostra">
       <p class="ds-legenda">${escapa(p.nome)} · ${escapa(legenda)}</p>
@@ -1608,9 +1610,9 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   </section>
 
   <section class="ds-bloco">
-    <h2>O tecto legal, na página do concelho</h2>
+    <h2>O tecto legal, na página do lugar</h2>
     <div class="ds-mostra">${evoraPeca.outerHTML}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/municipios/evora/index.html</code> · a distância, dentro da leitura de «${escapa(evoraNome)}». A referência é um limiar formal (o limite legal do índice de dívida), e por isso a palavra do estado no cartão colore; a base 100 de um índice cuja unidade é uma média não coloriria.</p>
+    <p class="ds-nota"><code class="ds-mono">dist/municipios/evora/index.html</code> · o cartão de «${escapa(evoraNome)}», com a régua por palavras. A referência é um limiar formal (o limite legal do índice de dívida), e por isso a palavra do estado diz de que lado dele o valor está; a base 100 de um índice cuja unidade é uma média não daria uma palavra de estado. O desenho da distância saiu da página de um concelho com a leitura breve, e a comparação ficou onde o leitor a lê.</p>
   </section>`;
 
   regista(
@@ -1625,7 +1627,13 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
 /* ---------------------------------------------------- 05. O mapa por unidades */
 {
   const mapa = peca('index.html', 'figure#mapa');
-  const localizador = peca('municipios/evora/index.html', 'figure#mapa');
+  /* O CARTÃO LOCALIZADOR SAIU DA PÁGINA DE UM CONCELHO (B1, peça 2,
+     21.09.2026). A página de um lugar passou a dizer onde ele fica pela linha
+     «Portugal › região › distrito › concelho», com quatro portas em vez de uma,
+     e o mapa inteiro passou para a página dos lugares. A secção que o retratava
+     fica dita, com a ausência MEDIDA, como já ficou a da banda das regiões e a
+     do selo do telemóvel: um cartão que apaga uma secção em silêncio deixa quem
+     desenha a pensar que a forma nunca existiu. */
   const linha = peca('index.html', '.mapa-linha');
 
   /* O SELO DO TELEMÓVEL JÁ NÃO RENDE, e a corrida confere-o antes de o cartão o
@@ -1752,6 +1760,19 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
         `retratá-los.`,
     );
   }
+  /* A AUSÊNCIA DO LOCALIZADOR, MEDIDA EM TODAS AS PÁGINAS DE CONCELHO. A
+     postura existe no componente; o que se afirma é que página nenhuma a pede
+     hoje, e a corrida pára se voltar sem que o cartão volte com ela. */
+  const comLocalizador = PAGINAS_DE_DIST.filter((f) =>
+    fs.readFileSync(f, 'utf8').includes('data-postura="localizador"'),
+  ).map((f) => path.relative(DIST, f).split(path.sep).join('/'));
+  if (comLocalizador.length) {
+    morre(
+      `o cartão localizador voltou a render em ${comLocalizador.length} página(s), a começar em ` +
+        `\`dist/${comLocalizador[0]}\`. A peça 2 do B1 tirou-o da página de um lugar; ou ele sai, ` +
+        `ou este cartão volta a retratá-lo.`,
+    );
+  }
   /* A UNIDADE E NÃO A REGIÃO, E O ANEL POR CLASSE (item 8.17b, 08.09.2026). A
      primeira passagem pôs aqui o nível da REGIÃO, porque era o que o mapa
      daquele dia tinha; o F1.1e devolveu o desenho às 29 unidades da Carta e
@@ -1759,24 +1780,17 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
      UNIDADE dele. A conta não muda (uma unidade tem menos concelhos do que os
      308 e mais do que nenhum); mudam a palavra e a marca do anel, que era
      `data-escolhido` e é a classe `uni-escolhida` no `<path>`. */
-  const areasDaUnidade = localizadorRaiz.querySelectorAll('#mapa path.uni').length;
-  if (areasDaUnidade === 0 || areasDaUnidade >= CONCELHOS_DA_CARTA) {
-    morre(
-      `o mapa de \`dist/municipios/evora/index.html\` tem ${areasDaUnidade} área(s) (\`path.uni\`), e ` +
-        `uma unidade tem menos concelhos do que os ${CONCELHOS_DA_CARTA} da Carta e mais do que ` +
-        `nenhum. O item 8.17b do F1.10 põe ali o nível da UNIDADE do mapa do F1.1e; um desenho com ` +
-        `todos os concelhos do país seria o mapa do país outra vez.`,
-    );
-  }
-  const aneis = localizadorRaiz.querySelectorAll('#mapa path.uni-escolhida').length;
-  if (aneis !== 1) morre(`o mapa de \`dist/municipios/evora/index.html\` marca ${aneis} concelho(s) escolhido(s), e devia marcar um.`);
+  /* O ANEL CONTINUA A SER A MARCA DE UM LUGAR ESCOLHIDO, e onde ele se desenha é
+     na página de uma unidade da Carta, que é a que ficou com o mapa do segundo
+     nível. A conta é a mesma, lida de lá. */
+  const aneis = arvore('distritos/evora/index.html').querySelectorAll('#mapa path.uni-escolhida').length;
 
   /* A LEGENDA DE NEUTRALIDADE JÁ NÃO RENDE, e a corrida confere-o antes de o
      cartão o dizer. A frase é lida da própria Emenda 3, e não escrita aqui. */
   const emendaDoMapa = EMENDA('**Mapa (§4 emendado;');
   const legendaRevogada = emendaDoMapa.match(/legenda «([^»]+)»/)?.[1];
   if (!legendaRevogada) morre('não encontrei dentro da Emenda 3 a legenda de neutralidade que a Emenda 15 revoga; o cartão do mapa afirma que ela não rende, e essa afirmação tem de ser conferida.');
-  for (const rota of ['index.html', 'municipios/index.html', 'en/index.html']) {
+  for (const rota of ['index.html', 'lugares/index.html', 'en/index.html']) {
     if (leDist(rota).includes(legendaRevogada)) {
       morre(`a legenda de neutralidade da Emenda 3 voltou a render em \`dist/${rota}\`. A Emenda 15 revoga-a; ou sai da página, ou sai do cartão.`);
     }
@@ -1806,7 +1820,7 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   <section class="ds-bloco">
     <h2>A neutralidade das áreas, e a legenda que já não se escreve</h2>
     <p class="ds-nota">Emenda 3, de 20.08.2026, emendada na parte do desenho pela Emenda 20: «${emLinha(EMENDA('**Mapa (§4 emendado;'))}»</p>
-    <p class="ds-nota">A legenda que essa emenda mandava pôr ao lado do mapa («${escapa(legendaRevogada)}») <strong>já não rende na página</strong>: a Emenda 15, de 21.08.2026, revoga-a por escrito. Esta corrida procura-a em <code class="ds-mono">dist/index.html</code>, em <code class="ds-mono">dist/municipios/index.html</code> e em <code class="ds-mono">dist/en/index.html</code>, e pára se a encontrar. A regra continua a valer; o que saiu foi a página dizê-la de si própria.</p>
+    <p class="ds-nota">A legenda que essa emenda mandava pôr ao lado do mapa («${escapa(legendaRevogada)}») <strong>já não rende na página</strong>: a Emenda 15, de 21.08.2026, revoga-a por escrito. Esta corrida procura-a em <code class="ds-mono">dist/index.html</code>, em <code class="ds-mono">dist/lugares/index.html</code> e em <code class="ds-mono">dist/en/index.html</code>, e pára se a encontrar. A regra continua a valer; o que saiu foi a página dizê-la de si própria.</p>
     <p class="ds-nota">Emenda 15: «${emLinha(EMENDA('**A página do leitor não se explica'))}»</p>
   </section>
 
@@ -1817,9 +1831,8 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   </section>
 
   <section class="ds-bloco">
-    <h2>Um lugar escolhido é um contorno, e não um enchimento</h2>
-    <div class="ds-mostra ds-mostra-larga">${localizador}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/municipios/evora/index.html</code> · o mapa da unidade daquele concelho (o seu distrito ou a sua ilha), que substituiu o cartão dos 308 pontos a 08.09.2026 (item 8.17 do F1.10, e o nível da unidade com o 8.17b): ${areasDaUnidade} áreas, que são os concelhos que o ficheiro daquela unidade desenha, de entre os ${CONCELHOS_DA_CARTA} da Carta, e ${aneis} marcado. Na primeira página nenhum lugar vem escolhido; aqui a marca é posta na construção, porque a página é de um concelho. O glifo continua a ser o da Emenda 10: o mesmo traço, mais grosso, e nunca um enchimento. Medido nesta corrida: ${pontos} pontos do mapa dos 308 nesta página.</p>
+    <h2>Um lugar escolhido é um contorno, e não um enchimento, e o cartão localizador que saiu</h2>
+    <p class="ds-nota">Esta secção mostrava <code class="ds-mono">figure#mapa</code> de <code class="ds-mono">dist/municipios/evora/index.html</code>: o mapa da unidade daquele concelho, com o concelho da página marcado por um anel. A peça 2 do B1, de 21.09.2026, tirou-o: a página de um lugar diz onde ele fica pela linha «Portugal › região › distrito › concelho», com quatro portas em vez de uma, e o mapa inteiro passou para a página dos lugares. Medido nesta corrida: ${pontos} pontos do mapa dos 308 e zero cartões localizadores nas ${PAGINAS_DE_DIST.length} páginas construídas, e a corrida pára se voltarem sem que este cartão volte com eles. O glifo do anel não mudou, e continua a ver-se acima, na página de uma unidade: ${aneis} lugar marcado, com o mesmo traço, mais grosso, e nunca um enchimento.</p>
   </section>
 
   <section class="ds-bloco">
@@ -1833,7 +1846,7 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
     'Disposições',
     1240,
     cartao({ grupo: 'Disposições', viewport: 1240, titulo: 'O mapa por unidades', corpo, familias: ['inicio', 'municipio'] }),
-    `${unidades} unidades, ${concelhosDoDistrito} concelhos e ${areasDaUnidade} áreas de uma unidade, três mapas de dist/`
+    `${unidades} unidades e ${concelhosDoDistrito} concelhos, dois mapas de dist/, e o cartão localizador em zero páginas`
   );
 }
 
@@ -2075,7 +2088,9 @@ const PAGINAS = [
   { ficheiro: '12-pagina-linha-livro-razao.html', rota: 'livro-razao/divida-publica-2025/index.html', titulo: 'Página: linha do livro-razão' },
   { ficheiro: '13-pagina-livro-razao.html', rota: 'livro-razao/index.html', titulo: 'Página: índice do livro-razão' },
   { ficheiro: '14-pagina-municipio.html', rota: 'municipios/evora/index.html', titulo: 'Página: município' },
-  { ficheiro: '15-pagina-municipios.html', rota: 'municipios/index.html', titulo: 'Página: municípios' },
+  /* B1, peça 2: o retrato do índice dos concelhos passa a ser o da página dos
+     lugares, que ficou no lugar dele. */
+  { ficheiro: '15-pagina-lugares.html', rota: 'lugares/index.html', titulo: 'Página: lugares' },
   { ficheiro: '16-pagina-metodo.html', rota: 'metodo/index.html', titulo: 'Página: método' },
   { ficheiro: '17-pagina-agenda.html', rota: 'agenda/index.html', titulo: 'Página: agenda' },
   { ficheiro: '18-pagina-estudos.html', rota: 'estudos/index.html', titulo: 'Página: estudos' },
