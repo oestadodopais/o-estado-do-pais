@@ -11,18 +11,26 @@
  *   · `lugares`, `regioes`, `distritos` · a página dos lugares e as suas duas
  *     listas. «Distritos e ilhas» porque as 29 unidades da Carta são dezoito
  *     distritos e onze ilhas, e chamar ilha a um distrito seria falso.
+ *   · `todasAsMedidas*` · a porta, no fim dos números por tema, para as linhas
+ *     daquele lugar no livro-razão (achado D5 de 21.09.2026). Doze linhas das
+ *     contas de Évora deixaram de ter cartão, e a página do livro-razão do
+ *     concelho ficou sem porta; esta é a porta para o que a página não mostra, e
+ *     não uma segunda porta para o que ela mostra. Parte-se em duas porque o
+ *     nome do lugar entra no meio, declarado como lugar.
  */
 export const ROTULOS_B1 = {
   pt: { valor: 'Valor', medida: 'Medida', fonte: 'Fonte', verificacao: 'Verificado a', estudos: 'Estudos', porLugar: 'Por lugar', fontes: 'Fontes e verificação',
     edicao: 'Edição tal como foi publicada', publicado: 'publicado a',
     pais: 'Portugal', outraLingua: '(em inglês)', indice: 'Nesta página',
     temas: 'Temas', estudosDoLugar: 'Estudos sobre este lugar', mudou: 'O que mudou',
-    lugares: 'Lugares', regioes: 'Regiões', distritos: 'Distritos e ilhas' },
+    lugares: 'Lugares', regioes: 'Regiões', distritos: 'Distritos e ilhas',
+    todasAsMedidasA: 'Todas as medidas de ', todasAsMedidasB: '' },
   en: { valor: 'Value', medida: 'Measure', fonte: 'Source', verificacao: 'Verified on', estudos: 'Studies', porLugar: 'By place', fontes: 'Sources and verification',
     edicao: 'Edition as published', publicado: 'published on',
     pais: 'Portugal', outraLingua: '(in Portuguese)', indice: 'On this page',
     temas: 'Themes', estudosDoLugar: 'Studies about this place', mudou: 'What changed',
-    lugares: 'Places', regioes: 'Regions', distritos: 'Districts and islands' },
+    lugares: 'Places', regioes: 'Regions', distritos: 'Districts and islands',
+    todasAsMedidasA: 'All measures for ', todasAsMedidasB: '' },
 };
 
 /** Os títulos que delimitam a leitura já aprovada, nas duas edições. */
