@@ -79,6 +79,7 @@ import {
   mudancasDoLugar,
 } from '../lib/lugar.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
+import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { canonicalUrl, SITE_NAME, SITE_URL } from '../../site.config.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -144,7 +145,7 @@ const jsonld = {
 
   {
     leitura && (
-      <p class="lugar-leitura">
+      <p class="lugar-leitura" data-leitura-do-lugar={leitura.forma}>
         <Frase partes={leitura.partes} lang={lang} selos={true} />
       </p>
     )
@@ -171,6 +172,18 @@ const jsonld = {
         </div>
       ))
     }
+    {/* A PORTA PARA AS LINHAS DESTE LUGAR (achado D5, 21.09.2026). Os cartões
+        mostram as oito medidas que as fontes centrais publicam para os 308; o
+        que um concelho lê da sua própria prestação de contas, e tudo o resto que
+        o livro-razão tem sobre ele, vive na página do livro-razão deste
+        concelho, que ficou sem porta quando as contas saíram daqui. É uma porta
+        para o que a página não mostra, e não uma segunda porta para o que ela
+        mostra. */}
+    <p class="lugar-porta-das-medidas">
+      <a href={routePath('livroConcelho', lang, { slug })}>
+        <span data-voz>{r.todasAsMedidasA}</span><span data-lugar>{nome}</span>{r.todasAsMedidasB} →
+      </a>
+    </p>
   </section>
 
   {
@@ -221,27 +234,45 @@ const jsonld = {
             {r.mudou}
           </h2>
         </div>
-        {/* CADA LINHA É UMA ENTRADA DO REGISTO, marcada como tal: a data e o
-            motivo entram por `data-correcao-*`, que é a origem declarada de um
-            campo do registo, e o portão compara os dois com a própria linha do
-            livro-razão, carácter a carácter. A entrada leva o selo da sua linha,
-            que é a porta para a história completa daquele valor. */}
+        {/* UMA LINHA POR MUDANÇA (achado D4, 21.09.2026). Eram dez blocos da
+            NOTA de cada correção, que é prosa do publicador e pertence ao
+            recibo: «O publicador do PRR substitui o ficheiro e não arquiva o
+            anterior…», dez vezes, sem dizer que número mudou nem de quanto para
+            quanto. Cada entrada passa a ser a data, o nome da medida, o valor
+            antigo e o valor novo com a unidade, e o selo que abre a linha onde a
+            nota inteira está.
+
+            OS DOIS VALORES ENTRAM POR `data-correcao-*`, que é a origem
+            declarada de um campo do registo: o portão compara cada um, carácter
+            a carácter, com o campo `corrections` da própria linha. */}
         <ol class="lugar-mudou">
           {mudou.map((e) => (
             <li data-correcao-entrada={e.claim}>
               <span
                 class="lugar-mudou-data"
                 data-correcao-claim={e.claim}
-                data-correcao-n={String(e.n)}
+                data-correcao-n={String(e.nDoNovo)}
                 data-correcao-campo="date"
               >
                 {dataDaCasa(e.data)}
               </span>
               <p class="lugar-mudou-o-que">
-                <span data-correcao-claim={e.claim} data-correcao-n={String(e.n)} data-correcao-campo="reason">
-                  {e.motivo}
-                </span>{' '}
-                <Provenance id={e.claim} lang={lang} />
+                {e.nome?.fonte && (
+                  <span class="lugar-mudou-nome" data-nome={e.nome.fonte} data-de-linha={e.claim}>
+                    {e.nome.texto}
+                  </span>
+                )}
+                <span class="lugar-mudou-par">
+                  <s data-correcao-claim={e.claim} data-correcao-n={String(e.nDoAntigo)} data-correcao-campo="old_value">
+                    {e.antes}
+                  </s>
+                  {' → '}
+                  <span data-correcao-claim={e.claim} data-correcao-n={String(e.nDoNovo)} data-correcao-campo="new_value">
+                    {e.depois}
+                  </span>
+                  {e.unidade && <span class="lugar-mudou-unidade">{' '}{unidadeDaLinha(e.unidade, lang).texto}</span>}
+                  <Provenance id={e.claim} lang={lang} />
+                </span>
               </p>
             </li>
           ))}
