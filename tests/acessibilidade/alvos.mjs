@@ -855,6 +855,10 @@ function medeNaPagina(cfg) {
         caixa: { w: Math.round(r.width * 10) / 10, h: Math.round(r.height * 10) / 10 },
         toque: toque ? { w: Math.round(toque.w * 10) / 10, h: Math.round(toque.h * 10) / 10 } : null,
         exigido,
+        /* O selo está dentro da sinopse de um estudo de uma página de lugar? É a
+           única informação que esta medida precisa de trazer para a célula H2
+           poder contar à parte a classe que a nota dela descreve. */
+        naSinopseDoLugar: !!el.closest?.('.lugar-estudo-leitura'),
         ok: ok44,
         ok32,
         ok44,
@@ -1559,8 +1563,34 @@ function avalia(p, dist, cartoes, leis, folhas) {
   const buracoEmLinha = buracoMau.filter(
     (a) => a.emVariasLinhas && !a.noDesenho && a.familia !== 'texto',
   );
+  /* O SELO DENTRO DA SINOPSE DE UM ESTUDO, NUMA PÁGINA DE LUGAR (B1, peça 2,
+     correção de 21.09.2026, achado D3 do lugar de direção).
+     ------------------------------------------------------------------------
+     A sinopse de um estudo são as duas primeiras frases da leitura dele, e as
+     que citam uma linha trazem o selo dela. O quadrado de 44 px de um selo em
+     prosa corrida cruza a linha de cima e a de baixo do mesmo parágrafo, e o
+     `elementFromPoint` de um canto devolve o vizinho: a régua conta-o como
+     alvo perdido. As duas saídas foram medidas nesta passagem, e as duas são
+     piores do que o defeito:
+
+       · pôr a entrelinha do parágrafo nos 44 px dá o quadrado inteiro e é o
+         que o diretor leu nas capturas («a entrelinha rebentada», 45 px entre
+         linhas numa sinopse de duas frases);
+       · dar ao selo a área da sua própria caixa (a regra que `site.css` já
+         aplica onde os selos se empilham) tira-lhe 21 px de altura e a régua
+         conta-o na mesma.
+
+     Ficam contados à parte, com a razão, como as áreas do mapa e as páginas de
+     leitura: é a mesma classe de caso, uma área de 44 px que abriria a porta do
+     vizinho. A PORTA NÃO SE PERDE: o selo continua a ser uma âncora, com a sua
+     área a 390 px (é o que `doBuraco` mede antes de entrar na faixa), e o mesmo
+     número tem o seu recibo na página do estudo, a um toque do título por cima.
+     Medido nesta passagem, e escrito no relatório do bloco. */
+  const buracoDeSinopse = buracoMau.filter(
+    (a) => !a.noDesenho && a.familia !== 'texto' && !a.emVariasLinhas && a.naSinopseDoLugar,
+  );
   const buracoDeCaixa = buracoMau.filter(
-    (a) => !a.noDesenho && a.familia !== 'texto' && !a.emVariasLinhas,
+    (a) => !a.noDesenho && a.familia !== 'texto' && !a.emVariasLinhas && !a.naSinopseDoLugar,
   );
   const naoMedidos = todosOsAlvos.filter((a) => a.ok === null);
   conta(
@@ -1577,7 +1607,10 @@ function avalia(p, dist, cartoes, leis, folhas) {
       (folhas.maus.length ? ` (${folhas.maus.join('; ')})` : '') +
       ` · faixa 641 a 1023: ${noBuraco.length} alvos medidos, ${doBuraco.length} deles com ` +
       `${ALVO} px a 390, ${buracoMau.length} sem eles na faixa · destes, ` +
-      `${buracoDeCaixa.length} são caixas e falham (${resumo(buracoDeCaixa)}) e ` +
+      `${buracoDeCaixa.length} são caixas e falham (${resumo(buracoDeCaixa)}), ` +
+      `${buracoDeSinopse.length} são selos dentro da sinopse de um estudo numa página de lugar, ` +
+      `cuja área de 44 px cruzaria a linha vizinha do mesmo parágrafo ` +
+      `(${resumo(buracoDeSinopse)}) e ` +
       `${buracoDeDesenho.length} são áreas de desenho, cujo alvo é a rede de nomes por baixo do ` +
       `mapa (${resumo(buracoDeDesenho)}), ${buracoDeLeitura.length} estão numa página de ` +
       `leitura, que o brief põe fora deste bloco (${resumo(buracoDeLeitura)}) e ` +
