@@ -1,0 +1,10 @@
+comando: node scripts/check-lugares.mjs
+codigo: 1
+mordida: /P1 · \/municipios\/vila-real-de-santo-antonio: o índice de dívida é 419,5 contra o limite 150, e a leitura diz «dentro do limite legal»/
+
+
+  PORTÃO DOS LUGARES · 2 problema(s)
+
+    · P1 · /municipios/vila-real-de-santo-antonio: o índice de dívida é 419,5 contra o limite 150, e a leitura não diz «fora do limite legal».
+    · P1 · /municipios/vila-real-de-santo-antonio: o índice de dívida é 419,5 contra o limite 150, e a leitura diz «dentro do limite legal».
+
