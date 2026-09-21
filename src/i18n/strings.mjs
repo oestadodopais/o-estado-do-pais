@@ -143,6 +143,14 @@ export const STRINGS = {
          a decisão escreve à letra: o que muda é o que se lê, não o que se
          partilha. */
       municipios: 'Concelhos',
+      /* «LUGARES», UMA ENTRADA NO LUGAR DE TRÊS (B1, peça 2, 21.09.2026).
+         «Concelhos», «Regiões» e «Distritos» eram três entradas para três
+         índices do mesmo território, e o §4 da estrutura dá-lhe uma palavra:
+         «Lugares» abre a linha — o mapa, a busca de concelho, as nove regiões e
+         os 29 distritos e ilhas. Os três índices antigos passam a
+         redirecionamentos do servidor, e as três cadeias ficam declaradas
+         porque o rodapé e a régua das rotas ainda as leem. */
+      lugares: 'Lugares',
       /* «Domínios» entra no rodapé no commit em que as páginas dos domínios
          ganham porta comum (bloco F1.2, segunda passagem, 03.09.2026). A mesma
          razão das «Áreas» ao lado: o rodapé é o índice do sítio, e uma família
@@ -2287,6 +2295,55 @@ export const STRINGS = {
     },
 
     municipio: {
+      /* =====================================================================
+       * A LEITURA DE UM LUGAR (B1, peça 2, emenda de 21.09.2026 ao brief, §6.2)
+       * =====================================================================
+       * A leitura é a primeira coisa que se lê depois do nome, e é conteúdo: diz
+       * o que os números deste lugar querem dizer em conjunto. Não é uma
+       * enumeração dos cartões que vêm a seguir, e um número que ela cita não
+       * abre a primeira fila do seu tema.
+       *
+       * ÉVORA TEM A SUA, ESCRITA PELO LUGAR DE DIREÇÃO, e os dois valores são
+       * linhas do livro-razão (`evora-indice-de-divida-2014` e
+       * `evora-indice-de-divida-2024`), selados, com a unidade dentro do selo.
+       * Os dois anos são datas de referência. Nenhuma palavra afirma mais do que
+       * os dois valores mostram. */
+      leituraDeEvora: {
+        a:
+          'A câmara de Évora deve menos do que a lei lhe permite, e o índice de dívida caiu ' +
+          'para menos de metade em dez anos: de ',
+        b: ' em ',
+        c: ' para ',
+        d: ' em ',
+        e: '.',
+      },
+      /* AS DUAS COMPARAÇÕES QUE O LIVRO-RAZÃO PERMITE PARA TODOS. A dívida da
+         câmara contra o limite legal (as palavras são as de `estado.lei`, que o
+         cartão do índice já usa) e o poder de compra por pessoa contra a média
+         do país, que é a base do índice e está escrita na unidade da linha.
+         Uma comparação sem valor publicado cai da frase; se caírem as duas, o
+         lugar não tem leitura. */
+      leituraDoLugar: {
+        dividaA: 'A dívida da câmara de ',
+        dividaB: ' está ',
+        dividaC: ' (índice de dívida de ',
+        dividaD: ')',
+        juncao: ' e o poder de compra por pessoa está ',
+        poderSoA: 'O poder de compra por pessoa em ',
+        poderSoB: ' está ',
+        poderC: ' (índice de ',
+        poderD: ', com a média do país como base)',
+        acima: 'acima da média do país',
+        abaixo: 'abaixo da média do país',
+        fim: '.',
+      },
+      /* O VALOR QUE A FONTE NÃO PUBLICOU (B1, peça 2; a nota D4 da maqueta).
+         Onde a lista da Direção-Geral não determina a figura de um concelho, o
+         cartão mostrava a marca que ela imprime, «N.d.», que não diz nada a quem
+         a lê pela primeira vez. Passa a mostrar, no lugar do valor, o que a
+         marca quer dizer, em português corrente; o selo ao lado continua a abrir
+         a linha, onde a marca da fonte está transcrita com o seu documento. */
+      semValorPublicado: 'sem valor publicado',
       /* ---------------------------------------------------------------------
        * A MANCHETE DO CONCELHO (01.09.2026)
        * ---------------------------------------------------------------------
@@ -2813,6 +2870,8 @@ export const STRINGS = {
     nav: {
       inicio: 'Home',
       municipios: 'Municipalities',
+      /* Ver a razão na edição portuguesa (B1, peça 2, 21.09.2026). */
+      lugares: 'Places',
       dominios: 'Domains',
       /* Ver a razão na edição portuguesa. */
       areas: 'Government areas',
@@ -3627,6 +3686,32 @@ export const STRINGS = {
     },
 
     municipio: {
+      /* A leitura de um lugar. Ver a razão na edição portuguesa (B1, peça 2). */
+      leituraDeEvora: {
+        a:
+          'Évora’s council owes less than the law allows, and its debt index has fallen ' +
+          'to less than half in ten years: from ',
+        b: ' in ',
+        c: ' to ',
+        d: ' in ',
+        e: '.',
+      },
+      leituraDoLugar: {
+        dividaA: 'The council debt of ',
+        dividaB: ' is ',
+        dividaC: ' (debt index of ',
+        dividaD: ')',
+        juncao: ' and purchasing power per person is ',
+        poderSoA: 'Purchasing power per person in ',
+        poderSoB: ' is ',
+        poderC: ' (index of ',
+        poderD: ', with the country average as the base)',
+        acima: 'above the country average',
+        abaixo: 'below the country average',
+        fim: '.',
+      },
+      /* Ver a razão na edição portuguesa (B1, peça 2). */
+      semValorPublicado: 'no published value',
       /* A manchete do concelho. Ver a razão na edição portuguesa. */
       mancheteA: ' has ',
       mancheteB: ' people.',

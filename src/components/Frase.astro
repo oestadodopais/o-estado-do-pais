@@ -60,6 +60,11 @@ const { partes, lang = 'pt', selos = false } = Astro.props;
     if (parte.claim)
       return <Claim id={parte.claim} lang={lang} chip={selos} sufixo={parte.sufixo ?? ''} />;
     if (parte.ref) return <span data-nonledger="data-de-referencia">{parte.ref}</span>;
+    {/* O NOME DE UM LUGAR DENTRO DE UMA FRASE (B1, peça 2, 21.09.2026). É a
+        mesma marca que a manchete já usa (`Manchete.astro`): `data-lugar` diz
+        que aquele texto é o nome de uma coisa e não prosa da casa, e a leitura
+        de um lugar precisa dele porque a frase começa pelo nome do concelho. */}
+    if (parte.lugar) return <span data-lugar set:text={parte.lugar} />;
     {/* AS DUAS MARCAS DO BLOCO F1.6 (04.09.2026), e as duas são origens
         conferidas e não dispensas: o `check:formas` vai buscar a data ao campo
         da linha que ela nomeia, e o período ao ficheiro que a série nomeia. */}
