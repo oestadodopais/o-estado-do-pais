@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-21T15:26:04+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/e52c0f39-ab9c-4e0f-b9db-11d420f316ed/scratchpad/leitura-peca2/pacote",
+ "plantas": [
+  {
+   "id": "R1",
+   "ficheiro": "src/data/carta-dos-lugares.mjs",
+   "descricao": "a região de um concelho passa a ler-se da coluna errada da Carta (classe: a fonte e o diff)",
+   "sha256_antes": "3e27488648737977166c6c63e6577811c6e14ec5fb7259257f334a6f43ffdc7a",
+   "sha256_depois": "8f585519dfb33efcbab815c779ec231a5ee7bcf7d3d26695b67504eca1e27834",
+   "contexto_antes": "icipio,\n        slug: slugs[i],\n        distrito: l.distrito_ilha,\n        distritoSlug: slugDeConcelho(l.distrito_ilha),\n        ilha: eIlha(l.distrito_ilha),\n        regiaoNaCarta: l.nuts2,\n      });\n    }\n  }\n  _lugares = lista;\n  return lista;\n}\n\n/** @type {Map<string, { slug: string, nome: { pt: string, en: string } }> | null} */\nlet _regiaoPor",
+   "contexto_depois": "icipio,\n        slug: slugs[i],\n        distrito: l.distrito_ilha,\n        distritoSlug: slugDeConcelho(l.distrito_ilha),\n        ilha: eIlha(l.distrito_ilha),\n        regiaoNaCarta: l.nuts1 ?? l.nuts2,\n      });\n    }\n  }\n  _lugares = lista;\n  return lista;\n}\n\n/** @type {Map<string, { slug: string, nome: { pt: string, en: string } }> | null} */\nlet _regiaoPor"
+  },
+  {
+   "id": "R2",
+   "ficheiro": "scripts/check-lugares.mjs",
+   "descricao": "a célula C2 deixa de falhar quando um concelho fica sem distrito (classe: a régua)",
+   "sha256_antes": "f2414d5a56c65ddfccedb025ffcd85e5c24a36ddac6daf23caf315acc7cf1ebd",
+   "sha256_depois": "33ded764e20a6de9c6d0417d791825fde76e4a8f9555d7daec8f57575ee84cfe",
+   "contexto_antes": ".regiaoNaCarta}\" da Carta, e essa região ` +\n        `não tem entrada em src/data/regioes.mjs nem correspondência de nome declarada.`,\n    );\n    continue;\n  }\n  if (!l.distritoSlug) {\n    semDistrito++;\n    falhas.push(`C2 · o concelho \"${l.nome}\" ficou sem distrito ou ilha.`);\n    continue;\n  }\n  if (!comPagina.has(l.slug)) {\n    falhas.push(`C2 · o concelho \"${l.nome}\" (${l.slug}) não tem entrada com página.`);\n  }\n}\nmedidas.sem_regiao = semRegiao;\nm",
+   "contexto_depois": ".regiaoNaCarta}\" da Carta, e essa região ` +\n        `não tem entrada em src/data/regioes.mjs nem correspondência de nome declarada.`,\n    );\n    continue;\n  }\n  if (!l.distritoSlug) {\n    semDistrito++;\n    continue;\n  }\n  if (!comPagina.has(l.slug)) {\n    falhas.push(`C2 · o concelho \"${l.nome}\" (${l.slug}) não tem entrada com página.`);\n  }\n}\nmedidas.sem_regiao = semRegiao;\nm"
+  },
+  {
+   "id": "R3",
+   "ficheiro": "built/municipios/vila-real-de-santo-antonio/index.html",
+   "descricao": "a leitura de Vila Real de Santo António diz «dentro» com o índice a 419,5 (classe: a página construída)",
+   "sha256_antes": "4beb532b5aec62137c344030b5f4b02959b1a1558b8017efafa5881ed7b420af",
+   "sha256_depois": "e5c84d9b6e667253c7d176bdc9c41817e999cd30e594fde9d43e1337bce57bb4",
+   "contexto_antes": "=\"lugar-nome\" data-lugar>Vila Real de Santo António</h1></div><p class=\"lugar-leitura\">A dívida da câmara de <span data-lugar>Vila Real de Santo António</span> está <span data-voz>fora do limite legal</span> (índice de dívida de <span class=\"claim claim-com-chip\"><span data-claim=\"vila-real-de-santo-antonio-indice-de-divida-2024\" class=\"claim-value\">419,5</span><span class=\"claim-sufix",
+   "contexto_depois": "=\"lugar-nome\" data-lugar>Vila Real de Santo António</h1></div><p class=\"lugar-leitura\">A dívida da câmara de <span data-lugar>Vila Real de Santo António</span> está <span data-voz>dentro do limite legal</span> (índice de dívida de <span class=\"claim claim-com-chip\"><span data-claim=\"vila-real-de-santo-antonio-indice-de-divida-2024\" class=\"claim-value\">419,5</span><span class=\"claim-sufix"
+  },
+  {
+   "id": "R4",
+   "ficheiro": "built/municipios/espinho/index.html",
+   "descricao": "a frase de definição do desemprego registado é a do ganho médio mensal (classe: uma definição de fora presa à linha errada)",
+   "sha256_antes": "25c545fe79a38f565c838912887e66c28eb1a86d3be8750cad650c134a329fbf",
+   "sha256_depois": "47b431d81f7d926c66113a9a014aca2a0f3980d3580df622cc954f3307353041",
+   "contexto_antes": " class=\"campo-valor cartao-medida-unidade\">Pessoas · dezembro de <span data-nonledger=\"data-de-referencia\">2025</span></span></p><p class=\"cartao-medida-frase\">Inscritos no fim do mês nos serviços de emprego, ficheiro mensal por concelho.</p></article><article class=\"cartao-medida\" data-cartao-medida=\"espinho-ganho-medio-mensal-2024\" data-medida-chave=\"ganho\" data-estado=\"completa\"><span class=\"",
+   "contexto_depois": " class=\"campo-valor cartao-medida-unidade\">Pessoas · dezembro de <span data-nonledger=\"data-de-referencia\">2025</span></span></p><p class=\"cartao-medida-frase\">Quadros de Pessoal do Gabinete de Estratégia e Planeamento do Ministério do Trabalho; trabalhadores por conta de outrem a tempo completo com remuneração completa,</p></article><article class=\"cartao-medida\" data-cartao-medida=\"espinho-ganho-medio-mensal-2024\" data-medida-chave=\"ganho\" data-estado=\"completa\"><span class=\""
+  },
+  {
+   "id": "R5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a contagem das medidas rendidas trocada no relatório (classe: o relatório)",
+   "sha256_antes": "d0d0593f0cc135d43529e9c55d11a2f037707d1a4467609a5b8b1bd61be744d0",
+   "sha256_depois": "00d64b6a0c71fd35cfb293e1887c2e361d976f672c62e6c43bb2af06b431b9a7",
+   "contexto_antes": "arado em `src/data/temas-das-medidas.mjs` | nove chaves com tema (as oito do ficheiro do motor mais `ganho`), três temas da carta; `check:lugares` T1 e T2 a 0, com 4 928 medidas rendidas em 616 páginas, todas debaixo do tema que a tabela lhes dá; duas plantas |\n| 1b | A região e o distrito de cada concelho, lidos dos três extratos da Carta, em `src/data/carta",
+   "contexto_depois": "arado em `src/data/temas-das-medidas.mjs` | nove chaves com tema (as oito do ficheiro do motor mais `ganho`), três temas da carta; `check:lugares` T1 e T2 a 0, com 4 982 medidas rendidas em 616 páginas, todas debaixo do tema que a tabela lhes dá; duas plantas |\n| 1b | A região e o distrito de cada concelho, lidos dos três extratos da Carta, em `src/data/carta"
+  }
+ ]
+}
