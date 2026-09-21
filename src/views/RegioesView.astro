@@ -37,6 +37,7 @@ import Base from '../layouts/Base.astro';
 import InstrumentoConvergencia from '../components/InstrumentoConvergencia.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
 import { prova } from '../lib/prova.mjs';
+import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import '../styles/regiao.css';
@@ -45,6 +46,7 @@ const { lang = 'pt' } = Astro.props;
 const s = t(lang);
 const p = prova(lang);
 const path = routePath('regioes', lang);
+const r = ROTULOS_B1[lang];
 
 /* Uma ou muitas: a frase certa escolhe-se na construção, com a contagem que o
    portão vai reconferir. Sem plural inventado. */
@@ -82,7 +84,10 @@ const conta = p.regioes_com_linha.valor === 1 ? s.regioes.contaUma : s.regioes.c
 
   <p class="rodape-nav regiao-portas">
     <a href={routePath('home', lang)}>{s.regioes.voltarPais}</a>
-    <a href={routePath('distritos', lang)}>{s.distritos.voltarIndice}</a>
-    <a href={routePath('municipios', lang)}>{s.distritos.voltarConcelhos}</a>
+    {/* DUAS PORTAS PARA A MESMA PÁGINA SÃO UMA (B1, peça 2, correção de
+        21.09.2026). «Voltar ao índice» e «Voltar aos concelhos» abriam dois
+        índices, e os dois passaram a ser a página dos lugares: fica a porta com o
+        nome do que ela abre. */}
+    <a href={routePath('lugares', lang)}>{r.lugares}</a>
   </p>
 </Base>
