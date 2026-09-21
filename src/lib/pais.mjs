@@ -2,10 +2,11 @@
  * As duas taxas de desemprego são a mesma medida. Fica a do procedimento,
  * com a comparação europeia e o valor de referência na régua existente. */
 import { DOMINIOS, DOMINIO_DAS_MEDIDAS } from '../data/dominios.mjs';
-import { getClaim } from './ledger.mjs';
+import { getClaim, loadClaims } from './ledger.mjs';
 import { WORKS } from '../data/studies.mjs';
 import { fichaDoEstudo } from './estudos-b1.mjs';
 import { mudancasDoLugar } from './lugar.mjs';
+import { nomeDaLinhaDerivada } from './nomes.mjs';
 import { MUDANCAS_DO_PROJETO } from '../data/mudancas-do-projeto.mjs';
 
 /** @type {Record<string, string>} */
@@ -32,8 +33,9 @@ export function estudosRecentes(lang) {
  * @param {'pt'|'en'} lang */
 export function mudancasDoPais(lang) {
   const publicacoes = estudosRecentes(lang).map(e => ({ tipo: 'publicacao', data: e.data, estudo: e }));
-  const correcoes = mudancasDoLugar('', temasDoPais(lang).flatMap(t => t.medidas.map(c => ({ claim: c.id, vazia: false }))), lang)
-    .map(e => ({ ...e, tipo: 'correcao' }));
+  // A primeira página reúne o registo do projeto inteiro, incluindo os lugares.
+  const correcoes = mudancasDoLugar('', [...loadClaims().keys()].map(claim => ({ claim, vazia: false })), lang)
+    .map(e => ({ ...e, nome: nomeDaLinhaDerivada(getClaim(e.claim), lang) ?? e.nome, tipo: 'correcao' }));
   const projeto = MUDANCAS_DO_PROJETO.map(e => ({ ...e, tipo: 'projeto' }));
   return [...projeto, ...publicacoes, ...correcoes].sort((a,b) => b.data.localeCompare(a.data));
 }

@@ -56,8 +56,8 @@ const mudou = mudancasDoPais(lang);
       {mudou.map(e => <li data-mudanca={e.tipo} data-mudanca-id={e.tipo === 'projeto' ? e.id : undefined} data-correcao-entrada={e.tipo === 'correcao' ? e.claim : undefined}>
         {e.tipo === 'projeto' ? <><time datetime={e.data} data-mudanca-campo="data">{dataDaCasa(e.data)}</time><p data-mudanca-campo="texto">{e.texto[lang]}</p></> : e.tipo === 'publicacao' ? <><time datetime={e.data} data-publicacao-estudo={`${e.estudo.work.slug}/${e.estudo.edicao.lang}`}>{dataDaCasa(e.data)}</time><p><span>{r.publicado}</span>{' · '}<TituloDeTrabalho titulo={e.estudo.edicao.title} lang={lang} /></p></> : <>
           <time datetime={e.data} data-correcao-claim={e.claim} data-correcao-n={String(e.nDoNovo)} data-correcao-campo="date">{dataDaCasa(e.data)}</time>
-          <p>{e.nome?.fonte && <span data-nome={e.nome.fonte} data-de-linha={e.claim}>{e.nome.texto}</span>}{' · '}
-            <span class="pais-correcao-valores"><s data-correcao-claim={e.claim} data-correcao-n={String(e.nDoAntigo)} data-correcao-campo="old_value">{e.antes}</s>{' → '}<span data-correcao-claim={e.claim} data-correcao-n={String(e.nDoNovo)} data-correcao-campo="new_value">{e.depois}</span>{' '}{e.unidade && unidadeDaLinha(e.unidade, lang).texto}<Provenance id={e.claim} lang={lang} /></span>
+          <p>{e.nome?.fonte && <span class="lugar-mudou-nome" data-nome={e.nome.fonte} data-de-linha={e.claim}>{e.nome.texto}</span>}
+            <span class="lugar-mudou-par"><s data-correcao-claim={e.claim} data-correcao-n={String(e.nDoAntigo)} data-correcao-campo="old_value">{e.antes}</s>{' → '}<span data-correcao-claim={e.claim} data-correcao-n={String(e.nDoNovo)} data-correcao-campo="new_value">{e.depois}</span>{' '}{e.unidade && unidadeDaLinha(e.unidade, lang).texto}<Provenance id={e.claim} lang={lang} /></span>
           </p>
         </>}
       </li>)}
