@@ -213,11 +213,16 @@
   font-size: 13px;
   margin: clamp(18px, 2.4vw, 26px) 0 0;
 }
+/* `inline-flex` faz de cada filho um item e come o espaço no fim de «Todas as
+   medidas de » e o que vem antes da seta: lia-se «Todas as medidas deÉvora→»
+   (visto pelo lugar de direção na captura de 21.09.2026; nenhum portão o vê,
+   porque o HTML tem o espaço e é a disposição que o tira). O `gap` repõe-no. */
 .lugar-porta-das-medidas a {
   color: var(--ink);
   text-underline-offset: 3px;
   display: inline-flex;
   align-items: center;
+  gap: 0.3em;
   min-height: 44px;
 }
 
