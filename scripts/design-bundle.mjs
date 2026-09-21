@@ -92,7 +92,7 @@ import { t } from '../src/i18n/strings.mjs';
 import { routePath } from '../src/lib/routes.mjs';
 /* Os números do mapa não se escrevem aqui: leem-se do artefacto que o motor
    atravessou, pela mesma porta que o sítio usa (`src/lib/mapa.mjs`). */
-import { manifestoDoMapa, unidadesDoMapa, distritoDoMapa } from '../src/lib/mapa.mjs';
+import { unidadesDoMapa, distritoDoMapa } from '../src/lib/mapa.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -1664,7 +1664,10 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
      traz. As contagens deste cartão eram todas relacionais, e uma unidade, uma
      âncora e um nome passavam as três. */
   const UNIDADES_DA_CARTA = unidadesDoMapa().length;
-  const CONCELHOS_DA_CARTA = manifestoDoMapa().concelhos.n;
+  /* `CONCELHOS_DA_CARTA` SAIU COM A SECÇÃO DO LOCALIZADOR (B1, peça 2): era a
+     conta contra a qual as áreas do mapa de uma unidade se liam, e essa secção
+     passou a dizer uma ausência medida. A contagem dos concelhos de um distrito
+     continua a ler-se do artefacto, na linha a seguir. */
   const CONCELHOS_DO_DISTRITO = distritoDoMapa('evora').concelhos.length;
   /* AS ÁREAS DA PRIMEIRA PÁGINA SÃO AS 29 UNIDADES DA CARTA (Emenda 20; F1.1e,
      08.09.2026), e a lista dos nomes por baixo do mapa é o índice delas. Foram as
