@@ -1323,7 +1323,10 @@ async function comNavegador() {
     /** Onde um número é seguido de uma palavra, na primeira página. */
     const CAIXAS_DO_PAR = '.dominios-estado, .mapa-nome-repouso';
     /** A planta: a caixa do par vira um contentor flexível sem folga. */
-    const PLANTA_DO_PAR = '.dominios-estado,.mapa-nome-repouso{display:flex;gap:0}';
+    /* B1, peça 3: o par do mapa passou para dentro da ligação dos Lugares.
+       Estragar só o parágrafo pai já não retirava o gap da ligação. A medida
+       e o mínimo ficam iguais; a planta atinge também a caixa que tem o par. */
+    const PLANTA_DO_PAR = '.dominios-estado,.mapa-nome-repouso,.pais-porta-lugares{display:flex;gap:0}';
     /** @type {string[]} */
     const falhas = [];
     const notas = [];
@@ -1433,6 +1436,7 @@ async function comNavegador() {
          caixas desfeitas, cada par número-palavra volta a ser texto solto num
          contentor flexível, e o defeito que esteve no ar não era num par só. */
       await pag.addStyleTag({ content: PLANTA_DO_PAR });
+      await pag.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))));
       const comDefeito = await pag.evaluate(medeOsVaos);
       const apanhados = comDefeito.pares.filter((x) => x.vao < VAO_MINIMO).length;
       if (comDefeito.pares.length !== contagens) {
