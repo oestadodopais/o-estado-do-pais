@@ -48,11 +48,17 @@
  *        tem de ser visto numa página (um seletor que deixasse de ver as páginas
  *        daria verde por não ver nada); se não tem nenhum, nenhuma página pode
  *        render um nome oficial, e são as plantas que provam que o seletor vê;
- *   N5 · nenhuma ligação de página nenhuma aponta para o endereço de um nome
- *        recusado, COM OU SEM MARCA (a leitura a frio: tirar a marca a um elemento
- *        tornava-o invisível a esta régua);
- *   N6 · nenhum elemento de página nenhuma tem por texto inteiro um nome recusado,
- *        com ou sem marca;
+ *   N5 · fora de um elemento marcado, nenhuma ligação de página nenhuma aponta para
+ *        o endereço de um nome do ficheiro, confirmado ou não (a leitura a frio:
+ *        tirar a marca a um elemento tornava-o invisível a esta régua). Os
+ *        endereços comparam-se normalizados: a ordem dos parâmetros, um fragmento
+ *        e uma barra final não fazem de um endereço outro endereço;
+ *   N6 · fora de um elemento marcado, nenhum elemento de página nenhuma tem por
+ *        texto inteiro um nome do ficheiro, confirmado ou não: um nome oficial só
+ *        se rende com a marca, que é o que deixa a N1 e a N2 saberem de que linha
+ *        é. O texto compara-se depois de juntar os filhos e de desfazer as
+ *        entidades, para que um nome partido por dois elementos ou escrito com
+ *        «&#38;» seja o mesmo nome;
  *   N4 · as plantas (`--prova`, que é como o `build` e o `verify` a chamam), sobre
  *        um ficheiro de nomes escrito aqui para isso e páginas com a forma real.
  *
@@ -80,8 +86,59 @@ const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
 const amarelo = (s) => `\x1b[33m${s}\x1b[0m`;
 const cinza = (s) => `\x1b[90m${s}\x1b[0m`;
 
-/** O texto tal como o Astro o escreve no HTML, para a procura barata antes de analisar a página. */
+/** O texto tal como o Astro o escreve no HTML: só para compor as páginas das plantas. */
 const comoNoHtml = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+/** Desfaz as entidades que um nome pode trazer, com nome ou com número. */
+const semEntidades = (s) =>
+  s
+    .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+    .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(parseInt(d, 10)))
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
+    .replace(/&amp;/g, '&');
+
+/** O texto de comparação: entidades desfeitas, espaços juntos, pontas aparadas. */
+const textoNormal = (s) => semEntidades(s).replace(/\s+/g, ' ').trim();
+
+/**
+ * O endereço de comparação. Dois endereços que só diferem na ordem dos
+ * parâmetros, num fragmento ou numa barra final são o mesmo endereço.
+ */
+function enderecoNormal(u) {
+  try {
+    const x = new URL(semEntidades(u).trim());
+    const ps = [...x.searchParams.entries()].sort(([a, b], [c, d]) => (a === c ? b.localeCompare(d) : a.localeCompare(c)));
+    const q = ps.map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`).join('&');
+    return `${x.protocol}//${x.host.toLowerCase()}${x.pathname.replace(/\/+$/, '')}${q ? `?${q}` : ''}`;
+  } catch {
+    return semEntidades(u).trim();
+  }
+}
+
+/**
+ * As pistas de um endereço que sobrevivem a uma reordenação, para a procura
+ * barata: os valores de parâmetro e o último troço do caminho que tragam um
+ * algarismo (o código do indicador no INE, o número da página na PORDATA). Um
+ * valor sem algarismos (`ine_indicadores`) é comum a milhares de ligações e
+ * mandava analisar o sítio inteiro; sem pista nenhuma, serve o caminho.
+ */
+function pistasDoEndereco(u) {
+  const pistas = new Set();
+  try {
+    const x = new URL(u);
+    for (const v of x.searchParams.values()) if (v.length >= 5 && /\d/.test(v)) pistas.add(v);
+    const ultimo = x.pathname.split('/').filter(Boolean).pop() ?? '';
+    if (ultimo.length >= 5 && /\d/.test(ultimo)) pistas.add(ultimo);
+    if (pistas.size === 0) pistas.add(`${x.host}${x.pathname.replace(/\/+$/, '')}`);
+  } catch {
+    pistas.add(u);
+  }
+  return pistas;
+}
 
 /**
  * Lê o ficheiro do motor e separa os nomes confirmados dos recusados, com a
@@ -105,7 +162,7 @@ function lerNomes(j) {
       if (typeof nome !== 'string' || nome.trim() === '' || nome === '[verify]') continue;
       const endereco = typeof o.endereco === 'string' ? o.endereco : '';
       let porque = null;
-      if (typeof o.aviso === 'string' && o.aviso.trim() !== '')
+      if (Object.prototype.hasOwnProperty.call(o, 'aviso'))
         porque = 'o motor escreveu um aviso: a conferência de ser a mesma medida ficou por fazer';
       else if (o.mesma_medida === false) porque = 'o motor marcou «mesma_medida: false»';
       else if (o.mesma_medida !== true) porque = 'o motor não o marcou «mesma_medida: true», e um nome sem estado não é um nome confirmado';
@@ -118,17 +175,27 @@ function lerNomes(j) {
       }
     }
   }
-  /* Um nome ou um endereço que também seja de um nome confirmado não é recusado
-     em absoluto: fica de fora das duas procuras sem marca (N5 e N6). */
-  const nomesBons = new Set([...confirmados.values()].flat().map((x) => x.nome));
-  const enderecosBons = new Set([...confirmados.values()].flat().map((x) => x.endereco));
-  const nomesRecusados = new Map();
-  const enderecosRecusados = new Map();
-  for (const r of recusados) {
-    if (!nomesBons.has(r.nome) && !nomesRecusados.has(r.nome)) nomesRecusados.set(r.nome, r);
-    if (r.endereco !== '' && !enderecosBons.has(r.endereco) && !enderecosRecusados.has(r.endereco)) enderecosRecusados.set(r.endereco, r);
-  }
-  return { confirmados, recusados, nomesRecusados, enderecosRecusados };
+  /* TODOS OS NOMES E TODOS OS ENDEREÇOS DO FICHEIRO, confirmados ou não, para as
+     duas procuras sem marca (N5 e N6): um nome oficial só se rende com a marca,
+     e por isso fora dela nenhum deles pode aparecer. A primeira forma tirava
+     desta lista o que estivesse confirmado para QUALQUER linha, e as duas linhas
+     da taxa de desemprego partilham nomes e endereços: confirmada uma, a outra
+     passava sem marca (leitura a frio de 21.09.2026, achado 7). */
+  const todosOsNomes = new Map();
+  const todosOsEnderecos = new Map();
+  const pistas = new Set();
+  const registar = (x, estado) => {
+    const n = textoNormal(x.nome);
+    if (!todosOsNomes.has(n)) todosOsNomes.set(n, { ...x, estado });
+    if (x.endereco) {
+      const e = enderecoNormal(x.endereco);
+      if (!todosOsEnderecos.has(e)) todosOsEnderecos.set(e, { ...x, estado });
+      for (const p of pistasDoEndereco(x.endereco)) pistas.add(p);
+    }
+  };
+  for (const [id, lista] of confirmados) for (const x of lista) registar({ id, ...x, porque: 'está confirmado, mas um nome oficial só se rende com a marca' }, 'confirmado');
+  for (const r of recusados) registar(r, 'recusado');
+  return { confirmados, recusados, todosOsNomes, todosOsEnderecos, pistas };
 }
 
 /** O identificador da linha de um recibo, pelo caminho da página, ou `null`. */
@@ -138,11 +205,18 @@ function linhaDoCaminho(relativo) {
   return m[1];
 }
 
-/** A página merece ser analisada? Procura barata, sobre o texto cru. */
+/**
+ * A página merece ser analisada? A procura barata faz-se sobre o texto SEM
+ * etiquetas e com as entidades desfeitas, para que um nome partido por dois
+ * elementos ou escrito com uma entidade numérica não esconda a página da
+ * conferência a sério (leitura a frio de 21.09.2026, achado 5).
+ */
 function mereceAnalise(html, nomes) {
   if (html.includes(MOTIVO) || html.includes('data-nome="oficial"')) return true;
-  for (const e of nomes.enderecosRecusados.keys()) if (html.includes(comoNoHtml(e))) return true;
-  for (const n of nomes.nomesRecusados.keys()) if (html.includes(comoNoHtml(n))) return true;
+  const cru = semEntidades(html);
+  for (const p of nomes.pistas) if (cru.includes(p)) return true;
+  const texto = textoNormal(html.replace(/<(script|style)[\s\S]*?<\/\1>/gi, ' ').replace(/<[^>]*>/g, ''));
+  for (const n of nomes.todosOsNomes.keys()) if (texto.includes(n)) return true;
   return false;
 }
 
@@ -194,23 +268,30 @@ function conferirPagina(html, relativo, nomes) {
         lista.some((x) => x.nome === texto) ? 'tem o endereço trocado' : porque(texto)
       }`);
   }
-  /* COM OU SEM MARCA. Um elemento a que tirassem a marca deixava de ser visto
-     pelas duas células de cima; estas duas procuram o que não pode estar em
-     página nenhuma, pelo endereço e pelo texto inteiro. */
-  if (nomes.enderecosRecusados.size) {
-    for (const a of root.querySelectorAll('a[href]')) {
-      const r = nomes.enderecosRecusados.get(a.getAttribute('href') ?? '');
-      if (r) erros.push(`N5 ${relativo}: uma ligação aponta para o endereço do nome do ${r.fonte} para «${r.id}» («${r.nome.slice(0, 70)}»), recusado porque ${r.porque}`);
-    }
+  /* FORA DA MARCA. Um elemento a que tirassem a marca deixava de ser visto pelas
+     duas células de cima; estas duas procuram o que não pode estar em página
+     nenhuma fora de um elemento marcado, pelo endereço e pelo texto inteiro. */
+  const dentroDeMarcado = (el) => {
+    for (let n = el; n; n = n.parentNode) if (marcados.has(n)) return true;
+    return false;
+  };
+  for (const a of root.querySelectorAll('a[href]')) {
+    if (dentroDeMarcado(a)) continue;
+    const r = nomes.todosOsEnderecos.get(enderecoNormal(a.getAttribute('href') ?? ''));
+    if (r) erros.push(`N5 ${relativo}: uma ligação sem marca aponta para o endereço do nome do ${r.fonte} para «${r.id}» («${r.nome.slice(0, 70)}»), que ${r.estado === 'recusado' ? `foi recusado porque ${r.porque}` : r.porque}`);
   }
-  if (nomes.nomesRecusados.size) {
-    for (const el of root.querySelectorAll('a, span, p, dd, dt, li, td, th, h1, h2, h3, h4, h5, strong, em, figcaption, caption, summary, label, div')) {
-      if (marcados.has(el)) continue;
-      const pai = el.parentNode;
-      if (pai && marcados.has(pai)) continue;
-      const r = nomes.nomesRecusados.get(el.text.trim());
-      if (r && !el.querySelector('a, span, p, div')) erros.push(`N6 ${relativo}: um <${el.rawTagName}> tem por texto inteiro o nome do ${r.fonte} para «${r.id}» («${r.nome.slice(0, 70)}»), recusado porque ${r.porque}`);
-    }
+  for (const el of root.querySelectorAll('*')) {
+    const etiqueta = (el.rawTagName ?? '').toLowerCase();
+    if (etiqueta === 'script' || etiqueta === 'style' || etiqueta === 'html' || etiqueta === 'body' || etiqueta === 'head' || etiqueta === 'title') continue;
+    if (dentroDeMarcado(el)) continue;
+    const texto = textoNormal(el.text);
+    if (texto === '') continue;
+    const r = nomes.todosOsNomes.get(texto);
+    if (!r) continue;
+    /* Só o elemento mais de fora: o filho que tem o mesmo texto inteiro é a mesma ocorrência. */
+    const pai = el.parentNode;
+    if (pai && pai.rawTagName && textoNormal(pai.text) === texto) continue;
+    erros.push(`N6 ${relativo}: um <${etiqueta}> sem marca tem por texto inteiro o nome do ${r.fonte} para «${r.id}» («${r.nome.slice(0, 70)}»), que ${r.estado === 'recusado' ? `foi recusado porque ${r.porque}` : r.porque}`);
   }
   return { erros, recibos, cartoes };
 }
@@ -272,6 +353,10 @@ if (process.argv.includes('--prova')) {
       { id_da_linha: 'planta-d', correspondencia: 'exata', nome_ine: { nome: 'Nome de outra medida', endereco: 'https://exemplo.invalido/d', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: false } },
       { id_da_linha: 'planta-e', correspondencia: 'exata', nome_pordata: { nome: 'Nome sem estado', endereco: 'https://exemplo.invalido/e', lido_em: '2026-09-21T00:00:00+00:00' } },
       { id_da_linha: 'planta-f', correspondencia: 'proxima', nome_pordata: { nome: 'Nome de medida vizinha', endereco: 'https://exemplo.invalido/f', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: true } },
+      { id_da_linha: 'planta-g', correspondencia: 'exata', nome_ine: { nome: 'Nome com aviso vazio', endereco: 'https://exemplo.invalido/g', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: true, aviso: '' } },
+      /* Duas linhas com o mesmo nome e o mesmo endereço, uma confirmada e outra não, como as duas da taxa de desemprego. */
+      { id_da_linha: 'planta-h', correspondencia: 'exata', nome_pordata: { nome: 'Nome partilhado por duas linhas', endereco: 'https://exemplo.invalido/h?a=11111&b=22222', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: true } },
+      { id_da_linha: 'planta-i', correspondencia: 'exata', nome_pordata: { nome: 'Nome partilhado por duas linhas', endereco: 'https://exemplo.invalido/h?a=11111&b=22222', lido_em: '2026-09-21T00:00:00+00:00' } },
     ],
   });
   const recibo = (nome, href, extra = '') =>
@@ -292,6 +377,14 @@ if (process.argv.includes('--prova')) {
     ['um recibo com a marca de cartão numa página de linha', recibo('Nome com aviso', 'https://exemplo.invalido/c', ' data-nome="oficial" data-de-linha="planta-a"'), 'livro-razao/planta-c/index.html', /N1 .*aviso/],
     ['uma ligação sem marca para o endereço de um nome recusado', semMarca('<p><a href="https://exemplo.invalido/c">ver no INE</a></p>'), 'areas/planta/index.html', /N5 /],
     ['um título sem marca com o nome recusado por texto inteiro', semMarca('<span class="cartao-medida-nome">Nome com aviso</span>'), 'areas/planta/index.html', /N6 /],
+    ['um nome com o campo aviso vazio', recibo('Nome com aviso vazio', 'https://exemplo.invalido/g'), 'livro-razao/planta-g/index.html', /N1 .*aviso/],
+    ['um nome confirmado para outra linha, no recibo da linha que não o tem confirmado', recibo('Nome partilhado por duas linhas', 'https://exemplo.invalido/h?a=11111&b=22222'), 'livro-razao/planta-i/index.html', /N1 /],
+    ['um nome partido por dois elementos, sem marca', semMarca('<span class="cartao-medida-nome">Nome com <em>aviso</em></span>'), 'areas/planta/index.html', /N6 /],
+    ['um nome escrito com uma entidade numérica, sem marca', semMarca('<span>Nome confirmado A &#38; B</span>'), 'areas/planta/index.html', /N6 /],
+    ['um nome num elemento fora da lista antiga, sem marca', semMarca('<button type="button">Nome com aviso</button>'), 'areas/planta/index.html', /N6 /],
+    ['um nome CONFIRMADO rendido sem marca', semMarca('<span>Nome partilhado por duas linhas</span>'), 'areas/planta/index.html', /N6 .*só se rende com a marca/],
+    ['uma ligação sem marca com os parâmetros por outra ordem', semMarca('<p><a href="https://exemplo.invalido/a?y=2&amp;x=1">ver</a></p>'), 'areas/planta/index.html', /N5 /],
+    ['uma ligação sem marca com barra final e fragmento', semMarca('<p><a href="https://exemplo.invalido/c/#topo">ver</a></p>'), 'areas/planta/index.html', /N5 /],
     ['a página certa, com «&» no nome e no endereço', recibo(A.nome, A.endereco), 'livro-razao/planta-a/index.html', null],
     ['o cartão certo', cartao('planta-a', A.nome), 'areas/planta/index.html', null],
     ['um nome recusado dentro de uma frase, que não é um nome oficial rendido', semMarca('<p>O INE chama-lhe Nome com aviso, e a página di-lo numa frase.</p>'), 'estudos/planta/index.html', null],
