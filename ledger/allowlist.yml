@@ -45,7 +45,13 @@ contexts:
       (ResearchHub/indicators/enquadramento.py) e nunca se escreve à mão, e só
       entram os que o motor marca como a MESMA medida: a medida vizinha e o campo
       por confirmar não chegam ao leitor. A norma §1.5 manda que o nome de uma
-      medida seja um campo com dono, e o dono é o motor.
+      medida seja um campo com dono, e o dono é o motor. Desde 21.09.2026 este
+      motivo deixou de ser uma dispensa: scripts/check-nomes-oficiais.mjs confere
+      nas páginas construídas que cada nome rendido é, carácter a carácter, um
+      nome confirmado daquela linha, e um nome que o motor exporte com o campo
+      aviso (a conferência de ser a mesma medida por fazer) não entra. Sete nomes
+      do INE com aviso estiveram no ar de 16.09 a 21.09.2026, três deles de
+      outros indicadores (DECISIONS §1.115).
   - id: referencia-legal
     why: >-
       A citação de um diploma e dos seus artigos: o número do decreto-lei, o ano

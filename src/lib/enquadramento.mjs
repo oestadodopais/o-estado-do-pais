@@ -297,6 +297,22 @@ export function valorDeReferenciaDoMotor(id) {
  * e o da PORDATA a seguir. Cada um leva a origem dele, que é o endereço e a hora
  * a que o motor o leu.
  *
+ * UM NOME COM AVISO NÃO CHEGA AO LEITOR (correção de 21.09.2026). A marca
+ * `correspondencia` do ficheiro foi julgada para o nome da PORDATA. Os nomes do
+ * INE que o motor leu na lista de resultados da busca do portal trazem, cada um,
+ * um campo `aviso` a dizer que a marca da busca prova o tema e não prova que seja
+ * a mesma medida, e que essa conferência ficou por fazer. Esta função lia `exata`
+ * para os dois nomes e punha o do INE primeiro, e por isso três nomes de OUTROS
+ * indicadores estiveram no ar como nome oficial: a formação bruta de capital
+ * fixo em percentagem do PIB com o nome de um indicador mensal da construção
+ * (também como título de um cartão), a taxa de emprego com o de uma série mensal
+ * de outro grupo etário, e o risco de pobreza ou exclusão com o da definição
+ * antiga. Um estado de verificação escrito em prosa não é lido por ninguém: passa
+ * a ser lido aqui. Um nome cujo objeto traga `aviso`, ou que o motor marque
+ * `mesma_medida: false`, não existe para o leitor, e a régua
+ * `scripts/check-nomes-oficiais.mjs` confere-o nas páginas construídas por conta
+ * própria, com uma planta.
+ *
  * @param {string} id
  * @returns {{ ine: { nome: string, endereco: string, lido: string }|null, pordata: { nome: string, endereco: string, lido: string }|null }|null}
  */
@@ -306,6 +322,7 @@ export function nomeOficial(id) {
   /** @param {any} o */
   const util = (o) => {
     if (!o || typeof o !== 'object') return null;
+    if ((typeof o.aviso === 'string' && o.aviso.trim() !== '') || o.mesma_medida === false) return null;
     const nome = o.nome;
     if (typeof nome !== 'string' || nome.trim() === '' || nome === MARCADOR) return null;
     const endereco = typeof o.endereco === 'string' ? o.endereco : '';
