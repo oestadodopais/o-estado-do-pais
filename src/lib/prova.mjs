@@ -822,12 +822,16 @@ export function prova(lang = 'pt') {
     ),
 
     /* ---- a cobertura ---- */
+    /* A PORTA DAS DUAS CONTAGENS É A PÁGINA DOS LUGARES (B1, peça 2, correção de
+       21.09.2026). Era o índice dos concelhos, que passou a redirecionamento
+       301: uma porta que só abre por um salto do servidor não é a porta de um
+       número. A página dos lugares é onde os 308 se procuram. */
     municipios_com_pagina: k(
       'municipios_com_pagina',
       MUNICIPIOS_COM_PAGINA.length,
-      routePath('municipios', lang),
+      routePath('lugares', lang),
     ),
-    municipios_total: k('municipios_total', MUNICIPIOS.length, routePath('municipios', lang)),
+    municipios_total: k('municipios_total', MUNICIPIOS.length, routePath('lugares', lang)),
 
     /* ---- as 29 unidades da Carta, e os concelhos de cada uma (Emenda 20) ----
        A contagem do índice, e uma por página de distrito. As 30 saem do
@@ -838,7 +842,8 @@ export function prova(lang = 'pt') {
        A PORTA DE CADA UMA É A LISTA QUE ELA CONTA, na própria página. É o que a
        IDENTIDADE §10 permite e o que a agenda já faz: quando o que o número
        conta se vê ali mesmo, o destino é a secção que o mostra. */
-    mapa_unidades: k('mapa_unidades', unidadesDoMapa().length, `${routePath('distritos', lang)}#unidades`),
+    /* A mesma razão, e a âncora é a lista que esta contagem conta. */
+    mapa_unidades: k('mapa_unidades', unidadesDoMapa().length, `${routePath('lugares', lang)}#distritos-k`),
 
     /* ---- as regiões (Emenda 21, 27.08.2026) ----
        `declaradas` conta as entradas da lista de dados que não são a referência;

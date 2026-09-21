@@ -49,6 +49,7 @@ import LugarDoNome from '../components/inicio/LugarDoNome.astro';
 import { distritoDoMapa, unidadeDoMapa } from '../lib/mapa.mjs';
 import { repousoDaUnidade } from '../lib/inicio.mjs';
 import { getClaim } from '../lib/ledger.mjs';
+import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
@@ -67,6 +68,7 @@ const caop = getClaim('municipios-portugal-caop-2025');
 /* A DUAS PALAVRAS DE TIPO SÃO DO ARTEFACTO E NÃO DE UMA LEITURA DO NOME. O campo
    `tipo` vale `distrito` ou `ilha`, e o motor escreveu-o da camada da Carta.
    Adivinhá-lo do nome («começa por Ilha») seria a regra escrita duas vezes. */
+const r = ROTULOS_B1[lang];
 const tipo = unidade.tipo === 'ilha' ? s.distritos.tipoIlha : s.distritos.tipoDistrito;
 ---
 
@@ -249,8 +251,11 @@ const tipo = unidade.tipo === 'ilha' ? s.distritos.tipoIlha : s.distritos.tipoDi
   </div>
 
   <p class="rodape-nav distrito-portas">
-    <a href={routePath('distritos', lang)}>{s.distritos.voltarIndice}</a>
-    <a href={routePath('municipios', lang)}>{s.distritos.voltarConcelhos}</a>
+    {/* DUAS PORTAS PARA A MESMA PÁGINA SÃO UMA (B1, peça 2, correção de
+        21.09.2026). «Voltar ao índice» e «Voltar aos concelhos» abriam dois
+        índices, e os dois passaram a ser a página dos lugares: fica a porta com o
+        nome do que ela abre. */}
+    <a href={routePath('lugares', lang)}>{r.lugares}</a>
     <a href={`${routePath('home', lang)}#mapa`}>{s.municipios.mapaLink}</a>
   </p>
 

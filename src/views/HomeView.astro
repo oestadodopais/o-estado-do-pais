@@ -105,7 +105,7 @@ const home = routePath('home', lang);
  * continua sem conhecer a tabela de rotas, e o endereço antigo continua a abrir
  * alguma coisa. */
 const indiceDasRegioes = routePath('regioes', lang);
-const indiceDosConcelhos = routePath('municipios', lang);
+const indiceDosConcelhos = routePath('lugares', lang);
 
 /* ---------------------------------------------------------------------------
  * O REENCAMINHAMENTO DOS ENDEREÇOS ANTIGOS DAS REGIÕES (Emenda 21b)
@@ -735,7 +735,7 @@ const blocos = [{ chave: 'pais', tipo: 'pais' }];
     s={s}
     p={p}
     rotas={{
-      municipios: routePath('municipios', lang),
+      municipios: routePath('lugares', lang),
       estudos: routePath('estudos', lang),
       agenda: routePath('agenda', lang),
     }}
