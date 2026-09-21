@@ -156,7 +156,12 @@ const medidaDeUmaLinha = (unidade, linha) =>
             na letra do brief F1.2b, e ficaria a única das quatro com o selo
             dentro da frase depois de o mecanismo existir. */}
         <Manchete as="h1" class="cabeca-h1" partes={regiao.frase[lang]} lang={lang} />
-        <p class="regiao-tipo">{s.regioes.tipo}</p>
+        {/* O PARÁGRAFO DOS NÍVEIS SAIU (B1, peça 2, 21.09.2026). Dizia «região
+            NUTS II», que é o nome da gaveta da classificação e não uma coisa
+            que um leitor venha procurar: a página chama-se Alentejo, a linha
+            de um concelho do Alentejo leva a ela, e o que ela tem são as
+            medidas da região. A nomenclatura fica onde ela é matéria, no
+            recibo de cada linha e no Método. */}
       </div>
     </div>
 
@@ -221,7 +226,11 @@ const medidaDeUmaLinha = (unidade, linha) =>
       que muda de página. A cadeia já estava declarada e não se rendia em lado
       nenhum. */}
   <p class="regiao-comparar">
-    <a href={`${routePath('regioes', lang)}#regua`}>{s.regioes.compararPorta} →</a>
+    {/* A PORTA PARA A RÉGUA SAIU (B1, peça 2, 21.09.2026). Abria `#regua` no
+        índice das regiões, e esse índice passou a ser um redirecionamento para a
+        página dos lugares: a âncora deixou de existir, e uma porta que abre o topo
+        de outra página não é uma porta. A régua da convergência fica sem página
+        até o B3 lhe dar uma, e o relatório do bloco di-lo. */}
   </p>
 
   <p class="rodape-nav regiao-portas">

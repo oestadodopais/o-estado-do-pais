@@ -81,7 +81,9 @@ const tipo = unidade.tipo === 'ilha' ? s.distritos.tipoIlha : s.distritos.tipoDi
     {/* O nome é o da Carta, transcrito: vai declarado como lugar, para que o
         inventário de frases não ganhe 29 entradas com os nomes das unidades. */}
     <h1 data-lugar>{unidade.nome}</h1>
-    <p class="distrito-tipo">{tipo}</p>
+    {/* O PARÁGRAFO DOS NÍVEIS SAIU (B1, peça 2, 21.09.2026). Ver a razão na
+        página de uma região: o tipo de uma unidade da Carta é a gaveta da
+        classificação, e não o que a página tem. */}
     {/* ------------------------------------------------------------------------
         O QUE ESTA PÁGINA TEM, DITO À VISTA (bloco F1.4, item 8)
         ------------------------------------------------------------------------
@@ -103,9 +105,11 @@ const tipo = unidade.tipo === 'ilha' ? s.distritos.tipoIlha : s.distritos.tipoDi
         mesmo sentido eram duas coisas para manter em dia. Diz o que a página
         tem, não o que ela é nem porque se deve confiar nela (Emenda 18).
         ---------------------------------------------------------------------- */}
-    <p class="lede distrito-lede">
-      {s.distritos.metaDescricaoA}<span data-lugar>{unidade.nome}</span>{s.distritos.metaDescricaoB}
-    </p>
+    {/* A FRASE DE ABERTURA SAIU (B1, peça 2, 21.09.2026). Dizia «Os concelhos
+        de X, pela Carta Administrativa Oficial de Portugal.», que é a página a
+        dizer o que ela é antes de o mostrar: a lista dos concelhos está aqui em
+        baixo, inteira, e a fonte está na linha da Carta no fim. A mesma cadeia
+        continua a ser a descrição do `<head>`, que é onde ela serve. */}
     {/* ------------------------------------------------------------------------
         A CONTAGEM NÃO SE RENDE AQUI, E A CHAVE DA PROVA FICA
         ------------------------------------------------------------------------
