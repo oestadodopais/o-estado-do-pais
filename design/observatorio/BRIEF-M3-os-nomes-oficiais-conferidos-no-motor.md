@@ -1,0 +1,31 @@
+# Brief · M3 · Os nomes oficiais conferidos no motor, e nenhum estado de verificação em prosa
+
+*Escrito pelo lugar de direção (Claude Fable 5.1) a 21.09.2026, a partir da §1.115, da I123 e da M13. Um bloco do motor (`~/Instruments/ResearchHub`, numa worktree em `.worktrees/<ramo>`), com uma pequena parte no sítio no fim. O construtor é o Claude Opus; quem confere cada correspondência é um agente que não a escolheu; a leitura a frio é do Codex. Sem travessões na prosa.*
+
+## 0 · O teste de aceitação, dito antes
+
+Feito quer dizer: (1) cada nome oficial que o motor exporta para o sítio (`nomes.json`) traz, por fonte (INE e PORDATA, cada uma com a sua marca), um estado estrutural e não prosa: `mesma_medida: true` só quando a página ou os metadados da fonte, lidos nesse dia, dizem o mesmo conceito, a mesma unidade, a mesma população e uma periodicidade compatível com a linha do livro-razão, e a prova de cada um dos quatro fica escrita ao lado (o excerto lido, o endereço, a hora); caso contrário `mesma_medida: false` com a diferença dita, e o nome não atravessa; (2) a conferência de cada correspondência foi feita por um agente que não a escolheu, com o registo das duas leituras; (3) a exportação FECHA (código diferente de zero) se um objeto exportado levar um campo de aviso em prosa, um `[verify]` ao lado de um valor que se rende, ou um nome sem estado; com uma planta; (4) os módulos de dados `.mjs` do sítio e os registos dos estudos foram varridos à procura do mesmo padrão (um estado de verificação em prosa ao lado de um valor que se rende), com a lista do que se encontrou; (5) no sítio, que desde 21.09.2026 já só rende um nome com `mesma_medida: true`, os nomes confirmados voltam a aparecer nos recibos, medidos.
+
+## 1 · O que se mediu a 21.09.2026
+
+`src/data/enquadramento/nomes.json` (exportado por `indicators/enquadramento.py` a 15.09.2026): 32 medidas; 17 com `correspondencia: "exata"`, 8 `proxima`, 7 sem marca; 11 nomes do INE, dos quais 9 lidos na lista de resultados da busca do portal, cada um com o campo `aviso`, e 2 lidos pelo código do indicador nos metadados (`INE_META`, a taxa de desemprego); 25 nomes da PORDATA, julgados um a um pelo construtor de 15.09 na tabela do guião e por mais ninguém. Sete nomes do INE com aviso estiveram no ar; três eram de outros indicadores, e lê-se no próprio nome: a formação bruta de capital fixo (% do PIB, anual) com um indicador mensal da construção em taxa de variação homóloga; a taxa de emprego com uma série mensal ajustada de sazonalidade dos 16 aos 74 anos; o risco de pobreza ou exclusão com a definição «Europa 2020» por NUTS de 2013. Dos nomes da PORDATA, o primeiro a olhar é o da taxa de emprego («Taxa de emprego: total e por sexo»), pelo grupo etário que a página da PORDATA declarar contra o da linha. O comentário do próprio guião já dizia que a marca da busca prova o tema e não a medida.
+
+## 2 · O mandato
+
+| # | o que | a medida |
+|---|---|---|
+| 1 | O formato: `correspondencia` passa a existir por fonte; cada nome leva `mesma_medida` (booleano) e `prova` (conceito, unidade, população, periodicidade: o que a fonte diz de cada um, o excerto, o endereço, a hora); o campo `aviso` deixa de existir | o formato escrito no cabeçalho do guião e no relatório |
+| 2 | A leitura do INE deixa de aceitar o primeiro resultado da busca: o indicador escolhe-se pelo código, e o nome, a unidade, a periodicidade e a população leem-se nos metadados do indicador (`pindicaMeta.jsp?varcd=<código>`), que o guião já usa para a taxa de desemprego; onde não houver indicador do INE que seja a mesma medida, o campo diz `mesma_medida: false` ou não existe, e isso é um resultado | os 32, um a um, com o código ou a razão de não haver |
+| 3 | A conferência por quem não escolheu: um segundo agente recebe só a linha do livro-razão (o valor, a unidade, o período, a fonte) e o endereço proposto, lê a página e diz se é a mesma medida nos quatro critérios; os desacordos resolvem-se abrindo a fonte, e ficam escritos | a tabela das duas leituras; os desacordos |
+| 4 | O mesmo para os 25 nomes da PORDATA | idem |
+| 5 | A exportação fecha em prosa: um portão no exportador que recusa um objeto exportado com `aviso`, com `[verify]` ao lado de um valor, ou sem `mesma_medida`; teste com planta em `core.gate` | a planta a morder |
+| 6 | O varrimento dos dados do sítio (`src/data/*.mjs`, `registos/`) e das exportações do motor à procura do mesmo padrão | a lista, mesmo que vazia, com o comando e o conhecido-positivo que prova que o varrimento vê |
+| 7 | No sítio, num ramo próprio: `nomes.json` novo cruzado pelo caminho de sempre. Desde a correção de 21.09.2026 o sítio já exige `mesma_medida === true` nos seus três leitores (`nomeOficial()`, `medir-defeitos.mjs`, `check:nomes`) e nenhum nome se rende; com o ficheiro novo os confirmados voltam a render-se, e o motivo `nome-oficial-da-medida` volta a `ledger/allowlist.yml` (saiu porque o portão do HTML fecha a construção quando um motivo declarado não dispensa nada; o texto dele está no histórico do git, no commit da correção) com a frase a dizer que é uma comparação e não uma dispensa | os três portões a 0; as páginas com os nomes que voltarem, medidos |
+
+## 3 · O que não se faz
+
+Nenhum nome escrito de cabeça, nenhum nome traduzido: o nome é o que a página da fonte disse nesse dia, ou não existe. Nenhum valor do livro-razão muda. Não se tocam os ficheiros de outras corridas por confirmar no motor. Nenhum `push`.
+
+## 4 · As regras de sempre
+
+No motor, uma worktree em `.worktrees/<ramo>` (copiar primeiro as três caches `snippets.json` da árvore principal, como o `.gitignore` do motor explica), commits pequenos por caminhos explícitos, só o trailer `Co-Authored-By`; o pre-commit corre `python3 -m core.gate`. O INE deixa cair ligações de alguns endereços e responde devagar: um pedido de cada vez, com o nome do projeto no pedido, e uma ausência de resposta é «sem resposta», nunca «não existe». O relatório em `indicators/out/nomes-conferidos-<data>/RELATORIO.md`, curto, em português.

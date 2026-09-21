@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-21T13:03:28+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/e52c0f39-ab9c-4e0f-b9db-11d420f316ed/scratchpad/leitura-nomes/pacote",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "src/lib/enquadramento.mjs",
+   "descricao": "a condição do aviso invertida na função do sítio (classe: a fonte e o diff)",
+   "sha256_antes": "88de29f6c79799b5f00c5fb69cf5eecd5fa4be22ce9f4307455189aef2132be8",
+   "sha256_depois": "29955616c63e2e6ddf8794749e3319e49d0c67cc2da600177d22661237a44316",
+   "contexto_antes": ";\n  if (!n || n.correspondencia !== 'exata') return null;\n  /** @param {any} o */\n  const util = (o) => {\n    if (!o || typeof o !== 'object') return null;\n    if ((typeof o.aviso === 'string' && o.aviso.trim() !== '') || o.mesma_medida === false) return null;\n    const nome = o.nome;\n    if (typeof nome !== 'string' || nome.trim() === '' || nome === MARCADOR) return null;\n    const endereco = typeof o.endereco === '",
+   "contexto_depois": ";\n  if (!n || n.correspondencia !== 'exata') return null;\n  /** @param {any} o */\n  const util = (o) => {\n    if (!o || typeof o !== 'object') return null;\n    if ((typeof o.aviso === 'string' && o.aviso.trim() === '') || o.mesma_medida === false) return null;\n    const nome = o.nome;\n    if (typeof nome !== 'string' || nome.trim() === '' || nome === MARCADOR) return null;\n    const endereco = typeof o.endereco === '"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "scripts/check-nomes-oficiais.mjs",
+   "descricao": "a N1 deixa de comparar o endereço (classe: a régua)",
+   "sha256_antes": "f7be7c5a2a3e84a619931598497740bdc0a107d1b5fa24c6ac9385027a5714cf",
+   "sha256_depois": "82ad8e7157470b5b47844341c1094dd315eaa4177465788d9746692792a7cc96",
+   "contexto_antes": ");\n      continue;\n    }\n    const texto = a.text.trim();\n    const href = a.getAttribute('href') ?? '';\n    const lista = nomes.confirmados.get(id) ?? [];\n    if (!lista.some((x) => x.nome === texto && x.endereco === href))\n      erros.push(`N1 ${relativo}: o recibo de «${id}» mostra «${texto.slice(0, 90)}» (${href.slice(0, 70)}), que ${\n        lista.some((x) => x.nome === texto)",
+   "contexto_depois": ");\n      continue;\n    }\n    const texto = a.text.trim();\n    const href = a.getAttribute('href') ?? '';\n    const lista = nomes.confirmados.get(id) ?? [];\n    if (!lista.some((x) => x.nome === texto))\n      erros.push(`N1 ${relativo}: o recibo de «${id}» mostra «${texto.slice(0, 90)}» (${href.slice(0, 70)}), que ${\n        lista.some((x) => x.nome === texto)"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "scripts/medir-defeitos.mjs",
+   "descricao": "a régua da voz deixa de recusar mesma_medida: false (classe: a régua)",
+   "sha256_antes": "a01ea2d555a7456657331c71bbc392a6764056eed5d856e505251479d570dffb",
+   "sha256_depois": "9c5e13750a6fa3ba18f7c66a72fa19b1f532dc237d1cc56b745df7ba8c2d79ff",
+   "contexto_antes": "AIZ, 'src', 'data', 'enquadramento', 'nomes.json');\n  /** @param {any} o */\n  const nomeConfirmado = (o) => {\n    if (!o || typeof o !== 'object') return null;\n    if ((typeof o.aviso === 'string' && o.aviso.trim() !== '') || o.mesma_medida === false) return null;\n    if (typeof o.nome !== 'string' || o.nome.trim() === '' || o.nome === '[verify]') return null;\n    if (typeof o.endereco !== 'string' || o.endereco === '') return null;\n    if (typeof o.lido_",
+   "contexto_depois": "AIZ, 'src', 'data', 'enquadramento', 'nomes.json');\n  /** @param {any} o */\n  const nomeConfirmado = (o) => {\n    if (!o || typeof o !== 'object') return null;\n    if (typeof o.aviso === 'string' && o.aviso.trim() !== '') return null;\n    if (typeof o.nome !== 'string' || o.nome.trim() === '' || o.nome === '[verify]') return null;\n    if (typeof o.endereco !== 'string' || o.endereco === '') return null;\n    if (typeof o.lido_"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a contagem do depois trocada no relatório (classe: o relatório)",
+   "sha256_antes": "4d4aa0c16c34c0fb34114c903fc4ccf014f49c5934275b702679cb8d75b881d7",
+   "sha256_depois": "5fb8127204affdfa87abc71b2577df59839ca1bd27fcb0d5d05e9200c10b34d8",
+   "contexto_antes": "e cartão; no ficheiro do motor, 2 nomes do INE e 17 da PORDATA confirmados, 17 recusados, 7 deles com aviso numa medida `exata`. Contra a construção da cabeça: sai a 0; 38 nomes oficiais em recibo, 10 em título de cartão; as sete plantas recusadas ou aceites como deviam. O cartão de `formacao-bruta-de-capital-fixo-2025` passa a dizer «Investimento: Forma",
+   "contexto_depois": "e cartão; no ficheiro do motor, 2 nomes do INE e 17 da PORDATA confirmados, 17 recusados, 7 deles com aviso numa medida `exata`. Contra a construção da cabeça: sai a 0; 36 nomes oficiais em recibo, 10 em título de cartão; as sete plantas recusadas ou aceites como deviam. O cartão de `formacao-bruta-de-capital-fixo-2025` passa a dizer «Investimento: Forma"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "built/livro-razao/taxa-de-emprego-2025/index.html",
+   "descricao": "um nome do INE com aviso reposto num recibo construído (classe: a página construída)",
+   "sha256_antes": "cf61ebc4a7704c6f1111a756461bf820068c70ea734308889c86f91eba32995f",
+   "sha256_depois": "e4189202f02a80c4de07c22f4d1debe827f8bf41dcdea2662d77ce17efa06e71",
+   "contexto_antes": "><dd><span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"taxa-de-emprego-2025\" data-de-campo=\"reference_date\">2025</span></dd><dt>Nome na PORDATA</dt><dd><span data-nonledger=\"nome-oficial-da-medida\"><a class=\"ligacao-externa\" href=\"https://www.pordata.pt/europa/taxa+de+emprego+total+e+por+sexo-1758\" rel=\"noo",
+   "contexto_depois": "><dd><span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"taxa-de-emprego-2025\" data-de-campo=\"reference_date\">2025</span></dd><dt>Nome no INE</dt><dd><span data-nonledger=\"nome-oficial-da-medida\"><a class=\"ligacao-externa\" href=\"https://www.ine.pt/xportal/xmain?xpid=INE&amp;xpgid=ine_indicadores&amp;contecto=pi&amp;indOcorrCod=0011183&amp;selTab=tab0&amp;xlang=pt\" rel=\"noopener noreferrer external\" lang=\"pt-PT\">Taxa de emprego (Ajustada de sazonalidade - %) da população residente com idade entre 16 e 74 anos por Grupo etário; Mensal</a> · Lido na fonte a 15.09.2026</span></dd><dt>Nome na PORDATA</dt><dd><span data-nonledger=\"nome-oficial-da-medida\"><a class=\"ligacao-externa\" href=\"https://www.pordata.pt/europa/taxa+de+emprego+total+e+por+sexo-1758\" rel=\"noo"
+  }
+ ]
+}
