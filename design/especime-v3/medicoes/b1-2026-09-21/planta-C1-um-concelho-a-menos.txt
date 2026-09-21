@@ -1,0 +1,10 @@
+comando: node scripts/check-lugares.mjs
+codigo: 1
+mordida: /C1 · os três extratos da Carta dão 307 concelhos/
+
+
+  PORTÃO DOS LUGARES · 2 problema(s)
+
+    · C1 · os três extratos da Carta dão 307 concelhos, e a Carta de 2025 tem 308. Ou um extrato mudou, ou um ficheiro foi lido a meio.
+    · C1 · os extratos dão 28 distritos e ilhas, e são 29.
+

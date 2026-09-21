@@ -1,0 +1,71 @@
+{
+  "cabeca": "992fcd1de7348dc7b987e06c8182272158bdac87",
+  "plantas": [
+    {
+      "grupo": "carta",
+      "nome": "C1-um-concelho-a-menos",
+      "ficheiro": "public/dados/caop-2025-municipios-madeira.csv",
+      "comando": "node scripts/check-lugares.mjs",
+      "codigo": 1,
+      "mordida": "/C1 · os três extratos da Carta dão 307 concelhos/",
+      "passou": true,
+      "antes": "bae35fd862a38f817732c9092d4fdea93ef8162bded40a82ad20a117a1314c32",
+      "reposto": "bae35fd862a38f817732c9092d4fdea93ef8162bded40a82ad20a117a1314c32"
+    },
+    {
+      "grupo": "carta",
+      "nome": "C3-uma-regiao-sem-entrada",
+      "ficheiro": "public/dados/caop-2025-municipios-continente.csv",
+      "comando": "node scripts/check-lugares.mjs",
+      "codigo": 1,
+      "mordida": "/C3 · o concelho \"Águeda\" está na região \"Centreo\" da Carta/",
+      "passou": true,
+      "antes": "404adbf9410c3cc5f231c5d0824ee8bcc728750f83dd0165d9ef59b2ac6b020a",
+      "reposto": "404adbf9410c3cc5f231c5d0824ee8bcc728750f83dd0165d9ef59b2ac6b020a"
+    },
+    {
+      "grupo": "temas",
+      "nome": "T1-uma-medida-sem-tema",
+      "ficheiro": "src/data/temas-das-medidas.mjs",
+      "comando": "node scripts/check-lugares.mjs",
+      "codigo": 1,
+      "mordida": "/T1 · a medida \"pmp\" não tem tema/",
+      "passou": true,
+      "antes": "2e3cc5168e54ba4ffedc62f07b34ba062257757b6cde683773cc4f21204574f1",
+      "reposto": "2e3cc5168e54ba4ffedc62f07b34ba062257757b6cde683773cc4f21204574f1"
+    },
+    {
+      "grupo": "temas",
+      "nome": "T2-uma-medida-no-tema-errado",
+      "ficheiro": "dist/municipios/evora/index.html",
+      "comando": "node scripts/check-lugares.mjs",
+      "codigo": 1,
+      "mordida": "/T2 · \\/municipios\\/evora: a medida \"populacao\" rende-se debaixo de \"trabalho\"/",
+      "passou": true,
+      "antes": "0126ae28fe5fdbe42a370f2485fc91a015a5e9f9e1189df57ce04b1536924546",
+      "reposto": "0126ae28fe5fdbe42a370f2485fc91a015a5e9f9e1189df57ce04b1536924546"
+    },
+    {
+      "grupo": "lugar",
+      "nome": "8.17-a-linha-do-lugar-sem-uma-parte",
+      "ficheiro": "dist/municipios/agueda/index.html",
+      "comando": "node scripts/check-lugar.mjs",
+      "codigo": 1,
+      "mordida": "/8\\.17 · páginas de concelho sem o mapa da sua unidade: 1/",
+      "passou": true,
+      "antes": "7639c10fd62bdd34a2a9e3e9536e6fe5b500c9663972eddf722176cb425eb66d",
+      "reposto": "7639c10fd62bdd34a2a9e3e9536e6fe5b500c9663972eddf722176cb425eb66d"
+    },
+    {
+      "grupo": "redirecionamentos",
+      "nome": "B1-lugares-um-destino-trocado",
+      "ficheiro": "vercel.json",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/B1 lugares: \\/municipios: tem de ter uma entrada 301 incondicional/",
+      "passou": true,
+      "antes": "7f61ffc128b269e3db2ecf66351985099f8428744418bc56197d040a491da04a",
+      "reposto": "7f61ffc128b269e3db2ecf66351985099f8428744418bc56197d040a491da04a"
+    }
+  ]
+}
