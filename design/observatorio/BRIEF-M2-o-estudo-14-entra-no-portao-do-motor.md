@@ -30,3 +30,7 @@ Não se toca em nenhum valor de nenhum livro-razão sem uma correção registada
 ## 4 · As regras de sempre
 
 Uma worktree do motor (`git worktree add`), commits pequenos por caminhos explícitos, só o trailer `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>`; o pre-commit corre `python3 -m core.gate` (cerca de dois minutos e meio) e tem de passar em cada commit. O nome não é o conteúdo: antes de afirmares o que um campo ou um script faz, abre-o. Uma busca vazia não prova ausência. O relatório em `content/14 Évora 2027/Technical Source/RELATORIO-portao-2026-09-21.md`, curto, em português, sem travessões, com a tabela do §2 e as medidas.
+
+## 5 · Feito a 21.09.2026, e as duas correções que o construtor trouxe a este brief
+
+O bloco fechou no mesmo dia (`f7942fb` em `master` do motor; o relatório em `content/14 Évora 2027/Technical Source/RELATORIO-portao-2026-09-21.md`). Duas coisas que este brief e o prompt do construtor davam por certas e não eram: as cópias das fontes oficiais do 14 não estão em árvore nenhuma do motor (só o `manifest.json`; as cópias vivem no Drive do diretor, como as regras mandam), e um registo prévio não vive em `core/prereg` mas ao lado do livro-razão do estudo (`preregistration.json`). O lugar de direção tinha escrito as duas sem as abrir.
