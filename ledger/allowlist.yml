@@ -236,15 +236,15 @@ tokens:
   - token: 'EU-27'
     scope: any
     why: O mesmo nome, na edição inglesa.
-  - token: '73/2013'
-    scope: body
-    why: >-
-      O número da lei que fixa o limite de dívida total de um município (Lei
-      n.º 73/2013, o regime financeiro das autarquias locais). É o NOME de uma
-      lei, da mesma classe que "UE-27": não mede nada e não pode ser escrito
-      sem algarismos. A medição que ele enquadra — o limite legal e o índice
-      contra ele — tem linha própria no livro-razão, ao lado. Acrescentado em
-      2026-08-15 para a página de município; ver DECISIONS §1.34.
+  # OS DOIS TOKENS DA LEI DO LIMITE DE DÍVIDA SAÍRAM (B1, peça 2, 21.09.2026).
+  # Eram '73/2013' e '52.º', o nome da lei e o artigo onde o limite de dívida
+  # total de um município é definido, e dispensavam a frase que a página de um
+  # concelho escrevia por baixo da distância desenhada. Essa frase saiu com o
+  # desenho: a comparação com o limite diz-se agora pela palavra que o cartão do
+  # índice de dívida leva ("dentro do limite legal"), e o diploma continua citado
+  # onde ele é matéria, no localizador e na aritmética da própria linha do
+  # limite. Um token declarado que não dispensa nada fecha a construção, e a
+  # razão de ele sair é esta: a página deixou de o escrever.
   - token: 'sha256'
     scope: body
     why: >-
@@ -254,14 +254,6 @@ tokens:
       "UE-27": não mede nada, e o "256" que ele traz é o comprimento do resumo
       em bits, escrito dentro do nome. O resumo em si é um campo da linha,
       marcado `data-linha-campo` e conferido carácter a carácter ao lado.
-  - token: '52.º'
-    scope: body
-    why: >-
-      O artigo dessa lei onde o limite é definido (uma vez e meia a média da
-      receita corrente líquida dos três anos anteriores). Mesma natureza do
-      token acima: é a referência a um artigo, não uma quantidade. Escrever
-      "o artigo cinquenta e dois" passaria no portão e seria pior — a
-      referência deixaria de ser verificável contra o diploma.
 
 # Padrões, para quando a correspondência exacta não chega. Usar com parcimónia.
 patterns: []

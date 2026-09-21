@@ -1,0 +1,608 @@
+---
+/**
+ * ===========================================================================
+ * O INSTRUMENTO DOS MANDATOS (B1, peça 2: o que a regra de paragem deixou cá)
+ * ===========================================================================
+ *
+ * ESTE BLOCO DEVIA TER SAÍDO DESTA PÁGINA, e não saiu. A emenda de 21.09.2026 ao
+ * brief B1 manda que «o instrumento dos mandatos e as suas notas ficam no estudo
+ * dos mandatos»; um portão que protege uma PESSOA impede-o, e a regra de paragem
+ * da casa diz que nesse caso se para naquela parte e se escreve o caso.
+ *
+ * O QUE O PORTÃO PROTEGE. O mandato de 2009–2013 declara `quemPorVerificar`: as
+ * duas fontes oficiais dão formas diferentes do nome de quem presidiu a partir
+ * de maio de 2013, e a casa não escolhe entre elas. A célula do I77 em
+ * `scripts/gate-html.mjs` exige que esse nome se renda, nas duas edições, na
+ * página deste concelho, com o marcador `[a verificar]` e a porta para a página
+ * dele. Tirar o instrumento daqui tirava da superfície o nome E o marcador, e a
+ * célula fecha a construção em vez de deixar isso acontecer em silêncio.
+ *
+ * O QUE FALTA PARA ELE SAIR: o nome e a sua incerteza têm de passar a render-se
+ * no estudo «Évora — Quinze Anos, Cinco Mandatos», que é composto do registo que
+ * o motor escreve. É uma mudança do lado do motor, e não desta peça.
+ *
+ * O CÓDIGO É O QUE ESTAVA NA VISTA, sem uma linha mudada: a série do índice
+ * contra o teto legal, a banda dos mandatos, os campos de cada mandato e as
+ * quatro notas. Só mudou de ficheiro, para que a vista da página do lugar diga o
+ * que a página é.
+ */
+import Claim from '../Claim.astro';
+import Provenance from '../Provenance.astro';
+import Frase from '../Frase.astro';
+import { getClaim, parsePtNumber } from '../../lib/ledger.mjs';
+import { dataDaCasa } from '../../lib/datas.mjs';
+import '../../styles/municipio.css';
+
+const { m, lang = 'pt', s } = Astro.props;
+const D = m.distancia ?? {};
+
+/**
+ * A LINHA DO TEMPO DAS ADMINISTRAÇÕES É DE QUEM A TEM (bloco dos 308, P2).
+ *
+ * O instrumento inteiro — a série do índice, a banda dos mandatos, os campos de
+ * cada mandato e a camada de fundo — sai de `m.tempo`, que é uma transcrição do
+ * trabalho «Quinze Anos, Cinco Mandatos». Nenhum outro concelho tem esse
+ * trabalho, e nenhum outro tem `m.tempo`: a secção não se rende, e a geometria
+ * não se calcula. Um instrumento vazio com o seu título por cima seria a página
+ * a fingir corpo, que é o que a IDENTIDADE §7 recusa.
+ */
+const temTempo = Boolean(m.tempo);
+
+/* A série do índice contra o tecto legal, desenhada. Só os quatro anos que
+   esta página publica — não «todos os anos», que seria dizer mais do que se
+   mostra. A altura de cada barra sai do valor da linha; o tecto sai da linha
+   do limite legal. Nada é escrito à mão. */
+const SERIE = { W: 720, H: 132, L: 10, R: 710, base: 104, topo: 16 };
+const tectoIndice = temTempo ? parsePtNumber(getClaim(D.tecto).value) : null;
+const serieAnos = temTempo
+  ? m.tempo.mandatos
+      .flatMap((mandato) => mandato.regulador ?? [])
+      .map((r) => ({ indice: r.indice, ref: r.ref }))
+  : [];
+const maxIndice = temTempo
+  ? Math.max(tectoIndice, ...serieAnos.map((r) => parsePtNumber(getClaim(r.indice).value)))
+  : null;
+const alturaDe = (v) => SERIE.base - (v / maxIndice) * (SERIE.base - SERIE.topo);
+
+/**
+ * ---------------------------------------------------------------------------
+ * A REGRA DO RÓTULO DO VALOR, ESCRITA (bloco B, item B9; achado D9)
+ * ---------------------------------------------------------------------------
+ * **O rótulo de um ano põe-se do lado de FORA da referência: por cima do traço
+ * do valor quando o ano está acima do teto, por baixo quando está abaixo.**
+ *
+ * A auditoria pediu «os quatro rótulos do mesmo lado da barra, ou a regra
+ * escrita de quando um vai por baixo», e o mesmo lado não é possível: medido no
+ * desenho de hoje, com os quatro rótulos por cima do seu traço, o de 105,5
+ * ficaria entre y = 47,7 e y = 61,5 e o fio da referência está em y = 49,59 —
+ * o rótulo atravessava a referência, que a Emenda 4 faz o elemento que se lê
+ * primeiro («referência a tinta à altura toda»). Com os quatro por baixo, o de
+ * 242,6 caía em cima da sua própria barra, que vai de y = 16 a y = 49,6.
+ *
+ * Fica a regra, e fica medida: `tests/municipio/correcoes-b.mjs` confere, para
+ * cada ano, que o rótulo está do lado de fora que lhe toca, que nenhum rótulo
+ * cruza o fio da referência, e que dois rótulos nunca se sobrepõem. O que a
+ * auditoria descreveu — «um rótulo por baixo do eixo e três por cima» — não é o
+ * que o desenho faz: os quatro estão acima do eixo (y = 104), e o que muda
+ * entre eles é o lado da REFERÊNCIA (y = 49,59), dois de cada.
+ */
+const ladoDoRotulo = (y) => (y <= SERIE.yTecto ? 'acima' : 'abaixo');
+const yDoRotulo = (y) => (ladoDoRotulo(y) === 'acima' ? y - 7 : y + 15);
+const pontosDaSerie = serieAnos.map((r, i) => ({
+  ...r,
+  x: SERIE.L + ((i + 0.5) / serieAnos.length) * (SERIE.R - SERIE.L),
+  y: alturaDe(parsePtNumber(getClaim(r.indice).value)),
+}));
+if (temTempo) SERIE.yTecto = alturaDe(tectoIndice);
+
+/**
+ * A frase da camada 2 do instrumento: o que a série mede, e nada mais.
+ *
+ * ---------------------------------------------------------------------------
+ * O VERBO SAI DOS DOIS VALORES, E NÃO DA CADEIA (I89, 29.08.2026)
+ * ---------------------------------------------------------------------------
+ * Até aqui o verbo vivia dentro de `tempoSerieA` («desceu de », «fell from »), e
+ * a vista limitava-se a pendurar os números nos pedaços entre eles. Era
+ * verdadeiro na única página que hoje rende a frase, porque em Évora o índice
+ * desce; **num concelho cuja série subisse, a página escrevia uma falsidade**, e
+ * nenhuma régua do sítio a apanhava, porque nenhuma comparava a palavra com os
+ * números que ela descreve.
+ *
+ * A escolha faz-se aqui, sobre os MESMOS valores que a frase cita, lidos do
+ * livro-razão pela mesma função que os rende. Três sentidos e três formas:
+ *
+ *   · o segundo menor  → «desceu de A em ano1 para B em ano2.»
+ *   · o segundo maior  → «subiu de A em ano1 para B em ano2.»
+ *   · os dois iguais   → «manteve-se em A em ano1 e em ano2.»
+ *
+ * A FORMA DA IGUALDADE PERDE O «DE … PARA …», e não é uma abreviatura: não há
+ * de onde nem para onde, e escrever «de 105,5% para 105,5%» era descrever uma
+ * mudança que não houve. O valor diz-se uma vez, com o seu selo, e os dois anos
+ * ficam nomeados.
+ *
+ * A GUARDA É `tests/municipio/serie.mjs`, e mede o que se lê e não o que se
+ * escreveu: lê as páginas construídas, tira de cada frase o verbo e os dois
+ * valores, e confere que a palavra e os números dizem a mesma coisa. Vê primeiro
+ * um estrago plantado (a frase «desceu» com o segundo valor maior) e só depois
+ * conta zero.
+ */
+const primeiro = serieAnos[0];
+const ultimo = serieAnos[serieAnos.length - 1];
+const indiceDoAno = (r) => parsePtNumber(getClaim(r.indice).value);
+const sobeOuDesce = temTempo
+  ? Math.sign(indiceDoAno(ultimo) - indiceDoAno(primeiro))
+  : null;
+const indiceSeriePartes = !temTempo
+  ? null
+  : sobeOuDesce === 0
+    ? [
+        s.municipio.tempoSerieManteve,
+        { claim: primeiro.indice, sufixo: '%' },
+        s.municipio.tempoSerieB,
+        { ref: primeiro.ref },
+        s.municipio.tempoSerieIgualD,
+        { ref: ultimo.ref },
+        s.municipio.tempoSerieE,
+      ]
+    : [
+        sobeOuDesce > 0 ? s.municipio.tempoSerieSubiu : s.municipio.tempoSerieDesceu,
+        { claim: primeiro.indice, sufixo: '%' },
+        s.municipio.tempoSerieB,
+        { ref: primeiro.ref },
+        s.municipio.tempoSerieC,
+        { claim: ultimo.indice, sufixo: '%' },
+        s.municipio.tempoSerieD,
+        { ref: ultimo.ref },
+        s.municipio.tempoSerieE,
+      ];
+
+/**
+ * A BANDA DOS MANDATOS (v2, IDENTIDADE.md §11; `design/DECISAO.md`, «Município»).
+ *
+ * Até aqui a linha do tempo era uma régua de anos por cima de uma lista: os
+ * anos estavam desenhados, os mandatos não. Passa a ser uma banda, que é o que
+ * uma linha do tempo é: cada mandato ocupa no desenho o pedaço de tempo que
+ * ocupou na realidade, sobre um eixo partilhado, e a legenda por baixo leva as
+ * portas para o mandato de cada segmento (§10: dentro de um desenho, a porta
+ * vai na legenda).
+ *
+ * NADA AQUI É ESCRITO. Os anos saem de `m.tempo.eixo`, os períodos de
+ * `mandato.periodo`, e a geometria é derivada dos dois. Nenhum número novo
+ * aparece na página: os que se veem já lá estavam.
+ *
+ * SEM ACENTO NOVO. Um mandato não é uma medição, e por isso não leva amarelo
+ * (§2): a banda distingue-se com fundo, fio e letra monoespaçada.
+ *
+ * O MANDATO EM CURSO É UM ESTADO DESENHADO (§7). Não tem fim publicado, e por
+ * isso não pode ter aresta direita: ocupa a cauda do desenho, que é espaço de
+ * desenho e não tempo medido, e fecha-se a tracejado, que é a mesma língua com
+ * que o selo diz «falta um campo».
+ */
+const BANDA = { W: 720, H: 62, L: 10, R: 710, y: 8, h: 26, cauda: 96 };
+/** Um período do registo, «2009–2013» ou «2025–», lido e não interpretado. */
+const anosDoPeriodo = (periodo) => {
+  const [de, ate] = String(periodo).split(/[–-]/);
+  return { de: Number(de), ate: ate ? Number(ate) : null };
+};
+const periodos = temTempo ? m.tempo.mandatos.map((mandato) => anosDoPeriodo(mandato.periodo)) : [];
+const anoMin = temTempo ? Math.min(...periodos.map((p) => p.de)) : null;
+const anoMax = temTempo ? Math.max(...periodos.map((p) => p.ate ?? p.de)) : null;
+/* O eixo do tempo vive entre a esquerda e o início da cauda; a cauda é do
+   mandato sem fim, e não representa anos nenhuns. */
+const xDoAno = (ano) =>
+  BANDA.L + ((ano - anoMin) / (anoMax - anoMin)) * (BANDA.R - BANDA.L - BANDA.cauda);
+/** A âncora de um mandato: o seu período, e mais nada. */
+const ancoraDoMandato = (periodo) => `mandato-${String(periodo).replace(/[–-]+$/, '').replace(/[–-]/g, '-')}`;
+const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
+  const { de, ate } = periodos[i];
+  const x = xDoAno(de);
+  return {
+    mandato,
+    ancora: ancoraDoMandato(mandato.periodo),
+    aberto: ate === null,
+    x,
+    largura: (ate === null ? BANDA.R : xDoAno(ate)) - x,
+  };
+});
+---
+
+<section class="linha-bloco" aria-labelledby="tempo">
+    <h2 class="linha-bloco-titulo" id="tempo">{s.municipio.tempoK}</h2>
+
+    <div class="instr" data-instrumento="mandatos">
+      <div class="instr-top">
+        <!-- CAMADA 1 do instrumento -->
+        {/* O rótulo da camada de um instrumento é o nome do que ela mostra
+            (item 8.14): «Relance» sai das páginas do leitor. */}
+        <p class="layer-tag">{s.secoes.medidas}</p>
+        {/* O PAR «242,6 → 105,5» (bloco B, item B9; achado C2).
+            A 390 e a 1280 o par não cabe numa linha, e o que se via era a
+            seta pendurada no fim da primeira linha (medido: a seta a
+            x = 208,1 de uma coluna de 312, o segundo valor a começar outra
+            vez em x = 39) com os dois valores encostados, a 33,8px um do
+            outro. A 1024 cabia, e cabe.
+
+            A saída é a da `IDENTIDADE.md` §11, «Móvel: uma coisa por linha.
+            O valor, o título e o selo ficam num só grupo visível»: cada
+            valor e o seu selo passam a ser um grupo que não quebra, a seta
+            entra no grupo do segundo valor, e a fila quebra ENTRE os
+            grupos. Quando cabe, é uma linha; quando não cabe, são duas, com
+            a seta a abrir a segunda e nenhum valor separado do seu selo. */}
+        <div class="glance">
+          <div class="glance-num glance-par">
+            <span class="glance-par-lado">
+              <Claim id={m.tempo.relance.de} lang={lang} chip={true} />
+            </span>
+            <span class="glance-par-lado">
+              → <Claim id={m.tempo.relance.ate} lang={lang} chip={true} />
+            </span>
+          </div>
+          <div class="glance-meta">
+            <div class="glance-name">{s.municipio.tempoRelanceK}</div>
+            <div class="glance-unit">
+              % · <span data-nonledger="data-de-referencia">{m.tempo.relance.deRef}</span>
+              {' → '}
+              <span data-nonledger="data-de-referencia">{m.tempo.relance.ateRef}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CAMADA 2 do instrumento: uma frase, e a distância desenhada -->
+        {/* O rótulo da camada diz o que ela mostra (item 8.14). */}
+        <p class="layer-tag">{s.secoes.leitura}</p>
+        <p class="deep-v" style="margin:6px 0 12px">
+          <Frase partes={indiceSeriePartes} lang={lang} selos={true} />
+        </p>
+
+        <svg
+          class="mun-serie-svg"
+          viewBox={`0 0 ${SERIE.W} ${SERIE.H}`}
+          role="img"
+          aria-label={s.municipio.tempoRelanceK}
+        >
+          {/* A MESMA GRAMÁTICA (Emenda 4): o tecto legal é a referência, a
+              tinta e à altura toda do desenho; a barra de cada ano é a
+              DISTÂNCIA daquele ano ao tecto; o traço fino é o valor. Eram
+              barras amarelas do eixo até ao valor, com a cor no gabarito
+              (ISSUES I12), e o tecto era uma linha entre elas. */}
+          <line x1={SERIE.L} y1={SERIE.base} x2={SERIE.R} y2={SERIE.base} stroke="var(--axis)" stroke-width="1" />
+          {
+            pontosDaSerie.map((pt) => (
+              <>
+                <rect
+                  class="mun-serie-barra"
+                  x={pt.x - 16}
+                  y={Math.min(pt.y, SERIE.yTecto)}
+                  width="32"
+                  height={Math.max(Math.abs(SERIE.yTecto - pt.y), 1)}
+                />
+                <line
+                  class="mun-serie-valor"
+                  x1={pt.x - 20}
+                  y1={pt.y}
+                  x2={pt.x + 20}
+                  y2={pt.y}
+                />
+                {/* A regra do lado do rótulo está escrita por extenso em
+                    `ladoDoRotulo`, no cabeçalho desta vista, com a medição
+                    que mostra porque é que os quatro não podem ir todos do
+                    mesmo lado. `data-rotulo-lado` põe-na no HTML, para que
+                    a régua a leia em vez de a recalcular. */}
+                <Claim
+                  id={pt.indice}
+                  lang={lang}
+                  as="text"
+                  class="mun-serie-val"
+                  x={pt.x}
+                  y={yDoRotulo(pt.y)}
+                  text-anchor="middle"
+                  data-rotulo-lado={ladoDoRotulo(pt.y)}
+                />
+                <text class="tk" x={pt.x} y={SERIE.base + 14} text-anchor="middle" data-nonledger="escala-de-instrumento">
+                  {pt.ref}
+                </text>
+              </>
+            ))
+          }
+          {/* A referência desenha-se por cima das barras, à altura toda do
+              desenho: é ela que se lê primeiro. */}
+          <line class="mun-serie-ref" x1={SERIE.L} y1={SERIE.yTecto} x2={SERIE.R} y2={SERIE.yTecto} />
+          <text class="tk" x={SERIE.R} y={SERIE.yTecto - 6} text-anchor="end">{s.municipio.distanciaTecto}</text>
+        </svg>
+        {/* A MESMA TROCA DA BARRA DA DISTÂNCIA (§7.10, 14.09.2026): os
+            quatro valores desta série são os que a medição de 14.09 apanhou
+            à vista, e chegam ao leitor com 5,2 px de altura de letra a 390 e
+            com 7,97 px a 1 280. A legenda passa a trazê-los em texto, cada
+            um com o seu ano e o seu selo. O ano vem do mesmo ponto da série
+            que o desenho usa, e não de uma segunda lista. */}
+        <p class="mun-distancia-selos" style="margin-bottom:12px" data-legenda-selos>
+          {pontosDaSerie.map((pt) => (
+            <span class="mun-legenda-e">
+              <span class="mun-legenda-k" data-nonledger="escala-de-instrumento">{pt.ref}</span>
+              <Claim id={pt.indice} lang={lang} as="span" class="mun-legenda-val" />
+              <Provenance id={pt.indice} lang={lang} />
+            </span>
+          ))}
+        </p>
+
+        {/* --------------------------------------------------- a banda */}
+        <div class="mun-banda">
+          {/* O NOME DA BANDA É AGORA «QUEM RESPONDE PELO QUÊ» (direção,
+              21.08.2026, tarde). A frase vivia por baixo, na camada de
+              fundo, a encabeçar dois parágrafos que declaravam o que o sítio
+              atribui e o que se recusa a atribuir; os dois saíram com a
+              Emenda 15 e a frase fica onde a decisão a manda ficar: como
+              nome da secção, por cima da banda dos mandatos, que é a peça de
+              que ela fala. «Mandatos, no tempo» continua a nomear o desenho
+              para quem o ouve, no `aria-label` do próprio SVG. */}
+          <p class="layer-tag">{s.municipio.tempoAtribuicaoK}</p>
+          <svg
+            class="mun-banda-svg"
+            viewBox={`0 0 ${BANDA.W} ${BANDA.H}`}
+            role="img"
+            aria-label={s.municipio.tempoBandaK}
+          >
+            {
+              banda.map((seg) => (
+                <>
+                  <rect
+                    class:list={['mun-banda-seg', seg.aberto && 'is-aberto']}
+                    x={seg.x}
+                    y={BANDA.y}
+                    width={seg.largura}
+                    height={BANDA.h}
+                  />
+                  <text
+                    class="mun-banda-lista"
+                    x={seg.x + 8}
+                    y={BANDA.y + BANDA.h / 2 + 4}
+                    text-anchor="start"
+                  >
+                    {seg.mandato.lista}
+                  </text>
+                </>
+              ))
+            }
+            <line
+              x1={BANDA.L}
+              y1={BANDA.y + BANDA.h}
+              x2={BANDA.R}
+              y2={BANDA.y + BANDA.h}
+              stroke="var(--axis)"
+              stroke-width="1"
+            />
+            {
+              m.tempo.eixo.map((ano) => (
+                <>
+                  <line
+                    x1={xDoAno(Number(ano))}
+                    y1={BANDA.y + BANDA.h}
+                    x2={xDoAno(Number(ano))}
+                    y2={BANDA.y + BANDA.h + 5}
+                    stroke="var(--axis)"
+                    stroke-width="1"
+                  />
+                  <text
+                    class="tk"
+                    x={xDoAno(Number(ano))}
+                    y={BANDA.y + BANDA.h + 18}
+                    text-anchor="middle"
+                    data-nonledger="escala-de-instrumento"
+                  >
+                    {ano}
+                  </text>
+                </>
+              ))
+            }
+          </svg>
+
+          {/* A legenda leva as portas: um <a> dentro de um desenho não se
+              lê como porta, e por isso o segmento não é a ligação (§10, a
+              convenção do §1.34). Cada porta abre o mandato do seu
+              segmento, mais abaixo nesta mesma página. */}
+          <p class="mun-banda-legenda">
+            <span class="mun-selo-rot">{s.municipio.tempoBandaLegendaK}</span>
+            {
+              banda.map((seg) => (
+                <a class="mun-banda-porta" href={`#${seg.ancora}`}>
+                  <span data-nonledger="data-de-referencia">{seg.mandato.periodo}</span>
+                  {seg.aberto ? ` ${s.municipio.tempoEmFuncoes}` : ''}
+                </a>
+              ))
+            }
+          </p>
+        </div>
+
+        <div class="mun-tempo">
+          {
+            m.tempo.mandatos.map((mandato) => (
+              <div class="mun-mandato" id={ancoraDoMandato(mandato.periodo)}>
+                <div class="mun-mandato-cabeca">
+                  <span class="mun-mandato-periodo" data-nonledger="data-de-referencia">
+                    {mandato.periodo}
+                  </span>
+                  <span class="mun-mandato-quem">
+                    <Frase partes={mandato.quem[lang]} lang={lang} />
+                    {/* dd.mm.aaaa, pela regra do brief §4: o dado continua
+                        ISO no ficheiro, e o que muda é a composição. */}
+                    {mandato.quemData && (
+                      <span data-nonledger="data-de-referencia">{dataDaCasa(mandato.quemData)}</span>
+                    )}
+                  </span>
+                  <span class="mun-mandato-lista">
+                    {mandato.lista}
+                    {mandato.listaNota ? ` · ${mandato.listaNota[lang]}` : ''}
+                  </span>
+                  {mandato.instalado ? (
+                    <span class="mun-mandato-instalado">
+                      {s.municipio.tempoInstalado}{' '}
+                      <span data-nonledger="data-de-referencia">{dataDaCasa(mandato.instalado)}</span>
+                    </span>
+                  ) : null}
+                </div>
+
+                <dl class="mun-campos">
+                  <dt>{s.municipio.tempoLugares}</dt>
+                  <dd>
+                    <Claim id={mandato.lugares} lang={lang} chip={true} />
+                    {mandato.lugaresTotal && (
+                      <>
+                        {' / '}
+                        <Claim id={mandato.lugaresTotal} lang={lang} chip={true} />
+                      </>
+                    )}
+                  </dd>
+
+                  <dt>{s.municipio.tempoHerdou}</dt>
+                  <dd>
+                    {mandato.herdou ? (
+                      mandato.herdou.map((v) => (
+                        <>
+                          <Claim id={v.claim} lang={lang} chip={true} /> {v.texto[lang]}{' '}
+                        </>
+                      ))
+                    ) : (
+                      <span class="mun-campo-vazio">{mandato.herdouNota[lang]}</span>
+                    )}
+                  </dd>
+
+                  {/* O CAMPO SEM VALOR E SEM FACTO NÃO SE RENDE (28.08.2026,
+                      regra 3). O campo dizia «sem linha ainda» quando o
+                      mandato não declarava nem valores nem nota, e essa
+                      cadeia saiu do sítio inteiro. Um campo em branco no
+                      lugar dela seria uma célula vazia, que a IDENTIDADE §7
+                      recusa, e uma frase escrita aqui para o encher seria
+                      inventada: dos cinco campos de um mandato, quatro têm
+                      nota própria com o FACTO que os explica, e este não
+                      tem nenhum facto lido que o explique. Sem valores e
+                      sem nota, o par sai, como sai a secção de um concelho
+                      sem trabalho publicado. Quando o mandato de 2017 a 2021
+                      ganhar a sua nota, ela volta sozinha. */}
+                  {(mandato.decidiu || mandato.decidiuNota) && (
+                    <>
+                      <dt>{s.municipio.tempoDecidiu}</dt>
+                      <dd>
+                        {mandato.decidiu ? (
+                          mandato.decidiu.map((v) => (
+                            <>
+                              <Claim id={v.claim} lang={lang} chip={true} /> {v.texto[lang]}{' '}
+                            </>
+                          ))
+                        ) : (
+                          <span class="mun-campo-vazio">{mandato.decidiuNota[lang]}</span>
+                        )}
+                      </dd>
+                    </>
+                  )}
+
+                  <dt>{s.municipio.tempoDeixou}</dt>
+                  <dd>
+                    {mandato.deixou ? (
+                      mandato.deixou.map((v) => (
+                        <>
+                          <Claim id={v.claim} lang={lang} chip={true} /> {v.texto[lang]}{' '}
+                        </>
+                      ))
+                    ) : (
+                      <span class="mun-campo-vazio">{mandato.deixouNota[lang]}</span>
+                    )}
+                  </dd>
+
+                  <dt>{s.municipio.tempoRegulador}</dt>
+                  <dd>
+                    {mandato.regulador ? (
+                      mandato.regulador.map((r) => (
+                        <div>
+                          <span data-nonledger="data-de-referencia">{r.ref}</span>:{' '}
+                          {s.municipio.distanciaDivida}{' '}
+                          <Claim id={r.divida} lang={lang} chip={true} /> €{' · '}
+                          {s.municipio.distanciaTecto}{' '}
+                          <Claim id={r.limite} lang={lang} chip={true} /> €{' · '}
+                          {s.municipio.tempoIndice}{' '}
+                          <Claim id={r.indice} lang={lang} chip={true} sufixo="%" />
+                        </div>
+                      ))
+                    ) : (
+                      <span class="mun-campo-vazio">{mandato.reguladorNota[lang]}</span>
+                    )}
+                  </dd>
+
+                  <dt>{s.municipio.tempoPelouros}</dt>
+                  <dd>
+                    {mandato.pelouros ? (
+                      <>
+                        <Claim id={mandato.pelouros.total} lang={lang} chip={true} />{' '}
+                        {mandato.pelouros.texto[lang]}
+                        {mandato.pelouros.partes.map((p, i) => (
+                          <>
+                            {i > 0 ? ' · ' : ''}
+                            <Claim id={p} lang={lang} chip={true} />
+                          </>
+                        ))}
+                        .
+                      </>
+                    ) : (
+                      <span class="mun-campo-vazio"><Frase partes={mandato.pelourosNota[lang]} lang={lang} /></span>
+                    )}
+                  </dd>
+
+                  {mandato.contasVotadas && (
+                    <>
+                      <dt>{s.municipio.tempoContas}</dt>
+                      <dd>
+                        <Claim id={mandato.contasVotadas.favor} lang={lang} chip={true} />{' / '}
+                        <Claim id={mandato.contasVotadas.contra} lang={lang} chip={true} />{' '}
+                        {mandato.contasVotadas.texto[lang]}
+                      </dd>
+                    </>
+                  )}
+
+                  {mandato.executivo && (
+                    <>
+                      <dt>{s.municipio.tempoExecutivo}</dt>
+                      <dd>
+                        {mandato.executivo.map((e, i) => (
+                          <>
+                            {i > 0 ? ' · ' : ''}
+                            {e.rotulo} <Claim id={e.claim} lang={lang} chip={true} />
+                          </>
+                        ))}
+                      </dd>
+                    </>
+                  )}
+                </dl>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      {/* A NOTA DO INSTRUMENTO, SEM DOBRA (G6, decisão do diretor de
+          26.08.2026). Aqui estava uma camada «Como esta linha do tempo é
+          feita», e o nome dizia o que ela era: a página a explicar como foi
+          feita. Saiu, e com ela o parágrafo dos períodos e das duas dívidas
+          de 2013, que já está dito ao pé de cada um dos dois valores.
+
+          Fica o que muda a leitura de um número: os dois valores do excesso,
+          com a frase que diz porque é que a série pára ali, e duas frases de
+          uma linha que vieram do «Método e ressalvas» e do «O que esta
+          página não sabe», ambos retirados. Cada uma tem o facto por
+          sujeito. */}
+      <div class="mun-tempo-notas">
+        <p class="mun-distancia-legenda">
+          <span class="mun-tempo-nota-k">{s.municipio.tempoExcessoK}</span>{' · '}
+          <Claim id={m.tempo.excesso.de} lang={lang} chip={true} /> €{' '}
+          <span data-nonledger="data-de-referencia">
+            {lang === 'pt' ? m.tempo.excesso.deRef : m.tempo.excesso.deRefEn}
+          </span>{' → '}
+          <Claim id={m.tempo.excesso.ate} lang={lang} chip={true} /> €{' '}
+          <span data-nonledger="data-de-referencia">
+            {lang === 'pt' ? m.tempo.excesso.ateRef : m.tempo.excesso.ateRefEn}
+          </span>.
+        </p>
+        <p class="mun-distancia-legenda">{s.municipio.tempoExcessoV}</p>
+        <p class="mun-distancia-legenda">{s.municipio.tempoPelourosNota}</p>
+        <p class="mun-distancia-legenda">{s.municipio.tempoContrafactualNota}</p>
+      </div>
+    </div>
+  </section>

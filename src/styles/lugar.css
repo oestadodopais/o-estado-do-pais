@@ -1,0 +1,196 @@
+/* ===========================================================================
+   A PÁGINA DE UM LUGAR E A PÁGINA DOS LUGARES (B1, peça 2, 21.09.2026)
+   ===========================================================================
+   O que a estrutura nova acrescenta, e mais nada: a linha do lugar, o nome, a
+   leitura, a grelha dos cartões sem célula vazia, os estudos com a primeira
+   frase e as linhas datadas do que mudou. As medidas vêm de
+   `design/especime-v3/maquetas/b1/maqueta.css`, que é a especificação visual
+   desta peça; as cores, os tipos e os vãos são as fichas da casa.
+   =========================================================================== */
+
+/* -------------------------------------------------------- a linha do lugar */
+.lugar-cabeca { padding-top: clamp(4px, 1vw, 10px); }
+
+.lugar-linha {
+  font-family: var(--f-versal);
+  letter-spacing: .04em;
+  color: var(--muted);
+  font-size: 13.5px;
+  margin: 0 0 6px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 8px;
+}
+.lugar-linha a { color: var(--muted); text-decoration: none; }
+.lugar-linha a:hover { color: var(--ink); text-decoration: underline; }
+.lugar-linha a[aria-current='page'] { color: var(--ink); }
+.lugar-linha span { color: var(--rule-strong); }
+
+.lugar-nome {
+  font-family: var(--f-prosa);
+  letter-spacing: -.014em;
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: 400;
+  line-height: 1.06;
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------- a leitura */
+.lugar-leitura {
+  font-family: var(--f-prosa);
+  font-weight: 500;
+  font-size: clamp(20px, 2.3vw, 27px);
+  line-height: 1.3;
+  max-width: 36em;
+  margin: clamp(18px, 2.6vw, 30px) 0 0;
+}
+
+/* ---------------------------------------------------------------- as secções */
+.lugar-sec { margin-top: clamp(34px, 4.6vw, 58px); }
+.lugar-sec .sec-head { margin-bottom: clamp(18px, 2.4vw, 26px); }
+
+/* ------------------------------------------- os números por tema, em cartões
+   A grelha não tem fundo e a régua é de cada cartão: a última fila fica tão
+   larga quanto os seus cartões, e não há célula cinzenta. */
+.lugar-tema + .lugar-tema { margin-top: clamp(24px, 3.2vw, 38px); }
+
+.lugar-tema-k {
+  font-family: var(--f-versal);
+  letter-spacing: .04em;
+  color: var(--muted);
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.lugar-cartoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(248px, 1fr));
+  column-gap: clamp(18px, 2.6vw, 34px);
+  border-top: 1px solid var(--rule);
+  background: none;
+}
+.lugar-cartoes .cartao-medida { align-content: start; }
+
+/* O QUE ESTÁ NO LUGAR DO VALOR QUANDO A FONTE NÃO O PUBLICOU. Lê-se como o
+   valor se lê, e não como uma nota: é a resposta à pergunta «quanto é», e a
+   resposta é que não há figura publicada. */
+.cartao-medida-marca {
+  font-family: var(--f-instr);
+  font-size: 15px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* ------------------------------ os estudos, com as duas primeiras frases */
+.lugar-estudo {
+  border-bottom: 1px solid var(--rule);
+  padding: clamp(16px, 2.2vw, 22px) 0;
+}
+.lugar-sec .lugar-estudo:first-of-type { border-top: 1px solid var(--rule); }
+
+.lugar-estudo-k {
+  font-family: var(--f-prosa);
+  letter-spacing: -.014em;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0;
+  max-width: 46ch;
+}
+.lugar-estudo-k a { color: var(--ink); text-decoration: none; }
+.lugar-estudo-k a:hover { text-decoration: underline; }
+
+.lugar-estudo-meta {
+  font-family: var(--f-instr);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-size: 12px;
+  margin: 7px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 12px;
+}
+.lugar-estudo-meta span:not(:first-child)::before {
+  content: '· ';
+  color: var(--rule-strong);
+  margin-right: 4px;
+}
+
+.lugar-estudo-leitura {
+  font-family: var(--f-prosa);
+  color: var(--ink);
+  max-width: 64ch;
+  margin: 9px 0 0;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+/* ------------------------------------------------------------ o que mudou */
+.lugar-mudou {
+  border-top: 1px solid var(--rule);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.lugar-mudou li {
+  border-bottom: 1px solid var(--rule);
+  padding: 13px 0;
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: 4px clamp(14px, 2.2vw, 26px);
+  align-items: baseline;
+}
+.lugar-mudou-data {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  color: var(--muted);
+  font-size: 13px;
+}
+.lugar-mudou-o-que {
+  font-family: var(--f-prosa);
+  color: var(--ink);
+  max-width: 64ch;
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.5;
+}
+@media (width <= 560px) {
+  .lugar-mudou li { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* =========================================================================
+   A PÁGINA DOS LUGARES
+   ========================================================================= */
+.lugares-nome {
+  font-family: var(--f-prosa);
+  letter-spacing: -.014em;
+  font-size: clamp(28px, 4.4vw, 42px);
+  font-weight: 400;
+  line-height: 1.08;
+  margin: clamp(4px, 1vw, 10px) 0 clamp(18px, 2.6vw, 28px);
+}
+
+.lugares-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2px clamp(18px, 2.6vw, 34px);
+  border-top: 1px solid var(--rule);
+  padding-top: 12px;
+}
+.lugares-lista li { margin: 0; }
+.lugares-lista a {
+  font-family: var(--f-prosa);
+  font-size: 16px;
+  color: var(--ink);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.lugares-lista a:hover { text-decoration: underline; text-underline-offset: 3px; }

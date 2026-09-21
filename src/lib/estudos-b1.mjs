@@ -11,8 +11,14 @@ export function fichaDoEstudo(work, lang) {
   const data = dataDaEdicaoNoRepositorio(work.slug, edicao.lang);
   const tema = DOMINIOS.find(d => d.slug === work.tema);
   if (!tema) throw new Error(`B1 tema em falta ou desconhecido: ${work.slug}`);
+  const leitura = leituraDe(work.id);
   return { work, edicao, data, tema: tema.nome[lang], lugar: subjectLabel(work.subject, lang) ?? 'Portugal',
-    resumo: primeirasFrases(leituraDe(work.id)?.frase[lang] ?? [work.description[lang]]).map(p =>
+    /* A MARCA DO VERBATIM SÓ VALE QUANDO O RESUMO É A DESCRIÇÃO (B1, peça 2):
+       com leitura escrita, o que se rende são as duas primeiras frases dela, e
+       declará-las como a abertura transcrita do documento era dizer que o
+       portão compara duas coisas diferentes. */
+    temLeitura: Boolean(leitura),
+    resumo: primeirasFrases(leitura?.frase[lang] ?? [work.description[lang]]).map(p =>
       typeof p !== 'string' && 'claim' in p && getClaim(p.claim).unit === '%' && !p.sufixo
         ? { ...p, sufixo: '%' } : p),
     rota: routePath('estudo', lang, { slug: work.slug }) };

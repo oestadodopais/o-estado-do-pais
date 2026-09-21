@@ -1,0 +1,104 @@
+---
+/**
+ * ---------------------------------------------------------------------------
+ * O CARTÃO DE UMA MEDIDA DE UM LUGAR (B1, peça 2, 21.09.2026)
+ * ---------------------------------------------------------------------------
+ * A ANATOMIA É A DO CARTÃO DO P2, e não muda: o nome, o valor com a unidade e o
+ * período numa linha, uma frase do que a medida mede, a régua, e uma marca da
+ * fonte. As mesmas cinco classes (`cartao-medida-nome`, `-valor`, `-frase`,
+ * `-regua`), a mesma folha, a mesma régua a medi-lo (`tests/cartao/cartao.mjs`).
+ *
+ * O QUE MUDA É DE ONDE VEM O QUE SE MOSTRA. As oito medidas de um concelho têm
+ * nome, unidade, período e nota DECLARADOS em `src/data/concelhos.mjs`, escritos
+ * uma vez para os 308; `CartaoDaMedida.astro` compõe os seus das vinte e uma
+ * figuras dos painéis europeus, que declaram outra coisa noutro sítio. Duas
+ * origens, a mesma anatomia.
+ *
+ * UMA FRASE DE DEFINIÇÃO SÓ. A nota de uma medida é o que ela mede; onde a nota
+ * tem duas frases, o cartão leva a primeira (a dívida total declara, a seguir à
+ * definição, o que a coluna exclui, e isso é ressalva de recibo).
+ *
+ * O VALOR QUE A FONTE NÃO PUBLICOU. Onde o valor da linha é uma marca da fonte
+ * («N.d.»), o cartão escreve no lugar dele o que a marca quer dizer, em
+ * português corrente, e o selo ao lado continua a abrir a linha onde a marca
+ * está transcrita. Não há `data-claim` nenhum: o que está ali não é o valor.
+ *
+ * A AUSÊNCIA NÃO SE ESCREVE. Sem régua, o cartão não diz «sem valor de
+ * referência»: não se diz o que não há.
+ */
+import Claim from '../Claim.astro';
+import Provenance from '../Provenance.astro';
+import Frase from '../Frase.astro';
+import { marcaDoValor, provenienciaIncompleta } from '../../lib/ledger.mjs';
+
+const { tile, lang = 'pt', s } = Astro.props;
+
+const marca = marcaDoValor(tile.linha?.value);
+
+/** A primeira frase de uma nota declarada. Uma nota é uma lista de pedaços. */
+function primeiraFrase(partes) {
+  if (!Array.isArray(partes)) return null;
+  const saida = [];
+  for (const parte of partes) {
+    if (typeof parte !== 'string') {
+      saida.push(parte);
+      continue;
+    }
+    const fim = parte.match(/[.!?](?=\s|$)/);
+    if (fim) {
+      saida.push(parte.slice(0, /** @type {number} */ (fim.index) + 1));
+      return saida;
+    }
+    saida.push(parte);
+  }
+  return saida.length ? saida : null;
+}
+
+const frase = tile.derivada ? null : primeiraFrase(tile.nota?.[lang] ?? null);
+/* A RÉGUA É A PALAVRA DO ESTADO, e só existe onde há teto publicado e valor
+   para comparar: é a do índice de dívida contra o limite legal, e quem a
+   calcula é `pecasDoConcelho()`, com a linha do teto. */
+const palavra =
+  tile.estado === 'dentro' ? s.estado.lei.dentro : tile.estado === 'fora' ? s.estado.lei.fora : null;
+---
+
+<article
+  class="cartao-medida"
+  data-cartao-medida={tile.claim}
+  data-medida-chave={tile.chave}
+  data-estado={provenienciaIncompleta(tile.linha) ? 'por-confirmar' : 'completa'}
+>
+  <span class="cartao-medida-nome" data-nome="projeto" data-de-linha={tile.claim}>
+    {tile.nome[lang] ?? tile.nome.pt}
+  </span>
+
+  <p class="cartao-medida-valor">
+    {
+      marca ? (
+        /* O selo é irmão do que está no lugar do valor, como é irmão do valor
+           nos outros cartões: é essa vizinhança que o portão confere. */
+        <span class="claim claim-com-chip">
+          <span class="cartao-medida-marca">{s.municipio.semValorPublicado}</span>
+          <Provenance id={tile.claim} lang={lang} />
+        </span>
+      ) : (
+        <Claim id={tile.claim} lang={lang} as="span" class="cartao-medida-num" chip={true} />
+      )
+    }
+    <span class="campo-valor cartao-medida-unidade">
+      <Frase partes={tile.medidaSimples[lang]} lang={lang} />
+    </span>
+  </p>
+
+  {frase && <p class="cartao-medida-frase"><Frase partes={frase} lang={lang} /></p>}
+
+  {
+    palavra && (
+      <p class="cartao-medida-regua">
+        <span class="cartao-medida-regua-item">
+          <span data-voz>{palavra}</span>
+        </span>
+      </p>
+    )
+  }
+</article>
