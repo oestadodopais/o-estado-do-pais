@@ -100,11 +100,13 @@
  * recibo, que é o que a marca abre.
  */
 import Claim from '../Claim.astro';
+import { prova } from '../../lib/prova.mjs';
 import Provenance from '../Provenance.astro';
-const { s, lang = 'pt', niveis = ['pais', 'unidade'], voltar = null, pais = null, unidade = null } = Astro.props;
+const { s, lang = 'pt', niveis = ['pais', 'unidade'], voltar = null, pais = null, unidade = null, portaLugares = null } = Astro.props;
 
 /** A legenda de repouso de um nível, ou `null` quando ela não vem feita. */
 const REPOUSO = { pais, unidade };
+const contagem = prova(lang).municipios_total;
 ---
 
 <div class="mapa-nome" role="group" aria-label={s.inicio.mapa.lugarLabel} data-mapa-nome>
@@ -112,7 +114,7 @@ const REPOUSO = { pais, unidade };
     {
       niveis.map((nivel, i) => (
         <p class="mapa-nome-repouso" data-mapa-repouso={nivel} hidden={i > 0}>
-          {REPOUSO[nivel] && (
+          {nivel === 'pais' && portaLugares ? (<><a class="pais-porta-lugares" href={portaLugares}><span data-prova="municipios_total">{contagem.valor}</span>{' '}{REPOUSO[nivel].palavra}</a><Provenance id={REPOUSO[nivel].linha} lang={lang} /></>) : REPOUSO[nivel] && (
             <>
               <span data-lugar>{REPOUSO[nivel].nome}</span>
               {REPOUSO[nivel].linha && (

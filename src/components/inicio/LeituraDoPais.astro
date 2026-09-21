@@ -1,0 +1,21 @@
+---
+import Claim from '../Claim.astro';
+import Provenance from '../Provenance.astro';
+import { getClaim } from '../../lib/ledger.mjs';
+const { lang = 'pt' } = Astro.props;
+/* Texto do lugar de direção, conferido a 21.09.2026. A guarda impede que uma
+ * releitura do livro transforme uma frase aprovada numa afirmação diferente. */
+const esperados = {
+  'divida-publica-2024': '93,5', 'divida-publica-2025': '89,7',
+  'divida-publica-2025-ue': '81,7', 'taxa-de-desemprego-2025': '6',
+  'taxa-de-desemprego-2025-ue': '6,0', 'precos-da-habitacao-2025': '17,6',
+  'precos-da-habitacao-2025-ue': '5,5',
+};
+for (const [id, valor] of Object.entries(esperados)) {
+  if (getClaim(id).value !== valor) throw new Error(`B1 leitura do país: ${id} mudou; parar a frase e comunicar à direção.`);
+}
+const sufixo = lang === 'pt' ? '\u00a0%' : '%';
+---
+<p class="pais-leitura" data-leitura-pais={lang}>
+  {lang === 'pt' ? <><span>A <strong>dívida pública</strong> desceu de </span><Claim id="divida-publica-2024" lang={lang} chip sufixo={sufixo} /><span> para </span><Claim id="divida-publica-2025" lang={lang} chip sufixo={sufixo + " do PIB"} /><span> num ano e continua acima da média da União Europeia, que é de </span><Claim id="divida-publica-2025-ue" lang={lang} chip sufixo={sufixo} /><span>. O <strong>desemprego</strong> está nos </span><Claim id="taxa-de-desemprego-2025" lang={lang} chip sufixo={sufixo} /><span>, a par da média europeia</span><Provenance id="taxa-de-desemprego-2025-ue" lang={lang} /><span>, e os <strong>preços das casas</strong> subiram </span><Claim id="precos-da-habitacao-2025" lang={lang} chip sufixo={sufixo} /><span> num ano, contra </span><Claim id="precos-da-habitacao-2025-ue" lang={lang} chip sufixo={sufixo} /><span> na União.</span></> : <><span><strong>Public debt</strong> fell from </span><Claim id="divida-publica-2024" lang={lang} chip sufixo={sufixo} /><span> to </span><Claim id="divida-publica-2025" lang={lang} chip sufixo={sufixo + " of GDP"} /><span> in a year and remains above the European Union average of </span><Claim id="divida-publica-2025-ue" lang={lang} chip sufixo={sufixo} /><span>. <strong>Unemployment</strong> stands at </span><Claim id="taxa-de-desemprego-2025" lang={lang} chip sufixo={sufixo} /><span>, level with the European average</span><Provenance id="taxa-de-desemprego-2025-ue" lang={lang} /><span>, and <strong>house prices</strong> rose </span><Claim id="precos-da-habitacao-2025" lang={lang} chip sufixo={sufixo} /><span> in a year, against </span><Claim id="precos-da-habitacao-2025-ue" lang={lang} chip sufixo={sufixo} /><span> in the Union.</span></>}
+</p>

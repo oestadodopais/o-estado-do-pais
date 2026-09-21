@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro';
+import TemasDoPais from '../components/TemasDoPais.astro';
+import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
+import { routePath } from '../lib/routes.mjs';
+import '../styles/pais.css';
+const { lang = 'pt' } = Astro.props;
+const r = ROTULOS_B1[lang];
+---
+<Base lang={lang} path={routePath('temas', lang)} title={r.temas} description={r.temas}>
+  <h1 class="temas-titulo">{r.temas}</h1>
+  <TemasDoPais lang={lang} />
+</Base>
