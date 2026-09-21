@@ -605,10 +605,11 @@ const VOZ_DECLARADA = '[data-voz]';
  * com os que o motor marca `exata`, e prefere o do INE ao da PORDATA, que é a
  * ordem da norma §1.5.
  *
- * UM NOME COM AVISO NÃO CONTA (correção de 21.09.2026). Um nome cujo objeto traga
- * o campo `aviso` (o motor a dizer que a conferência de ser a mesma medida ficou
- * por fazer) ou `mesma_medida: false` não é um nome oficial confirmado, e esta
- * régua deixa de o aceitar como nome de cartão: se uma página o render com
+ * SÓ CONTA UM NOME QUE O MOTOR CONFIRMA (correção de 21.09.2026). Um nome oficial
+ * confirmado é o de um objeto com `mesma_medida: true` e sem o campo `aviso` (o
+ * motor a dizer que a conferência de ser a mesma medida ficou por fazer); tudo o
+ * resto não é um nome oficial, e esta régua deixa de o aceitar como nome de
+ * cartão: se uma página o render com
  * `data-nome="oficial"`, o texto já não é um nome deste ficheiro e a célula 9 do
  * `check:voz` fecha a construção. A regra está escrita aqui outra vez, e não
  * importada de `src/lib/enquadramento.mjs`, pela razão do parágrafo acima. Antes
@@ -624,7 +625,8 @@ const NOMES_OFICIAIS = new Map();
   /** @param {any} o */
   const nomeConfirmado = (o) => {
     if (!o || typeof o !== 'object') return null;
-    if ((typeof o.aviso === 'string' && o.aviso.trim() !== '') || o.mesma_medida === false) return null;
+    if (o.mesma_medida !== true) return null;
+    if (typeof o.aviso === 'string' && o.aviso.trim() !== '') return null;
     if (typeof o.nome !== 'string' || o.nome.trim() === '' || o.nome === '[verify]') return null;
     if (typeof o.endereco !== 'string' || o.endereco === '') return null;
     if (typeof o.lido_em !== 'string' || o.lido_em === '') return null;
