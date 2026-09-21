@@ -5510,7 +5510,11 @@ for (const file of ficheirosHtml(DIST)) {
     // cartão, nas duas páginas novas. auditaSelo continua ativo.
     const unidadeDeCartaoDoPais = ['home', 'temas'].includes(rota?.key) && campo === 'unit' &&
       el.closest('[data-cartao-medida]')?.getAttribute('data-cartao-medida') === id;
-    if (!paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais) {
+    // Uma unidade do registo é conferida contra a linha da própria entrada,
+    // cujo recibo é obrigatório na conferência imediatamente acima.
+    const unidadeDeCorrecaoDoPais = rota?.key === 'home' && campo === 'unit' &&
+      el.closest('[data-correcao-entrada]')?.getAttribute('data-correcao-entrada') === id;
+    if (!paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !unidadeDeCorrecaoDoPais) {
       err(
         `data-linha-claim="${id}" numa página que não é do livro-razão. ` +
           `Esta marca é dos campos de uma linha, na página dessa linha ou no índice.\n` +

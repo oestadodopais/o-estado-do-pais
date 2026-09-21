@@ -12,7 +12,10 @@ import { t } from '../../src/i18n/strings.mjs';
 const pasta='design/especime-v3/medicoes/b1-2026-09-22';
 const sha=s=>createHash('sha256').update(s).digest('hex');
 const registos=[];
+const indice=process.argv.indexOf('--only');
+const apenas=indice===-1 ? null : process.argv[indice+1];
 function planta(nome,script,alteracoes,mordidas) {
+ if(apenas && nome!==apenas)return;
  const originais=new Map(alteracoes.map(([f])=>[f,fs.readFileSync(path.join('dist',f),'utf8')]));
  let r;
  try {
@@ -24,7 +27,7 @@ function planta(nome,script,alteracoes,mordidas) {
  const ficheiros=[...originais].map(([f,s])=>({ficheiro:`dist/${f}`,antes:sha(s),reposto:sha(fs.readFileSync(path.join('dist',f)))}));
  const passou=r.status===1&&mordidas.every(re=>re.test(saida))&&ficheiros.every(f=>f.antes===f.reposto);
  const registo={nome,comando:`node ${script}`,codigo:r.status,mordidas:mordidas.map(re=>re.source),passou,ficheiros};registos.push(registo);
- fs.writeFileSync(path.join(pasta,'plantas-portoes.json'),JSON.stringify(registos,null,2)+'\n');
+ fs.writeFileSync(path.join(pasta,apenas ? `plantas-portoes-${apenas}.json` : 'plantas-portoes.json'),JSON.stringify(registos,null,2)+'\n');
  console.log(`${passou?'OK':'FALHA'} ${nome}: código ${r.status}`);
  if(!passou)throw Error(`${nome}: a planta não teve todas as mordidas previstas. Ver o registo.`);
 }
@@ -32,10 +35,10 @@ planta('mapa-atribuicao','scripts/check-mapa.mjs',[
  ['index.html',r=>r.querySelector('.mapa-linha').remove()]
 ],[/R6/]);
 planta('html','scripts/gate-html.mjs',[
- ['index.html',r=>r.querySelector('[data-publicacao-estudo]').set_content('01.01.2000')],
+ ['index.html',r=>{r.querySelector('[data-publicacao-estudo]').set_content('01.01.2000');r.querySelector('[data-correcao-entrada] [data-linha-campo="unit"]').set_content('unidade de correção plantada');}],
  ['en/index.html',r=>r.querySelector('[data-leitura-pais] [data-claim="divida-publica-2024"]').set_content('93.5')],
  ['temas/index.html',r=>{r.querySelector('[data-linha-campo="unit"]').set_content('unidade plantada');r.querySelector('[data-regua][data-selo-em]').setAttribute('data-selo-em','precos-da-habitacao-2025');}]
-],[/B1 mudança: campo rendido difere/,/93\.5/,/unidade plantada/,/sem selo para a sua própria linha/]);
+],[/B1 mudança: campo rendido difere/,/93\.5/,/unidade plantada/,/unidade de correção plantada/,/sem selo para a sua própria linha/]);
 planta('datas','scripts/check-datas.mjs',[
  ['index.html',r=>r.querySelector('#trabalhos time').set_content('01.01.2000')]
 ],[/data|1b/i]);

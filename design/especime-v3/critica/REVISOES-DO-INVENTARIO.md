@@ -335,7 +335,7 @@ dizem vir. Sem essa marca seriam 52 linhas a repetir duas listas.
 | --- | --- | --- | --- |
 | b1-peca3 | 22.09.2026 | por ler pelo lugar de direção antes de aterrar | País, temas e menu; `design/especime-v3/medicoes/b1-2026-09-22/cadeias-peca3.json`. |
 
-Saem 25 cadeias e entram 24 cadeias distintas. As novas são a leitura aprovada, as sinopses dos estudos e os rótulos de publicação compostos dos dados. Nenhuma explica a página. A mudança de 21.09.2026 vem da declaração própria e é comparada com ela antes de sair do inventário.
+Saem 25 cadeias e entram 18 cadeias distintas. As novas são a leitura aprovada, as sinopses dos estudos e os rótulos de publicação compostos dos dados. Nenhuma explica a página. A mudança de 21.09.2026 vem da declaração própria e é comparada com ela antes de sair do inventário.
 
 | Família | Cadeia retirada | Razão |
 | --- | --- | --- |
@@ -367,4 +367,6 @@ Saem 25 cadeias e entram 24 cadeias distintas. As novas são a leitura aprovada,
 
 Duas das 25 cadeias, «· concelhos» e «· municipalities», saem do inventário em vez de ficarem proibidas: são fragmentos que continuam dentro de outras frases legítimas. Ficam 23 entradas retiradas.
 
-A reunião das correções acrescenta nove cadeias distintas de unidades e marcas de incerteza já declaradas. A régua encontra dez ocorrências por rota porque «→ euros» aparece nas duas edições.
+As unidades das correções passaram a campos conferidos da própria linha, incluindo as bases numéricas dos índices. Saem assim da prosa do inventário e entram na comparação literal do livro-razão.
+
+Ficam três cadeias do registo: a seta de mudança e a marca de incerteza que acompanha as duas edições. As unidades são conferidas como campos, não como prosa.
