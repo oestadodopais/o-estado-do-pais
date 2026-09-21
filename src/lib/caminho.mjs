@@ -95,7 +95,15 @@ export const PAI_DA_ROTA = {
      tabela porque a rota continua a existir como redirecionamento. */
   lugares: 'home',
   municipios: 'home',
-  municipio: 'lugares',
+  /* A PÁGINA DE UM LUGAR NÃO TEM PAI NESTA TABELA, e por isso não rende o
+     caminho do cabeçalho (achado D1 da leitura do lugar de direção,
+     21.09.2026). O cabeçalho dizia «Início › Lugares › Évora» e, três linhas
+     abaixo, a página dizia «Portugal › Alentejo › Évora › Évora»: duas linhas de
+     caminho empilhadas, duas portas para a mesma coisa. Numa página de lugar o
+     caminho É a linha do lugar, que diz mais (a região e o distrito deste
+     concelho) e que a célula 8.17 do `check:lugar` já confere parte a parte. É o
+     mesmo mecanismo com que a primeira página e as duas famílias de transcrição
+     ficam sem caminho: a ausência de pai, e não uma condição escrita na vista. */
   distritos: 'home',
   distrito: 'lugares',
   regioes: 'home',
