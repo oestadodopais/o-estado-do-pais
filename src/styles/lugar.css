@@ -133,13 +133,12 @@
   font-size: 15px;
   line-height: 1.55;
 }
-/* O AR QUE DOIS SELOS PRECISAM NUMA FRASE CORRIDA. A área de toque de um selo
-   tem 44 px de altura, e numa entrelinha de 23 px duas áreas de linhas seguidas
-   cruzam-se: quem toca por baixo de um número abre a linha do outro (é a mesma
-   medição que deu o `row-gap` das contagens dos estudos). Onde a leitura de um
-   estudo cita uma linha, a entrelinha passa a ser a da área, e as duas deixam de
-   se tocar. Onde não cita, o parágrafo fica como está. */
-.lugar-estudo-leitura:has(a.src-chip) { line-height: 44px; }
+/* A ENTRELINHA NÃO SE ESTICA PARA DAR ALVO A UM SELO (achado D3, 21.09.2026).
+   A primeira redação punha `line-height: 44px` nos parágrafos que citam uma
+   linha, e o leitor via as frases dos estudos com 45 px entre linhas. O alvo de
+   44 px de um selo faz-se com o `::after` absoluto que `site.css` já lhe dá, e
+   esse não entra na disposição: a caixa da linha fica como está. O que separa as
+   áreas de dois selos é o espaço entre eles, e a medição está nas capturas. */
 
 /* ------------------------------------------------------------ o que mudou */
 .lugar-mudou {
@@ -207,3 +206,47 @@
   min-height: 44px;
 }
 .lugares-lista a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ------------------------------------- a porta para as linhas deste lugar */
+.lugar-porta-das-medidas {
+  font-family: var(--f-instr);
+  font-size: 13px;
+  margin: clamp(18px, 2.4vw, 26px) 0 0;
+}
+.lugar-porta-das-medidas a {
+  color: var(--ink);
+  text-underline-offset: 3px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+/* -------------------------------------- uma linha de «O que mudou» */
+.lugar-mudou-nome {
+  font-family: var(--f-prosa);
+  color: var(--ink);
+  display: block;
+}
+.lugar-mudou-par {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  color: var(--muted);
+  font-size: 14px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 6px;
+}
+.lugar-mudou-par s { color: var(--g1, var(--muted)); }
+
+/* --------------------------- a página dos lugares, em duas colunas */
+@media (width >= 1024px) {
+  .lugares-grelha {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 430px);
+    gap: clamp(24px, 3.4vw, 52px);
+    align-items: start;
+  }
+  .lugares-grelha .lugares-coluna > .lugar-sec:first-of-type { margin-top: clamp(24px, 3vw, 34px); }
+  .lugares-mapa { position: sticky; top: 16px; }
+}
