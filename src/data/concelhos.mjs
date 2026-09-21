@@ -150,13 +150,12 @@ export const MEDIDAS_DO_CONCELHO = [
     unidade: { pt: 'Euros', en: 'Euros' },
     prefixo: { pt: '', en: '' },
     ref: '2024',
+    /* A MESMA RAZÃO DO PRAZO MÉDIO (achado D6, 21.09.2026): a primeira frase
+       descrevia a fonte e o cartão leva uma frase de definição só. A ressalva do
+       que a coluna exclui é do recibo, e está na nota da própria linha. */
     nota: {
-      pt: [
-        'Série anual da Direção-Geral das Autarquias Locais, que publica os dados das contas das câmaras. Exclui dívidas não orçamentais e exceções legais.',
-      ],
-      en: [
-        'The annual series of the local-government directorate, which publishes the municipalities’ accounts data. Excludes non-budgetary debt and legal exceptions.',
-      ],
+      pt: ['O que a câmara deve no fim do ano, pela série anual da Direção-Geral das Autarquias Locais.'],
+      en: ['What the council owes at the end of the year, from the annual series of the Directorate-General for Local Authorities.'],
     },
   },
   {
@@ -198,9 +197,14 @@ export const MEDIDAS_DO_CONCELHO = [
     unidade: { pt: 'Dias', en: 'Days' },
     prefixo: { pt: 'dezembro de ', en: 'December ' },
     ref: '2025',
+    /* A FRASE DIZ O QUE A MEDIDA MEDE (achado D6 da leitura do lugar de direção,
+       21.09.2026). Dizia «Lista anual da Direção-Geral das Autarquias Locais, que
+       publica os dados das contas das câmaras.», que descreve a FONTE e não a
+       medida: um leitor que veja «137 · Dias» fica sem saber dias de quê. A frase
+       é a do diretor, de 17.09.2026, e diz o que se conta. */
     nota: {
-      pt: ['Lista anual da Direção-Geral das Autarquias Locais, que publica os dados das contas das câmaras.'],
-      en: ['The annual list of the local-government directorate, which publishes the municipalities’ accounts data.'],
+      pt: ['Dias que a câmara demora a pagar aos fornecedores, pela lista anual da Direção-Geral das Autarquias Locais.'],
+      en: ['Days the council takes to pay its suppliers, from the annual list of the Directorate-General for Local Authorities.'],
     },
   },
   {
@@ -332,6 +336,16 @@ export function relanceDoConcelho(linhas = {}, refs = {}) {
          com o teto fica declarada porque a leitura breve e a página de área a
          leem; a página de um lugar lê esta. */
       medidaSimples: linhaDaMedida({ ...medida, tecto: undefined }, ref),
+      /* O PERÍODO SOZINHO (achado D2, 21.09.2026). O cartão de uma medida de um
+         lugar passou a render a UNIDADE DA LINHA, tal como a linha a escreve
+         («% (limite legal = 150)»), porque sem a escala «105,5 · Percentagem ·
+         dentro do limite legal» lê-se como uma contradição. O período continua a
+         ser a data de referência declarada, e vem separado para que a unidade
+         possa vir da linha e o período da declaração. */
+      periodo: {
+        pt: [`${medida.prefixo.pt}`, { ref }],
+        en: [`${medida.prefixo.en}`, { ref }],
+      },
       nota: medida.nota,
       /* O FIXADOR ATRAVESSA COM A MEDIDA (F1.10, item 8.5). É declarado uma vez,
          na medida, e chega às 308 páginas e à de Évora pela mesma lista: uma

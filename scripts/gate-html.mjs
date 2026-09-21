@@ -5443,7 +5443,29 @@ for (const file of ficheirosHtml(DIST)) {
      * contornar o registo de citações (`data-verbatim`) e a disciplina de que
      * um valor entra por <Claim/> e por mais lado nenhum.
      */
-    if (!paginaDoLivro) {
+    /* ----------------------------------------------------------------------
+       A UNIDADE DE UM CARTÃO NUMA PÁGINA DE LUGAR (B1, peça 2, correção de
+       21.09.2026, achado D2)
+       ----------------------------------------------------------------------
+       O cartão de uma medida de um concelho rende a unidade da linha tal como a
+       linha a escreve, porque sem a escala «105,5 · Percentagem · dentro do
+       limite legal» lê-se ao contrário. A marca entra por uma porta ESTREITA, e
+       não pela guarda das páginas do livro-razão: só o campo `unit`, só na rota
+       de um concelho, e só dentro de um cartão de medida.
+
+       PORQUE NÃO SE ALARGA A GUARDA. `paginaDoLivro` desliga `auditaSelo()`, que
+       é o que confere que cada valor tem o selo da sua própria linha ao lado;
+       pôr a página de um lugar na guarda apagava essa conferência em 616
+       páginas. Esta porta não apaga nada: o campo passa a ser comparado carácter
+       a carácter com o campo da linha, e o selo continua auditado. É mais
+       conferência e não menos, que é o mesmo argumento com que as áreas e os
+       domínios entraram na guarda. */
+    const unidadeDeCartaoDoLugar =
+      rota?.key === 'municipio' &&
+      campo === 'unit' &&
+      el.closest?.('[data-cartao-medida][data-medida-chave]') !== null &&
+      el.closest?.('[data-cartao-medida][data-medida-chave]')?.getAttribute('data-cartao-medida') === id;
+    if (!paginaDoLivro && !unidadeDeCartaoDoLugar) {
       err(
         `data-linha-claim="${id}" numa página que não é do livro-razão. ` +
           `Esta marca é dos campos de uma linha, na página dessa linha ou no índice.\n` +
@@ -7061,6 +7083,31 @@ for (const { caminho, px } of [{ caminho: '/apple-touch-icon.png', px: 180 }]) {
     }
   }
   if (contadas !== 4) falha(`esperadas quatro entradas conferidas, e foram ${contadas}.`);
+
+  /* NENHUMA PÁGINA LIGA À ORIGEM DE UM 301 (B1, peça 2, correção de 21.09.2026,
+     achado 6 da leitura a frio). As portas antigas continuam a abrir pelo
+     servidor, e é por isso que a conferência das ligações as resolve; mas uma
+     página construída que continue a apontar para elas manda o leitor por um
+     salto que não precisa de dar, e deixa à vista um índice que este bloco
+     substituiu. A régua olha para o HTML: qualquer `href` cujo caminho seja a
+     origem de um dos 301 desta tabela fecha a construção. */
+  const origens = new Set();
+  for (const chave of INDICES_DO_TERRITORIO) {
+    for (const lang of ['pt', 'en']) origens.add(normalizaCaminho(routePath(chave, lang)));
+  }
+  for (const { rel, base, href } of ligacoesInternas) {
+    const resolvido = resolveLigacao(base, href);
+    if (!resolvido) continue;
+    if (!origens.has(normalizaCaminho(resolvido.caminho))) continue;
+    erros.push({
+      rel,
+      msg:
+        `B1 lugares: a ligação "${href}" aponta para "${resolvido.caminho}", que é a origem de um ` +
+        `redirecionamento 301 para a página dos lugares.\n` +
+        `      Uma porta que só abre por um salto do servidor deixa à vista um índice que este ` +
+        `bloco substituiu: a ligação escreve-se para o destino.`,
+    });
+  }
 }
 
 /**
