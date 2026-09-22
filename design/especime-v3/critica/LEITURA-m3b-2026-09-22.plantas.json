@@ -1,0 +1,42 @@
+{
+ "registado_em": "2026-09-22T08:28:34+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/e52c0f39-ab9c-4e0f-b9db-11d420f316ed/scratchpad/m3b/leitura/pacote",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "built/livro-razao/despesa-em-id-2024/index.html",
+   "descricao": "um nome de fora preso à medida vizinha no recibo português: a PORDATA por setor de execução, que não é a % do PIB",
+   "sha256_antes": "f74da38a4942d0bb0004ba47da6995dba42557902ad31df35b0b4b26d023650b",
+   "sha256_depois": "e4eb0b9ecb79f6784aa30a671ff2d56bbb9ea4118da0341c4be78e64bfb9c615",
+   "contexto_antes": "f=\"https://www.pordata.pt/portugal/despesas+em+atividades+de+investigacao+e+desenvolvimento+(i+d)+em+percentagem+do+pib-779\" rel=\"noopener noreferrer external\" lang=\"pt-PT\">Despesas em atividades de investigação e desenvolvimento (I&amp;D) em % do PIB</a> · Lido na fonte a 21.09.2026</span></dd><dt>Estudo</dt><dd data-nonledger=\"titulo-de-estudo\">Quadro institucional de indicadores</dd></dl><div class=\"aparelho-estado\"><span class=\"linha-ca",
+   "contexto_depois": "f=\"https://www.pordata.pt/portugal/despesas+em+atividades+de+investigacao+e+desenvolvimento+(i+d)+em+percentagem+do+pib-779\" rel=\"noopener noreferrer external\" lang=\"pt-PT\">Despesas em atividades de investigação e desenvolvimento (I&amp;D): total e por setor de execução</a> · Lido na fonte a 21.09.2026</span></dd><dt>Estudo</dt><dd data-nonledger=\"titulo-de-estudo\">Quadro institucional de indicadores</dd></dl><div class=\"aparelho-estado\"><span class=\"linha-ca"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "built/livro-razao/formacao-bruta-de-capital-fixo-2025/index.html",
+   "descricao": "um nome recusado pelo motor (o indicador mensal da construção) rendido no recibo da formação bruta de capital fixo",
+   "sha256_depois": "c370f6b5bb7ad0b3e5d570a62d29b92cd7235b96bacf090fcb7c714cc2923db3"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a repartição dos 18 confirmados trocada no relatório (5 do INE, 13 da PORDATA); o ficheiro diz 4 e 14",
+   "sha256_antes": "95136d9a67dfcad5b4644dd49a379865567fd82c0729a8311c1e21ee685f1eb4",
+   "sha256_depois": "2063418f711e60c69061835cae14a44a4770c892e8fb8e08d4c13042a365258a"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "src/data/enquadramento/nomes.json",
+   "descricao": "no ficheiro dos nomes copiado, o INE da formação bruta de capital fixo (proposto e conferido «vizinha») marcado true com a marca «exata», sem que a prova o sustente",
+   "sha256_antes": "46a7c1be160c4d24f85a699f97648598dd91ad6005266bd0a0939e0cfe60cafb",
+   "sha256_depois": "f05f1d6133d5cf33e691a4e6faff2367d2c86277a2c817ef6ad4862343a6fb4b"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "built/en/ledger/despesa-em-id-2024/index.html",
+   "descricao": "o nome do INE no recibo inglês sem lang=\"pt-PT\"",
+   "sha256_antes": "f93a88d73130e9a6c501dbbe784cb88c63998efefef303307281b0098d918e34",
+   "sha256_depois": "0aa8c12fa8ba1d84490165b56c3ab9f7b98144293468d53c44e6f0a24503ad10"
+  }
+ ]
+}
