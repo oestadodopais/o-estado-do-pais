@@ -76,8 +76,8 @@ import {
   leituraDoLugar,
   temasDoLugar,
   estudosDoLugar,
-  mudancasDoLugar,
 } from '../lib/lugar.mjs';
+import { mudancasDoLugar } from '../lib/mudancas.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -100,7 +100,7 @@ const pecas = pecasDoConcelho(m);
 const leitura = leituraDoLugar(m, pecas, lang, s);
 const temas = temasDoLugar(pecas, leitura?.citadas ?? [], lang);
 const estudos = estudosDoLugar(slug, lang);
-const mudou = mudancasDoLugar(slug, pecas, lang);
+const mudou = mudancasDoLugar(slug, lang);
 
 const jsonld = {
   '@context': 'https://schema.org',
@@ -244,18 +244,31 @@ const jsonld = {
 
             OS DOIS VALORES ENTRAM POR `data-correcao-*`, que é a origem
             declarada de um campo do registo: o portão compara cada um, carácter
-            a carácter, com o campo `corrections` da própria linha. */}
-        <ol class="lugar-mudou">
+            a carácter, com o campo `corrections` da própria linha.
+
+            UMA ENTRADA, UMA LINHA (B1c, 22.09.2026). Até aqui duas entradas da
+            mesma linha no mesmo dia juntavam-se numa só (achado D4). A página do
+            país passou a render uma linha por correção na segunda passagem da
+            peça 3 (§1.117, a célula M3), e o registo conta-as uma a uma: as três
+            listas passam a ler o livro da mesma maneira, e o que o livro guarda
+            duas vezes lê-se duas vezes. O âmbito e o teto vivem em
+            `src/lib/mudancas.mjs`. */}
+        <ol class="lugar-mudou" data-mudou-ambito={slug}>
           {mudou.map((e) => (
-            <li data-correcao-entrada={e.claim}>
-              <span
+            <li data-mudanca="correcao" data-correcao-entrada={e.claim}>
+              {/* A DATA É UM `<time>` (B1c): a C1 e a M3 passaram a correr sobre
+                  todas as listas de mudanças do sítio, e leem a data pelo
+                  `datetime`, como já faziam na lista do país. Um `<span>` dizia
+                  a data a um leitor e não a dizia a uma máquina. */}
+              <time
                 class="lugar-mudou-data"
+                datetime={e.data}
                 data-correcao-claim={e.claim}
-                data-correcao-n={String(e.nDoNovo)}
+                data-correcao-n={String(e.n)}
                 data-correcao-campo="date"
               >
                 {dataDaCasa(e.data)}
-              </span>
+              </time>
               <p class="lugar-mudou-o-que">
                 {e.nome?.fonte && (
                   <span class="lugar-mudou-nome" data-nome={e.nome.fonte} data-de-linha={e.claim}>
@@ -263,11 +276,11 @@ const jsonld = {
                   </span>
                 )}
                 <span class="lugar-mudou-par">
-                  <s data-correcao-claim={e.claim} data-correcao-n={String(e.nDoAntigo)} data-correcao-campo="old_value">
+                  <s data-correcao-claim={e.claim} data-correcao-n={String(e.n)} data-correcao-campo="old_value">
                     {e.antes}
                   </s>
                   {' → '}
-                  <span data-correcao-claim={e.claim} data-correcao-n={String(e.nDoNovo)} data-correcao-campo="new_value">
+                  <span data-correcao-claim={e.claim} data-correcao-n={String(e.n)} data-correcao-campo="new_value">
                     {e.depois}
                   </span>
                   {e.unidade && <span class="lugar-mudou-unidade">{' '}{unidadeDaLinha(e.unidade, lang).texto}</span>}
@@ -277,6 +290,12 @@ const jsonld = {
             </li>
           ))}
         </ol>
+        {/* A PORTA PARA O REGISTO INTEIRO (B1c). O teto é do que se mostra, e
+            nunca do que existe: o que não cabe aqui está lá, com o lugar de cada
+            linha e a porta para ele. */}
+        <p class="regra-portas">
+          <a href={routePath('correcoes', lang)}>{r.todasAsMudancas} →</a>
+        </p>
       </section>
     )
   }

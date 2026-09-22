@@ -11,7 +11,8 @@ import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import Provenance from '../components/Provenance.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
 import { concelhos } from '../lib/inicio.mjs';
-import { estudosRecentes, mudancasDoPais } from '../lib/pais.mjs';
+import { estudosRecentes } from '../lib/pais.mjs';
+import { mudancasDoPais } from '../lib/mudancas.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -51,9 +52,16 @@ const mudou = mudancasDoPais(lang);
       <p class="estudo-resumo lugar-estudo-leitura" data-verbatim={e.temLeitura ? undefined : e.work.verbatimDaAbertura?.[lang]}><Frase partes={e.resumo} lang={lang} selos /></p>
     </article>)}
   </section>
+  {/* O QUE MUDOU, NO SEU LUGAR (B1c, 22.09.2026). Esta página mostrava trinta
+      mudanças, dezasseis delas correções de linhas de Évora e do Alentejo. A
+      página do país fica com o que lhe pertence — as correções das linhas do
+      país, os estudos publicados de qualquer lugar e as mudanças declaradas do
+      projeto —, no máximo oito, da mais recente para a mais antiga. O âmbito e
+      o teto estão em `src/lib/mudancas.mjs`; o que não cabe não desaparece, e a
+      porta por baixo leva ao registo inteiro. */}
   <section class="pais-sec" aria-labelledby="mudou-k">
     <div class="sec-head"><h2 class="eyebrow" id="mudou-k">{r.mudou}</h2></div>
-    <ol class="pais-mudou">
+    <ol class="pais-mudou" data-mudou-ambito="pais">
       {mudou.map(e => <li data-mudanca={e.tipo} data-mudanca-id={e.tipo === 'projeto' ? e.id : undefined} data-correcao-entrada={e.tipo === 'correcao' ? e.claim : undefined}>
         {e.tipo === 'projeto' ? <><time datetime={e.data} data-mudanca-campo="data">{dataDaCasa(e.data)}</time><p data-mudanca-campo="texto">{e.texto[lang]}</p></> : e.tipo === 'publicacao' ? <><time datetime={e.data} data-publicacao-estudo={`${e.estudo.work.slug}/${e.estudo.edicao.lang}`}>{dataDaCasa(e.data)}</time><p><span>{r.estudoPublicado}</span>{' · '}<TituloDeTrabalho titulo={e.estudo.edicao.title} lang={lang} /></p></> : <>
           <time datetime={e.data} data-correcao-claim={e.claim} data-correcao-n={String(e.n)} data-correcao-campo="date">{dataDaCasa(e.data)}</time>
@@ -63,6 +71,7 @@ const mudou = mudancasDoPais(lang);
         </>}
       </li>)}
     </ol>
+    <p class="regra-portas"><a href={routePath('correcoes', lang)}>{r.todasAsMudancas} →</a></p>
   </section>
   <script src="/js/mapa-unidades.js" defer is:inline></script>
 </Base>
