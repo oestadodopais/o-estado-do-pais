@@ -166,7 +166,7 @@ const jsonld = {
     </div>
   ) : (
     <div class="estudo-b1">
-      <TituloDeTrabalho as="h1" class="estudo-titulo" titulo={principal.title} lang={lang} />
+      <TituloDeTrabalho as="h1" class="estudo-titulo" edicao={principal} lang={lang} />
       <p class="estudo-descricao" data-verbatim={work.verbatimDaAbertura?.[lang]}>{work.description[lang]}</p>
       <EdicaoPublicada work={work} lang={lang} />
     </div>

@@ -45,7 +45,7 @@ const mudou = mudancasDoPais(lang);
   <section class="pais-sec" id="trabalhos" aria-labelledby="estudos-k">
     <div class="sec-head"><h2 class="eyebrow" id="estudos-k">{r.estudosRecentes}</h2></div>
     {recentes.map(e => <article class="estudo-item pais-estudo" data-estudo={e.work.slug} data-estudo-edicao={`${e.work.slug}/${e.edicao.lang}`}>
-      <h3 class="estudo-item-titulo"><a href={e.rota}><TituloDeTrabalho titulo={e.edicao.title} lang={lang} /></a>
+      <h3 class="estudo-item-titulo"><a href={e.rota}><TituloDeTrabalho edicao={e.edicao} lang={lang} /></a>
         {e.edicao.lang !== lang && <span class="estudo-lingua"> {r.outraLingua}</span>}
       </h3>
       <p class="estudo-meta"><span>{e.lugar}</span><span>{e.tema}</span><span>{r.publicado}{' '}<time datetime={e.data} data-nonledger="data-do-repositorio">{dataDaCasa(e.data)}</time></span></p>

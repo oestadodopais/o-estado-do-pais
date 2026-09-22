@@ -262,18 +262,12 @@ const palavraRevisoes =
                 <p class="registo-mudanca-o-que">
                   <span>{r.estudoPublicado}</span>
                   {' · '}
-                  {/* O TÍTULO COM O QUE O ARQUIVO DECLARA SOBRE ELE (a passagem
-                      de correção de 22.09.2026). Duas edições inglesas dizem
-                      `titleUnverified: true` e chegavam aqui como títulos
-                      comuns: uma incerteza declarada que a página não mostrava.
-                      A célula A4 do `check:pais` confere cada linha de
-                      publicação contra o arquivo, com a marca onde ele a
-                      declara. */}
-                  <TituloDeTrabalho
-                    titulo={e.estudo.edicao.title}
-                    lang={lang}
-                    naoConfirmado={e.estudo.edicao.titleUnverified === true}
-                  />
+                  {/* O TÍTULO COM O QUE O ARQUIVO DECLARA SOBRE ELE. A edição
+                      vai inteira: é ela que sabe se o título está por confirmar,
+                      e é `TituloDeTrabalho` que decide, não quem o chama. A
+                      célula A4 do `check:pais` confere cada linha de publicação
+                      contra o arquivo. */}
+                  <TituloDeTrabalho edicao={e.estudo.edicao} lang={lang} />
                 </p>
               </div>
             ) : (

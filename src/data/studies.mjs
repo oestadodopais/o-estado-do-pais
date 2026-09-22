@@ -39,6 +39,34 @@
  * e outra vez em `src/lib/ledger.mjs`.
  */
 export { POR_VERIFICAR } from './marcador.mjs';
+
+/**
+ * A EDIÇÃO QUE UM TÍTULO NOMEIA, NA LÍNGUA DE QUEM O RENDE (B1c, 22.09.2026).
+ *
+ * `TituloDeTrabalho` precisa de saber se a edição que está a render tem o
+ * título por confirmar (`titleUnverified`), e nem todos os seus chamadores têm
+ * a edição à mão: o campo «estudo» de uma linha do livro-razão, o caminho no
+ * cabeçalho e o nome de um estudo numa área rendem uma cadeia. Esta função
+ * responde à pergunta que falta — «esta cadeia, nesta página, é o título de que
+ * edição?» — e responde-a como o sítio a rende: a edição da língua da página, e
+ * na falta dela a primeira do trabalho, que é a mesma escada de
+ * `fichaDoEstudo()` e de `EdicaoPublicada`.
+ *
+ * NÃO É UM ATALHO PARA QUEM TEM A EDIÇÃO. Uma página que liste as DUAS edições
+ * do mesmo trabalho tem duas respostas para a mesma cadeia, e por isso quem tem
+ * a edição passa-a; esta escada é para quem não tem.
+ *
+ * @param {string} titulo
+ * @param {string} lang
+ */
+export function edicaoDoTitulo(titulo, lang) {
+  for (const w of WORKS) {
+    const iguais = w.editions.filter((e) => e.title === titulo);
+    if (!iguais.length) continue;
+    return iguais.find((e) => e.lang === lang) ?? iguais[0];
+  }
+  return null;
+}
 // B1, item 7c: os temas seguem TEMA_DO_ESTUDO da maqueta; o lugar é outro eixo.
 
 /**

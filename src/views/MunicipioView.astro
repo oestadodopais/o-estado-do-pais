@@ -198,7 +198,7 @@ const jsonld = {
           <article class="lugar-estudo" data-estudo={e.work.slug} data-estudo-edicao={`${e.work.slug}/${e.edicao.lang}`}>
             <h3 class="lugar-estudo-k">
               <a href={e.rota}>
-                <TituloDeTrabalho titulo={e.edicao.title} lang={lang} />
+                <TituloDeTrabalho edicao={e.edicao} lang={lang} />
               </a>
               {e.edicao.lang !== lang && <span class="estudo-lingua"> {r.outraLingua}</span>}
             </h3>

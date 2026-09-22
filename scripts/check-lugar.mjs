@@ -991,6 +991,14 @@ for (const ficheiro of paginas) {
        declarado para o marcador, dentro da definição conferida do cartão. */
     if (a.matches('a.marcador') && a.closest('[data-cartao-definicao]') &&
         href === routePath('marcador', lang)) continue;
+    /* E O MARCADOR DE UM TÍTULO POR CONFIRMAR, pela mesma regra e com o mesmo
+       mecanismo (B1c, 22.09.2026). O arquivo declara `titleUnverified` em duas
+       edições, e a decisão desse dia é que a marca vai a todas as páginas onde
+       o título se rende. `TituloDeTrabalho` dá-lhe a classe `marcador-de-titulo`
+       e o destino exato do marcador; é obrigatória onde o arquivo a declara, e
+       a A4 do `check:pais` confere que está onde ele a declara e em mais lado
+       nenhum. Contá-la como segunda porta era contar a obrigação como escolha. */
+    if (a.matches('a.marcador.marcador-de-titulo') && href === routePath('marcador', lang)) continue;
     const chave = href.split('#')[0].replace(/\/$/, '') || (href.startsWith('/') ? '/' : '');
     if (!chave) continue;
     destinos.set(chave, (destinos.get(chave) ?? 0) + 1);

@@ -20,7 +20,7 @@ const lugares = Object.keys(SUBJECTS).filter(lugar => WORKS.some(w => w.subject 
     {trabalhos.map(e => (
       <article class="arquivo-item estudo-item" data-estudo={e.work.slug} data-estudo-edicao={`${e.work.slug}/${e.edicao.lang}`}>
         <h2 class="arquivo-titulo estudo-item-titulo">
-          <a class="arquivo-porta" href={e.rota}><TituloDeTrabalho titulo={e.edicao.title} lang={lang} /></a>
+          <a class="arquivo-porta" href={e.rota}><TituloDeTrabalho edicao={e.edicao} lang={lang} /></a>
           {e.edicao.lang !== lang && <span class="estudo-lingua"> {r.outraLingua}</span>}
         </h2>
         <p class="estudo-meta"><span>{e.lugar}</span><span>{e.tema}</span>
