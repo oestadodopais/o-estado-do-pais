@@ -1,0 +1,69 @@
+{
+  "brief": "design/observatorio/BRIEF-M5-as-medicoes-provam-que-veem.md",
+  "guiao": "design/observatorio/medidas/BRIEF-M5.py",
+  "medidas": [
+    {
+      "nome": "briefs_ate_22_09_2026",
+      "valor": 37,
+      "comando": "python3 design/observatorio/medidas/BRIEF-M5.py",
+      "conhecido_positivo": {
+        "o_que": "o próprio brief («BRIEF-M5-as-medicoes-provam-que-veem.md») está na lista que o mesmo leitor devolve",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "briefs_com_seccao_de_medicoes",
+      "valor": 34,
+      "comando": "python3 design/observatorio/medidas/BRIEF-M5.py",
+      "conhecido_positivo": {
+        "o_que": "o mesmo leitor encontra a secção de medições no próprio brief («BRIEF-M5-as-medicoes-provam-que-veem.md»)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "briefs_com_guiao_de_medicoes",
+      "valor": 1,
+      "comando": "ls design/observatorio/medidas/*.py design/observatorio/medidas/*.mjs",
+      "conhecido_positivo": {
+        "o_que": "o mesmo localizador encontra o guião deste brief",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "briefs_isentos_por_data",
+      "valor": 33,
+      "comando": "python3 scripts/check-briefs.py --contagens",
+      "conhecido_positivo": {
+        "o_que": "um brief antigo nomeado («BRIEF-F1.1-porta-da-frente.md») cai na isenção por data, pelo mesmo leitor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "briefs_isentos_por_nomeacao",
+      "valor": 3,
+      "comando": "python3 scripts/check-briefs.py --contagens",
+      "conhecido_positivo": {
+        "o_que": "o B1c, que o §0 do seu próprio brief errou duas vezes, está entre os nomeados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ocorrencias_do_nome_de_quem_responde_em_src_e_public",
+      "valor": 0,
+      "comando": "grep -rn \"$(python3 -c 'import json;print(json.load(open(\"scripts/textos-aprovados.json\"))[\"responsavel\"])')\" src/ public/",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor encontra o nome uma vez numa linha escrita com ele",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "exportacoes_de_politica_ia_com_o_nome_de_quem_responde",
+      "valor": 0,
+      "comando": "grep -n \"^export const\" src/data/politica-ia.mjs",
+      "conhecido_positivo": {
+        "o_que": "o mesmo leitor encontra `export const LINGUA_DO_RESPONSAVEL` no mesmo ficheiro",
+        "encontrado": true
+      }
+    }
+  ]
+}
