@@ -45,6 +45,15 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numeros  # noqa: E402
 
 
+def curto(caminho):
+    """O caminho relativo ao diretório de trabalho, ou o que veio se não der."""
+    try:
+        r = os.path.relpath(caminho, os.getcwd())
+    except ValueError:
+        return caminho
+    return caminho if r.startswith('..') and os.path.isabs(caminho) is False else r
+
+
 def uso(msg):
     print(f'conferir-relatorio.py: {msg}', file=sys.stderr)
     print(__doc__.split('\n')[2], file=sys.stderr)
@@ -91,11 +100,15 @@ def main(argv):
     achados, contagens = numeros.do_texto(texto)
     faltam = numeros.em_falta(achados, formas, valores)
 
-    print(f'relatório: {relatorio}')
-    print(f'pasta das medições: {pasta}')
+    # Os caminhos saem relativos ao diretório de trabalho, e nunca em `/Users/…`:
+    # um ficheiro de saída que entra num repositório público não leva o caminho
+    # da máquina de ninguém, e um caminho relativo é o que outra pessoa pode
+    # usar tal como está (M5, 22.09.2026).
+    print(f'relatório: {curto(relatorio)}')
+    print(f'pasta das medições: {curto(pasta)}')
     print(f'ficheiros JSON lidos: {len(lidos)}')
     for c, razao in ilegiveis:
-        print(f'   ILEGÍVEL {c}: {razao}')
+        print(f'   ILEGÍVEL {curto(c)}: {razao}')
     print(f'conhecido-positivo (o número {prova}, ausente dos ficheiros, apontado pelo mesmo detetor): '
           + ('encontrado' if viu else 'NÃO ENCONTRADO'))
     print(f'números conferidos: {len(achados)}')
@@ -109,10 +122,10 @@ def main(argv):
         os.makedirs(os.path.dirname(os.path.abspath(saida_json)), exist_ok=True)
         with open(saida_json, 'w', encoding='utf-8') as f:
             json.dump({
-                'relatorio': relatorio,
-                'pasta': pasta,
+                'relatorio': curto(relatorio),
+                'pasta': curto(pasta),
                 'ficheiros_json_lidos': len(lidos),
-                'ilegiveis': [{'ficheiro': c, 'razao': r} for c, r in ilegiveis],
+                'ilegiveis': [{'ficheiro': curto(c), 'razao': r} for c, r in ilegiveis],
                 'conhecido_positivo': {'numero': prova, 'encontrado': viu},
                 'numeros_conferidos': len(achados),
                 'numeros_com_ficheiro': len(achados) - len(faltam),
