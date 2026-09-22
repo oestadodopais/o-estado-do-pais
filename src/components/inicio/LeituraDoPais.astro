@@ -2,6 +2,7 @@
 import Claim from '../Claim.astro';
 import Provenance from '../Provenance.astro';
 import { getClaim } from '../../lib/ledger.mjs';
+import { LINHAS_DA_LEITURA_DO_PAIS } from '../../lib/pais.mjs';
 const { lang = 'pt' } = Astro.props;
 /* Texto do lugar de direção, conferido a 21.09.2026. A guarda impede que uma
  * releitura do livro transforme uma frase aprovada numa afirmação diferente. */
@@ -14,6 +15,12 @@ const esperados = {
 for (const [id, valor] of Object.entries(esperados)) {
   if (getClaim(id).value !== valor) throw new Error(`B1 leitura do país: ${id} mudou; parar a frase e comunicar à direção.`);
 }
+/* A MESMA LISTA NOS DOIS SÍTIOS (B1c, 22.09.2026). O âmbito da página do país
+ * inclui as linhas que esta leitura cita, e essa lista vive em `pais.mjs`. Se as
+ * duas se separarem, uma correção de uma linha da leitura caía da primeira
+ * página em silêncio: a construção para aqui em vez de a deixar cair. */
+if (Object.keys(esperados).sort().join('|') !== [...LINHAS_DA_LEITURA_DO_PAIS].sort().join('|'))
+  throw new Error('B1 leitura do país: as linhas citadas divergem de LINHAS_DA_LEITURA_DO_PAIS.');
 const sufixo = lang === 'pt' ? '\u00a0%' : '%';
 ---
 <p class="pais-leitura" data-leitura-pais={lang}>

@@ -19,9 +19,7 @@ import {
   getClaim,
   parsePtNumber,
   eValorTextual,
-  entradasDoRegisto,
 } from './ledger.mjs';
-import { nomeDoCartao, nomeDaLinhaDerivada } from './nomes.mjs';
 import { routePath } from './routes.mjs';
 
 /**
@@ -236,75 +234,20 @@ export function estudosDoLugar(slug, lang) {
 
 /**
  * ---------------------------------------------------------------------------
- * 5 · O QUE MUDOU
+ * 5 · O QUE MUDOU · mudou de casa a 22.09.2026 (B1c)
  * ---------------------------------------------------------------------------
- * As linhas datadas que o projeto já regista para este lugar: as entradas do
- * registo de correções e de atualizações das linhas do livro-razão que são deste
- * lugar, do mais recente ao mais antigo, cada uma com a sua data e o motivo que
- * a própria entrada escreve, na língua da edição.
+ * As linhas datadas que o projeto regista para este lugar saem agora de
+ * `src/lib/mudancas.mjs`, onde o âmbito das três listas do sítio (o país, um
+ * lugar, o registo) está escrito uma vez só, com o teto de oito e a porta para
+ * o registo inteiro. O que era `mudancasDoLugar(slug, pecas, lang)` aqui é
+ * `mudancasDoLugar(slug, lang)` lá: a pertença de uma linha a um lugar deixou
+ * de se ler das peças desta página e passou a ler-se das declarações (a região
+ * que nomeia a linha, o concelho que a rende, o estudo que declara o objeto, a
+ * tabela das medidas do país), porque o registo precisa dela para TODAS as
+ * linhas e não só para as que uma página rende.
  *
- * O QUE NÃO ENTRA, E PORQUÊ. As datas de publicação dos estudos já se leem na
- * linha de cada estudo, na secção acima: repeti-las aqui era dizer duas vezes a
- * mesma coisa na mesma página. As revisões de proveniência também não entram, e
- * é a mesma decisão que o registo de correções toma («uma mudança de endereço
- * não é uma alteração do que foi publicado»).
- *
- * O QUE É «DESTE LUGAR»: uma linha que esta página rende, ou uma linha cujo
- * estudo declara este lugar. As duas saem de declarações, e nenhuma de uma lista
- * escrita à parte.
- *
- * SEM ENTRADAS, A SECÇÃO NÃO SE RENDE. Um título por cima de nada é uma célula
- * vazia, e nada mudou é uma resposta certa.
- *
- * @param {string} slug
- * @param {{ claim: string|null, vazia: boolean }[]} pecas
- * @param {'pt'|'en'} lang
+ * O QUE NÃO ENTRA, E PORQUÊ, continua igual: as datas de publicação dos estudos
+ * leem-se na linha de cada estudo, na secção acima, e as revisões de
+ * proveniência não são alterações do que foi publicado.
  */
-export function mudancasDoLugar(slug, pecas, lang) {
-  const daPagina = new Set(pecas.filter((p) => !p.vazia).map((p) => p.claim));
-  const estudos = new Set(WORKS.filter((w) => w.subject === slug).map((w) => w.id));
-  /** @param {string} id */
-  const daqui = (id) => {
-    if (daPagina.has(id)) return true;
-    const linha = getClaim(id);
-    return typeof linha.study === 'string' && estudos.has(linha.study);
-  };
-  const entradas = [];
-  for (const kind of ['correcao', 'atualizacao']) {
-    for (const e of entradasDoRegisto(kind)) {
-      if (!daqui(e.claimId)) continue;
-      const linha = getClaim(e.claimId);
-      entradas.push({
-        data: e.date,
-        n: e.n,
-        claim: e.claimId,
-        /* O NOME DA MEDIDA, pela escada do cartão: o nome do projeto quando
-           existe, o rótulo da fonte quando está na língua da página, e nada
-           quando nem um nem outro. Sem nome, a linha diz os dois valores, e o
-           selo ao lado abre a linha onde o nome está. */
-        nome: nomeDoCartao(linha, lang) ?? nomeDaLinhaDerivada(linha, lang),
-        antes: e.old_value,
-        depois: e.new_value,
-        unidade: typeof linha.unit === 'string' ? linha.unit : null,
-      });
-    }
-  }
-  /* ENTRADAS DA MESMA LINHA NO MESMO DIA JUNTAM-SE (achado D4, 21.09.2026): o
-     publicador refez a mesma soma duas vezes no mesmo dia, e o leitor lia a
-     mesma linha duas vezes. Fica uma: o valor antigo é o da primeira do dia, e o
-     novo é o da última, que é o que o dia mudou. */
-  const porDia = new Map();
-  for (const e of entradas.sort((a, b) => a.n - b.n)) {
-    const chave = `${e.claim}|${e.data}`;
-    const ja = porDia.get(chave);
-    if (ja) {
-      ja.depois = e.depois;
-      ja.nDoNovo = e.n;
-      continue;
-    }
-    porDia.set(chave, { ...e, nDoAntigo: e.n, nDoNovo: e.n });
-  }
-  return [...porDia.values()].sort(
-    (a, b) => b.data.localeCompare(a.data) || a.claim.localeCompare(b.claim),
-  );
-}
+
