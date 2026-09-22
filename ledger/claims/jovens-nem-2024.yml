@@ -21,7 +21,7 @@ access_date: "2026-09-15"
 reference_date: "2024"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Young persons (aged 15-24) neither in employment nor in education and training - % of total population in private households in the same age group — Percentage of total population — Portugal — 2024: 8.7"
+excerpt: "Young persons (aged 15-24) neither in employment nor in education and training - % of total population in private households in the same age group — Age class: From 15 to 29 years — Percentage of total population — Portugal — 2024: 8.7"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -30,7 +30,7 @@ derived_from: []
 check: null
 
 study: "quadro-institucional"
-note: "Período anterior da medida «jovens-nem-2025»: o mesmo pedido ao Eurostat devolve a série inteira, e esta linha é o período 2024. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
+note: "Período anterior da medida «jovens-nem-2025»: o mesmo pedido ao Eurostat devolve a série inteira, e esta linha é o período 2024. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor. O título que o catálogo do Eurostat dá a este quadro diz «aged 15-24» e a dimensão `age` da resposta ao endereço em source_url diz «From 15 to 29 years»: a série é dos 15 aos 29. As duas leituras são de 22.09.2026. O título fica como a fonte o escreve; o excerto passa a trazer a etiqueta da idade. Nenhum valor mudou."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
