@@ -1,0 +1,94 @@
+{
+  "linhas": {
+    "jovens-nem-2024": {
+      "value": "8,7",
+      "unit": "% da população",
+      "reference_date": "2024",
+      "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm90?format=JSON&lang=EN&geo=PT&unit=PC_POP",
+      "document_title": "Young persons (aged 15-24) neither in employment nor in education and training - % of total population in private households in the same age group",
+      "excerpt": "Young persons (aged 15-24) neither in employment nor in education and training - % of total population in private households in the same age group — Age class: From 15 to 29 years — Percentage of total population — Portugal — 2024: 8.7",
+      "etiqueta_da_idade": "Age class: From 15 to 29 years",
+      "note_acaba_em": "o de 22.09.2026. O título fica como a fonte o escreve; o excerto passa a trazer a etiqueta da idade. Nenhum valor mudou.",
+      "verificacoes": 1,
+      "correccoes": 0
+    },
+    "jovens-nem-2025": {
+      "value": "8",
+      "unit": "% da população",
+      "reference_date": "2025",
+      "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm90?format=JSON&lang=EN&geo=PT&unit=PC_POP",
+      "document_title": "Young persons (aged 15-24) neither in employment nor in education and training - % of total population in private households in the same age group",
+      "excerpt": "Young persons (aged 15-24) neither in employment nor in education and training - % of total population in private households in the same age group — Age class: From 15 to 29 years — Percentage of total population — Portugal — 2025: 8.0",
+      "etiqueta_da_idade": "Age class: From 15 to 29 years",
+      "note_acaba_em": "o de 22.09.2026. O título fica como a fonte o escreve; o excerto passa a trazer a etiqueta da idade. Nenhum valor mudou.",
+      "verificacoes": 4,
+      "correccoes": 0
+    },
+    "jovens-nem-2025-ue": {
+      "value": "11,0",
+      "unit": "% da população",
+      "reference_date": "2025",
+      "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm90?format=JSON&lang=EN&geo=EU27_2020&unit=PC_POP",
+      "document_title": "Young persons (aged 15-24) neither in employment nor in education and training - % of total population in private households in the same age group",
+      "excerpt": "Young persons (aged 15-24) neither in employment nor in education and training - % of total population in private households in the same age group — Age class: From 15 to 29 years — Percentage of total population — European Union - 27 countries (from 2020) — 2025: 11.0",
+      "etiqueta_da_idade": "Age class: From 15 to 29 years",
+      "note_acaba_em": "o de 22.09.2026. O título fica como a fonte o escreve; o excerto passa a trazer a etiqueta da idade. Nenhum valor mudou.",
+      "verificacoes": 1,
+      "correccoes": 0
+    }
+  },
+  "definicao": {
+    "pt": "A percentagem das pessoas dos 15 aos 29 anos, de ambos os sexos, que não tem emprego e não está em estudos nem em formação.",
+    "en": "The percentage of the population aged 15 to 29, of both sexes, who is not employed and not involved in further education or training."
+  },
+  "mudanca": {
+    "pt": {
+      "data": "22.09.2026",
+      "texto": "O Eurostat intitula o quadro dos jovens que não trabalham nem estudam com o grupo dos 15 aos 24 anos, e a série que publica é a dos 15 aos 29. As três linhas passam a trazer o grupo etário no excerto, e a definição da medida escreve-o. Nenhum valor mudou."
+    },
+    "en": {
+      "data": "22.09.2026",
+      "texto": "Eurostat titles its table on young people not in employment, education or training with the 15 to 24 age group, while the series it publishes is the 15 to 29 one. The three rows now carry the age group in the excerpt, and the measure definition states it. No value changed."
+    }
+  },
+  "recibo": {
+    "pt": {
+      "tem_etiqueta_da_idade": true,
+      "tem_titulo_do_eurostat": true
+    },
+    "en": {
+      "tem_etiqueta_da_idade": true,
+      "tem_titulo_do_eurostat": true
+    }
+  },
+  "k13": {
+    "medidas": 4,
+    "passam": 1,
+    "detalhe": [
+      {
+        "id": "taxa-de-desemprego-mip-2025",
+        "limites": "15-74",
+        "onde": "source_url",
+        "escreve": false
+      },
+      {
+        "id": "taxa-de-emprego-2025",
+        "limites": "20-64",
+        "onde": "source_url",
+        "escreve": false
+      },
+      {
+        "id": "taxa-de-desemprego-2025",
+        "limites": "15-74",
+        "onde": "source_url",
+        "escreve": false
+      },
+      {
+        "id": "jovens-nem-2025",
+        "limites": "15-29",
+        "onde": "excerto",
+        "escreve": true
+      }
+    ]
+  }
+}
