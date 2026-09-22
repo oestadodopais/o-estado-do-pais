@@ -8,9 +8,9 @@
 
 *Medido por `design/observatorio/medidas/BRIEF-M5.py`, que escreve `design/observatorio/medidas/BRIEF-M5.json`. Cada número deste §0 está em algarismos e traz na sua frase, entre crases, o nome da medição que o mede; o `check:briefs` volta a correr o guião em cada `verify`, compara cada valor, exige o conhecido-positivo de cada medição e refaz a ligação frase a frase. A partir deste bloco, é assim que um §0 se escreve.*
 
-Em `design/observatorio/` há 37 briefs datados até hoje (`briefs_ate_22_09_2026`). Desses, 34 trazem uma secção de medições (`briefs_com_seccao_de_medicoes`). Só 1 traz o guião que a mede e diz o comando de cada número (`briefs_com_guiao_de_medicoes`), e é este.
+Em `design/observatorio/` há 38 briefs datados até hoje (`briefs_ate_22_09_2026`). Desses, 35 trazem uma secção de medições (`briefs_com_seccao_de_medicoes`). Só 2 trazem o guião que a mede e diz o comando de cada número (`briefs_com_guiao_de_medicoes`): este, e o do M4b, escrito no mesmo dia na forma que este bloco cria.
 
-O portão confere 1 brief (`briefs_conferidos_pelo_portao`), isenta 33 por data (`briefs_isentos_por_data`) e isenta 3 por nomeação (`briefs_isentos_por_nomeacao`).
+O portão confere 2 briefs (`briefs_conferidos_pelo_portao`), isenta 33 por data (`briefs_isentos_por_data`) e isenta 3 por nomeação (`briefs_isentos_por_nomeacao`).
 
 O nome de quem responde ocorre 0 vezes nos ficheiros de `src/` e de `public/` (`ocorrencias_do_nome_de_quem_responde_em_src_e_public`). As constantes exportadas de `src/data/politica-ia.mjs` que o escrevem são 0 (`exportacoes_de_politica_ia_com_o_nome_de_quem_responde`).
 

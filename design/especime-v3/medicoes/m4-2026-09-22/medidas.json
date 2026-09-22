@@ -1,0 +1,701 @@
+{
+ "_": "Medidas do bloco M4 sobre o estudo 11, 22.09.2026. Geradas por medir.py; o relatorio ao lado nao transcreve nenhum numero que nao esteja aqui.",
+ "bloco": "M4",
+ "data": "2026-09-22",
+ "ramo": "m4-2026-09-22",
+ "base_do_ramo": "e8518f6",
+ "master_agora": "8ae6b53",
+ "livro": "content/11 Seguranca Social/ledger.json",
+ "edicoes": {
+  "html": "content/11 Seguranca Social/Penalizações por Reforma Antecipada em Portugal (pt-PT).html",
+  "relatorio-md": "content/11 Seguranca Social/RELATORIO-seguranca-social.md"
+ },
+ "estado_do_livro": {
+  "linhas": 55,
+  "linhas_recusadas": 28,
+  "defeitos_por_linha": {
+   "relatorio-titulo": [
+    "valor_de_texto"
+   ],
+   "fefss-cobertura-recalculada": [
+    "source_type_invalido:derived"
+   ],
+   "cgtp-saldo-2025": [
+    "source_type_invalido:union"
+   ],
+   "governo-posicao": [
+    "source_type_invalido:press",
+    "valor_de_texto"
+   ],
+   "chega-posicao": [
+    "source_type_invalido:press"
+   ],
+   "cfp-saldo-ss-2025": [
+    "source_type_invalido:independent_fiscal_institution"
+   ],
+   "cfp-saldo-cga-2025": [
+    "source_type_invalido:independent_fiscal_institution"
+   ],
+   "cga-saldo-e-comparticipacao": [
+    "source_type_invalido:independent_fiscal_institution"
+   ],
+   "cfp-fefss-cobertura-2025": [
+    "source_type_invalido:independent_fiscal_institution"
+   ],
+   "fefss-base-legal": [
+    "source_type_invalido:independent_fiscal_institution"
+   ],
+   "tdc-balanco-actuarial-decomposicao": [
+    "source_type_invalido:supreme_audit_institution"
+   ],
+   "densidade-quantificacao": [
+    "source_type_invalido:derived"
+   ],
+   "parte-iii-sem-custeio": [
+    "source_type_invalido:derived"
+   ],
+   "defice-transicao-nao-quantificado": [
+    "valor_de_texto"
+   ],
+   "sem-sensibilidade-demografica": [
+    "source_type_invalido:derived"
+   ],
+   "ch5-resultado-e-artefacto-da-taxa": [
+    "source_type_invalido:derived"
+   ],
+   "ch6-taxa-contributiva-nao-fixada": [
+    "valor_de_texto"
+   ],
+   "fefss-corroboracao-interna": [
+    "source_type_invalido:derived"
+   ],
+   "ch14-crescimento-salarial-inconsistente": [
+    "source_type_invalido:derived"
+   ],
+   "ch14-erro-pib": [
+    "source_type_invalido:derived"
+   ],
+   "ch8-racio-derivado": [
+    "source_type_invalido:derived"
+   ],
+   "fs-penalizacao-seletiva": [
+    "valor_de_texto"
+   ],
+   "fs-dupla-contagem": [
+    "valor_de_texto"
+   ],
+   "fs-heterogeneidade-longevidade": [
+    "valor_de_texto"
+   ],
+   "ch12-sem-base-administrativa": [
+    "valor_de_texto"
+   ],
+   "chega-custo-idade-reforma": [
+    "source_type_invalido:press"
+   ],
+   "cgtp-reconciliacao": [
+    "source_type_invalido:derived"
+   ],
+   "governo-xxiv-xxv": [
+    "valor_de_texto"
+   ]
+  },
+  "familias": {
+   "valor_de_texto": {
+    "n": 9,
+    "ids": [
+     "ch12-sem-base-administrativa",
+     "ch6-taxa-contributiva-nao-fixada",
+     "defice-transicao-nao-quantificado",
+     "fs-dupla-contagem",
+     "fs-heterogeneidade-longevidade",
+     "fs-penalizacao-seletiva",
+     "governo-posicao",
+     "governo-xxiv-xxv",
+     "relatorio-titulo"
+    ]
+   },
+   "source_type_invalido": {
+    "n": 20,
+    "por_valor": {
+     "derived": 10,
+     "union": 1,
+     "press": 3,
+     "independent_fiscal_institution": 5,
+     "supreme_audit_institution": 1
+    },
+    "validos": [
+     "government",
+     "intergovernmental",
+     "academic",
+     "foundation",
+     "other"
+    ]
+   },
+   "entity_aliases": {
+    "aceite": false,
+    "recusa": "entity_aliases['GT'] must be a list of strings"
+   }
+  },
+  "tres_recusas_das_nove": {
+   "relatorio-titulo": {
+    "valor": "Reformar as Pensoes em Portugal: Por um Sistema Sustentavel, Adequado e Justo - um Contrato entre Geracoes",
+    "carrega_numero": false,
+    "tem_alternates": false,
+    "valor_no_proprio_excerpt": false,
+    "pode_declarar_value_not_numeric": false
+   },
+   "governo-posicao": {
+    "valor": "sem reforma estrutural nesta legislatura",
+    "carrega_numero": false,
+    "tem_alternates": false,
+    "valor_no_proprio_excerpt": false,
+    "pode_declarar_value_not_numeric": false
+   },
+   "defice-transicao-nao-quantificado": {
+    "valor": "nunca estimado",
+    "carrega_numero": false,
+    "tem_alternates": false,
+    "valor_no_proprio_excerpt": false,
+    "pode_declarar_value_not_numeric": false
+   },
+   "ch6-taxa-contributiva-nao-fixada": {
+    "valor": "deferida",
+    "carrega_numero": false,
+    "tem_alternates": false,
+    "valor_no_proprio_excerpt": false,
+    "pode_declarar_value_not_numeric": false
+   },
+   "fs-penalizacao-seletiva": {
+    "valor": "selectiva",
+    "carrega_numero": false,
+    "tem_alternates": false,
+    "valor_no_proprio_excerpt": true,
+    "pode_declarar_value_not_numeric": true
+   },
+   "fs-dupla-contagem": {
+    "valor": "dupla contagem",
+    "carrega_numero": false,
+    "tem_alternates": false,
+    "valor_no_proprio_excerpt": false,
+    "pode_declarar_value_not_numeric": false
+   },
+   "fs-heterogeneidade-longevidade": {
+    "valor": "agregada",
+    "carrega_numero": false,
+    "tem_alternates": false,
+    "valor_no_proprio_excerpt": true,
+    "pode_declarar_value_not_numeric": true
+   },
+   "ch12-sem-base-administrativa": {
+    "valor": "inexistente",
+    "carrega_numero": false,
+    "tem_alternates": false,
+    "valor_no_proprio_excerpt": false,
+    "pode_declarar_value_not_numeric": false
+   },
+   "governo-xxiv-xxv": {
+    "valor": "XXIV -> XXV",
+    "carrega_numero": false,
+    "tem_alternates": false,
+    "valor_no_proprio_excerpt": false,
+    "pode_declarar_value_not_numeric": false
+   }
+  },
+  "com_derivation": 0,
+  "com_attributed_to": 55,
+  "ignore": 51,
+  "assertions": 0,
+  "adjacency_ignores": 0,
+  "tem_preregistration": false
+ },
+ "medidas_de_hoje": {
+  "html": {
+   "reconcile": {
+    "saida": 2,
+    "ultima_linha": "ERROR: claim value 'Reformar as Pensoes em Portugal: Por um Sistema Sustentavel, Adequado e Justo - um Contrato entre Geracoes' contains no number"
+   },
+   "attributions": {
+    "saida": 2,
+    "ultima_linha": "ERROR: claim value 'Reformar as Pensoes em Portugal: Por um Sistema Sustentavel, Adequado e Justo - um Contrato entre Geracoes' contains no number"
+   },
+   "assertions": {
+    "saida": 1,
+    "ultima_linha": "ASSERTIONS: FAIL — 11 quantifier hits, 0 checked, 0 review, 11 undeclared, 0 failed"
+   },
+   "prose": {
+    "saida": 1,
+    "ultima_linha": "PROSE: FAIL — 1 number adjacencies (0 declared ignore(s))"
+   }
+  },
+  "relatorio-md": {
+   "reconcile": {
+    "saida": 2,
+    "ultima_linha": "ERROR: claim value 'Reformar as Pensoes em Portugal: Por um Sistema Sustentavel, Adequado e Justo - um Contrato entre Geracoes' contains no number"
+   },
+   "attributions": {
+    "saida": 2,
+    "ultima_linha": "ERROR: claim value 'Reformar as Pensoes em Portugal: Por um Sistema Sustentavel, Adequado e Justo - um Contrato entre Geracoes' contains no number"
+   },
+   "assertions": {
+    "saida": 1,
+    "ultima_linha": "ASSERTIONS: FAIL — 9 quantifier hits, 0 checked, 0 review, 9 undeclared, 0 failed"
+   },
+   "prose": {
+    "saida": 1,
+    "ultima_linha": "PROSE: FAIL — 7 number adjacencies (0 declared ignore(s))"
+   }
+  },
+  "par_md_html": {
+   "saida": 2,
+   "ultima_linha": "ERROR: claim value 'Reformar as Pensoes em Portugal: Por um Sistema Sustentavel, Adequado e Justo - um Contrato entre Geracoes' contains no number"
+  },
+  "derivations": {
+   "saida": 0,
+   "ultima_linha": "DERIVATIONS: PASS — 0 re-derived at gate time"
+  }
+ },
+ "contrafactual": {
+  "_": "MEDIDO NUMA COPIA DE ENSAIO QUE NAO EMBARCA. Nao e a linha de base do estudo: e o que o motor contaria se as tres familias de defeitos estruturais fossem resolvidas sem mexer no texto de nenhum valor. As linhas value_not_numeric nao indexam forma nenhuma (indexed_forms devolve []), por isso estas contagens nao dependem do texto das nove.",
+  "o_que_foi_mexido": {
+   "value_not_numeric_posto": [
+    "relatorio-titulo",
+    "governo-posicao",
+    "defice-transicao-nao-quantificado",
+    "ch6-taxa-contributiva-nao-fixada",
+    "fs-penalizacao-seletiva",
+    "fs-dupla-contagem",
+    "fs-heterogeneidade-longevidade",
+    "ch12-sem-base-administrativa",
+    "governo-xxiv-xxv"
+   ],
+   "excerpt_acrescentado": [
+    "relatorio-titulo",
+    "governo-posicao",
+    "defice-transicao-nao-quantificado",
+    "ch6-taxa-contributiva-nao-fixada",
+    "fs-dupla-contagem",
+    "ch12-sem-base-administrativa",
+    "governo-xxiv-xxv"
+   ],
+   "source_type_para_other": [
+    "fefss-cobertura-recalculada",
+    "cgtp-saldo-2025",
+    "governo-posicao",
+    "chega-posicao",
+    "cfp-saldo-ss-2025",
+    "cfp-saldo-cga-2025",
+    "cga-saldo-e-comparticipacao",
+    "cfp-fefss-cobertura-2025",
+    "fefss-base-legal",
+    "tdc-balanco-actuarial-decomposicao",
+    "densidade-quantificacao",
+    "parte-iii-sem-custeio",
+    "sem-sensibilidade-demografica",
+    "ch5-resultado-e-artefacto-da-taxa",
+    "fefss-corroboracao-interna",
+    "ch14-crescimento-salarial-inconsistente",
+    "ch14-erro-pib",
+    "ch8-racio-derivado",
+    "chega-custo-idade-reforma",
+    "cgtp-reconciliacao"
+   ],
+   "entity_aliases_para_lista": 10
+  },
+  "html": {
+   "medida": {
+    "numbers": 149,
+    "matched": 41,
+    "orphans": 89,
+    "misattributions": 9,
+    "undeclared": 0,
+    "undeclared_assertions": 11,
+    "failed_assertions": 0,
+    "number_adjacencies": 1
+   },
+   "reconcile": {
+    "saida": 1,
+    "ultima_linha": "RECONCILE: FAIL — 149 numbers, 41 matched, 19 ignored, 89 orphans, 31 unused rows"
+   },
+   "attributions": {
+    "saida": 1,
+    "ultima_linha": "ATTRIBUTIONS: FAIL — 41 ledger-matched values scanned, 9 misattributions, 0 undeclared"
+   }
+  },
+  "relatorio-md": {
+   "medida": {
+    "numbers": 654,
+    "matched": 154,
+    "orphans": 328,
+    "misattributions": 95,
+    "undeclared": 0,
+    "undeclared_assertions": 9,
+    "failed_assertions": 0,
+    "number_adjacencies": 7
+   },
+   "reconcile": {
+    "saida": 1,
+    "ultima_linha": "RECONCILE: FAIL — 654 numbers, 154 matched, 172 ignored, 328 orphans, 6 unused rows"
+   },
+   "attributions": {
+    "saida": 1,
+    "ultima_linha": "ATTRIBUTIONS: FAIL — 154 ledger-matched values scanned, 95 misattributions, 0 undeclared"
+   }
+  },
+  "par_md_html": {
+   "saida": 1,
+   "ultima_linha": "EDITIONS: FAIL — 154 vs 41 matched tokens, 40 rows compared, 40 drift(s)"
+  }
+ },
+ "planta_valor": {
+  "_": "MEDIDA NA MESMA COPIA DE ENSAIO. A linha fig81-penalizacao-legal imprime 6,00 uma unica vez na edicao HTML; 6,80 nao e valor de nenhuma linha nem simbolo ignorado.",
+  "linha": "fig81-penalizacao-legal",
+  "de": "6,00",
+  "para": "6,80",
+  "confirmado_antes_de_plantar": {
+   "canonico": "6.8",
+   "e_valor_de_alguma_linha": false,
+   "esta_na_lista_ignore": false
+  },
+  "sha256_antes": "96565bc0c3db3294e5ce983ff22de8ccffb2bb9ab399dd86c8d082df732463f2",
+  "sha256_com_a_planta": "f572bd0415b494b66741b900397988f64c65c6620b9b0f70f7de6657fc9a1811",
+  "sha256_reposta": "96565bc0c3db3294e5ce983ff22de8ccffb2bb9ab399dd86c8d082df732463f2",
+  "base": {
+   "numbers": 149,
+   "matched": 41,
+   "orphans": 89,
+   "misattributions": 9,
+   "undeclared": 0,
+   "undeclared_assertions": 11,
+   "failed_assertions": 0,
+   "number_adjacencies": 1
+  },
+  "com_a_planta": {
+   "numbers": 149,
+   "matched": 40,
+   "orphans": 90,
+   "misattributions": 9,
+   "undeclared": 0,
+   "undeclared_assertions": 11,
+   "failed_assertions": 0,
+   "number_adjacencies": 1
+  },
+  "ratchet": [
+   "orphans: 90 > baseline 89 — new unledgered/unattributed content"
+  ],
+  "veredito_com_a_planta": "FAIL (ratchet)",
+  "reposta": {
+   "numbers": 149,
+   "matched": 41,
+   "orphans": 89,
+   "misattributions": 9,
+   "undeclared": 0,
+   "undeclared_assertions": 11,
+   "failed_assertions": 0,
+   "number_adjacencies": 1
+  },
+  "ratchet_reposta": [],
+  "veredito_reposta": "ok"
+ },
+ "fontes_do_estudo": {
+  "_": "Lidas da árvore principal, que é onde as cópias vivem; a worktree não as tem.",
+  "ficheiros": {
+   "Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf": {
+    "na_arvore_principal": true,
+    "sha256": "555936bdc750f66826c4919fab5d288e0b726a76e72f224ba655c82390381366",
+    "bate_com_o_manifesto": true
+   },
+   "relatorio-full.txt": {
+    "na_arvore_principal": true,
+    "sha256": "bfdcf39a986889dd006eccc975a22fd6f6749942ae60720a7921ff8e538c07aa",
+    "bate_com_o_manifesto": true
+   }
+  },
+  "linhas_do_gitignore": [
+   69,
+   70
+  ],
+  "pdf_vistos_pelo_mesmo_find_conhecido_positivo": 759
+ },
+ "verificacao_na_fonte": {
+  "ficheiro": "content/11 Seguranca Social/source/relatorio-full.txt",
+  "_": "Uma frase é citada inteira, como a linha a gravou, e procurada na fonte com acentos dobrados dos dois lados.",
+  "frases_das_que_podem_declarar": {
+   "fs-penalizacao-seletiva": {
+    "valor": "selectiva",
+    "frases_que_a_linha_cita": [
+     "A evolucao legislativa posterior do mecanismo, sintetizada na Tabela 10.1, transformou um instrumento geral de adaptacao demografica numa penalizacao selectiva, aplicavel apenas a quem se reforma antecipadamente e nao beneficia de um regime especial.",
+     "o mecanismo actual incide apenas sobre quem acede antecipadamente a pensao e nao se enquadra nas excepcoes legais."
+    ],
+    "todas_na_fonte": true,
+    "a_que_traz_o_valor": [
+     "A evolucao legislativa posterior do mecanismo, sintetizada na Tabela 10.1, transformou um instrumento geral de adaptacao demografica numa penalizacao selectiva, aplicavel apenas a quem se reforma antecipadamente e nao beneficia de um regime especial."
+    ]
+   },
+   "fs-heterogeneidade-longevidade": {
+    "valor": "agregada",
+    "frases_que_a_linha_cita": [
+     "A esperanca media de vida aos 65 anos e uma estatistica agregada, e nao um factor de anuidade actuarial. Nao incorpora a estrutura completa da mortalidade por idade, nao diferencia coortes, nao considera explicitamente a indexacao futura das pensoes e nao reflecte a heterogeneidade socioeconomica da longevidade. Trabalhadores com carreiras longas, baixos salarios, maior desgaste fisico ou menor esperanca de vida efectiva podem, assim, ser penalizados"
+    ],
+    "todas_na_fonte": true,
+    "a_que_traz_o_valor": [
+     "A esperanca media de vida aos 65 anos e uma estatistica agregada, e nao um factor de anuidade actuarial. Nao incorpora a estrutura completa da mortalidade por idade, nao diferencia coortes, nao considera explicitamente a indexacao futura das pensoes e nao reflecte a heterogeneidade socioeconomica da longevidade. Trabalhadores com carreiras longas, baixos salarios, maior desgaste fisico ou menor esperanca de vida efectiva podem, assim, ser penalizados"
+    ]
+   }
+  },
+  "as_que_parecem_poder": {
+   "dupla contagem": {
+    "linha": "fs-dupla-contagem",
+    "ocorrencias_na_fonte": 13,
+    "no_excerpt_da_propria_linha": false,
+    "ocorrencias_junto_a_base_administrativa": 0,
+    "janelas": [
+     "sobretudo sobre certas modalidades de reforma antecipada, ao mesmo tempo que a idade normal de acesso passou tambem a ser indexada a esperanca de vida de que resulta uma dupla contagem do mesmo risco demografico, agravada pela acumulacao com a penalizacao mensal. Tecnicamente, a formula, baseada num racio de esperancas medias de vida aos 65 anos, e ins",
+     ", 20152025 Fonte: Elaboracao propria com base em dados da CGA. em que Ttintr a corresponde a transferencias ou fluxos intra-publicos que devem ser eliminados para evitar dupla contagem. Para uma coorte publica transferida para o Sistema Previdencial, o saldo anual e: Stcoorte = Ctcoorte Btcoorte . Durante a fase activa, tende a verificar-se Ctcoorte > ",
+     "rtes publicas pos-2005 comecarem a aceder a reforma, e precisamente o mecanismo descrito nas Fases I e II da seccao 3.4.5 infra, pelo que subtrai-la aqui redundaria numa dupla contagem. A leitura da Tabela 3.7 confirma, agora em termos estritamente financeiros, o que a leitura conjunta dos indicadores fisicos ja sugerira: o saldo consolidado dos dois r",
+     "scimo de direitos sobre o sistema de pensoes, i.e., K x = 0 e B x+1 = B x . Recomenda-se ainda que a penalizacao por reforma antecipada seja reformulada de modo a evitar dupla contagem entre a penalizacao mensal e o factor de sustentabilidade. Uma solucao possivel passaria pela substituicao da acumulacao pouco transparente dos dois mecanismos por um fa",
+     " redistribuicao, de proteccao social ou de sustentabilidade financeira. Em segundo lugar, a penalizacao por reforma antecipada deveria ser reformulada de modo a evitar a dupla contagem entre a penalizacao mensal de 0,5% e o factor de sustentabilidade. Estes mecanismos tem fundamentos distintos: a penalizacao mensal procura reflectir o inicio mais cedo ",
+     "s exemplos mostram que, mesmo em regimes NDC, a indexacao das pensoes em pagamento deve ser compativel com a taxa de retorno nocional e com o divisor actuarial, evitando dupla contagem de ganhos salariais ou de produtividade. Para Portugal, a comparacao sugere que a regra actual se situa entre os modelos de indexacao pura ao nivel de precos e os modelo",
+     "ios menos 1,6 pontos percentuais, ou o frontload italiano de 1,5% deve permanecer compativel com a taxa de retorno nocional incorporada no divisor actuarial, sob pena de dupla contagem dos ganhos de produtividade. A proposta de reforma deste capitulo assenta numa distincao central, ja desenvolvida no capitulo anterior sobre justica intra e intergeracio",
+     "Noutros paises, como na Finlandia, a adaptacao combina o ajustamento da pensao com o ajustamento da idade de reforma, mas de forma transparente e calibrada para evitar a dupla contagem; noutros ainda, a adaptacao passa sobretudo por mecanismos automaticos de equilibrio, regras de indexacao da idade legal de reforma ou factores ligados a relacao entre c",
+     "relacao entre contribuintes e pensionistas, como sucede na Alemanha. A licao principal e que os instrumentos devem ser coerentes entre si e calibrados de modo a evitar a dupla contagem do mesmo risco demografico. A reforma proposta assenta numa distincao central. Num futuro regime NDC, o factor de sustentabilidade deve ser eliminado enquanto penalizaca",
+     "a. Finlandia Coeficiente de esperanca de vida A ligacao a longevidade combina ajustamento da pensao aplicado a pensao inicial e idade e ajustamento da idade, mas evita a dupla contagem e e de reforma ligada a longevidade comunicada de forma transparente por coorte. das coortes. Alemanha Factor de sustentabilidade na in- A sustentabilidade financeira na",
+     "nto. A utilizacao simultanea de varios instrumentos pode ser justificada, mas apenas quando cada um desempenha uma funcao distinta e quando a calibracao conjunta evita a dupla contagem do mesmo risco demografico. Em terceiro lugar, os mecanismos automaticos devem ser acompanhados por garantias de adequacao, em particular para trabalhadores com carreira",
+     "gime de beneficio definido Se Portugal mantiver o regime de beneficio definido, recomenda-se que a penalizacao por reforma antecipada seja reformulada de modo a evitar a dupla contagem entre a penalizacao mensal e o factor de sustentabilidade. Uma solucao possivel consistiria em substituir a acumulacao pouco transparente dos dois mecanismos por um fact",
+     "ma. Outros paises, como a Finlandia, combinam o ajustamento da pensao com o ajustamento da idade de reforma, mas fazem-no de forma transparente e calibrada para evitar a dupla contagem. A licao principal desta comparacao e clara: os instrumentos de adaptacao a longevidade devem ser coerentes entre si, e cada um deve desempenhar uma funcao distinta e ex"
+    ]
+   },
+   "inexistente": {
+    "linha": "ch12-sem-base-administrativa",
+    "ocorrencias_na_fonte": 3,
+    "no_excerpt_da_propria_linha": false,
+    "ocorrencias_junto_a_base_administrativa": 0,
+    "janelas": [
+     "ndo o desconto real aplicado aos fluxos de caixa futuros. Metodos de colocacao: subscricao publica, preferencialmente atraves de canais digitais, com custos reduzidos ou inexistentes para o aforrador/investidor. Mercado primario: segmento de retalho. Mercado secundario: admissao a negociacao em mercado regulamentado, por exemplo na Euronext Lisbon. ",
+     "ugal, o desenvolvimento dos instrumentos de retalho deve privilegiar produtos com arquitectura simples, linguagem contratual acessivel, custos explicitos e reduzidos, ou inexistentes, para o aforrador e opcoes por defeito bem desenhadas. A simplicidade nao e apenas uma caracteristica comercial; constitui um requisito de politica publica, na medida e",
+     "transformar parte da despesa formalizada em poupanca futura, o programa cria um beneficio associado ao acto de pedir factura, mesmo quando a deducao em IRS e reduzida ou inexistente. A sua funcao nao e substituir o regime fiscal actual, mas complementar os incentivos existentes com uma logica previdencial, transparente e de longo prazo. A componente"
+    ]
+   }
+  }
+ },
+ "carga_bruta_do_06": {
+  "caminho": "content/06 Évora Economy/Technical Source/raw/web_investment_claims.json",
+  "linhas_chamadas_claims": 32,
+  "linhas_com_id_e_value": 0,
+  "e_livro_para_o_portao": false,
+  "campos_da_primeira_linha": [
+   "accessed_at_utc",
+   "claim",
+   "excerpt",
+   "notes",
+   "source_type",
+   "source_url",
+   "status",
+   "topic",
+   "unit",
+   "value_exact"
+  ]
+ },
+ "adjacencia_citada": {
+  "trecho": "0,50% para 25 a 34, 0,65% para 35 a 39",
+  "esta_na_edicao": true
+ },
+ "totais": {
+  "_": "Somas das duas edições, medidas na cópia de ensaio do contrafactual.",
+  "orfaos_das_duas_edicoes": {
+   "parcelas": {
+    "html": 89,
+    "relatorio-md": 328
+   },
+   "total": 417
+  },
+  "atribuicoes_erradas_das_duas_edicoes": {
+   "parcelas": {
+    "html": 9,
+    "relatorio-md": 95
+   },
+   "total": 104
+  },
+  "numeros_impressos_pelas_duas_edicoes": {
+   "parcelas": {
+    "html": 149,
+    "relatorio-md": 654
+   },
+   "total": 803
+  }
+ },
+ "planta_livro_nao_declarado": {
+  "ficheiro": "planta-livro-nao-declarado.txt",
+  "plantado": "content/15 Orcamento do Estado 2027/ledger.json",
+  "linha_dos_livros": "GATE  livros declarados      FAIL (14 livro(s) em 476 JSON sob content/, 2 exceção(ões) escrita(s), 0 ilegível(eis))",
+  "livros_com_a_planta": 14,
+  "json_lidos_com_a_planta": 476,
+  "excecoes_escritas": 2,
+  "ilegiveis": 0,
+  "linha_do_veredito": "GATE: FAIL — 1 problem(s); commit blocked",
+  "problemas": 1,
+  "saida_do_portao": 1,
+  "linhas_que_nomeiam_a_planta": 2,
+  "outras_conferencias_vermelhas": 0
+ },
+ "suite_do_portao": {
+  "saida": 0,
+  "linha_pass": "GATE_TEST: PASS — 18 checks (clean measure, orphan ratchet, equal/improved pass, misattribution ratchet, structural raise, update refuses a rise, update records one when asked, ledger read by content over all rows, payload is not a ledger, scan counts what it read, undeclared ledger caught, declared ledger passes, written exception passes, exception with no reason refused, duplicate exception refused, exception on a declared ledger refused, stale exception refused, unreadable json under content/ refused)",
+  "conferencias": 18,
+  "inventario": [
+   "clean measure",
+   "orphan ratchet",
+   "equal/improved pass",
+   "misattribution ratchet",
+   "structural raise",
+   "update refuses a rise",
+   "update records one when asked",
+   "ledger read by content over all rows",
+   "payload is not a ledger",
+   "scan counts what it read",
+   "undeclared ledger caught",
+   "declared ledger passes",
+   "written exception passes",
+   "exception with no reason refused",
+   "duplicate exception refused",
+   "exception on a declared ledger refused",
+   "stale exception refused",
+   "unreadable json under content/ refused"
+  ],
+  "novas_deste_bloco": [
+   "ledger read by content over all rows",
+   "payload is not a ledger",
+   "scan counts what it read",
+   "undeclared ledger caught",
+   "declared ledger passes",
+   "written exception passes",
+   "exception with no reason refused",
+   "duplicate exception refused",
+   "exception on a declared ledger refused",
+   "stale exception refused",
+   "unreadable json under content/ refused"
+  ],
+  "n_novas": 11,
+  "plantas": [
+   "undeclared ledger caught",
+   "exception with no reason refused",
+   "duplicate exception refused",
+   "exception on a declared ledger refused",
+   "stale exception refused",
+   "unreadable json under content/ refused"
+  ],
+  "controlos": [
+   "ledger read by content over all rows",
+   "payload is not a ledger",
+   "scan counts what it read",
+   "declared ledger passes",
+   "written exception passes"
+  ],
+  "n_plantas": 6,
+  "n_controlos": 5
+ },
+ "excecao_travessia": {
+  "caminho": "content/03 Regional Economy/Travessia das Regioes/ledger.json",
+  "linhas": 8,
+  "citado": "PORQUE NÃO ESTÃO NO ledger.json DO ESTUDO: core/receipts.py resolve uma figura impressa contra todas as linhas do livro com o mesmo valor. Postas lá, estas oito reancoraram onze figuras já publicadas, entre elas uma quota de VAB de 27 % do Centro que passou a resolver-se contra a distância dos Açores à média da UE-27. Um livro que nenhuma edição lê não pode fazer isso.",
+  "_": "A razão é a nota do próprio ficheiro, citada e não reescrita."
+ },
+ "linhas_com_ressalva_de_verificacao": {
+  "n": 3,
+  "linhas": {
+   "taxa-substituicao-2025-2065": {
+    "ressalvas": [
+     "por confirmar"
+    ],
+    "nota": "Percentagem. Trabalhador com 40 anos de contribuicoes e salario medio. O racio pensao/salario e atribuido a Comissao Europeia (provavelmente Ageing Report) - fonte primaria POR CONFIRMAR."
+   },
+   "cga-saldo-e-comparticipacao": {
+    "ressalvas": [
+     "[verify]"
+    ],
+    "nota": "IDENTIFICACAO CONFIRMADA. A coluna 'Saldo CGA' da Tabela 3.7 do relatorio Bravo (2025: -6962,0; 2024: -6541,0) coincide EXACTAMENTE com a comparticipacao do OE a CGA nesses anos, com o sinal trocado. Nao e um saldo: e a comparticipacao do OE a CGA, que o CFP descreve como 'destinada a assegurar o equilibrio financeiro da CGA'; a norma legal exacta que a fixa nao esta nas fontes espelhadas e fica ["
+   },
+   "ageing-report-tabela18": {
+    "ressalvas": [
+     "por fechar"
+    ],
+    "nota": "POR FECHAR. O relatorio (pp.81, 91) cita o Ageing Report 2024 para 56,28% (2025), 49,80% (2045) e 37,82% (2060). O 37,82 corresponde exactamente a 'Public scheme (BR)' em 2060 (37,8). O 56,28 NAO pode sair dessa serie: num percurso monotono, 2025 tem de ficar entre 52,9 (2022) e 55,3 (2030), e 56,28 excede ambos. E consistente com 'Total benefir ratio', cujo valor de 2030 e 56,3 - mas nessa serie "
+   }
+  },
+  "_": "Dívida de conteúdo para o M4b; fora da contagem das 28 recusas estruturais."
+ },
+ "varredura_de_content": {
+  "_": "A mesma varredura nas duas árvores. A principal traz também os ficheiros excluídos do repositório, que a worktree não tem.",
+  "worktree": {
+   "json_lidos": 475,
+   "livros": 13,
+   "ilegiveis": []
+  },
+  "arvore_principal": {
+   "json_lidos": 1123,
+   "livros": 13,
+   "ilegiveis": []
+  }
+ },
+ "portao_dos_livros_declarados": {
+  "livros_sob_content": [
+   "content/01 Energy Water and Climate/Onde Está a Água — Technical Source/ledger_onde_pt.json",
+   "content/03 Regional Economy/Travessia das Regioes/ledger.json",
+   "content/03 Regional Economy/ledger.json",
+   "content/04 Évora Public Money/ledger.json",
+   "content/06 Évora Economy/ledger.json",
+   "content/07 Évora Municipal Accounts/ledger.json",
+   "content/08 Évora Mandates/ledger.json",
+   "content/09 Évora Pelouros/ledger.json",
+   "content/10 Housing/ledger.json",
+   "content/11 Seguranca Social/ledger.json",
+   "content/12 Concelhos/ledger.json",
+   "content/13 Dominios/ledger.json",
+   "content/14 Évora 2027/ledger.json"
+  ],
+  "n_livros": 13,
+  "n_entregaveis": 37,
+  "n_livros_declarados": 11,
+  "excecoes": [
+   "content/03 Regional Economy/Travessia das Regioes/ledger.json",
+   "content/11 Seguranca Social/ledger.json"
+  ],
+  "orfaos": [],
+  "defeitos_da_lista": [],
+  "veredito": "ok",
+  "divida_de_registo_previo": {
+   "estudos_sem_registo": [
+    "03 Regional Economy",
+    "04 Évora Public Money",
+    "06 Évora Economy",
+    "07 Évora Municipal Accounts",
+    "08 Évora Mandates",
+    "09 Évora Pelouros",
+    "14 Évora 2027",
+    "Onde Está a Água — Technical Source"
+   ],
+   "_": "Fica em oito porque o 11 não foi declarado; um registo escrito depois da recolha não certifica nada e não se escreve.",
+   "n": 8
+  }
+ },
+ "precedentes_de_value_not_numeric": {
+  "livros": {
+   "content/12 Concelhos/ledger.json": {
+    "n": 12,
+    "valores": [
+     "N.d."
+    ],
+    "todos_com_o_valor_no_proprio_excerpt": true
+   },
+   "content/14 Évora 2027/ledger.json": {
+    "n": 2,
+    "valores": [
+     "- €",
+     "-€"
+    ],
+    "todos_com_o_valor_no_proprio_excerpt": true
+   }
+  },
+  "total_de_linhas": 14
+ }
+}

@@ -20,7 +20,7 @@
    "sem_resposta": []
   }
  },
- "confirmados": 18,
+ "confirmados": 21,
  "propostos_por_conferir": 0,
  "nomes_do_ine": {
   "lido": 16,
@@ -2876,7 +2876,7 @@
     "endereco": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/edat_lfse_14?format=JSON&lang=EN&geo=PT&sex=T&wstatus=POP"
    },
    "correspondencia": {
-    "ine": null,
+    "ine": "exata",
     "pordata": "exata"
    },
    "nome_ine": {
@@ -2885,7 +2885,7 @@
     "endereco": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0012182&lang=PT",
     "lido_em": "2026-09-21T19:35:20+00:00",
     "codigo_do_indicador": "0012182",
-    "mesma_medida": null,
+    "mesma_medida": true,
     "proposta": "mesma",
     "diferenca": null,
     "prova": {
@@ -2957,6 +2957,52 @@
      },
      "veredicto": "vizinha",
      "diferenca": "A página não declara o grupo etário; sem essa declaração não se pode confirmar que conta a mesma população dos 18 aos 24 anos da linha."
+    },
+    "resolucao": {
+     "nome_lido": "Taxa de abandono precoce de educação e formação (Série 2021 - %) por Local de residência (NUTS - 2024) e Sexo; Anual - INE, Inquérito ao emprego (Série - 2021)",
+     "cega": false,
+     "criterios": {
+      "conceito": {
+       "veredicto": "igual",
+       "diz": "Taxa de abandono precoce de educação e formação (Série 2021 - %) por Local de residência (NUTS - 2024) e Sexo; Anual - INE, Inquérito ao emprego (Série - 2021)",
+       "endereco": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0012182&lang=PT",
+       "lido_em": "2026-09-21T20:07:39+00:00",
+       "razao": "Taxa de abandono precoce de educação e formação, como a linha."
+      },
+      "unidade": {
+       "veredicto": "igual",
+       "diz": "Percentagem (%)",
+       "endereco": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0012182&lang=PT",
+       "lido_em": "2026-09-21T20:07:39+00:00",
+       "razao": "Percentagem, como a linha."
+      },
+      "populacao": {
+       "veredicto": "nao_declarado",
+       "diz": "IndicadorNome: \"Taxa de abandono precoce de educação e formação (Série 2021 - %) por Local de residência (NUTS - 2024) e Sexo; Anual - INE, Inquérito ao emprego (Série - 2021)\"; dimensões declaradas: \"Período de referência dos dados\" | \"Local de residência (NUTS - 2024)\" | \"Sexo\"",
+       "endereco": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0012182&lang=PT",
+       "lido_em": "2026-09-21T20:07:39+00:00",
+       "razao": "A página não declara o grupo etário em lado nenhum: as dimensões são o local de residência e o sexo. A linha é dos 18 aos 24 anos.",
+       "por_outra_via": {
+        "veredicto": "igual",
+        "diz": "ABANDONO PRECOCE DE EDUCAÇÃO E FORMAÇÃO : Situação do indivíduo com idade entre os 18 e os 24 anos e com nível de escolaridade completo até ao 3º ciclo do ensino básico que não está a frequentar qualquer atividade no âmbito da educação formal ou educação não formal. Fórmula: [População residente com idade entre 18 e 24 anos, com nível de escolaridade completo até ao 3º ciclo do ensino básico que não recebeu nenhum tipo de educação (formal ou não formal) no período de referência/ População residente com idade entre 18 e 24 anos]*100",
+        "endereco": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012182&lingua=PT",
+        "lido_em": "2026-09-22T15:03:25+00:00",
+        "razao": "A metainformação do próprio indicador (a secção «Conceitos» do bddXplorer do INE) define o abandono precoce como a situação do indivíduo dos 18 aos 24 anos, e a fórmula divide pela população residente dos 18 aos 24 anos: a população da linha."
+       }
+      },
+      "periodicidade": {
+       "veredicto": "igual",
+       "diz": "Periodic: \"Anual\"; PrimeiroPeriodo: \"2011\"; UltimoPeriodo: \"2025\"",
+       "endereco": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0012182&lang=PT",
+       "lido_em": "2026-09-21T20:07:39+00:00",
+       "razao": "Anual, como a linha."
+      }
+     },
+     "veredicto": "mesma",
+     "diferenca": null,
+     "razao": "A página do nome não declara o grupo etário, mas outra página do INE sobre o mesmo indicador (a metainformação do bddXplorer, código 0012182) define-o para os 18 aos 24 anos, no conceito e na fórmula. E o INE publica para Portugal em 2025 o valor da linha: 6,1 % (HM), lido em https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0012182&Dim1=S7A2025&Dim2=PT&lang=PT a 2026-09-22T15:17:02+00:00.",
+     "por": "lugar-de-direcao-claude-fable-5-1",
+     "quando": "2026-09-22T15:19:20+00:00"
     }
    },
    "nome_pordata": {
@@ -3663,7 +3709,7 @@
     "endereco": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi180?format=JSON&lang=EN&geo=PT&sex=T"
    },
    "correspondencia": {
-    "ine": null,
+    "ine": "exata",
     "pordata": "exata"
    },
    "nome_ine": {
@@ -3672,7 +3718,7 @@
     "endereco": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014083&lang=PT",
     "lido_em": "2026-09-21T19:35:30+00:00",
     "codigo_do_indicador": "0014083",
-    "mesma_medida": null,
+    "mesma_medida": true,
     "proposta": "mesma",
     "diferenca": null,
     "prova": {
@@ -3751,6 +3797,52 @@
      },
      "veredicto": "vizinha",
      "diferenca": "A página não declara a população do rácio e a sua série vai de 2023 a 2024; a linha é de 2025."
+    },
+    "resolucao": {
+     "nome_lido": "Desigualdade na distribuição de rendimentos S80/S20 (N.º) por Local de residência (NUTS - 2024); Anual - INE, Inquérito às condições de vida e rendimento",
+     "cega": false,
+     "criterios": {
+      "conceito": {
+       "veredicto": "igual",
+       "diz": "Desigualdade na distribuição de rendimentos S80/S20 (N.º) por Local de residência (NUTS - 2024); Anual - INE, Inquérito às condições de vida e rendimento",
+       "endereco": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014083&lang=PT",
+       "lido_em": "2026-09-21T20:08:39+00:00",
+       "razao": "Desigualdade na distribuição de rendimentos S80/S20, como a linha; a nota da página descreve o rendimento por adulto equivalente."
+      },
+      "unidade": {
+       "veredicto": "igual",
+       "diz": "Número (N.º)",
+       "endereco": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014083&lang=PT",
+       "lido_em": "2026-09-21T20:08:39+00:00",
+       "razao": "Um rácio publicado como número: é a mesma unidade dita por outras palavras («Ratio» na linha)."
+      },
+      "populacao": {
+       "veredicto": "nao_declarado",
+       "diz": "IndicadorNome: \"Desigualdade na distribuição de rendimentos S80/S20 (N.º) por Local de residência (NUTS - 2024); Anual - INE, Inquérito às condições de vida e rendimento\"; dimensões declaradas: \"Período de referência dos dados\" | \"Local de residência (NUTS - 2024)\"",
+       "endereco": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014083&lang=PT",
+       "lido_em": "2026-09-21T20:08:39+00:00",
+       "razao": "A página não declara a população a que o rácio se refere: a única dimensão além do período é o local de residência.",
+       "por_outra_via": {
+        "veredicto": "igual",
+        "diz": "Rácio S80/S20 é um indicador de desigualdade na distribuição do rendimento, definido como o rácio entre a proporção do rendimento total recebido pelos 20% da população com maiores rendimentos e a parte do rendimento auferido pelos 20% de menores rendimentos. Conceitos PERÍODO DE REFERÊNCIA : Período a que a informação se refere e que pode ser um dia específico ou um intervalo de tempo (mês, ano fiscal, ano civil, entre outros). AGREGADO DOMÉSTICO PRIVADO : Conjunto de pessoas que residem no mesmo alojamento e cujas despesas fundamentais ou básicas (alimentação, alojamento) são suportadas conjuntamente, independentemente da existência ou não de laços de parentesco; ou a pessoa que ocupa integralmente um alojamento ou que, partilhando-o com outros, não satisfaz a condição anterior.",
+        "endereco": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014083&lingua=PT",
+        "lido_em": "2026-09-22T15:03:52+00:00",
+        "razao": "A página não escreve «população total» por essas palavras. Define o rácio sobre «a população» (os 20 % com maiores rendimentos contra os 20 % com menores), sem corte de idade, e a lista de conceitos do indicador tem dois conceitos, o período de referência e o agregado doméstico privado, e nenhum de idade. A linha é o total (sex=T), sem restrição de idade."
+       }
+      },
+      "periodicidade": {
+       "veredicto": "igual",
+       "diz": "Periodic: \"Anual\"; PrimeiroPeriodo: \"2023\"; UltimoPeriodo: \"2024\"",
+       "endereco": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014083&lang=PT",
+       "lido_em": "2026-09-21T20:08:39+00:00",
+       "razao": "Anual, como a linha. A série do INE acaba no ano do rendimento (2024) porque, pela nota da metainformação do INE (https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014083&lang=PT, lida a 2026-09-22T15:17:56+00:00), «os dados referentes ao ano n são recolhidos pelo ICOR realizado em n+1»: o 2024 do INE é o ICOR de 2025, que é o 2025 da linha."
+      }
+     },
+     "veredicto": "mesma",
+     "diferenca": null,
+     "razao": "A população resolve-se pela definição do indicador na metainformação do bddXplorer (código 0014083), que a define sobre a população sem corte de idade. O período que a conferência estranhou (a série do INE acaba em 2024, a linha é de 2025) explica-o a nota do próprio INE na metainformação: «Os dados referentes ao ano n são recolhidos pelo ICOR realizado em n+1»; o INE rotula o ano do rendimento e o Eurostat o ano do inquérito. E os valores batem certo à precisão de uma casa decimal que o INE declara: o INE publica 5,2 para 2023 e 4,9 para 2024 (lidos em https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014083&Dim1=S7A2023&Dim2=PT&lang=PT e https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014083&Dim1=S7A2024&Dim2=PT&lang=PT a 2026-09-22T15:17:55+00:00 e 2026-09-22T15:17:05+00:00); o Eurostat publica 5,2 para 2024 e 4,86 para 2025 (lido em https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi180?format=JSON&lang=EN&geo=PT&sex=T a 2026-09-22T15:17:55+00:00), e a linha é 4,86 de 2025.",
+     "por": "lugar-de-direcao-claude-fable-5-1",
+     "quando": "2026-09-22T15:19:20+00:00"
     }
    },
    "nome_pordata": {
@@ -3838,7 +3930,7 @@
     "endereco": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T"
    },
    "correspondencia": {
-    "ine": null,
+    "ine": "exata",
     "pordata": "proxima"
    },
    "nome_ine": {
@@ -3847,7 +3939,7 @@
     "endereco": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014472&lang=PT",
     "lido_em": "2026-09-21T19:35:32+00:00",
     "codigo_do_indicador": "0014472",
-    "mesma_medida": null,
+    "mesma_medida": true,
     "proposta": "mesma",
     "diferenca": null,
     "prova": {
@@ -3919,6 +4011,52 @@
      },
      "veredicto": "vizinha",
      "diferenca": "A página não declara a população a que a taxa se refere; sem isso não se pode confirmar que é a mesma da linha."
+    },
+    "resolucao": {
+     "nome_lido": "Taxa de sobrecarga das despesas em habitação (%) por Local de residência (NUTS - 2024) e Tipologia de áreas urbanas; Anual - INE, Inquérito às condições de vida e rendimento",
+     "cega": false,
+     "criterios": {
+      "conceito": {
+       "veredicto": "igual",
+       "diz": "Taxa de sobrecarga das despesas em habitação (%) por Local de residência (NUTS - 2024) e Tipologia de áreas urbanas; Anual - INE, Inquérito às condições de vida e rendimento",
+       "endereco": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014472&lang=PT",
+       "lido_em": "2026-09-21T20:15:35+00:00",
+       "razao": "Taxa de sobrecarga das despesas em habitação, como a linha."
+      },
+      "unidade": {
+       "veredicto": "igual",
+       "diz": "Percentagem (%)",
+       "endereco": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014472&lang=PT",
+       "lido_em": "2026-09-21T20:15:35+00:00",
+       "razao": "Percentagem, como a linha."
+      },
+      "populacao": {
+       "veredicto": "nao_declarado",
+       "diz": "IndicadorNome: \"Taxa de sobrecarga das despesas em habitação (%) por Local de residência (NUTS - 2024) e Tipologia de áreas urbanas; Anual - INE, Inquérito às condições de vida e rendimento\"; dimensões declaradas: \"Período de referência dos dados\" | \"Local de residência (NUTS - 2024)\" | \"Tipologia de áreas urbanas\"",
+       "endereco": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014472&lang=PT",
+       "lido_em": "2026-09-21T20:15:35+00:00",
+       "razao": "A página não declara a população: as dimensões são o local de residência e a tipologia de áreas urbanas, e não há nota. A linha é o total, sem restrição de idade nem de sexo.",
+       "por_outra_via": {
+        "veredicto": "igual",
+        "diz": "POPULAÇÃO RESIDENTE : Conjunto de pessoas que, independentemente de estarem presentes ou ausentes num determinado alojamento no momento de observação, viveram no seu local de residência habitual por um período contínuo de, pelo menos, 12 meses anteriores ao momento de observação, ou que chegaram ao seu local de residência habitual durante o período correspondente aos 12 meses anteriores ao momento de observação, com a intenção de aí permanecer por um período mínimo de um ano. SOBRECARGA DAS DESPESAS ASSOCIADAS À HABITAÇÃO : Condição dos agregados familiares cuja carga das despesas associadas à habitação é superior a 40%.",
+        "endereco": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014472&lingua=PT",
+        "lido_em": "2026-09-22T15:05:52+00:00",
+        "razao": "A metainformação do próprio indicador (a secção «Conceitos» do bddXplorer do INE) nomeia a população residente, sem corte de idade nem de sexo, e define a sobrecarga como a condição dos agregados familiares com despesas de habitação acima de 40 %: a população da linha, que é o total."
+       }
+      },
+      "periodicidade": {
+       "veredicto": "igual",
+       "diz": "Periodic: \"Anual\"; PrimeiroPeriodo: \"2024\"; UltimoPeriodo: \"2025\"",
+       "endereco": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014472&lang=PT",
+       "lido_em": "2026-09-21T20:15:35+00:00",
+       "razao": "Anual, como a linha; o período declarado cobre 2025."
+      }
+     },
+     "veredicto": "mesma",
+     "diferenca": null,
+     "razao": "A página do nome não declara a população, mas outra página do INE sobre o mesmo indicador (a metainformação do bddXplorer, código 0014472) nomeia a população residente, sem corte de idade, e define a sobrecarga sobre os agregados familiares. E o INE publica para Portugal em 2025, no total, o valor da linha: 6,3 % (lido em https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014472&Dim1=S7A2025&Dim2=PT&lang=PT a 2026-09-22T15:17:07+00:00).",
+     "por": "lugar-de-direcao-claude-fable-5-1",
+     "quando": "2026-09-22T15:19:20+00:00"
     }
    },
    "nome_pordata": {
@@ -4763,9 +4901,9 @@
  "recusados": 19,
  "resolucao_de": {
   "ficheiro": "resolucoes-aplicadas.json",
-  "sha256": "59345936c731d899fc6468da12dd8c9f9db775cf05f3f5a14f80def10361a34b",
+  "sha256": "603778c52a7a17c849ee721e578f10cb37209b2e2e3707b81fee55bdf9119f71",
   "por": "lugar-de-direcao-claude-fable-5-1",
-  "quando": "2026-09-22T04:20:00+00:00"
+  "quando": "2026-09-22T15:19:20+00:00"
  },
- "por_decidir": 4
+ "por_decidir": 1
 }
