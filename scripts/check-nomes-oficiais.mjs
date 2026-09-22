@@ -66,26 +66,44 @@
  *        linha a forma é sempre a do recibo, traga o elemento a marca que trouxer;
  *   N2 · cada título de cartão com `data-nome="oficial"` rende um nome confirmado
  *        da linha que o `data-de-linha` diz;
- *   N3 · o conhecido-positivo: se o ficheiro tem nomes confirmados, pelo menos um
- *        tem de ser visto numa página (um seletor que deixasse de ver as páginas
- *        daria verde por não ver nada); se não tem nenhum, nenhuma página pode
- *        render um nome oficial, e são as plantas que provam que o seletor vê;
+ *   N3 · CADA nome confirmado do ficheiro rende-se no recibo da sua linha, NAS
+ *        DUAS EDIÇÕES. A primeira forma pedia só que se visse um nome qualquer,
+ *        e com isso todos os outros, ou a edição inglesa inteira, podiam
+ *        desaparecer sem fechar a construção (leitura a frio do M3b, achado 6).
+ *        O número esperado não se escreve: é a lista dos confirmados vezes duas.
+ *        Se não há confirmados, nenhuma página pode render um nome oficial;
  *   N5 · fora de um elemento marcado, nenhuma ligação de página nenhuma aponta para
  *        o endereço de um nome do ficheiro, confirmado ou não (a leitura a frio:
  *        tirar a marca a um elemento tornava-o invisível a esta régua). Os
  *        endereços comparam-se normalizados: a ordem dos parâmetros, um fragmento
- *        e uma barra final não fazem de um endereço outro endereço;
+ *        e uma barra final não fazem de um endereço outro endereço. E **o mesmo
+ *        endereço impresso como TEXTO**, com `<a>` ou sem ele, que a primeira
+ *        forma não via porque olhava só para `a[href]` (achado 8);
  *   N6 · fora de um elemento marcado, nenhum elemento de página nenhuma tem por
  *        texto inteiro um nome do ficheiro, confirmado ou não: um nome oficial só
  *        se rende com a marca, que é o que deixa a N1 e a N2 saberem de que linha
  *        é. O texto compara-se depois de juntar os filhos e de desfazer as
  *        entidades, para que um nome partido por dois elementos ou escrito com
- *        «&#38;» seja o mesmo nome;
+ *        «&#38;» seja o mesmo nome. E **o mesmo nome EMBEBIDO numa frase**, por
+ *        subcadeia, a partir de `LIMITE_DA_SUBCADEIA` caracteres (achado 8): a
+ *        primeira forma comparava o texto inteiro do elemento, e um nome dentro
+ *        de uma frase passava;
  *   N7 · a forma do ficheiro do motor: a `correspondencia` de cada medida é um
  *        objeto com uma marca por fonte. A forma antiga (uma cadeia por medida)
  *        fecha a construção com a razão, em vez de render zero nomes em silêncio;
- *   N4 · as plantas (`--prova`, que é como o `build` e o `verify` a chamam), sobre
- *        um ficheiro de nomes escrito aqui para isso e páginas com a forma real.
+ *   N4 · as plantas (`--prova`, que é como o `build` e o `verify` a chamam): 26
+ *        sobre páginas com a forma real, 4 sobre conjuntos de páginas (a N3), 9
+ *        sobre a travessia do aviso (o corpo de prova vive ao lado da função, em
+ *        `src/lib/aviso-do-motor.mjs`) e 1 sobre a forma do ficheiro (a N7), tudo
+ *        sobre um ficheiro de nomes escrito aqui para isso.
+ *
+ * O AVISO RECUSA-SE A QUALQUER PROFUNDIDADE (achado 7 da leitura a frio do M3b).
+ * Os três leitores perguntavam pela chave `aviso` no objeto do nome e mais nada,
+ * e o ficheiro de 22.09 traz `prova`, `conferencia` e `resolucao` com objetos e
+ * listas dentro. A travessia é uma só, em `src/lib/aviso-do-motor.mjs`, e é a
+ * ÚNICA peça que os três leitores partilham: a razão está escrita lá, e a
+ * decisão (a marca por fonte, o estado, o veredicto, o endereço e a hora)
+ * continua escrita três vezes, uma em cada leitor.
  *
  * Uso:  node scripts/check-nomes-oficiais.mjs [--prova]
  *       OEDP_DIST=<dir> mede outra construção.
@@ -97,6 +115,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
 
+import { temAviso, PLANTAS_DO_AVISO } from '../src/lib/aviso-do-motor.mjs';
+
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = process.env.OEDP_DIST ? path.resolve(process.env.OEDP_DIST) : path.join(RAIZ, 'dist');
 const FICHEIRO = path.join(RAIZ, 'src', 'data', 'enquadramento', 'nomes.json');
@@ -105,6 +125,27 @@ const FONTES = [
   ['nome_ine', 'INE'],
   ['nome_pordata', 'PORDATA'],
 ];
+const EDICOES = ['pt', 'en'];
+/**
+ * O COMPRIMENTO A PARTIR DO QUAL UM NOME SE PROCURA COMO SUBCADEIA (N6b).
+ *
+ * A N6 comparava o texto INTEIRO de um elemento com um nome, e por isso o mesmo
+ * nome dentro de uma frase passava (leitura a frio do M3b, achado 8). Fechar
+ * isso é procurá-lo como subcadeia, e aí o comprimento importa: dos 39 nomes do
+ * ficheiro, cinco têm menos de 40 caracteres, e um deles é «PIB per capita»,
+ * que é prosa corrente da casa e se rende hoje em 13 páginas construídas. Uma
+ * régua que o procurasse como subcadeia fechava a construção por causa de uma
+ * frase portuguesa, e não por causa de um nome oficial no sítio errado.
+ *
+ * O limite é 40 e não é uma escolha de gosto: é o maior dos cinco curtos (36)
+ * arredondado para cima, medido no ficheiro. **O que ele deixa de fora fica
+ * dito:** «Índice de perceção de corrupção» (31) é o único nome CONFIRMADO
+ * abaixo do limite, e continua protegido pela N6 inteira (nenhum elemento pode
+ * ter por texto inteiro esse nome, fora da marca) e pela N5, que não tem limite
+ * nenhum porque um endereço nunca é prosa. Medido a 22.09.2026 nas 7 354 páginas
+ * construídas: esse nome só aparece dentro da marca, nos seus dois recibos.
+ */
+const LIMITE_DA_SUBCADEIA = 40;
 
 const verde = (s) => `\x1b[32m${s}\x1b[0m`;
 const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
@@ -213,7 +254,7 @@ function lerNomes(j) {
           c === undefined || c === null
             ? 'a medida não traz marca de correspondência nenhuma, e um nome sem marca não é um nome confirmado'
             : 'o ficheiro do motor está na forma antiga, com uma «correspondencia» por medida em vez de uma marca por fonte, e nenhum nome dele se rende';
-      else if (Object.prototype.hasOwnProperty.call(o, 'aviso'))
+      else if (temAviso(o))
         porque = 'o motor escreveu um aviso: a conferência de ser a mesma medida ficou por fazer';
       else if (o.mesma_medida === false) porque = 'o motor marcou «mesma_medida: false»';
       else if (o.mesma_medida !== true) porque = 'o motor não o marcou «mesma_medida: true», e um nome sem veredicto não é um nome confirmado';
@@ -262,6 +303,42 @@ function linhaDoCaminho(relativo) {
   return m[1];
 }
 
+/** A edição de uma página pelo caminho: tudo o que começa em `en/` é a inglesa. */
+function edicaoDoCaminho(relativo) {
+  return relativo.split(path.sep).join('/').startsWith('en/') ? 'en' : 'pt';
+}
+
+/**
+ * O texto de uma página FORA dos elementos marcados, com os filhos juntos e as
+ * entidades desfeitas.
+ *
+ * É o que a N5b e a N6b precisam: a N6 comparava o texto inteiro de um elemento
+ * com um nome, e por isso o mesmo nome dentro de uma frase passava; a N5 olhava
+ * só para `a[href]`, e por isso um endereço impresso como texto passava
+ * (leitura a frio do M3b, achado 8). Aqui o texto é um só, e a procura é por
+ * subcadeia. Os elementos marcados saem inteiros, porque é lá dentro que um nome
+ * oficial PODE estar, e a N1 e a N2 já os conferem carácter a carácter.
+ *
+ * @param {any} root
+ * @param {Set<any>} marcados
+ */
+function textoForaDaMarca(root, marcados) {
+  const partes = [];
+  const anda = (no) => {
+    if (!no) return;
+    if (no.nodeType === 3) {
+      partes.push(no.rawText);
+      return;
+    }
+    if (marcados.has(no)) return;
+    const etiqueta = String(no.rawTagName ?? '').toLowerCase();
+    if (etiqueta === 'script' || etiqueta === 'style') return;
+    for (const filho of no.childNodes ?? []) anda(filho);
+  };
+  anda(root);
+  return textoNormal(partes.join(' '));
+}
+
 /**
  * A página merece ser analisada? A procura barata faz-se sobre o texto SEM
  * etiquetas e com as entidades desfeitas, para que um nome partido por dois
@@ -286,10 +363,13 @@ function mereceAnalise(html, nomes) {
  */
 function conferirPagina(html, relativo, nomes) {
   const erros = [];
+  /** @type {{ id: string, fonte: string, edicao: string }[]} os nomes que esta página rende em recibo */
+  const rendidos = [];
   let recibos = 0;
   let cartoes = 0;
   const root = parse(html);
   const idDaPagina = linhaDoCaminho(relativo);
+  const edicao = edicaoDoCaminho(relativo);
   const porque = (texto) => {
     const r = nomes.recusados.find((x) => x.nome === texto);
     return r ? `é o nome do ${r.fonte} para «${r.id}», recusado porque ${r.porque}` : 'não é um nome do ficheiro do motor';
@@ -320,10 +400,12 @@ function conferirPagina(html, relativo, nomes) {
     const texto = a.text.trim();
     const href = a.getAttribute('href') ?? '';
     const lista = nomes.confirmados.get(idDaPagina) ?? [];
-    if (!lista.some((x) => x.nome === texto && x.endereco === href))
+    const certo = lista.find((x) => x.nome === texto && x.endereco === href);
+    if (!certo)
       erros.push(`N1 ${relativo}: o recibo de «${idDaPagina}» mostra «${texto.slice(0, 90)}» (${href.slice(0, 70)}), que ${
         lista.some((x) => x.nome === texto) ? 'tem o endereço trocado' : porque(texto)
       }`);
+    else rendidos.push({ id: idDaPagina, fonte: certo.fonte, edicao });
   }
   /* FORA DA MARCA. Um elemento a que tirassem a marca deixava de ser visto pelas
      duas células de cima; estas duas procuram o que não pode estar em página
@@ -332,10 +414,19 @@ function conferirPagina(html, relativo, nomes) {
     for (let n = el; n; n = n.parentNode) if (marcados.has(n)) return true;
     return false;
   };
+  /* O que as duas células de cima já disseram, para as duas de baixo não o
+     dizerem outra vez: uma ligação cujo texto É o endereço, ou um elemento cujo
+     texto inteiro É o nome, é uma ocorrência só e não duas. */
+  const nomesDitos = new Set();
+  const enderecosDitos = new Set();
   for (const a of root.querySelectorAll('a[href]')) {
     if (dentroDeMarcado(a)) continue;
-    const r = nomes.todosOsEnderecos.get(enderecoNormal(a.getAttribute('href') ?? ''));
-    if (r) erros.push(`N5 ${relativo}: uma ligação sem marca aponta para o endereço do nome do ${r.fonte} para «${r.id}» («${r.nome.slice(0, 70)}»), que ${r.estado === 'recusado' ? `foi recusado porque ${r.porque}` : r.porque}`);
+    const alvo = enderecoNormal(a.getAttribute('href') ?? '');
+    const r = nomes.todosOsEnderecos.get(alvo);
+    if (r) {
+      enderecosDitos.add(alvo);
+      erros.push(`N5 ${relativo}: uma ligação sem marca aponta para o endereço do nome do ${r.fonte} para «${r.id}» («${r.nome.slice(0, 70)}»), que ${r.estado === 'recusado' ? `foi recusado porque ${r.porque}` : r.porque}`);
+    }
   }
   for (const el of root.querySelectorAll('*')) {
     const etiqueta = (el.rawTagName ?? '').toLowerCase();
@@ -348,9 +439,72 @@ function conferirPagina(html, relativo, nomes) {
     /* Só o elemento mais de fora: o filho que tem o mesmo texto inteiro é a mesma ocorrência. */
     const pai = el.parentNode;
     if (pai && pai.rawTagName && textoNormal(pai.text) === texto) continue;
+    nomesDitos.add(texto);
     erros.push(`N6 ${relativo}: um <${etiqueta}> sem marca tem por texto inteiro o nome do ${r.fonte} para «${r.id}» («${r.nome.slice(0, 70)}»), que ${r.estado === 'recusado' ? `foi recusado porque ${r.porque}` : r.porque}`);
   }
-  return { erros, recibos, cartoes };
+  /* E O QUE ESTÁ EMBEBIDO (leitura a frio do M3b, achado 8). As duas células de
+     cima fechavam a porta e deixavam a janela aberta: a N6 comparava o texto
+     INTEIRO de um elemento, e o mesmo nome dentro de uma frase passava; a N5
+     olhava só para `a[href]`, e o mesmo endereço impresso como texto passava.
+     Aqui procura-se por subcadeia, num texto só, fora da marca. */
+  const fora = textoForaDaMarca(root, marcados);
+  if (fora !== '') {
+    for (const [n, r] of nomes.todosOsNomes) {
+      if (n.length < LIMITE_DA_SUBCADEIA || nomesDitos.has(n) || !fora.includes(n)) continue;
+      erros.push(
+        `N6 ${relativo}: o nome do ${r.fonte} para «${r.id}» («${r.nome.slice(0, 70)}») aparece por dentro do texto de uma página, fora de um elemento marcado; ` +
+          `um nome oficial só se rende com a marca, que é o que deixa a N1 e a N2 saberem de que linha é`,
+      );
+    }
+    for (const [e, r] of nomes.todosOsEnderecos) {
+      const cru = textoNormal(r.endereco);
+      if (enderecosDitos.has(e) || (!fora.includes(cru) && !fora.includes(e))) continue;
+      erros.push(
+        `N5 ${relativo}: o endereço do nome do ${r.fonte} para «${r.id}» («${r.nome.slice(0, 50)}») aparece como TEXTO numa página, fora de um elemento marcado; ` +
+          `o endereço de um nome oficial é a porta dele no recibo, e não prosa`,
+      );
+    }
+  }
+  return { erros, recibos, cartoes, rendidos };
+}
+
+/**
+ * ---------------------------------------------------------------------------
+ * N3 · CADA NOME CONFIRMADO VOLTOU, E NAS DUAS EDIÇÕES
+ * ---------------------------------------------------------------------------
+ * A primeira forma desta célula perguntava uma coisa só: «havendo nomes
+ * confirmados, pelo menos um é visto?». A leitura a frio do M3b (achado 6)
+ * mostrou o buraco: um nome visto em qualquer sítio deixava desaparecer todos os
+ * outros, ou a edição inglesa inteira, ou a portuguesa, sem fechar a construção.
+ * O número 36 também não se escreve em lado nenhum: **deriva do ficheiro**, que
+ * é a lista dos nomes confirmados vezes as duas edições.
+ *
+ * A célula é uma função à parte porque é do CONJUNTO das páginas e não de uma,
+ * e porque assim as plantas podem exercê-la com conjuntos escritos para elas.
+ *
+ * @param {ReturnType<typeof lerNomes>} nomes
+ * @param {Set<string>} rendidos  chaves `id|fonte|edicao` vistas em recibo
+ * @param {Set<string>} paginasDeLinha  chaves `id|edicao` das páginas de linha que existem
+ * @param {number} elementos  quantos elementos renderam um nome oficial ao todo
+ */
+function conferirOConjunto(nomes, rendidos, paginasDeLinha, elementos) {
+  const erros = [];
+  const esperados = [];
+  for (const [id, lista] of nomes.confirmados)
+    for (const x of lista) for (const edicao of EDICOES) esperados.push({ id, fonte: x.fonte, edicao });
+  for (const e of esperados) {
+    if (rendidos.has(`${e.id}|${e.fonte}|${e.edicao}`)) continue;
+    const temPagina = paginasDeLinha.has(`${e.id}|${e.edicao}`);
+    erros.push(
+      `N3: o nome do ${e.fonte} para «${e.id}» está confirmado no ficheiro do motor e não se rende no recibo da edição «${e.edicao}»; ` +
+        (temPagina
+          ? 'a página da linha existe e não o mostra'
+          : 'não há página dessa linha nessa edição, e um nome confirmado sem recibo onde aparecer é um nome que se perdeu pelo caminho'),
+    );
+  }
+  if (esperados.length === 0 && elementos > 0)
+    erros.push(`N3: o ficheiro do motor não tem nome confirmado nenhum e ${elementos} elemento(s) rendem um nome oficial`);
+  return { erros, esperados: esperados.length };
 }
 
 /** Todas as páginas de `dist/`, em caminhos relativos. */
@@ -383,20 +537,26 @@ let lidas = 0;
 let analisadas = 0;
 let recibos = 0;
 let cartoes = 0;
+/* O CONJUNTO, para a N3: o que cada recibo rendeu, e que páginas de linha
+   existem. A existência da página recolhe-se ANTES da procura barata, porque uma
+   página que não rende nome nenhum é exatamente o caso que a N3 tem de apanhar. */
+const rendidos = new Set();
+const paginasDeLinha = new Set();
 for (const rel of paginas(DIST)) {
   lidas += 1;
+  const idDaPagina = linhaDoCaminho(rel);
+  if (idDaPagina !== null) paginasDeLinha.add(`${idDaPagina}|${edicaoDoCaminho(rel)}`);
   const html = fs.readFileSync(path.join(DIST, rel), 'utf8');
   if (!mereceAnalise(html, NOMES)) continue;
   analisadas += 1;
   const r = conferirPagina(html, rel, NOMES);
   recibos += r.recibos;
   cartoes += r.cartoes;
+  for (const x of r.rendidos) rendidos.add(`${x.id}|${x.fonte}|${x.edicao}`);
   falhas.push(...r.erros);
 }
-if (nConfirmados > 0 && recibos + cartoes === 0)
-  falhas.push(`N3: o ficheiro do motor tem ${nConfirmados} nome(s) confirmado(s) e nenhuma página rende nenhum; o seletor deixou de ver as páginas, e um verde assim não prova nada`);
-if (nConfirmados === 0 && recibos + cartoes > 0)
-  falhas.push(`N3: o ficheiro do motor não tem nome confirmado nenhum e ${recibos + cartoes} elemento(s) rendem um nome oficial`);
+const conjunto = conferirOConjunto(NOMES, rendidos, paginasDeLinha, recibos + cartoes);
+falhas.push(...conjunto.erros);
 
 /* ------------------------------------------------------------------ plantas */
 
@@ -427,6 +587,12 @@ if (process.argv.includes('--prova')) {
          o motor não leu na fonte. */
       { id_da_linha: 'planta-j', correspondencia: { ine: 'exata', pordata: null }, nome_ine: { estado: 'lido', nome: 'Nome exato por decidir', endereco: 'https://exemplo.invalido/j', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: null, proposta: 'mesma' } },
       { id_da_linha: 'planta-k', correspondencia: { ine: null, pordata: 'exata' }, nome_pordata: { estado: 'sem_pagina', nome: 'Nome de um estado que não é lido', endereco: 'https://exemplo.invalido/k', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: true } },
+      /* AS DUAS DA PASSAGEM DE CORREÇÃO (22.09.2026). A primeira é um nome
+         comprido, acima do limite da subcadeia, para provar a N6b; a segunda tem
+         o aviso fundo, dentro de `conferencia.criterios.unidade`, que é onde o
+         ficheiro de 22.09 o poderia trazer sem nenhum dos três leitores o ver. */
+      { id_da_linha: 'planta-l', correspondencia: { ine: 'exata', pordata: null }, nome_ine: { estado: 'lido', nome: 'Nome oficial comprido de uma medida, com unidade e periodicidade declaradas; Anual', endereco: 'https://exemplo.invalido/l?varcd=0099999', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: true } },
+      { id_da_linha: 'planta-m', correspondencia: { ine: 'exata', pordata: null }, nome_ine: { estado: 'lido', nome: 'Nome com o aviso escondido lá no fundo da conferência', endereco: 'https://exemplo.invalido/m', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: true, conferencia: { criterios: { unidade: { diz: 'Número', aviso: 'a conferência da unidade ficou por fazer' } } } } },
     ],
   });
   const recibo = (nome, href, extra = '') =>
@@ -457,7 +623,16 @@ if (process.argv.includes('--prova')) {
     ['uma ligação sem marca com barra final e fragmento', semMarca('<p><a href="https://exemplo.invalido/c/#topo">ver</a></p>'), 'areas/planta/index.html', /N5 /],
     ['a página certa, com «&» no nome e no endereço', recibo(A.nome, A.endereco), 'livro-razao/planta-a/index.html', null],
     ['o cartão certo', cartao('planta-a', A.nome), 'areas/planta/index.html', null],
-    ['um nome recusado dentro de uma frase, que não é um nome oficial rendido', semMarca('<p>O INE chama-lhe Nome com aviso, e a página di-lo numa frase.</p>'), 'estudos/planta/index.html', null],
+    /* INVERTIDA A 22.09.2026 (leitura a frio do M3b, achado 8). Esta planta
+       esperava que um nome inteiro dentro de uma frase PASSASSE, o que
+       contradizia a regra do brief: fora da marca não pode aparecer nenhum nome
+       do ficheiro. Agora espera a recusa. O caso que continua a passar, e tem
+       planta própria a seguir, é o de um nome CURTO, abaixo do limite da
+       subcadeia, porque aí a cadeia é prosa corrente e não um nome oficial. */
+    ['um nome comprido dentro de uma frase de uma página, sem marca', semMarca('<p>O INE chama-lhe Nome oficial comprido de uma medida, com unidade e periodicidade declaradas; Anual, e a página di-lo numa frase.</p>'), 'estudos/planta/index.html', /N6 .*por dentro do texto/],
+    ['um endereço do INE como texto simples, sem <a> nenhum', semMarca('<p>Lido em https://exemplo.invalido/l?varcd=0099999 a 21.09.2026.</p>'), 'estudos/planta/index.html', /N5 .*como TEXTO/],
+    ['um nome curto dentro de uma frase, que é prosa e não um nome oficial rendido', semMarca('<p>O INE chama-lhe Nome com aviso, e a página di-lo numa frase.</p>'), 'estudos/planta/index.html', null],
+    ['um nome com o aviso fundo, dentro de conferencia.criterios.unidade', recibo('Nome com o aviso escondido lá no fundo da conferência', 'https://exemplo.invalido/m'), 'livro-razao/planta-m/index.html', /N1 .*aviso/],
     /* AS TRÊS DE 22.09.2026. As duas primeiras são casos que a marca por medida
        não sabia distinguir: com uma só cadeia «exata» por medida, um nome por
        decidir e um nome de um estado que não é «lido» chegavam à página com a
@@ -473,6 +648,38 @@ if (process.argv.includes('--prova')) {
     const falhou = r.erros.length > 0;
     if (padrao === null ? falhou : !falhou || !r.erros.some((e) => padrao.test(e)))
       falhas.push(`N4 planta «${rotulo}»: ${padrao === null ? 'devia passar e foi recusada' : 'devia ser recusada com a razão esperada e não foi'} (${r.erros[0] ?? (visto ? 'sem erro' : 'a procura barata nem a viu')})`);
+  }
+
+  /* AS PLANTAS DO CONJUNTO (N3, 22.09.2026, a passagem de correção). Não se
+     provam por uma página, porque a célula é sobre o conjunto delas: o que se
+     escreve é o que o varrimento viu, e a célula tem de dar pela falta. */
+  {
+    const esperado = new Set();
+    for (const [id, lista] of P.confirmados) for (const x of lista) for (const e of EDICOES) esperado.add(`${id}|${x.fonte}|${e}`);
+    const todasAsPaginas = new Set();
+    for (const [id] of P.confirmados) for (const e of EDICOES) todasAsPaginas.add(`${id}|${e}`);
+    const casosDoConjunto = [
+      ['o recibo inglês sem o nome', new Set([...esperado].filter((k) => !k.endsWith('|en') || !k.startsWith('planta-a|'))), todasAsPaginas, /N3: .*«planta-a».*edição «en».*a página da linha existe/],
+      ['um nome confirmado ausente do seu recibo português', new Set([...esperado].filter((k) => k !== 'planta-b|PORDATA|pt')), todasAsPaginas, /N3: .*«planta-b».*edição «pt»/],
+      ['a linha sem página nenhuma naquela edição', new Set([...esperado].filter((k) => k !== 'planta-b|PORDATA|en')), new Set([...todasAsPaginas].filter((k) => k !== 'planta-b|en')), /N3: .*não há página dessa linha/],
+      ['o conjunto inteiro, que tem de passar', esperado, todasAsPaginas, null],
+    ];
+    for (const [rotulo, vistos, existentes, padrao] of casosDoConjunto) {
+      plantas += 1;
+      const r = conferirOConjunto(P, vistos, existentes, vistos.size);
+      const falhou = r.erros.length > 0;
+      if (padrao === null ? falhou : !falhou || !r.erros.some((e) => padrao.test(e)))
+        falhas.push(`N4 planta «${rotulo}»: ${padrao === null ? 'devia passar e foi recusada' : 'devia ser recusada com a razão esperada e não foi'} (${r.erros[0] ?? 'sem erro'})`);
+    }
+  }
+
+  /* AS PLANTAS DO AVISO FUNDO (22.09.2026). O corpo de prova vive ao lado da
+     função, em `src/lib/aviso-do-motor.mjs`, porque é a função que ele prova; a
+     régua corre-o aqui para que ele corra em cada construção. */
+  for (const [rotulo, valor, esperado] of PLANTAS_DO_AVISO) {
+    plantas += 1;
+    if (temAviso(valor) !== esperado)
+      falhas.push(`N4 planta do aviso «${rotulo}»: esperava-se ${esperado ? 'recusa' : 'passagem'} e a função disse o contrário`);
   }
 
   /* A PLANTA DA FORMA ANTIGA (N7, 22.09.2026), que é a única que não se prova só
@@ -513,7 +720,7 @@ const razoes = new Map();
 for (const r of NOMES.recusados) razoes.set(r.porque.split(':')[0].split(',')[0], (razoes.get(r.porque.split(':')[0].split(',')[0]) ?? 0) + 1);
 console.log(
   cinza(
-    `\n  nomes oficiais · ${lidas} página(s) lidas, ${analisadas} analisadas · ${recibos} nome(s) em recibo, ${cartoes} em título de cartão · ` +
+    `\n  nomes oficiais · ${lidas} página(s) lidas, ${analisadas} analisadas · ${recibos} nome(s) em recibo (${conjunto.esperados} esperados, derivados do ficheiro), ${cartoes} em título de cartão · ` +
       `confirmados pela marca por fonte: ${porFonte('INE')} do INE, ${porFonte('PORDATA')} da PORDATA · recusados: ${NOMES.recusados.length}`,
   ),
 );
