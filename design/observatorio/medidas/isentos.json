@@ -1,0 +1,187 @@
+{
+  "porque": "Os briefs que o `check:briefs` isenta, presos pelo sha256. Um brief antigo editado muda de resumo e fecha o portão, até que esta lista seja posta em dia num diff que se vê. Sem isto a isenção por data era uma porta: bastava emendar um brief antigo.",
+  "corte": "2026-09-22",
+  "quantos": 36,
+  "isentos": [
+    {
+      "brief": "design/observatorio/BRIEF-B1-as-quatro-paginas.md",
+      "isento_por": "data",
+      "sha256": "8420cf0c63d3df967d70a618d42332c547790f28c73366d9ea7633ea02c75daf"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-B1c-o-que-mudou-no-seu-lugar.md",
+      "isento_por": "nomeação",
+      "sha256": "75829edca4e9b3c7128b6b8b8938d55dc5059ed117d908df73bcbf8dcb4d18f2"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-F1.1-porta-da-frente.md",
+      "isento_por": "data",
+      "sha256": "105b30ceff14fde506fc622a9c9e4f05ea96e206430c6cd7e058e2791f279ec9"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-F1.10-uma-coisa-um-lugar.md",
+      "isento_por": "data",
+      "sha256": "75773e2f39b5e4c217529e83f7dd85c0f6679dca9f470e65a2412e26ece707d7"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-F1.11-o-descarregamento-para-pessoas.md",
+      "isento_por": "data",
+      "sha256": "de97d9049f63c10e59e62a14db11a016cf98920cf1b1e4258cc597968fcbb2be"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-F1.12-a-primeira-pagina-nos-tres-tamanhos.md",
+      "isento_por": "data",
+      "sha256": "3e1a3c446e2df071762ddddf7515bf07788359f098d13df6cc46abed1be9eb8d"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-F1.13-as-palavras-da-porta.md",
+      "isento_por": "data",
+      "sha256": "17cd8dd419316e0219d6256ad160b0d1f97b8ffcf14215a561f57395d5bbb3e4"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-F1.14-o-enquadramento-de-cada-numero.md",
+      "isento_por": "data",
+      "sha256": "0446ed2d79efe9fd2d2c237dbacc39a9a15c36a7fda5c9b3720c198f5de5f910"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-F1.15-os-nomes-dos-documentos-na-lingua-da-pagina.md",
+      "isento_por": "data",
+      "sha256": "c07587a888d452e1e99c4c85b0ba9948cff62c787f7bd7cbdd45632558d2130e"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-F1.1b-a-leitura-breve-e-o-que-vem-a-seguir-ao-mapa.md",
+      "isento_por": "data",
+      "sha256": "ec5e5f375c94a9542223ac4dcda4c2b571ef8a5f2dd61431db2cf421080f8bf9"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-F1.1d-os-nomes-do-mapa.md",
+      "isento_por": "data",
+      "sha256": "b45944ee44af44d41254fa06b4c42f7ae60f469993266ce91ac438ac1c16cae9"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-F1.1e-os-distritos-voltam-ao-mapa.md",
+      "isento_por": "data",
+      "sha256": "bc60916edb59f476fc054a2ec04d4aa45ed0ed4a3a66773f36d9812001cd828d"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-F1.2-pagina-do-dominio.md",
+      "isento_por": "data",
+      "sha256": "c5052f9910ad53acd3767fba953e2977a5aff61e37ec403c1db8cd75d12e3c98"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-F1.2b-cartoes-menu-estudos.md",
+      "isento_por": "data",
+      "sha256": "2e5646ad942fc0d52c245adc7bf2f324be0d08f97623ed3cb95868903f1e309a"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-F1.4-nomes-datas-indice.md",
+      "isento_por": "data",
+      "sha256": "8abcc57cae9b038ba8018488532e6ea60389243bdfd96d4967b93433ae9f262c"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-F1.6-o-atraso-do-iefp-e-as-duas-frases.md",
+      "isento_por": "data",
+      "sha256": "4abe22136d238480d715c9beba75bcb668b74efd9e517881f27b6f6067786cd1"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-F1.7-acessibilidade-e-alvos.md",
+      "isento_por": "data",
+      "sha256": "9f920728303508e710cb8d88c2a141be91ccf678a15a70e8499ce64814c7db55"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-F1.8-moldura-dos-documentos.md",
+      "isento_por": "data",
+      "sha256": "d33a58d1b6e4af9bc593172be39f8d60a388d9af229b6cb39cbdd09f3dbe22cb"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-F1.9a-indice-das-paginas-de-leitura.md",
+      "isento_por": "data",
+      "sha256": "fc70e368766ef770acb6293f72102617824e26f75759169841203d7efb7a6ada"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-F2.1b-a-fonte-calada-nao-e-uma-corrida-vermelha.md",
+      "isento_por": "data",
+      "sha256": "cfe605720f1fb2c08bc1cacf58ce8af70829037f3bd8b882854927202cc26ee9"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-F2.1c-a-retoma-noutro-runner.md",
+      "isento_por": "data",
+      "sha256": "6bb139772a394020ec58483e23c2661265c84c0725cb7332c82e36d3b7352d76"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-F2.6-o-calendario-a-serio.md",
+      "isento_por": "data",
+      "sha256": "4007bbcd854b5610e386a775560301733248de0ac6886cf261ba2e1822dbfa4b"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-I129-o-grupo-etario-dos-jovens-nem.md",
+      "isento_por": "nomeação",
+      "sha256": "384742d47680f834f28c8a435d3a5dbd8632937e3506062d686c3bf50766fe60"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-M1-o-nome-das-entradas-sem-nome.md",
+      "isento_por": "data",
+      "sha256": "bc040df71a6ec83d40a2efa9601b54c90eb27e616d1879b814f3708e01be55d5"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-M2-o-estudo-14-entra-no-portao-do-motor.md",
+      "isento_por": "data",
+      "sha256": "cb276e41800f33320f96f81c3937d3c60437d43407c9101c43e477305ad45638"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-M3-os-nomes-oficiais-conferidos-no-motor.md",
+      "isento_por": "data",
+      "sha256": "2c4781923fe4488950820dd29958efd5454b72e6c251bba9c2dbc8e68eb4e082"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-M3b-os-nomes-confirmados-voltam-aos-recibos.md",
+      "isento_por": "nomeação",
+      "sha256": "cc92d79040a549b920c91121bd5506c11795d437ca6f9227df3dc37a4d0a48b6"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-M4-o-estudo-11-entra-no-portao-do-motor.md",
+      "isento_por": "data",
+      "sha256": "b53d42899ff9883b2e63c0a96d10da09fa8d666eca49915bf08abbd02fb515ac"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-P1-o-rodape-e-a-primeira-pagina.md",
+      "isento_por": "data",
+      "sha256": "b9fa7d69741eefbf89e197d9bbc8e948eadc2ff9e0e210b63b4ada31fc4adc01"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-P2-o-numero-e-o-seu-sentido.md",
+      "isento_por": "data",
+      "sha256": "87af10a9fe78b675ad17f4e4132e3f3338772893af9272aaac617572fd378924"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-P3-os-nomes-e-a-lingua.md",
+      "isento_por": "data",
+      "sha256": "c32462d965d8b53ddfb2fe99b2fccd74dde38ee33ba7291fa3d868309ab40f2a"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-divulgacao-via-B.md",
+      "isento_por": "data",
+      "sha256": "983691af1c0f150c6aa16aa6405a944f8af58178195f4a85c635a04b931b87c0"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-fatia-css-alcance-2026-09-16.md",
+      "isento_por": "data",
+      "sha256": "c136998a55c34c8750b8b94025840817a7a264bb474b98ae8616209237a66c50"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-fatia-dominios-css-2026-09-15.md",
+      "isento_por": "data",
+      "sha256": "f5ec6dded5148f7067be9a5f8c445582d403563f22320acbbd2873c8627368b2"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-forma-dos-dominios.md",
+      "isento_por": "data",
+      "sha256": "deb5d257a3d597feac544865529b275a434e5560f431ff1d1b90f1f1feb6a7b7"
+    },
+    {
+      "brief": "design/observatorio/BRIEF-piloto-corredor.md",
+      "isento_por": "data",
+      "sha256": "3a00669d06472d9aa5d35fcb81e185ac7f82c87525dbc70427f03cc9755ba83b"
+    }
+  ]
+}
