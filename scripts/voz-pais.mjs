@@ -41,7 +41,10 @@ export function verificaVozPais(raiz) {
         /* Só os rótulos destas páginas. O olho dos lugares continua declarado,
            mas não pode voltar à página do país. */
         ...['pais', 'temas', 'estudosRecentes', 'mudou', 'publicado', 'estudoPublicado',
-          'outraLingua', 'todasAsMedidasA', 'todasAsMedidasB'].map(k=>ROTULOS_B1[lang][k]),
+          'outraLingua', 'todasAsMedidasA', 'todasAsMedidasB', 'todasAsMudancas'].map(k=>ROTULOS_B1[lang][k]),
+        /* A porta para o registo inteiro (B1c, 22.09.2026): o rótulo e a seta
+           saem no mesmo nó de texto, e é assim que a lista fechada o vê. */
+        `${ROTULOS_B1[lang].todasAsMudancas} →`,
         ...Object.values(SUBJECTS).map(s=>s[lang]),
         ...DOMINIOS.map(d=>d.nome[lang]), ...WORKS.flatMap(w=>w.editions.map(e=>e.title)),
         '·','→',

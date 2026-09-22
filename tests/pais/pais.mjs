@@ -9,7 +9,13 @@ import { parse } from 'node-html-parser';
 import { verificaVozPais } from '../../scripts/voz-pais.mjs';
 const raiz=fs.mkdtempSync(path.join(os.tmpdir(),'oedp-pais-'));
 const pasta=path.join(raiz,'dist');
-const rotas=['index.html','en/index.html','temas/index.html','en/themes/index.html'];
+/* B1c, 22.09.2026: as quatro rotas da peça 3 mais as quatro que «O que mudou»
+   passou a atravessar — o registo inteiro, nas duas edições, e a página de um
+   lugar com mudanças, que é Évora. Sem elas a régua não vê nenhuma lista de
+   lugar nem nenhum registo, e uma régua que não mede nada é verde por engano. */
+const rotas=['index.html','en/index.html','temas/index.html','en/themes/index.html',
+ 'correcoes/index.html','en/corrections/index.html',
+ 'municipios/evora/index.html','en/municipalities/evora/index.html'];
 const originais=new Map(rotas.map(f=>[f,fs.readFileSync(path.join('dist',f),'utf8')]));
 const resultados=[];
 const repor=()=>{for(const [f,s] of originais){const alvo=path.join(pasta,f);fs.mkdirSync(path.dirname(alvo),{recursive:true});fs.writeFileSync(alvo,s);}};
@@ -32,7 +38,19 @@ try {
  prova('medida publicada ausente','T5',()=>html('temas/index.html',r=>r.querySelector('[data-cartao-medida]').remove()));
  prova('mudança sem secção','M1',()=>{},`import {MUDANCAS_DO_PROJETO} from './src/data/mudancas-do-projeto.mjs';delete MUDANCAS_DO_PROJETO[0].decisao;`);
  prova('mudança com secção inexistente','M1',()=>{},`import {MUDANCAS_DO_PROJETO} from './src/data/mudancas-do-projeto.mjs';MUDANCAS_DO_PROJETO[0].decisao='0.0';`);
- prova('correção de linha ausente','C1',()=>html('index.html',r=>r.querySelector('.pais-mudou [data-correcao-entrada]').remove()));
+ /* B1c · as três células novas, cada uma com a sua planta, e a C1 e a M3 no
+    sítio onde as linhas de correção passaram a viver. A primeira página deixou
+    de ter nenhuma: das dezasseis entradas do livro, nenhuma é de uma medida do
+    país. */
+ prova('linha de outro lugar na página do país','A1',()=>{
+  const evora=parse(fs.readFileSync(path.join(pasta,'correcoes/index.html'),'utf8')).querySelector('[data-mudou-registo] li[data-mudanca="correcao"]').outerHTML;
+  html('index.html',r=>{const l=r.querySelectorAll('.pais-mudou li');l[l.length-1].remove();r.querySelector('.pais-mudou').insertAdjacentHTML('beforeend',evora);});
+ });
+ prova('mais mudanças do que o teto','A2',()=>html('index.html',r=>{const li=r.querySelector('.pais-mudou li');li.insertAdjacentHTML('afterend',li.outerHTML);}));
+ prova('registo sem uma das mudanças do livro','A3',()=>html('correcoes/index.html',r=>r.querySelector('[data-mudou-registo] li[data-mudanca="correcao"]').remove()));
+ prova('correção que não é uma entrada do livro','C1',()=>html('correcoes/index.html',r=>r.querySelector('[data-mudou-registo] [data-correcao-campo="date"]').setAttribute('data-correcao-n','99')));
+ prova('valor antigo igual ao novo numa correção','M3',()=>html('correcoes/index.html',r=>{const li=r.querySelector('[data-mudou-registo] li[data-mudanca="correcao"]');li.querySelector('s[data-correcao-campo="old_value"]').set_content(li.querySelector('[data-correcao-campo="new_value"]').textContent);}));
+ prova('mudança de lugar sem o seu lugar','A1',()=>html('municipios/evora/index.html',r=>r.querySelector('.lugar-mudou').setAttribute('data-mudou-ambito','lisboa')));
  prova('texto da mudança alterado','M2',()=>html('index.html',r=>r.querySelector('[data-mudanca-campo="texto"]').set_content('Uma frase que a direção não escreveu.')));
  prova('ordem dos estudos trocada','E1',()=>html('index.html',r=>{const a=r.querySelectorAll('#trabalhos [data-estudo]');const x=a[0].getAttribute('data-estudo');a[0].setAttribute('data-estudo',a[1].getAttribute('data-estudo'));a[1].setAttribute('data-estudo',x);}));
  prova('comparação europeia sem recibo','L3',()=>html('index.html',r=>r.querySelector('[data-leitura-pais] a[href="/livro-razao/taxa-de-desemprego-2025-ue"]').remove()));
