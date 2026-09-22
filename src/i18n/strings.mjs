@@ -1845,35 +1845,29 @@ export const STRINGS = {
       registoK: 'O registo',
       caixaTitulo: 'Escrever uma correção',
 
-      registoCorrecoesK: 'Correções',
-      registoCorrecoesNota:
-        'Valores que estavam errados. Cada um fica com o valor anterior à vista, datado, e nenhum é removido.',
+      /* B1c, 22.09.2026: as duas listas (as correções e as atualizações) deram
+         lugar a uma só, com as três classes de mudança por data e o lugar de
+         cada linha. As naturezas continuam ditas na política, acima, e em cada
+         linha da lista. */
+      registoMudancasK: 'As mudanças, por data',
+      registoMudancasNota:
+        'Todas as mudanças deste sítio, da mais recente para a mais antiga: as correções e as atualizações de cada linha, cada estudo que se publicou e as mudanças do projeto. Cada uma diz o lugar a que pertence, e nenhuma é removida.',
       registoConta: 'correções publicadas',
       registoContaSing: 'correção publicada',
-      registoAtualizacoesK: 'Atualizações',
-      registoAtualizacoesNota:
-        'Valores que estavam certos e deixaram de estar, porque aquilo que medem mudou. Não são erros, e não contam para o número acima.',
       registoProvenienciaK: 'Revisões de proveniência',
       registoProvenienciaConta: 'revisões de proveniência',
       registoProvenienciaContaSing: 'revisão de proveniência',
       registoProvenienciaNota:
         'O valor não mudou; mudou a maneira de lá chegar: uma fonte que muda de endereço, por exemplo. Não são erros nem atualizações, e não se listam aqui uma a uma: são muitas de cada vez e afogariam as correções. Cada linha abaixo leva à sua própria história, onde a revisão está escrita por extenso.',
-      correcoesVazioV: 'Nenhuma correção publicada até hoje.',
-      colunaData: 'Data',
-      colunaAntigo: 'Valor antigo',
-      colunaNovo: 'Valor novo',
-      colunaMotivo: 'Motivo',
-      /* OS PREFIXOS QUE SÓ UM LEITOR DE ECRÃ OUVE (subetapa 4a, decisão c).
-         A forma da correção é o valor antigo riscado e o novo ao lado, e um
-         risco não se ouve: sem estes dois prefixos, quem ouve a página recebe
-         dois números seguidos e nenhuma maneira de saber qual é qual. Os
-         cabeçalhos de coluna acima são um `<div>` de `<span>`s e não uma tabela,
-         e por isso não se associam a célula nenhuma; nas atualizações a seta
-         entre os dois valores é `aria-hidden`. Vão FORA do elemento marcado com
-         `data-correcao-campo`, para que o portão continue a comparar só o valor
-         com o do livro-razão. */
-      valorAnteriorVh: 'valor anterior: ',
-      valorNovoVh: 'valor novo: ',
+      /* OS DOIS PREFIXOS QUE SÓ UM LEITOR DE ECRÃ OUVIA saíram a 22.09.2026
+         (B1c), com a tabela de quatro colunas que os pedia. Existiam porque ali
+         os dois valores viviam em células separadas, sem nada entre eles, e um
+         risco não se ouve: quem ouvia a página recebia dois números seguidos.
+         Na lista única, a forma é a da primeira página e a da página de um
+         lugar: o valor antigo num `<s>`, a seta no texto e não `aria-hidden`, e
+         o valor novo a seguir. A ordem ouve-se, e a natureza de cada entrada
+         («Correção», «Atualização») lê-se na própria linha. As quatro cadeias
+         dos cabeçalhos de coluna saíram no mesmo dia e pela mesma razão. */
       colunaAfirmacao: 'Afirmação',
 
       caixaNota:
@@ -3511,26 +3505,18 @@ export const STRINGS = {
       registoK: 'The register',
       caixaTitulo: 'Write a correction',
 
-      registoCorrecoesK: 'Corrections',
-      registoCorrecoesNota:
-        'Values that were wrong. Each keeps its previous value in plain sight, dated, and none is removed.',
+      /* Ver a razão na edição portuguesa (B1c, 22.09.2026). */
+      registoMudancasK: 'The changes, by date',
+      registoMudancasNota:
+        'Every change to this site, from the most recent to the oldest: the corrections and updates to each row, the studies published and the changes to the project. Each says the place it belongs to, and none is removed.',
       registoConta: 'corrections published',
       registoContaSing: 'correction published',
-      registoAtualizacoesK: 'Updates',
-      registoAtualizacoesNota:
-        'Values that were right and stopped being so, because what they measure changed. They are not errors, and they do not count towards the number above.',
       registoProvenienciaK: 'Provenance revisions',
       registoProvenienciaConta: 'provenance revisions',
       registoProvenienciaContaSing: 'provenance revision',
       registoProvenienciaNota:
         'The value did not change; the way to find it did: a source that moves address, for example. They are neither errors nor updates, and they are not listed one by one here: they come many at a time and would drown the corrections. Each row below leads to its own history, where the revision is written out in full.',
-      correcoesVazioV: 'No corrections published to date.',
-      colunaData: 'Date',
-      colunaAntigo: 'Old value',
-      colunaNovo: 'New value',
-      colunaMotivo: 'Reason',
-      valorAnteriorVh: 'previous value: ',
-      valorNovoVh: 'new value: ',
+      /* Ver a razão na edição portuguesa (B1c, 22.09.2026). */
       colunaAfirmacao: 'Claim',
 
       caixaNota:

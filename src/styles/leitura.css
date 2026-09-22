@@ -77,6 +77,85 @@
 }
 
 /* ==========================================================================
+   B1c · O REGISTO DE TODAS AS MUDANÇAS, POR DATA (22.09.2026)
+   ==========================================================================
+   As duas listas (as correções e as atualizações, cada uma com a sua tabela de
+   quatro colunas) deram lugar a uma só, com as três classes de mudança juntas e
+   o lugar de cada linha. A grelha é a mesma ideia da lista da primeira página —
+   a data à esquerda, numa coluna estreita, e o que mudou à direita — com uma
+   coluna no meio para o lugar, que é a coisa nova. Num ecrã estreito as três
+   colunas passam a uma, porque 104 px de data mais 120 px de lugar não deixam
+   largura nenhuma para o par de valores. */
+.registo-mudancas {
+  list-style: none;
+  border-top: 1px solid var(--rule);
+  padding: 0;
+  margin: 0;
+}
+.registo-mudanca {
+  display: grid;
+  grid-template-columns: 104px 132px minmax(0, 1fr);
+  gap: 4px clamp(14px, 2.2vw, 26px);
+  border-bottom: 1px solid var(--rule);
+  padding: 13px 0;
+  align-items: baseline;
+}
+.registo-mudanca .log-data {
+  font-variant-numeric: tabular-nums;
+}
+/* O LUGAR É UMA PORTA, e não uma etiqueta: leva o sublinhado que esta casa dá a
+   uma porta de prosa, na letra do instrumento, como a data ao lado. */
+.registo-lugar {
+  font-family: var(--f-instr);
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.registo-lugar:hover {
+  color: var(--ink);
+}
+.registo-mudanca-corpo {
+  min-width: 0;
+}
+.registo-mudanca-o-que {
+  font-family: var(--f-prosa);
+  font-size: 15.5px;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 64ch;
+}
+/* O NOME DA MEDIDA E O PAR DE VALORES, com a forma que a primeira página e a
+   página de um lugar já dão aos mesmos dois pedaços: o nome antes, o par a
+   seguir, e o risco a dizer que o valor antigo já não é exacto. As regras são
+   daqui e não de `lugar.css`, que esta família de páginas não carrega. */
+.registo-mudanca-nome {
+  display: block;
+}
+.registo-mudanca-par {
+  display: inline;
+}
+.registo-mudanca-par s {
+  color: var(--g1);
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--g2);
+}
+.registo-mudanca-par .src-chip {
+  margin-left: 8px;
+  font-weight: 400;
+}
+.registo-mudanca [data-correcao-campo='old_value'],
+.registo-mudanca [data-correcao-campo='new_value'] {
+  white-space: nowrap;
+}
+@media (width <= 560px) {
+  .registo-mudanca {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ==========================================================================
    SUBETAPA 4b · O MÉTODO: O SUMÁRIO, AS DOBRAS E A ENTRADA DE FECHO
    ========================================================================== */
 
