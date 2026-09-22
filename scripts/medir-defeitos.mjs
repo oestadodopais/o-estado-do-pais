@@ -621,14 +621,31 @@ const VOZ_DECLARADA = '[data-voz]';
  * o nome do INE primeiro sem olhar para o aviso, e que ficava sem nome nenhum
  * quando o do INE era o marcador `[verify]` e o da PORDATA existia.
  *
+ * A MARCA É POR FONTE (22.09.2026, o bloco M3 do motor). A `correspondencia` do
+ * ficheiro deixou de ser uma cadeia por medida, que fora julgada para o nome da
+ * PORDATA e que valia para os dois, e passou a ser um objeto com uma marca por
+ * fonte (`{ine, pordata}`); cada nome traz o `estado` da leitura, e a
+ * confirmação passou a ser a derivação de duas leituras registadas no motor, a
+ * de quem escolheu o nome e a de um conferidor que não o escolheu. Um nome da
+ * fonte X conta aqui quando `correspondencia[X]` é «exata», o `estado` é «lido»,
+ * o `mesma_medida` é `true`, não há campo `aviso`, e o endereço e a hora existem.
+ * **A forma antiga não se lê**: com uma `correspondencia` de texto esta tabela
+ * fica vazia, e é o `check:nomes` que fecha a construção a dizer porquê. Ler a
+ * forma antiga «por compatibilidade» era aceitar outra vez uma marca julgada
+ * para uma fonte como se fosse das duas.
+ *
  * @type {Map<string, Record<string, string>>}
  */
 const NOMES_OFICIAIS = new Map();
 {
   const f = path.join(RAIZ, 'src', 'data', 'enquadramento', 'nomes.json');
-  /** @param {any} o */
-  const nomeConfirmado = (o) => {
+  /** @param {any} o @param {unknown} marca a correspondência DAQUELA fonte */
+  const nomeConfirmado = (o, marca) => {
+    if (marca !== 'exata') return null;
     if (!o || typeof o !== 'object') return null;
+    /* «sem_indicador», «sem_pagina» e «sem_resposta» são ausências: um nome só
+       existe onde o motor diz que o leu. */
+    if (o.estado !== 'lido') return null;
     if (o.mesma_medida !== true) return null;
     /* A PRESENÇA do campo chega: um aviso vazio, ou de outro tipo, continua a ser o
        motor a dizer que há um aviso (releitura a frio de 21.09.2026, achado 8). */
@@ -641,8 +658,9 @@ const NOMES_OFICIAIS = new Map();
   if (fs.existsSync(f)) {
     const j = JSON.parse(fs.readFileSync(f, 'utf8'));
     for (const i of j.indicadores ?? []) {
-      if (i?.correspondencia !== 'exata') continue;
-      const nome = nomeConfirmado(i?.nome_ine) ?? nomeConfirmado(i?.nome_pordata);
+      const c = i?.correspondencia;
+      if (c === null || typeof c !== 'object' || Array.isArray(c)) continue;
+      const nome = nomeConfirmado(i?.nome_ine, c.ine) ?? nomeConfirmado(i?.nome_pordata, c.pordata);
       if (nome === null) continue;
       NOMES_OFICIAIS.set(i.id_da_linha, { pt: nome, en: nome });
     }

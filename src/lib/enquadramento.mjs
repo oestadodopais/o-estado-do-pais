@@ -65,13 +65,13 @@
  *
  * **`nomes.json`**: por indicador, o nome na PORDATA e no INE, com o endereço e a
  * hora de leitura, e a marca de correspondência. **Só entra no recibo um nome que
- * o motor marque `mesma_medida: true`, numa medida marcada `exata`** (a regra de
- * 21.09.2026, em `nomeOficial()` mais abaixo): `proxima` é a medida VIZINHA (a
- * PORDATA publica o saldo da balança corrente e a medida do painel é a média
- * móvel de três anos, que não é a mesma coisa), `[verify]` é um campo por
- * confirmar, e um nome sem a marca é um nome que ninguém conferiu. Nenhum deles
- * chega ao leitor, porque um nome quase certo posto onde o leitor espera o nome
- * da coisa é pior do que nenhum.
+ * o motor marque `mesma_medida: true`, numa medida marcada `exata` NAQUELA
+ * FONTE** (a regra de 21.09.2026 com a forma de 22.09.2026, em `nomeOficial()`
+ * mais abaixo): `proxima` é a medida VIZINHA (a PORDATA publica o saldo da
+ * balança corrente e a medida do painel é a média móvel de três anos, que não é
+ * a mesma coisa), `[verify]` é um campo por confirmar, e um nome sem a marca é um
+ * nome que ninguém conferiu. Nenhum deles chega ao leitor, porque um nome quase
+ * certo posto onde o leitor espera o nome da coisa é pior do que nenhum.
  *
  * NENHUM ALGARISMO NOVO NESTE FICHEIRO. Ele devolve identificadores de linhas e
  * texto de outro ficheiro; quem desenha é o cartão, e quem imprime um valor é o
@@ -293,11 +293,11 @@ export function valorDeReferenciaDoMotor(id) {
 /**
  * O nome oficial de uma medida, para o recibo, ou `null`.
  *
- * **Só o que o motor marca `exata`**, e a razão está no cabeçalho: `proxima` é a
- * medida vizinha e `[verify]` é um campo por confirmar, e nem um nem outro chegam
- * ao leitor. A ordem é a da norma §1.5: o do INE primeiro, quando ele o carrega,
- * e o da PORDATA a seguir. Cada um leva a origem dele, que é o endereço e a hora
- * a que o motor o leu.
+ * **Só o que o motor marca `exata` NAQUELA FONTE**, e a razão está no cabeçalho:
+ * `proxima` é a medida vizinha e `[verify]` é um campo por confirmar, e nem um
+ * nem outro chegam ao leitor. A ordem é a da norma §1.5: o do INE primeiro,
+ * quando ele o carrega, e o da PORDATA a seguir. Cada um leva a origem dele, que
+ * é o endereço e a hora a que o motor o leu.
  *
  * UM NOME COM AVISO NÃO CHEGA AO LEITOR (correção de 21.09.2026). A marca
  * `correspondencia` do ficheiro foi julgada para o nome da PORDATA. Os nomes do
@@ -322,15 +322,45 @@ export function valorDeReferenciaDoMotor(id) {
  * A régua `scripts/check-nomes-oficiais.mjs` confere-o nas páginas construídas
  * por conta própria, com plantas.
  *
+ * A MARCA É POR FONTE, E A CONFIRMAÇÃO SÃO DUAS LEITURAS (22.09.2026, o bloco
+ * M3 do motor). O ficheiro de 15.09 tinha uma só `correspondencia` por medida,
+ * uma cadeia de texto que fora julgada para o nome da PORDATA e que esta função
+ * lia para os dois nomes: era essa a porta por onde os nomes do INE de outros
+ * indicadores passaram. O ficheiro de 22.09 traz `correspondencia: {ine, pordata}`
+ * e cada nome com o seu `estado` («lido», «sem_indicador», «sem_pagina»,
+ * «sem_resposta»), a sua `proposta`, a sua `prova` e a sua `conferencia`, e o
+ * campo `aviso` deixou de existir (o exportador do motor fecha se ele voltar).
+ * Um nome da fonte X só se rende quando as cinco coisas se verificam NAQUELA
+ * FONTE: `correspondencia[X] === 'exata'`, `estado === 'lido'`,
+ * `mesma_medida === true`, nenhum campo `aviso`, e o endereço e a hora de
+ * leitura presentes. O `mesma_medida` não é de quem escolheu o nome: é a
+ * derivação de uma conferência cega, feita por um agente que não escolheu
+ * nenhum, e uma `proposta` de quem escolheu não é um veredicto.
+ *
+ * A FORMA ANTIGA NÃO SE LÊ, e não se lê em silêncio por descuido: um ficheiro
+ * cuja `correspondencia` seja uma cadeia de texto por medida rende ZERO nomes
+ * aqui, e `check:nomes` fecha a construção a dizer que o ficheiro está na forma
+ * antiga. Aceitá-la «por compatibilidade» seria voltar a pôr um nome do INE no
+ * ar com a marca julgada para o da PORDATA, que é exatamente o defeito de
+ * 21.09.2026.
+ *
  * @param {string} id
  * @returns {{ ine: { nome: string, endereco: string, lido: string }|null, pordata: { nome: string, endereco: string, lido: string }|null }|null}
  */
 export function nomeOficial(id) {
   const n = nomes()?.get(id);
-  if (!n || n.correspondencia !== 'exata') return null;
-  /** @param {any} o */
-  const util = (o) => {
+  if (!n) return null;
+  const c = n.correspondencia;
+  /* A FORMA ANTIGA (uma cadeia de texto por medida) NÃO RENDE NADA. Quem o diz
+     em voz alta é o `check:nomes`, que sabe olhar para o ficheiro inteiro. */
+  if (c === null || typeof c !== 'object' || Array.isArray(c)) return null;
+  /** @param {any} o @param {unknown} marca a correspondência DAQUELA fonte */
+  const util = (o, marca) => {
+    if (marca !== 'exata') return null;
     if (!o || typeof o !== 'object') return null;
+    /* O ESTADO É DA LEITURA: «sem_indicador», «sem_pagina» e «sem_resposta» são
+       ausências, e um nome só existe onde o motor diz que o leu. */
+    if (o.estado !== 'lido') return null;
     if (o.mesma_medida !== true) return null;
     /* A PRESENÇA do campo chega: um aviso vazio, ou de outro tipo, continua a ser o
        motor a dizer que há um aviso (releitura a frio de 21.09.2026, achado 8). */
@@ -342,8 +372,8 @@ export function nomeOficial(id) {
     if (endereco === '' || lido === '') return null;
     return { nome, endereco, lido };
   };
-  const ine = util(n.nome_ine);
-  const pordata = util(n.nome_pordata);
+  const ine = util(n.nome_ine, c.ine);
+  const pordata = util(n.nome_pordata, c.pordata);
   if (!ine && !pordata) return null;
   return { ine, pordata };
 }

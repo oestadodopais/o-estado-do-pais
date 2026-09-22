@@ -34,6 +34,28 @@
  * `aviso`. Tudo o resto é um nome RECUSADO. A 21.09.2026 nenhum nome do ficheiro
  * traz a marca, e a régua di-lo em voz alta em cada corrida.
  *
+ * A MARCA PASSA A SER POR FONTE, E A CONFIRMAÇÃO SÃO DUAS LEITURAS (22.09.2026,
+ * o bloco M3 do motor). O ficheiro de 15.09 tinha uma só `correspondencia` por
+ * medida, uma cadeia de texto julgada para o nome da PORDATA e lida para os
+ * dois: era essa a porta por onde os nomes do INE de outros indicadores
+ * passaram. O ficheiro de 22.09 traz `correspondencia: {ine, pordata}`, e cada
+ * nome traz o `estado` da leitura («lido», «sem_indicador», «sem_pagina»,
+ * «sem_resposta»), a `proposta` de quem o escolheu, a `prova` dos quatro
+ * critérios e a `conferencia`; o campo `aviso` deixou de existir, e o exportador
+ * do motor fecha se ele voltar. O `mesma_medida` é derivado no motor de duas
+ * leituras registadas, a de quem escolheu o nome e a de um conferidor cego que
+ * não escolheu nenhum, e nunca se escreve à mão. **Um nome da fonte X é
+ * confirmado quando, NAQUELA FONTE, `correspondencia[X]` é «exata», o `estado` é
+ * «lido», o `mesma_medida` é `true`, não há campo `aviso`, e o endereço e a hora
+ * de leitura existem.** A 22.09.2026 são 18: quatro do INE e catorze da PORDATA.
+ *
+ * A FORMA ANTIGA DO FICHEIRO É UMA FALHA, E NÃO UM SILÊNCIO (a célula N7). Um
+ * ficheiro cuja `correspondencia` seja uma cadeia por medida rende zero nomes
+ * nos três leitores do sítio, e um zero calado era a mesma armadilha do §1.115:
+ * o estado de verificação a viver num sítio que ninguém lê. Esta régua fecha a
+ * construção e diz a forma que encontrou. Lê-la «por compatibilidade» era
+ * aceitar outra vez uma marca julgada para uma fonte como se fosse das duas.
+ *
  * O QUE ESTA RÉGUA CONFERE, com leitor próprio (não chama
  * `src/lib/enquadramento.mjs`, pela regra de que uma conferência que usasse o
  * código das páginas confirmava-se a si própria):
@@ -59,6 +81,9 @@
  *        é. O texto compara-se depois de juntar os filhos e de desfazer as
  *        entidades, para que um nome partido por dois elementos ou escrito com
  *        «&#38;» seja o mesmo nome;
+ *   N7 · a forma do ficheiro do motor: a `correspondencia` de cada medida é um
+ *        objeto com uma marca por fonte. A forma antiga (uma cadeia por medida)
+ *        fecha a construção com a razão, em vez de render zero nomes em silêncio;
  *   N4 · as plantas (`--prova`, que é como o `build` e o `verify` a chamam), sobre
  *        um ficheiro de nomes escrito aqui para isso e páginas com a forma real.
  *
@@ -145,6 +170,12 @@ function pistasDoEndereco(u) {
  * razão de cada recusa. Um campo sem nome nenhum (ausente ou `[verify]`) não é
  * uma recusa: é uma ausência, e a página não tem o que render.
  *
+ * A MARCA LÊ-SE POR FONTE (22.09.2026): `correspondencia` é um objeto
+ * `{ine, pordata}`, e a marca de uma fonte não decide pela outra. Um ficheiro
+ * na forma antiga (uma cadeia por medida) não rende nome nenhum e fica com uma
+ * queixa de ficheiro (N7), porque zero nomes em silêncio é o defeito de
+ * 21.09.2026 outra vez.
+ *
  * @param {any} j
  */
 function lerNomes(j) {
@@ -152,21 +183,36 @@ function lerNomes(j) {
   const confirmados = new Map();
   /** @type {{ id: string, fonte: string, nome: string, endereco: string, porque: string }[]} */
   const recusados = [];
+  /** @type {string[]} as queixas sobre a FORMA do ficheiro, não sobre uma página */
+  const queixasDoFicheiro = [];
+  /** @type {Map<string, number>} */
+  const formasAntigas = new Map();
   for (const i of j?.indicadores ?? []) {
     const id = i?.id_da_linha;
     if (typeof id !== 'string' || id === '') continue;
+    const c = i?.correspondencia;
+    const porFonte = c !== null && typeof c === 'object' && !Array.isArray(c);
+    if (!porFonte && c !== undefined && c !== null) {
+      const forma = typeof c === 'string' ? `a cadeia «${String(c).slice(0, 30)}»` : `um valor de tipo ${typeof c}`;
+      formasAntigas.set(forma, (formasAntigas.get(forma) ?? 0) + 1);
+    }
     for (const [campo, fonte] of FONTES) {
       const o = i?.[campo];
       if (!o || typeof o !== 'object') continue;
       const nome = o.nome;
       if (typeof nome !== 'string' || nome.trim() === '' || nome === '[verify]') continue;
       const endereco = typeof o.endereco === 'string' ? o.endereco : '';
+      const marca = porFonte ? c[campo === 'nome_ine' ? 'ine' : 'pordata'] : undefined;
       let porque = null;
-      if (Object.prototype.hasOwnProperty.call(o, 'aviso'))
+      if (!porFonte)
+        porque =
+          'o ficheiro do motor está na forma antiga, com uma «correspondencia» por medida em vez de uma marca por fonte, e nenhum nome dele se rende';
+      else if (Object.prototype.hasOwnProperty.call(o, 'aviso'))
         porque = 'o motor escreveu um aviso: a conferência de ser a mesma medida ficou por fazer';
       else if (o.mesma_medida === false) porque = 'o motor marcou «mesma_medida: false»';
-      else if (o.mesma_medida !== true) porque = 'o motor não o marcou «mesma_medida: true», e um nome sem estado não é um nome confirmado';
-      else if (i.correspondencia !== 'exata') porque = `a correspondência da medida é «${i.correspondencia ?? 'sem marca'}» e não «exata»`;
+      else if (o.mesma_medida !== true) porque = 'o motor não o marcou «mesma_medida: true», e um nome sem veredicto não é um nome confirmado';
+      else if (o.estado !== 'lido') porque = `o estado da leitura é «${o.estado ?? 'ausente'}» e não «lido»`;
+      else if (marca !== 'exata') porque = `a correspondência do ${fonte} nesta medida é «${marca ?? 'sem marca'}» e não «exata»`;
       else if (endereco === '' || typeof o.lido_em !== 'string' || o.lido_em === '') porque = 'falta o endereço ou a hora de leitura';
       if (porque) recusados.push({ id, fonte, nome, endereco, porque });
       else {
@@ -175,6 +221,11 @@ function lerNomes(j) {
       }
     }
   }
+  for (const [forma, quantas] of formasAntigas)
+    queixasDoFicheiro.push(
+      `N7: o ficheiro do motor está na forma antiga em ${quantas} medida(s): a «correspondencia» é ${forma} por medida e não um objeto com uma marca por fonte. ` +
+        `Nenhum nome dele se rende, e um zero calado era o defeito de 21.09.2026 outra vez (DECISIONS §1.115)`,
+    );
   /* TODOS OS NOMES E TODOS OS ENDEREÇOS DO FICHEIRO, confirmados ou não, para as
      duas procuras sem marca (N5 e N6): um nome oficial só se rende com a marca,
      e por isso fora dela nenhum deles pode aparecer. A primeira forma tirava
@@ -195,7 +246,7 @@ function lerNomes(j) {
   };
   for (const [id, lista] of confirmados) for (const x of lista) registar({ id, ...x, porque: 'está confirmado, mas um nome oficial só se rende com a marca' }, 'confirmado');
   for (const r of recusados) registar(r, 'recusado');
-  return { confirmados, recusados, todosOsNomes, todosOsEnderecos, pistas };
+  return { confirmados, recusados, todosOsNomes, todosOsEnderecos, pistas, queixasDoFicheiro };
 }
 
 /** O identificador da linha de um recibo, pelo caminho da página, ou `null`. */
@@ -318,7 +369,10 @@ if (!fs.existsSync(DIST)) {
 
 const NOMES = lerNomes(JSON.parse(fs.readFileSync(FICHEIRO, 'utf8')));
 const nConfirmados = [...NOMES.confirmados.values()].flat().length;
-const falhas = [];
+/* A FORMA DO FICHEIRO É A PRIMEIRA FALHA (N7), antes de se olhar para uma
+   página: com a forma antiga nenhum leitor rende um nome, e a régua diz porquê
+   em vez de dar um verde que não prova nada. */
+const falhas = [...NOMES.queixasDoFicheiro];
 let lidas = 0;
 let analisadas = 0;
 let recibos = 0;
@@ -345,18 +399,28 @@ if (process.argv.includes('--prova')) {
   /* UM FICHEIRO DE NOMES ESCRITO PARA AS PLANTAS, e não o do motor: a 21.09.2026
      o do motor não tem nome confirmado nenhum, e uma planta que dependesse dele
      ficava sem a página certa para provar que a régua também deixa passar. */
+  /* NA FORMA DE 22.09.2026: a `correspondencia` é um objeto com uma marca por
+     fonte, e cada nome traz o `estado` da leitura. Uma planta que ficasse na
+     forma antiga deixava de provar a régua que corre sobre o ficheiro real. */
   const P = lerNomes({
     indicadores: [
-      { id_da_linha: 'planta-a', correspondencia: 'exata', nome_ine: { nome: 'Nome confirmado A & B', endereco: 'https://exemplo.invalido/a?x=1&y=2', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: true } },
-      { id_da_linha: 'planta-b', correspondencia: 'exata', nome_pordata: { nome: 'Nome confirmado de outra linha', endereco: 'https://exemplo.invalido/b', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: true } },
-      { id_da_linha: 'planta-c', correspondencia: 'exata', nome_ine: { nome: 'Nome com aviso', endereco: 'https://exemplo.invalido/c', lido_em: '2026-09-21T00:00:00+00:00', aviso: 'a conferência fica por fazer' } },
-      { id_da_linha: 'planta-d', correspondencia: 'exata', nome_ine: { nome: 'Nome de outra medida', endereco: 'https://exemplo.invalido/d', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: false } },
-      { id_da_linha: 'planta-e', correspondencia: 'exata', nome_pordata: { nome: 'Nome sem estado', endereco: 'https://exemplo.invalido/e', lido_em: '2026-09-21T00:00:00+00:00' } },
-      { id_da_linha: 'planta-f', correspondencia: 'proxima', nome_pordata: { nome: 'Nome de medida vizinha', endereco: 'https://exemplo.invalido/f', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: true } },
-      { id_da_linha: 'planta-g', correspondencia: 'exata', nome_ine: { nome: 'Nome com aviso vazio', endereco: 'https://exemplo.invalido/g', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: true, aviso: '' } },
+      { id_da_linha: 'planta-a', correspondencia: { ine: 'exata', pordata: null }, nome_ine: { estado: 'lido', nome: 'Nome confirmado A & B', endereco: 'https://exemplo.invalido/a?x=1&y=2', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: true } },
+      { id_da_linha: 'planta-b', correspondencia: { ine: null, pordata: 'exata' }, nome_pordata: { estado: 'lido', nome: 'Nome confirmado de outra linha', endereco: 'https://exemplo.invalido/b', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: true } },
+      { id_da_linha: 'planta-c', correspondencia: { ine: 'exata', pordata: null }, nome_ine: { estado: 'lido', nome: 'Nome com aviso', endereco: 'https://exemplo.invalido/c', lido_em: '2026-09-21T00:00:00+00:00', aviso: 'a conferência fica por fazer' } },
+      { id_da_linha: 'planta-d', correspondencia: { ine: 'exata', pordata: null }, nome_ine: { estado: 'lido', nome: 'Nome de outra medida', endereco: 'https://exemplo.invalido/d', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: false } },
+      { id_da_linha: 'planta-e', correspondencia: { ine: null, pordata: 'exata' }, nome_pordata: { estado: 'lido', nome: 'Nome sem veredicto', endereco: 'https://exemplo.invalido/e', lido_em: '2026-09-21T00:00:00+00:00' } },
+      { id_da_linha: 'planta-f', correspondencia: { ine: null, pordata: 'proxima' }, nome_pordata: { estado: 'lido', nome: 'Nome de medida vizinha', endereco: 'https://exemplo.invalido/f', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: true } },
+      { id_da_linha: 'planta-g', correspondencia: { ine: 'exata', pordata: null }, nome_ine: { estado: 'lido', nome: 'Nome com aviso vazio', endereco: 'https://exemplo.invalido/g', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: true, aviso: '' } },
       /* Duas linhas com o mesmo nome e o mesmo endereço, uma confirmada e outra não, como as duas da taxa de desemprego. */
-      { id_da_linha: 'planta-h', correspondencia: 'exata', nome_pordata: { nome: 'Nome partilhado por duas linhas', endereco: 'https://exemplo.invalido/h?a=11111&b=22222', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: true } },
-      { id_da_linha: 'planta-i', correspondencia: 'exata', nome_pordata: { nome: 'Nome partilhado por duas linhas', endereco: 'https://exemplo.invalido/h?a=11111&b=22222', lido_em: '2026-09-21T00:00:00+00:00' } },
+      { id_da_linha: 'planta-h', correspondencia: { ine: null, pordata: 'exata' }, nome_pordata: { estado: 'lido', nome: 'Nome partilhado por duas linhas', endereco: 'https://exemplo.invalido/h?a=11111&b=22222', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: true } },
+      { id_da_linha: 'planta-i', correspondencia: { ine: null, pordata: 'exata' }, nome_pordata: { estado: 'lido', nome: 'Nome partilhado por duas linhas', endereco: 'https://exemplo.invalido/h?a=11111&b=22222', lido_em: '2026-09-21T00:00:00+00:00' } },
+      /* AS DUAS FORMAS QUE SÓ A MARCA POR FONTE VÊ (22.09.2026). A primeira é a
+         que o motor escreve para um nome que a conferência cega ainda não
+         decidiu: a marca da fonte é «exata» e o `mesma_medida` é `null`. A
+         segunda é um `true` sobre um estado que não é «lido», que é um nome que
+         o motor não leu na fonte. */
+      { id_da_linha: 'planta-j', correspondencia: { ine: 'exata', pordata: null }, nome_ine: { estado: 'lido', nome: 'Nome exato por decidir', endereco: 'https://exemplo.invalido/j', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: null, proposta: 'mesma' } },
+      { id_da_linha: 'planta-k', correspondencia: { ine: null, pordata: 'exata' }, nome_pordata: { estado: 'sem_pagina', nome: 'Nome de um estado que não é lido', endereco: 'https://exemplo.invalido/k', lido_em: '2026-09-21T00:00:00+00:00', mesma_medida: true } },
     ],
   });
   const recibo = (nome, href, extra = '') =>
@@ -370,7 +434,7 @@ if (process.argv.includes('--prova')) {
     ['um nome com aviso num recibo', recibo('Nome com aviso', 'https://exemplo.invalido/c'), 'livro-razao/planta-c/index.html', /N1 .*aviso/],
     ['um nome com aviso num cartão', cartao('planta-c', 'Nome com aviso'), 'areas/planta/index.html', /N2 .*aviso/],
     ['um nome que o motor marcou como outra medida', recibo('Nome de outra medida', 'https://exemplo.invalido/d'), 'livro-razao/planta-d/index.html', /N1 .*mesma_medida: false/],
-    ['um nome sem estado', recibo('Nome sem estado', 'https://exemplo.invalido/e'), 'livro-razao/planta-e/index.html', /N1 .*sem estado/],
+    ['um nome sem veredicto', recibo('Nome sem veredicto', 'https://exemplo.invalido/e'), 'livro-razao/planta-e/index.html', /N1 .*sem veredicto/],
     ['um nome de uma medida vizinha', recibo('Nome de medida vizinha', 'https://exemplo.invalido/f'), 'livro-razao/planta-f/index.html', /N1 .*proxima/],
     ['um nome confirmado de outra linha', recibo(B.nome, B.endereco), 'livro-razao/planta-a/index.html', /N1 /],
     ['o endereço trocado', recibo(A.nome, 'https://exemplo.invalido/outro'), 'livro-razao/planta-a/index.html', /endereço trocado/],
@@ -388,6 +452,13 @@ if (process.argv.includes('--prova')) {
     ['a página certa, com «&» no nome e no endereço', recibo(A.nome, A.endereco), 'livro-razao/planta-a/index.html', null],
     ['o cartão certo', cartao('planta-a', A.nome), 'areas/planta/index.html', null],
     ['um nome recusado dentro de uma frase, que não é um nome oficial rendido', semMarca('<p>O INE chama-lhe Nome com aviso, e a página di-lo numa frase.</p>'), 'estudos/planta/index.html', null],
+    /* AS TRÊS DE 22.09.2026. As duas primeiras são casos que a marca por medida
+       não sabia distinguir: com uma só cadeia «exata» por medida, um nome por
+       decidir e um nome de um estado que não é «lido» chegavam à página com a
+       marca da OUTRA fonte. A terceira, a forma antiga do ficheiro, está mais
+       abaixo, porque é uma queixa do ficheiro e não de uma página. */
+    ['a marca «exata» da fonte com o mesma_medida a null, como o motor o escreve', recibo('Nome exato por decidir', 'https://exemplo.invalido/j'), 'livro-razao/planta-j/index.html', /N1 .*mesma_medida: true/],
+    ['um nome mesma_medida: true cujo estado não é «lido»', recibo('Nome de um estado que não é lido', 'https://exemplo.invalido/k'), 'livro-razao/planta-k/index.html', /N1 .*sem_pagina/],
   ];
   for (const [rotulo, html, caminho, padrao] of casos) {
     plantas += 1;
@@ -396,6 +467,36 @@ if (process.argv.includes('--prova')) {
     const falhou = r.erros.length > 0;
     if (padrao === null ? falhou : !falhou || !r.erros.some((e) => padrao.test(e)))
       falhas.push(`N4 planta «${rotulo}»: ${padrao === null ? 'devia passar e foi recusada' : 'devia ser recusada com a razão esperada e não foi'} (${r.erros[0] ?? (visto ? 'sem erro' : 'a procura barata nem a viu')})`);
+  }
+
+  /* A PLANTA DA FORMA ANTIGA (N7, 22.09.2026), que é a única que não se prova só
+     por uma página: o ficheiro de 15.09 tinha a `correspondencia` como uma
+     cadeia por medida, julgada para a PORDATA e lida para as duas fontes. Ela
+     tem de provar as duas coisas ao mesmo tempo, porque uma sem a outra é meia
+     régua: que um ficheiro assim rende ZERO nomes confirmados, e que a régua
+     DIZ a razão em vez de dar um verde calado. */
+  plantas += 1;
+  {
+    const antigo = lerNomes({
+      indicadores: [
+        {
+          id_da_linha: 'planta-antiga',
+          correspondencia: 'exata',
+          nome_ine: { nome: 'Nome de um ficheiro na forma antiga', endereco: 'https://exemplo.invalido/antiga', lido_em: '2026-09-15T00:00:00+00:00', mesma_medida: true },
+        },
+      ],
+    });
+    const html = recibo('Nome de um ficheiro na forma antiga', 'https://exemplo.invalido/antiga');
+    const caminho = 'livro-razao/planta-antiga/index.html';
+    const r = mereceAnalise(html, antigo) ? conferirPagina(html, caminho, antigo) : { erros: [] };
+    const quantos = [...antigo.confirmados.values()].flat().length;
+    const queixou = antigo.queixasDoFicheiro.some((q) => /N7: .*forma antiga/.test(q));
+    const recusou = r.erros.some((e) => /N1 .*forma antiga/.test(e));
+    if (quantos !== 0 || !queixou || !recusou)
+      falhas.push(
+        `N4 planta «a forma antiga do ficheiro»: devia render zero nomes (rendeu ${quantos}), ` +
+          `queixar-se da forma (${queixou ? 'queixou-se' : 'não se queixou'}) e recusar o recibo (${recusou ? 'recusou' : `não recusou: ${r.erros[0] ?? 'sem erro'}`})`,
+      );
   }
 }
 
@@ -407,11 +508,11 @@ for (const r of NOMES.recusados) razoes.set(r.porque.split(':')[0].split(',')[0]
 console.log(
   cinza(
     `\n  nomes oficiais · ${lidas} página(s) lidas, ${analisadas} analisadas · ${recibos} nome(s) em recibo, ${cartoes} em título de cartão · ` +
-      `confirmados no ficheiro do motor: ${porFonte('INE')} do INE, ${porFonte('PORDATA')} da PORDATA · recusados: ${NOMES.recusados.length}`,
+      `confirmados pela marca por fonte: ${porFonte('INE')} do INE, ${porFonte('PORDATA')} da PORDATA · recusados: ${NOMES.recusados.length}`,
   ),
 );
 if (nConfirmados === 0)
-  console.log(amarelo('  nenhum nome do ficheiro do motor está marcado «mesma_medida: true»: nenhum nome oficial se rende, e voltam um a um quando o motor os confirmar.'));
+  console.log(amarelo('  nenhum nome do ficheiro do motor está confirmado pela marca da sua fonte: nenhum nome oficial se rende, e voltam um a um quando o motor os confirmar.'));
 if (falhas.length) {
   console.error(vermelho(`\n  NOMES OFICIAIS — ${falhas.length} falha(s):\n`));
   for (const f of falhas.slice(0, 40)) console.error(`    ${f}`);
