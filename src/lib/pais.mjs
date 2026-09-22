@@ -2,15 +2,33 @@
  * As duas taxas de desemprego são a mesma medida. Fica a do procedimento,
  * com a comparação europeia e o valor de referência na régua existente. */
 import { DOMINIOS, DOMINIO_DAS_MEDIDAS } from '../data/dominios.mjs';
-import { getClaim, entradasDoRegisto } from './ledger.mjs';
+import { getClaim } from './ledger.mjs';
 import { WORKS } from '../data/studies.mjs';
 import { fichaDoEstudo } from './estudos-b1.mjs';
-import { nomeDoCartao, nomeDaLinhaDerivada } from './nomes.mjs';
-import { MUDANCAS_DO_PROJETO } from '../data/mudancas-do-projeto.mjs';
 
 /** @type {Record<string, string>} */
 export const MEDIDA_REUNIDA = { 'taxa-de-desemprego-2025': 'taxa-de-desemprego-mip-2025' };
 export const CITADAS_NA_LEITURA = ['divida-publica-2025', 'taxa-de-desemprego-mip-2025', 'precos-da-habitacao-2025'];
+
+/**
+ * AS SETE LINHAS QUE A LEITURA DO PAÍS CITA (B1c, 22.09.2026).
+ *
+ * `CITADAS_NA_LEITURA` é outra coisa: são as três que não voltam a abrir a fila
+ * dos cartões. Esta é a lista inteira, e existe porque o âmbito da página do
+ * país é a tabela da carta MAIS o que a leitura cita, e isso tem de estar
+ * escrito num sítio só. `LeituraDoPais.astro` confere-a contra os valores
+ * aprovados, e o `check:pais` lê-a da página construída: são três leituras
+ * independentes da mesma lista.
+ */
+export const LINHAS_DA_LEITURA_DO_PAIS = [
+  'divida-publica-2024',
+  'divida-publica-2025',
+  'divida-publica-2025-ue',
+  'taxa-de-desemprego-2025',
+  'taxa-de-desemprego-2025-ue',
+  'precos-da-habitacao-2025',
+  'precos-da-habitacao-2025-ue',
+];
 
 /** @param {'pt'|'en'} lang @param {boolean} resumo */
 export function temasDoPais(lang, resumo = false) {
@@ -27,24 +45,8 @@ export function estudosRecentes(lang) {
   return WORKS.map(w => fichaDoEstudo(w, lang)).sort((a, b) =>
     (b.data ?? '').localeCompare(a.data ?? '') || WORKS.indexOf(a.work) - WORKS.indexOf(b.work));
 }
-/** Cada entrada nasce de uma correção inteira, mesmo quando partilha a data.
- * As publicações são factos da edição, sem repetir a porta dos três estudos.
- * @param {'pt'|'en'} lang */
-export function mudancasDoPais(lang) {
-  const publicacoes = estudosRecentes(lang).map(e => {
-    if (!e.data) throw new Error(`Publicação sem data: ${e.work.slug}.`);
-    return { tipo: 'publicacao', data: e.data, estudo: e };
-  });
-  // A primeira página reúne o registo do projeto inteiro, incluindo os lugares.
-  const correcoes = entradasDoRegisto().filter(e => ['correcao', 'atualizacao'].includes(e.kind))
-    .map(e => {
-      if (!e.date) throw new Error(`Correção sem data: ${e.claimId}, entrada ${e.n}.`);
-      const linha = getClaim(e.claimId);
-      return { tipo: 'correcao', data: e.date, n: e.n, claim: e.claimId,
-        nome: nomeDaLinhaDerivada(linha, lang) ?? nomeDoCartao(linha, lang),
-        antes: e.old_value, depois: e.new_value,
-        unidade: typeof linha.unit === 'string' ? linha.unit : null };
-    }).sort((a, b) => a.claim.localeCompare(b.claim) || a.n - b.n);
-  const projeto = MUDANCAS_DO_PROJETO.map(e => ({ ...e, tipo: 'projeto' }));
-  return [...projeto, ...publicacoes, ...correcoes].sort((a,b) => b.data.localeCompare(a.data));
-}
+/* «O que mudou» mudou de casa a 22.09.2026 (B1c): a lista da primeira página,
+ * a de cada lugar e o registo inteiro saem agora de `src/lib/mudancas.mjs`, que
+ * é onde o âmbito de cada página está escrito, uma vez só. A primeira página
+ * deixou de reunir o registo do projeto inteiro: mostra as mudanças das linhas
+ * do país, os estudos publicados e as mudanças declaradas, no máximo oito. */

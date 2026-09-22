@@ -17,6 +17,9 @@
  *     concelho ficou sem porta; esta é a porta para o que a página não mostra, e
  *     não uma segunda porta para o que ela mostra. Parte-se em duas porque o
  *     nome do lugar entra no meio, declarado como lugar.
+ *   · `todasAsMudancas` · a porta, por baixo de «O que mudou», para o registo
+ *     inteiro (B1c, 22.09.2026). A lista de cada página mostra no máximo oito
+ *     mudanças; o que não cabe não desaparece, e esta é a porta para ele.
  */
 export const ROTULOS_B1 = {
   pt: { valor: 'Valor', medida: 'Medida', fonte: 'Fonte', verificacao: 'Verificado a', estudos: 'Estudos', porLugar: 'Por lugar', fontes: 'Fontes e verificação',
@@ -24,13 +27,15 @@ export const ROTULOS_B1 = {
     pais: 'Portugal', outraLingua: '(em inglês)', indice: 'Nesta página',
     temas: 'Temas', estudosDoLugar: 'Estudos sobre este lugar', estudosRecentes: 'Estudos recentes', mudou: 'O que mudou',
     lugares: 'Lugares', regioes: 'Regiões', distritos: 'Distritos e ilhas',
-    todasAsMedidasA: 'Todas as medidas de ', todasAsMedidasB: '' },
+    todasAsMedidasA: 'Todas as medidas de ', todasAsMedidasB: '',
+    todasAsMudancas: 'Todas as mudanças' },
   en: { valor: 'Value', medida: 'Measure', fonte: 'Source', verificacao: 'Verified on', estudos: 'Studies', porLugar: 'By place', fontes: 'Sources and verification',
     edicao: 'Edition as published', publicado: 'published on', estudoPublicado: 'Study published',
     pais: 'Portugal', outraLingua: '(in Portuguese)', indice: 'On this page',
     temas: 'Themes', estudosDoLugar: 'Studies about this place', estudosRecentes: 'Recent studies', mudou: 'What changed',
     lugares: 'Places', regioes: 'Regions', distritos: 'Districts and islands',
-    todasAsMedidasA: 'All measures for ', todasAsMedidasB: '' },
+    todasAsMedidasA: 'All measures for ', todasAsMedidasB: '',
+    todasAsMudancas: 'All changes' },
 };
 
 /** Os títulos que delimitam a leitura já aprovada, nas duas edições. */
