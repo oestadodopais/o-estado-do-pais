@@ -381,3 +381,12 @@ Ficam três cadeias do registo: a seta de mudança e a marca de incerteza que ac
 
 
 Entram as quatro descrições ditadas para o país e os temas, na classe de navegação. As duas descrições antigas do país ficam retiradas com a razão. «Tema» e «Theme» deixam a lista de frases retiradas: eram os nomes do comando antigo e são também palavras das descrições agora aprovadas. Não se pode proibir uma frase inteira por conter uma dessas palavras. A N3 do `check:pais` protege a retirada do mecanismo: recusa o guião do tema e o atributo nas páginas próprias; a planta repõe o guião na `Base.astro`.
+
+
+## I129, o grupo etário dos jovens que não estudam nem trabalham, 22.09.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| i129 | 2 frases novas; 2 retiradas | por ler pelo lugar de direção antes de aterrar | A definição da medida `jovens-nem-2025` nas duas edições passa a escrever o grupo que a linha fixa. A planta da célula K13 do `check:cartao` troca o segundo limite por «24» na declaração e exige um vermelho por edição; a outra metade da catraca exige um vermelho quando uma dívida declarada aparece paga. Medições em `design/especime-v3/medicoes/i129-2026-09-22/LEIA-ME.md`. |
+
+As duas frases antigas falavam de «um grupo de idades e sexo» sem dizer qual, e a condição que a fonte põe é dupla: o achado 7 de 14.09.2026 trouxe o sexo de volta e deixou a idade por dizer. As duas novas preenchem as duas metades, com os limites lidos da etiqueta `Age class: From 15 to 29 years` da resposta do Eurostat e o sexo total que a mesma resposta declara. Os algarismos levam marca de origem própria e por isso saem do texto recolhido, como já acontecia na definição do abandono escolar precoce.

@@ -13,8 +13,11 @@
  * página escreve, e a única maneira de a responder é ler o que ela escreveu.
  *
  * ---------------------------------------------------------------------------
- * AS OITO CÉLULAS
+ * AS CÉLULAS
  * ---------------------------------------------------------------------------
+ * São treze, e o cabeçalho dizia oito enquanto o guião tinha doze (o mapa do
+ * repositório apanhou-o a 21.09.2026). Ficam todas nomeadas: a K11, a K12 e a
+ * K13 por baixo das nove que este bloco encontrou escritas.
  *   K1 · **as cinco coisas e só elas** · cada `[data-cartao-medida]` do `dist/`
  *        só tem, ao primeiro nível, os blocos permitidos: o nome, a linha do
  *        valor, a frase e a régua. Um bloco a mais é um campo de recibo a
@@ -75,6 +78,20 @@
  *        compara-os: os números e o sentido. Um facto com duas origens que não
  *        batem certo é um facto por confirmar, e o cartão não o desenha sem
  *        alguém olhar.
+ *   K11 · **um cartão sem nome não é um cartão** · o nome é a primeira das cinco
+ *        coisas, e a chave da linha não vale por nome no texto de uma linha sem
+ *        nome.
+ *   K12 · **o período anterior é a observação anterior da mesma série** · a
+ *        régua não emparelha duas linhas que declarem edições ou unidades
+ *        diferentes do documento.
+ *   K13 · **o grupo etário da linha está escrito na definição** · quando a
+ *        linha de uma medida fixa um grupo de idades — a etiqueta `Age class`
+ *        no excerto ou o filtro `age=` no endereço do pedido —, a definição das
+ *        duas edições escreve os dois limites. Entrou pela I129: o título do
+ *        quadro do Eurostat diz «aged 15-24», a série é dos 15 aos 29, e a
+ *        definição dizia «um grupo de idades e sexo» sem dizer qual. Não lê
+ *        `dist/`: compara a declaração com a linha, que é onde o defeito vive.
+ *        Traz uma catraca declarada e datada, e a razão dela está ao pé dela.
  *
  * ---------------------------------------------------------------------------
  * O POSITIVO CONHECIDO, E PORQUE ELE É METADE DA RÉGUA
@@ -119,7 +136,7 @@ import {
   linguaDoRotuloDaFonte,
   linguaDoTituloDoDocumento,
 } from '../../src/i18n/lingua-dos-titulos.mjs';
-import { hasClaim } from '../../src/lib/ledger.mjs';
+import { getClaim, hasClaim } from '../../src/lib/ledger.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const argv = process.argv.slice(2);
@@ -291,6 +308,9 @@ function corre(dist) {
     linhas_sem_nome_com_conta: 0,
     /* A RÉGUA DO PERÍODO ANTERIOR, CONFERIDA PAR A PAR (achado 11). */
     regua_periodo_anterior: 0,
+    /* O GRUPO ETÁRIO DA LINHA NA DEFINIÇÃO (K13, I129, 22.09.2026). */
+    medidas_com_grupo_etario: 0,
+    medidas_na_catraca_do_grupo_etario: 0,
     governo_constitucional_pt: 0,
     governo_constitucional_en: 0,
     legenda_da_marca: 0,
@@ -609,7 +629,105 @@ function corre(dist) {
   }
   contas.valores_de_regua_sem_marca = enquadradas.length;
 
+  /* ------------------------------------------------------------------- K13 */
+  /* Não lê `dist/`: compara a declaração da definição com a linha do
+     livro-razão. Corre aqui para que uma célula vermelha feche a construção
+     pelo mesmo caminho das outras. */
+  const k13 = celulaK13();
+  erros.push(...k13.erros);
+  contas.medidas_com_grupo_etario = k13.medidas;
+  contas.medidas_na_catraca_do_grupo_etario = CATRACA_DO_GRUPO_ETARIO.size;
+
   return { erros, contas };
+}
+
+/* =========================================================================
+ * K13 · O GRUPO ETÁRIO DA LINHA ESTÁ ESCRITO NA DEFINIÇÃO
+ * =========================================================================
+ * A I129: o título que o catálogo do Eurostat dá a `tipslm90` diz «aged 15-24»
+ * e a dimensão `age` da resposta ao pedido da linha diz «From 15 to 29 years».
+ * O recibo mostrava a primeira coisa ao lado de um valor da segunda, e a
+ * definição da medida falava de «um grupo de idades e sexo» sem dizer qual.
+ * Nenhum valor estava errado: o que faltava era a linha dizer de quem é o
+ * número, e uma definição que não o diz deixa o leitor a supor.
+ *
+ * O QUE A CÉLULA MEDE. Para cada medida com definição declarada cuja LINHA
+ * fixa um grupo de idades — a etiqueta `Age class: From X to Y years` no
+ * excerto, ou um filtro `age=` no `source_url` —, a definição das DUAS edições
+ * escreve os dois limites desse grupo. Os limites saem da linha e não desta
+ * régua: o que aqui está escrito é a expressão que os lê.
+ *
+ * A CATRACA, DECLARADA E DATADA. A 22.09.2026 a célula mede quatro medidas e
+ * três falham, com o mesmo defeito da I129 e não com outro: `taxa-de-emprego`
+ * (20-64) e as duas de `taxa-de-desemprego` (15-74). Não se fecham aqui, e a
+ * razão é do livro-razão: as linhas delas não trazem a etiqueta da idade no
+ * excerto, só o filtro no endereço, e o excerto de uma linha reescreve-se pelo
+ * gerador do motor, que é o bloco seguinte (I132). Ficam NOMEADAS, com o grupo
+ * que a linha fixa e a questão que as fecha. A lista só encolhe: uma medida que
+ * falhe e não esteja nela é vermelho, e uma medida que esteja nela e PASSE
+ * também é vermelho, para que a dívida não apodreça depois de paga.
+ */
+const CATRACA_DO_GRUPO_ETARIO = new Map([
+  ['taxa-de-desemprego-2025', '15-74'],
+  ['taxa-de-desemprego-mip-2025', '15-74'],
+  ['taxa-de-emprego-2025', '20-64'],
+]);
+
+/** Os dois limites que a linha fixa, ou `null`. @param {string} id */
+function grupoEtarioDaLinha(id) {
+  if (!hasClaim(id)) return null;
+  const linha = getClaim(id);
+  const excerto = typeof linha.excerpt === 'string' ? linha.excerpt : '';
+  const endereco = typeof linha.source_url === 'string' ? linha.source_url : '';
+  const daEtiqueta = excerto.match(/Age class: From (\d+) to (\d+) years/);
+  if (daEtiqueta) return { limites: [daEtiqueta[1], daEtiqueta[2]], onde: 'o excerto' };
+  const doFiltro = endereco.match(/[?&]age=Y?(\d+)-(\d+)/);
+  if (doFiltro) return { limites: [doFiltro[1], doFiltro[2]], onde: 'o source_url' };
+  return null;
+}
+
+/**
+ * @param {Record<string, { pt: readonly unknown[], en: readonly unknown[] }>} definicoes
+ * @returns {{ erros: string[], medidas: number }}
+ */
+function celulaK13(definicoes = /** @type {any} */ (DEFINICOES_DAS_MEDIDAS)) {
+  /** @type {string[]} */
+  const erros = [];
+  let medidas = 0;
+  for (const id of Object.keys(definicoes)) {
+    const grupo = grupoEtarioDaLinha(id);
+    if (!grupo) continue;
+    medidas++;
+    const faltam = [];
+    for (const lang of ['pt', 'en']) {
+      const partes = definicoes[id][lang] ?? definicoes[id].pt;
+      const texto = textoDaDefinicao(partes);
+      /* Os dois limites como números inteiros do texto, e não como subcadeia:
+         «15» não se dá por escrito num «2015». */
+      const escreve = grupo.limites.every((n) =>
+        new RegExp(`(^|[^0-9])${n}([^0-9]|$)`).test(texto));
+      if (!escreve) faltam.push({ lang, texto });
+    }
+    const naCatraca = CATRACA_DO_GRUPO_ETARIO.get(id);
+    if (faltam.length === 0) {
+      if (naCatraca) {
+        erros.push(
+          `K13 · ${id}: escreve o grupo dos ${grupo.limites.join(' aos ')} anos nas duas ` +
+            `edições e continua na catraca. Tira-a de CATRACA_DO_GRUPO_ETARIO: uma dívida ` +
+            `paga que fica declarada esconde a seguinte.`,
+        );
+      }
+      continue;
+    }
+    if (naCatraca === grupo.limites.join('-')) continue;
+    for (const { lang, texto } of faltam) {
+      erros.push(
+        `K13 · ${id} · ${lang}: a linha fixa o grupo dos ${grupo.limites.join(' aos ')} anos ` +
+          `(${grupo.onde}) e a definição não escreve os dois limites: «${texto}»`,
+      );
+    }
+  }
+  return { erros, medidas };
 }
 
 /* =========================================================================
@@ -776,6 +894,65 @@ if (PROVA) {
     fs.rmSync(nomesDir, { recursive: true, force: true });
   }
 
+  /* -------------------------------------------------------------------- K13
+     A PLANTA DO GRUPO ETÁRIO: a definição diz «dos 15 aos 24 anos» e a linha
+     fixa os 15 aos 29. É o defeito da I129 escrito por inteiro, e é o que a
+     célula existe para apanhar. Nenhuma linha falsa entra: a linha é a
+     verdadeira, e o que se troca é a DECLARAÇÃO, que é o lado que se corrige.
+     Positivo, planta, e a reposição a passar. */
+  {
+    const id = 'jovens-nem-2025';
+    const real = celulaK13();
+    if (real.erros.length) {
+      falhas.push(`K13 recusa a declaração em vigor: ${real.erros[0]}`);
+    }
+    if (real.medidas < 4) {
+      falhas.push(`K13 só viu ${real.medidas} medida(s) com grupo etário na linha`);
+    }
+    /* A linha tem de trazer mesmo a etiqueta: sem ela a planta não prova nada,
+       porque a célula nem sequer olharia para esta medida. */
+    const grupo = grupoEtarioDaLinha(id);
+    if (!grupo || grupo.limites.join('-') !== '15-29' || grupo.onde !== 'o excerto') {
+      falhas.push(`K13: a linha «${id}» não fixa os 15 aos 29 pelo excerto`);
+    }
+    const trocaOSegundoLimite = (partes) =>
+      partes.map((p) => (typeof p !== 'string' && p.nl === '29' ? { ...p, nl: '24' } : p));
+    const plantadas = {
+      ...DEFINICOES_DAS_MEDIDAS,
+      [id]: {
+        ...DEFINICOES_DAS_MEDIDAS[id],
+        pt: trocaOSegundoLimite(DEFINICOES_DAS_MEDIDAS[id].pt),
+        en: trocaOSegundoLimite(DEFINICOES_DAS_MEDIDAS[id].en),
+      },
+    };
+    const mordidas = celulaK13(plantadas).erros.filter((e) => e.startsWith(`K13 · ${id}`));
+    if (mordidas.length !== 2) {
+      falhas.push(
+        `K13 NÃO MORDEU a definição com «dos 15 aos 24 anos»: ${mordidas.length} ` +
+          `vermelho(s) em vez de um por edição`,
+      );
+    } else if (!mordidas.every((e) => e.includes('dos 15 aos 29 anos'))) {
+      falhas.push(`K13 mordeu noutra coisa: ${mordidas[0]}`);
+    }
+    /* A OUTRA METADE DA CATRACA: uma dívida paga que fica declarada é vermelha.
+       Planta-se pagando uma das três, que é o que o bloco seguinte vai fazer. */
+    const daCatraca = [...CATRACA_DO_GRUPO_ETARIO.keys()][0];
+    const paga = {
+      ...DEFINICOES_DAS_MEDIDAS,
+      [daCatraca]: {
+        ...DEFINICOES_DAS_MEDIDAS[daCatraca],
+        pt: ['Dos ', { nl: '15', motivo: 'escala-de-instrumento' }, ' aos ',
+             { nl: '74', motivo: 'escala-de-instrumento' }, ' anos.'],
+        en: ['Aged ', { nl: '15', motivo: 'escala-de-instrumento' }, ' to ',
+             { nl: '74', motivo: 'escala-de-instrumento' }, '.'],
+      },
+    };
+    const aviso = celulaK13(paga).erros.filter((e) => e.includes('continua na catraca'));
+    if (aviso.length !== 1) {
+      falhas.push('K13: a catraca não reclamou uma dívida paga que ficou declarada');
+    }
+  }
+
   /* A mesma K6, com a frase real e as duas glosas: verde antes, vermelha
      quando se troca cada glosa. Nenhum valor de medida entra nesta planta. */
   const glosasDir = fs.mkdtempSync(path.join(os.tmpdir(), 'oedp-cartao-glosas-'));
@@ -917,7 +1094,9 @@ if (PROVA) {
         `a régua com as duas comparações de uma medida, a série bienal, a ausência da linha da ` +
         `União e uma chave que não se inventa; as duas testemunhas do valor de referência com um ` +
         `par bom e dois maus; a mesma série com um par que bate e um que não bate; ` +
-        `K6 com as glosas declaradas e com cada uma das duas trocada; K1 com o nome do limite legal declarado, antigo e reposto nas duas línguas`,
+        `K6 com as glosas declaradas e com cada uma das duas trocada; K1 com o nome do limite legal declarado, antigo e reposto nas duas línguas; ` +
+        `K13 sobre ${celulaK13().medidas} medidas com grupo etário na linha, com a definição em vigor a passar, ` +
+        `«dos 15 aos 24 anos» a morder nas duas edições e a catraca a reclamar uma dívida paga`,
     ),
   );
 }
@@ -1011,6 +1190,8 @@ console.log(cinza(`    o marcador em português          ${r.contas.marcador_em_
 console.log(cinza(`    valores de régua sem marca própria                    ${r.contas.valores_de_regua_sem_marca} (a porta é a do cartão)`));
 console.log(cinza(`    valores de referência, as duas testemunhas comparadas  ${r.contas.valores_de_referencia_comparados}`));
 console.log(cinza(`    medidas com nome oficial no recibo                    ${r.contas.medidas_com_nome_oficial}`));
+console.log(cinza(`    medidas com grupo etário fixado na linha (K13)         ${r.contas.medidas_com_grupo_etario}`));
+console.log(cinza(`      delas, na catraca declarada (I132)                  ${r.contas.medidas_na_catraca_do_grupo_etario}`));
 console.log(
   cinza(
     `    ficheiros do motor               referencias.json ${motor.referencias ? 'sim' : 'ainda não'} · ` +
