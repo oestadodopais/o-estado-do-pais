@@ -1,5 +1,5 @@
 {
-  "cabeca": "d91e899960cea85df511abe4b86fd6d38a25d0d5",
+  "cabeca": "59c27b5b876956fc6c9fa7db4457ce322181a1b5",
   "navegador": "148.0.7778.96",
   "resultados": [
     {
@@ -11,8 +11,8 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
-      "altura": 6197,
-      "mudancasNaLista": 1,
+      "altura": 6411,
+      "mudancasNaLista": 2,
       "mudancasNoRegisto": 0,
       "lugaresComPorta": 0,
       "portasDeMudancas": [
@@ -26,7 +26,7 @@
       "selosPartidos": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "a00b0ae3181de49ced7338bf8a95cdb33aaab23f05928ac012ce5a442dc88bbf"
+      "sha256": "28444ee3a1585190b419ebafd275518782819f7cb2b7477bc57f727fc13cca55"
     },
     {
       "ficheiro": "depois-pais-pt-1280.png",
@@ -37,8 +37,8 @@
       "janela": 1280,
       "documento": 1280,
       "corpo": 1280,
-      "altura": 4791,
-      "mudancasNaLista": 1,
+      "altura": 4955,
+      "mudancasNaLista": 2,
       "mudancasNoRegisto": 0,
       "lugaresComPorta": 0,
       "portasDeMudancas": [
@@ -52,7 +52,7 @@
       "selosPartidos": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "1c5db5af5fb31290c2af57d14fc26913b3b5c57d67d5d008cb1dbc004a2c5075"
+      "sha256": "b09f5c164fe48500794135929134b55677dcf2b5aaef4e5739e942827d4f350b"
     },
     {
       "ficheiro": "depois-pais-en-390.png",
@@ -63,8 +63,8 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
-      "altura": 6250,
-      "mudancasNaLista": 1,
+      "altura": 6465,
+      "mudancasNaLista": 2,
       "mudancasNoRegisto": 0,
       "lugaresComPorta": 0,
       "portasDeMudancas": [
@@ -78,7 +78,7 @@
       "selosPartidos": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "360745f1a7454949e0c84bce2079ff1996f0cbbe2672f06722817001ef2264ad"
+      "sha256": "dbd641f4a042936a3347783e1ce67ce3d565d5de228e7423b33861d59337a2e9"
     },
     {
       "ficheiro": "depois-pais-en-1280.png",
@@ -89,8 +89,8 @@
       "janela": 1280,
       "documento": 1280,
       "corpo": 1280,
-      "altura": 4880,
-      "mudancasNaLista": 1,
+      "altura": 5023,
+      "mudancasNaLista": 2,
       "mudancasNoRegisto": 0,
       "lugaresComPorta": 0,
       "portasDeMudancas": [
@@ -104,7 +104,7 @@
       "selosPartidos": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "a8deb1220ba318dd835ecd65b9ec4b48efde5df5be9eefa8716ca0a6d19da4b1"
+      "sha256": "5ca126cfb2805fbe729e00203f36ccdd616e9210f3832c8cd5caf94ddffcd9de"
     },
     {
       "ficheiro": "depois-registo-pt-390.png",
@@ -115,10 +115,10 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
-      "altura": 9966,
+      "altura": 10028,
       "mudancasNaLista": 0,
-      "mudancasNoRegisto": 30,
-      "lugaresComPorta": 30,
+      "mudancasNoRegisto": 31,
+      "lugaresComPorta": 31,
       "portasDeMudancas": [
         "A regra, no Método →"
       ],
@@ -130,7 +130,7 @@
       "selosPartidos": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "1864d96461ccab374b5ed76c0076cf1c2fa82dfd888c2c3b9f3f5393227fbd5f"
+      "sha256": "207461e1f274a4c4dc014545b80c14c877376f3f72ed3d8ab2bd2f7ebea64f8d"
     },
     {
       "ficheiro": "depois-registo-pt-1280.png",
@@ -141,10 +141,10 @@
       "janela": 1280,
       "documento": 1280,
       "corpo": 1280,
-      "altura": 9375,
+      "altura": 9537,
       "mudancasNaLista": 0,
-      "mudancasNoRegisto": 30,
-      "lugaresComPorta": 30,
+      "mudancasNoRegisto": 31,
+      "lugaresComPorta": 31,
       "portasDeMudancas": [
         "A regra, no Método →"
       ],
@@ -156,7 +156,7 @@
       "selosPartidos": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "c3eb4557cf668c75bffdd9de1b60cb3b08eed197e274ac43c3791929692b1908"
+      "sha256": "887f2342597aea1680f4aa65a4afa0ed0c313826f8d4d5464d2bebee8d45f6bd"
     },
     {
       "ficheiro": "depois-registo-en-390.png",
@@ -167,14 +167,14 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
-      "altura": 10061,
+      "altura": 10170,
       "mudancasNaLista": 0,
-      "mudancasNoRegisto": 30,
-      "lugaresComPorta": 30,
+      "mudancasNoRegisto": 31,
+      "lugaresComPorta": 31,
       "portasDeMudancas": [
         "The rule, in the Method →"
       ],
-      "marcadores": 9,
+      "marcadores": 11,
       "definicoesDoMarcador": 1,
       "valores": 1,
       "selos": 26,
@@ -182,7 +182,7 @@
       "selosPartidos": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "1566b20d6c68244fd1787dae4a7bfdd0f1e47b4d0a3d608e1752ec27f45fbea2"
+      "sha256": "30ffbfc0070424698cbf91ea7e8cccff8de6bb23f4276367ea7fdc59561e00f9"
     },
     {
       "ficheiro": "depois-registo-en-1280.png",
@@ -193,14 +193,14 @@
       "janela": 1280,
       "documento": 1280,
       "corpo": 1280,
-      "altura": 9270,
+      "altura": 9432,
       "mudancasNaLista": 0,
-      "mudancasNoRegisto": 30,
-      "lugaresComPorta": 30,
+      "mudancasNoRegisto": 31,
+      "lugaresComPorta": 31,
       "portasDeMudancas": [
         "The rule, in the Method →"
       ],
-      "marcadores": 9,
+      "marcadores": 11,
       "definicoesDoMarcador": 1,
       "valores": 1,
       "selos": 26,
@@ -208,7 +208,7 @@
       "selosPartidos": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "2169d2d4540c9b3b2ee11f82ff1b40c3c394f76becfb3b69eeccfb4c5668c4a6"
+      "sha256": "e7e00814ffd02377f202a4003def56a93fae86b4cf843b36949c6b917773f5d7"
     }
   ]
 }
