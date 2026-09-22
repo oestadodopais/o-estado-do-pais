@@ -58,6 +58,8 @@ export function verificaB1(raiz) {
         ...dados.flatMap(w => [w.description[lang], ...w.editions.map(e => e.title),
           ...primeirasFrases(leituraDe(w.id)?.frase[lang] ?? []).filter(p => typeof p === 'string')]),
         S[lang].estudos.textoSubir, `${S[lang].estudos.textoSubir} ↑`, `${ROTULOS_B1[lang].fontes} →`, '→', '↑', '·',
+        /* A porta para o registo inteiro, por baixo de «O que mudou» (B1c). */
+        `${ROTULOS_B1[lang].todasAsMudancas} →`,
         `· ${S[lang].marcador.definicao}`,
       ].map(normal));
       const tecnicos = new Set(['textoLinhaK', 'textoValorK', 'textoImpressoK', 'textoOrigemK', 'textoLinhaDoLivro', 'textoRegistoK'].map(k => S[lang].estudos[k]));

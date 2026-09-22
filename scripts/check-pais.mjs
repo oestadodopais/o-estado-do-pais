@@ -8,6 +8,9 @@ import { load } from 'js-yaml';
 import { DOMINIOS, DOMINIO_DAS_MEDIDAS } from '../src/data/dominios.mjs';
 import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
 import { WORKS } from '../src/data/studies.mjs';
+import { REGIOES } from '../src/data/regioes.mjs';
+import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
+import { LUGAR_DECLARADO_DAS_LINHAS } from '../src/data/lugar-das-linhas.mjs';
 import { t } from '../src/i18n/strings.mjs';
 const raiz = process.cwd();
 const dist = path.resolve(process.env.OEDP_DIST ?? 'dist');
@@ -38,12 +41,89 @@ for (const m of MUDANCAS_DO_PROJETO) {
 }
 const datas = JSON.parse(fs.readFileSync('src/data/datas-de-publicacao.json', 'utf8')).edicoes;
 const correcoesEsperadas = new Set();
+/* B1c: a identidade de cada mudança, sem a data, que é o que o registo declara.
+   `correcoesEsperadas` guarda a data porque a C1 e a M3 a comparam; a A3 conta
+   as entradas, e conta-as pela linha e pelo índice. */
+const chavesDoLivro = new Set();
 for (const f of fs.readdirSync('ledger/claims').filter(f=>f.endsWith('.yml'))) {
   const c = linha(f.slice(0,-4));
   (c.corrections ?? []).forEach((e, n) => {
-    if (['correcao','atualizacao'].includes(e.kind)) correcoesEsperadas.add(`${c.id}|${n}|${e.date}`);
+    if (['correcao','atualizacao'].includes(e.kind)) {
+      correcoesEsperadas.add(`${c.id}|${n}|${e.date}`);
+      chavesDoLivro.add(`correcao|${c.id}|${n}`);
+    }
   });
 }
+
+/* ===========================================================================
+   B1c · «O QUE MUDOU» NO SEU LUGAR: O ÂMBITO, O TETO E O REGISTO
+   ===========================================================================
+   Três células novas, e as três leem o lugar de cada linha por conta própria,
+   das mesmas declarações que a página lê mas sem chamar a função que a compõe:
+   a tabela dos lugares declarados, a região que nomeia a linha, o estudo que
+   declara o objeto, o concelho que a rende no relance, e a tabela das medidas
+   do país com as sete linhas que a leitura cita.
+
+     A1 · uma linha fora do âmbito da sua página fecha a construção;
+     A2 · mais linhas do que o teto fecham;
+     A3 · o registo tem exactamente as entradas do livro inteiro, as publicações
+          do arquivo e as mudanças declaradas: nem uma a mais, nem uma a menos.
+
+   O TETO ESTÁ ESCRITO AQUI, e não importado: uma régua que leia o número da
+   coisa que mede não mede nada. */
+const TETO = 8;
+const PAIS = 'portugal';
+const CAMPOS_DA_REGIAO = ['valor', 'valorHistorico', 'distancia', 'distanciaHistorica'];
+const regiaoDaLinha = new Map();
+for (const r of REGIOES) for (const campo of CAMPOS_DA_REGIAO)
+  if (typeof r[campo] === 'string') regiaoDaLinha.set(r[campo], r.slug);
+const concelhoDaLinha = new Map();
+for (const m of MUNICIPIOS_COM_PAGINA) for (const p of m.relance ?? []) {
+  if (!p.claim) continue;
+  concelhoDaLinha.set(p.claim, concelhoDaLinha.has(p.claim) && concelhoDaLinha.get(p.claim) !== m.slug ? null : m.slug);
+}
+const objetoDoEstudo = new Map(WORKS.filter(w => typeof w.subject === 'string').map(w => [w.id, w.subject]));
+/* As sete linhas da leitura do país, escritas aqui como a L2 e a L3 as
+   escrevem: é a lista da régua, e não a da página. */
+const LINHAS_DA_LEITURA = ['divida-publica-2024','divida-publica-2025','divida-publica-2025-ue','taxa-de-desemprego-2025','taxa-de-desemprego-2025-ue','precos-da-habitacao-2025','precos-da-habitacao-2025-ue'];
+const linhasDoPais = new Set([...Object.keys(DOMINIO_DAS_MEDIDAS), ...LINHAS_DA_LEITURA]);
+function lugarDaLinha(id) {
+  if (LUGAR_DECLARADO_DAS_LINHAS[id]) return LUGAR_DECLARADO_DAS_LINHAS[id];
+  const c = linha(id);
+  const candidatos = [...new Set([
+    regiaoDaLinha.get(id),
+    typeof c.study === 'string' ? objetoDoEstudo.get(c.study) : undefined,
+    concelhoDaLinha.get(id) ?? undefined,
+    linhasDoPais.has(id) ? PAIS : undefined,
+  ].filter(x => typeof x === 'string'))];
+  if (candidatos.length > 1) {
+    erros.push(`A1: a linha ${id} é declarada de mais do que um lugar (${candidatos.join(', ')}).`);
+    return null;
+  }
+  return candidatos[0] ?? null;
+}
+/** A identidade de uma linha de mudança, lida do HTML e de mais nada. */
+function chaveDaMudanca(li) {
+  const tipo = li.getAttribute('data-mudanca');
+  if (tipo === 'correcao') {
+    const id = li.getAttribute('data-correcao-entrada');
+    const n = li.querySelector('[data-correcao-campo="date"]')?.getAttribute('data-correcao-n');
+    return { tipo, chave: `correcao|${id}|${n}`, claim: id };
+  }
+  if (tipo === 'publicacao') {
+    const par = li.querySelector('[data-publicacao-estudo]')?.getAttribute('data-publicacao-estudo') ?? '';
+    return { tipo, chave: `publicacao|${par.split('/')[0]}`, claim: null };
+  }
+  if (tipo === 'projeto') return { tipo, chave: `projeto|${li.getAttribute('data-mudanca-id')}`, claim: null };
+  return { tipo: null, chave: null, claim: null };
+}
+const chavesDoRegisto = new Set([
+  ...chavesDoLivro,
+  ...WORKS.map(w => `publicacao|${w.slug}`),
+  ...MUDANCAS_DO_PROJETO.map(m => `projeto|${m.id}`),
+]);
+let listasMedidas = 0;
+let registosMedidos = 0;
 for (const lang of ['pt', 'en']) {
   const home = le(lang === 'pt' ? '' : 'en');
   const indice = le(lang === 'pt' ? 'temas' : 'en/themes');
@@ -96,32 +176,64 @@ for (const lang of ['pt', 'en']) {
   }).sort((a,b) => b.data.localeCompare(a.data) || a.i-b.i).slice(0,3).map(e=>e.slug);
   const rendidos = home.querySelectorAll('#trabalhos [data-estudo]').map(e => e.getAttribute('data-estudo'));
   if (JSON.stringify(recentes) !== JSON.stringify(rendidos)) erros.push(`E1 ${lang}: os três estudos não são os mais recentes.`);
+  /* M2 · a mudança declarada que a primeira página rende tem de ser a declarada,
+     e não se repete. A PRESENÇA de todas mudou de casa a 22.09.2026 (B1c): a
+     primeira página mostra no máximo oito mudanças, e quem tem de as ter todas
+     é o registo, que é o que a A3 conta. */
   for (const m of MUDANCAS_DO_PROJETO) {
     const els = home.querySelectorAll(`[data-mudanca-id="${m.id}"]`);
-    if (els.length !== 1 || normal(els[0]?.querySelector('[data-mudanca-campo="data"]')?.textContent) !== data(m.data) || normal(els[0]?.querySelector('[data-mudanca-campo="texto"]')?.textContent) !== m.texto[lang]) erros.push(`M2 ${lang}: a mudança ${m.id} não coincide com a declaração.`);
+    if (els.length > 1) erros.push(`M2 ${lang}: a mudança ${m.id} repete-se na página do país.`);
+    if (els.length === 1 && (normal(els[0]?.querySelector('[data-mudanca-campo="data"]')?.textContent) !== data(m.data) || normal(els[0]?.querySelector('[data-mudanca-campo="texto"]')?.textContent) !== m.texto[lang])) erros.push(`M2 ${lang}: a mudança ${m.id} não coincide com a declaração.`);
   }
-  const entradas = home.querySelectorAll('.pais-mudou [data-correcao-entrada]');
-  const correcoes = entradas.map(e=>`${e.getAttribute('data-correcao-entrada')}|${e.querySelector('time')?.getAttribute('data-correcao-n')}|${e.querySelector('time')?.getAttribute('datetime')}`);
-  if (correcoes.length !== correcoesEsperadas.size || correcoes.some(c=>!correcoesEsperadas.has(c)) || new Set(correcoes).size !== correcoes.length) erros.push(`C1 ${lang}: falta uma correção individual, ou está repetida.`);
+  /* A C1 E A M3 MUDARAM DE ÂMBITO, NÃO DE FORÇA (B1c, 22.09.2026). Corriam só
+     sobre a lista da primeira página; como as correções das linhas dos lugares
+     saíram dela, passaram a correr sobre TODAS as listas medidas — a do país, a
+     de cada lugar e o registo inteiro —, em `confereCorrecoes()`, mais abaixo.
+     Nenhuma linha de correção do sítio fica fora delas. */
+  const mudaramEm = home.querySelectorAll('.pais-mudou time').map(e=>e.getAttribute('datetime'));
+  if (mudaramEm.some((d,i)=>i>0 && d > mudaramEm[i-1])) erros.push(`C2 ${lang}: as mudanças não estão da mais recente para a mais antiga.`);
+}
+/**
+ * A C1 E A M3, SOBRE QUALQUER LISTA DE MUDANÇAS.
+ *
+ * C1 · cada linha de correção nasce de uma entrada inteira do livro, com o seu
+ *      índice e a sua data, e não se repete na mesma lista. A contagem contra o
+ *      livro INTEIRO é da A3, no registo: a primeira página deixou de mostrar
+ *      tudo, e exigir-lhe tudo seria exigir o contrário do que o bloco decidiu.
+ * M3 · cada linha traz as marcas do MESMO índice e da MESMA linha, sem campo
+ *      repetido e sem campo que não seja do registo, com a data, o valor antigo
+ *      e o valor novo entre elas, e os três iguais ao que o livro escreve.
+ *      Eram exactamente três marcas porque a lista do país só rendia essas três;
+ *      o registo rende também o motivo, a natureza e o id, e por isso a conta
+ *      passa a ser «os três obrigatórios, nenhum repetido, nenhum de fora».
+ */
+const CAMPOS_DO_REGISTO = new Set(['date', 'old_value', 'new_value', 'reason', 'kind', 'id']);
+function confereCorrecoes(lista, onde) {
+  const entradas = lista.querySelectorAll('[data-correcao-entrada]');
+  const chaves = entradas.map(e => `${e.getAttribute('data-correcao-entrada')}|${e.querySelector('[data-correcao-campo="date"]')?.getAttribute('data-correcao-n')}|${e.querySelector('[data-correcao-campo="date"]')?.getAttribute('datetime')}`);
+  if (chaves.some(c => !correcoesEsperadas.has(c)) || new Set(chaves).size !== chaves.length)
+    erros.push(`C1: ${onde}: uma linha de correção não é uma entrada do livro, ou repete-se.`);
   for (const e of entradas) {
     const id = e.getAttribute('data-correcao-entrada');
     const marcas = e.querySelectorAll('[data-correcao-n]');
     const ns = marcas.map(m => m.getAttribute('data-correcao-n'));
+    const campos = marcas.map(m => m.getAttribute('data-correcao-campo'));
     const correcao = /^\d+$/.test(ns[0] ?? '') ? linha(id).corrections?.[Number(ns[0])] : null;
     const antes = e.querySelector('s[data-correcao-campo="old_value"]');
     const depois = e.querySelector('[data-correcao-campo="new_value"]');
-    const quando = e.querySelector('time[data-correcao-campo="date"]');
-    if (marcas.length !== 3 || new Set(ns).size !== 1 || !correcao ||
+    const quando = e.querySelector('[data-correcao-campo="date"][datetime]');
+    if (marcas.length < 3 || new Set(ns).size !== 1 || !correcao ||
+        campos.some(c => !CAMPOS_DO_REGISTO.has(c)) || new Set(campos).size !== campos.length ||
+        !['date', 'old_value', 'new_value'].every(c => campos.includes(c)) ||
         marcas.some(m => m.getAttribute('data-correcao-claim') !== id) ||
         !antes || !depois || !quando || normal(antes.textContent) === normal(depois.textContent) ||
         normal(antes?.textContent) !== normal(correcao?.old_value) ||
         normal(depois?.textContent) !== normal(correcao?.new_value) ||
         quando?.getAttribute('datetime') !== correcao?.date || normal(quando?.textContent) !== data(correcao?.date ?? ''))
-      erros.push(`M3 ${lang}: ${id} mistura correções, repete o valor ou difere da correção declarada.`);
+      erros.push(`M3: ${onde}: ${id} mistura correções, repete o valor ou difere da correção declarada.`);
   }
-  const mudaramEm = home.querySelectorAll('.pais-mudou time').map(e=>e.getAttribute('datetime'));
-  if (mudaramEm.some((d,i)=>i>0 && d > mudaramEm[i-1])) erros.push(`C2 ${lang}: as mudanças não estão da mais recente para a mais antiga.`);
 }
+
 // Cinco entradas em cada página própria. Os documentos originais são transcrições.
 let paginas = 0;
 function anda(dir) {
@@ -143,10 +255,64 @@ function anda(dir) {
     const destinos = lang === 'pt' ? ['/','/lugares/','/temas/','/estudos','/sobre'] : ['/en','/en/places/','/en/themes/','/en/studies','/en/about'];
     if (JSON.stringify(portas.map(a=>normal(a.textContent))) !== JSON.stringify(esperado) || portas.some((a,i)=>a.getAttribute('href') !== destinos[i]) || doc.querySelector('.nav-menu')) erros.push(`N1: menu de cinco errado em ${path.relative(dist, abs)}.`);
     if (doc.querySelectorAll('[data-rotulo-ia="rodape"] .rotulo-ia-final').length !== 1) erros.push(`N2: ponto final sem ligação inseparável em ${path.relative(dist,abs)}.`);
+
+    /* ------------------------------------------------------- A1, A2 e A3 */
+    const onde = path.relative(dist, abs);
+    for (const lista of doc.querySelectorAll('[data-mudou-ambito]')) {
+      listasMedidas++;
+      const ambito = lista.getAttribute('data-mudou-ambito');
+      const itens = lista.querySelectorAll('li[data-mudanca]');
+      if (itens.length !== lista.querySelectorAll('li').length)
+        erros.push(`A1: ${onde}: uma linha de «O que mudou» sem classe declarada.`);
+      if (itens.length > TETO) erros.push(`A2: ${onde}: ${itens.length} mudanças, e o teto é ${TETO}.`);
+      for (const li of itens) {
+        const { tipo, chave, claim } = chaveDaMudanca(li);
+        if (!tipo || !chave || chave.includes('|null') || chave.endsWith('|undefined')) {
+          erros.push(`A1: ${onde}: uma linha de «O que mudou» sem identidade legível.`);
+          continue;
+        }
+        if (!chavesDoRegisto.has(chave))
+          erros.push(`A1: ${onde}: a linha ${chave} não é do livro, do arquivo nem das mudanças declaradas.`);
+        const doLugar = claim ? lugarDaLinha(claim) : null;
+        const dentro = ambito === 'pais'
+          ? (tipo !== 'correcao' || doLugar === PAIS)
+          : (tipo === 'correcao' && doLugar === ambito);
+        if (!dentro)
+          erros.push(`A1: ${onde}: a linha ${chave} é de «${doLugar ?? 'nenhum lugar'}» e a página é de «${ambito}».`);
+      }
+      const quando = itens.map(li => li.querySelector('time')?.getAttribute('datetime'));
+      if (quando.some((d,i) => i>0 && d > quando[i-1])) erros.push(`A2: ${onde}: as mudanças não estão da mais recente para a mais antiga.`);
+      confereCorrecoes(lista, `${onde} (${ambito})`);
+    }
+    for (const registo of doc.querySelectorAll('[data-mudou-registo]')) {
+      registosMedidos++;
+      const itens = registo.querySelectorAll('li[data-mudanca]');
+      const chaves = itens.map(li => chaveDaMudanca(li).chave);
+      const vistas = new Set(chaves);
+      const aMais = [...vistas].filter(c => !chavesDoRegisto.has(c));
+      const aMenos = [...chavesDoRegisto].filter(c => !vistas.has(c));
+      if (vistas.size !== chaves.length) erros.push(`A3: ${onde}: o registo repete uma mudança.`);
+      if (aMais.length || aMenos.length)
+        erros.push(`A3: ${onde}: o registo tem ${chaves.length} mudanças e o livro inteiro tem ${chavesDoRegisto.size}` +
+          `${aMais.length ? `; a mais: ${aMais.slice(0,3).join(', ')}` : ''}` +
+          `${aMenos.length ? `; a menos: ${aMenos.slice(0,3).join(', ')}` : ''}.`);
+      for (const m of MUDANCAS_DO_PROJETO) {
+        const els = registo.querySelectorAll(`[data-mudanca-id="${m.id}"]`);
+        if (els.length !== 1 || normal(els[0]?.querySelector('[data-mudanca-campo="data"]')?.textContent) !== data(m.data) || normal(els[0]?.querySelector('[data-mudanca-campo="texto"]')?.textContent) !== m.texto[lang])
+          erros.push(`A3: ${onde}: a mudança declarada ${m.id} falta no registo ou não coincide com a declaração.`);
+      }
+      const quando = itens.map(li => li.querySelector('time')?.getAttribute('datetime'));
+      if (quando.some((d,i) => i>0 && d > quando[i-1])) erros.push(`A3: ${onde}: o registo não está da mais recente para a mais antiga.`);
+      confereCorrecoes(registo, `${onde} (registo)`);
+    }
   }
 }
 anda(dist);
 if (!paginas) erros.push('N1: nenhuma página própria medida.');
-console.log(`B1 país: ${reunidas.length} medidas, ${new Set(Object.values(DOMINIO_DAS_MEDIDAS)).size} temas, ${paginas} menus, ${MUDANCAS_DO_PROJETO.length} mudanças declaradas.`);
+/* Os dois positivos conhecidos do bloco B1c: uma régua que não encontre nem uma
+   lista nem um registo mediu zero, e zero nunca é verde. */
+if (!listasMedidas) erros.push('A1: nenhuma lista de «O que mudou» medida.');
+if (registosMedidos !== 2) erros.push(`A3: ${registosMedidos} registos medidos, e as duas edições têm um cada.`);
+console.log(`B1 país: ${reunidas.length} medidas, ${new Set(Object.values(DOMINIO_DAS_MEDIDAS)).size} temas, ${paginas} menus, ${MUDANCAS_DO_PROJETO.length} mudanças declaradas, ${listasMedidas} listas com teto ${TETO}, ${registosMedidos} registos de ${chavesDoRegisto.size} mudanças.`);
 if (erros.length) { console.error(erros.join('\n')); process.exitCode = 1; }
 else console.log('B1 país: todas as conferências a 0.');

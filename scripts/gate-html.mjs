@@ -5176,9 +5176,21 @@ for (const file of ficheirosHtml(DIST)) {
 
   const aRemover = [];
   /* B1, peça 3: datas de mudanças e de publicação, comparadas com os seus
-     registos. Nenhuma marca dispensa o parágrafo ou o contentor inteiro. */
+     registos. Nenhuma marca dispensa o parágrafo ou o contentor inteiro.
+
+     B1c, 22.09.2026: AS MESMAS DUAS MARCAS PASSAM A VIVER TAMBÉM NO REGISTO.
+     «O que mudou» deixou de ser só da primeira página: a lista de cada página
+     mostra no máximo oito mudanças e o registo inteiro vive em `/correcoes` e
+     `/en/corrections`. A comparação não muda um carácter — cada campo continua a
+     ser lido contra a sua declaração, a data de publicação contra
+     `datas-de-publicacao.json` e o texto contra `MUDANCAS_DO_PROJETO`, na língua
+     da página —; o que muda é a lista de rotas onde a marca é legítima, que sem
+     isto recusava o registo inteiro. Uma marca destas em qualquer outra rota
+     continua a fechar a construção, e a planta que o prova está em
+     `tests/pais/portoes.mjs`. */
+  const ROTAS_DAS_MUDANCAS = ['home', 'correcoes'];
   for (const el of body.querySelectorAll('[data-mudanca-campo], [data-publicacao-estudo]')) {
-    if (rota?.key !== 'home') { err('B1 mudança: campo fora da página do país.'); continue; }
+    if (!ROTAS_DAS_MUDANCAS.includes(rota?.key)) { err('B1 mudança: campo fora da página do país e do registo.'); continue; }
     let esperado;
     if (el.hasAttribute('data-publicacao-estudo')) {
       const chave = el.getAttribute('data-publicacao-estudo');
@@ -5542,7 +5554,12 @@ for (const file of ficheirosHtml(DIST)) {
       el.closest('[data-cartao-medida]')?.getAttribute('data-cartao-medida') === id;
     // Uma unidade do registo é conferida contra a linha da própria entrada,
     // cujo recibo é obrigatório na conferência imediatamente acima.
-    const unidadeDeCorrecaoDoPais = rota?.key === 'home' && campo === 'unit' &&
+    // B1c, 22.09.2026: a mesma forma, nas duas rotas onde as linhas de correção
+    // vivem. A primeira página ficou sem nenhuma (nenhuma das dezasseis é de
+    // uma medida do país) e o registo ficou com todas: a conferência não muda,
+    // muda a lista de rotas onde a marca é legítima, e a planta que o prova
+    // continua a trocar a unidade de uma entrada pela de outra linha.
+    const unidadeDeCorrecaoDoPais = ['home', 'correcoes'].includes(rota?.key) && campo === 'unit' &&
       el.closest('[data-correcao-entrada]')?.getAttribute('data-correcao-entrada') === id;
     if (!paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !unidadeDeCorrecaoDoPais) {
       err(
