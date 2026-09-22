@@ -16,7 +16,8 @@ import subprocess
 import sys
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
-RAIZ = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(AQUI)))))
+# Quatro níveis acima de `m5-2026-09-22`: medicoes, especime-v3, design, raiz.
+RAIZ = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(AQUI))))
 REL = os.path.join(AQUI, 'LEIA-ME.md')
 BASE = 'b03a6efc'
 MARCA = '## 9 · Os commits, a cabeça e os três portões'
@@ -43,8 +44,12 @@ def main():
             vermelhos.append(f'{qual} saiu com {cod}')
 
     cabeca = le('build', 'cabeca')
-    commits = subprocess.run(['git', 'log', '--format=%h %s', f'{BASE}..HEAD'],
-                             cwd=RAIZ, capture_output=True, text=True).stdout.strip().split('\n')
+    r = subprocess.run(['git', 'log', '--format=%h %s', f'{BASE}..HEAD'],
+                       cwd=RAIZ, capture_output=True, text=True)
+    commits = [c for c in r.stdout.strip().split('\n') if c.strip()]
+    if r.returncode != 0 or not commits:
+        raise SystemExit(f'escrever-seccao9.py: NÃO LIDO, o `git log` em {RAIZ} não devolveu '
+                         f'commits (código {r.returncode}).')
     plantas = json.load(open(os.path.join(AQUI, 'plantas-m5.json'), encoding='utf-8'))['cabeca']
     medidas = json.load(open(os.path.join(AQUI, 'medidas.json'), encoding='utf-8'))['cabeca']
 

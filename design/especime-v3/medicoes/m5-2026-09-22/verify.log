@@ -152,12 +152,22 @@
 > o-estado-do-pais@0.1.0 check:briefs
 > python3 scripts/check-briefs.py
 
-  portão dos briefs · 37 brief(s) em design/observatorio/ · 1 conferido(s) · 33 isento(s) por data (anteriores a 22.09.2026) · 3 isento(s) por nomeação
+  portão dos briefs · 37 brief(s) em design/observatorio/ · 1 conferido(s) · 33 isento(s) por data (anteriores a 22.09.2026) · 3 isento(s) por nomeação, os 36 presos por sha256 em design/observatorio/medidas/isentos.json
     conferido: BRIEF-M5-as-medicoes-provam-que-veem.md (medidas/BRIEF-M5.json)
+      §0 liga «37» a `briefs_ate_22_09_2026`
+      §0 liga «34» a `briefs_com_seccao_de_medicoes`
+      §0 liga «1» a `briefs_com_guiao_de_medicoes`
+      §0 liga «1» a `briefs_conferidos_pelo_portao`
+      §0 liga «33» a `briefs_isentos_por_data`
+      §0 liga «3» a `briefs_isentos_por_nomeacao`
+      §0 liga «0» a `ocorrencias_do_nome_de_quem_responde_em_src_e_public`
+      §0 liga «0» a `exportacoes_de_politica_ia_com_o_nome_de_quem_responde`
     isento por nomeação: BRIEF-B1c-o-que-mudou-no-seu-lugar.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.120)
     isento por nomeação: BRIEF-I129-o-grupo-etario-dos-jovens-nem.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.119)
     isento por nomeação: BRIEF-M3b-os-nomes-confirmados-voltam-aos-recibos.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.118)
-  ✓ cada brief sob a regra mede-se por guião, o detetor prova que vê, e o §0 só diz números medidos.
+    chave repetida entre isentos, dita e não fatal: «BRIEF-fatia» · BRIEF-fatia-css-alcance-2026-09-16.md, BRIEF-fatia-dominios-css-2026-09-15.md · fecha o portão no dia em que um deles deixar de ser isento
+    apagado antes de contar no §0: codigo 16, enderecos 0, seccoes 4, datas 1, resumos 0, ordinais 0, identificadores 0, anos 0
+  ✓ 8 número(s) do §0 ligado(s) à sua medição, cada detetor provou que vê, e os briefs isentos estão presos pelo resumo.
 
 > o-estado-do-pais@0.1.0 gate:html
 > node scripts/gate-html.mjs
@@ -926,7 +936,7 @@ A leitura do olho, provada contra o motor:
 
 
 [1m  O feixe de cartões do sistema de desenho[0m
-[90m  design-system/ · de dist/ no commit 3571da4 · 20 cartões, 11 ficheiros de letra e um README[0m
+[90m  design-system/ · de dist/ no commit d90e6d1 · 20 cartões, 11 ficheiros de letra e um README[0m
 
 [90m  ficheiro                          grupo          bytes  ok[0m
   01-cor.html                       Fundamentos   377260  [32m✓[0m
