@@ -1,5 +1,5 @@
 {
-  "cabeca": "50c035577f796edfaa8bf44fa904ac4f6ce57d84",
+  "cabeca": "415b6866900ed488918e5096c94b0cc2aa1c98d1",
   "nome_de_quem_responde": {
     "onde_mora": "scripts/textos-aprovados.json",
     "sha256_do_oraculo": "2646f242c13deb68ee9e7cf54f16fc762d24a8505ab6d574f4bcacbd437bf9ca",
@@ -7,7 +7,17 @@
     "ficheiros_de_src_e_public_com_o_nome": 0,
     "paginas_construidas": 7354,
     "paginas_construidas_com_o_nome": 0,
-    "dist_lido": true
+    "dist_lido": true,
+    "regras_do_metodo": {
+      "regras": 10,
+      "pedacos_forte": 0,
+      "fortes_com_o_nome": 0,
+      "texto_das_regras_com_o_nome": 0,
+      "conhecido_positivo": {
+        "o_que": "o mesmo leitor conta as dez regras do Método",
+        "encontrado": true
+      }
+    }
   },
   "portao_dos_briefs": {
     "no_observatorio": 37,
@@ -32,33 +42,33 @@
   },
   "relatorios_de_22_09": {
     "b1_peca3": {
-      "conferidos": 172,
-      "com_ficheiro": 155,
-      "sem_ficheiro": 17,
+      "conferidos": 170,
+      "com_ficheiro": 150,
+      "sem_ficheiro": 20,
       "ficheiros_json": 26,
       "conhecido_positivo_encontrado": true,
       "codigo": 1
     },
     "m3b": {
-      "conferidos": 96,
-      "com_ficheiro": 75,
-      "sem_ficheiro": 21,
+      "conferidos": 94,
+      "com_ficheiro": 61,
+      "sem_ficheiro": 33,
       "ficheiros_json": 2,
       "conhecido_positivo_encontrado": true,
       "codigo": 1
     },
     "i129": {
-      "conferidos": 134,
-      "com_ficheiro": 78,
-      "sem_ficheiro": 56,
+      "conferidos": 131,
+      "com_ficheiro": 77,
+      "sem_ficheiro": 54,
       "ficheiros_json": 1,
       "conhecido_positivo_encontrado": true,
       "codigo": 1
     },
     "b1c": {
-      "conferidos": 190,
-      "com_ficheiro": 161,
-      "sem_ficheiro": 29,
+      "conferidos": 179,
+      "com_ficheiro": 129,
+      "sem_ficheiro": 50,
       "ficheiros_json": 6,
       "conhecido_positivo_encontrado": true,
       "codigo": 1
@@ -71,10 +81,13 @@
   },
   "portoes": {
     "build": {
-      "codigo": null,
-      "inicio": null,
-      "fim": null,
-      "cabeca": null
+      "codigo": "0",
+      "inicio": "2026-09-22T15:04:30Z",
+      "fim": "2026-09-22T15:09:17Z",
+      "cabeca": "0aa2e8c9c3aa7aba775a7e38a7b9b49cae70143d",
+      "segundos": 287,
+      "minutos": 4,
+      "segundos_restantes": 47
     },
     "verify": {
       "codigo": null,

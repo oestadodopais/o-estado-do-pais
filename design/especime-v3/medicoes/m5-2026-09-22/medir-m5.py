@@ -58,6 +58,39 @@ def ficheiros_de_fonte():
     return sorted(out)
 
 
+def regras_do_metodo(nome):
+    """As dez regras do Método, lidas com um leitor próprio, à procura do nome.
+
+    A metade antiga da célula do `gate:html` procura o nome nos pedaços
+    `{ forte: … }` das regras. Esta leitura conta-os, e conta também as
+    ocorrências do nome no texto inteiro das regras, que é o que a metade nova
+    apanha por ler o ficheiro. O conhecido-positivo é a contagem das regras: se
+    o leitor não vir dez regras, não viu nada, e os zeros dele não valem.
+    """
+    guiao = (
+        "import('./src/data/metodo.mjs').then(m => {"
+        " const fortes = [];"
+        " const anda = (v) => { if (Array.isArray(v)) return void v.forEach(anda);"
+        "   if (v && typeof v === 'object') { if (typeof v.forte === 'string') fortes.push(v.forte);"
+        "   return void Object.values(v).forEach(anda); } };"
+        " anda(m.REGRAS);"
+        " const nome = process.argv[1];"
+        " console.log(JSON.stringify({ regras: m.REGRAS.length, pedacos_forte: fortes.length,"
+        "   fortes_com_o_nome: fortes.filter((f) => f.includes(nome)).length,"
+        "   texto_das_regras_com_o_nome: JSON.stringify(m.REGRAS).split(nome).length - 1 }));"
+        "});"
+    )
+    r = subprocess.run(['node', '-e', guiao, nome], cwd=RAIZ, capture_output=True, text=True)
+    if r.returncode != 0:
+        return {'erro': (r.stderr or r.stdout)[-300:]}
+    lido = json.loads(r.stdout.strip().split('\n')[-1])
+    lido['conhecido_positivo'] = {
+        'o_que': 'o mesmo leitor conta as dez regras do Método',
+        'encontrado': lido['regras'] == 10,
+    }
+    return lido
+
+
 def portoes():
     """Os três portões da cabeça final, lidos dos ficheiros que cada corrida escreveu.
 
@@ -138,6 +171,7 @@ def main():
             'paginas_construidas': paginas,
             'paginas_construidas_com_o_nome': paginas_com_o_nome,
             'dist_lido': os.path.isdir(DIST),
+            'regras_do_metodo': regras_do_metodo(nome),
         },
         'portao_dos_briefs': briefs,
         'medidas_do_brief_m5': {

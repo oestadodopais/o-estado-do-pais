@@ -8,13 +8,13 @@ Nenhum número deste relatório se escreve de cabeça: sai de `medir-m5.py`, que
 
 | # | O que o brief mandou | A medida |
 |---|---|---|
-| 1 | O formato do bloco `medidas` e o guião deste brief, com o conhecido-positivo de cada medição | `design/observatorio/medidas/BRIEF-M5.py` escreve `BRIEF-M5.json` com 7 medições, 7 conhecidos-positivos encontrados; `check:briefs` a 0 sobre este brief |
-| 2 | `check:briefs` na cadeia `verify`, com a isenção por data dita | 37 briefs em `design/observatorio/`, 1 conferido, 33 isentos por data, 3 isentos por nomeação |
-| 3 | `conferir-relatorio.py` corrido sobre os quatro relatórios de 22.09 | a lista abaixo, sem emendar relatório nenhum |
-| 4 | `pacote.sh` a correr o guião e a incluir a saída | um pacote de ensaio montado com `numeros-do-relatorio.txt` lá dentro |
-| 5 | As quatro plantas a morder | 6 plantas corridas, 6 morderam, 6 com os bytes repostos |
-| 6 | O nome fora do código, com a célula | 0 ficheiros com o nome em 276 lidos de `src/` e `public/`; 0 páginas em 7 354 construídas |
-| 7 | O mapa posto em dia e os três portões a 0 na cabeça final | a tabela dos portões, no fim |
+| `1` | O formato do bloco `medidas` e o guião deste brief, com o conhecido-positivo de cada medição | `design/observatorio/medidas/BRIEF-M5.py` escreve `BRIEF-M5.json` com 7 medições, 7 conhecidos-positivos encontrados; `check:briefs` a 0 sobre este brief |
+| `2` | `check:briefs` na cadeia `verify`, com a isenção por data dita | 37 briefs em `design/observatorio/`, 1 conferido, 33 isentos por data, 3 isentos por nomeação |
+| `3` | `conferir-relatorio.py` corrido sobre os quatro relatórios de 22.09 | a lista abaixo, sem emendar relatório nenhum |
+| `4` | `pacote.sh` a correr o guião e a incluir a saída | um pacote de ensaio montado com `numeros-do-relatorio.txt` lá dentro |
+| `5` | As quatro plantas a morder | 6 plantas corridas, 6 morderam, 6 com os bytes repostos |
+| `6` | O nome fora do código, com a célula | 0 ficheiros com o nome em 276 lidos de `src/` e `public/`; 0 páginas em 7 354 construídas |
+| `7` | O mapa posto em dia e os três portões a 0 na cabeça final | a tabela dos portões, no fim |
 
 ## 1 · O bloco `medidas` de um brief
 
@@ -58,12 +58,20 @@ O portão entra na cadeia `verify` a seguir ao `check:documentos` e antes do `ga
 
 | Relatório | Ficheiros JSON na pasta | Números conferidos | Com ficheiro | **Sem ficheiro** |
 |---|---:|---:|---:|---:|
-| `b1-2026-09-22/LEIA-ME-peca3.md` | 26 | 172 | 155 | **17** |
-| `m3b-2026-09-22/LEIA-ME.md` | 2 | 96 | 75 | **21** |
-| `i129-2026-09-22/LEIA-ME.md` | 1 | 134 | 78 | **56** |
-| `b1c-2026-09-22/LEIA-ME.md` | 6 | 190 | 161 | **29** |
+| `b1-2026-09-22/LEIA-ME-peca3.md` | 26 | 170 | 150 | **20** |
+| `m3b-2026-09-22/LEIA-ME.md` | 2 | 94 | 61 | **33** |
+| `i129-2026-09-22/LEIA-ME.md` | 1 | 131 | 77 | **54** |
+| `b1c-2026-09-22/LEIA-ME.md` | 6 | 179 | 129 | **50** |
 
 As saídas inteiras, com a linha e o contexto de cada número sem ficheiro, ficam em `conferir-relatorio-b1-peca3.txt`, `conferir-relatorio-m3b.txt`, `conferir-relatorio-i129.txt` e `conferir-relatorio-b1c.txt`. Nenhum dos quatro relatórios foi tocado.
+
+**Estas contagens são as terceiras, e as duas primeiras estavam frouxas. Foi uma planta a apanhá-lo, e não uma leitura.** A planta do número inventado deixou de morder quando a pasta das medições deste bloco ganhou os resumos sha256 das plantas, e a razão eram dois buracos, cada um do seu lado da conferência.
+
+O primeiro: o lado do JSON contava os algarismos de dentro de uma cadeia sem lhe aplicar as regras que aplicava ao texto, e um número de seis algarismos encontrava par por acaso dentro de um resumo. Passou a passar cada cadeia pela **mesma** limpeza do texto, que é a regra que o guião já dizia ter e não tinha dos dois lados.
+
+O segundo: o índice das plantas guarda em cada entrada a `mordida`, e a `mordida` desta planta **é** o número plantado; um índice de uma corrida anterior na mesma pasta punha o número no monte contra o qual se confere. O guião das plantas passou a apagar o índice antes de plantar, pela mesma razão por que os ficheiros dos códigos se apagam antes de cada corrida dos portões (M16).
+
+Pelo caminho apareceram duas classes que o leitor não via e passou a ver, as duas do lado do texto: o número de um título de Markdown («## 3 · …»), que nomeia uma secção e não conta nada, e a versão de um modelo colada ao nome dele («Claude Opus 5»), que está no cabeçalho de todos os relatórios de construtor. As quatro contagens acima são as de depois destas quatro correções.
 
 **O que a lista mostra, lida.** A maior parte do que falta não é um número inventado: são medidas que o construtor leu de uma saída de portão ou de um `git diff` e escreveu no relatório sem as guardar num ficheiro (contagens de plantas, de ficheiros mudados, de achados de uma leitura a frio), e alturas e larguras de capturas que ficaram na cabeça e não no JSON das capturas. A I129 é a que mais tem porque a sua pasta só traz um JSON, o das medições da linha, e o relatório conta também o que se passou no motor, que não tem ficheiro deste lado. A classe que interessa é a mesma em todos: um número que ninguém pode voltar a medir a partir dos ficheiros do bloco.
 
@@ -90,7 +98,11 @@ As saídas ficam em `planta-<nome>.log` e o índice em `plantas-m5.json`, com os
 
 Medido antes: o nome estava em `src/data/politica-ia.mjs` (uma constante exportada, `RESPONSAVEL_EDITORIAL`, e três menções em comentários) e em `src/styles/site.css` (um comentário). Medido em `dist/`: nenhuma página o rendia.
 
-**A célula do `gate:html` mudou de forma conservando o que protegia, e o brief mandou ler o oráculo antes de mexer.** O que ela protegia era que o nome de quem responde fosse uma cadeia só no dia em que uma página o rendia: comparava a constante de `src/` com o oráculo `scripts/textos-aprovados.json`, e exigia que a regra 9 do Método imprimisse o nome se o rótulo o imprimisse, e não o imprimisse se o rótulo não o imprimisse. Lido hoje, antes de mexer: o oráculo guarda o nome, o rótulo não o contém, a regra 9 não o imprime, e nenhuma página construída o rende. **O oráculo não imprime o nome em página nenhuma, e por isso a célula podia mudar.**
+**A célula do `gate:html` mudou de forma conservando o que protegia, e o brief mandou ler o oráculo antes de mexer.** O que ela protegia era que o nome de quem responde fosse uma cadeia só no dia em que uma página o rendia: comparava a constante de `src/` com o oráculo `scripts/textos-aprovados.json`, e exigia que a regra 9 do Método imprimisse o nome se o rótulo o imprimisse, e não o imprimisse se o rótulo não o imprimisse.
+
+**Lido antes de mexer, e medido e não inferido.** O oráculo guarda o nome; o rótulo composto não o contém; a regra 9 do Método (`src/data/metodo.mjs`, `intervencao-humana`) diz «A direção é de uma pessoa, que escolhe o que se publica e responde por ele» e «It is directed by one person, who chooses what gets published and answers for it», e não nomeia ninguém; e nenhuma das páginas construídas o rende. **O oráculo não imprime o nome em página nenhuma, e por isso a célula podia mudar.**
+
+**Um achado pelo caminho, e é do lado de lá da célula antiga.** A metade que procurava o nome nas regras do Método lê os pedaços `{ forte: … }` das dez regras. Corrido com um leitor próprio: as regras têm hoje **zero** pedaços `forte`, porque o P1 tirou o nome da regra 9 a 15.09.2026 e com ele o negrito. Essa metade estava, portanto, a comparar contra uma lista vazia: um nome que voltasse a uma regra noutra forma passava por ela sem ninguém ver. Não se mexeu nela, porque o que ela protege continua a ser o par rótulo/regra; o que fica é que **a metade nova cobre esse buraco por inteiro**, e não por acaso: `src/data/metodo.mjs` é um ficheiro de `src/`, e um nome escrito lá, em qualquer forma, fecha agora a construção. Fica dito para o lugar de direção.
 
 A célula passou a exigir duas coisas, e as duas contam:
 

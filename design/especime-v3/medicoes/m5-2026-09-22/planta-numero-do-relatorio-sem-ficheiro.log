@@ -4,18 +4,24 @@ comando: python3 scripts/leituras/conferir-relatorio.py design/especime-v3/medic
 código: 1
 mordida esperada: «314159»
 mordeu: True
-sha256 antes: 3b1b465ceb9b9f6f5f31cc6bb47f72f86979aa90d16620086c08e55d6802c50a
-sha256 reposto: 3b1b465ceb9b9f6f5f31cc6bb47f72f86979aa90d16620086c08e55d6802c50a
+sha256 antes: 0973e0bed823b1ae85e490b07bf57f4683e2f2b9543ae33cdae2ddd2d2a2ae41
+sha256 reposto: 0973e0bed823b1ae85e490b07bf57f4683e2f2b9543ae33cdae2ddd2d2a2ae41
 
 relatório: design/especime-v3/medicoes/m5-2026-09-22/LEIA-ME.md
 pasta das medições: design/especime-v3/medicoes/m5-2026-09-22
 ficheiros JSON lidos: 1
 conhecido-positivo (o número 987654321, ausente dos ficheiros, apontado pelo mesmo detetor): encontrado
-números conferidos: 76
-números com ficheiro: 72
-números sem ficheiro: 4
+números conferidos: 55
+números com ficheiro: 45
+números sem ficheiro: 10
    l.9 «314159» em «Uma linha plantada com 314159 lá dentro.»
-   l.36 «34» em «As sete medições deste brief: `briefs_ate_22_09_2026` (37), `briefs_com_seccao_de_medicoes` (34), `briefs_com_guiao_de_medicoes` (1), `briefs_isentos_por_data` »
-   l.109 «31» em «»
-   l.109 «32» em «»
-apagado antes de contar: codigo 112, enderecos 0, seccoes 11, datas 11, resumos 0, ordinais 0, identificadores 14, anos 0
+   l.63 «170» em «| `b1-2026-09-22/LEIA-ME-peca3.md` | 26 | 170 | 150 | **20** |»
+   l.63 «150» em «| `b1-2026-09-22/LEIA-ME-peca3.md` | 26 | 170 | 150 | **20** |»
+   l.64 «94» em «| `m3b-2026-09-22/LEIA-ME.md` | 2 | 94 | 61 | **33** |»
+   l.64 «61» em «| `m3b-2026-09-22/LEIA-ME.md` | 2 | 94 | 61 | **33** |»
+   l.65 «131» em «| `i129-2026-09-22/LEIA-ME.md` | 1 | 131 | 77 | **54** |»
+   l.65 «54» em «| `i129-2026-09-22/LEIA-ME.md` | 1 | 131 | 77 | **54** |»
+   l.66 «179» em «| `b1c-2026-09-22/LEIA-ME.md` | 6 | 179 | 129 | **50** |»
+   l.66 «129» em «| `b1c-2026-09-22/LEIA-ME.md` | 6 | 179 | 129 | **50** |»
+   l.66 «50» em «| `b1c-2026-09-22/LEIA-ME.md` | 6 | 179 | 129 | **50** |»
+apagado antes de contar: codigo 128, enderecos 0, seccoes 20, datas 12, resumos 0, ordinais 4, identificadores 19, anos 0

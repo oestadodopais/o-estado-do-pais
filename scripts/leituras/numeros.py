@@ -19,16 +19,21 @@ cada classe é contada à parte e dita na saída: nada sai em silêncio.
 
   · código: os blocos cercados por ``` e os trechos entre crases;
   · endereços: tudo o que comece por `http://`, `https://` ou `www.`;
-  · secções: `§` seguido de algarismos e pontos;
+  · secções: `§` seguido de algarismos e pontos, e o número de um título de
+    Markdown («## 3 · …»), que nomeia a secção e não conta nada;
   · datas e horas: `dd.mm.aaaa`, `aaaa-mm-dd`, carimbos ISO, `hh:mm[:ss]`,
     `dd.mm` e `dd/mm/aaaa`;
   · resumos: uma corrida de sete ou mais algarismos e letras de `a` a `f` com
     pelo menos um de cada (um sha256, um commit);
-  · ordinais e artigos de lei: `50.º`, `1.ª`, `n.º 2`;
+  · ordinais, artigos de lei e apontadores: `50.º`, `1.ª`, `n.º 2`, e «o ponto
+    5 do brief», «o item 3», «a célula 7», que nomeiam um lugar de um documento
+    e não contam nada;
   · identificadores: um sinal que mistura letras e algarismos («B1c», «I129»,
     «K13», «F1.10», «gpt-5.6-sol», «b1c-2026-09-22»), porque o algarismo lá
-    dentro nomeia e não conta. Uma unidade colada a um número («12px», «8%»)
-    NÃO é identificador: a unidade descola-se antes desta passagem;
+    dentro nomeia e não conta, e a versão de um modelo colada ao nome dele
+    («Claude Opus 5», «Claude Fable 5.1»), que está no cabeçalho de todos os
+    relatórios. Uma unidade colada a um número («12px», «8%») NÃO é
+    identificador: a unidade descola-se antes desta passagem;
   · anos isolados: um número de quatro algarismos entre 1900 e 2100 sozinho.
     É um limite conhecido e está dito: uma contagem que por acaso caia nesse
     intervalo não se confere, e sai na linha «anos» da saída.
@@ -59,9 +64,23 @@ _RE_HORA = re.compile(r'\d{1,2}:\d{2}(?::\d{2})?')
 _RE_RESUMO = re.compile(
     r'(?<![0-9a-zA-Z])(?=[0-9a-f]{7,})(?=[0-9a-f]*[a-f])(?=[0-9a-f]*[0-9])[0-9a-f]{7,}(?![0-9a-zA-Z])')
 _RE_ORDINAL = re.compile(r'\d+\.?\s?[ºª]')
-_RE_ARTIGO = re.compile(r'(?:\bn\.?\s?[º°]|\bn\.\s?o\b|\barts?\.|\bartigos?\b)\s?\d+', re.I)
+_RE_ARTIGO = re.compile(r'(?:\bn\.?\s?[º°]|\bn\.\s?o\b|\barts?\.|\bartigos?\b)[ ]?\d+', re.I)
+# «o ponto 5 do brief», «o item 3», «a célula 7»: um apontador para um lugar de
+# um documento, da mesma família do artigo de lei. Nomeia, não conta.
+_RE_APONTADOR = re.compile(
+    r'\b(?:pontos?|itens?|item|mandatos?|regras?|células?|celulas?|achados?|passos?|'
+    r'figuras?|tabelas?|secç(?:ão|ões)|capítulos?|emendas?|questões|questão)[ ]\d+', re.I)
 _RE_IDENT = re.compile(r'[^\W\d_][\w.\-]*\d[\w.\-]*|\d[\w.\-]*[^\W\d_][\w.\-]*', re.U)
 _RE_ANO = re.compile(r'(?<![\d.,])(19\d{2}|20\d{2}|2100)(?![\d.,])')
+
+# O número de um título de secção («## 3 · Os números…») nomeia a secção e não
+# conta nada. Apaga-se só o número, e o título fica.
+_RE_TITULO = re.compile(r'^(#{1,6}\s+)(\d+(?:\.\d+)*)', re.M)
+# A versão de um modelo é um identificador e não uma medida, e aparece no
+# cabeçalho de todos os relatórios («Construtor: Claude Opus 5»). Só se apaga
+# quando vem colada ao nome do modelo.
+_RE_MODELO = re.compile(
+    r'\b(?:Claude|Codex)?\s?(?:Opus|Sonnet|Haiku|Fable|GPT|gpt)[\s-]*\d+(?:\.\d+)*', re.I)
 
 # Uma unidade colada ao número descola-se (as letras passam a espaços) para que a
 # passagem dos identificadores não engula «12px» como se fosse um sinal.
@@ -79,10 +98,21 @@ CLASSES = ('codigo', 'enderecos', 'seccoes', 'datas', 'resumos', 'ordinais',
            'identificadores', 'anos')
 
 
+def _branco(s):
+    """Apaga um trecho conservando o comprimento E as mudanças de linha.
+
+    Trocar tudo por espaços chegava para as posições, mas comia as mudanças de
+    linha de um bloco cercado, e a linha que a saída dizia ficava adiantada em
+    relação à linha do ficheiro. Um número apontado na linha errada é um número
+    que ninguém vai procurar (apanhado a 22.09.2026, no relatório do M5).
+    """
+    return ''.join('\n' if ch == '\n' else ' ' for ch in s)
+
+
 def _apaga(texto, rx, contagem, chave):
     def _troca(m):
         contagem[chave] = contagem.get(chave, 0) + 1
-        return ' ' * (m.end() - m.start())
+        return _branco(m.group(0))
     return rx.sub(_troca, texto)
 
 
@@ -94,10 +124,15 @@ def limpa(texto):
         (_RE_CERCA, 'codigo'), (_RE_CRASE, 'codigo'), (_RE_URL, 'enderecos'),
         (_RE_SECCAO, 'seccoes'), (_RE_ISO, 'datas'), (_RE_DATA_PT, 'datas'),
         (_RE_DATA_BARRA, 'datas'), (_RE_HORA, 'datas'), (_RE_RESUMO, 'resumos'),
-        (_RE_ORDINAL, 'ordinais'), (_RE_ARTIGO, 'ordinais'),
+        (_RE_ORDINAL, 'ordinais'), (_RE_ARTIGO, 'ordinais'), (_RE_APONTADOR, 'ordinais'),
     ):
         texto = _apaga(texto, rx, c, chave)
-    texto = _RE_UNIDADE.sub(lambda m: ' ' * (m.end() - m.start()), texto)
+    def _titulo(m):
+        c['seccoes'] += 1
+        return m.group(1) + ' ' * len(m.group(2))
+    texto = _RE_TITULO.sub(_titulo, texto)
+    texto = _apaga(texto, _RE_MODELO, c, 'identificadores')
+    texto = _RE_UNIDADE.sub(lambda m: _branco(m.group(0)), texto)
     for rx, chave in ((_RE_IDENT, 'identificadores'), (_RE_ANO, 'anos')):
         texto = _apaga(texto, rx, c, chave)
     return texto, c
@@ -125,6 +160,7 @@ def do_texto(texto):
     Devolve (lista de ocorrências, contagens do que se apagou). Cada ocorrência
     traz `bruto`, `forma`, `valor`, `linha` e `contexto`.
     """
+    texto = unicodedata.normalize('NFC', texto)
     limpo, contagens = limpa(texto)
     originais = texto.split('\n')
     achados = []
@@ -152,12 +188,19 @@ def _anda(no, formas, valores):
         valores.add(float(no))
         return
     if isinstance(no, str):
-        for m in _RE_NUMERO.finditer(no):
+        # A MESMA REGRA DOS DOIS LADOS, e não é um detalhe: uma cadeia de um JSON
+        # passa pela mesma limpeza que o texto do relatório antes de se contarem
+        # os números. Sem isto, os algarismos de dentro de um sha256 entravam no
+        # monte como se fossem valores medidos, e um número inventado no
+        # relatório encontrava par por acaso. Apanhado por uma planta a 22.09.2026,
+        # quando a pasta das medições ganhou os doze resumos das plantas.
+        limpo, _ = limpa(no)
+        for m in _RE_NUMERO.finditer(limpo):
             formas.add(normaliza(m.group(1)))
             v = valor(m.group(1))
             if v is not None:
                 valores.add(v)
-        for m in _RE_DECIMAL_PONTO.finditer(no):
+        for m in _RE_DECIMAL_PONTO.finditer(limpo):
             formas.add(m.group(1))
             valores.add(float(m.group(1)))
         return
