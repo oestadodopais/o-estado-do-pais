@@ -1850,8 +1850,6 @@ export const STRINGS = {
          cada linha. As naturezas continuam ditas na política, acima, e em cada
          linha da lista. */
       registoMudancasK: 'As mudanças, por data',
-      registoMudancasNota:
-        'Todas as mudanças deste sítio, da mais recente para a mais antiga: as correções e as atualizações de cada linha, cada estudo que se publicou e as mudanças do projeto. Cada uma diz o lugar a que pertence, e nenhuma é removida.',
       registoConta: 'correções publicadas',
       registoContaSing: 'correção publicada',
       registoProvenienciaK: 'Revisões de proveniência',
@@ -3507,8 +3505,6 @@ export const STRINGS = {
 
       /* Ver a razão na edição portuguesa (B1c, 22.09.2026). */
       registoMudancasK: 'The changes, by date',
-      registoMudancasNota:
-        'Every change to this site, from the most recent to the oldest: the corrections and updates to each row, the studies published and the changes to the project. Each says the place it belongs to, and none is removed.',
       registoConta: 'corrections published',
       registoContaSing: 'correction published',
       registoProvenienciaK: 'Provenance revisions',

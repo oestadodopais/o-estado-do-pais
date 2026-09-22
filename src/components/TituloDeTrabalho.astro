@@ -25,12 +25,43 @@
  * página ou quando a mesma cadeia é título das duas edições. Um `lang` que
  * repete o da página é ruído para quem ouve; um `lang="en"` num título
  * português é pior do que nenhum.
+ *
+ * ---------------------------------------------------------------------------
+ * UM TÍTULO POR CONFIRMAR DIZ-SE (B1c, a passagem de correção de 22.09.2026)
+ * ---------------------------------------------------------------------------
+ * Duas edições inglesas do arquivo declaram `titleUnverified: true` — as dos
+ * dois estudos da água, que guardam o título português por o inglês não ser
+ * conhecido. Era uma incerteza DECLARADA que o sítio não mostrava em lado
+ * nenhum, e a §6 da `IDENTIDADE.md` é clara: a ausência diz-se com o marcador
+ * único, `[a verificar]`. A leitura a frio de 22.09.2026 apanhou-a no registo.
+ *
+ * A MARCA NÃO SE DERIVA DA CADEIA, e a razão está nas duas edições que a
+ * declaram: o título inglês é, carácter a carácter, o título português, e uma
+ * marca decidida pelo texto marcaria as duas. Quem sabe se a edição está por
+ * confirmar é quem tem a edição, e por isso a propriedade é explícita: quem
+ * rende um título de uma edição passa `naoConfirmado={edicao.titleUnverified}`.
+ *
+ * ONDE ELA JÁ ESTÁ, E ONDE FALTA. Esta passagem põe-na no registo de
+ * `/correcoes`, que é onde a leitura a frio a exigiu e onde a célula A4 do
+ * `check:pais` a confere. As outras vistas que rendem um título de edição (o
+ * arquivo, a primeira página, a página de um lugar) continuam a rendê-lo sem
+ * marca, e isso é uma falta dita e não uma decisão: o marcador é uma PORTA para
+ * `/a-verificar`, e pô-lo nessas vistas mexe na catraca L1 do `check:lugar`,
+ * que é conta do lugar de direção e não deste bloco.
  */
 import { linguaDoTitulo } from '../data/studies.mjs';
+import Marcador from './Marcador.astro';
 
-const { titulo, lang = 'pt', as: Tag = 'span', class: classe = null, ...resto } = Astro.props;
+const {
+  titulo,
+  lang = 'pt',
+  naoConfirmado = false,
+  as: Tag = 'span',
+  class: classe = null,
+  ...resto
+} = Astro.props;
 
 const marca = linguaDoTitulo(titulo, lang);
 ---
 
-<Tag class={classe} data-nonledger="titulo-de-estudo" lang={marca} {...resto}>{titulo}</Tag>
+<Tag class={classe} data-nonledger="titulo-de-estudo" lang={marca} {...resto}>{titulo}</Tag>{naoConfirmado && <Marcador lang={lang} />}

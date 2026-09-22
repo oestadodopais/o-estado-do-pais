@@ -7,10 +7,12 @@ import { parse } from 'node-html-parser';
 import { load } from 'js-yaml';
 import { DOMINIOS, DOMINIO_DAS_MEDIDAS } from '../src/data/dominios.mjs';
 import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
-import { WORKS } from '../src/data/studies.mjs';
+import { WORKS, linguaDoTitulo } from '../src/data/studies.mjs';
 import { REGIOES } from '../src/data/regioes.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { LUGAR_DECLARADO_DAS_LINHAS } from '../src/data/lugar-das-linhas.mjs';
+import { ROTULOS_B1 } from '../src/data/rotulos-b1.mjs';
+import { routePath } from '../src/lib/routes.mjs';
 import { t } from '../src/i18n/strings.mjs';
 const raiz = process.cwd();
 const dist = path.resolve(process.env.OEDP_DIST ?? 'dist');
@@ -87,7 +89,53 @@ const objetoDoEstudo = new Map(WORKS.filter(w => typeof w.subject === 'string').
    escrevem: é a lista da régua, e não a da página. */
 const LINHAS_DA_LEITURA = ['divida-publica-2024','divida-publica-2025','divida-publica-2025-ue','taxa-de-desemprego-2025','taxa-de-desemprego-2025-ue','precos-da-habitacao-2025','precos-da-habitacao-2025-ue'];
 const linhasDoPais = new Set([...Object.keys(DOMINIO_DAS_MEDIDAS), ...LINHAS_DA_LEITURA]);
-function lugarDaLinha(id) {
+/* -------------------------------------------------- o lugar, por duas vias
+
+   A leitura a frio de 22.09.2026 apanhou o defeito: o compositor e esta régua
+   devolviam a declaração explícita de `lugar-das-linhas.mjs` antes de tudo, e
+   por isso concordavam num valor errado — uma régua que lê a mesma declaração
+   que a página lê não é uma segunda leitura, é a mesma. A régua passa a DERIVAR
+   o lugar por conta própria, do estudo que a linha declara e dos segmentos do
+   seu identificador, e a COMPARAR com a declaração. Uma declaração que
+   contradiga a derivação fecha a construção, e a tabela explícita — que é a que
+   pode mentir sem que nada a trave — tem de derivar, em cada entrada, o lugar
+   que declara. */
+const SLUGS_DOS_LUGARES = [...REGIOES.map(r => r.slug), ...MUNICIPIOS_COM_PAGINA.map(m => m.slug)];
+/** O lugar cujo slug aparece, inteiro e por segmentos, no identificador da
+ *  linha. O mais comprido ganha (`vila-real` antes de `real`); dois que não se
+ *  contenham um ao outro são uma ambiguidade, e dizem-se. */
+function lugarNoIdentificador(id) {
+  const seg = id.split('-');
+  const achados = [];
+  for (const slug of SLUGS_DOS_LUGARES) {
+    const p = slug.split('-');
+    for (let i = 0; i + p.length <= seg.length; i++)
+      if (p.every((x, k) => seg[i + k] === x)) { achados.push(slug); break; }
+  }
+  if (!achados.length) return null;
+  achados.sort((a, b) => b.split('-').length - a.split('-').length || b.length - a.length);
+  const maior = achados[0];
+  const outros = achados.filter(x => x !== maior && !maior.includes(x));
+  if (outros.length) {
+    erros.push(`A1: o identificador ${id} nomeia mais do que um lugar (${[maior, ...outros].join(', ')}).`);
+    return null;
+  }
+  return maior;
+}
+/** O lugar DERIVADO, sem olhar para nenhuma tabela de lugares declarados. */
+function lugarDerivado(id) {
+  const c = linha(id);
+  const doEstudo = typeof c.study === 'string' ? objetoDoEstudo.get(c.study) : undefined;
+  const doId = lugarNoIdentificador(id);
+  const d = [...new Set([doEstudo, doId].filter(x => typeof x === 'string'))];
+  if (d.length > 1) {
+    erros.push(`A1: a linha ${id} deriva dois lugares diferentes (${d.join(', ')}).`);
+    return null;
+  }
+  return d[0] ?? null;
+}
+/** O lugar DECLARADO, pela ordem que as declarações do repositório dão. */
+function lugarDeclarado(id) {
   if (LUGAR_DECLARADO_DAS_LINHAS[id]) return LUGAR_DECLARADO_DAS_LINHAS[id];
   const c = linha(id);
   const candidatos = [...new Set([
@@ -102,6 +150,38 @@ function lugarDaLinha(id) {
   }
   return candidatos[0] ?? null;
 }
+const lugarVisto = new Map();
+function lugarDaLinha(id) {
+  if (lugarVisto.has(id)) return lugarVisto.get(id);
+  const declarado = lugarDeclarado(id);
+  const derivado = lugarDerivado(id);
+  if (declarado && derivado && declarado !== derivado)
+    erros.push(`A1: a linha ${id} é declarada de «${declarado}» e deriva de «${derivado}».`);
+  lugarVisto.set(id, declarado);
+  return declarado;
+}
+/* A tabela explícita, entrada a entrada: cada uma tem de derivar o lugar que
+   declara. É o conhecido-positivo desta comparação — sem ele, uma tabela que
+   nunca derivasse nada passava por não haver nada com que discordar. */
+for (const [id, chave] of Object.entries(LUGAR_DECLARADO_DAS_LINHAS)) {
+  const derivado = lugarDerivado(id);
+  if (!derivado) erros.push(`A1: ${id} está em lugar-das-linhas.mjs e não deriva lugar nenhum.`);
+  else if (derivado !== chave) erros.push(`A1: ${id} é declarado de «${chave}» e deriva de «${derivado}».`);
+}
+/** O nome e a porta de um lugar, na língua da edição, compostos aqui. */
+function nomeDoLugar(chave, lang) {
+  if (chave === PAIS) return ROTULOS_B1[lang].pais;
+  const r = REGIOES.find(x => x.slug === chave);
+  if (r) return r.nome[lang] ?? r.nome.pt;
+  const m = MUNICIPIOS_COM_PAGINA.find(x => x.slug === chave);
+  return m ? (m.nome[lang] ?? m.nome.pt) : null;
+}
+function rotaDoLugar(chave, lang) {
+  if (chave === PAIS) return routePath('home', lang);
+  if (REGIOES.some(x => x.slug === chave)) return routePath('regiao', lang, { slug: chave });
+  return MUNICIPIOS_COM_PAGINA.some(x => x.slug === chave) ? routePath('municipio', lang, { slug: chave }) : null;
+}
+
 /** A identidade de uma linha de mudança, lida do HTML e de mais nada. */
 function chaveDaMudanca(li) {
   const tipo = li.getAttribute('data-mudanca');
@@ -112,7 +192,7 @@ function chaveDaMudanca(li) {
   }
   if (tipo === 'publicacao') {
     const par = li.querySelector('[data-publicacao-estudo]')?.getAttribute('data-publicacao-estudo') ?? '';
-    return { tipo, chave: `publicacao|${par.split('/')[0]}`, claim: null };
+    return { tipo, chave: `publicacao|${par.split('/')[0]}`, claim: null, slug: par.split('/')[0], edicao: par.split('/')[1] };
   }
   if (tipo === 'projeto') return { tipo, chave: `projeto|${li.getAttribute('data-mudanca-id')}`, claim: null };
   return { tipo: null, chave: null, claim: null };
@@ -305,6 +385,40 @@ function anda(dir) {
         const els = registo.querySelectorAll(`[data-mudanca-id="${m.id}"]`);
         if (els.length !== 1 || normal(els[0]?.querySelector('[data-mudanca-campo="data"]')?.textContent) !== data(m.data) || normal(els[0]?.querySelector('[data-mudanca-campo="texto"]')?.textContent) !== m.texto[lang])
           erros.push(`A3: ${onde}: a mudança declarada ${m.id} falta no registo ou não coincide com a declaração.`);
+      }
+      /* O LUGAR DE CADA LINHA, E A PORTA DELE, linha a linha (a passagem de
+         correção de 22.09.2026). A A3 comparava as identidades e não olhava
+         para o que o leitor lê: um registo podia escrever «Portugal» por cima
+         de uma correção de Évora, ou mandar a porta para outra página, e
+         passava. O nome e a porta compõem-se aqui, da Carta e das rotas, e não
+         da vista. */
+      for (const li of itens) {
+        const { tipo, claim, slug, edicao: edLang } = chaveDaMudanca(li);
+        const chave = tipo === 'correcao' ? claim && lugarDaLinha(claim)
+          : tipo === 'publicacao' ? (WORKS.find(w => w.slug === slug)?.subject ?? PAIS)
+          : PAIS;
+        const porta = li.querySelector('.registo-lugar');
+        const nome = chave && nomeDoLugar(chave, lang);
+        const rota = chave && rotaDoLugar(chave, lang);
+        if (!chave || !nome || !rota) { erros.push(`A3: ${onde}: uma linha do registo sem lugar que se possa compor.`); continue; }
+        if (!porta || normal(porta.textContent) !== nome || porta.getAttribute('href') !== rota)
+          erros.push(`A3: ${onde}: uma linha de «${chave}» escreve «${normal(porta?.textContent)}» com a porta «${porta?.getAttribute('href')}»; esperava-se «${nome}» e «${rota}».`);
+        /* A4 · UM TÍTULO POR CONFIRMAR DIZ-SE. O registo dos estudos declara
+           `titleUnverified` em duas edições inglesas, e elas chegavam aqui como
+           títulos comuns. A linha traz o título tal como `TituloDeTrabalho` o
+           rende: o texto do arquivo, a marca da língua do texto, e o marcador
+           quando o arquivo o declara por confirmar. */
+        if (tipo !== 'publicacao') continue;
+        const w = WORKS.find(x => x.slug === slug);
+        const ed = w?.editions.find(x => x.lang === edLang);
+        const titulo = li.querySelector('[data-nonledger="titulo-de-estudo"]');
+        const marcas = li.querySelectorAll('.marcador').length;
+        if (!ed || !titulo) { erros.push(`A4: ${onde}: a publicação ${slug}/${edLang} não rende o título do arquivo.`); continue; }
+        if (normal(titulo.textContent) !== normal(ed.title) ||
+            (titulo.getAttribute('lang') ?? null) !== (linguaDoTitulo(ed.title, lang) ?? null))
+          erros.push(`A4: ${onde}: o título de ${slug}/${edLang} difere do arquivo ou da língua que o texto tem.`);
+        if ((marcas > 0) !== (ed.titleUnverified === true))
+          erros.push(`A4: ${onde}: ${slug}/${edLang} tem ${marcas} marcador(es) e o arquivo declara titleUnverified=${ed.titleUnverified === true}.`);
       }
       const quando = itens.map(li => li.querySelector('time')?.getAttribute('datetime'));
       if (quando.some((d,i) => i>0 && d > quando[i-1])) erros.push(`A3: ${onde}: o registo não está da mais recente para a mais antiga.`);

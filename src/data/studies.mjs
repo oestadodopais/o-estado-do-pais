@@ -10,7 +10,18 @@
  * seu título em inglês não é conhecido aqui — fica o título original, com o
  * emblema EN. Inventar um título inglês seria inventar conteúdo.
  *
- * DATAS: nenhuma data de publicação está confirmada. Ficam todas por verificar.
+ * DATAS: o campo `date` desta lista fica `null` em todas as edições, e é o que
+ * ele diz: nenhuma data de publicação DE ORIGEM está confirmada. Isso não quer
+ * dizer que o sítio não date os estudos. O «publicado a» que o leitor vê é,
+ * desde o bloco F1.4b de 04.09.2026 (`DECISIONS.md` §1.99), **o dia em que o
+ * ficheiro daquela edição entrou NESTE repositório**, medido uma vez numa
+ * árvore com a história completa e escrito em `src/data/datas-de-publicacao.json`
+ * com o slug, a língua, a data, o commit e o caminho; a construção lê o ficheiro
+ * e nunca chama o `git` (`src/lib/datas-do-repositorio.mjs`), e o portão
+ * `check:datas` recusa uma página que discorde dele. É a mesma data em toda a
+ * parte: no arquivo, na primeira página, na página de um lugar e no registo de
+ * `/correcoes`. O que o JSON declara no seu cabeçalho é o que ela é e o que não
+ * é, e esta lista não a repete para não haver duas afirmações do mesmo facto.
  * `updated` é a data da última revisão de uma edição: `null` significa que não
  * se sabe, e a página mostra-o como tal. Não se escreve a data de publicação no
  * lugar dela — seriam duas afirmações diferentes com o mesmo valor por acaso.
@@ -351,9 +362,14 @@ export const WORKS = [
     },
   },
   {
-    /* A data de publicação fica por decidir pela direção: o trabalho está
-       construído e conferido, mas não foi publicado. `date: null` diz isso, e
-       não se escreve nele a data em que o ficheiro entrou no repositório. */
+    /* `date: null` como em todas as outras edições: a data de publicação DE
+       ORIGEM não está confirmada, e não se escreve neste campo a data em que o
+       ficheiro entrou no repositório. Esta nota dizia «não foi publicado», e
+       era de antes do bloco F1.4b (04.09.2026): o estudo está no arquivo, tem
+       página e rende-se com «publicado a 24.08.2026», que é o dia em que o
+       ficheiro entrou aqui, lido de `src/data/datas-de-publicacao.json`. A
+       leitura a frio de 22.09.2026 leu esta nota contra a página e viu uma
+       contradição que era da nota, não da página. Nenhuma data mudou. */
     id: 'penalizacoes-por-reforma-antecipada-2026',
     slug: 'penalizacoes-por-reforma-antecipada-2026',
     tema: 'seguranca-social-e-pensoes',

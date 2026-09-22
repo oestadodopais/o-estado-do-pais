@@ -570,9 +570,9 @@ frases da caixa de correções são **navegação**: dizem como se usa um comand
 | conteudo | Write a correction | até 2026-08-26 | viva | — |
 | navegacao | Write here and the button opens your own mail program with the text already in it. Nothing is sent from this site: the message leaves from you, so you keep a copy of it. | até 2026-08-26 | viva | — |
 | conteudo | As mudanças, por data | b1c | viva | — |
-| conteudo | Todas as mudanças deste sítio, da mais recente para a mais antiga: as correções e as atualizações de cada linha, cada estudo que se publicou e as mudanças do projeto. Cada uma diz o lugar a que pertence, e nenhuma é removida. | b1c | viva | — |
+| conteudo | Todas as mudanças deste sítio, da mais recente para a mais antiga: as correções e as atualizações de cada linha, cada estudo que se publicou e as mudanças do projeto. Cada uma diz o lugar a que pertence, e nenhuma é removida. | b1c | retirada | a nota da lista descrevia a cobertura da página e o que o projeto faz, que é a classe de frase que a Emenda 15 tira de uma página do leitor (achado 12 da leitura a frio de 22.09.2026). O registo fica com o título, a lista e a norma das correções, que está no topo da mesma página |
 | conteudo | The changes, by date | b1c | viva | — |
-| conteudo | Every change to this site, from the most recent to the oldest: the corrections and updates to each row, the studies published and the changes to the project. Each says the place it belongs to, and none is removed. | b1c | viva | — |
+| conteudo | Every change to this site, from the most recent to the oldest: the corrections and updates to each row, the studies published and the changes to the project. Each says the place it belongs to, and none is removed. | b1c | retirada | a nota da lista descrevia a cobertura da página e o que o projeto faz, que é a classe de frase que a Emenda 15 tira de uma página do leitor (achado 12 da leitura a frio de 22.09.2026). O registo fica com o título, a lista e a norma das correções, que está no topo da mesma página |
 
 ## `/agenda` · `/en/agenda` (etapa 4, subetapa 4c)
 
