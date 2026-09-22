@@ -111,6 +111,7 @@ import {
   nomeOficial,
 } from '../../src/lib/enquadramento.mjs';
 import { FIGURAS, ladosDoLimiar } from '../../src/data/figuras.mjs';
+import { MEDIDAS_DO_DOMINIO_1 } from '../../src/data/dominios.mjs';
 /* AS TABELAS DAS LÍNGUAS, e não a função que compõe o nome: a pergunta desta
    régua é «o texto que a página escreveu diz a língua em que está?», e quem sabe
    a língua de uma cadeia é a tabela onde ela está declarada. */
@@ -411,6 +412,15 @@ function corre(dist) {
 
         const vista = soOQueSeVe(cartao);
         const visivel = vista.text.replace(/\s+/g, ' ').trim();
+
+        /* B1, correção de 22.09: a primeira coisa do cartão é o nome da sua
+           declaração. K1 só contava a classe; K2 só recusava rótulos de recibo.
+           Lemos a tabela do domínio, sem chamar a função que escreve o nome. */
+        const declaracao = MEDIDAS_DO_DOMINIO_1.find(m => m.claim === id);
+        const titulo = vista.querySelector('.cartao-medida-nome');
+        if (declaracao && titulo && titulo.text.replace(/\s+/g, ' ').trim() !== declaracao.nome[langPagina]) {
+          erros.push(`K1 · ${rota} · ${id}: o nome do cartão difere da declaração: «${titulo.text.trim()}»; esperado «${declaracao.nome[langPagina]}»`);
+        }
 
         /* ------------------------------------------------------------ K2 */
         for (const r of rotulos) {
@@ -742,6 +752,30 @@ if (PROVA) {
     falhas.push(`o cartão são deu ${noSao.length} vermelho(s): ${noSao[0]}`);
   }
 
+  /* O nome antigo do limite não pode sobreviver à declaração nova, mesmo
+     escrito à mão sem data-nome. Positivo, planta e reposição nas duas línguas. */
+  const nomesDir = fs.mkdtempSync(path.join(os.tmpdir(), 'oedp-cartao-nome-'));
+  try {
+    const id = 'indice-de-divida-limite-legal';
+    const declarado = MEDIDAS_DO_DOMINIO_1.find(m => m.claim === id).nome;
+    for (const [lang, antigo] of [['pt', 'Dívida da câmara contra o limite legal'], ['en', 'Municipal debt against the legal cap']]) {
+      const escreve = nome => fs.writeFileSync(path.join(nomesDir, 'index.html'),
+        `<html lang="${lang}"><body><article data-cartao-medida="${id}">` +
+        `<span class="cartao-medida-nome">${nome}</span>` +
+        `<p class="cartao-medida-valor"><a class="src-chip" href="/livro-razao/${id}">fonte</a></p>` +
+        '</article></body></html>');
+      escreve(declarado[lang]);
+      if (corre(nomesDir).erros.length) falhas.push(`K1 nome ${lang}: recusou a declaração`);
+      escreve(antigo);
+      const mordidas = corre(nomesDir).erros.filter(e => e.startsWith('K1 ·') && e.includes('nome do cartão difere da declaração'));
+      if (mordidas.length !== 1) falhas.push(`K1 nome ${lang}: não recusou o nome antigo`);
+      escreve(declarado[lang]);
+      if (corre(nomesDir).erros.length) falhas.push(`K1 nome ${lang}: a reposição não passou`);
+    }
+  } finally {
+    fs.rmSync(nomesDir, { recursive: true, force: true });
+  }
+
   /* A mesma K6, com a frase real e as duas glosas: verde antes, vermelha
      quando se troca cada glosa. Nenhum valor de medida entra nesta planta. */
   const glosasDir = fs.mkdtempSync(path.join(os.tmpdir(), 'oedp-cartao-glosas-'));
@@ -883,7 +917,7 @@ if (PROVA) {
         `a régua com as duas comparações de uma medida, a série bienal, a ausência da linha da ` +
         `União e uma chave que não se inventa; as duas testemunhas do valor de referência com um ` +
         `par bom e dois maus; a mesma série com um par que bate e um que não bate; ` +
-        `K6 com as glosas declaradas e com cada uma das duas trocada`,
+        `K6 com as glosas declaradas e com cada uma das duas trocada; K1 com o nome do limite legal declarado, antigo e reposto nas duas línguas`,
     ),
   );
 }
