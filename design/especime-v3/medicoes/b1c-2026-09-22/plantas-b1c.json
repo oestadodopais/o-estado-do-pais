@@ -98,6 +98,27 @@
     "saida": "B1 país: 35 medidas, 9 temas, 8 menus, 1 mudanças declaradas, 4 listas com teto 8, 2 registos de 30 mudanças.\nA1: municipios/evora/index.html: a linha correcao|estudos-evora-publicados|3 é de «evora» e a página é de «lisboa».\nA1: municipios/evora/index.html: a linha correcao|evora-prr-aprovado-2026|5 é de «evora» e a página é de «lisboa».\nA1: municipios/evora/index.html: a linha correcao|evora-prr-execucao-2026|1 é de «evora» e a página é de «lisboa».\nA1: municipios/evora/index.html: a linha correcao|evora-prr-pago-2026|5 é de «evora» e a página é de «lisboa».\nA1: municipios/evora/index.html: a linha correcao|evora-prr-vencido-aprovado-2026|5 é de «evora» e a página é de «lisboa».\nA1: municipios/evora/index.html: a linha correcao|evora-prr-vencido-quota-2026|1 é de «evora» e a página é de «lisboa».\nA1: municipios/evora/index.html: a linha correcao|evora-prr-aprovado-2026|3 é de «evora» e a página é de «lisboa».\nA1: municipios/evora/index.html: a linha correcao|evora-prr-execucao-2026|0 é de «evora» e a página é de «lisboa»."
   },
   {
+    "nome": "declaração do lugar contra a derivação",
+    "codigo": 1,
+    "celula": "A1",
+    "passou": true,
+    "saida": "B1 país: 35 medidas, 9 temas, 8 menus, 1 mudanças declaradas, 4 listas com teto 8, 2 registos de 30 mudanças.\nA1: estudos-evora-publicados é declarado de «portugal» e deriva de «evora».\nA1: a linha estudos-evora-publicados é declarada de «portugal» e deriva de «evora».\nA3: correcoes/index.html: uma linha de «portugal» escreve «Évora» com a porta «/municipios/evora»; esperava-se «Portugal» e «/».\nA3: correcoes/index.html: uma linha de «portugal» escreve «Évora» com a porta «/municipios/evora»; esperava-se «Portugal» e «/».\nA3: correcoes/index.html: uma linha de «portugal» escreve «Évora» com a porta «/municipios/evora»; esperava-se «Portugal» e «/».\nA3: correcoes/index.html: uma linha de «portugal» escreve «Évora» com a porta «/municipios/evora»; esperava-se «Portugal» e «/».\nA3: en/corrections/index.html: uma linha de «portugal» escreve «Évora» com a porta «/en/municipalities/evora»; esperava-se «Portugal» e «/en».\nA3: en/corrections/index.html: uma linha de «portugal» escreve «Évora» com a porta «/en/municipalities/evora»; esperava-se «Portugal» e «/en».\nA3: en/corrections/index.html: uma linha de «portugal» escreve «Évora» com a porta «/en/municipalities/evora»; esperava-se «Portugal» e «/en».\nA3: en/corrections/index.html: uma linha de «portugal» escreve «Évora» com a porta «/en/municipalities/evora»; esperava-se «Portugal» e «/en».\nA1: en/municipalities/evora/index.html: a linha correcao|estudos-evora-publicados|3 é de «portugal» e a página é de «evora».\nA1: municipios/evora/index.html: a linha correcao|estudos-evora-publicados|3 é de «portugal» e a página é de «evora»."
+  },
+  {
+    "nome": "porta do registo apontada a outro lugar",
+    "codigo": 1,
+    "celula": "A3",
+    "passou": true,
+    "saida": "B1 país: 35 medidas, 9 temas, 8 menus, 1 mudanças declaradas, 4 listas com teto 8, 2 registos de 30 mudanças.\nA3: correcoes/index.html: uma linha de «portugal» escreve «Portugal» com a porta «/municipios/lisboa»; esperava-se «Portugal» e «/»."
+  },
+  {
+    "nome": "título por confirmar sem a marca",
+    "codigo": 1,
+    "celula": "A4",
+    "passou": true,
+    "saida": "B1 país: 35 medidas, 9 temas, 8 menus, 1 mudanças declaradas, 4 listas com teto 8, 2 registos de 30 mudanças.\nA4: en/corrections/index.html: agua-nao-faturada/en tem 0 marcador(es) e o arquivo declara titleUnverified=true."
+  },
+  {
     "nome": "texto da mudança alterado",
     "codigo": 1,
     "celula": "M2",
