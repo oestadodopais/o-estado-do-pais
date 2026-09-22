@@ -4,7 +4,7 @@
   "medidas": [
     {
       "nome": "briefs_ate_22_09_2026",
-      "valor": 37,
+      "valor": 38,
       "comando": "python3 design/observatorio/medidas/BRIEF-M5.py · conta os BRIEF-*.md de design/observatorio/ cuja data, a mais recente entre a do nome e a primeira do cabeçalho, é anterior ou igual a 22.09.2026",
       "conhecido_positivo": {
         "o_que": "o mesmo leitor de datas aceita o próprio brief («BRIEF-M5-as-medicoes-provam-que-veem.md») como datado até ao corte",
@@ -13,7 +13,7 @@
     },
     {
       "nome": "briefs_com_seccao_de_medicoes",
-      "valor": 34,
+      "valor": 35,
       "comando": "python3 design/observatorio/medidas/BRIEF-M5.py · dos briefs datados até 22.09.2026, os que têm um título `## 0` ou um título que diga «o que se mediu»",
       "conhecido_positivo": {
         "o_que": "o MESMO predicado, sobre um texto escrito no momento com um título «## 0 · O que se mediu», responde que sim",
@@ -22,7 +22,7 @@
     },
     {
       "nome": "briefs_com_guiao_de_medicoes",
-      "valor": 1,
+      "valor": 2,
       "comando": "ls design/observatorio/medidas/*.py design/observatorio/medidas/*.mjs · um por brief datado até 22.09.2026, pela chave do nome do ficheiro",
       "conhecido_positivo": {
         "o_que": "o mesmo localizador encontra o guião deste brief pela chave dele",
@@ -31,7 +31,7 @@
     },
     {
       "nome": "briefs_conferidos_pelo_portao",
-      "valor": 1,
+      "valor": 2,
       "comando": "python3 scripts/check-briefs.py --contagens · os briefs datados de 22.09.2026 que não estão na isenção por nomeação; a contagem do portão é a mesma enquanto não houver um brief posterior ao corte",
       "conhecido_positivo": {
         "o_que": "o próprio brief («BRIEF-M5-as-medicoes-provam-que-veem.md») está entre os conferidos",

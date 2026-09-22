@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-22T15:14:57+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/e52c0f39-ab9c-4e0f-b9db-11d420f316ed/scratchpad/m4/leitura/pacote",
+ "plantas": [
+  {
+   "id": "m4-p1-excecao-invertida",
+   "ficheiro": "core/gate.py",
+   "descricao": "A recusa de uma exceção sobre um caminho que deixou de ser livro está invertida: passa a recusar as exceções válidas e a aceitar as apodrecidas; o teste 14 e o relatório dizem o contrário",
+   "sha256_antes": "17adb7c8dae6d5c2b363fcb3474fdcebe312ec01ab2d1cb8b386621f74030ab2",
+   "sha256_depois": "a209988648f4fdf3aa27caf96702a6d6824fc4779b9a7a5e40e5faa5e843a4a5",
+   "contexto_antes": "(f\"exceção {caminho}: este livro JÁ tem entregável declarado. \"\n                            f\"Uma exceção a mais desculpa a remoção seguinte sem ninguém ver.\")\n        if caminho not in na_arvore:\n            defeitos.append(f\"exceção {caminho}: não é um livro-razão da árvore. Um ficheiro \"\n                            f\"que mudou de sítio deixa a exceção",
+   "contexto_depois": "(f\"exceção {caminho}: este livro JÁ tem entregável declarado. \"\n                            f\"Uma exceção a mais desculpa a remoção seguinte sem ninguém ver.\")\n        if caminho in na_arvore:\n            defeitos.append(f\"exceção {caminho}: não é um livro-razão da árvore. Um ficheiro \"\n                            f\"que mudou de sítio deixa a exceção"
+  },
+  {
+   "id": "m4-p2-contagem-derived",
+   "ficheiro": "core/gate_baselines.json",
+   "descricao": "A razão da exceção do 11 diz derived 11, o que soma 21 e não 20 e contradiz o medidas.json e o relatório (derived 10)",
+   "sha256_antes": "606fb795347dee0b40e3eeb76a05a6b565eadcc5a59965a51f0a6a0b61e018bf",
+   "sha256_depois": "fc570ec0be049072fa0f20507d800fa0d8544ff0bd4cb17483b3e70be020a78f",
+   "contexto_antes": " no excerpt da própria linha e a terceira recusa do indexed_forms exige que esteja), 20 linhas com um source_type que não é nenhum dos cinco do core.provenance (derived 10, independent_fiscal_institution 5, press 3, union 1, supreme_audit_institution 1), e o entity_aliases escrito como nome para texto onde o core.attributions exige nome para lista. Enquanto assim",
+   "contexto_depois": " no excerpt da própria linha e a terceira recusa do indexed_forms exige que esteja), 20 linhas com um source_type que não é nenhum dos cinco do core.provenance (derived 11, independent_fiscal_institution 5, press 3, union 1, supreme_audit_institution 1), e o entity_aliases escrito como nome para texto onde o core.attributions exige nome para lista. Enquanto assim"
+  },
+  {
+   "id": "m4-p3-sha-reposta",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "O sha256 dos bytes repostos no relatório não é o do medidas.json (…463f2): a reposição deixa de estar provada byte a byte",
+   "sha256_antes": "f2b1969acb4415395db1b59a7126895c199d0a0906c19648f43133d9849403e9",
+   "sha256_depois": "83b2feb0f9736b54218eea5c8e053e2ba2ab6f23ee26f96f67ec77d6f2c3c4e6",
+   "contexto_antes": "et: ['orphans: 90 > baseline 89 — new unledgered/unattributed content']\n  VEREDITO DO PORTÃO: FAIL (ratchet)\n```\n\nRepostos os bytes, sha256 igual ao de antes (`96565bc0c3db3294e5ce983ff22de8ccffb2bb9ab399dd86c8d082df732463f2`), a catraca volta a `[]` e o veredito a `ok`. A máquina que vigia os números do 11 morde; o que falta é o livro que lhe dá o que vigiar.\n\n**A planta no portão novo.** Um l",
+   "contexto_depois": "et: ['orphans: 90 > baseline 89 — new unledgered/unattributed content']\n  VEREDITO DO PORTÃO: FAIL (ratchet)\n```\n\nRepostos os bytes, sha256 igual ao de antes (`96565bc0c3db3294e5ce983ff22de8ccffb2bb9ab399dd86c8d082df732463f3`), a catraca volta a `[]` e o veredito a `ok`. A máquina que vigia os números do 11 morde; o que falta é o livro que lhe dá o que vigiar.\n\n**A planta no portão novo.** Um l"
+  },
+  {
+   "id": "m4-p4-entregaveis-36",
+   "ficheiro": "content/11 Seguranca Social/Technical Source/medidas.json",
+   "descricao": "O medidas.json diz 36 entregáveis onde o gate_baselines.json tem 37 e o relatório diz 37",
+   "sha256_antes": "0ed2b3ed1c3ffe31afbe1b0fd65faf2d6d02a2b1e2c576c23750b64560c3368a",
+   "sha256_depois": "6c7178d2ef3ce6f30a4e254964b9fa8b78f7cadee674cdee53e159e7bda9cbe0",
+   "contexto_antes": "cial/ledger.json\",\n   \"content/12 Concelhos/ledger.json\",\n   \"content/13 Dominios/ledger.json\",\n   \"content/14 Évora 2027/ledger.json\"\n  ],\n  \"n_livros\": 13,\n  \"n_entregaveis\": 37,\n  \"n_livros_declarados\": 11,\n  \"excecoes\": [\n   \"content/03 Regional Economy/Travessia das Regioes/ledger.json\",\n   \"content/11 Seguranca Social/ledger.json\"\n",
+   "contexto_depois": "cial/ledger.json\",\n   \"content/12 Concelhos/ledger.json\",\n   \"content/13 Dominios/ledger.json\",\n   \"content/14 Évora 2027/ledger.json\"\n  ],\n  \"n_livros\": 13,\n  \"n_entregaveis\": 36,\n  \"n_livros_declarados\": 11,\n  \"excecoes\": [\n   \"content/03 Regional Economy/Travessia das Regioes/ledger.json\",\n   \"content/11 Seguranca Social/ledger.json\"\n"
+  },
+  {
+   "id": "m4-p5-planta-que-nao-planta",
+   "ficheiro": "core/gate_test.py",
+   "descricao": "A planta 12 do teste (exceção sem razão) passa a fornecer uma razão, logo já não testa a recusa que o seu comentário e o relatório anunciam",
+   "sha256_antes": "831db472bc5948fe3f10db67404a76727a258028e451254debcf6ce509faf0d8",
+   "sha256_depois": "ddfd1740569355d809647554c16917bee5c0bfa8e94af0c1b0ca38d2291d49e6",
+   "contexto_antes": "NTA: uma exceção sem razão é um esquecimento disfarçado.\n        cfg = {\"deliverables\": [{\"ledger\": declarado}],\n               \"ledgers_without_deliverable\": [{\"ledger\": esquecido, \"reason\": \"  \"}]}\n        _, defeitos = gate.livros_sem_entregavel(cfg)\n        if not any(\"sem razão\" in d for d in defeitos):\n            maus.append(f\"uma exceção sem razão",
+   "contexto_depois": "NTA: uma exceção sem razão é um esquecimento disfarçado.\n        cfg = {\"deliverables\": [{\"ledger\": declarado}],\n               \"ledgers_without_deliverable\": [{\"ledger\": esquecido, \"reason\": \"a razão\"}]}\n        _, defeitos = gate.livros_sem_entregavel(cfg)\n        if not any(\"sem razão\" in d for d in defeitos):\n            maus.append(f\"uma exceção sem razão"
+  }
+ ]
+}

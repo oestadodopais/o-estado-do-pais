@@ -1,0 +1,11 @@
+BASELINE: REFUSED — 1 counter(s) would rise:
+  x fixture: orphans: 1 > baseline 0 — new unledgered/unattributed content
+
+  The ratchet only tightens. Debt that grew is new unledgered content:
+  ledger it, or record the rise deliberately with
+      python3 -m core.gate update --allow-regression
+BASELINE  fixture: {'numbers': 2, 'matched': 2, 'orphans': 0, 'misattributions': 0, 'undeclared': 1, 'undeclared_assertions': 0, 'failed_assertions': 0, 'number_adjacencies': 0} → {'numbers': 3, 'matched': 2, 'orphans': 1, 'misattributions': 0, 'undeclared': 1, 'undeclared_assertions': 0, 'failed_assertions': 0, 'number_adjacencies': 0}
+
+  1 counter(s) RAISED by explicit request — this loosens the ratchet.
+Baselines written — commit gate_baselines.json so the ratchet position is recorded.
+GATE_TEST: PASS — 15 checks (clean measure, orphan ratchet, equal/improved pass, misattribution ratchet, structural raise, update refuses a rise, update records one when asked, ledger read by content not by name, payload is not a ledger, undeclared ledger caught, declared ledger passes, written exception passes, exception with no reason refused, exception on a declared ledger refused, stale exception refused)

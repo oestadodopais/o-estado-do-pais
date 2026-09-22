@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-22T15:37:34+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/e52c0f39-ab9c-4e0f-b9db-11d420f316ed/scratchpad/m5/leitura/pacote",
+ "plantas": [
+  {
+   "id": "m5-p1-conhecido-positivo-cego",
+   "ficheiro": "scripts/check-briefs.py",
+   "descricao": "Um conhecido-positivo em falta (sem o campo, ou null) deixa de ser erro: só um  explícito fecha, e um guião que não o escreva passa em silêncio",
+   "sha256_antes": "23aa8c21aedee7dc4a4e8f6cae46ec64b754ec98e0b3cba6cfd56c1d2341659c",
+   "sha256_depois": "fcc3fff370e48d26cf953ce25fc7870f836af0e32952f5dbb20aeb600f64262c",
+   "contexto_antes": ":\n            if campo not in m:\n                erros.append(f'{nome}: a medição «{n}» não declara `{campo}`.')\n        cp = o.get('conhecido_positivo') or {}\n        if cp.get('encontrado') is not True:\n            erros.append(\n                f'{nome}: o conhecido-positivo da medição «{n}» NÃO foi encontrado '\n                f'({cp.get(\"o_que\", \"sem descriç",
+   "contexto_depois": ":\n            if campo not in m:\n                erros.append(f'{nome}: a medição «{n}» não declara `{campo}`.')\n        cp = o.get('conhecido_positivo') or {}\n        if cp.get('encontrado') is False:\n            erros.append(\n                f'{nome}: o conhecido-positivo da medição «{n}» NÃO foi encontrado '\n                f'({cp.get(\"o_que\", \"sem descriç"
+  },
+  {
+   "id": "m5-p2-valor-trocado",
+   "ficheiro": "design/observatorio/medidas/BRIEF-M5.json",
+   "descricao": "O ficheiro das medições diz 32 briefs isentos por data onde o guião mede 33 e o relatório e o §0 dizem 33",
+   "sha256_antes": "54b2168f16c4dc27dc376bfab3976966fcf6c4f280d4eed224a8345fbf0ec6c1",
+   "sha256_depois": "8da54b8773dbb29d37bc5a0d80c2efb8fe58b65b10f34f8b7b102dea54a7b189",
+   "contexto_antes": "    \"o_que\": \"o mesmo localizador encontra o guião deste brief\",\n        \"encontrado\": true\n      }\n    },\n    {\n      \"nome\": \"briefs_isentos_por_data\",\n      \"valor\": 33,\n      \"comando\": \"python3 scripts/check-briefs.py --contagens\",\n      \"conhecido_positivo\": {\n        \"o_que\": \"um brief antigo nomeado («BRIEF-F1.1-porta-da-f",
+   "contexto_depois": "    \"o_que\": \"o mesmo localizador encontra o guião deste brief\",\n        \"encontrado\": true\n      }\n    },\n    {\n      \"nome\": \"briefs_isentos_por_data\",\n      \"valor\": 32,\n      \"comando\": \"python3 scripts/check-briefs.py --contagens\",\n      \"conhecido_positivo\": {\n        \"o_que\": \"um brief antigo nomeado («BRIEF-F1.1-porta-da-f"
+  },
+  {
+   "id": "m5-p3-contagem-do-b1c",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "A tabela do relatório diz 45 números sem ficheiro no relatório do B1c, onde a saída guardada (conferir-relatorio-b1c…txt) diz 50",
+   "sha256_antes": "bd28698e843e134e459875615a2fd979747017a29dc56f58d7d50954d3831a6b",
+   "sha256_depois": "bdd504978042967d7d9a06b984cac185d425de6bbf5d9f1259813a5bd09222be",
+   "contexto_antes": "0** |\n| `m3b-2026-09-22/LEIA-ME.md` | 2 | 94 | 61 | **33** |\n| `i129-2026-09-22/LEIA-ME.md` | 1 | 131 | 77 | **54** |\n| `b1c-2026-09-22/LEIA-ME.md` | 6 | 179 | 129 | **50** |\n\nAs saídas inteiras, com a linha e o contexto de cada número sem ficheiro, ficam em `conferir-relatorio-b1-peca3.txt`, `conferir-relatorio-m3b.txt`, `conferir-",
+   "contexto_depois": "0** |\n| `m3b-2026-09-22/LEIA-ME.md` | 2 | 94 | 61 | **33** |\n| `i129-2026-09-22/LEIA-ME.md` | 1 | 131 | 77 | **54** |\n| `b1c-2026-09-22/LEIA-ME.md` | 6 | 179 | 129 | **45** |\n\nAs saídas inteiras, com a linha e o contexto de cada número sem ficheiro, ficam em `conferir-relatorio-b1-peca3.txt`, `conferir-relatorio-m3b.txt`, `conferir-"
+  },
+  {
+   "id": "m5-p4-em-falta-cego",
+   "ficheiro": "scripts/leituras/numeros.py",
+   "descricao": "em_falta deixa passar todos os números quando o conjunto dos valores está vazio: uma pasta sem medições torna qualquer relatório «conferido»",
+   "sha256_antes": "a60c5d0644471842470d525dbaa394ec854534b3b362e971fe6b5703867c2c00",
+   "sha256_depois": "b2b2e07f96c3835c8743f106c27b5e1aa9de4c9fb86170baf595e7f1fa7ad4b9",
+   "contexto_antes": "f em_falta(achados, formas, valores):\n    \"\"\"Os números do texto que não existem entre as formas nem entre os valores.\"\"\"\n    faltam = []\n    for a in achados:\n        if a['forma'] in formas:\n            continue\n        if a['valor'] is not None and a['valor'] in valores:\n            continue\n        faltam.append(a)\n    return faltam\n",
+   "contexto_depois": "f em_falta(achados, formas, valores):\n    \"\"\"Os números do texto que não existem entre as formas nem entre os valores.\"\"\"\n    faltam = []\n    for a in achados:\n        if a['forma'] in formas or not valores:\n            continue\n        if a['valor'] is not None and a['valor'] in valores:\n            continue\n        faltam.append(a)\n    return faltam\n"
+  },
+  {
+   "id": "m5-p5-varredura-vazia-passa",
+   "ficheiro": "scripts/gate-html.mjs",
+   "descricao": "A varredura de src/ e public/ que não leu ficheiro nenhum deixa de ser um erro: a condição nunca dispara e um zero cego conta como zero",
+   "sha256_antes": "884b5530c4968aaf9f517037069619d04c700fa5166104962441efd08a123097",
+   "sha256_depois": "36bba8d0b046c1a7948d9a22dabc74fffe88f0ba95174b47f98786a6a20b34cd",
+   "contexto_antes": "     out.push(full);\n    }\n    return out;\n  };\n  const fontes = [...ficheirosDeFonte(path.join(ROOT, 'src')), ...ficheirosDeFonte(path.join(ROOT, 'public'))];\n  if (fontes.length === 0) {\n    erros.push({\n      rel: 'scripts/gate-html.mjs',\n      msg: 'a varredura de `src/` e de `public/` não leu ficheiro nenhum: um zero assim não é uma conferên",
+   "contexto_depois": "     out.push(full);\n    }\n    return out;\n  };\n  const fontes = [...ficheirosDeFonte(path.join(ROOT, 'src')), ...ficheirosDeFonte(path.join(ROOT, 'public'))];\n  if (fontes.length < 0) {\n    erros.push({\n      rel: 'scripts/gate-html.mjs',\n      msg: 'a varredura de `src/` e de `public/` não leu ficheiro nenhum: um zero assim não é uma conferên"
+  }
+ ]
+}

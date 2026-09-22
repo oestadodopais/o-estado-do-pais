@@ -1,0 +1,172 @@
+{
+  "brief": "design/observatorio/BRIEF-M4b-o-livro-razao-do-11-reparado-e-declarado.md",
+  "guiao": "design/observatorio/medidas/BRIEF-M4b.py",
+  "copia": {
+    "ficheiro": "design/especime-v3/medicoes/m4-2026-09-22/medidas.json",
+    "sha256": "610a96270f7b0f2ac0766e374e4f5caee46916d8dfda2706989c81cf98b6ac1e"
+  },
+  "medidas": [
+    {
+      "nome": "linhas",
+      "valor": 55,
+      "comando": "python3 design/observatorio/medidas/BRIEF-M4b.py",
+      "conhecido_positivo": {
+        "o_que": "o mesmo leitor encontra a linha «relatorio-titulo» entre as linhas com defeito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_recusadas",
+      "valor": 28,
+      "comando": "python3 design/observatorio/medidas/BRIEF-M4b.py",
+      "conhecido_positivo": {
+        "o_que": "a contagem escrita é a contagem das linhas com defeito, e «governo-posicao» está em duas famílias",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "valor_de_texto",
+      "valor": 9,
+      "comando": "python3 design/observatorio/medidas/BRIEF-M4b.py",
+      "conhecido_positivo": {
+        "o_que": "a contagem é a das linhas com «valor_de_texto», e «relatorio-titulo» é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sem_valor_no_excerto",
+      "valor": 7,
+      "comando": "python3 design/observatorio/medidas/BRIEF-M4b.py",
+      "conhecido_positivo": {
+        "o_que": "o mesmo leitor distingue as duas que TÊM o valor no excerto («fs-penalizacao-seletiva», «fs-heterogeneidade-longevidade»)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "source_type_invalido",
+      "valor": 20,
+      "comando": "python3 design/observatorio/medidas/BRIEF-M4b.py",
+      "conhecido_positivo": {
+        "o_que": "a contagem é a das linhas com «source_type_invalido», e «cgtp-saldo-2025» (union) é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "derived",
+      "valor": 10,
+      "comando": "python3 design/observatorio/medidas/BRIEF-M4b.py",
+      "conhecido_positivo": {
+        "o_que": "a contagem é a das linhas com «source_type_invalido:derived», e «fefss-cobertura-recalculada» é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entity_aliases_errado",
+      "valor": true,
+      "comando": "python3 design/observatorio/medidas/BRIEF-M4b.py",
+      "conhecido_positivo": {
+        "o_que": "a recusa do motor nomeia a chave «GT»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "numeros_html",
+      "valor": 149,
+      "comando": "python3 design/observatorio/medidas/BRIEF-M4b.py",
+      "conhecido_positivo": {
+        "o_que": "a última linha do core.reconcile na mesma cópia diz o mesmo número",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "casados_html",
+      "valor": 41,
+      "comando": "python3 design/observatorio/medidas/BRIEF-M4b.py",
+      "conhecido_positivo": {
+        "o_que": "a última linha do core.reconcile diz o mesmo número de casados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "orfaos_html",
+      "valor": 89,
+      "comando": "python3 design/observatorio/medidas/BRIEF-M4b.py",
+      "conhecido_positivo": {
+        "o_que": "a última linha do core.reconcile diz o mesmo número de órfãos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "erradas_html",
+      "valor": 9,
+      "comando": "python3 design/observatorio/medidas/BRIEF-M4b.py",
+      "conhecido_positivo": {
+        "o_que": "a última linha do core.attributions diz o mesmo número",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "numeros_relatorio",
+      "valor": 654,
+      "comando": "python3 design/observatorio/medidas/BRIEF-M4b.py",
+      "conhecido_positivo": {
+        "o_que": "a última linha do core.reconcile na mesma cópia diz o mesmo número",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "casados_relatorio",
+      "valor": 154,
+      "comando": "python3 design/observatorio/medidas/BRIEF-M4b.py",
+      "conhecido_positivo": {
+        "o_que": "a última linha do core.reconcile diz o mesmo número de casados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "orfaos_relatorio",
+      "valor": 328,
+      "comando": "python3 design/observatorio/medidas/BRIEF-M4b.py",
+      "conhecido_positivo": {
+        "o_que": "a última linha do core.reconcile diz o mesmo número de órfãos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "erradas_relatorio",
+      "valor": 95,
+      "comando": "python3 design/observatorio/medidas/BRIEF-M4b.py",
+      "conhecido_positivo": {
+        "o_que": "a última linha do core.attributions diz o mesmo número",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "desvios_do_par",
+      "valor": 40,
+      "comando": "python3 design/observatorio/medidas/BRIEF-M4b.py",
+      "conhecido_positivo": {
+        "o_que": "a mesma expressão lê na mesma linha as linhas comparadas (40)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "excecao_escrita",
+      "valor": true,
+      "comando": "python3 design/observatorio/medidas/BRIEF-M4b.py",
+      "conhecido_positivo": {
+        "o_que": "a mesma lista traz a outra exceção, a Travessia das Regiões",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "documento_com_origem_fixada",
+      "valor": true,
+      "comando": "ls studies-src/penalizacoes-por-reforma-antecipada-2026/",
+      "conhecido_positivo": {
+        "o_que": "o mesmo leitor encontra a origem de outro estudo em studies-src/",
+        "encontrado": true
+      }
+    }
+  ]
+}
