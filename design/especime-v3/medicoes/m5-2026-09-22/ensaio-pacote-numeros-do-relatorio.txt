@@ -1,0 +1,65 @@
+# O ensaio do pacote.sh deste bloco, sobre o relatório do B1c (M5, 22.09.2026).
+# comando: sh scripts/leituras/pacote.sh . b03a6efc HEAD <pacote> design/observatorio/BRIEF-M5-as-medicoes-provam-que-veem.md design/especime-v3/medicoes/b1c-2026-09-22/LEIA-ME.md index.html
+# a linha de saída do pacote.sh, com o caminho do pacote encurtado:
+pacote em <pacote de ensaio>/pacote-ensaio: diff 15459 linhas, 45 ficheiros mudados copiados da cabeça HEAD, 1 páginas construídas, números do relatório conferidos (código 1, em numeros-do-relatorio.txt)
+
+# o numeros-do-relatorio.txt que ficou dentro do pacote:
+relatório: design/especime-v3/medicoes/b1c-2026-09-22/LEIA-ME.md
+pasta das medições: design/especime-v3/medicoes/b1c-2026-09-22
+ficheiros JSON lidos: 6
+conhecido-positivo (o número 987654321, ausente dos ficheiros, apontado pelo mesmo detetor): encontrado
+números conferidos: 179
+números com ficheiro: 129
+números sem ficheiro: 50
+   l.13 «13» em «| Linhas de «O que mudou» na página do país | **30** (1 mudança do projeto, 13 publicações, 16 correções) |»
+   l.13 «16» em «| Linhas de «O que mudou» na página do país | **30** (1 mudança do projeto, 13 publicações, 16 correções) |»
+   l.14 «16» em «| Dessas 16 correções, de uma medida do país | **0** |»
+   l.16 «16» em «| Linhas datadas em `/correcoes` | **16** (3 correções, 13 atualizações), mais 9 de proveniência |»
+   l.16 «13» em «| Linhas datadas em `/correcoes` | **16** (3 correções, 13 atualizações), mais 9 de proveniência |»
+   l.17 «6» em «| Definições do marcador `[a verificar]` na página do país | **1**, para 6 marcadores |»
+   l.19 «16» em «**O §0 do brief diz que `/correcoes` «tem zero linhas datadas: é o canal e a norma, não um registo». Não é o que lá está.** A página já tinha o registo, com 16 »
+   l.21 «6» em «**O §0 diz também que «cada linha de correção com marcador repete a definição do marcador por baixo». Não repete.** A definição rende-se uma vez por página desd»
+   l.21 «7» em «**O §0 diz também que «cada linha de correção com marcador repete a definição do marcador por baixo». Não repete.** A definição rende-se uma vez por página desd»
+   l.32 «6» em «| 6 | O inventário, as listas fechadas do `check:voz` e o mapa do repositório | `check:voz` a 0 |»
+   l.33 «7» em «| 7 | Relatório, capturas e os três portões | este ficheiro, `capturas-b1c.json`, os `.codigo` |»
+   l.39 «7» em «| País (`/`, `/en`) | 30 | 8 (1 mudança do projeto, 7 publicações) | **1** (a mudança do projeto de 21.09) |»
+   l.41 «16» em «| Registo (`/correcoes`, `/en/corrections`) | 16 linhas datadas | 30 | **30** (1 mudança do projeto, 13 publicações, 16 correções) |»
+   l.41 «13» em «| Registo (`/correcoes`, `/en/corrections`) | 16 linhas datadas | 30 | **30** (1 mudança do projeto, 13 publicações, 16 correções) |»
+   l.41 «16» em «| Registo (`/correcoes`, `/en/corrections`) | 16 linhas datadas | 30 | **30** (1 mudança do projeto, 13 publicações, 16 correções) |»
+   l.43 «13» em «Depois do rebase sobre o `main` com a I129, que traz uma mudança declarada nova, os números do ramo são **2** na página do país, **8** em Évora e **31** no regi»
+   l.43 «16» em «Depois do rebase sobre o `main` com a I129, que traz uma mudança declarada nova, os números do ramo são **2** na página do país, **8** em Évora e **31** no regi»
+   l.45 «16» em «As 16 correções do livro-razão inteiro, as 13 publicações do arquivo e a mudança declarada do projeto estão todas no registo, e a célula A3 fecha a construção s»
+   l.45 «13» em «As 16 correções do livro-razão inteiro, as 13 publicações do arquivo e a mudança declarada do projeto estão todas no registo, e a célula A3 fecha a construção s»
+   l.51 «16» em «1. **A página do país ficou sem nenhuma linha de correção.** Das 16 entradas do livro-razão, nenhuma é de uma medida de `DOMINIO_DAS_MEDIDAS` nem de uma das set»
+   l.52 «6 695» em «2. **A página do país a 1 280 px encurtou de 6 695 px (medida da segunda passagem da peça 3) para 5 166 px.** São 22 linhas a menos. Com a decisão da tarde fico»
+   l.52 «5 166» em «2. **A página do país a 1 280 px encurtou de 6 695 px (medida da segunda passagem da peça 3) para 5 166 px.** São 22 linhas a menos. Com a decisão da tarde fico»
+   l.52 «22» em «2. **A página do país a 1 280 px encurtou de 6 695 px (medida da segunda passagem da peça 3) para 5 166 px.** São 22 linhas a menos. Com a decisão da tarde fico»
+   l.52 «4 791» em «2. **A página do país a 1 280 px encurtou de 6 695 px (medida da segunda passagem da peça 3) para 5 166 px.** São 22 linhas a menos. Com a decisão da tarde fico»
+   l.56 «22» em «O lugar lê-se de declarações que já existiam, todas lidas e nenhuma escolhida por ordem: a região que nomeia a linha (`src/data/regioes.mjs`), o estudo que decl»
+   l.56 «2 464» em «O lugar lê-se de declarações que já existiam, todas lidas e nenhuma escolhida por ordem: a região que nomeia a linha (`src/data/regioes.mjs`), o estudo que decl»
+   l.79 «21» em «`node tests/pais/pais.mjs --json design/especime-v3/medicoes/b1c-2026-09-22/plantas-b1c.json`: **21 provas, todas a morder** ([plantas-b1c.json](plantas-b1c.jso»
+   l.120 «16» em «A célula **A1 passa a recusar uma publicação na página do país**, com planta: uma linha de publicação copiada do registo para a lista do país dá código 1. A **A»
+   l.120 «13» em «A célula **A1 passa a recusar uma publicação na página do país**, com planta: uma linha de publicação copiada do registo para a lista do país dá código 1. A **A»
+   l.124 «5 166» em «O que a passagem mediu, em `dist/`, nas duas edições: a lista do país passou de 8 linhas para **1**; Évora ficou nas mesmas **8**; o registo ficou nas mesmas **»
+   l.124 «4 791» em «O que a passagem mediu, em `dist/`, nas duas edições: a lista do país passou de 8 linhas para **1**; Évora ficou nas mesmas **8**; o registo ficou nas mesmas **»
+   l.124 «5 255» em «O que a passagem mediu, em `dist/`, nas duas edições: a lista do país passou de 8 linhas para **1**; Évora ficou nas mesmas **8**; o registo ficou nas mesmas **»
+   l.124 «4 880» em «O que a passagem mediu, em `dist/`, nas duas edições: a lista do país passou de 8 linhas para **1**; Évora ficou nas mesmas **8**; o registo ficou nas mesmas **»
+   l.126 «21» em «**As conferências desta passagem, e só as que a mudança toca:** `npm run build` inteiro (código 0, e com ele o `check:pais` e o `check:voz` na cadeia), as **21 »
+   l.138 «13» em «Medido em `dist/`: o registo inglês rende **2** publicações com `[a verificar]` («Água Não Faturada» e «Onde está a água?»), de 13; o português rende **0**, que»
+   l.142 «14» em «**O que fica por fazer, e é uma falta dita e não uma decisão:** as outras vistas que rendem um título de edição (o arquivo, a primeira página, a página de um lu»
+   l.150 «2 863» em «Medido sobre o livro inteiro: **2 863 das 2 975 linhas** derivam um lugar do identificador; as sete linhas da leitura do país e as medidas de `DOMINIO_DAS_MEDID»
+   l.150 «2 975» em «Medido sobre o livro inteiro: **2 863 das 2 975 linhas** derivam um lugar do identificador; as sete linhas da leitura do país e as medidas de `DOMINIO_DAS_MEDID»
+   l.160 «598» em «`npm run build` inteiro, **código 0**, e com ele o `check:pais` («todas as conferências a 0») e o `check:voz` (verde, 598 linhas vivas todas rendidas, 546 retir»
+   l.160 «546» em «`npm run build` inteiro, **código 0**, e com ele o `check:pais` («todas as conferências a 0») e o `check:voz` (verde, 598 linhas vivas todas rendidas, 546 retir»
+   l.160 «24» em «`npm run build` inteiro, **código 0**, e com ele o `check:pais` («todas as conferências a 0») e o `check:voz` (verde, 598 linhas vivas todas rendidas, 546 retir»
+   l.160 «2 271» em «`npm run build` inteiro, **código 0**, e com ele o `check:pais` («todas as conferências a 0») e o `check:voz` (verde, 598 linhas vivas todas rendidas, 546 retir»
+   l.170 «14» em «**A medida, e uma correção à expectativa.** Esperavam-se as 14 páginas que eu tinha contado, mais o registo inglês. São **7 páginas e 11 marcas**, todas inglesa»
+   l.170 «7» em «**A medida, e uma correção à expectativa.** Esperavam-se as 14 páginas que eu tinha contado, mais o registo inglês. São **7 páginas e 11 marcas**, todas inglesa»
+   l.170 «14» em «**A medida, e uma correção à expectativa.** Esperavam-se as 14 páginas que eu tinha contado, mais o registo inglês. São **7 páginas e 11 marcas**, todas inglesa»
+   l.182 «2 271» em «**A catraca L1 não se mexeu: 2 271 antes, 2 271 depois.** O desconto é o mesmo mecanismo que já descontava o marcador da definição conferida de um cartão — a cl»
+   l.182 «2 271» em «**A catraca L1 não se mexeu: 2 271 antes, 2 271 depois.** O desconto é o mesmo mecanismo que já descontava o marcador da definição conferida de um cartão — a cl»
+   l.192 «4 791» em «**As contagens novas**, medidas em `dist/` nas duas edições: a página do país passa de 1 para **2** linhas, que são as duas mudanças declaradas do projeto (os n»
+   l.192 «4 880» em «**As contagens novas**, medidas em `dist/` nas duas edições: a página do país passa de 1 para **2** linhas, que são as duas mudanças declaradas do projeto (os n»
+   l.196 «2 271» em «`npm run build` inteiro, **código 0**, na cabeça rebaseada (e com ele o `check:pais`, «todas as conferências a 0», e o `check:voz`, verde). As **26 plantas** de»
+apagado antes de contar: codigo 193, enderecos 0, seccoes 13, datas 21, resumos 0, ordinais 7, identificadores 53, anos 0
+código de saída do conferir-relatorio.py: 1

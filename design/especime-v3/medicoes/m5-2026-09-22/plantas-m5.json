@@ -1,6 +1,6 @@
 {
   "bloco": "m5-2026-09-22",
-  "cabeca": "415b6866900ed488918e5096c94b0cc2aa1c98d1",
+  "cabeca": "44a718b4a88842ee35ed51521d11ca40cba48488",
   "plantas": [
     {
       "grupo": "o bloco medidas de um brief",
@@ -11,8 +11,8 @@
       "mordida": "a medição «briefs_ate_22_09_2026» vale 37 hoje e o ficheiro diz 38",
       "mordeu": true,
       "passou": true,
-      "antes": "54b2168f16c4dc27dc376bfab3976966fcf6c4f280d4eed224a8345fbf0ec6c1",
-      "reposto": "54b2168f16c4dc27dc376bfab3976966fcf6c4f280d4eed224a8345fbf0ec6c1"
+      "antes": "1c3311bbd6702bbacb933e0f9efab623ba34c41fc619d46cf86bedb361027cd2",
+      "reposto": "1c3311bbd6702bbacb933e0f9efab623ba34c41fc619d46cf86bedb361027cd2"
     },
     {
       "grupo": "o bloco medidas de um brief",
@@ -23,8 +23,8 @@
       "mordida": "conhecido-positivo da medição «ocorrencias_do_nome_de_quem_responde_em_src_e_public» NÃO foi encontrado",
       "mordeu": true,
       "passou": true,
-      "antes": "c702860e95ccd06e83b20ef13639006b6b8ce8396e4a62afe73ba42bf7e5ed64",
-      "reposto": "c702860e95ccd06e83b20ef13639006b6b8ce8396e4a62afe73ba42bf7e5ed64"
+      "antes": "2e7aa6783549961d1c8bd0462aa32cb8c2a1f437a78504fc884bb16b59794639",
+      "reposto": "2e7aa6783549961d1c8bd0462aa32cb8c2a1f437a78504fc884bb16b59794639"
     },
     {
       "grupo": "o bloco medidas de um brief",
@@ -32,11 +32,35 @@
       "ficheiro": "design/observatorio/BRIEF-M5-as-medicoes-provam-que-veem.md",
       "comando": "python3 scripts/check-briefs.py",
       "codigo": 1,
-      "mordida": "o §0 escreve «41» e esse número não está em",
+      "mordida": "escreve «41» e não nomeia medição nenhuma entre crases",
       "mordeu": true,
       "passou": true,
-      "antes": "67c3e4e5ff9cbd16924c8d7e9bee8d6b65ec056629e3fa8bccb04c3326321577",
-      "reposto": "67c3e4e5ff9cbd16924c8d7e9bee8d6b65ec056629e3fa8bccb04c3326321577"
+      "antes": "edcba258e0ae399d4617fd0bc73bb96954d126cd7a0901b73dcd5051eb471824",
+      "reposto": "edcba258e0ae399d4617fd0bc73bb96954d126cd7a0901b73dcd5051eb471824"
+    },
+    {
+      "grupo": "o bloco medidas de um brief",
+      "nome": "numero-certo-no-nome-errado",
+      "ficheiro": "design/observatorio/BRIEF-M5-as-medicoes-provam-que-veem.md",
+      "comando": "python3 scripts/check-briefs.py",
+      "codigo": 1,
+      "mordida": "o §0 escreve «34» e esse número não é o valor de nenhuma das medições nomeadas na sua frase",
+      "mordeu": true,
+      "passou": true,
+      "antes": "edcba258e0ae399d4617fd0bc73bb96954d126cd7a0901b73dcd5051eb471824",
+      "reposto": "edcba258e0ae399d4617fd0bc73bb96954d126cd7a0901b73dcd5051eb471824"
+    },
+    {
+      "grupo": "o bloco medidas de um brief",
+      "nome": "brief-isento-com-um-byte-mudado",
+      "ficheiro": "design/observatorio/BRIEF-F1.1-porta-da-frente.md",
+      "comando": "python3 scripts/check-briefs.py",
+      "codigo": 1,
+      "mordida": "BRIEF-F1\\.1-porta-da-frente\\.md: o brief mudou desde que foi isento",
+      "mordeu": true,
+      "passou": true,
+      "antes": "105b30ceff14fde506fc622a9c9e4f05ea96e206430c6cd7e058e2791f279ec9",
+      "reposto": "105b30ceff14fde506fc622a9c9e4f05ea96e206430c6cd7e058e2791f279ec9"
     },
     {
       "grupo": "os números de um relatório",
@@ -47,8 +71,8 @@
       "mordida": "«314159»",
       "mordeu": true,
       "passou": true,
-      "antes": "0973e0bed823b1ae85e490b07bf57f4683e2f2b9543ae33cdae2ddd2d2a2ae41",
-      "reposto": "0973e0bed823b1ae85e490b07bf57f4683e2f2b9543ae33cdae2ddd2d2a2ae41"
+      "antes": "bd28698e843e134e459875615a2fd979747017a29dc56f58d7d50954d3831a6b",
+      "reposto": "bd28698e843e134e459875615a2fd979747017a29dc56f58d7d50954d3831a6b"
     },
     {
       "grupo": "o nome de quem responde",

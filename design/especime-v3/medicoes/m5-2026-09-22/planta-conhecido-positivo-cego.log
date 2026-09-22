@@ -4,14 +4,24 @@ comando: python3 scripts/check-briefs.py
 código: 1
 mordida esperada: conhecido-positivo da medição «ocorrencias_do_nome_de_quem_responde_em_src_e_public» NÃO foi encontrado
 mordeu: True
-sha256 antes: c702860e95ccd06e83b20ef13639006b6b8ce8396e4a62afe73ba42bf7e5ed64
-sha256 reposto: c702860e95ccd06e83b20ef13639006b6b8ce8396e4a62afe73ba42bf7e5ed64
+sha256 antes: 2e7aa6783549961d1c8bd0462aa32cb8c2a1f437a78504fc884bb16b59794639
+sha256 reposto: 2e7aa6783549961d1c8bd0462aa32cb8c2a1f437a78504fc884bb16b59794639
 
-  portão dos briefs · 37 brief(s) em design/observatorio/ · 1 conferido(s) · 33 isento(s) por data (anteriores a 22.09.2026) · 3 isento(s) por nomeação
+  portão dos briefs · 37 brief(s) em design/observatorio/ · 1 conferido(s) · 33 isento(s) por data (anteriores a 22.09.2026) · 3 isento(s) por nomeação, os 36 presos por sha256 em design/observatorio/medidas/isentos.json
     conferido: BRIEF-M5-as-medicoes-provam-que-veem.md (medidas/BRIEF-M5.json)
+      §0 liga «37» a `briefs_ate_22_09_2026`
+      §0 liga «34» a `briefs_com_seccao_de_medicoes`
+      §0 liga «1» a `briefs_com_guiao_de_medicoes`
+      §0 liga «1» a `briefs_conferidos_pelo_portao`
+      §0 liga «33» a `briefs_isentos_por_data`
+      §0 liga «3» a `briefs_isentos_por_nomeacao`
+      §0 liga «0» a `ocorrencias_do_nome_de_quem_responde_em_src_e_public`
+      §0 liga «0» a `exportacoes_de_politica_ia_com_o_nome_de_quem_responde`
     isento por nomeação: BRIEF-B1c-o-que-mudou-no-seu-lugar.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.120)
     isento por nomeação: BRIEF-I129-o-grupo-etario-dos-jovens-nem.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.119)
     isento por nomeação: BRIEF-M3b-os-nomes-confirmados-voltam-aos-recibos.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.118)
+    chave repetida entre isentos, dita e não fatal: «BRIEF-fatia» · BRIEF-fatia-css-alcance-2026-09-16.md, BRIEF-fatia-dominios-css-2026-09-15.md · fecha o portão no dia em que um deles deixar de ser isento
+    apagado antes de contar no §0: codigo 16, enderecos 0, seccoes 4, datas 1, resumos 0, ordinais 0, identificadores 0, anos 0
 
-  O PORTÃO DOS BRIEFS FECHOU — 1 erro(s):
-    · BRIEF-M5-as-medicoes-provam-que-veem.md: o conhecido-positivo da medição «ocorrencias_do_nome_de_quem_responde_em_src_e_public» NÃO foi encontrado (o mesmo detetor encontra o nome uma vez numa linha escrita com ele). Enquanto o detetor não vir, o valor dela não vale.
+  O PORTÃO DOS BRIEFS FECHOU · 1 erro(s):
+    · BRIEF-M5-as-medicoes-provam-que-veem.md: o conhecido-positivo da medição «ocorrencias_do_nome_de_quem_responde_em_src_e_public» NÃO foi encontrado (o MESMO contador encontra uma ocorrência numa linha construída no momento com o nome lido do oráculo). Enquanto o detetor não vir, o valor dela não vale.

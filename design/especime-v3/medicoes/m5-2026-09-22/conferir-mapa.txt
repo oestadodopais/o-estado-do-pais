@@ -1,0 +1,10 @@
+mapa: design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md
+sha256 do mapa nesta corrida: 8a8eb22f0f4ab390dc3b4d61b021905ff77970d6a72abafbcb9e70c19b8dc32d
+
+citações conferidas na linha citada (±7): 57
+citação está no ficheiro, mas longe da linha citada: 1
+   mapa l.190 «A CHAVE DE UM BRIEF é `BRIEF-` mais o primeiro campo a segui» citada em ['scripts/check-briefs.py:26', 'design/observatorio/medidas/BRIEF-M5.py:18'] → está em ['scripts/check-briefs.py:51']
+citação não encontrada em nenhum dos ficheiros citados na mesma linha: 0
+linha citada para lá do fim do ficheiro: 0
+
+código de saída: 0
