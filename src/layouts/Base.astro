@@ -12,6 +12,7 @@ import {
   SITE_SHORT_NAME,
   SITE_URL,
   PAPEL_CLARO,
+  PAPEL_ESCURO,
   canonicalUrl,
 } from '../../site.config.mjs';
 import { alternatesFor, normalizePath } from '../lib/routes.mjs';
@@ -163,31 +164,6 @@ const cartaoTwitter = urlDoCartao({ ...cartao, ...DIM_TWITTER });
       crossorigin
     />
 
-    {
-      /* ------------------------------------------------------------------
-         A GUARDA CONTRA O PISCA DO TEMA (Emenda 12, 21.08.2026; §1.52)
-         ------------------------------------------------------------------
-         Claro por defeito para todos. Quem escolheu escuro tem a escolha
-         guardada no aparelho, e esta linha é o que a aplica ANTES da primeira
-         pintura: um ficheiro adiado corre depois de a página pintar, e o leitor
-         que pediu escuro veria a página clara primeiro e o escuro a seguir.
-
-         É bloqueante e é minúscula de propósito. E é a única coisa que pode
-         escrever `data-theme`: compara a chave com UMA cadeia e, quando não bate
-         certo, não faz nada — um valor estranho não produz atributo nenhum. O
-         `try` existe porque `localStorage` ATIRA, e não devolve nada, quando o
-         aparelho o recusa; sem ele, um separador privado partia o `<head>`.
-
-         `set:html` porque o que aqui vai é o corpo do script e não um filho de
-         texto qualquer, e `is:inline` porque uma etiqueta que o empacotador
-         mova deixa de estar antes da pintura, que é a única coisa que esta
-         linha faz.
-         ------------------------------------------------------------------ */
-    }
-    <script
-      is:inline
-      set:html={`(function(){try{if(localStorage.getItem('tema')==='dark'){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})()`}
-    />
 
     {
       /* ------------------------------------------------------------------
@@ -219,31 +195,9 @@ const cartaoTwitter = urlDoCartao({ ...cartao, ...DIM_TWITTER });
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    {
-      /* ------------------------------------------------------------------
-         A COR DA MOBÍLIA DO NAVEGADOR É A DO PAPEL DESTA PÁGINA, E É UMA SÓ
-         ------------------------------------------------------------------
-         O `BRIEF-app.md` §3 pede duas etiquetas `theme-color` com `media`, uma
-         por esquema do sistema. **Não é o que este sítio pode dizer com
-         verdade**, e a razão está medida e decidida noutro sítio: desde a
-         Emenda 12 (21.08.2026, `DECISIONS.md` §1.52) o escuro DEIXOU de vir da
-         preferência do sistema e passou a ser um pedido do leitor, guardado no
-         aparelho dele. O sítio é claro para toda a gente até alguém carregar no
-         botão.
-
-         Uma etiqueta com `media="(prefers-color-scheme: dark)"` diria ao
-         navegador para pintar a barra de escuro a um leitor de sistema escuro
-         que NUNCA pediu o escuro — e a página dele é de papel claro. Seria uma
-         barra escura por cima de uma página clara, ou seja a etiqueta a mentir
-         sobre o papel que está por baixo dela.
-
-         Os dois papéis dos tokens estão os dois aqui, e é `public/js/tema.js`
-         que troca de um para o outro, porque é ele que sabe o que o leitor
-         escolheu. Uma cor no `<head>` e a outra à mão do mecanismo que manda:
-         é a mesma divisão de trabalho da guarda contra o pisca.
-         ------------------------------------------------------------------ */
-    }
-    <meta name="theme-color" content={PAPEL_CLARO} />
+    <!-- A cor do navegador acompanha a paleta escolhida pelo sistema. -->
+    <meta name="theme-color" content={PAPEL_CLARO} media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content={PAPEL_ESCURO} media="(prefers-color-scheme: dark)" />
     <meta name="apple-mobile-web-app-title" content={SITE_SHORT_NAME} />
 
     <link rel="canonical" href={canonical} />
@@ -309,12 +263,5 @@ const cartaoTwitter = urlDoCartao({ ...cartao, ...DIM_TWITTER });
       <SiteFooter lang={lang} path={path} outraLingua={caminhoDaOutraLingua} />
     </div>
 
-    {
-      /* O CONTROLO DO TEMA, adiado e partilhado por todas as páginas. A guarda
-         do `<head>` trata da primeira pintura; este trata do clique e do que se
-         guarda. Vem depois do documento porque nada do que ele faz é preciso
-         antes de o leitor ver a página. */
-    }
-    <script src="/js/tema.js" defer is:inline></script>
   </body>
 </html>

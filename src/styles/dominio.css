@@ -386,30 +386,31 @@
 /* NO TEMA ESCURO A ESCALA INVERTE-SE, e não é gosto: o papel é escuro, e uma
    escala que fosse do claro ao escuro deixava a classe mais alta a desaparecer
    no fundo. As cinco tintas sobem do papel para a tinta nos dois temas, que é a
-   mesma leitura com os dois fundos. O selector é `:root[data-theme='dark']`, que
-   é o único caminho do tema escuro nesta casa (ver `tokens.css`). */
-:root[data-theme='dark'] .cl-escala-0,
-:root[data-theme='dark'] .sq-mapa.cl-escala-0 {
-  fill: #262b2d;
-  background: #262b2d;
-}
-:root[data-theme='dark'] .cl-escala-1,
-:root[data-theme='dark'] .sq-mapa.cl-escala-1 {
-  fill: #3f4744;
-  background: #3f4744;
-}
-:root[data-theme='dark'] .cl-escala-2,
-:root[data-theme='dark'] .sq-mapa.cl-escala-2 {
-  fill: #6d7570;
-  background: #6d7570;
-}
-:root[data-theme='dark'] .cl-escala-3,
-:root[data-theme='dark'] .sq-mapa.cl-escala-3 {
-  fill: #a6ada8;
-  background: #a6ada8;
-}
-:root[data-theme='dark'] .cl-escala-4,
-:root[data-theme='dark'] .sq-mapa.cl-escala-4 {
-  fill: #dfe2de;
-  background: #dfe2de;
+   mesma leitura com os dois fundos. A escala segue a preferência do sistema. */
+@media (prefers-color-scheme: dark) {
+  :root .cl-escala-0,
+  :root .sq-mapa.cl-escala-0 {
+    fill: #262b2d;
+    background: #262b2d;
+  }
+  :root .cl-escala-1,
+  :root .sq-mapa.cl-escala-1 {
+    fill: #3f4744;
+    background: #3f4744;
+  }
+  :root .cl-escala-2,
+  :root .sq-mapa.cl-escala-2 {
+    fill: #6d7570;
+    background: #6d7570;
+  }
+  :root .cl-escala-3,
+  :root .sq-mapa.cl-escala-3 {
+    fill: #a6ada8;
+    background: #a6ada8;
+  }
+  :root .cl-escala-4,
+  :root .sq-mapa.cl-escala-4 {
+    fill: #dfe2de;
+    background: #dfe2de;
+  }
 }

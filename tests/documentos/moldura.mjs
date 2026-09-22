@@ -155,9 +155,9 @@ function paletaDaCasa() {
     .readFileSync(path.join(RAIZ, 'src', 'styles', 'tokens.css'), 'utf8')
     .replace(/\/\*[\s\S]*?\*\//g, '');
   /** @param {string} selector */
-  const bloco = (selector) => {
+  const bloco = (selector, folha = css) => {
     const escapado = selector.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const m = css.match(new RegExp(`(?:^|\\})\\s*${escapado}\\s*\\{([^{}]*)\\}`));
+    const m = folha.match(new RegExp(`(?:^|\\})\\s*${escapado}\\s*\\{([^{}]*)\\}`));
     if (!m) throw new Error(`a régua não encontrou \`${selector}\` em tokens.css`);
     const fichas = {};
     for (const [, nome, valor] of m[1].matchAll(/--([a-z0-9-]+)\s*:\s*([^;]+);/g)) {
@@ -167,7 +167,9 @@ function paletaDaCasa() {
   };
   const cores = new Set();
   const claro = bloco(':root');
-  const escuro = { ...claro, ...bloco(":root[data-theme='dark']") };
+  const consulta = css.match(/@media\s*\(prefers-color-scheme:\s*dark\)\s*\{\s*(:root\s*\{[^{}]*\})\s*\}/);
+  if (!consulta) throw new Error('a régua não encontrou a paleta escura do sistema em tokens.css');
+  const escuro = { ...claro, ...bloco(':root', consulta[1]) };
   for (const fichas of [claro, escuro]) {
     for (const nome of Object.keys(fichas)) {
       let v = fichas[nome];

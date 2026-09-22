@@ -1038,16 +1038,16 @@ let ESTILO_DA_MOLDURA = null;
  * A folha da moldura, composta uma vez por construção.
  *
  * A MOLDURA SEGUE O TEMA DO DOCUMENTO, e a faixa não. Não é uma incoerência: a
- * faixa declara o seu papel e a sua tinta e lê-se contra qualquer fundo, e a
- * Emenda 12 fixa o claro para as páginas DA CASA. A moldura escreve por cima
+ * faixa declara o seu papel e a sua tinta e lê-se contra qualquer fundo.
+ * A moldura escreve por cima
  * das cores de uma obra que segue `prefers-color-scheme` (medido: os dezasseis
  * escurecem por essa consulta, sete deles com a guarda `[data-theme="light"]`).
  * Uma moldura que pintasse tinta escura por cima de um documento escuro tirava
  * a leitura a quem a tem; a guarda é a mesma que os documentos usam, para que
  * as duas folhas nunca digam coisas diferentes ao mesmo leitor.
  *
- * As cores saem de `tokens.css`, do `:root` claro e do `:root[data-theme='dark']`
- * escuro, e nenhuma é escrita aqui: se uma ficha desaparecer da folha da casa, a
+ * As cores saem de `tokens.css`, do `:root` claro e do `:root` na consulta escura
+ * do sistema, e nenhuma é escrita aqui: se uma ficha desaparecer da folha, a
  * construção pára.
  */
 function estiloDaMoldura() {
@@ -1055,7 +1055,9 @@ function estiloDaMoldura() {
 
   const tokens = semComentarios(fs.readFileSync(encontraNoRepositorio(FOLHA_TOKENS), 'utf8'));
   const claro = fichasDe(regraDe(tokens, ':root', FOLHA_TOKENS));
-  const escuro = fichasDe(regraDe(tokens, ":root[data-theme='dark']", FOLHA_TOKENS));
+  const consultaEscura = tokens.match(/@media\s*\(prefers-color-scheme:\s*dark\)\s*\{\s*(:root\s*\{[^{}]*\})\s*\}/);
+  if (!consultaEscura) morre(`não encontrei a paleta escura do sistema em ${FOLHA_TOKENS}.`);
+  const escuro = fichasDe(regraDe(consultaEscura[1], ':root', FOLHA_TOKENS));
   for (const nome of [FICHA_DO_FILETE, FICHA_DA_TINTA]) {
     if (!claro.has(nome)) morre(`\`--${nome}\` já não existe no \`:root\` de \`${FOLHA_TOKENS}\`.`);
   }
@@ -1104,7 +1106,7 @@ function estiloDaMoldura() {
     if (valor !== undefined) noEscuro.set(nome, comPrefixo(valor));
   }
   if (noEscuro.size === 0) {
-    morre(`o bloco \`:root[data-theme='dark']\` de \`${FOLHA_TOKENS}\` não redeclara nenhuma ficha da moldura.`);
+    morre(`a paleta escura de \`${FOLHA_TOKENS}\` não redeclara nenhuma ficha da moldura.`);
   }
 
   ESTILO_DA_MOLDURA = [

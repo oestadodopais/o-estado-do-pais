@@ -371,3 +371,13 @@ Duas das 25 cadeias, «· concelhos» e «· municipalities», saem do inventár
 As unidades das correções passaram a campos conferidos da própria linha, incluindo as bases numéricas dos índices. Saem assim da prosa do inventário e entram na comparação literal do livro-razão.
 
 Ficam três cadeias do registo: a seta de mudança e a marca de incerteza que acompanha as duas edições. As unidades são conferidas como campos, não como prosa.
+
+
+## B1, peça 3, segunda correção, 22.09.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| b1-peca3-correcao2 | 4 descrições novas; 2 retiradas; 2 palavras retiradas saem do inventário | por ler pelo lugar de direção antes de aterrar | Descrições ditadas e retirada do mecanismo do tema; plantas D1 e N3 em `design/especime-v3/medicoes/b1-2026-09-22/plantas-segunda-correcao.json` e `design/especime-v3/medicoes/b1-2026-09-22/plantas-segunda-tema.json`. |
+
+
+Entram as quatro descrições ditadas para o país e os temas, na classe de navegação. As duas descrições antigas do país ficam retiradas com a razão. «Tema» e «Theme» deixam a lista de frases retiradas: eram os nomes do comando antigo e são também palavras das descrições agora aprovadas. Não se pode proibir uma frase inteira por conter uma dessas palavras. A N3 do `check:pais` protege a retirada do mecanismo: recusa o guião do tema e o atributo nas páginas próprias; a planta repõe o guião na `Base.astro`.

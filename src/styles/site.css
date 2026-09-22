@@ -19,18 +19,14 @@
   box-sizing: border-box;
 }
 
-/* `color-scheme` diz ao navegador com que paleta pintar o que ele pinta por si:
-   as barras de deslocamento, os comandos nativos, e o fundo da tela antes de a
-   folha chegar. Dizia `light dark`, que é «segue a preferência do sistema» — e
-   desde a Emenda 12 a preferência do sistema não decide nada aqui: claro por
-   defeito para todos, escuro só à escolha do leitor. Se ficasse `light dark`, um
-   leitor com o sistema em escuro teria a página clara e as barras escuras, sem
-   ter escolhido nada. Passa a seguir o mesmo atributo que a paleta segue. */
+/* A paleta e os comandos nativos seguem a preferência do sistema. */
 html {
   color-scheme: light;
 }
-:root[data-theme='dark'] {
-  color-scheme: dark;
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
 }
 
 body {

@@ -133,6 +133,9 @@ function anda(dir) {
     if (!cru.includes('class="wrap"')) continue;
     const doc = parse(cru);
     if (!doc.querySelector('footer.rodape')) continue;
+    if (doc.querySelector('[data-theme]') || doc.querySelectorAll('script').some(s =>
+      s.getAttribute('src') === '/js/tema.js' || /data-theme|localStorage\s*\.\s*(?:getItem|setItem)\s*\(\s*['"]tema['"]/.test(s.textContent)))
+      erros.push(`N3: guião ou atributo do tema em ${path.relative(dist, abs)}.`);
     paginas++;
     const lang = doc.querySelector('html')?.getAttribute('lang') === 'en' ? 'en' : 'pt';
     const esperado = lang === 'pt' ? ['Portugal','Lugares','Temas','Estudos','Sobre'] : ['Portugal','Places','Themes','Studies','About'];
