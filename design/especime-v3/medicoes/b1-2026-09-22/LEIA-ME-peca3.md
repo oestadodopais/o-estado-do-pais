@@ -182,6 +182,8 @@ A construção ficou em `4c992fb4`, depois do nome e da K1 em `cb426ccb`. O gui�
 
 | Comando completo na cabeça final | Código lido do ficheiro | Início UTC | Fim UTC | Cabeça medida |
 | --- | --- | --- | --- | --- |
-| `npm run build` | por correr | por correr | por correr | por correr |
-| `npm run verify` | por correr | por correr | por correr | por correr |
-| `npm run typecheck` | por correr | por correr | por correr | por correr |
+| `npm run build` | 0 | 2026-09-22T03:52:59Z | 2026-09-22T03:57:42Z | `6e3baae0` |
+| `npm run verify` | 0 | 2026-09-22T03:57:55Z | 2026-09-22T04:05:34Z | `6e3baae0` |
+| `npm run typecheck` | 0 | 2026-09-22T04:05:44Z | 2026-09-22T04:05:44Z | `6e3baae0` |
+
+Os códigos foram lidos dos três ficheiros `.codigo`; cada comando guarda também `.log`, `.inicio`, `.fim` e `.cabeca`. As três cadeias completas passaram à primeira nesta cabeça. Antes delas, as capturas foram repetidas em `6e3baae0`: 55 PNG idênticos aos arquivados e 35 SHA-256 reconferidos. O manifesto conserva a cabeça da construção dos ficheiros, `4c992fb4`. O commit seguinte só regista estas saídas e esta tabela, pela exceção expressa do guião.
