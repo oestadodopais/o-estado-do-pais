@@ -1,0 +1,18 @@
+planta: numero-do-zero-sem-medicao
+ficheiro: design/observatorio/BRIEF-M5-as-medicoes-provam-que-veem.md
+comando: python3 scripts/check-briefs.py
+código: 1
+mordida esperada: o §0 escreve «41» e esse número não está em
+mordeu: True
+sha256 antes: 67c3e4e5ff9cbd16924c8d7e9bee8d6b65ec056629e3fa8bccb04c3326321577
+sha256 reposto: 67c3e4e5ff9cbd16924c8d7e9bee8d6b65ec056629e3fa8bccb04c3326321577
+
+  portão dos briefs · 37 brief(s) em design/observatorio/ · 1 conferido(s) · 33 isento(s) por data (anteriores a 22.09.2026) · 3 isento(s) por nomeação
+    conferido: BRIEF-M5-as-medicoes-provam-que-veem.md (medidas/BRIEF-M5.json)
+    isento por nomeação: BRIEF-B1c-o-que-mudou-no-seu-lugar.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.120)
+    isento por nomeação: BRIEF-I129-o-grupo-etario-dos-jovens-nem.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.119)
+    isento por nomeação: BRIEF-M3b-os-nomes-confirmados-voltam-aos-recibos.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.118)
+
+  O PORTÃO DOS BRIEFS FECHOU — 1 erro(s):
+    · BRIEF-M5-as-medicoes-provam-que-veem.md: o §0 escreve «41» e esse número não está em `medidas/BRIEF-M5.json`.
+      «Em `design/observatorio/` há 37 briefs datados até hoje (`briefs_ate_22_09_2026`), 41 deles com uma secção de medições (`briefs_com_seccao_de_medicoes`), e 1 co»

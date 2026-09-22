@@ -1,0 +1,26 @@
+relatório: design/especime-v3/medicoes/b1-2026-09-22/LEIA-ME-peca3.md
+pasta das medições: design/especime-v3/medicoes/b1-2026-09-22
+ficheiros JSON lidos: 26
+conhecido-positivo (o número 987654321, ausente dos ficheiros, apontado pelo mesmo detetor): encontrado
+números conferidos: 172
+números com ficheiro: 155
+números sem ficheiro: 17
+   l.38 «800» em «| `tests/inicio/porta.mjs` | Faixa, gaveta e menus antigos. | Menu em linha, largura da página e primeira fila dentro dos 800 px. | Menu em coluna e cartões emp»
+   l.44 «2 271» em «| `check:lugar` L1 | Contava cada marcador obrigatório `[a verificar]` como segunda porta. | Só desconta o marcador da definição conferida do cartão, para o des»
+   l.49 «1,5» em «| `check:indice` I11 | A planta retirava o espaço no parágrafo que deixou de conter diretamente o par número e palavra. | A mesma medida, com mínimo de 1,5 px; »
+   l.87 «800» em «| Primeira página, 1 280 × 800 | Fundo da leitura | Fundo da primeira fila | Largura do mapa |»
+   l.89 «418,3» em «| pt | 418,3 px | 744,6 px | 360 px |»
+   l.89 «744,6» em «| pt | 418,3 px | 744,6 px | 360 px |»
+   l.90 «380,2» em «| en | 380,2 px | 685,3 px | 360 px |»
+   l.90 «685,3» em «| en | 380,2 px | 685,3 px | 360 px |»
+   l.134 «800» em «A construção, as 35 capturas depois e os três comandos completos pertencem a `45f056f86daf6512d1651befce6e0f8e8bd31700`. Cada comando completo correu uma vez, n»
+   l.134 «1 757,4» em «A construção, as 35 capturas depois e os três comandos completos pertencem a `45f056f86daf6512d1651befce6e0f8e8bd31700`. Cada comando completo correu uma vez, n»
+   l.134 «655,2» em «A construção, as 35 capturas depois e os três comandos completos pertencem a `45f056f86daf6512d1651befce6e0f8e8bd31700`. Cada comando completo correu uma vez, n»
+   l.134 «693,6» em «A construção, as 35 capturas depois e os três comandos completos pertencem a `45f056f86daf6512d1651befce6e0f8e8bd31700`. Cada comando completo correu uma vez, n»
+   l.134 «418,3» em «A construção, as 35 capturas depois e os três comandos completos pertencem a `45f056f86daf6512d1651befce6e0f8e8bd31700`. Cada comando completo correu uma vez, n»
+   l.134 «380,2» em «A construção, as 35 capturas depois e os três comandos completos pertencem a `45f056f86daf6512d1651befce6e0f8e8bd31700`. Cada comando completo correu uma vez, n»
+   l.134 «769,4» em «A construção, as 35 capturas depois e os três comandos completos pertencem a `45f056f86daf6512d1651befce6e0f8e8bd31700`. Cada comando completo correu uma vez, n»
+   l.134 «797,8» em «A construção, as 35 capturas depois e os três comandos completos pertencem a `45f056f86daf6512d1651befce6e0f8e8bd31700`. Cada comando completo correu uma vez, n»
+   l.170 «2 271» em «| Olho dos estudos | Lista fechada do país aceita `estudosRecentes` e recusa `estudosDoLugar`. Repor o olho antigo: código 1 nas duas línguas. | Dois olhos novo»
+apagado antes de contar: codigo 158, enderecos 0, seccoes 2, datas 25, resumos 0, ordinais 0, identificadores 67, anos 2
+código de saída: 1

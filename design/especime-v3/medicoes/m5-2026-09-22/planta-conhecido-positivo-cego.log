@@ -1,0 +1,17 @@
+planta: conhecido-positivo-cego
+ficheiro: design/observatorio/medidas/BRIEF-M5.py
+comando: python3 scripts/check-briefs.py
+código: 1
+mordida esperada: conhecido-positivo da medição «ocorrencias_do_nome_de_quem_responde_em_src_e_public» NÃO foi encontrado
+mordeu: True
+sha256 antes: c702860e95ccd06e83b20ef13639006b6b8ce8396e4a62afe73ba42bf7e5ed64
+sha256 reposto: c702860e95ccd06e83b20ef13639006b6b8ce8396e4a62afe73ba42bf7e5ed64
+
+  portão dos briefs · 37 brief(s) em design/observatorio/ · 1 conferido(s) · 33 isento(s) por data (anteriores a 22.09.2026) · 3 isento(s) por nomeação
+    conferido: BRIEF-M5-as-medicoes-provam-que-veem.md (medidas/BRIEF-M5.json)
+    isento por nomeação: BRIEF-B1c-o-que-mudou-no-seu-lugar.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.120)
+    isento por nomeação: BRIEF-I129-o-grupo-etario-dos-jovens-nem.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.119)
+    isento por nomeação: BRIEF-M3b-os-nomes-confirmados-voltam-aos-recibos.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.118)
+
+  O PORTÃO DOS BRIEFS FECHOU — 1 erro(s):
+    · BRIEF-M5-as-medicoes-provam-que-veem.md: o conhecido-positivo da medição «ocorrencias_do_nome_de_quem_responde_em_src_e_public» NÃO foi encontrado (o mesmo detetor encontra o nome uma vez numa linha escrita com ele). Enquanto o detetor não vir, o valor dela não vale.

@@ -1,0 +1,92 @@
+{
+  "cabeca": "50c035577f796edfaa8bf44fa904ac4f6ce57d84",
+  "nome_de_quem_responde": {
+    "onde_mora": "scripts/textos-aprovados.json",
+    "sha256_do_oraculo": "2646f242c13deb68ee9e7cf54f16fc762d24a8505ab6d574f4bcacbd437bf9ca",
+    "ficheiros_de_src_e_public_lidos": 276,
+    "ficheiros_de_src_e_public_com_o_nome": 0,
+    "paginas_construidas": 7354,
+    "paginas_construidas_com_o_nome": 0,
+    "dist_lido": true
+  },
+  "portao_dos_briefs": {
+    "no_observatorio": 37,
+    "conferidos": 1,
+    "isentos_por_data": 33,
+    "isentos_por_nomeacao": 3,
+    "codigo": 0
+  },
+  "medidas_do_brief_m5": {
+    "ficheiro": "design/observatorio/medidas/BRIEF-M5.json",
+    "quantas": 7,
+    "conhecidos_positivos_encontrados": 7,
+    "valores": {
+      "briefs_ate_22_09_2026": 37,
+      "briefs_com_seccao_de_medicoes": 34,
+      "briefs_com_guiao_de_medicoes": 1,
+      "briefs_isentos_por_data": 33,
+      "briefs_isentos_por_nomeacao": 3,
+      "ocorrencias_do_nome_de_quem_responde_em_src_e_public": 0,
+      "exportacoes_de_politica_ia_com_o_nome_de_quem_responde": 0
+    }
+  },
+  "relatorios_de_22_09": {
+    "b1_peca3": {
+      "conferidos": 172,
+      "com_ficheiro": 155,
+      "sem_ficheiro": 17,
+      "ficheiros_json": 26,
+      "conhecido_positivo_encontrado": true,
+      "codigo": 1
+    },
+    "m3b": {
+      "conferidos": 96,
+      "com_ficheiro": 75,
+      "sem_ficheiro": 21,
+      "ficheiros_json": 2,
+      "conhecido_positivo_encontrado": true,
+      "codigo": 1
+    },
+    "i129": {
+      "conferidos": 134,
+      "com_ficheiro": 78,
+      "sem_ficheiro": 56,
+      "ficheiros_json": 1,
+      "conhecido_positivo_encontrado": true,
+      "codigo": 1
+    },
+    "b1c": {
+      "conferidos": 190,
+      "com_ficheiro": 161,
+      "sem_ficheiro": 29,
+      "ficheiros_json": 6,
+      "conhecido_positivo_encontrado": true,
+      "codigo": 1
+    }
+  },
+  "plantas": {
+    "corridas": 6,
+    "morderam": 6,
+    "bytes_repostos": 6
+  },
+  "portoes": {
+    "build": {
+      "codigo": null,
+      "inicio": null,
+      "fim": null,
+      "cabeca": null
+    },
+    "verify": {
+      "codigo": null,
+      "inicio": null,
+      "fim": null,
+      "cabeca": null
+    },
+    "typecheck": {
+      "codigo": null,
+      "inicio": null,
+      "fim": null,
+      "cabeca": null
+    }
+  }
+}

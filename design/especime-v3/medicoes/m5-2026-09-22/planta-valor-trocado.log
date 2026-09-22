@@ -1,0 +1,20 @@
+planta: valor-trocado
+ficheiro: design/observatorio/medidas/BRIEF-M5.json
+comando: python3 scripts/check-briefs.py
+código: 1
+mordida esperada: a medição «briefs_ate_22_09_2026» vale 37 hoje e o ficheiro diz 38
+mordeu: True
+sha256 antes: 54b2168f16c4dc27dc376bfab3976966fcf6c4f280d4eed224a8345fbf0ec6c1
+sha256 reposto: 54b2168f16c4dc27dc376bfab3976966fcf6c4f280d4eed224a8345fbf0ec6c1
+
+  portão dos briefs · 37 brief(s) em design/observatorio/ · 1 conferido(s) · 33 isento(s) por data (anteriores a 22.09.2026) · 3 isento(s) por nomeação
+    conferido: BRIEF-M5-as-medicoes-provam-que-veem.md (medidas/BRIEF-M5.json)
+    isento por nomeação: BRIEF-B1c-o-que-mudou-no-seu-lugar.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.120)
+    isento por nomeação: BRIEF-I129-o-grupo-etario-dos-jovens-nem.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.119)
+    isento por nomeação: BRIEF-M3b-os-nomes-confirmados-voltam-aos-recibos.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.118)
+
+  O PORTÃO DOS BRIEFS FECHOU — 2 erro(s):
+    · BRIEF-M5-as-medicoes-provam-que-veem.md: a medição «briefs_ate_22_09_2026» vale 37 hoje e o ficheiro diz 38.
+      comando: python3 design/observatorio/medidas/BRIEF-M5.py
+    · BRIEF-M5-as-medicoes-provam-que-veem.md: o §0 escreve «37» e esse número não está em `medidas/BRIEF-M5.json`.
+      «Em `design/observatorio/` há 37 briefs datados até hoje (`briefs_ate_22_09_2026`), 34 deles com uma secção de medições (`briefs_com_seccao_de_medicoes`), e 1 co»
