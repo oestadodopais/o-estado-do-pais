@@ -21,7 +21,7 @@ access_date: "2026-08-12"
 reference_date: "2025"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Employment and labour force by sex and age - annual data — Percentage of total population — Portugal — 2025: 79.6"
+excerpt: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Portugal — 2025: 79.6"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
