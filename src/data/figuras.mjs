@@ -996,20 +996,62 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
       ' other industrial countries, based on consumer price index deflators, and how much it changed over three years.',
     ],
   },
+  /* O GRUPO ETÁRIO DESTAS TRÊS (I129, segunda passagem, 22.09.2026). A célula
+     K13 apanhou-as a dizer a medida sem dizer de quem ela é: o glossário do
+     Eurostat define a taxa sem idade nenhuma, porque a define para qualquer
+     grupo, e o pedido de CADA uma destas linhas fixa um. Os limites saem da
+     etiqueta `Age class` que o excerto das nove linhas passou a trazer, e não
+     do glossário nem de memória. */
   'taxa-de-desemprego-mip-2025': {
     origens: ['glossario-desemprego'],
-    pt: ['O número de pessoas sem emprego, em percentagem da população ativa.'],
-    en: ['The number of people unemployed, as a percentage of the labour force.'],
+    pt: [
+      'O número de pessoas dos ',
+      { nl: '15', motivo: 'escala-de-instrumento' },
+      ' aos ',
+      { nl: '74', motivo: 'escala-de-instrumento' },
+      ' anos sem emprego, em percentagem da população ativa.',
+    ],
+    en: [
+      'The number of unemployed people aged ',
+      { nl: '15', motivo: 'escala-de-instrumento' },
+      ' to ',
+      { nl: '74', motivo: 'escala-de-instrumento' },
+      ', as a percentage of the labour force.',
+    ],
   },
   'taxa-de-emprego-2025': {
     origens: ['glossario-emprego'],
-    pt: ['A percentagem de pessoas com emprego na população comparável.'],
-    en: ['The percentage of employed persons in relation to the comparable total population.'],
+    pt: [
+      'A percentagem de pessoas dos ',
+      { nl: '20', motivo: 'escala-de-instrumento' },
+      ' aos ',
+      { nl: '64', motivo: 'escala-de-instrumento' },
+      ' anos com emprego na população comparável.',
+    ],
+    en: [
+      'The percentage of employed persons aged ',
+      { nl: '20', motivo: 'escala-de-instrumento' },
+      ' to ',
+      { nl: '64', motivo: 'escala-de-instrumento' },
+      ' in relation to the comparable total population.',
+    ],
   },
   'taxa-de-desemprego-2025': {
     origens: ['glossario-desemprego'],
-    pt: ['O número de pessoas sem emprego, em percentagem da população ativa.'],
-    en: ['The number of people unemployed, as a percentage of the labour force.'],
+    pt: [
+      'O número de pessoas dos ',
+      { nl: '15', motivo: 'escala-de-instrumento' },
+      ' aos ',
+      { nl: '74', motivo: 'escala-de-instrumento' },
+      ' anos sem emprego, em percentagem da população ativa.',
+    ],
+    en: [
+      'The number of unemployed people aged ',
+      { nl: '15', motivo: 'escala-de-instrumento' },
+      ' to ',
+      { nl: '74', motivo: 'escala-de-instrumento' },
+      ', as a percentage of the labour force.',
+    ],
   },
   'desemprego-de-longa-duracao-2025': {
     origens: ['glossario-longa-duracao'],
