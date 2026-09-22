@@ -1,0 +1,47 @@
+{
+ "registado_em": "2026-09-22T10:46:25+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/e52c0f39-ab9c-4e0f-b9db-11d420f316ed/scratchpad/i129/leitura/pacote",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "sitio/ledger/claims/taxa-de-emprego-2025.yml",
+   "descricao": "uma linha reescrita com o valor mudado (79,6 passa a 79,8); a versão anterior em antes/ diz 79,6",
+   "sha256_antes": "9b1446454411861eaf40c1c3b085dfac81918450d5ed1306334451218092cf1a",
+   "sha256_depois": "5e4ee5102eb782a4291039ccfe68c6fc3ec053cc7e6e61fcd9e0aae4c25db92a",
+   "contexto_antes": " Escolha do indicador: indicators/convergence.md.\n\nid: \"taxa-de-emprego-2025\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"79,6\"\nunit: \"% da população\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"Eurostat\"\ndocument:\n  title: \"Employment and ",
+   "contexto_depois": " Escolha do indicador: indicators/convergence.md.\n\nid: \"taxa-de-emprego-2025\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"79,8\"\nunit: \"% da população\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"Eurostat\"\ndocument:\n  title: \"Employment and "
+  },
+  {
+   "id": "P2",
+   "ficheiro": "sitio/src/data/figuras.mjs",
+   "descricao": "a definição portuguesa dos jovens NEM com «dos 15 aos 24 anos», contra a linha (15 aos 29) e contra a edição inglesa",
+   "sha256_antes": "aa3eef97ea389680d7bed01190896887ec7f0ad6ae3e9beb3cec5ab085788ed2",
+   "sha256_depois": "c3b49ca4e4c2f963f261e4d95201d77e6dd80d2d22dc924cfbdcd08e51134966",
+   "contexto_antes": "as com a linha. */\n    origens: ['glossario-nem'],\n    pt: [\n      'A percentagem das pessoas dos ',\n      { nl: '15', motivo: 'escala-de-instrumento' },\n      ' aos ',\n      { nl: '29', motivo: 'escala-de-instrumento' },\n      ' anos, de ambos os sexos, que não tem emprego e não está em estudos nem em formação.',\n    ],\n    en: [\n      'The percentage of the population aged ',\n      { nl: '15', motivo: 'escala-de-instrumento' },\n",
+   "contexto_depois": "as com a linha. */\n    origens: ['glossario-nem'],\n    pt: [\n      'A percentagem das pessoas dos ',\n      { nl: '15', motivo: 'escala-de-instrumento' },\n      ' aos ',\n      { nl: '24', motivo: 'escala-de-instrumento' },\n      ' anos, de ambos os sexos, que não tem emprego e não está em estudos nem em formação.',\n    ],\n    en: [\n      'The percentage of the population aged ',\n      { nl: '15', motivo: 'escala-de-instrumento' },\n"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "um número do relatório trocado com a prova no pacote (12 linhas passam a 15; antes/ tem 12)",
+   "sha256_antes": "cdecd6d61422f8f7347fbd88f1ebaad036c6924fc1a60310e5c80ca17f5984ce",
+   "sha256_depois": "264c1c72946f754de89e747b4e294643b9e2644875e3c442161529e97d1759f8",
+   "contexto_antes": "passaram a guarda do `--reescrever`, e mudou **uma linha por ficheiro**, o\n`excerpt`: 9 ficheiros, 9 inserções, 9 eliminações. Com as três da primeira\npassagem são **12 linhas do livro-razão** com a etiqueta da idade no excerto,\ncontadas no livro. Nenhum outro ficheiro do livro-razão mudou.\n\n**Sem nota, e a razão é da fonte.** Os títulos dos três qua",
+   "contexto_depois": "passaram a guarda do `--reescrever`, e mudou **uma linha por ficheiro**, o\n`excerpt`: 9 ficheiros, 9 inserções, 9 eliminações. Com as três da primeira\npassagem são **15 linhas do livro-razão** com a etiqueta da idade no excerto,\ncontadas no livro. Nenhum outro ficheiro do livro-razão mudou.\n\n**Sem nota, e a razão é da fonte.** Os títulos dos três qua"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "motor/indicators/enquadramento.py",
+   "descricao": "a chamada do agregado da União em enquadramento.py sem as dimensões, contra o teste que conta as chamadas",
+   "sha256_antes": "3bd2c85fde738476ecfefff1003a8fba19187c59f7ed49663c503725bd1e8108",
+   "sha256_depois": "026c801b27dde3d49ef5935ab9a9e28ff2c5f3b444b0f469e3af8a0f833ce32b"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "built/en/ledger/jovens-nem-2025/index.html",
+   "descricao": "a etiqueta da idade trocada no recibo inglês construído (15 to 24), contra a linha e contra o recibo português",
+   "sha256_antes": "5275b5573c791ecad5ded94e75a7d0d014f5696617099e16db4969c28f386611",
+   "sha256_depois": "ebeb9327cdc378a960c703d00a74e2ad5492fac76cddff742add75ec9c523d4a"
+  }
+ ]
+}
