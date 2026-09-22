@@ -40,11 +40,11 @@ planta('mapa-atribuicao','scripts/check-mapa.mjs',[
 /* B1c, 22.09.2026: a unidade de uma correção mudou de página com as linhas de
    correção. A primeira página ficou sem nenhuma — das dezasseis entradas do
    livro nenhuma é de uma medida do país — e o registo ficou com todas, e é lá
-   que esta planta a troca agora. A data de publicação continua a plantar-se na
-   primeira página, que continua a rendê-las. */
+   que esta planta a troca agora. A data de publicação passou a plantar-se lá
+   pela mesma razão: as publicações saíram da primeira página na passagem da
+   tarde de 22.09.2026, e o registo é onde elas vivem. */
 planta('html','scripts/gate-html.mjs',[
- ['index.html',r=>r.querySelector('[data-publicacao-estudo]').set_content('01.01.2000')],
- ['correcoes/index.html',r=>r.querySelector('[data-correcao-entrada] [data-linha-campo="unit"]').set_content('unidade de correção plantada')],
+ ['correcoes/index.html',r=>{r.querySelector('[data-publicacao-estudo]').set_content('01.01.2000');r.querySelector('[data-correcao-entrada] [data-linha-campo="unit"]').set_content('unidade de correção plantada');}],
  ['en/index.html',r=>r.querySelector('[data-leitura-pais] [data-claim="divida-publica-2024"]').set_content('93.5')],
  ['temas/index.html',r=>{r.querySelector('[data-linha-campo="unit"]').set_content('unidade plantada');r.querySelector('[data-regua][data-selo-em]').setAttribute('data-selo-em','precos-da-habitacao-2025');}]
 ],[/B1 mudança: campo rendido difere/,/93\.5/,/unidade plantada/,/unidade de correção plantada/,/sem selo para a sua própria linha/]);
