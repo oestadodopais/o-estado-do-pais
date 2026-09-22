@@ -783,7 +783,7 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
       niveis={['pais', 'unidade']}
       voltar={routePath('home', lang)}
       pais={repousoDoPais(s)}
-      portaLugares={portaLugares ? routePath('lugares', lang) + '/' : null}
+      portaLugares={portaLugares ? routePath('lugares', lang) : null}
     />
   )}
   {/* NO NÍVEL DA UNIDADE HÁ UM NÍVEL SÓ, e por isso não há porta de voltar: o

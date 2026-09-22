@@ -43,7 +43,7 @@ export const PRIMARY_LANG = 'pt';
  */
 export const ROUTES = {
   home: { pt: '/', en: '/en' },
-  temas: { pt: '/temas', en: '/en/themes' },
+  temas: { pt: '/temas/', en: '/en/themes/' },
   /**
    * A página que diz a ideia e pára. O texto é da direção, está em
    * `src/data/sobre.mjs` e o portão compara-o com o que a página rende.
@@ -108,7 +108,7 @@ export const ROUTES = {
    * inglesa, e a edição inglesa chama-lhes «places», como chama «domains» aos
    * domínios. O que nunca se traduz é a chave.
    */
-  lugares: { pt: '/lugares', en: '/en/places' },
+  lugares: { pt: '/lugares/', en: '/en/places/' },
   /**
    * AS 29 UNIDADES DA CARTA, E A PÁGINA DE CADA UMA (Emenda 20, 27.08.2026).
    *

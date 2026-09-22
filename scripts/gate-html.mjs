@@ -6862,7 +6862,7 @@ for (const { rel, base, href } of ligacoesInternas) {
      quando a tabela tem a entrada 301 exata e incondicional. */
   if (INDICES_DO_TERRITORIO.includes(rotaAntiga?.key)) {
     const origem = routePath(rotaAntiga.key, rotaAntiga.lang);
-    const destino = routePath('lugares', rotaAntiga.lang) + '/';
+    const destino = routePath('lugares', rotaAntiga.lang);
     const entradas = TABELA_VERCEL_B1.filter(r => r.src === origem + '/?');
     const r = entradas[0];
     if (entradas.length === 1 && r.status === 301 && r.headers?.Location === destino &&
@@ -7110,7 +7110,7 @@ for (const { caminho, px } of [{ caminho: '/apple-touch-icon.png', px: 180 }]) {
   for (const chave of INDICES_DO_TERRITORIO) {
     for (const lang of ['pt', 'en']) {
       const antiga = routePath(chave, lang);
-      const destino = routePath('lugares', lang) + '/';
+      const destino = routePath('lugares', lang);
       const candidatas = tabela.filter(r => r.src === antiga + '/?');
       const r = candidatas[0];
       if (candidatas.length !== 1 || r?.status !== 301 || r?.headers?.Location !== destino ||

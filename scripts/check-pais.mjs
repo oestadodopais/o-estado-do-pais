@@ -137,7 +137,7 @@ function anda(dir) {
     const lang = doc.querySelector('html')?.getAttribute('lang') === 'en' ? 'en' : 'pt';
     const esperado = lang === 'pt' ? ['Portugal','Lugares','Temas','Estudos','Sobre'] : ['Portugal','Places','Themes','Studies','About'];
     const portas = doc.querySelectorAll('#nav-principal a');
-    const destinos = lang === 'pt' ? ['/','/lugares','/temas','/estudos','/sobre'] : ['/en','/en/places','/en/themes','/en/studies','/en/about'];
+    const destinos = lang === 'pt' ? ['/','/lugares/','/temas/','/estudos','/sobre'] : ['/en','/en/places/','/en/themes/','/en/studies','/en/about'];
     if (JSON.stringify(portas.map(a=>normal(a.textContent))) !== JSON.stringify(esperado) || portas.some((a,i)=>a.getAttribute('href') !== destinos[i]) || doc.querySelector('.nav-menu')) erros.push(`N1: menu de cinco errado em ${path.relative(dist, abs)}.`);
     if (doc.querySelectorAll('[data-rotulo-ia="rodape"] .rotulo-ia-final').length !== 1) erros.push(`N2: ponto final sem ligação inseparável em ${path.relative(dist,abs)}.`);
   }
