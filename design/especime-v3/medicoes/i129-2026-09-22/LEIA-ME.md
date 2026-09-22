@@ -123,38 +123,116 @@ catraca declarada**.
 | `taxa-de-desemprego-mip-2025` | 15-74 | o `source_url` | não |
 | `taxa-de-emprego-2025` | 20-64 | o `source_url` | não |
 
-## O que a célula apanhou e este bloco não fechou
+## A segunda passagem, 22.09.2026
 
-**Três medidas têm o defeito da I129 nas mesmas palavras**, e não se fecharam
-aqui. A razão é do livro-razão e não de tempo: o excerto destas linhas **não
-traz** a etiqueta da idade, só o endereço do pedido a traz, e o excerto de uma
-linha reescreve-se pelo gerador do motor. Escrever os limites na definição sem
-reescrever o excerto era publicar uma definição que a linha ao lado dela não
-mostra, e o brief fechou o livro-razão em três ficheiros. Ficam na **I132**,
-nomeadas na catraca, com o grupo que cada uma fixa. A catraca só encolhe.
+*A regra do diretor desse dia: nada fica para depois. O que a primeira passagem
+deixou nomeado fecha-se aqui, sobre o sítio `3b6cbf27` e o motor `f408e1c`. As
+duas secções seguintes ficam como foram escritas, e esta diz o que mudou nelas.*
 
-**E uma ponta no motor.** `indicators/enquadramento.py` importa `compor_excerto`
-e chama-o com cinco argumentos posicionais nos dois sítios onde escreve a linha
-do período anterior e a do agregado da União. As duas linhas foram reescritas
-por `--reescrever`, mas uma corrida futura de `enquadramento.py --write` volta a
-compor o excerto **sem** as etiquetas e desfaz a correcção. Falta passar
-`dims=dimensoes_fixadas(js)` nessas duas chamadas, e o `js` já está em mãos nas
-duas. Fica dito no cabeçalho de `generate_claims.py`, onde quem lá voltar o vê.
-Não se tocou em `enquadramento.py`: o brief fechou o motor no gerador e no seu
-teste.
+**Nove linhas, e não seis.** Cada uma das três medidas tem, além da sua, a linha
+do período anterior e a do agregado da União, pelo mesmo pedido: 3 × 3. Todas
+passaram a guarda do `--reescrever`, e mudou **uma linha por ficheiro**, o
+`excerpt`: 9 ficheiros, 9 inserções, 9 eliminações. Com as três da primeira
+passagem são **12 linhas do livro-razão** com a etiqueta da idade no excerto,
+contadas no livro. Nenhum outro ficheiro do livro-razão mudou.
+
+**Sem nota, e a razão é da fonte.** Os títulos dos três quadros são «Unemployment
+by sex and age - annual data», «Unemployment rate - annual data» e «Employment
+and labour force by sex and age - annual data»: nenhum diz uma idade, logo
+nenhum contradiz a série. Onde não há contradição não se escreve uma nota a
+explicá-la, e o `--reescrever` ganhou `--sem-nota` para isso. As linhas
+`jovens-nem-*` ficam as únicas com a nota, porque são as únicas cujo título diz
+uma idade que não é a da série.
+
+**Uma etiqueta a mais, e é da fonte.** As três linhas do emprego trazem também
+`Employment indicator: Total employment (resident population concept - LFS)`: é
+outra dimensão que o pedido fixa, que não é o total e que o excerto não escrevia.
+A regra é a mesma e a palavra é do Eurostat; diz o que está a ser contado, e por
+isso fica.
+
+**As definições, lidas do cartão rendido:**
+
+| medida | grupo | |
+|---|---|---|
+| `taxa-de-desemprego-2025` e `taxa-de-desemprego-mip-2025` | 15-74 | pt: O número de pessoas dos 15 aos 74 anos sem emprego, em percentagem da população ativa. · en: The number of unemployed people aged 15 to 74, as a percentage of the labour force. |
+| `taxa-de-emprego-2025` | 20-64 | pt: A percentagem de pessoas dos 20 aos 64 anos com emprego na população comparável. · en: The percentage of employed persons aged 20 to 64 in relation to the comparable total population. |
+
+As duas do desemprego partilham a frase porque partilham a definição e a origem.
+O glossário do Eurostat define as duas taxas **sem idade nenhuma**, e define-as
+bem: são taxas de qualquer grupo. Quem fixa o grupo é o pedido de cada linha, e é
+de lá que os limites vêm, pela etiqueta que o excerto passou a trazer. Nenhuma
+palavra do glossário se perdeu; a ordem das palavras da inglesa mudou para
+acomodar a idade sem a repetir.
+
+**A catraca ficou vazia e fica viva.** É ela que faz a regra ser «todas as
+medidas» e não «as medidas de que alguém se lembrou». Como uma lista vazia não se
+pode exercer, passa a entrar por argumento, e a prova exerce as duas metades com
+uma lista de mentira: uma medida declarada com a definição estragada **não** dá
+vermelho, a mesma medida fora da lista dá dois (um por edição), e uma medida
+declarada que passe dá o vermelho da dívida paga. A prova exige também que a
+lista em vigor tenha zero entradas.
+
+**No motor.** Os dois sítios de `indicators/enquadramento.py` que compunham o
+excerto sem as dimensões (`linha_anterior` e `linha_da_uniao`) passam
+`dims=dimensoes_fixadas(js)`. O `js` já estava em mãos nos dois. O cabeçalho do
+gerador deixou de dizer que a armadilha existe e passa a dizer o que ela foi e
+quem a prova. `indicators/enquadramento_excerto_test.py` guarda a resposta de
+`une_rt_a` com `age=Y15-74` e prova as duas linhas com a etiqueta, o controlo sem
+recorte, a planta que derruba as duas, e **a contagem lida no ficheiro**: o
+número de chamadas a `compor_excerto` tem de ser igual ao número das que passam
+`dims`, para que uma terceira chamada não entre em silêncio. Revertida uma das
+duas, a suíte dá cinco falhas.
+
+**As conferências desta passagem**, que são as que a mudança toca, cada uma no
+seu comando: `ledger:check` **0**, `npm run build` **0**, `check:cartao --prova`
+**0** (11 estragos plantados e 11 vistos; 4 medidas com grupo etário na linha, 0
+na catraca), `check:pais` **0** (35 medidas, 2 mudanças declaradas, tudo a 0). O
+`check:voz` corre dentro da construção: 602 vivas todas rendidas, 546 retiradas
+nenhuma rendida. **Os três portões inteiros não correram nesta passagem**: o
+lugar de direção acrescenta os registos do bloco e corre-os na cabeça final. No
+motor, o `core.gate` do pre-commit: `GATE: PASS`.
+
+## O que a célula apanhou, e que a segunda passagem fechou
+
+**Três medidas tinham o defeito da I129 nas mesmas palavras**, e na primeira
+passagem não se fecharam: o excerto das linhas delas não trazia a etiqueta da
+idade, só o endereço do pedido a trazia, e escrever os limites na definição sem
+reescrever o excerto era publicar uma frase que o recibo ao lado não mostra.
+Ficaram na **I132**, nomeadas na catraca. **Na segunda passagem do mesmo dia
+fecharam**, pela regra do diretor de que nada fica para depois: nove linhas
+reescritas, as três definições com os limites, a catraca vazia. A secção «A
+segunda passagem» diz as contagens.
+
+**E a ponta no motor, que era a mesma armadilha.**
+`indicators/enquadramento.py` importava `compor_excerto` e chamava-o com cinco
+argumentos posicionais nos dois sítios onde escreve a linha do período anterior
+e a do agregado da União: uma corrida futura dele recompunha o excerto **sem**
+as etiquetas e desfazia tudo isto. Os dois passam `dims=dimensoes_fixadas(js)`
+desde a segunda passagem, com um conhecido-positivo que conta as chamadas no
+ficheiro para que uma terceira não entre em silêncio.
 
 ## O que não mudou, e foi conferido
 
-Nenhum valor. Nenhum nome oficial se confirmou nem mudou. O `document.title` das
-três linhas fica como o Eurostat o escreve, com «aged 15-24». Nenhum ficheiro de
-outra corrida do motor entrou no commit: a árvore principal do motor continua com
-`sweeps/state.json` modificado e `.maintenance-locks/`,
+Nenhum valor, em nenhuma das doze linhas. Nenhum nome oficial se confirmou nem
+mudou. O `document.title` de todas fica como o Eurostat o escreve, e nas três
+`jovens-nem-*` continua a dizer «aged 15-24». Nenhum ficheiro do livro-razão
+além dos doze que o `--reescrever` reescreveu por esta razão. Nenhum ficheiro de
+outra corrida do motor entrou em commit nenhum: a árvore principal do motor
+continua com `sweeps/state.json` modificado e `.maintenance-locks/`,
 `publisher/recortes/manifest.regioes.json` e `sweeps/sweep-2026-09-01.md` por
-registar, como estavam.
+registar, como estavam. Nenhum `push`.
 
 ## Os portões
 
-Os três na cabeça final, cada um no seu comando, com o código lido de um ficheiro
-acabado de escrever e os `.codigo` apagados antes. Os ficheiros `.inicio`,
+**Da primeira passagem**, os três inteiros na cabeça `60729ea3`, cada um no seu
+comando, com o código lido de um ficheiro acabado de escrever e os `.codigo`
+apagados antes: `build` 0, `verify` 0, `typecheck` 0. Os ficheiros `.inicio`,
 `.fim`, `.cabeca`, `.codigo` e `.log` de cada um ficam ao lado deste relatório.
-No motor, o `python3 -m core.gate` do pre-commit: `GATE: PASS`.
+
+**Da segunda passagem**, só as conferências que a mudança toca, ditas na secção
+dela. Os três portões inteiros não voltaram a correr aqui: correm na cabeça
+final, depois de o lugar de direção acrescentar os registos do bloco. Os
+artefactos guardados ao lado são os da primeira passagem e dizem a cabeça em que
+correram, que não é a última deste ramo.
+
+No motor, o `python3 -m core.gate` do pre-commit nos dois commits: `GATE: PASS`.

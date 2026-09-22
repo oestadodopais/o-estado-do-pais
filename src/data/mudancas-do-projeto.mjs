@@ -15,8 +15,8 @@ export const MUDANCAS_DO_PROJETO = [
     data: '2026-09-22',
     decisao: '1.118',
     texto: {
-      pt: 'O Eurostat intitula o quadro dos jovens que não trabalham nem estudam com o grupo dos 15 aos 24 anos, e a série que publica é a dos 15 aos 29. As três linhas passam a trazer o grupo etário no excerto, e a definição da medida escreve-o. Nenhum valor mudou.',
-      en: 'Eurostat titles its table on young people not in employment, education or training with the 15 to 24 age group, while the series it publishes is the 15 to 29 one. The three rows now carry the age group in the excerpt, and the measure definition states it. No value changed.',
+      pt: 'O Eurostat intitula o quadro dos jovens que não trabalham nem estudam com o grupo dos 15 aos 24 anos, e a série que publica é a dos 15 aos 29. Doze linhas de quatro medidas passam a trazer no excerto o grupo etário que o pedido delas fixa, e as definições dessas medidas escrevem-no nas duas edições. Nenhum valor mudou.',
+      en: 'Eurostat titles its table on young people not in employment, education or training with the 15 to 24 age group, while the series it publishes is the 15 to 29 one. Twelve rows across four measures now carry in the excerpt the age group their request fixes, and the definitions of those measures state it in both editions. No value changed.',
     },
   },
 ];

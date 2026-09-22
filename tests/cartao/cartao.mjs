@@ -657,21 +657,21 @@ function corre(dist) {
  * escreve os dois limites desse grupo. Os limites saem da linha e não desta
  * régua: o que aqui está escrito é a expressão que os lê.
  *
- * A CATRACA, DECLARADA E DATADA. A 22.09.2026 a célula mede quatro medidas e
- * três falham, com o mesmo defeito da I129 e não com outro: `taxa-de-emprego`
- * (20-64) e as duas de `taxa-de-desemprego` (15-74). Não se fecham aqui, e a
- * razão é do livro-razão: as linhas delas não trazem a etiqueta da idade no
- * excerto, só o filtro no endereço, e o excerto de uma linha reescreve-se pelo
- * gerador do motor, que é o bloco seguinte (I132). Ficam NOMEADAS, com o grupo
- * que a linha fixa e a questão que as fecha. A lista só encolhe: uma medida que
- * falhe e não esteja nela é vermelho, e uma medida que esteja nela e PASSE
- * também é vermelho, para que a dívida não apodreça depois de paga.
+ * A CATRACA, DECLARADA, DATADA E VAZIA. Na primeira passagem de 22.09.2026 a
+ * célula media quatro medidas e três falhavam, com o mesmo defeito da I129 e
+ * não com outro: `taxa-de-emprego` (20-64) e as duas de `taxa-de-desemprego`
+ * (15-74). Ficaram NOMEADAS aqui enquanto o excerto das linhas delas não trazia
+ * a etiqueta da idade, porque escrever os limites na definição sem os ter na
+ * linha era publicar uma frase que o recibo ao lado não mostra. **Na segunda
+ * passagem do mesmo dia as três pagaram-se** (a I132): nove linhas reescritas
+ * pelo gerador do motor, as três definições com os limites, e a lista ficou
+ * vazia. **Fica, e não sai**: é ela que faz a regra ser «todas as medidas»
+ * em vez de «as medidas que alguém se lembrou», e as suas duas plantas mordem
+ * na mesma. A lista só encolhe, e por isso está vazia: uma medida que falhe e
+ * não esteja nela é vermelho, e uma medida que esteja nela e PASSE também é
+ * vermelho, para que a dívida não apodreça depois de paga.
  */
-const CATRACA_DO_GRUPO_ETARIO = new Map([
-  ['taxa-de-desemprego-2025', '15-74'],
-  ['taxa-de-desemprego-mip-2025', '15-74'],
-  ['taxa-de-emprego-2025', '20-64'],
-]);
+const CATRACA_DO_GRUPO_ETARIO = /** @type {Map<string, string>} */ (new Map([]));
 
 /** Os dois limites que a linha fixa, ou `null`. @param {string} id */
 function grupoEtarioDaLinha(id) {
@@ -687,10 +687,19 @@ function grupoEtarioDaLinha(id) {
 }
 
 /**
+ * A catraca entra por argumento para que a prova a possa exercer com uma
+ * entrada dentro: vazia como está, a segunda metade da regra não teria como
+ * mostrar que ainda morde, e uma regra que não se pode exercer é uma regra por
+ * provar.
+ *
  * @param {Record<string, { pt: readonly unknown[], en: readonly unknown[] }>} definicoes
+ * @param {Map<string, string>} catraca
  * @returns {{ erros: string[], medidas: number }}
  */
-function celulaK13(definicoes = /** @type {any} */ (DEFINICOES_DAS_MEDIDAS)) {
+function celulaK13(
+  definicoes = /** @type {any} */ (DEFINICOES_DAS_MEDIDAS),
+  catraca = CATRACA_DO_GRUPO_ETARIO,
+) {
   /** @type {string[]} */
   const erros = [];
   let medidas = 0;
@@ -708,7 +717,7 @@ function celulaK13(definicoes = /** @type {any} */ (DEFINICOES_DAS_MEDIDAS)) {
         new RegExp(`(^|[^0-9])${n}([^0-9]|$)`).test(texto));
       if (!escreve) faltam.push({ lang, texto });
     }
-    const naCatraca = CATRACA_DO_GRUPO_ETARIO.get(id);
+    const naCatraca = catraca.get(id);
     if (faltam.length === 0) {
       if (naCatraca) {
         erros.push(
@@ -909,6 +918,12 @@ if (PROVA) {
     if (real.medidas < 4) {
       falhas.push(`K13 só viu ${real.medidas} medida(s) com grupo etário na linha`);
     }
+    if (CATRACA_DO_GRUPO_ETARIO.size !== 0) {
+      falhas.push(
+        `K13: a catraca tem ${CATRACA_DO_GRUPO_ETARIO.size} entrada(s) e o ficheiro ` +
+          `diz que está vazia desde a segunda passagem de 22.09.2026`,
+      );
+    }
     /* A linha tem de trazer mesmo a etiqueta: sem ela a planta não prova nada,
        porque a célula nem sequer olharia para esta medida. */
     const grupo = grupoEtarioDaLinha(id);
@@ -934,22 +949,39 @@ if (PROVA) {
     } else if (!mordidas.every((e) => e.includes('dos 15 aos 29 anos'))) {
       falhas.push(`K13 mordeu noutra coisa: ${mordidas[0]}`);
     }
-    /* A OUTRA METADE DA CATRACA: uma dívida paga que fica declarada é vermelha.
-       Planta-se pagando uma das três, que é o que o bloco seguinte vai fazer. */
-    const daCatraca = [...CATRACA_DO_GRUPO_ETARIO.keys()][0];
-    const paga = {
-      ...DEFINICOES_DAS_MEDIDAS,
-      [daCatraca]: {
-        ...DEFINICOES_DAS_MEDIDAS[daCatraca],
-        pt: ['Dos ', { nl: '15', motivo: 'escala-de-instrumento' }, ' aos ',
-             { nl: '74', motivo: 'escala-de-instrumento' }, ' anos.'],
-        en: ['Aged ', { nl: '15', motivo: 'escala-de-instrumento' }, ' to ',
-             { nl: '74', motivo: 'escala-de-instrumento' }, '.'],
-      },
-    };
-    const aviso = celulaK13(paga).erros.filter((e) => e.includes('continua na catraca'));
+    /* AS DUAS METADES DA CATRACA, exercidas com ela VAZIA em vigor. A catraca
+       entra por argumento porque uma lista vazia não se pode exercer, e uma
+       regra que não se exerce é uma regra por provar. Nenhuma das duas plantas
+       toca na lista em vigor. */
+    const paga = new Map([['taxa-de-desemprego-2025', '15-74']]);
+    const aviso = celulaK13(DEFINICOES_DAS_MEDIDAS, paga).erros
+      .filter((e) => e.includes('continua na catraca'));
     if (aviso.length !== 1) {
       falhas.push('K13: a catraca não reclamou uma dívida paga que ficou declarada');
+    }
+    /* A metade de cima: uma medida NA catraca, com a definição estragada, não
+       dá vermelho por essa falha, e a mesma medida FORA dela dá. É o que faz a
+       lista ser a única porta de saída da regra. */
+    const estragadas = {
+      ...DEFINICOES_DAS_MEDIDAS,
+      'taxa-de-emprego-2025': {
+        ...DEFINICOES_DAS_MEDIDAS['taxa-de-emprego-2025'],
+        pt: ['Uma definição sem os limites.'],
+        en: ['A definition without the bounds.'],
+      },
+    };
+    const comLista = new Map([['taxa-de-emprego-2025', '20-64']]);
+    const dentro = celulaK13(estragadas, comLista).erros
+      .filter((e) => e.startsWith('K13 · taxa-de-emprego-2025 ·'));
+    const fora = celulaK13(estragadas, new Map()).erros
+      .filter((e) => e.startsWith('K13 · taxa-de-emprego-2025 ·'));
+    if (dentro.length !== 0) {
+      falhas.push('K13: uma medida declarada na catraca deu vermelho na mesma');
+    }
+    if (fora.length !== 2) {
+      falhas.push(
+        `K13 NÃO MORDEU fora da catraca: ${fora.length} vermelho(s) em vez de um por edição`,
+      );
     }
   }
 
@@ -1096,7 +1128,7 @@ if (PROVA) {
         `par bom e dois maus; a mesma série com um par que bate e um que não bate; ` +
         `K6 com as glosas declaradas e com cada uma das duas trocada; K1 com o nome do limite legal declarado, antigo e reposto nas duas línguas; ` +
         `K13 sobre ${celulaK13().medidas} medidas com grupo etário na linha, com a definição em vigor a passar, ` +
-        `«dos 15 aos 24 anos» a morder nas duas edições e a catraca a reclamar uma dívida paga`,
+        `«dos 15 aos 24 anos» a morder nas duas edições, e a catraca vazia exercida nas duas metades`,
     ),
   );
 }
@@ -1191,7 +1223,7 @@ console.log(cinza(`    valores de régua sem marca própria                    $
 console.log(cinza(`    valores de referência, as duas testemunhas comparadas  ${r.contas.valores_de_referencia_comparados}`));
 console.log(cinza(`    medidas com nome oficial no recibo                    ${r.contas.medidas_com_nome_oficial}`));
 console.log(cinza(`    medidas com grupo etário fixado na linha (K13)         ${r.contas.medidas_com_grupo_etario}`));
-console.log(cinza(`      delas, na catraca declarada (I132)                  ${r.contas.medidas_na_catraca_do_grupo_etario}`));
+console.log(cinza(`      delas, na catraca declarada (I132, vazia)           ${r.contas.medidas_na_catraca_do_grupo_etario}`));
 console.log(
   cinza(
     `    ficheiros do motor               referencias.json ${motor.referencias ? 'sim' : 'ainda não'} · ` +
