@@ -5,34 +5,43 @@
     {
       "nome": "briefs_ate_22_09_2026",
       "valor": 37,
-      "comando": "python3 design/observatorio/medidas/BRIEF-M5.py",
+      "comando": "python3 design/observatorio/medidas/BRIEF-M5.py · conta os BRIEF-*.md de design/observatorio/ cuja data, a mais recente entre a do nome e a primeira do cabeçalho, é anterior ou igual a 22.09.2026",
       "conhecido_positivo": {
-        "o_que": "o próprio brief («BRIEF-M5-as-medicoes-provam-que-veem.md») está na lista que o mesmo leitor devolve",
+        "o_que": "o mesmo leitor de datas aceita o próprio brief («BRIEF-M5-as-medicoes-provam-que-veem.md») como datado até ao corte",
         "encontrado": true
       }
     },
     {
       "nome": "briefs_com_seccao_de_medicoes",
       "valor": 34,
-      "comando": "python3 design/observatorio/medidas/BRIEF-M5.py",
+      "comando": "python3 design/observatorio/medidas/BRIEF-M5.py · dos briefs datados até 22.09.2026, os que têm um título `## 0` ou um título que diga «o que se mediu»",
       "conhecido_positivo": {
-        "o_que": "o mesmo leitor encontra a secção de medições no próprio brief («BRIEF-M5-as-medicoes-provam-que-veem.md»)",
+        "o_que": "o MESMO predicado, sobre um texto escrito no momento com um título «## 0 · O que se mediu», responde que sim",
         "encontrado": true
       }
     },
     {
       "nome": "briefs_com_guiao_de_medicoes",
       "valor": 1,
-      "comando": "ls design/observatorio/medidas/*.py design/observatorio/medidas/*.mjs",
+      "comando": "ls design/observatorio/medidas/*.py design/observatorio/medidas/*.mjs · um por brief datado até 22.09.2026, pela chave do nome do ficheiro",
       "conhecido_positivo": {
-        "o_que": "o mesmo localizador encontra o guião deste brief",
+        "o_que": "o mesmo localizador encontra o guião deste brief pela chave dele",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "briefs_conferidos_pelo_portao",
+      "valor": 1,
+      "comando": "python3 scripts/check-briefs.py --contagens · os briefs datados de 22.09.2026 que não estão na isenção por nomeação; a contagem do portão é a mesma enquanto não houver um brief posterior ao corte",
+      "conhecido_positivo": {
+        "o_que": "o próprio brief («BRIEF-M5-as-medicoes-provam-que-veem.md») está entre os conferidos",
         "encontrado": true
       }
     },
     {
       "nome": "briefs_isentos_por_data",
       "valor": 33,
-      "comando": "python3 scripts/check-briefs.py --contagens",
+      "comando": "python3 scripts/check-briefs.py --contagens · os briefs anteriores a 22.09.2026",
       "conhecido_positivo": {
         "o_que": "um brief antigo nomeado («BRIEF-F1.1-porta-da-frente.md») cai na isenção por data, pelo mesmo leitor",
         "encontrado": true
@@ -41,7 +50,7 @@
     {
       "nome": "briefs_isentos_por_nomeacao",
       "valor": 3,
-      "comando": "python3 scripts/check-briefs.py --contagens",
+      "comando": "python3 scripts/check-briefs.py --contagens · a lista fechada de três nomes",
       "conhecido_positivo": {
         "o_que": "o B1c, que o §0 do seu próprio brief errou duas vezes, está entre os nomeados",
         "encontrado": true
@@ -50,18 +59,18 @@
     {
       "nome": "ocorrencias_do_nome_de_quem_responde_em_src_e_public",
       "valor": 0,
-      "comando": "grep -rn \"$(python3 -c 'import json;print(json.load(open(\"scripts/textos-aprovados.json\"))[\"responsavel\"])')\" src/ public/",
+      "comando": "grep -rohF \"$(python3 -c \"import json;print(json.load(open('scripts/textos-aprovados.json'))['responsavel'])\")\" src/ public/ | wc -l",
       "conhecido_positivo": {
-        "o_que": "o mesmo detetor encontra o nome uma vez numa linha escrita com ele",
+        "o_que": "o MESMO contador encontra uma ocorrência numa linha construída no momento com o nome lido do oráculo",
         "encontrado": true
       }
     },
     {
       "nome": "exportacoes_de_politica_ia_com_o_nome_de_quem_responde",
       "valor": 0,
-      "comando": "grep -n \"^export const\" src/data/politica-ia.mjs",
+      "comando": "python3 -c \"import json,re;n=json.load(open('scripts/textos-aprovados.json'))['responsavel'];print(sum(1 for _,v in re.findall(r'^export const (\\\\w+)\\\\s*=\\\\s*(.*)$', open('src/data/politica-ia.mjs').read(), re.M) if n in v))\"",
       "conhecido_positivo": {
-        "o_que": "o mesmo leitor encontra `export const LINGUA_DO_RESPONSAVEL` no mesmo ficheiro",
+        "o_que": "o MESMO predicado, sobre uma linha `export const …` construída no momento com o nome lido do oráculo, conta uma exportação",
         "encontrado": true
       }
     }

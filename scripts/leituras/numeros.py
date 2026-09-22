@@ -46,6 +46,29 @@ numéricos da árvore e os números escritos dentro das cadeias. Um número do t
 existe no JSON se a sua forma normalizada (sem separadores de milhares, com
 ponto decimal) estiver entre as formas do JSON, ou se o seu valor for igual a um
 dos valores do JSON.
+
+O QUE FICA FORA DESTE LEITOR, DITO EM VOZ ALTA, porque quem confere tem de saber
+o que não foi conferido:
+
+  · OS NUMERAIS POR EXTENSO. «dezasseis», «sete», «zero» e «dois terços» não são
+    apanhados por nada. Não se acrescenta um dicionário de numerais: acrescenta-
+    -se a regra de escrita, e ela vale para qualquer texto que um portão leia.
+    **Num §0 de brief, e num relatório de construtor, um número escreve-se em
+    algarismos.** Um leitor não lê numerais por extenso, e não deve ter de o
+    fazer para saber se um número foi medido; e «uma», «um» e «dois» também são
+    artigos e determinantes, de modo que um dicionário de numerais ou apanhava
+    artigos ou deixava passar contagens. Um número por extenso é, para um
+    portão, uma afirmação que ele não vê;
+  · O CÓDIGO ENTRE CRASES. Um caminho, um comando, uma chave ou um número de
+    linha entre crases é código, e o algarismo lá dentro nomeia. Um número que
+    tenha de ser conferido escreve-se fora das crases;
+  · OS ANOS ISOLADOS. Um número de quatro algarismos entre 1900 e 2100 lê-se
+    como ano. Uma contagem que por acaso caia nesse intervalo não se confere.
+
+AS CONTAGENS DO QUE SE APAGOU SAEM NA SAÍDA, classe a classe, em todo o guião
+que use este leitor. Servem exactamente para isto: quem confere vê quanto ficou
+de fora e de que classe, e um número que devia ter sido conferido e não foi
+aparece como uma classe inchada e não como silêncio.
 """
 import json
 import re
@@ -152,6 +175,22 @@ def valor(bruto):
         return float(normaliza(bruto))
     except ValueError:
         return None
+
+
+def num_no_limpo(limpo):
+    """Os números de um texto JÁ passado por `limpa()`.
+
+    Serve quem precisa de cortar o texto limpo em pedaços (o `check:briefs`
+    corta-o em frases) e de contar os números de cada pedaço sem voltar a
+    limpar: limpar duas vezes contava as mesmas coisas em sítios diferentes, e
+    as posições deixavam de bater com as do texto original.
+    """
+    return [{
+        'bruto': m.group(1),
+        'forma': normaliza(m.group(1)),
+        'valor': valor(m.group(1)),
+        'inicio': m.start(),
+    } for m in _RE_NUMERO.finditer(limpo)]
 
 
 def do_texto(texto):
