@@ -38,7 +38,11 @@ export function verificaVozPais(raiz) {
         dispensados.add(resumo);
       }
       const permitidos = new Set([
-        ...Object.values(ROTULOS_B1[lang]), ...Object.values(SUBJECTS).map(s=>s[lang]),
+        /* Só os rótulos destas páginas. O olho dos lugares continua declarado,
+           mas não pode voltar à página do país. */
+        ...['pais', 'temas', 'estudosRecentes', 'mudou', 'publicado', 'estudoPublicado',
+          'outraLingua', 'todasAsMedidasA', 'todasAsMedidasB'].map(k=>ROTULOS_B1[lang][k]),
+        ...Object.values(SUBJECTS).map(s=>s[lang]),
         ...DOMINIOS.map(d=>d.nome[lang]), ...WORKS.flatMap(w=>w.editions.map(e=>e.title)),
         '·','→',
       ].map(normal));

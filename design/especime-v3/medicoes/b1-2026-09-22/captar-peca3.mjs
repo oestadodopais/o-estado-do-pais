@@ -53,6 +53,11 @@ try {
         const selos = [...document.querySelectorAll('.src-chip')];
         const partidos = nos => nos.filter(n => new Set([...n.getClientRects()].filter(r => r.width && r.height).map(r => Math.round(r.top))).size > 1).length;
         return { janela: innerWidth, documento: document.documentElement.scrollWidth, corpo: document.body.scrollWidth,
+          altura: document.documentElement.scrollHeight,
+          conteudo: document.querySelector('main')?.getBoundingClientRect().toJSON(),
+          temas: document.querySelector('.pais-temas')?.getBoundingClientRect().toJSON(),
+          olhoDosTemas: document.querySelector('#temas-k')?.getBoundingClientRect().toJSON(),
+          primeiroTema: document.querySelector('.pais-tema-k')?.getBoundingClientRect().toJSON(),
           finalDaIAInteiro: (() => { const f = document.querySelector('[data-rotulo-ia="rodape"] .rotulo-ia-final'); return !!f && f.getClientRects().length === 1 && getComputedStyle(f).whiteSpace === 'nowrap' && f.textContent.endsWith('.'); })(),
           titulo: document.querySelector('h1')?.textContent.trim(),
           menu: [...document.querySelectorAll('#nav-principal a')].map(a => ({ texto: a.textContent.trim(), y: a.getBoundingClientRect().y, largura: a.getBoundingClientRect().width })),

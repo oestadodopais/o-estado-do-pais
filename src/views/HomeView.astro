@@ -36,13 +36,13 @@ const mudou = mudancasDoPais(lang);
       <MapaRespira s={s} lang={lang} concelhos={concelhos()} portaLugares />
       <LegendaDoMapa />
     </div>
-    <section class="pais-temas" aria-labelledby="temas-k">
-      <div class="sec-head"><h2 class="eyebrow" id="temas-k">{r.temas}</h2></div>
-      <TemasDoPais lang={lang} resumo />
-    </section>
   </div>
+  <section class="pais-temas" aria-labelledby="temas-k">
+    <div class="sec-head"><h2 class="eyebrow" id="temas-k">{r.temas}</h2></div>
+    <TemasDoPais lang={lang} resumo />
+  </section>
   <section class="pais-sec" id="trabalhos" aria-labelledby="estudos-k">
-    <div class="sec-head"><h2 class="eyebrow" id="estudos-k">{r.estudosDoLugar}</h2></div>
+    <div class="sec-head"><h2 class="eyebrow" id="estudos-k">{r.estudosRecentes}</h2></div>
     {recentes.map(e => <article class="estudo-item pais-estudo" data-estudo={e.work.slug} data-estudo-edicao={`${e.work.slug}/${e.edicao.lang}`}>
       <h3 class="estudo-item-titulo"><a href={e.rota}><TituloDeTrabalho titulo={e.edicao.title} lang={lang} /></a>
         {e.edicao.lang !== lang && <span class="estudo-lingua"> {r.outraLingua}</span>}
@@ -55,7 +55,7 @@ const mudou = mudancasDoPais(lang);
     <div class="sec-head"><h2 class="eyebrow" id="mudou-k">{r.mudou}</h2></div>
     <ol class="pais-mudou">
       {mudou.map(e => <li data-mudanca={e.tipo} data-mudanca-id={e.tipo === 'projeto' ? e.id : undefined} data-correcao-entrada={e.tipo === 'correcao' ? e.claim : undefined}>
-        {e.tipo === 'projeto' ? <><time datetime={e.data} data-mudanca-campo="data">{dataDaCasa(e.data)}</time><p data-mudanca-campo="texto">{e.texto[lang]}</p></> : e.tipo === 'publicacao' ? <><time datetime={e.data} data-publicacao-estudo={`${e.estudo.work.slug}/${e.estudo.edicao.lang}`}>{dataDaCasa(e.data)}</time><p><span>{r.publicado}</span>{' · '}<TituloDeTrabalho titulo={e.estudo.edicao.title} lang={lang} /></p></> : <>
+        {e.tipo === 'projeto' ? <><time datetime={e.data} data-mudanca-campo="data">{dataDaCasa(e.data)}</time><p data-mudanca-campo="texto">{e.texto[lang]}</p></> : e.tipo === 'publicacao' ? <><time datetime={e.data} data-publicacao-estudo={`${e.estudo.work.slug}/${e.estudo.edicao.lang}`}>{dataDaCasa(e.data)}</time><p><span>{r.estudoPublicado}</span>{' · '}<TituloDeTrabalho titulo={e.estudo.edicao.title} lang={lang} /></p></> : <>
           <time datetime={e.data} data-correcao-claim={e.claim} data-correcao-n={String(e.nDoNovo)} data-correcao-campo="date">{dataDaCasa(e.data)}</time>
           <p>{e.nome?.fonte && <span class="lugar-mudou-nome" data-nome={e.nome.fonte} data-de-linha={e.claim}>{e.nome.texto}</span>}
             <span class="lugar-mudou-par"><s data-correcao-claim={e.claim} data-correcao-n={String(e.nDoAntigo)} data-correcao-campo="old_value">{e.antes}</s>{' → '}<span data-correcao-claim={e.claim} data-correcao-n={String(e.nDoNovo)} data-correcao-campo="new_value">{e.depois}</span>{' '}{e.unidade && <CampoDaLinha id={e.claim} campo="unit" valor={unidadeDaLinha(e.unidade, lang).texto} lang={lang} lingua={unidadeDaLinha(e.unidade, lang).lingua} />}<Provenance id={e.claim} lang={lang} /></span>
