@@ -8,6 +8,7 @@ import { load } from 'js-yaml';
 import { DOMINIOS, DOMINIO_DAS_MEDIDAS } from '../src/data/dominios.mjs';
 import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
 import { WORKS } from '../src/data/studies.mjs';
+import { t } from '../src/i18n/strings.mjs';
 const raiz = process.cwd();
 const dist = path.resolve(process.env.OEDP_DIST ?? 'dist');
 const erros = [];
@@ -39,11 +40,24 @@ const datas = JSON.parse(fs.readFileSync('src/data/datas-de-publicacao.json', 'u
 const correcoesEsperadas = new Set();
 for (const f of fs.readdirSync('ledger/claims').filter(f=>f.endsWith('.yml'))) {
   const c = linha(f.slice(0,-4));
-  for (const e of c.corrections ?? []) if (['correcao','atualizacao'].includes(e.kind)) correcoesEsperadas.add(`${c.id}|${e.date}`);
+  (c.corrections ?? []).forEach((e, n) => {
+    if (['correcao','atualizacao'].includes(e.kind)) correcoesEsperadas.add(`${c.id}|${n}|${e.date}`);
+  });
 }
 for (const lang of ['pt', 'en']) {
   const home = le(lang === 'pt' ? '' : 'en');
   const indice = le(lang === 'pt' ? 'temas' : 'en/themes');
+  for (const [nome, doc, declarado] of [['país', home, t(lang).home], ['temas', indice, t(lang).temas]]) {
+    for (const [seletor, esperado] of [
+      ['head title', declarado.metaTitle], ['head meta[property="og:title"]', declarado.metaTitle],
+      ['head meta[name="description"]', declarado.metaDescription],
+      ['head meta[property="og:description"]', declarado.metaDescription],
+    ]) {
+      const el = doc.querySelector(seletor);
+      if ((el?.tagName === 'TITLE' ? el.textContent : el?.getAttribute('content')) !== esperado)
+        erros.push(`D1 ${lang} ${nome}: ${seletor} difere da declaração.`);
+    }
+  }
   const leitura = home.querySelector('main [data-leitura-pais]');
   const citadas = ['divida-publica-2024','divida-publica-2025','divida-publica-2025-ue','taxa-de-desemprego-2025','precos-da-habitacao-2025','precos-da-habitacao-2025-ue'];
   if (JSON.stringify(leitura?.querySelectorAll('[data-claim]').map(n=>n.getAttribute('data-claim'))) !== JSON.stringify(citadas)) erros.push(`L2 ${lang}: a leitura não cita as seis linhas aprovadas.`);
@@ -86,8 +100,25 @@ for (const lang of ['pt', 'en']) {
     const els = home.querySelectorAll(`[data-mudanca-id="${m.id}"]`);
     if (els.length !== 1 || normal(els[0]?.querySelector('[data-mudanca-campo="data"]')?.textContent) !== data(m.data) || normal(els[0]?.querySelector('[data-mudanca-campo="texto"]')?.textContent) !== m.texto[lang]) erros.push(`M2 ${lang}: a mudança ${m.id} não coincide com a declaração.`);
   }
-  const correcoes = home.querySelectorAll('.pais-mudou [data-correcao-entrada]').map(e=>`${e.getAttribute('data-correcao-entrada')}|${e.querySelector('time')?.getAttribute('datetime')}`);
-  if (correcoes.length !== correcoesEsperadas.size || correcoes.some(c=>!correcoesEsperadas.has(c)) || new Set(correcoes).size !== correcoes.length) erros.push(`C1 ${lang}: falta uma correção por linha e dia, ou está repetida.`);
+  const entradas = home.querySelectorAll('.pais-mudou [data-correcao-entrada]');
+  const correcoes = entradas.map(e=>`${e.getAttribute('data-correcao-entrada')}|${e.querySelector('time')?.getAttribute('data-correcao-n')}|${e.querySelector('time')?.getAttribute('datetime')}`);
+  if (correcoes.length !== correcoesEsperadas.size || correcoes.some(c=>!correcoesEsperadas.has(c)) || new Set(correcoes).size !== correcoes.length) erros.push(`C1 ${lang}: falta uma correção individual, ou está repetida.`);
+  for (const e of entradas) {
+    const id = e.getAttribute('data-correcao-entrada');
+    const marcas = e.querySelectorAll('[data-correcao-n]');
+    const ns = marcas.map(m => m.getAttribute('data-correcao-n'));
+    const correcao = /^\d+$/.test(ns[0] ?? '') ? linha(id).corrections?.[Number(ns[0])] : null;
+    const antes = e.querySelector('s[data-correcao-campo="old_value"]');
+    const depois = e.querySelector('[data-correcao-campo="new_value"]');
+    const quando = e.querySelector('time[data-correcao-campo="date"]');
+    if (marcas.length !== 3 || new Set(ns).size !== 1 || !correcao ||
+        marcas.some(m => m.getAttribute('data-correcao-claim') !== id) ||
+        !antes || !depois || !quando || normal(antes.textContent) === normal(depois.textContent) ||
+        normal(antes?.textContent) !== normal(correcao?.old_value) ||
+        normal(depois?.textContent) !== normal(correcao?.new_value) ||
+        quando?.getAttribute('datetime') !== correcao?.date || normal(quando?.textContent) !== data(correcao?.date ?? ''))
+      erros.push(`M3 ${lang}: ${id} mistura correções, repete o valor ou difere da correção declarada.`);
+  }
   const mudaramEm = home.querySelectorAll('.pais-mudou time').map(e=>e.getAttribute('datetime'));
   if (mudaramEm.some((d,i)=>i>0 && d > mudaramEm[i-1])) erros.push(`C2 ${lang}: as mudanças não estão da mais recente para a mais antiga.`);
 }

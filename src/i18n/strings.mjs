@@ -1704,26 +1704,15 @@ export const STRINGS = {
      * a nota dos campos por confirmar (a página do marcador di-lo, e o selo a
      * tracejado mostra-o). O que sobra do subtítulo do painel é o que ele é.
      */
+    temas: {
+      metaTitle: 'Temas · O Estado do País',
+      metaDescription: 'Todas as medidas do país, por tema, cada uma com o seu valor, a sua fonte e o seu recibo.',
+    },
     home: {
-      metaTitle: 'O Estado do País · Portugal, medido',
-      /* A DESCRIÇÃO DA PRIMEIRA PÁGINA NOMEIA O QUE ELA TEM (Emenda 15, decisão
-         da direção de 21.08.2026). Dizia «Observatório de dados sobre Portugal.
-         Cada número publicado tem uma linha no livro-razão, com fonte, documento
-         e data de acesso.»: a segunda frase é o método do próprio sítio, que é a
-         classe de frase que a emenda tira das páginas do leitor, e o `<head>` é
-         superfície pública como o corpo.
-
-         REESCRITA A 09.09.2026 (Major 6 da leitura a frio). A que aqui estava
-         dizia «Portugal nos painéis europeus: os indicadores, os limiares e as
-         fontes», e ficou a descrever uma página que já não existe: o item 8.16
-         levou os 21 cartões dos dois quadros para `/uniao-europeia`, e a
-         primeira página passou a ter as medidas de cabeça dos domínios. Além de
-         estar errada, era o único sítio do sítio onde a palavra «indicadores»
-         sobrevivia à L3, porque a régua começava no `<body>`. A nova diz o que
-         a página mostra hoje, com o vocabulário fechado, e a L3 passa a ler
-         também o `<title>` e as descrições. */
+      metaTitle: 'O Estado do País',
+      // B1: a descrição acompanha a leitura, os temas, o mapa e os estudos.
       metaDescription:
-        'As medidas de cabeça de cada domínio, a busca e o mapa dos concelhos, e as portas para os estudos e para os números com as suas fontes.',
+        'A leitura do país e os números oficiais por tema, cada um com a sua fonte, o mapa dos 308 concelhos e os estudos mais recentes.',
 
       numeros: {
         /* A linha do valor de referência de um cartão (IDENTIDADE.md §11). A
@@ -3407,10 +3396,14 @@ export const STRINGS = {
       voltarConcelhos: 'The municipalities',
     },
 
+    temas: {
+      metaTitle: 'Themes · O Estado do País',
+      metaDescription: "All the country's measures, by theme, each with its value, its source and its receipt.",
+    },
     home: {
-      metaTitle: 'O Estado do País · Portugal, measured',
+      metaTitle: 'O Estado do País',
       metaDescription:
-        'The head measures of each domain, the search and the map of the municipalities, and the doors to the studies and to the numbers with their sources.',
+        "The country's reading and the official numbers by theme, each with its source, the map of the 308 municipalities and the most recent studies.",
 
       numeros: {
         /* Ver a razão na edição portuguesa (item 8 do P1, 15.09.2026). */
