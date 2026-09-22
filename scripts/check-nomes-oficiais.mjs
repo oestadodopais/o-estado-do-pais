@@ -205,8 +205,14 @@ function lerNomes(j) {
       const marca = porFonte ? c[campo === 'nome_ine' ? 'ine' : 'pordata'] : undefined;
       let porque = null;
       if (!porFonte)
+        /* DUAS COISAS DIFERENTES, E A RÉGUA NÃO AS CONFUNDE: um ficheiro na forma
+           antiga (uma cadeia por medida) e uma medida que não traz marca nenhuma.
+           As duas recusam o nome, e um diagnóstico que dissesse «forma antiga»
+           onde o campo falta mandava quem lê procurar o que lá não está. */
         porque =
-          'o ficheiro do motor está na forma antiga, com uma «correspondencia» por medida em vez de uma marca por fonte, e nenhum nome dele se rende';
+          c === undefined || c === null
+            ? 'a medida não traz marca de correspondência nenhuma, e um nome sem marca não é um nome confirmado'
+            : 'o ficheiro do motor está na forma antiga, com uma «correspondencia» por medida em vez de uma marca por fonte, e nenhum nome dele se rende';
       else if (Object.prototype.hasOwnProperty.call(o, 'aviso'))
         porque = 'o motor escreveu um aviso: a conferência de ser a mesma medida ficou por fazer';
       else if (o.mesma_medida === false) porque = 'o motor marcou «mesma_medida: false»';
