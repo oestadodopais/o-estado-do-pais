@@ -86,6 +86,7 @@ import { hasClaim, getClaim, loadClaims, documentoDaLinha, textoOuNulo } from '.
 /* O marcador da casa, do módulo que o declara e não de `ledger.mjs`, que o
    reexporta: um campo que o traga é um campo por confirmar, e não um nome. */
 import { POR_VERIFICAR as MARCADOR } from '../data/marcador.mjs';
+import { temAviso } from './aviso-do-motor.mjs';
 
 /**
  * A PASTA DOS FICHEIROS DO MOTOR, PROCURADA E NÃO COMPOSTA.
@@ -362,9 +363,12 @@ export function nomeOficial(id) {
        ausências, e um nome só existe onde o motor diz que o leu. */
     if (o.estado !== 'lido') return null;
     if (o.mesma_medida !== true) return null;
-    /* A PRESENÇA do campo chega: um aviso vazio, ou de outro tipo, continua a ser o
-       motor a dizer que há um aviso (releitura a frio de 21.09.2026, achado 8). */
-    if (Object.prototype.hasOwnProperty.call(o, 'aviso')) return null;
+    /* A QUALQUER PROFUNDIDADE (leitura a frio do M3b, achado 7): o ficheiro de
+       22.09 traz `prova`, `conferencia` e `resolucao` com objetos e listas
+       dentro, e um aviso escrito lá dentro passava por aqui. A travessia é a de
+       `aviso-do-motor.mjs`, e é a única peça que os três leitores partilham; a
+       decisão continua escrita três vezes, que é a razão do parágrafo acima. */
+    if (temAviso(o)) return null;
     const nome = o.nome;
     if (typeof nome !== 'string' || nome.trim() === '' || nome === MARCADOR) return null;
     const endereco = typeof o.endereco === 'string' ? o.endereco : '';

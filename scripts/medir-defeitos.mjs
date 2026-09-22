@@ -51,6 +51,7 @@ import { DOMINIOS } from '../src/data/dominios.mjs';
 import { FIGURAS } from '../src/data/figuras.mjs';
 import { MEDIDAS_DO_DOMINIO_1 } from '../src/data/dominios.mjs';
 import { NOMES_DO_PROJETO, NOMES_DAS_LINHAS_DERIVADAS } from '../src/data/nomes-das-medidas.mjs';
+import { temAviso } from '../src/lib/aviso-do-motor.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { leMarcadores, analisa, leInventario, FICHEIRO_DOS_MARCADORES } from './voz.mjs';
 
@@ -647,9 +648,13 @@ const NOMES_OFICIAIS = new Map();
        existe onde o motor diz que o leu. */
     if (o.estado !== 'lido') return null;
     if (o.mesma_medida !== true) return null;
-    /* A PRESENÇA do campo chega: um aviso vazio, ou de outro tipo, continua a ser o
-       motor a dizer que há um aviso (releitura a frio de 21.09.2026, achado 8). */
-    if (Object.prototype.hasOwnProperty.call(o, 'aviso')) return null;
+    /* A QUALQUER PROFUNDIDADE (leitura a frio do M3b, achado 7): um aviso dentro
+       de `prova`, `conferencia`, `resolucao` ou de uma lista passava por aqui. A
+       travessia é a de `src/lib/aviso-do-motor.mjs`, e é a única peça que os três
+       leitores partilham, pela razão escrita lá: é uma pergunta estrutural sobre
+       uma árvore de JSON, e não a decisão, que continua escrita aqui por conta
+       própria. */
+    if (temAviso(o)) return null;
     if (typeof o.nome !== 'string' || o.nome.trim() === '' || o.nome === '[verify]') return null;
     if (typeof o.endereco !== 'string' || o.endereco === '') return null;
     if (typeof o.lido_em !== 'string' || o.lido_em === '') return null;
