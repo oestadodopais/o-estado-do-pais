@@ -53,7 +53,14 @@
     "codigo": 1,
     "celula": "A1",
     "passou": true,
-    "saida": "B1 país: 35 medidas, 9 temas, 8 menus, 1 mudanças declaradas, 4 listas com teto 8, 2 registos de 30 mudanças.\nC2 pt: as mudanças não estão da mais recente para a mais antiga.\nA1: index.html: a linha correcao|estudos-evora-publicados|3 é de «evora» e a página é de «pais».\nA2: index.html: as mudanças não estão da mais recente para a mais antiga."
+    "saida": "B1 país: 35 medidas, 9 temas, 8 menus, 1 mudanças declaradas, 4 listas com teto 8, 2 registos de 30 mudanças.\nA1: index.html: a linha correcao|estudos-evora-publicados|3 é de «evora» e a página é de «pais»."
+  },
+  {
+    "nome": "publicação na página do país",
+    "codigo": 1,
+    "celula": "A1",
+    "passou": true,
+    "saida": "B1 país: 35 medidas, 9 temas, 8 menus, 1 mudanças declaradas, 4 listas com teto 8, 2 registos de 30 mudanças.\nA1: index.html: a linha publicacao|evora-2027-prometido-painel-dinheiro é de «nenhum lugar» e a página é de «pais»."
   },
   {
     "nome": "mais mudanças do que o teto",

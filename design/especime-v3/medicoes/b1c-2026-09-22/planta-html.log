@@ -8,7 +8,7 @@
   B1 leitura evora-quinze-anos-cinco-mandatos/pt: sem leitura, o registo não começa por Em resumo.
 
 [90m  portão de HTML · 7354 páginas · 2625/2975 afirmações citadas fora do livro-razão · 5950 páginas de linha · 18 documento(s) de estudo, conferidos contra a origem · 10 página(s) de leitura, conferidas contra o seu registo de conteúdo[0m
-[90m  allowlist · 19 motivo(s) e 3 token(s), com os usos que os provam vivos: data-de-atualizacao 2 · data-da-conferencia 30 · nome-oficial-da-medida 36 · referencia-legal 20 · titulo-de-estudo 204 · escala-de-instrumento 166 · limiar-do-quadro 114 · data-da-linha 25398 · data-do-repositorio 56 · ambito-da-medida 4 · periodo-da-fonte 556 · data-de-referencia 5174 · numeracao 182 · proveniencia 14633 · data-da-agenda 156 · data-de-leitura-de-uma-definicao 56 · identificador-tecnico 4 · fonte-da-carta 64 · licenca-do-conjunto 2 · UE-27 (scope: any) 21 · EU-27 (scope: any) 21 · sha256 (scope: body) 24
+[90m  allowlist · 19 motivo(s) e 3 token(s), com os usos que os provam vivos: data-de-atualizacao 2 · data-da-conferencia 30 · nome-oficial-da-medida 36 · referencia-legal 20 · titulo-de-estudo 196 · escala-de-instrumento 166 · limiar-do-quadro 114 · data-da-linha 25398 · data-do-repositorio 56 · ambito-da-medida 4 · periodo-da-fonte 556 · data-de-referencia 5174 · numeracao 182 · proveniencia 14633 · data-da-agenda 156 · data-de-leitura-de-uma-definicao 56 · identificador-tecnico 4 · fonte-da-carta 64 · licenca-do-conjunto 2 · UE-27 (scope: any) 21 · EU-27 (scope: any) 21 · sha256 (scope: body) 24
   rótulo de IA · 7336 no rodapé (de 7336 páginas fora dos documentos alojados) · 26 no topo das páginas de estudo · 2 ficha(s) da primeira página · 2 frase(s) da política e 2 do projeto, comparadas com o texto decidido[0m
 [90m  ortografia · Acordo de 1990 como se aplica em Portugal · 254 pares, 50 iguais · restante: 0 ocorrência(s) em 0 rota(s), todas de linhas cruzadas · 8 dispensada(s) por estarem entre «…»[0m
 [90m  factos por verificar · 2 campo(s) declarados, com o marcador na página e a porta da edição certa[0m
@@ -369,6 +369,7 @@
 [31m  O PORTÃO DE HTML FECHOU — 5 erro(s):[0m
 
   [31mcorrecoes/index.html[0m
+    [31m✗[0m B1 mudança: campo rendido difere do registo declarado.
     [31m✗[0m o campo "unit" de "estudos-evora-publicados" não foi transcrito fielmente do livro-razão.
       no livro-razão: estudos
       renderizado:    unidade de correção plantada
@@ -377,9 +378,6 @@
     [31m✗[0m a afirmação "divida-publica-2024" foi renderizada como "93.5" e o livro-razão diz "93,5".
       Os algarismos batem certo e a forma não. Não é só o valor: um sinal, uma vírgula ou um símbolo de unidade dentro do elemento são um número diferente.
       Dentro de [data-claim] vai o valor da linha e mais nada; o símbolo da unidade vai ao lado, fora dele (src/components/Claim.astro, "sufixo").
-
-  [31mindex.html[0m
-    [31m✗[0m B1 mudança: campo rendido difere do registo declarado.
 
   [31mtemas/index.html[0m
     [31m✗[0m o valor da afirmação "pib-real-per-capita-2024" aparece sem selo para a sua própria linha.
