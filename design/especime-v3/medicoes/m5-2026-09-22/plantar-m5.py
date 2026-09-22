@@ -81,6 +81,15 @@ CONFERIR = ['python3', 'scripts/leituras/conferir-relatorio.py', RELATORIO,
 
 
 def main():
+    # O índice da corrida anterior apaga-se antes de plantar, e não é higiene: o
+    # `mordida` de cada entrada guarda o número plantado, e um índice velho na
+    # pasta das medições punha esse número no monte contra o qual o
+    # `conferir-relatorio.py` confere. A planta do número inventado deixava de
+    # morder por causa do registo da própria planta (apanhado a 22.09.2026).
+    velho = os.path.join(AQUI, 'plantas-m5.json')
+    if os.path.isfile(velho):
+        os.remove(velho)
+
     plantas = [
         planta(
             'o bloco medidas de um brief', 'valor-trocado',

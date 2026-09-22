@@ -2,15 +2,13 @@ relatório: design/especime-v3/medicoes/i129-2026-09-22/LEIA-ME.md
 pasta das medições: design/especime-v3/medicoes/i129-2026-09-22
 ficheiros JSON lidos: 1
 conhecido-positivo (o número 987654321, ausente dos ficheiros, apontado pelo mesmo detetor): encontrado
-números conferidos: 134
-números com ficheiro: 78
-números sem ficheiro: 56
-   l.3 «5» em «*Construtor: Claude Opus 5, 22.09.2026, na worktree `jovens-nem-2026-09-22`»
+números conferidos: 131
+números com ficheiro: 77
+números sem ficheiro: 54
    l.58 «5» em «`compor_excerto` que ignora as dimensões, dá 5 falhas, entre elas «A PLANTA NÃO»
    l.64 «3» em «diz 3 ficheiros, 6 inserções, 6 eliminações, e nenhum outro ficheiro do»
    l.64 «6» em «diz 3 ficheiros, 6 inserções, 6 eliminações, e nenhum outro ficheiro do»
    l.64 «6» em «diz 3 ficheiros, 6 inserções, 6 eliminações, e nenhum outro ficheiro do»
-   l.99 «7» em «qual: o achado 7 de 14.09.2026 tinha trazido o sexo de volta e deixado a idade»
    l.102 «2» em «No inventário das frases: 2 retiradas, 2 vivas, no bloco `i129`, com a entrada»
    l.102 «2» em «No inventário das frases: 2 retiradas, 2 vivas, no bloco `i129`, com a entrada»
    l.103 «602» em «em `critica/REVISOES-DO-INVENTARIO.md`. O `check:voz` conta 602 vivas todas»
@@ -27,6 +25,7 @@ números sem ficheiro: 56
    l.191 «602» em «`check:voz` corre dentro da construção: 602 vivas todas rendidas, 546 retiradas»
    l.191 «546» em «`check:voz` corre dentro da construção: 602 vivas todas rendidas, 546 retiradas»
    l.205 «6,4» em «lida, e dava **6,4** para o desemprego de 2025. **O Eurostat dá 6,0**, que é o»
+   l.205 «2025» em «lida, e dava **6,4** para o desemprego de 2025. **O Eurostat dá 6,0**, que é o»
    l.205 «6,0» em «lida, e dava **6,4** para o desemprego de 2025. **O Eurostat dá 6,0**, que é o»
    l.231 «200» em «| `tipslm90-PT` | 11:25:42 | 200 | 5642 | `de9b533f6c268337ccae416ce7037ecf2ac92b6b383e4caef3b3e7d3d352c6ef` |»
    l.231 «5642» em «| `tipslm90-PT` | 11:25:42 | 200 | 5642 | `de9b533f6c268337ccae416ce7037ecf2ac92b6b383e4caef3b3e7d3d352c6ef` |»
@@ -50,16 +49,15 @@ números sem ficheiro: 56
    l.242 «78,5» em «11,0 (UE), 6,5 e 6,0 (desemprego PT), 6,0 (UE), 78,5 e 79,6 (emprego PT), 76,1»
    l.242 «79,6» em «11,0 (UE), 6,5 e 6,0 (desemprego PT), 6,0 (UE), 78,5 e 79,6 (emprego PT), 76,1»
    l.242 «76,1» em «11,0 (UE), 6,5 e 6,0 (desemprego PT), 6,0 (UE), 78,5 e 79,6 (emprego PT), 76,1»
-   l.280 «6,0» em «real; uma sintética sem razão; uma sintética com campos de proveniência; a hora»
-   l.280 «6,4» em «real; uma sintética sem razão; uma sintética com campos de proveniência; a hora»
-   l.287 «6» em «»
-   l.288 «7» em «| achado | o que mudou | a planta que o prova |»
-   l.289 «79,8» em «|---|---|---|»
-   l.290 «10» em «| **6**, a K13 | Corre sobre **as linhas** do livro-razão e não sobre as definições, juntando-as por medida (o período anterior e o agregado leem-se debaixo da »
-   l.291 «9» em «| **7**, a catraca | A asserção de que a lista em vigor está vazia saiu de dentro do `if (PROVA)` e corre em toda a corrida | uma entrada na lista em vigor fech»
-   l.297 «12» em «suíte dá o vermelho com o nome («A PLANTA NÃO MORDEU», «A GUARDA NÃO MORDEU»,»
-   l.299 «9» em «»
-   l.299 «3» em «»
-   l.300 «12» em «### O achado 12, que não era para corrigir»
-apagado antes de contar: codigo 176, enderecos 0, seccoes 0, datas 20, resumos 0, ordinais 0, identificadores 10, anos 9
+   l.283 «6,0» em «importa correu contra a árvore a sério: **o mesmo 6,0 para 6,4 que começou isto»
+   l.283 «6,4» em «importa correu contra a árvore a sério: **o mesmo 6,0 para 6,4 que começou isto»
+   l.290 «6» em «| **6**, a K13 | Corre sobre **as linhas** do livro-razão e não sobre as definições, juntando-as por medida (o período anterior e o agregado leem-se debaixo da »
+   l.291 «7» em «| **7**, a catraca | A asserção de que a lista em vigor está vazia saiu de dentro do `if (PROVA)` e corre em toda a corrida | uma entrada na lista em vigor fech»
+   l.292 «79,8» em «| **8**, a guarda | `reescrever()` confere também o `value` (pelo número, porque «11,0» e «11» são o mesmo) e a `unit` da linha contra a resposta, e não só o ex»
+   l.293 «10» em «| **10**, o `--write` | `escrever_linha` passa a levar as **correcções** para a linha nova, como já levava as reconferências, e recusa-se se o corpo novo não ti»
+   l.294 «9» em «| **9**, as respostas | Resolvido pelo que está em cima: as oito respostas e o `pedidos.jsonl` | o `sha256` de cada uma, conferido à leitura |»
+   l.302 «9» em «A leitura diz que o relatório soma 9 + 3 e escreve 15. **No ramo ele escreve»
+   l.302 «3» em «A leitura diz que o relatório soma 9 + 3 e escreve 15. **No ramo ele escreve»
+   l.303 «12» em «12**, que é a conta certa, e o `pacote.plantas.json` regista a P3 como um estrago»
+apagado antes de contar: codigo 176, enderecos 0, seccoes 0, datas 20, resumos 0, ordinais 2, identificadores 11, anos 9
 código de saída: 1

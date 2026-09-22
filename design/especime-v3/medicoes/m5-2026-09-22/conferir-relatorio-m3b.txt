@@ -2,17 +2,25 @@ relatório: design/especime-v3/medicoes/m3b-2026-09-22/LEIA-ME.md
 pasta das medições: design/especime-v3/medicoes/m3b-2026-09-22
 ficheiros JSON lidos: 2
 conhecido-positivo (o número 987654321, ausente dos ficheiros, apontado pelo mesmo detetor): encontrado
-números conferidos: 96
-números com ficheiro: 75
-números sem ficheiro: 21
+números conferidos: 94
+números com ficheiro: 61
+números sem ficheiro: 33
    l.23 «19» em «`mesma_medida: true`** (4 do INE, 14 da PORDATA), 19 recusados, 4 por decidir.»
    l.28 «23» em «O `check:nomes` conta 23 recusados e não 19, e a diferença é deliberada: a régua»
    l.28 «19» em «O `check:nomes` conta 23 recusados e não 19, e a diferença é deliberada: a régua»
    l.30 «19» em ««por decidir» têm nome. Os 19 do motor são os que ele marcou»
+   l.112 «24» em «O `check:nomes --prova` corre **24 plantas** (eram 21), todas sobre um ficheiro»
    l.112 «21» em «O `check:nomes --prova` corre **24 plantas** (eram 21), todas sobre um ficheiro»
-   l.158 «148» em «`capturas-recibo.json` (Chromium 148.0.7778.96):»
+   l.115 «1» em «1. **a marca «exata» da fonte com o `mesma_medida` a `null`**, que é como o motor»
+   l.148 «1» em «transcrito continua a ser apanhada (esperado 1). O conhecido-positivo correu:»
+   l.149 «1» em «pondo `data-da-linha` na lista dos transcritos, o portão fechou a 1 com a razão»
+   l.187 «6» em «pacote, os cinco apanhados) deixou seis achados reais, do 6 ao 11. Cada um foi»
    l.187 «11» em «pacote, os cinco apanhados) deixou seis achados reais, do 6 ao 11. Cada um foi»
+   l.196 «6» em «| 6 | a N3 pedia só que se visse um nome qualquer | **N3** passa a exigir cada nome confirmado, por linha e por fonte, no recibo das DUAS edições; o esperado de»
+   l.197 «7» em «| 7 | o `aviso` recusava-se só à cabeça | a travessia passa a ser uma só, em `src/lib/aviso-do-motor.mjs`, usada pelos três leitores e pela medição | nove casos»
    l.198 «40» em «| 8 | a N5 via só `a[href]` e a N6 só o texto inteiro | as duas passam a procurar por subcadeia no texto de fora da marca, com o limite de 40 caracteres para o »
+   l.199 «9» em «| 9 | o manifesto das capturas escrevia-se antes das asserções | passa a escrever-se no fim, e só se todas passarem; regista a cabeça em que correu | `--planta`»
+   l.199 «1» em «| 9 | o manifesto das capturas escrevia-se antes das asserções | passa a escrever-se no fim, e só se todas passarem; regista a cabeça em que correu | `--planta`»
    l.200 «10» em «| 10 | a contagem pedia cinco das seis condições dos leitores | passa a exigir também a hora de leitura, e lê o aviso a qualquer profundidade | a contagem depoi»
    l.201 «11» em «| 11 | a repartição «nove e cinco» não se lê no pacote de leitura | é uma nota e não um defeito, e fica dita aqui | contada em `src/data/figuras.mjs` (nove) e e»
    l.205 «40» em «O limite de 40 caracteres não é uma escolha de gosto. Dos 39 nomes do ficheiro,»
@@ -20,11 +28,15 @@ números sem ficheiro: 21
    l.206 «40» em «cinco têm menos de 40 caracteres, e um deles é «PIB per capita», que é prosa»
    l.207 «13» em «corrente da casa e se rende em 13 páginas construídas: uma régua que o»
    l.211 «31» em «**O que o limite deixa de fora, dito:** «Índice de perceção de corrupção» (31) é»
-   l.225 «40» em «(36 esperados, derivados do ficheiro), 0 em título de cartão · confirmados pela»
-   l.225 «26» em «(36 esperados, derivados do ficheiro), 0 em título de cartão · confirmados pela»
-   l.248 «11 058» em «Cada um no seu comando, com o código lido de um ficheiro e nunca atrás de um»
-   l.249 «946» em «`|`, na cabeça `50eb7aa38eaf1d5f22c1550dc875110a9622396b`. Os ficheiros estão ao»
-   l.253 «43» em «|---|---|---|---|---|»
-   l.254 «23» em «| `npm run build` | 08:11:25 | 08:16:14 | **0** | `build.log`, 11 058 linhas |»
-apagado antes de contar: codigo 136, enderecos 0, seccoes 3, datas 13, resumos 0, ordinais 0, identificadores 10, anos 0
+   l.231 «40» em «As 40 plantas são 26 sobre páginas, 4 sobre conjuntos de páginas (a N3), 9 sobre»
+   l.231 «26» em «As 40 plantas são 26 sobre páginas, 4 sobre conjuntos de páginas (a N3), 9 sobre»
+   l.231 «9» em «As 40 plantas são 26 sobre páginas, 4 sobre conjuntos de páginas (a N3), 9 sobre»
+   l.232 «1» em «a travessia do aviso e 1 sobre a forma do ficheiro.»
+   l.254 «11 058» em «| `npm run build` | 08:11:25 | 08:16:14 | **0** | `build.log`, 11 058 linhas |»
+   l.255 «946» em «| `npm run verify` | 08:16:39 | 08:24:23 | **0** | `verify.log`, 946 linhas |»
+   l.259 «43» em «43 analisadas, 36 nomes em recibo, 0 em título de cartão, 4 confirmados do INE e»
+   l.260 «23» em «14 da PORDATA, 23 recusados, e as 24 plantas recusadas ou aceites como deviam.»
+   l.260 «24» em «14 da PORDATA, 23 recusados, e as 24 plantas recusadas ou aceites como deviam.»
+   l.265 «1» em «escrever o `dist/`: saiu a 1 num ficheiro que ainda não existia»
+apagado antes de contar: codigo 136, enderecos 0, seccoes 3, datas 13, resumos 0, ordinais 1, identificadores 11, anos 0
 código de saída: 1
