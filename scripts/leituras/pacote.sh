@@ -2,7 +2,8 @@
 # Monta o pacote de uma leitura a frio de um bloco (decisão do lugar de direção, 07.09.2026: o pacote montado por um guião).
 # uso: pacote.sh <repositório> <base> <cabeça> <pacote> <brief.md> <relatório.md> [<caminho em dist/>...]
 #   <pacote>/brief.md, relatorio-construtor.md, diff.patch (base..cabeça, sem binários e sem o relatório),
-#   os ficheiros mudados nos seus caminhos tal como estão na cabeça, e built/<caminho> copiado de <repositório>/dist/.
+#   os ficheiros mudados nos seus caminhos tal como estão na cabeça, built/<caminho> copiado de
+#   <repositório>/dist/, e numeros-do-relatorio.txt com a saída do conferir-relatorio.py sobre o relatório.
 #   O «antes/» copia-se à mão quando a leitura compara. As plantas plantam-se depois, com plantar.py.
 set -eu
 repo="$1"; base="$2"; cabeca="$3"; pacote="$4"; brief="$5"; relatorio="$6"; shift 6
@@ -31,4 +32,23 @@ for p in "$@"; do
   cp "$repo/dist/$p" "$pacote/built/$p"
   b=$((b+1))
 done
-echo "pacote em $pacote: diff $(wc -l < "$pacote/diff.patch" | tr -d ' ') linhas, $n ficheiros mudados copiados da cabeça $cabeca, $b páginas construídas"
+
+# Os números do relatório, conferidos contra os ficheiros de medição da pasta ao
+# lado dele, e a saída dentro do pacote (M5, 22.09.2026). O leitor a frio fica a
+# saber à partida que números do relatório foram medidos e quais não estão em
+# ficheiro nenhum, sem ter de descobrir um a um. A saída é dita, nunca engolida:
+# o código 1 é «há números sem ficheiro» e entra no pacote; o 2 é «o guião não
+# correu, ou o seu conhecido-positivo falhou», e nesse caso o pacote não se
+# monta, porque um zero de um detetor calado enganaria o leitor.
+guiao="$(dirname "$0")/conferir-relatorio.py"
+numeros="$pacote/numeros-do-relatorio.txt"
+codigo=0
+python3 "$guiao" "$relatorio" "$(dirname "$relatorio")" > "$numeros" 2>&1 || codigo=$?
+echo "código de saída do conferir-relatorio.py: $codigo" >> "$numeros"
+if [ "$codigo" -ge 2 ]; then
+  cat "$numeros"
+  echo "pacote.sh: o conferir-relatorio.py não correu (código $codigo); o pacote não se monta assim." >&2
+  exit 1
+fi
+
+echo "pacote em $pacote: diff $(wc -l < "$pacote/diff.patch" | tr -d ' ') linhas, $n ficheiros mudados copiados da cabeça $cabeca, $b páginas construídas, números do relatório conferidos (código $codigo, em numeros-do-relatorio.txt)"
